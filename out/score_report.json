@@ -1,0 +1,16 @@
+{
+  "scores": {
+    "Hook strength": {"score": 9, "rationale": "Concrete and specific: names May 29 federal deadline against May 20 constitutional adjournment, hints at the sequence/missing-option tension. Just shy of 10 because the 'nine days after' framing leans on the reader to do the date math rather than landing the structural beat in one stroke."},
+    "Local relevance": {"score": 10, "rationale": "Every story has a clear named AK angle: JBER, Eielson, Clear SFS, Chugach, GVEA, Cook Inlet, SB 250/Tobin, UAF/ACUASI/ACEP, Sullivan, Murkowski, HB 217/Carrick. No imported national filler."},
+    "Factual density": {"score": 9, "rationale": "Specifics nearly every sentence: dates (May 5, 8, 13, 20, 29), figures (12 data centers, 4,700 acres, 30%->less than 1%, 2028), and named bills/people. Loses a point because some supporting claims (MOU details, BillTrack50 date) compress without inline attribution."},
+    "Source quality": {"score": 8, "rationale": "ADN is named inline for the data center claims and KTUU/BillTrack50 for SB 250. UAF/DIU MOU specifics (Owen West, ACUASI, ACEP) and HB 217 details are not attributed inline, though they are verified in findings. All claims trace to credible sources but not all are visibly cited."},
+    "Voice match": {"score": 9, "rationale": "Position-taking and structural: 'structurally false,' 'sequence problem,' 'moving on the wrong tech for this moment,' 'the third path the legislature keeps not naming.' Curly quotes and em-dashes used purposefully. No banned phrases, no folksy drift. Slightly less crystallized than the anchor's 'third option nobody is naming' moment."},
+    "Readability (mobile)": {"score": 7, "rationale": "Five body paragraphs, ~380 words within target. Paragraph 4 (UAF/DIU + HB 217) is a long combined paragraph that risks wall-of-text on mobile; splitting the HB 217 beat into its own paragraph would improve scan."},
+    "Engagement question": {"score": 9, "rationale": "Real, debatable, tied directly to the central tension: SB 250 sequencing vs. May 29 federal clock. Not generic, not a 'follow us.' Minor deduction because it's a compound question that gives readers an easy out by picking either half."}
+  },
+  "weighted_total": 8.9,
+  "threshold": 8.0,
+  "ship": true,
+  "one_sentence_fix": "",
+  "_note": "Scored on the first ship-verdict pass from the editor; no revision cycles needed."
+}

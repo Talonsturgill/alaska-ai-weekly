@@ -1,0 +1,74 @@
+{
+  "window": ["2026-05-03", "2026-05-10"],
+  "volume": "VOL. 01",
+  "date": "2026-05-10",
+  "lead_story": {
+    "title": "Air Force Wants AI Data Centers on Three Alaska Bases; Utilities Say They Don't Have the Power",
+    "sources": [
+      {"url": "https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/", "outlet": "Anchorage Daily News", "pub_date": "2026-05-05", "author": "Alex DeMarban"},
+      {"url": "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/", "outlet": "U.S. Air Force (official)", "pub_date": "2026-04-10", "author": "Secretary of the Air Force Public Affairs", "note": "primary source for the solicitation; pre-window background"},
+      {"url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/", "outlet": "Air & Space Forces Magazine", "pub_date": "2026-04-11", "author": "Matthew Cox", "note": "pre-window background"}
+    ]
+  },
+  "supporting_stories": [
+    {
+      "title": "UAF Signs Three-Year MOU With Pentagon's Defense Innovation Unit",
+      "sources": [
+        {"url": "https://www.uaf.edu/news/uaf-diu-launch-collaboration.php", "outlet": "UAF News (primary)", "pub_date": "2026-05-08", "author": "Marmian Grimes"},
+        {"url": "https://www.alaskasnewssource.com/2026/05/09/fairbanks-university-partners-with-us-military-private-industry-research-technologies/", "outlet": "Alaska's News Source (KTUU)", "pub_date": "2026-05-08", "author": "Alex Bengel"}
+      ]
+    },
+    {
+      "title": "Alaska House Advances HB 217 (Autonomous Vehicles with Required Human Safety Operator)",
+      "sources": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-04/alaska-house-advances-bill-regulating-autonomous-vehicles", "outlet": "Alaska Public Media", "pub_date": "2026-05-04", "author": "Haley Lehman"},
+        {"url": "https://www.alaskasnewssource.com/2026/05/04/alaska-house-advances-bill-regulating-autonomous-vehicles/", "outlet": "Alaska's News Source (KTUU)", "pub_date": "2026-05-04", "author": "Haley Lehman"},
+        {"url": "https://alaskabeacon.com/briefs/alaska-house-advances-bill-regulating-autonomous-vehicles/", "outlet": "Alaska Beacon", "pub_date": "2026-05-04", "author": null},
+        {"url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=HB217", "outlet": "Alaska State Legislature (official bill record)", "pub_date": "2026-05-05", "author": null}
+      ]
+    },
+    {
+      "title": "SB 250 (Data Center Ratepayer-Protection) Status",
+      "sources": [
+        {"url": "https://www.alaskasnewssource.com/2026/04/30/data-centers-alaska-lawmakers-gauge-bans-or-tax-incentives-with-just-weeks-left-session/", "outlet": "Alaska's News Source (KTUU)", "pub_date": "2026-04-29", "author": "Wil Courtney", "note": "background context for SB 250 status as of late April"},
+        {"url": "https://www.billtrack50.com/billdetail/1974439", "outlet": "BillTrack50 (legislative tracker)", "pub_date": "2026-05-13", "author": null, "note": "reportedly-scheduled committee hearing"}
+      ]
+    }
+  ],
+  "held_back_this_week": [
+    {
+      "title": "AOOS Spring 2026 Glider Update (S4)",
+      "reason": "Single-outlet primary source; off the dominant frame. Strong candidate for a future Beat C feature.",
+      "sources": [{"url": "https://aoos.org/spring-2026-glider-update/", "outlet": "Alaska Ocean Observing System", "pub_date": "2026-05-07"}]
+    },
+    {
+      "title": "Federal Judge Rules DOGE's ChatGPT-Driven NEH Grant Cuts Unconstitutional (S5)",
+      "reason": "Strong national story; ANLC connection crosses the window boundary via a single April UAF Sun Star piece. Save for a Beat B feature.",
+      "sources": [
+        {"url": "https://www.insidehighered.com/news/quick-takes/2026/05/07/federal-judge-restores-millions-neh-grants", "outlet": "Inside Higher Ed", "pub_date": "2026-05-07"},
+        {"url": "https://www.cbsnews.com/news/neh-grant-termination-unlawful-doge/", "outlet": "CBS News", "pub_date": "2026-05-07"},
+        {"url": "https://www.pbs.org/newshour/politics/judge-finds-trumps-doge-led-cancellation-of-humanities-grants-unconstitutional", "outlet": "PBS NewsHour", "pub_date": "2026-05-08"},
+        {"url": "https://www.uafsunstar.com/news/from-preservation-to-purge-ai-cuts-language-center-funding", "outlet": "UAF Sun Star", "pub_date": "2026-04-06"}
+      ]
+    },
+    {
+      "title": "Session Deadline Roundup with AI-CSAM Omnibus Status (S6)",
+      "reason": "Useful context, but pulling it into the post diluted the dominant frame; reserved for a future legislative-roundup brief.",
+      "sources": [{"url": "https://www.adn.com/politics/alaska-legislature/2026/05/10/with-session-deadline-looming-whats-left-for-the-alaska-legislature-to-vote-on/", "outlet": "Anchorage Daily News", "pub_date": "2026-05-10", "author": "Iris Samuels, Mari Kanagy"}]
+    }
+  ],
+  "new_sources_to_consider": [
+    {"url": "https://www.uafsunstar.com", "rationale": "UAF student paper that broke the ANLC/ChatGPT grant termination story; primary-adjacent UAF voice."},
+    {"url": "https://aoos.org", "rationale": "Alaska Ocean Observing System publishes primary-source updates on autonomous platforms in AK waters."},
+    {"url": "https://www.gi.alaska.edu/news", "rationale": "UAF Geophysical Institute news arm, distinct from the main UAF News feed; covers ACUASI and atmospheric science."},
+    {"url": "https://www.kfsk.org", "rationale": "Petersburg public radio; broke the Greensparc Petersburg micro-data-center story."},
+    {"url": "https://www.petersburgpilot.com", "rationale": "Petersburg paper of record; first on Greensparc proposal."},
+    {"url": "https://www.wrangellsentinel.com", "rationale": "Wrangell paper of record; covered the Greensparc Wrangell planning vote."},
+    {"url": "https://www.newsminer.com", "rationale": "Fairbanks Daily News-Miner; gateway-to-Eielson/UAF coverage with original reporting."},
+    {"url": "https://broadbandbreakfast.com", "rationale": "DC trade outlet covering Alaska-specific data center and broadband policy."},
+    {"url": "https://www.airandspaceforces.com", "rationale": "Reliable primary-adjacent source for military AI infrastructure on Alaska bases."},
+    {"url": "https://akcenter.org", "rationale": "Alaska-based nonpartisan policy org; original research on data center cost impacts cited by ADN and KTUU."},
+    {"url": "https://www.nationalfisherman.com", "rationale": "Covers AFSC, NOAA AK fisheries, and applied tech in AK commercial fishing."},
+    {"url": "https://avamerica.org", "rationale": "National AV policy tracker that surfaces Alaska-specific AV legislative developments."}
+  ]
+}
