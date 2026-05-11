@@ -1,0 +1,24 @@
+{
+  "date_window": ["2026-05-04", "2026-05-11"],
+  "selected_for_post": [
+    {"story_id": "uaf_diu_agreement", "role": "lead", "sources": [
+      "https://www.uaf.edu/news/uaf-diu-launch-collaboration.php",
+      "https://www.alaskasnewssource.com/2026/05/09/fairbanks-university-partners-with-us-military-private-industry-research-technologies/",
+      "https://www.webcenterfairbanks.com/video/2026/05/09/uaf-partners-with-department-war-private-industry-research-military-technology/"
+    ]},
+    {"story_id": "doge_neh_ruling", "role": "supporting", "sources": [
+      "https://www.pbs.org/newshour/politics/judge-finds-trumps-doge-led-cancellation-of-humanities-grants-unconstitutional",
+      "https://www.washingtonpost.com/politics/2026/05/07/doge-neh-humanities-grants-ruling/",
+      "https://www.uafsunstar.com/news/from-preservation-to-purge-ai-cuts-language-center-funding"
+    ]},
+    {"story_id": "af_data_center_bids_and_lc_hearing", "role": "supporting", "sources": [
+      "https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/",
+      "https://www.northcountrynow.com/premium/stories/alaska-beacon-state-and-legislative-daybook-for-the-week-of-may-11-2026,369205",
+      "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/"
+    ]},
+    {"story_id": "hb217_autonomous_vehicles", "role": "supporting_optional", "sources": [
+      "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-04/alaska-house-advances-bill-regulating-autonomous-vehicles",
+      "https://www.alaskasnewssource.com/2026/05/04/alaska-house-advances-bill-regulating-autonomous-vehicles/"
+    ]}
+  ]
+}
