@@ -1,0 +1,123 @@
+{
+  "_note": "Source ledger for VOL. 02 — 2026-05-23. All sources used in final_post.md plus background context.",
+  "cited_sources": [
+    {
+      "url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=SB+250",
+      "outlet": "Alaska State Legislature",
+      "pub_date": "2026-05-18",
+      "type": "primary",
+      "story": "SB 250 — Senate Y14 N5 E1 May 16, House heard-and-held May 18, died at adjournment May 20",
+      "in_window": true
+    },
+    {
+      "url": "https://www.billtrack50.com/billdetail/1974439",
+      "outlet": "BillTrack50",
+      "pub_date": "2026-05-18",
+      "type": "secondary",
+      "story": "SB 250 bill tracking — confirmed bill activity dates",
+      "in_window": true
+    },
+    {
+      "url": "https://www.akleg.gov/Basis/Bill/Detail/34?Root=HB+239",
+      "outlet": "Alaska State Legislature",
+      "pub_date": "2026-05-20",
+      "type": "primary",
+      "story": "HB 239 — Senate 20-0 May 19, House 39-1 May 20, AI-CSAM felony provision",
+      "in_window": true
+    },
+    {
+      "url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-20/alaska-legislature-passes-sweeping-crime-bill-raising-age-of-consent-to-18-on-last-day-of-session",
+      "outlet": "Alaska Public Media",
+      "pub_date": "2026-05-20",
+      "type": "secondary",
+      "author": "Eric Stone",
+      "story": "HB 239 passage — crime omnibus, AI-CSAM, age of consent",
+      "in_window": true
+    },
+    {
+      "url": "https://www.adn.com/politics/alaska-legislature/2026/05/20/alaska-legislature-passes-sweeping-crime-and-public-safety-bill/",
+      "outlet": "Anchorage Daily News",
+      "pub_date": "2026-05-21",
+      "type": "secondary",
+      "author": "Iris Samuels",
+      "story": "HB 239 passage — crime and public safety bill, governor concerns",
+      "in_window": true
+    },
+    {
+      "url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-21/alaska-lawmakers-adjourn-one-session-and-begin-another-to-mull-tax-breaks-for-lng-project",
+      "outlet": "Alaska Public Media",
+      "pub_date": "2026-05-21",
+      "type": "secondary",
+      "author": "Eric Stone",
+      "story": "Legislature adjourned regular session May 20, opened special session May 21 on Alaska LNG pipeline tax breaks",
+      "in_window": true
+    },
+    {
+      "url": "https://www.adn.com/politics/alaska-legislature/2026/05/21/alaska-legislature-adjourns-with-eye-toward-special-session/",
+      "outlet": "Anchorage Daily News",
+      "pub_date": "2026-05-21",
+      "type": "secondary",
+      "author": "Iris Samuels, Mari Kanagy",
+      "story": "Legislature adjournment and special session",
+      "in_window": true
+    },
+    {
+      "url": "https://www.adn.com/business-economy/energy/2026/05/16/lawmakers-race-to-advance-alaska-lng-bill-before-session-concludes/",
+      "outlet": "Anchorage Daily News",
+      "pub_date": "2026-05-16",
+      "type": "secondary",
+      "author": "Iris Samuels, Alex DeMarban",
+      "story": "LNG tax proposals: governor 6-cent, House 15-cent + spur line + $40M fund, Senate 40-cent",
+      "in_window": true
+    },
+    {
+      "url": "https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/",
+      "outlet": "Anchorage Daily News",
+      "pub_date": "2026-05-05",
+      "type": "secondary",
+      "author": "Alex DeMarban",
+      "story": "Chugach Electric and Golden Valley Electric both said Cook Inlet gas supply too thin for large-scale data centers (background context, outside window)",
+      "in_window": false,
+      "background_context": true
+    },
+    {
+      "url": "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/",
+      "outlet": "U.S. Air Force",
+      "pub_date": "2026-04-10",
+      "type": "primary",
+      "story": "Air Force data center solicitation at JBER, Eielson, Clear SFS — May 29 proposal deadline (background context)",
+      "in_window": false,
+      "background_context": true
+    }
+  ],
+  "new_sources_to_consider": [
+    {
+      "url": "https://www.northernjournal.com",
+      "rationale": "Northern Journal (Nathaniel Herz) broke the Stak Energy North Slope story on May 13 and is syndicated by ADN and Alaska Beacon. Credible, Alaska-focused, independent. High signal for infrastructure/energy beat.",
+      "suggested_credibility": "high"
+    },
+    {
+      "url": "https://www.juneauempire.com",
+      "rationale": "Primary regional outlet for Southeast Alaska; published Sealaska/Tlingit AI translator story (May 21, 2026) first. Subscription-based, established. Paywalled stories may be unfetchable.",
+      "suggested_credibility": "medium-high"
+    },
+    {
+      "url": "https://www.newsminer.com",
+      "rationale": "Fairbanks Daily News-Miner covers UAF and Interior Alaska closely; published detailed reporting on SB 287 and ANLC legislative hearings.",
+      "suggested_credibility": "medium-high"
+    },
+    {
+      "url": "https://www.nationalfisherman.com",
+      "rationale": "National Fisherman produces well-sourced Alaska fisheries and technology reporting consistently. Useful for Beat C (AI in fisheries, NOAA, electronic monitoring).",
+      "suggested_credibility": "high"
+    },
+    {
+      "url": "https://www.datacenterdynamics.com",
+      "rationale": "Data Center Dynamics covered Stak Energy North Slope proposal in technical depth before ADN pickup. Useful early-signal source for AI infrastructure stories.",
+      "suggested_credibility": "medium-high"
+    }
+  ],
+  "count": 10,
+  "in_window_count": 8,
+  "background_context_count": 2
+}
