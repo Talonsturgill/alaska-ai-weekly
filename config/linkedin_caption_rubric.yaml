@@ -1,0 +1,63 @@
+# ALASKA.AI Dispatch — LinkedIn CAPTION scorecard (the post text in the Gmail draft).
+# Separate from dispatch_rubric.yaml (the video) and scoring_rubric.yaml (the weekly recap).
+# Grounded in 2026 LinkedIn data: dwell time is the ranking signal, the hook must land inside
+# the ~140-char mobile fold, 1,300-1,900 chars is the sweet spot, a clear POSITION beats a
+# summary, restraint beats over-formatting, 3-5 hashtags at the end. The routine iterates the
+# caption until this passes AND the objective linter passes.
+rubric:
+  ship_threshold: 8.5            # out of 10
+  max_revision_cycles: 5
+  # OBJECTIVE pre-gate — must pass BEFORE this scorecard is judged (the measurable rules).
+  objective_gate:
+    script: "scripts/caption_check.py"
+    must_pass_first: true
+    checks:
+      hook_fold:   "first line <= 140 chars (earns 'see more' in the mobile fold)"
+      length:      "900-2200 chars total (sweet spot 1,300-1,900); 3,000 hard cap"
+      hashtags:    "3-5, grouped at the END (>5 = ~68% reach cut)"
+      restraint:   "no Unicode-bold, <=3 emoji, not a wall of bullets"
+      brand_punct: "no em/en dash, semicolon, or curly quotes; ranges 'X to Y'"
+      cta:         "an engagement question near the end"
+  hard_fails:                    # ANY = automatic fail regardless of score
+    - "caption_check.py fails (hook past the fold, length out of band, hashtag misuse, over-formatting, banned punctuation, no CTA)"
+    - "a claim not traceable to the Dispatch's verified sources, or a number not in the video"
+    - "no discernible POINT OF VIEW — it summarizes instead of taking a position"
+    - "AI-tells present (delve, tapestry, ever-evolving, leverage-synergy, etc.) or generic 'thought-leader' filler"
+    - "savior framing ('Silicon Valley saves Alaska') or disrespect of Alaska Native subjects"
+    - "the hook over-promises something the post + video do not deliver (clickbait)"
+  criteria:
+    - name: "Hook / scroll-stop"
+      weight: 0.20
+      10: "First line stops the scroll inside the mobile fold with a concrete fact, sharp number, or a real position; line 2 deepens the tension so the 'see more' is irresistible."
+      7:  "Solid opener, would earn some clicks, slightly soft or generic."
+      4:  "Buried lede, vague, or front-loads context before the point."
+    - name: "Point of view / take"
+      weight: 0.18
+      10: "Takes a clear, defensible position on what the story MEANS for Alaska + AI — an angle a smart reader would want to argue with or share."
+      7:  "Has a view but hedges; reads more explainer than argument."
+      4:  "Neutral summary; no thesis."
+    - name: "Substance & specificity"
+      weight: 0.16
+      10: "Specific names, numbers, places, mechanisms from the verified Dispatch; says something non-obvious; earns the 60-90s dwell."
+      7:  "Accurate and clear, a little thin on specifics."
+      4:  "Generic, could be about anywhere; low information density."
+    - name: "Readability & restraint"
+      weight: 0.12
+      10: "Short lines, generous whitespace, scans in one mobile thumb-scroll; zero decorative cruft; every line earns its place."
+      7:  "Readable, a couple of dense blocks or one gimmicky flourish."
+      4:  "Wall of text or over-formatted (emoji/bold/checkmarks) — reads as generated."
+    - name: "Engagement design (CTA + comment-bait)"
+      weight: 0.12
+      10: "Ends on a genuine, specific question that invites a substantive comment (LinkedIn rewards multi-sentence replies), tied to the take."
+      7:  "Has a question, a bit generic ('thoughts?')."
+      4:  "No CTA or a dead-end ask."
+    - name: "Brand voice & accuracy"
+      weight: 0.12
+      10: "Sounds like Alaska.Ai (analytical, pro-Alaska, honest about limits); obeys the writing rules; every claim ties to a verified source; numbers match the video."
+      7:  "On voice, one rule slip or one soft-sourced claim."
+      4:  "Off-voice or an unverifiable claim."
+    - name: "Hashtag craft"
+      weight: 0.10
+      10: "3-5, at the end, a deliberate mix of one broad (>500K), one or two mid (50K-500K), one or two niche (<50K), all topically true to THIS post (e.g. #ArtificialIntelligence + #Alaska + a niche like #PassiveAcoustics)."
+      7:  "3-5 relevant tags, mix a little lopsided."
+      4:  "Too many/few, off-topic, or popularity-chasing."

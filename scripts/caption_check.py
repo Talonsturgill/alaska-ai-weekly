@@ -1,0 +1,97 @@
+#!/usr/bin/env python3
+"""
+caption_check.py — OBJECTIVE linter for the Dispatch LinkedIn caption (the post text
+delivered in the Gmail draft). The checks-and-balances twin of quality_gate.py: it runs
+BEFORE the subjective scorecard (config/linkedin_caption_rubric.yaml) and fails the caption
+numerically on the measurable rules, so a weak caption never reaches the inbox.
+
+Rules are grounded in 2026 LinkedIn data:
+  - dwell time is the ranking signal; the hook must earn the "see more" inside the mobile fold
+  - 1,300-1,900 chars is the engagement sweet spot; 3,000 is LinkedIn's hard cap
+  - 3-5 hashtags, at the END (>5 = ~68% reach cut; hashtags in the middle read as spam)
+  - clean whitespace + restraint; over-formatting (emoji/■ per line, Unicode-bold) reads as AI
+  - brand voice bans em/en dashes, semicolons, curly quotes; ranges written "X to Y"
+
+  python scripts/caption_check.py path/to/caption.txt      # or: cat caption.txt | python scripts/caption_check.py
+Writes caption_report.json next to the input (or cwd). Exit 0 = PASS, 1 = FAIL.
+"""
+import sys, os, re, json
+
+FOLD=140            # mobile "see more" fold (chars)
+HARD_MAX=3000       # LinkedIn hard cap
+LO,HI=900,2200      # acceptable band (sweet spot 1300-1900; we fail outside the wider band)
+AI_TELLS=["delve","tapestry","testament","landscape of","ever-evolving","ever-changing","in today's",
+          "navigating the","unlock the","unleash","game-changer","game changer","realm of","at the end of the day",
+          "it's important to note","needle-moving","paradigm","synergy","circle back","leverage synerg",
+          "embark","robust solution","seamless","cutting-edge","revolutionize","supercharge","skyrocket"]
+BANNED_PUNCT={"—":"em dash","–":"en dash",";":"semicolon","“":"curly quote","”":"curly quote","‘":"curly quote","’":"curly apostrophe"}
+EMOJI=re.compile("[\U0001F000-\U0001FAFF\U00002600-\U000027BF\U0001F1E6-\U0001F1FF←-⇿⌀-⏿]")
+UNICODE_BOLD=re.compile("[\U0001D400-\U0001D7FF]")     # math alphanumerics = fake bold/italic
+BULLETY=re.compile(r"^\s*([•▪✓✅➤→\-\*])\s")
+
+def lint(text):
+    fails=[]; warns=[]; m={}
+    t=text.rstrip("\n"); lines=t.split("\n")
+    nonempty=[l for l in lines if l.strip()]
+    body_chars=len(t); m["chars"]=body_chars
+    # hook
+    hook=nonempty[0].strip() if nonempty else ""
+    m["hook"]=hook; m["hook_len"]=len(hook)
+    if not hook: fails.append("HOOK: empty first line")
+    elif len(hook)>FOLD: fails.append(f"HOOK: first line {len(hook)} chars > {FOLD} mobile fold — the hook gets cut before 'see more'")
+    if hook and hook[-1] not in ".!?\"" and len(hook)<40: warns.append("HOOK: very short opener — make sure it actually stops the scroll")
+    # length
+    if body_chars>HARD_MAX: fails.append(f"LENGTH: {body_chars} chars > {HARD_MAX} LinkedIn hard cap")
+    elif not (LO<=body_chars<=HI): fails.append(f"LENGTH: {body_chars} chars outside {LO}-{HI} (sweet spot 1300-1900)")
+    # hashtags
+    tags=re.findall(r"(?<!\w)#\w+",t); m["hashtags"]=tags; m["n_hashtags"]=len(tags)
+    if not (3<=len(tags)<=5): fails.append(f"HASHTAGS: {len(tags)} found, need 3-5 (>5 = ~68% reach cut)")
+    if tags:
+        # every hashtag must be in the tail block (after the last non-hashtag sentence)
+        tail_start=None
+        for i,l in enumerate(lines):
+            only_tags=l.strip()!="" and all(w.startswith("#") for w in l.split())
+            if only_tags and tail_start is None: tail_start=i
+            elif l.strip()=="" : pass
+            elif tail_start is not None and not (l.strip()!="" and all(w.startswith("#") for w in l.split())):
+                tail_start=None  # body resumed after a tag line
+        body_text="\n".join(lines[:tail_start]) if tail_start is not None else t
+        if re.search(r"(?<!\w)#\w+", body_text if tail_start is not None else "") and tail_start is not None:
+            fails.append("HASHTAGS: a hashtag appears in the body — put all hashtags in one block at the END")
+        if tail_start is None:
+            fails.append("HASHTAGS: not grouped at the end — place 3-5 hashtags on their own line(s) after the post")
+    # CTA / engagement question
+    last_chunk="\n".join(nonempty[-4:]) if nonempty else ""
+    if "?" not in (t if len(t)<600 else t[-600:]): fails.append("CTA: no engagement question near the end (ask the reader something)")
+    # over-formatting (reads as AI / hurts dwell)
+    n_emoji=len(EMOJI.findall(t)); n_bold=len(UNICODE_BOLD.findall(t)); n_bullets=sum(bool(BULLETY.match(l)) for l in lines)
+    m["emoji"]=n_emoji; m["unicode_bold"]=n_bold; m["bullet_lines"]=n_bullets
+    if n_bold>0: fails.append(f"FORMAT: {n_bold} Unicode-bold chars — reads as generated; use plain text + whitespace")
+    if n_emoji>3: fails.append(f"FORMAT: {n_emoji} emoji — over-formatted; LinkedIn 2026 rewards restraint")
+    if n_bullets>6: warns.append(f"FORMAT: {n_bullets} bullet lines — heavy; prose with whitespace reads more human")
+    # brand voice: banned punctuation
+    hits={name for ch,name in BANNED_PUNCT.items() if ch in t}
+    if hits: fails.append("PUNCT: brand voice bans "+", ".join(sorted(hits))+" (use periods, commas, 'X to Y' ranges)")
+    # AI tells
+    low=t.lower(); tells=sorted({w for w in AI_TELLS if w in low})
+    if tells: fails.append("AI-TELLS: drop "+", ".join(tells))
+    # whitespace / scannability
+    if "\n\n" not in t and body_chars>400: fails.append("FORMAT: one wall of text — add blank lines so it scans on mobile")
+    m["passes"]=len(fails)==0
+    return fails, warns, m
+
+def main():
+    src=None
+    if len(sys.argv)>1 and os.path.exists(sys.argv[1]): src=sys.argv[1]; text=open(src,encoding="utf-8").read()
+    else: text=sys.stdin.read()
+    fails,warns,m=lint(text)
+    out=os.path.join(os.path.dirname(os.path.abspath(src)) if src else os.getcwd(),"caption_report.json")
+    json.dump({"pass":m["passes"],"fails":fails,"warns":warns,"metrics":m},open(out,"w"),indent=2)
+    print("=== LinkedIn caption linter ===")
+    print(f"  chars={m['chars']} (band {LO}-{HI}) | hook={m['hook_len']}c (fold {FOLD}) | hashtags={m['n_hashtags']} | emoji={m['emoji']} bold={m['unicode_bold']}")
+    for w in warns: print("  ! "+w)
+    if fails:
+        print("RESULT: FAIL ✗"); [print("  ✗ "+f) for f in fails]; sys.exit(1)
+    print("RESULT: PASS ✓ — clears the objective rules; now score config/linkedin_caption_rubric.yaml"); sys.exit(0)
+
+if __name__=="__main__": main()

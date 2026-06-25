@@ -109,8 +109,8 @@ PHASE 4 — PRODUCE LIKE A MOVIE PRODUCER (illustrate first; vary everything)
   the static brief IMAGE, not to this video.)
 - WRITE the VO to the writing rules (no em/en dashes, no semicolons, no curly quotes,
   contractions, vary sentence length, ≤3 commas, banned-word list, ranges "X to Y", phonetic
-  numbers/acronyms). ~60s ≈ 130–150 words; trim ≥5%. Also write the copy-paste social post
-  (LinkedIn-tuned hook + a real closing question; no hashtags).
+  numbers/acronyms). ~60s ≈ 130–150 words; trim ≥5%. (The copy-paste LinkedIn CAPTION that ships in
+  the draft is written and graded in its own two-gate loop — see PHASE 6B.)
 - VOICE: pick from config/voices.yaml to fit the story's tone and VARY it run-to-run (publish
   in a Kokoro voice, Apache-2.0; edge-tts drafts only). MUSIC: royalty-free, fits the arc,
   credit the composer by name.
@@ -126,7 +126,8 @@ Build a deliberate ENDING (principle 6): after the VO finishes, a branded OUTRO 
 + tagline + sources credit, revealed in staged beats — then a gentle cinematic fade. Motion must run
 to the final frame; NEVER end on a static hold (the EVENT_CADENCE gate enforces this). Design the
 ending in the storyboard, not after.
-Render in the background in parallel chunks.
+Render in the background in parallel chunks, with DISPATCH_TEXTLOG=1 set so the engine emits a
+per-word text manifest (out/dispatch/textlog/) that the READABILITY gate reads.
 
 PHASE 6 — THE AUTONOMOUS SELF-HEALING LOOP (ends ONLY at perfection)
 The human is NEVER the QA. This loop does not stop, ask, or hand off — it runs itself until the
@@ -163,6 +164,7 @@ because the bar was hard — a loop that ends on a failure is a broken loop.
     · CAPTION_TEXT — caption glyph-edge energy       → "captions generic / hard to read"
     · EVENT_CADENCE— no on-screen-dead window > 5s   → "boring / too slow / make something happen every ~5s"
     · CAPTION_SYNC — captions built from the TTS word-timings → "voice doesn't match the captions"
+    · READABILITY  — every readable word clears a brightness + contrast floor → "is every word legible, not just sharp"
   On any FAIL it names the check + the region/time. Diagnose WHY (e.g. HUD drawn before the grade,
   DoF too strong, a dead stretch, captions not voice-driven), fix it in the engine, re-render the
   affected range, re-run. Do not proceed to Gate B until Gate A is green. It also writes
@@ -183,6 +185,43 @@ because the bar was hard — a loop that ends on a failure is a broken loop.
   Below threshold → take the one-sentence fix + editor notes, IMPROVE script/visuals/audio, and re-run
   the WHOLE review from Gate A. Loop until BOTH gates are green with zero hard_blockers; only then encode
   and deliver. The loop does not exit on anything less.
+
+PHASE 6B — THE LINKEDIN CAPTION (research -> write -> two-gate loop)
+The post text that ships in the Gmail draft is a deliverable in its own right, not an afterthought.
+On LinkedIn in 2026 DWELL TIME is the ranking signal (a 61s+ read earns ~13x the engagement of a 3s
+skim), so the caption must earn a 60-90s read. Build it like the video: an objective gate, then a
+taste scorecard, looping until both pass.
+
+- RESEARCH THE ANGLE (reuse the Dispatch's verified findings — no new web fan-out): name the ONE
+  point of view this post argues — what the story MEANS for Alaska + AI, the non-obvious take a smart
+  reader would want to share or argue with. Pull the 2-3 hardest specifics (a name, a number, a place,
+  the mechanism) from the fact-checked sources. The number on screen and the number in the caption MUST match.
+
+- WRITE TO THE FRAMEWORK (the `writer` agent), grounded in 2026 LinkedIn data:
+  · HOOK: the first line must stop the scroll INSIDE the ~140-char mobile fold — a concrete fact, a
+    sharp number, or a real position. Line 2 deepens the tension so "see more" is irresistible. No
+    "I'm excited to share", no context-clearing before the point.
+  · BODY: 1,300-1,900 chars is the sweet spot (hard cap 3,000). Short lines, generous whitespace,
+    scans in one thumb-scroll. Take a POSITION and defend it with specifics. Restraint reads as
+    expensive — NO Unicode-bold, <=3 emoji, no checkmark-per-line; over-formatting reads as AI and kills dwell.
+  · VOICE: Alaska.Ai analytical + pro-Alaska + honest about limits; obey the writing rules (no em/en
+    dashes, no semicolons, no curly quotes, contractions, ranges "X to Y", phonetic numbers).
+  · CTA: end on a genuine, specific question tied to the take — LinkedIn rewards multi-sentence
+    comments, so ask something worth a paragraph, not "thoughts?".
+  · HASHTAGS: 3-5, on their own line at the END. A deliberate mix — one broad (>500K, e.g.
+    #ArtificialIntelligence), one or two mid (50K-500K, e.g. #Alaska, #MachineLearning), one or two
+    niche true to THIS story (e.g. #PassiveAcoustics). Never more than 5 (>5 = ~68% reach cut), never in the body.
+
+- GATE A — OBJECTIVE (mandatory, first): `python scripts/caption_check.py out/caption.txt` MUST exit 0.
+  It enforces the measurable rules (hook <=140, length band, 3-5 hashtags at the end, no over-format,
+  brand punctuation, a CTA question) and writes caption_report.json for the draft. Fail -> fix -> re-run.
+
+- GATE B — SCORECARD (taste): the `editor` agent (hard critique, AI-tells, risk flags) then the `scorer`
+  agent against `config/linkedin_caption_rubric.yaml` (ship 8.5, zero hard_fails). Below threshold ->
+  take the fix, rewrite, re-run from Gate A. Loop until BOTH pass.
+
+- The final caption (with its hashtags) is what dispatch_email.py drops into the Gmail draft as the
+  copy-paste post, alongside the video link, credits, and sources. Carry the caption score into the draft.
 
 PHASE 7 — DELIVER, FULLY DONE (no pending states). Work in talonsturgill/alaska-ai-weekly ONLY.
 Everything must be live and downloadable the INSTANT the Gmail draft hits the inbox — never

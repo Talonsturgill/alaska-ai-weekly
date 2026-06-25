@@ -10,6 +10,7 @@ Every check here exists because a human reviewer once had to flag it by hand:
   CAPTION_TEXT     "the captions look generic / hard to read"
   EVENT_CADENCE    "a bit boring, too slow — something should happen every ~5s"
   CAPTION_SYNC     "the voice doesn't match the on-screen captions"
+  READABILITY      "is every word bright enough + legible (not just sharp)?"
 
   python quality_gate.py                         # gate frames_v3/ + audio/words60.json
   python quality_gate.py --frames DIR --words W --fps 30 --max-gap 5.0
@@ -31,6 +32,8 @@ CARD_BAND=(100,1175,980,1360)     # spectrogram chart card
 F_SHARP=14.0                       # median variance-of-Laplacian over the clip
 F_HUD_HF=3.2                       # p90 high-freq energy in a HUD text band (glyph edges)
 F_WORDS=10                         # min voice-synced caption cues
+F_VIS=0.42                         # min visible brightness (fill_luma/255 * alpha) of a readable word
+F_CON=2.0                          # min text/background contrast ratio for a readable word
 
 def lum(a): return 0.2126*a[...,0]+0.7152*a[...,1]+0.0722*a[...,2]
 def lap_var(g): return float(laplace(g.astype(np.float32)).var())
@@ -80,6 +83,27 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
         m["caption_cues"]=len(words)
         det=f"{len(words)} voice-synced cues (min {F_WORDS}), {len(bad)} bad-duration — guards 'voice != captions'"
     checks.append({"name":"CAPTION_SYNC","pass":ok_sync,"detail":det})
+
+    # 6) READABILITY — brightness + contrast of EVERY word meant to be read (from the render text manifest)
+    tdir=os.path.join(os.path.dirname(os.path.abspath(frames_dir)),"textlog")
+    tfiles=sorted(glob.glob(os.path.join(tdir,"frame_*.json")))
+    if tfiles:
+        nck=0; bad=[]
+        for tfp in tfiles:
+            try: ws=json.load(open(tfp))
+            except Exception: continue
+            for wl in ws:
+                if not wl.get("target"): continue
+                nck+=1; a=wl["alpha"]
+                et=(wl["fill_luma"]*a+wl["bg_luma"]*(1-a))/255.0; bgL=wl["bg_luma"]/255.0
+                con=(max(et,bgL)+0.05)/(min(et,bgL)+0.05)
+                if wl["vis"]<F_VIS or con<F_CON: bad.append({"kind":wl["kind"],"vis":wl["vis"],"contrast":round(con,2)})
+        m["readable_words"]=nck; m["readability_fails"]=len(bad)
+        checks.append({"name":"READABILITY","pass":(len(bad)==0 and nck>0),
+            "detail":f"{nck} readable words checked, {len(bad)} too dim/low-contrast (need vis>={F_VIS}, contrast>={F_CON}){' eg '+str(bad[:3]) if bad else ''} — guards 'every word bright + legible'"})
+    else:
+        checks.append({"name":"READABILITY","pass":False,
+            "detail":"no text manifest (render with DISPATCH_TEXTLOG=1) — cannot verify per-word brightness/contrast"})
 
     passed=all(c["pass"] for c in checks)
     m["score"]=round(10.0*sum(c["pass"] for c in checks)/len(checks),1)

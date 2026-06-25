@@ -32,6 +32,17 @@ def tk(d,t,f,fill,x,y,tr=0.0):
 
 TIM=json.load(open(os.path.join(HERE,"audio","timing60.json"))); BEATS=TIM["beats"]  # 9
 CUES=json.load(open(os.path.join(HERE,"audio","words60.json")))["words"]  # voice-synced phrase captions
+# ---- text manifest for the READABILITY gate (brightness + contrast of every word) ----
+LOGTEXT=os.environ.get("DISPATCH_TEXTLOG")=="1"; TEXTLOG=[]; BGLUMA=None
+def _lum(a): return 0.2126*a[...,0]+0.7152*a[...,1]+0.0722*a[...,2]
+def _logw(x,y,w_px,h_px,col,alpha,target,kind):
+    """Log a drawn word: its fill brightness, its background, and whether it must be readable now."""
+    if not LOGTEXT or BGLUMA is None: return
+    x0=max(0,int(x));y0=max(0,int(y));x1=min(W,int(x+w_px));y1=min(H,int(y+h_px))
+    if x1<=x0 or y1<=y0: return
+    bg=float(BGLUMA[y0:y1,x0:x1].mean()); fl=float(0.2126*col[0]+0.7152*col[1]+0.0722*col[2])
+    TEXTLOG.append({"kind":kind,"alpha":round(float(alpha),3),"fill_luma":round(fl,1),
+                    "bg_luma":round(bg,1),"vis":round(fl/255.0*float(alpha),3),"target":bool(target)})
 # ---------- background: aurora + glacial water (DoF-softened) ----------
 def aur(seed,vc,sp,hf,inten,color,warp,h=SURF+50):
     rng=np.random.default_rng(seed); sp_=gaussian_filter(rng.standard_normal(W),hf); sp_=sp_/(np.std(sp_)+1e-6)*warp
@@ -71,7 +82,7 @@ def finish(u8,seed):
     g=1-(1-g)*(1-np.clip(glow[...,None]*np.array([1,.85,.6])*.12,0,1))
     g=g*(0.85+0.15*(1/(1+(_R*1.45)**2)**2))[...,None]
     rng=np.random.default_rng(seed);n=gaussian_filter(rng.standard_normal((H,W)).astype(np.float32),1.1);n/=n.std()+1e-6
-    g=g+(n*np.exp(-((lum[...,0]-.4)**2)/(2*.25**2))*(8/255.))[...,None]
+    g=g+(n*np.exp(-((lum[...,0]-.4)**2)/(2*.25**2))*(4.0/255.))[...,None]   # lighter grain
     g=np.clip(g+(rng.random((H,W,1))+rng.random((H,W,1))-1)/255.,0,1)
     return (g*255).astype(np.uint8)
 # ---------- beluga (parametric, lit) ----------
@@ -130,6 +141,7 @@ def caption(out,f):
         for (w,mid) in ln:
             col=(244,250,255) if mid<=prog-0.05 else (GOLD if mid<=prog+0.05 else (148,168,194))
             d.text((x,y),w,font=fnt,fill=(*col,int(255*la)),stroke_width=3,stroke_fill=(3,8,18,int(225*la)))
+            _logw(x,y,tw(w,fnt),fnt.size,col,la,(mid<=prog+0.05) and (la>=0.6),"caption")
             x+=tw(w,fnt)+spw
     uw=W-2*150; ux=150; uy=y0+blockh+16                         # brand progress underline = spoken time
     d.line([(ux,uy),(ux+uw,uy)],fill=(70,90,116,int(110*ap)),width=2)
@@ -142,10 +154,12 @@ def outro_card(out,f):
     if a1>0.02:
         wf=fr(78,800,144); s="ALASKA.AI"; w=tw(s,wf,0.05)
         tk(d,s,wf,(255,222,120,int(255*a1)),(W-w)//2,1444-int((1-a1)*16),0.05)
+        _logw((W-w)//2,1444,w,wf.size,(255,222,120),a1,a1>=0.6,"outro")
     a2=E.out_cubic(E.seg(f,1660,1700))                          # tagline in (finishes as the fade begins)
     if a2>0.02:
         tf=fr(40,600,144); s="what's moving in alaska ai, this week"; w=tw(s,tf,0.02)
         tk(d,s,tf,(228,240,250,int(228*a2)),(W-w)//2,1552-int((1-a2)*14),0.02)
+        _logw((W-w)//2,1552,w,tf.size,(228,240,250),a2,a2>=0.6,"outro")
 
 print("precompute...",file=sys.stderr)
 BASE=build_base();ADULT=beluga(1.12);CALF=beluga(0.5,(120,134,150),(78,92,110),(150,175,196))
@@ -212,6 +226,9 @@ def render_frame(f):
     sceneimg=img.convert("RGB").crop(((W-cw)//2,int((H-ch)*cyoff),(W-cw)//2+cw,int((H-ch)*cyoff)+ch)).resize((W,H),Image.LANCZOS)
     out=Image.fromarray(finish(np.asarray(sceneimg),2000+f))                 # graded RGB
     out=out.filter(ImageFilter.UnsharpMask(radius=2.4,percent=92,threshold=2)).convert("RGBA");du=ImageDraw.Draw(out,"RGBA")
+    global BGLUMA
+    if LOGTEXT and f%6==0: TEXTLOG.clear(); BGLUMA=_lum(np.asarray(out.convert("RGB")).astype(np.float32))
+    else: BGLUMA=None
     eb=E.out_cubic(E.seg(f,6,30))
     if eb>0:
         tk(du,"ALASKA.AI",mono(18,True),(255,222,120,int(220*eb)),MARGIN,70,0.14)
@@ -221,6 +238,7 @@ def render_frame(f):
         unc=1.0 if f<1126 else .55+.45*math.sin(f/5.)
         nf=fr(118,900,144);s_="~330";nx=W-MARGIN-tw(s_,nf);ny=150
         tk(du,s_,nf,(255,222,120,int(235*cc*unc)),nx,ny);tk(du,"BELUGAS LEFT",mono(16,m=True),(235,245,252,int(185*cc)),nx+4,ny+128,0.18)
+        _logw(nx,ny,tw(s_,nf),nf.size,(255,222,120),cc*unc,cc*unc>=0.6,"count");_logw(nx+4,ny+128,tw("BELUGAS LEFT",mono(16,m=True),0.18),18,(235,245,252),cc,cc>=0.6,"label")
         if f>=1126: tk(du,"?",fr(96,900,144),(255,140,120,int(150*(1-unc+.4))),nx+tw(s_,nf)+12,ny+8)
     if f>=680: draw_spec(out,f)    # chart HUD — crisp, composited AFTER the grade (stays razor-sharp)
     caption(out,f)
@@ -232,6 +250,9 @@ def render_frame(f):
     if fin<1: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(255*(1-E.out_cubic(fin))))))
     outf=E.seg(f,1700,1800)        # cinematic fade-out from ~56.7s — carries motion across the whole outro
     if outf>0: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(245*E.in_out_sine(outf)))))
+    if LOGTEXT and f%6==0:
+        os.makedirs(os.path.join(HERE,"textlog"),exist_ok=True)
+        json.dump(TEXTLOG,open(os.path.join(HERE,"textlog",f"frame_{f:05d}.json"),"w"))
     return out.convert("RGB")
 # spectrogram card — crisp HUD, bigger legible labels, continuous scrubbing playhead
 SPW,SPH=884,182;SPX,SPY=(W-SPW)//2,1170
