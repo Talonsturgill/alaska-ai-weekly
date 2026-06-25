@@ -27,8 +27,8 @@ Beat frames (30fps): [15, 174, 361, 508, 657].
 ## Credits (for the comments)
 - **Voice.** edge-tts, Microsoft Azure Neural TTS voice "Ava" (en-US-AvaMultilingualNeural),
   warm female, rate -3%.
-- **Music.** "Echoes" by **Andrew Ev**, via Mixkit (Mixkit Free License). 30s window from 2.0s,
-  ducked under the voice.
+- **Music.** "Echoes" by **Andrew Ev**, via Mixkit (Mixkit Free License). 30s window from 0:55.6
+  (the developed body of the track), bed normalized to -22 LUFS and sidechain-ducked under the voice.
 
 ## Sources (load-bearing claims)
 - Population ~331 (median; range 290-386), 2022 survey; trend ~+0.2%/yr 2012-2022; ESA-listed
@@ -88,5 +88,11 @@ left.
 
 ## Build
 - `render.py` — PIL/numpy illustration renderer (900 frames). `audio_build.py` — edge-tts VO
-  assembly. Music: Mixkit "Echoes" (Andrew Ev). Mux per the locked ffmpeg graph (voice primary,
-  music sidechain-ducked, loudnorm I=-14). Output audio measured at -14.5 LUFS, -1.4 dBTP.
+  assembly. `audio_mux.py` — music-window pick + stem normalize + sidechain duck + mux, with a
+  built-in SOUND-CHECK gate. Music: Mixkit "Echoes" (Andrew Ev).
+- **Sound-check gate (added after first pass shipped silent music).** The mux script measures the
+  finished file and fails unless the music-only tail (27.95-29.5s, after the VO ends) is clearly
+  audible. v1 measured the tail at -69 dB RMS (the bed had a long fade-out over the only voice-free
+  stretch, and the level was buried). v2 ships at: integrated -14.9 LUFS, true peak -1.4 dBTP,
+  music-only tail -22.8 dB RMS, bed ~8-9 dB under the voice during narration (voice dominant). This
+  check is now a permanent step for the routine.
