@@ -6,8 +6,12 @@ Derived from a 2026 research pass across motion design, color science, underwate
 rendering, sound, Alaska authenticity, and platform delivery (sources at bottom).
 
 ## 0. The five principles
-1. **The voice carries the story.** Visuals clarify; they don't shout. Drop on-screen
-   text the narration already speaks.
+1. **Illustration leads; the voice follows.** Your craft is hand-coded illustration that
+   DEPICTS the story (object/process/place/data), legit-looking AND entertaining. Sync the VO
+   to the picture beat-for-beat — a motion-illustration piece the voice rides, not narration
+   over a slideshow. Color is FREE per story (see ROUTINE_SPEC; "always blue" is wrong) — the
+   brand throughline is the wordmark + Fraunces/JetBrains type + craft. Platforms: LinkedIn
+   (primary) + TikTok → master 9:16 1080x1920, export a 4:5 LinkedIn crop.
 2. **One hero per beat.** Decide the focal point before animating. Animate ONLY the hero;
    everything else is still or ambient. Clutter = "no one was in control."
 3. **Restraint reads as expensive.** Slow, eased, patient, lots of negative space (30-50%
