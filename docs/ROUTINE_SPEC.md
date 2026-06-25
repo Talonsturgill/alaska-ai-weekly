@@ -29,6 +29,13 @@ Research exhaustively. Iterate the video many times. Quality over economy — th
 frugality goal here. (The ONLY limits are the structural guardrails below, which exist for
 control and correctness, not cost.)
 
+REPO + CADENCE: do ALL work in talonsturgill/alaska-ai-weekly (NOT linkedin-alaska-ai-weekly), on a
+claude/dispatch-<date> branch off main that you push AND merge. This routine runs DAILY, so dedupe
+is mandatory: never repeat a story within the same week, and never an exact repeat. The ledger is
+config/state.yaml > dispatch_history; the dedupe helper is scripts/dedupe.py (list at the start of
+research, check before you lock a story, add at the end). It must be written every run and checked
+every run.
+
 NON-NEGOTIABLE GUARDRAILS
 1. Fan-out must be NON-RECURSIVE. Every agent you spawn must be a no-spawn type (researcher,
    Explore, validator, editor, scorer — NEVER general-purpose/claude, which carry the Agent
@@ -57,7 +64,9 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
 - scripts/upload_video.py (→ one-click link), scripts/dispatch_email.py (→ Gmail draft).
 
 PHASE 1 — RESEARCH (go wide; non-recursive)
-Fan out an extensive research team (rules above) across current Alaska + AI/robotics/ML news:
+FIRST, DEDUPE: run `python scripts/dedupe.py list --days 14` to load the EXCLUSION list of
+recently-covered topics + key entities. Every story you pursue must avoid these — no repeat within
+the week, no exact repeat ever. Then fan out an extensive research team (rules above) across current Alaska + AI/robotics/ML news:
 gov/.edu science (UAF, ACEP/ACUASI, USGS, NOAA, NASA, FAA, Geophysical Institute), fisheries &
 wildlife, energy/grid/data-centers, defense/aviation/UAS, Alaska-Native-led & rural tech, and a
 "what's breaking this week" wildcard. Run multiple rounds if needed. Each agent returns findings
@@ -71,7 +80,9 @@ load-bearing numbers against a SECOND source. Anything that can't be independent
 cut or labeled. A story may not proceed to production unless it clears this gate clean.
 
 PHASE 3 — PICK THE STORY
-Choose ONE story: recent (live hook within ~weeks), fully fact-checked, with a genuine AI angle
+Before you lock it, DEDUPE-CHECK: `python scripts/dedupe.py check --entities "<comma-sep key
+entities, e.g. cook inlet,beluga,noaa>"`. If it prints DUP, the story is too close to a recent
+Dispatch — choose a different one. Choose ONE story: recent (live hook within ~weeks), fully fact-checked, with a genuine AI angle
 AND an honest caveat (the real limit), positive-toward-Alaska (read local sentiment; never
 "Silicon Valley saves Alaska"), and NOT in dispatch_history. If nothing clears the bar, say so
 and stop rather than forcing a weak story.
@@ -127,22 +138,29 @@ Loop until the piece is genuinely good — keep fixing and re-rendering; spend t
   (track fits, audible-but-under-VO, composer credited) + VOICE CHECK (script == captions,
   phonetic numbers right). Fail → fix → re-mux → re-measure.
 - EDITOR + SCORER: run the `editor` agent (hard-graded critique, AI-tells, risk flags) and the
-  `scorer` agent against `config/scoring_rubric.yaml`. If the score is below threshold, take
+  `scorer` agent against `config/dispatch_rubric.yaml` (ship 9.0). If the score is below threshold, take
   the one-sentence fix + the editor notes, IMPROVE the script/visuals/audio, and re-run the
   whole review. ITERATE until it passes the quality gate. Do not deliver a piece that hasn't
   passed.
 
-PHASE 7 — DELIVER TO GMAIL (draft, human-reviewed; token-safe)
+PHASE 7 — DELIVER, FULLY DONE (no pending states). Work in talonsturgill/alaska-ai-weekly ONLY.
+Everything must be live and downloadable the INSTANT the Gmail draft hits the inbox — never
+"this lands once the commit pushes." Do the whole thing autonomously.
 1. Encode the post-masters: 9:16 (TikTok) + 4:5 (LinkedIn), H.264 High, ~12–14 Mbps, faststart,
    AAC 48k, −14 LUFS.
-2. scripts/upload_video.py for each → one-click DIRECT-download URLs (bytes never touch the model).
+2. Upload BOTH with scripts/upload_video.py → one-click DIRECT-download URLs (bytes never touch the
+   model). Then VERIFY each URL is LIVE before continuing: `curl -fsIL "<url>"` must return HTTP 200
+   with a real content-length that serves the file. Re-upload/retry until it actually downloads.
+   NEVER create the draft with a dead, slow, or "ready later" link.
 3. scripts/dispatch_email.py → builds the draft: copy-paste POST TEXT, prominent DOWNLOAD
    buttons (LinkedIn 4:5 + TikTok 9:16), inline poster, VOICE + MUSIC credits, SOURCES (every
    load-bearing claim + primary URL), the score/grade summary, and the illustrative-numbers note.
 4. Hand the payload to the Gmail create_draft connector.
-5. Commit scripts + post + stills (NOT the heavy mp4s) to a claude/dispatch-<date> branch + draft
-   PR as audit trail. Append this run to config/state.yaml > dispatch_history (date, topic,
-   archetype, palette, voice) so the next Dispatch differs.
+5. Finish the git side COMPLETELY: commit scripts + post + stills (NOT the heavy mp4s) and the
+   ledger (run `scripts/dedupe.py add --date <d> --topic <t> --slug <s> --entities "a,b,c"
+   --archetype <a> --palette <p> --voice <v>`, which writes config/state.yaml > dispatch_history)
+   to a claude/dispatch-<date> branch, push it, open a PR, mark it ready, and MERGE it to main. No
+   dangling or draft PRs — merge what you create. (Repo: talonsturgill/alaska-ai-weekly only.)
 
 ACCURACY + CULTURAL RESPECT
 Cross-check load-bearing numbers against a second source; say which figure you used; label or cut
@@ -154,6 +172,6 @@ unverified Native words on screen, recommend consulting + compensating the relev
 DEFINITION OF DONE
 A Gmail draft exists with the post text, voice + music credits, sources, the score summary, and
 WORKING one-click download links for the 9:16 (TikTok) and 4:5 (LinkedIn) cuts; the frame review
-found zero defects; all audio gates passed; the scorer passed the rubric; the audit PR is open;
+found zero defects; all audio gates passed; the scorer passed config/dispatch_rubric.yaml; the download links are VERIFIED LIVE (HTTP 200) and immediately downloadable; the audit branch is pushed AND MERGED to main;
 dispatch_history is updated. Report the story, concept/archetype, palette, voice + music, and the
 final score.

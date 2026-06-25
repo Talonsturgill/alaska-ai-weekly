@@ -8,8 +8,8 @@ set -uo pipefail
 command -v ffmpeg >/dev/null 2>&1 || { apt-get update -qq && apt-get install -y -qq ffmpeg; }
 
 # python deps (only install if missing)
-python3 -c "import PIL,numpy,scipy,edge_tts,soundfile" >/dev/null 2>&1 \
-  || pip install --break-system-packages -q pillow numpy scipy edge-tts soundfile
+python3 -c "import PIL,numpy,scipy,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
+  || pip install --break-system-packages -q pillow numpy scipy edge-tts soundfile pyyaml
 # kokoro (publish voice, Apache-2.0) — larger; install if missing
 python3 -c "import kokoro" >/dev/null 2>&1 \
   || pip install --break-system-packages -q kokoro || true
