@@ -29,6 +29,13 @@ Research exhaustively. Iterate the video many times. Quality over economy — th
 frugality goal here. (The ONLY limits are the structural guardrails below, which exist for
 control and correctness, not cost.)
 
+REPO + CADENCE: do ALL work in talonsturgill/alaska-ai-weekly (NOT linkedin-alaska-ai-weekly), on a
+claude/dispatch-<date> branch off main that you push AND merge. This routine runs DAILY, so dedupe
+is mandatory: never repeat a story within the same week, and never an exact repeat. The ledger is
+config/state.yaml > dispatch_history; the dedupe helper is scripts/dedupe.py (list at the start of
+research, check before you lock a story, add at the end). It must be written every run and checked
+every run.
+
 NON-NEGOTIABLE GUARDRAILS
 1. Fan-out must be NON-RECURSIVE. Every agent you spawn must be a no-spawn type (researcher,
    Explore, validator, editor, scorer — NEVER general-purpose/claude, which carry the Agent
@@ -57,7 +64,9 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
 - scripts/upload_video.py (→ one-click link), scripts/dispatch_email.py (→ Gmail draft).
 
 PHASE 1 — RESEARCH (go wide; non-recursive)
-Fan out an extensive research team (rules above) across current Alaska + AI/robotics/ML news:
+FIRST, DEDUPE: run `python scripts/dedupe.py list --days 14` to load the EXCLUSION list of
+recently-covered topics + key entities. Every story you pursue must avoid these — no repeat within
+the week, no exact repeat ever. Then fan out an extensive research team (rules above) across current Alaska + AI/robotics/ML news:
 gov/.edu science (UAF, ACEP/ACUASI, USGS, NOAA, NASA, FAA, Geophysical Institute), fisheries &
 wildlife, energy/grid/data-centers, defense/aviation/UAS, Alaska-Native-led & rural tech, and a
 "what's breaking this week" wildcard. Run multiple rounds if needed. Each agent returns findings
@@ -71,7 +80,9 @@ load-bearing numbers against a SECOND source. Anything that can't be independent
 cut or labeled. A story may not proceed to production unless it clears this gate clean.
 
 PHASE 3 — PICK THE STORY
-Choose ONE story: recent (live hook within ~weeks), fully fact-checked, with a genuine AI angle
+Before you lock it, DEDUPE-CHECK: `python scripts/dedupe.py check --entities "<comma-sep key
+entities, e.g. cook inlet,beluga,noaa>"`. If it prints DUP, the story is too close to a recent
+Dispatch — choose a different one. Choose ONE story: recent (live hook within ~weeks), fully fact-checked, with a genuine AI angle
 AND an honest caveat (the real limit), positive-toward-Alaska (read local sentiment; never
 "Silicon Valley saves Alaska"), and NOT in dispatch_history. If nothing clears the bar, say so
 and stop rather than forcing a weak story.
@@ -111,38 +122,86 @@ ACES grade, split-tone toward THIS story's palette, bloom, luma-only grain, vign
 CA, dithering), slow eased push-in + parallax + drift + motion that serves the illustration,
 supersampled hero/type, and OPEN CAPTIONS (burned in, lower-third inside the 4:5 safe box,
 legible at phone size). Layered audio (ambient + motivated SFX) under an EQ-carved, ducked VO.
+Build a deliberate ENDING (principle 6): after the VO finishes, a branded OUTRO — wordmark sign-off
++ tagline + sources credit, revealed in staged beats — then a gentle cinematic fade. Motion must run
+to the final frame; NEVER end on a static hold (the EVENT_CADENCE gate enforces this). Design the
+ending in the storyboard, not after.
 Render in the background in parallel chunks.
 
-PHASE 6 — REVIEW, GRADE, ITERATE UNTIL IT PASSES (do not skip)
-Loop until the piece is genuinely good — keep fixing and re-rendering; spend tokens freely:
+PHASE 6 — THE AUTONOMOUS SELF-HEALING LOOP (ends ONLY at perfection)
+The human is NEVER the QA. This loop does not stop, ask, or hand off — it runs itself until the
+piece is flawless, then delivers. There is NO cycle cap and NO "best-of-N" fallback: inside the
+routine, tokens and context are not the constraint, so you keep going until every check passes.
+A failure is NOT a stop — it is simply the next iteration. The loop's ONLY exit is PASS.
+Drive it with `scripts/dispatch_loop.sh` (render → gate → encode), which refuses to encode unless
+the gate is green; on a FAIL you patch the engine and re-invoke it. On ANY failure at either gate:
+  1. READ the structured failure — the failing check + the exact region/time (quality_report.json).
+  2. DELEGATE the repair to ONE `dispatch-fixer` subagent so the master loop's context stays LEAN.
+     Hand it only the failure + the engine path. IT reads the offending frames and code in ITS OWN
+     context, patches the ROOT CAUSE (cause, not symptom — and never relaxes a threshold to pass),
+     verifies (test-render the range + re-gate it), and hands back a SHORT summary: the cause at
+     file:line, what changed, and the measured pass. The master never ingests the frame dumps or edit
+     churn — it just orchestrates render → gate → delegate → re-gate, so it can loop indefinitely
+     without bloating. `dispatch-fixer` is NO-SPAWN: ONE level, NO further fan-out (never repeat the
+     runaway-agent incident). `.claude/agents/dispatch-fixer.md` carries its root-cause playbook.
+  3. RE-RENDER (the whole piece if the fix was global, else just the affected range) and RE-RUN the gate.
+  4. Repeat. Do not advance, encode, or deliver until BOTH gates are green with zero hard_blockers.
+Because the loop cannot exit except on PASS, THE ROUTINE ALWAYS DELIVERS — and what it delivers is
+always flawless. The ONLY non-quality exception is a genuine infrastructure outage (a tool/API down,
+not a quality shortfall): escalate that in the draft. You never ship a known flaw, and you never quit
+because the bar was hard — a loop that ends on a failure is a broken loop.
+
 - PRE-RENDER LINT: every on-screen string/caption is in code — spell-check them, and verify
   every on-screen number/name/date against the fact-check output.
-- FRAME REVIEW (visual): contact sheets sampling the ENTIRE timeline (~every 1.5–2s); LOOK.
-  Zoom into EVERY frame with text. Check first/last frames + each transition. Catch typos,
-  wrong numbers, cropping/safe-area (9:16 AND the 4:5 crop), legibility at phone size, focal
-  hierarchy, hero-reads-in-silhouette, overlaps/aliasing/banding, captions match VO + timing.
-  Fix and RE-RENDER affected ranges. Repeat until zero defects.
+
+- GATE A — OBJECTIVE QUALITY GATE (machine, mandatory, FIRST). Run
+  `python .claude/skills/alaska-dispatch/quality_gate.py` over the rendered frames. It MUST exit 0.
+  It measures, and FAILS the render on, the exact regressions a human has had to flag before — this
+  is the checks-and-balances layer so they never see them again:
+    · SHARPNESS    — variance-of-Laplacian floor   → "looks blurry"
+    · HUD_TEXT     — chart-card glyph-edge energy   → "chart letters illegible"
+    · CAPTION_TEXT — caption glyph-edge energy       → "captions generic / hard to read"
+    · EVENT_CADENCE— no on-screen-dead window > 5s   → "boring / too slow / make something happen every ~5s"
+    · CAPTION_SYNC — captions built from the TTS word-timings → "voice doesn't match the captions"
+  On any FAIL it names the check + the region/time. Diagnose WHY (e.g. HUD drawn before the grade,
+  DoF too strong, a dead stretch, captions not voice-driven), fix it in the engine, re-render the
+  affected range, re-run. Do not proceed to Gate B until Gate A is green. It also writes
+  `quality_report.json` — carry its scorecard into the Gmail draft.
+
 - AUDIO GATE: integrated −14 ±0.5 LUFS, true peak ≤ −1.0 dBTP, music-only tail audible
   (> −34 dB), voice dominant, no clipping, mono fold-down OK. SOUND CHECK + MUSIC CHECK
   (track fits, audible-but-under-VO, composer credited) + VOICE CHECK (script == captions,
   phonetic numbers right). Fail → fix → re-mux → re-measure.
-- EDITOR + SCORER: run the `editor` agent (hard-graded critique, AI-tells, risk flags) and the
-  `scorer` agent against `config/scoring_rubric.yaml`. If the score is below threshold, take
-  the one-sentence fix + the editor notes, IMPROVE the script/visuals/audio, and re-run the
-  whole review. ITERATE until it passes the quality gate. Do not deliver a piece that hasn't
-  passed.
 
-PHASE 7 — DELIVER TO GMAIL (draft, human-reviewed; token-safe)
+- FRAME REVIEW (visual, on a Gate-A-green render): contact sheets sampling the ENTIRE timeline
+  (~every 1.5–2s); LOOK. Zoom into EVERY frame with text. Check first/last frames + each transition.
+  Catch typos, wrong numbers, cropping/safe-area (9:16 AND the 4:5 crop), focal hierarchy,
+  hero-reads-in-silhouette, overlaps/aliasing/banding. Fix and RE-RENDER affected ranges.
+
+- GATE B — EDITOR + SCORER (taste, world-class bar). Run the `editor` agent (hard critique, AI-tells,
+  risk flags) and the `scorer` agent against `config/dispatch_rubric.yaml` (ship 9.0, zero hard_blockers).
+  Below threshold → take the one-sentence fix + editor notes, IMPROVE script/visuals/audio, and re-run
+  the WHOLE review from Gate A. Loop until BOTH gates are green with zero hard_blockers; only then encode
+  and deliver. The loop does not exit on anything less.
+
+PHASE 7 — DELIVER, FULLY DONE (no pending states). Work in talonsturgill/alaska-ai-weekly ONLY.
+Everything must be live and downloadable the INSTANT the Gmail draft hits the inbox — never
+"this lands once the commit pushes." Do the whole thing autonomously.
 1. Encode the post-masters: 9:16 (TikTok) + 4:5 (LinkedIn), H.264 High, ~12–14 Mbps, faststart,
    AAC 48k, −14 LUFS.
-2. scripts/upload_video.py for each → one-click DIRECT-download URLs (bytes never touch the model).
+2. Upload BOTH with scripts/upload_video.py → one-click DIRECT-download URLs (bytes never touch the
+   model). Then VERIFY each URL is LIVE before continuing: `curl -fsIL "<url>"` must return HTTP 200
+   with a real content-length that serves the file. Re-upload/retry until it actually downloads.
+   NEVER create the draft with a dead, slow, or "ready later" link.
 3. scripts/dispatch_email.py → builds the draft: copy-paste POST TEXT, prominent DOWNLOAD
    buttons (LinkedIn 4:5 + TikTok 9:16), inline poster, VOICE + MUSIC credits, SOURCES (every
    load-bearing claim + primary URL), the score/grade summary, and the illustrative-numbers note.
 4. Hand the payload to the Gmail create_draft connector.
-5. Commit scripts + post + stills (NOT the heavy mp4s) to a claude/dispatch-<date> branch + draft
-   PR as audit trail. Append this run to config/state.yaml > dispatch_history (date, topic,
-   archetype, palette, voice) so the next Dispatch differs.
+5. Finish the git side COMPLETELY: commit scripts + post + stills (NOT the heavy mp4s) and the
+   ledger (run `scripts/dedupe.py add --date <d> --topic <t> --slug <s> --entities "a,b,c"
+   --archetype <a> --palette <p> --voice <v>`, which writes config/state.yaml > dispatch_history)
+   to a claude/dispatch-<date> branch, push it, open a PR, mark it ready, and MERGE it to main. No
+   dangling or draft PRs — merge what you create. (Repo: talonsturgill/alaska-ai-weekly only.)
 
 ACCURACY + CULTURAL RESPECT
 Cross-check load-bearing numbers against a second source; say which figure you used; label or cut
@@ -152,8 +211,9 @@ beluga threats are noise/vessels, not Native hunting): humble framing, no Native
 unverified Native words on screen, recommend consulting + compensating the relevant tribes.
 
 DEFINITION OF DONE
-A Gmail draft exists with the post text, voice + music credits, sources, the score summary, and
+A video Dispatch is ALWAYS delivered AND always flawless — the self-healing loop cannot exit until
+both gates are green, so there is no zero-output run and no flawed ship. A Gmail draft exists with the post text, voice + music credits, sources, the score summary, and
 WORKING one-click download links for the 9:16 (TikTok) and 4:5 (LinkedIn) cuts; the frame review
-found zero defects; all audio gates passed; the scorer passed the rubric; the audit PR is open;
+found zero defects; all audio gates passed; the scorer passed config/dispatch_rubric.yaml; the download links are VERIFIED LIVE (HTTP 200) and immediately downloadable; the audit branch is pushed AND MERGED to main;
 dispatch_history is updated. Report the story, concept/archetype, palette, voice + music, and the
 final score.

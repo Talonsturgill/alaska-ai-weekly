@@ -17,3 +17,6 @@ dispatch_history:
     topic: "Cook Inlet beluga acoustic AI (NOAA + Microsoft AI for Good)"
     archetype: "single-hero portrait — sound made visible"
     slug: dispatch-2026-06-24-beluga
+    key_entities: [cook inlet, beluga, noaa, microsoft ai for good, passive acoustic, hydrophone]
+    palette: "glacial teal-green + aurora"
+    voice: "edge_tts:en-US-AvaMultilingualNeural"

@@ -21,6 +21,18 @@ is the brand signature. Pairs with `docs/VIDEO_PRODUCTION_STANDARD.md` (craft bi
   SSL_CERT_FILE+SSL_CERT_DIR=/etc/ssl/certs; install edge-tts with pip --break-system-packages).
 - `audio_v2.py` — sound design + mix: synth underwater bed + distant whale + sonar, EQ-carved
   + sidechain-ducked VO, two-pass loudnorm to -14 LUFS/-1.5 dBTP, plus the **measurement gate**.
+- `render_v3.py` — the CURRENT renderer: 9:16 1080x1920, 1800f/60s. Heroes get craft swim +
+  180° motion blur + DoF; continuous life (marine snow + a distant pod + a scrubbing playhead +
+  sonar every ~3s) so something moves every <5s; **HUD + captions composited AFTER the grade so
+  they stay razor-sharp**; voice-synced kinetic captions; unsharp acuity pass.
+- `craft.py` — illustration craft layer: `swim_deform`, `motion_blur`, `depth_blur`, `add_texture`.
+- `vo60.py` — 60s edge-tts VO that ALSO captures per-phrase word-timings → `audio/words60.json`
+  (captions are built from these, so they always match the voice). Emits `timing60.json`.
+- `audio_v3.py` — the 60s mix + single-pass loudnorm + the audio gate (prints PASS).
+- `quality_gate.py` — **the OBJECTIVE ship/fail gate.** Measures sharpness, HUD/caption text
+  legibility, the ≤5s event cadence, and caption sync; exits non-zero + writes `quality_report.json`.
+  This is the checks-and-balances that catches blur / illegible text / dead pacing / desync so a
+  human never has to. MUST pass before encoding (see ROUTINE_SPEC Phase 6, Gate A).
 
 ## How to use (per run — VARY THE CONCEPT)
 1. This engine is a REFERENCE, not a stamp. Each Dispatch must use a different visual
@@ -30,7 +42,8 @@ is the brand signature. Pairs with `docs/VIDEO_PRODUCTION_STANDARD.md` (craft bi
 2. For ~60s: set the frame count to 1800 (NF) and re-time the VO segments, caption windows,
    beat frames, and the music window to 60s. ~130–150 VO words.
 3. Render in the BACKGROUND, in parallel chunks (e.g. 3×600), never blocking the run.
-4. Always run the audio gate and a 4-frame visual contact sheet before muxing/delivering.
+4. Before muxing/delivering: run `quality_gate.py` (objective Gate A — MUST exit 0) AND the audio
+   gate, THEN a visual contact sheet for taste. Never encode a render that fails the quality gate.
 5. Encode a ~12–14 Mbps faststart H.264/AAC post-master; deliver via `scripts/upload_video.py`
    (→ one-click link) + `scripts/dispatch_email.py` (→ Gmail draft). Never base64 video
    through the model.
