@@ -142,15 +142,10 @@ def outro_card(out,f):
     if a1>0.02:
         wf=fr(78,800,144); s="ALASKA.AI"; w=tw(s,wf,0.05)
         tk(d,s,wf,(255,222,120,int(255*a1)),(W-w)//2,1444-int((1-a1)*16),0.05)
-    a2=E.out_cubic(E.seg(f,1678,1724))                          # tagline in
+    a2=E.out_cubic(E.seg(f,1660,1700))                          # tagline in (finishes as the fade begins)
     if a2>0.02:
         tf=fr(40,600,144); s="what's moving in alaska ai, this week"; w=tw(s,tf,0.02)
         tk(d,s,tf,(228,240,250,int(228*a2)),(W-w)//2,1552-int((1-a2)*14),0.02)
-    a3=E.out_cubic(E.seg(f,1730,1772))                          # sources credit + rule
-    if a3>0.02:
-        cf=mono(20,m=True); s="NOAA  ·  JASA  ·  MICROSOFT AI FOR GOOD"; w=tw(s,cf,0.05)
-        d.line([(W//2-w//2-18,1606),(W//2-w//2-18+int((w+36)*a3),1606)],fill=(255,222,120,int(140*a3)),width=2)
-        tk(d,s,cf,(150,178,205,int(205*a3)),(W-w)//2,1620,0.05)
 
 print("precompute...",file=sys.stderr)
 BASE=build_base();ADULT=beluga(1.12);CALF=beluga(0.5,(120,134,150),(78,92,110),(150,175,196))
@@ -235,8 +230,8 @@ def render_frame(f):
         sf=fr(38,900,144);tk(du,"alaska.ai",sf,(255,255,255,int((150+95*endb)*so)),(W-tw("alaska.ai",sf))//2,1700)
     fin=E.seg(f,0,14)
     if fin<1: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(255*(1-E.out_cubic(fin))))))
-    outf=E.seg(f,1766,1800)        # gentle cinematic fade-out (also guarantees tail motion)
-    if outf>0: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(230*E.in_out_sine(outf)))))
+    outf=E.seg(f,1700,1800)        # cinematic fade-out from ~56.7s — carries motion across the whole outro
+    if outf>0: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(245*E.in_out_sine(outf)))))
     return out.convert("RGB")
 # spectrogram card — crisp HUD, bigger legible labels, continuous scrubbing playhead
 SPW,SPH=884,182;SPX,SPY=(W-SPW)//2,1170
