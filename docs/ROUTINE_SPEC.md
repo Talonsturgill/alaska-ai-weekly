@@ -55,7 +55,9 @@ Think like a producer/creative director, not a renderer. Per Dispatch, decide:
    composition, and motion treatment to fit the story. Different every week, same DNA.
 4. **Write** to the writing rules (no em/en dashes, no semicolons, contractions, vary
    sentence length, ≤3 commas, banned-word list, phonetic VO). For ~60s at a calm pace
-   that's **~130–150 VO words** across ~7–9 short segments; trim ≥5% after drafting.
+   that's **~130–150 VO words** across ~7–9 short segments; trim ≥5% after drafting. Pick the narration **voice from `config/voices.yaml`**
+   to fit the story's tone and VARY it run-to-run (publish in a Kokoro voice, Apache-2.0; edge-tts
+   drafts only); pick royalty-free music and credit the composer; record the voice in `dispatch_history`.
 5. **Beat map for 60s (1800 frames @30fps):** ~0–3s hook (land the hero), escalating build
    beats (each 5–10s) with internal motion, the thesis/payload landing on a stressed word
    ~0:45–0:52, a ~1s dead-still hold, resolution, ~3s sign-off. Time beats to the VO + music.

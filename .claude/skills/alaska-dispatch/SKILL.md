@@ -36,7 +36,8 @@ is the brand signature. Pairs with `docs/VIDEO_PRODUCTION_STANDARD.md` (craft bi
    through the model.
 
 ## Dependencies (install in the routine environment setup script; cached)
-- ffmpeg, Python 3.11+, `pip install --break-system-packages pillow numpy scipy edge-tts`
+- ffmpeg, Python 3.11+, `pip install --break-system-packages pillow numpy scipy edge-tts kokoro soundfile`
+  (Kokoro = Apache-2.0 publish voice, ~327MB cached; edge-tts = drafts. Voice roster: config/voices.yaml)
 - `rclone` for the upload step (`curl https://rclone.org/install.sh | bash`)
 - Fonts are committed under `../alaska-ai-brief/fonts/` — no download needed.
 
