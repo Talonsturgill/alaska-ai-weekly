@@ -1,0 +1,11 @@
+Cook Inlet has its own belugas. The last good count put them around three hundred and thirty, and they don't leave the inlet, so the water off Anchorage is the whole world for one of the most endangered whale populations in the country.
+
+You can't survey what you can't see, and a silty tide hides a white whale fast. So a team from NOAA and Microsoft's AI for Good sank a ring of microphones across the inlet and recorded it for years. Then they taught a neural network to do what no small team ever could. Listen to all of it, and pull one beluga call out of the rumble of a passing ship.
+
+It works. The model flags a real call with better than ninety six percent accuracy, and it turns months of recordings into a night's work. It even helped find a winter feeding ground in Tuxedni Bay that nobody had documented.
+
+Here's the honest part. A microphone can tell you a whale is out there. It can't tell you how many are left, and it can't make the inlet any quieter. The count still comes from a plane and a patient pair of eyes. The machine just widens how much of the inlet we can hear at once.
+
+That feels like the right job for this kind of AI up here. Not the oracle. The extra set of ears.
+
+Would you rather see the money go toward more listening, or toward making Cook Inlet quieter for the whales already in it?

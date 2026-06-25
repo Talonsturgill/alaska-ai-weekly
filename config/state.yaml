@@ -6,3 +6,14 @@ default_byline: "BY TALON"
 default_kicker: "WEEKLY BRIEF"
 default_motto: "what's moving in alaska ai, this week"
 default_coords: "61°13′N  ·  149°54′W"
+
+# Target length for video Dispatches.
+dispatch_target_seconds: 60
+
+# Rolling record so the "producer" never repeats a concept/topic.
+# See docs/ROUTINE_SPEC.md (Phase 3). Don't reuse an archetype or topic from the last ~6.
+dispatch_history:
+  - date: 2026-06-24
+    topic: "Cook Inlet beluga acoustic AI (NOAA + Microsoft AI for Good)"
+    archetype: "single-hero portrait — sound made visible"
+    slug: dispatch-2026-06-24-beluga

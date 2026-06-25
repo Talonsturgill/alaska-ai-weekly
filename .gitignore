@@ -4,4 +4,4 @@ __pycache__/
 .DS_Store
 .venv/
 .env
-.claude/skills/alaska-ai-brief/fonts/
+# fonts are committed (OFL-licensed) so routine clones don't re-download them
