@@ -1,0 +1,69 @@
+# ALASKA.AI Dispatch — WORLD-CLASS video rubric (used by the scorer + critic panel).
+# Separate from config/scoring_rubric.yaml (that one grades the weekly text post).
+# The routine iterates until this passes. Bar is intentionally high ("banger tier").
+rubric:
+  ship_threshold: 9.0          # out of 10 — world-class, not "fine"
+  max_revision_cycles: 6       # iterate hard; if still failing, escalate in the Gmail draft, don't ship a fail
+  hard_blockers:               # ANY of these = automatic fail regardless of score
+    - "a factual error or an unverifiable load-bearing claim"
+    - "a typo or wrong number anywhere on screen"
+    - "audio gate fails (LUFS/TP/clipping) or music inaudible/uncredited"
+    - "captions missing, illegible at phone size, or out of sync"
+    - "cultural misstep (savior tone, unverified Native words/iconography)"
+    - "palette repeats a recent Dispatch or defaults to blue without reason"
+  criteria:
+    - name: "Hook & retention"
+      weight: 0.12
+      10: "First 1-2s stops the scroll; pattern interrupts hold attention; pays off; loop-friendly."
+      7:  "Decent open, watch-through likely, minor saggy beat."
+      4:  "Slow or generic open; attention drifts."
+    - name: "Illustration craft & detail"
+      weight: 0.16
+      10: "Depicts the real subject with depth-aware lighting (key/fill/rim), contact shadows/AO, material texture, layered planes. Looks designed and expensive; zero amateur tells."
+      7:  "Clean and clear but flat in places; some surfaces read as plain fills."
+      4:  "Flat clip-art feel; no lighting/texture/depth."
+    - name: "Motion & animation craft"
+      weight: 0.12
+      10: "Everything eased (no linear); anticipation + overshoot/settle; 180° motion blur on moves; secondary animation; the subject genuinely MOVES (swim/flow/rotate), not a bobbing sprite."
+      7:  "Mostly eased, some life, blur missing on fast moves."
+      4:  "Linear/robotic, static sprites, pops."
+    - name: "Composition & staging"
+      weight: 0.08
+      10: "Clear focal hierarchy, hero reads in silhouette, intentional negative space, safe areas honored in 9:16 AND 4:5."
+      7:  "Reads, minor crowding or a crop risk."
+      4:  "Competing elements; unsafe crops."
+    - name: "Color & grade"
+      weight: 0.08
+      10: "A fresh color world that fits THIS story (not default blue, not a recent palette); cohesive; filmic finishing (grade/bloom/grain/vignette/dither)."
+      7:  "Pleasant but generic or slightly off-story."
+      4:  "Muddy, banded, or repeats a recent look."
+    - name: "Typography & captions"
+      weight: 0.06
+      10: "Fraunces/JetBrains system used with intent; kinetic type; open captions legible muted at phone size, in sync."
+      7:  "Legible, captions present, type a touch static."
+      4:  "Hard to read or captions weak."
+    - name: "Sound design & mix"
+      weight: 0.10
+      10: "Layered (ambient + motivated SFX) under an EQ-carved, ducked VO; passes the audio gate; music fits the arc and is credited by composer."
+      7:  "VO+music balanced, thin on layers/SFX."
+      4:  "Flat or fails a gate metric."
+    - name: "VO–illustration sync & entertainment"
+      weight: 0.08
+      10: "Voice rides the picture beat-for-beat; the piece is genuinely entertaining and feels alive."
+      7:  "Synced, watchable, not gripping."
+      4:  "Narration-over-slideshow feel."
+    - name: "Accuracy & sourcing"
+      weight: 0.10
+      10: "Every claim ties to a primary source (load-bearing ones to two); on-screen numbers flagged illustrative unless from a real feed; honest caveat present."
+      7:  "All sourced; one secondary-only."
+      4:  "A claim is thin or unsourced."
+    - name: "Alaska authenticity & cultural respect"
+      weight: 0.06
+      10: "Reads true to Alaskans; pro-Alaska not savior; cultural subjects handled per the standard."
+      7:  "Fine, slightly outsider in one spot."
+      4:  "Tone-deaf or imported-feeling."
+    - name: "Writing & post quality"
+      weight: 0.04
+      10: "VO + on-screen + post obey the writing rules; LinkedIn-tuned hook; real closing question."
+      7:  "Minor rule slip."
+      4:  "Multiple slips or off-voice."

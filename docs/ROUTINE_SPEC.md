@@ -48,7 +48,11 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
 - .claude/skills/alaska-dispatch/ — proven render + VO + sound + finishing engine. A STARTING
   POINT TO ADAPT, never a stamp.
 - .claude/skills/deep-research-ak/ — research beats + credibility ranks.
-- config/voices.yaml — approved narration voices. config/scoring_rubric.yaml — the grade.
+- config/voices.yaml — approved narration voices. config/dispatch_rubric.yaml — the WORLD-CLASS grade (ship 9.0).
+- docs/WORLD_CLASS.md — REQUIRED add-on (read it): anti-slop creed, per-Dispatch TASTE DIALS + STYLE MODE,
+  a STORYBOARD/PREVIZ gate before rendering, the illustration-detail craft bar, the CRITIC PANEL (a virtual
+  studio of no-spawn expert agents that grade + iterate to >=9.0), reference benchmarking, retention engineering.
+  Phase 4 sets the dials + mode and passes the storyboard gate; Phase 6 convenes the critic panel and iterates.
 - config/state.yaml > dispatch_history — what's been done (never repeat topic/archetype/palette).
 - scripts/upload_video.py (→ one-click link), scripts/dispatch_email.py (→ Gmail draft).
 
