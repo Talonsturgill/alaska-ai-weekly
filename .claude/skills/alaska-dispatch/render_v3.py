@@ -120,16 +120,37 @@ def caption(out,f):
     fnt=fr(58,650); maxw=W-2*104; spw=int(fnt.size*0.30)
     lines=_wrap(words,fnt,maxw,spw)
     if len(lines)>3: fnt=fr(46,650); spw=int(fnt.size*0.30); lines=_wrap(words,fnt,maxw,spw)
-    lh=int(fnt.size*1.18); blockh=lh*len(lines); y0=1500-blockh//2; d=ImageDraw.Draw(out)
+    nl=len(lines); lh=int(fnt.size*1.18); blockh=lh*nl; y0=1500-blockh//2; d=ImageDraw.Draw(out)
     for li,ln in enumerate(lines):
-        lwf=sum(tw(w,fnt) for w,_ in ln)+spw*(len(ln)-1); x=(W-lwf)//2; y=y0+li*lh
+        lr=E.out_cubic(max(0.0,min(1.0,(prog-li/max(1,nl))/0.16)))   # each line reveals as the VO reaches it
+        la=ap*lr
+        if la<=0.02: continue
+        rise=int((1-lr)*12)                                          # slight settle-up on entry
+        lwf=sum(tw(w,fnt) for w,_ in ln)+spw*(len(ln)-1); x=(W-lwf)//2; y=y0+li*lh+rise
         for (w,mid) in ln:
             col=(244,250,255) if mid<=prog-0.05 else (GOLD if mid<=prog+0.05 else (148,168,194))
-            d.text((x,y),w,font=fnt,fill=(*col,int(255*ap)),stroke_width=3,stroke_fill=(3,8,18,int(225*ap)))
+            d.text((x,y),w,font=fnt,fill=(*col,int(255*la)),stroke_width=3,stroke_fill=(3,8,18,int(225*la)))
             x+=tw(w,fnt)+spw
     uw=W-2*150; ux=150; uy=y0+blockh+16                         # brand progress underline = spoken time
     d.line([(ux,uy),(ux+uw,uy)],fill=(70,90,116,int(110*ap)),width=2)
     d.line([(ux,uy),(ux+int(uw*prog),uy)],fill=(*GOLD,int(225*ap)),width=3)
+def outro_card(out,f):
+    """Branded sign-off that keeps the outro alive after speech (staged reveals = event cadence)."""
+    if f<1616: return
+    d=ImageDraw.Draw(out)
+    a1=E.out_cubic(E.seg(f,1616,1664))                          # wordmark in
+    if a1>0.02:
+        wf=fr(78,800,144); s="ALASKA.AI"; w=tw(s,wf,0.05)
+        tk(d,s,wf,(255,222,120,int(255*a1)),(W-w)//2,1444-int((1-a1)*16),0.05)
+    a2=E.out_cubic(E.seg(f,1678,1724))                          # tagline in
+    if a2>0.02:
+        tf=fr(40,600,144); s="what's moving in alaska ai, this week"; w=tw(s,tf,0.02)
+        tk(d,s,tf,(228,240,250,int(228*a2)),(W-w)//2,1552-int((1-a2)*14),0.02)
+    a3=E.out_cubic(E.seg(f,1730,1772))                          # sources credit + rule
+    if a3>0.02:
+        cf=mono(20,m=True); s="NOAA  ·  JASA  ·  MICROSOFT AI FOR GOOD"; w=tw(s,cf,0.05)
+        d.line([(W//2-w//2-18,1606),(W//2-w//2-18+int((w+36)*a3),1606)],fill=(255,222,120,int(140*a3)),width=2)
+        tk(d,s,cf,(150,178,205,int(205*a3)),(W-w)//2,1620,0.05)
 
 print("precompute...",file=sys.stderr)
 BASE=build_base();ADULT=beluga(1.12);CALF=beluga(0.5,(120,134,150),(78,92,110),(150,175,196))
@@ -141,7 +162,7 @@ PART=[dict(x=float(_pr.random()*W),y=float(_pr.random()*H),z=float(_pr.random())
 _dp=beluga(0.34,(76,114,142),(50,76,100),(120,150,180))
 _dpa=np.asarray(_dp).astype(np.float32);_dpa[...,:3]=craft.depth_blur(_dpa[...,:3],2.6)
 DPOD=Image.fromarray(_dpa.astype(np.uint8),"RGBA")
-CROSS=[(70,560,-260,W+140,470),(980,1470,W+140,-260,560)]   # two slow background crossings
+CROSS=[(70,560,-260,W+140,470),(980,1800,W+140,-260,560)]   # 2nd crossing drifts through the entire outro
 def draw_particles(img,t):
     d=ImageDraw.Draw(img,"RGBA")
     for p in PART:
@@ -208,11 +229,14 @@ def render_frame(f):
         if f>=1126: tk(du,"?",fr(96,900,144),(255,140,120,int(150*(1-unc+.4))),nx+tw(s_,nf)+12,ny+8)
     if f>=680: draw_spec(out,f)    # chart HUD — crisp, composited AFTER the grade (stays razor-sharp)
     caption(out,f)
+    outro_card(out,f)              # branded sign-off keeps the outro alive (event cadence)
     so=E.out_cubic(E.seg(f,8,34));endb=E.out_cubic(E.seg(f,1560,1640))
-    if so>0:
+    if so>0 and f<1600:           # footer hands off to the outro card
         sf=fr(38,900,144);tk(du,"alaska.ai",sf,(255,255,255,int((150+95*endb)*so)),(W-tw("alaska.ai",sf))//2,1700)
     fin=E.seg(f,0,14)
     if fin<1: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(255*(1-E.out_cubic(fin))))))
+    outf=E.seg(f,1766,1800)        # gentle cinematic fade-out (also guarantees tail motion)
+    if outf>0: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(230*E.in_out_sine(outf)))))
     return out.convert("RGB")
 # spectrogram card — crisp HUD, bigger legible labels, continuous scrubbing playhead
 SPW,SPH=884,182;SPX,SPY=(W-SPW)//2,1170

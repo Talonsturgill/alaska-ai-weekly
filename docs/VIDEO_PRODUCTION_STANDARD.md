@@ -5,7 +5,7 @@ The reusable pro playbook for Alaska.Ai "Dispatch" videos. Hand-coded Python
 Derived from a 2026 research pass across motion design, color science, underwater
 rendering, sound, Alaska authenticity, and platform delivery (sources at bottom).
 
-## 0. The five principles
+## 0. The six principles
 1. **Illustration leads; the voice follows.** Your craft is hand-coded illustration that
    DEPICTS the story (object/process/place/data), legit-looking AND entertaining. Sync the VO
    to the picture beat-for-beat — a motion-illustration piece the voice rides, not narration
@@ -21,6 +21,12 @@ rendering, sound, Alaska authenticity, and platform delivery (sources at bottom)
    makes one slow push-in land. Never drift forever.
 5. **Honest + local.** Pro-Alaska, never "Silicon Valley saves Alaska." Verify every fact;
    ship on measured numbers (audio + visual gates), not on the room.
+6. **Open strong, CLOSE strong.** Every Dispatch has a deliberate arc — hook → body → a real
+   ENDING. The first second earns the watch; the last ~6s earn brand recall and the follow. After
+   the VO ends, BUILD A BRANDED OUTRO — wordmark sign-off + the tagline + a sources credit, revealed
+   in staged beats — then a gentle cinematic fade. NEVER end on a static hold: the outro carries
+   motion to the final frame (it is part of the EVENT_CADENCE gate). No proper ending IS a lame
+   ending — design it from the first storyboard, don't bolt it on after.
 
 ## 1. Format & delivery (master once, crop per surface)
 - **Master 4:5 portrait, 1080x1350** (matches our brief-image format; max mobile feed real

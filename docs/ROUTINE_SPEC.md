@@ -122,6 +122,10 @@ ACES grade, split-tone toward THIS story's palette, bloom, luma-only grain, vign
 CA, dithering), slow eased push-in + parallax + drift + motion that serves the illustration,
 supersampled hero/type, and OPEN CAPTIONS (burned in, lower-third inside the 4:5 safe box,
 legible at phone size). Layered audio (ambient + motivated SFX) under an EQ-carved, ducked VO.
+Build a deliberate ENDING (principle 6): after the VO finishes, a branded OUTRO — wordmark sign-off
++ tagline + sources credit, revealed in staged beats — then a gentle cinematic fade. Motion must run
+to the final frame; NEVER end on a static hold (the EVENT_CADENCE gate enforces this). Design the
+ending in the storyboard, not after.
 Render in the background in parallel chunks.
 
 PHASE 6 — THE AUTONOMOUS SELF-HEALING LOOP (ends ONLY at perfection)
