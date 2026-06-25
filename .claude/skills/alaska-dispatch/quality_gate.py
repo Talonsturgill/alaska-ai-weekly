@@ -14,7 +14,9 @@ Every check here exists because a human reviewer once had to flag it by hand:
   python quality_gate.py                         # gate frames_v3/ + audio/words60.json
   python quality_gate.py --frames DIR --words W --fps 30 --max-gap 5.0
 Writes a JSON scorecard next to the frames (quality_report.json) for the email.
-Exit 0 = PASS (safe to encode/ship); exit 1 = FAIL (fix root cause, re-render).
+Exit 0 = PASS (safe to encode/ship). Exit 1 = FAIL -> route back into the Phase-6 loop: delegate to
+the dispatch-fixer subagent, patch the cause, re-render, re-gate. A FAIL never withholds delivery —
+the loop self-heals and only exits (and ships) on PASS.
 numpy/PIL/scipy only.
 """
 import os, sys, json, argparse, glob

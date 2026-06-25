@@ -37,11 +37,21 @@ rendering, sound, Alaska authenticity, and platform delivery (sources at bottom)
 - **Poster/first frame:** a designed title/brand card, never black or a mid-blink frame.
 
 ## 2. Open captions (NON-NEGOTIABLE — most feed video is watched muted)
-- Burn in phrase-level captions synced to the VO (we have per-segment timings).
-- Style: bold sans (or JetBrains Mono Bold for brand), ~44-56px on 1080, white with a
-  ~3-4px dark stroke OR a 60-70% rounded box behind; high contrast; never rely on color alone.
+- Build captions FROM THE TTS WORD-TIMINGS (`vo60.py` writes `audio/words60.json`), never a
+  hand-typed paraphrase — the on-screen text is exactly what's spoken, exactly when it's spoken.
+  This is what the CAPTION_SYNC gate enforces.
+- KINETIC, voice-synced reveal (MANDATORY — not a static slab):
+  · Reveal LINE BY LINE — each line appears as the VO reaches it (line *i* at spoken-progress
+    *i/total*), with a quick settle-in. This keeps long phrases visibly alive (so a multi-second
+    caption never reads as a dead hold — it feeds the EVENT_CADENCE gate) and reads as designed.
+  · Active-word emphasis (karaoke): the word being spoken is brand-accent (gold), already-spoken
+    words bright snow-white, upcoming words dimmed. A thin underline tracks spoken time.
+- Style: bold brand type (Fraunces ~54–58px or JetBrains Mono Bold) on 1080, white with a ~3px dark
+  stroke; high contrast; never rely on color alone.
+- Composite captions AND ALL HUD text AFTER the cinematic grade, so glyph edges stay razor-sharp —
+  bloom/grain/CA must never soften them. This is the CAPTION_TEXT / HUD_TEXT legibility gate.
 - Placement: lower third, inside the safe area, clear of the bottom ~10% where UI sits.
-  ≤2 lines, ≤~20 chars/sec reading speed; hold each phrase ≥ its spoken duration.
+  ≤3 lines, ≤~20 chars/sec reading speed; hold each phrase ≥ its spoken duration.
 
 ## 3. Motion system
 - **Easing (never linear — linear = massless/robotic).** Entrances: easeOutQuint/Expo.
@@ -145,6 +155,9 @@ to -12; sub/impact felt not heard; risers sweep to -6; UI ticks -18 to -26.
   unusual for a whale). Slow, graceful; pods; surfacing/blow; no dolphin breaching.
 
 ## 9. QA GATES (ship on numbers)
+- **OBJECTIVE GATE (mandatory, FIRST):** `quality_gate.py` MUST exit 0 before encoding. It measures
+  SHARPNESS (not blurry), HUD_TEXT + CAPTION_TEXT legibility, EVENT_CADENCE (no on-screen-dead window
+  > 5.0s), and CAPTION_SYNC. A fail is not a stop — fix the cause, re-render, re-gate (Phase 6 loop).
 - **Visual:** 4-frame contact sheet across the acts; check focal hierarchy, legibility,
   safe area, banding. Whale must read as a beluga in pure silhouette.
 - **Audio:** measure the muxed file — integrated -14±0.5 LUFS, TP ≤-1.0, music-only tail

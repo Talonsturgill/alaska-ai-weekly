@@ -124,12 +124,28 @@ supersampled hero/type, and OPEN CAPTIONS (burned in, lower-third inside the 4:5
 legible at phone size). Layered audio (ambient + motivated SFX) under an EQ-carved, ducked VO.
 Render in the background in parallel chunks.
 
-PHASE 6 — REVIEW, GRADE, ITERATE UNTIL IT PASSES (do not skip)
-The human is NEVER the QA. When this piece reaches the inbox it is a finished, world-class
-product. Two gates stand in the way, and BOTH must pass before you encode — Gate A is objective
-and runs first (it catches the boring/blurry/illegible/desync class of defect numerically), Gate
-B is the taste bar on top. Loop, fix the ROOT CAUSE in the engine, and re-render; spend tokens
-freely. Bounded by `rubric.max_revision_cycles` — if still failing, escalate in the draft, don't ship a fail.
+PHASE 6 — THE AUTONOMOUS SELF-HEALING LOOP (ends ONLY at perfection)
+The human is NEVER the QA. This loop does not stop, ask, or hand off — it runs itself until the
+piece is flawless, then delivers. There is NO cycle cap and NO "best-of-N" fallback: inside the
+routine, tokens and context are not the constraint, so you keep going until every check passes.
+A failure is NOT a stop — it is simply the next iteration. The loop's ONLY exit is PASS.
+Drive it with `scripts/dispatch_loop.sh` (render → gate → encode), which refuses to encode unless
+the gate is green; on a FAIL you patch the engine and re-invoke it. On ANY failure at either gate:
+  1. READ the structured failure — the failing check + the exact region/time (quality_report.json).
+  2. DELEGATE the repair to ONE `dispatch-fixer` subagent so the master loop's context stays LEAN.
+     Hand it only the failure + the engine path. IT reads the offending frames and code in ITS OWN
+     context, patches the ROOT CAUSE (cause, not symptom — and never relaxes a threshold to pass),
+     verifies (test-render the range + re-gate it), and hands back a SHORT summary: the cause at
+     file:line, what changed, and the measured pass. The master never ingests the frame dumps or edit
+     churn — it just orchestrates render → gate → delegate → re-gate, so it can loop indefinitely
+     without bloating. `dispatch-fixer` is NO-SPAWN: ONE level, NO further fan-out (never repeat the
+     runaway-agent incident). `.claude/agents/dispatch-fixer.md` carries its root-cause playbook.
+  3. RE-RENDER (the whole piece if the fix was global, else just the affected range) and RE-RUN the gate.
+  4. Repeat. Do not advance, encode, or deliver until BOTH gates are green with zero hard_blockers.
+Because the loop cannot exit except on PASS, THE ROUTINE ALWAYS DELIVERS — and what it delivers is
+always flawless. The ONLY non-quality exception is a genuine infrastructure outage (a tool/API down,
+not a quality shortfall): escalate that in the draft. You never ship a known flaw, and you never quit
+because the bar was hard — a loop that ends on a failure is a broken loop.
 
 - PRE-RENDER LINT: every on-screen string/caption is in code — spell-check them, and verify
   every on-screen number/name/date against the fact-check output.
@@ -161,7 +177,8 @@ freely. Bounded by `rubric.max_revision_cycles` — if still failing, escalate i
 - GATE B — EDITOR + SCORER (taste, world-class bar). Run the `editor` agent (hard critique, AI-tells,
   risk flags) and the `scorer` agent against `config/dispatch_rubric.yaml` (ship 9.0, zero hard_blockers).
   Below threshold → take the one-sentence fix + editor notes, IMPROVE script/visuals/audio, and re-run
-  the WHOLE review from Gate A. Do not deliver a piece that hasn't passed BOTH gates with zero hard_blockers.
+  the WHOLE review from Gate A. Loop until BOTH gates are green with zero hard_blockers; only then encode
+  and deliver. The loop does not exit on anything less.
 
 PHASE 7 — DELIVER, FULLY DONE (no pending states). Work in talonsturgill/alaska-ai-weekly ONLY.
 Everything must be live and downloadable the INSTANT the Gmail draft hits the inbox — never
@@ -190,7 +207,8 @@ beluga threats are noise/vessels, not Native hunting): humble framing, no Native
 unverified Native words on screen, recommend consulting + compensating the relevant tribes.
 
 DEFINITION OF DONE
-A Gmail draft exists with the post text, voice + music credits, sources, the score summary, and
+A video Dispatch is ALWAYS delivered AND always flawless — the self-healing loop cannot exit until
+both gates are green, so there is no zero-output run and no flawed ship. A Gmail draft exists with the post text, voice + music credits, sources, the score summary, and
 WORKING one-click download links for the 9:16 (TikTok) and 4:5 (LinkedIn) cuts; the frame review
 found zero defects; all audio gates passed; the scorer passed config/dispatch_rubric.yaml; the download links are VERIFIED LIVE (HTTP 200) and immediately downloadable; the audit branch is pushed AND MERGED to main;
 dispatch_history is updated. Report the story, concept/archetype, palette, voice + music, and the

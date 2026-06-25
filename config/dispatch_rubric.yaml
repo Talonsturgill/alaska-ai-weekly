@@ -3,7 +3,7 @@
 # The routine iterates until this passes. Bar is intentionally high ("banger tier").
 rubric:
   ship_threshold: 9.0          # out of 10 — world-class, not "fine"
-  max_revision_cycles: 6       # iterate hard; if still failing, escalate in the Gmail draft, don't ship a fail
+  max_revision_cycles: unlimited   # NO CAP. The loop self-heals and never stops for quality — it iterates until BOTH gates pass, then delivers. No best-of-N, no early stop.
   # OBJECTIVE pre-gate — the machine checks-and-balances. quality_gate.py MUST exit 0 BEFORE this
   # rubric is even scored. It catches the regressions a human used to flag (blur, illegible HUD,
   # dead pacing, caption desync) numerically, so they never reach the inbox. Floors are enforced in
