@@ -25,9 +25,31 @@ wavfile.write(os.path.join(AUD,"whale60.wav"),SR,nrm(lp(call*envc,1800),.8))
 # sonar 3s
 tp=t(3.0);fp=900+120*np.exp(-tp/.03);ping=np.tanh(1.5*np.sin(2*np.pi*np.cumsum(fp)/SR))*np.exp(-tp/.5)
 wavfile.write(os.path.join(AUD,"sonar60.wav"),SR,nrm(lp(ping,4000),.8))
-# music: 60s window of Echoes (start 20s) with fades
-sr,x=wavfile.read(os.path.join(AUD if os.path.exists(os.path.join(AUD,"..","music","188_44.wav")) else AUD,"..","music","188_44.wav")) if False else (None,None)
-sr,x=wavfile.read(os.path.join(HERE,"music","188_44.wav"));X=x.astype(np.float32)/32768.
+# music bed: prefer a freshly-sourced track (DISPATCH_MUSIC, via scripts/get_music.py), else the
+# legacy asset, else a synthesized fallback so the mix NEVER hard-blocks on a missing file.
+def _loadwav(p):
+    _,d=wavfile.read(p); a=(d.astype(np.float32)/32768.) if d.dtype==np.int16 else d.astype(np.float32)
+    return a if a.ndim>1 else np.stack([a,a],1)
+def _synth_bed(d=80.0):
+    n=int(d*SR); tt2=t(d); base=55.0; sig=np.zeros(n,np.float32)
+    for k,r in enumerate([1.0,1.5,2.0,2.997,4.0]):              # root, fifth, octave, +maj3, 2-oct pad
+        vib=1+0.003*np.sin(2*np.pi*0.06*tt2+k)
+        sig+=(0.55/(k+1))*np.sin(2*np.pi*base*r*np.cumsum(vib)/SR).astype(np.float32)
+    swell=(0.45+0.55*np.sin(2*np.pi*0.018*tt2-1.2)).astype(np.float32)
+    sig=lp(sig*swell,560).astype(np.float32)+0.12*lp(rng.standard_normal(n).astype(np.float32),180)*swell
+    return np.stack([s:=sig/(np.max(np.abs(sig))+1e-9)*0.6, s],1).astype(np.float32)
+_mp=os.environ.get("DISPATCH_MUSIC"); _legacy=os.path.join(HERE,"music","188_44.wav")
+if _mp and os.path.exists(_mp): X=_loadwav(_mp); print("music: sourced ->",_mp)
+elif os.path.exists(_legacy): X=_loadwav(_legacy); print("music: legacy asset")
+else: X=_synth_bed(); print("music: SYNTH fallback (no track sourced; note it in the draft)")
+# record which music path was taken so the quality gate can REJECT a synth bed (loop must get real music)
+_msrc=("sourced" if (_mp and os.path.exists(_mp)) else ("legacy" if os.path.exists(_legacy) else "synth"))
+_mstat={"source":_msrc,"path":_mp or _legacy or ""}
+try:
+    _cf=os.path.join(os.path.dirname(_mp),"music_credit.json") if _mp else ""
+    if _cf and os.path.exists(_cf): _mstat["credit"]=json.load(open(_cf)).get("credit","")
+except Exception: pass
+json.dump(_mstat,open(os.path.join(AUD,"music_status.json"),"w"))
 mono=X.mean(1) if X.ndim>1 else X; hop=int(SR*0.2)
 envv=np.array([np.sqrt(np.mean(mono[i:i+hop]**2)) for i in range(0,len(mono)-int(60*SR),hop)])
 wl=int(60/0.2); best=None

@@ -11,6 +11,7 @@ Every check here exists because a human reviewer once had to flag it by hand:
   EVENT_CADENCE    "a bit boring, too slow — something should happen every ~5s"
   CAPTION_SYNC     "the voice doesn't match the on-screen captions"
   READABILITY      "is every word bright enough + legible (not just sharp)?"
+  MUSIC            "real sourced track is on, NOT the synth fallback" (loop must get real music)
 
   python quality_gate.py                         # gate frames_v3/ + audio/words60.json
   python quality_gate.py --frames DIR --words W --fps 30 --max-gap 5.0
@@ -104,6 +105,17 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     else:
         checks.append({"name":"READABILITY","pass":False,
             "detail":"no text manifest (render with DISPATCH_TEXTLOG=1) — cannot verify per-word brightness/contrast"})
+
+    # 7) MUSIC — must be a REAL sourced track, never the synth fallback (loop to perfection)
+    mstat=os.path.join(os.path.dirname(os.path.abspath(frames_dir)),"audio","music_status.json")
+    if os.path.exists(mstat):
+        ms=json.load(open(mstat)); src=ms.get("source","?"); m["music_source"]=src
+        checks.append({"name":"MUSIC","pass":src=="sourced",
+            "detail":f"music source = {src}"+(f' ({ms.get("credit","")})' if ms.get("credit") else "")+
+                     " — must be a freshly-sourced real track; synth/legacy fails (fix get_music + re-mix)"})
+    else:
+        checks.append({"name":"MUSIC","pass":False,
+            "detail":"no audio/music_status.json — run audio_v3 after get_music so a REAL track (not synth) is confirmed"})
 
     passed=all(c["pass"] for c in checks)
     m["score"]=round(10.0*sum(c["pass"] for c in checks)/len(checks),1)

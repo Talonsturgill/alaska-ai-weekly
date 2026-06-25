@@ -1,0 +1,37 @@
+# BACKUP music pool for the Dispatch routine.
+#
+# PRIMARY behavior is NOT this file: every run, the routine RESEARCHES a FRESH track that fits the
+# specific story (see ROUTINE_SPEC Phase 4 MUSIC) and downloads it with scripts/get_music.py.
+# This pool is used ONLY when that live search genuinely fails. Every entry is verified: a real
+# direct-download URL, a clear free-to-use license, and a creditable composer. Expand it freely.
+#
+# Always put the track's `credit` line in the Gmail draft.
+pool:
+  - title: "Lightless Dawn"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Lightless%20Dawn.mp3"
+    license: "CC BY 4.0"
+    credit: '"Lightless Dawn" Kevin MacLeod (incompetech.com) — licensed under CC BY 4.0'
+    mood: [ambient, cold, vast, reflective, glacial]
+  - title: "Echoes of Time v2"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Echoes%20of%20Time%20v2.mp3"
+    license: "CC BY 4.0"
+    credit: '"Echoes of Time v2" Kevin MacLeod (incompetech.com) — licensed under CC BY 4.0'
+    mood: [epic, hopeful, cinematic, reflective, wonder]
+  - title: "Anguish"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Anguish.mp3"
+    license: "CC BY 4.0"
+    credit: '"Anguish" Kevin MacLeod (incompetech.com) — licensed under CC BY 4.0'
+    mood: [tense, somber, dark, urgent]
+  - title: "The Descent"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/The%20Descent.mp3"
+    license: "CC BY 4.0"
+    credit: '"The Descent" Kevin MacLeod (incompetech.com) — licensed under CC BY 4.0'
+    mood: [dark, ominous, deep, ambient]

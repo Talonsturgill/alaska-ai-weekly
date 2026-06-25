@@ -112,8 +112,23 @@ PHASE 4 — PRODUCE LIKE A MOVIE PRODUCER (illustrate first; vary everything)
   numbers/acronyms). ~60s ≈ 130–150 words; trim ≥5%. (The copy-paste LinkedIn CAPTION that ships in
   the draft is written and graded in its own two-gate loop — see PHASE 6B.)
 - VOICE: pick from config/voices.yaml to fit the story's tone and VARY it run-to-run (publish
-  in a Kokoro voice, Apache-2.0; edge-tts drafts only). MUSIC: royalty-free, fits the arc,
-  credit the composer by name.
+  in a Kokoro voice, Apache-2.0; edge-tts drafts only).
+- MUSIC — SOURCE A FRESH TRACK EVERY RUN (do not reuse a past track, do not default to a synth).
+  Actively RESEARCH a real piece of music that fits THIS story's mood, energy, and pacing (cold and
+  ambient for sea ice, taut and electronic for a detector, warm and hopeful for a community win,
+  etc.). Search reputable FREE-TO-USE sources — Pixabay Music (no attribution required), Free Music
+  Archive, ccMixter, Incompetech / Kevin MacLeod (CC BY) — and pick something with real craft, NOT
+  generic stock filler. Confirm it is genuinely free for commercial use and has a NAMED composer.
+  Then fetch + prepare it (downloads, validates it is real audio, writes the credit):
+      python scripts/get_music.py --url "<direct audio url>" --title "<T>" --composer "<C>" \
+          --license "<e.g. CC BY 4.0>" --source "<site>" --out out/dispatch/music_bed.wav
+  Export DISPATCH_MUSIC=out/dispatch/music_bed.wav so audio_v3.py uses it, and put the printed
+  CREDIT line (composer, title, license, source) in the Gmail draft — always. If the live search
+  genuinely fails, fall back to the VETTED pool: `python scripts/get_music.py --pool --mood "<mood>"`
+  (config/music_sources.yaml). The synth bed is a CRASH-NET only, NOT shippable: the MUSIC check in
+  quality_gate.py FAILS any mix that used the synth (or no) track, so the self-healing loop must
+  diagnose why sourcing failed (bad URL, blocked host, license unclear), fix it, get a REAL track on,
+  and re-mix before it can pass. Never ship synth or lame/generic music.
 
 PHASE 5 — BUILD (to the standard, 9:16)
 Adapt the engine to the new concept (don't ship a past scene again). 9:16 = 1080x1920, ~1800
@@ -165,6 +180,7 @@ because the bar was hard — a loop that ends on a failure is a broken loop.
     · EVENT_CADENCE— no on-screen-dead window > 5s   → "boring / too slow / make something happen every ~5s"
     · CAPTION_SYNC — captions built from the TTS word-timings → "voice doesn't match the captions"
     · READABILITY  — every readable word clears a brightness + contrast floor → "is every word legible, not just sharp"
+    · MUSIC        — a REAL freshly-sourced track is on the mix, NOT the synth fallback → "use the music you went and got"
   On any FAIL it names the check + the region/time. Diagnose WHY (e.g. HUD drawn before the grade,
   DoF too strong, a dead stretch, captions not voice-driven), fix it in the engine, re-render the
   affected range, re-run. Do not proceed to Gate B until Gate A is green. It also writes
@@ -229,9 +245,11 @@ Everything must be live and downloadable the INSTANT the Gmail draft hits the in
 1. Encode the post-masters: 9:16 (TikTok) + 4:5 (LinkedIn), H.264 High, ~12–14 Mbps, faststart,
    AAC 48k, −14 LUFS.
 2. Upload BOTH with scripts/upload_video.py → one-click DIRECT-download URLs (bytes never touch the
-   model). Then VERIFY each URL is LIVE before continuing: `curl -fsIL "<url>"` must return HTTP 200
-   with a real content-length that serves the file. Re-upload/retry until it actually downloads.
-   NEVER create the draft with a dead, slow, or "ready later" link.
+   model). It prefers a PERMANENT rclone host when RCLONE_CONFIG_B64 is set, and otherwise FALLS BACK
+   automatically to a no-auth host (temporary ~1h links) — so delivery NEVER blocks on a missing
+   secret. It self-verifies HTTP 200 and prints HOST=permanent|temporary; if temporary, say so in one
+   line in the draft. Re-upload/retry until it actually downloads. NEVER create the draft with a dead,
+   slow, or "ready later" link.
 3. scripts/dispatch_email.py → builds the draft: copy-paste POST TEXT, prominent DOWNLOAD
    buttons (LinkedIn 4:5 + TikTok 9:16), inline poster, VOICE + MUSIC credits, SOURCES (every
    load-bearing claim + primary URL), the score/grade summary, and the illustrative-numbers note.
