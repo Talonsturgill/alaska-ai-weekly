@@ -125,23 +125,43 @@ legible at phone size). Layered audio (ambient + motivated SFX) under an EQ-carv
 Render in the background in parallel chunks.
 
 PHASE 6 — REVIEW, GRADE, ITERATE UNTIL IT PASSES (do not skip)
-Loop until the piece is genuinely good — keep fixing and re-rendering; spend tokens freely:
+The human is NEVER the QA. When this piece reaches the inbox it is a finished, world-class
+product. Two gates stand in the way, and BOTH must pass before you encode — Gate A is objective
+and runs first (it catches the boring/blurry/illegible/desync class of defect numerically), Gate
+B is the taste bar on top. Loop, fix the ROOT CAUSE in the engine, and re-render; spend tokens
+freely. Bounded by `rubric.max_revision_cycles` — if still failing, escalate in the draft, don't ship a fail.
+
 - PRE-RENDER LINT: every on-screen string/caption is in code — spell-check them, and verify
   every on-screen number/name/date against the fact-check output.
-- FRAME REVIEW (visual): contact sheets sampling the ENTIRE timeline (~every 1.5–2s); LOOK.
-  Zoom into EVERY frame with text. Check first/last frames + each transition. Catch typos,
-  wrong numbers, cropping/safe-area (9:16 AND the 4:5 crop), legibility at phone size, focal
-  hierarchy, hero-reads-in-silhouette, overlaps/aliasing/banding, captions match VO + timing.
-  Fix and RE-RENDER affected ranges. Repeat until zero defects.
+
+- GATE A — OBJECTIVE QUALITY GATE (machine, mandatory, FIRST). Run
+  `python .claude/skills/alaska-dispatch/quality_gate.py` over the rendered frames. It MUST exit 0.
+  It measures, and FAILS the render on, the exact regressions a human has had to flag before — this
+  is the checks-and-balances layer so they never see them again:
+    · SHARPNESS    — variance-of-Laplacian floor   → "looks blurry"
+    · HUD_TEXT     — chart-card glyph-edge energy   → "chart letters illegible"
+    · CAPTION_TEXT — caption glyph-edge energy       → "captions generic / hard to read"
+    · EVENT_CADENCE— no on-screen-dead window > 5s   → "boring / too slow / make something happen every ~5s"
+    · CAPTION_SYNC — captions built from the TTS word-timings → "voice doesn't match the captions"
+  On any FAIL it names the check + the region/time. Diagnose WHY (e.g. HUD drawn before the grade,
+  DoF too strong, a dead stretch, captions not voice-driven), fix it in the engine, re-render the
+  affected range, re-run. Do not proceed to Gate B until Gate A is green. It also writes
+  `quality_report.json` — carry its scorecard into the Gmail draft.
+
 - AUDIO GATE: integrated −14 ±0.5 LUFS, true peak ≤ −1.0 dBTP, music-only tail audible
   (> −34 dB), voice dominant, no clipping, mono fold-down OK. SOUND CHECK + MUSIC CHECK
   (track fits, audible-but-under-VO, composer credited) + VOICE CHECK (script == captions,
   phonetic numbers right). Fail → fix → re-mux → re-measure.
-- EDITOR + SCORER: run the `editor` agent (hard-graded critique, AI-tells, risk flags) and the
-  `scorer` agent against `config/dispatch_rubric.yaml` (ship 9.0). If the score is below threshold, take
-  the one-sentence fix + the editor notes, IMPROVE the script/visuals/audio, and re-run the
-  whole review. ITERATE until it passes the quality gate. Do not deliver a piece that hasn't
-  passed.
+
+- FRAME REVIEW (visual, on a Gate-A-green render): contact sheets sampling the ENTIRE timeline
+  (~every 1.5–2s); LOOK. Zoom into EVERY frame with text. Check first/last frames + each transition.
+  Catch typos, wrong numbers, cropping/safe-area (9:16 AND the 4:5 crop), focal hierarchy,
+  hero-reads-in-silhouette, overlaps/aliasing/banding. Fix and RE-RENDER affected ranges.
+
+- GATE B — EDITOR + SCORER (taste, world-class bar). Run the `editor` agent (hard critique, AI-tells,
+  risk flags) and the `scorer` agent against `config/dispatch_rubric.yaml` (ship 9.0, zero hard_blockers).
+  Below threshold → take the one-sentence fix + editor notes, IMPROVE script/visuals/audio, and re-run
+  the WHOLE review from Gate A. Do not deliver a piece that hasn't passed BOTH gates with zero hard_blockers.
 
 PHASE 7 — DELIVER, FULLY DONE (no pending states). Work in talonsturgill/alaska-ai-weekly ONLY.
 Everything must be live and downloadable the INSTANT the Gmail draft hits the inbox — never
