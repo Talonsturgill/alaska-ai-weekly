@@ -14,12 +14,15 @@ repo, by design. Five minutes, once.
    Installs ffmpeg, pillow/numpy/scipy, edge-tts, kokoro, rclone. Fonts are committed.
    The result is cached, so it doesn't re-run every time.
 
-4. **Environment > Variables** (the only secret — only you can set it):
+4. **Environment > Variables** (OPTIONAL — only for PERMANENT download links):
    - `RCLONE_CONFIG_B64` — base64 of an `rclone.conf` containing a remote named **`dispatch`**
      (Google Drive recommended). This is where the finished video is uploaded so the Gmail
      draft can link a one-click download. Make one locally with `rclone config`, then
      `base64 -w0 ~/.config/rclone/rclone.conf` and paste the result.
    - (Alternative: an S3/R2 public bucket — set `DISPATCH_PUBLIC_BASE` to its public URL.)
+   - **You can skip this entirely.** With no rclone secret, `scripts/upload_video.py` falls back
+     to a no-auth host (tmpfiles.org) — links work immediately but expire in ~1 hour, which is
+     fine for the review draft. Add the secret later when you want permanent links.
 
 5. **Connectors:** keep **Gmail** (creates the draft) and **GitHub** (audit PR). Remove the rest.
 
