@@ -86,15 +86,34 @@ def build_base():
             x0=int(wx-half); x1=int(wx+half)
             if x1>x0: wedge[y,max(0,x0):min(W,x1)]+= (1-t)*0.7
     img+=gaussian_filter(wedge,(3,2))[:,:,None]*np.array([20,40,54],np.float32)
-    # ground texture (tactile soil + ice grit) only below the surface
+    # ground texture (tactile soil + ice grit) only below the surface — two scales for material feel
     rng=np.random.default_rng(11)
     tex=gaussian_filter(rng.standard_normal((H,W)).astype(np.float32),1.4); tex/=tex.std()+1e-6
+    fine=gaussian_filter(rng.standard_normal((H,W)).astype(np.float32),0.6); fine/=fine.std()+1e-6
     mask=np.zeros((H,W),np.float32); mask[SURF:]=1.0; mask=gaussian_filter(mask,6)
-    img+=(tex*mask*7.0)[:,:,None]
-    # subtle lighting: a soft key from upper-left warms the active layer, depth darkens
+    img+=((tex*11.0+fine*5.0)*mask)[:,:,None]
+    # geological STRATA: faint horizontal sediment/ice bands give the ground real depth (not a flat fill)
     yy,xx=np.mgrid[0:H,0:W].astype(np.float32)
-    key=np.clip(1.0-((xx-330)**2/(900**2)+(yy-SURF)**2/(560**2)),0,1)*0.16
-    img[SURF:]+=(key[SURF:,:,None]*np.array([60,40,16],np.float32))
+    strata=np.zeros((H,W),np.float32)
+    for sy,amp,wob in [(560,1.0,0.5),(640,0.8,0.7),(760,1.0,0.4),(900,0.9,0.6),(1080,0.8,0.5),(1320,0.7,0.45),(1600,0.7,0.4)]:
+        band=sy+18*np.sin(xx/220.0+wob*6)+9*np.sin(xx/70.0+wob)
+        strata+=amp*np.exp(-((yy-band)/9.0)**2)
+    strata=gaussian_filter(strata,(1.2,2.0))
+    img[SURF:]+=(strata[SURF:,:,None]*np.array([22,16,8],np.float32))      # darker seams
+    img[SURF:]-=(strata[SURF:,:,None]*np.array([0,0,0],np.float32))
+    # depth-aware lighting: soft key from upper-left, gentle ambient occlusion deepening with depth
+    key=np.clip(1.0-((xx-330)**2/(900**2)+(yy-SURF)**2/(560**2)),0,1)*0.18
+    img[SURF:]+=(key[SURF:,:,None]*np.array([66,44,18],np.float32))
+    ao=np.clip((yy-SURF)/(H-SURF),0,1)[:,:,None]                            # darken with depth (AO)
+    img[SURF:]=img[SURF:]*(1-0.18*ao[SURF:])
+    # ice-wedge bright cores (rim-lit ice) for material contrast
+    wcore=np.zeros((H,W),np.float32)
+    for (wx,sc) in ICE_WEDGES:
+        for y in range(ACTIVE1,H):
+            t=(y-ACTIVE1)/(H-ACTIVE1); half=(46*sc)*(1.0-0.7*t)
+            cx0=int(wx-half*0.35); cx1=int(wx+half*0.35)
+            if cx1>cx0: wcore[y,max(0,cx0):min(W,cx1)]+=(1-t)*0.5
+    img+=gaussian_filter(wcore,(3,2))[:,:,None]*np.array([26,44,56],np.float32)
     # road embankment trapezoid (asphalt) sitting on the surface
     emb=Image.new("L",(W,H),0); ed=ImageDraw.Draw(emb)
     ed.polygon([(EMB_CX-EMB_TOP_W//2,SURF-EMB_H),(EMB_CX+EMB_TOP_W//2,SURF-EMB_H),
@@ -104,7 +123,15 @@ def build_base():
     # asphalt vertical shade + a lit crown
     road+= (0.5-np.abs((xx-EMB_CX)/(EMB_BOT_W/2)))[:,:,None]*np.array([26,26,28],np.float32)
     img=img*(1-em[:,:,None])+road*em[:,:,None]
-    # embankment top highlight line (lit crown)
+    # rim/key light on the embankment: bright lit crown on the top edge, soft shade down the right face
+    edge=np.zeros((H,W),np.float32)
+    ed.line([(EMB_CX-EMB_TOP_W//2,SURF-EMB_H),(EMB_CX+EMB_TOP_W//2,SURF-EMB_H)],fill=0)  # noop keep ed alive
+    top_y=SURF-EMB_H
+    rim=np.exp(-((yy-top_y)/4.0)**2)*(np.abs(xx-EMB_CX)<EMB_TOP_W//2)
+    img+=gaussian_filter(rim,(1.0,1.0))[:,:,None]*np.array([70,74,82],np.float32)
+    # contact shadow / ambient occlusion where the slab sits on the ground (just below SURF)
+    cshad=np.exp(-((yy-(SURF+10))/22.0)**2)*(np.abs(xx-EMB_CX)<EMB_BOT_W//2)*np.clip(1-np.abs(xx-EMB_CX)/(EMB_BOT_W*0.6),0,1)
+    img-=gaussian_filter(cshad,(4,8))[:,:,None]*np.array([40,30,18],np.float32)
     img=np.clip(img,0,255)
     img=craft.depth_blur(img,sigma=2.0)        # gentle DoF on the static bed; overlays stay crisp
     return img.astype(np.float32)
@@ -167,10 +194,13 @@ MOTES=[dict(x=float(_pr.random()*W),y=float(_pr.random()*H),z=float(_pr.random()
 def draw_motes(img,t):
     d=ImageDraw.Draw(img,"RGBA")
     for p in MOTES:
-        z=p["z"]; sp=8+z*30; amp=5+z*14; r=1.0+z*2.0; al=int(20+z*58)
-        y=(p["y"]+t*sp)%(H+40)-20; x=p["x"]+math.sin(t*0.5+p["ph"])*amp
-        col=(210,226,240) if y<SURF else (150,196,224)
-        d.ellipse([x-r,y-r,x+r,y+r],fill=(*col,al))
+        z=p["z"]
+        y=(p["y"]+t*(8+z*30))%(H+40)-20; x=p["x"]+math.sin(t*0.5+p["ph"])*(5+z*14)
+        if y<SURF:                                    # airborne frost above ground: bright, drifting
+            r=1.0+z*2.0; d.ellipse([x-r,y-r,x+r,y+r],fill=(210,226,240,int(20+z*52)))
+        else:                                         # suspended sediment/ice IN the ground: dim, earthen, tiny
+            r=0.8+z*1.3; col=(150,120,78) if (p["ph"]>3.14) else (130,168,196)
+            d.ellipse([x-r,y-r,x+r,y+r],fill=(*col,int(10+z*22)))
 def draw_pulses(d,f):
     ox,oy=cable_xy(0.5)
     for pf in PULSE:
@@ -267,6 +297,9 @@ def draw_hud(img,f):
         # map: x = depth axis across, y position from depth; encode temperature as horizontal wobble
         pts=[(pad + (i/79.0)*iw, iy + (0.12+0.76*(i/79.0))*ih - tp[i]*22) for i in range(len(u))]
         n=max(2,int(len(pts)*E.out_cubic(E.seg(f,BEATS[3]+ (0 if nm=="field" else 30), BEATS[3]+90))))
+        if nm=="fore" and n>2:                          # forecast uncertainty FAN widens with depth (de-claims)
+            band=[(pts[i][0],pts[i][1]-(2+i*0.20)) for i in range(n)]+[(pts[i][0],pts[i][1]+(2+i*0.20)) for i in range(n-1,-1,-1)]
+            d.polygon(band,fill=(*GOLD,int(34*a)))
         if n>1: d.line(pts[:n],fill=(*co,al),width=wd,joint="curve")
     # scrubbing playhead (continuous motion every frame -> event cadence)
     phase=((f-BEATS[3])/(2.4*FPS))%1.0; px=pad+phase*iw
@@ -291,15 +324,16 @@ def draw_twin(d,f):
     cols=9; rows=5
     build=E.out_cubic(E.seg(f,BEATS[4],BEATS[4]+110))
     nshow=int(build*cols)+1
+    ym=(gy0+gy1)/2
     for ci in range(min(cols+1,nshow+1)):
-        x=gx0+(gx1-gx0)*ci/cols
-        wob=6*math.sin(f/26.0+ci)
-        d.line([(x+wob,gy0),(x+wob*1.6,gy1)],fill=(*GOLD,int(46*a)),width=1)
+        x=gx0+(gx1-gx0)*ci/cols; wob=6*math.sin(f/26.0+ci)
+        d.line([(x+wob,gy0),(x+wob*1.3,ym)],fill=(*GOLD,int(54*a)),width=1)      # confident near the surface
+        d.line([(x+wob*1.3,ym),(x+wob*1.6,gy1)],fill=(*GOLD,int(20*a)),width=1)  # sparse + dim in the deep
     for ri in range(rows+1):
-        y=gy0+(gy1-gy0)*ri/rows
+        y=gy0+(gy1-gy0)*ri/rows; fade=1.0-0.62*(ri/rows)                         # confidence falls with depth
         pts=[(gx0+(gx1-gx0)*i/40.0, y+5*math.sin(i/40.0*math.pi*2+f/24.0+ri)) for i in range(41)]
         nn=max(2,int(len(pts)*build))
-        d.line(pts[:nn],fill=(*GOLD,int(56*a)),width=1)
+        d.line(pts[:nn],fill=(*GOLD,int(62*a*fade)),width=1)
     # a "DIGITAL TWIN" tag + scanning highlight line sweeping down the lattice (continuous motion)
     if a>0.6:
         d.text((gx0+4,gy0-24),"DIGITAL TWIN",font=mono(15,b=True),fill=(*GOLD,int(200*a)))
@@ -346,19 +380,22 @@ def render_frame(f):
     tf=E.out_cubic(E.seg(f,BEATS[5],BEATS[5]+40))
     if tf>0:
         draw_thaw_front(d,f,tf,150,W-150,predicted=(f>=BEATS[6]))
-    # --- caveat (beat7): a 'drill' probe descends from the surface but STOPS at an UNVERIFIED line ---
+    # --- caveat (beat7) THE CLIMAX: a 'drill' probe descends fast, decelerates, and CLAMPS at the
+    #     proof line. Everything the twin forecasts BELOW that line is unprovable. ---
     if f>=BEATS[6]:
-        dv=E.out_cubic(E.seg(f,BEATS[6],BEATS[6]+70)); dx=EMB_CX-150
-        dtip=SURF+10 + dv*(thaw_front_y(f)-SURF-60)        # stops short of the descending forecast
-        d.line([(dx,SURF-20),(dx,dtip)],fill=(214,224,236,int(220*dv)),width=4)
-        d.polygon([(dx-7,dtip),(dx+7,dtip),(dx,dtip+16)],fill=(214,224,236,int(230*dv)))
-        # dotted 'unverified' gap between the drill tip and the forecast front
-        uy0=dtip+10; uy1=thaw_front_y(f)-8
-        for yy in range(int(uy0),int(uy1),16):
-            d.line([(dx,yy),(dx,yy+7)],fill=(255,150,120,int(150*dv)),width=2)
-        if dv>0.6:
-            tag=mono(15,b=True); s="UNVERIFIED"
-            d.text((dx+12,(uy0+uy1)//2-8),s,font=tag,fill=(255,150,120,int(220*dv)))
+        dx=EMB_CX-150; STOPY=ACTIVE1+150                    # the proof line the drill cannot cross
+        a_desc=E.out_cubic(E.seg(f,BEATS[6],BEATS[6]+40))**1.6   # fast, then a hard decel into the clamp
+        rb=E.seg(f,BEATS[6]+34,BEATS[6]+62); recoil=math.sin(rb*math.pi)*9*(1-rb)   # mechanical recoil tick
+        dtip=(SURF-30) + a_desc*(STOPY-(SURF-30)) - recoil
+        dv=E.out_cubic(E.seg(f,BEATS[6],BEATS[6]+24))
+        d.line([(dx,SURF-34),(dx,dtip)],fill=(222,232,244,int(238*dv)),width=5)
+        d.polygon([(dx-8,dtip-2),(dx+8,dtip-2),(dx,dtip+17)],fill=(222,232,244,int(244*dv)))
+        clamp=E.out_cubic(E.seg(f,BEATS[6]+38,BEATS[6]+70))
+        if clamp>0.02:
+            for xx0 in range(int(dx-130),int(dx+280),14):    # dashed PROOF LINE the drill clamps onto
+                d.line([(xx0,STOPY),(xx0+7,STOPY)],fill=(255,150,120,int(180*clamp)),width=2)
+            d.line([(dx-15,STOPY-13),(dx-15,STOPY+13)],fill=(255,150,120,int(225*clamp)),width=3)
+            d.text((dx+16,STOPY+9),"UNVERIFIED BELOW",font=mono(16,b=True),fill=(255,150,120,int(238*clamp)))
     draw_motes(img,t)          # drifting frost/ice motes (ambient living motion, in front)
     # ---- push-in + finishing ----
     prog=E.in_out_sine(f/(NF-1)); sc=1.0+0.045*prog; cw,ch=int(W/sc),int(H/sc)
@@ -369,8 +406,9 @@ def render_frame(f):
     # --- dark scrims behind text zones, drawn BEFORE the readability sample so on-screen text always
     #     clears the contrast floor (and so the scrims are what the gate measures as the background) ---
     sd=ImageDraw.Draw(out,"RGBA")
-    if f>=BEATS[5]-4:                                  # number zone (top-right) once the count is up
-        sd.rounded_rectangle([W-MARGIN-336,134,W-MARGIN+14,348],18,fill=(5,12,24,232))
+    numv=E.out_cubic(E.seg(f,BEATS[5],BEATS[5]+44))*(1.0-0.55*E.seg(f,1140,1230))   # matches the count's reveal+recede
+    if numv>0.02:                                      # number-zone scrim follows the count's visibility
+        sd.rounded_rectangle([W-MARGIN-336,134,W-MARGIN+14,348],18,fill=(5,12,24,int(232*numv)))
     cue_now=any(c["s"]-0.30<=f/FPS<c["e"]+0.20 for c in CUES)
     if cue_now:                                        # caption lower-third scrim (only while a line is up)
         for i,yy in enumerate(range(1392,1612,2)):     # soft vertical gradient (dark in the middle)
@@ -390,7 +428,7 @@ def render_frame(f):
         s="UTQIAGVIK, ALASKA"; lf=mono(17,m=True)
         tk(du,s,lf,(214,230,245,int(180*lc)),MARGIN,104,0.12)
     # big number on a dark plate (beat6): ~2°F per decade (sources: 'up to almost 2°F/decade')
-    cc=E.out_cubic(E.seg(f,BEATS[5],BEATS[5]+44))
+    cc=E.out_cubic(E.seg(f,BEATS[5],BEATS[5]+44))*(1.0-0.55*E.seg(f,1140,1230))   # lands, then recedes
     if cc>0:
         nx=W-MARGIN-300; ny=150
         du.rounded_rectangle([nx-26,ny-14,W-MARGIN+8,ny+178],18,fill=(6,14,26,int(180*cc)),outline=(*CORAL,int(90*cc)),width=2)
