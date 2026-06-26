@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "fails": [],
+  "warns": [],
+  "metrics": {
+    "chars": 1714,
+    "hook": "A road on Alaska's North Slope is cracking, and an AI saw it coming from inside the frozen ground.",
+    "hook_len": 98,
+    "hashtags": [
+      "#ArtificialIntelligence",
+      "#Alaska",
+      "#Permafrost",
+      "#DigitalTwin",
+      "#ClimateTech"
+    ],
+    "n_hashtags": 5,
+    "emoji": 0,
+    "unicode_bold": 0,
+    "bullet_lines": 0,
+    "passes": true
+  }
+}

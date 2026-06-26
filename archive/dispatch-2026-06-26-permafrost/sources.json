@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {"url": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost", "outlet": "Penn State University News (primary, 2026-06-16)", "note": "Digital twin of a road embankment in Utqiagvik; two ~1 km fiber-optic cables, thermal + seismic, Sept 2021 to June 2024; Ming Xiao quote; permafrost warming up to almost 2 degrees F per decade."},
+    {"url": "https://phys.org/news/2026-06-digital-twin-alaska-permafrost-real.html", "outlet": "Phys.org (2026-06-16)", "note": "Independent confirmation of method, cable specs, data window, and the 'billions of dollars' infrastructure-damage framing."},
+    {"url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JF008787", "outlet": "JGR: Earth Surface (the peer-reviewed paper, DOI 10.1029/2025JF008787)", "note": "Physics-informed digital twin for predicting permafrost thermodynamic characteristics under an embankment road in Utqiagvik, Alaska."},
+    {"url": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads", "outlet": "Eos / AGU (2026-05-08, background)", "note": "AGU editor highlight on the same digital-twin work."}
+  ]
+}
