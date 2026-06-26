@@ -23,7 +23,9 @@ LO,HI=900,2200      # acceptable band (sweet spot 1300-1900; we fail outside the
 AI_TELLS=["delve","tapestry","testament","landscape of","ever-evolving","ever-changing","in today's",
           "navigating the","unlock the","unleash","game-changer","game changer","realm of","at the end of the day",
           "it's important to note","needle-moving","paradigm","synergy","circle back","leverage synerg",
-          "embark","robust solution","seamless","cutting-edge","revolutionize","supercharge","skyrocket"]
+          "embark","robust solution","seamless","cutting-edge","revolutionize","supercharge","skyrocket",
+          "here's the honest part","here is the honest part","here's what matters","here is what matters",
+          "here's where the frame breaks","here is where the frame breaks"]
 BANNED_PUNCT={"—":"em dash","–":"en dash",";":"semicolon","“":"curly quote","”":"curly quote","‘":"curly quote","’":"curly apostrophe"}
 EMOJI=re.compile("[\U0001F000-\U0001FAFF\U00002600-\U000027BF\U0001F1E6-\U0001F1FF←-⇿⌀-⏿]")
 UNICODE_BOLD=re.compile("[\U0001D400-\U0001D7FF]")     # math alphanumerics = fake bold/italic

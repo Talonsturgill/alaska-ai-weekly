@@ -17,7 +17,7 @@ SEG=[
  "For almost three years they fed back heat and faint tremors.",
  "Then the team built a twin of the ground inside a computer, part physics, part machine learning.",
  "It watches the frozen layer warm, up to almost two degrees Fahrenheit a decade, and predicts where the thaw goes.",
- "Here is the honest part. The twin forecasts the thaw, but it cannot drill the ground to prove it.",
+ "But the twin has a limit. It forecasts the thaw, but it cannot drill the ground to prove it.",
  "It cannot say which mile of road cracks first. What it buys Alaska is warning, sooner.",
  "So the cable listens, the twin predicts, and the road gets more time.",
 ]

@@ -32,6 +32,12 @@ brand:
     - "in a world where"
     - "imagine if"
     - "it's no secret that"
+    - "here is the honest part"
+    - "here's the honest part"
+    - "here's what matters"
+    - "here is what matters"
+    - "here's where the frame breaks"
+    - "here is where the frame breaks"
   length_target_words: [280, 420]
   ends_with: "engagement_question"
   no_hashtags: true

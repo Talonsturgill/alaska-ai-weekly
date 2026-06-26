@@ -108,8 +108,10 @@ PHASE 4 — PRODUCE LIKE A MOVIE PRODUCER (illustrate first; vary everything)
   composition, and motion hard. (The locked tokens in the alaska-ai-brief skill apply only to
   the static brief IMAGE, not to this video.)
 - WRITE the VO to the writing rules (no em/en dashes, no semicolons, no curly quotes,
-  contractions, vary sentence length, ≤3 commas, banned-word list, ranges "X to Y", phonetic
-  numbers/acronyms). ~60s ≈ 130–150 words; trim ≥5%. (The copy-paste LinkedIn CAPTION that ships in
+  contractions, vary sentence length, ≤3 commas, banned-word/phrase list (config/brand.yaml —
+  includes AI-tells like "here's the honest part", "here's what matters", "here's where the frame
+  breaks"; never in the VO, captions, or post), ranges "X to Y", phonetic numbers/acronyms).
+  ~60s ≈ 130–150 words; trim ≥5%. (The copy-paste LinkedIn CAPTION that ships in
   the draft is written and graded in its own two-gate loop — see PHASE 6B.)
 - VOICE: pick from config/voices.yaml to fit the story's tone and VARY it run-to-run (publish
   in a Kokoro voice, Apache-2.0; edge-tts drafts only).
@@ -167,8 +169,10 @@ always flawless. The ONLY non-quality exception is a genuine infrastructure outa
 not a quality shortfall): escalate that in the draft. You never ship a known flaw, and you never quit
 because the bar was hard — a loop that ends on a failure is a broken loop.
 
-- PRE-RENDER LINT: every on-screen string/caption is in code — spell-check them, and verify
-  every on-screen number/name/date against the fact-check output.
+- PRE-RENDER LINT: every on-screen string/caption is in code — spell-check them, verify every
+  on-screen number/name/date against the fact-check output, and grep the VO script + every caption
+  against config/brand.yaml banned_phrases (AI-tells like "here's the honest part" must NOT appear in
+  the voice or on screen — rewrite any hit).
 
 - GATE A — OBJECTIVE QUALITY GATE (machine, mandatory, FIRST). Run
   `python .claude/skills/alaska-dispatch/quality_gate.py` over the rendered frames. It MUST exit 0.
@@ -242,14 +246,15 @@ taste scorecard, looping until both pass.
 PHASE 7 — DELIVER, FULLY DONE (no pending states). Work in talonsturgill/alaska-ai-weekly ONLY.
 Everything must be live and downloadable the INSTANT the Gmail draft hits the inbox — never
 "this lands once the commit pushes." Do the whole thing autonomously.
-1. Encode the post-masters: 9:16 (TikTok) + 4:5 (LinkedIn), H.264 High, ~12–14 Mbps, faststart,
-   AAC 48k, −14 LUFS.
+1. Encode the post-masters: 9:16 (TikTok) + 4:5 (LinkedIn), H.264 High, faststart, AAC 48k, −14 LUFS.
+   Cap the bitrate so each ~60s cut stays UNDER 100 MB (GitHub's hosting limit) — e.g. -maxrate ~11M
+   -bufsize ~22M lands ~80 MB at high quality.
 2. Upload BOTH with scripts/upload_video.py → one-click DIRECT-download URLs (bytes never touch the
-   model). It prefers a PERMANENT rclone host when RCLONE_CONFIG_B64 is set, and otherwise FALLS BACK
-   automatically to a no-auth host (temporary ~1h links) — so delivery NEVER blocks on a missing
-   secret. It self-verifies HTTP 200 and prints HOST=permanent|temporary; if temporary, say so in one
-   line in the draft. Re-upload/retry until it actually downloads. NEVER create the draft with a dead,
-   slow, or "ready later" link.
+   model). By DEFAULT it hosts on the repo's `dispatch-media` branch → a PERMANENT
+   raw.githubusercontent.com link, zero setup (uses an rclone remote first if RCLONE_CONFIG_B64 is
+   set; falls back to a temporary host only if the git push fails, e.g. a file ≥100 MB). It
+   self-verifies HTTP 200 and prints HOST=permanent|temporary; if temporary, say so in one line in
+   the draft. NEVER create the draft with a dead, slow, or "ready later" link.
 3. scripts/dispatch_email.py → builds the draft: copy-paste POST TEXT, prominent DOWNLOAD
    buttons (LinkedIn 4:5 + TikTok 9:16), inline poster, VOICE + MUSIC credits, SOURCES (every
    load-bearing claim + primary URL), the score/grade summary, and the illustrative-numbers note.
