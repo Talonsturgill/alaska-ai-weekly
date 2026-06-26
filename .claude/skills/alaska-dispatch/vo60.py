@@ -1,6 +1,6 @@
-"""60s beluga VO — 9 segments, edge-tts Ava, laid on a 60s timeline.
-ALSO captures real per-WORD timings (edge-tts --write-subtitles) so the on-screen
-captions can be word-synced to the actual voice. Writes:
+"""60s permafrost-digital-twin VO — 9 segments, edge-tts (field-report male voice),
+laid on a 60s timeline. ALSO captures real per-WORD timings (edge-tts --write-subtitles)
+so the on-screen captions are word-synced to the actual voice. Writes:
   audio/vo60.wav        the 60s VO bed (stereo, -1.5 dBTP normalized)
   audio/timing60.json   segment starts/beats/durs/speech_end (audio mix + scene beats)
   audio/words60.json    global word list [{w,s,e,seg}] for kinetic captions
@@ -9,17 +9,17 @@ import os, subprocess, json, re
 import numpy as np
 from scipy.io import wavfile
 HERE=os.path.dirname(os.path.abspath(__file__)); AUD=os.path.join(HERE,"audio"); os.makedirs(AUD,exist_ok=True)
-VOICE="en-US-AvaMultilingualNeural"; RATE="-1%"; SR=44100; FPS=30; LEAD=0.45; GAP=0.16; TOTAL=60.0
+VOICE="en-US-AndrewMultilingualNeural"; RATE="+5%"; SR=44100; FPS=30; LEAD=0.40; GAP=0.18; TOTAL=60.0
 SEG=[
- "Cook Inlet has its own belugas. Just a few hundred, and they never leave.",
- "They're hard to see. The water runs gray with glacier silt, and a white whale just vanishes in it.",
- "So you can't count them by looking. You have to listen.",
- "Scientists sank a ring of microphones across the inlet and recorded it for years.",
- "Then an A.I. learned the sound of a beluga, and learned to pull that one voice out of a passing ship's roar.",
- "It works. It flags a real call with better than ninety six percent accuracy, and turns months of tape into a night's work.",
- "Here's the honest part. The microphone can tell you they're still out there. It can't tell you how many are left.",
- "And it can't make the inlet any quieter for the mothers calling to their calves.",
- "So the machine listens, the people count, and a small white pod keeps moving through the gray.",
+ "A road on Alaska's North Slope is cracking, and the reason is underground.",
+ "For thousands of years the people here have known this ground stays frozen.",
+ "So scientists buried two glass cables, a kilometer each, to feel the ground.",
+ "For almost three years they fed back heat and faint tremors.",
+ "Then the team built a twin of the ground inside a computer, part physics, part machine learning.",
+ "It watches the frozen layer warm, up to almost two degrees Fahrenheit a decade, and predicts where the thaw goes.",
+ "Here is the honest part. The twin forecasts the thaw, but it cannot drill the ground to prove it.",
+ "It cannot say which mile of road cracks first. What it buys Alaska is warning, sooner.",
+ "So the cable listens, the twin predicts, and the road gets more time.",
 ]
 env=dict(os.environ); env["SSL_CERT_FILE"]="/etc/ssl/certs/ca-certificates.crt"; env["SSL_CERT_DIR"]="/etc/ssl/certs"
 def run(c): return subprocess.run(c,check=True,capture_output=True,text=True,env=env)

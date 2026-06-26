@@ -1,22 +1,40 @@
-# The launch date — drives the volume counter.
-# Volume N = floor((today - launch_date).days / 7) + 1
-launch_date: 2026-05-10        # YYYY-MM-DD, the date of VOL. 01
-brand_name: "Alaska.Ai"
-default_byline: "BY TALON"
-default_kicker: "WEEKLY BRIEF"
-default_motto: "what's moving in alaska ai, this week"
-default_coords: "61°13′N  ·  149°54′W"
-
-# Target length for video Dispatches.
+launch_date: 2026-05-10
+brand_name: Alaska.Ai
+default_byline: BY TALON
+default_kicker: WEEKLY BRIEF
+default_motto: what's moving in alaska ai, this week
+default_coords: 61°13′N  ·  149°54′W
 dispatch_target_seconds: 60
-
-# Rolling record so the "producer" never repeats a concept/topic.
-# See docs/ROUTINE_SPEC.md (Phase 3). Don't reuse an archetype or topic from the last ~6.
 dispatch_history:
-  - date: 2026-06-24
-    topic: "Cook Inlet beluga acoustic AI (NOAA + Microsoft AI for Good)"
-    archetype: "single-hero portrait — sound made visible"
-    slug: dispatch-2026-06-24-beluga
-    key_entities: [cook inlet, beluga, noaa, microsoft ai for good, passive acoustic, hydrophone]
-    palette: "glacial teal-green + aurora"
-    voice: "edge_tts:en-US-AvaMultilingualNeural"
+- date: 2026-06-24
+  topic: Cook Inlet beluga acoustic AI (NOAA + Microsoft AI for Good)
+  archetype: single-hero portrait — sound made visible
+  slug: dispatch-2026-06-24-beluga
+  key_entities:
+  - cook inlet
+  - beluga
+  - noaa
+  - microsoft ai for good
+  - passive acoustic
+  - hydrophone
+  palette: glacial teal-green + aurora
+  voice: edge_tts:en-US-AvaMultilingualNeural
+- date: '2026-06-26'
+  topic: Permafrost digital twin under a road in Utqiagvik (Penn State + UAF, physics-informed
+    ML + fiber-optic sensing)
+  slug: dispatch-2026-06-26-permafrost
+  key_entities:
+  - permafrost
+  - digital twin
+  - utqiagvik
+  - uaf
+  - penn state
+  - fiber optic
+  - thaw
+  - machine learning
+  - north slope
+  archetype: cross-section + two-worlds split (real ground vs digital twin) + descending
+    thaw front
+  palette: thermal duotone (ice-indigo base, ochre active layer, coral thaw front,
+    gold AI)
+  voice: edge_tts:en-US-AndrewMultilingualNeural

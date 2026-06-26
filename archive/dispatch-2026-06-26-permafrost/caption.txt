@@ -1,0 +1,17 @@
+A road on Alaska's North Slope is cracking, and an AI saw it coming from inside the frozen ground.
+
+Not a data center fighting for megawatts. Two thin glass cables, about a kilometer each, buried under the road in Utqiagvik.
+
+This is the Alaska AI story worth more attention than the data centers get, and it is the opposite kind of machine. Small, cheap, and built to buy people time instead of burn power.
+
+From September 2021 to June 2024, a Penn State and University of Alaska Fairbanks team let those cables read the ground, heat and faint tremors, second by second. Then they built a digital twin of the road embankment inside a computer, part physics and part machine learning, and taught it to forecast how the permafrost thaws. The frozen ground there is warming up to about two degrees Fahrenheit a decade, and the twin predicts where the thaw goes next, before a crack ever reaches the surface.
+
+It is also honest about its limits, which is rare for anything sold as AI. The twin forecasts the thaw, but it cannot drill the ground to prove it, and it cannot tell you which mile of road fails first. A model predicts. The ground is still the proof.
+
+That is the right division of labor up here. The machine watches and warns. People dig, and decide.
+
+Most of the AI noise in the state this month is about power, and pipelines, and which base can spare the electricity. This quiet model under a road is the version that actually protects the people who live on top of it.
+
+So when you picture AI paying off for Alaska, which do you picture, the data center on the base or the cable under the road, and which one earns its place first?
+
+#ArtificialIntelligence #Alaska #Permafrost #DigitalTwin #ClimateTech

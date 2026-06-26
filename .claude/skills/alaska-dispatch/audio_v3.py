@@ -18,13 +18,14 @@ for _ in range(12):
     st=rng.uniform(0,57);dur=rng.uniform(.04,.09);n=int(dur*SR);tb=np.linspace(0,dur,n);ff=400+800*tb/dur
     amb[int(st*SR):int(st*SR)+n]+=lp(np.sin(2*np.pi*np.cumsum(ff)/SR)*np.exp(-tb/(dur*.4)),1500)*.25
 wavfile.write(os.path.join(AUD,"amb60.wav"),SR,nrm(amb,.8))
-# whale call 5s
-tw_=t(5.0);fw=230-50*(tw_/5);call=np.sin(2*np.pi*np.cumsum(fw)/SR)+.5*np.sin(2*2*np.pi*np.cumsum(fw)/SR)+.25*np.sin(3*2*np.pi*np.cumsum(fw)/SR)
-call=.6*call+.8*bp(call,300,700);envc=np.minimum(np.clip(tw_/.6,0,1),np.clip((5-tw_)/1.5,0,1))
-wavfile.write(os.path.join(AUD,"whale60.wav"),SR,nrm(lp(call*envc,1800),.8))
-# sonar 3s
-tp=t(3.0);fp=900+120*np.exp(-tp/.03);ping=np.tanh(1.5*np.sin(2*np.pi*np.cumsum(fp)/SR))*np.exp(-tp/.5)
-wavfile.write(os.path.join(AUD,"sonar60.wav"),SR,nrm(lp(ping,4000),.8))
+# low earth/ice groan 5s (frozen ground under strain) — replaces the beluga whale layer
+tw_=t(5.0);fw=92-34*(tw_/5);call=np.sin(2*np.pi*np.cumsum(fw)/SR)+.5*np.sin(2*2*np.pi*np.cumsum(fw)/SR)+.2*np.sin(3*2*np.pi*np.cumsum(fw)/SR)
+call=.7*call+.5*bp(call,70,240);envc=np.minimum(np.clip(tw_/.8,0,1),np.clip((5-tw_)/1.8,0,1))
+wavfile.write(os.path.join(AUD,"whale60.wav"),SR,nrm(lp(call*envc,420),.8))
+# sensor tick/ping 3s (fiber-optic readout) — replaces the beluga sonar layer
+tp=t(3.0);fp=1500+200*np.exp(-tp/.02);ping=np.tanh(1.4*np.sin(2*np.pi*np.cumsum(fp)/SR))*np.exp(-tp/.32)
+ping+=0.4*np.exp(-tp/.18)*np.sin(2*np.pi*np.cumsum(2200+np.zeros_like(tp))/SR)*(tp<0.05)
+wavfile.write(os.path.join(AUD,"sonar60.wav"),SR,nrm(lp(ping,5200),.8))
 # music bed: prefer a freshly-sourced track (DISPATCH_MUSIC, via scripts/get_music.py), else the
 # legacy asset, else a synthesized fallback so the mix NEVER hard-blocks on a missing file.
 def _loadwav(p):
@@ -64,7 +65,7 @@ run(["ffmpeg","-y","-i",os.path.join(AUD,"bed60raw.wav"),"-af","loudnorm=I=-23:T
 # premix
 graph=("[0:a]highpass=f=85,acompressor=threshold=-20dB:ratio=3.5:attack=8:release=120,equalizer=f=3400:t=q:w=2:g=2.5,equalizer=f=6800:t=q:w=2.2:g=-3[vo];"
  "[vo]asplit=2[vout][key];[1:a]highpass=f=100,equalizer=f=2500:t=q:w=1.3:g=-3.5[mus];[mus][key]sidechaincompress=threshold=0.03:ratio=8:attack=25:release=450[md];"
- "[2:a]volume=-25dB,lowpass=f=2000[amb];[3:a]adelay=6500|6500,volume=-23dB,lowpass=f=1800[wh];[4:a]adelay=30500|30500,volume=-17dB[sn];"
+ "[2:a]volume=-25dB,lowpass=f=2000[amb];[3:a]adelay=3500|3500,volume=-22dB,lowpass=f=900[wh];[4:a]adelay=11000|11000,volume=-18dB[sn];"
  "[vout][md][amb][wh][sn]amix=inputs=5:duration=first:normalize=0[mix]")
 r=run(["ffmpeg","-y","-i",os.path.join(AUD,"vo60.wav"),"-i",os.path.join(AUD,"bed60.wav"),"-i",os.path.join(AUD,"amb60.wav"),
        "-i",os.path.join(AUD,"whale60.wav"),"-i",os.path.join(AUD,"sonar60.wav"),"-filter_complex",graph,"-map","[mix]",os.path.join(AUD,"mix60.wav")])
