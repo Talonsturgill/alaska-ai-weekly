@@ -99,6 +99,14 @@ PHASE 4 — PRODUCE LIKE A MOVIE PRODUCER (illustrate first; vary everything)
   (cross-section, single-hero portrait, map/territory, process line, data-as-landscape,
   field-instrument close-up, then-vs-now, the machine's-POV, exploded diagram, two-worlds
   split, …) and isn't in dispatch_history's last ~6. Push for a fresh idea over a safe one.
+- STORYBOARD THE BEAT MAP before rendering (the picture carries the story — silent-first; most plays
+  are muted). Break the ~60s into 12-16 BEATS, ~3-4s each; every beat introduces ONE new
+  STORY-ADVANCING visual (a new element, a state change, a reveal, a reframe) reached by a MOTIVATED
+  transition (match cut, morph, mask/whip, focus-pull — the cut MEANS something), with the scene's
+  STATE visibly evolving to mirror the arc (noisy→clean, frozen→thawing, unknown→measured). Progressive
+  disclosure: reveal one piece, let it land, then add/replace the next as the VO reaches it. The VO
+  rides the beats. See docs/VIDEO_PRODUCTION_STANDARD.md §3B. If muting the voice loses the story, the
+  storyboard isn't done.
 - COLOR + DESIGN FREEDOM. The brand THROUGHLINES you keep every time are only: the ALASKA.AI
   wordmark/eyebrow + "alaska.ai" signoff, the Fraunces Black + JetBrains Mono type system, and
   a high craft bar. EVERYTHING ELSE IS YOUR CALL. Choose a fresh color world that fits THIS
@@ -182,6 +190,7 @@ because the bar was hard — a loop that ends on a failure is a broken loop.
     · HUD_TEXT     — chart-card glyph-edge energy   → "chart letters illegible"
     · CAPTION_TEXT — caption glyph-edge energy       → "captions generic / hard to read"
     · EVENT_CADENCE— no on-screen-dead window > 5s   → "boring / too slow / make something happen every ~5s"
+    · BEAT_DENSITY — enough DISTINCT story-advancing visual beats across the 60s → "the picture must keep telling the story, not just move"
     · CAPTION_SYNC — captions built from the TTS word-timings → "voice doesn't match the captions"
     · READABILITY  — every readable word clears a brightness + contrast floor → "is every word legible, not just sharp"
     · MUSIC        — a REAL freshly-sourced track is on the mix, NOT the synth fallback → "use the music you went and got"

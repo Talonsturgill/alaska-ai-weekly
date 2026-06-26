@@ -83,6 +83,45 @@ rendering, sound, Alaska authenticity, and platform delivery (sources at bottom)
   beats trending shorter → payload thesis lands ON the stressed word/downbeat ~f630-720 →
   1s dead-still hold → resolution → 3s sign-off. Sync visual emphasis to stressed syllables.
 
+## 3B. Visual storytelling — the picture carries the story (silent-first)
+This is the battle. Most plays are MUTED, the feed is one thumb-flick from gone, and people remember
+~65% of what they SEE versus ~10% of what they read. So the illustration is not decoration under the
+voice — it IS the story. Test: mute the VO; if the picture alone doesn't tell it, the piece failed.
+
+- **THE BEAT MAP (storyboard before you render).** Break the ~60s into **12-16 BEATS, ~3-4s each**.
+  Every beat introduces ONE new visual idea that ADVANCES the story — a new element, a state change,
+  a reveal, a reframe — never a repeat or a wiggle to satisfy a gate. Write the map first: per beat,
+  (a) the ONE new thing on screen, (b) the MOTIVATED transition into it, (c) what it MEANS in the
+  argument. The VO is then timed to RIDE the beats, not the other way around.
+- **PROGRESSIVE DISCLOSURE (the open loop).** Never dump the whole diagram at once. Reveal one piece,
+  let it land, then ADD or REPLACE the next as the VO reaches it. A picture that is still assembling
+  is a question the viewer stays to see answered — that open loop is what beats the scroll.
+- **VISUAL STATE EVOLUTION (show, don't say).** The scene's STATE must visibly change to mirror the
+  arc: scattered→resolved, noisy→clean, frozen→thawing, unknown→measured. The transformation on
+  screen is the message; the words just name it.
+- **ONE CENTRAL METAPHOR.** Pick a concrete image that embodies the abstract AI mechanism and live in
+  it (a detector = one voice pulled from a roar, made visible; a digital twin = a ghost copy of the
+  ground learning ahead of the real one). Abstract idea → one thing you can SEE working.
+- **MOTIVATED TRANSITIONS (the cut MEANS something).** Beat-to-beat, change with intent, not stock
+  swipes. Vocabulary: MATCH CUT (a shape morphs into a kindred shape — a spectrogram peak becomes a
+  mountain ridge — a thematic link); MORPH (one object becomes another = transformation); MASK / WHIP
+  / push-through-a-shape (hide the cut, signal a jump in time or scale); FOCUS-PULL / IRIS (hand
+  attention to the new hero); a hard CUT on the downbeat for emphasis. Fast change = energy/urgency;
+  slow dissolve = reflection. The best transition is barely noticed — it feels like the next sentence
+  of the picture, not a sticker between two shots.
+- **ATTENTION STEERING.** Motion pulls the eye, so move ONLY the thing that matters this beat;
+  everything else holds. Emphasize the word being spoken (scale / glow / underline / color) so eye
+  and ear land together. ONE focal point per beat — never two things competing.
+- **INSTANT CLARITY + ORIENTATION.** The first second states the premise visually (hero on screen by
+  ~f30-45). Through the middle, the picture's own progression signals "where we are" in the arc so the
+  viewer feels carried, not lost.
+- **THE PERPETUAL RULE:** something STORY-ADVANCING happens on screen at least every ~4-5s, and it is
+  a NEW idea or a state change, not motion for its own sake. The EVENT_CADENCE + BEAT_DENSITY gate
+  checks enforce the floor; this section is the bar. *Why it works:* muted viewing makes the picture
+  the story; each new on-screen idea is a micro pattern-interrupt that resets the "should I scroll"
+  timer; progressive disclosure holds an open loop to completion; and visual memory dwarfs verbal, so
+  the transitions and on-screen events ARE what they remember.
+
 ## 4. Visual finishing (apply as a final pass, in this order)
 Work in **linear light** for tone/light math (sRGB→linear in, linear→sRGB out).
 1. **Filmic tone map:** ACES (Narkowicz: a2.51 b0.03 c2.43 d0.59 e0.14, input ×0.6) or Hable.

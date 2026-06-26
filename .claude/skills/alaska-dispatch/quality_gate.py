@@ -9,6 +9,7 @@ Every check here exists because a human reviewer once had to flag it by hand:
   HUD_TEXT         "the letters in the chart box are illegible"
   CAPTION_TEXT     "the captions look generic / hard to read"
   EVENT_CADENCE    "a bit boring, too slow — something should happen every ~5s"
+  BEAT_DENSITY     "the illustration must keep TELLING the story — distinct visual beats, not just motion"
   CAPTION_SYNC     "the voice doesn't match the on-screen captions"
   READABILITY      "is every word bright enough + legible (not just sharp)?"
   MUSIC            "real sourced track is on, NOT the synth fallback" (loop must get real music)
@@ -75,6 +76,17 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     m["event_spikes"]=len(spikes); m["biggest_gap_s"]=round(max([0.0]+[b-a for a,b in gaps]),1); m["dead_windows"]=gaps
     checks.append({"name":"EVENT_CADENCE","pass":len(gaps)==0,
         "detail":f"biggest dead gap={m['biggest_gap_s']}s (max {max_gap}s), dead windows={gaps} — guards 'boring/too slow'"})
+    # 4b) BEAT_DENSITY — enough DISTINCT story-advancing visual beats (the picture keeps telling the story)
+    dur_s=len(fs)/fps
+    beat_thr=max(1.3,float(np.percentile([d for _,_,d in deltas],65)))   # a real change, not idle drift
+    beats=0; last_bt=-9.0
+    for _,jb,d in deltas:                                                # deltas are time-ordered
+        tcur=jb/fps
+        if d>=beat_thr and (tcur-last_bt)>=2.0: beats+=1; last_bt=tcur
+    min_beats=max(8,int(dur_s/5.0))                                      # ~1 strong beat per 5s (12 for 60s)
+    m["visual_beats"]=beats; m["min_beats"]=min_beats
+    checks.append({"name":"BEAT_DENSITY","pass":beats>=min_beats,
+        "detail":f"{beats} distinct visual beats (need >={min_beats}, ~1 per 5s) — the picture must keep telling the story, not just move"})
     # 5) CAPTION_SYNC — captions are voice-driven
     ok_sync=False; det="words60.json missing — captions not voice-synced"
     if os.path.exists(words_path):
