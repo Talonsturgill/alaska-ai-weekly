@@ -33,7 +33,8 @@ pool:
     url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Investigations.mp3"
     mood: [tense, field-HUD, sensor, analytical, detective]
     bpm: 120
-    used: false
+    used: true
+    used_in: "dispatch-2026-06-26-wildfire-xprize"
 
   - id: incompetech-clean-soul
     title: "Clean Soul"

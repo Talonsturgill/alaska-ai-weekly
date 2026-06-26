@@ -76,6 +76,6 @@ def main():
     sources=json.loads(Path(a.sources).read_text()).get("sources") if a.sources and Path(a.sources).exists() else None
     html=render(post,poster_b64,a.video_url,a.voice or "(unset)",a.music or "(unset)",sources,a.date)
     if a.out_html: Path(a.out_html).write_text(html); print("wrote",a.out_html)
-    print(json.dumps({"subject":f"ALASKA.AI — Dispatch ready — {a.date}","to":a.to,"html_body":html})[:1] and "payload-json-ready")
+    print(json.dumps({"subject":f"ALASKA.AI — Dispatch ready — {a.date}","to":a.to,"html_body":html}))
 
 if __name__=="__main__": main()
