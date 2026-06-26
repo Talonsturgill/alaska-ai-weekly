@@ -1,0 +1,40 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "name": "SHARPNESS",
+      "pass": true,
+      "detail": "median lapvar=416.3 (floor 14.0) \u2014 guards 'looks blurry'"
+    },
+    {
+      "name": "HUD_TEXT",
+      "pass": true,
+      "detail": "chart text hf p90=16.89 (floor 3.2) \u2014 guards 'chart letters illegible'"
+    },
+    {
+      "name": "CAPTION_TEXT",
+      "pass": true,
+      "detail": "caption text hf p90=16.26 (floor 3.2) \u2014 guards 'captions generic/hard to read'"
+    },
+    {
+      "name": "EVENT_CADENCE",
+      "pass": true,
+      "detail": "biggest dead gap=0.0s (max 5.0s), dead windows=[] \u2014 guards 'boring/too slow'"
+    },
+    {
+      "name": "CAPTION_SYNC",
+      "pass": true,
+      "detail": "15 voice-synced cues (min 10), 0 bad-duration \u2014 guards 'voice != captions'"
+    }
+  ],
+  "metrics": {
+    "sharpness_median": 416.3,
+    "chart_hf_p90": 16.89,
+    "caption_hf_p90": 16.26,
+    "event_spikes": 135,
+    "biggest_gap_s": 0.0,
+    "dead_windows": [],
+    "caption_cues": 15,
+    "score": 10.0
+  }
+}
