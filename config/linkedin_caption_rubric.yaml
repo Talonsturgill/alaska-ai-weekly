@@ -1,0 +1,53 @@
+# ALASKA.AI — LinkedIn Caption Rubric
+# Used by the scorer + editor in Phase 6B. Ship at 8.5, zero hard_fails.
+rubric:
+  ship_threshold: 8.5
+  hard_fails:
+    - "hook exceeds 140 chars (mobile fold cut)"
+    - "body length outside 1300-3000 chars"
+    - "hashtag count outside 3-5 range"
+    - "hashtags appear in the body (must be final standalone line)"
+    - "no closing CTA question"
+    - "banned punctuation: em-dash, en-dash, semicolon, or curly quotes"
+    - "banned opener: 'In an era', 'Imagine', 'It's no secret', 'Excited to share', 'I'm thrilled'"
+    - "a banned phrase from config/brand.yaml appears in the body"
+    - "on-screen numbers in the video disagree with numbers in the caption"
+  criteria:
+    - name: "Hook (mobile fold stop)"
+      weight: 0.20
+      10: "First line <= 140 chars; concrete fact, sharp number, or real position; line 2 deepens tension making 'see more' irresistible."
+      7:  "Solid, not generic, but slightly safe or slightly over 140."
+      4:  "Generic, buries the point, or starts with a banned opener."
+      0:  "Banned opener or first line > 140 chars."
+    - name: "Body — position + specifics"
+      weight: 0.20
+      10: "Takes a clear, defensible position and supports it with 2-3 hard specifics (names, numbers, places, mechanisms). Every paragraph advances the argument."
+      7:  "Has a position; one paragraph is vague or hedges into mush."
+      4:  "Mostly descriptive, no position, or relies on vibes over facts."
+    - name: "LinkedIn dwell (length + format)"
+      weight: 0.15
+      10: "1300-1900 chars; short lines, generous whitespace; scans in one thumb-scroll; <=3 emoji; no Unicode-bold; no checkmark-per-line."
+      7:  "In range; one wall-of-text or over-formatted section."
+      4:  "Too short (<1300), too long (>3000), or over-formatted (AI tell)."
+    - name: "Alaska.Ai voice"
+      weight: 0.15
+      10: "Analytical, pro-Alaska, honest about limits; obeys all writing rules (no dashes/semicolons/curly quotes, contractions, ranges 'X to Y', phonetic numbers)."
+      7:  "Mostly on-voice; one drift to LinkedIn-hype or tech-blog."
+      4:  "Drifts noticeably; multiple rule violations."
+    - name: "CTA quality"
+      weight: 0.15
+      10: "Ends with a genuine, specific question tied to the take — invites a paragraph-length comment, not a one-word answer."
+      7:  "Question present and on-topic but slightly generic."
+      4:  "Generic 'What do you think?' or missing entirely."
+      0:  "No question, or replaced by a 'follow us' CTA."
+    - name: "Hashtag hygiene"
+      weight: 0.10
+      10: "3-5 hashtags; final standalone line; mix of broad/mid/niche true to THIS story. None in the body."
+      7:  "3-5 hashtags on final line; one slightly off-story."
+      4:  "Wrong count, in the body, or all same tier."
+      0:  "Missing or > 5 (reach kill)."
+    - name: "Source/number accuracy"
+      weight: 0.05
+      10: "Every number and entity in the caption matches the fact-checked sources and the video."
+      7:  "Minor rounding/approximation noted."
+      4:  "A number or entity is unverified or disagrees with the video."

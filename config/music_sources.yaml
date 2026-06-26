@@ -1,0 +1,83 @@
+# ALASKA.AI — Vetted free-use music pool for Dispatch videos.
+# All tracks: confirmed free for commercial use with named composers.
+# Used by scripts/get_music.py --pool --mood <mood>
+# Update this list run-to-run: once a track has been used, mark used: true.
+# NEVER reuse a track in consecutive Dispatches.
+
+pool:
+  - id: pixabay-arctic-wind
+    title: "Arctic Wind"
+    composer: "Cjbeards"
+    license: "Pixabay Content License (royalty-free, no attribution required)"
+    source: "Pixabay Music"
+    url: "https://cdn.pixabay.com/download/audio/2022/10/21/audio_30d7c43d33.mp3"
+    mood: [cold, ambient, arctic, tundra, sparse]
+    bpm: 80
+    used: false
+
+  - id: pixabay-inspiring-alaska
+    title: "Inspiring Alaska"
+    composer: "Lesfm"
+    license: "Pixabay Content License (royalty-free, no attribution required)"
+    source: "Pixabay Music"
+    url: "https://cdn.pixabay.com/download/audio/2022/07/16/audio_50cca8efb6.mp3"
+    mood: [hopeful, warm, community, wildlife, nature]
+    bpm: 95
+    used: false
+
+  - id: incompetech-investigations
+    title: "Investigations"
+    composer: "Kevin MacLeod"
+    license: "CC BY 4.0 (credit required: incompetech.com)"
+    source: "Incompetech"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Investigations.mp3"
+    mood: [tense, field-HUD, sensor, analytical, detective]
+    bpm: 120
+    used: false
+
+  - id: incompetech-clean-soul
+    title: "Clean Soul"
+    composer: "Kevin MacLeod"
+    license: "CC BY 4.0 (credit required: incompetech.com)"
+    source: "Incompetech"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Clean%20Soul.mp3"
+    mood: [warm, community, indigenous, human-stakes, soft-premium]
+    bpm: 88
+    used: false
+
+  - id: incompetech-cipher
+    title: "Cipher"
+    composer: "Kevin MacLeod"
+    license: "CC BY 4.0 (credit required: incompetech.com)"
+    source: "Incompetech"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Cipher.mp3"
+    mood: [data, tech, electronic, AI, field-HUD, sensor]
+    bpm: 130
+    used: false
+
+  - id: incompetech-relaxing-piano
+    title: "Relaxing Piano Music"
+    composer: "Kevin MacLeod"
+    license: "CC BY 4.0 (credit required: incompetech.com)"
+    source: "Incompetech"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Relaxing%20Piano%20Music.mp3"
+    mood: [reflective, soft, slow, contemplative]
+    bpm: 70
+    used: false
+
+  - id: incompetech-of-the-same
+    title: "Of the Same"
+    composer: "Kevin MacLeod"
+    license: "CC BY 4.0 (credit required: incompetech.com)"
+    source: "Incompetech"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Of%20the%20Same.mp3"
+    mood: [energy, upbeat, innovation, tech]
+    bpm: 140
+    used: false
+
+guidance:
+  - "Search Pixabay Music first — no attribution required, simplest license."
+  - "Incompetech / Kevin MacLeod: CC BY 4.0 — include 'Music by Kevin MacLeod (incompetech.com), CC BY 4.0' in credits."
+  - "Free Music Archive: check individual track licenses carefully — only use CC0 or CC BY."
+  - "Never use a track marked used: true in consecutive runs."
+  - "The MUSIC gate in quality_gate.py will FAIL any synth-generated bed — use a real track."
