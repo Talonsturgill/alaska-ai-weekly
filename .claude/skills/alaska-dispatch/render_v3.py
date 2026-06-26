@@ -1,8 +1,12 @@
 """
-Alaska.Ai Dispatch v3 — 9:16 (1080x1920), 60s/1800f, NEW STANDARD.
-Swimming mother + gray calf (craft swim + 180deg motion blur), depth-of-field,
-aurora-rich glacial water (not flat blue), open captions, cinematic finishing.
-  test:  python render_v3.py test 60 500 900 1300 1600
+Alaska.Ai Dispatch v3 — 9:16 (1080x1920), 60s/1800f.
+STORY: a physics-informed AI "digital twin" watches permafrost thaw under a road in
+Utqiagvik, Alaska, and forecasts where the frozen ground is going.
+ARCHETYPE: vertical CROSS-SECTION of the earth (tundra -> road embankment -> active layer ->
+permafrost -> ice wedges), a fiber-optic cable threading the embankment, a glowing gold digital-
+twin lattice, and a hot coral thaw-front isotherm that descends through the layers over time.
+PALETTE: thermal duotone — frozen ice-indigo base, warm ochre active layer, coral thaw front, gold AI.
+  test:  python render_v3.py test 60 300 620 800 1000 1400 1700
   range: python render_v3.py 0 1800
 """
 import sys, os, math, json
@@ -14,8 +18,11 @@ import easing as E, craft
 
 HERE=os.path.dirname(os.path.abspath(__file__)); FR=os.path.join(HERE,"frames_v3"); os.makedirs(FR,exist_ok=True)
 FONTS=os.path.join(HERE,"..","..",".claude","skills","alaska-ai-brief","fonts")
-W,H=1080,1920; FPS=30; NF=1800; SURF=330; MARGIN=96
-GOLD=(255,199,44); GREEN=(26,229,164); VIOLET=(123,91,255); SNOW=(244,250,255); SLATE=(120,140,165)
+W,H=1080,1920; FPS=30; NF=1800; MARGIN=96
+# thermal-duotone palette (deliberately NOT default blue; warm active layer dominates the cold base)
+GOLD=(255,199,44); CORAL=(255,106,61); AMBER=(196,132,58); RUST=(150,74,40)
+ICE=(150,196,224); FROZEN_HI=(36,78,108); FROZEN_LO=(12,30,50); SNOW=(244,250,255); SLATE=(150,168,190)
+ASPH=(58,62,70)
 def fr(sz,wt=900,op=144,it=False,sf=0):
     f=ImageFont.truetype(os.path.join(FONTS,"Fraunces-Italic-Var.ttf" if it else "Fraunces-Var.ttf"),sz)
     try:f.set_variation_by_axes([op,wt,sf,0])
@@ -30,84 +37,127 @@ def tk(d,t,f,fill,x,y,tr=0.0):
     ex=int(round(f.size*tr));c=x
     for ch in t: d.text((c,y),ch,font=f,fill=fill);b=f.getbbox(ch);c+=(b[2]-b[0])+ex
 
-TIM=json.load(open(os.path.join(HERE,"audio","timing60.json"))); BEATS=TIM["beats"]  # 9
-CUES=json.load(open(os.path.join(HERE,"audio","words60.json")))["words"]  # voice-synced phrase captions
-# ---- text manifest for the READABILITY gate (brightness + contrast of every word) ----
+TIM=json.load(open(os.path.join(HERE,"audio","timing60.json"))); BEATS=TIM["beats"]; SPEECH_END=TIM.get("speech_end",50.0)
+CUES=json.load(open(os.path.join(HERE,"audio","words60.json")))["words"]
+OUTRO_F=int((SPEECH_END+0.5)*FPS)          # branded outro begins just after the voice ends
+# ---- text manifest for the READABILITY gate (brightness + contrast of every readable word) ----
 LOGTEXT=os.environ.get("DISPATCH_TEXTLOG")=="1"; TEXTLOG=[]; BGLUMA=None
 def _lum(a): return 0.2126*a[...,0]+0.7152*a[...,1]+0.0722*a[...,2]
 def _logw(x,y,w_px,h_px,col,alpha,target,kind):
-    """Log a drawn word: its fill brightness, its background, and whether it must be readable now."""
     if not LOGTEXT or BGLUMA is None: return
     x0=max(0,int(x));y0=max(0,int(y));x1=min(W,int(x+w_px));y1=min(H,int(y+h_px))
     if x1<=x0 or y1<=y0: return
     bg=float(BGLUMA[y0:y1,x0:x1].mean()); fl=float(0.2126*col[0]+0.7152*col[1]+0.0722*col[2])
     TEXTLOG.append({"kind":kind,"alpha":round(float(alpha),3),"fill_luma":round(fl,1),
                     "bg_luma":round(bg,1),"vis":round(fl/255.0*float(alpha),3),"target":bool(target)})
-# ---------- background: aurora + glacial water (DoF-softened) ----------
-def aur(seed,vc,sp,hf,inten,color,warp,h=SURF+50):
-    rng=np.random.default_rng(seed); sp_=gaussian_filter(rng.standard_normal(W),hf); sp_=sp_/(np.std(sp_)+1e-6)*warp
-    st=gaussian_filter(rng.standard_normal((h,W)),(2,26)); st=(st-st.min())/(st.max()-st.min()+1e-6); st=st**1.7
-    ys=np.arange(h).reshape(-1,1).astype(np.float32); bell=np.exp(-((ys-(vc+sp_.reshape(1,-1)))**2)/(2*sp**2))
-    return gaussian_filter(bell*st*inten,(8,12))[:,:,None]*(np.array(color,np.float32)/255.)
+
+# ---------- geometry of the cross-section ----------
+HORIZON=300            # sky band above
+SURF=470              # ground surface line (road sits here)
+ACTIVE0=470; ACTIVE1=660   # active layer (thaws): warm ochre band
+# permafrost runs ACTIVE1 .. H
+EMB_CX=540; EMB_TOP_W=520; EMB_BOT_W=760; EMB_H=120   # road embankment trapezoid above SURF
+ICE_WEDGES=[(250,0.9),(470,1.1),(720,0.85),(910,1.0)]  # x, scale — vertical ice wedges in permafrost
+
 def build_base():
+    """Static cross-section: cold sky, road embankment, active layer, permafrost with ice wedges + texture + lighting."""
     img=np.zeros((H,W,3),np.float32)
-    for y in range(SURF):
-        t=(y/max(1,SURF-1))**1.3; img[y]=np.array([3,8,22])*(1-t)+np.array([12,30,54])*t
-    glow=np.zeros((SURF+50,W,3),np.float32)
-    glow+=aur(7,86,46,60,160,GREEN,46); glow+=aur(19,60,32,90,120,(90,200,240),55); glow+=aur(31,120,60,40,110,VIOLET,34)
-    img[:SURF]=np.clip(img[:SURF]+glow[:SURF],0,255)
-    # water: steely teal -> deep, with a violet/green cast (not flat blue)
-    hi=np.array([30,84,92],np.float32); mid=np.array([20,54,74],np.float32); lo=np.array([10,26,44],np.float32)
-    for y in range(SURF,H):
-        t=(y-SURF)/(H-SURF); c=hi*(1-min(t*2,1))+mid*min(t*2,1) if t<0.5 else mid*(1-(t-.5)*2)+lo*((t-.5)*2); img[y]=c
-    refl=glow[:SURF][::-1]*0.13; rh=min(refl.shape[0],H-SURF); img[SURF:SURF+rh]=np.clip(img[SURF:SURF+rh]+refl[:rh],0,255)
-    rays=np.zeros((H,W),np.float32)
-    for cx,wid,s_ in [(360,160,0.5),(640,220,0.62),(800,150,0.46)]:
-        for y in range(SURF,H):
-            t=(y-SURF)/(H-SURF);half=wid*(0.4+1.6*t);x0=max(0,int(cx-t*120-half));x1=min(W,int(cx-t*120+half));rays[y,x0:x1]+=s_*(1-t)**1.7*0.5
-    img+=gaussian_filter(rays,(8,30))[:,:,None]*np.array([34,80,88],np.float32)
-    # violet aurora-reflection haze deeper (color richness)
-    z=np.clip((np.mgrid[0:H,0:W][0]-SURF)/(H-SURF),0,1)[:,:,None]
-    img=img*(1-0.28*(1-np.exp(-1.3*z)))+np.array([38,58,74],np.float32)*(0.28*(1-np.exp(-1.3*z)))
+    # sky / cold tundra air
+    for y in range(HORIZON):
+        t=(y/max(1,HORIZON-1))
+        img[y]=np.array([26,34,44])*(1-t)+np.array([78,96,112])*t
+    # thin tundra ground strip between horizon and surface (snowy ochre)
+    for y in range(HORIZON,SURF):
+        t=(y-HORIZON)/max(1,SURF-HORIZON)
+        img[y]=np.array([120,120,118])*(1-t)+np.array([150,120,80])*t
+    # active layer — warm ochre/amber (the part that thaws)
+    for y in range(ACTIVE0,ACTIVE1):
+        t=(y-ACTIVE0)/max(1,ACTIVE1-ACTIVE0)
+        img[y]=np.array([176,120,58])*(1-t)+np.array([120,74,40])*t
+    # permafrost — frozen ice-indigo, darkening with depth
+    for y in range(ACTIVE1,H):
+        t=(y-ACTIVE1)/max(1,H-ACTIVE1)
+        img[y]=np.array(FROZEN_HI,np.float32)*(1-t)+np.array(FROZEN_LO,np.float32)*t
+    # ice wedges: lighter wedge-shaped intrusions in the permafrost
+    wedge=np.zeros((H,W),np.float32)
+    for (wx,sc) in ICE_WEDGES:
+        for y in range(ACTIVE1,H):
+            t=(y-ACTIVE1)/(H-ACTIVE1); half=(46*sc)*(1.0-0.7*t)  # widest near the top, taper down
+            x0=int(wx-half); x1=int(wx+half)
+            if x1>x0: wedge[y,max(0,x0):min(W,x1)]+= (1-t)*0.7
+    img+=gaussian_filter(wedge,(3,2))[:,:,None]*np.array([20,40,54],np.float32)
+    # ground texture (tactile soil + ice grit) only below the surface
+    rng=np.random.default_rng(11)
+    tex=gaussian_filter(rng.standard_normal((H,W)).astype(np.float32),1.4); tex/=tex.std()+1e-6
+    mask=np.zeros((H,W),np.float32); mask[SURF:]=1.0; mask=gaussian_filter(mask,6)
+    img+=(tex*mask*7.0)[:,:,None]
+    # subtle lighting: a soft key from upper-left warms the active layer, depth darkens
+    yy,xx=np.mgrid[0:H,0:W].astype(np.float32)
+    key=np.clip(1.0-((xx-330)**2/(900**2)+(yy-SURF)**2/(560**2)),0,1)*0.16
+    img[SURF:]+=(key[SURF:,:,None]*np.array([60,40,16],np.float32))
+    # road embankment trapezoid (asphalt) sitting on the surface
+    emb=Image.new("L",(W,H),0); ed=ImageDraw.Draw(emb)
+    ed.polygon([(EMB_CX-EMB_TOP_W//2,SURF-EMB_H),(EMB_CX+EMB_TOP_W//2,SURF-EMB_H),
+                (EMB_CX+EMB_BOT_W//2,SURF),(EMB_CX-EMB_BOT_W//2,SURF)],fill=255)
+    em=np.array(emb,np.float32)/255.
+    road=np.zeros((H,W,3),np.float32); road[:]=np.array(ASPH,np.float32)
+    # asphalt vertical shade + a lit crown
+    road+= (0.5-np.abs((xx-EMB_CX)/(EMB_BOT_W/2)))[:,:,None]*np.array([26,26,28],np.float32)
+    img=img*(1-em[:,:,None])+road*em[:,:,None]
+    # embankment top highlight line (lit crown)
     img=np.clip(img,0,255)
-    img=craft.depth_blur(img,sigma=3.2)                          # DoF on the whole bed (lighter — keep acuity)
-    return img
+    img=craft.depth_blur(img,sigma=2.0)        # gentle DoF on the static bed; overlays stay crisp
+    return img.astype(np.float32)
+
 _Y,_X=np.mgrid[0:H,0:W].astype(np.float32); _R=np.sqrt(((_X-W/2)/(W/2))**2+((_Y-H/2)/(H/2))**2)
 def finish(u8,seed):
+    """linear-light ACES + warm/cool thermal split-tone + bloom + cos^4 vignette + luma grain + dither."""
     f=u8.astype(np.float32)/255.;a,b,c,d,e=2.51,.03,2.43,.59,.14;g=np.clip((f*(a*f+b))/(f*(c*f+d)+e),0,1)
-    g=np.clip(g+(g-.5)*.05,0,1);lum=(0.2126*g[...,0]+0.7152*g[...,1]+0.0722*g[...,2])[...,None]
-    sh=(1-lum)**2;hi=lum**2;g=np.clip(g+(np.array([12,30,54])/255-.5)*.08*sh+(np.array([255,205,110])/255-.5)*.06*hi,0,1)
-    lb=np.clip(lum[...,0]-.72,0,1)/.28;sm=lb[::4,::4]
+    g=np.clip(g+(g-.5)*.06,0,1);lum=(0.2126*g[...,0]+0.7152*g[...,1]+0.0722*g[...,2])[...,None]
+    sh=(1-lum)**2;hi=lum**2
+    # shadows toward frozen blue, highlights toward warm amber (the thermal world)
+    g=np.clip(g+(np.array([18,40,64])/255-.5)*.085*sh+(np.array([255,196,120])/255-.5)*.07*hi,0,1)
+    lb=np.clip(lum[...,0]-.70,0,1)/.30;sm=lb[::4,::4]
     glow=np.asarray(Image.fromarray((np.clip(gaussian_filter(sm,2.5)+.6*gaussian_filter(sm,6),0,1)*255).astype(np.uint8)).resize((W,H),Image.BILINEAR),np.float32)/255.
-    g=1-(1-g)*(1-np.clip(glow[...,None]*np.array([1,.85,.6])*.12,0,1))
-    g=g*(0.85+0.15*(1/(1+(_R*1.45)**2)**2))[...,None]
-    rng=np.random.default_rng(seed);n=gaussian_filter(rng.standard_normal((H,W)).astype(np.float32),1.1);n/=n.std()+1e-6
-    g=g+(n*np.exp(-((lum[...,0]-.4)**2)/(2*.25**2))*(4.0/255.))[...,None]   # lighter grain
+    g=1-(1-g)*(1-np.clip(glow[...,None]*np.array([1,.82,.5])*.13,0,1))
+    g=g*(0.86+0.14*(1/(1+(_R*1.4)**2)**2))[...,None]
+    rng=np.random.default_rng(seed);n=gaussian_filter(rng.standard_normal((H,W)).astype(np.float32),1.05);n/=n.std()+1e-6
+    g=g+(n*np.exp(-((lum[...,0]-.4)**2)/(2*.25**2))*(4.6/255.))[...,None]
     g=np.clip(g+(rng.random((H,W,1))+rng.random((H,W,1))-1)/255.,0,1)
     return (g*255).astype(np.uint8)
-# ---------- beluga (parametric, lit) ----------
-def beluga(scale=1.0,body=(244,250,255),belly=(150,188,214),rim=(220,242,252)):
-    s=2;W0=int(640*scale);H0=int(360*scale);SW,SH=W0*s,H0*s;cy=int(178*scale)*s;x0=int(40*scale)*s;L=int(540*scale)*s
-    tx=np.array([0,.03,.08,.14,.22,.32,.45,.58,.70,.80,.88,.94,1.]);top=np.array([26,60,86,92,88,82,75,66,56,44,32,23,19])*scale*s;bot=np.array([14,44,60,70,79,81,77,69,57,43,31,21,17])*scale*s
-    xs=np.linspace(0,1,240);X=x0+xs*L;YT=cy-PchipInterpolator(tx,top)(xs);YB=cy+PchipInterpolator(tx,bot)(xs)
-    pts=[(X[i],YT[i]) for i in range(len(xs))]+[(X[i],YB[i]) for i in range(len(xs)-1,-1,-1)]
-    mask=Image.new("L",(SW,SH),0);md=ImageDraw.Draw(mask);md.polygon(pts,fill=255)
-    md.polygon([(x0+L*.93,cy-26*s),(x0+L*1.06,cy-112*s),(x0+L*1.10,cy-92*s),(x0+L*1.005,cy-6*s),(x0+L*1.10,cy+88*s),(x0+L*1.06,cy+110*s),(x0+L*.93,cy+24*s)],fill=255)
-    md.polygon([(x0+L*.205,cy+58*s),(x0+L*.20,cy+116*s),(x0+L*.25,cy+132*s),(x0+L*.295,cy+96*s),(x0+L*.28,cy+64*s)],fill=255)
-    mask=mask.filter(ImageFilter.GaussianBlur(1.2));al=np.array(mask,np.float32)/255.
-    yy,xx=np.mgrid[0:SH,0:SW].astype(np.float32);col=np.zeros((SH,SW,3),np.float32);col[:]=body
-    g=np.clip((yy-(cy-90*s))/(190*s),0,1);col=np.clip(col+(1-g)[...,None]*np.array([10,16,22])+g[...,None]*(np.array(belly,np.float32)-np.array(body,np.float32)),0,255)
-    sheen=np.exp(-((yy-(cy-58*s))/(34*s))**2)*np.clip(1-np.abs(xx-(x0+L*.42))/(L*.55),0,1);col=np.clip(col+sheen[...,None]*np.array([26,28,32]),0,255)
-    spr=Image.fromarray(np.dstack([col,al*255]).astype(np.uint8),"RGBA")
-    rl=Image.new("RGBA",(SW,SH),(0,0,0,0));rd=ImageDraw.Draw(rl);rd.line([(X[i],YT[i]) for i in range(len(xs))],fill=(*rim,225),width=int(3*s),joint="curve")
-    rl=rl.filter(ImageFilter.GaussianBlur(1.4*s));ra=np.array(rl);ra[...,3]=(ra[...,3]*al).astype(np.uint8);spr=Image.alpha_composite(spr,Image.fromarray(ra,"RGBA"))
-    dd=ImageDraw.Draw(spr);ex,ey=x0+74*s,cy-6*s;dd.ellipse([ex-6*s,ey-6*s,ex+6*s,ey+6*s],fill=(14,20,30,255))
-    mxs=np.linspace(x0+6*s,x0+84*s,20);mys=cy+22*s+14*s*np.sin(np.linspace(.2,1.05,20));dd.line(list(zip(mxs,mys)),fill=(70,96,120,160),width=int(1.6*s))
-    spr=spr.resize((W0,H0),Image.LANCZOS);a=np.array(spr);rgb=craft.add_texture(a[...,:3].astype(np.float32),a[...,3].astype(np.float32)/255.,7,2.0,3.0)
-    return Image.fromarray(np.dstack([rgb,a[...,3]]).astype(np.uint8),"RGBA")
-def glow(spr,colr=(20,80,100)):
-    al=np.array(spr)[...,3].astype(np.float32);g=gaussian_filter(al,18);g=(g/g.max()*120).astype(np.uint8)
-    c=np.zeros((*g.shape,4),np.uint8);c[...,0]=colr[0];c[...,1]=colr[1];c[...,2]=colr[2];c[...,3]=g;return Image.fromarray(c,"RGBA")
+
+# ---------- the thaw-front isotherm (the descending prediction) ----------
+def thaw_front_y(f):
+    """The coral isotherm that the twin pushes downward over time (eased). Returns y in px.
+    Starts clearly inside the blue permafrost (below the amber active layer) so it reads, and descends."""
+    p=E.in_out_cubic(E.seg(f,BEATS[5]-40,1500))      # begins at beat6, descends through to the end
+    return ACTIVE1+26 + p*250
+
+def draw_thaw_front(d,f,alpha,xa,xb,predicted=False):
+    y0=thaw_front_y(f); pts=[]
+    for i in range(0,61):
+        x=xa+(xb-xa)*i/60.0
+        wob=8*math.sin(x/120.0 + f/22.0) + 5*math.sin(x/47.0 - f/30.0)
+        pts.append((x,y0+wob))
+    col=CORAL
+    for wd,al in [(15,int(70*alpha)),(8,int(170*alpha)),(3,int(255*alpha))]:
+        d.line(pts,fill=(*col,al),width=wd,joint="curve")
+    # a small "THAW FRONT" tag rides the left end so the viewer knows what the coral line is
+    if alpha>0.6:
+        tf=mono(15,b=True); d.text((xa+6,y0-26),"THAW FRONT",font=tf,fill=(*CORAL,int(220*alpha)))
+    if predicted:                                    # dotted forecast extension below the proven line
+        for i in range(0,61,3):
+            x=xa+(xb-xa)*i/60.0; yy=y0+38+10*math.sin(x/90.0+f/18.0)
+            d.ellipse([x-2,yy-2,x+2,yy+2],fill=(*GOLD,int(190*alpha)))
+
+print("precompute base...",file=sys.stderr)
+BASE=build_base()
+# fiber-optic cable path along the embankment base (gentle catenary across the section)
+CABLE=[(70+ i*(W-140)/60.0, SURF+22 + 26*math.sin(i/60.0*math.pi)) for i in range(61)]
+def cable_xy(s):  # s in 0..1 along the cable
+    i=s*60.0; i0=int(i); i1=min(60,i0+1); t=i-i0
+    x=CABLE[i0][0]*(1-t)+CABLE[i1][0]*t; y=CABLE[i0][1]*(1-t)+CABLE[i1][1]*t; return x,y
+
 # ---------- captions: voice-synced kinetic phrases (from words60.json) ----------
 def _wrap(words,fnt,maxw,spw):
     lines=[[]]
@@ -119,178 +169,218 @@ def _wrap(words,fnt,maxw,spw):
 def caption(out,f):
     t=f/FPS; cue=None
     for c in CUES:
-        if c["s"]-0.28<=t<c["e"]+0.14: cue=c; break
+        if c["s"]-0.28<=t<c["e"]+0.18: cue=c; break
     if not cue: return
     s,e=cue["s"],cue["e"]
-    ap=E.out_cubic(E.seg(t,s-0.28,s+0.06))*(1.0-E.seg(t,e-0.16,e+0.14))
+    ap=E.out_cubic(E.seg(t,s-0.28,s+0.06))*(1.0-E.seg(t,e-0.16,e+0.18))
     if ap<=0.02: return
-    prog=max(0.0,min(1.0,(t-s)/max(0.25,(e-s))))               # karaoke fill, tied to spoken time
+    prog=max(0.0,min(1.0,(t-s)/max(0.25,(e-s))))
     raw=cue["w"].split(); tot=max(1,sum(len(w)+1 for w in raw)); acc=0; words=[]
     for w in raw:
         mid=(acc+(len(w)+1)/2.0)/tot; acc+=len(w)+1; words.append((w,mid))
-    fnt=fr(58,650); maxw=W-2*104; spw=int(fnt.size*0.30)
+    fnt=fr(56,650); maxw=W-2*104; spw=int(fnt.size*0.30)
     lines=_wrap(words,fnt,maxw,spw)
-    if len(lines)>3: fnt=fr(46,650); spw=int(fnt.size*0.30); lines=_wrap(words,fnt,maxw,spw)
-    nl=len(lines); lh=int(fnt.size*1.18); blockh=lh*nl; y0=1500-blockh//2; d=ImageDraw.Draw(out)
+    if len(lines)>3: fnt=fr(45,650); spw=int(fnt.size*0.30); lines=_wrap(words,fnt,maxw,spw)
+    nl=len(lines); lh=int(fnt.size*1.18); blockh=lh*nl; y0=1496-blockh//2; d=ImageDraw.Draw(out)
     for li,ln in enumerate(lines):
-        lr=E.out_cubic(max(0.0,min(1.0,(prog-li/max(1,nl))/0.16)))   # each line reveals as the VO reaches it
+        lr=E.out_cubic(max(0.0,min(1.0,(prog-li/max(1,nl))/0.16)))
         la=ap*lr
         if la<=0.02: continue
-        rise=int((1-lr)*12)                                          # slight settle-up on entry
+        rise=int((1-lr)*12)
         lwf=sum(tw(w,fnt) for w,_ in ln)+spw*(len(ln)-1); x=(W-lwf)//2; y=y0+li*lh+rise
         for (w,mid) in ln:
-            col=(244,250,255) if mid<=prog-0.05 else (GOLD if mid<=prog+0.05 else (148,168,194))
-            d.text((x,y),w,font=fnt,fill=(*col,int(255*la)),stroke_width=3,stroke_fill=(3,8,18,int(225*la)))
+            col=SNOW if mid<=prog-0.05 else (GOLD if mid<=prog+0.05 else (150,170,196))
+            d.text((x,y),w,font=fnt,fill=(*col,int(255*la)),stroke_width=3,stroke_fill=(4,10,18,int(232*la)))
             _logw(x,y,tw(w,fnt),fnt.size,col,la,(mid<=prog+0.05) and (la>=0.6),"caption")
             x+=tw(w,fnt)+spw
-    uw=W-2*150; ux=150; uy=y0+blockh+16                         # brand progress underline = spoken time
+    uw=W-2*150; ux=150; uy=y0+blockh+16
     d.line([(ux,uy),(ux+uw,uy)],fill=(70,90,116,int(110*ap)),width=2)
     d.line([(ux,uy),(ux+int(uw*prog),uy)],fill=(*GOLD,int(225*ap)),width=3)
-def outro_card(out,f):
-    """Branded sign-off that keeps the outro alive after speech (staged reveals = event cadence)."""
-    if f<1616: return
-    d=ImageDraw.Draw(out)
-    a1=E.out_cubic(E.seg(f,1616,1664))                          # wordmark in
-    if a1>0.02:
-        wf=fr(78,800,144); s="ALASKA.AI"; w=tw(s,wf,0.05)
-        tk(d,s,wf,(255,222,120,int(255*a1)),(W-w)//2,1444-int((1-a1)*16),0.05)
-        _logw((W-w)//2,1444,w,wf.size,(255,222,120),a1,a1>=0.6,"outro")
-    a2=E.out_cubic(E.seg(f,1660,1700))                          # tagline in (finishes as the fade begins)
-    if a2>0.02:
-        tf=fr(40,600,144); s="what's moving in alaska ai, this week"; w=tw(s,tf,0.02)
-        tk(d,s,tf,(228,240,250,int(228*a2)),(W-w)//2,1552-int((1-a2)*14),0.02)
-        _logw((W-w)//2,1552,w,tf.size,(228,240,250),a2,a2>=0.6,"outro")
 
-print("precompute...",file=sys.stderr)
-BASE=build_base();ADULT=beluga(1.12);CALF=beluga(0.5,(120,134,150),(78,92,110),(150,175,196))
-AG=glow(ADULT);CG=glow(CALF,(16,60,80))
-EMITS=list(range(120,1730,88))     # a sonar "call" pulses out every ~3s — denser cadence
-# --- continuous in-scene life: marine snow + a distant pod ---
-_pr=np.random.default_rng(42)
-PART=[dict(x=float(_pr.random()*W),y=float(_pr.random()*H),z=float(_pr.random()),ph=float(_pr.random()*6.283)) for _ in range(130)]
-_dp=beluga(0.34,(76,114,142),(50,76,100),(120,150,180))
-_dpa=np.asarray(_dp).astype(np.float32);_dpa[...,:3]=craft.depth_blur(_dpa[...,:3],2.6)
-DPOD=Image.fromarray(_dpa.astype(np.uint8),"RGBA")
-CROSS=[(70,560,-260,W+140,470),(980,1800,W+140,-260,560)]   # 2nd crossing drifts through the entire outro
-def draw_particles(img,t):
-    d=ImageDraw.Draw(img,"RGBA")
-    for p in PART:
-        z=p["z"];sp=10+z*40;amp=6+z*16;r=1.0+z*2.4;al=int(26+z*72)
-        y=(p["y"]+t*sp)%(H+40)-20; x=p["x"]+math.sin(t*0.6+p["ph"])*amp
-        d.ellipse([x-r,y-r,x+r,y+r],fill=(212,234,248,al))
-def draw_pod(img,f):
-    for (a,b,x0,x1,y0) in CROSS:
-        for k in range(3):
-            pr=E.seg(f,a+k*46,b-(2-k)*46)
-            if pr<=0 or pr>=1: continue
-            fade=min(1.0,pr*4)*min(1.0,(1-pr)*4)*0.5
-            px=int(x0+(x1-x0)*pr); py=int(y0+k*48+math.sin(f/20.0+k)*7)
-            sp=craft.swim_deform(DPOD,f/FPS+k*0.7,amp=5,wavelen=168,speed=1.8)
-            sa=np.asarray(sp).astype(np.float32);sa[...,3]*=fade
-            img.alpha_composite(Image.fromarray(sa.astype(np.uint8),"RGBA"),(px,py))
+def outro_card(out,f):
+    if f<OUTRO_F: return
+    d=ImageDraw.Draw(out,"RGBA")
+    # dark plate so the outro reads on any background (readability)
+    pa=E.out_cubic(E.seg(f,OUTRO_F,OUTRO_F+40))
+    if pa>0.02:
+        d.rounded_rectangle([90,1380,W-90,1640],26,fill=(6,14,26,int(150*pa)),outline=(*GOLD,int(70*pa)),width=2)
+    a1=E.out_cubic(E.seg(f,OUTRO_F+8,OUTRO_F+56))
+    if a1>0.02:
+        wf=fr(80,800,144); s="ALASKA.AI"; w=tw(s,wf,0.05)
+        tk(d,s,wf,(255,222,120,int(255*a1)),(W-w)//2,1430-int((1-a1)*16),0.05)
+        _logw((W-w)//2,1430,w,wf.size,(255,222,120),a1,a1>=0.6,"outro")
+    a2=E.out_cubic(E.seg(f,OUTRO_F+52,OUTRO_F+92))
+    if a2>0.02:
+        tf=fr(38,600,144); s="what's moving in alaska ai, this week"; w=tw(s,tf,0.02)
+        tk(d,s,tf,(228,240,250,int(232*a2)),(W-w)//2,1536-int((1-a2)*14),0.02)
+        _logw((W-w)//2,1536,w,tf.size,(228,240,250),a2,a2>=0.6,"outro")
+    a3=E.out_cubic(E.seg(f,OUTRO_F+84,OUTRO_F+120))
+    if a3>0.02:
+        cf=mono(17,m=True); s="SOURCE: PENN STATE + UAF  ·  JGR EARTH SURFACE"; w=tw(s,cf,0.06)
+        tk(d,s,cf,(176,198,220,int(210*a3)),(W-w)//2,1590,0.06)
+        _logw((W-w)//2,1590,w,cf.size,(176,198,220),a3,a3>=0.6,"outro")
+
+# ---------- thermal HUD card (temperature-vs-depth profile, FORECAST vs FIELD) ----------
+SPW,SPH=884,182;SPX,SPY=(W-SPW)//2,1172
+def _profile(shift):
+    """temperature-vs-depth curve: warm near surface, crossing 0C into frozen depth. shift moves the 0C crossing."""
+    u=np.linspace(0,1,80)            # u = depth (0 surface -> 1 deep)
+    temp=0.62-1.5*u + 0.06*np.sin(u*7) + shift   # normalized; >0 = above freezing (thawed)
+    return u,np.clip(temp,-0.8,0.8)
+def draw_hud(img,f):
+    a=E.out_cubic(E.seg(f,BEATS[3],BEATS[3]+40))     # appears at beat4 (data->HUD)
+    if a<=0.01: return
+    card=Image.new("RGBA",(SPW,SPH),(0,0,0,0));d=ImageDraw.Draw(card)
+    d.rounded_rectangle([0,0,SPW-1,SPH-1],16,fill=(6,16,30,236),outline=(150,196,224,120),width=2)
+    pad=16;iy=pad+14;iw,ih=SPW-2*pad,SPH-pad-iy-22
+    # zero-degree axis
+    zx0=pad; zx1=pad+iw; zy=iy+ih*0.5
+    d.line([(zx0,zy),(zx1,zy)],fill=(150,196,224,90),width=1)
+    d.text((zx0+2,zy-18),"0°",font=mono(14,m=True),fill=(176,210,236,150))
+    # FIELD curve (measured, snow/ice colored) and FORECAST curve (gold, shifted warmer = thaw advancing)
+    fieldshift=0.0; fore=E.seg(f,BEATS[4],1480)*0.26   # forecast pushes the warm zone deeper over time
+    for (sh,al,co,wd,nm,lab) in [(fieldshift,210,ICE,2,"field","FIELD"),(fore,235,GOLD,3,"fore","FORECAST")]:
+        u,tp=_profile(sh); pts=[(pad+ (0.5+tp[i]*0.5)*iw*0.0 + (i/79.0)*iw, iy+u[i]*ih) for i in range(len(u))]
+        # map: x = depth axis across, y position from depth; encode temperature as horizontal wobble
+        pts=[(pad + (i/79.0)*iw, iy + (0.12+0.76*(i/79.0))*ih - tp[i]*22) for i in range(len(u))]
+        n=max(2,int(len(pts)*E.out_cubic(E.seg(f,BEATS[3]+ (0 if nm=="field" else 30), BEATS[3]+90))))
+        if n>1: d.line(pts[:n],fill=(*co,al),width=wd,joint="curve")
+    # scrubbing playhead (continuous motion every frame -> event cadence)
+    phase=((f-BEATS[3])/(2.4*FPS))%1.0; px=pad+phase*iw
+    d.line([(px,iy),(px,iy+ih)],fill=(255,228,150,120),width=2)
+    # labels
+    d.text((pad,SPH-24),"DIGITAL TWIN · PERMAFROST",font=mono(15,m=True),fill=(150,196,224,180))
+    d.text((SPW-pad-250,SPH-24),"THERMAL + SEISMIC · FIBER",font=mono(15,m=True),fill=(150,205,170,160))
+    # legend chips
+    d.text((pad+150,pad-2),"FIELD",font=mono(14,b=True),fill=(*ICE,int(a*235)))
+    d.text((pad+250,pad-2),"FORECAST",font=mono(14,b=True),fill=(*GOLD,int(a*235)))
+    d.text((SPW-pad-180,pad-2),"SEP 2021 → JUN 2024",font=mono(14,m=True),fill=(214,230,245,int(a*180)))
+    ta=np.array(card);ta[...,3]=(ta[...,3]*a).astype(np.uint8);img.alpha_composite(Image.fromarray(ta,"RGBA"),(SPX,SPY))
+    # log a couple of HUD words for readability (on the dark card)
+    _logw(SPX+pad+150,SPY+pad-2,tw("FIELD",mono(14,b=True)),14,ICE,a,a>=0.6,"hud")
+    _logw(SPX+pad+250,SPY+pad-2,tw("FORECAST",mono(14,b=True)),14,GOLD,a,a>=0.6,"hud")
+
+# ---------- the digital-twin lattice (gold wireframe replica that builds over the ground) ----------
+def draw_twin(d,f):
+    a=E.out_cubic(E.seg(f,BEATS[4],BEATS[4]+60))     # builds at beat5
+    if a<=0.01: return
+    gx0,gx1=120,W-120; gy0,gy1=ACTIVE1-6,ACTIVE1+250
+    cols=9; rows=5
+    build=E.out_cubic(E.seg(f,BEATS[4],BEATS[4]+110))
+    nshow=int(build*cols)+1
+    for ci in range(min(cols+1,nshow+1)):
+        x=gx0+(gx1-gx0)*ci/cols
+        wob=6*math.sin(f/26.0+ci)
+        d.line([(x+wob,gy0),(x+wob*1.6,gy1)],fill=(*GOLD,int(46*a)),width=1)
+    for ri in range(rows+1):
+        y=gy0+(gy1-gy0)*ri/rows
+        pts=[(gx0+(gx1-gx0)*i/40.0, y+5*math.sin(i/40.0*math.pi*2+f/24.0+ri)) for i in range(41)]
+        nn=max(2,int(len(pts)*build))
+        d.line(pts[:nn],fill=(*GOLD,int(56*a)),width=1)
+    # a "DIGITAL TWIN" tag + scanning highlight line sweeping down the lattice (continuous motion)
+    if a>0.6:
+        d.text((gx0+4,gy0-24),"DIGITAL TWIN",font=mono(15,b=True),fill=(*GOLD,int(200*a)))
+    sy=gy0+((f%90)/90.0)*(gy1-gy0)
+    d.line([(gx0,sy),(gx1,sy)],fill=(*GOLD,int(115*a)),width=2)
+
 def render_frame(f):
-    t=f/FPS;img=Image.fromarray(BASE.astype(np.uint8)).convert("RGBA");d=ImageDraw.Draw(img,"RGBA")
-    draw_pod(img,f)                 # distant pod swims behind the heroes
-    app=E.out_cubic(E.seg(f,6,46))
-    # adult: swim + motion blur; calf: gentler swim
-    ab=craft.motion_blur(lambda tt: craft.swim_deform(ADULT,tt,amp=16,wavelen=470,speed=2.3),t,1/FPS,K=5)
-    cb=craft.swim_deform(CALF,t*1.0,amp=9,wavelen=300,speed=2.0)
-    drift=math.sin(t*0.42)*26;adx=int(W//2-ADULT.width//2+drift);ady=int(720-ADULT.height//2+math.sin(t*1.0)*9)
-    cdx=int(W//2-CALF.width//2+150+math.sin(t*0.5+1)*16);cdy=int(880-CALF.height//2+math.sin(t*1.1+.7)*7)
-    def put(spr,gl,x,y,a):
-        if a<=0:return
-        if a<1:
-            ga=np.array(gl).copy();ga[...,3]=(ga[...,3]*a).astype(np.uint8);gl=Image.fromarray(ga,"RGBA")
-            sa=np.array(spr).copy();sa[...,3]=(sa[...,3]*a).astype(np.uint8);spr=Image.fromarray(sa,"RGBA")
-        img.alpha_composite(gl,(x,y));img.alpha_composite(spr,(x,y))
-    put(cb,CG,cdx,cdy,E.out_cubic(E.seg(f,30,80)));put(ab,AG,adx,ady,app)
-    ox=adx+70;oy=ady+ADULT.height//2
-    for ef in EMITS:
-        age=f-ef
-        if 0<=age<=60:
-            p=age/60;r=12+p*340;al=int(150*(1-p)**1.4)
-            if al>4:
-                col=GREEN if p<0.5 else VIOLET
-                d.ellipse([ox-r,oy-r*.82,ox+r,oy+r*.82],outline=(*col,al),width=2)
-    # mooring (seg4 ~ f497)
-    if f>=500:
-        rev=E.out_cubic(E.seg(f,500,580));mx=946;my=int(SURF-30-(1-rev)*60)
-        d.line([(mx+86,my+8),(mx+86,my+560)],fill=(150,175,195,int(150*rev)),width=2)
-        d.ellipse([mx+64,my+6,mx+108,my+50],fill=(255,199,44,int(255*rev)),outline=(255,228,150,int(255*rev)),width=2)
-        d.rounded_rectangle([mx+69,my+470,mx+103,my+548],8,fill=(36,52,74,int(255*rev)),outline=(150,205,235,int(255*rev)),width=2)
-        d.ellipse([mx+79,my+482,mx+93,my+496],fill=(26,229,164,int(255*rev)))
-    draw_particles(img,t)          # marine snow, always drifting (in front)
+    t=f/FPS
+    img=Image.fromarray(BASE.astype(np.uint8)).convert("RGBA"); d=ImageDraw.Draw(img,"RGBA")
+    # --- x-ray scan reveal (opening): a bright line sweeps DOWN through the ground, revealing the
+    #     cross-section, and giving continuous motion through the first beats ---
+    xr=E.seg(f,12,210)
+    if 0<xr<1:
+        sy=int(SURF + xr*(H-SURF)); gl=int(150*(1-abs(0.5-xr)*1.1))
+        if gl>6:
+            d.line([(0,sy),(W,sy)],fill=(150,205,235,min(220,gl+70)),width=3)
+            d.rectangle([0,sy,W,min(H,sy+60)],fill=(150,205,235,int(gl*0.18)))
+    # --- road crack (the hook): a fissure on the embankment that opens early and widens slightly ---
+    ck=E.out_cubic(E.seg(f,8,70))
+    if ck>0:
+        cx=EMB_CX+58; gap=2+4*ck+1.4*math.sin(f/40.0)
+        seg=[(cx,SURF-EMB_H+8)]
+        for k in range(1,7):
+            seg.append((cx+ (gap*0.7)*math.sin(k*1.7)+ (k%2)*gap, SURF-EMB_H+8+k*(EMB_H+10)/6))
+        d.line(seg,fill=(8,10,14,int(230*ck)),width=int(2+2*ck),joint="curve")
+    # --- fiber-optic cables threading the embankment (appear beat3) + traveling sensor pulses ---
+    ca=E.out_cubic(E.seg(f,BEATS[2],BEATS[2]+50))
+    if ca>0:
+        for off in (-7,7):
+            pts=[(x,y+off) for (x,y) in CABLE]
+            d.line(pts,fill=(150,205,235,int(150*ca)),width=2,joint="curve")
+        # pulses of light run along the glass every ~2s (continuous motion / event cadence)
+        for k in range(4):
+            ph=((f-BEATS[2])/(2.0*FPS) + k*0.25)%1.0
+            x,y=cable_xy(ph); al=int(220*ca*(1-abs(0.5-ph)*1.2))
+            if al>6:
+                d.ellipse([x-5,y-5,x+5,y+5],fill=(*GOLD,al))
+                d.ellipse([x-11,y-11,x+11,y+11],outline=(*GOLD,int(al*0.5)),width=2)
+    # --- digital twin lattice (beat5) ---
+    draw_twin(d,f)
+    # --- thaw front isotherm: proven segment + predicted dotted extension (beat6/7) ---
+    tf=E.out_cubic(E.seg(f,BEATS[5],BEATS[5]+40))
+    if tf>0:
+        draw_thaw_front(d,f,tf,150,W-150,predicted=(f>=BEATS[6]))
+    # --- caveat (beat7): a 'drill' probe descends from the surface but STOPS at an UNVERIFIED line ---
+    if f>=BEATS[6]:
+        dv=E.out_cubic(E.seg(f,BEATS[6],BEATS[6]+70)); dx=EMB_CX-150
+        dtip=SURF+10 + dv*(thaw_front_y(f)-SURF-60)        # stops short of the descending forecast
+        d.line([(dx,SURF-20),(dx,dtip)],fill=(214,224,236,int(220*dv)),width=4)
+        d.polygon([(dx-7,dtip),(dx+7,dtip),(dx,dtip+16)],fill=(214,224,236,int(230*dv)))
+        # dotted 'unverified' gap between the drill tip and the forecast front
+        uy0=dtip+10; uy1=thaw_front_y(f)-8
+        for yy in range(int(uy0),int(uy1),16):
+            d.line([(dx,yy),(dx,yy+7)],fill=(255,150,120,int(150*dv)),width=2)
+        if dv>0.6:
+            tag=mono(15,b=True); s="UNVERIFIED"
+            d.text((dx+12,(uy0+uy1)//2-8),s,font=tag,fill=(255,150,120,int(220*dv)))
     # ---- push-in + finishing ----
-    prog=E.in_out_sine(f/(NF-1));sc=1.0+0.05*prog;cw,ch=int(W/sc),int(H/sc)
-    cyoff=0.4+0.05*math.sin(t*0.22)                                          # slow vertical camera float
+    prog=E.in_out_sine(f/(NF-1)); sc=1.0+0.045*prog; cw,ch=int(W/sc),int(H/sc)
+    cyoff=0.42+0.05*math.sin(t*0.20)
     sceneimg=img.convert("RGB").crop(((W-cw)//2,int((H-ch)*cyoff),(W-cw)//2+cw,int((H-ch)*cyoff)+ch)).resize((W,H),Image.LANCZOS)
-    out=Image.fromarray(finish(np.asarray(sceneimg),2000+f))                 # graded RGB
-    out=out.filter(ImageFilter.UnsharpMask(radius=2.4,percent=92,threshold=2)).convert("RGBA");du=ImageDraw.Draw(out,"RGBA")
+    out=Image.fromarray(finish(np.asarray(sceneimg),3000+f))
+    out=out.filter(ImageFilter.UnsharpMask(radius=2.4,percent=96,threshold=2)).convert("RGBA"); du=ImageDraw.Draw(out,"RGBA")
     global BGLUMA
     if LOGTEXT and f%6==0: TEXTLOG.clear(); BGLUMA=_lum(np.asarray(out.convert("RGB")).astype(np.float32))
     else: BGLUMA=None
+    # eyebrow
     eb=E.out_cubic(E.seg(f,6,30))
     if eb>0:
         tk(du,"ALASKA.AI",mono(18,True),(255,222,120,int(220*eb)),MARGIN,70,0.14)
         tk(du,"/  FIELD SIGNAL",mono(18),(214,230,245,int(150*eb)),MARGIN+tw("ALASKA.AI",mono(18,True),.14)+16,70,0.14)
-    cc=E.out_cubic(E.seg(f,46,90))
+    # location tag
+    lc=E.out_cubic(E.seg(f,20,54))
+    if lc>0:
+        s="UTQIAGVIK, ALASKA"; lf=mono(17,m=True)
+        tk(du,s,lf,(214,230,245,int(180*lc)),MARGIN,104,0.12)
+    # big number on a dark plate (beat6): ~2°F per decade (sources: 'up to almost 2°F/decade')
+    cc=E.out_cubic(E.seg(f,BEATS[5],BEATS[5]+44))
     if cc>0:
-        unc=1.0 if f<1126 else .55+.45*math.sin(f/5.)
-        nf=fr(118,900,144);s_="~330";nx=W-MARGIN-tw(s_,nf);ny=150
-        tk(du,s_,nf,(255,222,120,int(235*cc*unc)),nx,ny);tk(du,"BELUGAS LEFT",mono(16,m=True),(235,245,252,int(185*cc)),nx+4,ny+128,0.18)
-        _logw(nx,ny,tw(s_,nf),nf.size,(255,222,120),cc*unc,cc*unc>=0.6,"count");_logw(nx+4,ny+128,tw("BELUGAS LEFT",mono(16,m=True),0.18),18,(235,245,252),cc,cc>=0.6,"label")
-        if f>=1126: tk(du,"?",fr(96,900,144),(255,140,120,int(150*(1-unc+.4))),nx+tw(s_,nf)+12,ny+8)
-    if f>=680: draw_spec(out,f)    # chart HUD — crisp, composited AFTER the grade (stays razor-sharp)
+        nx=W-MARGIN-300; ny=150
+        du.rounded_rectangle([nx-26,ny-14,W-MARGIN+8,ny+178],18,fill=(6,14,26,int(180*cc)),outline=(*CORAL,int(90*cc)),width=2)
+        nf=fr(110,900,144); s_="~2°F"; sw=tw(s_,nf); sx=W-MARGIN-sw
+        tk(du,s_,nf,(255,222,120,int(240*cc)),sx,ny)
+        tk(du,"PER DECADE",mono(18,b=True),(255,160,120,int(210*cc)),sx+2,ny+120,0.10)
+        tk(du,"PERMAFROST WARMING",mono(15,m=True),(214,230,245,int(180*cc)),sx+2,ny+150,0.10)
+        _logw(sx,ny,sw,nf.size,(255,222,120),cc,cc>=0.6,"count")
+        _logw(sx+2,ny+120,tw("PER DECADE",mono(18,b=True),0.10),18,(255,160,120),cc,cc>=0.6,"label")
+    draw_hud(out,f)
     caption(out,f)
-    outro_card(out,f)              # branded sign-off keeps the outro alive (event cadence)
-    so=E.out_cubic(E.seg(f,8,34));endb=E.out_cubic(E.seg(f,1560,1640))
-    if so>0 and f<1600:           # footer hands off to the outro card
-        sf=fr(38,900,144);tk(du,"alaska.ai",sf,(255,255,255,int((150+95*endb)*so)),(W-tw("alaska.ai",sf))//2,1700)
+    outro_card(out,f)
+    # footer signoff (hands off to the outro card)
+    so=E.out_cubic(E.seg(f,8,34))
+    if so>0 and f<OUTRO_F:
+        sf=fr(36,900,144); tk(du,"alaska.ai",sf,(255,255,255,int(150*so)),(W-tw("alaska.ai",sf))//2,1712)
+    # opening fade-in + closing cinematic fade-out (motion runs to the final frame)
     fin=E.seg(f,0,14)
     if fin<1: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(255*(1-E.out_cubic(fin))))))
-    outf=E.seg(f,1700,1800)        # cinematic fade-out from ~56.7s — carries motion across the whole outro
-    if outf>0: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(245*E.in_out_sine(outf)))))
+    outf=E.seg(f,1715,1800)
+    if outf>0: out.alpha_composite(Image.new("RGBA",(W,H),(0,0,0,int(248*E.in_out_sine(outf)))))
     if LOGTEXT and f%6==0:
         os.makedirs(os.path.join(HERE,"textlog"),exist_ok=True)
         json.dump(TEXTLOG,open(os.path.join(HERE,"textlog",f"frame_{f:05d}.json"),"w"))
     return out.convert("RGB")
-# spectrogram card — crisp HUD, bigger legible labels, continuous scrubbing playhead
-SPW,SPH=884,182;SPX,SPY=(W-SPW)//2,1170
-def whistle():
-    u=np.linspace(0,1,120);x=.34+u*.32;fy=.64-.40*np.sin(u*math.pi)**.9;return x,np.clip(fy,.07,.93)
-WP=whistle()
-def draw_spec(img,f):
-    card=Image.new("RGBA",(SPW,SPH),(0,0,0,0));d=ImageDraw.Draw(card)
-    d.rounded_rectangle([0,0,SPW-1,SPH-1],16,fill=(6,16,30,236),outline=(150,205,235,120),width=2)
-    a=E.out_cubic(E.seg(f,680,720))
-    ship=max(E.seg(f,700,760)*.8,E.seg(f,1339,1420))
-    pad=16;iy=pad+12;iw,ih=SPW-2*pad,SPH-pad-iy-22
-    if ship>.01:
-        rng=np.random.default_rng(7);yy,xx=np.mgrid[0:ih,0:iw].astype(np.float32);noise=np.zeros((ih,iw),np.float32);ph=f*.06
-        for k in range(6): noise+=(.6/(k+1))*np.abs(np.sin(xx/(20+8*k)+ph+k))*np.exp(-((yy-ih*(.74-.07*k))/(ih*.22))**2)
-        noise=gaussian_filter(noise,(3,6));noise/=noise.max()+1e-6
-        lay=np.zeros((ih,iw,4),np.uint8);c=np.array(VIOLET)*.55+np.array(SLATE)*.45;lay[...,0]=c[0];lay[...,1]=c[1];lay[...,2]=c[2];lay[...,3]=(noise*168*ship).astype(np.uint8)
-        card.alpha_composite(Image.fromarray(lay,"RGBA"),(pad,iy))
-    di=E.seg(f,720,860)
-    if di>0:
-        x,fy=WP;n=max(2,int(len(x)*E.out_cubic(di)));pts=[(pad+x[i]*iw,iy+fy[i]*ih) for i in range(n)]
-        if len(pts)>1:
-            for wd,al,co in [(8,70,GREEN),(5,150,GREEN),(2,255,GOLD)]: d.line(pts,fill=(*co,al),width=wd,joint="curve")
-    if f>=700:                                                  # continuous scrubbing playhead = motion every frame
-        phase=((f-700)/(2.6*FPS))%1.0; px=pad+phase*iw
-        d.line([(px,iy),(px,iy+ih)],fill=(255,228,150,120),width=2)
-        x,fy=WP;xi=min(len(x)-1,int(phase*(len(x)-1)));cxp=pad+x[xi]*iw
-        if abs(px-cxp)<7: d.ellipse([px-5,iy+fy[xi]*ih-5,px+5,iy+fy[xi]*ih+5],fill=(*GOLD,235))
-    box=E.seg(f,940,965);hold=1.0 if 940<=f<=1460 else (1-E.seg(f,1460,1520) if f>1460 else 0)
-    if box>0 and hold>0:
-        x,fy=WP;xs0=pad+x.min()*iw-9;xs1=pad+x.max()*iw+9;ys0=iy+fy.min()*ih-11;ys1=iy+fy.max()*ih+11;al=int(255*hold)
-        gr=(1-E.out_cubic(box))*22;d.rounded_rectangle([xs0-gr,ys0-gr,xs1+gr,ys1+gr],7,outline=(*GOLD,al),width=3)
-        d.text((xs0,ys0-28),"BELUGA CALL",font=mono(20,True),fill=(*GOLD,al))
-        conf="0.97" if f<1126 else ("0.97" if (f//6)%2 else "0.71")
-        d.text((xs1-48,ys1+6),conf,font=mono(19,True),fill=(*GREEN,al))
-    d.text((pad,SPH-24),"PASSIVE ACOUSTIC  ·  COOK INLET",font=mono(15,m=True),fill=(150,205,235,175))
-    d.text((SPW-pad-178,SPH-24),"DETECTOR v2 · LIVE",font=mono(15,m=True),fill=(120,205,170,160))
-    ta=np.array(card);ta[...,3]=(ta[...,3]*a).astype(np.uint8);img.alpha_composite(Image.fromarray(ta,"RGBA"),(SPX,SPY))
+
 def main():
     a=sys.argv[1:]
     if a and a[0]=="test":
