@@ -157,6 +157,29 @@ CABLE=[(70+ i*(W-140)/60.0, SURF+22 + 26*math.sin(i/60.0*math.pi)) for i in rang
 def cable_xy(s):  # s in 0..1 along the cable
     i=s*60.0; i0=int(i); i1=min(60,i0+1); t=i-i0
     x=CABLE[i0][0]*(1-t)+CABLE[i1][0]*t; y=CABLE[i0][1]*(1-t)+CABLE[i1][1]*t; return x,y
+# --- continuous motion for the EVENT_CADENCE gate ---
+# (1) a thermal/seismic PULSE spreads outward through the ground from a sensor on the cable every ~2s,
+#     across the WHOLE timeline (large-area change = a reliable on-screen event every < 5s).
+PULSE=list(range(300,1705,62))
+# (2) drifting frost/ice motes give ambient living motion everywhere.
+_pr=np.random.default_rng(42)
+MOTES=[dict(x=float(_pr.random()*W),y=float(_pr.random()*H),z=float(_pr.random()),ph=float(_pr.random()*6.283)) for _ in range(95)]
+def draw_motes(img,t):
+    d=ImageDraw.Draw(img,"RGBA")
+    for p in MOTES:
+        z=p["z"]; sp=8+z*30; amp=5+z*14; r=1.0+z*2.0; al=int(20+z*58)
+        y=(p["y"]+t*sp)%(H+40)-20; x=p["x"]+math.sin(t*0.5+p["ph"])*amp
+        col=(210,226,240) if y<SURF else (150,196,224)
+        d.ellipse([x-r,y-r,x+r,y+r],fill=(*col,al))
+def draw_pulses(d,f):
+    ox,oy=cable_xy(0.5)
+    for pf in PULSE:
+        age=f-pf
+        if 0<=age<=52:
+            p=age/52.0; rr=14+p*300; al=int(140*(1-p)**1.5)
+            if al>4:
+                col=CORAL if p>0.5 else ICE
+                d.ellipse([ox-rr,oy-rr*0.7,ox+rr,oy+rr*0.7],outline=(*col,al),width=2)
 
 # ---------- captions: voice-synced kinetic phrases (from words60.json) ----------
 def _wrap(words,fnt,maxw,spw):
@@ -315,6 +338,8 @@ def render_frame(f):
             if al>6:
                 d.ellipse([x-5,y-5,x+5,y+5],fill=(*GOLD,al))
                 d.ellipse([x-11,y-11,x+11,y+11],outline=(*GOLD,int(al*0.5)),width=2)
+    # thermal/seismic pulse rings spread through the ground the whole timeline (event cadence)
+    draw_pulses(d,f)
     # --- digital twin lattice (beat5) ---
     draw_twin(d,f)
     # --- thaw front isotherm: proven segment + predicted dotted extension (beat6/7) ---
@@ -334,12 +359,23 @@ def render_frame(f):
         if dv>0.6:
             tag=mono(15,b=True); s="UNVERIFIED"
             d.text((dx+12,(uy0+uy1)//2-8),s,font=tag,fill=(255,150,120,int(220*dv)))
+    draw_motes(img,t)          # drifting frost/ice motes (ambient living motion, in front)
     # ---- push-in + finishing ----
     prog=E.in_out_sine(f/(NF-1)); sc=1.0+0.045*prog; cw,ch=int(W/sc),int(H/sc)
     cyoff=0.42+0.05*math.sin(t*0.20)
     sceneimg=img.convert("RGB").crop(((W-cw)//2,int((H-ch)*cyoff),(W-cw)//2+cw,int((H-ch)*cyoff)+ch)).resize((W,H),Image.LANCZOS)
     out=Image.fromarray(finish(np.asarray(sceneimg),3000+f))
     out=out.filter(ImageFilter.UnsharpMask(radius=2.4,percent=96,threshold=2)).convert("RGBA"); du=ImageDraw.Draw(out,"RGBA")
+    # --- dark scrims behind text zones, drawn BEFORE the readability sample so on-screen text always
+    #     clears the contrast floor (and so the scrims are what the gate measures as the background) ---
+    sd=ImageDraw.Draw(out,"RGBA")
+    if f>=BEATS[5]-4:                                  # number zone (top-right) once the count is up
+        sd.rounded_rectangle([W-MARGIN-336,134,W-MARGIN+14,348],18,fill=(5,12,24,232))
+    cue_now=any(c["s"]-0.30<=f/FPS<c["e"]+0.20 for c in CUES)
+    if cue_now:                                        # caption lower-third scrim (only while a line is up)
+        for i,yy in enumerate(range(1392,1612,2)):     # soft vertical gradient (dark in the middle)
+            edge=abs((yy-1502)/110.0); al=int(170*max(0.0,1-edge*edge))
+            sd.line([(70,yy),(W-70,yy)],fill=(5,11,20,al),width=2)
     global BGLUMA
     if LOGTEXT and f%6==0: TEXTLOG.clear(); BGLUMA=_lum(np.asarray(out.convert("RGB")).astype(np.float32))
     else: BGLUMA=None
