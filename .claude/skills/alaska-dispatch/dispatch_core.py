@@ -59,12 +59,14 @@ BGLUMA = None
 def _lum(a):
     return 0.2126 * a[..., 0] + 0.7152 * a[..., 1] + 0.0722 * a[..., 2]
 
-def set_frame_bg(rgba_or_rgb, f):
-    """Call right after the grade, before drawing any text. Captures the background luma the text sits
-    on (every 6th frame, matching the gate's sampling) and clears the per-frame log."""
+def set_frame_bg(rgba_or_rgb, f, clear=True):
+    """Call right after the grade, before drawing text. Captures the background luma the text sits on
+    (every 6th frame, matching the gate's sampling). `clear=True` resets the per-frame log; pass
+    clear=False on a SECOND pass (e.g. locked captions over a reframed scene) so the first pass's
+    logged words (the instrument HUD) are kept, only the background reference is updated."""
     global BGLUMA, TEXTLOG
     if LOGTEXT and f % 6 == 0:
-        TEXTLOG = []
+        if clear: TEXTLOG = []
         img = rgba_or_rgb.convert("RGB") if rgba_or_rgb.mode != "RGB" else rgba_or_rgb
         BGLUMA = _lum(np.asarray(img).astype(np.float32))
     else:
