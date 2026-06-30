@@ -141,6 +141,33 @@ def main():
             if bad_tr:
                 problems.append(f"shots use transitions outside the vocab: {bad_tr} (use config/shot_structure.yaml `transitions`).")
 
+            # ---- 1c. ANTI-ZOOM: each shot is its OWN composition; a CUT moves to a different WORLD ----
+            # The v2 critique: the "scene changes" were crops/zooms of one sonar display. Eight crops all share
+            # pov=instrument-screen / layout=hud-instrument-frame / hero=instrument-as-subject -> 0 axes change.
+            # So every shot must declare its heavy axes, and adjacent shots must differ on >= min_axis_change.
+            HEAVY = srule.get("heavy_axes", ["pov", "layout", "motion_vector", "hero_treatment"])
+            need_change = int(srule.get("min_axis_change_between_shots", 2))
+            sfps = [{ax: norm_tag(s.get(ax, "")) for ax in HEAVY} for s in shots]
+            for i, s in enumerate(shots):
+                miss = [ax for ax in HEAVY if not sfps[i][ax]]
+                if miss:
+                    problems.append(f"shot {s.get('id', i + 1)} doesn't declare its composition {miss} — every shot must "
+                                    f"name its own {HEAVY} (config/composition_axes.yaml vocab) so the gate can prove "
+                                    f"adjacent shots are different WORLDS, not one canvas reframed.")
+            if all(all(f.values()) for f in sfps):
+                for i in range(1, len(sfps)):
+                    chg = [ax for ax in HEAVY if sfps[i - 1][ax] != sfps[i][ax]]
+                    if len(chg) < need_change:
+                        problems.append(
+                            f"shot {shots[i].get('id', i + 1)} is the SAME composition as the shot before it (changed "
+                            f"{chg or 'nothing'}; need >= {need_change} of {HEAVY}). That is a camera zoom/pan over one "
+                            f"canvas, NOT a scene change — cut to a different WORLD (docs/craft/CINEMATIC_SCENE_CRAFT.md §0-§1).")
+            THREADS = {"match", "carry", "build", "travel"}
+            bad_thread = [s.get("id", i + 2) for i, s in enumerate(shots[1:]) if norm_tag(s.get("thread", "")) not in THREADS]
+            if bad_thread:
+                problems.append(f"shots {bad_thread} don't declare a valid transition `thread` (one of {sorted(THREADS)}) "
+                                f"— every scene break must MATCH / CARRY / BUILD / TRAVEL (docs/craft/CINEMATIC_SCENE_CRAFT.md §1).")
+
     # ---- 2. the banned shortcut: a scene copied from a prior render and re-skinned ----
     if rule.get("require_derived_from_scratch", True):
         df = norm_tag(sb.get("derived_from", ""))
@@ -198,6 +225,9 @@ def main():
               "; ".join(f"{o.get('date')}→{len([ax for ax in ALL_AXES if not axis_matches(ax, fp.get(ax), fp_of(o).get(ax))])}/{len(ALL_AXES)} axes differ"
                         for o in recent))
     print(f"  beats: {len(beats)}   signature: {dict(zip(sig_axes, new_sig))}")
+    if shots:
+        worlds = len({tuple(norm_tag(s.get(ax, "")) for ax in ["pov", "layout", "motion_vector", "hero_treatment"]) for s in shots})
+        print(f"  shots: {len(shots)} across {worlds} distinct compositions (each cut moves to a different world, not a zoom)")
     sys.exit(0)
 
 

@@ -27,6 +27,15 @@ rule:
   max_shot_seconds: 16.0       # NO shot may dominate the runtime — a single shot longer than this IS the 'oner' failure
   min_distinct_framings: 3     # >= 3 different framings/vantages across the shots (not the same frame trivially reframed)
   require_transitions: true    # every shot after the first declares a motivated transition_in
+  # THE ANTI-ZOOM RULE (added after the v2 critique: the "scene changes" were just the camera zooming/
+  # panning over ONE rendered sonar display — reframing, not scene-breaking). Each shot declares its OWN
+  # composition across the heavy axes, and a CUT must move to a genuinely different WORLD: adjacent shots
+  # must differ on >= min_axis_change_between_shots of these axes. Eight crops of one display all share
+  # pov=instrument-screen / layout=hud-instrument-frame / hero=instrument-as-subject -> 0 axes change ->
+  # FAIL. A camera move (push-in/pull-out/focus-pull) is legal only when the shot it lands on is itself a
+  # different composition by this rule. See docs/craft/CINEMATIC_SCENE_CRAFT.md §0-§1.
+  heavy_axes: [pov, layout, motion_vector, hero_treatment]   # each shot names its own (config/composition_axes.yaml vocab)
+  min_axis_change_between_shots: 2   # a real scene change flips >= 2 of the heavy axes; < 2 is a zoom, not a cut
 
 # FRAMING vocabulary — the "shot types" (WHAT the camera frames). Vary these across the shots; do not shoot
 # the whole piece in one framing. A Dispatch keeps its overall composition IDENTITY (the 7-axis fingerprint
@@ -41,29 +50,63 @@ framings:
   - subject-portrait      # a hero subject centered (a person, a creature, an object) — held, lit, alive
   - two-up                # a split / comparison (before-after, real-vs-model, here-vs-there)
 
-# TRANSITION vocabulary — HOW one shot becomes the next. The cut must MEAN something (see VIDEO_PRODUCTION_STANDARD §3B/§3D).
+# TRANSITION vocabulary — HOW one shot becomes the next. A transition must MEAN something, have MOMENTUM,
+# and take the viewer SOMEWHERE. Every scene break should ride at least one of four THREADS (the test from
+# docs/craft/CINEMATIC_SCENE_CRAFT.md §1): MATCH (anchor the eye across a total world-change), CARRY (an
+# element survives the cut and changes role), BUILD (the new screen assembles/boots into being), TRAVEL
+# (the camera moves through a shared map/grid/data field). Declare both `transition_in` AND `thread` per shot.
 transitions:
-  - hard-cut              # instant switch on a beat/downbeat — energy, emphasis, a hard turn in the argument
-  - crossfade             # ~8-18f dissolve — reflection, time passing, a softer link
-  - push-in               # the frame dollies INTO a region -> the next framing (continuous, motivated)
-  - pull-out              # the reverse — reveal a bigger context (one river -> the whole map)
-  - whip-pan              # fast directional motion-blur smear connecting two scenes — urgency, "meanwhile"
-  - match-cut             # a shape in A aligns to a kindred shape in B (a beam fan -> a tail fan) — a thematic rhyme
-  - mask-wipe             # a shape grows / sweeps to reveal the next shot — a jump in time or scale
-  - morph                 # one object becomes another — transformation is the message
-  - focus-pull            # defocus A, focus B — hand attention to the new subject in the same space
+  # — MATCH —
+  - graphic-match         # B opens on a kindred shape at A's exact screen geometry (2001 bone->craft) — THE core fix
+  - match-cut             # a shape in A aligns to a kindred shape in B (beam fan -> tail fan) — a thematic rhyme
+  - match-action          # a gesture/motion begun in A completes in a different world in B
+  - crossfade             # ~8-18f dissolve WITH a shape hinge — reflection / time passing only; never default glue
+  - morph                 # one object's contour becomes another's — transformation is the message
+  # — CARRY —
+  - carried-element       # a named object (hero_point, coastline) survives the cut and takes a new role
+  - double-exposure       # hold a silhouette mask constant, swap what shows THROUGH it
+  # — BUILD —
+  - assemble              # B builds into being: points -> edges -> faces -> shaded
+  - fui-boot              # B is a NEW interface booting up (brackets snap, sweep draws, readouts settle) — not one zoomed
+  - mask-wipe             # a shape / passing object / flare sweeps to reveal B — a jump in time or scale
+  # — TRAVEL —
+  - whip-pan              # fast directional motion-blur smear flings A off / B in — urgency, "meanwhile", a scale jump
+  - map-travel            # the camera travels across a shared map/grid to the next scene (one substrate, real motion)
+  - hard-cut              # instant switch on a beat — energy, a hard turn; requires the >=2-axis world change to be real
+  # — sound (stacks on ANY visual transition; the cheapest pro upgrade) —
+  - sound-bridge          # start B's audio (or the VO's next syllable) ~6-14f before the picture cuts (J-cut), or run A's past it (L-cut)
+  # — intra-shot MOVES (NOT a scene change by themselves): legal as a transition_in ONLY when the shot they
+  #   land on is itself a different composition by the >=2-axis rule. A move develops a world; it cannot CREATE one.
+  - push-in               # dolly INTO a region — only if it lands a genuinely different composition (Spielberg oner), else it's a fake zoom
+  - pull-out              # dolly OUT to reveal off-frame context — must reveal NEW info, not the same picture smaller
+  - focus-pull            # defocus A, focus B in the SAME space — hand attention; pair with a real composition change
 
 center_stage: >
   Each shot must put its ONE focal action at or near the CENTER of the frame at its key moment — the eye
   should land center, not hunt the edges. Lower-third captions and corner HUD are CHROME; the STORY happens
   center-frame. A shot whose only action is a counter ticking in a corner is not a shot, it is a wait.
 
+# PER-SHOT SCHEMA — what each entry in storyboard.json > shots[] must declare (the gate reads these):
+#   { id, t: "start-end",
+#     framing: <from `framings`>,
+#     pov, layout, motion_vector, hero_treatment: <from config/composition_axes.yaml vocab>,  # THIS shot's world
+#     transition_in: <from `transitions`>, thread: match|carry|build|travel,                  # how we ARRIVE
+#     centered: "the ONE focal action at frame center",
+#     means: "what this cut LINKS (the idea the transition carries)" }
+# storyboard_check.py fails the board if a shot omits its heavy axes, or if a cut changes < 2 of them
+# (that's a zoom, not a scene change).
+
 implementation_note: >
-  A shot change is a real RENDER change, not a caption swap. Author 2+ distinct scene-render functions and
-  switch/blend between them: hard-cut = swap the scene function at frame f; crossfade = alpha-blend scene A
-  and B over N frames; push-in/pull-out = animate a crop rectangle into/out of a region; whip-pan = composite
-  A and B horizontally offset under a heavy directional blur for ~6-10f; match-cut/morph = align or
-  interpolate a shared shape across the cut; mask-wipe = grow a shape's alpha to reveal B over A; focus-pull
-  = gaussian-defocus A while focusing B. Keep the brand throughlines (wordmark/eyebrow, type system, caption
-  system) consistent ACROSS shots so the cuts read as one film. Emit every boundary + its transition to
-  out/dispatch/shots.json via dispatch_core.write_shots(shots, fps, total).
+  A shot change is a real RENDER change — a SEPARATE scene-render function for a genuinely different
+  composition — NOT a crop/zoom of one canvas (that was the v2 failure; see CINEMATIC_SCENE_CRAFT.md §0).
+  Author one render function PER distinct world and switch/blend between them: hard-cut = swap the scene
+  function at frame f (zero blend, on the beat); graphic-match/match-cut/morph = align or interpolate a
+  shared shape across the cut between two DIFFERENT scenes; crossfade = alpha-blend A and B over N frames
+  (reserve for time/reflection); whip-pan = composite A and B horizontally offset under heavy directional
+  blur for ~6-10f; mask-wipe/double-exposure = grow/hold a shape's alpha to reveal or window B over A;
+  carried-element = keep one named object's pose continuous while everything else swaps; assemble/fui-boot
+  = drive B's geometry from a 0->1 build/boot progress; map-travel = animate the camera offset/scale across
+  one shared substrate. push-in/pull-out/focus-pull are MOVES inside a shot, never the thing that makes a
+  new shot. Keep the brand throughlines (wordmark/eyebrow, type system, caption system, grade) consistent
+  ACROSS shots so the cuts read as one film. Emit every boundary + its transition to out/dispatch/shots.json
+  via dispatch_core.write_shots(shots, fps, total). The full craft palette is docs/craft/CINEMATIC_SCENE_CRAFT.md.

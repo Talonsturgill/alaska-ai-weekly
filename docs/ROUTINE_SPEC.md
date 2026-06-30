@@ -161,17 +161,23 @@ film — BEFORE a single frame is rendered. You may not write or copy scene code
    config/composition_axes.yaml (pov, motion_vector, hero_treatment, layout, register, palette, metaphor).
    Set derived_from: scratch. Write a divergence_note (>=120 chars) saying IN PROSE how this differs from
    the last 2 dispatches. And design the SHOT LIST — storyboard.json > shots[]: break the ~60s into >=4
-   distinct SHOTS (~8-12s each, a scene change every ~10s), each with a different FRAMING and a MOTIVATED
-   TRANSITION into it (config/shot_structure.yaml). A Dispatch is a SEQUENCE of shots, NOT one continuous
-   locked scene — the sonar Dispatch was a 60s "oner" (one composition the whole way), which is the failure
-   this prevents. The beat map is the MICRO rhythm (a new idea every ~4s); the shot list is the MACRO rhythm
-   (cut to a new shot every ~10s). Each shot puts its focal action CENTER-frame.
+   distinct SHOTS (~8-12s each, a scene change every ~10s). Each shot declares its FRAMING, its OWN
+   composition (pov / layout / motion_vector / hero_treatment from config/composition_axes.yaml), and a
+   MOTIVATED TRANSITION into it with a THREAD (match / carry / build / travel). Two failures this prevents:
+   the "oner" (River Sonar v1 — one composition the whole way) AND the "zoom-fest" (River Sonar v2 — eight
+   crops of ONE sonar display, the camera pushing in/out). So a cut must land a genuinely DIFFERENT WORLD:
+   ADJACENT shots must differ on >=2 of the heavy axes — a push-in/pan/zoom over one world is a MOVE, never a
+   scene change. Draw from the transition library + the MOVE-vs-CUT law in the Director's Brain
+   (docs/craft/CINEMATIC_SCENE_CRAFT.md). The beat map is the MICRO rhythm (a new idea every ~4s); the shot
+   list is the MACRO rhythm (cut to a different world every ~10s). Each shot puts its focal action CENTER-frame.
 3. GATE 0A — OBJECTIVE: `python scripts/storyboard_check.py` MUST exit 0. It diffs your fingerprint
    against config/state.yaml > dispatch_history and FAILS if the composition re-skins a recent one:
    it must differ from EACH of the last 2 dispatches on >= 4 of 7 axes, its (pov, layout, motion_vector)
    SPATIAL SIGNATURE must be unique vs the last 4, and its palette must not repeat the last 2. It also
-   refuses an incomplete board or one not derived_from scratch. You do NOT relax the rule to pass — you
-   redesign the composition. (This check would have caught the salmon re-skin: same signature as the beluga.)
+   refuses an incomplete board or one not derived_from scratch. It also verifies SHOT STRUCTURE: each shot
+   declares its own composition + a transition thread, and ADJACENT shots must change >=2 heavy axes — so a
+   zoomed crop of one canvas cannot pass as a scene change (the v2 failure). You do NOT relax the rule to pass
+   — you redesign. (This would have caught the salmon re-skin AND the sonar zoom-fest: 0 axes change per cut.)
 4. GATE 0B — TASTE: spawn ONE `storyboard-critic` (no-spawn) to red-team the board for GENUINE divergence
    (not a relabel — would a muted viewer call it a different video?), silent-first storytelling (does the
    beat map carry the story with the sound off?), and retention. Fix on paper and re-run until it returns
