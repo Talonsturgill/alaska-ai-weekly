@@ -54,3 +54,32 @@ dispatch_history:
     register: editorial-schematic
     palette: thermal duotone (ice-indigo, ochre, coral, gold)
     metaphor: a digital twin learning ahead of the real ground
+- date: '2026-06-30'
+  topic: Kenai River salmon counted by imaging sonar + computer vision (ADFG ARIS;
+    arXiv 2502.05129; Atlas et al. BC system)
+  slug: dispatch-2026-06-30-riversonar
+  key_entities:
+  - kenai
+  - salmon
+  - imaging sonar
+  - aris
+  - didson
+  - computer vision
+  - escapement
+  - sockeye
+  - king
+  - wild salmon center
+  - william atlas
+  archetype: instrument-screen — imaging-sonar counting display (machine's POV)
+  palette: amber acoustic echoes on abyssal black + cyan UI + coral warning
+  voice: edge_tts:en-US-BrianMultilingualNeural
+  composition:
+    pov: instrument-screen
+    motion_vector: vertical-rise
+    hero_treatment: multiplicity-swarm
+    layout: hud-instrument-frame
+    register: instrument-readout
+    palette: amber acoustic echoes on abyssal black water-column, cool cyan UI chrome,
+      a single warning-coral accent
+    metaphor: the machine counting the run — each fish becomes a boxed, classified
+      echo the instant it trips the count line

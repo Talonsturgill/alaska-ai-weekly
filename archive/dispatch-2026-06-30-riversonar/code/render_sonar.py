@@ -35,7 +35,7 @@ F_INSTR = B[2]                    # "a sonar since 2010, each fish a bright echo
 F_HAND = B[3]                     # "a person counted by hand"
 F_AI = B[4]                       # "computer vision draws a box" (takeover)
 F_SPECIES = B[5]                  # "tell a king from a sockeye by length"
-F_NET = B[6]                      # "runs on 16 rivers"
+F_NET = B[6]                      # "spreading to rivers, BC to Alaska"
 F_MISS = B[7]                     # "the machine still misses"
 F_DECIDE = B[8]                   # "that call is still ours"
 SPEECH_F = int(dc.TIM["speech_end"] * FPS)
@@ -43,7 +43,7 @@ SPEECH_F = int(dc.TIM["speech_end"] * FPS)
 # ---- the scene's OWN color world ----
 AMBER = (255, 176, 78); HOT = (255, 240, 206); ECHO_DIM = (150, 96, 52)
 CYAN = (124, 210, 236); CYAN_D = (58, 120, 150)
-GOLD = (255, 199, 44); CORAL = (255, 120, 92); INK = (226, 238, 250)
+GOLD = (255, 199, 44); CORAL = (255, 168, 138); INK = (226, 238, 250)   # coral lifted so warning text clears the brightness floor
 
 # ---- beam geometry (fans UP from a transducer near the bottom) ----
 TX, TY = W / 2.0, H - 24.0
@@ -67,9 +67,9 @@ def build_screen():
     for y in range(H):
         t = y / (H - 1)
         img[y] = np.array([7, 12, 17]) * (1 - t) + np.array([3, 6, 9]) * t
-    img += _BEAMG[..., None] * np.array([30, 19, 9], np.float32)            # beam wash — kept dim
+    img += _BEAMG[..., None] * np.array([23, 15, 7], np.float32)            # beam wash — dim, so echoes pop and HUD labels keep contrast
     core = (np.exp(-(_R / (H * 0.42)) ** 2) * _INSIDE).astype(np.float32)
-    img += core[..., None] * np.array([20, 12, 6], np.float32)
+    img += core[..., None] * np.array([15, 9, 4], np.float32)
     img *= (0.965 + 0.035 * (0.5 + 0.5 * np.cos(dc._Y * (math.pi / 3.0))))[..., None]
     base = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).convert("RGBA")
     d = ImageDraw.Draw(base, "RGBA")
@@ -79,16 +79,27 @@ def build_screen():
         d.line([beam_pt(thed, 40), beam_pt(thed, RMAX)], fill=(*CYAN_D, 60), width=1)
     return np.asarray(base.convert("RGB")).astype(np.float32)
 
-def boot_base(f):
-    """Cold open 'power-on': a range-gate ring sweeps UP the cone and the beam lifts, so beat 1 reads
-    as an ACTIVE sonar instrument, not a dark fade — then settles to the echo-friendly dark steady state."""
+# sonar PINGS — a bright pulse flares up the beam every ~2.2s. Each ping is a DISCRETE high-delta event
+# (the EVENT_CADENCE gate is percentile-relative, so it needs distinct spikes, not constant motion) AND
+# it is exactly what a live imaging sonar looks like. Pre-grade so the pulse blooms.
+PINGS = list(range(40, 1722, 60))   # a pulse every ~2s, carried through to the outro
+_PMASK = np.clip((1430.0 - dc._Y) / 120.0, 0.0, 1.0).astype(np.float32)   # pings fade out above the caption/outro band (keep text contrast)
+def base_with_fx(f):
+    arr = BASE
     boot = max(0.0, 1.0 - E.seg(f, 210, 320))
-    if boot <= 0.01:
-        return BASE
-    rr = (f * 27.0) % (RMAX + 180)                                   # a ring travelling outward = a live scan
-    band = np.exp(-((_R - rr) / 105.0) ** 2)
-    lift = (_BEAMG * (0.42 + 1.35 * band)) * boot
-    return np.clip(BASE + lift[..., None] * np.array([64, 43, 19], np.float32), 0, 255)
+    if boot > 0.01:                                                  # cold-open 'power-on' lift + scanning ring
+        rr = (f * 27.0) % (RMAX + 180); band = np.exp(-((_R - rr) / 105.0) ** 2)
+        arr = np.clip(arr + ((_BEAMG * (0.42 + 1.35 * band)) * boot)[..., None] * np.array([64, 43, 19], np.float32), 0, 255)
+    lift = None
+    for pf in PINGS:                                                 # a bright pulse expanding up the cone
+        age = f - pf
+        if 0 <= age <= 16:
+            rr = 50 + (age / 16.0) * (RMAX * 0.92); flare = (1 - age / 16.0) ** 0.7
+            l = np.exp(-((_R - rr) / 78.0) ** 2) * _INSIDE * _PMASK * (0.9 * flare)
+            lift = l if lift is None else lift + l
+    if lift is not None:
+        arr = np.clip(arr + lift[..., None] * np.array([66, 44, 20], np.float32), 0, 255)
+    return arr
 
 # ---- the fish echo (acoustic): a salmon silhouette, head UP, soft + hot-cored ----
 def fish_echo(scale=1.0):
@@ -115,7 +126,7 @@ def fish_echo(scale=1.0):
     return Image.fromarray(np.dstack([rgb, a[..., 3]]).astype(np.uint8), "RGBA")
 
 def echo_glow(spr):
-    al = np.array(spr)[..., 3].astype(np.float32); g = gaussian_filter(al, 8); g = (g / (g.max() + 1e-6) * 150).astype(np.uint8)
+    al = np.array(spr)[..., 3].astype(np.float32); g = gaussian_filter(al, 5); g = (g / (g.max() + 1e-6) * 58).astype(np.uint8)
     c = np.zeros((*g.shape, 4), np.uint8); c[..., 0] = AMBER[0]; c[..., 1] = AMBER[1]; c[..., 2] = AMBER[2]; c[..., 3] = g
     return Image.fromarray(c, "RGBA")
 
@@ -125,8 +136,8 @@ KING_G = echo_glow(KING); SOCK_G = echo_glow(SOCK)
 # ---- the run: a deterministic stream of ~72 rising fish ----
 _rng = np.random.default_rng(7)
 FISH = []
-for i in range(72):
-    f0 = float(40 + i * 20.5 + _rng.uniform(-7, 7))
+for i in range(120):                                                      # a DENSE run -> continuous motion the whole way (EVENT_CADENCE)
+    f0 = float(40 + i * 14.0 + _rng.uniform(-5, 5))                       # entries through ~f1706 so echoes stay dense to the very end
     spd = float(_rng.uniform(7.2, 11.6)); lane = float(_rng.uniform(-0.82, 0.82))
     king = _rng.random() < 0.32
     conf = float(_rng.uniform(0.86, 0.97) if king else _rng.uniform(0.80, 0.95))
@@ -180,8 +191,8 @@ def detbox(d, x, y, w, h, label, conf, a, col=CYAN):
         d.line([(cx, cy), (cx + sx * k, cy)], fill=(*col, al), width=3); d.line([(cx, cy), (cx, cy + sy * k)], fill=(*col, al), width=3)
     if label:
         lf = mono(20, True); lw = tw(label, lf)
-        _pill(d, x - 2, y - 28, x + lw + 6, y - 4, a); d.text((x + 2, y - 27), label, font=lf, fill=(*INK, al))
-        dc.logw(x + 2, y - 27, lw, 20, INK, a, a >= 0.5, "hud")
+        _pill(d, x - 2, y - 34, x + lw + 6, y - 10, a); d.text((x + 2, y - 33), label, font=lf, fill=(*INK, al))
+        dc.logw(x + 2, y - 33, lw, 20, INK, a, a >= 0.5, "hud")
     if conf:
         cf = mono(18, True); cw = tw(conf, cf)
         _pill(d, x + w - cw - 4, y + h + 4, x + w + 4, y + h + 26, a)
@@ -202,13 +213,13 @@ def draw_boxes(d, f):
     intro = E.out_cubic(E.seg(f, F_AI, F_AI + 58))
     if intro <= 0.02: return
     show_species = E.out_cubic(E.seg(f, F_SPECIES, F_SPECIES + 60))
-    dim = 1.0 - 0.74 * E.out_cubic(E.seg(f, F_DECIDE + 12, F_DECIDE + 86))
-    dim *= 1.0 - 0.72 * (E.seg(f, F_NET, F_NET + 46) * (1 - E.seg(f, F_MISS - 50, F_MISS - 10)))  # fade boxes during the pull-back
+    dim = 1.0 - 0.45 * E.out_cubic(E.seg(f, F_DECIDE + 12, F_DECIDE + 86))   # AI recedes at the human-decision beat (but stays alive = motion)
+    dim *= 1.0 - 0.12 * (E.seg(f, F_NET, F_NET + 46) * (1 - E.seg(f, F_MISS - 50, F_MISS - 10)))
     for k in FISH:
         p = fish_pos(k, f)
         if p is None: continue
         x, y, hw = p
-        if y < 180 or y > CL_Y + 250: continue
+        if y < 180 or y > CL_Y + 40: continue                            # box the darker upper beam (labels keep contrast)
         if k["missed"] and (F_MISS - 33) <= f <= (F_MISS + 147):            # THE MISS: mark it, don't box it
             spr = KING if k["king"] else SOCK; bw, bh = spr.width * 0.98, spr.height * 0.88
             draw_missed(d, x - bw / 2, y - bh / 2, bw, bh, intro * dim * (0.6 + 0.4 * math.sin(f * 0.5)))
@@ -320,7 +331,7 @@ def draw_decision(d, f):
 def draw_network(img, d, f):
     a = E.seg(f, F_NET, F_NET + 58) * (1 - E.seg(f, F_MISS - 35, F_MISS)); a = max(0.0, min(1.0, a))
     if a <= 0.02: return
-    img.alpha_composite(Image.new("RGBA", (W, H), (2, 5, 8, int(150 * a))))
+    img.alpha_composite(Image.new("RGBA", (W, H), (2, 5, 8, int(34 * a))))   # barely dim — keep the run bright (motion) under the grid
     cols, rows = 8, 2; cw, ch = 150, 96; gapx, gapy = 16, 18
     tot_w = cols * cw + (cols - 1) * gapx; x0 = (W - tot_w) // 2; y0 = 560
     n_lit = int(E.out_cubic(min(1.0, (f - F_NET) / 150.0)) * 16); idx = 0
@@ -368,8 +379,46 @@ def draw_transducer(d, f):
     pulse = 0.5 + 0.5 * math.sin(f * 0.3)
     d.ellipse([TX - 5, TY - 4, TX + 5, TY + 6], fill=(*AMBER, int((150 + 95 * pulse) * a)))
 
+def hud_backing(out, f):
+    """Dark chips behind every TARGET HUD label, drawn INTO the scene (pre-grade) so the readability
+    gate measures the real backed contrast the viewer sees — not the bare beam/fish behind the chip.
+    Mirrors the label positions in the draw_* functions."""
+    bd = ImageDraw.Draw(out, "RGBA"); DK = (4, 9, 14, 232)
+    def rk(x0, y0, x1, y1): bd.rounded_rectangle([int(x0), int(y0), int(max(x1, x0 + 2)), int(y1)], 5, fill=DK)
+    if E.seg(f, 8, 34) > 0.3: rk(90, 66, 402, 98)                                        # eyebrow
+    if E.seg(f, 70, 130) > 0.3:                                                          # tally + label
+        nf = fr(86, 900, 144); rk(W - 96 - tw(f"{int(round(esc(f))):,}", nf) - 4, 146, W - 80, 270)
+    if E.seg(f, 60, 120) > 0.3: rk(94, CL_Y - 29, 216, CL_Y - 2)                         # COUNT LINE
+    if 40 <= f < 1600:                                                                   # bottom chrome
+        rk(90, 1368, 266, 1394); lv = f"LIVE  ▸  00:{int(f / FPS):02d}"; rk(W - 96 - tw(lv, mono(16, m=True), 0.02) - 8, 1368, W - 86, 1394)
+    if E.seg(f, F_INSTR + 3, F_INSTR + 65) > 0.3 and E.seg(f, F_HAND - 9, F_HAND + 31) < 0.7:
+        rk(92, 465, 104 + tw("ARIS  ·  KENAI RIVER  ·  imaging sonar since 2010", mono(17, m=True)), 492)  # estamp
+    if E.seg(f, F_INSTR + 3, F_INSTR + 65) > 0.3:                                        # run-curve header (+GOAL)
+        big = E.out_cubic(E.seg(f, F_DECIDE - 82, F_DECIDE - 14)); gw = int(300 + big * 250); gh = int(150 + big * 150)
+        gx = int((W - 96 - gw) * (1 - big) + (W - gw) / 2 * big); gy = int(300 + big * 250)
+        rk(gx - 4, gy - 29, gx + tw("RUN  vs  ESCAPEMENT GOAL", mono(15, True)) + 6, gy - 5)
+        if big > 0.3: rk(gx + gw - 98, gy + int(gh * 0.16) - 22, gx + gw - 38, gy + int(gh * 0.16) + 2)
+    if E.seg(f, F_NET, F_NET + 58) > 0.3 and E.seg(f, F_MISS - 35, F_MISS) < 0.7:        # network label
+        sw = tw("RIVERS  ·  BC TO ALASKA  ·  500K+ LABELED FRAMES", mono(22, True), 0.02); rk((W - sw) // 2 - 8, 506, (W + sw) // 2 + 8, 540)
+    if E.seg(f, F_DECIDE + 12, F_DECIDE + 66) > 0.3 and E.seg(f, SPEECH_F - 6, SPEECH_F + 22) < 0.7:
+        qw = tw("HOW MANY BEFORE THE NETS OPEN?", fr(46, 800, 144)); qx = (W - qw) // 2
+        rk(qx - 20, 972, qx + qw + 20, 1042); rk(W // 2 - 170, 1076, W // 2 + 170, 1126)  # question + toggle
+        hw2 = tw("HUMAN CALL", mono(16, True), 0.1); rk((W - hw2) // 2 - 6, 1132, (W + hw2) // 2 + 6, 1160)
+    if f >= F_AI:                                                                        # dynamic box + missed labels
+        miss_on = (F_MISS - 33) <= f <= (F_MISS + 147); spec_on = E.seg(f, F_SPECIES, F_SPECIES + 60) > 0.5
+        for k in FISH:
+            p = fish_pos(k, f)
+            if p is None: continue
+            x, y, hw = p
+            if y < 180 or y > CL_Y + 40: continue
+            spr = KING if k["king"] else SOCK; bw, bh = spr.width * 0.92, spr.height * 0.82
+            if k["missed"] and miss_on:
+                bw2, bh2 = spr.width * 0.98, spr.height * 0.88; rk(x - bw2 / 2 - 2, y - bh2 / 2 - 28, x - bw2 / 2 + 118, y - bh2 / 2 - 4)
+            elif spec_on:
+                lab = "KING" if k["king"] else "SOCKEYE"; rk(x - bw / 2 - 2, y - bh / 2 - 36, x - bw / 2 + tw(lab, mono(20, True)) + 8, y - bh / 2 - 10)
+
 def render_frame(f):
-    img = Image.fromarray(boot_base(f).astype(np.uint8)).convert("RGBA")
+    img = Image.fromarray(base_with_fx(f).astype(np.uint8)).convert("RGBA")
     draw_run(img, f)
     draw_network(img, ImageDraw.Draw(img, "RGBA"), f)
     out = Image.fromarray(finish(np.asarray(img.convert("RGB")), 4000 + f))
@@ -378,6 +427,8 @@ def render_frame(f):
     if murk_alpha(f) > 0.02:
         mlay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); draw_murk(ImageDraw.Draw(mlay, "RGBA"), f)
         out = Image.alpha_composite(out, mlay)
+    out = Image.alpha_composite(out, SCRIM_IMG)   # lower-third scrim (composited INTO the bg luma so caption contrast is real, not faked)
+    hud_backing(out, f)                            # dark chips behind HUD labels, also INTO the bg luma (real contrast for the gate)
     dc.set_frame_bg(out, f)
     # ALL crisp UI + text on a TRANSPARENT overlay so alpha (fades, tints) blends correctly, then composite once
     ui = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(ui, "RGBA")
@@ -401,13 +452,18 @@ def render_frame(f):
     out = Image.alpha_composite(out, ui)
     fin = E.seg(f, 0, 14)
     if fin < 1: out.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, int(255 * (1 - E.out_cubic(fin))))))
-    outf = E.seg(f, int(dc.TIM["speech_end"] * FPS) + 104, 1800)   # fade begins after the outro tagline settles
+    outf = E.seg(f, 1748, 1800)   # short, late fade so the scene stays live (motion) almost to the final frame
     if outf > 0: out.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, int(248 * E.in_out_sine(outf)))))
     dc.flush_textlog(f)
     return out.convert("RGB")
 
 print("precompute sonar screen...", file=sys.stderr)
 BASE = build_screen()
+# lower-third scrim — a soft dark gradient under the caption + outro band so text always clears the
+# contrast floor (READABILITY gate). Composited before BGLUMA capture so the measured contrast is honest.
+_scrim_prof = np.clip(160.0 * np.exp(-((np.arange(H, dtype=np.float32) - 1500.0) / 150.0) ** 2), 0, 255).astype(np.uint8)
+SCRIM = np.zeros((H, W, 4), np.uint8); SCRIM[..., 0] = 4; SCRIM[..., 1] = 8; SCRIM[..., 2] = 12; SCRIM[..., 3] = _scrim_prof[:, None]
+SCRIM_IMG = Image.fromarray(SCRIM, "RGBA")
 
 def main():
     a = sys.argv[1:]
