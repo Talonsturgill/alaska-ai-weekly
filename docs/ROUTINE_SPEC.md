@@ -160,7 +160,12 @@ film — BEFORE a single frame is rendered. You may not write or copy scene code
    the ENDING designed in; and the COMPOSITION FINGERPRINT — a primary tag for each of the 7 axes in
    config/composition_axes.yaml (pov, motion_vector, hero_treatment, layout, register, palette, metaphor).
    Set derived_from: scratch. Write a divergence_note (>=120 chars) saying IN PROSE how this differs from
-   the last 2 dispatches.
+   the last 2 dispatches. And design the SHOT LIST — storyboard.json > shots[]: break the ~60s into >=4
+   distinct SHOTS (~8-12s each, a scene change every ~10s), each with a different FRAMING and a MOTIVATED
+   TRANSITION into it (config/shot_structure.yaml). A Dispatch is a SEQUENCE of shots, NOT one continuous
+   locked scene — the sonar Dispatch was a 60s "oner" (one composition the whole way), which is the failure
+   this prevents. The beat map is the MICRO rhythm (a new idea every ~4s); the shot list is the MACRO rhythm
+   (cut to a new shot every ~10s). Each shot puts its focal action CENTER-frame.
 3. GATE 0A — OBJECTIVE: `python scripts/storyboard_check.py` MUST exit 0. It diffs your fingerprint
    against config/state.yaml > dispatch_history and FAILS if the composition re-skins a recent one:
    it must differ from EACH of the last 2 dispatches on >= 4 of 7 axes, its (pov, layout, motion_vector)
@@ -180,7 +185,14 @@ it (the banned cookie-cutter shortcut). IMPORT the shared, scene-agnostic helper
 engine, the textlog, the outro, easing + craft) so you reuse the proven CRAFT without duplicating a
 COMPOSITION. The scene you author — background, hero staging, camera/POV, layout, on-screen furniture,
 the motion vector — must match the board, not the last video. 9:16 = 1080x1920, ~1800
-frames @30fps; re-time VO/captions/beats/music to ~60s. Apply the full finishing chain (linear
+frames @30fps; re-time VO/captions/beats/music to ~60s.
+BUILD THE SHOTS, NOT A ONER. Render the >=4 storyboarded shots and CUT between them with motivated
+transitions — author 2+ scene-render functions and switch/blend at each boundary using the dispatch_core
+transition toolkit (xfade, reframe/push-in, whip, mask_wipe, focus_pull). Keep the brand throughlines
+(wordmark/eyebrow, type, captions) consistent across shots so the cuts read as one film. Emit the shot
+boundaries + transitions to out/dispatch/shots.json via dispatch_core.write_shots(...) — the SCENE_STRUCTURE
+gate reads it and verifies each cut is a REAL visual change. Something STORY-ADVANCING must happen
+CENTER-frame in every shot (config/shot_structure.yaml). Apply the full finishing chain (linear
 ACES grade, split-tone toward THIS story's palette, bloom, luma-only grain, vignette, subtle
 CA, dithering), slow eased push-in + parallax + drift + motion that serves the illustration,
 supersampled hero/type, and OPEN CAPTIONS (burned in, lower-third inside the 4:5 safe box,
@@ -229,6 +241,7 @@ because the bar was hard — a loop that ends on a failure is a broken loop.
     · CAPTION_TEXT — caption glyph-edge energy       → "captions generic / hard to read"
     · EVENT_CADENCE— no on-screen-dead window > 5s   → "boring / too slow / make something happen every ~5s"
     · BEAT_DENSITY — enough DISTINCT story-advancing visual beats across the 60s → "the picture must keep telling the story, not just move"
+    · SCENE_STRUCTURE — a SEQUENCE of >=4 shots with REAL transitions (shots.json), not one locked scene → "don't run a 60s 'oner' — CUT between shots every ~10s"
     · CAPTION_SYNC — captions built from the TTS word-timings → "voice doesn't match the captions"
     · READABILITY  — every readable word clears a brightness + contrast floor → "is every word legible, not just sharp"
     · MUSIC        — a REAL freshly-sourced track is on the mix, NOT the synth fallback → "use the music you went and got"
@@ -327,7 +340,8 @@ A video Dispatch is ALWAYS delivered AND always flawless — the self-healing lo
 both gates are green, so there is no zero-output run and no flawed ship. A Gmail draft exists with the post text, voice + music credits, sources, the score summary, and
 WORKING one-click download links for the 9:16 (TikTok) and 4:5 (LinkedIn) cuts; Gate 0 passed (a
 storyboard exists, the composition is provably distinct from the last 2 dispatches, the scene was built
-fresh — not re-skinned); the frame review found zero defects; all audio gates passed; the scorer passed
+fresh — not re-skinned, and rendered as a SEQUENCE of >=4 distinct shots with real transitions, not a
+60s 'oner'); the frame review found zero defects; all audio gates passed; the scorer passed
 config/dispatch_rubric.yaml; the download links are VERIFIED LIVE (HTTP 200) and immediately downloadable;
 the audit branch is pushed AND MERGED to main; dispatch_history is updated WITH the composition fingerprint.
 Report the story, concept/archetype, the 7-axis composition fingerprint (and how it diverged from the last

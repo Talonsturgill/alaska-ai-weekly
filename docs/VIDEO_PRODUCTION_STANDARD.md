@@ -5,7 +5,7 @@ The reusable pro playbook for Alaska.Ai "Dispatch" videos. Hand-coded Python
 Derived from a 2026 research pass across motion design, color science, underwater
 rendering, sound, Alaska authenticity, and platform delivery (sources at bottom).
 
-## 0. The seven principles
+## 0. The eight principles
 1. **Illustration leads; the voice follows.** Your craft is hand-coded illustration that
    DEPICTS the story (object/process/place/data), legit-looking AND entertaining. Sync the VO
    to the picture beat-for-beat — a motion-illustration piece the voice rides, not narration
@@ -36,6 +36,14 @@ rendering, sound, Alaska authenticity, and platform delivery (sources at bottom)
    just the animal on screen. Reuse CRAFT by importing helpers (dispatch_core); never reuse a COMPOSITION
    by copying a scene file. If you can mute two of our videos and a viewer says "same template, different
    animal," we failed. (This is why the salmon that re-used the beluga's staging was rejected.)
+8. **Cut between shots — a SEQUENCE, not a oner.** Two rhythms, both required. MICRO: something happens
+   every ~3-5s WITHIN a shot (principle 6 + the cadence gates). MACRO: the SHOT itself changes every ~8-12s
+   — a real cut/transition to a different framing or vantage, the focal action commanding CENTER-frame. A
+   60-second piece on ONE locked composition is a "oner," and it reads as a screensaver no matter how much
+   moves inside it (the River Sonar Dispatch was exactly this — one sonar screen the whole way). Storyboard
+   a SHOT LIST (>=4 shots), build each as a real render and CUT between them with motivated transitions
+   (§3D), and emit shots.json so the SCENE_STRUCTURE gate can verify the cuts are real. Keep the brand
+   throughlines constant across shots so the cuts feel like one film, not a reel of clips.
 
 ## 1. Format & delivery (master once, crop per surface)
 - **Master 4:5 portrait, 1080x1350** (matches our brief-image format; max mobile feed real
@@ -152,6 +160,37 @@ composition is FINGERPRINTED across 7 axes and machine-checked against history.
   the caption engine, easing, craft) live in an importable core (out/dispatch/dispatch_core.py). A new
   scene IMPORTS them and is authored fresh; it never starts life as a copy of a prior render_*.py.
 
+## 3D. Shot structure — the MACRO rhythm (cut between shots; config/shot_structure.yaml)
+§3B keeps the picture telling the story; §3C keeps each video distinct from the others. THIS keeps a video
+from being a single locked "oner." A Dispatch is a SEQUENCE of distinct SHOTS — a new shot every ~8-12s,
+>=4 across the ~60s — each a different FRAMING of the world, connected by a transition that MEANS something.
+The cadence gates measure activity WITHIN a shot; SCENE_STRUCTURE measures the shot CHANGES between them.
+- **THINK IN SHOTS (storyboard the shot list).** Per shot: its FRAMING (wide-establish / push-detail /
+  macro-closeup / alt-vantage / map-territory / data-panel / subject-portrait / two-up), the ONE thing
+  center-frame, and the TRANSITION into it. A shot can hold 2-3 beats; across the piece, vary the framings
+  (>=3 distinct) so it doesn't shoot the whole story from one distance.
+- **CENTER-STAGE the action.** Each shot's focal moment lands at or near frame CENTER — the eye should land
+  center, not hunt the edges. Captions (lower third) and HUD (corners) are chrome; the STORY is center-frame.
+  A shot whose only motion is a counter ticking in a corner is a wait, not a shot.
+- **TRANSITION VOCABULARY (how a shot becomes the next — implement in the hand-coded engine):**
+  · HARD CUT — swap the scene render at frame f. On a downbeat = energy, a hard turn in the argument.
+  · CROSSFADE / DISSOLVE — `dc.xfade(a,b,t)` over ~8-18f. Reflection, time passing, a soft link.
+  · PUSH-IN / PULL-OUT — `dc.reframe(img,cx,cy,scale)` animates a crop into/out of a region. A motivated
+    reframe-as-shot-change (one river -> the whole map). Continuous; reads as a camera move that lands a new shot.
+  · WHIP-PAN — `dc.whip(a,b,t)` a fast horizontal motion smear handing off mid-swish. Urgency, "meanwhile."
+  · MATCH CUT — align a shape in A to a kindred shape in B across the cut (a beam fan -> a tail fan). A rhyme.
+  · MASK-WIPE — `dc.mask_wipe(a,b,mask)` grow a shape's alpha to reveal B over A. A jump in time or scale.
+  · MORPH — interpolate one object into another. The transformation IS the message.
+  · FOCUS-PULL — `dc.focus_pull(a,b,t)` defocus A while focusing B. Hand attention to a new subject in-place.
+- **CONTINUITY ACROSS THE CUTS.** Keep the brand throughlines constant (wordmark/eyebrow, type system,
+  caption engine, grade) so the shots feel like ONE film, not a reel of clips. The transition is the next
+  sentence of the picture, not a sticker between two slides.
+- **DECLARE + VERIFY.** Emit each boundary + its transition to shots.json (`dc.write_shots(...)`). The
+  SCENE_STRUCTURE gate checks the count/durations/framing-variety AND verifies a REAL visual change straddles
+  each declared cut — you cannot pass by relabeling one continuous scene as "shots." *Why it works:* shot
+  changes are the strongest pattern-interrupt there is; a new framing re-reads the whole frame and resets
+  attention; and a cut on a story beat makes the edit itself carry meaning, the way film has for a century.
+
 ## 4. Visual finishing (apply as a final pass, in this order)
 Work in **linear light** for tone/light math (sRGB→linear in, linear→sRGB out).
 1. **Filmic tone map:** ACES (Narkowicz: a2.51 b0.03 c2.43 d0.59 e0.14, input ×0.6) or Hable.
@@ -234,8 +273,10 @@ to -12; sub/impact felt not heard; risers sweep to -6; UI ticks -18 to -26.
   MUST exit 0, then the `storyboard-critic` agent must return ship:true. No scene code until both pass.
   This is the cheap save — it kills a cookie-cutter composition on paper, before a render is wasted.
 - **OBJECTIVE GATE (mandatory, FIRST of the render gates):** `quality_gate.py` MUST exit 0 before encoding. It measures
-  SHARPNESS (not blurry), HUD_TEXT + CAPTION_TEXT legibility, EVENT_CADENCE (no on-screen-dead window
-  > 5.0s), and CAPTION_SYNC. A fail is not a stop — fix the cause, re-render, re-gate (Phase 6 loop).
+  SHARPNESS (not blurry), HUD_TEXT + CAPTION_TEXT legibility, EVENT_CADENCE (no on-screen-dead window > 5.0s),
+  BEAT_DENSITY (distinct story beats), SCENE_STRUCTURE (>=4 shots with real transitions — not a 'oner'),
+  CAPTION_SYNC, READABILITY (every word bright + high-contrast), and MUSIC (a real sourced track). A fail is
+  not a stop — fix the cause, re-render, re-gate (Phase 6 loop).
 - **Visual:** 4-frame contact sheet across the acts; check focal hierarchy, legibility,
   safe area, banding. Whale must read as a beluga in pure silhouette.
 - **Audio:** measure the muxed file — integrated -14±0.5 LUFS, TP ≤-1.0, music-only tail

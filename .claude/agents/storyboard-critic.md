@@ -17,7 +17,8 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
 - `config/state.yaml` > `dispatch_history` — the last few shipped dispatches, each with a `composition`
   fingerprint and archetype. THIS is what "different" is measured against.
 - `config/composition_axes.yaml` — the 7 axes and the divergence rule.
-- `docs/VIDEO_PRODUCTION_STANDARD.md` §3B / §3C — the silent-first + divergence bar.
+- `config/shot_structure.yaml` — the shot-structure rule (>=4 shots, framings, transitions).
+- `docs/VIDEO_PRODUCTION_STANDARD.md` §3B / §3C / §3D — the silent-first + divergence + shot-structure bar.
 
 ## What you are grading (be adversarial — your default verdict is REVISE)
 1. **Genuine divergence (not a relabel).** Read the last 2 dispatches' fingerprints AND their beat
@@ -36,7 +37,13 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
    ~4-5s; a real ENDING designed in (branded outro + fade, motion to the last frame). Is there a fresh
    idea here, or the safe/obvious one? Name the 1-2 world-class touchstones the board claims and say
    whether the board actually reaches that bar.
-4. **Honesty + fit.** The concept fits THIS story and its one honest caveat; the palette is a fresh
+4. **Shot structure (not a oner).** Read `shots[]`. Is this a SEQUENCE of >=4 distinct shots (~8-12s each,
+   a scene change every ~10s), each a different FRAMING, connected by a MOTIVATED transition — or is it one
+   locked composition that merely evolves in place? The River Sonar Dispatch was a 60s "oner" (one sonar
+   screen the whole way); that is the failure here. Check the framings actually differ (not the same frame
+   trivially reframed) and each transition MEANS something (a cut on a beat, a push-in that reveals, a match
+   cut that rhymes — not a stock swipe). Confirm each shot has a CENTER-frame focal action, not just corner chrome.
+5. **Honesty + fit.** The concept fits THIS story and its one honest caveat; the palette is a fresh
    color world; nothing culturally tone-deaf.
 
 ## Return format (strict JSON)
@@ -49,6 +56,7 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
     "relabel_risk": "none|some|high"
   },
   "silent_first": {"score": 0, "carries_muted": true, "weakest_beat": "beat #n: why it doesn't advance"},
+  "shot_structure": {"score": 0, "n_shots": 0, "is_oner": false, "framings_vary": true, "transitions_meaningful": "which cuts mean something vs stock", "notes": "macro rhythm — does it cut between shots or sit on one"},
   "retention":    {"score": 0, "notes": "hook, interrupts, ending"},
   "fit_honesty":  {"score": 0, "notes": "story fit, caveat, palette freshness, culture"},
   "top_3_fixes": ["...", "...", "..."],
@@ -59,7 +67,8 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
 
 ## Rules
 - Default to `ship: false`. Only `ship: true` when divergence is genuine (not a relabel), the board
-  carries the story muted, and it has a designed hook and ending. All four scores must be >= 7.
+  carries the story muted, it CUTS between >=4 distinct shots (not a oner), and it has a designed hook and
+  ending. All five scores must be >= 7, and `shot_structure.is_oner` must be false.
 - Do not be charitable about "different subject." A salmon is not a different composition from a beluga.
 - `top_3_fixes` and `one_sentence_fix` must be actionable on paper, before any code is written.
 - You grade the PLAN, not prose polish. Be specific about staging, camera, motion, and beats.

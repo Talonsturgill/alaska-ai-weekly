@@ -88,6 +88,8 @@ def main():
     axcfg = yaml.safe_load(AXES.read_text())
     rule = axcfg["rule"]
     smin = axcfg["storyboard_min"]
+    shotcfg = yaml.safe_load((ROOT / "config" / "shot_structure.yaml").read_text())
+    srule = shotcfg["rule"]; SHOT_FRAMINGS = set(shotcfg.get("framings", [])); SHOT_TRANS = set(shotcfg.get("transitions", []))
     state = yaml.safe_load(STATE.read_text()) or {}
     history = state.get("dispatch_history", [])
 
@@ -115,6 +117,29 @@ def main():
     if len(dnote) < smin["divergence_note_min_chars"]:
         problems.append(f"divergence_note is {len(dnote)} chars; need >= {smin['divergence_note_min_chars']} "
                         f"— SAY in prose how this differs from the last 2 dispatches (forces the thinking).")
+
+    # ---- 1b. SHOT STRUCTURE: the board must be a SEQUENCE of shots, not one 'oner' (config/shot_structure.yaml) ----
+    shots = sb.get("shots") or []
+    if len(shots) < srule["min_shots"]:
+        problems.append(f"only {len(shots)} shots; need >= {srule['min_shots']} distinct shots with motivated "
+                        f"transitions (a scene change ~every 10-15s — NOT one continuous 'oner' like the sonar Dispatch).")
+    else:
+        framings = [str(s.get("framing", "")).strip().lower() for s in shots]
+        if len({f for f in framings if f}) < srule["min_distinct_framings"]:
+            problems.append(f"shots use only {len({f for f in framings if f})} distinct framings; need >= "
+                            f"{srule['min_distinct_framings']} (vary the shot types: {sorted(SHOT_FRAMINGS)}).")
+        unknown_fr = sorted({f for f in framings if f and f not in SHOT_FRAMINGS})
+        if unknown_fr:
+            problems.append(f"shots use framings outside the vocab: {unknown_fr} (use config/shot_structure.yaml `framings`).")
+        if srule.get("require_transitions", True):
+            no_tr = [s.get("id", i + 2) for i, s in enumerate(shots[1:]) if not str(s.get("transition_in", "")).strip()]
+            if no_tr:
+                problems.append(f"shots {no_tr} declare no transition_in — every shot after the first needs a motivated "
+                                f"transition ({sorted(SHOT_TRANS)}).")
+            bad_tr = sorted({str(s.get("transition_in", "")).strip().lower() for s in shots[1:]
+                             if str(s.get("transition_in", "")).strip() and str(s.get("transition_in", "")).strip().lower() not in SHOT_TRANS})
+            if bad_tr:
+                problems.append(f"shots use transitions outside the vocab: {bad_tr} (use config/shot_structure.yaml `transitions`).")
 
     # ---- 2. the banned shortcut: a scene copied from a prior render and re-skinned ----
     if rule.get("require_derived_from_scratch", True):

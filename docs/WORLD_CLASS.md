@@ -41,7 +41,9 @@ Produce the board in TWO files:
   world-class references you're matching.
 - out/dispatch/storyboard.json — the COMPOSITION FINGERPRINT: a primary tag for each of the 7 axes in
   config/composition_axes.yaml (pov, motion_vector, hero_treatment, layout, register, palette, metaphor),
-  derived_from: scratch, the beats, and a >=120-char divergence_note.
+  derived_from: scratch, the beats, a >=120-char divergence_note, AND the SHOT LIST `shots[]` — >=4 distinct
+  shots (~8-12s each), each with a framing + a motivated transition_in (config/shot_structure.yaml). A
+  Dispatch is a SEQUENCE of shots, not a single locked scene; the SCENE_STRUCTURE gate verifies the cuts render.
 Then pass BOTH halves of Gate 0:
 - 0A OBJECTIVE: `python scripts/storyboard_check.py` exits 0 — your fingerprint must differ from each of
   the last 2 dispatches on >= 4 of 7 axes, hold a unique (pov, layout, motion) signature vs the last 4,
