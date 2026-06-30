@@ -92,6 +92,10 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     # EVENT_CADENCE/BEAT_DENSITY can all be satisfied inside a single locked scene (the sonar Dispatch was a
     # 60s oner). This requires the engine to actually CUT between shots, and verifies each declared cut is a
     # real visual discontinuity — not a relabel. The engine declares shots in shots.json (dispatch_core.write_shots).
+    # NOTE: "each cut lands a different WORLD, not a camera zoom/pan on one canvas" (the v2 failure) is enforced
+    # UPSTREAM at the PLAN gate — scripts/storyboard_check.py requires adjacent shots to change >=2 heavy axes —
+    # plus the storyboard-critic. This render check confirms a cut PHYSICALLY happened at each declared boundary.
+    # Full craft: docs/craft/CINEMATIC_SCENE_CRAFT.md.
     shots_path=os.path.join(os.path.dirname(os.path.abspath(frames_dir)),"shots.json")
     MIN_SHOTS=4; MIN_DUR=3.0; MAX_DUR=16.0; MIN_FRAMINGS=3
     if os.path.exists(shots_path):

@@ -162,9 +162,19 @@ composition is FINGERPRINTED across 7 axes and machine-checked against history.
 
 ## 3D. Shot structure — the MACRO rhythm (cut between shots; config/shot_structure.yaml)
 §3B keeps the picture telling the story; §3C keeps each video distinct from the others. THIS keeps a video
-from being a single locked "oner." A Dispatch is a SEQUENCE of distinct SHOTS — a new shot every ~8-12s,
->=4 across the ~60s — each a different FRAMING of the world, connected by a transition that MEANS something.
-The cadence gates measure activity WITHIN a shot; SCENE_STRUCTURE measures the shot CHANGES between them.
+from being a single locked "oner" — OR a zoom-fest (the v2 failure: eight crops of one sonar display, the
+camera pushing in and pulling out on ONE world). A Dispatch is a SEQUENCE of distinct SHOTS — a new shot
+every ~8-12s, >=4 across the ~60s — and each cut must land a genuinely DIFFERENT WORLD, not the same one
+reframed. The full craft palette is the Director's Brain (docs/craft/CINEMATIC_SCENE_CRAFT.md); the rules
+below are the floor. The cadence gates measure activity WITHIN a shot; SCENE_STRUCTURE measures shot CHANGES.
+- **EACH SHOT IS A DIFFERENT COMPOSITION (the anti-zoom rule).** Every shot declares its own
+  pov / layout / motion_vector / hero_treatment (config/composition_axes.yaml vocab); ADJACENT shots must
+  differ on >=2 of these. A push-in / pan / zoom over one world is a MOVE, never a scene change.
+  `scripts/storyboard_check.py` enforces this on paper before a single frame renders.
+- **EVERY TRANSITION RIDES A THREAD — MATCH / CARRY / BUILD / TRAVEL.** A transition must carry meaning +
+  momentum and take the viewer somewhere (CINEMATIC_SCENE_CRAFT.md §1): MATCH anchors the eye across a total
+  world-change; CARRY survives an element across; BUILD assembles/boots the new screen; TRAVEL moves through a
+  shared space. A cut that does none of these is a slideshow edit.
 - **THINK IN SHOTS (storyboard the shot list).** Per shot: its FRAMING (wide-establish / push-detail /
   macro-closeup / alt-vantage / map-territory / data-panel / subject-portrait / two-up), the ONE thing
   center-frame, and the TRANSITION into it. A shot can hold 2-3 beats; across the piece, vary the framings
@@ -175,13 +185,21 @@ The cadence gates measure activity WITHIN a shot; SCENE_STRUCTURE measures the s
 - **TRANSITION VOCABULARY (how a shot becomes the next — implement in the hand-coded engine):**
   · HARD CUT — swap the scene render at frame f. On a downbeat = energy, a hard turn in the argument.
   · CROSSFADE / DISSOLVE — `dc.xfade(a,b,t)` over ~8-18f. Reflection, time passing, a soft link.
-  · PUSH-IN / PULL-OUT — `dc.reframe(img,cx,cy,scale)` animates a crop into/out of a region. A motivated
-    reframe-as-shot-change (one river -> the whole map). Continuous; reads as a camera move that lands a new shot.
-  · WHIP-PAN — `dc.whip(a,b,t)` a fast horizontal motion smear handing off mid-swish. Urgency, "meanwhile."
-  · MATCH CUT — align a shape in A to a kindred shape in B across the cut (a beam fan -> a tail fan). A rhyme.
-  · MASK-WIPE — `dc.mask_wipe(a,b,mask)` grow a shape's alpha to reveal B over A. A jump in time or scale.
-  · MORPH — interpolate one object into another. The transformation IS the message.
-  · FOCUS-PULL — `dc.focus_pull(a,b,t)` defocus A while focusing B. Hand attention to a new subject in-place.
+  · GRAPHIC MATCH — B opens on a kindred shape at A's exact screen geometry between two DIFFERENT scenes
+    (2001 bone->craft). The core world-to-world move; hard-cut on the beat. [MATCH]
+  · MATCH CUT — align a shape in A to a kindred shape in B across the cut (a beam fan -> a tail fan). A rhyme. [MATCH]
+  · CARRIED ELEMENT — a named object (hero_point, coastline) survives the cut and takes a new role. [CARRY]
+  · WHIP-PAN — `dc.whip(a,b,t)` a fast horizontal motion smear handing off mid-swish. Urgency, "meanwhile." [TRAVEL]
+  · MASK-WIPE / DOUBLE-EXPOSURE — `dc.mask_wipe(a,b,mask)` grow/hold a shape's alpha to reveal or window B. [BUILD/CARRY]
+  · ASSEMBLE / FUI-BOOT — B builds into being (points->edges->faces) or a NEW interface boots up. [BUILD]
+  · MAP-TRAVEL — animate the camera across one shared map/grid to the next scene. [TRAVEL]
+  · MORPH — interpolate one object's contour into another. The transformation IS the message. [CARRY]
+  · CROSSFADE / DISSOLVE — `dc.xfade(a,b,t)` with a shape hinge. Reflection / time passing ONLY; never default glue. [MATCH]
+  · SOUND-BRIDGE — start B's audio ~6-14f before the picture cuts (J-cut), or run A's past it (L-cut). Stacks on any cut.
+  · PUSH-IN / PULL-OUT / FOCUS-PULL — `dc.reframe(img,cx,cy,scale)` / `dc.focus_pull(...)` are MOVES WITHIN a
+    shot, NOT scene changes. A crop/zoom of one canvas reading as a "new shot" is exactly the v2 failure. Use a
+    move only to develop the world you're already in, or as the lead-in to a cut that lands a genuinely DIFFERENT
+    composition (>=2 heavy axes change). Never let a zoom stand in for a cut.
 - **CONTINUITY ACROSS THE CUTS.** Keep the brand throughlines constant (wordmark/eyebrow, type system,
   caption engine, grade) so the shots feel like ONE film, not a reel of clips. The transition is the next
   sentence of the picture, not a sticker between two slides.

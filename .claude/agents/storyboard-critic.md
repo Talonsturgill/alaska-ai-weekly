@@ -17,7 +17,9 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
 - `config/state.yaml` > `dispatch_history` — the last few shipped dispatches, each with a `composition`
   fingerprint and archetype. THIS is what "different" is measured against.
 - `config/composition_axes.yaml` — the 7 axes and the divergence rule.
-- `config/shot_structure.yaml` — the shot-structure rule (>=4 shots, framings, transitions).
+- `config/shot_structure.yaml` — the shot-structure rule (>=4 shots, framings, transitions, the >=2-axis anti-zoom rule).
+- `docs/craft/CINEMATIC_SCENE_CRAFT.md` — the Director's Brain: MOVE-vs-CUT (§0), the MATCH/CARRY/BUILD/TRAVEL
+  test for every transition (§1), the transition library (§2), and the anti-patterns + on-screen test (§6).
 - `docs/VIDEO_PRODUCTION_STANDARD.md` §3B / §3C / §3D — the silent-first + divergence + shot-structure bar.
 
 ## What you are grading (be adversarial — your default verdict is REVISE)
@@ -37,12 +39,18 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
    ~4-5s; a real ENDING designed in (branded outro + fade, motion to the last frame). Is there a fresh
    idea here, or the safe/obvious one? Name the 1-2 world-class touchstones the board claims and say
    whether the board actually reaches that bar.
-4. **Shot structure (not a oner).** Read `shots[]`. Is this a SEQUENCE of >=4 distinct shots (~8-12s each,
-   a scene change every ~10s), each a different FRAMING, connected by a MOTIVATED transition — or is it one
-   locked composition that merely evolves in place? The River Sonar Dispatch was a 60s "oner" (one sonar
-   screen the whole way); that is the failure here. Check the framings actually differ (not the same frame
-   trivially reframed) and each transition MEANS something (a cut on a beat, a push-in that reveals, a match
-   cut that rhymes — not a stock swipe). Confirm each shot has a CENTER-frame focal action, not just corner chrome.
+4. **Shot structure — real scene breaks, NOT zooms on one canvas (the v2 failure).** Read `shots[]`. Two
+   failures to catch: (a) the **oner** — one locked composition that merely evolves in place (River Sonar v1);
+   and (b) the **zoom-fest** — "shots" that are the SAME world pushed in / pulled out / panned (River Sonar v2:
+   eight crops of one sonar display). `storyboard_check.py` now requires each shot to declare its own
+   `pov/layout/motion_vector/hero_treatment` and adjacent shots to differ on >=2 — but you judge what a script
+   cannot: does each cut actually land the viewer in a **different WORLD** (a different screen/space/register),
+   carried by a transition that **MATCHes, CARRYies, BUILDs, or TRAVELs** (CINEMATIC_SCENE_CRAFT.md §1), and does
+   the sequence feel like a **journey**? Apply the on-screen test (§6): freeze the two frames either side of each
+   cut — if everything but a deliberate matched anchor is the same content at a different scale, it's a fake
+   scene change, FAIL it. Confirm transitions MEAN something (a graphic match that rhymes, a hard cut on the
+   beat, a carried element — not a stock swipe, not a push-in standing in for a cut), and each shot has a
+   CENTER-frame focal action, not just corner chrome.
 5. **Honesty + fit.** The concept fits THIS story and its one honest caveat; the palette is a fresh
    color world; nothing culturally tone-deaf.
 
@@ -56,7 +64,7 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
     "relabel_risk": "none|some|high"
   },
   "silent_first": {"score": 0, "carries_muted": true, "weakest_beat": "beat #n: why it doesn't advance"},
-  "shot_structure": {"score": 0, "n_shots": 0, "is_oner": false, "framings_vary": true, "transitions_meaningful": "which cuts mean something vs stock", "notes": "macro rhythm — does it cut between shots or sit on one"},
+  "shot_structure": {"score": 0, "n_shots": 0, "is_oner": false, "zoom_fakes": "list any cut that is a zoom/pan on one world, not a real scene change (on-screen test) — [] if none", "worlds_change": "do cuts land DIFFERENT worlds? which threads (match/carry/build/travel) carry them", "transitions_meaningful": "which cuts mean something vs stock", "notes": "macro rhythm — does it cut between worlds or sit on/zoom one"},
   "retention":    {"score": 0, "notes": "hook, interrupts, ending"},
   "fit_honesty":  {"score": 0, "notes": "story fit, caveat, palette freshness, culture"},
   "top_3_fixes": ["...", "...", "..."],
@@ -67,8 +75,11 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
 
 ## Rules
 - Default to `ship: false`. Only `ship: true` when divergence is genuine (not a relabel), the board
-  carries the story muted, it CUTS between >=4 distinct shots (not a oner), and it has a designed hook and
-  ending. All five scores must be >= 7, and `shot_structure.is_oner` must be false.
+  carries the story muted, it CUTS between >=4 distinct shots that are genuinely different WORLDS (not a oner,
+  not a zoom-fest — `shot_structure.zoom_fakes` must be empty), and it has a designed hook and ending. All five
+  scores must be >= 7, and `shot_structure.is_oner` must be false.
 - Do not be charitable about "different subject." A salmon is not a different composition from a beluga.
+- Do not be charitable about a camera move. A push-in / pull-out / pan over one world is NOT a scene change,
+  however motivated — a real cut lands a different composition (>=2 heavy axes change).
 - `top_3_fixes` and `one_sentence_fix` must be actionable on paper, before any code is written.
 - You grade the PLAN, not prose polish. Be specific about staging, camera, motion, and beats.
