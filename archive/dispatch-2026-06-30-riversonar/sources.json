@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "url": "https://www.adfg.alaska.gov/index.cfm?adfg=sonar.didson",
+      "outlet": "Alaska Department of Fish and Game — Sonar Programs: Imaging Sonar (primary; page resolves 2026-06-30)",
+      "note": "ADFG began using DIDSON fish-length data on the Kenai River in 2010, and first tested the next-generation ARIS imaging sonar in Alaska in 2012; technicians watch sonar video and count and measure fish by hand."
+    },
+    {
+      "url": "https://www.adfg.alaska.gov/index.cfm?adfg=sonar.kenai",
+      "outlet": "Alaska Department of Fish and Game — Kenai River Sonar (primary; page resolves 2026-06-30)",
+      "note": "ARIS is the current imaging sonar at Kenai River Mile 14; technicians use a digital measurement tool on frozen sonar frames to separate king salmon (34 inches or longer) from smaller sockeye, the length cue the AI reproduces."
+    },
+    {
+      "url": "https://arxiv.org/abs/2502.05129",
+      "outlet": "arXiv:2502.05129 — Van Brunt, Kay, Haucke, Perona, Van Horn, Beery; ECCV 2024 CV4Animals Workshop (primary)",
+      "note": "'Counting Fish with Temporal Representations of Sonar Video' automates Kenai River sonar salmon counts; reports a 23 percent in-distribution count error (normalized mean absolute error), and 30.7 percent out of distribution. This is the 'off by about a quarter' figure."
+    },
+    {
+      "url": "https://www.frontiersin.org/articles/10.3389/fmars.2023.1200408/full",
+      "outlet": "Frontiers in Marine Science, vol. 10, Sept 2023 — Atlas, Ma, Chou, Connors et al. (primary, peer-reviewed)",
+      "note": "Computer-vision salmon counting (YOLOv7-tiny) led by William Atlas of the Wild Salmon Center; coho mAP 94.5 percent, sockeye 83.6 percent; trained on about 532,000 labeled frames across 1,567 videos at British Columbia sites. This is the 'hundreds of thousands of labeled frames' figure."
+    },
+    {
+      "url": "https://www.wildsalmoncenter.org/meet-the-team/",
+      "outlet": "Wild Salmon Center — team page (primary; resolves 2026-06-30)",
+      "note": "Confirms William Atlas as Senior Salmon Watershed Scientist at the Wild Salmon Center, lead of the salmon computer-vision monitoring work."
+    }
+  ]
+}
