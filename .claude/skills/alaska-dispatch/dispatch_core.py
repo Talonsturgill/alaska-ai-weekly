@@ -214,3 +214,46 @@ def focus_pull(a, b, t, sigma=7.0):
     af = np.dstack([gaussian_filter(ab[..., c], sigma * t) for c in range(3)])
     bf = np.dstack([gaussian_filter(bb[..., c], sigma * (1 - t)) for c in range(3)])
     return Image.fromarray(np.clip(af * (1 - t) + bf * t, 0, 255).astype(np.uint8))
+
+# ---- world-to-world moves (the Director's Brain library: docs/craft/CINEMATIC_SCENE_CRAFT.md §2) ----
+# GRAPHIC MATCH and CARRIED ELEMENT are DISCIPLINES, not single ops. Graphic match: render scene A to RESOLVE on
+# a salient shape at a known (cx,cy,r)/path, render scene B to OPEN on a kindred shape at the SAME geometry, then
+# HARD-CUT (swap the scene render at the boundary) on the beat — two different worlds, one inevitable thought.
+# Carried element: keep one named object's screen position continuous ACROSS the cut so it survives the world
+# change. The primitives below draw the shared anchor and the build/boot/iris moves the engine couldn't yet do.
+
+def dissolve(a, b, t):
+    """Lap dissolve — alias of xfade. Reserve for time-passing / reflection; never default glue."""
+    return xfade(a, b, t)
+
+def lerp(p0, p1, t):
+    """Interpolate a screen point p0->p1 (t 0..1) — a CARRIED element moving from its A-pose to its B-role."""
+    t = float(max(0.0, min(1.0, t)))
+    return (p0[0] + (p1[0] - p0[0]) * t, p0[1] + (p1[1] - p0[1]) * t)
+
+def carry_token(img, xy, r=15, color=GOLD, glow=1.0):
+    """Draw a glowing CARRIED element at xy on an RGB image (returns a new RGB image). The outgoing and incoming
+    scene draw it at the SAME xy across a cut so the object survives the world-change (CARRY thread)."""
+    x, y = int(xy[0]), int(xy[1]); out = img.convert("RGBA")
+    if glow > 0:
+        lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ld = ImageDraw.Draw(lay)
+        for k, a in ((r * 4.2, 26), (r * 2.4, 48), (r * 1.5, 92)):
+            ld.ellipse([x - k, y - k, x + k, y + k], fill=(*color, int(a * glow)))
+        out = Image.alpha_composite(out, lay)
+    d = ImageDraw.Draw(out); d.ellipse([x - r, y - r, x + r, y + r], fill=(*color, 255))
+    d.ellipse([x - r, y - r, x + r, y + r], outline=(255, 255, 255, 255), width=2)
+    return out.convert("RGB")
+
+def iris_wipe(a, b, cx, cy, r):
+    """Object / portal / iris wipe: reveal B over A through a growing soft circle of radius r at (cx,cy).
+    A jump in time or scale, or a token/porthole opening into the next world (BUILD/CARRY thread)."""
+    m = Image.new("L", (W, H), 0); ImageDraw.Draw(m).ellipse([cx - r, cy - r, cx + r, cy + r], fill=255)
+    return Image.composite(b, a, m.filter(ImageFilter.GaussianBlur(7)))
+
+def assemble_alpha(f, start, dur, n_stages=3):
+    """Progress driver for an ASSEMBLE / BUILD-in (points -> edges -> faces -> shaded). Returns
+    (stage_index, t_within_stage, overall 0..1). The new scene BUILDS into being rather than cutting in
+    finished (BUILD thread). Pair with a 0..1 reveal in the scene's own draw."""
+    o = float(E.seg(f, start, start + dur))
+    s = min(n_stages - 1, int(o * n_stages)); ts = o * n_stages - s
+    return s, float(max(0.0, min(1.0, ts))), o

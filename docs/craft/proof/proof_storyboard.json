@@ -1,0 +1,150 @@
+{
+  "concept": "One river's count becomes the mountain it feeds \u2014 a single carried value across four worlds.",
+  "derived_from": "scratch",
+  "palette": "moss-green and bone-white on graphite, one vermilion signal",
+  "fingerprint": {
+    "pov": "top-down-map",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "landscape-as-subject",
+    "layout": "map-territory",
+    "register": "editorial-schematic",
+    "palette": "moss-green and bone-white on graphite, one vermilion signal",
+    "metaphor": "a carried value: one river's count becomes the mountain it feeds"
+  },
+  "divergence_note": "Opposite to the last two: an overhead editorial MAP that travels horizontally, the land itself the hero, moss-green + bone-white + one vermilion signal \u2014 not an amber instrument screen (sonar) and not a vertical thermal cutaway (permafrost). And it CUTS between four different worlds.",
+  "beats": [
+    {
+      "n": 1,
+      "t": "5.0-10.0",
+      "new": "river map powers up, one node pulses gold",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 2,
+      "t": "10.0-15.0",
+      "new": "the node's count is the question",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 3,
+      "t": "15.0-20.0",
+      "new": "carried gold token lifts off the river",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 4,
+      "t": "20.0-25.0",
+      "new": "lands as the live value on a rising chart",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 5,
+      "t": "25.0-30.0",
+      "new": "the run-curve climbs toward the escapement goal",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 6,
+      "t": "30.0-35.0",
+      "new": "it crosses the goal line",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 7,
+      "t": "35.0-40.0",
+      "new": "graphic match: the curve IS a mountain ridge",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 8,
+      "t": "40.0-45.0",
+      "new": "the token rides onto the summit",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 9,
+      "t": "45.0-50.0",
+      "new": "aurora over the land the run feeds",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 10,
+      "t": "50.0-55.0",
+      "new": "the season, made physical",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 11,
+      "t": "55.0-60.0",
+      "new": "hard build to the brand field",
+      "transition": "cut",
+      "means": "advances the arc"
+    },
+    {
+      "n": 12,
+      "t": "60.0-65.0",
+      "new": "ALASKA.AI wordmark + tagline",
+      "transition": "cut",
+      "means": "advances the arc"
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "t": "0.0-4.0",
+      "framing": "map-territory",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "centered": "the pulsing river node"
+    },
+    {
+      "id": 2,
+      "t": "4.0-8.3",
+      "framing": "data-panel",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "the rising run-curve + its peak value"
+    },
+    {
+      "id": 3,
+      "t": "8.3-11.7",
+      "framing": "wide-establish",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "centered": "the ridge whose top edge IS the curve"
+    },
+    {
+      "id": 4,
+      "t": "11.7-14.3",
+      "framing": "subject-portrait",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "assemble",
+      "thread": "build",
+      "centered": "the ALASKA.AI wordmark"
+    }
+  ],
+  "ending": "branded wordmark builds in over the deep field; the carried token settles, then a slow fade."
+}
