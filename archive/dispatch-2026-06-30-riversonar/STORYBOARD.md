@@ -51,6 +51,23 @@ Differs from **both** prior dispatches on **7 / 7** axes. Spatial signature
 **Ending** is designed in (beats 13–15), motion runs to the last frame. **Captions** voice-synced from
 `audio/words60.json`. **Music** freshly sourced + credited.
 
+## Shot structure (the MACRO rhythm — 8 shots, a cut ~every 6–11s; see config/shot_structure.yaml)
+The beats above are the *micro* rhythm (what moves); these shots are the *macro* rhythm (how it's framed).
+A camera crops/zooms over the one composed display so each shot is its own framing, and a "sonar refresh"
+scan-cut punctuates every change. This is what makes it a sequence, not a 60s 'oner'. SCENE_STRUCTURE
+gate: **8 shots · 7 real transitions · 6 distinct framings** (`stills/contact_sheet.png` shows the cuts).
+
+| # | t | framing | centered on | cut in |
+|---|---|---|---|---|
+| 1 | 0.0–9.9 | wide-establish | the display powering on | fade-up |
+| 2 | 9.9–17.0 | push-detail | the COUNT LINE, a fish tripping it | push-in |
+| 3 | 17.0–21.4 | alt-vantage | the operator's reticle, counting by hand | hard-cut |
+| 4 | 21.4–32.4 | wide-establish | the AI boxing the whole run | hard-cut |
+| 5 | 32.4–40.1 | map-territory | the river-screen network, BC→Alaska | mask-wipe |
+| 6 | 40.1–46.1 | push-detail | the UNDETECTED fish; the ~23% miss | hard-cut |
+| 7 | 46.1–53.9 | data-panel | the run-curve at the goal; the HOLD call | push-in |
+| 8 | 53.9–60.0 | subject-portrait | the ALASKA.AI wordmark, last echo rising | crossfade |
+
 ## Silent-first check
 Mute the VO and the picture still tells it: a counting screen → light fails, sound takes over → a human
 tags fish one by one and falls behind → the AI boxes them all at once → it labels species → it scales to

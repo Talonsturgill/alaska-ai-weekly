@@ -34,6 +34,16 @@
     {"n": 14, "t": "55.5-57.5", "vo": 0, "new": "Tagline reveals: 'what's moving in alaska ai, this week'.", "transition": "tagline staged reveal", "means": "Brand recall + the follow."},
     {"n": 15, "t": "57.5-60.0", "vo": 0, "new": "The last amber echo drifts up and out of frame; gentle cinematic fade to black.", "transition": "fade out, motion to the final frame", "means": "A real ending; never a static hold."}
   ],
+  "shots": [
+    {"id": 1, "t": "0.0-9.9",   "framing": "wide-establish",   "centered": "the whole sonar display powering on", "transition_in": "fade-up"},
+    {"id": 2, "t": "9.9-17.0",  "framing": "push-detail",      "centered": "the COUNT LINE and a fish tripping it", "transition_in": "push-in"},
+    {"id": 3, "t": "17.0-21.4", "framing": "alt-vantage",      "centered": "the operator's reticle tagging fish by hand", "transition_in": "hard-cut"},
+    {"id": 4, "t": "21.4-32.4", "framing": "wide-establish",   "centered": "the AI boxing the whole run", "transition_in": "hard-cut"},
+    {"id": 5, "t": "32.4-40.1", "framing": "map-territory",    "centered": "the network of river-screens, BC to Alaska", "transition_in": "mask-wipe"},
+    {"id": 6, "t": "40.1-46.1", "framing": "push-detail",      "centered": "an UNDETECTED fish slipping past, the 23% error", "transition_in": "hard-cut"},
+    {"id": 7, "t": "46.1-53.9", "framing": "data-panel",       "centered": "the run-curve at the goal + the HOLD decision", "transition_in": "push-in"},
+    {"id": 8, "t": "53.9-60.0", "framing": "subject-portrait", "centered": "the ALASKA.AI wordmark, the last echo rising", "transition_in": "crossfade"}
+  ],
   "ending": "Branded outro (wordmark -> tagline) staged after the VO, with the final echo still rising and a slow fade. Motion runs to the last frame (EVENT_CADENCE).",
   "captions": "voice-synced kinetic phrases from audio/words60.json (CAPTION_SYNC gate)",
   "voice": "edge_tts:en-US-BrianMultilingualNeural (draft); publish in a Kokoro voice",

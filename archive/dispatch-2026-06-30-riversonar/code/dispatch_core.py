@@ -59,12 +59,14 @@ BGLUMA = None
 def _lum(a):
     return 0.2126 * a[..., 0] + 0.7152 * a[..., 1] + 0.0722 * a[..., 2]
 
-def set_frame_bg(rgba_or_rgb, f):
-    """Call right after the grade, before drawing any text. Captures the background luma the text sits
-    on (every 6th frame, matching the gate's sampling) and clears the per-frame log."""
+def set_frame_bg(rgba_or_rgb, f, clear=True):
+    """Call right after the grade, before drawing text. Captures the background luma the text sits on
+    (every 6th frame, matching the gate's sampling). `clear=True` resets the per-frame log; pass
+    clear=False on a SECOND pass (e.g. locked captions over a reframed scene) so the first pass's
+    logged words (the instrument HUD) are kept, only the background reference is updated."""
     global BGLUMA, TEXTLOG
     if LOGTEXT and f % 6 == 0:
-        TEXTLOG = []
+        if clear: TEXTLOG = []
         img = rgba_or_rgb.convert("RGB") if rgba_or_rgb.mode != "RGB" else rgba_or_rgb
         BGLUMA = _lum(np.asarray(img).astype(np.float32))
     else:
@@ -169,3 +171,46 @@ def outro_card(out, f):
         tf = fr(40, 600, 144); s = "what's moving in alaska ai, this week"; w = tw(s, tf, 0.02)
         tk(d, s, tf, (228, 240, 250, int(228 * a2)), (W - w) // 2, 1552 - int((1 - a2) * 14), 0.02)
         logw((W - w) // 2, 1552, w, tf.size, (228, 240, 250), a2, a2 >= 0.6, "outro")
+
+# ---------------- SHOTS + TRANSITIONS (the MACRO rhythm — cut between distinct shots) ----------------
+# A Dispatch is a SEQUENCE of shots, not one locked scene (config/shot_structure.yaml). Author 2+ scene
+# render functions, schedule which shot is on screen when, BLEND between them with the helpers below at each
+# cut, and declare the boundaries with write_shots() so the SCENE_STRUCTURE gate can verify the cuts are real.
+def write_shots(shots, total, path=None):
+    """Emit the shot manifest the SCENE_STRUCTURE gate reads. `shots` is an ORDERED list of dicts:
+    {id:int, start:int(frame), end:int(frame), framing:str (from config/shot_structure.yaml's `framings`),
+     transition_in:str (from `transitions`), note:str}. Call once from the renderer's main()."""
+    path = path or os.path.join(HERE, "shots.json")
+    json.dump({"shots": shots, "fps": FPS, "total": int(total)}, open(path, "w"), indent=2)
+    return path
+
+def xfade(a, b, t):
+    """Crossfade / dissolve RGB image a -> b (t in 0..1). Reflection, time passing, a soft link."""
+    return Image.blend(a, b, float(max(0.0, min(1.0, t))))
+
+def reframe(img, cx, cy, scale):
+    """Push-in / pull-out: frame a sub-region centered on (cx,cy) at `scale` (1.0=full frame, 0.5=2x in),
+    resized back to full WxH. (cx,cy) are fractions 0..1. Animate `scale`/(cx,cy) across a shot for a move,
+    or step it at a cut for a reframe-as-shot-change."""
+    scale = max(0.2, min(1.0, scale)); cw, ch = int(W * scale), int(H * scale)
+    x0 = max(0, min(W - cw, int(cx * W - cw / 2))); y0 = max(0, min(H - ch, int(cy * H - ch / 2)))
+    return img.crop((x0, y0, x0 + cw, y0 + ch)).resize((W, H), Image.LANCZOS)
+
+def whip(a, b, t):
+    """Whip-pan A -> B: a fast horizontal motion smear that hands off mid-swish (t in 0..1). Urgency, 'meanwhile'."""
+    base = np.asarray(b if t >= 0.5 else a).astype(np.float32)
+    n = max(1, int(40 * (1 - abs(t - 0.5) * 2)) + 1); sm = np.zeros_like(base)
+    for s in range(-n, n + 1): sm += np.roll(base, s * 3, axis=1)
+    return Image.fromarray(np.clip(sm / (2 * n + 1), 0, 255).astype(np.uint8))
+
+def mask_wipe(a, b, mask_l):
+    """Reveal B over A through an L-mode mask (255 = show B). Grow a shape in the mask to wipe the cut
+    (a jump in time or scale)."""
+    return Image.composite(b, a, mask_l)
+
+def focus_pull(a, b, t, sigma=7.0):
+    """Defocus A while focusing B and crossfading (t in 0..1) — hand attention to a new subject in the same space."""
+    ab = np.asarray(a).astype(np.float32); bb = np.asarray(b).astype(np.float32)
+    af = np.dstack([gaussian_filter(ab[..., c], sigma * t) for c in range(3)])
+    bf = np.dstack([gaussian_filter(bb[..., c], sigma * (1 - t)) for c in range(3)])
+    return Image.fromarray(np.clip(af * (1 - t) + bf * t, 0, 255).astype(np.uint8))

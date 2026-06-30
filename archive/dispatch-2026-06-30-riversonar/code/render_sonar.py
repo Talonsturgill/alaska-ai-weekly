@@ -40,6 +40,50 @@ F_MISS = B[7]                     # "the machine still misses"
 F_DECIDE = B[8]                   # "that call is still ours"
 SPEECH_F = int(dc.TIM["speech_end"] * FPS)
 
+# ---- SHOT LIST (the MACRO rhythm): cut between FRAMINGS of the sonar display, riding the VO beats.
+# A camera (crop+zoom over the composed display) gives each shot a distinct framing; the brand captions
+# ride LOCKED on top. cam=(cx,cy,scale): scale 1.0 = full frame, <1.0 = pushed in, centered on (cx,cy frac).
+SHOTS = [
+    dict(id=1, start=0,       framing="wide-establish",  transition_in="fade-up",   cam=(0.50, 0.46, 1.00)),  # the whole display powers on
+    dict(id=2, start=B[2],    framing="push-detail",     transition_in="push-in",   cam=(0.50, 0.43, 0.62)),  # into the COUNT LINE (sonar since 2010)
+    dict(id=3, start=B[3],    framing="alt-vantage",     transition_in="hard-cut",  cam=(0.37, 0.30, 0.72)),  # the operator's reticle, upper beam (by hand)
+    dict(id=4, start=B[4],    framing="wide-establish",  transition_in="hard-cut",  cam=(0.50, 0.47, 1.00)),  # AI boxes snap on — see the whole run
+    dict(id=5, start=B[6],    framing="map-territory",   transition_in="mask-wipe", cam=(0.50, 0.36, 0.86)),  # the network spreads (BC to Alaska)
+    dict(id=6, start=B[7],    framing="push-detail",     transition_in="hard-cut",  cam=(0.50, 0.36, 0.78)),  # THE MISS — push on the unboxed fish
+    dict(id=7, start=B[8],    framing="data-panel",      transition_in="push-in",   cam=(0.50, 0.50, 0.70)),  # into the run-curve + the decision
+    dict(id=8, start=1616,    framing="subject-portrait",transition_in="crossfade", cam=(0.50, 0.46, 1.00)),  # outro, pull back
+]
+def camera(f):
+    """Which SHOT (framing) is on screen, as a crop (scale, cx, cy). Hard-cuts switch instantly; push-in /
+    pull-out / crossfade / focus-pull animate from the previous shot's framing over ~16f. A slow continued
+    push within each shot keeps the camera alive."""
+    idx = 0
+    for i, s in enumerate(SHOTS):
+        if f >= s["start"]: idx = i
+    cur = SHOTS[idx]; prev = SHOTS[idx - 1] if idx > 0 else None
+    cx, cy, sc = cur["cam"]; t_in = f - cur["start"]
+    sc = sc - 0.016 * E.out_cubic(min(1.0, t_in / 160.0))                 # slow continued push (living camera)
+    cx = cx + math.sin(t_in * 0.016) * 0.006; cy = cy + math.cos(t_in * 0.013) * 0.005
+    if prev is not None and cur.get("transition_in") in ("push-in", "pull-out", "crossfade", "focus-pull") and t_in < 16:
+        a = E.in_out_sine(t_in / 16.0); pc = prev["cam"]                  # ease from the previous framing
+        cx = pc[0] * (1 - a) + cx * a; cy = pc[1] * (1 - a) + cy * a; sc = pc[2] * (1 - a) + sc * a
+    return float(max(0.45, min(1.0, sc))), float(cx), float(cy)
+
+CUTS = [sh["start"] for sh in SHOTS[1:]]   # the frames where the shot changes
+def scancut(out, f):
+    """A brief 'sonar refresh' punctuation on each scene change: a bright scan band sweeps down + a quick
+    luma pulse. Reads as the display re-acquiring when the view cuts — it makes the shot change UNMISTAKABLE
+    (to the eye and to the SCENE_STRUCTURE gate), so cuts between framings of the same dark display land."""
+    for b in CUTS:
+        age = f - b
+        if 0 <= age <= 6:
+            p = age / 6.0; d = ImageDraw.Draw(out, "RGBA")
+            yb = int(p * H); bh = 28
+            d.rectangle([0, yb - bh, W, yb + bh], fill=(196, 234, 247, int(170 * (1 - p) ** 0.6)))   # bright scan band sweeps down
+            pulse = int(48 * math.sin(min(1.0, p * 1.5) * math.pi))                                    # quick luma pulse, peaks early
+            if pulse > 2: out.alpha_composite(Image.new("RGBA", (W, H), (120, 150, 168, pulse)))
+            return
+
 # ---- the scene's OWN color world ----
 AMBER = (255, 176, 78); HOT = (255, 240, 206); ECHO_DIM = (150, 96, 52)
 CYAN = (124, 210, 236); CYAN_D = (58, 120, 150)
@@ -417,20 +461,19 @@ def hud_backing(out, f):
             elif spec_on:
                 lab = "KING" if k["king"] else "SOCKEYE"; rk(x - bw / 2 - 2, y - bh / 2 - 36, x - bw / 2 + tw(lab, mono(20, True)) + 8, y - bh / 2 - 10)
 
-def render_frame(f):
+def render_display(f):
+    """The SONAR DISPLAY — everything the camera frames (scene + instrument HUD). NO captions / outro /
+    footer / scrim / fades; those ride LOCKED on top AFTER the camera in render_frame. Returns full-res RGBA."""
     img = Image.fromarray(base_with_fx(f).astype(np.uint8)).convert("RGBA")
     draw_run(img, f)
     draw_network(img, ImageDraw.Draw(img, "RGBA"), f)
     out = Image.fromarray(finish(np.asarray(img.convert("RGB")), 4000 + f))
     out = out.filter(ImageFilter.UnsharpMask(radius=2.4, percent=92, threshold=2)).convert("RGBA")
-    # scene-atmosphere (must BLEND with the graded scene -> its own composited layer)
-    if murk_alpha(f) > 0.02:
+    if murk_alpha(f) > 0.02:                                              # scene-atmosphere blends with the grade
         mlay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); draw_murk(ImageDraw.Draw(mlay, "RGBA"), f)
         out = Image.alpha_composite(out, mlay)
-    out = Image.alpha_composite(out, SCRIM_IMG)   # lower-third scrim (composited INTO the bg luma so caption contrast is real, not faked)
-    hud_backing(out, f)                            # dark chips behind HUD labels, also INTO the bg luma (real contrast for the gate)
-    dc.set_frame_bg(out, f)
-    # ALL crisp UI + text on a TRANSPARENT overlay so alpha (fades, tints) blends correctly, then composite once
+    hud_backing(out, f)                            # dark chips behind the instrument labels, INTO the bg luma (real contrast)
+    dc.set_frame_bg(out, f, clear=True)            # capture bg for the INSTRUMENT-label logw (pass 1 of 2)
     ui = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(ui, "RGBA")
     eb = E.out_cubic(E.seg(f, 8, 34))
     if eb > 0:
@@ -445,17 +488,28 @@ def render_frame(f):
         tk(d, "ARIS · KENAI", mono(16, m=True), (*CYAN, int(170 * cl)), 96, 1372, 0.02)
         lv = f"LIVE  ▸  00:{int(f / FPS):02d}"; lf = mono(16, m=True)
         tk(d, lv, lf, (*AMBER, int(180 * cl)), W - 96 - tw(lv, lf, 0.02), 1372, 0.02)
-    caption(ui, f); outro_card(ui, f)
+    return Image.alpha_composite(out, ui)
+
+def render_frame(f):
+    display = render_display(f)
+    sc, cx, cy = camera(f)
+    framed = dc.reframe(display, cx, cy, sc) if sc < 0.999 else display   # the SHOT framing (camera crop+zoom)
+    # ---- LOCKED brand layer ON TOP of the camera (always full-frame + razor-sharp): scrim + captions + outro + footer ----
+    framed = Image.alpha_composite(framed, SCRIM_IMG)
+    dc.set_frame_bg(framed, f, clear=False)        # update bg for the CAPTION logw (pass 2 of 2; keep instrument log)
+    lui = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ld = ImageDraw.Draw(lui, "RGBA")
     so = E.out_cubic(E.seg(f, 8, 34)); endb = E.out_cubic(E.seg(f, 1560, 1640))
     if so > 0 and f < 1600:
-        sf = fr(38, 900, 144); tk(d, "alaska.ai", sf, (255, 255, 255, int((140 + 95 * endb) * so)), (W - tw("alaska.ai", sf)) // 2, 1700)
-    out = Image.alpha_composite(out, ui)
+        sf = fr(38, 900, 144); tk(ld, "alaska.ai", sf, (255, 255, 255, int((140 + 95 * endb) * so)), (W - tw("alaska.ai", sf)) // 2, 1700)
+    caption(lui, f); outro_card(lui, f)
+    framed = Image.alpha_composite(framed, lui)
+    scancut(framed, f)                             # transition punctuation on each scene change (topmost)
     fin = E.seg(f, 0, 14)
-    if fin < 1: out.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, int(255 * (1 - E.out_cubic(fin))))))
-    outf = E.seg(f, 1748, 1800)   # short, late fade so the scene stays live (motion) almost to the final frame
-    if outf > 0: out.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, int(248 * E.in_out_sine(outf)))))
+    if fin < 1: framed.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, int(255 * (1 - E.out_cubic(fin))))))
+    outf = E.seg(f, 1748, 1800)                    # short, late fade so the scene stays live almost to the final frame
+    if outf > 0: framed.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, int(248 * E.in_out_sine(outf)))))
     dc.flush_textlog(f)
-    return out.convert("RGB")
+    return framed.convert("RGB")
 
 print("precompute sonar screen...", file=sys.stderr)
 BASE = build_screen()
@@ -465,14 +519,22 @@ _scrim_prof = np.clip(160.0 * np.exp(-((np.arange(H, dtype=np.float32) - 1500.0)
 SCRIM = np.zeros((H, W, 4), np.uint8); SCRIM[..., 0] = 4; SCRIM[..., 1] = 8; SCRIM[..., 2] = 12; SCRIM[..., 3] = _scrim_prof[:, None]
 SCRIM_IMG = Image.fromarray(SCRIM, "RGBA")
 
+def _emit_shots():
+    """Write shots.json — the SHOT MANIFEST the SCENE_STRUCTURE gate verifies (each shot's end = next start)."""
+    sl = [{"id": sh["id"], "start": sh["start"], "end": (SHOTS[i + 1]["start"] if i + 1 < len(SHOTS) else NF),
+           "framing": sh["framing"], "transition_in": sh["transition_in"]} for i, sh in enumerate(SHOTS)]
+    dc.write_shots(sl, NF); return sl
+
 def main():
     a = sys.argv[1:]
     if a and a[0] == "test":
+        _emit_shots()
         td = os.path.join(HERE, "test_sonar"); os.makedirs(td, exist_ok=True)
         for f in [int(x) for x in a[1:]]:
             render_frame(f).save(os.path.join(td, f"t_{f:05d}.png")); print("test", f, file=sys.stderr)
         return
     s, e = int(a[0]), int(a[1])
+    if s == 0: _emit_shots()                       # write the manifest once (the first parallel chunk)
     for f in range(s, e):
         render_frame(f).save(os.path.join(FR, f"frame_{f:05d}.png"))
         if f % 50 == 0: print("frame", f, file=sys.stderr)

@@ -97,14 +97,24 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     if os.path.exists(shots_path):
         try: shots=(json.load(open(shots_path)) or {}).get("shots",[])
         except Exception: shots=[]
-        med_d=float(np.median([d for _,_,d in deltas])) if deltas else 1.0
-        cut_floor=max(9.0,2.6*med_d)
-        def _lumf(i): i=max(0,min(len(fs)-1,int(i))); return lum(np.asarray(Image.open(fs[i]).convert("RGB"),np.float32))
+        # DOWNSAMPLE before differencing (standard shot-boundary detection): at low res the small, fast
+        # fish blur into the beam, while a FRAMING change shifts the whole cone structure -> a cut shows,
+        # local motion does not. Robust to dense motion + a moving camera.
+        def _lumf(i):
+            i=max(0,min(len(fs)-1,int(i)))
+            return lum(np.asarray(Image.open(fs[i]).convert("RGB").resize((54,96),Image.BILINEAR),np.float32))
+        def _fd(i): return float(np.abs(_lumf(i)-_lumf(i-1)).mean())   # per-frame (downsampled) change
+        # A real cut = a transition SPIKE: the largest per-frame change in a short window at the boundary
+        # clearly exceeds the within-shot baseline. Robust to dense motion: the baseline already includes
+        # the pings/fish, so only a deliberate transition (cut/wipe/flash) at the boundary clears the floor.
+        bpts=[int((s.get("start",0)+s.get("end",len(fs)))/2) for s in shots]
+        base=sorted(_fd(p) for p in bpts); med_f=base[len(base)//2] if base else 3.0
+        cut_floor=max(5.0,1.9*med_f)
         durs=[(s.get("end",0)-s.get("start",0))/fps for s in shots]
         framings={str(s.get("framing","")).strip().lower() for s in shots if s.get("framing")}
         real=0; weak=[]
-        for s in shots[1:]:                                  # verify a real visual change straddles each cut
-            b=int(s.get("start",0)); d=float(np.abs(_lumf(b-12)-_lumf(b+12)).mean())
+        for s in shots[1:]:                                  # the transition spike at each declared cut
+            b=int(s.get("start",0)); d=max(_fd(k) for k in range(b, b+6))
             if d>=cut_floor: real+=1
             else: weak.append([round(b/fps,1),round(d,1)])
         need_real=max(3,len(shots)-2)                        # allow at most one soft transition once there are >=5 shots
