@@ -9,10 +9,13 @@ the end of every run.
   python scripts/dedupe.py check --entities "cook inlet,beluga,noaa" [--days 7]
       -> prints FRESH (exit 0) or DUP ... (exit 1) if it overlaps a recent Dispatch.
   python scripts/dedupe.py add --date 2026-06-28 --topic "..." --slug dispatch-... \
-      --entities "a,b,c" --archetype "..." --palette "..." --voice "..."
-      -> appends the run to the ledger.
+      --entities "a,b,c" --archetype "..." --palette "..." --voice "..." \
+      --composition '{"pov":"instrument-screen","motion_vector":"vertical-rise", ...}'
+      -> appends the run to the ledger. --composition is the storyboard fingerprint (JSON, the 7
+         axes from config/composition_axes.yaml); it is what scripts/storyboard_check.py diffs the
+         NEXT run against, so always pass it (copy out/dispatch/storyboard.json's "fingerprint").
 """
-import sys, argparse, datetime as dt, re
+import sys, argparse, datetime as dt, re, json
 from pathlib import Path
 import yaml  # installed by scripts/setup_env.sh
 
@@ -48,6 +51,7 @@ def main():
     pa = sub.add_parser("add")
     for f in ["date","topic","slug","entities","archetype","palette","voice"]:
         pa.add_argument("--"+f, default="")
+    pa.add_argument("--composition", default="", help="storyboard fingerprint as JSON (the 7 axes)")
     a = ap.parse_args(); d = load()
 
     if a.cmd == "list":
@@ -70,10 +74,20 @@ def main():
 
     elif a.cmd == "add":
         ents = [x.strip() for x in a.entities.split(",") if x.strip()]
-        d["dispatch_history"].append({
+        entry = {
             "date": a.date or dt.date.today().isoformat(),
             "topic": a.topic, "slug": a.slug, "key_entities": ents,
-            "archetype": a.archetype, "palette": a.palette, "voice": a.voice})
+            "archetype": a.archetype, "palette": a.palette, "voice": a.voice}
+        if a.composition:
+            try:
+                entry["composition"] = json.loads(a.composition)
+            except json.JSONDecodeError as e:
+                print(f"WARNING: --composition is not valid JSON ({e}); storing nothing. "
+                      f"The next run's storyboard_check will have no fingerprint to diff against.", file=sys.stderr)
+        else:
+            print("WARNING: no --composition fingerprint passed; the next run's divergence gate will be "
+                  "blind to this dispatch's composition. Pass out/dispatch/storyboard.json's fingerprint.", file=sys.stderr)
+        d["dispatch_history"].append(entry)
         STATE.write_text(yaml.safe_dump(d, sort_keys=False, allow_unicode=True))
         print("added:", a.slug or a.topic)
 

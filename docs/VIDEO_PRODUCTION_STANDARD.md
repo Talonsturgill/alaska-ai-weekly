@@ -5,7 +5,7 @@ The reusable pro playbook for Alaska.Ai "Dispatch" videos. Hand-coded Python
 Derived from a 2026 research pass across motion design, color science, underwater
 rendering, sound, Alaska authenticity, and platform delivery (sources at bottom).
 
-## 0. The six principles
+## 0. The seven principles
 1. **Illustration leads; the voice follows.** Your craft is hand-coded illustration that
    DEPICTS the story (object/process/place/data), legit-looking AND entertaining. Sync the VO
    to the picture beat-for-beat — a motion-illustration piece the voice rides, not narration
@@ -27,6 +27,15 @@ rendering, sound, Alaska authenticity, and platform delivery (sources at bottom)
    in staged beats — then a gentle cinematic fade. NEVER end on a static hold: the outro carries
    motion to the final frame (it is part of the EVENT_CADENCE gate). No proper ending IS a lame
    ending — design it from the first storyboard, don't bolt it on after.
+7. **Every Dispatch is a new FILM, not a re-skin.** The enemy is bias to action: opening the repo,
+   finding a render that works, copying it, swapping the hero, and shipping last week's composition in
+   a costume. A new SUBJECT is not a new COMPOSITION. SLOW DOWN and design the picture from a blank page
+   for THIS story — then PROVE it diverges before you build (Phase 4.5 / Gate 0). Divergence is measured
+   across 7 axes (config/composition_axes.yaml): camera POV, motion vector, hero treatment, layout,
+   register, palette, central metaphor. A real new film differs from the last one on most of these — not
+   just the animal on screen. Reuse CRAFT by importing helpers (dispatch_core); never reuse a COMPOSITION
+   by copying a scene file. If you can mute two of our videos and a viewer says "same template, different
+   animal," we failed. (This is why the salmon that re-used the beluga's staging was rejected.)
 
 ## 1. Format & delivery (master once, crop per surface)
 - **Master 4:5 portrait, 1080x1350** (matches our brief-image format; max mobile feed real
@@ -122,6 +131,27 @@ voice — it IS the story. Test: mute the VO; if the picture alone doesn't tell 
   timer; progressive disclosure holds an open loop to completion; and visual memory dwarfs verbal, so
   the transitions and on-screen events ARE what they remember.
 
+## 3C. Composition divergence — design a new film, then PROVE it (Gate 0)
+The beat map (§3B) makes one video tell its story. THIS makes every video a DIFFERENT film. The threat
+is structural sameness: re-using a working scene with a new hero. So before any frame renders, the
+composition is FINGERPRINTED across 7 axes and machine-checked against history.
+- **The 7 axes (config/composition_axes.yaml):** (1) POV/vantage — where the camera stands relative to
+  the subject (in the water vs. looking at a screen vs. a cutaway vs. top-down map); (2) MOTION VECTOR —
+  the dominant movement (horizontal traverse vs. vertical rise/descent vs. radial scan vs. push-in vs.
+  scrolling data); (3) HERO TREATMENT — single organic hero vs. a multiplicity/run vs. landscape vs.
+  instrument vs. data-as-subject; (4) LAYOUT — where load-bearing info lives (centered-hero+lower-third
+  vs. full-bleed split vs. HUD/instrument frame vs. map vs. stacked layers vs. object-in-void); (5)
+  REGISTER — naturalistic scene vs. instrument readout vs. editorial schematic vs. data-brutalist;
+  (6) PALETTE — the color world; (7) METAPHOR — the one concrete image carrying the AI mechanism.
+- **The rule (enforced by scripts/storyboard_check.py, Gate 0A):** differ from EACH of the last 2
+  dispatches on >= 4 of 7 axes; the (POV, layout, motion vector) SPATIAL SIGNATURE must be unique vs.
+  the last 4; palette must not repeat the last 2. Same signature = same video. The salmon re-skin had
+  the beluga's exact signature (eye-level-immersive, centered-hero-lower-third, horizontal-traverse) and
+  would have failed here on paper, before wasting a render.
+- **Import craft, don't copy composition.** Shared, scene-agnostic helpers (fonts, the finish/grade,
+  the caption engine, easing, craft) live in an importable core (out/dispatch/dispatch_core.py). A new
+  scene IMPORTS them and is authored fresh; it never starts life as a copy of a prior render_*.py.
+
 ## 4. Visual finishing (apply as a final pass, in this order)
 Work in **linear light** for tone/light math (sRGB→linear in, linear→sRGB out).
 1. **Filmic tone map:** ACES (Narkowicz: a2.51 b0.03 c2.43 d0.59 e0.14, input ×0.6) or Hable.
@@ -200,7 +230,10 @@ to -12; sub/impact felt not heard; risers sweep to -6; UI ticks -18 to -26.
   unusual for a whale). Slow, graceful; pods; surfacing/blow; no dolphin breaching.
 
 ## 9. QA GATES (ship on numbers)
-- **OBJECTIVE GATE (mandatory, FIRST):** `quality_gate.py` MUST exit 0 before encoding. It measures
+- **GATE 0 — COMPOSITION DIVERGENCE (mandatory, BEFORE any render):** `scripts/storyboard_check.py`
+  MUST exit 0, then the `storyboard-critic` agent must return ship:true. No scene code until both pass.
+  This is the cheap save — it kills a cookie-cutter composition on paper, before a render is wasted.
+- **OBJECTIVE GATE (mandatory, FIRST of the render gates):** `quality_gate.py` MUST exit 0 before encoding. It measures
   SHARPNESS (not blurry), HUD_TEXT + CAPTION_TEXT legibility, EVENT_CADENCE (no on-screen-dead window
   > 5.0s), and CAPTION_SYNC. A fail is not a stop — fix the cause, re-render, re-gate (Phase 6 loop).
 - **Visual:** 4-frame contact sheet across the acts; check focal hierarchy, legibility,

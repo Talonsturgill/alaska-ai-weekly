@@ -19,6 +19,14 @@ dispatch_history:
   - hydrophone
   palette: glacial teal-green + aurora
   voice: edge_tts:en-US-AvaMultilingualNeural
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    palette: glacial teal-green + aurora
+    metaphor: sound made visible — the whale's call drawn as an acoustic echo
 - date: '2026-06-26'
   topic: Permafrost digital twin under a road in Utqiagvik (Penn State + UAF, physics-informed
     ML + fiber-optic sensing)
@@ -38,3 +46,11 @@ dispatch_history:
   palette: thermal duotone (ice-indigo base, ochre active layer, coral thaw front,
     gold AI)
   voice: edge_tts:en-US-AndrewMultilingualNeural
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: vertical-descent
+    hero_treatment: landscape-as-subject
+    layout: fullbleed-split
+    register: editorial-schematic
+    palette: thermal duotone (ice-indigo, ochre, coral, gold)
+    metaphor: a digital twin learning ahead of the real ground

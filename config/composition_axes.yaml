@@ -1,0 +1,107 @@
+# ALASKA.AI Dispatch — COMPOSITION DIVERGENCE AXES
+# =================================================
+# Why this file exists (read this before you ever touch render code):
+#   The routine produces a DIFFERENT video every run. The single biggest threat to that is the
+#   agent's bias to action: it opens the repo, finds a render script that already works, copies it,
+#   re-skins the hero, and ships a composition that is structurally identical to the last one. That
+#   is how we got a salmon video that "looked just like the damn beluga video." A new SUBJECT is not
+#   a new COMPOSITION. The loose free-text "archetype" label never caught it because both read as
+#   "single-hero portrait."
+#
+#   So we make composition divergence MEASURABLE. Every Dispatch declares a composition FINGERPRINT
+#   across the 7 axes below (in out/dispatch/storyboard.json). scripts/storyboard_check.py compares
+#   that fingerprint against the last several dispatches in config/state.yaml and FAILS the run, before
+#   any frame is rendered, if the new composition re-skins a recent one. This is an objective gate with
+#   the same standing as quality_gate.py — it cannot be vibed past.
+#
+# How to use it:
+#   1. In Phase 4.5 (STORYBOARD), DESIGN the composition from a blank page for THIS story. Do NOT start
+#      from a prior render_*.py. Pick a primary tag for each of the 7 axes (a free-text _note is allowed
+#      for nuance, but the primary tag drives the comparison, so be honest).
+#   2. Write the fingerprint into out/dispatch/storyboard.json.
+#   3. Run scripts/storyboard_check.py — it must exit 0 before you write a line of scene code.
+
+# ---------------------------------------------------------------------------------------------------
+# THE 7 AXES — each is one knob of "what the picture fundamentally IS." Pick a primary tag per axis.
+# The suggested vocab keeps tags comparable run-to-run; you MAY coin a new tag if none fit, but then
+# it genuinely must be a new kind of composition, not a synonym for an existing one.
+axes:
+  pov:                       # the camera's relationship to the subject — where we stand
+    weight: heavy            # POV is the strongest determinant of "a different video"
+    vocab:
+      - eye-level-immersive    # in the scene with the subject (in the water, in the room)
+      - cross-section-cutaway  # sliced side-on into ground/ice/structure
+      - top-down-map           # looking straight down on territory
+      - instrument-screen      # we look AT a machine's display / readout (the machine's POV)
+      - orbital-aerial         # high oblique / drone over a landscape
+      - macro-closeup          # extreme close on one object/surface/instrument
+      - exploded-diagram        # parts pulled apart in schematic space
+  motion_vector:             # the dominant direction/kind of movement on screen
+    weight: heavy
+    vocab:
+      - horizontal-traverse    # subject crosses left<->right
+      - vertical-rise          # elements travel up
+      - vertical-descent       # elements travel down
+      - radial-emanate         # rings / scan / pulse from a center
+      - push-in-only           # near-static scene, slow camera dolly
+      - scroll-data            # a graph/feed/timeline scrolls past
+      - assemble-build         # pieces fly in and assemble a structure
+  hero_treatment:            # what the SUBJECT of the frame is
+    weight: heavy
+    vocab:
+      - single-organic-hero    # one creature/figure, a character portrait
+      - multiplicity-swarm     # many of a thing; a run, a flock, a field, a count
+      - landscape-as-subject   # the place/terrain is the hero, no character
+      - instrument-as-subject  # a device/readout is the hero
+      - data-as-subject        # the numbers/graph ARE the subject
+      - structure-as-subject   # a built thing (rig, road, antenna, plant)
+  layout:                    # where the load-bearing information lives in the frame
+    weight: heavy
+    vocab:
+      - centered-hero-lowerthird   # hero mid-frame, caption lower third, corner stats  (BELUGA — avoid reusing back-to-back)
+      - fullbleed-split            # screen divided (two-worlds / before-after)
+      - hud-instrument-frame       # the frame IS a screen: bezel, readouts, graph, reticle
+      - map-territory              # a map fills the frame, pins/paths on it
+      - stacked-layers             # horizontal strata / a vertical stack of bands
+      - grid-modular               # a hard modular grid of cells/tiles
+      - single-object-void         # one object in deep negative space
+  register:                  # the rendering language — how "real" vs "diagrammatic" it looks
+    weight: medium
+    vocab:
+      - naturalistic-scene     # a lit, textured, painted world
+      - instrument-readout     # sonar/telemetry/scope display aesthetic
+      - editorial-schematic    # clean infographic / Bloomberg-Vox diagram
+      - data-brutalist         # Swiss type, hard grid, numbers-forward
+      - blueprint-technical    # line-art technical drawing
+      - tactile-collage        # mixed-media textured layers
+  palette:                   # the color WORLD (also a rubric hard_blocker if it repeats)
+    weight: medium
+    # free-text; the check compares normalized tokens. Must NOT match the last 2 dispatches.
+    vocab: []                 # open — name the actual world (e.g. "amber-on-abyss + cyan UI")
+  metaphor:                  # the ONE concrete visual idea that carries the abstract AI mechanism
+    weight: medium
+    # free-text; should be a genuinely different central image, not a rephrase.
+    vocab: []                 # open (e.g. "the machine counting the run", "a digital twin learning ahead")
+
+# ---------------------------------------------------------------------------------------------------
+# THE DIVERGENCE RULE — enforced by scripts/storyboard_check.py (exit 1 on any violation).
+rule:
+  # 1) Versus EACH of the last N dispatches, the new fingerprint must DIFFER on at least min_diff axes.
+  compare_last_n: 2
+  min_diff_axes: 4           # of 7. (Differing on <4 means it's the same video wearing a costume.)
+  # 2) The SPATIAL SIGNATURE — the (pov, layout, motion_vector) triple — must be UNIQUE versus the
+  #    last signature_window dispatches. This is the specific thing that made the salmon a clone of
+  #    the beluga: identical (eye-level-immersive, centered-hero-lowerthird, horizontal-traverse).
+  signature_axes: [pov, layout, motion_vector]
+  signature_window: 4
+  # 3) palette must not match either of the last 2 dispatches (mirrors the rubric hard_blocker).
+  palette_window: 2
+  # 4) The storyboard must declare derived_from: scratch. A scene copied from a prior render_*.py and
+  #    re-skinned is the banned shortcut; the gate refuses anything that admits otherwise.
+  require_derived_from_scratch: true
+
+# Minimum storyboard completeness the gate also checks (so "planning" can't be skipped to a stub):
+storyboard_min:
+  beats: 12                  # 12-16 story-advancing beats (matches the BEAT_DENSITY video gate)
+  required_fields: [concept, derived_from, fingerprint, beats, palette, divergence_note]
+  divergence_note_min_chars: 120   # you must SAY, in prose, how this diverges from the last 2 — forces the thinking

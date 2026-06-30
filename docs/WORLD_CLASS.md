@@ -31,12 +31,27 @@ the story's mood in one line.
 Mode sets type treatment, motion feel, and density defaults; the color world is still chosen
 fresh per story.
 
-## 4. Storyboard / previz GATE (before any rendering)
-Elite teams board before they build. Produce a 1-page board: the 6-9 beats, a one-line
-composition + motion note per beat, the palette swatches, the chosen mode + dial settings, and
-1-2 named world-class references you're matching. Run ONE no-spawn critic agent to red-team the
-board (clarity, freshness, does it bang, does it serve the story). Fix on paper. Only then build
-— this saves the most time and catches the most mistakes cheaply.
+## 4. Storyboard / previz GATE (GATE 0 — before any rendering, ENFORCED)
+Elite teams board before they build. This is now a HARD, machine-checked gate (ROUTINE_SPEC Phase 4.5),
+not a paper habit — because the routine's worst failure is shipping last week's composition with a new
+hero. SLOW DOWN here; designing on paper is nearly free, re-rendering is not.
+Produce the board in TWO files:
+- out/dispatch/storyboard.md — the 12-16 beats (one-line composition + motivated-transition + meaning
+  per beat, ENDING included), palette swatches, chosen STYLE MODE + TASTE DIALS, and 1-2 named
+  world-class references you're matching.
+- out/dispatch/storyboard.json — the COMPOSITION FINGERPRINT: a primary tag for each of the 7 axes in
+  config/composition_axes.yaml (pov, motion_vector, hero_treatment, layout, register, palette, metaphor),
+  derived_from: scratch, the beats, and a >=120-char divergence_note.
+Then pass BOTH halves of Gate 0:
+- 0A OBJECTIVE: `python scripts/storyboard_check.py` exits 0 — your fingerprint must differ from each of
+  the last 2 dispatches on >= 4 of 7 axes, hold a unique (pov, layout, motion) signature vs the last 4,
+  and not repeat a recent palette. It refuses an incomplete board or one not built from scratch. You
+  redesign to pass; you never relax the rule.
+- 0B TASTE: ONE no-spawn `storyboard-critic` agent red-teams the board for GENUINE divergence (would a
+  muted viewer call it a different video, or the same template re-skinned?), silent-first storytelling,
+  and "does it bang." Fix on paper and re-run until ship:true.
+Only then build — and build the scene FRESH (import shared helpers from out/dispatch/dispatch_core.py;
+never `cp` a prior render and re-skin it). This saves the most time and catches the most mistakes cheaply.
 
 ## 5. Illustration-detail craft bar (the "video detail" that takes humans ages)
 Hand-coded, but it must read as designed and lit, not flat clip-art:
