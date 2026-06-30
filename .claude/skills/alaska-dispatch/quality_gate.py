@@ -10,6 +10,7 @@ Every check here exists because a human reviewer once had to flag it by hand:
   CAPTION_TEXT     "the captions look generic / hard to read"
   EVENT_CADENCE    "a bit boring, too slow — something should happen every ~5s"
   BEAT_DENSITY     "the illustration must keep TELLING the story — distinct visual beats, not just motion"
+  SCENE_STRUCTURE  "don't run one continuous scene the whole time — CUT between shots (a 'oner' fails)"
   CAPTION_SYNC     "the voice doesn't match the on-screen captions"
   READABILITY      "is every word bright enough + legible (not just sharp)?"
   MUSIC            "real sourced track is on, NOT the synth fallback" (loop must get real music)
@@ -87,6 +88,48 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     m["visual_beats"]=beats; m["min_beats"]=min_beats
     checks.append({"name":"BEAT_DENSITY","pass":beats>=min_beats,
         "detail":f"{beats} distinct visual beats (need >={min_beats}, ~1 per 5s) — the picture must keep telling the story, not just move"})
+    # 4c) SCENE_STRUCTURE — the MACRO rhythm: a SEQUENCE of distinct shots with REAL transitions, not one 'oner'.
+    # EVENT_CADENCE/BEAT_DENSITY can all be satisfied inside a single locked scene (the sonar Dispatch was a
+    # 60s oner). This requires the engine to actually CUT between shots, and verifies each declared cut is a
+    # real visual discontinuity — not a relabel. The engine declares shots in shots.json (dispatch_core.write_shots).
+    shots_path=os.path.join(os.path.dirname(os.path.abspath(frames_dir)),"shots.json")
+    MIN_SHOTS=4; MIN_DUR=3.0; MAX_DUR=16.0; MIN_FRAMINGS=3
+    if os.path.exists(shots_path):
+        try: shots=(json.load(open(shots_path)) or {}).get("shots",[])
+        except Exception: shots=[]
+        # DOWNSAMPLE before differencing (standard shot-boundary detection): at low res the small, fast
+        # fish blur into the beam, while a FRAMING change shifts the whole cone structure -> a cut shows,
+        # local motion does not. Robust to dense motion + a moving camera.
+        def _lumf(i):
+            i=max(0,min(len(fs)-1,int(i)))
+            return lum(np.asarray(Image.open(fs[i]).convert("RGB").resize((54,96),Image.BILINEAR),np.float32))
+        def _fd(i): return float(np.abs(_lumf(i)-_lumf(i-1)).mean())   # per-frame (downsampled) change
+        # A real cut = a transition SPIKE: the largest per-frame change in a short window at the boundary
+        # clearly exceeds the within-shot baseline. Robust to dense motion: the baseline already includes
+        # the pings/fish, so only a deliberate transition (cut/wipe/flash) at the boundary clears the floor.
+        bpts=[int((s.get("start",0)+s.get("end",len(fs)))/2) for s in shots]
+        base=sorted(_fd(p) for p in bpts); med_f=base[len(base)//2] if base else 3.0
+        cut_floor=max(5.0,1.9*med_f)
+        durs=[(s.get("end",0)-s.get("start",0))/fps for s in shots]
+        framings={str(s.get("framing","")).strip().lower() for s in shots if s.get("framing")}
+        real=0; weak=[]
+        for s in shots[1:]:                                  # the transition spike at each declared cut
+            b=int(s.get("start",0)); d=max(_fd(k) for k in range(b, b+6))
+            if d>=cut_floor: real+=1
+            else: weak.append([round(b/fps,1),round(d,1)])
+        need_real=max(3,len(shots)-2)                        # allow at most one soft transition once there are >=5 shots
+        bad=[]
+        if len(shots)<MIN_SHOTS: bad.append(f"only {len(shots)} shots (need >={MIN_SHOTS} — a scene change ~every 10-15s)")
+        if durs and max(durs)>MAX_DUR: bad.append(f"a shot runs {max(durs):.1f}s (>{MAX_DUR}s) = a 'oner'; break it into shots")
+        if durs and min(durs)<MIN_DUR: bad.append(f"a shot is {min(durs):.1f}s (<{MIN_DUR}s) — too brief")
+        if len(framings)<MIN_FRAMINGS: bad.append(f"only {len(framings)} distinct framings (need >={MIN_FRAMINGS}; vary the shot types)")
+        if len(shots)>=MIN_SHOTS and real<need_real: bad.append(f"{len(shots)-1-real} declared cut(s) show no real visual change (floor {cut_floor:.1f}) at {weak} — a shot change must be a real RENDER change, not a relabel")
+        m["scene_shots"]=len(shots); m["scene_real_cuts"]=real; m["scene_framings"]=len(framings)
+        checks.append({"name":"SCENE_STRUCTURE","pass":(not bad),
+            "detail":(f"{len(shots)} shots, {real} real transitions, {len(framings)} framings — "+("; ".join(bad) if bad else "a genuine sequence of shots")+" (config/shot_structure.yaml)")})
+    else:
+        checks.append({"name":"SCENE_STRUCTURE","pass":False,
+            "detail":"no shots.json — a Dispatch must be a SEQUENCE of shots with motivated transitions, not one continuous scene (a 'oner'). Storyboard >=4 shots and emit them via dispatch_core.write_shots(...). See config/shot_structure.yaml."})
     # 5) CAPTION_SYNC — captions are voice-driven
     ok_sync=False; det="words60.json missing — captions not voice-synced"
     if os.path.exists(words_path):

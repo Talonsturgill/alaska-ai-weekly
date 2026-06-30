@@ -1,0 +1,21 @@
+On the Kenai, the water runs too gray to see into, so Alaska counts its salmon with sound. Now AI is learning to do the counting.
+
+And it is good at it. Just not good enough to be trusted with the part that actually matters.
+
+Glacial silt makes the Kenai almost opaque, so biologists never leaned on cameras. They used an imaging sonar that throws a fan of sound across the current and turns every passing fish into a bright echo on a screen. That rig has stared into the river since 2010.
+
+For years, a person watched that screen and counted each shape by hand, all season long.
+
+Now computer vision does the first pass. It draws a box around each fish as it swims upstream, and it tells a big king from a smaller sockeye by length, the same cue the biologists use. The same approach is spreading to rivers from British Columbia to Alaska, trained on hundreds of thousands of labeled frames.
+
+The machine still misses. One 2025 test on the Kenai landed about a quarter off the human count, roughly 23 percent.
+
+What stays with me is the part underneath the count. Knowing how many fish swam past was never the hard call. The hard call is how many have to reach the spawning beds before it is safe to open the nets. Get that wrong and you either crush a run or cost fishing families a season.
+
+A model can count faster than any person ever could. It cannot carry that tradeoff. That decision belongs to people who answer for it.
+
+So use the AI to buy back the biologist's hours, and keep the judgment human.
+
+When the cost of a wrong number is a lost run or a lost paycheck, how much of the call should we ever hand to a model?
+
+#ArtificialIntelligence #Alaska #ComputerVision #Salmon #Fisheries

@@ -19,6 +19,14 @@ dispatch_history:
   - hydrophone
   palette: glacial teal-green + aurora
   voice: edge_tts:en-US-AvaMultilingualNeural
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    palette: glacial teal-green + aurora
+    metaphor: sound made visible — the whale's call drawn as an acoustic echo
 - date: '2026-06-26'
   topic: Permafrost digital twin under a road in Utqiagvik (Penn State + UAF, physics-informed
     ML + fiber-optic sensing)
@@ -38,3 +46,40 @@ dispatch_history:
   palette: thermal duotone (ice-indigo base, ochre active layer, coral thaw front,
     gold AI)
   voice: edge_tts:en-US-AndrewMultilingualNeural
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: vertical-descent
+    hero_treatment: landscape-as-subject
+    layout: fullbleed-split
+    register: editorial-schematic
+    palette: thermal duotone (ice-indigo, ochre, coral, gold)
+    metaphor: a digital twin learning ahead of the real ground
+- date: '2026-06-30'
+  topic: Kenai River salmon counted by imaging sonar + computer vision (ADFG ARIS;
+    arXiv 2502.05129; Atlas et al. BC system)
+  slug: dispatch-2026-06-30-riversonar
+  key_entities:
+  - kenai
+  - salmon
+  - imaging sonar
+  - aris
+  - didson
+  - computer vision
+  - escapement
+  - sockeye
+  - king
+  - wild salmon center
+  - william atlas
+  archetype: instrument-screen — imaging-sonar counting display (machine's POV)
+  palette: amber acoustic echoes on abyssal black + cyan UI + coral warning
+  voice: edge_tts:en-US-BrianMultilingualNeural
+  composition:
+    pov: instrument-screen
+    motion_vector: vertical-rise
+    hero_treatment: multiplicity-swarm
+    layout: hud-instrument-frame
+    register: instrument-readout
+    palette: amber acoustic echoes on abyssal black water-column, cool cyan UI chrome,
+      a single warning-coral accent
+    metaphor: the machine counting the run — each fish becomes a boxed, classified
+      echo the instant it trips the count line

@@ -1,0 +1,69 @@
+# ALASKA.AI Dispatch — SHOT STRUCTURE (scene changes + transitions)
+# =================================================================
+# Why this file exists (the producer note that created it):
+#   EVENT_CADENCE and BEAT_DENSITY guarantee something happens every few seconds — but they can ALL happen
+#   inside ONE continuous locked scene. The River Sonar Dispatch did exactly that: a 60-second "oner" on a
+#   single sonar display. The picture kept evolving (boxes, labels, the run-curve) but the SHOT never
+#   changed. Real films cut between distinct shots. A Dispatch must be a SEQUENCE of distinct visual
+#   scenes/framings — each commanding the CENTER of frame — connected by MOTIVATED TRANSITIONS, with a new
+#   shot roughly every ~8-12 seconds, not one scene running through the whole runtime.
+#
+#   Two rhythms, both required:
+#     - MICRO (within a shot): EVENT_CADENCE + BEAT_DENSITY — a new idea/beat every ~3-5s.
+#     - MACRO (between shots):  THIS — a SCENE CHANGE every ~8-12s, with a transition that means something.
+#
+# How it is enforced (same pattern as the divergence gate — plan it, then verify it):
+#   1. Phase 4.5 STORYBOARD declares the SHOT LIST in out/dispatch/storyboard.json > shots[].
+#   2. scripts/storyboard_check.py validates the plan (>= min_shots, distinct framings, real transitions).
+#   3. The engine emits out/dispatch/shots.json (shot boundaries + the transition at each cut) via
+#      dispatch_core.write_shots(...).
+#   4. quality_gate.py's SCENE_STRUCTURE check VERIFIES the rendered video actually changes shots — there
+#      must be a real visual discontinuity at each declared boundary, not just a relabel. A 'oner' FAILS.
+
+rule:
+  min_shots: 4                 # >= 4 distinct shots in ~60s (a scene change at least every ~15s)
+  target_shots: [5, 8]         # aim for 5-8 (~8-12s each) — the producer note's "a scene change every ~10s"
+  min_shot_seconds: 3.0        # no shot shorter than this (no nervous flash-cutting)
+  max_shot_seconds: 16.0       # NO shot may dominate the runtime — a single shot longer than this IS the 'oner' failure
+  min_distinct_framings: 3     # >= 3 different framings/vantages across the shots (not the same frame trivially reframed)
+  require_transitions: true    # every shot after the first declares a motivated transition_in
+
+# FRAMING vocabulary — the "shot types" (WHAT the camera frames). Vary these across the shots; do not shoot
+# the whole piece in one framing. A Dispatch keeps its overall composition IDENTITY (the 7-axis fingerprint
+# in composition_axes.yaml) while cutting between these framings of its world.
+framings:
+  - wide-establish        # the whole scene/system — sets the place
+  - push-detail           # pushed in on ONE element (a single fish, a gauge, a hand, a node)
+  - macro-closeup         # extreme close on a texture / instrument face / surface
+  - alt-vantage           # a different angle or POV on the same world (overhead, behind, from below, the subject's POV)
+  - map-territory         # pull out to a map / network / landscape — the big picture
+  - data-panel            # a graph / readout / diagram takes the frame (the numbers ARE the subject)
+  - subject-portrait      # a hero subject centered (a person, a creature, an object) — held, lit, alive
+  - two-up                # a split / comparison (before-after, real-vs-model, here-vs-there)
+
+# TRANSITION vocabulary — HOW one shot becomes the next. The cut must MEAN something (see VIDEO_PRODUCTION_STANDARD §3B/§3D).
+transitions:
+  - hard-cut              # instant switch on a beat/downbeat — energy, emphasis, a hard turn in the argument
+  - crossfade             # ~8-18f dissolve — reflection, time passing, a softer link
+  - push-in               # the frame dollies INTO a region -> the next framing (continuous, motivated)
+  - pull-out              # the reverse — reveal a bigger context (one river -> the whole map)
+  - whip-pan              # fast directional motion-blur smear connecting two scenes — urgency, "meanwhile"
+  - match-cut             # a shape in A aligns to a kindred shape in B (a beam fan -> a tail fan) — a thematic rhyme
+  - mask-wipe             # a shape grows / sweeps to reveal the next shot — a jump in time or scale
+  - morph                 # one object becomes another — transformation is the message
+  - focus-pull            # defocus A, focus B — hand attention to the new subject in the same space
+
+center_stage: >
+  Each shot must put its ONE focal action at or near the CENTER of the frame at its key moment — the eye
+  should land center, not hunt the edges. Lower-third captions and corner HUD are CHROME; the STORY happens
+  center-frame. A shot whose only action is a counter ticking in a corner is not a shot, it is a wait.
+
+implementation_note: >
+  A shot change is a real RENDER change, not a caption swap. Author 2+ distinct scene-render functions and
+  switch/blend between them: hard-cut = swap the scene function at frame f; crossfade = alpha-blend scene A
+  and B over N frames; push-in/pull-out = animate a crop rectangle into/out of a region; whip-pan = composite
+  A and B horizontally offset under a heavy directional blur for ~6-10f; match-cut/morph = align or
+  interpolate a shared shape across the cut; mask-wipe = grow a shape's alpha to reveal B over A; focus-pull
+  = gaussian-defocus A while focusing B. Keep the brand throughlines (wordmark/eyebrow, type system, caption
+  system) consistent ACROSS shots so the cuts read as one film. Emit every boundary + its transition to
+  out/dispatch/shots.json via dispatch_core.write_shots(shots, fps, total).

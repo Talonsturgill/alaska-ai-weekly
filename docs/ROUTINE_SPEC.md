@@ -52,8 +52,13 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
 - docs/VIDEO_PRODUCTION_STANDARD.md — craft bible (motion, grade, grain, sound, captions,
   cultural respect, QA gates). Follow the craft; override format to 9:16 and palette to "free"
   per this file.
-- .claude/skills/alaska-dispatch/ — proven render + VO + sound + finishing engine. A STARTING
-  POINT TO ADAPT, never a stamp.
+- .claude/skills/alaska-dispatch/ — proven render + VO + sound + finishing engine. Treat it as a
+  LIBRARY OF HELPERS TO IMPORT (fonts, the cinematic finish/grade, the voice-synced caption engine,
+  easing, the texture/motion-blur craft, the outro), NEVER as a scene to copy. The SCENE — background,
+  hero staging, camera/POV, layout, on-screen furniture, the motion vector — is authored FRESH every
+  run to the storyboard. The single most damaging shortcut this routine can take is `cp render_lastweek.py
+  render_thisweek.py` and re-skinning the hero; that is what shipped a salmon video identical to the
+  beluga. It is forbidden (see Phase 4.5 + Phase 5). Import the helpers; build the composition new.
 - .claude/skills/deep-research-ak/ — research beats + credibility ranks.
 - config/voices.yaml — approved narration voices. config/dispatch_rubric.yaml — the WORLD-CLASS grade (ship 9.0).
 - docs/WORLD_CLASS.md — REQUIRED add-on (read it): anti-slop creed, per-Dispatch TASTE DIALS + STYLE MODE,
@@ -140,9 +145,54 @@ PHASE 4 — PRODUCE LIKE A MOVIE PRODUCER (illustrate first; vary everything)
   diagnose why sourcing failed (bad URL, blocked host, license unclear), fix it, get a REAL track on,
   and re-mix before it can pass. Never ship synth or lame/generic music.
 
+PHASE 4.5 — STORYBOARD & DIVERGENCE GATE (GATE 0 — HARD STOP BEFORE ANY CODE)
+This phase exists because the routine's deadliest failure mode is a BIAS TO ACTION: open the repo,
+find a render script that already works, copy it, re-skin the hero, ship a video structurally identical
+to last week's. A new SUBJECT is not a new COMPOSITION. This is where the workflow SLOWS DOWN and
+DESIGNS the picture from a blank page — and proves, on paper and by machine, that it is a different
+film — BEFORE a single frame is rendered. You may not write or copy scene code until this gate is green.
+1. DESIGN FROM SCRATCH. Do not open a prior render_*.py for inspiration; starting from last week's scene
+   is exactly what biases you back into it. Design THIS story's composition fresh.
+2. WRITE THE BOARD to out/dispatch/storyboard.md (human-readable) AND out/dispatch/storyboard.json
+   (machine fingerprint). The board carries: the concept + the one honest caveat; the chosen STYLE MODE
+   + TASTE DIALS (docs/WORLD_CLASS.md); 1-2 named world-class references; the palette swatches; the 12-16
+   BEAT MAP (per beat: the ONE new on-screen thing, the MOTIVATED transition into it, what it MEANS) with
+   the ENDING designed in; and the COMPOSITION FINGERPRINT — a primary tag for each of the 7 axes in
+   config/composition_axes.yaml (pov, motion_vector, hero_treatment, layout, register, palette, metaphor).
+   Set derived_from: scratch. Write a divergence_note (>=120 chars) saying IN PROSE how this differs from
+   the last 2 dispatches. And design the SHOT LIST — storyboard.json > shots[]: break the ~60s into >=4
+   distinct SHOTS (~8-12s each, a scene change every ~10s), each with a different FRAMING and a MOTIVATED
+   TRANSITION into it (config/shot_structure.yaml). A Dispatch is a SEQUENCE of shots, NOT one continuous
+   locked scene — the sonar Dispatch was a 60s "oner" (one composition the whole way), which is the failure
+   this prevents. The beat map is the MICRO rhythm (a new idea every ~4s); the shot list is the MACRO rhythm
+   (cut to a new shot every ~10s). Each shot puts its focal action CENTER-frame.
+3. GATE 0A — OBJECTIVE: `python scripts/storyboard_check.py` MUST exit 0. It diffs your fingerprint
+   against config/state.yaml > dispatch_history and FAILS if the composition re-skins a recent one:
+   it must differ from EACH of the last 2 dispatches on >= 4 of 7 axes, its (pov, layout, motion_vector)
+   SPATIAL SIGNATURE must be unique vs the last 4, and its palette must not repeat the last 2. It also
+   refuses an incomplete board or one not derived_from scratch. You do NOT relax the rule to pass — you
+   redesign the composition. (This check would have caught the salmon re-skin: same signature as the beluga.)
+4. GATE 0B — TASTE: spawn ONE `storyboard-critic` (no-spawn) to red-team the board for GENUINE divergence
+   (not a relabel — would a muted viewer call it a different video?), silent-first storytelling (does the
+   beat map carry the story with the sound off?), and retention. Fix on paper and re-run until it returns
+   ship:true. Paper fixes are nearly free; rendered fixes are not.
+Only when BOTH 0A and 0B are green do you proceed to build. Carry the board summary into the Gmail draft.
+
 PHASE 5 — BUILD (to the standard, 9:16)
-Adapt the engine to the new concept (don't ship a past scene again). 9:16 = 1080x1920, ~1800
-frames @30fps; re-time VO/captions/beats/music to ~60s. Apply the full finishing chain (linear
+Build the scene FRESH to the storyboard you just passed — do NOT copy a past render_*.py and re-skin
+it (the banned cookie-cutter shortcut). IMPORT the shared, scene-agnostic helpers from the engine
+(out/dispatch/dispatch_core.py: fonts/measure, the finish/grade pipeline, the voice-synced caption
+engine, the textlog, the outro, easing + craft) so you reuse the proven CRAFT without duplicating a
+COMPOSITION. The scene you author — background, hero staging, camera/POV, layout, on-screen furniture,
+the motion vector — must match the board, not the last video. 9:16 = 1080x1920, ~1800
+frames @30fps; re-time VO/captions/beats/music to ~60s.
+BUILD THE SHOTS, NOT A ONER. Render the >=4 storyboarded shots and CUT between them with motivated
+transitions — author 2+ scene-render functions and switch/blend at each boundary using the dispatch_core
+transition toolkit (xfade, reframe/push-in, whip, mask_wipe, focus_pull). Keep the brand throughlines
+(wordmark/eyebrow, type, captions) consistent across shots so the cuts read as one film. Emit the shot
+boundaries + transitions to out/dispatch/shots.json via dispatch_core.write_shots(...) — the SCENE_STRUCTURE
+gate reads it and verifies each cut is a REAL visual change. Something STORY-ADVANCING must happen
+CENTER-frame in every shot (config/shot_structure.yaml). Apply the full finishing chain (linear
 ACES grade, split-tone toward THIS story's palette, bloom, luma-only grain, vignette, subtle
 CA, dithering), slow eased push-in + parallax + drift + motion that serves the illustration,
 supersampled hero/type, and OPEN CAPTIONS (burned in, lower-third inside the 4:5 safe box,
@@ -191,6 +241,7 @@ because the bar was hard — a loop that ends on a failure is a broken loop.
     · CAPTION_TEXT — caption glyph-edge energy       → "captions generic / hard to read"
     · EVENT_CADENCE— no on-screen-dead window > 5s   → "boring / too slow / make something happen every ~5s"
     · BEAT_DENSITY — enough DISTINCT story-advancing visual beats across the 60s → "the picture must keep telling the story, not just move"
+    · SCENE_STRUCTURE — a SEQUENCE of >=4 shots with REAL transitions (shots.json), not one locked scene → "don't run a 60s 'oner' — CUT between shots every ~10s"
     · CAPTION_SYNC — captions built from the TTS word-timings → "voice doesn't match the captions"
     · READABILITY  — every readable word clears a brightness + contrast floor → "is every word legible, not just sharp"
     · MUSIC        — a REAL freshly-sourced track is on the mix, NOT the synth fallback → "use the music you went and got"
@@ -270,8 +321,11 @@ Everything must be live and downloadable the INSTANT the Gmail draft hits the in
 4. Hand the payload to the Gmail create_draft connector.
 5. Finish the git side COMPLETELY: commit scripts + post + stills (NOT the heavy mp4s) and the
    ledger (run `scripts/dedupe.py add --date <d> --topic <t> --slug <s> --entities "a,b,c"
-   --archetype <a> --palette <p> --voice <v>`, which writes config/state.yaml > dispatch_history)
-   to a claude/dispatch-<date> branch, push it, open a PR, mark it ready, and MERGE it to main. No
+   --archetype <a> --palette <p> --voice <v> --composition '<storyboard.json fingerprint, JSON>'`,
+   which writes config/state.yaml > dispatch_history). ALWAYS pass --composition — that fingerprint is
+   what next run's Gate 0 diffs against; skip it and the divergence gate goes blind. Commit the storyboard
+   (md + json) alongside the artifacts. Push to a claude/dispatch-<date> branch, open a PR, mark it ready,
+   and MERGE it to main. No
    dangling or draft PRs — merge what you create. (Repo: talonsturgill/alaska-ai-weekly only.)
 
 ACCURACY + CULTURAL RESPECT
@@ -284,7 +338,11 @@ unverified Native words on screen, recommend consulting + compensating the relev
 DEFINITION OF DONE
 A video Dispatch is ALWAYS delivered AND always flawless — the self-healing loop cannot exit until
 both gates are green, so there is no zero-output run and no flawed ship. A Gmail draft exists with the post text, voice + music credits, sources, the score summary, and
-WORKING one-click download links for the 9:16 (TikTok) and 4:5 (LinkedIn) cuts; the frame review
-found zero defects; all audio gates passed; the scorer passed config/dispatch_rubric.yaml; the download links are VERIFIED LIVE (HTTP 200) and immediately downloadable; the audit branch is pushed AND MERGED to main;
-dispatch_history is updated. Report the story, concept/archetype, palette, voice + music, and the
-final score.
+WORKING one-click download links for the 9:16 (TikTok) and 4:5 (LinkedIn) cuts; Gate 0 passed (a
+storyboard exists, the composition is provably distinct from the last 2 dispatches, the scene was built
+fresh — not re-skinned, and rendered as a SEQUENCE of >=4 distinct shots with real transitions, not a
+60s 'oner'); the frame review found zero defects; all audio gates passed; the scorer passed
+config/dispatch_rubric.yaml; the download links are VERIFIED LIVE (HTTP 200) and immediately downloadable;
+the audit branch is pushed AND MERGED to main; dispatch_history is updated WITH the composition fingerprint.
+Report the story, concept/archetype, the 7-axis composition fingerprint (and how it diverged from the last
+2), palette, voice + music, and the final score.
