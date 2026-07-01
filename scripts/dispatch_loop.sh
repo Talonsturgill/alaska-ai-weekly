@@ -28,10 +28,11 @@ if [ -d "$ENG/audio" ]; then mkdir -p "$WORK/audio"; cp -f "$ENG/audio/"*.json "
 
 if [ "$NORENDER" = "0" ]; then
   echo "=== render $TOT frames via $RENDER_PY (parallel across $(nproc) cores) ==="
-  rm -f "$FRAMES_DIR"/*.png
+  rm -f "$FRAMES_DIR"/*.png "$WORK/textlog/"*.json 2>/dev/null
   N=$(nproc); CH=$(( (TOT + N - 1) / N ))
+  # DISPATCH_TEXTLOG=1 so dispatch_core emits the per-word manifest the READABILITY gate reads
   for ((i=0;i<N;i++)); do s=$((i*CH)); e=$((s+CH)); [ $e -gt $TOT ] && e=$TOT; [ $s -ge $TOT ] && break
-    python "$RENDER_PY" $s $e >"$WORK/_rv_$i.log" 2>&1 & done
+    DISPATCH_TEXTLOG=1 python "$RENDER_PY" $s $e >"$WORK/_rv_$i.log" 2>&1 & done
   wait
 fi
 echo "frames: $(ls "$FRAMES_DIR"/*.png 2>/dev/null | wc -l)/$TOT"
