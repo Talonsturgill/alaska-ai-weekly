@@ -49,6 +49,30 @@ If a boundary does none of these, it's either a slideshow cut or a fake (zoom) �
 
 ---
 
+## 1.5 Smoothness — prefer the continuous world-change (morph over cut)
+
+A real scene change need not be a hard cut. Because we render **every pixel in code**, the smoothest and most
+sophisticated world-change available to us is the **MORPH**: parametrize world A and world B by the *same*
+structure (a polyline's control points, a field, a mask, a particle set) and **interpolate it frame-by-frame**
+so one world literally *becomes* the other — not a dissolve laid over two pictures, a true geometric
+transformation. A river's meander straightens into a run-curve's axis; the curve's peaks rise into a mountain
+ridge; the ridge settles into a wordmark's baseline. This is uniquely ours — most editors can't do it.
+
+- **Default to continuous transitions** — morph, carried-continuous, dissolve-with-a-shape-hinge, assemble,
+  map-travel — over hard cuts. Ease them over **~20–40 frames** (in-out sine/cubic), sub-pixel, with a touch of
+  directional motion blur and a **continuous sound/music bridge** under the seam. No hard alpha pops.
+- **Keep a still point.** Hold the carried element (or a shared anchor shape) fixed/eased while the world melts
+  and reforms around it — the eye locks to the constant and the change feels effortless.
+- **Smooth ≠ one zoomed world.** The worlds must still be genuinely distinct (≥2 heavy axes change); only the
+  *transition between them* is continuous. Distinct worlds, seamless travel between them.
+- **With intent, not as a blanket.** Make smooth the house default, but still land one or two crisp, motivated
+  **hard cuts** on a hard turn in the argument, so the smoothness has contrast to read against.
+
+Engine: interpolate shared shapes with numpy/scipy; `dc.xfade`/`dc.dissolve` for hinged dissolves; `dc.whip`
+for a fast smooth travel; `dc.assemble_alpha` for build-ins; `dc.carry_token` + `dc.lerp` for the still point.
+
+---
+
 ## 2. The transition library (hand-coded)
 
 Each: **what / who** · **when** · **how in our engine.** Helpers that already exist in
@@ -151,6 +175,25 @@ tell. Pure mix-timing offset; no new visual infra; it makes any cut feel motivat
 - **Exploit the tall 9:16 frame:** stack distinct registers top-to-bottom (aurora band / hero / data
   rail) and reveal them progressively; make a vertical descent or rising column the dominant motion
   vector. Keep load-bearing content in the central 1080×1080 so a 4:5/1:1 crop still reads.
+
+---
+
+## 3.5 Rich illustration — build depth, piece by piece
+
+Each world is a **crafted illustration, not a schematic.** Use the full weight of procedural code:
+
+- **Depth:** layered parallax (foreground / mid / background), atmospheric haze, volumetric light shafts,
+  vanishing-point perspective, depth-of-field blur on off-plane layers.
+- **Texture & life:** noise-driven terrain / water / cloud, particle systems (snow, spray, embers, drifting
+  data motes), animated gradients (aurora curtains, scanning light), hand-weighted line work, the finish
+  chain's grain and bloom.
+- **Method (piece by piece):** build each world as its OWN piece — render a still, refine it to a high bar,
+  then move to the next, iterating with test-renders the way you'd polish one shot before the next.
+- **Detail in service of ONE idea per scene.** Never so busy it muddies the story or the text — the
+  READABILITY gate holds the words legible, and the eye must still land on the one focal action.
+
+This per-piece craft, iterated, is where the leap from "fine" to "10× better" actually lives. A coding agent
+is unusually good at it: procedural detail scales, and every piece is testable in isolation.
 
 ---
 
