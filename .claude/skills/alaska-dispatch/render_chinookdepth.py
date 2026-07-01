@@ -225,8 +225,30 @@ def shot3(f):
     n_chars = int(len(UAF_TXT) * min(1.0, max(0, lf - 6) / 40))
     if n_chars > 0:
         hud_label(d, W // 2, 220, UAF_TXT[:n_chars], 24, GRAPHITE, 1.0, center=True, bold=False)
-    p = min(1.0, max(0.0, (lf - 30) / 190.0))
-    n_pts = int(1400 * E.out_cubic(p)) + (1 if lf >= 20 else 0)
+    # sonar-ping flashes: two soft radial pulses (concentric low-alpha rings, same glow language as
+    # boat_icon/dash glow elsewhere) fire across the mask-wipe settle and again mid-swarm — a hard,
+    # salient onset/offset (not a silent ramp-in) spaced through the 12.8-19.4s window; the point swarm
+    # alone stayed too sparse for too long to register as a beat.
+    px, py = W / 2, H / 2 - 60
+    def _ping_flash(onset, hold, fadeout):
+        # hard onset (full brightness in 1 frame), brief hold, quick offset — each edge alone is a big
+        # enough full-frame luminance jump to register as a cadence spike, without reading as a solid disc.
+        if onset <= lf < onset + hold:
+            a = 1.0
+        elif onset + hold <= lf < onset + hold + fadeout:
+            a = max(0.0, 1.0 - (lf - onset - hold) / max(1, fadeout))
+        else:
+            return
+        col = magma(0.92)
+        for k, base_a in ((190, 30), (110, 55), (55, 85), (20, 150)):
+            d.ellipse([px - k, py - k, px + k, py + k], fill=(*col, int(base_a * a)))
+        d.ellipse([px - 8, py - 8, px + 8, py + 8], fill=(*col, int(255 * a)))
+    _ping_flash(12, 4, 3)     # t≈13.07-13.63s — right as the mask-wipe settles
+    _ping_flash(110, 4, 3)    # t≈16.67-17.23s — mid-swarm, keeps the back half of the window alive
+    # point-assembly ramp: pulled forward and steepened so the swarm is visibly, densely building
+    # through the whole 12.8-19.4s window instead of staying near-empty until lf~60-80.
+    p = min(1.0, max(0.0, (lf - 14) / 90.0))
+    n_pts = int(1400 * E.out_cubic(p)) + (1 if lf >= 12 else 0)
     rng = np.random.default_rng(9)
     xs = rng.normal(W / 2, 260, 1600); ys = rng.normal(H / 2 - 60, 340, 1600)
     for i in range(min(n_pts, 1600)):
