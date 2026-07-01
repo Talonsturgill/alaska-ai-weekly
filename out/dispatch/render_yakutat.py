@@ -212,8 +212,11 @@ def w_limit(f):
 
 def w_wordmark(f):
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
-    r = np.sqrt(((xx - W / 2) / W) ** 2 + ((yy - H * 0.42) / H) ** 2)
-    base = np.clip(30 * np.exp(-(r * 2.4) ** 2), 0, 55)
+    t = f - B[5]                                                        # a slow LIVING drift of the glow (motion runs to the last frame)
+    cx = W / 2 + 46 * math.sin(t * 0.040); cy = H * 0.42 + 30 * math.sin(t * 0.055 + 1.0)
+    br = 1.0 + 0.10 * math.sin(t * 0.075)
+    r = np.sqrt(((xx - cx) / W) ** 2 + ((yy - cy) / H) ** 2)
+    base = np.clip(30 * br * np.exp(-(r * 2.4) ** 2), 0, 58)
     arr = np.dstack([np.clip(14 + base * .8, 0, 255), np.clip(15 + base * .7, 0, 255), np.clip(20 + base * .9, 0, 255)]).astype(np.uint8)
     return arr
 
@@ -256,6 +259,11 @@ def outro(d, f):
         dc.tk(d, s2, tf, (226, 232, 228, int(226 * a2)), (W - w2) // 2, 1214, 0.02)
         cf = dc.mono(16, m=True); s3 = "Miller et al., ANU  ·  The Seismic Record (2026)"
         dc.tk(d, s3, cf, (*SLATE, int(210 * a2)), (W - dc.tw(s3, cf, .02)) // 2, 1268, 0.02)
+    if a1 > 0.25:                                                       # beat 14: the last incandescent point drifts the wordmark rule
+        dp = E.seg(f, start + 16, NF); px = 168 + dp * (W - 336); py = 1180
+        gl = 0.72 + 0.28 * math.sin(f * 0.22)                           # a calm alive pulse as it travels
+        for rr, aa in ((20, 45), (11, 95), (5, 220)):
+            d.ellipse([px - rr, py - rr, px + rr, py + rr], fill=(255, 182, 104, int(aa * a1 * gl)))
 
 # ---- lower-third scrim so captions always clear the contrast floor (READABILITY) ----
 _scrim = np.clip(150 * np.exp(-((np.arange(H, dtype=np.float32) - 1500) / 150) ** 2), 0, 255).astype(np.uint8)
