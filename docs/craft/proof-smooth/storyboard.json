@@ -1,0 +1,114 @@
+{
+  "concept": "One river's count becomes the mountain it feeds \u2014 three worlds, morphed smoothly.",
+  "derived_from": "scratch",
+  "palette": "graphite + moss-green + bone, one vermilion signal, aurora night",
+  "fingerprint": {
+    "pov": "top-down-map",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "landscape-as-subject",
+    "layout": "map-territory",
+    "register": "editorial-schematic",
+    "palette": "graphite + moss-green + bone, one vermilion signal, aurora night",
+    "metaphor": "a carried value morphing river -> data -> mountain"
+  },
+  "divergence_note": "Rich illustrated worlds joined by continuous geometric MORPHS (not cuts): a river meander eases into a run-curve eases into a mountain ridge, one vermilion value carried throughout.",
+  "beats": [
+    {
+      "n": 1,
+      "t": "4-8",
+      "new": "watershed relief resolves"
+    },
+    {
+      "n": 2,
+      "t": "8-12",
+      "new": "a river meanders, one node glows"
+    },
+    {
+      "n": 3,
+      "t": "12-16",
+      "new": "the river straightens as it morphs"
+    },
+    {
+      "n": 4,
+      "t": "16-20",
+      "new": "into a rising run-curve"
+    },
+    {
+      "n": 5,
+      "t": "20-24",
+      "new": "the count climbs to the goal"
+    },
+    {
+      "n": 6,
+      "t": "24-28",
+      "new": "data motes lift off the curve"
+    },
+    {
+      "n": 7,
+      "t": "28-32",
+      "new": "the curve rises and thickens"
+    },
+    {
+      "n": 8,
+      "t": "32-36",
+      "new": "morphing into a mountain ridge"
+    },
+    {
+      "n": 9,
+      "t": "36-40",
+      "new": "aurora blooms over the night"
+    },
+    {
+      "n": 10,
+      "t": "40-44",
+      "new": "the token crowns the summit"
+    },
+    {
+      "n": 11,
+      "t": "44-48",
+      "new": "the land the run feeds"
+    },
+    {
+      "n": 12,
+      "t": "48-52",
+      "new": "a slow settle"
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "t": "0-4.7",
+      "framing": "map-territory",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "centered": "the glowing river node"
+    },
+    {
+      "id": 2,
+      "t": "4.7-10",
+      "framing": "data-panel",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "morph",
+      "thread": "carry",
+      "centered": "the rising run-curve"
+    },
+    {
+      "id": 3,
+      "t": "10-16.7",
+      "framing": "wide-establish",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "transition_in": "morph",
+      "thread": "match",
+      "centered": "the ridge that was the curve"
+    }
+  ],
+  "ending": "settle on the aurora mountain, token on the summit, slow fade."
+}
