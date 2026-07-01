@@ -175,6 +175,15 @@ below are the floor. The cadence gates measure activity WITHIN a shot; SCENE_STR
   momentum and take the viewer somewhere (CINEMATIC_SCENE_CRAFT.md §1): MATCH anchors the eye across a total
   world-change; CARRY survives an element across; BUILD assembles/boots the new screen; TRAVEL moves through a
   shared space. A cut that does none of these is a slideshow edit.
+- **MAKE THE TRANSITION EXTREMELY SMOOTH (morph over cut).** Default to CONTINUOUS world-changes — a true
+  geometric MORPH (interpolate the shared shape's control points frame-by-frame so one world *becomes* the
+  next), a carried element held as the still point while the world reforms, a hinged dissolve, an assemble, a
+  camera travel — eased over ~20–40 frames with a sound/music bridge. Reserve the hard cut for a hard turn in
+  the argument, so smoothness has contrast. The worlds still change completely; only the seam is seamless.
+  (docs/craft/CINEMATIC_SCENE_CRAFT.md §1.5.)
+- **ILLUSTRATE EACH WORLD, PIECE BY PIECE.** Build depth (parallax, haze, volumetric light), texture and life
+  (noise terrain/water, particles, aurora gradients, hand-weighted line), refining each world in isolation to a
+  high bar — detail in service of ONE idea per scene, never muddying the words (§3.5).
 - **THINK IN SHOTS (storyboard the shot list).** Per shot: its FRAMING (wide-establish / push-detail /
   macro-closeup / alt-vantage / map-territory / data-panel / subject-portrait / two-up), the ONE thing
   center-frame, and the TRANSITION into it. A shot can hold 2-3 beats; across the piece, vary the framings
