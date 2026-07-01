@@ -10,21 +10,28 @@ set -uo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 ENG="$ROOT/.claude/skills/alaska-dispatch"        # committed engine = source of truth
 WORK="${DISPATCH_WORK:-$ROOT/out/dispatch}"       # working scratch (frames, audio, master)
-FRAMES_DIR="$WORK/frames_v3"
+# Per-run scene script name (this run authors a fresh render_<concept>.py — see the SKILL.md note
+# that a render_*.py is a scene, never copied). Override with DISPATCH_RENDER=render_<concept>.py.
+RENDER_PY="${DISPATCH_RENDER:-render_v3.py}"
+VO_PY="${DISPATCH_VO:-vo60.py}"
+FRAMES_DIR="$WORK/frames_$(basename "$RENDER_PY" .py | sed 's/^render_//')"
 TOT="${DISPATCH_FRAMES:-1800}"
 NORENDER=0; [ "${1:-}" = "--no-render" ] && NORENDER=1
 
 mkdir -p "$WORK" "$FRAMES_DIR"; cd "$WORK"
 # always run the committed engine, so the loop reflects what's actually shipped
-for f in render_v3.py vo60.py audio_v3.py quality_gate.py craft.py easing.py; do
+for f in "$RENDER_PY" "$VO_PY" quality_gate.py craft.py easing.py dispatch_core.py; do
   [ -f "$ENG/$f" ] && cp -f "$ENG/$f" "$WORK/"; done
+# the VO/music mix lives in the engine dir (generated once by the producer before this loop runs);
+# sync it into $WORK so the copied dispatch_core.py (which reads audio/ relative to its own dir) finds it
+if [ -d "$ENG/audio" ]; then mkdir -p "$WORK/audio"; cp -f "$ENG/audio/"*.json "$ENG/audio/"*.wav "$WORK/audio/" 2>/dev/null || true; fi
 
 if [ "$NORENDER" = "0" ]; then
-  echo "=== render $TOT frames (parallel across $(nproc) cores) ==="
+  echo "=== render $TOT frames via $RENDER_PY (parallel across $(nproc) cores) ==="
   rm -f "$FRAMES_DIR"/*.png
   N=$(nproc); CH=$(( (TOT + N - 1) / N ))
   for ((i=0;i<N;i++)); do s=$((i*CH)); e=$((s+CH)); [ $e -gt $TOT ] && e=$TOT; [ $s -ge $TOT ] && break
-    python render_v3.py $s $e >"$WORK/_rv_$i.log" 2>&1 & done
+    python "$RENDER_PY" $s $e >"$WORK/_rv_$i.log" 2>&1 & done
   wait
 fi
 echo "frames: $(ls "$FRAMES_DIR"/*.png 2>/dev/null | wc -l)/$TOT"
