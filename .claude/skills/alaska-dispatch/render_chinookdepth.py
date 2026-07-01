@@ -93,6 +93,22 @@ OCEAN_BG = ocean_bg()
 COAST = [(0, 0), (60, 60), (180, 40), (300, 120), (420, 70), (560, 140), (700, 90), (820, 160),
          (960, 110), (1080, 170), (1080, 0)]
 
+# the magma heatmap (field_rgba) can paste bright butter-yellow patches straight into the caption
+# lower-third (captions live ~y1360-1700, see dispatch_core.caption's y0=1500-blockh//2). A 3px dark
+# stroke alone can't hold >=2.0 contrast for the dim "not-yet-said" caption color over a bright patch,
+# so shots that show the live field (3 tail, 4, 6) darken a soft band behind the caption zone only —
+# the heatmap itself is untouched everywhere else on screen.
+_CAP_Y0, _CAP_Y1 = 1340, 1720
+def caption_scrim(img, strength=0.62):
+    ys = np.arange(H, dtype=np.float32)
+    t = np.clip((ys - _CAP_Y0) / max(1, (_CAP_Y1 - _CAP_Y0)), 0, 1)
+    fade = np.sin(np.pi * t)  # 0 at top/bottom of band, peak at the caption's vertical center
+    alpha_col = np.clip(fade * 255 * strength, 0, 255).astype(np.uint8)
+    alpha = np.broadcast_to(alpha_col[:, None], (H, W))
+    scrim = Image.new("RGBA", (W, H), (6, 3, 10, 0))
+    scrim.putalpha(Image.fromarray(np.ascontiguousarray(alpha), "L"))
+    img.paste(scrim, (0, 0), scrim)
+
 def draw_chart(d, drift=0.0, coast_alpha=210):
     d.polygon([(x, y * 0.9 + 40) for x, y in COAST], fill=(10, 6, 16, coast_alpha))
     step = 108
@@ -269,6 +285,8 @@ def shot3(f):
     if label700 > 0.02:
         hud_label(d, 90, yc + 56, "700,000+ SIGNALS", 34, magma(0.7), label700, bold=True)
     eyebrow(d, 380 + lf)
+    if lf >= 190:
+        caption_scrim(img, strength=0.62 * sweep_p)
     return img
 
 # ================================================================ SHOT 4 (705-1020) — the living heatmap
@@ -291,6 +309,7 @@ def shot4(f):
     boat_icon(d, W * 0.66, H * 0.40, scale=0.9, glow=magma(season))
     eyebrow(d, 705 + lf)
     hud_label(d, W - 64, 76, "SEASONAL PROBABILITY FIELD", 20, GRAPHITE, 1.0, bold=False, right=True)
+    caption_scrim(img, strength=0.62 * reveal)
     return img
 
 # ================================================================ SHOT 5 (1020-1333) — the captain reads it
@@ -361,6 +380,7 @@ def shot6(f):
         hud_label(d, cx + 10, cy - 30, "SEASON: OPEN", 22, magma(0.15) if False else (150, 235, 190), ca, bold=True)
     eyebrow(d, 1333 + lf)
     hud_label(d, W - 64, 76, "DECISION ON THE CHART", 20, GRAPHITE, 1.0, bold=False, right=True)
+    caption_scrim(img, strength=0.62 * dim)
     return img
 
 # ================================================================ SHOT 7 (1672-1800) — outro
