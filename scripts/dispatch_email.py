@@ -34,21 +34,21 @@ ul{padding-left:20px;} li{margin:4px 0;font-size:13.5px;} a{color:#0b6;}
 
 def render(post, poster_html, vids, voice, music, sources, score, note, temporary, date_str, title):
     src = "\n".join(
-        f'<li><a href="{s.get("url","")}">{s.get("outlet", s.get("title",""))}</a> &mdash; {s.get("note","")}</li>'
+        f'<li><a href="{s.get("url","")}">{s.get("outlet", s.get("title",""))}</a> &middot; {s.get("note","")}</li>'
         for s in (sources or [])
     ) or "<li>See DISPATCH.md in the run branch for full sources + fact-check.</li>"
     buttons = ""
     if vids.get("vertical"):
-        buttons += (f'<a class="dl" href="{vids["vertical"]}">&#9660;&nbsp; Download &mdash; 9:16 (TikTok / full-screen)'
+        buttons += (f'<a class="dl" href="{vids["vertical"]}">&#9660;&nbsp; Download &middot; 9:16 (TikTok / full-screen)'
                     f'<small>1080&times;1920 &middot; ~60s &middot; H.264 MP4</small></a>')
     if vids.get("square"):
-        buttons += (f'<a class="dl alt" href="{vids["square"]}">&#9660;&nbsp; Download &mdash; 4:5 (LinkedIn feed)'
+        buttons += (f'<a class="dl alt" href="{vids["square"]}">&#9660;&nbsp; Download &middot; 4:5 (LinkedIn feed)'
                     f'<small>1080&times;1350 &middot; ~60s &middot; H.264 MP4</small></a>')
     warn = '<div class="warn">Heads up: these download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
     score_html = f"<h2>Grade</h2><ul><li>{score}</li></ul>" if score else ""
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
 <div class="wrap">
-  <h1>ALASKA.AI &mdash; Dispatch ready{(' &middot; ' + title) if title else ''}</h1>
+  <h1>ALASKA.AI &middot; Dispatch ready{(' &middot; ' + title) if title else ''}</h1>
   <div class="sub">{date_str} &middot; LinkedIn (primary) + TikTok &middot; review, then post</div>
 
   <h2>The video</h2>
