@@ -95,7 +95,7 @@ def main():
                   a.voice or "(unset)", a.music or "(unset)", sources, a.score, a.note, a.temporary, a.date, a.title)
     if a.out_html:
         Path(a.out_html).write_text(html); print("wrote", a.out_html)
-    payload = {"subject": f"ALASKA.AI — Dispatch ready — {a.date}", "to": a.to, "html_body": html}
+    payload = {"subject": f"ALASKA.AI · Dispatch ready · {a.date}", "to": a.to, "html_body": html}
     print(json.dumps(payload))   # LAST line = the draft payload for Gmail create_draft
 
 if __name__ == "__main__":
