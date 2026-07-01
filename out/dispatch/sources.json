@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {"outlet": "Seismological Society of America (press release)", "url": "https://www.seismosoc.org/news/thousands-of-new-earthquakes-define-the-razor-edge-of-an-alaskan-microplate/", "note": "\"Thousands of new earthquakes define the razor edge of an Alaskan microplate\", SSA, June 5, 2026"},
+    {"outlet": "The Seismic Record (peer-reviewed paper)", "url": "https://pubs.geoscienceworld.org/ssa/tsr/article/6/2/230/731510/", "note": "Miller, Zhang, Pickle, Waldien & Roeske, June 4, 2026, DOI 10.1785/0320250055"},
+    {"outlet": "Phys.org", "url": "https://phys.org/news/2026-06-machine-uncovers-quakes-kilometer-edge.html", "note": "\"Machine learning uncovers thousands of quakes along a 250-kilometer edge\""},
+    {"outlet": "Alaska Earthquake Center", "url": "https://earthquake.alaska.edu/", "note": "State seismic monitoring context, hazard maps and the statewide earthquake catalog"}
+  ]
+}

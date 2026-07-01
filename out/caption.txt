@@ -1,0 +1,19 @@
+A machine-learning model just found 1,750 earthquakes in Alaska that no one had ever catalogued.
+
+They were hiding in seismic recordings we already had, for years, as noise.
+
+The striking part is not the count. It is the shape.
+
+Those 1,750 small quakes did not scatter across the map. They lined up along a single 250 km seam, the "razor edge" of the Yakutat microplate grinding under southern Alaska. Lead author Meghan S. Miller of Australian National University put it plainly. "There's a lot of information hidden in the data that we're now able to extract out that we weren't able to see as easily with more traditional methods." The model, published in The Seismic Record, did not invent new data. It made old data legible.
+
+That is the honest case for AI in Alaska right now, and it is quieter than the pitch you usually hear.
+
+The most useful models in this state are not the ones promising to predict the future. They are the ones that make the past readable. This one did not forecast an earthquake. It drew a fault edge nobody could see, out of a signal we had been sitting on the whole time.
+
+The researchers go one careful step further. They propose, as a hypothesis and not a proven result, that stress from that collision may have helped load the Denali Fault before it ruptured at M7.9 in 2002. Worth stating clearly, that link is unproven. The value here is not knowing when the ground moves. It is knowing where the hazard actually lives.
+
+Where matters. A sharper map of the razor edge feeds hazard models and building codes across southern Alaska, and those are decisions with a long shadow. Prediction gets the headlines. Legibility gets the foundations right.
+
+So the question I keep coming back to. In a state this seismically active, would you rather fund the AI that claims to tell you when the next big one hits, or the AI that shows you exactly where to build so it hurts less when it does?
+
+#ArtificialIntelligence #Alaska #MachineLearning #Seismology

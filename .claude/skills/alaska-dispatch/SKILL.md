@@ -58,3 +58,9 @@ is the brand signature. Pairs with `docs/VIDEO_PRODUCTION_STANDARD.md` (craft bi
 Deep flag-blue #081838, Pantone gold #FFC72C, aurora cyan-green #1AE5A4 + violet #7B5BFF,
 glacier/teal/spruce/slate/snow/coral; Fraunces Black display (opsz 144 wght 900), JetBrains
 Mono telemetry; vivid aurora signature; eyebrow "ALASKA.AI / FIELD SIGNAL"; signoff "alaska.ai".
+
+## On-screen copy punctuation (hard rule)
+NEVER use an em dash or en dash in ANY on-screen text, label, kinetic caption, or HUD string, ever.
+Zero exceptions. Use a middot "·", a comma, a period, parentheses, or a colon as the separator/pause,
+and write ranges as "X to Y". (Same rule the LinkedIn caption gate `scripts/caption_check.py` enforces
+on the post copy, and `config/brand.yaml` on the voice.)

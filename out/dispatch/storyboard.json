@@ -1,0 +1,48 @@
+{
+  "slug": "dispatch-2026-07-01-yakutat-edge",
+  "concept": "The machine drew the hidden edge. A machine-learning model combed years of Alaska seismic recordings and IGNITED about 1,750 uncatalogued earthquakes out of the noise under its scan. They were not scattered. They fell into one 250-kilometer line, the razor edge of the Yakutat microplate grinding under Alaska. We watch the edge appear under the scan, become a line, become a diving slab, loom toward the Denali Fault that broke in 2002, and then hit its honest limit.",
+  "honest_caveat": "The model shows WHERE the edge sits, drawn from past earthquakes. It cannot tell you WHEN it moves. Knowing where it is makes hazard maps more honest; it is not a forecast. The Denali stress link is a hypothesis the researchers PROPOSE, drawn as a ghosted vector, never a confident causal arrow.",
+  "derived_from": "scratch",
+  "style_mode": "editorial data-tectonics / seismic reveal",
+  "references": ["USGS/ANU seismic-catalog visualizations", "NYT/Reuters editorial data-map clarity for the fault line + labels"],
+  "taste_dials": {"DESIGN_VARIANCE": 7, "MOTION_INTENSITY": 6, "VISUAL_DENSITY": 6, "COLOR_BOLDNESS": 7, "TEXTURE_GRAIN": 6, "GRADE_STRENGTH": 6},
+  "fingerprint": {
+    "pov": "top-down-map",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "structure-as-subject",
+    "layout": "map-territory",
+    "register": "editorial-schematic",
+    "palette": "basalt and obsidian ground, an incandescent crimson-to-orange seismic line, bone-white station pins, a faint slate graticule",
+    "metaphor": "the machine draws the hidden edge — a buried plate's razor line pulled out of a decade of seismic noise"
+  },
+  "palette": "basalt and obsidian ground, an incandescent crimson-to-orange seismic line, bone-white station pins, a faint slate graticule",
+  "divergence_note": "Opposite to the last three on every structural axis. The beluga was an eye-level naturalistic creature portrait; the permafrost was a side-on thermal CROSS-SECTION descending vertically; the sonar was an amber INSTRUMENT SCREEN of a fish-count. This one opens on a TOP-DOWN scan of Alaska's ground where a hidden fault edge IGNITES out of noise and extends horizontally across 250 km, structure-as-subject in a basalt + incandescent-crimson world with bone-white pins, then travels through genuinely different worlds (map, diving slab, a low-angle looming fault, a drawn limit). Different POV, motion, hero, layout, and color world; the metaphor is a machine revealing a buried edge, not a portrait, a cutaway, or a counting readout.",
+  "beats": [
+    {"n": 1,  "t": "0.0-4.5",   "vo": 1, "new": "PREMISE IN SECOND ONE: a machine SCAN-LINE sweeps a top-down dark field of Alaska's ground and the FIRST hidden earthquakes IGNITE under the scan where none were catalogued.", "transition": "fade up into the moving scan; ignitions spark under it", "means": "The machine finds what was hidden in the noise."},
+    {"n": 2,  "t": "4.5-9.0",   "vo": 2, "new": "The ignitions multiply across the field; a counter climbs toward about 1,750 as more buried quakes light up.", "transition": "the scan keeps sweeping; points accumulate + counter ticks", "means": "The scale of what was hidden — about 1,750."},
+    {"n": 3,  "t": "9.0-14.0",  "vo": 3, "new": "MORPH: the ~1,750 scattered ignitions slide and CONNECT into one glowing crimson line, northwest to southeast.", "transition": "MORPH — the point-scatter tweens into one continuous line (carry)", "means": "The pattern is a line, not a cloud."},
+    {"n": 4,  "t": "14.0-19.0", "vo": 3, "new": "The line settles onto a map of southern Alaska, 250 km long, bone-white station pins along it, label: YAKUTAT MICROPLATE, the razor edge.", "transition": "the line lands on the map; pins + label disclose", "means": "This is a real place on Alaska's ground."},
+    {"n": 5,  "t": "19.0-24.5", "vo": 4, "new": "MAP-TRAVEL into depth: the map tilts and the razor line is revealed as the buried EDGE of a slab diving under Alaska, layered crust above.", "transition": "MORPH/travel — top-down map rotates into an oblique cross-section (travel)", "means": "The line is the edge of a subducting plate."},
+    {"n": 6,  "t": "24.5-29.5", "vo": 4, "new": "The slab grinds; a bright STRESS MARK migrates step by step along the plate boundary as the Yakutat block collides.", "transition": "a discrete stress mark travels the boundary (a concrete new element, not a glow)", "means": "The collision loads specific points on the crust."},
+    {"n": 7,  "t": "29.5-34.5", "vo": 5, "new": "MORPH to a LOW-ANGLE: the ground opens toward a looming second fault to the north; a GHOSTED, dotted PROPOSED stress vector travels north (hypothesis register).", "transition": "MORPH to a low-angle looming-fault vantage; a dotted vector travels north (travel)", "means": "A proposed link: stress may reach the Denali Fault."},
+    {"n": 8,  "t": "34.5-40.0", "vo": 5, "new": "The Denali Fault flares in a controlled, GHOSTED flash; a tag reads 2002 · M7.9 · DENALI with a small 'researchers propose' qualifier.", "transition": "the fault ghost-flares; the label stamps in, clearly hedged", "means": "The 2002 quake, framed as hypothesis, never as proven cause."},
+    {"n": 9,  "t": "40.0-44.5", "vo": 6, "new": "Cool to a clean schematic: the crimson edge locks RAZOR-SHARP on the spatial axis — WHERE the edge sits, known.", "transition": "everything settles; the edge snaps sharp and certain in space", "means": "The model knows WHERE — drawn, not captioned."},
+    {"n": 10, "t": "44.5-49.0", "vo": 6, "new": "A perpendicular TIME axis extends into the frame and stays FOGGED, refusing to resolve — WHEN it moves, unknown. Small WHERE / WHEN marks support the staging.", "transition": "the time axis dissolves into fog and will not resolve", "means": "The honest limit, DRAWN: where yes, when no."},
+    {"n": 11, "t": "49.0-52.5", "vo": 7, "new": "The sharp edge pulses once, steady and bright: knowing where it sits sharpens every hazard map and building code.", "transition": "a calm reaffirming pulse along the edge", "means": "Why it matters to Alaskans."},
+    {"n": 12, "t": "52.5-55.5", "vo": 0, "new": "GRAPHIC-MATCH: the crimson edge line reforms into the ALASKA.AI wordmark rule; the wordmark resolves center.", "transition": "GRAPHIC-MATCH — the seismic line becomes the wordmark underline (match)", "means": "Brand sign-off tied to the visual."},
+    {"n": 13, "t": "55.5-58.0", "vo": 0, "new": "Tagline reveals: 'what's moving in alaska ai, this week', with a source credit line (Miller et al., ANU · The Seismic Record, 2026).", "transition": "tagline + credit staged reveal", "means": "Brand recall + sourcing."},
+    {"n": 14, "t": "58.0-60.0", "vo": 0, "new": "The last incandescent point drifts along the edge and fades; gentle cinematic fade to black.", "transition": "fade out, motion running to the final frame", "means": "A real ending, never a static hold."}
+  ],
+  "shots": [
+    {"id": 1, "t": "0.0-9.0",   "framing": "wide-establish",   "pov": "top-down-map",        "layout": "single-object-void",   "motion_vector": "radial-emanate",     "hero_treatment": "multiplicity-swarm",   "transition_in": "fade-up",       "thread": "build",  "centered": "the scan igniting ~1,750 hidden quakes"},
+    {"id": 2, "t": "9.0-19.0",  "framing": "map-territory",    "pov": "top-down-map",        "layout": "map-territory",        "motion_vector": "horizontal-traverse","hero_treatment": "structure-as-subject", "transition_in": "morph",         "thread": "carry",  "centered": "the 250 km razor edge on the map"},
+    {"id": 3, "t": "19.0-29.5", "framing": "alt-vantage",      "pov": "orbital-aerial",      "layout": "stacked-layers",       "motion_vector": "vertical-descent",   "hero_treatment": "structure-as-subject", "transition_in": "map-travel",    "thread": "travel", "centered": "the slab edge diving + the migrating stress mark"},
+    {"id": 4, "t": "29.5-40.0", "framing": "two-up",           "pov": "eye-level-immersive", "layout": "fullbleed-split",      "motion_vector": "horizontal-traverse","hero_treatment": "structure-as-subject", "transition_in": "morph",         "thread": "travel", "centered": "a low-angle looming Denali Fault; a ghosted proposed stress vector"},
+    {"id": 5, "t": "40.0-49.0", "framing": "data-panel",       "pov": "orbital-aerial",      "layout": "two-up",               "motion_vector": "push-in-only",       "hero_treatment": "data-as-subject",      "transition_in": "morph",         "thread": "match",  "centered": "the DRAWN limit: edge razor-sharp in space, time axis fogged"},
+    {"id": 6, "t": "49.0-60.0", "framing": "subject-portrait", "pov": "eye-level-immersive", "layout": "single-object-void",   "motion_vector": "assemble-build",     "hero_treatment": "structure-as-subject", "transition_in": "graphic-match", "thread": "match",  "centered": "the ALASKA.AI wordmark"}
+  ],
+  "ending": "Branded outro: the seismic edge line graphic-matches into the ALASKA.AI wordmark rule, tagline + source credit staged after the VO, the last incandescent point drifting and a slow fade. Motion runs to the last frame.",
+  "captions": "open, voice-synced kinetic phrases from audio/words60.json (CAPTION_SYNC gate); on-screen numbers limited to the validator-verified set (about 1,750; 250 km; M7.9; Yakutat microplate; razor edge; Miller/ANU; The Seismic Record; the 'researchers propose' qualifier on the Denali beat).",
+  "voice": "edge-tts draft; publish in a config/voices.yaml Kokoro voice",
+  "music": "freshly sourced per-run, credited (MUSIC gate rejects synth) — taut, low, geologic tension resolving to something clear"
+}

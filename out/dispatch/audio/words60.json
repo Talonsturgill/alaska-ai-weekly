@@ -1,0 +1,157 @@
+{
+  "words": [
+    {
+      "w": "For years, Alaska's ground kept a",
+      "s": 0.5,
+      "e": 2.939,
+      "seg": 0
+    },
+    {
+      "w": "secret in plain sight.",
+      "s": 2.939,
+      "e": 4.589,
+      "seg": 0
+    },
+    {
+      "w": "A machine learning model went back",
+      "s": 4.9,
+      "e": 6.701,
+      "seg": 1
+    },
+    {
+      "w": "through years of seismic recordings and",
+      "s": 6.701,
+      "e": 8.76,
+      "seg": 1
+    },
+    {
+      "w": "pulled out about 1,750",
+      "s": 8.76,
+      "e": 11.333,
+      "seg": 1
+    },
+    {
+      "w": "tiny earthquakes nobody had cataloged.",
+      "s": 11.333,
+      "e": 13.34,
+      "seg": 1
+    },
+    {
+      "w": "They were not scattered.",
+      "s": 13.644,
+      "e": 15.598,
+      "seg": 2
+    },
+    {
+      "w": "They fell into one line, two hundred fifty",
+      "s": 15.548,
+      "e": 18.231,
+      "seg": 2
+    },
+    {
+      "w": "kilometers long, the razor edge of",
+      "s": 18.231,
+      "e": 20.414,
+      "seg": 2
+    },
+    {
+      "w": "the Yakutat microplate grinding under Alaska.",
+      "s": 20.414,
+      "e": 23.284,
+      "seg": 2
+    },
+    {
+      "w": "That edge is a slab of",
+      "s": 23.636,
+      "e": 24.922,
+      "seg": 3
+    },
+    {
+      "w": "crust diving under the state, and",
+      "s": 24.922,
+      "e": 26.822,
+      "seg": 3
+    },
+    {
+      "w": "the collision keeps loading the rock",
+      "s": 26.822,
+      "e": 28.89,
+      "seg": 3
+    },
+    {
+      "w": "around it.",
+      "s": 28.89,
+      "e": 29.505,
+      "seg": 3
+    },
+    {
+      "w": "The researchers propose the stress may",
+      "s": 29.812,
+      "e": 31.884,
+      "seg": 4
+    },
+    {
+      "w": "reach all the way to the",
+      "s": 31.884,
+      "e": 33.212,
+      "seg": 4
+    },
+    {
+      "w": "Denali Fault, the one that broke",
+      "s": 33.212,
+      "e": 34.965,
+      "seg": 4
+    },
+    {
+      "w": "in 2002 at magnitude",
+      "s": 34.965,
+      "e": 36.718,
+      "seg": 4
+    },
+    {
+      "w": "7.9.",
+      "s": 36.718,
+      "e": 37.674,
+      "seg": 4
+    },
+    {
+      "w": "The model has a hard limit.",
+      "s": 37.98,
+      "e": 40.229,
+      "seg": 5
+    },
+    {
+      "w": "It shows you where the edge sits.",
+      "s": 40.179,
+      "e": 42.655,
+      "seg": 5
+    },
+    {
+      "w": "It can't tell you when it moves.",
+      "s": 42.655,
+      "e": 45.073,
+      "seg": 5
+    },
+    {
+      "w": "But knowing where it is makes",
+      "s": 45.428,
+      "e": 47.203,
+      "seg": 6
+    },
+    {
+      "w": "every hazard map, and every building",
+      "s": 47.203,
+      "e": 49.393,
+      "seg": 6
+    },
+    {
+      "w": "code, a little more honest.",
+      "s": 49.393,
+      "e": 51.05,
+      "seg": 6
+    }
+  ],
+  "speech_end": 51.064,
+  "total": 60.0,
+  "fps": 30
+}
