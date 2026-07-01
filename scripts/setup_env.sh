@@ -17,12 +17,16 @@ python3 -c "import kokoro" >/dev/null 2>&1 \
 # rclone (token-safe video upload -> one-click download link)
 command -v rclone >/dev/null 2>&1 || { curl -fsSL https://rclone.org/install.sh | bash || true; }
 
-# edge-tts TLS: append the system CA bundle to certifi (idempotent)
+# TLS: append the system CA bundle AND (if present) the sandbox agent-proxy CA to certifi
+# (idempotent). aiohttp — which edge-tts uses — prefers certifi's bundle over the system
+# store, so patching only /etc/ssl/certs is not enough when egress is routed through a
+# TLS-terminating proxy (see /root/.ccr/README.md). edge-tts ALSO needs `--proxy $HTTPS_PROXY`
+# explicitly passed on each call in that environment — it does not read HTTPS_PROXY itself.
 python3 - <<'PY'
 import certifi, os
-sysca="/etc/ssl/certs/ca-certificates.crt"
-if os.path.exists(sysca):
-    cur=open(certifi.where(),"rb").read(); add=open(sysca,"rb").read()
-    if add[:160] not in cur: open(certifi.where(),"ab").write(b"\n"+add)
+for ca in ("/etc/ssl/certs/ca-certificates.crt", "/root/.ccr/ca-bundle.crt"):
+    if os.path.exists(ca):
+        cur=open(certifi.where(),"rb").read(); add=open(ca,"rb").read()
+        if add[:160] not in cur: open(certifi.where(),"ab").write(b"\n"+add)
 print("setup_env: ready")
 PY

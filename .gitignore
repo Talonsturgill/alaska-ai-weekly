@@ -5,3 +5,10 @@ __pycache__/
 .venv/
 .env
 # fonts are committed (OFL-licensed) so routine clones don't re-download them
+
+# per-run Dispatch build artifacts (heavy, regenerated every run; final stills/code get
+# committed explicitly to archive/dispatch-<date>-<slug>/ at Phase 7, not this scratch)
+.claude/skills/alaska-dispatch/audio/
+.claude/skills/alaska-dispatch/frames_*/
+.claude/skills/alaska-dispatch/*.wav
+.claude/skills/alaska-dispatch/*.mp4
