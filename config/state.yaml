@@ -83,3 +83,33 @@ dispatch_history:
       a single warning-coral accent
     metaphor: the machine counting the run — each fish becomes a boxed, classified
       echo the instant it trips the count line
+- date: '2026-07-01'
+  topic: 'Yakutat microplate razor edge: an ML model pulled about 1,750 uncatalogued
+    quakes out of a decade of Alaska seismic noise, tracing a 250 km buried plate
+    edge under southern Alaska that may load the Denali Fault'
+  slug: dispatch-2026-07-01-yakutat-edge
+  key_entities:
+  - yakutat
+  - microplate
+  - denali fault
+  - subduction
+  - slab
+  - tectonic
+  - seismic
+  - earthquake catalog
+  - miller
+  - the seismic record
+  - razor edge
+  - anu
+  archetype: editorial data-tectonics / seismic reveal
+  palette: basalt + incandescent crimson + bone pins + slate grid
+  voice: en-US-Christopher (edge-tts draft)
+  composition:
+    pov: top-down-map
+    motion_vector: horizontal-traverse
+    hero_treatment: structure-as-subject
+    layout: map-territory
+    register: editorial-schematic
+    palette: basalt and obsidian ground, an incandescent crimson-to-orange seismic
+      line, bone-white station pins, a faint slate graticule
+    metaphor: the machine draws the hidden edge
