@@ -149,9 +149,9 @@ def w_slab(f):
     for k in range(26, 0, -1):                                             # a LUMINOUS tapered streak trailing the head => it is clearly TRAVELING
         j0 = max(0, idx - k); j1 = max(0, idx - k + 1); f2 = 1 - k / 26.0
         d.line([tuple(EDGE[j0]), tuple(EDGE[j1])], fill=(255, 185, 100, int(210 * f2 ** 1.35)), width=max(1, int(11 * f2)))
-    d.ellipse([mx - 24, my - 24, mx + 24, my + 24], fill=(255, 170, 80, 60))    # head bloom
-    d.ellipse([mx - 13, my - 13, mx + 13, my + 13], fill=(255, 150, 70, 120))   # inner glow
-    d.ellipse([mx - 7, my - 7, mx + 7, my + 7], fill=(255, 234, 165, 250))      # the bright leading head
+    for rr in range(22, 0, -1):                                            # a SMOOTH bloom (no concentric rings / target glyph)
+        d.ellipse([mx - rr, my - rr, mx + rr, my + rr], fill=(255, 172, 88, int(190 * (1 - rr / 22.0) ** 2.2)))
+    d.ellipse([mx - 6, my - 6, mx + 6, my + 6], fill=(255, 238, 176, 255))      # solid bright leading core
     dc.tk(d, "THE EDGE IS A SLAB, DIVING", dc.mono(22, True), (*BONE, 235), 96, 300, 0.02)
     dc.tk(d, "collision loads the crust  ·  stress migrates", dc.mono(17, m=True), (*(230, 170, 110), 220), 96, 338, 0.02)
     return np.asarray(im.convert("RGB"))
@@ -171,10 +171,11 @@ def w_fault(f):
         prog = E.out_cubic(E.seg(f, B[3] + 6, B[3] + 90))
         yv = 980 - prog * 220
         if 780 < yv: d.ellipse([x - 3, yv - 3, x + 3, yv + 3], fill=(*GHOST, 150))
-    dc.tk(d, "A PROPOSED LINK", dc.mono(20, True), (*BONE, 230), 96, 560, 0.02)
+    dc.tk(d, "A PROPOSED LINK", dc.mono(23, True), (255, 182, 112, 245), 96, 552, 0.03)          # the hedge, now the frame's loudest label
+    dc.tk(d, "hypothesis, not a proven cause", dc.mono(15, m=True), (*(232, 176, 128), 225), 96, 586, 0.02)
     dc.tk(d, "DENALI FAULT", dc.mono(24, True), (*BONE, int(150 + 90 * fl)), 96, 700, 0.03)
     dc.tk(d, "2002  ·  M7.9", dc.mono(18, m=True), (*(235, 150, 120), 235), 96, 736, 0.02)
-    dc.tk(d, "researchers propose", dc.mono(15, m=True), (*SLATE, 220), 96, 764, 0.02)
+    dc.tk(d, "researchers propose the stress MAY reach it", dc.mono(15, m=True), (*BONE, 205), 96, 764, 0.02)
     return np.asarray(im.convert("RGB"))
 
 def w_limit(f):

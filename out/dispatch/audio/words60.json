@@ -25,14 +25,14 @@
       "seg": 1
     },
     {
-      "w": "pulled out about one thousand seven",
+      "w": "pulled out about 1,750",
       "s": 8.76,
-      "e": 10.612,
+      "e": 11.333,
       "seg": 1
     },
     {
-      "w": "hundred fifty tiny earthquakes nobody had cataloged.",
-      "s": 10.612,
+      "w": "tiny earthquakes nobody had cataloged.",
+      "s": 11.333,
       "e": 13.34,
       "seg": 1
     },
@@ -43,26 +43,20 @@
       "seg": 2
     },
     {
-      "w": "They fell into one line, two",
+      "w": "They fell into one line, two hundred fifty",
       "s": 15.548,
-      "e": 17.357,
+      "e": 18.231,
       "seg": 2
     },
     {
-      "w": "hundred fifty kilometers long, the razor",
-      "s": 17.357,
-      "e": 19.915,
+      "w": "kilometers long, the razor edge of",
+      "s": 18.231,
+      "e": 20.414,
       "seg": 2
     },
     {
-      "w": "edge of the Yakutat microplate grinding",
-      "s": 19.915,
-      "e": 22.411,
-      "seg": 2
-    },
-    {
-      "w": "under Alaska.",
-      "s": 22.411,
+      "w": "the Yakutat microplate grinding under Alaska.",
+      "s": 20.414,
       "e": 23.284,
       "seg": 2
     },
@@ -109,13 +103,13 @@
       "seg": 4
     },
     {
-      "w": "in two thousand two at magnitude",
+      "w": "in 2002 at magnitude",
       "s": 34.965,
       "e": 36.718,
       "seg": 4
     },
     {
-      "w": "seven point nine.",
+      "w": "7.9.",
       "s": 36.718,
       "e": 37.674,
       "seg": 4

@@ -33,8 +33,14 @@ def parse_vtt(p):
             i += 2
         else: i += 1
     return out
+_NUMW = {"zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve",
+         "thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty","thirty",
+         "forty","fifty","sixty","seventy","eighty","ninety","hundred","thousand","million","billion","point"}
+def _isnum(w):
+    wl = w.strip(".,;:").lower(); return wl in _NUMW or any(c.isdigit() for c in wl)
 def chunk_phrases(cs, ce, text, maxw=6):
-    """Split a sentence-cue [cs,ce] into readable phrase-cues of <=maxw words, timed by char position."""
+    """Split a sentence-cue [cs,ce] into readable phrase-cues of <=maxw words, timed by char position.
+    Keeps a spelled-out number whole (never freezes a caption on a partial like 'one thousand seven')."""
     ws = text.split()
     if not ws: return []
     total = sum(len(w) + 1 for w in ws); acc = 0; spans = []
@@ -42,10 +48,13 @@ def chunk_phrases(cs, ce, text, maxw=6):
         a = cs + (ce - cs) * acc / total; acc += len(w) + 1; b = cs + (ce - cs) * acc / total
         spans.append((w, a, b))
     # group into <=maxw, but NEVER strand a lone final word (keep the payoff phrase whole, e.g. "...when it moves")
-    n = len(spans); bounds = []; i = 0
+    n = len(spans)
+    nobreak = [k > 0 and _isnum(spans[k][0]) and _isnum(spans[k - 1][0]) for k in range(n)]
+    bounds = []; i = 0
     while i < n:
         j = min(i + maxw, n)
-        if n - j == 1: j = n                 # a lone trailing word -> absorb it into this group
+        while j < n and nobreak[j]: j += 1    # keep a spelled-out number whole (never freeze on a partial number)
+        if n - j == 1: j = n                  # never strand a lone final word
         bounds.append((i, j)); i = j
     out = []
     for (i, j) in bounds:

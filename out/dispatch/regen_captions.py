@@ -19,6 +19,11 @@ def parse_vtt(p):
         else: i += 1
     return out
 
+_NUMW = {"zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve",
+         "thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty","thirty",
+         "forty","fifty","sixty","seventy","eighty","ninety","hundred","thousand","million","billion","point"}
+def _isnum(w):
+    wl = w.strip(".,;:").lower(); return wl in _NUMW or any(c.isdigit() for c in wl)
 def chunk_phrases(cs, ce, text, maxw=6):
     ws = text.split()
     if not ws: return []
@@ -26,10 +31,13 @@ def chunk_phrases(cs, ce, text, maxw=6):
     for w in ws:
         a = cs + (ce - cs) * acc / total; acc += len(w) + 1; b = cs + (ce - cs) * acc / total
         spans.append((w, a, b))
-    n = len(spans); bounds = []; i = 0                 # never strand a lone final word (keep the payoff whole)
+    n = len(spans)
+    nobreak = [k > 0 and _isnum(spans[k][0]) and _isnum(spans[k - 1][0]) for k in range(n)]
+    bounds = []; i = 0
     while i < n:
         j = min(i + maxw, n)
-        if n - j == 1: j = n
+        while j < n and nobreak[j]: j += 1             # keep a spelled-out number whole (no partial-number freeze)
+        if n - j == 1: j = n                           # never strand a lone final word
         bounds.append((i, j)); i = j
     return [{"w": " ".join(x[0] for x in spans[i:j]), "s": round(spans[i][1], 3), "e": round(spans[j - 1][2], 3)}
             for (i, j) in bounds]
@@ -41,6 +49,10 @@ for i, t0 in enumerate(starts):                        # one VTT per segment (s1
     for (cs, ce, txt) in parse_vtt(vtt):
         for ph in chunk_phrases(t0 + cs, t0 + ce, txt, maxw=6):
             ph["seg"] = i; words.append(ph)
+# show NUMERALS on screen, never a spelled-out partial (unambiguous on a silent read; the audio still speaks them out)
+_SUB = [("one thousand seven hundred fifty", "1,750"), ("two thousand two", "2002"), ("seven point nine", "7.9")]
+for c in words:
+    for a, b in _SUB: c["w"] = c["w"].replace(a, b)
 json.dump({"words": words, "speech_end": tim["speech_end"], "total": tim["total"], "fps": tim["fps"]},
           open(os.path.join(AUD, "words60.json"), "w"), indent=2)
 # report the limit-beat payoff cue so we can confirm 'moves' now lands whole
