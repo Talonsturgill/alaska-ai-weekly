@@ -3,52 +3,52 @@
     {
       "id": 1,
       "start": 0,
-      "end": 270,
+      "end": 366,
       "framing": "wide-establish",
-      "transition_in": "fade-up",
-      "is_oner": false
+      "transition_in": "",
+      "note": "THE ASK: 4,700 ACRES stamps; evidence clipping; parcel chits"
     },
     {
       "id": 2,
-      "start": 270,
-      "end": 570,
-      "framing": "map-territory",
-      "transition_in": "morph",
-      "is_oner": false
+      "start": 366,
+      "end": 756,
+      "framing": "data-panel",
+      "transition_in": "graphic-match",
+      "note": "THE APPETITE: chits multiply into the 100-house grid; Hollister chip"
     },
     {
       "id": 3,
-      "start": 570,
-      "end": 885,
-      "framing": "alt-vantage",
-      "transition_in": "map-travel",
-      "is_oner": false
+      "start": 756,
+      "end": 1191,
+      "framing": "two-up",
+      "transition_in": "carried-element",
+      "note": "THE EMPTY PIPE: gas band drains beside diesel stack"
     },
     {
       "id": 4,
-      "start": 885,
-      "end": 1200,
-      "framing": "two-up",
-      "transition_in": "morph",
-      "is_oner": false
+      "start": 1191,
+      "end": 1539,
+      "framing": "subject-portrait",
+      "transition_in": "assemble",
+      "note": "THE TURBINE: LM6000 assembles; $120M; the glyph coil +195%"
     },
     {
       "id": 5,
-      "start": 1200,
-      "end": 1470,
-      "framing": "data-panel",
-      "transition_in": "morph",
-      "is_oner": false
+      "start": 1539,
+      "end": 1812,
+      "framing": "wide-establish",
+      "transition_in": "carried-element",
+      "note": "THE OPEN CIRCUIT: loop + feedback arc; pulses die; the question"
     },
     {
       "id": 6,
-      "start": 1470,
-      "end": 1800,
-      "framing": "subject-portrait",
-      "transition_in": "graphic-match",
-      "is_oner": false
+      "start": 1812,
+      "end": 1920,
+      "framing": "push-detail",
+      "transition_in": "mask-wipe",
+      "note": "COLOPHON: press roller; wordmark; sources"
     }
   ],
   "fps": 30,
-  "total": 1800
+  "total": 1920
 }

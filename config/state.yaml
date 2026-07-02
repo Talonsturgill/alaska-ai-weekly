@@ -113,3 +113,34 @@ dispatch_history:
     palette: basalt and obsidian ground, an incandescent crimson-to-orange seismic
       line, bone-white station pins, a faint slate graticule
     metaphor: the machine draws the hidden edge
+- date: '2026-07-02'
+  topic: Air Force offered ~4,700 acres at JBER/Eielson/Clear for AI data centers;
+    Cook Inlet gas collapse leaves GVEA unable to feed them; the AI boom priced the
+    ~$120M turbine fix +195%
+  slug: dispatch-2026-07-02-circuit
+  key_entities:
+  - air force
+  - eielson
+  - jber
+  - clear space force
+  - data center
+  - gvea
+  - golden valley
+  - cook inlet gas
+  - turbine
+  - grid
+  - railbelt
+  - lm6000
+  - enhanced use lease
+  archetype: print-brutalist living ledger (the circuit that will not close)
+  palette: warm parchment field, carbon ink, hot vermilion signal, cold pewter
+  voice: kokoro:af_heart
+  composition:
+    pov: exploded-diagram
+    motion_vector: assemble-build
+    hero_treatment: data-as-subject
+    layout: grid-modular
+    register: data-brutalist
+    palette: warm parchment field, carbon ink, hot vermilion signal, cold pewter
+    metaphor: the circuit that will not close, AI demand raised the price of the power
+      it needs
