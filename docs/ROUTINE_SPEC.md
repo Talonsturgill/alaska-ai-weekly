@@ -74,6 +74,17 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
 - config/state.yaml > dispatch_history, what's been done (never repeat topic/archetype/palette).
 - scripts/upload_video.py (→ one-click link), scripts/dispatch_email.py (→ Gmail draft).
 
+PHASE 0: WORKSPACE PREFLIGHT (do this before ANY other conclusion or action)
+The toolkit this spec references lives on MAIN of talonsturgill/alaska-ai-weekly. A cloud clone can land
+on a stale branch (this happened: the repo default once pointed at the original one-commit scaffold, and
+a run concluded the spec was mismatched and stopped). So, first:
+1. Check the working tree for docs/ROUTINE_SPEC.md, scripts/dedupe.py, scripts/upload_video.py, and
+   .claude/skills/alaska-dispatch/. If ALL are present, proceed to Phase 1.
+2. If ANY are missing, you are on the wrong checkout, NOT a mismatched spec. Run
+   `git fetch origin main && git checkout -B main origin/main` and re-check; they will be there.
+3. Only if origin/main ALSO lacks these files: stop and notify (do not build the pipeline from scratch,
+   and do not merge anything).
+
 PHASE 1: RESEARCH (go wide; non-recursive)
 FIRST, DEDUPE: run `python scripts/dedupe.py list --days 14` to load the EXCLUSION list of
 recently-covered topics + key entities. Every story you pursue must avoid these, no repeat within
