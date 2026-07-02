@@ -1,59 +1,61 @@
-# LOCKED STORY — Dispatch 2026-07-01 — Yakutat microplate ML
+# STORY LOCK — 2026-07-02 Dispatch
 
-**Angle:** A machine-learning model pulled ~1,750 previously-invisible earthquakes out of a decade of
-Alaska seismic noise, and they traced the razor-sharp buried edge of the Yakutat microplate — revealing
-hidden structure that may load the Denali Fault. **The machine drew the hidden edge.**
+## Topic
+The AI industry is knocking on Alaska's door, and Alaska's grid can't yet answer.
+This spring the Air Force offered approximately 4,700 acres of underutilized military land
+(12 parcels at JBER, Eielson AFB, and Clear Space Force Station) to private developers for
+commercial AI data centers; per KTUU, proposals closed June 29. But the utilities that serve
+those parcels say they don't have the power: Cook Inlet gas fell from about 30 percent of
+GVEA's fuel supply to less than 1 percent last year, GVEA burned at least 250,000 gallons of
+diesel a day at points last winter, and the roughly $120 million turbine it is weighing on
+July 13 costs what it costs partly BECAUSE the global AI data center boom sent gas turbine
+construction costs up 195 percent since 2019 (per a Bloomberg report cited by the Fairbanks
+Daily News-Miner) with waitlists into the early 2030s.
 
-**Honest caveat (the thesis):** The AI maps where the edge *is* (from past micro-seismicity); it does
-**not** predict *when* the next quake will strike. Knowing where the edge is makes Alaska's hazard maps
-better — it is not a forecast.
+## The angle (the one point of view)
+THE LOOP THAT WON'T CLOSE. AI demand wants Alaska (land, cold, strategic position). Feeding
+it needs new generation. New generation needs turbines. Turbines are priced up and waitlisted
+BY the same AI demand. Alaska is not being saved by the AI boom; it is negotiating with it,
+holding land and cold in abundance and short on gas, and the decisions are Alaska's to make.
 
-## Load-bearing claims (EVERY on-screen number/name/date must be validator-verified)
-1. A machine-learning workflow analyzed ~a decade of Alaska seismic-station data and detected **~1,750
-   previously uncatalogued small earthquakes**.
-2. They form a **~250 km linear cluster** tracing the **"razor-sharp edge"** of the **Yakutat microplate
-   (slab)** subducting beneath south-central Alaska.
-3. Published **June 4, 2026** in **The Seismic Record** (Seismological Society of America), **DOI
-   10.1785/0320250055**; SSA press release **June 5, 2026**. Authors: **Meghan S. Miller** (Australian
-   National University), Ping Zhang, Robert Pickle, Trevor S. Waldien, Sarah M. Roeske.
-4. Data: 20+ permanent Alaska seismic stations + a **7-station temporary array (2018–2021)** south of the
-   Denali Fault.
-5. Reshapes understanding of how the Yakutat collision may transmit stress north toward the **Denali Fault**
-   (ruptured in the **2002 M7.9 Denali earthquake**). *** This stress link is a HYPOTHESIS, not a confirmed
-   causal chain — must be framed as "may / proposed", never stated as fact.***
-6. Quote (verify verbatim): "There's a lot of information hidden in the data that we're now able to extract
-   out that we weren't able to see as easily with more traditional methods." — Meghan S. Miller.
-7. (OPTIONAL live secondary hook — verify or drop) A Yakutat-region ~M2.7 earthquake logged ~June 21, 2026
-   by the Alaska Earthquake Center.
-8. Alaska relevance: better slab-edge maps feed **seismic hazard models** → building codes, infrastructure
-   siting, insurance.
+## The one honest caveat (drawn as a picture, hedge = loudest label)
+NOTHING IS AWARDED, NOTHING IS BUILT, NOTHING IS ENERGIZED. As of the most recent reporting
+reviewed, no lease awards have been announced. The circuit stays drawn OPEN: every downstream
+element (data centers, new turbine, gas supply) rendered dotted/ghosted under "PROPOSED".
+GVEA's July 13 session is an executive-session deliberation, not a public vote. The Glenfarne
+LOI is non-binding, with no final investment decision.
 
-## Primary sources
-- SSA press release: https://www.seismosoc.org/news/thousands-of-new-earthquakes-define-the-razor-edge-of-an-alaskan-microplate/
-- The Seismic Record (paper, DOI 10.1785/0320250055): https://pubs.geoscienceworld.org/ssa/tsr/article/6/2/230/731510/
-- Phys.org: https://phys.org/news/2026-06-machine-uncovers-quakes-kilometer-edge.html
-- Alaska Earthquake Center (for the M2.7 secondary hook): https://earthquake.alaska.edu/
+## Dedupe
+`python scripts/dedupe.py check --entities "air force,eielson,jber,clear space force,data center,gvea,golden valley,cook inlet gas,turbine,grid,railbelt"` -> FRESH (exit 0).
+(Alternate candidate, UAF Chinook ML depth model, printed DUP on ['king','salmon'] vs 2026-06-30. Rejected.)
 
-## Visual concept (for the storyboard — showcases smooth morphs + rich illustration)
-A journey from NOISE → SIGNAL → STRUCTURE:
-1. Seismic **noise** — a field of grey static / a flat seismogram trace, "nothing to see."
-2. The ML **resolves** it: 1,750 discrete earthquake points bloom out of the noise (the reveal).
-3. The points **connect** into one glowing **razor line** (the 250 km edge) — a morph from scatter to line.
-4. The line is **revealed as the buried plate edge**: a wider pull to south-central Alaska; the Yakutat slab's
-   edge under the map; stress travels **north** toward the Denali Fault.
-5. The honest beat: a "WHERE ✓ / WHEN ✗" — it shows the edge, it can't call the next quake.
-6. Brand outro.
+## Verified numbers (on-screen safe, with source)
+- ~4,700 acres, 12 parcels, 3 installations, Enhanced Use Lease — af.mil/spaceforce.mil 04-10 (primary)
+- proposals due June 29 — KTUU (updated 06-12)
+- 5 parcels near/at Eielson, 3 expected on GVEA's grid — KTUU 06-09
+- Cook Inlet gas: ~30% -> <1% of GVEA fuel supply (last year) — ADN 05-05 (DeMarban)
+- at least 250,000 gallons diesel/day, last winter peaks — News-Miner 06-28 (Barnwell)
+- ~$120M GE LM6000 (45-58 MW; 76-152 MW with steam or battery); $50,000 slot deposit; July 13 executive session — News-Miner 06-28
+- turbine construction costs +195% (2019 to this year), waitlists into early 2030s, driven by data centers needing guaranteed power — Bloomberg report cited by News-Miner 06-28 (attribution chain REQUIRED on screen: "per Bloomberg, via News-Miner")
+- large facilities can consume the electricity of ~100,000 households, about the houses Chugach serves in Anchorage — ADN 05-05
+- Col. Mabbutt cited $7-8B projected AF investment in Alaska over five years — jber.jb.mil 06-25
+- Glenfarne + Chugach non-binding LOI June 15; 2029 delivery contingent, no FID — ADN 06-16
 
-**Palette (fresh vs last 3):** deep basalt / obsidian earth, an incandescent seismic **crimson-to-orange**
-line, cool **bone-white** station pins, a thin cyan graticule. (NOT teal/aurora, NOT thermal duotone, NOT
-amber+cyan+coral.)
+## Verified quotes (verbatim)
+- Moriarty (af.mil): "This is a unique opportunity for a true public-private partnership..."
+- Hollister (KTUU): "People say living close to them, it's like having a vacuum cleaner on 24 hours a day, seven days a week."
+- Hasquet (ADN 05-05, full only or with ellipsis): "We currently do not have gas to serve a large data center, but we do have generation capacity, so it depends on the size of the data center, their economics, project timing, and specific contractual terms of service."
+- Bradish (GVEA, ADN 05-05, paraphrase ok): Fairbanks utility can't currently support a large data center; GVEA was at its power-production limits this winter.
 
-**Draft composition fingerprint (7 axes; storyboard_check will verify divergence):**
-- pov: **top-down-map** (looking down on south-central Alaska)
-- motion_vector: **horizontal-traverse** (the razor line extends across 250 km)
-- hero_treatment: **structure-as-subject** (the buried plate edge is the hero)
-- layout: **map-territory**
-- register: **editorial-schematic** (seismic/tectonic data-viz)
-- palette: basalt + incandescent crimson-orange + bone-white pins + cyan graticule
-- metaphor: **the machine draws the hidden edge — a buried plate's razor line pulled from a decade of noise**
-- signature (pov, layout, motion) = (top-down-map, map-territory, horizontal-traverse) — unique vs the ledger's last 4.
+## BANNED FROM THIS RUN (failed fact-check)
+- 267% utility-cost figure. Cut everywhere.
+- "$50/month Q3 2025 bill increase from Cook Inlet shortage" — wrong year, wrong cause. Cut.
+- "90,000 Chugach customers" — use ~100,000 households framing per ADN.
+- "combined-cycle" descriptor — use MW figures instead.
+- "vote" on July 13 — it is an executive session.
+- June RFLP dates attributed to Air & Space Forces Magazine — attribute June 29 to KTUU only.
+
+## Sentiment / framing guardrails
+Local sentiment is WARY (noise, permafrost, water, rates). Alaska is the decision-maker, not
+the rescued. No "Silicon Valley saves Alaska". Give the community concern (Hollister) real
+weight. Pro-Alaska = Alaska's land, Alaska's gas, Alaska's call.

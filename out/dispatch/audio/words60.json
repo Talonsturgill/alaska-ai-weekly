@@ -1,157 +1,181 @@
 {
   "words": [
     {
-      "w": "For years, Alaska's ground kept a",
-      "s": 0.5,
-      "e": 2.939,
+      "w": "The AI industry just asked Alaska",
+      "s": 0.645,
+      "e": 3.02,
       "seg": 0
     },
     {
-      "w": "secret in plain sight.",
-      "s": 2.939,
-      "e": 4.589,
+      "w": "for forty seven hundred acres.",
+      "s": 3.02,
+      "e": 4.645,
       "seg": 0
     },
     {
-      "w": "A machine learning model went back",
-      "s": 4.9,
-      "e": 6.701,
+      "w": "This spring the Air Force offered",
+      "s": 5.545,
+      "e": 7.22,
       "seg": 1
     },
     {
-      "w": "through years of seismic recordings and",
-      "s": 6.701,
-      "e": 8.76,
+      "w": "land at three bases for AI",
+      "s": 7.22,
+      "e": 8.92,
       "seg": 1
     },
     {
-      "w": "pulled out about 1,750",
-      "s": 8.76,
-      "e": 11.333,
+      "w": "data centers, and proposals closed in",
+      "s": 8.92,
+      "e": 11.145,
       "seg": 1
     },
     {
-      "w": "tiny earthquakes nobody had cataloged.",
-      "s": 11.333,
-      "e": 13.34,
+      "w": "late June.",
+      "s": 11.145,
+      "e": 11.895,
       "seg": 1
     },
     {
-      "w": "They were not scattered.",
-      "s": 13.644,
-      "e": 15.598,
+      "w": "The catch is power. One large",
+      "s": 12.74,
+      "e": 14.79,
       "seg": 2
     },
     {
-      "w": "They fell into one line, two hundred fifty",
-      "s": 15.548,
-      "e": 18.231,
+      "w": "data center can draw the electricity",
+      "s": 14.79,
+      "e": 16.615,
       "seg": 2
     },
     {
-      "w": "kilometers long, the razor edge of",
-      "s": 18.231,
-      "e": 20.414,
+      "w": "of a hundred thousand homes.",
+      "s": 16.615,
+      "e": 18.215,
       "seg": 2
     },
     {
-      "w": "the Yakutat microplate grinding under Alaska.",
-      "s": 20.414,
-      "e": 23.284,
-      "seg": 2
-    },
-    {
-      "w": "That edge is a slab of",
-      "s": 23.636,
-      "e": 24.922,
+      "w": "That's roughly every house Chugach serves",
+      "s": 18.99,
+      "e": 21.003,
       "seg": 3
     },
     {
-      "w": "crust diving under the state, and",
-      "s": 24.922,
-      "e": 26.822,
+      "w": "around Anchorage.",
+      "s": 21.003,
+      "e": 22.015,
       "seg": 3
     },
     {
-      "w": "the collision keeps loading the rock",
-      "s": 26.822,
-      "e": 28.89,
-      "seg": 3
-    },
-    {
-      "w": "around it.",
-      "s": 28.89,
-      "e": 29.505,
-      "seg": 3
-    },
-    {
-      "w": "The researchers propose the stress may",
-      "s": 29.812,
-      "e": 31.884,
+      "w": "Neighbors next door are already wary.",
+      "s": 22.86,
+      "e": 24.76,
       "seg": 4
     },
     {
-      "w": "reach all the way to the",
-      "s": 31.884,
-      "e": 33.212,
-      "seg": 4
-    },
-    {
-      "w": "Denali Fault, the one that broke",
-      "s": 33.212,
-      "e": 34.965,
-      "seg": 4
-    },
-    {
-      "w": "in 2002 at magnitude",
-      "s": 34.965,
-      "e": 36.718,
-      "seg": 4
-    },
-    {
-      "w": "7.9.",
-      "s": 36.718,
-      "e": 37.674,
-      "seg": 4
-    },
-    {
-      "w": "The model has a hard limit.",
-      "s": 37.98,
-      "e": 40.229,
+      "w": "The utility beside Eielson can't feed",
+      "s": 25.66,
+      "e": 27.86,
       "seg": 5
     },
     {
-      "w": "It shows you where the edge sits.",
-      "s": 40.179,
-      "e": 42.655,
+      "w": "one today. Cook Inlet gas fell",
+      "s": 27.86,
+      "e": 30.135,
       "seg": 5
     },
     {
-      "w": "It can't tell you when it moves.",
-      "s": 42.655,
-      "e": 45.073,
+      "w": "from about thirty percent of its",
+      "s": 30.135,
+      "e": 31.485,
       "seg": 5
     },
     {
-      "w": "But knowing where it is makes",
-      "s": 45.428,
-      "e": 47.203,
+      "w": "fuel to under one percent.",
+      "s": 31.485,
+      "e": 33.435,
+      "seg": 5
+    },
+    {
+      "w": "At points last winter it burned",
+      "s": 34.265,
+      "e": 36.065,
       "seg": 6
     },
     {
-      "w": "every hazard map, and every building",
-      "s": 47.203,
-      "e": 49.393,
+      "w": "at least two hundred fifty thousand",
+      "s": 36.065,
+      "e": 37.84,
       "seg": 6
     },
     {
-      "w": "code, a little more honest.",
-      "s": 49.393,
-      "e": 51.05,
+      "w": "gallons of diesel a day.",
+      "s": 37.84,
+      "e": 39.215,
       "seg": 6
+    },
+    {
+      "w": "The fix is a hundred twenty million",
+      "s": 40.115,
+      "e": 41.84,
+      "seg": 7
+    },
+    {
+      "w": "dollar turbine.",
+      "s": 41.84,
+      "e": 42.89,
+      "seg": 7
+    },
+    {
+      "w": "But turbine construction costs are up",
+      "s": 43.535,
+      "e": 45.585,
+      "seg": 8
+    },
+    {
+      "w": "one hundred ninety five percent since",
+      "s": 45.585,
+      "e": 47.435,
+      "seg": 8
+    },
+    {
+      "w": "twenty nineteen, because data centers everywhere",
+      "s": 47.435,
+      "e": 50.01,
+      "seg": 8
+    },
+    {
+      "w": "are buying them too.",
+      "s": 50.01,
+      "e": 51.135,
+      "seg": 8
+    },
+    {
+      "w": "So nothing is awarded, and nothing",
+      "s": 51.86,
+      "e": 53.523,
+      "seg": 9
+    },
+    {
+      "w": "is built.",
+      "s": 53.523,
+      "e": 54.16,
+      "seg": 9
+    },
+    {
+      "w": "Alaska holds the land, the cold,",
+      "s": 55.03,
+      "e": 56.83,
+      "seg": 10
+    },
+    {
+      "w": "and the choice.",
+      "s": 56.83,
+      "e": 57.63,
+      "seg": 10
     }
   ],
-  "speech_end": 51.064,
-  "total": 60.0,
+  "speech_end": 57.88,
+  "total": 64.0,
   "fps": 30
 }

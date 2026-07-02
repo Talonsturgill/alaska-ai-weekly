@@ -1,0 +1,9 @@
+# Defense / aviation / UAS beat findings (2026-07-02 run)
+
+1. **Air Force AI data center leases (converges with energy + wildcard beats)** — 4,700 acres / 12 parcels at JBER, Eielson, Clear SFS under Enhanced Use Leases; RFLP June 5; bids due June 29; Under Secretary Matthew Lohmeier toured JBER + Eielson June 22-24; USAF projects $7-8B Alaska investment over 5 years; FY2027 request ~$11B for Arctic installations; $404M JBER runway contract. Key quotes: Moriarty (04-10, af.mil): "This is a unique opportunity for a true public-private partnership. By making this land available, we are supporting the growing demands of the AI industry while generating value that directly supports our missions and the readiness of our Airmen and Guardians." Lohmeier: "The strategic value of Alaska cannot be overstated. As the crossroads of the Arctic and the Pacific, it provides unmatched reach and unparalleled domain awareness." Julie Hasquet (Chugach spokesperson, ADN 05-05, Alex DeMarban): "We currently do not have gas to serve a large data center, but we do have generation capacity." Comparison: a large data center can consume electricity equal to ~100,000 households. Sources: jber.jb.mil 06-25 (primary, in-window), spaceforce.mil/af.mil 04-10 (primary background), KTUU updated 06-12, ADN 05-05 (high, background), ExecutiveGov 06-26. Caveat: no awards/finalists announced as of 07-02.
+
+2. **Red Flag-Alaska 26-2 (ended June 12)** — 2,100 troops, ~75 aircraft, 5 nations, drone recon integrated in forcible entry at Donnelly DZ. AI angle THIN (no platform/autonomy named). Skip as lead.
+
+3. **BACKGROUND: UAF + Defense Innovation Unit 3-yr MOU (May 8)** — ACUASI drone ops + ACEP energy leads; DIU quote: "When vendors say their technology can handle any environment, we take it to Alaska." Out of window.
+
+## New sources: dvidshub.net, airandspaceforces.com, newsminer.com, breakingdefense.com, defensescoop.com, jber.jb.mil news feed

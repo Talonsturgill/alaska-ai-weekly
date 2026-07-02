@@ -1,48 +1,232 @@
 {
-  "slug": "dispatch-2026-07-01-yakutat-edge",
-  "concept": "The machine drew the hidden edge. A machine-learning model combed years of Alaska seismic recordings and IGNITED about 1,750 uncatalogued earthquakes out of the noise under its scan. They were not scattered. They fell into one 250-kilometer line, the razor edge of the Yakutat microplate grinding under Alaska. We watch the edge appear under the scan, become a line, become a diving slab, loom toward the Denali Fault that broke in 2002, and then hit its honest limit.",
-  "honest_caveat": "The model shows WHERE the edge sits, drawn from past earthquakes. It cannot tell you WHEN it moves. Knowing where it is makes hazard maps more honest; it is not a forecast. The Denali stress link is a hypothesis the researchers PROPOSE, drawn as a ghosted vector, never a confident causal arrow.",
+  "concept": "The Circuit That Won't Close: the AI industry asked Alaska for 4,700 acres of military land for data centers, but Cook Inlet gas collapsed, GVEA burned diesel all winter, and the $120M turbine fix costs +195% since 2019 because the same AI buildout is buying every turbine. A living print-brutalist ledger on warm parchment that assembles, stamps, drains, and visibly refuses to balance; the price coil is drawn out of the demand glyphs and the final circuit carries the demand-to-price feedback arc.",
   "derived_from": "scratch",
-  "style_mode": "editorial data-tectonics / seismic reveal",
-  "references": ["USGS/ANU seismic-catalog visualizations", "NYT/Reuters editorial data-map clarity for the fault line + labels"],
-  "taste_dials": {"DESIGN_VARIANCE": 7, "MOTION_INTENSITY": 6, "VISUAL_DENSITY": 6, "COLOR_BOLDNESS": 7, "TEXTURE_GRAIN": 6, "GRADE_STRENGTH": 6},
-  "fingerprint": {
-    "pov": "top-down-map",
-    "motion_vector": "horizontal-traverse",
-    "hero_treatment": "structure-as-subject",
-    "layout": "map-territory",
-    "register": "editorial-schematic",
-    "palette": "basalt and obsidian ground, an incandescent crimson-to-orange seismic line, bone-white station pins, a faint slate graticule",
-    "metaphor": "the machine draws the hidden edge — a buried plate's razor line pulled out of a decade of seismic noise"
+  "style_mode": "data-brutalist (print come alive: paper fiber, ink bleed, stamp impacts, foil vermilion)",
+  "taste_dials": {
+    "design_variance": 8,
+    "motion_intensity": 6,
+    "visual_density": 7,
+    "color_boldness": 7,
+    "texture_grain": 6,
+    "grade_strength": 4
   },
-  "palette": "basalt and obsidian ground, an incandescent crimson-to-orange seismic line, bone-white station pins, a faint slate graticule",
-  "divergence_note": "Opposite to the last three on every structural axis. The beluga was an eye-level naturalistic creature portrait; the permafrost was a side-on thermal CROSS-SECTION descending vertically; the sonar was an amber INSTRUMENT SCREEN of a fish-count. This one opens on a TOP-DOWN scan of Alaska's ground where a hidden fault edge IGNITES out of noise and extends horizontally across 250 km, structure-as-subject in a basalt + incandescent-crimson world with bone-white pins, then travels through genuinely different worlds (map, diving slab, a low-angle looming fault, a drawn limit). Different POV, motion, hero, layout, and color world; the metaphor is a machine revealing a buried edge, not a portrait, a cutaway, or a counting readout.",
-  "beats": [
-    {"n": 1,  "t": "0.0-4.5",   "vo": 1, "new": "PREMISE IN SECOND ONE: a machine SCAN-LINE sweeps a top-down dark field of Alaska's ground and the FIRST hidden earthquakes IGNITE under the scan where none were catalogued.", "transition": "fade up into the moving scan; ignitions spark under it", "means": "The machine finds what was hidden in the noise."},
-    {"n": 2,  "t": "4.5-9.0",   "vo": 2, "new": "The ignitions multiply across the field; a counter climbs toward about 1,750 as more buried quakes light up.", "transition": "the scan keeps sweeping; points accumulate + counter ticks", "means": "The scale of what was hidden — about 1,750."},
-    {"n": 3,  "t": "9.0-14.0",  "vo": 3, "new": "MORPH: the ~1,750 scattered ignitions slide and CONNECT into one glowing crimson line, northwest to southeast.", "transition": "MORPH — the point-scatter tweens into one continuous line (carry)", "means": "The pattern is a line, not a cloud."},
-    {"n": 4,  "t": "14.0-19.0", "vo": 3, "new": "The line settles onto a map of southern Alaska, 250 km long, bone-white station pins along it, label: YAKUTAT MICROPLATE, the razor edge.", "transition": "the line lands on the map; pins + label disclose", "means": "This is a real place on Alaska's ground."},
-    {"n": 5,  "t": "19.0-24.5", "vo": 4, "new": "MAP-TRAVEL into depth: the map tilts and the razor line is revealed as the buried EDGE of a slab diving under Alaska, layered crust above.", "transition": "MORPH/travel — top-down map rotates into an oblique cross-section (travel)", "means": "The line is the edge of a subducting plate."},
-    {"n": 6,  "t": "24.5-29.5", "vo": 4, "new": "The slab grinds; a bright STRESS MARK migrates step by step along the plate boundary as the Yakutat block collides.", "transition": "a discrete stress mark travels the boundary (a concrete new element, not a glow)", "means": "The collision loads specific points on the crust."},
-    {"n": 7,  "t": "29.5-34.5", "vo": 5, "new": "MORPH to a LOW-ANGLE: the ground opens toward a looming second fault to the north; a GHOSTED, dotted PROPOSED stress vector travels north (hypothesis register).", "transition": "MORPH to a low-angle looming-fault vantage; a dotted vector travels north (travel)", "means": "A proposed link: stress may reach the Denali Fault."},
-    {"n": 8,  "t": "34.5-40.0", "vo": 5, "new": "The Denali Fault flares in a controlled, GHOSTED flash; a tag reads 2002 · M7.9 · DENALI with a small 'researchers propose' qualifier.", "transition": "the fault ghost-flares; the label stamps in, clearly hedged", "means": "The 2002 quake, framed as hypothesis, never as proven cause."},
-    {"n": 9,  "t": "40.0-44.5", "vo": 6, "new": "Cool to a clean schematic: the crimson edge locks RAZOR-SHARP on the spatial axis — WHERE the edge sits, known.", "transition": "everything settles; the edge snaps sharp and certain in space", "means": "The model knows WHERE — drawn, not captioned."},
-    {"n": 10, "t": "44.5-49.0", "vo": 6, "new": "A perpendicular TIME axis extends into the frame and stays FOGGED, refusing to resolve — WHEN it moves, unknown. Small WHERE / WHEN marks support the staging.", "transition": "the time axis dissolves into fog and will not resolve", "means": "The honest limit, DRAWN: where yes, when no."},
-    {"n": 11, "t": "49.0-52.5", "vo": 7, "new": "The sharp edge pulses once, steady and bright: knowing where it sits sharpens every hazard map and building code.", "transition": "a calm reaffirming pulse along the edge", "means": "Why it matters to Alaskans."},
-    {"n": 12, "t": "52.5-55.5", "vo": 0, "new": "GRAPHIC-MATCH: the crimson edge line reforms into the ALASKA.AI wordmark rule; the wordmark resolves center.", "transition": "GRAPHIC-MATCH — the seismic line becomes the wordmark underline (match)", "means": "Brand sign-off tied to the visual."},
-    {"n": 13, "t": "55.5-58.0", "vo": 0, "new": "Tagline reveals: 'what's moving in alaska ai, this week', with a source credit line (Miller et al., ANU · The Seismic Record, 2026).", "transition": "tagline + credit staged reveal", "means": "Brand recall + sourcing."},
-    {"n": 14, "t": "58.0-60.0", "vo": 0, "new": "The last incandescent point drifts along the edge and fades; gentle cinematic fade to black.", "transition": "fade out, motion running to the final frame", "means": "A real ending, never a static hold."}
+  "references": [
+    "Bloomberg Businessweek print-data covers (Turley era)",
+    "Kurzgesagt assembly clarity",
+    "Buck kinetic-type number moments"
   ],
+  "voice": "kokoro:af_heart (af_nicole planned but proved a slow whisper voice; af_heart grade A swapped in at build, still breaking the 3-run male streak)",
+  "fingerprint": {
+    "pov": "exploded-diagram",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "data-as-subject",
+    "layout": "grid-modular",
+    "register": "data-brutalist",
+    "palette": "warm parchment field, carbon ink, hot vermilion signal, cold pewter",
+    "metaphor": "the circuit that will not close, AI demand raised the price of the power it needs"
+  },
+  "palette": "warm parchment field, carbon ink, hot vermilion signal, cold pewter",
+  "divergence_note": "First light-ground print-world Dispatch: warm parchment and carbon ink where the last two were dark worlds (Yakutat's basalt territory map with a crimson seismic line, the sonar's amber echoes on abyssal black). The camera stands in schematic ledger space (exploded-diagram) from frame one: the map-open was cut after critique because it echoed Yakutat, so Alaska arrives as a pasted evidence clipping ON the ledger, not as a territory map. The subject is the data itself assembling (assemble-build), not a structure traced across a map (horizontal-traverse) or a swarm rising (vertical-rise). Layout is a hard modular ledger grid, not map-territory or a HUD bezel. Register is data-brutalist print, not editorial-schematic or instrument-readout. All 7 axes differ from both of the last 2 dispatches, and the spatial signature (exploded-diagram, grid-modular, assemble-build) appears nowhere in the last 4.",
+  "honest_caveat": "Nothing is awarded, nothing is built, nothing is energized: drawn as a circuit whose breaker stays OPEN, every unbuilt element dotted and stamped PROPOSED (the loudest label), pulses dying at the gas gap twice, with the demand-to-price feedback arc showing WHY the loop resists closing. Closing type asks SHOULD ALASKA SAY YES?",
   "shots": [
-    {"id": 1, "t": "0.0-9.0",   "framing": "wide-establish",   "pov": "top-down-map",        "layout": "single-object-void",   "motion_vector": "radial-emanate",     "hero_treatment": "multiplicity-swarm",   "transition_in": "fade-up",       "thread": "build",  "centered": "the scan igniting ~1,750 hidden quakes"},
-    {"id": 2, "t": "9.0-19.0",  "framing": "map-territory",    "pov": "top-down-map",        "layout": "map-territory",        "motion_vector": "horizontal-traverse","hero_treatment": "structure-as-subject", "transition_in": "morph",         "thread": "carry",  "centered": "the 250 km razor edge on the map"},
-    {"id": 3, "t": "19.0-29.5", "framing": "alt-vantage",      "pov": "orbital-aerial",      "layout": "stacked-layers",       "motion_vector": "vertical-descent",   "hero_treatment": "structure-as-subject", "transition_in": "map-travel",    "thread": "travel", "centered": "the slab edge diving + the migrating stress mark"},
-    {"id": 4, "t": "29.5-40.0", "framing": "two-up",           "pov": "eye-level-immersive", "layout": "fullbleed-split",      "motion_vector": "horizontal-traverse","hero_treatment": "structure-as-subject", "transition_in": "morph",         "thread": "travel", "centered": "a low-angle looming Denali Fault; a ghosted proposed stress vector"},
-    {"id": 5, "t": "40.0-49.0", "framing": "data-panel",       "pov": "orbital-aerial",      "layout": "two-up",               "motion_vector": "push-in-only",       "hero_treatment": "data-as-subject",      "transition_in": "morph",         "thread": "match",  "centered": "the DRAWN limit: edge razor-sharp in space, time axis fogged"},
-    {"id": 6, "t": "49.0-60.0", "framing": "subject-portrait", "pov": "eye-level-immersive", "layout": "single-object-void",   "motion_vector": "assemble-build",     "hero_treatment": "structure-as-subject", "transition_in": "graphic-match", "thread": "match",  "centered": "the ALASKA.AI wordmark"}
+    {
+      "id": 1,
+      "t": "0.0-12.2",
+      "name": "THE ASK",
+      "framing": "wide-establish",
+      "pov": "exploded-diagram",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "",
+      "thread": "",
+      "centered": "4,700 ACRES stamps first in kinetic vermilion type; Alaska pastes in as an inked evidence clipping; three base stamps punch into the clipping; 12 solid-ink parcel chits tick in",
+      "means": "the ask, huge and concrete, on a ledger from frame one"
+    },
+    {
+      "id": 2,
+      "t": "12.2-25.2",
+      "name": "THE APPETITE",
+      "framing": "data-panel",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "centered": "the 12 parcel chits multiply into a 100-house modular grid flooding with vermilion load; ~100,000 HOUSEHOLDS locks; the Hollister quote chip slams in at a tilt",
+      "means": "appetite quantified, and the neighbors get the loudest human line"
+    },
+    {
+      "id": 3,
+      "t": "25.2-39.7",
+      "name": "THE EMPTY PIPE",
+      "framing": "two-up",
+      "pov": "exploded-diagram",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "Cook Inlet gas band drains ABOUT 30% to UNDER 1% (LAST YEAR chit) beside a rising diesel-barrel stack AT LEAST 250,000 GALLONS A DAY (LAST WINTER, AT PEAKS chit)",
+      "means": "demand found an empty supply; the stopgap burned all winter"
+    },
+    {
+      "id": 4,
+      "t": "39.7-51.3",
+      "name": "THE TURBINE",
+      "framing": "subject-portrait",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "assemble",
+      "thread": "build",
+      "centered": "the LM6000 draws itself points-to-faces; ~$120 MILLION stamps; the Shot-2 house glyphs stream back and chain into a coil strangling the machine, +195% SINCE 2019, cause slug THE BUYERS: DATA CENTERS EVERYWHERE",
+      "means": "the same appetite that knocked priced the fix; the coil is made of houses so the cause is visible muted"
+    },
+    {
+      "id": 5,
+      "t": "51.3-60.4",
+      "name": "THE OPEN CIRCUIT",
+      "framing": "wide-establish",
+      "pov": "exploded-diagram",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "the turbine shrinks into its node; the loop draws DEMAND-LAND-GENERATION-GAS with an open breaker gap plus a vermilion feedback arc DEMAND to price tag; pulses die at the gap; PROPOSED stamps loudest; closing type ALASKA HOLDS THE LAND, THE COLD, AND THE CHOICE then SHOULD ALASKA SAY YES?",
+      "means": "everything is real except the connection; the ending asks the reader to argue"
+    },
+    {
+      "id": 6,
+      "t": "60.4-64.0",
+      "name": "COLOPHON",
+      "framing": "push-detail",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "centered": "a vermilion press-roller sweep; the ALASKA.AI wordmark stamps in with tagline and source colophon in staged beats",
+      "means": "the ledger is signed; the story stays open"
+    }
   ],
-  "ending": "Branded outro: the seismic edge line graphic-matches into the ALASKA.AI wordmark rule, tagline + source credit staged after the VO, the last incandescent point drifting and a slow fade. Motion runs to the last frame.",
-  "captions": "open, voice-synced kinetic phrases from audio/words60.json (CAPTION_SYNC gate); on-screen numbers limited to the validator-verified set (about 1,750; 250 km; M7.9; Yakutat microplate; razor edge; Miller/ANU; The Seismic Record; the 'researchers propose' qualifier on the Denali beat).",
-  "voice": "edge-tts draft; publish in a config/voices.yaml Kokoro voice",
-  "music": "freshly sourced per-run, credited (MUSIC gate rejects synth) — taut, low, geologic tension resolving to something clear"
+  "beats": [
+    {
+      "id": 1,
+      "t": "0.0-3.5",
+      "new_element": "kinetic vermilion type stamps 4,700 ACRES with ink-bleed settle; eyebrow ALASKA.AI DISPATCH; sub-line THE AI INDUSTRY'S ASK OF ALASKA",
+      "transition": "stamp-in (designed poster frame one)",
+      "means": "the ask, huge and concrete"
+    },
+    {
+      "id": 2,
+      "t": "3.5-6.5",
+      "new_element": "Alaska evidence clipping pastes in with tape corners and torn edge; three base stamps punch in: JBER, EIELSON AFB, CLEAR SFS",
+      "transition": "paste + stamp impacts",
+      "means": "where the offer sits, as an exhibit on the ledger"
+    },
+    {
+      "id": 3,
+      "t": "6.5-9.0",
+      "new_element": "12 solid-ink parcel chits tick in a strip; ink-slug print PROPOSALS CLOSED JUNE 29 (KTUU)",
+      "transition": "chits tick in sequence",
+      "means": "live and dated"
+    },
+    {
+      "id": 4,
+      "t": "9.0-12.5",
+      "new_element": "parcel chits multiply into a 100-house modular grid; vermilion load floods first rows; label ONE LARGE DATA CENTER",
+      "transition": "graphic-match: chit geometry carried into grid",
+      "means": "the appetite appears"
+    },
+    {
+      "id": 5,
+      "t": "12.5-16.0",
+      "new_element": "counter locks on ink slug = THE POWER OF ~100,000 HOUSEHOLDS (ADN); grid fully flooded",
+      "transition": "counter roll to lock",
+      "means": "appetite quantified"
+    },
+    {
+      "id": 6,
+      "t": "16.0-20.0",
+      "new_element": "quote chip slams in at a tilt, reversed-out Hollister line, NEARBY RESIDENT, NORTH POLE (KTUU)",
+      "transition": "stamp slam (pattern interrupt)",
+      "means": "the neighbors are in the film with the loudest human line"
+    },
+    {
+      "id": 7,
+      "t": "20.0-23.0",
+      "new_element": "the load line dives and becomes the top edge of a band labeled COOK INLET GAS, SHARE OF GVEA FUEL, ABOUT 30%",
+      "transition": "carried-element: the line changes role",
+      "means": "the supply that used to be there"
+    },
+    {
+      "id": 8,
+      "t": "23.0-26.0",
+      "new_element": "the band drains to UNDER 1%; time chit LAST YEAR stamps",
+      "transition": "drain animation to lock",
+      "means": "the collapse, dated"
+    },
+    {
+      "id": 9,
+      "t": "26.0-30.0",
+      "new_element": "right panel: diesel barrels stack fast; counter AT LEAST 250,000 GALLONS A DAY; time chit LAST WINTER, AT PEAKS; frost creeps; GVEA plate sets as the barrels finish",
+      "transition": "split panel activates, plate folds in",
+      "means": "the stopgap at its peaks, and the utility at its limits"
+    },
+    {
+      "id": 10,
+      "t": "30.0-34.0",
+      "new_element": "LM6000 draws itself points-to-edges-to-faces; plate GE LM6000, 45 TO 58 MW",
+      "transition": "assemble: geometry builds",
+      "means": "the fix, as a machine"
+    },
+    {
+      "id": 11,
+      "t": "34.0-38.0",
+      "new_element": "price stamp slams with paper shake: ~$120 MILLION",
+      "transition": "stamp impact",
+      "means": "the price of the fix"
+    },
+    {
+      "id": 12,
+      "t": "38.0-42.0",
+      "new_element": "house glyphs stream back and chain into a coil strangling the machine; kinetic +195% SINCE 2019; cause slug THE BUYERS: DATA CENTERS EVERYWHERE, per Bloomberg, via the News-Miner; calendar chits WAITLISTS INTO THE EARLY 2030s",
+      "transition": "glyph stream + coil wrap; the music bed dies on the tightening creak",
+      "means": "the twist DRAWN: demand strangles the machine it wants"
+    },
+    {
+      "id": 13,
+      "t": "42.0-47.0",
+      "new_element": "turbine shrinks into a node; circuit draws as the music restarts: DEMAND solid, LAND solid, GENERATION dotted, GAS an open breaker gap; vermilion FEEDBACK ARC draws DEMAND to the price tag; ghost stamp PROPOSED loudest",
+      "transition": "carried-element: turbine becomes a node; hard audio seam resolves",
+      "means": "the honest caveat plus the self-feeding loop, as one picture"
+    },
+    {
+      "id": 14,
+      "t": "47.0-52.0",
+      "new_element": "pulses run the loop and die at the gap, twice; ink slugs NO AWARDS ANNOUNCED and JULY 13 GVEA EXECUTIVE SESSION",
+      "transition": "pulse runs, dies, repeats",
+      "means": "open, and Alaska decides"
+    },
+    {
+      "id": 15,
+      "t": "52.0-57.5",
+      "new_element": "closing type stamps reversed-out: ALASKA HOLDS THE LAND, THE COLD, AND THE CHOICE. then SHOULD ALASKA SAY YES?",
+      "transition": "two staged stamps",
+      "means": "the thesis lands and asks the reader to argue"
+    },
+    {
+      "id": 16,
+      "t": "57.5-64.0",
+      "new_element": "mask-wipe press-roller sweep; wordmark stamps, tagline, source colophon (af.mil, KTUU, ADN, News-Miner) in staged beats; paper drift and gentle fade to final frame",
+      "transition": "mask-wipe into colophon",
+      "means": "signed ledger, open story"
+    }
+  ],
+  "build_note": "Shot times retimed at build to the MEASURED kokoro word timings (picture locked to voice, per Gate B critique): the ask 0-12.2, appetite 12.2-25.2, empty pipe 25.2-39.7, turbine 39.7-51.3 ($120M stamps on 'hundred twenty million' at 41.0, +195% on 'one hundred ninety five' at 45.9), open circuit 51.3-60.4 (question holds 2.6s), colophon 60.4-64. VO seg 9 re-recorded to 'turbine construction costs' for exact noun accuracy."
 }

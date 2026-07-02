@@ -1,0 +1,11 @@
+{
+  "gate_a": "PASS (1832 chars, hook 135, 5 hashtags at end, 0 emoji, clean punctuation)",
+  "editor": "revise -> fixes applied (verbatim Hollister quote + verified attribution, Air Force-as-actor hook, GVEA framing precision, template labels removed)",
+  "scorer": {
+    "weighted_total": 8.88,
+    "threshold": 8.5,
+    "ship": true,
+    "hard_fails": 0,
+    "weakest": "Readability & restraint (8)"
+  }
+}
