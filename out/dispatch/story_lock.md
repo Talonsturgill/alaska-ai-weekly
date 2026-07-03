@@ -1,59 +1,45 @@
-# LOCKED STORY — Dispatch 2026-07-01 — Yakutat microplate ML
+# Story lock — 2026-07-03
 
-**Angle:** A machine-learning model pulled ~1,750 previously-invisible earthquakes out of a decade of
-Alaska seismic noise, and they traced the razor-sharp buried edge of the Yakutat microplate — revealing
-hidden structure that may load the Denali Fault. **The machine drew the hidden edge.**
+**Story:** XPRIZE Wildfire autonomous-drone competition finals, Nenana, Alaska (an hour from
+Fairbanks), June 15-25 2026, on a UAF/ACUASI test range. Three finalist teams (Anduril, Dryad,
+AURA Foresight) flew AI-powered sensor and drone systems into a 1,000 km2 box and had to detect
+and suppress a controlled wildfire ignition within 10 minutes, no human in the loop.
 
-**Honest caveat (the thesis):** The AI maps where the edge *is* (from past micro-seismicity); it does
-**not** predict *when* the next quake will strike. Knowing where the edge is makes Alaska's hazard maps
-better — it is not a forecast.
+**Why this story:** independently surfaced by 3 of 6 Phase 1 research beats (gov/edu science,
+defense/aviation/UAS, wildcard). Primary-sourced (XPRIZE Foundation's own competition page and
+dated live blog), a genuine end-to-end AI/robotics mechanism (autonomous detect-and-suppress),
+and a real, honest, unresolved caveat: no winner has been announced as of the air date, and the
+systems have only been tested inside a box XPRIZE drew, not against an unscripted fire.
 
-## Load-bearing claims (EVERY on-screen number/name/date must be validator-verified)
-1. A machine-learning workflow analyzed ~a decade of Alaska seismic-station data and detected **~1,750
-   previously uncatalogued small earthquakes**.
-2. They form a **~250 km linear cluster** tracing the **"razor-sharp edge"** of the **Yakutat microplate
-   (slab)** subducting beneath south-central Alaska.
-3. Published **June 4, 2026** in **The Seismic Record** (Seismological Society of America), **DOI
-   10.1785/0320250055**; SSA press release **June 5, 2026**. Authors: **Meghan S. Miller** (Australian
-   National University), Ping Zhang, Robert Pickle, Trevor S. Waldien, Sarah M. Roeske.
-4. Data: 20+ permanent Alaska seismic stations + a **7-station temporary array (2018–2021)** south of the
-   Denali Fault.
-5. Reshapes understanding of how the Yakutat collision may transmit stress north toward the **Denali Fault**
-   (ruptured in the **2002 M7.9 Denali earthquake**). *** This stress link is a HYPOTHESIS, not a confirmed
-   causal chain — must be framed as "may / proposed", never stated as fact.***
-6. Quote (verify verbatim): "There's a lot of information hidden in the data that we're now able to extract
-   out that we weren't able to see as easily with more traditional methods." — Meghan S. Miller.
-7. (OPTIONAL live secondary hook — verify or drop) A Yakutat-region ~M2.7 earthquake logged ~June 21, 2026
-   by the Alaska Earthquake Center.
-8. Alaska relevance: better slab-edge maps feed **seismic hazard models** → building codes, infrastructure
-   siting, insurance.
+**Dedupe check:** `python scripts/dedupe.py check --entities "xprize,wildfire,nenana,acuasi,..."`
+returned FRESH.
 
-## Primary sources
-- SSA press release: https://www.seismosoc.org/news/thousands-of-new-earthquakes-define-the-razor-edge-of-an-alaskan-microplate/
-- The Seismic Record (paper, DOI 10.1785/0320250055): https://pubs.geoscienceworld.org/ssa/tsr/article/6/2/230/731510/
-- Phys.org: https://phys.org/news/2026-06-machine-uncovers-quakes-kilometer-edge.html
-- Alaska Earthquake Center (for the M2.7 secondary hook): https://earthquake.alaska.edu/
+**Fact-check (Phase 2, two independent adversarial passes against xprize.org primary sources):**
+- Dates: June 15-25 2026 (verified against xprize.org/competitions/wildfire, not "June 11-26").
+- Location: Nenana, Alaska, about one hour from Fairbanks (NOT "NANA Region" -- that is a
+  different Alaska Native corporation area 400+ miles away in Kotzebue; a real error one source
+  made that we corrected).
+- ACUASI: Alaska Center for Unmanned Aircraft Systems Integration, one of the FAA's seven
+  national UAS test sites, housed at UAF's Geophysical Institute.
+- Teams confirmed for the Alaska finals specifically (via XPRIZE's own dated live blog AND an
+  independent Robohub interview with AURA Foresight's team co-lead): Anduril (Lattice AI +
+  Sentry towers + Ghost-X drones), Dryad (Silvanet solar sensor network + Silvaguard suppression
+  drones), AURA Foresight (Detect-Verify-Act approach). The January 2026 finalist announcement
+  also named Data Blanket, FireSwarm Solutions, and Wildfire Quest, but those three are NOT
+  confirmed as Alaska-finals participants in any primary source -- we do not name them on screen.
+- Prize structure: autonomous-track first-place win is $3.5M, plus a separate $1M Lockheed
+  Martin bonus for detection accuracy. $11M is the TOTAL XPRIZE Wildfire purse across all phases
+  and tracks (including a separate space-based detection track), not this track's specific
+  prize -- the video's VO/HUD say "$3.5M" for the autonomous-track prize, corrected after an
+  internal accuracy review caught the original draft conflating the two figures.
+- No winner has been announced as of 2026-07-03 (verified: XPRIZE's own live blog's latest
+  update, June 26, reports testing activity only, no results).
 
-## Visual concept (for the storyboard — showcases smooth morphs + rich illustration)
-A journey from NOISE → SIGNAL → STRUCTURE:
-1. Seismic **noise** — a field of grey static / a flat seismogram trace, "nothing to see."
-2. The ML **resolves** it: 1,750 discrete earthquake points bloom out of the noise (the reveal).
-3. The points **connect** into one glowing **razor line** (the 250 km edge) — a morph from scatter to line.
-4. The line is **revealed as the buried plate edge**: a wider pull to south-central Alaska; the Yakutat slab's
-   edge under the map; stress travels **north** toward the Denali Fault.
-5. The honest beat: a "WHERE ✓ / WHEN ✗" — it shows the edge, it can't call the next quake.
-6. Brand outro.
+**Honest caveat, drawn as a picture (Shot 5):** the crisp, gridded, lit test box frays at its
+edge into unmarked fog toward a dissolving "?" -- proven inside the box XPRIZE drew, unproven
+against a fire nobody scheduled.
 
-**Palette (fresh vs last 3):** deep basalt / obsidian earth, an incandescent seismic **crimson-to-orange**
-line, cool **bone-white** station pins, a thin cyan graticule. (NOT teal/aurora, NOT thermal duotone, NOT
-amber+cyan+coral.)
-
-**Draft composition fingerprint (7 axes; storyboard_check will verify divergence):**
-- pov: **top-down-map** (looking down on south-central Alaska)
-- motion_vector: **horizontal-traverse** (the razor line extends across 250 km)
-- hero_treatment: **structure-as-subject** (the buried plate edge is the hero)
-- layout: **map-territory**
-- register: **editorial-schematic** (seismic/tectonic data-viz)
-- palette: basalt + incandescent crimson-orange + bone-white pins + cyan graticule
-- metaphor: **the machine draws the hidden edge — a buried plate's razor line pulled from a decade of noise**
-- signature (pov, layout, motion) = (top-down-map, map-territory, horizontal-traverse) — unique vs the ledger's last 4.
+**Cultural note:** Nenana is a real Interior Alaska community (~41% Alaska Native population,
+Nenana Native Association is the federally recognized tribe). The Dispatch names the place
+factually and respectfully; it does not use Native iconography, language, or claim any Native
+community endorsement or involvement in the competition itself.

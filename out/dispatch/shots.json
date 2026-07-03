@@ -3,50 +3,44 @@
     {
       "id": 1,
       "start": 0,
-      "end": 270,
+      "end": 288,
       "framing": "wide-establish",
-      "transition_in": "fade-up",
-      "is_oner": false
+      "transition_in": ""
     },
     {
       "id": 2,
-      "start": 270,
-      "end": 570,
-      "framing": "map-territory",
-      "transition_in": "morph",
-      "is_oner": false
+      "start": 288,
+      "end": 672,
+      "framing": "data-panel",
+      "transition_in": "fui-boot"
     },
     {
       "id": 3,
-      "start": 570,
-      "end": 885,
-      "framing": "alt-vantage",
-      "transition_in": "map-travel",
-      "is_oner": false
+      "start": 672,
+      "end": 900,
+      "framing": "subject-portrait",
+      "transition_in": "whip-pan"
     },
     {
       "id": 4,
-      "start": 885,
-      "end": 1200,
-      "framing": "two-up",
-      "transition_in": "morph",
-      "is_oner": false
+      "start": 900,
+      "end": 1173,
+      "framing": "macro-closeup",
+      "transition_in": "match-cut"
     },
     {
       "id": 5,
-      "start": 1200,
-      "end": 1470,
-      "framing": "data-panel",
-      "transition_in": "morph",
-      "is_oner": false
+      "start": 1173,
+      "end": 1554,
+      "framing": "two-up",
+      "transition_in": "pull-out"
     },
     {
       "id": 6,
-      "start": 1470,
+      "start": 1554,
       "end": 1800,
-      "framing": "subject-portrait",
-      "transition_in": "graphic-match",
-      "is_oner": false
+      "framing": "wide-establish",
+      "transition_in": "crossfade"
     }
   ],
   "fps": 30,
