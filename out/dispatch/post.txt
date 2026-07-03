@@ -1,0 +1,19 @@
+An AI drone swarm had ten minutes to find a wildfire and put it out, no human involved.
+
+It happened an hour outside Fairbanks, Alaska.
+
+That was the XPRIZE Wildfire autonomous track finals, run June 15 to 25 on a University of Alaska Fairbanks test range near Nenana, through UAF's drone research center, ACUASI.
+
+Three finalist teams flew their own systems into a 1,000 square kilometer box. Anduril's AI-powered sensor towers and Ghost-X drones. Dryad's solar powered sensor network. AURA Foresight's detect, verify, act swarm. Each had ten minutes, alone, to detect and suppress a controlled ignition before it grew.
+
+Winning the autonomous track pays $3.5 million, plus a $1 million Lockheed Martin bonus for detection accuracy, out of an $11 million total XPRIZE purse. As of this week, XPRIZE has not announced a winner.
+
+That is the state of the record, not a verdict on the technology. Every fire these systems have put out so far was lit on cue, inside a box the competition drew, on a range built for exactly this test.
+
+Alaska made that test possible in a way almost nowhere else could: long, unpredictable fire seasons, huge roadless distances, and a drone program at UAF that is one of the FAA's seven national drone test sites.
+
+But detecting a fire you were told to expect is a different problem than detecting the one nobody scheduled. The gap between those two problems is exactly where wildfire actually happens, in unmarked terrain, at an hour nobody scheduled, in weather nobody modeled. Nobody has pointed these systems at a fire like that yet.
+
+The demo ran, and ran seriously, with real money and real engineering behind it. The open question is what happens when the box comes off, whether the bar for calling this solved is a scored test on a drawn range or a full Alaska fire season with no script. What would you need to see before you would trust an autonomous system to make that call unsupervised?
+
+#ArtificialIntelligence #Alaska #AutonomousSystems #Wildfire #XPRIZE

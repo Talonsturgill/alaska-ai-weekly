@@ -144,3 +144,40 @@ dispatch_history:
     palette: warm parchment field, carbon ink, hot vermilion signal, cold pewter
     metaphor: the circuit that will not close, AI demand raised the price of the power
       it needs
+- date: '2026-07-03'
+  topic: 'XPRIZE Wildfire autonomous-drone finals in Nenana, Alaska: Anduril, Dryad,
+    and AURA Foresight AI systems had 10 minutes to detect and suppress a controlled
+    wildfire in a 1,000 km2 UAF/ACUASI test box, no human in the loop; $3.5M track
+    prize, no winner announced yet'
+  slug: dispatch-2026-07-03-tenminuteclock
+  key_entities:
+  - xprize
+  - wildfire
+  - nenana
+  - acuasi
+  - uaf
+  - anduril
+  - dryad
+  - aura foresight
+  - autonomous drone
+  - ghost-x
+  - silvanet
+  - lattice
+  - detect and suppress
+  - fairbanks
+  archetype: 'field-HUD instrument: a machine''s ten-minute clock (orbital night canopy,
+    detection grid, converging swarm, target-lock countdown, frayed proven/unproven
+    split)'
+  palette: deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet
+    AI detection grid, ember-amber accents
+  voice: kokoro:am_fenrir
+  composition:
+    pov: orbital-aerial
+    motion_vector: radial-emanate
+    hero_treatment: multiplicity-swarm
+    layout: hud-instrument-frame
+    register: instrument-readout
+    palette: deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet
+      AI detection grid, ember-amber accents
+    metaphor: an AI races its own ten-minute clock to answer a fire it was built to
+      expect

@@ -4,7 +4,7 @@
     {
       "name": "SHARPNESS",
       "pass": true,
-      "detail": "median lapvar=712.1 (floor 14.0) \u2014 guards 'looks blurry'"
+      "detail": "median lapvar=808.6 (floor 14.0) \u2014 guards 'looks blurry'"
     },
     {
       "name": "HUD_TEXT",
@@ -14,7 +14,7 @@
     {
       "name": "CAPTION_TEXT",
       "pass": true,
-      "detail": "caption text hf p90=14.95 (floor 3.2) \u2014 guards 'captions generic/hard to read'"
+      "detail": "caption text hf p90=14.96 (floor 3.2) \u2014 guards 'captions generic/hard to read'"
     },
     {
       "name": "EVENT_CADENCE",
@@ -39,7 +39,7 @@
     {
       "name": "READABILITY",
       "pass": true,
-      "detail": "710 readable words checked, 0 too dim/low-contrast (need vis>=0.42, contrast>=2.0) \u2014 guards 'every word bright + legible'"
+      "detail": "711 readable words checked, 0 too dim/low-contrast (need vis>=0.42, contrast>=2.0) \u2014 guards 'every word bright + legible'"
     },
     {
       "name": "MUSIC",
@@ -48,9 +48,9 @@
     }
   ],
   "metrics": {
-    "sharpness_median": 712.1,
+    "sharpness_median": 808.6,
     "chart_hf_p90": 11.74,
-    "caption_hf_p90": 14.95,
+    "caption_hf_p90": 14.96,
     "event_spikes": 135,
     "biggest_gap_s": 0.0,
     "dead_windows": [],
@@ -60,7 +60,7 @@
     "scene_real_cuts": 5,
     "scene_framings": 5,
     "caption_cues": 26,
-    "readable_words": 710,
+    "readable_words": 711,
     "readability_fails": 0,
     "music_source": "sourced",
     "score": 10.0

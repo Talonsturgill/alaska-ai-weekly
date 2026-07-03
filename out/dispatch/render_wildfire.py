@@ -262,11 +262,11 @@ def _nodes():
 
 
 def scene_datapanel(f, local_t, dur):
-    rgb = np.zeros((H, W, 3), np.float32)
-    rgb[..., 0] = BG0[0] / 255
-    rgb[..., 1] = BG0[1] / 255
-    rgb[..., 2] = BG0[2] / 255
-    img = Image.fromarray((rgb * 255).astype(np.uint8), "RGB").convert("RGBA")
+    # faint canopy mottle + a soft ambient bloom behind the panel so the shot never reads as
+    # flat vector strokes on pure black (the atmosphere breathes behind the instrument)
+    bg = canopy_layer(21, 4.2, BG0, (12, 24, 20), 0.5)
+    img = Image.fromarray(np.clip(bg * 255, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
+    img = glow_disc(img, W * 0.5, H * 0.51, 150, (26, 62, 58), 0.55)
     d = ImageDraw.Draw(img)
 
     box_x0, box_y0, box_x1, box_y1 = 120, 560, 960, 1400
@@ -348,14 +348,23 @@ def scene_datapanel(f, local_t, dur):
 
 # ==================================================================================
 # ---------------- SHOT 3: subject portrait / drone swarm ----------------
+RIM = (255, 168, 96)   # warm rim-light color cast by the low smoke-lit horizon (light from below)
+
+
 def draw_ghost_x(d, cx, cy, s, alpha, color=SNOW):
     pts = [(cx, cy - s), (cx + s * 0.85, cy), (cx, cy + s), (cx - s * 0.85, cy)]
+    # warm rim pass, offset toward the low horizon light, then the cool key stroke on top --
+    # a lit object, not a flat outline glyph
+    rim_pts = [(x + 2, y + 3) for (x, y) in pts]
+    d.polygon(rim_pts, outline=(*RIM, int(140 * alpha)), width=3)
     d.polygon(pts, outline=(*color, int(255 * alpha)), width=2)
     d.line([(cx - s, cy - s), (cx + s, cy + s)], fill=(*color, int(160 * alpha)), width=1)
     d.line([(cx - s, cy + s), (cx + s, cy - s)], fill=(*color, int(160 * alpha)), width=1)
 
 
 def draw_tower(d, cx, base_y, h, alpha, color=SNOW):
+    # rim pass (warm, from below) under the key stroke
+    d.line([(cx + 2, base_y), (cx + 2, base_y - h)], fill=(*RIM, int(120 * alpha)), width=4)
     d.line([(cx, base_y), (cx, base_y - h)], fill=(*color, int(220 * alpha)), width=3)
     d.line([(cx - 16, base_y - h), (cx + 16, base_y - h)], fill=(*color, int(220 * alpha)), width=2)
     for k in range(3):
@@ -364,14 +373,19 @@ def draw_tower(d, cx, base_y, h, alpha, color=SNOW):
 
 
 def draw_web_node(d, cx, cy, r, alpha, color=AMBER):
+    d.ellipse([cx - r + 1, cy - r + 2, cx + r + 1, cy + r + 2], outline=(*RIM, int(120 * alpha)), width=3)
     d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(*color, int(230 * alpha)), width=2)
     for k in range(6):
         ang = k * math.pi / 3
         d.line([(cx, cy), (cx + math.cos(ang) * r * 2.2, cy + math.sin(ang) * r * 2.2)],
                fill=(*color, int(90 * alpha)), width=1)
+    # contact glow where the ground node sits (soft ellipse shadow-light beneath)
+    d.ellipse([cx - r * 1.4, cy + r * 1.2, cx + r * 1.4, cy + r * 1.9], fill=(*RIM, int(36 * alpha)))
 
 
 def draw_swarm_tri(d, cx, cy, s, alpha, color=VIOLET):
+    d.polygon([(cx + 2, cy - s + 3), (cx + s * 0.9 + 2, cy + s * 0.7 + 3), (cx - s * 0.9 + 2, cy + s * 0.7 + 3)],
+              outline=(*RIM, int(130 * alpha)), width=3)
     d.polygon([(cx, cy - s), (cx + s * 0.9, cy + s * 0.7), (cx - s * 0.9, cy + s * 0.7)],
               outline=(*color, int(255 * alpha)), width=2)
 
@@ -430,6 +444,8 @@ def scene_swarm(f, local_t, dur):
         tx = target_x - 260 + 260 * conv
         ty = 420 - 60 * conv
         img = glow_disc(img, W * 0.22, H * 0.42 - 260, 60, (*CYAN,), 0.4 * phase_a)
+        # warm contact glow where the tower meets the ground (grounded in the scene, not floating)
+        img = glow_disc(img, W * 0.22, H * 0.58, 30, (*RIM,), 0.35 * phase_a)
         d = ImageDraw.Draw(img)
         draw_tower(d, W * 0.22, H * 0.58, 260, phase_a)
 
@@ -523,9 +539,11 @@ def draw_lock_brackets(d, cx, cy, size, gap, color, alpha, width=3, rot=0.0):
 # ==================================================================================
 # ---------------- SHOT 4: macro countdown (target-lock reticle, tightens + reddens) ----------------
 def scene_countdown(f, local_t, dur):
-    bg = canopy_layer(6, 2.2, BG0, (14, 26, 22), 0.3)
+    bg = canopy_layer(6, 2.2, BG0, (16, 30, 25), 0.5)
     img = Image.fromarray(np.clip(bg * 255, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
     cx, cy = W * 0.5, H * 0.44
+    # soft ambient bloom behind the reticle field (kills the vector-on-void read)
+    img = glow_disc(img, cx, cy, 170, (30, 52, 46), 0.5)
 
     prog = min(1.0, local_t / (dur * 0.72))
     remain = max(0.0, 1.0 - prog)

@@ -1,27 +1,29 @@
-[
-  {
-    "url": "https://www.xprize.org/competitions/wildfire",
-    "outlet": "XPRIZE Foundation",
-    "note": "Official competition page: $11M total purse, $3.5M autonomous-track win, $1M Lockheed Martin detection bonus, June 15-25 test window, 1,000 km2 zone, 10-minute detect-and-suppress requirement."
-  },
-  {
-    "url": "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response",
-    "outlet": "XPRIZE Foundation",
-    "note": "Live blog of the Nenana, Alaska finals testing (June 11, 18, 26 2026 updates); confirms ACUASI/UAF partnership and team roster (Anduril, Dryad, AURA Foresight)."
-  },
-  {
-    "url": "https://www.xprize.org/news/meet-the-future-of-autonomous-wildfire-response-xprize-wildfire-announces-finalist-teams-advancing-in-11m-competition",
-    "outlet": "XPRIZE Foundation",
-    "note": "January 2026 finalist announcement: Anduril (Lattice AI, Sentry towers, Ghost-X drones), Dryad (Silvanet, Silvaguard), FireSwarm Solutions, Data Blanket, Wildfire Quest."
-  },
-  {
-    "url": "https://robohub.org/aura-foresight-reaches-global-xprize-wildfire-finals-in-alaska/",
-    "outlet": "Robohub",
-    "note": "June 19 2026 interview with AURA Foresight team co-lead Dr. Georgios Tzoumas confirming their Detect-Verify-Act approach and Alaska finals participation."
-  },
-  {
-    "url": "https://www.xprize.org/partners/alaska-center-for-unmanned-aircraft-systems-integration-acuasi",
-    "outlet": "XPRIZE Foundation",
-    "note": "Confirms ACUASI as one of the FAA's seven national UAS test sites and the Alaska finals test-range partner."
-  }
-]
+{
+  "sources": [
+    {
+      "url": "https://www.xprize.org/competitions/wildfire",
+      "outlet": "XPRIZE Foundation",
+      "note": "Official competition page: $11M total purse, $3.5M autonomous-track win, $1M Lockheed Martin detection bonus, June 15-25 test window, 1,000 km2 zone, 10-minute detect-and-suppress requirement."
+    },
+    {
+      "url": "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response",
+      "outlet": "XPRIZE Foundation",
+      "note": "Live blog of the Nenana, Alaska finals testing (June 11, 18, 26 2026 updates); confirms ACUASI/UAF partnership and team roster (Anduril, Dryad, AURA Foresight)."
+    },
+    {
+      "url": "https://www.xprize.org/news/meet-the-future-of-autonomous-wildfire-response-xprize-wildfire-announces-finalist-teams-advancing-in-11m-competition",
+      "outlet": "XPRIZE Foundation",
+      "note": "January 2026 finalist announcement: Anduril (Lattice AI, Sentry towers, Ghost-X drones), Dryad (Silvanet, Silvaguard), FireSwarm Solutions, Data Blanket, Wildfire Quest."
+    },
+    {
+      "url": "https://robohub.org/aura-foresight-reaches-global-xprize-wildfire-finals-in-alaska/",
+      "outlet": "Robohub",
+      "note": "June 19 2026 interview with AURA Foresight team co-lead Dr. Georgios Tzoumas confirming their Detect-Verify-Act approach and Alaska finals participation."
+    },
+    {
+      "url": "https://www.xprize.org/partners/alaska-center-for-unmanned-aircraft-systems-integration-acuasi",
+      "outlet": "XPRIZE Foundation",
+      "note": "Confirms ACUASI as one of the FAA's seven national UAS test sites and the Alaska finals test-range partner."
+    }
+  ]
+}
