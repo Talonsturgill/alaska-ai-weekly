@@ -1,181 +1,163 @@
 {
   "words": [
     {
-      "w": "The AI industry just asked Alaska",
-      "s": 0.645,
-      "e": 3.02,
+      "w": "An hour outside Fairbanks, in Nenana,",
+      "s": 0.575,
+      "e": 2.8,
       "seg": 0
     },
     {
-      "w": "for forty seven hundred acres.",
-      "s": 3.02,
-      "e": 4.645,
+      "w": "Alaska, someone lit a fire on",
+      "s": 2.8,
+      "e": 4.875,
       "seg": 0
     },
     {
-      "w": "This spring the Air Force offered",
-      "s": 5.545,
-      "e": 7.22,
+      "w": "command.",
+      "s": 4.875,
+      "e": 5.9,
+      "seg": 0
+    },
+    {
+      "w": "No firefighter answered it.",
+      "s": 6.44,
+      "e": 7.79,
       "seg": 1
     },
     {
-      "w": "land at three bases for AI",
-      "s": 7.22,
-      "e": 8.92,
+      "w": "A machine did.",
+      "s": 7.79,
+      "e": 9.065,
       "seg": 1
     },
     {
-      "w": "data centers, and proposals closed in",
-      "s": 8.92,
-      "e": 11.145,
-      "seg": 1
-    },
-    {
-      "w": "late June.",
-      "s": 11.145,
-      "e": 11.895,
-      "seg": 1
-    },
-    {
-      "w": "The catch is power. One large",
-      "s": 12.74,
-      "e": 14.79,
+      "w": "The University of Alaska Fairbanks ran",
+      "s": 9.58,
+      "e": 11.943,
       "seg": 2
     },
     {
-      "w": "data center can draw the electricity",
-      "s": 14.79,
-      "e": 16.615,
+      "w": "the range, through its drone research",
+      "s": 11.943,
+      "e": 13.905,
       "seg": 2
     },
     {
-      "w": "of a hundred thousand homes.",
-      "s": 16.615,
-      "e": 18.215,
+      "w": "center, ACUASI.",
+      "s": 13.905,
+      "e": 16.155,
       "seg": 2
     },
     {
-      "w": "That's roughly every house Chugach serves",
-      "s": 18.99,
-      "e": 21.003,
+      "w": "Three finalist teams flew their systems",
+      "s": 16.77,
+      "e": 19.107,
       "seg": 3
     },
     {
-      "w": "around Anchorage.",
-      "s": 21.003,
-      "e": 22.015,
+      "w": "into a 1,000 km\u00b2 test box.",
+      "s": 19.107,
+      "e": 22.407,
       "seg": 3
     },
     {
-      "w": "Neighbors next door are already wary.",
-      "s": 22.86,
-      "e": 24.76,
+      "w": "Anduril's towers and drones.",
+      "s": 22.407,
+      "e": 24.608,
+      "seg": 3
+    },
+    {
+      "w": "Dryad's solar powered sensor web.",
+      "s": 24.608,
+      "e": 27.007,
+      "seg": 3
+    },
+    {
+      "w": "AURA Foresight's watching swarm.",
+      "s": 27.007,
+      "e": 29.52,
+      "seg": 3
+    },
+    {
+      "w": "Each had 10 minutes to find",
+      "s": 30.035,
+      "e": 31.422,
       "seg": 4
     },
     {
-      "w": "The utility beside Eielson can't feed",
-      "s": 25.66,
-      "e": 27.86,
+      "w": "the fire and put it out.",
+      "s": 31.422,
+      "e": 32.885,
+      "seg": 4
+    },
+    {
+      "w": "No human in the loop.",
+      "s": 32.885,
+      "e": 34.61,
+      "seg": 4
+    },
+    {
+      "w": "$3.5M is riding on whoever does",
+      "s": 35.15,
+      "e": 38.1,
       "seg": 5
     },
     {
-      "w": "one today. Cook Inlet gas fell",
-      "s": 27.86,
-      "e": 30.135,
+      "w": "it best.",
+      "s": 38.1,
+      "e": 39.1,
       "seg": 5
     },
     {
-      "w": "from about thirty percent of its",
-      "s": 30.135,
-      "e": 31.485,
-      "seg": 5
-    },
-    {
-      "w": "fuel to under one percent.",
-      "s": 31.485,
-      "e": 33.435,
-      "seg": 5
-    },
-    {
-      "w": "At points last winter it burned",
-      "s": 34.265,
-      "e": 36.065,
+      "w": "But notice the limit.",
+      "s": 39.615,
+      "e": 40.84,
       "seg": 6
     },
     {
-      "w": "at least two hundred fifty thousand",
-      "s": 36.065,
-      "e": 37.84,
+      "w": "This fire was lit on cue,",
+      "s": 40.84,
+      "e": 42.665,
       "seg": 6
     },
     {
-      "w": "gallons of diesel a day.",
-      "s": 37.84,
-      "e": 39.215,
+      "w": "inside a box XPRIZE drew.",
+      "s": 42.665,
+      "e": 45.44,
       "seg": 6
     },
     {
-      "w": "The fix is a hundred twenty million",
-      "s": 40.115,
-      "e": 41.84,
+      "w": "Nobody has announced a winner.",
+      "s": 46.005,
+      "e": 47.955,
       "seg": 7
     },
     {
-      "w": "dollar turbine.",
-      "s": 41.84,
-      "e": 42.89,
+      "w": "And nobody has pointed these systems",
+      "s": 47.955,
+      "e": 50.005,
       "seg": 7
     },
     {
-      "w": "But turbine construction costs are up",
-      "s": 43.535,
-      "e": 45.585,
+      "w": "at a fire that wasn't invited.",
+      "s": 50.005,
+      "e": 52.23,
+      "seg": 7
+    },
+    {
+      "w": "Alaska's real fire season is what",
+      "s": 52.77,
+      "e": 54.795,
       "seg": 8
     },
     {
-      "w": "one hundred ninety five percent since",
-      "s": 45.585,
-      "e": 47.435,
+      "w": "asks that question next.",
+      "s": 54.795,
+      "e": 56.67,
       "seg": 8
-    },
-    {
-      "w": "twenty nineteen, because data centers everywhere",
-      "s": 47.435,
-      "e": 50.01,
-      "seg": 8
-    },
-    {
-      "w": "are buying them too.",
-      "s": 50.01,
-      "e": 51.135,
-      "seg": 8
-    },
-    {
-      "w": "So nothing is awarded, and nothing",
-      "s": 51.86,
-      "e": 53.523,
-      "seg": 9
-    },
-    {
-      "w": "is built.",
-      "s": 53.523,
-      "e": 54.16,
-      "seg": 9
-    },
-    {
-      "w": "Alaska holds the land, the cold,",
-      "s": 55.03,
-      "e": 56.83,
-      "seg": 10
-    },
-    {
-      "w": "and the choice.",
-      "s": 56.83,
-      "e": 57.63,
-      "seg": 10
     }
   ],
-  "speech_end": 57.88,
-  "total": 64.0,
+  "speech_end": 56.769999999999996,
+  "total": 60.0,
   "fps": 30
 }

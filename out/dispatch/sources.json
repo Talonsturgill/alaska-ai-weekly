@@ -1,29 +1,29 @@
 {
   "sources": [
     {
-      "outlet": "U.S. Air Force (af.mil, primary)",
-      "url": "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/",
-      "note": "4,700 acres, 12 parcels, 3 installations, Enhanced Use Lease; Moriarty quote (Apr 10, 2026)"
+      "url": "https://www.xprize.org/competitions/wildfire",
+      "outlet": "XPRIZE Foundation",
+      "note": "Official competition page: $11M total purse, $3.5M autonomous-track win, $1M Lockheed Martin detection bonus, June 15-25 test window, 1,000 km2 zone, 10-minute detect-and-suppress requirement."
     },
     {
-      "outlet": "KTUU / Alaska's News Source",
-      "url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/",
-      "note": "proposals due June 29; 5 parcels near Eielson, 3 on GVEA's grid; Hollister quote (Jun 8-12, 2026)"
+      "url": "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response",
+      "outlet": "XPRIZE Foundation",
+      "note": "Live blog of the Nenana, Alaska finals testing (June 11, 18, 26 2026 updates); confirms ACUASI/UAF partnership and team roster (Anduril, Dryad, AURA Foresight)."
     },
     {
-      "outlet": "Anchorage Daily News (Alex DeMarban)",
-      "url": "https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/",
-      "note": "Cook Inlet gas ~30% to <1% of GVEA fuel; ~100,000-household comparison; Hasquet + Bradish quotes (May 5, 2026)"
+      "url": "https://www.xprize.org/news/meet-the-future-of-autonomous-wildfire-response-xprize-wildfire-announces-finalist-teams-advancing-in-11m-competition",
+      "outlet": "XPRIZE Foundation",
+      "note": "January 2026 finalist announcement: Anduril (Lattice AI, Sentry towers, Ghost-X drones), Dryad (Silvanet, Silvaguard), FireSwarm Solutions, Data Blanket, Wildfire Quest."
     },
     {
-      "outlet": "Fairbanks Daily News-Miner (Jack Barnwell)",
-      "url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html",
-      "note": "~$120M GE LM6000; $50k deposit; July 13 executive session; at least 250,000 gal diesel/day; +195% turbine costs + early-2030s waitlists per a Bloomberg report (Jun 28, 2026)"
+      "url": "https://robohub.org/aura-foresight-reaches-global-xprize-wildfire-finals-in-alaska/",
+      "outlet": "Robohub",
+      "note": "June 19 2026 interview with AURA Foresight team co-lead Dr. Georgios Tzoumas confirming their Detect-Verify-Act approach and Alaska finals participation."
     },
     {
-      "outlet": "JBER Public Affairs (jber.jb.mil, primary)",
-      "url": "https://www.jber.jb.mil/News/Articles/Display/Article/4527005/undersecretary-of-the-air-force-talks-modernization-in-alaska/",
-      "note": "Under Secretary Lohmeier June 22-24 visit; $7-8B five-year projection cited by Col. Mabbutt (Jun 25, 2026)"
+      "url": "https://www.xprize.org/partners/alaska-center-for-unmanned-aircraft-systems-integration-acuasi",
+      "outlet": "XPRIZE Foundation",
+      "note": "Confirms ACUASI as one of the FAA's seven national UAS test sites and the Alaska finals test-range partner."
     }
   ]
 }

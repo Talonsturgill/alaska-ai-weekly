@@ -1,232 +1,126 @@
 {
-  "concept": "The Circuit That Won't Close: the AI industry asked Alaska for 4,700 acres of military land for data centers, but Cook Inlet gas collapsed, GVEA burned diesel all winter, and the $120M turbine fix costs +195% since 2019 because the same AI buildout is buying every turbine. A living print-brutalist ledger on warm parchment that assembles, stamps, drains, and visibly refuses to balance; the price coil is drawn out of the demand glyphs and the final circuit carries the demand-to-price feedback arc.",
+  "concept": "The Ten Minute Clock: the XPRIZE Wildfire autonomous-drone finals in Nenana, Alaska. AI-powered sensor towers and drone swarms from three finalist teams (Anduril, Dryad, AURA Foresight) detect and suppress a controlled wildfire ignition within 10 minutes, with no human in the loop, on a 1,000 km2 UAF/ACUASI test range. $11M purse. No winner announced yet. Honest caveat: proven in a box XPRIZE drew, not yet against a fire that wasn't invited.",
   "derived_from": "scratch",
-  "style_mode": "data-brutalist (print come alive: paper fiber, ink bleed, stamp impacts, foil vermilion)",
+  "style_mode": "field-HUD / instrument",
   "taste_dials": {
-    "design_variance": 8,
-    "motion_intensity": 6,
-    "visual_density": 7,
-    "color_boldness": 7,
-    "texture_grain": 6,
-    "grade_strength": 4
+    "DESIGN_VARIANCE": 6,
+    "MOTION_INTENSITY": 7,
+    "VISUAL_DENSITY": 6,
+    "COLOR_BOLDNESS": 7,
+    "TEXTURE_GRAIN": 6,
+    "GRADE_STRENGTH": 6
   },
   "references": [
-    "Bloomberg Businessweek print-data covers (Turley era)",
-    "Kurzgesagt assembly clarity",
-    "Buck kinetic-type number moments"
+    "Kurzgesagt (layered depth, glow, atmospheric parallax)",
+    "Bloomberg/Vox data-panel clarity (vector HUD readouts, numbers animate to their point)"
   ],
-  "voice": "kokoro:af_heart (af_nicole planned but proved a slow whisper voice; af_heart grade A swapped in at build, still breaking the 3-run male streak)",
   "fingerprint": {
-    "pov": "exploded-diagram",
-    "motion_vector": "assemble-build",
-    "hero_treatment": "data-as-subject",
-    "layout": "grid-modular",
-    "register": "data-brutalist",
-    "palette": "warm parchment field, carbon ink, hot vermilion signal, cold pewter",
-    "metaphor": "the circuit that will not close, AI demand raised the price of the power it needs"
+    "pov": "orbital-aerial",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "multiplicity-swarm",
+    "layout": "hud-instrument-frame",
+    "register": "instrument-readout",
+    "palette": "deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet AI detection grid, ember-amber accents",
+    "metaphor": "an AI races its own ten-minute clock to answer a fire it was built to expect"
   },
-  "palette": "warm parchment field, carbon ink, hot vermilion signal, cold pewter",
-  "divergence_note": "First light-ground print-world Dispatch: warm parchment and carbon ink where the last two were dark worlds (Yakutat's basalt territory map with a crimson seismic line, the sonar's amber echoes on abyssal black). The camera stands in schematic ledger space (exploded-diagram) from frame one: the map-open was cut after critique because it echoed Yakutat, so Alaska arrives as a pasted evidence clipping ON the ledger, not as a territory map. The subject is the data itself assembling (assemble-build), not a structure traced across a map (horizontal-traverse) or a swarm rising (vertical-rise). Layout is a hard modular ledger grid, not map-territory or a HUD bezel. Register is data-brutalist print, not editorial-schematic or instrument-readout. All 7 axes differ from both of the last 2 dispatches, and the spatial signature (exploded-diagram, grid-modular, assemble-build) appears nowhere in the last 4.",
-  "honest_caveat": "Nothing is awarded, nothing is built, nothing is energized: drawn as a circuit whose breaker stays OPEN, every unbuilt element dotted and stamped PROPOSED (the loudest label), pulses dying at the gas gap twice, with the demand-to-price feedback arc showing WHY the loop resists closing. Closing type asks SHOULD ALASKA SAY YES?",
+  "palette": "deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet AI detection grid, ember-amber accents",
+  "divergence_note": "The last two Dispatches were a top-down map with a crimson seismic line resolving across a static basalt graticule (07-01), and an exploded, assembling parchment ledger of grid cells (07-02), both flat data-on-a-plane compositions with a single steady camera relationship to a static field. This Dispatch moves in three dimensions instead: it opens looking obliquely down on a living, dark forest at night, pushes into an instrument HUD that boots into being, cuts to an immersive eye-level pass through a converging drone swarm, punches into a macro countdown insert, then pulls up and out through a two-world split before returning to the wide night landscape. No shot reuses map-territory or grid-modular staging, the palette trades crimson and parchment for a near-black night canopy with a synthetic cyan detection grid, and the motion vector is a radiating pulse and a converging swarm, not a horizontal traverse or an assembling diagram.",
+  "beats": [
+    "HUD grid powers on over a dark boreal forest at night; a single white-hot ignition point ignites center-frame.",
+    "A pulse ring radiates outward from the point; 1,000 km2 / NENANA, ALASKA resolves lower-frame.",
+    "No firefighter answered it, a machine did -- a status line types HUMAN: NONE.",
+    "ACUASI / UAF GEOPHYSICAL INSTITUTE credit tag builds in; the sensor-network map boots into being, nodes lighting across the box.",
+    "Triangulation lines converge on the ignition point from multiple nodes; the box seam sharpens into a clean rule.",
+    "Whip-pan into the physical world: drones streak in low over the canopy toward the point.",
+    "ANDURIL label plus Ghost-X drone and Sentry tower silhouettes flash into place.",
+    "DRYAD label plus the solar sensor web glows along the ground.",
+    "AURA FORESIGHT label plus a tighter swarm cluster banks toward the point.",
+    "Match-cut to ECU: a 10:00 countdown ticks down fast as the swarm converges; a suppression burst fires.",
+    "$11M settles beside the extinguished, smoking point; the readout flips to 00:00 / CONTAINED.",
+    "Pull-out: the crisp lit box seen from above, its edge fraying into unlit fog toward a dissolving question mark.",
+    "NO WINNER ANNOUNCED YET settles over the foggy half as the VO states the limit plainly.",
+    "Crossfade back out to the wide night landscape, bookending shot 1; the VO lands its last line.",
+    "ALASKA.AI wordmark reveals in the vast dark negative space.",
+    "Tagline and source credit settle in staged beats; a gentle fade, motion running to the final frame."
+  ],
   "shots": [
     {
       "id": 1,
-      "t": "0.0-12.2",
-      "name": "THE ASK",
+      "t": "0.0-9.6",
       "framing": "wide-establish",
-      "pov": "exploded-diagram",
-      "layout": "single-object-void",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "data-as-subject",
+      "pov": "orbital-aerial",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landscape-as-subject",
       "transition_in": "",
       "thread": "",
-      "centered": "4,700 ACRES stamps first in kinetic vermilion type; Alaska pastes in as an inked evidence clipping; three base stamps punch into the clipping; 12 solid-ink parcel chits tick in",
-      "means": "the ask, huge and concrete, on a ledger from frame one"
+      "centered": "the ignition flares awake center-frame as the grid boots on around it",
+      "means": "opening the film: a dark living forest, then a machine's grid claims it"
     },
     {
       "id": 2,
-      "t": "12.2-25.2",
-      "name": "THE APPETITE",
+      "t": "9.6-22.4",
       "framing": "data-panel",
-      "pov": "exploded-diagram",
-      "layout": "grid-modular",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
       "motion_vector": "scroll-data",
       "hero_treatment": "data-as-subject",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "centered": "the 12 parcel chits multiply into a 100-house modular grid flooding with vermilion load; ~100,000 HOUSEHOLDS locks; the Hollister quote chip slams in at a tilt",
-      "means": "appetite quantified, and the neighbors get the loudest human line"
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "centered": "the sensor node network triangulating on the ignition point",
+      "means": "the detection layer boots into being from the first shot's pulse -- the machine assembling its own picture"
     },
     {
       "id": 3,
-      "t": "25.2-39.7",
-      "name": "THE EMPTY PIPE",
-      "framing": "two-up",
-      "pov": "exploded-diagram",
-      "layout": "fullbleed-split",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "data-as-subject",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "centered": "Cook Inlet gas band drains ABOUT 30% to UNDER 1% (LAST YEAR chit) beside a rising diesel-barrel stack AT LEAST 250,000 GALLONS A DAY (LAST WINTER, AT PEAKS chit)",
-      "means": "demand found an empty supply; the stopgap burned all winter"
-    },
-    {
-      "id": 4,
-      "t": "39.7-51.3",
-      "name": "THE TURBINE",
+      "t": "22.4-30.0",
       "framing": "subject-portrait",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "structure-as-subject",
-      "transition_in": "assemble",
-      "thread": "build",
-      "centered": "the LM6000 draws itself points-to-faces; ~$120 MILLION stamps; the Shot-2 house glyphs stream back and chain into a coil strangling the machine, +195% SINCE 2019, cause slug THE BUYERS: DATA CENTERS EVERYWHERE",
-      "means": "the same appetite that knocked priced the fix; the coil is made of houses so the cause is visible muted"
-    },
-    {
-      "id": 5,
-      "t": "51.3-60.4",
-      "name": "THE OPEN CIRCUIT",
-      "framing": "wide-establish",
-      "pov": "exploded-diagram",
-      "layout": "single-object-void",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "data-as-subject",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "centered": "the turbine shrinks into its node; the loop draws DEMAND-LAND-GENERATION-GAS with an open breaker gap plus a vermilion feedback arc DEMAND to price tag; pulses die at the gap; PROPOSED stamps loudest; closing type ALASKA HOLDS THE LAND, THE COLD, AND THE CHOICE then SHOULD ALASKA SAY YES?",
-      "means": "everything is real except the connection; the ending asks the reader to argue"
-    },
-    {
-      "id": 6,
-      "t": "60.4-64.0",
-      "name": "COLOPHON",
-      "framing": "push-detail",
-      "pov": "macro-closeup",
+      "pov": "eye-level-immersive",
       "layout": "centered-hero-lowerthird",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "structure-as-subject",
-      "transition_in": "mask-wipe",
-      "thread": "build",
-      "centered": "a vermilion press-roller sweep; the ALASKA.AI wordmark stamps in with tagline and source colophon in staged beats",
-      "means": "the ledger is signed; the story stays open"
-    }
-  ],
-  "beats": [
-    {
-      "id": 1,
-      "t": "0.0-3.5",
-      "new_element": "kinetic vermilion type stamps 4,700 ACRES with ink-bleed settle; eyebrow ALASKA.AI DISPATCH; sub-line THE AI INDUSTRY'S ASK OF ALASKA",
-      "transition": "stamp-in (designed poster frame one)",
-      "means": "the ask, huge and concrete"
-    },
-    {
-      "id": 2,
-      "t": "3.5-6.5",
-      "new_element": "Alaska evidence clipping pastes in with tape corners and torn edge; three base stamps punch in: JBER, EIELSON AFB, CLEAR SFS",
-      "transition": "paste + stamp impacts",
-      "means": "where the offer sits, as an exhibit on the ledger"
-    },
-    {
-      "id": 3,
-      "t": "6.5-9.0",
-      "new_element": "12 solid-ink parcel chits tick in a strip; ink-slug print PROPOSALS CLOSED JUNE 29 (KTUU)",
-      "transition": "chits tick in sequence",
-      "means": "live and dated"
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "centered": "the drone swarm converging, each team's hardware labeled as it banks in",
+      "means": "the flat map becomes physical machinery in flight -- from plan to action"
     },
     {
       "id": 4,
-      "t": "9.0-12.5",
-      "new_element": "parcel chits multiply into a 100-house modular grid; vermilion load floods first rows; label ONE LARGE DATA CENTER",
-      "transition": "graphic-match: chit geometry carried into grid",
-      "means": "the appetite appears"
+      "t": "30.0-39.1",
+      "framing": "macro-closeup",
+      "pov": "macro-closeup",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "the 10:00 countdown ticking to 00:00 as the point goes dark",
+      "means": "the swarm's converging point matches directly into the countdown's center -- arrival is the payoff"
     },
     {
       "id": 5,
-      "t": "12.5-16.0",
-      "new_element": "counter locks on ink slug = THE POWER OF ~100,000 HOUSEHOLDS (ADN); grid fully flooded",
-      "transition": "counter roll to lock",
-      "means": "appetite quantified"
+      "t": "39.1-51.8",
+      "framing": "two-up",
+      "pov": "top-down-map",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "centered": "the crisp lit box against the foggy unknown beyond it, and the dissolving question mark",
+      "means": "pulling back to reveal the boundary of what was actually proven -- the honest caveat as a picture"
     },
     {
       "id": 6,
-      "t": "16.0-20.0",
-      "new_element": "quote chip slams in at a tilt, reversed-out Hollister line, NEARBY RESIDENT, NORTH POLE (KTUU)",
-      "transition": "stamp slam (pattern interrupt)",
-      "means": "the neighbors are in the film with the loudest human line"
-    },
-    {
-      "id": 7,
-      "t": "20.0-23.0",
-      "new_element": "the load line dives and becomes the top edge of a band labeled COOK INLET GAS, SHARE OF GVEA FUEL, ABOUT 30%",
-      "transition": "carried-element: the line changes role",
-      "means": "the supply that used to be there"
-    },
-    {
-      "id": 8,
-      "t": "23.0-26.0",
-      "new_element": "the band drains to UNDER 1%; time chit LAST YEAR stamps",
-      "transition": "drain animation to lock",
-      "means": "the collapse, dated"
-    },
-    {
-      "id": 9,
-      "t": "26.0-30.0",
-      "new_element": "right panel: diesel barrels stack fast; counter AT LEAST 250,000 GALLONS A DAY; time chit LAST WINTER, AT PEAKS; frost creeps; GVEA plate sets as the barrels finish",
-      "transition": "split panel activates, plate folds in",
-      "means": "the stopgap at its peaks, and the utility at its limits"
-    },
-    {
-      "id": 10,
-      "t": "30.0-34.0",
-      "new_element": "LM6000 draws itself points-to-edges-to-faces; plate GE LM6000, 45 TO 58 MW",
-      "transition": "assemble: geometry builds",
-      "means": "the fix, as a machine"
-    },
-    {
-      "id": 11,
-      "t": "34.0-38.0",
-      "new_element": "price stamp slams with paper shake: ~$120 MILLION",
-      "transition": "stamp impact",
-      "means": "the price of the fix"
-    },
-    {
-      "id": 12,
-      "t": "38.0-42.0",
-      "new_element": "house glyphs stream back and chain into a coil strangling the machine; kinetic +195% SINCE 2019; cause slug THE BUYERS: DATA CENTERS EVERYWHERE, per Bloomberg, via the News-Miner; calendar chits WAITLISTS INTO THE EARLY 2030s",
-      "transition": "glyph stream + coil wrap; the music bed dies on the tightening creak",
-      "means": "the twist DRAWN: demand strangles the machine it wants"
-    },
-    {
-      "id": 13,
-      "t": "42.0-47.0",
-      "new_element": "turbine shrinks into a node; circuit draws as the music restarts: DEMAND solid, LAND solid, GENERATION dotted, GAS an open breaker gap; vermilion FEEDBACK ARC draws DEMAND to the price tag; ghost stamp PROPOSED loudest",
-      "transition": "carried-element: turbine becomes a node; hard audio seam resolves",
-      "means": "the honest caveat plus the self-feeding loop, as one picture"
-    },
-    {
-      "id": 14,
-      "t": "47.0-52.0",
-      "new_element": "pulses run the loop and die at the gap, twice; ink slugs NO AWARDS ANNOUNCED and JULY 13 GVEA EXECUTIVE SESSION",
-      "transition": "pulse runs, dies, repeats",
-      "means": "open, and Alaska decides"
-    },
-    {
-      "id": 15,
-      "t": "52.0-57.5",
-      "new_element": "closing type stamps reversed-out: ALASKA HOLDS THE LAND, THE COLD, AND THE CHOICE. then SHOULD ALASKA SAY YES?",
-      "transition": "two staged stamps",
-      "means": "the thesis lands and asks the reader to argue"
-    },
-    {
-      "id": 16,
-      "t": "57.5-64.0",
-      "new_element": "mask-wipe press-roller sweep; wordmark stamps, tagline, source colophon (af.mil, KTUU, ADN, News-Miner) in staged beats; paper drift and gentle fade to final frame",
-      "transition": "mask-wipe into colophon",
-      "means": "signed ledger, open story"
+      "t": "51.8-60.0",
+      "framing": "wide-establish",
+      "pov": "orbital-aerial",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "transition_in": "crossfade",
+      "thread": "match",
+      "centered": "the wordmark settling into the vast dark negative space, then the tagline and source credit",
+      "means": "returning to the wide night landscape closes the loop the film opened on, then signs off"
     }
-  ],
-  "build_note": "Shot times retimed at build to the MEASURED kokoro word timings (picture locked to voice, per Gate B critique): the ask 0-12.2, appetite 12.2-25.2, empty pipe 25.2-39.7, turbine 39.7-51.3 ($120M stamps on 'hundred twenty million' at 41.0, +195% on 'one hundred ninety five' at 45.9), open circuit 51.3-60.4 (question holds 2.6s), colophon 60.4-64. VO seg 9 re-recorded to 'turbine construction costs' for exact noun accuracy."
+  ]
 }

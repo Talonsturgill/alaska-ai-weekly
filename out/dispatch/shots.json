@@ -3,52 +3,46 @@
     {
       "id": 1,
       "start": 0,
-      "end": 366,
+      "end": 288,
       "framing": "wide-establish",
-      "transition_in": "",
-      "note": "THE ASK: 4,700 ACRES stamps; evidence clipping; parcel chits"
+      "transition_in": ""
     },
     {
       "id": 2,
-      "start": 366,
-      "end": 756,
+      "start": 288,
+      "end": 672,
       "framing": "data-panel",
-      "transition_in": "graphic-match",
-      "note": "THE APPETITE: chits multiply into the 100-house grid; Hollister chip"
+      "transition_in": "fui-boot"
     },
     {
       "id": 3,
-      "start": 756,
-      "end": 1191,
-      "framing": "two-up",
-      "transition_in": "carried-element",
-      "note": "THE EMPTY PIPE: gas band drains beside diesel stack"
+      "start": 672,
+      "end": 900,
+      "framing": "subject-portrait",
+      "transition_in": "whip-pan"
     },
     {
       "id": 4,
-      "start": 1191,
-      "end": 1539,
-      "framing": "subject-portrait",
-      "transition_in": "assemble",
-      "note": "THE TURBINE: LM6000 assembles; $120M; the glyph coil +195%"
+      "start": 900,
+      "end": 1173,
+      "framing": "macro-closeup",
+      "transition_in": "match-cut"
     },
     {
       "id": 5,
-      "start": 1539,
-      "end": 1812,
-      "framing": "wide-establish",
-      "transition_in": "carried-element",
-      "note": "THE OPEN CIRCUIT: loop + feedback arc; pulses die; the question"
+      "start": 1173,
+      "end": 1554,
+      "framing": "two-up",
+      "transition_in": "pull-out"
     },
     {
       "id": 6,
-      "start": 1812,
-      "end": 1920,
-      "framing": "push-detail",
-      "transition_in": "mask-wipe",
-      "note": "COLOPHON: press roller; wordmark; sources"
+      "start": 1554,
+      "end": 1800,
+      "framing": "wide-establish",
+      "transition_in": "crossfade"
     }
   ],
   "fps": 30,
-  "total": 1920
+  "total": 1800
 }
