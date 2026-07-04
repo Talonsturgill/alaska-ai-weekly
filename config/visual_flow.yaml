@@ -1,0 +1,34 @@
+# ALASKA.AI Dispatch, VISUAL FLOW thresholds (the "never rest + all senses" rule)
+# =================================================================================
+# Governs the MICRO cadence (a story-advancing on-screen change at least every ~5s), say-it-show-it
+# VO coverage, and sound-paired-to-picture. Read by scripts/flow_check.py (back-test + Gate 0A flow
+# block) and .claude/skills/alaska-dispatch/quality_gate.py (the SFX_EVENTS check). Full doctrine +
+# rationale: docs/craft/VISUAL_FLOW.md. Numbers are the CEILING/target, calibrated against back-tests.
+
+beats:
+  min: 12                      # >= 12 timed, story-advancing beats across ~60s (matches BEAT_DENSITY)
+  max: 20                      # more than this in 60s is usually strobing, not storytelling
+  max_gap_s: 5.0               # NEVER-REST ceiling: start-to-start gap between consecutive beats <= 5s
+  target_gap_s: [2.5, 4.0]     # aim here; a run whose MEDIAN gap sits in this band flows well
+  required_fields: [t, vo, shows, sfx, means]   # each beat is an object with these (see VISUAL_FLOW.md §3)
+
+coverage:
+  # say-it-show-it: the beats must cover the spoken timeline; no stretch of VO longer than this may pass
+  # without a beat illustrating it. Measured against audio/words60.json + timing60.json (speech_end).
+  max_uncovered_vo_gap_s: 5.0
+  head_start_s: 2.0            # first beat must start within this many seconds of t=0 (open on the stake)
+
+sfx:
+  # sound-paired-to-picture. The per-run audio script emits audio/sfx_events.json (a list of
+  # {t, kind, label}); quality_gate.py's SFX_EVENTS check verifies each produced a real level lift.
+  events_json: audio/sfx_events.json
+  min_events_per_shot: 1       # every shot has at least one motivated sound event
+  min_events_total: 8          # a 60s piece with fewer than this is under-sonified
+  kinds: [pop, whoosh, riser, hit, ambient, tick, boom, lock, pulse]   # the elemental grammar + our extensions
+  lift_db_floor: 1.0           # a planned event must lift the master's local band by >= this vs its neighborhood
+  duck_under_vo: true          # SFX sit under the VO; the audio gate already enforces VO dominance + -14 LUFS
+
+# scoring (for the back-test report + the flow-critic's objective half; not all are hard-gated on day one)
+score:
+  hard_gate: [beats_min, max_gap, coverage, sfx_min_total]   # these fail the run
+  advisory:  [median_gap_in_target, sfx_per_shot, head_start]  # these warn + feed the critic

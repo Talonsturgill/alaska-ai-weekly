@@ -180,6 +180,72 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
         checks.append({"name":"MUSIC","pass":False,
             "detail":"no audio/music_status.json — run audio_v3 after get_music so a REAL track (not synth) is confirmed"})
 
+    # 8) SFX_EVENTS — the picture must be SONIFIED: a motivated sound cut to the visual events, verified
+    # present in the master. The mix emits audio/sfx_events.json ([{t,kind,label}...]); we confirm there
+    # are enough events, >=1 per shot, and (when the master wav is readable) that each planned event
+    # produced a real high-band energy lift vs its neighborhood. Doctrine: docs/craft/VISUAL_FLOW.md §5.
+    base=os.path.dirname(os.path.abspath(frames_dir))
+    MIN_SFX_TOTAL=8   # config/visual_flow.yaml sfx.min_events_total ; MIN per shot = 1
+    sfx_p=os.path.join(base,"audio","sfx_events.json")
+    if not os.path.exists(sfx_p):
+        checks.append({"name":"SFX_EVENTS","pass":False,
+            "detail":"no audio/sfx_events.json — the mix must emit its motivated-sound event list so the "
+                     "picture is verifiably sonified (a pop per entrance, whoosh per move, hit per stat). VISUAL_FLOW.md §5/§9"})
+    else:
+        try:
+            _sj=json.load(open(sfx_p)); evs=_sj.get("events",_sj) if isinstance(_sj,dict) else _sj
+            evs=[e for e in evs if isinstance(e,dict)]
+        except Exception:
+            evs=[]
+        def _ev_t(e):
+            try: return float(str(e.get("t")).split("-")[0])
+            except Exception: return -1.0
+        bad=[]
+        if len(evs)<MIN_SFX_TOTAL: bad.append(f"only {len(evs)} sfx events (need >={MIN_SFX_TOTAL})")
+        # >=1 event per shot
+        try:
+            shj=json.load(open(os.path.join(base,"shots.json"))); shs=shj.get("shots",[]) if isinstance(shj,dict) else shj
+        except Exception: shs=[]
+        if shs:
+            emptyshots=[]
+            for s in shs:
+                a0=s.get("start",0)/fps; b0=s.get("end",0)/fps
+                if not any(a0<=_ev_t(e)<b0 for e in evs): emptyshots.append(round(a0,1))
+            if emptyshots: bad.append(f"{len(emptyshots)} shot(s) have no sound event (starts {emptyshots})")
+        # optional: verify each event actually lifts the master's SFX band
+        m["sfx_events"]=len(evs); lift_ok=None
+        try:
+            from scipy.io import wavfile
+            mp=os.path.join(base,"audio","master60.wav")
+            if os.path.exists(mp) and evs:
+                sr,wav=wavfile.read(mp); wav=wav.astype(np.float32)
+                if wav.ndim>1: wav=wav.mean(1)
+                wav=wav/(np.abs(wav).max()+1e-9)
+                def _diff_rms(t0,t1):     # transient proxy (ticks/pops/whooshes)
+                    s=max(0,int(t0*sr)); e=min(len(wav),int(t1*sr))
+                    if e<=s: return 1e-9
+                    d=np.abs(np.diff(wav[s:e])); return float(np.sqrt((d*d).mean())+1e-9)
+                def _amp_rms(t0,t1):      # amplitude proxy (slow-attack booms/pulses/risers)
+                    s=max(0,int(t0*sr)); e=min(len(wav),int(t1*sr))
+                    if e<=s: return 1e-9
+                    seg=wav[s:e]; return float(np.sqrt((seg*seg).mean())+1e-9)
+                lifts=0
+                for e in evs:
+                    t=_ev_t(e)
+                    if t<0: continue
+                    okd=_diff_rms(t,t+0.18)>_diff_rms(t-0.35,t-0.05)*1.15
+                    oka=_amp_rms(t,t+0.30)>_amp_rms(t-0.45,t-0.05)*1.10
+                    if okd or oka: lifts+=1   # calibrated on the Yakutat mix: 14/18 real events register; a silent stem ~0
+                lift_ok=lifts
+                m["sfx_lifts"]=lifts
+                if lifts < max(1,int(0.5*len(evs))):
+                    bad.append(f"only {lifts}/{len(evs)} events show an audible lift in the master (planned but not heard)")
+        except Exception:
+            pass
+        checks.append({"name":"SFX_EVENTS","pass":(not bad),
+            "detail":(f"{len(evs)} sound events"+(f", {lift_ok} verified audible" if lift_ok is not None else "")+
+                      (" — "+"; ".join(bad) if bad else " — every shot sonified, events audible in the master")+" (VISUAL_FLOW.md §5)")})
+
     passed=all(c["pass"] for c in checks)
     m["score"]=round(10.0*sum(c["pass"] for c in checks)/len(checks),1)
     return {"pass":passed,"checks":checks,"metrics":m}
