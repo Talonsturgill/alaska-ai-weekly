@@ -184,6 +184,18 @@ def write_shots(shots, total, path=None):
     json.dump({"shots": shots, "fps": FPS, "total": int(total)}, open(path, "w"), indent=2)
     return path
 
+def write_sfx_events(events, path=None):
+    """Emit the motivated-sound event list the SFX_EVENTS gate reads (sound-paired-to-picture,
+    docs/craft/VISUAL_FLOW.md §5/§9). `events` is a list of dicts {t:float seconds, kind:str (one of
+    pop/whoosh/riser/hit/ambient/tick/boom/lock/pulse), label:str}. Build it in the audio mix by
+    appending one row for every SFX you place() into the mix, so the plan, the render, and the mix agree.
+    Call once from the audio script's main()."""
+    path = path or os.path.join(HERE, "audio", "sfx_events.json")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    ev = [{"t": round(float(e["t"]), 3), "kind": e.get("kind", "hit"), "label": e.get("label", "")} for e in events]
+    json.dump({"events": ev, "n": len(ev)}, open(path, "w"), indent=2)
+    return path
+
 def xfade(a, b, t):
     """Crossfade / dissolve RGB image a -> b (t in 0..1). Reflection, time passing, a soft link."""
     return Image.blend(a, b, float(max(0.0, min(1.0, t))))

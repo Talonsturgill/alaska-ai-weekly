@@ -65,6 +65,9 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
   run to the storyboard. The single most damaging shortcut this routine can take is `cp render_lastweek.py
   render_thisweek.py` and re-skinning the hero; that is what shipped a salmon video identical to the
   beluga. It is forbidden (see Phase 4.5 + Phase 5). Import the helpers; build the composition new.
+- docs/craft/CINEMATIC_SCENE_CRAFT.md + docs/craft/VISUAL_FLOW.md, the Director's Brain: scene/transition
+  craft (MOVE vs CUT, morphs) + the constant-flow discipline (five-second rule, say-it-show-it, sound
+  paired to every visual event; thresholds in config/visual_flow.yaml). Read both before storyboarding.
 - .claude/skills/deep-research-ak/, research beats + credibility ranks.
 - config/voices.yaml, approved narration voices. config/dispatch_rubric.yaml, the WORLD-CLASS grade (ship 9.0).
 - docs/WORLD_CLASS.md, REQUIRED add-on (read it): anti-slop creed, per-Dispatch TASTE DIALS + STYLE MODE,
@@ -135,10 +138,18 @@ PHASE 4: PRODUCE LIKE A MOVIE PRODUCER (illustrate first; vary everything)
   are muted). Break the ~60s into 12-16 BEATS, ~3-4s each; every beat introduces ONE new
   STORY-ADVANCING visual (a new element, a state change, a reveal, a reframe) reached by a MOTIVATED
   transition (match cut, morph, mask/whip, focus-pull, the cut MEANS something), with the scene's
-  STATE visibly evolving to mirror the arc (noisy→clean, frozen→thawing, unknown→measured). Progressive
+  STATE visibly evolving to mirror the arc (noisy->clean, frozen->thawing, unknown->measured). Progressive
   disclosure: reveal one piece, let it land, then add/replace the next as the VO reaches it. The VO
   rides the beats. See docs/VIDEO_PRODUCTION_STANDARD.md §3B. If muting the voice loses the story, the
   storyboard isn't done.
+- THE FIVE-SECOND RULE + ALL THE SENSES (docs/craft/VISUAL_FLOW.md, thresholds config/visual_flow.yaml).
+  Beats in storyboard.json are TIMED OBJECTS, not prose: each beat is {t:"9.0-13.5", vo:"<the VO phrase
+  it illustrates>", shows:"<the ONE new on-screen thing>", sfx:"<the paired motivated sound>", means:
+  "<why it matters>"}. Plan them so: start-to-start gap <= 5.0s, EVERY beat names a concrete sound
+  (a pop as it enters, a whoosh on the move, a riser peaking on the reveal, a hit on the stat; never
+  just "music"), and the beats COVER the VO timeline (say-it-show-it: every sentence the narrator
+  speaks has a beat drawing it; orphan narration is a defect). Numerals on screen; nothing rests > 5s;
+  the eye AND the ear get every beat. scripts/flow_check.py enforces this inside Gate 0A.
 - COLOR + DESIGN FREEDOM. The brand THROUGHLINES you keep every time are only: the ALASKA.AI
   wordmark/eyebrow + "alaska.ai" signoff, the Fraunces Black + JetBrains Mono type system, and
   a high craft bar. EVERYTHING ELSE IS YOUR CALL. Choose a fresh color world that fits THIS
@@ -213,7 +224,11 @@ film, BEFORE a single frame is rendered. You may not write or copy scene code un
    (not a relabel, would a muted viewer call it a different video?), silent-first storytelling (does the
    beat map carry the story with the sound off?), and retention. Fix on paper and re-run until it returns
    ship:true. Paper fixes are nearly free; rendered fixes are not.
-Only when BOTH 0A and 0B are green do you proceed to build. Carry the board summary into the Gmail draft.
+5. GATE 0C: FLOW: spawn ONE `flow-critic` (no-spawn, MODE=PRE) to red-team the beat map against
+   docs/craft/VISUAL_FLOW.md: is every VO sentence illustrated (no orphan narration)? is each timed beat
+   a STORY-ADVANCING change (not drift dressed as a beat)? does every beat name the RIGHT motivated sound?
+   Fix on paper and re-run until it returns ship:true.
+Only when 0A, 0B, AND 0C are green do you proceed to build. Carry the board summary into the Gmail draft.
 
 PHASE 5: BUILD (to the standard, 9:16)
 Build the scene FRESH to the storyboard you just passed, do NOT copy a past render_*.py and re-skin
@@ -240,7 +255,13 @@ so the thesis line lands complete on screen, not only in the audio.
 SOUND DESIGN: a sourced music bed PLUS a motivated SFX layer with EVENTS CUT TO THE PICTURE, not just
 ambience (a tick as each element ignites, a low boom under a dive, a resonant pulse on a flare, a resolve
 tone as the hero locks), all under an EQ-carved, ducked VO. A thin VO-plus-music-only mix scores DOWN;
-give the scorer picture-synced SFX.
+give the scorer picture-synced SFX. The SFX plan comes FROM the beat map (each beat's `sfx` field), and
+the audio script MUST EMIT its event list via dispatch_core.write_sfx_events([...{t,kind,label}...]) ->
+audio/sfx_events.json; the SFX_EVENTS gate verifies >=8 events, >=1 per shot, and that the events are
+actually AUDIBLE in the master (a measured lift at each timestamp). Pair rules: whooshes start 10 to
+20ms BEFORE the visual move; never stack more than 2 to 3 same-class sounds (the Law of Two-and-a-Half);
+duck the 2 to 4 kHz band under speech; a designed 1 to 2s near-silence right before the biggest reveal.
+Music runs the 5-phase arc (one added layer per section, percussion only at the climax, clean resolve).
 Build a deliberate ENDING (principle 6): after the VO finishes, a branded OUTRO, wordmark sign-off
 + tagline + sources credit, revealed in staged beats, then a gentle cinematic fade. Motion must run
 to the final frame; NEVER end on a static hold (the EVENT_CADENCE gate enforces this). Design the
@@ -289,6 +310,8 @@ because the bar was hard, a loop that ends on a failure is a broken loop.
     · CAPTION_SYNC: captions built from the TTS word-timings → "voice doesn't match the captions"
     · READABILITY: every readable word clears a brightness + contrast floor → "is every word legible, not just sharp"
     · MUSIC: a REAL freshly-sourced track is on the mix, NOT the synth fallback → "use the music you went and got"
+    · SFX_EVENTS: audio/sfx_events.json exists (write_sfx_events), >=8 events, >=1 per shot, and the events
+      are AUDIBLE in the master (measured lift at each timestamp) → "the picture is sonified, not silent"
   On any FAIL it names the check + the region/time. Diagnose WHY (e.g. HUD drawn before the grade,
   DoF too strong, a dead stretch, captions not voice-driven), fix it in the engine, re-render the
   affected range, re-run. Do not proceed to Gate B until Gate A is green. It also writes
@@ -304,11 +327,13 @@ because the bar was hard, a loop that ends on a failure is a broken loop.
   Catch typos, wrong numbers, cropping/safe-area (9:16 AND the 4:5 crop), focal hierarchy,
   hero-reads-in-silhouette, overlaps/aliasing/banding. Fix and RE-RENDER affected ranges.
 
-- GATE B: EDITOR + SCORER (taste, world-class bar). Run the `editor` agent (hard critique, AI-tells,
-  risk flags) and the `scorer` agent against `config/dispatch_rubric.yaml` (ship 9.0, zero hard_blockers).
-  Below threshold → take the one-sentence fix + editor notes, IMPROVE script/visuals/audio, and re-run
-  the WHOLE review from Gate A. Loop until BOTH gates are green with zero hard_blockers; only then encode
-  and deliver. The loop does not exit on anything less.
+- GATE B: EDITOR + SCORER + FLOW (taste, world-class bar). Run the `editor` agent (hard critique,
+  AI-tells, risk flags), the `scorer` agent against `config/dispatch_rubric.yaml` (ship 9.0, zero
+  hard_blockers), AND the `flow-critic` agent (MODE=POST) on the rendered montage + sfx_events +
+  quality_report: does the picture visibly keep advancing every few seconds, is every shot sonified,
+  did the render deliver every beat the board promised? Below threshold or flow ship:false → take the
+  fixes, IMPROVE script/visuals/audio, and re-run the WHOLE review from Gate A. Loop until ALL are green
+  with zero hard_blockers; only then encode and deliver. The loop does not exit on anything less.
 
 PHASE 6B: THE LINKEDIN CAPTION (research -> write -> two-gate loop)
 The post text that ships in the Gmail draft is a deliverable in its own right, not an afterthought.

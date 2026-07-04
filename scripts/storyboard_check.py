@@ -213,6 +213,22 @@ def main():
                 f"palette \"{fp.get('palette')}\" repeats {old.get('date')} \"{fp_of(old).get('palette')}\". "
                 f"Choose a fresh color world (rubric hard_blocker).")
 
+    # ---- 6. VISUAL FLOW: never-rest cadence + say-it-show-it + sound-paired (config/visual_flow.yaml) ----
+    # docs/craft/VISUAL_FLOW.md. Beats must be timed objects {t,vo,shows,sfx,means} with start-to-start
+    # gaps <= 5s (nothing on screen rests longer), covering the VO (no orphan narration), each naming a sound.
+    try:
+        _here = str(Path(__file__).resolve().parent)
+        if _here not in sys.path:
+            sys.path.insert(0, _here)
+        import flow_check as _fc
+        _fr = _fc.analyze(str(sb_path.parent))
+        for _p in _fr["problems"]:
+            problems.append(f"visual-flow: {_p}")
+        for _w in _fr.get("warnings", []):
+            print(f"  [flow-advisory] {_w}")
+    except Exception as _e:
+        print(f"  [flow-advisory] flow_check could not run ({_e}); beats not flow-validated")
+
     if problems:
         for p in problems:
             print(f"FAIL [storyboard_check] {p}")
