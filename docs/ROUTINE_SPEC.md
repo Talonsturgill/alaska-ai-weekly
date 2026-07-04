@@ -29,6 +29,20 @@ Research exhaustively. Iterate the video many times. Quality over economy, there
 frugality goal here. (The ONLY limits are the structural guardrails below, which exist for
 control and correctness, not cost.)
 
+MODEL: RUN ON OPUS, NEVER DEFAULT DOWN
+This routine is a maximum-quality production and runs on the strongest available Claude model (Opus).
+Do not let anything in the run drift to Sonnet or a lighter tier:
+- Every subagent in .claude/agents/ is pinned `model: opus` in its frontmatter. KEEP that pin when you
+  add or edit an agent; a taste gate or fact-check graded by a lighter model is a weaker gate.
+- Never spawn an agent with a lighter model override "to save tokens"; token frugality is explicitly
+  not a goal here (see EFFORT above).
+- If you detect mid-run that you are executing on a lighter model than Opus, do not silently proceed
+  as if nothing changed: say so prominently in the Gmail draft ("this run executed on <model>") so the
+  human knows what graded the score.
+(The main model dropdown lives in the routine UI at claude.ai/code/routines and must be set to Opus
+there; a prompt cannot switch it. This section keeps the agents from drifting down and makes any
+downgrade visible instead of silent.)
+
 REPO + CADENCE: do ALL work in talonsturgill/alaska-ai-weekly (NOT linkedin-alaska-ai-weekly), on a
 claude/dispatch-<date> branch off main that you push AND merge. This routine runs DAILY, so dedupe
 is mandatory: never repeat a story within the same week, and never an exact repeat. The ledger is
