@@ -1,8 +1,8 @@
-"""60s Dispatch mix -- "The Ten Minute Clock" (XPRIZE Wildfire). vo60 + a boreal-night ambient bed +
-motivated SFX cut to the picture (grid boot-up ping, drone whoosh, accelerating countdown ticks, a
-suppression burst, a resolve tone) + a sidechain-ducked, sourced music bed, two-pass loudnorm to
--14 LUFS / -1.5 dBTP, with the audio GATE. Adapted from audio_v3.py's structure for THIS story's
-sound design (no whale/sonar reuse -- this story has no beluga or salmon).
+"""60s+ WhaleSpotter Dispatch mix: vo60 + night-sea ambience + a motivated SFX layer cut to the
+picture's own beats (tick/pop/whoosh/riser/hit/lock/pulse/boom) + the sourced "Anguish" music bed,
+ducked under the VO, two-pass loudnorm -14 LUFS / -1.5 dBTP, with the audio GATE.
+Writes audio/sfx_events.json (VISUAL_FLOW.md sonification contract) + audio/music_status.json +
+audio/master60.wav.
 """
 import os, subprocess, json, re, sys
 import numpy as np
@@ -12,6 +12,8 @@ from scipy.signal import butter, sosfilt
 HERE = os.path.dirname(os.path.abspath(__file__))
 AUD = os.path.join(HERE, "audio")
 SR = 44100
+TOTAL = 64.0
+
 env = dict(os.environ)
 env["SSL_CERT_FILE"] = "/etc/ssl/certs/ca-certificates.crt"
 env["SSL_CERT_DIR"] = "/etc/ssl/certs"
@@ -26,11 +28,11 @@ def t(d):
 
 
 def lp(x, fc, o=4):
-    return sosfilt(butter(o, fc / (SR / 2), "low", output="sos"), x)
+    return sosfilt(butter(o, fc / (SR / 2), 'low', output='sos'), x)
 
 
 def bp(x, a, b, o=4):
-    return sosfilt(butter(o, [a / (SR / 2), b / (SR / 2)], "band", output="sos"), x)
+    return sosfilt(butter(o, [a / (SR / 2), b / (SR / 2)], 'band', output='sos'), x)
 
 
 def nrm(x, p=0.85):
@@ -38,113 +40,126 @@ def nrm(x, p=0.85):
     return (x * p * 32767).astype(np.int16)
 
 
-rng = np.random.default_rng(2026)
+rng = np.random.default_rng(19)
 
-# ---------------- ambient bed: boreal night forest (wind through canopy, no water) ----------------
-tt = t(60.0)
+# ---------------- night-sea ambience (64s): low wind + distant swell + a faint metal-hull creak ----------------
+tt = t(TOTAL)
 amb = lp(rng.standard_normal(len(tt)), 260) * (0.55 + 0.35 * np.sin(2 * np.pi * 0.05 * tt))
-amb += 0.14 * lp(rng.standard_normal(len(tt)), 900)
-for _ in range(10):
-    st = rng.uniform(0, 57)
-    dur = rng.uniform(0.05, 0.11)
-    n = int(dur * SR)
-    tb = np.linspace(0, dur, n)
-    ff = 700 + 500 * tb / dur
-    amb[int(st * SR):int(st * SR) + n] += lp(np.sin(2 * np.pi * np.cumsum(ff) / SR) * np.exp(-tb / (dur * 0.35)), 2200) * 0.10
-wavfile.write(os.path.join(AUD, "amb60.wav"), SR, nrm(amb, 0.75))
+amb += 0.18 * lp(rng.standard_normal(len(tt)), 620)
+for _ in range(6):
+    st = rng.uniform(0, TOTAL - 3); dur = rng.uniform(0.6, 1.4); n = int(dur * SR)
+    tb = np.linspace(0, dur, n); ff = 70 + 20 * np.sin(tb / dur * np.pi)
+    creak = np.sin(2 * np.pi * np.cumsum(ff) / SR) * np.exp(-tb / (dur * 0.6))
+    s0 = int(st * SR)
+    amb[s0:s0 + n] += bp(creak, 60, 200) * 0.12
+wavfile.write(os.path.join(AUD, "amb.wav"), SR, nrm(amb, 0.75))
 
-# ---------------- SFX cut to the picture (timeline matches render_wildfire.py shot boundaries) ----------------
-sfx = np.zeros(int(60.0 * SR), np.float32)
-
-
-def place(sig, at_s, gain=1.0):
-    s = int(at_s * SR)
-    e = min(s + len(sig), len(sfx))
-    if s < len(sfx) and e > s:
-        sfx[s:e] += sig[: e - s] * gain
+# ---------------- SFX event bed: one procedural burst per beat, matching its declared `kind` ----------------
+storyboard = json.load(open(os.path.join(HERE, "storyboard.json")))
+beats = storyboard["beats"]
 
 
-# grid boot-up ping (~9.6s, shot1->2): a rising two-tone chirp + a soft click lattice
-d1 = t(1.6)
-f1 = 520 + 900 * (d1 / 1.6) ** 1.6
-boot = np.sin(2 * np.pi * np.cumsum(f1) / SR) * np.exp(-d1 / 0.9)
-boot = lp(boot, 4200)
-place(boot, 9.55, 0.55)
-for k in range(4):
-    tk_ = t(0.05)
-    click = np.sin(2 * np.pi * 2600 * tk_) * np.exp(-tk_ / 0.012)
-    place(click, 9.6 + k * 0.22, 0.35)
+def syn_tick(dur=0.05):
+    tb = t(dur); f0 = 2200 * np.exp(-tb / (dur * 0.5))
+    return np.tanh(1.6 * np.sin(2 * np.pi * np.cumsum(f0) / SR)) * np.exp(-tb / (dur * 0.28))
 
-# drone whoosh (~19.1-24s, the whip-pan into the swarm + Anduril pass)
-dw = t(2.6)
-whoosh = lp(rng.standard_normal(len(dw)), 1800) * np.hanning(len(dw))
-whoosh *= (1 + 0.6 * np.sin(2 * np.pi * 3.2 * dw))
-place(whoosh, 19.3, 0.32)
-dw2 = t(1.8)
-whoosh2 = lp(rng.standard_normal(len(dw2)), 2400) * np.hanning(len(dw2))
-place(whoosh2, 26.8, 0.22)
 
-# accelerating countdown ticks (~30.0-34.6s)
-tick_times = [30.0 + i * (4.6 / 9) * (1 - i * 0.05) for i in range(9)]
-for i, tt0 in enumerate(tick_times):
-    tk_ = t(0.045)
-    pitch = 1400 + i * 60
-    click = np.sin(2 * np.pi * pitch * tk_) * np.exp(-tk_ / 0.02)
-    place(click, tt0, 0.30)
+def syn_pop(dur=0.09):
+    tb = t(dur); f0 = 520 * np.exp(-tb / (dur * 0.7))
+    return np.sin(2 * np.pi * np.cumsum(f0) / SR) * np.exp(-tb / (dur * 0.32))
 
-# suppression burst (~34.6s: dur*0.66 within shot4 -> 900/30 + 0.66*9.1 = 30+6.0=36.0s)
-db = t(1.1)
-boom = np.sin(2 * np.pi * np.cumsum(np.linspace(90, 35, len(db))) / SR) * np.exp(-db / 0.35)
-hiss = lp(rng.standard_normal(len(db)), 3200) * np.exp(-db / 0.5)
-place(boom * 0.8 + hiss * 0.5, 35.95, 0.5)
 
-# resolve tone (contained, ~36.3s) + a second soft resolve at the caveat reveal (~45.5s)
-dr_ = t(2.0)
-resolve = np.sin(2 * np.pi * 660 * dr_) * np.exp(-dr_ / 1.1) + 0.5 * np.sin(2 * np.pi * 990 * dr_) * np.exp(-dr_ / 0.8)
-place(lp(resolve, 3000), 36.3, 0.22)
-dr2 = t(1.6)
-resolve2 = np.sin(2 * np.pi * 440 * dr2) * np.exp(-dr2 / 1.0)
-place(lp(resolve2, 2600), 45.4, 0.16)
+def syn_whoosh(dur=0.4):
+    tb = t(dur); n = rng.standard_normal(len(tb))
+    sweep = bp(n, 250, 3400)
+    return sweep * np.sin(np.pi * tb / dur)
 
-wavfile.write(os.path.join(AUD, "sfx60.wav"), SR, nrm(sfx, 0.8))
 
-# ---------------- music bed: sourced track (DISPATCH_MUSIC), trimmed to the best 60s window ----------------
+def syn_riser(dur=0.9):
+    tb = t(dur); n = rng.standard_normal(len(tb))
+    sweep = bp(n, 200, 3200)
+    return sweep * (tb / dur) ** 1.2
+
+
+def syn_hit(dur=0.18):
+    tb = t(dur); f0 = 90 * np.exp(-tb / (dur * 0.4))
+    return (np.sin(2 * np.pi * np.cumsum(f0) / SR) + 0.4 * rng.standard_normal(len(tb))) * np.exp(-tb / (dur * 0.22))
+
+
+def syn_lock(dur=0.12):
+    tb = t(dur); a = syn_tick(dur * 0.4); b = np.zeros(int(dur * SR))
+    b[: len(a)] += a
+    off = int(dur * SR * 0.55)
+    a2 = syn_tick(dur * 0.35)
+    b[off: off + len(a2)] += a2 * 0.85
+    return b
+
+
+def syn_pulse(dur=0.22):
+    tb = t(dur); f0 = 760 + 30 * np.sin(2 * np.pi * 6 * tb)
+    return np.sin(2 * np.pi * np.cumsum(f0) / SR) * np.exp(-tb / (dur * 0.5))
+
+
+def syn_boom(dur=1.1):
+    tb = t(dur); f0 = 62 * np.exp(-tb / (dur * 1.4))
+    return np.sin(2 * np.pi * np.cumsum(f0) / SR) * np.exp(-tb / (dur * 0.55))
+
+
+def syn_ambient_swell(dur=0.6):
+    tb = t(dur); n = rng.standard_normal(len(tb))
+    return lp(n, 500) * np.sin(np.pi * tb / dur) * 0.6
+
+
+SYN = {"tick": syn_tick, "pop": syn_pop, "whoosh": syn_whoosh, "riser": syn_riser,
+       "hit": syn_hit, "lock": syn_lock, "pulse": syn_pulse, "boom": syn_boom, "ambient": syn_ambient_swell}
+
+sfx_bed = np.zeros(int(TOTAL * SR), np.float32)
+events = []
+for b in beats:
+    t0 = float(str(b["t"]).split("-")[0])
+    kind = b.get("sfx", "tick")
+    fn = SYN.get(kind, syn_tick)
+    burst = fn().astype(np.float32)
+    s0 = int(t0 * SR)
+    e0 = min(len(sfx_bed), s0 + len(burst))
+    if e0 > s0:
+        sfx_bed[s0:e0] += burst[: e0 - s0] * (0.9 if kind in ("boom", "riser") else 0.65)
+    events.append({"t": round(t0, 3), "kind": kind, "label": b.get("means", "")[:60]})
+# outro boom slightly after the last beat, under the wordmark reveal
+outro_t = 60.4
+sfx_bed_tail = syn_boom(1.2).astype(np.float32) * 0.55
+s0 = int(outro_t * SR); e0 = min(len(sfx_bed), s0 + len(sfx_bed_tail))
+if e0 > s0:
+    sfx_bed[s0:e0] += sfx_bed_tail[: e0 - s0]
+events.append({"t": round(outro_t, 3), "kind": "boom", "label": "wordmark reveal"})
+
+import sys as _s
+sys.path.insert(0, HERE)
+import dispatch_core as dc
+dc.write_sfx_events(events, os.path.join(AUD, "sfx_events.json"))
+wavfile.write(os.path.join(AUD, "sfx.wav"), SR, nrm(sfx_bed, 0.8))
+print(f"sfx events: {len(events)}")
+
+# ---------------- music bed: the sourced track (Anguish, Kevin MacLeod, CC BY 4.0) ----------------
 def _loadwav(p):
     _, d = wavfile.read(p)
     a = (d.astype(np.float32) / 32768.0) if d.dtype == np.int16 else d.astype(np.float32)
     return a if a.ndim > 1 else np.stack([a, a], 1)
 
 
-def _synth_bed(d=80.0):
-    n = int(d * SR)
-    tt2 = t(d)
-    base = 98.0
-    sig = np.zeros(n, np.float32)
-    for k, r in enumerate([1.0, 1.5, 2.0, 2.997, 4.0]):
-        vib = 1 + 0.003 * np.sin(2 * np.pi * 0.06 * tt2 + k)
-        sig += (0.5 / (k + 1)) * np.sin(2 * np.pi * base * r * np.cumsum(vib) / SR).astype(np.float32)
-    swell = (0.5 + 0.5 * np.sin(2 * np.pi * 0.02 * tt2 - 1.0)).astype(np.float32)
-    sig = lp(sig * swell, 620).astype(np.float32)
-    s = sig / (np.max(np.abs(sig)) + 1e-9) * 0.6
-    return np.stack([s, s], 1).astype(np.float32)
-
-
 _mp = os.environ.get("DISPATCH_MUSIC")
-_legacy = os.path.join(HERE, "music", "188_44.wav")
 if _mp and os.path.exists(_mp):
     X = _loadwav(_mp)
     print("music: sourced ->", _mp)
-elif os.path.exists(_legacy):
-    X = _loadwav(_legacy)
-    print("music: legacy asset")
+    _msrc = "sourced"
 else:
-    X = _synth_bed()
-    print("music: SYNTH fallback (no track sourced; note it in the draft)")
-_msrc = "sourced" if (_mp and os.path.exists(_mp)) else ("legacy" if os.path.exists(_legacy) else "synth")
-_mstat = {"source": _msrc, "path": _mp or _legacy or ""}
+    print("music: NO TRACK FOUND -- this must not happen; get_music.py must run first", file=sys.stderr)
+    sys.exit(1)
+
+_mstat = {"source": _msrc, "path": _mp}
 try:
-    _cf = os.path.join(os.path.dirname(_mp), "music_credit.json") if _mp else ""
-    if _cf and os.path.exists(_cf):
+    _cf = os.path.join(os.path.dirname(_mp), "music_credit.json")
+    if os.path.exists(_cf):
         _mstat["credit"] = json.load(open(_cf)).get("credit", "")
 except Exception:
     pass
@@ -152,8 +167,8 @@ json.dump(_mstat, open(os.path.join(AUD, "music_status.json"), "w"))
 
 mono = X.mean(1) if X.ndim > 1 else X
 hop = int(SR * 0.2)
-envv = np.array([np.sqrt(np.mean(mono[i:i + hop] ** 2)) for i in range(0, len(mono) - int(60 * SR), hop)])
-wl = int(60 / 0.2)
+envv = np.array([np.sqrt(np.mean(mono[i:i + hop] ** 2)) for i in range(0, max(1, len(mono) - int(TOTAL * SR)), hop)])
+wl = int(TOTAL / 0.2)
 best = None
 for s_ in range(0, max(1, len(envv) - wl), 3):
     m_ = envv[s_:s_ + wl].mean()
@@ -161,39 +176,35 @@ for s_ in range(0, max(1, len(envv) - wl), 3):
         best = (m_, s_ * 0.2)
 w0 = best[1] if best else 0.0
 print("music window start", round(w0, 1))
-seg = X[int(w0 * SR):int(w0 * SR) + int(60 * SR)].copy()
-if len(seg) < int(60 * SR):
-    seg = np.pad(seg, ((0, int(60 * SR) - len(seg)), (0, 0)))
-fi = int(0.6 * SR)
-fo = int(2.0 * SR)
+seg = X[int(w0 * SR): int(w0 * SR) + int(TOTAL * SR)].copy()
+if len(seg) < int(TOTAL * SR):
+    seg = np.pad(seg, ((0, int(TOTAL * SR) - len(seg)), (0, 0)))
+fi, fo = int(0.8 * SR), int(2.5 * SR)
 seg[:fi] *= np.linspace(0, 1, fi)[:, None]
 seg[-fo:] *= np.linspace(1, 0, fo)[:, None]
-wavfile.write(os.path.join(AUD, "bed60raw.wav"), SR, (seg * 32767).astype(np.int16))
-run(["ffmpeg", "-y", "-i", os.path.join(AUD, "bed60raw.wav"), "-af", "loudnorm=I=-23:TP=-5:LRA=11", "-ar", "44100", os.path.join(AUD, "bed60.wav")])
+wavfile.write(os.path.join(AUD, "bed_raw.wav"), SR, (seg * 32767).astype(np.int16))
+run(["ffmpeg", "-y", "-i", os.path.join(AUD, "bed_raw.wav"), "-af", "loudnorm=I=-23:TP=-5:LRA=11", "-ar", "44100",
+     os.path.join(AUD, "bed.wav")])
 
-# ---------------- premix: VO (0dB anchor) + sidechain-ducked music + ambient + SFX ----------------
+# ---------------- premix: VO (sidechain-ducks music+sfx), ambience low, sfx present but under VO ----------------
 graph = (
     "[0:a]highpass=f=85,acompressor=threshold=-20dB:ratio=3.5:attack=8:release=120,"
     "equalizer=f=3400:t=q:w=2:g=2.5,equalizer=f=6800:t=q:w=2.2:g=-3[vo];"
     "[vo]asplit=2[vout][key];"
     "[1:a]highpass=f=100,equalizer=f=2500:t=q:w=1.3:g=-3.5[mus];"
-    "[mus][key]sidechaincompress=threshold=0.03:ratio=8:attack=25:release=450[md];"
-    "[2:a]volume=-26dB,lowpass=f=2600[amb];"
-    "[3:a]volume=-13dB[sf];"
-    "[vout][md][amb][sf]amix=inputs=4:duration=first:normalize=0[mix]"
+    "[mus][key]sidechaincompress=threshold=0.035:ratio=7:attack=25:release=420[md];"
+    "[2:a]volume=-24dB,lowpass=f=1800[amb];"
+    "[3:a]volume=-9dB[sfx];"
+    "[vout][md][amb][sfx]amix=inputs=4:duration=longest:normalize=0[mix]"
 )
-r = run([
-    "ffmpeg", "-y",
-    "-i", os.path.join(AUD, "vo60.wav"),
-    "-i", os.path.join(AUD, "bed60.wav"),
-    "-i", os.path.join(AUD, "amb60.wav"),
-    "-i", os.path.join(AUD, "sfx60.wav"),
-    "-filter_complex", graph, "-map", "[mix]", os.path.join(AUD, "mix60.wav"),
-])
+r = run(["ffmpeg", "-y", "-i", os.path.join(AUD, "vo60.wav"), "-i", os.path.join(AUD, "bed.wav"),
+         "-i", os.path.join(AUD, "amb.wav"), "-i", os.path.join(AUD, "sfx.wav"),
+         "-filter_complex", graph, "-map", "[mix]", os.path.join(AUD, "mix.wav")])
 if r.returncode:
     print("PREMIX FAIL", r.stderr[-800:])
     sys.exit(1)
-run(["ffmpeg", "-y", "-i", os.path.join(AUD, "mix60.wav"), "-af", "loudnorm=I=-14:TP=-1.5:LRA=8", "-ar", "44100", os.path.join(AUD, "master60.wav")])
+run(["ffmpeg", "-y", "-i", os.path.join(AUD, "mix.wav"), "-af", "loudnorm=I=-14:TP=-1.5:LRA=8", "-ar", "44100",
+     os.path.join(AUD, "master60.wav")])
 
 
 def rms(a, b):
@@ -205,7 +216,7 @@ def rms(a, b):
 r = run(["ffmpeg", "-i", os.path.join(AUD, "master60.wav"), "-af", "ebur128=peak=true", "-f", "null", "-"])
 I = re.findall(r"I:\s*(-?[\d.]+)\s*LUFS", r.stderr)
 TP = re.findall(r"Peak:\s*(-?[\d.]+)\s*dBFS", r.stderr)
-tail = rms(55.6, 57.5)
+tail = rms(60.0, 63.5)
 mid = rms(40, 42)
 print(f"GATE: I={I[-1] if I else '?'} LUFS TP={TP[-1] if TP else '?'} dBFS | tail={tail:.1f}dB (>-34) mid-voice={mid:.1f}dB")
 print("PASS" if (tail > -34 and I and -15.5 < float(I[-1]) < -12.5) else "CHECK")

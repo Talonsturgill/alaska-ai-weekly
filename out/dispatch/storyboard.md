@@ -1,116 +1,100 @@
-# Dispatch storyboard — "The Ten Minute Clock"
+# ALASKA.AI Dispatch — 2026-07-04 — "Two Ships, One Night"
 
-**Story:** The XPRIZE Wildfire autonomous-drone competition finals, held June 15-25 2026 in
-Nenana, Alaska (an hour outside Fairbanks), on a test range run by UAF's ACUASI (Alaska Center
-for Unmanned Aircraft Systems Integration). Three finalist teams (Anduril, Dryad, AURA Foresight)
-flew AI-powered sensor and drone systems into a 1,000 km² box and had to detect and suppress a
-controlled wildfire ignition within 10 minutes, with no human in the loop. $11M total purse
-($3.5M autonomous-track win, plus a $1M Lockheed Martin detection-accuracy bonus). As of the
-video's air date, no winner has been announced.
+## The story
+On June 21, 2026, Royal Caribbean's *Ovation of the Seas* docked in Seward with a dead,
+pregnant, 61-foot fin whale on its bow. A preliminary necropsy found injuries consistent
+with a vessel strike; the official cause of death is still pending. Three miles out, on
+the same dark water, Matson's Alaska cargo fleet already runs WhaleSpotter, an AI
+thermal-detection system (built on WHOI-licensed technology) that the company says can spot
+a whale's heat signature from three nautical miles away, day or night, and flags it in time
+to turn more than nine times in ten (both figures are company/CEO claims, always shown
+attributed on screen). No Alaska cruise vessel is publicly known to run anything like it.
 
-**Honest caveat (the real limit):** the fire in this test was lit on cue, inside a box XPRIZE
-drew, and judged by people who haven't announced a result yet. Nobody has pointed these systems
-at a fire that wasn't invited. Alaska's real fire season is the test that hasn't happened yet.
-Drawn as a picture: the crisp, lit, gridded test box fraying at its edge into unmarked fog toward
-a dissolving "?" — WHERE and WHEN inside the box, both known; beyond it, unknown.
+**The honest caveat, drawn as a picture:** one half of the frame is instrumented (a bracketed
+heat-signature, a classification label, a claimed detection range) and the other half is bare
+and dark (a plain, unlit bridge view, no overlay at all). The film never claims WhaleSpotter
+would have saved this specific whale, or that Royal Caribbean was offered and declined it —
+an explicit on-screen line says so. The honest limit: **the AI detects. It does not decide,
+and it cannot steer the ship.**
 
 ## Style mode + taste dials
-- **STYLE MODE:** field-HUD / instrument (telemetry, readouts — this is a sensors-and-AI story).
-- DESIGN_VARIANCE 6/10 — a clean instrument grid carries most of the film, but the swarm shot and
-  the split-caveat shot break the grid with organic, asymmetric staging.
-- MOTION_INTENSITY 7/10 — pulses, converging drones, a ticking countdown, a cut every ~8-10s; a
-  watching system that is genuinely tense, not languid.
-- VISUAL_DENSITY 6/10 — HUD readouts and canopy detail carry real information, but the ignition
-  point and the countdown always sit in deliberate negative space so the eye never hunts.
-- COLOR_BOLDNESS 7/10 — a stark white-hot ignition against a near-black canopy demands contrast;
-  the phosphor-cyan detection grid is saturated and synthetic on purpose (it is not natural light).
-- TEXTURE_GRAIN 6/10 — filmic grain + canopy/foliage texture + a scan-line feel on HUD panels.
-- GRADE_STRENGTH 6/10 — cinematic night-vision-adjacent grade, not a heavy stylized push.
-
-Justification: the story itself is a taut, unresolved system watching and about to act. High
-motion/color energy earns the tension; restrained density keeps the one focal action (the
-ignition point, the countdown) always legible.
+- **Style mode:** cinematic-doc (filmic, atmospheric, human stakes), with instrument/HUD
+  accents confined to the Matson (AI) half of the frame only.
+- **DESIGN_VARIANCE 6/10** — an asymmetric two-world diptych, but each half stays composed.
+- **MOTION_INTENSITY 4/10** — elegiac and controlled; slow pushes, no frantic cutting. A quiet
+  indictment, not an action piece.
+- **VISUAL_DENSITY 5/10** — the instrumented half carries HUD data; the blind half stays spare
+  and dark to embody the absence of instrumentation.
+- **COLOR_BOLDNESS 7/10** — the thermal magenta-gold must read hard against the desaturated
+  blind half even on a muted phone screen.
+- **TEXTURE_GRAIN 6/10** — visible grain and mist so the night-ocean world feels photographed,
+  not vector-flat.
+- **GRADE_STRENGTH 7/10** — a strong grade is what sells two different visual registers (seen
+  vs. unseen) as one coherent film.
 
 ## References
-- **Kurzgesagt** — layered depth, soft glow, atmospheric parallax for the aerial/canopy passages.
-- **Bloomberg/Vox data-panel clarity** — clean vector HUD readouts for the sensor-network and
-  countdown passages; numbers animate toward their point, never just appear.
+1. BBC/Netflix nature-doc thermal/FLIR night-camera inserts (*Dynasties*, *Predators*) — for
+   authentic thermal-vision rendering: real noise, real bloom, a believable false-color palette.
+2. Bloomberg Originals two-panel comparison graphics — for a restrained, legible diptych overlay
+   that never turns into clutter.
 
-## Composition fingerprint (see storyboard.json for the machine-readable version)
-pov=orbital-aerial · motion_vector=radial-emanate · hero_treatment=multiplicity-swarm ·
-layout=hud-instrument-frame · register=instrument-readout ·
-palette=deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet AI detection
-grid, ember-amber accents · metaphor=an AI races its own ten-minute clock to answer a fire it was
-built to expect
+## Palette
+Abyssal navy-black night sea as the base. A hot magenta-to-gold thermal signature is the AI's
+sight (Matson/left half). Stripped cold slate-grey and sodium-white deck light is the blind
+ship's world (Royal Caribbean/right half). This has not been used by any of the last 6
+Dispatches (glacial teal-green+aurora / thermal ice-indigo-ochre-coral-gold / amber-on-abyss+cyan
+/ basalt-crimson-bone / parchment-vermilion-pewter / spruce-black-cyan-violet-ember).
 
-## Divergence note
-The last two Dispatches were a top-down map with a crimson seismic line resolving across a static
-basalt graticule (07-01), and an exploded, assembling parchment ledger of grid cells (07-02) —
-both essentially FLAT, data-on-a-plane compositions with a single steady camera relationship to
-a static field. This Dispatch instead moves in three dimensions: it opens looking obliquely down
-on a living, dark forest at night (not a flat map), pushes into an instrument HUD that boots into
-being, cuts to an immersive eye-level pass through a converging drone swarm, punches into a macro
-countdown insert, then pulls up and out through a two-world split before returning to the wide
-night landscape. No shot reuses map-territory or grid-modular staging, the palette trades crimson
-and parchment for a near-black night canopy with a synthetic cyan detection grid, and the motion
-vector is a radiating pulse and a converging swarm, not a horizontal traverse or an assembling
-diagram.
+## Divergence from the last 2 Dispatches
+- **2026-07-02 "circuit"** (exploded-diagram, assemble-build, data-as-subject, grid-modular,
+  data-brutalist, parchment/vermilion/pewter): this Dispatch differs on all 6 tagged axes plus
+  palette and metaphor.
+- **2026-07-03 "tenminuteclock"** (orbital-aerial, radial-emanate, multiplicity-swarm,
+  hud-instrument-frame, instrument-readout, spruce-black/cyan-violet/ember): this Dispatch
+  differs on all 6 tagged axes plus palette and metaphor.
+- Instead of a diagram or a drone's-eye HUD swarm, this piece drops to eye-level on dark water,
+  pushes in slowly rather than assembling or radiating, and resolves its whole argument as a
+  literal fullbleed split-screen between two ships — a spatial signature (eye-level-immersive /
+  fullbleed-split / push-in-only) not used by any of the last 4 Dispatches.
 
-## Beat map (16 beats, ~60s)
-1. (0.0-2.8s) HUD grid powers on over a dark boreal forest at night; a single white-hot ignition
-   point ignites center-frame. [Shot 1]
-2. (2.8-6.4s) A pulse ring radiates outward from the point; "1,000 km² · NENANA, ALASKA" resolves
-   lower-frame. [Shot 1]
-3. (6.4-9.6s) VO: "no firefighter answered it, a machine did" — a status line types "HUMAN: NONE".
-   [Shot 1 → 2, fui-boot]
-4. (9.6-13.9s) "ACUASI · UAF GEOPHYSICAL INSTITUTE" credit tag builds in; the sensor-network map
-   boots into being, nodes lighting across the box. [Shot 2]
-5. (13.9-19.1s) Triangulation lines converge on the ignition point from multiple nodes; the box
-   seam sharpens into a clean rule. [Shot 2]
-6. (19.1-22.4s) Whip-pan into the physical world: drones streak in low over the canopy toward the
-   point. [Shot 2 → 3, whip-pan]
-7. (22.4-24.6s) ANDURIL label + Ghost-X drone + Sentry tower silhouettes flash into place. [Shot 3]
-8. (24.6-27.0s) DRYAD label + the solar sensor web glows along the ground. [Shot 3]
-9. (27.0-30.0s) AURA FORESIGHT label + a tighter swarm cluster banks toward the point. [Shot 3]
-10. (30.0-34.6s) Match-cut to ECU: a "10:00" countdown ticks down fast as the swarm converges; a
-    suppression burst fires. [Shot 3 → 4, match-cut]
-11. (34.6-39.1s) "$11M" settles beside the extinguished, smoking point; the readout flips to
-    "00:00 · CONTAINED". [Shot 4]
-12. (39.1-45.0s) Pull-out: the crisp lit box seen from above, its edge fraying into unlit fog
-    toward a dissolving "?". The honest caveat drawn as image. [Shot 4 → 5, pull-out]
-13. (45.0-51.8s) "NO WINNER ANNOUNCED YET" settles over the foggy half as the VO states the limit
-    plainly. [Shot 5]
-14. (51.8-56.3s) Crossfade back out to the wide night landscape (bookend to shot 1); the VO lands
-    its last line. [Shot 5 → 6, crossfade]
-15. (56.3-58.0s) ALASKA.AI wordmark reveals in the vast dark negative space. [Shot 6 / outro]
-16. (58.0-60.0s) Tagline + source credit settle in staged beats; a gentle fade, motion running to
-    the final frame. [Shot 6 / outro]
+## Beat map (16 beats, ~4s cadence, see storyboard.json for exact timing/sfx/means)
+1. 0.0–3.5 — the ship emerges from harbor dark, push-in. (cold open, scale)
+2. 3.5–6.7 — the whale's silhouette on the bow resolves. (the stake)
+3. 6.7–9.6 — push closer; "61 FT" numeral sets scale. (specificity)
+4. 9.6–13.9 — hedge caption: "consistent with a vessel strike (dot) cause pending". (the honest hedge, drawn)
+5. 13.9–18.1 — whip-pan across open water to the Matson ship. (the pivot: a second world)
+6. 18.1–22.0 — hull dissolves into a thermal-camera HUD booting on. (enter the machine's POV)
+7. 22.0–26.2 — a warm blob resolves; "COMPANY CLAIM: RANGE ~3 NM". (attributed claim)
+8. 26.2–30.4 — the blob is bracketed and classified. (mechanism made concrete)
+9. 30.4–35.1 — a >90% readout, labeled "CEO CLAIM", beside a turn vector. (attributed claim)
+10. 35.1–39.1 — the frame splits: instrumented left, dark bridge right. (the gap made literal)
+11. 39.1–41.9 — caption: "no evidence this was offered or declined". (distancing line begins)
+12. 41.9–44.6 — the card holds; both halves sit in stillness. (distancing line completes)
+13. 44.6–49.6 — the bracket holds but the course line stays flat. (honest limit: no control)
+14. 49.6–54.5 — a human hand reaches for the control. (agency returns to a person)
+15. 54.5–59.4 — pull to a wide: both wakes crossing the same water. (thesis lands visually)
+16. 59.4–64.0 — wordmark, tagline, source credit, staged fade. (branded sign-off)
 
-## Shot list (6 shots)
-1. **WIDE ESTABLISH** (0-9.6s) — orbital-aerial / hud-instrument-frame / radial-emanate /
-   landscape-as-subject. Centered: the ignition flares awake as the grid boots around it. First
-   shot, no transition in.
-2. **DATA PANEL** (9.6-22.4s) — instrument-screen / hud-instrument-frame / scroll-data /
-   data-as-subject. Transition in: fui-boot (thread: build) — the detection panel boots into being
-   from the first shot's pulse. Centered: the node network triangulating on the point.
-3. **SUBJECT PORTRAIT** (22.4-30.0s) — eye-level-immersive / centered-hero-lowerthird /
-   horizontal-traverse / multiplicity-swarm. Transition in: whip-pan (thread: travel) — whipped out
-   of the flat map into the physical swarm streaking toward the point. Centered: the swarm
-   converging, each team labeled as it banks in.
-4. **MACRO COUNTDOWN** (30.0-39.1s) — macro-closeup / hud-instrument-frame / radial-emanate /
-   instrument-as-subject. Transition in: match-cut (thread: match) — the swarm's converging point
-   matches directly into the countdown's center. Centered: "10:00" ticking to "00:00" as the point
-   goes dark.
-5. **THE CAVEAT (TWO-WORLDS SPLIT)** (39.1-51.8s) — top-down-map / fullbleed-split /
-   horizontal-traverse / landscape-as-subject. Transition in: pull-out (thread: travel) — pulls up
-   and out of the tight countdown to reveal the whole box from above. Centered: the crisp/foggy
-   seam and the dissolving "?".
-6. **SIGN-OFF** (51.8-60.0s) — orbital-aerial / single-object-void / push-in-only /
-   landscape-as-subject. Transition in: crossfade (thread: match) — dissolves from the foggy split
-   back out to the wide night landscape, bookending shot 1. Centered: the wordmark settling in
-   negative space, then the tagline and source credit.
+## Shot list (7 shots, see storyboard.json for full per-shot composition + transitions)
+1. **Arrival** (0.0–6.7s) wide-establish, eye-level, single-object-void, push-in, ship-as-hero.
+2. **The Whale** (6.7–13.9s) push-detail/macro, single-object-void, push-in, whale-as-hero.
+   *(focus-pull / match: same space, subject changes.)*
+3. **The Other Water** (13.9–18.1s) alt-vantage, map-territory, horizontal-traverse,
+   landscape-as-hero. *(whip-pan / travel: scale jump to a second ship.)*
+4. **WhaleSpotter** (18.1–30.4s) data-panel, instrument-screen, hud-instrument-frame,
+   scroll-data, instrument-as-hero. *(fui-boot / build: a new interface boots into being.)*
+5. **The Gap** (30.4–44.6s) two-up, fullbleed-split, push-in, instrument-as-hero.
+   *(carried-element / carry: the detection bracket survives into the split.)*
+6. **Reckoning** (44.6–59.6s) map-territory, orbital-aerial, pull-out, landscape-as-hero.
+   *(pull-out / travel: both ships revealed together for the first time.)*
+7. **Sign-off** (59.6–64.0s) subject-portrait, macro on the wordmark, stacked-layers,
+   vertical-rise, data-as-hero. *(crossfade / match: a reflective close, then fade.)*
 
-## Ending
-Designed from the start: after the VO's last line, the wide night landscape returns (bookend),
-the wordmark reveals, tagline and source credit stage in, then a gentle cinematic fade — motion
-running to the final frame, never a static hold.
+Every adjacent pair changes >= 2 of {pov, layout, motion_vector, hero_treatment} — verified in
+storyboard.json and by `scripts/storyboard_check.py`.
+
+## Ending (designed in, not left to a text card)
+The last VO line ("one that watches the dark, one that still doesn't") pays off on a pulled-out
+wide shot showing both ships' wakes on the same water, side by side, for the only time in the
+film. Motion continues through the outro: the wordmark, tagline, and source credit stage in over
+~3s, then a slow cinematic fade. Nothing holds static before the cut to black.

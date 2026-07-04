@@ -181,3 +181,39 @@ dispatch_history:
       AI detection grid, ember-amber accents
     metaphor: an AI races its own ten-minute clock to answer a fire it was built to
       expect
+- date: '2026-07-04'
+  topic: Matson's Alaska cargo fleet brings WhaleSpotter AI thermal whale-detection
+    online (WHOI-licensed; company claims ~3nm range, >90% detect-in-time) while a
+    Royal Caribbean cruise ship docked in Seward June 21 with a dead pregnant fin
+    whale on its bow (necropsy consistent with vessel strike, cause pending); no Alaska
+    cruise ship known to carry equivalent tech
+  slug: dispatch-2026-07-04-whalespotter
+  key_entities:
+  - matson
+  - whalespotter
+  - fin whale
+  - seward
+  - royal caribbean
+  - thermal detection
+  - vessel strike
+  - whoi
+  - cruise ship
+  - cargo ship
+  - ai whale detection
+  - ovation of the seas
+  archetype: 'fullbleed split-screen diptych: instrumented thermal (AI-sighted) half
+    vs blind (uninstrumented) half, two ships on one night sea'
+  palette: midnight indigo night sea, magenta-to-copper thermal heat signature, bare
+    graphite-and-mercury grey
+  voice: kokoro:bf_emma
+  composition:
+    pov: eye-level-immersive
+    motion_vector: push-in-only
+    hero_treatment: instrument-as-subject
+    layout: fullbleed-split
+    register: naturalistic-scene
+    palette: midnight indigo sea, a magenta-to-copper heat signature marking where
+      the AI reads the water, and a bare graphite-and-mercury grey world for the ship
+      running without it
+    metaphor: Two ships cross the same dark water. One sees a whale as a shape of
+      heat from three miles out. The other does not look at all.
