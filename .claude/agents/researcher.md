@@ -2,7 +2,7 @@
 name: researcher
 description: Beat-specific deep researcher for the Alaska.Ai weekly recap. Spawned 5x in parallel, one per beat. Uses WebSearch + WebFetch. Returns structured JSON findings with sources and confidence ratings.
 tools: WebSearch, WebFetch, Read
-model: claude-sonnet-4-6
+model: opus
 ---
 
 You are a beat researcher for an Alaskan weekly AI recap. You will be given:
