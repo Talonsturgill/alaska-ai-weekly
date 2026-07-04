@@ -1,0 +1,262 @@
+{
+  "concept": "Two Ships, One Night: the AI that watches for a whale, and the ship that doesn't have it",
+  "derived_from": "scratch",
+  "story_slug": "dispatch-2026-07-04-whalespotter",
+  "voice": "kokoro:bf_emma",
+  "music": "\"Anguish\" - Kevin MacLeod (incompetech.com) - CC BY 4.0",
+  "style_mode": "cinematic-doc",
+  "taste_dials": {
+    "DESIGN_VARIANCE": {
+      "v": 6,
+      "why": "an asymmetric two-world diptych, but each half stays composed, not chaotic"
+    },
+    "MOTION_INTENSITY": {
+      "v": 4,
+      "why": "elegiac and controlled: slow pushes, no frantic cutting, this is a quiet indictment not an action piece"
+    },
+    "VISUAL_DENSITY": {
+      "v": 5,
+      "why": "one half of the frame carries HUD/thermal data, the other stays spare and dark to embody the absence of instrumentation"
+    },
+    "COLOR_BOLDNESS": {
+      "v": 7,
+      "why": "the hot thermal magenta-gold must read hard against the desaturated blind half even on a muted phone screen"
+    },
+    "TEXTURE_GRAIN": {
+      "v": 6,
+      "why": "night ocean photography needs visible grain and mist to read as authentic, not vector-flat"
+    },
+    "GRADE_STRENGTH": {
+      "v": 7,
+      "why": "a strong grade is what sells two different visual registers (seen vs unseen) as one coherent film"
+    }
+  },
+  "references": [
+    "BBC/Netflix nature-doc thermal/FLIR night-camera inserts (Dynasties, Predators) - for the authentic thermal-vision rendering",
+    "Bloomberg Originals two-panel comparison graphics - for the restrained, legible diptych overlay"
+  ],
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "push-in-only",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "fullbleed-split",
+    "register": "naturalistic-scene",
+    "palette": "midnight indigo sea, a magenta-to-copper heat signature marking where the AI reads the water, and a bare graphite-and-mercury grey world for the ship running without it",
+    "metaphor": "Two ships cross the same dark water. One sees a whale as a shape of heat from three miles out. The other doesn't look at all."
+  },
+  "palette": "midnight indigo sea, a magenta-to-copper heat signature marking where the AI reads the water, and a bare graphite-and-mercury grey world for the ship running without it",
+  "divergence_note": "Diverges from 2026-07-02's exploded-diagram data-brutalist grid ledger and 2026-07-03's orbital-aerial HUD swarm: this Dispatch drops to eye-level on dark water, pushes in slowly instead of assembling or radiating, splits the frame into two literal worlds instead of a modular grid or a bezel-frame HUD, and trades parchment/vermilion/pewter and spruce/cyan-violet/amber for a night-sea diptych of magenta-copper heat signature against bare graphite-mercury grey, a palette built directly out of the story's own detection mechanism rather than a decorative choice.",
+  "wording_constraints": [
+    "Ship arrival date is June 21, not 22.",
+    "Necropsy language: 'consistent with a vessel strike', cause still pending, never 'confirmed'.",
+    "Never call WhaleSpotter a WHOI spinoff; it is built on WHOI-licensed technology.",
+    "3nm range and >90% detection rate are company/CEO claims and must carry on-screen attribution.",
+    "'No Alaska cruise ship publicly known to carry equivalent tech' must never imply rejection or choice.",
+    "Must include an explicit distancing line: no evidence WhaleSpotter was offered to or declined by Royal Caribbean, and no claim it would have saved this specific whale."
+  ],
+  "beats": [
+    {
+      "t": "0.0-3.5",
+      "vo": "On June twenty first, a cruise ship carrying four thousand passengers docked in Seward",
+      "shows": "the cruise ship emerges from harbor dark, running lights lit, hull filling the frame, slow push-in",
+      "sfx": "ambient",
+      "means": "cold open: place and scale, no context yet"
+    },
+    {
+      "t": "3.5-6.7",
+      "vo": "with something dead across its bow.",
+      "shows": "camera settles on the whale's silhouette draped across the bow, unmistakable now",
+      "sfx": "hit",
+      "means": "the stake: the arrival IS the incident"
+    },
+    {
+      "t": "6.7-9.6",
+      "vo": "A pregnant, sixty one foot fin whale.",
+      "shows": "push closer on the whale's full form; on-screen numeral '61 FT' sets scale",
+      "sfx": "tick",
+      "means": "specificity: a living, pregnant animal, not an abstraction"
+    },
+    {
+      "t": "9.6-13.9",
+      "vo": "Preliminary findings are consistent with a vessel strike. The cause is still not final.",
+      "shows": "a caption card overlays in restrained type: NECROPSY: CONSISTENT WITH VESSEL STRIKE (dot) CAUSE PENDING, the hedge visibly unresolved (dotted rule, not a hard box)",
+      "sfx": "pop",
+      "means": "the honest hedge, drawn as a picture: not confirmed, still open"
+    },
+    {
+      "t": "13.9-18.1",
+      "vo": "Three miles out, the same dark water looks different to another kind of ship.",
+      "shows": "whip-pan across open black water to a second ship, the Matson containership, small in the distance",
+      "sfx": "whoosh",
+      "means": "the pivot: a second world exists on the same night"
+    },
+    {
+      "t": "18.1-22.0",
+      "vo": "Matson's cargo fleet already runs an AI system called WhaleSpotter.",
+      "shows": "the ship's hull dissolves into a thermal-camera housing; a HUD frame boots into place, brackets snap, a readout sweeps on",
+      "sfx": "riser",
+      "means": "we enter the machine's own point of view"
+    },
+    {
+      "t": "22.0-26.2",
+      "vo": "The company says its thermal cameras can spot a whale's heat from three miles out.",
+      "shows": "on the thermal display a distant warm blob resolves against cold blue water; label reads 'COMPANY CLAIM: RANGE ~3 NM'",
+      "sfx": "tick",
+      "means": "the range claim, explicitly attributed, not asserted as fact"
+    },
+    {
+      "t": "26.2-30.4",
+      "vo": "It doesn't see a whale. It sees heat: a warm shape glowing on a screen.",
+      "shows": "the blob sharpens and is bracketed, a classification label snaps onto it",
+      "sfx": "lock",
+      "means": "the mechanism made concrete: detection, not recognition"
+    },
+    {
+      "t": "30.4-35.1",
+      "vo": "The company says it flags that heat in time to turn, more than nine times in ten.",
+      "shows": "a percentage readout ticks up past 90, clearly labeled 'CEO CLAIM', beside a bracket showing a turn vector",
+      "sfx": "pulse",
+      "means": "the performance claim, attributed and quantified honestly"
+    },
+    {
+      "t": "35.1-39.1",
+      "vo": "No Alaska cruise ship is publicly known to carry anything like it.",
+      "shows": "the frame splits: left half keeps the instrumented thermal HUD, right half reveals a plain, dark, uninstrumented bridge view with no overlay at all",
+      "sfx": "whoosh",
+      "means": "the gap made visually literal; the diptych locks into place"
+    },
+    {
+      "t": "39.1-41.9",
+      "vo": "Nobody offered Royal Caribbean this system.",
+      "shows": "on the blind (right) half, a caption card fades in: 'NO EVIDENCE THIS WAS OFFERED OR DECLINED'",
+      "sfx": "pop",
+      "means": "the explicit distancing line begins, drawn as text over the blind half"
+    },
+    {
+      "t": "41.9-44.6",
+      "vo": "Nobody turned it down. Only the gap is real.",
+      "shows": "on the blind half, a bracket-shaped void of pure negative space sits where the AI's readout would be, empty and unlit, the absence drawn as a literal shape",
+      "sfx": "tick",
+      "means": "the distancing line completes over a picture of absence itself: no causal claim, only a documented, visible gap"
+    },
+    {
+      "t": "44.6-49.6",
+      "vo": "The AI can't steer a four thousand passenger ship. It can't make a captain slow down.",
+      "shows": "on the instrumented half the bracket flashes and holds, but the ship's course line stays flat and unchanged, no autonomous correction drawn",
+      "sfx": "tick",
+      "means": "the honest limit: detection without control"
+    },
+    {
+      "t": "49.6-54.5",
+      "vo": "It only puts one fact on a screen: something is out there. Someone still has to act.",
+      "shows": "a small human silhouette appears at the edge of the instrumented half, a hand reaching toward a control, the final link in the chain",
+      "sfx": "hit",
+      "means": "agency returns to a person, not the system"
+    },
+    {
+      "t": "54.5-59.4",
+      "vo": "Tonight, two kinds of ships share this water. One that watches the dark. One that still doesn't.",
+      "shows": "pull out to a wide shot: both ships' wakes crossing the same dark, chart-like water, side by side at last",
+      "sfx": "riser",
+      "means": "the thesis lands as one wide image, paying off the VO's last line visually"
+    },
+    {
+      "t": "59.4-64.0",
+      "vo": "",
+      "shows": "the ALASKA.AI wordmark and eyebrow settle in staged bands, then the tagline, then the WhaleSpotter / NOAA / Alaska Public Media source credit line, before a slow cinematic fade to black",
+      "sfx": "boom",
+      "means": "the branded sign-off, staged in beats, motion runs to the final frame"
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "t": "0.0-6.675",
+      "framing": "wide-establish",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "centered": "the cruise ship's bow and the whale's shape draped across it, filling center frame",
+      "means": "the cold open: the incident itself, no context yet"
+    },
+    {
+      "id": 2,
+      "t": "6.675-13.9",
+      "framing": "push-detail",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "focus-pull",
+      "thread": "match",
+      "centered": "the whale's full form, given dignity, centered in frame as the necropsy caption resolves",
+      "means": "focus racks from the ship's hull to the whale itself: the subject changes, the space does not"
+    },
+    {
+      "id": 3,
+      "t": "13.9-18.075",
+      "framing": "alt-vantage",
+      "pov": "eye-level-immersive",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "centered": "the Matson containership, small against the vast dark water, crossing center frame",
+      "means": "a scale jump out of the harbor: a second ship exists on this same night"
+    },
+    {
+      "id": 4,
+      "t": "18.075-30.375",
+      "framing": "data-panel",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "centered": "the thermal readout's bracketed heat-blob, resolving and classifying at frame center",
+      "means": "we enter the machine's own point of view: this is what the AI actually sees"
+    },
+    {
+      "id": 5,
+      "t": "30.375-44.625",
+      "framing": "two-up",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "the instrumented (left) and blind (right) halves, held in direct comparison at frame center",
+      "means": "the detection bracket from shot 4 survives the cut and becomes one half of a literal split; the other half reveals what is missing"
+    },
+    {
+      "id": 6,
+      "t": "44.625-59.6",
+      "framing": "map-territory",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "pull-out",
+      "hero_treatment": "landscape-as-subject",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "centered": "both ships' wakes, now small, crossing the same dark water side by side at frame center",
+      "means": "pulling out to reveal the two ships together for the first time: the split's own seam carries forward as the line where their two wakes meet, the thesis made visible"
+    },
+    {
+      "id": 7,
+      "t": "59.6-64.0",
+      "framing": "subject-portrait",
+      "pov": "macro-closeup",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "crossfade",
+      "thread": "match",
+      "centered": "the ALASKA.AI wordmark, held and lit, at frame center",
+      "means": "the branded sign-off: a reflective close on the mark itself, staged in bands, then a slow fade"
+    }
+  ]
+}

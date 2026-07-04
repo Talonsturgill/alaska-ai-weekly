@@ -1,0 +1,11 @@
+{
+  "sources": [
+    {"url": "https://www.adn.com/alaska-news/wildlife/2026/06/21/cruise-ship-arrives-in-seward-with-dead-endangered-fin-whale-on-its-bow/", "outlet": "Anchorage Daily News", "note": "June 21 2026: Royal Caribbean's Ovation of the Seas docked in Seward with a dead, pregnant, 61-foot endangered fin whale on its bow"},
+    {"url": "https://alaskapublic.org/news/environment/2026-06-24/preliminary-necropsy-shows-dead-fin-whale-in-seward-had-injuries-consistent-with-vessel-strike", "outlet": "Alaska Public Media", "note": "Preliminary necropsy (Alaska SeaLife Center, NOAA Fisheries, Alaska Veterinary Pathology Services): blunt force trauma to jaw, spine, ribs consistent with a vessel strike; official cause of death still pending"},
+    {"url": "https://www.prnewswire.com/news-releases/matson-partners-with-whalespotter-to-commercialize-breakthrough-whale-detection-technology-302602323.html", "outlet": "Matson / PR Newswire", "note": "Matson-WhaleSpotter partnership announcement; company claim of whale detection up to 3 nautical miles away, day or night; WhaleSpotter built on WHOI-licensed technology"},
+    {"url": "https://www.akbizmag.com/industry/science/matson-deploys-whale-spotting-technology-to-avoid-ship-strikes/", "outlet": "Alaska Business Magazine", "note": "CEO Shawn Henry: system detects whales in time for evasive action more than 90% of the time (company/CEO claim, not independently verified); Matson Alaska routes to Anchorage, Kodiak, Dutch Harbor"},
+    {"url": "https://www.akbizmag.com/industry/arctic/cetaceaninnovation/", "outlet": "Alaska Business Magazine", "note": "WhaleSpotter designed for deployment on container ships, cruise ships, ferries; no cruise-line deployment confirmed in any source"},
+    {"url": "https://royalcaribbeanpresscenter.com/fact-sheet/28/ovation-of-the-seas/", "outlet": "Royal Caribbean Press Center", "note": "Ovation of the Seas: 4,180 guests at double occupancy, up to 4,905 at max capacity"},
+    {"url": "https://www.fisheries.noaa.gov/resource/document/2026-annual-deployment-plan-observers-and-electronic-monitoring-groundfish-and", "outlet": "NOAA Fisheries", "note": "2026 Annual Deployment Plan for Observers and Electronic Monitoring, Alaska groundfish and halibut fleet. Observer/EM coverage is a federal requirement"}
+  ]
+}
