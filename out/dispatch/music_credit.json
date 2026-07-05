@@ -1,10 +1,10 @@
 {
-  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Crypto.mp3",
-  "title": "Crypto",
-  "composer": "Kevin MacLeod",
-  "license": "CC BY 4.0",
-  "source": "incompetech.com",
-  "credit": "\"Crypto\" Kevin MacLeod (incompetech.com) - CC BY 4.0",
+  "url": "https://ccmixter.org/content/airtone/airtone_-_nightWalk.mp3",
+  "title": "nightWalk",
+  "composer": "airtone (feat. mwic)",
+  "license": "CC BY 3.0",
+  "source": "ccmixter.org",
+  "credit": "\"nightWalk\" airtone (feat. mwic) (ccmixter.org) - CC BY 3.0",
   "wav": "out/dispatch/music_bed.wav",
   "duration": 180.0
 }
