@@ -9,3 +9,4 @@ __pycache__/
 # not out/dispatch/, so per-run audio/textlog artifacts land here too. Never commit them.
 .claude/skills/alaska-dispatch/audio/
 .claude/skills/alaska-dispatch/textlog/
+.claude/skills/alaska-dispatch/quality_report.json
