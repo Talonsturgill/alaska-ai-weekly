@@ -1,0 +1,62 @@
+{
+  "shots": [
+    {
+      "id": 1,
+      "start": 0,
+      "end": 326,
+      "framing": "wide-establish",
+      "transition_in": null,
+      "note": "shot 1"
+    },
+    {
+      "id": 2,
+      "start": 326,
+      "end": 585,
+      "framing": "push-detail",
+      "transition_in": "match-cut",
+      "note": "shot 2"
+    },
+    {
+      "id": 3,
+      "start": 585,
+      "end": 836,
+      "framing": "data-panel",
+      "transition_in": "assemble",
+      "note": "shot 3"
+    },
+    {
+      "id": 4,
+      "start": 836,
+      "end": 1039,
+      "framing": "subject-portrait",
+      "transition_in": "graphic-match",
+      "note": "shot 4"
+    },
+    {
+      "id": 5,
+      "start": 1039,
+      "end": 1264,
+      "framing": "two-up",
+      "transition_in": "mask-wipe",
+      "note": "shot 5"
+    },
+    {
+      "id": 6,
+      "start": 1264,
+      "end": 1569,
+      "framing": "map-territory",
+      "transition_in": "map-travel",
+      "note": "shot 6"
+    },
+    {
+      "id": 7,
+      "start": 1569,
+      "end": 1800,
+      "framing": "subject-portrait",
+      "transition_in": "crossfade",
+      "note": "shot 7"
+    }
+  ],
+  "fps": 30,
+  "total": 1800
+}

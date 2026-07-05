@@ -181,3 +181,34 @@ dispatch_history:
       AI detection grid, ember-amber accents
     metaphor: an AI races its own ten-minute clock to answer a fire it was built to
       expect
+- date: '2026-07-05'
+  topic: UAF probabilistic depth model predicts Chinook salmon depth occupancy to
+    reduce pollock trawl bycatch in the Gulf of Alaska
+  slug: dispatch-2026-07-05-depthmodel
+  key_entities:
+  - chinook
+  - bycatch
+  - trawl
+  - pollock
+  - gulf of alaska
+  - uaf
+  - depth model
+  - gietzmann-sanders
+  - seitz
+  - cunningham
+  - courtney
+  - animal biotelemetry
+  archetype: instrument-as-subject cross-section explainer, editorial-schematic register
+  palette: abyssal indigo-navy water column, a bioluminescent gold band, moonlit silver
+    for the night pass, one coral-dawn beat at the diel turn
+  voice: kokoro:bf_emma
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: scroll-data
+    hero_treatment: instrument-as-subject
+    layout: stacked-layers
+    register: editorial-schematic
+    palette: abyssal indigo-navy water column, a bioluminescent gold band, moonlit
+      silver for the night pass, one coral-dawn beat at the diel turn
+    metaphor: 'the depth model breathes: a probability tide rising and falling through
+      day and night, and the net must find the one door it leaves open'

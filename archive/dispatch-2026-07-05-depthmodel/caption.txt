@@ -1,0 +1,15 @@
+Alaska's pollock fishery can be shut down by two boats catching too many king salmon in one bad weekend.
+
+That is not a hypothetical. It happened in 2024, and it will happen again unless bycatch drops.
+
+A University of Alaska Fairbanks team, Marcel Gietzmann-Sanders working with Andrew Seitz, Curry Cunningham, and Michael Courtney, just published a fix that is almost boring by AI standards. No autonomy. No real-time tracking. No drone in the sky. Just thirteen years and more than seven hundred thousand tagging records, fed into a probabilistic depth model that predicts where Chinook salmon sit in the water column by season and time of day.
+
+That is the whole pitch. Trawlers targeting pollock could fish off the depth the model flags as risky, and take fewer kings by accident.
+
+The limit matters more than the model does. This is a population-level probability built from history, not a tracker on any one fish. It cannot promise a given tow comes up clear. Nobody is required to use it, and the paper does not claim it will.
+
+That restraint is the actual story. Alaska has watched AI pitched as autonomy and prediction that outruns its evidence, in fisheries and everywhere else. This is the opposite: a calibrated tool that states the odds and steps out of the way. Whether it changes behavior on the water depends on something the model cannot fix, whether regulators and the fleet build the incentive and the trust to actually use it.
+
+Should bycatch-avoidance tools like this stay voluntary, or is it time to tie them to quota or permitting?
+
+#ArtificialIntelligence #Alaska #FisheriesManagement #GulfOfAlaska #BycatchReduction
