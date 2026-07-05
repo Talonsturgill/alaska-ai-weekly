@@ -30,22 +30,36 @@
     "metaphor": "the depth model breathes: a probability tide rising and falling through day and night, and the net must find the one door it leaves open"
   },
   "divergence_note": "Unlike the data-brutalist parchment ledger of the grid/data-center story (07-02) or the orbital field-HUD countdown of the wildfire-drone story (07-03), this Dispatch slices SIDEWAYS into the water column itself: a stacked-layer cross-section whose hero is the depth model's own glowing probability readout, not a built structure or a swarm, moving as a scrolling time-of-day strip rather than an assemble-build or a radial countdown, in an indigo-and-gold ocean palette that is neither parchment nor spruce-black-and-ember.",
+  "timing_note": "Beat/shot times below are ANCHORED TO THE REAL synthesized VO (out/dispatch/audio/timing60.json + words60.json), not hand-estimated seconds. Actual speech (Kokoro bf_emma, time-matched to an edge-tts en-GB-SoniaNeural timing reference) runs faster than the original estimate and ends at 48.23s, so the outro gets a generous ~11.8s tail, split into two further shots (6 and 7) so no single shot exceeds the 16s ceiling.",
   "shots": [
     {
       "id": 1,
-      "t": "0.0-15.8",
+      "t": "0.0-10.86",
       "framing": "wide-establish",
       "pov": "cross-section-cutaway",
       "layout": "stacked-layers",
       "motion_vector": "scroll-data",
-      "hero_treatment": "instrument-as-subject",
-      "centered": "the trawl vessel's silhouette on the surface line, dead center, as the SEASON CLOSED stamp lands on it",
-      "means": "opens on the stake: a fishery can close over one bad weekend"
+      "hero_treatment": "structure-as-subject",
+      "centered": "the SEASON CLOSED stamp, already mid-slam onto the surface-line gate at frame 1 (cold open on the consequence, not a slow establish)",
+      "means": "hooks on the consequence in the first second, then rewinds to explain 2024's two boats"
     },
     {
       "id": 2,
-      "t": "15.8-31.5",
+      "t": "10.86-19.51",
       "framing": "push-detail",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "one glowing Chinook silhouette, dead center, descending and fading before a river-mouth icon",
+      "means": "a real world-change lands well before 16s: policy becomes one fish's fate"
+    },
+    {
+      "id": 3,
+      "t": "19.51-27.85",
+      "framing": "data-panel",
       "pov": "macro-closeup",
       "layout": "single-object-void",
       "motion_vector": "assemble-build",
@@ -53,12 +67,12 @@
       "transition_in": "assemble",
       "thread": "build",
       "centered": "the 700,000+ tag-point cloud coalescing, dead center in negative space, into one smooth curve",
-      "means": "13 years of scattered tagging data assembling into the model itself"
+      "means": "the faded fish becomes the first data point; 13 years of tagging data assembles into the model"
     },
     {
-      "id": 3,
-      "t": "31.5-39.8",
-      "framing": "data-panel",
+      "id": 4,
+      "t": "27.85-34.63",
+      "framing": "subject-portrait",
       "pov": "cross-section-cutaway",
       "layout": "stacked-layers",
       "motion_vector": "scroll-data",
@@ -69,8 +83,8 @@
       "means": "the model resolves back into the water column it describes, and the honest caveat plays: WHERE sharp, WHEN foggy"
     },
     {
-      "id": 4,
-      "t": "39.8-50.8",
+      "id": 5,
+      "t": "34.63-42.12",
       "framing": "two-up",
       "pov": "eye-level-immersive",
       "layout": "fullbleed-split",
@@ -82,34 +96,50 @@
       "means": "the model's output becomes a captain's actual choice of fishing depth, voluntary, not guaranteed"
     },
     {
-      "id": 5,
-      "t": "50.8-60.0",
+      "id": 6,
+      "t": "42.12-52.3",
       "framing": "map-territory",
       "pov": "orbital-aerial",
       "layout": "map-territory",
       "motion_vector": "push-in-only",
       "hero_treatment": "landscape-as-subject",
-      "transition_in": "pull-out",
+      "transition_in": "map-travel",
       "thread": "travel",
-      "centered": "the wide Gulf of Alaska at dawn, boats visibly spaced clear of the glowing band, then the branded outro",
-      "means": "pulls back from one captain's choice to the whole fleet, run after run, then signs off"
+      "centered": "the wide Gulf of Alaska at dawn, boats visibly spaced clear of the glowing band, then the wordmark begins its reveal",
+      "means": "pulls back from one captain's choice to the whole fleet, run after run"
+    },
+    {
+      "id": 7,
+      "t": "52.3-60.0",
+      "framing": "subject-portrait",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "crossfade",
+      "thread": "match",
+      "centered": "the tagline and source credit, staged in over a quiet closing card, a genuinely different final composition, not a text overlay on shot 6's frame",
+      "means": "signs off on motion, never a static hold"
     }
   ],
   "beats": [
-    {"t": "0.0-3.9", "vo": "A fishery can close over one bad weekend.", "shows": "cross-section opens at dusk; a trawl silhouette glides the surface line; ALASKA.AI eyebrow settles", "sfx": "pop (title glyph lands), boom (net settling)", "means": "opens on the stake"},
-    {"t": "4.0-7.9", "vo": "In twenty twenty four, two boats caught enough king salmon by accident", "shows": "a '2024' date chip snaps in; two boat icons appear; a red bycatch tally ticks upward", "sfx": "tick tick (tally counting), a rising riser", "means": "names the exact trigger"},
-    {"t": "8.0-11.9", "vo": "to shut down Alaska's pollock season.", "shows": "the boats freeze; a red SEASON CLOSED stamp slams onto the surface line", "sfx": "hit (stamp slam)", "means": "the consequence lands"},
-    {"t": "12.0-15.9", "vo": "Every king salmon they take is one that never reaches a river.", "shows": "camera pushes down into the water; a single glowing Chinook silhouette swims toward a river-mouth icon and fades", "sfx": "whoosh (push down), soft ambient swell", "means": "reframes policy into one fish's fate; carries into shot 2"},
-    {"t": "16.0-19.9", "vo": "So a University of Alaska Fairbanks team tried something new.", "shows": "cut to shot 2: macro void; a UAF lab card assembles from points of light", "sfx": "pop (card lands), a building tone", "means": "introduces the researchers, scene changes to the data itself"},
-    {"t": "20.0-23.9", "vo": "Thirteen years of tagged salmon in the Gulf of Alaska,", "shows": "'13 YEARS · GULF OF ALASKA' label locks in; hundreds of tag-points bloom into the void", "sfx": "pop (label lands), shimmer tick", "means": "establishes the dataset's scale in time and place"},
-    {"t": "24.0-27.9", "vo": "over seven hundred thousand data points,", "shows": "'700,000+ DATA POINTS' counter races upward as more points bloom", "sfx": "rapid tick (counter racing)", "means": "the scale of the evidence"},
-    {"t": "28.0-31.9", "vo": "trained a model that predicts where kings sit in the water", "shows": "the point-cloud assembles and collapses into one smooth glowing probability curve", "sfx": "whoosh (assemble collapse), a resolving pulse", "means": "the BUILD payoff: noise becomes a model"},
-    {"t": "32.0-35.9", "vo": "by season and time of day.", "shows": "graphic-match cut to shot 3: the curve resolves into the water-column's glowing depth-occupancy band; a day/night dial ticks beside it", "sfx": "pulse (breathing band), low ambient tone", "means": "the model returns to the sea it describes"},
-    {"t": "36.0-39.9", "vo": "It cannot track one fish, or promise one tow comes up clear.", "shows": "the band stays sharp and gridded along the DEPTH axis (WHERE); toward a 'this tow, today' readout it dissolves into fog around a ghosted '?'", "sfx": "a thin riser fraying into soft noise, a faint tick on the '?'", "means": "draws the one honest caveat as a picture, not a text card"},
-    {"t": "40.0-43.9", "vo": "What it shows is the odds, so a captain can choose a depth", "shows": "mask-wipe carries the glowing band into shot 4: a trawl net's headrope depth line steers around it; 'PROPOSED, NOT GUARANTEED' ghosted label", "sfx": "whoosh (cut to boat), mechanical creak (net paying out)", "means": "the model becomes an actual, voluntary choice at sea"},
-    {"t": "44.0-47.9", "vo": "the model calls safer.", "shows": "a 'SAFER DEPTH · ILLUSTRATIVE' readout chip lands beside the wheelhouse", "sfx": "hit (chip lands), tick", "means": "closes the captain's-choice beat"},
-    {"t": "48.0-50.9", "vo": "Nobody has to use it.", "shows": "a plain 'VOLUNTARY' stamp lands, softer than the earlier SEASON CLOSED stamp", "sfx": "soft boom (stamp)", "means": "the honest note on adoption"},
-    {"t": "51.0-54.9", "vo": "But if enough boats do, the same fish and the same nets could add up to a better bet,", "shows": "pull-out to shot 5: wide dawn view of the Gulf of Alaska, several boats visibly spaced clear of the glowing band", "sfx": "whoosh (pull back), wide ambient swell", "means": "pulls back from one captain to the whole fleet"},
-    {"t": "55.0-60.0", "vo": "run after run.", "shows": "outro reveals: ALASKA.AI wordmark, tagline, source credit, staged beats, gentle cinematic fade with the aerial drift still moving to the last frame", "sfx": "pop pop (wordmark, tagline reveal), a gentle resolve chime", "means": "the branded sign-off, ending on motion not a static hold"}
+    {"t": "0.0-4.0", "vo": "A fishery can close over one bad weekend.", "shows": "COLD OPEN: at frame 1 the SEASON CLOSED stamp is already mid-slam onto the surface-line gate; only after impact does the dusk cross-section settle into view around it", "sfx": "hit (stamp slam at frame 1), then a settling boom", "means": "hooks on the consequence in the first second, not after 8s"},
+    {"t": "4.0-8.19", "vo": "In twenty twenty four, two boats caught enough king salmon by accident", "shows": "a fast reverse-wipe rewinds the frame to a '2024' date chip; two boat icons appear as the cause; a red tally ticks upward", "sfx": "a fast rewind whoosh, then tick tick (tally counting)", "means": "explains what caused the stamp we opened on"},
+    {"t": "8.19-10.86", "vo": "to shut down Alaska's pollock season.", "shows": "the timeline catches back up to the present; gate/net icon fully shut, boats idle; shot 1 ends", "sfx": "a second, quieter confirming hit", "means": "closes the causal loop before the first shot change"},
+    {"t": "10.86-14.98", "vo": "Every king salmon they take is one that never reaches a river.", "shows": "match-cut to shot 2: now immersed IN the water at eye level, a single glowing Chinook silhouette descends and fades before a river-mouth icon", "sfx": "whoosh (match-cut), soft ambient swell", "means": "reframes policy into one fish's fate; the real cut lands at 10.86s, well before the 16s ceiling"},
+    {"t": "14.98-19.51", "vo": "So a University of Alaska Fairbanks team tried something new.", "shows": "the faded fish dissolves to a single point of light, still inside shot 2's immersive void", "sfx": "a soft tick as it fades to a point", "means": "the individual loss becomes the first data point, seeding shot 3"},
+    {"t": "19.51-22.68", "vo": "Thirteen years of tagged salmon in the Gulf of Alaska,", "shows": "assemble-cut to shot 3: '13 YEARS · GULF OF ALASKA' label locks in at the exact screen position the point occupied; more tag-points bloom into the void", "sfx": "pop (label lands), shimmer tick", "means": "establishes dataset scale, carrying the point from shot 2"},
+    {"t": "22.68-25.08", "vo": "over seven hundred thousand data points,", "shows": "hundreds more points bloom rapidly, each landing at its own depth/time coordinate in the void, not a generic counter", "sfx": "rapid tick-tick-tick (points landing)", "means": "the scale of the evidence, shown rather than counted"},
+    {"t": "25.08-27.85", "vo": "trained a model that predicts where kings sit in the water", "shows": "the point-cloud visibly collapses inward and resolves into one smooth glowing probability curve", "sfx": "a rising riser into a whoosh (assemble payoff), a resolving pulse", "means": "the BUILD payoff: noise becomes a model; shot 3 ends"},
+    {"t": "27.85-30.16", "vo": "by season and time of day.", "shows": "graphic-match cut to shot 4: the curve resolves into the water column's glowing depth-occupancy band; a day/night dial ticks beside it", "sfx": "pulse (breathing band), low ambient tone", "means": "the model returns to the sea it describes; the film's home composition returns"},
+    {"t": "30.16-34.63", "vo": "It cannot track one fish, or promise one tow comes up clear.", "shows": "the band stays sharp and gridded along the DEPTH axis (WHERE); toward a 'this tow, today' readout it visibly frays and is EATEN by fog around a ghosted '?'", "sfx": "a thin riser fraying into soft noise, a faint tick on the '?'", "means": "draws the one honest caveat as a cost to the model, not a decoration; shot 4 ends"},
+    {"t": "34.63-37.98", "vo": "What it shows is the odds, so a captain can choose a depth", "shows": "mask-wipe carries the glowing band into shot 5: a trawl net's headrope depth line steers around it; a 'PROPOSED, NOT GUARANTEED' ghosted label", "sfx": "whoosh (cut to boat), mechanical creak (net paying out)", "means": "the model becomes an actual, voluntary choice at sea"},
+    {"t": "37.98-39.92", "vo": "the model calls safer.", "shows": "the net settles at the chosen depth: pollock visibly fill it while the Chinook's glow stays clear above, a shown outcome", "sfx": "hit (net catch), a soft resolve tone", "means": "shows the payoff rather than a repeated text chip"},
+    {"t": "39.92-42.12", "vo": "Nobody has to use it.", "shows": "a plain 'VOLUNTARY' stamp lands, visibly and audibly softer than the SEASON CLOSED stamp; shot 5 ends", "sfx": "soft boom (a gentler, quieter stamp)", "means": "the honest note on adoption, rhymed against the opening stamp"},
+    {"t": "42.12-46.94", "vo": "But if enough boats do, the same fish and the same nets could add up to a better bet,", "shows": "map-travel cut to shot 6: wide dawn view of the Gulf of Alaska, several boats visibly spaced clear of the glowing band", "sfx": "whoosh (map-travel), wide ambient swell", "means": "pulls back from one captain to the whole fleet"},
+    {"t": "46.94-48.5", "vo": "run after run.", "shows": "the spaced boats settle into a calm, steady dawn pattern across the gulf", "sfx": "a soft resolving chime", "means": "lands the final words visually before the outro begins"},
+    {"t": "48.5-52.3", "vo": "", "shows": "the ALASKA.AI wordmark begins its reveal over the still-drifting aerial (parallax continues, camera never freezes); shot 6 ends", "sfx": "pop (wordmark lands)", "means": "the branded sign-off begins; motion never stops"},
+    {"t": "52.3-56.1", "vo": "", "shows": "crossfade to shot 7: a quiet closing card (single-object-void); the tagline and source credit reveal in staged beats", "sfx": "pop (tagline lands), a soft tick (credit line)", "means": "a genuinely different, calmer final composition for the sign-off, not a text overlay on shot 6's frame"},
+    {"t": "56.1-60.0", "vo": "", "shows": "a gentle cinematic fade to black, the drift/parallax still moving into the very last frame", "sfx": "a gentle resolve chime, fading with the picture", "means": "ends on motion, never a static hold"}
   ]
 }

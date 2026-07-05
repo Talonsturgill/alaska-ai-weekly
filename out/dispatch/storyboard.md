@@ -48,36 +48,49 @@ ledger (07-02, the grid/data-center story) and the orbital field-HUD countdown (
 drones). Spatial signature (cross-section-cutaway, stacked-layers, scroll-data) is unique versus the
 last 4 dispatches. Palette is fresh (no "amber/ember" or "parchment/vermilion" language repeated).
 
-## Shot list (5 shots, ~60s)
-1. **0.0-15.8s** — wide-establish. Cross-section, dusk. Trawl silhouette on the surface line; a
-   SEASON CLOSED stamp lands on it.
-2. **15.8-31.5s** — push-detail, macro-closeup into a void. 700,000+ tag-points assemble into one
-   smooth probability curve. Transition in: **assemble** (thread: build).
-3. **31.5-39.8s** — data-panel. Graphic-match cut: the curve resolves back into the water column as
-   the breathing depth-occupancy band; the WHERE/WHEN caveat plays here. Transition in:
-   **graphic-match** (thread: match).
-4. **39.8-50.8s** — two-up. The trawl net's headrope depth line steers around the carried glowing
-   band. Transition in: **mask-wipe** (thread: carry).
-5. **50.8-60.0s** — map-territory. Pull back to the wide Gulf of Alaska at dawn, boats spaced clear
-   of the band; branded outro. Transition in: **pull-out** (thread: travel).
+## Shot list (6 shots, ~60s) — REVISED after Gate 0B critique
+Fixes applied: (1) cold-opens on the consequence in frame 1 instead of building up to it at 8s,
+(2) shot 1 now ends at 11.9s (was 15.8s, sitting on the 16s ceiling) so a real world-change lands
+well before the quarter-film mark, (3) the redundant "SAFER DEPTH" text chip is replaced with a
+SHOWN outcome (pollock in the net, Chinook clear above), (4) shot 6's transition is relabeled
+`map-travel` (a real scene-break thread) instead of `pull-out` (a move verb), so the underwater
+to orbital jump can't be built or read as a same-canvas zoom.
 
-## Beat map (15 beats, ~4s apart, never-rest <=5s gaps)
+1. **0.0-11.9s** — wide-establish. COLD OPEN on the SEASON CLOSED stamp already mid-slam at frame 1;
+   a reverse-wipe then explains 2024's two boats before the timeline catches back up.
+2. **11.9-19.9s** — push-detail, eye-level-immersive. Match-cut to inside the water: one Chinook
+   descends and fades before a river-mouth icon, then dissolves to a single point of light.
+   Transition in: **match-cut** (thread: match).
+3. **19.9-31.9s** — data-panel, macro-closeup into a void. 700,000+ tag-points (each landing at its
+   own depth/time coordinate, not a stock counter) assemble into one smooth probability curve.
+   Transition in: **assemble** (thread: build).
+4. **31.9-39.9s** — subject-portrait. Graphic-match cut: the curve resolves back into the water
+   column as the breathing depth-occupancy band; the WHERE/WHEN caveat plays here. Transition in:
+   **graphic-match** (thread: match).
+5. **39.9-50.9s** — two-up. The trawl net's headrope depth line steers around the carried glowing
+   band; ends with pollock visibly filling the net while the Chinook stays clear above (the shown
+   payoff). Transition in: **mask-wipe** (thread: carry).
+6. **50.9-60.0s** — map-territory. Pull back to the wide Gulf of Alaska at dawn, boats spaced clear
+   of the band; branded outro. Transition in: **map-travel** (thread: travel).
+
+## Beat map (16 beats, never-rest <=5s gaps, accelerando in the data-build section)
 See `storyboard.json > beats[]` for the full timed {t, vo, shows, sfx, means} objects. Summary:
-1. 0.0-3.9 — hook: a fishery can close over one bad weekend.
-2. 4.0-7.9 — 2024, two boats, bycatch tally rising.
-3. 8.0-11.9 — SEASON CLOSED stamp.
-4. 12.0-15.9 — one salmon fades before reaching a river.
-5. 16.0-19.9 — UAF team card assembles (shot 2 begins).
-6. 20.0-23.9 — 13 years, Gulf of Alaska label; tag-points bloom.
-7. 24.0-27.9 — 700,000+ counter races up.
-8. 28.0-31.9 — point-cloud collapses into the probability curve.
-9. 32.0-35.9 — graphic-match into shot 3: the breathing depth band + diel dial.
-10. 36.0-39.9 — the honest caveat drawn: WHERE sharp, WHEN foggy toward a "?".
-11. 40.0-43.9 — mask-wipe into shot 4: net headrope steers around the band.
-12. 44.0-47.9 — SAFER DEPTH (illustrative) readout chip.
-13. 48.0-50.9 — VOLUNTARY stamp (the honest adoption note).
-14. 51.0-54.9 — pull-out to shot 5: wide dawn Gulf, fleet spaced clear.
-15. 55.0-60.0 — outro: wordmark, tagline, source credit, ends on motion not a static hold.
+1. 0.0-3.9 — COLD OPEN: the SEASON CLOSED stamp is already mid-slam at frame 1.
+2. 4.0-7.9 — reverse-wipe explains 2024, two boats, bycatch tally rising.
+3. 8.0-11.9 — timeline catches up, gate fully shut; shot 1 ends.
+4. 12.0-15.9 — match-cut: one salmon descends and fades before reaching a river.
+5. 16.0-19.9 — the fish dissolves to a single point of light (seeds shot 3).
+6. 20.0-22.4 — 13 years, Gulf of Alaska label; tag-points bloom (accelerated ~2.4s beats begin).
+7. 22.5-24.9 — 700,000+ points land at real depth/time coordinates, not a generic counter.
+8. 25.0-27.4 — the point-cloud begins collapsing inward.
+9. 27.5-31.9 — the collapse completes into the probability curve (BUILD payoff, held to land it).
+10. 32.0-35.9 — graphic-match into shot 4: the breathing depth band + diel dial.
+11. 36.0-39.9 — the honest caveat drawn: WHERE sharp, WHEN foggy toward a "?".
+12. 40.0-43.9 — mask-wipe into shot 5: net headrope steers around the band.
+13. 44.0-47.9 — SHOWN outcome: pollock fill the net, Chinook's glow stays clear above.
+14. 48.0-50.9 — VOLUNTARY stamp (softer than the opening stamp; the honest adoption note).
+15. 51.0-54.9 — map-travel to shot 6: wide dawn Gulf, fleet spaced clear.
+16. 55.0-60.0 — outro: wordmark, tagline, source credit, ends on motion not a static hold.
 
 ## Ending
 Designed in: after "run after run," the outro stages in over the still-drifting aerial shot (parallax

@@ -20,7 +20,7 @@ from scipy.ndimage import gaussian_filter
 import easing as E
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FONTS = os.path.join(HERE, "..", "..", ".claude", "skills", "alaska-ai-brief", "fonts")
+FONTS = os.path.join(HERE, "..", "alaska-ai-brief", "fonts")
 W, H = 1080, 1920
 FPS = 30
 NF = 1800
