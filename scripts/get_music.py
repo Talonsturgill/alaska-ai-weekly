@@ -22,7 +22,10 @@ def dur(p):
     try: return float(r.stdout.strip())
     except Exception: return 0.0
 def download(url, dst):
-    r = sh(["curl", "-sSL", "--max-time", "240", "-o", dst, url])
+    # a browser-like UA + same-origin referer, several free hosts (ccmixter, etc) hotlink-block bare curl
+    from urllib.parse import urlparse
+    origin = f"{urlparse(url).scheme}://{urlparse(url).netloc}/"
+    r = sh(["curl", "-sSL", "--max-time", "240", "-A", "Mozilla/5.0", "-e", origin, "-o", dst, url])
     return r.returncode == 0 and os.path.exists(dst) and os.path.getsize(dst) > 50_000
 def to_wav(src, out, cap=180):
     r = sh(["ffmpeg", "-y", "-t", str(cap), "-i", src, "-ac", "2", "-ar", "44100", out])

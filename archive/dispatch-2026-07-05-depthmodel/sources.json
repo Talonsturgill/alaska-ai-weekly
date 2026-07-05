@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "url": "https://link.springer.com/article/10.1186/s40317-026-00456-2",
+      "outlet": "Animal Biotelemetry (Springer Nature), 2026 — Gietzmann-Sanders, Courtney, Seitz et al. (primary, peer-reviewed)",
+      "note": "'A depth model for informing Chinook salmon bycatch risk in the Gulf of Alaska.' Probabilistic deep-learning model predicts Chinook depth occupancy from season, diel period, and salinity, using more than 700,000 telemetry data points from 13 years of tagging. This is the paper the Dispatch is built on."
+    },
+    {
+      "url": "https://www.uaf.edu/news/salmon-tagging-data-could-help-trawlers-reduce-bycatch.php",
+      "outlet": "University of Alaska Fairbanks — UAF news and information (primary; June 8, 2026)",
+      "note": "UAF's own release on the study; confirms the author list (Marcel Gietzmann-Sanders, Andrew Seitz, Curry Cunningham, Michael Courtney), Seitz's 13-year tagging project, and Cunningham's framing that better knowledge of Chinook depth could help the trawl fleet reduce bycatch voluntarily."
+    },
+    {
+      "url": "https://www.juneauempire.com/2026/06/10/alaska-researchers-using-tagging-data-to-reduce-fishing-bycatch/",
+      "outlet": "Juneau Empire, June 10, 2026 (secondary, wire pickup of the UAF release)",
+      "note": "Alaska press coverage confirming the 2024 two-boat bycatch closure context for the Gulf of Alaska pollock fishery, referenced as the hook for this Dispatch."
+    }
+  ]
+}
