@@ -5,3 +5,7 @@ __pycache__/
 .venv/
 .env
 # fonts are committed (OFL-licensed) so routine clones don't re-download them
+# dispatch_core.py reads/writes timing+caption-textlog scratch relative to its OWN dir,
+# not out/dispatch/, so per-run audio/textlog artifacts land here too. Never commit them.
+.claude/skills/alaska-dispatch/audio/
+.claude/skills/alaska-dispatch/textlog/
