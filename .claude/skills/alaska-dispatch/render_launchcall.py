@@ -493,6 +493,14 @@ def render_frame(f):
         tk(du, s, lf, (214, 230, 245, int(180 * lc)), 96, 104, 0.10)
     caption(out, f)
     outro_card(out, f)
+    # two full-frame resolve flashes in the closing stretch (switch-press thunk + wordmark reveal) —
+    # the outro's text-only reveals are too localized to register as EVENT_CADENCE spikes on their own
+    wordmark_start = max(1600, SPEECH_END_F + 14)
+    for center, col in ((BEATS[16], MARIGOLD_HI), (wordmark_start, (255, 236, 200))):
+        d_f = f - center
+        if -3 <= d_f <= 10:
+            flash = math.exp(-max(0, d_f) / 3.2) * (1.0 if d_f >= 0 else (1 + d_f / 3))
+            out.alpha_composite(Image.new("RGBA", (W, H), (*col, int(70 * flash))))
     so = E.out_cubic(E.seg(f, 8, 34))
     if so > 0 and f < SPEECH_END_F + 14:
         sf = fr(36, 900, 144); s = "alaska.ai"
