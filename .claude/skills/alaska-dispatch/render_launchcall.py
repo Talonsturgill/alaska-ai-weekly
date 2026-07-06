@@ -134,6 +134,44 @@ VILLAGES = [(310, 640), (420, 520), (540, 760), (610, 480), (720, 690), (380, 90
             (760, 920), (300, 1080), (650, 1040), (900, 820), (480, 1180), (200, 800), (930, 1120), (560, 1300)]
 PIN = (540, 780)
 
+# A simplified but RECOGNIZABLE Alaska silhouette (mainland + a narrow SE panhandle trailing
+# down-right + an Aleutian island chain curling off the southwest) — not literal cartography, but
+# it must read as "Alaska" at a glance, not a generic rounded blob (Gate B editor note round 4).
+ALASKA_MAINLAND = [
+    (120, 520), (260, 380), (460, 340), (620, 300), (820, 360), (960, 460), (1000, 640),
+    (940, 860), (980, 1080), (880, 1260),
+    (820, 1310), (760, 1340),   # neck before the panhandle splits off
+    (680, 1300), (600, 1345),   # notch
+    (480, 1330), (400, 1370),   # narrowing toward the peninsula / Aleutian root
+    (330, 1330), (250, 1270), (200, 1200),
+    (140, 980), (180, 780), (120, 620),
+]
+ALASKA_PANHANDLE = [
+    (760, 1340), (840, 1330), (900, 1400), (930, 1520), (900, 1640), (850, 1660),
+    (815, 1560), (800, 1460), (780, 1400),
+]
+ALASKA_ALEUTIANS = [
+    ((400, 1370), 22), ((330, 1378), 17), ((260, 1382), 13), ((195, 1385), 10), ((140, 1387), 7),
+]
+
+def draw_alaska(d, alpha_mult=1.0):
+    """Draws the mainland + panhandle as filled landmass, and the Aleutian chain as a curling
+    string of small islands, so the territory reads as Alaska rather than a generic blob."""
+    fa = lambda base: int(base * alpha_mult)
+    # connecting strait line drawn FIRST so the island outlines sit cleanly on top of it
+    chain_pts = [c for c, r in ALASKA_ALEUTIANS]
+    d.line(chain_pts, fill=(*SLATE, fa(90)), width=2)
+    for pts in (ALASKA_MAINLAND, ALASKA_PANHANDLE):
+        d.polygon(pts, fill=(20, 23, 28, fa(120)))
+    for (cx, cy), r in ALASKA_ALEUTIANS:
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(20, 23, 28, fa(120)))
+    for pts in (ALASKA_MAINLAND, ALASKA_PANHANDLE):
+        d.line(pts + [pts[0]], fill=(*SLATE, fa(70)), width=10, joint="curve")
+        d.line(pts + [pts[0]], fill=(*SLATE, fa(150)), width=3)
+    # each island gets its own visible rim stroke — a plain fill nearly vanishes against the void
+    for (cx, cy), r in ALASKA_ALEUTIANS:
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(*SLATE, fa(200)), width=3)
+
 def scene1_map(f):
     t = f / FPS
     img = np.zeros((H, W, 3), np.float32)
@@ -143,16 +181,10 @@ def scene1_map(f):
     img += (n[..., None] * np.array([6, 8, 12], np.float32))
     # map reveal: pin is ALREADY glowing at frame 0; rest of the map fades up around it over ~30f
     reveal = E.out_cubic(E.seg(f, 0, 34))
-    # roadless "territory" outline (stylized simplified silhouette, not literal cartography)
-    outline = [(120, 520), (260, 380), (460, 340), (620, 300), (820, 360), (960, 460), (1000, 640),
-               (940, 860), (980, 1080), (880, 1260), (700, 1420), (500, 1460), (320, 1380), (200, 1200),
-               (140, 980), (180, 780), (120, 620)]
     im = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).convert("RGBA")
     d = ImageDraw.Draw(im, "RGBA")
-    # a faint landmass fill + inner rim-shadow so the territory reads as ground, not just a wireframe
-    d.polygon(outline, fill=(20, 23, 28, int(120 * reveal)))
-    d.line(outline + [outline[0]], fill=(*SLATE, int(70 * reveal)), width=10, joint="curve")
-    d.line(outline + [outline[0]], fill=(*SLATE, int(150 * reveal)), width=3)
+    # a recognizable Alaska silhouette (mainland + panhandle + Aleutian chain), not a generic blob
+    draw_alaska(d, reveal)
     # villages: dim slate dots, all disconnected (no road lines between them)
     for (vx, vy) in VILLAGES:
         a = int(150 * reveal)
@@ -215,30 +247,45 @@ def scene2_clinic(f):
         bar = int(200 * (0.4 + 0.6 * abs(math.sin(yy * 0.2 + t * 3))))
         d.line([(184, yy), (184 + bar, yy)], fill=(*GLACIER, 220), width=4)
     # the health aide — an actual human silhouette (head + shoulders), the HERO of this shot, not a
-    # disembodied icon — holding a radio handset up near their face. Reaches in at beat4.
+    # disembodied icon — holding a radio handset up near their face. Reaches in at beat4. Positioned
+    # HIGH enough in frame to clear the caption safe zone (scrim starts y=1392) and scaled up so it
+    # unmistakably reads as a person, not a smudge beside a UI box (Gate B round 4: editor/scorer both
+    # flagged this scene as reading as "floating UI, no human" — the fix is size + headroom + no overlap
+    # between the head and the handset, which previously sat directly on top of the face).
     reach = E.out_cubic(E.seg(f, BEATS[3] - 14, BEATS[3] + 40))
-    hx, hy = 620, 1280 + int((1 - reach) * 320)
+    SC = 1.18
+    hx, hy = 640, 950 + int((1 - reach) * 320)
     if reach > 0.02:
         pa = int(255 * reach)
         SIL = (9, 8, 8)  # near-black — must read as a clear silhouette against the lit wall, not blend in
         # shoulders + torso (rounded-top silhouette, runs off the bottom of frame)
-        d.rounded_rectangle([hx - 190, hy + 140, hx + 190, H + 40], 90, fill=(*SIL, pa))
+        d.rounded_rectangle([hx - 190 * SC, hy + 140 * SC, hx + 190 * SC, H + 40], 90, fill=(*SIL, pa))
         # neck + head
-        d.rectangle([hx - 34, hy + 60, hx + 34, hy + 150], fill=(*SIL, pa))
-        d.ellipse([hx - 88, hy - 70, hx + 88, hy + 96], fill=(*SIL, pa))
+        d.rectangle([hx - 34 * SC, hy + 60 * SC, hx + 34 * SC, hy + 150 * SC], fill=(*SIL, pa))
+        d.ellipse([hx - 88 * SC, hy - 70 * SC, hx + 88 * SC, hy + 96 * SC], fill=(*SIL, pa))
         # a thin cool rim-light along the head/shoulder edge (window-light from behind) so the
         # silhouette pops from the wall instead of reading as a same-tone smudge
-        d.arc([hx - 88, hy - 70, hx + 88, hy + 96], 200, 340, fill=(*GLACIER, int(160 * reach)), width=4)
-        d.arc([hx - 190, hy + 140, hx + 190, H + 40], 190, 260, fill=(*GLACIER, int(110 * reach)), width=4)
-        # forearm raising the handset to the head
-        d.line([(hx + 150, hy + 220), (hx + 40, hy + 10)], fill=(*SIL, pa), width=64)
-        # radio handset, held at ear height
-        d.rounded_rectangle([hx + 6, hy - 110, hx + 118, hy + 30], 24, fill=(38, 40, 46, pa),
+        d.arc([hx - 88 * SC, hy - 70 * SC, hx + 88 * SC, hy + 96 * SC], 200, 340, fill=(*GLACIER, int(160 * reach)), width=4)
+        d.arc([hx - 190 * SC, hy + 140 * SC, hx + 190 * SC, H + 40], 190, 260, fill=(*GLACIER, int(110 * reach)), width=4)
+        # forearm rising from the shoulder to a gripping hand — offset well clear of the face circle
+        # (right edge of face sits at hx+88*SC; the handset+hand cluster starts past hx+145*SC, a
+        # visible ~20px gap so the hand never touches or occludes the face)
+        d.line([(hx + 165 * SC, hy + 235 * SC), (hx + 150 * SC, hy + 30 * SC)], fill=(*SIL, pa), width=int(64 * SC))
+        # radio handset, held at ear height beside (not over) the head
+        rx0, ry0 = hx + 145 * SC, hy - 40 * SC
+        rx1, ry1 = rx0 + 112 * SC, ry0 + 130 * SC
+        d.rounded_rectangle([rx0, ry0, rx1, ry1], 24, fill=(38, 40, 46, pa),
                              outline=(*SNOW_WHITE, int(150 * reach)), width=3)
-        d.rounded_rectangle([hx + 24, hy - 84, hx + 92, hy - 26], 8, fill=(*GLACIER_DIM, int(220 * reach)))
+        d.rounded_rectangle([rx0 + 18, ry0 + 26, rx1 - 18, ry1 - 42], 8, fill=(*GLACIER_DIM, int(220 * reach)))
+        # a gripping hand: palm heel + curled fingers wrapping the handset's near edge, so the object
+        # reads as HELD, not floating
+        gx = rx0 + 6
+        d.ellipse([gx - 44 * SC, hy - 20 * SC, gx + 12 * SC, hy + 70 * SC], fill=(*SIL, pa))
+        for fy in (-14, 6, 26, 46):
+            d.rounded_rectangle([gx - 30 * SC, hy + fy * SC - 9 * SC, gx + 18 * SC, hy + fy * SC + 9 * SC], 8, fill=(*SIL, pa))
         key = E.out_cubic(E.seg(f, BEATS[4], BEATS[4] + 10)) * (1 - E.seg(f, BEATS[4] + 10, BEATS[4] + 30))
         if key > 0.02:
-            im = glow_dot(im, (hx + 62, hy - 55), 54 * key, MARIGOLD, glow=key)
+            im = glow_dot(im, (int((rx0 + rx1) / 2), int(ry0 + 40 * SC)), 54 * key, MARIGOLD, glow=key)
             d = ImageDraw.Draw(im, "RGBA")
     # desk edge along the bottom, lit, not a flat dark slab
     d.polygon([(0, 1620), (W, 1600), (W, H), (0, H)], fill=(26, 28, 34, 255))
@@ -486,12 +533,7 @@ def scene6_map_outro(f):
     img += (n[..., None] * np.array([6, 8, 12], np.float32))
     im = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).convert("RGBA")
     d = ImageDraw.Draw(im, "RGBA")
-    outline = [(120, 520), (260, 380), (460, 340), (620, 300), (820, 360), (960, 460), (1000, 640),
-               (940, 860), (980, 1080), (880, 1260), (700, 1420), (500, 1460), (320, 1380), (200, 1200),
-               (140, 980), (180, 780), (120, 620)]
-    d.polygon(outline, fill=(20, 23, 28, 120))
-    d.line(outline + [outline[0]], fill=(*SLATE, 70), width=10, joint="curve")
-    d.line(outline + [outline[0]], fill=(*SLATE, 150), width=3)
+    draw_alaska(d, 1.0)
     for (vx, vy) in VILLAGES:
         d.ellipse([vx - 4, vy - 4, vx + 4, vy + 4], fill=(*SLATE, 120))
     im = im.convert("RGB")
