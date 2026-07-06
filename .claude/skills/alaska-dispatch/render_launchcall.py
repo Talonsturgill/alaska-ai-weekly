@@ -380,11 +380,17 @@ def scene4_ledger(f):
         d.line([(px0, yy), (px1, yy)], fill=(*col, int(240 * page_a)), width=2)
     d.rounded_rectangle([px0, py0, px1, py1], 10, outline=(*PAPER_DIM, int(180 * page_a)), width=2)
     # a HAND enters from the left and physically halts the carried gauge glow at the page's edge
-    halt = E.out_cubic(E.seg(f, BEATS[10], BEATS[10] + 16))
+    halt = E.out_back(E.seg(f, BEATS[10], BEATS[10] + 16))  # a slight overshoot as the hand CATCHES the needle
     hy = 760
     if halt > 0.02:
-        d.ellipse([px0 - 26, hy - 30, px0 + 30, hy + 30], outline=(*MARIGOLD, int(200 * halt)), width=3)
-        draw_hand_left(d, px0 + 6, hy, scale=1.05, alpha=int(255 * halt))
+        # impact ring at the moment of the catch — reads as a hit even in a single still frame
+        impact = E.seg(f, BEATS[10], BEATS[10] + 14)
+        if 0 < impact < 1:
+            ring_r = 28 + 46 * impact
+            d.ellipse([px0 - ring_r, hy - ring_r, px0 + ring_r, hy + ring_r],
+                      outline=(*MARIGOLD, int(190 * (1 - impact))), width=int(max(1, 4 * (1 - impact))))
+        d.ellipse([px0 - 26, hy - 30, px0 + 30, hy + 30], outline=(*MARIGOLD, int(200 * min(1, halt))), width=3)
+        draw_hand_left(d, px0 + 6, hy, scale=1.05, alpha=int(255 * min(1, halt)))
     # hand draws a dotted, unresolved guardrail line across the page (beat12), never fully resolving (beat13)
     draw_p = E.out_cubic(E.seg(f, BEATS[11], BEATS[12] + 24))
     if draw_p > 0.02:
@@ -435,9 +441,14 @@ def scene5_row(f):
             continue
         py = base_y - 10 - int(140 * rise)
         pa = int(235 * min(1, rise + 0.3))
+        # squash-and-stretch impact: visible even in a single freeze-frame (unlike pure position
+        # overshoot, which only reads across motion) — the plate briefly flattens+widens on landing
+        settle_prog = E.seg(f, BEATS[13] + i * 22 + 22, BEATS[13] + i * 22 + 34)
+        squash = math.sin(math.pi * settle_prog) * (1 - settle_prog) if 0 < settle_prog < 1 else 0
+        hw = 92 * (1 + 0.16 * squash); hh = 46 * (1 - 0.16 * squash)
         d.rounded_rectangle([px - 90, py - 42, px + 94, py + 50], 10, fill=(0, 0, 0, int(90 * (pa / 235))))  # drop shadow
-        _vol_rect(d, [px - 92, py - 46, px + 92, py + 46], 10, PAPER, pa)
-        d.rounded_rectangle([px - 92, py - 46, px + 92, py + 46], 10, outline=(*SLATE, 200))
+        _vol_rect(d, [px - hw, py - hh, px + hw, py + hh], 10, PAPER, pa)
+        d.rounded_rectangle([px - hw, py - hh, px + hw, py + hh], 10, outline=(*SLATE, 200))
         pf = mono(19, b=True)
         d.text((px - tw(name, pf) / 2, py - 11), name, font=pf, fill=(30, 32, 38, 255))
         logw(px - tw(name, pf) / 2, py - 11, tw(name, pf), 19, (30, 32, 38), min(1, rise), rise >= 0.9, "hud")
@@ -515,9 +526,16 @@ def scene6_map_outro(f):
                              fill=(26, 28, 33, int(245 * switch_a)))
         d.arc([press_x - 74, press_y - 56, press_x + 74, press_y + 56], 200, 20, fill=(80, 86, 96, int(180 * switch_a)), width=3)
         d.arc([press_x - 74, press_y - 56, press_x + 74, press_y + 56], 20, 200, fill=(8, 9, 11, int(200 * switch_a)), width=3)
-        press = E.out_cubic(E.seg(f, BEATS[16] - 6, BEATS[16] + 8))
+        press = E.out_back(E.seg(f, BEATS[16] - 6, BEATS[16] + 10))  # overshoot: the button pops past rest, then settles
         btn_y = press_y + int(10 * press)
         btn_r = 40 - int(4 * press)  # button visibly depresses when pressed
+        # impact ring: an expanding, fading shockwave at the instant of contact — reads as a hit even
+        # frozen in a single still frame, not just a position change across frames
+        impact = E.seg(f, BEATS[16], BEATS[16] + 16)
+        if 0 < impact < 1:
+            ring_r = btn_r + 70 * impact
+            d.ellipse([press_x - ring_r, btn_y - ring_r, press_x + ring_r, btn_y + ring_r],
+                      outline=(*MARIGOLD_HI, int(200 * (1 - impact) * switch_a)), width=int(max(1, 5 * (1 - impact))))
         d.ellipse([press_x - btn_r, btn_y - btn_r, press_x + btn_r, btn_y + btn_r], fill=(*MARIGOLD, int(245 * switch_a)))
         d.ellipse([press_x - btn_r, btn_y - btn_r, press_x + btn_r * .3, btn_y - btn_r * .3],
                    fill=(*MARIGOLD_HI, int(140 * switch_a)))  # a highlight so the button reads as a lit, raised object
