@@ -85,6 +85,34 @@ def glow_dot(img, xy, r, color, glow=1.0):
     d = ImageDraw.Draw(out); d.ellipse([x - r, y - r, x + r, y + r], fill=(*color, 255))
     return out.convert("RGB")
 
+HAND_COLOR = (86, 66, 50)
+
+def draw_hand_down(d, tip_x, tip_y, scale=1.0, alpha=255, color=HAND_COLOR):
+    """A recognizable hand (palm + 4 fingers + thumb + wrist) reaching DOWN from above; fingertips
+    rest at (tip_x, tip_y). Sized to read clearly even at thumbnail scale (per Gate B: the earlier
+    triangle-wedge markers were too small/abstract to register as a human hand)."""
+    col = (*color, alpha)
+    for fx, flen in ((-30, 34), (-10, 44), (10, 42), (30, 30)):  # index..pinky, middle longest
+        x0 = tip_x + (fx - 7) * scale; x1 = tip_x + (fx + 7) * scale
+        y1 = tip_y; y0 = tip_y - flen * scale
+        d.rounded_rectangle([x0, y0, x1, y1], radius=6 * scale, fill=col)
+    py1 = tip_y - 28 * scale; py0 = py1 - 58 * scale
+    d.rounded_rectangle([tip_x - 38 * scale, py0, tip_x + 38 * scale, py1], radius=16 * scale, fill=col)
+    d.rounded_rectangle([tip_x + 32 * scale, py1 - 34 * scale, tip_x + 60 * scale, py1 - 2 * scale], radius=10 * scale, fill=col)
+    d.rounded_rectangle([tip_x - 24 * scale, py0 - 46 * scale, tip_x + 24 * scale, py0 + 8 * scale], radius=10 * scale, fill=col)
+
+def draw_hand_left(d, tip_x, tip_y, scale=1.0, alpha=255, color=HAND_COLOR):
+    """A recognizable hand reaching in from the LEFT; fingertips rest at (tip_x, tip_y)."""
+    col = (*color, alpha)
+    for fy, flen in ((-30, 34), (-10, 44), (10, 42), (30, 30)):
+        y0 = tip_y + (fy - 7) * scale; y1 = tip_y + (fy + 7) * scale
+        x1 = tip_x; x0 = tip_x - flen * scale
+        d.rounded_rectangle([x0, y0, x1, y1], radius=6 * scale, fill=col)
+    px1 = tip_x - 28 * scale; px0 = px1 - 58 * scale
+    d.rounded_rectangle([px0, tip_y - 38 * scale, px1, tip_y + 38 * scale], radius=16 * scale, fill=col)
+    d.rounded_rectangle([px1 - 34 * scale, tip_y - 60 * scale, px1 - 2 * scale, tip_y - 32 * scale], radius=10 * scale, fill=col)
+    d.rounded_rectangle([px0 - 46 * scale, tip_y - 24 * scale, px0 + 8 * scale, tip_y + 24 * scale], radius=10 * scale, fill=col)
+
 # ================================================================== SHOT 1 — THE VILLAGE (map) ==================================================================
 VILLAGES = [(310, 640), (420, 520), (540, 760), (610, 480), (720, 690), (380, 900), (860, 560),
             (760, 920), (300, 1080), (650, 1040), (900, 820), (480, 1180), (200, 800), (930, 1120), (560, 1300)]
@@ -105,7 +133,10 @@ def scene1_map(f):
                (140, 980), (180, 780), (120, 620)]
     im = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).convert("RGBA")
     d = ImageDraw.Draw(im, "RGBA")
-    d.line(outline + [outline[0]], fill=(*SLATE, int(140 * reveal)), width=3)
+    # a faint landmass fill + inner rim-shadow so the territory reads as ground, not just a wireframe
+    d.polygon(outline, fill=(20, 23, 28, int(120 * reveal)))
+    d.line(outline + [outline[0]], fill=(*SLATE, int(70 * reveal)), width=10, joint="curve")
+    d.line(outline + [outline[0]], fill=(*SLATE, int(150 * reveal)), width=3)
     # villages: dim slate dots, all disconnected (no road lines between them)
     for (vx, vy) in VILLAGES:
         a = int(150 * reveal)
@@ -167,17 +198,31 @@ def scene2_clinic(f):
     for yy in range(1112, 1240, 13):
         bar = int(200 * (0.4 + 0.6 * abs(math.sin(yy * 0.2 + t * 3))))
         d.line([(184, yy), (184 + bar, yy)], fill=(*GLACIER, 220), width=4)
-    # hand + radio handset — the HERO, large and centered, reaches in at beat4
+    # the health aide — an actual human silhouette (head + shoulders), the HERO of this shot, not a
+    # disembodied icon — holding a radio handset up near their face. Reaches in at beat4.
     reach = E.out_cubic(E.seg(f, BEATS[3] - 14, BEATS[3] + 40))
     hx, hy = 620, 1280 + int((1 - reach) * 320)
     if reach > 0.02:
-        d.line([(hx + 90, hy + 330), (hx + 10, hy + 60)], fill=(58, 48, 40, int(255 * reach)), width=88)
-        d.rounded_rectangle([hx - 62, hy - 130, hx + 62, hy + 55], 28, fill=(38, 40, 46, int(255 * reach)),
+        pa = int(255 * reach)
+        SIL = (9, 8, 8)  # near-black — must read as a clear silhouette against the lit wall, not blend in
+        # shoulders + torso (rounded-top silhouette, runs off the bottom of frame)
+        d.rounded_rectangle([hx - 190, hy + 140, hx + 190, H + 40], 90, fill=(*SIL, pa))
+        # neck + head
+        d.rectangle([hx - 34, hy + 60, hx + 34, hy + 150], fill=(*SIL, pa))
+        d.ellipse([hx - 88, hy - 70, hx + 88, hy + 96], fill=(*SIL, pa))
+        # a thin cool rim-light along the head/shoulder edge (window-light from behind) so the
+        # silhouette pops from the wall instead of reading as a same-tone smudge
+        d.arc([hx - 88, hy - 70, hx + 88, hy + 96], 200, 340, fill=(*GLACIER, int(160 * reach)), width=4)
+        d.arc([hx - 190, hy + 140, hx + 190, H + 40], 190, 260, fill=(*GLACIER, int(110 * reach)), width=4)
+        # forearm raising the handset to the head
+        d.line([(hx + 150, hy + 220), (hx + 40, hy + 10)], fill=(*SIL, pa), width=64)
+        # radio handset, held at ear height
+        d.rounded_rectangle([hx + 6, hy - 110, hx + 118, hy + 30], 24, fill=(38, 40, 46, pa),
                              outline=(*SNOW_WHITE, int(150 * reach)), width=3)
-        d.rounded_rectangle([hx - 36, hy - 100, hx + 36, hy - 34], 9, fill=(*GLACIER_DIM, int(220 * reach)))
+        d.rounded_rectangle([hx + 24, hy - 84, hx + 92, hy - 26], 8, fill=(*GLACIER_DIM, int(220 * reach)))
         key = E.out_cubic(E.seg(f, BEATS[4], BEATS[4] + 10)) * (1 - E.seg(f, BEATS[4] + 10, BEATS[4] + 30))
         if key > 0.02:
-            im = glow_dot(im, (hx, hy - 67), 54 * key, MARIGOLD, glow=key)
+            im = glow_dot(im, (hx + 62, hy - 55), 54 * key, MARIGOLD, glow=key)
             d = ImageDraw.Draw(im, "RGBA")
     # desk edge along the bottom, lit, not a flat dark slab
     d.polygon([(0, 1620), (W, 1600), (W, H), (0, H)], fill=(26, 28, 34, 255))
@@ -239,13 +284,37 @@ def scene3_panel(f):
         lf = mono(20, b=True)
         d.text((x0 + ox + 16, y0 + 12), CH_LABELS[i], font=lf, fill=(*SNOW_WHITE, int(230 * vis)))
         logw(x0 + ox + 16, y0 + 12, tw(CH_LABELS[i], lf), 20, SNOW_WHITE, vis, app >= 0.9 and conv < 0.3, "hud")
-        # live readout squiggle per channel
-        pts = []
-        for k in range(0, int((x1 - x0) - 32), 6):
-            yy = y0 + 60 + 60 * math.sin(k * (0.05 + i * 0.02) + t * (3 + i) + rng.standard_normal() * 0.15)
-            pts.append((x0 + ox + 16 + k, yy))
-        if len(pts) > 1:
-            d.line(pts, fill=(*MARIGOLD_HI, int(200 * vis)), width=3)
+        # each channel gets its OWN distinct instrument face, not a generic sine squiggle for all three
+        cw = int((x1 - x0) - 32); cx0 = x0 + ox + 16; cy0 = y0 + 60
+        col = (*MARIGOLD_HI, int(200 * vis))
+        if i == 0:  # VITALS — an ECG-style spike train (a heartbeat, not a wobble)
+            pts = []
+            for k in range(0, cw, 4):
+                ph = (k / 34 + t * 1.6) % 1.0
+                yy = 0.0
+                if 0.42 < ph < 0.46: yy = -34
+                elif 0.46 <= ph < 0.50: yy = 46
+                elif 0.50 <= ph < 0.54: yy = -14
+                pts.append((cx0 + k, cy0 + yy))
+            d.line(pts, fill=col, width=3)
+        elif i == 1:  # WEATHER — a radar sweep arc with a rotating beam
+            rcx, rcy, rr = cx0 + cw / 2, cy0 + 46, 58
+            d.arc([rcx - rr, rcy - rr, rcx + rr, rcy + rr], 0, 360, fill=(*GLACIER, int(140 * vis)), width=2)
+            d.arc([rcx - rr * .6, rcy - rr * .6, rcx + rr * .6, rcy + rr * .6], 0, 360, fill=(*GLACIER, int(110 * vis)), width=1)
+            sweep = (t * 90) % 360
+            bx = rcx + rr * math.cos(math.radians(sweep)); by = rcy + rr * math.sin(math.radians(sweep))
+            d.line([(rcx, rcy), (bx, by)], fill=col, width=3)
+            for blip_ang in (40, 160, 260):
+                bxx = rcx + rr * 0.7 * math.cos(math.radians(blip_ang)); byy = rcy + rr * 0.7 * math.sin(math.radians(blip_ang))
+                if (sweep - blip_ang) % 360 < 50:
+                    d.ellipse([bxx - 4, byy - 4, bxx + 4, byy + 4], fill=(*MARIGOLD_HI, int(220 * vis)))
+        else:  # AIRCRAFT — a status ladder (altitude/fuel/link bars), not a waveform
+            for bi in range(5):
+                bx0_ = cx0 + bi * (cw / 5) + 6; bw = cw / 5 - 12
+                lvl = 0.35 + 0.5 * abs(math.sin(t * 1.1 + bi * 0.7))
+                bh = 70 * lvl
+                d.rectangle([bx0_, cy0 + 78 - bh, bx0_ + bw, cy0 + 78], fill=col)
+            d.text((cx0, cy0 - 6), "LINK OK", font=mono(13, m=True), fill=(*GLACIER, int(200 * vis)))
     # converged gauge: needle climbs to final position (beat10)
     gauge_a = E.out_cubic(E.seg(f, BEATS[9], BEATS[9] + 40))
     if gauge_a > 0.02:
@@ -285,24 +354,28 @@ def scene4_ledger(f):
     if fade > 0.02:
         im = glow_dot(im, (40, 960), 220 * fade, GLACIER, glow=0.5)
         d = ImageDraw.Draw(im, "RGBA")
-    # the ledger page, right two-thirds
+    # the ledger page, right two-thirds — a soft paper-grain gradient + drop shadow, not a flat fill
     px0, py0, px1, py1 = 260, 520, 1010, 1440
     page_a = E.out_cubic(E.seg(f, S4, S4 + 30))
-    d.rounded_rectangle([px0, py0, px1, py1], 10, fill=(*PAPER, int(240 * page_a)))
+    d.rounded_rectangle([px0 + 14, py0 + 20, px1 + 14, py1 + 20], 10, fill=(0, 0, 0, int(90 * page_a)))  # drop shadow
+    for yy in range(py0, py1, 2):
+        shade = 1.0 - 0.10 * ((yy - py0) / max(1, py1 - py0))  # subtle top-lit gradient across the page
+        col = tuple(int(c * shade) for c in PAPER)
+        d.line([(px0, yy), (px1, yy)], fill=(*col, int(240 * page_a)), width=2)
     d.rounded_rectangle([px0, py0, px1, py1], 10, outline=(*PAPER_DIM, int(180 * page_a)), width=2)
-    # a hand enters and halts the needle (represented as a simple wedge/finger shape at page's left edge)
+    # a HAND enters from the left and physically halts the carried gauge glow at the page's edge
     halt = E.out_cubic(E.seg(f, BEATS[10], BEATS[10] + 16))
+    hy = 760
     if halt > 0.02:
-        hy = 760
-        d.polygon([(px0 - 150 * (1 - halt), hy - 20), (px0 + 10, hy), (px0 - 150 * (1 - halt), hy + 20)],
-                  fill=(58, 46, 38, int(255 * halt)))
-        d.ellipse([px0 - 22, hy - 26, px0 + 26, hy + 26], outline=(*MARIGOLD, int(200 * halt)), width=3)
+        d.ellipse([px0 - 26, hy - 30, px0 + 30, hy + 30], outline=(*MARIGOLD, int(200 * halt)), width=3)
+        draw_hand_left(d, px0 + 6, hy, scale=1.05, alpha=int(255 * halt))
     # hand draws a dotted, unresolved guardrail line across the page (beat12), never fully resolving (beat13)
     draw_p = E.out_cubic(E.seg(f, BEATS[11], BEATS[12] + 24))
     if draw_p > 0.02:
         ly = 880
         seg_n = int(46 * draw_p)
         rng = np.random.default_rng(31)
+        last_xy = (px0 + 40, ly)
         for i in range(seg_n):
             x0 = px0 + 40 + i * 14
             if x0 > px1 - 40:
@@ -310,6 +383,11 @@ def scene4_ledger(f):
             wob = 5 * math.sin(i * 0.6 + t * 1.2) * (0.4 + 0.6 * (i / max(1, seg_n)))
             dissolve = 1.0 if i < seg_n - 8 else max(0.15, 1 - (i - (seg_n - 8)) / 8.0)
             d.line([(x0, ly + wob), (x0 + 7, ly + wob)], fill=(70, 56, 40, int(230 * dissolve)), width=3)
+            last_xy = (x0 + 7, ly + wob)
+        # the hand that is DOING the drawing travels along the line and fades once it's finished (before dissolve)
+        drawing_now = draw_p < 0.96
+        if drawing_now:
+            draw_hand_left(d, last_xy[0] + 4, last_xy[1], scale=0.95, alpha=int(255 * min(1.0, draw_p * 3)))
         stamp_a = E.out_cubic(E.seg(f, BEATS[11], BEATS[11] + 24))
         sf = mono(22, b=True); s = "GOVERNANCE RULES  ·  DRAFT, NOT YET ADOPTED"
         d.text((px0 + 40, ly + 30), s, font=sf, fill=(90, 72, 52, int(190 * stamp_a)))
@@ -345,11 +423,13 @@ def scene5_row(f):
         pf = mono(19, b=True)
         d.text((px - tw(name, pf) / 2, py - 11), name, font=pf, fill=(30, 32, 38, 255))
         logw(px - tw(name, pf) / 2, py - 11, tw(name, pf), 19, (30, 32, 38), min(1, rise), rise >= 0.9, "hud")
-        # a simple hand silhouette placing each plate (brief, as it locks in)
+        # a recognizable HAND places each plate (reaches down from above, releases once it locks in)
         arrive = E.seg(f, BEATS[13] + i * 22, BEATS[13] + i * 22 + 20)
-        if arrive < 1.0:
-            hy = py - 80 - int(120 * (1 - arrive))
-            d.polygon([(px - 30, hy + 60), (px, hy), (px + 30, hy + 60)], fill=(52, 44, 38, int(230 * (1 - arrive * 0.3))))
+        if arrive < 1.08:
+            hand_alpha = int(255 * (1 - max(0.0, arrive - 0.85) / 0.23)) if arrive > 0.85 else 255
+            if hand_alpha > 8:
+                hy = py - 46 - int(90 * (1 - min(1.0, arrive)))
+                draw_hand_down(d, px, hy, scale=0.95, alpha=hand_alpha)
     # miniature advisory gauge reappears at the end of the row (beat15), needle steady, clearly advisory
     adv = E.out_cubic(E.seg(f, BEATS[14], BEATS[14] + 26))
     if adv > 0.02:
@@ -380,7 +460,9 @@ def scene6_map_outro(f):
     outline = [(120, 520), (260, 380), (460, 340), (620, 300), (820, 360), (960, 460), (1000, 640),
                (940, 860), (980, 1080), (880, 1260), (700, 1420), (500, 1460), (320, 1380), (200, 1200),
                (140, 980), (180, 780), (120, 620)]
-    d.line(outline + [outline[0]], fill=(*SLATE, 130), width=3)
+    d.polygon(outline, fill=(20, 23, 28, 120))
+    d.line(outline + [outline[0]], fill=(*SLATE, 70), width=10, joint="curve")
+    d.line(outline + [outline[0]], fill=(*SLATE, 150), width=3)
     for (vx, vy) in VILLAGES:
         d.ellipse([vx - 4, vy - 4, vx + 4, vy + 4], fill=(*SLATE, 120))
     im = im.convert("RGB")
@@ -404,25 +486,32 @@ def scene6_map_outro(f):
     pulse = 0.7 + 0.3 * math.sin(t * 2 * math.pi)
     im = im.convert("RGB"); im = glow_dot(im, PIN, 12 + 2 * pulse, MARIGOLD, glow=0.9); im = im.convert("RGBA")
     d = ImageDraw.Draw(im, "RGBA")
-    # thumb physically presses a large tactile launch switch beside the pin, landing exactly on beat16 arrival
-    press_x, press_y = PIN[0] + 130, PIN[1] - 10
+    # a HUMAN HAND physically presses a large tactile launch button beside the pin — this is the thesis
+    # shot ("a person's hand, not the model, makes the call"), so the hand must be unmistakable, large,
+    # and the button must read as a physical object (a beveled metal plate), never a floating UI dialog.
+    press_x, press_y = PIN[0] + 150, PIN[1] - 10
     switch_a = E.out_cubic(E.seg(f, BEATS[15], BEATS[15] + 14))
     if switch_a > 0.02:
-        d.rounded_rectangle([press_x - 60, press_y - 40, press_x + 60, press_y + 40], 14,
-                             fill=(30, 32, 38, int(240 * switch_a)), outline=(*MARIGOLD, int(220 * switch_a)), width=3)
+        # beveled mounting plate (embossed look: lighter top-left rim, darker bottom-right rim)
+        d.rounded_rectangle([press_x - 74, press_y - 56, press_x + 74, press_y + 56], 16,
+                             fill=(26, 28, 33, int(245 * switch_a)))
+        d.arc([press_x - 74, press_y - 56, press_x + 74, press_y + 56], 200, 20, fill=(80, 86, 96, int(180 * switch_a)), width=3)
+        d.arc([press_x - 74, press_y - 56, press_x + 74, press_y + 56], 20, 200, fill=(8, 9, 11, int(200 * switch_a)), width=3)
         press = E.out_cubic(E.seg(f, BEATS[16] - 6, BEATS[16] + 8))
         btn_y = press_y + int(10 * press)
-        d.ellipse([press_x - 34, btn_y - 26, press_x + 34, btn_y + 26], fill=(*MARIGOLD, int(240 * switch_a)))
-        # thumb wedge pressing down
-        thumb = E.out_cubic(E.seg(f, BEATS[16] - 10, BEATS[16] + 6))
-        if thumb > 0.02:
-            ty0 = press_y - 150 + int(150 * thumb)
-            d.polygon([(press_x - 26, ty0), (press_x + 26, ty0), (press_x + 14, btn_y - 10), (press_x - 14, btn_y - 10)],
-                      fill=(58, 46, 38, int(240 * thumb)))
+        btn_r = 40 - int(4 * press)  # button visibly depresses when pressed
+        d.ellipse([press_x - btn_r, btn_y - btn_r, press_x + btn_r, btn_y + btn_r], fill=(*MARIGOLD, int(245 * switch_a)))
+        d.ellipse([press_x - btn_r, btn_y - btn_r, press_x + btn_r * .3, btn_y - btn_r * .3],
+                   fill=(*MARIGOLD_HI, int(140 * switch_a)))  # a highlight so the button reads as a lit, raised object
+        # the hand: large, clear, descending from directly above to press the button
+        hand_t = E.out_cubic(E.seg(f, BEATS[16] - 22, BEATS[16] + 2))
+        if hand_t > 0.02:
+            hand_y = (press_y - 130) + (btn_y - (press_y - 130)) * hand_t
+            draw_hand_down(d, press_x, hand_y + btn_r * 0.5, scale=1.35, alpha=int(255 * switch_a))
         if press >= 0.85:
-            sf = mono(16, b=True); s = "CONFIRM LAUNCH"
-            d.text((press_x - tw(s, sf) / 2, press_y + 46), s, font=sf, fill=(*SNOW_WHITE, int(210 * switch_a)))
-            logw(press_x - tw(s, sf) / 2, press_y + 46, tw(s, sf), 16, SNOW_WHITE, switch_a, True, "hud")
+            sf = mono(15, b=True); s = "CONFIRM LAUNCH"
+            d.text((press_x - tw(s, sf) / 2, press_y + 66), s, font=sf, fill=(*SNOW_WHITE, int(200 * switch_a)))
+            logw(press_x - tw(s, sf) / 2, press_y + 66, tw(s, sf), 15, SNOW_WHITE, switch_a, True, "hud")
     im = im.convert("RGB")
     im = snowfall(im, f, density=0.15, seed=23)
     prog = E.in_out_sine(E.seg(f, S6, NF))
