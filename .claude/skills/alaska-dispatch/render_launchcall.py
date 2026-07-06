@@ -87,31 +87,47 @@ def glow_dot(img, xy, r, color, glow=1.0):
 
 HAND_COLOR = (86, 66, 50)
 
+def _vol_rect(d, box, radius, color, alpha, light_corner="tl"):
+    """A rounded rect with a cheap key/fill volumetric cue (a soft highlight on one corner, a soft
+    shadow on the opposite corner) instead of a single flat fill — so hero shapes read as rounded
+    3D forms, not flat single-tone silhouettes."""
+    x0, y0, x1, y1 = box
+    d.rounded_rectangle([x0, y0, x1, y1], radius=radius, fill=(*color, alpha))
+    w, h = x1 - x0, y1 - y0
+    hl = tuple(min(255, int(c * 1.5 + 20)) for c in color)
+    sh = tuple(int(c * 0.5) for c in color)
+    if light_corner == "tl":
+        d.rounded_rectangle([x0, y0, x1 - w * 0.30, y0 + h * 0.45], radius=radius * 0.7, fill=(*hl, int(alpha * 0.38)))
+        d.rounded_rectangle([x0 + w * 0.35, y1 - h * 0.4, x1, y1], radius=radius * 0.7, fill=(*sh, int(alpha * 0.32)))
+    else:  # "left" — light from the left edge (for hands reaching in from that side)
+        d.rounded_rectangle([x0, y0, x0 + w * 0.4, y1], radius=radius * 0.7, fill=(*hl, int(alpha * 0.38)))
+        d.rounded_rectangle([x1 - w * 0.35, y0, x1, y1], radius=radius * 0.7, fill=(*sh, int(alpha * 0.30)))
+
 def draw_hand_down(d, tip_x, tip_y, scale=1.0, alpha=255, color=HAND_COLOR):
     """A recognizable hand (palm + 4 fingers + thumb + wrist) reaching DOWN from above; fingertips
     rest at (tip_x, tip_y). Sized to read clearly even at thumbnail scale (per Gate B: the earlier
     triangle-wedge markers were too small/abstract to register as a human hand)."""
-    col = (*color, alpha)
+    gy = tip_y + 10 * scale
+    d.ellipse([tip_x - 46 * scale, gy - 12 * scale, tip_x + 46 * scale, gy + 12 * scale], fill=(0, 0, 0, int(70 * (alpha / 255))))
     for fx, flen in ((-30, 34), (-10, 44), (10, 42), (30, 30)):  # index..pinky, middle longest
         x0 = tip_x + (fx - 7) * scale; x1 = tip_x + (fx + 7) * scale
         y1 = tip_y; y0 = tip_y - flen * scale
-        d.rounded_rectangle([x0, y0, x1, y1], radius=6 * scale, fill=col)
+        _vol_rect(d, [x0, y0, x1, y1], 6 * scale, color, alpha)
     py1 = tip_y - 28 * scale; py0 = py1 - 58 * scale
-    d.rounded_rectangle([tip_x - 38 * scale, py0, tip_x + 38 * scale, py1], radius=16 * scale, fill=col)
-    d.rounded_rectangle([tip_x + 32 * scale, py1 - 34 * scale, tip_x + 60 * scale, py1 - 2 * scale], radius=10 * scale, fill=col)
-    d.rounded_rectangle([tip_x - 24 * scale, py0 - 46 * scale, tip_x + 24 * scale, py0 + 8 * scale], radius=10 * scale, fill=col)
+    _vol_rect(d, [tip_x - 38 * scale, py0, tip_x + 38 * scale, py1], 16 * scale, color, alpha)
+    _vol_rect(d, [tip_x + 32 * scale, py1 - 34 * scale, tip_x + 60 * scale, py1 - 2 * scale], 10 * scale, color, alpha)
+    _vol_rect(d, [tip_x - 24 * scale, py0 - 46 * scale, tip_x + 24 * scale, py0 + 8 * scale], 10 * scale, color, alpha)
 
 def draw_hand_left(d, tip_x, tip_y, scale=1.0, alpha=255, color=HAND_COLOR):
     """A recognizable hand reaching in from the LEFT; fingertips rest at (tip_x, tip_y)."""
-    col = (*color, alpha)
     for fy, flen in ((-30, 34), (-10, 44), (10, 42), (30, 30)):
         y0 = tip_y + (fy - 7) * scale; y1 = tip_y + (fy + 7) * scale
         x1 = tip_x; x0 = tip_x - flen * scale
-        d.rounded_rectangle([x0, y0, x1, y1], radius=6 * scale, fill=col)
+        _vol_rect(d, [x0, y0, x1, y1], 6 * scale, color, alpha, "left")
     px1 = tip_x - 28 * scale; px0 = px1 - 58 * scale
-    d.rounded_rectangle([px0, tip_y - 38 * scale, px1, tip_y + 38 * scale], radius=16 * scale, fill=col)
-    d.rounded_rectangle([px1 - 34 * scale, tip_y - 60 * scale, px1 - 2 * scale, tip_y - 32 * scale], radius=10 * scale, fill=col)
-    d.rounded_rectangle([px0 - 46 * scale, tip_y - 24 * scale, px0 + 8 * scale, tip_y + 24 * scale], radius=10 * scale, fill=col)
+    _vol_rect(d, [px0, tip_y - 38 * scale, px1, tip_y + 38 * scale], 16 * scale, color, alpha, "left")
+    _vol_rect(d, [px1 - 34 * scale, tip_y - 60 * scale, px1 - 2 * scale, tip_y - 32 * scale], 10 * scale, color, alpha, "left")
+    _vol_rect(d, [px0 - 46 * scale, tip_y - 24 * scale, px0 + 8 * scale, tip_y + 24 * scale], 10 * scale, color, alpha, "left")
 
 # ================================================================== SHOT 1 — THE VILLAGE (map) ==================================================================
 VILLAGES = [(310, 640), (420, 520), (540, 760), (610, 480), (720, 690), (380, 900), (860, 560),
@@ -418,8 +434,10 @@ def scene5_row(f):
         if rise <= 0.01:
             continue
         py = base_y - 10 - int(140 * rise)
-        d.rounded_rectangle([px - 92, py - 46, px + 92, py + 46], 10, fill=(*PAPER, int(235 * min(1, rise + 0.3))),
-                             outline=(*SLATE, 200))
+        pa = int(235 * min(1, rise + 0.3))
+        d.rounded_rectangle([px - 90, py - 42, px + 94, py + 50], 10, fill=(0, 0, 0, int(90 * (pa / 235))))  # drop shadow
+        _vol_rect(d, [px - 92, py - 46, px + 92, py + 46], 10, PAPER, pa)
+        d.rounded_rectangle([px - 92, py - 46, px + 92, py + 46], 10, outline=(*SLATE, 200))
         pf = mono(19, b=True)
         d.text((px - tw(name, pf) / 2, py - 11), name, font=pf, fill=(30, 32, 38, 255))
         logw(px - tw(name, pf) / 2, py - 11, tw(name, pf), 19, (30, 32, 38), min(1, rise), rise >= 0.9, "hud")
@@ -509,7 +527,7 @@ def scene6_map_outro(f):
             hand_y = (press_y - 130) + (btn_y - (press_y - 130)) * hand_t
             draw_hand_down(d, press_x, hand_y + btn_r * 0.5, scale=1.35, alpha=int(255 * switch_a))
         if press >= 0.85:
-            sf = mono(15, b=True); s = "CONFIRM LAUNCH"
+            sf = mono(15, b=True); s = "LAUNCH"  # NOT "confirm" — the person decides, doesn't ratify the model
             d.text((press_x - tw(s, sf) / 2, press_y + 66), s, font=sf, fill=(*SNOW_WHITE, int(200 * switch_a)))
             logw(press_x - tw(s, sf) / 2, press_y + 66, tw(s, sf), 15, SNOW_WHITE, switch_a, True, "hud")
     im = im.convert("RGB")
