@@ -85,7 +85,7 @@ def glow_dot(img, xy, r, color, glow=1.0):
     d = ImageDraw.Draw(out); d.ellipse([x - r, y - r, x + r, y + r], fill=(*color, 255))
     return out.convert("RGB")
 
-HAND_COLOR = (86, 66, 50)
+HAND_COLOR = (150, 112, 82)  # a warm mid skin tone (not a dark brown block) so the hero hand reads as flesh
 
 def _vol_rect(d, box, radius, color, alpha, light_corner="tl"):
     """A rounded rect with a cheap key/fill volumetric cue (a soft highlight on one corner, a soft
@@ -103,31 +103,86 @@ def _vol_rect(d, box, radius, color, alpha, light_corner="tl"):
         d.rounded_rectangle([x0, y0, x0 + w * 0.4, y1], radius=radius * 0.7, fill=(*hl, int(alpha * 0.38)))
         d.rounded_rectangle([x1 - w * 0.35, y0, x1, y1], radius=radius * 0.7, fill=(*sh, int(alpha * 0.30)))
 
+def _taper_finger(d, base, tip, wbase, wtip, color, alpha, hi, sh, nail=True):
+    """One finger as a TAPERED, round-tipped capsule (wider at the knuckle, narrower at the tip) —
+    the taper + rounded tip is what separates 'human finger' from 'rectangular gripper segment'."""
+    bx, by = base; tx, ty = tip
+    dx, dy = tx - bx, ty - by
+    L = math.hypot(dx, dy) or 1.0
+    ux, uy = dx / L, dy / L
+    px, py = -uy, ux  # unit perpendicular
+    quad = [(bx + px * wbase, by + py * wbase), (bx - px * wbase, by - py * wbase),
+            (tx - px * wtip, ty - py * wtip), (tx + px * wtip, ty + py * wtip)]
+    d.polygon(quad, fill=(*color, alpha))
+    d.ellipse([bx - wbase, by - wbase, bx + wbase, by + wbase], fill=(*color, alpha))      # knuckle round
+    d.ellipse([tx - wtip, ty - wtip, tx + wtip, ty + wtip], fill=(*color, alpha))          # fingertip round
+    # a lengthwise key highlight down one side (soft cylinder shading, not a flat fill)
+    hx, hy = px * wbase * 0.4, py * wbase * 0.4
+    d.line([(bx + hx, by + hy), (tx + px * wtip * 0.4, ty + py * wtip * 0.4)], fill=(*hi, int(alpha * 0.5)), width=max(1, int(wtip * 0.7)))
+    if nail:
+        d.ellipse([tx - wtip * 0.62, ty - wtip * 0.62, tx + wtip * 0.62, ty + wtip * 0.62], fill=(*hi, int(alpha * 0.55)))
+
+def _hand(d, tip_x, tip_y, scale, alpha, color, ux, uy):
+    """A recognizable human hand: rounded palm + wrist, four FANNED fingers of graduated length,
+    an ANGLED thumb jutting to the side, skin shading, nail hints, and a grounded contact shadow.
+    (ux,uy) is the unit direction the fingers POINT; the palm/wrist sit opposite it. Fingertips
+    rest at (tip_x, tip_y). Replaces the earlier stacked-equal-rectangles hand that read as a
+    robotic gripper and inverted the thesis (Gate B rounds 4-5: 'a person's hand, not the model')."""
+    hi = tuple(min(255, int(c * 1.45 + 22)) for c in color)   # lit skin
+    sh = tuple(int(c * 0.5) for c in color)                    # shadowed skin
+    px, py = -uy, ux                                           # perpendicular (thumb/finger-spread axis)
+    F = (tip_x, tip_y)
+    def pt(along, across):  # a point 'along' the pointing dir and 'across' the spread axis, from F
+        return (F[0] + ux * along * scale + px * across * scale, F[1] + uy * along * scale + px * 0 + py * across * scale)
+    K = (F[0] - ux * 46 * scale, F[1] - uy * 46 * scale)       # knuckle line (base of fingers)
+    Pc = (K[0] - ux * 32 * scale, K[1] - uy * 32 * scale)      # palm centre
+    W = (Pc[0] - ux * 40 * scale, Pc[1] - uy * 40 * scale)     # wrist
+    a = int(alpha)
+    # 1) contact shadow: a SUBTLE soft drop shadow (overhead key light) just below the fingertips,
+    #    always offset +y regardless of which way the hand points — grounds the hand on the surface
+    #    without stamping a big black hole over the artwork/labels beneath it.
+    sc_x = (F[0] + Pc[0]) / 2 + 5 * scale
+    sc_y = max(F[1], Pc[1]) + 16 * scale
+    for k, sa in ((40, 10), (28, 15), (18, 22)):
+        d.ellipse([sc_x - k * scale, sc_y - k * 0.26 * scale, sc_x + k * scale, sc_y + k * 0.26 * scale], fill=(0, 0, 0, int(sa * (alpha / 255))))
+    # 2) forearm/wrist: TAPERED (narrow at the wrist, widening toward the sleeve) — not a paddle bar
+    far = (W[0] - ux * 150 * scale, W[1] - uy * 150 * scale)
+    _taper_finger(d, far, W, 40 * scale, 30 * scale, color, a, hi, sh, nail=False)
+    # 3) palm: a rounded trapezoid, wider at the knuckles than the wrist (never a plain rectangle)
+    kl = (K[0] + px * 40 * scale, K[1] + py * 40 * scale); kr = (K[0] - px * 40 * scale, K[1] - py * 40 * scale)
+    wl = (W[0] + px * 30 * scale, W[1] + py * 30 * scale);  wr = (W[0] - px * 30 * scale, W[1] - py * 30 * scale)
+    d.polygon([kl, kr, wr, wl], fill=(*color, a))
+    d.ellipse([Pc[0] - 42 * scale, Pc[1] - 42 * scale, Pc[0] + 42 * scale, Pc[1] + 42 * scale], fill=(*color, a))
+    d.ellipse([K[0] - 42 * scale, K[1] - 30 * scale, K[0] + 42 * scale, K[1] + 30 * scale], fill=(*color, a))
+    # 4) thumb: juts out to one side (−px) and back toward the wrist — the strongest 'this is a hand' cue
+    th_base = (K[0] + px * 34 * scale - ux * 4 * scale, K[1] + py * 34 * scale - uy * 4 * scale)
+    th_tip = (th_base[0] + px * 30 * scale - ux * 26 * scale, th_base[1] + py * 30 * scale - uy * 26 * scale)
+    _taper_finger(d, th_base, th_tip, 13 * scale, 8 * scale, color, a, hi, sh, nail=True)
+    # 5) four fingers, fanned + graduated length (middle longest, pinky shortest & thinnest)
+    #    off = spread across the knuckle line; short = how far short of F the tip stops; fan = splay
+    fingers = [(-30, 6, -0.16, 9.5, 6.0),  # index
+               (-10, 0,  -0.05, 10.5, 6.5),  # middle (longest, reaches F)
+               (12, 5,  0.06, 9.8, 6.2),   # ring
+               (30, 20, 0.20, 7.8, 5.0)]   # pinky
+    for off, short, fan, wb, wt in fingers:
+        base = (K[0] + px * off * scale, K[1] + py * off * scale)
+        # tip near F, offset across by (off + fan spread) and pulled back by 'short'
+        tx = F[0] + px * (off + fan * 40) * scale - ux * short * scale
+        ty = F[1] + py * (off + fan * 40) * scale - uy * short * scale
+        _taper_finger(d, base, (tx, ty), wb * scale, wt * scale, color, a, hi, sh, nail=True)
+    # 6) palm shading: a soft round key-light sheen on the palm (an ellipse, not a bright rectangle),
+    #    plus a subtle darker crescent along the knuckle line for form — both very low alpha
+    sheen = (Pc[0] - ux * 6 * scale + px * 6 * scale, Pc[1] - uy * 6 * scale + py * 6 * scale)
+    d.ellipse([sheen[0] - 26 * scale, sheen[1] - 26 * scale, sheen[0] + 26 * scale, sheen[1] + 26 * scale], fill=(*hi, int(a * 0.22)))
+    d.ellipse([K[0] - 36 * scale, K[1] + 6 * scale, K[0] + 36 * scale, K[1] + 20 * scale], fill=(*sh, int(a * 0.22)))
+
 def draw_hand_down(d, tip_x, tip_y, scale=1.0, alpha=255, color=HAND_COLOR):
-    """A recognizable hand (palm + 4 fingers + thumb + wrist) reaching DOWN from above; fingertips
-    rest at (tip_x, tip_y). Sized to read clearly even at thumbnail scale (per Gate B: the earlier
-    triangle-wedge markers were too small/abstract to register as a human hand)."""
-    gy = tip_y + 10 * scale
-    d.ellipse([tip_x - 46 * scale, gy - 12 * scale, tip_x + 46 * scale, gy + 12 * scale], fill=(0, 0, 0, int(70 * (alpha / 255))))
-    for fx, flen in ((-30, 34), (-10, 44), (10, 42), (30, 30)):  # index..pinky, middle longest
-        x0 = tip_x + (fx - 7) * scale; x1 = tip_x + (fx + 7) * scale
-        y1 = tip_y; y0 = tip_y - flen * scale
-        _vol_rect(d, [x0, y0, x1, y1], 6 * scale, color, alpha)
-    py1 = tip_y - 28 * scale; py0 = py1 - 58 * scale
-    _vol_rect(d, [tip_x - 38 * scale, py0, tip_x + 38 * scale, py1], 16 * scale, color, alpha)
-    _vol_rect(d, [tip_x + 32 * scale, py1 - 34 * scale, tip_x + 60 * scale, py1 - 2 * scale], 10 * scale, color, alpha)
-    _vol_rect(d, [tip_x - 24 * scale, py0 - 46 * scale, tip_x + 24 * scale, py0 + 8 * scale], 10 * scale, color, alpha)
+    """A human hand reaching DOWN from above; fingertips rest at (tip_x, tip_y)."""
+    _hand(d, tip_x, tip_y, scale, alpha, color, 0.0, 1.0)
 
 def draw_hand_left(d, tip_x, tip_y, scale=1.0, alpha=255, color=HAND_COLOR):
-    """A recognizable hand reaching in from the LEFT; fingertips rest at (tip_x, tip_y)."""
-    for fy, flen in ((-30, 34), (-10, 44), (10, 42), (30, 30)):
-        y0 = tip_y + (fy - 7) * scale; y1 = tip_y + (fy + 7) * scale
-        x1 = tip_x; x0 = tip_x - flen * scale
-        _vol_rect(d, [x0, y0, x1, y1], 6 * scale, color, alpha, "left")
-    px1 = tip_x - 28 * scale; px0 = px1 - 58 * scale
-    _vol_rect(d, [px0, tip_y - 38 * scale, px1, tip_y + 38 * scale], 16 * scale, color, alpha, "left")
-    _vol_rect(d, [px1 - 34 * scale, tip_y - 60 * scale, px1 - 2 * scale, tip_y - 32 * scale], 10 * scale, color, alpha, "left")
-    _vol_rect(d, [px0 - 46 * scale, tip_y - 24 * scale, px0 + 8 * scale, tip_y + 24 * scale], 10 * scale, color, alpha, "left")
+    """A human hand reaching in from the LEFT; fingertips rest at (tip_x, tip_y)."""
+    _hand(d, tip_x, tip_y, scale, alpha, color, -1.0, 0.0)
 
 # ================================================================== SHOT 1 — THE VILLAGE (map) ==================================================================
 VILLAGES = [(310, 640), (420, 520), (540, 760), (610, 480), (720, 690), (380, 900), (860, 560),
@@ -151,7 +206,7 @@ ALASKA_PANHANDLE = [
     (815, 1560), (800, 1460), (780, 1400),
 ]
 ALASKA_ALEUTIANS = [
-    ((400, 1370), 22), ((330, 1378), 17), ((260, 1382), 13), ((195, 1385), 10), ((140, 1387), 7),
+    ((402, 1358), 27), ((328, 1364), 21), ((256, 1368), 16), ((191, 1371), 12), ((136, 1373), 9),
 ]
 
 def draw_alaska(d, alpha_mult=1.0):
@@ -168,9 +223,10 @@ def draw_alaska(d, alpha_mult=1.0):
     for pts in (ALASKA_MAINLAND, ALASKA_PANHANDLE):
         d.line(pts + [pts[0]], fill=(*SLATE, fa(70)), width=10, joint="curve")
         d.line(pts + [pts[0]], fill=(*SLATE, fa(150)), width=3)
-    # each island gets its own visible rim stroke — a plain fill nearly vanishes against the void
+    # each island gets its own bright rim stroke — a plain fill nearly vanishes against the void, and
+    # at phone size a thin faint stroke didn't register as an island chain (Gate B round 5)
     for (cx, cy), r in ALASKA_ALEUTIANS:
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(*SLATE, fa(200)), width=3)
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(28, 32, 40, fa(150)), outline=(*BIRCH_DIM, fa(230)), width=4)
 
 def scene1_map(f):
     t = f / FPS
