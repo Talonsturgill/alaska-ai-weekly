@@ -10,3 +10,6 @@ __pycache__/
 .claude/skills/alaska-dispatch/audio/
 .claude/skills/alaska-dispatch/textlog/
 .claude/skills/alaska-dispatch/quality_report.json
+.claude/skills/alaska-dispatch/frames_*/
+.claude/skills/alaska-dispatch/test_*/
+.claude/skills/alaska-dispatch/*.mp4

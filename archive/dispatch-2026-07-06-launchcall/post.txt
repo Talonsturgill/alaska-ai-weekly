@@ -1,0 +1,11 @@
+Alaska's tribal health system built an AI model for the worst call in rural medicine, then published exactly why nobody should trust it yet.
+
+Eighty percent of Alaska's communities have no road out. When someone is critically sick, a clinic worker has to decide whether to launch a medevac flight, often into weather that is actively getting worse. ANTHC, Southcentral Foundation, Maniilaq Association, UAF's Center for Alaska Native Health Research, UAA, and Stanford built a research model that scores that decision from patient vitals, weather, and aircraft status, trained on years of real flight data across the Alaska Tribal Health System.
+
+Most AI-in-health coverage skips this part. The same researchers who built the model published, in the same breath, that no ethical guidelines exist yet for AI or ML inside Alaska Native and American Indian tribal health systems, and that only about 0.2 percent of healthcare AI papers even mention community involvement. They did not bury that gap to ship faster. They named it as the actual blocker.
+
+Most vendors build the model first and back into governance later, only if a regulator forces the question. ANTHC and its partners flipped that order: data ownership and consent first, a model second. No clinic runs this today. It is a pilot, and by design it stays a pilot until the tribal health system itself decides who controls the data.
+
+The tradeoff is real, not theoretical. A model that waits for community-built governance ships slower than one that does not. Alaska's bet is that a tool clinicians and patients actually trust is worth that delay. Is that the right tradeoff for a decision this high-stakes? Or does building trust first still leave a patient waiting on a call that cannot wait?
+
+#ArtificialIntelligence #Alaska #TribalHealth #RuralHealthcare #DataSovereignty

@@ -212,3 +212,28 @@ dispatch_history:
       silver for the night pass, one coral-dawn beat at the diel turn
     metaphor: 'the depth model breathes: a probability tide rising and falling through
       day and night, and the net must find the one door it leaves open'
+- date: '2026-07-06'
+  topic: ANTHC/Stanford rural medevac decision AI + tribal data governance
+  slug: launchcall
+  key_entities:
+  - ANTHC
+  - Southcentral Foundation
+  - Maniilaq
+  - UAF CANHR
+  - UAA
+  - Stanford
+  archetype: instrument-panel
+  palette: gunmetal/birch-white/marigold/glacier-blue/charcoal
+  voice: am_michael
+  composition:
+    pov: instrument-screen
+    motion_vector: assemble-build
+    hero_treatment: data-as-subject
+    layout: hud-instrument-frame
+    register: blueprint-technical
+    palette: overcast gunmetal-grey sky over pale birch-white snow, a warm marigold-orange
+      risk needle, a cool glacier-blue console glow, and one flat charcoal void for
+      the still-unwritten rule
+    metaphor: the model can score the risk before the plane leaves the ground. The
+      rulebook for who owns the data hasn't been written yet, and a person's hand,
+      not the model, still makes the call

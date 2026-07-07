@@ -1,97 +1,126 @@
-# Storyboard — "The Depth Model" (2026-07-05)
+# Storyboard — "The Launch Call" (2026-07-06)
 
 ## Story
-A University of Alaska Fairbanks team (Marcel Gietzmann-Sanders, Andrew Seitz, Curry Cunningham,
-Michael Courtney; UAF College of Fisheries and Ocean Sciences) trained a probabilistic deep-learning
-model on 13 years and 700,000+ tagging/telemetry data points to predict what depth Chinook (king)
-salmon occupy in the Gulf of Alaska by season and time of day, so pollock trawlers can choose fishing
-depths that reduce accidental king-salmon bycatch. Published in *Animal Biotelemetry* (April 5, 2026);
-UAF release June 8, 2026. Context: in 2024, bycatch from two boats over a single weekend was enough
-to close the pollock fishery.
+Alaska's Tribal Health System, the Alaska Native Tribal Health Consortium (ANTHC), Southcentral
+Foundation, and Maniilaq Association, working with UAF's Center for Alaska Native Health Research
+(CANHR), UAA, and Stanford, has published a community-engaged governance framework for AI/ML in
+Alaska Native health care, alongside an early pilot machine-learning model that predicts appropriate
+medevac (air ambulance) utilization for critically ill patients in Alaska's roadless villages. Over
+80 percent of Alaska's communities have no road system; when someone is critically sick, the only way
+out is by air, and a clinic worker has to decide whether to launch a flight, often into worsening
+weather. The model weighs patient vitals, weather, and aircraft status into a single risk score,
+trained on years of real flight data across the Alaska Tribal Health System. Published in *Frontiers
+in Artificial Intelligence* (framework, April 7, 2025) and the *International Journal of Circumpolar
+Health* (symposium perspectives, May 23, 2026, from a 31-person Anchorage symposium).
 
-**Honest caveat (the one that's drawn, not just said):** the model is a population-level PROBABILITY
-learned from history, not a real-time tracker of any one fish. It cannot promise a given tow is clear,
-and using it is voluntary. Drawn as WHERE (the depth axis) staying sharp and gridded, while WHEN (this
-tow, today) dissolves into fog around a ghosted "?".
+**Honest caveat (the one that's drawn, not just said):** this is a governance framework plus an early
+research pilot, not a deployed clinical tool. No clinic runs it today. The peer-reviewed record itself
+says no specific ethical guidelines yet exist for AI/ML in the Alaska Native and American Indian tribal
+health systems, and only about 0.2 percent of healthcare-AI publications even mention community
+involvement. Drawn as a PHYSICAL action: a hand enters frame and stops the climbing gauge needle, then
+hand-drafts a dotted, dissolving guardrail line that never fully resolves, legible with the sound off,
+never a passive text stamp. The story closes on the honest resolution: the score can inform the call,
+but a person's hand still makes it, pressing a physical launch switch, not tapping a UI cursor.
 
 ## Style mode + taste dials
-STYLE MODE: **editorial** (Bloomberg/print-graphic clarity), with naturalistic water/light rendering
-for the ocean itself.
+STYLE MODE: **cinematic-doc** (filmic, atmospheric, human stakes), with a clean blueprint-technical
+register for the instrument/ledger shots.
 
-- DESIGN_VARIANCE 6 — an asymmetric scrolling strip against a centered water-column slice, not fully classic.
-- MOTION_INTENSITY 5 — a breathing tide, not a race (deliberately calmer than the last two dispatches).
-- VISUAL_DENSITY 6 — depth axis + probability band + diel dial are load-bearing, but negative space breathes.
-- COLOR_BOLDNESS 5 — restrained indigo-navy world, one bold bioluminescent gold accent.
-- TEXTURE_GRAIN 6 — filmic grain, water caustics, bioluminescent particulate.
-- GRADE_STRENGTH 6 — cinematic ocean grade, split-tone toward indigo/gold.
+- DESIGN_VARIANCE 7 — the fullbleed-split ledger shot and the rising-row-of-hands shot are genuinely
+  asymmetric departures from the console/map shots.
+- MOTION_INTENSITY 4 — deliberate and restrained; this is a quiet decision, not a race or a countdown
+  (lower than both of the last two dispatches).
+- VISUAL_DENSITY 5 — the console shot carries real data density, but the map and circle shots breathe.
+- COLOR_BOLDNESS 6 — a muted arctic-storm base punctuated by one bold marigold-orange risk needle.
+- TEXTURE_GRAIN 4 — cleaner and more clinical than the last two dispatches' filmic ocean/ember grain.
+- GRADE_STRENGTH 5 — a measured cinematic grade, not a heavy stylized push.
 
-References: Kurzgesagt's layered, backlit underwater cross-sections; Bloomberg Businessweek's
-data-journalism cross-section clarity.
+References: Stripe/Linear-style clean instrument-panel product design (calm, confident data surfaces,
+no glossy sci-fi HUD glow); Ken Burns-style restrained documentary pacing (measured holds, no forced
+excitement, respecting the human stakes).
 
 ## Palette
-Abyssal indigo-navy water column, a bioluminescent gold band, moonlit silver for the night pass, one
-coral-dawn beat at the diel turn.
+Overcast gunmetal-grey sky over pale birch-white snow, a warm marigold-orange risk needle, a cool
+glacier-blue console glow, and one flat charcoal void for the still-unwritten rule.
 
 ## Composition fingerprint (7 axes)
 | axis | value |
 |---|---|
-| pov | cross-section-cutaway |
-| motion_vector | scroll-data |
-| hero_treatment | instrument-as-subject |
-| layout | stacked-layers |
-| register | editorial-schematic |
-| palette | abyssal indigo-navy / bioluminescent gold / moonlit silver / coral-dawn |
-| metaphor | the depth model breathes: a probability tide rising and falling through day and night, and the net must find the one door it leaves open |
+| pov | instrument-screen |
+| motion_vector | assemble-build |
+| hero_treatment | data-as-subject |
+| layout | hud-instrument-frame |
+| register | blueprint-technical |
+| palette | gunmetal-grey / birch-white / marigold-orange / glacier-blue / charcoal void |
+| metaphor | the model can score the risk before the plane leaves the ground. The rulebook for who owns the data hasn't been written yet, and a person, not the model, still makes the call |
 
-**Divergence from the last 2 dispatches:** differs on 7/7 axes from both the data-brutalist parchment
-ledger (07-02, the grid/data-center story) and the orbital field-HUD countdown (07-03, the wildfire
-drones). Spatial signature (cross-section-cutaway, stacked-layers, scroll-data) is unique versus the
-last 4 dispatches. Palette is fresh (no "amber/ember" or "parchment/vermilion" language repeated).
+**Divergence from the last 2 dispatches:** differs on 6/7 axes from both 07-03 (the orbital field-HUD
+wildfire-drone countdown) and 07-05 (the cross-section ocean depth-model descent). Spatial signature
+(instrument-screen, hud-instrument-frame, assemble-build) is unique versus the last 4 dispatches.
+Palette shares no more than one token with either of the last 2 (verified via `storyboard_check.py`).
 
-## Shot list (6 shots, ~60s) — REVISED after Gate 0B critique
-Fixes applied: (1) cold-opens on the consequence in frame 1 instead of building up to it at 8s,
-(2) shot 1 now ends at 11.9s (was 15.8s, sitting on the 16s ceiling) so a real world-change lands
-well before the quarter-film mark, (3) the redundant "SAFER DEPTH" text chip is replaced with a
-SHOWN outcome (pollock in the net, Chinook clear above), (4) shot 6's transition is relabeled
-`map-travel` (a real scene-break thread) instead of `pull-out` (a move verb), so the underwater
-to orbital jump can't be built or read as a same-canvas zoom.
+**Revised after Gate 0B:** the original "who decides" shot staged the community as an orbital-aerial
+ring of converging light points, which a muted viewer would read as a relabeled copy of 07-03's entire
+composition identity (orbital-aerial + radial-emanate + multiplicity-swarm, the wildfire-drone swarm).
+It is now an eye-level, grid-modular, vertical-rise row of hands placing named plates, sharing at most
+one axis with any prior dispatch's full fingerprint. The governance turn was also re-staged as a
+physical hand action (stopping the gauge, hand-drawing the guardrail line, pressing a launch switch)
+instead of a passive text stamp, so it reads muted without relying on on-screen labels.
 
-1. **0.0-11.9s** — wide-establish. COLD OPEN on the SEASON CLOSED stamp already mid-slam at frame 1;
-   a reverse-wipe then explains 2024's two boats before the timeline catches back up.
-2. **11.9-19.9s** — push-detail, eye-level-immersive. Match-cut to inside the water: one Chinook
-   descends and fades before a river-mouth icon, then dissolves to a single point of light.
-   Transition in: **match-cut** (thread: match).
-3. **19.9-31.9s** — data-panel, macro-closeup into a void. 700,000+ tag-points (each landing at its
-   own depth/time coordinate, not a stock counter) assemble into one smooth probability curve.
-   Transition in: **assemble** (thread: build).
-4. **31.9-39.9s** — subject-portrait. Graphic-match cut: the curve resolves back into the water
-   column as the breathing depth-occupancy band; the WHERE/WHEN caveat plays here. Transition in:
-   **graphic-match** (thread: match).
-5. **39.9-50.9s** — two-up. The trawl net's headrope depth line steers around the carried glowing
-   band; ends with pollock visibly filling the net while the Chinook stays clear above (the shown
-   payoff). Transition in: **mask-wipe** (thread: carry).
-6. **50.9-60.0s** — map-territory. Pull back to the wide Gulf of Alaska at dawn, boats spaced clear
-   of the band; branded outro. Transition in: **map-travel** (thread: travel).
+## Shot list (6 shots, ~60s)
+1. **0.0-6.8s** — wide-establish, top-down-map / map-territory / push-in-only / landscape-as-subject.
+   COLD OPEN: a single marigold pin already pulsing alone in black void at frame 1, weather closing in,
+   before the rest of the roadless map fades up around it.
+2. **6.8-17.0s** — push-detail, eye-level-immersive / centered-hero-lowerthird / horizontal-traverse /
+   single-organic-hero. Map-travel into a clinic interior (with a brief plane-silhouette cue for "by
+   air"): a health aide keys a radio as snow thickens outside. Transition in: **map-travel** (thread: travel).
+3. **17.0-31.0s** — data-panel, instrument-screen / hud-instrument-frame / assemble-build /
+   data-as-subject. Radio static boots into an instrument panel; VITALS / WEATHER / AIRCRAFT channels
+   converge into one climbing risk gauge. Transition in: **fui-boot** (thread: build).
+4. **31.0-41.5s** — two-up, macro-closeup / fullbleed-split / push-in-only / structure-as-subject.
+   Match-cut: a hand enters frame and physically stops the gauge's climbing needle, then hand-draws a
+   dotted guardrail line across a nearly blank ledger page that never fully resolves. Transition in:
+   **match-cut** (thread: carry).
+5. **41.5-48.5s** — subject-portrait, eye-level-immersive / grid-modular / vertical-rise /
+   structure-as-subject. Graphic-match: the dissolving line becomes a rising row's baseline; hands place
+   named plates (ANTHC, Southcentral, Maniilaq, community) into it one by one, then the miniature gauge
+   reappears steady beside the row, visibly advisory. Transition in: **graphic-match** (thread: match).
+6. **48.5-60.0s** — map-territory, top-down-map / map-territory / horizontal-traverse /
+   landscape-as-subject. Whip-pan back to the map bookend: a plane icon crosses to the village pin as a
+   human thumb physically presses a launch switch beside it, then the branded outro. Transition in:
+   **whip-pan** (thread: travel).
 
-## Beat map (16 beats, never-rest <=5s gaps, accelerando in the data-build section)
+## Beat map (17 beats, never-rest <=5s gaps, ~3.2-3.6s cadence)
 See `storyboard.json > beats[]` for the full timed {t, vo, shows, sfx, means} objects. Summary:
-1. 0.0-3.9 — COLD OPEN: the SEASON CLOSED stamp is already mid-slam at frame 1.
-2. 4.0-7.9 — reverse-wipe explains 2024, two boats, bycatch tally rising.
-3. 8.0-11.9 — timeline catches up, gate fully shut; shot 1 ends.
-4. 12.0-15.9 — match-cut: one salmon descends and fades before reaching a river.
-5. 16.0-19.9 — the fish dissolves to a single point of light (seeds shot 3).
-6. 20.0-22.4 — 13 years, Gulf of Alaska label; tag-points bloom (accelerated ~2.4s beats begin).
-7. 22.5-24.9 — 700,000+ points land at real depth/time coordinates, not a generic counter.
-8. 25.0-27.4 — the point-cloud begins collapsing inward.
-9. 27.5-31.9 — the collapse completes into the probability curve (BUILD payoff, held to land it).
-10. 32.0-35.9 — graphic-match into shot 4: the breathing depth band + diel dial.
-11. 36.0-39.9 — the honest caveat drawn: WHERE sharp, WHEN foggy toward a "?".
-12. 40.0-43.9 — mask-wipe into shot 5: net headrope steers around the band.
-13. 44.0-47.9 — SHOWN outcome: pollock fill the net, Chinook's glow stays clear above.
-14. 48.0-50.9 — VOLUNTARY stamp (softer than the opening stamp; the honest adoption note).
-15. 51.0-54.9 — map-travel to shot 6: wide dawn Gulf, fleet spaced clear.
-16. 55.0-60.0 — outro: wordmark, tagline, source credit, ends on motion not a static hold.
+1. 0.0-3.2 — COLD OPEN: a marigold pin already pulsing alone in black void at frame 1.
+2. 3.2-6.8 — camera pushes toward the pin as the roadless map resolves around it.
+3. 6.8-10.2 — map-travel (with a brief plane-silhouette cue): the glow becomes a clinic window's light.
+4. 10.2-13.6 — a health aide's hand reaches for the radio; monitor glow on their face.
+5. 13.6-17.0 — the aide keys the radio; snow thickens at the window.
+6. 17.0-20.5 — fui-boot: radio static resolves into an instrument panel.
+7. 20.5-24.0 — VITALS / WEATHER / AIRCRAFT channels appear in sequence.
+8. 24.0-27.5 — each channel fills with a live readout.
+9. 27.5-31.0 — the channels converge into one climbing risk gauge.
+10. 31.0-34.5 — match-cut: a hand enters frame and physically stops the gauge's needle.
+11. 34.5-38.0 — the same hand begins drawing a dotted guardrail line on the ledger page.
+12. 38.0-41.5 — the line keeps dissolving at its edges, never fully resolving.
+13. 41.5-45.0 — graphic-match: the line becomes a rising row; hands place named plates.
+14. 45.0-48.5 — a final "community" plate locks in; the miniature gauge sits steady beside the row.
+15. 48.5-52.0 — whip-pan back to the map; the plane reaches the pin as a thumb presses the launch switch.
+16. 52.0-55.5 — the switch's glow resolves into the ALASKA.AI wordmark fading up.
+17. 55.5-60.0 — outro: tagline, source credit, ends on motion not a static hold.
 
 ## Ending
-Designed in: after "run after run," the outro stages in over the still-drifting aerial shot (parallax
-continues, camera does not freeze) — wordmark, tagline, then a gentle cinematic fade.
+Designed in: after the plane icon reaches the village pin and a human thumb physically presses the
+launch switch, the outro stages in over the still-moving map (the plane's engine hum still audible,
+tapering) — wordmark, tagline, source credit, then a gentle cinematic fade. Motion and sound both keep
+running to the final frame; never a static hold.
+
+## Cultural sensitivity note
+This story concerns Alaska Native and American Indian tribal health governance. Framing throughout is
+humble and centers the tribal health organizations (ANTHC, Southcentral Foundation, Maniilaq) as the
+authors and decision-makers, not as subjects. No Native iconography, regalia, or unverified Native
+language appears on screen; the "community" visual is generic, unidentifiable hands placing plain
+organizational name plates into a row, no faces, no regalia, no invented Native imagery. The Gmail
+draft and on-screen source credit will note that any further use of this story should credit and
+consult the named tribal health organizations directly.
