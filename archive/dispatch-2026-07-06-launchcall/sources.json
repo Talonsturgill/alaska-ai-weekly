@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13202658/",
+      "outlet": "PMC / peer-reviewed (ANTHC + Stanford symposium perspectives, published 2026-05-23) - primary",
+      "note": "Perspectives from the responsible-AI symposium on AI/ML in Alaska Native and American Indian (AN/AI) tribal healthcare systems; states that no ethical guidelines yet exist for AI/ML inside AN/AI tribal health, and that community involvement is almost absent from the healthcare-AI literature. This is the governance-gap the Dispatch is built on."
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12009764/",
+      "outlet": "PMC / peer-reviewed (community-engaged AI/ML framework, 2025-04-07) - primary, authored by the tribal health orgs themselves",
+      "note": "The community-engaged AI/ML framework that includes the medevac-decision model scoring patient vitals, weather, and aircraft status; frames data ownership and consent as prerequisites, not afterthoughts. Source for 'the community writes the guardrails before the model touches a patient.'"
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/full/10.1080/22423982.2026.2677426",
+      "outlet": "International Journal of Circumpolar Health, Vol. 85 Issue 1, art. 2677426 (2026) - primary, peer-reviewed",
+      "note": "Documents the medevac-ML work growing out of a 2022 AIM-AHEAD-funded project (since awarded a second grant to expand), the 2025 symposium (31 participants), and the partner set (ANTHC, UAF Center for Alaska Native Health Research, UAA, Stanford)."
+    },
+    {
+      "url": "https://emed.stanford.edu/stories/Alaska.html",
+      "outlet": "Stanford Emergency Medicine (EMED) - primary partner narrative",
+      "note": "Stanford EMED's account of the Alaska tribal-health collaboration, corroborating Stanford's role and the medevac decision-support framing."
+    },
+    {
+      "url": "https://www.govtech.com/health/do-alaska-rural-health-transformation-funds-point-to-ai",
+      "outlet": "GovTech, 2026-06-09 (reprinting Anchorage Daily News, reporter Iris Samuels) - secondary context",
+      "note": "Alaska's Rural Health Transformation funding advancing 400+ projects; context for the state's rural-health / roadless-access backdrop (about 80% of Alaska communities are off the road system)."
+    }
+  ]
+}

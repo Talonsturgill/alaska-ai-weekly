@@ -1,0 +1,54 @@
+{
+  "shots": [
+    {
+      "id": 1,
+      "start": 0,
+      "end": 228,
+      "framing": "wide-establish",
+      "transition_in": "",
+      "note": "map"
+    },
+    {
+      "id": 2,
+      "start": 228,
+      "end": 625,
+      "framing": "push-detail",
+      "transition_in": "map-travel",
+      "note": "clinic"
+    },
+    {
+      "id": 3,
+      "start": 625,
+      "end": 1024,
+      "framing": "data-panel",
+      "transition_in": "fui-boot",
+      "note": "panel"
+    },
+    {
+      "id": 4,
+      "start": 1024,
+      "end": 1324,
+      "framing": "two-up",
+      "transition_in": "match-cut",
+      "note": "ledger"
+    },
+    {
+      "id": 5,
+      "start": 1324,
+      "end": 1533,
+      "framing": "subject-portrait",
+      "transition_in": "graphic-match",
+      "note": "row"
+    },
+    {
+      "id": 6,
+      "start": 1533,
+      "end": 1800,
+      "framing": "map-territory",
+      "transition_in": "whip-pan",
+      "note": "map+outro"
+    }
+  ],
+  "fps": 30,
+  "total": 1800
+}
