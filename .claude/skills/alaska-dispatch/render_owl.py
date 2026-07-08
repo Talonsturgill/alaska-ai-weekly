@@ -508,8 +508,10 @@ def hud_and_labels(img, f):
         # never settles on a specific figure (clearly a count in progress, not a claimed total)
         climb = ss(seg(t, 0.8, 7.4)); top = int(46000 * climb)
         churn = f"{top // 100:03d}" + f"{(f * 41) % 100:02d}"
-        nw = tw(churn, cf); tk(d, churn, cf, (*SNOW, 240), px0 + (panw - nw) // 2, py0 + 58)
-        logw(px0 + (panw - nw) // 2, py0 + 58, nw, cf.size, SNOW, 1.0, True, "hook")
+        nw = tw(churn, cf); tk(d, churn, cf, (*SNOW, 240), px0 + (panw - nw) // 2, py0 + 54)
+        logw(px0 + (panw - nw) // 2, py0 + 54, nw, cf.size, SNOW, 1.0, True, "hook")
+        tag = "illustrative"; tgw = tw(tag, mono(18), 0.06)
+        tk(d, tag, mono(18), (*GREY, 190), px0 + (panw - tgw) // 2, py0 + 122, 0.06)
     if si == 3:  # data panel: 7x/3x + F1 0.965
         a1 = oc(seg(t, SEG[5] + 0.2, SEG[5] + 1.0)) * (1 - seg(t, SEG[6] - 0.3, SEG[6] + 0.2))
         if a1 > 0.02:
@@ -541,8 +543,11 @@ def hud_and_labels(img, f):
             num = "".join(str((f * (7 + i * 13) + i * 3) % 10) for i in range(5)); cff = cf
         else:
             num = "COUNTED"; cff = mono(58, b=True)
-        nw = tw(num, cff); tk(d, num, cff, (*GOLD, 240), px0 + (panw - nw) // 2, py0 + (58 if settle < 0.85 else 66))
-        logw(px0 + (panw - nw) // 2, py0 + 58, nw, cf.size, GOLD, 1.0, True, "hook")
+        nw = tw(num, cff); tk(d, num, cff, (*GOLD, 240), px0 + (panw - nw) // 2, py0 + (54 if settle < 0.85 else 60))
+        logw(px0 + (panw - nw) // 2, py0 + 54, nw, cf.size, GOLD, 1.0, True, "hook")
+        if settle < 0.85:  # while still a rolling number, flag it illustrative
+            tag = "illustrative"; tgw = tw(tag, mono(18), 0.06)
+            tk(d, tag, mono(18), (*GREY, 190), px0 + (panw - tgw) // 2, py0 + 122, 0.06)
         a5 = oc(seg(t, SEG[9] + 0.6, SEG[9] + 1.6))
         if a5 > 0.02:
             stamp("COUNT HOME SOONER", 150, 1276, fr(56, 800), GOLD, a5, "stat")
