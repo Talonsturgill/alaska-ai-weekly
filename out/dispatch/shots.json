@@ -1,0 +1,62 @@
+{
+  "shots": [
+    {
+      "id": 1,
+      "start": 0,
+      "end": 246,
+      "framing": "wide-establish",
+      "transition_in": "",
+      "note": ""
+    },
+    {
+      "id": 2,
+      "start": 246,
+      "end": 506,
+      "framing": "alt-vantage",
+      "transition_in": "carried-element",
+      "note": ""
+    },
+    {
+      "id": 3,
+      "start": 506,
+      "end": 723,
+      "framing": "macro-closeup",
+      "transition_in": "match-cut",
+      "note": ""
+    },
+    {
+      "id": 4,
+      "start": 723,
+      "end": 1082,
+      "framing": "data-panel",
+      "transition_in": "graphic-match",
+      "note": ""
+    },
+    {
+      "id": 5,
+      "start": 1082,
+      "end": 1244,
+      "framing": "two-up",
+      "transition_in": "match-cut",
+      "note": ""
+    },
+    {
+      "id": 6,
+      "start": 1244,
+      "end": 1389,
+      "framing": "push-detail",
+      "transition_in": "fui-boot",
+      "note": ""
+    },
+    {
+      "id": 7,
+      "start": 1389,
+      "end": 1800,
+      "framing": "map-territory",
+      "transition_in": "crossfade",
+      "note": ""
+    }
+  ],
+  "fps": 30,
+  "total": 1800
+}
