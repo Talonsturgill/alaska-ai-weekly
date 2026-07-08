@@ -165,21 +165,29 @@ def caribou_topdown(dr, x, y, s, ang, col=CARIBOU, alpha=255, shadow=True, detai
     def R(dx, dy): return (x + dx * ca - dy * sa, y + dx * sa + dy * ca)
     aw = int(min(6, max(1, 0.24 * s)))  # antler stroke (thin, capped)
     lw = int(min(7, max(1, 0.4 * s)))   # leg stroke
-    # soft small shadow directly under the body (never a hard black blob)
+    # soft contact shadow / ambient occlusion under the body (subtle, screen-offset down-right, never a hard blob)
     if shadow:
-        sh = [R(2.8 * s * math.cos(th) + 0.6 * s, 1.15 * s * math.sin(th) + 0.8 * s) for th in [k * math.pi / 6 for k in range(12)]]
-        dr.polygon(sh, fill=(20, 18, 22, int(38 * alpha / 255)))
+        for (ox, oy, sx, sy, aa) in ((0.55 * s, 0.8 * s, 2.4, 1.05, 14), (0.3 * s, 0.45 * s, 1.9, 0.8, 20)):
+            sh = [(x + sx * s * math.cos(th) + ox, y + sy * s * math.sin(th) + oy) for th in [k * math.pi / 8 for k in range(16)]]
+            dr.polygon(sh, fill=(18, 16, 20, int(aa * alpha / 255)))
     # legs (only at scale)
     if detail:
         for (lx, ly, ex, ey) in [(-1.8, -1.0, -2.4, -1.9), (-1.8, 1.0, -2.4, 1.9), (1.5, -1.0, 2.1, -1.9), (1.5, 1.0, 2.1, 1.9)]:
             dr.line([R(lx * s, ly * s), R(ex * s, ey * s)], fill=(*_dark(col), alpha), width=lw)
-    # body (rotated ellipse) with a subtle pale rump + dorsal saddle
+    # body (rotated ellipse) with directional key/core shading (fixed screen light from upper-left)
     body = [R(3.2 * s * math.cos(th), 1.18 * s * math.sin(th)) for th in [k * math.pi / 9 for k in range(18)]]
     dr.polygon(body, fill=(*col, alpha))
+    def _blob(scale, dx, dy):  # scale body toward its center (x,y), shift in SCREEN space
+        return [(x + (px - x) * scale + dx, y + (py - y) * scale + dy) for (px, py) in body]
+    dr.polygon(_blob(0.80, 0.55 * s, 0.62 * s), fill=(*_dark(col, 0.62), int(alpha * 0.5)))     # core shadow (down-right)
+    dr.polygon(_blob(0.68, -0.42 * s, -0.52 * s), fill=(*mix(col, CARIBOU_HI, 0.9), int(alpha * 0.55)))  # key light (up-left)
     if detail:
         rump = [R(-2.7 * s + 0.75 * s * math.cos(th), 0.85 * s * math.sin(th)) for th in [k * math.pi / 6 for k in range(12)]]
-        dr.polygon(rump, fill=(*mix(col, FAWN, 0.55), int(alpha * 0.75)))
-    dr.line([R(-1.9 * s, 0), R(2.3 * s, 0)], fill=(*CARIBOU_HI, int(alpha * 0.7)), width=max(1, int(0.6 * s)))
+        dr.polygon(rump, fill=(*mix(col, FAWN, 0.55), int(alpha * 0.7)))
+        # rim light along the upper-left contour
+        rim = [R(3.2 * s * math.cos(th), 1.18 * s * math.sin(th)) for th in [k * math.pi / 9 for k in range(4, 11)]]
+        dr.line([(px - 0.28 * s, py - 0.34 * s) for (px, py) in rim], fill=(*mix(col, SNOW, 0.7), int(alpha * 0.7)), width=max(1, int(0.35 * s)), joint="curve")
+    dr.line([R(-1.9 * s, 0), R(2.3 * s, 0)], fill=(*CARIBOU_HI, int(alpha * 0.6)), width=max(1, int(0.5 * s)))
     # neck + head (clearly at the front)
     dr.line([R(3.0 * s, 0), R(4.3 * s, 0)], fill=(*col, alpha), width=max(1, int(1.05 * s)))
     hx, hy = R(4.6 * s, 0); dr.ellipse([hx - 0.85 * s, hy - 0.72 * s, hx + 1.0 * s, hy + 0.72 * s], fill=(*col, alpha))
@@ -275,14 +283,26 @@ def scene2(f, lt):
 def scene3(f, lt):
     # MACRO: one caribou in negative space; a bounding box draws then collapses into one mint dot
     # as the model's scan interface assembles.
-    img = Image.new("RGB", (W, H), (20, 24, 30)); dr = ImageDraw.Draw(img, "RGBA")
-    # soft vignette field
+    # continuous push-in + drift so SOMETHING is always changing across the whole shot
+    dur = (SHOTS[2][1] - SHOTS[2][0]) / FPS
+    p = clamp01(lt / dur); push = eio(p)
+    # a heavily-darkened tundra base that PANS + PUSHES IN the whole shot (keeps 'negative space' but alive)
+    gpx = 0.30 + 0.24 * p
+    base = ground_pan(gpx, 0.34, zoom=lerp(1.04, 1.30, p), shade=0.42)
+    img = Image.fromarray(base.astype(np.uint8)).convert("RGBA")
+    # soft vignette field to hold the single-animal focus
     vg = Image.new("RGBA", (W, H), (0, 0, 0, 0)); vd = ImageDraw.Draw(vg)
-    vd.ellipse([120, 480, W - 120, 1360], fill=(46, 40, 34, 120)); img = Image.alpha_composite(img.convert("RGBA"), vg.filter(ImageFilter.GaussianBlur(60))).convert("RGB")
+    vd.ellipse([120, 480, W - 120, 1360], fill=(30, 26, 22, 150))
+    img = Image.alpha_composite(img, vg.filter(ImageFilter.GaussianBlur(60)))
     dr = ImageDraw.Draw(img, "RGBA")
-    cx, cy = W // 2, 900
-    caribou_topdown(dr, cx, cy, 30, 0.35, col=CARIBOU, alpha=255)
-    lt_seg = lt  # local time in shot
+    cx = W // 2 + int(lerp(-46, 46, ss(p)))       # slow lateral drift across the shot
+    cy = 900 + int(lerp(34, -26, push))           # gentle vertical settle
+    cs = 30 * lerp(1.0, 1.16, push)               # continuous scale-up (push-in)
+    caribou_topdown(dr, cx, cy, cs, 0.35, col=CARIBOU, alpha=255)
+    # a mint scanning shimmer sweeping down over the animal — repeats through the whole shot (never idle)
+    scan_y = int(lerp(560, 1300, (lt * 0.62) % 1.0))
+    dr.line([(cx - 320, scan_y), (cx + 320, scan_y)], fill=(*MINT, 90), width=3)
+    dr.line([(cx - 320, scan_y + 7), (cx + 320, scan_y + 7)], fill=(*MINT_LO, 55), width=1)
     # phase A: model interface boots (brackets snap in) on seg4 start; phase B: box; phase C: collapse to dot
     boot = oc(seg(lt, 0.2, 1.4))
     if boot > 0.02:
@@ -290,10 +310,9 @@ def scene3(f, lt):
         for (bx, by, dx, dy) in [(cx-200, cy-150, 1, 1), (cx+200, cy-150, -1, 1), (cx-200, cy+150, 1, -1), (cx+200, cy+150, -1, -1)]:
             dr.line([(bx, by), (bx + dx * 60, by)], fill=(*MINT, int(220 * boot)), width=3)
             dr.line([(bx, by), (bx, by + dy * 60)], fill=(*MINT, int(220 * boot)), width=3)
-    # box draw (on 'learns each caribou from a single dot') then collapse (on 'not a boxed outline')
-    t2 = SEG[4] + 1.9 - SEG[4]  # local time when box appears (~phrase p09)
-    boxp = oc(seg(lt, (SEG[4] + 1.7 - SEG[4]), (SEG[4] + 3.0 - SEG[4])))
-    collapse = eio(seg(lt, (SEG[4] + 3.6 - SEG[4]), (SEG[4] + 4.8 - SEG[4])))
+    # box draw then collapse — STRETCHED across most of the shot so the beat keeps evolving (no dead middle)
+    boxp = oc(seg(lt, 1.6, 3.6))
+    collapse = eio(seg(lt, 4.0, 6.8))
     bw = int(lerp(210, 12, collapse)); bh = int(lerp(150, 12, collapse)); ba = int(255 * boxp * (1 - 0.5 * collapse))
     if boxp > 0.02:
         dr.rectangle([cx - bw, cy - bh, cx + bw, cy + bh], outline=(*MINT_HI, ba), width=3)
@@ -388,11 +407,21 @@ def scene6(f, lt):
 
 def scene7(f, lt):
     # MAP settles, the final count carried home, then the branded outro.
-    px = 0.24 - 0.06 * ss(lt / 13.0)
-    base = ground_pan(px, 0.30, zoom=lerp(1.02, 1.14, ss(lt / 13.0)), shade=0.86)
-    img = Image.fromarray(base.astype(np.uint8)).convert("RGBA"); dr = ImageDraw.Draw(img, "RGBA")
-    for (x, y, a) in _herd_positions(150, 41, 120, W - 120, 320, 1140, clump=0.3):
-        caribou_topdown(dr, x, y, 3.0, a, alpha=200); dr.ellipse([x-3, y-3, x+3, y+3], fill=(*MINT, 210))
+    q = clamp01(lt / 14.0)                       # LINEAR (constant-velocity) parallax to the final frame
+    px = 0.44 - 0.30 * q                          # horizontal traverse of SHARP tundra
+    base = ground_pan(px, 0.30, zoom=lerp(1.03, 1.10, q), shade=0.86)   # light zoom (deep zoom blurs -> less delta)
+    img = Image.fromarray(base.astype(np.uint8)).convert("RGBA")
+    herd = _herd_positions(150, 41, 120, W - 120, 320, 1140, clump=0.3)
+    # the count keeps coming home: a soft mint sweep crosses the map (repeating) and flares each marker it passes
+    sweepx = int(150 + (W - 300) * ((lt * 0.34) % 1.0))
+    band = Image.new("RGBA", (W, H), (0, 0, 0, 0)); bd = ImageDraw.Draw(band)
+    bd.rectangle([sweepx - 42, 300, sweepx + 42, 1120], fill=(*MINT, 48))
+    img = Image.alpha_composite(img, band); dr = ImageDraw.Draw(img, "RGBA")
+    dr.line([(sweepx, 300), (sweepx, 1120)], fill=(*MINT_HI, 150), width=2)
+    for (x, y, a) in herd:
+        caribou_topdown(dr, x, y, 3.0, a, alpha=200)
+        near = max(0.0, 1.0 - abs(x - sweepx) / 90.0)   # markers flare as the sweep reaches them
+        dr.ellipse([x-3, y-3, x+3, y+3], fill=(*MINT_HI, int(150 + 105 * near)))
     return np.asarray(img.convert("RGB"), np.float32)
 
 SCENES = [scene1, scene2, scene3, scene4, scene5, scene6, scene7]
@@ -464,26 +493,21 @@ def hud_and_labels(img, f):
     tk(d, left, mono(26, m=True), (*SNOW, 214), 96, sy, 0.05)
     logw(96, sy, tw(left, mono(26, m=True), 0.05), 26, SNOW, 1.0, True, "hud")
     right = "weak-supervision count"
-    rw = tw(right, mono(24), 0.04); tk(d, right, mono(24), (*MINT, 210), W - 96 - rw, sy + 2, 0.04)
-    logw(W - 96 - rw, sy + 2, rw, 24, MINT, 1.0, True, "hud")
+    rw = tw(right, mono(24), 0.04); tk(d, right, mono(24), (*MINT_HI, 220), W - 96 - rw, sy + 2, 0.04)
+    logw(W - 96 - rw, sy + 2, rw, 24, MINT_HI, 1.0, True, "hud")
     # per-shot big labels / numbers (post-grade -> crisp), placed in the card band
     def stamp(txt, x, y, fnt, col, a, key):
         tk(d, txt, fnt, (*col, int(255 * a)), x, y, 0.02)
         logw(x, y, tw(txt, fnt, 0.02), fnt.size, col, a, a >= 0.6, key)
-    if si == 0:  # HOOK: an uncountable mint tally spinning over the herd (the motif)
-        spin = ss(seg(t, 1.0, 7.6))
-        digits = 2 + int(3 * spin)
-        # pseudo-random churning number (uncountable), faster as the herd grows
-        val = (f * 977 + 31) % (10 ** digits)
-        s2 = f"{val:0{digits}d}".rjust(6, "?") if spin < 0.9 else f"{val:0{digits}d}"
-        s2 = ("??" + s2)[-6:] if spin < 0.6 else s2
+    if si == 0:  # HOOK: a LIVE TALLY racing upward, too fast to read (the count motif, illustrative)
         cf = mono(70, b=True); label = mono(26, m=True)
-        num = f"{val % 100000:05d}".rjust(5, "?")
         panw = 360; px0 = (W - panw) // 2; py0 = 330
-        d.rounded_rectangle([px0, py0, px0 + panw, py0 + 150], 12, outline=(*MINT, 200), width=2, fill=(10, 20, 20, 130))
+        d.rounded_rectangle([px0, py0, px0 + panw, py0 + 150], 12, outline=(*MINT, 200), width=2)
         tk(d, "LIVE TALLY", label, (*MINT_HI, 220), px0 + 24, py0 + 18, 0.08)
-        # churning digits (uncountable) — never settles in shot 1
-        churn = "".join(str((f * (7 + i * 13) + i * 3) % 10) for i in range(5))
+        # a counter climbing fast as the herd multiplies, with the last two digits rolling so it
+        # never settles on a specific figure (clearly a count in progress, not a claimed total)
+        climb = ss(seg(t, 0.8, 7.4)); top = int(46000 * climb)
+        churn = f"{top // 100:03d}" + f"{(f * 41) % 100:02d}"
         nw = tw(churn, cf); tk(d, churn, cf, (*SNOW, 240), px0 + (panw - nw) // 2, py0 + 58)
         logw(px0 + (panw - nw) // 2, py0 + 58, nw, cf.size, SNOW, 1.0, True, "hook")
     if si == 3:  # data panel: 7x/3x + F1 0.965
@@ -492,20 +516,25 @@ def hud_and_labels(img, f):
             stamp("7x FASTER   ·   3x CHEAPER", 150, 1270, mono(40, b=True), MINT_HI, a1, "stat")
         a2 = oc(seg(t, SEG[6] + 0.6, SEG[6] + 1.4))
         if a2 > 0.02:
-            stamp("F1  0.965", 150, 1270, fr(64, 800), SNOW, a2, "stat")
-            stamp("2022 CENTRAL ARCTIC", 150 + tw("F1  0.965", fr(64, 800), 0.02) + 40, 1290, mono(28, m=True), GREY, a2, "stat")
-    if si == 4:  # accuracy caveat + regime-dependent
-        a3 = oc(seg(t, SEG[6] + 2.2, SEG[6] + 3.0))
-        if a3 > 0.02:
-            stamp("+3.1%  OVERCOUNT", 150, 1270, mono(40, b=True), AMBER, a3, "stat")
-        a4 = oc(seg(t, SEG[7] + 1.0, SEG[7] + 1.8))
+            stamp("F1  0.965", 150, 1264, fr(64, 800), SNOW, a2, "stat")
+            stamp("2022 CENTRAL ARCTIC", 150 + tw("F1  0.965", fr(64, 800), 0.02) + 40, 1284, mono(28, m=True), (200, 212, 228), a2, "stat")
+        # +3.1% belongs to the ACCURACY beat on the clean counted field (spoken "within about three percent"),
+        # NOT the density-crush frame (it is the aggregate overcount, not the regime failure)
+        a2b = oc(seg(t, SEG[6] + 2.4, SEG[6] + 3.2))
+        if a2b > 0.02:
+            stamp("+3.1%  OVERCOUNT", 150, 1330, mono(36, b=True), AMBER, a2b, "stat")
+    if si == 4:  # the honest limit: the count SLIPS in the crush (uncertainty only, no aggregate stat here)
+        a4 = oc(seg(t, SEG[7] + 0.6, SEG[7] + 1.4))
         if a4 > 0.02:
-            stamp("REGIME-DEPENDENT", 150, 1320, mono(30, b=True), (*MINT, )[:3] and MINT_HI, a4, "stat")
+            stamp("COUNT SLIPS", 150, 1270, mono(40, b=True), AMBER, a4, "stat")
+        a5 = oc(seg(t, SEG[7] + 1.4, SEG[7] + 2.2))
+        if a5 > 0.02:
+            stamp("REGIME-DEPENDENT", 150, 1322, mono(30, b=True), MINT_HI, a5, "stat")
     if si == 6:  # payoff — the tally motif RESOLVES (carry the count home)
         settle = ss(seg(t, SHOTS[6][0] / FPS + 0.3, SHOTS[6][0] / FPS + 2.0))
         cf = mono(70, b=True); label = mono(26, m=True)
         panw = 360; px0 = (W - panw) // 2; py0 = 330
-        d.rounded_rectangle([px0, py0, px0 + panw, py0 + 150], 12, outline=(*MINT, 200), width=2, fill=(10, 20, 20, 130))
+        d.rounded_rectangle([px0, py0, px0 + panw, py0 + 150], 12, outline=(*MINT, 200), width=2)
         tk(d, "COUNT LOCKED", label, (*MINT_HI, 220), px0 + 24, py0 + 18, 0.08)
         # the churn RESOLVES to a non-numeric locked state (no fabricated herd total on screen)
         if settle < 0.85:
@@ -537,16 +566,41 @@ def outro(img, f):
     if a3 > 0.02:
         cf = mono(24); s = "arXiv:2606.13911  ·  Microsoft AI for Good + ADF&G 2022 census"; w = tw(s, cf, 0.04)
         tk(d, s, cf, (150, 170, 190, int(210 * a3)), (W - w) // 2, 1610, 0.04)
+    # a slowly-advancing underline with a drifting mint glow tip — keeps moving right up to the fade
+    gp = seg(f, start + 40, NF - 6)
+    if gp > 0.0:
+        uw = 520; ux = (W - uw) // 2; uy = 1586; tip = ux + int(uw * ss(gp))
+        d.line([(ux, uy), (ux + uw, uy)], fill=(70, 92, 118, 150), width=2)
+        d.line([(ux, uy), (tip, uy)], fill=(*GOLD, 220), width=3)
+        d.ellipse([tip - 5, uy - 5, tip + 5, uy + 5], fill=(*MINT_HI, 210))
     # final gentle fade
     fade = seg(f, NF - 34, NF - 2)
     if fade > 0:
         ov = Image.new("RGBA", (W, H), (6, 9, 14, int(235 * ss(fade)))); img.alpha_composite(ov)
+
+# ---------------- dark plates (drawn BEFORE bg-luma capture, so text is measured on its real base) ----
+# A soft bottom SCRIM (dark vertical gradient) puts the persistent HUD strip (~y1214), the stat labels
+# (~y1270-1330) and the lower-third captions (~y1450-1590) on a dark base even over the bright tundra
+# shots — a graded gradient, NOT a hard letterbox band. Plus the tally/count PANEL plate for shots 0/6.
+SCRIM_COL = np.array([8, 10, 14], np.float32)
+_scr = np.clip((_Y - 1120.0) / 150.0, 0.0, 1.0)
+SCRIM_A = ((_scr * _scr * (3 - 2 * _scr)) * 0.66)[..., None]   # smoothstep feather from y1120 -> hold 0.66
+def draw_plates(img, f):
+    arr = np.asarray(img.convert("RGB")).astype(np.float32)
+    arr = arr * (1 - SCRIM_A) + SCRIM_COL * SCRIM_A
+    img.paste(Image.fromarray(arr.astype(np.uint8)))
+    si = shot_of(f)
+    if si == 0 or si == 6:  # the tally/count panel plate (border + text still drawn in hud_and_labels, on top)
+        d = ImageDraw.Draw(img, "RGBA")
+        panw = 360; px0 = (W - panw) // 2; py0 = 330
+        d.rounded_rectangle([px0, py0, px0 + panw, py0 + 150], 12, fill=(10, 20, 20, 210))
 
 # ---------------- compose one frame ----------------
 def render_frame(f):
     base = render_scene(f)
     graded = finish(base, seed=1000 + f)
     img = Image.fromarray(graded).convert("RGBA")
+    draw_plates(img, f)
     set_frame_bg(img, f)
     dr = ImageDraw.Draw(img, "RGBA")
     brand_eyebrow(dr, f)
