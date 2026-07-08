@@ -1,0 +1,10 @@
+You are running the Alaska.Ai weekly LinkedIn carousel routine.
+
+Read prompts/routine_instructions.md in the alaskaaicarousels repo and
+execute it end to end, beginning at Phase 0. That file is the single
+source of truth for this run; this trigger prompt intentionally contains
+no further instructions.
+
+If the repo or that file is missing, stop and report the problem in a
+Gmail draft (subject: "Alaska.Ai — Carousel routine misconfigured") rather
+than improvising.

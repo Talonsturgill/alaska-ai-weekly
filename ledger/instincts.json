@@ -1,0 +1,39 @@
+{
+  "_spec": {
+    "purpose": "Self-improvement ledger (confidence-scored lessons). Every run's retro appends 1-3 instincts learned from: editor/critic flags, machine QA catches, human edits observed in later Gmail drafts, or performance notes the maintainer adds. Before each run, the orchestrator injects the TOP 5 instincts with confidence >= 0.7 into the directors-room and copy prompts. Confidence rises +0.05 each run that confirms an instinct, falls -0.1 each run that contradicts it. Prune entries below 0.5 confidence that are older than 8 runs.",
+    "entry_schema": {
+      "id": "kebab-slug",
+      "learned": "YYYY-MM-DD",
+      "instinct": "one imperative sentence",
+      "evidence": "what happened that taught this",
+      "confidence": "0.0-1.0",
+      "last_confirmed": "YYYY-MM-DD"
+    }
+  },
+  "entries": [
+    {
+      "id": "compute-3d-composition",
+      "learned": "2026-07-08",
+      "instinct": "Plan every 3D camera with the horizonY arithmetic in ak3d.js before rendering; never eyeball camera placement.",
+      "evidence": "Two consecutive smoke-test terrain renders buried the mountain range in the bottom 15% of frame until the projection math was computed explicitly.",
+      "confidence": 0.85,
+      "last_confirmed": "2026-07-08"
+    },
+    {
+      "id": "grain-as-tile",
+      "learned": "2026-07-08",
+      "instinct": "Apply grain as a small repeating tile (AK.grainTile), never a full-frame feTurbulence rect.",
+      "evidence": "Full-frame SVG grain rasterized to a 34MB incompressible bitmap in the printed PDF; the tile version produced 6.7MB.",
+      "confidence": 0.9,
+      "last_confirmed": "2026-07-08"
+    },
+    {
+      "id": "machine-qa-is-not-taste",
+      "learned": "2026-07-08",
+      "instinct": "Never treat a machine_qa PASS as composition approval; the pixel critics judge composition, hierarchy, and collision at full size and thumb size.",
+      "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate.",
+      "confidence": 0.9,
+      "last_confirmed": "2026-07-08"
+    }
+  ]
+}

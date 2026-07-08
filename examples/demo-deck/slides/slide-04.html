@@ -1,0 +1,116 @@
+<!doctype html>
+<!-- DEMO SLIDE 4 — "Software 3D": AK3D perspective terrain (fbm heightfield,
+     Lambert light, depth fog), starfield, glowing 3D route line. Proof that
+     true 3D renders headless with zero GPU. Plumbing reference only. -->
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="@@ASSETS@@/fonts/fonts.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body { background: linear-gradient(180deg, #030710 0%, #081327 46%, #12253e 62%, #0a1526 100%);
+         position: relative; }
+  canvas#scene { position: absolute; inset: 0; width: 1080px; height: 1350px; }
+  .head { position: absolute; top: 96px; left: 96px; right: 96px; }
+  .kicker { font-family: "JetBrains Mono", monospace; font-size: 24px; font-weight: 500;
+            letter-spacing: 0.16em; color: #3ce6b4; margin-bottom: 22px; }
+  h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 760;
+       font-size: 96px; line-height: 0.98; letter-spacing: -0.02em; color: #f2f6fd; }
+  h2 em { font-style: normal; color: #ffc72c; }
+  .spec { position: absolute; left: 96px; top: 460px; display: flex; gap: 56px; }
+  .spec .cell .v { font-family: "JetBrains Mono", monospace; font-weight: 700;
+                   font-size: 44px; color: #eef4fc; font-variant-numeric: tabular-nums; }
+  .spec .cell .k { font-family: "Manrope", sans-serif; font-size: 24px; font-weight: 600;
+                   letter-spacing: 0.06em; color: rgba(160, 190, 220, 0.85);
+                   text-transform: uppercase; margin-top: 8px; }
+  .counter { position: absolute; right: 96px; bottom: 96px; font-family: "JetBrains Mono", monospace;
+             font-size: 24px; color: rgba(255, 255, 255, 0.75);
+             text-shadow: 0 1px 8px rgba(3, 7, 16, 0.9); }
+</style>
+</head>
+<body>
+  <canvas id="scene" width="2160" height="2700"></canvas>
+  <div class="head">
+    <div class="kicker">ENGINE PROOF · SOFTWARE 3D</div>
+    <h2>A mountain range,<br><em>no GPU required</em></h2>
+  </div>
+  <div class="spec">
+    <div class="cell"><div class="v">9,216</div><div class="k">faces z-sorted</div></div>
+    <div class="cell"><div class="v">1</div><div class="k">light source</div></div>
+    <div class="cell"><div class="v">0</div><div class="k">webgl calls</div></div>
+  </div>
+  <div class="counter">04 / 04</div>
+
+<script src="@@ASSETS@@/js/noise.js"></script>
+<script src="@@ASSETS@@/js/ak3d.js"></script>
+<script>
+window.renderReady = new Promise((resolve) => {
+  const cv = document.getElementById("scene");
+  const cx = cv.getContext("2d");
+  cx.scale(2, 2);
+
+  AK.reseed(20260708);
+  const R = AK.rng(4);
+
+  // stars above the horizon
+  for (let i = 0; i < 170; i++) {
+    const x = R() * 1080, y = R() * 560;
+    const m = R();
+    cx.fillStyle = `rgba(230,240,255,${0.25 + 0.6 * m})`;
+    cx.beginPath(); cx.arc(x, y, 0.7 + m * 1.6, 0, 7); cx.fill();
+  }
+
+  const cam = AK3D.camera({ pos: [0, 10, 26], yaw: 0, pitch: -0.18,
+                            fov: 58, w: 1080, h: 1350, cy: 640 });
+
+  const ridge = (x, z) => {
+    const base = AK.fbm2(x * 0.055, z * 0.055, { octaves: 5 });
+    const spine = Math.max(0, 1 - Math.abs(z + 16) * 0.05);   // taller range far back
+    return base * 3.0 + spine * spine * 12.5 * (0.55 + 0.45 * AK.fbm2(x * 0.03, 7.7, { octaves: 3 }));
+  };
+  const snowline = 5.0;
+  const terrain = AK3D.heightfield({
+    xmin: -40, xmax: 40, zmin: -46, zmax: 10, nx: 96, nz: 96,
+    y: ridge,
+    color: (x, z, y) => {
+      if (y > snowline) return AK3D.mix("#9fc4dd", "#f4fbff",
+        Math.min(1, (y - snowline) / 3.2));
+      if (y > 1.2) return AK3D.mix("#1c3a55", "#5d84a4", (y - 1.2) / (snowline - 1.2));
+      return AK3D.mix("#0b1c30", "#1c3a55", Math.max(0, y) / 1.2);
+    }
+  });
+
+  AK3D.render(cx, cam, terrain.faces, {
+    light: [0.45, 0.85, 0.3], ambient: 0.32,
+    fog: { color: "#0b1526", near: 24, far: 64 },
+    stroke: "rgba(140,200,240,0.05)", strokeWidth: 0.5
+  });
+
+  // glowing 3D route over the terrain
+  const route = [];
+  for (let t = 0; t <= 1.0001; t += 0.01) {
+    const x = -36 + t * 72;
+    const z = -2 - Math.sin(t * Math.PI) * 26;
+    route.push([x, ridge(x, z) + 0.8, z]);
+  }
+  cx.save();
+  cx.shadowColor = "rgba(255,199,44,0.9)";
+  cx.shadowBlur = 14;
+  AK3D.line3d(cx, cam, route, { color: "#ffc72c", width: 4.5,
+                                depthWidth: [1.15, 0.35], depthFar: 64 });
+  cx.restore();
+
+  // atmospheric grade: cool haze band at the horizon
+  const haze = cx.createLinearGradient(0, 800, 0, 1030);
+  haze.addColorStop(0, "rgba(90,140,190,0)");
+  haze.addColorStop(0.55, "rgba(90,140,190,0.14)");
+  haze.addColorStop(1, "rgba(10,21,38,0)");
+  cx.fillStyle = haze;
+  cx.fillRect(0, 800, 1080, 230);
+
+  resolve(true);
+});
+</script>
+</body>
+</html>

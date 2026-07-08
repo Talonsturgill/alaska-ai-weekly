@@ -1,0 +1,96 @@
+brand:
+  page_name: "Alaska.Ai"
+  channel: "LinkedIn"
+  audience: >
+    Alaskans who follow policy, infrastructure, and tech: legislators,
+    staffers, utility execs, journalists, university researchers, tribal
+    corporation staff, AK-based founders, engaged civic professionals.
+    Sophisticated but busy. Not Bay Area tech press. On LinkedIn they also
+    include Outside decision-makers who touch Alaska: federal program
+    officers, defense contractors, energy and fisheries executives.
+
+  voice:
+    one_line: >
+      Analytical, policy-aware, takes positions. Names structural problems
+      and counter-framings. Like a state-legislature analyst writing for a
+      smart, busy Alaskan reader.
+    tone_words: [analytical, opinionated, specific, structural, contrarian-when-warranted, plainspoken, fair]
+    register: "Essayistic, not chatty. Someone who read the briefing book and is willing to disagree with it."
+    do:
+      - "Take a position. Don't hedge into mush."
+      - "Frame issues structurally. Name the binary, the false dichotomy, the missing option."
+      - "Name specific entities, numbers, dates, agencies, bases, regions, dollar amounts."
+      - "End the post with a real, debatable question to readers."
+      - "Plain English. Complex ideas in simple sentences. Grade 8-10 reading level."
+      - "Never use em dashes or en dashes, ever, in post copy OR on-slide text. Write ranges as 'X to Y'. For a pause use a comma, a period, parentheses, or a colon. Straight quotes only."
+      - "Cite the source of a claim inline when it matters ('per the RCA filing', 'NOAA data show')."
+    dont:
+      - "Don't sign off with 'Follow Alaska.Ai'. The close slide's single ask handles it."
+      - "Don't open with 'Imagine...', 'In an era where...', or 'It's no secret that...'"
+      - "Don't use 'game-changer', 'revolutionize', 'disrupt', 'synergy', or 'leverage' (as a verb)."
+      - "Don't use emojis. Anywhere. Slides or copy."
+      - "Don't write 'we' or 'us' implying speaking for Alaskans. Speak about Alaska, not as Alaska."
+      - "Don't invent quotes, numbers, or people. If it isn't in claims.json, it doesn't exist."
+  banned_phrases:
+    - "game-changer"
+    - "revolutionize"
+    - "disrupt"
+    - "synergy"
+    - "leverage"
+    - "buckle up"
+    - "let's dive in"
+    - "in a world where"
+    - "imagine if"
+    - "it's no secret that"
+    - "here is the honest part"
+    - "here's the honest part"
+    - "here's what matters"
+    - "here is what matters"
+    - "here's where the frame breaks"
+    - "here is where the frame breaks"
+    - "delve"
+    - "tapestry"
+    - "testament to"
+    - "ever-evolving"
+    - "navigating the"
+    - "unlock"
+    - "unleash"
+    - "cutting-edge"
+    - "seamless"
+    - "supercharge"
+    - "skyrocket"
+
+  linkedin_post:
+    caption_chars: [300, 900]        # hard band; sweet spot 400-700
+    hook_max_chars: 140              # must be complete before the mobile fold
+    hashtags_exactly: 3              # niche > broad, at the very end
+    links_in_body: false             # sources go in first comment
+    ends_with: engagement_question
+    deck_summary_line: true          # 1-2 plain lines describing the deck (accessibility + ranker)
+
+visual:
+  # The constellation system: FIXED marks every deck, everything else rotates.
+  constellation:
+    wordmark: "ALASKA.AI"                    # set in the deck's display face
+    polaris_star: true                       # the 4-point gold star glyph appears once per deck minimum
+    progress_counter: "NN / NN in JetBrains Mono"
+    coordinates_footer: "location-relevant, e.g. 61°13'N · 149°54'W (mark data-decorative)"
+    gold_presence: "#FFC72C appears deliberately on every slide, budgeted in the dossier"
+    base_register: "dark arctic (#030710..#0d2038 family) as the default; a light deck is allowed as a deliberate variance-dial-5 move, max once per 8 runs"
+  tokens:
+    flag_gold: "#FFC72C"
+    gold_halo: "#FFDA6E"
+    deep_night: "#02060F"
+    flag_blue_horizon: "#081426"
+    panel_navy: "#0E2138"
+    aurora_green: "#3CE6B4"
+    aurora_ice: "#5AC8F0"
+    aurora_violet: "#9664E6"
+    forget_me_not: "#6EA5FF"
+    snow: "#F4F8FF"
+    supporting_palettes_rotate: "from the story's material world; see DESIGN_DOCTRINE §3"
+  on_slide_text_rules:
+    - "No em dashes or en dashes in ANY on-slide string. Zero exceptions."
+    - "Straight quotes. Tabular numerals for data. Units spaced (43 MW, not 43MW)."
+    - "No emojis, no hashtags on slides."
+    - "Every factual on-slide number/claim carries a claim-id in the dossier."

@@ -1,0 +1,22 @@
+{
+  "_spec": {
+    "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged — name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
+    "entry_schema": {
+      "run_date": "YYYY-MM-DD",
+      "carousel_no": "int",
+      "slide_count": "int",
+      "hero_structure": "technique name/number driving the deck's signature look",
+      "atmosphere": "technique name/number",
+      "depth_technique": "which 3D/depth move was used",
+      "line_voice": "drafting | transit | hand-ink | instrument | none",
+      "continuity_device": "panorama | edge-tease | motif:<desc> | camera | palette-arc",
+      "hook_archetype": "e.g. big-number, named-tension, question-map, before-after, quote",
+      "palette_family": "e.g. arctic-teal, amber-sodium, roe-orange, ice-mint, violet-dusk",
+      "type_pairing": "display + support families and axes used",
+      "narrative_structure": "e.g. escalation, tour, argument, timeline, anatomy, versus",
+      "variance_dials": {"design_variance": "1-5", "visual_density": "1-5", "type_temperature": "1-5"},
+      "new_techniques_logged": []
+    }
+  },
+  "entries": []
+}

@@ -1,0 +1,323 @@
+# TECHNIQUE LIBRARY — the variety engine's palette
+
+Named, reusable visual techniques for bespoke slide code. Each entry: what /
+how (key parameters) / when / difficulty D1-D5. All render reliably in
+headless Chromium (Canvas 2D, SVG, CSS) unless flagged. Committed helpers:
+`AK` (noise.js), `AK3D` (ak3d.js), Zdog, d3+topojson, GeoJSON in assets/geo.
+
+**Selection rules (the variety engine):**
+- Per deck pick: 1 ATMOSPHERE + 1-2 STRUCTURES + 1 DATA/CARTO form + TYPE
+  mechanics as needed + at least one 3D/DEPTH technique. Never two loud
+  structures on one slide.
+- The artwork ledger logs each deck's stack; a new deck may not reuse the
+  same hero structure as the last 4 decks, the same atmosphere as the last
+  3, or the same continuity device as the last 2. Parameters must encode
+  story numbers (DESIGN_DOCTRINE §6).
+- Seed all noise from the run date. Grain pass + contrast check on every
+  slide. Novel techniques beyond this catalog are ENCOURAGED — log them into
+  this file with a dated note when they work (that is how the library grows).
+
+## ATMOSPHERES (fields & washes)
+
+1. **Aurora Veil** — layered light curtains over night base. SVG tall
+   gradient rects → feTurbulence(0.004-0.006 x 0.03-0.05, oct 2, per-layer
+   seeds) → feDisplacementMap(scale 120-200) → blur(15-25) → mix-blend
+   screen; 2-3 layers, green-first hues. Sky stories, hero hooks. D2
+2. **Grain Pass** — tileable noise tile as repeating background
+   (`AK.grainTile(280, 45-60, seed)`), mix-blend overlay, opacity 0.05-0.12.
+   EVERY slide, final layer. NEVER a full-frame feTurbulence rect (10-40MB
+   in the PDF; the tile embeds once). D1
+3. **Mesh Wash** — 4-7 stacked radial-gradients (OKLCH stops) at varied
+   positions over a base, optionally blurred colored divs; + grain. Quiet
+   body-slide backgrounds. D1
+4. **Conic Horizon** — conic/radial sweep `in oklch` + mask fade; a light
+   source implied off-canvas. Dawn/energy/optimism beats. D1
+5. **Nebula Displacement** — fractalNoise 0.002-0.01 oct 4 displacing a
+   multi-hue gradient, blurred, duotoned to brand inks. Moody dividers,
+   uncertainty. D2
+6. **Paper Tooth** — fractalNoise 0.04 oct 5 → feDiffuseLighting
+   (surfaceScale 2, distant light az 45 el 60). Editorial/serif "print"
+   slides. D2
+7. **Deep-Sea Scrim** — linear gradient black 0.55→0 opacity under text
+   zones; verify worst-case contrast. Legibility fallback over busy art. D1
+8. **Frost Panel** — backdrop-filter blur(12-18px) saturate(1.4-1.7) +
+   rgba(255,255,255,0.10-0.14) fill + 1px lighter top edge. Data plates
+   floating over scenes. D1
+
+## STRUCTURES (generative systems)
+
+9. **Streamline Field** — Hobbs flow field: angle grid = fbm(x·0.0012-0.002)
+   × 2-2.5π, grid extends 50% beyond canvas, long curves stepped 0.1-0.5%
+   of width, collision-spaced via occupancy grid (cell ≈ 7px), tapered
+   width (fat middle). Currents, wind, migration, forces. D3
+10. **Fur Field** — same grid, thousands of 5-15 step ticks from
+    Poisson-ish starts. Texture panels, terrain shading, crowds. D2
+11. **Topo Contours** — simplex/elevation grid → d3.contours (marching
+    squares) → stroked nested polygons, optional elevation labels. The
+    signature Alaska texture; "mapping the landscape" beats. D2
+12. **Ridgeline Pulse** — stacked horizon polylines, y-offset per row,
+    amplitude from data or noise, each FILLED with bg color before stroking
+    (fill = occlusion), stroke alpha fades with row. Unknown Pleasures
+    energy; time-series-as-terrain. D1
+13. **Interference Rings** — brightness = Σ sin(dist(p, sourceᵢ)·f + φᵢ)
+    from 2-4 sources, thresholded into bands or contoured. Broadcast,
+    sonar, policy ripple-effects. D2
+14. **Particle Drift** — particles advected through a field with fading
+    trails (translucent bg rect per step, final frame only). Snow, data
+    flow; count = the story's quantity. D3
+15. **Voronoi Stipple** — Secord weighted stippling: darkness-weighted
+    Lloyd relaxation via d3-delaunay, 40-80 iterations. Engraved portraits/
+    objects, density maps. D4
+16. **Halftone Plate** — dot grid, radius ∝ sampled luminance, screen angle
+    15-45°. Retro-print figures, duotone photos-as-graphics. D2
+17. **Dither Decay** — ordered Bayer/Floyd-Steinberg dithering as a texture
+    gradient. Digital/degradation metaphors, brutalist accents. D2
+18. **Circle Pack Fill** — collision-packed circles filling a silhouette,
+    radius from data or noise. Composition/resource-pool stories. D3
+19. **Truchet Weave** — random quarter-arc tiles forming endless pipes,
+    seeded 2-state grid. Infrastructure, networks, complexity-from-rules. D1
+20. **Mondrian Split** — recursive weighted rectangle subdivision,
+    restrained fills + hairline rules. Structured covers, budget/allocation. D2
+21. **Phyllotaxis Bloom** — θ = n·137.5°, r = c√n golden spiral, size/hue
+    mapped to data. Growth, accumulation. D1
+22. **Constellation Graph** — glow nodes + Delaunay/Gabriel edges over
+    night base, 1-2 highlighted paths. AI/connectivity, supply chains,
+    org webs. D2
+23. **Chladni Curve** — Lissajous/harmonograph parametric line
+    (x=sin(at+φ), y=sin(bt)) stroked with glow. Resonance, elegance
+    dividers, abstract AI-math. D1
+
+## CARTOGRAPHY & DATA
+
+24. **Alaska Hero Map** — committed GeoJSON + canonical projection
+    (`d3.geoConicEqualArea().parallels([55,65]).rotate([154,0]).fitExtent`),
+    glow coastline, interior treatment varies (stipple/contour/hillshade/
+    borough choropleth). Any geographic beat; brand signature. D3
+25. **Great-Circle Route** — d3.geoInterpolate arcs between labeled
+    endpoints, dash rhythm, interference rings at landing points. Cables,
+    shipping, flights, exports. D2
+26. **Choropleth Glow** — boroughs filled on dark base, OKLCH sequential
+    ramp, thin luminous borders, DIRECT labels (kill legends). Regional
+    comparisons. D3
+27. **Orthographic Globe** — d3.geoOrthographic rotated to hero hemisphere;
+    graticule10 wireframe + great-circle arcs + radial-gradient limb
+    shading (light at 33%/28%); optional day/night terminator
+    (geoCircle r=90 at solar antipode). Arctic/global framing — Alaska at
+    the top of the world. D3
+28. **ISOTYPE Rows** — repeated same-size pictograms, partial icon for
+    fractions, one accent row. Quantities with human meaning (jobs, boats,
+    homes). D2
+29. **Big-Number Tile** — one huge tabular figure + unit + one-line context
+    + hairline rule, Swiss-placed. The data breather slide. D1
+30. **Annotated Line Poster** — one chart, direct end-labels, one
+    highlighted series vs gray context, one leader-line annotation at the
+    inflection. FT/Datawrapper grammar. D2
+31. **Small-Multiples Grid** — 4-9 mini charts, shared axes, one panel
+    highlighted. Comparisons without memory load. D3
+32. **Prism Map / 3D Bars** — parallel projection ONLY (cabinet oblique:
+    x + 0.5z·cos45°, y + 0.5z·sin45°), walls 2 shades darker by facing,
+    h = k·value linear, grid/labels stay flat. Regional metrics,
+    sparingly. D3
+33. **Hillshade Relief** — numpy: gy,gx = gradient(elev); slope/aspect;
+    hs = cos(zen)cos(slope) + sin(zen)sin(slope)cos(az−aspect), az 315
+    el 45; multiply over hypsometric ramp (PIL pre-render, <img> in slide).
+    Terrain heroes; also relights any grayscale art as emboss. D2
+
+## 3D & DEPTH (the dimension bench)
+
+34. **AK3D Terrain** — fbm heightfield (`AK3D.heightfield`), redistribution
+    e=(1.2e)^3 for peaks, ridged 2(0.5−|0.5−n|) for ranges; Lambert +
+    ambient 0.3-0.4; exp2-ish fog to sky color; plan the frame with the
+    composition math in ak3d.js (horizonY = cy + tan(−pitch)·f). Epic
+    landscape heroes, data-landscapes. D3
+35. **Perspective Point Cloud** — project dots, r = r0·f/z, alpha ∝ f/z,
+    z-sorted (`AK3D.points3d`); Fibonacci sphere (z=1−2i/(N−1),
+    θ=i·π(3−√5)) for globes/clouds. Constellations, particle spheres. D2
+36. **Depth-Weighted Wireframe** — mesh edges only, lineWidth = k/z, alpha
+    falls with depth; far lines first. Blueprint/technical 3D; zero sorting
+    bugs. D2
+37. **Painter's Solid** — convex low-poly forms: backface cull (screen-space
+    signed area) needs NO sort; concave scenes sort by centroid z
+    (`AK3D.render` does both). Crystals, monuments, product forms. D3
+38. **Isometric Block World** — 2:1 dimetric tiles: sx=(i−j)·W/2,
+    sy=(i+j)·H/4 − h·rise; rows back-to-front = free occlusion; three-face
+    light (top +15L / left base / right −15L), ONE global light; crisp
+    12-20% alpha cast shadows along one direction. Systems, datacenters,
+    infrastructure explainers. D2
+39. **Cabinet Extrusion** — front face undistorted, depth at half scale 45°;
+    walls darker, lid lightest. 3D type, extruded cards, honest 3D bars. D2
+40. **CSS 3D Stage** — perspective: 800-1200px scene, preserve-3d object,
+    faces rotate-then-translateZ; fake lighting with per-face gradient
+    overlays; text stays vector-crisp under transform. GOTCHA: overflow/
+    opacity/filter on ancestors flattens the scene; offset coplanar faces
+    ≥1px. Typographic 3D heroes, exploded layer stacks
+    (rotateX(54.7°) rotateZ(45°) + translateZ(i·60px) + per-layer shadow). D3
+41. **Zdog Model** — declarative rounded pseudo-3D (parallel projection,
+    stroke = volume); per-face Box colors give three-face light free; avoid
+    intersecting shapes (per-shape z-sort). One updateRenderGraph() then
+    screenshot. Friendly dimensional icons/mascot moments. D2
+42. **Multiplane Parallax** — 3-7 discrete layers: scale 0.72^i, atmosphere
+    lerp (i/n)^1.4, DOF blur ∝ |z−z_focus|, ONE sharp focal plane, dark
+    repoussoir foreground bleeding off-frame. The default "deep 2D" scene
+    recipe. D2
+43. **Gradient Solids** — sphere: radial-gradient(circle at 33% 28%, light,
+    mid 45%, dark 80%) + 4% hard highlight + ground shadow; cylinder:
+    symmetric linear band; cone: converging band. 90% of geometric shading
+    needs. D1
+44. **SVG Phong Emboss** — blur(SourceAlpha 3-5) as bump →
+    feSpecularLighting(surfaceScale 4-8, exponent 15-25, distant az 225
+    el 45) → composite over source; feDiffuseLighting for matte clay.
+    Badges, chiseled type, molded panels. Set color-interpolation-filters
+    explicitly. D3
+45. **Layered Shadow Elevation** — stacked shadows in geometric series
+    (1,2,4,8,16px offsets/blurs, equal ~0.2 alpha), y ≈ 2x, shadow color =
+    darkened bg hue never black. Which-layer-floats hierarchy. D1
+46. **Volumetric Shafts** — 5-9 wedge polygons fanning from the light,
+    alpha 0.04-0.12, screen/lighter blend, noise-masked; dust motes inside.
+    Drama, reveals. D2
+47. **Neon Layering** — ≥3 same-hue glow layers with growing blur
+    (0 0 5px / 20px / 40px) + near-white core. Signals, night-tech. D1
+48. **Long Shadow** — silhouette extruded 45° (stacked 1px shadows or one
+    skewed fading polygon to frame edge). Flat-design dimensionality. D1
+49. **WebGL/SwiftShader (EXPERIMENTAL)** — three.js under
+    --enable-unsafe-swiftshader; MUST probe getContext('webgl2') and keep a
+    Canvas-2D fallback design; expect 6-24s renders; silent flat-2D
+    fallback is the trap. Reserve for occasional hero renders only. D4
+
+## TYPE & CAROUSEL MECHANICS
+
+50. **Title-Card Hook** — 120-170px display (high-contrast serif or wide
+    grotesk), hand-broken lines, optical-left alignment, mono credits
+    footer, over one atmosphere. Always a cover candidate. D2
+51. **Knockout Reveal** — art inside giant letterforms (background-clip:
+    text or SVG text mask), field continues faintly outside at ~10%. Covers
+    where one word IS the story. D2
+52. **Echo Outline Type** — offset stroked copies (-webkit-text-stroke /
+    shadow stack) fading back. Motion/emphasis without imagery. D1
+53. **Variable-Axis Crescendo** — same word set in rising wght/wdth via
+    font-variation-settings across slides — type as the progress motif. D2
+54. **Panorama Spine** — one master field n·1080 wide, sliced per slide
+    (same seed, camera x += 1080); only art crosses cuts; text ≥80px inside
+    columns. The continuity chassis. D3
+55. **Motif Ticker** — small recurring glyph in a fixed corner advancing/
+    filling per slide, doubling as progress. D1
+56. **Duotone Unifier** — feColorMatrix saturate(0) → feComponentTransfer
+    table ramp to two brand inks — forces any mixed visuals into one
+    system. D2
+57. **Frozen Dash Motion** — stroke-dasharray rhythms with per-element
+    dashoffset implying motion direction in a still. Routes, flows,
+    timelines. D1
+
+## LINE & DIAGRAM FLAIR
+
+The meta-law from every lineage (ink, drafting, cartography, transit maps,
+Tufte): lines carry meaning through DIFFERENTIATED WEIGHT; craft = a small
+fixed system of weights/dashes/terminators applied with total consistency.
+Uniform line weight is the #1 amateur tell.
+
+**The five-token weight system** (CSS vars, at 1080px width; forbid
+off-token widths — assign by MEANING):
+`--w-hair: 0.75px` (hatching, grids, scaffolding) · `--w-fine: 1.25px`
+(detail, leaders, dimensions) · `--w-std: 2px` (default object stroke) ·
+`--w-bold: 3.5px` (emphasized/cut edges) · `--w-hero: 5.5px` (THE key path,
+outer silhouette).
+
+**Tufte opacity tiers**: data 1.0 / labels 0.75 / axes 0.4 / grid 0.10-0.15.
+Grey for context, ONE accent for focus.
+
+58. **Profile-Heaviest Rule** — outer silhouette gets hero weight; interior
+    seams hair/fine ("everything relates to the distance between adjacent
+    surfaces"). Any object illustration. D2
+59. **Tapered Ribbon Stroke** — polygon-from-centerline: sample path every
+    4-8px, offset ±w(t)/2 along normals, fill; w(t)=wMax·sin(πt)^0.7. Hero
+    connectors, hand annotations. D3
+60. **Chisel-Nib Ribbon** — constant-angle extrusion ±(nib/2)(cos40°,sin40°);
+    width varies with direction like a broad pen. Calligraphic arrows,
+    swashes. D3
+61. **Low-Pass Wobble (xkcd)** — perpendicular displacement by SMOOTHED
+    noise (2-3 neighbor-average passes), amplitude 1.5-4px, always seeded;
+    + white casing under the line at ~4x width. Napkin-sketch voice ONLY;
+    never on dense data; never sub-1.5px. D3
+62. **Rough Double-Stroke** — every outline drawn twice with independent
+    seeded jitter (roughness 0.8-2.5, bowing ~1); overlap reads as ink.
+    Premium decks prefer taper + slight bowing over full wobble. D2
+63. **Seeded Hachure Fill** — parallel hairlines at −41° (off-45 feels
+    hand-set), gap 4x strokeWidth, weight 0.5x, jittered ends. Sketch/patent
+    fills. D2
+64. **Density-Ramp Hatching** — generated line ARRAY (not <pattern>) with
+    spacing 4→12px as a function of position, clipped to shape — hatching
+    as shading; monochrome depth. D3
+65. **Cross-Hatch Material Code** — 45°+135° hair crosshatch = dense/solid;
+    sparse parallels = light/transparent; stipple = soft. Region coding
+    without color. D2
+66. **Stipple Tone Field** — Poisson-disk dots (min-dist ∝ 1/√density),
+    r 0.8-1.5px, blue-noise never grid-jitter. Soft shadows, terrain. D4
+67. **Alphabet-of-Lines Dash Kit** — hidden `7 4` / center `24 5 5 5` /
+    phantom `30 5 6 5 6 5` at 1.25px; centerlines overshoot shapes 8-12px
+    and cross at hole centers. Implied states, symmetry axes, ghosts. D1
+68. **pathLength Dash Symmetry** — set pathLength="100", pick dasharrays
+    dividing evenly so both ends land on full dashes. Every visible dashed
+    rule. D1
+69. **Round-Cap Dot Rhythm** — dasharray "0 N" + round cap = perfect dots
+    at N≈3-4x width. Dotted leaders, soft boundaries. D1
+70. **Scotch Rule** — the editorial thick-thin pair: 4px rule + 3px gap +
+    0.75px hairline (thick toward the content head). Section headers,
+    mastheads. D1
+71. **Rule Terminals** — end major rules with ONE chosen flourish (4px dot,
+    6px perpendicular tick, or 45° cut) used deck-wide. D1
+72. **Leader-Line Discipline** — oblique 30-60° (snap 15°), 18-24px
+    horizontal elbow at the text end; terminator encodes target: arrow=edge,
+    5px filled dot=face, 45° tick=dimension; leaders never cross. D2
+73. **Dimension Call** — extension lines: 4px gap from object, 6px
+    overshoot; 3:1 arrowheads (~10x3.3px); centered small-caps value;
+    rows 24px then 16px apart. "2.4x wider" spatial claims. D2
+74. **Haloed Balloon Numbers** — 24-28px numbered discs with 3px
+    canvas-color halo ring, mono numerals, leaders to parts. Step/part
+    enumeration over art. D2
+75. **Hatch Knockout Windows** — blank rounded-rect holes punched in any
+    texture behind labels (numerals never sit on hatching). D2
+76. **Junction Dots & Hop-Overs** — connection = filled dot 2.5-3x width;
+    crossing-no-connection = semicircle hop r≈2.5x width; NEVER a 4-way
+    dot junction (offset into two Ts). Any line-crossing diagram. D2
+77. **Octolinear Snap** — all segments 0/45/90/135°, bends rounded at
+    r=2-3x width, uniform weight, even stop spacing (Beck/Vignelli).
+    Journey/pipeline/roadmap "transit" slides. D3
+78. **Interchange Roundel & Station Ticks** — stops = perpendicular ticks
+    (length ≈ width); major nodes = white-filled circle + ring (ring ≈
+    width, d ≈ 2.2x width). Milestones on transit lines. D1
+79. **Cased Line (Halo Stroke)** — every line crossing texture drawn twice:
+    casing at width+3px in canvas/darker color underneath. Universal
+    map-grade legibility. D1
+80. **Neon Triple Layer** — same path 3x: 12px @25% blur(8) → 6px @55%
+    blur(3) → 2px near-white core. ONE glowing path per slide. D2
+81. **Segment-Interpolated Gradient Stroke** — 30-60 getPointAtLength
+    segments, per-segment interpolated color, round caps hide seams.
+    Flow direction, temperature along a path. D3
+82. **Marker Arrowhead Set** — <defs> markers, orient="auto-start-reverse",
+    markerUnits="strokeWidth", fill="context-stroke"; filled 3:1 =
+    technical, open 35° chevron = editorial, barbed concave-back = ink.
+    ONE shape per deck. D2
+83. **Drafting Furniture Kit** — crop-mark Ls (20px, offset 8px, never
+    touching), registration circle+cross (r7, low opacity), plus-grid at
+    intersections (10px arms @10%), title block (hairline table, mono
+    small-caps, 2.5px outer border, bottom-right). Blueprint/document
+    framing. D2
+84. **Instrument Corner Readouts** — mono small-caps telemetry (tracked
+    +8-14%, 60-75% opacity): coordinates, checkerboard scale bar (4-6
+    segments, 8px tall), tiny axis glyph — small and inconspicuous. D2
+85. **Curve Exit Discipline** — edges exit nodes PERPENDICULAR to the node
+    boundary, then bend; S-link control points at 1/3 and 2/3 span,
+    Δ = 0.4·|x2−x1|. Pick ONE routing voice per deck: orthogonal
+    (engineered) / octolinear (transit) / cubic Bézier (organic). D2
+86. **Lynch Urban Glyphs** — paths = bold lines, edges = toothed/hatched
+    barriers, nodes = circles, districts = loose hatched blobs, landmarks =
+    stars. Ecosystem/landscape diagrams that shouldn't look like org
+    charts. D2
+
+**The four line voices** (never mix cap styles or wobble regimes within a
+slide; contrast voices across a deck deliberately — clean art + hand-ink
+annotation is the strongest pair):
+- **Drafting**: 58, 67, 72, 73, 75, 83 + butt caps/miter joins
+- **Transit/Systems**: 76, 77, 78, 79, 82 + round/round
+- **Hand-Ink**: 59, 60, 61, 62, 63, 71 + one seed per slide
+- **Instrument/Editorial**: 68, 69, 70, 74, 80, 81, 84

@@ -1,0 +1,112 @@
+<!doctype html>
+<!-- DEMO SLIDE 2 — "Alaska Hero Map": d3 + committed GeoJSON in the canonical
+     Alaska conic equal-area projection, glow coastline, great-circle route,
+     labeled places, annotation plate. Reference for: geodata fetch, d3+SVG,
+     glow filters, renderReady gating. Plumbing reference, not a style template. -->
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="@@ASSETS@@/fonts/fonts.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body { background: radial-gradient(120% 90% at 30% 0%, #0c1a30 0%, #070d1a 55%, #05080f 100%);
+         font-family: "Space Grotesk", sans-serif; position: relative; }
+  #map { position: absolute; inset: 0; }
+  #map svg { display: block; }
+  .head { position: absolute; top: 88px; left: 96px; right: 96px; }
+  .kicker { font-family: "JetBrains Mono", monospace; font-size: 24px; font-weight: 500;
+            letter-spacing: 0.16em; color: #3ce6b4; margin-bottom: 20px; }
+  h2 { font-size: 84px; font-weight: 640; line-height: 1.02; letter-spacing: -0.02em;
+       color: #eef4fc; max-width: 880px; }
+  .plate { position: absolute; left: 96px; bottom: 128px; width: 500px;
+           background: rgba(10, 18, 34, 0.55); border: 1px solid rgba(120, 190, 255, 0.22);
+           backdrop-filter: blur(14px); padding: 34px 38px; border-radius: 4px; }
+  .plate .num { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 64px;
+                color: #ffc72c; font-variant-numeric: tabular-nums; }
+  .plate .lbl { font-family: "Manrope", sans-serif; font-size: 30px; font-weight: 500;
+                color: rgba(214, 228, 245, 0.9); line-height: 1.35; margin-top: 10px; }
+  .counter { position: absolute; right: 96px; bottom: 96px; font-family: "JetBrains Mono", monospace;
+             font-size: 24px; color: rgba(255, 255, 255, 0.55); }
+  .maplabel { font-family: "JetBrains Mono", monospace; font-size: 24px; fill: #eaf3fd;
+              paint-order: stroke; stroke: rgba(5,10,20,0.75); stroke-width: 4px; }
+  .maplabel.dim { fill: rgba(207, 226, 247, 0.6); }
+</style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="head">
+    <div class="kicker">ENGINE PROOF · CARTOGRAPHY</div>
+    <h2>Real geography, drawn from committed data</h2>
+  </div>
+  <div class="plate">
+    <div class="num">1,050 km</div>
+    <div class="lbl">Anchorage to Utqiagvik as the great circle flies, sampled and projected by code</div>
+  </div>
+  <div class="counter">02 / 04</div>
+
+<script src="@@ASSETS@@/js/d3.v7.min.js"></script>
+<script>
+window.renderReady = (async () => {
+  const ak = await (await fetch("@@ASSETS@@/geo/alaska-state.geo.json")).json();
+  const places = await (await fetch("@@ASSETS@@/geo/alaska-places.json")).json();
+
+  const W = 1080, H = 1350;
+  const svg = d3.select("#map").append("svg").attr("width", W).attr("height", H);
+
+  const defs = svg.append("defs");
+  const glow = defs.append("filter").attr("id", "glow")
+    .attr("x", "-40%").attr("y", "-40%").attr("width", "180%").attr("height", "180%");
+  glow.append("feGaussianBlur").attr("stdDeviation", 7).attr("result", "b");
+  const m = glow.append("feMerge");
+  m.append("feMergeNode").attr("in", "b");
+  m.append("feMergeNode").attr("in", "SourceGraphic");
+
+  const proj = d3.geoConicEqualArea()
+    .parallels([55, 65]).rotate([154, 0])
+    .fitExtent([[80, 300], [1000, 1160]], ak);
+  const path = d3.geoPath(proj);
+
+  // graticule under everything
+  svg.append("path")
+    .attr("d", path(d3.geoGraticule().step([5, 5])()))
+    .attr("fill", "none").attr("stroke", "rgba(120,170,230,0.10)").attr("stroke-width", 1);
+
+  // landmass: dark fill, luminous coastline
+  svg.append("path").attr("d", path(ak.features[0]))
+    .attr("fill", "#0e2138")
+    .attr("stroke", "#4dd3c0").attr("stroke-width", 1.6)
+    .attr("filter", "url(#glow)");
+
+  // great-circle route Anchorage -> Utqiagvik
+  const A = places.places.find(p => p.name === "Anchorage");
+  const U = places.places.find(p => p.name === "Utqiagvik");
+  const interp = d3.geoInterpolate([A.lon, A.lat], [U.lon, U.lat]);
+  const line = { type: "LineString",
+                 coordinates: d3.range(0, 1.001, 0.02).map(interp) };
+  svg.append("path").attr("d", path(line))
+    .attr("fill", "none").attr("stroke", "#ffc72c").attr("stroke-width", 3.5)
+    .attr("stroke-dasharray", "1 14").attr("stroke-linecap", "round")
+    .attr("filter", "url(#glow)");
+
+  // endpoints + labels
+  for (const [pl, dy, cls] of [[A, 34, ""], [U, -22, ""]]) {
+    const [x, y] = proj([pl.lon, pl.lat]);
+    svg.append("circle").attr("cx", x).attr("cy", y).attr("r", 7)
+      .attr("fill", "#ffc72c").attr("filter", "url(#glow)");
+    svg.append("text").attr("x", x + 16).attr("y", y + dy)
+      .attr("class", "maplabel").text(pl.name.toUpperCase());
+  }
+  for (const name of ["Fairbanks", "Juneau", "Nome", "Unalaska"]) {
+    const pl = places.places.find(p => p.name === name);
+    const [x, y] = proj([pl.lon, pl.lat]);
+    svg.append("circle").attr("cx", x).attr("cy", y).attr("r", 3.5)
+      .attr("fill", "rgba(207,226,247,0.8)");
+    svg.append("text").attr("x", x + 12).attr("y", y + 7)
+      .attr("class", "maplabel dim").attr("data-decorative", "")
+      .text(name);
+  }
+})();
+</script>
+</body>
+</html>

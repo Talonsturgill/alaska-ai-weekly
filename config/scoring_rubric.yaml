@@ -1,0 +1,89 @@
+# Carousel scoring rubric — the final gate before delivery.
+# The scorer computes: weighted = Σ(score_i × weight_i), then applies the
+# hard-fail penalty: ANY hard fail caps the total at 6.9 (cannot ship).
+# Ship threshold 8.3. Scores must be honest; the iteration ladder relaxes
+# the THRESHOLD, never the scores.
+
+rubric:
+  ship_threshold: 8.3
+  iteration_ladder:
+    - {revision_rounds: 0-2, threshold: 8.3}
+    - {revision_rounds: 3,   threshold: 8.0}
+    - {revision_rounds: 4+,  threshold: 7.7, note: "ship best version, flag shortfall in email"}
+
+  hard_fails:   # any ONE of these caps the score at 6.9 — fix or cut
+    - "em dash or en dash anywhere (slides, post copy, comment block)"
+    - "emoji anywhere"
+    - "factual claim without a claim-id resolving to a verified source"
+    - "typo or misspelling in any rendered slide (critics transcribe and diff)"
+    - "clipped, overlapping, or cut-off text in any render"
+    - "primary text contrast below 4.5:1 at worst point (critic-verified)"
+    - "slide count outside 6-12"
+    - "machine_qa verdict FAIL, or pdf_mode != vector"
+    - "topic repeats a ledger entry within 90 days without a material new development framed as an update"
+    - "hero visual structure identical to any of the last 4 decks (artwork ledger)"
+    - "banned phrase from brand.yaml in copy or slides"
+    - "hashtag count != 3, or link in post body"
+    - "any placeholder, lorem, TODO, or unfinished element in any artifact"
+
+  criteria:
+    - name: "Thumb-stop cover"
+      weight: 0.14
+      descriptors:
+        10: "Specific claim/number/named tension in <=12 words, huge type, single focal point, works at 432px thumb, visibly Alaskan without cliche."
+        7:  "Strong but either slightly generic wording or focal point competes."
+        4:  "Topic-label cover ('AI in Alaska This Week') or cluttered."
+    - name: "Story arc & swipe momentum"
+      weight: 0.14
+      descriptors:
+        10: "Clear beat structure; every slide plants or pays an open loop; slide 2 delivers instantly; contact sheet reads as one composed sequence."
+        7:  "Coherent but 1-2 slides are reorderable without loss."
+        4:  "A list wearing a story's clothes."
+    - name: "Artwork craft & genuine detail"
+      weight: 0.16
+      descriptors:
+        10: "Every slide survives the zoom test; layered texture/light/depth; line-weight hierarchy; zero flat-lazy regions; consistent physics; at least one slide uses real depth (3D bench) masterfully."
+        7:  "Strong overall; one slide leans on a default or has dead zones."
+        4:  "Decorated templates, uniform line weights, flat fills."
+    - name: "Story-art fusion"
+      weight: 0.14
+      descriptors:
+        10: "Art parameters visibly encode story numbers; one literal anchor per abstract composition; a stranger could guess the story from the art alone."
+        7:  "Art matches the topic but is interchangeable with a cousin story."
+        4:  "Wallpaper behind text."
+    - name: "Alaska authenticity & local relevance"
+      weight: 0.12
+      descriptors:
+        10: "Named places/orgs/people/numbers throughout; geography accurate; would make an Alaskan feel seen, not marketed to."
+        7:  "Solid AK angle, one imported/generic beat."
+        4:  "National story with an Alaska sticker."
+    - name: "Insight density & factual weight"
+      weight: 0.10
+      descriptors:
+        10: "Every content slide adds a NEW verified specific (number, name, date, mechanism); 25-50 words each; zero filler."
+        7:  "Mostly dense; one thin or repeated beat."
+        4:  "Vibes with occasional numbers."
+    - name: "Variety vs ledger"
+      weight: 0.08
+      descriptors:
+        10: "Composition system, palette, type pairing, hook archetype, and narrative structure all diverge from the last 4 decks; dials justified in the dossier."
+        7:  "Fresh hero concept but 2+ reused subsystems."
+        4:  "A re-skin of a recent deck."
+    - name: "Legibility & platform fitness"
+      weight: 0.07
+      descriptors:
+        10: "All floors met (32px body / 24px min / safe zones); readable at 432px; vector PDF 2-25MB with title; progress counters present."
+        7:  "One squeaker (small label, tight margin) that still reads."
+        4:  "Requires zooming or full-size viewing anywhere."
+    - name: "Copy: voice & hook"
+      weight: 0.05
+      descriptors:
+        10: "Hook lands inside 140 chars; 300-900 chars; analytical position-taking voice; deck-summary line present; real debatable closing question; grade 8-10."
+        7:  "On-voice with one soft line."
+        4:  "Consultant-speak or hook buried."
+    - name: "Deliverable completeness"
+      weight: 0.10
+      descriptors:
+        10: "Gmail draft complete: post copy, exactly 3 hashtags, first-comment source block, document title, all image URLs + PDF URL resolve, inline previews render, run report + aftercare checklist present."
+        7:  "Complete but one convenience element rough."
+        4:  "Any missing deliverable component."

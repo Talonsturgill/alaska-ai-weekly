@@ -1,0 +1,70 @@
+# Seed sources for the weekly research sweep. Credibility ranks:
+# primary > high > medium. The routine must also DISCOVER new candidates
+# (see discover block) — the ledger surfaces them for weekly promotion.
+
+seed_sources:
+  alaska_news:
+    - {url: "https://www.adn.com",                    outlet: "Anchorage Daily News",                 credibility: "high"}
+    - {url: "https://alaskapublic.org",               outlet: "Alaska Public Media",                  credibility: "high"}
+    - {url: "https://www.alaskabeacon.com",           outlet: "Alaska Beacon",                        credibility: "high"}
+    - {url: "https://www.ktoo.org",                   outlet: "KTOO Public Media",                    credibility: "high"}
+    - {url: "https://knba.org",                       outlet: "KNBA",                                 credibility: "high"}
+    - {url: "https://www.alaskasnewssource.com",      outlet: "KTUU",                                 credibility: "medium"}
+    - {url: "https://www.alaskajournal.com",          outlet: "Alaska Journal of Commerce",           credibility: "high"}
+    - {url: "https://www.akbizmag.com",               outlet: "Alaska Business",                      credibility: "high"}
+    - {url: "https://www.alaska-native-news.com",     outlet: "Alaska Native News",                   credibility: "medium"}
+    - {url: "https://mustreadalaska.com",             outlet: "Must Read Alaska",                     credibility: "medium", note: "opinion-forward; verify independently"}
+
+  research_orgs:
+    - {url: "https://news.uaf.edu",                   outlet: "UAF News",                             credibility: "primary"}
+    - {url: "https://www.uaa.alaska.edu/news",        outlet: "UAA News",                             credibility: "primary"}
+    - {url: "https://www.iarc.uaf.edu",               outlet: "International Arctic Research Center", credibility: "primary"}
+    - {url: "https://www.sealaskaheritage.org/news",  outlet: "Sealaska Heritage Institute",          credibility: "primary"}
+    - {url: "https://www.ansep.net/news",             outlet: "ANSEP",                                credibility: "primary"}
+    - {url: "https://www.arcus.org",                  outlet: "ARCUS",                                credibility: "primary"}
+
+  government_primary:
+    - {url: "https://www.alaska.gov/news.html",       outlet: "State of Alaska",                      credibility: "primary"}
+    - {url: "https://gov.alaska.gov/newsroom",        outlet: "Governor's office",                    credibility: "primary"}
+    - {url: "https://www.akleg.gov",                  outlet: "Alaska Legislature",                   credibility: "primary"}
+    - {url: "https://rca.alaska.gov",                 outlet: "Regulatory Commission of Alaska",      credibility: "primary"}
+    - {url: "https://www.muni.org",                   outlet: "Muni of Anchorage",                    credibility: "primary"}
+    - {url: "https://www.energy.gov/arctic",          outlet: "DOE Arctic Energy Office",             credibility: "primary"}
+    - {url: "https://www.nsf.gov/news",               outlet: "NSF",                                  credibility: "primary"}
+
+  utilities_infra:
+    - {url: "https://www.chugachelectric.com",        outlet: "Chugach Electric",                     credibility: "primary"}
+    - {url: "https://www.gvea.com",                   outlet: "Golden Valley Electric",               credibility: "primary"}
+    - {url: "https://www.mea.coop",                   outlet: "Matanuska Electric",                   credibility: "primary"}
+    - {url: "https://www.gci.com/about/newsroom",     outlet: "GCI",                                  credibility: "primary"}
+
+  national_with_ak_lens:
+    - {url: "https://www.reuters.com",                outlet: "Reuters",                              credibility: "high"}
+    - {url: "https://apnews.com",                     outlet: "AP",                                   credibility: "high"}
+    - {url: "https://www.bloomberg.com",              outlet: "Bloomberg",                            credibility: "high"}
+    - {url: "https://www.datacenterdynamics.com",     outlet: "DCD",                                  credibility: "medium"}
+    - {url: "https://www.utilitydive.com",            outlet: "Utility Dive",                         credibility: "medium"}
+    - {url: "https://breakingdefense.com",            outlet: "Breaking Defense",                     credibility: "medium"}
+
+  community_signal:
+    # engagement-weighted "what people are actually saying" beat — keyless
+    # sources only; used for angle-finding, never as sole factual sourcing.
+    - {url: "https://www.reddit.com/r/alaska",        outlet: "r/alaska",                             credibility: "signal-only"}
+    - {url: "https://www.reddit.com/r/anchorage",     outlet: "r/anchorage",                          credibility: "signal-only"}
+    - {url: "https://news.ycombinator.com",           outlet: "Hacker News",                          credibility: "signal-only"}
+
+discover:
+  enabled: true
+  guidance: |
+    Surface credible sources not in this seed list: AK trade publications,
+    tribal corporation newsrooms, borough assemblies, AK-based academic
+    blogs, defense/Arctic policy outlets, energy regulators. Record
+    candidates in the run's source ledger under new_sources_to_consider
+    with a one-line rationale. The maintainer promotes weekly.
+
+sourcing_rules:
+  min_independent_sources_per_story: 2
+  or_one_primary: true
+  window_days: 10          # slightly wider than the FB weekly; carousels can carry a 10-day arc
+  background_context_allowed: true   # older material permitted when labeled as background
+  quotes: "verbatim from a fetched page or they don't exist"

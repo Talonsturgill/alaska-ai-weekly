@@ -1,0 +1,18 @@
+{
+  "_spec": {
+    "purpose": "Dedupe ledger for carousel topics. The routine MUST read this before topic selection and MUST append the chosen topic after delivery. No topic may repeat within 90 days unless a material new development exists AND the deck is framed as an update (hard fail otherwise).",
+    "matching": "Judge semantic similarity, not string equality: compare candidate against topic + angle + entities + keywords of every entry from the last 120 days. Same underlying story reported by a different outlet or with a new URL is STILL a repeat.",
+    "entry_schema": {
+      "run_date": "YYYY-MM-DD",
+      "carousel_no": "int",
+      "topic": "one-line story",
+      "angle": "the specific argument/frame taken",
+      "entities": ["named orgs, places, people, projects"],
+      "keywords": ["semantic fingerprint terms"],
+      "headline": "the cover line used",
+      "sources_lead": ["primary URLs"],
+      "outcome_notes": "filled by later runs if the human reports performance"
+    }
+  },
+  "entries": []
+}

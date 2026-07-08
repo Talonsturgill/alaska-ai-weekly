@@ -1,0 +1,150 @@
+#!/usr/bin/env python3
+"""qa.py — machine QA over rendered slides. The objective half of the review
+loop; the subjective half is the pixel-critic agents reading the PNGs.
+
+Checks per slide (consuming render_report.json + the PNGs):
+  - PNG exists, exact expected pixel size
+  - not blank / not near-uniform (dead render detector)
+  - approximate contrast of every non-decorative text node vs its local
+    background (WCAG-style luminance ratio; estimate, so thresholds are
+    conservative: <2.0 on primary text = FAIL, <3.5 = WARN)
+  - text nodes inside the safe zone (default 80px margins at 1080x1350;
+    slides may bleed decorative art, not primary text)
+  - forwards render_report warnings (offscreen/clipped/tiny text, missing
+    fonts, console errors)
+
+Usage:
+  python .claude/skills/carousel-engine/qa.py --render-dir out/run/render
+Exit codes: 0 pass (warnings allowed), 1 any FAIL.
+Writes <render-dir>/machine_qa.json
+"""
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+
+import numpy as np
+from PIL import Image
+
+SAFE_MARGIN = 80  # px at 1080-wide design size
+
+
+def rel_luminance(rgb):
+    def chan(c):
+        c = c / 255.0
+        return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = (chan(x) for x in rgb[:3])
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def parse_css_color(s):
+    m = re.match(r"rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)", s or "")
+    if not m:
+        return None
+    return tuple(float(m.group(i)) for i in (1, 2, 3))
+
+
+def contrast_estimate(img_arr, node, scale):
+    """Estimate contrast between text color and its local background.
+
+    The bbox contains both text and background pixels; the background is
+    estimated as the median of the pixels most different from the text color
+    (text coverage in a bbox is typically well under half).
+    """
+    color = parse_css_color(node.get("color"))
+    if color is None:
+        return None
+    x, y = int(node["x"] * scale), int(node["y"] * scale)
+    w, h = int(node["w"] * scale), int(node["h"] * scale)
+    H, W = img_arr.shape[:2]
+    x0, y0 = max(0, x), max(0, y)
+    x1, y1 = min(W, x + w), min(H, y + h)
+    if x1 - x0 < 4 or y1 - y0 < 4:
+        return None
+    crop = img_arr[y0:y1, x0:x1].reshape(-1, img_arr.shape[2])[:, :3].astype(float)
+    if len(crop) > 20000:
+        crop = crop[:: len(crop) // 20000]
+    dist = np.abs(crop - np.array(color)).sum(axis=1)
+    bg = np.median(crop[dist > np.percentile(dist, 55)], axis=0) if (dist > np.percentile(dist, 55)).any() else np.median(crop, axis=0)
+    lt, lb = rel_luminance(color), rel_luminance(bg)
+    lo, hi = min(lt, lb), max(lt, lb)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--render-dir", required=True)
+    ap.add_argument("--safe-margin", type=int, default=SAFE_MARGIN)
+    args = ap.parse_args()
+
+    rdir = Path(args.render_dir)
+    report = json.loads((rdir / "render_report.json").read_text())
+    scale = report["canvas"]["scale"]
+    exp_w, exp_h = report["canvas"]["px"]
+    design_w, design_h = report["canvas"]["width"], report["canvas"]["height"]
+
+    out = {"slides": [], "fails": 0, "warns": 0}
+    for rec in report["slides"]:
+        res = {"file": rec["file"], "fails": [], "warns": []}
+        png = rdir / rec["png"]
+        if not png.exists():
+            res["fails"].append("png missing")
+            out["slides"].append(res)
+            continue
+        im = Image.open(png).convert("RGB")
+        if im.size != (exp_w, exp_h):
+            res["fails"].append(f"size {im.size} != expected {(exp_w, exp_h)}")
+        arr = np.asarray(im)
+        if float(arr.std()) < 6.0:
+            res["fails"].append(f"near-uniform image (std {arr.std():.1f}) — dead or empty render")
+
+        for e in rec.get("page_errors", []):
+            res["fails"].append(f"page error: {e}")
+        for e in rec.get("console_errors", []):
+            res["warns"].append(f"console error: {e}")
+        for f in rec.get("fonts_missing", []):
+            res["fails"].append(f"font not loaded: {f['family']} w{f['weight']}")
+        if rec.get("body_overflow"):
+            res["fails"].append("body overflow (page scrolls beyond canvas)")
+        for wr in rec.get("overflow_warnings", []):
+            level = res["warns"] if wr["kind"] == "tiny-text" else res["fails"]
+            level.append(f"{wr['kind']}: '{wr['text'][:50]}' ({wr['detail']})")
+
+        for node in rec.get("text_nodes", []):
+            if node.get("decorative"):
+                continue
+            primary = node["font_px"] >= 30
+            if (node["x"] < args.safe_margin - 8 or node["y"] < args.safe_margin - 8 or
+                    node["x"] + node["w"] > design_w - args.safe_margin + 8 or
+                    node["y"] + node["h"] > design_h - args.safe_margin + 8):
+                res["warns"].append(
+                    f"outside safe zone: '{node['text'][:40]}' at {node['x']},{node['y']} "
+                    f"{node['w']}x{node['h']} (margin {args.safe_margin}px)")
+            ratio = contrast_estimate(arr, node, scale)
+            if ratio is not None:
+                if primary and ratio < 2.0:
+                    res["fails"].append(f"contrast ~{ratio:.1f} on '{node['text'][:40]}' (est.)")
+                elif ratio < 3.5:
+                    res["warns"].append(f"low contrast ~{ratio:.1f} on '{node['text'][:40]}' (est.)")
+
+        out["fails"] += len(res["fails"])
+        out["warns"] += len(res["warns"])
+        out["slides"].append(res)
+
+    out["verdict"] = "FAIL" if out["fails"] else ("WARN" if out["warns"] else "PASS")
+    (rdir / "machine_qa.json").write_text(json.dumps(out, indent=2))
+    for s in out["slides"]:
+        flag = "FAIL" if s["fails"] else ("warn" if s["warns"] else "ok  ")
+        print(f"[{flag}] {s['file']}  fails={len(s['fails'])} warns={len(s['warns'])}")
+        for f in s["fails"]:
+            print(f"    FAIL: {f}")
+        for w in s["warns"][:6]:
+            print(f"    warn: {w}")
+    print(f"verdict: {out['verdict']}  (report -> {rdir / 'machine_qa.json'})")
+    sys.exit(1 if out["fails"] else 0)
+
+
+if __name__ == "__main__":
+    main()
