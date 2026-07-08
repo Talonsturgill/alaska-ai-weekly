@@ -237,3 +237,37 @@ dispatch_history:
     metaphor: the model can score the risk before the plane leaves the ground. The
       rulebook for who owns the data hasn't been written yet, and a person's hand,
       not the model, still makes the call
+- date: '2026-07-08'
+  topic: OWL weakly-supervised model (Microsoft AI for Good) counts Alaska caribou
+    in aerial survey photos from a single point per animal, validated on ADFG 2022
+    Central Arctic census (F1 0.965, +3.1%), honest that its accuracy is regime-dependent
+    and slips in the densest herds
+  slug: the-count-from-a-dot
+  key_entities:
+  - caribou
+  - owl
+  - overhead wildlife locator
+  - central arctic herd
+  - porcupine herd
+  - adfg
+  - microsoft ai for good
+  - weakly-supervised
+  - point label
+  - aerial survey
+  - herdnet
+  - pamperin
+  archetype: 'top-down aerial census: a living herd counted from a single dot per
+    animal, honest about the dense crush where the count slips'
+  palette: 'autumn tundra: rust and cranberry groundcover, ochre plus brass lichen,
+    caribou-brown herd, dusk slate shadow, a single phosphor-mint count overlay'
+  voice: kokoro:af_heart
+  composition:
+    pov: top-down-map
+    motion_vector: horizontal-traverse
+    hero_treatment: multiplicity-swarm
+    layout: map-territory
+    register: naturalistic-scene
+    palette: 'autumn tundra: rust and cranberry groundcover, ochre plus brass lichen,
+      caribou-brown herd, dusk slate shadow, a single phosphor-mint count overlay'
+    metaphor: the machine learns to count a living herd from a lone dot per animal,
+      and admits the crowded crush where its certainty thins

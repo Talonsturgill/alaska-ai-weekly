@@ -1,0 +1,10 @@
+Every summer, Alaska has to count its caribou.
+On the North Slope, one herd can run into the tens of thousands.
+Biologists fly the tundra and bring back thousands of aerial photos.
+Then a person has to find every animal in every frame.
+A new model from Microsoft's AI for Good lab learns each caribou from a single dot, not a boxed outline.
+Those dots are up to seven times faster and three times cheaper to draw.
+On Alaska's 2022 Central Arctic survey, its count landed within about three percent of the herd.
+But the model has a limit. Where the animals crowd together, its count starts to slip.
+It counts what the camera sees. It cannot fly the plane, or find the herd.
+So the plane still flies, the model counts, and the number comes home sooner.

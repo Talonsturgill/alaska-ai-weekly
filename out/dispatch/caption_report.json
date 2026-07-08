@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "fails": [],
+  "warns": [],
+  "metrics": {
+    "chars": 1769,
+    "hook": "A caribou count that ties up biologists for weeks just got done by an AI, and it landed within about 3 percent of the herd.",
+    "hook_len": 123,
+    "hashtags": [
+      "#ArtificialIntelligence",
+      "#Alaska",
+      "#Conservation",
+      "#WildlifeBiology",
+      "#AerialSurvey"
+    ],
+    "n_hashtags": 5,
+    "emoji": 0,
+    "unicode_bold": 0,
+    "bullet_lines": 0,
+    "passes": true
+  }
+}

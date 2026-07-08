@@ -1,0 +1,100 @@
+{
+  "events": [
+    {
+      "t": 1.2,
+      "kind": "tick",
+      "label": "tally starts churning"
+    },
+    {
+      "t": 2.4,
+      "kind": "tick",
+      "label": "first animals register"
+    },
+    {
+      "t": 5.4,
+      "kind": "riser",
+      "label": "the herd swells"
+    },
+    {
+      "t": 9.2,
+      "kind": "clack",
+      "label": "light-table set down"
+    },
+    {
+      "t": 13.6,
+      "kind": "pop",
+      "label": "point marker lands"
+    },
+    {
+      "t": 17.4,
+      "kind": "boot",
+      "label": "model interface boots"
+    },
+    {
+      "t": 21.6,
+      "kind": "whoosh",
+      "label": "box collapses to a dot"
+    },
+    {
+      "t": 22.0,
+      "kind": "lock",
+      "label": "the dot locks"
+    },
+    {
+      "t": 25.6,
+      "kind": "tick",
+      "label": "dots light one by one"
+    },
+    {
+      "t": 26.4,
+      "kind": "tick",
+      "label": "dots light one by one"
+    },
+    {
+      "t": 29.6,
+      "kind": "lock",
+      "label": "count locks to F1 0.965"
+    },
+    {
+      "t": 33.2,
+      "kind": "pop",
+      "label": "+3.1% stamps in"
+    },
+    {
+      "t": 37.0,
+      "kind": "boom",
+      "label": "match-cut to the crush"
+    },
+    {
+      "t": 39.6,
+      "kind": "shimmer",
+      "label": "overlay dissolves to a ?"
+    },
+    {
+      "t": 42.6,
+      "kind": "clack",
+      "label": "the viewfinder fires a frame"
+    },
+    {
+      "t": 43.2,
+      "kind": "boot",
+      "label": "tags appear in the reticle"
+    },
+    {
+      "t": 45.0,
+      "kind": "drone",
+      "label": "the plane flies on"
+    },
+    {
+      "t": 48.2,
+      "kind": "resolve",
+      "label": "the map settles"
+    },
+    {
+      "t": 52.6,
+      "kind": "boom",
+      "label": "the number comes home"
+    }
+  ],
+  "n": 19
+}
