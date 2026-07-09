@@ -171,9 +171,9 @@ background-size:260% 100%;animation-duration:58s;animation-direction:alternate-r
 /* a meteor, every so often */
 .meteor{position:absolute;top:9vh;left:-8vw;width:120px;height:2px;border-radius:2px;
 background:linear-gradient(90deg,transparent,rgba(223,241,255,.9) 65%,#fff);opacity:0;
-transform:rotate(16deg);animation:meteor 14s linear infinite;animation-delay:6s;}
-@keyframes meteor{0%,88%{opacity:0;transform:translate(0,0) rotate(16deg);}
-89%{opacity:.9;}94%{opacity:0;transform:translate(64vw,20vh) rotate(16deg);}
+transform:rotate(16deg);animation:meteor 7s linear infinite;animation-delay:3s;}
+@keyframes meteor{0%,76%{opacity:0;transform:translate(0,0) rotate(16deg);}
+78%{opacity:.9;}88%{opacity:0;transform:translate(64vw,20vh) rotate(16deg);}
 100%{opacity:0;transform:translate(64vw,20vh) rotate(16deg);}}
 .stars{position:absolute;inset:0;background-image:
 radial-gradient(1px 1px at 12% 22%,rgba(244,248,255,.7),transparent 60%),
