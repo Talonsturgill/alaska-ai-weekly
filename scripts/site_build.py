@@ -157,13 +157,16 @@ animation:drift3 42s ease-in-out infinite alternate;}
 @keyframes drift2{from{transform:translate(5vw,2vh);}to{transform:translate(-7vw,-2vh);}}
 @keyframes drift3{from{transform:translate(0,0) scale(1);}to{transform:translate(-5vw,3vh) scale(1.15);}}
 /* aurora curtains: banded light drifting sideways, faded toward the ground */
-.curtain{position:absolute;inset:-12% 0 auto;height:88vh;mix-blend-mode:screen;opacity:.8;
-background:repeating-linear-gradient(97deg,transparent 0 6%,rgba(60,230,180,.05) 8% 10%,
-transparent 12% 17%,rgba(90,200,240,.045) 19% 21%,transparent 23% 30%,rgba(150,100,230,.03) 31% 33%,transparent 35% 42%);
-background-size:220% 100%;filter:blur(22px);transform:skewY(-5deg);
--webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.95) 12%,transparent 78%);
-mask-image:linear-gradient(180deg,rgba(0,0,0,.95) 12%,transparent 78%);
+.curtain{position:absolute;inset:-14% 0 auto;height:96vh;mix-blend-mode:screen;
+background:repeating-linear-gradient(97deg,transparent 0 5%,rgba(60,230,180,.22) 7% 9.5%,
+rgba(60,230,180,.06) 11% 13%,transparent 15% 19%,rgba(90,200,240,.19) 21% 23.5%,
+rgba(90,200,240,.05) 25% 27%,transparent 29% 34%,rgba(150,100,230,.13) 35% 37%,transparent 39% 45%);
+background-size:220% 100%;filter:blur(16px);transform:skewY(-6deg);
+-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1) 8%,rgba(0,0,0,.5) 46%,transparent 76%);
+mask-image:linear-gradient(180deg,rgba(0,0,0,1) 8%,rgba(0,0,0,.5) 46%,transparent 76%);
 animation:curtain 44s ease-in-out infinite alternate;}
+.curtain.c2{transform:skewY(4deg);filter:blur(26px);opacity:.7;
+background-size:260% 100%;animation-duration:58s;animation-direction:alternate-reverse;}
 @keyframes curtain{from{background-position:0% 0;}to{background-position:100% 0;}}
 /* a meteor, every so often */
 .meteor{position:absolute;top:9vh;left:-8vw;width:120px;height:2px;border-radius:2px;
@@ -482,7 +485,7 @@ JS = """
         var ms = d - now, hh = Math.floor(ms / 3600000) % 24,
             mm = Math.floor(ms / 60000) % 60, ss = Math.floor(ms / 1000) % 60,
             dd = Math.floor(ms / 86400000);
-        t = 'in ' + dd + 'd ' + pad(hh) + ':' + pad(mm) + ':' + pad(ss);
+        t = 'in ' + dd + 'd ' + pad(hh) + 'h ' + pad(mm) + 'm ' + pad(ss) + 's';
       }
       if (el.textContent !== t) el.textContent = t;
     });
@@ -619,7 +622,7 @@ def page(title, desc, body, prefix, active, today, site_url, path, og_image="og.
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="sky"><div class="stars"></div><div class="curtain"></div>{flag_sky() if active == 'home' else ''}
+<div class="sky"><div class="stars"></div><div class="curtain"></div><div class="curtain c2"></div>{flag_sky() if active == 'home' else ''}
 <div class="veil v1"></div><div class="veil v2"></div><div class="veil v3"></div>
 <div class="meteor"></div></div>
 <div class="wrap">
@@ -661,7 +664,8 @@ def load_runs():
             continue
         out.append({
             "date": d.name,
-            "title": copy.get("document_title", d.name),
+            # house style bans colons on the page; titled decks read fine with a comma
+            "title": copy.get("document_title", d.name).replace(": ", ", "),
             "hook": caption.split("\n")[0].strip(),
             "caption": caption,
             "first_comment": copy.get("first_comment", ""),
@@ -730,12 +734,12 @@ These rules never bend.</p>
 
     next_line = ""
     if nearest and dated:
-        next_line = (f"Next on the docket: {esc(dated[0]['title'])}, "
+        next_line = (f"Next on the docket is {esc(dated[0]['title'])}, "
                      f"{esc(pretty_date(nearest['date']))}. ")
     body = f"""<div class="hero heroanim">
 <div><div class="daylight">{daylight_chip(today)}</div></div>
 <h1>AI is coming <em>north</em></h1>
-<p class="tag">Alaska AI watches it happen: every deal, docket and decision on the state's
+<p class="tag">Alaska AI watches it happen. Every deal, docket and decision on the state's
 AI beat, verified to the source and told for Alaskans. From the Slope to Southeast, daily.</p>
 <div class="ctarow">
   <a class="cta gold" href="docket/">THE DOCKET</a>
@@ -753,7 +757,7 @@ AI beat, verified to the source and told for Alaskans. From the Slope to Southea
          "description": "The daily publication on Alaska's AI beat, verified to the source."},
         {"@type": "WebSite", "url": f"{site_url}/", "name": "Alaska AI",
          "publisher": {"@id": f"{site_url}/#org"}}]}
-    return page("Alaska AI", "The daily publication on Alaska's AI beat: verified stories, "
+    return page("Alaska AI", "The daily publication on Alaska's AI beat. Verified stories, "
                 "a public docket of every AI infrastructure decision, and bespoke data art. "
                 "Built by and for Alaskans.", body, "", "home", today, site_url, "", ld=ld)
 
@@ -791,7 +795,7 @@ INDIRECT when an elected or member-accountable body decides, CLOSED when the eva
 The data behind this page is public at <a href="../docket.json" style="color:var(--blue);text-decoration:none">docket.json</a>.</p></div>"""
     ld = {"@context": "https://schema.org", "@type": "Dataset",
           "name": "The Alaska AI Docket",
-          "description": "Every AI infrastructure decision in Alaska: land leases, comment "
+          "description": "Every AI infrastructure decision in Alaska. Land leases, comment "
                          "windows, utility votes and legislation, with deciders, deadlines "
                          "and public access, sourced and updated daily.",
           "url": f"{site_url}/docket/", "dateModified": today.isoformat(),
@@ -817,7 +821,7 @@ def archive_page(today, site_url, runs):
 Newest first.</p>
 </div>
 <div class="deckgrid" style="margin-top:44px">{decks}</div>"""
-    return page("Archive - Alaska AI", "Every carousel Alaska AI has published: verified stories "
+    return page("Archive - Alaska AI", "Every carousel Alaska AI has published. Verified stories "
                 "about Alaska and AI, drawn as bespoke data art.",
                 body, "../", "archive", today, site_url, "archive/")
 
@@ -833,7 +837,8 @@ def sources_text(first_comment):
         lines.pop()  # trailing CTA lines; every citation ends in its URL
     while lines and not lines[0].strip():
         lines = lines[1:]
-    return "\n".join(lines)
+    # house style bans colons; give each citation's URL its own line instead
+    return "\n".join(lines).replace(": http", "\nhttp")
 
 
 CHEV_L = ('<svg viewBox="0 0 16 16" fill="none" aria-hidden="true">'
@@ -898,7 +903,7 @@ def about_page(today, site_url):
 <div class="prose" data-reveal>
 <p>Alaska AI is a daily publication about the biggest technology shift of our
 lifetimes, told from the only place we would tell it from. AI is arriving in
-Alaska the way pipelines and railroads once did: as land leases, gas
+Alaska the way pipelines and railroads once did, as land leases, gas
 contracts, utility votes and federal solicitations. Alaskans deserve to see
 it coming, in plain English, with receipts.</p>
 <p>Every day Alaska AI works six beats across the state, from power and
@@ -965,6 +970,19 @@ def sitemap(site_url, runs):
 
 # ---------- build ----------
 
+def prose_colon_gate(rel, html):
+    """House style bans colons in visible copy (clock times like 4:30 and
+    URLs are not prose and pass). Fails the build if one slips in."""
+    import re as _re
+    txt = _re.sub(r"(?s)<(script|style)[^>]*>.*?</\1>", " ", html)
+    txt = _re.sub(r"<[^>]+>", "\n", txt)
+    txt = _re.sub(r"https?://\S+", " ", txt)
+    txt = _re.sub(r"\d{1,2}:\d{2}", " ", txt)
+    for line in txt.split("\n"):
+        if ":" in line:
+            db.fail(f"prose colon in {rel} near {line.strip()[:70]!r}")
+
+
 def build(today, out_dir, site_url=None, domain=""):
     site_url = site_url or db.DEFAULT_SITE
     docket = load_docket(today)
@@ -984,7 +1002,8 @@ def build(today, out_dir, site_url=None, domain=""):
     for rel, html in pages.items():
         bad = db.BANNED.findall(html)
         if bad:
-            db.fail(f"banned punctuation in {rel}: {bad[:8]}")
+            db.fail(f"banned punctuation in {rel} {bad[:8]}")
+        prose_colon_gate(rel, html)
         p = out / rel
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(html)

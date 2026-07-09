@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Alaska AI</title>
-<meta name="description" content="The daily publication on Alaska's AI beat: verified stories, a public docket of every AI infrastructure decision, and bespoke data art. Built by and for Alaskans.">
+<meta name="description" content="The daily publication on Alaska's AI beat. Verified stories, a public docket of every AI infrastructure decision, and bespoke data art. Built by and for Alaskans.">
 <meta name="theme-color" content="#02060f">
 <meta property="og:site_name" content="Alaska AI">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Alaska AI">
-<meta property="og:description" content="The daily publication on Alaska's AI beat: verified stories, a public docket of every AI infrastructure decision, and bespoke data art. Built by and for Alaskans.">
+<meta property="og:description" content="The daily publication on Alaska's AI beat. Verified stories, a public docket of every AI infrastructure decision, and bespoke data art. Built by and for Alaskans.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alaskaaihq.com/">
 <meta property="og:image" content="https://alaskaaihq.com/og.png">
@@ -67,13 +67,16 @@ animation:drift3 42s ease-in-out infinite alternate;}
 @keyframes drift2{from{transform:translate(5vw,2vh);}to{transform:translate(-7vw,-2vh);}}
 @keyframes drift3{from{transform:translate(0,0) scale(1);}to{transform:translate(-5vw,3vh) scale(1.15);}}
 /* aurora curtains: banded light drifting sideways, faded toward the ground */
-.curtain{position:absolute;inset:-12% 0 auto;height:88vh;mix-blend-mode:screen;opacity:.8;
-background:repeating-linear-gradient(97deg,transparent 0 6%,rgba(60,230,180,.05) 8% 10%,
-transparent 12% 17%,rgba(90,200,240,.045) 19% 21%,transparent 23% 30%,rgba(150,100,230,.03) 31% 33%,transparent 35% 42%);
-background-size:220% 100%;filter:blur(22px);transform:skewY(-5deg);
--webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.95) 12%,transparent 78%);
-mask-image:linear-gradient(180deg,rgba(0,0,0,.95) 12%,transparent 78%);
+.curtain{position:absolute;inset:-14% 0 auto;height:96vh;mix-blend-mode:screen;
+background:repeating-linear-gradient(97deg,transparent 0 5%,rgba(60,230,180,.22) 7% 9.5%,
+rgba(60,230,180,.06) 11% 13%,transparent 15% 19%,rgba(90,200,240,.19) 21% 23.5%,
+rgba(90,200,240,.05) 25% 27%,transparent 29% 34%,rgba(150,100,230,.13) 35% 37%,transparent 39% 45%);
+background-size:220% 100%;filter:blur(16px);transform:skewY(-6deg);
+-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1) 8%,rgba(0,0,0,.5) 46%,transparent 76%);
+mask-image:linear-gradient(180deg,rgba(0,0,0,1) 8%,rgba(0,0,0,.5) 46%,transparent 76%);
 animation:curtain 44s ease-in-out infinite alternate;}
+.curtain.c2{transform:skewY(4deg);filter:blur(26px);opacity:.7;
+background-size:260% 100%;animation-duration:58s;animation-direction:alternate-reverse;}
 @keyframes curtain{from{background-position:0% 0;}to{background-position:100% 0;}}
 /* a meteor, every so often */
 .meteor{position:absolute;top:9vh;left:-8vw;width:120px;height:2px;border-radius:2px;
@@ -374,7 +377,7 @@ html.js [data-reveal].in{opacity:1;transform:none;}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="sky"><div class="stars"></div><div class="curtain"></div><svg class="flagsky" viewBox="0 0 600 400" aria-hidden="true"><circle class="fstar" cx="148" cy="181" r="3.2" style="animation-delay:0.0s"/><circle class="fstar" cx="215" cy="206" r="3.2" style="animation-delay:0.7s"/><circle class="fstar" cx="248" cy="241" r="3.2" style="animation-delay:1.4s"/><circle class="fstar" cx="282" cy="278" r="3.2" style="animation-delay:2.1s"/><circle class="fstar" cx="382" cy="314" r="3.2" style="animation-delay:2.8s"/><circle class="fstar" cx="278" cy="331" r="3.2" style="animation-delay:3.5s"/><circle class="fstar" cx="353" cy="356" r="3.2" style="animation-delay:0.2s"/><path class="fstar polaris" style="animation-delay:2.1s" transform="translate(520,96) scale(1.9)" d="M0,-9 L2.2,-2.2 L9,0 L2.2,2.2 L0,9 L-2.2,2.2 L-9,0 L-2.2,-2.2 Z"/></svg>
+<div class="sky"><div class="stars"></div><div class="curtain"></div><div class="curtain c2"></div><svg class="flagsky" viewBox="0 0 600 400" aria-hidden="true"><circle class="fstar" cx="148" cy="181" r="3.2" style="animation-delay:0.0s"/><circle class="fstar" cx="215" cy="206" r="3.2" style="animation-delay:0.7s"/><circle class="fstar" cx="248" cy="241" r="3.2" style="animation-delay:1.4s"/><circle class="fstar" cx="282" cy="278" r="3.2" style="animation-delay:2.1s"/><circle class="fstar" cx="382" cy="314" r="3.2" style="animation-delay:2.8s"/><circle class="fstar" cx="278" cy="331" r="3.2" style="animation-delay:3.5s"/><circle class="fstar" cx="353" cy="356" r="3.2" style="animation-delay:0.2s"/><path class="fstar polaris" style="animation-delay:2.1s" transform="translate(520,96) scale(1.9)" d="M0,-9 L2.2,-2.2 L9,0 L2.2,2.2 L0,9 L-2.2,2.2 L-9,0 L-2.2,-2.2 Z"/></svg>
 <div class="veil v1"></div><div class="veil v2"></div><div class="veil v3"></div>
 <div class="meteor"></div></div>
 <div class="wrap">
@@ -386,7 +389,7 @@ html.js [data-reveal].in{opacity:1;transform:none;}
 <div class="hero heroanim">
 <div><div class="daylight">ANCHORAGE &middot; 18H 28M OF DAYLIGHT &middot; LOSING 3 MIN A DAY</div></div>
 <h1>AI is coming <em>north</em></h1>
-<p class="tag">Alaska AI watches it happen: every deal, docket and decision on the state's
+<p class="tag">Alaska AI watches it happen. Every deal, docket and decision on the state's
 AI beat, verified to the source and told for Alaskans. From the Slope to Southeast, daily.</p>
 <div class="ctarow">
   <a class="cta gold" href="docket/">THE DOCKET</a>
@@ -401,10 +404,10 @@ AI beat, verified to the source and told for Alaskans. From the Slope to Southea
 <h2 data-reveal>The latest deck</h2>
 <p class="sub" data-reveal>One verified Alaska and AI story a day, drawn as a swipeable carousel.</p>
 <div class="latest" data-reveal>
-  <a class="cover" href="archive/2026-07-08/"><img src="https://raw.githubusercontent.com/Talonsturgill/alaskaaicarousels/main/runs/2026-07-08/slide-01.png" width="1080" height="1350" alt="Alaska's AI Land Rush: Four Rooms, One Open Door cover slide" loading="lazy"></a>
+  <a class="cover" href="archive/2026-07-08/"><img src="https://raw.githubusercontent.com/Talonsturgill/alaskaaicarousels/main/runs/2026-07-08/slide-01.png" width="1080" height="1350" alt="Alaska's AI Land Rush, Four Rooms, One Open Door cover slide" loading="lazy"></a>
   <div>
     <div class="chip kind">JULY 8, 2026 &middot; 9 SLIDES</div>
-    <h3>Alaska's AI Land Rush: Four Rooms, One Open Door</h3>
+    <h3>Alaska's AI Land Rush, Four Rooms, One Open Door</h3>
     <p>Alaska got more than 500 public comments on a $10 billion North Slope AI data center. Fewer than a dozen said yes.</p>
     <div class="ctarow"><a class="cta ghost" href="archive/2026-07-08/">SWIPE THE DECK</a>
     <a class="cta ghost" href="archive/">EVERY DECK</a></div>
@@ -447,7 +450,7 @@ These rules never bend.</p>
   <p>Each deck's artwork is written as fresh code, seeded and reviewed pixel by pixel. No two decks
   alike, by rule.</p></div>
 </div>
-<div class="about-line" data-reveal><p>Next on the docket: GVEA's $120 million turbine decision, July 13, 2026. All sources verified against claims.</p></div>
+<div class="about-line" data-reveal><p>Next on the docket is GVEA's $120 million turbine decision, July 13, 2026. All sources verified against claims.</p></div>
 </main>
 <footer>
 <div class="foot-grid">
@@ -484,7 +487,7 @@ These rules never bend.</p>
         var ms = d - now, hh = Math.floor(ms / 3600000) % 24,
             mm = Math.floor(ms / 60000) % 60, ss = Math.floor(ms / 1000) % 60,
             dd = Math.floor(ms / 86400000);
-        t = 'in ' + dd + 'd ' + pad(hh) + ':' + pad(mm) + ':' + pad(ss);
+        t = 'in ' + dd + 'd ' + pad(hh) + 'h ' + pad(mm) + 'm ' + pad(ss) + 's';
       }
       if (el.textContent !== t) el.textContent = t;
     });

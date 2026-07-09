@@ -20,7 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 20 20'%3E%3Cpath d='M0,-9 L2.2,-2.2 L9,0 L2.2,2.2 L0,9 L-2.2,2.2 L-9,0 L-2.2,-2.2 Z' fill='%23ffc72c'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="../fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/manrope.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/jbmono-md.woff2" as="font" type="font/woff2" crossorigin>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"The Alaska AI Docket","description":"Every AI infrastructure decision in Alaska: land leases, comment windows, utility votes and legislation, with deciders, deadlines and public access, sourced and updated daily.","url":"https://alaskaaihq.com/docket/","dateModified":"2026-07-09","creator":{"@type":"Organization","name":"Alaska AI","url":"https://alaskaaihq.com/"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://alaskaaihq.com/docket.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"The Alaska AI Docket","description":"Every AI infrastructure decision in Alaska. Land leases, comment windows, utility votes and legislation, with deciders, deadlines and public access, sourced and updated daily.","url":"https://alaskaaihq.com/docket/","dateModified":"2026-07-09","creator":{"@type":"Organization","name":"Alaska AI","url":"https://alaskaaihq.com/"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://alaskaaihq.com/docket.json"}]}</script>
 <style>
 :root{--night:#02060f;--deep:#050b16;--panel:#0a1626;--panel2:#0e2138;--line:#1c3350;
 --snow:#f4f8ff;--body:#c3d2e6;--mute:#8da2be;--gold:#ffc72c;--halo:#ffda6e;
@@ -67,13 +67,16 @@ animation:drift3 42s ease-in-out infinite alternate;}
 @keyframes drift2{from{transform:translate(5vw,2vh);}to{transform:translate(-7vw,-2vh);}}
 @keyframes drift3{from{transform:translate(0,0) scale(1);}to{transform:translate(-5vw,3vh) scale(1.15);}}
 /* aurora curtains: banded light drifting sideways, faded toward the ground */
-.curtain{position:absolute;inset:-12% 0 auto;height:88vh;mix-blend-mode:screen;opacity:.8;
-background:repeating-linear-gradient(97deg,transparent 0 6%,rgba(60,230,180,.05) 8% 10%,
-transparent 12% 17%,rgba(90,200,240,.045) 19% 21%,transparent 23% 30%,rgba(150,100,230,.03) 31% 33%,transparent 35% 42%);
-background-size:220% 100%;filter:blur(22px);transform:skewY(-5deg);
--webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.95) 12%,transparent 78%);
-mask-image:linear-gradient(180deg,rgba(0,0,0,.95) 12%,transparent 78%);
+.curtain{position:absolute;inset:-14% 0 auto;height:96vh;mix-blend-mode:screen;
+background:repeating-linear-gradient(97deg,transparent 0 5%,rgba(60,230,180,.22) 7% 9.5%,
+rgba(60,230,180,.06) 11% 13%,transparent 15% 19%,rgba(90,200,240,.19) 21% 23.5%,
+rgba(90,200,240,.05) 25% 27%,transparent 29% 34%,rgba(150,100,230,.13) 35% 37%,transparent 39% 45%);
+background-size:220% 100%;filter:blur(16px);transform:skewY(-6deg);
+-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,1) 8%,rgba(0,0,0,.5) 46%,transparent 76%);
+mask-image:linear-gradient(180deg,rgba(0,0,0,1) 8%,rgba(0,0,0,.5) 46%,transparent 76%);
 animation:curtain 44s ease-in-out infinite alternate;}
+.curtain.c2{transform:skewY(4deg);filter:blur(26px);opacity:.7;
+background-size:260% 100%;animation-duration:58s;animation-direction:alternate-reverse;}
 @keyframes curtain{from{background-position:0% 0;}to{background-position:100% 0;}}
 /* a meteor, every so often */
 .meteor{position:absolute;top:9vh;left:-8vw;width:120px;height:2px;border-radius:2px;
@@ -374,7 +377,7 @@ html.js [data-reveal].in{opacity:1;transform:none;}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="sky"><div class="stars"></div><div class="curtain"></div>
+<div class="sky"><div class="stars"></div><div class="curtain"></div><div class="curtain c2"></div>
 <div class="veil v1"></div><div class="veil v2"></div><div class="veil v3"></div>
 <div class="meteor"></div></div>
 <div class="wrap">
@@ -558,7 +561,7 @@ The data behind this page is public at <a href="../docket.json" style="color:var
         var ms = d - now, hh = Math.floor(ms / 3600000) % 24,
             mm = Math.floor(ms / 60000) % 60, ss = Math.floor(ms / 1000) % 60,
             dd = Math.floor(ms / 86400000);
-        t = 'in ' + dd + 'd ' + pad(hh) + ':' + pad(mm) + ':' + pad(ss);
+        t = 'in ' + dd + 'd ' + pad(hh) + 'h ' + pad(mm) + 'm ' + pad(ss) + 's';
       }
       if (el.textContent !== t) el.textContent = t;
     });
