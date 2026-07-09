@@ -205,7 +205,8 @@ This is where the deck is actually made. Spend real effort here.
    dossier a stranger couldn't sketch from is incomplete — fix it now.
    Verify: 6-12 slides (default 8-10); cover <= 12 words; slide 2 pays;
    a breather exists; a keepable data slide exists; single-ask close
-   with "sources in comments"; >= 2 continuity devices; every number on
+   with "sources in comments" and the site fixture (alaskaaihq.com small
+   in the mono face near the brand mark, per CAROUSEL_CRAFT); >= 2 continuity devices; every number on
    every slide has a claim-id; the variety divergence is stated.
 
 ## PHASE 6 — COPY CHAMBER

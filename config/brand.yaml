@@ -72,6 +72,7 @@ visual:
   # The constellation system: FIXED marks every deck, everything else rotates.
   constellation:
     wordmark: "ALASKA.AI"                    # set in the deck's display face
+    site: "alaskaaihq.com"                   # ALWAYS on the close slide, small, mono face, near the mark
     polaris_star: true                       # the 4-point gold star glyph appears once per deck minimum
     progress_counter: "NN / NN in JetBrains Mono"
     coordinates_footer: "location-relevant, e.g. 61°13'N · 149°54'W (mark data-decorative)"

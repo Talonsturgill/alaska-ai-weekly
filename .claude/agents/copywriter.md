@@ -22,7 +22,10 @@ Produce:
    The caption teases; the deck delivers. Never duplicate slide text.
 2. **First-comment source block** — paste-ready:
    "Sources:" then one line per source: outlet, headline fragment, URL.
-   Order: primary first. Plus one line inviting readers to add context.
+   Order: primary first. Then ONE light site line, varied daily, pointing
+   at https://alaskaaihq.com (e.g. "Every decision we track, with live
+   deadlines, lives at alaskaaihq.com" energy; never salesy, never more
+   than one line). Plus one line inviting readers to add context.
 3. **Document title** — ≤60 chars, specific, title-cased, no clickbait.
 4. **Slide copy polish** — review every storyboard string against voice
    rules and word budgets (25-50 words/slide, headlines ≤3 sense-broken

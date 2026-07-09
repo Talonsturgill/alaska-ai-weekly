@@ -56,8 +56,11 @@ swipe extends dwell. We build keepable reference artifacts, not applause.
   off; the single most effective swipe tactic. (M)
 - ★ **Final slide = ONE ask.** Rotate: save this / debate question / follow.
   Never stack asks. Promotional content loses 60-70% reach — we are
-  educational, always. The brand close carries the Alaska.Ai mark + one line.
-  A source note ("sources in comments") belongs here. (H)
+  educational, always. The brand close carries the Alaska.Ai mark + one line,
+  and ALWAYS the site, alaskaaihq.com, set small in the mono face near the
+  mark. It is a fixture like the wordmark, not the ask; it never replaces
+  or crowds the single ask. A source note ("sources in comments") belongs
+  here. (H)
 - **Engineered for saves**: every deck should contain at least one keepable
   element — a numbers table, a map, a checklist, a timeline. (M-H)
 - Assume the PDF is downloadable and judged standalone (download is an
