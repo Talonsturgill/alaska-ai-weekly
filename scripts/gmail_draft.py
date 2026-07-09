@@ -86,6 +86,17 @@ def main():
     asm = json.loads((run / "final" / "assemble_report.json").read_text())
     pngs = sorted(glob.glob(str(run / "render" / "slide-*.png")))
 
+    # automation upgrades made by this run (ledger/upgrades.json, Phase 12):
+    # surfaced in every dated draft so the maintainer can monitor the
+    # machine's evolution and pinpoint which week to revert on degradation.
+    upgrades = []
+    up_path = Path(__file__).resolve().parents[1] / "ledger" / "upgrades.json"
+    try:
+        upgrades = [e for e in json.loads(up_path.read_text()).get("entries", [])
+                    if e.get("run_date") == args.run_date]
+    except Exception:
+        pass
+
     runs_url = f"{args.raw_base}/runs/{args.run_date}"
     pdf_url = f"{runs_url}/carousel.pdf"
 
@@ -119,6 +130,25 @@ def main():
 
     aftercare = "".join(f"<li>{esc(a)}</li>" for a in copy.get("aftercare", []))
 
+    if upgrades:
+        up_rows = "\n".join(
+            f"<tr><td>{esc(u.get('area',''))}</td>"
+            f"<td>{esc(u.get('change',''))}<br>"
+            f"<span style='color:#98a2b3'>why: {esc(u.get('trigger',''))[:200]}</span></td>"
+            f"<td>{esc(u.get('rollback',''))}<br>"
+            f"<span style='color:#98a2b3'>{esc(str(u.get('commit','')))}</span></td></tr>"
+            for u in upgrades)
+        upgrades_html = (
+            f'<h2>Automation changes this run ({len(upgrades)})</h2>'
+            f'<div class="flag">The routine modified its own machinery this run. '
+            f'If a later week looks worse, this dated section is the rollback trail '
+            f'(each set reverts as one commit).</div>'
+            f'<table class="score"><tr><th>Area</th><th>Change</th><th>Rollback</th></tr>{up_rows}</table>')
+    else:
+        upgrades_html = ('<h2>Automation changes this run</h2>'
+                         '<div style="font-size:14px;color:#667085">None. '
+                         'The machine ran to spec; no upgrades were needed.</div>')
+
     body = f"""<!doctype html><html><head><style>{CSS}</style></head><body>
 <div class="wrap">
   <h1>Alaska.Ai &middot; LinkedIn Carousel No. {esc(str(args.carousel_no))}</h1>
@@ -151,6 +181,8 @@ def main():
 
   <h2>Editor's note</h2>
   <div style="font-size:14px">{notes}</div>
+
+  {upgrades_html}
 
   <h2>Aftercare (this is where reach is won)</h2>
   <ul class="check">{aftercare}</ul>

@@ -44,7 +44,10 @@ this one.
 - `config/` — brand.yaml (voice + constellation tokens), sources.yaml,
   scoring_rubric.yaml.
 - `ledger/` — topics.json (dedupe), artwork.json (variety engine),
-  instincts.json (self-improvement). Committed state; updated every run.
+  instincts.json (self-improvement), upgrades.json (automation-change
+  trail: Phase 12's machine upgrades, surfaced in every dated Gmail draft;
+  each set reverts as one `upgrade(<date>):` commit). Committed state;
+  updated every run.
 - `.claude/agents/` — scout, fact-checker, treatment-director, copywriter,
   pixel-critic, flow-critic, scorer.
 - `.claude/skills/carousel-engine/` — render + QA + assembly harness

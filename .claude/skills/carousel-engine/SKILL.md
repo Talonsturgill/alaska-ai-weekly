@@ -58,6 +58,12 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
 - Mark intentionally-tiny or bleeding text (footers, coordinates, watermark
   type used as texture) with `data-decorative` so QA doesn't flag it:
   `<div data-decorative class="coords">61°13'N</div>`
+  Both `data-decorative` and `data-overlap-ok` inherit to descendants.
+- **Text may never overprint text**: qa.py FAILS when two elements' text
+  line boxes intersect (the 2026-07-08 slide-3 defect class). Deliberate
+  layering (a chip on an opaque plate crossing a display line box) must be
+  declared with `data-overlap-ok` on the floating element — the gate then
+  warns instead, and the pixel critics judge it.
 - Determinism: seed all noise (`AK.reseed(seed)`, `AK.rng(seed)`). Derive the
   seed from the run date. Same inputs must reproduce the same pixels.
 - Fonts: use `assets/fonts/fonts.css` families — Fraunces (100-900 + italic,
@@ -90,6 +96,10 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
 ## Art libraries (committed, offline)
 
 - `assets/js/noise.js` — seeded simplex 2D/3D, fbm, domain warp (`AK.*`)
+- `assets/js/akgeo.js` — Alaska projection + regional zoom (`AKGeo.*`).
+  NEVER fitExtent to a small lon/lat bbox (renders a giant fill disc);
+  use `AKGeo.zoomTo(proj, geo, lonlat, targetXY, zoom)` and draw the
+  coastline STROKE-ONLY at zoom > ~2.
 - `assets/js/ak3d.js` — software 3D: perspective camera, heightfield/box
   meshes, painter's z-sort, Lambert + fog, 3D polylines & point clouds (`AK3D.*`)
 - `assets/js/zdog.min.js` — Zdog round pseudo-3D engine (canvas, no GPU)

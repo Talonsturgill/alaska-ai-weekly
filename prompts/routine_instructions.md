@@ -43,7 +43,9 @@ maintainer can post in ninety seconds.
   `config/sources.yaml` (seeds + sourcing rules),
   `config/scoring_rubric.yaml` (the gate).
 - Ledgers: `ledger/topics.json`, `ledger/artwork.json`,
-  `ledger/instincts.json` — read at wake, append at retro.
+  `ledger/instincts.json` — read at wake, append at retro — plus
+  `ledger/upgrades.json`, the automation-change trail appended by
+  Phase 12 and surfaced in every Gmail draft.
 - Engine: `.claude/skills/carousel-engine/` (SKILL.md = slide contract,
   render.py, qa.py, assemble.py, bootstrap.sh). Art libraries and geodata
   under `assets/` (see SKILL.md).
@@ -66,8 +68,8 @@ At wake, create `out/<date>/run_state.json`:
   "research": "pending", "claims": "pending", "selection": "pending",
   "directors_room": "pending", "copy": "pending", "art_build": "pending",
   "pixel_review": "pending", "flow_review": "pending", "assemble": "pending",
-  "scoring": "pending", "ship": "pending", "gmail": "pending",
-  "retro": "pending"}}
+  "scoring": "pending", "ship": "pending", "upgrade": "pending",
+  "gmail": "pending", "retro": "pending"}}
 ```
 Update each phase to "done" WITH its artifact paths as you complete it.
 The COMPLETION GATE (before merge) requires every phase done and every
@@ -277,21 +279,64 @@ Save `out/<date>/score_report.json`.
    URL on main). If raw URLs 404, wait 30s and retry once; if still
    broken, fall back to branch-pinned URLs and note it.
 
-## PHASE 12 — GMAIL DRAFT
+## PHASE 12 — AUTOMATION RETRO + UPGRADE (the machine gets better every run)
+
+The editorial retro (Phase 14) improves the CONTENT brain; this phase
+improves the MACHINE. It runs after the merge and BEFORE the Gmail draft
+so every upgrade appears in that dated email, giving the maintainer a
+daily-monitorable, rollback-able trail.
+
+1. **Diff what happened against what this document says should happen.**
+   Walk run_state.json phase by phase with fresh eyes and list every
+   deviation, with evidence: gates that passed defects a later gate or
+   human caught; phases that needed manual intervention or degraded
+   fallbacks; environment breakage (installs, 403s, API limits); retries
+   and their causes; anything the subagents flagged that the process
+   invited. Write the analysis to `out/<date>/automation_retro.md`.
+2. **Implement 0-3 bounded upgrades** targeting the highest-leverage
+   deviations. An upgrade may touch: engine scripts (render/qa/assemble/
+   bootstrap), scripts/, assets/js helpers, knowledge files, this prompt,
+   or agent definitions. HARD RULES:
+   - Never weaken a gate, threshold, or hard-fail rule. Upgrades tighten,
+     repair, or automate; loosening requires the human (say so in the
+     email instead).
+   - Prefer objective machinery (a new check, a repair step, a helper)
+     over prose instructions.
+   - Every engine/script change must be VERIFIED before commit: re-run
+     render.py + qa.py on this run's slides AND examples/demo-deck; both
+     must behave as expected (and a reconstruction of the defect should
+     FAIL if the upgrade is a new gate). No verification = no upgrade.
+   - If nothing genuinely needs upgrading, write "no upgrades" in
+     automation_retro.md and move on. Zero is an acceptable count.
+3. **Log every upgrade** as an entry in `ledger/upgrades.json` (schema in
+   the file): run_date, area, change, trigger (the deviation it fixes),
+   files touched, verification evidence, rollback hint.
+4. **Commit the upgrades as their own commit** on the run branch (or main
+   post-merge), message prefixed `upgrade(<date>):`, separate from the
+   run-artifacts commit, so any single upgrade set can be reverted
+   cleanly if the maintainer sees degradation in a later dated email.
+   Record the commit SHA back into the ledger entries (amend or follow-up
+   commit) and push.
+
+## PHASE 13 — GMAIL DRAFT
 
 ```
 python scripts/gmail_draft.py --run-dir out/<date> --run-date <date> \
   --carousel-no <N> --raw-base https://raw.githubusercontent.com/<owner>/<repo>/main \
   --branch claude/carousel-<date> --payload-out out/<date>/gmail_payload.json
 ```
-Create the draft via the Gmail MCP `create_draft` tool with the payload
-(subject, to: "me", html_body). Save the returned draft id to
+The script includes an "Automation changes this run" section rendered
+from ledger/upgrades.json (Phase 12's output) so the maintainer can
+monitor the machine's evolution from the dated emails alone and request
+a revert if a later week degrades. Create the draft via the Gmail MCP
+`create_draft` tool with the payload (subject, to: the maintainer's
+address, html_body). Save the returned draft id to
 `runs/<date>/gmail_draft_id.txt` (amend-commit to main is fine).
 FALLBACK if Gmail MCP is unavailable: commit gmail_payload.json under
 runs/<date>/ and make the run summary VERY loud about where the payload
 lives and what to do with it.
 
-## PHASE 13 — RETRO
+## PHASE 14 — RETRO
 
 Already-committed ledger updates aside, end the run with a summary
 message: story, score, slide count, what the critics caught, what was
@@ -316,8 +361,10 @@ learned, and the one thing to improve next week. Mark run_state complete.
 
 1. Gmail draft exists: post copy, first-comment sources, document title,
    inline previews, working raw URLs for every slide PNG + the PDF,
-   report card, aftercare checklist.
-2. runs/<date>/ merged to main with all artifacts; ledgers updated;
+   report card, aftercare checklist, and the automation-changes section
+   (even if it says "no changes").
+2. runs/<date>/ merged to main with all artifacts; ledgers updated
+   (including upgrades.json, possibly with zero new entries);
    run_state complete.
 3. score_report.json at/above threshold OR an explicit, honest shortfall
    note in the email.
