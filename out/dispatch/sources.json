@@ -1,7 +1,24 @@
 {
   "sources": [
-    {"url": "https://arxiv.org/abs/2606.13911", "outlet": "arXiv:2606.13911 (Jun 11, 2026) - primary", "note": "Overhead Wildlife Locator (OWL): Benchmarking Weakly Supervised Learning for Aerial Wildlife Surveys, Microsoft AI for Good Lab et al. Source for the weakly-supervised point-label method, the 7x-faster / 3x-cheaper labeling claim, F1 = 0.965 and +3.1% signed count error on ADF&G's 2022 Central Arctic Caribou census, OWL-D beating HerdNet (0.934 vs 0.840 AP) on Delplanque, and the 'performance is regime-dependent' caveat (OWL-D degrades on the densest herds)."},
-    {"url": "https://github.com/microsoft/MegaDetector-Overhead", "outlet": "Microsoft / MegaDetector-Overhead (GitHub) - corroboration", "note": "Ships the OWL model family (OWL-C / OWL-T / OWL-D) and a Caribou-OWL-C weight, confirms the training, evaluation, and inference stack described in the paper."},
-    {"url": "https://arxiv.org/html/2606.13911v1", "outlet": "OWL paper (HTML full text) - affiliations + quotes", "note": "Verifies the on-screen numbers verbatim and the author affiliations: Microsoft AI for Good Lab-led, with Nathan J. Pamperin (Alaska Department of Fish and Game) as the ADF&G co-author and ADF&G's 2022 census data. Not a Microsoft/ADF&G co-development beyond that."}
+    {
+      "url": "https://www.jvolcanica.org/ojs/index.php/volcanica/article/view/349",
+      "outlet": "Volcanica (2025) \u2014 Fee, Tan et al., AVO/UAF + USGS",
+      "note": "VOISS-Net: a spectrogram CNN to detect and classify volcano seismicity; the generalized model reaches 87% accuracy on the test set."
+    },
+    {
+      "url": "https://pubs.usgs.gov/publication/70268974",
+      "outlet": "USGS Publications Warehouse",
+      "note": "Independent confirmation: 87% test accuracy, trained on 270,000+ spectrograms across 7 volcanoes (Pavlof, Semisopochnoi, Tanaga, Takawangha, Redoubt, Etna, Kilauea); classes = tremor, explosions, earthquakes, long-period events, noise."
+    },
+    {
+      "url": "https://www.usgs.gov/programs/VHP/volcano-updates",
+      "outlet": "USGS / Alaska Volcano Observatory \u2014 Volcano Updates",
+      "note": "Great Sitkin at WATCH / ORANGE, slow lava effusion continuing in the summit crater, per the AVO update dated July 8, 2026 (the live in-window hook)."
+    },
+    {
+      "url": "https://avo.alaska.edu/volcano/great-sitkin",
+      "outlet": "Alaska Volcano Observatory \u2014 Great Sitkin",
+      "note": "AVO monitoring page for Great Sitkin Volcano (Aleutians); seismic + infrasound networks, webcams, satellite."
+    }
   ]
 }

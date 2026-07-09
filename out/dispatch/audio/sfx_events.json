@@ -1,100 +1,140 @@
 {
   "events": [
     {
-      "t": 1.2,
-      "kind": "tick",
-      "label": "tally starts churning"
-    },
-    {
-      "t": 2.4,
-      "kind": "tick",
-      "label": "first animals register"
-    },
-    {
-      "t": 5.4,
-      "kind": "riser",
-      "label": "the herd swells"
-    },
-    {
-      "t": 9.2,
-      "kind": "clack",
-      "label": "light-table set down"
-    },
-    {
-      "t": 13.6,
-      "kind": "pop",
-      "label": "point marker lands"
-    },
-    {
-      "t": 17.4,
-      "kind": "boot",
-      "label": "model interface boots"
-    },
-    {
-      "t": 21.6,
-      "kind": "whoosh",
-      "label": "box collapses to a dot"
-    },
-    {
-      "t": 22.0,
-      "kind": "lock",
-      "label": "the dot locks"
-    },
-    {
-      "t": 25.6,
-      "kind": "tick",
-      "label": "dots light one by one"
-    },
-    {
-      "t": 26.4,
-      "kind": "tick",
-      "label": "dots light one by one"
-    },
-    {
-      "t": 29.6,
-      "kind": "lock",
-      "label": "count locks to F1 0.965"
-    },
-    {
-      "t": 33.2,
-      "kind": "pop",
-      "label": "+3.1% stamps in"
-    },
-    {
-      "t": 37.0,
+      "t": 0.7,
       "kind": "boom",
-      "label": "match-cut to the crush"
+      "label": "crater glows, sub-bass"
+    },
+    {
+      "t": 4.2,
+      "kind": "ambient",
+      "label": "magma crackle rising"
+    },
+    {
+      "t": 5.0,
+      "kind": "lock",
+      "label": "WATCH ORANGE badge stamps in"
+    },
+    {
+      "t": 7.6,
+      "kind": "tick",
+      "label": "cone ignites"
+    },
+    {
+      "t": 8.6,
+      "kind": "tick",
+      "label": "cone ignites"
+    },
+    {
+      "t": 9.6,
+      "kind": "tick",
+      "label": "cone ignites"
+    },
+    {
+      "t": 10.5,
+      "kind": "whoosh",
+      "label": "view slices to cross-section"
+    },
+    {
+      "t": 12.4,
+      "kind": "boot",
+      "label": "two sensors power on"
+    },
+    {
+      "t": 14.4,
+      "kind": "boom",
+      "label": "seismic rumble down the rock"
+    },
+    {
+      "t": 16.9,
+      "kind": "whoosh",
+      "label": "infrasound sweep through air"
+    },
+    {
+      "t": 18.8,
+      "kind": "riser",
+      "label": "waves morph into a spectrogram"
+    },
+    {
+      "t": 22.2,
+      "kind": "shimmer",
+      "label": "spectrogram resolves"
+    },
+    {
+      "t": 24.4,
+      "kind": "boot",
+      "label": "VOISS-Net interface boots"
+    },
+    {
+      "t": 26.3,
+      "kind": "tick",
+      "label": "training tally climbs"
+    },
+    {
+      "t": 27.1,
+      "kind": "tick",
+      "label": "training tally climbs"
+    },
+    {
+      "t": 29.5,
+      "kind": "lock",
+      "label": "TREMOR tag locks"
+    },
+    {
+      "t": 30.9,
+      "kind": "lock",
+      "label": "EXPLOSION tag locks"
+    },
+    {
+      "t": 32.8,
+      "kind": "boom",
+      "label": "87% accuracy locks in"
+    },
+    {
+      "t": 36.1,
+      "kind": "boom",
+      "label": "hard downbeat on the turn"
     },
     {
       "t": 39.6,
-      "kind": "shimmer",
-      "label": "overlay dissolves to a ?"
+      "kind": "ambient",
+      "label": "dissolving swell to a question"
     },
     {
-      "t": 42.6,
-      "kind": "clack",
-      "label": "the viewfinder fires a frame"
+      "t": 42.0,
+      "kind": "tick",
+      "label": "the label glitches and slips"
     },
     {
-      "t": 43.2,
-      "kind": "boot",
-      "label": "tags appear in the reticle"
-    },
-    {
-      "t": 45.0,
-      "kind": "drone",
-      "label": "the plane flies on"
-    },
-    {
-      "t": 48.2,
+      "t": 44.5,
       "kind": "resolve",
-      "label": "the map settles"
+      "label": "warm tone under the silhouette"
     },
     {
-      "t": 52.6,
+      "t": 46.7,
+      "kind": "riser",
+      "label": "the arc map rises and settles"
+    },
+    {
+      "t": 49.2,
+      "kind": "shimmer",
+      "label": "sound-rings pulse across the arc"
+    },
+    {
+      "t": 52.8,
       "kind": "boom",
-      "label": "the number comes home"
+      "label": "the sign-off lands"
+    },
+    {
+      "t": 54.4,
+      "kind": "shimmer",
+      "label": "outro sound-ring pulse"
+    },
+    {
+      "t": 58.0,
+      "kind": "shimmer",
+      "label": "final sound-ring pulse"
     }
   ],
-  "n": 19
+  "n": 27
 }

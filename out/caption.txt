@@ -1,11 +1,17 @@
-Alaska's tribal health system built an AI model for the worst call in rural medicine, then published exactly why nobody should trust it yet.
+Right now a volcano is erupting in Alaska, and no one can stand on it to watch.
 
-Eighty percent of Alaska's communities have no road out. When someone is critically sick, a clinic worker has to decide whether to launch a medevac flight, often into weather that is actively getting worse. ANTHC, Southcentral Foundation, Maniilaq Association, UAF's Center for Alaska Native Health Research, UAA, and Stanford built a research model that scores that decision from patient vitals, weather, and aircraft status, trained on years of real flight data across the Alaska Tribal Health System.
+Great Sitkin is oozing lava at this moment, held at the Alaska Volcano Observatory's WATCH and ORANGE alert as of July 8. It sits in the Aleutians, on a chain of dozens of volcanoes, most of them hundreds of miles from the nearest person. You cannot post a scientist on every summit. So Alaska does the next best thing. It listens.
 
-Most AI-in-health coverage skips this part. The same researchers who built the model published, in the same breath, that no ethical guidelines exist yet for AI or ML inside Alaska Native and American Indian tribal health systems, and that only about 0.2 percent of healthcare AI papers even mention community involvement. They did not bury that gap to ship faster. They named it as the actual blocker.
+Every rumble sends sound through the rock, and pressure waves through the air. AVO turns that sound into a picture, a spectrogram, and a deep-learning model called VOISS-Net learns to read it. Trained on more than 270,000 spectrograms from 7 volcanoes, it can tell tremor from an explosion, a quake from plain noise. On its test set it was right about 87 percent of the time.
 
-Most vendors build the model first and back into governance later, only if a regulator forces the question. ANTHC and its partners flipped that order: data ownership and consent first, a model second. No clinic runs this today. It is a pilot, and by design it stays a pilot until the tribal health system itself decides who controls the data.
+The limits are the point.
 
-The tradeoff is real, not theoretical. A model that waits for community-built governance ships slower than one that does not. Alaska's bet is that a tool clinicians and patients actually trust is worth that delay. Is that the right tradeoff for a decision this high-stakes? Or does building trust first still leave a patient waiting on a call that cannot wait?
+VOISS-Net does not predict eruptions. It can name the sound the mountain is making right now. It cannot tell you the hour it will blow. Push it past the signals it was trained on and it slips. So it does not replace the duty scientist watching the screens. It gives that person a faster ear.
 
-#ArtificialIntelligence #Alaska #TribalHealth #RuralHealthcare #DataSovereignty
+That is the version of AI worth trusting in a place with real stakes. Not a model that claims to see the future, but a classifier that knows the edge of what it knows, wired to a human who owns the call.
+
+A volcano you cannot stand on is a clean test of that idea. So is an ICU, a power grid, a harbor.
+
+Where else in Alaska should the standard be AI that listens and flags, with the final call left to a person on watch?
+
+#ArtificialIntelligence #Alaska #Seismology #Volcanoes #Infrasound

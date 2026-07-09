@@ -271,3 +271,42 @@ dispatch_history:
       caribou-brown herd, dusk slate shadow, a single phosphor-mint count overlay'
     metaphor: the machine learns to count a living herd from a lone dot per animal,
       and admits the crowded crush where its certainty thins
+- date: '2026-07-09'
+  topic: VOISS-Net, an Alaska Volcano Observatory / UAF deep-learning CNN, reads a
+    volcano's seismic and infrasound spectrograms to classify tremor, explosion, quake
+    and noise (about 87% accuracy, trained on 270,000+ spectrograms across 7 volcanoes),
+    while Great Sitkin erupts now at WATCH/ORANGE; honest that it names the sound
+    but cannot foresee the eruption, and a human stays on watch
+  slug: the-mountain-listens
+  key_entities:
+  - voiss-net
+  - great sitkin
+  - alaska volcano observatory
+  - avo
+  - uaf geophysical institute
+  - volcanic tremor
+  - infrasound
+  - seismic spectrogram
+  - cnn
+  - david fee
+  - darren tan
+  - aleutian arc
+  - eruption
+  - volcano seismicity
+  archetype: 'eye-level-immersive instrument-readout: a machine that HEARS a volcano,
+    its seismic + infrasound voice drawn as a spectrogram a CNN classifies, honest
+    that hearing is not foreseeing'
+  palette: basalt-black night, ash-plume umber, molten ember and magma-red, a sulphur-gold
+    warning band, and a cold infrasound teal trace
+  voice: edge_tts:en-US-AndrewMultilingualNeural
+  composition:
+    pov: eye-level-immersive
+    motion_vector: vertical-rise
+    hero_treatment: landscape-as-subject
+    layout: single-object-void
+    register: instrument-readout
+    palette: basalt-black night, ash-plume umber, molten ember and magma-red, a sulphur-gold
+      warning band, and a cold infrasound teal trace
+    metaphor: a machine learns to HEAR a volcano, reading its seismic and infrasound
+      voice as a spectrogram to name tremor from explosion, honest that hearing the
+      mountain is not foreseeing when it will blow

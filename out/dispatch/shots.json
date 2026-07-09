@@ -3,57 +3,57 @@
     {
       "id": 1,
       "start": 0,
-      "end": 246,
+      "end": 308,
       "framing": "wide-establish",
       "transition_in": "",
       "note": ""
     },
     {
       "id": 2,
-      "start": 246,
-      "end": 506,
+      "start": 308,
+      "end": 562,
       "framing": "alt-vantage",
-      "transition_in": "carried-element",
-      "note": ""
-    },
-    {
-      "id": 3,
-      "start": 506,
-      "end": 723,
-      "framing": "macro-closeup",
       "transition_in": "match-cut",
       "note": ""
     },
     {
+      "id": 3,
+      "start": 562,
+      "end": 730,
+      "framing": "macro-closeup",
+      "transition_in": "morph",
+      "note": ""
+    },
+    {
       "id": 4,
-      "start": 723,
+      "start": 730,
       "end": 1082,
       "framing": "data-panel",
-      "transition_in": "graphic-match",
+      "transition_in": "fui-boot",
       "note": ""
     },
     {
       "id": 5,
       "start": 1082,
-      "end": 1244,
+      "end": 1256,
       "framing": "two-up",
-      "transition_in": "match-cut",
+      "transition_in": "hard-cut",
       "note": ""
     },
     {
       "id": 6,
-      "start": 1244,
-      "end": 1389,
+      "start": 1256,
+      "end": 1397,
       "framing": "push-detail",
-      "transition_in": "fui-boot",
+      "transition_in": "focus-pull",
       "note": ""
     },
     {
       "id": 7,
-      "start": 1389,
+      "start": 1397,
       "end": 1800,
       "framing": "map-territory",
-      "transition_in": "crossfade",
+      "transition_in": "pull-out",
       "note": ""
     }
   ],

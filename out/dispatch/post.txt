@@ -1,19 +1,17 @@
-A caribou count that ties up biologists for weeks just got done by an AI, and it landed within about 3 percent of the herd.
+Right now a volcano is erupting in Alaska, and no one can stand on it to watch.
 
-It learns each animal from a single dot, instead of thousands of hand-drawn boxes.
+Great Sitkin is oozing lava at this moment, held at the Alaska Volcano Observatory's WATCH and ORANGE alert as of July 8. It sits in the Aleutians, on a chain of dozens of volcanoes, most of them hundreds of miles from the nearest person. You cannot post a scientist on every summit. So Alaska does the next best thing. It listens.
 
-The model is called OWL, out of Microsoft's AI for Good Lab. Instead of learning from a hand-drawn box around each animal, it learns from one point. The paper notes those point labels are up to seven times faster and three times cheaper to produce than boxes.
+Every rumble sends sound through the rock, and pressure waves through the air. AVO turns that sound into a picture, a spectrogram, and a deep-learning model called VOISS-Net learns to read it. Trained on more than 270,000 spectrograms from 7 volcanoes, it can tell tremor from an explosion, a quake from plain noise. On its test set it was right about 87 percent of the time.
 
-On the Alaska Department of Fish and Game's 2022 Central Arctic Herd survey, its count came within about 3 percent of the herd. An F1 of 0.965. For a task that ties up biologists for weeks, that is a real shift.
+The limits are the point.
 
-Here is what I respect about the work. The researchers are blunt about where it breaks.
+VOISS-Net does not predict eruptions. It can name the sound the mountain is making right now. It cannot tell you the hour it will blow. Push it past the signals it was trained on and it slips. So it does not replace the duty scientist watching the screens. It gives that person a faster ear.
 
-Accuracy is regime dependent. Where the animals crowd together, the count starts to slip, and the heaviest foundation-model version actually does worse on the densest herds than a simpler one. It counts what the camera sees. It cannot fly the plane, and it cannot find the herd.
+That is the version of AI worth trusting in a place with real stakes. Not a model that claims to see the future, but a classifier that knows the edge of what it knows, wired to a human who owns the call.
 
-That framing matters for Alaska. The Central Arctic and Porcupine herds are subsistence and management cornerstones, and the people who fly those surveys are not being replaced. The plane still flies. The model turns a photo backlog into a count that comes home sooner and costs less.
+A volcano you cannot stand on is a clean test of that idea. So is an ICU, a power grid, a harbor.
 
-The most useful AI in the field right now is not the one that promises to replace the expert. It is the one that takes the tedious, high-volume work, tells you exactly where it is weak, and hands the judgment back.
+Where else in Alaska should the standard be AI that listens and flags, with the final call left to a person on watch?
 
-What is the high-volume task in your field that AI should be counting, so the experts can spend their hours on the part only they can do?
-
-#ArtificialIntelligence #Alaska #Conservation #WildlifeBiology #AerialSurvey
+#ArtificialIntelligence #Alaska #Seismology #Volcanoes #Infrasound
