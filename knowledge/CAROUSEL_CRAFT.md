@@ -96,8 +96,11 @@ swipe extends dwell. We build keepable reference artifacts, not applause.
   rarely recovered. Post the sources comment immediately. (M-H)
 - Expectations: platform-wide organic reach fell ~50% in 2025. Judge decks
   against OUR trailing median, weighting saves > comments > shares > likes. (M)
-- Cadence 1/week is right; treat decks as evergreen (multi-day long-tail
-  distribution since 2025). (M)
+- Posting cadence: the evidence base favors ~1/week per page for reach
+  quality; treat decks as evergreen (multi-day long-tail distribution
+  since 2025). The ROUTINE drafts daily; the human chooses which drafts
+  to post and when, and owns the reach-per-post tradeoff of posting more
+  often. (M)
 
 ## Brand-consistency vs variety (the house resolution)
 

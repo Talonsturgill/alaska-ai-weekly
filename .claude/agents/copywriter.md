@@ -27,9 +27,11 @@ Produce:
 4. **Slide copy polish** — review every storyboard string against voice
    rules and word budgets (25-50 words/slide, headlines ≤3 sense-broken
    lines); return corrections only where needed, preserving claim-ids.
-5. **Aftercare checklist** — 4 lines for the human: when to post (next
-   Tue-Thu 8-11am AKT), paste sources comment within 60s, reply to every
-   comment in the first 90 minutes, note saves/comments after 48h.
+5. **Aftercare checklist** — 4 lines for the human: when to post this
+   draft (drafts arrive DAILY; Tue-Thu 8-11am AKT are the strongest
+   slots, and the human owns posting cadence), paste sources comment
+   within 60s, reply to every comment in the first 90 minutes, note
+   saves/comments after 48h.
 
 Return ONLY JSON:
 {

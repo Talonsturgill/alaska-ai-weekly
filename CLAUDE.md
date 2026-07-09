@@ -1,7 +1,8 @@
-# Alaska.Ai — Weekly LinkedIn Carousel
+# Alaska.Ai — LinkedIn Carousel (daily routine)
 
-Source repo for the `Alaska.Ai — Weekly LinkedIn Carousel` Claude Code
-routine: an autonomous studio that researches the week's Alaska+AI story,
+Source repo for the Alaska.Ai LinkedIn carousel Claude Code routine,
+scheduled DAILY: an autonomous studio that researches the day's
+Alaska+AI story,
 plans every slide in forensic detail, renders bespoke code-crafted artwork,
 reviews it pixel by pixel, and delivers a post-ready Gmail draft.
 
@@ -61,7 +62,7 @@ this one.
   atmospheres, d3 cartography, generative flow fields, and software 3D.
   PLUMBING references, not style templates.
 - `out/` — per-run scratch (gitignored). `runs/` — shipped artifacts,
-  merged to main each week (stable raw URLs for the email).
+  merged to main each run (stable raw URLs for the email).
 
 ## Manual test
 
