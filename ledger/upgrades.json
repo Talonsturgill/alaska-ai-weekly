@@ -1,0 +1,97 @@
+{
+  "_spec": {
+    "purpose": "Automation-change trail. Phase 12 (AUTOMATION RETRO + UPGRADE) appends one entry per machine upgrade made after a run, both reactive fixes and frontier improvements: engine scripts, helpers, prompts, agent definitions. gmail_draft.py renders this run's entries into every dated Gmail draft so the maintainer can monitor the machine's evolution daily and pinpoint which week introduced a regression. Upgrades are committed separately (message prefix 'upgrade(<date>):') so a revert of that one commit rolls the change back cleanly.",
+    "rules": [
+      "Never weaken a gate, threshold, or hard-fail rule; upgrades tighten, repair, or automate.",
+      "Every engine/script change is verified before commit (this run's slides + examples/demo-deck through render+qa, plus a defect-reconstruction test for new gates).",
+      "0-3 upgrades per run; zero is acceptable and is recorded as nothing (the email section then reads 'no changes').",
+      "Frontier improvements never displace a needed fix: the 0-3 budget fills reactive-first."
+    ],
+    "entry_schema": {
+      "run_date": "YYYY-MM-DD",
+      "kind": "fix (from this run's deviations) | improvement (from the frontier scan)",
+      "area": "engine | scripts | assets | prompts | agents | knowledge",
+      "change": "one sentence, what the machine now does differently",
+      "trigger": "the run deviation that motivated it, or the source URL for a frontier improvement",
+      "files": [
+        "paths touched"
+      ],
+      "verification": "what was tested and the result",
+      "rollback": "how to undo (usually: revert the named commit)",
+      "commit": "sha or PR reference"
+    },
+    "scan_log_schema": {
+      "run_date": "YYYY-MM-DD",
+      "focus": "which rotation area was scanned (must differ from the last 3 runs)",
+      "found": "one-line summary of the most relevant findings",
+      "outcome": "applied (entry ids) | parked (FIELD_NOTES) | nothing usable"
+    }
+  },
+  "entries": [
+    {
+      "run_date": "2026-07-08",
+      "kind": "fix",
+      "area": "engine",
+      "change": "qa.py now detects text-on-text overprint: per-line box intersection across distinct elements, FAIL for primary text pairs, WARN when decorative or data-overlap-ok is involved; render.py extracts per-line rects, DOM ancestry, and the new data-overlap-ok intent attribute, and data-decorative/data-overlap-ok now inherit from ancestor containers.",
+      "trigger": "Run 1 shipped-then-caught hard fail: slide-3 body copy rendered over the 'URBAN ALASKA GRID PEAK' bar label; machine QA passed it because each element sat in its own safe zone, and only the scorer's transcription caught it (the pixel-critic subagents were session-limit-blocked).",
+      "files": [
+        ".claude/skills/carousel-engine/render.py",
+        ".claude/skills/carousel-engine/qa.py"
+      ],
+      "verification": "Reconstructed pre-fix slide-3 FAILS with 'text collision (100% overprint)'; the 9 shipped slides pass with 0 fails (cover chip demoted to WARN via data-overlap-ok); examples/demo-deck passes clean.",
+      "rollback": "revert the upgrade(2026-07-08) commit",
+      "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+    },
+    {
+      "run_date": "2026-07-08",
+      "kind": "fix",
+      "area": "engine",
+      "change": "bootstrap.sh probes that pypdf actually IMPORTS (in a subprocess) rather than merely exists, and repairs the Debian cryptography-41 pyo3 panic by upgrading cryptography; dependency probe also catches non-ImportError import crashes.",
+      "trigger": "Run 1: assemble.py's vector-PDF path crashed mid-run on 'pyo3_runtime.PanicException' from the system cryptography package; recovered only by a manual pip upgrade.",
+      "files": [
+        ".claude/skills/carousel-engine/bootstrap.sh"
+      ],
+      "verification": "bootstrap.sh runs clean end-to-end on this container and reports 'pypdf import: ok'; assemble.py produced the run's vector PDF after the same fix applied manually.",
+      "rollback": "revert the upgrade(2026-07-08) commit",
+      "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+    },
+    {
+      "run_date": "2026-07-08",
+      "kind": "fix",
+      "area": "assets",
+      "change": "New committed helper assets/js/akgeo.js: AKGeo.alaskaProjection (canonical fit) and AKGeo.zoomTo (baseline full-state fit, then scale-and-retranslate regional zoom) so zoomed maps stop re-discovering the fitExtent-to-small-bbox trap; documented in SKILL.md with the stroke-only-at-zoom rule.",
+      "trigger": "Run 1: slides 2 and 7 both rendered a giant fill disc + mis-scaled map from fitExtent on a small lon/lat bbox and had to be rebuilt mid-run with the manual recipe.",
+      "files": [
+        "assets/js/akgeo.js",
+        ".claude/skills/carousel-engine/SKILL.md"
+      ],
+      "verification": "Recipe is the exact code that fixed slides 2 and 7 in the shipped deck (both pass QA and were visually verified at full size).",
+      "rollback": "revert the upgrade(2026-07-08) commit",
+      "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+    },
+    {
+      "run_date": "2026-07-08",
+      "kind": "improvement",
+      "area": "prompts+scripts",
+      "change": "New Phase 12 AUTOMATION RETRO + UPGRADE in the master routine (analyze run vs spec, implement 0-3 verified bounded upgrades, log here, commit separately as 'upgrade(<date>):'), and gmail_draft.py now renders an 'Automation changes this run' section from this ledger into every dated draft.",
+      "trigger": "Maintainer request after run 1: make the automation self-improving with a daily-monitorable, dated, rollback-able trail of what changed.",
+      "files": [
+        "prompts/routine_instructions.md",
+        "scripts/gmail_draft.py",
+        "ledger/upgrades.json",
+        "CLAUDE.md"
+      ],
+      "verification": "gmail_draft.py re-run against the shipped run 1 artifacts renders the new section with these entries; payload builds clean.",
+      "rollback": "revert the upgrade(2026-07-08) commit",
+      "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+    }
+  ],
+  "scan_log": [
+    {
+      "run_date": "2026-07-08",
+      "focus": "self-improving-pipeline patterns (bootstrap week: the loop itself was built)",
+      "found": "Maintainer-directed: dated-email upgrade trail + frontier scan design adopted",
+      "outcome": "applied (Phase 12 + upgrade-engineer agent + this ledger)"
+    }
+  ]
+}

@@ -5,6 +5,10 @@ loop; the subjective half is the pixel-critic agents reading the PNGs.
 Checks per slide (consuming render_report.json + the PNGs):
   - PNG exists, exact expected pixel size
   - not blank / not near-uniform (dead render detector)
+  - TEXT COLLISIONS: no two text elements' line boxes may overprint
+    (FAIL when both are primary text, WARN when either is decorative).
+    Added 2026-07-08 after a body-copy-over-bar-label collision passed
+    every other gate and had to be caught by the scorer's eyes.
   - approximate contrast of every non-decorative text node vs its local
     background (WCAG-style luminance ratio; estimate, so thresholds are
     conservative: <2.0 on primary text = FAIL, <3.5 = WARN)
@@ -73,6 +77,41 @@ def contrast_estimate(img_arr, node, scale):
     return (hi + 0.05) / (lo + 0.05)
 
 
+def text_collisions(nodes, min_overlap=0.30, min_px=8):
+    """Detect text-on-text overprint between distinct elements.
+
+    Compares per-LINE boxes (render.py extracts them; falls back to the
+    element bbox), skips DOM ancestor/descendant pairs, and counts a
+    collision when the intersection covers >= min_overlap of the smaller
+    line box in both dimensions beyond min_px. Returns
+    [(i, j, overlap_ratio)] with i < j indexing `nodes`.
+    """
+    found = []
+    for i in range(len(nodes)):
+        a = nodes[i]
+        a_lines = a.get("lines") or [[a["x"], a["y"], a["w"], a["h"]]]
+        a_anc = set(a.get("anc") or [])
+        for j in range(i + 1, len(nodes)):
+            b = nodes[j]
+            if i in (b.get("anc") or []) or j in a_anc:
+                continue  # nested elements share ink legitimately
+            b_lines = b.get("lines") or [[b["x"], b["y"], b["w"], b["h"]]]
+            worst = 0.0
+            for ax, ay, aw, ah in a_lines:
+                for bx, by, bw, bh in b_lines:
+                    ix = min(ax + aw, bx + bw) - max(ax, bx)
+                    iy = min(ay + ah, by + bh) - max(ay, by)
+                    if ix < min_px or iy < min_px:
+                        continue
+                    smaller = min(aw * ah, bw * bh)
+                    if smaller <= 0:
+                        continue
+                    worst = max(worst, (ix * iy) / smaller)
+            if worst >= min_overlap:
+                found.append((i, j, worst))
+    return found
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--render-dir", required=True)
@@ -111,6 +150,23 @@ def main():
         for wr in rec.get("overflow_warnings", []):
             level = res["warns"] if wr["kind"] == "tiny-text" else res["fails"]
             level.append(f"{wr['kind']}: '{wr['text'][:50]}' ({wr['detail']})")
+
+        # text-on-text overprint (the class of defect no other gate sees).
+        # data-overlap-ok marks DELIBERATE layering (e.g., a chip on an
+        # opaque plate crossing a display line box): demoted to WARN so the
+        # pixel critics still judge it.
+        tnodes = rec.get("text_nodes", [])
+        for i, j, ratio in text_collisions(tnodes):
+            a, b = tnodes[i], tnodes[j]
+            msg = (f"text collision ({ratio:.0%} overprint): "
+                   f"'{a['text'][:36]}' x '{b['text'][:36]}' "
+                   f"near {max(a['x'], b['x'])},{max(a['y'], b['y'])}")
+            if a.get("overlap_ok") or b.get("overlap_ok"):
+                res["warns"].append(msg + " [marked data-overlap-ok]")
+            elif a.get("decorative") or b.get("decorative"):
+                res["warns"].append(msg + " [decorative involved]")
+            else:
+                res["fails"].append(msg)
 
         for node in rec.get("text_nodes", []):
             if node.get("decorative"):

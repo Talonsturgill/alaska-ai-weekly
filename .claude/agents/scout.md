@@ -1,6 +1,6 @@
 ---
 name: scout
-description: Beat-specific researcher for the weekly Alaska+AI carousel. Spawned in parallel, one per beat. Uses WebSearch + WebFetch, reads full pages before citing, returns structured JSON findings with sources and confidence.
+description: Beat-specific researcher for the daily Alaska+AI carousel. Spawned in parallel, one per beat. Uses WebSearch + WebFetch, reads full pages before citing, returns structured JSON findings with sources and confidence.
 tools: WebSearch, WebFetch, Read
 ---
 

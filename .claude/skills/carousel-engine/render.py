@@ -61,6 +61,7 @@ IN_PAGE_QA_JS = """
     out.body_overflow = true;
   }
   const seenFam = new Set();
+  const recorded = new Map();   // element -> index in out.text_nodes (for ancestry)
   const walk = document.createTreeWalker(document.body || de, NodeFilter.SHOW_ELEMENT);
   let el;
   while ((el = walk.nextNode())) {
@@ -78,6 +79,33 @@ IN_PAGE_QA_JS = """
     // computed fill is the real text color the contrast check must use.
     const isSvgText = el.namespaceURI === "http://www.w3.org/2000/svg";
     const inkColor = isSvgText ? (cs.fill || cs.getPropertyValue("fill") || cs.color) : cs.color;
+    // Per-line rects of the element's DIRECT text nodes: the collision gate
+    // compares line boxes, not block bboxes (block bboxes overlap on
+    // whitespace and false-positive). SVG text keeps its bbox (single-line
+    // labels; Range rects are unreliable in SVG).
+    let lines = [];
+    if (!isSvgText) {
+      try {
+        const range = document.createRange();
+        for (const n of el.childNodes) {
+          if (n.nodeType === 3 && n.textContent.trim().length > 0) {
+            range.selectNodeContents(n);
+            for (const lr of range.getClientRects()) {
+              if (lr.width > 1 && lr.height > 1)
+                lines.push([Math.round(lr.x), Math.round(lr.y),
+                            Math.round(lr.width), Math.round(lr.height)]);
+            }
+          }
+        }
+      } catch (e) {}
+    }
+    if (!lines.length) lines = [[Math.round(r.x), Math.round(r.y),
+                                 Math.round(r.width), Math.round(r.height)]];
+    // recorded ancestors, so nested text elements are never compared
+    const anc = [];
+    for (let p = el.parentElement; p; p = p.parentElement) {
+      if (recorded.has(p)) anc.push(recorded.get(p));
+    }
     const node = {
       text: txt,
       x: Math.round(r.x), y: Math.round(r.y),
@@ -86,8 +114,14 @@ IN_PAGE_QA_JS = """
       weight: cs.fontWeight,
       family: fam,
       color: inkColor,
-      decorative: el.hasAttribute("data-decorative")
+      decorative: el.hasAttribute("data-decorative") ||
+                  (el.closest && !!el.closest("[data-decorative]")),
+      overlap_ok: el.hasAttribute("data-overlap-ok") ||
+                  (el.closest && !!el.closest("[data-overlap-ok]")),
+      lines: lines,
+      anc: anc
     };
+    recorded.set(el, out.text_nodes.length);
     out.text_nodes.push(node);
     if (!node.decorative) {
       if (r.x < -1 || r.y < -1 || r.right > W + 1 || r.bottom > H + 1) {

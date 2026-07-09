@@ -1,7 +1,8 @@
-# Alaska.Ai — Weekly LinkedIn Carousel
+# Alaska.Ai — LinkedIn Carousel (daily routine)
 
-Source repo for the `Alaska.Ai — Weekly LinkedIn Carousel` Claude Code
-routine: an autonomous studio that researches the week's Alaska+AI story,
+Source repo for the Alaska.Ai LinkedIn carousel Claude Code routine,
+scheduled DAILY: an autonomous studio that researches the day's
+Alaska+AI story,
 plans every slide in forensic detail, renders bespoke code-crafted artwork,
 reviews it pixel by pixel, and delivers a post-ready Gmail draft.
 
@@ -44,9 +45,13 @@ this one.
 - `config/` — brand.yaml (voice + constellation tokens), sources.yaml,
   scoring_rubric.yaml.
 - `ledger/` — topics.json (dedupe), artwork.json (variety engine),
-  instincts.json (self-improvement). Committed state; updated every run.
+  instincts.json (self-improvement), upgrades.json (automation-change
+  trail: Phase 12's machine upgrades, surfaced in every dated Gmail draft;
+  each set reverts as one `upgrade(<date>):` commit). Committed state;
+  updated every run.
 - `.claude/agents/` — scout, fact-checker, treatment-director, copywriter,
-  pixel-critic, flow-critic, scorer.
+  pixel-critic, flow-critic, scorer, upgrade-engineer (Phase 12 machine
+  upgrades; pinned to Opus by maintainer requirement).
 - `.claude/skills/carousel-engine/` — render + QA + assembly harness
   (SKILL.md documents the slide contract).
 - `assets/` — committed fonts (8 families), art libraries (noise, AK3D
@@ -57,7 +62,7 @@ this one.
   atmospheres, d3 cartography, generative flow fields, and software 3D.
   PLUMBING references, not style templates.
 - `out/` — per-run scratch (gitignored). `runs/` — shipped artifacts,
-  merged to main each week (stable raw URLs for the email).
+  merged to main each run (stable raw URLs for the email).
 
 ## Manual test
 

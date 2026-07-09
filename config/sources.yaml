@@ -1,6 +1,6 @@
-# Seed sources for the weekly research sweep. Credibility ranks:
+# Seed sources for the research sweep (the routine triggers daily). Credibility ranks:
 # primary > high > medium. The routine must also DISCOVER new candidates
-# (see discover block) — the ledger surfaces them for weekly promotion.
+# (see discover block) — the ledger surfaces them for periodic promotion.
 
 seed_sources:
   alaska_news:
@@ -60,11 +60,11 @@ discover:
     tribal corporation newsrooms, borough assemblies, AK-based academic
     blogs, defense/Arctic policy outlets, energy regulators. Record
     candidates in the run's source ledger under new_sources_to_consider
-    with a one-line rationale. The maintainer promotes weekly.
+    with a one-line rationale. The maintainer promotes periodically.
 
 sourcing_rules:
   min_independent_sources_per_story: 2
   or_one_primary: true
-  window_days: 10          # slightly wider than the FB weekly; carousels can carry a 10-day arc
+  window_days: 10          # a 10-day arc; the DAILY cadence relies on the 90-day dedupe for freshness
   background_context_allowed: true   # older material permitted when labeled as background
   quotes: "verbatim from a fetched page or they don't exist"
