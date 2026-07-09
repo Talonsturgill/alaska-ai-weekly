@@ -35,7 +35,7 @@ PHRASES = [
     ("Push it past what it learned, and it slips.", 8),
     ("A person still keeps watch.", 8),
     ("So the mountain keeps speaking,", 9),
-    ("and more of Alaska is listening.", 9),
+    ("and Alaska keeps listening.", 9),
 ]
 
 env = dict(os.environ); env["SSL_CERT_FILE"] = CA; env["SSL_CERT_DIR"] = os.path.dirname(CA)

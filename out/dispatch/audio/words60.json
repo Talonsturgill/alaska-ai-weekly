@@ -105,7 +105,7 @@
     {
       "w": "A person still keeps watch.",
       "s": 44.511,
-      "e": 46.137,
+      "e": 46.138,
       "seg": 8
     },
     {
@@ -115,13 +115,13 @@
       "seg": 9
     },
     {
-      "w": "and more of Alaska is listening.",
-      "s": 48.864,
-      "e": 51.287,
+      "w": "and Alaska keeps listening.",
+      "s": 48.865,
+      "e": 50.493,
       "seg": 9
     }
   ],
-  "speech_end": 51.287,
+  "speech_end": 50.493,
   "total": 60.0,
   "fps": 30
 }

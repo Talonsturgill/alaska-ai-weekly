@@ -124,7 +124,17 @@
       "t": 52.8,
       "kind": "boom",
       "label": "the sign-off lands"
+    },
+    {
+      "t": 54.4,
+      "kind": "shimmer",
+      "label": "outro sound-ring pulse"
+    },
+    {
+      "t": 58.0,
+      "kind": "shimmer",
+      "label": "final sound-ring pulse"
     }
   ],
-  "n": 25
+  "n": 27
 }

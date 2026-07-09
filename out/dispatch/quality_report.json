@@ -4,17 +4,17 @@
     {
       "name": "SHARPNESS",
       "pass": true,
-      "detail": "median lapvar=693.8 (floor 14.0) \u2014 guards 'looks blurry'"
+      "detail": "median lapvar=536.4 (floor 14.0) \u2014 guards 'looks blurry'"
     },
     {
       "name": "HUD_TEXT",
       "pass": true,
-      "detail": "chart text hf p90=17.34 (floor 3.2) \u2014 guards 'chart letters illegible'"
+      "detail": "chart text hf p90=19.75 (floor 3.2) \u2014 guards 'chart letters illegible'"
     },
     {
       "name": "CAPTION_TEXT",
       "pass": true,
-      "detail": "caption text hf p90=16.79 (floor 3.2) \u2014 guards 'captions generic/hard to read'"
+      "detail": "caption text hf p90=16.75 (floor 3.2) \u2014 guards 'captions generic/hard to read'"
     },
     {
       "name": "EVENT_CADENCE",
@@ -24,52 +24,52 @@
     {
       "name": "BEAT_DENSITY",
       "pass": true,
-      "detail": "21 distinct visual beats (need >=12, ~1 per 5s) \u2014 the picture must keep telling the story, not just move"
+      "detail": "19 distinct visual beats (need >=12, ~1 per 5s) \u2014 the picture must keep telling the story, not just move"
     },
     {
       "name": "SCENE_STRUCTURE",
       "pass": true,
-      "detail": "7 shots, 6 real transitions, 7 framings \u2014 a genuine sequence of shots (config/shot_structure.yaml)"
+      "detail": "7 shots, 5 real transitions, 7 framings \u2014 a genuine sequence of shots (config/shot_structure.yaml)"
     },
     {
       "name": "CAPTION_SYNC",
       "pass": true,
-      "detail": "22 voice-synced cues (min 10), 0 bad-duration \u2014 guards 'voice != captions'"
+      "detail": "20 voice-synced cues (min 10), 0 bad-duration \u2014 guards 'voice != captions'"
     },
     {
       "name": "READABILITY",
       "pass": true,
-      "detail": "1890 readable words checked, 0 too dim/low-contrast (need vis>=0.42, contrast>=2.0) \u2014 guards 'every word bright + legible'"
+      "detail": "1827 readable words checked, 0 too dim/low-contrast (need vis>=0.42, contrast>=2.0) \u2014 guards 'every word bright + legible'"
     },
     {
       "name": "MUSIC",
       "pass": true,
-      "detail": "music source = sourced (\"Reawakening\" Kevin MacLeod (incompetech.com) - CC BY 4.0) \u2014 must be a freshly-sourced real track; synth/legacy fails (fix get_music + re-mix)"
+      "detail": "music source = sourced (\"Ossuary 6 - Air\" Kevin MacLeod (incompetech.com) - CC BY 4.0) \u2014 must be a freshly-sourced real track; synth/legacy fails (fix get_music + re-mix)"
     },
     {
       "name": "SFX_EVENTS",
       "pass": true,
-      "detail": "19 sound events, 11 verified audible \u2014 every shot sonified, events audible in the master (VISUAL_FLOW.md \u00a75)"
+      "detail": "25 sound events, 22 verified audible \u2014 every shot sonified, events audible in the master (VISUAL_FLOW.md \u00a75)"
     }
   ],
   "metrics": {
-    "sharpness_median": 693.8,
-    "chart_hf_p90": 17.34,
-    "caption_hf_p90": 16.79,
+    "sharpness_median": 536.4,
+    "chart_hf_p90": 19.75,
+    "caption_hf_p90": 16.75,
     "event_spikes": 135,
     "biggest_gap_s": 0.0,
     "dead_windows": [],
-    "visual_beats": 21,
+    "visual_beats": 19,
     "min_beats": 12,
     "scene_shots": 7,
-    "scene_real_cuts": 6,
+    "scene_real_cuts": 5,
     "scene_framings": 7,
-    "caption_cues": 22,
-    "readable_words": 1890,
+    "caption_cues": 20,
+    "readable_words": 1827,
     "readability_fails": 0,
     "music_source": "sourced",
-    "sfx_events": 19,
-    "sfx_lifts": 11,
+    "sfx_events": 25,
+    "sfx_lifts": 22,
     "score": 10.0
   }
 }

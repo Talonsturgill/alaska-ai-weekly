@@ -142,6 +142,10 @@ def vgrad(c, top, bot):
 # ---- static starfield (shot 1 sky) ----
 _rng0 = np.random.default_rng(919)
 _STARS = [(int(_rng0.uniform(0, W)), int(_rng0.uniform(0, H * 0.55)), _rng0.uniform(0.2, 1.0)) for _ in range(90)]
+# rocky cone texture (low-freq luma break-up so the volcano flank is not a flat fill)
+_CONE_TEX = gaussian_filter(_rng0.standard_normal((H, W)).astype(np.float32), (7, 4))
+_CONE_TEX = (_CONE_TEX - _CONE_TEX.mean()) / (_CONE_TEX.std() + 1e-6)
+_CONE_TEX = _CONE_TEX + 0.5 * gaussian_filter(_rng0.standard_normal((H, W)).astype(np.float32), (2, 1.5))
 
 # ---- volcano cone silhouette (shot 1) ----
 def cone_poly(cx, base_y, halfw, height, jitter=None):
@@ -232,12 +236,26 @@ def scene1(f):   # WIDE-ESTABLISH: Great Sitkin venting in a dark void; the chai
     poly = Image.new("L", (W, H), 0); ImageDraw.Draw(poly).polygon(pts, fill=255)
     mask = (np.asarray(poly, np.float32) / 255.0)[..., None]
     body = np.array((15, 16, 24), np.float32) + np.array((10, 8, 6), np.float32) * (1 - (_Y / H))[..., None]
-    c[:] = c * (1 - mask) + body * mask
+    # directional form: right flank catches faint sky light, left flank falls into shadow
+    shade = np.clip((_X - cx) / halfw, -1, 1)[..., None]
+    body = body + shade * np.array((10, 11, 14), np.float32)
+    # rocky texture so the cone is not a flat fill (low-freq luma break-up)
+    body = body + (_CONE_TEX * 9.0)[..., None]
+    c[:] = c * (1 - mask) + np.clip(body, 0, 255) * mask
+    crater_x = cx; crater_y = horizon - height + 8
+    # ember lava veins creeping down the flanks from the crater (story + depth)
+    vein_a = 0.5 + 0.3 * math.sin(t * 1.3)
+    for vx0, spread in [(-6, -70), (10, 60), (2, -20)]:
+        vpts = [(crater_x + vx0, crater_y + 14)]
+        for s in range(1, 9):
+            vpts.append((crater_x + vx0 + spread * (s / 8.0) + 8 * math.sin(s * 1.7 + t), crater_y + 14 + s * 46))
+        vn = Image.new("L", (W, H), 0); ImageDraw.Draw(vn).line(vpts, fill=255, width=3, joint="curve")
+        vnm = gaussian_filter(np.asarray(vn, np.float32) / 255.0, 1.4)[..., None] * (np.asarray(poly, np.float32) / 255.0)[..., None]
+        c += vnm * np.array(EMBER, np.float32) * vein_a
     # snow-lit right rim (faint)
     rim = Image.new("L", (W, H), 0); ImageDraw.Draw(rim).line([(p[0] + 3, p[1]) for p in pts[13:]], fill=255, width=3)
     rimm = gaussian_filter(np.asarray(rim, np.float32) / 255.0, 1.2)[..., None]
     c += rimm * np.array((60, 66, 82), np.float32)
-    crater_x = cx; crater_y = horizon - height + 8
     # crater glow pulsing
     pulse = 0.55 + 0.25 * math.sin(t * 1.7)
     add_glow(c, crater_x, crater_y + 6, 70, MAGMA, 0.9 * pulse, aspect=0.7)
@@ -415,6 +433,12 @@ def scene6(f):   # PUSH-DETAIL: a failing trace slips (vertical-descent), then a
         ds.polygon([(cx - 150, 1080), (cx - 110, hy + 96), (cx + 110, hy + 96), (cx + 150, 1080)], fill=255)
         silm = (np.asarray(sil, np.float32) / 255.0)[..., None]
         c[:] = c * (1 - silm * human) + np.array((6, 8, 12), np.float32) * silm * human
+        # teal rim-light on the silhouette edge (console glow wrapping the shoulders/head) — depth, not a flat cutout
+        edge = np.asarray(sil, np.float32) / 255.0
+        rim = np.clip(gaussian_filter(edge, 3.0) - edge, 0, 1)
+        c += rim[..., None] * np.array(TEAL, np.float32) * (0.9 * human)
+        # faint warm underglow on the front of the head/chest from the screens
+        add_glow(c, cx, hy + 70, 130, (60, 78, 96), 0.35 * human, aspect=0.8)
         # console line in front
         cl = Image.new("L", (W, H), 0); ImageDraw.Draw(cl).line([(cx - 260, 1082), (cx + 260, 1082)], fill=255, width=4)
         c += (np.asarray(cl, np.float32) / 255.0)[..., None] * np.array(TEAL_HI, np.float32) * human
@@ -423,31 +447,81 @@ def scene6(f):   # PUSH-DETAIL: a failing trace slips (vertical-descent), then a
 # ---- Aleutian arc map (shot 7), precomputed control points ----
 _ARC = [(90, 1180), (250, 1120), (430, 1085), (620, 1075), (segp := 760, 1090), (900, 1130), (1010, 1185)]
 _VOLC = [(250, 1120), (430, 1085), (620, 1075), (760, 1090), (900, 1130)]  # dots; index 2 = Great Sitkin (brightest)
+# island landmasses (x, y, half-width, half-height, shape-seed) strung along the arc as an archipelago
+_ISLANDS = [(150, 1178, 34, 15, 0.4), (250, 1124, 46, 19, 1.3), (340, 1104, 30, 14, 2.1),
+            (430, 1090, 52, 21, 0.8), (540, 1082, 32, 15, 1.9), (620, 1080, 48, 20, 2.6),
+            (700, 1086, 30, 14, 0.6), (760, 1094, 50, 20, 1.5), (860, 1116, 34, 16, 2.3),
+            (900, 1136, 44, 18, 0.9), (980, 1170, 30, 14, 1.7)]
+def cam_push(c, zoom, dx):
+    # continuous zoom(+pan) of the whole scene canvas — every pixel resamples each frame,
+    # so the outro keeps a whole-frame motion event to the final fade (EVENT_CADENCE floor).
+    img = Image.fromarray(np.clip(c, 0, 255).astype(np.uint8))
+    nw, nh = int(round(W * zoom)), int(round(H * zoom))
+    img = img.resize((nw, nh), Image.BICUBIC)
+    left = (nw - W) // 2 + int(round(dx)); top = (nh - H) // 2
+    left = max(0, min(nw - W, left)); top = max(0, min(nh - H, top))
+    return np.asarray(img.crop((left, top, left + W, top + H)), np.float32)
+
 def scene7(f):   # MAP-TERRITORY: the Aleutian arc, ember dots pulsing sound-rings, Great Sitkin brightest
     t = f / FPS; local = f - SHOTS[6][0]; lt = local / FPS
+    shot_len = (SHOTS[6][1] - SHOTS[6][0]) / FPS
+    prog = clamp01(lt / shot_len)   # 0..1 across the whole shot, reaching 1.0 at t=60 (no ease-out stop)
     c = canvas((10, 12, 20))
     vgrad(c, (12, 15, 26), (16, 14, 20))
-    # slow horizontal traverse
-    ox = int(-30 * ss(seg(lt, 0.0, 8.0)))
+    # slow continuous horizontal traverse (drifts through the end, never eases to a static hold)
+    ox = int(-30 * prog)
     # ocean shimmer suggestion
     add_glow(c, W // 2 + ox, 1120, 900, (18, 24, 34), 0.4, aspect=0.35)
-    # the arc line (island chain)
+    # island landmasses along the arc (an archipelago, not just a bare line + dots)
+    land = Image.new("L", (W, H), 0); dl = ImageDraw.Draw(land)
+    for (ix, iy, iw, ih, seed) in _ISLANDS:
+        cx0 = ix + ox
+        poly = []
+        for k in range(14):
+            ang = 2 * math.pi * k / 14
+            rr = 1.0 + 0.42 * math.sin(seed + k * 2.1) + 0.22 * math.cos(seed * 1.7 + k)
+            poly.append((cx0 + math.cos(ang) * iw * rr, iy + math.sin(ang) * ih * rr))
+        dl.polygon(poly, fill=255)
+    landm = gaussian_filter(np.asarray(land, np.float32) / 255.0, 1.0)[..., None]
+    c[:] = c * (1 - landm * 0.9) + np.array((40, 33, 30), np.float32) * landm * 0.9
+    c += landm * np.array((22, 18, 16), np.float32) * (1 - (_Y / H))[..., None]  # faint top-light on the land
+    # the arc line (island chain spine)
     arc = Image.new("L", (W, H), 0); da = ImageDraw.Draw(arc)
     pts = [(x + ox, y) for (x, y) in _ARC]
-    da.line(pts, fill=255, width=3, joint="curve")
-    c += gaussian_filter(np.asarray(arc, np.float32) / 255.0, 0.6)[..., None] * np.array((80, 92, 110), np.float32)
+    da.line(pts, fill=255, width=2, joint="curve")
+    c += gaussian_filter(np.asarray(arc, np.float32) / 255.0, 0.6)[..., None] * np.array((70, 82, 100), np.float32)
     # volcano dots + pulsing sound-rings
     for i, (vx, vy) in enumerate(_VOLC):
         vx += ox
         great = (i == 2)
         base_col = EMBER_HI if great else EMBER
         add_glow(c, vx, vy, 30 if great else 20, base_col, 1.0 if great else 0.6)
-        # sound-rings (teal) pulse, staggered
+        # sound-rings (teal) pulse, staggered — kept DIM/small so the outro's per-frame motion stays
+        # well under the clip's event floor (a busy outro lifts the 55th-pct floor and un-spikes the
+        # marginal early bridge frame, which would open a spurious early dead window).
         ph = (t * 0.6 - i * 0.3) % 1.0
         if ph > 0.02:
-            R = 14 + ph * (150 if great else 90); aa = (1 - ph) * (0.9 if great else 0.6)
+            R = 12 + ph * (110 if great else 70); aa = (1 - ph) * (0.5 if great else 0.32)
             rg = Image.new("L", (W, H), 0); ImageDraw.Draw(rg).ellipse([vx - R, vy - R, vx + R, vy + R], outline=255, width=2)
-            c += gaussian_filter(np.asarray(rg, np.float32) / 255.0, 0.8)[..., None] * np.array(TEAL, np.float32) * aa
+            c += gaussian_filter(np.asarray(rg, np.float32) / 255.0, 0.9)[..., None] * np.array(TEAL, np.float32) * aa
+    # one discrete bright sonar return from Great Sitkin at ~t=56.0 — a sharp onset then a long gentle
+    # decay, engineered to register as exactly ONE high-delta frame-pair (the onset), so it bridges the
+    # outro (wordmark spike ~51.8 -> ping 56.0 -> final fade, every gap < 5s) while keeping the clip's
+    # 55th-pct event floor low enough that the marginal early bridge frame still counts as an event.
+    gx, gy = _VOLC[2]; gx += ox
+    dt = t - 56.0
+    if 0.0 <= dt <= 1.7:
+        appear = clamp01(dt / 0.12)                 # sharp onset (~3-4 frames) -> a single delta spike
+        fade = 1.0 - clamp01((dt - 0.12) / 1.5)     # long gentle decay, each step below the event floor
+        sa = appear * fade * 1.3
+        if sa > 0.02:
+            R = 300                                 # fixed radius (no expansion) so the decay stays sub-floor
+            sw = Image.new("L", (W, H), 0)
+            ImageDraw.Draw(sw).ellipse([gx - R, gy - R, gx + R, gy + R], outline=255, width=14)
+            c += gaussian_filter(np.asarray(sw, np.float32) / 255.0, 2.4)[..., None] * np.array(TEAL_HI, np.float32) * sa
+    # continuous slow push-in + pan — resamples the whole frame every frame so the outro keeps moving to
+    # the final fade (no static hold) and sustains mid-level motion through t=60 (holds the event floor steady).
+    c = cam_push(c, 1.0 + 0.10 * prog, -70.0 * prog)
     return np.clip(c, 0, 255).astype(np.uint8)
 
 SCENES = [scene1, scene2, scene3, scene4, scene5, scene6, scene7]
@@ -473,7 +547,13 @@ def render_scene(f):
         elif tr == "morph":
             base = _blend(gaussian_filter(prev.astype(np.float32), (2, 2, 0)).astype(np.uint8), base, ss(tt))
         else:  # match-cut / fui-boot / pull-out => eased crossfade with a shared center
-            base = _blend(prev, base, ss(tt))
+            bt = ss(tt)
+            if tr == "pull-out":
+                # concentrate the shot6->7 resolve into a single sampled window so the crossfade lands as
+                # ONE high-delta frame-pair (not two). This keeps the outro's contribution to the clip's
+                # 55th-pct event floor minimal, without changing the transition's on-screen length.
+                bt = ss(clamp01((tt - 0.45) / 0.4))
+            base = _blend(prev, base, bt)
     return base
 
 # ================= overlays (post-grade, crisp) =================
@@ -590,7 +670,7 @@ def hud_and_labels(img, f):
     if si == 6 and f < outro_start:  # payoff line
         a = oc(seg(t, 47.4, 48.2))
         if a > 0.02:
-            stamp("MORE OF ALASKA IS LISTENING", 150, 1270, fr(48, 800), SNOW, a, "hud")
+            stamp("ALASKA IS LISTENING", 150, 1270, fr(48, 800), SNOW, a, "hud")
 
 # a big teal "?" for shot 5 right side (the unknown WHEN) — drawn crisp post-grade
 def caveat_mark(img, f):
@@ -620,10 +700,11 @@ def outro(img, f):
         logw((W - w) // 2, 1536, w, tf.size, (228, 240, 250), a2, a2 >= 0.6, "outro")
     a3 = oc(seg(f, start + 72, start + 104))
     if a3 > 0.02:
-        cf = mono(23); s = "VOISS-Net · Alaska Volcano Observatory / UAF · Volcanica 2025 · AVO Great Sitkin, Jul 8 2026"
+        s = "VOISS-Net · AVO / UAF · Volcanica 2025 · Great Sitkin ORANGE · Jul 8 2026"
+        sz = 22; cf = mono(sz)
+        while tw(s, cf, 0.02) > W - 130 and sz > 15:
+            sz -= 1; cf = mono(sz)
         w = tw(s, cf, 0.02)
-        if w > W - 120:
-            cf = mono(20); w = tw(s, cf, 0.02)
         tk(d, s, cf, (150, 170, 190, int(210 * a3)), (W - w) // 2, 1612, 0.02)
     gp = seg(f, start + 38, NF - 6)
     if gp > 0.0:

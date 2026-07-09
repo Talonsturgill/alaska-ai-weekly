@@ -123,6 +123,8 @@ EVENTS = [
     (46.7, "riser",   "the arc map rises and settles",  s_resolve(1.7, 196)),
     (49.2, "shimmer", "sound-rings pulse across the arc",s_shimmer(0.9)),
     (52.8, "boom",    "the sign-off lands",             s_boom(0.7, 60)),
+    (54.4, "shimmer", "outro sound-ring pulse",         s_shimmer(0.8)),
+    (58.0, "shimmer", "final sound-ring pulse",         s_shimmer(0.9)),
 ]
 sfx = np.zeros(N, np.float32)
 for (tt0, kind, label, sig) in EVENTS:
