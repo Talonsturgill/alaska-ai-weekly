@@ -287,24 +287,40 @@ improves the MACHINE. It runs after the merge and BEFORE the Gmail draft
 so every upgrade appears in that dated email, giving the maintainer a
 daily-monitorable, rollback-able trail.
 
-Spawn the `upgrade-engineer` subagent (pinned to Opus by maintainer
-requirement: it edits the automation itself) with the run date, the
-run_state path, and your incident notes; it executes steps 1-3 below and
-returns its report. If subagents are unavailable, the showrunner executes
-the same steps under the same hard rules. Either way, step 4 (the
-separate commit) is the showrunner's.
+Division of labor: mid-run breakage is fixed by the showrunner in the
+moment (FAILURE PROTOCOL); this phase turns those scars into PERMANENT
+fixes and also makes the machine proactively better. Spawn the
+`upgrade-engineer` subagent (pinned to Opus by maintainer requirement: it
+edits the automation itself) with the run date, the run_state path, and
+your incident notes; it executes steps 1-3 below and returns its report.
+If subagents are unavailable, the showrunner executes the same steps
+under the same hard rules. Either way, step 4 (the separate commit) is
+the showrunner's.
 
-1. **Diff what happened against what this document says should happen.**
-   Walk run_state.json phase by phase with fresh eyes and list every
-   deviation, with evidence: gates that passed defects a later gate or
-   human caught; phases that needed manual intervention or degraded
-   fallbacks; environment breakage (installs, 403s, API limits); retries
-   and their causes; anything the subagents flagged that the process
-   invited. Write the analysis to `out/<date>/automation_retro.md`.
-2. **Implement 0-3 bounded upgrades** targeting the highest-leverage
-   deviations. An upgrade may touch: engine scripts (render/qa/assemble/
-   bootstrap), scripts/, assets/js helpers, knowledge files, this prompt,
-   or agent definitions. HARD RULES:
+1. **Diff what happened against what this document says should happen,
+   then scan the frontier.** Walk run_state.json phase by phase with
+   fresh eyes and list every deviation, with evidence: gates that passed
+   defects a later gate or human caught; phases that needed manual
+   intervention or degraded fallbacks; environment breakage (installs,
+   403s, API limits); retries and their causes; anything the subagents
+   flagged that the process invited. Write the analysis to
+   `out/<date>/automation_retro.md`. THEN run the FRONTIER SCAN
+   (timeboxed ~8 searches): pick a focus area different from the last 3
+   runs' `scan_log` entries in ledger/upgrades.json (rotation: LinkedIn
+   platform shifts, editorial dataviz/cartography technique, procedural
+   art portable to offline Canvas/SVG, typography craft, headless-
+   rendering capabilities, self-improving-pipeline patterns,
+   accessibility/PDF changes); read the substantive sources; append a
+   `scan_log` entry whether or not anything gets applied. Promising but
+   not-safely-boundable findings are PARKED as dated FIELD_NOTES
+   candidates with source URLs, never forced in.
+2. **Implement 0-3 bounded upgrades TOTAL, reactive fixes first** —
+   frontier improvements fill the remaining slots only when they clear
+   the exact same verification bar (ledger `kind` distinguishes "fix"
+   from "improvement" so the email shows which is which). An upgrade may
+   touch: engine scripts (render/qa/assemble/bootstrap), scripts/,
+   assets/js helpers, knowledge files, this prompt, or agent
+   definitions. HARD RULES:
    - Never weaken a gate, threshold, or hard-fail rule. Upgrades tighten,
      repair, or automate; loosening requires the human (say so in the
      email instead).
@@ -314,11 +330,15 @@ separate commit) is the showrunner's.
      render.py + qa.py on this run's slides AND examples/demo-deck; both
      must behave as expected (and a reconstruction of the defect should
      FAIL if the upgrade is a new gate). No verification = no upgrade.
+   - No new runtime dependencies without an overwhelming case: slides
+     stay fully offline and the engine's dependency surface is part of
+     its reliability. Re-implement small; do not import large.
    - If nothing genuinely needs upgrading, write "no upgrades" in
      automation_retro.md and move on. Zero is an acceptable count.
 3. **Log every upgrade** as an entry in `ledger/upgrades.json` (schema in
-   the file): run_date, area, change, trigger (the deviation it fixes),
-   files touched, verification evidence, rollback hint.
+   the file): run_date, kind ("fix" | "improvement"), area, change,
+   trigger (the deviation it fixes, or the source URL for a frontier
+   improvement), files touched, verification evidence, rollback hint.
 4. **Commit the upgrades as their own commit** on the run branch (or main
    post-merge), message prefixed `upgrade(<date>):`, separate from the
    run-artifacts commit, so any single upgrade set can be reverted

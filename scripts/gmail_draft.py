@@ -132,7 +132,8 @@ def main():
 
     if upgrades:
         up_rows = "\n".join(
-            f"<tr><td>{esc(u.get('area',''))}</td>"
+            f"<tr><td>{esc(u.get('kind','fix'))}<br>"
+            f"<span style='color:#98a2b3'>{esc(u.get('area',''))}</span></td>"
             f"<td>{esc(u.get('change',''))}<br>"
             f"<span style='color:#98a2b3'>why: {esc(u.get('trigger',''))[:200]}</span></td>"
             f"<td>{esc(u.get('rollback',''))}<br>"
@@ -143,7 +144,7 @@ def main():
             f'<div class="flag">The routine modified its own machinery this run. '
             f'If a later week looks worse, this dated section is the rollback trail '
             f'(each set reverts as one commit).</div>'
-            f'<table class="score"><tr><th>Area</th><th>Change</th><th>Rollback</th></tr>{up_rows}</table>')
+            f'<table class="score"><tr><th>Kind</th><th>Change</th><th>Rollback</th></tr>{up_rows}</table>')
     else:
         upgrades_html = ('<h2>Automation changes this run</h2>'
                          '<div style="font-size:14px;color:#667085">None. '
