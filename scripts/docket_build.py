@@ -30,7 +30,8 @@ from datetime import date as ddate
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-DEFAULT_SITE = "https://talonsturgill.github.io/alaskaaicarousels"
+DEFAULT_DOMAIN = "alaskaaihq.com"
+DEFAULT_SITE = f"https://{DEFAULT_DOMAIN}"
 
 KINDS = {"state-land-lease", "federal-lease", "utility-decision", "legislation",
          "regulatory-docket", "procurement", "grant", "other"}

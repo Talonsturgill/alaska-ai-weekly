@@ -65,7 +65,7 @@ this one.
   site_build imports it).
 - `docs/` — the public Alaska AI site, published by GitHub Pages
   (.github/workflows/pages.yml) on every merge to main that touches it:
-  https://talonsturgill.github.io/alaskaaicarousels/
+  https://alaskaaihq.com/ (GitHub Pages, custom domain)
 - `examples/demo-deck/` — 4 engine-proof slides exercising SVG filter
   atmospheres, d3 cartography, generative flow fields, and software 3D.
   PLUMBING references, not style templates.

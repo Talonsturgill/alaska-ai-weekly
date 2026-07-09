@@ -65,9 +65,10 @@ def daylight_chip(today):
 # ---------- the flag sky (Big Dipper + Polaris, gold on the night) ----------
 
 def flag_sky():
-    # eight stars of gold; positions echo the flag's proportions
-    dipper = [(140, 318), (205, 296), (262, 302), (318, 276),
-              (332, 208), (416, 232), (404, 300)]
+    # eight stars of gold; centers scaled from the official flag geometry
+    # (1416x1000, dipper handle top-left, bowl opening up toward Polaris)
+    dipper = [(148, 181), (215, 206), (248, 241), (282, 278),
+              (382, 314), (278, 331), (353, 356)]
     stars = "".join(
         f'<circle class="fstar" cx="{x}" cy="{y}" r="3.2" '
         f'style="animation-delay:{(i * 0.7) % 4:.1f}s"/>'
@@ -688,7 +689,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", required=True, help="build date YYYY-MM-DD (America/Anchorage)")
     ap.add_argument("--out", default="docs")
-    ap.add_argument("--domain", default="",
+    ap.add_argument("--domain", default=db.DEFAULT_DOMAIN,
                     help="custom domain; emits CNAME and rewrites absolute URLs")
     args = ap.parse_args()
     site = f"https://{args.domain}" if args.domain else db.DEFAULT_SITE
