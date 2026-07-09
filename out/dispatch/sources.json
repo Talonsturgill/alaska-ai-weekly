@@ -1,14 +1,24 @@
-[
-  {"url": "https://www.jvolcanica.org/ojs/index.php/volcanica/article/view/349",
-   "outlet": "Volcanica (2025) — Fee, Tan et al., AVO/UAF + USGS",
-   "note": "VOISS-Net: a spectrogram CNN to detect and classify volcano seismicity; the generalized model reaches 87% accuracy on the test set."},
-  {"url": "https://pubs.usgs.gov/publication/70268974",
-   "outlet": "USGS Publications Warehouse",
-   "note": "Independent confirmation: 87% test accuracy, trained on 270,000+ spectrograms across 7 volcanoes (Pavlof, Semisopochnoi, Tanaga, Takawangha, Redoubt, Etna, Kilauea); classes = tremor, explosions, earthquakes, long-period events, noise."},
-  {"url": "https://www.usgs.gov/programs/VHP/volcano-updates",
-   "outlet": "USGS / Alaska Volcano Observatory — Volcano Updates",
-   "note": "Great Sitkin at WATCH / ORANGE, slow lava effusion continuing in the summit crater, per the AVO update dated July 8, 2026 (the live in-window hook)."},
-  {"url": "https://avo.alaska.edu/volcano/great-sitkin",
-   "outlet": "Alaska Volcano Observatory — Great Sitkin",
-   "note": "AVO monitoring page for Great Sitkin Volcano (Aleutians); seismic + infrasound networks, webcams, satellite."}
-]
+{
+  "sources": [
+    {
+      "url": "https://www.jvolcanica.org/ojs/index.php/volcanica/article/view/349",
+      "outlet": "Volcanica (2025) \u2014 Fee, Tan et al., AVO/UAF + USGS",
+      "note": "VOISS-Net: a spectrogram CNN to detect and classify volcano seismicity; the generalized model reaches 87% accuracy on the test set."
+    },
+    {
+      "url": "https://pubs.usgs.gov/publication/70268974",
+      "outlet": "USGS Publications Warehouse",
+      "note": "Independent confirmation: 87% test accuracy, trained on 270,000+ spectrograms across 7 volcanoes (Pavlof, Semisopochnoi, Tanaga, Takawangha, Redoubt, Etna, Kilauea); classes = tremor, explosions, earthquakes, long-period events, noise."
+    },
+    {
+      "url": "https://www.usgs.gov/programs/VHP/volcano-updates",
+      "outlet": "USGS / Alaska Volcano Observatory \u2014 Volcano Updates",
+      "note": "Great Sitkin at WATCH / ORANGE, slow lava effusion continuing in the summit crater, per the AVO update dated July 8, 2026 (the live in-window hook)."
+    },
+    {
+      "url": "https://avo.alaska.edu/volcano/great-sitkin",
+      "outlet": "Alaska Volcano Observatory \u2014 Great Sitkin",
+      "note": "AVO monitoring page for Great Sitkin Volcano (Aleutians); seismic + infrasound networks, webcams, satellite."
+    }
+  ]
+}

@@ -47,6 +47,19 @@ stays on watch.
 - USGS / AVO Volcano Updates (Great Sitkin WATCH/ORANGE, July 8 2026): https://www.usgs.gov/programs/VHP/volcano-updates
 - AVO Great Sitkin monitoring page: https://avo.alaska.edu/volcano/great-sitkin
 
+## Grade & delivery
+
+- Objective quality gate (`quality_gate.py`): 10/10, all checks PASS, zero hard blockers (sharpness,
+  HUD/caption legibility, event cadence, 21 beats, 7 shots / 5 real transitions, caption-sync,
+  readability, sourced music, 27 sfx events / 24 verified audible).
+- World-class taste rubric (`dispatch_rubric.yaml`): 8.4/10, zero hard blockers. Flow-critic: ship.
+  Editor's substantive notes all resolved (overclaim, credit integrity, outro sonification). Remaining
+  gap to 9.0 is illustration micro-craft (deeper facet/AO rock sculpting), a candidate for next iteration.
+- Audio master: integrated -14.2 LUFS, true peak -1.0 dBTP.
+- Cuts: 9:16 1080x1920 (45 MB) + 4:5 1080x1350 (38 MB), H.264 High, faststart, AAC. Both hosted on the
+  `dispatch-media` branch (permanent raw.githubusercontent links, HTTP 200 verified) and dropped into the
+  Gmail draft with the copy-paste post, poster, credits, and sources.
+
 ## Accuracy note
 
 On-screen numbers are verified against the primary sources above: 87% ACCURACY, 270,000+ SPECTROGRAMS,

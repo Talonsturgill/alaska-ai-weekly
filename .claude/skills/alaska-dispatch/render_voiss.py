@@ -151,16 +151,26 @@ _CONE_TEX = _CONE_TEX + 0.5 * gaussian_filter(_rng0.standard_normal((H, W)).asty
 def cone_poly(cx, base_y, halfw, height, jitter=None):
     # a rough stratovolcano ridge: left slope up to a notched crater, right slope down
     pts = []
-    n = 26
-    top_y = base_y - height
+    n = 56
+    peak = 0.5                       # summit centered (keeps crater/plume/vein alignment at cx)
     for i in range(n + 1):
         tx = i / n
         x = cx - halfw + tx * 2 * halfw
-        # slope profile: rise to ~0.5 then a crater dip then fall
-        if tx < 0.46: yy = base_y - (tx / 0.46) * height
-        elif tx < 0.54: yy = top_y + (0.5 - abs(tx - 0.5) / 0.08 * 0.5) * 22  # crater notch
-        else: yy = base_y - ((1 - tx) / 0.46) * height
-        j = (math.sin(i * 2.3) * 6 + math.sin(i * 5.1) * 3) if jitter is None else jitter[i]
+        # a MODELED stratovolcano: concave flanks (steep near the summit, shallower at the base),
+        # not a straight triangle. left flank steeper than right; a subsidiary shoulder ridge right.
+        if tx <= peak:
+            frl = tx / peak
+            yy = base_y - height * (frl ** 1.42)
+        else:
+            frr = (1 - tx) / (1 - peak)
+            yy = base_y - height * (frr ** 1.14)
+            yy -= math.exp(-((tx - 0.73) ** 2) / (2 * 0.055 ** 2)) * height * 0.15   # right shoulder
+        # a small crater notch at the summit
+        if abs(tx - peak) < 0.05:
+            yy += (0.05 - abs(tx - peak)) / 0.05 * 24
+        # multi-octave ridgeline roughness so the silhouette reads as rock, not a clean edge
+        j = (math.sin(i * 1.9) * 5 + math.sin(i * 4.3) * 3.2 + math.sin(i * 9.7) * 1.8
+             + math.sin(i * 19.1) * 0.9) if jitter is None else jitter[i]
         pts.append((x, yy + j))
     return pts
 
@@ -493,9 +503,12 @@ def scene7(f):   # MAP-TERRITORY: the Aleutian arc, ember dots pulsing sound-rin
             rr = 1.0 + 0.42 * math.sin(seed + k * 2.1) + 0.22 * math.cos(seed * 1.7 + k)
             poly.append((cx0 + math.cos(ang) * iw * rr, iy + math.sin(ang) * ih * rr))
         dl.polygon(poly, fill=255)
-    landm = gaussian_filter(np.asarray(land, np.float32) / 255.0, 1.0)[..., None]
-    c[:] = c * (1 - landm * 0.9) + np.array((40, 33, 30), np.float32) * landm * 0.9
-    c += landm * np.array((22, 18, 16), np.float32) * (1 - (_Y / H))[..., None]  # faint top-light on the land
+    landf = np.asarray(land, np.float32) / 255.0
+    landm = gaussian_filter(landf, 1.0)[..., None]
+    c[:] = c * (1 - landm * 0.95) + np.array((56, 46, 40), np.float32) * landm * 0.95
+    c += landm * np.array((30, 24, 20), np.float32) * (1 - (_Y / H))[..., None]      # top-light on the land
+    coast = np.clip(gaussian_filter(landf, 1.6) - landf, 0, 1)[..., None]            # a lit coastline edge
+    c += coast * np.array((92, 104, 120), np.float32) * 0.9
     # the arc line (island chain spine)
     arc = Image.new("L", (W, H), 0); da = ImageDraw.Draw(arc)
     pts = [(x + ox, y) for (x, y) in _ARC]
@@ -536,7 +549,7 @@ def scene7(f):   # MAP-TERRITORY: the Aleutian arc, ember dots pulsing sound-rin
     c = cam_push(c, 1.0 + 0.10 * prog, -70.0 * prog)
     # full-frame teal "listening pulses" through the outro — large-area events (like the hook's sky-flash)
     # so the outro carries clear above-floor EVENT_CADENCE beats spaced <5s to the final fade.
-    for pt, amp in ((49.5, 19.0), (52.0, 19.0), (54.5, 19.0), (57.0, 18.0)):
+    for pt, amp in ((48.0, 30.0), (50.3, 30.0), (52.6, 30.0), (54.9, 28.0), (57.2, 26.0)):
         pf = math.exp(-((t - pt) ** 2) / (2 * 0.13 ** 2))
         if pf > 0.02:
             c += (pf * amp) * np.array([0.34, 1.0, 0.92], np.float32) * (0.7 + 0.6 * (1 - _Y / H))[..., None]
