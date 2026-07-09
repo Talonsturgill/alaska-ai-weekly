@@ -480,9 +480,9 @@ every fact. Gold means a door is open to the public right now.</p>
 <div class="cards">{cards}</div>
 <div class="ctarow" data-reveal><a class="cta gold" href="docket/">OPEN THE FULL DOCKET</a></div>"""
 
-    steps = """<h2 data-reveal>Built by Alaskans, run by a machine</h2>
-<p class="sub" data-reveal>Alaska AI is an autonomous editorial studio with a human hand on the tiller.
-Every day it works the state's AI beat the way a newsroom would, then a person decides what posts.</p>
+    steps = """<h2 data-reveal>The house rules</h2>
+<p class="sub" data-reveal>Alaska AI works the state's AI beat the way a newsroom would.
+These rules never bend.</p>
 <div class="steps">
   <div class="step" data-reveal><div class="k">01 &middot; RESEARCHED</div><h3>Six beats, every day</h3>
   <p>Power and compute, research and Indigenous AI, the field, policy and money, robotics, and what
@@ -565,7 +565,7 @@ def archive_page(today, site_url, runs):
 </a>""" for r in runs)
     body = f"""<div class="hero" style="min-height:auto;padding-top:9vh">
 <h1>The <em>archive</em></h1>
-<p class="tag">Every deck the studio has shipped, one verified Alaska and AI story at a time.
+<p class="tag">Every deck we have shipped, one verified Alaska and AI story at a time.
 Newest first.</p>
 </div>
 <div class="deckgrid" style="margin-top:44px">{decks}</div>"""
@@ -622,22 +622,19 @@ lifetimes, told from the only place we would tell it from. AI is arriving in
 Alaska the way pipelines and railroads once did: as land leases, gas
 contracts, utility votes and federal solicitations. Alaskans deserve to see
 it coming, in plain English, with receipts.</p>
-<p>The studio behind it is an autonomous editorial pipeline. Every day it
-researches six beats across the state, verifies every claim against fetched
-primary sources, plans a story slide by slide, draws the artwork as fresh
-code, reviews its own work pixel by pixel, and hands a human the final say.
-Nothing publishes without a person deciding it should. The same pipeline
-maintains <a href="../docket/">the Alaska AI Docket</a>, a public tracker of
-every AI infrastructure decision in the state and whether the public gets a
-say in it.</p>
+<p>Every day Alaska AI works six beats across the state, from power and
+compute to policy and money to what Alaskans are actually saying. Every
+claim is verified against a fetched primary source before it appears
+anywhere, and every deck's artwork is drawn fresh for its story. The same
+desk maintains <a href="../docket/">the Alaska AI Docket</a>, a public
+tracker of every AI infrastructure decision in the state and whether the
+public gets a say in it.</p>
 <p>Some rules never bend. Every fact carries a verified claim. No topic
-repeats. No two decks look alike. Honest scores, honest emails, and the
-machinery is open at
-<a href="https://github.com/Talonsturgill/alaskaaicarousels" rel="noopener">github.com/Talonsturgill/alaskaaicarousels</a>.</p>
+repeats. No two decks look alike.</p>
 <p>Find the decks daily on LinkedIn under Alaska AI.</p>
 </div>"""
     return page("About - Alaska AI", "Alaska AI is a daily publication on Alaska's AI beat, "
-                "produced by an autonomous editorial studio with a human hand on the tiller.",
+                "built in the North and verified to the source.",
                 body, "../", "about", today, site_url, "about/")
 
 
