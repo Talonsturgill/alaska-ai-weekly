@@ -267,15 +267,25 @@ def door_svg(access):
 
 def rail_html(it, today):
     stops = []
-    for d in sorted(it["key_dates"], key=lambda x: x["date"]):
+    dates = sorted(it["key_dates"], key=lambda x: x["date"])
+    all_past = all(parse_date(d["date"], it["id"]) < today for d in dates)
+    today_placed = all_past  # if all past, TODAY caps the rail at the end
+    for d in dates:
         dd = parse_date(d["date"], it["id"])
         cls = "future" if dd >= today else "past"
         if d["kind"] in ("deadline", "vote"):
             cls += " hard"
+        if not today_placed and dd >= today:
+            stops.append('<div class="stop now" aria-hidden="true"><span class="dot"></span>'
+                         '<span class="d">TODAY</span></div>')
+            today_placed = True
         stops.append(
             f'<div class="stop {cls}"><span class="dot"></span>'
             f'<span class="d">{mon_day(d["date"])}</span>'
             f'<span class="l">{esc(d["label"])}</span></div>')
+    if dates and all_past:
+        stops.append('<div class="stop now" aria-hidden="true"><span class="dot"></span>'
+                     '<span class="d">TODAY</span></div>')
     solo = ' solo' if len(stops) == 1 else ''
     return f'<div class="rail{solo}">{"".join(stops)}</div>'
 
@@ -288,6 +298,11 @@ def item_html(it, today, num):
         f'<a href="{esc(s["url"])}" rel="noopener">{esc(s["outlet"])}</a>' for s in it["sources"])
     hist = it["history"][-1] if it["history"] else None
     hist_html = (f'<div class="hist">{esc(hist["date"])} &middot; {esc(hist["note"])}</div>' if hist else "")
+    act = ""
+    if (it["public_access"] == "open" and it["status"] == "open-for-comment"
+            and nd and it["sources"]):
+        act = (f'<div class="ctarow act"><a class="cta gold sm" href="{esc(it["sources"][0]["url"])}" '
+               f'rel="noopener">COMMENT NOW &middot; CLOSES {mon_day(nd["date"]).upper()}</a></div>')
     return f"""<article class="item a-{it["public_access"]}" id="{esc(it["id"])}" data-reveal>
   <div class="doorcol">{door_svg(it["public_access"])}<span class="num">{num:02d}</span></div>
   <div class="body">
@@ -301,15 +316,16 @@ def item_html(it, today, num):
     <p>{esc(it["summary"])}</p>
     <div class="access">{esc(it["access_note"])}</div>
     {rail_html(it, today)}
+    {act}
     <div class="srcs">Sources &middot; {srcs}</div>
     {hist_html}
   </div>
 </article>"""
 
 
-def card_html(it, today):
+def card_html(it, today, prefix=""):
     nd = next_date(it, today)
-    return f"""<a class="card a-{it["public_access"]}" href="#{esc(it["id"])}" data-reveal>
+    return f"""<a class="card a-{it["public_access"]}" href="{prefix}#{esc(it["id"])}" data-reveal>
   <div class="cardtop"><span class="badge b-{it["public_access"]}">{ACCESS_LABEL[it["public_access"]]}</span></div>
   <div class="big" data-days="{nd['date']}">{mon_day(nd['date'])}</div>
   <div class="when chip days" data-date="{nd['date']}">by {mon_day(nd['date'])}</div>
