@@ -1,0 +1,13 @@
+{
+  "chars": 586,
+  "hook": "Alaska got more than 500 public comments on a $10 billion North Slope AI data center. Fewer than a dozen said yes.",
+  "hook_len": 114,
+  "hashtags": [
+    "#AlaskaEnergy",
+    "#DataCenters",
+    "#ArcticInfrastructure"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

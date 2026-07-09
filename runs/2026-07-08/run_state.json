@@ -1,0 +1,22 @@
+{
+  "run_date": "2026-07-08",
+  "carousel_no": 1,
+  "run_branch": "tsturg/modest-mccarthy-g7otcl",
+  "phases": {
+    "wake": "done (out/2026-07-08/plan.md)",
+    "craft_refresh": "done (knowledge/FIELD_NOTES.md entry 2026-07-08 craft refresh)",
+    "research": "done (out/2026-07-08/scout_findings/beat-A..F.json)",
+    "claims": "done (out/2026-07-08/claims.json, 85 verified)",
+    "selection": "done (out/2026-07-08/selection.md)",
+    "directors_room": "done (storyboard.md, gate passed; DEGRADED: showrunner-authored, treatment subagents hit session limit)",
+    "copy": "done (caption.txt PASS 586ch, copy.json; DEGRADED: showrunner-authored)",
+    "art_build": "done (9 slides, machine_qa PASS 0 warn/0 err)",
+    "pixel_review": "done (self-review; fixed slides 2,5,7 hard collisions; DEGRADED: critic subagents blocked)",
+    "flow_review": "done (self-review via contact sheet; arc/continuity/rhythm verified)",
+    "assemble": "done (final/carousel.pdf vector 10.75MB, 9pp; contact_sheet + thumbs)",
+    "scoring": "done (round 0: 6.9 capped, slide-3 overlap; round 1 after fixes: 8.64 vs 8.3, SHIP)",
+    "ship": "in_progress",
+    "gmail": "pending",
+    "retro": "pending"
+  }
+}

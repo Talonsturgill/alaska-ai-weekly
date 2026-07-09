@@ -1,0 +1,17 @@
+{
+  "post_copy": "Alaska got more than 500 public comments on a $10 billion North Slope AI data center. Fewer than a dozen said yes.\n\nThe state's comment window on Stak Energy's lease closes July 17. It is only one of four AI infrastructure decisions Alaska is making this month, and it is the only one that takes public comment at all.\n\nThis deck walks through the proposal, the 500 to 12 split, and the four rooms where Alaska's AI future is being decided this July.\n\nShould Alaska's public land and gas power the AI boom, and who should get to decide?\n\n#AlaskaEnergy #DataCenters #ArcticInfrastructure",
+  "hook_chars": 114,
+  "total_chars": 586,
+  "hashtags": ["#AlaskaEnergy", "#DataCenters", "#ArcticInfrastructure"],
+  "first_comment": "Sources:\nAlaska DNR Division of Oil and Gas, Preliminary Decision ADL 422741, comment deadline July 17: https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224\nNorthern Journal, \"Data center critics flood Alaska land managers with opposition\" (Nathaniel Herz, Jul 3): https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/\nNorthern Alaska Environmental Center, Stak lease document analysis: https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/\nU.S. Air Force, \"DAF takes steps for potential Alaskan AI data centers\" (Apr 10): https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/\nFairbanks Daily News-Miner, GVEA weighs a $120M turbine (Jack Barnwell, Jun 28): https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html\nAlaska Beacon via Alaska Public Media, AKLNG tax compromise (Jul 6): https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line\nGot context to add? Reply here.",
+  "document_title": "Alaska's AI Land Rush: Four Rooms, One Open Door",
+  "slide_copy_corrections": [],
+  "aftercare": [
+    "Post next Tuesday to Thursday, 8 to 11am Alaska time; document posts perform best midweek.",
+    "Paste the sources block as the FIRST comment within 60 seconds of posting.",
+    "Reply to every comment in the first 90 minutes; threaded author replies drive reach.",
+    "Check saves and comments at 48 hours; saves matter most for a keepable reference deck like this."
+  ],
+  "claims_used": ["c01", "c02", "c03", "c06", "c07", "c10", "c12", "c13", "c14", "c16", "c17", "c18", "c19", "c20", "c21", "c22", "c23", "c24", "c26", "c27", "c29", "c30", "c31", "c34", "c37", "c38", "c39", "c45", "c46", "c48", "c50", "c56", "c58", "c60", "c78", "c79", "c09"],
+  "authored_note": "DEGRADED: copywriter subagent unavailable (session usage limit). Showrunner authored the caption and slide copy; validated objectively with scripts/caption_check.py (PASS, 586 chars, hook 114). Slide strings live verbatim in storyboard.md with claim-ids."
+}

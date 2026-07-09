@@ -1,6 +1,6 @@
 {
   "_spec": {
-    "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged — name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
+    "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged \u2014 name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
     "entry_schema": {
       "run_date": "YYYY-MM-DD",
       "carousel_no": "int",
@@ -14,9 +14,34 @@
       "palette_family": "e.g. arctic-teal, amber-sodium, roe-orange, ice-mint, violet-dusk",
       "type_pairing": "display + support families and axes used",
       "narrative_structure": "e.g. escalation, tour, argument, timeline, anatomy, versus",
-      "variance_dials": {"design_variance": "1-5", "visual_density": "1-5", "type_temperature": "1-5"},
+      "variance_dials": {
+        "design_variance": "1-5",
+        "visual_density": "1-5",
+        "type_temperature": "1-5"
+      },
       "new_techniques_logged": []
     }
   },
-  "entries": []
+  "entries": [
+    {
+      "run_date": "2026-07-08",
+      "carousel_no": 1,
+      "slide_count": 9,
+      "hero_structure": "Alaska Hero Map (cartographic; camera-state changes across the deck: whole-state -> North Slope zoom -> ground-level 3D -> 4-node abstraction -> Railbelt -> whole-state bookend)",
+      "atmosphere": "Aurora Veil (cover/close) + Mesh Wash (body)",
+      "depth_technique": "Multiplane Parallax, low-horizon North Slope tundra with cabinet-oblique gravel pad + volumetric gas-flare shafts (slide 4)",
+      "line_voice": "instrument/editorial + transit (timeline spine, base network)",
+      "continuity_device": "camera (recurring map changing state) + motif:constellation-corner (Polaris + mono counter + coords)",
+      "hook_archetype": "big-number / named-tension (500 vs fewer than 12)",
+      "palette_family": "arctic-teal + flare-amber (semantic: snow=public, amber=industry/gas, aurora-green=AI/compute, gold=decision/open-door)",
+      "type_pairing": "Fraunces display + Manrope support + JetBrains Mono instrument",
+      "narrative_structure": "escalation-then-widen (argument: four rooms, one open door)",
+      "variance_dials": {
+        "design_variance": 3,
+        "visual_density": 3,
+        "type_temperature": 4
+      },
+      "new_techniques_logged": []
+    }
+  ]
 }

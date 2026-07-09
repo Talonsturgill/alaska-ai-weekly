@@ -1,0 +1,987 @@
+{
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "More than 500 public comments were submitted to Alaska DNR on the Stak Energy lease before the preliminary deadline.",
+      "value": "500+",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "More than 500 public comments were received before a preliminary deadline set by the Alaska Department of Natural Resources.", "primary_source": false},
+        {"url": "https://www.countryjournal2020.com/2026/07/alaskans-say-no-hell-no-to-north-slope.html", "outlet": "Copper River Country Journal (reprinting Herz via Alaska Beacon)", "pub_date": "2026-07-06", "verbatim_quote": "More than 500 public comments were received before a preliminary deadline set by the Alaska Department of Natural Resources.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "ADN (2026-07-07) and Alaska Beacon (2026-07-06) carry the same Herz text but 403 to fetch; cite Northern Journal as canonical."
+    },
+    {
+      "id": "c02",
+      "claim": "Fewer than a dozen of the public comments endorsed the Stak project.",
+      "value": "fewer than 12",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "Fewer than a dozen comments endorsed the project.", "primary_source": false},
+        {"url": "https://www.countryjournal2020.com/2026/07/alaskans-say-no-hell-no-to-north-slope.html", "outlet": "Copper River Country Journal (reprinting Herz)", "pub_date": "2026-07-06", "verbatim_quote": "Fewer than a dozen comments endorsed the project. The vast majority were opposed, often in harsh or strident terms", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c03",
+      "claim": "DNR extended the ADL 422741 public comment deadline to 4:30 p.m. Alaska Daylight Time on July 17, 2026 (extension notice ID 224224).",
+      "value": "2026-07-17 16:30 AKDT",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224", "outlet": "Alaska DNR Division of Oil and Gas (Online Public Notices)", "pub_date": "2026-06-17", "verbatim_quote": "4:30 PM Alaska Daylight Time on July 17, 2026", "primary_source": true},
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "the agency has since extended the deadline an extra month, to July 17", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c04",
+      "claim": "The original comment deadline on the Stak preliminary decision was 4:30 p.m. on June 15, 2026 (original notice ID 223817, published May 12, 2026).",
+      "value": "2026-06-15 16:30 AKDT",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=223817", "outlet": "Alaska DNR Division of Oil and Gas (Online Public Notices)", "pub_date": "2026-05-12", "verbatim_quote": "4:30 PM Alaska Daylight Time on June 15, 2026", "primary_source": true}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c05",
+      "claim": "DNR said it extended the comment period because of significant public interest, comment volume, and requests for extension.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224", "outlet": "Alaska DNR Division of Oil and Gas (Online Public Notices)", "pub_date": "2026-06-17", "verbatim_quote": "Due to the significant public interest in the proposed lease, the Division is extending the public comment period.", "primary_source": true},
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "due to 'the volume of comments received, public interest and requests for extension,' spokesperson Sean Clifton wrote in an email.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c06",
+      "claim": "DNR's Division of Oil and Gas issued a preliminary decision to offer STAK Energy Corporation a 50-year lease.",
+      "value": "50 years",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224", "outlet": "Alaska DNR Division of Oil and Gas (Online Public Notices)", "pub_date": "2026-06-17", "verbatim_quote": "the Department of Natural Resources (DNR), Division of Oil and Gas (Division), has made a Preliminary Decision to offer a 50-year lease", "primary_source": true},
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "Gov. Mike Dunleavy's administration considers whether to approve a 50-year lease of state land to the project's developer.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c07",
+      "claim": "The proposed lease covers a 715.4-acre parcel of state land.",
+      "value": "715.4 acres",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224", "outlet": "Alaska DNR Division of Oil and Gas (Online Public Notices)", "pub_date": "2026-06-17", "verbatim_quote": "715.4 acre parcel", "primary_source": true},
+        {"url": "https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/", "outlet": "Northern Alaska Environmental Center", "pub_date": "2026-05-28", "verbatim_quote": "The project would occupy approximately 715.4 acres of state land", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c08",
+      "claim": "The parcel sits adjacent to the Dalton Highway approximately 26 miles south of Deadhorse.",
+      "value": "~26 miles south of Deadhorse",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224", "outlet": "Alaska DNR Division of Oil and Gas (Online Public Notices)", "pub_date": "2026-06-17", "verbatim_quote": "adjacent to the Dalton Highway approximately 26 miles south of Deadhorse", "primary_source": true},
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "roughly one square mile just off the Dalton Highway, some 25 miles south of the North Slope oil hub of Deadhorse", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Use DNR's 'approximately 26 miles south of Deadhorse' (Herz says 'some 25 miles'); say 'about 26 miles south of Deadhorse, per DNR'. Do not use 'Milepost 390' (unverified)."
+    },
+    {
+      "id": "c09",
+      "claim": "The docket is ADL 422741 with applicant STAK Energy Corporation; notice 223817 (published May 12, 2026) is the original preliminary decision notice and notice 224224 (published June 17, 2026) is the extension notice.",
+      "value": "ADL 422741; notices 223817 and 224224",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=223817", "outlet": "Alaska DNR Division of Oil and Gas (Online Public Notices)", "pub_date": "2026-05-12", "verbatim_quote": "Public Notice of Preliminary Decision: ADL 422741, Land Lease Application, STAK Energy Corporation", "primary_source": true},
+        {"url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224", "outlet": "Alaska DNR Division of Oil and Gas (Online Public Notices)", "pub_date": "2026-06-17", "verbatim_quote": "Public Notice of Preliminary Decision: ADL 422741, Land Lease Application, STAK Energy Corporation", "primary_source": true}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "The DNR Division of Oil and Gas Newsroom also lists the 06/17/2026 notice."
+    },
+    {
+      "id": "c10",
+      "claim": "Stak's John Boyle said the full project would cost more than $10 billion.",
+      "value": "$10 billion+",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "The project, which Boyle said would cost more than $10 billion, would occupy roughly one square mile just off the Dalton Highway", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Attribute: 'a project its developer pegs at more than $10 billion'."
+    },
+    {
+      "id": "c11",
+      "claim": "Stak estimated approximately $500 million for initial site evaluation, engineering, gravel road and pad construction, and initial camp and support infrastructure.",
+      "value": "~$500 million initial",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/", "outlet": "Northern Alaska Environmental Center", "pub_date": "2026-05-28", "verbatim_quote": "STAK has estimated approximately $500 million in site evaluation, engineering, gravel road and pad construction, and initial camp and support infrastructure.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Say 'roughly $500 million in initial work, per state lease documents as read by the Northern Alaska Environmental Center'."
+    },
+    {
+      "id": "c12",
+      "claim": "Stak proposes 1 to 3 gigawatts of on-site natural gas-fired generation.",
+      "value": "1-3 GW",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/", "outlet": "Northern Alaska Environmental Center", "pub_date": "2026-05-28", "verbatim_quote": "STAK proposes 1 to 3 gigawatts of on-site natural gas-fired generation", "primary_source": false},
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "Its generators could produce a gigawatt or more of power", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c13",
+      "claim": "Northern Journal reports that a gigawatt of generation is some 30% more than the peak demand of urban Alaska's entire grid.",
+      "value": "~30% above urban Alaska peak",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "Its generators could produce a gigawatt or more of power, which is some 30% more than the peak demand of urban Alaska's entire grid.", "primary_source": false},
+        {"url": "https://www.countryjournal2020.com/2026/07/alaskans-say-no-hell-no-to-north-slope.html", "outlet": "Copper River Country Journal (reprinting Herz)", "pub_date": "2026-07-06", "verbatim_quote": "Its generators could produce a gigawatt or more of power, which is some 30% more than the peak demand of urban Alaska's entire grid.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Use Herz's exact framing and attribute: 'per Northern Journal, a gigawatt or more, some 30% more than urban Alaska's entire grid peak'. Do not restate as 'Railbelt peak'."
+    },
+    {
+      "id": "c14",
+      "claim": "Lease documents indicate full simple-cycle operation could consume roughly 350 to 500 million standard cubic feet of gas per day.",
+      "value": "350-500 MMcf/day",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/", "outlet": "Northern Alaska Environmental Center", "pub_date": "2026-05-28", "verbatim_quote": "full simple-cycle operation could consume roughly 350 to 500 million standard cubic feet of gas per day.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Attribute: 'per state lease documents, as analyzed by the Northern Alaska Environmental Center'."
+    },
+    {
+      "id": "c15",
+      "claim": "That daily gas burn annualizes to approximately 128 to 183 billion cubic feet per year.",
+      "value": "128-183 Bcf/year",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/", "outlet": "Northern Alaska Environmental Center", "pub_date": "2026-05-28", "verbatim_quote": "Annualized, that equals approximately 128 to 183 billion cubic feet per year.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Same attribution as c14. Math checks: 350-500 MMcf/day x 365 = 127.8-182.5 Bcf/yr."
+    },
+    {
+      "id": "c16",
+      "claim": "The project would require roughly 7.1 million cubic yards of gravel fill.",
+      "value": "7.1 million cubic yards",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/", "outlet": "Northern Alaska Environmental Center", "pub_date": "2026-05-28", "verbatim_quote": "The project would require roughly 7.1 million cubic yards of gravel fill to build a stable working surface over permafrost.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Attribute: 'per state lease documents, as analyzed by the Northern Alaska Environmental Center'."
+    },
+    {
+      "id": "c17",
+      "claim": "Plans include a roughly 640-acre gravel pad.",
+      "value": "~640 acres",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/", "outlet": "Northern Alaska Environmental Center", "pub_date": "2026-05-28", "verbatim_quote": "a roughly 640-acre gravel pad", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Same attribution as c14."
+    },
+    {
+      "id": "c18",
+      "claim": "Plans include a 1.8-mile gravel access road.",
+      "value": "1.8 miles",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://northern.org/news/stak-energy-campus-what-the-states-lease-documents-reveal-about-scale-risk-and-unanswered-questions/", "outlet": "Northern Alaska Environmental Center", "pub_date": "2026-05-28", "verbatim_quote": "a 1.8-mile gravel access road", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Same attribution as c14."
+    },
+    {
+      "id": "c19",
+      "claim": "John Boyle said most comments were form letters lacking substance.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "Our initial assessment is that the vast majority of the comments are form letters lacking substance", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "Quote exactly; it is his 'initial assessment' framing."
+    },
+    {
+      "id": "c20",
+      "claim": "John Boyle is Stak's chief strategy officer and previously served as commissioner of Alaska's Department of Natural Resources from 2023 to 2025.",
+      "value": "2023-2025",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "John Boyle, Stak's chief strategy officer, who previously served as commissioner of Alaska's natural resources department from 2023 to 2025", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c21",
+      "claim": "Opposition comments carried subject lines including 'HELL NO! To ANY DATA CENTERS' and 'NO AI'.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.countryjournal2020.com/2026/07/alaskans-say-no-hell-no-to-north-slope.html", "outlet": "Copper River Country Journal (reprinting Herz)", "pub_date": "2026-07-06", "verbatim_quote": "with subject lines like 'HELL NO! To ANY DATA CENTERS' and 'NO AI'", "primary_source": false},
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "HELL NO! To ANY DATA CENTERS", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c22",
+      "claim": "One commenter urged the state to 'incorporate some AI (Alaskan intelligence) into making this decision'.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "Please incorporate some AI (Alaskan intelligence) into making this decision", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c23",
+      "claim": "One commenter noted their message was written 'with my own brain and fingers typing'.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "One commenter noted explicitly that their message had been written 'with my own brain and fingers typing,'", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c24",
+      "claim": "Comments arrived from Kodiak, Kotzebue, Seward, Valdez, and the North Slope village of Nuiqsut.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "from Kodiak and Kotzebue to Seward, Valdez and the North Slope village of Nuiqsut", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c25",
+      "claim": "Formal opposition or concern also came from the Northern Alaska Environmental Center, the Alaska Public Interest Research Group, and the Alaska chapter of Backcountry Hunters and Anglers.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "came in from groups including the Northern Alaska Environmental Center, the Alaska Public Interest Research Group and the Alaska chapter of a sportsman's group called Backcountry Hunters and Anglers.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c26",
+      "claim": "According to Stak, average annual temperatures at the proposed site are 12 F.",
+      "value": "12 F",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "Average annual temperatures at the proposed project site, according to Stak, are 12 F", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Always attribute: 'according to Stak'."
+    },
+    {
+      "id": "c27",
+      "claim": "Stak expects the development to need 10% or less of the water that typical data centers use for cooling.",
+      "value": "10% or less",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "the development is expected to need 10% or less of the amount of water that typical data centers use for cooling.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Say '10% or less' (not 'about 10%'), attributed to Stak."
+    },
+    {
+      "id": "c28",
+      "claim": "After the deadline passes, DNR will assess the comments before making a final decision on the lease.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "Once the deadline passes, the agency will assess the comments before it makes a final decision on the proposed land lease, Clifton said.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c29",
+      "claim": "Stak said in a statement that it 'is committed to being a responsible steward of the land entrusted to us'.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/", "outlet": "Northern Journal", "pub_date": "2026-07-03", "verbatim_quote": "is committed to being a responsible steward of the land entrusted to us", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "Useful for balance beside c19."
+    },
+    {
+      "id": "c30",
+      "claim": "The Department of the Air Force is offering approximately 4,700 acres of underutilized land at JBER, Eielson AFB, and Clear Space Force Station for AI data centers.",
+      "value": "~4,700 acres",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/", "outlet": "U.S. Air Force (official release)", "pub_date": "2026-04-10", "verbatim_quote": "The DAF is offering approximately 4,700 acres of underutilized land across Joint Base Elmendorf-Richardson, Eielson Air Force Base, and Clear Space Force Station.", "primary_source": true},
+        {"url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/", "outlet": "Air & Space Forces Magazine", "pub_date": "2026-04-11", "verbatim_quote": "4,700 acres located across Air Force and Space Force installations in Alaska", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "Program facts date from April 2026; label as background context to the June 29 deadline event."
+    },
+    {
+      "id": "c31",
+      "claim": "Twelve parcels have been identified for potential development under the program.",
+      "value": "12 parcels",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/", "outlet": "U.S. Air Force (official release)", "pub_date": "2026-04-10", "verbatim_quote": "Twelve parcels have been identified for potential development.", "primary_source": true},
+        {"url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/", "outlet": "Air & Space Forces Magazine", "pub_date": "2026-04-11", "verbatim_quote": "Twelve parcels have been identified for potential development", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c32",
+      "claim": "The Air Force announced the Alaska AI data center Enhanced Use Lease opportunity on April 10, 2026.",
+      "value": "2026-04-10",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/", "outlet": "U.S. Air Force (official release)", "pub_date": "2026-04-10", "verbatim_quote": "Under the Enhanced Use Lease model, the service leases non-excess property to partners for long-term commercial use.", "primary_source": true},
+        {"url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/", "outlet": "Air & Space Forces Magazine", "pub_date": "2026-04-11", "verbatim_quote": "April 10 announcement", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "Background label (pre-window)."
+    },
+    {
+      "id": "c33",
+      "claim": "The Air Force released its Request for Lease Proposal on June 5, 2026.",
+      "value": "2026-06-05",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/", "outlet": "Alaska's News Source", "pub_date": "2026-06-08", "verbatim_quote": "Having released a Request for Lease Proposal (RFLP) on June 5", "primary_source": false},
+        {"url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-11", "verbatim_quote": "The June 5 release of the RFLP has some residents concerned about potential impacts", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "Note: April reporting cited an earlier May 29 proposal date; the operative RFLP deadline per June reporting is June 29."
+    },
+    {
+      "id": "c34",
+      "claim": "Developer lease proposals were due June 29, 2026.",
+      "value": "2026-06-29",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-11", "verbatim_quote": "Responses to the Air Force's Request for Lease Proposals are due by June 29.", "primary_source": false},
+        {"url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/", "outlet": "Alaska's News Source", "pub_date": "2026-06-08", "verbatim_quote": "With a June 29 deadline for interested companies to present their offers", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "No fetched source reports what proposals arrived after June 29; do not state an outcome."
+    },
+    {
+      "id": "c35",
+      "claim": "The RFLP identifies five potential parcels in the Eielson AFB area.",
+      "value": "5 parcels",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-11", "verbatim_quote": "The RFLP identifies five potential spots in the Eielson area: one near southeast North Pole, two plots across the Richardson Highway from Eielson, one smack dab in the middle of the installation and one on the installation's north side.", "primary_source": false},
+        {"url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/", "outlet": "Alaska's News Source", "pub_date": "2026-06-08", "verbatim_quote": "In the area of Eielson Air Force Base, five parcels of land are referenced in the RFLP for potential development", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c36",
+      "claim": "Four parcels are under consideration around Clear Space Force Station, including one that would connect to the GVEA grid from the Parks Highway.",
+      "value": "4 parcels",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-11", "verbatim_quote": "Four parcels are considered for lease around Clear Space Force Base, including one that would be connected to the GVEA grid from the Parks Highway.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Single outlet; say 'per the Fairbanks Daily News-Miner'. Source text says 'Clear Space Force Base'; official name is Clear Space Force Station."
+    },
+    {
+      "id": "c37",
+      "claim": "One Eielson-area parcel is less than a mile from North Pole Middle School.",
+      "value": "<1 mile",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-11", "verbatim_quote": "One is less than a mile from North Pole Middle School.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "The line appears in resident-concern context; phrase as 'one sits less than a mile from North Pole Middle School, residents noted, per the News-Miner'."
+    },
+    {
+      "id": "c38",
+      "claim": "Resident Sarah Hollister said living near data centers is described as like having a vacuum cleaner running around the clock.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/", "outlet": "Alaska's News Source", "pub_date": "2026-06-08", "verbatim_quote": "People say living close to them, it's like having a vacuum cleaner on 24 hours a day, seven days a week.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "Quote exactly as above; scouts' 'vacuum cleaner on 24/7' paraphrase is NOT the verbatim."
+    },
+    {
+      "id": "c39",
+      "claim": "Sarah Hollister raised concern about data center heat discharge affecting permafrost.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/", "outlet": "Alaska's News Source", "pub_date": "2026-06-08", "verbatim_quote": "Another huge concern I have is data centers tend to let off a ton of heat, and what can that do to our permafrost?", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c40",
+      "claim": "Hollister pointed out that three of the proposed sites would be expected to use the GVEA grid and asked whether that would affect members' bills.",
+      "value": "3 sites",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/", "outlet": "Alaska's News Source", "pub_date": "2026-06-08", "verbatim_quote": "Hollister further pointed out that three of the proposed sites would be expected to use the Golden Valley Electric Association grid and asked whether that would impact members' bills.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Attribute to the resident, not to GVEA or the Air Force."
+    },
+    {
+      "id": "c41",
+      "claim": "JBER commander Col. Lisa Mabbutt said Alaska is expected to receive up to $8 billion in Air Force investments over the next five years.",
+      "value": "up to $8 billion / 5 years",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.executivegov.com/articles/matthew-lohmeier-air-force-visit-alaska-jber-eielson", "outlet": "ExecutiveGov", "pub_date": "2026-06-26", "verbatim_quote": "Over the next five years, the state is expected to receive up to $8 billion in investments from the Air Force, according to Air Force Col. Lisa Mabbutt, who serves as commander of JBER.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Projection, single fetched outlet: say 'up to $8 billion expected over five years, per JBER commander Col. Lisa Mabbutt'. Never drop 'up to'."
+    },
+    {
+      "id": "c42",
+      "claim": "Under Secretary of the Air Force Matthew Lohmeier toured JBER and Eielson AFB June 22 through 24, 2026.",
+      "value": "2026-06-22 to 2026-06-24",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.executivegov.com/articles/matthew-lohmeier-air-force-visit-alaska-jber-eielson", "outlet": "ExecutiveGov", "pub_date": "2026-06-26", "verbatim_quote": "toured Joint Base Elmendorf-Richardson and Eielson Air Force Base from June 22 through 24", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Single fetched outlet; use 'per ExecutiveGov' or as minor context only."
+    },
+    {
+      "id": "c43",
+      "claim": "GVEA recommended that any major loads be connected to its 138-kilovolt line.",
+      "value": "138 kV",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-11", "verbatim_quote": "GVEA recommended that any major loads be connected to its 138-kilovolt line.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Single outlet; 'per the News-Miner'."
+    },
+    {
+      "id": "c44",
+      "claim": "The Air Force plans to choose proposals that minimize and mitigate impact and risk to the surrounding community, with utilities remaining accessible and affordable.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/", "outlet": "Air & Space Forces Magazine", "pub_date": "2026-04-11", "verbatim_quote": "plans to choose proposals that 'minimize and mitigate impact and risk...to the surrounding community'", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Fetched quote contains an ellipsis; paraphrase rather than quote: 'selection criteria include minimizing community impact and keeping utilities accessible and affordable, per Air & Space Forces Magazine'."
+    },
+    {
+      "id": "c45",
+      "claim": "GVEA's board will weigh whether to invest in a fuel-based generator during an executive session on July 13, 2026.",
+      "value": "2026-07-13",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-28", "verbatim_quote": "The Golden Valley Electric Association Board of Directors will weigh options on whether to invest in a fuel-based generator during an executive session on July 13.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Single fetched outlet (gvea.com 403s): say 'per the Fairbanks Daily News-Miner'. It weighs options; do not say a vote outcome is scheduled."
+    },
+    {
+      "id": "c46",
+      "claim": "A new LM6000 unit would cost GVEA about $120 million.",
+      "value": "~$120 million",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-28", "verbatim_quote": "about $120 million for a new unit", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "'roughly $120 million, per the News-Miner'."
+    },
+    {
+      "id": "c47",
+      "claim": "An LM6000 can generate between 45 and 58 megawatts depending on the model.",
+      "value": "45-58 MW",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-28", "verbatim_quote": "An LM6000 can generate between 45 megawatts and 58 megawatts of power, depending on the model.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c48",
+      "claim": "Costs to construct a new gas turbine power plant jumped 195% from 2019 to 2026, per a Bloomberg News report cited by the News-Miner.",
+      "value": "195% since 2019",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-28", "verbatim_quote": "Costs to construct a new gas turbine power plant jumped by 195% from 2019 to this year, prompting a waitlist that pushed into the early 2030s.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Attribute: 'according to a Bloomberg News report' (the News-Miner's cited source)."
+    },
+    {
+      "id": "c49",
+      "claim": "Turbine order waitlists have pushed into the early 2030s, per a Bloomberg News report cited by the News-Miner.",
+      "value": "early 2030s",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-28", "verbatim_quote": "prompting a waitlist that pushed into the early 2030s", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Attribute: 'according to a Bloomberg News report'."
+    },
+    {
+      "id": "c50",
+      "claim": "Demand for the turbine units has increased due to a surge in large data centers that require a guaranteed power supply, per a Bloomberg News report.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-28", "verbatim_quote": "Demand for the units has increased due to a surge in large data centers that require a guaranteed power supply, according to a Bloomberg News report.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Keep the Bloomberg attribution in the copy."
+    },
+    {
+      "id": "c51",
+      "claim": "At its April 2026 board meeting, GVEA approved $50,000 to reserve an order spot for an LM6000 combined-cycle turbine.",
+      "value": "$50,000",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html", "outlet": "Fairbanks Daily News-Miner", "pub_date": "2026-06-28", "verbatim_quote": "The option to purchase an LM6000 combined-cycle fuel turbine was put on the table at GVEA's April board meeting, where it approved $50,000 to reserve an order spot.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "'per the News-Miner'."
+    },
+    {
+      "id": "c52",
+      "claim": "GVEA's fuel and purchased power charge rose by about 61 percent effective June 1, 2026.",
+      "value": "~61% on 2026-06-01",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://fm.kuac.org/energy-and-the-environment/2026-05-28/gvea-plans-extraordinarily-large-increase-in-co-op-fuel-charge", "outlet": "KUAC", "pub_date": "2026-05-28", "verbatim_quote": "the charge will go up by about 61 percent", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Single fetched outlet quoting GVEA officials (gvea.com 403s): say 'GVEA told KUAC' or 'according to KUAC'."
+    },
+    {
+      "id": "c53",
+      "claim": "The increase costs the average residential member nearly $46 more per month.",
+      "value": "~$46/month",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://fm.kuac.org/energy-and-the-environment/2026-05-28/gvea-plans-extraordinarily-large-increase-in-co-op-fuel-charge", "outlet": "KUAC", "pub_date": "2026-05-28", "verbatim_quote": "cost the average residential nearly $46 more per month", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Say 'nearly $46', not '$46'; attribute per KUAC."
+    },
+    {
+      "id": "c54",
+      "claim": "GVEA's power plant fuel prices roughly doubled from about $2.50 to $5.10 per gallon.",
+      "value": "$2.50 to $5.10/gallon",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://fm.kuac.org/energy-and-the-environment/2026-05-28/gvea-plans-extraordinarily-large-increase-in-co-op-fuel-charge", "outlet": "KUAC", "pub_date": "2026-05-28", "verbatim_quote": "fuel prices were about $2.50 a gallon for what we were buying for our power plants. Fast-forward to today, it's $5.10 per gallon", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "A GVEA official told KUAC (speaker name not captured on fetch). Note KUAC cites cold weather, lost Southcentral gas power, and war-driven diesel prices as causes; the turbine and data centers are NOT in this article. Do not attribute the fuel-charge jump to data centers."
+    },
+    {
+      "id": "c55",
+      "claim": "House-Senate conference committee members unveiled a draft compromise AKLNG tax bill on Thursday, July 2, 2026.",
+      "value": "2026-07-02",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "unveiled a draft compromise bill on Thursday for the proposed Alaska LNG gas line project", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Article (published Monday July 6) says 'on Thursday', i.e., July 2; if precision matters say 'unveiled last week' or 'on Thursday, July 2'."
+    },
+    {
+      "id": "c56",
+      "claim": "The draft compromise would replace the state's property tax with a volumetric tax on gas after five years of operation or once flow reaches 500 million cubic feet per day, whichever comes first.",
+      "value": "5 years or 500 MMcf/day",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "would replace the state's property tax with a volumetric tax on the gas flowing through the gas line after five years, or when the gas flow reaches 500 million cubic feet per day, whichever comes first.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "It is a draft, not law: 'under the draft compromise'."
+    },
+    {
+      "id": "c57",
+      "claim": "The draft extends the construction completion deadline for the gas line and phase one from 2032 to December 31, 2034.",
+      "value": "2032 to 2034-12-31",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "extending a deadline for construction to be completed on the gas line and phase one from 2032 to December 31, 2034.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "'under the draft compromise'."
+    },
+    {
+      "id": "c58",
+      "claim": "Phase one of the project is an 807-mile gas line from the North Slope to Cook Inlet.",
+      "value": "807 miles",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "an 807-mile gas line from the North Slope to Cook Inlet", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c59",
+      "claim": "Glenfarne owns 75% of the Alaska LNG project.",
+      "value": "75%",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "Glenfarne, which owns 75% of the project", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c60",
+      "claim": "Lawmakers are tentatively planning House and Senate floor votes on the compromise bill for Thursday, July 16, 2026.",
+      "value": "2026-07-16",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "tentatively planning for the compromise bill to go before the House and Senate for a full vote on Thursday, July 16.", "primary_source": false},
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-01/state-lawmakers-delay-vote-on-alaska-lng-tax-bill-until-mid-july", "outlet": "Alaska Public Media", "pub_date": "2026-07-01", "verbatim_quote": "They're now planning a final vote for July 16.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Keep 'tentatively planned'; the earlier July 1 vote target already slipped once."
+    },
+    {
+      "id": "c61",
+      "claim": "Lawmakers are in a second special session called by Gov. Mike Dunleavy, scheduled to end July 19, 2026.",
+      "value": "ends 2026-07-19",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "lawmakers are now in a second special session called by Gov. Mike Dunleavy", "primary_source": false},
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "The special session is scheduled to end on July 19.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "Say 'second special session'; do NOT say 'in session since June 20' (unverified; the original bill passed in an earlier June special session)."
+    },
+    {
+      "id": "c62",
+      "claim": "Dunleavy has called the corporate income tax provision a 'poison pill' and pledged to veto any bill that includes it.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "Dunleavy has called the tax a 'poison pill' and pledged to veto any bill that includes it.", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c63",
+      "claim": "The governor and the developer have said the S corp tax in the draft will hurt the project's ability to secure financing.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "pub_date": "2026-07-06", "verbatim_quote": "it still contains the S corp tax that the governor and the developer have said will hurt the project's ability to secure financing", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Attribute the financing-harm view to the governor and Glenfarne, not as fact."
+    },
+    {
+      "id": "c64",
+      "claim": "On the Wood River, an automated drone emerges from its box at exactly 8:30 a.m. and takes off on an automated flight path.",
+      "value": "8:30 a.m.",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "At exactly 8:30 a.m., the box opens and a drone emerges. It quickly takes off on an automated flight path", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c65",
+      "claim": "The team expects to need several thousand drone images for the computer-vision model to learn to reliably identify a fish.",
+      "value": "several thousand images",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "they'll likely need several thousand drone images for the model to learn how to reliably identify a fish", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Keep 'likely need several thousand'; it is an estimate, not a completed count."
+    },
+    {
+      "id": "c66",
+      "claim": "Alaska Fish and Game has been tracking salmon escapement since 1955.",
+      "value": "since 1955",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "the department has been tracking salmon escapement since 1955", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "Say 'since 1955'; do not convert to '71 years'."
+    },
+    {
+      "id": "c67",
+      "claim": "Tower technicians count each passing salmon with a hand-clicker in 10-minute intervals.",
+      "value": "10-minute intervals",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "counting each salmon that swims by with a hand-clicker in 10 minute intervals", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c68",
+      "claim": "Tower crews rotate through continuous shifts over 24 hours.",
+      "value": "24-hour rotation",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "rotate through continuous shifts over 24-hours", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c69",
+      "claim": "Most escapement counts across Bristol Bay currently come from nine Fish and Game counting tower sites.",
+      "value": "9 sites",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "Most escapement counts across the Bay currently come from nine Fish & Game counting tower sites", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c70",
+      "claim": "The pilot is run with the University of Washington's Fisheries Research Institute, the Bristol Bay Regional Seafood Development Association, and the Bristol Bay Economic Development Corporation.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "University of Washington's Fisheries Research Institute", "primary_source": false},
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "Bristol Bay Regional Seafood Development Association and Bristol Bay Economic Development Corporation", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c71",
+      "claim": "Norm Van Vactor is a project lead on the drone counting pilot.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "a project lead", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Identify him only as 'a project lead' per KDLG; his fuller bio was not captured on fetch."
+    },
+    {
+      "id": "c72",
+      "claim": "In the project's next phase, the crew will test their models against Fish and Game tower counting data.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "outlet": "Alaska Public Media / KDLG", "pub_date": "2026-07-08", "verbatim_quote": "The crew will test their models against Fish & Game tower counting data in the project's next phase", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c73",
+      "claim": "BBRSDA's drone salmon-monitoring project received a $70,000 Seafood Industry Climate Award grant from the Acme Smoked Fish Foundation.",
+      "value": "$70,000",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://acmesmokedfish.com/pages/seafood-and-climate-initiatives", "outlet": "Acme Smoked Fish Foundation (funder)", "pub_date": "2026-01-26", "verbatim_quote": "Each winner will receive a $70,000 grant", "primary_source": true},
+        {"url": "https://perishablenews.com/seafood/acme-smoked-fish-foundation-announces-2025-seafood-industry-climate-award-recipients/", "outlet": "Perishable News", "pub_date": "2026-01-26", "verbatim_quote": "Each will receive a $70,000 grant to advance solutions with clear implementation pathways", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": "It is a 2025 award named on the funder's page; label as background context to the 2026 pilot."
+    },
+    {
+      "id": "c74",
+      "claim": "According to the funder, the drone project enables managers to detect salmon run timing up to 24 hours earlier.",
+      "value": "up to 24 hours earlier",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://acmesmokedfish.com/pages/seafood-and-climate-initiatives", "outlet": "Acme Smoked Fish Foundation (funder)", "pub_date": "2026-01-26", "verbatim_quote": "the project enables managers to detect salmon run timing up to 24 hours earlier and make more precise harvest decisions", "primary_source": true}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Funder's claim, absent from KDLG reporting: 'up to 24 hours earlier, according to the Acme Smoked Fish Foundation, which funds the pilot'."
+    },
+    {
+      "id": "c75",
+      "claim": "The 2026 preseason forecast expects a Bristol Bay total run of 44.05 million sockeye.",
+      "value": "44.05 million",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.kdlg.org/show/bristol-bay-fisheries-report/2026-07-02/fish-numbers-july-2-2026", "outlet": "KDLG Bristol Bay Fisheries Report", "pub_date": "2026-07-02", "verbatim_quote": "The forecast this year expects a total run of 44.05 million sockeye.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "It is a forecast; say 'forecast'. Use 44.05 million, not 44.1."
+    },
+    {
+      "id": "c76",
+      "claim": "The Bristol Bay run had reached 17,011,218 sockeye through July 1, 2026, as reported July 2.",
+      "value": "17,011,218",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.kdlg.org/show/bristol-bay-fisheries-report/2026-07-02/fish-numbers-july-2-2026", "outlet": "KDLG Bristol Bay Fisheries Report", "pub_date": "2026-07-02", "verbatim_quote": "Escapement yesterday was 822,907 fish, bringing the run so far to 17,011,218 sockeye.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Time-stamp it: 'through July 1, per KDLG's July 2 report'; the number rises daily."
+    },
+    {
+      "id": "c77",
+      "claim": "Wood River tower crews counted 123,489 sockeye on Wednesday, July 1, bringing their cumulative count to 1,884,747 fish.",
+      "value": "123,489 on 2026-07-01",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.kdlg.org/show/bristol-bay-fisheries-report/2026-07-02/fish-numbers-july-2-2026", "outlet": "KDLG Bristol Bay Fisheries Report", "pub_date": "2026-07-02", "verbatim_quote": "The Wood River tower crews counted 123,489 sockeye on Wednesday, making their total count 1,884,747 fish", "primary_source": false}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c78",
+      "claim": "Alaska's 2026 primary election is August 18, 2026.",
+      "value": "2026-08-18",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://en.wikipedia.org/wiki/2026_Alaska_gubernatorial_election", "outlet": "Wikipedia", "pub_date": "n.d.", "verbatim_quote": "the primary election will occur on August 18, 2026 as a nonpartisan blanket primary", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Tertiary source (Ballotpedia and elections.alaska.gov failed to fetch); use only as a date peg, not as a load-bearing fact."
+    },
+    {
+      "id": "c79",
+      "claim": "Incumbent Gov. Mike Dunleavy is term-limited and ineligible to seek a third consecutive term.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://en.wikipedia.org/wiki/2026_Alaska_gubernatorial_election", "outlet": "Wikipedia", "pub_date": "n.d.", "verbatim_quote": "Incumbent Governor Mike Dunleavy is term-limited and ineligible to seek a third consecutive term.", "primary_source": false}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Tertiary source; same caution as c78."
+    },
+    {
+      "id": "c80",
+      "claim": "Alaska saw over 9,000 lightning strikes in a single day in late June 2026, amid a week of prolific lightning.",
+      "value": "9,000+ strikes",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://akfireinfo.com/2026/06/26/air-resources-assist-with-several-new-lightning-fires-managed-by-u-s-wildland-fire-service/", "outlet": "Alaska Wildland Fire Information (interagency)", "pub_date": "2026-06-26", "verbatim_quote": "With prolific lightning across the state for over a week, including over 9,000 strikes yesterday", "primary_source": true}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Background label (published June 26, just before window; 'yesterday' = June 25). Say 'in late June', not 'on June 26'."
+    },
+    {
+      "id": "c81",
+      "claim": "A U.S. Forest Service Uncrewed Aircraft System module from Boise, Idaho was assigned to fly reconnaissance, mapping, and infrared missions on the Polly Fire.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://akfireinfo.com/2026/06/26/air-resources-assist-with-several-new-lightning-fires-managed-by-u-s-wildland-fire-service/", "outlet": "Alaska Wildland Fire Information (interagency)", "pub_date": "2026-06-26", "verbatim_quote": "A U.S. Forest Service Uncrewed Aircraft System Module from Boise, Idaho, has been assigned to the incident", "primary_source": true},
+        {"url": "https://akfireinfo.com/2026/06/26/air-resources-assist-with-several-new-lightning-fires-managed-by-u-s-wildland-fire-service/", "outlet": "Alaska Wildland Fire Information (interagency)", "pub_date": "2026-06-26", "verbatim_quote": "conduct reconnaissance, mapping, and infrared flights", "primary_source": true}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Background label (June 26)."
+    },
+    {
+      "id": "c82",
+      "claim": "The Cecil Fire is approximately 724 acres and 100% contained, with 18 personnel assigned, as of July 6, 2026.",
+      "value": "724 acres, 100%",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://akfireinfo.com/2026/07/06/cecil-fire-reaches-full-containment-big-fire-at-70-as-work-nears-end/", "outlet": "Alaska Wildland Fire Information (interagency)", "pub_date": "2026-07-06", "verbatim_quote": "The Cecil Fire is approximately 724 acres and is 100% contained, with 18 personnel assigned.", "primary_source": true}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c83",
+      "claim": "A UAS drone flight on July 6, 2026 detected no remaining heat on the Cecil Fire.",
+      "value": "2026-07-06",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://akfireinfo.com/2026/07/06/cecil-fire-reaches-full-containment-big-fire-at-70-as-work-nears-end/", "outlet": "Alaska Wildland Fire Information (interagency)", "pub_date": "2026-07-06", "verbatim_quote": "a UAS drone flight today detected no remaining heat.", "primary_source": true}
+      ],
+      "needs_softening": false,
+      "suggested_phrasing": ""
+    },
+    {
+      "id": "c84",
+      "claim": "A permafrost digital twin under a Utqiagvik road embankment was built from a pair of one-kilometer fiber-optic cables that collected temperature and seismic data from September 2021 to June 2024.",
+      "value": "2x 1 km cables; 2021-09 to 2024-06",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost", "outlet": "Penn State University (news release)", "pub_date": "2026-06-16", "verbatim_quote": "A short section of these cables is along a road embankment, which collected temperature and seismic data from September 2021 to June 2024.", "primary_source": true}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Background label (June 16, pre-window)."
+    },
+    {
+      "id": "c85",
+      "claim": "The digital twin approach more accurately predicted the embankment permafrost's unfrozen water content, ground temperature changes, and heat movement.",
+      "value": "",
+      "status": "verified",
+      "evidence": [
+        {"url": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost", "outlet": "Penn State University (news release)", "pub_date": "2026-06-16", "verbatim_quote": "predict detailed physical properties of the embankment's permafrost, including unfrozen water content, changes to ground temperature and how heat moved through the ground", "primary_source": true}
+      ],
+      "needs_softening": true,
+      "suggested_phrasing": "Background label; research claim, phrase as 'researchers report'."
+    }
+  ],
+  "stories_surviving": [
+    "Stak Energy North Slope AI data center lease (ADL 422741): 500-plus comment flood, deadline extended to July 17",
+    "Air Force Enhanced Use Lease AI data centers at JBER, Eielson, and Clear: proposals closed June 29",
+    "GVEA weighs a roughly $120 million LM6000 turbine July 13 amid AI-data-center-driven turbine cost surge",
+    "AKLNG special session: July 2 draft tax compromise, tentative July 16 floor votes",
+    "Bristol Bay AI sockeye counting: drone-in-a-box and computer vision on the Wood River",
+    "Background: Interior Alaska wildfire UAS operations (lightning siege recon, Cecil Fire heat check)"
+  ],
+  "kill_log": [
+    {"claim": "Stak site is at Dalton Highway Milepost 390", "why_killed": "No fetched page contains Milepost 390. DNR notice says 'adjacent to the Dalton Highway approximately 26 miles south of Deadhorse'; Herz says 'some 25 miles south'. Use c08 instead."},
+    {"claim": "The Stak project could consume twice as much natural gas as urban Alaska's grid (Herz dek: 'The $500 million project could consume twice as much natural gas as urban Alaska's grid')", "why_killed": "Returned by only one extraction pass and not reproduced on the reprint check; its '$500 million project' subject conflicts with the verified more-than-$10-billion figure. Unstable; use c14/c15 gas figures and the c13 power comparison instead."},
+    {"claim": "Sarah Hollister said 'noise doesn't stop at property lines. Permafrost and sinkholes don't stop at property lines'", "why_killed": "Quote not found on either fetched carrier (Alaska's News Source June 8 or News-Miner June 11). Verbatim rule for named-person quotes fails."},
+    {"claim": "Air Force Alaska Enhanced Use Leases can run up to 50 years", "why_killed": "Air & Space Forces Magazine applies 'up to 50 years' to five other installations announced in October, not the Alaska parcels; no fetched source states an Alaska lease term."},
+    {"claim": "The AKLNG special session has run since June 20, 2026", "why_killed": "No fetched page gives a June 20 start; the fetched July 6 article says lawmakers are in a SECOND special session scheduled to end July 19, and the original bill passed in an earlier June special session. Superseded by c61."},
+    {"claim": "GVEA members pushed back at the May 28 board meeting (naphtha, debt, air quality)", "why_killed": "Member air-quality and fuel-exposure concerns appear in the News-Miner piece, but the May 28 meeting date was not confirmed on any fetched page."},
+    {"claim": "Begich commits to agency-level AI strategies within his first 90 days ('Alaska should not be last to act')", "why_killed": "No carrier page fetchable: adn.com 403, News-Miner syndicated copy 429 on three attempts, web.archive.org blocked, Juneau Independent survey page truncates. Verbatim rule fails."},
+    {"claim": "McGuire proposes human sign-off on all public-facing AI outputs", "why_killed": "Same as above: no fetchable page carries the quote."},
+    {"claim": "DeVries urged black-box bans and disclosed she used AI to write her survey answer", "why_killed": "Same as above: no fetchable page carries the claim."},
+    {"claim": "Kreiss-Tomkins: 'the AI industry has downplayed the risks posed to the public'", "why_killed": "Same as above: named-person quote not found on any fetched page."},
+    {"claim": "Hughes: 'AI should work for us, not against us'", "why_killed": "Same as above: named-person quote not found on any fetched page."},
+    {"claim": "Governor's race AI survey story (7 candidates, spectrum of positions)", "why_killed": "Fewer than 3 verified claims survive (only the Aug 18 primary and Dunleavy term-limit pegs, c78-c79, both from a tertiary source). Story cannot carry a slide this run without a manual read of the ADN/News-Miner op-ed or Juneau Independent survey."},
+    {"claim": "2026 Bristol Bay forecast is 44.1 million sockeye", "why_killed": "Fetched KDLG figure is 44.05 million (c75); the 44.1 variant is imprecise."},
+    {"claim": "ADF&G has hand-counted for '71 years'", "why_killed": "Fetched source says 'since 1955'; per instructions use the source's phrasing (c66), not a derived year count."},
+    {"claim": "GVEA CEO's July 2026 message confirms the July 13 LM6000 agenda (gvea.com)", "why_killed": "gvea.com returns 403 to fetch; could not verify. July 13 session survives via News-Miner (c45) with attribution softening."},
+    {"claim": "Air Force RFLP requires offerors to show they will not degrade community energy, water, or bandwidth", "why_killed": "Not found on the fetched af.mil release; nearest verified language is the softened selection-criteria claim c44 from Air & Space Forces Magazine."}
+  ]
+}
