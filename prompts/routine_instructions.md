@@ -46,8 +46,8 @@ maintainer can post in ninety seconds.
   `ledger/instincts.json` — read at wake, append at retro — plus
   `ledger/upgrades.json`, the automation-change trail appended by
   Phase 12 and surfaced in every Gmail draft, and `ledger/docket.json`,
-  the public Alaska AI Docket maintained in Phase 3.5 and published from
-  docs/ by scripts/docket_build.py.
+  the public Alaska AI Docket maintained in Phase 3.5 and published as
+  part of the full site that scripts/site_build.py writes into docs/.
 - Engine: `.claude/skills/carousel-engine/` (SKILL.md = slide contract,
   render.py, qa.py, assemble.py, bootstrap.sh). Art libraries and geodata
   under `assets/` (see SKILL.md).
@@ -294,10 +294,12 @@ Save `out/<date>/score_report.json`.
    storyboard.md, claims.json, copy.json, caption.txt + caption_report.json,
    score_report.json, machine_qa.json, assemble_report.json, selection.md,
    plan.md, run_state.json.
-2. Rebuild the public docket site and commit it with the run:
-   `python scripts/docket_build.py --date <date>` (it validates
-   ledger/docket.json and refuses banned punctuation; a FAIL here blocks
-   the ship until fixed). docs/ changes ride the run commit; the Pages
+2. Rebuild the public site (home, docket, archive, per-deck pages, about)
+   and commit it with the run: `python scripts/site_build.py --date <date>`
+   (it validates ledger/docket.json, reads runs/ for the archive, and
+   refuses banned punctuation on every page; a FAIL here blocks the ship
+   until fixed). Because the archive reads runs/, run it AFTER step 1
+   copies runs/<date>/. docs/ changes ride the run commit; the Pages
    workflow republishes on merge.
 3. Append this run's entries to ledger/topics.json and ledger/artwork.json
    (full schemas), and 1-3 new instincts to ledger/instincts.json
@@ -433,7 +435,7 @@ learned, and the one thing to improve next run. Mark run_state complete.
 2. runs/<date>/ merged to main with all artifacts; ledgers updated
    (including upgrades.json, possibly with zero new entries, and
    docket.json with the day's tracker state); docs/ rebuilt by
-   docket_build.py; run_state complete.
+   site_build.py; run_state complete.
 3. score_report.json at/above threshold OR an explicit, honest shortfall
    note in the email.
 4. carousel.pdf has vector text (or the noted fallback), correct page

@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://talonsturgill.github.io/alaskaaicarousels/sitemap.xml

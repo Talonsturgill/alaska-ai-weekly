@@ -58,9 +58,12 @@ this one.
 - `assets/` — committed fonts (8 families), art libraries (noise, AK3D
   software-3D, Zdog, d3, topojson), true-lon/lat Alaska geodata, places
   gazetteer.
-- `scripts/` — gmail_draft.py, caption_check.py, docket_build.py (renders
-  ledger/docket.json into the public docs/ site; also its lint gate).
-- `docs/` — the Alaska AI Docket site, published by GitHub Pages
+- `scripts/` — gmail_draft.py, caption_check.py, site_build.py (builds the
+  whole public site into docs/: home, docket, archive + per-deck pages,
+  about; validates ledger/docket.json and lint-gates every page), and
+  docket_build.py (shared library: projection, docket components, gates —
+  site_build imports it).
+- `docs/` — the public Alaska AI site, published by GitHub Pages
   (.github/workflows/pages.yml) on every merge to main that touches it:
   https://talonsturgill.github.io/alaskaaicarousels/
 - `examples/demo-deck/` — 4 engine-proof slides exercising SVG filter

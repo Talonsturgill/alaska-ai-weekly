@@ -46,16 +46,20 @@ shifts to news-graphics technique. Anything promising but risky gets
 parked in the field notes instead of forced in. It can tighten gates but
 never loosen them.
 
-## The Alaska AI Docket
+## The site
 
-The studio also maintains a public site, the Alaska AI Docket, at
+The studio also runs a public site at
 [talonsturgill.github.io/alaskaaicarousels](https://talonsturgill.github.io/alaskaaicarousels/).
-It tracks every AI infrastructure decision in Alaska the pipeline has
-verified, land leases, comment windows, utility votes and legislation,
-each with its decider, its deadlines, whether the public gets a say, and
-a source on every fact. The daily run updates the data in `ledger/docket.json`,
-rebuilds the site with `scripts/docket_build.py`, and lists windows
-closing soon in the daily email. The raw data is public at
+The home page carries the latest deck, the nearest deadlines and live
+Anchorage daylight. The Alaska AI Docket page tracks every AI
+infrastructure decision in the state the pipeline has verified, land
+leases, comment windows, utility votes and legislation, each with its
+decider, its deadlines, whether the public gets a say, and a source on
+every fact. The archive holds every shipped deck as a swipeable gallery
+with its sources, and the about page says who this is for. The daily run
+updates `ledger/docket.json`, rebuilds all of it with
+`scripts/site_build.py`, and lists windows closing soon in the daily
+email. The raw tracker data is public at
 [docket.json](https://talonsturgill.github.io/alaskaaicarousels/docket.json).
 
 ## Running it

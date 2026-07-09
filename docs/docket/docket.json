@@ -1,0 +1,218 @@
+{
+  "updated": "2026-07-09",
+  "items": [
+    {
+      "id": "adl-422741-stak-north-slope-lease",
+      "title": "STAK Energy's North Slope AI campus lease",
+      "kind": "state-land-lease",
+      "status": "open-for-comment",
+      "decider": "Alaska DNR, Division of Oil and Gas",
+      "public_access": "open",
+      "access_note": "Anyone can comment on docket ADL 422741 until 4:30 p.m. July 17; commenting preserves appeal rights on the final decision.",
+      "summary": "A preliminary decision would give STAK Energy a 50-year lease on 715.4 acres of state land about 26 miles south of Deadhorse for a gas-fired AI and cloud campus its developer pegs at more than $10 billion, with 1 to 3 gigawatts of on-site generation. More than 500 public comments arrived before the first deadline; fewer than a dozen supported the project.",
+      "key_dates": [
+        {
+          "date": "2026-05-12",
+          "label": "Preliminary decision noticed (ADL 422741)",
+          "kind": "milestone"
+        },
+        {
+          "date": "2026-06-15",
+          "label": "Original comment deadline",
+          "kind": "milestone"
+        },
+        {
+          "date": "2026-06-17",
+          "label": "Comment period extended for volume and public interest",
+          "kind": "milestone"
+        },
+        {
+          "date": "2026-07-17",
+          "label": "Public comment closes, 4:30 p.m. AKDT",
+          "kind": "deadline"
+        }
+      ],
+      "location": {
+        "name": "Dalton Highway, about 26 mi south of Deadhorse",
+        "lon": -148.6,
+        "lat": 69.82
+      },
+      "sources": [
+        {
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224",
+          "outlet": "Alaska DNR Online Public Notices",
+          "date": "2026-06-17"
+        },
+        {
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=223817",
+          "outlet": "Alaska DNR Online Public Notices",
+          "date": "2026-05-12"
+        },
+        {
+          "url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
+          "outlet": "Northern Journal",
+          "date": "2026-07-03"
+        }
+      ],
+      "first_seen": "2026-07-08",
+      "last_updated": "2026-07-09",
+      "history": [
+        {
+          "date": "2026-07-08",
+          "note": "Tracked. 500 plus comments on record, fewer than a dozen in favor; deadline already extended once."
+        }
+      ]
+    },
+    {
+      "id": "air-force-eul-ai-data-centers",
+      "title": "Air Force land leases for AI data centers at JBER, Eielson and Clear",
+      "kind": "federal-lease",
+      "status": "pending-decision",
+      "decider": "Department of the Air Force, Enhanced Use Lease program",
+      "public_access": "closed",
+      "access_note": "Proposals closed June 29 and are evaluated privately. No public comment period exists; no award timeline has been announced.",
+      "summary": "The Air Force offered about 4,700 acres across 12 parcels at Joint Base Elmendorf-Richardson, Eielson AFB and Clear Space Force Station for privately financed AI data centers. Residents near the five Eielson-area parcels raised noise, permafrost and grid concerns, including one parcel less than a mile from North Pole Middle School.",
+      "key_dates": [
+        {
+          "date": "2026-04-10",
+          "label": "Program announced",
+          "kind": "milestone"
+        },
+        {
+          "date": "2026-06-05",
+          "label": "Request for lease proposals released",
+          "kind": "milestone"
+        },
+        {
+          "date": "2026-06-29",
+          "label": "Developer proposals due",
+          "kind": "deadline"
+        }
+      ],
+      "location": {
+        "name": "JBER, Eielson AFB, Clear SFS",
+        "lon": -147.7,
+        "lat": 64.3
+      },
+      "sources": [
+        {
+          "url": "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/",
+          "outlet": "U.S. Air Force",
+          "date": "2026-04-10"
+        },
+        {
+          "url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html",
+          "outlet": "Fairbanks Daily News-Miner",
+          "date": "2026-06-11"
+        },
+        {
+          "url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/",
+          "outlet": "Alaska's News Source",
+          "date": "2026-06-08"
+        }
+      ],
+      "first_seen": "2026-07-08",
+      "last_updated": "2026-07-09",
+      "history": [
+        {
+          "date": "2026-07-08",
+          "note": "Tracked. Bids closed June 29; no public word yet on how many proposals arrived."
+        }
+      ]
+    },
+    {
+      "id": "gvea-lm6000-turbine-purchase",
+      "title": "GVEA's $120 million turbine decision",
+      "kind": "utility-decision",
+      "status": "pending-decision",
+      "decider": "Golden Valley Electric Association board of directors",
+      "public_access": "indirect",
+      "access_note": "A member-owned co-op board decides, in executive session. GVEA members reach it through board elections and member comment periods at regular meetings.",
+      "summary": "GVEA's board weighs buying a GE LM6000 combined-cycle turbine, roughly $120 million for 45 to 58 MW, while data center demand has pushed gas turbine plant costs up 195 percent since 2019 and order waitlists into the early 2030s, per a Bloomberg report cited by the News-Miner. The board reserved an order slot in April for $50,000.",
+      "key_dates": [
+        {
+          "date": "2026-07-13",
+          "label": "Board weighs the purchase in executive session",
+          "kind": "vote"
+        }
+      ],
+      "location": {
+        "name": "Fairbanks",
+        "lon": -147.7164,
+        "lat": 64.8378
+      },
+      "sources": [
+        {
+          "url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html",
+          "outlet": "Fairbanks Daily News-Miner",
+          "date": "2026-06-28"
+        },
+        {
+          "url": "https://fm.kuac.org/energy-and-the-environment/2026-05-28/gvea-plans-extraordinarily-large-increase-in-co-op-fuel-charge",
+          "outlet": "KUAC",
+          "date": "2026-05-28"
+        }
+      ],
+      "first_seen": "2026-07-08",
+      "last_updated": "2026-07-09",
+      "history": [
+        {
+          "date": "2026-07-08",
+          "note": "Tracked ahead of the July 13 executive session."
+        }
+      ]
+    },
+    {
+      "id": "aklng-tax-bill-second-special-session",
+      "title": "The AKLNG gas line tax bill",
+      "kind": "legislation",
+      "status": "pending-decision",
+      "decider": "Alaska Legislature, second special session",
+      "public_access": "indirect",
+      "access_note": "Legislators decide; constituents reach them directly. The gas line would feed the grid most Alaska compute would ride on.",
+      "summary": "A conference committee compromise unveiled July 2 would swap the state property tax on the Glenfarne-led Alaska LNG project for a volumetric tax after five years of operation or 500 MMcf per day, and extend the completion deadline to the end of 2034. Floor votes are tentatively set for July 16; the special session ends July 19; the governor has pledged to veto any bill keeping the S corp income tax provision.",
+      "key_dates": [
+        {
+          "date": "2026-07-02",
+          "label": "Draft compromise unveiled",
+          "kind": "milestone"
+        },
+        {
+          "date": "2026-07-16",
+          "label": "Tentative House and Senate floor votes",
+          "kind": "vote"
+        },
+        {
+          "date": "2026-07-19",
+          "label": "Special session ends",
+          "kind": "deadline"
+        }
+      ],
+      "location": {
+        "name": "Juneau",
+        "lon": -134.4197,
+        "lat": 58.3019
+      },
+      "sources": [
+        {
+          "url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line",
+          "outlet": "Alaska Beacon via Alaska Public Media",
+          "date": "2026-07-06"
+        },
+        {
+          "url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-01/state-lawmakers-delay-vote-on-alaska-lng-tax-bill-until-mid-july",
+          "outlet": "Alaska Public Media",
+          "date": "2026-07-01"
+        }
+      ],
+      "first_seen": "2026-07-08",
+      "last_updated": "2026-07-09",
+      "history": [
+        {
+          "date": "2026-07-08",
+          "note": "Tracked. Vote target already slipped once, from July 1 to July 16."
+        }
+      ]
+    }
+  ]
+}

@@ -607,14 +607,11 @@ INDIRECT when an elected or member-accountable body decides, CLOSED when the eva
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--date", required=True, help="build date YYYY-MM-DD (America/Anchorage)")
-    ap.add_argument("--out", default="docs")
-    ap.add_argument("--domain", default="",
-                    help="custom domain (e.g. thealaskadocket.com); emits CNAME and rewrites absolute URLs")
-    args = ap.parse_args()
-    site = f"https://{args.domain}" if args.domain else DEFAULT_SITE
-    build(ddate.fromisoformat(args.date), args.out, site, args.domain)
+    # This module is now the shared library (projection, docket components,
+    # gates). The CLI delegates to site_build so a stale invocation can never
+    # overwrite docs/ with the retired single-page layout.
+    import site_build
+    site_build.main()
 
 
 if __name__ == "__main__":
