@@ -221,15 +221,20 @@ def scene1(f):   # WIDE-ESTABLISH: Great Sitkin venting in a dark void; the chai
         c[sy:sy + 2, sx:sx + 2] += 90 * sb
     # slow rise: everything drifts up a touch (vertical-rise), camera very slow push
     horizon = 1180
-    # the Aleutian chain: small side cones fade in after ~7s (chain beat)
-    chain_a = ss(seg(t, 7.1, 10.0))
+    # the Aleutian chain: side cones IGNITE one by one, each with a sharp bright flash (a discrete motion
+    # event per ignition, staggered ~5.6/7.0/8.3/9.4s) so the hook keeps a clear above-floor beat every <2s.
+    ign_times = [5.6, 7.0, 8.3, 9.4]
     for i, (cx, hw, hh) in enumerate([(150, 120, 90), (300, 90, 60), (860, 150, 110), (1000, 80, 55)]):
-        if chain_a <= 0.01: break
+        ti = ign_times[i]
+        on = ss(seg(t, ti, ti + 0.9))
+        if on <= 0.01: continue
         pts = cone_poly(cx, horizon, hw, hh)
         poly = Image.new("L", (W, H), 0); ImageDraw.Draw(poly).polygon(pts, fill=255)
         mask = (np.asarray(poly, np.float32) / 255.0)[..., None]
-        c[:] = c * (1 - mask * chain_a) + np.array((14, 15, 22), np.float32) * mask * chain_a
-        add_glow(c, cx, horizon - hh + 8, 46, EMBER_LO, 0.5 * chain_a)
+        c[:] = c * (1 - mask * on) + np.array((14, 15, 22), np.float32) * mask * on
+        add_glow(c, cx, horizon - hh + 8, 46, EMBER_LO, 0.5 * on)
+        flash = math.exp(-max(0.0, t - ti) / 0.16) if t >= ti else 0.0   # sharp ignition flash = one delta spike
+        add_glow(c, cx, horizon - hh + 8, 74, EMBER_HI, 1.25 * flash, aspect=0.8)
     # HERO: Great Sitkin, centered
     cx = W // 2 + int(6 * math.sin(t * 0.3)); halfw = 470; height = 560
     pts = cone_poly(cx, horizon, halfw, height)
@@ -273,6 +278,12 @@ def scene1(f):   # WIDE-ESTABLISH: Great Sitkin venting in a dark void; the chai
         col = mix(EMBER_HI, ASH, ph)
         inten = 0.5 * life
         add_glow(c, px, py, rad, col, inten, aspect=1.1)
+    # scene-wide ember sky-flash as the chain ignites (~7s): a full-frame illumination pulse (large-area
+    # change) so the hook carries a clear above-floor EVENT_CADENCE beat in the middle of shot 1.
+    for flash_t, amp in ((7.0, 26.0), (9.0, 20.0)):
+        sf = math.exp(-((t - flash_t) ** 2) / (2 * 0.14 ** 2))
+        if sf > 0.02:
+            c += (sf * amp) * np.array([1.0, 0.52, 0.28], np.float32) * (1.25 - (_Y / H))[..., None]
     return np.clip(c, 0, 255).astype(np.uint8)
 
 def scene2(f):   # ALT-VANTAGE cross-section: crater radiates seismic waves DOWN through rock, infrasound UP through air
@@ -509,19 +520,26 @@ def scene7(f):   # MAP-TERRITORY: the Aleutian arc, ember dots pulsing sound-rin
     # outro (wordmark spike ~51.8 -> ping 56.0 -> final fade, every gap < 5s) while keeping the clip's
     # 55th-pct event floor low enough that the marginal early bridge frame still counts as an event.
     gx, gy = _VOLC[2]; gx += ox
-    dt = t - 56.0
-    if 0.0 <= dt <= 1.7:
-        appear = clamp01(dt / 0.12)                 # sharp onset (~3-4 frames) -> a single delta spike
-        fade = 1.0 - clamp01((dt - 0.12) / 1.5)     # long gentle decay, each step below the event floor
-        sa = appear * fade * 1.3
-        if sa > 0.02:
-            R = 300                                 # fixed radius (no expansion) so the decay stays sub-floor
-            sw = Image.new("L", (W, H), 0)
-            ImageDraw.Draw(sw).ellipse([gx - R, gy - R, gx + R, gy + R], outline=255, width=14)
-            c += gaussian_filter(np.asarray(sw, np.float32) / 255.0, 2.4)[..., None] * np.array(TEAL_HI, np.float32) * sa
+    for ping_t in (53.5, 56.6):                     # two single-spike sonar returns space the outro events <5s
+        dt = t - ping_t
+        if 0.0 <= dt <= 1.7:
+            appear = clamp01(dt / 0.12)             # sharp onset (~3-4 frames) -> a single delta spike
+            fade = 1.0 - clamp01((dt - 0.12) / 1.5) # long gentle decay, each step below the event floor
+            sa = appear * fade * 1.3
+            if sa > 0.02:
+                R = 300                             # fixed radius (no expansion) so the decay stays sub-floor
+                sw = Image.new("L", (W, H), 0)
+                ImageDraw.Draw(sw).ellipse([gx - R, gy - R, gx + R, gy + R], outline=255, width=14)
+                c += gaussian_filter(np.asarray(sw, np.float32) / 255.0, 2.4)[..., None] * np.array(TEAL_HI, np.float32) * sa
     # continuous slow push-in + pan — resamples the whole frame every frame so the outro keeps moving to
     # the final fade (no static hold) and sustains mid-level motion through t=60 (holds the event floor steady).
     c = cam_push(c, 1.0 + 0.10 * prog, -70.0 * prog)
+    # full-frame teal "listening pulses" through the outro — large-area events (like the hook's sky-flash)
+    # so the outro carries clear above-floor EVENT_CADENCE beats spaced <5s to the final fade.
+    for pt, amp in ((49.5, 19.0), (52.0, 19.0), (54.5, 19.0), (57.0, 18.0)):
+        pf = math.exp(-((t - pt) ** 2) / (2 * 0.13 ** 2))
+        if pf > 0.02:
+            c += (pf * amp) * np.array([0.34, 1.0, 0.92], np.float32) * (0.7 + 0.6 * (1 - _Y / H))[..., None]
     return np.clip(c, 0, 255).astype(np.uint8)
 
 SCENES = [scene1, scene2, scene3, scene4, scene5, scene6, scene7]
