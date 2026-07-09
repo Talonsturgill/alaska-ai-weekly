@@ -47,7 +47,8 @@ this one.
 - `ledger/` — topics.json (dedupe), artwork.json (variety engine),
   instincts.json (self-improvement), upgrades.json (automation-change
   trail: Phase 12's machine upgrades, surfaced in every dated Gmail draft;
-  each set reverts as one `upgrade(<date>):` commit). Committed state;
+  each set reverts as one `upgrade(<date>):` commit), docket.json (the
+  public Alaska AI Docket, maintained in Phase 3.5). Committed state;
   updated every run.
 - `.claude/agents/` — scout, fact-checker, treatment-director, copywriter,
   pixel-critic, flow-critic, scorer, upgrade-engineer (Phase 12 machine
@@ -57,7 +58,11 @@ this one.
 - `assets/` — committed fonts (8 families), art libraries (noise, AK3D
   software-3D, Zdog, d3, topojson), true-lon/lat Alaska geodata, places
   gazetteer.
-- `scripts/` — gmail_draft.py, caption_check.py.
+- `scripts/` — gmail_draft.py, caption_check.py, docket_build.py (renders
+  ledger/docket.json into the public docs/ site; also its lint gate).
+- `docs/` — the Alaska AI Docket site, published by GitHub Pages
+  (.github/workflows/pages.yml) on every merge to main that touches it:
+  https://talonsturgill.github.io/alaskaaicarousels/
 - `examples/demo-deck/` — 4 engine-proof slides exercising SVG filter
   atmospheres, d3 cartography, generative flow fields, and software 3D.
   PLUMBING references, not style templates.

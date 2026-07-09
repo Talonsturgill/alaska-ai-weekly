@@ -86,6 +86,24 @@ def main():
     asm = json.loads((run / "final" / "assemble_report.json").read_text())
     pngs = sorted(glob.glob(str(run / "render" / "slide-*.png")))
 
+    # docket: windows and votes ahead (ledger/docket.json, Phase 3.5)
+    docket = []
+    dk_path = Path(__file__).resolve().parents[1] / "ledger" / "docket.json"
+    try:
+        import datetime as _dt
+        _today = _dt.date.fromisoformat(args.run_date)
+        for it in json.loads(dk_path.read_text()).get("items", []):
+            if it.get("status") in ("decided", "closed"):
+                continue
+            future = sorted(d for d in (dd["date"] for dd in it.get("key_dates", []))
+                            if _dt.date.fromisoformat(d) >= _today)
+            if future and (_dt.date.fromisoformat(future[0]) - _today).days <= 14:
+                lbl = next(dd["label"] for dd in it["key_dates"] if dd["date"] == future[0])
+                docket.append((future[0], it, lbl))
+        docket.sort(key=lambda x: x[0])
+    except Exception:
+        pass
+
     # automation upgrades made by this run (ledger/upgrades.json, Phase 12):
     # surfaced in every dated draft so the maintainer can monitor the
     # machine's evolution and pinpoint which week to revert on degradation.
@@ -129,6 +147,26 @@ def main():
     notes = esc(str(score.get("editor_notes_for_email", "") or "None."))
 
     aftercare = "".join(f"<li>{esc(a)}</li>" for a in copy.get("aftercare", []))
+
+    site_url = "https://talonsturgill.github.io/alaskaaicarousels/"
+    if docket:
+        dk_rows = "\n".join(
+            f"<tr><td style='white-space:nowrap'><b>{d}</b><br>"
+            f"<span style='color:#98a2b3'>{(_dt.date.fromisoformat(d) - _today).days} days</span></td>"
+            f"<td><a href='{site_url}#{esc(it['id'])}'>{esc(it['title'])}</a><br>"
+            f"<span style='color:#98a2b3'>{esc(lbl)} &middot; {esc(it['decider'])}"
+            f"{' &middot; OPEN TO THE PUBLIC' if it['public_access'] == 'open' else ''}</span></td></tr>"
+            for d, it, lbl in docket)
+        docket_html = (
+            f'<h2>Docket: closing soon</h2>'
+            f'<div style="font-size:13.5px;color:#667085;margin-bottom:8px">From '
+            f'<a href="{site_url}">the Alaska AI Docket</a>, the public tracker this '
+            f'routine maintains daily.</div>'
+            f'<table class="score"><tr><th>Date</th><th>Decision</th></tr>{dk_rows}</table>')
+    else:
+        docket_html = (f'<h2>Docket</h2><div style="font-size:14px;color:#667085">'
+                       f'No tracked windows or votes inside 14 days. '
+                       f'<a href="{site_url}">The full docket.</a></div>')
 
     if upgrades:
         up_rows = "\n".join(
@@ -182,6 +220,8 @@ def main():
 
   <h2>Editor's note</h2>
   <div style="font-size:14px">{notes}</div>
+
+  {docket_html}
 
   {upgrades_html}
 

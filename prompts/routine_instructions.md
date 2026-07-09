@@ -45,7 +45,9 @@ maintainer can post in ninety seconds.
 - Ledgers: `ledger/topics.json`, `ledger/artwork.json`,
   `ledger/instincts.json` — read at wake, append at retro — plus
   `ledger/upgrades.json`, the automation-change trail appended by
-  Phase 12 and surfaced in every Gmail draft.
+  Phase 12 and surfaced in every Gmail draft, and `ledger/docket.json`,
+  the public Alaska AI Docket maintained in Phase 3.5 and published from
+  docs/ by scripts/docket_build.py.
 - Engine: `.claude/skills/carousel-engine/` (SKILL.md = slide contract,
   render.py, qa.py, assemble.py, bootstrap.sh). Art libraries and geodata
   under `assets/` (see SKILL.md).
@@ -73,7 +75,8 @@ At wake, create `out/<date>/run_state.json`:
 ```json
 {"run_date": "...", "carousel_no": N,
  "phases": {"wake": "pending", "craft_refresh": "pending",
-  "research": "pending", "claims": "pending", "selection": "pending",
+  "research": "pending", "claims": "pending", "docket": "pending",
+  "selection": "pending",
   "directors_room": "pending", "copy": "pending", "art_build": "pending",
   "pixel_review": "pending", "flow_review": "pending", "assemble": "pending",
   "scoring": "pending", "ship": "pending", "upgrade": "pending",
@@ -141,6 +144,26 @@ If fewer than 2 stories survive: broaden the window to 21 days, rerun
 Phases 2-3 once (note the broadening for the email). If still starved,
 pick the strongest single story and plan a tighter 6-7 slide deck —
 honestly framed.
+
+## PHASE 3.5 — DOCKET UPDATE (the public tracker)
+
+`ledger/docket.json` is the Alaska AI Docket, the public tracker of every
+AI-infrastructure decision in Alaska, served from docs/ via GitHub Pages.
+Right after claims:
+
+1. From THIS run's verified claims, add any new decision item (a lease,
+   comment window, vote, regulatory docket, solicitation, procurement)
+   not yet tracked, with its key dates, decider, four-rooms access state
+   (open | indirect | closed), and source URLs straight from claims.json.
+2. Refresh tracked items whose next key date is within 7 days or has
+   passed: re-fetch one primary source (the notice page, the docket, the
+   newsroom), update status and history with a dated note, and correct
+   dates that moved. Bounded work, a handful of fetches at most.
+3. Never delete an item; decided or dead items change status and keep
+   their history. Every change cites a fetched source.
+
+The site itself is rebuilt at ship time (Phase 11); this phase only
+maintains the data.
 
 ## PHASE 4 — SELECTION + DEDUPE GATE
 
@@ -271,19 +294,24 @@ Save `out/<date>/score_report.json`.
    storyboard.md, claims.json, copy.json, caption.txt + caption_report.json,
    score_report.json, machine_qa.json, assemble_report.json, selection.md,
    plan.md, run_state.json.
-2. Append this run's entries to ledger/topics.json and ledger/artwork.json
+2. Rebuild the public docket site and commit it with the run:
+   `python scripts/docket_build.py --date <date>` (it validates
+   ledger/docket.json and refuses banned punctuation; a FAIL here blocks
+   the ship until fixed). docs/ changes ride the run commit; the Pages
+   workflow republishes on merge.
+3. Append this run's entries to ledger/topics.json and ledger/artwork.json
    (full schemas), and 1-3 new instincts to ledger/instincts.json
    (confidence-scored; also bump/decay confirmed/contradicted ones).
    Append the retro bullets to knowledge/FIELD_NOTES.md. If a NEW technique
    was invented, add it to knowledge/TECHNIQUE_LIBRARY.md with a dated note.
-3. COMPLETION GATE: verify run_state.json shows every prior phase done and
+4. COMPLETION GATE: verify run_state.json shows every prior phase done and
    every file in (1) exists and is non-trivial. Do not proceed otherwise.
-4. Branch `claude/carousel-<date>`; commit everything (runs/, ledger/,
-   knowledge/ changes); push with retries (2s/4s/8s/16s backoff).
-5. Open a PR (ready, not draft) and MERGE IT TO MAIN in the same run —
+5. Branch `claude/carousel-<date>`; commit everything (runs/, ledger/,
+   docs/, knowledge/ changes); push with retries (2s/4s/8s/16s backoff).
+6. Open a PR (ready, not draft) and MERGE IT TO MAIN in the same run —
    this repo's CLAUDE.md policy overrides any draft-PR default. The raw
    URLs in the email point at main; the merge must land before the email.
-6. Verify two spot URLs resolve (WebFetch a slide PNG raw URL + the PDF
+7. Verify two spot URLs resolve (WebFetch a slide PNG raw URL + the PDF
    URL on main). If raw URLs 404, wait 30s and retry once; if still
    broken, fall back to branch-pinned URLs and note it.
 
@@ -362,7 +390,9 @@ python scripts/gmail_draft.py --run-dir out/<date> --run-date <date> \
   --carousel-no <N> --raw-base https://raw.githubusercontent.com/<owner>/<repo>/main \
   --branch claude/carousel-<date> --payload-out out/<date>/gmail_payload.json
 ```
-The script includes an "Automation changes this run" section rendered
+The script includes a "Docket: closing soon" section rendered from
+ledger/docket.json (windows and votes within 14 days, linking the public
+tracker) and an "Automation changes this run" section rendered
 from ledger/upgrades.json (Phase 12's output) so the maintainer can
 monitor the machine's evolution from the dated emails alone and request
 a revert if a later run degrades. Create the draft via the Gmail MCP
@@ -401,8 +431,9 @@ learned, and the one thing to improve next run. Mark run_state complete.
    report card, aftercare checklist, and the automation-changes section
    (even if it says "no changes").
 2. runs/<date>/ merged to main with all artifacts; ledgers updated
-   (including upgrades.json, possibly with zero new entries);
-   run_state complete.
+   (including upgrades.json, possibly with zero new entries, and
+   docket.json with the day's tracker state); docs/ rebuilt by
+   docket_build.py; run_state complete.
 3. score_report.json at/above threshold OR an explicit, honest shortfall
    note in the email.
 4. carousel.pdf has vector text (or the noted fallback), correct page
