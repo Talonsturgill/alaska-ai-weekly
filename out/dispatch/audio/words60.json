@@ -1,139 +1,127 @@
 {
   "words": [
     {
-      "w": "Every summer,",
+      "w": "Right now, a volcano is erupting in Alaska.",
       "s": 0.5,
-      "e": 1.428,
+      "e": 3.933,
       "seg": 0
     },
     {
-      "w": "Alaska has to count its caribou.",
-      "s": 1.528,
-      "e": 3.519,
+      "w": "Great Sitkin has oozed lava for months.",
+      "s": 4.033,
+      "e": 6.631,
       "seg": 0
     },
     {
-      "w": "On the North Slope,",
-      "s": 3.939,
-      "e": 5.043,
+      "w": "It sits on a chain of dozens of volcanoes.",
+      "s": 7.051,
+      "e": 9.845,
       "seg": 1
     },
     {
-      "w": "one herd can run into the tens of thousands.",
-      "s": 5.143,
-      "e": 7.774,
-      "seg": 1
-    },
-    {
-      "w": "Biologists fly the tundra",
-      "s": 8.194,
-      "e": 9.817,
+      "w": "Nobody can stand on them and watch.",
+      "s": 10.265,
+      "e": 12.131,
       "seg": 2
     },
     {
-      "w": "and bring back thousands of aerial photos.",
-      "s": 9.917,
-      "e": 12.391,
+      "w": "So Alaska listens instead.",
+      "s": 12.231,
+      "e": 13.884,
       "seg": 2
     },
     {
-      "w": "Then a person has to find",
-      "s": 12.811,
-      "e": 14.413,
+      "w": "Every rumble sends sound through the rock,",
+      "s": 14.303,
+      "e": 16.795,
       "seg": 3
     },
     {
-      "w": "every animal in every frame.",
-      "s": 14.513,
-      "e": 16.44,
+      "w": "and pressure through the air.",
+      "s": 16.895,
+      "e": 18.317,
       "seg": 3
     },
     {
-      "w": "A new model from Microsoft's AI for Good lab",
-      "s": 16.86,
-      "e": 19.859,
+      "w": "The Alaska Volcano Observatory turns that sound",
+      "s": 18.737,
+      "e": 21.991,
       "seg": 4
     },
     {
-      "w": "learns each caribou from a single dot,",
-      "s": 19.96,
-      "e": 22.24,
+      "w": "into a picture, a spectrogram.",
+      "s": 22.09,
+      "e": 23.904,
       "seg": 4
     },
     {
-      "w": "not a boxed outline.",
-      "s": 22.339,
-      "e": 23.665,
-      "seg": 4
-    },
-    {
-      "w": "Those dots are up to seven times faster",
-      "s": 24.086,
-      "e": 26.485,
+      "w": "Then they trained a model to read it,",
+      "s": 24.324,
+      "e": 26.008,
       "seg": 5
     },
     {
-      "w": "and three times cheaper to draw.",
-      "s": 26.585,
-      "e": 28.348,
+      "w": "on over two hundred seventy thousand pictures.",
+      "s": 26.108,
+      "e": 28.934,
       "seg": 5
     },
     {
-      "w": "On Alaska's 2022 Central Arctic survey,",
-      "s": 28.768,
-      "e": 32.496,
+      "w": "It tells tremor from explosion, quake from noise.",
+      "s": 29.355,
+      "e": 32.596,
       "seg": 6
     },
     {
-      "w": "its count landed within about three percent of the herd.",
-      "s": 32.596,
-      "e": 35.656,
+      "w": "On its test, right about eighty seven percent.",
+      "s": 32.696,
+      "e": 35.65,
       "seg": 6
     },
     {
-      "w": "But the model has a limit.",
-      "s": 36.076,
-      "e": 37.638,
+      "w": "But hearing is not foreseeing.",
+      "s": 36.07,
+      "e": 37.715,
       "seg": 7
     },
     {
-      "w": "Where the animals crowd together,",
-      "s": 37.738,
-      "e": 39.462,
+      "w": "It can name the sound the mountain makes.",
+      "s": 37.815,
+      "e": 39.507,
       "seg": 7
     },
     {
-      "w": "its count starts to slip.",
-      "s": 39.562,
-      "e": 41.044,
+      "w": "It cannot tell you the hour it blows.",
+      "s": 39.606,
+      "e": 41.445,
       "seg": 7
     },
     {
-      "w": "It counts what the camera sees.",
-      "s": 41.464,
-      "e": 43.31,
+      "w": "Push it past what it learned, and it slips.",
+      "s": 41.865,
+      "e": 44.411,
       "seg": 8
     },
     {
-      "w": "It cannot fly the plane, or find the herd.",
-      "s": 43.41,
-      "e": 45.877,
+      "w": "A person still keeps watch.",
+      "s": 44.511,
+      "e": 46.137,
       "seg": 8
     },
     {
-      "w": "So the plane still flies, the model counts,",
-      "s": 46.296,
-      "e": 48.842,
+      "w": "So the mountain keeps speaking,",
+      "s": 46.558,
+      "e": 48.765,
       "seg": 9
     },
     {
-      "w": "and the number comes home sooner.",
-      "s": 48.942,
-      "e": 50.62,
+      "w": "and more of Alaska is listening.",
+      "s": 48.864,
+      "e": 51.287,
       "seg": 9
     }
   ],
-  "speech_end": 50.62,
+  "speech_end": 51.287,
   "total": 60.0,
   "fps": 30
 }
