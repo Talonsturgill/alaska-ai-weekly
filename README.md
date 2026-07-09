@@ -49,7 +49,7 @@ never loosen them.
 ## The site
 
 The studio also runs a public site at
-[talonsturgill.github.io/alaskaaicarousels](https://talonsturgill.github.io/alaskaaicarousels/).
+[alaskaaihq.com](https://alaskaaihq.com/).
 The home page carries the latest deck, the nearest deadlines and live
 Anchorage daylight. The Alaska AI Docket page tracks every AI
 infrastructure decision in the state the pipeline has verified, land
@@ -60,7 +60,7 @@ with its sources, and the about page says who this is for. The daily run
 updates `ledger/docket.json`, rebuilds all of it with
 `scripts/site_build.py`, and lists windows closing soon in the daily
 email. The raw tracker data is public at
-[docket.json](https://talonsturgill.github.io/alaskaaicarousels/docket.json).
+[docket.json](https://alaskaaihq.com/docket.json).
 
 ## Running it
 

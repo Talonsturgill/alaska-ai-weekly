@@ -148,7 +148,7 @@ def main():
 
     aftercare = "".join(f"<li>{esc(a)}</li>" for a in copy.get("aftercare", []))
 
-    site_url = "https://talonsturgill.github.io/alaskaaicarousels/"
+    site_url = "https://alaskaaihq.com/docket/"
     if docket:
         dk_rows = "\n".join(
             f"<tr><td style='white-space:nowrap'><b>{d}</b><br>"
