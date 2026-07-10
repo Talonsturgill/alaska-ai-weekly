@@ -106,9 +106,7 @@ method="post" target="_blank">
   <input type="email" name="email" id="bd-email" required placeholder="you@example.com"
   autocomplete="email">
   <button class="cta gold" type="submit">GET ALERTS</button>
-</form>
-<p class="fineprint" data-reveal>Free, run by the desk, delivered by
-<a href="https://buttondown.com/refer/AlaskaAI" rel="noopener">Buttondown</a>.</p>"""
+</form>"""
 
 
 def footer(prefix, today):
