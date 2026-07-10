@@ -1,9 +1,9 @@
 {
   "events": [
     {
-      "t": 0.5,
+      "t": 0.38,
       "kind": "pop",
-      "label": "plant the thesis frame one: a person mar"
+      "label": "plant the thesis frame one: a person mar (snapped 0.5->0.38)"
     },
     {
       "t": 3.0,
@@ -16,12 +16,12 @@
       "label": "the tower, the human vantage"
     },
     {
-      "t": 8.0,
+      "t": 7.891,
       "kind": "tick",
-      "label": "the human labor itself"
+      "label": "the human labor itself (snapped 8.0->7.891)"
     },
     {
-      "t": 10.5,
+      "t": 10.9,
       "kind": "tick",
       "label": "the relentless cadence"
     },
@@ -36,17 +36,17 @@
       "label": "the machine arrives"
     },
     {
-      "t": 18.0,
+      "t": 18.314,
       "kind": "riser",
-      "label": "a new vantage on the same water"
+      "label": "a new vantage on the same water (snapped 18.0->18.314)"
     },
     {
-      "t": 20.5,
+      "t": 20.33,
       "kind": "hit",
-      "label": "the honest limit stated up front"
+      "label": "the honest limit stated up front (snapped 20.5->20.33)"
     },
     {
-      "t": 23.0,
+      "t": 23.4,
       "kind": "pop",
       "label": "the human-in-the-loop (a bloom, not a ta"
     },
@@ -66,14 +66,14 @@
       "label": "the model forms from the marks"
     },
     {
-      "t": 33.0,
+      "t": 32.727,
       "kind": "pulse",
-      "label": "the payoff, the machine sees on its own"
+      "label": "the payoff, the machine sees on its own (snapped 33.0->32.72"
     },
     {
-      "t": 35.5,
+      "t": 35.451,
       "kind": "hit",
-      "label": "the caveat, shown as a held discrepancy "
+      "label": "the caveat, shown as a held discrepancy  (snapped 35.5->35.4"
     },
     {
       "t": 38.0,
@@ -81,9 +81,9 @@
       "label": "the real failure mode, drawn honestly"
     },
     {
-      "t": 40.5,
+      "t": 40.225,
       "kind": "whoosh",
-      "label": "humans still hold the count"
+      "label": "humans still hold the count (snapped 40.5->40.225)"
     },
     {
       "t": 43.5,

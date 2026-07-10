@@ -1,7 +1,29 @@
-[
-  {"outlet": "KDLG 670AM (Bristol Bay public radio)", "url": "https://www.kdlg.org/fisheries/2026-07-03/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "note": "PRIMARY, 2026-07-03. The Wood River drone + machine-learning counting pilot: 8:30 launch, hand-labeling at the line, several thousand images needed, not yet tested against tower counts, over 70 years / since 1955 of hand counting."},
-  {"outlet": "Alaska Public Media (KDLG republish)", "url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "note": "Mirror confirming the story, 2026-07-08."},
-  {"outlet": "ADF&G Bristol Bay salmon (commercial fisheries)", "url": "https://www.adfg.alaska.gov/index.cfm?adfg=commercialbyareabristolbay.salmon", "note": "Independent second source: Wood River sockeye escapement goal 700,000 to 2,800,000; Bristol Bay = largest commercial sockeye region in the world."},
-  {"outlet": "ADF&G 2026 Bristol Bay forecast (news release)", "url": "https://www.adfg.alaska.gov/static/applications/dcfnewsrelease/1745780946.pdf", "note": "2026 total Bristol Bay run forecast 45.32 million sockeye."},
-  {"outlet": "UW Alaska Salmon Program history", "url": "https://alaskasalmonprogram.org/history/", "note": "UW Fisheries Research Institute station at Aleknagik (Wood River system) since 1946 to 1947."}
-]
+{
+ "sources": [
+  {
+   "outlet": "KDLG 670AM (Bristol Bay public radio)",
+   "url": "https://www.kdlg.org/fisheries/2026-07-03/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts",
+   "note": "PRIMARY, 2026-07-03. The Wood River drone + machine-learning counting pilot: 8:30 launch, hand-labeling at the line, several thousand images needed, not yet tested against tower counts, over 70 years / since 1955 of hand counting."
+  },
+  {
+   "outlet": "Alaska Public Media (KDLG republish)",
+   "url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts",
+   "note": "Mirror confirming the story, 2026-07-08."
+  },
+  {
+   "outlet": "ADF&G Bristol Bay salmon (commercial fisheries)",
+   "url": "https://www.adfg.alaska.gov/index.cfm?adfg=commercialbyareabristolbay.salmon",
+   "note": "Independent second source: Wood River sockeye escapement goal 700,000 to 2,800,000; Bristol Bay = largest commercial sockeye region in the world."
+  },
+  {
+   "outlet": "ADF&G 2026 Bristol Bay forecast (news release)",
+   "url": "https://www.adfg.alaska.gov/static/applications/dcfnewsrelease/1745780946.pdf",
+   "note": "2026 total Bristol Bay run forecast 45.32 million sockeye."
+  },
+  {
+   "outlet": "UW Alaska Salmon Program history",
+   "url": "https://alaskasalmonprogram.org/history/",
+   "note": "UW Fisheries Research Institute station at Aleknagik (Wood River system) since 1946 to 1947."
+  }
+ ]
+}

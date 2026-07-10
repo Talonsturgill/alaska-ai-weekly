@@ -310,3 +310,39 @@ dispatch_history:
     metaphor: a machine learns to HEAR a volcano, reading its seismic and infrasound
       voice as a spectrogram to name tremor from explosion, honest that hearing the
       mountain is not foreseeing when it will blow
+- date: '2026-07-10'
+  topic: 'Wood River (Bristol Bay) drone-in-a-box + computer-vision sockeye counting
+    pilot: a person hand-labels several thousand fish to teach the model while ADFG
+    towers keep the official count (KDLG 2026-07-03); honest that it is untested against
+    tower counts and a river shadow can fool it'
+  slug: teaching-the-machine-to-see
+  key_entities:
+  - bristol bay
+  - wood river
+  - sockeye
+  - escapement
+  - dillingham
+  - counting tower
+  - computer vision
+  - drone
+  - hand labeling
+  - kdlg
+  - van vactor
+  - ian chiu
+  - aleknagik
+  archetype: 'macro-closeup editorial teaching-worksheet: a phosphor-yellow human
+    mark descends onto ONE fish; human-labor-first inversion of the counting genre'
+  palette: sockeye crimson, glacial pale-blue river, river-gravel sage-green, cedar
+    tower-wood, a phosphor-yellow human label mark, deep charcoal
+  voice: kokoro:af_bella
+  composition:
+    pov: macro-closeup
+    motion_vector: vertical-descent
+    hero_treatment: single-organic-hero
+    layout: fullbleed-split
+    register: editorial-schematic
+    palette: sockeye crimson, glacial pale-blue river, river-gravel sage-green, cedar
+      tower-wood, a phosphor-yellow human label mark, deep charcoal
+    metaphor: to retire a seventy year hand count, a person still teaches the machine
+      to see the run one fish at a time, and until it is proven the towers keep the
+      record

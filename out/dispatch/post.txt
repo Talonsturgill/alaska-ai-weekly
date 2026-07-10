@@ -17,3 +17,7 @@ That is the version of AI in Alaska I trust most: taught before it is trusted. N
 What is the human labor hiding underneath the "automated" system you rely on?
 
 #Alaska #ArtificialIntelligence #MachineLearning #BristolBay #SalmonEscapement
+
+---
+SUGGESTED FIRST COMMENT (data governance, per the cultural review):
+Worth adding: Bristol Bay's sockeye are the subsistence and economic backbone of the region's Yup'ik, Alutiiq and Dena'ina communities. Aerial imagery over subsistence rivers raises real data-governance questions, and the region's tribes and CDQ organizations should be at the table for how any count data gets used. The tradition here is being augmented, not replaced.
