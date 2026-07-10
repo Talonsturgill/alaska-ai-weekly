@@ -17,7 +17,7 @@ os.makedirs(OUT, exist_ok=True)
 FPS = 30
 NF = 540  # 18s
 
-dim.init(1080, 1920)
+dim.init(1080, 1920, scale=float(os.environ.get("DIM_SCALE", "0.66")))   # render at ~2/3, upscale
 
 # ---- palette: cold dawn — steel-blue valley, hot amber sun, crimson run ----
 dim.SUN_DIR = (0.55, 0.30, 0.72)           # low dawn sun UP-VALLEY so we shoot into the light
@@ -151,8 +151,30 @@ def _mat(p, n, t):
     return col
 
 
+@ti.func
+def _shadow(p, t):
+    # CHEAP shadow SDF: terrain + ridges + drone only. Skips the two spruce loops and the fish
+    # cells (their fine shadows don't read on this ground), so it's ~1/3 the cost of _scene and
+    # is called ~36x/pixel. This is the second big speed lever after render scale.
+    rx = _riv_x(p.z)
+    dx = p.x - rx
+    adx = ti.abs(dx)
+    chan = ti.math.clamp(1.0 - adx / 3.0, 0.0, 1.0)
+    d = p.y + 0.20 + 0.16 * ti.math.clamp(adx - 2.0, 0.0, 8.0) + 0.34 * chan * chan
+    r1 = dim.sd_ellipsoid(p, ti.Vector([-8.0, -1.6, 16.0]), ti.Vector([10.0, 4.0, 7.0]))
+    r2 = dim.sd_ellipsoid(p, ti.Vector([9.0, -1.8, 24.0]), ti.Vector([11.0, 5.4, 8.0]))
+    r3 = dim.sd_ellipsoid(p, ti.Vector([-1.0, -2.2, 36.0]), ti.Vector([18.0, 7.5, 10.0]))
+    d = dim.smin(d, ti.min(r1, ti.min(r2, r3)), 0.8)
+    rise = ti.math.clamp((t - 3.5) / 3.0, 0.0, 1.0)
+    rise = rise * rise * (3.0 - 2.0 * rise)
+    dc = ti.Vector([1.9, -0.02 + 1.9 * rise, 5.2])
+    d = ti.min(d, dim.sd_rbox(p, dc, ti.Vector([0.30, 0.05, 0.30]), 0.04))
+    return d
+
+
 dim.SCENE_FN = _scene
 dim.MAT_FN = _mat
+dim.SHADOW_FN = _shadow
 dim.init_kernels()
 
 # ---- the shot: slow dolly down the valley, rising; rack focus river -> drone ----

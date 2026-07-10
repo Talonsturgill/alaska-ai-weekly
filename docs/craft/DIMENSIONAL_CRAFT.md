@@ -10,18 +10,48 @@ transitions). Where those docs assume 2D PIL scenes, this doc supersedes the LOO
 light reads amateur.** Every choice below serves that law. We render simple SDF forms and spend
 the budget on light, atmosphere, camera, and finish — which the engine makes nearly free.
 
-## The stack (benchmarked in the routine container, 4 CPU cores)
+## The stack + HONEST timings (benchmarked in the routine container, 4 CPU cores, full 1080x1920)
 
-| Layer | Tool | Measured | Use |
+| Layer | Tool | Measured (full-res CPU) | Use |
 |---|---|---|---|
-| World render | `dimensional.py` (Taichi SDF raymarcher) | ~0.45-0.7s/frame @1080x1920 | every 3D shot: soft shadows, AO, fog, specular, rim, G-buffer |
-| Mesh render | bpy `BLENDER_WORKBENCH` (headless via libEGL/llvmpipe) | ~2.1s/frame | when a story genuinely needs modeled geometry (matcap + cavity + shadow) |
-| Hero bakes | bpy `CYCLES` CPU, 16-48spp + denoise | ~28s/frame | one-off beauty stills of a hero object, composited as 2.5D layers |
-| Finish | `dimensional.post()` (numpy G-buffer compositing) | ~0.3s/frame | depth DOF -> split-tone -> halation -> bloom -> ACES -> grain -> vignette -> CA |
-| Brand | `dispatch_core` | — | wordmark, captions, HUD, outro — unchanged, composited over the render |
+| World render | `dimensional.py` (Taichi SDF raymarcher) | **~4.5s/frame** (a moderate scene) | every 3D shot: soft shadows, AO, fog, specular, rim, G-buffer |
+| Finish | `dimensional.post()` (numpy, half-res blurs) | **~1.8s/frame** | depth DOF -> split-tone -> halation -> bloom -> ACES -> grain -> vignette -> CA |
+| **Full frame** | render + post | **~6.2s/frame** | => ~55 min for an 18s demo, ~3.1h for a 60s dispatch on 4 CPU cores |
+| Mesh render | bpy `BLENDER_WORKBENCH` (llvmpipe EGL) | ~2.1s/frame | when a story needs modeled geometry (matcap + cavity + shadow) |
+| Hero bakes | bpy `CYCLES` CPU, 16-48spp + denoise | ~28s/frame | one-off beauty stills, composited as 2.5D layers |
+| Brand | `dispatch_core` | — | wordmark, captions, HUD, outro — composited OVER the render |
 
-EEVEE does not work headless (GPU-only). Do not chase it. Cycles is NEVER the per-frame renderer
-(1800 frames = 14h); it is a baker.
+> **Correction (do not repeat the mistake):** an early note claimed "~0.45s/frame". That was a
+> *trivial* benchmark scene (one sphere). A real story SDF (terrain + repeated foliage + hero +
+> fbm) is ~10-25x heavier per evaluation. Always quote the number for the ACTUAL scene, measured
+> after a warm-up frame (the first frame includes the ~26s one-time JIT compile).
+
+### Cost model + the levers (per-frame cost = pixels x march-steps x SDF-eval-cost)
+- **SDF eval cost dominates.** The scene SDF is called ~155x/pixel (96 march + shadow + AO + 6
+  normal). Cheapening it is the biggest primary lever, but it's the ONLY one that can cut visible
+  quality, so guard it.
+- **`SHADOW_FN` (cheap shadow SDF) — FREE.** Shadows/AO march a COARSE silhouette SDF (skip foliage
+  greebles, hero detail). Pixel-identical to full-detail shadows; ~2x on shadow-heavy scenes.
+  Every scene should provide one.
+- **Half-res `post()` blurs — FREE.** DOF/halation/bloom are low-frequency; computing them
+  downsampled then upsampling is visually identical (2.9s -> 1.8s).
+- **`SHADOW_STEPS`/`MARCH_STEPS` tuning — nearly free** within reason (soft scenes tolerate fewer).
+- **Render `scale` < 1.0 — NOT free** (softens on upscale). Use ONLY for look-dev iteration
+  (`scale=0.4`), never for ship. Default is 1.0.
+- **GPU (`DIM_ARCH=cuda|vulkan`) — the real 10x, FREE, zero code change.** The kernel drops from
+  ~4.5s to ~0.1s; a GPU-configured routine env renders a full dispatch in minutes. GPU is OPT-IN
+  (a failed GPU probe can hard-abort the process, and a daily render must never crash on a guess),
+  so set `DIM_ARCH` in the env when a GPU is present. `dim.ARCH` reports what's active.
+
+### Non-negotiable run rule: ONE process per render
+Taichi JIT-compiles the scene kernel ONCE per process (~26s, then cached to `~/.cache/taichi`) and
+internally parallelizes each frame across ALL cores. So a Dispatch renders in a SINGLE process over
+the whole frame range — NOT chunked across 4 processes like the old 2D pipeline (that would pay the
+26s compile 4x AND oversubscribe the cores). The engine is committed and stable; only the per-run
+SCENE recompiles (correct — a different video every day). It is never "rebuilt per frame".
+
+EEVEE does not work headless (GPU-only). Cycles is NEVER the per-frame renderer (1800 frames = 14h);
+it is a baker.
 
 ## The target aesthetic
 

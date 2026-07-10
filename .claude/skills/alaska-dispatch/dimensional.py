@@ -32,22 +32,37 @@ except ImportError as e:
     raise ImportError("dimensional.py needs taichi: pip install --break-system-packages taichi") from e
 
 # ---------------------------------------------------------------- module state
-W, H = 1080, 1920
+W, H = 1080, 1920           # RENDER resolution (what the kernel marches)
+OUTW, OUTH = 1080, 1920     # OUTPUT resolution (post upscales to this)
 _inited = False
 img = None; dep = None
 
 MAXD = 60.0         # far plane
 MARCH_STEPS = 96
-SHADOW_STEPS = 48
+SHADOW_STEPS = 32   # shadows tolerate fewer steps than primary rays
 
-def init(w=1080, h=1920, threads=None):
-    """Initialise Taichi (CPU, offline cache on) and allocate the G-buffer fields."""
-    global _inited, W, H, img, dep
+def init(w=1080, h=1920, threads=None, scale=1.0):
+    """Initialise Taichi (CPU) and allocate the G-buffer.
+    scale<1.0 renders at reduced resolution and upscales in render_frame — the single biggest CPU
+    speed lever (0.5 => 4x fewer rays). Grain + DOF + fog hide the softness on stylized scenes;
+    ship at scale ~0.6-0.75, iterate at 0.4."""
+    global _inited, W, H, OUTW, OUTH, img, dep, ARCH
     if _inited: return
-    W, H = w, h
-    kw = dict(arch=ti.cpu, offline_cache=True, log_level=ti.ERROR)
-    if threads: kw["cpu_max_num_threads"] = threads
-    ti.init(**kw)
+    OUTW, OUTH = w, h
+    W, H = max(2, int(round(w * scale))), max(2, int(round(h * scale)))
+    # ARCH: CPU by default (reliable on any box). A GPU-configured routine env sets DIM_ARCH=cuda
+    # (or vulkan/gpu) to get ~50-100x the raymarch throughput — full-res near real-time — with ZERO
+    # code change. GPU is OPT-IN, not auto-probed, because a failed GPU probe can hard-abort the
+    # process (Vulkan RHI), and a daily autonomous render must never crash on a hardware guess.
+    import os
+    want = os.environ.get("DIM_ARCH", "cpu").lower()
+    archmap = {"cpu": ti.cpu, "gpu": ti.gpu, "vulkan": ti.vulkan, "cuda": ti.cuda, "metal": ti.metal}
+    try:
+        kw = dict(arch=archmap.get(want, ti.cpu), offline_cache=True, log_level=ti.ERROR)
+        if threads: kw["cpu_max_num_threads"] = threads
+        ti.init(**kw); ARCH = want
+    except Exception:
+        ti.init(arch=ti.cpu, offline_cache=True, log_level=ti.ERROR); ARCH = "cpu"
     img = ti.Vector.field(3, ti.f32, shape=(W, H))
     dep = ti.field(ti.f32, shape=(W, H))
     _inited = True
@@ -106,10 +121,14 @@ def fbm2(x, z):
 
 # ---------------------------------------------------------------- scene hooks
 # A dispatch scene file defines these BEFORE calling init_kernels():
-#   dim.SCENE_FN : @ti.func (p: vec3, t: f32) -> f32          the world SDF
-#   dim.MAT_FN   : @ti.func (p: vec3, n: vec3, t: f32) -> vec3 base albedo at p
+#   dim.SCENE_FN  : @ti.func (p, t) -> f32          the full world SDF (primary rays + normals)
+#   dim.MAT_FN    : @ti.func (p, n, t) -> vec3       base albedo at p
+#   dim.SHADOW_FN : @ti.func (p, t) -> f32  OPTIONAL cheap SDF for shadows+AO (skip fine detail
+#                   like foliage/hero greebles — a coarse silhouette casts a fine-enough shadow and
+#                   this is called ~37x/pixel. Falls back to SCENE_FN if unset.)
 SCENE_FN = None
 MAT_FN = None
+SHADOW_FN = None
 
 # lighting rig (scene-tunable, sensible studio defaults)
 SUN_DIR = (0.55, 0.62, -0.55)     # key
@@ -128,6 +147,7 @@ def init_kernels():
     global _kernels_ready, _render_k
     assert SCENE_FN is not None and MAT_FN is not None, "assign dim.SCENE_FN and dim.MAT_FN first"
     scene = SCENE_FN; mat = MAT_FN
+    shadow_sdf = SHADOW_FN if SHADOW_FN is not None else SCENE_FN   # cheap SDF for shadows/AO
     sun_dir = ti.Vector(list(SUN_DIR)).normalized()
     sun_col = ti.Vector(list(SUN_COL)); sky_col = ti.Vector(list(SKY_COL))
     sky_hi = ti.Vector(list(SKY_HI)); fog_col = ti.Vector(list(FOG_COL))
@@ -146,19 +166,19 @@ def init_kernels():
     def _soft_shadow(ro, rd, t):
         res, s = 1.0, 0.03
         for _ in range(SHADOW_STEPS):
-            h = scene(ro + rd * s, t)
+            h = shadow_sdf(ro + rd * s, t)
             res = ti.min(res, 9.0 * h / s)
-            s += ti.max(h, 0.012)
-            if res < 0.004 or s > 24.0: break
+            s += ti.max(h, 0.02)
+            if res < 0.004 or s > 20.0: break
         return ti.math.clamp(res, 0.0, 1.0)
 
     @ti.func
     def _ao(p, n, t):
         occ, sca = 0.0, 1.0
-        for i in ti.static(range(5)):
-            h = 0.02 + 0.15 * i
-            occ += (h - scene(p + n * h, t)) * sca
-            sca *= 0.78
+        for i in ti.static(range(4)):
+            h = 0.03 + 0.16 * i
+            occ += (h - shadow_sdf(p + n * h, t)) * sca
+            sca *= 0.75
         return ti.math.clamp(1.0 - 2.0 * occ, 0.0, 1.0)
 
     @ti.kernel
@@ -256,6 +276,12 @@ def render_frame(cam: Cam, t=0.0):
     # taichi field is (W,H); convert to (H,W,3) with y up->down
     rgb = np.transpose(a, (1, 0, 2))[::-1]
     z = np.transpose(d, (1, 0))[::-1]
+    # upscale the render-res G-buffer to OUTPUT res (Lanczos for color, linear for depth)
+    if (W, H) != (OUTW, OUTH):
+        from PIL import Image as _I
+        rgb = np.asarray(_I.fromarray((np.clip(rgb, 0, 4.0) * 63.75).astype(np.uint8)).resize(
+            (OUTW, OUTH), _I.LANCZOS), np.float32) / 63.75
+        z = np.asarray(_I.fromarray(z.astype(np.float32), mode="F").resize((OUTW, OUTH), _I.BILINEAR), np.float32)
     return np.clip(rgb, 0, 4.0), z
 
 def post(rgb, z, cam: Cam, f=0, grain=0.028):
@@ -263,14 +289,31 @@ def post(rgb, z, cam: Cam, f=0, grain=0.028):
     depth DOF -> atmospheric split-tone -> halation -> bloom -> tonemap -> grain -> vignette -> CA.
     Returns uint8 HxWx3."""
     from scipy.ndimage import gaussian_filter
+    from PIL import Image as _I
     h, w, _ = rgb.shape
     out = rgb.astype(np.float32)
 
-    # 1. DEPTH OF FIELD: blend three blur planes by circle-of-confusion from the depth buffer
+    def _blur(a, sigma):
+        # blur is low-frequency: downsample -> small blur -> upsample is visually identical to a
+        # full-res big blur but ~4-9x cheaper. This is the free speed in post().
+        ds = 3 if sigma >= 5 else 2
+        sm = np.asarray(_I.fromarray((np.clip(a, 0, 4) * 63.75).astype(np.uint8)).resize(
+            (w // ds, h // ds), _I.BILINEAR), np.float32) / 63.75
+        sm = np.dstack([gaussian_filter(sm[..., c], sigma / ds) for c in range(3)]) if sm.ndim == 3 \
+            else gaussian_filter(sm, sigma / ds)
+        return np.asarray(_I.fromarray((np.clip(sm, 0, 4) * 63.75).astype(np.uint8)).resize(
+            (w, h), _I.BILINEAR), np.float32) / 63.75
+
+    def _blur1(a, sigma):
+        ds = 3 if sigma >= 5 else 2
+        sm = np.asarray(_I.fromarray(a.astype(np.float32), mode="F").resize((w // ds, h // ds), _I.BILINEAR), np.float32)
+        sm = gaussian_filter(sm, sigma / ds)
+        return np.asarray(_I.fromarray(sm, mode="F").resize((w, h), _I.BILINEAR), np.float32)
+
+    # 1. DEPTH OF FIELD: blend two blur planes by circle-of-confusion from the depth buffer
     coc = np.abs(z - cam.focus) / np.maximum(cam.focus, 1e-3) * (4.0 / cam.fstop)
     coc = np.clip(coc, 0.0, 2.5)
-    b1 = np.dstack([gaussian_filter(out[..., c], 2.2) for c in range(3)])
-    b2 = np.dstack([gaussian_filter(out[..., c], 6.0) for c in range(3)])
+    b1 = _blur(out, 2.2); b2 = _blur(out, 6.0)
     m1 = np.clip(coc, 0, 1)[..., None]; m2 = np.clip(coc - 1.0, 0, 1)[..., None]
     out = out * (1 - m1) + b1 * m1
     out = out * (1 - m2) + b2 * m2
@@ -281,11 +324,10 @@ def post(rgb, z, cam: Cam, f=0, grain=0.028):
     out = out + hi * np.array([0.05, 0.025, -0.02]) + lo * np.array([-0.02, -0.005, 0.045])
 
     # 3. HALATION: warm glow bleeding off the brightest areas (film-stock signature)
-    bright = np.clip(lum[..., 0] - 0.78, 0, 1)
-    hal = gaussian_filter(bright, 14.0)
+    hal = _blur1(np.clip(lum[..., 0] - 0.78, 0, 1), 14.0)
     out += hal[..., None] * np.array([0.24, 0.10, 0.03])
     # 4. BLOOM (tighter, neutral)
-    bl = gaussian_filter(np.clip(lum[..., 0] - 0.92, 0, 1), 5.0)
+    bl = _blur1(np.clip(lum[..., 0] - 0.92, 0, 1), 5.0)
     out += bl[..., None] * 0.20
 
     # 5. FILMIC TONEMAP (ACES-ish curve) + gamma
