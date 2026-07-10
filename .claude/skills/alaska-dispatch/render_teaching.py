@@ -231,11 +231,16 @@ def hud_card(img, f, title, stat_label, stat_val, tag=None, tagcol=YEL, a=1.0):
     tk(d, title, ef, (*PALE_HI, int(240 * a)), 132, 1216, 0.06)
     logw(132, 1216, tw(title, ef, 0.06), ef.size, PALE_HI, a, True, "hud")
     d.line([(132, 1258), (948, 1258)], fill=(*PALE_LO, int(200 * a)), width=2)
-    lf = mono(28); tk(d, stat_label, lf, (*GREY, int(230 * a)), 132, 1280)
-    logw(132, 1280, tw(stat_label, lf), lf.size, GREY, a, True, "hud")
-    vf = mono(46, b=True); vw = tw(stat_val, vf, 0.02)
-    tk(d, stat_val, vf, (*SNOW, int(255 * a)), 948 - vw, 1272, 0.02)
-    logw(948 - vw, 1272, vw, vf.size, SNOW, a, True, "hud")
+    lf = mono(28); lw_ = tw(stat_label, lf)
+    tk(d, stat_label, lf, (*GREY, int(230 * a)), 132, 1280)
+    logw(132, 1280, lw_, lf.size, GREY, a, True, "hud")
+    # auto-shrink the value until it clears the label (no overlapping strings, ever)
+    for vsz in (46, 40, 34, 30):
+        vf = mono(vsz, b=True); vw = tw(stat_val, vf, 0.02)
+        if 948 - vw > 132 + lw_ + 30: break
+    vy = 1272 + (46 - vf.size) // 2
+    tk(d, stat_val, vf, (*SNOW, int(255 * a)), 948 - vw, vy, 0.02)
+    logw(948 - vw, vy, vw, vf.size, SNOW, a, True, "hud")
     if tag:
         tf = mono(26, b=True); twd = tw(tag, tf, 0.08)
         lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); dl = ImageDraw.Draw(lay)
@@ -247,8 +252,16 @@ def hud_card(img, f, title, stat_label, stat_val, tag=None, tagcol=YEL, a=1.0):
 
 def eyebrow(img, f, text, y=250, a=1.0, col=None):
     col = col or GOLD
-    d = ImageDraw.Draw(img); ef = mono(28, b=True); wd = tw(text, ef, 0.16)
+    ef = mono(28, b=True); wd = tw(text, ef, 0.16)
     x = (W - wd) // 2
+    # soft dark chip behind the strip so the text reads over any scene (posts, bright water, banks)
+    chip = Image.new("RGBA", (W, H), (0, 0, 0, 0)); cd = ImageDraw.Draw(chip)
+    cd.rounded_rectangle([x - 54, y - 12, x + wd + 54, y + 44], radius=12, fill=(8, 12, 18, int(150 * a)))
+    img.alpha_composite(chip.filter(ImageFilter.GaussianBlur(4)))
+    global BGLUMA
+    if LOGTEXT and f % 6 == 0 and BGLUMA is not None:
+        BGLUMA = _lum(np.asarray(img.convert("RGB")).astype(np.float32))
+    d = ImageDraw.Draw(img)
     d.line([(x - 40, y + 16), (x - 16, y + 16)], fill=(*col, int(220 * a)), width=2)
     d.line([(x + wd + 16, y + 16), (x + wd + 40, y + 16)], fill=(*col, int(220 * a)), width=2)
     tk(d, text, ef, (*col, int(255 * a)), x, y, 0.16)
@@ -275,16 +288,17 @@ def scene1(f):  # WIDE-ESTABLISH: aerial run descending; plant the yellow mark i
              a=oc(seg(lt, 1.2, 2.2)))
     return img
 
-def scene2(f):  # SUBJECT-PORTRAIT: the mechanical tally counter, a hand, the tower — the 70-year human count
+def scene2(f):  # SUBJECT-PORTRAIT: the mechanical tally counter over the LIVING river it watches
     a, b, _ = SHOTS[1]; lt = (f - a) / FPS
-    c = base_field(f)
+    # the river keeps flowing behind the tower vantage (dimmer, narrower) — the counter watches IT,
+    # and the whole frame keeps moving (event cadence)
+    c = draw_river(base_field(f), f, width=330, flow=0.9, bright=0.68)
     # cedar tower posts framing the sides (match-cut from the river edges)
     tw_img = Image.new("RGBA", (W, H), (0, 0, 0, 0)); td = ImageDraw.Draw(tw_img)
     for sx in (150, W - 150):
         td.rectangle([sx - 16, 220, sx + 16, H - 220], fill=(*CEDAR, 235))
         for yy in range(260, H - 220, 120):
             td.rectangle([sx - 60, yy, sx + 60, yy + 18], fill=(*CEDAR_HI, 220))
-    c = c * 1.0
     img = Image.fromarray(np.clip(c, 0, 255).astype(np.uint8)).convert("RGBA")
     img.alpha_composite(tw_img)
     # center: a big mechanical tally counter, ticking up
@@ -329,8 +343,9 @@ def scene3(f):  # ALT-VANTAGE: the drone lifts from its box at 08:30, its eye-vi
     boxo = oc(seg(lt, 0.1, 0.7))
     bx, by = W // 2, 1000
     d.rounded_rectangle([bx - 150, by - 40, bx + 150, by + 120], radius=12, fill=(*SAGE, 235), outline=(*INK, 255), width=3)
-    lidy = by - 40 - int(90 * boxo)
-    d.rounded_rectangle([bx - 150, lidy - 24, bx + 150, lidy], radius=8, fill=(*CEDAR_HI, 235))
+    # the hatch SLIDES open along the box's top edge (attached, not a floating plank)
+    slide = int(260 * boxo)
+    d.rounded_rectangle([bx - 150 + slide, by - 64, bx + 150 + slide, by - 40], radius=8, fill=(*CEDAR_HI, 235), outline=(*INK, 255), width=2)
     rise = oc(seg(lt, 0.35, 1.3)); dy = int(360 * rise)
     dx, dyc = bx, by - 20 - dy
     # drone body
@@ -397,17 +412,21 @@ def scene5(f):  # PUSH-DETAIL: the marks become the model, then it echoes them a
     c = draw_river(base_field(f), f, cx=W // 2, width=560, flow=1.15, bright=0.95)
     img = Image.fromarray(np.clip(c, 0, 255).astype(np.uint8)).convert("RGBA")
     d = ImageDraw.Draw(img)
-    # machine-drawn detection boxes snap across the run in a grid (double-exposure of the human marks)
+    # machine-drawn detection boxes SNAP ONTO THE ACTUAL FISH (their positions are deterministic:
+    # replicate draw_river's flow math for this scene's cx/width/flow so every box frames a sockeye)
     prog = oc(seg(lt, 0.15, 0.9))
-    rng = np.random.default_rng(11)
-    cells = 22
-    for i in range(cells):
-        if (i / cells) > prog: continue
-        gx = 150 + int((i * 83 + 40) % (W - 300))
-        gy = 380 + int(((i * 137) % 1000))
-        s = 40
-        d.rectangle([gx - s, gy - int(s * 0.5), gx + s, gy + int(s * 0.5)], outline=(*PALE_HI, 230), width=3)
-        d.line([(gx - 4, gy), (gx + 4, gy)], fill=(*YEL_HI, 220), width=2)
+    t_ = f / FPS; cx5, w5, fl5 = W // 2, 560, 1.15
+    for i in range(46):
+        if ((i * 29) % 46) / 46.0 > prog: continue  # boxes appear in a scattered order as prog grows
+        yy = int(((t_ * 78 * fl5 + i * 197) % (H + 240)) - 120)
+        if not (300 < yy < 1150): continue          # only box fish in the visible story band
+        xoff = int((w5 * 0.34) * math.sin(i * 1.7 + yy * 0.006))
+        wob = int(26 * math.sin(yy * 0.011 + t_ * 0.5))
+        xx = cx5 + wob + xoff
+        s = 0.85 + 0.5 * ((i * 37 % 100) / 100.0)
+        bw = int(52 * s); bh = int(26 * s)
+        d.rectangle([xx - bw, yy - bh, xx + bw + int(14 * s), yy + bh], outline=(*PALE_HI, 230), width=3)
+        d.line([(xx - 5, yy - bh - 8), (xx + 5, yy - bh - 8)], fill=(*YEL_HI, 220), width=3)
     eyebrow(img, f, "NOW IT PICKS THE FISH OUT ON ITS OWN", y=250, a=oc(seg(lt, 0.2, 1.0)), col=PALE_HI)
     det = int(prog * 1180)
     hud_card(img, f, "MODEL INFERENCE  ·  UNAIDED", "AUTO-DETECTED THIS FRAME", f"{det:,}",
@@ -436,11 +455,14 @@ def scene6(f):  # TWO-UP: not tested vs the towers, and a shadow the model misse
     d = ImageDraw.Draw(img)
     tk(d, "TOWER TRUTH?", mono(26, b=True), (*GREY, 235), seam + 40, 320, 0.06)
     logw(seam + 40, 320, tw("TOWER TRUTH?", mono(26, b=True), 0.06), 26, GREY, 1.0, True, "hud")
-    # the shadow sweeps down (vertical) over the right half; a fish under it goes grey + a MISS gap opens
+    # the shadow sweeps down over the right half — a SOFT, feathered cloud-shadow (never a hard
+    # letterbox band, which reads as a pasted UI panel)
     shy = 300 + int(seg(lt, 0.5, L) * 700)
-    lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); dl = ImageDraw.Draw(lay)
-    dl.rectangle([seam, shy - 70, W, shy + 70], fill=(6, 8, 12, 150))
-    img.alpha_composite(lay)
+    shmask = Image.new("L", (W, H), 0); sd6 = ImageDraw.Draw(shmask)
+    sd6.ellipse([seam - 60, shy - 130, W + 220, shy + 130], fill=150)
+    shmask = shmask.filter(ImageFilter.GaussianBlur(34))
+    shade = Image.new("RGBA", (W, H), (6, 8, 12, 0)); shade.putalpha(shmask)
+    img.alpha_composite(shade)
     d = ImageDraw.Draw(img)
     if seg(lt, 0.6, L) > 0.3:
         mx, my = seam + (W - seam) // 2 - 40, shy
@@ -464,21 +486,23 @@ def scene7(f):  # WIDE-ESTABLISH resolution: tower + human + drone over ONE rive
     d.ellipse([176, 560, 218, 640], fill=(18, 22, 28, 255))  # a person on the tower
     dx, dyc = W - 240, 520 + int(20 * math.sin(lt * 1.4))
     d.ellipse([dx - 34, dyc - 12, dx + 34, dyc + 12], fill=(40, 46, 54, 255), outline=(*PALE_HI, 255), width=2)
+    for ox in (-46, 46):  # rotor bars so it reads as the drone, not a dark blob
+        spin = (f * 0.9) % 2
+        d.line([(dx + ox - 22, dyc - 16), (dx + ox + 22, dyc - 16)], fill=(*PALE_HI, 210 if spin < 1 else 100), width=3)
     # both marks glow together: a human yellow mark + a machine box on the same fish
     gx, gy = W // 2, 780
     yellow_mark(img, gx - 30, gy, int(22 + 4 * math.sin(lt * 3)), a=0.9, ring=True)
     d = ImageDraw.Draw(img)
     d.rectangle([gx + 6, gy - 24, gx + 78, gy + 24], outline=(*PALE_HI, 235), width=3)
     eyebrow(img, f, "THE HAND STILL TEACHES  ·  THE MODEL WATCHES", y=250, a=oc(seg(lt, 0.2, 1.2)), col=YEL_HI)
-    # the count settles and LOCKS into place near the end
+    # the count settles into the ADFG-confirmed escapement window (never a fabricated total)
     settle = seg(lt, L - 3.2, L - 0.4)
-    val = int(1000000 * oc(settle))
-    hud_card(img, f, "THE COUNT COMES HOME", "WOOD RIVER  ·  SOCKEYE",
-             f"{val:,}" if settle > 0.02 else "COUNTING", tag="HUMAN + MODEL", tagcol=YEL, a=oc(seg(lt, 0.2, 1.0)))
+    hud_card(img, f, "THE COUNT COMES HOME", "ESCAPEMENT GOAL  ·  ADFG",
+             "700,000 TO 2,800,000" if settle > 0.5 else "COUNTING", tag="HUMAN + MODEL", tagcol=YEL, a=oc(seg(lt, 0.2, 1.0)))
     return img
 
-def scene8(f):  # MAP-TERRITORY + branded outro
-    a, b, _ = SHOTS[7]; lt = (f - a) / FPS
+def scene8(f):  # MAP-TERRITORY + branded outro (motion runs to the final frame)
+    a, b, _ = SHOTS[7]; lt = (f - a) / FPS; L = (b - a) / FPS
     c = base_field(f)
     img = Image.fromarray(np.clip(c, 0, 255).astype(np.uint8)).convert("RGBA")
     d = ImageDraw.Draw(img)
@@ -489,13 +513,37 @@ def scene8(f):  # MAP-TERRITORY + branded outro
         dl.line([(sx, sy), ((sx + ex) // 2, (sy + ey) // 2), (ex, ey)], fill=(*PALE, 200), width=6)
     img.alpha_composite(lay)
     d = ImageDraw.Draw(img)
+    # LIVING map: crimson run-dots flow up each river finger continuously (large-area motion to the end)
+    for k, (sx, sy, ex, ey) in enumerate([(430, 900, 300, 560), (560, 900, 640, 540), (760, 880, 860, 600)]):
+        for j in range(7):
+            p = ((lt * 0.22 + j / 7.0 + k * 0.13) % 1.0)
+            mx = sx + (ex - sx) * p; my = sy + (ey - sy) * p
+            rr = 7 + 3 * math.sin(lt * 2 + j)
+            d.ellipse([mx - rr, my - rr, mx + rr, my + rr], fill=(*CRIM_HI, 200))
     node = (300, 560); pr = int(20 + 16 * (0.5 + 0.5 * math.sin(lt * 3)))
     d.ellipse([node[0] - pr, node[1] - pr, node[0] + pr, node[1] + pr], outline=(*YEL, 220), width=3)
     d.ellipse([node[0] - 8, node[1] - 8, node[0] + 8, node[1] + 8], fill=(*YEL_HI, 255))
     tk(d, "WOOD RIVER", mono(26, b=True), (*YEL_HI, 235), node[0] + 26, node[1] - 14, 0.08)
     logw(node[0] + 26, node[1] - 14, tw("WOOD RIVER", mono(26, b=True), 0.08), 26, YEL_HI, oc(seg(lt, 0.3, 1.0)), True, "hud")
-    hud_card(img, f, "BRISTOL BAY  ·  ALASKA", "THE COUNT, THIS SUMMER", "BY HAND + MACHINE", a=oc(seg(lt, 0.2, 1.0)))
-    return img
+    hud_card(img, f, "BRISTOL BAY  ·  ALASKA", "THIS SUMMER", "HAND + MACHINE", a=oc(seg(lt, 0.2, 1.0)))
+    # staged full-frame listening pulses through the outro (large-area events spaced <5s to the end)
+    arr = np.asarray(img.convert("RGB"), np.float32)
+    for pt in (2.2, 5.6, 8.6):
+        pa = math.exp(-((lt - pt) ** 2) / (2 * 0.35 ** 2))
+        if pa > 0.02:
+            ring_r = 200 + 900 * clamp01((lt - pt + 0.7) / 1.4)
+            rg = Image.new("L", (W, H), 0); rd2 = ImageDraw.Draw(rg)
+            rd2.ellipse([300 - ring_r, 560 - ring_r, 300 + ring_r, 560 + ring_r], outline=255, width=26)
+            rgm = gaussian_filter(np.asarray(rg, np.float32) / 255.0, 4.0)[..., None]
+            arr = np.clip(arr + rgm * np.array(YEL, np.float32) * (0.35 * pa), 0, 255)
+    # slow continuous push-in so the whole frame resamples every frame, then a final cinematic fade
+    sc = 1.0 - 0.06 * io(lt / max(1e-6, L))
+    cw, ch = int(W * sc), int(H * sc)
+    x0 = (W - cw) // 2; y0 = (H - ch) // 2
+    arr = np.asarray(Image.fromarray(arr.astype(np.uint8)).crop((x0, y0, x0 + cw, y0 + ch)).resize((W, H), Image.LANCZOS), np.float32)
+    fade = seg(lt, L - 1.6, L - 0.1)
+    if fade > 0: arr = arr * (1.0 - 0.88 * io(fade))
+    return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).convert("RGBA")
 
 SCENES = [scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8]
 
@@ -522,7 +570,17 @@ def caption(img, f):
     fnt = fr(56, 650); maxw = W - 2 * 104; spw = int(fnt.size * 0.30)
     lines = _wrap(words, fnt, maxw, spw)
     if len(lines) > 3: fnt = fr(44, 650); spw = int(fnt.size * 0.30); lines = _wrap(words, fnt, maxw, spw)
-    nl = len(lines); lh = int(fnt.size * 1.18); blockh = lh * nl; y0 = 1500 - blockh // 2; d = ImageDraw.Draw(img)
+    nl = len(lines); lh = int(fnt.size * 1.18); blockh = lh * nl; y0 = 1500 - blockh // 2
+    # soft dark scrim behind the caption block so every word clears the contrast floor over bright water
+    scr = Image.new("RGBA", (W, H), (0, 0, 0, 0)); sd = ImageDraw.Draw(scr)
+    sd.rounded_rectangle([70, y0 - 26, W - 70, y0 + blockh + 34], radius=22, fill=(6, 10, 16, int(178 * ap)))
+    scr = scr.filter(ImageFilter.GaussianBlur(6))
+    img.alpha_composite(scr)
+    # re-capture the background luma so the readability manifest sees the scrim the viewer sees
+    global BGLUMA
+    if LOGTEXT and f % 6 == 0:
+        BGLUMA = _lum(np.asarray(img.convert("RGB")).astype(np.float32))
+    d = ImageDraw.Draw(img)
     for li, ln in enumerate(lines):
         lr = oc(clamp01((prog - li / max(1, nl)) / 0.16)); la = ap * lr
         if la <= 0.02: continue
