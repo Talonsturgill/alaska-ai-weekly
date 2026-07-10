@@ -184,6 +184,22 @@ headless Chromium (Canvas 2D, SVG, CSS) unless flagged. Committed helpers:
     Canvas-2D fallback design; expect 6-24s renders; silent flat-2D
     fallback is the trap. Reserve for occasional hero renders only. D4
 
+## SUBJECT ICONS (story-anchor illustrations)
+
+49b. **SpawningSockeye** (NEW 2026-07-09) — a side-profile spawning sockeye
+    salmon as a single filled SVG path set: humped dorsal back, hooked upper
+    jaw (kype), forked caudal fin, dorsal/adipose/anal/pelvic/pectoral fins,
+    a top-lit vertical body gradient (light dorsal to deep belly), an
+    olive-green head (the iconic spawning coloration) with a bone eye, and a
+    dashed lateral line. Outer silhouette at hero weight, fin seams at fine.
+    Reads unmistakably as salmon at 432px thumb. Doubles as a DATA ANCHOR:
+    the fish can wear story marks (a hand tally-stroke and a machine
+    bounding box) so one object states a whole thesis. Portable, offline,
+    deterministic. Used as the cover + close bookend of "One River, Two Ways
+    to Count It." Generalizes: build other AK subject icons (a boat, a
+    turbine, a drone-in-a-box) the same way — one confident filled path,
+    profile-heaviest outline, one gradient, one accent, grain over the fill. D2
+
 ## TYPE & CAROUSEL MECHANICS
 
 50. **Title-Card Hook** — 120-170px display (high-contrast serif or wide

@@ -67,6 +67,48 @@
         "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/"
       ],
       "outcome_notes": ""
+    },
+    {
+      "run_date": "2026-07-09",
+      "carousel_no": 2,
+      "topic": "AI drone plus computer-vision salmon counting pilot on the Wood River, tested against Bristol Bay's 70-year human counting towers (2026 sockeye season)",
+      "angle": "An unproven AI counter still in training is tested against the hand-clicker tower method that has set Bristol Bay escapement since 1955; thesis 'one river, two ways to count it, only one is proven' -- honest about a pilot, and about who counts (partners UW FRI, BBRSDA, BBEDC; ADF&G not directly involved).",
+      "entities": [
+        "Bristol Bay",
+        "Wood River",
+        "Alaska Department of Fish and Game",
+        "ADF&G",
+        "University of Washington Fisheries Research Institute",
+        "BBRSDA",
+        "BBEDC",
+        "Norm Van Vactor",
+        "Ian Chiu",
+        "Dillingham",
+        "Lake Aleknagik",
+        "sockeye salmon"
+      ],
+      "keywords": [
+        "salmon",
+        "sockeye",
+        "escapement",
+        "counting tower",
+        "drone",
+        "computer vision",
+        "machine learning",
+        "fish counting",
+        "Bristol Bay",
+        "fisheries management",
+        "AI in the field",
+        "in training",
+        "unproven"
+      ],
+      "headline": "One river. Two ways to count it. Only one is proven.",
+      "sources_lead": [
+        "https://www.kdlg.org/fisheries/2026-07-03/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts",
+        "https://www.kmxt.org/alaska-statewide-news/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts",
+        "https://www.kdlg.org/show/bristol-bay-fisheries-report/2026-07-06/bristol-bay-fisheries-report-july-6-2026"
+      ],
+      "outcome_notes": ""
     }
   ]
 }

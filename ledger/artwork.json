@@ -42,6 +42,28 @@
         "type_temperature": 4
       },
       "new_techniques_logged": []
+    },
+    {
+      "run_date": "2026-07-09",
+      "carousel_no": 2,
+      "slide_count": 9,
+      "hero_structure": "Evolving mark-of-one-fish glyph ledger (hand tally-stroke vs machine bounding box on a spawning sockeye) plus software-3D dawn riverbank (counting tower + lone drone-in-a-box); NOT a cartographic camera map",
+      "atmosphere": "Tannin river fog / cold field morning (Mesh Wash body + one warm Conic Horizon dawn beat on S8)",
+      "depth_technique": "Multiplane Parallax + depth-weighted wireframe tower on S5 (low horizon HZ~886, DOF-blurred foreground reeds repoussoir, colored fog); parallel/flat data elsewhere",
+      "line_voice": "instrument/editorial + transit/systems (detection boxes, constellation edges) + hand-ink (tally strokes)",
+      "continuity_device": "timeline-spine (1955->2026 year-ruler, advancing red marker) + motif:mark-of-one-fish (hand-stroke -> bounding-box -> both) + edge-tease",
+      "hook_archetype": "named-tension / before-after (clicker vs machine eye)",
+      "palette_family": "tannin-slate + driftwood-ink + drone-grey + sockeye-red accent (gold #FFC72C fixture only)",
+      "type_pairing": "Archivo variable (wdth+wght axes; display expanded + body normal) + JetBrains Mono instrument",
+      "narrative_structure": "audit / versus (two methods scored honestly), escalation to a debate close",
+      "variance_dials": {
+        "design_variance": 4,
+        "visual_density": 4,
+        "type_temperature": 2
+      },
+      "new_techniques_logged": [
+        "SpawningSockeye (side-profile spawning sockeye SVG icon: humped dorsal, kype, olive-green head, forked tail; body doubles as the data anchor)"
+      ]
     }
   ]
 }
