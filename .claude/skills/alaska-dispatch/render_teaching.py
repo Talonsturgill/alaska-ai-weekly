@@ -172,11 +172,15 @@ def base_field(f, tint=0.0):
 
 SPRUCE = (74, 104, 66)     # spawning sockeye head-green
 def _fish_layer(pts, scale=1.0, t=0.0):
-    """Shaded spawning sockeye: crimson body with belly shade + dorsal rim light, the green head,
-    a swimming tail that actually beats, small fins, and a soft contact shadow in the water."""
-    img = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(img)
-    for (x, y, s, col) in pts:
-        bl = int(30 * s * scale); bh = int(11 * s * scale)
+    """Shaded spawning sockeye, each drawn on its own tile and ROTATED to face its direction of
+    travel (heading comes from fish_pts), with per-fish tint: crimson bucks, duller hens. Crimson
+    body with belly shade + dorsal rim light, green head, beating tail, fins, soft contact shadow."""
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    for (px, py, s, col, ang) in pts:
+        BL = int(30 * s * scale); BH = int(11 * s * scale)
+        TS = 2 * BL + int(44 * s)                         # square tile big enough for tail + shadow
+        tile = Image.new("RGBA", (TS, TS), (0, 0, 0, 0)); d = ImageDraw.Draw(tile)
+        x = y = TS // 2; bl, bh = BL, BH
         dk = tuple(int(c * 0.52) for c in col)            # belly shade (strong enough to read small)
         hi = tuple(min(255, int(c * 1.5)) for c in col)   # dorsal rim
         # contact shadow (deeper + offset so the fish visibly floats over the bed)
@@ -204,6 +208,9 @@ def _fish_layer(pts, scale=1.0, t=0.0):
         for sxs in range(3):
             ax = x - int(bl * 0.35) + sxs * int(9.5 * s)
             d.arc([ax, y - int(5.5 * s), ax + int(11 * s), y + int(5.5 * s)], 300, 60, fill=(*dk, 175), width=2)
+        # rotate the whole fish to its heading and composite at its position
+        tile = tile.rotate(ang, resample=Image.BICUBIC, center=(TS // 2, TS // 2))
+        img.alpha_composite(tile, (int(px - TS // 2), int(py - TS // 2)))
     return img
 
 def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
@@ -264,20 +271,30 @@ def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
     c = c * (1 - fish_a) + fish_rgb * fish_a * bright
     return c
 
+HEN = (172, 108, 82)       # the duller red-brown of a spawning hen
 def fish_pts(t, cx, width, flow, n=20):
-    """Deterministic sockeye positions: evenly seeded lanes with PER-FISH speeds so tracks pass each
-    other naturally and never lock into stacked coincidence (the old 197-stride aliasing).
-    Fish sized so the shading craft (belly/rim/scales/fins) reads at full playback scale."""
+    """Deterministic sockeye: evenly seeded lanes with PER-FISH speeds (tracks pass each other,
+    no stacked aliasing), a per-fish HEADING along its actual direction of travel, and per-fish
+    tint (crimson bucks, duller hens) so the run reads as living animals, not one repeated sprite."""
     pts = []
     for i in range(n):
         sp = 78 * flow * (0.8 + 0.45 * ((i * 29) % 10) / 10.0)
         yy = int((t * sp + i * (2160.0 / n) * 3.7) % (H + 240)) - 120
-        xoff = int((width * 0.34) * math.sin(i * 1.7 + yy * 0.006))
-        wob = int(26 * math.sin(yy * 0.011 + t * 0.5))
-        xx = cx + wob + xoff
+        def _xat(yq):
+            return (width * 0.34) * math.sin(i * 1.7 + yq * 0.006) + 26 * math.sin(yq * 0.011 + t * 0.5)
+        xx = cx + int(_xat(yy))
+        # heading: the fish points along its motion (downstream +y, lateral drift from the lane math)
+        vx = (_xat(yy + 5) - _xat(yy - 5)) / 10.0 * sp
+        ang = 90.0 - math.degrees(math.atan2(vx, sp))     # rotate the left-facing glyph onto (vx, vy)
         s = 1.2 + 0.6 * ((i * 37 % 100) / 100.0)
-        col = CRIM if (i % 5) else CRIM_HI
-        pts.append((xx, yy, s, col))
+        # tint: 1 in 3 a hen (duller), the rest bucks with slight per-fish brightness
+        if i % 3 == 2:
+            col = HEN
+        else:
+            bright = 0.88 + 0.24 * ((i * 53 % 100) / 100.0)
+            base = CRIM if (i % 5) else CRIM_HI
+            col = tuple(min(255, int(v * bright)) for v in base)
+        pts.append((xx, yy, s, col, ang))
     return pts
 
 def hero_sockeye(img, cx, cy, bl, t, a=1.0):
@@ -602,7 +619,7 @@ def scene5(f):  # PUSH-DETAIL: the marks become the model, then it echoes them a
     t_ = f / FPS
     # boxes SNAP onto the exact fish the river draws (same deterministic fish_pts call)
     nbox = 0
-    for i, (xx, yy, s, _col) in enumerate(fish_pts(t_, W // 2, 560, 1.15)):
+    for i, (xx, yy, s, _col, _ang) in enumerate(fish_pts(t_, W // 2, 560, 1.15)):
         if ((i * 7) % 24) / 24.0 > prog: continue   # boxes appear in a scattered order as prog grows
         if not (300 < yy < 1150): continue          # only box fish in the visible story band
         bw = int(52 * s); bh = int(26 * s)
@@ -654,7 +671,13 @@ def scene6(f):  # TWO-UP: not tested vs the towers, and a shadow the model misse
     eyebrow(img, f, "NOT PROVEN AGAINST THE TOWERS", y=232, a=oc(seg(lt, 0.2, 1.0)), col=CRIM_HI)
     hud_card(img, f, "VALIDATION  ·  NEXT PHASE", "MODEL vs TOWER COUNTS", "PENDING",
              tag="NOT YET TESTED", tagcol=CRIM_HI, a=oc(seg(lt, 0.3, 1.0)))
-    return img
+    # slow continuous push-in: the whole frame resamples every frame so the held split never rests
+    sc6 = 1.0 - 0.05 * io(lt / max(1e-6, L))
+    cw, ch = int(W * sc6), int(H * sc6)
+    x0 = (W - cw) // 2; y0 = (H - ch) // 2
+    arr6 = np.asarray(img.convert("RGB"), np.float32)
+    arr6 = np.asarray(Image.fromarray(arr6.astype(np.uint8)).crop((x0, y0, x0 + cw, y0 + ch)).resize((W, H), Image.LANCZOS), np.float32)
+    return Image.fromarray(np.clip(arr6, 0, 255).astype(np.uint8)).convert("RGBA")
 
 def scene7(f):  # WIDE-ESTABLISH resolution: tower + human + drone over ONE river; the count settles
     a, b, _ = SHOTS[6]; lt = (f - a) / FPS; L = (b - a) / FPS
