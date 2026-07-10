@@ -1,127 +1,103 @@
 {
   "words": [
     {
-      "w": "Right now, a volcano is erupting in Alaska.",
+      "w": "Every summer, Bristol Bay's sockeye come back by the million.",
       "s": 0.5,
-      "e": 3.933,
+      "e": 4.219,
       "seg": 0
     },
     {
-      "w": "Great Sitkin has oozed lava for months.",
-      "s": 4.033,
-      "e": 6.631,
-      "seg": 0
-    },
-    {
-      "w": "It sits on a chain of dozens of volcanoes.",
-      "s": 7.051,
-      "e": 9.845,
+      "w": "For seventy years, people have counted them by hand,",
+      "s": 4.679,
+      "e": 7.801,
       "seg": 1
     },
     {
-      "w": "Nobody can stand on them and watch.",
-      "s": 10.265,
-      "e": 12.131,
+      "w": "from wooden towers,",
+      "s": 7.941,
+      "e": 9.091,
+      "seg": 1
+    },
+    {
+      "w": "ten minutes of every hour, around the clock.",
+      "s": 9.231,
+      "e": 11.833,
+      "seg": 1
+    },
+    {
+      "w": "That count sets the season, when to fish, and when to stop.",
+      "s": 11.973,
+      "e": 15.384,
+      "seg": 1
+    },
+    {
+      "w": "Now a drone lifts from a box at eight thirty,",
+      "s": 15.844,
+      "e": 18.224,
       "seg": 2
     },
     {
-      "w": "So Alaska listens instead.",
-      "s": 12.231,
-      "e": 13.884,
+      "w": "and films the run from above.",
+      "s": 18.364,
+      "e": 19.991,
       "seg": 2
     },
     {
-      "w": "Every rumble sends sound through the rock,",
-      "s": 14.303,
-      "e": 16.795,
+      "w": "But it cannot count. Not yet.",
+      "s": 20.45,
+      "e": 22.391,
       "seg": 3
     },
     {
-      "w": "and pressure through the air.",
-      "s": 16.895,
-      "e": 18.317,
+      "w": "First, a person has to teach it,",
+      "s": 22.531,
+      "e": 24.697,
       "seg": 3
     },
     {
-      "w": "The Alaska Volcano Observatory turns that sound",
-      "s": 18.737,
-      "e": 21.991,
+      "w": "marking each fish that crosses a line, several thousand of them.",
+      "s": 24.837,
+      "e": 28.901,
+      "seg": 3
+    },
+    {
+      "w": "Only then can the model pick the fish out on its own.",
+      "s": 29.361,
+      "e": 32.387,
       "seg": 4
     },
     {
-      "w": "into a picture, a spectrogram.",
-      "s": 22.09,
-      "e": 23.904,
-      "seg": 4
-    },
-    {
-      "w": "Then they trained a model to read it,",
-      "s": 24.324,
-      "e": 26.008,
+      "w": "It has not been tested against the towers yet.",
+      "s": 32.847,
+      "e": 35.361,
       "seg": 5
     },
     {
-      "w": "on over two hundred seventy thousand pictures.",
-      "s": 26.108,
-      "e": 28.934,
+      "w": "And a shadow on the river can still fool it.",
+      "s": 35.501,
+      "e": 37.756,
       "seg": 5
     },
     {
-      "w": "It tells tremor from explosion, quake from noise.",
-      "s": 29.355,
-      "e": 32.596,
+      "w": "So the counters still climb the towers,",
+      "s": 38.216,
+      "e": 40.135,
       "seg": 6
     },
     {
-      "w": "On its test, right about eighty seven percent.",
-      "s": 32.696,
-      "e": 35.65,
+      "w": "and the model learns to watch beside them.",
+      "s": 40.275,
+      "e": 42.479,
       "seg": 6
     },
     {
-      "w": "But hearing is not foreseeing.",
-      "s": 36.07,
-      "e": 37.715,
-      "seg": 7
-    },
-    {
-      "w": "It can name the sound the mountain makes.",
-      "s": 37.815,
-      "e": 39.507,
-      "seg": 7
-    },
-    {
-      "w": "It cannot tell you the hour it blows.",
-      "s": 39.606,
-      "e": 41.445,
-      "seg": 7
-    },
-    {
-      "w": "Push it past what it learned, and it slips.",
-      "s": 41.865,
-      "e": 44.411,
-      "seg": 8
-    },
-    {
-      "w": "A person still keeps watch.",
-      "s": 44.511,
-      "e": 46.138,
-      "seg": 8
-    },
-    {
-      "w": "So the mountain keeps speaking,",
-      "s": 46.558,
-      "e": 48.765,
-      "seg": 9
-    },
-    {
-      "w": "and Alaska keeps listening.",
-      "s": 48.865,
-      "e": 50.493,
-      "seg": 9
+      "w": "The hand still teaches. The count still comes home.",
+      "s": 42.619,
+      "e": 45.771,
+      "seg": 6
     }
   ],
-  "speech_end": 50.493,
+  "speech_end": 45.771,
   "total": 60.0,
   "fps": 30
 }

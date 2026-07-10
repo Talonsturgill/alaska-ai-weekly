@@ -1,17 +1,23 @@
-Right now a volcano is erupting in Alaska, and no one can stand on it to watch.
+A drone lifts off over Alaska's Wood River at 8:30 each morning to film the sockeye run.
 
-Great Sitkin is oozing lava at this moment, held at the Alaska Volcano Observatory's WATCH and ORANGE alert as of July 8. It sits in the Aleutians, on a chain of dozens of volcanoes, most of them hundreds of miles from the nearest person. You cannot post a scientist on every summit. So Alaska does the next best thing. It listens.
+It cannot count a single fish yet. A person has to teach it first, one fish at a time.
 
-Every rumble sends sound through the rock, and pressure waves through the air. AVO turns that sound into a picture, a spectrogram, and a deep-learning model called VOISS-Net learns to read it. Trained on more than 270,000 spectrograms from 7 volcanoes, it can tell tremor from an explosion, a quake from plain noise. On its test set it was right about 87 percent of the time.
+For over 70 years, Alaska has counted its salmon by hand. People sit in wooden towers on the riverbank and click a counter, 10 minutes of every hour, around the clock. That number sets the season for the largest sockeye run on Earth. It tells the fleet when to fish and when to stop.
 
-The limits are the point.
+Now a pilot project on the Wood River is testing whether a drone and a machine-learning model can help. The drone flies a fixed path and films the run from above. Then the real work starts.
 
-VOISS-Net does not predict eruptions. It can name the sound the mountain is making right now. It cannot tell you the hour it will blow. Push it past the signals it was trained on and it slips. So it does not replace the duty scientist watching the screens. It gives that person a faster ear.
+A technician marks each fish that crosses a line on the screen, frame by frame, several thousand of them, so the model can learn what a sockeye looks like. Only after that can it start to pick fish out on its own.
 
-That is the version of AI worth trusting in a place with real stakes. Not a model that claims to see the future, but a classifier that knows the edge of what it knows, wired to a human who owns the call.
+I keep coming back to that part. We talk about AI as if it arrives finished. It does not. Behind almost every model that "just works" is a person doing patient, unglamorous labeling that nobody sees.
 
-A volcano you cannot stand on is a clean test of that idea. So is an ICU, a power grid, a harbor.
+And the honest limits are still there. The model has not been tested against the tower counts yet. A shadow on the water can still fool it. So this summer, the counters still climb the towers, and the model learns to watch beside them.
 
-Where else in Alaska should the standard be AI that listens and flags, with the final call left to a person on watch?
+That is the version of AI in Alaska I trust most: taught before it is trusted. Not a replacement for the people who know the river. A tool that has to be taught by them first.
 
-#ArtificialIntelligence #Alaska #Seismology #Volcanoes #Infrasound
+What is the human labor hiding underneath the "automated" system you rely on?
+
+#Alaska #ArtificialIntelligence #MachineLearning #BristolBay #SalmonEscapement
+
+---
+SUGGESTED FIRST COMMENT (data governance, per the cultural review):
+Worth adding: Bristol Bay's sockeye are the subsistence and economic backbone of the region's Yup'ik, Alutiiq and Dena'ina communities. Aerial imagery over subsistence rivers raises real data-governance questions, and the region's tribes and CDQ organizations should be at the table for how any count data gets used. The tradition here is being augmented, not replaced.

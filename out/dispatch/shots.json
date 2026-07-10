@@ -3,58 +3,66 @@
     {
       "id": 1,
       "start": 0,
-      "end": 308,
+      "end": 140,
       "framing": "wide-establish",
       "transition_in": "",
-      "note": ""
+      "thread": ""
     },
     {
       "id": 2,
-      "start": 308,
-      "end": 562,
-      "framing": "alt-vantage",
+      "start": 140,
+      "end": 475,
+      "framing": "subject-portrait",
       "transition_in": "match-cut",
-      "note": ""
+      "thread": "match"
     },
     {
       "id": 3,
-      "start": 562,
-      "end": 730,
-      "framing": "macro-closeup",
-      "transition_in": "morph",
-      "note": ""
+      "start": 475,
+      "end": 614,
+      "framing": "alt-vantage",
+      "transition_in": "fui-boot",
+      "thread": "build"
     },
     {
       "id": 4,
-      "start": 730,
-      "end": 1082,
+      "start": 614,
+      "end": 881,
       "framing": "data-panel",
-      "transition_in": "fui-boot",
-      "note": ""
+      "transition_in": "focus-pull",
+      "thread": "carry"
     },
     {
       "id": 5,
-      "start": 1082,
-      "end": 1256,
-      "framing": "two-up",
-      "transition_in": "hard-cut",
-      "note": ""
+      "start": 881,
+      "end": 985,
+      "framing": "push-detail",
+      "transition_in": "double-exposure",
+      "thread": "carry"
     },
     {
       "id": 6,
-      "start": 1256,
-      "end": 1397,
-      "framing": "push-detail",
-      "transition_in": "focus-pull",
-      "note": ""
+      "start": 985,
+      "end": 1207,
+      "framing": "two-up",
+      "transition_in": "hard-cut",
+      "thread": "match"
     },
     {
       "id": 7,
-      "start": 1397,
+      "start": 1207,
+      "end": 1500,
+      "framing": "wide-establish",
+      "transition_in": "pull-out",
+      "thread": "travel"
+    },
+    {
+      "id": 8,
+      "start": 1500,
       "end": 1800,
       "framing": "map-territory",
-      "transition_in": "pull-out",
-      "note": ""
+      "transition_in": "map-travel",
+      "thread": "travel"
     }
   ],
   "fps": 30,
