@@ -181,6 +181,14 @@ def _fish_layer(pts, scale=1.0, t=0.0):
         TS = 2 * BL + int(44 * s)                         # square tile big enough for tail + shadow
         tile = Image.new("RGBA", (TS, TS), (0, 0, 0, 0)); d = ImageDraw.Draw(tile)
         x = y = TS // 2; bl, bh = BL, BH
+        # swim wake: two soft expanding ripple arcs trailing the tail — the water reacts to the
+        # animal, so the fish reads as IN the river, not pasted on it
+        wob_ph = (t * 2.4 + px * 0.03) % 1.0
+        for wk in (0, 1):
+            wr = int((10 + 16 * ((wob_ph + wk * 0.5) % 1.0)) * s)
+            wa = int(90 * (1.0 - ((wob_ph + wk * 0.5) % 1.0)))
+            wx = x + bl + int(10 * s)
+            d.arc([wx - wr // 2, y - wr, wx + wr + wr // 2, y + wr], 300, 60, fill=(PALE_HI[0], PALE_HI[1], PALE_HI[2], wa), width=max(2, int(2 * s)))
         dk = tuple(int(c * 0.52) for c in col)            # belly shade (strong enough to read small)
         hi = tuple(min(255, int(c * 1.5)) for c in col)   # dorsal rim
         # contact shadow (deeper + offset so the fish visibly floats over the bed)

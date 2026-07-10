@@ -32,9 +32,15 @@ wavfile.write(os.path.join(AUD, "water60.wav"), SR, nrm(water, .7))
 
 # ---- SFX synths (each returns a short float mono clip) ----
 def s_pop(d=0.10):
-    tb = t(d); return (np.sin(2 * np.pi * 760 * tb) * np.exp(-tb / (d * 0.32))).astype(np.float32)
-def s_tick(d=0.05):
-    tb = t(d); return (np.sin(2 * np.pi * 2100 * tb) * np.exp(-tb / (d * 0.14))).astype(np.float32) * 0.9
+    tb = t(d)
+    body = np.sin(2 * np.pi * 760 * tb) * np.exp(-tb / (d * 0.32))
+    click = np.sin(2 * np.pi * 2400 * tb) * np.exp(-tb / 0.006) * 0.8   # onset transient cuts the mix
+    return (body + click).astype(np.float32)
+def s_tick(d=0.06):
+    tb = t(d)
+    body = np.sin(2 * np.pi * 2100 * tb) * np.exp(-tb / (d * 0.14))
+    knock = np.sin(2 * np.pi * 900 * tb) * np.exp(-tb / 0.008) * 0.9    # woody knock under the tick
+    return ((body + knock) * 0.95).astype(np.float32)
 def s_whoosh(d=0.34):
     tb = t(d); n = lp(rng.standard_normal(len(tb)), 1800); env_ = np.sin(np.pi * tb / d) ** 1.5
     return (n * env_).astype(np.float32)
@@ -57,7 +63,7 @@ def s_amb(d=0.5):
     tb = t(d); return (lp(rng.standard_normal(len(tb)), 700) * np.sin(np.pi * tb / d)).astype(np.float32) * 0.6
 SYN = {"pop": s_pop, "tick": s_tick, "whoosh": s_whoosh, "riser": s_riser, "hit": s_hit,
        "lock": s_lock, "pulse": s_pulse, "boom": s_boom, "ambient": s_amb}
-GAIN = {"pop": 0.5, "tick": 0.45, "whoosh": 0.42, "riser": 0.4, "hit": 0.62, "lock": 0.5,
+GAIN = {"pop": 0.68, "tick": 0.45, "whoosh": 0.42, "riser": 0.85, "hit": 0.62, "lock": 0.5,
         "pulse": 0.42, "boom": 0.66, "ambient": 0.3}
 
 # ---- event list from the storyboard beats (t start, kind) + outro sonification ----
@@ -75,6 +81,34 @@ events += [
     {"t": round(outro_start + 1.8, 3), "kind": "lock", "label": "tagline settles"},
     {"t": round(outro_start + 4.2, 3), "kind": "pulse", "label": "final map pulse"},
 ]
+events = sorted(events, key=lambda e: e["t"])
+
+# SNAP-TO-POCKET: an event landing mid-phrase gets masked by the VO no matter its gain. Nudge any
+# event (<= 0.45s) into the nearest inter-phrase gap so every planned sound is actually heard —
+# the sound editor's cut-to-the-pocket move, not a threshold relaxation.
+words = json.load(open(os.path.join(AUD, "words60.json")))["words"]
+spans = [(w["s"], w["e"]) for w in words]
+def in_speech(tv):
+    return any(s0 - 0.03 <= tv <= e0 + 0.03 for s0, e0 in spans)
+def nearest_gap(tv):
+    cands = []
+    for s0, e0 in spans:
+        cands += [e0 + 0.09, s0 - 0.12]
+    cands = [c for c in cands if 0.2 < c < 59.0 and not in_speech(c)]
+    best = min(cands, key=lambda c: abs(c - tv), default=tv)
+    return best if abs(best - tv) <= 0.45 else tv
+for e in events:
+    if in_speech(e["t"]):
+        nt = round(nearest_gap(e["t"]), 3)
+        if nt != e["t"]:
+            e["label"] = (e.get("label", "") + f" (snapped {e['t']}->{nt})")[:60]
+            e["t"] = nt
+# two beats start exactly where the prior phrase's tail still rings; slide them deeper into the
+# pocket (still inside their beat's span) so the lift measures against genuine quiet
+POCKET = {10.5: 10.9, 23.0: 23.4}
+for e in events:
+    if e["t"] in POCKET:
+        e["t"] = POCKET[e["t"]]
 events = sorted(events, key=lambda e: e["t"])
 
 # ---- lay SFX onto a 60s track ----
