@@ -192,7 +192,13 @@ def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
         wob = int(26 * math.sin(y * 0.011 + t * 0.5))
         half = width // 2 + int(18 * math.sin(y * 0.005 - t * 0.3))
         rd.rectangle([cx + wob - half, y, cx + wob + half, y + 4], fill=255)
-    rivm = gaussian_filter(np.asarray(riv, np.float32) / 255.0, 2.0)[..., None]
+    # low-frequency fields at quarter res + bilinear upsample: visually identical for smooth
+    # masks/blurs, ~16x cheaper than full-res gaussians (the render's former hot spot)
+    def _q(arr, sigma):
+        small = gaussian_filter(np.asarray(Image.fromarray((np.clip(arr, 0, 1) * 255).astype(np.uint8)).resize((W // 4, H // 4), Image.BILINEAR), np.float32) / 255.0, sigma / 4.0)
+        return np.asarray(Image.fromarray((np.clip(small, 0, 1) * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR), np.float32) / 255.0
+    riv_raw = np.asarray(riv, np.float32) / 255.0
+    rivm = _q(riv_raw, 2.0)[..., None]
     # sage gravel banks: two-octave texture + PEBBLES + wet-gravel shoreline darkening + broad light
     global _BANK
     try:
@@ -215,7 +221,7 @@ def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
     for i in range(3):
         bank[..., i] = SAGE[i] * _BANK * warmth[i]
     # wet gravel: darken the bank in a soft margin along the waterline
-    shoreline = np.clip(gaussian_filter(rivm[..., 0], 18) - rivm[..., 0], 0, 1)
+    shoreline = np.clip(_q(rivm[..., 0], 18) - rivm[..., 0], 0, 1)
     bank *= (1.0 - 0.34 * shoreline[..., None] / (shoreline.max() + 1e-6))
     c = c * (1 - (1 - rivm) * 0.85) + bank * ((1 - rivm) * 0.85)
     watr = np.zeros((H, W, 3), np.float32)
@@ -223,7 +229,7 @@ def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
     # DEPTH: the channel darkens toward its center (deep water), stays bright at the shallows,
     # with slow dappled light drifting across the surface
     rivc = rivm[..., 0]
-    depth = np.clip(gaussian_filter(rivc, 26) * 1.15, 0, 1)
+    depth = np.clip(_q(rivc, 26) * 1.15, 0, 1)
     dapple = 0.5 + 0.5 * np.sin(_X * 0.012 + _Y * 0.006 + t * 0.7) * np.sin(_Y * 0.017 - t * 0.4)
     for i in range(3):
         base = PALE_LO[i] * (1 - ripple) + PALE[i] * ripple
@@ -796,7 +802,9 @@ def main():
         write_shots()
     for f in range(start, end):
         img = compose(f)
-        img.save(os.path.join(FR, f"frame_{f:05d}.png"))
+        # compress_level=1: frames are intermediates read once by the gate + encoder; PNG stays
+        # lossless at any level, and level 1 writes ~2-3x faster than the default 6.
+        img.save(os.path.join(FR, f"frame_{f:05d}.png"), compress_level=1)
     print(f"rendered [{start},{end})")
 
 if __name__ == "__main__":
