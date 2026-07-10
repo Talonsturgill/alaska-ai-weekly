@@ -216,17 +216,31 @@ def _fish_layer(pts, scale=1.0, t=0.0):
         for sxs in range(3):
             ax = x - int(bl * 0.35) + sxs * int(9.5 * s)
             d.arc([ax, y - int(5.5 * s), ax + int(11 * s), y + int(5.5 * s)], 300, 60, fill=(*dk, 175), width=2)
+        # SWIM UNDULATION: a sine-flex travels down the spine (head steady, tail-end whipping),
+        # so the fish visibly SWIMS instead of translating as a rigid sprite
+        arr_t = np.array(tile)
+        ph = t * 6.5 + px * 0.05 + py * 0.03
+        NB = 10; bw_ = TS // NB
+        for bi in range(NB):
+            fr_ = bi / (NB - 1)                       # 0 head-side .. 1 tail-side
+            amp = 5.0 * s * (fr_ ** 1.6)              # envelope grows toward the tail
+            sh = int(round(amp * math.sin(ph - fr_ * 2.2)))
+            if sh:
+                x0b, x1b = bi * bw_, min(TS, (bi + 1) * bw_)
+                arr_t[:, x0b:x1b] = np.roll(arr_t[:, x0b:x1b], sh, axis=0)
+        tile = Image.fromarray(arr_t)
         # rotate the whole fish to its heading and composite at its position
         tile = tile.rotate(ang, resample=Image.BICUBIC, center=(TS // 2, TS // 2))
-        # 180-degree-shutter motion blur: smear along the travel direction, length = half the
-        # per-frame displacement (VIDEO_PRODUCTION_STANDARD motion craft; subtle and honest)
-        vlen = s * 1.6
+        # 180-degree-shutter motion blur: smear along the travel direction (artistic length so the
+        # streak actually READS at playback scale on the movers)
+        vlen = s * 4.0
         rad = math.radians(90.0 - ang)
-        dxb, dyb = math.sin(rad) * vlen, math.cos(rad) * vlen
-        ghost = tile.copy(); ghost.putalpha(ghost.getchannel("A").point(lambda v: v // 3))
+        ux, uy = math.sin(rad), math.cos(rad)
         base = Image.new("RGBA", tile.size, (0, 0, 0, 0))
-        base.alpha_composite(ghost, (int(-dxb), int(-dyb)))
-        base.alpha_composite(ghost, (int(dxb), int(dyb)))
+        # multi-sample smear (a streak, not separated ghost copies): 5 taps along the travel axis
+        for k, (frac, dv) in enumerate(((1.0, 5), (0.66, 6), (0.33, 7), (-0.33, 7), (-0.66, 6))):
+            g = tile.copy(); g.putalpha(g.getchannel("A").point(lambda v, dv=dv: v // dv))
+            base.alpha_composite(g, (int(ux * vlen * frac), int(uy * vlen * frac)))
         base.alpha_composite(tile)
         img.alpha_composite(base, (int(px - TS // 2), int(py - TS // 2)))
     return img

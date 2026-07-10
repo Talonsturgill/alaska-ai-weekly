@@ -27,7 +27,7 @@ def main():
     ap.add_argument("--out", default="out/dispatch/review")
     ap.add_argument("--sheets", type=int, default=6)
     ap.add_argument("--per-sheet", type=int, default=6)
-    ap.add_argument("--strips", default="", help="name:frame[:step],... (step default 2 = 1/15s at 30fps)")
+    ap.add_argument("--strips", default="", help="name:frame[:step[:x0,y0,x1,y1]],... (step default 2 = 1/15s; optional FULL-RES crop region — use it: downscaled whole frames hide sub-4px motion detail like shutter blur and tail swing)")
     ap.add_argument("--strip-len", type=int, default=8)
     a = ap.parse_args()
     fs = sorted(glob.glob(os.path.join(a.frames, "frame_*.png")))
@@ -49,18 +49,28 @@ def main():
     # motion filmstrips: CONSECUTIVE frames at the key moves
     strips = []
     if a.strips:
-        for part in a.strips.split(","):
+        for part in a.strips.split(";"):
             bits = part.strip().split(":")
-            strips.append((bits[0], int(bits[1]), int(bits[2]) if len(bits) > 2 else 2))
+            name, f0 = bits[0], int(bits[1])
+            st = int(bits[2]) if len(bits) > 2 and bits[2] else 2
+            crop = tuple(int(v) for v in bits[3].split(",")) if len(bits) > 3 else None
+            strips.append((name, f0, st, crop))
     else:
         for k, frac in (("early", 0.15), ("mid", 0.5), ("late", 0.85)):
-            strips.append((k, int(n * frac), 2))
-    for name, f0, st in strips:
+            strips.append((k, int(n * frac), 2, None))
+    for name, f0, st, crop in strips:
         f0 = max(0, min(n - 1 - a.strip_len * st, f0))
-        sheet = Image.new("RGB", (a.strip_len * 270, 480), (0, 0, 0))
-        for j in range(a.strip_len):
-            im = Image.open(fs[f0 + j * st]).resize((270, 480))
-            sheet.paste(im, (j * 270, 0))
+        # FULL-RES region crops: downscaled whole frames hide sub-4px motion (shutter smear, tail
+        # swing) — crop the action region at native resolution so motion evidence survives
+        if crop:
+            cw, ch = crop[2] - crop[0], crop[3] - crop[1]
+            sheet = Image.new("RGB", (a.strip_len * cw, ch), (0, 0, 0))
+            for j in range(a.strip_len):
+                sheet.paste(Image.open(fs[f0 + j * st]).crop(crop), (j * cw, 0))
+        else:
+            sheet = Image.new("RGB", (a.strip_len * 270, 480), (0, 0, 0))
+            for j in range(a.strip_len):
+                sheet.paste(Image.open(fs[f0 + j * st]).resize((270, 480)), (j * 270, 0))
         sheet.save(os.path.join(a.out, f"strip_{name}.png"))
     print(f"review pack: {a.sheets} sheets + {len(strips)} motion strips -> {a.out}")
 
