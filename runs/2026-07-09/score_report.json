@@ -1,17 +1,75 @@
-{"weighted_total": 8.83, "ship_threshold": 8.3, "verdict": "ship",
- "criteria": [
-  {"name": "Thumb-stop cover", "score": 8, "weight": 0.14},
-  {"name": "Story arc & swipe momentum", "score": 8, "weight": 0.14},
-  {"name": "Artwork craft & genuine detail", "score": 7, "weight": 0.16},
-  {"name": "Story-art fusion", "score": 9, "weight": 0.14},
-  {"name": "Alaska authenticity & local relevance", "score": 9, "weight": 0.12},
-  {"name": "Insight density & factual weight", "score": 8, "weight": 0.10},
-  {"name": "Variety vs ledger", "score": 8, "weight": 0.08},
-  {"name": "Legibility & platform fitness", "score": 7, "weight": 0.07},
-  {"name": "Copy: voice & hook", "score": 8, "weight": 0.05},
-  {"name": "Deliverable completeness", "score": 8, "weight": 0.10}],
- "hard_fails_all_pass": true,
- "one_sentence_fix": "none, ship",
- "weakest_criterion": "Artwork craft & genuine detail",
- "revision_rounds": 1,
- "notes": "No hard fails. Best-in-class story-art fusion; honest UNPROVEN/in-training thesis on every slide; dense Alaska specificity. Craft-level weaknesses only (empty lower thirds on some slides, slightly generic sockeye fins, sparse S5, 43 sub-24px decorative mono labels). Clears 8.3 at 8.83. Editor must confirm main-branch image URLs resolve before posting."}
+{
+  "revision_round": 1,
+  "hard_fails": [],
+  "criteria": [
+    {
+      "name": "Thumb-stop cover",
+      "score": 8,
+      "weight": 0.14,
+      "notes": "11-word 3-line headline with 'count' in sockeye-red, single focal fish wearing both marks, visibly Bristol Bay; reads at thumb; sockeye silhouette slightly generic (flat fins) short of a 9."
+    },
+    {
+      "name": "Story arc & swipe momentum",
+      "score": 8,
+      "weight": 0.14,
+      "notes": "Clean beats hook/stakes/old-way/machine/3D-breather/scorecard/who-counts/why-now/close; slide 2 pays off instantly; timeline spine + evolving glyph read as one sequence."
+    },
+    {
+      "name": "Artwork craft & genuine detail",
+      "score": 7,
+      "weight": 0.16,
+      "notes": "Varied instruments (tally field, detection frame, audit table, constellation, convergence node, real-3D riverbank), but several slides carry large empty lower thirds and fish fins are flat fills."
+    },
+    {
+      "name": "Story-art fusion",
+      "score": 9,
+      "weight": 0.14,
+      "notes": "Standout: bar fill = 61.1%, 144 tally columns = 24h/10min, fewer boxes than fish = in training, 70:1 years bar, dashed ADF&G exclusion, five converging tech nodes. A stranger could reconstruct the story from the art."
+    },
+    {
+      "name": "Alaska authenticity & local relevance",
+      "score": 9,
+      "weight": 0.12,
+      "notes": "Named throughout: Bristol Bay, Wood River, ADF&G since 1955, UW FRI, BBRSDA, BBEDC, Ian Chiu, Norm Van Vactor, real tower numbers, coords near Aleknagik."
+    },
+    {
+      "name": "Insight density & factual weight",
+      "score": 8,
+      "weight": 0.1,
+      "notes": "Every content slide adds new verified specifics (44.05M run, 26,944,183 counted, 2,112,834 tower, 57,258 Sunday, 9 sites, quote, partner topology); ~38-45 words each."
+    },
+    {
+      "name": "Variety vs ledger",
+      "score": 8,
+      "weight": 0.08,
+      "notes": "Diverges from the only prior deck on all six axes (hero, atmosphere, continuity, hook, palette, type) with justified dials; capped because divergence from a single prior deck is a low bar."
+    },
+    {
+      "name": "Legibility & platform fitness",
+      "score": 7,
+      "weight": 0.07,
+      "notes": "Body 32-34px, headlines large and clear; vector PDF 4.94MB with title and counters; but 43 sub-24px decorative mono labels strain at 432px thumb."
+    },
+    {
+      "name": "Copy: voice & hook",
+      "score": 8,
+      "weight": 0.05,
+      "notes": "Hook lands in 111 chars, 815 total, analytical position-taking, deck-summary line present, real debatable close, grade 8-10."
+    },
+    {
+      "name": "Deliverable completeness",
+      "score": 8,
+      "weight": 0.1,
+      "notes": "copy.json complete: title, exactly 3 hashtags, first-comment source block with three resolving URLs, deck summary, closing question; PDF vector 9 slides; image + PDF URLs verified 200 on main."
+    }
+  ],
+  "weighted_total": 8.83,
+  "threshold": 8.3,
+  "ship": true,
+  "weakest_criterion": "Artwork craft & genuine detail",
+  "one_sentence_fix": "none, ship",
+  "editor_notes_for_email": "No hard fails. Best-in-class story-art fusion and an honest UNPROVEN/in-training thesis on every slide. Before posting, confirm the inline previews load and that the image and PDF URLs resolve (verified 200 on main at ship time).",
+  "score_history": [
+    "round1: 8.83 vs 8.3 -> ship"
+  ]
+}
