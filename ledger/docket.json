@@ -50,7 +50,8 @@
       "first_seen": "2026-07-08",
       "last_updated": "2026-07-09",
       "history": [
-        {"date": "2026-07-08", "note": "Tracked. 500 plus comments on record, fewer than a dozen in favor; deadline already extended once."}
+        {"date": "2026-07-08", "note": "Tracked. 500 plus comments on record, fewer than a dozen in favor; deadline already extended once."},
+        {"date": "2026-07-09", "note": "Re-verified via Northern Journal and ADN: more than 500 comments on record, fewer than a dozen in favor. DNR spokesperson Sean Clifton attributes the extension to comment volume, public interest and requests for extension. Stak's John Boyle calls most comments form letters lacking substance. Comment window stays open to July 17."}
       ]
     },
     {
@@ -99,7 +100,8 @@
       "first_seen": "2026-07-08",
       "last_updated": "2026-07-09",
       "history": [
-        {"date": "2026-07-08", "note": "Tracked ahead of the July 13 executive session."}
+        {"date": "2026-07-08", "note": "Tracked ahead of the July 13 executive session."},
+        {"date": "2026-07-09", "note": "Re-verified via KUAC and News-Miner ahead of the July 13 executive session: the Q3 fuel and purchased-power charge rose about 61 percent effective June 1, adding nearly $46 a month for an average residential member. Board member Mary Burtness questioned continued dependence on volatile fossil-fuel prices given the roughly $120 million price tag."}
       ]
     },
     {
@@ -119,12 +121,14 @@
       "location": {"name": "Juneau", "lon": -134.4197, "lat": 58.3019},
       "sources": [
         {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-06/alaska-lawmakers-roll-out-draft-compromise-tax-cut-bill-for-the-proposed-aklng-gas-line", "outlet": "Alaska Beacon via Alaska Public Media", "date": "2026-07-06"},
-        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-01/state-lawmakers-delay-vote-on-alaska-lng-tax-bill-until-mid-july", "outlet": "Alaska Public Media", "date": "2026-07-01"}
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-01/state-lawmakers-delay-vote-on-alaska-lng-tax-bill-until-mid-july", "outlet": "Alaska Public Media", "date": "2026-07-01"},
+        {"url": "https://alaskabeacon.com/2026/07/07/corporate-income-tax-change-remains-key-sticking-point-for-alaska-gas-pipeline-bill/", "outlet": "Alaska Beacon", "date": "2026-07-07"}
       ],
       "first_seen": "2026-07-08",
       "last_updated": "2026-07-09",
       "history": [
-        {"date": "2026-07-08", "note": "Tracked. Vote target already slipped once, from July 1 to July 16."}
+        {"date": "2026-07-08", "note": "Tracked. Vote target already slipped once, from July 1 to July 16."},
+        {"date": "2026-07-09", "note": "Re-checked (Alaska Beacon, July 7): the final floor vote is still targeted for July 16. The S corp corporate income tax provision remains the key sticking point, and the governor has pledged to veto a bill that keeps it."}
       ]
     }
   ]
