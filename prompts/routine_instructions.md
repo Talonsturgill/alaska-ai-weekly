@@ -201,9 +201,16 @@ Only when 0A, 0B, AND 0C are green do you build. Carry the board summary into th
 
 PHASE 5: BUILD (to the standard, 9:16, dimensional)
 Author the scene file FRESH to the board: `_scene` SDF + `_mat` + cheap `_shadow` + `cam_at(f)`,
-importing dimensional.py (never copying a prior scene file). Look-dev each shot on 3 probe frames
-(scale=0.4) until the board's framing/light/palette reads, THEN one full-res single-process render
-of the whole timeline in the background. Shots/cuts: author distinct worlds per the board and
+importing dimensional.py (never copying a prior scene file). LOOK-DEV BEFORE ANY FULL RENDER, two
+kinds of probe at scale=0.4: (a) 3 STILL probes per shot (framing/light/palette), AND (b) ONE
+MOTION-STRIP probe per risky move: 8 CONSECUTIVE frames at the storyboard's fastest subject /
+domain-repetition / rack moment, laid out with scripts/make_review_sheets.py — stills cannot show
+ribboning, shear, or jitter; strips can (the fish-ribbon bug of 2026-07-10 was invisible in
+stills). Only when both probe kinds read clean: ONE full-res single-process render of the whole
+timeline in the background. EARLY-LOOK CHECK, mandatory: ~120 frames in, build a partial evidence
+pack (make_review_sheets.py works on an in-progress dir) and run ONE editor pass on it; if a
+defect shows, KILL the render, fix, relaunch — a defect at frame 120 costs 2 minutes, at frame
+1800 it costs 3 hours. Shots/cuts: author distinct worlds per the board and
 switch/blend at boundaries (dispatch_core transition toolkit still applies for 2D-composited
 transitions; camera-relight-recompose changes make 3D shot changes REAL). Emit shots.json via
 dispatch_core.write_shots. Composite the brand chrome per frame (captions via dispatch_core with
