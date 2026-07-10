@@ -30,7 +30,8 @@ STATE = ROOT / "config" / "state.yaml"
 AXES = ROOT / "config" / "composition_axes.yaml"
 DEFAULT_SB = ROOT / "out" / "dispatch" / "storyboard.json"
 
-CONTROLLED = ["pov", "motion_vector", "hero_treatment", "layout", "register"]  # exact-tag axes
+CONTROLLED = ["pov", "motion_vector", "hero_treatment", "layout", "register",
+              "camera_strategy", "light_story"]  # exact-tag axes (camera/light added with the 3D engine)
 FREETEXT = ["palette", "metaphor"]                                             # token-overlap axes
 ALL_AXES = CONTROLLED + FREETEXT
 STOP = {"the", "a", "an", "of", "in", "and", "for", "to", "on", "with", "by", "ai", "+", "·", "-"}
@@ -168,6 +169,30 @@ def main():
                 problems.append(f"shots {bad_thread} don't declare a valid transition `thread` (one of {sorted(THREADS)}) "
                                 f"— every scene break must MATCH / CARRY / BUILD / TRAVEL (docs/craft/CINEMATIC_SCENE_CRAFT.md §1).")
 
+    # ---- 1d. DIMENSIONAL: the board is a 3D shoot plan (engine, light story, per-shot camera) ----
+    if norm_tag(sb.get("engine", "")) != "dimensional":
+        problems.append("engine != 'dimensional' — every Dispatch is built in the 3D engine "
+                        "(dimensional.py; docs/craft/DIMENSIONAL_CRAFT.md). Declare engine: dimensional.")
+    cam_vocab = {"dolly-through", "orbit-reveal", "rack-focus-macro", "aerial-descent",
+                 "rise-reveal", "track-follow", "locked-drift"}
+    light_vocab = {"dawn-backlight", "noon-hard", "dusk-silhouette", "overcast-diffuse",
+                   "night-practical", "storm-dramatic"}
+    if norm_tag(fp.get("camera_strategy")) not in cam_vocab:
+        problems.append(f"fingerprint.camera_strategy '{fp.get('camera_strategy')}' not in {sorted(cam_vocab)}")
+    if norm_tag(fp.get("light_story")) not in light_vocab:
+        problems.append(f"fingerprint.light_story '{fp.get('light_story')}' not in {sorted(light_vocab)}")
+    lightd = sb.get("light") or {}
+    if not lightd.get("sun") or not lightd.get("mood"):
+        problems.append("board must declare light: {sun: '<dir/elevation in words>', mood: '<what the light MEANS>'}")
+    for i, sh in enumerate(shots):
+        camd = sh.get("camera") or {}
+        if norm_tag(camd.get("move", "")) not in cam_vocab:
+            problems.append(f"shot {sh.get('id', i+1)} camera.move '{camd.get('move')}' missing/not in vocab "
+                            f"— every 3D shot declares its camera move")
+        if camd.get("focus_from") is None or camd.get("focus_to") is None:
+            problems.append(f"shot {sh.get('id', i+1)} must declare camera.focus_from/focus_to "
+                            f"(equal values = held focus; different = a rack the CAMERA_MOTION gate verifies)")
+
     # ---- 2. the banned shortcut: a scene copied from a prior render and re-skinned ----
     if rule.get("require_derived_from_scratch", True):
         df = norm_tag(sb.get("derived_from", ""))
@@ -205,6 +230,17 @@ def main():
                 f"spatial signature {dict(zip(sig_axes, new_sig))} repeats {old.get('date')} "
                 f"\"{old.get('slug') or old.get('topic')}\". This (pov, layout, motion) triple is the exact "
                 f"thing that made the salmon a beluga clone. Change at least one of {sig_axes}.")
+
+    # ---- 4b. camera/light freshness (3D variety pressure) ----
+    if history:
+        last = fp_of(history[-1])
+        if last.get("camera_strategy") and norm_tag(fp.get("camera_strategy")) == norm_tag(last.get("camera_strategy")):
+            problems.append(f"camera_strategy '{fp.get('camera_strategy')}' repeats the previous dispatch — "
+                            f"vary the camera's story run to run")
+        last2 = [fp_of(h) for h in history[-2:]]
+        lts = [norm_tag(l.get("light_story")) for l in last2 if l.get("light_story")]
+        if len(lts) == 2 and all(norm_tag(fp.get("light_story")) == l for l in lts):
+            problems.append(f"light_story '{fp.get('light_story')}' repeats both of the last 2 — choose a new sun")
 
     # ---- 5. palette must not repeat the last 2 ----
     for old in (history[-rule["palette_window"]:] if history else []):

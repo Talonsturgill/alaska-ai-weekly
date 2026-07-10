@@ -200,6 +200,7 @@ def main(s, e):
         rgb, z = dim.render_frame(cam, t=f / FPS)
         out = dim.post(rgb, z, cam, f=f)
         Image.fromarray(out).save(os.path.join(OUT, f"frame_{f:05d}.png"), compress_level=1)
+    dim.write_manifest(os.path.join(OUT, "..", "render_manifest.json") if os.environ.get("DIM_MANIFEST_UP") else os.path.join(OUT, "render_manifest.json"), NF)
     print(f"rendered [{s},{e})")
 
 if __name__ == "__main__":

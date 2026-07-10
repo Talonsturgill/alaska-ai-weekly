@@ -288,6 +288,10 @@ ending in the storyboard, not after.
 Render in the background in parallel chunks, with DISPATCH_TEXTLOG=1 set so the engine emits a
 per-word text manifest (out/dispatch/textlog/) that the READABILITY gate reads.
 
+NOTE (2026-07-10, 3D hygiene): quality_gate.py now also enforces DIMENSIONAL (render_manifest.json:
+engine + ship scale 1.0 + SHADOW_FN + backend), DEPTH_FIELD, and CAMERA_MOTION; storyboards must be
+dimensional with camera_strategy/light_story axes + per-shot camera plans (see prompts/routine_instructions.md).
+
 PHASE 6: THE AUTONOMOUS SELF-HEALING LOOP (ends ONLY at perfection)
 The human is NEVER the QA. This loop does not stop, ask, or hand off, it runs itself until the
 piece is flawless, then delivers. There is NO cycle cap and NO "best-of-N" fallback: inside the

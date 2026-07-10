@@ -78,6 +78,26 @@ axes:
     weight: medium
     # free-text; the check compares normalized tokens. Must NOT match the last 2 dispatches.
     vocab: []                 # open — name the actual world (e.g. "amber-on-abyss + cyan UI")
+  camera_strategy:           # the DIMENSIONAL camera's story (added with the 3D engine, 2026-07-10)
+    weight: heavy            # in 3D, HOW the camera moves is as identity-defining as POV
+    vocab:
+      - dolly-through          # travel INTO/along the world (the Bristol Bay Dawn move)
+      - orbit-reveal           # circle a hero, revealing its dimensionality
+      - rack-focus-macro       # close, shallow, attention handed between depth planes
+      - aerial-descent         # come down from altitude onto the subject
+      - rise-reveal            # lift from detail to context (reverse descent)
+      - track-follow           # travel WITH a moving subject
+      - locked-drift           # tripod + micro-drift only; stillness as the statement
+  light_story:               # the sun/light narrative (the 3D scene's mood axis)
+    weight: medium
+    vocab:
+      - dawn-backlight         # low warm sun shot INTO, fog glows
+      - noon-hard              # high hard key, graphic shadows
+      - dusk-silhouette        # subjects dark against a burning sky
+      - overcast-diffuse       # soft shadowless north light
+      - night-practical        # dark world lit by instrument/practical sources
+      - storm-dramatic         # broken light, heavy atmosphere
+
   metaphor:                  # the ONE concrete visual idea that carries the abstract AI mechanism
     weight: medium
     # free-text; should be a genuinely different central image, not a rephrase.

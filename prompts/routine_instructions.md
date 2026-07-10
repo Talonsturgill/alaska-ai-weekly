@@ -188,7 +188,11 @@ Unchanged in substance: DESIGN FROM SCRATCH (never open a prior scene file for i
 out/dispatch/storyboard.md + storyboard.json (concept, honest caveat, STYLE MODE + TASTE DIALS,
 references, palette, 12-16 timed beats, >=4 SHOTS each declaring framing + its OWN composition on
 the 7 axes + a motivated transition_in + thread, derived_from: scratch, divergence_note >=120 chars).
-In 3D, also declare each shot's CAMERA MOVE and LIGHT STORY in the board.
+In 3D the board ALSO declares: `engine: dimensional`; `light: {sun: '<direction/elevation in
+words>', mood: '<what the light means>'}`; per-shot `camera: {move: <vocab>, focus_from, focus_to}`;
+and TWO extra fingerprint axes, `camera_strategy` + `light_story` (vocab in
+config/composition_axes.yaml). Freshness rules: camera_strategy must differ from the previous
+dispatch; light_story must not repeat both of the last 2. Gate 0A refuses non-dimensional boards.
 GATE 0A: `python scripts/storyboard_check.py` MUST exit 0 (divergence vs last 2 on >=4/7 axes,
 unique spatial signature vs last 4, fresh palette vs last 2, shot structure, flow block).
 GATE 0B: ONE `storyboard-critic` (no-spawn) red-teams for genuine divergence + silent-first + retention; iterate to ship:true.
@@ -209,9 +213,11 @@ dispatch_core.write_sfx_events, >=8 events, >=1 per shot, audible in the master.
 Build a deliberate ENDING: branded outro in staged beats, motion to the final frame.
 
 PHASE 6: THE AUTONOMOUS SELF-HEALING LOOP (ends ONLY at perfection)
-Unchanged: the human is NEVER the QA. Render -> GATE A (quality_gate.py 10/10: SHARPNESS, HUD_TEXT,
+Unchanged: the human is NEVER the QA. Render -> GATE A (quality_gate.py 13/13: SHARPNESS, HUD_TEXT,
 CAPTION_TEXT, EVENT_CADENCE, BEAT_DENSITY, SCENE_STRUCTURE, CAPTION_SYNC, READABILITY, MUSIC,
-SFX_EVENTS) -> AUDIO GATE (-14 +/-0.5 LUFS, TP <= -1.0 dBTP, tail audible, VO dominant) -> FRAME
+SFX_EVENTS, plus the 3D hygiene gates: DIMENSIONAL (render_manifest.json proves engine +
+ship scale 1.0 + SHADOW_FN + backend), DEPTH_FIELD (real near/far depth spread), CAMERA_MOTION
+(the camera lives: travel or rack, drift at minimum) — the scene MUST call dim.write_manifest) -> AUDIO GATE (-14 +/-0.5 LUFS, TP <= -1.0 dBTP, tail audible, VO dominant) -> FRAME
 REVIEW (build the evidence pack with scripts/make_review_sheets.py: contact sheets + full-res-crop
 MOTION FILMSTRIPS at the key moves; LOOK at every text frame) -> GATE B (editor + flow-critic POST +
 a 3-JUDGE SCORER PANEL against config/dispatch_rubric.yaml; the PANEL MEDIAN decides; judges grade
