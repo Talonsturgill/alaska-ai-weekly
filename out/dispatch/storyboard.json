@@ -40,6 +40,7 @@
       "camera": {"move": "aerial-descent", "focus_from": 30.0, "focus_to": 8.0},
       "transition_in": "", "thread": "",
       "centered": "the smoke-filled valley and the dim blood-orange sun, dead center, as the camera sinks toward it",
+      "hook_note": "front-load the hook: frame 1 already holds the dead-center blood-orange sun disk with smoke ACTIVELY rolling/thickening across it, so a muted-scroll viewer gets premise plus motion in the first second, THEN the slow descent settles in",
       "means": "open on the stake: when Alaska burns, the smoke is the part that reaches everyone"
     },
     {
@@ -80,6 +81,7 @@
       "camera": {"move": "rise-reveal", "focus_from": 8.0, "focus_to": 30.0},
       "transition_in": "pull-out", "thread": "build",
       "centered": "the camera lifts back out of the valley; the mint forecast line now hugs the real smoke layer better than before, a single lit window in a cabin below",
+      "recompose_note": "render as a TRUE recomposition, not a continuous zoom-out: rise-reveal into a re-framed layered valley with NEW elements (the corrected mint line now hugging the low smoke layer, a lit cabin window), so it reads as a new world, not the same air scaled down",
       "means": "resolution: the forecast lands closer and sooner, and a person still decides when the air is safe to breathe"
     }
   ],
@@ -92,7 +94,7 @@
     {"t": "18.0-21.5", "vo": "Here is why. A warm lid of air seals the valley.", "shows": "a glowing bone-grey inversion-lid line draws across the cross-section, capping the smoke", "sfx": "a pressure hum and a lid seal thud", "means": "name the mechanism, the inversion lid"},
     {"t": "21.5-25.0", "vo": "It traps the smoke down low, where we breathe.", "shows": "ground level in the smoky community, a cabin and a small figure in the murk", "sfx": "muffled ambience and a single cough", "means": "the human stakes at the surface"},
     {"t": "25.0-28.5", "vo": "The model keeps drawing it thin and high.", "shows": "the pale model plume floats uselessly above the figure, in clean air nobody is standing in", "sfx": "an airy, too-clean hollow tone rising off the surface as the false plume lifts away", "means": "model versus lived reality"},
-    {"t": "28.5-32.0", "vo": "So a team at the University of Alaska Fairbanks taught a second model to correct the first.", "shows": "a dimensional data panel boots up, the HRRR-Smoke feed enters a block labeled CNN", "sfx": "fui boot chirps", "means": "introduce the AI corrector"},
+    {"t": "28.5-32.0", "vo": "So a team at the University of Alaska Fairbanks taught a second model to correct the first.", "shows": "the correction appears as a visible downward force that grabs the thin high model plume and starts hauling it toward the murk, a small CNN label as secondary chrome", "sfx": "fui boot chirps then a low grab-and-tug", "means": "introduce the AI corrector as a visible downward pull, not a labeled box"},
     {"t": "32.0-36.0", "vo": "It learns the error and pulls the forecast back down toward the air people actually breathe.", "shows": "on the panel the under-forecast curve bends downward toward the measured curve", "sfx": "a descending pull-down glide falling with the curve, resolving into the ratchet-lock", "means": "show the mechanism working"},
     {"t": "36.0-40.0", "vo": "The gap shrinks. Five times too low becomes about two.", "shows": "the five-times bracket collapses to a two-times bracket, numerals read 5x then 2x", "sfx": "a ratchet and a settling lock", "means": "the payoff number, five to two"},
     {"t": "40.0-44.0", "vo": "But this is a correction, not a cure. It sharpens the number.", "shows": "the corrected curve still sits short of the measured curve, a residual gap glows", "sfx": "a soft negative tone", "means": "honest caveat, the residual gap remains"},
