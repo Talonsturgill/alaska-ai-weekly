@@ -89,9 +89,28 @@ def tw(t, f, tr=0.0):
         b = f.getbbox(c); s += (b[2] - b[0]) + ex
     return s - ex if t else 0
 def tk(d, t, f, fill, x, y, tr=0.0):
-    ex = int(round(f.size * tr)); c = x
+    """Tracked text with HONEST alpha: this Pillow build ignores ink alpha on direct draws, so
+    skip at ~0, composite through a scaled layer mid-fade, draw direct only at full opacity."""
+    a = fill[3] if len(fill) > 3 else 255
+    if a < 8: return
+    ex = int(round(f.size * tr))
+    if a >= 248:
+        c = x
+        for ch in t:
+            d.text((c, y), ch, font=f, fill=fill); b = f.getbbox(ch); c += (b[2] - b[0]) + ex
+        return
+    img = getattr(d, "_image", None)
+    if img is None:
+        c = x
+        for ch in t:
+            d.text((c, y), ch, font=f, fill=fill); b = f.getbbox(ch); c += (b[2] - b[0]) + ex
+        return
+    lay = Image.new("RGBA", img.size, (0, 0, 0, 0)); ld = ImageDraw.Draw(lay)
+    c = x
     for ch in t:
-        d.text((c, y), ch, font=f, fill=fill); b = f.getbbox(ch); c += (b[2] - b[0]) + ex
+        ld.text((c, y), ch, font=f, fill=(fill[0], fill[1], fill[2], 255)); b = f.getbbox(ch); c += (b[2] - b[0]) + ex
+    lay.putalpha(lay.getchannel("A").point(lambda v: v * a // 255))
+    img.alpha_composite(lay)
 
 # ---------------- readability manifest ----------------
 TEXTLOG = []; BGLUMA = None
@@ -317,6 +336,7 @@ def hero_sockeye(img, cx, cy, bl, t, a=1.0):
 
 def yellow_mark(img, x, y, r, a=1.0, ring=True):
     """A phosphor-yellow HUMAN label mark (a hand-drawn cross + soft ring) descending onto a fish."""
+    if a <= 0.03 or r <= 0: return
     d = ImageDraw.Draw(img)
     lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ld = ImageDraw.Draw(lay)
     for k, aa in ((r * 3.4, 40), (r * 2.0, 80)):
@@ -366,6 +386,7 @@ def hud_card(img, f, title, stat_label, stat_val, tag=None, tagcol=YEL, a=1.0):
         logw(146, 1320, twd, tf.size, YEL_HI, a, True, "hud")
 
 def eyebrow(img, f, text, y=250, a=1.0, col=None):
+    if a <= 0.03: return
     col = col or GOLD
     ef = mono(28, b=True); wd = tw(text, ef, 0.16)
     x = (W - wd) // 2
@@ -384,24 +405,46 @@ def eyebrow(img, f, text, y=250, a=1.0, col=None):
     logw(x, y, wd, ef.size, col, a, True, "eyebrow")
 
 def wordmark(img, f, a=1.0, y=150):
+    if a <= 0.03: return
     d = ImageDraw.Draw(img); wf = fr(40, 800); s = "ALASKA.AI"; wd = tw(s, wf, 0.04)
     tk(d, s, wf, (*GOLD, int(235 * a)), (W - wd) // 2, y, 0.04)
 
 # ---------------- SCENES (each a distinct world) ----------------
-def scene1(f):  # WIDE-ESTABLISH: aerial run descending; plant the yellow mark in second one
+def scene1(f):  # HOOK: full-frame hero crossing the count line, the mark SLAMS on, then reveal the run
     a, b, _ = SHOTS[0]; lt = (f - a) / FPS
     c = base_field(f)
     c = draw_river(c, f, width=470, flow=1.1, bright=1.0)
     img = Image.fromarray(np.clip(c, 0, 255).astype(np.uint8)).convert("RGBA")
-    wordmark(img, f, a=oc(seg(lt, 0.2, 1.0)))
-    eyebrow(img, f, "WORLD'S LARGEST SOCKEYE RUN", y=250, a=oc(seg(lt, 0.5, 1.5)), col=PALE_HI)
-    # THE THESIS, frame one: a human yellow mark descends onto a single sockeye, then fades as we pull to the run
-    mk = seg(lt, 0.05, 1.1); drop = int((1 - oc(mk)) * -260)
-    if mk > 0:
-        ma = (1.0 if lt < 1.6 else oc(1 - seg(lt, 1.6, 2.6)))
-        yellow_mark(img, W // 2 + 40, 700 + drop, int(46 * oc(mk)), a=ma)
+    # 0.0-1.9s: PATTERN INTERRUPT — a huge sockeye fills the frame, swimming across the count line
+    hook = 1.0 - seg(lt, 1.7, 2.5)
+    if hook > 0.02:
+        d = ImageDraw.Draw(img)
+        liney = 860
+        la = min(1.0, 0.35 + hook)
+        d.line([(0, liney), (W, liney)], fill=(*YEL, int(235 * la)), width=6)
+        tk(d, "COUNT LINE", mono(26, b=True), (*YEL_HI, int(235 * la)), 40, liney - 44, 0.1)
+        logw(40, liney - 44, tw("COUNT LINE", mono(26, b=True), 0.1), 26, YEL_HI, la, lt < 1.6, "hud")
+        # the hero crosses; shrink + fade as the wide takes over
+        hs = 1.0 - 0.35 * seg(lt, 1.7, 2.5)
+        hx = W // 2 + int(60 - lt * 46)
+        hy = 880 + int(12 * math.sin(lt * 2.2))
+        hero_sockeye(img, hx, hy, int(345 * hs), lt, a=min(1.0, hook * 1.6))
+        # the mark SLAMS on with overshoot-and-settle (drops past, bounces back)
+        mk = seg(lt, 0.35, 0.85)
+        if mk > 0:
+            p = oc(mk)
+            over = math.sin(min(1.0, mk) * math.pi) * 26          # overshoot past the flank
+            drop = int((1 - p) * -430) + int(over * (1 if mk > 0.55 else 0))
+            yellow_mark(img, hx + 90, hy - 46 + drop, int(58 * p), a=min(1.0, hook * 1.5))
+            if mk > 0.8:
+                tagf = mono(28, b=True)
+                tk(d, "MARKED", tagf, (*YEL_HI, int(245 * hook)), hx + 160, hy - 78, 0.1)
+                logw(hx + 160, hy - 78, tw("MARKED", tagf, 0.1), tagf.size, YEL_HI, hook, mk > 0.85 and lt < 1.6, "hud")
+    # 1.7s+: the reveal — wordmark, eyebrow, and the run at scale
+    wordmark(img, f, a=oc(seg(lt, 1.9, 2.7)))
+    eyebrow(img, f, "WORLD'S LARGEST SOCKEYE RUN", y=250, a=oc(seg(lt, 2.0, 2.9)), col=PALE_HI)
     hud_card(img, f, "BRISTOL BAY  ·  WOOD RIVER", "SOCKEYE RETURNING", "BY THE MILLION",
-             a=oc(seg(lt, 1.2, 2.2)))
+             a=oc(seg(lt, 2.2, 3.1)))
     return img
 
 def scene2(f):  # SUBJECT-PORTRAIT: the mechanical tally counter over the LIVING river it watches
@@ -736,11 +779,17 @@ def caption(img, f):
         if la <= 0.02: continue
         rise = int((1 - lr) * 12)
         lwf = sum(tw(w, fnt) for w, _ in ln) + spw * (len(ln) - 1); x = (W - lwf) // 2; y = y0 + li * lh + rise
+        # draw the line at FULL ink on a layer, then scale the layer alpha — real fades (the direct
+        # draw path ignores ink alpha in this Pillow build)
+        lay = Image.new("RGBA", img.size, (0, 0, 0, 0)); ld = ImageDraw.Draw(lay)
         for (w, mid) in ln:
             col = SNOW if mid <= prog - 0.05 else (YEL if mid <= prog + 0.05 else GREY)
-            d.text((x, y), w, font=fnt, fill=(*col, int(255 * la)), stroke_width=3, stroke_fill=(3, 8, 18, int(230 * la)))
+            ld.text((x, y), w, font=fnt, fill=(*col, 255), stroke_width=3, stroke_fill=(3, 8, 18, 230))
             logw(x, y, tw(w, fnt), fnt.size, col, la, (mid <= prog + 0.05) and (la >= 0.6), "caption")
             x += tw(w, fnt) + spw
+        if la < 0.97:
+            lay.putalpha(lay.getchannel("A").point(lambda v: int(v * la)))
+        img.alpha_composite(lay)
     uw = W - 2 * 150; ux = 150; uy = y0 + blockh + 16
     d.line([(ux, uy), (ux + uw, uy)], fill=(70, 90, 116, int(110 * ap)), width=2)
     d.line([(ux, uy), (ux + int(uw * prog), uy)], fill=(*GOLD, int(225 * ap)), width=3)
