@@ -151,14 +151,36 @@ def base_field(f, tint=0.0):
         c[..., i] = CHAR[i] * (1 - grad * 0.35) + CHAR2[i] * (grad * 0.35)
     return c
 
-def _fish_layer(pts, scale=1.0, ang_flow=True):
-    """Draw crimson sockeye glyphs on an L canvas returned as float 0..1 mask + a body image."""
+SPRUCE = (74, 104, 66)     # spawning sockeye head-green
+def _fish_layer(pts, scale=1.0, t=0.0):
+    """Shaded spawning sockeye: crimson body with belly shade + dorsal rim light, the green head,
+    a swimming tail that actually beats, small fins, and a soft contact shadow in the water."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(img)
     for (x, y, s, col) in pts:
         bl = int(30 * s * scale); bh = int(11 * s * scale)
+        dk = tuple(int(c * 0.62) for c in col)          # belly shade
+        hi = tuple(min(255, int(c * 1.35)) for c in col)  # dorsal rim
+        # soft contact shadow (offset into the water)
+        d.ellipse([x - bl + 4, y + bh - 2, x + bl + 4, y + bh + 8], fill=(14, 24, 34, 90))
+        # tail beats: the caudal fin swings as it swims
+        beat = math.sin(t * 6.5 + x * 0.05 + y * 0.03) * 7 * s
+        tx = x + bl + int(15 * s)
+        d.polygon([(x + bl - 3, y), (tx, y - int(9 * s) + int(beat)), (tx, y + int(9 * s) + int(beat))], fill=(*dk, 255))
+        # body: shaded belly under, crimson mid, rim-lit back
         d.ellipse([x - bl, y - bh, x + bl, y + bh], fill=(*col, 255))
-        d.polygon([(x + bl - 2, y), (x + bl + int(14 * s), y - int(9 * s)), (x + bl + int(14 * s), y + int(9 * s))], fill=(*col, 255))
-        d.ellipse([x - bl + int(3 * s), y - int(3 * s), x - bl + int(9 * s), y + int(3 * s)], fill=(20, 24, 30, 255))
+        d.chord([x - bl, y - int(bh * 0.1), x + bl, y + bh + int(bh * 0.7)], 0, 180, fill=(*dk, 220))
+        d.arc([x - bl + 2, y - bh, x + bl - 6, y + bh], 190, 330, fill=(*hi, 235), width=max(2, int(2.4 * s)))
+        # pectoral fin
+        d.polygon([(x - int(4 * s), y + int(3 * s)), (x + int(8 * s), y + int(10 * s)), (x + int(2 * s), y + int(2 * s))], fill=(*dk, 235))
+        # the green head of a spawning sockeye + eye
+        hd = int(11 * s)
+        d.pieslice([x - bl - int(2 * s), y - bh, x - bl + 2 * hd, y + bh], 90, 270, fill=(*SPRUCE, 255))
+        d.ellipse([x - bl + int(2 * s), y - int(4 * s), x - bl + int(8 * s), y + int(2 * s)], fill=(16, 20, 24, 255))
+        d.ellipse([x - bl + int(3.4 * s), y - int(2.6 * s), x - bl + int(5.4 * s), y - int(0.6 * s)], fill=(210, 220, 228, 200))
+        # a hint of scale texture on the flank
+        for sxs in range(3):
+            ax = x - int(bl * 0.35) + sxs * int(9 * s)
+            d.arc([ax, y - int(5 * s), ax + int(10 * s), y + int(5 * s)], 300, 60, fill=(*dk, 120), width=1)
     return img
 
 def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
@@ -181,24 +203,35 @@ def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
     c = c * (1 - (1 - rivm) * 0.55) + bank * ((1 - rivm) * 0.55)
     watr = np.zeros((H, W, 3), np.float32)
     ripple = 0.5 + 0.5 * np.sin((_Y * 0.05) + t * 2.2 + np.sin(_X * 0.02))
+    # DEPTH: the channel darkens toward its center (deep water), stays bright at the shallows,
+    # with slow dappled light drifting across the surface
+    rivc = rivm[..., 0]
+    depth = np.clip(gaussian_filter(rivc, 26) * 1.15, 0, 1)
+    dapple = 0.5 + 0.5 * np.sin(_X * 0.012 + _Y * 0.006 + t * 0.7) * np.sin(_Y * 0.017 - t * 0.4)
     for i in range(3):
-        watr[..., i] = (PALE_LO[i] * (1 - ripple) + PALE[i] * ripple) * bright
+        base = PALE_LO[i] * (1 - ripple) + PALE[i] * ripple
+        deep = base * (1.0 - 0.38 * depth) + PALE_HI[i] * 0.16 * dapple
+        watr[..., i] = deep * bright
     c = c * (1 - rivm * 0.96) + watr * (rivm * 0.96)
-    # flowing crimson sockeye (keep RGB in 0..255; only alpha is normalized)
+    fl = np.asarray(_fish_layer(fish_pts(t, cx, width, flow), t=t), np.float32)
+    fish_rgb = fl[..., :3]; fish_a = (fl[..., 3:4] / 255.0) * 0.94
+    c = c * (1 - fish_a) + fish_rgb * fish_a * bright
+    return c
+
+def fish_pts(t, cx, width, flow, n=24):
+    """Deterministic sockeye positions: evenly seeded lanes with PER-FISH speeds so tracks pass each
+    other naturally and never lock into stacked coincidence (the old 197-stride aliasing)."""
     pts = []
-    n = 46
     for i in range(n):
-        yy = int(((t * 78 * flow + i * 197) % (H + 240)) - 120)
+        sp = 78 * flow * (0.8 + 0.45 * ((i * 29) % 10) / 10.0)
+        yy = int((t * sp + i * (2160.0 / n) * 3.7) % (H + 240)) - 120
         xoff = int((width * 0.34) * math.sin(i * 1.7 + yy * 0.006))
         wob = int(26 * math.sin(yy * 0.011 + t * 0.5))
         xx = cx + wob + xoff
         s = 0.85 + 0.5 * ((i * 37 % 100) / 100.0)
-        col = fishcol if (i % 5) else CRIM_HI
+        col = CRIM if (i % 5) else CRIM_HI
         pts.append((xx, yy, s, col))
-    fl = np.asarray(_fish_layer(pts), np.float32)
-    fish_rgb = fl[..., :3]; fish_a = (fl[..., 3:4] / 255.0) * 0.94
-    c = c * (1 - fish_a) + fish_rgb * fish_a * bright
-    return c
+    return pts
 
 def yellow_mark(img, x, y, r, a=1.0, ring=True):
     """A phosphor-yellow HUMAN label mark (a hand-drawn cross + soft ring) descending onto a fish."""
@@ -262,8 +295,9 @@ def eyebrow(img, f, text, y=250, a=1.0, col=None):
     if LOGTEXT and f % 6 == 0 and BGLUMA is not None:
         BGLUMA = _lum(np.asarray(img.convert("RGB")).astype(np.float32))
     d = ImageDraw.Draw(img)
-    d.line([(x - 40, y + 16), (x - 16, y + 16)], fill=(*col, int(220 * a)), width=2)
-    d.line([(x + wd + 16, y + 16), (x + wd + 40, y + 16)], fill=(*col, int(220 * a)), width=2)
+    # flanking MIDDOTS, never strokes (a flanking rule reads as a banned em dash at phone size)
+    for dx_ in (x - 30, x + wd + 30):
+        d.ellipse([dx_ - 4, y + 12, dx_ + 4, y + 20], fill=(*col, int(220 * a)))
     tk(d, text, ef, (*col, int(255 * a)), x, y, 0.16)
     logw(x, y, wd, ef.size, col, a, True, "eyebrow")
 
@@ -415,21 +449,19 @@ def scene5(f):  # PUSH-DETAIL: the marks become the model, then it echoes them a
     # machine-drawn detection boxes SNAP ONTO THE ACTUAL FISH (their positions are deterministic:
     # replicate draw_river's flow math for this scene's cx/width/flow so every box frames a sockeye)
     prog = oc(seg(lt, 0.15, 0.9))
-    t_ = f / FPS; cx5, w5, fl5 = W // 2, 560, 1.15
-    for i in range(46):
-        if ((i * 29) % 46) / 46.0 > prog: continue  # boxes appear in a scattered order as prog grows
-        yy = int(((t_ * 78 * fl5 + i * 197) % (H + 240)) - 120)
+    t_ = f / FPS
+    # boxes SNAP onto the exact fish the river draws (same deterministic fish_pts call)
+    nbox = 0
+    for i, (xx, yy, s, _col) in enumerate(fish_pts(t_, W // 2, 560, 1.15)):
+        if ((i * 7) % 24) / 24.0 > prog: continue   # boxes appear in a scattered order as prog grows
         if not (300 < yy < 1150): continue          # only box fish in the visible story band
-        xoff = int((w5 * 0.34) * math.sin(i * 1.7 + yy * 0.006))
-        wob = int(26 * math.sin(yy * 0.011 + t_ * 0.5))
-        xx = cx5 + wob + xoff
-        s = 0.85 + 0.5 * ((i * 37 % 100) / 100.0)
         bw = int(52 * s); bh = int(26 * s)
         d.rectangle([xx - bw, yy - bh, xx + bw + int(14 * s), yy + bh], outline=(*PALE_HI, 230), width=3)
         d.line([(xx - 5, yy - bh - 8), (xx + 5, yy - bh - 8)], fill=(*YEL_HI, 220), width=3)
+        nbox += 1
     eyebrow(img, f, "NOW IT PICKS THE FISH OUT ON ITS OWN", y=250, a=oc(seg(lt, 0.2, 1.0)), col=PALE_HI)
-    det = int(prog * 1180)
-    hud_card(img, f, "MODEL INFERENCE  ·  UNAIDED", "AUTO-DETECTED THIS FRAME", f"{det:,}",
+    # the readout is the HONEST live number: exactly how many boxes are on screen this frame
+    hud_card(img, f, "MODEL INFERENCE  ·  UNAIDED", "FISH IN FRAME  ·  LIVE", f"{nbox}",
              tag="LEARNED FROM THE MARKS", tagcol=PALE_HI, a=oc(seg(lt, 0.3, 1.0)))
     return img
 
@@ -495,10 +527,11 @@ def scene7(f):  # WIDE-ESTABLISH resolution: tower + human + drone over ONE rive
     d = ImageDraw.Draw(img)
     d.rectangle([gx + 6, gy - 24, gx + 78, gy + 24], outline=(*PALE_HI, 235), width=3)
     eyebrow(img, f, "THE HAND STILL TEACHES  ·  THE MODEL WATCHES", y=250, a=oc(seg(lt, 0.2, 1.2)), col=YEL_HI)
-    # the count settles into the ADFG-confirmed escapement window (never a fabricated total)
+    # the count settles into the TOWERS' escapement window (ADFG runs the towers; the pilot is
+    # NOT an ADFG project — keep the goal attributed to the tower count, the tag to the pilot)
     settle = seg(lt, L - 3.2, L - 0.4)
-    hud_card(img, f, "THE COUNT COMES HOME", "ESCAPEMENT GOAL  ·  ADFG",
-             "700,000 TO 2,800,000" if settle > 0.5 else "COUNTING", tag="HUMAN + MODEL", tagcol=YEL, a=oc(seg(lt, 0.2, 1.0)))
+    hud_card(img, f, "THE COUNT COMES HOME", "TOWER ESCAPEMENT GOAL",
+             "700,000 TO 2,800,000" if settle > 0.5 else "COUNTING", tag="PILOT · NOT AN ADFG PROJECT", tagcol=YEL, a=oc(seg(lt, 0.2, 1.0)))
     return img
 
 def scene8(f):  # MAP-TERRITORY + branded outro (motion runs to the final frame)
@@ -571,11 +604,15 @@ def caption(img, f):
     lines = _wrap(words, fnt, maxw, spw)
     if len(lines) > 3: fnt = fr(44, 650); spw = int(fnt.size * 0.30); lines = _wrap(words, fnt, maxw, spw)
     nl = len(lines); lh = int(fnt.size * 1.18); blockh = lh * nl; y0 = 1500 - blockh // 2
-    # soft dark scrim behind the caption block so every word clears the contrast floor over bright water
-    scr = Image.new("RGBA", (W, H), (0, 0, 0, 0)); sd = ImageDraw.Draw(scr)
-    sd.rounded_rectangle([70, y0 - 26, W - 70, y0 + blockh + 34], radius=22, fill=(6, 10, 16, int(178 * ap)))
-    scr = scr.filter(ImageFilter.GaussianBlur(6))
-    img.alpha_composite(scr)
+    # soft dark scrim behind the caption block so every word clears the contrast floor over bright
+    # water. Its alpha TRACKS the first line's text reveal, so an empty bar never shows alone.
+    lr0 = oc(clamp01(prog / 0.10))
+    scr_a = int(178 * ap * lr0)
+    if scr_a > 3:
+        scr = Image.new("RGBA", (W, H), (0, 0, 0, 0)); sd = ImageDraw.Draw(scr)
+        sd.rounded_rectangle([70, y0 - 26, W - 70, y0 + blockh + 34], radius=22, fill=(6, 10, 16, scr_a))
+        scr = scr.filter(ImageFilter.GaussianBlur(6))
+        img.alpha_composite(scr)
     # re-capture the background luma so the readability manifest sees the scrim the viewer sees
     global BGLUMA
     if LOGTEXT and f % 6 == 0:
