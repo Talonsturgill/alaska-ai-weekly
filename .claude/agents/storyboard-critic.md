@@ -84,3 +84,13 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
   however motivated, a real cut lands a different composition (>=2 heavy axes change).
 - `top_3_fixes` and `one_sentence_fix` must be actionable on paper, before any code is written.
 - You grade the PLAN, not prose polish. Be specific about staging, camera, motion, and beats.
+
+## DIMENSIONAL boards (3D engine era)
+
+The board now declares `engine: dimensional`, a `light: {sun, mood}` story, per-shot
+`camera: {move, focus_from, focus_to}`, and two extra fingerprint axes (camera_strategy,
+light_story). Red-team these like everything else: does the CAMERA MOVE serve each shot's
+meaning (an orbit that reveals nothing is decoration; a rack focus must hand attention between
+two story subjects)? Does the LIGHT STORY argue the mood (dawn-backlight for beginnings,
+night-practical for vigilance), or is it a default? A board whose camera plan could be swapped
+across shots without anyone noticing is not directed — return revise.

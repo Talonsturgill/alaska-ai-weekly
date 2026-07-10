@@ -246,6 +246,49 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
             "detail":(f"{len(evs)} sound events"+(f", {lift_ok} verified audible" if lift_ok is not None else "")+
                       (" — "+"; ".join(bad) if bad else " — every shot sonified, events audible in the master")+" (VISUAL_FLOW.md §5)")})
 
+    # 9-11) DIMENSIONAL HYGIENE — the render must PROVE it used the 3D engine correctly
+    # (render_manifest.json is written by dimensional.write_manifest at render end).
+    man_p=os.path.join(base,"render_manifest.json")
+    if not os.path.exists(man_p):
+        checks.append({"name":"DIMENSIONAL","pass":False,
+            "detail":"no render_manifest.json — the scene must render through dimensional.py and call "
+                     "write_manifest() (proof of engine/scale/shadow-LOD/backend). 2D PIL scenes are retired."})
+    else:
+        try: man=json.load(open(man_p))
+        except Exception: man={}
+        bad=[]
+        if man.get("engine")!="dimensional": bad.append("engine != dimensional")
+        if float(man.get("scale",0))<0.999: bad.append(f"ship scale {man.get('scale')} < 1.0 — proxy renders are for look-dev only")
+        if not man.get("shadow_fn"): bad.append("no SHADOW_FN — every scene provides a cheap shadow SDF (free speed, zero quality cost)")
+        m["render_arch"]=man.get("arch","?")
+        checks.append({"name":"DIMENSIONAL","pass":(not bad),
+            "detail":f"engine={man.get('engine')} scale={man.get('scale')} shadow_fn={man.get('shadow_fn')} "
+                     f"arch={man.get('arch')}"+(" — "+"; ".join(bad) if bad else " — 3D hygiene clean")})
+        smp=man.get("samples",[])
+        # DEPTH_FIELD: the scene is genuinely dimensional (near/far spread in the depth buffer)
+        if smp:
+            spreads=[x["z_p90"]-x["z_p10"] for x in smp if x.get("z_p90") is not None]
+            okn=sum(1 for v in spreads if v>=1.0)
+            med=sorted(spreads)[len(spreads)//2] if spreads else 0.0
+            m["depth_spread_med"]=round(med,2)
+            checks.append({"name":"DEPTH_FIELD","pass":(med>=2.0 and okn>=0.8*len(spreads)),
+                "detail":f"median near/far depth spread {med:.1f} world units over {len(spreads)} samples "
+                         f"({okn} above floor) — a real 3D scene, not a flat card (need med>=2.0, 80% >=1.0)"})
+            # CAMERA_MOTION: the camera lives — travel or drift, and focus behaves
+            import math as _m
+            pos=[x["pos"] for x in smp]
+            path=sum(_m.dist(pos[i],pos[i+1]) for i in range(len(pos)-1))
+            maxstep=max((_m.dist(pos[i],pos[i+1]) for i in range(len(pos)-1)),default=0.0)
+            foc=[x["focus"] for x in smp]; ftrav=max(foc)-min(foc) if foc else 0.0
+            m["cam_path"]=round(path,2); m["focus_travel"]=round(ftrav,2)
+            static=(maxstep<1e-4)
+            checks.append({"name":"CAMERA_MOTION","pass":(not static) and (path>=0.4 or ftrav>=0.4),
+                "detail":f"camera path {path:.2f} wu, focus travel {ftrav:.2f} wu, max step {maxstep:.4f} — "
+                         f"the camera must LIVE (drift at minimum) and either travel or rack (>=0.4 wu)"})
+        else:
+            checks.append({"name":"DEPTH_FIELD","pass":False,"detail":"manifest has no samples — render through dimensional.post() so telemetry logs"})
+            checks.append({"name":"CAMERA_MOTION","pass":False,"detail":"manifest has no samples — render through dimensional.post() so telemetry logs"})
+
     passed=all(c["pass"] for c in checks)
     m["score"]=round(10.0*sum(c["pass"] for c in checks)/len(checks),1)
     return {"pass":passed,"checks":checks,"metrics":m}

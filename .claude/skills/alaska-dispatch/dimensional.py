@@ -140,6 +140,8 @@ FOG_DEN = 0.02                    # exponential distance fog density
 FOG_COL = (0.60, 0.68, 0.78)
 
 _kernels_ready = False
+MANIFEST = []            # per-sample render telemetry -> render_manifest.json (the hygiene gates read it)
+
 
 def init_kernels():
     """JIT-compile the render kernel against the injected scene hooks. Call once after
@@ -284,12 +286,35 @@ def render_frame(cam: Cam, t=0.0):
         z = np.asarray(_I.fromarray(z.astype(np.float32), mode="F").resize((OUTW, OUTH), _I.BILINEAR), np.float32)
     return np.clip(rgb, 0, 4.0), z
 
+def log_frame(f, cam, z):
+    """Record render telemetry every 6th frame (matches the gate sampling). Called by post()."""
+    if f % 6 == 0 or f < 2:
+        zz = z[z < MAXD - 1e-3]
+        p10, p50, p90 = (float(np.percentile(zz, q)) for q in (10, 50, 90)) if zz.size else (0.0, 0.0, 0.0)
+        MANIFEST.append({"f": int(f), "pos": [round(float(v), 4) for v in cam.pos],
+                         "focus": round(float(cam.focus), 3), "fstop": float(cam.fstop),
+                         "z_p10": round(p10, 2), "z_p50": round(p50, 2), "z_p90": round(p90, 2)})
+
+def write_manifest(path, total_frames, extra=None):
+    """Write render_manifest.json — the objective proof for the DIMENSIONAL / DEPTH_FIELD /
+    CAMERA_MOTION hygiene gates: engine, backend, ship scale, shadow LOD, telemetry samples."""
+    import json as _json, os as _os
+    man = {"engine": "dimensional", "arch": ARCH, "scale": round(W / OUTW, 4),
+           "res": [OUTW, OUTH], "kernel_res": [W, H], "march_steps": MARCH_STEPS,
+           "shadow_fn": SHADOW_FN is not None, "frames": int(total_frames),
+           "samples": MANIFEST}
+    if extra: man.update(extra)
+    _os.makedirs(_os.path.dirname(_os.path.abspath(path)), exist_ok=True)
+    _json.dump(man, open(path, "w"), indent=1)
+    return path
+
 def post(rgb, z, cam: Cam, f=0, grain=0.028):
     """The filmic finish, in the CORRECT order (scene-linear -> lens -> film -> display):
     depth DOF -> atmospheric split-tone -> halation -> bloom -> tonemap -> grain -> vignette -> CA.
     Returns uint8 HxWx3."""
     from scipy.ndimage import gaussian_filter
     from PIL import Image as _I
+    log_frame(f, cam, z)
     h, w, _ = rgb.shape
     out = rgb.astype(np.float32)
 

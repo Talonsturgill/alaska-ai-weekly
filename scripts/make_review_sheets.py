@@ -17,6 +17,13 @@ a settle, a transition) and pass them explicitly.
 
   python scripts/make_review_sheets.py --frames out/dispatch/frames_v3 \
       --out out/dispatch/review --strips "hook_slam:14,swim:300,settle:1420"
+
+EARLY-LOOK MODE: the script works on a PARTIAL frame dir (a render in progress) — sheets sample
+whatever exists and strip positions clamp into the available range. Run it ~120 frames into every
+full render and give the pack to one critic pass: a defect caught at frame 120 costs 2 minutes,
+the same defect at frame 1800 costs 3 hours. Look-dev should ALSO probe motion before any full
+render: 8 CONSECUTIVE frames at the storyboard's riskiest move (fast subject, domain repetition,
+rack) at scale=0.4 — still-probes cannot show ribboning/shear/jitter, strips can.
 """
 import argparse, glob, os
 from PIL import Image
