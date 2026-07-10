@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+"""Build the REVIEW EVIDENCE PACK for a rendered Dispatch — the standard input for the
+frame review and every Gate-B critic (editor / scorer / flow-critic).
+
+Two kinds of evidence, because two kinds of judgment:
+  1. CONTACT SHEETS (sheet_0..5.png): 36 stills sampling the whole timeline ~every 1.7s.
+     Right for composition, typography, color, accuracy, legibility.
+  2. MOTION FILMSTRIPS (strip_*.png): 8 CONSECUTIVE frames (default step 2 = 1/15s apart)
+     at the key moves. Right for judging MOTION: easing, anticipation/overshoot/settle,
+     motion blur, secondary follow-through. A panel judging animation from lone stills is
+     structurally blind — it caps the Motion axis on "cannot verify" instead of evidence
+     (which is exactly what happened on 2026-07-10; this script is the fix).
+
+Strip positions come from --strips "name:frame[:step],..." or default to thirds of the
+timeline. The orchestrator should pick the storyboard's biggest MOVES (a slam, a swim,
+a settle, a transition) and pass them explicitly.
+
+  python scripts/make_review_sheets.py --frames out/dispatch/frames_v3 \
+      --out out/dispatch/review --strips "hook_slam:14,swim:300,settle:1420"
+"""
+import argparse, glob, os
+from PIL import Image
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--frames", default="out/dispatch/frames_v3")
+    ap.add_argument("--out", default="out/dispatch/review")
+    ap.add_argument("--sheets", type=int, default=6)
+    ap.add_argument("--per-sheet", type=int, default=6)
+    ap.add_argument("--strips", default="", help="name:frame[:step],... (step default 2 = 1/15s at 30fps)")
+    ap.add_argument("--strip-len", type=int, default=8)
+    a = ap.parse_args()
+    fs = sorted(glob.glob(os.path.join(a.frames, "frame_*.png")))
+    if not fs:
+        raise SystemExit(f"no frames in {a.frames}")
+    os.makedirs(a.out, exist_ok=True)
+    n = len(fs)
+
+    # contact sheets: stills across the whole timeline
+    total = a.sheets * a.per_sheet
+    picks = [int(i * (n - 1) / (total - 1)) for i in range(total)]
+    for s in range(a.sheets):
+        sheet = Image.new("RGB", (3 * 360, 2 * 640), (10, 10, 14))
+        for j in range(a.per_sheet):
+            im = Image.open(fs[picks[s * a.per_sheet + j]]).resize((360, 640))
+            sheet.paste(im, ((j % 3) * 360, (j // 3) * 640))
+        sheet.save(os.path.join(a.out, f"sheet_{s}.png"))
+
+    # motion filmstrips: CONSECUTIVE frames at the key moves
+    strips = []
+    if a.strips:
+        for part in a.strips.split(","):
+            bits = part.strip().split(":")
+            strips.append((bits[0], int(bits[1]), int(bits[2]) if len(bits) > 2 else 2))
+    else:
+        for k, frac in (("early", 0.15), ("mid", 0.5), ("late", 0.85)):
+            strips.append((k, int(n * frac), 2))
+    for name, f0, st in strips:
+        f0 = max(0, min(n - 1 - a.strip_len * st, f0))
+        sheet = Image.new("RGB", (a.strip_len * 270, 480), (0, 0, 0))
+        for j in range(a.strip_len):
+            im = Image.open(fs[f0 + j * st]).resize((270, 480))
+            sheet.paste(im, (j * 270, 0))
+        sheet.save(os.path.join(a.out, f"strip_{name}.png"))
+    print(f"review pack: {a.sheets} sheets + {len(strips)} motion strips -> {a.out}")
+
+if __name__ == "__main__":
+    main()

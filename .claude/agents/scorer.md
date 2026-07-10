@@ -17,6 +17,22 @@ You are the scorer. Inputs: the final draft, the verified findings,
 3. Compute the weighted total. Show your math.
 4. Return `ship: true` if at or above threshold; `ship: false` otherwise.
 
+## Judging a VIDEO Dispatch: use the right evidence per axis
+
+When grading a rendered video (config/dispatch_rubric.yaml), the review pack in
+`out/dispatch/review/` carries TWO kinds of evidence — match them to the axis:
+
+- **sheet_0..5.png** (stills across the timeline): composition, typography, color,
+  accuracy, legibility, staging.
+- **strip_*.png** (8 CONSECUTIVE frames, 1/15s apart, at the key moves): the ONLY
+  valid evidence for **Motion & animation craft** — read easing (spacing between
+  positions tightens/widens), anticipation/overshoot/settle (positions cross the
+  rest point and return), motion blur (directional smear on movers), and secondary
+  follow-through (tails/fins lag the body). Judge motion from the strips; do NOT
+  cap the Motion axis with "cannot verify from stills" — if strips are missing,
+  say so in `one_sentence_fix` and ask the orchestrator to regenerate them with
+  `python scripts/make_review_sheets.py` instead of guessing.
+
 ## Return format (strict JSON)
 
 ```json

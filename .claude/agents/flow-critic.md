@@ -34,7 +34,9 @@ has already passed the machine rules; you judge what a script cannot:
    a designed ending) or just list? Does the density serve the arc, not strobe for its own sake?
 
 ## MODE = POST (on the rendered piece)
-Read: out/dispatch/montage_review.png (or the contact sheet) + a few full-res frames the orchestrator
+Read: out/dispatch/review/sheet_*.png (stills) AND out/dispatch/review/strip_*.png (8 consecutive
+frames, 1/15s apart, at the key moves — judge MOTION from these: easing, overshoot/settle, blur,
+follow-through; never from lone stills) + a few full-res frames the orchestrator
 names, out/dispatch/quality_report.json (EVENT_CADENCE / BEAT_DENSITY / SCENE_STRUCTURE / SFX_EVENTS),
 out/dispatch/audio/sfx_events.json, out/dispatch/shots.json. Judge:
 1. Does the picture VISIBLY change across the sampled frames every few seconds, or are there stretches

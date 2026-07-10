@@ -336,7 +336,11 @@ because the bar was hard, a loop that ends on a failure is a broken loop.
   (track fits, audible-but-under-VO, composer credited) + VOICE CHECK (script == captions,
   phonetic numbers right). Fail → fix → re-mux → re-measure.
 
-- FRAME REVIEW (visual, on a Gate-A-green render): contact sheets sampling the ENTIRE timeline
+- FRAME REVIEW (visual, on a Gate-A-green render): build the review pack with
+  `python scripts/make_review_sheets.py --strips "<key moves>"` — contact sheets sampling the ENTIRE timeline
+  PLUS motion filmstrips (8 consecutive frames, 1/15s apart) at the storyboard's biggest MOVES. The strips are
+  the ONLY valid evidence for judging motion (easing, overshoot/settle, blur, follow-through): give them to
+  every Gate-B critic so the Motion axis is graded on motion, never capped on 'cannot verify from stills'.
   (~every 1.5-2s); LOOK. Zoom into EVERY frame with text. Check first/last frames + each transition.
   Catch typos, wrong numbers, cropping/safe-area (9:16 AND the 4:5 crop), focal hierarchy,
   hero-reads-in-silhouette, overlaps/aliasing/banding. Fix and RE-RENDER affected ranges.
