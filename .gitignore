@@ -13,3 +13,11 @@ __pycache__/
 .claude/skills/alaska-dispatch/frames_*/
 .claude/skills/alaska-dispatch/test_*/
 .claude/skills/alaska-dispatch/*.mp4
+
+# dimensional engine render outputs (intermediates, never commit — like out/)
+.claude/skills/alaska-dispatch/demo3d_frames/
+.claude/skills/alaska-dispatch/frames_v3/
+.claude/skills/alaska-dispatch/textlog/
+.claude/skills/alaska-dispatch/*.mp4
+.claude/skills/alaska-dispatch/__pycache__/
+**/__pycache__/
