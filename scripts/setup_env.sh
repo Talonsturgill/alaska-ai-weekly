@@ -10,6 +10,15 @@ command -v ffmpeg >/dev/null 2>&1 || { apt-get update -qq && apt-get install -y 
 # python deps (only install if missing)
 python3 -c "import PIL,numpy,scipy,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
   || pip install --break-system-packages -q pillow numpy scipy edge-tts soundfile pyyaml
+# DIMENSIONAL ENGINE (3D): taichi is the primary renderer (CPU JIT, ~0.45s/frame @1080x1920)
+python3 -c "import taichi" >/dev/null 2>&1 \
+  || pip install --break-system-packages -q taichi
+# bpy = Blender-as-module for Workbench mesh renders + Cycles hero bakes (large wheel, best-effort)
+python3 -c "import bpy" >/dev/null 2>&1 \
+  || pip install --break-system-packages -q bpy || true
+# software-GL for bpy Workbench headless (llvmpipe); best-effort
+ldconfig -p 2>/dev/null | grep -q libEGL.so.1 \
+  || { apt-get update -qq && apt-get install -y -qq libegl1 libgl1 libgles2 libgl1-mesa-dri; } || true
 # kokoro (publish voice, Apache-2.0) — larger; install if missing
 python3 -c "import kokoro" >/dev/null 2>&1 \
   || pip install --break-system-packages -q kokoro || true

@@ -64,3 +64,13 @@ NEVER use an em dash or en dash in ANY on-screen text, label, kinetic caption, o
 Zero exceptions. Use a middot "·", a comma, a period, parentheses, or a colon as the separator/pause,
 and write ranges as "X to Y". (Same rule the LinkedIn caption gate `scripts/caption_check.py` enforces
 on the post copy, and `config/brand.yaml` on the voice.)
+
+## THE DIMENSIONAL ENGINE (default for new Dispatches, added 2026-07-10)
+
+`dimensional.py` is the 3D cinematic raymarcher (Taichi CPU JIT, ~0.45-0.7s/frame at FULL
+1080x1920 with soft shadows, AO, specular, fog, depth-DOF). Author each shot as a scene file
+(SDF `_scene` + `_mat` hooks + a `cam_at(f)` camera move) — see `demo_dimensional.py` (the
+'Bristol Bay, Dawn' proof piece) and docs/craft/DIMENSIONAL_CRAFT.md for the doctrine and the
+ten look levers. bpy is available for Workbench mesh renders (~2.1s/f, needs libEGL) and Cycles
+hero bakes (~28s/f, bake-only). The 2D PIL path remains for HUD/caption/brand composites via
+dispatch_core, layered OVER the dimensional render.

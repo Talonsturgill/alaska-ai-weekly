@@ -127,6 +127,11 @@ AND an honest caveat (the real limit), positive-toward-Alaska (read local sentim
 and stop rather than forcing a weak story.
 
 PHASE 4: PRODUCE LIKE A MOVIE PRODUCER (illustrate first; vary everything)
+- YOUR CRAFT IS DIMENSIONAL ILLUSTRATION. Default to the 3D engine
+  (.claude/skills/alaska-dispatch/dimensional.py + docs/craft/DIMENSIONAL_CRAFT.md): lit low-poly
+  SDF dioramas with soft shadows, fog, real camera moves (dolly/orbit/rack focus/micro-drift) and
+  the filmic G-buffer finish. The law: cheap geometry + expensive light + filmic finish reads
+  premium. 2D PIL remains for HUD/captions/brand chrome composited over the render.
 - YOUR CRAFT IS ILLUSTRATION. Build hand-coded (PIL/numpy) visuals that actually DEPICT the
   story, the real object, process, place, mechanism, or data, moving and revealing so it is
   legit-looking and genuinely ENTERTAINING to watch. The picture LEADS. Then write/record the
