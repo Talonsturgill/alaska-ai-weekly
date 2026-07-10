@@ -193,14 +193,31 @@ def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
         half = width // 2 + int(18 * math.sin(y * 0.005 - t * 0.3))
         rd.rectangle([cx + wob - half, y, cx + wob + half, y + 4], fill=255)
     rivm = gaussian_filter(np.asarray(riv, np.float32) / 255.0, 2.0)[..., None]
-    # sage gravel banks: textured noise where the river is NOT
-    rng0 = np.random.default_rng(19)
-    grav = gaussian_filter(rng0.standard_normal((H // 3, W // 3)).astype(np.float32), 1.0)
-    grav = np.asarray(Image.fromarray(((grav - grav.min()) / (np.ptp(grav) + 1e-6) * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR), np.float32) / 255.0
+    # sage gravel banks: two-octave texture + PEBBLES + wet-gravel shoreline darkening + broad light
+    global _BANK
+    try:
+        _BANK
+    except NameError:
+        rng0 = np.random.default_rng(19)
+        g1 = gaussian_filter(rng0.standard_normal((H // 3, W // 3)).astype(np.float32), 1.0)
+        g1 = (g1 - g1.min()) / (np.ptp(g1) + 1e-6)
+        g1 = np.asarray(Image.fromarray((g1 * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR), np.float32) / 255.0
+        # pebble octave: hard small stones with per-pebble light/shadow
+        peb = rng0.standard_normal((H // 6, W // 6)).astype(np.float32)
+        peb = np.clip(gaussian_filter(peb, 0.7) * 1.6, -1, 1)
+        peb = np.asarray(Image.fromarray(((peb * 0.5 + 0.5) * 255).astype(np.uint8)).resize((W, H), Image.NEAREST), np.float32) / 255.0
+        big = gaussian_filter(rng0.standard_normal((H // 24, W // 24)).astype(np.float32), 1.4)
+        big = (big - big.min()) / (np.ptp(big) + 1e-6)
+        big = np.asarray(Image.fromarray((big * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR), np.float32) / 255.0
+        _BANK = (0.42 + 0.30 * g1 + 0.24 * peb + 0.22 * big)  # layered gravel luminance 0.42..1.18
     bank = np.zeros((H, W, 3), np.float32)
+    warmth = np.array([1.06, 1.0, 0.9], np.float32)  # a touch of sun on the stones
     for i in range(3):
-        bank[..., i] = SAGE[i] * (0.55 + 0.45 * grav)
-    c = c * (1 - (1 - rivm) * 0.55) + bank * ((1 - rivm) * 0.55)
+        bank[..., i] = SAGE[i] * _BANK * warmth[i]
+    # wet gravel: darken the bank in a soft margin along the waterline
+    shoreline = np.clip(gaussian_filter(rivm[..., 0], 18) - rivm[..., 0], 0, 1)
+    bank *= (1.0 - 0.34 * shoreline[..., None] / (shoreline.max() + 1e-6))
+    c = c * (1 - (1 - rivm) * 0.85) + bank * ((1 - rivm) * 0.85)
     watr = np.zeros((H, W, 3), np.float32)
     ripple = 0.5 + 0.5 * np.sin((_Y * 0.05) + t * 2.2 + np.sin(_X * 0.02))
     # DEPTH: the channel darkens toward its center (deep water), stays bright at the shallows,
@@ -232,6 +249,60 @@ def fish_pts(t, cx, width, flow, n=24):
         col = CRIM if (i % 5) else CRIM_HI
         pts.append((xx, yy, s, col))
     return pts
+
+def hero_sockeye(img, cx, cy, bl, t, a=1.0):
+    """THE expensive macro hero: a full-frame spawning sockeye with layered shading — belly gradient,
+    dorsal rim light, scale rows, gill plate, kype jaw, finnage, and a tail that beats. Drawn large
+    enough that the illustration detail carries the shot."""
+    bh = int(bl * 0.34)
+    d = ImageDraw.Draw(img)
+    dk = tuple(int(c * 0.58) for c in CRIM); dk2 = tuple(int(c * 0.78) for c in CRIM)
+    hi = tuple(min(255, int(c * 1.38)) for c in CRIM)
+    # soft water shadow beneath
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0)); sd = ImageDraw.Draw(sh)
+    sd.ellipse([cx - bl, cy + bh - 10, cx + bl, cy + bh + 42], fill=(10, 20, 30, int(110 * a)))
+    img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(12)))
+    d = ImageDraw.Draw(img)
+    # beating forked tail
+    beat = math.sin(t * 5.2) * bl * 0.09
+    tx = cx + bl + int(bl * 0.34)
+    d.polygon([(cx + bl - int(bl * 0.06), cy),
+               (tx, cy - int(bh * 0.95) + int(beat)), (tx - int(bl * 0.10), cy + int(beat * 0.5)),
+               (tx, cy + int(bh * 0.95) + int(beat))], fill=(*dk, int(255 * a)))
+    # body: base, mid-band, belly, dorsal rim
+    d.ellipse([cx - bl, cy - bh, cx + bl, cy + bh], fill=(*CRIM, int(255 * a)))
+    d.chord([cx - bl, cy - int(bh * 0.4), cx + bl, cy + int(bh * 1.15)], 0, 180, fill=(*dk2, int(235 * a)))
+    d.chord([cx - bl, cy + int(bh * 0.1), cx + bl, cy + int(bh * 1.4)], 0, 180, fill=(*dk, int(235 * a)))
+    d.arc([cx - bl + 6, cy - bh, cx + bl - int(bl * 0.2), cy + bh], 195, 325, fill=(*hi, int(245 * a)), width=max(3, bl // 38))
+    # scale rows (radiating arcs along the flank)
+    for row, ry in enumerate((-0.28, 0.0, 0.3)):
+        for k in range(9):
+            ax = cx - int(bl * 0.62) + k * int(bl * 0.15)
+            ay = cy + int(bh * ry)
+            r_ = int(bh * 0.34)
+            d.arc([ax, ay - r_, ax + int(r_ * 1.7), ay + r_], 300, 60, fill=(*dk, int(120 * a)), width=2)
+    # dorsal + adipose + pectoral + anal fins
+    d.polygon([(cx - int(bl * 0.18), cy - bh + 4), (cx + int(bl * 0.16), cy - int(bh * 1.55)),
+               (cx + int(bl * 0.34), cy - bh + 6)], fill=(*dk2, int(235 * a)))
+    d.ellipse([cx + int(bl * 0.55), cy - int(bh * 1.16), cx + int(bl * 0.68), cy - bh + 4], fill=(*dk2, int(220 * a)))
+    d.polygon([(cx - int(bl * 0.28), cy + int(bh * 0.5)), (cx - int(bl * 0.02), cy + int(bh * 1.5)),
+               (cx - int(bl * 0.10), cy + int(bh * 0.42))], fill=(*dk, int(230 * a)))
+    d.polygon([(cx + int(bl * 0.42), cy + int(bh * 0.6)), (cx + int(bl * 0.62), cy + int(bh * 1.3)),
+               (cx + int(bl * 0.66), cy + int(bh * 0.55))], fill=(*dk, int(225 * a)))
+    # the green head with gill plate, kype jaw, eye
+    hd = int(bl * 0.42)
+    d.pieslice([cx - bl - int(bl * 0.06), cy - bh, cx - bl + 2 * hd, cy + bh], 90, 270, fill=(*SPRUCE, int(255 * a)))
+    d.arc([cx - bl + int(hd * 0.75), cy - bh + 6, cx - bl + 2 * hd, cy + bh - 6], 250, 470,
+          fill=(int(SPRUCE[0] * 0.7), int(SPRUCE[1] * 0.7), int(SPRUCE[2] * 0.7), int(220 * a)), width=max(3, bl // 60))
+    # kype (the spawning male's hooked jaw)
+    jy = cy + int(bh * 0.32)
+    d.polygon([(cx - bl - int(bl * 0.05), jy), (cx - bl + int(bl * 0.16), jy + int(bh * 0.30)),
+               (cx - bl + int(bl * 0.16), jy + int(bh * 0.10))], fill=(int(SPRUCE[0] * 0.8), int(SPRUCE[1] * 0.8), int(SPRUCE[2] * 0.8), int(255 * a)))
+    ex, ey = cx - bl + int(hd * 0.45), cy - int(bh * 0.30)
+    er = max(6, bl // 22)
+    d.ellipse([ex - er, ey - er, ex + er, ey + er], fill=(14, 18, 22, int(255 * a)))
+    d.ellipse([ex - er // 3, ey - er + 2, ex + er // 4, ey - er // 3], fill=(220, 230, 236, int(210 * a)))
+    return img
 
 def yellow_mark(img, x, y, r, a=1.0, ring=True):
     """A phosphor-yellow HUMAN label mark (a hand-drawn cross + soft ring) descending onto a fish."""
@@ -327,12 +398,21 @@ def scene2(f):  # SUBJECT-PORTRAIT: the mechanical tally counter over the LIVING
     # the river keeps flowing behind the tower vantage (dimmer, narrower) — the counter watches IT,
     # and the whole frame keeps moving (event cadence)
     c = draw_river(base_field(f), f, width=330, flow=0.9, bright=0.68)
-    # cedar tower posts framing the sides (match-cut from the river edges)
+    # cedar tower posts framing the sides — grained, lit from the left, with cast shadows
     tw_img = Image.new("RGBA", (W, H), (0, 0, 0, 0)); td = ImageDraw.Draw(tw_img)
+    ced_dk = tuple(int(v * 0.62) for v in CEDAR)
     for sx in (150, W - 150):
-        td.rectangle([sx - 16, 220, sx + 16, H - 220], fill=(*CEDAR, 235))
-        for yy in range(260, H - 220, 120):
-            td.rectangle([sx - 60, yy, sx + 60, yy + 18], fill=(*CEDAR_HI, 220))
+        td.rectangle([sx + 10, 232, sx + 30, H - 208], fill=(20, 22, 24, 90))       # cast shadow
+        td.rectangle([sx - 16, 220, sx + 16, H - 220], fill=(*CEDAR, 245))
+        td.rectangle([sx - 16, 220, sx - 9, H - 220], fill=(*CEDAR_HI, 235))         # lit edge
+        td.rectangle([sx + 9, 220, sx + 16, H - 220], fill=(*ced_dk, 235))           # shade edge
+        for gk in range(5):                                                          # wood grain
+            gxx = sx - 12 + gk * 6 + (gk % 2)
+            td.line([(gxx, 240 + gk * 7), (gxx, H - 240 - gk * 11)], fill=(*ced_dk, 70), width=1)
+        for yy in range(260, H - 220, 120):                                          # rungs, lit + shaded
+            td.rectangle([sx - 60, yy + 14, sx + 64, yy + 22], fill=(18, 20, 22, 80))
+            td.rectangle([sx - 60, yy, sx + 60, yy + 18], fill=(*CEDAR_HI, 230))
+            td.rectangle([sx - 60, yy + 12, sx + 60, yy + 18], fill=(*ced_dk, 200))
     img = Image.fromarray(np.clip(c, 0, 255).astype(np.uint8)).convert("RGBA")
     img.alpha_composite(tw_img)
     # center: a big mechanical tally counter, ticking up
@@ -414,29 +494,45 @@ def scene4(f):  # DATA-PANEL: THE TEACHING — a person marks each fish crossing
     liney = 720
     d.line([(90, liney), (W - 90, liney)], fill=(*YEL, 235), width=6)
     tk(d, "COUNT LINE", mono(24, b=True), (*YEL_HI, 235), 96, liney - 40, 0.1)
-    # "NOT YET" up front, then a human cursor blooms and starts marking
+    # "NOT YET" up front
     ny = seg(lt, 0.1, 0.9)
-    if lt < 1.9:
+    if lt < 2.1:
         nf = fr(96, 800); s = "NOT YET"; wd = tw(s, nf, 0.02)
-        aa = oc(ny) * (1 - seg(lt, 1.4, 1.9))
+        aa = oc(ny) * (1 - seg(lt, 1.6, 2.1))
         tk(d, s, nf, (*SNOW, int(255 * aa)), (W - wd) // 2, 430, 0.02)
         logw((W - wd) // 2, 430, wd, nf.size, SNOW, aa, aa >= 0.62, "big")
-    # marks land one by one on fish crossing the line as time advances
-    nmark = int(seg(lt, 1.8, L - 0.5) * 14)
+    # THE HERO MACRO BEAT ("First, a person has to teach it"): one full-frame shaded sockeye,
+    # and the FIRST yellow label descends onto its flank — the thesis at full price
+    hb = seg(lt, 2.1, 2.7) * (1 - seg(lt, 4.9, 5.5))
+    if hb > 0.02:
+        ha = oc(hb)
+        hcy = 820 + int(14 * math.sin(lt * 1.8))
+        hero_sockeye(img, W // 2 + 30, hcy, 330, lt, a=ha)
+        mk = seg(lt, 2.9, 3.9)
+        if mk > 0:
+            drop = int((1 - oc(mk)) * -300)
+            yellow_mark(img, W // 2 + 80, hcy - 40 + drop, int(52 * oc(mk)), a=ha * min(1.0, 0.2 + oc(mk)))
+            if mk > 0.75:
+                d = ImageDraw.Draw(img)
+                tagf = mono(26, b=True)
+                tk(d, "LABEL 0001", tagf, (*YEL_HI, int(240 * ha)), W // 2 + 150, hcy - 64, 0.08)
+                logw(W // 2 + 150, hcy - 64, tw("LABEL 0001", tagf, 0.08), tagf.size, YEL_HI, ha, mk > 0.8, "hud")
+    # then the wide: marks rain one by one on fish crossing the line
+    nmark = int(seg(lt, 5.2, L - 0.4) * 14)
     rng = np.random.default_rng(3)
     for i in range(nmark):
         mx = 150 + int((rng.random() * (W - 300)))
         my = liney + int((rng.random() - 0.5) * 60)
-        bornp = seg(lt, 1.8 + i * ( (L-2.6)/14 ), 1.8 + i * ((L-2.6)/14) + 0.3)
+        bornp = seg(lt, 5.2 + i * ((L - 5.8) / 14), 5.2 + i * ((L - 5.8) / 14) + 0.3)
         yellow_mark(img, mx, my, int(20 * oc(bornp)), a=oc(bornp) * 0.95, ring=False)
     # live cursor at the newest mark
-    if lt > 1.7:
+    if lt > 5.0:
         cxp = 150 + int((math.sin(lt * 2.3) * 0.5 + 0.5) * (W - 300))
         d = ImageDraw.Draw(img)
         d.line([(cxp, liney - 26), (cxp, liney + 26)], fill=(*YEL_HI, 240), width=3)
         d.line([(cxp - 26, liney), (cxp + 26, liney)], fill=(*YEL_HI, 240), width=3)
     eyebrow(img, f, "A PERSON TEACHES THE MACHINE TO SEE", y=250, a=oc(seg(lt, 0.3, 1.1)), col=YEL_HI)
-    labels = int(seg(lt, 1.8, L) * 3200)
+    labels = int(seg(lt, 5.0, L) * 3200) + (1 if 3.0 < lt <= 5.0 else 0)
     hud_card(img, f, "HAND-LABELING  ·  TRAINING DATA", "FISH MARKED AT THE LINE",
              f"{labels:,}", tag="SEVERAL THOUSAND LABELS", tagcol=YEL, a=oc(seg(lt, 1.2, 2.0)))
     return img
@@ -511,10 +607,16 @@ def scene7(f):  # WIDE-ESTABLISH resolution: tower + human + drone over ONE rive
     c = draw_river(base_field(f), f, width=440, flow=0.9, bright=1.0)
     img = Image.fromarray(np.clip(c, 0, 255).astype(np.uint8)).convert("RGBA")
     d = ImageDraw.Draw(img)
-    # tower (left) + human silhouette; drone small above (right)
-    d.rectangle([180, 620, 214, 1180], fill=(*CEDAR, 235))
+    # tower (left) + human silhouette; drone small above (right) — grained + lit like scene2's
+    ced_dk7 = tuple(int(v * 0.62) for v in CEDAR)
+    d.rectangle([206, 632, 226, 1180], fill=(20, 22, 24, 90))
+    d.rectangle([180, 620, 214, 1180], fill=(*CEDAR, 245))
+    d.rectangle([180, 620, 187, 1180], fill=(*CEDAR_HI, 235))
+    d.rectangle([207, 620, 214, 1180], fill=(*ced_dk7, 235))
     for yy in range(660, 1180, 110):
-        d.rectangle([150, yy, 244, yy + 16], fill=(*CEDAR_HI, 220))
+        d.rectangle([150, yy + 12, 248, yy + 20], fill=(18, 20, 22, 80))
+        d.rectangle([150, yy, 244, yy + 16], fill=(*CEDAR_HI, 230))
+        d.rectangle([150, yy + 10, 244, yy + 16], fill=(*ced_dk7, 200))
     d.ellipse([176, 560, 218, 640], fill=(18, 22, 28, 255))  # a person on the tower
     dx, dyc = W - 240, 520 + int(20 * math.sin(lt * 1.4))
     d.ellipse([dx - 34, dyc - 12, dx + 34, dyc + 12], fill=(40, 46, 54, 255), outline=(*PALE_HI, 255), width=2)
