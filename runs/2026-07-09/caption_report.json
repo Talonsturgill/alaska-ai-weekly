@@ -1,0 +1,13 @@
+{
+  "chars": 815,
+  "hook": "A hand-clicker on a Bristol Bay tower has counted the sockeye since 1955. This year an AI drone wants that job.",
+  "hook_len": 111,
+  "hashtags": [
+    "#BristolBay",
+    "#FisheriesScience",
+    "#AppliedAI"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

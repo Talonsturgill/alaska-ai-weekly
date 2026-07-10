@@ -1,0 +1,23 @@
+{
+ "run_date": "2026-07-09",
+ "carousel_no": 2,
+ "phases": {
+  "wake": "done: out/2026-07-09/plan.md",
+  "craft_refresh": "done: FIELD_NOTES 2026-07-09 entry",
+  "research": "done: out/2026-07-09/research/ (6 scouts)",
+  "claims": "done: out/2026-07-09/claims.json (18 story + 7 docket claims)",
+  "docket": "done: ledger/docket.json refreshed (STAK/GVEA/AKLNG 2026-07-09)",
+  "selection": "done: out/2026-07-09/selection.md (Bristol Bay AI salmon counting)",
+  "directors_room": "done: out/2026-07-09/storyboard.md (synthesized, gate PASS)",
+  "copy": "done: caption PASS (815 chars), copy.json, storyboard strings confirmed",
+  "art_build": "done: 9 slides render+QA PASS(WARN), vector PDF 4.96MB",
+  "pixel_review": "done: all 9 SHIP; refinements applied (S1 3-line, S2 date, S4 fish, S5 blur, S6 5-row honest bar, S7 labels)",
+  "flow_review": "done: flow-critic SHIP; S7 exclusion tick added",
+  "assemble": "done: vector PDF 4.94MB, contact sheet, thumbs",
+  "scoring": "done: 8.83 vs 8.3, SHIP, zero hard fails",
+  "ship": "committing to branch; site rebuilt; docket_alerts SKIP (no key)",
+  "upgrade": "pending",
+  "gmail": "pending",
+  "retro": "done: ledgers + FIELD_NOTES + TECHNIQUE_LIBRARY updated"
+ }
+}

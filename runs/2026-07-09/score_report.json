@@ -1,0 +1,17 @@
+{"weighted_total": 8.83, "ship_threshold": 8.3, "verdict": "ship",
+ "criteria": [
+  {"name": "Thumb-stop cover", "score": 8, "weight": 0.14},
+  {"name": "Story arc & swipe momentum", "score": 8, "weight": 0.14},
+  {"name": "Artwork craft & genuine detail", "score": 7, "weight": 0.16},
+  {"name": "Story-art fusion", "score": 9, "weight": 0.14},
+  {"name": "Alaska authenticity & local relevance", "score": 9, "weight": 0.12},
+  {"name": "Insight density & factual weight", "score": 8, "weight": 0.10},
+  {"name": "Variety vs ledger", "score": 8, "weight": 0.08},
+  {"name": "Legibility & platform fitness", "score": 7, "weight": 0.07},
+  {"name": "Copy: voice & hook", "score": 8, "weight": 0.05},
+  {"name": "Deliverable completeness", "score": 8, "weight": 0.10}],
+ "hard_fails_all_pass": true,
+ "one_sentence_fix": "none, ship",
+ "weakest_criterion": "Artwork craft & genuine detail",
+ "revision_rounds": 1,
+ "notes": "No hard fails. Best-in-class story-art fusion; honest UNPROVEN/in-training thesis on every slide; dense Alaska specificity. Craft-level weaknesses only (empty lower thirds on some slides, slightly generic sockeye fins, sparse S5, 43 sub-24px decorative mono labels). Clears 8.3 at 8.83. Editor must confirm main-branch image URLs resolve before posting."}

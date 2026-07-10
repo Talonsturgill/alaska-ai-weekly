@@ -1,0 +1,103 @@
+{
+  "slides": [
+    {
+      "file": "slide-01.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'One river.Two ways to count it.Only one ' at 80,768 986x259 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-02.html",
+      "fails": [],
+      "warns": [
+        "tiny-text: '0' (font-size 22px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: '44.05 M FORECAST' (font-size 22px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: '61% ALREADY IN' (font-size 22px < 24px mobile floor (mark data-decorative if intentional))"
+      ]
+    },
+    {
+      "file": "slide-03.html",
+      "fails": [],
+      "warns": [
+        "tiny-text: 'Wood River tower, 2026' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'counted to date (July 6)' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'counted Sunday, one day' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'escapement goal, within it' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))"
+      ]
+    },
+    {
+      "file": "slide-04.html",
+      "fails": [],
+      "warns": [
+        "tiny-text: 'IAN CHIU, MACHINE LEARNING DEVELOPER' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))"
+      ]
+    },
+    {
+      "file": "slide-05.html",
+      "fails": [],
+      "warns": []
+    },
+    {
+      "file": "slide-06.html",
+      "fails": [],
+      "warns": [
+        "tiny-text: 'THE TOWER' (font-size 22px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'THE DRONE' (font-size 22px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'Years in service' (font-size 19px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'counting since 1955' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'first season, 2026' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'Counting sites' (font-size 19px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'most of the bay's count' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'one river, this year' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'Cadence' (font-size 19px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: '24-hour human shifts' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'one 8:30 a.m. launch' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'Who does it' (font-size 19px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'on the riverbank' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'launched by itself' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'Demonstrated accuracy' (font-size 19px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'the number the fleet uses' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'UNPROVEN' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'still in training, no accuracy shown yet' (font-size 20px < 24px mobile floor (mark data-decorative if intentional))"
+      ]
+    },
+    {
+      "file": "slide-07.html",
+      "fails": [],
+      "warns": [
+        "tiny-text: 'MEASURED' (font-size 18px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'AGAINST' (font-size 18px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'WOOD RIVER' (font-size 14px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'BBRSDA' (font-size 23px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'NOT INVOLVED' (font-size 18px < 24px mobile floor (mark data-decorative if intentional))"
+      ]
+    },
+    {
+      "file": "slide-08.html",
+      "fails": [],
+      "warns": [
+        "tiny-text: 'NORM VAN VACTOR, FORTY YEARS IN THE FISHERY' (font-size 22px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'DRONE IN A BOX' (font-size 18px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'MACHINE LEARNING' (font-size 18px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'STARLINK MINI' (font-size 18px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'LITHIUM BATTERIES' (font-size 18px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'SOLAR PANELS' (font-size 18px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'MEET ON ONE RIVERBANK' (font-size 17px < 24px mobile floor (mark data-decorative if intentional))",
+        "outside safe zone: '\"An amazing convergenceof technology.\"' at 80,188 940x131 (margin 80px)",
+        "outside safe zone: 'DRONE IN A BOX' at 71,778 158x23 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-09.html",
+      "fails": [],
+      "warns": [
+        "tiny-text: 'alaskaaihq.com' (font-size 23px < 24px mobile floor (mark data-decorative if intentional))",
+        "tiny-text: 'Sources in comments' (font-size 21px < 24px mobile floor (mark data-decorative if intentional))"
+      ]
+    }
+  ],
+  "fails": 0,
+  "warns": 43,
+  "verdict": "WARN"
+}

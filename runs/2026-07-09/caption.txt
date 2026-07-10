@@ -1,0 +1,11 @@
+A hand-clicker on a Bristol Bay tower has counted the sockeye since 1955. This year an AI drone wants that job.
+
+On the Wood River the drone launches itself at 8:30 a.m. and films the run below. A computer-vision model is being trained to count the fish, but it is not trained yet.
+
+The tower crews still produce every count the fleet actually lives by, clicking each passing fish by hand. Fish and Game, which runs the towers, is not part of the pilot. The machine is measured against them, not run with them.
+
+The deck is 9 slides on who decides when Bristol Bay can fish, the 70-year tower method against a first-season drone, and a scorecard where the machine's accuracy cell is still blank.
+
+Would you open or close a fishery on a count the machine has not yet proven?
+
+#BristolBay #FisheriesScience #AppliedAI

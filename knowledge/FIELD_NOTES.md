@@ -7,6 +7,51 @@ into the doctrine/library files and prune here.
 
 ---
 
+## 2026-07-09 — run 2 retro (Carousel No. 2, "One River, Two Ways to Count It")
+
+- **Shipped 8.83 vs 8.3** (9 slides, vector PDF 4.94MB), zero hard fails, one pixel-refinement
+  round + a passing flow round. Story: the Wood River AI drone + computer-vision salmon-counting
+  pilot vs Bristol Bay's 70-year hand-count towers. Full worker roster ran (6 scouts, fact-checker,
+  3 treatment-directors, copywriter, 5 pixel critics, flow critic, scorer) with no usage-limit
+  degradation this time; parallel critics earned their keep (caught 3 things machine_qa passed).
+- **Fact-checker saved us from two errors the scouts carried**: ADF&G is NOT a project partner
+  ("isn't directly involved at this stage"), and the run forecast is 44.05M not 41.5M. Re-fetching
+  every URL and dropping the unverifiable (BBRSDA dates, exact GVEA cents/kWh, the 4:30pm deadline
+  time) kept the deck honest. Lesson reinforced: trust only fetched text, never scout summaries.
+- **Honesty as the edge, not a hedge**: the deck's whole thesis is that the AI is UNPROVEN (in
+  training). The gold UNPROVEN scorecard cell, the "CONF 0.00 UNTRAINED" cover tag, and "every
+  number the fleet trusts came from a human hand" scored best-in-class story-art fusion (9). A
+  thin-but-true frame beat a hyped one.
+- **Display-headline wrap is the new slide-3 defect class**: four headlines (S1/S4/S7/S8) wrapped
+  an extra line into the body and machine_qa-FAILED as overprint, all because the headline
+  container was narrower than its longest line. New instinct logged; fix is full-width or downsize
+  + verify line count pre-render.
+- **Empty lower thirds** cost a craft point. Several slides left the bottom third dead. New
+  instinct: budget the lower third (readout / caption / anchor / intentional quiet), do not default.
+- **Canvas ctx.filter="blur()" works headless** for a discrete DOF foreground pass (S5 reeds);
+  keep the focal layer outside the filtered save/restore. Cheap, reliable repoussoir blur.
+- **NEW technique invented**: SpawningSockeye (added to TECHNIQUE_LIBRARY) -- a side-profile
+  spawning sockeye SVG icon (humped dorsal, kype, olive-green head, forked tail) that reads as
+  salmon at 432px and doubles as the deck's data anchor (the fish wears both counting marks).
+- Story note: the drone pilot has NO published accuracy number yet; when the team reports one
+  (or ADF&G formally joins), that is a strong UPDATE angle. GVEA July 13 turbine vote, STAK July 17
+  comment close, and AKLNG July 16 vote all resolve within days -- docket-worthy follow-ups.
+
+## 2026-07-09 — craft refresh (run 2 pre-research pass)
+
+- Platform numbers hold, nothing new vs run 1's craft note: documents still the
+  #1 format (6.6 to 7.0% ER, ~5x reach of static, 12.92% of all saves), 8-10
+  slides, 15-20s dwell the ranking signal. (dataslayer/contentdrips/postunreel 2026.)
+- **Echogram as a portable visual language (NEW craft handle)**: imaging-sonar
+  fish counting compresses hundreds of sonar video frames into a single
+  "echogram" band (time on one axis, range on the other, each fish a bright
+  streak). This is a real, drawable, information-dense motif for any AK
+  fisheries-AI deck: a seeded streak field where streak COUNT encodes the fish
+  number and density encodes run strength, with a flat 2D axis. Portable to
+  offline Canvas. (arxiv 2502.05129 "Counting Fish with Temporal Representations
+  of Sonar Video"; arxiv 2505.06637 multimodal foundation AI for wild salmon in
+  Indigenous rivers.) Parked as a technique candidate; only used if the story lands there.
+
 ## 2026-07-08 — run 1 retro (Carousel No. 1, "Four Rooms, One Open Door")
 
 - **Shipped 8.64 vs 8.3** (9 slides, vector PDF 10.74MB) after one revision
