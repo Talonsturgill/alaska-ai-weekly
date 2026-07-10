@@ -1,140 +1,120 @@
 {
   "events": [
     {
-      "t": 0.7,
-      "kind": "boom",
-      "label": "crater glows, sub-bass"
+      "t": 0.5,
+      "kind": "pop",
+      "label": "plant the thesis frame one: a person mar"
     },
     {
-      "t": 4.2,
-      "kind": "ambient",
-      "label": "magma crackle rising"
+      "t": 3.0,
+      "kind": "hit",
+      "label": "the long human tradition"
     },
     {
-      "t": 5.0,
-      "kind": "lock",
-      "label": "WATCH ORANGE badge stamps in"
+      "t": 5.5,
+      "kind": "whoosh",
+      "label": "the tower, the human vantage"
     },
     {
-      "t": 7.6,
+      "t": 8.0,
       "kind": "tick",
-      "label": "cone ignites"
-    },
-    {
-      "t": 8.6,
-      "kind": "tick",
-      "label": "cone ignites"
-    },
-    {
-      "t": 9.6,
-      "kind": "tick",
-      "label": "cone ignites"
+      "label": "the human labor itself"
     },
     {
       "t": 10.5,
+      "kind": "tick",
+      "label": "the relentless cadence"
+    },
+    {
+      "t": 13.0,
+      "kind": "pop",
+      "label": "one see-able cause and effect: the count"
+    },
+    {
+      "t": 15.5,
       "kind": "whoosh",
-      "label": "view slices to cross-section"
+      "label": "the machine arrives"
     },
     {
-      "t": 12.4,
-      "kind": "boot",
-      "label": "two sensors power on"
+      "t": 18.0,
+      "kind": "riser",
+      "label": "a new vantage on the same water"
     },
     {
-      "t": 14.4,
+      "t": 20.5,
+      "kind": "hit",
+      "label": "the honest limit stated up front"
+    },
+    {
+      "t": 23.0,
+      "kind": "pop",
+      "label": "the human-in-the-loop (a bloom, not a ta"
+    },
+    {
+      "t": 25.5,
+      "kind": "pop",
+      "label": "the teaching labor, drawn"
+    },
+    {
+      "t": 28.0,
+      "kind": "riser",
+      "label": "the scale of the human work"
+    },
+    {
+      "t": 30.5,
+      "kind": "lock",
+      "label": "the model forms from the marks"
+    },
+    {
+      "t": 33.0,
+      "kind": "pulse",
+      "label": "the payoff, the machine sees on its own"
+    },
+    {
+      "t": 35.5,
+      "kind": "hit",
+      "label": "the caveat, shown as a held discrepancy "
+    },
+    {
+      "t": 38.0,
       "kind": "boom",
-      "label": "seismic rumble down the rock"
+      "label": "the real failure mode, drawn honestly"
     },
     {
-      "t": 16.9,
+      "t": 40.5,
       "kind": "whoosh",
-      "label": "infrasound sweep through air"
+      "label": "humans still hold the count"
     },
     {
-      "t": 18.8,
-      "kind": "riser",
-      "label": "waves morph into a spectrogram"
+      "t": 43.5,
+      "kind": "pulse",
+      "label": "side by side, not replaced"
     },
     {
-      "t": 22.2,
-      "kind": "shimmer",
-      "label": "spectrogram resolves"
+      "t": 46.0,
+      "kind": "pop",
+      "label": "the human's role re-affirmed at the end"
     },
     {
-      "t": 24.4,
-      "kind": "boot",
-      "label": "VOISS-Net interface boots"
-    },
-    {
-      "t": 26.3,
-      "kind": "tick",
-      "label": "training tally climbs"
-    },
-    {
-      "t": 27.1,
-      "kind": "tick",
-      "label": "training tally climbs"
-    },
-    {
-      "t": 29.5,
+      "t": 48.0,
       "kind": "lock",
-      "label": "TREMOR tag locks"
+      "label": "the payoff lands home"
     },
     {
-      "t": 30.9,
+      "t": 50.2,
+      "kind": "whoosh",
+      "label": "outro wordmark rises"
+    },
+    {
+      "t": 51.8,
       "kind": "lock",
-      "label": "EXPLOSION tag locks"
+      "label": "tagline settles"
     },
     {
-      "t": 32.8,
-      "kind": "boom",
-      "label": "87% accuracy locks in"
-    },
-    {
-      "t": 36.1,
-      "kind": "boom",
-      "label": "hard downbeat on the turn"
-    },
-    {
-      "t": 39.6,
-      "kind": "ambient",
-      "label": "dissolving swell to a question"
-    },
-    {
-      "t": 42.0,
-      "kind": "tick",
-      "label": "the label glitches and slips"
-    },
-    {
-      "t": 44.5,
-      "kind": "resolve",
-      "label": "warm tone under the silhouette"
-    },
-    {
-      "t": 46.7,
-      "kind": "riser",
-      "label": "the arc map rises and settles"
-    },
-    {
-      "t": 49.2,
-      "kind": "shimmer",
-      "label": "sound-rings pulse across the arc"
-    },
-    {
-      "t": 52.8,
-      "kind": "boom",
-      "label": "the sign-off lands"
-    },
-    {
-      "t": 54.4,
-      "kind": "shimmer",
-      "label": "outro sound-ring pulse"
-    },
-    {
-      "t": 58.0,
-      "kind": "shimmer",
-      "label": "final sound-ring pulse"
+      "t": 54.2,
+      "kind": "pulse",
+      "label": "final map pulse"
     }
   ],
-  "n": 27
+  "n": 23
 }

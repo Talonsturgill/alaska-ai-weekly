@@ -1,73 +1,46 @@
-# ALASKA.AI Dispatch — 2026-07-09
+# Dispatch 2026-07-10 — Teaching the Machine to See
 
-## The Machine That Listens to a Volcano
+**Story.** A pilot project on the Wood River (Bristol Bay) is testing whether an autonomous
+"drone in the box" plus a machine-learning model can help count sockeye escapement — the number
+that sets the season for the world's largest sockeye fishery, which Alaska has counted BY HAND from
+riverbank towers for over 70 years. The fresh angle: the machine cannot count yet. A person has to
+teach it first, hand-marking each fish that crosses a line, several thousand labels, before the model
+can pick fish out on its own.
 
-**Story.** VOISS-Net (VOlcano Infrasound and Seismic Spectrogram Neural Network), a deep-learning
-CNN built by the Alaska Volcano Observatory / UAF Geophysical Institute with USGS co-authors
-(Fee, Tan et al., *Volcanica*, June 2025), reads a volcano's seismic and infrasound spectrograms to
-detect and classify tremor, explosions, quakes and noise. It reached about 87% accuracy on its test
-set and was trained on over 270,000 spectrograms from 7 volcanoes (Pavlof, Semisopochnoi, Tanaga,
-Takawangha, Redoubt, Etna, Kilauea).
+**Honest caveat (drawn, not captioned).** The model has NOT been tested against the ADF&G tower
+counts (that check is the project's next phase), and a shadow on the river can still fool it. The
+towers keep the count this summer. ADF&G runs the towers but is not a project partner.
 
-**Live hook (in-window).** Great Sitkin Volcano is erupting now, held at Alert Level WATCH /
-Aviation Color Code ORANGE with slow lava effusion continuing in the summit crater, per the AVO
-update dated July 8, 2026.
+**Composition fingerprint** (Gate 0A: differs 6/7 axes from EACH of the last 2 dispatches;
+spatial signature unique vs last 4; palette fresh vs last 2):
+- pov: macro-closeup · motion_vector: vertical-descent · hero_treatment: single-organic-hero
+- layout: fullbleed-split · register: editorial-schematic
+- palette: sockeye crimson, glacial pale-blue river, gravel sage, cedar, phosphor-yellow mark, charcoal
+- metaphor: a person teaches the machine to see the run one fish at a time; until proven, the towers keep the record
 
-**Honest caveat (the one real limit, drawn three ways).** VOISS-Net is a detector and classifier,
-not a predictor. It can name the sound the mountain is making, but it cannot tell you the hour it
-will erupt; it can be fooled by signals outside its training scope; and a human duty scientist
-stays on watch.
+**Structure.** 7 storyboard shots rendered as 8 (the long resolution splits into resolution +
+map/outro so no shot exceeds 16s): wide-establish → subject-portrait → alt-vantage → data-panel →
+push-detail → two-up → wide-establish → map-territory. 20 timed beats, gaps ≤2.5s, 23 SFX events
+cut to the picture.
 
-## Composition (Gate 0 green)
+**Voice.** kokoro:af_bella — the roster's warm/bright PUBLISH voice, Apache-2.0 (commercial use OK,
+no attribution required). The rendered audio was cut with it (audio/voice_used.json is the record).
+A Gemini-TTS backend hook also sits in vo_teaching.py (preferred automatically if GEMINI_API_KEY is
+ever set in the routine env). **Music.** "Reawakening" — Kevin MacLeod (incompetech.com), CC BY 4.0,
+ducked under VO, −14.5 LUFS master.
 
-- **7-axis fingerprint:** pov = eye-level-immersive · motion = vertical-rise · hero = landscape-as-subject ·
-  layout = single-object-void · register = instrument-readout · palette = basalt-black night, ash-plume
-  umber, molten ember and magma-red, a sulphur-gold warning band, and a cold infrasound teal trace ·
-  metaphor = a machine that HEARS a volcano.
-- **Divergence:** 7/7 axes differ vs 2026-07-06 (launchcall); 6/7 differ vs 2026-07-08 (count-from-a-dot).
-  New spatial signature (eye-level-immersive / single-object-void / vertical-rise).
-- **7 shots, motivated transitions:** wide-establish (the venting cone + the Aleutian chain) →
-  alt-vantage cross-section (seismic down through rock, infrasound up through air) → macro-closeup
-  (the sound becomes a spectrogram) → data-panel (VOISS-Net boots and classifies, 270,000+ / 7 / 87%) →
-  two-up (name the sound vs foresee the hour, dissolving to a "?") → push-detail (a signal outside
-  training slips, a person keeps watch) → map-territory (the Aleutian arc, more of Alaska listening) + outro.
+**On-screen provenance note.** The escapement window 700,000 to 2,800,000 is ADF&G's Wood River
+sockeye goal (tower count). The adjacent "PILOT · NOT AN ADFG PROJECT" tag disclaims the DRONE PILOT's
+affiliation only, not the number's ADF&G provenance.
 
-## Production
+**Fact-check.** Two independent validators. Doubly-confirmed on-screen numerals only:
+OVER 70 YEARS, 08:30, SEVERAL THOUSAND LABELS, 700,000 TO 2,800,000 (ADF&G), WORLD'S LARGEST SOCKEYE RUN.
+Avoided as bare numerals (single-sourced): 1955, nine tower sites, 6.43M Wood River forecast.
+"Rik Cumps" (in an early research draft) does not appear in the source and was cut.
 
-- **Voice:** edge_tts en-US-AndrewMultilingualNeural (deep, authoritative; the intended Kokoro am_fenrir
-  publish voice could not be installed in this environment — see infra note below).
-- **Music:** "Ossuary 6 - Air" by Kevin MacLeod (incompetech.com), licensed CC BY 4.0 (free for
-  commercial use, attribution given). Freshly sourced for this Dispatch.
-- **Palette / mood:** a dark volcanic night lit only by ember, ash and the cold teal of a listening machine.
+**Cultural note.** Bristol Bay sockeye are the subsistence and economic backbone of the region's
+Yup'ik, Alutiiq and Dena'ina communities. Framed as augmenting a stewarded tradition, not replacing
+it. Aerial imagery over subsistence rivers raises data-governance questions the region's tribes and
+CDQ organizations should be consulted on and compensated for.
 
-## Sources (every load-bearing claim)
-
-- VOISS-Net paper — *Volcanica* v8(1) 2025, Fee & Tan et al.: https://www.jvolcanica.org/ojs/index.php/volcanica/article/view/349
-- USGS Publications Warehouse (87%, 270,000+, 7 volcanoes, event classes): https://pubs.usgs.gov/publication/70268974
-- USGS / AVO Volcano Updates (Great Sitkin WATCH/ORANGE, July 8 2026): https://www.usgs.gov/programs/VHP/volcano-updates
-- AVO Great Sitkin monitoring page: https://avo.alaska.edu/volcano/great-sitkin
-
-## Grade & delivery
-
-- Objective quality gate (`quality_gate.py`): 10/10, all checks PASS, zero hard blockers (sharpness,
-  HUD/caption legibility, event cadence, 21 beats, 7 shots / 5 real transitions, caption-sync,
-  readability, sourced music, 27 sfx events / 24 verified audible).
-- World-class taste rubric (`dispatch_rubric.yaml`): 8.4/10, zero hard blockers. Flow-critic: ship.
-  Editor's substantive notes all resolved (overclaim, credit integrity, outro sonification). Remaining
-  gap to 9.0 is illustration micro-craft (deeper facet/AO rock sculpting), a candidate for next iteration.
-- Audio master: integrated -14.2 LUFS, true peak -1.0 dBTP.
-- Cuts: 9:16 1080x1920 (45 MB) + 4:5 1080x1350 (38 MB), H.264 High, faststart, AAC. Both hosted on the
-  `dispatch-media` branch (permanent raw.githubusercontent links, HTTP 200 verified) and dropped into the
-  Gmail draft with the copy-paste post, poster, credits, and sources.
-
-## Accuracy note
-
-On-screen numbers are verified against the primary sources above: 87% ACCURACY, 270,000+ SPECTROGRAMS,
-7 VOLCANOES, WATCH · ORANGE. Great Sitkin's ongoing eruption is the live in-window hook; VOISS-Net
-(June 2025) is presented as an existing capability, not a brand-new development.
-
-## Infrastructure note
-
-Kokoro (the Apache-2.0 publish voice) failed to build in this run's cloud environment (a `docopt`
-wheel build error), so the VO was cut in edge-tts (en-US-AndrewMultilingualNeural) via the agent
-proxy. This is an environment limitation, not a quality shortfall; the mix still passed the audio gate.
+**Sources.** See sources.json (KDLG primary; ADF&G + UW Alaska Salmon Program second sources).

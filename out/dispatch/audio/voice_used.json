@@ -1,5 +1,5 @@
 {
-  "voice": "edge_tts:en-US-AndrewMultilingualNeural",
-  "license": "Microsoft Azure Neural TTS (draft cut; gray area for commercial publish)",
-  "backend": "edge"
+  "voice": "kokoro:af_bella",
+  "license": "Apache-2.0 (commercial use OK, no attribution required)",
+  "backend": "kokoro"
 }

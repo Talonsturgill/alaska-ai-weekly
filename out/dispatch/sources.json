@@ -1,24 +1,7 @@
-{
-  "sources": [
-    {
-      "url": "https://www.jvolcanica.org/ojs/index.php/volcanica/article/view/349",
-      "outlet": "Volcanica (2025) \u2014 Fee, Tan et al., AVO/UAF + USGS",
-      "note": "VOISS-Net: a spectrogram CNN to detect and classify volcano seismicity; the generalized model reaches 87% accuracy on the test set."
-    },
-    {
-      "url": "https://pubs.usgs.gov/publication/70268974",
-      "outlet": "USGS Publications Warehouse",
-      "note": "Independent confirmation: 87% test accuracy, trained on 270,000+ spectrograms across 7 volcanoes (Pavlof, Semisopochnoi, Tanaga, Takawangha, Redoubt, Etna, Kilauea); classes = tremor, explosions, earthquakes, long-period events, noise."
-    },
-    {
-      "url": "https://www.usgs.gov/programs/VHP/volcano-updates",
-      "outlet": "USGS / Alaska Volcano Observatory \u2014 Volcano Updates",
-      "note": "Great Sitkin at WATCH / ORANGE, slow lava effusion continuing in the summit crater, per the AVO update dated July 8, 2026 (the live in-window hook)."
-    },
-    {
-      "url": "https://avo.alaska.edu/volcano/great-sitkin",
-      "outlet": "Alaska Volcano Observatory \u2014 Great Sitkin",
-      "note": "AVO monitoring page for Great Sitkin Volcano (Aleutians); seismic + infrasound networks, webcams, satellite."
-    }
-  ]
-}
+[
+  {"outlet": "KDLG 670AM (Bristol Bay public radio)", "url": "https://www.kdlg.org/fisheries/2026-07-03/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "note": "PRIMARY, 2026-07-03. The Wood River drone + machine-learning counting pilot: 8:30 launch, hand-labeling at the line, several thousand images needed, not yet tested against tower counts, over 70 years / since 1955 of hand counting."},
+  {"outlet": "Alaska Public Media (KDLG republish)", "url": "https://alaskapublic.org/news/environment/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts", "note": "Mirror confirming the story, 2026-07-08."},
+  {"outlet": "ADF&G Bristol Bay salmon (commercial fisheries)", "url": "https://www.adfg.alaska.gov/index.cfm?adfg=commercialbyareabristolbay.salmon", "note": "Independent second source: Wood River sockeye escapement goal 700,000 to 2,800,000; Bristol Bay = largest commercial sockeye region in the world."},
+  {"outlet": "ADF&G 2026 Bristol Bay forecast (news release)", "url": "https://www.adfg.alaska.gov/static/applications/dcfnewsrelease/1745780946.pdf", "note": "2026 total Bristol Bay run forecast 45.32 million sockeye."},
+  {"outlet": "UW Alaska Salmon Program history", "url": "https://alaskasalmonprogram.org/history/", "note": "UW Fisheries Research Institute station at Aleknagik (Wood River system) since 1946 to 1947."}
+]
