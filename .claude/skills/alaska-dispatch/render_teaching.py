@@ -210,7 +210,17 @@ def _fish_layer(pts, scale=1.0, t=0.0):
             d.arc([ax, y - int(5.5 * s), ax + int(11 * s), y + int(5.5 * s)], 300, 60, fill=(*dk, 175), width=2)
         # rotate the whole fish to its heading and composite at its position
         tile = tile.rotate(ang, resample=Image.BICUBIC, center=(TS // 2, TS // 2))
-        img.alpha_composite(tile, (int(px - TS // 2), int(py - TS // 2)))
+        # 180-degree-shutter motion blur: smear along the travel direction, length = half the
+        # per-frame displacement (VIDEO_PRODUCTION_STANDARD motion craft; subtle and honest)
+        vlen = s * 1.6
+        rad = math.radians(90.0 - ang)
+        dxb, dyb = math.sin(rad) * vlen, math.cos(rad) * vlen
+        ghost = tile.copy(); ghost.putalpha(ghost.getchannel("A").point(lambda v: v // 3))
+        base = Image.new("RGBA", tile.size, (0, 0, 0, 0))
+        base.alpha_composite(ghost, (int(-dxb), int(-dyb)))
+        base.alpha_composite(ghost, (int(dxb), int(dyb)))
+        base.alpha_composite(tile)
+        img.alpha_composite(base, (int(px - TS // 2), int(py - TS // 2)))
     return img
 
 def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
