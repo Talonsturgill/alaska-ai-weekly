@@ -39,9 +39,15 @@ pixel critics grade against this document. Companion: TECHNIQUE_LIBRARY.md
   fake small caps, unkerned display pairs (check A-V, L-T at >90px), full
   justification, hyphenation, ALL-CAPS paragraphs, more than 2 families,
   two similar sans faces together.
-- Fit-to-box recipe for display type (no guessing): binary-search font-size
-  in JS until `scrollWidth ≤ clientWidth && scrollHeight ≤ clientHeight`,
-  then floor to a scale step. Never let the renderer discover overflow.
+- Fit-to-box recipe for display type (no guessing): use the committed
+  helper `AK.fitText(el, {min, max, maxLines})` (assets/js/aktype.js) inside
+  renderReady after `await document.fonts.ready`. It binary-searches
+  font-size until the headline renders in `maxLines` line boxes with no
+  overflow, so a display headline can NEVER silently soft-wrap an extra
+  line into the block below it (the recurring wrap-collision defect through
+  2026-07-09). CSS `text-wrap: balance/pretty` does NOT guarantee this: it
+  only redistributes lines that already fit and gives no line-count or
+  overflow guarantee. Never let the renderer discover overflow.
 
 ## 3. Color
 

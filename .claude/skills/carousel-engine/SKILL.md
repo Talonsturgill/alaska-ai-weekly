@@ -36,6 +36,7 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
   ```html
   <link rel="stylesheet" href="@@ASSETS@@/fonts/fonts.css">
   <script src="@@ASSETS@@/js/noise.js"></script>      <!-- AK.simplex2/fbm2/warp2/rng -->
+  <script src="@@ASSETS@@/js/aktype.js"></script>      <!-- AK.fitText display fit-to-box -->
   <script src="@@ASSETS@@/js/ak3d.js"></script>        <!-- AK3D software 3D renderer -->
   <script src="@@ASSETS@@/js/zdog.min.js"></script>    <!-- Zdog pseudo-3D (no GPU) -->
   <script src="@@ASSETS@@/js/d3.v7.min.js"></script>
@@ -100,6 +101,12 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
   NEVER fitExtent to a small lon/lat bbox (renders a giant fill disc);
   use `AKGeo.zoomTo(proj, geo, lonlat, targetXY, zoom)` and draw the
   coastline STROKE-ONLY at zoom > ~2.
+- `assets/js/aktype.js` — display-headline fit-to-box (`AK.fitText`). Call
+  inside renderReady after `await document.fonts.ready`:
+  `AK.fitText(el, {min, max, maxLines})` binary-searches font-size so a
+  large headline never silently soft-wraps an extra line into the block
+  below it (the recurring wrap-collision defect through 2026-07-09). Prefer
+  it over hand-tuned font-size on every display headline set in a fixed box.
 - `assets/js/ak3d.js` — software 3D: perspective camera, heightfield/box
   meshes, painter's z-sort, Lambert + fog, 3D polylines & point clouds (`AK3D.*`)
 - `assets/js/zdog.min.js` — Zdog round pseudo-3D engine (canvas, no GPU)

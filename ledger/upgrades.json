@@ -84,6 +84,21 @@
       "verification": "gmail_draft.py re-run against the shipped run 1 artifacts renders the new section with these entries; payload builds clean.",
       "rollback": "revert the upgrade(2026-07-08) commit",
       "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+    },
+    {
+      "run_date": "2026-07-09",
+      "kind": "fix",
+      "area": "assets",
+      "change": "New committed helper assets/js/aktype.js: AK.fitText(el, {min, max, maxLines}) binary-searches a display headline's font-size until it renders in maxLines line boxes with no overflow (clamps to min + sets data-fit-overflow=1 if the box is genuinely too small), so a large headline can never silently soft-wrap an extra line into the block below it; wired into DESIGN_DOCTRINE section 2 and SKILL.md as the one fit-to-box implementation for future decks.",
+      "trigger": "Run 2026-07-09 recurring #1 defect: slides 1, 4, 7, 8 each set a large Archivo headline in a container narrower than its longest line; each soft-wrapped an extra line and machine_qa FAILED it as a text-overprint, all four repaired by hand. The doctrine prescribed a binary-search fit-to-box recipe but there was no shared helper, so every deck re-implemented or forgot it.",
+      "files": [
+        "assets/js/aktype.js",
+        "knowledge/DESIGN_DOCTRINE.md",
+        ".claude/skills/carousel-engine/SKILL.md"
+      ],
+      "verification": "Defect reconstruction (80px headline in a 560px box, no helper) FAILS qa.py with 'text collision (53% overprint)' at 5 line boxes; identical markup WITH AK.fitText({min:40,max:80,maxLines:3}) converges to 58.5px / 3 line boxes and PASSES qa.py. This run's slides (out/2026-07-09/slides) render OK, qa WARN, 0 fails (unchanged from baseline); examples/demo-deck renders OK, qa PASS (unchanged). No gate weakened; no new runtime dependency (vanilla offline JS); shipped slides not modified.",
+      "rollback": "revert the upgrade(2026-07-09) commit",
+      "commit": "upgrade(2026-07-09) commit on branch tsturg/festive-darwin-c9jczw (revert this single prefixed commit to roll back)"
     }
   ],
   "scan_log": [
@@ -92,6 +107,12 @@
       "focus": "self-improving-pipeline patterns (bootstrap week: the loop itself was built)",
       "found": "Maintainer-directed: dated-email upgrade trail + frontier scan design adopted",
       "outcome": "applied (Phase 12 + upgrade-engineer agent + this ledger)"
+    },
+    {
+      "run_date": "2026-07-09",
+      "focus": "typography craft / headless text-fitting (fit-to-box, text-wrap balance/pretty, variable-font width-axis fitting)",
+      "found": "Binary-search fit-to-box is the settled technique (~8 probes, sub-ms); CSS text-wrap: balance/pretty explicitly does NOT guarantee line count or prevent overflow (Chrome docs), so the wrap-collision fix must be JS. Variable-font wdth-axis fitting (fit-to-width.js) is a promising portable refinement.",
+      "outcome": "applied (aktype.js AK.fitText fix) + parked (wdth-axis fitting; colon pre-flight lint) FIELD_NOTES 2026-07-09"
     }
   ]
 }

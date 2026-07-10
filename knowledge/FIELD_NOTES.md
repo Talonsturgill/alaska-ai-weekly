@@ -147,3 +147,21 @@ into the doctrine/library files and prune here.
 - Candidates parked for later: microsoft/flint-chart (chart spec language),
   pyiqa (BRISQUE gate; heavy torch dep), meodai/heerich (SVG voxel mode),
   self-hosted Postiz (publish automation), pretext (text layout lib).
+
+## 2026-07-09 — parked frontier + friction candidates (typography scan)
+
+- **Variable-font WIDTH-axis fitting (parked).** Archivo and Unbounded carry
+  a variable `wdth` axis; fit-to-width.js binary-searches the width axis
+  (not just font-size) to fit a line, preserving optical size and cap-height
+  while narrowing letterforms. Would complement AK.fitText (fit wdth first,
+  then font-size) for headlines where shrinking type reads as timid.
+  Not bounded enough to land in one daily upgrade slot; revisit when a deck
+  needs a wide poster headline held at a fixed size.
+  Source: https://github.com/Lorp/fit-to-width
+- **Pre-flight colon lint (parked friction fix).** scripts/site_build.py
+  refuses prose colons on emitted pages; run 2026-07-09 hit it twice (a
+  docket history note, the first_comment article-title colon) and had to
+  rephrase at SHIP time. A cheap lint over ledger notes / emitted copy run
+  earlier in the pipeline would surface it before ship. The gate is correct
+  and must not weaken; this only moves the catch earlier. Bound it to the
+  same colon rule site_build already enforces before implementing.
