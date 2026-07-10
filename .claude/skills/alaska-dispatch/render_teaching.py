@@ -158,29 +158,33 @@ def _fish_layer(pts, scale=1.0, t=0.0):
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(img)
     for (x, y, s, col) in pts:
         bl = int(30 * s * scale); bh = int(11 * s * scale)
-        dk = tuple(int(c * 0.62) for c in col)          # belly shade
-        hi = tuple(min(255, int(c * 1.35)) for c in col)  # dorsal rim
-        # soft contact shadow (offset into the water)
-        d.ellipse([x - bl + 4, y + bh - 2, x + bl + 4, y + bh + 8], fill=(14, 24, 34, 90))
-        # tail beats: the caudal fin swings as it swims
+        dk = tuple(int(c * 0.52) for c in col)            # belly shade (strong enough to read small)
+        hi = tuple(min(255, int(c * 1.5)) for c in col)   # dorsal rim
+        # contact shadow (deeper + offset so the fish visibly floats over the bed)
+        d.ellipse([x - bl + 6, y + bh + 1, x + bl + 8, y + bh + 13], fill=(10, 20, 32, 120))
+        # tail beats: the caudal fin swings as it swims (two-tone fork)
         beat = math.sin(t * 6.5 + x * 0.05 + y * 0.03) * 7 * s
-        tx = x + bl + int(15 * s)
-        d.polygon([(x + bl - 3, y), (tx, y - int(9 * s) + int(beat)), (tx, y + int(9 * s) + int(beat))], fill=(*dk, 255))
+        tx = x + bl + int(16 * s)
+        d.polygon([(x + bl - 3, y), (tx, y - int(10 * s) + int(beat)), (tx, y + int(10 * s) + int(beat))], fill=(*dk, 255))
+        d.polygon([(x + bl - 3, y), (tx - int(5 * s), y - int(6 * s) + int(beat)), (tx - int(5 * s), y + int(6 * s) + int(beat))], fill=(*col, 255))
         # body: shaded belly under, crimson mid, rim-lit back
         d.ellipse([x - bl, y - bh, x + bl, y + bh], fill=(*col, 255))
-        d.chord([x - bl, y - int(bh * 0.1), x + bl, y + bh + int(bh * 0.7)], 0, 180, fill=(*dk, 220))
-        d.arc([x - bl + 2, y - bh, x + bl - 6, y + bh], 190, 330, fill=(*hi, 235), width=max(2, int(2.4 * s)))
-        # pectoral fin
-        d.polygon([(x - int(4 * s), y + int(3 * s)), (x + int(8 * s), y + int(10 * s)), (x + int(2 * s), y + int(2 * s))], fill=(*dk, 235))
-        # the green head of a spawning sockeye + eye
+        d.chord([x - bl, y - int(bh * 0.2), x + bl, y + bh + int(bh * 0.9)], 0, 180, fill=(*dk, 235))
+        d.arc([x - bl + 2, y - bh, x + bl - 6, y + bh], 190, 330, fill=(*hi, 255), width=max(2, int(3.2 * s)))
+        # dorsal fin on the back + pectoral fin below
+        d.polygon([(x - int(6 * s), y - bh + 1), (x + int(2 * s), y - bh - int(7 * s)), (x + int(9 * s), y - bh + 1)], fill=(*dk, 245))
+        d.polygon([(x - int(4 * s), y + int(3 * s)), (x + int(8 * s), y + int(11 * s)), (x + int(2 * s), y + int(2 * s))], fill=(*dk, 245))
+        # the green head of a spawning sockeye + eye with highlight
         hd = int(11 * s)
         d.pieslice([x - bl - int(2 * s), y - bh, x - bl + 2 * hd, y + bh], 90, 270, fill=(*SPRUCE, 255))
-        d.ellipse([x - bl + int(2 * s), y - int(4 * s), x - bl + int(8 * s), y + int(2 * s)], fill=(16, 20, 24, 255))
-        d.ellipse([x - bl + int(3.4 * s), y - int(2.6 * s), x - bl + int(5.4 * s), y - int(0.6 * s)], fill=(210, 220, 228, 200))
-        # a hint of scale texture on the flank
+        d.arc([x - bl + int(hd * 0.9), y - bh + 2, x - bl + 2 * hd, y + bh - 2], 260, 460,
+              fill=(int(SPRUCE[0] * 0.66), int(SPRUCE[1] * 0.66), int(SPRUCE[2] * 0.66), 220), width=max(2, int(1.6 * s)))
+        d.ellipse([x - bl + int(2 * s), y - int(4.4 * s), x - bl + int(8 * s), y + int(1.6 * s)], fill=(14, 18, 22, 255))
+        d.ellipse([x - bl + int(3.2 * s), y - int(3.4 * s), x - bl + int(5.2 * s), y - int(1.4 * s)], fill=(216, 226, 234, 220))
+        # scale arcs on the flank (readable at distance)
         for sxs in range(3):
-            ax = x - int(bl * 0.35) + sxs * int(9 * s)
-            d.arc([ax, y - int(5 * s), ax + int(10 * s), y + int(5 * s)], 300, 60, fill=(*dk, 120), width=1)
+            ax = x - int(bl * 0.35) + sxs * int(9.5 * s)
+            d.arc([ax, y - int(5.5 * s), ax + int(11 * s), y + int(5.5 * s)], 300, 60, fill=(*dk, 175), width=2)
     return img
 
 def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
@@ -241,9 +245,10 @@ def draw_river(c, f, cx=W // 2, width=430, flow=1.0, fishcol=CRIM, bright=1.0):
     c = c * (1 - fish_a) + fish_rgb * fish_a * bright
     return c
 
-def fish_pts(t, cx, width, flow, n=24):
+def fish_pts(t, cx, width, flow, n=20):
     """Deterministic sockeye positions: evenly seeded lanes with PER-FISH speeds so tracks pass each
-    other naturally and never lock into stacked coincidence (the old 197-stride aliasing)."""
+    other naturally and never lock into stacked coincidence (the old 197-stride aliasing).
+    Fish sized so the shading craft (belly/rim/scales/fins) reads at full playback scale."""
     pts = []
     for i in range(n):
         sp = 78 * flow * (0.8 + 0.45 * ((i * 29) % 10) / 10.0)
@@ -251,7 +256,7 @@ def fish_pts(t, cx, width, flow, n=24):
         xoff = int((width * 0.34) * math.sin(i * 1.7 + yy * 0.006))
         wob = int(26 * math.sin(yy * 0.011 + t * 0.5))
         xx = cx + wob + xoff
-        s = 0.85 + 0.5 * ((i * 37 % 100) / 100.0)
+        s = 1.2 + 0.6 * ((i * 37 % 100) / 100.0)
         col = CRIM if (i % 5) else CRIM_HI
         pts.append((xx, yy, s, col))
     return pts
