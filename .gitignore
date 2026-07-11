@@ -21,3 +21,7 @@ __pycache__/
 .claude/skills/alaska-dispatch/*.mp4
 .claude/skills/alaska-dispatch/__pycache__/
 **/__pycache__/
+
+# per-run dimensional render frames + logs (heavy, rebuildable, never commit)
+.claude/skills/alaska-dispatch/thelid_final/
+.claude/skills/alaska-dispatch/*.log
