@@ -9,6 +9,11 @@ Checks per slide (consuming render_report.json + the PNGs):
     (FAIL when both are primary text, WARN when either is decorative).
     Added 2026-07-08 after a body-copy-over-bar-label collision passed
     every other gate and had to be caught by the scorer's eyes.
+  - BUSY ART UNDER TEXT (WARN only): samples the PNG under each primary text
+    line box, masks the glyph ink, and warns when the background carries
+    high-contrast structured edges (a canvas/bitmap arc or texture the DOM
+    collision gate cannot see). Added 2026-07-10 after canvas flightpath/orbit
+    arcs crossed body copy and a headline and machine QA passed both.
   - approximate contrast of every non-decorative text node vs its local
     background (WCAG-style luminance ratio; estimate, so thresholds are
     conservative: <2.0 on primary text = FAIL, <3.5 = WARN)
@@ -75,6 +80,67 @@ def contrast_estimate(img_arr, node, scale):
     lt, lb = rel_luminance(color), rel_luminance(bg)
     lo, hi = min(lt, lb), max(lt, lb)
     return (hi + 0.05) / (lo + 0.05)
+
+
+BUSY_INK_DIST = 90      # sum-abs RGB distance under which a pixel counts as glyph ink
+BUSY_EDGE_LUM = 28      # luminance step (0..255) that counts as a "structured edge"
+BUSY_DILATE = 2         # px to grow the ink mask by, to exclude anti-aliased glyph edges
+BUSY_WARN = 0.03        # background edge-density above which we point the critics at the box
+
+
+def _dilate(mask, k):
+    m = mask.copy()
+    for _ in range(k):
+        n = m.copy()
+        n[:-1] |= m[1:]; n[1:] |= m[:-1]
+        n[:, :-1] |= m[:, 1:]; n[:, 1:] |= m[:, :-1]
+        m = n
+    return m
+
+
+def busy_art_under_text(img_arr, node, scale):
+    """WARN-level tripwire for canvas/bitmap art crossing a DOM text line box.
+
+    text_collisions() only sees DOM/SVG text vs DOM/SVG text; canvas ink is a
+    bitmap invisible to render.py's DOM walk, so structured art drawn UNDER a
+    text line passes every objective gate (2026-07-10: an S3 flightpath arc
+    crossed two body lines and an S4 orbit arc crossed the headline, and
+    machine_qa PASSED both -- only the pixel critics caught them). This samples
+    the PNG under each of a node's text line boxes, masks off the glyph ink
+    (plus a 2px dilation for anti-aliased edges), and measures the fraction of
+    remaining BACKGROUND pixel pairs that straddle a high-contrast luminance
+    step. A solid or smooth-gradient background scores ~0; an arc, stroke, or
+    dense texture crossing the text scores high. Returns the worst background
+    edge density over the node's line boxes (0..1), or None if unmeasurable.
+    Never a FAIL and never a threshold on legibility itself: it only points the
+    pixel critics at a box to judge by eye.
+    """
+    color = parse_css_color(node.get("color"))
+    if color is None:
+        return None
+    lines = node.get("lines") or [[node["x"], node["y"], node["w"], node["h"]]]
+    H, W = img_arr.shape[:2]
+    worst = None
+    for bx, by, bw, bh in lines:
+        x0, y0 = max(0, int(bx * scale)), max(0, int(by * scale))
+        x1, y1 = min(W, int((bx + bw) * scale)), min(H, int((by + bh) * scale))
+        if x1 - x0 < 8 or y1 - y0 < 8:
+            continue
+        crop = img_arr[y0:y1, x0:x1, :3].astype(float)
+        lum = 0.2126 * crop[..., 0] + 0.7152 * crop[..., 1] + 0.0722 * crop[..., 2]
+        ink = np.abs(crop - np.array(color)).sum(axis=2) < BUSY_INK_DIST
+        if ink.mean() > 0.75:
+            continue  # box is almost all ink colour (solid plate); nothing to read under
+        bg = ~_dilate(ink, BUSY_DILATE)
+        hd = np.abs(lum[:, 1:] - lum[:, :-1]); hb = bg[:, 1:] & bg[:, :-1]
+        vd = np.abs(lum[1:, :] - lum[:-1, :]); vb = bg[1:, :] & bg[:-1, :]
+        tot = int(hb.sum()) + int(vb.sum())
+        if tot < 50:
+            continue
+        edges = int(((hd > BUSY_EDGE_LUM) & hb).sum()) + int(((vd > BUSY_EDGE_LUM) & vb).sum())
+        d = edges / tot
+        worst = d if worst is None else max(worst, d)
+    return worst
 
 
 def text_collisions(nodes, min_overlap=0.30, min_px=8):
@@ -184,6 +250,17 @@ def main():
                     res["fails"].append(f"contrast ~{ratio:.1f} on '{node['text'][:40]}' (est.)")
                 elif ratio < 3.5:
                     res["warns"].append(f"low contrast ~{ratio:.1f} on '{node['text'][:40]}' (est.)")
+            # canvas/bitmap-under-text tripwire (WARN only): the DOM collision
+            # gate cannot see canvas ink, so busy art crossing a text line box
+            # is otherwise invisible to the machine (2026-07-10 S3/S4 arcs).
+            # Restricted to primary text, where a crossing genuinely hurts.
+            if primary:
+                busy = busy_art_under_text(arr, node, scale)
+                if busy is not None and busy >= BUSY_WARN:
+                    res["warns"].append(
+                        f"busy art under text (bg edge density {busy:.2f}) beneath "
+                        f"'{node['text'][:40]}' -- canvas/bitmap may be crossing a "
+                        f"text line box; pixel critic verify legibility")
 
         out["fails"] += len(res["fails"])
         out["warns"] += len(res["warns"])

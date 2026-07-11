@@ -41,6 +41,34 @@ into the doctrine/library files and prune here.
 - **Named, reusable frameworks drive saves (new actionable handle).** Multiple 2026 carousel roundups (Oktopost, Morphica, SocialPilot) converge that the highest-save decks hand the reader a NAMED, portable thinking tool ("The 3-C Framework", "The RICE Method") they can carry and reuse, not just a story. For us that means: when the story allows, give the deck ONE named lens or rule-of-thumb the reader keeps (a coined term, a 3-part test, a checklist), stated once and reinforced on the close. Save-value is our whole strategy, so this is a real lever, not fluff. Does not change gates.
 - Platform numbers otherwise hold: documents remain the top organic format (~4.5% ER, ~45% over video, ~6x reach of link posts, ~3x save rate of text), 4:5 portrait, 6-10 slides the sweet spot, caption under ~150 words driving INTO the deck, personal-profile edge persists (aftercare note for the human, not a design change).
 
+## 2026-07-10 — parked frontier + minor candidates (upgrade-engineer, editorial-dataviz/cartography scan)
+
+- **Concentric-radial-rings seasonal small multiple (parked technique).** A
+  recent Bloomberg guide wraps the calendar year into a ring per small chart;
+  concentric rings each encode a variable (weekly share, avg high temp,
+  precipitation) and a seasonal peak reads as a bulge. Portable to offline,
+  seeded, static SVG/Canvas. Strong fit for any AK deck with a seasonal
+  quantity (fishing openers, daylight swing, eruption cadence, PFD timing).
+  TECHNIQUE_LIBRARY candidate, not an engine change; promote when a deck's
+  story lands on a cyclical/seasonal number.
+  Source: https://www.anychart.com/blog/2026/07/10/data-graphics-pull-their-weight/
+- **Data-journalist map design space (parked reference).** "How do Data
+  Journalists Design Maps to Tell Stories?" analyzes 462 journalistic maps from
+  five outlets into an eight-dimension design space (article properties + map
+  visual/interactive features) plus common editorial rationales. A checklist
+  for the treatment-directors when a deck goes cartographic (framing/crop,
+  annotation, focus+context, projection intent). Reference, not code.
+  Source: https://arxiv.org/abs/2508.10903
+- **Style-aware font probe (parked minor fix).** render.py's font-loaded check
+  builds its `document.fonts.check()` spec as weight + size + family with NO
+  font-style, so an italic-only display face (Instrument Serif italic this run)
+  false-FAILs the upright-400 probe; self-corrected in-slide by loading both
+  faces. Fix: pass the element's computed font-style into the check spec so the
+  probe tests the face actually used. Bounded and correct, but it edits a hard
+  gate and was not defect-forced this run, so it was held (daily cadence favors
+  0-1 upgrades and two reactive fixes spent the budget). Land it a day the
+  budget is open; verify no shipped slide's font check changes verdict.
+
 ## 2026-07-10 — run 3 retro (Carousel No. 3, "The Machine That Hears a Mountain Think")
 
 - Story: AVO volcano-monitoring AI (VOISS-Net + VolcSARvatory) with the live Great Sitkin

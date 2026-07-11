@@ -15,10 +15,10 @@
   "flow_review": "done",
   "assemble": "done",
   "scoring": "done",
-  "ship": "in_progress",
-  "upgrade": "pending",
-  "gmail": "pending",
-  "retro": "pending"
+  "ship": "done",
+  "upgrade": "done",
+  "gmail": "done",
+  "retro": "done"
  },
  "artifacts": {
   "plan": "out/2026-07-10/plan.md",
@@ -35,6 +35,11 @@
   "final_dir": "out/2026-07-10/final",
   "pdf": "out/2026-07-10/final/carousel.pdf",
   "contact_sheet": "out/2026-07-10/final/contact_sheet.png",
-  "score_report": "out/2026-07-10/score_report.json"
- }
+  "score_report": "out/2026-07-10/score_report.json",
+  "pr": "https://github.com/Talonsturgill/alaskaaicarousels/pull/18",
+  "merged_sha": "a950047e178c862e81853d0aa47e9a8cc33fce7a",
+  "gmail_draft_id": "r-8783651121180314803",
+  "gmail_payload": "out/2026-07-10/gmail_payload.json"
+ },
+ "complete": true
 }

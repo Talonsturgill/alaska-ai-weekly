@@ -161,6 +161,12 @@ Right after claims:
    dates that moved. Bounded work, a handful of fetches at most.
 3. Never delete an item; decided or dead items change status and keep
    their history. Every change cites a fetched source.
+4. Pre-flight style: any docket note or history line you write here must
+   pass the same prose-colon rule the Phase 11 ship gate enforces. Lint it
+   now, before it hardens: `python scripts/style_lint.py --file <note>` (or
+   pipe the text via stdin). Rephrase any colon out now so the ship gate
+   never blocks on it (runs 2026-07-09 and 2026-07-10 each tripped this at
+   ship twice). The ship gate is unchanged; this only catches it earlier.
 
 The site itself is rebuilt at ship time (Phase 11); this phase only
 maintains the data.
@@ -217,6 +223,11 @@ slide-copy corrections back into the storyboard. Write the post copy to
 `python scripts/caption_check.py out/<date>/caption.txt`
 If FAIL: fix (yourself or via one more copywriter round) and re-lint
 until PASS. Save the final copywriter JSON to `out/<date>/copy.json`.
+Then pre-flight the house prose-colon rule the Phase 11 ship gate enforces,
+so it never blocks at ship: `python scripts/style_lint.py --file
+out/<date>/copy.json --json-field first_comment` and the same on any other
+emitted copy field (caption goes through caption_check above). Rephrase any
+prose colon out now (the ship gate itself is unchanged).
 
 ## PHASE 7 — ART BUILD
 
