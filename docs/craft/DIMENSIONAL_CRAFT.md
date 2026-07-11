@@ -103,6 +103,41 @@ hero-object language: one beautiful thing, slow dolly, rack focus, dark gradient
 - Per-frame cost scales with MARCH_STEPS x pixels: half-res proxy (`dim.init(540, 960)`) for
   iteration, full-res for ship.
 
+## Performance authoring idioms (the choreography doctrine in SDF terms)
+
+docs/craft/CHOREOGRAPHY.md is law; these are the raymarcher implementations. All are pure
+functions of `t` plus a few closed-form springs (easing.py) — no state, resume-safe.
+
+- **The scene's beat map**: author a module-level `BEATS = [...]` list of event times (from the
+  storyboard's beat clock) and gate every hero action on it. Both `_scene` (world) and the chrome
+  pass (panels) read the SAME list — that shared event bus is what makes reactions land together.
+- **Phase-lagged sway** (wind travels through the form): `sway(p.y, t) = A*(sin(0.37*t + p.y*K) +
+  0.6*sin(1.13*t + p.y*K*1.7))` — offset phase by height, sum incommensurate frequencies. Apply
+  per-instance phase from the ROUNDED cell index (never the continuous coordinate).
+- **Impulse -> spring settle** (the reaction channel): at beat time tb, drive neighbors with
+  `E.spring(t - tb)` displacement radially from the event point, decaying with distance. A gust,
+  a landing, a snap all reuse this one primitive.
+- **Life event on a path**: one small SDF primitive crossing the frame on an eased bezier
+  (a bird, a cloud shadow, a distant vehicle). One per shot minimum; the moving SUBJECT the eye
+  tracks between primary beats.
+- **Monotonic world ramp**: one scene parameter driven by `clamp((f - f0)/(f1 - f0), 0, 1)` and
+  never reversed — smoke thickens, snow accumulates, light phase advances, water rises. The
+  shot's exit state must differ from its entry state.
+- **Anticipation on state changes**: 2-4 frames of counter-move before any pop (chimney
+  compresses before the puff; light dips before it snaps on). `E.anticipate` or a negative
+  spring pre-phase.
+- **Camera arrives on the action**: time `cam_at(f)`'s ease so the move SETTLES on the subject
+  at its beat time — never a constant glide past the event.
+- **Compound heroes**: a hero is >= 3 SDF parts with independent sub-motion (body + appendage +
+  accent), so follow-through has parts to travel through. A single primitive cannot perform.
+- **Atmosphere bed**: scrolling fbm fog planes at 2 rates + a drifting particle field (domain-
+  repeated small spheres, per-cell phase) + a cloud-shadow noise scrolled across the terrain in
+  `_mat`. Never off, amplitude under 10 percent of the primary.
+- **Instrument life** (chrome side, dispatch_core composite): readouts tick around truth and
+  re-latch; status elements breathe 60-100 percent opacity; a sweep line implies processing;
+  panels sample the scene's BEATS list and spike/snap on events. All entrances obey arrival
+  physics (overshoot + settle via easing.py, staggered 2-3 frames, never linear).
+
 ## How a Dispatch uses this
 
 Phase 4.5 storyboards declare which shots are DIMENSIONAL (most should be, going forward) with

@@ -50,7 +50,7 @@ def load_beats(sb):
         if isinstance(b, dict):
             a, e = _parse_t(b.get("t"))
             out.append({"i": i, "t0": a, "t1": e, "vo": b.get("vo", ""), "shows": b.get("shows", b.get("new", "")),
-                        "sfx": b.get("sfx", ""), "means": b.get("means", ""), "obj": True})
+                        "sfx": b.get("sfx", ""), "means": b.get("means", ""), "choreo": b.get("choreo"), "obj": True})
         else:
             out.append({"i": i, "t0": None, "t1": None, "vo": "", "shows": str(b), "sfx": "", "means": "", "obj": False})
     return out, fmt
@@ -95,6 +95,14 @@ def analyze(dirp):
 
     # ---- required fields (object beats) ----
     if fmt in ("object", "mixed"):
+        ch_req = (CFG.get("choreo") or {}).get("required_beat_fields", [])
+        if ch_req:
+            bad_ch = [b["i"] for b in beats if b["obj"] and not (
+                isinstance(b.get("choreo"), dict) and all(str(b["choreo"].get(k, "")).strip() for k in ch_req))]
+            if bad_ch:
+                R["problems"].append(f"beats {bad_ch} missing a complete `choreo` object "
+                                     f"({{{', '.join(ch_req)}}}) — every beat declares its motion "
+                                     f"choreography (docs/craft/CHOREOGRAPHY.md §9)")
         missing_sfx = [b["i"] for b in beats if b["obj"] and not str(b["sfx"]).strip()]
         missing_shows = [b["i"] for b in beats if b["obj"] and not str(b["shows"]).strip()]
         missing_vo = [b["i"] for b in beats if b["obj"] and not str(b["vo"]).strip()]

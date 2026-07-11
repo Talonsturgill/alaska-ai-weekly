@@ -94,3 +94,10 @@ meaning (an orbit that reveals nothing is decoration; a rack focus must hand att
 two story subjects)? Does the LIGHT STORY argue the mood (dawn-backlight for beginnings,
 night-practical for vigilance), or is it a default? A board whose camera plan could be swapped
 across shots without anyone noticing is not directed — return revise.
+
+CHOREOGRAPHY GATE (docs/craft/CHOREOGRAPHY.md): the board must choreograph, not just schedule.
+Reject a board whose beats lack real `choreo` blocks (primary + attributable reaction + named
+ambient bed), whose shots have no world arc (exit state = entry state), whose heroes have no
+business (an idle loop is not a performance), or which schedules no world event near the 2/3 mark.
+The slideshow tell at board stage: a beat whose only motion is one element entering over a held
+composition.

@@ -32,3 +32,16 @@ sfx:
 score:
   hard_gate: [beats_min, max_gap, coverage, sfx_min_total]   # these fail the run
   advisory:  [median_gap_in_target, sfx_per_shot, head_start]  # these warn + feed the critic
+
+choreo:
+  # THE LIVING SCREEN (docs/craft/CHOREOGRAPHY.md). Beats must declare their motion choreography,
+  # and the rendered picture must prove layered, disjoint motion (not one ticker on a held frame).
+  required_beat_fields: [primary, reaction, ambient]   # storyboard.json beats[].choreo{...}; flow_check enforces
+  # LIVING_SCREEN objective gate (quality_gate.py): camera-compensated active-motion regions per 2s window.
+  window_s: 2.0
+  min_regions: 3            # >=3 spatially disjoint active regions in a window = a layered, living frame
+  min_window_pass_pct: 0.80 # >=80% of windows must clear min_regions (calibration: the criticized
+                            # 2026-07-11 artifact scores 63% and FAILS, as it should)
+  outro_exempt_s: 2.0       # the final branded resolve may go quiet
+  cell_grid: [12, 20]       # luma-delta pooling grid (x, y) at 135x240 analysis res
+  active_cell_floor: 2.2    # luma-delta units above the median (median subtraction removes camera drift)

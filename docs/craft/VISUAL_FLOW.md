@@ -72,7 +72,12 @@ Beats stop being loose prose. Each beat in `storyboard.json > beats[]` is an obj
       "vo": "they fell into one line, 250 km long",   # the VO phrase this beat illustrates (coverage)
       "shows": "the 1,750 scattered points slide and CONNECT into one glowing crimson line",  # the NEW on-screen thing
       "sfx": "a rising sweep as the points converge, a soft lock-tick when the line snaps straight", # the paired sound
-      "means": "the pattern is a line, not a cloud"    # why it matters
+      "means": "the pattern is a line, not a cloud",   # why it matters
+      "choreo": {                     # HOW the motion is organized (docs/craft/CHOREOGRAPHY.md)
+        "primary": "the points slide and connect into the line, synced to the VO phrase",
+        "reaction": "the connect-snap emits a pulse; nearby station pins recoil and settle",
+        "ambient": "graticule shimmer + drifting dust motes + slow cloud-shadow sweep continue under it"
+      }
     }
 
 Rules the plan must satisfy (enforced by scripts/storyboard_check.py, see §9):
@@ -81,32 +86,37 @@ Rules the plan must satisfy (enforced by scripts/storyboard_check.py, see §9):
 - beats cover the VO timeline start to finish (no un-illustrated speech gap > 5s).
 - every beat's `sfx` names a concrete, motivated sound (not "music"); it becomes a row in the audio
   script's event list and a checked event in the mix (§5, §9).
+- every beat declares `choreo: {primary, reaction, ambient}` — concrete, cause-and-effect motion
+  choreography, not vibes ("stuff moves" fails the critic). See CHOREOGRAPHY.md §9.
 
 The prose beat map in storyboard.md stays for humans; storyboard.json carries the checkable version.
 
 ---
 
-## 4. NEVER LET THE FRAME REST (how to manufacture continuous motion, hand-coded)
+## 4. NEVER LET THE FRAME REST (superseded by the CHOREOGRAPHY doctrine for HOW)
 
-We render in PIL/numpy, not After Effects, so "constant motion" is built from cheap, composable moves.
-Keep at least one of these alive at all times, and land a NEW one on the beat clock:
+The never-rest cadence stands: land a NEW story-advancing move on the beat clock, nothing on
+screen rests longer than 5s. But the 2026-07-11 postmortem retired this section's old "one at a
+time" prescription — one element ticking over a held frame is exactly the slideshow tell. HOW the
+motion is organized now lives in **docs/craft/CHOREOGRAPHY.md** (read it before storyboarding):
 
-- POP-IN: an element enters with a fast ease + a tiny overshoot (a label, a pin, an icon, a stat card).
-  One at a time reads cleaner than five at once (infographic rule: avoid more than one animation at once).
-- COUNTER / METER: a number tolls up, a bar grows, a ring fills. Numerals, never a spelled-out partial.
-- TRAVELING MARK: a point/comet moves ALONG a path (a fault edge, a route, a timeline) with a trailing
-  streak so a still frame shows it traveling. Motion with a direction reads as meaning.
-- CAMERA PUSH / PARALLAX: a slow eased push-in or a layered drift gives depth and forward pull between
-  the bigger beats. A push that REVEALS a new element is a beat; a push over nothing is just drift.
-- STATE FLIP: the world itself changes to mirror the arc (noisy -> clean, cold -> hot, frozen -> thawing,
-  unknown -> measured). Re-color, re-light, dissolve a layer.
-- BACKGROUND / WORLD SWAP: at a shot boundary, cross-transform to a different world (this is the MACRO
-  cut; keep the carried element as the still point, per CINEMATIC_SCENE_CRAFT §1.5).
-- PROGRESSIVE DISCLOSURE: reveal one piece, let it land ~1s, then add or replace the next as the VO
-  reaches it. Do not dump the whole diagram at once and then talk over it.
+- FOUR CHANNELS run concurrently every shot: one VO-synced PRIMARY action + a REACTION the
+  primary visibly causes + 2-3 low-amplitude AMBIENT life loops + a perpetual ATMOSPHERE bed.
+- ARRIVAL PHYSICS on everything: anticipation, eased entrance (linear banned), 3-6% overshoot
+  + settle, follow-through 2-4 frames behind, cascades staggered 2-3 frames along one path.
+- CAUSE-AND-EFFECT LAW: every primary provokes an attributable reaction (displacement, impulse
+  broadcast, parenting, call-and-response chain, instrument reaction).
+- SUBJECT PERFORMANCE: the hero has a business arc per shot; the camera ARRIVES on the action.
+- WORLD ARC: one monotonic state ramp per shot; one scheduled world event per Dispatch (~2/3);
+  the end state visibly differs from the start.
 
-Rich illustration is a force multiplier here: you are already drawing detailed worlds, so spend that
-detail on TELLING THE STORY piece by piece across the clock, not on one dense static tableau.
+The old move vocabulary (pop-in, counter/meter, traveling mark, camera push, state flip, world
+swap, progressive disclosure) remains the PRIMARY-channel menu — but each move now enters with
+physics, causes a reaction, and plays over a living bed, per the choreography numerics table.
+
+Enforced: beats declare `choreo: {primary, reaction, ambient}` (flow_check fails beats without
+it), and quality_gate's LIVING_SCREEN check requires >=3 camera-compensated disjoint motion
+regions in >=80% of 2s windows (config/visual_flow.yaml > choreo).
 
 ---
 
