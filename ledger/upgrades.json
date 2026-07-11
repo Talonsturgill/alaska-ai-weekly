@@ -126,6 +126,20 @@
    "verification": "style_lint FAILs (exit 1) on both of this run's original ship-time failing strings (the first_comment colon line and a '- Update:' docket-note line); PASSes the fixed copy.json first_comment field; exempts clock times (4:30) and URLs exactly as site_build does; a direct cross-check confirms colon_violations() matches site_build.prose_colon_gate on clock/URL/ratio cases. No gate touched or weakened; no new dependency.",
    "rollback": "revert the upgrade(2026-07-10) commit",
    "commit": "64d950baf6e8c0eeff1701fd61ede96f941b95ca"
+  },
+  {
+   "run_date": "2026-07-11",
+   "kind": "fix",
+   "area": "assets",
+   "change": "New committed helper assets/js/aklabel.js: AK.canvasLabel(cx,x,y,text,{color,align}) draws any canvas-rendered label with an opaque knockout plate under the glyphs (auto-picking a near-black/near-white plate from the text luminance), so an in-scene label's contrast depends on (text,plate) only and never on the art beneath; AK.rectsOverlap keeps stacked labels from merging. Documented in SKILL.md. Opt-in; DOM/SVG text still preferred where layout allows.",
+   "trigger": "Run 2026-07-11 dominant defect class: machine_qa PASSED 0/0 yet the pixel critics caught ~10 canvas/decorative labels that were illegible -- S4 mono readouts ~1.5:1 on the ochre strata band, S6 SUSPENDED tag, S7 two flag labels overprinting into 'NSTARCORP', S8 context line on ochre. Canvas-drawn text is a bitmap with no DOM node, so text_collisions(), contrast_estimate(), and the 2026-07-10 busy-art tripwire (all of which walk render.py's DOM text_nodes) are structurally blind to it; the deck was repaired by hand with inline knockout chips. This commits that hand-fix as reusable machinery. (A canvas-text-aware QA gate was assessed and PARKED: not safely boundable without OCR/false-positives on dense sectional artwork -- FIELD_NOTES 2026-07-11.)",
+   "files": [
+    "assets/js/aklabel.js",
+    ".claude/skills/carousel-engine/SKILL.md"
+   ],
+   "verification": "Reconstruction over an fbm-mottled ochre band (#B0803A) with the exact failing text/colours: RAW cx.fillText label reads ~1.9:1 (reproduces the shipped-then-caught defect) and RAW ENSTAR/HILCORP merge into 'ENSTAHILCORP' at ~2.8:1; the SAME labels via AK.canvasLabel read ~8.5:1 (bg = plate rgb(26,25,23), independent of the ochre) and ~12.9:1, and AK.rectsOverlap keeps them apart -- confirmed visually and by a pixel sampler using qa.py's contrast method. Regression: out/2026-07-11/slides render OK + qa PASS 0/0 and examples/demo-deck render OK + qa WARN (the single known 2026-07-10 slide-03 busy-art warn), both unchanged (new asset is unreferenced). qa.py on the verification slide: PASS 0/0 (no false positives). No gate/threshold weakened; no new runtime dependency (vanilla offline JS); shipped slides not modified.",
+   "rollback": "revert the upgrade(2026-07-11) commit",
+   "commit": "PLACEHOLDER upgrade(2026-07-11)"
   }
  ],
  "scan_log": [
@@ -146,6 +160,12 @@
    "focus": "editorial dataviz / cartography technique (best news-graphics desks; rotated off self-improving-pipeline 07-08 and typography 07-09)",
    "found": "Bloomberg concentric-radial-rings seasonal small multiple (calendar wrapped to a ring, each ring a variable; portable to offline seeded SVG/Canvas). Data-journalist map design space (arxiv 2508.10903, 462 maps / 5 outlets / 8 dimensions) as a treatment-director reference. Cartographic-narrative roundups reconfirmed the static subset we already practice; nothing new to change in the machine.",
    "outcome": "parked (FIELD_NOTES 2026-07-10: radial-rings technique candidate + map design-space reference); no frontier code applied (the two reactive fixes filled the budget)"
+  },
+  {
+   "run_date": "2026-07-11",
+   "focus": "generative/procedural art portable to offline Canvas/SVG (texture/relief/noise) -- rotated off self-improving-pipeline 07-08, typography 07-09, editorial-dataviz/cartography 07-10; chosen to serve this run's weakest rubric (artwork craft = 7: flat strata bands, plain lenses)",
+   "found": "Inigo Quilez fbm article: additive noise octaves with gain=2^-H; H=1 (gain 0.5), ~5-6 octaves matches real mountain/rock spectra (-9dB/octave) -- the geological parameter set. Domain-warp article: f(g(p)) marbling. KEY: these primitives are ALREADY committed in noise.js (AK.fbm2/fbm3/warp2/simplex2), so a strata-texture/rim-light craft helper is a thin painterly layer over existing math, not new deps; relief needs only a lighter upper-left rim stroke on filled shapes plus low-alpha clipped fbm mottling.",
+   "outcome": "parked (FIELD_NOTES 2026-07-11: strata-texture / rim-light craft helper with concrete parameters + source URLs); no frontier code applied this run -- one reactive fix (aklabel.js) took the slot and the craft helper is held to the next improvement slot the day after a 4-upgrade day"
   }
  ]
 }

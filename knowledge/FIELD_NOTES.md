@@ -36,6 +36,32 @@ into the doctrine/library files and prune here.
 - Docket: added the Enstar Cook Inlet gas storage item (RCA denial). GVEA (Jul 13) and AKLNG (Jul 16) re-fetch
   failed (429/503/403) and were carried forward; both resolve within days and are worth a hard re-check next run.
 
+## 2026-07-11 — Phase 12 (automation retro + frontier scan)
+
+- **APPLIED — knockout-plate canvas-label helper (`assets/js/aklabel.js`).** The durable form of this run's
+  dominant hand-fix. `AK.canvasLabel(cx,x,y,text,{color,align})` draws an opaque plate under the glyphs so a
+  canvas label's contrast depends on (text, plate) only, not the strata beneath; `AK.rectsOverlap` keeps stacked
+  in-scene labels from merging. Verified: same text/colour that shipped at ~1.9:1 on ochre reads ~8.5:1 with the
+  helper; ENSTAR/HILCORP that merged into "ENSTAHILCORP" now sit on separate plates. Opt-in; no gate touched.
+- **PARKED — canvas-text-aware QA gate.** The real gap is that canvas-DRAWN text is invisible to EVERY gate
+  (text_collisions/contrast_estimate/busy-art tripwire all walk render.py's DOM text_nodes; canvas ink has no
+  node). A gate that could see it needs OCR or stroke/edge heuristics that would false-positive on dense
+  sectional artwork (strata hatching, valve wheels, curves). Not a safely-boundable ~100-line change. Revisit
+  only with a bounded discriminator (e.g. require in-scene labels to register a DOM "shadow rect" the gate can
+  read, turning canvas labels back into checkable boxes). Meanwhile `aklabel.js` removes the incentive to draw
+  raw canvas text. Recommended to maintainer: a contrast floor for `data-decorative` labels over light bands, or
+  a house rule that in-scene labels use `AK.canvasLabel` (both are threshold/policy = maintainer's call).
+- **PARKED (frontier, procedural-art scan) — strata-texture / rim-light craft helper.** Weakest rubric this run
+  = artwork craft (7): flat gradient bands, plain elliptical lenses, dead lower-thirds. The scan confirmed the
+  math is ALREADY committed in noise.js (`AK.fbm2/fbm3/warp2`); Quilez's fbm article gives the geological
+  parameter (H=1, gain=0.5, ~5-6 octaves) for rock-like spectra, and relief needs only a cheap gradient-of-fbm
+  rim-light. So the parked helper is a thin painterly LAYER over existing primitives, not new deps: (1) clip to
+  a band path, paint low-alpha fbm mottling (gain 0.5, 5 oct) tinted +/- 8% luminance; (2) rim-light a filled
+  lens/shape by stroking its upper-left arc with a lighter tint at ~0.5 alpha; (3) fill dead lower-thirds with a
+  very low-alpha warp2 field. Held because it is a SECOND assets/js change the day after a 4-upgrade day; land
+  it next run as the sole improvement slot, verified by rendering an opt-in demo slide. Sources:
+  https://iquilezles.org/articles/fbm/ , https://iquilezles.org/articles/warp/
+
 ## 2026-07-11 — craft refresh (run 4 pre-research pass)
 
 - **Named, reusable frameworks drive saves (new actionable handle).** Multiple 2026 carousel roundups (Oktopost, Morphica, SocialPilot) converge that the highest-save decks hand the reader a NAMED, portable thinking tool ("The 3-C Framework", "The RICE Method") they can carry and reuse, not just a story. For us that means: when the story allows, give the deck ONE named lens or rule-of-thumb the reader keeps (a coined term, a 3-part test, a checklist), stated once and reinforced on the close. Save-value is our whole strategy, so this is a real lever, not fluff. Does not change gates.

@@ -37,6 +37,7 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
   <link rel="stylesheet" href="@@ASSETS@@/fonts/fonts.css">
   <script src="@@ASSETS@@/js/noise.js"></script>      <!-- AK.simplex2/fbm2/warp2/rng -->
   <script src="@@ASSETS@@/js/aktype.js"></script>      <!-- AK.fitText display fit-to-box -->
+  <script src="@@ASSETS@@/js/aklabel.js"></script>     <!-- AK.canvasLabel knockout-plate labels -->
   <script src="@@ASSETS@@/js/ak3d.js"></script>        <!-- AK3D software 3D renderer -->
   <script src="@@ASSETS@@/js/zdog.min.js"></script>    <!-- Zdog pseudo-3D (no GPU) -->
   <script src="@@ASSETS@@/js/d3.v7.min.js"></script>
@@ -107,6 +108,17 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
   large headline never silently soft-wraps an extra line into the block
   below it (the recurring wrap-collision defect through 2026-07-09). Prefer
   it over hand-tuned font-size on every display headline set in a fixed box.
+- `assets/js/aklabel.js` — knockout-plate CANVAS labels (`AK.canvasLabel`).
+  Any label drawn with `cx.fillText()` is a bitmap with no DOM node, so the
+  QA gates (text_collisions, contrast_estimate, busy-art tripwire) are BLIND
+  to it: run 2026-07-11 shipped-then-caught ~10 canvas labels at ~1.5:1 on
+  the ochre band and two flag labels overprinting. `AK.canvasLabel(cx, x, y,
+  text, {color, align})` draws an opaque plate under the glyphs so the
+  label's contrast depends on (text, plate) only, not the art beneath, and
+  returns the plate rect (`AK.rectsOverlap` to keep stacked labels apart).
+  Include AFTER noise.js. Still prefer DOM/SVG text where layout allows (it
+  stays vector in the PDF and the gates can see it); use this for labels that
+  must be pinned to canvas coordinates.
 - `assets/js/ak3d.js` — software 3D: perspective camera, heightfield/box
   meshes, painter's z-sort, Lambert + fog, 3D polylines & point clouds (`AK3D.*`)
 - `assets/js/zdog.min.js` — Zdog round pseudo-3D engine (canvas, no GPU)
