@@ -1,0 +1,103 @@
+{
+  "words": [
+    {
+      "w": "When Alaska burns, the smoke is the part that reaches everyone.",
+      "s": 0.5,
+      "e": 3.927,
+      "seg": 0
+    },
+    {
+      "w": "It sinks into the valleys, and for weeks, people breathe it.",
+      "s": 4.047,
+      "e": 7.103,
+      "seg": 0
+    },
+    {
+      "w": "So the state runs a model that forecasts the smoke two days out.",
+      "s": 7.223,
+      "e": 10.623,
+      "seg": 0
+    },
+    {
+      "w": "But that model has a habit. It reads the air too clean.",
+      "s": 10.963,
+      "e": 14.281,
+      "seg": 1
+    },
+    {
+      "w": "On bad days it undercounts the surface smoke by up to five times.",
+      "s": 14.401,
+      "e": 18.244,
+      "seg": 1
+    },
+    {
+      "w": "Here is why. A warm lid of air seals the valley.",
+      "s": 18.364,
+      "e": 21.104,
+      "seg": 1
+    },
+    {
+      "w": "It traps the smoke down low, where we breathe.",
+      "s": 21.444,
+      "e": 23.838,
+      "seg": 2
+    },
+    {
+      "w": "The model keeps drawing it thin and high.",
+      "s": 23.958,
+      "e": 26.106,
+      "seg": 2
+    },
+    {
+      "w": "So a team at the University of Alaska Fairbanks taught a second model to correct the first.",
+      "s": 26.446,
+      "e": 31.753,
+      "seg": 3
+    },
+    {
+      "w": "It learns the error and pulls the forecast down toward the air people breathe.",
+      "s": 31.872,
+      "e": 36.083,
+      "seg": 3
+    },
+    {
+      "w": "The gap shrinks. Five times too low becomes about two.",
+      "s": 36.203,
+      "e": 39.522,
+      "seg": 3
+    },
+    {
+      "w": "But this is a correction, not a cure. It sharpens the number.",
+      "s": 39.862,
+      "e": 43.162,
+      "seg": 4
+    },
+    {
+      "w": "It cannot move the smoke.",
+      "s": 43.282,
+      "e": 44.871,
+      "seg": 4
+    },
+    {
+      "w": "And when a cloud hides a fire, the model can still miss it.",
+      "s": 44.992,
+      "e": 48.069,
+      "seg": 4
+    },
+    {
+      "w": "So the forecast lands closer, sooner.",
+      "s": 48.409,
+      "e": 50.676,
+      "seg": 5
+    },
+    {
+      "w": "And a person still decides when the air is safe to breathe.",
+      "s": 50.796,
+      "e": 53.87,
+      "seg": 5
+    }
+  ],
+  "speech_end": 53.87,
+  "total": 60.0,
+  "fps": 30
+}

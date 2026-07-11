@@ -45,10 +45,18 @@ def sfx_lock(d=0.3):
     return (s * 0.8).astype(np.float32)
 def sfx_pop(d=0.12):
     tt = t(d); return (bp(rng.standard_normal(len(tt)), 500, 2600) * np.exp(-tt / (d * .3)) * 0.7).astype(np.float32)
+def sfx_chirp(d=0.42):
+    # fui-boot: two rising sine blips (880->1320 Hz), bright enough to read over a VO onset
+    tt = t(d); s = np.zeros(len(tt), np.float32)
+    for k, f0 in ((0.0, 880.0), (0.16, 1320.0)):
+        i = int(k * SR); n = int(0.12 * SR); seg = np.linspace(0, 0.12, n, endpoint=False)
+        s[i:i + n] += np.sin(2 * np.pi * (f0 + 500 * seg / 0.12) * seg) * np.exp(-seg / 0.05)
+    return (s * 0.9).astype(np.float32)
 
 MAKERS = {"whoosh": sfx_whoosh, "boom": sfx_boom, "hit": sfx_hit, "tick": sfx_tick,
           "riser": lambda: sfx_riser(up=True), "pulldown": lambda: sfx_riser(up=False),
-          "pulse": sfx_pulse, "lock": sfx_lock, "pop": sfx_pop, "ambient": lambda: np.zeros(1, np.float32)}
+          "pulse": sfx_pulse, "lock": sfx_lock, "pop": sfx_pop, "chirp": sfx_chirp,
+          "ambient": lambda: np.zeros(1, np.float32)}
 
 # ---------------- the SFX event list (>=1 per shot; kinds from the gate vocab) ----------------
 # (t seconds, kind for the mix, gate-kind, label). gate-kind must be in pop/whoosh/riser/hit/ambient/tick/boom/lock/pulse
@@ -60,7 +68,7 @@ EVENTS = [
     (18.0, "hit",      "hit",    "inversion lid seal thud"),
     (21.6, "pop",      "pop",    "a cough in the murk"),
     (25.2, "riser",    "riser",  "airy too-clean hollow rise as the false plume lifts"),
-    (28.6, "pop",      "pop",    "fui boot chirp, the corrector grabs"),
+    (28.6, "chirp",    "pop",    "fui boot chirp, the corrector grabs"),
     (32.2, "pulldown", "riser",  "descending pull-down glide falling with the curve"),
     (36.2, "lock",     "lock",   "ratchet and settling lock on 5x to 2x"),
     (40.2, "hit",      "hit",    "soft negative tone, correction not cure"),
@@ -72,7 +80,7 @@ EVENTS = [
 
 # ---------------- SFX bus ----------------
 sfxbus = np.zeros(N, np.float32)
-GAIN = {"whoosh": .5, "boom": .8, "hit": .55, "tick": .5, "riser": .45, "pulldown": .5, "pulse": .55, "lock": .7, "pop": .5}
+GAIN = {"whoosh": .5, "boom": .8, "hit": .55, "tick": .5, "riser": .45, "pulldown": .5, "pulse": .55, "lock": .7, "pop": .5, "chirp": .95}
 for (tt0, mk, gk, lab) in EVENTS:
     s = MAKERS[mk]()
     i = int(tt0 * SR); e = min(i + len(s), N)

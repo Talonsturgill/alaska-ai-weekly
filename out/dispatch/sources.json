@@ -1,0 +1,29 @@
+{
+ "sources": [
+  {
+   "outlet": "ACS ES&T Air (paper)",
+   "url": "https://pubs.acs.org/doi/10.1021/acsestair.5c00409",
+   "note": "Dong, Mao et al., Machine Learning Bias Correction of HRRR-Smoke Surface PM2.5 Forecasts during the Alaska Wildfire Season, 2026, 3(5), 1263 to 1275, published April 17, 2026. Load-bearing figures: up to 5x surface undercount; CNN1D best corrector, residual about 2x; cause is vertical smoke placement (inversions, fires under cloud)."
+  },
+  {
+   "outlet": "OpenAlex record (independent cross-check)",
+   "url": "https://openalex.org/works?filter=doi:10.1021/acsestair.5c00409",
+   "note": "Second-source confirmation of title, authors, venue, and publication date."
+  },
+  {
+   "outlet": "UAF news (team + operational context)",
+   "url": "https://www.uaf.edu/news/uaf-helps-develop-air-quality-data-for-popular-alaska-wildfire-website.php",
+   "note": "Jingqiu Mao (UAF, NASA Health and Air Quality Science Team) and doctoral student Zhiwei Dong; the UAF smoke/air-quality feed behind Alaska wildfire dashboards."
+  },
+  {
+   "outlet": "UAFSMOKE (operational forecast)",
+   "url": "https://smoke.alaska.edu/PM25.html",
+   "note": "The operational Alaska wildfire-smoke PM2.5 forecast surface this research improves."
+  },
+  {
+   "outlet": "Alaska Wildland Fire Information (live hook)",
+   "url": "https://akfireinfo.com/2026/07/06/dffp-weekly-wildland-fire-roundup-for-june-29-july-5/",
+   "note": "2026 fire season active: 330+ fires tracked, 24,633 lightning strikes in ten days, Interior smoke along the Yukon corridor (early July 2026)."
+  }
+ ]
+}

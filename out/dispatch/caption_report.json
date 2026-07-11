@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "fails": [],
+  "warns": [],
+  "metrics": {
+    "chars": 1585,
+    "hook": "Alaska's wildfire smoke forecast has a quiet flaw: on the worst days it reads the air up to five times too clean.",
+    "hook_len": 113,
+    "hashtags": [
+      "#Alaska",
+      "#ArtificialIntelligence",
+      "#AirQuality",
+      "#Wildfire",
+      "#AtmosphericScience"
+    ],
+    "n_hashtags": 5,
+    "emoji": 0,
+    "unicode_bold": 0,
+    "bullet_lines": 0,
+    "passes": true
+  }
+}

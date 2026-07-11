@@ -1,0 +1,80 @@
+{
+  "events": [
+    {
+      "t": 4.0,
+      "kind": "whoosh",
+      "label": "descent whoosh into the valley"
+    },
+    {
+      "t": 7.5,
+      "kind": "tick",
+      "label": "forecast grid UI tick"
+    },
+    {
+      "t": 11.0,
+      "kind": "whoosh",
+      "label": "swell on the cut to the cross-section"
+    },
+    {
+      "t": 14.6,
+      "kind": "boom",
+      "label": "low boom on the 5x undercount"
+    },
+    {
+      "t": 18.0,
+      "kind": "hit",
+      "label": "inversion lid seal thud"
+    },
+    {
+      "t": 21.6,
+      "kind": "pop",
+      "label": "a cough in the murk"
+    },
+    {
+      "t": 25.2,
+      "kind": "riser",
+      "label": "airy too-clean hollow rise as the false plume lifts"
+    },
+    {
+      "t": 28.6,
+      "kind": "pop",
+      "label": "fui boot chirp, the corrector grabs"
+    },
+    {
+      "t": 32.2,
+      "kind": "riser",
+      "label": "descending pull-down glide falling with the curve"
+    },
+    {
+      "t": 36.2,
+      "kind": "lock",
+      "label": "ratchet and settling lock on 5x to 2x"
+    },
+    {
+      "t": 40.2,
+      "kind": "hit",
+      "label": "soft negative tone, correction not cure"
+    },
+    {
+      "t": 44.2,
+      "kind": "tick",
+      "label": "HUD refocus tick, reality unchanged"
+    },
+    {
+      "t": 48.2,
+      "kind": "pulse",
+      "label": "searching ping returns empty"
+    },
+    {
+      "t": 52.2,
+      "kind": "riser",
+      "label": "airy lift and confirming chime"
+    },
+    {
+      "t": 55.6,
+      "kind": "hit",
+      "label": "soft brand sting"
+    }
+  ],
+  "n": 15
+}
