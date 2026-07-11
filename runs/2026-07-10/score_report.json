@@ -1,0 +1,31 @@
+{
+  "run_date": "2026-07-10",
+  "carousel_no": 3,
+  "weighted_total": 8.96,
+  "threshold": 8.3,
+  "ship": true,
+  "revision_rounds": 2,
+  "hard_fails": "none (all 13 rules pass; evidence in scorer transcript)",
+  "criteria": [
+    {"name": "Thumb-stop cover", "weight": 0.14, "score": 8},
+    {"name": "Story arc & swipe momentum", "weight": 0.14, "score": 9},
+    {"name": "Artwork craft & genuine detail", "weight": 0.16, "score": 7},
+    {"name": "Story-art fusion", "weight": 0.14, "score": 9},
+    {"name": "Alaska authenticity & local relevance", "weight": 0.12, "score": 9},
+    {"name": "Insight density & factual weight", "weight": 0.10, "score": 8},
+    {"name": "Variety vs ledger", "weight": 0.08, "score": 7},
+    {"name": "Legibility & platform fitness", "weight": 0.07, "score": 8},
+    {"name": "Copy: voice & hook", "weight": 0.05, "score": 8},
+    {"name": "Deliverable completeness", "weight": 0.10, "score": 8}
+  ],
+  "weakest_criterion": "Artwork craft & genuine detail",
+  "one_sentence_fix": "Fill the dead lower halves of slides 3, 7, and 8 (make S7's Aleutian-arc watermark and lit alert ticks actually visible) and add texture/light detail to the cover massif so the 3D hero survives the zoom test.",
+  "honesty_notes": [
+    "S2's bottom trace is labeled COMBINED LIVE SEISMIC FEED but is illustrative art, not real waveform data; a future run should label it illustrative.",
+    "S6 says 1 cm PER FRINGE as a stylized calibration; the verified claim (c12) is 'detects ground movement as small as 1 cm' (real C-band fringes are ~2.8 cm/cycle).",
+    "S7 Shishaldin elevation deliberately reads 'not listed' (unverifiable this run, honest omission).",
+    "The $6.3M NASA figure is correctly softened to 'a NASA award shared across seven projects' (S8).",
+    "S4 body states the no-network fact twice (artifact of the c4 softening); harmless."
+  ],
+  "scorer_calculation_note": "Rubric weights as written sum to 1.10; weighted total computed with those weights, no hard-fail cap applied."
+}

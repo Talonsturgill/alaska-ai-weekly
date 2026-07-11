@@ -1,0 +1,13 @@
+{
+  "chars": 723,
+  "hook": "Three Alaska volcanoes are on elevated alert at once, and an AI built in Fairbanks is what stands watch over them.",
+  "hook_len": 114,
+  "hashtags": [
+    "#AlaskaVolcanoes",
+    "#VolcanoMonitoring",
+    "#GeoAI"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,9 @@
+Three Alaska volcanoes are on elevated alert at once, and an AI built in Fairbanks is what stands watch over them.
+
+Great Sitkin is erupting lava. Kupreanof and Shishaldin are stirring, and about 50,000 people fly over that airspace every day.
+
+This deck walks through the two machine senses doing the watching. VOISS-Net is a neural ear, trained on more than 270,000 spectrograms to read tremor at 87 percent accuracy. VolcSARvatory is a satellite eye that catches a centimeter of ground swell from orbit. Both were built at UAF and are now scaling to all five US volcano observatories.
+
+Kupreanof has no ground sensors at all, so is a machine watching from orbit really enough?
+
+#AlaskaVolcanoes #VolcanoMonitoring #GeoAI

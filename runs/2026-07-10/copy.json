@@ -1,0 +1,21 @@
+{
+ "document_title": "The Machine That Hears a Mountain Think",
+ "caption_file": "out/2026-07-10/caption.txt",
+ "hashtags": [
+  "#AlaskaVolcanoes",
+  "#VolcanoMonitoring",
+  "#GeoAI"
+ ],
+ "first_comment": "Sources for today's deck.\n\n- USGS Alaska Volcano Observatory, July 3 2026 weekly update (Great Sitkin Watch/Orange; Kupreanof and Shishaldin Advisory/Yellow; Kupreanof has no real-time network) https://volcanoes.usgs.gov/hans-public/notice/DOI-USGS-AVO-2026-07-03T18:33:40+00:00\n- Volcanica, \"A generalized deep learning model to detect and classify volcano seismicity\" (VOISS-Net, more than 270,000 spectrograms, 87 percent accuracy, 7 volcanoes across 3 regions) https://www.jvolcanica.org/ojs/index.php/volcanica/article/view/349\n- UAF Geophysical Institute, \"Alaska-developed volcano monitoring system will expand across US\" (VolcSARvatory, InSAR to 1 cm, Edgecumbe swarm April 11 2022, five USGS observatories, shared NASA award) https://www.gi.alaska.edu/news/alaska-developed-volcano-monitoring-system-will-expand-across-us\n- USGS Alaska Volcano Observatory overview (130+ volcanoes, 50+ active since about 1760, 50,000 people a day overhead) https://www.usgs.gov/observatories/avo\n\nEvery decision and deadline we track lives at alaskaaihq.com.\n\nSee something we missed or read a slide differently? Add it in a reply.",
+ "slide_copy_corrections": [
+  {
+   "slide": 4,
+   "field": "body",
+   "from": "No local seismometers.",
+   "to": "No ground network of its own.",
+   "why": "c4 supports no real-time network watched via satellite; 'no local seismometers' over-specifies. Applied."
+  }
+ ],
+ "aftercare": "Post Tue to Thu, 8 to 11am AKT. Paste the first-comment sources within 60s. Reply to every comment in the first 90 min (golden hour up to 2.4x reach). Check saves/comments at 48h vs trailing median.",
+ "notes": "Hook 114 chars, caption 723 chars (300-900 band), 3 hashtags, closing question ties to S4 tension. Claims used: c1-c5, c7, c8, c10-c12, c15, c19."
+}
