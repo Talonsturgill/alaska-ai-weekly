@@ -7,6 +7,34 @@ into the doctrine/library files and prune here.
 
 ---
 
+## 2026-07-10 — parked frontier + minor candidates (upgrade-engineer, editorial-dataviz/cartography scan)
+
+- **Concentric-radial-rings seasonal small multiple (parked technique).** A
+  recent Bloomberg guide wraps the calendar year into a ring per small chart;
+  concentric rings each encode a variable (weekly share, avg high temp,
+  precipitation) and a seasonal peak reads as a bulge. Portable to offline,
+  seeded, static SVG/Canvas. Strong fit for any AK deck with a seasonal
+  quantity (fishing openers, daylight swing, eruption cadence, PFD timing).
+  TECHNIQUE_LIBRARY candidate, not an engine change; promote when a deck's
+  story lands on a cyclical/seasonal number.
+  Source: https://www.anychart.com/blog/2026/07/10/data-graphics-pull-their-weight/
+- **Data-journalist map design space (parked reference).** "How do Data
+  Journalists Design Maps to Tell Stories?" analyzes 462 journalistic maps from
+  five outlets into an eight-dimension design space (article properties + map
+  visual/interactive features) plus common editorial rationales. A checklist
+  for the treatment-directors when a deck goes cartographic (framing/crop,
+  annotation, focus+context, projection intent). Reference, not code.
+  Source: https://arxiv.org/abs/2508.10903
+- **Style-aware font probe (parked minor fix).** render.py's font-loaded check
+  builds its `document.fonts.check()` spec as weight + size + family with NO
+  font-style, so an italic-only display face (Instrument Serif italic this run)
+  false-FAILs the upright-400 probe; self-corrected in-slide by loading both
+  faces. Fix: pass the element's computed font-style into the check spec so the
+  probe tests the face actually used. Bounded and correct, but it edits a hard
+  gate and was not defect-forced this run, so it was held (daily cadence favors
+  0-1 upgrades and two reactive fixes spent the budget). Land it a day the
+  budget is open; verify no shipped slide's font check changes verdict.
+
 ## 2026-07-10 — run 3 retro (Carousel No. 3, "The Machine That Hears a Mountain Think")
 
 - Story: AVO volcano-monitoring AI (VOISS-Net + VolcSARvatory) with the live Great Sitkin
