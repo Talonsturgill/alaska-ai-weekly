@@ -1,114 +1,157 @@
 {
-  "_spec": {
-    "purpose": "Dedupe ledger for carousel topics. The routine MUST read this before topic selection and MUST append the chosen topic after delivery. No topic may repeat within 90 days unless a material new development exists AND the deck is framed as an update (hard fail otherwise).",
-    "matching": "Judge semantic similarity, not string equality: compare candidate against topic + angle + entities + keywords of every entry from the last 120 days. Same underlying story reported by a different outlet or with a new URL is STILL a repeat.",
-    "entry_schema": {
-      "run_date": "YYYY-MM-DD",
-      "carousel_no": "int",
-      "topic": "one-line story",
-      "angle": "the specific argument/frame taken",
-      "entities": [
-        "named orgs, places, people, projects"
-      ],
-      "keywords": [
-        "semantic fingerprint terms"
-      ],
-      "headline": "the cover line used",
-      "sources_lead": [
-        "primary URLs"
-      ],
-      "outcome_notes": "filled by later runs if the human reports performance"
-    }
+ "_spec": {
+  "purpose": "Dedupe ledger for carousel topics. The routine MUST read this before topic selection and MUST append the chosen topic after delivery. No topic may repeat within 90 days unless a material new development exists AND the deck is framed as an update (hard fail otherwise).",
+  "matching": "Judge semantic similarity, not string equality: compare candidate against topic + angle + entities + keywords of every entry from the last 120 days. Same underlying story reported by a different outlet or with a new URL is STILL a repeat.",
+  "entry_schema": {
+   "run_date": "YYYY-MM-DD",
+   "carousel_no": "int",
+   "topic": "one-line story",
+   "angle": "the specific argument/frame taken",
+   "entities": [
+    "named orgs, places, people, projects"
+   ],
+   "keywords": [
+    "semantic fingerprint terms"
+   ],
+   "headline": "the cover line used",
+   "sources_lead": [
+    "primary URLs"
+   ],
+   "outcome_notes": "filled by later runs if the human reports performance"
+  }
+ },
+ "entries": [
+  {
+   "run_date": "2026-07-08",
+   "carousel_no": 1,
+   "topic": "Alaska's data center decision month, anchored by the STAK Energy North Slope AI data center lease revolt (ADL 422741)",
+   "angle": "The 500-plus vs fewer-than-12 public comment revolt on the STAK lease is one of four Alaska AI-infrastructure decisions in July 2026 (Air Force EUL Jun 29, GVEA turbine Jul 13, AKLNG vote Jul 16, STAK comment Jul 17); thesis 'four rooms, one open door' -- only the DNR comment process invites the public.",
+   "entities": [
+    "STAK Energy",
+    "John Boyle",
+    "Alaska DNR Division of Oil and Gas",
+    "ADL 422741",
+    "Deadhorse",
+    "Dalton Highway",
+    "North Slope",
+    "Air Force Enhanced Use Lease",
+    "JBER",
+    "Eielson AFB",
+    "Clear Space Force Station",
+    "North Pole Middle School",
+    "GVEA",
+    "LM6000",
+    "Alaska LNG",
+    "Glenfarne",
+    "Dunleavy"
+   ],
+   "keywords": [
+    "data center",
+    "AI",
+    "gigawatt",
+    "natural gas",
+    "public comment",
+    "state land lease",
+    "permafrost",
+    "gravel",
+    "Railbelt",
+    "gas turbine",
+    "gas line",
+    "North Slope",
+    "who decides"
+   ],
+   "headline": "500 wrote in. Fewer than 12 said yes.",
+   "sources_lead": [
+    "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
+    "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224",
+    "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/"
+   ],
+   "outcome_notes": ""
   },
-  "entries": [
-    {
-      "run_date": "2026-07-08",
-      "carousel_no": 1,
-      "topic": "Alaska's data center decision month, anchored by the STAK Energy North Slope AI data center lease revolt (ADL 422741)",
-      "angle": "The 500-plus vs fewer-than-12 public comment revolt on the STAK lease is one of four Alaska AI-infrastructure decisions in July 2026 (Air Force EUL Jun 29, GVEA turbine Jul 13, AKLNG vote Jul 16, STAK comment Jul 17); thesis 'four rooms, one open door' -- only the DNR comment process invites the public.",
-      "entities": [
-        "STAK Energy",
-        "John Boyle",
-        "Alaska DNR Division of Oil and Gas",
-        "ADL 422741",
-        "Deadhorse",
-        "Dalton Highway",
-        "North Slope",
-        "Air Force Enhanced Use Lease",
-        "JBER",
-        "Eielson AFB",
-        "Clear Space Force Station",
-        "North Pole Middle School",
-        "GVEA",
-        "LM6000",
-        "Alaska LNG",
-        "Glenfarne",
-        "Dunleavy"
-      ],
-      "keywords": [
-        "data center",
-        "AI",
-        "gigawatt",
-        "natural gas",
-        "public comment",
-        "state land lease",
-        "permafrost",
-        "gravel",
-        "Railbelt",
-        "gas turbine",
-        "gas line",
-        "North Slope",
-        "who decides"
-      ],
-      "headline": "500 wrote in. Fewer than 12 said yes.",
-      "sources_lead": [
-        "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
-        "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224224",
-        "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/"
-      ],
-      "outcome_notes": ""
-    },
-    {
-      "run_date": "2026-07-09",
-      "carousel_no": 2,
-      "topic": "AI drone plus computer-vision salmon counting pilot on the Wood River, tested against Bristol Bay's 70-year human counting towers (2026 sockeye season)",
-      "angle": "An unproven AI counter still in training is tested against the hand-clicker tower method that has set Bristol Bay escapement since 1955; thesis 'one river, two ways to count it, only one is proven' -- honest about a pilot, and about who counts (partners UW FRI, BBRSDA, BBEDC; ADF&G not directly involved).",
-      "entities": [
-        "Bristol Bay",
-        "Wood River",
-        "Alaska Department of Fish and Game",
-        "ADF&G",
-        "University of Washington Fisheries Research Institute",
-        "BBRSDA",
-        "BBEDC",
-        "Norm Van Vactor",
-        "Ian Chiu",
-        "Dillingham",
-        "Lake Aleknagik",
-        "sockeye salmon"
-      ],
-      "keywords": [
-        "salmon",
-        "sockeye",
-        "escapement",
-        "counting tower",
-        "drone",
-        "computer vision",
-        "machine learning",
-        "fish counting",
-        "Bristol Bay",
-        "fisheries management",
-        "AI in the field",
-        "in training",
-        "unproven"
-      ],
-      "headline": "One river. Two ways to count it. Only one is proven.",
-      "sources_lead": [
-        "https://www.kdlg.org/fisheries/2026-07-03/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts",
-        "https://www.kmxt.org/alaska-statewide-news/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts",
-        "https://www.kdlg.org/show/bristol-bay-fisheries-report/2026-07-06/bristol-bay-fisheries-report-july-6-2026"
-      ],
-      "outcome_notes": ""
-    }
-  ]
+  {
+   "run_date": "2026-07-09",
+   "carousel_no": 2,
+   "topic": "AI drone plus computer-vision salmon counting pilot on the Wood River, tested against Bristol Bay's 70-year human counting towers (2026 sockeye season)",
+   "angle": "An unproven AI counter still in training is tested against the hand-clicker tower method that has set Bristol Bay escapement since 1955; thesis 'one river, two ways to count it, only one is proven' -- honest about a pilot, and about who counts (partners UW FRI, BBRSDA, BBEDC; ADF&G not directly involved).",
+   "entities": [
+    "Bristol Bay",
+    "Wood River",
+    "Alaska Department of Fish and Game",
+    "ADF&G",
+    "University of Washington Fisheries Research Institute",
+    "BBRSDA",
+    "BBEDC",
+    "Norm Van Vactor",
+    "Ian Chiu",
+    "Dillingham",
+    "Lake Aleknagik",
+    "sockeye salmon"
+   ],
+   "keywords": [
+    "salmon",
+    "sockeye",
+    "escapement",
+    "counting tower",
+    "drone",
+    "computer vision",
+    "machine learning",
+    "fish counting",
+    "Bristol Bay",
+    "fisheries management",
+    "AI in the field",
+    "in training",
+    "unproven"
+   ],
+   "headline": "One river. Two ways to count it. Only one is proven.",
+   "sources_lead": [
+    "https://www.kdlg.org/fisheries/2026-07-03/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts",
+    "https://www.kmxt.org/alaska-statewide-news/2026-07-08/ai-drones-and-salmon-what-new-technology-could-mean-for-bristol-bay-sockeye-counts",
+    "https://www.kdlg.org/show/bristol-bay-fisheries-report/2026-07-06/bristol-bay-fisheries-report-july-6-2026"
+   ],
+   "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-10",
+   "carousel_no": 3,
+   "topic": "Alaska-built AI volcano monitoring (VOISS-Net seismic deep learning + VolcSARvatory InSAR) watching three simultaneously elevated Alaska volcanoes, scaling to all five USGS observatories",
+   "angle": "Present-tense vigilance: Great Sitkin erupting (Watch/Orange) with Kupreanof and Shishaldin restless, watched by machine senses built at UAF/AVO (a neural ear + a satellite eye); the blind-mountain tension (Kupreanof has no ground network) and the Alaska-tech-exported-national pride arc.",
+   "entities": [
+    "Alaska Volcano Observatory",
+    "USGS",
+    "UAF Geophysical Institute",
+    "VOISS-Net",
+    "VolcSARvatory",
+    "Great Sitkin",
+    "Shishaldin",
+    "Mount Kupreanof",
+    "Mount Edgecumbe",
+    "NASA Disasters Program",
+    "Sitka",
+    "Aleutian arc"
+   ],
+   "keywords": [
+    "volcano",
+    "AI monitoring",
+    "deep learning",
+    "seismic",
+    "spectrogram",
+    "InSAR",
+    "interferogram",
+    "aviation color code",
+    "eruption",
+    "ash cloud",
+    "Aleutian",
+    "tremor",
+    "ground deformation",
+    "alert level"
+   ],
+   "headline": "Three Alaska volcanoes are awake.",
+   "sources_lead": [
+    "https://volcanoes.usgs.gov/hans-public/notice/DOI-USGS-AVO-2026-07-03T18:33:40+00:00",
+    "https://www.jvolcanica.org/ojs/index.php/volcanica/article/view/349",
+    "https://www.gi.alaska.edu/news/alaska-developed-volcano-monitoring-system-will-expand-across-us"
+   ],
+   "outcome_notes": ""
+  }
+ ]
 }

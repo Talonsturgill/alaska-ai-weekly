@@ -7,6 +7,24 @@ into the doctrine/library files and prune here.
 
 ---
 
+## 2026-07-10 — run 3 retro (Carousel No. 3, "The Machine That Hears a Mountain Think")
+
+- Story: AVO volcano-monitoring AI (VOISS-Net + VolcSARvatory) with the live Great Sitkin
+  eruption peg (3 volcanoes elevated at once, Jul 3 AVO update). First instrument-register deck
+  (Space Grotesk + JBMono + obsidian/phosphor); evolving seismic-trace conductor motif.
+- **Canvas-over-DOM-text is a QA blind spot**: qa.py checks DOM line boxes only, so the S3
+  flightpath arc crossed body copy and machine QA PASSED it; pixel critics caught it. New
+  instinct logged: route canvas paths around text blocks at PLAN time and make critics check
+  canvas-vs-text explicitly.
+- **Motif connective tissue**: the flow critic found the conductor trace read on ~6 of 9 frames;
+  adding low-alpha enter/exit strokes on S3/S6/S7 stitched the film together. Lesson: a motif's
+  TRANSFORMATION states are not enough; draw the connections.
+- Fact-checker corrections that mattered: $6.3M is a shared NASA award (7 projects), Great Sitkin
+  is 5,708 ft (not 5,709), Shishaldin elevation unfetchable so the Arc Index shows "not listed"
+  (honest omission beats invention).
+- fitText everywhere prevented all wrap-collisions this run (0 vs 4 last run); the recurring
+  defect class appears closed by the committed helper.
+
 ## 2026-07-10 — craft refresh (run 3 pre-research pass)
 
 - **Personal profile carousels earn ~63% more engagement than company-page carousels** (dataslayer/linkboost 2026). Alaska.Ai posts from a page; the human should consider cross-posting the deck from a personal profile, or at minimum knows the page handicap is real. Aftercare-relevant, not a design change.

@@ -1,69 +1,98 @@
 {
-  "_spec": {
-    "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged \u2014 name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
-    "entry_schema": {
-      "run_date": "YYYY-MM-DD",
-      "carousel_no": "int",
-      "slide_count": "int",
-      "hero_structure": "technique name/number driving the deck's signature look",
-      "atmosphere": "technique name/number",
-      "depth_technique": "which 3D/depth move was used",
-      "line_voice": "drafting | transit | hand-ink | instrument | none",
-      "continuity_device": "panorama | edge-tease | motif:<desc> | camera | palette-arc",
-      "hook_archetype": "e.g. big-number, named-tension, question-map, before-after, quote",
-      "palette_family": "e.g. arctic-teal, amber-sodium, roe-orange, ice-mint, violet-dusk",
-      "type_pairing": "display + support families and axes used",
-      "narrative_structure": "e.g. escalation, tour, argument, timeline, anatomy, versus",
-      "variance_dials": {
-        "design_variance": "1-5",
-        "visual_density": "1-5",
-        "type_temperature": "1-5"
-      },
-      "new_techniques_logged": []
-    }
+ "_spec": {
+  "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged \u2014 name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
+  "entry_schema": {
+   "run_date": "YYYY-MM-DD",
+   "carousel_no": "int",
+   "slide_count": "int",
+   "hero_structure": "technique name/number driving the deck's signature look",
+   "atmosphere": "technique name/number",
+   "depth_technique": "which 3D/depth move was used",
+   "line_voice": "drafting | transit | hand-ink | instrument | none",
+   "continuity_device": "panorama | edge-tease | motif:<desc> | camera | palette-arc",
+   "hook_archetype": "e.g. big-number, named-tension, question-map, before-after, quote",
+   "palette_family": "e.g. arctic-teal, amber-sodium, roe-orange, ice-mint, violet-dusk",
+   "type_pairing": "display + support families and axes used",
+   "narrative_structure": "e.g. escalation, tour, argument, timeline, anatomy, versus",
+   "variance_dials": {
+    "design_variance": "1-5",
+    "visual_density": "1-5",
+    "type_temperature": "1-5"
+   },
+   "new_techniques_logged": []
+  }
+ },
+ "entries": [
+  {
+   "run_date": "2026-07-08",
+   "carousel_no": 1,
+   "slide_count": 9,
+   "hero_structure": "Alaska Hero Map (cartographic; camera-state changes across the deck: whole-state -> North Slope zoom -> ground-level 3D -> 4-node abstraction -> Railbelt -> whole-state bookend)",
+   "atmosphere": "Aurora Veil (cover/close) + Mesh Wash (body)",
+   "depth_technique": "Multiplane Parallax, low-horizon North Slope tundra with cabinet-oblique gravel pad + volumetric gas-flare shafts (slide 4)",
+   "line_voice": "instrument/editorial + transit (timeline spine, base network)",
+   "continuity_device": "camera (recurring map changing state) + motif:constellation-corner (Polaris + mono counter + coords)",
+   "hook_archetype": "big-number / named-tension (500 vs fewer than 12)",
+   "palette_family": "arctic-teal + flare-amber (semantic: snow=public, amber=industry/gas, aurora-green=AI/compute, gold=decision/open-door)",
+   "type_pairing": "Fraunces display + Manrope support + JetBrains Mono instrument",
+   "narrative_structure": "escalation-then-widen (argument: four rooms, one open door)",
+   "variance_dials": {
+    "design_variance": 3,
+    "visual_density": 3,
+    "type_temperature": 4
+   },
+   "new_techniques_logged": []
   },
-  "entries": [
-    {
-      "run_date": "2026-07-08",
-      "carousel_no": 1,
-      "slide_count": 9,
-      "hero_structure": "Alaska Hero Map (cartographic; camera-state changes across the deck: whole-state -> North Slope zoom -> ground-level 3D -> 4-node abstraction -> Railbelt -> whole-state bookend)",
-      "atmosphere": "Aurora Veil (cover/close) + Mesh Wash (body)",
-      "depth_technique": "Multiplane Parallax, low-horizon North Slope tundra with cabinet-oblique gravel pad + volumetric gas-flare shafts (slide 4)",
-      "line_voice": "instrument/editorial + transit (timeline spine, base network)",
-      "continuity_device": "camera (recurring map changing state) + motif:constellation-corner (Polaris + mono counter + coords)",
-      "hook_archetype": "big-number / named-tension (500 vs fewer than 12)",
-      "palette_family": "arctic-teal + flare-amber (semantic: snow=public, amber=industry/gas, aurora-green=AI/compute, gold=decision/open-door)",
-      "type_pairing": "Fraunces display + Manrope support + JetBrains Mono instrument",
-      "narrative_structure": "escalation-then-widen (argument: four rooms, one open door)",
-      "variance_dials": {
-        "design_variance": 3,
-        "visual_density": 3,
-        "type_temperature": 4
-      },
-      "new_techniques_logged": []
-    },
-    {
-      "run_date": "2026-07-09",
-      "carousel_no": 2,
-      "slide_count": 9,
-      "hero_structure": "Evolving mark-of-one-fish glyph ledger (hand tally-stroke vs machine bounding box on a spawning sockeye) plus software-3D dawn riverbank (counting tower + lone drone-in-a-box); NOT a cartographic camera map",
-      "atmosphere": "Tannin river fog / cold field morning (Mesh Wash body + one warm Conic Horizon dawn beat on S8)",
-      "depth_technique": "Multiplane Parallax + depth-weighted wireframe tower on S5 (low horizon HZ~886, DOF-blurred foreground reeds repoussoir, colored fog); parallel/flat data elsewhere",
-      "line_voice": "instrument/editorial + transit/systems (detection boxes, constellation edges) + hand-ink (tally strokes)",
-      "continuity_device": "timeline-spine (1955->2026 year-ruler, advancing red marker) + motif:mark-of-one-fish (hand-stroke -> bounding-box -> both) + edge-tease",
-      "hook_archetype": "named-tension / before-after (clicker vs machine eye)",
-      "palette_family": "tannin-slate + driftwood-ink + drone-grey + sockeye-red accent (gold #FFC72C fixture only)",
-      "type_pairing": "Archivo variable (wdth+wght axes; display expanded + body normal) + JetBrains Mono instrument",
-      "narrative_structure": "audit / versus (two methods scored honestly), escalation to a debate close",
-      "variance_dials": {
-        "design_variance": 4,
-        "visual_density": 4,
-        "type_temperature": 2
-      },
-      "new_techniques_logged": [
-        "SpawningSockeye (side-profile spawning sockeye SVG icon: humped dorsal, kype, olive-green head, forked tail; body doubles as the data anchor)"
-      ]
-    }
-  ]
+  {
+   "run_date": "2026-07-09",
+   "carousel_no": 2,
+   "slide_count": 9,
+   "hero_structure": "Evolving mark-of-one-fish glyph ledger (hand tally-stroke vs machine bounding box on a spawning sockeye) plus software-3D dawn riverbank (counting tower + lone drone-in-a-box); NOT a cartographic camera map",
+   "atmosphere": "Tannin river fog / cold field morning (Mesh Wash body + one warm Conic Horizon dawn beat on S8)",
+   "depth_technique": "Multiplane Parallax + depth-weighted wireframe tower on S5 (low horizon HZ~886, DOF-blurred foreground reeds repoussoir, colored fog); parallel/flat data elsewhere",
+   "line_voice": "instrument/editorial + transit/systems (detection boxes, constellation edges) + hand-ink (tally strokes)",
+   "continuity_device": "timeline-spine (1955->2026 year-ruler, advancing red marker) + motif:mark-of-one-fish (hand-stroke -> bounding-box -> both) + edge-tease",
+   "hook_archetype": "named-tension / before-after (clicker vs machine eye)",
+   "palette_family": "tannin-slate + driftwood-ink + drone-grey + sockeye-red accent (gold #FFC72C fixture only)",
+   "type_pairing": "Archivo variable (wdth+wght axes; display expanded + body normal) + JetBrains Mono instrument",
+   "narrative_structure": "audit / versus (two methods scored honestly), escalation to a debate close",
+   "variance_dials": {
+    "design_variance": 4,
+    "visual_density": 4,
+    "type_temperature": 2
+   },
+   "new_techniques_logged": [
+    "SpawningSockeye (side-profile spawning sockeye SVG icon: humped dorsal, kype, olive-green head, forked tail; body doubles as the data anchor)"
+   ]
+  },
+  {
+   "run_date": "2026-07-10",
+   "carousel_no": 3,
+   "hero_structure": "Evolving seismic-trace conductor motif (one phosphor trace born from an AK3D ember-lit volcano cover, splitting/flatlining/folding into a spectrogram, bending into InSAR fringe rings, forking to 5 observatory nodes, resolving to a steady baseline) + instrument-panel diagram slides; NOT a map-camera deck, NOT a glyph-ledger deck",
+   "atmosphere": "Obsidian instrument night + volcanic ember (cover only) + CRT/phosphor instrument register; no aurora, no mesh wash, no fog wash",
+   "continuity_device": "motif-evolution + edge-tease (the conductor trace) + aviation-color palette arc (green/yellow/orange -> instrument cyan -> gold/green calm) + fixed top-right mono alert-readout strip doubling as progress counter",
+   "hook_archetype": "present-tense reveal (three volcanoes awake right now; a machine is listening)",
+   "palette_family": "obsidian + ember orange #FF6A1E + sulfur yellow #E8C23A + phosphor green #35D6A6 + InSAR cyan-to-magenta #5AC8F0->#C64FD0 (gold #FFC72C fixture only)",
+   "type_pairing": "Space Grotesk display + JetBrains Mono instrument + Instrument Serif italic accent (cover dek + close eyebrow only)",
+   "techniques_used": [
+    "#34 AK3D Terrain (cover volcano, camera math computed)",
+    "#42 Multiplane Parallax",
+    "#46 Volumetric Shafts (ember)",
+    "#13 Interference Rings (InSAR interferogram)",
+    "#22 Constellation Graph (5-node scale-out)",
+    "#84 Instrument Corner Readouts",
+    "#74 Haloed Balloon Numbers",
+    "#73 Dimension Call (1 cm)",
+    "#67 Alphabet-of-Lines phantom dashes (absent sensors)",
+    "#2 Grain tile everywhere",
+    "canvas spectrogram heatmap (freq x time)"
+   ],
+   "variance_dials": {
+    "design_variance": 4,
+    "visual_density": 4,
+    "type_temperature": 2
+   },
+   "notes": "First instrument-register deck. The evolving-trace conductor is the strongest continuity device so far per flow-critic; connective tissue on S3/S6/S7 added after flow review."
+  }
+ ]
 }

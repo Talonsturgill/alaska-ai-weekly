@@ -1,79 +1,97 @@
 {
-  "_spec": {
-    "purpose": "Self-improvement ledger (confidence-scored lessons). Every run's retro appends 1-3 instincts learned from: editor/critic flags, machine QA catches, human edits observed in later Gmail drafts, or performance notes the maintainer adds. Before each run, the orchestrator injects the TOP 5 instincts with confidence >= 0.7 into the directors-room and copy prompts. Confidence rises +0.05 each run that confirms an instinct, falls -0.1 each run that contradicts it. Prune entries below 0.5 confidence that are older than 8 runs.",
-    "entry_schema": {
-      "id": "kebab-slug",
-      "learned": "YYYY-MM-DD",
-      "instinct": "one imperative sentence",
-      "evidence": "what happened that taught this",
-      "confidence": "0.0-1.0",
-      "last_confirmed": "YYYY-MM-DD"
-    }
+ "_spec": {
+  "purpose": "Self-improvement ledger (confidence-scored lessons). Every run's retro appends 1-3 instincts learned from: editor/critic flags, machine QA catches, human edits observed in later Gmail drafts, or performance notes the maintainer adds. Before each run, the orchestrator injects the TOP 5 instincts with confidence >= 0.7 into the directors-room and copy prompts. Confidence rises +0.05 each run that confirms an instinct, falls -0.1 each run that contradicts it. Prune entries below 0.5 confidence that are older than 8 runs.",
+  "entry_schema": {
+   "id": "kebab-slug",
+   "learned": "YYYY-MM-DD",
+   "instinct": "one imperative sentence",
+   "evidence": "what happened that taught this",
+   "confidence": "0.0-1.0",
+   "last_confirmed": "YYYY-MM-DD"
+  }
+ },
+ "entries": [
+  {
+   "id": "compute-3d-composition",
+   "learned": "2026-07-08",
+   "instinct": "Plan every 3D camera with the horizonY arithmetic in ak3d.js before rendering; never eyeball camera placement.",
+   "evidence": "Two consecutive smoke-test terrain renders buried the mountain range in the bottom 15% of frame until the projection math was computed explicitly. | CONFIRMED 2026-07-08: slide 4 planned the low horizon at an explicit y and used parallax planes, not eyeballed camera; monumental result",
+   "confidence": 0.9,
+   "last_confirmed": "2026-07-08"
   },
-  "entries": [
-    {
-      "id": "compute-3d-composition",
-      "learned": "2026-07-08",
-      "instinct": "Plan every 3D camera with the horizonY arithmetic in ak3d.js before rendering; never eyeball camera placement.",
-      "evidence": "Two consecutive smoke-test terrain renders buried the mountain range in the bottom 15% of frame until the projection math was computed explicitly. | CONFIRMED 2026-07-08: slide 4 planned the low horizon at an explicit y and used parallax planes, not eyeballed camera; monumental result",
-      "confidence": 0.9,
-      "last_confirmed": "2026-07-08"
-    },
-    {
-      "id": "grain-as-tile",
-      "learned": "2026-07-08",
-      "instinct": "Apply grain as a small repeating tile (AK.grainTile), never a full-frame feTurbulence rect.",
-      "evidence": "Full-frame SVG grain rasterized to a 34MB incompressible bitmap in the printed PDF; the tile version produced 6.7MB. | CONFIRMED 2026-07-08: AK.grainTile used on all 9 slides; PDF 10.7MB, no incompressible full-frame grain",
-      "confidence": 0.95,
-      "last_confirmed": "2026-07-08"
-    },
-    {
-      "id": "machine-qa-is-not-taste",
-      "learned": "2026-07-08",
-      "instinct": "Never treat a machine_qa PASS as composition approval; the pixel critics judge composition, hierarchy, and collision at full size and thumb size.",
-      "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective.",
-      "confidence": 0.97,
-      "last_confirmed": "2026-07-09"
-    },
-    {
-      "id": "d3-zoom-manual",
-      "learned": "2026-07-08",
-      "instinct": "Zoom a d3 map by scaling a baseline full-state fitExtent and re-translating onto the target point, drawing the coastline STROKE-ONLY; never fitExtent to a small lon/lat bbox polygon.",
-      "evidence": "Slides 2 and 7 first used fitExtent to a bbox polygon and rendered a giant near-black fill disc plus a mis-scaled mini-Alaska with overlapping labels; the manual scale+translate with stroke-only coast fixed both cleanly.",
-      "confidence": 0.8,
-      "last_confirmed": "2026-07-08"
-    },
-    {
-      "id": "verify-body-line-count",
-      "learned": "2026-07-08",
-      "instinct": "Before rendering, sanity-check long serif/body copy line counts against any fixed-position labels, bars, or plates; DOM text overlaps pass machine QA but fail the eye.",
-      "evidence": "Slide 3 body wrapped to 4 lines and overlapped the 'URBAN ALASKA GRID PEAK' bar label (a scorer-caught hard fail); slide 5 quote 4 slid under the Boyle plate. Both passed machine_qa safe-zone checks. | CONFIRMED 2026-07-09: four headline-wrap collisions (S1/S4/S7/S8) all traced to a display headline in a container narrower than its longest line; each machine_qa-FAILED as a text overprint.",
-      "confidence": 0.85,
-      "last_confirmed": "2026-07-09"
-    },
-    {
-      "id": "data-decorative-on-leaf",
-      "learned": "2026-07-08",
-      "instinct": "Put data-decorative on the leaf text element (span, b, or the appended SVG <text>), not just the parent div; the QA tiny-text gate does not inherit it.",
-      "evidence": "annot <div data-decorative> still flagged its child <b>/<span> readouts on slides 2/4/7 until the attribute was added to each leaf element.",
-      "confidence": 0.75,
-      "last_confirmed": "2026-07-08"
-    },
-    {
-      "id": "display-headline-fit-full-width",
-      "learned": "2026-07-09",
-      "instinct": "Set a display headline's container to the full width its longest line needs (or drop the size) and verify the rendered line count before shipping; a too-narrow container silently wraps into the body and fails the overprint gate.",
-      "evidence": "S1 (98px in 952px), S4/S7 (78-80px in ~460px), S8 (94px in 920px) each wrapped an extra line into the block below and machine_qa-FAILED as a collision until widened or downsized.",
-      "confidence": 0.75,
-      "last_confirmed": "2026-07-09"
-    },
-    {
-      "id": "budget-the-lower-third",
-      "learned": "2026-07-09",
-      "instinct": "Budget the bottom third of every slide deliberately: a data readout, a caption, an anchor, or an intentional quiet zone -- do not let it default to dead empty space the scorer reads as thin craft.",
-      "evidence": "Scorer (8.83) capped Artwork Craft at 7 partly for 'large empty lower thirds' on several slides (S2, S6, S7, S8) even though every slide passed gates and critics.",
-      "confidence": 0.6,
-      "last_confirmed": "2026-07-09"
-    }
-  ]
+  {
+   "id": "grain-as-tile",
+   "learned": "2026-07-08",
+   "instinct": "Apply grain as a small repeating tile (AK.grainTile), never a full-frame feTurbulence rect.",
+   "evidence": "Full-frame SVG grain rasterized to a 34MB incompressible bitmap in the printed PDF; the tile version produced 6.7MB. | CONFIRMED 2026-07-08: AK.grainTile used on all 9 slides; PDF 10.7MB, no incompressible full-frame grain",
+   "confidence": 0.95,
+   "last_confirmed": "2026-07-08"
+  },
+  {
+   "id": "machine-qa-is-not-taste",
+   "learned": "2026-07-08",
+   "instinct": "Never treat a machine_qa PASS as composition approval; the pixel critics judge composition, hierarchy, and collision at full size and thumb size.",
+   "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective.",
+   "confidence": 0.98,
+   "last_confirmed": "2026-07-10"
+  },
+  {
+   "id": "d3-zoom-manual",
+   "learned": "2026-07-08",
+   "instinct": "Zoom a d3 map by scaling a baseline full-state fitExtent and re-translating onto the target point, drawing the coastline STROKE-ONLY; never fitExtent to a small lon/lat bbox polygon.",
+   "evidence": "Slides 2 and 7 first used fitExtent to a bbox polygon and rendered a giant near-black fill disc plus a mis-scaled mini-Alaska with overlapping labels; the manual scale+translate with stroke-only coast fixed both cleanly.",
+   "confidence": 0.8,
+   "last_confirmed": "2026-07-08"
+  },
+  {
+   "id": "verify-body-line-count",
+   "learned": "2026-07-08",
+   "instinct": "Before rendering, sanity-check long serif/body copy line counts against any fixed-position labels, bars, or plates; DOM text overlaps pass machine QA but fail the eye.",
+   "evidence": "Slide 3 body wrapped to 4 lines and overlapped the 'URBAN ALASKA GRID PEAK' bar label (a scorer-caught hard fail); slide 5 quote 4 slid under the Boyle plate. Both passed machine_qa safe-zone checks. | CONFIRMED 2026-07-09: four headline-wrap collisions (S1/S4/S7/S8) all traced to a display headline in a container narrower than its longest line; each machine_qa-FAILED as a text overprint.",
+   "confidence": 0.85,
+   "last_confirmed": "2026-07-09"
+  },
+  {
+   "id": "data-decorative-on-leaf",
+   "learned": "2026-07-08",
+   "instinct": "Put data-decorative on the leaf text element (span, b, or the appended SVG <text>), not just the parent div; the QA tiny-text gate does not inherit it.",
+   "evidence": "annot <div data-decorative> still flagged its child <b>/<span> readouts on slides 2/4/7 until the attribute was added to each leaf element.",
+   "confidence": 0.75,
+   "last_confirmed": "2026-07-08"
+  },
+  {
+   "id": "display-headline-fit-full-width",
+   "learned": "2026-07-09",
+   "instinct": "Set a display headline's container to the full width its longest line needs (or drop the size) and verify the rendered line count before shipping; a too-narrow container silently wraps into the body and fails the overprint gate.",
+   "evidence": "S1 (98px in 952px), S4/S7 (78-80px in ~460px), S8 (94px in 920px) each wrapped an extra line into the block below and machine_qa-FAILED as a collision until widened or downsized.",
+   "confidence": 0.8,
+   "last_confirmed": "2026-07-10"
+  },
+  {
+   "id": "budget-the-lower-third",
+   "learned": "2026-07-09",
+   "instinct": "Budget the bottom third of every slide deliberately: a data readout, a caption, an anchor, or an intentional quiet zone -- do not let it default to dead empty space the scorer reads as thin craft.",
+   "evidence": "Scorer (8.83) capped Artwork Craft at 7 partly for 'large empty lower thirds' on several slides (S2, S6, S7, S8) even though every slide passed gates and critics.",
+   "confidence": 0.6,
+   "last_confirmed": "2026-07-09"
+  },
+  {
+   "instinct": "Canvas-drawn art can overprint DOM text without tripping qa.py (it only checks DOM line boxes); route every canvas path/arc/diagram around the text blocks at PLAN time and have pixel critics explicitly check canvas-vs-text collision.",
+   "confidence": 0.85,
+   "born": "2026-07-10",
+   "evidence": "S3 flightpath arc crossed two body lines and S4 orbit crossed the headline; machine QA passed both, pixel critics caught both."
+  },
+  {
+   "instinct": "Give the deck's continuity motif explicit connective tissue on EVERY slide (enter-left/exit-right at low alpha), not just its transformation states; intermittent motifs read as separate images.",
+   "confidence": 0.75,
+   "born": "2026-07-10",
+   "evidence": "Flow critic: conductor trace read on only ~6 of 9 frames until S3/S6/S7 connective strokes were added."
+  },
+  {
+   "instinct": "Keep top-strip kickers short (<=18 chars) when a right-aligned readout shares the row; long kickers visually abut the readout even when boxes do not intersect.",
+   "confidence": 0.7,
+   "born": "2026-07-10",
+   "evidence": "S2/S7/S8 kickers crowded the readout at full width and were shortened."
+  }
+ ]
 }
