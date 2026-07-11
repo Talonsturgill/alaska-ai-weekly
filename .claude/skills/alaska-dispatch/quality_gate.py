@@ -246,6 +246,50 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
             "detail":(f"{len(evs)} sound events"+(f", {lift_ok} verified audible" if lift_ok is not None else "")+
                       (" — "+"; ".join(bad) if bad else " — every shot sonified, events audible in the master")+" (VISUAL_FLOW.md §5)")})
 
+    # 8b) LIVING_SCREEN — layered, disjoint motion (the anti-slideshow gate; docs/craft/CHOREOGRAPHY.md).
+    # Camera-compensated luma deltas on a coarse grid; a 2s window is ALIVE when >=min_regions spatially
+    # disjoint clusters of cells are active. One ticker over a held frame = 1 region = a slide.
+    try:
+        import yaml as _yaml
+        _cf=_yaml.safe_load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","..","..","config","visual_flow.yaml")))
+        _ch=(_cf or {}).get("choreo") or {}
+    except Exception:
+        _ch={}
+    if _ch:
+        GX,GY=_ch.get("cell_grid",[12,20]); WIN=float(_ch.get("window_s",2.0)); MINR=int(_ch.get("min_regions",3))
+        PASSPCT=float(_ch.get("min_window_pass_pct",0.8)); EXEMPT=float(_ch.get("outro_exempt_s",2.0))
+        FLOOR=float(_ch.get("active_cell_floor",2.2))
+        def _sluma(path):
+            im=Image.open(path).convert("L").resize((135,240)); return np.asarray(im,np.float32)
+        def _regions(a,b):
+            d=np.abs(b-a); h,w=d.shape; chh,cww=h//GY,w//GX
+            cells=d[:GY*chh,:GX*cww].reshape(GY,chh,GX,cww).mean((1,3))
+            cells=np.maximum(0,cells-np.median(cells)); act=cells>FLOOR
+            seen=np.zeros_like(act,bool); n=0
+            for y in range(GY):
+                for x in range(GX):
+                    if act[y,x] and not seen[y,x]:
+                        n+=1; st=[(y,x)]
+                        while st:
+                            cy,cx=st.pop()
+                            if 0<=cy<GY and 0<=cx<GX and act[cy,cx] and not seen[cy,cx]:
+                                seen[cy,cx]=True; st+=[(cy+1,cx),(cy-1,cx),(cy,cx+1),(cy,cx-1)]
+            return n
+        step=6; total_s=len(fs)/fps; wins={}
+        prevL=_sluma(fs[0]); prev_j=0
+        for j in range(step,len(fs),step):
+            curL=_sluma(fs[j]); wid=int((j/fps)//WIN)
+            wins.setdefault(wid,0); wins[wid]=max(wins[wid],_regions(prevL,curL)); prevL=curL
+        cut=int((total_s-EXEMPT)//WIN)
+        vals=[v for k,v in sorted(wins.items()) if k<cut]
+        ok=sum(1 for v in vals if v>=MINR); pct=ok/max(1,len(vals))
+        weak=[f"{k*int(WIN)}s" for k,v in sorted(wins.items()) if k<cut and v<MINR]
+        m["living_screen_pct"]=round(pct,3)
+        checks.append({"name":"LIVING_SCREEN","pass":pct>=PASSPCT,
+            "detail":f"{ok}/{len(vals)} 2s-windows show >={MINR} disjoint motion regions ({pct:.0%}, floor {PASSPCT:.0%})"
+                     +(f" — quiet windows at {weak[:6]}" if weak else "")
+                     +" — layered choreography, not one ticker on a held frame (CHOREOGRAPHY.md)"})
+
     # 9-11) DIMENSIONAL HYGIENE — the render must PROVE it used the 3D engine correctly
     # (render_manifest.json is written by dimensional.write_manifest at render end).
     man_p=os.path.join(base,"render_manifest.json")

@@ -79,6 +79,11 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
   run to the storyboard. The single most damaging shortcut this routine can take is `cp render_lastweek.py
   render_thisweek.py` and re-skinning the hero; that is what shipped a salmon video identical to the
   beluga. It is forbidden (see Phase 4.5 + Phase 5). Import the helpers; build the composition new.
+- docs/craft/CHOREOGRAPHY.md — THE LIVING-SCREEN DOCTRINE (read before storyboarding; added after the
+  2026-07-11 'slideshow' postmortem): four concurrent motion channels per shot (primary/reaction/
+  ambient/atmosphere), arrival physics on everything, the cause-and-effect law, subject performance,
+  world arcs. Beats declare choreo{primary,reaction,ambient} (flow_check enforces) and the
+  LIVING_SCREEN gate (quality_gate 14th check) fails one-ticker-on-a-held-frame renders.
 - docs/craft/CINEMATIC_SCENE_CRAFT.md + docs/craft/VISUAL_FLOW.md, the Director's Brain: scene/transition
   craft (MOVE vs CUT, morphs) + the constant-flow discipline (five-second rule, say-it-show-it, sound
   paired to every visual event; thresholds in config/visual_flow.yaml). Read both before storyboarding.

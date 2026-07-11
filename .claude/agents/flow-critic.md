@@ -33,11 +33,21 @@ has already passed the machine rules; you judge what a script cannot:
 4. ARC. Do the beats build (hook stake in second one, escalation, the reveal/thesis, the honest limit,
    a designed ending) or just list? Does the density serve the arc, not strobe for its own sake?
 
+5. CHOREOGRAPHY (docs/craft/CHOREOGRAPHY.md — the anti-slideshow doctrine). Every beat declares
+   `choreo: {primary, reaction, ambient}`. Red-team each: is the `reaction` a real, attributable
+   consequence of the primary (displacement, impulse, parenting, chain, instrument response) or a
+   relabel of the primary itself? Is the `ambient` a named life bed (which loops, where) or vibes
+   ("stuff moves" fails)? Does any beat ride a HELD composition from the prior beat (the 07-11 lid
+   beat failure)? Does each shot have a world ARC (exit state differs from entry) and does the
+   Dispatch schedule ONE world event near the 2/3 mark? Flag every beat that would render as one
+   ticker over a frozen frame.
+
 ## MODE = POST (on the rendered piece)
 Read: out/dispatch/review/sheet_*.png (stills) AND out/dispatch/review/strip_*.png (8 consecutive
 frames, 1/15s apart, at the key moves — judge MOTION from these: easing, overshoot/settle, blur,
 follow-through; never from lone stills) + a few full-res frames the orchestrator
-names, out/dispatch/quality_report.json (EVENT_CADENCE / BEAT_DENSITY / SCENE_STRUCTURE / SFX_EVENTS),
+names, out/dispatch/quality_report.json (EVENT_CADENCE / BEAT_DENSITY / SCENE_STRUCTURE / SFX_EVENTS) + the LIVING_SCREEN
+result (layered disjoint-motion windows),
 out/dispatch/audio/sfx_events.json, out/dispatch/shots.json. Judge:
 1. Does the picture VISIBLY change across the sampled frames every few seconds, or are there stretches
    that look static / like the same frame relabeled?
@@ -60,3 +70,9 @@ out/dispatch/audio/sfx_events.json, out/dispatch/shots.json. Judge:
 Default to ship:false unless the piece genuinely never lets the eye or the ear rest on the story. Be
 concrete: quote the sentence, name the beat time, say what sound is missing. Paper fixes are nearly
 free; rendered fixes are not, so in PRE mode be demanding.
+
+In POST, ALSO verify the choreography doctrine on the evidence: arrivals show anticipation +
+overshoot + settle (grade from the strips, never lone stills); primaries visibly provoke reactions;
+2-3 ambient loops + an atmosphere bed run under every hold; the world's end state differs from its
+start; panels tick/breathe/react rather than sit. A window where only ONE region of the frame moves
+is a slide — name its timestamp and the missing channels.
