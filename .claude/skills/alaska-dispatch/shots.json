@@ -3,52 +3,52 @@
     {
       "id": 1,
       "start": 0,
-      "end": 228,
+      "end": 329,
       "framing": "wide-establish",
       "transition_in": "",
-      "note": "map"
+      "note": "aerial descent into the smoke valley, blood-orange sun"
     },
     {
       "id": 2,
-      "start": 228,
-      "end": 625,
-      "framing": "push-detail",
-      "transition_in": "map-travel",
-      "note": "clinic"
+      "start": 329,
+      "end": 643,
+      "framing": "two-up",
+      "transition_in": "match-cut",
+      "note": "cross-section: MODEL vs REAL plumes, 5x bracket, inversion lid"
     },
     {
       "id": 3,
-      "start": 625,
-      "end": 1024,
-      "framing": "data-panel",
-      "transition_in": "fui-boot",
-      "note": "panel"
+      "start": 643,
+      "end": 793,
+      "framing": "subject-portrait",
+      "transition_in": "focus-pull",
+      "note": "ground level: cabin + figure in the murk, model plume floats high"
     },
     {
       "id": 4,
-      "start": 1024,
-      "end": 1324,
-      "framing": "two-up",
-      "transition_in": "match-cut",
-      "note": "ledger"
+      "start": 793,
+      "end": 1196,
+      "framing": "data-panel",
+      "transition_in": "fui-boot",
+      "note": "forecast panel: HRRR-SMOKE feed -> CNN, curve bends down, 5x -> 2x"
     },
     {
       "id": 5,
-      "start": 1324,
-      "end": 1533,
-      "framing": "subject-portrait",
-      "transition_in": "graphic-match",
-      "note": "row"
+      "start": 1196,
+      "end": 1452,
+      "framing": "macro-closeup",
+      "transition_in": "hard-cut",
+      "note": "cloud with hidden ember, reticle sweeps empty: DETECTION NONE"
     },
     {
       "id": 6,
-      "start": 1533,
-      "end": 1800,
+      "start": 1452,
+      "end": 1755,
       "framing": "map-territory",
-      "transition_in": "whip-pan",
-      "note": "map+outro"
+      "transition_in": "pull-out",
+      "note": "rise-reveal out of the valley, mint forecast line hugs the smoke, outro"
     }
   ],
   "fps": 30,
-  "total": 1800
+  "total": 1755
 }

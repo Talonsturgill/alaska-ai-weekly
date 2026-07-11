@@ -552,9 +552,28 @@ def render_range(s, e):
         pass
     dim.write_manifest(mpath, NF, extra={"dispatch": "the-lid", "shots": NSHOT})
 
+def emit_shots():
+    """The SCENE_STRUCTURE gate reads shots.json — emit THIS run's boundaries (never leave a
+    prior dispatch's stale manifest in place)."""
+    dc.write_shots([
+        {"id": 1, "start": SHOT_START[0], "end": SHOT_END[0], "framing": "wide-establish",
+         "transition_in": "", "note": "aerial descent into the smoke valley, blood-orange sun"},
+        {"id": 2, "start": SHOT_START[1], "end": SHOT_END[1], "framing": "two-up",
+         "transition_in": "match-cut", "note": "cross-section: MODEL vs REAL plumes, 5x bracket, inversion lid"},
+        {"id": 3, "start": SHOT_START[2], "end": SHOT_END[2], "framing": "subject-portrait",
+         "transition_in": "focus-pull", "note": "ground level: cabin + figure in the murk, model plume floats high"},
+        {"id": 4, "start": SHOT_START[3], "end": SHOT_END[3], "framing": "data-panel",
+         "transition_in": "fui-boot", "note": "forecast panel: HRRR-SMOKE feed -> CNN, curve bends down, 5x -> 2x"},
+        {"id": 5, "start": SHOT_START[4], "end": SHOT_END[4], "framing": "macro-closeup",
+         "transition_in": "hard-cut", "note": "cloud with hidden ember, reticle sweeps empty: DETECTION NONE"},
+        {"id": 6, "start": SHOT_START[5], "end": SHOT_END[5], "framing": "map-territory",
+         "transition_in": "pull-out", "note": "rise-reveal out of the valley, mint forecast line hugs the smoke, outro"},
+    ], NF)
+
 def main():
     s = int(sys.argv[1]) if len(sys.argv) > 1 else 0
     e = int(sys.argv[2]) if len(sys.argv) > 2 else NF
+    emit_shots()
     render_range(s, e)
     print(f"rendered [{s},{e}) scale={SCALE} arch={dim.ARCH}")
 
