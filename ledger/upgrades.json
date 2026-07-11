@@ -139,7 +139,7 @@
    ],
    "verification": "Reconstruction over an fbm-mottled ochre band (#B0803A) with the exact failing text/colours: RAW cx.fillText label reads ~1.9:1 (reproduces the shipped-then-caught defect) and RAW ENSTAR/HILCORP merge into 'ENSTAHILCORP' at ~2.8:1; the SAME labels via AK.canvasLabel read ~8.5:1 (bg = plate rgb(26,25,23), independent of the ochre) and ~12.9:1, and AK.rectsOverlap keeps them apart -- confirmed visually and by a pixel sampler using qa.py's contrast method. Regression: out/2026-07-11/slides render OK + qa PASS 0/0 and examples/demo-deck render OK + qa WARN (the single known 2026-07-10 slide-03 busy-art warn), both unchanged (new asset is unreferenced). qa.py on the verification slide: PASS 0/0 (no false positives). No gate/threshold weakened; no new runtime dependency (vanilla offline JS); shipped slides not modified.",
    "rollback": "revert the upgrade(2026-07-11) commit",
-   "commit": "PLACEHOLDER upgrade(2026-07-11)"
+   "commit": "upgrade(2026-07-11) commit 814b8c4 on PR #22 (revert this single prefixed commit to roll back)"
   }
  ],
  "scan_log": [
