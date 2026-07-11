@@ -1,151 +1,151 @@
 {
-  "_spec": {
-    "purpose": "Automation-change trail. Phase 12 (AUTOMATION RETRO + UPGRADE) appends one entry per machine upgrade made after a run, both reactive fixes and frontier improvements: engine scripts, helpers, prompts, agent definitions. gmail_draft.py renders this run's entries into every dated Gmail draft so the maintainer can monitor the machine's evolution daily and pinpoint which week introduced a regression. Upgrades are committed separately (message prefix 'upgrade(<date>):') so a revert of that one commit rolls the change back cleanly.",
-    "rules": [
-      "Never weaken a gate, threshold, or hard-fail rule; upgrades tighten, repair, or automate.",
-      "Every engine/script change is verified before commit (this run's slides + examples/demo-deck through render+qa, plus a defect-reconstruction test for new gates).",
-      "0-3 upgrades per run; zero is acceptable and is recorded as nothing (the email section then reads 'no changes').",
-      "Frontier improvements never displace a needed fix: the 0-3 budget fills reactive-first."
-    ],
-    "entry_schema": {
-      "run_date": "YYYY-MM-DD",
-      "kind": "fix (from this run's deviations) | improvement (from the frontier scan)",
-      "area": "engine | scripts | assets | prompts | agents | knowledge",
-      "change": "one sentence, what the machine now does differently",
-      "trigger": "the run deviation that motivated it, or the source URL for a frontier improvement",
-      "files": [
-        "paths touched"
-      ],
-      "verification": "what was tested and the result",
-      "rollback": "how to undo (usually: revert the named commit)",
-      "commit": "sha or PR reference"
-    },
-    "scan_log_schema": {
-      "run_date": "YYYY-MM-DD",
-      "focus": "which rotation area was scanned (must differ from the last 3 runs)",
-      "found": "one-line summary of the most relevant findings",
-      "outcome": "applied (entry ids) | parked (FIELD_NOTES) | nothing usable"
-    }
-  },
-  "entries": [
-    {
-      "run_date": "2026-07-08",
-      "kind": "fix",
-      "area": "engine",
-      "change": "qa.py now detects text-on-text overprint: per-line box intersection across distinct elements, FAIL for primary text pairs, WARN when decorative or data-overlap-ok is involved; render.py extracts per-line rects, DOM ancestry, and the new data-overlap-ok intent attribute, and data-decorative/data-overlap-ok now inherit from ancestor containers.",
-      "trigger": "Run 1 shipped-then-caught hard fail: slide-3 body copy rendered over the 'URBAN ALASKA GRID PEAK' bar label; machine QA passed it because each element sat in its own safe zone, and only the scorer's transcription caught it (the pixel-critic subagents were session-limit-blocked).",
-      "files": [
-        ".claude/skills/carousel-engine/render.py",
-        ".claude/skills/carousel-engine/qa.py"
-      ],
-      "verification": "Reconstructed pre-fix slide-3 FAILS with 'text collision (100% overprint)'; the 9 shipped slides pass with 0 fails (cover chip demoted to WARN via data-overlap-ok); examples/demo-deck passes clean.",
-      "rollback": "revert the upgrade(2026-07-08) commit",
-      "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
-    },
-    {
-      "run_date": "2026-07-08",
-      "kind": "fix",
-      "area": "engine",
-      "change": "bootstrap.sh probes that pypdf actually IMPORTS (in a subprocess) rather than merely exists, and repairs the Debian cryptography-41 pyo3 panic by upgrading cryptography; dependency probe also catches non-ImportError import crashes.",
-      "trigger": "Run 1: assemble.py's vector-PDF path crashed mid-run on 'pyo3_runtime.PanicException' from the system cryptography package; recovered only by a manual pip upgrade.",
-      "files": [
-        ".claude/skills/carousel-engine/bootstrap.sh"
-      ],
-      "verification": "bootstrap.sh runs clean end-to-end on this container and reports 'pypdf import: ok'; assemble.py produced the run's vector PDF after the same fix applied manually.",
-      "rollback": "revert the upgrade(2026-07-08) commit",
-      "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
-    },
-    {
-      "run_date": "2026-07-08",
-      "kind": "fix",
-      "area": "assets",
-      "change": "New committed helper assets/js/akgeo.js: AKGeo.alaskaProjection (canonical fit) and AKGeo.zoomTo (baseline full-state fit, then scale-and-retranslate regional zoom) so zoomed maps stop re-discovering the fitExtent-to-small-bbox trap; documented in SKILL.md with the stroke-only-at-zoom rule.",
-      "trigger": "Run 1: slides 2 and 7 both rendered a giant fill disc + mis-scaled map from fitExtent on a small lon/lat bbox and had to be rebuilt mid-run with the manual recipe.",
-      "files": [
-        "assets/js/akgeo.js",
-        ".claude/skills/carousel-engine/SKILL.md"
-      ],
-      "verification": "Recipe is the exact code that fixed slides 2 and 7 in the shipped deck (both pass QA and were visually verified at full size).",
-      "rollback": "revert the upgrade(2026-07-08) commit",
-      "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
-    },
-    {
-      "run_date": "2026-07-08",
-      "kind": "improvement",
-      "area": "prompts+scripts",
-      "change": "New Phase 12 AUTOMATION RETRO + UPGRADE in the master routine (analyze run vs spec, implement 0-3 verified bounded upgrades, log here, commit separately as 'upgrade(<date>):'), and gmail_draft.py now renders an 'Automation changes this run' section from this ledger into every dated draft.",
-      "trigger": "Maintainer request after run 1: make the automation self-improving with a daily-monitorable, dated, rollback-able trail of what changed.",
-      "files": [
-        "prompts/routine_instructions.md",
-        "scripts/gmail_draft.py",
-        "ledger/upgrades.json",
-        "CLAUDE.md"
-      ],
-      "verification": "gmail_draft.py re-run against the shipped run 1 artifacts renders the new section with these entries; payload builds clean.",
-      "rollback": "revert the upgrade(2026-07-08) commit",
-      "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
-    },
-    {
-      "run_date": "2026-07-09",
-      "kind": "fix",
-      "area": "assets",
-      "change": "New committed helper assets/js/aktype.js: AK.fitText(el, {min, max, maxLines}) binary-searches a display headline's font-size until it renders in maxLines line boxes with no overflow (clamps to min + sets data-fit-overflow=1 if the box is genuinely too small), so a large headline can never silently soft-wrap an extra line into the block below it; wired into DESIGN_DOCTRINE section 2 and SKILL.md as the one fit-to-box implementation for future decks.",
-      "trigger": "Run 2026-07-09 recurring #1 defect: slides 1, 4, 7, 8 each set a large Archivo headline in a container narrower than its longest line; each soft-wrapped an extra line and machine_qa FAILED it as a text-overprint, all four repaired by hand. The doctrine prescribed a binary-search fit-to-box recipe but there was no shared helper, so every deck re-implemented or forgot it.",
-      "files": [
-        "assets/js/aktype.js",
-        "knowledge/DESIGN_DOCTRINE.md",
-        ".claude/skills/carousel-engine/SKILL.md"
-      ],
-      "verification": "Defect reconstruction (80px headline in a 560px box, no helper) FAILS qa.py with 'text collision (53% overprint)' at 5 line boxes; identical markup WITH AK.fitText({min:40,max:80,maxLines:3}) converges to 58.5px / 3 line boxes and PASSES qa.py. This run's slides (out/2026-07-09/slides) render OK, qa WARN, 0 fails (unchanged from baseline); examples/demo-deck renders OK, qa PASS (unchanged). No gate weakened; no new runtime dependency (vanilla offline JS); shipped slides not modified.",
-      "rollback": "revert the upgrade(2026-07-09) commit",
-      "commit": "upgrade(2026-07-09) commit on branch tsturg/festive-darwin-c9jczw (revert this single prefixed commit to roll back)"
-    },
-    {
-      "run_date": "2026-07-10",
-      "kind": "fix",
-      "area": "engine",
-      "change": "qa.py now emits a WARN-level 'busy art under text' tripwire: for each PRIMARY text line box (font_px>=30) it samples the rendered PNG, masks the glyph ink (plus a 2px dilation), and warns when the remaining background carries high-contrast structured edges (bg edge density >= 0.03) -- i.e. a canvas/bitmap arc or texture crossing text that the DOM-only collision gate cannot see. WARN only; it points the pixel critics at a box and never FAILs.",
-      "trigger": "Run 2026-07-10 clearest gate blind spot: machine_qa PASSED all 9 slides (0/0) yet a canvas flightpath arc crossed two S3 body lines and a canvas orbit arc crossed the S4 headline; only the pixel critics caught them, because text_collisions() compares DOM/SVG text against DOM/SVG text and canvas ink is a bitmap invisible to render.py's DOM walk.",
-      "files": [
-        ".claude/skills/carousel-engine/qa.py"
-      ],
-      "verification": "Reconstruction (body copy over a bright canvas arc + dashed grid) WARNs at bg edge density 0.04 while its clean control (same arc routed above the text) stays silent -> the tripwire discriminates the defect. This run's 9 shipped slides stay PASS 0 fails 0 warns (no false positives on the real, well-composed deck). examples/demo-deck still exits 0 (PASS -> WARN via one sensible warn on slide-03's display line over the generative structure field; no new FAILs). Clean-slide noise floor measured at <=0.010 vs threshold 0.03. No gate weakened (WARN only), no new runtime dependency (numpy/PIL already required by qa.py).",
-      "rollback": "revert the upgrade(2026-07-10) commit",
-      "commit": ""
-    },
-    {
-      "run_date": "2026-07-10",
-      "kind": "fix",
-      "area": "scripts",
-      "change": "New scripts/style_lint.py: a pre-flight CLI that applies site_build.py's exact prose-colon rule (byte-for-byte replica: strip script/style, tags->newlines, drop URLs and clock times, then any remaining ':' on a line is a violation) to arbitrary text via stdin, --file, or --file X.json --json-field FIELD (dot-path; '.' lints every string). Exits 1 with the offending line. Phase 3.5 and Phase 6 of the routine now lint the docket note and copy.json emitted fields with it BEFORE ship.",
-      "trigger": "Run 2026-07-10 repeat friction: site_build's prose-colon ship gate fired TWICE in Phase 11 (a docket history note, then copy.json first_comment 'Sources for today's deck:'), forcing manual rephrase at ship; run 2026-07-09 hit the same class twice. FIELD_NOTES 2026-07-09 parked a pre-flight colon lint. The ship gate is correct and stays unchanged; this only moves the catch earlier.",
-      "files": [
-        "scripts/style_lint.py",
-        "prompts/routine_instructions.md"
-      ],
-      "verification": "style_lint FAILs (exit 1) on both of this run's original ship-time failing strings (the first_comment colon line and a '- Update:' docket-note line); PASSes the fixed copy.json first_comment field; exempts clock times (4:30) and URLs exactly as site_build does; a direct cross-check confirms colon_violations() matches site_build.prose_colon_gate on clock/URL/ratio cases. No gate touched or weakened; no new dependency.",
-      "rollback": "revert the upgrade(2026-07-10) commit",
-      "commit": ""
-    }
+ "_spec": {
+  "purpose": "Automation-change trail. Phase 12 (AUTOMATION RETRO + UPGRADE) appends one entry per machine upgrade made after a run, both reactive fixes and frontier improvements: engine scripts, helpers, prompts, agent definitions. gmail_draft.py renders this run's entries into every dated Gmail draft so the maintainer can monitor the machine's evolution daily and pinpoint which week introduced a regression. Upgrades are committed separately (message prefix 'upgrade(<date>):') so a revert of that one commit rolls the change back cleanly.",
+  "rules": [
+   "Never weaken a gate, threshold, or hard-fail rule; upgrades tighten, repair, or automate.",
+   "Every engine/script change is verified before commit (this run's slides + examples/demo-deck through render+qa, plus a defect-reconstruction test for new gates).",
+   "0-3 upgrades per run; zero is acceptable and is recorded as nothing (the email section then reads 'no changes').",
+   "Frontier improvements never displace a needed fix: the 0-3 budget fills reactive-first."
   ],
-  "scan_log": [
-    {
-      "run_date": "2026-07-08",
-      "focus": "self-improving-pipeline patterns (bootstrap week: the loop itself was built)",
-      "found": "Maintainer-directed: dated-email upgrade trail + frontier scan design adopted",
-      "outcome": "applied (Phase 12 + upgrade-engineer agent + this ledger)"
-    },
-    {
-      "run_date": "2026-07-09",
-      "focus": "typography craft / headless text-fitting (fit-to-box, text-wrap balance/pretty, variable-font width-axis fitting)",
-      "found": "Binary-search fit-to-box is the settled technique (~8 probes, sub-ms); CSS text-wrap: balance/pretty explicitly does NOT guarantee line count or prevent overflow (Chrome docs), so the wrap-collision fix must be JS. Variable-font wdth-axis fitting (fit-to-width.js) is a promising portable refinement.",
-      "outcome": "applied (aktype.js AK.fitText fix) + parked (wdth-axis fitting; colon pre-flight lint) FIELD_NOTES 2026-07-09"
-    },
-    {
-      "run_date": "2026-07-10",
-      "focus": "editorial dataviz / cartography technique (best news-graphics desks; rotated off self-improving-pipeline 07-08 and typography 07-09)",
-      "found": "Bloomberg concentric-radial-rings seasonal small multiple (calendar wrapped to a ring, each ring a variable; portable to offline seeded SVG/Canvas). Data-journalist map design space (arxiv 2508.10903, 462 maps / 5 outlets / 8 dimensions) as a treatment-director reference. Cartographic-narrative roundups reconfirmed the static subset we already practice; nothing new to change in the machine.",
-      "outcome": "parked (FIELD_NOTES 2026-07-10: radial-rings technique candidate + map design-space reference); no frontier code applied (the two reactive fixes filled the budget)"
-    }
-  ]
+  "entry_schema": {
+   "run_date": "YYYY-MM-DD",
+   "kind": "fix (from this run's deviations) | improvement (from the frontier scan)",
+   "area": "engine | scripts | assets | prompts | agents | knowledge",
+   "change": "one sentence, what the machine now does differently",
+   "trigger": "the run deviation that motivated it, or the source URL for a frontier improvement",
+   "files": [
+    "paths touched"
+   ],
+   "verification": "what was tested and the result",
+   "rollback": "how to undo (usually: revert the named commit)",
+   "commit": "sha or PR reference"
+  },
+  "scan_log_schema": {
+   "run_date": "YYYY-MM-DD",
+   "focus": "which rotation area was scanned (must differ from the last 3 runs)",
+   "found": "one-line summary of the most relevant findings",
+   "outcome": "applied (entry ids) | parked (FIELD_NOTES) | nothing usable"
+  }
+ },
+ "entries": [
+  {
+   "run_date": "2026-07-08",
+   "kind": "fix",
+   "area": "engine",
+   "change": "qa.py now detects text-on-text overprint: per-line box intersection across distinct elements, FAIL for primary text pairs, WARN when decorative or data-overlap-ok is involved; render.py extracts per-line rects, DOM ancestry, and the new data-overlap-ok intent attribute, and data-decorative/data-overlap-ok now inherit from ancestor containers.",
+   "trigger": "Run 1 shipped-then-caught hard fail: slide-3 body copy rendered over the 'URBAN ALASKA GRID PEAK' bar label; machine QA passed it because each element sat in its own safe zone, and only the scorer's transcription caught it (the pixel-critic subagents were session-limit-blocked).",
+   "files": [
+    ".claude/skills/carousel-engine/render.py",
+    ".claude/skills/carousel-engine/qa.py"
+   ],
+   "verification": "Reconstructed pre-fix slide-3 FAILS with 'text collision (100% overprint)'; the 9 shipped slides pass with 0 fails (cover chip demoted to WARN via data-overlap-ok); examples/demo-deck passes clean.",
+   "rollback": "revert the upgrade(2026-07-08) commit",
+   "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+  },
+  {
+   "run_date": "2026-07-08",
+   "kind": "fix",
+   "area": "engine",
+   "change": "bootstrap.sh probes that pypdf actually IMPORTS (in a subprocess) rather than merely exists, and repairs the Debian cryptography-41 pyo3 panic by upgrading cryptography; dependency probe also catches non-ImportError import crashes.",
+   "trigger": "Run 1: assemble.py's vector-PDF path crashed mid-run on 'pyo3_runtime.PanicException' from the system cryptography package; recovered only by a manual pip upgrade.",
+   "files": [
+    ".claude/skills/carousel-engine/bootstrap.sh"
+   ],
+   "verification": "bootstrap.sh runs clean end-to-end on this container and reports 'pypdf import: ok'; assemble.py produced the run's vector PDF after the same fix applied manually.",
+   "rollback": "revert the upgrade(2026-07-08) commit",
+   "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+  },
+  {
+   "run_date": "2026-07-08",
+   "kind": "fix",
+   "area": "assets",
+   "change": "New committed helper assets/js/akgeo.js: AKGeo.alaskaProjection (canonical fit) and AKGeo.zoomTo (baseline full-state fit, then scale-and-retranslate regional zoom) so zoomed maps stop re-discovering the fitExtent-to-small-bbox trap; documented in SKILL.md with the stroke-only-at-zoom rule.",
+   "trigger": "Run 1: slides 2 and 7 both rendered a giant fill disc + mis-scaled map from fitExtent on a small lon/lat bbox and had to be rebuilt mid-run with the manual recipe.",
+   "files": [
+    "assets/js/akgeo.js",
+    ".claude/skills/carousel-engine/SKILL.md"
+   ],
+   "verification": "Recipe is the exact code that fixed slides 2 and 7 in the shipped deck (both pass QA and were visually verified at full size).",
+   "rollback": "revert the upgrade(2026-07-08) commit",
+   "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+  },
+  {
+   "run_date": "2026-07-08",
+   "kind": "improvement",
+   "area": "prompts+scripts",
+   "change": "New Phase 12 AUTOMATION RETRO + UPGRADE in the master routine (analyze run vs spec, implement 0-3 verified bounded upgrades, log here, commit separately as 'upgrade(<date>):'), and gmail_draft.py now renders an 'Automation changes this run' section from this ledger into every dated draft.",
+   "trigger": "Maintainer request after run 1: make the automation self-improving with a daily-monitorable, dated, rollback-able trail of what changed.",
+   "files": [
+    "prompts/routine_instructions.md",
+    "scripts/gmail_draft.py",
+    "ledger/upgrades.json",
+    "CLAUDE.md"
+   ],
+   "verification": "gmail_draft.py re-run against the shipped run 1 artifacts renders the new section with these entries; payload builds clean.",
+   "rollback": "revert the upgrade(2026-07-08) commit",
+   "commit": "upgrade(2026-07-08) commit on PR #3 (tsturg/modest-mccarthy-g7otcl)"
+  },
+  {
+   "run_date": "2026-07-09",
+   "kind": "fix",
+   "area": "assets",
+   "change": "New committed helper assets/js/aktype.js: AK.fitText(el, {min, max, maxLines}) binary-searches a display headline's font-size until it renders in maxLines line boxes with no overflow (clamps to min + sets data-fit-overflow=1 if the box is genuinely too small), so a large headline can never silently soft-wrap an extra line into the block below it; wired into DESIGN_DOCTRINE section 2 and SKILL.md as the one fit-to-box implementation for future decks.",
+   "trigger": "Run 2026-07-09 recurring #1 defect: slides 1, 4, 7, 8 each set a large Archivo headline in a container narrower than its longest line; each soft-wrapped an extra line and machine_qa FAILED it as a text-overprint, all four repaired by hand. The doctrine prescribed a binary-search fit-to-box recipe but there was no shared helper, so every deck re-implemented or forgot it.",
+   "files": [
+    "assets/js/aktype.js",
+    "knowledge/DESIGN_DOCTRINE.md",
+    ".claude/skills/carousel-engine/SKILL.md"
+   ],
+   "verification": "Defect reconstruction (80px headline in a 560px box, no helper) FAILS qa.py with 'text collision (53% overprint)' at 5 line boxes; identical markup WITH AK.fitText({min:40,max:80,maxLines:3}) converges to 58.5px / 3 line boxes and PASSES qa.py. This run's slides (out/2026-07-09/slides) render OK, qa WARN, 0 fails (unchanged from baseline); examples/demo-deck renders OK, qa PASS (unchanged). No gate weakened; no new runtime dependency (vanilla offline JS); shipped slides not modified.",
+   "rollback": "revert the upgrade(2026-07-09) commit",
+   "commit": "upgrade(2026-07-09) commit on branch tsturg/festive-darwin-c9jczw (revert this single prefixed commit to roll back)"
+  },
+  {
+   "run_date": "2026-07-10",
+   "kind": "fix",
+   "area": "engine",
+   "change": "qa.py now emits a WARN-level 'busy art under text' tripwire: for each PRIMARY text line box (font_px>=30) it samples the rendered PNG, masks the glyph ink (plus a 2px dilation), and warns when the remaining background carries high-contrast structured edges (bg edge density >= 0.03) -- i.e. a canvas/bitmap arc or texture crossing text that the DOM-only collision gate cannot see. WARN only; it points the pixel critics at a box and never FAILs.",
+   "trigger": "Run 2026-07-10 clearest gate blind spot: machine_qa PASSED all 9 slides (0/0) yet a canvas flightpath arc crossed two S3 body lines and a canvas orbit arc crossed the S4 headline; only the pixel critics caught them, because text_collisions() compares DOM/SVG text against DOM/SVG text and canvas ink is a bitmap invisible to render.py's DOM walk.",
+   "files": [
+    ".claude/skills/carousel-engine/qa.py"
+   ],
+   "verification": "Reconstruction (body copy over a bright canvas arc + dashed grid) WARNs at bg edge density 0.04 while its clean control (same arc routed above the text) stays silent -> the tripwire discriminates the defect. This run's 9 shipped slides stay PASS 0 fails 0 warns (no false positives on the real, well-composed deck). examples/demo-deck still exits 0 (PASS -> WARN via one sensible warn on slide-03's display line over the generative structure field; no new FAILs). Clean-slide noise floor measured at <=0.010 vs threshold 0.03. No gate weakened (WARN only), no new runtime dependency (numpy/PIL already required by qa.py).",
+   "rollback": "revert the upgrade(2026-07-10) commit",
+   "commit": "64d950baf6e8c0eeff1701fd61ede96f941b95ca"
+  },
+  {
+   "run_date": "2026-07-10",
+   "kind": "fix",
+   "area": "scripts",
+   "change": "New scripts/style_lint.py: a pre-flight CLI that applies site_build.py's exact prose-colon rule (byte-for-byte replica: strip script/style, tags->newlines, drop URLs and clock times, then any remaining ':' on a line is a violation) to arbitrary text via stdin, --file, or --file X.json --json-field FIELD (dot-path; '.' lints every string). Exits 1 with the offending line. Phase 3.5 and Phase 6 of the routine now lint the docket note and copy.json emitted fields with it BEFORE ship.",
+   "trigger": "Run 2026-07-10 repeat friction: site_build's prose-colon ship gate fired TWICE in Phase 11 (a docket history note, then copy.json first_comment 'Sources for today's deck:'), forcing manual rephrase at ship; run 2026-07-09 hit the same class twice. FIELD_NOTES 2026-07-09 parked a pre-flight colon lint. The ship gate is correct and stays unchanged; this only moves the catch earlier.",
+   "files": [
+    "scripts/style_lint.py",
+    "prompts/routine_instructions.md"
+   ],
+   "verification": "style_lint FAILs (exit 1) on both of this run's original ship-time failing strings (the first_comment colon line and a '- Update:' docket-note line); PASSes the fixed copy.json first_comment field; exempts clock times (4:30) and URLs exactly as site_build does; a direct cross-check confirms colon_violations() matches site_build.prose_colon_gate on clock/URL/ratio cases. No gate touched or weakened; no new dependency.",
+   "rollback": "revert the upgrade(2026-07-10) commit",
+   "commit": "64d950baf6e8c0eeff1701fd61ede96f941b95ca"
+  }
+ ],
+ "scan_log": [
+  {
+   "run_date": "2026-07-08",
+   "focus": "self-improving-pipeline patterns (bootstrap week: the loop itself was built)",
+   "found": "Maintainer-directed: dated-email upgrade trail + frontier scan design adopted",
+   "outcome": "applied (Phase 12 + upgrade-engineer agent + this ledger)"
+  },
+  {
+   "run_date": "2026-07-09",
+   "focus": "typography craft / headless text-fitting (fit-to-box, text-wrap balance/pretty, variable-font width-axis fitting)",
+   "found": "Binary-search fit-to-box is the settled technique (~8 probes, sub-ms); CSS text-wrap: balance/pretty explicitly does NOT guarantee line count or prevent overflow (Chrome docs), so the wrap-collision fix must be JS. Variable-font wdth-axis fitting (fit-to-width.js) is a promising portable refinement.",
+   "outcome": "applied (aktype.js AK.fitText fix) + parked (wdth-axis fitting; colon pre-flight lint) FIELD_NOTES 2026-07-09"
+  },
+  {
+   "run_date": "2026-07-10",
+   "focus": "editorial dataviz / cartography technique (best news-graphics desks; rotated off self-improving-pipeline 07-08 and typography 07-09)",
+   "found": "Bloomberg concentric-radial-rings seasonal small multiple (calendar wrapped to a ring, each ring a variable; portable to offline seeded SVG/Canvas). Data-journalist map design space (arxiv 2508.10903, 462 maps / 5 outlets / 8 dimensions) as a treatment-director reference. Cartographic-narrative roundups reconfirmed the static subset we already practice; nothing new to change in the machine.",
+   "outcome": "parked (FIELD_NOTES 2026-07-10: radial-rings technique candidate + map design-space reference); no frontier code applied (the two reactive fixes filled the budget)"
+  }
+ ]
 }
