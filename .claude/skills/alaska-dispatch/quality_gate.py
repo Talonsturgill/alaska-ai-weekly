@@ -246,6 +246,32 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
             "detail":(f"{len(evs)} sound events"+(f", {lift_ok} verified audible" if lift_ok is not None else "")+
                       (" — "+"; ".join(bad) if bad else " — every shot sonified, events audible in the master")+" (VISUAL_FLOW.md §5)")})
 
+    # 8a) SILENCE_DIP — the pre-payoff silence was actually MIXED, not just planned (VOICE_AND_SCORE.md).
+    try:
+        _sbp=os.path.join(base,"..","..","..","out","dispatch","storyboard.json")
+        _aa=(json.load(open(_sbp)).get("audio_arc") or {}) if os.path.exists(_sbp) else {}
+    except Exception:
+        _aa={}
+    if _aa.get("silence_at") is not None:
+        try:
+            from scipy.io import wavfile as _wf
+            _t0=float(_aa["silence_at"]); _sr,_wav=_wf.read(os.path.join(base,"audio","master60.wav"))
+            _wav=_wav.astype(np.float32); _wav=_wav.mean(1) if _wav.ndim>1 else _wav
+            def _rms(a,b):
+                seg=_wav[max(0,int(a*_sr)):int(b*_sr)]
+                return 20*np.log10(float(np.sqrt((seg*seg).mean())+1e-9))
+            din=_rms(_t0-0.35,_t0+0.35)
+            dnb=max(_rms(_t0-3.0,_t0-0.6),_rms(_t0+0.6,_t0+3.0))
+            checks.append({"name":"SILENCE_DIP","pass":(dnb-din)>=6.0,
+                "detail":f"bed at silence_at={_t0}s sits {dnb-din:.1f} dB under its neighborhood (need >=6) "
+                         f"— the breath before the payoff is real, not planned"})
+        except Exception as _e:
+            checks.append({"name":"SILENCE_DIP","pass":False,"detail":f"could not verify declared silence_at ({_e})"})
+    else:
+        checks.append({"name":"SILENCE_DIP","pass":False,
+            "detail":"storyboard declares no audio_arc.silence_at — the pre-payoff silence is a required "
+                     "story beat (VOICE_AND_SCORE.md; storyboard_check enforces the block)"})
+
     # 8b) LIVING_SCREEN — layered, disjoint motion (the anti-slideshow gate; docs/craft/CHOREOGRAPHY.md).
     # Camera-compensated luma deltas on a coarse grid; a 2s window is ALIVE when >=min_regions spatially
     # disjoint clusters of cells are active. One ticker over a held frame = 1 region = a slide.
@@ -289,6 +315,18 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
             "detail":f"{ok}/{len(vals)} 2s-windows show >={MINR} disjoint motion regions ({pct:.0%}, floor {PASSPCT:.0%})"
                      +(f" — quiet windows at {weak[:6]}" if weak else "")
                      +" — layered choreography, not one ticker on a held frame (CHOREOGRAPHY.md)"})
+        # HOOK_WINDOW — the open may never be the quietest part of the film (HOOK_CRAFT.md)
+        hookv=[wins.get(0,0),wins.get(1,0)]
+        checks.append({"name":"HOOK_WINDOW","pass":all(v>=MINR for v in hookv),
+            "detail":f"first two 2s windows carry {hookv} disjoint motion regions (each needs >={MINR}) "
+                     f"— a muted scroll decides at ~1.3s; the hook arrives loaded or not at all"})
+        # FIRST_FRAME — frame 0 is a designed poster with the claim burned in (HOOK_CRAFT.md)
+        g0=lum(np.asarray(Image.open(fs[0]).convert("RGB"),np.float32))
+        f0_edge=float(np.abs(laplace(g0)).mean()); f0_std=float(g0.std())
+        m["first_frame_edge"]=round(f0_edge,2); m["first_frame_std"]=round(f0_std,1)
+        checks.append({"name":"FIRST_FRAME","pass":(f0_edge>=4.0 and f0_std>=30.0),
+            "detail":f"frame 0 edge energy {f0_edge:.2f} (floor 4.0 — poster-grade ink/headline present), "
+                     f"luma std {f0_std:.1f} (floor 30 — real contrast, no fade-from-black)"})
 
     # 9-11) DIMENSIONAL HYGIENE — the render must PROVE it used the 3D engine correctly
     # (render_manifest.json is written by dimensional.write_manifest at render end).

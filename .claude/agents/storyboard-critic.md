@@ -101,3 +101,11 @@ ambient bed), whose shots have no world arc (exit state = entry state), whose he
 business (an idle loop is not a performance), or which schedules no world event near the 2/3 mark.
 The slideshow tell at board stage: a beat whose only motion is one element entering over a held
 composition.
+
+HOOK + HERO + AUDIO-ARC GATE (docs/craft/HOOK_CRAFT.md, HERO_CRAFT.md, VOICE_AND_SCORE.md):
+red-team the hook block — does frame1 + headline + motion actually deliver the declared cold-open
+pattern at a credible documentary register (not clickbait), and does the loopback genuinely rhyme
+with the open? Red-team each shot's hero block — are the declared parts/zones real designed tiers
+(70/20/10) or a relabel of a primitive? Red-team the audio_arc — is the silence placed immediately
+before the payoff word, and is the button a callback/question/tricolon rather than a flat
+declarative? Vague declarations pass the schema but fail YOU.
