@@ -1,120 +1,80 @@
 {
   "events": [
     {
-      "t": 0.38,
-      "kind": "pop",
-      "label": "plant the thesis frame one: a person mar (snapped 0.5->0.38)"
-    },
-    {
-      "t": 3.0,
-      "kind": "hit",
-      "label": "the long human tradition"
-    },
-    {
-      "t": 5.5,
+      "t": 4.0,
       "kind": "whoosh",
-      "label": "the tower, the human vantage"
+      "label": "descent whoosh into the valley"
     },
     {
-      "t": 7.891,
+      "t": 7.5,
       "kind": "tick",
-      "label": "the human labor itself (snapped 8.0->7.891)"
+      "label": "forecast grid UI tick"
     },
     {
-      "t": 10.9,
-      "kind": "tick",
-      "label": "the relentless cadence"
-    },
-    {
-      "t": 13.0,
-      "kind": "pop",
-      "label": "one see-able cause and effect: the count"
-    },
-    {
-      "t": 15.5,
+      "t": 11.0,
       "kind": "whoosh",
-      "label": "the machine arrives"
+      "label": "swell on the cut to the cross-section"
     },
     {
-      "t": 18.314,
-      "kind": "riser",
-      "label": "a new vantage on the same water (snapped 18.0->18.314)"
-    },
-    {
-      "t": 20.33,
-      "kind": "hit",
-      "label": "the honest limit stated up front (snapped 20.5->20.33)"
-    },
-    {
-      "t": 23.4,
-      "kind": "pop",
-      "label": "the human-in-the-loop (a bloom, not a ta"
-    },
-    {
-      "t": 25.5,
-      "kind": "pop",
-      "label": "the teaching labor, drawn"
-    },
-    {
-      "t": 28.0,
-      "kind": "riser",
-      "label": "the scale of the human work"
-    },
-    {
-      "t": 30.5,
-      "kind": "lock",
-      "label": "the model forms from the marks"
-    },
-    {
-      "t": 32.727,
-      "kind": "pulse",
-      "label": "the payoff, the machine sees on its own (snapped 33.0->32.72"
-    },
-    {
-      "t": 35.451,
-      "kind": "hit",
-      "label": "the caveat, shown as a held discrepancy  (snapped 35.5->35.4"
-    },
-    {
-      "t": 38.0,
+      "t": 14.6,
       "kind": "boom",
-      "label": "the real failure mode, drawn honestly"
+      "label": "low boom on the 5x undercount"
     },
     {
-      "t": 40.225,
-      "kind": "whoosh",
-      "label": "humans still hold the count (snapped 40.5->40.225)"
+      "t": 18.0,
+      "kind": "hit",
+      "label": "inversion lid seal thud"
     },
     {
-      "t": 43.5,
-      "kind": "pulse",
-      "label": "side by side, not replaced"
-    },
-    {
-      "t": 46.0,
+      "t": 21.6,
       "kind": "pop",
-      "label": "the human's role re-affirmed at the end"
+      "label": "a cough in the murk"
     },
     {
-      "t": 48.0,
+      "t": 25.2,
+      "kind": "riser",
+      "label": "airy too-clean hollow rise as the false plume lifts"
+    },
+    {
+      "t": 28.6,
+      "kind": "pop",
+      "label": "fui boot chirp, the corrector grabs"
+    },
+    {
+      "t": 32.2,
+      "kind": "riser",
+      "label": "descending pull-down glide falling with the curve"
+    },
+    {
+      "t": 36.2,
       "kind": "lock",
-      "label": "the payoff lands home"
+      "label": "ratchet and settling lock on 5x to 2x"
     },
     {
-      "t": 50.2,
-      "kind": "whoosh",
-      "label": "outro wordmark rises"
+      "t": 40.2,
+      "kind": "hit",
+      "label": "soft negative tone, correction not cure"
     },
     {
-      "t": 51.8,
-      "kind": "lock",
-      "label": "tagline settles"
+      "t": 44.2,
+      "kind": "tick",
+      "label": "HUD refocus tick, reality unchanged"
     },
     {
-      "t": 54.2,
+      "t": 48.2,
       "kind": "pulse",
-      "label": "final map pulse"
+      "label": "searching ping returns empty"
+    },
+    {
+      "t": 52.2,
+      "kind": "riser",
+      "label": "airy lift and confirming chime"
+    },
+    {
+      "t": 55.6,
+      "kind": "hit",
+      "label": "soft brand sting"
     }
   ],
-  "n": 23
+  "n": 15
 }

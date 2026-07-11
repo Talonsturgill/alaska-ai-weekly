@@ -3,68 +3,52 @@
     {
       "id": 1,
       "start": 0,
-      "end": 140,
+      "end": 329,
       "framing": "wide-establish",
       "transition_in": "",
-      "thread": ""
+      "note": "aerial descent into the smoke valley, blood-orange sun"
     },
     {
       "id": 2,
-      "start": 140,
-      "end": 475,
-      "framing": "subject-portrait",
+      "start": 329,
+      "end": 643,
+      "framing": "two-up",
       "transition_in": "match-cut",
-      "thread": "match"
+      "note": "cross-section: MODEL vs REAL plumes, 5x bracket, inversion lid"
     },
     {
       "id": 3,
-      "start": 475,
-      "end": 614,
-      "framing": "alt-vantage",
-      "transition_in": "fui-boot",
-      "thread": "build"
+      "start": 643,
+      "end": 793,
+      "framing": "subject-portrait",
+      "transition_in": "focus-pull",
+      "note": "ground level: cabin + figure in the murk, model plume floats high"
     },
     {
       "id": 4,
-      "start": 614,
-      "end": 881,
+      "start": 793,
+      "end": 1196,
       "framing": "data-panel",
-      "transition_in": "focus-pull",
-      "thread": "carry"
+      "transition_in": "fui-boot",
+      "note": "forecast panel: HRRR-SMOKE feed -> CNN, curve bends down, 5x -> 2x"
     },
     {
       "id": 5,
-      "start": 881,
-      "end": 985,
-      "framing": "push-detail",
-      "transition_in": "double-exposure",
-      "thread": "carry"
+      "start": 1196,
+      "end": 1452,
+      "framing": "macro-closeup",
+      "transition_in": "hard-cut",
+      "note": "cloud with hidden ember, reticle sweeps empty: DETECTION NONE"
     },
     {
       "id": 6,
-      "start": 985,
-      "end": 1207,
-      "framing": "two-up",
-      "transition_in": "hard-cut",
-      "thread": "match"
-    },
-    {
-      "id": 7,
-      "start": 1207,
-      "end": 1500,
-      "framing": "wide-establish",
-      "transition_in": "pull-out",
-      "thread": "travel"
-    },
-    {
-      "id": 8,
-      "start": 1500,
-      "end": 1800,
+      "start": 1452,
+      "end": 1755,
       "framing": "map-territory",
-      "transition_in": "map-travel",
-      "thread": "travel"
+      "transition_in": "pull-out",
+      "note": "rise-reveal out of the valley, mint forecast line hugs the smoke, outro"
     }
   ],
   "fps": 30,
-  "total": 1800
+  "total": 1755
 }

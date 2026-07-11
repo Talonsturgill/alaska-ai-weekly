@@ -346,3 +346,41 @@ dispatch_history:
     metaphor: to retire a seventy year hand count, a person still teaches the machine
       to see the run one fish at a time, and until it is proven the towers keep the
       record
+- date: '2026-07-11'
+  topic: 'UAF Geophysical Institute ML (CNN1D, Dong + Mao, ACS ES&T Air 2026) bias-corrects
+    NOAA HRRR-Smoke surface PM2.5 wildfire-smoke forecasts for Alaska: up to 5x surface
+    undercount cut to about 2x; cause is vertical (inversion lid traps smoke low,
+    model paints it thin and high); honest that it sharpens the number but cannot
+    move the smoke and misses fires under cloud'
+  slug: the-lid
+  key_entities:
+  - hrrr-smoke
+  - pm2.5
+  - wildfire smoke forecast
+  - bias correction
+  - cnn
+  - jingqiu mao
+  - zhiwei dong
+  - uaf geophysical institute
+  - acs est air
+  - temperature inversion
+  - uafsmoke
+  - air quality
+  archetype: 'atmospheric field-documentary: aerial descent into a smoke-choked valley,
+    the air itself as hero'
+  palette: wildfire-smoke ochre and sepia pall, blood-orange sun disk, soot-brown
+    spruce, bone-grey inversion lid, one mint forecast line
+  voice: kokoro:bf_emma
+  composition:
+    pov: orbital-aerial
+    motion_vector: vertical-descent
+    hero_treatment: landscape-as-subject
+    layout: stacked-layers
+    register: naturalistic-scene
+    camera_strategy: aerial-descent
+    light_story: storm-dramatic
+    palette: wildfire-smoke ochre and sepia pall, a dim blood-orange sun disk, soot-brown
+      spruce silhouettes, a bone-grey inversion lid, and one clean mint forecast line
+    metaphor: a warm lid traps the smoke low where people breathe; the model looks
+      for it thin and high, so a machine learns to look down, and still falls short
+      of the air in the lungs

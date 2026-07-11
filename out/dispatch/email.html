@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#13202b;background:#eef1f3;margin:0;padding:24px;}
+.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6e8;border-radius:14px;padding:28px;}
+h1{font-size:22px;margin:0 0 2px;} .sub{color:#6a7782;font-size:13px;margin-bottom:22px;}
+h2{font-size:15px;letter-spacing:.02em;text-transform:uppercase;color:#516170;margin-top:26px;border-bottom:1px solid #eef0f2;padding-bottom:6px;}
+pre.post{white-space:pre-wrap;background:#f6f8f9;padding:16px;border-radius:10px;font:14px/1.55 ui-monospace,Menlo,monospace;}
+.dl{display:inline-block;background:#FFC72C;color:#13202b;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:10px;font-size:15px;margin:4px 8px 4px 0;}
+.dl.alt{background:#13202b;color:#fff;} .dl small{display:block;font-weight:500;font-size:12px;margin-top:2px;opacity:.8;}
+.poster{margin:16px 0;text-align:center;} .poster img{max-width:300px;width:100%;border-radius:10px;border:1px solid #e3e6e8;}
+ul{padding-left:20px;} li{margin:4px 0;font-size:13.5px;} a{color:#0b6;}
+.warn{background:#fff6e0;border:1px solid #f0d68a;color:#7a5a10;font-size:12.5px;padding:8px 12px;border-radius:8px;margin:10px 0;}
+.foot{color:#97a2ab;font-size:11px;margin-top:24px;}
+</style></head><body>
+<div class="wrap">
+  <h1>ALASKA.AI &middot; Dispatch ready &middot; The Lid (UAF wildfire-smoke ML)</h1>
+  <div class="sub">2026-07-11 &middot; LinkedIn (primary) + TikTok &middot; review, then post</div>
+
+  <h2>The video</h2>
+  <a class="dl" href="https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-07-11-thelid-9x16.mp4">&#9660;&nbsp; Download &middot; 9:16 (TikTok / full-screen)<small>1080&times;1920 &middot; ~60s &middot; H.264 MP4</small></a><a class="dl alt" href="https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-07-11-thelid-4x5.mp4">&#9660;&nbsp; Download &middot; 4:5 (LinkedIn feed)<small>1080&times;1350 &middot; ~60s &middot; H.264 MP4</small></a>
+  
+  <div class="poster"><img src="https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-07-11-thelid-poster.png" alt="poster"/></div>
+
+  <h2>Post text (copy/paste)</h2>
+  <pre class="post">Alaska's wildfire smoke forecast has a quiet flaw: on the worst days it reads the air up to five times too clean.
+
+That is the finding in a new paper from the UAF Geophysical Institute, and what the team did about it is the part worth sitting with.
+
+NOAA's HRRR-Smoke model forecasts the wildfire smoke people breathe at ground level. In Alaska it tends to undercount that surface smoke, where the lungs are, by up to five times on the heaviest days. The reason is vertical. A warm lid of air, a temperature inversion, settles over a valley and traps the smoke down low. The model keeps drawing it thin and high.
+
+Jingqiu Mao and doctoral student Zhiwei Dong trained a second model, a convolutional neural network, to learn that bias and pull the forecast back down toward the measured air. It works. The undercount shrinks from about five times to about two.
+
+The restraint is what earns respect. They did not claim to fix the smoke. A correction is not a cure. The network sharpens the number, it cannot move the air, and when a cloud hides a fire's heat the model can still miss it. A person still decides when it is safe to breathe.
+
+That is the right posture for AI in a place like Alaska. Not a system that replaces the judgment, one that hands a sharper number to the person already making the call, and hands it sooner. With Alaska's 2026 fire season running hot again, sooner matters.
+
+Where else should we want AI to correct the tool instead of replacing the expert?
+
+Paper: ACS ES&T Air, 2026, 3(5).
+
+#Alaska #ArtificialIntelligence #AirQuality #Wildfire #AtmosphericScience</pre>
+
+  <h2>Credits (include when you post)</h2>
+  <ul><li><b>Voice:</b> Kokoro bf_emma (Apache-2.0)</li><li><b>Music:</b> "Long Note Two" Kevin MacLeod (incompetech.com), CC BY 4.0</li></ul>
+  <h2>Grade</h2><ul><li>Objective gate 13/13 (10.0/10). Audio: -14.2 LUFS, TP -1.0 dBTP, 15 of 15 SFX events verified audible. Editor: SHIP, zero defects. 3-judge panel median: 7.96 vs the 9.0 world-class bar, ZERO hard blockers; all three judges named the same style-register note (the engine's intentional low-poly hero geometry reads spare to a photoreal bar) and the flow-critic's one concrete fix (a buried boot chirp at 28.6s) was applied and re-verified. Delivered per the stall rule: concrete defects fixed, taste notes disclosed.</li></ul>
+  <h2>Sources</h2>
+  <ul><li><a href="https://pubs.acs.org/doi/10.1021/acsestair.5c00409">ACS ES&T Air (paper)</a> &middot; Dong, Mao et al., Machine Learning Bias Correction of HRRR-Smoke Surface PM2.5 Forecasts during the Alaska Wildfire Season, 2026, 3(5), 1263 to 1275, published April 17, 2026. Load-bearing figures: up to 5x surface undercount; CNN1D best corrector, residual about 2x; cause is vertical smoke placement (inversions, fires under cloud).</li>
+<li><a href="https://openalex.org/works?filter=doi:10.1021/acsestair.5c00409">OpenAlex record (independent cross-check)</a> &middot; Second-source confirmation of title, authors, venue, and publication date.</li>
+<li><a href="https://www.uaf.edu/news/uaf-helps-develop-air-quality-data-for-popular-alaska-wildfire-website.php">UAF news (team + operational context)</a> &middot; Jingqiu Mao (UAF, NASA Health and Air Quality Science Team) and doctoral student Zhiwei Dong; the UAF smoke/air-quality feed behind Alaska wildfire dashboards.</li>
+<li><a href="https://smoke.alaska.edu/PM25.html">UAFSMOKE (operational forecast)</a> &middot; The operational Alaska wildfire-smoke PM2.5 forecast surface this research improves.</li>
+<li><a href="https://akfireinfo.com/2026/07/06/dffp-weekly-wildland-fire-roundup-for-june-29-july-5/">Alaska Wildland Fire Information (live hook)</a> &middot; 2026 fire season active: 330+ fires tracked, 24,633 lightning strikes in ten days, Interior smoke along the Yukon corridor (early July 2026).</li></ul>
+
+  <div class="foot">Generated 2026-07-11T06:34:32.427433Z by the Alaska.Ai Dispatch routine. On-screen numbers are illustrative renderings of the paper's verified figures (5x undercount, about 2x corrected). Render backend: cpu x64 (cuda requested, unavailable). Built by Claude routines: research and build on Opus 4.8, finish and judging on Fable 5.</div>
+</div></body></html>

@@ -1,103 +1,103 @@
 {
   "words": [
     {
-      "w": "Every summer, Bristol Bay's sockeye come back by the million.",
+      "w": "When Alaska burns, the smoke is the part that reaches everyone.",
       "s": 0.5,
-      "e": 4.219,
+      "e": 3.927,
       "seg": 0
     },
     {
-      "w": "For seventy years, people have counted them by hand,",
-      "s": 4.679,
-      "e": 7.801,
+      "w": "It sinks into the valleys, and for weeks, people breathe it.",
+      "s": 4.047,
+      "e": 7.103,
+      "seg": 0
+    },
+    {
+      "w": "So the state runs a model that forecasts the smoke two days out.",
+      "s": 7.223,
+      "e": 10.623,
+      "seg": 0
+    },
+    {
+      "w": "But that model has a habit. It reads the air too clean.",
+      "s": 10.963,
+      "e": 14.281,
       "seg": 1
     },
     {
-      "w": "from wooden towers,",
-      "s": 7.941,
-      "e": 9.091,
+      "w": "On bad days it undercounts the surface smoke by up to five times.",
+      "s": 14.401,
+      "e": 18.244,
       "seg": 1
     },
     {
-      "w": "ten minutes of every hour, around the clock.",
-      "s": 9.231,
-      "e": 11.833,
-      "seg": 1
-    },
-    {
-      "w": "That count sets the season, when to fish, and when to stop.",
-      "s": 11.973,
-      "e": 15.384,
-      "seg": 1
-    },
-    {
-      "w": "Now a drone lifts from a box at eight thirty,",
-      "s": 15.844,
-      "e": 18.224,
-      "seg": 2
-    },
-    {
-      "w": "and films the run from above.",
+      "w": "Here is why. A warm lid of air seals the valley.",
       "s": 18.364,
-      "e": 19.991,
+      "e": 21.104,
+      "seg": 1
+    },
+    {
+      "w": "It traps the smoke down low, where we breathe.",
+      "s": 21.444,
+      "e": 23.838,
       "seg": 2
     },
     {
-      "w": "But it cannot count. Not yet.",
-      "s": 20.45,
-      "e": 22.391,
+      "w": "The model keeps drawing it thin and high.",
+      "s": 23.958,
+      "e": 26.106,
+      "seg": 2
+    },
+    {
+      "w": "So a team at the University of Alaska Fairbanks taught a second model to correct the first.",
+      "s": 26.446,
+      "e": 31.753,
       "seg": 3
     },
     {
-      "w": "First, a person has to teach it,",
-      "s": 22.531,
-      "e": 24.697,
+      "w": "It learns the error and pulls the forecast down toward the air people breathe.",
+      "s": 31.872,
+      "e": 36.083,
       "seg": 3
     },
     {
-      "w": "marking each fish that crosses a line, several thousand of them.",
-      "s": 24.837,
-      "e": 28.901,
+      "w": "The gap shrinks. Five times too low becomes about two.",
+      "s": 36.203,
+      "e": 39.522,
       "seg": 3
     },
     {
-      "w": "Only then can the model pick the fish out on its own.",
-      "s": 29.361,
-      "e": 32.387,
+      "w": "But this is a correction, not a cure. It sharpens the number.",
+      "s": 39.862,
+      "e": 43.162,
       "seg": 4
     },
     {
-      "w": "It has not been tested against the towers yet.",
-      "s": 32.847,
-      "e": 35.361,
+      "w": "It cannot move the smoke.",
+      "s": 43.282,
+      "e": 44.871,
+      "seg": 4
+    },
+    {
+      "w": "And when a cloud hides a fire, the model can still miss it.",
+      "s": 44.992,
+      "e": 48.069,
+      "seg": 4
+    },
+    {
+      "w": "So the forecast lands closer, sooner.",
+      "s": 48.409,
+      "e": 50.676,
       "seg": 5
     },
     {
-      "w": "And a shadow on the river can still fool it.",
-      "s": 35.501,
-      "e": 37.756,
+      "w": "And a person still decides when the air is safe to breathe.",
+      "s": 50.796,
+      "e": 53.87,
       "seg": 5
-    },
-    {
-      "w": "So the counters still climb the towers,",
-      "s": 38.216,
-      "e": 40.135,
-      "seg": 6
-    },
-    {
-      "w": "and the model learns to watch beside them.",
-      "s": 40.275,
-      "e": 42.479,
-      "seg": 6
-    },
-    {
-      "w": "The hand still teaches. The count still comes home.",
-      "s": 42.619,
-      "e": 45.771,
-      "seg": 6
     }
   ],
-  "speech_end": 45.771,
+  "speech_end": 53.87,
   "total": 60.0,
   "fps": 30
 }
