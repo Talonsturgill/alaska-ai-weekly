@@ -368,13 +368,19 @@ BONE = (232, 236, 240); MINT = (90, 240, 190); AMBER = (255, 150, 60); DIMW = (2
 CHIP = (12, 15, 21)
 
 def chip(out, x, y, w, h, a, padx=20, pady=12, rad=12):
-    """A tight rounded charcoal chip under one HUD label (soft edge; alpha rides the label ramp)."""
+    """A tight rounded charcoal chip under one HUD label. The chip LEADS the label's fade
+    (full strength by alpha ~0.62, when logw starts counting the word as presented) and runs
+    slightly darker while the ink is still translucent, so a mid-ramp word never dips under the
+    readability floor. At alpha 1.0 this is exactly the steady-state chip (seamless everywhere)."""
     if a <= 0.02 or w <= 0:
         return
+    aa = min(1.0, a)
+    lead = min(1.0, a * 1.6)
+    op = 0.78 + 0.15 * (1.0 - aa)
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     d.rounded_rectangle([x - padx, y - pady, x + w + padx, y + h + pady], radius=rad,
-                        fill=(*CHIP, int(255 * 0.78 * a)))
+                        fill=(*CHIP, int(255 * op * lead)))
     layer = layer.filter(ImageFilter.GaussianBlur(1.5))
     out.alpha_composite(layer)
 
