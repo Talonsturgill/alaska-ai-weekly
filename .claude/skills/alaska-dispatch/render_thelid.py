@@ -361,7 +361,51 @@ def cam_shot5(f):
 CAMS = [cam_shot0, cam_shot1, cam_shot2, cam_shot3, cam_shot4, cam_shot5]
 
 # ============================================================ PIL chrome per shot (composited over grade)
-BONE = (232, 236, 240); MINT = (90, 240, 190); AMBER = (255, 150, 60); DIMW = (150, 160, 172)
+# Two-phase chrome: phase "plate" bakes legibility chips + the caption scrim into the image BEFORE
+# dc.set_frame_bg samples luma (so the READABILITY gate measures what a viewer actually sees), then
+# phase "text" draws the ink + logs each word. One geometry source (lab), zero drift between phases.
+BONE = (232, 236, 240); MINT = (90, 240, 190); AMBER = (255, 150, 60); DIMW = (200, 208, 220)
+CHIP = (12, 15, 21)
+
+def chip(out, x, y, w, h, a, padx=20, pady=12, rad=12):
+    """A tight rounded charcoal chip under one HUD label (soft edge; alpha rides the label ramp)."""
+    if a <= 0.02 or w <= 0:
+        return
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    d.rounded_rectangle([x - padx, y - pady, x + w + padx, y + h + pady], radius=rad,
+                        fill=(*CHIP, int(255 * 0.78 * a)))
+    layer = layer.filter(ImageFilter.GaussianBlur(1.5))
+    out.alpha_composite(layer)
+
+_SCRIM = None
+def caption_scrim(out):
+    """Constant bottom-third gradient scrim (part of the grade, identical every frame) so the
+    voice-synced captions always sit on darkened air, whatever the scene does behind them."""
+    global _SCRIM
+    if _SCRIM is None:
+        y = np.arange(H, dtype=np.float32)[:, None]
+        up = np.clip((y - 1300.0) / 170.0, 0.0, 1.0)
+        down = 1.0 - 0.45 * np.clip((y - 1620.0) / 300.0, 0.0, 1.0)
+        aa = (up * down * 0.55 * 255.0).astype(np.uint8)
+        rgba = np.zeros((H, W, 4), np.uint8)
+        rgba[..., 0] = 8; rgba[..., 1] = 10; rgba[..., 2] = 16
+        rgba[..., 3] = np.repeat(aa, W, axis=1)
+        _SCRIM = Image.fromarray(rgba, "RGBA")
+    out.alpha_composite(_SCRIM)
+
+def lab(ctx, x, y, s, fnt, fill, a, log=True, kind="hud"):
+    """One HUD label, both phases: plate -> chip under its rect; text -> ink + logw."""
+    w = dc.tw(s, fnt)
+    if a <= 0.02:
+        return w
+    if ctx[0] == "plate":
+        chip(ctx[1], x, y, w, fnt.size, a)
+    else:
+        ctx[1].text((x, y), s, font=fnt, fill=(*fill, int(235 * a)))
+        if log:
+            dc.logw(x, y, w, fnt.size, fill, a, True, kind)
+    return w
 
 def sun_disk(out, cx, cy, r, glow=1.0):
     """Composite a soft blood-orange smoke-dimmed sun disk into the sky (additive-ish soft light)."""
@@ -373,52 +417,51 @@ def sun_disk(out, cx, cy, r, glow=1.0):
     layer = layer.filter(ImageFilter.GaussianBlur(18))
     out.alpha_composite(layer)
 
-def eyebrow_wordmark(dr, f):
-    fnt = dc.mono(30, m=True); s = "ALASKA.AI  ·  FIELD SIGNAL"
-    dr.text((104, 96), s, font=fnt, fill=(*dc.GOLD, 235))
-    dc.logw(104, 96, dc.tw(s, fnt), fnt.size, dc.GOLD, 1.0, True, "hud")
+def eyebrow_wordmark(ctx, f):
+    fnt = dc.mono(30, m=True)
+    lab(ctx, 104, 96, "ALASKA.AI  ·  FIELD SIGNAL", fnt, dc.GOLD, 1.0)
 
-def chrome_shot0(dr, f, t):
+def chrome_shot0(ctx, f, t):
     # eyebrow + a quiet locator
-    eyebrow_wordmark(dr, f)
-    fnt = dc.mono(28); s = "INTERIOR ALASKA  ·  FIRE SEASON 2026"
-    dr.text((104, 140), s, font=fnt, fill=(*BONE, 200))
-    dc.logw(104, 140, dc.tw(s, fnt), fnt.size, BONE, 0.9, True, "hud")
+    eyebrow_wordmark(ctx, f)
+    lab(ctx, 104, 152, "INTERIOR ALASKA  ·  FIRE SEASON 2026", dc.mono(28), BONE, 0.9)
 
-def chrome_shot1(dr, f, t):
-    eyebrow_wordmark(dr, f)
+def chrome_shot1(ctx, f, t):
+    eyebrow_wordmark(ctx, f)
     pr = max(0.0, min(1.0, (t - 14.0) / 2.0))
-    # labels for the two plumes
+    ar = min(1.0, max(0.0, t - 11.5))
     lf = dc.mono(30, b=True)
-    dr.text((150, 1120), "MODEL", font=lf, fill=(*BONE, int(235 * min(1, (t - 11.5)))))
-    dr.text((760, 1120), "REAL", font=lf, fill=(*AMBER, int(235 * min(1, (t - 11.5)))))
-    dc.logw(150, 1120, dc.tw("MODEL", lf), lf.size, BONE, min(1, max(0, t - 11.5)), True, "hud")
-    dc.logw(760, 1120, dc.tw("REAL", lf), lf.size, AMBER, min(1, max(0, t - 11.5)), True, "hud")
+    lab(ctx, 150, 1210, "MODEL", lf, BONE, ar)
+    lab(ctx, 760, 1210, "REAL", lf, AMBER, ar)
     # 5x gap bracket + numeral, snaps in at ~14.5s
     if pr > 0.02:
-        a = int(235 * pr); x0, x1 = 470, 610; y = 900
-        dr.line([(x0, 760), (x0, 1040)], fill=(*BONE, a), width=4)
-        nf = dc.fr(96, 900); s = "5x"; w = dc.tw(s, nf, 0.02)
-        dc.tk(dr, s, nf, (255, 220, 130, a), (W - w) // 2, y - 60, 0.02)
-        dc.logw((W - w) // 2, y - 60, w, nf.size, (255, 220, 130), pr, pr > 0.6, "hud")
-        sf = dc.mono(26); s2 = "SURFACE SMOKE UNDERCOUNT"
-        dr.text(((W - dc.tw(s2, sf)) // 2, y + 70), s2, font=sf, fill=(*DIMW, int(210 * pr)))
+        nf = dc.fr(96, 900); s = "5x"; w = dc.tw(s, nf, 0.02); y = 900
+        if ctx[0] == "plate":
+            chip(ctx[1], (W - w) // 2, y - 60, w, nf.size, pr, padx=26, pady=16)
+            sf = dc.mono(26); w2 = dc.tw("SURFACE SMOKE UNDERCOUNT", sf)
+            chip(ctx[1], (W - w2) // 2, y + 70, w2, sf.size, pr)
+        else:
+            dr = ctx[1]; a = int(235 * pr)
+            dr.line([(470, 760), (470, 1040)], fill=(*BONE, a), width=4)
+            dc.tk(dr, s, nf, (255, 220, 130, a), (W - w) // 2, y - 60, 0.02)
+            dc.logw((W - w) // 2, y - 60, w, nf.size, (255, 220, 130), pr, True, "hud")
+            sf = dc.mono(26); s2 = "SURFACE SMOKE UNDERCOUNT"
+            dr.text(((W - dc.tw(s2, sf)) // 2, y + 70), s2, font=sf, fill=(*DIMW, int(210 * pr)))
+            dc.logw((W - dc.tw(s2, sf)) // 2, y + 70, dc.tw(s2, sf), sf.size, DIMW, 0.82 * pr, True, "hud")
 
-def chrome_shot2(dr, f, t):
-    eyebrow_wordmark(dr, f)
+def chrome_shot2(ctx, f, t):
+    eyebrow_wordmark(ctx, f)
     # a small pointer at the floating model plume (up high) vs the figure (down low)
     sf = dc.mono(28, m=True)
-    a = int(220 * min(1.0, max(0.0, (t - 22.0))))
-    dr.text((150, 360), "MODEL SAYS: THIN + HIGH", font=sf, fill=(*DIMW, a))
-    dr.text((150, 1120), "HERE IS WHERE WE BREATHE", font=sf, fill=(*BONE, a))
-    dc.logw(150, 1120, dc.tw("HERE IS WHERE WE BREATHE", sf), sf.size, BONE, min(1.0, max(0.0, t - 22.0)), True, "hud")
+    ar = min(1.0, max(0.0, t - 22.0))
+    lab(ctx, 150, 360, "MODEL SAYS: THIN + HIGH", sf, DIMW, 0.86 * ar)
+    lab(ctx, 150, 1210, "HERE IS WHERE WE BREATHE", sf, BONE, ar)
 
-def chrome_shot3(dr, f, t):
-    eyebrow_wordmark(dr, f)
+def chrome_shot3(ctx, f, t):
+    eyebrow_wordmark(ctx, f)
     lf = dc.mono(30, b=True)
-    dr.text((150, 1120), "HRRR-SMOKE", font=lf, fill=(*DIMW, 225))
-    dr.text((760, 1120), "CNN", font=lf, fill=(*MINT, 235))
-    dc.logw(760, 1120, dc.tw("CNN", lf), lf.size, MINT, 1.0, True, "hud")
+    lab(ctx, 150, 1210, "HRRR-SMOKE", lf, DIMW, 0.88)
+    lab(ctx, 760, 1210, "CNN", lf, MINT, 1.0)
     # 5x -> 2x collapse numeral near end of shot
     tc = (BOUNDS[3] / FPS)
     if t > tc + 7.0:
@@ -426,30 +469,38 @@ def chrome_shot3(dr, f, t):
         nf = dc.fr(92, 900)
         s = "5x" if pr < 0.5 else "2x"
         col = (255, 210, 120) if pr < 0.5 else MINT
-        w = dc.tw(s, nf, 0.02); dc.tk(dr, s, nf, (*col, 235), (W - w) // 2, 820, 0.02)
-        dc.logw((W - w) // 2, 820, w, nf.size, col, 1.0, True, "hud")
-        sf = dc.mono(26); s2 = "UNDERCOUNT, CORRECTED"
-        dr.text(((W - dc.tw(s2, sf)) // 2, 930), s2, font=sf, fill=(*DIMW, 210))
+        w = dc.tw(s, nf, 0.02)
+        if ctx[0] == "plate":
+            chip(ctx[1], (W - w) // 2, 820, w, nf.size, 1.0, padx=26, pady=16)
+            sf = dc.mono(26); w2 = dc.tw("UNDERCOUNT, CORRECTED", sf)
+            chip(ctx[1], (W - w2) // 2, 930, w2, sf.size, 1.0)
+        else:
+            dr = ctx[1]
+            dc.tk(dr, s, nf, (*col, 235), (W - w) // 2, 820, 0.02)
+            dc.logw((W - w) // 2, 820, w, nf.size, col, 1.0, True, "hud")
+            sf = dc.mono(26); s2 = "UNDERCOUNT, CORRECTED"
+            dr.text(((W - dc.tw(s2, sf)) // 2, 930), s2, font=sf, fill=(*DIMW, 210))
+            dc.logw((W - dc.tw(s2, sf)) // 2, 930, dc.tw(s2, sf), sf.size, DIMW, 0.82, True, "hud")
 
-def chrome_shot4(dr, f, t):
-    eyebrow_wordmark(dr, f)
-    # a detection reticle that sweeps and returns empty
-    cx, cy = W // 2, 780; x = (f - SHOT_START[4]) / max(1, SHOT_END[4] - SHOT_START[4])
-    r = int(120 + 40 * math.sin(t * 2.0)); a = 210
-    dr.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(*MINT, a), width=3)
-    dr.line([(cx - r - 20, cy), (cx - r + 6, cy)], fill=(*MINT, a), width=3)
-    dr.line([(cx + r - 6, cy), (cx + r + 20, cy)], fill=(*MINT, a), width=3)
-    sf = dc.mono(28, m=True); s = "DETECTION: NONE"
-    dr.text(((W - dc.tw(s, sf)) // 2, 1120), s, font=sf, fill=(*AMBER, 230))
-    dc.logw((W - dc.tw(s, sf)) // 2, 1120, dc.tw(s, sf), sf.size, AMBER, 1.0, True, "hud")
-    s2 = "FIRE HIDDEN UNDER CLOUD"
-    dr.text(((W - dc.tw(s2, dc.mono(26))) // 2, 1164), s2, font=dc.mono(26), fill=(*DIMW, 210))
+def chrome_shot4(ctx, f, t):
+    eyebrow_wordmark(ctx, f)
+    sf = dc.mono(28, m=True)
+    lab(ctx, (W - dc.tw("DETECTION: NONE", sf)) // 2, 1210, "DETECTION: NONE", sf, AMBER, 1.0)
+    sf2 = dc.mono(26)
+    lab(ctx, (W - dc.tw("FIRE HIDDEN UNDER CLOUD", sf2)) // 2, 1258, "FIRE HIDDEN UNDER CLOUD", sf2, DIMW, 0.82)
+    if ctx[0] == "text":
+        # a detection reticle that sweeps and returns empty (motion + meaning, labeled above)
+        dr = ctx[1]
+        cx, cy = W // 2, 780
+        r = int(120 + 40 * math.sin(t * 2.0)); a = 210
+        dr.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(*MINT, a), width=3)
+        dr.line([(cx - r - 20, cy), (cx - r + 6, cy)], fill=(*MINT, a), width=3)
+        dr.line([(cx + r - 6, cy), (cx + r + 20, cy)], fill=(*MINT, a), width=3)
 
-def chrome_shot5(dr, f, t):
-    eyebrow_wordmark(dr, f)
-    sf = dc.mono(28, m=True); s = "FORECAST: CLOSER, SOONER"
-    a = int(225 * min(1.0, max(0.0, (t - 52.5))))
-    dr.text((104, 140), s, font=sf, fill=(*MINT, a))
+def chrome_shot5(ctx, f, t):
+    eyebrow_wordmark(ctx, f)
+    a = min(1.0, max(0.0, t - 52.5))
+    lab(ctx, 104, 152, "FORECAST: CLOSER, SOONER", dc.mono(28, m=True), MINT, a)
 
 CHROME = [chrome_shot0, chrome_shot1, chrome_shot2, chrome_shot3, chrome_shot4, chrome_shot5]
 
@@ -479,14 +530,26 @@ def render_range(s, e):
             sun_disk(out, W // 2, 560, 120, glow=1.0)
         elif si == 5:
             sun_disk(out, int(W * 0.62), 470, 105, glow=0.85)
+        # PLATE pass: bake the caption scrim + label chips into the picture, THEN sample luma —
+        # the readability manifest must measure the background a viewer actually sees.
+        caption_scrim(out)
+        CHROME[si](("plate", out), f, t)
         dc.set_frame_bg(out, f)
         dr = ImageDraw.Draw(out)
-        CHROME[si](dr, f, t)
+        CHROME[si](("text", dr), f, t)
         dc.caption(out, f)
         dc.outro_card(out, f)
         dc.flush_textlog(f)
         Image.fromarray(np.asarray(out.convert("RGB"))).save(os.path.join(OUT, f"frame_{f:05d}.png"), compress_level=1)
     mpath = os.path.join(OUT, "..", "render_manifest.json") if os.environ.get("DIM_MANIFEST_UP") else os.path.join(OUT, "render_manifest.json")
+    # resumed segments must MERGE telemetry, not clobber it — the depth/camera gates read the union
+    try:
+        old = json.load(open(mpath)).get("samples", [])
+        seen = {s["f"] for s in dim.MANIFEST}
+        dim.MANIFEST.extend(s for s in old if s["f"] not in seen)
+        dim.MANIFEST.sort(key=lambda s: s["f"])
+    except Exception:
+        pass
     dim.write_manifest(mpath, NF, extra={"dispatch": "the-lid", "shots": NSHOT})
 
 def main():
