@@ -79,6 +79,13 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
   run to the storyboard. The single most damaging shortcut this routine can take is `cp render_lastweek.py
   render_thisweek.py` and re-skinning the hero; that is what shipped a salmon video identical to the
   beluga. It is forbidden (see Phase 4.5 + Phase 5). Import the helpers; build the composition new.
+- docs/craft/HERO_CRAFT.md — premium hero detail (3 shape tiers at 70/20/10, >=3 parts + >=2 albedo
+  zones per hero, bevel/zoning/domain-repetition SDF toolkit, set dressing; look-dev adds a mandatory
+  HERO CLOSE-UP probe). docs/craft/HOOK_CRAFT.md — the cold open (frame-1 poster with a 5-8 word
+  burned-in claim, motion by 1.3s, four credible patterns, loop-back ending; FIRST_FRAME + HOOK_WINDOW
+  gates). docs/craft/VOICE_AND_SCORE.md — TTS performance direction (per-segment speeds, energy arc,
+  the button patterns) + scoring (stem builds, riser-into-downbeat, THE pre-payoff silence; SILENCE_DIP
+  gate). Storyboards must declare hook{}, per-shot hero{}, and audio_arc{} blocks (Gate 0A enforces).
 - docs/craft/CHOREOGRAPHY.md — THE LIVING-SCREEN DOCTRINE (read before storyboarding; added after the
   2026-07-11 'slideshow' postmortem): four concurrent motion channels per shot (primary/reaction/
   ambient/atmosphere), arrival physics on everything, the cause-and-effect law, subject performance,

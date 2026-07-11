@@ -56,6 +56,9 @@ Only then build — and build the scene FRESH (import shared helpers from out/di
 never `cp` a prior render and re-skin it). This saves the most time and catches the most mistakes cheaply.
 
 ## 5. Illustration-detail craft bar (the "video detail" that takes humans ages)
+**Superseded for the dimensional engine by docs/craft/HERO_CRAFT.md** (shape-hierarchy law:
+3 tiers at 70/20/10, >=3 parts + >=2 albedo zones per hero — storyboard-enforced — plus the SDF
+toolkit and set-dressing rules). The 2D-era bullets below remain valid for the chrome layer:
 Hand-coded, but it must read as designed and lit, not flat clip-art:
 - LIGHTING: a key direction + soft fill + a rim/back light on the hero. Shade with gradients,
   not flat fills.
@@ -88,6 +91,9 @@ editorial clarity, a Buck-style motion moment) and explicitly match that bar in 
 the panel review. "Is this as good as <reference>?" is a gate question.
 
 ## 8. Retention / hook engineering (LinkedIn primary + TikTok)
+**Superseded by docs/craft/HOOK_CRAFT.md** (frame-1 poster law, motion by 1.3s, four cold-open
+patterns, loop-back ending — enforced by the storyboard hook block + the FIRST_FRAME and
+HOOK_WINDOW gate checks). Summary bullets:
 - First FRAME is a designed poster, never black/blurry. First 1-2s lands the hero + the tension.
 - A pattern interrupt every ~3-5s (reveal, scale, cut, color shift) so attention never sags.
 - The thesis pays off the hook; the last beat invites a comment (LinkedIn) and is loop-friendly (TikTok).

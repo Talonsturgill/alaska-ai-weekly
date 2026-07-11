@@ -193,6 +193,52 @@ def main():
             problems.append(f"shot {sh.get('id', i+1)} must declare camera.focus_from/focus_to "
                             f"(equal values = held focus; different = a rack the CAMERA_MOTION gate verifies)")
 
+    # ---- 1e. HOOK / HERO / AUDIO_ARC blocks (docs/craft/HOOK_CRAFT.md, HERO_CRAFT.md, VOICE_AND_SCORE.md) ----
+    HOOK_PATTERNS = {"anomaly-question", "in-medias-res", "bold-claim", "stakes-antagonist"}
+    hk = sb.get("hook") or {}
+    if not hk:
+        problems.append("missing top-level `hook` block — the cold open is designed, not hoped for "
+                        "(HOOK_CRAFT.md: {pattern, frame1, headline, motion_by_s, loopback})")
+    else:
+        if norm_tag(hk.get("pattern")) not in HOOK_PATTERNS:
+            problems.append(f"hook.pattern '{hk.get('pattern')}' not in {sorted(HOOK_PATTERNS)}")
+        hw = len(str(hk.get("headline", "")).split())
+        if not (3 <= hw <= 8):
+            problems.append(f"hook.headline is {hw} words; the burned-in frame-1 claim runs 5-8 words "
+                            f"(hard band 3-8) and must survive the 120px shrink test")
+        try:
+            if float(hk.get("motion_by_s", 99)) > 1.5:
+                problems.append("hook.motion_by_s > 1.5 — something must visibly change within the "
+                                "first ~1.3s of a muted feed")
+        except (TypeError, ValueError):
+            problems.append("hook.motion_by_s missing/non-numeric")
+        for fld in ("frame1", "loopback"):
+            if not str(hk.get(fld, "")).strip():
+                problems.append(f"hook.{fld} missing — declare the frame-0 poster and the loop-back rhyme")
+    for i, sh in enumerate(shots):
+        hero = sh.get("hero") or {}
+        try:
+            ok_hero = int(hero.get("parts", 0)) >= 3 and int(hero.get("zones", 0)) >= 2
+        except (TypeError, ValueError):
+            ok_hero = False
+        if not (ok_hero and str(hero.get("name", "")).strip() and str(hero.get("detail_note", "")).strip()):
+            problems.append(f"shot {sh.get('id', i+1)} missing a hero block with parts>=3, zones>=2, name, "
+                            f"detail_note — a single-primitive hero cannot read designed or perform "
+                            f"(HERO_CRAFT.md shape-hierarchy law)")
+    aa = sb.get("audio_arc") or {}
+    if not aa:
+        problems.append("missing top-level `audio_arc` block (VOICE_AND_SCORE.md: {build_steps, dip_at, "
+                        "riser_at, silence_at, payoff_at, button_pattern})")
+    else:
+        for fld in ("dip_at", "riser_at", "silence_at", "payoff_at"):
+            try:
+                float(aa.get(fld))
+            except (TypeError, ValueError):
+                problems.append(f"audio_arc.{fld} missing/non-numeric")
+        if norm_tag(aa.get("button_pattern")) not in {"callback", "question", "tricolon"}:
+            problems.append(f"audio_arc.button_pattern '{aa.get('button_pattern')}' must be callback|question|tricolon "
+                            f"— the button is never a flat declarative")
+
     # ---- 2. the banned shortcut: a scene copied from a prior render and re-skinned ----
     if rule.get("require_derived_from_scratch", True):
         df = norm_tag(sb.get("derived_from", ""))
