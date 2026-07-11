@@ -93,6 +93,29 @@
     "type_temperature": 2
    },
    "notes": "First instrument-register deck. The evolving-trace conductor is the strongest continuity device so far per flow-critic; connective tissue on S3/S6/S7 added after flow review."
+  },
+  {
+   "run_date": "2026-07-11",
+   "carousel_no": 4,
+   "slide_count": 9,
+   "hero_structure": "Subsurface engineering cutaway 'The Cook Inlet Gas Machine' (cabinet-extruded folded-strata section) on a PANORAMA SPINE (continuous strata as f(globalX); camera pans reservoir -> pipeline+valve -> AI tower across S2-S8; cover/close are pulled-back whole-slab bookends). NOT a cartographic-camera map, NOT a glyph-ledger, NOT a trace-conductor instrument panel",
+   "atmosphere": "Core-Sample Haze (desaturated subsurface fog #0B1622 + warm sodium surface glow + faint gas-blue reservoir luminance); no aurora/mesh, no tannin fog, no obsidian-instrument-ember-phosphor",
+   "depth_technique": "Cabinet Extrusion (#39) strata slab + cabinet-oblique 3D bars (S8, parallel projection) + gradient-solid shaded valve + multiplane atmospheric fade to basement; honest parallel projection on all quantities",
+   "line_voice": "instrument/editorial (dimension calls, leaders, haloed balloon numbers, drafting furniture) + material cross-hatch coding (shale dense / sandstone sparse / gas stipple)",
+   "continuity_device": "panorama-spine (primary) + valve-state motif (open S1-5 -> shut S6-9 with an amber lock-bar) + reservoir-lens state machine (empty -> depleted -> filling -> phantom) + palette-arc (gas-cyan/sodium supply half -> cool trough at the shut valve -> slate/gold demand)",
+   "hook_archetype": "anatomy / cutaway-reveal",
+   "palette_family": "Depleted Reservoir: earth ochre #B0803A + shale slate #2B3C49 + sandstone #6E5F4A + methane gas-blue #5AC8F0 + sodium lamplight #F3A24C + flag gold #FFC72C",
+   "type_pairing": "Fraunces display + Manrope body + JetBrains Mono instrument",
+   "narrative_structure": "anatomy/argument: teach the machine, show the valve shut, measure the new load, ask",
+   "variance_dials": {
+    "design_variance": 4,
+    "visual_density": 4,
+    "type_temperature": 4
+   },
+   "new_techniques_logged": [
+    "Subsurface Cutaway Panorama (NEW): continuous cabinet-extruded folded-strata cross-section as a panorama-spine chassis, with a per-slide reservoir-lens state machine and a valve open/shut motif; the ground line doubles as the demand skyline"
+   ],
+   "notes": "Scored 8.90 vs 8.3. Weakest = artwork craft (7): flat strata bands + plain lenses + S1/S9 lower-third dead zones (strata-texture helper parked for Phase 12). Story-art fusion 9 (gauge fill = 'half', 17 sheets = 17pp, tower 1.3x, valve open/shut = the ruling)."
   }
  ]
 }

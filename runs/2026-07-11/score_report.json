@@ -1,0 +1,19 @@
+{
+  "run_date": "2026-07-11", "carousel_no": 4, "weighted_total": 8.90, "ship_threshold": 8.3, "ships": true, "hard_fails": [],
+  "criteria": [
+    {"name": "Thumb-stop cover", "score": 8, "weight": 0.14},
+    {"name": "Story arc & swipe momentum", "score": 8, "weight": 0.14},
+    {"name": "Artwork craft & genuine detail", "score": 7, "weight": 0.16},
+    {"name": "Story-art fusion", "score": 9, "weight": 0.14},
+    {"name": "Alaska authenticity & local relevance", "score": 9, "weight": 0.12},
+    {"name": "Insight density & factual weight", "score": 8, "weight": 0.10},
+    {"name": "Variety vs ledger", "score": 8, "weight": 0.08},
+    {"name": "Legibility & platform fitness", "score": 8, "weight": 0.07},
+    {"name": "Copy: voice & hook", "score": 8, "weight": 0.05},
+    {"name": "Deliverable completeness", "score": 8, "weight": 0.10}
+  ],
+  "weakest_criterion": "Artwork craft & genuine detail",
+  "one_sentence_fix": "Add genuine texture and rim-light to the large flat strata bands and plain reservoir lenses, and fill the quiet lower-half dead zones on cover (S1) and close (S9) so every region survives the zoom test.",
+  "editor_notes": "No hard fails; ships 8.90 vs 8.3. STAK c15/Northern Journal reused as legitimate context (new topic, the Jul 10 RCA gas-storage denial). Merge to main before Gmail (URLs point at main). On-slide apostrophes render with a slight serif curl but are straight U+0027 at source (documented run-1 false positive).",
+  "revision_rounds": 2
+}

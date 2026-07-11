@@ -200,6 +200,28 @@ headless Chromium (Canvas 2D, SVG, CSS) unless flagged. Committed helpers:
     turbine, a drone-in-a-box) the same way — one confident filled path,
     profile-heaviest outline, one gradient, one accent, grain over the fill. D2
 
+49c. **Subsurface Cutaway Panorama** (NEW 2026-07-11) — an engineering
+    cross-section of the ground drawn as a cabinet-extruded folded-strata slab
+    and sliced as a PANORAMA SPINE: strata tops are pure functions of
+    globalX = slideIndex*1080 + localX (`yTop_i(gx) = base_i - amp*sin(2π(gx-x0)/λ)`
+    for a gentle anticline), so adjacent panning slides seam EXACTLY while the
+    camera pans across features (reservoir region -> pipeline+valve ->
+    surface demand). Bands are material-coded (#65 crosshatch: dense shale seal /
+    sparse porous sandstone / blue gas stipple); depth from cabinet extrusion +
+    atmospheric fade to a basement haze + a blurred repoussoir clod. Two devices
+    ride the spine: a per-slide RESERVOIR-LENS STATE MACHINE (empty -> depleted
+    stipple -> filling gas-blue -> dashed phantom "unconfirmed") that doubles as
+    the story's progress, and a shared object whose state flips (a valve OPEN with
+    flowing dashes -> SHUT with an amber lock-bar across the hub + cold downstream).
+    The surface line does double duty as the demand skyline (home plateau vs a
+    single tall load bar). Cover/close are pulled-back whole-slab bookends of the
+    same section. Honest: all quantities stay in parallel projection (cabinet
+    bars, #39), never perspective. Label discipline is mandatory: primary text in
+    the sky zone (y<=~560), every in-section readout on a dark plate/knockout.
+    Used as the hero of "The Cook Inlet Gas Machine." Generalizes to any
+    infrastructure-in-the-ground story (pipelines, aquifers, mines, permafrost,
+    cables). D3
+
 ## TYPE & CAROUSEL MECHANICS
 
 50. **Title-Card Hook** — 120-170px display (high-contrast serif or wide

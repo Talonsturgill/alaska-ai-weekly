@@ -1,0 +1,170 @@
+{
+ "run_date": "2026-07-11",
+ "carousel_no": 4,
+ "selected_cluster": "cook-inlet-gas-storage-crisis",
+ "selection_note": "Only candidate that is fresh, in-window, primary-sourced, and survives honest fact-checking. Dryad wildfire collapsed to company-PR sourcing; MONTIS is remote-piloted (not AI). Deck thesis: AI compute's gigawatt appetite is pressing on a Cook Inlet gas system that cannot even secure winter storage, and on July 10 the regulator rejected the fix.",
+ "weak_spots": {
+  "op_ed_only": [
+   "c10 (40% above national avg)",
+   "c11 (rural 2x urban)",
+   "c12 (2027 shortfall)"
+  ],
+  "handling": "These three are sourced ONLY to the Lesil McGuire ADN op-ed (2026-07-06). On slides, attribute explicitly ('per a former state senator's op-ed' / 'op-ed') or use as framing context, never as a flat unhedged fact. Prefer the rock-solid RCA/ADN facts as the deck's factual spine.",
+  "derived_numbers_banned": "Do NOT assert a derived urban-Alaska-peak-MW number. The verified comparison is Northern Journal's exact wording: 'a gigawatt or more, some 30% more than urban Alaska's peak demand' (c13). State it that way; do not compute an MW figure.",
+  "stak_money": "STAK is 'more than $10 billion' at full buildout (c14); an earlier $500M reference exists in the same article. If used, say $10B+ and do not conflate."
+ },
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "The Regulatory Commission of Alaska rejected Enstar's request for an advance determination that its gas-storage project plans were prudent, citing missing information (an 'extraordinary request' that 'lacked basic information about the project').",
+   "value": "RCA denied Enstar's advance determination of prudency",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News (Alex DeMarban)",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c2",
+   "statement": "The RCA order denying the plan was 17 pages long.",
+   "value": "17-page order",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c3",
+   "statement": "Enstar's proposed Cook Inlet gas storage facility would cost $240 million.",
+   "value": "$240 million",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c4",
+   "statement": "The project would add up to $12 a month to the average customer's bill.",
+   "value": "up to $12 per month",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c5",
+   "statement": "Enstar proposed buying the Kenai Loop Pool, a depleted gas reservoir, from AIX Energy for use as storage.",
+   "value": "Kenai Loop Pool depleted reservoir, purchased from AIX Energy",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c6",
+   "statement": "The facility would initially hold 25 billion cubic feet of gas, close to half the utility's annual demand.",
+   "value": "25 billion cubic feet, close to half annual demand",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c7",
+   "statement": "The Alaska DNR has not yet completed its determination that the Kenai Loop Pool is technically capable of serving as a natural gas storage facility.",
+   "value": "DNR technical determination not completed",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c8",
+   "statement": "Enstar and Hilcorp Cook Inlet have competing applications with the Alaska DNR for gas storage facility leases at the Kenai Loop Pool.",
+   "value": "Enstar vs Hilcorp competing DNR lease applications",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c9",
+   "statement": "Without the commission's approval, Enstar president John Sims said the company has suspended its plans to move ahead with the project.",
+   "value": "Enstar suspended the project (John Sims)",
+   "evidence_url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+   "outlet": "Anchorage Daily News",
+   "date": "2026-07-10",
+   "confidence": "high"
+  },
+  {
+   "id": "c10",
+   "statement": "Statewide, Alaska residential electricity rates run roughly 40% higher than the national average (former state senator's op-ed).",
+   "value": "roughly 40% higher than national average",
+   "attribution_required": "per a former state senator's op-ed",
+   "evidence_url": "https://www.adn.com/opinions/2026/07/06/opinion-alaska-needs-energy-that-works-now-and-lasts/",
+   "outlet": "Anchorage Daily News (op-ed, Lesil McGuire)",
+   "date": "2026-07-06",
+   "confidence": "low"
+  },
+  {
+   "id": "c11",
+   "statement": "In many rural Alaska communities, energy costs are more than twice those in more urban parts of Alaska (op-ed).",
+   "value": "more than twice urban",
+   "attribution_required": "op-ed",
+   "evidence_url": "https://www.adn.com/opinions/2026/07/06/opinion-alaska-needs-energy-that-works-now-and-lasts/",
+   "outlet": "Anchorage Daily News (op-ed, Lesil McGuire)",
+   "date": "2026-07-06",
+   "confidence": "low"
+  },
+  {
+   "id": "c12",
+   "statement": "Southcentral Alaska faces a projected Cook Inlet natural gas shortfall by 2027 (op-ed).",
+   "value": "projected shortfall by 2027",
+   "attribution_required": "op-ed",
+   "evidence_url": "https://www.adn.com/opinions/2026/07/06/opinion-alaska-needs-energy-that-works-now-and-lasts/",
+   "outlet": "Anchorage Daily News (op-ed, Lesil McGuire)",
+   "date": "2026-07-06",
+   "confidence": "low"
+  },
+  {
+   "id": "c13",
+   "statement": "STAK Energy's proposed North Slope AI data-center campus generators could produce a gigawatt or more of power, some 30% more than urban Alaska's peak demand.",
+   "value": "a gigawatt or more; some 30% more than urban Alaska's peak demand",
+   "evidence_url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
+   "outlet": "Northern Journal (Nathaniel Herz)",
+   "date": "2026-07-03",
+   "confidence": "high"
+  },
+  {
+   "id": "c14",
+   "statement": "STAK Energy's North Slope project would cost more than $10 billion at full buildout (an earlier $500 million reference appears in the same article).",
+   "value": "more than $10 billion",
+   "evidence_url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
+   "outlet": "Northern Journal",
+   "date": "2026-07-03",
+   "confidence": "med"
+  },
+  {
+   "id": "c15",
+   "statement": "More than 500 public comments were received on the STAK North Slope lease before the preliminary deadline; fewer than a dozen endorsed the project.",
+   "value": "500+ comments; fewer than a dozen in favor",
+   "evidence_url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
+   "outlet": "Northern Journal",
+   "date": "2026-07-03",
+   "confidence": "high"
+  },
+  {
+   "id": "c16",
+   "statement": "The STAK ADL 422741 public comment window was extended to 4:30 p.m. July 17, 2026, citing comment volume and public interest.",
+   "value": "comment window closes 4:30 p.m. July 17, 2026",
+   "evidence_url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
+   "outlet": "Northern Journal",
+   "date": "2026-07-03",
+   "confidence": "high"
+  }
+ ],
+ "unused_but_verified": {
+  "note": "Alt-cluster claims verified but NOT selected (kept for record).",
+  "dryad_xprize": "XPRIZE Wildfire is a $11M four-year competition; teams autonomously detect+suppress a fire in a 1,000 km2 area within 10 minutes; finals held in rural Alaska June 15 to 25, 2026 (xprize.org). Dryad performance claims are company-PR-only.",
+  "montis": "FAA approved MONTIS avalanche-control drone (DroneLife 2026-07-09); it is REMOTELY PILOTED, not AI/autonomous; works alongside helicopters (not replacing); Alaska DOT is a collaboration partner; Seward Highway passes under 200 avalanche paths; 49 road hits Oct-Mar; $1.1M SMART grant."
+ }
+}

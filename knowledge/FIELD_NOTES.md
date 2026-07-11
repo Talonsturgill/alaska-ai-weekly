@@ -7,6 +7,35 @@ into the doctrine/library files and prune here.
 
 ---
 
+## 2026-07-11 — run 4 retro (Carousel No. 4, "The Cook Inlet Gas Machine")
+
+- **Shipped 8.90 vs 8.3** (9 slides, vector PDF 2.94MB), zero hard fails, 1 pixel round + 1 flow round.
+  Story: the July 10 RCA denial of Enstar's $240M Cook Inlet gas STORAGE prudency request, framed as
+  Alaska's supply ceiling meeting AI's gigawatt demand. NEW hero: a subsurface engineering cutaway
+  ("the gas machine") on a panorama-spine, with a reservoir-lens state machine and a valve open->shut motif.
+- **Fact-check-before-select earned its keep again**: the two topically-fresher candidates collapsed under
+  scrutiny (Dryad XPRIZE wildfire = company-PR-only sourcing + vague AK site; MONTIS avalanche drone = NOT AI,
+  it is remote-piloted, and "first DOT"/"replaces helicopters" were unsupported). Ordering claims before
+  selection saved the run from building a deck on PR. A well-sourced important story beat two novel thin ones.
+- **The canvas-vs-DOM-text blind spot recurred at scale** and is now the dominant defect class: qa.py PASSED a
+  deck where in-section DOM readouts and canvas labels overlapped body text and sat on the low-contrast ochre
+  band (S2 legend on homes, S3 curve labels on body, S4 readouts ~1.5:1 on ochre, S6 SUSPENDED, S7 flag-label
+  mash, S8 context on ochre). Fixes: a `.plate-dark` CSS class for DOM readouts, canvas knockout chips for
+  canvas labels, and capping body max-width so the body ENDS in the sky zone. Two new instincts logged.
+- **State-change motif needs geometry, not rotation**: the flow critic found the 8-spoke valve looked identical
+  rotated; an amber lock-bar across the hub made "shut" read at 432px. Motif carriers must change SHAPE.
+- **Honesty guardrails held**: c10/c11 (op-ed rate stats) kept off every slide; c12 (2027) used once, tagged
+  op-ed; c13 quoted verbatim with the "different units, not one sum" guardrail directly under the S8 bars; no
+  derived MW anywhere. The Bcf-vs-GW adjacency (all three directors flagged it) is defused on-slide.
+- **Curly-apostrophe false-positive, again**: three pixel critics flagged "smart quotes"; source grep showed
+  ZERO curly/dash bytes on all 9 slides (straight U+0027/U+0022). Fraunces/Manrope render straight apostrophes
+  with a slight curl. Always verify quote/dash violations at SOURCE level (run-1 lesson, re-confirmed).
+- **Weakest criterion = artwork craft (7)**: flat strata gradient bands, plain elliptical lenses, and S1/S9
+  lower-third dead zones. PARKED for Phase 12 as a reusable strata-texture/rim-light helper (within-band fbm
+  mottling + lens rim-light + dead-zone fill) so every future cutaway/landscape deck gets it for free.
+- Docket: added the Enstar Cook Inlet gas storage item (RCA denial). GVEA (Jul 13) and AKLNG (Jul 16) re-fetch
+  failed (429/503/403) and were carried forward; both resolve within days and are worth a hard re-check next run.
+
 ## 2026-07-11 — craft refresh (run 4 pre-research pass)
 
 - **Named, reusable frameworks drive saves (new actionable handle).** Multiple 2026 carousel roundups (Oktopost, Morphica, SocialPilot) converge that the highest-save decks hand the reader a NAMED, portable thinking tool ("The 3-C Framework", "The RICE Method") they can carry and reuse, not just a story. For us that means: when the story allows, give the deck ONE named lens or rule-of-thumb the reader keeps (a coined term, a 3-part test, a checklist), stated once and reinforced on the close. Save-value is our whole strategy, so this is a real lever, not fluff. Does not change gates.

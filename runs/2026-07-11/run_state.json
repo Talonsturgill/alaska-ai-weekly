@@ -1,0 +1,39 @@
+{
+ "run_date": "2026-07-11",
+ "carousel_no": 4,
+ "phases": {
+  "wake": "done",
+  "craft_refresh": "done",
+  "research": "done",
+  "claims": "done",
+  "docket": "done",
+  "selection": "done",
+  "directors_room": "done",
+  "copy": "done",
+  "art_build": "done",
+  "pixel_review": "done",
+  "flow_review": "done",
+  "assemble": "done",
+  "scoring": "done",
+  "ship": "pending",
+  "upgrade": "pending",
+  "gmail": "pending",
+  "retro": "pending"
+ },
+ "artifacts": {
+  "craft_refresh": "knowledge/FIELD_NOTES.md (2026-07-11 entry)",
+  "plan": "out/2026-07-11/plan.md",
+  "scout_findings": "out/2026-07-11/scout_findings.json",
+  "claims": "out/2026-07-11/claims.json",
+  "docket": "ledger/docket.json (+enstar item, refreshes)",
+  "selection": "out/2026-07-11/selection.md",
+  "storyboard": "out/2026-07-11/storyboard.md",
+  "copy": "out/2026-07-11/copy.json",
+  "caption": "out/2026-07-11/caption.txt (PASS)",
+  "slides": "out/2026-07-11/slides (9, generator: build_slides.py)",
+  "render": "out/2026-07-11/render (QA PASS)",
+  "final": "out/2026-07-11/final (pdf vector 2.94MB, contact sheet, thumbs)",
+  "score": "out/2026-07-11/score_report.json (8.90)"
+ },
+ "score": 8.9
+}

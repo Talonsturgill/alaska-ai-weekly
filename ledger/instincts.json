@@ -31,9 +31,9 @@
    "id": "machine-qa-is-not-taste",
    "learned": "2026-07-08",
    "instinct": "Never treat a machine_qa PASS as composition approval; the pixel critics judge composition, hierarchy, and collision at full size and thumb size.",
-   "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective.",
+   "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective. | CONFIRMED 2026-07-11: critics caught ~10 canvas-vs-DOM overlaps + low-contrast in-section labels that machine_qa PASSED (S2 legend/homes, S3 curve labels, S4 readouts on ochre, S6 SUSPENDED, S7 flag mash, S8 context on ochre).",
    "confidence": 0.98,
-   "last_confirmed": "2026-07-10"
+   "last_confirmed": "2026-07-11"
   },
   {
    "id": "d3-zoom-manual",
@@ -47,9 +47,9 @@
    "id": "verify-body-line-count",
    "learned": "2026-07-08",
    "instinct": "Before rendering, sanity-check long serif/body copy line counts against any fixed-position labels, bars, or plates; DOM text overlaps pass machine QA but fail the eye.",
-   "evidence": "Slide 3 body wrapped to 4 lines and overlapped the 'URBAN ALASKA GRID PEAK' bar label (a scorer-caught hard fail); slide 5 quote 4 slid under the Boyle plate. Both passed machine_qa safe-zone checks. | CONFIRMED 2026-07-09: four headline-wrap collisions (S1/S4/S7/S8) all traced to a display headline in a container narrower than its longest line; each machine_qa-FAILED as a text overprint.",
-   "confidence": 0.85,
-   "last_confirmed": "2026-07-09"
+   "evidence": "Slide 3 body wrapped to 4 lines and overlapped the 'URBAN ALASKA GRID PEAK' bar label (a scorer-caught hard fail); slide 5 quote 4 slid under the Boyle plate. Both passed machine_qa safe-zone checks. | CONFIRMED 2026-07-09: four headline-wrap collisions (S1/S4/S7/S8) all traced to a display headline in a container narrower than its longest line; each machine_qa-FAILED as a text overprint. | CONFIRMED 2026-07-11: S2/S3/S4 body blocks overran their planned line counts into the section; capping max-width so the body ENDS in the sky zone fixed all three.",
+   "confidence": 0.9,
+   "last_confirmed": "2026-07-11"
   },
   {
    "id": "data-decorative-on-leaf",
@@ -92,6 +92,24 @@
    "confidence": 0.7,
    "born": "2026-07-10",
    "evidence": "S2/S7/S8 kickers crowded the readout at full width and were shortened."
+  },
+  {
+   "instinct": "Any in-section DOM readout or canvas label over a light strata/ochre band must ride an explicit dark plate (CSS background plate for DOM, canvas knockout rect for canvas text); light mono on ochre measured ~1.5:1 and failed the eye though qa.py PASSED.",
+   "confidence": 0.8,
+   "born": "2026-07-11",
+   "evidence": "Pixel critics failed S4 readouts, S8 context line, S3 curve labels, S6 SUSPENDED tag for contrast on the warm ochre band; a .plate-dark CSS class + canvas knockout chips fixed every one."
+  },
+  {
+   "instinct": "Cap each body block's max-width so it resolves to at most its planned line count and ENDS inside the sky zone (above the section art) at PLAN time, then verify against the surface line; bodies silently overrun into the canvas art region and collide (qa cannot see canvas-vs-text).",
+   "confidence": 0.75,
+   "born": "2026-07-11",
+   "evidence": "S2 (4 lines vs 3), S3, S4 (6 lines) each overran into homes/labels; widening the measure so the body ends by ~y640 cleared the collisions."
+  },
+  {
+   "instinct": "For a state-change motif carried by ONE object (valve open->shut, switch on->off), change the object's GEOMETRY unmistakably (an amber lock-bar across the valve hub), not just a rotation; a subtle rotation of a radial/symmetric object reads identical at 432px.",
+   "confidence": 0.7,
+   "born": "2026-07-11",
+   "evidence": "Flow critic: the 8-spoke valve looked near-identical rotated; the open->shut turn relied entirely on the SUSPENDED tag until an amber lock-bar across the hub made 'shut' read at thumb."
   }
  ]
 }

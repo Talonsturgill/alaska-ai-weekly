@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10",
+  "updated": "2026-07-11",
   "items": [
     {
       "id": "adl-422741-stak-north-slope-lease",
@@ -55,7 +55,7 @@
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-10",
+      "last_updated": "2026-07-11",
       "history": [
         {
           "date": "2026-07-08",
@@ -68,6 +68,10 @@
         {
           "date": "2026-07-10",
           "note": "Re-confirmed via Northern Journal. The comment window still closes July 17, still more than 500 comments with fewer than a dozen in support. No change to the schedule. One week out."
+        },
+        {
+          "date": "2026-07-11",
+          "note": "Re-confirmed via Northern Journal (July 3 reporting) during this run's fact-check. Comment window still closes 4:30 p.m. July 17, still more than 500 comments with fewer than a dozen in support. Six days out."
         }
       ]
     },
@@ -162,7 +166,7 @@
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-10",
+      "last_updated": "2026-07-11",
       "history": [
         {
           "date": "2026-07-08",
@@ -175,6 +179,10 @@
         {
           "date": "2026-07-10",
           "note": "Three days out. Board executive session on the LM6000 purchase still set for July 13 per the June 28 News-Miner report; a direct fetch of the GVEA newsroom returned HTTP 403, so status carried forward unchanged. Watching for the outcome."
+        },
+        {
+          "date": "2026-07-11",
+          "note": "Two days out. Board executive session on the ~$120M LM6000 purchase still set for July 13 per the June 28 News-Miner report. Direct re-fetch of News-Miner (HTTP 429) and KUAC (HTTP 503) failed this run, so status carried forward unchanged. Watching for the outcome."
         }
       ]
     },
@@ -227,7 +235,7 @@
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-09",
+      "last_updated": "2026-07-11",
       "history": [
         {
           "date": "2026-07-08",
@@ -236,6 +244,52 @@
         {
           "date": "2026-07-09",
           "note": "Re-checked (Alaska Beacon, July 7). The final floor vote is still targeted for July 16. The S corp corporate income tax provision remains the key sticking point, and the governor has pledged to veto a bill that keeps it."
+        },
+        {
+          "date": "2026-07-11",
+          "note": "Floor votes still tentatively July 16, session ends July 19, per prior reporting. Alaska Beacon returned HTTP 403 on re-fetch this run; status carried forward unchanged. Watching for the vote."
+        }
+      ]
+    },
+    {
+      "id": "enstar-cook-inlet-gas-storage",
+      "title": "Enstar's Cook Inlet gas storage plan (Kenai Loop Pool)",
+      "kind": "regulatory-docket",
+      "status": "decided",
+      "decider": "Regulatory Commission of Alaska (prudency); Alaska DNR (storage lease and technical determination)",
+      "public_access": "indirect",
+      "access_note": "The RCA is a governor-appointed, legislature-confirmed commission; the public reaches its dockets through formal comment and intervention. This prudency request has been decided (denied); the underlying DNR storage-lease question is still open.",
+      "summary": "On July 10, 2026 the Anchorage Daily News reported the RCA issued a 17-page order denying Enstar's request for an advance determination that its proposed Cook Inlet gas storage project was prudent, saying the utility lacked basic information. The $240 million project would have bought the depleted Kenai Loop Pool reservoir from AIX Energy to hold 25 billion cubic feet of gas, close to half Enstar's annual demand, adding up to $12 a month to the average bill. Enstar and Hilcorp have competing DNR lease applications for the same pool, and DNR has not confirmed it is technically capable of storing gas. Without approval, Enstar president John Sims said the company suspended the project.",
+      "key_dates": [
+        {
+          "date": "2026-07-10",
+          "label": "RCA denies Enstar advance determination of prudency (ADN report); Enstar suspends the project",
+          "kind": "decision"
+        },
+        {
+          "date": "2026-07-10",
+          "label": "DNR determination on Kenai Loop Pool storage capability and competing Enstar/Hilcorp leases still pending",
+          "kind": "milestone"
+        }
+      ],
+      "location": {
+        "name": "Kenai Loop Pool, Cook Inlet near Kenai",
+        "lon": -151.25,
+        "lat": 60.55
+      },
+      "sources": [
+        {
+          "url": "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+          "outlet": "Anchorage Daily News",
+          "date": "2026-07-10"
+        }
+      ],
+      "first_seen": "2026-07-11",
+      "last_updated": "2026-07-11",
+      "history": [
+        {
+          "date": "2026-07-11",
+          "note": "Tracked from this run's verified claims. RCA denied Enstar's advance prudency determination in a 17-page order (ADN, July 10); Enstar suspended the $240M Kenai Loop Pool storage project. The storage fix for Southcentral's Cook Inlet gas crunch is off the table for now; DNR technical/lease determination and the competing Hilcorp application remain unresolved."
         }
       ]
     }

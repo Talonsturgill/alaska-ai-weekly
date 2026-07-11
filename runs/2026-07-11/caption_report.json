@@ -1,0 +1,13 @@
+{
+  "chars": 679,
+  "hook": "On July 10, state regulators rejected Alaska's plan to store a single winter of Cook Inlet gas.",
+  "hook_len": 95,
+  "hashtags": [
+    "#CookInletGas",
+    "#AlaskaEnergy",
+    "#DataCenterPower"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

@@ -152,6 +152,48 @@
     "https://www.gi.alaska.edu/news/alaska-developed-volcano-monitoring-system-will-expand-across-us"
    ],
    "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-11",
+   "carousel_no": 4,
+   "topic": "Cook Inlet gas STORAGE crisis: RCA denies Enstar's $240M Kenai Loop Pool storage prudency request (Jul 10) as Southcentral's supply ceiling meets AI data-center gigawatt demand",
+   "angle": "Supply-side ceiling, not decision access. Alaska is asked to power a gigawatt AI boom (STAK 1+GW, some 30% over urban peak) on a gas system that cannot even secure one winter's storage; the RCA rejected the storage fix on July 10 for 'lacking basic information' and Enstar suspended it. Thesis 'store one winter first?' plus The Hold Test (hold the winter, the ground, the bill).",
+   "entities": [
+    "Enstar",
+    "Regulatory Commission of Alaska",
+    "RCA",
+    "John Sims",
+    "Cook Inlet",
+    "Kenai Loop Pool",
+    "AIX Energy",
+    "Hilcorp",
+    "Alaska DNR",
+    "STAK Energy",
+    "Southcentral",
+    "North Slope"
+   ],
+   "keywords": [
+    "natural gas",
+    "gas storage",
+    "Cook Inlet",
+    "prudency",
+    "advance determination",
+    "25 Bcf",
+    "winter peak",
+    "shortfall",
+    "data center",
+    "AI",
+    "gigawatt",
+    "supply ceiling",
+    "depleted reservoir",
+    "cross-subsidy"
+   ],
+   "headline": "Alaska's gas machine, in cutaway. And the valve that just shut.",
+   "sources_lead": [
+    "https://www.adn.com/business-economy/energy/2026/07/10/state-regulators-reject-enstar-gas-storage-plan-raising-questions-about-solution-to-cook-inlet-shortage/",
+    "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/"
+   ],
+   "outcome_notes": ""
   }
  ]
 }

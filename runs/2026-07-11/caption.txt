@@ -1,0 +1,9 @@
+On July 10, state regulators rejected Alaska's plan to store a single winter of Cook Inlet gas.
+
+The same month, a North Slope AI project asked to draw a gigawatt or more, some 30% above urban Alaska's peak demand. One system can't bank half a year of heat. The other wants power at a scale the grid has never served.
+
+The deck walks through the gas system part by part, the $240M storage fix the RCA just denied, and how that new load compares, without treating gas storage and power demand as one number.
+
+Should the state clear gigawatt-scale AI load while it still can't secure one winter of heat for the homes it already serves?
+
+#CookInletGas #AlaskaEnergy #DataCenterPower
