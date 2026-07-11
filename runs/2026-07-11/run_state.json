@@ -15,10 +15,10 @@
   "flow_review": "done",
   "assemble": "done",
   "scoring": "done",
-  "ship": "pending",
-  "upgrade": "pending",
-  "gmail": "pending",
-  "retro": "pending"
+  "ship": "done",
+  "upgrade": "done",
+  "gmail": "done",
+  "retro": "done"
  },
  "artifacts": {
   "craft_refresh": "knowledge/FIELD_NOTES.md (2026-07-11 entry)",
@@ -33,7 +33,12 @@
   "slides": "out/2026-07-11/slides (9, generator: build_slides.py)",
   "render": "out/2026-07-11/render (QA PASS)",
   "final": "out/2026-07-11/final (pdf vector 2.94MB, contact sheet, thumbs)",
-  "score": "out/2026-07-11/score_report.json (8.90)"
+  "score": "out/2026-07-11/score_report.json (8.90)",
+  "pr": "PR #21 merged to main (sha 5904c4e)",
+  "ship": "runs/2026-07-11 on main; raw URLs 200",
+  "upgrade": "assets/js/aklabel.js (AK.canvasLabel); PR #22/#23 merged",
+  "gmail": "draft r5077714484490193546 (to Talon.sturgill@gmail.com)"
  },
- "score": 8.9
+ "score": 8.9,
+ "complete": true
 }
