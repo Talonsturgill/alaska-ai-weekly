@@ -15,9 +15,10 @@
   "flow_review": "done",
   "assemble": "done",
   "scoring": "done",
-  "ship": "pending",
-  "upgrade": "pending",
-  "gmail": "pending",
-  "retro": "pending"
- }
+  "ship": "done",
+  "upgrade": "done",
+  "gmail": "done",
+  "retro": "done"
+ },
+ "complete": true
 }
