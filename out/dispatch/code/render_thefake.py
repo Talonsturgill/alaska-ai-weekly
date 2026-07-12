@@ -369,26 +369,27 @@ def draw_chrome(base, f):
         for k in range(3):
             bx = sx0 + 40 + k * 130; on = ((f // 6) % 3) >= k
             d.ellipse([bx, 1150, bx + 18, 1168], fill=(*RED, 230) if on else (60, 40, 44, 150))
-        # THE SPREAD (16.2s->20.5s): reshare ghost-cards pop in around the phone one after another,
-        # the post multiplying across the feed — a real story-advancing event mid-shot
-        tspread = t - 16.2
+        # THE SPREAD (13.8s->18.5s): reshare ghost-cards pop in around the phone one after another,
+        # the post multiplying across the feed — big, frequent, story-advancing events that carry
+        # the 12.6-19.0s window (the counter roll alone is too small an area to register)
+        tspread = t - 13.8
         if tspread > 0:
-            cards = [(96, 470, 0.0), (830, 620, 0.55), (60, 950, 1.1), (816, 1030, 1.65),
-                     (150, 250, 2.2), (760, 300, 2.75), (96, 1240, 3.3)]
-            cf2 = dc.mono(22, m=True)
+            cards = [(60, 440, 0.0), (800, 600, 0.55), (40, 930, 1.1), (790, 1010, 1.65),
+                     (120, 220, 2.2), (740, 270, 2.75), (70, 1230, 3.3)]
+            cf2 = dc.mono(26, m=True)
             for (cx0, cy0, dt_) in cards:
                 a2 = E.out_cubic(E.seg(tspread, dt_, dt_ + 0.30))
                 if a2 <= 0.02:
                     continue
-                pop = 1.0 + 0.16 * (1.0 - a2)
-                wgt, hgt = int(150 * pop), int(96 * pop)
-                d.rounded_rectangle([cx0, cy0 - int((1 - a2) * 18), cx0 + wgt, cy0 + hgt],
-                                    radius=10, fill=(14, 20, 32, int(200 * a2)),
-                                    outline=(*RED, int(190 * a2)), width=2)
-                d.ellipse([cx0 + 10, cy0 + 10, cx0 + 30, cy0 + 30], fill=(200, 210, 224, int(160 * a2)))
-                d.line([(cx0 + 40, cy0 + 20), (cx0 + wgt - 12, cy0 + 20)], fill=(120, 140, 160, int(150 * a2)), width=4)
-                d.line([(cx0 + 10, cy0 + 48), (cx0 + wgt - 12, cy0 + 48)], fill=(90, 110, 130, int(130 * a2)), width=4)
-                d.text((cx0 + 10, cy0 + hgt - 32), "RESHARED", font=cf2, fill=(*RED, int(210 * a2)))
+                pop = 1.0 + 0.22 * (1.0 - a2)
+                wgt, hgt = int(214 * pop), int(136 * pop)
+                d.rounded_rectangle([cx0, cy0 - int((1 - a2) * 26), cx0 + wgt, cy0 + hgt],
+                                    radius=12, fill=(14, 20, 32, int(215 * a2)),
+                                    outline=(*RED, int(210 * a2)), width=3)
+                d.ellipse([cx0 + 12, cy0 + 12, cx0 + 42, cy0 + 42], fill=(200, 210, 224, int(170 * a2)))
+                d.line([(cx0 + 54, cy0 + 26), (cx0 + wgt - 14, cy0 + 26)], fill=(130, 150, 170, int(160 * a2)), width=6)
+                d.line([(cx0 + 12, cy0 + 66), (cx0 + wgt - 14, cy0 + 66)], fill=(95, 115, 135, int(140 * a2)), width=6)
+                d.text((cx0 + 12, cy0 + hgt - 38), "RESHARED", font=cf2, fill=(*RED, int(220 * a2)))
         # counter LOCK flash at ~18.9s: one soft red full-frame pulse (the moment it goes viral)
         lk = E.seg(t, 18.85, 19.05) * (1.0 - E.seg(t, 19.05, 19.55))
         if lk > 0.02:
