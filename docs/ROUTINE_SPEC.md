@@ -104,6 +104,15 @@ USE THE COMMITTED TOOLING (adapt it; don't reinvent)
 - scripts/upload_video.py (→ one-click link), scripts/dispatch_email.py (→ Gmail draft).
 
 PHASE 0: WORKSPACE PREFLIGHT (do this before ANY other conclusion or action)
+0. AUTONOMY / NO PERMISSION PROMPTS (CRITICAL — this routine runs unattended; there is NO human to click
+   "approve"). NEVER stall waiting on a tool-permission prompt: a blocked prompt has no responder and will
+   hang the whole run (this once wedged a run for hours). `.claude/settings.json` ships
+   `permissions.defaultMode: "bypassPermissions"` plus an allow-list precisely so tools run without asking —
+   if you ever see a permission request fail with "stream closed" or a tool get denied, DO NOT retry-and-wait:
+   the fix is the settings, not patience. Verify `.claude/settings.json` still sets
+   `permissions.defaultMode: "bypassPermissions"` at preflight and restore it if missing. Avoid `cd` inside
+   compound Bash commands (use absolute paths) since that can itself trigger a prompt. Bytes/credentials rules
+   still apply; "no prompts" is about not blocking, never about doing something unsafe.
 The toolkit this spec references lives on MAIN of talonsturgill/alaska-ai-weekly. A cloud clone can land
 on a stale branch (this happened: the repo default once pointed at the original one-commit scaffold, and
 a run concluded the spec was mismatched and stopped). So, first:

@@ -1,106 +1,363 @@
 {
-  "concept": "The Lid: an AI learns to pull Alaska's wildfire-smoke forecast DOWN toward the air people actually breathe, and admits it only sharpens the number, it cannot move the smoke.",
-  "story": "A UAF Geophysical Institute team (Jingqiu Mao and doctoral student Zhiwei Dong) trained a machine-learning model to bias-correct NOAA's HRRR-Smoke surface PM2.5 forecast during the Alaska wildfire season. The physics model undercounts surface smoke by up to five times; a one-dimensional convolutional neural network cuts that to about two. The root cause is vertical: a warm temperature-inversion lid traps smoke low, and the model paints it thin and high, so the correction sharpens the forecast without fixing the physics, and it still misses fires hidden under cloud. Paper: ACS ES&T Air, 2026, 3(5), 1263 to 1275, published April 17, 2026. Live hook: Alaska's 2026 fire season is active now.",
-  "honest_caveat": "It is a correction, not a cure. The machine learns the model's bias and pulls the number down toward measured air, shrinking a five-times undercount to about two, but it cannot move the actual smoke, and when a cloud hides a fire's heat the model still misses it. A person still decides when the air is safe to breathe.",
+  "concept": "THE FAKE THAT SWAM \u2014 an AI-generated image claimed a beluga escaped the Alaska SeaLife Center in Seward to find her calf; it drew close to six million views before the people who knew the whale set the record straight. The film stages the true whale, the viral fake, the moment the fabrication frays under a close look (where a detector can only put it at 82.6 percent likely AI, not proof), and the institution's plain correction, then loops back to the truth.",
   "engine": "dimensional",
   "derived_from": "scratch",
-  "style_mode": "atmospheric field-documentary: a lived-in, smoke-heavy Interior Alaska world shot like a nature-doc aerial, with restrained data chrome that never overpowers the picture",
-  "taste_dials": {
-    "realism_vs_schematic": "70 percent naturalistic world, 30 percent restrained schematic (the cross-section and the panel)",
-    "warmth": "sick, filtered warmth; the sun is a dim blood-orange disk, never cheerful",
-    "density": "heavy air, layered fog recession; negative space is smoke, not sky",
-    "motion": "slow, weighted, eased; the camera sinks like the smoke, never snappy"
-  },
-  "references": [
-    "the smoke-pall aerials of Interior Alaska fire summers (brown air, a red sun disk)",
-    "a weather cross-section diagram, but lit and dimensional, not a flat infographic",
-    "2001-style graphic-match cuts to move between the world and its schematic"
-  ],
+  "date": "2026-07-12",
+  "slug": "dispatch-2026-07-12-thefakethatswam",
   "fingerprint": {
-    "pov": "orbital-aerial",
-    "motion_vector": "vertical-descent",
-    "hero_treatment": "landscape-as-subject",
-    "layout": "stacked-layers",
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "single-organic-hero",
+    "layout": "fullbleed-split",
     "register": "naturalistic-scene",
-    "camera_strategy": "aerial-descent",
-    "light_story": "storm-dramatic",
-    "palette": "wildfire-smoke ochre and sepia pall, a dim blood-orange sun disk, soot-brown spruce silhouettes, a bone-grey inversion lid, and one clean mint forecast line",
-    "metaphor": "a warm lid traps the smoke low where people breathe; the model looks for it thin and high, so a machine learns to look down, and still falls short of the air in the lungs"
+    "camera_strategy": "orbit-reveal",
+    "light_story": "night-practical",
+    "palette": "aquarium teal-black water, pearl beluga white, a toxic synthetic magenta, phone-glow cyan, a warning-red correction stamp",
+    "metaphor": "the fake beluga dissolves into generated pixels while the real one holds; truth is the thing the machine cannot certify"
   },
-  "palette": "wildfire-smoke ochre and sepia pall, a dim blood-orange sun disk, soot-brown spruce silhouettes, a bone-grey inversion lid, and one clean mint forecast line",
+  "palette": "aquarium teal-black water, pearl beluga white, a toxic synthetic magenta, phone-glow cyan, a warning-red correction stamp",
   "light": {
-    "sun": "a low, smoke-dimmed sun in the west, a dim blood-orange disk barely piercing thick brown haze",
-    "mood": "the light is sick and filtered; the smoke owns the air, and that heaviness IS the story, not a backdrop to it"
+    "sun": "no sun; a night interior lit from within, the soft practical glow of an aquarium tank against the hard cold glare of a phone feed",
+    "mood": "the real whale is lit gently from inside her water; the fake is lit by the flat blue light of a screen. Warm inner truth versus cold outer glare."
   },
-  "divergence_note": "This diverges hard from the last two Dispatches. 2026-07-09 (the volcano) was eye-level-immersive, single-object-void, vertical-rise, instrument-readout, on a basalt-ember-magma palette; 2026-07-10 (the sockeye) was macro-closeup, fullbleed-split, vertical-descent on a single-organic-hero, editorial-schematic, on a sockeye-crimson and glacial-blue palette. This one is an orbital-aerial that SINKS into a smoke-choked valley (landscape-as-subject, stacked atmospheric layers, a naturalistic lit world), lit by a sick blood-orange smoke-dimmed sun (storm-dramatic), with an aerial-descent camera strategy neither prior run used. The hero is the AIR itself, the subject is an atmosphere, not a creature or an instrument screen, and the palette is a brown smoke pall no recent run has touched.",
+  "hook": {
+    "pattern": "bold-claim",
+    "frame1": "A pearl-white beluga hangs in dark teal tank water, calm and real; the burned-in headline sits lower third over her, a warning-red hairline framing the frame like a feed about to lie.",
+    "headline": "AI FAKED THIS WHALE'S ESCAPE",
+    "motion_by_s": 1.1,
+    "loopback": "The film opens on the real beluga at rest in her tank and returns to that exact calm frame at the close, the truth still there after the fake has dissolved."
+  },
+  "audio_arc": {
+    "build_steps": 3,
+    "dip_at": 35.0,
+    "riser_at": 33.9,
+    "silence_at": 35.4,
+    "payoff_at": 37.3,
+    "button_pattern": "callback"
+  },
   "shots": [
     {
-      "id": 1, "t": "0.0-11.0", "framing": "wide-establish",
-      "pov": "orbital-aerial", "layout": "stacked-layers", "motion_vector": "vertical-descent", "hero_treatment": "landscape-as-subject",
-      "camera": {"move": "aerial-descent", "focus_from": 30.0, "focus_to": 8.0},
-      "transition_in": "", "thread": "",
-      "centered": "the smoke-filled valley and the dim blood-orange sun, dead center, as the camera sinks toward it",
-      "hook_note": "front-load the hook: frame 1 already holds the dead-center blood-orange sun disk with smoke ACTIVELY rolling/thickening across it, so a muted-scroll viewer gets premise plus motion in the first second, THEN the slow descent settles in",
-      "means": "open on the stake: when Alaska burns, the smoke is the part that reaches everyone"
+      "id": 1,
+      "t": "0.0-10.2",
+      "framing": "subject-portrait",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "",
+      "thread": "match",
+      "camera": {
+        "move": "orbit-reveal",
+        "focus_from": 7.0,
+        "focus_to": 3.2
+      },
+      "hero": {
+        "name": "the real beluga",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "rounded melon, long pale body, two pectoral fins, broad fluke, a dark eye; three read-zones head/body/tail; enters first as a soft SILHOUETTE against the lit tank glass (a distinct, non-portrait entrance) before the orbit reveals her fully; skin catches one soft specular from the tank light"
+      },
+      "centered": "the beluga surfaces from a silhouette against the glass to full relief as the camera orbits and her eye comes into focus",
+      "means": "establish the true subject in her real place before any lie touches it"
     },
     {
-      "id": 2, "t": "11.0-21.5", "framing": "two-up",
-      "pov": "cross-section-cutaway", "layout": "fullbleed-split", "motion_vector": "assemble-build", "hero_treatment": "data-as-subject",
-      "camera": {"move": "rack-focus-macro", "focus_from": 6.0, "focus_to": 3.0},
-      "transition_in": "match-cut", "thread": "match",
-      "centered": "two smoke profiles side by side, a tall thin model plume and a squat thick real plume, with a five-times gap bracket and a glowing inversion-lid line drawing across",
-      "means": "quantify the miss and name its cause: the model undercounts surface smoke up to five times because a warm lid traps it low"
+      "id": 2,
+      "t": "10.2-20.9",
+      "framing": "data-panel",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "fui-boot",
+      "thread": "carry",
+      "camera": {
+        "move": "rack-focus-macro",
+        "focus_from": 4.5,
+        "focus_to": 1.4
+      },
+      "hero": {
+        "name": "the phone feed",
+        "parts": 4,
+        "zones": 3,
+        "detail_note": "phone body, glowing screen holding the fake image, a view-counter, a bezel and notch; zones screen/counter/chrome; the counter spins toward six million"
+      },
+      "centered": "the view counter at frame center spins up toward 6,000,000 as the fake image sits behind it",
+      "means": "carry the whale's image out of the tank and onto the feed, where the number is the story"
     },
     {
-      "id": 3, "t": "21.5-28.5", "framing": "subject-portrait",
-      "pov": "eye-level-immersive", "layout": "centered-hero-lowerthird", "motion_vector": "push-in-only", "hero_treatment": "structure-as-subject",
-      "camera": {"move": "locked-drift", "focus_from": 5.5, "focus_to": 4.5},
-      "transition_in": "focus-pull", "thread": "carry",
-      "centered": "a lone cabin and a small figure at the smoky valley floor, the pale model plume floating uselessly above the murk they stand in",
-      "means": "the human stakes: this is the air people actually breathe, while the model draws it thin and high"
+      "id": 3,
+      "t": "20.9-33.0",
+      "framing": "macro-closeup",
+      "pov": "macro-closeup",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "morph",
+      "thread": "match",
+      "camera": {
+        "move": "dolly-through",
+        "focus_from": 2.6,
+        "focus_to": 2.6
+      },
+      "hero": {
+        "name": "the fabricated beluga",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "a beluga shape that is right at a glance but wrong up close: edges break into voxel cubes and magenta glitch, fins fray into pixels; zones intact-body/dissolving-edge"
+      },
+      "centered": "the fake whale fills frame center and, as we push in, sheds pixels radially; a DETECTOR readout reads 82.6% LIKELY AI, and likely is not proof",
+      "means": "the honest limit, drawn: the fake looks real and a detector can only give odds (82.6% likely), not proof; the tell shows only up close"
     },
     {
-      "id": 4, "t": "28.5-40.0", "framing": "data-panel",
-      "pov": "instrument-screen", "layout": "hud-instrument-frame", "motion_vector": "scroll-data", "hero_treatment": "data-as-subject",
-      "camera": {"move": "dolly-through", "focus_from": 7.0, "focus_to": 4.0},
-      "transition_in": "fui-boot", "thread": "build",
-      "centered": "a dimensional forecast panel: the HRRR-Smoke feed enters a CNN block, the under-forecast curve bends down toward the measured curve, and a five-times bracket collapses to about two",
-      "means": "introduce the AI and show it working: UAF taught a second model to learn the error and pull the forecast down, five times too low becomes about two"
+      "id": 4,
+      "t": "33.0-45.5",
+      "framing": "two-up",
+      "pov": "cross-section-cutaway",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "camera": {
+        "move": "rise-reveal",
+        "focus_from": 5.5,
+        "focus_to": 5.5
+      },
+      "hero": {
+        "name": "the correction card",
+        "parts": 3,
+        "zones": 2,
+        "detail_note": "a lit institutional fact-stamp assembling: 'SINCE 1998' rule, '0 ESCAPES' rule, and a red THIS NEVER HAPPENED stamp over the collapsing fake; zones fact-block/stamp"
+      },
+      "centered": "the correction stamp lands dead center as the fake collapses out of the grid behind it",
+      "means": "the people who knew the whale set the record straight; the fake falls, the fact stands"
     },
     {
-      "id": 5, "t": "40.0-52.0", "framing": "macro-closeup",
-      "pov": "macro-closeup", "layout": "single-object-void", "motion_vector": "radial-emanate", "hero_treatment": "structure-as-subject",
-      "camera": {"move": "rack-focus-macro", "focus_from": 2.0, "focus_to": 0.8},
-      "transition_in": "hard-cut", "thread": "travel",
-      "centered": "a single cloud with a fire's ember glow pulsing hidden beneath it, a detection reticle sweeping and returning empty; the smoke below sits exactly as thick as before",
-      "means": "the honest caveat: a correction is not a cure, it sharpens the number but cannot move the smoke, and it still misses a fire hidden under cloud"
-    },
-    {
-      "id": 6, "t": "52.0-58.5", "framing": "map-territory",
-      "pov": "orbital-aerial", "layout": "stacked-layers", "motion_vector": "vertical-rise", "hero_treatment": "landscape-as-subject",
-      "camera": {"move": "rise-reveal", "focus_from": 8.0, "focus_to": 30.0},
-      "transition_in": "pull-out", "thread": "build",
-      "centered": "the camera lifts back out of the valley; the mint forecast line now hugs the real smoke layer better than before, a single lit window in a cabin below",
-      "recompose_note": "render as a TRUE recomposition, not a continuous zoom-out: rise-reveal into a re-framed layered valley with NEW elements (the corrected mint line now hugging the low smoke layer, a lit cabin window), so it reads as a new world, not the same air scaled down",
-      "means": "resolution: the forecast lands closer and sooner, and a person still decides when the air is safe to breathe"
+      "id": 5,
+      "t": "45.5-60.0",
+      "framing": "wide-establish",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "crossfade",
+      "thread": "carry",
+      "camera": {
+        "move": "locked-drift",
+        "focus_from": 3.2,
+        "focus_to": 3.2
+      },
+      "hero": {
+        "name": "the real beluga, restored",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "the same beluga from shot 1 back at rest in her true tank, calm; the brand wordmark resolves lower third; a loop-back to the opening frame"
+      },
+      "centered": "the real beluga settles at frame center, the wordmark resolving beneath her",
+      "means": "loop back to the truth that was there all along; the button lands on knowing, not on a better machine"
     }
   ],
   "beats": [
-    {"t": "0.5-4.0", "vo": "When Alaska burns, the smoke is the part that reaches everyone.", "shows": "aerial over a soot-brown spruce valley, a dim blood-orange sun through the smoke pall", "sfx": "low wind rumble under a distant fire crackle", "means": "open on the stake"},
-    {"t": "4.0-7.5", "vo": "It sinks into the valleys, and for weeks, people breathe it.", "shows": "the camera descends toward the valley floor, smoke thickens, a small community appears below", "sfx": "an airy descent whoosh", "means": "smoke settles where people live"},
-    {"t": "7.5-11.0", "vo": "So the state runs a model that forecasts the smoke two days out.", "shows": "a translucent mint forecast grid overlays the valley, a two-day clock ticks up", "sfx": "a soft UI tick", "means": "there is a forecast"},
-    {"t": "11.0-14.5", "vo": "But that model has a habit. It reads the air too clean.", "shows": "cut to a cross-section, the grid glows pale and thin, mismatched with the thick smoke below it", "sfx": "a transition swell whoosh right on the world-to-diagram cut, a hollow tone settling under it", "means": "the model's flaw"},
-    {"t": "14.5-18.0", "vo": "On the worst days it undercounts the smoke near the ground by up to five times.", "shows": "a tall thin model plume beside a squat thick real plume, a five-times gap bracket snaps in", "sfx": "a measurement clack, then a low boom on the five-times", "means": "quantify the miss, five times"},
-    {"t": "18.0-21.5", "vo": "Here is why. A warm lid of air seals the valley.", "shows": "a glowing bone-grey inversion-lid line draws across the cross-section, capping the smoke", "sfx": "a pressure hum and a lid seal thud", "means": "name the mechanism, the inversion lid"},
-    {"t": "21.5-25.0", "vo": "It traps the smoke down low, where we breathe.", "shows": "ground level in the smoky community, a cabin and a small figure in the murk", "sfx": "muffled ambience and a single cough", "means": "the human stakes at the surface"},
-    {"t": "25.0-28.5", "vo": "The model keeps drawing it thin and high.", "shows": "the pale model plume floats uselessly above the figure, in clean air nobody is standing in", "sfx": "an airy, too-clean hollow tone rising off the surface as the false plume lifts away", "means": "model versus lived reality"},
-    {"t": "28.5-32.0", "vo": "So a team at the University of Alaska Fairbanks taught a second model to correct the first.", "shows": "the correction appears as a visible downward force that grabs the thin high model plume and starts hauling it toward the murk, a small CNN label as secondary chrome", "sfx": "fui boot chirps then a low grab-and-tug", "means": "introduce the AI corrector as a visible downward pull, not a labeled box"},
-    {"t": "32.0-36.0", "vo": "It learns the error and pulls the forecast back down toward the air people actually breathe.", "shows": "on the panel the under-forecast curve bends downward toward the measured curve", "sfx": "a descending pull-down glide falling with the curve, resolving into the ratchet-lock", "means": "show the mechanism working"},
-    {"t": "36.0-40.0", "vo": "The gap shrinks. Five times too low becomes about two.", "shows": "the five-times bracket collapses to a two-times bracket, numerals read 5x then 2x", "sfx": "a ratchet and a settling lock", "means": "the payoff number, five to two"},
-    {"t": "40.0-44.0", "vo": "But this is a correction, not a cure. It sharpens the number.", "shows": "the corrected curve still sits short of the measured curve, a residual gap glows", "sfx": "a soft negative tone", "means": "honest caveat, the residual gap remains"},
-    {"t": "44.0-48.0", "vo": "It cannot move the smoke.", "shows": "back in the valley, macro on the smoke sitting exactly as thick as before, only the readout is crisper", "sfx": "the wind holds, a HUD refocus tick", "means": "honest caveat, reality unchanged"},
-    {"t": "48.0-52.0", "vo": "And when a cloud hides a fire, the model can still miss it.", "shows": "a cloud with a hidden ember glow beneath, a detection reticle sweeps and returns empty", "sfx": "a searching ping that comes back empty", "means": "second honest limit, missed fire under cloud"},
-    {"t": "52.0-55.5", "vo": "So the forecast lands closer, sooner.", "shows": "the camera lifts back out to the aerial, the mint forecast line now hugs the real smoke layer", "sfx": "an airy lift and a confirming chime", "means": "resolution, better and sooner"},
-    {"t": "55.5-58.5", "vo": "And a person still decides when the air is safe to breathe.", "shows": "a single lit cabin window looking out at the smoke, the alaska.ai signoff resolves", "sfx": "quiet room tone under a soft brand sting", "means": "human in the loop, brand outro"}
-  ]
+    {
+      "t": "0.0-3.0",
+      "vo": "This beluga never left her tank in Seward.",
+      "shows": "a beluga silhouette against lit tank glass resolves to a full pearl-white whale as she glides in",
+      "sfx": "soft sub-aqua swell + a low water-room tone",
+      "means": "the true subject, at home",
+      "choreo": {
+        "primary": "the whale surfaces from a glass silhouette and traverses frame left to right on an eased path",
+        "reaction": "caustic light ripples slide across her flank as she resolves out of silhouette",
+        "ambient": "slow particulate drift in the water column"
+      }
+    },
+    {
+      "t": "3.0-6.5",
+      "vo": "But a picture said she did.",
+      "shows": "a hairline red frame ticks in around the image, feed-style",
+      "sfx": "a single UI tick as the red frame snaps in",
+      "means": "a feed is about to speak for her",
+      "choreo": {
+        "primary": "red hairline frame draws in around the tank image",
+        "reaction": "as the frame snaps in, the tank key-light dips a notch on her back (the feed's frame dimming the real light)",
+        "ambient": "faint grain crawls over the water"
+      }
+    },
+    {
+      "t": "6.5-9.5",
+      "vo": "It showed her slipping out to sea to find her calf.",
+      "shows": "a false open-sea plate wipes over the tank; a small calf-silhouette appears ahead and she angles toward it",
+      "sfx": "a distant open-water wash fading up under the room tone",
+      "means": "the lie's content, drawn: an escape to reunite with a calf",
+      "choreo": {
+        "primary": "a false open-ocean plate slides over the tank behind her as she drifts toward open water",
+        "reaction": "a small second beluga (the calf) fades in ahead and she angles toward it",
+        "ambient": "cold open-water rays replace the warm tank caustics"
+      }
+    },
+    {
+      "t": "9.5-13.5",
+      "vo": "The image was fake, built by AI, and it looked completely real.",
+      "shows": "a phone rises into frame carrying the same whale image; fui-boot",
+      "sfx": "a whoosh as the phone rises + a soft screen-boot chime",
+      "means": "carry the image onto the feed",
+      "choreo": {
+        "primary": "phone rises into frame center and its screen boots",
+        "reaction": "the tank behind defocuses as the screen takes over",
+        "ambient": "screen scanlines shimmer"
+      }
+    },
+    {
+      "t": "13.5-16.5",
+      "vo": "One post drew close to six million views",
+      "shows": "the view counter mounts, digits rolling",
+      "sfx": "rapid odometer ticks climbing in pitch",
+      "means": "the number is the story now",
+      "choreo": {
+        "primary": "counter digits roll upward toward 6,000,000",
+        "reaction": "a like/share row pops in stutters beside it",
+        "ambient": "feed cards scroll faintly behind the counter"
+      }
+    },
+    {
+      "t": "16.5-19.5",
+      "vo": "before anyone slowed down.",
+      "shows": "counter nears six million and holds; a small warning under it",
+      "sfx": "the ticks resolve to a held tone as the counter locks",
+      "means": "virality outran the check",
+      "choreo": {
+        "primary": "counter eases to a stop near 6,000,000",
+        "reaction": "an ILLUSTRATIVE micro-label blinks under the number",
+        "ambient": "chrome UI breathes"
+      }
+    },
+    {
+      "t": "19.5-23.5",
+      "vo": "A checker could only say it looked likely fake.",
+      "shows": "a DETECTOR strip scans and settles on 82.6% LIKELY AI",
+      "sfx": "a scanning pulse then a soft uncertain tone",
+      "means": "detection gives odds, not proof",
+      "choreo": {
+        "primary": "a scan line sweeps the fake image on screen",
+        "reaction": "the DETECTOR readout settles on 82.6% LIKELY AI in amber",
+        "ambient": "the counter holds, chrome flickers"
+      }
+    },
+    {
+      "t": "23.5-27.0",
+      "vo": "What stopped it was people who actually knew the whale.",
+      "shows": "morph into the fabricated beluga at macro; a handler's hand and the Center mark ghost at the glass",
+      "sfx": "a morph whoosh into a quieter, closer water tone",
+      "means": "the humans who knew her enter the frame, against the fabrication",
+      "choreo": {
+        "primary": "the screen image morphs into a full fabricated whale, convincing at a glance",
+        "reaction": "a handler's silhouette and hand rise at the tank glass and the SeaLife Center mark ghosts in",
+        "ambient": "slow drift of synthetic haze behind the glass"
+      }
+    },
+    {
+      "t": "27.0-31.0",
+      "vo": "The Alaska SeaLife Center has run since 1998,",
+      "shows": "a SINCE 1998 fact-plate draws in over the fraying fake as its edges shed voxels",
+      "sfx": "a crackle riser as pixels start to peel",
+      "means": "the true record arrives as the lie frays",
+      "choreo": {
+        "primary": "camera dollies through; fake edges break into cubes",
+        "reaction": "a SINCE 1998 rule draws in at lower third, in time with the VO",
+        "ambient": "magenta glitch motes drift outward"
+      }
+    },
+    {
+      "t": "31.0-34.5",
+      "vo": "and no beluga has ever escaped.",
+      "shows": "a specific tell fails: the fake's eye blows into cubes and the fluke voxelizes; a 0 ESCAPES plate joins",
+      "sfx": "riser peaks then a deliberate dip toward silence",
+      "means": "the specific tell + the second fact, then the breath before the correction",
+      "choreo": {
+        "primary": "the eye pixelates and the fluke shears apart into voxels (a named tell, not a general blur)",
+        "reaction": "a 0 ESCAPES rule snaps in beside SINCE 1998",
+        "ambient": "the DETECTOR strip dims and pixel motes stream off the tail"
+      }
+    },
+    {
+      "t": "34.5-39.0",
+      "vo": "So they said it plainly. This never happened.",
+      "shows": "hard cut; the SINCE 1998 and 0 ESCAPES plates lock into a clean grid, then a red stamp lands",
+      "sfx": "silence, then a firm stamp hit and settle boom",
+      "means": "the institution corrects the record",
+      "choreo": {
+        "primary": "the SINCE 1998 and 0 ESCAPES plates lock square into a clean grid",
+        "reaction": "a red THIS NEVER HAPPENED stamp slams over the collapsing fake",
+        "ambient": "the fake's last pixels sink out of the grid"
+      }
+    },
+    {
+      "t": "39.0-43.0",
+      "vo": "And the account came down.",
+      "shows": "the feed panel greys out and collapses",
+      "sfx": "a short power-down sweep as the panel dies",
+      "means": "the lie is pulled",
+      "choreo": {
+        "primary": "the feed card desaturates and folds away",
+        "reaction": "the view counter freezes then goes dark",
+        "ambient": "grid lines dim"
+      }
+    },
+    {
+      "t": "43.0-47.0",
+      "vo": "AI can draw a lie faster than we can prove it false.",
+      "shows": "a fast red FAKE line races across; a slow grey PROOF bar crawls behind and never catches it",
+      "sfx": "a low sustained tone, sober",
+      "means": "the real limit, drawn as a race the proof loses",
+      "choreo": {
+        "primary": "a red 'fake' line shoots left to right at speed",
+        "reaction": "a slow grey 'proof' bar inches after it and falls behind",
+        "ambient": "residual pixel-motes clear off the right edge (a third, disjoint region)"
+      }
+    },
+    {
+      "t": "47.0-51.0",
+      "vo": "The catch was not a smarter machine.",
+      "shows": "crossfade back to the real beluga at rest in her tank",
+      "sfx": "the water-room tone returns, warm",
+      "means": "loop back to the truth",
+      "choreo": {
+        "primary": "the real tank fades up, beluga at rest",
+        "reaction": "caustics resume gently across her back",
+        "ambient": "particulate drift returns"
+      }
+    },
+    {
+      "t": "51.0-54.5",
+      "vo": "It was a place that knew the truth.",
+      "shows": "the beluga settles center; the ALASKA.AI wordmark resolves",
+      "sfx": "a soft resolving chime, fade to the signoff",
+      "means": "the button lands on knowing",
+      "choreo": {
+        "primary": "camera micro-drift holds on the calm whale",
+        "reaction": "wordmark eases up lower third",
+        "ambient": "tank glow steadies"
+      }
+    },
+    {
+      "t": "54.5-58.0",
+      "vo": "",
+      "shows": "a last caustic sweep crosses her back as the tagline resolves and the loop-frame clicks",
+      "sfx": "a soft low shimmer under the tagline",
+      "means": "close the loop, no dead air on the tail",
+      "choreo": {
+        "primary": "a caustic light sweep travels across the whale's back",
+        "reaction": "the tagline eases up under the wordmark",
+        "ambient": "tank particulate drifts, matching the opening frame"
+      }
+    }
+  ],
+  "honest_caveat": "A detector could only put odds on the fake, about 82.6 percent likely AI by one tool (Snopes via Hive Moderation), and likely is not proof. The image had already drawn millions of views. What actually settled it was an Alaska institution that knew its own animals and said plainly it could not have happened. The machine can generate a lie and even estimate one, but it cannot certify the truth.",
+  "voice_plan": "a calm, credible male narrator (edge-tts en-US-AndrewMultilingualNeural as the publish voice this run; kokoro is unavailable in this environment because its required g2p model download is blocked by network policy), riding the picture beat for beat",
+  "on_screen_numbers": [
+    "~6,000,000 VIEWS (illustrative; reported by Alaska Public Media)",
+    "AI LIKELIHOOD 82.6% (Snopes / Hive Moderation)",
+    "SINCE 1998",
+    "0 ESCAPES"
+  ],
+  "divergence_note": "Every recent Dispatch framed AI as a helpful instrument that detects, counts or predicts nature (salmon sonar, caribou, volcano tremor, smoke forecasts). This one inverts that: AI is the source of a convincing LIE, and the honest limit is that detection failed and human/institutional knowledge was the backstop. Visually it abandons the last two boards entirely: versus 2026-07-11 (orbital-aerial storm-descent over smoke, stacked strata, naturalistic landscape) it is an eye-level night interior in tank water orbiting a single organic hero; versus 2026-07-10 (macro vertical-descent split on a river) it swaps to a horizontal orbit-reveal with a night-practical palette of aquarium teal, pearl white, synthetic magenta and phone-glow cyan. The metaphor (a fabricated whale dissolving into generated pixels while the real one holds) is a new central image, and the camera strategy is orbit-reveal, not the previous aerial-descent."
 }

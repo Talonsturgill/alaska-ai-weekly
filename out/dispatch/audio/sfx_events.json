@@ -1,80 +1,115 @@
 {
   "events": [
     {
-      "t": 4.0,
-      "kind": "whoosh",
-      "label": "descent whoosh into the valley"
+      "t": 0.3,
+      "kind": "ambient",
+      "label": "sub-aqua swell, the real tank"
     },
     {
-      "t": 7.5,
+      "t": 3.97,
       "kind": "tick",
-      "label": "forecast grid UI tick"
+      "label": "red feed-frame snaps in"
     },
     {
-      "t": 11.0,
+      "t": 6.5,
+      "kind": "ambient",
+      "label": "false open-water wash rises"
+    },
+    {
+      "t": 10.21,
       "kind": "whoosh",
-      "label": "swell on the cut to the cross-section"
+      "label": "phone rises into frame"
+    },
+    {
+      "t": 10.7,
+      "kind": "pulse",
+      "label": "screen boot chime"
+    },
+    {
+      "t": 13.6,
+      "kind": "tick",
+      "label": "view-counter climbs 1"
+    },
+    {
+      "t": 14.1,
+      "kind": "tick",
+      "label": "view-counter climbs 2"
     },
     {
       "t": 14.6,
-      "kind": "boom",
-      "label": "low boom on the 5x undercount"
-    },
-    {
-      "t": 18.0,
-      "kind": "hit",
-      "label": "inversion lid seal thud"
-    },
-    {
-      "t": 21.6,
-      "kind": "pop",
-      "label": "a cough in the murk"
-    },
-    {
-      "t": 25.2,
-      "kind": "riser",
-      "label": "airy too-clean hollow rise as the false plume lifts"
-    },
-    {
-      "t": 28.6,
-      "kind": "pop",
-      "label": "fui boot chirp, the corrector grabs"
-    },
-    {
-      "t": 32.2,
-      "kind": "riser",
-      "label": "descending pull-down glide falling with the curve"
-    },
-    {
-      "t": 36.2,
-      "kind": "lock",
-      "label": "ratchet and settling lock on 5x to 2x"
-    },
-    {
-      "t": 40.2,
-      "kind": "hit",
-      "label": "soft negative tone, correction not cure"
-    },
-    {
-      "t": 44.2,
       "kind": "tick",
-      "label": "HUD refocus tick, reality unchanged"
+      "label": "view-counter climbs 3"
     },
     {
-      "t": 48.2,
+      "t": 15.1,
+      "kind": "tick",
+      "label": "view-counter climbs 4"
+    },
+    {
+      "t": 15.6,
+      "kind": "tick",
+      "label": "view-counter climbs 5"
+    },
+    {
+      "t": 18.9,
+      "kind": "lock",
+      "label": "counter locks near six million"
+    },
+    {
+      "t": 20.88,
       "kind": "pulse",
-      "label": "searching ping returns empty"
+      "label": "detector scan pulse"
     },
     {
-      "t": 52.2,
+      "t": 22.6,
+      "kind": "tick",
+      "label": "detector settles 82.6% likely"
+    },
+    {
+      "t": 24.43,
+      "kind": "whoosh",
+      "label": "morph into the fabrication"
+    },
+    {
+      "t": 28.3,
       "kind": "riser",
-      "label": "airy lift and confirming chime"
+      "label": "pixels peeling, tension builds"
+    },
+    {
+      "t": 37.3,
+      "kind": "boom",
+      "label": "THIS NEVER HAPPENED stamp lands"
+    },
+    {
+      "t": 37.5,
+      "kind": "hit",
+      "label": "stamp settle"
+    },
+    {
+      "t": 40.5,
+      "kind": "whoosh",
+      "label": "the account is pulled, panel power-down"
+    },
+    {
+      "t": 43.8,
+      "kind": "tick",
+      "label": "the fake line races ahead of proof"
+    },
+    {
+      "t": 47.31,
+      "kind": "pulse",
+      "label": "restored tank, warm resolve"
+    },
+    {
+      "t": 48.0,
+      "kind": "ambient",
+      "label": "the water-room returns"
     },
     {
       "t": 55.6,
-      "kind": "hit",
-      "label": "soft brand sting"
+      "kind": "pulse",
+      "label": "final resolve, fade to signoff"
     }
   ],
-  "n": 15
+  "n": 22
 }
