@@ -1,4 +1,26 @@
 {
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Agent",
+      "Task",
+      "TaskCreate",
+      "TaskUpdate",
+      "TaskList",
+      "mcp__Gmail",
+      "mcp__github"
+    ],
+    "deny": [],
+    "ask": []
+  },
   "hooks": {
     "SessionStart": [
       {

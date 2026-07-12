@@ -1,29 +1,34 @@
 {
  "sources": [
   {
-   "outlet": "ACS ES&T Air (paper)",
-   "url": "https://pubs.acs.org/doi/10.1021/acsestair.5c00409",
-   "note": "Dong, Mao et al., Machine Learning Bias Correction of HRRR-Smoke Surface PM2.5 Forecasts during the Alaska Wildfire Season, 2026, 3(5), 1263 to 1275, published April 17, 2026. Load-bearing figures: up to 5x surface undercount; CNN1D best corrector, residual about 2x; cause is vertical smoke placement (inversions, fires under cloud)."
+   "url": "https://alaskapublic.org/news/2026-07-08/a-fake-beluga-escape-story-on-social-media-is-a-reminder-of-the-hazards-of-misinformation",
+   "outlet": "Alaska Public Media (2026-07-08)",
+   "note": "Primary explainer: the fake beluga-escape image, ~6 million views on one post, the Center's statement that it is false and likely AI-generated. Kaiti Grant (communications manager) quoted."
   },
   {
-   "outlet": "OpenAlex record (independent cross-check)",
-   "url": "https://openalex.org/works?filter=doi:10.1021/acsestair.5c00409",
-   "note": "Second-source confirmation of title, authors, venue, and publication date."
+   "url": "https://fm.kuac.org/kuac%20newscasts/2026-07-10/07-10-2026-kuac-morning-news",
+   "outlet": "KUAC Fairbanks (2026-07-10)",
+   "note": "Second source: false AI-generated beluga-escape story got millions of views on social media last month."
   },
   {
-   "outlet": "UAF news (team + operational context)",
-   "url": "https://www.uaf.edu/news/uaf-helps-develop-air-quality-data-for-popular-alaska-wildfire-website.php",
-   "note": "Jingqiu Mao (UAF, NASA Health and Air Quality Science Team) and doctoral student Zhiwei Dong; the UAF smoke/air-quality feed behind Alaska wildfire dashboards."
+   "url": "https://www.snopes.com/fact-check/beluga-whale-escape-alaska/",
+   "outlet": "Snopes fact-check (2026-06-27)",
+   "note": "Debunk: image rated ~82.6% likely AI by Hive Moderation; the fabricated narrative had the beluga escaping to reunite with her calf. Note: page title/date confirmed via fact-check; verify exact URL."
   },
   {
-   "outlet": "UAFSMOKE (operational forecast)",
-   "url": "https://smoke.alaska.edu/PM25.html",
-   "note": "The operational Alaska wildfire-smoke PM2.5 forecast surface this research improves."
+   "url": "https://www.yahoo.com/news/science/articles/fact-check-dont-fall-story-130000486.html",
+   "outlet": "Yahoo News / fact-check (2026)",
+   "note": "Corroborates the Center calling the image likely AI-generated and the calf-reunion framing."
   },
   {
-   "outlet": "Alaska Wildland Fire Information (live hook)",
-   "url": "https://akfireinfo.com/2026/07/06/dffp-weekly-wildland-fire-roundup-for-june-29-july-5/",
-   "note": "2026 fire season active: 330+ fires tracked, 24,633 lightning strikes in ten days, Interior smoke along the Yukon corridor (early July 2026)."
+   "url": "https://www.youralaskalink.com/news/local/fake-ai-beluga-whale-story-spreads-across-social-media/article_63ef53dc-1dc2-4905-a048-0a02decaffbd.html",
+   "outlet": "Your Alaska Link (2026-06-30)",
+   "note": "Alaska TV corroboration of the fake spreading across social media."
+  },
+  {
+   "url": "https://www.alaskasealife.org/",
+   "outlet": "Alaska SeaLife Center",
+   "note": "Institution: located in Seward, Alaska; opened May 1998 (we render 'SINCE 1998' rather than the '25 years' phrasing in some coverage)."
   }
  ]
 }

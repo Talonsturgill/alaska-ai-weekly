@@ -1,0 +1,276 @@
+"""Generate storyboard.json + storyboard.md for the 2026-07-12 Dispatch:
+'THE FAKE THAT SWAM' — the AI-generated beluga-escape hoax at the Alaska SeaLife Center.
+Authored FRESH to this story (derived_from: scratch). Run: python out/dispatch/build_storyboard.py
+"""
+import json, os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+# ---- VO segments (dash-free, contractions, <=3 commas/sentence, phonetic numbers). ~127 words. ----
+SEG = [
+    "This beluga never left her tank in Seward.",
+    "But a picture said she did.",
+    "It showed her slipping out to sea to find her calf.",
+    "The image was fake, built by AI, and it looked completely real.",
+    "One post drew close to six million views before anyone slowed down.",
+    "A checker could only say it looked likely fake.",
+    "What stopped it was people who actually knew the whale.",
+    "The Alaska SeaLife Center has run since 1998, and no beluga has ever escaped.",
+    "So they said it plainly. This never happened. And the account came down.",
+    "AI can draw a lie faster than we can prove it false.",
+    "The catch was not a smarter machine. It was a place that knew the truth. Who is yours?",
+]
+
+fingerprint = {
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "single-organic-hero",
+    "layout": "fullbleed-split",
+    "register": "naturalistic-scene",
+    "camera_strategy": "orbit-reveal",
+    "light_story": "night-practical",
+    "palette": "aquarium teal-black water, pearl beluga white, a toxic synthetic magenta, phone-glow cyan, a warning-red correction stamp",
+    "metaphor": "the fake beluga dissolves into generated pixels while the real one holds; truth is the thing the machine cannot certify",
+}
+
+light = {
+    "sun": "no sun; a night interior lit from within, the soft practical glow of an aquarium tank against the hard cold glare of a phone feed",
+    "mood": "the real whale is lit gently from inside her water; the fake is lit by the flat blue light of a screen. Warm inner truth versus cold outer glare.",
+}
+
+hook = {
+    "pattern": "bold-claim",
+    "frame1": "A pearl-white beluga hangs in dark teal tank water, calm and real; the burned-in headline sits lower third over her, a warning-red hairline framing the frame like a feed about to lie.",
+    "headline": "AI FAKED THIS WHALE'S ESCAPE",
+    "motion_by_s": 1.1,
+    "loopback": "The film opens on the real beluga at rest in her tank and returns to that exact calm frame at the close, the truth still there after the fake has dissolved.",
+}
+
+audio_arc = {
+    "build_steps": 3,
+    "dip_at": 35.0,
+    "riser_at": 33.9,
+    "silence_at": 35.4,
+    "payoff_at": 37.3,
+    "button_pattern": "callback",
+}
+
+# ---- SHOTS: 5 distinct WORLDS; adjacent shots flip >=2 heavy axes; each has a real camera move. ----
+shots = [
+    {
+        "id": 1, "t": "0.0-10.2", "framing": "subject-portrait",
+        "pov": "eye-level-immersive", "layout": "single-object-void",
+        "motion_vector": "horizontal-traverse", "hero_treatment": "single-organic-hero",
+        "transition_in": "", "thread": "match",
+        "camera": {"move": "orbit-reveal", "focus_from": 7.0, "focus_to": 3.2},
+        "hero": {"name": "the real beluga", "parts": 5, "zones": 3,
+                 "detail_note": "rounded melon, long pale body, two pectoral fins, broad fluke, a dark eye; three read-zones head/body/tail; enters first as a soft SILHOUETTE against the lit tank glass (a distinct, non-portrait entrance) before the orbit reveals her fully; skin catches one soft specular from the tank light"},
+        "centered": "the beluga surfaces from a silhouette against the glass to full relief as the camera orbits and her eye comes into focus",
+        "means": "establish the true subject in her real place before any lie touches it",
+    },
+    {
+        "id": 2, "t": "10.2-20.9", "framing": "data-panel",
+        "pov": "instrument-screen", "layout": "hud-instrument-frame",
+        "motion_vector": "scroll-data", "hero_treatment": "instrument-as-subject",
+        "transition_in": "fui-boot", "thread": "carry",
+        "camera": {"move": "rack-focus-macro", "focus_from": 4.5, "focus_to": 1.4},
+        "hero": {"name": "the phone feed", "parts": 4, "zones": 3,
+                 "detail_note": "phone body, glowing screen holding the fake image, a view-counter, a bezel and notch; zones screen/counter/chrome; the counter spins toward six million"},
+        "centered": "the view counter at frame center spins up toward 6,000,000 as the fake image sits behind it",
+        "means": "carry the whale's image out of the tank and onto the feed, where the number is the story",
+    },
+    {
+        "id": 3, "t": "20.9-33.0", "framing": "macro-closeup",
+        "pov": "macro-closeup", "layout": "fullbleed-split",
+        "motion_vector": "radial-emanate", "hero_treatment": "single-organic-hero",
+        "transition_in": "morph", "thread": "match",
+        "camera": {"move": "dolly-through", "focus_from": 2.6, "focus_to": 2.6},
+        "hero": {"name": "the fabricated beluga", "parts": 4, "zones": 2,
+                 "detail_note": "a beluga shape that is right at a glance but wrong up close: edges break into voxel cubes and magenta glitch, fins fray into pixels; zones intact-body/dissolving-edge"},
+        "centered": "the fake whale fills frame center and, as we push in, sheds pixels radially; a DETECTOR readout reads 82.6% LIKELY AI, and likely is not proof",
+        "means": "the honest limit, drawn: the fake looks real and a detector can only give odds (82.6% likely), not proof; the tell shows only up close",
+    },
+    {
+        "id": 4, "t": "33.0-45.5", "framing": "two-up",
+        "pov": "cross-section-cutaway", "layout": "grid-modular",
+        "motion_vector": "assemble-build", "hero_treatment": "structure-as-subject",
+        "transition_in": "hard-cut", "thread": "build",
+        "camera": {"move": "rise-reveal", "focus_from": 5.5, "focus_to": 5.5},
+        "hero": {"name": "the correction card", "parts": 3, "zones": 2,
+                 "detail_note": "a lit institutional fact-stamp assembling: 'SINCE 1998' rule, '0 ESCAPES' rule, and a red THIS NEVER HAPPENED stamp over the collapsing fake; zones fact-block/stamp"},
+        "centered": "the correction stamp lands dead center as the fake collapses out of the grid behind it",
+        "means": "the people who knew the whale set the record straight; the fake falls, the fact stands",
+    },
+    {
+        "id": 5, "t": "45.5-60.0", "framing": "wide-establish",
+        "pov": "eye-level-immersive", "layout": "centered-hero-lowerthird",
+        "motion_vector": "push-in-only", "hero_treatment": "single-organic-hero",
+        "transition_in": "crossfade", "thread": "carry",
+        "camera": {"move": "locked-drift", "focus_from": 3.2, "focus_to": 3.2},
+        "hero": {"name": "the real beluga, restored", "parts": 5, "zones": 3,
+                 "detail_note": "the same beluga from shot 1 back at rest in her true tank, calm; the brand wordmark resolves lower third; a loop-back to the opening frame"},
+        "centered": "the real beluga settles at frame center, the wordmark resolving beneath her",
+        "means": "loop back to the truth that was there all along; the button lands on knowing, not on a better machine",
+    },
+]
+
+# ---- BEATS: timed objects covering ~0-54s, start-to-start gaps <= 5s, each names a sound + choreo ----
+beats = [
+    {"t": "0.0-3.0", "vo": "This beluga never left her tank in Seward.",
+     "shows": "a beluga silhouette against lit tank glass resolves to a full pearl-white whale as she glides in",
+     "sfx": "soft sub-aqua swell + a low water-room tone", "means": "the true subject, at home",
+     "choreo": {"primary": "the whale surfaces from a glass silhouette and traverses frame left to right on an eased path",
+                "reaction": "caustic light ripples slide across her flank as she resolves out of silhouette",
+                "ambient": "slow particulate drift in the water column"}},
+    {"t": "3.0-6.5", "vo": "But a picture said she did.",
+     "shows": "a hairline red frame ticks in around the image, feed-style",
+     "sfx": "a single UI tick as the red frame snaps in", "means": "a feed is about to speak for her",
+     "choreo": {"primary": "red hairline frame draws in around the tank image",
+                "reaction": "as the frame snaps in, the tank key-light dips a notch on her back (the feed's frame dimming the real light)",
+                "ambient": "faint grain crawls over the water"}},
+    {"t": "6.5-9.5", "vo": "It showed her slipping out to sea to find her calf.",
+     "shows": "a false open-sea plate wipes over the tank; a small calf-silhouette appears ahead and she angles toward it",
+     "sfx": "a distant open-water wash fading up under the room tone", "means": "the lie's content, drawn: an escape to reunite with a calf",
+     "choreo": {"primary": "a false open-ocean plate slides over the tank behind her as she drifts toward open water",
+                "reaction": "a small second beluga (the calf) fades in ahead and she angles toward it",
+                "ambient": "cold open-water rays replace the warm tank caustics"}},
+    {"t": "9.5-13.5", "vo": "The image was fake, built by AI, and it looked completely real.",
+     "shows": "a phone rises into frame carrying the same whale image; fui-boot",
+     "sfx": "a whoosh as the phone rises + a soft screen-boot chime", "means": "carry the image onto the feed",
+     "choreo": {"primary": "phone rises into frame center and its screen boots",
+                "reaction": "the tank behind defocuses as the screen takes over",
+                "ambient": "screen scanlines shimmer"}},
+    {"t": "13.5-16.5", "vo": "One post drew close to six million views",
+     "shows": "the view counter mounts, digits rolling",
+     "sfx": "rapid odometer ticks climbing in pitch", "means": "the number is the story now",
+     "choreo": {"primary": "counter digits roll upward toward 6,000,000",
+                "reaction": "a like/share row pops in stutters beside it",
+                "ambient": "feed cards scroll faintly behind the counter"}},
+    {"t": "16.5-19.5", "vo": "before anyone slowed down.",
+     "shows": "counter nears six million and holds; a small warning under it",
+     "sfx": "the ticks resolve to a held tone as the counter locks", "means": "virality outran the check",
+     "choreo": {"primary": "counter eases to a stop near 6,000,000",
+                "reaction": "an ILLUSTRATIVE micro-label blinks under the number",
+                "ambient": "chrome UI breathes"}},
+    {"t": "19.5-23.5", "vo": "A checker could only say it looked likely fake.",
+     "shows": "a DETECTOR strip scans and settles on 82.6% LIKELY AI",
+     "sfx": "a scanning pulse then a soft uncertain tone", "means": "detection gives odds, not proof",
+     "choreo": {"primary": "a scan line sweeps the fake image on screen",
+                "reaction": "the DETECTOR readout settles on 82.6% LIKELY AI in amber",
+                "ambient": "the counter holds, chrome flickers"}},
+    {"t": "23.5-27.0", "vo": "What stopped it was people who actually knew the whale.",
+     "shows": "morph into the fabricated beluga at macro; a handler's hand and the Center mark ghost at the glass",
+     "sfx": "a morph whoosh into a quieter, closer water tone", "means": "the humans who knew her enter the frame, against the fabrication",
+     "choreo": {"primary": "the screen image morphs into a full fabricated whale, convincing at a glance",
+                "reaction": "a handler's silhouette and hand rise at the tank glass and the SeaLife Center mark ghosts in",
+                "ambient": "slow drift of synthetic haze behind the glass"}},
+    {"t": "27.0-31.0", "vo": "The Alaska SeaLife Center has run since 1998,",
+     "shows": "a SINCE 1998 fact-plate draws in over the fraying fake as its edges shed voxels",
+     "sfx": "a crackle riser as pixels start to peel", "means": "the true record arrives as the lie frays",
+     "choreo": {"primary": "camera dollies through; fake edges break into cubes",
+                "reaction": "a SINCE 1998 rule draws in at lower third, in time with the VO",
+                "ambient": "magenta glitch motes drift outward"}},
+    {"t": "31.0-34.5", "vo": "and no beluga has ever escaped.",
+     "shows": "a specific tell fails: the fake's eye blows into cubes and the fluke voxelizes; a 0 ESCAPES plate joins",
+     "sfx": "riser peaks then a deliberate dip toward silence", "means": "the specific tell + the second fact, then the breath before the correction",
+     "choreo": {"primary": "the eye pixelates and the fluke shears apart into voxels (a named tell, not a general blur)",
+                "reaction": "a 0 ESCAPES rule snaps in beside SINCE 1998",
+                "ambient": "the DETECTOR strip dims and pixel motes stream off the tail"}},
+    {"t": "34.5-39.0", "vo": "So they said it plainly. This never happened.",
+     "shows": "hard cut; the SINCE 1998 and 0 ESCAPES plates lock into a clean grid, then a red stamp lands",
+     "sfx": "silence, then a firm stamp hit and settle boom", "means": "the institution corrects the record",
+     "choreo": {"primary": "the SINCE 1998 and 0 ESCAPES plates lock square into a clean grid",
+                "reaction": "a red THIS NEVER HAPPENED stamp slams over the collapsing fake",
+                "ambient": "the fake's last pixels sink out of the grid"}},
+    {"t": "39.0-43.0", "vo": "And the account came down.",
+     "shows": "the feed panel greys out and collapses",
+     "sfx": "a short power-down sweep as the panel dies", "means": "the lie is pulled",
+     "choreo": {"primary": "the feed card desaturates and folds away",
+                "reaction": "the view counter freezes then goes dark",
+                "ambient": "grid lines dim"}},
+    {"t": "43.0-47.0", "vo": "AI can draw a lie faster than we can prove it false.",
+     "shows": "a fast red FAKE line races across; a slow grey PROOF bar crawls behind and never catches it",
+     "sfx": "a low sustained tone, sober", "means": "the real limit, drawn as a race the proof loses",
+     "choreo": {"primary": "a red 'fake' line shoots left to right at speed",
+                "reaction": "a slow grey 'proof' bar inches after it and falls behind",
+                "ambient": "residual pixel-motes clear off the right edge (a third, disjoint region)"}},
+    {"t": "47.0-51.0", "vo": "The catch was not a smarter machine.",
+     "shows": "crossfade back to the real beluga at rest in her tank",
+     "sfx": "the water-room tone returns, warm", "means": "loop back to the truth",
+     "choreo": {"primary": "the real tank fades up, beluga at rest",
+                "reaction": "caustics resume gently across her back",
+                "ambient": "particulate drift returns"}},
+    {"t": "51.0-54.5", "vo": "It was a place that knew the truth. Who is yours?",
+     "shows": "the beluga settles center; the ALASKA.AI wordmark resolves",
+     "sfx": "a soft resolving chime, fade to the signoff", "means": "the button lands on knowing",
+     "choreo": {"primary": "camera micro-drift holds on the calm whale",
+                "reaction": "wordmark eases up lower third",
+                "ambient": "tank glow steadies"}},
+    {"t": "54.5-58.0", "vo": "",
+     "shows": "a last caustic sweep crosses her back as the tagline resolves and the loop-frame clicks",
+     "sfx": "a soft low shimmer under the tagline", "means": "close the loop, no dead air on the tail",
+     "choreo": {"primary": "a caustic light sweep travels across the whale's back",
+                "reaction": "the tagline eases up under the wordmark",
+                "ambient": "tank particulate drifts, matching the opening frame"}},
+]
+
+storyboard = {
+    "concept": "THE FAKE THAT SWAM — an AI-generated image claimed a beluga escaped the Alaska SeaLife Center in Seward to find her calf; it drew close to six million views before the people who knew the whale set the record straight. The film stages the true whale, the viral fake, the moment the fabrication frays under a close look (where a detector can only put it at 82.6 percent likely AI, not proof), and the institution's plain correction, then loops back to the truth.",
+    "engine": "dimensional",
+    "derived_from": "scratch",
+    "date": "2026-07-12",
+    "slug": "dispatch-2026-07-12-thefakethatswam",
+    "fingerprint": fingerprint,
+    "palette": fingerprint["palette"],
+    "light": light,
+    "hook": hook,
+    "audio_arc": audio_arc,
+    "shots": shots,
+    "beats": beats,
+    "honest_caveat": "A detector could only put odds on the fake, about 82.6 percent likely AI by one tool (Snopes via Hive Moderation), and likely is not proof. The image had already drawn millions of views. What actually settled it was an Alaska institution that knew its own animals and said plainly it could not have happened. The machine can generate a lie and even estimate one, but it cannot certify the truth.",
+    "voice_plan": "a calm, credible male narrator (edge-tts en-US-AndrewMultilingualNeural as the publish voice this run; kokoro is unavailable in this environment because its required g2p model download is blocked by network policy), riding the picture beat for beat",
+    "on_screen_numbers": ["~6,000,000 VIEWS (illustrative; reported by Alaska Public Media)", "AI LIKELIHOOD 82.6% (Snopes / Hive Moderation)", "SINCE 1998", "0 ESCAPES"],
+    "divergence_note": (
+        "Every recent Dispatch framed AI as a helpful instrument that detects, counts or predicts nature "
+        "(salmon sonar, caribou, volcano tremor, smoke forecasts). This one inverts that: AI is the source "
+        "of a convincing LIE, and the honest limit is that detection failed and human/institutional knowledge "
+        "was the backstop. Visually it abandons the last two boards entirely: versus 2026-07-11 (orbital-aerial "
+        "storm-descent over smoke, stacked strata, naturalistic landscape) it is an eye-level night interior in "
+        "tank water orbiting a single organic hero; versus 2026-07-10 (macro vertical-descent split on a river) "
+        "it swaps to a horizontal orbit-reveal with a night-practical palette of aquarium teal, pearl white, "
+        "synthetic magenta and phone-glow cyan. The metaphor (a fabricated whale dissolving into generated pixels "
+        "while the real one holds) is a new central image, and the camera strategy is orbit-reveal, not the "
+        "previous aerial-descent."
+    ),
+}
+
+with open(os.path.join(HERE, "storyboard.json"), "w") as f:
+    json.dump(storyboard, f, indent=2)
+
+# ---- storyboard.md (human-readable board summary for the Gmail draft) ----
+md = ["# STORYBOARD — THE FAKE THAT SWAM (2026-07-12)", "",
+      "**Story:** " + storyboard["concept"], "",
+      "**Honest caveat:** " + storyboard["honest_caveat"], "",
+      "**Style mode:** lit low-poly night interior, feed-glitch contrast. **Taste dials:** restraint high, "
+      "sober not hypey; the fake is stylized-synthetic (never a deceptive photoreal reproduction).", "",
+      "**Fingerprint:** " + "  ".join(f"{k}={v}" for k, v in fingerprint.items() if k not in ("palette", "metaphor")),
+      "", "**Palette:** " + fingerprint["palette"], "", "**Metaphor:** " + fingerprint["metaphor"], "",
+      "**Light:** " + light["sun"] + " — " + light["mood"], "",
+      "## Shots"]
+for s in shots:
+    md.append(f"- **S{s['id']} ({s['t']}) {s['framing']}** — {s['centered']}  \n  "
+              f"pov={s['pov']} · layout={s['layout']} · motion={s['motion_vector']} · hero={s['hero_treatment']} · "
+              f"cam={s['camera']['move']} · in={s['transition_in']}/{s['thread']}  \n  _means:_ {s['means']}")
+md += ["", "## Beats"]
+for b in beats:
+    md.append(f"- `{b['t']}` **{b['shows']}** — vo: \"{b['vo']}\" · sfx: {b['sfx']}")
+md += ["", "## VO script", ""] + [f"{i+1}. {s}" for i, s in enumerate(SEG)]
+with open(os.path.join(HERE, "storyboard.md"), "w") as f:
+    f.write("\n".join(md))
+
+# also stash the VO segments for vo_build to import
+with open(os.path.join(HERE, "vo_segments.json"), "w") as f:
+    json.dump({"segments": SEG}, f, indent=2)
+
+print("wrote storyboard.json, storyboard.md, vo_segments.json")
+print("shots:", len(shots), "beats:", len(beats), "VO words:", sum(len(s.split()) for s in SEG))

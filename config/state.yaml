@@ -384,3 +384,39 @@ dispatch_history:
     metaphor: a warm lid traps the smoke low where people breathe; the model looks
       for it thin and high, so a machine learns to look down, and still falls short
       of the air in the lungs
+- date: '2026-07-12'
+  topic: 'THE FAKE THAT SWAM: an AI-generated image claimed a beluga escaped Seward''s
+    Alaska SeaLife Center to reunite with her calf; close to 6M views (APM) before
+    debunk; a detector could only say 82.6 percent likely AI (Snopes/Hive), and the
+    institution (since 1998, zero escapes) corrected the record'
+  slug: dispatch-2026-07-12-thefakethatswam
+  key_entities:
+  - alaska sealife center
+  - seward
+  - beluga hoax
+  - generative ai image
+  - misinformation
+  - deepfake
+  - hive moderation
+  - snopes
+  - alaska public media
+  - media literacy
+  - ai fabrication
+  archetype: 'inversion: AI as the source of the lie; truth held by an institution
+    — night-practical tank interior vs viral feed'
+  palette: aquarium teal-black water, pearl beluga white, toxic synthetic magenta,
+    phone-glow cyan, warning-red correction stamp
+  voice: 'edge_tts:en-US-EmmaMultilingualNeural (kokoro unavailable: g2p model blocked
+    by env network policy)'
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: single-organic-hero
+    layout: fullbleed-split
+    register: naturalistic-scene
+    camera_strategy: orbit-reveal
+    light_story: night-practical
+    palette: aquarium teal-black water, pearl beluga white, a toxic synthetic magenta,
+      phone-glow cyan, a warning-red correction stamp
+    metaphor: the fake beluga dissolves into generated pixels while the real one holds;
+      truth is the thing the machine cannot certify

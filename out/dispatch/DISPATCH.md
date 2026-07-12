@@ -1,35 +1,42 @@
-# Dispatch 2026-07-11 — "The Lid"
+# DISPATCH 2026-07-12 — THE FAKE THAT SWAM
 
-**Story.** A UAF Geophysical Institute team (Jingqiu Mao + doctoral student Zhiwei Dong) trained a
-machine-learning model to bias-correct NOAA's HRRR-Smoke surface PM2.5 forecast during the Alaska
-wildfire season. The physics model undercounts surface smoke by up to five times on the worst days;
-a 1D convolutional neural network (best of RF / CNN1D / CNN2D) cuts the miss to about two. The root
-cause is vertical: a warm temperature-inversion lid traps smoke low where people breathe while the
-model paints it thin and high. Paper: ACS ES&T Air, 2026, 3(5), 1263 to 1275 (published 2026-04-17),
-cross-confirmed via OpenAlex. Live hook: the 2026 fire season is active now (330+ fires, 24,633
-lightning strikes in ten days, early July 2026, akfireinfo.com).
+**Story:** An AI-generated image claimed a beluga escaped the Alaska SeaLife Center in Seward to
+reunite with her calf. One post drew close to six million views (reported by Alaska Public Media)
+before it was debunked. A detector could only rate the image about 82.6 percent likely AI
+(Snopes via Hive Moderation), and likely is not proof. What corrected the record was the
+institution itself: open since 1998, no beluga has ever escaped.
 
-**Honest caveat (drawn, not carded).** A correction, not a cure: the machine learns the model's bias
-and pulls the number toward measured air, but it cannot move the actual smoke, and a fire hidden
-under cloud can still be missed. A person still decides when the air is safe to breathe.
+**Honest caveat (drawn on screen):** detection returns odds, not certainty. The 82.6% LIKELY AI
+readout with LIKELY ≠ PROOF is the caveat picture; the backstop was institutional knowledge.
 
-**Concept.** "The Lid" — a 60s dimensional (3D raymarched) film in six worlds: aerial descent into a
-smoke-choked Interior valley under a blood-orange sun; a cross-section splitting MODEL vs REAL
-plumes with the 5x bracket and the inversion lid; ground level with a cabin in the murk; a forecast
-panel where the CNN bends the under-forecast curve down (5x -> 2x); a macro cloud hiding an ember
-from an empty-sweeping reticle; a rise-reveal resolution.
+**Angle for the series:** an inversion. Every recent Dispatch had AI as the helpful instrument
+that detects or counts nature. Here AI is the source of the lie, and people are the check.
 
-**Composition fingerprint.** pov=orbital-aerial · motion=vertical-descent · hero=landscape-as-subject
-· layout=stacked-layers · register=naturalistic-scene · camera_strategy=aerial-descent ·
-light_story=storm-dramatic · palette=wildfire-smoke ochre/sepia pall, blood-orange sun, soot-brown
-spruce, bone-grey lid, one mint forecast line · metaphor=the lid traps the smoke low, the model looks
-high, the machine learns to look down and still falls short.
+## Composition fingerprint
+- pov: eye-level-immersive · motion: horizontal-traverse · hero: single-organic-hero
+- layout: fullbleed-split · register: naturalistic-scene
+- camera_strategy: orbit-reveal · light_story: night-practical
+- palette: aquarium teal-black water, pearl beluga white, toxic synthetic magenta, phone-glow cyan, warning-red stamp
+- metaphor: the fake beluga dissolves into generated pixels while the real one holds
 
-**Gates.** Gate 0A storyboard divergence: PASS (7/9 axes vs each of last two). Early-look editor
-review: ship. Audio: -14.2 LUFS integrated, 15 SFX events, sourced music. Caption: caption_check
-PASS + scorer 8.66 (threshold 8.5, zero hard fails). Full quality gate + 3-judge panel run
-post-render (results in the Gmail draft + commit).
+## Shots (5 worlds, dimensional engine, ship scale 1.0, CPU x64)
+1. 0.0-10.2 THE REAL — orbit-reveal around the beluga in her tank (silhouette entrance)
+2. 10.2-20.9 THE FEED — a phone showing the fake; counter to ~6,000,000 (ILLUSTRATIVE label); reshare cards spread
+3. 20.9-33.0 THE FAKE — 3/4 profile fabrication sheds voxel pixels; DETECTOR 82.6% LIKELY AI
+4. 33.0-45.5 THE CORRECTION — SINCE 1998 / 0 ESCAPES / FALSE plates + THIS NEVER HAPPENED stamp; FAKE-outruns-PROOF race
+5. 45.5-60.0 RESTORED — loop-back to the real tank; wordmark; tagline
 
-**Credits.** VO: Kokoro `bf_emma` (Apache-2.0). Music: "Long Note Two", Kevin MacLeod
-(incompetech.com), CC BY 4.0. Engine: dimensional.py (Taichi CPU raymarch) at 1080x1920 scale 1.0,
-brand chrome via dispatch_core with readability chips + caption scrim.
+## Voice + music
+- VO: edge-tts en-US-EmmaMultilingualNeural (kokoro unavailable: its g2p model download is
+  blocked by the environment's network policy; disclosed in the draft)
+- Music: "Reawakening" — Kevin MacLeod (incompetech.com), CC BY 4.0
+
+## Fact-check outcome (validator, adversarial)
+- CLEAR_WITH_LABELS. Corrections folded in: viral in late June (not "this week"); ~6M views
+  attributed to Alaska Public Media (single-sourced); "25 years" replaced with SINCE 1998
+  (center opened May 1998); "no detector caught it" corrected to the 82.6%-likely readout;
+  Kaiti Grant quote splice rejected (not used on screen).
+
+## Sources
+See sources.json. Primary: Alaska Public Media 2026-07-08; KUAC 2026-07-10; Snopes 2026-06-27;
+Your Alaska Link 2026-06-30; alaskasealife.org.

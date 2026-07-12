@@ -4,14 +4,14 @@
   "warns": [],
   "metrics": {
     "chars": 1585,
-    "hook": "Alaska's wildfire smoke forecast has a quiet flaw: on the worst days it reads the air up to five times too clean.",
-    "hook_len": 113,
+    "hook": "A whale \"escaped\" a Seward aquarium to find her calf. It never happened. An AI made the image, and it fooled millions before anyone checked.",
+    "hook_len": 140,
     "hashtags": [
-      "#Alaska",
+      "#AlaskaAI",
+      "#Misinformation",
       "#ArtificialIntelligence",
-      "#AirQuality",
-      "#Wildfire",
-      "#AtmosphericScience"
+      "#MediaLiteracy",
+      "#Alaska"
     ],
     "n_hashtags": 5,
     "emoji": 0,

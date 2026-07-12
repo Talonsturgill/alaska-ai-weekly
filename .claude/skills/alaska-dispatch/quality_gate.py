@@ -262,7 +262,7 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
                 return 20*np.log10(float(np.sqrt((seg*seg).mean())+1e-9))
             din=_rms(_t0-0.35,_t0+0.35)
             dnb=max(_rms(_t0-3.0,_t0-0.6),_rms(_t0+0.6,_t0+3.0))
-            checks.append({"name":"SILENCE_DIP","pass":(dnb-din)>=6.0,
+            checks.append({"name":"SILENCE_DIP","pass":bool((dnb-din)>=6.0),
                 "detail":f"bed at silence_at={_t0}s sits {dnb-din:.1f} dB under its neighborhood (need >=6) "
                          f"— the breath before the payoff is real, not planned"})
         except Exception as _e:
