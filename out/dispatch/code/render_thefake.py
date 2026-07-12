@@ -103,11 +103,12 @@ def _scene(p, t):
         gp = dim.op_rep2(ti.Vector([p.x, p.y + 2.05, p.z]), 1.2)
         rail = dim.sd_box(gp, ti.Vector([0.0, 0.0, 0.0]), ti.Vector([0.015, 0.015, 0.6]))
         d = ti.min(d, rail)
-        # NEAR-FIELD depth: two floating slabs close to the lens at the frame edges (defocused
-        # foreground bokeh) so the depth buffer spans near->far, not just the back wall
-        f1 = dim.sd_rbox(p, ti.Vector([-1.35, 0.5 + 0.06 * ti.sin(t * 0.8), 0.55]), ti.Vector([0.30, 0.42, 0.03]), 0.03)
-        f2 = dim.sd_rbox(p, ti.Vector([1.4, -0.15 + 0.05 * ti.sin(t * 0.6 + 2.0), 0.8]), ti.Vector([0.26, 0.36, 0.03]), 0.03)
-        d = ti.min(d, ti.min(f1, f2))
+        # NEAR-FIELD depth: the PHONE exists in 3D at the exact spot the PIL chrome overdraws
+        # (center frame, ~1.1 wu from the lens). The chrome covers it; only a soft blurred edge
+        # shows around the graphic (motivated phone-silhouette bokeh). This puts a true near
+        # plane in the z-buffer so depth spans near->far instead of hugging the back wall.
+        slab = dim.sd_rbox(p, ti.Vector([0.0, 0.35, 1.05]), ti.Vector([0.115, 0.30, 0.015]), 0.02)
+        d = ti.min(d, slab)
     elif c < 2.5:                                 # S3 THE FAKE (3/4 profile whale; tail sheds voxel cubes)
         diss = DISSOLVE[None]
         d = sd_tank(p, t)                          # dark enclosure -> depth + backdrop
@@ -165,8 +166,8 @@ def _mat(p, n, t):
         gp = dim.op_rep2(ti.Vector([p.x, p.y + 2.05, p.z]), 1.2)
         if dim.sd_box(gp, ti.Vector([0.0, 0.0, 0.0]), ti.Vector([0.015, 0.015, 0.6])) < 0.03:
             col = ti.Vector([0.16, 0.34, 0.55])     # glowing floor rail
-        if p.z < 1.1:
-            col = ti.Vector([0.10, 0.16, 0.26])     # near-field slabs: dim cool screens
+        if p.z < 1.3:
+            col = ti.Vector([0.05, 0.07, 0.11])     # the 3D phone chassis (chrome overdraws its face)
     elif c < 2.5:                                  # fabrication: pearl whale + softer magenta cubes
         diss = DISSOLVE[None]
         col = ti.Vector([0.05, 0.11, 0.13])         # dark teal wall

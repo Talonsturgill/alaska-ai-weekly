@@ -4,7 +4,7 @@ arch: taichi fell back to x64 (DIM_ARCH=cuda had no GPU) — record cpu, honestl
 import json
 old = json.load(open("out/dispatch/render_manifest_full.json"))
 new = json.load(open("out/dispatch/render_manifest.json"))
-RANGES = [(0, 80), (306, 627)]
+RANGES = [(306, 627)]
 def rerendered(f):
     return any(a <= f < b for a, b in RANGES)
 merged = [s for s in old["samples"] if not rerendered(s["f"])] + [s for s in new["samples"] if rerendered(s["f"])]
