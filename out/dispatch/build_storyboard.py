@@ -18,7 +18,7 @@ SEG = [
     "The Alaska SeaLife Center has run since 1998, and no beluga has ever escaped.",
     "So they said it plainly. This never happened. And the account came down.",
     "AI can draw a lie faster than we can prove it false.",
-    "The catch was not a smarter machine. It was a place that knew the truth.",
+    "The catch was not a smarter machine. It was a place that knew the truth. Who is yours?",
 ]
 
 fingerprint = {
@@ -200,7 +200,7 @@ beats = [
      "choreo": {"primary": "the real tank fades up, beluga at rest",
                 "reaction": "caustics resume gently across her back",
                 "ambient": "particulate drift returns"}},
-    {"t": "51.0-54.5", "vo": "It was a place that knew the truth.",
+    {"t": "51.0-54.5", "vo": "It was a place that knew the truth. Who is yours?",
      "shows": "the beluga settles center; the ALASKA.AI wordmark resolves",
      "sfx": "a soft resolving chime, fade to the signoff", "means": "the button lands on knowing",
      "choreo": {"primary": "camera micro-drift holds on the calm whale",

@@ -46,7 +46,7 @@
 - `39.0-43.0` **the feed panel greys out and collapses** — vo: "And the account came down." · sfx: a short power-down sweep as the panel dies
 - `43.0-47.0` **a fast red FAKE line races across; a slow grey PROOF bar crawls behind and never catches it** — vo: "AI can draw a lie faster than we can prove it false." · sfx: a low sustained tone, sober
 - `47.0-51.0` **crossfade back to the real beluga at rest in her tank** — vo: "The catch was not a smarter machine." · sfx: the water-room tone returns, warm
-- `51.0-54.5` **the beluga settles center; the ALASKA.AI wordmark resolves** — vo: "It was a place that knew the truth." · sfx: a soft resolving chime, fade to the signoff
+- `51.0-54.5` **the beluga settles center; the ALASKA.AI wordmark resolves** — vo: "It was a place that knew the truth. Who is yours?" · sfx: a soft resolving chime, fade to the signoff
 - `54.5-58.0` **a last caustic sweep crosses her back as the tagline resolves and the loop-frame clicks** — vo: "" · sfx: a soft low shimmer under the tagline
 
 ## VO script
@@ -61,4 +61,4 @@
 8. The Alaska SeaLife Center has run since 1998, and no beluga has ever escaped.
 9. So they said it plainly. This never happened. And the account came down.
 10. AI can draw a lie faster than we can prove it false.
-11. The catch was not a smarter machine. It was a place that knew the truth.
+11. The catch was not a smarter machine. It was a place that knew the truth. Who is yours?

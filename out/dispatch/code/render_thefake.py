@@ -42,7 +42,7 @@ def shot_of(f):
 
 # ---------------- palette / light (night-practical: lit from within) ----------------
 dim.SUN_DIR = (0.35, 0.72, 0.55)          # soft overhead-ish key (a tank toplight)
-dim.SUN_COL = (1.15, 1.02, 0.86)
+dim.SUN_COL = (1.26, 1.04, 0.78)          # warmer key: a stronger warm/cool axis against the teal
 dim.SKY_COL = (0.05, 0.13, 0.16)          # deep aquarium teal ambient
 dim.SKY_HI = (0.10, 0.22, 0.28)
 dim.FOG_DEN = 0.028
@@ -115,11 +115,12 @@ def _scene(p, t):
         bp = beluga_world_pos(p, 0.0, 0.0, 2.6, 1.15)
         whale = sd_beluga(bp, t, 0.45, 1.7)        # RECOGNIZABLE beluga in profile
         d = ti.min(d, whale)
-        # the TAIL dissolves into distinct voxel cubes: gated to a sphere around the tail, growing +
-        # drifting with dissolve so a muted viewer reads "the fake breaking into pixels"
+        # the TAIL dissolves into distinct voxel cubes that visibly STREAM up and away every frame
+        # (continuous per-second drift, not just the slow dissolve ramp) so the shed reads in a
+        # half-second filmstrip window, not only across the whole shot
         tailr = (ti.Vector([p.x, p.y, p.z - 1.75])).norm()
         near_tail = ti.math.clamp(1.0 - tailr / 1.5, 0.0, 1.0)
-        vp = ti.Vector([p.x - 0.3 * diss, p.y - 0.3 * diss, p.z])
+        vp = ti.Vector([p.x - 0.3 * diss - 0.22 * t, p.y - 0.3 * diss - 0.10 * t, p.z])
         rep = dim.op_rep2(vp, 0.4)
         cube = dim.sd_box(rep, ti.Vector([0.0, 0.0, 0.0]), ti.Vector([0.10, 0.10, 0.10]))
         cube += (1.0 - near_tail * diss) * 30.0
@@ -152,13 +153,22 @@ def _mat(p, n, t):
         col = ti.Vector([0.05, 0.11, 0.13])        # deep teal wall
         if p.y < -1.9:
             col = ti.Vector([0.07, 0.13, 0.14])     # floor
-        # the beluga: pearl white where near its skin
+        # the REAL beluga: pearl skin with living micro-texture (mottling, a dark eye, a scarred
+        # dorsal ridge). The FAKE in S3 stays suspiciously smooth — the texture IS the honesty tell.
         cz = 2.6 if c < 0.5 else 2.7
         bp = beluga_world_pos(p, 0.0, 0.03, cz, 1.0)
         if sd_beluga(bp, t, 0.5, 0.0) < 0.05:
-            col = ti.Vector([0.82, 0.86, 0.90])     # pearl skin
+            mot = 0.030 * dim.fbm2(bp.x * 6.5 + 3.0, bp.z * 5.0) + 0.018 * dim.fbm2(bp.z * 14.0, bp.y * 11.0)
+            base = 0.84 + mot
+            col = ti.Vector([base - 0.02, base, base + 0.04])          # mottled pearl skin
             if bp.z > 0.7 and bp.y > 0.05:
-                col = ti.Vector([0.90, 0.93, 0.96]) # bright melon crown
+                col = ti.Vector([0.90 + mot, 0.93 + mot, 0.96 + mot])  # bright melon crown
+            if bp.y > 0.24 and ti.abs(bp.x) < 0.06 and bp.z < 0.55:
+                col *= 0.90                                            # faint dorsal ridge line
+            eye = (bp - ti.Vector([0.24, 0.02, 0.72])).norm()
+            eye2 = (bp - ti.Vector([-0.24, 0.02, 0.72])).norm()
+            if ti.min(eye, eye2) < 0.045:
+                col = ti.Vector([0.10, 0.11, 0.13])                    # the dark eye
     elif c < 1.5:                                  # feed: cold dark screen-room (phone drawn by PIL)
         col = ti.Vector([0.06, 0.09, 0.15])         # slate-blue wall (distinct from teal tank)
         if p.y < -1.9:
@@ -178,7 +188,7 @@ def _mat(p, n, t):
             col = ti.Vector([0.82, 0.86, 0.90])
             if bp.z > 0.7 and bp.y > 0.05:
                 col = ti.Vector([0.90, 0.93, 0.96])
-        vp = ti.Vector([p.x - 0.3 * diss, p.y - 0.3 * diss, p.z])
+        vp = ti.Vector([p.x - 0.3 * diss - 0.22 * t, p.y - 0.3 * diss - 0.10 * t, p.z])
         rep = dim.op_rep2(vp, 0.4)
         if dim.sd_box(rep, ti.Vector([0.0, 0.0, 0.0]), ti.Vector([0.10, 0.10, 0.10])) < 0.05:
             col = ti.Vector([0.95, 0.28, 0.92])     # synthetic magenta voxels (toned down)
@@ -350,11 +360,11 @@ def draw_chrome(base, f):
         target = 5_940_000
         shown = int(target * min(1.0, E.out_cubic(min(1.0, u * 1.5))))
         cf = dc.mono(78, b=True); cs = f"{shown:,}"
-        cw = dc.tw(cs, cf); d.text(((W - cw) // 2, 1196), cs, font=cf, fill=(*SNOW, int(248 * bootw)))
-        lf = dc.mono(30, m=True); lab = "VIEWS  ·  ONE POST"
-        lw = dc.tw(lab, lf); d.text(((W - lw) // 2, 1288), lab, font=lf, fill=(150, 178, 200, int(230 * bootw)))
-        il = dc.mono(22); ilt = "ILLUSTRATIVE · reported by Alaska Public Media"
-        iw = dc.tw(ilt, il); d.text(((W - iw) // 2, 1330), ilt, font=il, fill=(150, 130, 90, 220) if (f // 8) % 2 else (120, 105, 70, 150))
+        cw = dc.tw(cs, cf); d.text(((W - cw) // 2, 1190), cs, font=cf, fill=(*SNOW, int(248 * bootw)))
+        lf = dc.mono(28, m=True); lab = "VIEWS  ·  ONE POST"
+        lw = dc.tw(lab, lf); d.text(((W - lw) // 2, 1278), lab, font=lf, fill=(150, 178, 200, int(230 * bootw)))
+        il = dc.mono(21, b=True); ilt = "ILLUSTRATIVE · Alaska Public Media"   # short enough to sit fully inside the screen
+        iw = dc.tw(ilt, il); d.text(((W - iw) // 2, 1312), ilt, font=il, fill=(196, 168, 110, int(235 * bootw)) if (f // 8) % 2 else (160, 138, 92, int(190 * bootw)))
         # like/share stutter row (an extra disjoint motion region)
         for k in range(3):
             bx = sx0 + 40 + k * 130; on = ((f // 6) % 3) >= k
@@ -395,7 +405,7 @@ def draw_chrome(base, f):
         lf = dc.mono(32, m=True); lab = "DETECTOR: HIVE MODERATION"
         lw = dc.tw(lab, lf); d.text(((W - lw) // 2, 1300), lab, font=lf, fill=(160, 150, 170, 220))
         if scan > 0.9:
-            nf = dc.mono(30, b=True); nt = "LIKELY  ≠  PROOF"
+            nf = dc.mono(30, b=True); nt = "LIKELY IS NOT PROOF"   # words, not the ≠ glyph (font fallback rendered it as '#')
             nw = dc.tw(nt, nf); d.text(((W - nw) // 2, 1340), nt, font=nf, fill=(*RED, 230))
         # scan line sweeping the card (motion region)
         sx = 150 + int(780 * (0.5 + 0.5 * math.sin(t * 3.0)))
@@ -427,18 +437,24 @@ def draw_chrome(base, f):
             sw = dc.tw(st, sf); dc.tk(sd, st, sf, (*RED, int(250 * sa)), (900 - sw) // 2, 40, 0.0)
             stamp = stamp.rotate(rot, expand=True, resample=Image.BICUBIC)
             im.paste(stamp, ((W - stamp.width) // 2, 980 - int((1 - sa) * 30)), stamp)
-        # the caveat RACE (last ~4s of the shot): red FAKE line outruns grey PROOF bar
+        # the caveat RACE (last ~4s of the shot): red FAKE line outruns grey PROOF bar.
+        # Lives in its OWN clear band high in the frame (the stamp owns ~950-1150; facts own
+        # 1200-1330) — no collision — on a dark backing plate for contrast, lines capped at
+        # x<=850 so labels never clip the frame edge.
         if u > 0.62:
             rr = (u - 0.62) / 0.34
-            yb = 1130
-            fx = 150 + int(760 * min(1.0, rr * 1.8))
-            d.line([(150, yb), (fx, yb)], fill=(*RED, 235), width=8)
-            d.ellipse([fx - 9, yb - 9, fx + 9, yb + 9], fill=(*RED, 245))
-            px = 150 + int(760 * min(1.0, rr * 0.7))
-            d.line([(150, yb + 34), (px, yb + 34)], fill=(150, 160, 172, 220), width=6)
-            lf = dc.mono(26, m=True)
-            d.text((fx + 14, yb - 16), "FAKE", font=lf, fill=(*RED, 230))
-            d.text((px + 14, yb + 22), "PROOF", font=lf, fill=(150, 160, 172, 220))
+            yb = 560
+            d.rounded_rectangle([104, yb - 64, 976, yb + 92], radius=14, fill=(6, 9, 15, 190))
+            tf2 = dc.mono(28, b=True); tt2 = "A LIE MOVES FASTER THAN PROOF"
+            tw2 = dc.tw(tt2, tf2); d.text(((W - tw2) // 2, yb - 52), tt2, font=tf2, fill=(226, 235, 245, 235))
+            fx = 150 + int(700 * min(1.0, rr * 1.8))
+            d.line([(150, yb + 6), (fx, yb + 6)], fill=(*RED, 245), width=10)
+            d.ellipse([fx - 10, yb - 4, fx + 10, yb + 16], fill=(*RED, 250))
+            px = 150 + int(700 * min(1.0, rr * 0.7))
+            d.line([(150, yb + 52), (px, yb + 52)], fill=(196, 206, 218, 240), width=8)
+            lf = dc.mono(26, b=True)
+            d.text((min(fx + 14, 900), yb - 8), "FAKE", font=lf, fill=(*RED, 245))
+            d.text((min(px + 14, 890), yb + 38), "PROOF", font=lf, fill=(206, 216, 228, 240))
 
     # ---- kinetic voice-synced captions (brand throughline; drives READABILITY) ----
     dc.caption(im, f)
