@@ -1,0 +1,13 @@
+{
+  "chars": 744,
+  "hook": "Five teams are racing across 1,000 square kilometers of Alaska to prove a machine can fight a wildfire with no human in the loop.",
+  "hook_len": 129,
+  "hashtags": [
+    "#AlaskaWildfire",
+    "#AutonomousDrones",
+    "#XPRIZEWildfire"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

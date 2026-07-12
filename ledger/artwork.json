@@ -1,6 +1,6 @@
 {
  "_spec": {
-  "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged \u2014 name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
+  "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged — name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
   "entry_schema": {
    "run_date": "YYYY-MM-DD",
    "carousel_no": "int",
@@ -116,6 +116,29 @@
     "Subsurface Cutaway Panorama (NEW): continuous cabinet-extruded folded-strata cross-section as a panorama-spine chassis, with a per-slide reservoir-lens state machine and a valve open/shut motif; the ground line doubles as the demand skyline"
    ],
    "notes": "Scored 8.90 vs 8.3. Weakest = artwork craft (7): flat strata bands + plain lenses + S1/S9 lower-third dead zones (strata-texture helper parked for Phase 12). Story-art fusion 9 (gauge fill = 'half', 17 sheets = 17pp, tower 1.3x, valve open/shut = the ruling)."
+  },
+  {
+   "run_date": "2026-07-12",
+   "carousel_no": 5,
+   "slide_count": 9,
+   "hero_structure": "Closing Autonomy Ring: a 4-arc cyclic control-system loop (detect/decide/dispatch/douse) that fills one arc per stage as a fixed corner progress mark (with an explicit N/4 fraction) and seals shut with a gold Polaris at the verdict; full-size as the S5 loop schematic and the S8 sealed ring. Paired with a single-actor deep-field rendered machine (S6). NOT a cartographic camera-map, glyph-ledger, trace-conductor instrument panel, or subsurface cutaway panorama.",
+   "atmosphere": "Cold spruce-tinted arctic night (green-tinted #08130E/#0F2A20, deliberately not run-3 obsidian, not run-4 ochre) with a small warm fire antagonist; a low warm burn-scar beat at the stakes; a fire-lit dusk at the rendered machine; ice pre-dawn at the verdict/close.",
+   "depth_technique": "akthree GPU PBR rendered hero (S6): backlit quadcopter silhouette + warm fire key + cool aurora fill + warm rim, exp2 fog, atmospheric spruce ridgelines, DOF, smoke shafts; designed AK3D multiplane fallback. Neon-layered ring emblem; big-number and honest parallel bars elsewhere.",
+   "line_voice": "Cased cyan signal lines with directional arrowheads and junction dots (transit/systems); drafting furniture (scale box, corner ticks, north arrow) on the arena slide; five-token weight discipline.",
+   "continuity_device": "motif-evolution (the closing Autonomy Ring as a discrete cyclic STATE machine + explicit N/4 counter, sealing gold at S8) + palette-arc (cold -> hot burn beat -> fire peak -> ice pre-dawn); plus a shared ember/ignition thread. NOT panorama-spine, NOT a continuous motif-trace with edge-tease.",
+   "hook_archetype": "engineered emblem / insignia cold-open (the open Autonomy Ring caging an ember on the cover)",
+   "palette_family": "Spruce-night #02060F/#08130E/#0F2A20 + smoke-dusk #1B3550/#24435F + FIRE antagonist #FF6A2C/#E8531F/#FFB25A (small area) + machine-cue mint #3CE6B4 and ice #5AC8F0 + snow #F4F8FF; gold #FFC72C reserved for Polaris, the ring seal (S8), the counter, and the September marker.",
+   "type_pairing": "Archivo variable (wght 400-900, wdth 62-125; Expanded Black display, condensed engineered labels, Regular body) + JetBrains Mono instrument. Two families (dodges the two prior forbidden trios and the two-sans crime).",
+   "narrative_structure": "emblem hook -> arena -> stakes(data) -> five finalists(data) -> the autonomy loop(signature) -> the machine/Dryad claim(rendered breather) -> the purse(data) -> the verdict(synthesis/position) -> close(single ask). Climax on the honest open verdict, not the Dryad demo.",
+   "variance_dials": {
+    "design_variance": 4,
+    "visual_density": 3,
+    "type_temperature": 2
+   },
+   "new_techniques_logged": [
+    "Closing Autonomy Ring (discrete cyclic state-machine motif that doubles as an explicit N/4 progress counter and seals gold at resolution)"
+   ],
+   "notes": "Robotics/autonomy story, deliberate break from four consecutive energy/infrastructure/monitoring decks. akthree rendered hero shipped with AK3D fallback. Scored 8.54 vs 8.3; weakest = artwork craft (rendered hero reads slightly flat)."
   }
  ]
 }

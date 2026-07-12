@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11",
+  "updated": "2026-07-12",
   "items": [
     {
       "id": "adl-422741-stak-north-slope-lease",
@@ -52,10 +52,15 @@
           "url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
           "outlet": "Northern Journal",
           "date": "2026-07-03"
+        },
+        {
+          "url": "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
+          "outlet": "Northern Journal",
+          "date": "2026-07-06"
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-11",
+      "last_updated": "2026-07-12",
       "history": [
         {
           "date": "2026-07-08",
@@ -72,6 +77,10 @@
         {
           "date": "2026-07-11",
           "note": "Re-confirmed via Northern Journal (July 3 reporting) during this run's fact-check. Comment window still closes 4:30 p.m. July 17, still more than 500 comments with fewer than a dozen in support. Six days out."
+        },
+        {
+          "date": "2026-07-12",
+          "note": "By early July more than 500 public comments had reached DNR on the North Slope lease, with fewer than a dozen in favor, and the comment deadline held at July 17. Opposition ranged across Kodiak, Kotzebue, Seward, Valdez and Nuiqsut and mixed subsistence, tundra gravel and climate objections with a widely repeated but factually shaky fear of higher power bills, since the North Slope is not tied to the Railbelt grid."
         }
       ]
     },
@@ -121,14 +130,23 @@
           "url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/",
           "outlet": "Alaska's News Source",
           "date": "2026-06-08"
+        },
+        {
+          "url": "https://www.sullivan.senate.gov/newsroom/press-releases/sullivan-secures-56-provisions-historic-26-billion-for-alaska-in-fy-2027-defense-authorization",
+          "outlet": "Office of Sen. Dan Sullivan",
+          "date": "2026-06-23"
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-09",
+      "last_updated": "2026-07-12",
       "history": [
         {
           "date": "2026-07-08",
           "note": "Tracked. Bids closed June 29; no public word yet on how many proposals arrived."
+        },
+        {
+          "date": "2026-07-12",
+          "note": "Developer lease proposals closed June 29 and the Air Force is now in private evaluation of bids for up to 12 parcels across JBER, Eielson and Clear. The FY2027 NDAA reported by the Senate Armed Services Committee on June 23 would require a formal grid-impact assessment before the military can approve a data-center Enhanced Use Lease, a statutory check Interior utilities and ratepayers had sought."
         }
       ]
     },
@@ -163,10 +181,15 @@
           "url": "https://fm.kuac.org/energy-and-the-environment/2026-05-28/gvea-plans-extraordinarily-large-increase-in-co-op-fuel-charge",
           "outlet": "KUAC",
           "date": "2026-05-28"
+        },
+        {
+          "url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html",
+          "outlet": "Fairbanks Daily News-Miner",
+          "date": "2026-07-06"
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-11",
+      "last_updated": "2026-07-12",
       "history": [
         {
           "date": "2026-07-08",
@@ -183,6 +206,10 @@
         {
           "date": "2026-07-11",
           "note": "Two days out. Board executive session on the ~$120M LM6000 purchase still set for July 13 per the June 28 News-Miner report. Direct re-fetch of News-Miner (HTTP 429) and KUAC (HTTP 503) failed this run, so status carried forward unchanged. Watching for the outcome."
+        },
+        {
+          "date": "2026-07-12",
+          "note": "Re-fetched the News-Miner report ahead of the July 13 special board meeting. The board weighs an LM6000 turbine costing about 120 million dollars, rated 45 to 58 MW alone and 76 to 152 MW if paired with steam or battery storage. In April the board approved 50,000 dollars to reserve an order spot plus a 25.6 million dollar overhaul of the 1970s GT1 diesel units. Some co-op members object to the added long-term debt."
         }
       ]
     },
@@ -232,10 +259,15 @@
           "url": "https://alaskabeacon.com/2026/07/07/corporate-income-tax-change-remains-key-sticking-point-for-alaska-gas-pipeline-bill/",
           "outlet": "Alaska Beacon",
           "date": "2026-07-07"
+        },
+        {
+          "url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-07/corporate-income-tax-change-remains-key-sticking-point-for-alaska-gas-pipeline-bill",
+          "outlet": "Alaska Public Media",
+          "date": "2026-07-07"
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-11",
+      "last_updated": "2026-07-12",
       "history": [
         {
           "date": "2026-07-08",
@@ -248,6 +280,10 @@
         {
           "date": "2026-07-11",
           "note": "Floor votes still tentatively July 16, session ends July 19, per prior reporting. Alaska Beacon returned HTTP 403 on re-fetch this run; status carried forward unchanged. Watching for the vote."
+        },
+        {
+          "date": "2026-07-12",
+          "note": "Conferees unveiled a draft compromise on July 2 and set a floor vote for July 16, with the second special session ending July 19. Glenfarne owns 75 percent of the project. The sticking point is an S corporation corporate income tax provision that Governor Dunleavy has vowed to veto, and it is unclear the provision has the House votes. The draft also bars the developer from billing the state if the project is abandoned and requires return of shares and assets within six months."
         }
       ]
     },

@@ -302,6 +302,21 @@ text stays DOM/SVG; one imaginary light per deck; fog in the sky's hue.
 57. **Frozen Dash Motion** — stroke-dasharray rhythms with per-element
     dashoffset implying motion direction in a still. Routes, flows,
     timelines. D1
+58. **Closing State-Ring Counter** (NEW 2026-07-12) — a cyclic process (N
+    named stages) drawn as N arcs of a ring; the ring advances one arc per
+    narrative beat and SEALS shut (bridge the top gap with a gold accent +
+    Polaris) at resolution, doubling as the deck's progress counter. RULES
+    that make it read: unlit arcs must be a clearly DIM GRAY (not a faint
+    tint of the lit hue) or brightness-only increments read as a static logo
+    at corner/thumb size; pair with an EXPLICIT quantized label (a small mono
+    "N / 4") so the fill count is unambiguous; the full-size version can host
+    the stages as labeled blocks at the clock positions with cased signal
+    arcs BETWEEN them (leave a >=30deg gap so arrowheads never collide with a
+    block plate; draw plates BEFORE arcs so arrowheads are never covered). A
+    central subject (an ember, a target) can be "hunted" by the loop. Used as
+    the hero + continuity motif of "First Machine to the Fire" (the
+    detect/decide/dispatch/douse autonomy loop). Generalizes to any pipeline,
+    control loop, decision cycle, or multi-stage process story. D2
 
 ## LINE & DIAGRAM FLAIR
 

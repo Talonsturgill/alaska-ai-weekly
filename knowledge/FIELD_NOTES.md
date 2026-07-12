@@ -7,6 +7,24 @@ into the doctrine/library files and prune here.
 
 ---
 
+## 2026-07-12 — run 5 retro (Carousel No. 5, "First Machine to the Fire")
+
+- **Shipped 8.54 vs 8.3** (9 slides, vector PDF 2.3MB), zero hard fails, 1 pixel round + confirmed fixes + 1 flow round. Story: Alaska as the world's proving ground for autonomous wildfire robots (XPRIZE Autonomous track finals via UAF ACUASI on a 1,000 sq km range; five finalists; September 2026 verdict). Deliberate break from four straight energy/infrastructure/monitoring decks.
+- **The Dryad/XPRIZE story that collapsed in run 4 survived in run 5** because the frame changed: the deck is built on the VERIFIED structure (xprize.org roster, ACUASI/UAF partner, 1,000 km2, prize architecture, FAA test-site status), and Dryad's self-reported detect-and-suppress demo is one attributed data point (S6, "Dryad says" + NOT INDEPENDENTLY VERIFIED), never the thesis. The climax is the honest open verdict (S8), not the demo. Fact-check-before-select resolved the finalist count too: FIVE Autonomous finalists (Dryad's own "final three" contradicts xprize.org and was dropped).
+- **New hero/motif that landed: the closing Autonomy Ring** — a discrete cyclic control-system loop (detect/decide/dispatch/douse) that doubles as an explicit N/4 progress counter and seals gold at the verdict. Flow critic caught that brightness-only arc increments read as a static logo; fix = dim (gray) unlit arcs + an explicit "N / 4" label. New instinct logged. Generalizes to any process/loop story.
+- **Two honesty catches by the pixel critics** that qa.py can't see: S3 lit "fire-season" bars rendered gold after akpost (fixed to redder #E8531F to match the split bar and clear the gold budget), and S4's warm convergence point sat exactly on the Dryad row (favoritism for the one company featured later; moved above the roster, all five nodes equal). Both were composition/honesty, not machine-detectable.
+- **Rendered akthree hero** (backlit quadcopter over fire-lit dusk) shipped with an AK3D fallback; weakest criterion (artwork craft, 7) is that it still reads slightly flat. A warm rim light from the key direction + a scale bump made it read as a quadcopter rather than a smear (new instinct). Parked for Phase 12: a reusable rim-light + profile-clarity helper for object heroes.
+- Canvas-vs-DOM overprint recurred and was again caught only by eye (S5 loop arcs vs block plates, S8 body vs closed ring), not qa.py. Confirmed-instinct bumped.
+
+---
+
+## 2026-07-12 — craft refresh (run 5)
+
+- Named, reusable frameworks drive SAVES on LinkedIn carousels (a coined "The N-Thing Method" reads as a portable thinking tool). Reinforces giving each deck a named thesis/frame on the cover, not just a headline. Consider a coined frame when the story has a clean structural spine.
+- 8 to 10 slides remains the save-optimal band with roughly 15 to 20 seconds dwell; nothing here changes current practice. Consistency of the visual system across every slide (background, type, accent, grid) is repeated as the top design driver, which the constellation system already enforces.
+
+---
+
 ## 2026-07-11 — THE 3D UPGRADE (maintainer-directed dev session, post run 4)
 
 - **The 2D-to-3D leap landed.** Empirical probes overturned the standing "WebGL experimental"

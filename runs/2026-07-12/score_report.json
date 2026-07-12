@@ -1,0 +1,38 @@
+{
+  "run_date": "2026-07-12",
+  "carousel_no": 5,
+  "title": "First Machine to the Fire",
+  "weighted_total": 8.54,
+  "threshold": 8.3,
+  "ship": true,
+  "hard_fails": [
+    {"rule": "em dash or en dash anywhere", "status": "pass"},
+    {"rule": "emoji anywhere", "status": "pass"},
+    {"rule": "factual claim without a resolving claim-id", "status": "pass"},
+    {"rule": "typo or misspelling in any rendered slide", "status": "pass"},
+    {"rule": "clipped, overlapping, or cut-off text", "status": "pass"},
+    {"rule": "primary text contrast below 4.5:1", "status": "pass"},
+    {"rule": "slide count outside 6-12", "status": "pass"},
+    {"rule": "machine_qa verdict FAIL or pdf_mode != vector", "status": "pass"},
+    {"rule": "topic repeats a ledger entry within 90 days", "status": "pass"},
+    {"rule": "hero structure identical to last 4 decks", "status": "pass"},
+    {"rule": "banned phrase from brand.yaml", "status": "pass"},
+    {"rule": "hashtag count != 3, or link in post body", "status": "pass"},
+    {"rule": "placeholder, lorem, TODO, or unfinished element", "status": "pass"}
+  ],
+  "criteria": [
+    {"name": "Thumb-stop cover", "score": 7, "weight": 0.14},
+    {"name": "Story arc & swipe momentum", "score": 8, "weight": 0.14},
+    {"name": "Artwork craft & genuine detail", "score": 7, "weight": 0.16},
+    {"name": "Story-art fusion", "score": 9, "weight": 0.14},
+    {"name": "Alaska authenticity & local relevance", "score": 8, "weight": 0.12},
+    {"name": "Insight density & factual weight", "score": 8, "weight": 0.10},
+    {"name": "Variety vs ledger", "score": 8, "weight": 0.08},
+    {"name": "Legibility & platform fitness", "score": 8, "weight": 0.07},
+    {"name": "Copy: voice & hook", "score": 8, "weight": 0.05},
+    {"name": "Deliverable completeness", "score": 7, "weight": 0.10}
+  ],
+  "weakest_criterion": "Artwork craft & genuine detail",
+  "one_sentence_fix": "Sculpt the slide-6 hero into a genuinely rendered, rim-lit machine with layered atmosphere so the deck's marquee slide rewards a zoom, and tighten the dead zones on the sparse data slides.",
+  "editor_notes_for_email": "No hard fails; ships at 8.54 vs 8.3. Honesty posture is the deck's spine: the Dryad detect-and-suppress demo (S6) carries 'Dryad says' plus a COMPANY SELF REPORT / NOT INDEPENDENTLY VERIFIED caveat; the fire-season stats (S3) are labeled BACKGROUND with the 'nearly half' figure tied to 2022; all five finalists are shown equal with no 'final three'. Weakest area is the rendered S6 hero reading flatter than the GPU-PBR ambition; parked for Phase 12."
+}

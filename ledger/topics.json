@@ -194,6 +194,50 @@
     "https://www.northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/"
    ],
    "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-12",
+   "carousel_no": 5,
+   "topic": "Alaska as the world's proving ground for autonomous wildfire-fighting robots: the XPRIZE Wildfire Autonomous Response track finals field-tested via UAF ACUASI on a 1,000 sq km Alaska range",
+   "angle": "Alaska is the arena, not the backdrop; five finalists (Anduril, Data Blanket, Dryad, FireSwarm Solutions, Wildfire Quest) race to close the detect-decide-dispatch-douse loop with no human, decided September 2026; thesis 'the machines are still auditioning' (a contest winner is not proof), told through a closing Autonomy Ring",
+   "entities": [
+    "XPRIZE Wildfire",
+    "XPRIZE Foundation",
+    "ACUASI",
+    "University of Alaska Fairbanks",
+    "Dryad Networks",
+    "Anduril",
+    "Data Blanket",
+    "FireSwarm Solutions",
+    "Wildfire Quest",
+    "Lockheed Martin",
+    "Carsten Brinkschulte",
+    "Andrea Santy",
+    "Interior Alaska"
+   ],
+   "keywords": [
+    "wildfire",
+    "autonomous drone",
+    "XPRIZE",
+    "detect and suppress",
+    "sensor mesh",
+    "UAF",
+    "ACUASI",
+    "1,000 square kilometers",
+    "fire season",
+    "autonomy loop",
+    "no human in the loop",
+    "robotics",
+    "test range",
+    "September 2026 verdict"
+   ],
+   "headline": "First Machine to the Fire",
+   "sources_lead": [
+    "https://www.xprize.org/news/meet-the-future-of-autonomous-wildfire-response-xprize-wildfire-announces-finalist-teams-advancing-in-11m-competition",
+    "https://www.businesswire.com/news/home/20260707802818/en/Dryad-Networks-Reaches-XPRIZE-Wildfire-Finals-Milestone-Demonstrating-Autonomous-Detection-and-Suppression-of-Wildfires-in-Alaska",
+    "https://www.faa.gov/uas/programs_partnerships/test_sites"
+   ],
+   "outcome_notes": ""
   }
  ]
 }

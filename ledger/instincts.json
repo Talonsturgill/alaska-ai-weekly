@@ -77,9 +77,9 @@
   },
   {
    "instinct": "Canvas-drawn art can overprint DOM text without tripping qa.py (it only checks DOM line boxes); route every canvas path/arc/diagram around the text blocks at PLAN time and have pixel critics explicitly check canvas-vs-text collision.",
-   "confidence": 0.85,
+   "confidence": 0.87,
    "born": "2026-07-10",
-   "evidence": "S3 flightpath arc crossed two body lines and S4 orbit crossed the headline; machine QA passed both, pixel critics caught both."
+   "evidence": "S3 flightpath arc crossed two body lines and S4 orbit crossed the headline; machine QA passed both, pixel critics caught both. | Re-confirmed run 5 (S5 loop arcs vs block plates; S8 body vs closed ring) both caught by pixel/flow critics, invisible to qa.py."
   },
   {
    "instinct": "Give the deck's continuity motif explicit connective tissue on EVERY slide (enter-left/exit-right at low alpha), not just its transformation states; intermittent motifs read as separate images.",
@@ -110,6 +110,24 @@
    "confidence": 0.7,
    "born": "2026-07-11",
    "evidence": "Flow critic: the 8-spoke valve looked near-identical rotated; the open->shut turn relied entirely on the SUSPENDED tag until an amber lock-bar across the hub made 'shut' read at thumb."
+  },
+  {
+   "instinct": "A discrete-state motif must show its progress with an EXPLICIT quantized cue (a fraction like N/4, or clearly dim-vs-bright segments), not brightness alone; faint-cyan-vs-bright-cyan arc increments read as a static logo at corner/thumb size (flow critic, run 5).",
+   "confidence": 0.8,
+   "born": "2026-07-12",
+   "evidence": "Run 5's Autonomy Ring: per-stage arc increments were illegible until unlit arcs were made gray and an explicit N/4 label was added under the ring."
+  },
+  {
+   "instinct": "When two warm elements must read as the SAME encoding (e.g. two 'Alaska = fire' bars), pin them to one shared token and verify AFTER akpost; a yellowish orange (#FF6A2C, high green channel) drifts toward gold under the grade and both clashes with the split bar and strains the gold budget. Use a redder fire-orange (#E8531F) for on-slide fire that must stay clearly non-gold.",
+   "confidence": 0.75,
+   "born": "2026-07-12",
+   "evidence": "Run 5 slide 3: #FF6A2C lit ISOTYPE bars read gold after grade; #E8531F matched the split bar and cleared the gold budget."
+  },
+  {
+   "instinct": "A rendered akthree object hero reads as a flat blob at thumb unless a warm RIM light (opposite the key) separates it from the background; a pure backlit silhouette de-risks lumpiness but loses recognizability. Add a low rim from the key-light direction and slightly enlarge so the object's profile (rotors/arms) resolves.",
+   "confidence": 0.75,
+   "born": "2026-07-12",
+   "evidence": "Run 5 slide 6: backlit-only drone read as a smear (flow critic); adding a 1.7-intensity warm rim + scale 1.15->1.42 made it read as a quadcopter."
   }
  ]
 }
