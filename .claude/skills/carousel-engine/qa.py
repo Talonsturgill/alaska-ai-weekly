@@ -205,6 +205,39 @@ def main():
         if float(arr.std()) < 6.0:
             res["fails"].append(f"near-uniform image (std {arr.std():.1f}) — dead or empty render")
 
+        # CANVAS HEALTH (2026-07-11, the rendered-3D gates). Two failure modes
+        # the DOM/text gates cannot see, both from the GPU-bench research:
+        # (1) DEAD CANVAS: a large visible canvas whose pixels are near-uniform
+        #     = a WebGL context that failed/never painted (screenshots as flat
+        #     ink) or an art draw that silently threw. FAIL: no slide ships a
+        #     dead art layer. A canvas that COULD NOT be sampled (no
+        #     preserveDrawingBuffer) on a slide whose full-frame std is healthy
+        #     only WARNs (the whole-image gate above still backstops it).
+        # (2) LOW-RES BACKING: the slide contract requires 2x backing
+        #     (canvas.width = cssW*2); a big canvas below 1.5x ships visibly
+        #     blurry in the PDF (the three.js setSize-order trap). FAIL >=1/4
+        #     of the slide below 1.5x; WARN 1.5x-1.9x.
+        for cvi in rec.get("canvases", []):
+            if cvi.get("area_frac", 0) < 0.25:
+                continue
+            tag = f"canvas {cvi['w']}x{cvi['h']}@({cvi['x']},{cvi['y']})"
+            br = cvi.get("backing_ratio", 2)
+            if br < 1.5:
+                res["fails"].append(
+                    f"low-res canvas backing ({br}x < 1.5x) on {tag} — 2x contract; ships blurry")
+            elif br < 1.9:
+                res["warns"].append(
+                    f"canvas backing {br}x < 2x on {tag} (contract is 2x)")
+            if cvi.get("sample_ok"):
+                if cvi.get("variance", -1) >= 0 and cvi["variance"] < 3.0:
+                    res["fails"].append(
+                        f"dead canvas (pixel variance {cvi['variance']}) on {tag} — "
+                        "failed GL context or empty art layer")
+            else:
+                res["warns"].append(
+                    f"unsampleable canvas on {tag} (GL without preserveDrawingBuffer?) — "
+                    "verify visually; akthree sets preserveDrawingBuffer for the gate")
+
         for e in rec.get("page_errors", []):
             res["fails"].append(f"page error: {e}")
         for e in rec.get("console_errors", []):

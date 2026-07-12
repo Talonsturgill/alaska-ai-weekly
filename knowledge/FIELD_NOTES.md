@@ -25,6 +25,11 @@ into the doctrine/library files and prune here.
   washed bands (keep emissive intensity <= ~2.5 and radius small); SDF carved tunnels go near-black
   without an indirect floor; light-bottomed renders need dark-ink footer furniture (contrast gate
   caught it).
+- **Enforcement wired (same session, maintainer prompt):** qa.py now FAILS dead canvases (near-uniform
+  pixels = failed GL frame) and sub-1.5x canvas backing; rubric + pixel-critic enforce THE RENDERED
+  LADDER; master prompt names the gates. The dead-canvas gate's first reconstruction run caught a real
+  bug: probing webglOK on the render target froze the context without preserveDrawingBuffer and blinded
+  the sampler. Probes get throwaway canvases, forever.
 - **Parked, high-value next steps:** matcap + G-buffer deferred pass for ak3d (per-pixel normals,
   Blender-clay look without GPU); APCA text-contrast auto-solver; saliency-map focal-hierarchy QA
   check (Itti-Koch downsample: assert the intended focal wins); strata-texture helper (run 4 retro);

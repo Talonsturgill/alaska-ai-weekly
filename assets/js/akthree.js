@@ -48,9 +48,13 @@ export function init(THREE) {
   const AKT = { THREE };
 
   /* ---- probe ------------------------------------------------------------ */
-  AKT.webglOK = function (canvas) {
+  // Probe on a THROWAWAY canvas, never the render target: getContext fixes a
+  // canvas's context attributes forever, so probing the target would strip
+  // preserveDrawingBuffer from the renderer and blind the QA sampler
+  // (found by the dead-canvas gate's own reconstruction run, 2026-07-11).
+  AKT.webglOK = function () {
     try {
-      const c = canvas || document.createElement('canvas');
+      const c = document.createElement('canvas');
       return !!(c.getContext('webgl2') || c.getContext('webgl'));
     } catch (e) { return false; }
   };
@@ -60,7 +64,8 @@ export function init(THREE) {
   AKT.setup = function (canvas, opts) {
     opts = opts || {};
     const w = opts.w || 1080, h = opts.h || 1350;
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: opts.antialias !== false });
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: opts.antialias !== false,
+      preserveDrawingBuffer: true });  // stills only: lets the QA gate sample the frame
     // ORDER MATTERS: pixel ratio BEFORE size, or setSize resets the backing
     // store to 1x and every render silently ships at half resolution.
     const ratio = (canvas.width && canvas.width > w) ? canvas.width / w : 2;

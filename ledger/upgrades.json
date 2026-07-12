@@ -207,6 +207,26 @@
     "examples/proof-3d/slides/slide-03.html"
    ],
    "verification": "proof-3d renders+qa PASS from its committed location; knowledge files lint clean (no dashes)."
+  },
+  {
+   "run_date": "2026-07-11",
+   "kind": "fix",
+   "area": "engine",
+   "change": "Enforcement wiring for the 3D bench: render.py extracts per-canvas telemetry (backing resolution + downsampled pixel variance); qa.py gains two hard gates: DEAD CANVAS (a visible canvas >= 25% of the slide with near-uniform pixels = failed GL frame or empty art layer -> FAIL) and LOW-RES BACKING (< 1.5x the 2x contract -> FAIL, 1.5-1.9x WARN); akthree sets preserveDrawingBuffer and webglOK now probes a throwaway canvas (probing the render target froze context attributes and blinded the sampler, found by the gate's own reconstruction run); scoring rubric's artwork-craft descriptors and the pixel-critic agent now name THE RENDERED LADDER so the taste gates enforce it; master prompt Phase 7 names the new gates.",
+   "trigger": "Maintainer question (2026-07-11): 'did you wire that all into the eval gates so that its all enforced?' The bench shipped opt-in; the failure modes it guards against (black GL frames, silent 1x renders) had no machine gate.",
+   "files": [
+    ".claude/skills/carousel-engine/render.py",
+    ".claude/skills/carousel-engine/qa.py",
+    "assets/js/akthree.js",
+    "config/scoring_rubric.yaml",
+    ".claude/agents/pixel-critic.md",
+    "prompts/routine_instructions.md",
+    ".claude/skills/carousel-engine/SKILL.md",
+    "examples/proof-3d/slides/slide-01.html"
+   ],
+   "verification": "Reconstructions FAIL as required (dead-GL slide: 'dead canvas variance 0'; 1x slide: 'low-res canvas backing 1x', qa exit 1). Regression: examples/proof-3d PASS (after the probe-pollution fix the gate itself caught), examples/demo-deck baseline WARN unchanged, runs/2026-07-11 PASS. No gate weakened; two added.",
+   "rollback": "revert the upgrade(2026-07-11) gates commit",
+   "commit": "PLACEHOLDER upgrade(2026-07-11) gates"
   }
  ],
  "scan_log": [

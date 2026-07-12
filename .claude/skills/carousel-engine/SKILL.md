@@ -84,6 +84,11 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
   ~150px clear top/bottom on the panorama's text columns for platform UI.
 - Contrast: body text >= 4.5:1 against its local background. QA estimates;
   the pixel critic verifies the worst-case point.
+- *Canvas health (2026-07-11):* any visible canvas covering >= 25% of the
+  slide FAILS qa.py if its pixels are near-uniform (dead GL frame or empty
+  art layer) or its backing store is under 1.5x CSS size (WARN 1.5-1.9x).
+  GL canvases must be sampleable: akthree sets preserveDrawingBuffer and
+  never probes the render target (getContext fixes attributes forever).
 - PDF: vector mode required (assemble_report.json `pdf_mode: "vector"`);
   target 2-25 MB.
 

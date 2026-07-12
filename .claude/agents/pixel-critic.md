@@ -37,7 +37,17 @@ Protocol per slide — LOOK at both images (Read them), then:
 7. **THUMB TEST** — at the 432px thumb: cover must stop a scroll; body
    slides must yield their one takeaway; anything illegible that matters =
    fail.
-8. **Dossier acceptance checklist** — verify each item, binary.
+8. **RENDERED 3D (when the dossier uses akthree/aksdf, TECHNIQUE_LIBRARY
+   87-88)** — the render must actually be RENDERED: visible soft shadows
+   with one light direction, materials reading as their preset (gold
+   reflects the environment, clay is matte), no dead/black regions where
+   the scene should be (a uniform dark canvas region = the GL frame died =
+   HARD FAIL), no visible upscale blur on akthree output (aksdf softness is
+   intended and stated in the dossier), fog in the palette's hue not gray,
+   and the film grade present when specified (graded blacks are lifted/cool,
+   highlights roll off; harsh clipped whites = ungraded = fail the checklist
+   item). Banding in sky/gradient regions = fail (the dither pass exists).
+9. **Dossier acceptance checklist** — verify each item, binary.
 9. **Brand police** — no em/en dashes in any rendered string, no emojis,
    straight quotes, progress counter correct (NN / NN), constellation marks
    present per dossier.

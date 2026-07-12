@@ -150,6 +150,46 @@ IN_PAGE_QA_JS = """
       } catch (e) {}
     }
   }
+  /* CANVAS TELEMETRY (2026-07-11, the rendered-3D gates): per visible canvas,
+     backing resolution vs CSS size (silent-1x detector) and a downsampled
+     pixel sample (dead/black-frame detector: a GL context that failed or
+     never painted screenshots as uniform ink). GL canvases need
+     preserveDrawingBuffer (akthree sets it) for drawImage sampling; when
+     sampling fails we report sample_ok:false rather than guessing. */
+  out.canvases = [];
+  for (const cv of document.querySelectorAll('canvas')) {
+    const cs2 = getComputedStyle(cv);
+    if (cs2.display === 'none' || cs2.visibility === 'hidden') continue;
+    const r2 = cv.getBoundingClientRect();
+    if (r2.width < 8 || r2.height < 8) continue;
+    const entry = {
+      x: Math.round(r2.x), y: Math.round(r2.y),
+      w: Math.round(r2.width), h: Math.round(r2.height),
+      bw: cv.width, bh: cv.height,
+      area_frac: Math.round(1000 * Math.min(1,
+        (Math.min(r2.width, W) * Math.min(r2.height, H)) / (W * H))) / 1000,
+      backing_ratio: Math.round(100 * Math.min(cv.width / Math.max(1, r2.width),
+                                               cv.height / Math.max(1, r2.height))) / 100,
+      sample_ok: false, mean: -1, variance: -1
+    };
+    try {
+      const sw = 48, sh = Math.max(8, Math.round(48 * r2.height / r2.width));
+      const t = document.createElement('canvas');
+      t.width = sw; t.height = sh;
+      const tc = t.getContext('2d', { willReadFrequently: true });
+      tc.drawImage(cv, 0, 0, sw, sh);
+      const px = tc.getImageData(0, 0, sw, sh).data;
+      let sum = 0, sum2 = 0, n = sw * sh;
+      for (let i = 0; i < px.length; i += 4) {
+        const v = (px[i] + px[i + 1] + px[i + 2]) / 3;
+        sum += v; sum2 += v * v;
+      }
+      entry.mean = Math.round(sum / n * 10) / 10;
+      entry.variance = Math.round((sum2 / n - (sum / n) * (sum / n)) * 10) / 10;
+      entry.sample_ok = true;
+    } catch (e) {}
+    out.canvases.push(entry);
+  }
   return out;
 }
 """
@@ -203,7 +243,7 @@ def render_slide(browser, path: Path, out_png: Path, width: int, height: int,
             page.wait_for_timeout(400)
         qa = page.evaluate(IN_PAGE_QA_JS)
         rec.update({k: qa[k] for k in ("text_nodes", "overflow_warnings",
-                                       "fonts_missing", "body_overflow")})
+                                       "fonts_missing", "body_overflow", "canvases")})
         page.screenshot(path=str(out_png), clip={"x": 0, "y": 0, "width": width, "height": height})
         rec["ok"] = out_png.exists() and out_png.stat().st_size > 10_000
         if not rec["ok"]:

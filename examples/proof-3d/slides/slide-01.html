@@ -18,7 +18,7 @@ window.renderReady=(async()=>{
   const THREE=await import('@@ASSETS@@/js/three.module.min.js');
   const AKT=(await import('@@ASSETS@@/js/akthree.js')).init(THREE);
   const cv=document.getElementById('scene');
-  if(!AKT.webglOK(cv)) { document.body.style.background='#111'; return true; }
+  if(!AKT.webglOK()) { document.body.style.background='#111'; return true; }
   const R=AKT.setup(cv,{w:1080,h:1350,bg:0x04070e,fog:[0x0b1622,10,42],exposure:1.15});
   AKT.environment(R,{intensity:0.65});
   AKT.rig(R,AKT.rigs.arcticNight);

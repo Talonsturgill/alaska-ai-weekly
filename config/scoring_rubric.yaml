@@ -42,9 +42,9 @@ rubric:
     - name: "Artwork craft & genuine detail"
       weight: 0.16
       descriptors:
-        10: "Every slide survives the zoom test; layered texture/light/depth; line-weight hierarchy; zero flat-lazy regions; consistent physics; at least one slide uses real depth (3D bench) masterfully."
-        7:  "Strong overall; one slide leans on a default or has dead zones."
-        4:  "Decorated templates, uniform line weights, flat fills."
+        10: "Every slide survives the zoom test; layered texture/light/depth; line-weight hierarchy; zero flat-lazy regions; consistent physics; the hero climbs THE RENDERED LADDER (GPU PBR via akthree or an aksdf raymarched hero, film-graded) or argues flat as a deliberate choice in the dossier; at least one slide uses real depth masterfully."
+        7:  "Strong overall; one slide leans on a default or has dead zones; or the hero stayed flat without the dossier arguing it."
+        4:  "Decorated templates, uniform line weights, flat fills, ungraded banding."
     - name: "Story-art fusion"
       weight: 0.14
       descriptors:

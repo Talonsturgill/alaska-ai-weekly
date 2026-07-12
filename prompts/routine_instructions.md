@@ -258,6 +258,10 @@ python .claude/skills/carousel-engine/qa.py --render-dir out/<date>/render
 ```
 Fix every FAIL (and every warning you cannot justify) and re-render
 changed slides with `--only N,M`. Do not proceed until qa.py exits 0.
+qa.py also enforces the rendered-3D contract: a large canvas that is
+near-uniform (dead GL frame / empty art layer) or below the 2x backing
+contract FAILS the deck; akthree slides must keep the snapshot sentinel
+and their designed Canvas fallback.
 
 ## PHASE 8 — PIXEL REVIEW (the taste gate)
 
