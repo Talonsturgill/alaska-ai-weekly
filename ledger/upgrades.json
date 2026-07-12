@@ -240,7 +240,7 @@
    ],
    "verification": "Clean A/B on a reconstructed backlit dark drone, identical base rig, the ONLY difference the objectHero rim: control has zero contour-separation (0 warm-edge px, peak region luminance = background 28.4) while the helper introduces a warm separation rim (37 warm-edge px, peak edge luminance 62.5, +120% over bg) confirmed visually and by a PIL luminance sampler using qa.py's method; AKT.fitHeight verified scaling the silhouette footprint 79k -> 381k px (~4.8x). Rim magnitude is intensity-tunable and framing-dependent by design (verified per slide by the existing RENDERED LADDER pixel gate). Regression: this run's 9 slides render OK + qa PASS 0/0 (slide-06 imports the changed akthree.js and is unchanged) and examples/demo-deck render OK + qa WARN (the known slide-03 busy-art warn), both identical to baseline; node --check clean. No gate weakened; no new runtime dependency (uses the committed three.module.min.js); shipped slides not modified.",
    "rollback": "revert the upgrade(2026-07-12) commit",
-   "commit": "pending upgrade(2026-07-12) commit (showrunner stages and commits Phase 12 changes separately)"
+   "commit": "upgrade(2026-07-12) commit 01a43fb (revert this single prefixed commit to roll back)"
   },
   {
    "run_date": "2026-07-12",
@@ -253,7 +253,7 @@
    ],
    "verification": "Confirmed against .claude/agents/fact-checker.md (tools: WebFetch, Read) and scorer.md (tools: Read): neither has Write, and both agent prompts already end 'Your final message is this JSON', so the routine wording was the sole inaccuracy. Prose-only change to the spec doc; no engine/script/gate touched, nothing to re-render.",
    "rollback": "revert the upgrade(2026-07-12) commit",
-   "commit": "pending upgrade(2026-07-12) commit (showrunner stages and commits Phase 12 changes separately)"
+   "commit": "upgrade(2026-07-12) commit 01a43fb (revert this single prefixed commit to roll back)"
   }
  ],
  "scan_log": [
