@@ -227,6 +227,33 @@
    "verification": "Reconstructions FAIL as required (dead-GL slide: 'dead canvas variance 0'; 1x slide: 'low-res canvas backing 1x', qa exit 1). Regression: examples/proof-3d PASS (after the probe-pollution fix the gate itself caught), examples/demo-deck baseline WARN unchanged, runs/2026-07-11 PASS. No gate weakened; two added.",
    "rollback": "revert the upgrade(2026-07-11) gates commit",
    "commit": "upgrade(2026-07-11) commit 4afc86c on PR #26 (revert this single prefixed commit to roll back)"
+  },
+  {
+   "run_date": "2026-07-12",
+   "kind": "fix",
+   "area": "assets",
+   "change": "New akthree helper AKT.objectHero(R, group, {toward, keyColor, intensity, height}) (plus standalone AKT.fitHeight): scales a foreground hero to a target world height (the framing bump) and adds a separation rim light on the FAR side of the subject from the camera, leaned toward the key direction, aimed at the subject center, so a dark object reads as a carved SILHOUETTE against a dark background instead of a flat blob. Documented in SKILL.md under the akthree bench. Opt-in; existing scenes unaffected.",
+   "trigger": "Run 2026-07-12 weakest scorer criterion (Artwork craft & genuine detail = 7): the S6 akthree object hero (backlit quadcopter) rendered as a blob under key+fill+ambient and only read after a warm rim from the light direction + a scale bump were added BY HAND (out/2026-07-12/slides/slide-06.html lines 111,125). A key-side rim alone leaves the profile flat; this commits the proven hand-fix as reusable machinery so every future object hero clears the RENDERED LADDER floor.",
+   "files": [
+    "assets/js/akthree.js",
+    ".claude/skills/carousel-engine/SKILL.md"
+   ],
+   "verification": "Clean A/B on a reconstructed backlit dark drone, identical base rig, the ONLY difference the objectHero rim: control has zero contour-separation (0 warm-edge px, peak region luminance = background 28.4) while the helper introduces a warm separation rim (37 warm-edge px, peak edge luminance 62.5, +120% over bg) confirmed visually and by a PIL luminance sampler using qa.py's method; AKT.fitHeight verified scaling the silhouette footprint 79k -> 381k px (~4.8x). Rim magnitude is intensity-tunable and framing-dependent by design (verified per slide by the existing RENDERED LADDER pixel gate). Regression: this run's 9 slides render OK + qa PASS 0/0 (slide-06 imports the changed akthree.js and is unchanged) and examples/demo-deck render OK + qa WARN (the known slide-03 busy-art warn), both identical to baseline; node --check clean. No gate weakened; no new runtime dependency (uses the committed three.module.min.js); shipped slides not modified.",
+   "rollback": "revert the upgrade(2026-07-12) commit",
+   "commit": "pending upgrade(2026-07-12) commit (showrunner stages and commits Phase 12 changes separately)"
+  },
+  {
+   "run_date": "2026-07-12",
+   "kind": "fix",
+   "area": "prompts",
+   "change": "Phase 3 and Phase 10 of the master routine now state explicitly that the fact-checker and scorer subagents have NO Write tool by design and return their JSON in the final message, which the showrunner persists to claims.json / score_report.json (replacing the '-> out/<date>/claims.json' and 'Save score_report.json' phrasing that implied the agent writes the file).",
+   "trigger": "Run 2026-07-12 contract mismatch: the fact-checker (tools: WebFetch, Read) and scorer (tools: Read) cannot write files, so the showrunner had to persist their returned JSON by hand; the Phase 3/10 wording implied the agent writes it, a recurring low-risk surprise for any future showrunner. No defect shipped; documentation-correctness fix only.",
+   "files": [
+    "prompts/routine_instructions.md"
+   ],
+   "verification": "Confirmed against .claude/agents/fact-checker.md (tools: WebFetch, Read) and scorer.md (tools: Read): neither has Write, and both agent prompts already end 'Your final message is this JSON', so the routine wording was the sole inaccuracy. Prose-only change to the spec doc; no engine/script/gate touched, nothing to re-render.",
+   "rollback": "revert the upgrade(2026-07-12) commit",
+   "commit": "pending upgrade(2026-07-12) commit (showrunner stages and commits Phase 12 changes separately)"
   }
  ],
  "scan_log": [
@@ -259,6 +286,12 @@
    "focus": "3D rendering in headless offline browsers + world-class illustration levers (maintainer-directed dev session; two research passes: SDF raymarching/rasterization/three.js-SwiftShader, and post-grading/texture/OKLCH color science)",
    "found": "SwiftShader WebGL2 is fully functional here (~70ms/frame PBR, contradicting 24-31s forum reports); Quilez canon for CPU raymarching (quadratic smin only, AO never on the key light, 4-tap normals, half-res upscale); the minimal grading stack op order; IGN dither as the banding killer; OKLCH ramps with chroma bell + hue drift.",
    "outcome": "applied (akthree + aksdf + akpost + akcolor + knowledge wiring). Parked: matcap G-buffer deferred pass for ak3d, APCA text-contrast solver, saliency focal-hierarchy QA check, strata-texture helper (from run 4 retro)."
+  },
+  {
+   "run_date": "2026-07-12",
+   "focus": "accessibility / PDF changes (rotated off editorial-dataviz 07-10, procedural art 07-11, 3D rendering 07-11; last touched only tangentially at bootstrap)",
+   "found": "LinkedIn in 2026 has no native organic image carousel; swipeable posts are document uploads that LinkedIn RE-RENDERS into images, so embedded PDF/UA tags do NOT reach the LinkedIn viewer -- the reach/accessibility lever is the per-slide ALT TEXT typed into LinkedIn's upload UI, not the PDF. WCAG/PDF-UA tagged-PDF matters only for the public-site PDF (alaskaaihq.com), where assemble.py already sets Title/Author/Creator but no /Lang or Marked flag. Full PDF/UA tagging of vector-drawn pages is large and unbounded and not recommended.",
+   "outcome": "parked (FIELD_NOTES 2026-07-12: per-slide alt-text-in-the-Gmail-draft candidate + a near-bounded assemble.py /Lang+Marked one-liner, with source URLs). No frontier code applied: the two reactive fixes (objectHero helper, agent-write-tool doc correction) filled the daily budget."
   }
  ]
 }

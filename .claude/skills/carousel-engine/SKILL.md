@@ -135,6 +135,17 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
   them silently renders at 1x); `await AKT.snapshot(R)` and check `.ok`
   (black-frame sentinel); design a Canvas fallback for `AKT.webglOK()===false`;
   composite via an offscreen canvas + drawImage when mixing with 2D art.
+  OBJECT HERO: for a single foreground object that must read as a SILHOUETTE
+  against a darker background (the backlit-machine case), call
+  `AKT.objectHero(R, group, {toward:[kx,ky,kz], keyColor, intensity, height})`
+  after adding the group. It scales the hero to `height` (optional, the sane
+  framing bump) and adds a separation rim on the FAR side of the subject from
+  the camera, leaned toward the key direction (`toward`), so the contour is
+  carved by a warm backlight rather than reading as a flat blob. A key-side
+  rim ALONE leaves the profile flat -- run 2026-07-12 S6 needed exactly this
+  by hand. Tune `intensity` up for marquee heroes and verify the edge visually
+  (the RENDERED LADDER pixel gate still applies). `AKT.fitHeight(group,h)` is
+  the standalone scale helper.
 - `assets/js/aksdf.js` — CPU SDF raymarcher (`AKSDF.*`): organic sculpted
   heroes, soft shadows + 5-tap AO + smin blends; render 480x720 internal into
   a box, ~5-15s; `deadlineMs` degrades gracefully.

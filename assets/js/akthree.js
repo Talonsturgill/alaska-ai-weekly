@@ -253,5 +253,58 @@ export function init(THREE) {
     return { ok, variance };
   };
 
+  /* ---- object hero ------------------------------------------------------ */
+  // Raises the rendered-hero floor for a single foreground object that must
+  // read as a SILHOUETTE against a darker background (the backlit-machine
+  // case). The failure mode this guards: a dark object under a key+fill+
+  // ambient rig reads as a flat blob because nothing carves its contour --
+  // run 2026-07-12 S6 (the backlit quadcopter) read as a blob and scored the
+  // deck's weakest criterion until a hand-added warm rim from the light
+  // direction + a scale bump made the profile read. This encodes both moves.
+  //
+  //   const g = new THREE.Group(); /* build hero, add to scene */ AKT.add(R,g);
+  //   AKT.objectHero(R, g, { toward:[6,2.6,-4], keyColor:0xffb070, height:2.4 });
+  //
+  // toward = the direction the KEY light comes FROM (so the separation edge
+  // reads warm on the same side the key/fire lights it). height (optional) =
+  // target world-space height the hero is scaled to fill (the scale bump).
+  // The rim is a DirectionalLight placed on the FAR side of the subject from
+  // the camera (the geometry that produces a contour-carving backlight; a
+  // key-side rim alone leaves the profile flat), leaned toward the key side,
+  // aimed at the subject center so it works wherever the hero sits.
+  // Returns { rim, center, radius }. Opt-in; existing scenes are unaffected.
+  AKT.fitHeight = function (group, worldHeight) {
+    group.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(group);
+    const size = new THREE.Vector3(); box.getSize(size);
+    if (size.y > 1e-6) group.scale.multiplyScalar(worldHeight / size.y);
+    return group;
+  };
+  AKT.objectHero = function (R, group, o) {
+    o = o || {};
+    if (o.height) AKT.fitHeight(group, o.height);
+    group.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(group);
+    const center = new THREE.Vector3(); box.getCenter(center);
+    const size = new THREE.Vector3(); box.getSize(size);
+    const radius = (Math.max(size.x, size.y, size.z) * 0.5) || 1;
+    // far side of the subject from the camera = where a rim/backlight lives
+    const away = center.clone().sub(R.camera.position).normalize();
+    const dist = o.dist != null ? o.dist : Math.max(4, radius * 4);
+    const lift = o.lift != null ? o.lift : radius * 1.2;
+    const pos = center.clone().add(away.multiplyScalar(dist));
+    pos.y += lift;
+    if (o.toward) {  // lean the rim toward the key side (stays mostly behind)
+      const k = new THREE.Vector3(o.toward[0], o.toward[1], o.toward[2]);
+      if (k.lengthSq() > 1e-9) pos.add(k.normalize().multiplyScalar(o.keyLean != null ? o.keyLean : dist * 0.5));
+    }
+    const rim = new THREE.DirectionalLight(o.keyColor != null ? o.keyColor : 0xffb070,
+      o.intensity != null ? o.intensity : 1.7);
+    rim.position.copy(pos);
+    rim.target.position.copy(center);
+    R.scene.add(rim); R.scene.add(rim.target);
+    return { rim, center, radius };
+  };
+
   return AKT;
 }

@@ -323,3 +323,30 @@ into the doctrine/library files and prune here.
   earlier in the pipeline would surface it before ship. The gate is correct
   and must not weaken; this only moves the catch earlier. Bound it to the
   same colon rule site_build already enforces before implementing.
+
+## 2026-07-12 — parked frontier candidates (accessibility / PDF scan)
+
+- **Per-slide alt text surfaced in the Gmail draft (parked, highest-value).**
+  In 2026 LinkedIn has no native organic image carousel; the only swipeable
+  format is a document post (PDF/PPTX/DOCX), which LinkedIn RE-RENDERS into
+  images. That means embedded PDF tags do NOT carry to the LinkedIn viewer;
+  the reach/accessibility lever is the ALT TEXT typed into LinkedIn's upload
+  UI per slide. The machine could emit a short factual alt string per slide
+  (from the dossier + transcribed copy) and print them in the Gmail draft so
+  the maintainer pastes them at upload. Parked because it needs a copy source
+  of truth (dossier vs pixel-critic transcription) and gmail_draft.py work
+  beyond one bounded daily slot; not a defect. Sources:
+  https://www.oktopost.com/blog/linkedin-carousel-pdf-best-practices/ ,
+  https://socialbee.com/blog/how-to-post-linkedin-carousels/
+- **PDF /Lang + Marked flag in assemble.py (parked, near-bounded).** The
+  public-site PDF (alaskaaihq.com) has no document language set; a screen
+  reader guesses pronunciation. assemble.py already writes Title/Author/
+  Creator metadata (lines 96-97) but no /Lang or /Marked. Setting
+  writer's viewer prefs / catalog /Lang "en-US" is a ~2-line pypdf change
+  that helps the site PDF (LinkedIn rasterizes, so no LinkedIn effect). Held
+  because it touches the vector-PDF writer path and must be verified to not
+  disturb the vector-text output the hard-fail gate checks; low value, so it
+  waits for a slot where assemble.py is already open. Full PDF/UA tagging
+  (structure tree, per-image alt, reading order) is a large unbounded effort
+  on vector-drawn pages with no semantic DOM and is NOT recommended. Source:
+  https://www.grackledocs.com/en/a-guide-to-wcag-standards-for-pdfs/

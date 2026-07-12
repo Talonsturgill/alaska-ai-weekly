@@ -138,8 +138,11 @@ notes, and its beat:
 
 ## PHASE 3 — CLAIMS
 
-Merge scout outputs. Spawn `fact-checker` with the merged findings →
-`out/<date>/claims.json`. Stories need >= 3 verified claims to survive.
+Merge scout outputs. Spawn `fact-checker` with the merged findings. The
+fact-checker has NO Write tool by design (it is an adversarial validator);
+it returns the verified claims as JSON in its final message, which YOU
+persist to `out/<date>/claims.json`. Stories need >= 3 verified claims to
+survive.
 If fewer than 2 stories survive: broaden the window to 21 days, rerun
 Phases 2-3 once (note the broadening for the email). If still starved,
 pick the strongest single story and plan a tighter 6-7 slide deck —
@@ -305,7 +308,9 @@ rubric, current revision count).
   around). If a hard fail is unfixable this run (e.g., topic collision
   discovered late), fall back to the runner-up story ONLY if before Phase
   7; otherwise ship nothing, write the post-mortem email (see FAILURE).
-Save `out/<date>/score_report.json`.
+The scorer also has NO Write tool by design; it returns the report card as
+JSON in its final message, which YOU persist to
+`out/<date>/score_report.json`.
 
 ## PHASE 11 — SHIP (commit + merge; authoritative policy in CLAUDE.md)
 
