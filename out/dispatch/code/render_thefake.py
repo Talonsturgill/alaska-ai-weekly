@@ -103,6 +103,11 @@ def _scene(p, t):
         gp = dim.op_rep2(ti.Vector([p.x, p.y + 2.05, p.z]), 1.2)
         rail = dim.sd_box(gp, ti.Vector([0.0, 0.0, 0.0]), ti.Vector([0.015, 0.015, 0.6]))
         d = ti.min(d, rail)
+        # NEAR-FIELD depth: two floating slabs close to the lens at the frame edges (defocused
+        # foreground bokeh) so the depth buffer spans near->far, not just the back wall
+        f1 = dim.sd_rbox(p, ti.Vector([-1.35, 0.5 + 0.06 * ti.sin(t * 0.8), 0.55]), ti.Vector([0.30, 0.42, 0.03]), 0.03)
+        f2 = dim.sd_rbox(p, ti.Vector([1.4, -0.15 + 0.05 * ti.sin(t * 0.6 + 2.0), 0.8]), ti.Vector([0.26, 0.36, 0.03]), 0.03)
+        d = ti.min(d, ti.min(f1, f2))
     elif c < 2.5:                                 # S3 THE FAKE (3/4 profile whale; tail sheds voxel cubes)
         diss = DISSOLVE[None]
         d = sd_tank(p, t)                          # dark enclosure -> depth + backdrop
@@ -160,6 +165,8 @@ def _mat(p, n, t):
         gp = dim.op_rep2(ti.Vector([p.x, p.y + 2.05, p.z]), 1.2)
         if dim.sd_box(gp, ti.Vector([0.0, 0.0, 0.0]), ti.Vector([0.015, 0.015, 0.6])) < 0.03:
             col = ti.Vector([0.16, 0.34, 0.55])     # glowing floor rail
+        if p.z < 1.1:
+            col = ti.Vector([0.10, 0.16, 0.26])     # near-field slabs: dim cool screens
     elif c < 2.5:                                  # fabrication: pearl whale + softer magenta cubes
         diss = DISSOLVE[None]
         col = ti.Vector([0.05, 0.11, 0.13])         # dark teal wall
@@ -292,13 +299,23 @@ def draw_chrome(base, f):
     if si == 0:
         ha = 1.0 if f < 4 else E.out_cubic(E.seg(f, 2, 20)) * (1.0 - E.seg(f, 60, 78))
         if ha > 0.02:
+            kf = dc.mono(30, b=True); kt = "A TRUE STORY ABOUT A FAKE"
+            kw = dc.tw(kt, kf); d.text(((W - kw) // 2, 252), kt, font=kf,
+                                       fill=(*GOLD, int(240 * ha)), stroke_width=2, stroke_fill=(3, 8, 18, int(220 * ha)))
             hf = dc.fr(78, 800, 144)
             for i, ln in enumerate(["AI FAKED THIS", "WHALE'S ESCAPE"]):
-                w = dc.tw(ln, hf, 0.02); x = (W - w) // 2; y = 300 + i * 92
-                dc.tk(d, ln, hf, (247, 251, 255, int(255 * ha)), x, y, 0.02)
+                w = dc.tw(ln, hf, 0.02); x = (W - w) // 2; y = 312 + i * 96
+                d.text((x, y), ln, font=hf, fill=(247, 251, 255, int(255 * ha)),
+                       stroke_width=4, stroke_fill=(3, 8, 18, int(235 * ha)))
+            # crisp rule + end ticks under the headline (poster-grade ink for FIRST_FRAME)
+            ry = 312 + 2 * 96 + 22; rx0, rx1 = 190, W - 190
+            d.line([(rx0, ry), (rx1, ry)], fill=(*GOLD, int(230 * ha)), width=4)
+            for rx in (rx0, rx1):
+                d.line([(rx, ry - 12), (rx, ry + 12)], fill=(*GOLD, int(230 * ha)), width=4)
             # warning-red hairline framing the frame like a feed about to lie
             m = 46
-            d.rectangle([m, m, W - m, Hh - m], outline=(*RED, int(150 * ha)), width=3)
+            d.rectangle([m, m, W - m, Hh - m], outline=(*RED, int(170 * ha)), width=4)
+            d.rectangle([m + 10, m + 10, W - m - 10, Hh - m - 10], outline=(*RED, int(90 * ha)), width=2)
 
     # ---- S2 THE FEED: a phone showing the FAKE image, going viral (counter in CARD_BAND) ----
     if si == 1:
@@ -341,6 +358,30 @@ def draw_chrome(base, f):
         for k in range(3):
             bx = sx0 + 40 + k * 130; on = ((f // 6) % 3) >= k
             d.ellipse([bx, 1150, bx + 18, 1168], fill=(*RED, 230) if on else (60, 40, 44, 150))
+        # THE SPREAD (16.2s->20.5s): reshare ghost-cards pop in around the phone one after another,
+        # the post multiplying across the feed — a real story-advancing event mid-shot
+        tspread = t - 16.2
+        if tspread > 0:
+            cards = [(96, 470, 0.0), (830, 620, 0.55), (60, 950, 1.1), (816, 1030, 1.65),
+                     (150, 250, 2.2), (760, 300, 2.75), (96, 1240, 3.3)]
+            cf2 = dc.mono(22, m=True)
+            for (cx0, cy0, dt_) in cards:
+                a2 = E.out_cubic(E.seg(tspread, dt_, dt_ + 0.30))
+                if a2 <= 0.02:
+                    continue
+                pop = 1.0 + 0.16 * (1.0 - a2)
+                wgt, hgt = int(150 * pop), int(96 * pop)
+                d.rounded_rectangle([cx0, cy0 - int((1 - a2) * 18), cx0 + wgt, cy0 + hgt],
+                                    radius=10, fill=(14, 20, 32, int(200 * a2)),
+                                    outline=(*RED, int(190 * a2)), width=2)
+                d.ellipse([cx0 + 10, cy0 + 10, cx0 + 30, cy0 + 30], fill=(200, 210, 224, int(160 * a2)))
+                d.line([(cx0 + 40, cy0 + 20), (cx0 + wgt - 12, cy0 + 20)], fill=(120, 140, 160, int(150 * a2)), width=4)
+                d.line([(cx0 + 10, cy0 + 48), (cx0 + wgt - 12, cy0 + 48)], fill=(90, 110, 130, int(130 * a2)), width=4)
+                d.text((cx0 + 10, cy0 + hgt - 32), "RESHARED", font=cf2, fill=(*RED, int(210 * a2)))
+        # counter LOCK flash at ~18.9s: one soft red full-frame pulse (the moment it goes viral)
+        lk = E.seg(t, 18.85, 19.05) * (1.0 - E.seg(t, 19.05, 19.55))
+        if lk > 0.02:
+            d.rectangle([46, 46, W - 46, Hh - 46], outline=(*RED, int(200 * lk)), width=10)
 
     # ---- S3 THE FAKE: DETECTOR readout settling to 82.6% LIKELY AI (CARD_BAND) ----
     if si == 2:
