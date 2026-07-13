@@ -1,34 +1,29 @@
 {
  "sources": [
   {
-   "url": "https://alaskapublic.org/news/2026-07-08/a-fake-beluga-escape-story-on-social-media-is-a-reminder-of-the-hazards-of-misinformation",
-   "outlet": "Alaska Public Media (2026-07-08)",
-   "note": "Primary explainer: the fake beluga-escape image, ~6 million views on one post, the Center's statement that it is false and likely AI-generated. Kaiti Grant (communications manager) quoted."
+   "url": "https://www.insidehighered.com/news/faculty/research/2026/03/11/how-doge-gutted-neh-22-days",
+   "outlet": "Inside Higher Ed (2026-03-11)",
+   "note": "The ChatGPT prompt 'Does this relate at all to DEI? ... Begin with Yes or No' over ~1,100 pending NEH grant abstracts; DOGE staffer Justin Fox deposition; ~1,400 grants terminated in ~22 days, $100M+, staff could not define DEI under oath."
   },
   {
-   "url": "https://fm.kuac.org/kuac%20newscasts/2026-07-10/07-10-2026-kuac-morning-news",
-   "outlet": "KUAC Fairbanks (2026-07-10)",
-   "note": "Second source: false AI-generated beluga-escape story got millions of views on social media last month."
+   "url": "https://www.insidehighered.com/news/government/science-research-policy/2026/06/30/neh-asks-grant-recipients-if-they-still-want",
+   "outlet": "Inside Higher Ed (2026-06-30)",
+   "note": "After the court ruling, NEH began asking recipients whether they want terminated awards reinstated (summer 2026)."
   },
   {
-   "url": "https://www.snopes.com/fact-check/beluga-whale-escape-alaska/",
-   "outlet": "Snopes fact-check (2026-06-27)",
-   "note": "Debunk: image rated ~82.6% likely AI by Hive Moderation; the fabricated narrative had the beluga escaping to reunite with her calf. Note: page title/date confirmed via fact-check; verify exact URL."
+   "url": "https://www.uafsunstar.com/news/from-preservation-to-purge-ai-cuts-language-center-funding",
+   "outlet": "UAF Sun Star (2026-04-06)",
+   "note": "The Alaska Native Language Center / Alaska Native Language Archive grant at UAF was flagged 'Yes' and terminated; ANLC founded 1972. Campus paper of record; single-source for the specific Alaska hook."
   },
   {
-   "url": "https://www.yahoo.com/news/science/articles/fact-check-dont-fall-story-130000486.html",
-   "outlet": "Yahoo News / fact-check (2026)",
-   "note": "Corroborates the Center calling the image likely AI-generated and the calf-reunion framing."
+   "url": "https://www.historians.org/news/",
+   "outlet": "American Historical Association (ruling, SDNY, 2026-05-07)",
+   "note": "Judge Colleen McMahon ruled the mass NEH terminations unlawful, unconstitutional, ultra vires, and without legal effect (143-page decision). AHA v. NEH."
   },
   {
-   "url": "https://www.youralaskalink.com/news/local/fake-ai-beluga-whale-story-spreads-across-social-media/article_63ef53dc-1dc2-4905-a048-0a02decaffbd.html",
-   "outlet": "Your Alaska Link (2026-06-30)",
-   "note": "Alaska TV corroboration of the fake spreading across social media."
-  },
-  {
-   "url": "https://www.alaskasealife.org/",
-   "outlet": "Alaska SeaLife Center",
-   "note": "Institution: located in Seward, Alaska; opened May 1998 (we render 'SINCE 1998' rather than the '25 years' phrasing in some coverage)."
+   "url": "https://alaskapublic.org/news/alaska-desk/2026-04-03/at-hearing-linguists-tell-lawmakers-that-the-alaska-native-language-centers-mission-is-at-risk",
+   "outlet": "Alaska Public Media (2026-04-03)",
+   "note": "Alaska legislative hearing: linguists warn the Alaska Native Language Center's mission is at risk after the funding loss."
   }
  ]
 }

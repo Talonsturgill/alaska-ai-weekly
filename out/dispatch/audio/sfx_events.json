@@ -1,115 +1,85 @@
 {
   "events": [
     {
-      "t": 0.3,
-      "kind": "ambient",
-      "label": "sub-aqua swell, the real tank"
-    },
-    {
-      "t": 3.97,
+      "t": 1.0,
       "kind": "tick",
-      "label": "red feed-frame snaps in"
+      "label": "cold scanner sweep tick"
     },
     {
-      "t": 6.5,
-      "kind": "ambient",
-      "label": "false open-water wash rises"
+      "t": 5.2,
+      "kind": "pop",
+      "label": "the DEI prompt line types on"
     },
     {
-      "t": 10.21,
+      "t": 7.7,
       "kind": "whoosh",
-      "label": "phone rises into frame"
+      "label": "a grant card lifts to the machine slot"
     },
     {
-      "t": 10.7,
-      "kind": "pulse",
-      "label": "screen boot chime"
-    },
-    {
-      "t": 13.6,
-      "kind": "tick",
-      "label": "view-counter climbs 1"
-    },
-    {
-      "t": 14.1,
-      "kind": "tick",
-      "label": "view-counter climbs 2"
-    },
-    {
-      "t": 14.6,
-      "kind": "tick",
-      "label": "view-counter climbs 3"
-    },
-    {
-      "t": 15.1,
-      "kind": "tick",
-      "label": "view-counter climbs 4"
-    },
-    {
-      "t": 15.6,
-      "kind": "tick",
-      "label": "view-counter climbs 5"
-    },
-    {
-      "t": 18.9,
+      "t": 10.6,
       "kind": "lock",
-      "label": "counter locks near six million"
+      "label": "card seats, the classifier gate boots"
     },
     {
-      "t": 20.88,
-      "kind": "pulse",
-      "label": "detector scan pulse"
-    },
-    {
-      "t": 22.6,
-      "kind": "tick",
-      "label": "detector settles 82.6% likely"
-    },
-    {
-      "t": 24.43,
-      "kind": "whoosh",
-      "label": "morph into the fabrication"
-    },
-    {
-      "t": 28.3,
-      "kind": "riser",
-      "label": "pixels peeling, tension builds"
-    },
-    {
-      "t": 37.3,
-      "kind": "boom",
-      "label": "THIS NEVER HAPPENED stamp lands"
-    },
-    {
-      "t": 37.5,
+      "t": 14.5,
       "kind": "hit",
-      "label": "stamp settle"
+      "label": "the YES/NO binary snaps"
     },
     {
-      "t": 40.5,
-      "kind": "whoosh",
-      "label": "the account is pulled, panel power-down"
+      "t": 15.9,
+      "kind": "pulse",
+      "label": "the archive card blooms into warm waveforms"
     },
     {
-      "t": 43.8,
+      "t": 19.4,
+      "kind": "riser",
+      "label": "the field of recordings deepens"
+    },
+    {
+      "t": 22.0,
+      "kind": "boom",
+      "label": "the crimson stamp descends"
+    },
+    {
+      "t": 24.6,
+      "kind": "hit",
+      "label": "TERMINATED stamp lands, bars grey"
+    },
+    {
+      "t": 27.2,
+      "kind": "riser",
+      "label": "red cascade spreading across the grid"
+    },
+    {
+      "t": 30.7,
+      "kind": "boom",
+      "label": "100 million dollars, 22 days slam in"
+    },
+    {
+      "t": 34.2,
+      "kind": "lock",
+      "label": "a human hand closes on the lever"
+    },
+    {
+      "t": 39.0,
+      "kind": "riser",
+      "label": "the court-green wave restores the archive"
+    },
+    {
+      "t": 43.6,
       "kind": "tick",
-      "label": "the fake line races ahead of proof"
+      "label": "push in, the dim gaps remain"
     },
     {
-      "t": 47.31,
+      "t": 47.7,
       "kind": "pulse",
-      "label": "restored tank, warm resolve"
+      "label": "a human reads along every line"
     },
     {
-      "t": 48.0,
-      "kind": "ambient",
-      "label": "the water-room returns"
-    },
-    {
-      "t": 55.6,
-      "kind": "pulse",
-      "label": "final resolve, fade to signoff"
+      "t": 52.7,
+      "kind": "hit",
+      "label": "soft brand sting"
     }
   ],
-  "n": 22
+  "n": 16
 }
