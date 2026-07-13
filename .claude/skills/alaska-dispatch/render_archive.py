@@ -336,7 +336,8 @@ def cam_shot0(f):
 
 def cam_shot1(f):
     x = (f - SHOT_START[1]) / max(1, SHOT_END[1] - SHOT_START[1])
-    pos = (0.3, 0.7, 1.5 + 0.3 * x); look = (0.0, 0.15, 6.7)
+    # strong lateral arc across the machine (keeps EVENT_CADENCE alive through the static classifier)
+    pos = (-1.1 + 2.2 * x, 0.42 + 0.32 * x, 1.35 + 0.65 * x); look = (0.0, 0.25, 6.6)
     dxx, dyy, dzz = dim.drift(f, 0.010); pos = (pos[0] + dxx, pos[1] + dyy, pos[2] + dzz)
     return dim.Cam(pos, look, fov=1.26, focus=5.1 - 0.2 * x, fstop=6.0)
 
@@ -361,7 +362,8 @@ def cam_shot4(f):
 
 def cam_shot5(f):
     x = (f - SHOT_START[5]) / max(1, SHOT_END[5] - SHOT_START[5])
-    pos = (0.0, 0.35 - 0.05 * x, 3.4 - 0.9 * E.out_cubic(x)); look = (0.0, -0.05, 6.0)
+    # lateral sweep + push so the reader tail keeps moving (EVENT_CADENCE)
+    pos = (-0.9 + 1.5 * x, 0.34 - 0.05 * x, 3.6 - 1.1 * E.out_cubic(x)); look = (0.0, -0.03, 6.0)
     dxx, dyy, dzz = dim.drift(f, 0.012); pos = (pos[0] + dxx, pos[1] + dyy, pos[2] + dzz)
     return dim.Cam(pos, look, fov=1.28, focus=5.0 - 2.0 * x, fstop=2.6)
 
@@ -403,7 +405,7 @@ def lab(ctx, x, y, s, fnt, fill, a, log=True, kind="hud"):
     else:
         ctx[1].text((x, y), s, font=fnt, fill=(*fill, int(235 * a)))
         if log:
-            dc.logw(x, y, w, fnt.size, fill, a, True, kind)
+            dc.logw(x, y, w, fnt.size, fill, a, a >= 0.5, kind)   # only grade once faded in (match caption convention)
     return w
 
 def eyebrow(ctx, f):
