@@ -430,13 +430,18 @@ def cam_shot3(f):
 
 def cam_shot4(f):
     x = (f - SHOT_START[4]) / max(1, SHOT_END[4] - SHOT_START[4])
-    # start tight on the gripping hand (the agency reveal), then pan/pull to also frame the card
-    # as the court-green wave sweeps through at x~0.46 (t~38.3s)
-    p2 = E.out_cubic(max(0.0, min(1.0, (x - 0.42) / 0.42)))
-    pos = (0.15 * p2, 0.42 + 0.10 * p2, 2.15 + 0.75 * x)
-    look = (-1.05 + 0.85 * p2, 0.27, 6.02 + 0.10 * p2)
+    # Phase 1: tight on the gripping hand (the agency reveal) through "aimed it, signed".
+    # Phase 2: a fast rack to the card (t~38.15-39.1s, just before the wave arrives at x=1.75)
+    # so the court-green sweep and relight read up close instead of fighting the card's own
+    # width for a simultaneous two-shot (the portrait aspect makes the horizontal FOV narrow).
+    p2 = E.out_cubic(max(0.0, min(1.0, (x - 0.44) / 0.10)))
+    lookx = -1.05 + 2.60 * p2
+    posx = 0.05 + 1.10 * p2
+    posz = 2.55 + 0.20 * p2 + 0.20 * x
+    pos = (posx, 0.42 - 0.05 * p2, posz)
+    look = (lookx, 0.24 + 0.05 * p2, 6.05 + 0.16 * p2)
     dxx, dyy, dzz = dim.drift(f, 0.012); pos = (pos[0] + dxx, pos[1] + dyy, pos[2] + dzz)
-    return dim.Cam(pos, look, fov=1.26, focus=3.55, fstop=4.2)
+    return dim.Cam(pos, look, fov=1.28, focus=3.9, fstop=4.3)
 
 def cam_shot5(f):
     x = (f - SHOT_START[5]) / max(1, SHOT_END[5] - SHOT_START[5])
