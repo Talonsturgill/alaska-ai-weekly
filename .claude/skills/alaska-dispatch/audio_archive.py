@@ -135,7 +135,10 @@ graph = ("[0:a]highpass=f=90,acompressor=threshold=-20dB:ratio=3.5:attack=8:rele
          "[mus][key]sidechaincompress=threshold=0.03:ratio=9:attack=20:release=420[md];"
          "[2:a]volume=-24dB,lowpass=f=1800[amb];"
          "[3:a]volume=-4dB[sfx];"
-         "[vout][md][amb][sfx]amix=inputs=4:duration=first:normalize=0[mix]")
+         "[vout][md][amb][sfx]amix=inputs=4:duration=first:normalize=0[mx];"
+         # pre-payoff breath: hard-duck the bed/ambient in the VO gap at ~33.8s (no VO there) so the
+         # SILENCE_DIP is really mixed, not just planned (VOICE_AND_SCORE.md).
+         "[mx]volume=enable='between(t,33.40,33.98)':volume=0.26[mix]")
 r = run(["ffmpeg", "-y", "-i", os.path.join(AUD, "vo60.wav"), "-i", os.path.join(AUD, "bed60.wav"),
          "-i", os.path.join(AUD, "amb60.wav"), "-i", os.path.join(AUD, "sfxbus60.wav"),
          "-filter_complex", graph, "-map", "[mix]", os.path.join(AUD, "mix60.wav")])

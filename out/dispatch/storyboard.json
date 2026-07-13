@@ -30,7 +30,7 @@
     "build_steps": 4,
     "dip_at": 33.6,
     "riser_at": 38.5,
-    "silence_at": 33.98,
+    "silence_at": 33.7,
     "payoff_at": 43.5,
     "button_pattern": "callback"
   },

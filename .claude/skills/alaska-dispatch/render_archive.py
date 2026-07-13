@@ -25,7 +25,7 @@ OUT = os.environ.get("DIM_OUT") or os.path.join(HERE, "archive_frames")
 os.makedirs(OUT, exist_ok=True)
 FPS = 30
 W, H = 1080, 1920
-NF = int(os.environ.get("DIM_NF", "1770"))
+NF = int(os.environ.get("DIM_NF", "1690"))            # ends ~0.2s after the outro reveal (no dead hold)
 SCALE = float(os.environ.get("DIM_SCALE", "1.0"))
 
 TIM = json.load(open(os.path.join(HERE, "audio", "timing60.json")))
@@ -81,7 +81,7 @@ def matGrid(p, n, t):
     qx = p.x - GX * ix; qz = p.z - GZ * iz
     card = dim.sd_box(ti.Vector([qx, p.y, qz]), ti.Vector([0.0, 0.035, 0.0]), ti.Vector([0.34, 0.035, 0.42]))
     if card < 0.05 and ti.abs(ix) <= 6.0 and iz >= 1.0 and iz <= 18.0:
-        col = ti.Vector([0.62, 0.55, 0.40])            # manila tan card
+        col = ti.Vector([0.48, 0.43, 0.32])            # manila tan card (toned down so it does not blow out under the hard light)
         tp = term_prog(t)
         rnd = hash21(ix, iz)
         if rnd < tp * 0.9 and not (ix == AX and iz == AZ):
@@ -196,8 +196,8 @@ def sceneArc(p, t):
     # crimson stamp slab descending (only relevant in shot 2)
     stamp = dim.sd_box(p, ti.Vector([0.0, stamp_y(t), 6.0]), ti.Vector([2.9, 0.16, 0.75]))
     d = ti.min(d, stamp)
-    # reader pointer (shot 5): a small bright sphere gliding above the bars
-    ptr = dim.sd_sphere(p, ti.Vector([read_x(t), 0.55, 6.0]), 0.09)
+    # reader pointer (shot 5): a bright sphere gliding above the bars
+    ptr = dim.sd_sphere(p, ti.Vector([read_x(t), 0.58, 6.0]), 0.14)
     d = ti.min(d, ptr)
     d = ti.min(d, 10.5 - p.z)                            # back wall
     return d
@@ -219,12 +219,17 @@ def matArc(p, n, t):
         if t > 43.0 and hash21(ix, 3.0) < 0.28:
             gap = 1.0
         col = warm * (1.0 - greyed) * (1.0 - 0.82 * gap) + grey * greyed
+        # shot 5: the reader lights the field in discrete GROUPS (each snap is a visual event)
+        if t > 47.5 and gap < 0.5:
+            grp = ti.floor((ix + 13.0) / 6.6)           # 0..3 across the bar field
+            if t >= 47.6 + grp * 1.75:
+                col = col * 1.7 + ti.Vector([0.35, 0.22, 0.10])
     stamp = dim.sd_box(p, ti.Vector([0.0, stamp_y(t), 6.0]), ti.Vector([2.9, 0.16, 0.75]))
     if stamp < 0.06 and stamp_y(t) < 2.5:
         col = ti.Vector([0.85, 0.10, 0.10])             # crimson stamp (emissive)
-    ptr = dim.sd_sphere(p, ti.Vector([read_x(t), 0.55, 6.0]), 0.09)
+    ptr = dim.sd_sphere(p, ti.Vector([read_x(t), 0.58, 6.0]), 0.14)
     if ptr < 0.05 and t > 47.5:
-        col = ti.Vector([1.4, 1.4, 1.5])                # bright reader pointer
+        col = ti.Vector([1.5, 1.5, 1.6])                # bright reader pointer
     return col
 
 @ti.func
@@ -380,11 +385,11 @@ def caption_scrim(out):
     global _SCRIM
     if _SCRIM is None:
         y = np.arange(H, dtype=np.float32)[:, None]
-        up = np.clip((y - 1300.0) / 170.0, 0.0, 1.0)
-        down = 1.0 - 0.45 * np.clip((y - 1620.0) / 300.0, 0.0, 1.0)
-        aa = (up * down * 0.55 * 255.0).astype(np.uint8)
+        up = np.clip((y - 1250.0) / 95.0, 0.0, 1.0)          # reach full dark FAST by ~1345 so no caption line sits in a mid-grey transition
+        down = 1.0 - 0.12 * np.clip((y - 1740.0) / 250.0, 0.0, 1.0)
+        aa = (up * down * 0.95 * 255.0).astype(np.uint8)     # near-solid dark band under the whole caption zone
         rgba = np.zeros((H, W, 4), np.uint8)
-        rgba[..., 0] = 6; rgba[..., 1] = 8; rgba[..., 2] = 12
+        rgba[..., 0] = 2; rgba[..., 1] = 3; rgba[..., 2] = 6
         rgba[..., 3] = np.repeat(aa, W, axis=1)
         _SCRIM = Image.fromarray(rgba, "RGBA")
     out.alpha_composite(_SCRIM)
