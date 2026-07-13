@@ -141,12 +141,22 @@ IN_PAGE_QA_JS = """
           detail: `font-size ${fs}px < 24px mobile floor (mark data-decorative if intentional)` });
       }
     }
+    // Probe the FACE ACTUALLY USED: include the computed font-style so an
+    // italic-only display face (e.g. Instrument Serif italic, the SOFT voice)
+    // is checked against its italic @font-face instead of a hardcoded
+    // upright-400 that false-FAILs even when the used face is loaded
+    // (2026-07-13 fix; the upright probe had forced hidden offscreen
+    // upright-loader spans as a hack). Normalize "oblique 14deg" -> "oblique"
+    // to keep the shorthand parseable, and key seenFam on style too so upright
+    // AND italic of one family are each probed rather than deduped together.
+    const styl = /^(italic|oblique)/.test(cs.fontStyle) ? cs.fontStyle.split(" ")[0] : "normal";
+    const fkey = fam + "|" + cs.fontWeight + "|" + styl;
     if (!["serif","sans-serif","monospace","system-ui","cursive","fantasy"].includes(fam) &&
-        !seenFam.has(fam + "|" + cs.fontWeight)) {
-      seenFam.add(fam + "|" + cs.fontWeight);
-      let spec = cs.fontWeight + " 32px \\"" + fam + "\\"";
+        !seenFam.has(fkey)) {
+      seenFam.add(fkey);
+      let spec = styl + " " + cs.fontWeight + " 32px \\"" + fam + "\\"";
       try {
-        if (!document.fonts.check(spec)) out.fonts_missing.push({ family: fam, weight: cs.fontWeight });
+        if (!document.fonts.check(spec)) out.fonts_missing.push({ family: fam, weight: cs.fontWeight, style: styl });
       } catch (e) {}
     }
   }

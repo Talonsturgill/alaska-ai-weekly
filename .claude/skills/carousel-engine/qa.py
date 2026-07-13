@@ -243,7 +243,9 @@ def main():
         for e in rec.get("console_errors", []):
             res["warns"].append(f"console error: {e}")
         for f in rec.get("fonts_missing", []):
-            res["fails"].append(f"font not loaded: {f['family']} w{f['weight']}")
+            sty = f.get("style", "normal")
+            styd = "" if sty in ("normal", None) else f" {sty}"
+            res["fails"].append(f"font not loaded: {f['family']} w{f['weight']}{styd}")
         if rec.get("body_overflow"):
             res["fails"].append("body overflow (page scrolls beyond canvas)")
         for wr in rec.get("overflow_warnings", []):

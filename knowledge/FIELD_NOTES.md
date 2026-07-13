@@ -367,3 +367,22 @@ into the doctrine/library files and prune here.
   (structure tree, per-image alt, reading order) is a large unbounded effort
   on vector-drawn pages with no semantic DOM and is NOT recommended. Source:
   https://www.grackledocs.com/en/a-guide-to-wcag-standards-for-pdfs/
+
+## 2026-07-13 — parked frontier candidate (headless-rendering scan)
+
+- **Pin chromium-headless-shell / re-baseline on any Playwright upgrade
+  (parked, watch item).** Playwright v1.49 removed Chromium's OLD headless
+  mode; the NEW headless mode (real Chrome without a window) renders
+  screenshots DIFFERENTLY and the Playwright team explicitly says to update
+  all screenshot expectations after upgrading. Playwright ships a separate
+  chromium-headless-shell build (install --only-shell) that keeps the old,
+  lighter, deterministic behavior render.py currently relies on. This engine
+  pins nothing and re-baselines nothing, so a future Playwright/Chromium bump
+  in the cloud environment could silently shift PNG output, kerning, WebGL
+  behavior, and every pixel gate's baseline at once. Parked (not a defect
+  today; the installed Playwright still uses the shell path): when the
+  environment's Playwright is upgraded, either pin chromium-headless-shell or
+  re-verify examples/demo-deck + examples/proof-3d visually and re-baseline
+  the busy-art/contrast noise floors BEFORE trusting a green run. Sources:
+  https://github.com/microsoft/playwright/issues/33566 ,
+  https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/check

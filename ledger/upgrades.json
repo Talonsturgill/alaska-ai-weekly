@@ -254,6 +254,20 @@
    "verification": "Confirmed against .claude/agents/fact-checker.md (tools: WebFetch, Read) and scorer.md (tools: Read): neither has Write, and both agent prompts already end 'Your final message is this JSON', so the routine wording was the sole inaccuracy. Prose-only change to the spec doc; no engine/script/gate touched, nothing to re-render.",
    "rollback": "revert the upgrade(2026-07-12) commit",
    "commit": "upgrade(2026-07-12) commit 01a43fb (revert this single prefixed commit to roll back)"
+  },
+  {
+   "run_date": "2026-07-13",
+   "kind": "fix",
+   "area": "engine",
+   "change": "render.py's font-loaded QA probe now includes the element's computed font-style, so it tests the FACE ACTUALLY USED: it builds the document.fonts.check() spec as '<style> <weight> 32px \"<family>\"' (normalizing 'oblique 14deg' -> 'oblique') and keys its per-family dedup on style too, so an italic-only display face is checked against its italic @font-face instead of a hardcoded upright-400; the fonts_missing record and qa.py's FAIL message now carry the style ('font not loaded: <family> w<weight> italic'). Still FAILs a genuinely missing/unloaded declared face; no threshold changed.",
+   "trigger": "Recurring false-FAIL (flagged/parked 2026-07-10, touched 2026-07-11, recurred this run): Instrument Serif italic used as the SOFT/accent voice on S3/S6/S7/S9 tripped qa.py 'font not loaded: Instrument Serif w400' because the upright-400 probe tested the normal @font-face (unloaded when only italic text is present). The showrunner had to inject hidden offscreen upright-Instrument-Serif loader spans in 4 slides (slide-01.html:22 .isload; slide-06/07/09 left:-9999px loader spans) purely to satisfy the probe -- a hack this fix removes the need for. Frontier corroboration: MDN FontFaceSet.check treats font-style as a matching axis (a normal-style query matches only the normal @font-face). https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/check",
+   "files": [
+    ".claude/skills/carousel-engine/render.py",
+    ".claude/skills/carousel-engine/qa.py"
+   ],
+   "verification": "Reconstruction slide using ONLY Instrument Serif italic (no offscreen upright loader): PRE-FIX qa FAILs 'font not loaded: Instrument Serif w400' (fonts_missing [{Instrument Serif,400}]); POST-FIX qa PASSes 0/0 (fonts_missing []). Non-weakening negative: a DECLARED italic @font-face pointing at a missing .ttf still FAILs 'font not loaded: Broken Face w400 italic'. Regression: this run's out/2026-07-13/slides render OK + qa PASS 0/0 (font verdict unchanged), examples/demo-deck render OK + qa WARN (the known busy-art warn, font verdict unchanged). render.py in-page JS + qa.py both syntax-clean (node --check / ast.parse). No gate/threshold weakened; no new runtime dependency; shipped slides not modified.",
+   "rollback": "revert the upgrade(2026-07-13) commit",
+   "commit": "pending upgrade(2026-07-13) commit (showrunner stages this set)"
   }
  ],
  "scan_log": [
@@ -292,6 +306,12 @@
    "focus": "accessibility / PDF changes (rotated off editorial-dataviz 07-10, procedural art 07-11, 3D rendering 07-11; last touched only tangentially at bootstrap)",
    "found": "LinkedIn in 2026 has no native organic image carousel; swipeable posts are document uploads that LinkedIn RE-RENDERS into images, so embedded PDF/UA tags do NOT reach the LinkedIn viewer -- the reach/accessibility lever is the per-slide ALT TEXT typed into LinkedIn's upload UI, not the PDF. WCAG/PDF-UA tagged-PDF matters only for the public-site PDF (alaskaaihq.com), where assemble.py already sets Title/Author/Creator but no /Lang or Marked flag. Full PDF/UA tagging of vector-drawn pages is large and unbounded and not recommended.",
    "outcome": "parked (FIELD_NOTES 2026-07-12: per-slide alt-text-in-the-Gmail-draft candidate + a near-bounded assemble.py /Lang+Marked one-liner, with source URLs). No frontier code applied: the two reactive fixes (objectHero helper, agent-write-tool doc correction) filled the daily budget."
+  },
+  {
+   "run_date": "2026-07-13",
+   "focus": "headless-Chromium/Playwright rendering capabilities (rotation: fresh; last 3+ were editorial-dataviz 07-10, procedural-art 07-11, 3D 07-11, accessibility/PDF 07-12; never a primary focus before)",
+   "found": "MDN FontFaceSet.check confirms font-style is a matching axis (a normal-style query matches only the normal @font-face) -- the mechanism behind this run's reactive fix. Playwright v1.49 REMOVED the old Chromium headless mode; screenshots render differently under the new headless mode, and Playwright ships chromium-headless-shell to preserve old-mode fidelity (install --only-shell). Determinism/regression risk for this engine's PNGs whenever Playwright is upgraded.",
+   "outcome": "applied (the font-style probe fix, corroborated by the MDN check() semantics) + parked (FIELD_NOTES 2026-07-13: pin chromium-headless-shell / re-baseline screenshots on any Playwright upgrade, source URLs). No separate frontier code -- the reactive fix filled the daily 0-1 budget."
   }
  ]
 }
