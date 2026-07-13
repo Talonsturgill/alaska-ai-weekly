@@ -45,6 +45,12 @@ dim.init(1080, 1920, scale=SCALE)
 def hash21(x, z):
     return ti.math.fract(ti.sin(x * 12.9898 + z * 78.233) * 43758.5453)
 
+@ti.func
+def ease_out_back(x):
+    # classic overshoot-then-settle: rises past 1.0 around x~0.7-0.9, eases back to 1.0 at x=1
+    c1 = 1.70158; c3 = c1 + 1.0; xm1 = x - 1.0
+    return 1.0 + c3 * xm1 * xm1 * xm1 + c1 * xm1 * xm1
+
 # ============================================================ WORLD G — grid (shots 0 & 3)
 GX = 0.86; GZ = 1.02                                    # card spacing
 AX = 2.0; AZ = 8.0                                      # the ARCHIVE card's grid cell (ix, iz)
@@ -108,6 +114,24 @@ def shadowGrid(p, t):
 def _h_prog(t): return ti.math.clamp((t - (313.0 / 30.0) - 0.4) / 3.2, 0.0, 1.0)
 
 @ti.func
+def _arm_y(t):
+    # physical slam synced to the YES reveal at t=14.2: anticipate (wind up) -> slam down fast,
+    # overshooting past the final rest -> settle back up with a spring bounce. Real object motion,
+    # not a lighting flash, so the DEI-flip beat performs instead of just glowing.
+    rest = 1.85 + 0.08 * ti.sin(t * 2.1)
+    y = rest
+    a = ti.math.clamp((t - 13.55) / 0.35, 0.0, 1.0)          # anticipation: pull up higher
+    y = rest + 0.34 * a * a
+    s = ti.math.clamp((t - 13.85) / 0.24, 0.0, 1.0)          # slam: fast eased-in fall, overshoot low
+    if s > 0.0:
+        s3 = s * s * s
+        y = (rest + 0.34) * (1.0 - s3) + (-0.42) * s3
+    b = ti.math.clamp((t - 14.09) / 0.42, 0.0, 1.0)          # settle: spring back up to final rest
+    if b > 0.0:
+        y = -0.42 + 1.22 * ease_out_back(b)
+    return y
+
+@ti.func
 def sceneClf(p, t):
     pr = _h_prog(t)
     # dark machine HOUSING (an object in space), with an inset glowing SCREEN, a card on a tray
@@ -121,7 +145,7 @@ def sceneClf(p, t):
     cardx = 3.2 - 2.7 * pr
     card = dim.sd_box(p, ti.Vector([cardx, -1.02, 6.05]), ti.Vector([0.52, 0.04, 0.44]))
     d = ti.min(d, card)
-    arm_y = 1.85 + 0.30 * ti.sin(t * 3.0) * pr
+    arm_y = _arm_y(t)
     arm = dim.sd_capsule(p, ti.Vector([1.75, 0.9, 6.35]), ti.Vector([1.75, arm_y, 6.35]), 0.10)
     d = ti.min(d, arm)
     d = ti.min(d, 12.5 - p.z)
@@ -149,7 +173,7 @@ def matClf(p, n, t):
     card = dim.sd_box(p, ti.Vector([cardx, -1.02, 6.05]), ti.Vector([0.52, 0.04, 0.44]))
     if card < 0.05:
         col = ti.Vector([0.64, 0.57, 0.42])            # manila card
-    arm_y = 1.85 + 0.30 * ti.sin(t * 3.0) * pr
+    arm_y = _arm_y(t)
     arm = dim.sd_capsule(p, ti.Vector([1.75, 0.9, 6.35]), ti.Vector([1.75, arm_y, 6.35]), 0.10)
     if arm < 0.06:
         col = ti.Vector([0.90, 0.16, 0.16])            # crimson stamp head (emissive)
@@ -172,9 +196,13 @@ def bar_h(ix):
 
 @ti.func
 def stamp_y(t):
-    # crimson stamp descends 22.0 -> 24.6s (shot 2 only); parked far off-scene afterward
-    x = ti.math.clamp((t - 21.9) / 2.6, 0.0, 1.0)
-    y = 2.6 - 2.35 * E_out(x)
+    # crimson stamp FALLS 22.0 -> 23.9 (fast eased-in drop, overshoots below its final rest), then
+    # SETTLES 23.9 -> 24.5 with a spring bounce back up to rest -- a real landing, not a smooth glide.
+    x = ti.math.clamp((t - 21.9) / 2.0, 0.0, 1.0)
+    y = 2.6 - 2.85 * (x * x * x)
+    b = ti.math.clamp((t - 23.9) / 0.55, 0.0, 1.0)
+    if b > 0.0:
+        y = -0.25 + 0.50 * ease_out_back(b)
     if t > 26.9:
         y = 60.0
     return y
@@ -244,26 +272,51 @@ def shadowArc(p, t):
     return ti.min(d, 10.5 - p.z)
 
 # ============================================================ WORLD J — reversal split (shot 4)
-# Left: the stamp arm is revealed as driven by a HUMAN HAND on a lever (the model did not decide).
-# Right: a court-green wave sweeps and relights a card. A darkened grid floor beneath for depth.
+# Left: a HUMAN HAND grips a lever (the model did not decide) -- fingers wrap the NEAR side of the
+# shaft (lower z, toward camera) with the back of the hand behind it (higher z), so they read as
+# fingers in silhouette instead of hiding behind the shaft. A firm squeeze pulse during "a person
+# aimed it, and a person signed" gives the grip life. Right: a FAST court-green sweep (timed to
+# "Then a court ruled the cuts unlawful", not a slow 8s drift) relights the archive card.
 @ti.func
 def green_x(t):
-    x = ti.math.clamp((t - T4) / 8.0, 0.0, 1.0)
-    return -3.6 + 7.2 * x
+    # parked off-screen left until the court beat (38.30s), then a fast ~1.6s eased sweep with a
+    # slight overshoot on arrival -- a dramatic wipe, not a barely-perceptible glide.
+    gx = -4.2
+    x = ti.math.clamp((t - 38.30) / 1.60, 0.0, 1.0)
+    if x > 0.0:
+        gx = -4.2 + 10.0 * ease_out_back(x)
+    return gx
+
+@ti.func
+def _grip_curl(t):
+    # a firm squeeze pulse (0 -> 1 -> 0) synced to "a person aimed it, and a person signed"
+    return ti.math.clamp((t - 34.7) / 0.4, 0.0, 1.0) - ti.math.clamp((t - 36.9) / 0.4, 0.0, 1.0)
 
 @ti.func
 def sceneRev(p, t):
     d = p.y + 1.5                                        # floor
-    # lever + human hand (center-left), enlarged to read
-    lever = dim.sd_capsule(p, ti.Vector([-1.6, -1.5, 6.0]), ti.Vector([-0.9, 0.55, 6.0]), 0.10)
+    gy = 0.20 + 0.025 * ti.sin(t * 1.4)                   # idle grip breathing
+    curl = 0.55 + 0.35 * _grip_curl(t)
+    lx = -1.15
+    lever = dim.sd_capsule(p, ti.Vector([lx, -1.35, 6.0]), ti.Vector([lx, 1.0, 6.0]), 0.075)
     d = ti.min(d, lever)
-    palm = dim.sd_ellipsoid(p, ti.Vector([-0.85, 0.72, 6.0]), ti.Vector([0.34, 0.20, 0.36]))
-    d = ti.min(d, palm)
-    for i in ti.static(range(3)):
-        fx = -1.05 + 0.19 * i
-        fing = dim.sd_capsule(p, ti.Vector([fx, 0.76, 6.2]), ti.Vector([fx, 0.76, 6.72]), 0.06)
-        d = ti.min(d, fing)
-    # the archive card being relit (center-right), enlarged
+    # back of hand: behind the shaft (higher z = further from camera), a flattened wrist block
+    backhand = dim.sd_rbox(p, ti.Vector([lx, gy, 6.24]), ti.Vector([0.17, 0.24, 0.09]), 0.06)
+    d = ti.min(d, backhand)
+    # 4 fingers wrap from the back around the FRONT (lower z, near camera) of the shaft, stacked
+    for i in ti.static(range(4)):
+        fy = gy + 0.19 - 0.135 * i
+        b0 = ti.Vector([lx, fy, 6.20])
+        b1 = ti.Vector([lx + 0.10 * curl, fy - 0.03, 5.96])
+        seg1 = dim.sd_capsule(p, b0, b1, 0.044)
+        b2 = ti.Vector([lx + 0.03 * curl, fy - 0.10 * curl, 5.78])
+        seg2 = dim.sd_capsule(p, b1, b2, 0.037)
+        d = ti.min(d, ti.min(seg1, seg2))
+    # thumb: opposite (top) side, shorter and thicker, also wraps to the front
+    ta0 = ti.Vector([lx - 0.02, gy + 0.30, 6.16])
+    ta1 = ti.Vector([lx + 0.11 * curl, gy + 0.20, 5.90])
+    d = ti.min(d, dim.sd_capsule(p, ta0, ta1, 0.052))
+    # the archive card being relit (center-right)
     card = dim.sd_rbox(p, ti.Vector([1.75, 0.15, 6.2]), ti.Vector([0.98, 0.74, 0.09]), 0.05)
     d = ti.min(d, card)
     d = ti.min(d, 12.0 - p.z)
@@ -273,23 +326,38 @@ def sceneRev(p, t):
 def matRev(p, n, t):
     col = ti.Vector([0.06, 0.07, 0.09])
     gx = green_x(t)
-    lever = dim.sd_capsule(p, ti.Vector([-1.6, -1.5, 6.0]), ti.Vector([-0.9, 0.55, 6.0]), 0.10)
+    gy = 0.20 + 0.025 * ti.sin(t * 1.4)
+    curl = 0.55 + 0.35 * _grip_curl(t)
+    lx = -1.15
+    lever = dim.sd_capsule(p, ti.Vector([lx, -1.35, 6.0]), ti.Vector([lx, 1.0, 6.0]), 0.075)
     if lever < 0.06:
-        col = ti.Vector([0.16, 0.17, 0.20])            # steel lever
-    palm = dim.sd_ellipsoid(p, ti.Vector([-0.85, 0.72, 6.0]), ti.Vector([0.34, 0.20, 0.36]))
-    hand = palm
-    for i in ti.static(range(3)):
-        fx = -1.05 + 0.19 * i
-        hand = ti.min(hand, dim.sd_capsule(p, ti.Vector([fx, 0.76, 6.2]), ti.Vector([fx, 0.76, 6.72]), 0.06))
-    if hand < 0.06:
-        col = ti.Vector([0.62, 0.42, 0.32])            # a generic human hand, warm skin (no person implied)
+        col = ti.Vector([0.17, 0.18, 0.21])            # steel lever
+    backhand = dim.sd_rbox(p, ti.Vector([lx, gy, 6.24]), ti.Vector([0.17, 0.24, 0.09]), 0.06)
+    hand = backhand
+    for i in ti.static(range(4)):
+        fy = gy + 0.19 - 0.135 * i
+        b0 = ti.Vector([lx, fy, 6.20])
+        b1 = ti.Vector([lx + 0.10 * curl, fy - 0.03, 5.96])
+        seg1 = dim.sd_capsule(p, b0, b1, 0.044)
+        b2 = ti.Vector([lx + 0.03 * curl, fy - 0.10 * curl, 5.78])
+        seg2 = dim.sd_capsule(p, b1, b2, 0.037)
+        hand = ti.min(hand, ti.min(seg1, seg2))
+    ta0 = ti.Vector([lx - 0.02, gy + 0.30, 6.16])
+    ta1 = ti.Vector([lx + 0.11 * curl, gy + 0.20, 5.90])
+    hand = ti.min(hand, dim.sd_capsule(p, ta0, ta1, 0.052))
+    if hand < 0.055:
+        col = ti.Vector([0.64, 0.44, 0.33])            # a generic human hand, warm skin (no person implied)
     card = dim.sd_rbox(p, ti.Vector([1.75, 0.15, 6.2]), ti.Vector([0.98, 0.74, 0.09]), 0.05)
     if card < 0.07:
-        lit = ti.math.clamp((gx - 0.6) / 1.4, 0.0, 1.0)
+        lit = ti.math.clamp((gx - 0.6) / 1.0, 0.0, 1.0)
         col = ti.Vector([0.60, 0.13, 0.13]) * (1.0 - lit) + ti.Vector([1.10, 0.68, 0.26]) * lit
-    # court-green reversal wave: a bright full-height vertical band sweeping x
-    if ti.abs(p.x - gx) < 0.20 and p.y > -1.5:
-        col = ti.Vector([0.35, 1.30, 0.62])            # evergreen wave (emissive)
+    # court-green reversal wave: bright leading edge + fading trailing glow (a real wipe, not a bar)
+    dx = gx - p.x
+    if dx > -0.05 and dx < 0.65 and p.y > -1.5:
+        taper = ti.math.clamp(1.0 - dx / 0.65, 0.0, 1.0)
+        boost = ti.math.clamp(1.0 - ti.abs(dx) / 0.09, 0.0, 1.0)
+        inten = ti.math.clamp(taper * 0.7 + boost, 0.0, 1.0)
+        col = col * (1.0 - inten) + ti.Vector([0.35, 1.30, 0.62]) * (1.0 + boost * 1.4) * inten
     return col
 
 @ti.func
@@ -362,9 +430,13 @@ def cam_shot3(f):
 
 def cam_shot4(f):
     x = (f - SHOT_START[4]) / max(1, SHOT_END[4] - SHOT_START[4])
-    pos = (0.0, 0.55, 2.5 + 0.2 * x); look = (-0.25, 0.3, 6.05)
-    dxx, dyy, dzz = dim.drift(f, 0.014); pos = (pos[0] + dxx, pos[1] + dyy, pos[2] + dzz)
-    return dim.Cam(pos, look, fov=1.30, focus=3.7, fstop=4.5)
+    # start tight on the gripping hand (the agency reveal), then pan/pull to also frame the card
+    # as the court-green wave sweeps through at x~0.46 (t~38.3s)
+    p2 = E.out_cubic(max(0.0, min(1.0, (x - 0.42) / 0.42)))
+    pos = (0.15 * p2, 0.42 + 0.10 * p2, 2.15 + 0.75 * x)
+    look = (-1.05 + 0.85 * p2, 0.27, 6.02 + 0.10 * p2)
+    dxx, dyy, dzz = dim.drift(f, 0.012); pos = (pos[0] + dxx, pos[1] + dyy, pos[2] + dzz)
+    return dim.Cam(pos, look, fov=1.26, focus=3.55, fstop=4.2)
 
 def cam_shot5(f):
     x = (f - SHOT_START[5]) / max(1, SHOT_END[5] - SHOT_START[5])
@@ -418,15 +490,19 @@ def eyebrow(ctx, f):
     lab(ctx, 104, 96, "ALASKA.AI  ·  FIELD SIGNAL", dc.mono(30, m=True), dc.GOLD, 1.0)
 
 def numeral(ctx, s, sub, col, yc, pr, big=96):
+    # physical bounce-in: the numeral drops from above, overshoots past its rest position, settles --
+    # a real landing instead of a flat alpha pop. Chip and text share the same offset (readability-safe).
     nf = dc.fr(big, 900); w = dc.tw(s, nf, 0.02)
     sf = dc.mono(26); w2 = dc.tw(sub, sf)
+    eb = 1.0 if pr >= 1.0 else (1.0 + 2.70158 * (pr - 1.0) ** 3 + 1.70158 * (pr - 1.0) ** 2)
+    y_off = int((1.0 - eb) * -46)
     if ctx[0] == "plate":
-        chip(ctx[1], (W - w) // 2, yc - 60, w, nf.size, pr, padx=26, pady=16)
+        chip(ctx[1], (W - w) // 2, yc - 60 + y_off, w, nf.size, pr, padx=26, pady=16)
         chip(ctx[1], (W - w2) // 2, yc + 70, w2, sf.size, pr)
     else:
         dr = ctx[1]; a = int(235 * pr)
-        dc.tk(dr, s, nf, (*col, a), (W - w) // 2, yc - 60, 0.02)
-        dc.logw((W - w) // 2, yc - 60, w, nf.size, col, pr, True, "hud")
+        dc.tk(dr, s, nf, (*col, a), (W - w) // 2, yc - 60 + y_off, 0.02)
+        dc.logw((W - w) // 2, yc - 60 + y_off, w, nf.size, col, pr, True, "hud")
         dr.text(((W - w2) // 2, yc + 70), sub, font=sf, fill=(*DIMW, int(210 * pr)))
         dc.logw((W - w2) // 2, yc + 70, w2, sf.size, DIMW, 0.82 * pr, True, "hud")
 
@@ -483,8 +559,8 @@ def chrome_shot4(ctx, f, t):
     lab(ctx, 150, 300, "THE MODEL DID NOT DECIDE", dc.mono(28, m=True), BONE, min(1.0, max(0.0, t - 34.2)))
     lab(ctx, 150, 360, "A PERSON AIMED IT  ·  A PERSON SIGNED", dc.mono(26), DIMW, min(1.0, max(0.0, t - 35.4)))
     gr = min(1.0, max(0.0, t - 39.0))
-    lab(ctx, (W - dc.tw("COURT: UNLAWFUL  ·  REINSTATED JUNE 2026", dc.mono(27, m=True))) // 2, 1210,
-        "COURT: UNLAWFUL  ·  REINSTATED JUNE 2026", dc.mono(27, m=True), GREEN, gr)
+    lab(ctx, (W - dc.tw("COURT: UNLAWFUL  ·  OFFERED BACK JUNE 2026", dc.mono(27, m=True))) // 2, 1210,
+        "COURT: UNLAWFUL  ·  OFFERED BACK JUNE 2026", dc.mono(27, m=True), GREEN, gr)
 
 def chrome_shot5(ctx, f, t):
     eyebrow(ctx, f)
