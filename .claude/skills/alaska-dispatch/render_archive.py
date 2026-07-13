@@ -118,17 +118,20 @@ def _arm_y(t):
     # physical slam synced to the YES reveal at t=14.2: anticipate (wind up) -> slam down fast,
     # overshooting past the final rest -> settle back up with a spring bounce. Real object motion,
     # not a lighting flash, so the DEI-flip beat performs instead of just glowing.
-    rest = 1.85 + 0.08 * ti.sin(t * 2.1)
+    # Range calibrated to stay inside cam_shot1's frustum throughout the shot (verified by
+    # projecting world-space test points through the camera math; y above ~1.3 falls off top-of-
+    # frame for this camera's pan, which is what made the first attempt at this arm invisible).
+    rest = 0.75 + 0.06 * ti.sin(t * 2.1)
     y = rest
     a = ti.math.clamp((t - 13.55) / 0.35, 0.0, 1.0)          # anticipation: pull up higher
-    y = rest + 0.34 * a * a
+    y = rest + 0.28 * a * a
     s = ti.math.clamp((t - 13.85) / 0.24, 0.0, 1.0)          # slam: fast eased-in fall, overshoot low
     if s > 0.0:
         s3 = s * s * s
-        y = (rest + 0.34) * (1.0 - s3) + (-0.42) * s3
+        y = (rest + 0.28) * (1.0 - s3) + (-0.40) * s3
     b = ti.math.clamp((t - 14.09) / 0.42, 0.0, 1.0)          # settle: spring back up to final rest
     if b > 0.0:
-        y = -0.42 + 1.22 * ease_out_back(b)
+        y = -0.40 + 0.55 * ease_out_back(b)
     return y
 
 @ti.func
@@ -145,9 +148,15 @@ def sceneClf(p, t):
     cardx = 3.2 - 2.7 * pr
     card = dim.sd_box(p, ti.Vector([cardx, -1.02, 6.05]), ti.Vector([0.52, 0.04, 0.44]))
     d = ti.min(d, card)
+    # stamp arm: mounted well IN FRONT of the housing (z=5.65 vs the block's face at 6.43) so it
+    # never reads as embedded/occluded; a bracket anchors it, a flat head is the visible stamp face
+    bracket = dim.sd_capsule(p, ti.Vector([0.55, 1.15, 6.40]), ti.Vector([0.55, 1.15, 5.65]), 0.07)
+    d = ti.min(d, bracket)
     arm_y = _arm_y(t)
-    arm = dim.sd_capsule(p, ti.Vector([1.75, 0.9, 6.35]), ti.Vector([1.75, arm_y, 6.35]), 0.10)
+    arm = dim.sd_capsule(p, ti.Vector([0.55, 1.15, 5.65]), ti.Vector([0.55, arm_y, 5.65]), 0.11)
     d = ti.min(d, arm)
+    head = dim.sd_rbox(p, ti.Vector([0.55, arm_y, 5.65]), ti.Vector([0.24, 0.06, 0.24]), 0.03)
+    d = ti.min(d, head)
     d = ti.min(d, 12.5 - p.z)
     return d
 
@@ -173,10 +182,16 @@ def matClf(p, n, t):
     card = dim.sd_box(p, ti.Vector([cardx, -1.02, 6.05]), ti.Vector([0.52, 0.04, 0.44]))
     if card < 0.05:
         col = ti.Vector([0.64, 0.57, 0.42])            # manila card
+    bracket = dim.sd_capsule(p, ti.Vector([0.55, 1.15, 6.40]), ti.Vector([0.55, 1.15, 5.65]), 0.07)
+    if bracket < 0.07:
+        col = ti.Vector([0.20, 0.22, 0.26])            # steel mounting bracket
     arm_y = _arm_y(t)
-    arm = dim.sd_capsule(p, ti.Vector([1.75, 0.9, 6.35]), ti.Vector([1.75, arm_y, 6.35]), 0.10)
-    if arm < 0.06:
-        col = ti.Vector([0.90, 0.16, 0.16])            # crimson stamp head (emissive)
+    arm = dim.sd_capsule(p, ti.Vector([0.55, 1.15, 5.65]), ti.Vector([0.55, arm_y, 5.65]), 0.11)
+    if arm < 0.07:
+        col = ti.Vector([0.85, 0.15, 0.15])            # crimson stamp rod
+    head = dim.sd_rbox(p, ti.Vector([0.55, arm_y, 5.65]), ti.Vector([0.24, 0.06, 0.24]), 0.03)
+    if head < 0.04:
+        col = ti.Vector([1.35, 0.20, 0.18])            # crimson stamp face (emissive)
     return col
 
 @ti.func
