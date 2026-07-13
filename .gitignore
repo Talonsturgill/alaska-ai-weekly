@@ -24,6 +24,10 @@ __pycache__/
 
 # per-run dimensional render frames + logs (heavy, rebuildable, never commit)
 .claude/skills/alaska-dispatch/thelid_final/
+.claude/skills/alaska-dispatch/archive_final/
+.claude/skills/alaska-dispatch/archive_frames/
+.claude/skills/alaska-dispatch/permafrost_frames/
+.claude/skills/alaska-dispatch/lookdev/
 .claude/skills/alaska-dispatch/*.log
 .claude/skills/alaska-dispatch/frames_v3
 .claude/skills/alaska-dispatch/shots.json

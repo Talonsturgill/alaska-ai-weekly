@@ -4,17 +4,17 @@
     {
       "name": "SHARPNESS",
       "pass": true,
-      "detail": "median lapvar=204.6 (floor 14.0) \u2014 guards 'looks blurry'"
+      "detail": "median lapvar=471.9 (floor 14.0) \u2014 guards 'looks blurry'"
     },
     {
       "name": "HUD_TEXT",
       "pass": true,
-      "detail": "chart text hf p90=11.97 (floor 3.2) \u2014 guards 'chart letters illegible'"
+      "detail": "chart text hf p90=6.78 (floor 3.2) \u2014 guards 'chart letters illegible'"
     },
     {
       "name": "CAPTION_TEXT",
       "pass": true,
-      "detail": "caption text hf p90=7.64 (floor 3.2) \u2014 guards 'captions generic/hard to read'"
+      "detail": "caption text hf p90=22.16 (floor 3.2) \u2014 guards 'captions generic/hard to read'"
     },
     {
       "name": "EVENT_CADENCE",
@@ -24,94 +24,94 @@
     {
       "name": "BEAT_DENSITY",
       "pass": true,
-      "detail": "19 distinct visual beats (need >=12, ~1 per 5s) \u2014 the picture must keep telling the story, not just move"
+      "detail": "17 distinct visual beats (need >=11, ~1 per 5s) \u2014 the picture must keep telling the story, not just move"
     },
     {
       "name": "SCENE_STRUCTURE",
       "pass": true,
-      "detail": "5 shots, 4 real transitions, 5 framings \u2014 a genuine sequence of shots (config/shot_structure.yaml)"
+      "detail": "6 shots, 5 real transitions, 5 framings \u2014 a genuine sequence of shots (config/shot_structure.yaml)"
     },
     {
       "name": "CAPTION_SYNC",
       "pass": true,
-      "detail": "124 voice-synced cues (min 10), 0 bad-duration \u2014 guards 'voice != captions'"
+      "detail": "13 voice-synced cues (min 10), 0 bad-duration \u2014 guards 'voice != captions'"
     },
     {
       "name": "READABILITY",
       "pass": true,
-      "detail": "116 readable words checked, 0 too dim/low-contrast (need vis>=0.42, contrast>=2.0) \u2014 guards 'every word bright + legible'"
+      "detail": "2453 readable words checked, 0 too dim/low-contrast (need vis>=0.42, contrast>=2.0) \u2014 guards 'every word bright + legible'"
     },
     {
       "name": "MUSIC",
       "pass": true,
-      "detail": "music source = sourced (\"Reawakening\" Kevin MacLeod (incompetech.com) - CC BY 4.0) \u2014 must be a freshly-sourced real track; synth/legacy fails (fix get_music + re-mix)"
+      "detail": "music source = sourced (\"Lightless Dawn\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0) \u2014 must be a freshly-sourced real track; synth/legacy fails (fix get_music + re-mix)"
     },
     {
       "name": "SFX_EVENTS",
       "pass": true,
-      "detail": "22 sound events, 19 verified audible \u2014 every shot sonified, events audible in the master (VISUAL_FLOW.md \u00a75)"
+      "detail": "16 sound events, 16 verified audible \u2014 every shot sonified, events audible in the master (VISUAL_FLOW.md \u00a75)"
     },
     {
       "name": "SILENCE_DIP",
       "pass": true,
-      "detail": "bed at silence_at=35.4s sits 10.4 dB under its neighborhood (need >=6) \u2014 the breath before the payoff is real, not planned"
+      "detail": "bed at silence_at=33.7s sits 9.7 dB under its neighborhood (need >=6) \u2014 the breath before the payoff is real, not planned"
     },
     {
       "name": "LIVING_SCREEN",
       "pass": true,
-      "detail": "29/29 2s-windows show >=3 disjoint motion regions (100%, floor 80%) \u2014 layered choreography, not one ticker on a held frame (CHOREOGRAPHY.md)"
+      "detail": "24/27 2s-windows show >=3 disjoint motion regions (89%, floor 80%) \u2014 quiet windows at ['22s', '36s', '40s'] \u2014 layered choreography, not one ticker on a held frame (CHOREOGRAPHY.md)"
     },
     {
       "name": "HOOK_WINDOW",
       "pass": true,
-      "detail": "first two 2s windows carry [6, 5] disjoint motion regions (each needs >=3) \u2014 a muted scroll decides at ~1.3s; the hook arrives loaded or not at all"
+      "detail": "first two 2s windows carry [4, 5] disjoint motion regions (each needs >=3) \u2014 a muted scroll decides at ~1.3s; the hook arrives loaded or not at all"
     },
     {
       "name": "FIRST_FRAME",
       "pass": true,
-      "detail": "frame 0 edge energy 5.41 (floor 4.0 \u2014 poster-grade ink/headline present), luma std 53.1 (floor 30 \u2014 real contrast, no fade-from-black)"
+      "detail": "frame 0 edge energy 5.28 (floor 4.0 \u2014 poster-grade ink/headline present), luma std 84.1 (floor 30 \u2014 real contrast, no fade-from-black)"
     },
     {
       "name": "DIMENSIONAL",
       "pass": true,
-      "detail": "engine=dimensional scale=1.0 shadow_fn=True arch=cpu \u2014 3D hygiene clean"
+      "detail": "engine=dimensional scale=1.0 shadow_fn=True arch=cuda \u2014 3D hygiene clean"
     },
     {
       "name": "DEPTH_FIELD",
       "pass": true,
-      "detail": "median near/far depth spread 8.7 world units over 301 samples (283 above floor) \u2014 a real 3D scene, not a flat card (need med>=2.0, 80% >=1.0)"
+      "detail": "median near/far depth spread 6.4 world units over 283 samples (255 above floor) \u2014 a real 3D scene, not a flat card (need med>=2.0, 80% >=1.0)"
     },
     {
       "name": "CAMERA_MOTION",
       "pass": true,
-      "detail": "camera path 22.28 wu, focus travel 5.10 wu, max step 5.8182 \u2014 the camera must LIVE (drift at minimum) and either travel or rack (>=0.4 wu)"
+      "detail": "camera path 35.28 wu, focus travel 28.00 wu, max step 6.4459 \u2014 the camera must LIVE (drift at minimum) and either travel or rack (>=0.4 wu)"
     }
   ],
   "metrics": {
-    "sharpness_median": 204.6,
-    "chart_hf_p90": 11.97,
-    "caption_hf_p90": 7.64,
-    "event_spikes": 135,
+    "sharpness_median": 471.9,
+    "chart_hf_p90": 6.78,
+    "caption_hf_p90": 22.16,
+    "event_spikes": 127,
     "biggest_gap_s": 0.0,
     "dead_windows": [],
-    "visual_beats": 19,
-    "min_beats": 12,
-    "scene_shots": 5,
-    "scene_real_cuts": 4,
+    "visual_beats": 17,
+    "min_beats": 11,
+    "scene_shots": 6,
+    "scene_real_cuts": 5,
     "scene_framings": 5,
-    "caption_cues": 124,
-    "readable_words": 116,
+    "caption_cues": 13,
+    "readable_words": 2453,
     "readability_fails": 0,
     "music_source": "sourced",
-    "sfx_events": 22,
-    "sfx_lifts": 19,
-    "living_screen_pct": 1.0,
-    "first_frame_edge": 5.41,
-    "first_frame_std": 53.1,
-    "render_arch": "cpu",
-    "depth_spread_med": 8.7,
-    "cam_path": 22.28,
-    "focus_travel": 5.1,
+    "sfx_events": 16,
+    "sfx_lifts": 16,
+    "living_screen_pct": 0.889,
+    "first_frame_edge": 5.28,
+    "first_frame_std": 84.1,
+    "render_arch": "cuda",
+    "depth_spread_med": 6.37,
+    "cam_path": 35.28,
+    "focus_travel": 28.0,
     "score": 10.0
   }
 }
