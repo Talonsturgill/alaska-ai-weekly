@@ -157,6 +157,12 @@ def sceneClf(p, t):
     d = ti.min(d, arm)
     head = dim.sd_rbox(p, ti.Vector([0.55, arm_y, 5.65]), ti.Vector([0.24, 0.06, 0.24]), 0.03)
     d = ti.min(d, head)
+    # background depth layering: two receding server-rack silhouettes so the room reads as a real
+    # layered space, not a flat plane behind the hero machine
+    rack1 = dim.sd_rbox(p, ti.Vector([-2.9, 0.1, 9.6]), ti.Vector([0.5, 1.4, 0.35]), 0.06)
+    d = ti.min(d, rack1)
+    rack2 = dim.sd_rbox(p, ti.Vector([3.05, -0.1, 10.7]), ti.Vector([0.55, 1.3, 0.35]), 0.06)
+    d = ti.min(d, rack2)
     d = ti.min(d, 12.5 - p.z)
     return d
 
@@ -192,6 +198,15 @@ def matClf(p, n, t):
     head = dim.sd_rbox(p, ti.Vector([0.55, arm_y, 5.65]), ti.Vector([0.24, 0.06, 0.24]), 0.03)
     if head < 0.04:
         col = ti.Vector([1.35, 0.20, 0.18])            # crimson stamp face (emissive)
+    rack1 = dim.sd_rbox(p, ti.Vector([-2.9, 0.1, 9.6]), ti.Vector([0.5, 1.4, 0.35]), 0.06)
+    rack2 = dim.sd_rbox(p, ti.Vector([3.05, -0.1, 10.7]), ti.Vector([0.55, 1.3, 0.35]), 0.06)
+    if rack1 < 0.06 or rack2 < 0.06:
+        col = ti.Vector([0.09, 0.10, 0.14])            # dim background rack silhouette (depth layer)
+    wall_d = 12.5 - p.z
+    if wall_d < 0.05:
+        seamx = ti.abs(ti.math.fract(p.x * 0.55) - 0.5)
+        seamy = ti.abs(ti.math.fract(p.y * 0.55) - 0.5)
+        col = ti.Vector([0.075, 0.09, 0.13]) if (seamx < 0.03 or seamy < 0.03) else ti.Vector([0.055, 0.07, 0.10])
     return col
 
 @ti.func
@@ -334,6 +349,11 @@ def sceneRev(p, t):
     # the archive card being relit (center-right)
     card = dim.sd_rbox(p, ti.Vector([1.75, 0.15, 6.2]), ti.Vector([0.98, 0.74, 0.09]), 0.05)
     d = ti.min(d, card)
+    # background depth layering: same receding rack silhouettes as shot1 (coherent institutional room)
+    rack1 = dim.sd_rbox(p, ti.Vector([-3.3, 0.0, 9.2]), ti.Vector([0.45, 1.3, 0.32]), 0.06)
+    d = ti.min(d, rack1)
+    rack2 = dim.sd_rbox(p, ti.Vector([3.5, -0.15, 9.9]), ti.Vector([0.5, 1.2, 0.32]), 0.06)
+    d = ti.min(d, rack2)
     d = ti.min(d, 12.0 - p.z)
     return d
 
@@ -374,6 +394,15 @@ def matRev(p, n, t):
         boost = ti.math.clamp(1.0 - ti.abs(dx) / 0.09, 0.0, 1.0)
         inten = ti.math.clamp(taper * 0.7 + boost, 0.0, 1.0)
         col = col * (1.0 - inten) + ti.Vector([0.35, 1.30, 0.62]) * (1.0 + boost * 1.4) * inten
+    rack1 = dim.sd_rbox(p, ti.Vector([-3.3, 0.0, 9.2]), ti.Vector([0.45, 1.3, 0.32]), 0.06)
+    rack2 = dim.sd_rbox(p, ti.Vector([3.5, -0.15, 9.9]), ti.Vector([0.5, 1.2, 0.32]), 0.06)
+    if rack1 < 0.06 or rack2 < 0.06:
+        col = ti.Vector([0.08, 0.09, 0.12])            # dim background rack silhouette (depth layer)
+    wall_d = 12.0 - p.z
+    if wall_d < 0.05:
+        seamx = ti.abs(ti.math.fract(p.x * 0.55) - 0.5)
+        seamy = ti.abs(ti.math.fract(p.y * 0.55) - 0.5)
+        col = ti.Vector([0.065, 0.08, 0.11]) if (seamx < 0.03 or seamy < 0.03) else ti.Vector([0.05, 0.06, 0.09])
     return col
 
 @ti.func
@@ -602,6 +631,14 @@ def ensure_shot(si):
     dim.init_kernels()
     _cur_shot = si
 
+# true temporal-supersample motion blur (multiple raymarch samples blended), NOT a fake gaussian
+# smear, applied only to the two fastest hero moves so the cost stays localized: the stamp-arm
+# slam (shot1, t~13.85-14.55) and the court-green wave sweep (shot4, t~38.25-40.0).
+_BLUR_WINDOWS = [(13.80, 14.60), (38.20, 40.05)]
+
+def _in_blur_window(t):
+    return any(a <= t <= b for a, b in _BLUR_WINDOWS)
+
 def render_range(s, e):
     import time as _t; _t0 = _t.time()
     for f in range(s, e):
@@ -610,7 +647,15 @@ def render_range(s, e):
             el = _t.time() - _t0; done = max(1, f - s)
             print(f"[render] frame {f}/{e} shot{si} elapsed={el:.0f}s eta={el/done*(e-f):.0f}s", flush=True)
         cam = CAMS[si](f); t = f / FPS
-        rgb, z = dim.render_frame(cam, t=t)
+        if _in_blur_window(t):
+            sub_dt = (1.0 / FPS) * 0.6
+            rgb0, z0 = dim.render_frame(cam, t=t - sub_dt)
+            rgb1, z1 = dim.render_frame(cam, t=t)
+            rgb2, z2 = dim.render_frame(cam, t=t + sub_dt * 0.5)
+            rgb = (rgb0 * 0.28 + rgb1 * 0.44 + rgb2 * 0.28)
+            z = z1
+        else:
+            rgb, z = dim.render_frame(cam, t=t)
         u8 = dim.post(rgb, z, cam, f=f)
         out = Image.fromarray(u8).convert("RGBA")
         caption_scrim(out)
