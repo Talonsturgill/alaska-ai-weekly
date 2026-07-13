@@ -349,8 +349,9 @@ def matRev(p, n, t):
         col = ti.Vector([0.64, 0.44, 0.33])            # a generic human hand, warm skin (no person implied)
     card = dim.sd_rbox(p, ti.Vector([1.75, 0.15, 6.2]), ti.Vector([0.98, 0.74, 0.09]), 0.05)
     if card < 0.07:
-        lit = ti.math.clamp((gx - 0.6) / 1.0, 0.0, 1.0)
-        col = ti.Vector([0.60, 0.13, 0.13]) * (1.0 - lit) + ti.Vector([1.10, 0.68, 0.26]) * lit
+        # a tight, punchy snap (not a slow gradient) synced to the wave's own leading-edge width
+        lit = ti.math.clamp((gx - p.x + 0.35) / 0.55, 0.0, 1.0)
+        col = ti.Vector([0.92, 0.05, 0.05]) * (1.0 - lit) + ti.Vector([1.75, 1.05, 0.32]) * lit
     # court-green reversal wave: bright leading edge + fading trailing glow (a real wipe, not a bar)
     dx = gx - p.x
     if dx > -0.05 and dx < 0.65 and p.y > -1.5:
