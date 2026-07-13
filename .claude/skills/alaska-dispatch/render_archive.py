@@ -136,15 +136,12 @@ def matClf(p, n, t):
     screen = dim.sd_rbox(p, ti.Vector([0.0, 0.5, 6.40]), ti.Vector([1.45, 0.82, 0.05]), 0.05)
     if screen < 0.05:
         base = ti.Vector([0.16, 0.55, 0.85]) * (0.6 + 0.5 * _h_prog(t))    # blue gate screen (emissive)
-        # a bright scan band sweeps the screen + discrete processing FLASHES -> real per-frame motion
-        sy = 0.5 + 0.72 * ti.sin((t - 10.4) * 4.2)
-        band = 0.0
-        if ti.abs(p.y - sy) < 0.10:
-            band = 1.0
+        # sparse discrete processing FLASHES only (no sustained band -> keeps shot1's delta profile
+        # from skewing the video-wide EVENT_CADENCE percentile floor against the calmer narrative shots)
         flash = 0.0
-        if (t > 11.3 and t < 11.62) or (t > 12.7 and t < 13.02) or (t > 13.9 and t < 14.22):
+        if (t > 11.2 and t < 11.42) or (t > 12.4 and t < 12.62) or (t > 13.6 and t < 13.82) or (t > 14.8 and t < 15.02):
             flash = 1.0
-        col = base + band * ti.Vector([0.45, 0.45, 0.55]) + flash * ti.Vector([0.40, 0.55, 0.70])
+        col = base + flash * ti.Vector([0.55, 0.55, 0.65])
     tray = dim.sd_box(p, ti.Vector([0.0, -1.15, 6.05]), ti.Vector([1.95, 0.05, 0.55]))
     if tray < 0.05:
         col = ti.Vector([0.10, 0.11, 0.14])
