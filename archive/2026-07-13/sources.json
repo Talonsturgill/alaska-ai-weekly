@@ -1,0 +1,29 @@
+{
+ "sources": [
+  {
+   "url": "https://www.insidehighered.com/news/faculty/research/2026/03/11/how-doge-gutted-neh-22-days",
+   "outlet": "Inside Higher Ed (2026-03-11)",
+   "note": "The ChatGPT prompt 'Does this relate at all to DEI? ... Begin with Yes or No' over ~1,100 pending NEH grant abstracts; DOGE staffer Justin Fox deposition; ~1,400 grants terminated in ~22 days, $100M+, staff could not define DEI under oath."
+  },
+  {
+   "url": "https://www.insidehighered.com/news/government/science-research-policy/2026/06/30/neh-asks-grant-recipients-if-they-still-want",
+   "outlet": "Inside Higher Ed (2026-06-30)",
+   "note": "After the court ruling, NEH began asking recipients whether they want terminated awards reinstated (summer 2026)."
+  },
+  {
+   "url": "https://www.uafsunstar.com/news/from-preservation-to-purge-ai-cuts-language-center-funding",
+   "outlet": "UAF Sun Star (2026-04-06)",
+   "note": "The Alaska Native Language Center / Alaska Native Language Archive grant at UAF was flagged 'Yes' and terminated; ANLC founded 1972. Campus paper of record; single-source for the specific Alaska hook."
+  },
+  {
+   "url": "https://www.historians.org/news/",
+   "outlet": "American Historical Association (ruling, SDNY, 2026-05-07)",
+   "note": "Judge Colleen McMahon ruled the mass NEH terminations unlawful, unconstitutional, ultra vires, and without legal effect (143-page decision). AHA v. NEH."
+  },
+  {
+   "url": "https://alaskapublic.org/news/alaska-desk/2026-04-03/at-hearing-linguists-tell-lawmakers-that-the-alaska-native-language-centers-mission-is-at-risk",
+   "outlet": "Alaska Public Media (2026-04-03)",
+   "note": "Alaska legislative hearing: linguists warn the Alaska Native Language Center's mission is at risk after the funding loss."
+  }
+ ]
+}

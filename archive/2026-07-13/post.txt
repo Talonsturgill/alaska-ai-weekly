@@ -1,0 +1,17 @@
+In the spring of 2025, an AI was asked one question about more than a thousand research grants: does this relate, at all, to DEI?
+
+The reviewer was ChatGPT. The instruction was blunt: answer Yes or No, in under 120 characters. A "Yes" fed the termination of about 1,400 National Endowment for the Humanities grants in 22 days, over 100 million dollars of work.
+
+One of the flagged grants was here in Alaska. It was a plan to preserve the Alaska Native Language Archive at the University of Alaska Fairbanks. Decades of elders' recordings. The last fluent speakers of whole languages. Flagged by a single word.
+
+The model did not decide anything. A person aimed it at the abstracts, a person asked the leading question, and a person signed the terminations. Under oath, the staff doing the sorting could not even define the term they were sorting for. The language model was not the judge. It was the rubber stamp that made a blunt policy look like a neutral process.
+
+That is the real institutional risk with AI right now. Not that a model becomes the villain, but that it becomes the alibi: a fast, confident yes or no that lets a human choice hide behind a machine.
+
+The story is not finished. In May 2026 a federal court ruled the terminations unlawful, and this summer NEH began offering the funding back. But offered back is not restored. The lost year does not return, and neither do the staff or the momentum a small program spent decades building.
+
+If your organization is putting a model anywhere near a decision that affects real people, the lesson is not to avoid AI. It is to keep a human accountable for every output, in writing, by name. An archive of a language is memory. It deserves a person reading every line.
+
+Where in your work should a model's answer never be the final word?
+
+#AI #Alaska #ResponsibleAI #IndigenousLanguages #AIGovernance

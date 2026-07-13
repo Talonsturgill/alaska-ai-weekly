@@ -420,3 +420,42 @@ dispatch_history:
       phone-glow cyan, a warning-red correction stamp
     metaphor: the fake beluga dissolves into generated pixels while the real one holds;
       truth is the thing the machine cannot certify
+- date: '2026-07-13'
+  topic: 'An LLM (ChatGPT) screened ~1,100 NEH grants for ''DEI'', flagging an Alaska
+    Native Language Archive grant at UAF among ~1,400 terminated ($100M+, 22 days);
+    a court ruled it unlawful (May 2026, McMahon) and reinstatement began June 2026.
+    Honest AI angle: the model did not decide, a person aimed it and signed, and offered
+    back is not restored.'
+  slug: dispatch-2026-07-13-sortedbyamachine
+  key_entities:
+  - alaska native language archive
+  - anlc
+  - neh
+  - national endowment for the humanities
+  - chatgpt
+  - llm grant screening
+  - dei classifier
+  - doge
+  - justin fox
+  - grant termination
+  - reinstatement
+  - indigenous language revitalization
+  - mcmahon ruling
+  - uaf
+  archetype: 'top-down data-brutalist machine triage: a cold grid of grant records
+    sorted by a scanner, one warm amber archive flagged and terminated, then a court-green
+    reversal; human hand on the lever'
+  palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination
+    mark, honey-amber archive warmth, evergreen court reversal, slate modular grid
+  voice: edge_tts:en-US-AvaMultilingualNeural
+  composition:
+    pov: top-down-map
+    motion_vector: scroll-data
+    hero_treatment: data-as-subject
+    layout: grid-modular
+    register: data-brutalist
+    camera_strategy: track-follow
+    light_story: noon-hard
+    palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination
+      mark, honey-amber archive warmth, evergreen court reversal, slate modular grid
+    metaphor: a crude machine sorting a people's memory into keep and delete
