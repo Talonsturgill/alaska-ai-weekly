@@ -1,0 +1,15 @@
+{
+  "chars": 633,
+  "hook": "Golden Valley Electric's board weighs $120 million in new gas capacity today, and its members carry the debt.",
+  "hook_len": 109,
+  "hashtags": [
+    "#AlaskaEnergy",
+    "#GVEA",
+    "#AIDataCenters"
+  ],
+  "fails": [],
+  "warns": [
+    "SUMMARY: no deck-summary line detected (accessibility + ranker)"
+  ],
+  "verdict": "PASS"
+}

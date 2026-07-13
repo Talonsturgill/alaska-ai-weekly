@@ -238,6 +238,48 @@
     "https://www.faa.gov/uas/programs_partnerships/test_sites"
    ],
    "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-13",
+   "carousel_no": 6,
+   "topic": "GVEA's July 13 board vote on a second ~$120M LM6000 gas turbine, set against the Air Force AI-data-center land leases and a record fuel-charge spike",
+   "angle": "Firm power, soft load: a member-owned Interior co-op is asked to finance firm, dated gas capacity now (member debt, ratepayer exposure) while the AI loads that make firm power feel urgent (Air Force EULs at Eielson/Clear/JBER) are still proposals; who pays for the megawatts, decided in executive session. Distinct from No.1's civic-access 'four rooms' frame (this is Interior generation adequacy / who-pays) and from No.4's Cook Inlet gas storage.",
+   "entities": [
+    "Golden Valley Electric Association",
+    "GVEA",
+    "Travis Million",
+    "North Pole Power Plant",
+    "LM6000",
+    "General Electric",
+    "U.S. Air Force",
+    "Eielson AFB",
+    "Clear Space Force Station",
+    "JBER",
+    "Dan Sullivan",
+    "Fairbanks North Star Borough"
+   ],
+   "keywords": [
+    "Interior grid",
+    "gas turbine",
+    "data center load",
+    "who pays",
+    "member co-op debt",
+    "ratepayer",
+    "Enhanced Use Lease",
+    "FY2027 NDAA grid-impact assessment",
+    "fuel charge spike",
+    "firm power",
+    "speculative load",
+    "executive session"
+   ],
+   "headline": "The Interior's Power Math ($120 million, one vote today, members own the bill)",
+   "sources_lead": [
+    "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html",
+    "https://fm.kuac.org/energy-and-the-environment/2026-05-28/gvea-plans-extraordinarily-large-increase-in-co-op-fuel-charge",
+    "https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/",
+    "https://www.sullivan.senate.gov/newsroom/press-releases/sullivan-secures-56-provisions-historic-26-billion-for-alaska-in-fy-2027-defense-authorization"
+   ],
+   "outcome_notes": ""
   }
  ]
 }

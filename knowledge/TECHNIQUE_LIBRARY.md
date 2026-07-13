@@ -318,6 +318,24 @@ text stays DOM/SVG; one imaginary light per deck; fog in the sky's hue.
     detect/decide/dispatch/douse autonomy loop). Generalizes to any pipeline,
     control loop, decision cycle, or multi-stage process story. D2
 
+58b. **FIRM/SOFT Dividing Rule** (NEW 2026-07-13) — a continuity motif where a
+    single vertical rule splits every slide into two argued halves distinguished
+    by TYPE WEIGHT, not just color: one side SOLID (certain / real / dated), the
+    other GHOST (dashed drafting phantom-lines #67, outlined, "proposed"). The
+    rule's x-position and state MIGRATE with the narrative (centered at the setup,
+    shoved toward whichever side the beat is about, a centered ledger spine at the
+    reckoning) and it SEALS into a climactic bar at synthesis (here a gold, beveled
+    "closed door" = the executive-session decision boundary) then SPLITS OPEN into
+    the closing question. Doubles as the progress indicator. RULES that make it
+    read: the two sides must be legible on their own merits (SOFT readable copy
+    stays SOLID in the ghost hue, only containers/rules go dashed, or contrast
+    fails); keep the argued figures in their own units on each side and print a
+    "different units, not one sum" guard if they are not comparable; the seal is
+    the deck's single saturated-accent moment (gold budget). Used as the hero
+    system + continuity of "The Interior's Power Math" (firm gas capacity now vs a
+    still-proposed AI load). Generalizes to any certain-vs-speculative, cost-vs-
+    benefit, or who-decides-who-pays story. D2
+
 ## LINE & DIAGRAM FLAIR
 
 The meta-law from every lineage (ink, drafting, cartography, transit maps,

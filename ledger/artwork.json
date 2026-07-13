@@ -139,6 +139,29 @@
     "Closing Autonomy Ring (discrete cyclic state-machine motif that doubles as an explicit N/4 progress counter and seals gold at resolution)"
    ],
    "notes": "Robotics/autonomy story, deliberate break from four consecutive energy/infrastructure/monitoring decks. akthree rendered hero shipped with AK3D fallback. Scored 8.54 vs 8.3; weakest = artwork craft (rendered hero reads slightly flat)."
+  },
+  {
+   "run_date": "2026-07-13",
+   "carousel_no": 6,
+   "slide_count": 9,
+   "hero_structure": "FIRM/SOFT type-weight ledger (a flat editorial balance-sheet on cool drafting film) whose argument lives in TYPE WEIGHT (solid FIRM vs dashed/ghost SOFT), paired with a single rendered LM6000 OBJECT HERO (akthree GPU PBR turbine package: bell intake, casing seams, exhaust stack, skid) as the one depth moment. NOT a cartographic camera-map, glyph-ledger, seismic-trace instrument panel, subsurface cutaway panorama, or ring/emblem.",
+   "atmosphere": "cool drafting-film night (deep-night #02060F / flag-blue #081426 / panel navy #0E2138) + faint blueprint plus-grid + gas-flame cyan accents; a Deep-Sea-Scrim DOM gradient guards text over the rendered hero. NOT obsidian-instrument/ember-phosphor, NOT core-sample ochre, NOT spruce-night+fire.",
+   "depth_technique": "akthree GPU PBR rendered turbine (#87) + akpost film grade (#89), objectHero far-side rim, offscreen-composited then drawImage onto the 2D scene; designed AK3D/gradient-solid fallback for webglOK()===false. Cabinet-extrusion type monument on the cover (#39); prism-map proportional copper ticks on the ledger (#32).",
+   "line_voice": "instrument/editorial (dashed drafting phantom-lines for the SOFT/ghost side; proportional copper ticks on FIRM; scotch-rule + gold spine cap)",
+   "continuity_device": "motif:the-dividing-rule (FIRM-solid / SOFT-ghost vertical rule that migrates center -> right (cost) -> left (soft) -> centered ledger spine -> SEALS into a gold closed-door at synthesis -> splits open into the close question; doubles as the progress indicator) + palette-arc (cold drafting-blue -> copper at the money/cost beats -> gold peak at the S8 door -> resolves cool)",
+   "hook_archetype": "big-number / named-tension monument ($120 million)",
+   "palette_family": "cool-drafting-blue-DOMINANT + copper/amber money-accent + flag-gold decision (deliberately NOT the warm-dominant depleted-reservoir ochre or spruce-fire families)",
+   "type_pairing": "Bricolage Grotesque (display + short body) + Instrument Serif italic (the SOFT/accent voice) + JetBrains Mono (instrument). NOT Fraunces+Manrope+JBMono, NOT Archivo-variable-only.",
+   "narrative_structure": "argument (firm-vs-soft asymmetry / who-pays), escalating cost sealed at an executive-session door",
+   "variance_dials": {
+    "design_variance": 3,
+    "visual_density": 4,
+    "type_temperature": 3
+   },
+   "new_techniques_logged": [
+    "FIRM/SOFT dividing-rule motif: type-weight asymmetry (solid vs dashed ghost) AS the argument, the rule migrating per beat and sealing into a gold 'closed door' at synthesis then splitting open into the close question",
+    "rendered-object legibility scrim: a Deep-Sea-Scrim DOM gradient behind the text column, layered over a GPU render, guarantees body contrast without moving the hero object off its composition"
+   ]
   }
  ]
 }

@@ -1,0 +1,23 @@
+{
+ "total": 8.69,
+ "rounded": 8.7,
+ "threshold": 8.3,
+ "ship": true,
+ "revision_rounds": 1,
+ "hard_fails": [],
+ "weakest_criterion": "Artwork craft & genuine detail (7)",
+ "one_sentence_fix_applied": "Redrew the S7 SOFT column so the dashed container borders contain (no longer cut through) the 'offered / 0 leases signed / would require, if enacted' sub-labels, and lifted those descriptors above the contrast floor (#8091AE -> #A2B2CA).",
+ "criteria": [
+  {"name":"Thumb-stop cover","score":8,"weight":0.14},
+  {"name":"Story arc & swipe momentum","score":8,"weight":0.14},
+  {"name":"Artwork craft & genuine detail","score":7,"weight":0.16},
+  {"name":"Story-art fusion","score":8,"weight":0.14},
+  {"name":"Alaska authenticity & local relevance","score":9,"weight":0.12},
+  {"name":"Insight density & factual weight","score":8,"weight":0.10},
+  {"name":"Variety vs ledger","score":8,"weight":0.08},
+  {"name":"Legibility & platform fitness","score":7,"weight":0.07},
+  {"name":"Copy: voice & hook","score":8,"weight":0.05},
+  {"name":"Deliverable completeness","score":8,"weight":0.10}
+ ],
+ "notes": "Ships at 8.69 vs 8.3, no hard fails. Honesty guardrails verified holding on-slide: turbine never called 'for data centers' (News-Miner attributed + explicit S3 note); July 13 vote framed as a decision (outcome not public); NDAA hedged 'if it becomes law'; JBER greyed off the Interior grid; fuel spike labeled backdrop. Post-score fix: S7 SOFT-column strikethrough resolved. Remaining honest note for the email: the S4 rendered turbine reads slightly generic as a chrome vessel (parked as a future object-hero detail improvement). caption_report 'no deck-summary line' is a heuristic miss; a summary sentence is present."
+}

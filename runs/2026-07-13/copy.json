@@ -1,0 +1,173 @@
+{
+ "document_title": "The Interior's Power Math",
+ "slides": [
+  {
+   "n": 1,
+   "kicker": "THE INTERIOR'S POWER MATH",
+   "head": "$120 million.\nOne vote today.\nMembers own the bill.",
+   "body": "a co-op decides behind a closed door",
+   "labels": [
+    "01 / 09",
+    "64°50'N · 147°43'W"
+   ],
+   "claim_ids": [
+    "c2",
+    "c1"
+   ]
+  },
+  {
+   "n": 2,
+   "kicker": "THE DECISION",
+   "head": "A turbine, and a\n$120 million question",
+   "body": "On July 13, in a closed executive session, Golden Valley Electric Association's board weighs buying a second LM6000 gas turbine for its North Pole plant. The price is about $120 million. In April the board spent $50,000 just to hold a place in the order line.",
+   "labels": [
+    "FIRM SIDE",
+    "PROPOSED"
+   ],
+   "claim_ids": [
+    "c1",
+    "c2",
+    "c4",
+    "c11"
+   ]
+  },
+  {
+   "n": 3,
+   "kicker": "WHY NOW? TWO ANSWERS.",
+   "head": "",
+   "body": "The News-Miner reports demand for these turbines has surged because large data centers need a guaranteed power supply.",
+   "body2": "GVEA points to general growth. \"We did see higher load across the board,\" President Travis Million said, running diesel units harder because the co-op is \"not getting any energy from Southcentral.\"",
+   "labels": [
+    "WHAT THE PAPER REPORTS",
+    "WHAT THE CO-OP SAYS",
+    "The co-op has not said the turbine is for data centers."
+   ],
+   "claim_ids": [
+    "c3",
+    "c22",
+    "c23",
+    "c9"
+   ]
+  },
+  {
+   "n": 4,
+   "kicker": "THE FIRM SIDE IS REAL",
+   "head": "One machine.\nSteel and megawatts.",
+   "body": "An LM6000 makes 45 to 58 megawatts on its own, or 76 to 152 paired with steam or storage. The plant's first LM6000, from 2006, still runs at 47 megawatts. Ordering another can take three to five years.",
+   "labels": [
+    "45 to 58 MW",
+    "76 to 152 MW",
+    "2006 unit: 47 MW",
+    "+3 to 5 yrs"
+   ],
+   "claim_ids": [
+    "c6",
+    "c7",
+    "c10",
+    "c8",
+    "c11"
+   ]
+  },
+  {
+   "n": 5,
+   "kicker": "BACKDROP (NOT CAUSED BY DATA CENTERS)",
+   "head": "Members just absorbed\nthe biggest fuel hike on record.",
+   "body": "On June 1 the fuel charge jumped 61 percent, the largest increase GVEA has ever posted. The fuel its plants burn more than doubled since February.",
+   "labels": [
+    "+61%",
+    "fuel charge, June 1",
+    "20.7 cents / kWh",
+    "+$45.74 / mo",
+    "$2.50 to $5.10 / gal",
+    "more than doubled"
+   ],
+   "claim_ids": [
+    "c24",
+    "c19",
+    "c20",
+    "c21"
+   ]
+  },
+  {
+   "n": 6,
+   "kicker": "THE SOFT SIDE",
+   "head": "The loads are still\non paper.",
+   "body": "The Air Force is offering about 4,700 acres, 12 parcels across three bases, to companies that would build AI data centers. Two of them, Eielson and Clear, are in the Interior. None is built, no lease is signed. A pending defense bill would require a grid study, if it becomes law.",
+   "labels": [
+    "PROPOSED",
+    "UNBUILT",
+    "0 LEASES",
+    "WOULD REQUIRE (if enacted)",
+    "JBER is in Anchorage, not on the Interior grid."
+   ],
+   "claim_ids": [
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16"
+   ]
+  },
+  {
+   "n": 7,
+   "kicker": "",
+   "head": "Firm power, soft load.",
+   "body": "",
+   "firm": [
+    "$120,000,000  second turbine (proposed)",
+    "$25,600,000  diesel overhaul (approved)",
+    "$50,000  order deposit (April)"
+   ],
+   "firm_foot": "Certain. Dated. Paid by members.",
+   "soft": [
+    "~4,700 acres  offered",
+    "12 parcels  0 leases signed",
+    "grid study  would require, if enacted"
+   ],
+   "soft_foot": "Proposed. Unbuilt. Someone else's.",
+   "note": "different units, not one sum",
+   "claim_ids": [
+    "c2",
+    "c5",
+    "c4",
+    "c12",
+    "c13",
+    "c15"
+   ]
+  },
+  {
+   "n": 8,
+   "kicker": "THE STRUCTURE",
+   "head": "The bill is certain.\nThe load is a maybe.",
+   "body": "Members are being asked to finance firm, dated capacity now, while the loads that justify it stay on paper. And the vote happens in executive session, a room members reach only through board elections.",
+   "labels": [
+    "EXECUTIVE SESSION",
+    "More gas and diesel also burns in a borough the EPA rates \"Serious\" for fine-particle pollution."
+   ],
+   "claim_ids": [
+    "c1",
+    "c2",
+    "c23",
+    "c18"
+   ]
+  },
+  {
+   "n": 9,
+   "kicker": "Firm power, soft load.",
+   "head": "Should a co-op spend $120 million on firm power while the loads that need it are still proposals? Or wait until someone signs for the load?",
+   "body": "",
+   "labels": [
+    "Sources in comments.",
+    "ALASKA.AI",
+    "alaskaaihq.com",
+    "64°50'N · 147°43'W",
+    "09 / 09"
+   ],
+   "claim_ids": [
+    "c2"
+   ]
+  }
+ ],
+ "caption": "Golden Valley Electric's board weighs $120 million in new gas capacity today, and its members carry the debt.\n\nThe turbine would be firm, dated, gas-fired power. The AI data-center loads that make firm capacity feel urgent are still acreage and proposals on Air Force land. Meanwhile GVEA members just absorbed the largest fuel-charge increase in the co-op's history.\n\nNine slides on what members already paid, what the machine actually buys, and which loads are still on paper. The vote happens in executive session.\n\nShould members finance firm capacity now, or wait until a load actually signs?\n\n#AlaskaEnergy #GVEA #AIDataCenters",
+ "first_comment": "Sources, primary first. The July 13 board vote is an executive-session item, and its outcome was not public at publication.\n\nFairbanks Daily News-Miner, GVEA board to weigh heavy purchase decision in July.\nhttps://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html\nKUAC, GVEA plans extraordinarily large increase in co-op fuel charge.\nhttps://fm.kuac.org/energy-and-the-environment/2026-05-28/gvea-plans-extraordinarily-large-increase-in-co-op-fuel-charge\nAlaska's News Source, GVEA rate increase starting June 1.\nhttps://www.alaskasnewssource.com/2026/06/01/gvea-announces-rate-increase-starting-june-1-members-see-higher-bills/\nU.S. Air Force, DAF takes steps for potential Alaskan AI data centers.\nhttps://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/\nOffice of Sen. Dan Sullivan, FY2027 defense authorization provisions for Alaska.\nhttps://www.sullivan.senate.gov/newsroom/press-releases/sullivan-secures-56-provisions-historic-26-billion-for-alaska-in-fy-2027-defense-authorization\nU.S. EPA Green Book, Fairbanks PM2.5 nonattainment status.\nhttps://www3.epa.gov/airquality/greenbook/anayo_ak.html\n\nEvery decision we track, with live deadlines, lives at alaskaaihq.com. If you know this file better than the reporting does, add it below."
+}

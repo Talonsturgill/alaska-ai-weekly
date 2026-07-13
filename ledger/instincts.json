@@ -31,8 +31,8 @@
    "id": "machine-qa-is-not-taste",
    "learned": "2026-07-08",
    "instinct": "Never treat a machine_qa PASS as composition approval; the pixel critics judge composition, hierarchy, and collision at full size and thumb size.",
-   "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective. | CONFIRMED 2026-07-11: critics caught ~10 canvas-vs-DOM overlaps + low-contrast in-section labels that machine_qa PASSED (S2 legend/homes, S3 curve labels, S4 readouts on ochre, S6 SUSPENDED, S7 flag mash, S8 context on ochre).",
-   "confidence": 0.98,
+   "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective. | CONFIRMED 2026-07-11: critics caught ~10 canvas-vs-DOM overlaps + low-contrast in-section labels that machine_qa PASSED (S2 legend/homes, S3 curve labels, S4 readouts on ochre, S6 SUSPENDED, S7 flag mash, S8 context on ochre). | CONFIRMED 2026-07-13: pixel critics caught a favored honesty panel (S3), a bottle-read turbine (S4), and a strikethrough ledger (S7) that machine_qa PASSED clean.",
+   "confidence": 0.99,
    "last_confirmed": "2026-07-11"
   },
   {
@@ -128,6 +128,27 @@
    "confidence": 0.75,
    "born": "2026-07-12",
    "evidence": "Run 5 slide 6: backlit-only drone read as a smear (flow critic); adding a 1.7-intensity warm rim + scale 1.15->1.42 made it read as a quadcopter."
+  },
+  {
+   "id": "equalize-honesty-panels",
+   "learned": "2026-07-13",
+   "instinct": "On a two-source honesty/firewall slide (an attributed third-party claim vs the primary source's own words), give BOTH panels identical visual weight -- same top, min-height, plate opacity, and accent-glyph treatment. A deliberate y-offset or size difference reads as favoritism and inverts the slide's honesty purpose.",
+   "evidence": "Run 6 S3: the left panel (the News-Miner's data-center demand line) rendered larger/brighter than the right (GVEA's own 'higher load' words); the pixel critic flagged the imbalance as favoring the attributed framing. Equal tops + min-height + matched quote glyphs fixed it.",
+   "confidence": 0.8
+  },
+  {
+   "id": "render-object-text-scrim",
+   "learned": "2026-07-13",
+   "instinct": "When DOM text must share a slide with a full-bleed GPU/akthree render, guarantee legibility with a Deep-Sea-Scrim DOM gradient (dark to transparent) behind the text column, layered above the canvas -- not text-shadow, and not by shrinking the object off its composition. text-shadow alone fails over bright specular metal.",
+   "evidence": "Run 6 S4: body copy over the rendered LM6000's steel dome dropped below 4.5:1 (pixel-critic BLOCKER) despite a text-shadow; a left-column dark-to-transparent scrim div made it fully legible while keeping the hero object big.",
+   "confidence": 0.75
+  },
+  {
+   "id": "label-box-safezone",
+   "learned": "2026-07-13",
+   "instinct": "Fixed-width, centered in-scene label DIVs trip the safe-zone gate on their BOX edges even when the glyphs sit well inside the margin. Size in-scene label containers to content (white-space:nowrap + translateX(-50%)) so the box, not just the text, stays within the 80px margins.",
+   "evidence": "Run 6 S2: a 220px-wide centered node-label box at left:815 pushed its right edge past the 1000px safe margin though '2ND UNIT' was short and centered; switching to content-width nowrap boxes cleared the warn.",
+   "confidence": 0.7
   }
  ]
 }

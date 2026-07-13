@@ -1,0 +1,38 @@
+{
+ "run_date": "2026-07-13",
+ "carousel_no": 6,
+ "phases": {
+  "wake": "done",
+  "craft_refresh": "done",
+  "research": "done",
+  "claims": "done",
+  "docket": "done",
+  "selection": "done",
+  "directors_room": "done",
+  "copy": "done",
+  "art_build": "done",
+  "pixel_review": "done",
+  "flow_review": "done",
+  "assemble": "done",
+  "scoring": "done",
+  "ship": "in_progress",
+  "upgrade": "pending",
+  "gmail": "pending",
+  "retro": "pending"
+ },
+ "artifacts": {
+  "plan": "out/2026-07-13/plan.md",
+  "run_state": "out/2026-07-13/run_state.json",
+  "claims": "out/2026-07-13/claims.json",
+  "selection": "out/2026-07-13/selection.md",
+  "scout_merge": "out/2026-07-13/scout_findings_merged.md",
+  "storyboard": "out/2026-07-13/storyboard.md",
+  "copy": "out/2026-07-13/copy.json",
+  "caption": "out/2026-07-13/caption.txt",
+  "first_comment": "out/2026-07-13/first_comment.txt",
+  "slides_dir": "out/2026-07-13/slides",
+  "render_dir": "out/2026-07-13/render",
+  "final_dir": "out/2026-07-13/final",
+  "score_report": "out/2026-07-13/score_report.json"
+ }
+}
