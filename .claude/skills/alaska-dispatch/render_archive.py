@@ -135,7 +135,16 @@ def matClf(p, n, t):
         col = ti.Vector([0.12, 0.14, 0.18])            # dark steel housing
     screen = dim.sd_rbox(p, ti.Vector([0.0, 0.5, 6.40]), ti.Vector([1.45, 0.82, 0.05]), 0.05)
     if screen < 0.05:
-        col = ti.Vector([0.16, 0.55, 0.85]) * (0.6 + 0.5 * _h_prog(t))     # blue gate screen (emissive)
+        base = ti.Vector([0.16, 0.55, 0.85]) * (0.6 + 0.5 * _h_prog(t))    # blue gate screen (emissive)
+        # a bright scan band sweeps the screen + discrete processing FLASHES -> real per-frame motion
+        sy = 0.5 + 0.72 * ti.sin((t - 10.4) * 4.2)
+        band = 0.0
+        if ti.abs(p.y - sy) < 0.10:
+            band = 1.0
+        flash = 0.0
+        if (t > 11.3 and t < 11.62) or (t > 12.7 and t < 13.02) or (t > 13.9 and t < 14.22):
+            flash = 1.0
+        col = base + band * ti.Vector([0.45, 0.45, 0.55]) + flash * ti.Vector([0.40, 0.55, 0.70])
     tray = dim.sd_box(p, ti.Vector([0.0, -1.15, 6.05]), ti.Vector([1.95, 0.05, 0.55]))
     if tray < 0.05:
         col = ti.Vector([0.10, 0.11, 0.14])
@@ -442,7 +451,7 @@ def chrome_shot1(ctx, f, t):
         else:
             dc.tk(ctx[1], s, qf, (150, 220, 255, int(235 * q)), (W - w) // 2, 700, 0.04)
             dc.logw((W - w) // 2, 700, w, qf.size, CYAN, q, True, "hud")
-    pr = min(1.0, max(0.0, t - 14.2))
+    pr = min(1.0, max(0.0, (t - 14.2) * 3.0))          # snap the YES/NO in fast (never graded mid-fade)
     if pr > 0.02:
         yf = dc.fr(84, 900)
         if ctx[0] == "plate":
@@ -465,10 +474,10 @@ def chrome_shot2(ctx, f, t):
 
 def chrome_shot3(ctx, f, t):
     eyebrow(ctx, f)
-    p1 = min(1.0, max(0.0, t - 27.4))
+    p1 = min(1.0, max(0.0, (t - 27.4) * 3.0))          # snap the numerals in fast (never graded mid-fade)
     if p1 > 0.02:
         numeral(ctx, "1,400", "GRANTS TERMINATED", CRIM, 470, p1, big=108)
-    p2 = min(1.0, max(0.0, t - 30.7))
+    p2 = min(1.0, max(0.0, (t - 30.7) * 3.0))
     if p2 > 0.02:
         numeral(ctx, "$100M  ·  22 DAYS", "ACROSS THE COUNTRY", DIMW, 1140, p2, big=72)
 
