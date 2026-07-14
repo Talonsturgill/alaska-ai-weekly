@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .venv/
+.venv-voice/
 .env
 # fonts are committed (OFL-licensed) so routine clones don't re-download them
 # dispatch_core.py reads/writes timing+caption-textlog scratch relative to its OWN dir,

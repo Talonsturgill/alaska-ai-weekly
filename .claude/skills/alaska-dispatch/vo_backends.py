@@ -18,9 +18,15 @@ segments on the timeline identically regardless of engine. Per-run scripts impor
 Gmail-draft credits + voice_used.json. Keep phrase-level caption cues with cloned/
 kokoro (no word timings); edge-tts still offers word timings if it's the engine.
 
-CPU note: Chatterbox is a 0.5B model. First call JIT-loads weights (~60-90s from
-warm HF cache); generation runs well under realtime on 4 cores, so a full 60s VO
-costs a few minutes. Budget it like a look-dev pass, not a render.
+CPU note: Chatterbox is a 0.5B model. Measured on the routine env 2026-07-14:
+model load 12.6s (warm HF cache), generation 0.13x realtime on CPU, so a full
+60s VO costs ~8-10 minutes. Budget it like a look-dev pass, not a render, and
+start the VO build BEFORE the full-frame render so they overlap.
+
+RUNTIME: execute the per-run VO build with `.venv-voice/bin/python` (created by
+scripts/setup_env.sh) — chatterbox cannot install under the Debian-patched system
+python (antlr4 sdist build bug). Under system python, synth() silently falls back
+to kokoro/edge, so a wrong interpreter shows up in backend_report(), not a crash.
 """
 import os
 import numpy as np
@@ -63,11 +69,21 @@ def _to_sr(a, sr_in):
 
 # ---------------------------------------------------------------- cloned (chatterbox)
 def cloned_available():
+    """True only when the ref clip exists AND the full chatterbox stack loads.
+
+    Chatterbox lives in the dedicated `.venv-voice` venv (see setup_env.sh) —
+    run the VO build under `.venv-voice/bin/python` to get the cloned voice;
+    under the system python this returns False and synth() falls back safely.
+    The perth check matters: with setuptools>=81 the watermarker import fails
+    SILENTLY (PerthImplicitWatermarker=None) and chatterbox's constructor
+    crashes with "'NoneType' object is not callable".
+    """
     if not os.path.exists(REF_CLIP):
         return False
     try:
         import chatterbox  # noqa: F401
-        return True
+        import perth
+        return perth.PerthImplicitWatermarker is not None
     except Exception:
         return False
 
