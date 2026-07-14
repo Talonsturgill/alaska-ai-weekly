@@ -5,37 +5,54 @@
 # and caches the voicepacks. See docs/ROUTINE_SPEC.md Phase 3.
 
 engines:
-  kokoro:                       # PUBLISH backbone — commercially safe
+  chatterbox:                   # PUBLISH PRIMARY — zero-shot clone of the OWNER'S OWN voice
+    license: "MIT (commercial OK); output carries Resemble's imperceptible Perth watermark — disclose in credits"
+    install: "scripts/setup_env.sh builds .venv-voice (Debian system python can't build the antlr4 dep; setuptools<81 required for perth). Run VO builds with .venv-voice/bin/python."
+    note: >
+      0.5B params, 24kHz, CPU-viable (~minutes for a 60s VO; weights pull from HF, proven
+      2026-07-14 on the routine env). The voice IS assets/voice/talon_ref.wav — the owner's
+      self-recorded clip (owner-requested clone, 2026-07-14; never substitute another person's
+      voice). Same engine the Voicebox app bundles, so the owner can audition locally in
+      Voicebox and the routine reproduces it headless via vo_backends.py.
+  kokoro:                       # PRESET FALLBACK when the ref clip / clone stack is unavailable
     license: "Apache-2.0 (commercial use OK, no attribution required)"
     install: "pip install --break-system-packages kokoro soundfile  # downloads ~327MB model, cached"
     note: "82M params, runs faster-than-real-time on CPU, 24kHz. Preset voices only (no cloning)."
-  edge_tts:                     # DRAFTS ONLY
+  edge_tts:                     # CRASH NET ONLY (never a planned publish path)
     license: "Microsoft Azure Neural TTS — gray area for commercial publishing; fine for drafts"
     install: "pip install --break-system-packages edge-tts  # CA setup required (see SKILL.md)"
-    note: "High quality + fast. Use for draft cuts; re-cut in Kokoro for publish (re-sync timing)."
-  chatterbox:                   # OPTIONAL premium / voice-cloning tier (future)
-    license: "MIT (commercial OK); output is watermarked"
-    install: "pip install --break-system-packages chatterbox-tts  # ~0.5B params, GPU preferred"
-    note: "Best naturalness + zero-shot cloning. Heavier; reserve for hero pieces if a GPU env exists."
+    note: "Only when both cloned + kokoro are down; disclose plainly in the draft if it ships."
 
 defaults:
-  publish_voice: kokoro:af_heart
-  draft_voice:   edge_tts:en-US-AvaMultilingualNeural   # rate -3%
+  publish_voice: cloned:talon            # chatterbox zero-shot of assets/voice/talon_ref.wav
+  fallback_voice: kokoro:af_heart        # when the clip/stack is absent — disclose the swap
+  draft_voice:   edge_tts:en-US-AvaMultilingualNeural   # rate -3%; crash net only
+  # FIRST-USE GATE: SATISFIED 2026-07-14. The owner heard an A-D comparison and picked
+  # take A. Locked recipe: assets/voice/talon_ref_cond.wav (the 15-25s window of the
+  # source recording) + exaggeration 0.45 / cfg_weight 0.5 / temperature 0.8 (see
+  # vo_backends.CLONE_KW). Changing the window or dials requires a fresh owner sign-off.
 
-# Curated roster (Kokoro grades A/B preferred). Pick by the story's tone.
+# The standing narrator, then the kokoro FALLBACK roster (grades A/B preferred; pick by story tone).
 roster:
-  - id: kokoro:af_heart    gender: f  grade: A   tone: "warm, premium, intimate"        use: "default; conservation/wildlife, human-stakes stories"
-  - id: kokoro:af_bella    gender: f  grade: A-  tone: "warm, friendly, bright"         use: "hopeful/community stories, lighter beats"
-  - id: kokoro:af_nicole   gender: f  grade: B-  tone: "professional, articulate"       use: "policy / infrastructure / data-center stories"
-  - id: kokoro:af_kore     gender: f  grade: C+  tone: "bright, energetic"              use: "fast tech / innovation / 'what's breaking' beats"
-  - id: kokoro:bf_emma     gender: f  grade: B   tone: "calm British, composed"         use: "occasional change of register for variety"
-  - id: kokoro:am_fenrir   gender: m  grade: C+  tone: "deep, powerful, authoritative"  use: "defense, aviation, energy, big-systems stories"
-  - id: kokoro:am_michael  gender: m  grade: C+  tone: "warm, trustworthy"              use: "explainer/field-report tone"
-  - id: kokoro:am_puck     gender: m  grade: C+  tone: "playful, energetic"             use: "lighter, surprising stories"
+  - {id: "cloned:talon",      gender: m, grade: A+, tone: "the owner's own voice, measured documentary", use: "EVERY Dispatch (publish primary); requires assets/voice/talon_ref.wav"}
+  - {id: "kokoro:af_heart",   gender: f, grade: A,  tone: "warm, premium, intimate",        use: "fallback default; conservation/wildlife, human-stakes stories"}
+  - {id: "kokoro:af_bella",   gender: f, grade: A-, tone: "warm, friendly, bright",         use: "hopeful/community stories, lighter beats"}
+  - {id: "kokoro:af_nicole",  gender: f, grade: B-, tone: "professional, articulate",       use: "policy / infrastructure / data-center stories"}
+  - {id: "kokoro:af_kore",    gender: f, grade: C+, tone: "bright, energetic",              use: "fast tech / innovation / 'what's breaking' beats"}
+  - {id: "kokoro:bf_emma",    gender: f, grade: B,  tone: "calm British, composed",         use: "occasional change of register for variety"}
+  - {id: "kokoro:am_fenrir",  gender: m, grade: C+, tone: "deep, powerful, authoritative",  use: "defense, aviation, energy, big-systems stories"}
+  - {id: "kokoro:am_michael", gender: m, grade: C+, tone: "warm, trustworthy",              use: "explainer/field-report tone"}
+  - {id: "kokoro:am_puck",    gender: m, grade: C+, tone: "playful, energetic",             use: "lighter, surprising stories"}
 
 guidance:
-  - "Match voice to story mood; do NOT default to the same voice every week — variety is the point."
-  - "Avoid reusing the exact voice from the last 2-3 Dispatches (check dispatch_history)."
-  - "Always state the voice + license in the Gmail draft credits."
-  - "Publish in a Kokoro voice (Apache-2.0). edge-tts is for draft cuts only."
+  - "THE NARRATOR IS THE OWNER'S CLONED VOICE (cloned:talon) EVERY RUN — it is the brand voice.
+     The vary-the-voice rule below applies ONLY when falling back to kokoro presets."
+  - "Fallback only: match preset voice to story mood; avoid the exact preset from the last 2-3
+     Dispatches (check dispatch_history)."
+  - "Always state the voice + license in the Gmail draft credits. For the cloned voice say
+     plainly: narration is an AI clone of the owner's own voice (Chatterbox MIT, Perth
+     watermark embedded), and record which backend actually spoke (vo_backends.backend_report())."
+  - "Delivery dials for the clone live in vo_backends.CLONE_KW (exaggeration 0.45 / cfg 0.5 =
+     measured documentary). Tune per story mood there, never per phrase."
+  - "edge-tts is the crash net only. If it ever narrates a published cut, say so in the draft."
   - "Write VO numbers/acronyms phonetically for whichever synth is used."
