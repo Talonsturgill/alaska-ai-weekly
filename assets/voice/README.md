@@ -1,9 +1,12 @@
 # Owner narration voice (zero-shot clone reference)
 
-Drop the reference recording here as **`talon_ref.wav`**. That single file IS the
-narrator voice: the Dispatch pipeline clones it zero-shot with Chatterbox
-(MIT, the same engine Voicebox bundles) every run. No training step, no model
-artifact to maintain. Replace the file to change how the narrator sounds.
+STATUS: LIVE. `talon_ref.wav` is the owner's 41.5s master recording (landed
+2026-07-14). **`talon_ref_cond.wav` is the LOCKED conditioning clip** — the
+smoothest 10s window (15-25s) of the master, approved by the owner as "take A"
+in an A-D listening comparison. The pipeline clones THIS file zero-shot with
+Chatterbox every run (the engine only reads the first 10s of its prompt, so
+the window is the voice). Re-cutting the window or replacing either file
+requires a fresh owner listening sign-off (see config/voices.yaml defaults).
 
 ## Recording spec
 

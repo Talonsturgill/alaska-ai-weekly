@@ -27,8 +27,10 @@ defaults:
   publish_voice: cloned:talon            # chatterbox zero-shot of assets/voice/talon_ref.wav
   fallback_voice: kokoro:af_heart        # when the clip/stack is absent — disclose the swap
   draft_voice:   edge_tts:en-US-AvaMultilingualNeural   # rate -3%; crash net only
-  # FIRST-USE GATE: the first Dispatch narrated by the cloned voice requires the owner's
-  # explicit sign-off on a test line before publish. After that it's the standing default.
+  # FIRST-USE GATE: SATISFIED 2026-07-14. The owner heard an A-D comparison and picked
+  # take A. Locked recipe: assets/voice/talon_ref_cond.wav (the 15-25s window of the
+  # source recording) + exaggeration 0.45 / cfg_weight 0.5 / temperature 0.8 (see
+  # vo_backends.CLONE_KW). Changing the window or dials requires a fresh owner sign-off.
 
 # The standing narrator, then the kokoro FALLBACK roster (grades A/B preferred; pick by story tone).
 roster:

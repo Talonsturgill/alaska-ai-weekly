@@ -36,14 +36,17 @@ REPO = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 SR = 44100
 CA = "/root/.ccr/ca-bundle.crt"
 
-# The committed reference clip of the owner's voice (see assets/voice/README.md).
+# THE LOCKED NARRATOR RECIPE (owner picked "take A" from an A-D comparison, 2026-07-14).
+# talon_ref_cond.wav is the smoothest 10s window (15-25s) of the owner's 41.5s source
+# recording (talon_ref.wav, kept alongside as the master). Chatterbox only conditions
+# on the FIRST 10s of the prompt (DEC_COND_LEN), so the window IS the voice; do not
+# swap it back to the full clip without re-running an approval comparison.
 REF_CLIP = os.environ.get(
-    "DISPATCH_VOICE_REF", os.path.join(REPO, "assets", "voice", "talon_ref.wav")
+    "DISPATCH_VOICE_REF", os.path.join(REPO, "assets", "voice", "talon_ref_cond.wav")
 )
 
-# Chatterbox delivery dials for a measured, documentary narrator.
-# exaggeration <0.5 flattens theatrics; cfg_weight 0.5 keeps pacing natural.
-CLONE_KW = dict(exaggeration=0.45, cfg_weight=0.5)
+# Take A dials: measured but alive. Approved sound; change = new owner sign-off.
+CLONE_KW = dict(exaggeration=0.45, cfg_weight=0.5, temperature=0.8)
 
 _state = {"backend": None, "model": None}
 
