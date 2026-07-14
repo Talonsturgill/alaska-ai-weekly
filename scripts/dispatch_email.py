@@ -38,12 +38,18 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
         for s in (sources or [])
     ) or "<li>See DISPATCH.md in the run branch for full sources + fact-check.</li>"
     buttons = ""
-    if vids.get("vertical"):
-        buttons += (f'<a class="dl" href="{vids["vertical"]}">&#9660;&nbsp; Download &middot; 9:16 (TikTok / full-screen)'
-                    f'<small>1080&times;1920 &middot; ~60s &middot; H.264 MP4</small></a>')
+    # LinkedIn is PRIMARY, so the 4:5 leads: 4:5 shows in the MAIN HOME FEED beside the post copy;
+    # 9:16 gets routed into LinkedIn's swipe-only vertical Video tab. Post the 4:5 to LinkedIn.
     if vids.get("square"):
-        buttons += (f'<a class="dl alt" href="{vids["square"]}">&#9660;&nbsp; Download &middot; 4:5 (LinkedIn feed)'
-                    f'<small>1080&times;1350 &middot; ~60s &middot; H.264 MP4</small></a>')
+        buttons += (f'<a class="dl" href="{vids["square"]}">&#9660;&nbsp; Post to LinkedIn &middot; 4:5 (main feed)'
+                    f'<small>1080&times;1350 &middot; ~60s &middot; H.264 MP4 &middot; stays in the home feed</small></a>')
+    if vids.get("vertical"):
+        buttons += (f'<a class="dl alt" href="{vids["vertical"]}">&#9660;&nbsp; TikTok &middot; 9:16 (full-screen)'
+                    f'<small>1080&times;1920 &middot; on LinkedIn this goes to the vertical Video tab, not the feed</small></a>')
+    feed_guide = ('<div class="warn" style="background:#eaf4ff;border-color:#b6d8f5;color:#245c8a;">'
+                  'For LinkedIn use the <b>4:5</b> cut (top button) so the video lands in the <b>main feed</b> '
+                  'next to your caption. The 9:16 is TikTok-native; uploaded to LinkedIn it gets pulled into the '
+                  'swipe-only Video tab instead of the feed.</div>') if vids.get("square") else ''
     warn = '<div class="warn">Heads up: these download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
     score_html = f"<h2>Grade</h2><ul><li>{score}</li></ul>" if score else ""
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
@@ -53,6 +59,7 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
 
   <h2>The video</h2>
   {buttons}
+  {feed_guide}
   {warn}
   {poster_html}
 
@@ -71,8 +78,11 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--post", required=True)
-    ap.add_argument("--video-url-vertical", required=True, help="9:16 TikTok cut")
-    ap.add_argument("--video-url-square", default="", help="4:5 LinkedIn cut")
+    ap.add_argument("--video-url-vertical", required=True, help="9:16 1080x1920 TikTok cut (dispatch_master.mp4)")
+    ap.add_argument("--video-url-square", default="",
+                    help="4:5 1080x1350 LinkedIn feed cut (dispatch_master_4x5.mp4). ALWAYS pass this — it is the "
+                         "primary LinkedIn deliverable; without it the draft only offers the 9:16, which LinkedIn "
+                         "routes to the Video tab instead of the main feed.")
     ap.add_argument("--poster-url", default="", help="hosted poster (preferred, keeps payload small)")
     ap.add_argument("--poster", default="", help="poster file to inline as base64 (heavier)")
     ap.add_argument("--voice", default=""); ap.add_argument("--music", default="")

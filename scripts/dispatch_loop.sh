@@ -39,11 +39,42 @@ if ! python quality_gate.py --frames "$FRAMES_DIR" --words "$WORK/audio/words60.
   exit 1
 fi
 
-echo "=== GATE PASS — encoding master ==="
+echo "=== GATE PASS — encoding BOTH masters (9:16 TikTok + 4:5 LinkedIn feed) ==="
+# 9:16 1080x1920 — TikTok-native. On LinkedIn this ratio is pulled into the swipe-only Video tab.
 ffmpeg -y -framerate 30 -i "$FRAMES_DIR/frame_%05d.png" -i "$WORK/audio/master60.wav" \
   -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -profile:v high \
   -c:a aac -b:a 320k -movflags +faststart -shortest "$WORK/dispatch_master.mp4" 2>"$WORK/_encode.log" \
-  || { echo "ENCODE FAIL"; tail -8 "$WORK/_encode.log"; exit 2; }
-echo "=== MASTER READY: $WORK/dispatch_master.mp4 ==="
-ls -la "$WORK/dispatch_master.mp4" | awk '{print "size:",$5,"bytes"}'
-echo "Next (master): scripts/upload_video.py -> verify HTTP 200 -> scripts/dispatch_email.py draft."
+  || { echo "9:16 ENCODE FAIL"; tail -8 "$WORK/_encode.log"; exit 2; }
+
+# 4:5 1080x1350 — THE LINKEDIN FEED CUT. 4:5 stays in the MAIN HOME FEED next to the post
+# copy; 9:16 does not. Center-crop of the 9:16 (composition keeps hero + captions inside the
+# centered 4:5 safe box per the routine spec). Cropped from the LOSSLESS PNG frames, not
+# re-encoded from the mp4, so no double compression. (1920-1350)/2 = 285 = centered;
+# override DISPATCH_CROP45_Y only if a run placed its captions outside the safe box.
+CROP_Y="${DISPATCH_CROP45_Y:-285}"
+ffmpeg -y -framerate 30 -i "$FRAMES_DIR/frame_%05d.png" -i "$WORK/audio/master60.wav" \
+  -vf "crop=1080:1350:0:$CROP_Y" \
+  -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -profile:v high \
+  -c:a aac -b:a 320k -movflags +faststart -shortest "$WORK/dispatch_master_4x5.mp4" 2>"$WORK/_encode45.log" \
+  || { echo "4:5 ENCODE FAIL"; tail -8 "$WORK/_encode45.log"; exit 2; }
+
+echo "=== MASTERS READY ==="
+for m in dispatch_master.mp4 dispatch_master_4x5.mp4; do
+  [ -f "$WORK/$m" ] && ls -la "$WORK/$m" | awk -v m="$m" '{print "  "m": "$5" bytes"}'; done
+# Prove the pixel dimensions so a wrong-ratio cut can never silently ship (this is the whole bug).
+python3 - "$WORK/dispatch_master.mp4" "$WORK/dispatch_master_4x5.mp4" <<'PY'
+import subprocess, sys
+want={"dispatch_master.mp4":"1080x1920","dispatch_master_4x5.mp4":"1080x1350"}
+for p in sys.argv[1:]:
+    name=p.split("/")[-1]
+    try:
+        wh=subprocess.check_output(["ffprobe","-v","error","-select_streams","v:0",
+            "-show_entries","stream=width,height","-of","csv=s=x:p=0",p]).decode().strip()
+        ok="OK" if wh==want.get(name) else f"MISMATCH (want {want.get(name)})"
+        print(f"  {name}: {wh}  [{ok}]")
+    except Exception as e:
+        print(f"  {name}: probe failed {e}")
+PY
+echo ""
+echo "Next: upload BOTH cuts (scripts/upload_video.py) -> verify HTTP 200 -> scripts/dispatch_email.py."
+echo ">>> LinkedIn: post the 4:5 (dispatch_master_4x5.mp4) — it lands in the MAIN FEED. 9:16 = TikTok."
