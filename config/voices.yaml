@@ -27,10 +27,13 @@ defaults:
   publish_voice: cloned:talon            # chatterbox zero-shot of assets/voice/talon_ref.wav
   fallback_voice: kokoro:af_heart        # when the clip/stack is absent — disclose the swap
   draft_voice:   edge_tts:en-US-AvaMultilingualNeural   # rate -3%; crash net only
-  # FIRST-USE GATE: SATISFIED 2026-07-14. The owner heard an A-D comparison and picked
-  # take A. Locked recipe: assets/voice/talon_ref_cond.wav (the 15-25s window of the
-  # source recording) + exaggeration 0.45 / cfg_weight 0.5 / temperature 0.8 (see
-  # vo_backends.CLONE_KW). Changing the window or dials requires a fresh owner sign-off.
+  # FIRST-USE GATE: SATISFIED 2026-07-14. Owner picked take A (voice/likeness) from an
+  # A-D comparison, then E2 (clarity) from an enunciation comparison. LOCKED RECIPE:
+  #   ref  = assets/voice/talon_ref_cond.wav (the 15-25s window of the source recording)
+  #   dials= exaggeration 0.45 / cfg_weight 0.4 / temperature 0.6 / repetition_penalty 1.3
+  #   text = normalize_for_tts() spells numbers/ordinals/currency/percent before synthesis
+  # (all in vo_backends.py). Changing the window, the dials, or the normalizer's behavior
+  # requires a fresh owner listening sign-off.
 
 # The standing narrator, then the kokoro FALLBACK roster (grades A/B preferred; pick by story tone).
 roster:
@@ -52,7 +55,8 @@ guidance:
   - "Always state the voice + license in the Gmail draft credits. For the cloned voice say
      plainly: narration is an AI clone of the owner's own voice (Chatterbox MIT, Perth
      watermark embedded), and record which backend actually spoke (vo_backends.backend_report())."
-  - "Delivery dials for the clone live in vo_backends.CLONE_KW (exaggeration 0.45 / cfg 0.5 =
-     measured documentary). Tune per story mood there, never per phrase."
+  - "Delivery dials for the clone live in vo_backends.CLONE_KW (exaggeration 0.45 / cfg 0.4 /
+     temperature 0.6 / repetition_penalty 1.3 = measured, clear documentary). Tune per story
+     mood there, never per phrase. Numbers/dates/percent are auto-spelled by normalize_for_tts()."
   - "edge-tts is the crash net only. If it ever narrates a published cut, say so in the draft."
   - "Write VO numbers/acronyms phonetically for whichever synth is used."

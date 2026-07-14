@@ -45,10 +45,83 @@ REF_CLIP = os.environ.get(
     "DISPATCH_VOICE_REF", os.path.join(REPO, "assets", "voice", "talon_ref_cond.wav")
 )
 
-# Take A dials: measured but alive. Approved sound; change = new owner sign-off.
-CLONE_KW = dict(exaggeration=0.45, cfg_weight=0.5, temperature=0.8)
+# Approved recipe: take-A voice + E2 clarity dials (owner A/B sign-off 2026-07-14).
+# Lower temperature + slower cfg_weight + firmer repetition_penalty = crisper consonants
+# and clearer numbers/acronyms without going robotic. Change = new owner sign-off.
+CLONE_KW = dict(exaggeration=0.45, cfg_weight=0.4, temperature=0.6, repetition_penalty=1.3)
 
 _state = {"backend": None, "model": None}
+
+# ---------------------------------------------------------------- text normalization
+# The single biggest enunciation lever besides the dials: never hand the model raw
+# digits/ordinals/symbols. "1,750" spoken as digits slurs; "one thousand seven hundred
+# fifty" lands. This runs on EVERY backend via synth(). It only touches digit-bearing
+# tokens, so already-phonetic writing (the brand rule) passes through untouched, and a
+# second pass is a no-op. Acronyms are deliberately LEFT ALONE (pronunciation is
+# case-by-case: NASA is a word, U A F is letters) — the writer spells those per brand.yaml.
+_ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+         "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+         "seventeen", "eighteen", "nineteen"]
+_TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+_SCALE = [(1_000_000_000_000, "trillion"), (1_000_000_000, "billion"),
+          (1_000_000, "million"), (1_000, "thousand"), (100, "hundred")]
+_ORD_LAST = {"one": "first", "two": "second", "three": "third", "five": "fifth",
+             "eight": "eighth", "nine": "ninth", "twelve": "twelfth"}
+
+
+def _int_to_words(n):
+    if n < 0:
+        return "negative " + _int_to_words(-n)
+    if n < 20:
+        return _ONES[n]
+    if n < 100:
+        return _TENS[n // 10] + ("" if n % 10 == 0 else " " + _ONES[n % 10])
+    for base, name in _SCALE:
+        if n >= base:
+            rem = n % base
+            return _int_to_words(n // base) + " " + name + ("" if rem == 0 else " " + _int_to_words(rem))
+    return _ONES[n]
+
+
+def _number_phrase(s):
+    s = s.replace(",", "")
+    if "." in s:
+        whole, frac = s.split(".", 1)
+        wp = _int_to_words(int(whole)) if whole else "zero"
+        return wp + " point " + " ".join(_ONES[int(d)] for d in frac)
+    return _int_to_words(int(s))
+
+
+def _ordinal_words(n):
+    parts = _int_to_words(n).split()
+    last = parts[-1]
+    if last in _ORD_LAST:
+        parts[-1] = _ORD_LAST[last]
+    elif last.endswith("y"):
+        parts[-1] = last[:-1] + "ieth"
+    else:
+        parts[-1] = last + "th"
+    return " ".join(parts)
+
+
+def normalize_for_tts(text):
+    """Spell numbers, ordinals, currency, percent and a few symbols so any TTS backend
+    enunciates them cleanly. Idempotent (output has no digits). Acronyms untouched."""
+    import re
+    t = text
+    _mag = r"(million|billion|thousand|trillion)"
+    t = re.sub(r"\$(\d[\d,]*(?:\.\d+)?)\s+" + _mag,
+               lambda m: _number_phrase(m.group(1)) + " " + m.group(2) + " dollars", t, flags=re.I)
+    t = re.sub(r"\$(\d[\d,]*(?:\.\d+)?)",
+               lambda m: _number_phrase(m.group(1)) + " dollars", t)
+    t = re.sub(r"\b(\d+)(?:st|nd|rd|th)\b",
+               lambda m: _ordinal_words(int(m.group(1))), t, flags=re.I)
+    t = re.sub(r"(\d[\d,]*(?:\.\d+)?)\s*%",
+               lambda m: _number_phrase(m.group(1)) + " percent", t)
+    t = re.sub(r"\b\d[\d,]*\.\d+\b", lambda m: _number_phrase(m.group(0)), t)
+    t = re.sub(r"\b\d[\d,]*\b", lambda m: _number_phrase(m.group(0)), t)
+    t = t.replace("&", " and ")
+    return re.sub(r"\s+", " ", t).strip()
 
 
 def _ca_env():
@@ -145,7 +218,10 @@ def edge_synth(text):
 
 # ---------------------------------------------------------------- picker
 def synth(text):
-    """Synthesize one phrase with the best available backend (sticky per process)."""
+    """Synthesize one phrase with the best available backend (sticky per process).
+    Text is normalized (numbers/ordinals/currency/percent spelled out) first, so every
+    backend enunciates cleanly."""
+    text = normalize_for_tts(text)
     if _state["backend"] is None:
         if cloned_available():
             _state["backend"] = "cloned"

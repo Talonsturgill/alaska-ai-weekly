@@ -5,8 +5,14 @@ STATUS: LIVE. `talon_ref.wav` is the owner's 41.5s master recording (landed
 smoothest 10s window (15-25s) of the master, approved by the owner as "take A"
 in an A-D listening comparison. The pipeline clones THIS file zero-shot with
 Chatterbox every run (the engine only reads the first 10s of its prompt, so
-the window is the voice). Re-cutting the window or replacing either file
-requires a fresh owner listening sign-off (see config/voices.yaml defaults).
+the window is the voice).
+
+Delivery is the approved **E2 clarity** recipe: exaggeration 0.45 / cfg_weight
+0.4 / temperature 0.6 / repetition_penalty 1.3, and every line runs through
+`normalize_for_tts()` so numbers, dates, currency and percent are spelled out
+before your voice speaks them ("1,750" to "one thousand seven hundred fifty").
+Re-cutting the window, changing the dials, or replacing either file requires a
+fresh owner listening sign-off (see config/voices.yaml defaults).
 
 ## Recording spec
 
