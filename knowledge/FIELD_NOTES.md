@@ -386,3 +386,46 @@ into the doctrine/library files and prune here.
   the busy-art/contrast noise floors BEFORE trusting a green run. Sources:
   https://github.com/microsoft/playwright/issues/33566 ,
   https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/check
+
+## 2026-07-14 — craft refresh (LinkedIn saves + isometric geometry)
+
+- Saves are among the strongest 2026 LinkedIn distribution signals, and a
+  clear NUMBERED framework (a titled, enumerated set the reader can act on)
+  is one of the most consistently SAVED B2B document formats. When a story
+  supports it honestly, a numbered spine (N steps / N rooms / N forces) is a
+  save-bait structure worth reaching for, without ever faking enumeration.
+  Sources: https://www.oktopost.com/blog/linkedin-carousel-pdf-best-practices/ ,
+  https://www.socialpilot.co/blog/linkedin-carousel
+- Isometric projection (three axes at 120 degrees, equal foreshortening) is
+  a fresh hero geometry available to this deck series: pseudo-3D depth from
+  a purely 2D SVG/Canvas draw, no GL frame required, and it reads as a
+  built system (a grid, a campus, a network) rather than a camera-map or a
+  raymarched hero. Keep line-weight and shading layered per the doctrine
+  ladder. Source: https://fastercapital.com/content/Visualization-Techniques--Isometric-Projection--A-New-Angle-on-Data-Visualization.html
+
+## 2026-07-14 — retro (Carousel No. 7, "The Anchorage Address", 8.95)
+
+- DEGRADED SOLO RUN. All studio subagents (scout, fact-checker, treatment,
+  copywriter, pixel-critic, flow-critic, scorer, upgrade-engineer) died on the
+  account weekly usage limit ("resets 5pm UTC"). Main-loop WebSearch/WebFetch
+  and the Gmail/GitHub MCP tools kept working, so the showrunner ran every
+  phase solo and still shipped. The binding risk in that mode is main-loop
+  budget, not any one subagent; the pipeline degrades to a one-operator studio
+  cleanly.
+- STORY. An Alaska-incorporated, Anchorage-HQ, Native-owned SBA 8(a) firm
+  (ReconCraft) won a $24.96M sole-source Navy contract for autonomous
+  low-profile vessels, built in Clackamas, Oregon. The sharpest honest angle
+  was the gap between Alaska's paper footprint (ownership, 8(a), address) and
+  its physical one (the Oregon shipyard). FAR 19.805-1(b)(2) tied the
+  sole-source basis directly to the 8(a) status.
+- CRAFT. The waterline-as-both-physics-and-argument metaphor carried the deck
+  on one fixed-y line plus sonar rings, no GL required. Canvas-2D orthographic
+  hero instead of a rendered-ladder GPU hero, by reliability choice; that is
+  the run's scored growth edge.
+- HONESTY GUARDRAIL. ALPV spec figures are the vessel CLASS's documented
+  numbers (Leidos/DIU/Marine program), not ReconCraft's unspecified design, and
+  every specs slide says so. Autonomy framed as uncrewed remote plus waypoint
+  today with future autonomy, never full AI self-piloting.
+- DATE BOUNDARY. Trigger fired at Anchorage 2026-07-13 20:10 after the 07-13
+  edition had already shipped; dated this run 2026-07-14 to avoid a same-date
+  collision. Watch for this at the day boundary.

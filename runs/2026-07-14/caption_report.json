@@ -1,0 +1,13 @@
+{
+  "chars": 896,
+  "hook": "An Alaska Native-owned firm just won a $24.96M Navy contract for autonomous stealth boats. They will be built in Oregon.",
+  "hook_len": 120,
+  "hashtags": [
+    "#AlaskaBusiness",
+    "#DefenseContracting",
+    "#Autonomy"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

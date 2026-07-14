@@ -1,0 +1,114 @@
+{
+  "run_date": "2026-07-14",
+  "carousel_no": 7,
+  "story_id": "reconcraft-8a-navy-autonomous-vessels",
+  "one_line": "An Alaska Native-owned, Anchorage-registered 8(a) firm won a $24.96M sole-source Navy contract for autonomous stealth vessels, to be built in Oregon.",
+  "verification_note": "Solo showrunner acting as fact-checker: the scout and fact-checker subagents were unavailable this run (account weekly usage limit). Every claim below was re-fetched and read by the showrunner directly. ALPV class specs (length, payload, range, freeboard, autonomy level) describe the ALPV vessel category (Leidos/DIU/Marine Corps program reporting), NOT ReconCraft's specific unspecified design, and are labeled background; they must be attributed to the class on any slide.",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "Naval Sea Systems Command awarded ReconCraft LLC, Anchorage, Alaska, a $24,960,408 firm-fixed-price contract for autonomous low-profile vessels.",
+      "verbatim": "ReconCraft LLC,* Anchorage, Alaska, is awarded a $24,960,408 firm-fixed-price contract for autonomous low-profile vessels. ... Naval Sea Systems Command, Washington, D.C., is the contracting activity (N00024-26-C-6324).",
+      "type": "primary",
+      "sources": [{"url": "https://www.war.gov/News/Contracts/Contract/Article/4538357/contracts-for-july-8-2026/", "outlet": "U.S. Department of War (DoD) daily contracts", "date": "2026-07-08"}],
+      "confidence": 0.99
+    },
+    {
+      "id": "C2",
+      "text": "The award was announced in the Department's July 8, 2026 contracts list; the contract number is N00024-26-C-6324.",
+      "verbatim": "Contracts for July 8, 2026 ... (N00024-26-C-6324).",
+      "type": "primary",
+      "sources": [{"url": "https://www.war.gov/News/Contracts/Contract/Article/4538357/contracts-for-july-8-2026/", "outlet": "U.S. Department of War", "date": "2026-07-08"}],
+      "confidence": 0.99
+    },
+    {
+      "id": "C3",
+      "text": "Work will be performed in Clackamas, Oregon, and is expected to be completed by November 2028.",
+      "verbatim": "Work will be performed in Clackamas, Oregon, and is expected to be completed by November 2028.",
+      "type": "primary",
+      "sources": [{"url": "https://www.war.gov/News/Contracts/Contract/Article/4538357/contracts-for-july-8-2026/", "outlet": "U.S. Department of War", "date": "2026-07-08"}],
+      "confidence": 0.99
+    },
+    {
+      "id": "C4",
+      "text": "The contract was not competitively procured, in accordance with Federal Acquisition Regulation 19.805-1(b)(2), the sole-source authority under the SBA 8(a) Business Development program.",
+      "verbatim": "This contract was not competitively procured in accordance with Federal Acquisition Regulation 19.805-1(b)(2).",
+      "type": "primary",
+      "note": "FAR Subpart 19.8 governs contracting through the SBA 8(a) program; 19.805-1 is the competitive-vs-sole-source rule for 8(a). The citation confirms this was an 8(a) sole-source award.",
+      "sources": [{"url": "https://www.war.gov/News/Contracts/Contract/Article/4538357/contracts-for-july-8-2026/", "outlet": "U.S. Department of War", "date": "2026-07-08"}],
+      "confidence": 0.95
+    },
+    {
+      "id": "C5",
+      "text": "The award is funded from the Navy's fiscal 2026 account for accelerated procurement and fielding of innovative technologies; the full $24,960,408 was obligated at award and expires at the end of the current fiscal year.",
+      "verbatim": "Fiscal 2026 appropriation account accelerated procurement and fielding of innovative technologies (Navy) funds in the amount of $24,960,408 will be obligated at the time of the award and will expire at the end of the current fiscal year.",
+      "type": "primary",
+      "sources": [{"url": "https://www.war.gov/News/Contracts/Contract/Article/4538357/contracts-for-july-8-2026/", "outlet": "U.S. Department of War", "date": "2026-07-08"}],
+      "confidence": 0.99
+    },
+    {
+      "id": "C6",
+      "text": "ReconCraft LLC is incorporated in Alaska and headquartered in Anchorage, and holds SBA 8(a) certification and Native American / tribally-owned small-business status.",
+      "verbatim": "Headquartered in 'Anchorage, AK' with incorporation in Alaska. ... 'SBA 8(a) Certification' (active Dec. 2, 2016 - Dec. 2, 2026); 'Native American Owned'; 'Tribally Owned Firm'; Self-certified as a Small Disadvantaged Business; ... Minority-owned business.",
+      "type": "high",
+      "sources": [{"url": "https://www.highergov.com/awardee/reconcraft-llc-10114995/", "outlet": "HigherGov (SAM.gov-sourced awardee profile)", "date": "2026-07"}],
+      "confidence": 0.9
+    },
+    {
+      "id": "C7",
+      "text": "ReconCraft's manufacturing facility is in Clackamas, Oregon; the company's own website lists its address as 9891 SE Mather Rd., Clackamas, OR 97015 and says it builds vessels up to 120 feet, 'Proudly Manufactured in the USA.'",
+      "verbatim": "9891 SE Mather Rd., Clackamas, OR 97015 ... BUILDING VESSELS UP TO 120 FEET IN LENGTH ... PROUDLY MANUFACTURED IN THE USA",
+      "type": "primary",
+      "sources": [{"url": "https://reconcraft.com/", "outlet": "ReconCraft LLC (company site)", "date": "2026-07"}],
+      "confidence": 0.95
+    },
+    {
+      "id": "C8",
+      "text": "An autonomous low-profile vessel (ALPV) is an uncrewed, semi-submersible craft whose configuration was influenced by narco-submarines; it rides low with most of the structure submerged to minimize radar, sonar, visual and infrared detection.",
+      "verbatim": "The vessel's 'configuration was influenced by the profile and operational characteristics of narco-submarines' -- semi-submersible drug-trafficking vessels designed to minimize radar, sonar, visual, and infrared detection.",
+      "type": "background-class",
+      "sources": [{"url": "https://armyrecognition.com/news/navy-news/2025/us-marines-train-in-japan-with-alpv-autonomous-low-profile-vessel-based-on-narco-submarine-designs-for-stealth-operations", "outlet": "Army Recognition", "date": "2025-04-24"}],
+      "confidence": 0.9
+    },
+    {
+      "id": "C9",
+      "text": "ALPV class figures (a documented program design): about 19.75 meters (roughly 65 feet) long, less than 0.61 meters of freeboard at operating displacement, payload roughly 2,000 to 4,627 kilograms, and an operational range near 2,200 nautical miles at about 8 knots.",
+      "verbatim": "19.75 meters in overall length ... less than 0.61 meters of freeboard ... payload capacity ranging from 2,000 to 4,627 kilograms ... operational range of 4,074 kilometers at 14.8 km/h -- approximately 2,200 nautical miles.",
+      "type": "background-class",
+      "note": "Describes the ALPV vessel class (a documented program design), NOT ReconCraft's specific unspecified vessel. Attribute to the class on-slide.",
+      "sources": [{"url": "https://armyrecognition.com/news/navy-news/2025/us-marines-train-in-japan-with-alpv-autonomous-low-profile-vessel-based-on-narco-submarine-designs-for-stealth-operations", "outlet": "Army Recognition", "date": "2025-04-24"}],
+      "confidence": 0.85
+    },
+    {
+      "id": "C10",
+      "text": "Current ALPVs operate with no onboard personnel using remote control and waypoint navigation, with provisions for enhanced autonomous capability in the future; the Defense Innovation Unit wants them to navigate autonomously in congested waters and when communications and GPS are denied.",
+      "verbatim": "no onboard personnel ... utilizing 'remote control and waypoint navigation, with provisions for enhanced autonomous capability in the future.' ... The platform must operate autonomously, including 'in congested waterways and ports -- using GPS and when communications are down.'",
+      "type": "background-class",
+      "sources": [
+        {"url": "https://armyrecognition.com/news/navy-news/2025/us-marines-train-in-japan-with-alpv-autonomous-low-profile-vessel-based-on-narco-submarine-designs-for-stealth-operations", "outlet": "Army Recognition", "date": "2025-04-24"},
+        {"url": "https://defensescoop.com/2026/03/04/alpv-autonomous-low-profile-vessel-marine-corps-diu/", "outlet": "DefenseScoop", "date": "2026-03-04"}
+      ],
+      "confidence": 0.88
+    },
+    {
+      "id": "C11",
+      "text": "ReconCraft has a track record of Navy special-operations and patrol craft, including a 2023 contract worth about $35.9 million for a dozen 40-foot patrol boats and a role in a combined $290 million patrol-boat award alongside Louisiana-based Metal Shark for the Navy's Naval Expeditionary Combat Command.",
+      "verbatim": "including a $35.9 million contract in 2023 to build a dozen 40-foot patrol boats, a role in a combined $290 million indefinite-delivery contract alongside Louisiana-based Metal Shark to supply up to 73 patrol boats for the Navy's Naval Expeditionary Combat Command",
+      "type": "context",
+      "sources": [
+        {"url": "https://www.shephardmedia.com/news/naval-warfare/us-navy-contracts-alaskan-reconcraft-for-new-patrol-boats/", "outlet": "Shephard Media", "date": "2023-04-25"},
+        {"url": "https://news.clearancejobs.com/2024/05/16/navy-awards-metal-shark-and-reconcraft-290-million-for-patrol-boats/", "outlet": "ClearanceJobs", "date": "2024-05-16"}
+      ],
+      "confidence": 0.85
+    },
+    {
+      "id": "C12",
+      "text": "Trade and general reporting placed the award one day after Iran fired missiles at a third commercial ship in the Strait of Hormuz, framing the timing against renewed maritime-security pressure (context only, not central to the Alaska story).",
+      "verbatim": "Navy Awards $25M for Stealthy Autonomous Boats Days After Iran Breaks Hormuz Truce",
+      "type": "context-low",
+      "note": "Headline-level context from a secondary outlet; used only as light why-now framing, never as an on-slide number.",
+      "sources": [{"url": "https://www.techtimes.com/articles/320018/20260709/navy-awards-25m-stealthy-autonomous-boats-days-after-iran-breaks-hormuz-truce.htm", "outlet": "Tech Times", "date": "2026-07-09"}],
+      "confidence": 0.6
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
  "_spec": {
-  "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged — name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
+  "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged \u2014 name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
   "entry_schema": {
    "run_date": "YYYY-MM-DD",
    "carousel_no": "int",
@@ -162,6 +162,26 @@
     "FIRM/SOFT dividing-rule motif: type-weight asymmetry (solid vs dashed ghost) AS the argument, the rule migrating per beat and sealing into a gold 'closed door' at synthesis then splitting open into the close question",
     "rendered-object legibility scrim: a Deep-Sea-Scrim DOM gradient behind the text column, layered over a GPU render, guarantees body contrast without moving the hero object off its composition"
    ]
+  },
+  {
+   "run_date": "2026-07-14",
+   "carousel_no": 7,
+   "slide_count": 8,
+   "hero_structure": "Waterline cross-section system: a single luminous horizontal waterline at a fixed y=812 on every slide, with a detailed Canvas-2D orthographic semi-submersible ALPV cross-section on S3 (freeboard sliver above; full hull + dashed payload-bay cutaway + ballast hatch + rim light + gold deck edge below). Above the line = visible/Alaska-paper; below = hidden/Oregon-steel. NOT a cartographic camera-map, seismic-trace instrument panel, subsurface cutaway panorama-spine, autonomy-ring emblem, or FIRM/SOFT type-weight ledger.",
+   "atmosphere": "sonar-dark open-water night: abyssal navy/black water (#02060F/#061423/#0A1E30), a thin luminous waterline (#F4F8FF core plus cyan bloom), cyan-green sonar return arcs from a fixed bottom-right sensor, low slate stealth hull. NOT obsidian-instrument/ember-phosphor, NOT core-sample ochre, NOT spruce-night+fire, NOT cool drafting-film blueprint.",
+   "depth_technique": "Canvas-2D layered depth (sky gradient + horizon haze + water depth gradient + noise-warped caustics + subsurface radial glow + waterline shadowBlur bloom) and an orthographic cross-section hero with above/below-water tonal split via clip. Deliberate reliability choice in a degraded solo run (no GPU-PBR/raymarch hero, no pixel-critic loop); argued in the storyboard.",
+   "line_voice": "technical/nautical (dashed freeboard caller, dashed payload-bay cutaway, gold deck edge, cyan rim light, mono contract-ledger rows, dashed gold/slate connector on the geography split)",
+   "continuity_device": "motif:the-waterline (fixed y=812 across all 8 slides, enter-left/exit-right) plus sonar return rings from a fixed sensor origin; gold Polaris bookends (S1, S8). NOT ring/emblem, NOT type-weight ledger.",
+   "hook_archetype": "place-paradox two-sentence cover ('The boat is Alaskan. The shipyard is not.'). NOT two-ways-to-count, who-decides/four-rooms, or firm-vs-soft-ledger openers.",
+   "palette_family": "abyssal-navy + sonar cyan/green (#3CE6B4/#5AC8F0) + waterline white (#F4F8FF) + flag/Alaska gold (#FFC72C). Semantic lock gold=Alaska paper/decision/money, cyan-green=vessel/autonomy/sonar, white=waterline truth, slate=hull/Oregon steel. NOT depleted-reservoir ochre, spruce-fire, or drafting-blueprint families.",
+   "type_pairing": "Fraunces (essayistic display serif, opsz high) + Space Grotesk (grotesk body) + JetBrains Mono (tabular telemetry/contract rows)",
+   "narrative_structure": "paradox cover -> the deal (contract card) -> the boat (hero+specs) -> autonomy honestly (aspiration above/reality below) -> the 8(a) mechanism -> paper-vs-steel geography split -> reframe breather -> debatable close",
+   "variance_dials": {
+    "design_variance": 4,
+    "visual_density": 3,
+    "type_temperature": 4
+   },
+   "new_techniques_logged": []
   }
  ]
 }

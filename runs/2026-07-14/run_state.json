@@ -1,0 +1,38 @@
+{
+ "run_date": "2026-07-14",
+ "carousel_no": 7,
+ "date_note": "Trigger fired at Anchorage 2026-07-13 20:10 (UTC 2026-07-14 04:10). The 2026-07-13 edition (No.6) already shipped ~22h ago; harness currentDate=2026-07-14. This is the next daily edition, dated 2026-07-14 to avoid a same-date collision.",
+ "phases": {
+  "wake": "done",
+  "craft_refresh": "done",
+  "research": "done",
+  "claims": "done",
+  "docket": "done",
+  "selection": "done",
+  "directors_room": "done",
+  "copy": "done",
+  "art_build": "done",
+  "pixel_review": "done",
+  "flow_review": "done",
+  "assemble": "done",
+  "scoring": "done",
+  "ship": "in_progress",
+  "upgrade": "pending",
+  "gmail": "pending",
+  "retro": "pending"
+ },
+ "artifacts": {
+  "plan": "out/2026-07-14/plan.md",
+  "claims": "out/2026-07-14/claims.json",
+  "field_notes": "knowledge/FIELD_NOTES.md (2026-07-14 craft-refresh entry)",
+  "docket": "ledger/docket.json (GVEA, AKLNG, STAK 2026-07-14 notes)",
+  "selection": "out/2026-07-14/selection.md",
+  "storyboard": "out/2026-07-14/storyboard.md",
+  "copy": "out/2026-07-14/copy.json",
+  "caption": "out/2026-07-14/caption.txt",
+  "slides": "out/2026-07-14/slides (8) + render PNGs",
+  "final": "out/2026-07-14/final (carousel.pdf vector 2.63MB, contact_sheet, thumbs)",
+  "score": "out/2026-07-14/score_report.json (8.95)"
+ },
+ "research_note": "All scout+subagent tasks hit the account weekly usage limit; showrunner executed research/claims solo (main-loop WebSearch/WebFetch working)."
+}

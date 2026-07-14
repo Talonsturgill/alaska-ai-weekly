@@ -280,6 +280,47 @@
     "https://www.sullivan.senate.gov/newsroom/press-releases/sullivan-secures-56-provisions-historic-26-billion-for-alaska-in-fy-2027-defense-authorization"
    ],
    "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-14",
+   "carousel_no": 7,
+   "topic": "ReconCraft (Anchorage, Native-owned SBA 8(a)) won a $24.96M sole-source Navy contract for autonomous low-profile (stealth) vessels, built in Clackamas, Oregon",
+   "angle": "What 'Alaska' means in the autonomous-defense build-out is, here, a contracting instrument (Native-owned 8(a) status plus an Anchorage address) rather than a shipyard; the boats are welded Outside. Thesis 'the boat is Alaskan, the shipyard is not' via a single waterline that splits Alaska's paper footprint from its physical one.",
+   "entities": [
+    "ReconCraft LLC",
+    "Anchorage",
+    "Clackamas Oregon",
+    "U.S. Navy",
+    "Naval Sea Systems Command",
+    "autonomous low-profile vessel",
+    "ALPV",
+    "SBA 8(a) program",
+    "FAR 19.805-1(b)(2)",
+    "narco-submarine"
+   ],
+   "keywords": [
+    "autonomous vessel",
+    "uncrewed",
+    "semi-submersible",
+    "stealth",
+    "defense contract",
+    "sole source",
+    "set-aside",
+    "Native-owned",
+    "tribally-owned",
+    "8(a)",
+    "Alaska business",
+    "federal procurement",
+    "waterline",
+    "freeboard"
+   ],
+   "headline": "The boat is Alaskan. The shipyard is not.",
+   "sources_lead": [
+    "https://www.war.gov/News/Contracts/Contract/Article/4538357/contracts-for-july-8-2026/",
+    "https://www.highergov.com/awardee/reconcraft-llc-10114995/",
+    "https://reconcraft.com/"
+   ],
+   "outcome_notes": ""
   }
  ]
 }

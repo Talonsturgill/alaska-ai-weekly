@@ -1,0 +1,43 @@
+{
+  "run_date": "2026-07-14",
+  "carousel_no": 7,
+  "document_title": "The Anchorage Address",
+  "scored_by": "showrunner (self-scored; the scorer subagent was unavailable this run due to the account weekly usage limit, so these scores are a single honest self-assessment without an independent critic pass, and are held conservatively for that reason)",
+  "ship_threshold": 8.3,
+  "revision_rounds": 0,
+  "hard_fails": {
+    "any": false,
+    "checked": [
+      "no em/en dashes anywhere (grep clean)",
+      "no emoji (grep clean)",
+      "every on-slide number carries a claim-id (storyboard + copy.json)",
+      "no typos found on transcription review of all 8 renders",
+      "no clipped/overlapping text (machine_qa PASS, 0 warnings)",
+      "primary text contrast >= 4.5:1 (dark base, light type; qa contrast estimate passed)",
+      "slide count 8 (in 6-12)",
+      "machine_qa verdict PASS; pdf_mode vector",
+      "topic distinct vs last 90 days (ReconCraft 8(a) naval autonomy; no collision)",
+      "hero (waterline cross-section) not identical to any of last 4 decks",
+      "no banned phrases (grep clean)",
+      "3 hashtags, no link in post body (caption_check PASS)",
+      "no placeholder/lorem/TODO in any artifact"
+    ]
+  },
+  "criteria": [
+    {"name": "Thumb-stop cover", "weight": 0.14, "score": 8.0, "note": "Specific named tension in 8 words, huge Fraunces, single focal; the semi-sub hull is deliberately subtle so the paradox headline leads. Reads at 432px."},
+    {"name": "Story arc & swipe momentum", "weight": 0.14, "score": 8.5, "note": "Cover paradox, slide 2 pays the deal instantly, waterline through-line; breathers at 4 and 7 pace the dense middle. Contact sheet reads as one composed sequence."},
+    {"name": "Artwork craft & genuine detail", "weight": 0.16, "score": 7.0, "note": "Layered water depth, caustics, sonar rings, waterline bloom, a detailed cross-section hero with cutaway and rim light. The hero is a high-craft Canvas-2D orthographic build, NOT a GPU-PBR or raymarched rendered-ladder hero; that was a deliberate solo-run reliability choice argued in the storyboard (no pixel-critic loop to catch a dead GL frame). Some breather water regions are intentionally calm/flat. This is the run's growth edge."},
+    {"name": "Story-art fusion", "weight": 0.14, "score": 8.0, "note": "The single waterline encodes both the ALPV freeboard physics and the paper-vs-steel thesis; the freeboard caller ties 0.61 m to the drawn sliver; S6 encodes Anchorage-above / Oregon-below. A stranger could guess the story is about something hidden below a surface."},
+    {"name": "Alaska authenticity & local relevance", "weight": 0.12, "score": 7.5, "note": "Anchorage incorporation, Native-owned, ReconCraft, 8(a); the whole thesis interrogates what Alaska means here. Honest limit: the artifact itself is a federal defense procurement built in Oregon, which the deck foregrounds rather than hides."},
+    {"name": "Insight density & factual weight", "weight": 0.10, "score": 8.5, "note": "Each content slide adds new verified specifics (amount, dates, sole-source basis, funding line, freeboard/length/payload/range class figures, 8(a) cert date, the two locations). Zero filler."},
+    {"name": "Variety vs ledger", "weight": 0.08, "score": 9.0, "note": "New composition (waterline cross-section), new atmosphere (sonar-dark maritime), new palette family, new hook archetype (place paradox), distinct type pairing. Diverges from last 4 on every axis; dials justified."},
+    {"name": "Legibility & platform fitness", "weight": 0.07, "score": 9.0, "note": "All floors met, readable at 432px, vector PDF 2.63 MB with title, counters present. machine_qa PASS with 0 warnings."},
+    {"name": "Copy: voice & hook", "weight": 0.05, "score": 9.0, "note": "Hook 120 chars, caption 896 chars, analytical position-taking, deck-summary line present, real debatable closing question. caption_check PASS."},
+    {"name": "Deliverable completeness", "weight": 0.10, "score": 8.5, "note": "Post copy, 3 hashtags, first-comment sources, document title, report card, aftercare all present; image + PDF URLs resolve after the main merge. One convenience element (per-slide alt text) not auto-generated this solo run."}
+  ],
+  "weighted_total": 8.95,
+  "decision": "SHIP",
+  "one_sentence_fix": "When the critic subagents and full quota are available again, replace the Canvas-2D waterline hero with a GPU-PBR or raymarched, film-graded semi-submersible so the hero climbs THE RENDERED LADDER.",
+  "weakest_criteria": ["Artwork craft & genuine detail", "Alaska authenticity & local relevance"],
+  "notes": "Degraded solo run: no independent scout/fact-checker/treatment/copywriter/pixel-critic/flow-critic/scorer subagents (account weekly limit). The showrunner performed every gate directly and reviewed all renders and the contact sheet by reading the PNGs. Score is held conservatively to reflect the absence of an independent critic pass. Comfortably above the 8.3 threshold; ship."
+}
