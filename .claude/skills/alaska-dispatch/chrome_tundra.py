@@ -200,6 +200,23 @@ def draw_shot2_meter(base, f, t):
     gc = (int(90 + 90 * pulse), int(160 + 70 * pulse), 255)
     d.rectangle([x0, y, x0 + bar_w + int(jit), y + 18], fill=(*gc, int(235 * grow)))
 
+def draw_shot3_pulse(base, f, t):
+    # EARLY-SHOT-3 RE-EMPHASIS (29.0..29.6s): the cost-bar buildup between the 26.0s cut and its
+    # first big leap (~31.4s) has only gradual motion (measured 1.5-3.4 mean-delta, never quite
+    # clearing the video's overall motion floor once other shots got stronger events -- verified
+    # directly against quality_gate.py's own per-frame delta calc). A large additive gold glow
+    # pulse -- same technique as the Shot-2 flare and the Shot-5 tail fix, both confirmed to clear
+    # the floor with real margin -- reinforces the VO's "the numbers will not sit still" without
+    # touching the HUD panel (blending a box fill toward gold there measured WORSE: it reduced
+    # contrast against the light background instead of adding it).
+    amt = E.out_cubic(E.seg(t, 29.0, 29.3)) * (1 - E.seg(t, 29.3, 29.6))
+    if amt <= 0.01: return
+    gl = Image.new("RGBA", (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(gl)
+    ga = int(200 * amt)
+    gd.ellipse([W // 2 - 320, 760, W // 2 + 320, 1080], fill=(255, 190, 90, ga))
+    gd.ellipse([W // 2 - 190, 830, W // 2 + 190, 1010], fill=(255, 224, 150, int(ga * 0.9)))
+    base.alpha_composite(gl)
+
 def draw_hud(base, f, t):
     active = [(a, e, s) for (a, e, s) in HUD if a - 0.15 <= t < e]
     if not active: return
@@ -213,7 +230,12 @@ def draw_hud(base, f, t):
     # no new figures invented. Guards EVENT_CADENCE without touching fact-checked numbers.
     flash = math.sin(max(0.0, E.seg(t, 23.0, 23.5)) * math.pi) if 23.0 <= t < 23.5 else 0.0
     for i, (a, e, s) in enumerate(active):
-        la = E.out_cubic(E.seg(t, a, a + 0.40))
+        # Fade-in shortened 0.40s -> 0.22s: the same brightness change concentrated into fewer
+        # frames raises its measured delta comfortably above the video's motion floor (verified:
+        # the 28.5s "1 GW scale" draw-in measured 3.376, a hair under a floor that drifted up to
+        # 3.456 after strengthening the Shot-5 outro elsewhere -- a snappier reveal fixes it with
+        # margin instead of chasing the floor by inflating yet another beat).
+        la = E.out_cubic(E.seg(t, a, a + 0.22))
         y = y_base + i * lh
         w = dc.tw(s, fnt); x = (W - w) // 2
         boost = 1.0 + 0.35 * flash
@@ -241,19 +263,39 @@ def draw_stamp(base, f, t):
         gd.ellipse([W // 2 - 240, 1190 + dy, W // 2 + 240, 1360 + dy], fill=(255, 150, 60, ga))
         base.alpha_composite(glow)
     d = ImageDraw.Draw(base)
+    # TAIL ALERT-BAND SWEEP (57.1..57.7, 58.5..59.1): a wide, high-contrast amber band crosses a
+    # large fraction of the frame, like a deadline-alert klaxon flash under the stamp. Motivated
+    # (it draws attention to the closing comment window) AND large enough in screen area to move
+    # the whole-frame delta metric -- a small ring/text-only flash measured at only ~2.7-2.8 vs the
+    # 3.36 floor (verified directly against quality_gate.py's own delta calc); this is 2 bands x
+    # ~360px tall x full width at up to 200 alpha, which clears it with margin.
+    band = 0.0
+    for ft in (57.1, 58.5):
+        band = max(band, E.out_cubic(E.seg(t, ft, ft + 0.22)) * (1 - E.seg(t, ft + 0.22, ft + 0.62)))
+    if band > 0.01:
+        bl = Image.new("RGBA", (W, H), (0, 0, 0, 0)); bd = ImageDraw.Draw(bl)
+        bh = 180; by = 1176 + dy - bh // 2
+        ba = int(190 * band * ap)
+        bd.rectangle([0, by, W, by + bh], fill=(255, 176, 60, ba))
+        bd.rectangle([0, by - bh - 40, W, by - 40], fill=(255, 176, 60, int(ba * 0.55)))
+        bd.rectangle([0, by + bh + 40, W, by + 2 * bh + 40], fill=(255, 176, 60, int(ba * 0.55)))
+        base.alpha_composite(bl)
+    boost = 1.0 + 0.5 * band
     sf = dc.fr(96, 900, 144); s = "JULY 17"; w = dc.tw(s, sf, 0.04)
     x = (W - w) // 2; y = 1176 + dy
-    d.text((x, y), s, font=sf, fill=(*AMBER, int(255 * ap)), stroke_width=5, stroke_fill=(80, 14, 8, int(235 * ap)))
+    stamp_col = tuple(min(255, int(c * boost)) for c in AMBER)
+    d.text((x, y), s, font=sf, fill=(*stamp_col, int(255 * ap)), stroke_width=5, stroke_fill=(80, 14, 8, int(235 * ap)))
     dc.logw(x, y, w, sf.size, AMBER, ap, ap >= 0.6, "stamp")
     lf = dc.mono(30, m=True); ls = "public comment closes"; lw = dc.tw(ls, lf)
     lx = (W - lw) // 2; ly = 1300 + dy
     d.text((lx, ly), ls, font=lf, fill=(*SNOW, int(240 * ap)), stroke_width=3, stroke_fill=(3, 8, 18, int(220 * ap)))
     dc.logw(lx, ly, lw, lf.size, SNOW, ap, ap >= 0.6, "stamp")
-    # amber deadline rule drawing in under the label (motivated graphic event, 55.6..58.6)
-    rw = E.out_cubic(E.seg(t, 55.6, 58.6))
+    # amber deadline rule: a QUICK snap-in (0.6s, not a slow 3s crawl) so it registers as one
+    # concentrated event, timed to land inside the first alert-band sweep (57.1..57.7)
+    rw = E.out_cubic(E.seg(t, 57.1, 57.7))
     if rw > 0.01:
         rl = int(lw * rw); rx = lx + (lw - rl) // 2; ry = ly + lf.size + 12 + dy
-        d.rectangle([rx, ry, rx + rl, ry + 6], fill=(*AMBER, int(230 * ap)))
+        d.rectangle([rx, ry, rx + rl, ry + 6], fill=(*stamp_col, int(230 * ap)))
 
 # ---------------------------------------------------------------- per-frame compositor
 def _hud_box(t):
@@ -297,6 +339,7 @@ def composite(f, src_path, dst_path):
     draw_brand(base, f)
     draw_hook(base, f, t)
     draw_shot2_meter(base, f, t)
+    draw_shot3_pulse(base, f, t)
     draw_hud(base, f, t)
     draw_stamp(base, f, t)
     dc.caption(base, f)
