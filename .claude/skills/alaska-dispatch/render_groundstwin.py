@@ -40,7 +40,8 @@ dim.init(1080, 1920, scale=SCALE)
 # ---------------- palette (peat-brown ground · ice-blue lenses · rust thaw · indigo twin) ----------------
 C_ACTIVE = ti.Vector([0.16, 0.14, 0.12])     # dark active layer / peat
 C_PEAT   = ti.Vector([0.24, 0.19, 0.14])     # frozen peat-brown soil
-C_ICE    = ti.Vector([0.55, 0.68, 0.80])     # glacial pale-blue ice lens
+C_ICE    = ti.Vector([0.40, 0.50, 0.60])     # glacial pale-blue ice lens (dimmed: the original pale
+                                              # albedo bloomed into a blown-out disk under strong key light)
 C_ICE_D  = ti.Vector([0.30, 0.42, 0.55])     # deeper ice
 C_SNOW   = ti.Vector([0.86, 0.90, 0.95])     # bone snow crust
 C_GRAVEL = ti.Vector([0.30, 0.29, 0.27])     # road gravel
@@ -59,8 +60,11 @@ def light_surface():
     dim.FOG_DEN = 0.022; dim.FOG_COL = (0.55, 0.58, 0.63); dim.RIM_STR = 0.35
 
 def light_under():
-    # underground: a dim cool key from above the cut, the rest carried by practical glow (emission)
-    dim.SUN_DIR = (0.20, 0.80, 0.30); dim.SUN_COL = (0.42, 0.47, 0.56)
+    # underground: a dim cool key raking forward into the cut, the rest carried by practical glow
+    # (emission). Forward-dominant like every other shot's sun -- a near-vertical (y-dominant)
+    # direction here produced a blown-out glare wherever the camera's wide-fov rays swept close to
+    # it across the shot's dolly (caught in the rolling frame review; NOT a bloom bug, a light-dir bug).
+    dim.SUN_DIR = (0.25, 0.45, 0.85); dim.SUN_COL = (0.42, 0.47, 0.56)
     dim.SKY_COL = (0.10, 0.12, 0.16); dim.SKY_HI = (0.16, 0.19, 0.24)
     dim.FOG_DEN = 0.030; dim.FOG_COL = (0.07, 0.08, 0.11); dim.RIM_STR = 0.45
 
@@ -134,7 +138,8 @@ ZF = 5.4   # cut-face plane
 def _strata(p):
     # the solid ground block behind the cut face
     block = ti.max(ZF - p.z, -(p.y + 2.6))          # keep the block BEHIND the cut face; floor at y=-2.6
-    block = ti.max(block, p.y - 0.30)               # top surface (with the road crown just above)
+    block = ti.max(block, p.y - 2.6)                # tall ceiling (camera margin so wide-fov rays at
+                                                     # any point in the shot's dolly never escape to sky)
     block = ti.max(block, ti.abs(p.x) - 4.2)        # side walls
     block = ti.max(block, p.z - (ZF + 3.2))         # back wall
     return block
@@ -149,11 +154,10 @@ def _ice_wedge(p):
 @ti.func
 def sceneB(p, t):
     d = _strata(p)
-    # ice lenses (ellipsoids) embedded, read as slightly proud on the face
-    l1 = dim.sd_ellipsoid(p, ti.Vector([0.9, -0.9, ZF + 0.4]), ti.Vector([0.9, 0.16, 0.5]))
-    l2 = dim.sd_ellipsoid(p, ti.Vector([-1.8, -1.5, ZF + 0.5]), ti.Vector([0.7, 0.13, 0.5]))
-    d = ti.min(d, ti.max(l1, p.z - ZF - 0.02))
-    d = ti.min(d, ti.max(l2, p.z - ZF - 0.02))
+    # (an embedded-ellipsoid "ice lens" detail was tried here and cut: its clipped cross-section
+    # near the ellipsoid's own pole caught the key light at a grazing angle and bloomed into a
+    # large blown-out disk across the shot's dolly. The ice wedge below already carries the
+    # ice-rich-permafrost beat, so the lens was removed rather than keep tuning blind.)
     # the buried fiber: a thin horizontal cable across the face at y=-0.55
     fib = dim.sd_capsule(p, ti.Vector([-3.6, -0.55, ZF + 0.02]), ti.Vector([3.6, -0.55, ZF + 0.02]), 0.045)
     d = ti.min(d, fib)
@@ -169,11 +173,6 @@ def matB(p, n, t):
         col = C_ACTIVE                                  # dark active layer near surface
     if p.y < -1.7:
         col = C_ICE_D                                   # deep ice-rich
-    # ice lenses
-    l1 = dim.sd_ellipsoid(p, ti.Vector([0.9, -0.9, ZF + 0.4]), ti.Vector([0.9, 0.16, 0.5]))
-    l2 = dim.sd_ellipsoid(p, ti.Vector([-1.8, -1.5, ZF + 0.5]), ti.Vector([0.7, 0.13, 0.5]))
-    if ti.min(l1, l2) < 0.05:
-        col = C_ICE
     if _ice_wedge(p) < 0.06:
         col = C_ICE
     fib = dim.sd_capsule(p, ti.Vector([-3.6, -0.55, ZF + 0.02]), ti.Vector([3.6, -0.55, ZF + 0.02]), 0.05)
@@ -187,13 +186,17 @@ def shadowB(p, t):
 
 @ti.func
 def emitB(p, t):
+    # SMOOTH falloff, not a hard step: a hard "dist < threshold -> full brightness" step let the
+    # bead's glow bleed onto the wall (only 0.06 world units of z separate the bead from the strata
+    # face it rides against), painting a large flat-bright patch wherever the camera got close.
+    # Falling off quickly over a short margin keeps the highlight tight to the emitter's own surface.
     e = ti.Vector([0.0, 0.0, 0.0])
-    fib = dim.sd_capsule(p, ti.Vector([-3.6, -0.55, ZF + 0.02]), ti.Vector([3.6, -0.55, ZF + 0.02]), 0.06)
-    if fib < 0.06:
-        e = PULSE_GLOW * 0.28                            # faint always-on fiber line
-    bead = dim.sd_sphere(p, ti.Vector([_pulse_x(t) * 1.4, -0.55, ZF + 0.06]), 0.14)
-    if bead < 0.14:
-        e = PULSE_GLOW * 1.8                             # bright travelling pulse
+    fib = dim.sd_capsule(p, ti.Vector([-3.6, -0.55, ZF + 0.02]), ti.Vector([3.6, -0.55, ZF + 0.02]), 0.045)
+    fglow = ti.math.clamp(1.0 - ti.max(fib, 0.0) / 0.05, 0.0, 1.0)
+    e += PULSE_GLOW * 0.22 * fglow * fglow
+    bead = dim.sd_sphere(p, ti.Vector([_pulse_x(t) * 1.4, -0.55, ZF + 0.06]), 0.11)
+    bglow = ti.math.clamp(1.0 - ti.max(bead, 0.0) / 0.045, 0.0, 1.0)
+    e += PULSE_GLOW * 1.0 * bglow * bglow
     return e
 
 
@@ -527,17 +530,24 @@ def emit_shots():
                      "transition_in": tr[i], "note": notes[i]} for i in range(NSHOT)], NF)
 
 def lookdev():
-    """Raw probe stills (no captions) to validate geometry/light/palette before the full build."""
+    """Raw probe stills (no captions) to validate geometry/light/palette before the full build.
+    Samples MULTIPLE points across each shot's ACTUAL (VO-aligned) duration -- a camera path that
+    only gets checked at one arbitrary frame can look fine there and still escape the set (e.g. a
+    wide-fov ray clearing a cutaway's ceiling into open sky) at an untested point in a shot whose
+    real length differs from whatever frame was originally sampled."""
     from PIL import Image
+    _load_shot_bounds()
     d = os.path.join(HERE, "lookdev_gt"); os.makedirs(d, exist_ok=True)
-    probes = [(0, 120), (1, 470), (2, 740), (3, 1000), (4, 1500)]
-    for si, f in probes:
-        ensure_shot(si)
-        cam = CAMS[si](f); t = f / FPS
-        rgb, z = dim.render_frame(cam, t=t)
-        u8 = dim.post(rgb, z, cam, f=f)
-        Image.fromarray(u8).save(os.path.join(d, f"probe_shot{si}_{f:05d}.png"), compress_level=3)
-        print(f"probe shot{si} f{f} -> {d}", flush=True)
+    for si in range(NSHOT):
+        s0, s1 = SHOT_START[si], SHOT_END[si]
+        for frac in (0.02, 0.25, 0.5, 0.75, 0.98):
+            f = int(s0 + frac * (s1 - s0))
+            ensure_shot(si)
+            cam = CAMS[si](f); t = f / FPS
+            rgb, z = dim.render_frame(cam, t=t)
+            u8 = dim.post(rgb, z, cam, f=f)
+            Image.fromarray(u8).save(os.path.join(d, f"probe_shot{si}_{f:05d}.png"), compress_level=3)
+            print(f"probe shot{si} f{f} (frac={frac}) -> {d}", flush=True)
 
 def _load_shot_bounds():
     """Align shot boundaries to the ACTUAL VO (audio/timing60.json shot_bounds), so the picture
