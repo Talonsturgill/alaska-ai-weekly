@@ -1,0 +1,13 @@
+{
+  "chars": 631,
+  "hook": "Alaska just won a decade-scale federal bet to find its critical minerals. The AI headlining it is one unbuilt sentence.",
+  "hook_len": 119,
+  "hashtags": [
+    "#CriticalMinerals",
+    "#AlaskaPolicy",
+    "#NSFEngines"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

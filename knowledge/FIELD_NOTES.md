@@ -1,4 +1,4 @@
-# FIELD NOTES — living learnings
+# FIELD NOTES - living learnings
 
 Append-only. Each run's retro adds dated entries: what worked, what failed,
 what the human changed, new techniques discovered, sources to consider.
@@ -7,7 +7,47 @@ into the doctrine/library files and prune here.
 
 ---
 
-## 2026-07-13 — run 6 retro (Carousel No. 6, "The Interior's Power Math")
+## 2026-07-15 - run 8 retro (Carousel No. 8, "The Uncomputed Ground", 8.78)
+
+- FULL-STUDIO RUN, recovered mid-run. Today's earlier No.7 died on the account
+  weekly limit; this run's canary Beat B scout ran fine (limit reset past 5pm
+  UTC), so the fan-out spawned, but 3 scouts (A/C/E) then hit a SESSION limit
+  ("resets 11:50pm UTC"). Beat B + D + F completed with enough coverage, the
+  maintainer confirmed the reset, and the full studio ran end to end
+  (fact-checker, 3 treatment-directors, copywriter, 5 pixel critics, flow-critic,
+  scorer). Lesson reconfirmed: a CANARY probe before a 6-way fan-out cheaply
+  distinguishes "layer dead" from "layer alive" and its result is not wasted.
+- STORY. NSF named a UAF-led coalition its Critical Mineral Accelerator Engine
+  ($15M now, up to $160M/10yr if milestones met) to use AI to help locate deposits
+  and biological methods to extract them. Sharpest honest angle: the AI headlining
+  it is a single sourced sentence with no model, dataset, or site named yet, and
+  the $160M is a milestone-gated ceiling. Honesty-as-edge (like No.2, No.5).
+- FACT-CHECK CAUGHT THREE SHIP-STOPPERS the scouts/community-signal had wrong: NANA
+  is a PARTNER, not a co-owner; "biomining"/mine-waste-recovery/remediation are NOT
+  on the page (say "biological methods for extracting minerals"); and the sources
+  name NO specific mine/district, so do NOT connect the Engine to Ambler/Pebble.
+  Trust only fetched text; the Beat F community framing was a useful angle guide but
+  several of its "facts" did not survive the fact-check.
+- CRAFT. New continuity motif that landed: a CONFIDENCE METER that evolves per beat
+  and never lies to 100%, plus a strict gold=real / phantom-blue=promise TRUTH COLOR
+  CODE (story-art fusion scored 9). New technique: the Uncomputed Prospectivity
+  Survey-Plate. Two new instincts (confidence-meter-honesty-motif, truth-color-code).
+- WEAKEST = artwork craft (7.5). The deliberately flat/graded 2D relief (argued in
+  the dossier since the thesis is an unfinished survey) shipped but read as a graded
+  2D map with a grid overlay, not the dimensional plate the storyboard argued for.
+  Same rendered-ladder growth edge as No.7. PARKED as a Phase 12 upgrade candidate: a
+  reusable relief-depth helper (directional hillshade + atmospheric layering + interior
+  texture) so future map-hero decks get real depth without GL risk. New instinct logged
+  (relief-depth-not-just-grade).
+- PIXEL/FLOW held: 7/9 shipped first pass; S2 body overflowed to 7 lines and ended on
+  a fragment (tightened), S8 body grazed the coastline and had an ambiguous bare
+  "Engine" (fixed with a scrim + "chief executive"). Flow-critic flagged the S6->S7
+  junction (no open loop); fixed with an S7 kicker bridge ("WHAT THE CLIMB IS FOR").
+- DATE BOUNDARY. No.7 shipped as 2026-07-14 earlier today; this run dated 2026-07-15
+  to avoid colliding with the committed runs/2026-07-14 artifacts (same rolling-forward
+  as No.7 off No.6).
+
+## 2026-07-13 - run 6 retro (Carousel No. 6, "The Interior's Power Math")
 
 - **Shipped 8.69 vs 8.3** (9 slides, vector PDF 3.26MB), zero hard fails, 1 pixel round (all 9 reviewed; S2/S3/S4 had blocker/major issues, all fixed + re-verified) + 1 flow round (SHIP, 8.2) + 1 post-score fix. Story: GVEA's July 13 board vote on a second ~$120M LM6000 gas turbine, framed "Firm power, soft load" -- a member-owned Interior co-op asked to finance firm gas capacity on member debt while the AI loads that make firm power feel urgent (Air Force EULs at Eielson/Clear/JBER) are still proposals. Deliberate pivot to a flat editorial FIRM/SOFT type-weight ledger + one rendered turbine, after four straight energy/monitoring/robotics decks.
 - **The winning frame was the essayist's, strengthened by the other two directors.** "Firm power, soft load" (a portable rule-of-thumb) beat "the megawatt mortgage" (data-journalist) and "the phantom load" (systems-illustrator); the phantom-load idea was GRAFTED in (the SOFT column drawn in drafting phantom-dashes), and all three converged on the rendered LM6000 object as the depth hero. Synthesis > any single pitch.
@@ -17,32 +57,32 @@ into the doctrine/library files and prune here.
 - **The dividing-rule motif carried the whole argument.** A FIRM(solid)/SOFT(ghost) vertical rule that migrates per beat and SEALS into a gold "closed door" at synthesis (executive session) then splits open into the close question read as one evolving object across the filmstrip (flow critic confirmed motif + palette-arc). Generalizes to any two-sided / certain-vs-speculative story.
 - **Recurring fixes that held:** fixed-width centered label boxes tripped the safe-zone gate on their BOX edges (S2); content-width nowrap fixed it (new instinct). Instrument-Serif-italic-only again false-FAILed render.py's upright-400 font probe; the offscreen upright-loader span cleared it (the parked 07-10 probe fix is now worth landing as a real engine change -- Phase 12 candidate).
 
-## 2026-07-13 — craft refresh (run 6 pre-research pass)
+## 2026-07-13 - craft refresh (run 6 pre-research pass)
 
 - **"Bounce rate" is now named as an explicit tracked document-post signal** (dataslayer Feb 2026, digitallybugged 2026 guide): the algorithm reportedly reads whether a viewer swipes past slide 1, and a high slide-1-to-slide-2 dropoff suppresses reach. This is a sharper articulation of our existing "steepest drop is 1 to 2 / cover must earn the swipe" rule, not a new lever. Practical restatement for the directors room: the cover's ONLY job is to buy the second slide, and slide 2 must pay immediately (no agenda beat). Nothing to change in the gates.
 - Everything else reconfirms current practice: documents remain the top organic format (~6.6% ER), saves ~5x a like / ~2x a comment in reach value, 8 to 10 slides and 15 to 20s dwell the save-optimal band. No doctrine change.
 
 ---
 
-## 2026-07-12 — run 5 retro (Carousel No. 5, "First Machine to the Fire")
+## 2026-07-12 - run 5 retro (Carousel No. 5, "First Machine to the Fire")
 
 - **Shipped 8.54 vs 8.3** (9 slides, vector PDF 2.3MB), zero hard fails, 1 pixel round + confirmed fixes + 1 flow round. Story: Alaska as the world's proving ground for autonomous wildfire robots (XPRIZE Autonomous track finals via UAF ACUASI on a 1,000 sq km range; five finalists; September 2026 verdict). Deliberate break from four straight energy/infrastructure/monitoring decks.
 - **The Dryad/XPRIZE story that collapsed in run 4 survived in run 5** because the frame changed: the deck is built on the VERIFIED structure (xprize.org roster, ACUASI/UAF partner, 1,000 km2, prize architecture, FAA test-site status), and Dryad's self-reported detect-and-suppress demo is one attributed data point (S6, "Dryad says" + NOT INDEPENDENTLY VERIFIED), never the thesis. The climax is the honest open verdict (S8), not the demo. Fact-check-before-select resolved the finalist count too: FIVE Autonomous finalists (Dryad's own "final three" contradicts xprize.org and was dropped).
-- **New hero/motif that landed: the closing Autonomy Ring** — a discrete cyclic control-system loop (detect/decide/dispatch/douse) that doubles as an explicit N/4 progress counter and seals gold at the verdict. Flow critic caught that brightness-only arc increments read as a static logo; fix = dim (gray) unlit arcs + an explicit "N / 4" label. New instinct logged. Generalizes to any process/loop story.
+- **New hero/motif that landed: the closing Autonomy Ring** - a discrete cyclic control-system loop (detect/decide/dispatch/douse) that doubles as an explicit N/4 progress counter and seals gold at the verdict. Flow critic caught that brightness-only arc increments read as a static logo; fix = dim (gray) unlit arcs + an explicit "N / 4" label. New instinct logged. Generalizes to any process/loop story.
 - **Two honesty catches by the pixel critics** that qa.py can't see: S3 lit "fire-season" bars rendered gold after akpost (fixed to redder #E8531F to match the split bar and clear the gold budget), and S4's warm convergence point sat exactly on the Dryad row (favoritism for the one company featured later; moved above the roster, all five nodes equal). Both were composition/honesty, not machine-detectable.
 - **Rendered akthree hero** (backlit quadcopter over fire-lit dusk) shipped with an AK3D fallback; weakest criterion (artwork craft, 7) is that it still reads slightly flat. A warm rim light from the key direction + a scale bump made it read as a quadcopter rather than a smear (new instinct). Parked for Phase 12: a reusable rim-light + profile-clarity helper for object heroes.
 - Canvas-vs-DOM overprint recurred and was again caught only by eye (S5 loop arcs vs block plates, S8 body vs closed ring), not qa.py. Confirmed-instinct bumped.
 
 ---
 
-## 2026-07-12 — craft refresh (run 5)
+## 2026-07-12 - craft refresh (run 5)
 
 - Named, reusable frameworks drive SAVES on LinkedIn carousels (a coined "The N-Thing Method" reads as a portable thinking tool). Reinforces giving each deck a named thesis/frame on the cover, not just a headline. Consider a coined frame when the story has a clean structural spine.
 - 8 to 10 slides remains the save-optimal band with roughly 15 to 20 seconds dwell; nothing here changes current practice. Consistency of the visual system across every slide (background, type, accent, grid) is repeated as the top design driver, which the constellation system already enforces.
 
 ---
 
-## 2026-07-11 — THE 3D UPGRADE (maintainer-directed dev session, post run 4)
+## 2026-07-11 - THE 3D UPGRADE (maintainer-directed dev session, post run 4)
 
 - **The 2D-to-3D leap landed.** Empirical probes overturned the standing "WebGL experimental"
   assumption: SwiftShader/ANGLE (Vulkan "Subzero") renders a full PBR frame (MeshStandardMaterial,
@@ -70,7 +110,7 @@ into the doctrine/library files and prune here.
   check (Itti-Koch downsample: assert the intended focal wins); strata-texture helper (run 4 retro);
   llvmpipe lane (--use-angle=gl) as a SwiftShader hedge if Chromium's deprecation ever lands.
 
-## 2026-07-11 — run 4 retro (Carousel No. 4, "The Cook Inlet Gas Machine")
+## 2026-07-11 - run 4 retro (Carousel No. 4, "The Cook Inlet Gas Machine")
 
 - **Shipped 8.90 vs 8.3** (9 slides, vector PDF 2.94MB), zero hard fails, 1 pixel round + 1 flow round.
   Story: the July 10 RCA denial of Enstar's $240M Cook Inlet gas STORAGE prudency request, framed as
@@ -99,14 +139,14 @@ into the doctrine/library files and prune here.
 - Docket: added the Enstar Cook Inlet gas storage item (RCA denial). GVEA (Jul 13) and AKLNG (Jul 16) re-fetch
   failed (429/503/403) and were carried forward; both resolve within days and are worth a hard re-check next run.
 
-## 2026-07-11 — Phase 12 (automation retro + frontier scan)
+## 2026-07-11 - Phase 12 (automation retro + frontier scan)
 
-- **APPLIED — knockout-plate canvas-label helper (`assets/js/aklabel.js`).** The durable form of this run's
+- **APPLIED - knockout-plate canvas-label helper (`assets/js/aklabel.js`).** The durable form of this run's
   dominant hand-fix. `AK.canvasLabel(cx,x,y,text,{color,align})` draws an opaque plate under the glyphs so a
   canvas label's contrast depends on (text, plate) only, not the strata beneath; `AK.rectsOverlap` keeps stacked
   in-scene labels from merging. Verified: same text/colour that shipped at ~1.9:1 on ochre reads ~8.5:1 with the
   helper; ENSTAR/HILCORP that merged into "ENSTAHILCORP" now sit on separate plates. Opt-in; no gate touched.
-- **PARKED — canvas-text-aware QA gate.** The real gap is that canvas-DRAWN text is invisible to EVERY gate
+- **PARKED - canvas-text-aware QA gate.** The real gap is that canvas-DRAWN text is invisible to EVERY gate
   (text_collisions/contrast_estimate/busy-art tripwire all walk render.py's DOM text_nodes; canvas ink has no
   node). A gate that could see it needs OCR or stroke/edge heuristics that would false-positive on dense
   sectional artwork (strata hatching, valve wheels, curves). Not a safely-boundable ~100-line change. Revisit
@@ -114,7 +154,7 @@ into the doctrine/library files and prune here.
   read, turning canvas labels back into checkable boxes). Meanwhile `aklabel.js` removes the incentive to draw
   raw canvas text. Recommended to maintainer: a contrast floor for `data-decorative` labels over light bands, or
   a house rule that in-scene labels use `AK.canvasLabel` (both are threshold/policy = maintainer's call).
-- **PARKED (frontier, procedural-art scan) — strata-texture / rim-light craft helper.** Weakest rubric this run
+- **PARKED (frontier, procedural-art scan) - strata-texture / rim-light craft helper.** Weakest rubric this run
   = artwork craft (7): flat gradient bands, plain elliptical lenses, dead lower-thirds. The scan confirmed the
   math is ALREADY committed in noise.js (`AK.fbm2/fbm3/warp2`); Quilez's fbm article gives the geological
   parameter (H=1, gain=0.5, ~5-6 octaves) for rock-like spectra, and relief needs only a cheap gradient-of-fbm
@@ -125,12 +165,12 @@ into the doctrine/library files and prune here.
   it next run as the sole improvement slot, verified by rendering an opt-in demo slide. Sources:
   https://iquilezles.org/articles/fbm/ , https://iquilezles.org/articles/warp/
 
-## 2026-07-11 — craft refresh (run 4 pre-research pass)
+## 2026-07-11 - craft refresh (run 4 pre-research pass)
 
 - **Named, reusable frameworks drive saves (new actionable handle).** Multiple 2026 carousel roundups (Oktopost, Morphica, SocialPilot) converge that the highest-save decks hand the reader a NAMED, portable thinking tool ("The 3-C Framework", "The RICE Method") they can carry and reuse, not just a story. For us that means: when the story allows, give the deck ONE named lens or rule-of-thumb the reader keeps (a coined term, a 3-part test, a checklist), stated once and reinforced on the close. Save-value is our whole strategy, so this is a real lever, not fluff. Does not change gates.
 - Platform numbers otherwise hold: documents remain the top organic format (~4.5% ER, ~45% over video, ~6x reach of link posts, ~3x save rate of text), 4:5 portrait, 6-10 slides the sweet spot, caption under ~150 words driving INTO the deck, personal-profile edge persists (aftercare note for the human, not a design change).
 
-## 2026-07-10 — parked frontier + minor candidates (upgrade-engineer, editorial-dataviz/cartography scan)
+## 2026-07-10 - parked frontier + minor candidates (upgrade-engineer, editorial-dataviz/cartography scan)
 
 - **Concentric-radial-rings seasonal small multiple (parked technique).** A
   recent Bloomberg guide wraps the calendar year into a ring per small chart;
@@ -158,7 +198,7 @@ into the doctrine/library files and prune here.
   0-1 upgrades and two reactive fixes spent the budget). Land it a day the
   budget is open; verify no shipped slide's font check changes verdict.
 
-## 2026-07-10 — run 3 retro (Carousel No. 3, "The Machine That Hears a Mountain Think")
+## 2026-07-10 - run 3 retro (Carousel No. 3, "The Machine That Hears a Mountain Think")
 
 - Story: AVO volcano-monitoring AI (VOISS-Net + VolcSARvatory) with the live Great Sitkin
   eruption peg (3 volcanoes elevated at once, Jul 3 AVO update). First instrument-register deck
@@ -176,13 +216,13 @@ into the doctrine/library files and prune here.
 - fitText everywhere prevented all wrap-collisions this run (0 vs 4 last run); the recurring
   defect class appears closed by the committed helper.
 
-## 2026-07-10 — craft refresh (run 3 pre-research pass)
+## 2026-07-10 - craft refresh (run 3 pre-research pass)
 
 - **Personal profile carousels earn ~63% more engagement than company-page carousels** (dataslayer/linkboost 2026). Alaska.Ai posts from a page; the human should consider cross-posting the deck from a personal profile, or at minimum knows the page handicap is real. Aftercare-relevant, not a design change.
 - **Buffer 2026 State of Social Media (52M+ posts)** reports a median LinkedIn carousel engagement rate far above single-format medians; the wide spread confirms carousels as the highest-ceiling format but says nothing new to change the build. Documents still #1 (~6.6% ER convergent).
 - **Year-over-year platform contraction is steeper than the mid-2025 read**: views ~-50%, engagement ~-25%, follower growth ~-59% (dataslayer Feb 2026). Reinforces judging against OUR trailing median and the keepable-artifact strategy over applause. Nothing to change in the machine.
 
-## 2026-07-09 — run 2 retro (Carousel No. 2, "One River, Two Ways to Count It")
+## 2026-07-09 - run 2 retro (Carousel No. 2, "One River, Two Ways to Count It")
 
 - **Shipped 8.83 vs 8.3** (9 slides, vector PDF 4.94MB), zero hard fails, one pixel-refinement
   round + a passing flow round. Story: the Wood River AI drone + computer-vision salmon-counting
@@ -212,7 +252,7 @@ into the doctrine/library files and prune here.
   (or ADF&G formally joins), that is a strong UPDATE angle. GVEA July 13 turbine vote, STAK July 17
   comment close, and AKLNG July 16 vote all resolve within days -- docket-worthy follow-ups.
 
-## 2026-07-09 — craft refresh (run 2 pre-research pass)
+## 2026-07-09 - craft refresh (run 2 pre-research pass)
 
 - Platform numbers hold, nothing new vs run 1's craft note: documents still the
   #1 format (6.6 to 7.0% ER, ~5x reach of static, 12.92% of all saves), 8-10
@@ -227,11 +267,11 @@ into the doctrine/library files and prune here.
   of Sonar Video"; arxiv 2505.06637 multimodal foundation AI for wild salmon in
   Indigenous rivers.) Parked as a technique candidate; only used if the story lands there.
 
-## 2026-07-08 — run 1 retro (Carousel No. 1, "Four Rooms, One Open Door")
+## 2026-07-08 - run 1 retro (Carousel No. 1, "Four Rooms, One Open Door")
 
 - **Shipped 8.64 vs 8.3** (9 slides, vector PDF 10.74MB) after one revision
   cycle. Round 0 scored 6.9: the scorer caught a slide-3 DOM text overlap
-  (body line over a bar label) that machine QA passed — the
+  (body line over a bar label) that machine QA passed - the
   machine-qa-is-not-taste instinct, confirmed the hard way.
 - **DEGRADED run**: a session usage limit blocked ALL worker subagents
   mid-run (treatment directors, copywriter, pixel critic, flow critic).
@@ -253,11 +293,11 @@ into the doctrine/library files and prune here.
   a typographic apostrophe glyph; verify quote characters with grep at the
   SOURCE level before treating as a hard fail.
 - Story note: the STAK docket (ADL 422741) final decision lands after Jul
-  17 — next run should check it for an update angle; Bristol Bay AI
+  17 - next run should check it for an update angle; Bristol Bay AI
   sockeye counting is the parked runner-up (claims c64-c77, fully
   verified).
 
-## 2026-07-08 — craft refresh (run 1 pre-research pass)
+## 2026-07-08 - craft refresh (run 1 pre-research pass)
 
 - **360Brew is live as THE ranker** (LinkedIn Engineering, ~Mar 2026):
   distribution now runs on meaning/intent matching, not keywords. On-slide
@@ -275,22 +315,22 @@ into the doctrine/library files and prune here.
   penalized harder; polls effectively dead (0.07% ER). Nothing to change
   for us; confirms educational + native strategy.
 
-## 2026-07-08 — framework build (engine smoke test lessons)
+## 2026-07-08 - framework build (engine smoke test lessons)
 
 - **Grain economics**: full-frame feTurbulence grain rasterizes to a 10-40MB
   incompressible bitmap in the printed PDF. Always `AK.grainTile()` as a
   repeating background. (Encoded in TECHNIQUE_LIBRARY #2 and noise.js docs.)
 - **Vector text survives blend modes**: Chromium's print engine keeps HTML/
-  SVG text as vector even under mix-blend-mode overlays — but canvas text
+  SVG text as vector even under mix-blend-mode overlays - but canvas text
   always rasterizes. Text in DOM/SVG, art in canvas. (Engine SKILL.md.)
-- **`#map svg { display: block }`** — inline SVG baseline space overflowed
+- **`#map svg { display: block }`** - inline SVG baseline space overflowed
   the page by ~5px; the engine's body_overflow gate caught it. Always
   display:block full-bleed SVGs.
 - **AlbersUsa inversion is a trap**: us-atlas TopoJSON is pre-projected and
   the inversion params are not recoverable reliably. We committed genuinely
   unprojected sources instead (Natural Earth 10m state outline via
   world-atlas; plotly unprojected counties for the 29 boroughs). Winding
-  must satisfy the d3 spherical convention — rewind any ring whose
+  must satisfy the d3 spherical convention - rewind any ring whose
   geoArea > π.
 - **3D composition must be computed, not eyeballed**: horizonY =
   cy + tan(−pitch)·f; a peak d units above the camera at distance D lands
@@ -306,7 +346,7 @@ into the doctrine/library files and prune here.
   text over busy varied art. The pixel critic must check worst-case
   contrast visually; the estimator is a tripwire only.
 
-## 2026-07-08 — patterns adopted from the GitHub scout pass
+## 2026-07-08 - patterns adopted from the GitHub scout pass
 
 - Instincts ledger (ECC pattern): ledger/instincts.json, confidence-scored
   lessons injected into future runs. Prune < 0.5 confidence after 8 runs.
@@ -318,12 +358,12 @@ into the doctrine/library files and prune here.
   phases must all be "done" with artifacts existing before merge/delivery.
 - Critic text transcription (OCR-wave pattern, no deps): pixel critics
   transcribe every visible word from the PNG and diff against the dossier
-  copy — catches font fallback, tofu, truncation that DOM checks miss.
+  copy - catches font fallback, tofu, truncation that DOM checks miss.
 - Candidates parked for later: microsoft/flint-chart (chart spec language),
   pyiqa (BRISQUE gate; heavy torch dep), meodai/heerich (SVG voxel mode),
   self-hosted Postiz (publish automation), pretext (text layout lib).
 
-## 2026-07-09 — parked frontier + friction candidates (typography scan)
+## 2026-07-09 - parked frontier + friction candidates (typography scan)
 
 - **Variable-font WIDTH-axis fitting (parked).** Archivo and Unbounded carry
   a variable `wdth` axis; fit-to-width.js binary-searches the width axis
@@ -341,7 +381,7 @@ into the doctrine/library files and prune here.
   and must not weaken; this only moves the catch earlier. Bound it to the
   same colon rule site_build already enforces before implementing.
 
-## 2026-07-12 — parked frontier candidates (accessibility / PDF scan)
+## 2026-07-12 - parked frontier candidates (accessibility / PDF scan)
 
 - **Per-slide alt text surfaced in the Gmail draft (parked, highest-value).**
   In 2026 LinkedIn has no native organic image carousel; the only swipeable
@@ -368,7 +408,7 @@ into the doctrine/library files and prune here.
   on vector-drawn pages with no semantic DOM and is NOT recommended. Source:
   https://www.grackledocs.com/en/a-guide-to-wcag-standards-for-pdfs/
 
-## 2026-07-13 — parked frontier candidate (headless-rendering scan)
+## 2026-07-13 - parked frontier candidate (headless-rendering scan)
 
 - **Pin chromium-headless-shell / re-baseline on any Playwright upgrade
   (parked, watch item).** Playwright v1.49 removed Chromium's OLD headless
@@ -387,7 +427,7 @@ into the doctrine/library files and prune here.
   https://github.com/microsoft/playwright/issues/33566 ,
   https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/check
 
-## 2026-07-14 — craft refresh (LinkedIn saves + isometric geometry)
+## 2026-07-14 - craft refresh (LinkedIn saves + isometric geometry)
 
 - Saves are among the strongest 2026 LinkedIn distribution signals, and a
   clear NUMBERED framework (a titled, enumerated set the reader can act on)
@@ -403,7 +443,7 @@ into the doctrine/library files and prune here.
   raymarched hero. Keep line-weight and shading layered per the doctrine
   ladder. Source: https://fastercapital.com/content/Visualization-Techniques--Isometric-Projection--A-New-Angle-on-Data-Visualization.html
 
-## 2026-07-14 — retro (Carousel No. 7, "The Anchorage Address", 8.95)
+## 2026-07-14 - retro (Carousel No. 7, "The Anchorage Address", 8.95)
 
 - DEGRADED SOLO RUN. All studio subagents (scout, fact-checker, treatment,
   copywriter, pixel-critic, flow-critic, scorer, upgrade-engineer) died on the

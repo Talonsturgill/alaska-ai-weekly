@@ -321,6 +321,47 @@
     "https://reconcraft.com/"
    ],
    "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-15",
+   "carousel_no": 8,
+   "topic": "NSF Critical Mineral Accelerator Engine in Alaska (UAF-led, announced 2026-07-14): a Regional Innovation Engine funded $15M now and up to $160M over 10 years if milestones met, to use AI to help locate mineral deposits and biological methods to extract them",
+   "angle": "Honesty-as-edge. Alaska won a real, decade-scale federal bet to find and process critical minerals, but the AI headlining it is a single unbuilt sentence (no model, dataset, or site named) and the $160M is a milestone-gated ceiling; thesis the uncomputed ground / it isn't built yet, the money framed as a ladder not a check, NANA a partner not owner, one illustrative named site.",
+   "entities": [
+    "National Science Foundation",
+    "NSF Regional Innovation Engines",
+    "University of Alaska Fairbanks",
+    "UAF Geophysical Institute",
+    "Lee Ann Munk",
+    "Christi Bell",
+    "NANA Regional Corporation",
+    "Alaska Silver",
+    "USGS",
+    "Mike Dunleavy",
+    "Michelle Rizk"
+   ],
+   "keywords": [
+    "critical minerals",
+    "NSF Engine",
+    "Regional Innovation Engine",
+    "AI mineral exploration",
+    "prospectivity",
+    "biological methods",
+    "56 of 60",
+    "milestone-gated",
+    "160 million",
+    "500K state match",
+    "UAF",
+    "NANA",
+    "China mineral processing",
+    "unbuilt AI"
+   ],
+   "headline": "It isn't built yet.",
+   "sources_lead": [
+    "https://www.nsf.gov/news/nsf-awards-12-new-regional-innovation-engines-fuel-research",
+    "https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition"
+   ],
+   "outcome_notes": ""
   }
  ]
 }

@@ -106,7 +106,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-14",
+   "last_updated": "2026-07-15",
    "history": [
     {
      "date": "2026-07-08",
@@ -131,6 +131,10 @@
     {
      "date": "2026-07-14",
      "note": "Three days out. The written comment window on ADL 422741 still closes at 4:30 p.m. July 17 per DNR reporting, still more than 500 comments on record with fewer than a dozen in support. No schedule change surfaced this run. This is the one open-comment room among the tracked decisions."
+    },
+    {
+     "date": "2026-07-15",
+     "note": "Two days out. Re-confirmed against Anchorage Daily News reporting from July 7 that more than 500 public comments oppose the Stak Energy North Slope data center lease and fewer than a dozen endorse it, with the written comment window still closing 4:30 p.m. July 17. No schedule change surfaced. This remains the one open comment room among the tracked decisions."
     }
    ]
   },
@@ -239,7 +243,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-14",
+   "last_updated": "2026-07-15",
    "history": [
     {
      "date": "2026-07-08",
@@ -268,6 +272,10 @@
     {
      "date": "2026-07-14",
      "note": "Day after the executive session. A search of GVEA news releases and Fairbanks reporting turned up no public disclosure of the July 13 board decision on the LM6000 purchase, consistent with a co-op board that deliberates in executive session. Status stays pending-decision pending an official post. Watching the GVEA newsroom for a board action notice."
+    },
+    {
+     "date": "2026-07-15",
+     "note": "Two days after the executive session. A direct re-fetch of the GVEA newsroom returned HTTP 403 again and a search of Fairbanks reporting surfaced no public disclosure of the July 13 board decision on the second LM6000 purchase, consistent with a co-op board that deliberates in executive session. Status stays pending-decision. Still watching the GVEA newsroom for a board action notice."
     }
    ]
   },
@@ -325,7 +333,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-14",
+   "last_updated": "2026-07-15",
    "history": [
     {
      "date": "2026-07-08",
@@ -346,6 +354,10 @@
     {
      "date": "2026-07-14",
      "note": "Two days out. Floor votes still tentatively set for July 16 and the special session still ends July 19, per Alaska Public Media and Alaska Beacon reporting, with the S corporation income tax provision the unresolved sticking point. No schedule change surfaced this run. Watching the July 16 floor action."
+    },
+    {
+     "date": "2026-07-15",
+     "note": "One day out. Floor votes remain tentatively set for July 16 and the special session still ends July 19, per Alaska Public Media and Alaska Beacon reporting from early July, with the S corporation income tax provision the unresolved sticking point. A search this run surfaced no fresh schedule change or an actual vote result. Watching the July 16 floor action."
     }
    ]
   },

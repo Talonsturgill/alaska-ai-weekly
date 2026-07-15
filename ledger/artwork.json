@@ -1,6 +1,6 @@
 {
  "_spec": {
-  "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged \u2014 name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
+  "purpose": "Variety-engine ledger. The directors room MUST read this before choosing a visual system and MUST append after delivery. Divergence rules (hard constraints): hero_structure must differ from the last 4 entries; atmosphere from the last 3; continuity_device from the last 2; hook_archetype from the last 3; palette_family from the last 3; type_pairing from the last 2. Novel techniques not in the library are encouraged - name them NEW:<name> and add them to TECHNIQUE_LIBRARY.md.",
   "entry_schema": {
    "run_date": "YYYY-MM-DD",
    "carousel_no": "int",
@@ -182,6 +182,28 @@
     "type_temperature": 4
    },
    "new_techniques_logged": []
+  },
+  {
+   "run_date": "2026-07-15",
+   "carousel_no": 8,
+   "slide_count": 9,
+   "hero_structure": "The Uncomputed Ground: a film-graded 2D Alaska relief survey-plate (d3 canonical projection + fbm directional hillshade + topo-contour strokes + bone glow coastline) carrying an UNCOMPUTED prospectivity scan grid (phantom-blue no-data cells) and a scanning reticle; the camera moves over the recurring relief (whole-state cover -> interior -> west single site -> whole-state close). NOT subsurface cutaway panorama, autonomy ring, FIRM/SOFT type-weight ledger, or fixed-waterline cross-section.",
+   "atmosphere": "graphite-and-bone geological survey: dark arctic graphite base (#050A12/#0B1524), bone/snow coastline glow, phantom-blue uncomputed-grid light, warm gold only where something is real. NOT spruce-night+fire, cool drafting-film blueprint, or sonar-dark navy.",
+   "depth_technique": "graded 2D relief (fbm directional hillshade + topo-contour strokes clipped to the silhouette + atmospheric vignette + coastline glow), argued flat deliberately (thesis is an unfinished survey; a GPU hero would fight it); honest parallel-projection on all quantities (the money ladder). Scorer capped artwork-craft at 7.5 for reading as a graded 2D map rather than a dimensional plate.",
+   "line_voice": "instrument/editorial (confidence-meter telemetry, reticle, dimension leaders, dashed phantom-blue milestone ladder, mono labels)",
+   "continuity_device": "camera-over-recurring-relief + a CONFIDENCE METER motif that evolves and never lies to 100% (PROSPECTIVITY 0% COMPUTED -> MODEL NOT BUILT -> MODEL TBD -> SITES NAMED 1 -> WATCH THE MILESTONES); reinforced by a gold=real / phantom-blue=promise truth-color code and the NN/09 counter. NOT a migrating dividing-rule, NOT a single fixed-y waterline.",
+   "hook_archetype": "withheld-fact / gap hook (a real win whose centerpiece is missing): overline plus blunt hero 'IT ISN'T BUILT YET'. NOT engineered-emblem cold-open, big-number monument, or place-paradox two-sentence.",
+   "palette_family": "graphite-night #050A12/#0B1524/#12233A + bone/snow #EDF2FB/#F4F8FF + phantom-blue #6EA5FF (promise/unbuilt/conditional) + flag gold #FFC72C (real/committed/confirmed only). NOT spruce+fire, cool-drafting-blue+copper, or abyssal-navy+sonar-cyan.",
+   "type_pairing": "Archivo (variable display, width+weight axes) + Manrope (humanist body) + JetBrains Mono (instrument). NOT Bricolage+Instrument Serif+JBMono, NOT Fraunces+Space Grotesk+JBMono.",
+   "narrative_structure": "argument / honesty-as-edge: hook -> real-but-modest award -> stakes (56/60) -> what the AI would do (illustrative) -> THE TURN (one sentence, model not built) -> money ladder (keepable) -> minerals breather -> one named place -> unresolved close (refuses a false payoff)",
+   "variance_dials": {
+    "design_variance": 5,
+    "visual_density": 3,
+    "type_temperature": 3
+   },
+   "new_techniques_logged": [
+    "Uncomputed Prospectivity Survey-Plate (NEW): a graded 2D Alaska relief map wearing an UNCOMPUTED scan grid (phantom-blue no-data cells) + reticle, paired with a corner CONFIDENCE METER that evolves per beat and never resolves to 100%; the map's refusal to fill in IS the honesty argument. Generalizes to any funded-but-unproven promise-vs-delivery story."
+   ]
   }
  ]
 }

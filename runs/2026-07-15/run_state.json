@@ -1,0 +1,26 @@
+{
+ "run_date": "2026-07-15",
+ "carousel_no": 8,
+ "date_note": "Trigger fired at UTC 2026-07-14 20:50 (Anchorage 2026-07-14 12:50). No.7 already shipped and merged as 2026-07-14 (a degraded solo run). The maintainer manually kicked off this fresh run. Dated 2026-07-15 (the next daily edition slot) to avoid colliding with the committed runs/2026-07-14 artifacts, mirroring how No.7 rolled forward off No.6.",
+ "phases": {
+  "wake": "done",
+  "craft_refresh": "done (current: No.7 refreshed same-day 2026-07-14, LinkedIn saves + isometric geometry; no new same-day search to protect the shared usage budget)",
+  "research": "done (DEGRADED: canary Beat B + Beat D + Beat F COMPLETED; scouts A/C/E hit a SESSION limit 'resets 11:50pm UTC' and returned only partial leads. Lead story NSF Critical Minerals Engine confirmed by 2 independent scouts fetching the same 2 primaries with consistent figures/quotes. Switched to SOLO showrunner execution per FAILURE PROTOCOL; no re-spawns.)",
+  "claims": "done (out/2026-07-15/claims.json; 18 verified claims; NANA=partner-not-owner, biomining/waste-recovery dropped, no Ambler/Pebble corrections caught)",
+  "docket": "done (added NSF Engine item; refreshed STAK/GVEA/AKLNG with 2026-07-15 notes; GVEA newsroom 403 again, carried forward honestly)",
+  "selection": "done (out/2026-07-15/selection.md; NSF Critical Minerals Engine chosen; dedupe PASS)",
+  "directors_room": "done (3 treatments synthesized into out/2026-07-15/storyboard.md 'The Uncomputed Ground'; storyboard gate PASS)",
+  "copy": "done (copy.json + caption.txt; caption_check PASS 631ch hook119; style_lint clean; S2/S8 bodies later tightened per pixel critics)",
+  "art_build": "done (9 bespoke 2D slides; graded relief + AKGeo maps + truth-color code; qa.py PASS 0 fails 0 warns; vector PDF)",
+  "pixel_review": "done (5 critics parallel; 7 ship + 2 revise (S2 body overflow, S8 body/coast+Engine ambiguity); all fixes applied + re-rendered; qa PASS)",
+  "flow_review": "done (flow-critic SHIP 8.3, reads as one sequence; S6->S7 junction bridged via S7 kicker 'WHAT THE CLIMB IS FOR')",
+  "assemble": "done (out/2026-07-15/final: carousel.pdf vector 3.28MB, contact_sheet, thumbs; 9 slides)",
+  "scoring": "done (score_report.json 8.78, verdict ship, no hard fails; weakest artwork-craft 7.5)",
+  "ship": "in_progress (ledgers + FIELD_NOTES appended; site_build PASS 13 pages; docket_alerts SKIP no key)",
+  "upgrade": "done (lean solo Phase 12: automation_retro.md + upgrades.json scan_log; ZERO code upgrades, relief-depth helper parked)",
+  "gmail": "pending",
+  "retro": "pending"
+ },
+ "artifacts": {},
+ "subagent_probe": "one scout spawned on Beat B to test whether the weekly-usage-limit that killed No.7's subagent layer has reset (now past 5pm UTC)"
+}

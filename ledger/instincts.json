@@ -25,7 +25,7 @@
    "instinct": "Apply grain as a small repeating tile (AK.grainTile), never a full-frame feTurbulence rect.",
    "evidence": "Full-frame SVG grain rasterized to a 34MB incompressible bitmap in the printed PDF; the tile version produced 6.7MB. | CONFIRMED 2026-07-08: AK.grainTile used on all 9 slides; PDF 10.7MB, no incompressible full-frame grain | CONFIRMED 2026-07-14: all 8 slides used AK.grainTile tiles, no full-frame feTurbulence; qa clean",
    "confidence": 0.96,
-   "last_confirmed": "2026-07-14"
+   "last_confirmed": "2026-07-15"
   },
   {
    "id": "machine-qa-is-not-taste",
@@ -33,7 +33,7 @@
    "instinct": "Never treat a machine_qa PASS as composition approval; the pixel critics judge composition, hierarchy, and collision at full size and thumb size.",
    "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective. | CONFIRMED 2026-07-11: critics caught ~10 canvas-vs-DOM overlaps + low-contrast in-section labels that machine_qa PASSED (S2 legend/homes, S3 curve labels, S4 readouts on ochre, S6 SUSPENDED, S7 flag mash, S8 context on ochre). | CONFIRMED 2026-07-13: pixel critics caught a favored honesty panel (S3), a bottle-read turbine (S4), and a strikethrough ledger (S7) that machine_qa PASSED clean. | CONFIRMED 2026-07-14: qa PASS with 0 warnings, but the ship decision rested on the showrunner reading every full-size PNG and the contact sheet for composition",
    "confidence": 0.99,
-   "last_confirmed": "2026-07-14"
+   "last_confirmed": "2026-07-15"
   },
   {
    "id": "d3-zoom-manual",
@@ -165,6 +165,30 @@
    "evidence": "Run 2026-07-14: waterline at y=812 across all 8 slides + sonar rings gave an unmistakable one-composed-sequence read on the contact sheet at zero rendering risk; qa PASS with 0 warnings.",
    "confidence": 0.72,
    "last_confirmed": "2026-07-14"
+  },
+  {
+   "id": "confidence-meter-honesty-motif",
+   "learned": "2026-07-15",
+   "instinct": "For a funded-but-unproven story, make a corner CONFIDENCE METER (or equivalent state readout) that evolves per beat and NEVER lies to 100% the deck's continuity motif; the refusal to resolve IS the honesty argument and reads instantly across the contact sheet.",
+   "evidence": "Run 8 (The Uncomputed Ground): PROSPECTIVITY 0% COMPUTED -> MODEL NOT BUILT -> MODEL TBD -> SITES NAMED 1 -> WATCH THE MILESTONES carried the honest thesis; the flow-critic named it a device that reads as one instrument tracking one story.",
+   "confidence": 0.72,
+   "last_confirmed": "2026-07-15"
+  },
+  {
+   "id": "truth-color-code",
+   "learned": "2026-07-15",
+   "instinct": "Assign a strict two-color TRUTH CODE (gold = real/committed/confirmed only; a cool phantom color = promise/unbuilt/conditional) and apply it every slide so color does semantic argument, not decoration; verify the real color lands exactly where something is actually real (e.g. gold hits the map exactly once, at the one named site).",
+   "evidence": "Run 8: gold = committed money / one named site / Polaris only; phantom-blue = the AI sentence, the NO MODEL/DATASET/SOFTWARE/SITE ledger, the $160M milestone ceiling. Both pixel and flow critics praised the consistent semantic color; scorer story-art-fusion 9.",
+   "confidence": 0.72,
+   "last_confirmed": "2026-07-15"
+  },
+  {
+   "id": "relief-depth-not-just-grade",
+   "learned": "2026-07-15",
+   "instinct": "A graded 2D relief map ships and fuses story well, but a bare graded silhouette with a grid overlay reads FLAT and caps artwork-craft; when the map is the hero, invest in genuine multiplane depth (directional hillshade with real contrast, atmospheric fade, interior texture) or climb the rendered ladder. Argued-flat clears the bar but leaves craft points on the table.",
+   "evidence": "Run 8 scorer put artwork-craft at 7.5 (weakest criterion), one_sentence_fix was exactly give the relief plates genuine multiplane depth instead of a graded 2D map with a grid overlay. Total still shipped at 8.78.",
+   "confidence": 0.6,
+   "last_confirmed": "2026-07-15"
   }
  ]
 }
