@@ -80,10 +80,17 @@ def _tundra_mat(p):
     a = 0.5 + 0.5 * dim.fbm2(p.x * 0.5, p.z * 0.5)
     b = 0.5 + 0.5 * dim.fbm2(p.x * 1.7 + 3.0, p.z * 1.7)
     m = ti.math.clamp(a * 0.7 + b * 0.3, 0.0, 1.0)
+    m = ti.math.clamp((m - 0.5) * 3.0 + 0.5, 0.0, 1.0)         # steepen -> ANGULAR patch borders, not soft camo blobs
     c = ti.Vector([0.11, 0.12, 0.07]) * (1.0 - m) + ti.Vector([0.30, 0.25, 0.13]) * m       # peat sage<->dry ochre
-    patch = ti.math.clamp(0.5 + 0.5 * dim.fbm2(p.x * 3.0 + 9.0, p.z * 3.0), 0.0, 1.0)        # frost-heave polygons
+    # frost-heave POLYGON network: dark cracks along the contours of a mid-freq field -> irregular
+    # angular cells (tundra polygons) rather than rounded mottling.
+    fp = dim.fbm2(p.x * 3.0 + 9.0, p.z * 3.0)
+    cell = ti.abs(fp - ti.round(fp * 4.0) * 0.25) * 4.0        # distance to nearest contour rim
+    if cell < 0.12:
+        c = c * 0.5                                            # dark polygon crack rims (frost-heave edges)
+    patch = ti.math.clamp(0.5 + 0.5 * dim.fbm2(p.x * 2.3 + 4.0, p.z * 2.3), 0.0, 1.0)
     if patch < 0.34:
-        c = c * 0.55
+        c = c * 0.62
     return c
 
 
@@ -99,7 +106,12 @@ def _bar_h(t):
     leap = ti.math.clamp((t - 35.5) / 1.2, 0.0, 1.0)           # low tick -> leaps to ~6x
     leap = leap * leap * (3.0 - 2.0 * leap)
     bh = 0.5 + 2.4 * leap                                      # smaller so it reads as a BAR, not a wall
-    bh += 0.10 * bh * ti.sin(t * 7.0) * leap                   # unstable at the top
+    # THE NUMBERS WON'T SETTLE: the bar leaps PAST its mark, snaps back, overshoots again — a
+    # decaying overshoot swing plus a persistent fast tremor so it visibly refuses to hold still.
+    settle = ti.math.clamp((t - 36.6) / 1.4, 0.0, 1.0)
+    bh += (1.0 - settle * 0.85) * ti.sin((t - 35.5) * 9.0) * 0.55 * leap   # overshoot-and-correct
+    bh += 0.14 * bh * ti.sin(t * 13.0) * leap                  # unstable at the top
+    bh += 0.06 * ti.sin(t * 23.0) * leap                       # fast tremor (won't settle)
     bh += 0.03 * ti.sin(t * 11.0)                              # never fully settles
     return bh
 
@@ -192,7 +204,25 @@ def _mat(p, n, t):
     elif t < S2:                                               # worm's-eye turbines
         col = _tundra_mat(p) * 0.7                             # ghosted gravel pad
         if _turbines(p, t) < 0.05:
-            col = ti.Vector([0.18, 0.62, 0.78])               # blueprint-cyan steel edges
+            # UNBUILT = edges-only: dark blueprint fill with bright cyan wire highlighting on the
+            # beam corners/rungs, so the stacks read as a wireframe structure, not solid plastic.
+            col = ti.Vector([0.05, 0.14, 0.18])               # dark blueprint fill
+            cxn = -1.6
+            if p.x >= 0.0:
+                cxn = 1.6
+            czn = 1.5
+            if p.z >= 3.0:
+                czn = 4.5
+            edge = 0.0
+            if ti.abs(ti.abs(p.x - cxn) - 0.16) < 0.03:       # vertical corner wires (x extent)
+                edge = 1.0
+            if ti.abs(ti.abs(p.z - czn) - 0.16) < 0.03:       # vertical corner wires (z extent)
+                edge = 1.0
+            yy = p.y - 0.5 * ti.floor(p.y / 0.5)              # horizontal blueprint rungs every 0.5u
+            if yy < 0.045:
+                edge = 1.0
+            if edge > 0.5:
+                col = ti.Vector([0.42, 1.05, 1.25])           # bright blueprint-cyan wire edges
         flare_h = 6.0 * _t_rise(t) + 0.15
         if dim.sd_ellipsoid(p, ti.Vector([-1.6, flare_h + 0.05, 1.5]), ti.Vector([0.28, 0.40, 0.28])) < 0.05:
             col = ti.Vector([2.60, 1.15, 0.22])               # sodium-orange flare (emissive)

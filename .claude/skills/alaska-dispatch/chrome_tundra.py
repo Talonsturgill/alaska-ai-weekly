@@ -80,7 +80,7 @@ HUD = [
     (4.5,  12.0, "~1 sq mi state land"),
     (8.5,  12.0, "~25 mi S of Deadhorse"),
     (16.5, 26.0, "at least 1 GW"),
-    (20.5, 26.0, "~30% of urban Alaska's peak"),
+    (20.5, 26.0, "~30% above urban Alaska's peak"),
     (28.5, 38.0, "1 GW scale"),
     (32.5, 38.0, "~$500M initial (lease docs)"),
     (36.0, 38.0, "$10B+ full build (company estimate)"),
@@ -177,8 +177,18 @@ def draw_shot2_meter(base, f, t):
     glowamt = (0.30 + 0.55 * pulse) * 0.5 + 0.95 * flash
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(glow)
     ga = int(min(1.0, glowamt) * 200 * grow)
-    gd.ellipse([W // 2 - 340, 450, W // 2 + 340, 980], fill=(255, 150, 70, ga))
-    gd.ellipse([W // 2 - 210, 520, W // 2 + 210, 880], fill=(255, 178, 104, int(ga * 0.9)))
+    cx0, cy0 = W // 2, 715                                     # flare center at the turbine crown
+    # An actual light source, not a flat pastel blob: a wide soft orange bloom that falls off HARD
+    # into a small, near-white saturated hot core, plus a subtler secondary bloom ring.
+    gd.ellipse([cx0 - 360, cy0 - 300, cx0 + 360, cy0 + 300], fill=(255, 132, 56, int(ga * 0.28)))   # outer halo
+    gd.ellipse([cx0 - 240, cy0 - 210, cx0 + 240, cy0 + 210], fill=(255, 148, 66, int(ga * 0.50)))   # orange body
+    gd.ellipse([cx0 - 150, cy0 - 138, cx0 + 150, cy0 + 138], fill=(255, 170, 92, int(ga * 0.80)))   # inner orange
+    gd.ellipse([cx0 - 196, cy0 - 172, cx0 + 196, cy0 + 172],                                         # secondary bloom ring
+               outline=(255, 196, 118, int(ga * 0.55)), width=6)
+    # HARD step into the hot core: near-white/yellow-white, small, saturated
+    gd.ellipse([cx0 - 74, cy0 - 68, cx0 + 74, cy0 + 68], fill=(255, 214, 150, min(255, int(ga * 1.15))))
+    gd.ellipse([cx0 - 38, cy0 - 35, cx0 + 38, cy0 + 35], fill=(255, 242, 208, min(255, int(ga * 1.30))))
+    gd.ellipse([cx0 - 16, cy0 - 15, cx0 + 16, cy0 + 15], fill=(255, 253, 244, min(255, int(ga * 1.45))))
     base.alpha_composite(glow)
     d = ImageDraw.Draw(base)
     cx = W // 2; y = 1150; peak_w = 300
@@ -196,7 +206,7 @@ def draw_hud(base, f, t):
     d = ImageDraw.Draw(base)
     fnt = dc.mono(30, m=True); lh = 46; n = len(active)
     y_base = 1352 - n * lh
-    # MID-SHOT-2 RE-EMPHASIS FLASH (23.0-23.5s): the "at least 1 GW" / "~30% of urban Alaska's
+    # MID-SHOT-2 RE-EMPHASIS FLASH (23.0-23.5s): the "at least 1 GW" / "~30% above urban Alaska's
     # peak" labels already drew in by 20.9s and then sit static until the 26.0s cut, leaving the
     # picture with no event in that stretch. A brief brightness/scale pulse on the gold ticks is a
     # real, motivated re-emphasis beat (underscoring the VO's "thirty percent" at this moment) with
