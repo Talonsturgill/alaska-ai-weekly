@@ -26,6 +26,15 @@ maintainer can post in ninety seconds.
    the scorer must clear the rubric. Honest scores only.
 6. If a phase fails repeatedly, degrade gracefully and say so in the email.
    Never silently exit; never silently ship garbage.
+7. Subagent spawning is BOUNDED and showrunner-only. Only the showrunner
+   spawns subagents, and only the fixed planned set each phase names (6
+   scouts; 1 fact-checker; 3 treatment-directors; 1 copywriter; pixel-critics
+   one per 1 to 2 slides; 1 flow-critic; 1 scorer; 1 upgrade-engineer). Never
+   spawn agents beyond that planned set on your own initiative, and a subagent
+   is a leaf worker that must NEVER spawn its own subagents. An agent once
+   chose, on its own, to spawn about 20 extra agents and burned tokens for
+   nothing; that must never recur. This is a hard cap on fan-out, independent
+   of whether anything failed.
 
 ## CONTEXT (read before starting)
 
@@ -447,21 +456,22 @@ learned, and the one thing to improve next run. Mark run_state complete.
 
 ## FAILURE PROTOCOL
 
-- A subagent that FAILS is handled by CAUSE, and never by uncontrolled
-  fan-out. Respawn only the SAME failed agent, and cap it at about 3 attempts
-  before treating that one agent as genuinely unavailable and handling it per
-  the phase's normal fallback. NEVER let a failure trigger extra or recursive
-  subagents beyond the pipeline's planned set, and a subagent must not spawn
-  more subagents on its own (this rule exists because a runaway once spawned
-  ~20 needless subagents and burned tokens for nothing). The retry is bounded,
-  never a fan-out.
-  - ONLY IF the failure is an account usage / rate / weekly-limit error
-    (e.g. "You've hit your weekly limit, resets 5pm UTC"): do NOT degrade to a
-    solo showrunner run or a reduced deck. WAIT until the stated reset time,
-    then RESPAWN the failed subagent(s) and RESUME the pipeline from where it
-    stopped (run_state.json makes the run resumable phase by phase, so no
-    completed work is lost). If no reset time is given, wait and retry with
-    backoff until it clears. Waiting is only for this limit case.
+- A subagent that FAILS is handled by CAUSE. Respawn only the SAME failed
+  agent, and cap it at about 3 attempts before treating that one agent as
+  genuinely unavailable and handling it per the phase's normal fallback. A
+  retry REPLACES the failed agent, it never adds new ones; subagent spawning
+  stays bounded and showrunner-only per NON-NEGOTIABLE 7 whether or not
+  anything failed.
+  - ONLY IF the failure is an account usage limit of ANY kind (the 5-hour
+    rolling / session limit, a weekly limit, or any rate / usage window, e.g.
+    "You've hit your weekly limit, resets 5pm UTC"): do NOT degrade to a solo
+    showrunner run, do NOT ship a reduced deck, and do NOT abandon the run.
+    WAIT until the limit resets (use the stated reset time; if none is given,
+    poll with backoff), then automatically FIRE BACK UP: respawn the failed
+    subagent(s) and RESUME the pipeline from where it stopped (run_state.json
+    makes the run resumable phase by phase, so no completed work is lost).
+    Wait-then-resume is the ONLY correct response to a usage limit, no matter
+    how long the wait; waiting is only for this limit case.
   - For ANY OTHER failure (a crash, a transient API error, a timeout, a
     malformed result): do NOT wait, just RESPAWN that one failed agent (up to
     the ~3-attempt cap) and continue.

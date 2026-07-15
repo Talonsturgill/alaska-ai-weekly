@@ -301,8 +301,8 @@
    "run_date": "2026-07-15",
    "kind": "fix",
    "area": "prompt",
-   "change": "Refined the FAILURE PROTOCOL subagent-failure clause to be cause-based. Wait-for-reset now applies ONLY when a subagent fails because of an account usage / rate / weekly-limit error; any other failure (crash, transient API error, timeout, malformed result) is handled by simply respawning that one failed agent and continuing, no waiting. Added an explicit runaway guard: respawn only the SAME failed agent, cap at ~3 attempts, never spawn extra or recursive subagents beyond the pipeline's planned set. The matching solo-degraded-run instinct was updated to match.",
-   "trigger": "Maintainer clarification 2026-07-15: only wait if the failure was because of a limit; otherwise just respawn any agent that fails. The original 2026-07-14 guard existed to stop a runaway that once spawned ~20 needless subagents and burned tokens, not to make every failure a wait.",
+   "change": "Refined the FAILURE PROTOCOL to be cause-based AND split out the fan-out guard as a standalone hard rule. (a) NON-NEGOTIABLE 7 now states subagent spawning is bounded and showrunner-only (fixed planned set per phase; subagents are leaf workers that never spawn subagents; never fan out beyond the plan on the showrunner's own initiative), independent of any failure. (b) Failure handling stays cause-based: wait for reset ONLY on a usage/rate/limit error then resume; for any other failure just respawn the SAME failed agent (about a 3-attempt cap), never adding new agents.",
+   "trigger": "Maintainer 2026-07-15: only wait if the failure was due to a limit, otherwise just respawn the failed agent; and the original ~20-agent runaway was an agent that CHOSE to spawn 20 more on its own (no failure involved), so the fan-out cap must be a standalone rule, not tied to failure handling.",
    "files": [
     "prompts/routine_instructions.md",
     "ledger/instincts.json"
