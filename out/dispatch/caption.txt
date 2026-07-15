@@ -1,15 +1,15 @@
 A company wants a square mile of Alaska's North Slope. Not to drill it. To power an AI data center on it.
 
-Stak Energy has applied for state land near Deadhorse to build a gas fired campus running at least a gigawatt, about 30 percent more than all of urban Alaska draws at once. Here is what makes this one worth watching closely: the company's own numbers will not sit still. Early site work is priced around 500 million dollars in the lease documents. The full build, by the company's own estimate, is over 10 billion. That is a six times spread on the same project, and there are still no confirmed customers and no confirmed chips.
+Stak Energy has applied for state land near Deadhorse to build a gas-fired campus running at least a gigawatt, about 30 percent more than all of urban Alaska draws at once. Here is what makes this one worth watching closely: the company's own numbers will not sit still. Early site work is priced around 500 million dollars in the lease documents. The full build, by the company's own estimate, is over 10 billion. That is roughly a twentyfold spread on the same project, and there are still no confirmed customers and no confirmed chips.
 
 I think that gap is the real story, more than the gigawatt or the gas. When a company cannot tell you within an order of magnitude what it is building, "proposal" is doing a lot of work that "project" usually does.
 
-What is not ambiguous is how Alaskans responded. The state has logged more than 500 public comments on this application. Fewer than a dozen support it. The company has described much of that opposition as form letters. The public comment period closes July 17th, and as of this week, nothing has been decided.
+What is not ambiguous is how Alaskans responded. The state has logged more than 500 public comments on this application. Fewer than a dozen support it. The company has described much of that opposition as form letters. The public comment period closes July 17th, and as of this week no decision has been announced.
 
 This is the pattern I keep coming back to with AI infrastructure stories: the compute always arrives with confident numbers, and the land, power, and communities it needs arrive with none of that confidence. The machine cannot grant itself the land or the gas. That decision is still Alaska's, on a plain, unbuilt stretch of tundra, until the seventeenth.
 
 Full breakdown, sourcing, and the honest caveats in the video.
 
-If you had to bet, does this data center get built as pitched, get built smaller, or not get built at all? Genuinely curious where people land.
+If you had to bet, does this data center get built as pitched, get built smaller, or not get built at all?
 
 #AlaskaAI #ArtificialIntelligence #DataCenters #EnergyPolicy #Alaska
