@@ -391,9 +391,103 @@ def ensure_shot(si):
     dim.init_kernels()
     _cur = si
 
+# ============================================================ BRAND CHROME (PIL, over the grade)
+# Two-phase per shot: a PLATE pass bakes the caption scrim + label chips into the picture BEFORE
+# dc.set_frame_bg samples luma (so READABILITY measures what the viewer sees), then a TEXT pass
+# draws the ink + logs each word. Composited OVER dim.post() so captions/HUD stay razor sharp.
+from PIL import Image, ImageDraw, ImageFilter
+BONE = (232, 236, 240); INDIGO = (150, 140, 245); AMBER = (255, 170, 90); DIMW = (196, 204, 218)
+CHIPC = (10, 12, 20)
+_dc = None
+def dc_mod():
+    global _dc
+    if _dc is None:
+        import dispatch_core as _m; _dc = _m
+    return _dc
+
+_SCRIM = None
+def caption_scrim(out):
+    global _SCRIM
+    if _SCRIM is None:
+        y = np.arange(1920, dtype=np.float32)[:, None]
+        up = np.clip((y - 1300.0) / 170.0, 0.0, 1.0); dn = 1.0 - 0.45 * np.clip((y - 1620.0) / 300.0, 0.0, 1.0)
+        aa = (up * dn * 0.55 * 255.0).astype(np.uint8)
+        rgba = np.zeros((1920, 1080, 4), np.uint8); rgba[..., 0] = 6; rgba[..., 1] = 8; rgba[..., 2] = 14
+        rgba[..., 3] = np.repeat(aa, 1080, axis=1); _SCRIM = Image.fromarray(rgba, "RGBA")
+    out.alpha_composite(_SCRIM)
+
+def chip(out, x, y, w, h, a, padx=20, pady=12, rad=12):
+    if a <= 0.02 or w <= 0:
+        return
+    aa = min(1.0, a); lead = min(1.0, a * 1.6); op = 0.78 + 0.15 * (1.0 - aa)
+    layer = Image.new("RGBA", (1080, 1920), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
+    d.rounded_rectangle([x - padx, y - pady, x + w + padx, y + h + pady], radius=rad, fill=(*CHIPC, int(255 * op * lead)))
+    out.alpha_composite(layer.filter(ImageFilter.GaussianBlur(1.5)))
+
+def lab(ctx, x, y, s, fnt, fill, a, log=True, kind="hud", tr=0.0):
+    dc = dc_mod(); w = dc.tw(s, fnt, tr)
+    if a <= 0.02:
+        return w
+    if ctx[0] == "plate":
+        chip(ctx[1], x, y, w, fnt.size, a)
+    else:
+        dc.tk(ctx[1], s, fnt, (*fill, int(235 * a)), x, y, tr)
+        if log:
+            dc.logw(x, y, w, fnt.size, fill, a, True, kind)
+    return w
+
+def eyebrow(ctx, f):
+    lab(ctx, 104, 96, "ALASKA.AI  ·  FIELD SIGNAL", dc_mod().mono(30, m=True), dc_mod().GOLD, 1.0)
+
+def _appear(t, t0, d=1.6):
+    import easing as E
+    return E.out_cubic(max(0.0, min(1.0, (t - t0) / d)))
+
+# per-shot HUD (approved on-screen numbers; numerals; no dashes)
+def chrome0(ctx, f, t):
+    dc = dc_mod(); eyebrow(ctx, f)
+    lab(ctx, 104, 152, "UTQIAGVIK, ALASKA", dc.mono(30, b=True), BONE, _appear(t, 0.8))
+
+def chrome1(ctx, f, t):
+    dc = dc_mod(); eyebrow(ctx, f)
+    a = _appear(t, 15.0)
+    lab(ctx, 104, 152, "BURIED FIBER OPTIC SENSOR", dc.mono(28, m=True), INDIGO, a)
+    if a > 0.02:
+        nf = dc.fr(66, 900); s = "2 CABLES  ·  1 KM EACH"; w = dc.tw(s, nf, 0.01)
+        lab(ctx, (1080 - w) // 2, 980, s, nf, BONE, a, tr=0.01)
+
+def chrome2(ctx, f, t):
+    dc = dc_mod(); eyebrow(ctx, f)
+    a = _appear(t, 20.5)
+    lab(ctx, 104, 152, "THE DIGITAL TWIN", dc.mono(30, b=True), INDIGO, a)
+    lab(ctx, 104, 200, "PHYSICS + MACHINE LEARNING", dc.mono(26), DIMW, a)
+    a2 = _appear(t, 24.0)
+    lab(ctx, 104, 1236, "LIVE DATA  ·  SEPT 2021 TO JUNE 2024", dc.mono(27, m=True), BONE, a2)
+
+def chrome3(ctx, f, t):
+    dc = dc_mod(); eyebrow(ctx, f)
+    a = _appear(t, 28.8)
+    lf = dc.mono(30, b=True)
+    lab(ctx, 150, 1236, "TWIN", lf, INDIGO, a)
+    rt = "REAL"; wr = dc.tw(rt, lf); lab(ctx, 1080 - 150 - wr, 1236, rt, lf, BONE, a)
+    a2 = _appear(t, 32.0)
+    s = "FORECAST  ·  A STEP AHEAD"; sf = dc.mono(28, m=True); w = dc.tw(s, sf)
+    lab(ctx, (1080 - w) // 2, 300, s, sf, AMBER, a2)
+
+def chrome4(ctx, f, t):
+    dc = dc_mod(); eyebrow(ctx, f)
+    a = _appear(t, 41.0)
+    s = "IT PREDICTS  ·  IT CANNOT STOP IT"; sf = dc.mono(30, b=True); w = dc.tw(s, sf)
+    lab(ctx, (1080 - w) // 2, 200, s, sf, AMBER, a)
+    a2 = _appear(t, 45.0)
+    s2 = "ONE ROAD  ·  THREE YEARS OF DATA"; sf2 = dc.mono(27, m=True); w2 = dc.tw(s2, sf2)
+    lab(ctx, (1080 - w2) // 2, 252, s2, sf2, DIMW, a2)
+
+CHROME = [chrome0, chrome1, chrome2, chrome3, chrome4]
+
 def render_range(s, e, save_dir=OUT):
     import time as _t; _t0 = _t.time()
-    from PIL import Image
+    dc = dc_mod()
     for f in range(s, e):
         si = shot_of(f); ensure_shot(si)
         if f % 30 == 0:
@@ -402,7 +496,16 @@ def render_range(s, e, save_dir=OUT):
         cam = CAMS[si](f); t = f / FPS
         rgb, z = dim.render_frame(cam, t=t)
         u8 = dim.post(rgb, z, cam, f=f)
-        Image.fromarray(u8).save(os.path.join(save_dir, f"frame_{f:05d}.png"), compress_level=1)
+        out = Image.fromarray(u8).convert("RGBA")
+        caption_scrim(out)
+        CHROME[si](("plate", out), f, t)           # PLATE: bake scrim + chips, then sample luma
+        dc.set_frame_bg(out, f)
+        dr = ImageDraw.Draw(out)
+        CHROME[si](("text", dr), f, t)             # TEXT: ink + logw
+        dc.caption(out, f)
+        dc.outro_card(out, f)
+        dc.flush_textlog(f)
+        Image.fromarray(np.asarray(out.convert("RGB"))).save(os.path.join(save_dir, f"frame_{f:05d}.png"), compress_level=1)
     mpath = os.path.join(save_dir, "..", "render_manifest.json") if os.environ.get("DIM_MANIFEST_UP") else os.path.join(save_dir, "render_manifest.json")
     try:
         old = json.load(open(mpath)).get("samples", [])
@@ -412,6 +515,16 @@ def render_range(s, e, save_dir=OUT):
     except Exception:
         pass
     dim.write_manifest(mpath, NF, extra={"dispatch": "the-grounds-twin", "shots": NSHOT})
+
+def emit_shots():
+    dc = dc_mod()
+    fr = ["wide-establish", "push-detail", "macro-closeup", "two-up", "alt-vantage"]
+    tr = ["", "push-in", "carried-element", "match-action", "pull-out"]
+    notes = ["the road on the ice, warm-lit stake", "cutaway: strata, ice lenses, buried fiber + pulse",
+             "macro: sensor node blooms the digital-twin lattice", "diptych: twin leads, real trails the thaw front",
+             "rise-reveal to one instrumented road in the vast Arctic, outro"]
+    dc.write_shots([{"id": i + 1, "start": SHOT_START[i], "end": SHOT_END[i], "framing": fr[i],
+                     "transition_in": tr[i], "note": notes[i]} for i in range(NSHOT)], NF)
 
 def lookdev():
     """Raw probe stills (no captions) to validate geometry/light/palette before the full build."""
@@ -426,11 +539,26 @@ def lookdev():
         Image.fromarray(u8).save(os.path.join(d, f"probe_shot{si}_{f:05d}.png"), compress_level=3)
         print(f"probe shot{si} f{f} -> {d}", flush=True)
 
+def _load_shot_bounds():
+    """Align shot boundaries to the ACTUAL VO (audio/timing60.json shot_bounds), so the picture
+    cuts where the narration turns. Falls back to the storyboard defaults if timing is absent."""
+    global SHOT_START, SHOT_END
+    try:
+        tb = json.load(open(os.path.join(HERE, "audio", "timing60.json"))).get("shot_bounds")
+        if tb and len(tb) == NSHOT:
+            SHOT_START = [0] + tb[1:]
+            SHOT_END = tb[1:] + [NF]
+            print("shot bounds from VO:", list(zip(SHOT_START, SHOT_END)), flush=True)
+    except Exception as ex:
+        print("shot bounds: using storyboard defaults (", ex, ")", flush=True)
+
 if __name__ == "__main__":
     if LOOKDEV:
         lookdev()
     else:
+        _load_shot_bounds()
         s = int(sys.argv[1]) if len(sys.argv) > 1 else 0
         e = int(sys.argv[2]) if len(sys.argv) > 2 else NF
+        emit_shots()
         render_range(s, e)
         print(f"rendered [{s},{e}) scale={SCALE} arch={dim.ARCH}")
