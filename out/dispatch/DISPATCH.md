@@ -1,42 +1,70 @@
-# DISPATCH 2026-07-12 — THE FAKE THAT SWAM
+# DISPATCH 2026-07-14 — THE CLAIM ON THE TUNDRA
 
-**Story:** An AI-generated image claimed a beluga escaped the Alaska SeaLife Center in Seward to
-reunite with her calf. One post drew close to six million views (reported by Alaska Public Media)
-before it was debunked. A detector could only rate the image about 82.6 percent likely AI
-(Snopes via Hive Moderation), and likely is not proof. What corrected the record was the
-institution itself: open since 1998, no beluga has ever escaped.
+**Story:** Stak Energy applied to lease a square mile of North Slope state land near Deadhorse for
+a gas-fired AI data center running at least a gigawatt (about 30% above all of urban Alaska's peak
+demand). The company's own cost figures span a twentyfold range: roughly $500 million for initial
+site work (per the DNR lease documents) to "over $10 billion" for the full build, its own estimate.
+No confirmed customers, no confirmed chips. More than 500 public comments have been logged, fewer
+than a dozen supportive; the company calls most of the opposition form letters. The state has not
+decided; the comment window closes July 17, 2026.
 
-**Honest caveat (drawn on screen):** detection returns odds, not certainty. The 82.6% LIKELY AI
-readout with LIKELY ≠ PROOF is the caveat picture; the backstop was institutional knowledge.
+**Honest caveat (drawn on screen):** this is a proposal, not a built thing. The campus renders as a
+dashed, ghost wireframe throughout, never solid. The cost bar visibly leaps and cannot settle
+between its low and high estimates. The check on the machine is Alaskans' own public comment record,
+drawn as a physical paper-flood, 500-plus against a dozen.
 
-**Angle for the series:** an inversion. Every recent Dispatch had AI as the helpful instrument
-that detects or counts nature. Here AI is the source of the lie, and people are the check.
+**Angle for the series:** the AI buildout meets Alaska land and power head-on, told with sober,
+institutional restraint (no savior framing, no doom framing) — the decision belongs to Alaska, and
+it isn't made yet.
 
 ## Composition fingerprint
-- pov: eye-level-immersive · motion: horizontal-traverse · hero: single-organic-hero
-- layout: fullbleed-split · register: naturalistic-scene
-- camera_strategy: orbit-reveal · light_story: night-practical
-- palette: aquarium teal-black water, pearl beluga white, toxic synthetic magenta, phone-glow cyan, warning-red stamp
-- metaphor: the fake beluga dissolves into generated pixels while the real one holds
+- pov: orbital-aerial · motion: assemble-build · hero: structure-as-subject
+- layout: map-territory · register: blueprint-technical
+- camera_strategy: rise-reveal · light_story: overcast-diffuse
+- palette: silver-white overcast sky over sage and ochre tundra, gunmetal turbine steel, electric
+  blueprint cyan wireframe, sodium flare orange, a single signal-red deadline flag
+- metaphor: the AI buildout drawn as an unbuilt wireframe blueprint whose numbers won't settle,
+  checked by a paper flood of public comment
 
-## Shots (5 worlds, dimensional engine, ship scale 1.0, CPU x64)
-1. 0.0-10.2 THE REAL — orbit-reveal around the beluga in her tank (silhouette entrance)
-2. 10.2-20.9 THE FEED — a phone showing the fake; counter to ~6,000,000 (ILLUSTRATIVE label); reshare cards spread
-3. 20.9-33.0 THE FAKE — 3/4 profile fabrication sheds voxel pixels; DETECTOR 82.6% LIKELY AI
-4. 33.0-45.5 THE CORRECTION — SINCE 1998 / 0 ESCAPES / FALSE plates + THIS NEVER HAPPENED stamp; FAKE-outruns-PROOF race
-5. 45.5-60.0 RESTORED — loop-back to the real tank; wordmark; tagline
+## Shots (5 worlds, dimensional engine, ship scale 1.0, CUDA)
+1. 0.0-12.0 THE LAND — aerial rise-reveal over empty tundra; a lone survey stake; the parcel claim
+   draws itself onto the ground
+2. 12.0-26.0 THE CLAIM ASSEMBLES — worm's-eye dolly as wireframe gas-turbine stacks rise and
+   assemble overhead; one sodium flare ignites
+3. 26.0-38.0 THE NUMBERS WON'T SETTLE — macro rack-focus on a cost bar leaping between ~$500M and
+   over $10B; the campus behind it drops to dashed ghost lines
+4. 38.0-50.0 THE PUBLIC COMMENT — a paper flood, 500-plus slips piling against a stack of a dozen
+5. 50.0-60.0 ALASKA'S CALL — match-cut back to the land and stake; JULY 17 deadline stamp settles;
+   wordmark resolves
 
 ## Voice + music
-- VO: edge-tts en-US-EmmaMultilingualNeural (kokoro unavailable: its g2p model download is
-  blocked by the environment's network policy; disclosed in the draft)
-- Music: "Reawakening" — Kevin MacLeod (incompetech.com), CC BY 4.0
+- VO: owner's cloned voice (Chatterbox, MIT license; Resemble Perth provenance watermark embedded),
+  take A + E2 clarity dials, auto-normalized numbers/dates
+- Music: "Long Note Two" — Kevin MacLeod (incompetech.com), CC BY 4.0
 
 ## Fact-check outcome (validator, adversarial)
-- CLEAR_WITH_LABELS. Corrections folded in: viral in late June (not "this week"); ~6M views
-  attributed to Alaska Public Media (single-sourced); "25 years" replaced with SINCE 1998
-  (center opened May 1998); "no detector caught it" corrected to the 82.6%-likely readout;
-  Kaiti Grant quote splice rejected (not used on screen).
+- CLEAR_WITH_LABELS. Verified: 500+ comments/fewer than a dozen in favor (two-source); July 17
+  deadline (two-source); cost split attributed by document ($500M lease docs vs company's own
+  "over $10B"); "at least 1 GW" safe, "1-3 GW" range and detailed acreage/gas-volume figures
+  labeled to the lease documents (single-source, not stated as verified state fact); Boyle quote
+  used in full, not the misleading truncation. Native-angle quote (Ahkivgak/Native Movement)
+  UNVERIFIED (source 403'd) — dropped entirely; general civic framing only, no monolithic "Alaska
+  Native" framing.
+
+## Quality gate + panel
+- Objective gate: 17/17 checks PASS, 10.0/10.
+- 3-judge panel: 7.96 / 8.06 / 9.10 → median 8.06 (ship threshold 9.0). Zero hard blockers from any
+  judge. Delivered with the scorecard disclosed per the routine's own fallback rule (zero hard
+  blockers + style-register-only complaints): motion blur on fast moves and the cost-bar easing
+  curve were the named gaps, both requiring a further full 3D re-render.
+
+## Production note
+A render-tracking bug surfaced mid-run: a "full" 1800-frame re-render silently died partway
+(~frame 852) without raising an error, and a naive file-count check (1800 files present) falsely
+read as complete since old frames were never deleted, just not overwritten. Caught by checking
+frame mtimes directly, not just counts. Re-rendered the missing range, verified by mtime, and
+rebuilt the full downstream chain (chrome, gate, encode, upload) before delivery.
 
 ## Sources
-See sources.json. Primary: Alaska Public Media 2026-07-08; KUAC 2026-07-10; Snopes 2026-06-27;
-Your Alaska Link 2026-06-30; alaskasealife.org.
+See sources.json. Primary: ADN/Northern Journal 2026-07-07; Northern Journal 2026-07-03/07-06;
+Northern Alaska Environmental Center (lease-document itemization); Alaska Public Media 2026-05-26.
