@@ -6,7 +6,7 @@ without a word aligner. RUN WITH THE VOICE VENV:
 Writes audio/vo60.wav, audio/timing60.json (starts/beats/shot_bounds/speech_end),
 audio/words60.json, audio/voice_used.json.
 """
-import os, sys, json
+import os, sys, json, hashlib
 import numpy as np
 from scipy.io import wavfile
 from scipy.signal import resample_poly
@@ -16,6 +16,7 @@ os.environ.setdefault("SSL_CERT_DIR", "/etc/ssl/certs")
 import vo_backends as vb
 
 HERE = os.path.dirname(os.path.abspath(__file__)); AUD = os.path.join(HERE, "audio"); os.makedirs(AUD, exist_ok=True)
+CACHE = os.path.join(AUD, "vo_cache"); os.makedirs(CACHE, exist_ok=True)
 SR = 44100; FPS = 30; TOTAL = 60.0; LEAD = 0.45; GAP_IN = 0.12; GAP_SEG = 0.40
 
 # (phrase, shot index 0..4). Whole caption chunks (no stranded payoff word, no split number).
@@ -40,7 +41,13 @@ PHRASES = [
 ]
 TARGET_SPEECH = 52.5   # atempo-fit the assembled VO so speech ends near here (outro fills to ~59.5)
 
+def _cache_key(text):
+    return hashlib.sha1((vb.REF_CLIP + "|" + repr(vb.CLONE_KW) + "|" + text).encode()).hexdigest()[:16]
+
 def synth_clip(text):
+    key = _cache_key(text); cp = os.path.join(CACHE, f"{key}.npy")
+    if os.path.exists(cp):
+        return np.load(cp)
     a = np.asarray(vb.cloned_synth(text), dtype=np.float32)   # 24kHz mono
     if a.ndim > 1: a = a.mean(1)
     from math import gcd
@@ -49,6 +56,7 @@ def synth_clip(text):
     thr = 0.01 * (np.abs(a).max() + 1e-9)
     nz = np.where(np.abs(a) > thr)[0]
     if len(nz): a = a[max(0, nz[0] - int(0.02 * SR)):min(len(a), nz[-1] + int(0.05 * SR))]
+    np.save(cp, a)
     return a
 
 print("VO backend:", vb.backend_report(), flush=True)
@@ -59,7 +67,10 @@ for i, (txt, sh) in enumerate(PHRASES):
     print(f"  p{i:02d} shot{sh} {len(a)/SR:5.2f}s  {txt!r}", flush=True)
 
 def build(lead, gap_in, gap_seg):
-    N = int(TOTAL * SR); buf = np.zeros(N, np.float32); t = lead; starts = []; shot_starts = {}
+    # size the RAW buffer to fit the actual (possibly >60s, pre-atempo) content — never truncate
+    # mid-layout. The atempo-fit pass below shrinks the result back to the 60s timeline.
+    total_raw = lead + sum(len(c) / SR for c in clips) + gap_seg * len(PHRASES) + 2.0
+    N = int(total_raw * SR); buf = np.zeros(N, np.float32); t = lead; starts = []; shot_starts = {}
     for i, (txt, sh) in enumerate(PHRASES):
         if sh not in shot_starts: shot_starts[sh] = t
         s = int(t * SR); e = min(s + len(clips[i]), N); buf[s:e] += clips[i][:e - s]
@@ -67,10 +78,10 @@ def build(lead, gap_in, gap_seg):
         nxt = PHRASES[i + 1][1] if i + 1 < len(PHRASES) else sh
         t += dur + (gap_seg if nxt != sh else gap_in)
     speech_end = t - (gap_seg if PHRASES[-1][1] != PHRASES[-2][1] else gap_in)
-    return buf, starts, shot_starts, speech_end
+    return buf[:int((speech_end + 2.0) * SR)], starts, shot_starts, speech_end
 
 buf, starts, shot_starts, speech_end = build(LEAD, GAP_IN, GAP_SEG)
-print("raw speech_end", round(speech_end, 2), flush=True)
+print("raw speech_end", round(speech_end, 2), "raw buf", round(len(buf)/SR, 2), "s", flush=True)
 
 # ---- atempo fit: gently speed the whole assembled VO (pitch-preserving) so speech lands ~TARGET ----
 import subprocess, tempfile
@@ -94,6 +105,10 @@ if speech_end > TARGET_SPEECH:
         try: os.remove(f)
         except OSError: pass
     print(f"  atempo={atempo:.3f} -> speech_end={speech_end:.2f}", flush=True)
+# always land on an exact TOTAL-length buffer (atempo path already does; cover the no-atempo path too)
+Nfinal = int(TOTAL * SR)
+if len(buf) != Nfinal:
+    fixed = np.zeros(Nfinal, np.float32); fixed[:min(Nfinal, len(buf))] = buf[:min(Nfinal, len(buf))]; buf = fixed
 print("final speech_end", round(speech_end, 2), flush=True)
 
 buf = buf / (np.max(np.abs(buf)) + 1e-9) * (10 ** (-1.5 / 20))
