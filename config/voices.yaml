@@ -27,13 +27,17 @@ defaults:
   publish_voice: cloned:talon            # chatterbox zero-shot of assets/voice/talon_ref.wav
   fallback_voice: kokoro:af_heart        # when the clip/stack is absent — disclose the swap
   draft_voice:   edge_tts:en-US-AvaMultilingualNeural   # rate -3%; crash net only
-  # FIRST-USE GATE: SATISFIED 2026-07-14. Owner picked take A (voice/likeness) from an
-  # A-D comparison, then E2 (clarity) from an enunciation comparison. LOCKED RECIPE:
-  #   ref  = assets/voice/talon_ref_cond.wav (the 15-25s window of the source recording)
-  #   dials= exaggeration 0.45 / cfg_weight 0.4 / temperature 0.6 / repetition_penalty 1.3
-  #   text = normalize_for_tts() spells numbers/ordinals/currency/percent before synthesis
-  # (all in vo_backends.py). Changing the window, the dials, or the normalizer's behavior
-  # requires a fresh owner listening sign-off.
+  # STANDING RECIPE (owner sign-off 2026-07-15, superseding the 2026-07-14 E2 recipe):
+  # ALL narration synthesizes through the QC pipeline vo_qc.py — full-sentence chunks,
+  # >=4 candidates/line, whisper transcript gate (WER<=0.15), resemblyzer speaker-similarity
+  # best-pick vs assets/voice/talon_ref_cond.wav with a 0.92 ship floor. Dials inside QC_KW:
+  # exaggeration 0.5 / cfg_weight 0.5 / temperature 0.8 (cfg_weight must NOT be lowered —
+  # the 2026-07-14 accent drift traced to cfg 0.4 + fragment synthesis + atempo, all banned).
+  # Owner listening test 2026-07-15: approved (picked vq3); similarity is a FLOOR not a
+  # ranker — favor short punchy sentences for the most natural read.
+  # HISTORY: 2026-07-14 'take A + E2' recipe (cfg 0.4 / temp 0.6) shipped one dispatch with
+  # accent drift and is retired. text = normalize_for_tts() still applies before synthesis.
+  # Changing the reference window, the QC dials, or the floors requires a fresh owner sign-off.
 
 # The standing narrator, then the kokoro FALLBACK roster (grades A/B preferred; pick by story tone).
 roster:
