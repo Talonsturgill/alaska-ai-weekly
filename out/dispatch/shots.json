@@ -3,52 +3,44 @@
     {
       "id": 1,
       "start": 0,
-      "end": 313,
-      "framing": "map-territory",
-      "transition_in": "",
-      "note": "top-down grid of grant cards, cold scanner sweeping"
+      "end": 360,
+      "framing": "wide-establish",
+      "transition_in": "cut",
+      "note": "orbital aerial: empty tundra + survey stake"
     },
     {
       "id": 2,
-      "start": 313,
-      "end": 472,
-      "framing": "data-panel",
-      "transition_in": "fui-boot",
-      "note": "classifier head: card in slot, DEI gate flips YES/NO, stamp arm"
+      "start": 360,
+      "end": 780,
+      "framing": "alt-vantage",
+      "transition_in": "assemble",
+      "note": "worm's-eye wireframe turbines assemble"
     },
     {
       "id": 3,
-      "start": 472,
-      "end": 735,
-      "framing": "macro-closeup",
-      "transition_in": "focus-pull",
-      "note": "archive card blooms into amber waveforms; crimson stamp descends; TERMINATED"
+      "start": 780,
+      "end": 1140,
+      "framing": "data-panel",
+      "transition_in": "graphic-match",
+      "note": "macro cost bar that will not settle"
     },
     {
       "id": 4,
-      "start": 735,
-      "end": 1019,
-      "framing": "map-territory",
-      "transition_in": "pull-out",
-      "note": "grid: crimson spreads; 1,400 / $100M / 22 DAYS"
+      "start": 1140,
+      "end": 1500,
+      "framing": "two-up",
+      "transition_in": "mask-wipe",
+      "note": "public-comment paper flood vs a dozen"
     },
     {
       "id": 5,
-      "start": 1019,
-      "end": 1304,
-      "framing": "two-up",
-      "transition_in": "mask-wipe",
-      "note": "human hand on the lever; court-green wave restores the archive card"
-    },
-    {
-      "id": 6,
-      "start": 1304,
-      "end": 1690,
-      "framing": "subject-portrait",
-      "transition_in": "crossfade",
-      "note": "archive warm with dim gaps; a reader traces every line; outro"
+      "start": 1500,
+      "end": 1800,
+      "framing": "wide-establish",
+      "transition_in": "match-cut",
+      "note": "return to tundra + ghost campus + JULY 17 stamp"
     }
   ],
   "fps": 30,
-  "total": 1690
+  "total": 1800
 }
