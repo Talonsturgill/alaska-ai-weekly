@@ -448,19 +448,20 @@ learned, and the one thing to improve next run. Mark run_state complete.
 ## FAILURE PROTOCOL
 
 - Account usage / weekly-limit errors on a subagent (e.g. "You've hit your
-  weekly limit") are TERMINAL for the whole subagent layer this run, not a
-  transient retry: every other subagent (fact-checker, treatment-directors,
-  copywriter, pixel-critics, flow-critic, scorer, upgrade-engineer) will fail
-  identically and re-spawning only burns the shared budget. Switch IMMEDIATELY
-  to solo showrunner execution — do research, fact-check, treatment, copy,
-  pixel review (by reading each render PNG and the contact sheet yourself),
-  and scoring in the main loop. Hold the score conservatively for the missing
-  independent critic pass, and state the degraded pass plainly in the Gmail
-  draft. Main-loop WebSearch/WebFetch and the Gmail/GitHub tools are typically
-  unaffected, so a complete deck can still ship; protect the Gmail deliverable
-  (the run's one irreplaceable output) by not spending budget on doomed
-  fan-outs or discretionary scans. (Codified 2026-07-14 after all six scouts
-  died on the weekly limit; the showrunner shipped Carousel No. 7 solo.)
+  weekly limit, resets 5pm UTC") are TRANSIENT, not terminal. Do NOT degrade
+  to a solo showrunner run and do NOT ship a reduced deck because of them.
+  Instead WAIT until the stated reset time, then RESPAWN the failed subagents
+  and RESUME the pipeline from where it stopped (run_state.json makes the run
+  resumable phase by phase, so no completed work is lost). If no reset time is
+  given, wait and retry the subagents with backoff until they succeed. The
+  full multi-agent pipeline (scouts, fact-checker, treatment-directors,
+  copywriter, pixel-critics, flow-critic, scorer, upgrade-engineer) must run
+  every time; a rested, complete, independently-reviewed run is always
+  preferred over a rushed one, even if delivery lands late. Only fall back to
+  showrunner-executed steps for genuine, non-time-limited unavailability (the
+  subagent framework itself is unavailable), never merely because a usage
+  window is temporarily exhausted. (Policy set by the maintainer 2026-07-14:
+  no more degraded solo runs; wait for the reset and run the full pipeline.)
 - Engine breakage you cannot fix in ~3 attempts: ship a REDUCED deck
   (fewer slides, simpler techniques) rather than nothing — quality bar
   still applies to what ships.
