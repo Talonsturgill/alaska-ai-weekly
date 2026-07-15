@@ -29,10 +29,10 @@
   },
   "audio_arc": {
     "build_steps": ["low Arctic wind bed opens", "a heartbeat sensor tick enters as we go underground", "the pulse and twin add a warm harmonic layer as the mirror assembles", "music thins to near silence at the honest caveat", "a single riser lifts under the rise-reveal", "warm resolve on the payoff, button on the signoff"],
-    "dip_at": 44.5,
-    "riser_at": 49.0,
-    "silence_at": 45.5,
-    "payoff_at": 52.5,
+    "dip_at": 42.9,
+    "riser_at": 46.7,
+    "silence_at": 43.54,
+    "payoff_at": 49.3,
     "button_pattern": "callback"
   },
   "shots": [

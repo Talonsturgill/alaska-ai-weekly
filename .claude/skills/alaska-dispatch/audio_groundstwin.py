@@ -21,6 +21,7 @@ tim = json.load(open(os.path.join(AUD, "timing60.json")))
 sb = tim.get("shot_bounds", [0, 315, 630, 855, 1215]); FPS = tim.get("fps", 30)
 speech_end = float(tim.get("speech_end", 52.5))
 shot_t = [b / FPS for b in sb] + [TOTAL]   # shot start times (s), + end
+_ps = tim.get("pause_span")   # the REAL VO gap (ground truth) around the honest-caveat turn
 
 # ---------------- ambient Arctic wind bed ----------------
 ta = tt(TOTAL)
@@ -65,10 +66,24 @@ ev(s2 + (s3 - s2) * 0.62, "lock", "the twin corrects itself", tick(0.18, 1200))
 ev(s3 + 0.15, "whoosh", "diptych assembles, stereo widen", whoosh(0.7, up=True))
 ev(s3 + (s4 - s3) * 0.42, "riser", "the thaw front descends", riser(2.0))
 ev(s4 + 0.3, "tick", "here is the honest part", tick(0.2, 900))
-SIL = min(speech_end - 3.5, s4 + (end - s4) * 0.30)      # the pre-payoff breath
+if _ps:   # place the breath exactly in the VO's real gap (ground truth, not a guess)
+    SIL = round((_ps[0] + _ps[1]) / 2.0, 3)
+else:
+    SIL = min(speech_end - 3.5, s4 + (end - s4) * 0.30)
+print(f"pause_span={_ps} -> SIL={SIL}", flush=True)
 ev(SIL + 3.2, "riser", "the rise reveal lifts", riser(2.2))
 ev(min(speech_end + 0.6, end - 1.0), "boom", "button on the signoff", button(0.7, 88))
 sfx = (sfx / (np.max(np.abs(sfx)) + 1e-9) * 0.9).astype(np.float32)
+
+# the shared duck envelope for the pre-payoff breath — applied to BOTH the wind bed and the music
+# bed (below), so the master's actual RMS drops at SIL, not just one stem the ear won't notice.
+if _ps:
+    _ds = int((_ps[0] - 0.05) * SR); _de = int((_ps[1] + 0.05) * SR)
+else:
+    _ds = int((SIL - 0.5) * SR); _de = int((SIL + 0.7) * SR)
+DUCK = np.ones(N, np.float32); DUCK[max(0, _ds):min(N, _de)] = 0.12
+DUCK = lp(DUCK, 40).astype(np.float32)
+wind *= DUCK
 wavfile.write(os.path.join(AUD, "wind60.wav"), SR, (np.stack([wind, wind], 1) * 32767).astype(np.int16))
 wavfile.write(os.path.join(AUD, "sfx60.wav"), SR, (np.stack([sfx, sfx], 1) * 32767).astype(np.int16))
 
@@ -97,10 +112,9 @@ for s_ in range(0, max(1, len(envv) - wl), 3):
 w0 = best[1] if best else 0.0; seg = X[int(w0 * SR):int(w0 * SR) + N].copy()
 if len(seg) < N: seg = np.pad(seg, ((0, N - len(seg)), (0, 0)))
 fi = int(0.8 * SR); fo = int(2.4 * SR); seg[:fi] *= np.linspace(0, 1, fi)[:, None]; seg[-fo:] *= np.linspace(1, 0, fo)[:, None]
-# deliberate SILENCE DIP: duck the bed hard around SIL (>=6 dB under neighborhood, for SILENCE_DIP gate)
-dip = np.ones(N, np.float32); ds = int((SIL - 0.5) * SR); de = int((SIL + 0.7) * SR)
-dip[max(0, ds):min(N, de)] = 0.18
-dip = lp(dip, 40).astype(np.float32); seg *= dip[:, None]
+# deliberate SILENCE DIP: duck the bed hard across the VO's REAL gap (>=6 dB under neighborhood,
+# for the SILENCE_DIP gate) using the SAME envelope already applied to the wind bed above.
+seg *= DUCK[:, None]
 wavfile.write(os.path.join(AUD, "bed60raw.wav"), SR, (seg * 32767).astype(np.int16))
 run(["ffmpeg", "-y", "-i", os.path.join(AUD, "bed60raw.wav"), "-af", "loudnorm=I=-24:TP=-6:LRA=11", "-ar", "44100", os.path.join(AUD, "bed60.wav")])
 

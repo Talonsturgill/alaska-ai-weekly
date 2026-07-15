@@ -68,22 +68,34 @@ for i, (txt, sh) in enumerate(PHRASES):
     clips.append(a)
     print(f"  p{i:02d} shot{sh} {len(a)/SR:5.2f}s  {txt!r}", flush=True)
 
+# A deliberate BREATH after the honest-caveat line (index 10, "...cannot freeze it back.") and
+# before the scope-honesty line (index 11, "One road, three years..."). Continuous narration has
+# no pause long enough for a real silence dip, and VOICE_AND_SCORE.md / storyboard_check.py require
+# one as a hard-gated story beat (quality_gate.py's SILENCE_DIP reads storyboard.json audio_arc).
+# This is RAW seconds (pre-atempo); divided by ~1.35x it still lands near 1.1-1.2s, enough for the
+# gate's +/-0.35s measurement window with margin on both sides.
+PAUSE_AFTER = {10: 1.55}
+
 def build(lead, gap_in, gap_seg):
     # size the RAW buffer to fit the actual (possibly >60s, pre-atempo) content — never truncate
     # mid-layout. The atempo-fit pass below shrinks the result back to the 60s timeline.
-    total_raw = lead + sum(len(c) / SR for c in clips) + gap_seg * len(PHRASES) + 2.0
+    total_raw = lead + sum(len(c) / SR for c in clips) + gap_seg * len(PHRASES) + sum(PAUSE_AFTER.values()) + 2.0
     N = int(total_raw * SR); buf = np.zeros(N, np.float32); t = lead; starts = []; shot_starts = {}
+    pause_span = None
     for i, (txt, sh) in enumerate(PHRASES):
         if sh not in shot_starts: shot_starts[sh] = t
         s = int(t * SR); e = min(s + len(clips[i]), N); buf[s:e] += clips[i][:e - s]
         starts.append(round(t, 3)); dur = len(clips[i]) / SR
         nxt = PHRASES[i + 1][1] if i + 1 < len(PHRASES) else sh
-        t += dur + (gap_seg if nxt != sh else gap_in)
+        gap = (gap_seg if nxt != sh else gap_in) + PAUSE_AFTER.get(i, 0.0)
+        if i in PAUSE_AFTER:
+            pause_span = (round(t + dur, 3), round(t + dur + gap, 3))
+        t += dur + gap
     speech_end = t - (gap_seg if PHRASES[-1][1] != PHRASES[-2][1] else gap_in)
-    return buf[:int((speech_end + 2.0) * SR)], starts, shot_starts, speech_end
+    return buf[:int((speech_end + 2.0) * SR)], starts, shot_starts, speech_end, pause_span
 
-buf, starts, shot_starts, speech_end = build(LEAD, GAP_IN, GAP_SEG)
-print("raw speech_end", round(speech_end, 2), "raw buf", round(len(buf)/SR, 2), "s", flush=True)
+buf, starts, shot_starts, speech_end, pause_span = build(LEAD, GAP_IN, GAP_SEG)
+print("raw speech_end", round(speech_end, 2), "raw buf", round(len(buf)/SR, 2), "s pause_span", pause_span, flush=True)
 
 # ---- atempo fit: gently speed the whole assembled VO (pitch-preserving) so speech lands ~TARGET ----
 import subprocess, tempfile
@@ -103,6 +115,7 @@ if speech_end > TARGET_SPEECH:
     shot_starts = {k: v / atempo for k, v in shot_starts.items()}
     clip_durs = [c / atempo for c in clip_durs]
     speech_end = round(speech_end / atempo, 3)
+    if pause_span: pause_span = (round(pause_span[0] / atempo, 3), round(pause_span[1] / atempo, 3))
     for f in (raw, fit):
         try: os.remove(f)
         except OSError: pass
@@ -123,6 +136,7 @@ shot_bounds = [int(round(shot_starts[s] * FPS)) for s in shot_seg]
 shot_bounds[0] = 0
 json.dump({"starts": starts, "beats": [int(round(s * FPS)) for s in starts],
            "shot_seg": shot_seg, "shot_bounds": shot_bounds, "speech_end": round(speech_end, 3),
+           "pause_span": list(pause_span) if pause_span else None,
            "total": TOTAL, "fps": FPS}, open(os.path.join(AUD, "timing60.json"), "w"), indent=2)
 json.dump({"words": words, "speech_end": round(speech_end, 3), "total": TOTAL, "fps": FPS},
           open(os.path.join(AUD, "words60.json"), "w"), indent=2)
