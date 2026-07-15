@@ -99,6 +99,17 @@ def _pulse_x(t):
 
 # ================================================================= SHOT 1 — THE ROAD ON THE ICE
 @ti.func
+def _snowdrift(p, t):
+    # low wisps of wind-driven surface snow, domain-repeated and carried by t -- real continuous
+    # motion that belongs to the world (Arctic wind, already the audio bed) rather than a UI
+    # sticker. Two staggered periods so it doesn't read as an obvious repeating grid.
+    q = ti.Vector([p.x, p.y, p.z])
+    q.x += t * 1.35
+    q.x -= 3.7 * ti.round(q.x / 3.7)
+    q.z -= 2.9 * ti.round((q.z + 1.4) / 2.9)
+    return dim.sd_ellipsoid(q, ti.Vector([0.0, -0.24, 0.0]), ti.Vector([0.85, 0.03, 0.11]))
+
+@ti.func
 def sceneA(p, t):
     ground = p.y + 0.32 + 0.05 * dim.fbm2(p.x * 0.7, p.z * 0.7)
     d = ground
@@ -107,11 +118,17 @@ def sceneA(p, t):
     d = ti.min(d, stake)
     conduit = dim.sd_capsule(p, ti.Vector([1.7, 0.0, 5.0]), ti.Vector([1.7, -1.1, 5.0]), 0.03)
     d = ti.min(d, conduit)
+    d = ti.min(d, _snowdrift(p, t))
     return d
 
 @ti.func
 def matA(p, n, t):
     col = C_SNOW
+    # permafrost patterned-ground cracks: noise-contour veins across the tundra (the real
+    # geological texture this story is about), not a flat card of white
+    lines = ti.abs(ti.sin(dim.fbm2(p.x * 0.85, p.z * 0.85) * 9.0))
+    if lines < 0.05 and p.y < 0.30:
+        col = col * 0.72
     if p.y < 0.30 and dim.sd_rbox(p, ti.Vector([0.0, 0.02, 6.0]), ti.Vector([6.5, 0.30, 1.35]), 0.10) < 0.04:
         col = C_GRAVEL
     st = dim.sd_capsule(p, ti.Vector([1.7, -0.1, 5.0]), ti.Vector([1.7, 0.66, 5.0]), 0.035)
@@ -119,6 +136,8 @@ def matA(p, n, t):
         col = ti.Vector([0.20, 0.22, 0.26])
         if p.y > 0.56:
             col = WARM_TIP
+    if _snowdrift(p, t) < 0.03:
+        col = C_SNOW * 1.15
     return col
 
 @ti.func
@@ -365,10 +384,14 @@ def shot_of(f):
 
 # ---------------- cameras ----------------
 def camA(f):
+    # recomposed closer/lower than the original: the first pass wasted most of frame 0 on flat
+    # empty sky with the stake reduced to a barely-visible speck (an aerial-descent doesn't have
+    # to mean starting so far out the subject is illegible). Still a real elevated descent, just
+    # framed so the road, stake, and ground read immediately.
     x = (f - SHOT_START[0]) / max(1, SHOT_END[0] - SHOT_START[0])
-    A = ((0.4, 4.6, -1.2), (0.5, 0.1, 6.0)); B = ((0.5, 1.9, 1.4), (0.6, -0.1, 6.0))
+    A = ((0.7, 2.5, 0.5), (0.9, -0.05, 5.4)); B = ((0.5, 1.2, 2.3), (0.6, -0.15, 5.6))
     pos, look = dim.dolly(A, B, dim.ease_io(x)); dx, dy, dz = dim.drift(f, 0.014)
-    return dim.Cam((pos[0]+dx, pos[1]+dy, pos[2]+dz), look, fov=1.26, focus=22 - 15*x, fstop=5.0)
+    return dim.Cam((pos[0]+dx, pos[1]+dy, pos[2]+dz), look, fov=1.26, focus=8 - 4*x, fstop=4.5)
 
 def camB(f):
     x = (f - SHOT_START[1]) / max(1, SHOT_END[1] - SHOT_START[1])
@@ -483,7 +506,7 @@ def chrome0(ctx, f, t):
     hf = dc.fr(50, 900); hs = "A TWIN FOR THAWING GROUND"; hw = dc.tw(hs, hf, 0.01)
     hy = 860 - int(6 * (1.0 - min(1.0, t / 0.5))) - int(14 * (1.0 - ha))
     lab(ctx, (1080 - hw) // 2, hy, hs, hf, BONE, ha, tr=0.01, kind="hook")
-    lab(ctx, 104, 152, "UTQIAGVIK, ALASKA", dc.mono(30, b=True), BONE, _appear(t, 0.8))
+    lab(ctx, 104, 152, "UTQIAGVIK, ALASKA", dc.mono(30, b=True), BONE, 1.0)
 
 def chrome1(ctx, f, t):
     dc = dc_mod(); eyebrow(ctx, f)
