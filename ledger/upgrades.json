@@ -331,6 +331,13 @@
    "focus": "self-improving-pipeline resilience / graceful degradation (rotated off editorial-dataviz 07-10, procedural-art + 3D 07-11, accessibility/PDF 07-12, headless-Chromium/Playwright 07-13)",
    "searches": 0,
    "note": "HELD TO ZERO SEARCHES deliberately. The account weekly usage limit that killed the subagents draws from the same pool as the main loop, and the run's one irreplaceable output is the Gmail draft, so discretionary search budget was preserved for delivery. The reactive lesson was captured from this run's own evidence and shipped as the FAILURE PROTOCOL fix above. PARKED candidate: 'canary-first fan-out' (spawn one subagent, read its error before fanning out) was NOT adopted because serializing a canary adds latency to every healthy run to save budget only on rare limit-hit runs; the zero-latency FAILURE-PROTOCOL clause is the safer form of the same fix."
+  },
+  {
+   "run_date": "2026-07-15",
+   "focus": "procedural relief / cartographic depth for map-hero decks (rotated off self-improving-pipeline 07-14, headless-Chromium 07-13, accessibility/PDF 07-12)",
+   "searches": 0,
+   "found": "This run's scorer named artwork-craft (7.5) the weakest criterion: a graded 2D Alaska relief with a grid overlay reads flat, not as a dimensional survey plate. Bounded fix = a reusable relief-depth helper (directional hillshade with real contrast from an fbm gradient, aerial-perspective layering toward the far edge, low-alpha interior texture) layered over the already-committed noise.js primitives, mirroring the parked strata-texture/rim-light helper (runs 4/11). Held to 0 searches to protect main-loop budget for the Gmail deliverable.",
+   "outcome": "parked (FIELD_NOTES 2026-07-15: relief-depth helper + new instinct relief-depth-not-just-grade). No code applied: it is an improvement not a reactive fix, it edits shared rendering craft wanting careful multi-deck A/B verification, and no engine defect demanded a fix, so zero upgrades is the honest count."
   }
  ]
 }
