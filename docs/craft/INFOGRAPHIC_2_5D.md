@@ -60,3 +60,24 @@ The objective gate keeps its spirit (legibility, cadence, sync, sound, first-fra
 3D-specific checks (DIMENSIONAL / DEPTH_FIELD / CAMERA_MOTION via render manifest) are replaced
 by 2.5D checks: STORY_DENSITY (every beat introduces a nameable story element), say-it-show-it
 lag, and caption alignment error (measured against the forced alignment, must be < 150ms median).
+
+## The bridge: where the intelligence goes (added after the 2026-07-15 style study)
+
+The 2026-07-14 failure was not a rendering failure, it was an ALLOCATION failure: the routine
+spent its intelligence on rendering mechanics and none on visual translation. The fix is
+structural, in order:
+
+1. **The visual sentence pass (Phase 4).** For every VO line: "what literal cartoon do we draw
+   while this is said?" — subject (a character/characterized object with a face and an emotion),
+   action (a visible verb), annotation (the number/label/arrow that lands with it). Recorded as
+   beats[].draw. If it can't be phrased as "X does Y," it's a slide, not a beat.
+2. **The style grammar** (from studying real IGS frames, saved refs in the session archive):
+   ink outlines on everything; base+shade+highlight tones; faces with expressions; 20+ shapes
+   per hero object; fat outlined arrows; shouty boxed labels; starburst badges; saturated
+   radial-burst backgrounds. Exemplar component held to this bar: video-engine/src/IGSHook.tsx.
+3. **The taste loop (Phase 5).** Renders cost ~60s, so LOOKING is mandatory: extract frames of
+   every scene, run the five-question check (face? visible verb? outlined+shaded? number drawn?
+   holds up next to a real IGS frame?), iterate 3-5x. The craft comes from the iteration the
+   old engine priced out.
+4. **The compounding library.** Every rig/arrow/badge/map built for one dispatch is reusable;
+   per-run effort goes into 1-2 NEW bespoke hero illustrations, not re-plumbing.

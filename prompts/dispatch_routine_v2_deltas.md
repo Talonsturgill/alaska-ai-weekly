@@ -10,24 +10,40 @@ docs/craft/INFOGRAPHIC_2_5D.md (supersedes DIMENSIONAL_CRAFT.md).
 
 ## 1. Replace the "YOUR CRAFT IS DIMENSIONAL CINEMATOGRAPHY" bullet in PHASE 4 with:
 
-- YOUR CRAFT IS 2.5D INFOGRAPHIC STORYTELLING (The Infographics Show register). Build every
-  scene in the Remotion engine (video-engine/, doctrine in docs/craft/INFOGRAPHIC_2_5D.md):
-  flat, bold, story-first compositions where EVERY on-screen element is a story element — a
-  map with a pinned location, a counter landing on a real number, a bar overtaking a baseline,
-  a labeled diagram, a character silhouette. No decorative scenery, no mood backgrounds, no 3D
-  worlds. The 2.5D feel comes from parallax layers and eased pops on flat art. Scenes are
-  reusable React components; the story (beats, numbers, labels, palette) is per-run data
-  injected via --props. Grow the component library run over run — that is how daily cadence
-  gets cheap.
+- YOUR CRAFT IS 2.5D INFOGRAPHIC STORYTELLING (The Infographics Show register; doctrine in
+  docs/craft/INFOGRAPHIC_2_5D.md, craft bar exemplar: video-engine/src/IGSHook.tsx). The core
+  intelligence step is the VISUAL SENTENCE PASS: go through the VO line by line and answer,
+  for EVERY sentence, "what literal cartoon do we draw while this is said?" — a SUBJECT (who/
+  what, usually a character or characterized object with a FACE and an emotion), an ACTION
+  (a verb you can see happening), and an ANNOTATION (the number/label/arrow that lands with
+  it). Write these into the storyboard as beats[].draw = {subject, action, emotion,
+  annotation}. A beat whose draw you cannot phrase as "X does Y" is not a beat, it is a slide.
+- THE STYLE GRAMMAR IS LAW (from studying real IGS frames): thick ink outlines on every shape;
+  multi-tone shading (base fill + shade region + highlight blob); character faces with real
+  expressions anchoring most scenes; detail density (interiors drawn: teeth, vents, LEDs,
+  mountains, tree rows — 20+ shapes per hero object); fat outlined arrows; shouty boxed
+  labels; starburst stat badges; saturated palettes on radial-burst backgrounds. No decorative
+  scenery, no mood backgrounds, no 3D worlds, no flat single-tone fills.
+- Scenes are reusable React components in video-engine/src/; the story data (headline, numbers,
+  labels, palette) is injected per-run via --props. Every run GROWS the component library
+  (character rigs, arrows, badges, maps, meters) — quality compounds; never rebuild what the
+  library already does well; DO author 1-2 new bespoke hero illustrations per run where the
+  story needs them.
 
 ## 2. Replace the PHASE 5 render instructions with:
 
 PHASE 5: BUILD (Remotion, 9:16 1080x1920 @30fps)
-Author this run's scenes in video-engine/src/ to the storyboard (compose from the existing
-component library first; add new components only when the story needs them). Per-run data goes
-in a props JSON, never hard-coded. Render: `npx remotion render Dispatch <out>` (headless-shell
-config is baked into remotion.config.ts). A 60s render takes MINUTES — render often, look at
-frames early and iterate; there is no 3-hour render to protect. VOICE: synthesize ONLY through
+Author this run's scenes in video-engine/src/ to the storyboard's beats[].draw (compose from
+the existing component library first; author new bespoke hero illustrations where the story
+needs them — to the IGSHook.tsx craft bar, never below it). Per-run data goes in a props JSON,
+never hard-coded. Render: `npx remotion render Dispatch <out>` (headless-shell config is baked
+into remotion.config.ts). A 60s render takes MINUTES, so the TASTE LOOP is mandatory and cheap:
+render every scene, EXTRACT FRAMES AND LOOK AT THEM, and iterate each scene until it passes
+the five-question check — (1) is there a character/face or characterized object? (2) can you
+name the visible action verb? (3) is every shape outlined and shaded, zero flat single-tone
+fills? (4) does the spoken number/name appear drawn on screen? (5) would this frame hold up
+next to a real Infographics Show frame? Three to five iterations per scene is normal and takes
+minutes. A scene that fails question 5 does not ship. VOICE: synthesize ONLY through
 .claude/skills/alaska-dispatch/vo_qc.py (full-sentence chunks; N candidates per line; whisper
 transcript validation; speaker-similarity scoring against assets/voice/talon_ref_cond.wav; the
 per-line similarity report goes in the Gmail draft). cfg_weight stays 0.5. NEVER time-stretch
