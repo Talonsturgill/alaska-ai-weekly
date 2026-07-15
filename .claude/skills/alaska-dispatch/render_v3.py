@@ -24,11 +24,11 @@ dim.init(1080, 1920, scale=float(os.environ.get("DIM_SCALE", "1.0")))
 # ---- palette: flat high overcast North Slope daylight, near shadowless silver sky ----
 dim.SUN_DIR = (0.26, 0.90, -0.22)      # high + soft => near shadowless
 dim.SUN_COL = (0.96, 0.97, 1.00)       # cold white key
-dim.SKY_COL = (0.60, 0.64, 0.71)       # cool silver fill
-dim.SKY_HI  = (0.82, 0.85, 0.90)       # bright silver zenith
+dim.SKY_COL = (0.50, 0.54, 0.61)       # cool silver fill (dimmed so ground ambient sits below sky)
+dim.SKY_HI  = (0.72, 0.76, 0.83)       # silver zenith (dimmer => sky stays above ground value)
 dim.RIM_STR = 0.30
-dim.FOG_DEN = 0.018
-dim.FOG_COL = (0.75, 0.78, 0.83)       # wet-slate haze
+dim.FOG_DEN = 0.009                     # halve the haze so distant ground doesn't wash to sky value
+dim.FOG_COL = (0.64, 0.68, 0.75)       # wet-slate haze (dimmed)
 
 # shot time boundaries (seconds)
 S1, S2, S3, S4 = 12.0, 26.0, 38.0, 50.0
@@ -75,8 +75,16 @@ def _stake_col(p):
 
 @ti.func
 def _tundra_mat(p):
-    m = 0.5 + 0.5 * dim.fbm2(p.x * 0.6, p.z * 0.6)
-    return ti.Vector([0.30, 0.34, 0.24]) * (1.0 - m) + ti.Vector([0.44, 0.36, 0.20]) * m   # sage<->ochre
+    # darker/warmer than the silver sky, with high-contrast fbm+polygon mottling so vast terrain
+    # READS from above instead of washing to a cream void
+    a = 0.5 + 0.5 * dim.fbm2(p.x * 0.5, p.z * 0.5)
+    b = 0.5 + 0.5 * dim.fbm2(p.x * 1.7 + 3.0, p.z * 1.7)
+    m = ti.math.clamp(a * 0.7 + b * 0.3, 0.0, 1.0)
+    c = ti.Vector([0.11, 0.12, 0.07]) * (1.0 - m) + ti.Vector([0.30, 0.25, 0.13]) * m       # peat sage<->dry ochre
+    patch = ti.math.clamp(0.5 + 0.5 * dim.fbm2(p.x * 3.0 + 9.0, p.z * 3.0), 0.0, 1.0)        # frost-heave polygons
+    if patch < 0.34:
+        c = c * 0.55
+    return c
 
 
 # ---------------------------------------------------------------- per-world ramps (shared by scene+mat)
@@ -90,7 +98,7 @@ def _t_rise(t):
 def _bar_h(t):
     leap = ti.math.clamp((t - 35.5) / 1.2, 0.0, 1.0)           # low tick -> leaps to ~6x
     leap = leap * leap * (3.0 - 2.0 * leap)
-    bh = 0.8 + 4.0 * leap
+    bh = 0.5 + 2.4 * leap                                      # smaller so it reads as a BAR, not a wall
     bh += 0.10 * bh * ti.sin(t * 7.0) * leap                   # unstable at the top
     bh += 0.03 * ti.sin(t * 11.0)                              # never fully settles
     return bh
@@ -112,32 +120,35 @@ def _turbines(p, t):
         cz = 1.5 if i < 2 else 4.5
         h = (6.0 + 0.6 * i) * rise + 0.15
         d = ti.min(d, dim.sd_rbox(p, ti.Vector([cx, h * 0.5, cz]), ti.Vector([0.16, h * 0.5, 0.16]), 0.04))
+        d = ti.min(d, dim.sd_rbox(p, ti.Vector([cx, h, cz]), ti.Vector([0.30, 0.11, 0.24]), 0.03))  # turbine crown/stack top
     flare_h = 6.0 * rise + 0.15                                # crown of column 0
-    d = ti.min(d, dim.sd_ellipsoid(p, ti.Vector([-1.6, flare_h + 0.2, 1.5]), ti.Vector([0.28, 0.40, 0.28])))
+    d = ti.min(d, dim.sd_ellipsoid(p, ti.Vector([-1.6, flare_h + 0.05, 1.5]), ti.Vector([0.28, 0.40, 0.28])))
     return d
 
 
 @ti.func
 def _costbar(p, t):
     bh = _bar_h(t)
-    bar = dim.sd_rbox(p, ti.Vector([0.0, bh * 0.5, 0.0]), ti.Vector([0.34, bh * 0.5, 0.34]), 0.03)
+    bar = dim.sd_rbox(p, ti.Vector([0.0, bh * 0.5, 0.0]), ti.Vector([0.24, bh * 0.5, 0.24]), 0.03)
     return ti.min(bar, p.y)                                    # bar on a flat gridline plane at y=0
 
 
 @ti.func
 def _paper(p, t):
     ramp = _p_ramp(t)
-    hL = 0.4 + 3.4 * ramp
+    hL = 0.4 + 3.2 * ramp
     hR = 0.30
-    d = dim.sd_rbox(p, ti.Vector([-1.25, hL * 0.5, 0.0]), ti.Vector([0.85, hL * 0.5, 0.60]), 0.02)   # left drift
-    d = ti.min(d, dim.sd_rbox(p, ti.Vector([1.35, hR * 0.5, 0.0]), ti.Vector([0.50, hR * 0.5, 0.50]), 0.02))  # right stack
+    # LEFT: a mound (wide base + narrower cap) reads as a MOUNTAIN of paper, not a flat panel
+    d = dim.sd_rbox(p, ti.Vector([-1.25, hL * 0.5, 0.0]), ti.Vector([0.95, hL * 0.5, 0.62]), 0.02)
+    d = ti.min(d, dim.sd_rbox(p, ti.Vector([-1.05, hL * 0.82, 0.0]), ti.Vector([0.55, hL * 0.20, 0.42]), 0.02))
+    d = ti.min(d, dim.sd_rbox(p, ti.Vector([1.35, hR * 0.5, 0.0]), ti.Vector([0.50, hR * 0.5, 0.50]), 0.02))  # short right stack
     d = ti.min(d, dim.sd_rbox(p, ti.Vector([0.0, 0.15, 0.0]), ti.Vector([0.012, 0.15, 0.62]), 0.0))  # center seam
-    for i in ti.static(range(3)):                             # a few tumbling slips onto the left pile
-        ph = t * 0.8 + i * 2.1
-        fx = -1.2 + 0.5 * ti.sin(ph * 1.3 + i)
-        fz = -0.2 + 0.4 * ti.cos(ph + i)
-        fy = hL + 1.7 - (ph - 3.0 * ti.floor(ph / 3.0)) * 0.9
-        d = ti.min(d, dim.sd_rbox(p, ti.Vector([fx, fy, fz]), ti.Vector([0.16, 0.008, 0.11]), 0.005))
+    for i in ti.static(range(6)):                             # discrete slips tumbling onto the left pile
+        ph = t * 0.8 + i * 1.3
+        fx = -1.2 + 0.7 * ti.sin(ph * 1.3 + i)
+        fz = -0.25 + 0.45 * ti.cos(ph + i)
+        fy = hL + 1.9 - (ph - 3.0 * ti.floor(ph / 3.0)) * 0.9
+        d = ti.min(d, dim.sd_rbox(p, ti.Vector([fx, fy, fz]), ti.Vector([0.17, 0.01, 0.12]), 0.005))
     return ti.min(d, _tundra(p))
 
 
@@ -168,6 +179,14 @@ def _mat(p, n, t):
     col = ti.Vector([0.34, 0.33, 0.22])
     if t < S1:                                                 # aerial tundra + stake
         col = _tundra_mat(p)
+        ax = ti.abs(p.x) - 1.7                                 # parcel claim: signal-red outline on the land
+        az = ti.abs(p.z) - 2.3
+        if ti.abs(ax) < 0.06:
+            if az < 0.02:
+                col = ti.Vector([1.60, 0.10, 0.08])
+        if ti.abs(az) < 0.06:
+            if ax < 0.02:
+                col = ti.Vector([1.60, 0.10, 0.08])
         if _stake(p) < 0.03:
             col = _stake_col(p)
     elif t < S2:                                               # worm's-eye turbines
@@ -175,23 +194,34 @@ def _mat(p, n, t):
         if _turbines(p, t) < 0.05:
             col = ti.Vector([0.18, 0.62, 0.78])               # blueprint-cyan steel edges
         flare_h = 6.0 * _t_rise(t) + 0.15
-        if dim.sd_ellipsoid(p, ti.Vector([-1.6, flare_h + 0.2, 1.5]), ti.Vector([0.28, 0.40, 0.28])) < 0.05:
+        if dim.sd_ellipsoid(p, ti.Vector([-1.6, flare_h + 0.05, 1.5]), ti.Vector([0.28, 0.40, 0.28])) < 0.05:
             col = ti.Vector([2.60, 1.15, 0.22])               # sodium-orange flare (emissive)
     elif t < S3:                                               # cost bar in the void
         col = ti.Vector([0.05, 0.06, 0.08])                   # dark void floor
         if p.y < 0.02 and ti.min(ti.abs(p.x - ti.round(p.x)), ti.abs(p.z - ti.round(p.z))) < 0.03:
             col = ti.Vector([0.10, 0.45, 0.60])               # glowing cyan gridlines
         bh = _bar_h(t)
-        if dim.sd_rbox(p, ti.Vector([0.0, bh * 0.5, 0.0]), ti.Vector([0.34, bh * 0.5, 0.34]), 0.03) < 0.04:
+        if dim.sd_rbox(p, ti.Vector([0.0, bh * 0.5, 0.0]), ti.Vector([0.24, bh * 0.5, 0.24]), 0.03) < 0.04:
             col = ti.Vector([0.20, 0.85, 1.00])               # blueprint-cyan bar
     elif t < S4:                                               # paper flood
-        col = ti.Vector([0.80, 0.80, 0.83]) * (0.90 + 0.10 * (0.5 + 0.5 * ti.sin(p.y * 40.0)))  # pale slips
+        col = ti.Vector([0.56, 0.54, 0.47])                   # warm off-white paper (lower exposure => reads vs sky)
+        e = p.y - 0.09 * ti.floor(p.y / 0.09)                 # sheet edges: dark gap every ~0.09 => reads as stacked slips
+        if e < 0.02:
+            col = col * 0.55
         if _tundra(p) < 0.03:
-            col = ti.Vector([0.40, 0.42, 0.34])               # tundra floor
+            col = ti.Vector([0.20, 0.20, 0.16])               # dark readable ground under the drifts
         if dim.sd_rbox(p, ti.Vector([0.0, 0.15, 0.0]), ti.Vector([0.012, 0.15, 0.62]), 0.0) < 0.03:
-            col = ti.Vector([0.15, 0.16, 0.18])               # dark center seam
+            col = ti.Vector([0.10, 0.11, 0.13])               # dark center seam
     else:                                                     # return aerial + ghost campus
         col = _tundra_mat(p)
+        ax = ti.abs(p.x) - 1.7                                 # the claim persists on the returning land
+        az = ti.abs(p.z) - 2.3
+        if ti.abs(ax) < 0.06:
+            if az < 0.02:
+                col = ti.Vector([1.30, 0.09, 0.07])
+        if ti.abs(az) < 0.06:
+            if ax < 0.02:
+                col = ti.Vector([1.30, 0.09, 0.07])
         if _stake(p) < 0.03:
             col = _stake_col(p)
         if _ghostbox(p) < 0.06:
@@ -210,8 +240,8 @@ def _shadow(p, t):
     elif t < S3:
         d = _costbar(p, t)
     elif t < S4:
-        hL = 0.4 + 3.4 * _p_ramp(t)
-        d = ti.min(_tundra(p), dim.sd_rbox(p, ti.Vector([-1.25, hL * 0.5, 0.0]), ti.Vector([0.85, hL * 0.5, 0.60]), 0.02))
+        hL = 0.4 + 3.2 * _p_ramp(t)
+        d = ti.min(_tundra(p), dim.sd_rbox(p, ti.Vector([-1.25, hL * 0.5, 0.0]), ti.Vector([0.95, hL * 0.5, 0.62]), 0.02))
     else:
         d = ti.min(_tundra(p), dim.sd_capsule(p, ti.Vector([0.0, 0.0, 0.0]), ti.Vector([0.0, 1.15, 0.0]), 0.05))
     return d
@@ -228,8 +258,8 @@ def cam_at(f):
     t = f / FPS
     if t < S1:                                                 # S1 rise-reveal aerial
         x = dim.ease_io(t / 12.0)
-        pos, look = dim.dolly(((0.0, 3.2, -4.2), (0.0, 0.5, 0.0)),
-                              ((0.0, 8.5, -6.5), (0.0, 0.2, 0.0)), x)
+        pos, look = dim.dolly(((0.0, 3.0, -4.0), (0.0, 0.6, 0.2)),
+                              ((0.0, 6.8, -5.2), (0.0, 0.1, 0.2)), x)   # cap the rise: stake keeps scale, land fills frame
         focus = math.dist(pos, (0.0, 0.6, 0.0)); fov, fstop = 1.25, 5.6
     elif t < S2:                                               # S2 dolly-through, low looking up
         x = dim.ease_io((t - 12.0) / 14.0)
@@ -238,9 +268,9 @@ def cam_at(f):
         focus = 4.5 * (1 - x) + 2.5 * x; fov, fstop = 1.45, 3.2
     elif t < S3:                                               # S3 rack-focus-macro push-in
         x = dim.ease_io((t - 26.0) / 12.0)
-        pos, look = dim.dolly(((0.0, 2.4, -6.0), (0.0, 1.6, 0.0)),
-                              ((0.0, 2.0, -3.6), (0.0, 1.8, 0.0)), x)
-        focus = 6.0 * (1 - x) + 3.6 * x; fov, fstop = 1.15, 2.4     # rack far -> near
+        pos, look = dim.dolly(((0.0, 2.9, -8.0), (0.0, 1.2, 0.0)),
+                              ((0.0, 2.6, -6.4), (0.0, 1.4, 0.0)), x)   # pulled back: BAR with headroom + top edge
+        focus = 8.0 * (1 - x) + 6.4 * x; fov, fstop = 1.15, 2.6     # rack far -> onto the bar
     elif t < S4:                                               # S4 dolly-through the paper
         x = dim.ease_io((t - 38.0) / 12.0)
         pos, look = dim.dolly(((0.6, 1.5, -5.0), (-0.4, 1.1, 0.0)),
@@ -248,8 +278,8 @@ def cam_at(f):
         focus = math.dist(pos, (-1.25, 1.4, 0.0)); fov, fstop = 1.35, 2.8
     else:                                                     # S5 locked-drift aerial (loopback)
         x = dim.ease_io((t - 50.0) / 10.0)
-        pos, look = dim.dolly(((0.0, 7.9, -6.1), (0.0, 0.4, 0.0)),
-                              ((0.20, 8.4, -6.7), (0.0, 0.3, 0.0)), x)
+        pos, look = dim.dolly(((0.0, 6.5, -5.0), (0.0, 0.2, 0.2)),
+                              ((0.20, 6.7, -5.4), (0.0, 0.1, 0.2)), x)   # match Shot 1 height: readable land + stake
         focus = math.dist(pos, (0.0, 0.6, 0.0)); fov, fstop = 1.25, 6.3
     dxx, dyy, dzz = dim.drift(f, amp=0.012)
     pos = (pos[0] + dxx, pos[1] + dyy, pos[2] + dzz)
