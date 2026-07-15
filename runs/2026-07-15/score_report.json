@@ -1,23 +1,96 @@
 {
-  "carousel_no": 8,
-  "run_date": "2026-07-15",
-  "criteria": [
-    {"name": "Thumb-stop cover", "weight": 0.14, "score_0_10": 8, "why": "Huge 'IT ISN'T BUILT YET' over the Alaska relief plate with reticle and gold Polaris is a clean single-focal pattern interrupt; the 8-word overline supplies the specific claim. Held from 9-10 because the bone relief outline nearly disappears at 432px, so the hero line carries almost alone at thumb."},
-    {"name": "Story arc & swipe momentum", "weight": 0.14, "score_0_10": 8, "why": "Genuine beats hook to honest close; the confidence meter (0% COMPUTED to MODEL TBD to SITES NAMED 1 to WATCH THE MILESTONES) is a real spine and the contact sheet reads as one composed sequence. S3/S4 and the S7 legend are mildly modular, keeping it off a 9."},
-    {"name": "Artwork craft & genuine detail", "weight": 0.16, "score_0_10": 7.5, "why": "Flat/film-graded system IS argued in the dossier; execution is consistent and tasteful (OKLCH-style grade, grain, hairline coastline incl. Aleutians survives zoom, isotype 56/60 grid, parallel-projection ladder, assay chips, truth-code color). But the 10 descriptor also wants at least one slide with real depth used masterfully; the relief reads as a graded 2D map with a grid overlay, interiors largely empty graphite. Argued-flat lifts above 7 but the unrealized depth caps it."},
-    {"name": "Story-art fusion", "weight": 0.14, "score_0_10": 9, "why": "Best dimension. Art encodes the numbers literally: 12 nodes / 1 gold Alaska, 56 lit / 4 dark, a ladder of 2 solid gold rungs vs 8 phantom-blue ghost rungs, a true-scaled $500K sliver, exactly 7 chips, exactly 1 gold pin, the 0% meter and un-run grid = the AI's unbuilt state. Gold=real / phantom-blue=promise is a genuine semantic system."},
-    {"name": "Alaska authenticity & local relevance", "weight": 0.12, "score_0_10": 8, "why": "Named throughout: NSF, UAF, USGS, NANA (correctly a partner), Alaska Silver, Lee Ann Munk, Fairbanks coordinates, western-Alaska site, $500K state seed, the China-processing goal. Geography accurate, honestly labeled illustrative. A consequential local win told without boosterism."},
-    {"name": "Insight density & factual weight", "weight": 0.10, "score_0_10": 8, "why": "Nearly every content slide adds a new verified specific, 25-50 words on dense slides, zero filler. S7 lighter breather and S9 synthesis are appropriate, keeping it off a 9."},
-    {"name": "Variety vs ledger", "weight": 0.08, "score_0_10": 7, "why": "Fresh hero concept and novel honest confidence-meter continuity device with clean divergence on every required axis; but the Alaska-map-as-hero returns (No.1) and Archivo-variable display returns (No.2/No.5), recognizable reused subsystems, the textbook 7 descriptor."},
-    {"name": "Legibility & platform fitness", "weight": 0.07, "score_0_10": 8, "why": "Floors met: 33px Manrope body, NN/09 counters on all nine, safe zones respected, vector PDF 3.28MB in-band with title, reads at 432px. Squeakers: dim S5 sub and body over relief on S4/S8 (scrimmed, legible)."},
-    {"name": "Copy: voice & hook", "weight": 0.05, "score_0_10": 8, "why": "Hook complete and sharp inside ~117 chars, caption ~570 chars within band, analytical position-taking voice, deck-summary line present, real debatable close, straight quotes, no dashes, grade 8-10."},
-    {"name": "Deliverable completeness", "weight": 0.10, "score_0_10": 8, "why": "Post copy, exactly 3 niche hashtags, first-comment source block, deck-summary line, document title, vector PDF, 9 renders, thumbs and contact sheet all present and correct. Scored 8 (not 10) because the Gmail draft, run report, and live main-branch URL resolution are not verifiable from the scored artifacts."}
-  ],
-  "weighted_total": 8.78,
-  "hard_fails": [],
-  "ship_threshold": 8.3,
-  "verdict": "ship",
-  "weakest_criterion": "Artwork craft & genuine detail",
-  "one_sentence_fix": "Give the Alaska relief plates genuine multiplane depth (real hillshade/atmospheric layering and interior texture) so the hero delivers the dimensional survey plate the storyboard argues for, instead of reading as a graded 2D map with a grid overlay.",
-  "honest_notes": "Weights sum to 1.10, so 8.78 sits on a ~11 scale between No.5 (8.54) and No.4 (8.90); revision count 1 keeps the iteration-ladder threshold at 8.3 (0-2 band). No hard fail, no 6.9 cap. Honesty guardrails all held on-slide (NANA partner not owner, biological methods not biomining, only 7 named minerals, single illustrative pin with no Ambler/Pebble, $160M always conditional, $135M-to-$2B fenced as program-wide). The deck's real ceiling is artwork depth and hero/type variety, not honesty or story."
+ "carousel_no": 8,
+ "run_date": "2026-07-15",
+ "criteria": [
+  {
+   "name": "Thumb-stop cover",
+   "weight": 0.14,
+   "score_0_10": 8,
+   "why": "Huge 'IT ISN'T BUILT YET' over the Alaska relief plate with reticle and gold Polaris is a clean single-focal pattern interrupt; the 8-word overline supplies the specific claim. Held from 9-10 because the bone relief outline nearly disappears at 432px, so the hero line carries almost alone at thumb.",
+   "score": 8,
+   "notes": "Huge 'IT ISN'T BUILT YET' over the Alaska relief plate with reticle and gold Polaris is a clean single-focal pattern interrupt; the 8-word overline supplies the specific claim. Held from 9-10 because the bone relief outline nearly disappears at 432px, so the hero line carries almost alone at thumb."
+  },
+  {
+   "name": "Story arc & swipe momentum",
+   "weight": 0.14,
+   "score_0_10": 8,
+   "why": "Genuine beats hook to honest close; the confidence meter (0% COMPUTED to MODEL TBD to SITES NAMED 1 to WATCH THE MILESTONES) is a real spine and the contact sheet reads as one composed sequence. S3/S4 and the S7 legend are mildly modular, keeping it off a 9.",
+   "score": 8,
+   "notes": "Genuine beats hook to honest close; the confidence meter (0% COMPUTED to MODEL TBD to SITES NAMED 1 to WATCH THE MILESTONES) is a real spine and the contact sheet reads as one composed sequence. S3/S4 and the S7 legend are mildly modular, keeping it off a 9."
+  },
+  {
+   "name": "Artwork craft & genuine detail",
+   "weight": 0.16,
+   "score_0_10": 7.5,
+   "why": "Flat/film-graded system IS argued in the dossier; execution is consistent and tasteful (OKLCH-style grade, grain, hairline coastline incl. Aleutians survives zoom, isotype 56/60 grid, parallel-projection ladder, assay chips, truth-code color). But the 10 descriptor also wants at least one slide with real depth used masterfully; the relief reads as a graded 2D map with a grid overlay, interiors largely empty graphite. Argued-flat lifts above 7 but the unrealized depth caps it.",
+   "score": 7.5,
+   "notes": "Flat/film-graded system IS argued in the dossier; execution is consistent and tasteful (OKLCH-style grade, grain, hairline coastline incl. Aleutians survives zoom, isotype 56/60 grid, parallel-projection ladder, assay chips, truth-code color). But the 10 descriptor also wants at least one slide with real depth used masterfully; the relief reads as a graded 2D map with a grid overlay, interiors largely empty graphite. Argued-flat lifts above 7 but the unrealized depth caps it."
+  },
+  {
+   "name": "Story-art fusion",
+   "weight": 0.14,
+   "score_0_10": 9,
+   "why": "Best dimension. Art encodes the numbers literally: 12 nodes / 1 gold Alaska, 56 lit / 4 dark, a ladder of 2 solid gold rungs vs 8 phantom-blue ghost rungs, a true-scaled $500K sliver, exactly 7 chips, exactly 1 gold pin, the 0% meter and un-run grid = the AI's unbuilt state. Gold=real / phantom-blue=promise is a genuine semantic system.",
+   "score": 9,
+   "notes": "Best dimension. Art encodes the numbers literally: 12 nodes / 1 gold Alaska, 56 lit / 4 dark, a ladder of 2 solid gold rungs vs 8 phantom-blue ghost rungs, a true-scaled $500K sliver, exactly 7 chips, exactly 1 gold pin, the 0% meter and un-run grid = the AI's unbuilt state. Gold=real / phantom-blue=promise is a genuine semantic system."
+  },
+  {
+   "name": "Alaska authenticity & local relevance",
+   "weight": 0.12,
+   "score_0_10": 8,
+   "why": "Named throughout: NSF, UAF, USGS, NANA (correctly a partner), Alaska Silver, Lee Ann Munk, Fairbanks coordinates, western-Alaska site, $500K state seed, the China-processing goal. Geography accurate, honestly labeled illustrative. A consequential local win told without boosterism.",
+   "score": 8,
+   "notes": "Named throughout: NSF, UAF, USGS, NANA (correctly a partner), Alaska Silver, Lee Ann Munk, Fairbanks coordinates, western-Alaska site, $500K state seed, the China-processing goal. Geography accurate, honestly labeled illustrative. A consequential local win told without boosterism."
+  },
+  {
+   "name": "Insight density & factual weight",
+   "weight": 0.1,
+   "score_0_10": 8,
+   "why": "Nearly every content slide adds a new verified specific, 25-50 words on dense slides, zero filler. S7 lighter breather and S9 synthesis are appropriate, keeping it off a 9.",
+   "score": 8,
+   "notes": "Nearly every content slide adds a new verified specific, 25-50 words on dense slides, zero filler. S7 lighter breather and S9 synthesis are appropriate, keeping it off a 9."
+  },
+  {
+   "name": "Variety vs ledger",
+   "weight": 0.08,
+   "score_0_10": 7,
+   "why": "Fresh hero concept and novel honest confidence-meter continuity device with clean divergence on every required axis; but the Alaska-map-as-hero returns (No.1) and Archivo-variable display returns (No.2/No.5), recognizable reused subsystems, the textbook 7 descriptor.",
+   "score": 7,
+   "notes": "Fresh hero concept and novel honest confidence-meter continuity device with clean divergence on every required axis; but the Alaska-map-as-hero returns (No.1) and Archivo-variable display returns (No.2/No.5), recognizable reused subsystems, the textbook 7 descriptor."
+  },
+  {
+   "name": "Legibility & platform fitness",
+   "weight": 0.07,
+   "score_0_10": 8,
+   "why": "Floors met: 33px Manrope body, NN/09 counters on all nine, safe zones respected, vector PDF 3.28MB in-band with title, reads at 432px. Squeakers: dim S5 sub and body over relief on S4/S8 (scrimmed, legible).",
+   "score": 8,
+   "notes": "Floors met: 33px Manrope body, NN/09 counters on all nine, safe zones respected, vector PDF 3.28MB in-band with title, reads at 432px. Squeakers: dim S5 sub and body over relief on S4/S8 (scrimmed, legible)."
+  },
+  {
+   "name": "Copy: voice & hook",
+   "weight": 0.05,
+   "score_0_10": 8,
+   "why": "Hook complete and sharp inside ~117 chars, caption ~570 chars within band, analytical position-taking voice, deck-summary line present, real debatable close, straight quotes, no dashes, grade 8-10.",
+   "score": 8,
+   "notes": "Hook complete and sharp inside ~117 chars, caption ~570 chars within band, analytical position-taking voice, deck-summary line present, real debatable close, straight quotes, no dashes, grade 8-10."
+  },
+  {
+   "name": "Deliverable completeness",
+   "weight": 0.1,
+   "score_0_10": 8,
+   "why": "Post copy, exactly 3 niche hashtags, first-comment source block, deck-summary line, document title, vector PDF, 9 renders, thumbs and contact sheet all present and correct. Scored 8 (not 10) because the Gmail draft, run report, and live main-branch URL resolution are not verifiable from the scored artifacts.",
+   "score": 8,
+   "notes": "Post copy, exactly 3 niche hashtags, first-comment source block, deck-summary line, document title, vector PDF, 9 renders, thumbs and contact sheet all present and correct. Scored 8 (not 10) because the Gmail draft, run report, and live main-branch URL resolution are not verifiable from the scored artifacts."
+  }
+ ],
+ "weighted_total": 8.78,
+ "hard_fails": [],
+ "ship_threshold": 8.3,
+ "verdict": "ship",
+ "weakest_criterion": "Artwork craft & genuine detail",
+ "one_sentence_fix": "Give the Alaska relief plates genuine multiplane depth (real hillshade/atmospheric layering and interior texture) so the hero delivers the dimensional survey plate the storyboard argues for, instead of reading as a graded 2D map with a grid overlay.",
+ "honest_notes": "Weights sum to 1.10, so 8.78 sits on a ~11 scale between No.5 (8.54) and No.4 (8.90); revision count 1 keeps the iteration-ladder threshold at 8.3 (0-2 band). No hard fail, no 6.9 cap. Honesty guardrails all held on-slide (NANA partner not owner, biological methods not biomining, only 7 named minerals, single illustrative pin with no Ambler/Pebble, $160M always conditional, $135M-to-$2B fenced as program-wide). The deck's real ceiling is artwork depth and hero/type variety, not honesty or story.",
+ "ship": true,
+ "threshold": 8.3,
+ "editor_notes_for_email": "Weights sum to 1.10, so 8.78 sits on a ~11 scale between No.5 (8.54) and No.4 (8.90); revision count 1 keeps the iteration-ladder threshold at 8.3 (0-2 band). No hard fail, no 6.9 cap. Honesty guardrails all held on-slide (NANA partner not owner, biological methods not biomining, only 7 named minerals, single illustrative pin with no Ambler/Pebble, $160M always conditional, $135M-to-$2B fenced as program-wide). The deck's real ceiling is artwork depth and hero/type variety, not honesty or story."
 }
