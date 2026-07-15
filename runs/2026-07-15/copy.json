@@ -1,18 +1,160 @@
 {
-  "title": "Alaska's Critical Mineral Engine, and Its Unbuilt AI",
-  "caption": "Alaska just won a decade-scale federal bet to find its critical minerals. The AI headlining it is one unbuilt sentence.\n\nOn July 14 the NSF named a University of Alaska Fairbanks coalition its Critical Mineral Accelerator Engine. It starts with 15 million dollars in hand, with up to 160 million over ten years if it clears milestones.\n\nThe deck covers what Alaska actually won, the 56 of 60 minerals the USGS calls essential, the money as a ladder not a check, and the single named site so far.\n\nFunded but unspecified, is that a credible start or a headline running ahead of the work?",
-  "hashtags": ["#CriticalMinerals", "#AlaskaPolicy", "#NSFEngines"],
-  "first_comment": "Sources for todays deck\nNational Science Foundation, NSF awards 12 new Regional Innovation Engines, https://www.nsf.gov/news/nsf-awards-12-new-regional-innovation-engines-fuel-research\nUAF Geophysical Institute, NSF funds UAF-led critical minerals coalition, https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition\nEvery award we track, with the live milestones, lives at alaskaaihq.com\nClose to this Engine? Add in a reply what the announcement still leaves out.",
-  "deck_summary_line": "A nine-slide look at Alaska's new NSF Critical Mineral Accelerator Engine, what the 15 million dollars buys now, why the 160 million is milestone-gated, and why the AI at its center is still one unbuilt sentence.",
-  "slide_copy": [
-    {"slide": "01", "role": "cover", "overline": "THE NSF JUST FUNDED AN AI TO FIND ALASKA'S CRITICAL MINERALS", "hero": "IT ISN'T BUILT YET", "meter": "PROSPECTIVITY 0% COMPUTED", "counter": "01 / 09", "coordinates": "64 50 N 147 43 W", "wordmark": "ALASKA.AI", "claim_ids": ["c2", "c5", "c14"]},
-    {"slide": "02", "role": "the award", "kicker": "THE AWARD / 2026-07-14", "headline": "Alaska just won one of 12 new federal Innovation Engines.", "body": "NSF named a University of Alaska Fairbanks coalition its Critical Mineral Accelerator Engine. It opens with 15 million dollars for the first two years. Far more can follow, only if it delivers.", "inset_label": "12 ENGINES / 20 STATES / 1 ALASKA", "meter": "PROSPECTIVITY 0% COMPUTED", "counter": "02 / 09", "claim_ids": ["c1", "c2", "c3"]},
-    {"slide": "03", "role": "context", "kicker": "WHY IT IS WORTH A DECADE", "headline": "56 of the 60 minerals the U.S. calls essential are in this ground.", "body": "That is the U.S. Geological Survey count, essential to the nation's economy and its security. Alaska is not short on critical minerals. It is short on knowing exactly where, in a place this big.", "attribution": "USGS COUNT, VIA UAF", "meter": "PROSPECTIVITY 0% COMPUTED", "counter": "03 / 09", "claim_ids": ["c8"]},
-    {"slide": "04", "role": "the job", "kicker": "THE JOB", "headline": "Read the ground. Find the deposits. Pull the minerals out.", "body": "The Engine pairs advanced mining, processing and purification with two newer ideas: artificial intelligence to help locate mineral deposits, and new biological methods to extract them. This is what a prospectivity model would draw, if one existed.", "field_label": "ILLUSTRATIVE PROSPECTIVITY / MODEL NOT BUILT", "meter": "PROSPECTIVITY 0% COMPUTED", "counter": "04 / 09", "claim_ids": ["c5", "c7"]},
-    {"slide": "05", "role": "the turn", "kicker": "THE ENTIRE PUBLIC DESCRIPTION OF THE AI", "quote": "use artificial intelligence to help locate mineral deposits", "ledger": "NO NAMED MODEL / NO DATASET / NO SOFTWARE / NO SITE", "sub": "It is announced and funded in principle. It is not yet specified. That is not a scandal. It is the stage this is at.", "meter": "MODEL NOT BUILT / 0% COMPUTED", "counter": "05 / 09", "claim_ids": ["c5", "c14"]},
-    {"slide": "06", "role": "data", "kicker": "FOLLOW THE MONEY, HONESTLY", "headline": "It is a ladder, not a check.", "figures": ["$15M COMMITTED first two years", "up to $160M IF MILESTONES MET over ten years", "$500K ALASKA'S OWN SEED one-time state funding"], "context_strip": "PROGRAM-WIDE, NOT THIS ENGINE: NSF's first $135M across nine earlier Engines drew more than $2B in matches.", "meter": "MODEL TBD", "counter": "06 / 09", "claim_ids": ["c3", "c4", "c9", "c11", "c16"]},
-    {"slide": "07", "role": "breather", "kicker": "WHAT THE CLIMB IS FOR", "headline": "Seven minerals the announcement names.", "swatch_labels": "LITHIUM / COBALT / NICKEL / GRAPHITE / GERMANIUM / GALLIUM / RARE EARTHS", "uses_line": "Batteries, smartphones, computer chips, medical equipment, power grids, aircraft, defense. The everyday and the strategic run through the same seven materials.", "meter": "MODEL TBD", "counter": "07 / 09", "claim_ids": ["c15"]},
-    {"slide": "08", "role": "one real place", "kicker": "THE ONE NAMED PLACE", "headline": "One site is named so far. The rest is still a search.", "body": "The only location named so far is Alaska Silver's exploration site in western Alaska. NANA Regional Corporation is a partner, not an owner. UAF leads it, with geoscientist Lee Ann Munk as chief executive. The goal, cut U.S. dependence on China for mineral processing.", "pin_label": "ALASKA SILVER / WESTERN ALASKA (ILLUSTRATIVE PLACEMENT)", "meter": "SITES NAMED 1 / MODEL TBD", "counter": "08 / 09", "claim_ids": ["c6", "c10", "c12", "c13", "c15"]},
-    {"slide": "09", "role": "close", "eyebrow": "THE HONEST BOTTOM LINE", "statement": "A real ten-year bet. An unbuilt centerpiece. Worth the climb?", "ask": "Follow the milestones, not the headline number. What would make this bet pay off for Alaska?", "source_note": "SOURCES IN COMMENTS", "fixture": "alaskaaihq.com", "wordmark": "ALASKA.AI", "meter": "WATCH THE MILESTONES", "counter": "09 / 09", "claim_ids": ["c2", "c14"]}
-  ]
+ "title": "Alaska's Critical Mineral Engine, and Its Unbuilt AI",
+ "caption": "Alaska just won a decade-scale federal bet to find its critical minerals. The AI headlining it is one unbuilt sentence.\n\nOn July 14 the NSF named a University of Alaska Fairbanks coalition its Critical Mineral Accelerator Engine. It starts with 15 million dollars in hand, with up to 160 million over ten years if it clears milestones.\n\nThe deck covers what Alaska actually won, the 56 of 60 minerals the USGS calls essential, the money as a ladder not a check, and the single named site so far.\n\nFunded but unspecified, is that a credible start or a headline running ahead of the work?",
+ "hashtags": [
+  "#CriticalMinerals",
+  "#AlaskaPolicy",
+  "#NSFEngines"
+ ],
+ "first_comment": "Sources for todays deck\nNational Science Foundation, NSF awards 12 new Regional Innovation Engines, https://www.nsf.gov/news/nsf-awards-12-new-regional-innovation-engines-fuel-research\nUAF Geophysical Institute, NSF funds UAF-led critical minerals coalition, https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition\nEvery award we track, with the live milestones, lives at alaskaaihq.com\nClose to this Engine? Add in a reply what the announcement still leaves out.",
+ "deck_summary_line": "A nine-slide look at Alaska's new NSF Critical Mineral Accelerator Engine, what the 15 million dollars buys now, why the 160 million is milestone-gated, and why the AI at its center is still one unbuilt sentence.",
+ "slide_copy": [
+  {
+   "slide": "01",
+   "role": "cover",
+   "overline": "THE NSF JUST FUNDED AN AI TO FIND ALASKA'S CRITICAL MINERALS",
+   "hero": "IT ISN'T BUILT YET",
+   "meter": "PROSPECTIVITY 0% COMPUTED",
+   "counter": "01 / 09",
+   "coordinates": "64 50 N 147 43 W",
+   "wordmark": "ALASKA.AI",
+   "claim_ids": [
+    "c2",
+    "c5",
+    "c14"
+   ]
+  },
+  {
+   "slide": "02",
+   "role": "the award",
+   "kicker": "THE AWARD / 2026-07-14",
+   "headline": "Alaska just won one of 12 new federal Innovation Engines.",
+   "body": "NSF named a University of Alaska Fairbanks coalition its Critical Mineral Accelerator Engine. It opens with 15 million dollars for the first two years. Far more can follow, only if it delivers.",
+   "inset_label": "12 ENGINES / 20 STATES / 1 ALASKA",
+   "meter": "PROSPECTIVITY 0% COMPUTED",
+   "counter": "02 / 09",
+   "claim_ids": [
+    "c1",
+    "c2",
+    "c3"
+   ]
+  },
+  {
+   "slide": "03",
+   "role": "context",
+   "kicker": "WHY IT IS WORTH A DECADE",
+   "headline": "56 of the 60 minerals the U.S. calls essential are in this ground.",
+   "body": "That is the U.S. Geological Survey count, essential to the nation's economy and its security. Alaska is not short on critical minerals. It is short on knowing exactly where, in a place this big.",
+   "attribution": "USGS COUNT, VIA UAF",
+   "meter": "PROSPECTIVITY 0% COMPUTED",
+   "counter": "03 / 09",
+   "claim_ids": [
+    "c8"
+   ]
+  },
+  {
+   "slide": "04",
+   "role": "the job",
+   "kicker": "THE JOB",
+   "headline": "Read the ground. Find the deposits. Pull the minerals out.",
+   "body": "The Engine pairs advanced mining, processing and purification with two newer ideas: artificial intelligence to help locate mineral deposits, and new biological methods to extract them. This is what a prospectivity model would draw, if one existed.",
+   "field_label": "ILLUSTRATIVE PROSPECTIVITY / MODEL NOT BUILT",
+   "meter": "PROSPECTIVITY 0% COMPUTED",
+   "counter": "04 / 09",
+   "claim_ids": [
+    "c5",
+    "c7"
+   ]
+  },
+  {
+   "slide": "05",
+   "role": "the turn",
+   "kicker": "THE ENTIRE PUBLIC DESCRIPTION OF THE AI",
+   "quote": "use artificial intelligence to help locate mineral deposits",
+   "ledger": "NO NAMED MODEL / NO DATASET / NO SOFTWARE / NO SITE",
+   "sub": "It is announced and funded in principle. It is not yet specified. That is not a scandal. It is the stage this is at.",
+   "meter": "MODEL NOT BUILT / 0% COMPUTED",
+   "counter": "05 / 09",
+   "claim_ids": [
+    "c5",
+    "c14"
+   ]
+  },
+  {
+   "slide": "06",
+   "role": "data",
+   "kicker": "FOLLOW THE MONEY, HONESTLY",
+   "headline": "It is a ladder, not a check.",
+   "figures": [
+    "$15M COMMITTED first two years",
+    "up to $160M IF MILESTONES MET over ten years",
+    "$500K ALASKA'S OWN SEED one-time state funding"
+   ],
+   "context_strip": "PROGRAM-WIDE, NOT THIS ENGINE: NSF's first $135M across nine earlier Engines drew more than $2B in matches.",
+   "meter": "MODEL TBD",
+   "counter": "06 / 09",
+   "claim_ids": [
+    "c3",
+    "c4",
+    "c9",
+    "c11",
+    "c16"
+   ]
+  },
+  {
+   "slide": "07",
+   "role": "breather",
+   "kicker": "WHAT THE CLIMB IS FOR",
+   "headline": "Seven minerals the announcement names.",
+   "swatch_labels": "LITHIUM / COBALT / NICKEL / GRAPHITE / GERMANIUM / GALLIUM / RARE EARTHS",
+   "uses_line": "Batteries, smartphones, computer chips, medical equipment, power grids, aircraft, defense. The everyday and the strategic run through the same seven materials.",
+   "meter": "MODEL TBD",
+   "counter": "07 / 09",
+   "claim_ids": [
+    "c15"
+   ]
+  },
+  {
+   "slide": "08",
+   "role": "one real place",
+   "kicker": "THE ONE NAMED PLACE",
+   "headline": "One site is named so far. The rest is still a search.",
+   "body": "The only location named so far is Alaska Silver's exploration site in western Alaska. NANA Regional Corporation is a partner, not an owner. UAF leads it, with geoscientist Lee Ann Munk as chief executive. The goal, cut U.S. dependence on China for mineral processing.",
+   "pin_label": "ALASKA SILVER / WESTERN ALASKA (ILLUSTRATIVE PLACEMENT)",
+   "meter": "SITES NAMED 1 / MODEL TBD",
+   "counter": "08 / 09",
+   "claim_ids": [
+    "c6",
+    "c10",
+    "c12",
+    "c13",
+    "c15"
+   ]
+  },
+  {
+   "slide": "09",
+   "role": "close",
+   "eyebrow": "THE HONEST BOTTOM LINE",
+   "statement": "A real ten-year bet. An unbuilt centerpiece. Worth the climb?",
+   "ask": "Follow the milestones, not the headline number. What would make this bet pay off for Alaska?",
+   "source_note": "SOURCES IN COMMENTS",
+   "fixture": "alaskaaihq.com",
+   "wordmark": "ALASKA.AI",
+   "meter": "WATCH THE MILESTONES",
+   "counter": "09 / 09",
+   "claim_ids": [
+    "c2",
+    "c14"
+   ]
+  }
+ ],
+ "aftercare": [
+  "Post Tuesday to Thursday, 8 to 11am Alaska time (the day signal is robust; the hour is weak).",
+  "Upload the PDF as a document post and set the document title to the one in this draft.",
+  "Paste the first-comment source block within about 60 seconds of posting.",
+  "Reply substantively to every comment in the first 60 to 90 minutes; threaded author replies drive reach.",
+  "Consider cross-posting from a personal profile; personal carousels tend to out-reach company-page ones."
+ ],
+ "document_title": "Alaska's Critical Mineral Engine, and Its Unbuilt AI",
+ "post_copy": "Alaska just won a decade-scale federal bet to find its critical minerals. The AI headlining it is one unbuilt sentence.\n\nOn July 14 the NSF named a University of Alaska Fairbanks coalition its Critical Mineral Accelerator Engine. It starts with 15 million dollars in hand, with up to 160 million over ten years if it clears milestones.\n\nThe deck covers what Alaska actually won, the 56 of 60 minerals the USGS calls essential, the money as a ladder not a check, and the single named site so far.\n\nFunded but unspecified, is that a credible start or a headline running ahead of the work?\n\n#CriticalMinerals #AlaskaPolicy #NSFEngines"
 }
