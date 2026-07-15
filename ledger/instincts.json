@@ -153,10 +153,10 @@
   {
    "id": "solo-degraded-run",
    "learned": "2026-07-14",
-   "instinct": "On an account usage / weekly-limit subagent error, WAIT for the reset and RESUME the full multi-agent pipeline (run_state makes the run resumable); do NOT degrade to a solo showrunner run or a reduced deck. A rested, complete, independently-reviewed run beats a rushed one, even if delivery lands late.",
-   "evidence": "Run 2026-07-14: all six scouts plus every other subagent died on 'weekly limit resets 5pm UTC'; main-loop WebSearch/WebFetch and Gmail/GitHub MCP kept working; the showrunner ran all 14 phases solo and shipped Carousel No. 7 at 8.95. | REVERSED 2026-07-14 by maintainer directive: no more degraded solo runs; wait for the usage-window reset and run the full pipeline. The 07-14 solo run was the exception that prompted the rule, not the pattern to repeat.",
+   "instinct": "Handle a failed subagent by CAUSE, never by fan-out. Respawn only the same failed agent, capped at about 3 attempts (a runaway once spawned ~20 needless subagents and burned tokens). WAIT for a reset ONLY when the cause is an account usage / rate / weekly-limit error, then resume the full pipeline (run_state is resumable); for any other failure just respawn that one agent and continue, no waiting. The full multi-agent pipeline beats a degraded solo run.",
+   "evidence": "Run 2026-07-14: all six scouts plus every other subagent died on 'weekly limit resets 5pm UTC'; main-loop WebSearch/WebFetch and Gmail/GitHub MCP kept working; the showrunner ran all 14 phases solo and shipped Carousel No. 7 at 8.95. | REVERSED 2026-07-14 by maintainer directive: no more degraded solo runs; wait for the usage-window reset and run the full pipeline. The 07-14 solo run was the exception that prompted the rule, not the pattern to repeat. | REFINED 2026-07-15 by maintainer: wait only when the cause is a usage limit; otherwise just respawn the failed agent. The original guard was to stop a runaway that spawned ~20 subagents for no reason, not to make every failure a wait.",
    "confidence": 0.85,
-   "last_confirmed": "2026-07-14"
+   "last_confirmed": "2026-07-15"
   },
   {
    "id": "fixed-line-continuity",

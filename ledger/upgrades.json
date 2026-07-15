@@ -296,6 +296,20 @@
    "verification": "docket_alerts.py parses (ast.parse OK); key detection verified in isolation against the deployed env (detected True, source 'Buttondown', 36 chars) with NO live send performed. Prompt and instinct edits reviewed for correctness; weakens no gate, threshold, or hard-fail rule.",
    "rollback": "Revert this commit; docket_alerts returns to BUTTONDOWN_API_KEY-only and the FAILURE PROTOCOL returns to the solo-degraded fallback of 524164d.",
    "commit": "00d69f8"
+  },
+  {
+   "run_date": "2026-07-15",
+   "kind": "fix",
+   "area": "prompt",
+   "change": "Refined the FAILURE PROTOCOL subagent-failure clause to be cause-based. Wait-for-reset now applies ONLY when a subagent fails because of an account usage / rate / weekly-limit error; any other failure (crash, transient API error, timeout, malformed result) is handled by simply respawning that one failed agent and continuing, no waiting. Added an explicit runaway guard: respawn only the SAME failed agent, cap at ~3 attempts, never spawn extra or recursive subagents beyond the pipeline's planned set. The matching solo-degraded-run instinct was updated to match.",
+   "trigger": "Maintainer clarification 2026-07-15: only wait if the failure was because of a limit; otherwise just respawn any agent that fails. The original 2026-07-14 guard existed to stop a runaway that once spawned ~20 needless subagents and burned tokens, not to make every failure a wait.",
+   "files": [
+    "prompts/routine_instructions.md",
+    "ledger/instincts.json"
+   ],
+   "verification": "Prompt and instinct prose reviewed for correctness and internal consistency; no code, gate, threshold, or hard-fail rule changed.",
+   "rollback": "Revert this commit; the FAILURE PROTOCOL returns to the 2026-07-14 wait-for-any-limit wording.",
+   "commit": ""
   }
  ],
  "scan_log": [
