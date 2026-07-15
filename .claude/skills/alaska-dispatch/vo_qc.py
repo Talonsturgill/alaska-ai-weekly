@@ -34,6 +34,13 @@ from vo_backends import normalize_for_tts, REF_CLIP, SR, _ca_env
 # QC DIALS — cfg_weight 0.5 is the whole point (reference adherence). DO NOT LOWER.
 QC_KW = dict(exaggeration=0.5, cfg_weight=0.5, temperature=0.8)
 WER_MAX = 0.15          # reject a candidate whose transcript drifts past this
+SIM_FLOOR = 0.92        # ship floor for speaker similarity vs the owner's reference.
+                        # CALIBRATION (owner listening test, 2026-07-15): all three approved
+                        # takes scored 0.9277-0.9448, and the owner's FAVORITE was the
+                        # LOWEST-similarity one (0.9277) — so similarity is a reliable FLOOR
+                        # (it catches accent drift) but NOT a perceptual ranker within the
+                        # passing band. Do not chase higher similarity at the cost of prosody;
+                        # short punchy sentences read most naturally to the owner's ear.
 MAX_CHARS = 220         # keep whole sentences together up to here; never mid-sentence
 SEED_BASE = 12345       # deterministic per-candidate seeds (SEED_BASE + attempt idx)
 WHISPER_SR = 16000
@@ -168,6 +175,10 @@ def synth_qc(text, n_candidates=4, max_attempts=8):
         best = max(results, key=lambda r: r["sim"])
         warning = (f"no candidate passed WER<={WER_MAX} in {attempts} attempts; "
                    f"returned best-similarity take (wer={best['wer']:.3f})")
+    if best["sim"] < SIM_FLOOR:
+        warning = ((warning + " | ") if warning else "") + (
+            f"similarity {best['sim']:.4f} below ship floor {SIM_FLOOR} — "
+            f"likely voice/accent drift; re-roll with more candidates before shipping")
 
     report = {
         "similarity": round(best["sim"], 4),
