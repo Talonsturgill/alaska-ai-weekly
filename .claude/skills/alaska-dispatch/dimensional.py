@@ -129,6 +129,13 @@ def fbm2(x, z):
 SCENE_FN = None
 MAT_FN = None
 SHADOW_FN = None
+#   dim.EMIT_FN : @ti.func (p, t) -> ti.Vector([r,g,b])  OPTIONAL self-illumination added at the hit
+#                 point AFTER shading and BEFORE fog. Use for practical/emissive elements a sun cannot
+#                 reach — a fiber pulse glowing underground, a hologram lattice, a molten thaw front.
+#                 Return (0,0,0) everywhere except inside the emitter's own skin. None = no emission
+#                 (unchanged behavior for every prior scene + the demo). Bloom/halation in post() then
+#                 blooms the bright emission for free. Keep it CHEAP: it is evaluated once per primary hit.
+EMIT_FN = None
 
 # lighting rig (scene-tunable, sensible studio defaults)
 SUN_DIR = (0.55, 0.62, -0.55)     # key
@@ -150,6 +157,8 @@ def init_kernels():
     assert SCENE_FN is not None and MAT_FN is not None, "assign dim.SCENE_FN and dim.MAT_FN first"
     scene = SCENE_FN; mat = MAT_FN
     shadow_sdf = SHADOW_FN if SHADOW_FN is not None else SCENE_FN   # cheap SDF for shadows/AO
+    emit = EMIT_FN if EMIT_FN is not None else mat                  # placeholder when unused (never called)
+    _has_emit = EMIT_FN is not None
     sun_dir = ti.Vector(list(SUN_DIR)).normalized()
     sun_col = ti.Vector(list(SUN_COL)); sky_col = ti.Vector(list(SKY_COL))
     sky_hi = ti.Vector(list(SKY_HI)); fog_col = ti.Vector(list(FOG_COL))
@@ -229,6 +238,10 @@ def init_kernels():
                 hv = (sun_dir - rd).normalized()
                 spec = ti.pow(ti.max(n.dot(hv), 0.0), 64.0) * dif * 1.6
                 col = alb * (dif * sun_col * 1.55 + amb * sky_col * 0.75 + bnc * sun_col) + rim * sky_hi + spec * sun_col
+                # optional self-illumination (practical/emissive elements the sun cannot reach) — added
+                # after shading, before fog, so distant glow still recedes into the haze naturally
+                if ti.static(_has_emit):
+                    col = col + emit(p, t)
                 # exponential distance fog toward the sky/fog colour (atmospheric perspective)
                 fog = 1.0 - ti.exp(-fog_den * tt)
                 fcol = fog_col * (1.0 - 0.35 * sky_m) + sun_col * ti.pow(sunamt, 6.0) * 0.22

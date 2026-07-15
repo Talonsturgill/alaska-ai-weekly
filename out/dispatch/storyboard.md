@@ -1,64 +1,54 @@
-# STORYBOARD — THE FAKE THAT SWAM (2026-07-12)
+# THE GROUND'S TWIN — Dispatch 2026-07-15
 
-**Story:** THE FAKE THAT SWAM — an AI-generated image claimed a beluga escaped the Alaska SeaLife Center in Seward to find her calf; it drew close to six million views before the people who knew the whale set the record straight. The film stages the true whale, the viral fake, the moment the fabrication frays under a close look (where a detector can only put it at 82.6 percent likely AI, not proof), and the institution's plain correction, then loops back to the truth.
+**Story:** Penn State's permafrost "digital twin" for a road embankment in Utqiagvik, Alaska.
+Two buried 1 km fiber-optic cables read heat and tremor; a physics + machine-learning model
+builds a self-correcting live copy of the frozen ground and forecasts the thaw a step ahead.
 
-**Honest caveat:** A detector could only put odds on the fake, about 82.6 percent likely AI by one tool (Snopes via Hive Moderation), and likely is not proof. The image had already drawn millions of views. What actually settled it was an Alaska institution that knew its own animals and said plainly it could not have happened. The machine can generate a lie and even estimate one, but it cannot certify the truth.
+**Honest caveat (drawn, not captioned):** the twin predicts the ground, it cannot freeze it
+back, and it is proven at ONE embankment on about three years of data (Sept 2021 to June 2024),
+not across the Arctic. Shown as the forecast glow reaching a single lit stake while the thaw
+front keeps advancing past it into a vast dark tundra.
 
-**Style mode:** lit low-poly night interior, feed-glitch contrast. **Taste dials:** restraint high, sober not hypey; the fake is stylized-synthetic (never a deceptive photoreal reproduction).
+## Style mode / dials
+Grounded field-science, honest and unhyped, dimensional cutaway.
+warmth 0.55 · restraint 0.8 · wonder 0.6 · gravity 0.7 · ornament 0.35.
 
-**Fingerprint:** pov=eye-level-immersive  motion_vector=horizontal-traverse  hero_treatment=single-organic-hero  layout=fullbleed-split  register=naturalistic-scene  camera_strategy=orbit-reveal  light_story=night-practical
+## Fingerprint (all 9 axes fresh vs last 2 dispatches)
+- pov: subsurface-cutaway
+- motion_vector: downward-descent-then-rise
+- hero_treatment: cutaway-diorama-with-live-twin
+- layout: split-earth-cross-section
+- register: grounded-field-science
+- camera_strategy: rise-reveal
+- light_story: overcast-diffuse
+- palette: peat-brown frozen ground, glacial pale-blue ice lenses, warm rust and ochre thaw
+  front, luminous indigo-violet digital twin, bone snow crust, dim pewter Arctic sky
+- metaphor: a self-correcting luminous mirror of the frozen ground that forecasts the thaw a
+  step ahead but cannot freeze it back
 
-**Palette:** aquarium teal-black water, pearl beluga white, a toxic synthetic magenta, phone-glow cyan, a warning-red correction stamp
+## Light
+Surface: flat, low, shadowless Arctic overcast from a pewter sky. Below ground: the only light
+is the practical glow of the fiber pulse and the twin's indigo lattice. The surface is plain,
+cold, honest; the intelligence is a quiet glow underground, never a savior spotlight.
 
-**Metaphor:** the fake beluga dissolves into generated pixels while the real one holds; truth is the thing the machine cannot certify
-
-**Light:** no sun; a night interior lit from within, the soft practical glow of an aquarium tank against the hard cold glare of a phone feed — the real whale is lit gently from inside her water; the fake is lit by the flat blue light of a screen. Warm inner truth versus cold outer glare.
-
-## Shots
-- **S1 (0.0-10.2) subject-portrait** — the beluga surfaces from a silhouette against the glass to full relief as the camera orbits and her eye comes into focus  
-  pov=eye-level-immersive · layout=single-object-void · motion=horizontal-traverse · hero=single-organic-hero · cam=orbit-reveal · in=/match  
-  _means:_ establish the true subject in her real place before any lie touches it
-- **S2 (10.2-20.9) data-panel** — the view counter at frame center spins up toward 6,000,000 as the fake image sits behind it  
-  pov=instrument-screen · layout=hud-instrument-frame · motion=scroll-data · hero=instrument-as-subject · cam=rack-focus-macro · in=fui-boot/carry  
-  _means:_ carry the whale's image out of the tank and onto the feed, where the number is the story
-- **S3 (20.9-33.0) macro-closeup** — the fake whale fills frame center and, as we push in, sheds pixels radially; a DETECTOR readout reads 82.6% LIKELY AI, and likely is not proof  
-  pov=macro-closeup · layout=fullbleed-split · motion=radial-emanate · hero=single-organic-hero · cam=dolly-through · in=morph/match  
-  _means:_ the honest limit, drawn: the fake looks real and a detector can only give odds (82.6% likely), not proof; the tell shows only up close
-- **S4 (33.0-45.5) two-up** — the correction stamp lands dead center as the fake collapses out of the grid behind it  
-  pov=cross-section-cutaway · layout=grid-modular · motion=assemble-build · hero=structure-as-subject · cam=rise-reveal · in=hard-cut/build  
-  _means:_ the people who knew the whale set the record straight; the fake falls, the fact stands
-- **S5 (45.5-60.0) wide-establish** — the real beluga settles at frame center, the wordmark resolving beneath her  
-  pov=eye-level-immersive · layout=centered-hero-lowerthird · motion=push-in-only · hero=single-organic-hero · cam=locked-drift · in=crossfade/carry  
-  _means:_ loop back to the truth that was there all along; the button lands on knowing, not on a better machine
+## Shots (5, each a different world)
+1. THE ROAD ON THE ICE — wide-establish, surface-aerial, aerial-descent. The real place.
+2. UNDER THE ROAD — push-detail, subsurface-cutaway, dolly-through. Into the strata + fiber.
+3. THE PULSE BECOMES A TWIN — macro-closeup, macro-on-fiber, rack-focus-macro. The lattice blooms.
+4. THE TWIN RUNS AHEAD — two-up, real-vs-twin-diptych, track-follow. Forecast leads reality.
+5. IT PREDICTS, IT CANNOT FREEZE IT BACK — alt-vantage, rise-to-context, rise-reveal. Caveat + outro.
 
 ## Beats
-- `0.0-3.0` **a beluga silhouette against lit tank glass resolves to a full pearl-white whale as she glides in** — vo: "This beluga never left her tank in Seward." · sfx: soft sub-aqua swell + a low water-room tone
-- `3.0-6.5` **a hairline red frame ticks in around the image, feed-style** — vo: "But a picture said she did." · sfx: a single UI tick as the red frame snaps in
-- `6.5-9.5` **a false open-sea plate wipes over the tank; a small calf-silhouette appears ahead and she angles toward it** — vo: "It showed her slipping out to sea to find her calf." · sfx: a distant open-water wash fading up under the room tone
-- `9.5-13.5` **a phone rises into frame carrying the same whale image; fui-boot** — vo: "The image was fake, built by AI, and it looked completely real." · sfx: a whoosh as the phone rises + a soft screen-boot chime
-- `13.5-16.5` **the view counter mounts, digits rolling** — vo: "One post drew close to six million views" · sfx: rapid odometer ticks climbing in pitch
-- `16.5-19.5` **counter nears six million and holds; a small warning under it** — vo: "before anyone slowed down." · sfx: the ticks resolve to a held tone as the counter locks
-- `19.5-23.5` **a DETECTOR strip scans and settles on 82.6% LIKELY AI** — vo: "A checker could only say it looked likely fake." · sfx: a scanning pulse then a soft uncertain tone
-- `23.5-27.0` **morph into the fabricated beluga at macro; a handler's hand and the Center mark ghost at the glass** — vo: "What stopped it was people who actually knew the whale." · sfx: a morph whoosh into a quieter, closer water tone
-- `27.0-31.0` **a SINCE 1998 fact-plate draws in over the fraying fake as its edges shed voxels** — vo: "The Alaska SeaLife Center has run since 1998," · sfx: a crackle riser as pixels start to peel
-- `31.0-34.5` **a specific tell fails: the fake's eye blows into cubes and the fluke voxelizes; a 0 ESCAPES plate joins** — vo: "and no beluga has ever escaped." · sfx: riser peaks then a deliberate dip toward silence
-- `34.5-39.0` **hard cut; the SINCE 1998 and 0 ESCAPES plates lock into a clean grid, then a red stamp lands** — vo: "So they said it plainly. This never happened." · sfx: silence, then a firm stamp hit and settle boom
-- `39.0-43.0` **the feed panel greys out and collapses** — vo: "And the account came down." · sfx: a short power-down sweep as the panel dies
-- `43.0-47.0` **a fast red FAKE line races across; a slow grey PROOF bar crawls behind and never catches it** — vo: "AI can draw a lie faster than we can prove it false." · sfx: a low sustained tone, sober
-- `47.0-51.0` **crossfade back to the real beluga at rest in her tank** — vo: "The catch was not a smarter machine." · sfx: the water-room tone returns, warm
-- `51.0-54.5` **the beluga settles center; the ALASKA.AI wordmark resolves** — vo: "It was a place that knew the truth. Who is yours?" · sfx: a soft resolving chime, fade to the signoff
-- `54.5-58.0` **a last caustic sweep crosses her back as the tagline resolves and the loop-frame clicks** — vo: "" · sfx: a soft low shimmer under the tagline
+16 timed beats, ~0 to 59.5s, start-to-start gaps ~3.4 to 4.0s, silent-first (every beat shows a
+concrete new thing and names a sound). Full timing in storyboard.json.
 
-## VO script
+## VO through-line (~140 words, no dashes, contractions, phonetic numbers)
+Opens on the road and the stakes, names the instrument honestly (two cables, half a mile each),
+shows the twin assemble from data, shows it run a step ahead of the thaw, then turns to the
+honest limit (predicts but cannot stop; one site, three years), lands the earned promise (a road
+that can see its thaw coming is a road you can save), loops back to the opening road, signs off.
 
-1. This beluga never left her tank in Seward.
-2. But a picture said she did.
-3. It showed her slipping out to sea to find her calf.
-4. The image was fake, built by AI, and it looked completely real.
-5. One post drew close to six million views before anyone slowed down.
-6. A checker could only say it looked likely fake.
-7. What stopped it was people who actually knew the whale.
-8. The Alaska SeaLife Center has run since 1998, and no beluga has ever escaped.
-9. So they said it plainly. This never happened. And the account came down.
-10. AI can draw a lie faster than we can prove it false.
-11. The catch was not a smarter machine. It was a place that knew the truth. Who is yours?
+## Divergence
+9/9 axes differ from both 07-13 (top-down data grid) and 07-12 (night aquarium). New world (frozen
+ground cutaway), new camera (rise-reveal), new light (overcast surface + underground glow), new
+palette, new hero (a live geological twin, not a screen/tank/grid).
