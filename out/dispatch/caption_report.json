@@ -3,14 +3,14 @@
   "fails": [],
   "warns": [],
   "metrics": {
-    "chars": 1585,
-    "hook": "A whale \"escaped\" a Seward aquarium to find her calf. It never happened. An AI made the image, and it fooled millions before anyone checked.",
-    "hook_len": 140,
+    "chars": 1776,
+    "hook": "A company wants a square mile of Alaska's North Slope. Not to drill it. To power an AI data center on it.",
+    "hook_len": 105,
     "hashtags": [
       "#AlaskaAI",
-      "#Misinformation",
       "#ArtificialIntelligence",
-      "#MediaLiteracy",
+      "#DataCenters",
+      "#EnergyPolicy",
       "#Alaska"
     ],
     "n_hashtags": 5,

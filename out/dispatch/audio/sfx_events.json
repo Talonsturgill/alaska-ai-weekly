@@ -1,85 +1,80 @@
 {
   "events": [
     {
-      "t": 1.0,
+      "t": 4.5,
       "kind": "tick",
-      "label": "cold scanner sweep tick"
+      "label": "a claim is drawn on real ground"
     },
     {
-      "t": 5.2,
-      "kind": "pop",
-      "label": "the DEI prompt line types on"
+      "t": 8.5,
+      "kind": "lock",
+      "label": "it is public, state-owned ground"
     },
     {
-      "t": 7.7,
+      "t": 12.5,
       "kind": "whoosh",
-      "label": "a grant card lifts to the machine slot"
+      "label": "the proposal builds onto the empty land, seen fr"
     },
     {
-      "t": 10.6,
-      "kind": "lock",
-      "label": "card seats, the classifier gate boots"
-    },
-    {
-      "t": 14.5,
-      "kind": "hit",
-      "label": "the YES/NO binary snaps"
-    },
-    {
-      "t": 15.9,
+      "t": 16.5,
       "kind": "pulse",
-      "label": "the archive card blooms into warm waveforms"
+      "label": "the power is enormous and gas-fired"
     },
     {
-      "t": 19.4,
+      "t": 20.5,
       "kind": "riser",
-      "label": "the field of recordings deepens"
+      "label": "scale made legible against something real"
     },
     {
-      "t": 22.0,
-      "kind": "boom",
-      "label": "the crimson stamp descends"
-    },
-    {
-      "t": 24.6,
-      "kind": "hit",
-      "label": "TERMINATED stamp lands, bars grey"
-    },
-    {
-      "t": 27.2,
-      "kind": "riser",
-      "label": "red cascade spreading across the grid"
-    },
-    {
-      "t": 30.7,
-      "kind": "boom",
-      "label": "100 million dollars, 22 days slam in"
-    },
-    {
-      "t": 34.2,
-      "kind": "lock",
-      "label": "a human hand closes on the lever"
-    },
-    {
-      "t": 39.0,
-      "kind": "riser",
-      "label": "the court-green wave restores the archive"
-    },
-    {
-      "t": 43.6,
+      "t": 24.5,
       "kind": "tick",
-      "label": "push in, the dim gaps remain"
+      "label": "hard turn to the honest caveat"
     },
     {
-      "t": 47.7,
-      "kind": "pulse",
-      "label": "a human reads along every line"
+      "t": 28.5,
+      "kind": "whoosh",
+      "label": "the certainty is not real"
     },
     {
-      "t": 52.7,
+      "t": 32.5,
+      "kind": "tick",
+      "label": "the small, sourced figure"
+    },
+    {
+      "t": 36.0,
+      "kind": "boom",
+      "label": "a six-times spread, unsettled"
+    },
+    {
+      "t": 39.5,
       "kind": "hit",
-      "label": "soft brand sting"
+      "label": "the demand is unproven"
+    },
+    {
+      "t": 42.5,
+      "kind": "whoosh",
+      "label": "the human-scale check appears"
+    },
+    {
+      "t": 46.0,
+      "kind": "lock",
+      "label": "overwhelmingly one-sided"
+    },
+    {
+      "t": 48.5,
+      "kind": "hit",
+      "label": "the company pushes back on the record, and fails"
+    },
+    {
+      "t": 54.5,
+      "kind": "lock",
+      "label": "the deadline is live and near"
+    },
+    {
+      "t": 57.5,
+      "kind": "boom",
+      "label": "the button: the decision is Alaska's"
     }
   ],
-  "n": 16
+  "n": 15
 }

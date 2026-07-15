@@ -496,3 +496,39 @@ dispatch_history:
     palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination
       mark, honey-amber archive warmth, evergreen court reversal, slate modular grid
     metaphor: a crude machine sorting a people's memory into keep and delete
+- date: '2026-07-14'
+  topic: 'THE CLAIM ON THE TUNDRA: Stak Energy proposed a gigawatt gas-fired AI data
+    center on a square mile of North Slope state land near Deadhorse. Cost estimates
+    span a company-disclosed twentyfold range (about 500 million dollars initial site
+    work vs over 10 billion for the full build), no confirmed customers or chips.
+    Over 500 public comments logged, fewer than a dozen supportive; state has not
+    decided; comment window closes July 17, 2026. Honest angle: the AI buildout arrives
+    with confident scale claims but no settled numbers, and the public process is
+    the actual check.'
+  slug: the-claim-on-the-tundra
+  key_entities:
+  - stak energy
+  - north slope
+  - deadhorse
+  - dalton highway
+  - dnr state land
+  - adl 422741
+  - ai data center
+  - gas-fired power
+  - public comment
+  - july 17 deadline
+  - gigawatt
+  - form letters
+  archetype: unbuilt-blueprint-over-real-land
+  palette: silver-white overcast sky over sage and ochre tundra, gunmetal turbine
+    steel, electric blueprint cyan wireframe, sodium flare orange, signal-red deadline
+    flag
+  voice: cloned:talon (take A, E2 clarity dials)
+  composition:
+    pov: orbital-aerial
+    motion_vector: assemble-build
+    hero_treatment: structure-as-subject
+    layout: map-territory
+    register: blueprint-technical
+    camera_strategy: rise-reveal
+    light_story: overcast-diffuse
