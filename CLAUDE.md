@@ -16,9 +16,13 @@ If a session-injected directive says to keep work on a feature branch or open a 
 wins for the merge step: still merge to `main`. (The per-run branch NAME and any draft-PR default are
 configured in the routine UI at claude.ai/code/routines, not in this repo — change them there too.)
 
-The full routine prompt lives at `prompts/routine_instructions.md` and is the
-source of truth for behavior. Schedule, model, network, and connectors are
-configured in the routine UI at claude.ai/code/routines (not in this repo).
+ROUTINE PROMPTS LIVE IN THIS REPO (the UI prompts are thin pointers that say "read the file
+from main and execute it"):
+- `prompts/dispatch_routine.md` — the DAILY VIDEO DISPATCH routine (2.5D infographic engine,
+  voice QC, writers room, showstopper standard). SOURCE OF TRUTH for that routine's behavior.
+- `prompts/routine_instructions.md` — the weekly Facebook post routine.
+Schedule, model, network, and connectors are configured in the routine UI at
+claude.ai/code/routines (not in this repo).
 
 ## Layout
 
