@@ -169,29 +169,43 @@ def main():
                 problems.append(f"shots {bad_thread} don't declare a valid transition `thread` (one of {sorted(THREADS)}) "
                                 f"— every scene break must MATCH / CARRY / BUILD / TRAVEL (docs/craft/CINEMATIC_SCENE_CRAFT.md §1).")
 
-    # ---- 1d. DIMENSIONAL: the board is a 3D shoot plan (engine, light story, per-shot camera) ----
-    if norm_tag(sb.get("engine", "")) != "dimensional":
-        problems.append("engine != 'dimensional' — every Dispatch is built in the 3D engine "
-                        "(dimensional.py; docs/craft/DIMENSIONAL_CRAFT.md). Declare engine: dimensional.")
-    cam_vocab = {"dolly-through", "orbit-reveal", "rack-focus-macro", "aerial-descent",
-                 "rise-reveal", "track-follow", "locked-drift"}
-    light_vocab = {"dawn-backlight", "noon-hard", "dusk-silhouette", "overcast-diffuse",
-                   "night-practical", "storm-dramatic"}
-    if norm_tag(fp.get("camera_strategy")) not in cam_vocab:
-        problems.append(f"fingerprint.camera_strategy '{fp.get('camera_strategy')}' not in {sorted(cam_vocab)}")
-    if norm_tag(fp.get("light_story")) not in light_vocab:
-        problems.append(f"fingerprint.light_story '{fp.get('light_story')}' not in {sorted(light_vocab)}")
-    lightd = sb.get("light") or {}
-    if not lightd.get("sun") or not lightd.get("mood"):
-        problems.append("board must declare light: {sun: '<dir/elevation in words>', mood: '<what the light MEANS>'}")
-    for i, sh in enumerate(shots):
-        camd = sh.get("camera") or {}
-        if norm_tag(camd.get("move", "")) not in cam_vocab:
-            problems.append(f"shot {sh.get('id', i+1)} camera.move '{camd.get('move')}' missing/not in vocab "
-                            f"— every 3D shot declares its camera move")
-        if camd.get("focus_from") is None or camd.get("focus_to") is None:
-            problems.append(f"shot {sh.get('id', i+1)} must declare camera.focus_from/focus_to "
-                            f"(equal values = held focus; different = a rack the CAMERA_MOTION gate verifies)")
+    # ---- 1d. ENGINE: infographic-2.5d (Remotion, current) or dimensional (retired 3D) ----
+    engine = norm_tag(sb.get("engine", ""))
+    if engine not in ("infographic-2.5d", "dimensional"):
+        problems.append("engine must be 'infographic-2.5d' (video-engine/, prompts/dispatch_routine.md; "
+                        "'dimensional' is the retired 3D engine, history only). Declare engine: infographic-2.5d.")
+    if engine == "dimensional":
+        # legacy 3D vocab checks (kept only so historical boards still validate)
+        cam_vocab = {"dolly-through", "orbit-reveal", "rack-focus-macro", "aerial-descent",
+                     "rise-reveal", "track-follow", "locked-drift"}
+        light_vocab = {"dawn-backlight", "noon-hard", "dusk-silhouette", "overcast-diffuse",
+                       "night-practical", "storm-dramatic"}
+        if norm_tag(fp.get("camera_strategy")) not in cam_vocab:
+            problems.append(f"fingerprint.camera_strategy '{fp.get('camera_strategy')}' not in {sorted(cam_vocab)}")
+        if norm_tag(fp.get("light_story")) not in light_vocab:
+            problems.append(f"fingerprint.light_story '{fp.get('light_story')}' not in {sorted(light_vocab)}")
+        lightd = sb.get("light") or {}
+        if not lightd.get("sun") or not lightd.get("mood"):
+            problems.append("board must declare light: {sun: '<dir/elevation in words>', mood: '<what the light MEANS>'}")
+        for i, sh in enumerate(shots):
+            camd = sh.get("camera") or {}
+            if norm_tag(camd.get("move", "")) not in cam_vocab:
+                problems.append(f"shot {sh.get('id', i+1)} camera.move '{camd.get('move')}' missing/not in vocab "
+                                f"— every 3D shot declares its camera move")
+            if camd.get("focus_from") is None or camd.get("focus_to") is None:
+                problems.append(f"shot {sh.get('id', i+1)} must declare camera.focus_from/focus_to "
+                                f"(equal values = held focus; different = a rack the CAMERA_MOTION gate verifies)")
+    else:
+        # 2.5D boards: camera_strategy/light_story are free-text (fresh vs ledger is still
+        # checked via the fingerprint comparison above); what is REQUIRED is the visual
+        # sentence pass — every beat must carry a draw {subject, action, emotion, annotation}.
+        for i, b in enumerate(beats):
+            d = b.get("draw") or {}
+            missing = [k for k in ("subject", "action", "emotion", "annotation") if not str(d.get(k, "")).strip()]
+            if missing:
+                problems.append(f"beat {i} missing draw.{missing} — every beat is a VISUAL SENTENCE "
+                                f"(subject with a face does a visible verb, with its annotation); "
+                                f"a beat without a draw is a slide (prompts/dispatch_routine.md §4.3)")
 
     # ---- 1e. HOOK / HERO / AUDIO_ARC blocks (docs/craft/HOOK_CRAFT.md, HERO_CRAFT.md, VOICE_AND_SCORE.md) ----
     HOOK_PATTERNS = {"anomaly-question", "in-medias-res", "bold-claim", "stakes-antagonist"}
