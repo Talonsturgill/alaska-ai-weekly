@@ -6,8 +6,9 @@ docket ledger is current. It reads ledger/docket.json, works out which
 alerts are due, bundles everything due into at most ONE email, sends it
 through the Buttondown API, and appends the send to ledger/alerts.json
 (the no-repeat ledger, committed with the run so an alert can never fire
-twice). If BUTTONDOWN_API_KEY is not set it prints SKIP and exits 0, so
-the routine never breaks on a missing key.
+twice). The key is read from BUTTONDOWN_API_KEY, then Buttondown, then
+BUTTONDOWN; if none is set it prints SKIP and exits 0, so the routine
+never breaks on a missing key.
 
 Alert triggers, deliberately narrow so subscribers only hear from us when
 something real happens
@@ -115,9 +116,12 @@ def compose(due, today):
 
 
 def send(subject, body, dry):
-    key = os.environ.get("BUTTONDOWN_API_KEY", "").strip()
+    key = (os.environ.get("BUTTONDOWN_API_KEY")
+           or os.environ.get("Buttondown")
+           or os.environ.get("BUTTONDOWN")
+           or "").strip()
     if dry or not key:
-        print(("DRY RUN" if dry else "SKIP, no BUTTONDOWN_API_KEY") +
+        print(("DRY RUN" if dry else "SKIP, no Buttondown API key (set BUTTONDOWN_API_KEY or Buttondown)") +
               f"\nsubject {subject}\n---\n{body}")
         return bool(dry)
     req = urllib.request.Request(
