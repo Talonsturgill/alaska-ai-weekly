@@ -69,3 +69,15 @@ shifted caption timings are banned.
 ## 5. Delete from the tooling list: dimensional.py, DIMENSIONAL_CRAFT.md, demo_dimensional.py
    references (the files stay in the repo for history but are retired). Add: video-engine/
    (Remotion), vo_qc.py, scripts/align_captions.py, docs/craft/INFOGRAPHIC_2_5D.md.
+
+## 6. Add to PHASE 4, immediately after the story is picked (the DIRECTORS ROOM):
+
+Before writing the storyboard, convene the WRITERS-ROOM PANEL (no-spawn agents, one pitch
+each): THE COMEDIAN (sight gags, personified objects, ironic cutaways), THE DRAMATIST
+(conflict, stakes, the antagonist force, the turn, the button), THE EXPLAINER (where numbers
+land hardest; comparisons that make scale FELT). A scorer judge picks the winning treatment
+and grafts the best beats of the others. Only then write beats[].draw. Full doctrine:
+docs/craft/DIRECTORS_ROOM.md. Cast continuity: reuse the Character rig cast across scenes
+(video-engine/src/lib/Character.tsx); every scene gets a slow push; use the dramatic
+snap-zoom-on-a-face (Standoff.tsx exemplar) at the emotional peak, once or twice per episode.
+The showstopper test leads the taste loop: would a stranger stop scrolling on this frame?
