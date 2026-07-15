@@ -25,6 +25,7 @@ Exit 0 always unless the ledger is unreadable or the send fails hard.
 """
 
 import argparse
+import html
 import json
 import os
 import re
@@ -88,6 +89,7 @@ def due_alerts(items, sent_keys, today):
 
 def compose(due, today):
     """One email covering everything due. Returns (subject, markdown body)."""
+    due = dedupe_by_item(due)
     if len(due) == 1:
         k, kind, it, d = due[0]
         when = pretty(d["date"]) if d else "now"
@@ -113,6 +115,68 @@ def compose(due, today):
     lines.append(f"Every decision we track, with live countdowns\n{SITE}")
     body = "\n\n".join(l for l in lines if l is not None)
     return subject, body
+
+
+def dedupe_by_item(due):
+    """One card per docket item for display, keeping the first (window-open beats
+    near for framing). The caller still records every key in alerts.json so the
+    no-repeat ledger is unchanged; this only collapses the visible duplicates."""
+    seen, out = set(), []
+    for e in due:
+        iid = e[2]["id"]
+        if iid not in seen:
+            seen.add(iid)
+            out.append(e)
+    return out
+
+
+def esc(s):
+    return html.escape(str(s), quote=True)
+
+
+def render_html(due, today):
+    """Inline-styled HTML email body. Renders on any plan (no custom-CSS add-on
+    needed) and sits inside the newsletter's branded header/footer. The plain
+    prose from compose() is what the colon lint gates; this is the sent body."""
+    due = dedupe_by_item(due)
+    intro = ("A quick heads-up on Alaska AI-infrastructure decisions with a "
+             "public window closing soon.")
+    P = ["<div style='font-family:Arial,Helvetica,sans-serif;'>",
+         f"<p style='font-size:15px;color:#33424f;line-height:1.6;margin:0 0 20px;'>"
+         f"{esc(intro)}</p>"]
+    for k, kind, it, d in due:
+        title = esc(it["title"])
+        summary = esc(it["summary"].split(". ")[0] + ".")
+        access = esc(it["access_note"])
+        src = esc(it["sources"][0]["url"])
+        when = ""
+        if d:
+            when = ("<div style='font-family:Menlo,Consolas,monospace;font-size:13px;"
+                    "color:#7a5c00;background:#fbf3d6;display:inline-block;padding:5px 11px;"
+                    f"border-radius:3px;margin:10px 0 4px;'>{esc(d['label'])}, "
+                    f"{esc(pretty(d['date']))}</div>")
+        P.append(
+            "<table width='100%' cellpadding='0' cellspacing='0' role='presentation' "
+            "style='margin:0 0 18px;'><tr><td style='border-left:4px solid #FFC72C;"
+            "background:#f7f9fb;padding:16px 20px;border-radius:0 6px 6px 0;'>"
+            f"<div style='font-family:Georgia,serif;font-size:19px;font-weight:bold;"
+            f"color:#0b1a2e;line-height:1.3;'>{title}</div>"
+            f"<div style='font-size:15px;color:#33424f;line-height:1.55;padding-top:6px;'>"
+            f"{summary}</div>{when}"
+            f"<div style='font-size:13px;color:#6a7783;line-height:1.5;padding-top:2px;'>"
+            f"{access}</div>"
+            f"<div style='padding-top:13px;'><a href='{src}' style='font-size:14px;"
+            f"font-weight:bold;color:#0b1a2e;background:#FFC72C;text-decoration:none;"
+            f"padding:9px 17px;border-radius:4px;display:inline-block;'>"
+            "Act or read the record &rarr;</a></div></td></tr></table>")
+    P.append(
+        "<table width='100%' cellpadding='0' cellspacing='0' role='presentation' "
+        "style='margin-top:4px;'><tr><td style='padding:14px 0 0;border-top:1px solid "
+        f"#e3e9ee;'><a href='{esc(SITE)}' style='font-family:Menlo,Consolas,monospace;"
+        "font-size:14px;color:#0b64b8;text-decoration:none;'>Every decision we track, "
+        "with live countdowns &rarr;</a></td></tr></table>")
+    P.append("</div>")
+    return "\n".join(P)
 
 
 def send(subject, body, dry):
@@ -152,8 +216,9 @@ def main():
         return
 
     subject, body = compose(due, today)
-    lint(subject + "\n" + body)
-    delivered = send(subject, body, args.dry_run)
+    lint(subject + "\n" + body)          # colon/house-style gate runs on the prose words
+    html_body = render_html(due, today)  # branded HTML is what actually sends
+    delivered = send(subject, html_body, args.dry_run)
     if delivered and not args.dry_run:
         for k, kind, it, d in due:
             sent["sent"].append({"key": k, "kind": kind, "sent_on": args.date,
