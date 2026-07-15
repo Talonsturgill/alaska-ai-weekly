@@ -1,4 +1,4 @@
-# STORYBOARD — Carousel No. 8 — 2026-07-15
+# STORYBOARD - Carousel No. 8 - 2026-07-15
 ## "The Uncomputed Ground"
 
 ## DECK HEADER
@@ -102,7 +102,7 @@ never Alaska's return. Invent no AI specifics.
 
 ---
 
-## SLIDE 01 — COVER — "The uncomputed ground"
+## SLIDE 01 - COVER - "The uncomputed ground"
 
 A. NARRATIVE
 1. Beat: the hook. Establish a real federal win whose centerpiece is missing; plant the loop
@@ -177,7 +177,7 @@ D. VERIFICATION
 
 ---
 
-## SLIDE 02 — "This is not a headline. It is a ten-year Engine."
+## SLIDE 02 - "This is not a headline. It is a ten-year Engine."
 
 A. NARRATIVE
 1. Beat: pay the cover immediately with the concrete, real win; plant "$160M looms, with an if."
@@ -226,7 +226,7 @@ D. VERIFICATION
 
 ---
 
-## SLIDE 03 — "56 of 60"
+## SLIDE 03 - "56 of 60"
 
 A. NARRATIVE
 1. Beat: context/stakes. Why a decade-scale bet is even rational: the ground is extraordinarily rich.
@@ -274,7 +274,7 @@ D. VERIFICATION
 
 ---
 
-## SLIDE 04 — "What the machine is supposed to do"
+## SLIDE 04 - "What the machine is supposed to do"
 
 A. NARRATIVE
 1. Beat: name the Engine's actual job, and show what "AI to locate deposits" WOULD look like,
@@ -324,7 +324,7 @@ D. VERIFICATION
 
 ---
 
-## SLIDE 05 — THE TURN / BREATHER — "One sentence"
+## SLIDE 05 - THE TURN / BREATHER - "One sentence"
 
 A. NARRATIVE
 1. Beat: the load-bearing honesty turn. The ENTIRE public description of the AI is one sentence.
@@ -384,7 +384,7 @@ D. VERIFICATION
 
 ---
 
-## SLIDE 06 — DATA / KEEPABLE — "A ladder, not a check"
+## SLIDE 06 - DATA / KEEPABLE - "A ladder, not a check"
 
 A. NARRATIVE
 1. Beat: the keepable money slide. Teach the reader to tell committed money from a milestone-gated
@@ -445,7 +445,7 @@ D. VERIFICATION
 
 ---
 
-## SLIDE 07 — BREATHER — "Why these seven"
+## SLIDE 07 - BREATHER - "Why these seven"
 
 A. NARRATIVE
 1. Beat: quiet legend. Ground the stakes in the actual named minerals and what they build. Plant
@@ -494,7 +494,7 @@ D. VERIFICATION
 
 ---
 
-## SLIDE 08 — "One real place, one real goal"
+## SLIDE 08 - "One real place, one real goal"
 
 A. NARRATIVE
 1. Beat: where the abstraction touches ground, honestly: the only named site, the partners as
@@ -545,7 +545,7 @@ D. VERIFICATION
 
 ---
 
-## SLIDE 09 — CLOSE — single ask
+## SLIDE 09 - CLOSE - single ask
 
 A. NARRATIVE
 1. Beat: resolve. Pose the fair, debatable civic question; give ONE ask; carry the fixture.

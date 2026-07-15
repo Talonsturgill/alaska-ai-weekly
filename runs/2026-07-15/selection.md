@@ -1,4 +1,4 @@
-# Selection + Dedupe Gate — Carousel No. 8 — 2026-07-15
+# Selection + Dedupe Gate - Carousel No. 8 - 2026-07-15
 
 ## CHOSEN STORY
 The NSF Critical Mineral Accelerator Engine in Alaska (UAF-led), announced 2026-07-14.

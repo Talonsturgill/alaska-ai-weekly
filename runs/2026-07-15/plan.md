@@ -1,4 +1,4 @@
-# Run Plan — Carousel No. 8 — 2026-07-15
+# Run Plan - Carousel No. 8 - 2026-07-15
 
 ## Run identity
 - carousel_no = 8 (topics.json has 7 entries).
@@ -33,7 +33,7 @@
 - hook_archetype MUST differ from last 3: {engineered-emblem cold-open (No.5), big-number monument (No.6), place-paradox two-sentence (No.7)}.
 - palette_family MUST differ from last 3: {spruce-night+fire (No.5), cool-drafting-blue+copper (No.6), abyssal-navy+sonar-cyan+gold (No.7)}.
 - type_pairing MUST differ from last 2: {Bricolage Grotesque + Instrument Serif + JBMono (No.6), Fraunces + Space Grotesk + JBMono (No.7)}.
-- Base register: dark arctic default. A light deck is allowed as a deliberate variance-dial-5 move, max once per 8 runs (none used recently) — a live option if the story wants it.
+- Base register: dark arctic default. A light deck is allowed as a deliberate variance-dial-5 move, max once per 8 runs (none used recently) - a live option if the story wants it.
 
 ## Provisional variance dials (deliberate; final lock at Phase 5 once story is known)
 - design_variance = 5 (reach for a genuinely novel hero; none of the last 4 runs hit 5).
@@ -49,15 +49,15 @@
 - Military summer exercise season historically.
 - PFD: amount announced ~September, paid October (not a July beat).
 
-## Research sweep — six beats (Phase 2)
+## Research sweep - six beats (Phase 2)
 - A Power & compute: data centers, grid, gas, AI energy footprint, broadband/fiber/satellite for AI.
-- B Research & Indigenous AI: UAF/UAA/APU, IARC, Sealaska, ANSEP, Alaska Native language models, data sovereignty. [CANARY probe already assigned here — freshest untouched vein.]
+- B Research & Indigenous AI: UAF/UAA/APU, IARC, Sealaska, ANSEP, Alaska Native language models, data sovereignty. [CANARY probe already assigned here - freshest untouched vein.]
 - C AI in the field: fisheries, wildlife, climate/permafrost, aviation, oil & gas, SAR, drones, autonomous vessels, mining.
 - D Policy & money: state/federal AI policy touching AK, legislature, RCA, delegation, grants, procurement, defense.
 - E Robotics & national-with-AK-teeth: robotics deployments; national AI stories with provable concrete Alaska impact.
-- F Community signal: what Alaskans are discussing (r/alaska, r/anchorage, HN, local commentary) — salience only.
+- F Community signal: what Alaskans are discussing (r/alaska, r/anchorage, HN, local commentary) - salience only.
 
-## Dedupe watch-list (90-day window; do NOT repeat these — a new URL is the same story)
+## Dedupe watch-list (90-day window; do NOT repeat these - a new URL is the same story)
 1. STAK North Slope AI data-center land lease (No.1). 2. Wood River AI salmon counting (No.2).
 3. AVO AI volcano monitoring VOISS-Net/VolcSARvatory (No.3). 4. Cook Inlet gas storage RCA-Enstar (No.4).
 5. XPRIZE autonomous wildfire robots via UAF ACUASI (No.5). 6. GVEA gas-turbine board vote (No.6).
@@ -65,9 +65,9 @@
 Heavily-mined veins to avoid re-plowing: data-center/gas/grid power math (No.1/4/6), autonomy/defense (No.5/7).
 Freshest untouched veins: Indigenous/research AI (Beat B), aviation AI, rural healthcare/telemedicine AI, mining AI, education AI, climate/permafrost science AI (distinct from volcano).
 
-## Docket (Phase 3.5) targets — bounded re-fetch, dates near/past run-date 2026-07-15
-- STAK ADL 422741: comment closes 2026-07-17 (2 days out) — re-verify, no schedule change expected.
-- AKLNG tax bill: floor votes 2026-07-16 (1 day out), session ends 07-19 — re-verify, watch the vote.
-- GVEA LM6000: 07-13 executive-session vote outcome still undisclosed — re-check for a board-action post.
+## Docket (Phase 3.5) targets - bounded re-fetch, dates near/past run-date 2026-07-15
+- STAK ADL 422741: comment closes 2026-07-17 (2 days out) - re-verify, no schedule change expected.
+- AKLNG tax bill: floor votes 2026-07-16 (1 day out), session ends 07-19 - re-verify, watch the vote.
+- GVEA LM6000: 07-13 executive-session vote outcome still undisclosed - re-check for a board-action post.
 - Air Force EUL (closed, no dated milestone) and Enstar (decided) carry forward unless new info appears.
 - Add any NEW decision item surfaced by this run's verified claims.

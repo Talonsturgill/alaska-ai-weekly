@@ -15,9 +15,9 @@
   "pixel_review": "done (5 critics parallel; 7 ship + 2 revise (S2 body overflow, S8 body/coast+Engine ambiguity); all fixes applied + re-rendered; qa PASS)",
   "flow_review": "done (flow-critic SHIP 8.3, reads as one sequence; S6->S7 junction bridged via S7 kicker 'WHAT THE CLIMB IS FOR')",
   "assemble": "done (out/2026-07-15/final: carousel.pdf vector 3.28MB, contact_sheet, thumbs; 9 slides)",
-  "scoring": "in_progress (scorer on full package)",
-  "ship": "pending",
-  "upgrade": "pending",
+  "scoring": "done (score_report.json 8.78, verdict ship, no hard fails; weakest artwork-craft 7.5)",
+  "ship": "in_progress (ledgers + FIELD_NOTES appended; site_build PASS 13 pages; docket_alerts SKIP no key)",
+  "upgrade": "done (lean solo Phase 12: automation_retro.md + upgrades.json scan_log; ZERO code upgrades, relief-depth helper parked)",
   "gmail": "pending",
   "retro": "pending"
  },
