@@ -1,354 +1,106 @@
 {
-  "concept": "SORTED BY A MACHINE: a top-down look at the spring-2025 purge in which an LLM was used to answer one blunt question, does this grant relate at all to DEI, over more than a thousand research proposals, flagging and terminating an Alaska Native Language Archive grant among about fourteen hundred, until a court ruled the cuts unlawful and reinstatement began in June 2026, honest that the model did not decide, people did, and that offered back is not the same as restored.",
+  "concept": "THE CLAIM ON THE TUNDRA — a gigawatt AI data center is proposed on a square mile of North Slope state land near Deadhorse. We shoot it as a blueprint trying to become real on ground that is still empty: a ghost wireframe campus assembles over the tundra, its own numbers refuse to settle, and the only thing at human scale is a flood of public comment. The honest limit is drawn, not stated: nothing is built, the figures span six times over, no customers or chips are confirmed, and the decision is still Alaska's to make by July 17th.",
   "derived_from": "scratch",
   "engine": "dimensional",
-  "slug": "dispatch-2026-07-13-sortedbyamachine",
-  "palette": "institutional cold-grey fluorescent, manila tan dossier, crimson termination mark, honey-amber archive warmth, evergreen court reversal, slate modular grid",
+  "date": "2026-07-14",
+  "slug": "the-claim-on-the-tundra",
   "fingerprint": {
-    "pov": "top-down-map",
-    "motion_vector": "scroll-data",
-    "hero_treatment": "data-as-subject",
-    "layout": "grid-modular",
-    "register": "data-brutalist",
-    "camera_strategy": "track-follow",
-    "light_story": "noon-hard",
-    "palette": "institutional cold-grey fluorescent, manila tan dossier, crimson termination mark, honey-amber archive warmth, evergreen court reversal, slate modular grid",
-    "metaphor": "a crude machine sorting a people's memory into keep and delete"
+    "pov": "orbital-aerial",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "structure-as-subject",
+    "layout": "map-territory",
+    "register": "blueprint-technical",
+    "camera_strategy": "rise-reveal",
+    "light_story": "overcast-diffuse",
+    "palette": "silver-white overcast sky over sage and ochre tundra, gunmetal turbine steel, electric blueprint cyan wireframe, sodium flare orange, a single signal-red deadline flag",
+    "metaphor": "the AI buildout drawn onto real Alaska land as a wireframe blueprint that is not built yet, its numbers leaping and refusing to settle, while a paper flood of public comment is the one thing at human scale that can hold it to account"
   },
+  "palette": "silver-white overcast sky over sage and ochre tundra, gunmetal turbine steel, electric blueprint cyan wireframe, sodium flare orange, a single signal-red deadline flag",
   "light": {
-    "sun": "hard, high, cold overhead fluorescent raking straight down on the grid, flat shadowless bureaucratic light; the archive shots break to a warm honey-amber practical glowing from the recordings themselves",
-    "mood": "the cold institutional light IS the point, a spreadsheet with no warmth; warmth exists only inside the human archive"
+    "sun": "no sun disk; flat high overcast North Slope daylight, near shadowless, a cold silver sky the color of wet slate",
+    "mood": "the light refuses to dramatize or glamorize the project; it is honest, plain, institutional daylight that lets the facts and the scale stand on their own"
   },
   "hook": {
-    "pattern": "bold-claim",
-    "frame1": "a top-down grid of a thousand pale grant cards under a cold scanning beam, one card already lit crimson",
-    "headline": "SORTED BY A MACHINE",
-    "motion_by_s": 1.0,
-    "loopback": "the film ends on one of those cards, now a warm archive being read by a human hand, line by line"
-  },
-  "audio_arc": {
-    "build_steps": 4,
-    "dip_at": 33.6,
-    "riser_at": 38.5,
-    "silence_at": 33.7,
-    "payoff_at": 43.5,
-    "button_pattern": "callback"
+    "pattern": "stakes-antagonist",
+    "frame1": "flat grey North Slope tundra under a silver overcast sky, one lone survey stake with an orange flag in the foreground, the faint cyan ghost of a vast campus wireframe barely readable on the horizon, headline burned in lower-centered",
+    "headline": "The AI boom wants Alaska",
+    "motion_by_s": 1.1,
+    "loopback": "Shot 5 returns to this exact tundra and survey stake, the campus still only a ghost wireframe, now stamped with the July 17th deadline, closing on the unbuilt land"
   },
   "shots": [
     {
-      "id": 1,
-      "framing": "map-territory",
-      "transition_in": "",
-      "thread": "",
-      "pov": "top-down-map",
-      "layout": "grid-modular",
-      "motion_vector": "scroll-data",
-      "hero_treatment": "data-as-subject",
-      "camera": {
-        "move": "aerial-descent",
-        "focus_from": 30,
-        "focus_to": 12
-      },
-      "hero": {
-        "name": "the grant grid",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "a top-down modular grid of pale manila grant cards, a bright scanner bar sweeping, sorted piles forming, the machine head at the edge"
-      },
-      "note": "establish the machine triage of a thousand grants"
+      "id": 1, "t": "0.0-12.0", "framing": "wide-establish",
+      "pov": "orbital-aerial", "layout": "map-territory", "motion_vector": "push-in-only", "hero_treatment": "landscape-as-subject",
+      "camera": {"move": "rise-reveal", "focus_from": 0.35, "focus_to": 0.9},
+      "centered": "the lone survey stake with its orange flag, dead center, as the camera rises to reveal the vast empty tundra and the parcel outline drawing itself onto the land",
+      "means": "establish the real, empty, human-owned land BEFORE anything is built on it",
+      "hero": {"name": "the survey stake on the tundra", "parts": 4, "zones": 2, "detail_note": "weathered wood stake, bent orange flagging tape catching wind, a small brass cap, the ground shadow pooling in shallow tundra polygons; the stake is the only man-made thing for miles"}
     },
     {
-      "id": 2,
-      "framing": "data-panel",
-      "transition_in": "fui-boot",
-      "thread": "build",
-      "pov": "instrument-screen",
-      "layout": "hud-instrument-frame",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "instrument-as-subject",
-      "camera": {
-        "move": "dolly-through",
-        "focus_from": 8,
-        "focus_to": 6
-      },
-      "hero": {
-        "name": "the classifier head",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "a card in a slot, a single prompt line, a DEI gate that flips YES or NO, a stamp arm that cocks"
-      },
-      "note": "the LLM as a blunt yes/no rubber stamp"
+      "id": 2, "t": "12.0-26.0", "framing": "alt-vantage",
+      "pov": "eye-level-immersive", "layout": "single-object-void", "motion_vector": "assemble-build", "hero_treatment": "structure-as-subject",
+      "transition_in": "assemble", "thread": "build",
+      "camera": {"move": "dolly-through", "focus_from": 0.4, "focus_to": 0.75},
+      "centered": "a worm's-eye view from the tundra floor looking up as four wireframe gas-turbine stacks rise and assemble overhead against the flat silver sky, one sodium flare igniting at the crown",
+      "means": "we drop off the drone to human ground level; the proposal's scale looms up over us as it builds, still only edges, not a building",
+      "hero": {"name": "the turbine stacks rising overhead", "parts": 4, "zones": 3, "detail_note": "cyan blueprint edges of four gas-turbine stacks towering up from a ghosted gravel pad, cross-braced frames assembling rung by rung, an access gantry threading in, a single sodium flare lighting at the crown; deliberately unbuilt, edges only"}
     },
     {
-      "id": 3,
-      "framing": "macro-closeup",
-      "transition_in": "focus-pull",
-      "thread": "carry",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "data-as-subject",
-      "camera": {
-        "move": "rack-focus-macro",
-        "focus_from": 5,
-        "focus_to": 2
-      },
-      "hero": {
-        "name": "the language archive card",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "one flagged card blooms into a warm field of amber voice-waveform bars (recorded speech), fragile flickers, a crimson stamp descending"
-      },
-      "note": "the archive as a people's living memory; the stamp falls"
+      "id": 3, "t": "26.0-38.0", "framing": "data-panel",
+      "pov": "macro-closeup", "layout": "single-object-void", "motion_vector": "vertical-rise", "hero_treatment": "data-as-subject",
+      "transition_in": "graphic-match", "thread": "carry",
+      "camera": {"move": "rack-focus-macro", "focus_from": 0.2, "focus_to": 0.85},
+      "centered": "a single cost bar at frame center that leaps and cannot settle between a five hundred million dollar tick and an over ten billion dollar tick, the gigawatt scale line beside it",
+      "means": "the honest caveat, drawn: the numbers refuse to sit still, so the certainty the project projects is not real",
+      "hero": {"name": "the number that will not settle", "parts": 4, "zones": 2, "detail_note": "a blueprint-cyan bar jittering on a gridline, a low tick labeled about five hundred million, a high ghost tick over ten billion, a separate one-gigawatt bar measured against a faint urban-Alaska baseline; blueprint register, not a brutalist dashboard"}
     },
     {
-      "id": 4,
-      "framing": "map-territory",
-      "transition_in": "pull-out",
-      "thread": "travel",
-      "pov": "top-down-map",
-      "layout": "grid-modular",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "data-as-subject",
-      "camera": {
-        "move": "track-follow",
-        "focus_from": 14,
-        "focus_to": 10
-      },
-      "hero": {
-        "name": "the terminated field",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "crimson terminations spreading radially across the grid, a tally climbing to 1,400, hard numerals 100M and 22 DAYS, emptied slots"
-      },
-      "note": "the scale of the cut"
+      "id": 4, "t": "38.0-50.0", "framing": "two-up",
+      "pov": "eye-level-immersive", "layout": "fullbleed-split", "motion_vector": "assemble-build", "hero_treatment": "multiplicity-swarm",
+      "transition_in": "mask-wipe", "thread": "build",
+      "camera": {"move": "dolly-through", "focus_from": 0.5, "focus_to": 0.5},
+      "centered": "a towering drift of public-comment slips piling on the left against a tiny stack of a dozen on the right, the divide down frame center",
+      "means": "what is actually real and at human scale: the public wrote in, overwhelmingly against, and that record is the check on the machine",
+      "hero": {"name": "the public comment, five hundred against a dozen", "parts": 4, "zones": 2, "detail_note": "hundreds of pale paper slips drifting and stacking like snow into a wall, a lone short stack of a dozen opposite, individual slips tumbling in the wind, a hard center seam dividing the two counts"}
     },
     {
-      "id": 5,
-      "framing": "two-up",
-      "transition_in": "mask-wipe",
-      "thread": "match",
-      "pov": "instrument-screen",
-      "layout": "fullbleed-split",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "structure-as-subject",
-      "camera": {
-        "move": "locked-drift",
-        "focus_from": 7,
-        "focus_to": 7
-      },
-      "hero": {
-        "name": "the reversal",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "left: the stamp arm revealed as driven by a human hand on a lever; right: a court-green wave lifting the crimson and relighting the archive card"
-      },
-      "note": "a person aimed it; a court reversed it"
-    },
-    {
-      "id": 6,
-      "framing": "subject-portrait",
-      "transition_in": "crossfade",
-      "thread": "carry",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "push-in-only",
-      "hero_treatment": "structure-as-subject",
-      "camera": {
-        "move": "dolly-through",
-        "focus_from": 5,
-        "focus_to": 3
-      },
-      "hero": {
-        "name": "the read archive",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "the warm waveform archive with dim gaps of lost recordings, a human hand tracing the restored lines line by line, the ALASKA.AI outro"
-      },
-      "note": "offered back is not restored; a human reads every line; outro"
+      "id": 5, "t": "50.0-60.0", "framing": "wide-establish",
+      "pov": "orbital-aerial", "layout": "map-territory", "motion_vector": "push-in-only", "hero_treatment": "landscape-as-subject",
+      "transition_in": "match-cut", "thread": "match",
+      "camera": {"move": "locked-drift", "focus_from": 0.8, "focus_to": 0.8},
+      "centered": "the same tundra and survey stake from Shot 1, the campus still only a faint ghost wireframe, a warning-amber July 17th deadline stamp settling at frame center",
+      "means": "loop back to the unbuilt land; the decision, and the deadline, still belong to Alaska",
+      "hero": {"name": "the land, and the deadline", "parts": 4, "zones": 2, "detail_note": "the returning tundra and orange-flagged stake, the ghost campus dimmer than before, an amber deadline stamp reading July 17th, the wordmark resolving; the land is what is real, the campus still is not"}
     }
   ],
   "beats": [
-    {
-      "t": "0.5-4.85",
-      "vo": "Not long ago, more than a thousand research grants were sorted by a machine.",
-      "shows": "top-down over a vast modular grid of pale grant cards, a bright scanner bar sweeping across",
-      "sfx": "tick",
-      "means": "a bureaucracy handed to a machine",
-      "choreo": {
-        "primary": "the scanner bar sweeps across the grid",
-        "reaction": "cards flip under the beam",
-        "ambient": "cold grid hum"
-      }
-    },
-    {
-      "t": "4.97-7.6",
-      "vo": "The question it was asked was simple. Does this relate, at all, to D.E.I.?",
-      "shows": "the scanner readout: one blunt prompt line typing on over the grid",
-      "sfx": "pop",
-      "means": "one blunt yes or no question",
-      "choreo": {
-        "primary": "the prompt line types on",
-        "reaction": "a card highlights under it",
-        "ambient": "cursor blink"
-      }
-    },
-    {
-      "t": "7.7-10.09",
-      "vo": "",
-      "shows": "a single grant card lifts out of the grid and slides toward the machine slot",
-      "sfx": "whoosh",
-      "means": "the machine picks one out",
-      "choreo": {
-        "primary": "a card rises and slides to the slot",
-        "reaction": "the slot iris opens",
-        "ambient": "conveyor whir"
-      }
-    },
-    {
-      "t": "10.43-14.31",
-      "vo": "Each proposal went to a chatbot, which answered in a single word.",
-      "shows": "data-panel: the classifier head, the card in its slot, a DEI gate lit",
-      "sfx": "lock",
-      "means": "a language model used as a rubber stamp",
-      "choreo": {
-        "primary": "the card seats in the slot",
-        "reaction": "the gate boots up",
-        "ambient": "fan whir"
-      }
-    },
-    {
-      "t": "14.44-15.39",
-      "vo": "Yes, or no.",
-      "shows": "a hard binary: YES lights one side, NO the other, a stamp arm cocking",
-      "sfx": "hit",
-      "means": "a life's work reduced to one bit",
-      "choreo": {
-        "primary": "YES and NO flip up",
-        "reaction": "the stamp arm cocks",
-        "ambient": "tension click"
-      }
-    },
-    {
-      "t": "15.73-19.24",
-      "vo": "One of them was a plan to save the Alaska Native Language Archive.",
-      "shows": "focus-pull to macro: one card blooms into a field of glowing amber voice-waveform bars",
-      "sfx": "pulse",
-      "means": "this one held a people's memory",
-      "choreo": {
-        "primary": "the card blooms into warm waveforms",
-        "reaction": "bars pulse like speech",
-        "ambient": "warm room tone"
-      }
-    },
-    {
-      "t": "19.36-22.0",
-      "vo": "Decades of elders' voices, the last fluent recordings of whole languages.",
-      "shows": "the amber waveform field deepens, receding rows of recordings",
-      "sfx": "riser",
-      "means": "irreplaceable recordings of whole languages",
-      "choreo": {
-        "primary": "rows of waveforms recede into depth",
-        "reaction": "some bars flicker, fragile",
-        "ambient": "soft archival hiss"
-      }
-    },
-    {
-      "t": "22.0-24.14",
-      "vo": "",
-      "shows": "a heavy crimson stamp descends over the glowing archive",
-      "sfx": "boom",
-      "means": "the verdict lowers toward it",
-      "choreo": {
-        "primary": "the crimson stamp lowers",
-        "reaction": "amber dims under its shadow",
-        "ambient": "mechanical descent"
-      }
-    },
-    {
-      "t": "24.49-26.74",
-      "vo": "The chatbot answered yes, it relates.",
-      "shows": "the stamp lands: TERMINATED in crimson across the archive card, waveforms greying",
-      "sfx": "hit",
-      "means": "flagged out of existence by a word",
-      "choreo": {
-        "primary": "the stamp lands hard",
-        "reaction": "the warm bars go grey",
-        "ambient": "stamp thud"
-      }
-    },
-    {
-      "t": "26.86-30.49",
-      "vo": "So the grant was terminated, along with about fourteen hundred others.",
-      "shows": "pull-out to the grid: crimson terminations spread across the field, a tally climbing to 1,400",
-      "sfx": "riser",
-      "means": "a mass cut, not one mistake",
-      "choreo": {
-        "primary": "red spreads across the grid",
-        "reaction": "the tally climbs to 1,400",
-        "ambient": "cascading clicks"
-      }
-    },
-    {
-      "t": "30.61-33.64",
-      "vo": "A hundred million dollars, gone in twenty-two days.",
-      "shows": "hard numerals slam over the reddened grid: 100 MILLION DOLLARS, 22 DAYS",
-      "sfx": "boom",
-      "means": "the scale and speed of it",
-      "choreo": {
-        "primary": "$100M and 22 DAYS slam in",
-        "reaction": "the grid dims to ember",
-        "ambient": "low tone"
-      }
-    },
-    {
-      "t": "33.98-38.38",
-      "vo": "But the chatbot did not decide. A person aimed it, and a person signed.",
-      "shows": "two-up: the machine stamp on the left, a human hand closing on the lever on the right",
-      "sfx": "lock",
-      "means": "accountability is human, not the model",
-      "choreo": {
-        "primary": "a human hand closes on the lever",
-        "reaction": "the stamp is revealed as hand-driven",
-        "ambient": "hard silence"
-      }
-    },
-    {
-      "t": "38.5-43.12",
-      "vo": "Then a court ruled the cuts unlawful, and this summer the funding was offered back.",
-      "shows": "a court-green wave sweeps across, lifting the crimson stamps, the archive card relighting",
-      "sfx": "riser",
-      "means": "the cuts were reversed",
-      "choreo": {
-        "primary": "a green wave sweeps right",
-        "reaction": "crimson lifts, amber returns",
-        "ambient": "rising chord"
-      }
-    },
-    {
-      "t": "43.46-47.35",
-      "vo": "Offered back is not restored. The lost year does not return.",
-      "shows": "the archive card warm again but with visible dim gaps where bars are still missing",
-      "sfx": "tick",
-      "means": "reversal is not repair",
-      "choreo": {
-        "primary": "slow push in on the card",
-        "reaction": "missing bars flicker out as the push reaches them",
-        "ambient": "quiet"
-      }
-    },
-    {
-      "t": "47.47-52.47",
-      "vo": "An archive of a language is memory. It deserves a human reading every line.",
-      "shows": "a human hand moves along the restored waveforms, reading line by line, the brand outro begins",
-      "sfx": "pulse",
-      "means": "a human must stay in the loop",
-      "choreo": {
-        "primary": "the hand traces along the lines",
-        "reaction": "bars light warm as they are read",
-        "ambient": "settles to quiet"
-      }
-    }
+    {"t": 0.5, "vo": "This week, Alaska is being asked to help power the A I boom.", "shows": "tundra and lone stake; headline burns in; ghost campus flickers on the horizon", "sfx": "ambient", "means": "the stake in the land", "choreo": {"primary": "camera begins its slow rise off the stake", "reaction": "headline snaps in lower-center", "ambient": "low tundra wind moving the flag tape"}},
+    {"t": 4.5, "vo": "A company wants a square mile of North Slope tundra,", "shows": "the parcel outline draws itself onto the map of the land", "sfx": "tick", "means": "a claim is drawn on real ground", "choreo": {"primary": "parcel boundary lines walk across the tundra", "reaction": "corner survey pins drop and lock", "ambient": "grass and sedge shifting"}},
+    {"t": 8.5, "vo": "about twenty five miles south of Deadhorse, on state land.", "shows": "a location pin sets; STATE LAND label settles", "sfx": "lock", "means": "it is public, state-owned ground", "choreo": {"primary": "location pin drives down", "reaction": "distance scale ticks out to Deadhorse", "ambient": "cloud shadow drifting"}},
+    {"t": 12.5, "vo": "To run artificial intelligence, it would build here,", "shows": "the camera drops to the tundra floor; wireframe turbine frames begin to rise overhead", "sfx": "whoosh", "means": "the proposal builds onto the empty land, seen from the ground", "choreo": {"primary": "camera drops from the aerial to ground level", "reaction": "turbine frames extrude upward overhead", "ambient": "wind pushing low cloud"}},
+    {"t": 16.5, "vo": "and burn North Slope gas for at least a gigawatt of power.", "shows": "turbine stacks snap in; one sodium flare lights", "sfx": "pulse", "means": "the power is enormous and gas-fired", "choreo": {"primary": "four turbine stacks assemble", "reaction": "flare ignites sodium-orange", "ambient": "heat shimmer over the pad"}},
+    {"t": 20.5, "vo": "That is roughly thirty percent more than all of urban Alaska draws at once.", "shows": "the gigawatt bar overshoots urban Alaska's whole peak; a plus thirty percent tick prints above the baseline", "sfx": "riser", "means": "scale made legible against something real", "choreo": {"primary": "gigawatt bar overshoots the urban baseline", "reaction": "baseline line pulses", "ambient": "flare flicker"}},
+    {"t": 24.5, "vo": "But nothing is built here yet.", "shows": "the whole campus drops to dashed ghost lines", "sfx": "tick", "means": "hard turn to the honest caveat", "choreo": {"primary": "solid edges fall to dashed wireframe", "reaction": "flare dims to an ember", "ambient": "wind returns over the pad"}},
+    {"t": 28.5, "vo": "This is a proposal. And the numbers will not sit still.", "shows": "camera racks to a single cost bar in the void", "sfx": "whoosh", "means": "the certainty is not real", "choreo": {"primary": "rack focus from campus to the cost bar", "reaction": "gridline snaps under the bar", "ambient": "faint blueprint hum"}},
+    {"t": 32.5, "vo": "The early site work, around five hundred million dollars.", "shows": "the bar sits at the low tick, labeled", "sfx": "tick", "means": "the small, sourced figure", "choreo": {"primary": "bar settles on the low tick", "reaction": "label types in", "ambient": "bar edge jitter"}},
+    {"t": 36.0, "vo": "The company's own estimate for the whole build, over ten billion.", "shows": "the bar leaps to the high ghost tick and cannot hold", "sfx": "boom", "means": "a six-times spread, unsettled", "choreo": {"primary": "bar leaps up and overshoots", "reaction": "high tick flickers, unstable", "ambient": "number readout stutters"}},
+    {"t": 39.5, "vo": "No confirmed customers. No confirmed chips.", "shows": "a CUSTOMERS tray and a CHIPS tray sit open, conspicuously empty and unsigned; a paper edge just begins to wipe in from frame right", "sfx": "hit", "means": "the demand is unproven", "choreo": {"primary": "two labeled trays hold, empty and unsigned", "reaction": "paper edge wipes from frame right", "ambient": "paper rustle rising"}},
+    {"t": 42.5, "vo": "What is real is the public comment. Alaskans wrote in.", "shows": "the paper flood pours and stacks on the left", "sfx": "whoosh", "means": "the human-scale check appears", "choreo": {"primary": "hundreds of slips drift and pile into a wall", "reaction": "the tiny opposite stack holds", "ambient": "wind-driven paper"}},
+    {"t": 46.0, "vo": "More than five hundred comments. Fewer than a dozen in favor.", "shows": "the two counts resolve across the center seam", "sfx": "lock", "means": "overwhelmingly one-sided", "choreo": {"primary": "the tall stack tops out", "reaction": "the dozen stack labels itself", "ambient": "settling paper"}},
+    {"t": 48.5, "vo": "The company called most of them form letters.", "shows": "a FORM LETTER? stamp presses down on the tall five hundred stack but cannot grey it or move it", "sfx": "hit", "means": "the company pushes back on the record, and fails to erase it", "choreo": {"primary": "a dismissive stamp presses down on the tall stack", "reaction": "the stack holds, ungreyed", "ambient": "paper settling under the stamp"}},
+    {"t": 51.0, "vo": "The state has not decided.", "shows": "match-cut back to the tundra and stake; ghost campus faint", "sfx": "ambient", "means": "loop back to the unbuilt land", "choreo": {"primary": "camera settles into a locked drift on the stake", "reaction": "ghost campus dims further", "ambient": "wind over open tundra"}},
+    {"t": 54.5, "vo": "The comment window closes July seventeenth. The machine needs the land and the power.", "shows": "a signal-red July 17th deadline stamp lands on the land as one heavy stamp", "sfx": "lock", "means": "the deadline is live and near", "choreo": {"primary": "the deadline stamp lands as one heavy stamp", "reaction": "stake flag lifts in a gust", "ambient": "low sky drift"}},
+    {"t": 57.5, "vo": "It cannot grant itself either. That call still belongs to Alaska.", "shows": "wordmark resolves over the land; campus stays a ghost", "sfx": "boom", "means": "the button: the decision is Alaska's", "choreo": {"primary": "wordmark and signoff resolve", "reaction": "ghost campus holds, unbuilt", "ambient": "wind falls to near silence"}}
   ],
-  "divergence_note": "This breaks hard from the last two dispatches and from the recent naturalistic 3D worlds. 07-12 (beluga hoax) was an eye-level, single-organic-hero, horizontal-traverse orbit through water; 07-11 (smoke lid) was an orbital-aerial, landscape-as-subject, vertical-descent into a valley. This is a TOP-DOWN-MAP onto a GRID-MODULAR field of grant records that SCROLL-DATA under a machine scanner, its register is DATA-BRUTALIST (hard Swiss grid, numerals-forward) not naturalistic, its hero is DATA (records) not a creature or a landscape, its camera strategy is TRACK-FOLLOW not orbit-reveal, and its light is NOON-HARD cold fluorescent rather than storm or night, on a fresh institutional grey/manila/crimson/amber/court-green palette that shares no color world with smoke ochre or aquarium magenta. The cold machine grid is deliberately set against a warm amber human archive, and the caveat that the model did not decide is DRAWN as a human hand on the lever. The spatial signature (top-down-map, grid-modular, scroll-data) has not appeared in the last four dispatches."
+  "audio_arc": {
+    "build_steps": ["low tundra wind and a sub-bass drone under the empty land", "a cold mechanical pulse as the campus assembles and the flare lights", "unstable number ticks as the cost bar leaps", "a paper-rush swell as the public comment floods in", "drop back to wind for the deadline and the button"],
+    "dip_at": 24.5,
+    "riser_at": 20.5,
+    "silence_at": 56.5,
+    "payoff_at": 57.5,
+    "button_pattern": "callback"
+  },
+  "divergence_note": "The last two dispatches were 'Sorted by a Machine' (top-down-map, scroll-data, data-as-subject, grid-modular, data-brutalist, track-follow, noon-hard, cold institutional grey) and before it the night-water beluga hoax (eye-level-immersive, horizontal-traverse, single-organic-hero, night-practical). This piece shares none of those: it is an orbital-aerial, blueprint-technical shoot over open North Slope tundra under flat overcast light, with an assemble-build motion (a wireframe campus constructing itself) rather than scrolling data or a swimming hero, a rise-reveal camera instead of a track-follow, and a fresh wet-grey tundra and blueprint-cyan palette against the prior grey-fluorescent dossier and teal-black aquarium worlds. The metaphor is new: a proposal drawn as an unbuilt blueprint whose own numbers will not settle, checked by a paper flood of public comment, rather than a machine sorting files or a fake image dissolving. Spatial signature (orbital-aerial, map-territory, assemble-build) does not repeat any of the last four.",
+  "taste_dials": {"restraint": "high", "warmth": "low-cool", "data_density": "medium", "motion_energy": "measured", "style_mode": "honest institutional blueprint over real land; sober, not hyped, not doom"},
+  "references": ["state DNR lease-parcel plats as a look for the map-territory draw", "architectural competition wireframe flythroughs (unbuilt = edges only)", "North Slope flat-overcast field photography for the light"]
 }
