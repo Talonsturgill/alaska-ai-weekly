@@ -4,7 +4,7 @@ Penn State engineers built what they call a digital twin: a physics model paired
 
 Alaska does not need AI that promises to fix the Arctic. It needs AI that tells engineers the truth about ground they cannot see. This project earns trust because of what it refuses to claim. It forecasts. It does not stop the thaw, and the team says so plainly. It is proven at one embankment on about three years of data, not validated across the Arctic. That is the real scope of a real tool, stated instead of hidden.
 
-This matters beyond one road. Permafrost carries roads, runways, and pipes across the Arctic, and when it thaws the ground under them can give way. A sensor network that gives engineers real warning time, even an imperfect one, gives crews a chance to reinforce a road before it fails, not after. Anyone deciding where to point AI in Alaska should treat this as the template: narrow claims, real data, published methods, a scientist willing to name the limit out loud.
+This matters beyond one road. Permafrost carries roads, runways, and pipes across the Arctic, and when it thaws the ground under them can give way. A sensor network that gives engineers real warning time, even an imperfect one, gives crews a chance to reinforce a road before it fails, not after. Anyone deciding where to point AI in Alaska should treat this as the template: narrow claims, real data, published methods, and a lead researcher, Penn State's Ming Xiao, willing to name the limit out loud.
 
 A model that predicts the ground still cannot freeze it back. What it buys is warning, and warning is not nothing when the alternative is finding out after the road already cracked.
 
