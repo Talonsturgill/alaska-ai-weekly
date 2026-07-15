@@ -20,26 +20,28 @@ CACHE = os.path.join(AUD, "vo_cache"); os.makedirs(CACHE, exist_ok=True)
 SR = 44100; FPS = 30; TOTAL = 60.0; LEAD = 0.45; GAP_IN = 0.12; GAP_SEG = 0.40
 
 # (phrase, shot index 0..4). Whole caption chunks (no stranded payoff word, no split number).
-# Kept tight (~95 words): the clone is a slow ~91 wpm voice, and a gentle atempo fit (below)
-# lands the speech near TARGET_SPEECH s with room for the branded outro.
+# MEASURED on this env: the clone runs ~89 wpm even at these compact phrasings (a "measured,
+# clear documentary" delivery by design, per vo_backends.CLONE_KW) — materially slower than a
+# typical TTS. Trimmed a second pass (from the original 129-word/86.9s-raw draft) so the gentler
+# ATEMPO_CAP below lands close to natural speed instead of a 1.6x forced compression.
 PHRASES = [
     ("In Utqiagvik, the ground itself is the foundation.", 0),
-    ("Roads, runways, pipes, all rest on frozen soil.", 0),
-    ("And that soil is warming.", 0),
+    ("Roads and runways rest on frozen soil, now warming.", 0),
     ("So Penn State built the road a twin.", 1),
-    ("Two fiber optic cables, about a kilometer each, buried in the road.", 1),
+    ("Two fiber optic cables, about a kilometer each.", 1),
     ("They feel its heat and tremor, every hour.", 1),
-    ("Physics and machine learning make a living copy of the ground.", 2),
+    ("Physics and machine learning copy the ground.", 2),
     ("As new data arrives, the twin corrects itself.", 2),
     ("It runs a step ahead of the thaw,", 3),
     ("before it reaches the road.", 3),
     ("Here is the honest part.", 4),
-    ("The twin predicts the ground. It cannot freeze it back.", 4),
-    ("Proven at one road, three years of data. Not the whole Arctic.", 4),
-    ("A road that sees its thaw coming is a road you can save.", 4),
+    ("It predicts the ground. It cannot freeze it back.", 4),
+    ("One road, three years of data. Not the whole Arctic.", 4),
+    ("A road that sees the thaw coming is one you can save.", 4),
     ("This is Alaska dot A I.", 4),
 ]
-TARGET_SPEECH = 52.5   # atempo-fit the assembled VO so speech ends near here (outro fills to ~59.5)
+TARGET_SPEECH = 52.5    # atempo-fit the assembled VO so speech ends near here (outro fills to ~59.5)
+ATEMPO_CAP = 1.35        # gentler ceiling than raw 1.6x so the clone's cadence still sounds natural
 
 def _cache_key(text):
     return hashlib.sha1((vb.REF_CLIP + "|" + repr(vb.CLONE_KW) + "|" + text).encode()).hexdigest()[:16]
@@ -88,7 +90,7 @@ import subprocess, tempfile
 clip_durs = [len(c) / SR for c in clips]
 atempo = 1.0
 if speech_end > TARGET_SPEECH:
-    atempo = min(1.6, max(1.0, speech_end / TARGET_SPEECH))
+    atempo = min(ATEMPO_CAP, max(1.0, speech_end / TARGET_SPEECH))
     raw = os.path.join(AUD, "_vo_raw.wav"); fit = os.path.join(AUD, "_vo_fit.wav")
     wavfile.write(raw, SR, (buf / (np.max(np.abs(buf)) + 1e-9) * 0.98 * 32767).astype(np.int16))
     subprocess.run(["ffmpeg", "-y", "-i", raw, "-filter:a", f"atempo={atempo:.4f}", "-ar", str(SR), fit],
