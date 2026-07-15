@@ -23,7 +23,7 @@ TOTAL = 60.0
 GAP = 0.18  # min gap between phrases when one runs long
 
 beats = json.load(open(SB))["beats"]
-buf = np.zeros(int(TOTAL * SR) + SR, np.float32)
+buf = np.zeros(int((TOTAL + 30) * SR), np.float32)   # headroom; VO may run long, we measure it
 starts = []
 cursor = 0.0
 for i, b in enumerate(beats):
@@ -31,6 +31,9 @@ for i, b in enumerate(beats):
     a = vb.synth(line)                       # cloned voice, normalized text
     t = max(float(b["t"]), cursor + (GAP if i else 0.0))
     s = int(t * SR)
+    if s >= len(buf):
+        print(f"beat {i:02d} OVERFLOW past buffer at t={t:.2f}s; stopping")
+        break
     e = min(s + len(a), len(buf))
     buf[s:e] += a[: e - s]
     starts.append(round(t, 3))
@@ -38,7 +41,8 @@ for i, b in enumerate(beats):
     print(f"beat {i:02d} t={t:5.2f}  +{len(a)/SR:4.2f}s  {vb.normalize_for_tts(line)[:60]}")
 
 speech_end = cursor
-buf = buf[: int(TOTAL * SR)]
+print(f"TOTAL VO DURATION: {speech_end:.2f}s  (target 60s; trim ~{max(0,speech_end-58):.1f}s to fit)")
+buf = buf[: int((speech_end + 0.5) * SR)]     # save the whole read (preview); final cut trims to 60
 peak = float(np.max(np.abs(buf))) + 1e-9
 buf = buf / peak * (10 ** (-1.5 / 20))       # -1.5 dBTP-ish headroom
 stereo = np.stack([buf, buf], 1)
