@@ -30,9 +30,11 @@ NF = int(os.environ.get("DIM_NF", "1785"))          # 59.5s
 SCALE = float(os.environ.get("DIM_SCALE", "1.0"))
 LOOKDEV = os.environ.get("DISPATCH_LOOKDEV") == "1"
 
-# shot frame boundaries (aligned to storyboard beats; 30fps)
-SHOT_START = [0, 315, 630, 855, 1215]
-SHOT_END   = [315, 630, 855, 1215, NF]
+# shot frame boundaries (aligned to storyboard beats; 30fps). 6 render-shots: shot4 (the rise-
+# reveal + outro) is split into 4a/4b (same world, hard-cut camera) so no single shot exceeds the
+# 16s SCENE_STRUCTURE ceiling; see _load_shot_bounds() for the real (VO-aligned) split point.
+SHOT_START = [0, 315, 630, 855, 1215, 1500]
+SHOT_END   = [315, 630, 855, 1215, 1500, NF]
 NSHOT = len(SHOT_START)
 
 dim.init(1080, 1920, scale=SCALE)
@@ -152,8 +154,19 @@ def _ice_wedge(p):
     return ti.max(w - 0.08, ti.abs(q.z) - 1.4)
 
 @ti.func
+def _spoil(p):
+    # a low foreground rubble lip spanning the frame width, between camera and the cut face --
+    # gives the shot a genuine near/far depth range (the flat wall alone measured well under the
+    # 1.0-world-unit floor on EVERY sampled frame; small scattered rocks were tried first and
+    # covered too little of the frame to move the depth percentiles at all). Wide and low enough
+    # to read as the excavation's own near lip, not a floating prop.
+    box = dim.sd_rbox(p, ti.Vector([0.0, -1.3, 4.0]), ti.Vector([4.4, 0.35, 1.3]), 0.18)
+    return box + 0.07 * dim.fbm2(p.x * 1.4, p.z * 1.4)
+
+@ti.func
 def sceneB(p, t):
     d = _strata(p)
+    d = ti.min(d, _spoil(p))
     # (an embedded-ellipsoid "ice lens" detail was tried here and cut: its clipped cross-section
     # near the ellipsoid's own pole caught the key light at a grazing angle and bloomed into a
     # large blown-out disk across the shot's dolly. The ice wedge below already carries the
@@ -178,11 +191,13 @@ def matB(p, n, t):
     fib = dim.sd_capsule(p, ti.Vector([-3.6, -0.55, ZF + 0.02]), ti.Vector([3.6, -0.55, ZF + 0.02]), 0.05)
     if fib < 0.05:
         col = ti.Vector([0.10, 0.12, 0.16])
+    if _spoil(p) < 0.04:
+        col = C_GRAVEL * 0.8                             # loose rubble, near-camera foreground
     return col
 
 @ti.func
 def shadowB(p, t):
-    return _strata(p)
+    return ti.min(_strata(p), _spoil(p))
 
 @ti.func
 def emitB(p, t):
@@ -339,6 +354,7 @@ SHOTS = [
     dict(scene=sceneC, mat=matC, shadow=shadowC, emit=emitC, light=light_macro),
     dict(scene=sceneD, mat=matD, shadow=shadowD, emit=emitD, light=light_diptych),
     dict(scene=sceneE, mat=matE, shadow=shadowE, emit=emitE, light=light_reveal),
+    dict(scene=sceneE, mat=matE, shadow=shadowE, emit=emitE, light=light_reveal),   # 4b: same world, hard-cut camera (splits the >16s oner; see camE_b)
 ]
 
 def shot_of(f):
@@ -375,13 +391,22 @@ def camD(f):
     dx, dy, dz = dim.drift(f, 0.010)
     return dim.Cam((pos[0]+dx, pos[1]+dy, pos[2]+dz), look, fov=1.24, focus=4.0, fstop=3.2)
 
-def camE(f):
+def camE_a(f):
+    # 4a: held close on the stake for the honest-caveat beat (raised from the old y=0.3 start so
+    # the horizon stays in frame -- fixes both the >16s oner AND shot4's low-camera DEPTH_FIELD gap)
     x = (f - SHOT_START[4]) / max(1, SHOT_END[4] - SHOT_START[4])
-    A = ((1.4, 0.3, 3.2), (1.5, -0.2, 5.4)); B = ((0.4, 5.2, -2.0), (0.5, 0.2, 6.2))
+    A = ((1.6, 0.85, 3.3), (1.5, -0.05, 5.2)); B = ((1.3, 1.1, 3.7), (1.4, 0.05, 5.6))
+    pos, look = dim.dolly(A, B, dim.ease_io(x)); dx, dy, dz = dim.drift(f, 0.012)
+    return dim.Cam((pos[0]+dx, pos[1]+dy, pos[2]+dz), look, fov=1.26, focus=2.6 + 1.0*x, fstop=4.0)
+
+def camE_b(f):
+    # 4b: the rise-reveal, a hard cut from 4a into a fresh wide vantage then up and out
+    x = (f - SHOT_START[5]) / max(1, SHOT_END[5] - SHOT_START[5])
+    A = ((1.1, 1.1, 3.2), (1.2, 0.1, 5.6)); B = ((0.4, 5.2, -2.0), (0.5, 0.2, 6.2))
     pos, look = dim.dolly(A, B, dim.ease_io(x)); dx, dy, dz = dim.drift(f, 0.014)
     return dim.Cam((pos[0]+dx, pos[1]+dy, pos[2]+dz), look, fov=1.26, focus=3.0 + 17*x, fstop=5.0)
 
-CAMS = [camA, camB, camC, camD, camE]
+CAMS = [camA, camB, camC, camD, camE_a, camE_b]
 
 # ---------------- kernel management ----------------
 _cur = -1
@@ -410,12 +435,14 @@ def dc_mod():
 
 _SCRIM = None
 def caption_scrim(out):
+    # deepened after Gate A found 33/2007 caption words under the readability contrast floor
+    # (bright-sky shots gave the scrim too little margin at its old 0.55 peak / slower ramp).
     global _SCRIM
     if _SCRIM is None:
         y = np.arange(1920, dtype=np.float32)[:, None]
-        up = np.clip((y - 1300.0) / 170.0, 0.0, 1.0); dn = 1.0 - 0.45 * np.clip((y - 1620.0) / 300.0, 0.0, 1.0)
-        aa = (up * dn * 0.55 * 255.0).astype(np.uint8)
-        rgba = np.zeros((1920, 1080, 4), np.uint8); rgba[..., 0] = 6; rgba[..., 1] = 8; rgba[..., 2] = 14
+        up = np.clip((y - 1220.0) / 130.0, 0.0, 1.0); dn = 1.0 - 0.40 * np.clip((y - 1620.0) / 300.0, 0.0, 1.0)
+        aa = (up * dn * 0.72 * 255.0).astype(np.uint8)
+        rgba = np.zeros((1920, 1080, 4), np.uint8); rgba[..., 0] = 3; rgba[..., 1] = 4; rgba[..., 2] = 8
         rgba[..., 3] = np.repeat(aa, 1080, axis=1); _SCRIM = Image.fromarray(rgba, "RGBA")
     out.alpha_composite(_SCRIM)
 
@@ -449,6 +476,13 @@ def _appear(t, t0, d=1.6):
 # per-shot HUD (approved on-screen numbers; numerals; no dashes)
 def chrome0(ctx, f, t):
     dc = dc_mod(); eyebrow(ctx, f)
+    # the hook: the storyboard's frame-1 POSTER headline. A poster is already there at frame 0,
+    # not animating in (the FIRST_FRAME gate samples t=0 exactly; a fade-from-zero reads as a
+    # blank frame there). Full ink from f0, with only a subtle settle so it isn't perfectly static.
+    ha = 1.0 - max(0.0, min(1.0, (t - 2.6) / 0.6))   # full from f0 (poster, not a fade-in); exits ~2.6-3.2s
+    hf = dc.fr(50, 900); hs = "A TWIN FOR THAWING GROUND"; hw = dc.tw(hs, hf, 0.01)
+    hy = 860 - int(6 * (1.0 - min(1.0, t / 0.5))) - int(14 * (1.0 - ha))
+    lab(ctx, (1080 - hw) // 2, hy, hs, hf, BONE, ha, tr=0.01, kind="hook")
     lab(ctx, 104, 152, "UTQIAGVIK, ALASKA", dc.mono(30, b=True), BONE, _appear(t, 0.8))
 
 def chrome1(ctx, f, t):
@@ -486,7 +520,7 @@ def chrome4(ctx, f, t):
     s2 = "ONE ROAD  ·  THREE YEARS OF DATA"; sf2 = dc.mono(27, m=True); w2 = dc.tw(s2, sf2)
     lab(ctx, (1080 - w2) // 2, 252, s2, sf2, DIMW, a2)
 
-CHROME = [chrome0, chrome1, chrome2, chrome3, chrome4]
+CHROME = [chrome0, chrome1, chrome2, chrome3, chrome4, chrome4]   # chrome4 is t-gated, valid for both 4a/4b
 
 def render_range(s, e, save_dir=OUT):
     import time as _t; _t0 = _t.time()
@@ -521,11 +555,11 @@ def render_range(s, e, save_dir=OUT):
 
 def emit_shots():
     dc = dc_mod()
-    fr = ["wide-establish", "push-detail", "macro-closeup", "two-up", "alt-vantage"]
-    tr = ["", "push-in", "carried-element", "match-action", "pull-out"]
+    fr = ["wide-establish", "push-detail", "macro-closeup", "two-up", "alt-vantage", "alt-vantage"]
+    tr = ["", "push-in", "carried-element", "match-action", "pull-out", "hard-cut"]
     notes = ["the road on the ice, warm-lit stake", "cutaway: strata, ice lenses, buried fiber + pulse",
              "macro: sensor node blooms the digital-twin lattice", "diptych: twin leads, real trails the thaw front",
-             "rise-reveal to one instrumented road in the vast Arctic, outro"]
+             "held close on the stake for the honest caveat", "rise-reveal to one instrumented road in the vast Arctic, outro"]
     dc.write_shots([{"id": i + 1, "start": SHOT_START[i], "end": SHOT_END[i], "framing": fr[i],
                      "transition_in": tr[i], "note": notes[i]} for i in range(NSHOT)], NF)
 
@@ -551,14 +585,25 @@ def lookdev():
 
 def _load_shot_bounds():
     """Align shot boundaries to the ACTUAL VO (audio/timing60.json shot_bounds), so the picture
-    cuts where the narration turns. Falls back to the storyboard defaults if timing is absent."""
+    cuts where the narration turns. The VO ties to 5 caption/audio segments; render-shot 4 (the
+    rise-reveal) is further split into 4a/4b (see SHOTS/CAMS/CHROME) so no single shot exceeds the
+    16s SCENE_STRUCTURE ceiling. The split point is pinned near the VO's real silence gap (a hard
+    cut exactly as the piece takes its pre-payoff breath is a motivated edit, not an arbitrary one),
+    clamped so BOTH resulting halves stay under the 16s/480-frame ceiling with margin.
+    Falls back to the storyboard defaults if timing is absent."""
     global SHOT_START, SHOT_END
     try:
-        tb = json.load(open(os.path.join(HERE, "audio", "timing60.json"))).get("shot_bounds")
-        if tb and len(tb) == NSHOT:
-            SHOT_START = [0] + tb[1:]
-            SHOT_END = tb[1:] + [NF]
-            print("shot bounds from VO:", list(zip(SHOT_START, SHOT_END)), flush=True)
+        tim = json.load(open(os.path.join(HERE, "audio", "timing60.json")))
+        tb = tim.get("shot_bounds")
+        if tb and len(tb) == 5:
+            ps = tim.get("pause_span")
+            shot4_start, shot4_end = tb[4], NF
+            target = int(round(ps[1] * FPS)) if ps else (shot4_start + shot4_end) // 2
+            lo, hi = shot4_end - 470, shot4_start + 470   # keep >=10 frames of margin under 480
+            split = max(lo, min(hi, target))
+            SHOT_START = [0, tb[1], tb[2], tb[3], shot4_start, split]
+            SHOT_END = [tb[1], tb[2], tb[3], shot4_start, split, NF]
+            print("shot bounds from VO (4-split at", split, "):", list(zip(SHOT_START, SHOT_END)), flush=True)
     except Exception as ex:
         print("shot bounds: using storyboard defaults (", ex, ")", flush=True)
 
