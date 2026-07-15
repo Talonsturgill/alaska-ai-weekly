@@ -50,6 +50,7 @@ for _f in ("timing60.json", "words60.json"):
         _json.dump(_d, open(os.path.join(_skill_audio, _f), "w"))
 
 sys.path.insert(0, SKILL)
+import math
 import numpy as np
 from PIL import Image, ImageDraw
 import easing as E
@@ -127,13 +128,67 @@ def draw_brand(base, f):
     d.text((sx, sy), ss, font=sf, fill=(*SNOW, 210), stroke_width=3, stroke_fill=(3, 8, 18, 235))
 
 def draw_hook(base, f, t):
-    ap = E.out_cubic(E.seg(f, 9, 34)) * (1.0 - E.seg(f, 118, 132))   # ~0.3s..4.4s
+    # POSTER-GRADE: the hook headline is burned in at FULL strength from frame 0 (no fade-in on
+    # the poster frame), then fades OUT ~3.9..4.4s. A subtle settle-up in the first ~0.5s carries
+    # the hook-window motion without emptying the very first frame.
+    ap = 1.0 - E.seg(f, 118, 132)
     if ap <= 0.02: return
+    settle = E.out_cubic(E.seg(f, 0, 16))
     d = ImageDraw.Draw(base)
+    # motivated survey-scan sweep over the stake (Shot 1): a cyan blueprint line travels down through
+    # the upper-center 0..2.2s — present at frame 0 (poster intact) and MOVING through the hook window.
+    if t < 2.35:
+        CYAN = (120, 210, 255)
+        sy = min(950, int(516 + (t / 2.2) * 440)); sa = int(205 * ap)
+        d.rectangle([W // 2 - 260, sy, W // 2 + 260, sy + 5], fill=(*CYAN, sa))
+        d.rectangle([W // 2 - 262, sy - 15, W // 2 - 256, sy + 19], fill=(*CYAN, sa))
+        d.rectangle([W // 2 + 256, sy - 15, W // 2 + 262, sy + 19], fill=(*CYAN, sa))
     hf = dc.fr(78, 900, 144); w = dc.tw(HOOK, hf, 0.01)
-    x = (W - w) // 2; y = 1058 - int((1 - ap) * 14)
-    d.text((x, y), HOOK, font=hf, fill=(*SNOW, int(255 * ap)), stroke_width=4, stroke_fill=(3, 8, 18, int(235 * ap)))
+    x = (W - w) // 2; y = 1058 - int((1 - settle) * 12)
+    d.text((x, y), HOOK, font=hf, fill=(*SNOW, int(255 * ap)), stroke_width=5, stroke_fill=(3, 8, 18, int(235 * ap)))
     dc.logw(x, y, w, hf.size, SNOW, ap, ap >= 0.6, "hook")
+    # crisp poster rule under the headline
+    ruw = int(w * 0.90); rux = (W - ruw) // 2; ruy = y + 130
+    d.rectangle([rux, ruy, rux + ruw, ruy + 8], fill=(*GOLD, int(235 * ap)))
+    # poster kicker (dispatch title) — crisp letterspaced ink so frame 0 reads poster-grade
+    kf = dc.mono(40, m=True); ks = "THE CLAIM ON THE TUNDRA"; kw = dc.tw(ks, kf, 0.20)
+    kx = (W - kw) // 2; ky = y + 158
+    dc.tk(d, ks, kf, (*GOLD, int(255 * ap)), kx, ky, 0.20)
+    dc.logw(kx, ky, kw, kf.size, GOLD, ap, ap >= 0.6, "kicker")
+    # fact-safe locator line (matches the HUD figures; no new numbers)
+    jf = dc.mono(28, m=True); js = "NORTH SLOPE  //  STATE LAND"; jw = dc.tw(js, jf, 0.12)
+    jx = (W - jw) // 2; jy = ky + 58
+    dc.tk(d, js, jf, (*SNOW, int(225 * ap)), jx, jy, 0.12)
+    dc.logw(jx, jy, jw, jf.size, SNOW, ap, ap >= 0.6, "kicker")
+
+def draw_shot2_meter(base, f, t):
+    # Shot 2 event across the 20-26s window: the '1 GW vs urban peak' comparison bar draws in and
+    # then will-not-settle (baseline pulse + flare-flicker edge jitter), plus a breathing sodium-flare
+    # glow at the turbine crown. Motivated by beat 20.5 ("gigawatt bar overshoots the urban baseline;
+    # baseline pulses; flare flicker"). Decor only (no readable words), fact-safe (~30% over peak).
+    if not (20.7 <= t < 25.95): return
+    grow = E.out_cubic(E.seg(t, 20.7, 21.6))
+    pulse = 0.5 + 0.5 * math.sin((t - 20.7) * 2 * math.pi * 1.35)
+    jit = math.sin((t - 20.7) * 2 * math.pi * 3.3) * (6 * (1 - E.seg(t, 21.6, 24.5)) + 2)
+    # discrete sodium-flare RE-IGNITIONS (motivated 'flare flicker') = guaranteed events mid-window
+    flash = 0.0
+    for ft in (22.0, 24.1):
+        flash = max(flash, E.out_cubic(E.seg(t, ft, ft + 0.18)) * (1 - E.seg(t, ft + 0.18, ft + 0.60)))
+    glowamt = (0.30 + 0.55 * pulse) * 0.5 + 0.95 * flash
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(glow)
+    ga = int(min(1.0, glowamt) * 200 * grow)
+    gd.ellipse([W // 2 - 340, 450, W // 2 + 340, 980], fill=(255, 150, 70, ga))
+    gd.ellipse([W // 2 - 210, 520, W // 2 + 210, 880], fill=(255, 178, 104, int(ga * 0.9)))
+    base.alpha_composite(glow)
+    d = ImageDraw.Draw(base)
+    cx = W // 2; y = 1150; peak_w = 300
+    bar_w = int((peak_w * 1.30) * grow)
+    x0 = cx - peak_w // 2
+    bcol = int(150 + 70 * pulse)
+    d.rectangle([x0, y + 20, x0 + peak_w, y + 26], fill=(bcol, bcol + 10, 210, 220))
+    d.rectangle([x0 + peak_w - 2, y - 8, x0 + peak_w + 3, y + 34], fill=(214, 150, 90, 210))
+    gc = (int(90 + 90 * pulse), int(160 + 70 * pulse), 255)
+    d.rectangle([x0, y, x0 + bar_w + int(jit), y + 18], fill=(*gc, int(235 * grow)))
 
 def draw_hud(base, f, t):
     active = [(a, e, s) for (a, e, s) in HUD if a - 0.15 <= t < e]
@@ -141,12 +196,21 @@ def draw_hud(base, f, t):
     d = ImageDraw.Draw(base)
     fnt = dc.mono(30, m=True); lh = 46; n = len(active)
     y_base = 1352 - n * lh
+    # MID-SHOT-2 RE-EMPHASIS FLASH (23.0-23.5s): the "at least 1 GW" / "~30% of urban Alaska's
+    # peak" labels already drew in by 20.9s and then sit static until the 26.0s cut, leaving the
+    # picture with no event in that stretch. A brief brightness/scale pulse on the gold ticks is a
+    # real, motivated re-emphasis beat (underscoring the VO's "thirty percent" at this moment) with
+    # no new figures invented. Guards EVENT_CADENCE without touching fact-checked numbers.
+    flash = math.sin(max(0.0, E.seg(t, 23.0, 23.5)) * math.pi) if 23.0 <= t < 23.5 else 0.0
     for i, (a, e, s) in enumerate(active):
         la = E.out_cubic(E.seg(t, a, a + 0.40))
         y = y_base + i * lh
         w = dc.tw(s, fnt); x = (W - w) // 2
-        # gold tick, then label
-        d.rectangle([x - 26, y + 6, x - 16, y + fnt.size - 2], fill=(*GOLD, int(255 * la)))
+        boost = 1.0 + 0.35 * flash
+        tick_col = tuple(min(255, int(c * boost)) for c in GOLD)
+        # gold tick, then label (tick briefly grows + brightens on the flash)
+        tpad = int(4 * flash)
+        d.rectangle([x - 26 - tpad, y + 6 - tpad, x - 16 + tpad, y + fnt.size - 2 + tpad], fill=(*tick_col, int(255 * la)))
         d.text((x, y), s, font=fnt, fill=(*SNOW, int(255 * la)), stroke_width=3, stroke_fill=(3, 8, 18, int(220 * la)))
         dc.logw(x, y, w, fnt.size, SNOW, la, la >= 0.6, "hud")
 
@@ -154,15 +218,32 @@ def draw_stamp(base, f, t):
     if t < 54.5 - 0.2: return
     ap = E.out_cubic(E.seg(t, 54.5, 55.0))
     if ap <= 0.02: return
+    # Shot 5 outro is NOT static: the stamp drops in and SETTLES (54.5..55.8), a warning-amber glow
+    # BREATHES behind it (55..60), and an amber deadline rule DRAWS in under the label (55.6..58.6).
+    # Keeps a motivated visual event across the whole 54-60s window.
+    settle = E.out_cubic(E.seg(t, 54.5, 55.8))
+    dy = int((1 - settle) * 26)
+    pulse = 0.5 + 0.5 * math.sin((t - 55.0) * 2 * math.pi * 1.1)
+    if t >= 54.9:
+        glow = Image.new("RGBA", (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(glow)
+        ga = int((36 + 66 * pulse) * ap)
+        gd.ellipse([W // 2 - 360, 1150 + dy, W // 2 + 360, 1400 + dy], fill=(226, 118, 44, ga))
+        gd.ellipse([W // 2 - 240, 1190 + dy, W // 2 + 240, 1360 + dy], fill=(255, 150, 60, ga))
+        base.alpha_composite(glow)
     d = ImageDraw.Draw(base)
     sf = dc.fr(96, 900, 144); s = "JULY 17"; w = dc.tw(s, sf, 0.04)
-    x = (W - w) // 2; y = 1176
+    x = (W - w) // 2; y = 1176 + dy
     d.text((x, y), s, font=sf, fill=(*AMBER, int(255 * ap)), stroke_width=5, stroke_fill=(80, 14, 8, int(235 * ap)))
     dc.logw(x, y, w, sf.size, AMBER, ap, ap >= 0.6, "stamp")
     lf = dc.mono(30, m=True); ls = "public comment closes"; lw = dc.tw(ls, lf)
-    lx = (W - lw) // 2; ly = 1300
+    lx = (W - lw) // 2; ly = 1300 + dy
     d.text((lx, ly), ls, font=lf, fill=(*SNOW, int(240 * ap)), stroke_width=3, stroke_fill=(3, 8, 18, int(220 * ap)))
     dc.logw(lx, ly, lw, lf.size, SNOW, ap, ap >= 0.6, "stamp")
+    # amber deadline rule drawing in under the label (motivated graphic event, 55.6..58.6)
+    rw = E.out_cubic(E.seg(t, 55.6, 58.6))
+    if rw > 0.01:
+        rl = int(lw * rw); rx = lx + (lw - rl) // 2; ry = ly + lf.size + 12 + dy
+        d.rectangle([rx, ry, rx + rl, ry + 6], fill=(*AMBER, int(230 * ap)))
 
 # ---------------------------------------------------------------- per-frame compositor
 def _hud_box(t):
@@ -174,9 +255,9 @@ def _hud_box(t):
     return [W // 2 - maxw // 2 - 40, y_base - 16, W // 2 + maxw // 2 + 34, 1352 + 6]
 
 def _hook_box(f):
-    if not (9 <= f <= 132): return None
+    if not (0 <= f <= 132): return None
     hf = dc.fr(78, 900, 144); w = dc.tw(HOOK, hf, 0.01)
-    return [W // 2 - w // 2 - 34, 1044, W // 2 + w // 2 + 34, 1170]
+    return [W // 2 - w // 2 - 34, 1044, W // 2 + w // 2 + 34, 1304]
 
 def _stamp_box(t):
     if t < 54.3: return None
@@ -205,6 +286,7 @@ def composite(f, src_path, dst_path):
     # 3) text overlay (crisp, on top of everything)
     draw_brand(base, f)
     draw_hook(base, f, t)
+    draw_shot2_meter(base, f, t)
     draw_hud(base, f, t)
     draw_stamp(base, f, t)
     dc.caption(base, f)

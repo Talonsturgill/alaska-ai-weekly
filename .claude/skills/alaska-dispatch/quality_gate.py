@@ -248,7 +248,11 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
 
     # 8a) SILENCE_DIP — the pre-payoff silence was actually MIXED, not just planned (VOICE_AND_SCORE.md).
     try:
-        _sbp=os.path.join(base,"..","..","..","out","dispatch","storyboard.json")
+        # storyboard.json lives beside the run's frames (base), same as every other artifact read
+        # above; fall back to the legacy skill-relative path for older layouts.
+        _sbp=os.path.join(base,"storyboard.json")
+        if not os.path.exists(_sbp):
+            _sbp=os.path.join(base,"..","..","..","out","dispatch","storyboard.json")
         _aa=(json.load(open(_sbp)).get("audio_arc") or {}) if os.path.exists(_sbp) else {}
     except Exception:
         _aa={}

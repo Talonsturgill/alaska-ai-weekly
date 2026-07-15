@@ -110,6 +110,29 @@ run(["ffmpeg","-y","-i",os.path.join(AUD,"bed60raw.wav"),"-af","loudnorm=I=-24:T
 # dip ambient too at the breath
 amb_d=dip(amb.astype(np.float32),silence_at); wavfile.write(os.path.join(AUD,"amb60.wav"),SR,nrm(amb_d,.8))
 
+# ---- pre-payoff BREATH: the cloned VO is gapless (no pause >0.12s anywhere), so ducking only the
+# bed/music can never make the MASTER dip (VO dominates). Carve a REAL silent beat before the button
+# line by inserting VO_PAD s of silence at the button boundary and shifting the caption word-timings
+# to match, so the master genuinely drops >=6 dB at silence_at (bed+amb are ducked there too).
+# Idempotent: always rebuilt from a one-time snapshot of the original VO / words.
+VO_SPLIT=54.70; VO_PAD=0.75      # gap 54.70..55.45  ->  silence_at 55.05
+def _snap(p,suf):
+    o=p.replace(suf,"_orig"+suf)
+    if not os.path.exists(o): shutil.copy(p,o)
+    return o
+vo_o=_snap(os.path.join(AUD,"vo60.wav"),".wav")
+_vsr,_vw=wavfile.read(vo_o)
+_pad=np.zeros((int(VO_PAD*_vsr),)+_vw.shape[1:],_vw.dtype)
+_vg=np.concatenate([_vw[:int(VO_SPLIT*_vsr)],_pad,_vw[int(VO_SPLIT*_vsr):]],0)[:int(TOTAL*_vsr)]
+wavfile.write(os.path.join(AUD,"vo60_gapped.wav"),_vsr,_vg)
+wj_o=_snap(os.path.join(AUD,"words60.json"),".json"); WJ=json.load(open(wj_o))
+for _w in WJ.get("words",[]):
+    if _w.get("s",0)>=VO_SPLIT-1e-6:
+        _w["s"]=round(_w["s"]+VO_PAD,3); _w["e"]=round(_w["e"]+VO_PAD,3)
+WJ["speech_end"]=round(min(TOTAL,WJ.get("speech_end",0)+VO_PAD),3)
+json.dump(WJ,open(os.path.join(AUD,"words60.json"),"w"),indent=2)
+print(f"VO breath: inserted {VO_PAD}s silence at {VO_SPLIT}s; shifted button captions to match")
+
 # ---- premix: VO (EQ+comp) + ducked music + ambient + SFX bus ----
 graph=("[0:a]highpass=f=90,acompressor=threshold=-20dB:ratio=3.5:attack=8:release=120,"
        "equalizer=f=3200:t=q:w=2:g=2.5,equalizer=f=6800:t=q:w=2.2:g=-3[vo];"
@@ -119,7 +142,7 @@ graph=("[0:a]highpass=f=90,acompressor=threshold=-20dB:ratio=3.5:attack=8:releas
        "[2:a]volume=-23dB,lowpass=f=1800[amb];"
        "[3:a]volume=-4dB[sfx];"
        "[vout][md][amb][sfx]amix=inputs=4:duration=first:normalize=0[mix]")
-r=run(["ffmpeg","-y","-i",os.path.join(AUD,"vo60.wav"),"-i",os.path.join(AUD,"bed60.wav"),
+r=run(["ffmpeg","-y","-i",os.path.join(AUD,"vo60_gapped.wav"),"-i",os.path.join(AUD,"bed60.wav"),
        "-i",os.path.join(AUD,"amb60.wav"),"-i",os.path.join(AUD,"sfxbus60.wav"),
        "-filter_complex",graph,"-map","[mix]",os.path.join(AUD,"mix60.wav")])
 if r.returncode: print("PREMIX FAIL",r.stderr[-800:]); sys.exit(1)

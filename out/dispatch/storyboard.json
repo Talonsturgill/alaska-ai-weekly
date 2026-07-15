@@ -96,7 +96,7 @@
     "build_steps": ["low tundra wind and a sub-bass drone under the empty land", "a cold mechanical pulse as the campus assembles and the flare lights", "unstable number ticks as the cost bar leaps", "a paper-rush swell as the public comment floods in", "drop back to wind for the deadline and the button"],
     "dip_at": 24.5,
     "riser_at": 20.5,
-    "silence_at": 56.5,
+    "silence_at": 55.05,
     "payoff_at": 57.5,
     "button_pattern": "callback"
   },
