@@ -37,6 +37,11 @@ import docket_build as db  # projection, validation, docket components, gates
 
 REPO = Path(__file__).resolve().parents[1]
 RAW = "https://raw.githubusercontent.com/Talonsturgill/alaskaaicarousels/main"
+
+# Booking page for the free 20 minute intro call (Calendly, Cal.com, or a
+# Google Calendar appointment page). While empty the services hero keeps its
+# form-first buttons; set it and rebuild to lead with the booking button.
+BOOKING_URL = ""
 MONTH_FULL = ["January", "February", "March", "April", "May", "June", "July",
               "August", "September", "October", "November", "December"]
 
@@ -241,6 +246,7 @@ h2{font-family:Fraunces,serif;font-weight:540;font-size:clamp(26px,3.6vw,36px);c
 margin:84px 0 8px;letter-spacing:-.01em;}
 h2 a{text-decoration:none;}
 .sub{color:var(--mute);font-size:15.5px;margin-bottom:26px;max-width:640px;}
+.sub a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(90,200,240,.25);}
 .chip{font-family:JBMono,monospace;font-size:12px;letter-spacing:.09em;font-weight:500;}
 .chip.days{color:var(--gold);}
 .chip.kind{color:#6a7d97;}
@@ -956,6 +962,17 @@ def services_page(today, site_url):
     visitor to /services/thanks/. First-ever submission triggers a one-time
     activation email to that inbox; until its link is clicked, FormSubmit
     holds submissions at an activation notice instead of relaying them."""
+    if BOOKING_URL:
+        hero_ctas = (f'<a class="cta gold" href="{BOOKING_URL}" target="_blank" '
+                     'rel="noopener">BOOK A FREE 20 MINUTE CALL</a>\n'
+                     '  <a class="cta ghost" href="#apply">SEE WHAT PAYS</a>')
+        talk_first = (f' Rather talk first? <a href="{BOOKING_URL}" target="_blank" '
+                      'rel="noopener">Book a free 20 minute call</a> and we will tell you '
+                      'straight whether AI is worth your while yet.')
+    else:
+        hero_ctas = ('<a class="cta gold" href="#apply">SEE WHAT PAYS</a>\n'
+                     '  <a class="cta ghost" href="#field-study">THE FIELD STUDY</a>')
+        talk_first = ""
 
     stats = """<div class="statrow">
   <div class="stat"><div class="n"><span data-count="88">88</span>%</div><div class="l">OF ORGANIZATIONS USE AI</div></div>
@@ -1059,8 +1076,7 @@ desk builds AI systems for Alaska businesses. Digital employees for the jobs you
 fill, paperwork engines for the filings that never stop, and straight answers about what
 pays and what does not.</p>
 <div class="ctarow">
-  <a class="cta gold" href="#apply">SEE WHAT PAYS</a>
-  <a class="cta ghost" href="#field-study">THE FIELD STUDY</a>
+  {hero_ctas}
 </div>
 {stats}
 </div>
@@ -1085,7 +1101,7 @@ If you already know what you want built, bring it. If you only know that AI matt
 do not want to become an engineer to win with it, you are exactly who this desk works for.</p>
 <h2 data-reveal id="apply">See what pays</h2>
 <p class="sub" data-reveal>A few quick lines about your operation. You get a straight read
-on whether the Field Study fits, and a no costs you nothing.</p>
+on whether the Field Study fits, and a no costs you nothing.{talk_first}</p>
 <form class="leadform" data-reveal action="https://formsubmit.co/docket@alaskaaihq.com" method="POST">
   <input type="hidden" name="_subject" value="Field Study application">
   <input type="hidden" name="_template" value="table">
