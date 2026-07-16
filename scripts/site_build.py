@@ -932,7 +932,7 @@ def services_page(today, site_url):
     """The services tab. AI partnership for Alaska businesses, framed in
     labor language (digital employees, the digital crew), entered through
     The Field Study. Copy obeys the house gates like every other page."""
-    apply_mail = ("mailto:talon.sturgill@gmail.com?subject=Field%20Study%20application"
+    apply_mail = ("mailto:docket@alaskaaihq.com?subject=Field%20Study%20application"
                   "&body=Business%20name%20-%20%0AWhere%20in%20Alaska%20-%20%0A"
                   "What%20the%20work%20is%20-%20%0AWhat%20AI%20should%20take%20off%20your%20plate%20-%20%0A"
                   "What%20you%20have%20tried%20so%20far%20-%20%0ABudget%20range%20-%20")
