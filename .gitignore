@@ -33,3 +33,4 @@ __pycache__/
 .claude/skills/alaska-dispatch/frames_v3
 .claude/skills/alaska-dispatch/shots.json
 .claude/skills/alaska-dispatch/render_manifest.json
+models/

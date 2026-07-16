@@ -1,0 +1,62 @@
+{
+  "total": 52.76,
+  "gap": 0.42,
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rate": "+6%",
+  "lines": [
+    {
+      "idx": 0,
+      "text": "A machine got hungry. And it looked at Alaska.",
+      "start": 0.0,
+      "end": 2.78
+    },
+    {
+      "idx": 1,
+      "text": "It wants a square mile of the North Slope near Deadhorse. Plus a gigawatt of gas power to feed itself.",
+      "start": 3.2,
+      "end": 9.89
+    },
+    {
+      "idx": 2,
+      "text": "One building. About thirty percent more electricity than every city in Alaska, combined.",
+      "start": 10.31,
+      "end": 16.74
+    },
+    {
+      "idx": 3,
+      "text": "The cost, by the company's own math? Five hundred million dollars. Or over ten billion. A twenty times guess.",
+      "start": 17.16,
+      "end": 24.21
+    },
+    {
+      "idx": 4,
+      "text": "So Alaskans grabbed a pen. Over five hundred comments. Fewer than a dozen said yes.",
+      "start": 24.63,
+      "end": 29.93
+    },
+    {
+      "idx": 5,
+      "text": "Some kept it short. Quote: hell no. Quote: no A.I.",
+      "start": 30.35,
+      "end": 34.5
+    },
+    {
+      "idx": 6,
+      "text": "Here's the honest part. Nothing is built. No customers. No chips. The state has not decided.",
+      "start": 34.92,
+      "end": 41.2
+    },
+    {
+      "idx": 7,
+      "text": "The comment window is the real vote. And it closes tomorrow. July seventeenth.",
+      "start": 41.62,
+      "end": 46.82
+    },
+    {
+      "idx": 8,
+      "text": "So the loudest thing on the tundra is not the machine. It's the mailbox. What would your comment say?",
+      "start": 47.24,
+      "end": 52.76
+    }
+  ]
+}

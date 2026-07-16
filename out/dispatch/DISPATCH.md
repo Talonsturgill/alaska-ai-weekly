@@ -1,70 +1,66 @@
-# DISPATCH 2026-07-14 — THE CLAIM ON THE TUNDRA
+# DISPATCH 2026-07-16 — HELL NO ON THE TUNDRA
 
-**Story:** Stak Energy applied to lease a square mile of North Slope state land near Deadhorse for
-a gas-fired AI data center running at least a gigawatt (about 30% above all of urban Alaska's peak
-demand). The company's own cost figures span a twentyfold range: roughly $500 million for initial
-site work (per the DNR lease documents) to "over $10 billion" for the full build, its own estimate.
-No confirmed customers, no confirmed chips. More than 500 public comments have been logged, fewer
-than a dozen supportive; the company calls most of the opposition form letters. The state has not
-decided; the comment window closes July 17, 2026.
+**Owner override:** The owner directed both the story and the register: do the North Slope data
+center that drew 500-plus public comments (fewer than a dozen in favor), told as a COMEDY about
+Alaskans revolting against it, with an angry parka'd everyresident yelling "HELL NO." This is a
+deliberately distinct treatment from the sober 2026-07-14 dispatch on the same proposal, pegged to
+a fresh live hook: the public comment window closes tomorrow, July 17.
 
-**Honest caveat (drawn on screen):** this is a proposal, not a built thing. The campus renders as a
-dashed, ghost wireframe throughout, never solid. The cost bar visibly leaps and cannot settle
-between its low and high estimates. The check on the machine is Alaskans' own public comment record,
-drawn as a physical paper-flood, 500-plus against a dozen.
+**Story:** Stak Energy (STAK Energy Corporation, Anchorage) has applied to lease state land on the
+North Slope, about 25 miles south of Deadhorse, for a gas-fired AI/hyperscaler data center drawing
+at least a gigawatt (roughly 30% above all of urban Alaska's peak power demand). The company's own
+cost figures span a 20x range: about $500 million for initial site work (per the lease documents)
+to "over $10 billion" for the full build (its own chief strategy officer, John Boyle). No confirmed
+customers, no confirmed chips. More than 500 public comments were logged; fewer than a dozen were in
+favor. Real comment subject lines include "HELL NO! To ANY DATA CENTERS" and "NO AI." The state has
+issued only a preliminary decision to offer the lease and has NOT decided; the comment window (Alaska
+DNR, Division of Oil & Gas, ADL 422741) closes July 17, 2026, 4:30 pm AKDT.
 
-**Angle for the series:** the AI buildout meets Alaska land and power head-on, told with sober,
-institutional restraint (no savior framing, no doom framing) — the decision belongs to Alaska, and
-it isn't made yet.
+**Honest AI angle + caveat (drawn, not stated):** the AI buildout arrives with confident scale
+claims and unsettled numbers. The machine is revealed as an unbuilt PROPOSAL: a dashed ghost with
+empty chip and customer slots, a cost seesaw that will not settle, and a gavel that has not banged.
+The public comment process is the actual check, and it closes tomorrow.
 
-## Composition fingerprint
-- pov: orbital-aerial · motion: assemble-build · hero: structure-as-subject
-- layout: map-territory · register: blueprint-technical
-- camera_strategy: rise-reveal · light_story: overcast-diffuse
-- palette: silver-white overcast sky over sage and ochre tundra, gunmetal turbine steel, electric
-  blueprint cyan wireframe, sodium flare orange, a single signal-red deadline flag
-- metaphor: the AI buildout drawn as an unbuilt wireframe blueprint whose numbers won't settle,
-  checked by a paper flood of public comment
+## Winning treatment
+THE COMEDIAN (owner-mandated register): a hungry, characterized server-machine reaches its power
+plug toward the North Slope and gets buried under a paper-storm of public comments before the July
+17 window slams shut. Grafted in: the EXPLAINER's scale-stack revelation (one building outdraws all
+of urban Alaska by +30%) as the hardest-hitting number, and the DRAMATIST's mailbox-as-the-real-vote
+button plus the July 17 deadline.
 
-## Shots (5 worlds, dimensional engine, ship scale 1.0, CUDA)
-1. 0.0-12.0 THE LAND — aerial rise-reveal over empty tundra; a lone survey stake; the parcel claim
-   draws itself onto the ground
-2. 12.0-26.0 THE CLAIM ASSEMBLES — worm's-eye dolly as wireframe gas-turbine stacks rise and
-   assemble overhead; one sodium flare ignites
-3. 26.0-38.0 THE NUMBERS WON'T SETTLE — macro rack-focus on a cost bar leaping between ~$500M and
-   over $10B; the campus behind it drops to dashed ghost lines
-4. 38.0-50.0 THE PUBLIC COMMENT — a paper flood, 500-plus slips piling against a stack of a dozen
-5. 50.0-60.0 ALASKA'S CALL — match-cut back to the land and stake; JULY 17 deadline stamp settles;
-   wordmark resolves
+## Scenes (8, 2.5D Remotion / Infographics-Show register, ~55s)
+1. HOOK + APPETITE - greedy server-machine eyes Alaska, reaches a plug that bulks to GIGAWATT
+2. SCALE-STACK - ONE DATA CENTER bar towers over ALL URBAN ALASKA, +30% MORE POWER (Northern Journal)
+3. PRICE SEESAW - $500M (lease docs) vs $10B+ (company est.), a 20x spread that will not settle
+4. THE REVOLT - a crowd of varied everyday Alaskans, a paper storm, 500+ PUBLIC COMMENTS, fewer than a dozen in favor
+5. HELL NO - a furious resident points and yells at the cowering machine; dramatic snap-zoom
+6. THE TURN - PROPOSAL stamp over a dashed ghost machine, NO CONFIRMED CHIPS, NO CUSTOMERS, STATE HAS NOT DECIDED
+7. LAST CALL - a wall calendar flips to JULY 17, 4:30 PM AKDT, ALASKA DNR, ADL 422741
+8. BUTTON - an overstuffed mailbox (the real vote), "WHAT WOULD YOUR COMMENT SAY?"
 
 ## Voice + music
-- VO: owner's cloned voice (Chatterbox, MIT license; Resemble Perth provenance watermark embedded),
-  take A + E2 clarity dials, auto-normalized numbers/dates
-- Music: "Long Note Two" — Kevin MacLeod (incompetech.com), CC BY 4.0
+- VO: edge-tts Microsoft neural "en-US-AndrewMultilingualNeural" (the most human-sounding option
+  that runs in this environment). The owner's cloned voice was SHELVED per the owner. Kokoro was
+  attempted per the owner's request but is blocked in this environment by the egress policy (a
+  GitHub 403 on its required spaCy model en_core_web_sm, and kokoro-onnx failed to synthesize);
+  edge-tts Andrew was used as the interim narrator. License note: edge-tts is gray-area for publish;
+  the owner plans to move to an ElevenLabs clone.
+- Music: "Sneaky Snitch" by Kevin MacLeod (incompetech.com), CC BY 4.0.
 
-## Fact-check outcome (validator, adversarial)
-- CLEAR_WITH_LABELS. Verified: 500+ comments/fewer than a dozen in favor (two-source); July 17
-  deadline (two-source); cost split attributed by document ($500M lease docs vs company's own
-  "over $10B"); "at least 1 GW" safe, "1-3 GW" range and detailed acreage/gas-volume figures
-  labeled to the lease documents (single-source, not stated as verified state fact); Boyle quote
-  used in full, not the misleading truncation. Native-angle quote (Ahkivgak/Native Movement)
-  UNVERIFIED (source 403'd) — dropped entirely; general civic framing only, no monolithic "Alaska
-  Native" framing.
+## Fact-check (adversarial validator, all VERIFIED with labels)
+Primary sources: Northern Journal (Nathaniel Herz, July 3, 2026); Alaska DNR public notice (ADL
+422741); Northern Alaska Environmental Center lease analysis; Arctic Today (second source). Cultural
+guardrail honored: the residents are generic everyresidents in mixed everyday winter gear (beanies,
+ball caps, trapper hats, hardhats, puffers, flannel), NOT a monolithic Alaska Native depiction; only
+named parties (three conservation orgs; one unnamed Nuiqsut resident) are referenced.
 
-## Quality gate + panel
-- Objective gate: 17/17 checks PASS, 10.0/10.
-- 3-judge panel: 7.96 / 8.06 / 9.10 → median 8.06 (ship threshold 9.0). Zero hard blockers from any
-  judge. Delivered with the scorecard disclosed per the routine's own fallback rule (zero hard
-  blockers + style-register-only complaints): motion blur on fast moves and the cost-bar easing
-  curve were the named gaps, both requiring a further full 3D re-render.
+## Quality gates + panel
+- Objective: 1080x1920 @30fps, 55s; audio integrated -13.8 LUFS, true-peak limited; 21 SFX events
+  with a pre-button silence dip; captions forced-aligned per line (verbatim text, monotonic).
+- 3-judge panel (revised cut): see the scorecard in the Gmail draft. The first pass surfaced a
+  cultural hard blocker (uniform fur-ruff parkas) plus concrete defects (small CTA, a 497 vs 500
+  count, an unlabeled scale claim); all were fixed and the cut re-rendered and re-judged.
 
-## Production note
-A render-tracking bug surfaced mid-run: a "full" 1800-frame re-render silently died partway
-(~frame 852) without raising an error, and a naive file-count check (1800 files present) falsely
-read as complete since old frames were never deleted, just not overwritten. Caught by checking
-frame mtimes directly, not just counts. Re-rendered the missing range, verified by mtime, and
-rebuilt the full downstream chain (chrome, gate, encode, upload) before delivery.
-
-## Sources
-See sources.json. Primary: ADN/Northern Journal 2026-07-07; Northern Journal 2026-07-03/07-06;
-Northern Alaska Environmental Center (lease-document itemization); Alaska Public Media 2026-05-26.
+## Deliverables
+- 9:16 master (1080x1920, TikTok cut) and 4:5 feed cut (1080x1350, the LinkedIn deliverable), both
+  H.264 High, faststart, AAC 48k, under 100 MB, permanent GitHub media-branch links.

@@ -1,106 +1,49 @@
 {
-  "concept": "THE CLAIM ON THE TUNDRA — a gigawatt AI data center is proposed on a square mile of North Slope state land near Deadhorse. We shoot it as a blueprint trying to become real on ground that is still empty: a ghost wireframe campus assembles over the tundra, its own numbers refuse to settle, and the only thing at human scale is a flood of public comment. The honest limit is drawn, not stated: nothing is built, the figures span six times over, no customers or chips are confirmed, and the decision is still Alaska's to make by July 17th.",
+  "date": "2026-07-16",
+  "title": "HELL NO ON THE TUNDRA",
+  "engine": "infographic-2.5d",
   "derived_from": "scratch",
-  "engine": "dimensional",
-  "date": "2026-07-14",
-  "slug": "the-claim-on-the-tundra",
+  "owner_override": "Owner directed the story (North Slope data center, 500+ comments vs fewer than a dozen) and a COMEDIC register: an angry parka'd Alaskan yelling HELL NO, gigglable gags. Distinct treatment from the sober 2026-07-14 dispatch on the same proposal; pegged to the July 17 comment deadline (closes tomorrow).",
+  "concept": "The AI data-center boom shows up on the North Slope with confident, unsettled numbers, and Alaska's public overwhelmingly says no. Told as a comedy: a greedy server-machine reaches for a square mile of tundra and gets buried in public comments, then revealed as an unbuilt PROPOSAL whose own price won't settle. The public comment window is the real vote, and it closes tomorrow.",
+  "treatment": {
+    "winner": "THE COMEDIAN (owner-mandated register)",
+    "logline": "A hungry data-center machine reaches its power plug toward Alaska's North Slope and gets buried alive under 500-plus angry public comments before the July 17 window slams shut.",
+    "graft": "Comedian spine (greedy machine, HELL NO, plug-morph, price flip-flop, paper storm, PROPOSAL-cutout reveal, LAST CALL calendar) + Explainer's scale-stack revelation (one building outdraws all urban Alaska by +30%) + Dramatist's mailbox-as-the-real-vote button and July 17 guillotine deadline.",
+    "judge_reasoning": "Owner gave explicit creative direction (comedy, HELL NO, giggles) which functions as the judge's mandate; the Explainer's +30% scale-stack was grafted as the hardest-hitting revelation and the Dramatist's mailbox button as the loop-closing image."
+  },
   "fingerprint": {
-    "pov": "orbital-aerial",
-    "motion_vector": "assemble-build",
-    "hero_treatment": "structure-as-subject",
-    "layout": "map-territory",
-    "register": "blueprint-technical",
-    "camera_strategy": "rise-reveal",
-    "light_story": "overcast-diffuse",
-    "palette": "silver-white overcast sky over sage and ochre tundra, gunmetal turbine steel, electric blueprint cyan wireframe, sodium flare orange, a single signal-red deadline flag",
-    "metaphor": "the AI buildout drawn onto real Alaska land as a wireframe blueprint that is not built yet, its numbers leaping and refusing to settle, while a paper flood of public comment is the one thing at human scale that can hold it to account"
+    "pov": "characterized-object comedy",
+    "motion": "reach-then-bury, snap-zoom on the HELL NO",
+    "hero": "greedy-server-machine vs the parka'd everyresident",
+    "layout": "map-territory + bar-comparison + confrontation-diorama",
+    "register": "IGS comedic infographic",
+    "palette": "state-navy burst + ember-red for the money, orange parkas on sage tundra, amber stat-bursts, signal-red LAST CALL",
+    "metaphor": "the AI buildout drawn as a hungry machine whose own numbers will not settle, checked by a paper-flood of public comment and a mailbox that is the real vote"
   },
-  "palette": "silver-white overcast sky over sage and ochre tundra, gunmetal turbine steel, electric blueprint cyan wireframe, sodium flare orange, a single signal-red deadline flag",
-  "light": {
-    "sun": "no sun disk; flat high overcast North Slope daylight, near shadowless, a cold silver sky the color of wet slate",
-    "mood": "the light refuses to dramatize or glamorize the project; it is honest, plain, institutional daylight that lets the facts and the scale stand on their own"
-  },
-  "hook": {
-    "pattern": "stakes-antagonist",
-    "frame1": "flat grey North Slope tundra under a silver overcast sky, one lone survey stake with an orange flag in the foreground, the faint cyan ghost of a vast campus wireframe barely readable on the horizon, headline burned in lower-centered",
-    "headline": "The AI boom wants Alaska",
-    "motion_by_s": 1.1,
-    "loopback": "Shot 5 returns to this exact tundra and survey stake, the campus still only a ghost wireframe, now stamped with the July 17th deadline, closing on the unbuilt land"
-  },
-  "shots": [
-    {
-      "id": 1, "t": "0.0-12.0", "framing": "wide-establish",
-      "pov": "orbital-aerial", "layout": "map-territory", "motion_vector": "push-in-only", "hero_treatment": "landscape-as-subject",
-      "camera": {"move": "rise-reveal", "focus_from": 0.35, "focus_to": 0.9},
-      "centered": "the lone survey stake with its orange flag, dead center, as the camera rises to reveal the vast empty tundra and the parcel outline drawing itself onto the land",
-      "means": "establish the real, empty, human-owned land BEFORE anything is built on it",
-      "hero": {"name": "the survey stake on the tundra", "parts": 4, "zones": 2, "detail_note": "weathered wood stake, bent orange flagging tape catching wind, a small brass cap, the ground shadow pooling in shallow tundra polygons; the stake is the only man-made thing for miles"}
-    },
-    {
-      "id": 2, "t": "12.0-26.0", "framing": "alt-vantage",
-      "pov": "eye-level-immersive", "layout": "single-object-void", "motion_vector": "assemble-build", "hero_treatment": "structure-as-subject",
-      "transition_in": "assemble", "thread": "build",
-      "camera": {"move": "dolly-through", "focus_from": 0.4, "focus_to": 0.75},
-      "centered": "a worm's-eye view from the tundra floor looking up as four wireframe gas-turbine stacks rise and assemble overhead against the flat silver sky, one sodium flare igniting at the crown",
-      "means": "we drop off the drone to human ground level; the proposal's scale looms up over us as it builds, still only edges, not a building",
-      "hero": {"name": "the turbine stacks rising overhead", "parts": 4, "zones": 3, "detail_note": "cyan blueprint edges of four gas-turbine stacks towering up from a ghosted gravel pad, cross-braced frames assembling rung by rung, an access gantry threading in, a single sodium flare lighting at the crown; deliberately unbuilt, edges only"}
-    },
-    {
-      "id": 3, "t": "26.0-38.0", "framing": "data-panel",
-      "pov": "macro-closeup", "layout": "single-object-void", "motion_vector": "vertical-rise", "hero_treatment": "data-as-subject",
-      "transition_in": "graphic-match", "thread": "carry",
-      "camera": {"move": "rack-focus-macro", "focus_from": 0.2, "focus_to": 0.85},
-      "centered": "a single cost bar at frame center that leaps and cannot settle between a five hundred million dollar tick and an over ten billion dollar tick, the gigawatt scale line beside it",
-      "means": "the honest caveat, drawn: the numbers refuse to sit still, so the certainty the project projects is not real",
-      "hero": {"name": "the number that will not settle", "parts": 4, "zones": 2, "detail_note": "a blueprint-cyan bar jittering on a gridline, a low tick labeled about five hundred million, a high ghost tick over ten billion, a separate one-gigawatt bar measured against a faint urban-Alaska baseline; blueprint register, not a brutalist dashboard"}
-    },
-    {
-      "id": 4, "t": "38.0-50.0", "framing": "two-up",
-      "pov": "eye-level-immersive", "layout": "fullbleed-split", "motion_vector": "assemble-build", "hero_treatment": "multiplicity-swarm",
-      "transition_in": "mask-wipe", "thread": "build",
-      "camera": {"move": "dolly-through", "focus_from": 0.5, "focus_to": 0.5},
-      "centered": "a towering drift of public-comment slips piling on the left against a tiny stack of a dozen on the right, the divide down frame center",
-      "means": "what is actually real and at human scale: the public wrote in, overwhelmingly against, and that record is the check on the machine",
-      "hero": {"name": "the public comment, five hundred against a dozen", "parts": 4, "zones": 2, "detail_note": "hundreds of pale paper slips drifting and stacking like snow into a wall, a lone short stack of a dozen opposite, individual slips tumbling in the wind, a hard center seam dividing the two counts"}
-    },
-    {
-      "id": 5, "t": "50.0-60.0", "framing": "wide-establish",
-      "pov": "orbital-aerial", "layout": "map-territory", "motion_vector": "push-in-only", "hero_treatment": "landscape-as-subject",
-      "transition_in": "match-cut", "thread": "match",
-      "camera": {"move": "locked-drift", "focus_from": 0.8, "focus_to": 0.8},
-      "centered": "the same tundra and survey stake from Shot 1, the campus still only a faint ghost wireframe, a warning-amber July 17th deadline stamp settling at frame center",
-      "means": "loop back to the unbuilt land; the decision, and the deadline, still belong to Alaska",
-      "hero": {"name": "the land, and the deadline", "parts": 4, "zones": 2, "detail_note": "the returning tundra and orange-flagged stake, the ghost campus dimmer than before, an amber deadline stamp reading July 17th, the wordmark resolving; the land is what is real, the campus still is not"}
-    }
-  ],
   "beats": [
-    {"t": 0.5, "vo": "This week, Alaska is asked to power the A I boom.", "shows": "tundra and lone stake; headline burns in; ghost campus flickers on the horizon", "sfx": "ambient", "means": "the stake in the land", "choreo": {"primary": "camera begins its slow rise off the stake", "reaction": "headline snaps in lower-center", "ambient": "low tundra wind moving the flag tape"}},
-    {"t": 4.5, "vo": "A company wants a square mile of North Slope tundra,", "shows": "the parcel outline draws itself onto the map of the land", "sfx": "tick", "means": "a claim is drawn on real ground", "choreo": {"primary": "parcel boundary lines walk across the tundra", "reaction": "corner survey pins drop and lock", "ambient": "grass and sedge shifting"}},
-    {"t": 8.5, "vo": "twenty five miles south of Deadhorse, on state land.", "shows": "a location pin sets; STATE LAND label settles", "sfx": "lock", "means": "it is public, state-owned ground", "choreo": {"primary": "location pin drives down", "reaction": "distance scale ticks out to Deadhorse", "ambient": "cloud shadow drifting"}},
-    {"t": 12.5, "vo": "To run A I, it builds here,", "shows": "the camera drops to the tundra floor; wireframe turbine frames begin to rise overhead", "sfx": "whoosh", "means": "the proposal builds onto the empty land, seen from the ground", "choreo": {"primary": "camera drops from the aerial to ground level", "reaction": "turbine frames extrude upward overhead", "ambient": "wind pushing low cloud"}},
-    {"t": 16.5, "vo": "burning North Slope gas for a gigawatt of power.", "shows": "turbine stacks snap in; one sodium flare lights", "sfx": "pulse", "means": "the power is enormous and gas-fired", "choreo": {"primary": "four turbine stacks assemble", "reaction": "flare ignites sodium-orange", "ambient": "heat shimmer over the pad"}},
-    {"t": 20.5, "vo": "Thirty percent above urban Alaska's peak.", "shows": "the gigawatt bar overshoots urban Alaska's whole peak; a plus thirty percent tick prints above the baseline", "sfx": "riser", "means": "scale made legible against something real", "choreo": {"primary": "gigawatt bar overshoots the urban baseline", "reaction": "baseline line pulses", "ambient": "flare flicker"}},
-    {"t": 24.5, "vo": "But nothing is built here yet.", "shows": "the whole campus drops to dashed ghost lines", "sfx": "tick", "means": "hard turn to the honest caveat", "choreo": {"primary": "solid edges fall to dashed wireframe", "reaction": "flare dims to an ember", "ambient": "wind returns over the pad"}},
-    {"t": 28.5, "vo": "A proposal, and the numbers won't settle.", "shows": "camera racks to a single cost bar in the void", "sfx": "whoosh", "means": "the certainty is not real", "choreo": {"primary": "rack focus from campus to the cost bar", "reaction": "gridline snaps under the bar", "ambient": "faint blueprint hum"}},
-    {"t": 32.5, "vo": "Early site work, five hundred million dollars.", "shows": "the bar sits at the low tick, labeled", "sfx": "tick", "means": "the small, sourced figure", "choreo": {"primary": "bar settles on the low tick", "reaction": "label types in", "ambient": "bar edge jitter"}},
-    {"t": 36.0, "vo": "The whole build, over ten billion.", "shows": "the bar leaps to the high ghost tick and cannot hold", "sfx": "boom", "means": "a six-times spread, unsettled", "choreo": {"primary": "bar leaps up and overshoots", "reaction": "high tick flickers, unstable", "ambient": "number readout stutters"}},
-    {"t": 39.5, "vo": "No confirmed customers, no chips.", "shows": "a CUSTOMERS tray and a CHIPS tray sit open, conspicuously empty and unsigned; a paper edge just begins to wipe in from frame right", "sfx": "hit", "means": "the demand is unproven", "choreo": {"primary": "two labeled trays hold, empty and unsigned", "reaction": "paper edge wipes from frame right", "ambient": "paper rustle rising"}},
-    {"t": 42.5, "vo": "What's real is the public comment.", "shows": "the paper flood pours and stacks on the left", "sfx": "whoosh", "means": "the human-scale check appears", "choreo": {"primary": "hundreds of slips drift and pile into a wall", "reaction": "the tiny opposite stack holds", "ambient": "wind-driven paper"}},
-    {"t": 46.0, "vo": "Over five hundred against, under a dozen for.", "shows": "the two counts resolve across the center seam", "sfx": "lock", "means": "overwhelmingly one-sided", "choreo": {"primary": "the tall stack tops out", "reaction": "the dozen stack labels itself", "ambient": "settling paper"}},
-    {"t": 48.5, "vo": "The company called them form letters.", "shows": "a FORM LETTER? stamp presses down on the tall five hundred stack but cannot grey it or move it", "sfx": "hit", "means": "the company pushes back on the record, and fails to erase it", "choreo": {"primary": "a dismissive stamp presses down on the tall stack", "reaction": "the stack holds, ungreyed", "ambient": "paper settling under the stamp"}},
-    {"t": 51.0, "vo": "The state has not decided.", "shows": "match-cut back to the tundra and stake; ghost campus faint", "sfx": "ambient", "means": "loop back to the unbuilt land", "choreo": {"primary": "camera settles into a locked drift on the stake", "reaction": "ghost campus dims further", "ambient": "wind over open tundra"}},
-    {"t": 54.5, "vo": "The comment window closes July seventeenth.", "shows": "a signal-red July 17th deadline stamp lands on the land as one heavy stamp", "sfx": "lock", "means": "the deadline is live and near", "choreo": {"primary": "the deadline stamp lands as one heavy stamp", "reaction": "stake flag lifts in a gust", "ambient": "low sky drift"}},
-    {"t": 57.5, "vo": "It cannot grant itself the land. That call still belongs to Alaska.", "shows": "wordmark resolves over the land; campus stays a ghost", "sfx": "boom", "means": "the button: the decision is Alaska's", "choreo": {"primary": "wordmark and signoff resolve", "reaction": "ghost campus holds, unbuilt", "ambient": "wind falls to near silence"}}
+    {"t": 0.0, "vo": "A machine got hungry. And it looked at Alaska.", "draw": {"subject": "greedy server-machine with hungry eyes + drool", "action": "eyes Alaska and the North Slope pin", "emotion": "greedy", "annotation": "THE AI BOOM WANTS ALASKA"}, "sfx": "whoosh", "means": "characterized-object hook"},
+    {"t": 3.2, "vo": "It wants a square mile of the North Slope near Deadhorse. Plus a gigawatt of gas power.", "draw": {"subject": "machine + plug", "action": "reaches plug toward the pin, plug bulks to GIGAWATT", "emotion": "greedy", "annotation": "1 SQUARE MILE / 1+ GW"}, "sfx": "riser", "means": "map pin + plug morph gag"},
+    {"t": 10.31, "vo": "One building. About thirty percent more electricity than every city in Alaska, combined.", "draw": {"subject": "two bars", "action": "data-center bar towers over all-urban-Alaska bar, casts a shadow", "emotion": "n/a", "annotation": "+30% MORE POWER"}, "sfx": "ding", "means": "scale-stack (the hardest number)"},
+    {"t": 17.16, "vo": "The cost, by the company's own math? Five hundred million dollars. Or over ten billion. A twenty times guess.", "draw": {"subject": "seesaw", "action": "rocks and will not settle between the two numbers", "emotion": "n/a", "annotation": "$500M (lease docs) vs $10B+ (company est.) / 20x"}, "sfx": "thud", "means": "unsettled-seesaw, attributions on screen"},
+    {"t": 24.63, "vo": "So Alaskans grabbed a pen. Over five hundred comments. Fewer than a dozen said yes.", "draw": {"subject": "crowd of parka'd everyresidents", "action": "point and cross arms as a paper storm flies", "emotion": "angry", "annotation": "500+ PUBLIC COMMENTS / FEWER THAN A DOZEN IN FAVOR"}, "sfx": "paper", "means": "crowd + paper storm made physical"},
+    {"t": 30.35, "vo": "Some kept it short. Quote: hell no. Quote: no A.I.", "draw": {"subject": "furious parka'd Alaskan", "action": "bellows HELL NO, snap-zoom on the face", "emotion": "angry", "annotation": "HELL NO / NO AI (real public comments)"}, "sfx": "thud", "means": "confrontation + dramatic snap-zoom"},
+    {"t": 34.92, "vo": "Here's the honest part. Nothing is built. No customers. No chips. The state has not decided.", "draw": {"subject": "machine redrawn as a dashed ghost", "action": "PROPOSAL stamp thuds down, empty chip/customer slots", "emotion": "hollow", "annotation": "PROPOSAL / NO CONFIRMED CHIPS / NO CUSTOMERS / STATE HAS NOT DECIDED"}, "sfx": "stamp", "means": "the honest caveat, drawn as the loudest element"},
+    {"t": 41.62, "vo": "The comment window is the real vote. And it closes tomorrow. July seventeenth.", "draw": {"subject": "wall calendar", "action": "flips to JULY 17, LAST CALL banner unrolls, clock ticks", "emotion": "urgent", "annotation": "JULY 17 / 4:30 PM AKDT / ALASKA DNR / ADL 422741"}, "sfx": "riser", "means": "calendar deadline"},
+    {"t": 47.24, "vo": "So the loudest thing on the tundra is not the machine. It's the mailbox. What would your comment say?", "draw": {"subject": "overstuffed mailbox + little parka'd Alaskan", "action": "mailbox bulges with comments, ghost machine defeated behind, loop to HELL NO", "emotion": "resolute", "annotation": "WHAT WOULD YOUR COMMENT SAY?"}, "sfx": "ding", "means": "button + loopback"}
   ],
-  "audio_arc": {
-    "build_steps": ["low tundra wind and a sub-bass drone under the empty land", "a cold mechanical pulse as the campus assembles and the flare lights", "unstable number ticks as the cost bar leaps", "a paper-rush swell as the public comment floods in", "drop back to wind for the deadline and the button"],
-    "dip_at": 24.5,
-    "riser_at": 20.5,
-    "silence_at": 55.05,
-    "payoff_at": 57.5,
-    "button_pattern": "callback"
-  },
-  "divergence_note": "The last two dispatches were 'Sorted by a Machine' (top-down-map, scroll-data, data-as-subject, grid-modular, data-brutalist, track-follow, noon-hard, cold institutional grey) and before it the night-water beluga hoax (eye-level-immersive, horizontal-traverse, single-organic-hero, night-practical). This piece shares none of those: it is an orbital-aerial, blueprint-technical shoot over open North Slope tundra under flat overcast light, with an assemble-build motion (a wireframe campus constructing itself) rather than scrolling data or a swimming hero, a rise-reveal camera instead of a track-follow, and a fresh wet-grey tundra and blueprint-cyan palette against the prior grey-fluorescent dossier and teal-black aquarium worlds. The metaphor is new: a proposal drawn as an unbuilt blueprint whose own numbers will not settle, checked by a paper flood of public comment, rather than a machine sorting files or a fake image dissolving. Spatial signature (orbital-aerial, map-territory, assemble-build) does not repeat any of the last four.",
-  "taste_dials": {"restraint": "high", "warmth": "low-cool", "data_density": "medium", "motion_energy": "measured", "style_mode": "honest institutional blueprint over real land; sober, not hyped, not doom"},
-  "references": ["state DNR lease-parcel plats as a look for the map-territory draw", "architectural competition wireframe flythroughs (unbuilt = edges only)", "North Slope flat-overcast field photography for the light"]
+  "shots": [
+    {"id": "S1", "framing": "wide hook", "transition_in": "pop", "thread": "appetite"},
+    {"id": "S2", "framing": "bar comparison", "transition_in": "whoosh", "thread": "scale"},
+    {"id": "S3", "framing": "seesaw", "transition_in": "whoosh", "thread": "cost"},
+    {"id": "S4", "framing": "crowd wide", "transition_in": "klaxon", "thread": "revolt"},
+    {"id": "S5", "framing": "confrontation + snap-zoom", "transition_in": "whoosh", "thread": "HELL NO"},
+    {"id": "S6", "framing": "stamp + ghost", "transition_in": "stamp", "thread": "honest caveat"},
+    {"id": "S7", "framing": "calendar", "transition_in": "whoosh", "thread": "deadline"},
+    {"id": "S8", "framing": "mailbox button", "transition_in": "whoosh", "thread": "the real vote"}
+  ],
+  "hook": {"pattern": "characterized-object appetite", "frame1": "greedy server-machine eyeing Alaska under a shouty headline", "headline": "The AI Boom Wants Alaska", "motion_by_s": 0.3, "loopback": "final HELL NO parka pose mirrors the cold-open menace"},
+  "audio_arc": {"build_steps": [0.1, 24.63, 30.35], "dip_at": 46.6, "riser_at": 44.6, "silence_at": 46.6, "payoff_at": 47.24, "button_pattern": "question-to-camera"},
+  "voice": {"engine": "edge-tts", "voice": "en-US-AndrewMultilingualNeural", "license": "gray-area for publish (interim; owner plans ElevenLabs clone)", "note": "cloned voice shelved per owner; kokoro attempted per owner request but blocked by env egress policy (github 403 on its spaCy dep)"},
+  "music": {"title": "Sneaky Snitch", "composer": "Kevin MacLeod", "source": "incompetech.com", "license": "CC BY 4.0"},
+  "divergence_note": "Same proposal as 2026-07-14 but a deliberately distinct COMEDIC register (owner-directed), a fresh live peg (July 17 deadline closes tomorrow), all-new 2.5D Remotion scenes, and a public-revolt frame rather than the sober institutional one."
 }
