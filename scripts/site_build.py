@@ -961,7 +961,9 @@ def services_page(today, site_url):
     relays each submission to docket@alaskaaihq.com and then redirects the
     visitor to /services/thanks/. First-ever submission triggers a one-time
     activation email to that inbox; until its link is clicked, FormSubmit
-    holds submissions at an activation notice instead of relaying them."""
+    holds submissions at an activation notice instead of relaying them. The
+    action uses FormSubmit's opaque alias for docket@alaskaaihq.com so the
+    raw address stays out of the page source (anti-scrape)."""
     if BOOKING_URL:
         hero_ctas = (f'<a class="cta gold" href="{BOOKING_URL}" target="_blank" '
                      'rel="noopener">BOOK A FREE 20 MINUTE CALL</a>\n'
@@ -1102,7 +1104,7 @@ do not want to become an engineer to win with it, you are exactly who this desk 
 <h2 data-reveal id="apply">See what pays</h2>
 <p class="sub" data-reveal>A few quick lines about your operation. You get a straight read
 on whether the Field Study fits, and a no costs you nothing.{talk_first}</p>
-<form class="leadform" data-reveal action="https://formsubmit.co/docket@alaskaaihq.com" method="POST">
+<form class="leadform" data-reveal action="https://formsubmit.co/228f72bce4f9b0e50b49d8d501374771" method="POST">
   <input type="hidden" name="_subject" value="Field Study application">
   <input type="hidden" name="_template" value="table">
   <input type="hidden" name="_captcha" value="false">
