@@ -8,7 +8,7 @@
   {
     "text": "And it looked at Alaska.",
     "start": 1.3,
-    "end": 2.22,
+    "end": 2.2,
     "seg": 0
   },
   {
@@ -32,7 +32,7 @@
   {
     "text": "to feed itself.",
     "start": 8.48,
-    "end": 9.3,
+    "end": 9.28,
     "seg": 1
   },
   {
@@ -44,13 +44,13 @@
   {
     "text": "About thirty percent more electricity",
     "start": 11.45,
-    "end": 13.07,
+    "end": 13.21,
     "seg": 2
   },
   {
     "text": "than every city in Alaska, combined.",
-    "start": 13.07,
-    "end": 16.13,
+    "start": 13.21,
+    "end": 16.11,
     "seg": 2
   },
   {
@@ -61,13 +61,13 @@
   },
   {
     "text": "Five hundred million dollars.",
-    "start": 19.66,
+    "start": 19.6,
     "end": 20.66,
     "seg": 3
   },
   {
     "text": "Or over ten billion.",
-    "start": 21.24,
+    "start": 21.2,
     "end": 22.24,
     "seg": 3
   },
@@ -98,91 +98,79 @@
   {
     "text": "Some kept it short.",
     "start": 30.35,
-    "end": 31.17,
-    "seg": 5
-  },
-  {
-    "text": "Quote: hell no.",
-    "start": 31.75,
-    "end": 32.79,
-    "seg": 5
-  },
-  {
-    "text": "Quote: no A.I.",
-    "start": 33.21,
-    "end": 34.09,
+    "end": 31.09,
     "seg": 5
   },
   {
     "text": "Here's the honest part.",
-    "start": 34.92,
-    "end": 35.78,
+    "start": 34.67,
+    "end": 35.55,
     "seg": 6
   },
   {
     "text": "Nothing is built.",
-    "start": 36.28,
-    "end": 36.86,
+    "start": 36.03,
+    "end": 36.69,
     "seg": 6
   },
   {
     "text": "No customers.",
-    "start": 37.36,
-    "end": 37.9,
+    "start": 37.21,
+    "end": 37.71,
     "seg": 6
   },
   {
-    "text": "No chips.",
-    "start": 38.54,
-    "end": 38.94,
+    "text": "No computer chips.",
+    "start": 38.31,
+    "end": 39.15,
     "seg": 6
   },
   {
-    "text": "The state has not decided.",
-    "start": 39.58,
-    "end": 40.72,
+    "text": "And the state has not decided.",
+    "start": 39.71,
+    "end": 41.09,
     "seg": 6
   },
   {
     "text": "The comment window is the real vote.",
-    "start": 41.62,
-    "end": 43.5,
+    "start": 42.02,
+    "end": 43.92,
     "seg": 7
   },
   {
     "text": "And it closes tomorrow.",
-    "start": 43.92,
-    "end": 45.04,
+    "start": 44.44,
+    "end": 45.46,
     "seg": 7
   },
   {
     "text": "July seventeenth.",
-    "start": 45.42,
-    "end": 46.5,
+    "start": 45.92,
+    "end": 46.88,
     "seg": 7
   },
   {
     "text": "So the loudest thing on the",
-    "start": 47.24,
-    "end": 48.22,
+    "start": 47.64,
+    "end": 48.62,
     "seg": 8
   },
   {
     "text": "tundra is not the machine.",
-    "start": 48.22,
-    "end": 49.78,
+    "start": 48.62,
+    "end": 50.18,
     "seg": 8
   },
   {
     "text": "It's the mailbox.",
-    "start": 50.26,
-    "end": 50.76,
+    "start": 50.66,
+    "end": 51.16,
     "seg": 8
   },
   {
     "text": "What would your comment say?",
-    "start": 51.44,
-    "end": 52.32,
+    "start": 51.84,
+    "end": 52.72,
     "seg": 8
   }
 ]

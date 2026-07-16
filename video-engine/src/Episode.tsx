@@ -15,6 +15,10 @@ const RAY = '#1c2752';
 
 export const episodeSchema = z.object({
   captions: z.array(z.object({text: z.string(), start: z.number(), end: z.number(), seg: z.number()})),
+  // scene frame boundaries, computed from the VO line timings (scripts/build_scenes.py)
+  // so the timeline auto-resyncs when the narration changes. Optional; falls back to defaults.
+  scenes: z.array(z.object({from: z.number(), dur: z.number()})).optional(),
+  total: z.number().optional(),
 });
 export type EpisodeProps = z.infer<typeof episodeSchema>;
 
@@ -267,14 +271,16 @@ const S4: React.FC = () => {
 const S5: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const push = interpolate(f, [0, 66], [1.0, 1.06], {extrapolateRight: 'clamp'});
-  const snap = spring({frame: f - 70, fps, config: {damping: 14, stiffness: 190}});
-  const zoomed = f >= 70;
+  // Hold both HELL NO + NO AI legible in the wide shot (the silent-hold beat),
+  // THEN punch the snap-zoom onto the face as the closing punctuation.
+  const push = interpolate(f, [0, 96], [1.0, 1.06], {extrapolateRight: 'clamp'});
+  const snap = spring({frame: f - 100, fps, config: {damping: 14, stiffness: 190}});
+  const zoomed = f >= 100;
   const scale = zoomed ? 1.06 + snap * 1.15 : push;
   const ox = zoomed ? interpolate(snap, [0, 1], [0, 150]) : 0;
   const oy = zoomed ? interpolate(snap, [0, 1], [0, -250]) : 0;
-  const hellIn = spring({frame: f - 20, fps, config: {damping: 10, stiffness: 150}});
-  const noaiIn = spring({frame: f - 92, fps, config: {damping: 10, stiffness: 150}});
+  const hellIn = spring({frame: f - 16, fps, config: {damping: 10, stiffness: 150}});
+  const noaiIn = spring({frame: f - 50, fps, config: {damping: 10, stiffness: 150}});
   const trembleX = 3.6 * Math.sin(f / 3.1);
   return (
     <AbsoluteFill style={{backgroundColor: '#2a3f66', overflow: 'hidden'}}>
@@ -479,23 +485,19 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
 };
 
 // ================================================================ TIMELINE
-const SCENES: {c: React.FC; from: number; dur: number}[] = [
-  {c: S1, from: 0, dur: 309},
-  {c: S2, from: 309, dur: 206},
-  {c: S3, from: 515, dur: 224},
-  {c: S4, from: 739, dur: 171},
-  {c: S5, from: 910, dur: 138},
-  {c: S6, from: 1048, dur: 201},
-  {c: S7, from: 1249, dur: 168},
-  {c: S8, from: 1417, dur: 233},
+const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6, S7, S8];
+const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
+  {from: 0, dur: 309}, {from: 309, dur: 206}, {from: 515, dur: 224}, {from: 739, dur: 171},
+  {from: 910, dur: 138}, {from: 1048, dur: 201}, {from: 1249, dur: 168}, {from: 1417, dur: 233},
 ];
 
-export const Episode: React.FC<EpisodeProps> = ({captions}) => {
+export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {
+  const bounds = scenes && scenes.length === SCENE_COMPONENTS.length ? scenes : DEFAULT_BOUNDS;
   return (
     <AbsoluteFill style={{backgroundColor: NAVY}}>
-      {SCENES.map((s, i) => (
-        <Sequence key={i} from={s.from} durationInFrames={s.dur} name={`S${i + 1}`}>
-          <s.c />
+      {SCENE_COMPONENTS.map((C, i) => (
+        <Sequence key={i} from={bounds[i].from} durationInFrames={bounds[i].dur} name={`S${i + 1}`}>
+          <C />
         </Sequence>
       ))}
       <Captions captions={captions} />

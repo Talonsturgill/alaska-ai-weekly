@@ -73,10 +73,12 @@ async def main():
     with open(os.path.join(OUT, "vo_script.json")) as f:
         spec = json.load(f)
     voice, rate = spec["voice"], spec.get("rate", "+0%")
+    pause_after = {int(k): float(v) for k, v in spec.get("pause_after", {}).items()}
 
     all_words, all_lines = [], []
     concat_inputs = []
     cursor = 0.0
+    n_lines = len(spec["lines"])
     for i, text in enumerate(spec["lines"]):
         mp3 = os.path.join(AUD, f"vo_line_{i:02d}.mp3")
         wav = os.path.join(AUD, f"vo_line_{i:02d}.wav")
@@ -91,24 +93,30 @@ async def main():
             })
         all_lines.append({"idx": i, "text": text,
                           "start": round(cursor, 3), "end": round(cursor + d, 3)})
-        concat_inputs.append((wav, d))
-        cursor += d + GAP
-        print(f"line {i}: {d:.2f}s  '{text[:48]}'")
+        gap = pause_after.get(i, GAP) if i < n_lines - 1 else 0.0
+        concat_inputs.append((wav, d, gap))
+        cursor += d + gap
+        print(f"line {i}: {d:.2f}s (+{gap:.2f}s pause)  '{text[:48]}'")
 
-    total = cursor - GAP
-    print(f"TOTAL VO: {total:.2f}s over {len(spec['lines'])} lines")
+    total = cursor
+    print(f"TOTAL VO: {total:.2f}s over {n_lines} lines")
 
-    # assemble with silence gaps via ffmpeg filter
-    silence = os.path.join(AUD, "_gap.wav")
-    subprocess.run([FFMPEG, "-y", "-f", "lavfi", "-t", str(GAP),
-                    "-i", f"anullsrc=r={SR}:cl=mono", silence],
-                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # assemble with per-line silence gaps (unique-duration silence files)
     listfile = os.path.join(AUD, "_concat.txt")
+    made = {}
     with open(listfile, "w") as f:
-        for j, (wav, _) in enumerate(concat_inputs):
+        for j, (wav, _, gap) in enumerate(concat_inputs):
             f.write(f"file '{wav}'\n")
-            if j < len(concat_inputs) - 1:
-                f.write(f"file '{silence}'\n")
+            if gap > 0.001:
+                key = round(gap, 3)
+                sil = made.get(key)
+                if sil is None:
+                    sil = os.path.join(AUD, f"_gap_{int(key*1000)}.wav")
+                    subprocess.run([FFMPEG, "-y", "-f", "lavfi", "-t", str(key),
+                                    "-i", f"anullsrc=r={SR}:cl=mono", sil],
+                                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    made[key] = sil
+                f.write(f"file '{sil}'\n")
     vo = os.path.join(AUD, "vo.wav")
     subprocess.run([FFMPEG, "-y", "-f", "concat", "-safe", "0", "-i", listfile,
                     "-ar", str(SR), "-ac", "1", vo],
