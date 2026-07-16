@@ -344,6 +344,23 @@ letter-spacing:.08em;margin-top:14px;}
 .fineprint a{color:var(--mute);text-decoration:none;border-bottom:1px solid rgba(141,162,190,.3);}
 .fineprint a:hover{color:var(--snow);}
 
+/* ---------- lead form (services) ---------- */
+.leadform{max-width:640px;}
+.leadform label{display:block;font-family:JBMono,monospace;font-size:11.5px;
+letter-spacing:.14em;color:var(--mute);margin:16px 0 0;text-transform:uppercase;}
+.leadform .lf-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}
+.leadform input[type=text],.leadform input[type=email],.leadform textarea,.leadform select{
+display:block;width:100%;margin-top:7px;background:rgba(10,22,38,.85);
+border:1px solid var(--line);border-radius:6px;padding:12px 14px;color:var(--snow);
+font-family:Manrope,system-ui,sans-serif;font-size:15px;transition:border-color .2s;}
+.leadform textarea{resize:vertical;min-height:76px;}
+.leadform input:focus,.leadform textarea:focus,.leadform select:focus{
+border-color:var(--gold);outline:none;}
+.leadform ::placeholder{color:#5f7390;}
+.leadform select{color:var(--body);}
+.leadform .ctarow{margin-top:28px;}
+.leadform .cta{border:none;cursor:pointer;font-family:JBMono,monospace;}
+
 /* ---------- footer ---------- */
 .about-line{border-top:1px solid var(--line);margin-top:90px;padding-top:34px;font-size:15px;
 color:var(--mute);max-width:660px;}
@@ -366,6 +383,7 @@ html.js [data-reveal].in{opacity:1;transform:none;}
   .item{flex-direction:column;gap:16px;padding:24px 20px;}
   .doorcol{flex-direction:row;}
   .rail{flex-direction:column;gap:14px;}
+  .leadform .lf-grid{grid-template-columns:1fr;}
   .rail::before{left:5px;right:auto;top:0;bottom:0;width:1.5px;height:auto;}
   .stop{padding:0 0 0 26px;}
   .stop.now{padding:0 0 0 26px;}

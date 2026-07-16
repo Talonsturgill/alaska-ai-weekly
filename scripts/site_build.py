@@ -450,6 +450,23 @@ letter-spacing:.08em;margin-top:14px;}
 .fineprint a{color:var(--mute);text-decoration:none;border-bottom:1px solid rgba(141,162,190,.3);}
 .fineprint a:hover{color:var(--snow);}
 
+/* ---------- lead form (services) ---------- */
+.leadform{max-width:640px;}
+.leadform label{display:block;font-family:JBMono,monospace;font-size:11.5px;
+letter-spacing:.14em;color:var(--mute);margin:16px 0 0;text-transform:uppercase;}
+.leadform .lf-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}
+.leadform input[type=text],.leadform input[type=email],.leadform textarea,.leadform select{
+display:block;width:100%;margin-top:7px;background:rgba(10,22,38,.85);
+border:1px solid var(--line);border-radius:6px;padding:12px 14px;color:var(--snow);
+font-family:Manrope,system-ui,sans-serif;font-size:15px;transition:border-color .2s;}
+.leadform textarea{resize:vertical;min-height:76px;}
+.leadform input:focus,.leadform textarea:focus,.leadform select:focus{
+border-color:var(--gold);outline:none;}
+.leadform ::placeholder{color:#5f7390;}
+.leadform select{color:var(--body);}
+.leadform .ctarow{margin-top:28px;}
+.leadform .cta{border:none;cursor:pointer;font-family:JBMono,monospace;}
+
 /* ---------- footer ---------- */
 .about-line{border-top:1px solid var(--line);margin-top:90px;padding-top:34px;font-size:15px;
 color:var(--mute);max-width:660px;}
@@ -472,6 +489,7 @@ html.js [data-reveal].in{opacity:1;transform:none;}
   .item{flex-direction:column;gap:16px;padding:24px 20px;}
   .doorcol{flex-direction:row;}
   .rail{flex-direction:column;gap:14px;}
+  .leadform .lf-grid{grid-template-columns:1fr;}
   .rail::before{left:5px;right:auto;top:0;bottom:0;width:1.5px;height:auto;}
   .stop{padding:0 0 0 26px;}
   .stop.now{padding:0 0 0 26px;}
@@ -931,11 +949,13 @@ def deck_page(today, site_url, r):
 def services_page(today, site_url):
     """The services tab. AI partnership for Alaska businesses, framed in
     labor language (digital employees, the digital crew), entered through
-    The Field Study. Copy obeys the house gates like every other page."""
-    apply_mail = ("mailto:docket@alaskaaihq.com?subject=Field%20Study%20application"
-                  "&body=Business%20name%20-%20%0AWhere%20in%20Alaska%20-%20%0A"
-                  "What%20the%20work%20is%20-%20%0AWhat%20AI%20should%20take%20off%20your%20plate%20-%20%0A"
-                  "What%20you%20have%20tried%20so%20far%20-%20%0ABudget%20range%20-%20")
+    The Field Study. Copy obeys the house gates like every other page.
+
+    The lead form posts to FormSubmit (no backend on a Pages site) which
+    relays each submission to docket@alaskaaihq.com and then redirects the
+    visitor to /services/thanks/. First-ever submission triggers a one-time
+    activation email to that inbox; until its link is clicked, FormSubmit
+    holds submissions at an activation notice instead of relaying them."""
 
     stats = """<div class="statrow">
   <div class="stat"><div class="n"><span data-count="88">88</span>%</div><div class="l">OF ORGANIZATIONS USE AI</div></div>
@@ -1064,14 +1084,38 @@ and a federal deadline. Contractors, utilities, and the shops that keep them all
 If you already know what you want built, bring it. If you only know that AI matters and you
 do not want to become an engineer to win with it, you are exactly who this desk works for.</p>
 <h2 data-reveal id="apply">See what pays</h2>
-<p class="sub" data-reveal>Send five plain lines about your operation. You get a straight
-read on whether the Field Study fits, and a no costs you nothing.</p>
-<div class="ctarow act" data-reveal>
-  <a class="cta gold" href="{apply_mail}">SEE WHAT PAYS</a>
-  <a class="cta ghost" href="../archive/">READ THE DAILY BEAT</a>
-</div>
+<p class="sub" data-reveal>A few quick lines about your operation. You get a straight read
+on whether the Field Study fits, and a no costs you nothing.</p>
+<form class="leadform" data-reveal action="https://formsubmit.co/docket@alaskaaihq.com" method="POST">
+  <input type="hidden" name="_subject" value="Field Study application">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="{site_url}/services/thanks/">
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="lf-grid">
+    <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+    <label>Email<input type="email" name="email" required autocomplete="email"></label>
+    <label>Business<input type="text" name="business" required autocomplete="organization"></label>
+    <label>Where in Alaska<input type="text" name="location" placeholder="Anchorage, Kodiak, the Slope"></label>
+  </div>
+  <label>What should AI take off your plate?<textarea name="ask" rows="3" required
+  placeholder="The phones after hours. The RFP backlog. The invoicing."></textarea></label>
+  <label>What have you tried so far?<textarea name="tried" rows="2"
+  placeholder="ChatGPT here and there. Nothing that stuck."></textarea></label>
+  <label>Budget range<select name="budget">
+    <option>Not sure yet</option>
+    <option>Under $2,500</option>
+    <option>$2,500 to $10,000</option>
+    <option>$10,000 to $50,000</option>
+    <option>$50,000 and up</option>
+  </select></label>
+  <div class="ctarow">
+    <button class="cta gold" type="submit">SEE WHAT PAYS</button>
+    <a class="cta ghost" href="../archive/">READ THE DAILY BEAT</a>
+  </div>
+</form>
 <p class="fineprint" data-reveal>No pitch deck, no drip campaign. One reply, from the same
-desk that writes the deck.</p>
+desk that writes the deck. Prefer email? docket@alaskaaihq.com reaches the same place.</p>
 <div class="about-line" data-reveal><p>Prices are starting points, scoped in the open before
 any work begins. The docket stays free. The deck ships daily either way.</p></div>"""
 
@@ -1101,6 +1145,23 @@ any work begins. The docket stays free. The deck ships daily either way.</p></di
                 "Digital employees, paperwork engines and embedded AI partnership from the "
                 "desk behind the state's daily AI beat. The Field Study from $2,500.",
                 body, "../", "services", today, site_url, "services/", ld=ld)
+
+
+def services_thanks_page(today, site_url):
+    """Where the lead form redirects after FormSubmit relays a submission."""
+    body = """<div class="hero" style="min-height:56vh;padding-top:12vh">
+<div class="chip kind">APPLICATION RECEIVED</div>
+<h1 style="margin-top:14px">Got it. The desk is <em>reading</em></h1>
+<p class="tag">Your note is in and a person reads every one. You get a straight answer
+either way, and a no costs you nothing. While you wait, the day's deck is worth a swipe.</p>
+<div class="ctarow">
+  <a class="cta gold" href="../../archive/">READ THE DAILY BEAT</a>
+  <a class="cta ghost" href="../">BACK TO SERVICES</a>
+</div>
+</div>"""
+    return page("Application received - Alaska AI",
+                "Your Field Study application is in. You get a straight answer either way.",
+                body, "../../", "services", today, site_url, "services/thanks/")
 
 
 def about_page(today, site_url):
@@ -1201,6 +1262,7 @@ def build(today, out_dir, site_url=None, domain=""):
         "docket/index.html": docket_page(today, site_url, docket),
         "archive/index.html": archive_page(today, site_url, runs),
         "services/index.html": services_page(today, site_url),
+        "services/thanks/index.html": services_thanks_page(today, site_url),
         "about/index.html": about_page(today, site_url),
         "404.html": not_found_page(today, site_url),
     }
