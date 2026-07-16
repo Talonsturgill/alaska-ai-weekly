@@ -532,3 +532,40 @@ dispatch_history:
     register: blueprint-technical
     camera_strategy: rise-reveal
     light_story: overcast-diffuse
+- date: '2026-07-16'
+  topic: 'HELL NO ON THE TUNDRA: comedic dispatch on Stak Energy''s proposed gigawatt
+    gas-fired AI data center ~25mi south of Deadhorse; 500+ public comments, fewer
+    than a dozen in favor (real ''HELL NO to any data centers'' / ''NO AI''); 20x
+    cost range $500M lease-doc site work to $10B+ full build (CSO John Boyle); no
+    confirmed customers/chips; state undecided; comment window (Alaska DNR, ADL 422741)
+    closes July 17. Greedy server-machine buried by public comment, revealed as unbuilt
+    PROPOSAL, mailbox is the real vote.'
+  slug: stak-energy-north-slope-hell-no
+  key_entities:
+  - stak energy
+  - north slope
+  - deadhorse
+  - dnr oil and gas
+  - adl 422741
+  - ai data center
+  - gas-fired
+  - public comment
+  - july 17 deadline
+  - hell no
+  - no ai
+  - gigawatt
+  - john boyle
+  - northern journal
+  - comedic dispatch
+  - mailbox
+  archetype: characterized-object comedy
+  palette: navy burst + ember red + orange/green everyday gear on sage tundra
+  voice: edge-tts en-US-AndrewMultilingualNeural
+  composition:
+    pov: characterized-object comedy
+    motion: reach-then-bury + snap-zoom
+    hero: greedy-server-machine vs everyresident
+    layout: map + bars + confrontation
+    register: IGS comedic infographic
+    metaphor: hungry machine whose numbers wont settle, checked by a paper-flood and
+      a mailbox

@@ -12,13 +12,19 @@ export const INK = '#101423';
 
 export type Pose = 'stand' | 'arms-crossed' | 'point' | 'panic';
 export type Emotion = 'neutral' | 'angry' | 'worried' | 'shock' | 'smug';
-export type Outfit = 'parka' | 'suit' | 'worker';
+// Everyday Alaskan gear (deliberately NOT the fur-ruff parka, which reads as
+// Inupiat/Inuit-coded; the crowd must read as generic residents). 'parka' is kept
+// for legacy scenes but new crowds use puffer/flannel/vest + varied headgear.
+export type Outfit = 'parka' | 'suit' | 'worker' | 'puffer' | 'flannel' | 'vest';
+export type Headgear = 'bare' | 'beanie' | 'cap' | 'trapper' | 'hood';
 
 export interface CharacterProps {
   frame: number;
   pose?: Pose;
   emotion?: Emotion;
   outfit?: Outfit;
+  headgear?: Headgear;
+  hair?: string;
   skin?: string;
   facing?: 1 | -1; // 1 = faces right
   scale?: number;
@@ -30,13 +36,18 @@ const OUTFITS: Record<Outfit, {main: string; shade: string; trim: string; pants:
   parka: {main: '#c8542e', shade: '#a03e1f', trim: '#e8dcc8', pants: '#3a4a5c'},
   suit: {main: '#2e4a6b', shade: '#22374f', trim: '#e23b30', pants: '#22374f'},
   worker: {main: '#e8a423', shade: '#c4861a', trim: '#e8e0d0', pants: '#4a4238'},
+  puffer: {main: '#2f7d6b', shade: '#215c4e', trim: '#173f35', pants: '#3a4250'},
+  flannel: {main: '#b23a3a', shade: '#8a2a2a', trim: '#e0d2c0', pants: '#38404e'},
+  vest: {main: '#c98a2a', shade: '#a06e1f', trim: '#4a4238', pants: '#3a4250'},
 };
 
 export const Character: React.FC<CharacterProps> = ({
   frame: f,
   pose = 'stand',
   emotion = 'neutral',
-  outfit = 'parka',
+  outfit = 'puffer',
+  headgear = 'bare',
+  hair = '#3d2c1e',
   skin = '#e8b48c',
   facing = 1,
   scale = 1,
@@ -204,41 +215,99 @@ export const Character: React.FC<CharacterProps> = ({
                 <path d="M-84,-60 h168 v22 h-168 Z" fill="#d8d8d8" stroke={INK} strokeWidth={4.5} opacity={0.9} />
               </g>
             )}
+            {outfit === 'puffer' && (
+              <g>
+                <path d="M0,-200 L0,4" stroke={INK} strokeWidth={5} />
+                {[-120, -76, -32, 12].map((yy, i) => (
+                  <path key={i} d={`M-90,${yy} q90,20 180,0`} fill="none" stroke={INK} strokeWidth={4} opacity={0.5} />
+                ))}
+                <path d="M-86,-150 q86,26 172,0" fill="none" stroke={c.shade} strokeWidth={14} />
+              </g>
+            )}
+            {outfit === 'flannel' && (
+              <g>
+                <path d="M0,-200 L0,4" stroke={INK} strokeWidth={5} />
+                {[-70, -20, 30].map((yy, i) => (
+                  <path key={`h${i}`} d={`M-90,${yy} q90,16 180,0`} fill="none" stroke={c.shade} strokeWidth={6} opacity={0.6} />
+                ))}
+                {[-50, 0, 50].map((xx, i) => (
+                  <path key={`v${i}`} d={`M${xx},-198 L${xx},2`} stroke={c.shade} strokeWidth={6} opacity={0.5} />
+                ))}
+                <path d="M-40,-192 L0,-150 L40,-192" fill="none" stroke={INK} strokeWidth={5} />
+              </g>
+            )}
+            {outfit === 'vest' && (
+              <g>
+                <path d="M-52,-196 q52,-8 104,0 l0,200 h-104 Z" fill={c.shade} opacity={0.35} />
+                <path d="M0,-198 L0,4" stroke={INK} strokeWidth={5} />
+                {[-120, -70, -20, 30].map((yy, i) => (
+                  <path key={i} d={`M-52,${yy} h104`} stroke={INK} strokeWidth={3.5} opacity={0.4} />
+                ))}
+                <path d="M-86,-150 q86,26 172,0" fill="none" stroke="#e8e0d0" strokeWidth={12} />
+              </g>
+            )}
             {/* arms attach at shoulder height inside torso group (pose coords are authored
                 around y~260-360; shift them up to chest height in torso space) */}
             <g transform="translate(0,-360)">{arms()}</g>
           </g>
         </g>
-        {/* head */}
+        {/* head — everyday Alaskan headgear (never the Native-coded fur ruff) */}
         <g transform={`translate(0,${-368 + bob * 1.4})`}>
-          {outfit === 'parka' ? (
-            <g>
-              {/* fur hood ring */}
-              <circle r={74} fill={c.trim} stroke={INK} strokeWidth={6.5} />
-              {Array.from({length: 12}).map((_, i) => {
-                const a = (i / 12) * Math.PI * 2;
-                return <circle key={i} cx={74 * Math.cos(a)} cy={74 * Math.sin(a)} r={10} fill={c.trim} stroke={INK} strokeWidth={3.5} />;
-              })}
-              <circle r={56} fill={skin} stroke={INK} strokeWidth={6} />
-              <path d="M14,-54 a56,56 0 0 1 42,54 l-14,0 a42,42 0 0 0 -34,-42 Z" fill={skinShade} opacity={0.6} />
-              {face()}
-            </g>
-          ) : (
-            <g>
-              <circle r={56} fill={skin} stroke={INK} strokeWidth={6} />
-              <path d="M14,-54 a56,56 0 0 1 42,54 l-14,0 a42,42 0 0 0 -34,-42 Z" fill={skinShade} opacity={0.6} />
-              {/* hair */}
-              <path d="M-56,-6 a56,56 0 0 1 112,0 q-18,-34 -56,-34 q-38,0 -56,34 Z" fill="#3d2c1e" stroke={INK} strokeWidth={5} />
-              {outfit === 'worker' && (
-                <g>
-                  <path d="M-60,-22 a60,42 0 0 1 120,0 l-8,6 h-104 Z" fill="#f2c230" stroke={INK} strokeWidth={6} />
-                  <rect x={-70} y={-20} width={140} height={14} rx={7} fill="#f2c230" stroke={INK} strokeWidth={5} />
-                  <path d="M-14,-58 a60,42 0 0 1 28,0 l-4,20 h-20 Z" fill="#ffd95e" stroke={INK} strokeWidth={4} />
-                </g>
-              )}
-              {face()}
-            </g>
-          )}
+          {(() => {
+            const hg = outfit === 'parka' ? 'trapper' : headgear;
+            const beanieCol = c.main;
+            const capCol = c.shade;
+            return (
+              <g>
+                {/* hood (plain, behind head) */}
+                {hg === 'hood' && (
+                  <path d="M-78,20 a78,86 0 0 1 156,0 q0,-96 -78,-96 q-78,0 -78,96 Z" fill={c.shade} stroke={INK} strokeWidth={6} />
+                )}
+                {/* skin */}
+                <circle r={56} fill={skin} stroke={INK} strokeWidth={6} />
+                <path d="M14,-54 a56,56 0 0 1 42,54 l-14,0 a42,42 0 0 0 -34,-42 Z" fill={skinShade} opacity={0.6} />
+                {/* hair (visible under bare/cap/hood) */}
+                {(hg === 'bare' || hg === 'cap' || hg === 'hood') && (
+                  <path d="M-56,-4 a56,56 0 0 1 112,0 q-18,-36 -56,-36 q-38,0 -56,36 Z" fill={hair} stroke={INK} strokeWidth={5} />
+                )}
+                {/* beanie: knit cap + fold band + pom */}
+                {hg === 'beanie' && (
+                  <g>
+                    <path d="M-58,-10 a58,58 0 0 1 116,0 q0,-64 -58,-64 q-58,0 -58,64 Z" fill={beanieCol} stroke={INK} strokeWidth={6} />
+                    <rect x={-60} y={-16} width={120} height={22} rx={11} fill={c.shade} stroke={INK} strokeWidth={5} />
+                    <circle cx={0} cy={-74} r={12} fill={c.trim} stroke={INK} strokeWidth={5} />
+                    {[0,1,2].map((i)=>(<path key={i} d={`M${-40+i*40},-52 q0,-30 8,-40`} stroke={INK} strokeWidth={2.5} fill="none" opacity={0.3} />))}
+                  </g>
+                )}
+                {/* trapper hat: crown + fur band + ear flaps (a HAT, generic winter) */}
+                {hg === 'trapper' && (
+                  <g>
+                    <path d="M-58,-8 a58,58 0 0 1 116,0 q0,-60 -58,-60 q-58,0 -58,60 Z" fill={c.main} stroke={INK} strokeWidth={6} />
+                    <rect x={-62} y={-18} width={124} height={26} rx={12} fill="#c9bfa8" stroke={INK} strokeWidth={5} />
+                    <path d="M-58,2 q-12,44 6,66 q16,-6 16,-30 l-4,-40 Z" fill={c.main} stroke={INK} strokeWidth={5} />
+                    <path d="M58,2 q12,44 -6,66 q-16,-6 -16,-30 l4,-40 Z" fill={c.shade} stroke={INK} strokeWidth={5} />
+                  </g>
+                )}
+                {/* cap: ball cap with brim (brim points by facing) */}
+                {hg === 'cap' && (
+                  <g>
+                    <path d="M-56,-16 a56,44 0 0 1 112,0 l-6,8 h-100 Z" fill={capCol} stroke={INK} strokeWidth={6} />
+                    <rect x={-64} y={-16} width={128} height={14} rx={7} fill={capCol} stroke={INK} strokeWidth={5} />
+                    <path d="M40,-14 q52,0 60,16 l-2,8 q-40,-12 -58,-8 Z" fill={c.main} stroke={INK} strokeWidth={5} />
+                    <circle cx={0} cy={-54} r={6} fill={c.main} stroke={INK} strokeWidth={3} />
+                  </g>
+                )}
+                {/* worker hardhat retained */}
+                {outfit === 'worker' && hg === 'bare' && (
+                  <g>
+                    <path d="M-60,-22 a60,42 0 0 1 120,0 l-8,6 h-104 Z" fill="#f2c230" stroke={INK} strokeWidth={6} />
+                    <rect x={-70} y={-20} width={140} height={14} rx={7} fill="#f2c230" stroke={INK} strokeWidth={5} />
+                  </g>
+                )}
+                {face()}
+              </g>
+            );
+          })()}
         </g>
       </g>
     </g>

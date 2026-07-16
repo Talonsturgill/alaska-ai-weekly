@@ -1,6 +1,6 @@
 import React from 'react';
 import { Composition } from 'remotion';
-import { Dispatch, dispatchSchema, defaultProps } from './Dispatch';
+import { Episode, episodeSchema } from './Episode';
 import { Standoff } from './Standoff';
 import { z } from 'zod';
 
@@ -9,21 +9,20 @@ const standoffSchema = z.object({
   noLabel: z.string(),
 });
 
-// 1080x1920 (9:16), 30fps. "Dispatch" = the full 60s timeline; "Standoff" = the
-// confrontation scene (cast + set + dramatic zoom), renderable standalone for
-// look-dev and scene review.
+// 1080x1920 (9:16), 30fps. "Dispatch" = the full ~55s episode timeline (8 scenes
+// wired to the VO line anchors, captions overlaid). "Standoff" kept for look-dev.
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
         id="Dispatch"
-        component={Dispatch}
-        durationInFrames={1800}
+        component={Episode}
+        durationInFrames={1650}
         fps={30}
         width={1080}
         height={1920}
-        schema={dispatchSchema}
-        defaultProps={defaultProps}
+        schema={episodeSchema}
+        defaultProps={{ captions: [] }}
       />
       <Composition
         id="Standoff"
@@ -33,7 +32,7 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         schema={standoffSchema}
-        defaultProps={{ yesCount: 500, noLabel: 'fewer than 12 in favor' }}
+        defaultProps={{ yesCount: 500, noLabel: 'fewer than a dozen in favor' }}
       />
     </>
   );
