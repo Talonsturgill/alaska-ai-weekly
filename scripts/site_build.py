@@ -84,7 +84,8 @@ def flag_sky():
 
 def nav(prefix, active):
     links = [("", "HOME"), ("docket/", "THE DOCKET"),
-             ("archive/", "ARCHIVE"), ("about/", "ABOUT")]
+             ("archive/", "ARCHIVE"), ("services/", "SERVICES"),
+             ("about/", "ABOUT")]
     on = ' class="on"'
     a = "".join(
         f'<a href="{prefix}{href or "./"}"{on if key.lower().startswith(active) else ""}>{key}</a>'
@@ -116,6 +117,7 @@ def footer(prefix, today):
   <div class="foot-links">
     <a href="{prefix}docket/">THE DOCKET</a>
     <a href="{prefix}archive/">ARCHIVE</a>
+    <a href="{prefix}services/">SERVICES</a>
     <a href="{prefix}about/">ABOUT</a>
     <a href="{prefix}docket.json">DATA</a>
   </div>
@@ -650,7 +652,7 @@ def page(title, desc, body, prefix, active, today, site_url, path, og_image="og.
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="sky"><div class="stars"></div><div class="curtain"></div><div class="curtain c2"></div>{flag_sky() if active == 'home' else ''}
+<div class="sky"><div class="stars"></div><div class="curtain"></div><div class="curtain c2"></div>{flag_sky() if active in ('home', 'services') else ''}
 <div class="veil v1"></div><div class="veil v2"></div><div class="veil v3"></div>
 <div class="meteor"></div></div>
 <div class="wrap">
@@ -926,6 +928,181 @@ def deck_page(today, site_url, r):
                 og_image=f"{RAW}/runs/{r['date']}/slide-01.png", og_size=(1080, 1350), ld=ld)
 
 
+def services_page(today, site_url):
+    """The services tab. AI partnership for Alaska businesses, framed in
+    labor language (digital employees, the digital crew), entered through
+    The Field Study. Copy obeys the house gates like every other page."""
+    apply_mail = ("mailto:docket@alaskaaihq.com?subject=Field%20Study%20application"
+                  "&body=Business%20name%20-%20%0AWhere%20in%20Alaska%20-%20%0A"
+                  "What%20the%20work%20is%20-%20%0AWhat%20AI%20should%20take%20off%20your%20plate%20-%20%0A"
+                  "What%20you%20have%20tried%20so%20far%20-%20%0ABudget%20range%20-%20")
+
+    stats = """<div class="statrow">
+  <div class="stat"><div class="n"><span data-count="88">88</span>%</div><div class="l">OF ORGANIZATIONS USE AI</div></div>
+  <div class="stat"><div class="n"><span data-count="6">06</span>%</div><div class="l">CAPTURE REAL VALUE</div></div>
+  <div class="stat"><div class="n g"><span data-count="20">20</span>+</div><div class="l">SYSTEMS SHIPPED BY THIS DESK</div></div>
+</div>"""
+
+    range_steps = """<h2 data-reveal>From one task to a full digital crew</h2>
+<p class="sub" data-reveal>Whatever the work is, if it happens on a screen it can probably be
+built. Bring us a specific ask or let the Field Study find the highest payers.</p>
+<div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+  <div class="step" data-reveal><div class="k">01 &middot; ANSWER</div><h3>Voice and chat agents</h3>
+  <p>Every call answered and every job booked, at 2 am in January and in the July rush.
+  A front desk that never calls in sick.</p></div>
+  <div class="step" data-reveal><div class="k">02 &middot; RETRIEVE</div><h3>Assistants that know your files</h3>
+  <p>Twenty years of contracts, permits and procedures, answering questions with the source
+  attached. Institutional memory, on demand.</p></div>
+  <div class="step" data-reveal><div class="k">03 &middot; AUTOMATE</div><h3>Workflows that run themselves</h3>
+  <p>Invoicing, scheduling, data entry, reporting. The busywork moves on its own and your
+  people do the work that needs a person.</p></div>
+  <div class="step" data-reveal><div class="k">04 &middot; DRAFT</div><h3>The paperwork engine</h3>
+  <p>Proposals, RFP responses, permits and compliance filings, drafted in hours instead of
+  weeks. Built for the paperwork state.</p></div>
+  <div class="step" data-reveal><div class="k">05 &middot; EMPLOY</div><h3>Digital employees</h3>
+  <p>The hire you could not make. A named agent with a real job description, working whole
+  systems end to end, on shift around the clock.</p></div>
+  <div class="step" data-reveal><div class="k">06 &middot; CONNECT</div><h3>The digital crew</h3>
+  <p>Connected agents running the back office together, a working model of your operation.
+  This is the ceiling, and this desk has built it before.</p></div>
+</div>"""
+
+    tiers = f"""<h2 data-reveal>Three ways in</h2>
+<p class="sub" data-reveal>Every engagement starts with the truth about your operation and
+ends with something you own. Prices are where the work starts, scoped in the open.</p>
+<div class="item a-open" id="field-study" data-reveal>
+  <div class="body">
+    <div class="top"><span class="chip days">FROM $2,500</span><span class="chip kind">1 TO 2 WEEKS &middot; THE FLAGSHIP</span></div>
+    <h3>The Field Study</h3>
+    <p>Deep discovery, run like our reporting. We study your operation from the inside and
+    your industry and competitors from the outside, then hand you a ranked map of where AI
+    actually pays in your business and a working prototype of the best bet. Most firms sell
+    a slide deck at this stage. The prototype comes standard here.</p>
+    <div class="access">If the honest answer is that AI does not pay in your business yet,
+    that is the answer you get. The desk that verifies every claim on the docket does not
+    sell systems that do not pay.</div>
+  </div>
+</div>
+<div class="item" data-reveal>
+  <div class="body">
+    <div class="top"><span class="chip days">FROM $6,000</span><span class="chip kind">FIRST SYSTEM TYPICALLY LIVE INSIDE A MONTH</span></div>
+    <h3>The Build</h3>
+    <p>Whatever the Field Study surfaces, or whatever you already know you want. Shipped to
+    production behind real quality gates, then improved on a schedule. Every build ends with
+    a model you own, trained on your work, so costs fall over time instead of climbing.</p>
+  </div>
+</div>
+<div class="item" data-reveal>
+  <div class="body">
+    <div class="top"><span class="chip days">FROM $6,000 A MONTH</span><span class="chip kind">ONGOING</span></div>
+    <h3>The Partnership</h3>
+    <p>An embedded engineer plus standing AI leadership, for owners who want to win the AI
+    front of their industry without becoming engineers. We work inside your business, keep
+    every system on the best model for the job, train models you own outright, and stay on
+    the hook for the outcome, not the deliverable.</p>
+  </div>
+</div>"""
+
+    headcount = """<h2 data-reveal>Cut once, correctly</h2>
+<p data-reveal>Some businesses are weighing AI against headcount. Few say it out loud, and
+fewer have anywhere honest to think it through. The record so far argues for care. Klarna
+shrank its human support behind an AI assistant, then went back to hiring people when
+quality slipped. Commonwealth Bank cut 45 service roles for a chatbot, then admitted the
+roles were not redundant and offered them back. Ford brought back more than 350 veteran
+engineers after AI inspection kept missing defects. Gartner now predicts half the companies
+that cut staff over AI will be rehiring for the same work by 2027.</p>
+<p data-reveal>The Field Study maps which work AI can genuinely absorb and which it will
+fail at, before anyone's job is on the line. If you are going to restructure around AI, do
+it once, correctly, with evidence.</p>"""
+
+    receipts = """<h2 data-reveal>The shop runs on what it sells</h2>
+<p class="sub" data-reveal>You are not the test case. The systems we sell are the systems
+we already run.</p>
+<div class="steps">
+  <div class="step" data-reveal><div class="k">01 &middot; IN PUBLIC</div><h3>This site is the portfolio</h3>
+  <p>The deck that ships every morning is researched, drawn, reviewed and delivered by our
+  own autonomous studio. You are reading the proof of work right now.</p></div>
+  <div class="step" data-reveal><div class="k">02 &middot; IN PRODUCTION</div><h3>Twenty plus systems, running now</h3>
+  <p>Content engines, event pipelines, comment agents, analytics loops and multi-agent
+  systems built for Lower 48 companies, including a fintech and a national AI consultancy,
+  all behind quality gates and approval steps.</p></div>
+  <div class="step" data-reveal><div class="k">03 &middot; SELF IMPROVING</div><h3>The machine upgrades itself</h3>
+  <p>After every run our studio studies what hurt and ships fixes to its own machinery.
+  Client systems get the same habit, so what you own gets better every month.</p></div>
+</div>"""
+
+    body = f"""<div class="hero heroanim">
+<div><div class="daylight">{daylight_chip(today)}</div></div>
+<h1>Put AI to <em>work</em></h1>
+<p class="tag">Alaska AI reads the state's AI beat every morning. The rest of the day, this
+desk builds AI systems for Alaska businesses. Digital employees for the jobs you cannot
+fill, paperwork engines for the filings that never stop, and straight answers about what
+pays and what does not.</p>
+<div class="ctarow">
+  <a class="cta gold" href="#apply">SEE WHAT PAYS</a>
+  <a class="cta ghost" href="#field-study">THE FIELD STUDY</a>
+</div>
+{stats}
+</div>
+<h2 data-reveal>Most AI projects do not pay. The winners share one habit.</h2>
+<p data-reveal>Stanford's 2026 AI Index counts 88% of organizations using AI. McKinsey's
+latest survey finds about 6% getting real bottom line value from it, and those winners are
+three times more likely to have redesigned how the work is done than to have bought a
+smarter tool. Goldman Sachs polled 1,256 small businesses this spring. 76% use AI, 14% have
+it wired into daily operations, and 73% say they need help getting there.</p>
+<p data-reveal>That gap is not a technology problem. It is an execution problem, and closing
+it is the job. We find the places AI genuinely pays in your operation, build them into
+production, and keep improving them for as long as they run.</p>
+{range_steps}
+{tiers}
+{headcount}
+{receipts}
+<h2 data-reveal>Built for the businesses that run this state</h2>
+<p data-reveal>Lodges and outfitters from Talkeetna to Southeast. Clinics and elder care in
+the Valley. Processors in Kodiak and Dutch Harbor. Native corporations with a proposal desk
+and a federal deadline. Contractors, utilities, and the shops that keep them all supplied.
+If you already know what you want built, bring it. If you only know that AI matters and you
+do not want to become an engineer to win with it, you are exactly who this desk works for.</p>
+<h2 data-reveal id="apply">See what pays</h2>
+<p class="sub" data-reveal>Send five plain lines about your operation. You get a straight
+read on whether the Field Study fits, and a no costs you nothing.</p>
+<div class="ctarow act" data-reveal>
+  <a class="cta gold" href="{apply_mail}">SEE WHAT PAYS</a>
+  <a class="cta ghost" href="../archive/">READ THE DAILY BEAT</a>
+</div>
+<p class="fineprint" data-reveal>No pitch deck, no drip campaign. One reply, from the same
+desk that writes the deck.</p>
+<div class="about-line" data-reveal><p>Prices are starting points, scoped in the open before
+any work begins. The docket stays free. The deck ships daily either way.</p></div>"""
+
+    ld = {"@context": "https://schema.org", "@type": "ProfessionalService",
+          "name": "Alaska AI", "url": f"{site_url}/services/",
+          "areaServed": {"@type": "State", "name": "Alaska"},
+          "description": "AI systems built in Alaska for Alaska businesses. Digital "
+                         "employees, paperwork engines and embedded AI partnership from "
+                         "the desk behind the state's daily AI beat.",
+          "makesOffer": [
+              {"@type": "Offer", "name": "The Field Study",
+               "description": "Deep discovery inside your operation and across your "
+                              "industry, with a ranked roadmap and a working prototype.",
+               "priceSpecification": {"@type": "PriceSpecification", "minPrice": 2500,
+                                      "priceCurrency": "USD"}},
+              {"@type": "Offer", "name": "The Build",
+               "description": "Production AI systems, from voice agents to digital "
+                              "employees, each ending in a model the client owns.",
+               "priceSpecification": {"@type": "PriceSpecification", "minPrice": 6000,
+                                      "priceCurrency": "USD"}},
+              {"@type": "Offer", "name": "The Partnership",
+               "description": "An embedded AI engineer plus standing AI leadership, "
+                              "monthly.",
+               "priceSpecification": {"@type": "PriceSpecification", "minPrice": 6000,
+                                      "priceCurrency": "USD"}}]}
+    return page("Services - Alaska AI", "AI systems built in Alaska for Alaska businesses. "
+                "Digital employees, paperwork engines and embedded AI partnership from the "
+                "desk behind the state's daily AI beat. The Field Study from $2,500.",
+                body, "../", "services", today, site_url, "services/", ld=ld)
+
+
 def about_page(today, site_url):
     body = f"""<div class="hero" style="min-height:auto;padding-top:9vh">
 <h1>Built in the <em>North</em></h1>
@@ -991,7 +1168,7 @@ def touch_icon(out):
 
 
 def sitemap(site_url, runs):
-    urls = ["", "docket/", "archive/", "about/"] + [f"archive/{r['date']}/" for r in runs]
+    urls = ["", "docket/", "archive/", "services/", "about/"] + [f"archive/{r['date']}/" for r in runs]
     entries = "".join(f"<url><loc>{site_url}/{u}</loc></url>" for u in urls)
     return ('<?xml version="1.0" encoding="UTF-8"?>'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
@@ -1023,6 +1200,7 @@ def build(today, out_dir, site_url=None, domain=""):
         "index.html": home_page(today, site_url, docket, runs),
         "docket/index.html": docket_page(today, site_url, docket),
         "archive/index.html": archive_page(today, site_url, runs),
+        "services/index.html": services_page(today, site_url),
         "about/index.html": about_page(today, site_url),
         "404.html": not_found_page(today, site_url),
     }
