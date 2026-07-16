@@ -64,3 +64,13 @@ named parties (three conservation orgs; one unnamed Nuiqsut resident) are refere
 ## Deliverables
 - 9:16 master (1080x1920, TikTok cut) and 4:5 feed cut (1080x1350, the LinkedIn deliverable), both
   H.264 High, faststart, AAC 48k, under 100 MB, permanent GitHub media-branch links.
+
+## Revision 2026-07-16 (owner feedback)
+- Removed the VO saying "Quote: hell no" / "Quote: no A.I." — the beat is now a
+  silent hold where the on-screen HELL NO speech bubble and NO AI card carry it
+  (music + SFX continue). S5 shows both cards legibly in the wide shot, then the
+  snap-zoom punctuates.
+- Fixed "chips" reading as "cheaps": the line is now "No computer chips." (natural
+  collocation), which synthesizes cleanly.
+- Scene timing is now data-driven from the VO line starts (scripts/build_scenes.py
+  -> episode_props.json scenes), so narration edits auto-resync the timeline.

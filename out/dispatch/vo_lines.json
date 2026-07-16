@@ -1,5 +1,5 @@
 {
-  "total": 52.76,
+  "total": 53.16,
   "gap": 0.42,
   "voice": "en-US-AndrewMultilingualNeural",
   "rate": "+6%",
@@ -36,27 +36,27 @@
     },
     {
       "idx": 5,
-      "text": "Some kept it short. Quote: hell no. Quote: no A.I.",
+      "text": "Some kept it short.",
       "start": 30.35,
-      "end": 34.5
+      "end": 31.57
     },
     {
       "idx": 6,
-      "text": "Here's the honest part. Nothing is built. No customers. No chips. The state has not decided.",
-      "start": 34.92,
-      "end": 41.2
+      "text": "Here's the honest part. Nothing is built. No customers. No computer chips. And the state has not decided.",
+      "start": 34.67,
+      "end": 41.6
     },
     {
       "idx": 7,
       "text": "The comment window is the real vote. And it closes tomorrow. July seventeenth.",
-      "start": 41.62,
-      "end": 46.82
+      "start": 42.02,
+      "end": 47.22
     },
     {
       "idx": 8,
       "text": "So the loudest thing on the tundra is not the machine. It's the mailbox. What would your comment say?",
-      "start": 47.24,
-      "end": 52.76
+      "start": 47.64,
+      "end": 53.16
     }
   ]
 }

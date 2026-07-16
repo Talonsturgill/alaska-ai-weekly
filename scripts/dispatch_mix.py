@@ -13,7 +13,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "/usr/local/bin/ffmpeg")
 SR = 44100
-VIDEO_SECS = 55.0
+VIDEO_SECS = 1673/30  # match Root durationInFrames (1673f)
 
 
 def run(cmd):
@@ -49,33 +49,37 @@ def sfx(path, kind):
     run([FF, "-y", "-f", "lavfi", "-i", f, "-ac", "2", "-ar", str(SR), path])
 
 
-# SFX events: (time_s, kind) — >=1 per scene, cut to the picture (VISUAL_FLOW).
+# SFX events cut to the picture, derived from the VO line starts so they stay in
+# sync when the narration changes. L[i] = start time of VO line i.
+_lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
+L = {x["idx"]: x["start"] for x in _lines}
 EVENTS = [
-    (0.10, "whoosh"),    # S1 machine appears
-    (5.00, "pop"),       # square mile stamp
-    (7.00, "riser"),     # plug reaches / gigawatt
-    (10.31, "whoosh"),   # S2 scene in
-    (13.6, "ding"),      # +30% badge
-    (17.16, "whoosh"),   # S3 in
-    (19.7, "pop"),       # $500M
-    (21.3, "thud"),      # $10B leaps
-    (24.63, "klaxon"),   # S4 revolt
-    (26.0, "paper"),     # paper storm
-    (27.2, "ding"),      # 500+ badge
-    (30.35, "whoosh"),   # S5 in
-    (31.0, "thud"),      # HELL NO impact
-    (33.0, "pop"),       # NO AI card
-    (34.92, "stamp"),    # S6 PROPOSAL stamp
-    (38.5, "pop"),       # caveat label
-    (41.62, "whoosh"),   # S7 in
-    (43.0, "ding"),      # calendar 17
-    (44.6, "riser"),     # LAST CALL
-    (47.24, "whoosh"),   # S8 button
-    (49.5, "ding"),      # question
+    (L[0] + 0.10, "whoosh"),   # S1 machine appears
+    (L[1] + 1.80, "pop"),      # square mile
+    (L[1] + 3.80, "riser"),    # plug reaches / gigawatt
+    (L[2] + 0.00, "whoosh"),   # S2 in
+    (L[2] + 3.30, "ding"),     # +30% badge
+    (L[3] + 0.00, "whoosh"),   # S3 in
+    (L[3] + 2.50, "pop"),      # $500M
+    (L[3] + 4.10, "thud"),     # $10B leaps
+    (L[4] + 0.00, "klaxon"),   # S4 revolt
+    (L[4] + 1.40, "paper"),    # paper storm
+    (L[4] + 2.60, "ding"),     # 500+ badge
+    (L[5] + 0.00, "whoosh"),   # S5 in ("Some kept it short.")
+    (L[5] + 0.60, "thud"),     # HELL NO bubble lands (silent hold)
+    (L[5] + 1.70, "pop"),      # NO AI card (silent hold)
+    (L[5] + 3.40, "riser"),    # snap-zoom onto the face (closing punctuation)
+    (L[6] + 0.00, "stamp"),    # S6 PROPOSAL stamp
+    (L[6] + 3.60, "pop"),      # caveat label
+    (L[7] + 0.00, "whoosh"),   # S7 in
+    (L[7] + 1.40, "ding"),     # calendar 17
+    (L[7] + 3.00, "riser"),    # LAST CALL
+    (L[8] + 0.00, "whoosh"),   # S8 button
+    (L[8] + 2.30, "ding"),     # question CTA
 ]
 
-SILENCE_DIP_AT = 46.6   # the breath before the button (pre-S8), >=6 dB under bed
-DIP_LEN = 0.9
+SILENCE_DIP_AT = L[8] - 0.6   # the breath just before the button
+DIP_LEN = 0.8
 
 
 def main():
