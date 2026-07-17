@@ -569,3 +569,28 @@ dispatch_history:
     register: IGS comedic infographic
     metaphor: hungry machine whose numbers wont settle, checked by a paper-flood and
       a mailbox
+- date: '2026-07-17'
+  topic: UAF wins $15M NSF Critical Mineral Accelerator Engine using AI to prospect
+    Alaska's critical minerals
+  slug: dispatch-2026-07-17-uaf-critical-minerals-ai
+  key_entities:
+  - UAF
+  - NSF Critical Mineral Accelerator Engine
+  - Alaska critical minerals
+  - AI mineral prospecting
+  archetype: machine mining its own parts (cross-section drill)
+  palette: amethyst-plum copper citrine phosphor-lime
+  voice: cloned:talon
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: vertical-descent
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: editorial-schematic
+    camera_strategy: aerial-descent
+    light_story: night-practical
+    palette: amethyst-plum subsurface bedrock, copper-rose machine metal, citrine-gold
+      ore and chip glow, phosphor-lime AI-search accent
+    metaphor: an AI machine drilling into Alaska's bedrock for the exact critical
+      minerals that go into its own chip, learning the ground (and the funding) have
+      real limits it cannot dig around

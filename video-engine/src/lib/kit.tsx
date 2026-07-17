@@ -108,14 +108,19 @@ export const Stamp: React.FC<{cx: number; cy: number; s: number; text: string; r
 //   'shock'    — wide eyes, open mouth
 //   'ghost'    — dashed unbuilt outline, hollow (the honest caveat)
 // =============================================================================
-export type MachineEmotion = 'greedy' | 'nervous' | 'shock' | 'ghost';
+export type MachineEmotion = 'greedy' | 'focused' | 'nervous' | 'shock' | 'ghost';
 
 export const ServerMachine: React.FC<{
   frame: number; emotion?: MachineEmotion; x?: number; y?: number; scale?: number;
-  facing?: 1 | -1; lookX?: number;
-}> = ({frame: f, emotion = 'greedy', x = 0, y = 0, scale = 1, facing = 1, lookX = 0}) => {
+  facing?: 1 | -1; lookX?: number; tint?: 'steel' | 'copper';
+}> = ({frame: f, emotion = 'greedy', x = 0, y = 0, scale = 1, facing = 1, lookX = 0, tint = 'steel'}) => {
   const ghost = emotion === 'ghost';
-  const body = ghost ? 'none' : STEEL;
+  // tint lets the same rig re-skin per episode (copper = the 2026-07-17 prospecting machine,
+  // literally made of mined metal). Ghost stays the dashed hollow caveat regardless of tint.
+  const PAL = tint === 'copper'
+    ? {base: '#c56b4a', shade: '#8f4a30', hi: '#e0a07f'}
+    : {base: STEEL, shade: STEEL_D, hi: STEEL_L};
+  const body = ghost ? 'none' : PAL.base;
   const stroke = ghost ? '#9fb2d6' : INK;
   const dash = ghost ? '16 12' : undefined;
   const blink = ((f + 20) % 96) < 5 && emotion !== 'shock';
@@ -131,14 +136,14 @@ export const ServerMachine: React.FC<{
       <rect x={-165} y={-470} width={330} height={470} rx={34} fill={body} stroke={stroke} strokeWidth={OUT + 2} strokeDasharray={dash} />
       {!ghost && (
         <>
-          <path d="M70,-462 h64 a26,26 0 0 1 26,26 v418 a26,26 0 0 1 -26,26 h-64 Z" fill={STEEL_D} opacity={0.8} />
-          <rect x={-150} y={-452} width={48} height={168} rx={20} fill={STEEL_L} opacity={0.65} />
+          <path d="M70,-462 h64 a26,26 0 0 1 26,26 v418 a26,26 0 0 1 -26,26 h-64 Z" fill={PAL.shade} opacity={0.8} />
+          <rect x={-150} y={-452} width={48} height={168} rx={20} fill={PAL.hi} opacity={0.65} />
           {/* rack seams */}
           <path d="M-158,-250 h300" stroke={INK} strokeWidth={5} opacity={0.7} />
           <path d="M-158,-170 h300" stroke={INK} strokeWidth={5} opacity={0.7} />
           {/* side vents */}
           {[0, 1, 2].map((i) => (
-            <rect key={i} x={-150} y={-150 + i * 40} width={120} height={17} rx={8} fill={STEEL_D} stroke={INK} strokeWidth={4} />
+            <rect key={i} x={-150} y={-150 + i * 40} width={120} height={17} rx={8} fill={PAL.shade} stroke={INK} strokeWidth={4} />
           ))}
           {/* LED row */}
           {[0, 1, 2, 3].map((i) => (
@@ -175,8 +180,8 @@ export const ServerMachine: React.FC<{
             )}
             {!ghost && blink && (
               <>
-                <rect x={-112} y={-372} width={96} height={26} rx={12} fill={STEEL} stroke={INK} strokeWidth={5} />
-                <rect x={16} y={-372} width={96} height={26} rx={12} fill={STEEL} stroke={INK} strokeWidth={5} />
+                <rect x={-112} y={-372} width={96} height={26} rx={12} fill={PAL.base} stroke={INK} strokeWidth={5} />
+                <rect x={16} y={-372} width={96} height={26} rx={12} fill={PAL.base} stroke={INK} strokeWidth={5} />
               </>
             )}
             {/* brows */}
@@ -184,6 +189,14 @@ export const ServerMachine: React.FC<{
               <g>
                 <path d={`M-118,-410 q54,${-12 - 3 * Math.sin(f / 18)} 104,8`} fill="none" stroke={INK} strokeWidth={12} strokeLinecap="round" />
                 <path d={`M14,-402 q54,${-20 - 3 * Math.sin(f / 18)} 104,-10`} fill="none" stroke={INK} strokeWidth={12} strokeLinecap="round" />
+              </g>
+            )}
+            {/* 'focused' — the WORKING driller (no hungry arch, no drool): brows set
+                level-and-inward on the task. Differentiates this hero from the 07-16 grinning mascot. */}
+            {emotion === 'focused' && (
+              <g>
+                <path d="M-120,-406 q54,-4 104,6" fill="none" stroke={INK} strokeWidth={12} strokeLinecap="round" />
+                <path d="M16,-400 q54,-4 104,6" fill="none" stroke={INK} strokeWidth={12} strokeLinecap="round" />
               </g>
             )}
             {emotion === 'nervous' && (
@@ -201,6 +214,12 @@ export const ServerMachine: React.FC<{
                 ))}
                 {/* drool */}
                 <path d={`M74,-238 q9,${14 + 5 * Math.sin(f / 10)} 0,${26 + 5 * Math.sin(f / 10)} q-9,-11 0,-26 Z`} fill="#9fd8ff" stroke={INK} strokeWidth={3.4} />
+              </g>
+            )}
+            {emotion === 'focused' && (
+              <g>
+                {/* a set, concentrating mouth: a short level line with a faint downward focus */}
+                <path d="M-42,-248 q42,14 84,0" fill="none" stroke={INK} strokeWidth={10} strokeLinecap="round" />
               </g>
             )}
             {emotion === 'nervous' && (

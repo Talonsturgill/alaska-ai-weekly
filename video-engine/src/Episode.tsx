@@ -2,117 +2,196 @@ import React from 'react';
 import {AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
 import {z} from 'zod';
 import {Character} from './lib/Character';
-import {SpeedLines, ImpactStar, PaperStorm, ZoomVignette} from './lib/FX';
+import {SpeedLines, ImpactStar, ZoomVignette} from './lib/FX';
 import {
-  INK, RED, RED_D, AMBER, AMBER_D, ICE, SNOW, STEEL, STEEL_D, LAND_D, CYAN, OUT,
-  burst, BoxLabel, StatBurst, FatArrow, Stamp, ServerMachine, AlaskaMini,
+  INK, RED, RED_D, ICE, SNOW,
+  BoxLabel, StatBurst, Stamp, ServerMachine,
 } from './lib/kit';
 
 const BOLD = 'Arial Black, Arial, sans-serif';
-const NAVY = '#141b3d';
-const NAVY_GLOW = '#27356e';
-const RAY = '#1c2752';
+
+// ---- 2026-07-17 palette: amethyst-plum subsurface, copper machine, citrine ore, lime AI ----
+const PLUM = '#3d2a55';
+const PLUM_D = '#2a1c3d';
+const PLUM_GLOW = '#503a6e';
+const CIT = '#ffc21e';        // citrine ore + chip glow
+const CIT_D = '#d99a12';
+const LIME = '#b6ff3a';       // the AI's signature accent
+const LIME_D = '#7fbf1f';
+const COP = '#c56b4a';
+const COP_D = '#8f4a30';
+const GROUND = '#4a3550';     // tundra-over-bedrock band
 
 export const episodeSchema = z.object({
   captions: z.array(z.object({text: z.string(), start: z.number(), end: z.number(), seg: z.number()})),
-  // scene frame boundaries, computed from the VO line timings (scripts/build_scenes.py)
-  // so the timeline auto-resyncs when the narration changes. Optional; falls back to defaults.
   scenes: z.array(z.object({from: z.number(), dur: z.number()})).optional(),
   total: z.number().optional(),
 });
 export type EpisodeProps = z.infer<typeof episodeSchema>;
 
-// ---------------------------------------------------------------- backgrounds
-const BurstBG: React.FC<{f: number; tone?: 'navy' | 'ember'}> = ({f, tone = 'navy'}) => {
-  const c = tone === 'navy' ? {bg: NAVY, glow: NAVY_GLOW, ray: RAY} : {bg: '#3a1c14', glow: '#6e3a27', ray: '#52281c'};
-  return (
-    <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-      <radialGradient id={`g_${tone}`} cx="50%" cy="46%" r="60%">
-        <stop offset="0%" stopColor={c.glow} />
-        <stop offset="100%" stopColor={c.bg} />
-      </radialGradient>
-      <rect width="1080" height="1920" fill={`url(#g_${tone})`} />
-      <g transform={`rotate(${f * 0.06} 540 900)`} opacity={0.8}>
-        {Array.from({length: 14}).map((_, i) => (
-          <path key={i} d="M540,900 L455,-700 L625,-700 Z" fill={c.ray} transform={`rotate(${(i * 360) / 14} 540 900)`} />
-        ))}
-      </g>
-    </svg>
-  );
-};
-
-const TundraBG: React.FC<{f: number; push: number}> = ({f, push}) => (
+// ================================================================ shared BG
+const SubsurfaceBG: React.FC<{f: number; descent?: number}> = ({f, descent = 0}) => (
   <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#2a3f66" />
-      <stop offset="100%" stopColor="#4a6a94" />
-    </linearGradient>
-    <rect width="1080" height="1320" fill="url(#sky2)" />
-    <circle cx="852" cy="360" r="86" fill="#f2e8c8" opacity={0.9} />
-    <circle cx="852" cy="360" r="132" fill="#f2e8c8" opacity={0.22} />
-    <g transform={`translate(${-6 * (push - 1) * 30},0)`}>
-      {[[0, 770, 260], [250, 706, 300], [540, 748, 300], [820, 700, 320]].map(([x0, peakY, w], i) => (
-        <g key={i}>
-          <path d={`M${x0 - 40},1330 L${x0 + w / 2},${peakY} L${x0 + w + 40},1330 Z`} fill={i % 2 ? '#8fa3b8' : '#71869c'} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
-          <path d={`M${x0 + w / 2 - w * 0.12},${peakY + 80} L${x0 + w / 2},${peakY} L${x0 + w / 2 + w * 0.12},${peakY + 80} L${x0 + w / 2 + w * 0.05},${peakY + 60} L${x0 + w / 2},${peakY + 82} L${x0 + w / 2 - w * 0.06},${peakY + 58} Z`} fill="#fff" stroke={INK} strokeWidth={4} />
-        </g>
-      ))}
+    <radialGradient id="plumG" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stopColor={PLUM_GLOW} />
+      <stop offset="100%" stopColor={PLUM_D} />
+    </radialGradient>
+    <rect width="1080" height="1920" fill="url(#plumG)" />
+    {/* faint bedrock strata drifting up as we descend (parallax) */}
+    <g opacity={0.5}>
+      {Array.from({length: 9}).map((_, i) => {
+        const y = ((i * 230 + descent * 40 + f * 0.25) % 2100) - 100;
+        return <path key={i} d={`M-40,${y} q270,${18 - (i % 3) * 12} 560,0 q270,-16 600,4`} fill="none" stroke={PLUM} strokeWidth={10} opacity={0.5} />;
+      })}
     </g>
-    <rect x="0" y="1300" width="1080" height="620" fill="#7a8a5e" />
-    <path d="M0,1300 q270,-24 540,0 q270,24 540,0 L1080,1920 L0,1920 Z" fill={LAND_D} opacity={0.45} />
-    {[120, 360, 720, 960].map((tx, i) => (
-      <g key={i} transform={`translate(${tx},${1380 + (i % 2) * 120})`}>
-        <path d="M-16,0 q4,-26 10,-30 M0,0 q0,-30 4,-34 M16,0 q-2,-24 -10,-30" fill="none" stroke="#5e6c47" strokeWidth={6} strokeLinecap="round" />
-      </g>
-    ))}
+    {/* drifting mineral dust motes */}
+    <g opacity={0.55}>
+      {Array.from({length: 24}).map((_, i) => {
+        const s = i * 53;
+        const x = (s * 37) % 1080;
+        const y = ((s * 17 + f * (1 + (s % 5) * 0.3)) % 1960);
+        const r = 2 + (s % 4);
+        return <circle key={i} cx={x} cy={y} r={r} fill={i % 4 === 0 ? CIT : LIME} opacity={0.35} />;
+      })}
+    </g>
+    {/* larger drifting glow orbs (big enough to register as disjoint motion at analysis res,
+        spread across the frame so every scene keeps a living, layered background) */}
+    <g>
+      {Array.from({length: 7}).map((_, i) => {
+        const s = i * 97 + 11;
+        const bx = (s * 53) % 980 + 50;
+        const drift = 60 * Math.sin(f / (22 + (s % 7) * 4) + i);
+        const x = bx + drift;
+        const y = ((s * 29 + f * (0.9 + (s % 4) * 0.5)) % 2040) - 60;
+        const r = 24 + (s % 5) * 8;
+        const tw = 0.10 + 0.10 * (0.5 + 0.5 * Math.sin(f / 9 + i * 1.7));
+        return <circle key={i} cx={x} cy={y} r={r} fill={i % 2 === 0 ? CIT : LIME} opacity={tw} />;
+      })}
+    </g>
   </svg>
 );
 
-// ================================================================ S1 HOOK + APPETITE
+// a spinning mechanical auger bit from (x,y) pointing DOWN length L
+const DrillBit: React.FC<{x: number; y: number; L: number; f: number; w?: number}> = ({x, y, L, f, wd = 46, w}) => {
+  const W = (w ?? wd) as number;
+  const wobble = 1.5 * Math.sin(f / 2);
+  return (
+    <g transform={`translate(${x + wobble},${y})`}>
+      {/* motor housing with bolts + cooling vents */}
+      <rect x={-W * 0.5} y={-96} width={W} height={64} rx={10} fill={COP} stroke={INK} strokeWidth={6} />
+      <rect x={-W * 0.5} y={-96} width={W * 0.34} height={64} rx={10} fill={COP_D} opacity={0.55} />
+      {[-1, 1].map((s) => <circle key={s} cx={s * W * 0.3} cy={-64} r={5} fill={INK} />)}
+      {[0, 1, 2].map((i) => <rect key={i} x={-W * 0.34} y={-88 + i * 16} width={W * 0.68} height={5} rx={2} fill={INK} opacity={0.5} />)}
+      {/* hex drive collar */}
+      <rect x={-W * 0.28} y={-34} width={W * 0.56} height={22} rx={4} fill="#9aa2ad" stroke={INK} strokeWidth={5} />
+      {/* steel auger shank + conical bit with shaded facets */}
+      <path d={`M${-W / 2},-12 L${W / 2},-12 L0,${L} Z`} fill="#b8bcc6" stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+      <path d={`M0,-12 L${W / 2},-12 L0,${L} Z`} fill="#7f8792" opacity={0.5} />
+      <path d={`M${-W / 2},-12 L${-W * 0.16},-12 L0,${L * 0.7} Z`} fill="#e6ebf0" opacity={0.5} />
+      {/* rotating helical flights (spin cue) */}
+      {Array.from({length: 5}).map((_, i) => {
+        const t = ((f * 0.6 + i * 5) % 24) / 24;
+        const yy = -8 + t * (L + 8);
+        const ww = (W / 2) * (1 - t) * 0.95;
+        return <path key={i} d={`M${-ww},${yy} q${ww},11 ${2 * ww},0`} fill="none" stroke={INK} strokeWidth={4.5} opacity={0.85} />;
+      })}
+    </g>
+  );
+};
+
+// a dashed empty chip-socket (the honest 'missing part'); filled = glowing chip seated
+const ChipSocket: React.FC<{x: number; y: number; s?: number; filled?: boolean; match?: number; label?: boolean}> = ({x, y, s = 1, filled = false, match = 0, label = false}) => (
+  <g transform={`translate(${x},${y}) scale(${s})`}>
+    <rect x={-70} y={-46} width={140} height={92} rx={10} fill={filled ? CIT : 'none'} stroke={filled ? INK : '#d7c2ef'} strokeWidth={6} strokeDasharray={filled ? undefined : '12 9'} />
+    {filled && Array.from({length: 6}).map((_, i) => (
+      <line key={i} x1={-70} y1={-30 + i * 12} x2={-96} y2={-30 + i * 12} stroke={INK} strokeWidth={5} />
+    ))}
+    {!filled && <text x={0} y={14} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={40} fill="#d7c2ef">?</text>}
+    {match > 0.02 && match < 0.99 && (
+      <g transform={`translate(0,${-260 * (1 - match)}) scale(${1 + 0.3 * (1 - match)})`} opacity={0.5 + 0.5 * match}>
+        <rect x={-64} y={-40} width={128} height={80} rx={8} fill={CIT} stroke={INK} strokeWidth={6} opacity={0.85} />
+      </g>
+    )}
+    {label && (
+      <g transform="translate(0,116)">
+        <BoxLabel x={0} y={0} text="MADE WITH" sub="COBALT · GRAPHITE · GALLIUM" w={440} h={94} fs={30} fill={ICE} color={INK} />
+      </g>
+    )}
+  </g>
+);
+
+// ================================================================ S1 HOOK — the driller
 const S1: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const headIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 120}});
-  const akIn = spring({frame: f - 30, fps, config: {damping: 13, stiffness: 90}});
-  const machIn = spring({frame: f - 16, fps, config: {damping: 12, stiffness: 90}});
-  const akFloat = 6 * Math.sin(f / 26);
-  const lookX = 10 + 6 * Math.sin(f / 40);
-  // plug reach + gigawatt around L1 (~f96+)
-  const plugT = interpolate(f, [150, 196], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const sqT = spring({frame: f - 120, fps, config: {damping: 10, stiffness: 130}});
-  const gwT = spring({frame: f - 210, fps, config: {damping: 8, stiffness: 150}});
-  const gwPump = 1 + 0.06 * Math.sin(f / 5) * (gwT > 0.5 ? 1 : 0);
+  // frame 0 is the poster: machine + headline fully settled at t=0 (edges/contrast graded),
+  // the hook's motion comes from the spinning drill + dust + drifting orbs, not an entrance slide.
+  const machIn = spring({frame: f + 34, fps, config: {damping: 14, stiffness: 100}});
+  const headIn = spring({frame: f + 34, fps, config: {damping: 13, stiffness: 120}});
+  const lookX = 4 + 3 * Math.sin(f / 30);
+  const dustN = 10;
+  const fleck = interpolate(f, [118, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const ghostChip = f > 120 ? 0.4 + 0.4 * Math.sin(f / 7) : 0;
   return (
-    <AbsoluteFill style={{backgroundColor: NAVY}}>
-      <BurstBG f={f} />
-      {/* Alaska floating */}
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `translateY(${akFloat - 50 * (1 - akIn)}px)`, opacity: akIn}}>
-        <AlaskaMini frame={f} x={150} y={360} scale={1.4} />
-        <g opacity={sqT}>
-          <BoxLabel x={735} y={470} text="1 SQUARE MILE" w={320} h={62} fs={34} fill={ICE} rot={3} />
-        </g>
+    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
+      <SubsurfaceBG f={f} descent={1} />
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <rect x={0} y={1560} width={1080} height={360} fill={GROUND} />
+        <path d="M0,1560 q270,-22 540,0 q270,22 540,0 L1080,1920 L0,1920 Z" fill={PLUM_D} opacity={0.5} />
+        {/* ink-outlined ore chunks embedded in the bedrock band */}
+        {[[120, 1660, '#5a7fd6'], [340, 1720, '#d98cc4'], [820, 1690, '#7fae7a'], [980, 1650, CIT]].map(([x, y, c], i) => (
+          <g key={i} transform={`translate(${x},${y})`}>
+            <path d="M-34,0 l22,-30 l38,6 l20,32 l-16,34 l-42,4 Z" fill={c as string} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+            <path d="M-16,-14 l16,10 l-8,18" fill="none" stroke={INK} strokeWidth={3} opacity={0.6} />
+          </g>
+        ))}
       </svg>
-      {/* Machine */}
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `translateY(${180 * (1 - machIn)}px)`, opacity: machIn}}>
-        <g transform="translate(560,1740)">
-          <ServerMachine frame={f} emotion="greedy" scale={1.12} lookX={lookX} />
+      {/* floating faceted mineral crystals the AI is hunting (fills the frame, on-theme, edge-rich) */}
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        {[[180, 700, CIT, 1.1], [900, 720, '#5a7fd6', 0.9], [770, 900, LIME, 0.8], [300, 940, '#d98cc4', 0.85], [560, 640, '#c9d0dc', 0.7]].map(([x, y, c, s], i) => {
+          const bob = 10 * Math.sin(f / (24 + i * 6) + i);
+          const S = s as number;
+          return (
+            <g key={i} transform={`translate(${x},${(y as number) + bob}) scale(${S})`} opacity={0.92}>
+              <path d="M0,-58 l40,26 l-14,54 l-52,0 l-14,-54 Z" fill={c as string} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+              <path d="M0,-58 l0,80 M-40,-32 l40,54 l40,-54" fill="none" stroke={INK} strokeWidth={4} opacity={0.65} />
+              <path d="M0,-58 l40,26 l-40,10 l-40,-10 Z" fill={SNOW} opacity={0.25} />
+            </g>
+          );
+        })}
+      </svg>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `translateY(${150 * (1 - machIn)}px)`, opacity: machIn}}>
+        <g transform="translate(470,1360)">
+          <ServerMachine frame={f} emotion="focused" tint="copper" scale={1.06} lookX={lookX} />
         </g>
-        {/* plug arm reaching up-left toward the pin */}
-        <g opacity={plugT > 0.02 ? 1 : 0}>
-          <FatArrow d="M690,1230 C 840,1040 760,720 610,556" revealT={plugT} color={AMBER} head={[610, 556]} headRot={-46} />
+        {ghostChip > 0.02 && (
+          <g opacity={ghostChip}>
+            <rect x={396} y={1120} width={128} height={80} rx={8} fill="none" stroke="#ffe9a8" strokeWidth={5} strokeDasharray="11 8" />
+          </g>
+        )}
+        <g>
+          <path d="M600,1230 q90,40 96,150" fill="none" stroke={COP} strokeWidth={40} strokeLinecap="round" />
+          <path d="M600,1230 q90,40 96,150" fill="none" stroke={COP_D} strokeWidth={18} strokeLinecap="round" opacity={0.6} />
+          <DrillBit x={697} y={1400} L={190} f={f} />
+          {Array.from({length: dustN}).map((_, i) => {
+            const t = ((f * 1.3 + i * 26) % 60) / 60;
+            const a = -1.1 + (i / dustN) * 2.2;
+            const px = 697 + Math.sin(a) * 90 * t;
+            const py = 1600 - 60 * t - Math.cos(a) * 20;
+            return <circle key={i} cx={px} cy={py} r={(1 - t) * 16 + 3} fill={CIT} opacity={(1 - t) * 0.5} />;
+          })}
         </g>
-        {/* GIGAWATT plug label that pumps up */}
-        {gwT > 0.02 && (
-          <g transform={`translate(770,690) scale(${gwT * gwPump})`}>
-            <StatBurst cx={0} cy={0} big="1+ GW" lines={['GIGAWATT']} fill={AMBER} rot={-6} big_fs={70} />
+        {fleck > 0.02 && (
+          <g transform={`translate(${697 + 30 * fleck},${1560 - 180 * fleck})`} opacity={fleck}>
+            <rect x={-20} y={-14} width={40} height={26} rx={5} fill={CIT} stroke={INK} strokeWidth={5} />
+            <g transform="translate(0,-2)"><ImpactStar cx={0} cy={0} r={16 + 6 * Math.sin(f / 4)} color={SNOW} /></g>
           </g>
         )}
       </svg>
-      {/* headline */}
-      <div style={{position: 'absolute', top: 120, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-150 * (1 - headIn)}px) rotate(-2deg)`}}>
-        <div style={{background: RED, border: `9px solid ${INK}`, borderRadius: 14, padding: '22px 40px', boxShadow: `0 13px 0 ${INK}55`, maxWidth: 860}}>
-          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 82, lineHeight: 1.03, color: '#fff', textAlign: 'center', textTransform: 'uppercase', textShadow: `4px 5px 0 ${RED_D}`}}>
-            The AI Boom Wants Alaska
+      <div style={{position: 'absolute', top: 330, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-150 * (1 - headIn)}px) rotate(-2deg)`}}>
+        <div style={{background: RED, border: `9px solid ${INK}`, borderRadius: 14, padding: '20px 40px', boxShadow: `0 13px 0 ${INK}55`, maxWidth: 900}}>
+          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 96, lineHeight: 1.02, color: '#fff', textAlign: 'center', textTransform: 'uppercase', textShadow: `4px 5px 0 ${RED_D}`}}>
+            AI is Digging<br />in Alaska
           </div>
         </div>
       </div>
@@ -120,54 +199,42 @@ const S1: React.FC = () => {
   );
 };
 
-// ================================================================ S2 SCALE-STACK
+// ================================================================ S2 THE AWARD (UAF + $15M + NSF)
 const S2: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const barA = interpolate(f, [10, 46], [0, 470], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}); // urban AK
-  const barB = interpolate(f, [58, 104], [0, 660], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}); // one building
-  const tickIn = spring({frame: f - 108, fps, config: {damping: 9, stiffness: 150}});
-  const baseY = 1560;
+  const cardIn = spring({frame: f - 6, fps, config: {damping: 13, stiffness: 110}});
+  const bootWipe = interpolate(f, [6, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const badge = spring({frame: f - 70, fps, config: {damping: 9, stiffness: 150}});
+  const seal = spring({frame: f - 150, fps, config: {damping: 10, stiffness: 200}});
+  const lookUp = 2 + 2 * Math.sin(f / 24);
   return (
-    <AbsoluteFill style={{backgroundColor: NAVY}}>
-      <BurstBG f={f} />
-      <div style={{position: 'absolute', top: 150, width: '100%', textAlign: 'center', fontFamily: BOLD, fontWeight: 900, fontSize: 62, color: '#fff', textShadow: `3px 4px 0 ${INK}`}}>ONE BUILDING</div>
-      <div style={{position: 'absolute', top: 232, width: '100%', textAlign: 'center', fontFamily: BOLD, fontWeight: 900, fontSize: 26, color: ICE, opacity: 0.85}}>vs all of urban Alaska's peak power demand &middot; Northern Journal</div>
+    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
+      <SubsurfaceBG f={f} />
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {/* ground line */}
-        <path d={`M120,${baseY} h840`} stroke={INK} strokeWidth={8} strokeLinecap="round" />
-        {/* Bar A: all urban Alaska (cities/lights) */}
-        <g>
-          <rect x={230} y={baseY - barA} width={230} height={barA} rx={8} fill={STEEL} stroke={INK} strokeWidth={OUT} />
-          <rect x={230} y={baseY - barA} width={70} height={Math.min(barA, 300)} rx={8} fill="#7fa1cc" opacity={0.5} />
-          {/* little windows */}
-          {barA > 60 && Array.from({length: Math.floor(barA / 46)}).map((_, i) => (
-            <g key={i}>
-              <rect x={258} y={baseY - 34 - i * 46} width={22} height={22} fill={AMBER} stroke={INK} strokeWidth={3} />
-              <rect x={330} y={baseY - 34 - i * 46} width={22} height={22} fill={AMBER} stroke={INK} strokeWidth={3} />
-            </g>
-          ))}
-          <BoxLabel x={345} y={baseY + 66} text="ALL URBAN ALASKA" w={340} h={56} fs={28} fill={ICE} />
+        <g transform="translate(560,2020) scale(0.9)">
+          <ServerMachine frame={f} emotion="focused" tint="copper" scale={1} lookX={lookUp} />
         </g>
-        {/* Bar B: one data center, taller, casts a shadow on A */}
-        <g>
-          {barB > 20 && <path d={`M620,${baseY - barB} L620,${baseY} L470,${baseY} L470,${baseY - Math.min(barA, barB)} Z`} fill={INK} opacity={0.22} />}
-          <rect x={620} y={baseY - barB} width={250} height={barB} rx={8} fill={RED} stroke={INK} strokeWidth={OUT} />
-          <rect x={620} y={baseY - barB} width={72} height={Math.min(barB, 340)} rx={8} fill="#ff6a52" opacity={0.55} />
-          {/* server rack seams */}
-          {barB > 80 && Array.from({length: Math.floor(barB / 60)}).map((_, i) => (
-            <path key={i} d={`M628,${baseY - 40 - i * 60} h234`} stroke={INK} strokeWidth={4} opacity={0.7} />
-          ))}
-          <BoxLabel x={745} y={baseY + 66} text="ONE DATA CENTER" w={300} h={56} fs={28} fill={RED} color="#fff" />
+      </svg>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <g transform={`translate(540,470) scale(${cardIn})`} opacity={cardIn}>
+          <rect x={-360} y={-120} width={720} height={240} rx={22} fill={ICE} stroke={INK} strokeWidth={10} />
+          <rect x={-360} y={-120} width={720 * bootWipe} height={240} rx={22} fill="#dfeeff" opacity={0.5} />
+          <text x={0} y={-18} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={116} fill={INK} letterSpacing={4}>UAF</text>
+          <text x={0} y={64} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={31} fill={COP_D}>UNIVERSITY OF ALASKA FAIRBANKS</text>
         </g>
-        {/* dashed guide from top of urban-AK bar across to the data-center bar */}
-        {tickIn > 0.02 && (
-          <path d={`M345,${baseY - barA} L745,${baseY - barA}`} stroke={AMBER} strokeWidth={6} strokeDasharray="14 10" opacity={0.85 * tickIn} />
+        {badge > 0.02 && (
+          <g transform={`translate(300,930) scale(${badge})`}>
+            <StatBurst cx={0} cy={0} big="$15M" lines={['FIRST 2 YRS']} fill={CIT} rot={-6} big_fs={92} />
+          </g>
         )}
-        {/* +30% badge: the hardest number, parked at the overshoot of the red bar */}
-        {tickIn > 0.02 && (
-          <g transform={`translate(745,${baseY - barB - 40}) scale(${tickIn})`}>
-            <StatBurst cx={0} cy={0} big="+30%" lines={['MORE POWER']} fill={AMBER} rot={-5} big_fs={78} />
+        {seal > 0.02 && (
+          <g transform={`translate(790,950) scale(${seal})`} opacity={Math.min(1, seal * 1.3)}>
+            <circle r={140} fill="#eef2ff" stroke={INK} strokeWidth={10} />
+            <circle r={140} fill="none" stroke={LIME_D} strokeWidth={6} transform="scale(0.86)" />
+            <text x={0} y={-8} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={76} fill={INK}>NSF</text>
+            <text x={0} y={48} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={COP_D}>NAT'L SCIENCE</text>
+            <text x={0} y={78} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={COP_D}>FOUNDATION</text>
           </g>
         )}
       </svg>
@@ -175,183 +242,225 @@ const S2: React.FC = () => {
   );
 };
 
-// ================================================================ S3 PRICE SEESAW
+// ================================================================ S3 THE MAP (1 of 12, 20 states)
+const bigAlaska = "M120,470 L260,395 L360,405 L430,350 L520,362 L560,300 L640,330 L720,318 L820,360 L940,350 L1000,430 L968,486 L880,510 L916,566 L840,588 L806,672 L700,690 L648,650 L596,706 L520,686 L456,742 L396,700 L336,742 L276,690 L312,610 L224,588 L268,530 L120,500 Z";
 const S3: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const lowIn = spring({frame: f - 20, fps, config: {damping: 11, stiffness: 130}});
-  const highIn = spring({frame: f - 96, fps, config: {damping: 9, stiffness: 130}});
-  // seesaw rocks harder once both numbers exist and never settles
-  const both = f > 100 ? 1 : lowIn * 0.4;
-  const tilt = 13 * Math.sin(f / 9) * both;
-  const xIn = spring({frame: f - 150, fps, config: {damping: 10, stiffness: 140}});
+  const mapIn = spring({frame: f - 4, fps, config: {damping: 14, stiffness: 90}});
+  const callout = spring({frame: f - 20, fps, config: {damping: 9, stiffness: 150}});
+  const r = interpolate(f, [10, 50, 55, 92], [560, 150, 150, 70], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
+  const dots = [[430, 470], [560, 430], [660, 500], [770, 450], [520, 560], [360, 500], [640, 610], [720, 560], [470, 620], [820, 520]];
+  const cx = 600, cy = 500;
+  const dotPulse = 1 + 0.25 * Math.sin(f / 6);
   return (
-    <AbsoluteFill style={{backgroundColor: '#3a1c14'}}>
-      <BurstBG f={f} tone="ember" />
-      <div style={{position: 'absolute', top: 150, width: '100%', textAlign: 'center', fontFamily: BOLD, fontWeight: 900, fontSize: 58, color: '#fff', textShadow: `3px 4px 0 ${INK}`}}>THE COMPANY'S OWN MATH</div>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {/* fulcrum */}
-        <path d="M500,1180 L580,1320 L420,1320 Z" fill={STEEL_D} stroke={INK} strokeWidth={OUT} strokeLinejoin="round" />
-        {/* the plank (rocking) */}
-        <g transform={`translate(540,1170) rotate(${tilt})`}>
-          <rect x={-420} y={-22} width={840} height={44} rx={14} fill={AMBER} stroke={INK} strokeWidth={OUT} />
-          <rect x={-420} y={-22} width={840} height={16} rx={8} fill="#ffd27a" opacity={0.6} />
-          {/* low side */}
-          <g opacity={lowIn} transform="translate(-300,-150)">
-            <rect x={-150} y={-70} width={300} height={140} rx={14} fill={ICE} stroke={INK} strokeWidth={OUT} />
-            <text x={0} y={-6} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={62} fill={INK}>$500M</text>
-            <text x={0} y={40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={INK}>SITE WORK (LEASE DOCS)</text>
+    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
+      <SubsurfaceBG f={f} />
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: mapIn}}>
+        <g transform={`translate(0,300) scale(1.05)`}>
+          <path d={bigAlaska} fill={PLUM_GLOW} stroke={INK} strokeWidth={9} strokeLinejoin="round" />
+          <path d={bigAlaska} fill={PLUM} opacity={0.4} transform="translate(6,10)" />
+          {dots.map(([x, y], i) => {
+            const near = Math.hypot(x - cx, y - cy) < r;
+            return <circle key={i} cx={x} cy={y} r={13} fill={near ? RED : '#7a5a86'} opacity={near ? 1 : 0.5} stroke={INK} strokeWidth={4} />;
+          })}
+          <g transform={`translate(${cx},${cy}) scale(${dotPulse})`}>
+            <circle r={20} fill={CIT} stroke={INK} strokeWidth={5} />
           </g>
-          {/* high side */}
-          <g opacity={highIn} transform="translate(300,-150)">
-            <rect x={-160} y={-70} width={320} height={140} rx={14} fill={RED} stroke={INK} strokeWidth={OUT} />
-            <text x={0} y={-6} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={58} fill="#fff">$10B+</text>
-            <text x={0} y={40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill="#fff">FULL BUILD (COMPANY EST.)</text>
-          </g>
+          <circle cx={cx} cy={cy} r={r} fill="none" stroke={LIME} strokeWidth={7} strokeDasharray="20 14" opacity={0.95} />
+          <circle cx={cx} cy={cy} r={r} fill={LIME} opacity={0.05} />
         </g>
-        {/* 20x bracket that flickers, never locks */}
-        {xIn > 0.02 && (
-          <g transform={`translate(540,900) scale(${xIn})`} opacity={0.7 + 0.3 * Math.sin(f / 3)}>
-            <StatBurst cx={0} cy={0} big="20x" lines={['SPREAD']} fill={CYAN} rot={-4} big_fs={72} />
+      </svg>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        {callout > 0.02 && (
+          <g transform={`translate(540,1270) scale(${0.82 * callout})`}>
+            <StatBurst cx={0} cy={0} big="1 OF 12" lines={['NSF ENGINES', '20 STATES']} fill={LIME} rot={-4} big_fs={58} />
           </g>
         )}
+        <g opacity={callout}>
+          <BoxLabel x={540} y={1410} text="AI NARROWS THE SEARCH" w={640} h={72} fs={40} fill={ICE} color={INK} />
+        </g>
       </svg>
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S4 THE REVOLT
+// ================================================================ S4 CROSS-SECTION + PERIODIC + MINERALS
+const VEINS = [
+  {d: 'M120,300 q120,60 260,40 q160,-24 320,60', col: '#5a7fd6', name: 'COBALT'},
+  {d: 'M80,470 q160,-40 340,20 q180,52 380,-10', col: '#3f4a55', name: 'GRAPHITE'},
+  {d: 'M140,640 q150,60 320,30 q170,-30 360,50', col: '#c9d0dc', name: 'GALLIUM'},
+  {d: 'M100,800 q170,-30 340,30 q170,58 380,-14', col: '#7fae7a', name: 'NICKEL'},
+  {d: 'M160,940 q140,54 320,24 q160,-26 340,44', col: '#d98cc4', name: 'RARE EARTHS'},
+];
 const S4: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const push = interpolate(f, [0, 170], [1.0, 1.06], {extrapolateRight: 'clamp'});
-  const badgeIn = spring({frame: f - 40, fps, config: {damping: 9, stiffness: 140}});
-  const count = Math.round(interpolate(f, [40, 78], [0, 500], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}));
-  const tallyIn = spring({frame: f - 108, fps, config: {damping: 10, stiffness: 130}});
-  // varied everyday Alaskan gear (NOT the fur-ruff parka) so the crowd reads as
-  // generic residents, never a monolithic Alaska Native depiction.
-  const crowd = [
-    {x: 190, s: 0.82, sk: '#e8b48c', hair: '#2b1d12', out: 'puffer', hg: 'beanie', d: 6},
-    {x: 365, s: 0.95, sk: '#c98d63', hair: '#3d2c1e', out: 'flannel', hg: 'cap', d: 0},
-    {x: 545, s: 1.05, sk: '#f0c9a0', hair: '#5a4632', out: 'vest', hg: 'trapper', d: 10},
-    {x: 725, s: 0.95, sk: '#8a5a3c', hair: '#1c1c1c', out: 'worker', hg: 'bare', d: 3},
-    {x: 900, s: 0.82, sk: '#e8b48c', hair: '#6b4a2a', out: 'puffer', hg: 'hood', d: 8},
-  ];
+  const openG = interpolate(f, [4, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const wallIn = spring({frame: f - 120, fps, config: {damping: 13, stiffness: 90}});
+  const wallOut = interpolate(f, [232, 252], [1, 0.16], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const lit = Math.round(interpolate(f, [128, 176], [0, 56], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const circleT = interpolate(f, [180, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // all five mineral names land within the spoken window (local f240-300 = 28-30s), one per word
+  const nameOn = (i: number) => f > 238 + i * 12;
+  const pencilSnap = f > 200;
   return (
-    <AbsoluteFill style={{backgroundColor: '#2a3f66'}}>
-      <div style={{position: 'absolute', width: 1080, height: 1920, transform: `scale(${push})`, transformOrigin: '540px 900px'}}>
-        <TundraBG f={f} push={push} />
-        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-          {/* crowd of everyresidents pointing */}
-          {crowd.map((c, i) => (
-            <g key={i}>
-              <Character frame={f + c.d * 7} pose={i === 2 ? 'point' : 'arms-crossed'} emotion="angry" outfit={c.out as any} headgear={c.hg as any} hair={c.hair} skin={c.sk} facing={1} scale={c.s * 1.02} x={c.x} y={1760} />
+    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
+      <SubsurfaceBG f={f} descent={2} />
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <g transform="translate(0,540)" opacity={openG}>
+          {/* layered rock strata (the cross-section read): banded bedrock behind the ore veins */}
+          <g>
+            {[[220, '#33244a'], [400, '#2c1f40'], [600, '#38285230'], [790, '#2a1c3d'], [980, '#34254c']].map(([yy, c], i) => (
+              <g key={i}>
+                <rect x={0} y={yy as number} width={1080} height={i === 4 ? 200 : ([400, 600, 790, 980][i] - (yy as number))} fill={c as string} opacity={0.9} />
+                <path d={`M0,${yy} q270,${-14 + (i % 2) * 26} 540,4 q270,18 540,-6`} fill="none" stroke={INK} strokeWidth={5} opacity={0.55} />
+              </g>
+            ))}
+          </g>
+          <path d="M0,180 q270,-30 540,0 q270,30 540,0" fill="none" stroke={LIME} strokeWidth={6} strokeDasharray="18 12" opacity={0.8} />
+          {VEINS.map((v, i) => (
+            <g key={i} opacity={openG}>
+              <path d={v.d} fill="none" stroke={INK} strokeWidth={30} strokeLinecap="round" />
+              <path d={v.d} fill="none" stroke={v.col} strokeWidth={18} strokeLinecap="round" opacity={nameOn(i) ? 1 : 0.7} />
+              {nameOn(i) && (
+                <g transform={`translate(858,${290 + i * 128})`}>
+                  <BoxLabel x={0} y={0} text={v.name} w={v.name === 'RARE EARTHS' ? 350 : 250} h={58} fs={30} fill={v.col} color={INK} rot={-2} />
+                </g>
+              )}
             </g>
           ))}
-          <PaperStorm frame={f} count={18} originX={-80} originY={1180} targetX={980} targetY={880} />
-          {/* 500+ badge */}
-          {badgeIn > 0.02 && (
-            <g transform={`translate(300,560) scale(${badgeIn})`}>
-              <StatBurst cx={0} cy={0} big={`${count}+`} lines={['PUBLIC', 'COMMENTS']} fill={AMBER} rot={-5} big_fs={82} />
-            </g>
+        </g>
+      </svg>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: wallIn * wallOut}}>
+        <g transform={`translate(140,300)`}>
+          {Array.from({length: 60}).map((_, i) => {
+            const col = i % 10, row = Math.floor(i / 10);
+            const on = i < lit;
+            const dark = i >= 56;
+            const x = col * 80, y = row * 80;
+            const pencil = i === 34;
+            if (pencil && pencilSnap) {
+              return (
+                <g key={i} transform={`translate(${x},${y})`}>
+                  <rect width={64} height={64} rx={8} fill="#ffd23e" stroke={INK} strokeWidth={5} />
+                  <path d="M14,50 l18,-40" stroke={COP_D} strokeWidth={6} strokeLinecap="round" />
+                  <path d="M40,8 l8,-10" stroke={INK} strokeWidth={5} />
+                </g>
+              );
+            }
+            return (
+              <rect key={i} x={x} y={y} width={64} height={64} rx={8}
+                fill={dark ? '#2c2438' : on ? LIME : '#3a3350'}
+                stroke={INK} strokeWidth={5} opacity={dark ? 0.9 : 1} />
+            );
+          })}
+          {circleT > 0.02 && (
+            <path d="M-30,-30 q420,-40 830,20 q40,240 -20,470 q-420,40 -820,-10 q-30,-240 10,-470 Z"
+              fill="none" stroke={LIME} strokeWidth={9} strokeDasharray={2600} strokeDashoffset={2600 * (1 - circleT)} opacity={0.9} />
           )}
-          {/* fewer than a dozen tally */}
-          {tallyIn > 0.5 && (
-            <g transform="translate(792,690)">
-              <BoxLabel x={0} y={0} text="FEWER THAN A DOZEN" sub="IN FAVOR" w={360} h={96} fs={30} fill={ICE} color={RED} rot={-3 + 2 * Math.sin(f / 20)} />
-            </g>
-          )}
-        </svg>
-      </div>
+        </g>
+        <g opacity={wallIn}>
+          <BoxLabel x={540} y={770} text="56 OF 60 CRITICAL MINERALS" w={730} h={70} fs={38} fill={CIT} color={INK} />
+        </g>
+      </svg>
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S5 HELL NO (standoff)
+// ================================================================ S5 ORE-TO-CHIP + SOCKET (the irony)
 const S5: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  // Hold both HELL NO + NO AI legible in the wide shot (the silent-hold beat),
-  // THEN punch the snap-zoom onto the face as the closing punctuation.
-  const push = interpolate(f, [0, 96], [1.0, 1.06], {extrapolateRight: 'clamp'});
-  const snap = spring({frame: f - 100, fps, config: {damping: 14, stiffness: 190}});
-  const zoomed = f >= 100;
-  const scale = zoomed ? 1.06 + snap * 1.15 : push;
-  const ox = zoomed ? interpolate(snap, [0, 1], [0, 150]) : 0;
-  const oy = zoomed ? interpolate(snap, [0, 1], [0, -250]) : 0;
-  const hellIn = spring({frame: f - 16, fps, config: {damping: 10, stiffness: 150}});
-  const noaiIn = spring({frame: f - 50, fps, config: {damping: 10, stiffness: 150}});
-  const trembleX = 3.6 * Math.sin(f / 3.1);
+  const lift = interpolate(f, [0, 26], [80, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const crack = spring({frame: f - 34, fps, config: {damping: 12, stiffness: 160}});
+  const snap = spring({frame: f - 40, fps, config: {damping: 14, stiffness: 200}});
+  const match = interpolate(f, [120, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
+  const showLabel = f > 200;
+  const emo = f > 44 ? 'shock' : 'focused';
   return (
-    <AbsoluteFill style={{backgroundColor: '#2a3f66', overflow: 'hidden'}}>
-      <div style={{position: 'absolute', width: 1080, height: 1920, transform: `scale(${scale}) translate(${ox}px,${oy}px)`, transformOrigin: '400px 1000px'}}>
-        <TundraBG f={f} push={push} />
-        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-          {/* cowering machine */}
-          <g transform={`translate(${820 + trembleX},1710)`} opacity={0.98}>
-            <ServerMachine frame={f} emotion="nervous" scale={0.92} facing={-1} />
+    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
+      <SubsurfaceBG f={f} />
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <g transform="translate(470,1400)">
+          <ServerMachine frame={f} emotion={emo as any} tint="copper" scale={1.22} />
+        </g>
+        <g opacity={f > 110 ? 1 : 0}>
+          <ChipSocket x={470} y={1215} s={1.05} filled={false} match={match} label={showLabel} />
+        </g>
+      </svg>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `translateY(${lift}px)`}}>
+        {f < 130 && (
+          <g transform="translate(620,560)">
+            <g stroke={INK} strokeWidth={7} fill={COP}>
+              <path d="M-120,-180 q40,120 30,180" />
+              <path d="M120,-180 q-40,120 -30,180" />
+              <rect x={-26} y={-230} width={52} height={90} rx={12} />
+            </g>
+            {crack < 0.5 ? (
+              <g>
+                <path d="M-70,0 l40,-56 l70,10 l40,60 l-30,66 l-80,6 Z" fill={CIT_D} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+                <path d="M-30,-30 l30,20 l-14,30" fill="none" stroke={INK} strokeWidth={4} opacity={0.6} />
+              </g>
+            ) : (
+              <g>
+                <path d={`M-70,0 l40,-56 l40,8 l-20,110 l-30,4 Z`} fill={CIT_D} stroke={INK} strokeWidth={7} strokeLinejoin="round" transform={`translate(${-40 * crack},0) rotate(${-14 * crack})`} />
+                <path d={`M50,-38 l70,10 l40,60 l-30,66 l-52,4 Z`} fill={CIT_D} stroke={INK} strokeWidth={7} strokeLinejoin="round" transform={`translate(${40 * crack},0) rotate(${14 * crack})`} />
+                <g opacity={crack}>
+                  <rect x={-56} y={-40} width={112} height={80} rx={8} fill={CIT} stroke={INK} strokeWidth={6} />
+                  {[0, 1, 2].map((i) => (
+                    <g key={i}>
+                      <line x1={-56} y1={-24 + i * 24} x2={-84} y2={-24 + i * 24} stroke={INK} strokeWidth={5} />
+                      <line x1={56} y1={-24 + i * 24} x2={84} y2={-24 + i * 24} stroke={INK} strokeWidth={5} />
+                    </g>
+                  ))}
+                </g>
+              </g>
+            )}
+            {snap > 0.3 && <SpeedLines cx={0} cy={0} frame={f} intensity={Math.min(1, snap)} color={CIT} />}
+            {snap > 0.55 && <ImpactStar cx={0} cy={0} r={54 + 26 * snap} rot={f * 1.4} color={CIT} />}
           </g>
-          {/* the Alaskan, planted, furious (everyday gear: puffer + beanie) */}
-          <Character frame={f} pose="point" emotion="angry" outfit="puffer" headgear="beanie" hair="#2b1d12" facing={1} scale={1.3} x={360} y={1720} />
-          {/* HELL NO speech box */}
-          {hellIn > 0.02 && (
-            <g transform={`translate(430,690) scale(${hellIn}) rotate(-4)`}>
-              <rect x={-240} y={-96} width={480} height={192} rx={22} fill="#fff" stroke={INK} strokeWidth={10} />
-              <path d="M-120,86 l-30,80 l90,-58 Z" fill="#fff" stroke={INK} strokeWidth={10} strokeLinejoin="round" />
-              <text x={0} y={30} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={130} fill={RED} letterSpacing={2}>HELL NO</text>
-            </g>
-          )}
-          {/* NO AI quote card */}
-          {noaiIn > 0.02 && (
-            <g transform={`translate(792,540) scale(${noaiIn}) rotate(5)`}>
-              <rect x={-150} y={-56} width={300} height={112} rx={12} fill={AMBER} stroke={INK} strokeWidth={8} />
-              <text x={0} y={16} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={72} fill={INK}>NO AI</text>
-            </g>
-          )}
-          {zoomed && snap > 0.3 && <SpeedLines cx={360} cy={1230} frame={f} intensity={Math.min(1, snap)} />}
-          {zoomed && snap > 0.55 && <ImpactStar cx={470} cy={1120} r={42 + 24 * snap} rot={f * 1.5} />}
-        </svg>
-      </div>
-      <ZoomVignette amount={zoomed ? Math.min(1, snap) * 0.85 : 0} />
+        )}
+      </svg>
+      <ZoomVignette amount={snap > 0 && f < 90 ? Math.min(1, snap) * 0.7 : 0} />
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S6 THE TURN (proposal)
+// ================================================================ S6 THE MONEY (solid $15M vs ghost $160M)
 const S6: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const stampS = spring({frame: f - 30, fps, config: {damping: 9, stiffness: 220}});
-  const ghostIn = interpolate(f, [40, 70], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const l1 = spring({frame: f - 84, fps, config: {damping: 11, stiffness: 140}});
-  const l2 = spring({frame: f - 108, fps, config: {damping: 11, stiffness: 140}});
-  const gavelIn = spring({frame: f - 140, fps, config: {damping: 10, stiffness: 130}});
-  const gavelHover = 8 * Math.sin(f / 8);
+  const ghostRise = spring({frame: f - 6, fps, config: {damping: 14, stiffness: 70}});
+  const ghostPulse = 0.8 + 0.2 * Math.sin(f / 8);
+  const solidIn = spring({frame: f - 20, fps, config: {damping: 13, stiffness: 100}});
+  const stampS = spring({frame: f - 116, fps, config: {damping: 9, stiffness: 200}});
+  const deflate = interpolate(f, [116, 150], [1, 0.7], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: '#161b2e'}}>
-      <BurstBG f={f} />
-      {/* ghost (unbuilt) machine */}
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: 0.4 + 0.6 * ghostIn}}>
-        <g transform="translate(540,1500)">
-          <ServerMachine frame={f} emotion="ghost" scale={1.15} />
+    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
+      <SubsurfaceBG f={f} />
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <g transform={`translate(760,1620) scale(${1.85 * ghostRise * deflate})`} opacity={ghostRise * (0.5 + 0.5 * ghostPulse)}>
+          <ServerMachine frame={f} emotion="ghost" scale={1} />
+        </g>
+        <g transform={`translate(300,1560) scale(${0.9 * solidIn})`} opacity={solidIn}>
+          <ServerMachine frame={f} emotion="focused" tint="copper" scale={1} />
         </g>
       </svg>
-      {/* PROPOSAL stamp */}
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform="translate(540,760)">
-          <Stamp cx={0} cy={0} s={stampS} text="PROPOSAL" rot={-8} color={RED} />
-        </g>
-        {/* honest caveat labels */}
-        {l1 > 0.02 && <BoxLabel x={300} y={1030} text="NO CONFIRMED CHIPS" w={430} h={64} fs={30} fill={ICE} color={INK} rot={-3} />}
-        {l2 > 0.02 && <BoxLabel x={770} y={1130} text="NO CUSTOMERS" w={360} h={64} fs={30} fill={ICE} color={INK} rot={3} />}
-        {/* gavel: state has not decided */}
-        {gavelIn > 0.02 && (
-          <g transform={`translate(560,1640) scale(${gavelIn})`}>
-            <g transform={`translate(0,${gavelHover}) rotate(-24)`}>
-              <rect x={-18} y={-150} width={36} height={150} rx={12} fill="#8a5a2b" stroke={INK} strokeWidth={6} />
-              <rect x={-64} y={-210} width={128} height={72} rx={16} fill="#a06a34" stroke={INK} strokeWidth={7} />
-            </g>
-            <BoxLabel x={0} y={70} text="STATE HAS NOT DECIDED" w={470} h={62} fs={30} fill={AMBER} color={INK} />
+        {ghostRise > 0.3 && (
+          <g transform="translate(770,470)">
+            <BoxLabel x={0} y={0} text="UP TO $160M" sub="OVER 10 YEARS" w={430} h={112} fs={52} fill={PLUM} color={LIME} rot={-3} />
+          </g>
+        )}
+        {solidIn > 0.3 && (
+          <g transform="translate(300,560)">
+            <BoxLabel x={0} y={0} text="$15M" sub="FUNDED" w={260} h={112} fs={62} fill={CIT} color={INK} rot={2} />
+          </g>
+        )}
+        {stampS > 0.02 && (
+          <g transform="translate(660,900)">
+            <Stamp cx={0} cy={0} s={stampS} text="NOT AWARDED" rot={-9} color={RED} />
           </g>
         )}
       </svg>
@@ -359,109 +468,65 @@ const S6: React.FC = () => {
   );
 };
 
-// ================================================================ S7 LAST CALL
+// ================================================================ S7 CAVEAT + BUTTON (loop)
 const S7: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const calIn = spring({frame: f - 8, fps, config: {damping: 12, stiffness: 110}});
-  const flip = spring({frame: f - 40, fps, config: {damping: 14, stiffness: 120}});
-  const bannerT = interpolate(f, [70, 104], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const tick = Math.sin(f / 3) * 6;
+  const swing = Math.sin(Math.max(0, f - 20) / 6) * (f > 20 && f < 96 ? 1 : 0);
+  const doink = f > 60 && f < 96;
+  const stampS = spring({frame: f - 70, fps, config: {damping: 9, stiffness: 200}});
+  const toButton = f > 120;
+  const click = spring({frame: f - 150, fps, config: {damping: 11, stiffness: 150}});
+  const lookX = 4 + 3 * Math.sin(f / 30);
+  const black = interpolate(f, [312, 326], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const pullBack = interpolate(f, [130, 200], [1.25, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   return (
-    <AbsoluteFill style={{backgroundColor: '#3a1c14'}}>
-      <BurstBG f={f} tone="ember" />
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {/* wall calendar */}
-        <g transform={`translate(540,760) scale(${calIn})`}>
-          <rect x={-320} y={-300} width={640} height={620} rx={26} fill={ICE} stroke={INK} strokeWidth={10} />
-          <rect x={-320} y={-300} width={640} height={120} rx={26} fill={RED} stroke={INK} strokeWidth={10} />
-          <text x={0} y={-216} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={64} fill="#fff">JULY</text>
-          {/* rings */}
-          {[-200, -80, 40, 160].map((rx, i) => (
-            <rect key={i} x={rx} y={-330} width={26} height={54} rx={12} fill="#c9cfd8" stroke={INK} strokeWidth={5} />
-          ))}
-          {/* the big date, flipping in */}
-          <g transform={`scale(1, ${0.15 + 0.85 * flip})`}>
-            <text x={0} y={120} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={300} fill={INK}>17</text>
+    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
+      <SubsurfaceBG f={f} descent={1} />
+      {!toButton && (
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+          <rect x={0} y={1560} width={1080} height={360} fill={GROUND} />
+          <Character frame={f} pose="panic" emotion={doink ? 'shock' : 'neutral'} outfit="worker" headgear="cap" hair="#3d2c1e" facing={1} scale={1.25} x={430} y={1720} />
+          <g transform={`translate(560,1300) rotate(${-40 + swing * 46})`}>
+            <rect x={-8} y={0} width={16} height={210} rx={6} fill="#8a5a2b" stroke={INK} strokeWidth={6} />
+            <path d="M-70,0 q70,-30 140,0 q-70,18 -140,0 Z" fill="#9aa2ad" stroke={INK} strokeWidth={6} strokeLinejoin="round" transform="translate(0,-6)" />
           </g>
-          <text x={0} y={250} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={40} fill={RED}>COMMENTS CLOSE</text>
-        </g>
-        {/* sourcing line, tucked just under the calendar (clear of captions) */}
-        <text x={540} y={1180} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={28} fill={ICE} opacity={calIn}>
-          4:30 PM AKDT  •  ALASKA DNR  •  ADL 422741
-        </text>
-        {/* LAST CALL banner unrolling */}
-        <g transform={`translate(540,1330)`}>
-          <g transform={`scale(${bannerT},1)`}>
-            <rect x={-460} y={-58} width={920} height={116} rx={12} fill={RED} stroke={INK} strokeWidth={9} transform={`rotate(${-2})`} />
-            <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={84} fill="#fff" letterSpacing={3} transform={`rotate(${-2})`}>LAST CALL</text>
+          {doink && (
+            <g transform="translate(660,1560)">
+              <ImpactStar cx={0} cy={0} r={40} color={ICE} rot={f * 2} />
+              <path d="M0,-20 q30,-30 8,-70" fill="none" stroke={INK} strokeWidth={5} opacity={0.7} />
+            </g>
+          )}
+          {stampS > 0.02 && (
+            <g transform={`translate(540,720) scale(${stampS}) rotate(-7)`} opacity={Math.min(1, stampS * 1.3)}>
+              <rect x={-300} y={-90} width={600} height={180} rx={14} fill="none" stroke={RED} strokeWidth={12} />
+              <text x={0} y={-8} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={92} fill={RED} letterSpacing={4}>UNPROVEN</text>
+              <text x={0} y={64} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={54} fill={RED} letterSpacing={6}>AT SCALE</text>
+            </g>
+          )}
+        </svg>
+      )}
+      {toButton && (
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `scale(${pullBack})`, transformOrigin: '540px 1000px'}}>
+          <rect x={0} y={1560} width={1080} height={360} fill={GROUND} />
+          <path d="M0,1560 q270,-22 540,0 q270,22 540,0 L1080,1920 L0,1920 Z" fill={PLUM_D} opacity={0.5} />
+          <g transform="translate(470,1360)">
+            <ServerMachine frame={f} emotion="focused" tint="copper" scale={1.06} lookX={lookX} />
           </g>
-        </g>
-        {/* clock ticking */}
-        <g transform={`translate(540,1520)`} opacity={bannerT}>
-          <circle r={64} fill={ICE} stroke={INK} strokeWidth={8} />
-          <line x1={0} y1={0} x2={0} y2={-44} stroke={INK} strokeWidth={8} strokeLinecap="round" transform={`rotate(${tick})`} />
-          <line x1={0} y1={0} x2={30} y2={0} stroke={INK} strokeWidth={7} strokeLinecap="round" transform={`rotate(${tick * 4})`} />
-          <circle r={7} fill={RED} />
-        </g>
-      </svg>
-    </AbsoluteFill>
-  );
-};
-
-// ================================================================ S8 BUTTON (mailbox)
-const S8: React.FC = () => {
-  const f = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const boxIn = spring({frame: f - 8, fps, config: {damping: 12, stiffness: 110}});
-  const stuff = interpolate(f, [30, 90], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const qIn = spring({frame: f - 30, fps, config: {damping: 12, stiffness: 120}});
-  const qPulse = 1 + 0.02 * Math.sin(f / 9);
-  const flag = 8 * Math.sin(f / 10);
-  return (
-    <AbsoluteFill style={{backgroundColor: '#2a3f66'}}>
-      <TundraBG f={f} push={1.0} />
-      {/* faint ghost machine, defeated in the back */}
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: 0.28}}>
-        <g transform="translate(840,1500) scale(0.8)"><ServerMachine frame={f} emotion="ghost" scale={0.9} /></g>
-      </svg>
-      {/* the little Alaskan, re-crossing arms (loop to HELL NO) */}
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <Character frame={f} pose="arms-crossed" emotion="angry" outfit="flannel" headgear="beanie" hair="#3d2c1e" facing={1} scale={0.9} x={210} y={1740} />
-        {/* MAILBOX overstuffed with comment slips */}
-        <g transform={`translate(620,1360) scale(${boxIn})`}>
-          {/* post */}
-          <rect x={-16} y={40} width={32} height={300} fill="#5b4632" stroke={INK} strokeWidth={6} />
-          {/* box */}
-          <path d="M-150,-60 q0,-90 150,-90 q150,0 150,90 v150 h-300 Z" fill={RED} stroke={INK} strokeWidth={OUT} />
-          <path d="M150,-60 v150 h-40 v-150 q0,-70 -110,-84 q110,4 150,84 Z" fill={RED_D} opacity={0.7} />
-          {/* flag */}
-          <g transform={`translate(150,-40) rotate(${flag})`}>
-            <rect x={0} y={-70} width={12} height={70} fill={INK} />
-            <path d="M12,-70 h50 l-14,18 l14,18 h-50 Z" fill={AMBER} stroke={INK} strokeWidth={5} />
+          <ChipSocket x={420} y={1215} s={0.7} filled={click > 0.5} match={0} />
+          <ChipSocket x={545} y={1215} s={0.7} filled={false} match={0} />
+          {click > 0.5 && <ImpactStar cx={420} cy={1215} r={26 + 8 * Math.sin(f / 4)} color={CIT} />}
+          {/* the AI search-circle flashlight callback (flow-critic note) */}
+          {click > 0.4 && (
+            <circle cx={697} cy={1500} r={120 + 30 * Math.sin(f / 5)} fill="none" stroke={LIME} strokeWidth={6} strokeDasharray="18 12" opacity={0.5} />
+          )}
+          <g>
+            <path d="M600,1230 q90,40 96,150" fill="none" stroke={COP} strokeWidth={40} strokeLinecap="round" />
+            <DrillBit x={697} y={1400} L={190} f={f} />
           </g>
-          {/* stuffed comment papers bulging out */}
-          {stuff > 0.02 && Array.from({length: 10}).map((_, i) => {
-            const a = -1.2 + (i / 9) * 2.4;
-            const r = 70 + (i % 3) * 26;
-            return (
-              <g key={i} transform={`translate(${Math.sin(a) * r},${-70 - Math.cos(a) * r * 0.7 * stuff}) rotate(${a * 30})`} opacity={stuff}>
-                <rect x={-20} y={-28} width={40} height={56} rx={4} fill="#f4efe4" stroke={INK} strokeWidth={4} />
-                <line x1={-10} y1={-14} x2={10} y2={-14} stroke={INK} strokeWidth={3} opacity={0.6} />
-                <line x1={-10} y1={-2} x2={10} y2={-2} stroke={INK} strokeWidth={3} opacity={0.6} />
-              </g>
-            );
-          })}
-        </g>
-      </svg>
-      {/* the question button (the payoff CTA — big, bold, held) */}
-      <div style={{position: 'absolute', top: 430, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `scale(${qIn * qPulse})`}}>
-        <div style={{background: AMBER, border: `11px solid ${INK}`, borderRadius: 20, padding: '30px 48px', boxShadow: `0 16px 0 ${INK}66`, maxWidth: 960, transform: 'rotate(-2deg)'}}>
-          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 92, lineHeight: 1.02, color: INK, textAlign: 'center', textTransform: 'uppercase', textShadow: `3px 4px 0 ${AMBER_D}`}}>
-            What would your<br />comment say?
-          </div>
-        </div>
-      </div>
+        </svg>
+      )}
+      <div style={{position: 'absolute', inset: 0, background: '#000', opacity: black}} />
     </AbsoluteFill>
   );
 };
@@ -474,8 +539,8 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
   const cue = captions.find((c) => t >= c.start && t < c.end + 0.05);
   if (!cue) return null;
   return (
-    <div style={{position: 'absolute', bottom: 330, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 60px'}}>
-      <div style={{background: 'rgba(16,20,35,0.82)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${INK}`}}>
+    <div style={{position: 'absolute', bottom: 340, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 60px'}}>
+      <div style={{background: 'rgba(20,14,30,0.84)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${INK}`}}>
         <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, lineHeight: 1.12, color: '#fff', textAlign: 'center', letterSpacing: 0.5, textShadow: `2px 3px 0 rgba(0,0,0,0.6)`}}>
           {cue.text}
         </div>
@@ -485,16 +550,17 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
 };
 
 // ================================================================ TIMELINE
-const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6, S7, S8];
+const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6, S7];
+// 30fps. Shots: S1 0-8s, S2 8-16s, S3 16-20s, S4 20-32s, S5 32-40s, S6 40-48s, S7 48-59s.
 const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
-  {from: 0, dur: 309}, {from: 309, dur: 206}, {from: 515, dur: 224}, {from: 739, dur: 171},
-  {from: 910, dur: 138}, {from: 1048, dur: 201}, {from: 1249, dur: 168}, {from: 1417, dur: 233},
+  {from: 0, dur: 240}, {from: 240, dur: 240}, {from: 480, dur: 120}, {from: 600, dur: 360},
+  {from: 960, dur: 240}, {from: 1200, dur: 240}, {from: 1440, dur: 330},
 ];
 
 export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {
   const bounds = scenes && scenes.length === SCENE_COMPONENTS.length ? scenes : DEFAULT_BOUNDS;
   return (
-    <AbsoluteFill style={{backgroundColor: NAVY}}>
+    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
       {SCENE_COMPONENTS.map((C, i) => (
         <Sequence key={i} from={bounds[i].from} durationInFrames={bounds[i].dur} name={`S${i + 1}`}>
           <C />

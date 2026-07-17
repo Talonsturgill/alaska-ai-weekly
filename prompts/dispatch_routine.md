@@ -82,6 +82,24 @@ repeat ever.
    LinkedIn post, the Gmail draft, or credits. Ranges are "X to Y"; use commas, periods,
    parentheses, colons; middot as an on-screen separator. scripts/caption_check.py enforces
    the post; YOU hold the line everywhere else.
+6. NO-STALL / KEEP-ALIVE DISCIPLINE (why past runs sat idle for many minutes). This is a long
+   pipeline with long jobs (voice synth ~45 min, Remotion renders minutes, critic/panel agents).
+   Stalls came from three failure modes; each has a fix, use them EVERY run:
+   (a) A long job run in FOREGROUND Bash hits the 10-minute tool timeout and dies or blocks. FIX:
+       any command that can exceed ~2 minutes (voice synth, npm install, renders, encodes) runs
+       in the BACKGROUND. Prefer `scripts/run_bg.sh <marker_dir> <name> -- <cmd...>`: it detaches
+       the job, touches a HEARTBEAT file every few seconds, and writes a `.done` marker with the
+       exit code on finish, so you POLL a file (`test -f <name>.done`) instead of blocking, and a
+       stale heartbeat (>90s) with no `.done` means the job is WEDGED, not slow.
+   (b) Ending a turn to wait with a LONG fallback wakeup, so a missed completion notification
+       sleeps the run blind. FIX: whenever you end a turn waiting on background work, ALSO set a
+       ScheduleWakeup fallback of <= 300s during active build phases; the task-notification wakes
+       you sooner, the wakeup guarantees you never sleep past ~5 min.
+   (c) Handing off to background with NOTHING queued in the foreground. FIX: while a job cooks,
+       keep doing independent foreground work (author the next scene, write the caption, prep the
+       email payload). NEVER end a turn that has both no live background work AND no scheduled
+       wakeup, that is the dead stop. When genuinely blocked on one job, poll its marker, do not
+       `sleep`.
 
 ## THE COMMITTED TOOLING (adapt, don't reinvent)
 
