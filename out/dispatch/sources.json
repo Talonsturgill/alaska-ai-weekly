@@ -1,24 +1,5 @@
-{
-  "sources": [
-    {
-      "outlet": "Northern Journal (Nathaniel Herz)",
-      "url": "https://northernjournal.com/data-center-critics-flood-alaska-land-managers-with-opposition-to-north-slope-project/",
-      "note": "Primary reporting: 500+ comments, fewer than a dozen in favor; verbatim 'HELL NO to any data centers' and 'NO AI'; Stak CSO John Boyle 'over $10 billion' full-build estimate; July 3, 2026"
-    },
-    {
-      "outlet": "Alaska DNR Division of Oil & Gas \u2014 public notice (ADL 422741)",
-      "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=223817",
-      "note": "Primary: STAK Energy Corporation, 715.4 acres, 50-year lease, ~26 mi south of Deadhorse; preliminary decision to offer, comment window (extended to July 17, 2026, 4:30 pm AKDT)"
-    },
-    {
-      "outlet": "Northern Alaska Environmental Center \u2014 lease analysis",
-      "url": "https://northern.org/news/stak-energy-campus-review/",
-      "note": "Primary: ~$500M initial site work per the lease documents; 1 to 3 GW generation; gas-fired; May 28, 2026"
-    },
-    {
-      "outlet": "Arctic Today (Northern Journal republish)",
-      "url": "https://www.arctictoday.com/",
-      "note": "Second-source corroboration of the comment split and verbatim comments, July 8, 2026"
-    }
-  ]
-}
+[
+  {"claim": "$15M NSF funding (first 2 years), up to $160M possible over 10 years, 1 of 12 NSF Regional Innovation Engines across 20 states, $500K state match, engine uses AI to locate mineral deposits + bio-extraction", "source": "UAF Geophysical Institute news release (Rod Boyce)", "date": "2026-07-14", "url": "https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition"},
+  {"claim": "$15M/$160M figures corroborated, 56 of 60 USGS-designated critical minerals occur in Alaska, mineral list, Sen. Dan Sullivan quote on reliance on China", "source": "Fairbanks Daily News-Miner", "date": "2026-07-15", "url": "https://www.newsminer.com/news/local_news/uaf-strikes-gold-with-15-million-minerals-award/article_548d3488-0c44-4e54-a4eb-089dfc88258e.html"},
+  {"claim": "Named leads: Lee Ann Munk (CEO, UAF Geophysical Institute geosciences professor), Robert McCoy (GI director), Brian Stone (performing the duties of NSF Director)", "source": "UAF Geophysical Institute + Fairbanks Daily News-Miner", "date": "2026-07-14", "url": "https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition"}
+]

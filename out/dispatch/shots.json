@@ -1,46 +1,60 @@
 {
-  "shots": [
-    {
-      "id": 1,
-      "start": 0,
-      "end": 360,
-      "framing": "wide-establish",
-      "transition_in": "cut",
-      "note": "orbital aerial: empty tundra + survey stake"
-    },
-    {
-      "id": 2,
-      "start": 360,
-      "end": 780,
-      "framing": "alt-vantage",
-      "transition_in": "assemble",
-      "note": "worm's-eye wireframe turbines assemble"
-    },
-    {
-      "id": 3,
-      "start": 780,
-      "end": 1140,
-      "framing": "data-panel",
-      "transition_in": "graphic-match",
-      "note": "macro cost bar that will not settle"
-    },
-    {
-      "id": 4,
-      "start": 1140,
-      "end": 1500,
-      "framing": "two-up",
-      "transition_in": "mask-wipe",
-      "note": "public-comment paper flood vs a dozen"
-    },
-    {
-      "id": 5,
-      "start": 1500,
-      "end": 1800,
-      "framing": "wide-establish",
-      "transition_in": "match-cut",
-      "note": "return to tundra + ghost campus + JULY 17 stamp"
-    }
-  ],
-  "fps": 30,
-  "total": 1800
+ "shots": [
+  {
+   "id": 1,
+   "start": 0,
+   "end": 240,
+   "framing": "subject-portrait",
+   "transition_in": "cut",
+   "note": "the copper machine's absorbed face and drill-head arm punchi"
+  },
+  {
+   "id": 2,
+   "start": 240,
+   "end": 480,
+   "framing": "data-panel",
+   "transition_in": "fui-boot",
+   "note": "a UAF wordmark card and the '$15M YEAR ONE' starburst firing"
+  },
+  {
+   "id": 3,
+   "start": 480,
+   "end": 600,
+   "framing": "map-territory",
+   "transition_in": "map-travel",
+   "note": "the shrinking lime AI-circle converging on one pulsing dot a"
+  },
+  {
+   "id": 4,
+   "start": 600,
+   "end": 960,
+   "framing": "data-panel",
+   "transition_in": "mask-wipe",
+   "note": "the ground opening to a bedrock cross-section on 'bedrock', "
+  },
+  {
+   "id": 5,
+   "start": 960,
+   "end": 1200,
+   "framing": "macro-closeup",
+   "transition_in": "match-action",
+   "note": "the claw hauls one ore chunk, it cracks open to a glowing ch"
+  },
+  {
+   "id": 6,
+   "start": 1200,
+   "end": 1440,
+   "framing": "two-up",
+   "transition_in": "crossfade",
+   "note": "the towering dashed lime $160M ghost model rising on its lin"
+  },
+  {
+   "id": 7,
+   "start": 1440,
+   "end": 1770,
+   "framing": "wide-establish",
+   "transition_in": "hard-cut",
+   "note": "the geologist's pickaxe bouncing off bare bedrock (DOINK), t"
+  }
+ ]
 }

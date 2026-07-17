@@ -1,15 +1,15 @@
-Alaska was asked if it wanted a gigawatt AI data center on the North Slope. Over 500 people answered. Fewer than a dozen said yes.
+AI is now prospecting for the raw materials that AI itself is made of.
 
-Here is what is on the table near Deadhorse: one gas-fired campus on a square mile of state land, drawing at least a gigawatt. That is roughly 30 percent above all of urban Alaska's peak power demand. For one building.
+That is the quiet loop inside the University of Alaska Fairbanks' newest grant. Last week the National Science Foundation named a UAF coalition as a Critical Mineral Accelerator Engine. Fifteen million dollars for the first two years, with up to 160 million possible over ten years if it is renewed. One of twelve engines picked across twenty states.
 
-The economics should give everyone pause. The company's own figures run from about 500 million dollars for initial site work, per the lease documents, to over 10 billion for the full build, per its own chief strategy officer. That is a 20 times spread, on a project with no confirmed customers and no confirmed chips. Nothing is built. Nothing is approved. The state has not decided.
+The pitch is striking on its own. 56 of the 60 minerals the USGS calls critical occur in Alaska. Cobalt, graphite, gallium, germanium, nickel, rare earths. The engine plans to use AI to help decide where those deposits sit, so geologists drill fewer dry holes.
 
-What has happened is that Alaskans showed up. The public comment record is not close: 500 plus comments logged, fewer than a dozen in favor. Some were blunt enough to quote. "HELL NO to any data centers." "NO AI."
+The part worth sitting with is this. Those same minerals are what the chips and batteries running the AI are built from. The machine is, in a real sense, hunting for its own parts.
 
-I do not read that as Alaska being anti technology. I read it as a simple rule: when a project this big arrives with numbers this unsettled, the burden of proof sits with the applicant, not the public. And the mechanism that actually holds that burden, the public comment window, closes tomorrow. July 17, 4:30 pm Alaska time, with Alaska DNR's Division of Oil and Gas (ADL 422741).
+Two honest caveats keep this from tipping into hype. First, the 160 million is a ceiling, not a check. Only the 15 million is funded today. Second, AI narrows the search. It does not swing the pick, and it does not pull metal out of the ground. Prospecting models are promising and still unproven at Alaska scale.
 
-The loudest thing on the tundra right now is not the machine. It is the mailbox.
+That is the right frame for this state. Not a place waiting to be rescued by outside compute, but one competing for federal research dollars on expertise it already has. The win is real. The delivery is unproven. Both can be true at once.
 
-If a company wanted a gigawatt on your grid, with a 20 times cost range and no named customer, what would your comment say?
+If the model points to the ore but the mining, the permitting, and the politics still happen the slow way, where should Alaska spend its next dollar, on the algorithm or on the ground it points at?
 
-#Alaska #ArtificialIntelligence #DataCenters #Energy #NorthSlope
+#Alaska #CriticalMinerals #ArtificialIntelligence #UAF #MineralExploration

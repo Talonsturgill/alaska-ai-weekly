@@ -71,19 +71,33 @@ const SubsurfaceBG: React.FC<{f: number; descent?: number}> = ({f, descent = 0})
   </svg>
 );
 
-// a spinning conical drill bit from (x,y) pointing DOWN length L
-const DrillBit: React.FC<{x: number; y: number; L: number; f: number; w?: number}> = ({x, y, L, f, w = 46}) => (
-  <g transform={`translate(${x},${y})`}>
-    <rect x={-w * 0.34} y={-70} width={w * 0.68} height={80} rx={10} fill={COP_D} stroke={INK} strokeWidth={6} />
-    <path d={`M${-w / 2},0 L${w / 2},0 L0,${L} Z`} fill="#b8bcc6" stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-    {Array.from({length: 4}).map((_, i) => {
-      const t = ((f * 0.5 + i * 6) % 24) / 24;
-      const yy = t * L;
-      const ww = (w / 2) * (1 - t) * 0.9;
-      return <path key={i} d={`M${-ww},${yy} q${ww},10 ${2 * ww},0`} fill="none" stroke={INK} strokeWidth={4} opacity={0.8} />;
-    })}
-  </g>
-);
+// a spinning mechanical auger bit from (x,y) pointing DOWN length L
+const DrillBit: React.FC<{x: number; y: number; L: number; f: number; w?: number}> = ({x, y, L, f, wd = 46, w}) => {
+  const W = (w ?? wd) as number;
+  const wobble = 1.5 * Math.sin(f / 2);
+  return (
+    <g transform={`translate(${x + wobble},${y})`}>
+      {/* motor housing with bolts + cooling vents */}
+      <rect x={-W * 0.5} y={-96} width={W} height={64} rx={10} fill={COP} stroke={INK} strokeWidth={6} />
+      <rect x={-W * 0.5} y={-96} width={W * 0.34} height={64} rx={10} fill={COP_D} opacity={0.55} />
+      {[-1, 1].map((s) => <circle key={s} cx={s * W * 0.3} cy={-64} r={5} fill={INK} />)}
+      {[0, 1, 2].map((i) => <rect key={i} x={-W * 0.34} y={-88 + i * 16} width={W * 0.68} height={5} rx={2} fill={INK} opacity={0.5} />)}
+      {/* hex drive collar */}
+      <rect x={-W * 0.28} y={-34} width={W * 0.56} height={22} rx={4} fill="#9aa2ad" stroke={INK} strokeWidth={5} />
+      {/* steel auger shank + conical bit with shaded facets */}
+      <path d={`M${-W / 2},-12 L${W / 2},-12 L0,${L} Z`} fill="#b8bcc6" stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+      <path d={`M0,-12 L${W / 2},-12 L0,${L} Z`} fill="#7f8792" opacity={0.5} />
+      <path d={`M${-W / 2},-12 L${-W * 0.16},-12 L0,${L * 0.7} Z`} fill="#e6ebf0" opacity={0.5} />
+      {/* rotating helical flights (spin cue) */}
+      {Array.from({length: 5}).map((_, i) => {
+        const t = ((f * 0.6 + i * 5) % 24) / 24;
+        const yy = -8 + t * (L + 8);
+        const ww = (W / 2) * (1 - t) * 0.95;
+        return <path key={i} d={`M${-ww},${yy} q${ww},11 ${2 * ww},0`} fill="none" stroke={INK} strokeWidth={4.5} opacity={0.85} />;
+      })}
+    </g>
+  );
+};
 
 // a dashed empty chip-socket (the honest 'missing part'); filled = glowing chip seated
 const ChipSocket: React.FC<{x: number; y: number; s?: number; filled?: boolean; match?: number; label?: boolean}> = ({x, y, s = 1, filled = false, match = 0, label = false}) => (
@@ -110,9 +124,10 @@ const ChipSocket: React.FC<{x: number; y: number; s?: number; filled?: boolean; 
 const S1: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  // preload frame 0 to poster grade (bold ink + machine present at t=0, then a quick settle)
-  const machIn = spring({frame: f + 14, fps, config: {damping: 14, stiffness: 100}});
-  const headIn = spring({frame: f + 10, fps, config: {damping: 13, stiffness: 120}});
+  // frame 0 is the poster: machine + headline fully settled at t=0 (edges/contrast graded),
+  // the hook's motion comes from the spinning drill + dust + drifting orbs, not an entrance slide.
+  const machIn = spring({frame: f + 34, fps, config: {damping: 14, stiffness: 100}});
+  const headIn = spring({frame: f + 34, fps, config: {damping: 13, stiffness: 120}});
   const lookX = 4 + 3 * Math.sin(f / 30);
   const dustN = 10;
   const fleck = interpolate(f, [118, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
@@ -123,6 +138,27 @@ const S1: React.FC = () => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect x={0} y={1560} width={1080} height={360} fill={GROUND} />
         <path d="M0,1560 q270,-22 540,0 q270,22 540,0 L1080,1920 L0,1920 Z" fill={PLUM_D} opacity={0.5} />
+        {/* ink-outlined ore chunks embedded in the bedrock band */}
+        {[[120, 1660, '#5a7fd6'], [340, 1720, '#d98cc4'], [820, 1690, '#7fae7a'], [980, 1650, CIT]].map(([x, y, c], i) => (
+          <g key={i} transform={`translate(${x},${y})`}>
+            <path d="M-34,0 l22,-30 l38,6 l20,32 l-16,34 l-42,4 Z" fill={c as string} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+            <path d="M-16,-14 l16,10 l-8,18" fill="none" stroke={INK} strokeWidth={3} opacity={0.6} />
+          </g>
+        ))}
+      </svg>
+      {/* floating faceted mineral crystals the AI is hunting (fills the frame, on-theme, edge-rich) */}
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        {[[180, 700, CIT, 1.1], [900, 720, '#5a7fd6', 0.9], [770, 900, LIME, 0.8], [300, 940, '#d98cc4', 0.85], [560, 640, '#c9d0dc', 0.7]].map(([x, y, c, s], i) => {
+          const bob = 10 * Math.sin(f / (24 + i * 6) + i);
+          const S = s as number;
+          return (
+            <g key={i} transform={`translate(${x},${(y as number) + bob}) scale(${S})`} opacity={0.92}>
+              <path d="M0,-58 l40,26 l-14,54 l-52,0 l-14,-54 Z" fill={c as string} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+              <path d="M0,-58 l0,80 M-40,-32 l40,54 l40,-54" fill="none" stroke={INK} strokeWidth={4} opacity={0.65} />
+              <path d="M0,-58 l40,26 l-40,10 l-40,-10 Z" fill={SNOW} opacity={0.25} />
+            </g>
+          );
+        })}
       </svg>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `translateY(${150 * (1 - machIn)}px)`, opacity: machIn}}>
         <g transform="translate(470,1360)">
@@ -152,7 +188,7 @@ const S1: React.FC = () => {
           </g>
         )}
       </svg>
-      <div style={{position: 'absolute', top: 120, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-150 * (1 - headIn)}px) rotate(-2deg)`}}>
+      <div style={{position: 'absolute', top: 330, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-150 * (1 - headIn)}px) rotate(-2deg)`}}>
         <div style={{background: RED, border: `9px solid ${INK}`, borderRadius: 14, padding: '20px 40px', boxShadow: `0 13px 0 ${INK}55`, maxWidth: 900}}>
           <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 96, lineHeight: 1.02, color: '#fff', textAlign: 'center', textTransform: 'uppercase', textShadow: `4px 5px 0 ${RED_D}`}}>
             AI is Digging<br />in Alaska
@@ -189,7 +225,7 @@ const S2: React.FC = () => {
         </g>
         {badge > 0.02 && (
           <g transform={`translate(300,930) scale(${badge})`}>
-            <StatBurst cx={0} cy={0} big="$15M" lines={['YEAR ONE']} fill={CIT} rot={-6} big_fs={92} />
+            <StatBurst cx={0} cy={0} big="$15M" lines={['FIRST 2 YRS']} fill={CIT} rot={-6} big_fs={92} />
           </g>
         )}
         {seal > 0.02 && (
@@ -238,7 +274,7 @@ const S3: React.FC = () => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         {callout > 0.02 && (
           <g transform={`translate(540,1270) scale(${0.82 * callout})`}>
-            <StatBurst cx={0} cy={0} big="1 OF 12" lines={['NSF ENGINES', '20 STATES']} fill={LIME} rot={-4} big_fs={80} />
+            <StatBurst cx={0} cy={0} big="1 OF 12" lines={['NSF ENGINES', '20 STATES']} fill={LIME} rot={-4} big_fs={58} />
           </g>
         )}
         <g opacity={callout}>
@@ -265,13 +301,23 @@ const S4: React.FC = () => {
   const wallOut = interpolate(f, [232, 252], [1, 0.16], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const lit = Math.round(interpolate(f, [128, 176], [0, 56], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   const circleT = interpolate(f, [180, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const nameOn = (i: number) => f > 244 + i * 22;
+  // all five mineral names land within the spoken window (local f240-300 = 28-30s), one per word
+  const nameOn = (i: number) => f > 238 + i * 12;
   const pencilSnap = f > 200;
   return (
     <AbsoluteFill style={{backgroundColor: PLUM_D}}>
       <SubsurfaceBG f={f} descent={2} />
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <g transform="translate(0,540)" opacity={openG}>
+          {/* layered rock strata (the cross-section read): banded bedrock behind the ore veins */}
+          <g>
+            {[[220, '#33244a'], [400, '#2c1f40'], [600, '#38285230'], [790, '#2a1c3d'], [980, '#34254c']].map(([yy, c], i) => (
+              <g key={i}>
+                <rect x={0} y={yy as number} width={1080} height={i === 4 ? 200 : ([400, 600, 790, 980][i] - (yy as number))} fill={c as string} opacity={0.9} />
+                <path d={`M0,${yy} q270,${-14 + (i % 2) * 26} 540,4 q270,18 540,-6`} fill="none" stroke={INK} strokeWidth={5} opacity={0.55} />
+              </g>
+            ))}
+          </g>
           <path d="M0,180 q270,-30 540,0 q270,30 540,0" fill="none" stroke={LIME} strokeWidth={6} strokeDasharray="18 12" opacity={0.8} />
           {VEINS.map((v, i) => (
             <g key={i} opacity={openG}>

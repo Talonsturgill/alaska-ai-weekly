@@ -3,15 +3,15 @@
   "fails": [],
   "warns": [],
   "metrics": {
-    "chars": 1607,
-    "hook": "Alaska was asked if it wanted a gigawatt AI data center on the North Slope. Over 500 people answered. Fewer than a dozen said yes.",
-    "hook_len": 130,
+    "chars": 1696,
+    "hook": "AI is now prospecting for the raw materials that AI itself is made of.",
+    "hook_len": 70,
     "hashtags": [
       "#Alaska",
+      "#CriticalMinerals",
       "#ArtificialIntelligence",
-      "#DataCenters",
-      "#Energy",
-      "#NorthSlope"
+      "#UAF",
+      "#MineralExploration"
     ],
     "n_hashtags": 5,
     "emoji": 0,
