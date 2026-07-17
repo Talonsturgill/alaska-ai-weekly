@@ -295,6 +295,15 @@ python .claude/skills/carousel-engine/assemble.py --slides-dir out/<date>/slides
    storyboard header. Apply sequence-level fixes (max 2 rounds). A weak
    junction usually means a slide edit, not a reshuffle — but reordering
    is allowed if the arc survives.
+5. RECORD-SYNC pre-flight. Hand-edits in this phase land in the slide HTML,
+   so copy.json can silently go stale (run 2026-07-17: an S5 kicker edited
+   "HOW IT STARTED" -> "BEFORE THE CLASS" in the HTML while copy.json kept
+   the old text until the scorer caught it). After the last re-render, run
+   `python scripts/copy_sync_check.py --copy out/<date>/copy.json
+   --render-report out/<date>/render/render_report.json` and reconcile any
+   reported string (edit copy.json to match the shipped render, or fix the
+   render) until it PASSes, so the scorer and ship gate never inherit a
+   stale record.
 
 ## PHASE 9 — FINAL ASSEMBLY
 
@@ -349,6 +358,10 @@ JSON in its final message, which YOU persist to
    was invented, add it to knowledge/TECHNIQUE_LIBRARY.md with a dated note.
 5. COMPLETION GATE: verify run_state.json shows every prior phase done and
    every file in (1) exists and is non-trivial. Do not proceed otherwise.
+   Also re-run `python scripts/copy_sync_check.py --copy out/<date>/copy.json
+   --render-report out/<date>/render/render_report.json` as the final guard
+   that the copy.json about to ship still matches the rendered slides (it
+   reads only; reconcile any mismatch before merge).
 6. Branch `claude/carousel-<date>`; commit everything (runs/, ledger/,
    docs/, knowledge/ changes); push with retries (2s/4s/8s/16s backoff).
 7. Open a PR (ready, not draft) and MERGE IT TO MAIN in the same run —

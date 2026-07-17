@@ -310,6 +310,20 @@
    "verification": "Prompt and instinct prose reviewed for correctness and internal consistency; no code, gate, threshold, or hard-fail rule changed.",
    "rollback": "Revert this commit; the FAILURE PROTOCOL returns to the 2026-07-14 wait-for-any-limit wording.",
    "commit": "8689cfc"
+  },
+  {
+   "run_date": "2026-07-17",
+   "kind": "fix",
+   "area": "scripts",
+   "change": "New scripts/copy_sync_check.py plus routine wiring (Phase 8 post-hand-edit pre-flight + Phase 11 completion-gate guard): for every slide string in copy.json['slides'] it verifies the string is present in that slide's RENDERED text (render_report.json text_nodes[].text). One-directional (authored copy must not go stale vs the render); alphanumeric-only, case/whitespace/punctuation-insensitive matching; long strings matched on their leading 40 alnum chars to tolerate render.py's .slice(0,80) node-text truncation, short display strings (the record-sync risk class) in full. Reads only; never edits copy.json or slides.",
+   "trigger": "Run 2026-07-17 record-sync gap: the showrunner hand-edited slide-05's kicker in the HTML ('HOW IT STARTED' -> 'BEFORE THE CLASS') after a flow-critic note, but copy.json went stale (still 'HOW IT STARTED') until the scorer's transcription caught it late. There was no machine check that copy.json matches the shipped render text.",
+   "files": [
+    "scripts/copy_sync_check.py",
+    "prompts/routine_instructions.md"
+   ],
+   "verification": "Clean deck PASSes (exit 0): 52 authored slide strings all present in the render, 0 false positives. Defect reconstruction (S5 kicker reverted to the stale 'HOW IT STARTED') FAILs (exit 1) and reports exactly 'S5 kicker.text -> HOW IT STARTED'; an independent body-lead divergence reconstruction also FAILs correctly. Engine untouched and re-verified: qa.py on out/2026-07-17/render unchanged (WARN, 0 fails); examples/demo-deck render+qa unchanged (known slide-03 busy-art WARN, exit 0). No gate/threshold weakened, no new runtime dependency (stdlib only), shipped slides not modified; script parses (ast.parse OK).",
+   "rollback": "revert the upgrade(2026-07-17) commit (deletes scripts/copy_sync_check.py and the two Phase 8 / Phase 11 prompt lines; the pipeline reverts to no record-sync check)",
+   "commit": "pending upgrade(2026-07-17) commit (showrunner stages this set)"
   }
  ],
  "scan_log": [
@@ -367,6 +381,13 @@
    "searches": 0,
    "found": "This run's scorer named artwork-craft (7.5) the weakest criterion: a graded 2D Alaska relief with a grid overlay reads flat, not as a dimensional survey plate. Bounded fix = a reusable relief-depth helper (directional hillshade with real contrast from an fbm gradient, aerial-perspective layering toward the far edge, low-alpha interior texture) layered over the already-committed noise.js primitives, mirroring the parked strata-texture/rim-light helper (runs 4/11). Held to 0 searches to protect main-loop budget for the Gmail deliverable.",
    "outcome": "parked (FIELD_NOTES 2026-07-15: relief-depth helper + new instinct relief-depth-not-just-grade). No code applied: it is an improvement not a reactive fix, it edits shared rendering craft wanting careful multi-deck A/B verification, and no engine defect demanded a fix, so zero upgrades is the honest count."
+  },
+  {
+   "run_date": "2026-07-17",
+   "focus": "editorial dataviz / cartography technique (news-graphics desks) -- rotated off the last three foci: headless-Chromium 2026-07-13, self-improving-pipeline 2026-07-14, procedural-art/relief 2026-07-15; chosen because this deck was map-heavy (S3 'NO ROADS', S6)",
+   "searches": 4,
+   "found": "2026 editorial maps converge on MINIMALIST: calm background (warm light grey / soft beige / very pale blue), one-to-two accent colors for the focal region, LIGHT relief (soft gradients / faint contour-inspired lines / simple water texture) over loud hillshade, label only narrative-referenced features, a small locator inset highlighting the focal region, short annotations. News-map content analysis (Designing Maps in News Stories) quantifies real-desk convention prevalence: scale bar 31.2%, inset 28.1%, legend 25%, north arrow 18.8%. Sources: https://www.onestopmap.com/blog/minimalist-editable-vector-maps/ , https://www.researchgate.net/publication/405348439_Designing_Maps_in_News_Stories_A_Longitudinal_Visual_Content_Analysis_of_Cartographic_Design_in_US_Data_Journalism",
+   "outcome": "parked (FIELD_NOTES 2026-07-17: locator-inset + scale-bar + faint-contour light-relief convention set for akgeo map heroes, with source URLs). No frontier code applied: it is an improvement not a reactive fix, it edits shared cartographic rendering craft wanting multi-deck A/B (overlaps the parked relief-depth helper 2026-07-15 and map design-space reference 2026-07-10), and the daily 0-1 budget was taken by the reactive copy-sync fix."
   }
  ]
 }
