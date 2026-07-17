@@ -323,7 +323,7 @@
    ],
    "verification": "Clean deck PASSes (exit 0): 52 authored slide strings all present in the render, 0 false positives. Defect reconstruction (S5 kicker reverted to the stale 'HOW IT STARTED') FAILs (exit 1) and reports exactly 'S5 kicker.text -> HOW IT STARTED'; an independent body-lead divergence reconstruction also FAILs correctly. Engine untouched and re-verified: qa.py on out/2026-07-17/render unchanged (WARN, 0 fails); examples/demo-deck render+qa unchanged (known slide-03 busy-art WARN, exit 0). No gate/threshold weakened, no new runtime dependency (stdlib only), shipped slides not modified; script parses (ast.parse OK).",
    "rollback": "revert the upgrade(2026-07-17) commit (deletes scripts/copy_sync_check.py and the two Phase 8 / Phase 11 prompt lines; the pipeline reverts to no record-sync check)",
-   "commit": "pending upgrade(2026-07-17) commit (showrunner stages this set)"
+   "commit": "ca63631"
   }
  ],
  "scan_log": [
