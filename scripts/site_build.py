@@ -1076,6 +1076,24 @@ we already run.</p>
   Client systems get the same habit, so what you own gets better every month.</p></div>
 </div>"""
 
+    trust = """<h2 data-reveal>Grown-up about security and your data</h2>
+<p class="sub" data-reveal>The systems we build are not science projects. They run on
+infrastructure your own IT team already trusts, and your data stays yours.</p>
+<div class="steps">
+  <div class="step" data-reveal><div class="k">01 &middot; ENTERPRISE CLOUD</div><h3>Azure, AWS, or Google</h3>
+  <p>We deploy on the enterprise cloud that fits your stack and your compliance, the same
+  infrastructure your IT department already knows how to sign off on. Real security, real
+  scale, not a tool running on someone's laptop.</p></div>
+  <div class="step" data-reveal><div class="k">02 &middot; YOUR DATA STAYS YOURS</div><h3>Nobody else trains on it</h3>
+  <p>Your records, your proposals, your proprietary work stay in your control. They do not
+  train someone else's model. And the model we build you is one you own outright, so your
+  data lives in your asset, not a vendor's.</p></div>
+  <div class="step" data-reveal><div class="k">03 &middot; SHOWS ITS WORK</div><h3>Provenance is in our blood</h3>
+  <p>The same desk that will not publish a claim without a source builds AI that does the
+  same. Answers you can trace, not answers it made up. In a business where a wrong number
+  costs real money, that is the whole point.</p></div>
+</div>"""
+
     body = f"""<div class="hero heroanim">
 <div><div class="daylight">{daylight_chip(today)}</div></div>
 <h1>Put AI to <em>work</em></h1>
@@ -1101,6 +1119,7 @@ production, and keep improving them for as long as they run.</p>
 {tiers}
 {headcount}
 {receipts}
+{trust}
 <h2 data-reveal>Built for the businesses that run this state</h2>
 <p data-reveal>Lodges and outfitters from Talkeetna to Southeast. Clinics and elder care in
 the Valley. Processors in Kodiak and Dutch Harbor. Native corporations with a proposal desk
