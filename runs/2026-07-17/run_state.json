@@ -15,10 +15,10 @@
   "flow_review": "done",
   "assemble": "done",
   "scoring": "done",
-  "ship": "in_progress",
-  "upgrade": "pending",
-  "gmail": "pending",
-  "retro": "pending"
+  "ship": "done",
+  "upgrade": "done",
+  "gmail": "done",
+  "retro": "done"
  },
  "artifacts": {
   "plan": "out/2026-07-17/plan.md",
@@ -36,5 +36,6 @@
  "craft_refresh_note": "nothing new vs FIELD_NOTES; confirmed docs 6.6% ER, infographics 28.6% top-1%, 360Brew, Mar authenticity update. Wrote nothing to doctrine per instructions.",
  "pixel_review_note": "5 critics: 8 ship, 1 revise (S4 gold-budget on figures). S4 recolored to muted slate (Angelina kept warm); all minors applied (S1 leader, S2 cadence/label, S3 river+NO ROADS, S6 river/footer/mid-band, S7 tag lum, S8 rented-label lum). Re-rendered + re-assembled.",
  "flow_review_note": "SHIP est 8.3, sequence reads as one. Applied S5 amber word + BEFORE THE CLASS kicker (S4->S5 loop). Edge-tease minor left (mostly reads).",
- "score": 9.07
+ "score": 9.07,
+ "gmail_draft_id": "r-6814001546992460808"
 }
