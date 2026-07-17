@@ -1,5 +1,5 @@
-[
-  {"claim": "$15M NSF funding (first 2 years), up to $160M possible over 10 years, 1 of 12 NSF Regional Innovation Engines across 20 states, $500K state match, engine uses AI to locate mineral deposits + bio-extraction", "source": "UAF Geophysical Institute news release (Rod Boyce)", "date": "2026-07-14", "url": "https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition"},
-  {"claim": "$15M/$160M figures corroborated, 56 of 60 USGS-designated critical minerals occur in Alaska, mineral list, Sen. Dan Sullivan quote on reliance on China", "source": "Fairbanks Daily News-Miner", "date": "2026-07-15", "url": "https://www.newsminer.com/news/local_news/uaf-strikes-gold-with-15-million-minerals-award/article_548d3488-0c44-4e54-a4eb-089dfc88258e.html"},
-  {"claim": "Named leads: Lee Ann Munk (CEO, UAF Geophysical Institute geosciences professor), Robert McCoy (GI director), Brian Stone (performing the duties of NSF Director)", "source": "UAF Geophysical Institute + Fairbanks Daily News-Miner", "date": "2026-07-14", "url": "https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition"}
-]
+{"sources":[
+ {"outlet":"UAF Geophysical Institute news release","url":"https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition","note":"$15M (first 2 yrs), up to $160M/10yr, 1 of 12 NSF engines across 20 states, $500K state match, AI to locate deposits","title":"UAF Geophysical Institute","date":"2026-07-14"},
+ {"outlet":"Fairbanks Daily News-Miner","url":"https://www.newsminer.com/news/local_news/uaf-strikes-gold-with-15-million-minerals-award/article_548d3488-0c44-4e54-a4eb-089dfc88258e.html","note":"Corroborates $15M/$160M, 56 of 60 USGS critical minerals in Alaska, mineral list, Sen. Sullivan quote","title":"News-Miner","date":"2026-07-15"},
+ {"outlet":"UAF GI (leads + roles)","url":"https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition","note":"Lee Ann Munk (CEO), Robert McCoy (GI director), Brian Stone (performing duties of NSF Director)","title":"UAF GI","date":"2026-07-14"}
+]}
