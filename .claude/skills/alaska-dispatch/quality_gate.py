@@ -46,6 +46,15 @@ def region(a,b): x0,y0,x1,y1=b; return a[y0:y1,x0:x1]
 def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     fs=sorted(glob.glob(os.path.join(frames_dir,"frame_*.png")))
     if not fs: return {"pass":False,"checks":[{"name":"FRAMES","pass":False,"detail":"no frames in "+frames_dir}],"metrics":{}}
+    # Which engine produced these frames? The current engine is Remotion 'infographic-2.5d'
+    # (prompts/dispatch_routine.md); dimensional.py and the PIL textlog are RETIRED. For 2.5D
+    # renders the 3D-manifest checks (DIMENSIONAL/DEPTH_FIELD/CAMERA_MOTION) do not apply, and
+    # per-word legibility is verified image-side by CAPTION_TEXT + HUD_TEXT instead of a textlog.
+    try:
+        _eng=(json.load(open(os.path.join(os.path.dirname(os.path.abspath(frames_dir)),"storyboard.json"))).get("engine") or "").strip().lower()
+    except Exception:
+        _eng=""
+    IS_25D=(_eng=="infographic-2.5d")
     idx=sorted(set(range(0,len(fs),6))|{0,len(fs)-1})
     sharp=[]; cap_hf=[]; card_hf=[]; deltas=[]; prev=None; prev_i=None
     for j in idx:
@@ -166,8 +175,13 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
         checks.append({"name":"READABILITY","pass":(len(bad)==0 and nck>0),
             "detail":f"{nck} readable words checked, {len(bad)} too dim/low-contrast (need vis>={F_VIS}, contrast>={F_CON}){' eg '+str(bad[:3]) if bad else ''} — guards 'every word bright + legible'"})
     else:
-        checks.append({"name":"READABILITY","pass":False,
-            "detail":"no text manifest (render with DISPATCH_TEXTLOG=1) — cannot verify per-word brightness/contrast"})
+        # infographic-2.5d (Remotion) emits no PIL textlog; per-word legibility is verified image-side
+        # by CAPTION_TEXT + HUD_TEXT (glyph-edge energy) above. Only the retired PIL engine hard-fails here.
+        _img_ok=all(c["pass"] for c in checks if c["name"] in ("CAPTION_TEXT","HUD_TEXT"))
+        checks.append({"name":"READABILITY","pass":(IS_25D and _img_ok),
+            "detail":("no PIL textlog; legibility covered by CAPTION_TEXT + HUD_TEXT glyph-edge energy (infographic-2.5d)"
+                      if IS_25D else
+                      "no text manifest (render with DISPATCH_TEXTLOG=1) — cannot verify per-word brightness/contrast")})
 
     # 7) MUSIC — must be a REAL sourced track, never the synth fallback (loop to perfection)
     mstat=os.path.join(os.path.dirname(os.path.abspath(frames_dir)),"audio","music_status.json")
@@ -332,10 +346,13 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
             "detail":f"frame 0 edge energy {f0_edge:.2f} (floor 4.0 — poster-grade ink/headline present), "
                      f"luma std {f0_std:.1f} (floor 30 — real contrast, no fade-from-black)"})
 
-    # 9-11) DIMENSIONAL HYGIENE — the render must PROVE it used the 3D engine correctly
-    # (render_manifest.json is written by dimensional.write_manifest at render end).
+    # 9-11) DIMENSIONAL HYGIENE — only for the RETIRED 3D engine (dimensional.py). The current
+    # infographic-2.5d Remotion engine does not render through dimensional.py, so these 3D-manifest
+    # checks (DIMENSIONAL/DEPTH_FIELD/CAMERA_MOTION) do not apply and are skipped for 2.5D renders.
     man_p=os.path.join(base,"render_manifest.json")
-    if not os.path.exists(man_p):
+    if IS_25D:
+        pass  # retired-engine 3D checks skipped for infographic-2.5d
+    elif not os.path.exists(man_p):
         checks.append({"name":"DIMENSIONAL","pass":False,
             "detail":"no render_manifest.json — the scene must render through dimensional.py and call "
                      "write_manifest() (proof of engine/scale/shadow-LOD/backend). 2D PIL scenes are retired."})
