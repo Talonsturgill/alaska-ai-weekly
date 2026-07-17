@@ -1,0 +1,40 @@
+{
+ "run_date": "2026-07-17",
+ "carousel_no": 9,
+ "phases": {
+  "wake": "done",
+  "craft_refresh": "done",
+  "research": "done",
+  "claims": "done",
+  "docket": "done",
+  "selection": "done",
+  "directors_room": "done",
+  "copy": "done",
+  "art_build": "done",
+  "pixel_review": "done",
+  "flow_review": "done",
+  "assemble": "done",
+  "scoring": "done",
+  "ship": "in_progress",
+  "upgrade": "pending",
+  "gmail": "pending",
+  "retro": "pending"
+ },
+ "artifacts": {
+  "plan": "out/2026-07-17/plan.md",
+  "run_state": "out/2026-07-17/run_state.json",
+  "scout_findings": "out/2026-07-17/scout_findings.json",
+  "claims": "out/2026-07-17/claims.json",
+  "selection": "out/2026-07-17/selection.md",
+  "docket": "ledger/docket.json (6 items; AIDEA Houston added; STAK/AKLNG/GVEA/AF refreshed)",
+  "storyboard": "out/2026-07-17/storyboard.md",
+  "copy": "out/2026-07-17/copy.json",
+  "caption": "out/2026-07-17/caption.txt (+caption_report.json PASS)",
+  "render": "out/2026-07-17/render (9 PNGs, machine_qa PASS/WARN, 0 fails)",
+  "final": "out/2026-07-17/final (carousel.pdf vector 7.55MB, contact_sheet.png, thumbs/)"
+ },
+ "craft_refresh_note": "nothing new vs FIELD_NOTES; confirmed docs 6.6% ER, infographics 28.6% top-1%, 360Brew, Mar authenticity update. Wrote nothing to doctrine per instructions.",
+ "pixel_review_note": "5 critics: 8 ship, 1 revise (S4 gold-budget on figures). S4 recolored to muted slate (Angelina kept warm); all minors applied (S1 leader, S2 cadence/label, S3 river+NO ROADS, S6 river/footer/mid-band, S7 tag lum, S8 rented-label lum). Re-rendered + re-assembled.",
+ "flow_review_note": "SHIP est 8.3, sequence reads as one. Applied S5 amber word + BEFORE THE CLASS kicker (S4->S5 loop). Edge-tease minor left (mostly reads).",
+ "score": 9.07
+}

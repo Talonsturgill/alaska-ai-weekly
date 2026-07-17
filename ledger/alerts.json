@@ -1,0 +1,31 @@
+{
+  "_spec": {
+    "purpose": "No-repeat ledger for subscriber alerts. Each send appends one entry; docket_alerts.py refuses to send a key that already appears here."
+  },
+  "sent": [
+    {
+      "key": "adl-422741-stak-north-slope-lease/window-open",
+      "kind": "window-open",
+      "sent_on": "2026-07-17",
+      "subject": "3 Alaska AI decisions land in the next few days"
+    },
+    {
+      "key": "adl-422741-stak-north-slope-lease/near/2026-07-17",
+      "kind": "near",
+      "sent_on": "2026-07-17",
+      "subject": "3 Alaska AI decisions land in the next few days"
+    },
+    {
+      "key": "aklng-tax-bill-second-special-session/near/2026-07-19",
+      "kind": "near",
+      "sent_on": "2026-07-17",
+      "subject": "3 Alaska AI decisions land in the next few days"
+    },
+    {
+      "key": "aidea-houston-industrial-park/window-open",
+      "kind": "window-open",
+      "sent_on": "2026-07-17",
+      "subject": "3 Alaska AI decisions land in the next few days"
+    }
+  ]
+}

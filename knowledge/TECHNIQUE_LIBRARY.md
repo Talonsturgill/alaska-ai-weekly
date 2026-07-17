@@ -336,6 +336,24 @@ text stays DOM/SVG; one imaginary light per deck; fog in the sky's hue.
     still-proposed AI load). Generalizes to any certain-vs-speculative, cost-vs-
     benefit, or who-decides-who-pays story. D2
 
+58c. **Thermal Search-Grid Motif** (NEW 2026-07-17) — a drone's-eye perspective
+    ground grid living in the lower field of every slide that CHANGES STATE with the
+    narrative and doubles as the progress read: idle scan (cover) -> sweeping with a
+    found dot + interference rings (stakes) -> a counting lattice behind ISOTYPE
+    figures -> wide+soft for a breather -> ONE cell white-hot LOCKED as a rendered CNN
+    detection (a small subject in a gold bounding box with corner ticks, over AK3D
+    thermal terrain) -> forks into two labeled branches for an AI-vs-human honesty
+    beat -> a single sealed node whisper at the close. Perspective grid: fixed
+    vanishing point, horizontal rows spaced pow(t,1.7) toward the horizon, verticals
+    fanning from the VP; a "lit" cell is a warm gradient quad; keep the grid in the
+    LOWER field (y > ~760) so it never overprints the cold upper-sky text zone. Pairs
+    with a THERMAL palette (ember/amber/white-hot on cold navy) and a warm-river
+    edge-tease. RULES: the state change must be a SHAPE change (found dot, locked box,
+    fork), not brightness-only; the white-hot detection is the deck's single hottest
+    point and the gold budget's anchor. Used as the hero + continuity motif of "No
+    Road Out. Quinhagak Flies Its Own Eyes." Generalizes to any sensing / detection /
+    search-and-rescue / monitoring story. D2
+
 ## LINE & DIAGRAM FLAIR
 
 The meta-law from every lineage (ink, drafting, cartography, transit maps,

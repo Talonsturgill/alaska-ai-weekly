@@ -1,0 +1,347 @@
+{
+ "slides": {
+  "S1": {
+   "beat": "COVER / HOOK",
+   "kicker": {
+    "text": "ALASKA.AI   No. 09"
+   },
+   "counter": {
+    "text": "01 / 09"
+   },
+   "peg": {
+    "text": "QUINHAGAK   KYUK, JULY 14 2026",
+    "claim_ids": [
+     "c1"
+    ]
+   },
+   "hook_lines": [
+    "No road out.",
+    "So Quinhagak learned",
+    "to fly its own drones."
+   ],
+   "hook_full": {
+    "text": "No road out. So Quinhagak learned to fly its own drones.",
+    "words": 10,
+    "claim_ids": [
+     "c2"
+    ]
+   },
+   "tag": {
+    "text": "HAND-LAUNCHED",
+    "claim_ids": [
+     "c2"
+    ]
+   },
+   "footer_coords": {
+    "text": "59 45 N   161 55 W",
+    "note": "data-decorative"
+   }
+  },
+  "S2": {
+   "beat": "STAKES (payoff)",
+   "kicker": {
+    "text": "THE STAKES   02 / 09"
+   },
+   "pull_quote": {
+    "text": "We get weekly calls for search and rescue. Sometimes daily.",
+    "claim_ids": [
+     "c10"
+    ]
+   },
+   "attribution": {
+    "text": "BYRON PETLUSKA, QUINHAGAK",
+    "claim_ids": [
+     "c10"
+    ]
+   },
+   "body": {
+    "text": "In a roadless stretch of the Yukon-Kuskokwim Delta, a lost boat or an overdue traveler is a life-and-death search. Quinhagak's drone team answers those calls from the air, week after week.",
+    "words": 31,
+    "claim_ids": [
+     "c10",
+     "c9"
+    ]
+   }
+  },
+  "S3": {
+   "beat": "PLACE (why local)",
+   "kicker": {
+    "text": "WHY LOCAL   03 / 09"
+   },
+   "headline": {
+    "text": "The sky is the only road.",
+    "lines": [
+     "The sky is",
+     "the only road."
+    ]
+   },
+   "body": {
+    "text": "No roads reach Quinhagak or its neighbors on the Kuskokwim coast. Rivers and airspace are the only ways through. A local pilot, instructor Sean Gleason says, knows the traffic patterns better than anyone from outside.",
+    "words": 35,
+    "claim_ids": [
+     "c11",
+     "c9"
+    ]
+   },
+   "map_note": {
+    "text": "NO ROADS",
+    "claim_ids": [
+     "c9"
+    ]
+   }
+  },
+  "S4": {
+   "beat": "PEOPLE (the class)",
+   "kicker": {
+    "text": "THE CLASS   04 / 09"
+   },
+   "headline": {
+    "text": "They are training their own.",
+    "lines": [
+     "They are training",
+     "their own."
+    ]
+   },
+   "body": {
+    "text": "On June 9, a dozen trainees from across rural Alaska came to Quinhagak to learn to fly. The local course runs 14 weeks toward an FAA Part 107 license on an Alaska DOT grant, one seat each for Quinhagak, Eek, Goodnews, and Platinum.",
+    "words": 44,
+    "claim_ids": [
+     "c2",
+     "c3",
+     "c6",
+     "c7",
+     "c8"
+    ]
+   },
+   "annotation": {
+    "lines": [
+     "ANGELINA OLRUN, 19, MEKORYUK",
+     "WANTS TO COUNT REINDEER BY THERMAL DRONE"
+    ],
+    "claim_ids": [
+     "c12",
+     "c9"
+    ]
+   },
+   "cohort_inset": {
+    "header": "NOV COHORT / 4 VILLAGES",
+    "names": "QUINHAGAK   EEK   GOODNEWS   PLATINUM",
+    "claim_ids": [
+     "c7"
+    ]
+   }
+  },
+  "S5": {
+   "beat": "BREATHER / ORIGIN",
+   "kicker": {
+    "text": "BEFORE THE CLASS"
+   },
+   "headline": {
+    "text": "It began at the dig."
+   },
+   "body": {
+    "text": "The drones first came to map Nunalleq, an ancestral Yup'ik village eroding into the Bering Sea. The pilots stayed, and turned the same eyes on the living delta.",
+    "words": 29,
+    "claim_ids": [
+     "c13"
+    ]
+   },
+   "tag": {
+    "text": "NUNALLEQ",
+    "claim_ids": [
+     "c13"
+    ]
+   }
+  },
+  "S6": {
+   "beat": "HERO + KEEPABLE (the real ML)",
+   "kicker": {
+    "text": "THE MACHINE THEY OWN   06 / 09"
+   },
+   "headline": {
+    "text": "Nalaquq built its own eyes.",
+    "lines": [
+     "Nalaquq built",
+     "its own eyes."
+    ]
+   },
+   "body": {
+    "text": "Nalaquq, the village-owned company, wrote its own machine vision. A neural network spots a small aluminum boat on a search grid. A polarized-lens rig counts salmon in the river. The name means it has been found.",
+    "words": 36,
+    "claim_ids": [
+     "c5",
+     "c14",
+     "c15",
+     "c16",
+     "c17"
+    ]
+   },
+   "readouts": [
+    {
+     "text": "DETECTED  ALUMINUM HULL  /  ANALYSIS BACKEND",
+     "claim_ids": [
+      "c14"
+     ]
+    },
+    {
+     "text": "SALMON COUNT  POLARIZED LENS",
+     "claim_ids": [
+      "c15"
+     ]
+    },
+    {
+     "text": "PILOT / HUMAN"
+    }
+   ]
+  },
+  "S7": {
+   "beat": "HONESTY (integrity spine)",
+   "kicker": {
+    "text": "BE PRECISE   07 / 09"
+   },
+   "headline": {
+    "text": "Most of the eyes are human.",
+    "lines": [
+     "Most of the eyes",
+     "are human."
+    ]
+   },
+   "body": {
+    "text": "Be exact about the machine. A neural network finds boats. A lens rig counts salmon. But people fly every drone, and the thermal reindeer counts and the archaeology are human eyes reading pictures, not algorithms.",
+    "words": 35,
+    "claim_ids": [
+     "c9",
+     "c12",
+     "c13",
+     "c14",
+     "c15"
+    ]
+   },
+   "columns": {
+    "machine": {
+     "header": "MACHINE (AI)",
+     "items": [
+      {
+       "text": "FINDS BOATS",
+       "claim_ids": [
+        "c14"
+       ]
+      },
+      {
+       "text": "COUNTS SALMON",
+       "claim_ids": [
+        "c15"
+       ]
+      }
+     ]
+    },
+    "human": {
+     "header": "HUMAN EYES",
+     "items": [
+      {
+       "text": "FLIES THE DRONE"
+      },
+      {
+       "text": "COUNTS REINDEER (THERMAL)",
+       "claim_ids": [
+        "c9"
+       ]
+      },
+      {
+       "text": "READS THE DIG",
+       "claim_ids": [
+        "c13"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "S8": {
+   "beat": "SYNTHESIS (sovereignty)",
+   "kicker": {
+    "text": "THE POINT   08 / 09"
+   },
+   "headline": {
+    "text": "Own the eye, don't rent it.",
+    "lines": [
+     "Own the eye,",
+     "don't rent it."
+    ]
+   },
+   "body": {
+    "text": "Elsewhere the sensor, the model, and the data belong to outside companies. In Quinhagak the pilots, the drones, and the machine vision belong to the village that flies over its own land, water, and people.",
+    "words": 36,
+    "claim_ids": [
+     "c5",
+     "c11",
+     "c16"
+    ]
+   },
+   "tokens": {
+    "labels": "PILOTS   DRONES   MACHINE VISION",
+    "tags": [
+     "RENTED",
+     "OWNED"
+    ],
+    "claim_ids": [
+     "c5",
+     "c16"
+    ]
+   }
+  },
+  "S9": {
+   "beat": "CLOSE (single ask)",
+   "wordmark": {
+    "text": "ALASKA.AI"
+   },
+   "ask": {
+    "text": "Who should own the machine that watches your community?",
+    "lines": [
+     "Who should own",
+     "the machine that watches",
+     "your community?"
+    ]
+   },
+   "source_note": {
+    "text": "SOURCES IN COMMENTS"
+   },
+   "site": {
+    "text": "alaskaaihq.com"
+   },
+   "counter": {
+    "text": "09 / 09"
+   },
+   "footer_coords": {
+    "text": "59 45 N   161 55 W",
+    "note": "data-decorative"
+   }
+  }
+ },
+ "document_title": "No Road Out. Quinhagak Flies Its Own Eyes",
+ "first_comment": "Sources for this one, primary first.\nKYUK, Quinhagak locals bridge drones and traditional knowledge, now they are teaching others, July 14 2026, https://www.kyuk.org/science-and-environment/2026-07-14/quinhagak-locals-bridge-drones-and-traditional-knowledge-now-theyre-teaching-others-how-to-do-it\nAlaska Public Media, Alaska News Nightly, western Alaska drone program takes flight, July 14 2026, https://alaskapublic.org/programs/alaska-news-nightly/2026-07-14/alaska-news-nightly-tuesday-july-14-2026\nNalaquq, the Alaska Native-owned subsidiary of Qanirtuuq, https://nalaquq.com/about-us/\nJCMC, the peer-reviewed paper behind the search-and-rescue vessel-detection CNN and the salmon-counting pipeline, https://academic.oup.com/jcmc/article/28/5/zmad030/7248802\nEvery Alaska AI decision we track, with live deadlines, lives at alaskaaihq.com\nIf you know Quinhagak or Nalaquq firsthand, reply and add what the reporting missed.",
+ "hashtags": [
+  "ruralAlaska",
+  "YukonKuskokwimDelta",
+  "droneSAR"
+ ],
+ "reading_level_note": "grade 8 to 10",
+ "claims_used": [
+  "c1",
+  "c2",
+  "c3",
+  "c5",
+  "c6",
+  "c7",
+  "c8",
+  "c9",
+  "c10",
+  "c11",
+  "c12",
+  "c13",
+  "c14",
+  "c15",
+  "c16",
+  "c17"
+ ]
+}

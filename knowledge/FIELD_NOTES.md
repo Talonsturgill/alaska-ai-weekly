@@ -7,6 +7,16 @@ into the doctrine/library files and prune here.
 
 ---
 
+## 2026-07-17 - run 9 retro (Carousel No. 9, "No Road Out. Quinhagak Flies Its Own Eyes", 9.07)
+
+- FULL-STUDIO RUN, no usage-limit degradation. 6 scouts + fact-checker + 3 treatment-directors + copywriter + 5 pixel critics + flow-critic + scorer all ran. Shipped 9.07 vs 8.3, vector PDF 7.86MB, 9 slides, zero hard fails.
+- STORY. Quinhagak's Nalaquq (Native-owned Qanirtuuq subsidiary) trains its own FAA Part 107 drone pilots in the roadless Y-K Delta and owns its own machine vision (a real search-and-rescue boat-detection CNN plus a polarized-lens salmon counter). Deliberate hard break from 8 straight cold-infrastructure/instrument decks: a warm, human, place-rooted sovereignty story. Runner-up (AIDEA Houston 30-sq-mi free-land data-center giveaway, fully verified) was passed over for variety and tracked on the docket instead.
+- HONESTY-AS-EDGE, again. The fact-checker's make-or-break call: the AI is REAL but narrow. Training is human-piloted (Part 107), NOT autonomous; the ML is two Nalaquq prior JCMC tools; reindeer thermal and archaeology are human-read, NOT AI. Rendered the split AS DESIGN (S7 MACHINE-vs-HUMAN equal-panels ledger plus a standing PILOT/HUMAN tag on the hero, no invented percentage). Scorer and flow both read the modesty as the spine, not a hedge. New instinct (honesty-quarantine-as-design).
+- CRAFT: the chronic flat-hero weakness is RESOLVED. S6 AK3D software-3D thermal river-valley (heightfield plus akpost grade) with a white-hot CNN boat detection read as genuine dimensional relief (artwork-craft 8, not the usual 7). Two framing lessons: brighten the valley floor (near-black reads as a dead void) and raise the horizon so terrain fills the lower half. New instinct (ak3d-terrain-hero-resolves-flat). New technique logged (Thermal Search-Grid motif).
+- PIXEL CATCH machine QA missed: all 12 S4 ISOTYPE trainees rendered gold, blowing the gold budget and killing the highlighted figure's distinction; recolored 11 to muted slate. New instinct (isotype-neutral-not-accent). The HAND-LAUNCHED leader also read as a strikethrough over its label (rerouted).
+- DOCKET: added the AIDEA Houston land-giveaway item; refreshed STAK (comment window closes today 4:30pm), AKLNG (Dunleavy called a THIRD special session, rejecting the corporate tax), GVEA (outcome still unconfirmed), Air Force EUL. docket_alerts SENT 1 subscriber email (4 alerts) because BUTTONDOWN_API_KEY is set and STAK's deadline is inside 48 hours.
+- NEXT: STAK final DNR decision lands after 7/17; GVEA LM6000 outcome still worth a hard re-check; AIDEA Houston comment window to 8/19; a Nalaquq published accuracy number or the Sealaska Tlingit-AI translator would be strong future update angles.
+
 ## 2026-07-15 - run 8 retro (Carousel No. 8, "The Uncomputed Ground", 8.78)
 
 - FULL-STUDIO RUN, recovered mid-run. Today's earlier No.7 died on the account

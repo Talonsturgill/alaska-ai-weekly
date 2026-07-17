@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "items": [
     {
       "id": "adl-422741-stak-north-slope-lease",
@@ -60,7 +60,7 @@
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-15",
+      "last_updated": "2026-07-17",
       "history": [
         {
           "date": "2026-07-08",
@@ -89,6 +89,10 @@
         {
           "date": "2026-07-15",
           "note": "Two days out. Re-confirmed against Anchorage Daily News reporting from July 7 that more than 500 public comments oppose the Stak Energy North Slope data center lease and fewer than a dozen endorse it, with the written comment window still closing 4:30 p.m. July 17. No schedule change surfaced. This remains the one open comment room among the tracked decisions."
+        },
+        {
+          "date": "2026-07-17",
+          "note": "Comment day. The written comment window on ADL 422741 closes at 4:30 p.m. today, the one open comment room among the tracked decisions. After it closes the lease moves to a pending final decision by DNR. More than 500 comments on record with fewer than a dozen in support, unchanged this run."
         }
       ]
     },
@@ -146,7 +150,7 @@
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-12",
+      "last_updated": "2026-07-17",
       "history": [
         {
           "date": "2026-07-08",
@@ -155,6 +159,10 @@
         {
           "date": "2026-07-12",
           "note": "Developer lease proposals closed June 29 and the Air Force is now in private evaluation of bids for up to 12 parcels across JBER, Eielson and Clear. The FY2027 NDAA reported by the Senate Armed Services Committee on June 23 would require a formal grid-impact assessment before the military can approve a data-center Enhanced Use Lease, a statutory check Interior utilities and ratepayers had sought."
+        },
+        {
+          "date": "2026-07-17",
+          "note": "Lease proposals were due June 29 and no developer selection or award has been made public as of this run. Carried forward as pending."
         }
       ]
     },
@@ -197,7 +205,7 @@
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-15",
+      "last_updated": "2026-07-17",
       "history": [
         {
           "date": "2026-07-08",
@@ -230,6 +238,10 @@
         {
           "date": "2026-07-15",
           "note": "Two days after the executive session. A direct re-fetch of the GVEA newsroom returned HTTP 403 again and a search of Fairbanks reporting surfaced no public disclosure of the July 13 board decision on the second LM6000 purchase, consistent with a co-op board that deliberates in executive session. Status stays pending-decision. Still watching the GVEA newsroom for a board action notice."
+        },
+        {
+          "date": "2026-07-17",
+          "note": "The board held its special meeting on the second LM6000 turbine on July 13. No public vote outcome has surfaced in GVEA releases or Fairbanks reporting as of this run, so the decision is carried forward as pending and worth a hard re-check next run."
         }
       ]
     },
@@ -284,10 +296,15 @@
           "url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-07/corporate-income-tax-change-remains-key-sticking-point-for-alaska-gas-pipeline-bill",
           "outlet": "Alaska Public Media",
           "date": "2026-07-07"
+        },
+        {
+          "url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-07-16/committee-sets-alaska-lng-tax-cut-bill-including-expanded-corporate-tax-for-final-vote",
+          "outlet": "Alaska Public Media",
+          "date": "2026-07-16"
         }
       ],
       "first_seen": "2026-07-08",
-      "last_updated": "2026-07-15",
+      "last_updated": "2026-07-17",
       "history": [
         {
           "date": "2026-07-08",
@@ -312,6 +329,10 @@
         {
           "date": "2026-07-15",
           "note": "One day out. Floor votes remain tentatively set for July 16 and the special session still ends July 19, per Alaska Public Media and Alaska Beacon reporting from early July, with the S corporation income tax provision the unresolved sticking point. A search this run surfaced no fresh schedule change or an actual vote result. Watching the July 16 floor action."
+        },
+        {
+          "date": "2026-07-17",
+          "note": "Update. A conference committee passed the final draft of the gasline tax bill HB 381 on July 16, but Governor Dunleavy rejected the expanded corporate tax and called a third Alaska LNG special session rather than accept it, so the tax terms stay unsettled. A final investment decision still waits on both the tax law and RCA review of the Enstar gas supply agreement."
         }
       ]
     },
@@ -354,6 +375,58 @@
         {
           "date": "2026-07-11",
           "note": "Tracked from this run's verified claims. RCA denied Enstar's advance prudency determination in a 17-page order (ADN, July 10); Enstar suspended the $240M Kenai Loop Pool storage project. The storage fix for Southcentral's Cook Inlet gas crunch is off the table for now; DNR technical/lease determination and the competing Hilcorp application remain unresolved."
+        }
+      ]
+    },
+    {
+      "id": "aidea-houston-industrial-park",
+      "title": "AIDEA's free state land for a Mat-Su data center park",
+      "kind": "state-land-lease",
+      "status": "open-for-comment",
+      "decider": "Alaska DNR, Commissioner John Crowther",
+      "public_access": "open",
+      "access_note": "Anyone can comment on the DNR preliminary decision to convey the land to AIDEA through August 19, 2026.",
+      "summary": "A DNR preliminary decision would transfer about 20,000 acres, roughly 30 square miles, of state land just north of Houston in the Mat-Su to the Alaska Industrial Development and Export Authority at no charge, a state subsidy meant to seed a multi-use industrial and energy district that includes scalable data centers and a logistics hub about 60 road miles north of Anchorage. Public comment runs through August 19.",
+      "key_dates": [
+        {
+          "date": "2026-07-13",
+          "label": "Preliminary decision reported",
+          "kind": "milestone"
+        },
+        {
+          "date": "2026-08-19",
+          "label": "Public comment closes",
+          "kind": "deadline"
+        }
+      ],
+      "location": {
+        "name": "North of Houston, Mat-Su Borough",
+        "lon": -149.82,
+        "lat": 61.63
+      },
+      "sources": [
+        {
+          "url": "https://www.dermotcole.com/reportingfromalaska/2026/7/13/khxwch2o4tgrjxuwycm8kmjzjtp69q",
+          "outlet": "Reporting From Alaska",
+          "date": "2026-07-13"
+        },
+        {
+          "url": "https://www.northernjournal.com/alaskas-economic-development-agency-plans-a-mat-su-industrial-park-with-data-centers/",
+          "outlet": "Northern Journal",
+          "date": "2026-07-15"
+        },
+        {
+          "url": "https://www.matsusentinel.com/state-agency-plans-houston-area-industrial-park-data-centers-distribution-hub/",
+          "outlet": "Mat-Su Sentinel",
+          "date": "2026-07-14"
+        }
+      ],
+      "first_seen": "2026-07-17",
+      "last_updated": "2026-07-17",
+      "history": [
+        {
+          "date": "2026-07-17",
+          "note": "Tracked. DNR under Commissioner John Crowther released a 45 page preliminary decision to give about 20,000 acres near Houston to AIDEA at no charge for a data center and industrial district, with public comment open through August 19. Reported by Dermot Cole on July 13 and Northern Journal on July 15."
         }
       ]
     }

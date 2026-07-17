@@ -362,6 +362,53 @@
     "https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition"
    ],
    "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-17",
+   "carousel_no": 9,
+   "topic": "Quinhagak / Nalaquq Yup'ik drone-piloting and machine-vision training pipeline in the roadless Yukon-Kuskokwim Delta (Native-owned Qanirtuuq subsidiary; a search-and-rescue boat-detection CNN and a polarized-lens salmon counter)",
+   "angle": "Data-sovereignty of the sensing layer. A village corporation trains its own FAA Part 107 pilots AND owns its own machine vision, so the community owns the machine that watches its own land, waters, and people. Honesty firewall: the training is HUMAN-piloted (never autonomous AI); the only real ML is two Nalaquq prior tools (SAR CNN c14, polarized-lens salmon counting c15) cited as prior published work; thermal reindeer counting and archaeology are human-read, NOT AI. Thesis 'own the eye, don't rent it'. Distinct from No.2 (Wood River AI salmon counting) by subject/place/actor and from No.1 (STAK who-decides) entirely.",
+   "entities": [
+    "Nalaquq LLC",
+    "Qanirtuuq Inc",
+    "Quinhagak",
+    "Eek",
+    "Goodnews Bay",
+    "Platinum",
+    "Mekoryuk",
+    "Bethel",
+    "Kanektok River",
+    "Nunalleq",
+    "Yukon-Kuskokwim Delta",
+    "KYUK",
+    "Alaska DOT&PF",
+    "Byron Petluska",
+    "Sean Gleason",
+    "Angelina Olrun",
+    "FAA Part 107",
+    "JCMC"
+   ],
+   "keywords": [
+    "drone training",
+    "FAA Part 107",
+    "machine vision",
+    "convolutional neural network",
+    "search and rescue",
+    "salmon counting",
+    "thermal imaging",
+    "reindeer",
+    "Indigenous data sovereignty",
+    "roadless",
+    "Yup'ik",
+    "Native-owned",
+    "Nunalleq",
+    "Kanektok",
+    "subsistence",
+    "photogrammetry"
+   ],
+   "headline": "No Road Out. Quinhagak Flies Its Own Eyes",
+   "sources_lead": "KYUK 2026-07-14 (Samantha Watson); Alaska Public Media / Alaska News Nightly 2026-07-14; nalaquq.com; JCMC paper (SAR CNN + salmon counting, background)",
+   "outcome_notes": "Shipped 9.07 vs 8.3, vector PDF 7.86MB, 9 slides, zero hard fails. 6 scouts + fact-checker + 3 treatments + copywriter + 5 pixel critics (8 ship / 1 revise-then-fixed) + flow (SHIP) + scorer, full studio, no usage-limit degradation. S6 AK3D thermal terrain hero resolved the chronic flat-hero weakness. Runner-up = AIDEA Houston 30-sq-mi free-land data-center giveaway (now tracked on the public docket)."
   }
  ]
 }

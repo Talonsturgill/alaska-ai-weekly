@@ -189,6 +189,24 @@
    "evidence": "Run 8 scorer put artwork-craft at 7.5 (weakest criterion), one_sentence_fix was exactly give the relief plates genuine multiplane depth instead of a graded 2D map with a grid overlay. Total still shipped at 8.78.",
    "confidence": 0.6,
    "last_confirmed": "2026-07-15"
+  },
+  {
+   "id": "honesty-quarantine-as-design",
+   "learned": "2026-07-17",
+   "instinct": "When a story's real 'AI' is narrow, render the AI-vs-human split EXPLICITLY as design: a dedicated equal-panels ledger (what is machine learning vs what is human-read) plus a standing PILOT/HUMAN tag on the rendered hero and NO invented accuracy percentages. The modesty becomes the deck's intellectual spine, not a hedge, and scores story-art fusion + honesty high. Lineage: No.2 UNPROVEN cell, No.5 confidence meter.",
+   "confidence": 0.8
+  },
+  {
+   "id": "isotype-neutral-not-accent",
+   "learned": "2026-07-17",
+   "instinct": "ISOTYPE figure/quantity fields must use a NEUTRAL fill (slate/parchment); never color the whole crowd in the accent (gold/amber). If everything is gold, gold stops signaling meaning AND the one highlighted item loses its distinction. Keep only the singled-out element warm/haloed. A pixel critic caught all 12 trainees rendered gold on S4.",
+   "confidence": 0.78
+  },
+  {
+   "id": "ak3d-terrain-hero-resolves-flat",
+   "learned": "2026-07-17",
+   "instinct": "An AK3D software-3D heightfield valley finished with an akpost thermal grade genuinely climbs the rendered ladder (reads as real dimensional relief, resolving the chronic flat-hero weakness) and is a reliable no-GL alternative to akthree for LANDSCAPE heroes. Two framing rules learned the hard way: brighten the valley floor (a near-black floor reads as a dead void) and raise the horizon (small cy / lower pitch magnitude) so terrain fills the lower half, not a thin band under a dead mid-zone.",
+   "confidence": 0.75
   }
  ]
 }

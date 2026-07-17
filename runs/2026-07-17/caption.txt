@@ -1,0 +1,9 @@
+Quinhagak has no road out, so the roadless Yup'ik village learned to fly its own drones.
+
+In the Yukon-Kuskokwim Delta, search and rescue calls come weekly, sometimes daily, and outside operators cannot read the airspace. So the village corporation trains its own FAA Part 107 pilots and runs its own machine vision, a neural network that spots a small aluminum boat on a search grid.
+
+The deck walks through the weekly calls, the class of new pilots, the machine the community actually owns, and the honest split between real AI and the human eyes reading thermal and archaeology pictures.
+
+When your community's land, water, and people are watched from the air, who should own the machine doing the watching?
+
+#ruralAlaska #YukonKuskokwimDelta #droneSAR

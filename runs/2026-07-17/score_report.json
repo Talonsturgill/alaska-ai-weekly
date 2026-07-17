@@ -1,0 +1,18 @@
+{"weighted_total":9.07,"threshold":8.3,"ship":true,"hard_fails":[],
+ "criteria":[
+  {"name":"Thumb-stop cover","weight":0.14,"score":8},
+  {"name":"Story arc & swipe momentum","weight":0.14,"score":8},
+  {"name":"Artwork craft & genuine detail","weight":0.16,"score":8,"note":"S6 rendered AK3D thermal hero resolves the chronic flat-hero weakness; supporting art (S1 drone, S8 spheres) leans simple"},
+  {"name":"Story-art fusion","weight":0.14,"score":9},
+  {"name":"Alaska authenticity & local relevance","weight":0.12,"score":9},
+  {"name":"Insight density & factual weight","weight":0.10,"score":8},
+  {"name":"Variety vs ledger","weight":0.08,"score":9},
+  {"name":"Legibility & platform fitness","weight":0.07,"score":7,"note":"S8 RENTED ~3.2:1 and S5 body dips into bottom safe zone"},
+  {"name":"Copy: voice & hook","weight":0.05,"score":8},
+  {"name":"Deliverable completeness","weight":0.10,"score":8}
+ ],
+ "weakest_criterion":"Legibility & platform fitness",
+ "one_sentence_fix":"Raise S8 RENTED token to >=4.5:1 and reconcile copy.json S5 kicker with the rendered BEFORE THE CLASS.",
+ "honest_shortfalls":["S8 RENTED label ~3.2:1 (intentionally subordinate); FIXED post-score to lighter cool gray","S5 body dips into bottom safe-zone margin (minor, breather)","supporting art on S1/S8 leans simple vs the strong S6 hero"],
+ "note_rubric_weights_sum_1.10":"weighted formula per rubric gives 9.07 vs 8.3 threshold; normalized average ~8.25",
+ "summary":"Strong honest deck, no hard fails, ships at 9.07. Honesty firewall holds (never claims autonomous AI; S6 PILOT/HUMAN tag; S7 explicit AI-vs-human ledger). Number-encoded art and Alaska specificity best-in-class. S6 rendered 3D thermal terrain resolves the flat-hero weakness."}

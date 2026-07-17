@@ -204,6 +204,30 @@
    "new_techniques_logged": [
     "Uncomputed Prospectivity Survey-Plate (NEW): a graded 2D Alaska relief map wearing an UNCOMPUTED scan grid (phantom-blue no-data cells) + reticle, paired with a corner CONFIDENCE METER that evolves per beat and never resolves to 100%; the map's refusal to fill in IS the honesty argument. Generalizes to any funded-but-unproven promise-vs-delivery story."
    ]
+  },
+  {
+   "run_date": "2026-07-17",
+   "carousel_no": 9,
+   "slide_count": 9,
+   "hero_structure": "Drone's-eye THERMAL SEARCH-GRID motif over a rendered AK3D delta river-valley: an evolving perspective ground grid (idle -> sweeping+found-dot -> counting 12 -> wide breather -> white-hot LOCKED CNN detection -> forks into AI/human branches -> single sealed node) whose S6 climax is a white-hot aluminum-boat detection with a gold CNN bounding box on rendered thermal terrain. NOT autonomy-ring, FIRM/SOFT type-weight ledger, fixed-y waterline cross-section, or uncomputed-relief survey-plate; NOT a cartographic camera-map, glyph-ledger, trace-panel, or subsurface cutaway-panorama.",
+   "atmosphere": "THERMAL warm-dominant: ember/amber/white-hot heat signatures on cold navy tundra (deep_night #02060F/#081426/#0E2138 base + rust #B4552A + ember #E8892B + amber #F6B23C + white-hot #FFE9C2), with a warm dusk beat (S5) and a warm dawn beat (S8). NOT cool drafting-film blueprint, sonar-dark abyssal navy, or graphite-and-bone survey.",
+   "depth_technique": "S6 AK3D software-3D heightfield river-valley thermal-graded via akpost (bright slate valley floor, ember canyon walls, horizon ~0.42) = the rendered-ladder hero; S5 multiplane-parallax dusk aerial delta; S3 d3 conic-equal-area delta map (baseline fitExtent then manual zoom, coastline stroke-only).",
+   "line_voice": "Instrument/Editorial + Drafting (leaders #72, knockout labels, corner readouts #84, CNN bbox corner-ticks)",
+   "continuity_device": "motif-evolution (the thermal search grid as an evolving STATE machine that doubles as the progress read) + palette-arc (cold navy -> white-hot peak at S6 -> warm dawn) + Kanektok river edge-tease (warm thread exiting the right edge). NOT fixed-y waterline+sonar rings, NOT camera-over-relief+confidence-meter.",
+   "hook_archetype": "scene/stakes-declarative cause-and-consequence ('No road out. So Quinhagak learned to fly its own drones.'). NOT big-number monument, place-paradox two-sentence, or withheld-fact/gap.",
+   "palette_family": "thermal ember/amber/white-hot on cold navy tundra + flag gold #FFC72C. NOT cool-drafting-blue+copper, abyssal-navy+sonar-cyan, or graphite-night+phantom-blue+gold.",
+   "type_pairing": "Instrument Serif (display, the warm human voice) + Space Grotesk (body/labels) + JetBrains Mono (instrument). NOT Fraunces+Space Grotesk+JBMono, NOT Archivo-variable-only, NOT Archivo+Manrope+JBMono.",
+   "narrative_structure": "hook -> instant SAR payoff (weekly calls) -> roadless place-proof -> the people (ISOTYPE class) -> origin breather (Nunalleq) -> the machine they own (hero + keepable data) -> honest AI-vs-human subtraction ledger -> own-the-whole-stack sovereignty -> single debate ask.",
+   "variance_dials": {
+    "design_variance": 4,
+    "visual_density": 3,
+    "type_temperature": 4
+   },
+   "new_techniques_logged": [
+    "Thermal Search-Grid motif (evolving drone's-eye perspective ground grid that changes STATE per beat and doubles as progress; climaxes as a white-hot CNN detection cell with a gold bounding box)",
+    "AK3D thermal river-valley hero (heightfield + akpost thermal grade, brightened valley floor, raised horizon) as a reliable rendered-ladder landscape hero without GL",
+    "Honesty-subtraction ledger (equal MACHINE-AI vs HUMAN-EYES plates that render the AI/human split as the deck's spine, with a standing PILOT/HUMAN tag on the hero)"
+   ]
   }
  ]
 }

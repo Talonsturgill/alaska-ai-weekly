@@ -1,0 +1,77 @@
+{
+  "slides": [
+    {
+      "file": "slide-01.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'ALASKA.AI No. 09' at 80,68 299x31 (margin 80px)",
+        "outside safe zone: '01 / 09' at 899,70 101x31 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-02.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'THE STAKES' at 80,68 168x31 (margin 80px)",
+        "outside safe zone: '02 / 09' at 899,68 101x31 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-03.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'WHY LOCAL' at 80,68 151x31 (margin 80px)",
+        "outside safe zone: '03 / 09' at 899,68 101x31 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-04.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'THE CLASS' at 80,68 151x31 (margin 80px)",
+        "outside safe zone: '04 / 09' at 899,68 101x31 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-05.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'BEFORE THE CLASS' at 80,68 269x31 (margin 80px)",
+        "outside safe zone: '05 / 09' at 899,68 101x31 (margin 80px)",
+        "outside safe zone: 'The drones first came to map Nunalleq, a' at 82,1064 620x227 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-06.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'THE MACHINE THEY OWN' at 80,68 332x31 (margin 80px)",
+        "outside safe zone: '06 / 09' at 899,68 101x31 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-07.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'BE PRECISE' at 80,68 168x31 (margin 80px)",
+        "outside safe zone: '07 / 09' at 899,68 101x31 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-08.html",
+      "fails": [],
+      "warns": [
+        "outside safe zone: 'THE POINT' at 80,68 151x31 (margin 80px)",
+        "outside safe zone: '08 / 09' at 899,68 101x31 (margin 80px)"
+      ]
+    },
+    {
+      "file": "slide-09.html",
+      "fails": [],
+      "warns": []
+    }
+  ],
+  "fails": 0,
+  "warns": 17,
+  "verdict": "WARN"
+}
