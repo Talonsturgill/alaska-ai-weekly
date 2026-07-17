@@ -146,6 +146,11 @@ def synth_qc(text, n_candidates=4, max_attempts=8):
 
     Returns (audio float32 mono @ 44100, report dict).
     """
+    # Voice-engine switch: DISPATCH_VOICE=gemini routes to the Gemini TTS preset-voice
+    # backend (quick-start narrator, no clone). Chatterbox clone remains the default.
+    if os.environ.get("DISPATCH_VOICE", "").strip().lower() == "gemini":
+        import vo_gemini
+        return vo_gemini.synth_qc(text)
     norm = normalize_for_tts(text)
     if len(norm) > MAX_CHARS:
         # Keep whole sentences together; only warn — do NOT chop mid-sentence and

@@ -22,6 +22,17 @@ engines:
     license: "Microsoft Azure Neural TTS — gray area for commercial publishing; fine for drafts"
     install: "pip install --break-system-packages edge-tts  # CA setup required (see SKILL.md)"
     note: "Only when both cloned + kokoro are down; disclose plainly in the draft if it ships."
+  gemini_tts:                   # QUICK-START PRESET (owner-authorized 2026-07-17 as an interim publish voice)
+    license: "Google Gemini API, per-use billing (about $0.05 to $0.15 per dispatch); preset voices, NOT a clone"
+    install: "no local model. Backend: .claude/skills/alaska-dispatch/vo_gemini.py (stdlib urllib, no new deps)."
+    note: >
+      Prebuilt Google narrator voice (30 options; default 'Charon'). NOT the owner's cloned voice,
+      so the speaker-similarity gate is skipped and the draft says so. TO ENABLE: set env
+      GEMINI_API_KEY (from aistudio.google.com/apikey) and DISPATCH_VOICE=gemini in the routine env;
+      allow generativelanguage.googleapis.com in the network policy. vo_qc.synth_qc auto-routes to it
+      when DISPATCH_VOICE=gemini, so every VO build picks it up with no other change. Optional env:
+      DISPATCH_GEMINI_VOICE, DISPATCH_GEMINI_TTS_MODEL, DISPATCH_GEMINI_STYLE. Interim only: to return
+      to the owner's clone, unset DISPATCH_VOICE (default is cloned:talon).
 
 defaults:
   publish_voice: cloned:talon            # chatterbox zero-shot of assets/voice/talon_ref.wav
