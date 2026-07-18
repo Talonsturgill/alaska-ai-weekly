@@ -3,58 +3,58 @@
     {
       "id": 1,
       "start": 0,
-      "end": 316,
+      "end": 244,
       "framing": "wide-establish",
       "transition_in": "cut",
       "note": "aerial push over the dawn parcel, boundary drawing in"
     },
     {
       "id": 2,
-      "start": 316,
-      "end": 701,
+      "start": 244,
+      "end": 547,
       "framing": "data-panel",
       "transition_in": "match-cut",
-      "note": "the plan stamps in: data center / rail hub / power lines over the machine-shadow"
+      "note": "the plan stamps in over the machine-shadow"
     },
     {
       "id": 3,
-      "start": 701,
-      "end": 916,
+      "start": 547,
+      "end": 700,
       "framing": "subject-portrait",
       "transition_in": "cut",
-      "note": "the Houston civic figure points at the proposed-ban boundary line"
+      "note": "the Houston civic figure points at the proposed-ban line"
     },
     {
       "id": 4,
-      "start": 916,
-      "end": 1127,
+      "start": 700,
+      "end": 850,
       "framing": "macro-closeup",
       "transition_in": "match-action",
       "note": "match-cut to the lone survey stake driving in, two miles short"
     },
     {
       "id": 5,
-      "start": 1127,
-      "end": 1459,
+      "start": 850,
+      "end": 1102,
       "framing": "subject-portrait",
       "transition_in": "cut",
-      "note": "the unsigned AIDEA document, pen hovering; AUG 19 trail post"
+      "note": "the unsigned AIDEA document, pen hovering; AUG 19 post"
     },
     {
       "id": 6,
-      "start": 1459,
-      "end": 1743,
+      "start": 1102,
+      "end": 1340,
       "framing": "map-territory",
       "transition_in": "loopback",
-      "note": "loopback aerial return, the objects held in the empty gap"
+      "note": "loopback aerial return, objects held in the empty gap"
     },
     {
       "id": 7,
-      "start": 1743,
-      "end": 2026,
+      "start": 1340,
+      "end": 1561,
       "framing": "wide-establish",
       "transition_in": "settle",
-      "note": "the button: nobody said yes, nobody said no where it counts"
+      "note": "the button"
     }
   ]
 }
