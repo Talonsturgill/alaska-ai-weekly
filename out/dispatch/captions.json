@@ -2,145 +2,145 @@
   {
     "text": "Alaska is about to give away",
     "start": 0.0,
-    "end": 0.04,
+    "end": 1.46,
     "seg": 0
   },
   {
     "text": "thirty one square miles of land.",
-    "start": 0.0,
-    "end": 0.04,
+    "start": 1.46,
+    "end": 3.44,
     "seg": 0
   },
   {
     "text": "For free.",
-    "start": 4.26,
-    "end": 4.3,
+    "start": 4.14,
+    "end": 4.96,
     "seg": 1
   },
   {
     "text": "To a state agency called AIDEA.",
-    "start": 4.26,
-    "end": 4.3,
+    "start": 5.3,
+    "end": 8.82,
     "seg": 1
   },
   {
     "text": "It's birch forest near Houston.",
-    "start": 9.92,
-    "end": 11.678,
+    "start": 11.14,
+    "end": 11.18,
     "seg": 2
   },
   {
     "text": "More than forty miles of mushing trails.",
-    "start": 11.678,
-    "end": 14.14,
+    "start": 11.14,
+    "end": 14.3,
     "seg": 2
   },
   {
     "text": "The plan: data centers.",
-    "start": 15.14,
-    "end": 15.958,
+    "start": 15.02,
+    "end": 16.76,
     "seg": 3
   },
   {
     "text": "A rail hub.",
-    "start": 15.958,
-    "end": 16.571,
+    "start": 17.22,
+    "end": 18.14,
     "seg": 3
   },
   {
     "text": "Power lines.",
-    "start": 16.571,
-    "end": 16.98,
+    "start": 18.56,
+    "end": 19.22,
     "seg": 3
   },
   {
     "text": "No company has signed on yet.",
-    "start": 20.16,
-    "end": 22.2,
+    "start": 20.04,
+    "end": 21.88,
     "seg": 4
   },
   {
     "text": "Houston's town council tried to",
-    "start": 22.7,
-    "end": 24.3,
+    "start": 22.58,
+    "end": 25.0,
     "seg": 5
   },
   {
     "text": "ban it.",
-    "start": 24.3,
-    "end": 24.94,
+    "start": 25.0,
+    "end": 25.48,
     "seg": 5
   },
   {
     "text": "But their line falls two miles short.",
-    "start": 26.24,
-    "end": 27.94,
+    "start": 26.12,
+    "end": 28.38,
     "seg": 6
   },
   {
     "text": "It never reaches this land.",
-    "start": 31.18,
-    "end": 31.22,
+    "start": 29.1,
+    "end": 30.8,
     "seg": 7
   },
   {
     "text": "AIDEA says it straight: no decisions",
-    "start": 31.72,
-    "end": 34.107,
+    "start": 32.86,
+    "end": 35.5,
     "seg": 8
   },
   {
     "text": "have been made.",
-    "start": 34.107,
-    "end": 35.3,
+    "start": 35.5,
+    "end": 36.4,
     "seg": 8
   },
   {
     "text": "Comments close August nineteenth.",
-    "start": 37.34,
-    "end": 38.91,
+    "start": 37.22,
+    "end": 39.42,
     "seg": 9
   },
   {
     "text": "Nothing here is final.",
-    "start": 38.91,
-    "end": 40.48,
+    "start": 39.42,
+    "end": 40.8,
     "seg": 9
   },
   {
     "text": "So the fence stands empty.",
-    "start": 41.84,
-    "end": 42.711,
+    "start": 41.72,
+    "end": 43.28,
     "seg": 10
   },
   {
     "text": "The shadow keeps reaching.",
-    "start": 42.711,
-    "end": 43.74,
+    "start": 43.76,
+    "end": 44.86,
     "seg": 10
   },
   {
     "text": "The dogs still run this trail",
-    "start": 45.9,
-    "end": 48.06,
+    "start": 45.78,
+    "end": 47.18,
     "seg": 11
   },
   {
     "text": "either way.",
-    "start": 48.02,
-    "end": 48.06,
+    "start": 47.18,
+    "end": 47.68,
     "seg": 11
   },
   {
     "text": "Nobody's said yes here.",
-    "start": 49.66,
-    "end": 51.04,
+    "start": 49.54,
+    "end": 50.92,
     "seg": 12
   },
   {
     "text": "Nobody's said no where it counts.",
-    "start": 51.32,
-    "end": 53.52,
+    "start": 51.2,
+    "end": 53.4,
     "seg": 12
   }
 ]
