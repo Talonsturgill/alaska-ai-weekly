@@ -51,10 +51,10 @@
    "id": "adl-422741-stak-north-slope-lease",
    "title": "STAK Energy's North Slope AI campus lease",
    "kind": "state-land-lease",
-   "status": "open-for-comment",
+   "status": "pending-decision",
    "decider": "Alaska DNR, Division of Oil and Gas",
-   "public_access": "open",
-   "access_note": "Anyone can comment on docket ADL 422741 until 4:30 p.m. July 17; commenting preserves appeal rights on the final decision.",
+   "public_access": "closed",
+   "access_note": "The written comment window closed 4:30 p.m. July 17, 2026. DNR now weighs more than 500 comments before a final best-interest decision on the 50-year lease. No public comment path remains open.",
    "summary": "A preliminary decision would give STAK Energy a 50-year lease on 715.4 acres of state land about 26 miles south of Deadhorse for a gas-fired AI and cloud campus its developer pegs at more than $10 billion, with 1 to 3 gigawatts of on-site generation. More than 500 public comments arrived before the first deadline; fewer than a dozen supported the project.",
    "key_dates": [
     {
@@ -106,7 +106,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-17",
+   "last_updated": "2026-07-18",
    "history": [
     {
      "date": "2026-07-08",
@@ -139,6 +139,10 @@
     {
      "date": "2026-07-17",
      "note": "Comment day. The written comment window on ADL 422741 closes at 4:30 p.m. today, the one open comment room among the tracked decisions. After it closes the lease moves to a pending final decision by DNR. More than 500 comments on record with fewer than a dozen in support, unchanged this run."
+    },
+    {
+     "date": "2026-07-18",
+     "note": "The written comment window closed at 4:30 p.m. July 17, so the lease moves to a pending final decision by DNR Division of Oil and Gas. More than 500 comments on record with fewer than a dozen in support. Reporting notes the campus is off-grid and self-generating on North Slope gas hundreds of miles from urban Alaska, so its fuel use would not directly raise Railbelt household electricity prices. This run reframed the docket around that on-grid versus off-grid distinction."
     }
    ]
   },
@@ -251,7 +255,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-17",
+   "last_updated": "2026-07-18",
    "history": [
     {
      "date": "2026-07-08",
@@ -288,6 +292,10 @@
     {
      "date": "2026-07-17",
      "note": "The board held its special meeting on the second LM6000 turbine on July 13. No public vote outcome has surfaced in GVEA releases or Fairbanks reporting as of this run, so the decision is carried forward as pending and worth a hard re-check next run."
+    },
+    {
+     "date": "2026-07-18",
+     "note": "Five days after the July 13 special meeting a search of GVEA releases and Fairbanks reporting still surfaced no public disclosure of the board decision on the second LM6000 turbine, consistent with a co op board that deliberates in executive session. Status stays pending-decision and remains a hard re-check item."
     }
    ]
   },
@@ -315,6 +323,11 @@
      "date": "2026-07-19",
      "label": "Special session ends",
      "kind": "deadline"
+    },
+    {
+     "date": "2026-07-27",
+     "label": "Third special session convenes in Juneau",
+     "kind": "milestone"
     }
    ],
    "location": {
@@ -350,7 +363,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-17",
+   "last_updated": "2026-07-18",
    "history": [
     {
      "date": "2026-07-08",
@@ -379,6 +392,10 @@
     {
      "date": "2026-07-17",
      "note": "Update. A conference committee passed the final draft of the gasline tax bill HB 381 on July 16, but Governor Dunleavy rejected the expanded corporate tax and called a third Alaska LNG special session rather than accept it, so the tax terms stay unsettled. A final investment decision still waits on both the tax law and RCA review of the Enstar gas supply agreement."
+    },
+    {
+     "date": "2026-07-18",
+     "note": "On July 16 the House deadlocked 19 to 19 and the Senate passed the gas-line tax bill 11 to 8 with a 9.4 percent pass-through tax on S corp oil and gas entities. Governor Dunleavy rejected that tax and called a third Alaska LNG special session to convene July 27 in Juneau, so the pipeline tax terms stay unsettled. The AI and data-center link here is indirect, the administration has courted large gas demand to help justify the line."
     }
    ]
   },
@@ -431,7 +448,7 @@
    "status": "open-for-comment",
    "decider": "Alaska DNR, Commissioner John Crowther",
    "public_access": "open",
-   "access_note": "Anyone can comment on the DNR preliminary decision to convey the land to AIDEA through August 19, 2026.",
+   "access_note": "Anyone can comment on the DNR preliminary decision to transfer the land to AIDEA through 5 p.m. August 19, 2026, on the DNR website. This is now the one open comment room among the tracked decisions.",
    "summary": "A DNR preliminary decision would transfer about 20,000 acres, roughly 30 square miles, of state land just north of Houston in the Mat-Su to the Alaska Industrial Development and Export Authority at no charge, a state subsidy meant to seed a multi-use industrial and energy district that includes scalable data centers and a logistics hub about 60 road miles north of Anchorage. Public comment runs through August 19.",
    "key_dates": [
     {
@@ -468,11 +485,94 @@
     }
    ],
    "first_seen": "2026-07-17",
-   "last_updated": "2026-07-17",
+   "last_updated": "2026-07-18",
    "history": [
     {
      "date": "2026-07-17",
      "note": "Tracked. DNR under Commissioner John Crowther released a 45 page preliminary decision to give about 20,000 acres near Houston to AIDEA at no charge for a data center and industrial district, with public comment open through August 19. Reported by Dermot Cole on July 13 and Northern Journal on July 15."
+    },
+    {
+     "date": "2026-07-18",
+     "note": "Re-verified against Alaska Beacon and Alaska News Source. The 41 page DNR preliminary decision would transfer about 30 square miles of state land north of Houston to AIDEA at no cost for a multi use industrial and energy development district that includes data centers, with public comment open through 5 p.m. August 19. AIDEA director Randy Ruaro said there are no pre determined and set land use decisions. Houston Council Member Johansen introduced a June ordinance to ban data centers within city limits and the council postponed the vote to August 13. Unlike the off grid North Slope campus, a Railbelt data center here could move household bills either way depending on the utility rate deal."
+    }
+   ]
+  },
+  {
+   "id": "anchorage-ao-2026-27-data-center-zoning",
+   "title": "Anchorage data-center zoning ordinance AO 2026-27",
+   "kind": "legislation",
+   "status": "decided",
+   "decider": "Anchorage Assembly",
+   "public_access": "indirect",
+   "access_note": "The elected Anchorage Assembly adopted the ordinance in a public 10 to 2 vote. Residents reach it through Assembly elections and public testimony.",
+   "summary": "On March 27, 2026 the Anchorage Assembly adopted ordinance AO 2026-27 in a 10 to 2 vote, defining data centers in the municipal zoning code for the first time. It confines them to commercial and industrial zones, requires landscaping buffers and enclosed power equipment, and requires written statements from electric and water utilities that the grid has sufficient system capacity before a project proceeds. Members Scott Myers and Keith McCormick voted against it.",
+   "key_dates": [
+    {
+     "date": "2026-03-27",
+     "label": "Assembly adopts AO 2026-27 (10 to 2)",
+     "kind": "vote"
+    }
+   ],
+   "location": {
+    "name": "Anchorage",
+    "lon": -149.9003,
+    "lat": 61.2181
+   },
+   "sources": [
+    {
+     "url": "https://www.adn.com/alaska-news/anchorage/2026/03/27/anchorage-assembly-preemptively-adopts-data-center-regulations/",
+     "outlet": "Anchorage Daily News",
+     "date": "2026-03-27"
+    }
+   ],
+   "first_seen": "2026-07-18",
+   "last_updated": "2026-07-18",
+   "history": [
+    {
+     "date": "2026-07-18",
+     "note": "Tracked from this run. Anchorage adopted the data center land use framework 10 to 2 on March 27, the first local guardrail of its kind in the state. Sponsored by Anna Brawley and Daniel Volland. Added because Carousel No. 10 turns on whether a Railbelt data center helps or hurts ratepayers, and this ordinance is the one enacted local guardrail while the state bill stalls."
+    }
+   ]
+  },
+  {
+   "id": "hb-259-data-center-utility-standards",
+   "title": "HB 259, state utility standards for large data centers",
+   "kind": "legislation",
+   "status": "pending-decision",
+   "decider": "Alaska Legislature (House Energy Committee)",
+   "public_access": "indirect",
+   "access_note": "Legislators decide. Constituents reach the bill through their representatives and committee testimony. It has not moved out of the House Energy Committee.",
+   "summary": "HB 259, introduced by Rep. Donna Mears in January 2026, would set utility rate-setting guidelines and community benefit standards for large energy use facilities such as data centers. It was referred to the House Energy Committee and has not advanced, so Alaska has no statewide cost-allocation rule governing how a large data-center load is billed against other ratepayers.",
+   "key_dates": [
+    {
+     "date": "2026-01-20",
+     "label": "Referred to House Energy Committee",
+     "kind": "milestone"
+    }
+   ],
+   "location": {
+    "name": "Juneau",
+    "lon": -134.4197,
+    "lat": 58.3019
+   },
+   "sources": [
+    {
+     "url": "https://www.adn.com/alaska-news/anchorage/2026/03/04/data-centers-powering-the-ai-boom-demand-local-energy-anchorage-assembly-members-want-to-regulate-them/",
+     "outlet": "Anchorage Daily News",
+     "date": "2026-03-04"
+    },
+    {
+     "url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=HB+259",
+     "outlet": "Alaska State Legislature",
+     "date": "2026-01-20"
+    }
+   ],
+   "first_seen": "2026-07-18",
+   "last_updated": "2026-07-18",
+   "history": [
+    {
+     "date": "2026-07-18",
+     "note": "Tracked from this run. The state level counterpart to the Anchorage ordinance, HB 259 would set rate-setting and community benefit standards for big loads but sits in the House Energy Committee. Its stall is the policy gap at the center of Carousel No. 10, no statewide rule decides whether a data center spreads or shifts costs onto households."
     }
    ]
   }
