@@ -209,9 +209,11 @@ const SledDogTeam: React.FC<{x: number; y: number; scale?: number; f: number; fa
         <path d={`M-8,10 L${-8 + legB},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
         <path d={`M14,10 L${14 + legB},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
         <path d={`M24,10 L${24 + legF},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
-        {/* body */}
-        <path d="M-30,-6 q34,-20 68,0 q6,16 -4,26 q-30,10 -60,0 q-10,-10 -4,-26 Z" fill={AMBER} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-        <path d="M8,-10 q22,2 30,14 q4,10 -4,18 q-14,6 -28,2 Z" fill={AMBER_D} opacity={0.6} />
+        {/* body — form-shaded so it reads as a lit animal, not a flat amber blob */}
+        <path d="M-30,-6 q34,-20 68,0 q6,16 -4,26 q-30,10 -60,0 q-10,-10 -4,-26 Z" fill="url(#dogLit)" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <path d="M8,-10 q22,2 30,14 q4,10 -4,18 q-14,6 -28,2 Z" fill={AMBER_D} opacity={0.55} />
+        {/* rim light on the sun-facing back */}
+        <path d="M-30,-6 q34,-20 68,0" fill="none" stroke={LIGHT.rim} strokeWidth={2.5} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
         {/* tail, curled, secondary motion */}
         <path d={`M-30,-2 q-22,${-8 - 4 * Math.sin(f / 5 + phase)} -14,-24`} fill="none" stroke={AMBER} strokeWidth={8} strokeLinecap="round" />
         {/* head + ears + snout, harness strap */}
@@ -228,7 +230,8 @@ const SledDogTeam: React.FC<{x: number; y: number; scale?: number; f: number; fa
   };
   return (
     <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
-      <ellipse cx={20} cy={38} rx={110} ry={14} fill={INK} opacity={0.22} />
+      <FormGradient id="dogLit" t={tones(AMBER)} softness={0.85} />
+      <ContactShadow cx={20} cy={38} rx={110} ry={15} opacity={0.24} blur={9} />
       <Dog dx={-70} phase={0} />
       <Dog dx={0} phase={1.4} />
       <Dog dx={70} phase={2.8} />
@@ -497,8 +500,28 @@ const S4: React.FC = () => {
         <rect x={0} y={1150} width={1080} height={770} fill="#efe0c4" />
         <path d="M0,1150 q270,-20 540,0 q270,20 540,0" fill="none" stroke={BIRCH_D} strokeWidth={4} opacity={0.6} />
         <SurveyStake x={540} y={1360} s={1.9} settle={settle} />
-        {snap > 0.4 && <SpeedLines cx={540} cy={1160} frame={f} intensity={Math.min(1, (snap - 0.4) * 2)} color={INK} />}
-        {snap > 0.55 && <ImpactStar cx={540} cy={1080} r={40 + 16 * snap} color={CRIMSON} rot={f * 2} />}
+        {/* physical ground impact where the stake drives in: an expanding shockwave ring +
+            kicked-up dust, replacing the flat comic starburst the panel flagged as clip-arty */}
+        {snap > 0.15 && (() => {
+          const it = interpolate(f, [2, 28], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+          const ringR = 34 + 300 * it;
+          const ringO = Math.max(0, 0.55 * (1 - it));
+          return (
+            <g>
+              <ellipse cx={540} cy={1362} rx={ringR} ry={ringR * 0.26} fill="none" stroke={INK} strokeWidth={6 * (1 - it) + 1} opacity={ringO} />
+              <ellipse cx={540} cy={1362} rx={ringR * 0.66} ry={ringR * 0.66 * 0.26} fill="none" stroke="#ffffff" strokeWidth={3 * (1 - it)} opacity={ringO * 0.8} />
+              {Array.from({length: 8}).map((_, i) => {
+                const side = i % 2 ? 1 : -1;
+                const a = 0.2 + 1.1 * (i / 7);
+                const d = 44 + 170 * it;
+                const px = 540 + Math.cos(a) * d * side;
+                const py = 1360 - Math.sin(a) * d * 0.62 - 26 * it;
+                const r = (13 + (i % 3) * 7) * (0.6 + it);
+                return <ellipse key={i} cx={px} cy={py} rx={r} ry={r * 0.82} fill="#d9c9a8" opacity={Math.max(0, 0.5 * (1 - it))} />;
+              })}
+            </g>
+          );
+        })()}
         {chainTaut > 0.02 && <MeasuringChain x1={230} y1={1180} x2={860} y2={1170} taut={chainTaut} />}
       </svg>
     </AbsoluteFill>

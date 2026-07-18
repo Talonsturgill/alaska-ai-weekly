@@ -1,4 +1,5 @@
 import React from 'react';
+import {tones, FormGradient, RimLight, ContactShadow, LIGHT} from './lighting';
 
 // =============================================================================
 // CHARACTER — the parameterized IGS-style person rig (the cast system).
@@ -59,6 +60,10 @@ export const Character: React.FC<CharacterProps> = ({
   const bob = 2.2 * Math.sin(f / 13);
   const blink = ((f + 11) % 92) < 5;
   const skinShade = '#c99268';
+  // per-instance ids so each figure's form-shading gradients stay unique in the doc
+  const uid = `ch${Math.round(x)}_${Math.round(y)}_${outfit}_${facing}`;
+  const tMain = tones(c.main);
+  const tSkin = tones(skin);
 
   // ---- face per emotion --------------------------------------------------
   const face = () => {
@@ -180,21 +185,26 @@ export const Character: React.FC<CharacterProps> = ({
 
   return (
     <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) translate(-150,-500)`}>
+      {/* form-shading gradients for this figure (jacket + skin + pants), lit by the global sun dir */}
+      <FormGradient id={`${uid}_body`} t={tMain} />
+      <FormGradient id={`${uid}_skin`} t={tSkin} softness={0.8} />
+      <FormGradient id={`${uid}_pants`} t={tones(c.pants)} softness={0.85} />
       <g transform="translate(150,500)">
-        {/* ground contact shadow */}
-        <ellipse cx={0} cy={2} rx={92} ry={16} fill={INK} opacity={0.28} />
+        {/* soft, light-direction contact shadow (AO) grounding the figure */}
+        <ContactShadow cx={0} cy={4} rx={92} ry={17} opacity={0.3} blur={10} />
         {/* legs */}
-        <rect x={-40} y={-160} width={34} height={150} rx={16} fill={c.pants} stroke={INK} strokeWidth={6} />
-        <rect x={8} y={-160} width={34} height={150} rx={16} fill={c.pants} stroke={INK} strokeWidth={6} />
+        <rect x={-40} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
+        <rect x={8} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
         {/* boots */}
         <path d="M-44,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
         <path d="M4,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
         {/* torso (breath) */}
         <g transform={`translate(0,${-160 + bob}) scale(1,${breath}) translate(0,160)`}>
           <g transform="translate(0,-160)">
-            <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" fill={c.main} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-            {/* shade + highlight */}
-            <path d="M34,-200 q52,10 58,50 l10,144 q2,16 -16,16 h-52 Z" fill={c.shade} opacity={0.75} />
+            <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" fill={`url(#${uid}_body)`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+            {/* core shade on the shadow side + rim light on the sun-facing (left) contour */}
+            <path d="M34,-200 q52,10 58,50 l10,144 q2,16 -16,16 h-52 Z" fill={tMain.shade} opacity={0.7} />
+            <RimLight d="M-92,-150 q6,-56 92,-56" w={4} opacity={0.55} />
             <path d="M-78,-178 q12,-14 34,-18 l-6,70 q-20,-4 -32,-14 Z" fill="#ffffff" opacity={0.16} />
             {outfit === 'parka' && (
               <g>
@@ -263,9 +273,16 @@ export const Character: React.FC<CharacterProps> = ({
                 {hg === 'hood' && (
                   <path d="M-78,20 a78,86 0 0 1 156,0 q0,-96 -78,-96 q-78,0 -78,96 Z" fill={c.shade} stroke={INK} strokeWidth={6} />
                 )}
-                {/* skin */}
-                <circle r={56} fill={skin} stroke={INK} strokeWidth={6} />
-                <path d="M14,-54 a56,56 0 0 1 42,54 l-14,0 a42,42 0 0 0 -34,-42 Z" fill={skinShade} opacity={0.6} />
+                {/* skin — radial form light makes the head read spherical, not a flat disc */}
+                <radialGradient id={`${uid}_headlit`} cx={`${50 + LIGHT.dir.x * 26}%`} cy={`${50 - LIGHT.dir.y * -26}%`} r="72%">
+                  <stop offset="0%" stopColor={tSkin.key} />
+                  <stop offset="58%" stopColor={skin} />
+                  <stop offset="100%" stopColor={tSkin.shade} />
+                </radialGradient>
+                <circle r={56} fill={`url(#${uid}_headlit)`} stroke={INK} strokeWidth={6} />
+                <path d="M14,-54 a56,56 0 0 1 42,54 l-14,0 a42,42 0 0 0 -34,-42 Z" fill={skinShade} opacity={0.5} />
+                {/* rim on the sun-facing cheek */}
+                <path d="M-40,-40 a56,56 0 0 0 -14,44" fill="none" stroke={LIGHT.rim} strokeWidth={3.5} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
                 {/* hair (visible under bare/cap/hood) */}
                 {(hg === 'bare' || hg === 'cap' || hg === 'hood') && (
                   <path d="M-56,-4 a56,56 0 0 1 112,0 q-18,-36 -56,-36 q-38,0 -56,36 Z" fill={hair} stroke={INK} strokeWidth={5} />
