@@ -443,7 +443,7 @@ const S3: React.FC = () => {
           return <line key={i} x1={px} y1={py - 40} x2={px} y2={py + 20} stroke={INK} strokeWidth={8} opacity={0.8} />;
         })}
       </svg>
-      <div style={{position: 'absolute', top: 1590, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: charIn}}>
+      <div style={{position: 'absolute', top: 1400, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: charIn}}>
         <div style={{background: ICE, border: `7px solid ${INK}`, borderRadius: 12, padding: '14px 28px'}}>
           <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 30, color: INK, textAlign: 'center'}}>CITY OF HOUSTON: PROPOSED BAN</div>
         </div>
