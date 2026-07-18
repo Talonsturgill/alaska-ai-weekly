@@ -3,24 +3,27 @@ import {AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoCo
 import {z} from 'zod';
 import {Character} from './lib/Character';
 import {SpeedLines, ImpactStar, ZoomVignette} from './lib/FX';
-import {
-  INK, RED, RED_D, ICE, SNOW,
-  BoxLabel, StatBurst, Stamp, ServerMachine,
-} from './lib/kit';
+import {INK, ICE, SNOW} from './lib/kit';
 
 const BOLD = 'Arial Black, Arial, sans-serif';
 
-// ---- 2026-07-17 palette: amethyst-plum subsurface, copper machine, citrine ore, lime AI ----
-const PLUM = '#3d2a55';
-const PLUM_D = '#2a1c3d';
-const PLUM_GLOW = '#503a6e';
-const CIT = '#ffc21e';        // citrine ore + chip glow
-const CIT_D = '#d99a12';
-const LIME = '#b6ff3a';       // the AI's signature accent
-const LIME_D = '#7fbf1f';
-const COP = '#c56b4a';
-const COP_D = '#8f4a30';
-const GROUND = '#4a3550';     // tundra-over-bedrock band
+// ---- 2026-07-18 palette: dawn birch/spruce forest, graphite machine-shadow, husky amber ----
+const SKY_HORIZON = '#f2c9a0';   // warm dawn glow at the horizon
+const SKY_MIST = '#dfe8e0';      // misty pale sky above
+const VIRIDIAN = '#234f3d';      // deep viridian canopy silhouette
+const VIRIDIAN_D = '#153327';
+const BIRCH = '#efe6d0';         // birch-white bark
+const BIRCH_D = '#c9bb95';
+const GROUND = '#4a5a3f';        // forest floor
+const GROUND_D = '#333f2b';
+const AMBER = '#c67c3e';         // husky-fur warm
+const AMBER_D = '#8f5726';
+const GRAPHITE = '#3a4652';      // institutional graphite-blue: the machine-shadow
+const GRAPHITE_D = '#232c34';
+const CRIMSON = '#c0392b';       // survey-tag accent
+const WOOD = '#8a6239';
+const WOOD_D = '#5c4326';
+const MOSS = '#6b7a4a';
 
 export const episodeSchema = z.object({
   captions: z.array(z.object({text: z.string(), start: z.number(), end: z.number(), seg: z.number()})),
@@ -29,169 +32,353 @@ export const episodeSchema = z.object({
 });
 export type EpisodeProps = z.infer<typeof episodeSchema>;
 
-// ================================================================ shared BG
-const SubsurfaceBG: React.FC<{f: number; descent?: number}> = ({f, descent = 0}) => (
+// ================================================================ shared dawn-forest background
+const DawnForestBG: React.FC<{f: number; parallax?: number; dogHint?: boolean}> = ({f, parallax = 1, dogHint = false}) => (
   <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-    <radialGradient id="plumG" cx="50%" cy="40%" r="70%">
-      <stop offset="0%" stopColor={PLUM_GLOW} />
-      <stop offset="100%" stopColor={PLUM_D} />
+    <radialGradient id="dawnSun" cx="50%" cy="72%" r="60%">
+      <stop offset="0%" stopColor="#fce3bd" />
+      <stop offset="45%" stopColor="#f2c9a0" />
+      <stop offset="100%" stopColor={SKY_MIST} />
     </radialGradient>
-    <rect width="1080" height="1920" fill="url(#plumG)" />
-    {/* faint bedrock strata drifting up as we descend (parallax) */}
+    <rect width="1080" height="1080" fill="url(#dawnSun)" />
+    {/* sun disc, low on the horizon, soft double-ring glow */}
+    <circle cx={540} cy={1040} r={210} fill={SNOW} opacity={0.14} />
+    <circle cx={540} cy={1040} r={130} fill={SNOW} opacity={0.22} />
+    <circle cx={540} cy={1040} r={72} fill="#fff6e6" opacity={0.55} />
+    <rect x={0} y={1080} width={1080} height={840} fill={GROUND} />
+    <path d="M0,1080 q270,-30 540,0 q270,30 540,0 L1080,1200 L0,1200 Z" fill={GROUND_D} opacity={0.5} />
+    {/* undergrowth texture (low tufts across the floor) */}
     <g opacity={0.5}>
+      {Array.from({length: 22}).map((_, i) => {
+        const x = (i * 97) % 1080;
+        const y = 1140 + ((i * 53) % 700);
+        return <path key={i} d={`M${x},${y} q10,-22 20,0 q10,-18 20,0`} fill="none" stroke={GROUND_D} strokeWidth={5} strokeLinecap="round" />;
+      })}
+    </g>
+    {/* drifting mist bands */}
+    <g opacity={0.35}>
+      {Array.from({length: 4}).map((_, i) => {
+        const y = 300 + i * 190 + 10 * Math.sin(f / 40 + i);
+        const drift = (f * 0.15 * parallax + i * 220) % 1400 - 300;
+        return <ellipse key={i} cx={drift} cy={y} rx={340} ry={40} fill={SNOW} opacity={0.5} />;
+      })}
+    </g>
+    {/* a few birds, small ink strokes, drifting far in the sky */}
+    <g opacity={0.5}>
+      {[[180, 260], [760, 200], [420, 340]].map(([bx, by], i) => {
+        const x = (bx + f * 0.4 * parallax + i * 300) % 1200 - 60;
+        return <path key={i} d={`M${x},${by} q14,-12 28,0 q14,-12 28,0`} fill="none" stroke={INK} strokeWidth={3} opacity={0.5} />;
+      })}
+    </g>
+    {/* far treeline silhouette (parallax layer 1, slow) */}
+    <g opacity={0.55} transform={`translate(${-((f * 0.12 * parallax) % 220)},0)`}>
+      {Array.from({length: 10}).map((_, i) => {
+        const x = i * 220;
+        const h = 90 + (i % 3) * 30;
+        return <path key={i} d={`M${x},1080 L${x + 30},${1080 - h} L${x + 60},1080 Z`} fill={VIRIDIAN_D} />;
+      })}
+    </g>
+    {/* dawn-lit dog silhouette hint, far in the mid treeline (early warmth without a full hero) */}
+    {dogHint && (
+      <g transform={`translate(${360 + 40 * Math.sin(f / 30)},1076) scale(0.34)`} opacity={0.6}>
+        <path d="M-30,-6 q34,-20 68,0 q6,16 -4,26 q-30,10 -60,0 q-10,-10 -4,-26 Z" fill={VIRIDIAN_D} />
+        <path d="M-30,-2 q-20,-8 -12,-24" fill="none" stroke={VIRIDIAN_D} strokeWidth={8} strokeLinecap="round" />
+        <path d="M38,-14 q16,-12 28,0" fill="none" stroke={VIRIDIAN_D} strokeWidth={8} strokeLinecap="round" />
+      </g>
+    )}
+    {/* mid treeline (parallax layer 2, faster, varied spruce heights + a few rounder birch canopies) */}
+    <g transform={`translate(${-((f * 0.3 * parallax) % 260)},0)`}>
       {Array.from({length: 9}).map((_, i) => {
-        const y = ((i * 230 + descent * 40 + f * 0.25) % 2100) - 100;
-        return <path key={i} d={`M-40,${y} q270,${18 - (i % 3) * 12} 560,0 q270,-16 600,4`} fill="none" stroke={PLUM} strokeWidth={10} opacity={0.5} />;
+        const x = i * 260 + 40;
+        const h = 140 + ((i * 53) % 5) * 34;
+        const isBirchCanopy = i % 4 === 1;
+        if (isBirchCanopy) {
+          return (
+            <g key={i}>
+              <rect x={x + 30} y={1080 - h * 0.5} width={10} height={h * 0.5} fill={BIRCH} stroke={INK} strokeWidth={3} />
+              <ellipse cx={x + 35} cy={1080 - h * 0.55} rx={44} ry={h * 0.36} fill={VIRIDIAN} stroke={INK} strokeWidth={3} opacity={0.94} />
+              <ellipse cx={x + 20} cy={1080 - h * 0.62} rx={26} ry={h * 0.22} fill={VIRIDIAN_D} opacity={0.5} />
+            </g>
+          );
+        }
+        return (
+          <g key={i}>
+            <path d={`M${x},1080 L${x + 20},${1080 - h * 0.4} L${x + 12},${1080 - h * 0.4} L${x + 32},${1080 - h * 0.72} L${x + 24},${1080 - h * 0.72} L${x + 44},${1080 - h} L${x + 64},${1080 - h * 0.72} L${x + 56},${1080 - h * 0.72} L${x + 76},${1080 - h * 0.4} L${x + 68},${1080 - h * 0.4} L${x + 88},1080 Z`}
+              fill={VIRIDIAN} stroke={INK} strokeWidth={3} strokeLinejoin="round" opacity={0.92} />
+            <path d={`M${x + 44},${1080 - h} L${x + 24},${1080 - h * 0.72} L${x + 44},${1080 - h * 0.78} Z`} fill={VIRIDIAN_D} opacity={0.5} />
+          </g>
+        );
       })}
     </g>
-    {/* drifting mineral dust motes */}
-    <g opacity={0.55}>
-      {Array.from({length: 24}).map((_, i) => {
-        const s = i * 53;
-        const x = (s * 37) % 1080;
-        const y = ((s * 17 + f * (1 + (s % 5) * 0.3)) % 1960);
-        const r = 2 + (s % 4);
-        return <circle key={i} cx={x} cy={y} r={r} fill={i % 4 === 0 ? CIT : LIME} opacity={0.35} />;
-      })}
-    </g>
-    {/* larger drifting glow orbs (big enough to register as disjoint motion at analysis res,
-        spread across the frame so every scene keeps a living, layered background) */}
-    <g>
+    {/* birch trunks foreground (parallax layer 3, fastest), bark detail + a base clump of ferns */}
+    <g transform={`translate(${-((f * 0.55 * parallax) % 300)},0)`}>
       {Array.from({length: 7}).map((_, i) => {
-        const s = i * 97 + 11;
-        const bx = (s * 53) % 980 + 50;
-        const drift = 60 * Math.sin(f / (22 + (s % 7) * 4) + i);
-        const x = bx + drift;
-        const y = ((s * 29 + f * (0.9 + (s % 4) * 0.5)) % 2040) - 60;
-        const r = 24 + (s % 5) * 8;
-        const tw = 0.10 + 0.10 * (0.5 + 0.5 * Math.sin(f / 9 + i * 1.7));
-        return <circle key={i} cx={x} cy={y} r={r} fill={i % 2 === 0 ? CIT : LIME} opacity={tw} />;
+        const x = i * 300 + 90;
+        return (
+          <g key={i} transform={`translate(${x},1080)`}>
+            <path d="M-16,0 q-6,-140 4,-260 l24,0 q10,120 4,260 Z" fill={BIRCH} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+            <path d="M4,-260 q10,120 4,260 l8,0 q4,-140 -4,-260 Z" fill={BIRCH_D} opacity={0.6} />
+            {[40, 90, 150, 200].map((yy, j) => (
+              <rect key={j} x={-14} y={-yy} width={10 + (j % 2) * 6} height={9} fill={INK} opacity={0.55} />
+            ))}
+            <path d="M-30,0 q10,-30 0,-46 M-14,0 q4,-24 14,-34 M18,0 q-4,-28 10,-40" fill="none" stroke={GROUND_D} strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+          </g>
+        );
       })}
     </g>
   </svg>
 );
 
-// a spinning mechanical auger bit from (x,y) pointing DOWN length L
-const DrillBit: React.FC<{x: number; y: number; L: number; f: number; w?: number}> = ({x, y, L, f, wd = 46, w}) => {
-  const W = (w ?? wd) as number;
-  const wobble = 1.5 * Math.sin(f / 2);
+// ================================================================ bespoke hero 1: the machine-shadow
+// deliberately faceless and abstract (graphite silhouette) — differentiates from the ServerMachine
+// rig used in prior episodes; it never speaks, never blinks, only lengthens.
+const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: number; grow: number}> = ({x, y, scale = 1, f, grow}) => {
+  const sway = 3 * Math.sin(f / 22);
   return (
-    <g transform={`translate(${x + wobble},${y})`}>
-      {/* motor housing with bolts + cooling vents */}
-      <rect x={-W * 0.5} y={-96} width={W} height={64} rx={10} fill={COP} stroke={INK} strokeWidth={6} />
-      <rect x={-W * 0.5} y={-96} width={W * 0.34} height={64} rx={10} fill={COP_D} opacity={0.55} />
-      {[-1, 1].map((s) => <circle key={s} cx={s * W * 0.3} cy={-64} r={5} fill={INK} />)}
-      {[0, 1, 2].map((i) => <rect key={i} x={-W * 0.34} y={-88 + i * 16} width={W * 0.68} height={5} rx={2} fill={INK} opacity={0.5} />)}
-      {/* hex drive collar */}
-      <rect x={-W * 0.28} y={-34} width={W * 0.56} height={22} rx={4} fill="#9aa2ad" stroke={INK} strokeWidth={5} />
-      {/* steel auger shank + conical bit with shaded facets */}
-      <path d={`M${-W / 2},-12 L${W / 2},-12 L0,${L} Z`} fill="#b8bcc6" stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-      <path d={`M0,-12 L${W / 2},-12 L0,${L} Z`} fill="#7f8792" opacity={0.5} />
-      <path d={`M${-W / 2},-12 L${-W * 0.16},-12 L0,${L * 0.7} Z`} fill="#e6ebf0" opacity={0.5} />
-      {/* rotating helical flights (spin cue) */}
-      {Array.from({length: 5}).map((_, i) => {
-        const t = ((f * 0.6 + i * 5) % 24) / 24;
-        const yy = -8 + t * (L + 8);
-        const ww = (W / 2) * (1 - t) * 0.95;
-        return <path key={i} d={`M${-ww},${yy} q${ww},11 ${2 * ww},0`} fill="none" stroke={INK} strokeWidth={4.5} opacity={0.85} />;
-      })}
+    <g transform={`translate(${x},${y}) scale(${scale})`} opacity={0.92}>
+      <g transform={`scaleY(${Math.max(0.02, grow)})`} style={{transformOrigin: '0px 0px'}}>
+        {/* core tower */}
+        <path d="M-60,0 L-46,-360 L46,-360 L60,0 Z" fill={GRAPHITE} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        <path d="M10,-360 L46,-360 L60,0 L26,0 Z" fill={GRAPHITE_D} opacity={0.75} />
+        {/* antenna array, swaying */}
+        <g transform={`translate(0,-360) rotate(${sway})`}>
+          <line x1={0} y1={0} x2={-40} y2={-90} stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <line x1={0} y1={0} x2={10} y2={-110} stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <line x1={0} y1={0} x2={54} y2={-70} stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <circle cx={-40} cy={-90} r={7} fill={GRAPHITE_D} stroke={INK} strokeWidth={4} />
+          <circle cx={10} cy={-110} r={7} fill={GRAPHITE_D} stroke={INK} strokeWidth={4} />
+          <circle cx={54} cy={-70} r={7} fill={GRAPHITE_D} stroke={INK} strokeWidth={4} />
+        </g>
+        {/* rack seams, no face — deliberately unreadable and cold */}
+        {[-260, -180, -100, -30].map((yy, i) => (
+          <path key={i} d={`M${-52 + i * 2},${yy} L${52 - i * 2},${yy}`} stroke={INK} strokeWidth={4} opacity={0.5} />
+        ))}
+        {/* a single cold status-light column (procedural, not a face — server telemetry, no expression) */}
+        {Array.from({length: 6}).map((_, i) => {
+          const yy = -320 + i * 44;
+          const on = ((f / 6 + i * 3) % 11) < 4;
+          return <circle key={i} cx={-30} cy={yy} r={5} fill={on ? '#e8b45a' : GRAPHITE_D} stroke={INK} strokeWidth={2.5} />;
+        })}
+        {/* vent louvers */}
+        {[-300, -240, -180].map((yy, i) => (
+          <rect key={i} x={12} y={yy} width={30} height={10} rx={3} fill={GRAPHITE_D} stroke={INK} strokeWidth={2.5} opacity={0.85} />
+        ))}
+        {/* cable conduits running down into the ground */}
+        <path d="M-30,0 q-16,30 -46,42" fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" opacity={0.8} />
+        <path d="M20,0 q22,26 54,32" fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" opacity={0.8} />
+        {/* base flare into the ground */}
+        <path d="M-70,0 q70,28 140,0 q-70,22 -140,0 Z" fill={GRAPHITE_D} opacity={0.7} />
+      </g>
+      <ellipse cx={0} cy={4} rx={92} ry={18} fill={INK} opacity={0.28} />
     </g>
   );
 };
 
-// a dashed empty chip-socket (the honest 'missing part'); filled = glowing chip seated
-const ChipSocket: React.FC<{x: number; y: number; s?: number; filled?: boolean; match?: number; label?: boolean}> = ({x, y, s = 1, filled = false, match = 0, label = false}) => (
-  <g transform={`translate(${x},${y}) scale(${s})`}>
-    <rect x={-70} y={-46} width={140} height={92} rx={10} fill={filled ? CIT : 'none'} stroke={filled ? INK : '#d7c2ef'} strokeWidth={6} strokeDasharray={filled ? undefined : '12 9'} />
-    {filled && Array.from({length: 6}).map((_, i) => (
-      <line key={i} x1={-70} y1={-30 + i * 12} x2={-96} y2={-30 + i * 12} stroke={INK} strokeWidth={5} />
-    ))}
-    {!filled && <text x={0} y={14} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={40} fill="#d7c2ef">?</text>}
-    {match > 0.02 && match < 0.99 && (
-      <g transform={`translate(0,${-260 * (1 - match)}) scale(${1 + 0.3 * (1 - match)})`} opacity={0.5 + 0.5 * match}>
-        <rect x={-64} y={-40} width={128} height={80} rx={8} fill={CIT} stroke={INK} strokeWidth={6} opacity={0.85} />
+// ================================================================ bespoke hero 2: the sled-dog team
+const SledDogTeam: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1}> = ({x, y, scale = 1, f, facing = 1}) => {
+  const Dog: React.FC<{dx: number; phase: number}> = ({dx, phase}) => {
+    const stride = Math.sin(f / 4 + phase);
+    const legF = 14 * stride;
+    const legB = -14 * stride;
+    const bob = 3 * Math.abs(Math.cos(f / 4 + phase));
+    return (
+      <g transform={`translate(${dx},${-bob})`}>
+        {/* legs (fore/hind pairs, alternating) */}
+        <path d={`M-18,10 L${-18 + legF},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M-8,10 L${-8 + legB},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M14,10 L${14 + legB},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M24,10 L${24 + legF},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        {/* body */}
+        <path d="M-30,-6 q34,-20 68,0 q6,16 -4,26 q-30,10 -60,0 q-10,-10 -4,-26 Z" fill={AMBER} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <path d="M8,-10 q22,2 30,14 q4,10 -4,18 q-14,6 -28,2 Z" fill={AMBER_D} opacity={0.6} />
+        {/* tail, curled, secondary motion */}
+        <path d={`M-30,-2 q-22,${-8 - 4 * Math.sin(f / 5 + phase)} -14,-24`} fill="none" stroke={AMBER} strokeWidth={8} strokeLinecap="round" />
+        {/* head + ears + snout, harness strap */}
+        <g transform="translate(38,-14)">
+          <path d="M-4,0 q18,-14 32,0 q4,10 -4,16 q-16,6 -28,-2 Z" fill={AMBER} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M22,2 q10,0 14,6 q-2,4 -8,4 q-6,-2 -6,-10 Z" fill={AMBER_D} stroke={INK} strokeWidth={3.5} />
+          <path d="M2,-6 L-4,-20 L6,-10 Z" fill={AMBER} stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
+          <path d="M14,-8 L14,-22 L22,-10 Z" fill={AMBER} stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
+          <circle cx={20} cy={4} r={2.6} fill={INK} />
+        </g>
+        <path d="M-6,-10 q26,-6 44,-4" stroke={WOOD_D} strokeWidth={4} opacity={0.7} />
       </g>
-    )}
-    {label && (
-      <g transform="translate(0,116)">
-        <BoxLabel x={0} y={0} text="MADE WITH" sub="COBALT · GRAPHITE · GALLIUM" w={440} h={94} fs={30} fill={ICE} color={INK} />
-      </g>
-    )}
+    );
+  };
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <ellipse cx={20} cy={38} rx={110} ry={14} fill={INK} opacity={0.22} />
+      <Dog dx={-70} phase={0} />
+      <Dog dx={0} phase={1.4} />
+      <Dog dx={70} phase={2.8} />
+    </g>
+  );
+};
+
+// ================================================================ small physical props
+const GearLever: React.FC<{x: number; y: number; f: number; pulled: number}> = ({x, y, f, pulled}) => (
+  <g transform={`translate(${x},${y})`}>
+    <rect x={-70} y={-10} width={140} height={44} rx={10} fill="#8b93a0" stroke={INK} strokeWidth={6} />
+    <circle cx={-40} cy={12} r={10} fill={GRAPHITE_D} stroke={INK} strokeWidth={4} />
+    <g transform={`rotate(${-42 + 42 * pulled} -40 12)`}>
+      <rect x={-46} y={-4} width={12} height={70} rx={6} fill="#c9cfd8" stroke={INK} strokeWidth={5} />
+      <circle cx={-40} cy={-6} r={13} fill={CRIMSON} stroke={INK} strokeWidth={5} />
+    </g>
+    <g transform="translate(56,-52)" opacity={pulled}>
+      <circle r={26} fill={ICE} stroke={INK} strokeWidth={6} />
+      <line x1={-14} y1={-14} x2={14} y2={14} stroke={CRIMSON} strokeWidth={6} strokeLinecap="round" />
+      <line x1={14} y1={-14} x2={-14} y2={14} stroke={CRIMSON} strokeWidth={6} strokeLinecap="round" />
+      <text x={0} y={44} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill={INK}>NO PRICE</text>
+    </g>
   </g>
 );
 
-// ================================================================ S1 HOOK — the driller
+const Nameplate: React.FC<{x: number; y: number; text: string; sub?: string; op?: number}> = ({x, y, text, sub, op = 1}) => (
+  <g transform={`translate(${x},${y})`} opacity={op}>
+    <rect x={-150} y={-40} width={300} height={sub ? 88 : 60} rx={10} fill={ICE} stroke={INK} strokeWidth={6} />
+    <text x={0} y={sub ? -8 : 10} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={34} fill={INK} letterSpacing={2}>{text}</text>
+    {sub && <text x={0} y={30} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={20} fill={AMBER_D}>{sub}</text>}
+  </g>
+);
+
+const SwingSign: React.FC<{x: number; y: number; f: number}> = ({x, y, f}) => {
+  const swing = 6 * Math.sin(f / 18);
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <line x1={0} y1={-60} x2={0} y2={-10} stroke={INK} strokeWidth={5} />
+      <g transform={`rotate(${swing})`} style={{transformOrigin: `${x}px ${y - 60}px`}}>
+        <rect x={-120} y={-10} width={240} height={72} rx={10} fill={BIRCH} stroke={INK} strokeWidth={6} strokeDasharray="4 0" />
+        <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={GRAPHITE_D}>NO OPERATOR</text>
+        <text x={0} y={48} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={GRAPHITE_D}>NAMED</text>
+      </g>
+    </g>
+  );
+};
+
+const SurveyStake: React.FC<{x: number; y: number; s?: number; settle: number}> = ({x, y, s = 1, settle}) => (
+  <g transform={`translate(${x},${y}) scale(${s})`}>
+    <ellipse cx={0} cy={4} rx={48} ry={10} fill={INK} opacity={0.25} />
+    <g transform={`translate(0,${-40 * (1 - settle)})`}>
+      <path d="M-14,0 L-14,-160 L0,-186 L14,-160 L14,0 Z" fill={WOOD} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M4,-160 L14,-160 L14,0 L4,0 Z" fill={WOOD_D} opacity={0.7} />
+      {[-40, -80, -120].map((yy, i) => <line key={i} x1={-14} y1={yy} x2={14} y2={yy} stroke={INK} strokeWidth={2.5} opacity={0.35} />)}
+      <rect x={-20} y={-210} width={40} height={40} rx={4} fill={CRIMSON} stroke={INK} strokeWidth={5} />
+    </g>
+  </g>
+);
+
+const MeasuringChain: React.FC<{x1: number; y1: number; x2: number; y2: number; taut: number}> = ({x1, y1, x2, y2, taut}) => {
+  const n = 18;
+  const links: React.ReactNode[] = [];
+  for (let i = 0; i < n * taut; i++) {
+    const t = i / n;
+    const sag = (1 - taut) * 30 * Math.sin(t * Math.PI);
+    const lx = x1 + (x2 - x1) * t;
+    const ly = y1 + (y2 - y1) * t + sag;
+    links.push(<circle key={i} cx={lx} cy={ly} r={7} fill="none" stroke="#9aa2ad" strokeWidth={4} />);
+  }
+  const tagT = Math.min(1, taut * 1.2);
+  const tx = x1 + (x2 - x1) * 0.5;
+  const ty = y1 + (y2 - y1) * 0.5;
+  return (
+    <g>
+      {links}
+      {tagT > 0.5 && (
+        <g transform={`translate(${tx},${ty + 6}) rotate(${4 * Math.sin(tagT * 8)})`} opacity={tagT}>
+          <path d="M-30,-4 L0,-24 L30,-4 L18,30 L-18,30 Z" fill={CRIMSON} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <text x={0} y={14} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={SNOW}>2 MI</text>
+        </g>
+      )}
+    </g>
+  );
+};
+
+const PenAndDocument: React.FC<{x: number; y: number; hover: number; f: number}> = ({x, y, hover, f}) => {
+  const tremble = 1.4 * Math.sin(f / 3);
+  const settle = Math.min(1, hover * 1.4);
+  return (
+    <g transform={`translate(${x},${y})`}>
+      {/* document, paper base is the local origin's top edge (y=0) */}
+      <rect x={-130} y={0} width={260} height={180} rx={8} fill={SNOW} stroke={INK} strokeWidth={6} />
+      <path d="M-130,0 h260 v14 h-260 Z" fill="#e7e0cc" opacity={0.6} />
+      {[36, 62, 88, 114, 140, 160].map((yy, i) => <line key={i} x1={-100} y1={yy} x2={100} y2={yy} stroke="#c9c2ad" strokeWidth={3} />)}
+      {/* pen hovers a small, fixed gap above the paper — trembling, never touching down */}
+      <g transform={`translate(${18 + tremble},${-26}) scale(${settle}) rotate(-28)`} style={{transformOrigin: '0px 0px'}} opacity={settle}>
+        <path d="M-7,0 L-7,-118 L7,-118 L7,0 Z" fill="#2b2f38" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <path d="M0,-118 L-9,-138 L9,-138 Z" fill="#c9cfd8" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+        <rect x={-7} y={-30} width={14} height={22} fill={CRIMSON} opacity={0.9} />
+        {/* faint dashed line showing the gap above the paper, honesty made visible */}
+        <line x1={0} y1={0} x2={0} y2={26} stroke={INK} strokeWidth={2} strokeDasharray="3 4" opacity={0.35} />
+      </g>
+      <Nameplate x={280} y={40} text="AIDEA" op={0.95} />
+    </g>
+  );
+};
+
+const TrailPost: React.FC<{x: number; y: number; s?: number}> = ({x, y, s = 1}) => (
+  <g transform={`translate(${x},${y}) scale(${s})`}>
+    <ellipse cx={0} cy={4} rx={44} ry={9} fill={INK} opacity={0.25} />
+    <path d="M-16,0 L-16,-220 L16,-220 L16,0 Z" fill={WOOD} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+    <path d="M4,-220 L16,-220 L16,0 L4,0 Z" fill={WOOD_D} opacity={0.7} />
+    <path d="M-16,-40 q16,-10 32,0" stroke={MOSS} strokeWidth={10} fill="none" opacity={0.8} />
+    <rect x={-30} y={-190} width={60} height={54} rx={6} fill={BIRCH} stroke={INK} strokeWidth={5} />
+    <text x={0} y={-172} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={GRAPHITE_D}>AUG</text>
+    <text x={0} y={-148} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={GRAPHITE_D}>19</text>
+  </g>
+);
+
+// a hard glowing boundary line for the parcel, filling in progressively (revealT 0..1)
+const ParcelBoundary: React.FC<{revealT: number; showTown?: boolean}> = ({revealT, showTown = true}) => {
+  const d = 'M300,760 L560,700 L760,760 L820,940 L740,1080 L520,1100 L340,1020 L280,880 Z';
+  return (
+    <g>
+      <path d={d} fill="none" stroke={INK} strokeWidth={14} strokeDasharray={2600} strokeDashoffset={2600 * (1 - revealT)} strokeLinejoin="round" />
+      <path d={d} fill={AMBER} opacity={0.14 * revealT} />
+      <path d={d} fill="none" stroke={AMBER} strokeWidth={7} strokeDasharray={2600} strokeDashoffset={2600 * (1 - revealT)} strokeLinejoin="round" />
+      {showTown && revealT > 0.3 && (
+        <g transform="translate(560,900)" opacity={Math.min(1, (revealT - 0.3) * 2)}>
+          <rect x={-30} y={-18} width={60} height={36} rx={4} fill={BIRCH} stroke={INK} strokeWidth={4} />
+          <path d="M-34,-18 L0,-38 L34,-18 Z" fill={CRIMSON} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+          <text x={0} y={54} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={INK}>HOUSTON</text>
+        </g>
+      )}
+    </g>
+  );
+};
+
+const StatCard: React.FC<{x: number; y: number; big: string; sub?: string; op?: number; scale?: number}> = ({x, y, big, sub, op = 1, scale = 1}) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`} opacity={op}>
+    <rect x={-260} y={-64} width={520} height={sub ? 128 : 96} rx={16} fill={CRIMSON} stroke={INK} strokeWidth={8} />
+    <text x={0} y={sub ? -12 : big.length > 10 ? 10 : 16} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={sub ? 58 : 46} fill={SNOW} letterSpacing={1}>{big}</text>
+    {sub && <text x={0} y={38} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={SNOW} opacity={0.9}>{sub}</text>}
+  </g>
+);
+
+// ================================================================ S1 — THE GIVEAWAY (0-9s)
 const S1: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  // frame 0 is the poster: machine + headline fully settled at t=0 (edges/contrast graded),
-  // the hook's motion comes from the spinning drill + dust + drifting orbs, not an entrance slide.
-  const machIn = spring({frame: f + 34, fps, config: {damping: 14, stiffness: 100}});
-  const headIn = spring({frame: f + 34, fps, config: {damping: 13, stiffness: 120}});
-  const lookX = 4 + 3 * Math.sin(f / 30);
-  const dustN = 10;
-  const fleck = interpolate(f, [118, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const ghostChip = f > 120 ? 0.4 + 0.4 * Math.sin(f / 7) : 0;
+  const boundaryT = interpolate(f, [8, 90], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const headIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 130}});
+  const leverPulled = interpolate(f, [150, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const nameplateIn = interpolate(f, [150, 190], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const push = interpolate(f, [0, 270], [1.0, 1.06], {extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
-      <SubsurfaceBG f={f} descent={1} />
+    <AbsoluteFill style={{backgroundColor: SKY_HORIZON, transform: `scale(${push})`, transformOrigin: '50% 50%'}}>
+      <DawnForestBG f={f} dogHint />
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect x={0} y={1560} width={1080} height={360} fill={GROUND} />
-        <path d="M0,1560 q270,-22 540,0 q270,22 540,0 L1080,1920 L0,1920 Z" fill={PLUM_D} opacity={0.5} />
-        {/* ink-outlined ore chunks embedded in the bedrock band */}
-        {[[120, 1660, '#5a7fd6'], [340, 1720, '#d98cc4'], [820, 1690, '#7fae7a'], [980, 1650, CIT]].map(([x, y, c], i) => (
-          <g key={i} transform={`translate(${x},${y})`}>
-            <path d="M-34,0 l22,-30 l38,6 l20,32 l-16,34 l-42,4 Z" fill={c as string} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
-            <path d="M-16,-14 l16,10 l-8,18" fill="none" stroke={INK} strokeWidth={3} opacity={0.6} />
-          </g>
-        ))}
-      </svg>
-      {/* floating faceted mineral crystals the AI is hunting (fills the frame, on-theme, edge-rich) */}
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {[[180, 700, CIT, 1.1], [900, 720, '#5a7fd6', 0.9], [770, 900, LIME, 0.8], [300, 940, '#d98cc4', 0.85], [560, 640, '#c9d0dc', 0.7]].map(([x, y, c, s], i) => {
-          const bob = 10 * Math.sin(f / (24 + i * 6) + i);
-          const S = s as number;
-          return (
-            <g key={i} transform={`translate(${x},${(y as number) + bob}) scale(${S})`} opacity={0.92}>
-              <path d="M0,-58 l40,26 l-14,54 l-52,0 l-14,-54 Z" fill={c as string} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-              <path d="M0,-58 l0,80 M-40,-32 l40,54 l40,-54" fill="none" stroke={INK} strokeWidth={4} opacity={0.65} />
-              <path d="M0,-58 l40,26 l-40,10 l-40,-10 Z" fill={SNOW} opacity={0.25} />
-            </g>
-          );
-        })}
-      </svg>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `translateY(${150 * (1 - machIn)}px)`, opacity: machIn}}>
-        <g transform="translate(470,1360)">
-          <ServerMachine frame={f} emotion="focused" tint="copper" scale={1.06} lookX={lookX} />
-        </g>
-        {ghostChip > 0.02 && (
-          <g opacity={ghostChip}>
-            <rect x={396} y={1120} width={128} height={80} rx={8} fill="none" stroke="#ffe9a8" strokeWidth={5} strokeDasharray="11 8" />
-          </g>
-        )}
-        <g>
-          <path d="M600,1230 q90,40 96,150" fill="none" stroke={COP} strokeWidth={40} strokeLinecap="round" />
-          <path d="M600,1230 q90,40 96,150" fill="none" stroke={COP_D} strokeWidth={18} strokeLinecap="round" opacity={0.6} />
-          <DrillBit x={697} y={1400} L={190} f={f} />
-          {Array.from({length: dustN}).map((_, i) => {
-            const t = ((f * 1.3 + i * 26) % 60) / 60;
-            const a = -1.1 + (i / dustN) * 2.2;
-            const px = 697 + Math.sin(a) * 90 * t;
-            const py = 1600 - 60 * t - Math.cos(a) * 20;
-            return <circle key={i} cx={px} cy={py} r={(1 - t) * 16 + 3} fill={CIT} opacity={(1 - t) * 0.5} />;
-          })}
-        </g>
-        {fleck > 0.02 && (
-          <g transform={`translate(${697 + 30 * fleck},${1560 - 180 * fleck})`} opacity={fleck}>
-            <rect x={-20} y={-14} width={40} height={26} rx={5} fill={CIT} stroke={INK} strokeWidth={5} />
-            <g transform="translate(0,-2)"><ImpactStar cx={0} cy={0} r={16 + 6 * Math.sin(f / 4)} color={SNOW} /></g>
+        <ParcelBoundary revealT={boundaryT} />
+        {leverPulled > 0.02 && (
+          <g transform="translate(540,1360)">
+            <GearLever x={0} y={0} f={f} pulled={leverPulled} />
+            <Nameplate x={0} y={110} text="AIDEA" sub="STATE AGENCY" op={nameplateIn} />
           </g>
         )}
       </svg>
-      <div style={{position: 'absolute', top: 330, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-150 * (1 - headIn)}px) rotate(-2deg)`}}>
-        <div style={{background: RED, border: `9px solid ${INK}`, borderRadius: 14, padding: '20px 40px', boxShadow: `0 13px 0 ${INK}55`, maxWidth: 900}}>
-          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 96, lineHeight: 1.02, color: '#fff', textAlign: 'center', textTransform: 'uppercase', textShadow: `4px 5px 0 ${RED_D}`}}>
-            AI is Digging<br />in Alaska
+      <div style={{position: 'absolute', top: 100, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-140 * (1 - headIn)}px) rotate(-1.5deg)`}}>
+        <div style={{background: GRAPHITE_D, border: `9px solid ${INK}`, borderRadius: 14, padding: '24px 40px', boxShadow: `0 13px 0 ${INK}55`, maxWidth: 940}}>
+          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 82, lineHeight: 1.05, color: SNOW, textAlign: 'center', textShadow: `4px 5px 0 ${GRAPHITE}`}}>
+            31 Square Miles.<br />For Free.
           </div>
         </div>
       </div>
@@ -199,334 +386,133 @@ const S1: React.FC = () => {
   );
 };
 
-// ================================================================ S2 THE AWARD (UAF + $15M + NSF)
+// ================================================================ S2 — THE LAND AND THE SHADOW (9-18s)
 const S2: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const cardIn = spring({frame: f - 6, fps, config: {damping: 13, stiffness: 110}});
-  const bootWipe = interpolate(f, [6, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const badge = spring({frame: f - 70, fps, config: {damping: 9, stiffness: 150}});
-  const seal = spring({frame: f - 150, fps, config: {damping: 10, stiffness: 200}});
-  const lookUp = 2 + 2 * Math.sin(f / 24);
+  const dogX = interpolate(f, [0, 270], [-200, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const shadowGrow = spring({frame: f - 130, fps, config: {damping: 13, stiffness: 60}});
+  const icon1 = interpolate(f, [150, 172], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const icon2 = interpolate(f, [172, 194], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const icon3 = interpolate(f, [194, 216], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
-      <SubsurfaceBG f={f} />
+    <AbsoluteFill style={{backgroundColor: SKY_HORIZON}}>
+      <DawnForestBG f={f} parallax={1.4} />
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform="translate(560,2020) scale(0.9)">
-          <ServerMachine frame={f} emotion="focused" tint="copper" scale={1} lookX={lookUp} />
-        </g>
+        {/* glowing trail line */}
+        <path d="M-100,1420 Q400,1370 1180,1400" fill="none" stroke={AMBER} strokeWidth={10} strokeDasharray="26 18" opacity={0.7} />
+        <SledDogTeam x={dogX} y={1440} scale={1.15} f={f} />
+        {shadowGrow > 0.02 && <MachineShadow x={760} y={1560} scale={1.35} f={f} grow={shadowGrow} />}
       </svg>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform={`translate(540,470) scale(${cardIn})`} opacity={cardIn}>
-          <rect x={-360} y={-120} width={720} height={240} rx={22} fill={ICE} stroke={INK} strokeWidth={10} />
-          <rect x={-360} y={-120} width={720 * bootWipe} height={240} rx={22} fill="#dfeeff" opacity={0.5} />
-          <text x={0} y={-18} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={116} fill={INK} letterSpacing={4}>UAF</text>
-          <text x={0} y={64} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={31} fill={COP_D}>UNIVERSITY OF ALASKA FAIRBANKS</text>
+        {icon1 > 0.02 && <g transform={`translate(760,${760 - 60 * (1 - icon1)})`} opacity={icon1}><StatCard x={0} y={0} big="DATA CENTER" scale={0.62} /></g>}
+        {icon2 > 0.02 && <g transform={`translate(760,${860 - 60 * (1 - icon2)})`} opacity={icon2}><StatCard x={0} y={0} big="RAIL HUB" scale={0.62} /></g>}
+        {icon3 > 0.02 && <g transform={`translate(760,${960 - 60 * (1 - icon3)})`} opacity={icon3}><StatCard x={0} y={0} big="POWER LINES" scale={0.62} /></g>}
+        <g opacity={interpolate(f, [10, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
+          <Nameplate x={200} y={1600} text="40+ MILES" sub="OF TRAILS" />
         </g>
-        {badge > 0.02 && (
-          <g transform={`translate(300,930) scale(${badge})`}>
-            <StatBurst cx={0} cy={0} big="$15M" lines={['FIRST 2 YRS']} fill={CIT} rot={-6} big_fs={92} />
-          </g>
-        )}
-        {seal > 0.02 && (
-          <g transform={`translate(790,950) scale(${seal})`} opacity={Math.min(1, seal * 1.3)}>
-            <circle r={140} fill="#eef2ff" stroke={INK} strokeWidth={10} />
-            <circle r={140} fill="none" stroke={LIME_D} strokeWidth={6} transform="scale(0.86)" />
-            <text x={0} y={-8} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={76} fill={INK}>NSF</text>
-            <text x={0} y={48} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={COP_D}>NAT'L SCIENCE</text>
-            <text x={0} y={78} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={COP_D}>FOUNDATION</text>
-          </g>
-        )}
       </svg>
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S3 THE MAP (1 of 12, 20 states)
-const bigAlaska = "M120,470 L260,395 L360,405 L430,350 L520,362 L560,300 L640,330 L720,318 L820,360 L940,350 L1000,430 L968,486 L880,510 L916,566 L840,588 L806,672 L700,690 L648,650 L596,706 L520,686 L456,742 L396,700 L336,742 L276,690 L312,610 L224,588 L268,530 L120,500 Z";
+// ================================================================ S3 — THE COUNTERMOVE (18-27s)
 const S3: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const mapIn = spring({frame: f - 4, fps, config: {damping: 14, stiffness: 90}});
-  const callout = spring({frame: f - 20, fps, config: {damping: 9, stiffness: 150}});
-  const r = interpolate(f, [10, 50, 55, 92], [560, 150, 150, 70], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
-  const dots = [[430, 470], [560, 430], [660, 500], [770, 450], [520, 560], [360, 500], [640, 610], [720, 560], [470, 620], [820, 520]];
-  const cx = 600, cy = 500;
-  const dotPulse = 1 + 0.25 * Math.sin(f / 6);
+  const signIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 110}});
+  const charIn = spring({frame: f - 90, fps, config: {damping: 12, stiffness: 100}});
+  const fenceT = interpolate(f, [110, 230], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   return (
-    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
-      <SubsurfaceBG f={f} />
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: mapIn}}>
-        <g transform={`translate(0,300) scale(1.05)`}>
-          <path d={bigAlaska} fill={PLUM_GLOW} stroke={INK} strokeWidth={9} strokeLinejoin="round" />
-          <path d={bigAlaska} fill={PLUM} opacity={0.4} transform="translate(6,10)" />
-          {dots.map(([x, y], i) => {
-            const near = Math.hypot(x - cx, y - cy) < r;
-            return <circle key={i} cx={x} cy={y} r={13} fill={near ? RED : '#7a5a86'} opacity={near ? 1 : 0.5} stroke={INK} strokeWidth={4} />;
-          })}
-          <g transform={`translate(${cx},${cy}) scale(${dotPulse})`}>
-            <circle r={20} fill={CIT} stroke={INK} strokeWidth={5} />
-          </g>
-          <circle cx={cx} cy={cy} r={r} fill="none" stroke={LIME} strokeWidth={7} strokeDasharray="20 14" opacity={0.95} />
-          <circle cx={cx} cy={cy} r={r} fill={LIME} opacity={0.05} />
-        </g>
+    <AbsoluteFill style={{backgroundColor: SKY_HORIZON}}>
+      <DawnForestBG f={f} parallax={0.7} />
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: signIn}}>
+        <SwingSign x={680} y={960} f={f} />
+        <MachineShadow x={910} y={1220} scale={1.2} f={f} grow={1} />
       </svg>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {callout > 0.02 && (
-          <g transform={`translate(540,1270) scale(${0.82 * callout})`}>
-            <StatBurst cx={0} cy={0} big="1 OF 12" lines={['NSF ENGINES', '20 STATES']} fill={LIME} rot={-4} big_fs={58} />
-          </g>
-        )}
-        <g opacity={callout}>
-          <BoxLabel x={540} y={1410} text="AI NARROWS THE SEARCH" w={640} h={72} fs={40} fill={ICE} color={INK} />
-        </g>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: charIn}}>
+        <Character frame={f} pose="arms-crossed" emotion="angry" outfit="worker" headgear="cap" hair="#2c1f14" facing={1} scale={1.5} x={230} y={1780} />
+        {/* fence-line extending from the character's position toward the parcel */}
+        <path d={`M320,1500 L${320 + 700 * fenceT},${1500 - 30 * fenceT}`} fill="none" stroke={INK} strokeWidth={16} strokeDasharray={900} strokeDashoffset={900 * (1 - fenceT)} strokeLinecap="round" />
+        <path d={`M320,1500 L${320 + 700 * fenceT},${1500 - 30 * fenceT}`} fill="none" stroke={BIRCH} strokeWidth={7} strokeDasharray={900} strokeDashoffset={900 * (1 - fenceT)} strokeLinecap="round" />
+        {Array.from({length: 6}).map((_, i) => {
+          const t = i / 6;
+          if (t > fenceT) return null;
+          const px = 320 + 700 * t;
+          const py = 1500 - 30 * t;
+          return <line key={i} x1={px} y1={py - 40} x2={px} y2={py + 20} stroke={INK} strokeWidth={8} opacity={0.8} />;
+        })}
       </svg>
+      <div style={{position: 'absolute', top: 1840, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: charIn}}>
+        <div style={{background: ICE, border: `7px solid ${INK}`, borderRadius: 12, padding: '14px 28px'}}>
+          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 30, color: INK, textAlign: 'center'}}>CITY OF HOUSTON: PROPOSED BAN</div>
+        </div>
+      </div>
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S4 CROSS-SECTION + PERIODIC + MINERALS
-const VEINS = [
-  {d: 'M120,300 q120,60 260,40 q160,-24 320,60', col: '#5a7fd6', name: 'COBALT'},
-  {d: 'M80,470 q160,-40 340,20 q180,52 380,-10', col: '#3f4a55', name: 'GRAPHITE'},
-  {d: 'M140,640 q150,60 320,30 q170,-30 360,50', col: '#c9d0dc', name: 'GALLIUM'},
-  {d: 'M100,800 q170,-30 340,30 q170,58 380,-14', col: '#7fae7a', name: 'NICKEL'},
-  {d: 'M160,940 q140,54 320,24 q160,-26 340,44', col: '#d98cc4', name: 'RARE EARTHS'},
-];
+// ================================================================ S4 — THE GAP (match-cut centerpiece, 27-36s)
 const S4: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const openG = interpolate(f, [4, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const wallIn = spring({frame: f - 120, fps, config: {damping: 13, stiffness: 90}});
-  const wallOut = interpolate(f, [232, 252], [1, 0.16], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const lit = Math.round(interpolate(f, [128, 176], [0, 56], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
-  const circleT = interpolate(f, [180, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // all five mineral names land within the spoken window (local f240-300 = 28-30s), one per word
-  const nameOn = (i: number) => f > 238 + i * 12;
-  const pencilSnap = f > 200;
+  const snap = spring({frame: f - 4, fps, config: {damping: 13, stiffness: 220}});
+  const settle = interpolate(f, [4, 26], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.6))});
+  const pullBack = interpolate(f, [60, 130], [1.6, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const chainTaut = interpolate(f, [80, 160], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   return (
-    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
-      <SubsurfaceBG f={f} descent={2} />
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform="translate(0,540)" opacity={openG}>
-          {/* layered rock strata (the cross-section read): banded bedrock behind the ore veins */}
-          <g>
-            {[[220, '#33244a'], [400, '#2c1f40'], [600, '#38285230'], [790, '#2a1c3d'], [980, '#34254c']].map(([yy, c], i) => (
-              <g key={i}>
-                <rect x={0} y={yy as number} width={1080} height={i === 4 ? 200 : ([400, 600, 790, 980][i] - (yy as number))} fill={c as string} opacity={0.9} />
-                <path d={`M0,${yy} q270,${-14 + (i % 2) * 26} 540,4 q270,18 540,-6`} fill="none" stroke={INK} strokeWidth={5} opacity={0.55} />
-              </g>
-            ))}
-          </g>
-          <path d="M0,180 q270,-30 540,0 q270,30 540,0" fill="none" stroke={LIME} strokeWidth={6} strokeDasharray="18 12" opacity={0.8} />
-          {VEINS.map((v, i) => (
-            <g key={i} opacity={openG}>
-              <path d={v.d} fill="none" stroke={INK} strokeWidth={30} strokeLinecap="round" />
-              <path d={v.d} fill="none" stroke={v.col} strokeWidth={18} strokeLinecap="round" opacity={nameOn(i) ? 1 : 0.7} />
-              {nameOn(i) && (
-                <g transform={`translate(858,${290 + i * 128})`}>
-                  <BoxLabel x={0} y={0} text={v.name} w={v.name === 'RARE EARTHS' ? 350 : 250} h={58} fs={30} fill={v.col} color={INK} rot={-2} />
-                </g>
-              )}
-            </g>
-          ))}
-        </g>
-      </svg>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: wallIn * wallOut}}>
-        <g transform={`translate(140,300)`}>
-          {Array.from({length: 60}).map((_, i) => {
-            const col = i % 10, row = Math.floor(i / 10);
-            const on = i < lit;
-            const dark = i >= 56;
-            const x = col * 80, y = row * 80;
-            const pencil = i === 34;
-            if (pencil && pencilSnap) {
-              return (
-                <g key={i} transform={`translate(${x},${y})`}>
-                  <rect width={64} height={64} rx={8} fill="#ffd23e" stroke={INK} strokeWidth={5} />
-                  <path d="M14,50 l18,-40" stroke={COP_D} strokeWidth={6} strokeLinecap="round" />
-                  <path d="M40,8 l8,-10" stroke={INK} strokeWidth={5} />
-                </g>
-              );
-            }
-            return (
-              <rect key={i} x={x} y={y} width={64} height={64} rx={8}
-                fill={dark ? '#2c2438' : on ? LIME : '#3a3350'}
-                stroke={INK} strokeWidth={5} opacity={dark ? 0.9 : 1} />
-            );
-          })}
-          {circleT > 0.02 && (
-            <path d="M-30,-30 q420,-40 830,20 q40,240 -20,470 q-420,40 -820,-10 q-30,-240 10,-470 Z"
-              fill="none" stroke={LIME} strokeWidth={9} strokeDasharray={2600} strokeDashoffset={2600 * (1 - circleT)} opacity={0.9} />
-          )}
-        </g>
-        <g opacity={wallIn}>
-          <BoxLabel x={540} y={770} text="56 OF 60 CRITICAL MINERALS" w={730} h={70} fs={38} fill={CIT} color={INK} />
-        </g>
+    <AbsoluteFill style={{backgroundColor: '#efe0c4'}}>
+      {snap > 0.2 && snap < 0.9 && <ZoomVignette amount={Math.min(1, snap)} />}
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `scale(${pullBack})`, transformOrigin: '540px 1000px'}}>
+        <rect x={0} y={1150} width={1080} height={770} fill="#efe0c4" />
+        <path d="M0,1150 q270,-20 540,0 q270,20 540,0" fill="none" stroke={BIRCH_D} strokeWidth={4} opacity={0.6} />
+        <SurveyStake x={540} y={1360} s={1.9} settle={settle} />
+        {snap > 0.4 && <SpeedLines cx={540} cy={1160} frame={f} intensity={Math.min(1, (snap - 0.4) * 2)} color={INK} />}
+        {snap > 0.55 && <ImpactStar cx={540} cy={1080} r={40 + 16 * snap} color={CRIMSON} rot={f * 2} />}
+        {chainTaut > 0.02 && <MeasuringChain x1={230} y1={1180} x2={860} y2={1170} taut={chainTaut} />}
       </svg>
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S5 ORE-TO-CHIP + SOCKET (the irony)
+// ================================================================ S5 — THE HONESTY (36-45s)
 const S5: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const lift = interpolate(f, [0, 26], [80, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const crack = spring({frame: f - 34, fps, config: {damping: 12, stiffness: 160}});
-  const snap = spring({frame: f - 40, fps, config: {damping: 14, stiffness: 200}});
-  const match = interpolate(f, [120, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
-  const showLabel = f > 200;
-  const emo = f > 44 ? 'shock' : 'focused';
+  const docIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 110}});
+  const hover = interpolate(f, [10, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const postIn = spring({frame: f - 130, fps, config: {damping: 12, stiffness: 100}});
   return (
-    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
-      <SubsurfaceBG f={f} />
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform="translate(470,1400)">
-          <ServerMachine frame={f} emotion={emo as any} tint="copper" scale={1.22} />
-        </g>
-        <g opacity={f > 110 ? 1 : 0}>
-          <ChipSocket x={470} y={1215} s={1.05} filled={false} match={match} label={showLabel} />
-        </g>
+    <AbsoluteFill style={{backgroundColor: SKY_MIST}}>
+      <DawnForestBG f={f} parallax={0.5} />
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `scale(${docIn})`, transformOrigin: '540px 1000px', opacity: docIn}}>
+        <PenAndDocument x={540} y={980} hover={hover} f={f} />
       </svg>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `translateY(${lift}px)`}}>
-        {f < 130 && (
-          <g transform="translate(620,560)">
-            <g stroke={INK} strokeWidth={7} fill={COP}>
-              <path d="M-120,-180 q40,120 30,180" />
-              <path d="M120,-180 q-40,120 -30,180" />
-              <rect x={-26} y={-230} width={52} height={90} rx={12} />
-            </g>
-            {crack < 0.5 ? (
-              <g>
-                <path d="M-70,0 l40,-56 l70,10 l40,60 l-30,66 l-80,6 Z" fill={CIT_D} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-                <path d="M-30,-30 l30,20 l-14,30" fill="none" stroke={INK} strokeWidth={4} opacity={0.6} />
-              </g>
-            ) : (
-              <g>
-                <path d={`M-70,0 l40,-56 l40,8 l-20,110 l-30,4 Z`} fill={CIT_D} stroke={INK} strokeWidth={7} strokeLinejoin="round" transform={`translate(${-40 * crack},0) rotate(${-14 * crack})`} />
-                <path d={`M50,-38 l70,10 l40,60 l-30,66 l-52,4 Z`} fill={CIT_D} stroke={INK} strokeWidth={7} strokeLinejoin="round" transform={`translate(${40 * crack},0) rotate(${14 * crack})`} />
-                <g opacity={crack}>
-                  <rect x={-56} y={-40} width={112} height={80} rx={8} fill={CIT} stroke={INK} strokeWidth={6} />
-                  {[0, 1, 2].map((i) => (
-                    <g key={i}>
-                      <line x1={-56} y1={-24 + i * 24} x2={-84} y2={-24 + i * 24} stroke={INK} strokeWidth={5} />
-                      <line x1={56} y1={-24 + i * 24} x2={84} y2={-24 + i * 24} stroke={INK} strokeWidth={5} />
-                    </g>
-                  ))}
-                </g>
-              </g>
-            )}
-            {snap > 0.3 && <SpeedLines cx={0} cy={0} frame={f} intensity={Math.min(1, snap)} color={CIT} />}
-            {snap > 0.55 && <ImpactStar cx={0} cy={0} r={54 + 26 * snap} rot={f * 1.4} color={CIT} />}
-          </g>
-        )}
-      </svg>
-      <ZoomVignette amount={snap > 0 && f < 90 ? Math.min(1, snap) * 0.7 : 0} />
+      {postIn > 0.02 && (
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: postIn}}>
+          <TrailPost x={870} y={1460} s={1.15} />
+        </svg>
+      )}
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S6 THE MONEY (solid $15M vs ghost $160M)
+// ================================================================ S6 — THE STANDOFF (loopback + button, 45-59s)
 const S6: React.FC = () => {
   const f = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const ghostRise = spring({frame: f - 6, fps, config: {damping: 14, stiffness: 70}});
-  const ghostPulse = 0.8 + 0.2 * Math.sin(f / 8);
-  const solidIn = spring({frame: f - 20, fps, config: {damping: 13, stiffness: 100}});
-  const stampS = spring({frame: f - 116, fps, config: {damping: 9, stiffness: 200}});
-  const deflate = interpolate(f, [116, 150], [1, 0.7], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const dogX = interpolate(f, [90, 330], [-200, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const dogOpacity = interpolate(f, [70, 90, 340, 380], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
-      <SubsurfaceBG f={f} />
+    <AbsoluteFill style={{backgroundColor: SKY_HORIZON}}>
+      <DawnForestBG f={f} />
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform={`translate(760,1620) scale(${1.85 * ghostRise * deflate})`} opacity={ghostRise * (0.5 + 0.5 * ghostPulse)}>
-          <ServerMachine frame={f} emotion="ghost" scale={1} />
-        </g>
-        <g transform={`translate(300,1560) scale(${0.9 * solidIn})`} opacity={solidIn}>
-          <ServerMachine frame={f} emotion="focused" tint="copper" scale={1} />
-        </g>
+        <ParcelBoundary revealT={1} showTown={true} />
+        <MachineShadow x={870} y={1480} scale={1.05} f={f} grow={1} />
+        <MeasuringChain x1={310} y1={1660} x2={760} y2={1600} taut={1} />
+        <SurveyStake x={310} y={1660} s={0.5} settle={1} />
+        <TrailPost x={200} y={1700} s={0.46} />
+        {dogOpacity > 0.02 && <g opacity={dogOpacity}><SledDogTeam x={dogX} y={1800} scale={0.85} f={f} /></g>}
       </svg>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {ghostRise > 0.3 && (
-          <g transform="translate(770,470)">
-            <BoxLabel x={0} y={0} text="UP TO $160M" sub="OVER 10 YEARS" w={430} h={112} fs={52} fill={PLUM} color={LIME} rot={-3} />
-          </g>
-        )}
-        {solidIn > 0.3 && (
-          <g transform="translate(300,560)">
-            <BoxLabel x={0} y={0} text="$15M" sub="FUNDED" w={260} h={112} fs={62} fill={CIT} color={INK} rot={2} />
-          </g>
-        )}
-        {stampS > 0.02 && (
-          <g transform="translate(660,900)">
-            <Stamp cx={0} cy={0} s={stampS} text="NOT AWARDED" rot={-9} color={RED} />
-          </g>
-        )}
-      </svg>
-    </AbsoluteFill>
-  );
-};
-
-// ================================================================ S7 CAVEAT + BUTTON (loop)
-const S7: React.FC = () => {
-  const f = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const swing = Math.sin(Math.max(0, f - 20) / 6) * (f > 20 && f < 96 ? 1 : 0);
-  const doink = f > 60 && f < 96;
-  const stampS = spring({frame: f - 70, fps, config: {damping: 9, stiffness: 200}});
-  const toButton = f > 120;
-  const click = spring({frame: f - 150, fps, config: {damping: 11, stiffness: 150}});
-  const lookX = 4 + 3 * Math.sin(f / 30);
-  const black = interpolate(f, [312, 326], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const pullBack = interpolate(f, [130, 200], [1.25, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  return (
-    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
-      <SubsurfaceBG f={f} descent={1} />
-      {!toButton && (
-        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-          <rect x={0} y={1560} width={1080} height={360} fill={GROUND} />
-          <Character frame={f} pose="panic" emotion={doink ? 'shock' : 'neutral'} outfit="worker" headgear="cap" hair="#3d2c1e" facing={1} scale={1.25} x={430} y={1720} />
-          <g transform={`translate(560,1300) rotate(${-40 + swing * 46})`}>
-            <rect x={-8} y={0} width={16} height={210} rx={6} fill="#8a5a2b" stroke={INK} strokeWidth={6} />
-            <path d="M-70,0 q70,-30 140,0 q-70,18 -140,0 Z" fill="#9aa2ad" stroke={INK} strokeWidth={6} strokeLinejoin="round" transform="translate(0,-6)" />
-          </g>
-          {doink && (
-            <g transform="translate(660,1560)">
-              <ImpactStar cx={0} cy={0} r={40} color={ICE} rot={f * 2} />
-              <path d="M0,-20 q30,-30 8,-70" fill="none" stroke={INK} strokeWidth={5} opacity={0.7} />
-            </g>
-          )}
-          {stampS > 0.02 && (
-            <g transform={`translate(540,720) scale(${stampS}) rotate(-7)`} opacity={Math.min(1, stampS * 1.3)}>
-              <rect x={-300} y={-90} width={600} height={180} rx={14} fill="none" stroke={RED} strokeWidth={12} />
-              <text x={0} y={-8} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={92} fill={RED} letterSpacing={4}>UNPROVEN</text>
-              <text x={0} y={64} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={54} fill={RED} letterSpacing={6}>AT SCALE</text>
-            </g>
-          )}
-        </svg>
-      )}
-      {toButton && (
-        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `scale(${pullBack})`, transformOrigin: '540px 1000px'}}>
-          <rect x={0} y={1560} width={1080} height={360} fill={GROUND} />
-          <path d="M0,1560 q270,-22 540,0 q270,22 540,0 L1080,1920 L0,1920 Z" fill={PLUM_D} opacity={0.5} />
-          <g transform="translate(470,1360)">
-            <ServerMachine frame={f} emotion="focused" tint="copper" scale={1.06} lookX={lookX} />
-          </g>
-          <ChipSocket x={420} y={1215} s={0.7} filled={click > 0.5} match={0} />
-          <ChipSocket x={545} y={1215} s={0.7} filled={false} match={0} />
-          {click > 0.5 && <ImpactStar cx={420} cy={1215} r={26 + 8 * Math.sin(f / 4)} color={CIT} />}
-          {/* the AI search-circle flashlight callback (flow-critic note) */}
-          {click > 0.4 && (
-            <circle cx={697} cy={1500} r={120 + 30 * Math.sin(f / 5)} fill="none" stroke={LIME} strokeWidth={6} strokeDasharray="18 12" opacity={0.5} />
-          )}
-          <g>
-            <path d="M600,1230 q90,40 96,150" fill="none" stroke={COP} strokeWidth={40} strokeLinecap="round" />
-            <DrillBit x={697} y={1400} L={190} f={f} />
-          </g>
-        </svg>
-      )}
-      <div style={{position: 'absolute', inset: 0, background: '#000', opacity: black}} />
     </AbsoluteFill>
   );
 };
@@ -540,7 +526,7 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
   if (!cue) return null;
   return (
     <div style={{position: 'absolute', bottom: 340, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 60px'}}>
-      <div style={{background: 'rgba(20,14,30,0.84)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${INK}`}}>
+      <div style={{background: 'rgba(16,20,30,0.82)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${INK}`}}>
         <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, lineHeight: 1.12, color: '#fff', textAlign: 'center', letterSpacing: 0.5, textShadow: `2px 3px 0 rgba(0,0,0,0.6)`}}>
           {cue.text}
         </div>
@@ -550,17 +536,17 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
 };
 
 // ================================================================ TIMELINE
-const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6, S7];
-// 30fps. Shots: S1 0-8s, S2 8-16s, S3 16-20s, S4 20-32s, S5 32-40s, S6 40-48s, S7 48-59s.
+const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6];
+// 30fps. Shots: S1 0-9s, S2 9-18s, S3 18-27s, S4 27-36s, S5 36-45s, S6 45-59s.
 const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
-  {from: 0, dur: 240}, {from: 240, dur: 240}, {from: 480, dur: 120}, {from: 600, dur: 360},
-  {from: 960, dur: 240}, {from: 1200, dur: 240}, {from: 1440, dur: 330},
+  {from: 0, dur: 270}, {from: 270, dur: 270}, {from: 540, dur: 270},
+  {from: 810, dur: 270}, {from: 1080, dur: 270}, {from: 1350, dur: 420},
 ];
 
 export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {
   const bounds = scenes && scenes.length === SCENE_COMPONENTS.length ? scenes : DEFAULT_BOUNDS;
   return (
-    <AbsoluteFill style={{backgroundColor: PLUM_D}}>
+    <AbsoluteFill style={{backgroundColor: SKY_HORIZON}}>
       {SCENE_COMPONENTS.map((C, i) => (
         <Sequence key={i} from={bounds[i].from} durationInFrames={bounds[i].dur} name={`S${i + 1}`}>
           <C />
