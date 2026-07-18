@@ -1,40 +1,36 @@
 {
   "date": "2026-07-18",
-  "story": "Autonomous firefighting drones (Anduril, AURA Foresight, Dryad Networks) reached the finals of the $11M XPRIZE Wildfire competition, live-tested June 2026 near Nenana, Alaska in partnership with UAF's ACUASI. Winner to be announced September 2026.",
-  "key_entities": ["xprize", "dryad networks", "anduril", "aura foresight", "acuasi", "nenana", "autonomous firefighting drone", "silvaguard", "silvanet"],
-  "dedupe_check": "FRESH (re-tested with distinctive entity set; generic-token overlap with 07-11 wildfire-smoke-forecast story on 'uaf'/'wildfire' is not a real duplicate)",
-  "validators": 2,
+  "story": "Alaska DNR issued a preliminary decision to convey roughly 20,000 acres (over 31 square miles) of state land near Houston, Alaska to AIDEA, at no charge, for a proposed multi-use industrial and energy development district including data centers. Public comment runs through August 19, 2026.",
+  "key_entities": ["aidea", "houston alaska", "dnr conveyance", "mat-su borough", "industrial energy development district", "data center land transfer", "randy ruaro"],
+  "dedupe_check": "FRESH vs full 18-entry ledger (manually reviewed; closest prior entries are 07-02 JBER/Eielson/Clear federal base leases [different agency, different land, different mechanism] and 07-14/07-16 Stak Energy North Slope [different company, different region, different agency])",
+  "story_replaces": "XPRIZE Wildfire autonomous-drone finals (disqualified: exact repeat of the 2026-07-03 dispatch, missed by dedupe.py's default 7-day check window)",
+  "validators": 1,
   "fact_check_safe_set": {
     "numbers": [
-      {"text": "$11 million total XPRIZE Wildfire prize purse", "source": "XPRIZE (xprize.org/prizes/wildfire)", "label": "primary"},
-      {"text": "$1 million Lockheed Martin \"Accurate Detection Intelligence\" Bonus Prize", "source": "XPRIZE", "label": "primary"},
-      {"text": "Four-year competition, 2023 to 2026", "source": "XPRIZE", "label": "primary"},
-      {"text": "Autonomous Wildfire Response track: detect and suppress across a simulated area of about 1,000 square kilometers within 10 minutes", "source": "XPRIZE challenge spec", "label": "primary, competition spec not literal test-site footprint"},
-      {"text": "Finals live-tested over two weeks in June 2026 near Nenana, Alaska, in partnership with UAF's ACUASI, which managed the airspace at Nenana Municipal Airport", "source": "XPRIZE finals-testing page + Alaska Legislature doc 10959", "label": "primary + government"},
-      {"text": "Three teams in the autonomous-response final test: Anduril, AURA Foresight, Dryad Networks", "source": "XPRIZE (Anduril confirmed only via this primary source, no independent press names Anduril)", "label": "primary-only for Anduril"},
-      {"text": "More than 130 competing teams overall", "source": "Robohub", "label": "independent"},
-      {"text": "Winner to be announced September 2026, undecided as of publication", "source": "Must Read Alaska + Dryad + XPRIZE", "label": "corroborated"},
-      {"text": "Silvanet sensors detect VOCs, carbon monoxide, and PM2.5; Silvaguard drone carries up to 100 liters of suppressant", "source": "Dryad Networks", "label": "company estimate"},
-      {"text": "Up to 3 controlled test fires per session, no human intervention", "source": "XPRIZE", "label": "primary"},
-      {"text": "More than 1 million acres burned in Alaska in 2025", "source": "Alaska Interagency Coordination Center / Alaska Beacon", "label": "primary/agency"}
+      {"text": "About 19,950 acres, over 31 square miles, of state land", "source": "DNR Online Public Notice id=224431 (primary)", "label": "primary, solid not approximate"},
+      {"text": "Conveyed to AIDEA via noncompetitive public/charitable-use conveyance, no price or consideration stated (at no charge)", "source": "DNR Online Public Notice id=224431 (primary); corroborated by Dermot Cole + Mat-Su Sentinel", "label": "primary + corroborated"},
+      {"text": "Location: about two miles north of Houston, Alaska, in the Mat-Su Borough, east/northeast of the Parks Highway", "source": "DNR Online Public Notice id=224431 (primary) + Mat-Su Sentinel + Dermot Cole", "label": "primary + corroborated"},
+      {"text": "Public comment deadline: 5:00 PM, August 19, 2026, via DNR", "source": "DNR Online Public Notice id=224431 (primary) + Alaska's News Source", "label": "primary, live and open as of today"},
+      {"text": "Proposed uses (AIDEA's stated vision, not named in DNR's own notice): data centers, an Alaska Railroad freight/logistics hub, energy/utility corridors, advanced-manufacturing pads", "source": "Alaska's News Source + Mat-Su Sentinel", "label": "attribute to AIDEA's proposal, not DNR"},
+      {"text": "A trail network used for mushing and recreation overlaps the parcel", "source": "Mat-Su Sentinel + Dermot Cole (41.8 miles of trails)", "label": "corroborated by 2 sources"},
+      {"text": "City of Houston council ordinance (introduced by Councilmember Lisa Johansen) would ban such development within city limits, citing permafrost-thaw risk and water-supply impact; vote postponed to August 13, 2026", "source": "Mat-Su Sentinel", "label": "single source, attribute; NOTE the parcel sits about 2 miles outside city limits, so the ordinance would not legally reach it"}
     ],
-    "banned_numbers": [
-      "roughly 300 teams (unsupported; use 'more than 130')",
-      "1.68 million acres (XPRIZE-only estimate that doesn't survive primary check; use 'more than 1 million')",
-      "8-hour drone flight endurance (no source; only the competition's 8-hour monitoring window is sourced)",
-      "'zero humans on scene' as a verbatim quote (use 'no human intervention')"
+    "banned_or_corrected": [
+      "'$8,300' figure: STRIP, appears in no fetched source",
+      "'Mat-Su City Council': WRONG, there is no such body; it is the City of Houston council",
+      "'45-page decision signed by John Crowther': single-source (a personal blog), attribute explicitly or drop; DNR's own notice lists contact Daniel Jenkins with no stated page count or signer",
+      "'Zero Lake Road' access detail: single-source, minor, attribute or drop",
+      "'massive state subsidy' / 'no land valuation published': this is Dermot Cole's opinion characterization (verified as his exact words), attribute explicitly, do not present as neutral DNR fact"
     ],
     "quotes": [
-      {"text": "Detecting fires within minutes and extinguishing them before they become catastrophic is no longer a vision for the future. It is a reality.", "speaker": "Carsten Brinkschulte, Dryad Networks CEO", "source": "Dryad Networks / Business Wire, 2026-07-07"},
-      {"text": "To stand among the final three teams in the world and demonstrate a fully autonomous system that can detect and respond to wildfire ignitions within minutes validates the technology, vision, and dedication of our entire team.", "speaker": "Carsten Brinkschulte, Dryad Networks CEO", "source": "Dryad Networks / Business Wire, 2026-07-07", "note": "full sentence, do not truncate"}
+      {"text": "There are no pre-determined and set land use decisions made by AIDEA.", "speaker": "Randy Ruaro, AIDEA Executive Director", "source": "Alaska's News Source, verified verbatim"},
+      {"text": "[Decisions would] only be made after consultation with local officials, the Borough, and others.", "speaker": "Randy Ruaro, AIDEA Executive Director", "source": "Alaska's News Source, verified verbatim"}
     ],
-    "honest_caveat": "This was a controlled competition demo on a managed FAA test range with small, deliberately-set test fires, not a real fast-moving uncontrolled wildfire in wind and smoke. No team has won yet; the winner is announced in September 2026. None of these systems has been proven suppressing a real Alaska wildfire at landscape scale."
+    "honest_caveat": "This is a preliminary, non-binding proposal in the public-comment stage. DNR must still issue a Finding and Final Decision and can modify or reject it. No data-center operators or tenants are confirmed; data centers are AIDEA's stated vision, not even named in DNR's own public notice. AIDEA's own director says no land-use decisions have been made. The opposing Houston ordinance has only been introduced, not passed, and its ban would apply within city limits, while the parcel itself sits about two miles outside those limits, so even a passed ordinance would not legally reach this specific land."
   },
   "urls": [
-    "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response",
-    "https://www.xprize.org/prizes/wildfire",
-    "https://www.businesswire.com/news/home/20260707802818/en/Dryad-Networks-Reaches-XPRIZE-Wildfire-Finals-Milestone-Demonstrating-Autonomous-Detection-and-Suppression-of-Wildfires-in-Alaska",
-    "https://robohub.org/aura-foresight-reaches-global-xprize-wildfire-finals-in-alaska/",
-    "https://mustreadalaska.com/dryad-drones-fight-wildfires-in-remote-alaska-a-gamechanger-for-wildfire-fighting/"
+    "https://www.alaskasnewssource.com/2026/07/17/new-state-proposal-could-bring-data-centers-mat-su-part-industrial-park/",
+    "https://www.dermotcole.com/reportingfromalaska/2026/7/13/khxwch2o4tgrjxuwycm8kmjzjtp69q",
+    "https://alaskabeacon.com/2026/07/16/alaskas-economic-development-agency-plans-a-mat-su-industrial-park-with-data-centers/"
   ]
 }
