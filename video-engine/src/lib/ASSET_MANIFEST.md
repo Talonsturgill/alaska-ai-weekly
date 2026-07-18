@@ -9,10 +9,10 @@ When you add or upgrade an asset, update this file in the same commit. Keep entr
 one line: `Name — kind — file — params/poses — status`.
 
 ## Characters (people)
-- `Character` — human rig — Character.tsx — poses: stand/arms-crossed/point/panic; emotions: neutral/angry/worried/shock/smug; outfits: parka/suit/worker/puffer/flannel/vest; headgear: bare/beanie/cap/trapper/hood; form-shaded + rim + contact shadow (2026-07-18) — ACTIVE
+- `Character` — human rig — Character.tsx — poses: stand/arms-crossed/point/panic; emotions: neutral/angry/worried/shock/smug; outfits: parka/suit/worker/puffer/flannel/vest; headgear: bare/beanie/cap/trapper/hood (bands raised off the eyes 2026-07-18b, no more 'burglar mask'); `talking` prop = TalkMouth lip-flap; form-shaded + rim + contact shadow — ACTIVE
 
 ## Characterized objects (heroes with a face / bespoke silhouette)
-- `ServerMachine` — the data-center/AI antagonist — kit.tsx — emotions: greedy/focused/nervous/shock/ghost; tints: steel/copper — ACTIVE
+- `ServerMachine` — the data-center/AI antagonist — kit.tsx — emotions: greedy/focused/nervous/shock/ghost; tints: steel/copper; `talking` prop = lip-flap — ACTIVE
 - `MachineShadow` — faceless institutional monolith (no face, deliberately cold) — Episode.tsx (2026-07-18) — form-shaded + brushed metal + rim + contact shadow — ACTIVE
 
 ## Fauna (the Alaska bestiary) — lib/fauna.tsx
@@ -35,13 +35,20 @@ unofficial state bird, for comic beats).
     scorer panel 2026-07-18). Next craft-advance: give the label/chip kit form-shading + a
     drop shadow so overlays sit IN the lit scene, not on top of it.
 
+## Look-dev harnesses
+- `CraftShowcase` — motion/voice/SFX-era look-dev comp (entrance, followThrough, TalkMouth ramp, talking cast) — CraftShowcase.tsx — NEW 2026-07-18b
+
 ## Environments
 - `DawnForestBG` — boreal birch/spruce dawn, parallax treeline, mist, birds, ground gradient, form-shaded trunks + bark texture + foliage speckle — Episode.tsx (2026-07-18) — ACTIVE
   - Environment kit is thin: ONE biome. Candidates for growth: tundra, coastal/fjord, glacier,
     river/stream, town/main-street, interior-taiga-winter, North Slope oilfield, night/aurora.
 
 ## Engine systems (the craft layer — advance these every run, don't just consume them)
+- `lib/motion.tsx` — animation principles: entrance() (anticipation/overshoot/squash-stretch + MotionBlur velocity), followThrough() secondary swing, accentKick(), idleSway(), squashStretch(), ChipShadow (HUD chips sit in the scene) — NEW 2026-07-18b
+- `lib/voice.tsx` — VOICE ACTING: VoiceProvider/useVoice (per-frame mouth envelope + emphasis accents from the VO pipeline), TalkMouth flapping mouth; Character + ServerMachine take `talking` — the cast speaks/reacts in sync with the narration — NEW 2026-07-18b
+- `assets/sfx/` designed-foley bank (scripts/build_sfx_library.py, 16 sounds; scripts/sfx_bank.py resolver; drop real CC0 takes in assets/sfx/real/ to upgrade any entry) — NEW 2026-07-18b
+- `scripts/render.sh` — draft (half-res ~2-4x faster) vs final render wrapper; the taste loop iterates on drafts — NEW 2026-07-18b
 - `lib/lighting.tsx` — tones() ramps, FormGradient, RimLight, ContactShadow, BrushedMetal/BarkTexture/FoliageSpeckle, GradeLayer (bloom+vignette+grain), MotionBlur (180° anisotropic) — NEW 2026-07-18
 - `lib/FX.tsx` — SpeedLines, ImpactStar, PaperStorm, ZoomVignette — ACTIVE
-- Known next advances: motion-blur secondary follow-through, kinetic typography, per-material
+- Known next advances: kinetic typography, per-material
   texture library, a real cast-shadow projector (not just contact AO), night/aurora lighting.

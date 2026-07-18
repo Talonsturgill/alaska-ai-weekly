@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
 import {z} from 'zod';
+import {VoiceProvider} from './lib/voice';
 import {Character} from './lib/Character';
 import {SpeedLines, ImpactStar, ZoomVignette} from './lib/FX';
 import {INK, ICE, SNOW} from './lib/kit';
@@ -30,6 +31,11 @@ export const episodeSchema = z.object({
   captions: z.array(z.object({text: z.string(), start: z.number(), end: z.number(), seg: z.number()})),
   scenes: z.array(z.object({from: z.number(), dur: z.number()})).optional(),
   total: z.number().optional(),
+  // voice-acting data (scripts/vo_envelope.py via build_scenes.py): per-frame
+  // 0..1 mouth envelope + the vo-director's emphasis accents (lib/voice.tsx)
+  mouth: z.array(z.number()).optional(),
+  accents: z.array(z.object({frame: z.number(), word: z.string(),
+    energy: z.number().optional(), lineIdx: z.number().optional()})).optional(),
 });
 export type EpisodeProps = z.infer<typeof episodeSchema>;
 
@@ -622,10 +628,12 @@ const GradedGrade: React.FC = () => {
   return <GradeLayer f={f} bloom={0.5} vignette={0.5} grain={0.05} warmth={0.08} />;
 };
 
-export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {
+export const Episode: React.FC<EpisodeProps> = ({captions, scenes, mouth, accents}) => {
   const bounds = scenes && scenes.length === SCENE_COMPONENTS.length ? scenes : DEFAULT_BOUNDS;
+  const voice = mouth && mouth.length ? {fps: 30, mouth, accents: accents ?? []} : null;
   return (
     <AbsoluteFill style={{backgroundColor: SKY_HORIZON}}>
+      <VoiceProvider data={voice}>
       {SCENE_COMPONENTS.map((C, i) => (
         <Sequence key={i} from={bounds[i].from} durationInFrames={bounds[i].dur} name={`S${i + 1}`}>
           <C />
@@ -635,6 +643,7 @@ export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {
           glyph-edge energy (the quality gate's CAPTION_TEXT/HUD_TEXT checks) stays crisp */}
       <GradedGrade />
       <Captions captions={captions} />
+      </VoiceProvider>
     </AbsoluteFill>
   );
 };

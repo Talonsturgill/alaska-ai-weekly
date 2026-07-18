@@ -1,5 +1,6 @@
 import React from 'react';
 import {tones, FormGradient, RimLight, ContactShadow, LIGHT} from './lighting';
+import {TalkMouth} from './voice';
 
 // =============================================================================
 // CHARACTER — the parameterized IGS-style person rig (the cast system).
@@ -31,6 +32,9 @@ export interface CharacterProps {
   scale?: number;
   x?: number;
   y?: number; // feet anchor in scene coords
+  /** 0..1 mouth openness from lib/voice (useVoice().opennessAt) — when set, the
+      mouth flaps with the narration instead of the static emotion shape */
+  talking?: number;
 }
 
 const OUTFITS: Record<Outfit, {main: string; shade: string; trim: string; pants: string}> = {
@@ -54,6 +58,7 @@ export const Character: React.FC<CharacterProps> = ({
   scale = 1,
   x = 0,
   y = 0,
+  talking,
 }) => {
   const c = OUTFITS[outfit];
   const breath = 1 + 0.011 * Math.sin(f / 13);
@@ -115,12 +120,22 @@ export const Character: React.FC<CharacterProps> = ({
             <path d="M29,-29 q-10,-4 -20,-1" stroke={INK} strokeWidth={6} strokeLinecap="round" fill="none" />
           </g>
         )}
-        {/* mouth */}
-        {emotion === 'angry' && <path d="M-14,14 q15,-9 29,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
-        {emotion === 'worried' && <path d="M-10,14 q11,7 22,0 q-11,10 -22,0 Z" fill="#7a2f2f" stroke={INK} strokeWidth={4.5} />}
-        {emotion === 'shock' && <ellipse cx={2} cy={18} rx={12} ry={16} fill="#7a2f2f" stroke={INK} strokeWidth={5} />}
-        {emotion === 'smug' && <path d="M-12,12 q16,10 30,-4" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
-        {emotion === 'neutral' && <path d="M-10,14 q12,6 24,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
+        {/* mouth — when `talking` is provided (0..1 from lib/voice), the mouth
+            FLAPS with the narration instead of holding the static emotion shape */}
+        {talking !== undefined ? (
+          <g transform="translate(2,14)">
+            <TalkMouth openness={talking} w={44} ink={INK}
+                       mood={emotion === 'angry' || emotion === 'worried' ? 'frown' : emotion === 'smug' ? 'smile' : 'neutral'} />
+          </g>
+        ) : (
+          <>
+            {emotion === 'angry' && <path d="M-14,14 q15,-9 29,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
+            {emotion === 'worried' && <path d="M-10,14 q11,7 22,0 q-11,10 -22,0 Z" fill="#7a2f2f" stroke={INK} strokeWidth={4.5} />}
+            {emotion === 'shock' && <ellipse cx={2} cy={18} rx={12} ry={16} fill="#7a2f2f" stroke={INK} strokeWidth={5} />}
+            {emotion === 'smug' && <path d="M-12,12 q16,10 30,-4" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
+            {emotion === 'neutral' && <path d="M-10,14 q12,6 24,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
+          </>
+        )}
         {/* worried/angry sweat drop */}
         {(emotion === 'worried' || emotion === 'shock') && (
           <path d={`M44,-30 q7,${10 + 3 * Math.sin(f / 9)} 0,${18 + 3 * Math.sin(f / 9)} q-7,-8 0,-18 Z`} fill="#9fd8ff" stroke={INK} strokeWidth={3} />
@@ -290,28 +305,28 @@ export const Character: React.FC<CharacterProps> = ({
                 {/* beanie: knit cap + fold band + pom */}
                 {hg === 'beanie' && (
                   <g>
-                    <path d="M-58,-10 a58,58 0 0 1 116,0 q0,-64 -58,-64 q-58,0 -58,64 Z" fill={beanieCol} stroke={INK} strokeWidth={6} />
-                    <rect x={-60} y={-16} width={120} height={22} rx={11} fill={c.shade} stroke={INK} strokeWidth={5} />
-                    <circle cx={0} cy={-74} r={12} fill={c.trim} stroke={INK} strokeWidth={5} />
-                    {[0,1,2].map((i)=>(<path key={i} d={`M${-40+i*40},-52 q0,-30 8,-40`} stroke={INK} strokeWidth={2.5} fill="none" opacity={0.3} />))}
+                    <path d="M-58,-30 a58,52 0 0 1 116,0 q0,-58 -58,-58 q-58,0 -58,58 Z" fill={beanieCol} stroke={INK} strokeWidth={6} />
+                    <rect x={-60} y={-40} width={120} height={20} rx={10} fill={c.shade} stroke={INK} strokeWidth={5} />
+                    <circle cx={0} cy={-86} r={12} fill={c.trim} stroke={INK} strokeWidth={5} />
+                    {[0,1,2].map((i)=>(<path key={i} d={`M${-40+i*40},-64 q0,-26 8,-34`} stroke={INK} strokeWidth={2.5} fill="none" opacity={0.3} />))}
                   </g>
                 )}
                 {/* trapper hat: crown + fur band + ear flaps (a HAT, generic winter) */}
                 {hg === 'trapper' && (
                   <g>
-                    <path d="M-58,-8 a58,58 0 0 1 116,0 q0,-60 -58,-60 q-58,0 -58,60 Z" fill={c.main} stroke={INK} strokeWidth={6} />
-                    <rect x={-62} y={-18} width={124} height={26} rx={12} fill="#c9bfa8" stroke={INK} strokeWidth={5} />
-                    <path d="M-58,2 q-12,44 6,66 q16,-6 16,-30 l-4,-40 Z" fill={c.main} stroke={INK} strokeWidth={5} />
-                    <path d="M58,2 q12,44 -6,66 q-16,-6 -16,-30 l4,-40 Z" fill={c.shade} stroke={INK} strokeWidth={5} />
+                    <path d="M-58,-28 a58,52 0 0 1 116,0 q0,-56 -58,-56 q-58,0 -58,56 Z" fill={c.main} stroke={INK} strokeWidth={6} />
+                    <rect x={-62} y={-40} width={124} height={24} rx={12} fill="#c9bfa8" stroke={INK} strokeWidth={5} />
+                    <path d="M-56,-18 q-14,42 2,64 q16,-6 16,-30 l-2,-36 Z" fill={c.main} stroke={INK} strokeWidth={5} />
+                    <path d="M56,-18 q14,42 -2,64 q-16,-6 -16,-30 l2,-36 Z" fill={c.shade} stroke={INK} strokeWidth={5} />
                   </g>
                 )}
                 {/* cap: ball cap with brim (brim points by facing) */}
                 {hg === 'cap' && (
                   <g>
-                    <path d="M-56,-16 a56,44 0 0 1 112,0 l-6,8 h-100 Z" fill={capCol} stroke={INK} strokeWidth={6} />
-                    <rect x={-64} y={-16} width={128} height={14} rx={7} fill={capCol} stroke={INK} strokeWidth={5} />
-                    <path d="M40,-14 q52,0 60,16 l-2,8 q-40,-12 -58,-8 Z" fill={c.main} stroke={INK} strokeWidth={5} />
-                    <circle cx={0} cy={-54} r={6} fill={c.main} stroke={INK} strokeWidth={3} />
+                    <path d="M-54,-34 a54,42 0 0 1 108,0 l-6,8 h-96 Z" fill={capCol} stroke={INK} strokeWidth={6} />
+                    <rect x={-60} y={-36} width={120} height={13} rx={6.5} fill={capCol} stroke={INK} strokeWidth={5} />
+                    <path d="M38,-34 q50,0 58,15 l-2,8 q-38,-12 -56,-8 Z" fill={c.main} stroke={INK} strokeWidth={5} />
+                    <circle cx={0} cy={-70} r={6} fill={c.main} stroke={INK} strokeWidth={3} />
                   </g>
                 )}
                 {/* worker hardhat retained */}

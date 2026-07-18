@@ -1,4 +1,5 @@
 import React from 'react';
+import {TalkMouth} from './voice';
 
 // =============================================================================
 // KIT — shared IGS-style drawing helpers for the Dispatch episode. Ink outlines,
@@ -113,7 +114,10 @@ export type MachineEmotion = 'greedy' | 'focused' | 'nervous' | 'shock' | 'ghost
 export const ServerMachine: React.FC<{
   frame: number; emotion?: MachineEmotion; x?: number; y?: number; scale?: number;
   facing?: 1 | -1; lookX?: number; tint?: 'steel' | 'copper';
-}> = ({frame: f, emotion = 'greedy', x = 0, y = 0, scale = 1, facing = 1, lookX = 0, tint = 'steel'}) => {
+  /** 0..1 mouth openness from lib/voice — when set (and not ghost) the machine's
+      mouth flaps with the narration */
+  talking?: number;
+}> = ({frame: f, emotion = 'greedy', x = 0, y = 0, scale = 1, facing = 1, lookX = 0, tint = 'steel', talking}) => {
   const ghost = emotion === 'ghost';
   // tint lets the same rig re-skin per episode (copper = the 2026-07-17 prospecting machine,
   // literally made of mined metal). Ghost stays the dashed hollow caveat regardless of tint.
@@ -205,27 +209,37 @@ export const ServerMachine: React.FC<{
                 <path d="M118,-420 q-50,-22 -100,-4" fill="none" stroke={INK} strokeWidth={11} strokeLinecap="round" />
               </g>
             )}
-            {/* mouth */}
-            {emotion === 'greedy' && (
-              <g>
-                <path d="M-70,-286 q70,64 140,0 q-12,72 -70,72 q-58,0 -70,-72 Z" fill="#5b1b1b" stroke={INK} strokeWidth={OUT} strokeLinejoin="round" />
-                {[0, 1, 2, 3].map((i) => (
-                  <path key={i} d={`M${-52 + i * 36},${-280 + (i === 1 || i === 2 ? 8 : 2)} l12,20 l12,-16 Z`} fill={SNOW} stroke={INK} strokeWidth={3.4} strokeLinejoin="round" />
-                ))}
-                {/* drool */}
-                <path d={`M74,-238 q9,${14 + 5 * Math.sin(f / 10)} 0,${26 + 5 * Math.sin(f / 10)} q-9,-11 0,-26 Z`} fill="#9fd8ff" stroke={INK} strokeWidth={3.4} />
+            {/* mouth — `talking` (0..1, lib/voice) overrides the static shape so
+                the machine speaks/reacts in sync with the narration */}
+            {!ghost && talking !== undefined ? (
+              <g transform="translate(0,-262)">
+                <TalkMouth openness={talking} w={110} ink={INK}
+                           mood={emotion === 'nervous' ? 'frown' : emotion === 'greedy' ? 'smile' : 'neutral'} />
               </g>
+            ) : (
+              <>
+                {emotion === 'greedy' && (
+                  <g>
+                    <path d="M-70,-286 q70,64 140,0 q-12,72 -70,72 q-58,0 -70,-72 Z" fill="#5b1b1b" stroke={INK} strokeWidth={OUT} strokeLinejoin="round" />
+                    {[0, 1, 2, 3].map((i) => (
+                      <path key={i} d={`M${-52 + i * 36},${-280 + (i === 1 || i === 2 ? 8 : 2)} l12,20 l12,-16 Z`} fill={SNOW} stroke={INK} strokeWidth={3.4} strokeLinejoin="round" />
+                    ))}
+                    {/* drool */}
+                    <path d={`M74,-238 q9,${14 + 5 * Math.sin(f / 10)} 0,${26 + 5 * Math.sin(f / 10)} q-9,-11 0,-26 Z`} fill="#9fd8ff" stroke={INK} strokeWidth={3.4} />
+                  </g>
+                )}
+                {emotion === 'focused' && (
+                  <g>
+                    {/* a set, concentrating mouth: a short level line with a faint downward focus */}
+                    <path d="M-42,-248 q42,14 84,0" fill="none" stroke={INK} strokeWidth={10} strokeLinecap="round" />
+                  </g>
+                )}
+                {emotion === 'nervous' && (
+                  <path d={`M-64,-250 q32,-20 64,0 q32,20 64,0`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" transform="translate(-32,0)" />
+                )}
+                {emotion === 'shock' && <ellipse cx={0} cy={-250} rx={34} ry={44} fill="#5b1b1b" stroke={INK} strokeWidth={OUT} />}
+              </>
             )}
-            {emotion === 'focused' && (
-              <g>
-                {/* a set, concentrating mouth: a short level line with a faint downward focus */}
-                <path d="M-42,-248 q42,14 84,0" fill="none" stroke={INK} strokeWidth={10} strokeLinecap="round" />
-              </g>
-            )}
-            {emotion === 'nervous' && (
-              <path d={`M-64,-250 q32,-20 64,0 q32,20 64,0`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" transform="translate(-32,0)" />
-            )}
-            {emotion === 'shock' && <ellipse cx={0} cy={-250} rx={34} ry={44} fill="#5b1b1b" stroke={INK} strokeWidth={OUT} />}
             {ghost && <path d="M-56,-250 q56,0 112,0" fill="none" stroke="#9fb2d6" strokeWidth={7} strokeLinecap="round" strokeDasharray="10 8" />}
             {/* sweat beads */}
             {sweat && (

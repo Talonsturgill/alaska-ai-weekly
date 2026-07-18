@@ -207,6 +207,10 @@ def main():
               open(os.path.join(OUT, "vo_report.json"), "w"), indent=2)
     print(f"wrote vo.wav ({total:.1f}s), vo_lines.json ({len(line_spans)} lines), captions.json ({len(cues)} cues), vo_report.json")
 
+    # acting data (mouth envelope + emphasis accents) always tracks the shipped take
+    import vo_envelope
+    vo_envelope.main()
+
 
 if __name__ == "__main__":
     main()

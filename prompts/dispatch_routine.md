@@ -440,21 +440,33 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
 1a. GROWTH MANDATE (§4.3a): before/while building scenes, read ASSET_MANIFEST.md, then create
    this run's net-new asset(s) + a new pose/action on an existing one + one craft-system
    advance, and register them in the manifest. This is a build deliverable, not optional.
-2. MUSIC + SFX: source ONE fresh free-to-use track with a NAMED composer (get_music.py;
-   archive.org/Kevin MacLeod CC-BY proven reachable); never reuse a recent track; credit in
-   the draft. Motivated SFX on every beat (>=8 events, >=1 per shot), cut to the picture.
-   Mix: VO dominant, music ducked under it, a real >=6dB dip before the button, -14 LUFS
-   integrated, TP <= -1.0 dBTP, audible tail.
-3. CAPTIONS: already produced by vo_synth_gemini.py (whole-file forced alignment of the winning
-   take) as out/dispatch/captions.json + words.json, with inline tags stripped, monotonic and
-   min-dwell timed. They render inside the Remotion composition from those timings (anti-orphan
-   chunking, scrimmed, numerals as numerals, no orphan payoff words). No separate align step.
+2. MUSIC + SFX: the music is a CREATIVE CHOICE tied to the angle — map the Phase 3.5 stance
+   through `angle_to_mood` in config/music_sources.yaml, then source ONE fresh track with that
+   mood and a NAMED composer (get_music.py; the expanded verified pool covers playful/hopeful/
+   tense/wry/wonder; never reuse a recent track; credit in the draft). SFX come from the
+   DESIGNED FOLEY BANK (assets/sfx via scripts/sfx_bank.py — real impacts, bells, whooshes,
+   creaks; never bare lavfi sines; a curated real recording dropped at assets/sfx/real/<kind>.wav
+   wins automatically). Motivated SFX on every beat (>=8 events, >=1 per shot), cut to the
+   picture. Mix: VO dominant, music ducked under it, a real >=6dB dip before the button,
+   -14 LUFS integrated, TP <= -1.0 dBTP, audible tail.
+3. CAPTIONS + ACTING DATA: vo_synth_gemini.py already produced captions.json + words.json
+   (whole-file forced alignment, tags stripped, monotonic) AND — via scripts/vo_envelope.py —
+   mouth_track.json (per-frame 0..1 voice amplitude) + accents.json (the vo-director's emphasis
+   words located at exact frames). build_scenes.py folds all of it into episode_props.json.
 4. SCENES: build this run's scenes in video-engine/src/ from beats[].draw — compose from the
    library first; author the episode's 1-2 bespoke hero illustrations to the exemplar bar;
    add any new poses/emotions/FX to lib/ so the cast compounds. Story data via --props.
-5. THE TASTE LOOP (mandatory, per scene; 3-5 iterations is normal and costs minutes): render
-   the scene, extract 2-3 frames INCLUDING the busiest moment, LOOK at them, run the
-   six-question check:
+   MAKE THE CAST ACT WITH THE VOICE (lib/voice.tsx): any on-screen speaker gets
+   `talking={useVoice().opennessAt(globalFrame)}` so its mouth flaps with the narration, and
+   the emphasis beats (`useVoice().accentAt`) drive flinches, chip pops, and gesture kicks —
+   the picture must visibly REACT on the emphasized words. USE THE MOTION LAYER
+   (lib/motion.tsx): entrances via entrance() (anticipation -> overshoot -> squash/stretch,
+   feed .vy into MotionBlur), secondary followThrough() on every attached part (flags, arms,
+   tags, antennae), ChipShadow under HUD chips. A linear scale-in is below the bar.
+5. THE TASTE LOOP (mandatory, per scene; 3-5 iterations is normal and CHEAP — use
+   `scripts/render.sh draft` / `render.sh still <frame> ... --draft` for half-res probes at
+   ~2-4x speed; only the FINAL gate render runs full-res): render the scene, extract 2-3
+   frames INCLUDING the busiest moment, LOOK at them, run the six-question check:
    0. Would a stranger STOP SCROLLING on this frame? (unsure = no = redo)
    1. Is a character/face or characterized object present and FEELING something?
    2. Can you name the visible action verb?

@@ -33,9 +33,17 @@ def main():
         end = bounds[i + 1] if i + 1 < len(bounds) else total_f
         scenes.append({"from": b, "dur": end - b})
 
-    json.dump({"captions": caps, "scenes": scenes, "total": total_f},
-              open(os.path.join(OUT, "episode_props.json"), "w"))
-    print(f"total={total_f}f ({total_s:.2f}s)")
+    props = {"captions": caps, "scenes": scenes, "total": total_f}
+    # voice-acting data (scripts/vo_envelope.py): per-frame mouth envelope + the
+    # vo-director's emphasis accents, for lib/voice.tsx. Optional, additive.
+    mt = os.path.join(OUT, "mouth_track.json")
+    ac = os.path.join(OUT, "accents.json")
+    if os.path.exists(mt):
+        props["mouth"] = json.load(open(mt))["values"]
+    if os.path.exists(ac):
+        props["accents"] = json.load(open(ac))
+    json.dump(props, open(os.path.join(OUT, "episode_props.json"), "w"))
+    print(f"total={total_f}f ({total_s:.2f}s)  mouth={'y' if 'mouth' in props else 'n'} accents={len(props.get('accents', []))}")
     for i, s in enumerate(scenes):
         print(f"  S{i+1}: from={s['from']} dur={s['dur']} ({s['dur']/FPS:.2f}s)")
 

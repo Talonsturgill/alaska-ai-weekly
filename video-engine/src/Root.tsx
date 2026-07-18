@@ -3,6 +3,7 @@ import { Composition } from 'remotion';
 import { Episode, episodeSchema } from './Episode';
 import { Standoff } from './Standoff';
 import { FaunaShowcase } from './FaunaShowcase';
+import { CraftShowcase } from './CraftShowcase';
 import { z } from 'zod';
 
 const standoffSchema = z.object({
@@ -38,6 +39,14 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         schema={standoffSchema}
         defaultProps={{ yesCount: 500, noLabel: 'fewer than a dozen in favor' }}
+      />
+      <Composition
+        id="CraftShowcase"
+        component={CraftShowcase}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
       />
       <Composition
         id="FaunaShowcase"

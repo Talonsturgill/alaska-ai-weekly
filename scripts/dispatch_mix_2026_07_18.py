@@ -25,37 +25,13 @@ def run(cmd):
 
 
 def sfx(path, kind):
-    # NOTE: these are lavfi sine/noise SOURCES at native amplitude 1.0 (0 dBFS);
-    # any volume= here above ~0.85 clips at generation time, before any downstream
-    # mixing or loudnorm ever runs. Keep every one comfortably under 1.0.
-    if kind == "whoosh":
-        f = "anoisesrc=d=0.5:c=pink:a=0.5,highpass=f=300,lowpass=f=3500,afade=t=in:d=0.05,afade=t=out:d=0.42,volume=0.55"
-    elif kind == "thud":
-        f = "sine=frequency=90:duration=0.28,afade=t=out:d=0.26,volume=0.7"
-    elif kind == "pop":
-        f = "sine=frequency=520:duration=0.12,afade=t=out:d=0.11,volume=0.55"
-    elif kind == "ding":
-        f = "sine=frequency=1200:duration=0.35,afade=t=out:d=0.33,volume=0.4"
-    elif kind == "riser":
-        f = "sine=frequency=220:duration=0.9,afade=t=in:d=0.85,volume=0.45"
-    elif kind == "clank":
-        f = "sine=frequency=180:duration=0.3,afade=t=out:d=0.28,volume=0.55"
-    elif kind == "snap":
-        f = "sine=frequency=900:duration=0.08,afade=t=out:d=0.07,volume=0.75"
-    elif kind == "stamp":
-        f = "sine=frequency=70:duration=0.3,afade=t=out:d=0.28,volume=0.75"
-    elif kind == "tick":
-        f = "sine=frequency=1500:duration=0.05,volume=0.4"
-    elif kind == "creak":
-        f = "sine=frequency=260:duration=0.4,afade=t=out:d=0.38,volume=0.4"
-    elif kind == "chain":
-        f = "sine=frequency=650:duration=0.2,afade=t=out:d=0.18,volume=0.4"
-    elif kind == "paw":
-        f = "sine=frequency=340:duration=0.09,afade=t=out:d=0.08,volume=0.35"
-    else:
-        f = "sine=frequency=440:duration=0.2,volume=0.4"
-    run([FF, "-y", "-f", "lavfi", "-i", f, "-ac", "2", "-ar", str(SR), path])
-
+    """Resolve a named effect from the designed-foley bank (assets/sfx via
+    scripts/sfx_bank.py: real/ recording > synth bank > self-heal rebuild).
+    Bank files are 44.1k stereo, -6 dBFS peak — keep per-event volume <= 0.9."""
+    import shutil as _sh, sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from sfx_bank import resolve as _resolve
+    _sh.copyfile(_resolve(kind), path)
 
 # SFX events cut to the picture, derived from the VO line starts (out/dispatch/vo_lines.json)
 # so they stay in sync with the actual synthesized timing. L[i] = start time of VO line i.
