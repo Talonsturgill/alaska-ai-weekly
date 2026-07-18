@@ -5,62 +5,74 @@
       "kind": "whoosh"
     },
     {
-      "t": 4.05,
-      "kind": "sparkle"
-    },
-    {
-      "t": 8.05,
-      "kind": "ding"
-    },
-    {
-      "t": 12.05,
-      "kind": "stamp"
-    },
-    {
-      "t": 16.05,
+      "t": 1.1,
       "kind": "tick"
     },
     {
-      "t": 20.05,
-      "kind": "whoosh"
+      "t": 4.31,
+      "kind": "clank"
     },
     {
-      "t": 24.05,
-      "kind": "ding"
+      "t": 9.97,
+      "kind": "paw"
     },
     {
-      "t": 28.05,
+      "t": 15.190000000000001,
+      "kind": "riser"
+    },
+    {
+      "t": 16.34,
       "kind": "tick"
     },
     {
-      "t": 32.05,
-      "kind": "sparkle"
+      "t": 17.740000000000002,
+      "kind": "tick"
     },
     {
-      "t": 36.05,
+      "t": 19.14,
+      "kind": "tick"
+    },
+    {
+      "t": 20.26,
+      "kind": "creak"
+    },
+    {
+      "t": 22.8,
+      "kind": "clank"
+    },
+    {
+      "t": 26.54,
+      "kind": "snap"
+    },
+    {
+      "t": 26.59,
+      "kind": "riser"
+    },
+    {
+      "t": 29.82,
+      "kind": "chain"
+    },
+    {
+      "t": 31.82,
+      "kind": "tick"
+    },
+    {
+      "t": 37.540000000000006,
+      "kind": "creak"
+    },
+    {
+      "t": 41.89,
       "kind": "whoosh"
     },
     {
-      "t": 40.05,
-      "kind": "whoosh"
+      "t": 46.0,
+      "kind": "paw"
     },
     {
-      "t": 44.05,
-      "kind": "stamp"
-    },
-    {
-      "t": 48.05,
-      "kind": "thud"
-    },
-    {
-      "t": 52.05,
-      "kind": "lock"
-    },
-    {
-      "t": 56.15,
-      "kind": "lock"
+      "t": 48.61,
+      "kind": "tick"
     }
   ],
-  "silence_dip_at": 51.15,
-  "count": 15
+  "silence_dip_at": 48.06,
+  "count": 18
 }
