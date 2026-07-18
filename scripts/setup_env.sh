@@ -36,9 +36,17 @@ if [ ! -x "$VOICE_PY" ] || ! "$VOICE_PY" -c "import chatterbox" >/dev/null 2>&1;
     && "$VENV_DIR/bin/pip" install -q -U pip wheel \
     && "$VENV_DIR/bin/pip" install -q "setuptools<81" \
     && "$VENV_DIR/bin/pip" install -q chatterbox-tts edge-tts soundfile scipy numpy \
+         faster_whisper resemblyzer \
          --extra-index-url https://download.pytorch.org/whl/cpu \
     || echo "setup_env: WARN voice venv install failed (kokoro/edge fallback will be used)"
 fi
+# faster_whisper (vo_qc.py's WER gate) and resemblyzer (its speaker-similarity gate)
+# are separate packages from chatterbox-tts and were silently missing from this
+# install line until 2026-07-18 (the venv "existed" per the chatterbox import check,
+# so subsequent runs never re-installed them). Idempotent top-up on every run:
+"$VOICE_PY" -c "import faster_whisper, resemblyzer" >/dev/null 2>&1 \
+  || "$VENV_DIR/bin/pip" install -q faster_whisper resemblyzer \
+  || echo "setup_env: WARN faster_whisper/resemblyzer install failed (vo_qc.py QC gates will break)"
 # setuptools<81 matters: resemble-perth (chatterbox's watermarker) imports
 # pkg_resources, removed in newer setuptools -> PerthImplicitWatermarker=None crash.
 "$VOICE_PY" -c "import setuptools,pkg_resources" >/dev/null 2>&1 \
