@@ -216,8 +216,9 @@ a picture, not merely narrated.
 
 For EVERY VO line answer: "what literal cartoon do we draw while this is said?" Record it as
 beats[].draw = {subject, action, emotion, annotation}:
-- subject: WHO/WHAT, usually a character or characterized object WITH A FACE. From the cast
-  library first; 1-2 new bespoke heroes per episode max.
+- subject: WHO/WHAT, usually a character or characterized object WITH A FACE. The HERO of the
+  piece should be net-new or a freshly-diverged take (per the §4.3a growth mandate); pull
+  SUPPORTING subjects from the manifest library for continuity.
 - action: a VERB you can see happening (reaches, slams, floods, overtakes, cowers, signs).
 - emotion: what the face is feeling this beat.
 - annotation: the number/label/arrow that lands with the line, from the fact-check-safe set.
@@ -229,6 +230,34 @@ power"} — that is a slide. If a beat cannot be phrased as "X does Y," it does 
 
 12-16 beats, start-to-start gap <= 5s, beats cover the whole VO timeline, every beat names a
 concrete sound (whoosh, tick, boom, lock, riser, paper-rustle, klaxon, pop).
+
+### 4.3a The growth mandate (COMPOUND, never just reuse) — AUTHORITATIVE
+
+The engine is a WORLD being built by artists who get better every run, NOT a fixed set of
+pieces to re-pose. A run that only re-uses the existing library has FAILED this mandate even
+if the video is fine. Every run MUST:
+
+1. READ `video-engine/src/lib/ASSET_MANIFEST.md` first — it is the inventory of every
+   character, characterized object, creature, prop, environment, pose, emotion, and FX that
+   already exists. You cannot grow what you have not inventoried.
+2. ADD net-new bespoke art to `lib/` — a FLOOR, not a ceiling. Minimum per run:
+   - at least ONE brand-new reusable asset (a new creature for `fauna.tsx`, a new characterized
+     object, a new environment/biome, or a new prop kit), built to the depth-lighting bar
+     (tones()/RimLight/ContactShadow, idle animation), AND
+   - at least one NEW pose / emotion / action / FX added to an EXISTING asset.
+   Prefer filling a named gap in the manifest (the bestiary/environment gap lists are the
+   backlog). Register every addition in ASSET_MANIFEST.md in the SAME commit.
+3. ADVANCE THE CRAFT — push at least one engine system forward (lighting, motion, texture,
+   typography, a new material, a night/aurora light rig...). The manifest's "known next
+   advances" notes are the running to-do. Do not merely consume `lib/lighting.tsx`; extend it.
+4. DIVERGE THE CAST — do not build the hero out of the same character/creature as the last 2
+   dispatches unless the story genuinely demands that exact subject. New story, new faces.
+
+The old "1-2 new bespoke heroes per episode MAX" phrasing is retired: bespoke net-new is the
+JOB, not a rationed exception. Reuse the library for continuity and speed on SUPPORTING
+elements; spend the freed effort making the hero and one system net-new and better than last
+week. Over a month of runs the bestiary, prop kits, biomes, and the lighting engine should be
+visibly, cumulatively richer — that compounding IS the product.
 
 ### 4.4 The scene recipe book (how to stage each kind of information)
 
@@ -291,10 +320,16 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
 
 ## PHASE 5: BUILD (Remotion + voice QC + aligned captions)
 
-1. VOICE FIRST (the long pole, ~3.5 min/line): synthesize every VO line through vo_qc.py;
-   collect per-line {similarity, wer, attempts} for the draft. Assemble the VO timeline to the
-   beat starts. Confirm total <= 59s; if long, TRIM THE SCRIPT and re-synth only the trimmed
-   lines. Run scene-building in parallel while lines cook.
+1. VOICE FIRST: synthesize every VO line through the Gemini TTS backend (DISPATCH_VOICE=gemini,
+   the Charon preset narrator — the owner retired the cloned voice for quality). Respell tricky
+   proper nouns phonetically for the TTS input only (e.g. AIDEA -> "eye-DEE-uh") while keeping
+   real spelling on screen/captions. Assemble the VO timeline to the beat starts (build_timeline
+   reads the per-line wavs). Target total ~55-67s; if long, TRIM THE SCRIPT and re-synth only the
+   trimmed lines. Run scene-building in parallel while lines cook. (The cloned-voice path
+   vo_qc.py remains available as a fallback but is OFF by default.)
+1a. GROWTH MANDATE (§4.3a): before/while building scenes, read ASSET_MANIFEST.md, then create
+   this run's net-new asset(s) + a new pose/action on an existing one + one craft-system
+   advance, and register them in the manifest. This is a build deliverable, not optional.
 2. MUSIC + SFX: source ONE fresh free-to-use track with a NAMED composer (get_music.py;
    archive.org/Kevin MacLeod CC-BY proven reachable); never reuse a recent track; credit in
    the draft. Motivated SFX on every beat (>=8 events, >=1 per shot), cut to the picture.
