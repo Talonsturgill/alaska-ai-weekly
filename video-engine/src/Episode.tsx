@@ -451,18 +451,20 @@ const S3: React.FC = () => {
         <MachineShadow x={910} y={1220} scale={1.2} f={f} grow={1} />
       </svg>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: charIn}}>
-        {/* pose="point" (one arm extended, not a two-handed grip) + the fence line starting
-            well clear of the character's hand -- an earlier two-handed "arms-crossed" grip
-            directly on the line's start point read as the figure aiming a rifle. He now
-            gestures at a boundary line that begins in the landscape ahead of him. */}
+        {/* pose="point" (one arm extended, not a two-handed grip) + the fence line pushed down
+            to ground level, well clear of BOTH the pointing hand's height and the character's
+            body silhouette -- an earlier two-handed "arms-crossed" grip directly on the line's
+            start point read as the figure aiming a rifle, and a first attempt at "point" still
+            put the line close enough to the hand, at chest height, to read ambiguously. He now
+            clearly gestures DOWN at a boundary line lying flat on the ground well ahead of him. */}
         <Character frame={f} pose="point" emotion="angry" outfit="worker" headgear="cap" hair="#2c1f14" facing={1} scale={1.5} x={230} y={1780} />
-        <path d={`M540,1560 L${540 + 700 * fenceT},${1560 - 30 * fenceT}`} fill="none" stroke={INK} strokeWidth={16} strokeDasharray={900} strokeDashoffset={900 * (1 - fenceT)} strokeLinecap="round" />
-        <path d={`M540,1560 L${540 + 700 * fenceT},${1560 - 30 * fenceT}`} fill="none" stroke={BIRCH} strokeWidth={7} strokeDasharray={900} strokeDashoffset={900 * (1 - fenceT)} strokeLinecap="round" />
-        {Array.from({length: 6}).map((_, i) => {
-          const t = i / 6;
+        <path d={`M680,1620 L${680 + 340 * fenceT},${1620 - 14 * fenceT}`} fill="none" stroke={INK} strokeWidth={16} strokeDasharray={450} strokeDashoffset={450 * (1 - fenceT)} strokeLinecap="round" />
+        <path d={`M680,1620 L${680 + 340 * fenceT},${1620 - 14 * fenceT}`} fill="none" stroke={BIRCH} strokeWidth={7} strokeDasharray={450} strokeDashoffset={450 * (1 - fenceT)} strokeLinecap="round" />
+        {Array.from({length: 4}).map((_, i) => {
+          const t = i / 4;
           if (t > fenceT) return null;
-          const px = 540 + 700 * t;
-          const py = 1560 - 30 * t;
+          const px = 680 + 340 * t;
+          const py = 1620 - 14 * t;
           return <line key={i} x1={px} y1={py - 40} x2={px} y2={py + 20} stroke={INK} strokeWidth={8} opacity={0.8} />;
         })}
       </svg>
