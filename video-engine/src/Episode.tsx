@@ -375,7 +375,7 @@ const S1: React.FC = () => {
           </g>
         )}
       </svg>
-      <div style={{position: 'absolute', top: 100, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-140 * (1 - headIn)}px) rotate(-1.5deg)`}}>
+      <div style={{position: 'absolute', top: 310, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-140 * (1 - headIn)}px) rotate(-1.5deg)`}}>
         <div style={{background: GRAPHITE_D, border: `9px solid ${INK}`, borderRadius: 14, padding: '24px 40px', boxShadow: `0 13px 0 ${INK}55`, maxWidth: 940}}>
           <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 82, lineHeight: 1.05, color: SNOW, textAlign: 'center', textShadow: `4px 5px 0 ${GRAPHITE}`}}>
             31 Square Miles.<br />For Free.
@@ -443,7 +443,7 @@ const S3: React.FC = () => {
           return <line key={i} x1={px} y1={py - 40} x2={px} y2={py + 20} stroke={INK} strokeWidth={8} opacity={0.8} />;
         })}
       </svg>
-      <div style={{position: 'absolute', top: 1840, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: charIn}}>
+      <div style={{position: 'absolute', top: 1590, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: charIn}}>
         <div style={{background: ICE, border: `7px solid ${INK}`, borderRadius: 12, padding: '14px 28px'}}>
           <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 30, color: INK, textAlign: 'center'}}>CITY OF HOUSTON: PROPOSED BAN</div>
         </div>
