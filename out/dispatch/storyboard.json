@@ -26,12 +26,12 @@
   },
   "audio_arc": {
     "build_steps": 3,
-    "dip_at": 48.36,
+    "dip_at": 48.86,
     "riser_at": 26.24,
-    "silence_at": 48.36,
+    "silence_at": 48.86,
     "payoff_at": 49.66,
     "button_pattern": "callback",
-    "retimed_note": "updated from the original evenly-spaced plan to the real synthesized VO timeline (out/dispatch/vo_lines.json); silence_at/dip_at now match dispatch_mix_2026_07_18.py's SILENCE_DIP_AT = L[12]-0.5"
+    "retimed_note": "updated to the real synthesized VO timeline (out/dispatch/vo_lines.json); silence_at/dip_at = 48.86s is the CENTER of the mix's ducked window (dispatch_mix_2026_07_18.py SILENCE_DIP_CENTER +/- DIP_HALF=0.55), matching how quality_gate.py's SILENCE_DIP check measures (a window centered on this timestamp), inside the true silent gap [48.06,49.66]s before the button line."
   },
   "shots": [
     {
@@ -44,7 +44,12 @@
       "hero_treatment": "landscape-as-subject",
       "centered": "the glowing parcel-boundary line drawing itself across the Mat-Su forest map and swallowing Houston's town icon at scale, then a noncompetitive-conveyance lever locking in with no dollar sign",
       "means": "opens on the hook: the land, the scale, and the fact that no price was ever attached to it",
-      "hero": {"name": "Parcel Boundary + Conveyance Lever", "parts": 4, "zones": 2, "detail_note": "a hard glowing boundary line filling in over hand-inked birch/spruce forest, a tiny Houston town icon dwarfed inside it, a labeled gear-lever with a crossed-out dollar sign, an AIDEA nameplate"}
+      "hero": {
+        "name": "Parcel Boundary + Conveyance Lever",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "a hard glowing boundary line filling in over hand-inked birch/spruce forest, a tiny Houston town icon dwarfed inside it, a labeled gear-lever with a crossed-out dollar sign, an AIDEA nameplate"
+      }
     },
     {
       "id": 2,
@@ -58,7 +63,12 @@
       "thread": "build",
       "centered": "a sled-dog team trotting a glowing 40-plus-mile trail overlay across the parcel, then an abstract machine-shadow rising behind them as three icons (data center, rail hub, power line) stamp in",
       "means": "grounds the human/animal stakes first, then lets the AI-infrastructure shadow rise behind them",
-      "hero": {"name": "Sled-Dog Team + Machine-Shadow", "parts": 5, "zones": 2, "detail_note": "an ink-outlined sled-dog team on a phosphor trail-line, a faceless machine-shadow of servers and antennae lengthening behind, three stamping labeled icons"}
+      "hero": {
+        "name": "Sled-Dog Team + Machine-Shadow",
+        "parts": 5,
+        "zones": 2,
+        "detail_note": "an ink-outlined sled-dog team on a phosphor trail-line, a faceless machine-shadow of servers and antennae lengthening behind, three stamping labeled icons"
+      }
     },
     {
       "id": 3,
@@ -72,7 +82,12 @@
       "thread": "build",
       "centered": "a blank tenant nameplate swinging empty beneath the shadow, then Houston's civic silhouette raising a determined fence-line across the city limits",
       "means": "the honest caveat starts here (no operator confirmed) before the town's countermove",
-      "hero": {"name": "Blank Nameplate + Houston Fence-Line", "parts": 4, "zones": 2, "detail_note": "an empty swinging sign labeled NO OPERATOR NAMED, a civic-outfit character (existing Character rig) raising a fence-line prop with real weight and intent"}
+      "hero": {
+        "name": "Blank Nameplate + Houston Fence-Line",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "an empty swinging sign labeled NO OPERATOR NAMED, a civic-outfit character (existing Character rig) raising a fence-line prop with real weight and intent"
+      }
     },
     {
       "id": 4,
@@ -86,7 +101,12 @@
       "thread": "match",
       "centered": "MATCH-CUT: the fence-line's taut rope tip resolves into a kindred shape, a surveyor's wooden stake planted alone in bare negative space two miles short of the parcel, then the shot pulls back to reveal a measuring chain stretched taut from the stake across the real gap to the parcel edge with a small 2 MI tag",
       "means": "the emotional and factual peak carried by a true match-cut (a kindred shape landing in a new physical world), not a zoom, and the caveat made measurable in-world instead of as a diagram",
-      "hero": {"name": "Surveyor's Stake + Measuring Chain", "parts": 4, "zones": 2, "detail_note": "a weathered wooden stake standing alone in bare ground, a taut metal measuring chain running from it across open negative space to the parcel edge, a small swinging tag reading 2 MI"}
+      "hero": {
+        "name": "Surveyor's Stake + Measuring Chain",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "a weathered wooden stake standing alone in bare ground, a taut metal measuring chain running from it across open negative space to the parcel edge, a small swinging tag reading 2 MI"
+      }
     },
     {
       "id": 5,
@@ -100,7 +120,12 @@
       "thread": "carry",
       "centered": "a pen hovers just above an unsigned document beside a small AIDEA nameplate, never touching down, then a weathered wooden trail-post nearby carved with the date AUG 19 stands fixed in the gap",
       "means": "the honest caveat, drawn as physical non-actions in the landscape (a pen that never signs, a post that only marks a date) instead of a HUD stamp and calendar",
-      "hero": {"name": "Unsigned Document + Deadline Post", "parts": 4, "zones": 2, "detail_note": "a suspended pen trembling just above blank paper, a small AIDEA nameplate beside it, a moss-grained wooden post carved with AUG 19 standing a short distance away"}
+      "hero": {
+        "name": "Unsigned Document + Deadline Post",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "a suspended pen trembling just above blank paper, a small AIDEA nameplate beside it, a moss-grained wooden post carved with AUG 19 standing a short distance away"
+      }
     },
     {
       "id": 6,
@@ -114,22 +139,248 @@
       "thread": "match",
       "centered": "the aerial cold-open framing returns, the fence-line, stake, chain, and post all visible in the gap alongside the frozen machine-shadow, none touching, the sled-dog team trotting through the gap past them, camera holding still to the loop with no text card",
       "means": "the button: nothing has moved, nothing has been decided, the physical objects in the gap and the dogs moving past them carry the standoff without a label",
-      "hero": {"name": "Loopback Vigil Frame", "parts": 5, "zones": 2, "detail_note": "identical composition to shot 1's opening frame, fence-line and machine-shadow held static in the same gap, the stake/chain/post now visible in it, the sled-dog team trotting through the trail between them"}
+      "hero": {
+        "name": "Loopback Vigil Frame",
+        "parts": 5,
+        "zones": 2,
+        "detail_note": "identical composition to shot 1's opening frame, fence-line and machine-shadow held static in the same gap, the stake/chain/post now visible in it, the sled-dog team trotting through the trail between them"
+      }
     }
   ],
   "beats": [
-    {"t": "0-4.5", "vo": "Alaska is about to give away thirty one square miles of land.", "shows": "aerial push over Mat-Su birch and spruce forest, dawn mist; a glowing parcel-boundary line draws itself in and swallows the tiny Houston town icon at scale; headline '31 SQUARE MILES. FOR FREE.' snaps in at 1.0s", "sfx": "low wind ambience, electronic draw-line whoosh", "means": "opens on the hook: the land, and the scale of what is being given away", "draw": {"subject": "a glowing parcel-boundary line over the Mat-Su forest map", "action": "draws itself in and swallows the tiny Houston town icon at scale", "emotion": "quiet alarm at scale", "annotation": "31 SQUARE MILES"}, "choreo": {"primary": "boundary line filling in across the map", "reaction": "the Houston town icon shrinking by comparison", "ambient": "dawn mist drifting low over the canopy"}},
-    {"t": "4.5-9", "vo": "For free. To a state agency called AIDEA.", "shows": "a gear-lever mechanism labeled NONCOMPETITIVE CONVEYANCE pulls down beside an AIDEA nameplate; a crossed-out dollar sign locks in", "sfx": "mechanical lever clank, stamp tick", "means": "the no-charge mechanism, drawn as a cold procedural machine, on the words that state it", "draw": {"subject": "a gear-lever labeled NONCOMPETITIVE CONVEYANCE beside an AIDEA nameplate", "action": "the lever pulls down and a crossed-out dollar sign locks in", "emotion": "cold, procedural", "annotation": "NO PRICE STATED · AIDEA"}, "choreo": {"primary": "the lever pulling and the dollar-sign icon crossing out", "reaction": "the AIDEA nameplate settling into place beside it", "ambient": "faint gear-click residue"}},
-    {"t": "9-13.5", "vo": "It's birch forest near Houston. More than forty miles of mushing trails.", "shows": "cut to eye-level: a sled-dog team trots a glowing trail overlay crossing the parcel, tails up, birch trunks passing", "sfx": "paw-pad patter, distant dog bark, birdsong", "means": "grounds the human and animal stakes on this land before the AI-infrastructure angle arrives", "draw": {"subject": "a sled-dog team on a glowing trail overlay crossing the parcel", "action": "trots the trail, tails up, alive and unbothered", "emotion": "warm, grounded, alive", "annotation": "40+ MILES OF TRAILS"}, "choreo": {"primary": "the dog team's trotting gait along the glowing trail line", "reaction": "ears perking at the birdsong", "ambient": "birch leaves stirring, morning light breaking through"}},
-    {"t": "13.5-18", "vo": "The plan: data centers. A rail hub. Power lines.", "shows": "an abstract faceless machine-shadow rises out of the parcel outline behind the trail; three labeled icons (data center, rail hub, power line) stamp in one by one", "sfx": "low ominous riser begins, three stamp-ticks", "means": "the proposed uses, stamped in one by one as they are named, over a shadow that is deliberately not a cute character", "draw": {"subject": "a faceless machine-shadow with three stamping labeled icons", "action": "the shadow lengthens as the icons stamp in one by one", "emotion": "ominous, patient", "annotation": "DATA CENTERS · RAIL HUB · POWER LINES"}, "choreo": {"primary": "the shadow's silhouette lengthening", "reaction": "the sled-dog team's ears flicking toward it, unbothered", "ambient": "the riser building low under the trail ambience"}},
-    {"t": "18-22.5", "vo": "No company has signed on yet.", "shows": "a blank tenant nameplate sign swings, empty, beneath the machine-shadow", "sfx": "creaky sign swing", "means": "the first honest caveat beat: no operator is confirmed", "draw": {"subject": "a blank tenant nameplate sign", "action": "swings empty and unfilled beneath the shadow", "emotion": "uncertain", "annotation": "NO OPERATOR NAMED"}, "choreo": {"primary": "the sign swinging on a creaking hinge", "reaction": "the shadow holding still behind it, waiting", "ambient": "a light breeze catching the sign's edge"}},
-    {"t": "22.5-27", "vo": "Houston's town council tried to ban it.", "shows": "Houston's civic silhouette (existing Character rig, civic outfit) raises a fence-line deliberately across the city limits, reaching toward the parcel", "sfx": "metallic fence-clank, riser building toward its peak", "means": "the town's countermove, drawn with real determination", "draw": {"subject": "Houston's civic silhouette raising a fence-line", "action": "extends the fence-line deliberately across the city limits toward the parcel", "emotion": "determined, protective", "annotation": "CITY OF HOUSTON: PROPOSED BAN"}, "choreo": {"primary": "the fence-line extending link by link", "reaction": "the civic figure's posture straightening with resolve", "ambient": "the riser climbing under the clank"}},
-    {"t": "27-31.5", "vo": "But their line falls two miles short.", "shows": "MATCH-CUT: the fence-line's taut rope tip resolves into a kindred shape, a surveyor's wooden stake standing alone in bare negative space, dawn light raking across it, no fence beyond", "sfx": "a taut rope-creak resolving into a stake driven into soft ground, thud", "means": "the emotional peak carried by a true match-cut (a kindred shape landing in a new physical world), not a zoom gimmick", "draw": {"subject": "a surveyor's stake planted alone in empty ground", "action": "the fence-line's tip resolves into the stake, standing alone with no fence beyond it", "emotion": "failure, exposed", "annotation": null}, "choreo": {"primary": "the stake settling upright after being driven in", "reaction": "the last link of fence-line just behind it, reaching no further", "ambient": "dust settling, dawn light long across bare ground"}},
-    {"t": "31.5-36", "vo": "It never reaches this land.", "shows": "pull back to reveal a surveyor's measuring chain stretched taut from the stake across the real physical gap to the parcel's edge, a small metal tag clipped to it reading 2 MI; a pre-turn silence dip in the mix", "sfx": "silence dip, chain-links settling taut, one soft low tone", "means": "the caveat made physically measurable in the landscape itself, not a HUD diagram", "draw": {"subject": "a surveyor's measuring chain stretched from the stake to the parcel edge", "action": "pulls taut across the gap as a small tag clips into place", "emotion": "stark, plain", "annotation": "2 MI"}, "choreo": {"primary": "the chain drawing taut link by link", "reaction": "the tag swinging once then settling still", "ambient": "the mix dropping to near-silence"}},
-    {"t": "36-40.5", "vo": "AIDEA says it straight: no decisions have been made.", "shows": "a pen hovers just above an unsigned document beside a small AIDEA nameplate, trembling, never touching down to sign", "sfx": "a faint pen-nib hover-hum, paper settling", "means": "the agency's own honesty drawn as a physical non-action, a pen that never signs, instead of a stamp and a typed quote", "draw": {"subject": "a pen suspended above an unsigned document", "action": "hovers and trembles, never touches down to sign", "emotion": "matter-of-fact honesty", "annotation": "AIDEA"}, "choreo": {"primary": "the pen's slight tremble as it hovers", "reaction": "the blank document's edge lifting faintly in the breeze", "ambient": "quiet, held"}},
-    {"t": "40.5-45", "vo": "Comments close August nineteenth. Nothing here is final.", "shows": "a weathered wooden trail-post stands fixed nearby, a date carved into its grain, AUG 19, moss on its base, the unsigned document still visible at the edge of frame", "sfx": "wood-grain creak, one distant bird call", "means": "the deadline and the unresolved status, drawn as one honest physical object in the landscape rather than a HUD calendar", "draw": {"subject": "a weathered wooden post carved with a date", "action": "stands fixed in the gap, marking the deadline", "emotion": "ticking, unresolved", "annotation": "AUG 19"}, "choreo": {"primary": "the camera settling on the carved date", "reaction": "the unsigned document still visible, untouched, at the frame's edge", "ambient": "a single distant bird call"}},
-    {"t": "45-49.5", "vo": "So the fence stands empty. The shadow keeps reaching.", "shows": "return to the aerial cold-open framing, the fence-line, the stake, the chain, and the post all now visible in the gap alongside the frozen machine-shadow, none touching, camera holding still", "sfx": "wind ambience returns, music dips further", "means": "the loopback begins: the standoff is held, not resolved, the physical objects from the caveat now visible together in the gap", "draw": {"subject": "the aerial view again, fence-line, stake, chain, post, and frozen machine-shadow", "action": "camera holds, none of them reach each other", "emotion": "quiet vigil", "annotation": null}, "choreo": {"primary": "the camera settling into stillness", "reaction": "the shadow's edge trembling faintly, held", "ambient": "wind returning over the canopy"}},
-    {"t": "49.5-54", "vo": "The dogs still run this trail either way.", "shows": "the sled-dog team trots briskly through the gap between the fence-line and the machine-shadow, undisturbed by either, the one real motion in the closing hold", "sfx": "paw-pad patter, gentle wind", "means": "the grounded human/animal stakes close the emotional arc: life on the land keeps moving regardless of the standoff, and gives the static loopback tail its one beat of real motion", "draw": {"subject": "the sled-dog team on the trail in the gap between fence and shadow", "action": "trots the trail through the gap, unbothered by either side", "emotion": "calm, alive, grounded", "annotation": null}, "choreo": {"primary": "the dog team's trotting gait moving through the gap", "reaction": "one dog's head turning toward the shadow mid-stride, unbothered", "ambient": "soft wind over the birch canopy"}},
-    {"t": "54-59", "vo": "Nobody's said yes here. Nobody's said no where it counts.", "shows": "final button: camera settles into the exact loopback framing from the cold open, fence-line, stake, chain, post, and shadow held static in the gap, no text card, the picture alone carries the standoff", "sfx": "soft final music button, tail out", "means": "closes the loop purely on the image: nothing labeled, nothing resolved, the gap itself is the point", "draw": {"subject": "the same aerial parcel, fence-line, stake, chain, post, and machine-shadow composition as the cold open", "action": "camera settles, nothing moves, loop-perfect", "emotion": "unresolved, held", "annotation": null}, "choreo": {"primary": "the frame holding motionless on the loop point", "reaction": "the dogs' trail dust settling in the gap, the last motion to fade", "ambient": "wind and distant birdsong tailing into silence"}}
+    {
+      "t": "0-4.5",
+      "vo": "Alaska is about to give away thirty one square miles of land.",
+      "shows": "aerial push over Mat-Su birch and spruce forest, dawn mist; a glowing parcel-boundary line draws itself in and swallows the tiny Houston town icon at scale; headline '31 SQUARE MILES. FOR FREE.' snaps in at 1.0s",
+      "sfx": "low wind ambience, electronic draw-line whoosh",
+      "means": "opens on the hook: the land, and the scale of what is being given away",
+      "draw": {
+        "subject": "a glowing parcel-boundary line over the Mat-Su forest map",
+        "action": "draws itself in and swallows the tiny Houston town icon at scale",
+        "emotion": "quiet alarm at scale",
+        "annotation": "31 SQUARE MILES"
+      },
+      "choreo": {
+        "primary": "boundary line filling in across the map",
+        "reaction": "the Houston town icon shrinking by comparison",
+        "ambient": "dawn mist drifting low over the canopy"
+      }
+    },
+    {
+      "t": "4.5-9",
+      "vo": "For free. To a state agency called AIDEA.",
+      "shows": "a gear-lever mechanism labeled NONCOMPETITIVE CONVEYANCE pulls down beside an AIDEA nameplate; a crossed-out dollar sign locks in",
+      "sfx": "mechanical lever clank, stamp tick",
+      "means": "the no-charge mechanism, drawn as a cold procedural machine, on the words that state it",
+      "draw": {
+        "subject": "a gear-lever labeled NONCOMPETITIVE CONVEYANCE beside an AIDEA nameplate",
+        "action": "the lever pulls down and a crossed-out dollar sign locks in",
+        "emotion": "cold, procedural",
+        "annotation": "NO PRICE STATED \u00b7 AIDEA"
+      },
+      "choreo": {
+        "primary": "the lever pulling and the dollar-sign icon crossing out",
+        "reaction": "the AIDEA nameplate settling into place beside it",
+        "ambient": "faint gear-click residue"
+      }
+    },
+    {
+      "t": "9-13.5",
+      "vo": "It's birch forest near Houston. More than forty miles of mushing trails.",
+      "shows": "cut to eye-level: a sled-dog team trots a glowing trail overlay crossing the parcel, tails up, birch trunks passing",
+      "sfx": "paw-pad patter, distant dog bark, birdsong",
+      "means": "grounds the human and animal stakes on this land before the AI-infrastructure angle arrives",
+      "draw": {
+        "subject": "a sled-dog team on a glowing trail overlay crossing the parcel",
+        "action": "trots the trail, tails up, alive and unbothered",
+        "emotion": "warm, grounded, alive",
+        "annotation": "40+ MILES OF TRAILS"
+      },
+      "choreo": {
+        "primary": "the dog team's trotting gait along the glowing trail line",
+        "reaction": "ears perking at the birdsong",
+        "ambient": "birch leaves stirring, morning light breaking through"
+      }
+    },
+    {
+      "t": "13.5-18",
+      "vo": "The plan: data centers. A rail hub. Power lines.",
+      "shows": "an abstract faceless machine-shadow rises out of the parcel outline behind the trail; three labeled icons (data center, rail hub, power line) stamp in one by one",
+      "sfx": "low ominous riser begins, three stamp-ticks",
+      "means": "the proposed uses, stamped in one by one as they are named, over a shadow that is deliberately not a cute character",
+      "draw": {
+        "subject": "a faceless machine-shadow with three stamping labeled icons",
+        "action": "the shadow lengthens as the icons stamp in one by one",
+        "emotion": "ominous, patient",
+        "annotation": "DATA CENTERS \u00b7 RAIL HUB \u00b7 POWER LINES"
+      },
+      "choreo": {
+        "primary": "the shadow's silhouette lengthening",
+        "reaction": "the sled-dog team's ears flicking toward it, unbothered",
+        "ambient": "the riser building low under the trail ambience"
+      }
+    },
+    {
+      "t": "18-22.5",
+      "vo": "No company has signed on yet.",
+      "shows": "a blank tenant nameplate sign swings, empty, beneath the machine-shadow",
+      "sfx": "creaky sign swing",
+      "means": "the first honest caveat beat: no operator is confirmed",
+      "draw": {
+        "subject": "a blank tenant nameplate sign",
+        "action": "swings empty and unfilled beneath the shadow",
+        "emotion": "uncertain",
+        "annotation": "NO OPERATOR NAMED"
+      },
+      "choreo": {
+        "primary": "the sign swinging on a creaking hinge",
+        "reaction": "the shadow holding still behind it, waiting",
+        "ambient": "a light breeze catching the sign's edge"
+      }
+    },
+    {
+      "t": "22.5-27",
+      "vo": "Houston's town council tried to ban it.",
+      "shows": "Houston's civic silhouette (existing Character rig, civic outfit) raises a fence-line deliberately across the city limits, reaching toward the parcel",
+      "sfx": "metallic fence-clank, riser building toward its peak",
+      "means": "the town's countermove, drawn with real determination",
+      "draw": {
+        "subject": "Houston's civic silhouette raising a fence-line",
+        "action": "extends the fence-line deliberately across the city limits toward the parcel",
+        "emotion": "determined, protective",
+        "annotation": "CITY OF HOUSTON: PROPOSED BAN"
+      },
+      "choreo": {
+        "primary": "the fence-line extending link by link",
+        "reaction": "the civic figure's posture straightening with resolve",
+        "ambient": "the riser climbing under the clank"
+      }
+    },
+    {
+      "t": "27-31.5",
+      "vo": "But their line falls two miles short.",
+      "shows": "MATCH-CUT: the fence-line's taut rope tip resolves into a kindred shape, a surveyor's wooden stake standing alone in bare negative space, dawn light raking across it, no fence beyond",
+      "sfx": "a taut rope-creak resolving into a stake driven into soft ground, thud",
+      "means": "the emotional peak carried by a true match-cut (a kindred shape landing in a new physical world), not a zoom gimmick",
+      "draw": {
+        "subject": "a surveyor's stake planted alone in empty ground",
+        "action": "the fence-line's tip resolves into the stake, standing alone with no fence beyond it",
+        "emotion": "failure, exposed",
+        "annotation": null
+      },
+      "choreo": {
+        "primary": "the stake settling upright after being driven in",
+        "reaction": "the last link of fence-line just behind it, reaching no further",
+        "ambient": "dust settling, dawn light long across bare ground"
+      }
+    },
+    {
+      "t": "31.5-36",
+      "vo": "It never reaches this land.",
+      "shows": "pull back to reveal a surveyor's measuring chain stretched taut from the stake across the real physical gap to the parcel's edge, a small metal tag clipped to it reading 2 MI; a pre-turn silence dip in the mix",
+      "sfx": "silence dip, chain-links settling taut, one soft low tone",
+      "means": "the caveat made physically measurable in the landscape itself, not a HUD diagram",
+      "draw": {
+        "subject": "a surveyor's measuring chain stretched from the stake to the parcel edge",
+        "action": "pulls taut across the gap as a small tag clips into place",
+        "emotion": "stark, plain",
+        "annotation": "2 MI"
+      },
+      "choreo": {
+        "primary": "the chain drawing taut link by link",
+        "reaction": "the tag swinging once then settling still",
+        "ambient": "the mix dropping to near-silence"
+      }
+    },
+    {
+      "t": "36-40.5",
+      "vo": "AIDEA says it straight: no decisions have been made.",
+      "shows": "a pen hovers just above an unsigned document beside a small AIDEA nameplate, trembling, never touching down to sign",
+      "sfx": "a faint pen-nib hover-hum, paper settling",
+      "means": "the agency's own honesty drawn as a physical non-action, a pen that never signs, instead of a stamp and a typed quote",
+      "draw": {
+        "subject": "a pen suspended above an unsigned document",
+        "action": "hovers and trembles, never touches down to sign",
+        "emotion": "matter-of-fact honesty",
+        "annotation": "AIDEA"
+      },
+      "choreo": {
+        "primary": "the pen's slight tremble as it hovers",
+        "reaction": "the blank document's edge lifting faintly in the breeze",
+        "ambient": "quiet, held"
+      }
+    },
+    {
+      "t": "40.5-45",
+      "vo": "Comments close August nineteenth. Nothing here is final.",
+      "shows": "a weathered wooden trail-post stands fixed nearby, a date carved into its grain, AUG 19, moss on its base, the unsigned document still visible at the edge of frame",
+      "sfx": "wood-grain creak, one distant bird call",
+      "means": "the deadline and the unresolved status, drawn as one honest physical object in the landscape rather than a HUD calendar",
+      "draw": {
+        "subject": "a weathered wooden post carved with a date",
+        "action": "stands fixed in the gap, marking the deadline",
+        "emotion": "ticking, unresolved",
+        "annotation": "AUG 19"
+      },
+      "choreo": {
+        "primary": "the camera settling on the carved date",
+        "reaction": "the unsigned document still visible, untouched, at the frame's edge",
+        "ambient": "a single distant bird call"
+      }
+    },
+    {
+      "t": "45-49.5",
+      "vo": "So the fence stands empty. The shadow keeps reaching.",
+      "shows": "return to the aerial cold-open framing, the fence-line, the stake, the chain, and the post all now visible in the gap alongside the frozen machine-shadow, none touching, camera holding still",
+      "sfx": "wind ambience returns, music dips further",
+      "means": "the loopback begins: the standoff is held, not resolved, the physical objects from the caveat now visible together in the gap",
+      "draw": {
+        "subject": "the aerial view again, fence-line, stake, chain, post, and frozen machine-shadow",
+        "action": "camera holds, none of them reach each other",
+        "emotion": "quiet vigil",
+        "annotation": null
+      },
+      "choreo": {
+        "primary": "the camera settling into stillness",
+        "reaction": "the shadow's edge trembling faintly, held",
+        "ambient": "wind returning over the canopy"
+      }
+    },
+    {
+      "t": "49.5-54",
+      "vo": "The dogs still run this trail either way.",
+      "shows": "the sled-dog team trots briskly through the gap between the fence-line and the machine-shadow, undisturbed by either, the one real motion in the closing hold",
+      "sfx": "paw-pad patter, gentle wind",
+      "means": "the grounded human/animal stakes close the emotional arc: life on the land keeps moving regardless of the standoff, and gives the static loopback tail its one beat of real motion",
+      "draw": {
+        "subject": "the sled-dog team on the trail in the gap between fence and shadow",
+        "action": "trots the trail through the gap, unbothered by either side",
+        "emotion": "calm, alive, grounded",
+        "annotation": null
+      },
+      "choreo": {
+        "primary": "the dog team's trotting gait moving through the gap",
+        "reaction": "one dog's head turning toward the shadow mid-stride, unbothered",
+        "ambient": "soft wind over the birch canopy"
+      }
+    },
+    {
+      "t": "54-59",
+      "vo": "Nobody's said yes here. Nobody's said no where it counts.",
+      "shows": "final button: camera settles into the exact loopback framing from the cold open, fence-line, stake, chain, post, and shadow held static in the gap, no text card, the picture alone carries the standoff",
+      "sfx": "soft final music button, tail out",
+      "means": "closes the loop purely on the image: nothing labeled, nothing resolved, the gap itself is the point",
+      "draw": {
+        "subject": "the same aerial parcel, fence-line, stake, chain, post, and machine-shadow composition as the cold open",
+        "action": "camera settles, nothing moves, loop-perfect",
+        "emotion": "unresolved, held",
+        "annotation": null
+      },
+      "choreo": {
+        "primary": "the frame holding motionless on the loop point",
+        "reaction": "the dogs' trail dust settling in the gap, the last motion to fade",
+        "ambient": "wind and distant birdsong tailing into silence"
+      }
+    }
   ]
 }

@@ -80,8 +80,17 @@ EVENTS = [
     (L[12] + 0.05, "tick"),    # final settle
 ]
 
-SILENCE_DIP_AT = L[12] - 1.3   # the real breath in the now-widened gap before the button line
-DIP_LEN = 1.2
+# quality_gate.py's SILENCE_DIP measures a window CENTERED on storyboard.json's audio_arc.silence_at
+# (din = rms(t0-0.35,t0+0.35); neighborhood = rms(t0-3,t0-0.6) vs rms(t0+0.6,t0+3)). The dip must
+# therefore be centered at t0 too, not started at t0 -- starting AT t0 put half the din window
+# outside the ducked region and diluted the measured drop to ~2dB instead of the real ~18dB.
+# True silent gap is [L[11].end, L[12].start] = [48.06, 49.66]s (1.6s). Center at 48.86s with a
+# +/-0.55s dip half-width: dip covers [48.31,49.41], clear of both the gap edges (0.25s buffer
+# each side) AND the gate's neighborhood windows (which start exactly at t0+/-0.6).
+SILENCE_DIP_CENTER = 48.86
+DIP_HALF = 0.55
+SILENCE_DIP_AT = SILENCE_DIP_CENTER - DIP_HALF
+DIP_LEN = 2 * DIP_HALF
 
 
 def main():
@@ -99,10 +108,17 @@ def main():
     dip0, dip1 = SILENCE_DIP_AT, SILENCE_DIP_AT + DIP_LEN
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
-        f"atrim=0:{VIDEO_SECS},volume=0.30,"
-        f"volume=enable='between(t,{dip0},{dip1})':volume=0.14[bedraw]"
+        f"atrim=0:{VIDEO_SECS},volume=0.30[bedraw]"
     )
-    fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.04:ratio=9:attack=6:release=320:makeup=1[bed]")
+    fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.04:ratio=9:attack=6:release=320:makeup=1[bedduck]")
+    # the real pre-button silence dip, applied AFTER the sidechain (so its makeup gain can't
+    # partially cancel it) as a single frame-evaluated expression (the earlier two-filter
+    # enable='between(...)' chain measured only ~1-2 dB of actual dip, nowhere near the -6dB
+    # the gate requires -- ffmpeg's per-filter enable/disable passthrough does not compose the
+    # way that looked like it would on paper).
+    fc.append(
+        f"[bedduck]volume=eval=frame:volume='if(between(t,{dip0},{dip1}),0.12,1.0)'[bed]"
+    )
     sfx_labels = []
     for i, (t, k) in enumerate(EVENTS):
         idx = 2 + i

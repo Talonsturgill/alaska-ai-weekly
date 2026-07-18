@@ -83,9 +83,12 @@ def main():
                 else:
                     timed[k] = (0.0, 0.25)
         # clamp within [0, line_dur] and offset to timeline
+        # (reserve 0.04s of headroom on s so e can never collapse onto s when the
+        # heard timestamp lands at or past line_dur -- that produced zero-duration
+        # cues on trailing words, e.g. "land." at s=e=line_dur)
         line_dur = seg_end - seg_start
         for tok, tm in zip(intended, timed):
-            s = min(max(0.0, tm[0]), line_dur)
+            s = min(max(0.0, tm[0]), max(0.0, line_dur - 0.04))
             e = min(max(s + 0.04, tm[1]), line_dur)
             all_words.append({"w": tok, "s": round(seg_start + s, 3),
                               "e": round(seg_start + e, 3), "seg": i})

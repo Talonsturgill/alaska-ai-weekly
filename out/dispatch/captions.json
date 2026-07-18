@@ -2,55 +2,55 @@
   {
     "text": "Alaska is about to give away",
     "start": 0.0,
-    "end": 2.285,
+    "end": 0.04,
     "seg": 0
   },
   {
     "text": "thirty one square miles of land.",
-    "start": 2.285,
-    "end": 3.76,
+    "start": 0.0,
+    "end": 0.04,
     "seg": 0
   },
   {
     "text": "For free.",
     "start": 4.26,
-    "end": 5.335,
+    "end": 4.3,
     "seg": 1
   },
   {
     "text": "To a state agency called AIDEA.",
-    "start": 5.335,
-    "end": 8.56,
+    "start": 4.26,
+    "end": 4.3,
     "seg": 1
   },
   {
     "text": "It's birch forest near Houston.",
     "start": 9.92,
-    "end": 11.67,
+    "end": 11.678,
     "seg": 2
   },
   {
     "text": "More than forty miles of mushing trails.",
-    "start": 11.67,
-    "end": 14.12,
+    "start": 11.678,
+    "end": 14.14,
     "seg": 2
   },
   {
     "text": "The plan: data centers.",
     "start": 15.14,
-    "end": 15.984,
+    "end": 15.958,
     "seg": 3
   },
   {
     "text": "A rail hub.",
-    "start": 15.984,
-    "end": 16.618,
+    "start": 15.958,
+    "end": 16.571,
     "seg": 3
   },
   {
     "text": "Power lines.",
-    "start": 16.618,
-    "end": 17.04,
+    "start": 16.571,
+    "end": 16.98,
     "seg": 3
   },
   {
@@ -62,13 +62,13 @@
   {
     "text": "Houston's town council tried to",
     "start": 22.7,
-    "end": 24.314,
+    "end": 24.3,
     "seg": 5
   },
   {
     "text": "ban it.",
-    "start": 24.314,
-    "end": 24.96,
+    "start": 24.3,
+    "end": 24.94,
     "seg": 5
   },
   {
@@ -79,7 +79,7 @@
   },
   {
     "text": "It never reaches this land.",
-    "start": 30.42,
+    "start": 31.18,
     "end": 31.22,
     "seg": 7
   },
@@ -98,13 +98,13 @@
   {
     "text": "Comments close August nineteenth.",
     "start": 37.34,
-    "end": 38.92,
+    "end": 38.91,
     "seg": 9
   },
   {
     "text": "Nothing here is final.",
-    "start": 38.92,
-    "end": 40.5,
+    "start": 38.91,
+    "end": 40.48,
     "seg": 9
   },
   {
@@ -127,7 +127,7 @@
   },
   {
     "text": "either way.",
-    "start": 48.06,
+    "start": 48.02,
     "end": 48.06,
     "seg": 11
   },
@@ -139,7 +139,7 @@
   },
   {
     "text": "Nobody's said no where it counts.",
-    "start": 51.34,
+    "start": 51.32,
     "end": 53.52,
     "seg": 12
   }
