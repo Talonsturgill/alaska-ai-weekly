@@ -228,7 +228,7 @@ const GearLever: React.FC<{x: number; y: number; f: number; pulled: number}> = (
       <circle r={26} fill={ICE} stroke={INK} strokeWidth={6} />
       <line x1={-14} y1={-14} x2={14} y2={14} stroke={CRIMSON} strokeWidth={6} strokeLinecap="round" />
       <line x1={14} y1={-14} x2={-14} y2={14} stroke={CRIMSON} strokeWidth={6} strokeLinecap="round" />
-      <text x={0} y={44} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill={INK}>NO PRICE</text>
+      <text x={0} y={44} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK} stroke={ICE} strokeWidth={4} paintOrder="stroke">NO PRICE</text>
     </g>
   </g>
 );
@@ -236,7 +236,7 @@ const GearLever: React.FC<{x: number; y: number; f: number; pulled: number}> = (
 const Nameplate: React.FC<{x: number; y: number; text: string; sub?: string; op?: number}> = ({x, y, text, sub, op = 1}) => (
   <g transform={`translate(${x},${y})`} opacity={op}>
     <rect x={-150} y={-40} width={300} height={sub ? 88 : 60} rx={10} fill={ICE} stroke={INK} strokeWidth={6} />
-    <text x={0} y={sub ? -8 : 10} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={34} fill={INK} letterSpacing={2}>{text}</text>
+    <text x={0} y={sub ? -8 : 10} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={38} fill={INK} letterSpacing={2} stroke={ICE} strokeWidth={3} paintOrder="stroke">{text}</text>
     {sub && <text x={0} y={30} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={20} fill={AMBER_D}>{sub}</text>}
   </g>
 );
@@ -248,8 +248,8 @@ const SwingSign: React.FC<{x: number; y: number; f: number}> = ({x, y, f}) => {
       <line x1={0} y1={-60} x2={0} y2={-10} stroke={INK} strokeWidth={5} />
       <g transform={`rotate(${swing})`} style={{transformOrigin: `${x}px ${y - 60}px`}}>
         <rect x={-120} y={-10} width={240} height={72} rx={10} fill={BIRCH} stroke={INK} strokeWidth={6} strokeDasharray="4 0" />
-        <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={GRAPHITE_D}>NO OPERATOR</text>
-        <text x={0} y={48} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={GRAPHITE_D}>NAMED</text>
+        <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">NO OPERATOR</text>
+        <text x={0} y={48} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">NAMED</text>
       </g>
     </g>
   );
@@ -286,7 +286,7 @@ const MeasuringChain: React.FC<{x1: number; y1: number; x2: number; y2: number; 
       {tagT > 0.5 && (
         <g transform={`translate(${tx},${ty + 6}) rotate(${4 * Math.sin(tagT * 8)})`} opacity={tagT}>
           <path d="M-30,-4 L0,-24 L30,-4 L18,30 L-18,30 Z" fill={CRIMSON} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-          <text x={0} y={14} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={SNOW}>2 MI</text>
+          <text x={0} y={14} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={SNOW} stroke={INK} strokeWidth={2} paintOrder="stroke">2 MI</text>
         </g>
       )}
     </g>
@@ -322,8 +322,8 @@ const TrailPost: React.FC<{x: number; y: number; s?: number}> = ({x, y, s = 1}) 
     <path d="M4,-220 L16,-220 L16,0 L4,0 Z" fill={WOOD_D} opacity={0.7} />
     <path d="M-16,-40 q16,-10 32,0" stroke={MOSS} strokeWidth={10} fill="none" opacity={0.8} />
     <rect x={-30} y={-190} width={60} height={54} rx={6} fill={BIRCH} stroke={INK} strokeWidth={5} />
-    <text x={0} y={-172} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={GRAPHITE_D}>AUG</text>
-    <text x={0} y={-148} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={GRAPHITE_D}>19</text>
+    <text x={0} y={-172} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={28} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">AUG</text>
+    <text x={0} y={-148} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={34} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">19</text>
   </g>
 );
 
@@ -339,7 +339,7 @@ const ParcelBoundary: React.FC<{revealT: number; showTown?: boolean}> = ({reveal
         <g transform="translate(560,900)" opacity={Math.min(1, (revealT - 0.3) * 2)}>
           <rect x={-30} y={-18} width={60} height={36} rx={4} fill={BIRCH} stroke={INK} strokeWidth={4} />
           <path d="M-34,-18 L0,-38 L34,-18 Z" fill={CRIMSON} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
-          <text x={0} y={54} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={INK}>HOUSTON</text>
+          <text x={0} y={54} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={28} fill={INK} stroke={SNOW} strokeWidth={3} paintOrder="stroke">HOUSTON</text>
         </g>
       )}
     </g>
@@ -349,7 +349,7 @@ const ParcelBoundary: React.FC<{revealT: number; showTown?: boolean}> = ({reveal
 const StatCard: React.FC<{x: number; y: number; big: string; sub?: string; op?: number; scale?: number}> = ({x, y, big, sub, op = 1, scale = 1}) => (
   <g transform={`translate(${x},${y}) scale(${scale})`} opacity={op}>
     <rect x={-260} y={-64} width={520} height={sub ? 128 : 96} rx={16} fill={CRIMSON} stroke={INK} strokeWidth={8} />
-    <text x={0} y={sub ? -12 : big.length > 10 ? 10 : 16} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={sub ? 58 : 46} fill={SNOW} letterSpacing={1}>{big}</text>
+    <text x={0} y={sub ? -12 : big.length > 10 ? 10 : 16} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={sub ? 58 : 46} fill={SNOW} letterSpacing={1} stroke={INK} strokeWidth={2.5} paintOrder="stroke">{big}</text>
     {sub && <text x={0} y={38} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={SNOW} opacity={0.9}>{sub}</text>}
   </g>
 );
@@ -405,9 +405,9 @@ const S2: React.FC = () => {
         {shadowGrow > 0.02 && <MachineShadow x={760} y={1560} scale={1.35} f={f} grow={shadowGrow} />}
       </svg>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {icon1 > 0.02 && <g transform={`translate(760,${760 - 60 * (1 - icon1)})`} opacity={icon1}><StatCard x={0} y={0} big="DATA CENTER" scale={0.62} /></g>}
-        {icon2 > 0.02 && <g transform={`translate(760,${860 - 60 * (1 - icon2)})`} opacity={icon2}><StatCard x={0} y={0} big="RAIL HUB" scale={0.62} /></g>}
-        {icon3 > 0.02 && <g transform={`translate(760,${960 - 60 * (1 - icon3)})`} opacity={icon3}><StatCard x={0} y={0} big="POWER LINES" scale={0.62} /></g>}
+        {icon1 > 0.02 && <g transform={`translate(760,${740 - 60 * (1 - icon1)})`} opacity={icon1}><StatCard x={0} y={0} big="DATA CENTER" scale={0.88} /></g>}
+        {icon2 > 0.02 && <g transform={`translate(760,${880 - 60 * (1 - icon2)})`} opacity={icon2}><StatCard x={0} y={0} big="RAIL HUB" scale={0.88} /></g>}
+        {icon3 > 0.02 && <g transform={`translate(760,${1020 - 60 * (1 - icon3)})`} opacity={icon3}><StatCard x={0} y={0} big="POWER LINES" scale={0.88} /></g>}
         <g opacity={interpolate(f, [10, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
           <Nameplate x={200} y={1600} text="40+ MILES" sub="OF TRAILS" />
         </g>
@@ -542,7 +542,7 @@ const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6];
 // S4 26.24-31.72s (lines 7-8), S5 31.72-41.84s (lines 9-10), S6 41.84-53.34s (lines 11-13).
 const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
   {from: 0, dur: 298}, {from: 298, dur: 307}, {from: 605, dur: 182},
-  {from: 787, dur: 165}, {from: 952, dur: 303}, {from: 1255, dur: 345},
+  {from: 787, dur: 165}, {from: 952, dur: 303}, {from: 1255, dur: 378},
 ];
 
 export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {

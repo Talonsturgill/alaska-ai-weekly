@@ -11,7 +11,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-VIDEO_SECS = 1600 / 30  # matches Root durationInFrames after this run's retiming
+VIDEO_SECS = 1633 / 30  # matches Root durationInFrames after adding the pre-button breath gap
 
 
 def run(cmd):
@@ -80,8 +80,8 @@ EVENTS = [
     (L[12] + 0.05, "tick"),    # final settle
 ]
 
-SILENCE_DIP_AT = L[12] - 0.5   # the breath just before the closing lines
-DIP_LEN = 1.0
+SILENCE_DIP_AT = L[12] - 1.3   # the real breath in the now-widened gap before the button line
+DIP_LEN = 1.2
 
 
 def main():

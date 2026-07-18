@@ -26,11 +26,12 @@
   },
   "audio_arc": {
     "build_steps": 3,
-    "dip_at": 31.5,
-    "riser_at": 22.5,
-    "silence_at": 31.5,
-    "payoff_at": 36.0,
-    "button_pattern": "callback"
+    "dip_at": 48.36,
+    "riser_at": 26.24,
+    "silence_at": 48.36,
+    "payoff_at": 49.66,
+    "button_pattern": "callback",
+    "retimed_note": "updated from the original evenly-spaced plan to the real synthesized VO timeline (out/dispatch/vo_lines.json); silence_at/dip_at now match dispatch_mix_2026_07_18.py's SILENCE_DIP_AT = L[12]-0.5"
   },
   "shots": [
     {
