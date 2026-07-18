@@ -159,9 +159,12 @@ entities>"`. If it prints DUP, the story is too close to a recent Dispatch, choo
 one (note: the checker is a coarse token matcher; a DUP on generic single tokens like 'drone'
 against a substantively different story may be re-tested with an honest distinctive entity set,
 but never game it). Choose ONE story: recent (live hook within ~weeks), fully fact-checked, with
-a genuine AI angle AND an honest caveat (the real limit), positive-toward-Alaska (read local
-sentiment; never "Silicon Valley saves Alaska"), and NOT in dispatch_history. If nothing clears
-the bar, say so and stop rather than forcing a weak story.
+a genuine AI angle and an EARNED, even-handed take (config/brand.yaml `worldview` is authoritative:
+Alaska-first and AI-first; read each story on its merits and land where the facts land, neither
+reflexively sour nor booster-ish; a genuine win is allowed to be a win). Read local sentiment and
+reflect it fairly; never "Silicon Valley saves Alaska" and never a manufactured doom frame. NOT in
+dispatch_history, and rotate stance so recent cautionary pieces don't stack. If nothing clears the
+bar, say so and stop rather than forcing a weak story.
 
 PHASE 4: PRODUCE LIKE A FILM STUDIO (dimensional-first; vary everything)
 - YOUR CRAFT IS DIMENSIONAL CINEMATOGRAPHY. Build every scene in the 3D engine
@@ -172,9 +175,11 @@ PHASE 4: PRODUCE LIKE A FILM STUDIO (dimensional-first; vary everything)
   handheld micro-drift) with the G-buffer filmic finish. The picture LEADS; write/record the
   voiceover to FOLLOW the visuals beat-for-beat. PIL/numpy remains ONLY for the brand chrome
   (captions/HUD/wordmark) composited over the render. Do NOT build hand-coded 2D PIL scenes.
-- Lock the ANGLE + the one HONEST CAVEAT (it detects but can't predict; a model ranks but a
-  drill proves; it hears them but can't count them).
-- DRAW the caveat as a PICTURE a muted viewer reads, do not leave it to a text card. If the story
+- Lock the earned ANGLE + its honest TURN, whatever the facts pivot to. Sometimes that turn is a
+  real limit (it detects but can't predict; a model ranks but a drill proves; it hears them but
+  can't count them); sometimes it is a genuine upside landing at scale, or an open question. It is
+  not a mandatory downbeat.
+- DRAW the turn as a PICTURE a muted viewer reads, do not leave it to a text card. If the story
   rests on a HYPOTHESIS, stage it as clearly proposed: make the hedge the LOUDEST label, never a
   confident causal arrow. On-screen accuracy is a hard blocker: a wrong or partial number fails the run.
 - AVOID glyphs that read as broken assets (empty slashed box, concentric-ring target dot,

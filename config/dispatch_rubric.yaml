@@ -68,7 +68,7 @@ rubric:
       4:  "Narration-over-slideshow feel."
     - name: "Accuracy & sourcing"
       weight: 0.10
-      10: "Every claim ties to a primary source (load-bearing ones to two); on-screen numbers flagged illustrative unless from a real feed; honest caveat present."
+      10: "Every claim ties to a primary source (load-bearing ones to two); on-screen numbers flagged illustrative unless from a real feed; framing is even-handed (the earned honest turn is present, whether a limit, a fair counter-point, or a genuine upside), not one-sided or reflexively sour."
       7:  "All sourced; one secondary-only."
       4:  "A claim is thin or unsourced."
     - name: "Alaska authenticity & cultural respect"

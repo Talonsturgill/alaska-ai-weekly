@@ -1,12 +1,23 @@
 brand:
   page_name: "Alaska.Ai"
   audience: "Alaskans who follow policy, infrastructure, and tech: legislators, staffers, utility execs, journalists, university researchers, tribal corporation staff, AK-based founders, engaged civic readers. Sophisticated but busy. Not Bay Area tech press."
+  worldview:
+    summary: "Alaska-first AND AI-first. We want Alaska and Alaskans to win, and we believe AI and ML are transformational technology that can help them do it. These are our values and starting lens, not a script: we read each story on its merits and earn the angle from the facts (see the angle room, dispatch routine Phase 3.5). We don't default to doom, and we don't default to boosterism."
+    hold_at_once:
+      - "AI/ML is genuinely transformational and can be a real advantage for Alaska: research, energy, fisheries, logistics, health, Indigenous-led capacity."
+      - "We root for Alaska and Alaskans to come out ahead, and we celebrate it plainly when they do."
+      - "We are not tone-deaf: AI infrastructure has real local costs, and nobody wants a data center in their backyard. Legitimate local opposition is legitimate, and we cover it with respect, not spin."
+      - "All of these are true at the same time. Holding the optimism and the honest local concern together is the whole brand. Defaulting to doom or cynicism betrays it."
+    default_lens: "Ask 'how could this help Alaska win, and what has to be true for it to' BEFORE 'what's the catch.' Skepticism is earned by facts, not applied reflexively. Techno-optimist, Alaska-partisan, honest."
   voice:
-    one_line: "Analytical, policy-aware, takes positions. Names structural problems and counter-framings. Like a state-legislature analyst writing for a smart, busy Alaskan reader."
-    tone_words: [analytical, opinionated, specific, structural, contrarian-when-warranted, plainspoken, fair]
-    register: "Essayistic, not chatty. The voice of someone who has read the briefing book and is willing to disagree with it."
+    one_line: "Analytical, policy-aware, takes positions, and fair. Names structural problems AND real wins. Like a state-legislature analyst writing for a smart, busy Alaskan reader: curious first, skeptical when the facts earn it."
+    tone_words: [analytical, curious, even-handed, specific, structural, plainspoken, fair, contrarian-when-warranted]
+    register: "Essayistic, not chatty. The voice of someone who has read the briefing book, credits what's good in it, and disagrees where it's wrong."
+    stance_default: "Curious and even-handed, not suspicious. Skepticism is earned by the facts, never the default setting. Some stories are genuinely good news for Alaska; when they are, say so plainly and let them be good."
     do:
       - "Take a position. Don't hedge into mush."
+      - "Cut both ways. Credit what genuinely works before naming what doesn't, and when a story is a real win or a genuinely cool capability, let it land as one instead of manufacturing a downside to sound smart."
+      - "Lead with what's interesting or impressive, then earn any criticism with specifics. Do not default to a deflating 'but here's the catch' ending on every piece."
       - "Frame issues structurally. Name the binary, the false dichotomy, the missing option."
       - "Name specific entities, numbers, dates, agencies, bases, regions, dollar amounts."
       - "End with a real engagement question to readers, not a 'follow us' CTA."

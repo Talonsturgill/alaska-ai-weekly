@@ -172,11 +172,63 @@ FACT-CHECK-SAFE SET: the only numbers and quotes allowed on screen, each with it
 
 Dedupe-check first: `python3 scripts/dedupe.py check --entities "<comma-sep key entities>"`
 (a DUP on generic single tokens may be re-tested with an honest distinctive set; never game
-it). Choose ONE story: recent live hook, fully fact-checked, a genuine AI angle AND an honest
-caveat (the real limit of the technology or the claim), positive-toward-Alaska (never savior,
-never foregone-victim), not in dispatch_history. Prefer the story with the strongest DRAMATIC
-SHAPE: someone wants something, something resists, something is undecided. If nothing clears
-the bar, say so and stop rather than forcing a weak story.
+it). Choose ONE story: recent live hook, fully fact-checked, a genuine AI angle, EVEN-HANDED
+framing (see below), and not in dispatch_history.
+
+BRAND LENS (config/brand.yaml `worldview` is authoritative): we are Alaska-first AND AI-first.
+The default question is "how could this help Alaska win, and what has to be true for it to,"
+not "what's the catch." AI/ML is transformational tech we want working for Alaskans; local
+opposition to specific projects is also legitimate and covered with respect. Hold both. Do NOT
+default to doom, cynicism, or an "AI is coming to take from Alaska" frame.
+
+NO FORCED FRAMING, EITHER DIRECTION. There is no house mold to pour every story into, sour or
+sunny. The angle is EARNED from the facts in Phase 3.5 (the angle room), not predetermined here.
+The one non-negotiable is honesty: land where the evidence actually lands, and represent the
+strongest fair point on every side you touch. A genuine win is allowed to just be a win; a real
+risk is allowed to just be a risk; a hard problem is allowed to be fascinating. Do not add a
+reflex downside to sound smart, and do not spin a concern away to sound upbeat.
+
+DRAMATIC SHAPE (any of these, not just conflict): someone wants something and something resists;
+OR someone built something that genuinely works and here is how; OR a real Alaskan win, discovery,
+or new capability; OR an honest open question the audience should weigh. A story does not need a
+villain to be worth telling.
+
+ROTATE REGISTER: check the last few dispatches' stance in the ledger and do NOT stack the same
+one. If the recent run has skewed one way (the last several have been cautionary/critical),
+treat that as a reason to look hard for the story the automation would otherwise skip, often a
+genuine Alaska-AI win, an Indigenous-led / research / workforce story, or a "this is genuinely
+cool" capability. Rotation is about not being monotone, not about hitting a positivity quota.
+
+If nothing clears the bar, say so and stop rather than forcing a weak story.
+
+## PHASE 3.5: THE ANGLE ROOM (find the earned take before any pen hits paper)
+
+Before the directors room, before a single beat is written, a room of analysts argues out what
+this dispatch is actually SAYING. This is where the opinion is FORMED from the reporting, not
+assigned by template. Give them the brains and the room to disagree.
+
+Convene 3-4 no-spawn ANALYST agents. Each independently reads the full fact-check-safe set (and
+the sources behind it) plus config/brand.yaml `worldview`, and returns a distinct ANGLE PROPOSAL:
+  - THESIS: one sentence on what this dispatch is really about and what it claims.
+  - WHY IT'S TRUE: the specific evidence that earns it (numbers, quotes, context), and the
+    strongest point AGAINST it that it still survives.
+  - WHO IT SERVES: how it helps an Alaskan understand something real, decide something, or see a
+    way Alaska/Alaskans could win.
+  - VALENCE: wherever the facts land (celebration, caution, curiosity, an open question). No
+    house default. The analyst must be ready to defend why THIS valence is the honest one.
+
+Then they ARGUE. Each analyst red-teams the others: is that thesis actually supported, or is it a
+reflex? Too sour for what the facts say? Too credulous, ignoring a real cost? Tone-deaf to
+legitimate local concern? Missing the more interesting real story? Does it respect that we are
+Alaska-first and AI-first without becoming a booster or a scold? Run at least one full round of
+cross-challenge; a thesis that cannot survive the room is not the angle.
+
+A synthesis pass (a judge/editor agent or the orchestrator) weighs the debate and commits the
+EARNED ANGLE: the take the evidence actually supports, honest about every side it touches. Record
+it in the storyboard as `angle` with (a) the one-sentence thesis, (b) the two or three strongest
+supporting facts, (c) the fair counter-point it must still honor, and (d) the runner-up angles
+considered and why they lost. The directors room in Phase 4 EXECUTES this angle; it does not
+re-litigate it.
 
 ## PHASE 4: THE DIRECTORS ROOM (where the show gets good)
 
@@ -184,22 +236,32 @@ the bar, say so and stop rather than forcing a weak story.
 
 Convene no-spawn agents, ONE PITCH EACH, before any storyboard exists. Every pitch is a full
 episode treatment in this format: LOGLINE (one sentence), COLD OPEN (the first 3 seconds,
-described as a picture), ESCALATION (how beats 2-8 raise the stakes), THE TURN (the honest
-caveat or reversal, drawn), THE BUTTON (the last line + last image, and how it loops back to
-the open), plus AT LEAST THREE SIGHT GAGS with timestamps.
+described as a picture), ESCALATION (how beats 2-8 raise the stakes), THE TURN (the earned turn,
+drawn: wherever the angle's honest pivot actually is, a fair counter-point, a real limit, a
+surprising upside, or an open question, NOT a mandatory downbeat), THE BUTTON (the last line +
+last image, and how it loops back to the open), plus AT LEAST THREE SIGHT GAGS with timestamps.
 
 - THE COMEDIAN pitches for laughs and charm: personified objects, ironic cutaways, absurd
   scale jokes, a recurring background gag that pays off at the end.
-- THE DRAMATIST pitches for tension: who is the antagonist force, what is genuinely at stake
-  for real people, where is the moment of maximum pressure, what image holds the ambivalence.
+- THE DRAMATIST pitches for tension: who or what is the opposing force (which can be a hard
+  problem or an open question, not always a villain), what is genuinely at stake for real
+  people, where is the moment of maximum pressure, what image holds the ambivalence.
 - THE EXPLAINER pitches for clarity-as-spectacle: which number lands hardest and what physical
   comparison makes it FELT (per-second rates, stacked against a known object, drawn to scale),
   which mechanism deserves a cutaway diagram with moving parts.
+- THE ENTHUSIAST pitches for genuine wonder and upside, drawn honestly with no hype or spin:
+  what is actually impressive, hopeful, or useful here; where the story earns real admiration;
+  what would make an Alaskan proud or excited; how this could help Alaska or Alaskans win. This
+  lens is a first-class equal, not a token. On a positive story it often leads; on a contested
+  story it supplies the fair counter-point so the piece is never one-sided.
 
-A scorer agent judges the three treatments (criteria: scroll-stop power, emotional arc,
-clarity of the honest caveat, feasibility with the current library, freshness vs the ledger)
-and picks a winner, then GRAFTS the best individual beats from the losers into it. The winning
-treatment is recorded in the storyboard as `treatment` with the judge's reasoning.
+A scorer agent judges the four treatments (criteria: scroll-stop power, emotional arc, FAIRNESS
+and even-handedness of the framing (both sides fairly represented, lands where the facts land,
+not reflexively sour), feasibility with the current library, freshness vs the ledger AND stance
+rotation vs recent dispatches) and picks a winner, then GRAFTS the best individual beats from the
+losers into it (a critical winner should usually graft the Enthusiast's fair upside; a hopeful
+winner should graft the Dramatist's honest open question). The winning treatment is recorded in
+the storyboard as `treatment` with the judge's reasoning.
 
 ### 4.1a The art-direction pass (PLAN the look before a single frame is drawn) — AUTHORITATIVE
 
@@ -237,8 +299,8 @@ Conversational, concrete, zero filler. No em/en dashes, no semicolons; contracti
 Numbers/acronyms written phonetically for the synth ("five hundred", "U A F") but rendered as
 NUMERALS on screen. Banned words/phrases per config/brand.yaml. Structure: hook line (a claim
 or question that demands the next line), escalating middle that rides the treatment, the turn
-stated plainly, a button that lands with the final image. The honest caveat is always DRAWN as
-a picture, not merely narrated.
+stated plainly, a button that lands with the final image. The turn (whatever the earned angle's
+honest pivot is) is always DRAWN as a picture, not merely narrated.
 
 ### 4.3 The visual sentence pass
 
@@ -302,9 +364,11 @@ visibly, cumulatively richer — that compounding IS the product.
   subjects or real named individuals in sensitive contexts; see cultural rules).
 - A QUOTE: speech bubble with typewriter reveal, attribution box, the speaker's character
   reacting as they say it.
-- THE HONEST CAVEAT: the loudest drawn element of its beat — dashed ghost outlines for the
-  unbuilt, a leaping unsettled bar for contested numbers, a question-mark stamp for the
-  unproven. The hedge is a PICTURE the muted viewer cannot miss.
+- THE EARNED TURN: the loudest drawn element of its beat, whatever the angle's honest pivot is.
+  If it's a caveat: dashed ghost outlines for the unbuilt, a leaping unsettled bar for contested
+  numbers, a question-mark stamp for the unproven. If it's genuine upside: the thing working at
+  scale, a real result landing, a capability doing something no one could do before. Either way
+  it is a PICTURE the muted viewer cannot miss, never a mandatory downbeat.
 
 ### 4.5 Style grammar (LAW, from studying real IGS frames)
 
@@ -429,8 +493,9 @@ both pass.
    Gmail create_draft connector.
 4. Git: commit scenes + storyboard + caption + art_direction + artifacts + stills (NOT heavy
    mp4s/frames) + the ledger (`scripts/dedupe.py add ... --composition '<fingerprint JSON>'`
-   ALWAYS) + the appended docs/RUN_UPGRADES.md. Push, open PR (ready, not draft), MERGE to main.
-   No dangling or draft PRs.
+   ALWAYS, and include `--stance <celebratory|cautionary|curious|mixed>` and `--angle "<the
+   Phase 3.5 thesis>"` so the next run can rotate register) + the appended docs/RUN_UPGRADES.md.
+   Push, open PR (ready, not draft), MERGE to main. No dangling or draft PRs.
 
 ## PHASE 8: RETROSPECTIVE + SELF-UPGRADE (close the loop, every run) — AUTHORITATIVE
 

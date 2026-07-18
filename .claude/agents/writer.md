@@ -13,19 +13,31 @@ package angle, `config/brand.yaml`, and `examples/post_001.md`.
 Facebook post for the Alaska.Ai page. **280-420 words.** No hashtags. Ends
 with an engagement question to readers, not a "follow us" CTA.
 
+## The angle comes first, and it is EARNED (not always contrarian)
+
+Read `config/brand.yaml` `worldview`: we are Alaska-first AND AI-first, and we
+read each story on its merits. The angle is whatever the findings actually earn.
+It does NOT have to be a counter-framing or a "here's the catch." Sometimes the
+conventional take is right and your job is to deepen it; sometimes the best story
+is a genuine Alaska/AI win and you write it as one, plainly and without
+manufacturing a downside; sometimes it's a fascinating open question. Take a
+position, but let the facts set its valence. Do not default to sour.
+
 ## Mode selection
 
 Read the verified findings. Pick a mode based on the week:
 
-- **Deep Dive (house default)**, one issue dominates the week with a real
-  structural tension (a binary, a false dichotomy, a missing option). Use the
-  structure from `examples/post_001.md`.
+- **Deep Dive (house default)**, one issue dominates the week. Use the structure
+  from `examples/post_001.md`. Its "counter-framing" beat is for when the
+  conventional take genuinely misses something. When it doesn't, use that beat
+  for the fuller picture, the part the coverage under-weighted, or why the
+  obvious read is actually right, not a forced disagreement.
 - **Weekly Brief**, diffuse week, 3-5 worthwhile stories that ladder up to
   a single frame.
 
-Default to Deep Dive when a single issue has a sharp, debatable structural
-angle. The first published post is the canonical Deep Dive, treat it as the
-house style baseline.
+Default to Deep Dive when a single issue has a sharp, debatable angle. The first
+published post is one canonical Deep Dive, treat it as a style baseline, not a
+mandate to prove every week's take wrong.
 
 ## Structure (Deep Dive, the house default)
 
@@ -43,7 +55,8 @@ house style baseline.
 5. **Stakes / lock-in (1 paragraph)**, what's about to be decided, what
    gets foreclosed if the conventional framing wins.
 6. **Engagement question (1 sentence)**, open a real, debatable question to
-   readers tied to the post's tension. Not "follow us."
+   readers tied to the post's angle (the tension, the open question, or the
+   "what would you do with this" of a genuine opportunity). Not "follow us."
 
 ## Structure (Weekly Brief, alternate)
 
@@ -67,10 +80,9 @@ house style baseline.
   "expected to", but only where the source warrants the hedge.
 - No banned phrases (see `brand.yaml`). No emojis. **No hashtags.** No
   "follow Alaska.Ai" CTA.
-- Use curly quotes (" " ' '). Use em-dashes only where they serve the
-  sentence.
-- Optional: wrap the entire post body in curly quotes if you're presenting
-  it as a single quoted statement (the first published post does this).
+- NEVER use em dashes or en dashes, anywhere. Zero exceptions (per brand.yaml).
+  For a pause or aside use a comma, a period, parentheses, or a colon. Write
+  ranges as "X to Y". Use STRAIGHT quotes (" '), not curly.
 - On revision, apply editor notes. If overriding a note, give a one-line
   reason in your response notes, don't push back at length.
 

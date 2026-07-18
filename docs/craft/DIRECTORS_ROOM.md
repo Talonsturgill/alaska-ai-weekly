@@ -4,19 +4,35 @@ The owner's mandate: the automation is the whole studio. Research + storytelling
 strong; this doc adds the PRODUCERS and EDITORS — the intelligence that turns a fact-checked
 story into an entertaining SHOW, every run, without a human in the loop until the Gmail draft.
 
-## The room (Phase 4, after the story is picked and fact-checked)
+## First, the angle is earned (Phase 3.5, the angle room)
+
+The directors room does NOT decide what the piece is saying. That is settled first, in the angle
+room (dispatch routine Phase 3.5): a panel of analysts reads the reporting, argues the possible
+theses against each other, and commits the EARNED angle for THIS story, honest about every side.
+The angle carries its own valence (celebration, caution, curiosity, an open question) with no
+house default, sour or sunny. We are Alaska-first and AI-first (config/brand.yaml worldview); the
+angle is read off the facts, never poured into a mold. The room below EXECUTES that angle; it does
+not re-argue it.
+
+## The room (Phase 4, after the story is picked, fact-checked, and its angle is set)
 
 Convene a WRITERS-ROOM PANEL of no-spawn agents before any storyboard is written. Each pitches
-a full episode treatment from a different lens:
+a full episode treatment that SERVES the chosen angle, from a different lens:
   - THE COMEDIAN: where are the jokes, the sight gags, the ironic cutaways, the personified
     objects? (A sweating server. A drooling machine. A moose watching, unimpressed.)
-  - THE DRAMATIST: where is the CONFLICT? Who wants what? What is the stake, the turn, the
-    button? Every episode needs an antagonist force and a moment the tension peaks.
+  - THE DRAMATIST: where is the tension? Who or what is the opposing force (a rival, a hard
+    problem, an open question, not always a villain)? What is the stake, the turn, the button?
   - THE EXPLAINER: where do the numbers land hardest? What comparison makes scale FELT
     (X per second, stacked against a thing people know)?
-A judge pass (scorer) picks the winning treatment and grafts the best beats from the others.
-The output is the VISUAL SENTENCE storyboard: for every VO line, beats[].draw = {subject,
-action, emotion, annotation} — a cartoon you could describe to an animator in one sentence.
+  - THE ENTHUSIAST: what is genuinely impressive, hopeful, or useful here, drawn honestly with
+    no hype? Where does the story earn real admiration, and how could this help Alaska or
+    Alaskans win? An equal lens: it leads the positive stories and supplies the fair upside on
+    the contested ones so no piece is one-sided.
+A judge pass (scorer) picks the winning treatment (weighing scroll-stop, emotional arc, FAIRNESS
+of the framing, feasibility, and stance rotation vs recent runs) and grafts the best beats from
+the others. The output is the VISUAL SENTENCE storyboard: for every VO line, beats[].draw =
+{subject, action, emotion, annotation} — a cartoon you could describe to an animator in one
+sentence.
 
 ## The cast (video-engine/src/lib/)
 
