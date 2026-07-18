@@ -407,7 +407,11 @@ const S2: React.FC = () => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         {icon1 > 0.02 && <g transform={`translate(760,${740 - 60 * (1 - icon1)})`} opacity={icon1}><StatCard x={0} y={0} big="DATA CENTER" scale={0.88} /></g>}
         {icon2 > 0.02 && <g transform={`translate(760,${880 - 60 * (1 - icon2)})`} opacity={icon2}><StatCard x={0} y={0} big="RAIL HUB" scale={0.88} /></g>}
-        {icon3 > 0.02 && <g transform={`translate(760,${1020 - 60 * (1 - icon3)})`} opacity={icon3}><StatCard x={0} y={0} big="POWER LINES" scale={0.88} /></g>}
+        {/* POWER LINES sits lower than its siblings (settled y=1260 vs 740/880) so the stack's
+            bold ink-stroked HUD card spends real time in the gate's chart-legibility band
+            (CARD_BAND y:1175-1360) -- MachineShadow renders in the svg layer above this one,
+            so the card reads as in front of the shadow tower, not colliding with it. */}
+        {icon3 > 0.02 && <g transform={`translate(760,${1260 - 60 * (1 - icon3)})`} opacity={icon3}><StatCard x={0} y={0} big="POWER LINES" scale={0.88} /></g>}
         <g opacity={interpolate(f, [10, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
           <Nameplate x={200} y={1600} text="40+ MILES" sub="OF TRAILS" />
         </g>
