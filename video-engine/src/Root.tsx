@@ -11,16 +11,17 @@ const standoffSchema = z.object({
 
 // 1080x1920 (9:16), 30fps. "Dispatch" = the full episode timeline (6 scenes wired
 // to the VO line anchors, captions overlaid). "Standoff" kept for look-dev.
-// 2026-07-18: retimed to the actual synthesized VO (out/dispatch/vo_lines.json,
-// 54.32s = 1630 frames @ 30fps, after recovering line 0's audio from the
-// build_timeline.py filename-collision bug -- see that script's own header).
+// 2026-07-18: retimed to the Gemini-narrated VO (out/dispatch/vo_lines.json,
+// 67.52s = 2026 frames @ 30fps incl. tail; switched off the cloned voice per
+// owner). DEFAULT_BOUNDS below is the fallback; episode_props.json (from
+// scripts/build_scenes.py) carries the authoritative per-run scene timing.
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
         id="Dispatch"
         component={Episode}
-        durationInFrames={1630}
+        durationInFrames={2026}
         fps={30}
         width={1080}
         height={1920}
