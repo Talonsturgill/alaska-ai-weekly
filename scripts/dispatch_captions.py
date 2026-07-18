@@ -139,6 +139,34 @@ def main():
             merged[-1]["end"] = c["end"]
         else:
             merged.append(c)
+
+    # --- normalize cue timings for readable, monotonic, non-overlapping display ---
+    # whisper's per-line alignment occasionally compresses a trailing word to a
+    # near-zero-width span (e.g. "ban it." at s==e), which renders as an invisible
+    # flash; adjacent segments can also produce a start that precedes the previous
+    # cue's end. Enforce, in one forward pass: (a) each cue starts no earlier than
+    # the previous cue's end, (b) a minimum on-screen dwell, borrowing time up to
+    # the next cue's start so we never overlap it. Display-only; words.json (what
+    # the CAPTION_SYNC gate reads) is untouched.
+    MIN_CUE = 0.8      # seconds a cue must stay up to be readable
+    GAP = 0.04         # min gap between consecutive cues
+    for idx in range(len(merged)):
+        c = merged[idx]
+        raw_next = merged[idx + 1]["start"] if idx + 1 < len(merged) else (c["end"] + MIN_CUE + 1.0)
+        if idx > 0:
+            c["start"] = max(c["start"], merged[idx - 1]["end"] + GAP)
+        # don't let a pushed start collide with the next cue's room
+        c["start"] = min(c["start"], max(0.0, raw_next - 0.2))
+        # minimum dwell, clamped so we never overrun the next cue
+        c["end"] = min(max(c["end"], c["start"] + MIN_CUE), max(c["start"] + 0.2, raw_next - GAP))
+        c["start"], c["end"] = round(c["start"], 3), round(c["end"], 3)
+
+    # assert the invariants the editor flagged: no flash cues, no overlaps
+    flashes = [c for c in merged if c["end"] - c["start"] < 0.3]
+    overlaps = [i for i in range(1, len(merged)) if merged[i]["start"] + 1e-6 < merged[i - 1]["end"]]
+    if flashes or overlaps:
+        print(f"WARNING: {len(flashes)} flash cue(s), {len(overlaps)} overlap(s) after normalize", file=__import__("sys").stderr)
+
     json.dump(merged, open(os.path.join(OUT, "captions.json"), "w"), indent=2)
     print(f"words={len(all_words)} speech_end={speech_end:.2f}s cues={len(merged)}")
     # quick sanity: monotonic starts?
