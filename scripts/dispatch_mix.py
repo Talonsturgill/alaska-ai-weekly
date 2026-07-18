@@ -25,29 +25,13 @@ def run(cmd):
 
 
 def sfx(path, kind):
-    """Make a short one-shot SFX WAV."""
-    if kind == "whoosh":
-        f = "anoisesrc=d=0.5:c=pink:a=0.5,highpass=f=300,lowpass=f=3500,afade=t=in:d=0.05,afade=t=out:d=0.42,volume=0.7"
-    elif kind == "thud":
-        f = "sine=frequency=90:duration=0.28,afade=t=out:d=0.26,volume=1.2"
-    elif kind == "pop":
-        f = "sine=frequency=520:duration=0.12,afade=t=out:d=0.11,volume=0.7"
-    elif kind == "ding":
-        f = "sine=frequency=1200:duration=0.35,afade=t=out:d=0.33,volume=0.5"
-    elif kind == "riser":
-        f = "sine=frequency=220:duration=0.9,afade=t=in:d=0.85,volume=0.6"
-    elif kind == "klaxon":
-        f = "sine=frequency=330:duration=0.5,afade=t=out:d=0.45,volume=0.7"
-    elif kind == "paper":
-        f = "anoisesrc=d=0.7:c=white:a=0.4,highpass=f=1200,afade=t=out:d=0.6,volume=0.5"
-    elif kind == "stamp":
-        f = "sine=frequency=70:duration=0.3,afade=t=out:d=0.28,volume=1.3"
-    elif kind == "tick":
-        f = "sine=frequency=1500:duration=0.05,volume=0.5"
-    else:
-        f = "sine=frequency=440:duration=0.2,volume=0.5"
-    run([FF, "-y", "-f", "lavfi", "-i", f, "-ac", "2", "-ar", str(SR), path])
-
+    """Resolve a named effect from the designed-foley bank (assets/sfx via
+    scripts/sfx_bank.py: real/ recording > synth bank > self-heal rebuild).
+    Bank files are 44.1k stereo, -6 dBFS peak — keep per-event volume <= 0.9."""
+    import shutil as _sh, sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from sfx_bank import resolve as _resolve
+    _sh.copyfile(_resolve(kind), path)
 
 # SFX events cut to the picture, derived from the VO line starts so they stay in
 # sync when the narration changes. L[i] = start time of VO line i.

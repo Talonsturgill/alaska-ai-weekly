@@ -35,3 +35,84 @@ pool:
     license: "CC BY 4.0"
     credit: '"The Descent" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
     mood: [dark, ominous, deep, ambient]
+  # ---- mood-expansion 2026-07-18 (all URLs verified 200; pick BY THE ANGLE, see angle_to_mood) ----
+  - title: "Monkeys Spinning Monkeys"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Monkeys%20Spinning%20Monkeys.mp3"
+    license: "CC BY 4.0"
+    credit: '"Monkeys Spinning Monkeys" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [playful, comedic, bouncy, light]
+  - title: "Scheming Weasel (faster)"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Scheming%20Weasel%20faster.mp3"
+    license: "CC BY 4.0"
+    credit: '"Scheming Weasel" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [sneaky, comedic, mischievous]
+  - title: "Carefree"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Carefree.mp3"
+    license: "CC BY 4.0"
+    credit: '"Carefree" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [warm, upbeat, friendly, hopeful]
+  - title: "Wholesome"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Wholesome.mp3"
+    license: "CC BY 4.0"
+    credit: '"Wholesome" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [warm, hopeful, gentle, celebratory]
+  - title: "Inspired"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Inspired.mp3"
+    license: "CC BY 4.0"
+    credit: '"Inspired" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [uplifting, hopeful, bright, celebratory]
+  - title: "Frost Waltz"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Frost%20Waltz.mp3"
+    license: "CC BY 4.0"
+    credit: '"Frost Waltz" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [wonder, delicate, wintry, curious]
+  - title: "Volatile Reaction"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Volatile%20Reaction.mp3"
+    license: "CC BY 4.0"
+    credit: '"Volatile Reaction" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [driving, urgent, tense, newsy]
+  - title: "Local Forecast - Elevator"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Local%20Forecast%20-%20Elevator.mp3"
+    license: "CC BY 4.0"
+    credit: '"Local Forecast - Elevator" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [wry, deadpan, bureaucratic, comedic]
+  - title: "Thinking Music"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Thinking%20Music.mp3"
+    license: "CC BY 4.0"
+    credit: '"Thinking Music" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [curious, quirky, pondering]
+  - title: "Amazing Plan"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Amazing%20Plan.mp3"
+    license: "CC BY 4.0"
+    credit: '"Amazing Plan" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [scheming, deadpan, caper, wry]
+
+# The music is a CREATIVE CHOICE tied to the angle room's earned angle (Phase 3.5),
+# not a default drone. Map the angle's stance/register to a mood, then pick a track
+# with that mood (fresh vs the ledger — never reuse a recent track):
+angle_to_mood:
+  celebratory: [uplifting, hopeful, warm, celebratory]
+  cautionary: [tense, urgent, somber, driving]
+  curious: [wonder, curious, pondering, delicate]
+  comedic: [playful, sneaky, mischievous, wry, caper]
+  mixed: [reflective, newsy, driving, warm]
