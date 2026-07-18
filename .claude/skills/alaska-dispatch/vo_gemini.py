@@ -69,13 +69,29 @@ def synth(text):
     })
     # honor the container's proxy CA bundle when present (agent proxy), else default TLS
     ca = os.environ.get("SSL_CERT_FILE") or "/root/.ccr/ca-bundle.crt"
-    import ssl
+    import ssl, time
     ctx = ssl.create_default_context(cafile=ca) if os.path.exists(ca) else ssl.create_default_context()
-    try:
-        with urllib.request.urlopen(req, timeout=120, context=ctx) as r:
-            resp = json.loads(r.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"Gemini TTS HTTP {e.code}: {e.read().decode('utf-8', 'ignore')[:500]}")
+    # retry on 429 (rate limit) / 503 (overloaded) with exponential backoff — the free tier
+    # throttles the preview TTS model hard, so short spacing often clears a transient 429.
+    delays = [0, 4, 10, 20, 35]
+    last = None
+    for d in delays:
+        if d:
+            time.sleep(d)
+        try:
+            with urllib.request.urlopen(req, timeout=120, context=ctx) as r:
+                resp = json.loads(r.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "ignore")[:400]
+            last = f"HTTP {e.code}: {body}"
+            if e.code in (429, 500, 503):
+                continue
+            raise RuntimeError(f"Gemini TTS {last}")
+    else:
+        raise RuntimeError(f"Gemini TTS still failing after retries. Last: {last}. "
+                           f"A persistent 429 means the key's TTS quota is exhausted (free tier caps the "
+                           f"preview TTS model very low); enable full billing or wait for the quota to reset.")
     try:
         b64 = resp["candidates"][0]["content"]["parts"][0]["inlineData"]["data"]
     except (KeyError, IndexError):

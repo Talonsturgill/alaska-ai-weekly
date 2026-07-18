@@ -78,6 +78,11 @@ repeat ever.
    self-reports. Verify completion by file MTIMES and probes, never by file counts (the
    2026-07-15 stale-frame incident: a silently dead render left old frames in place and a
    count check read "complete"). Track background work; re-verify anything an agent claims.
+   MUX the final mp4 ONLY via `scripts/mux_and_verify.sh <silent.mp4> <master.wav> <out.mp4>`
+   (explicit `-map 0:v:0 -map 1:a:0` + a not-silent loudness assert on the OUTPUT). The
+   2026-07-17 dispatch shipped SILENT: a bare `ffmpeg -i video -i audio` with no `-map` took
+   the render's empty audio track, and the quality gate only probed the wav, not the mp4.
+   Always volumedetect the delivered cuts before upload.
 5. NO EM DASHES OR EN DASHES. ANYWHERE. EVER. Not in VO, captions, on-screen labels, the
    LinkedIn post, the Gmail draft, or credits. Ranges are "X to Y"; use commas, periods,
    parentheses, colons; middot as an on-screen separator. scripts/caption_check.py enforces
