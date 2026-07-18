@@ -4,7 +4,7 @@ import {z} from 'zod';
 import {Character} from './lib/Character';
 import {SpeedLines, ImpactStar, ZoomVignette} from './lib/FX';
 import {INK, ICE, SNOW} from './lib/kit';
-import {tones, FormGradient, RimLight, ContactShadow, BrushedMetal, BarkTexture, FoliageSpeckle, GradeLayer, LIGHT} from './lib/lighting';
+import {tones, FormGradient, RimLight, ContactShadow, BrushedMetal, BarkTexture, FoliageSpeckle, GradeLayer, MotionBlur, LIGHT} from './lib/lighting';
 
 const BOLD = 'Arial Black, Arial, sans-serif';
 
@@ -196,19 +196,25 @@ const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: number; 
 };
 
 // ================================================================ bespoke hero 2: the sled-dog team
-const SledDogTeam: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1}> = ({x, y, scale = 1, f, facing = 1}) => {
+const SledDogTeam: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; vx?: number}> = ({x, y, scale = 1, f, facing = 1, vx = 0}) => {
   const Dog: React.FC<{dx: number; phase: number}> = ({dx, phase}) => {
-    const stride = Math.sin(f / 4 + phase);
-    const legF = 14 * stride;
-    const legB = -14 * stride;
-    const bob = 3 * Math.abs(Math.cos(f / 4 + phase));
+    // a gallop gait: a faster cycle, larger leg throw, and a real vertical bound
+    // (suspension) so the team reads as RUNNING, not a sliding sprite. Legs are
+    // two-segment so they fold/extend across the stride instead of scissoring flat.
+    const ph = f / 3.4 + phase;
+    const stride = Math.sin(ph);
+    const legF = 24 * stride;
+    const legB = -24 * stride;
+    const kneeF = 10 * Math.max(0, Math.cos(ph));   // fore knee tucks on the recovery half
+    const kneeB = 10 * Math.max(0, -Math.cos(ph));
+    const bound = 8 * Math.max(0, Math.sin(ph * 2)) - 2;  // suspension bob (up on push-off)
     return (
-      <g transform={`translate(${dx},${-bob})`}>
-        {/* legs (fore/hind pairs, alternating) */}
-        <path d={`M-18,10 L${-18 + legF},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
-        <path d={`M-8,10 L${-8 + legB},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
-        <path d={`M14,10 L${14 + legB},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
-        <path d={`M24,10 L${24 + legF},34`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+      <g transform={`translate(${dx},${-bound})`}>
+        {/* legs (fore/hind pairs, alternating), two-segment for a folding gallop */}
+        <path d={`M-18,10 q${-8 + kneeB},14 ${-18 + legF},24`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M-8,10 q${8 - kneeF},14 ${-8 + legB},24`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M14,10 q${-8 + kneeB},14 ${14 + legB},24`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M24,10 q${8 - kneeF},14 ${24 + legF},24`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
         {/* body — form-shaded so it reads as a lit animal, not a flat amber blob */}
         <path d="M-30,-6 q34,-20 68,0 q6,16 -4,26 q-30,10 -60,0 q-10,-10 -4,-26 Z" fill="url(#dogLit)" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
         <path d="M8,-10 q22,2 30,14 q4,10 -4,18 q-14,6 -28,2 Z" fill={AMBER_D} opacity={0.55} />
@@ -232,9 +238,12 @@ const SledDogTeam: React.FC<{x: number; y: number; scale?: number; f: number; fa
     <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
       <FormGradient id="dogLit" t={tones(AMBER)} softness={0.85} />
       <ContactShadow cx={20} cy={38} rx={110} ry={15} opacity={0.24} blur={9} />
-      <Dog dx={-70} phase={0} />
-      <Dog dx={0} phase={1.4} />
-      <Dog dx={70} phase={2.8} />
+      {/* 180-degree-shutter smear along the run direction while the team is moving fast */}
+      <MotionBlur vx={vx} gain={0.7} max={13}>
+        <Dog dx={-70} phase={0} />
+        <Dog dx={0} phase={1.4} />
+        <Dog dx={70} phase={2.8} />
+      </MotionBlur>
     </g>
   );
 };
@@ -415,6 +424,7 @@ const S2: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const dogX = interpolate(f, [0, 270], [-200, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const dogVX = f > 0 && f < 270 ? (1200 - -200) / 270 : 0;  // px/frame for motion blur
   const shadowGrow = spring({frame: f - 130, fps, config: {damping: 13, stiffness: 60}});
   const icon1 = interpolate(f, [150, 172], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const icon2 = interpolate(f, [172, 194], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
@@ -425,7 +435,7 @@ const S2: React.FC = () => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         {/* glowing trail line */}
         <path d="M-100,1420 Q400,1370 1180,1400" fill="none" stroke={AMBER} strokeWidth={10} strokeDasharray="26 18" opacity={0.7} />
-        <SledDogTeam x={dogX} y={1440} scale={1.15} f={f} />
+        <SledDogTeam x={dogX} y={1440} scale={1.15} f={f} vx={dogVX} />
         {shadowGrow > 0.02 && <MachineShadow x={760} y={1560} scale={1.35} f={f} grow={shadowGrow} />}
       </svg>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -436,8 +446,10 @@ const S2: React.FC = () => {
             (CARD_BAND y:1175-1360) -- MachineShadow renders in the svg layer above this one,
             so the card reads as in front of the shadow tower, not colliding with it. */}
         {icon3 > 0.02 && <g transform={`translate(760,${1260 - 60 * (1 - icon3)})`} opacity={icon3}><StatCard x={0} y={0} big="POWER LINES" scale={0.88} /></g>}
+        {/* upper-left, clear of the lower-third caption band (pill sits ~y1490-1580) and the
+            right-side icon stack -- an earlier y=1600 collided with the caption per the panel */}
         <g opacity={interpolate(f, [10, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-          <Nameplate x={200} y={1600} text="40+ MILES" sub="OF TRAILS" />
+          <Nameplate x={210} y={1230} text="40+ MILES" sub="OF TRAILS" />
         </g>
       </svg>
     </AbsoluteFill>
@@ -491,6 +503,8 @@ const S4: React.FC = () => {
   const {fps} = useVideoConfig();
   const snap = spring({frame: f - 4, fps, config: {damping: 13, stiffness: 220}});
   const settle = interpolate(f, [4, 26], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.6))});
+  const settlePrev = interpolate(f - 1, [4, 26], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.6))});
+  const stakeVY = (settle - settlePrev) * 40 * 1.9;  // px/frame of the drive-in, for 180deg blur
   const pullBack = interpolate(f, [60, 130], [1.6, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const chainTaut = interpolate(f, [80, 160], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   return (
@@ -499,25 +513,29 @@ const S4: React.FC = () => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', transform: `scale(${pullBack})`, transformOrigin: '540px 1000px'}}>
         <rect x={0} y={1150} width={1080} height={770} fill="#efe0c4" />
         <path d="M0,1150 q270,-20 540,0 q270,20 540,0" fill="none" stroke={BIRCH_D} strokeWidth={4} opacity={0.6} />
-        <SurveyStake x={540} y={1360} s={1.9} settle={settle} />
+        {/* the stake drives in with a 180deg vertical smear during the fast fall */}
+        <MotionBlur vy={stakeVY} gain={0.8} max={20}>
+          <SurveyStake x={540} y={1360} s={1.9} settle={settle} />
+        </MotionBlur>
         {/* physical ground impact where the stake drives in: an expanding shockwave ring +
-            kicked-up dust, replacing the flat comic starburst the panel flagged as clip-arty */}
+            a bigger, longer-lived dust plume, replacing the flat comic starburst the panel
+            flagged as clip-arty (and which read as a held frame with no visible kick) */}
         {snap > 0.15 && (() => {
-          const it = interpolate(f, [2, 28], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-          const ringR = 34 + 300 * it;
-          const ringO = Math.max(0, 0.55 * (1 - it));
+          const it = interpolate(f, [2, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+          const ringR = 34 + 340 * it;
+          const ringO = Math.max(0, 0.6 * (1 - it));
           return (
             <g>
-              <ellipse cx={540} cy={1362} rx={ringR} ry={ringR * 0.26} fill="none" stroke={INK} strokeWidth={6 * (1 - it) + 1} opacity={ringO} />
-              <ellipse cx={540} cy={1362} rx={ringR * 0.66} ry={ringR * 0.66 * 0.26} fill="none" stroke="#ffffff" strokeWidth={3 * (1 - it)} opacity={ringO * 0.8} />
-              {Array.from({length: 8}).map((_, i) => {
+              <ellipse cx={540} cy={1362} rx={ringR} ry={ringR * 0.26} fill="none" stroke={INK} strokeWidth={7 * (1 - it) + 1} opacity={ringO} />
+              <ellipse cx={540} cy={1362} rx={ringR * 0.66} ry={ringR * 0.66 * 0.26} fill="none" stroke="#ffffff" strokeWidth={3.5 * (1 - it)} opacity={ringO * 0.8} />
+              {Array.from({length: 12}).map((_, i) => {
                 const side = i % 2 ? 1 : -1;
-                const a = 0.2 + 1.1 * (i / 7);
-                const d = 44 + 170 * it;
+                const a = 0.18 + 1.15 * ((i % 6) / 5);
+                const d = 40 + 210 * it;
                 const px = 540 + Math.cos(a) * d * side;
-                const py = 1360 - Math.sin(a) * d * 0.62 - 26 * it;
-                const r = (13 + (i % 3) * 7) * (0.6 + it);
-                return <ellipse key={i} cx={px} cy={py} rx={r} ry={r * 0.82} fill="#d9c9a8" opacity={Math.max(0, 0.5 * (1 - it))} />;
+                const py = 1360 - Math.sin(a) * d * 0.7 - 44 * it;
+                const r = (16 + (i % 4) * 8) * (0.7 + 1.1 * it);
+                return <ellipse key={i} cx={px} cy={py} rx={r} ry={r * 0.82} fill="#d9c9a8" opacity={Math.max(0, 0.55 * (1 - it))} />;
               })}
             </g>
           );
@@ -554,6 +572,7 @@ const S5: React.FC = () => {
 const S6: React.FC = () => {
   const f = useCurrentFrame();
   const dogX = interpolate(f, [90, 330], [-200, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const dogVX = f > 90 && f < 330 ? (1200 - -200) / 240 : 0;  // px/frame for motion blur
   const dogOpacity = interpolate(f, [70, 90, 340, 380], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{backgroundColor: SKY_HORIZON}}>
@@ -564,7 +583,7 @@ const S6: React.FC = () => {
         <MeasuringChain x1={310} y1={1660} x2={760} y2={1600} taut={1} />
         <SurveyStake x={310} y={1660} s={0.5} settle={1} />
         <TrailPost x={200} y={1700} s={0.46} />
-        {dogOpacity > 0.02 && <g opacity={dogOpacity}><SledDogTeam x={dogX} y={1800} scale={0.85} f={f} /></g>}
+        {dogOpacity > 0.02 && <g opacity={dogOpacity}><SledDogTeam x={dogX} y={1800} scale={0.85} f={f} vx={dogVX} /></g>}
       </svg>
     </AbsoluteFill>
   );

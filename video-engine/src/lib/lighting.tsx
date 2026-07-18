@@ -251,6 +251,30 @@ export const GradeLayer: React.FC<{f: number; bloom?: number; vignette?: number;
   );
 };
 
+// ------------------------------------------------------------- directional motion blur
+// A poor-man's 180-degree shutter blur: wrap a fast-moving group and pass its
+// per-frame velocity (px/frame, in the group's own coord space). Applies an
+// ANISOTROPIC gaussian (feGaussianBlur stdDeviation="sx sy") so the smear runs
+// along the motion vector only -- horizontal movers blur horizontally, a slam
+// blurs vertically -- the way a real 180-degree shutter integrates the move.
+// Cheap: one small gaussian over the child's region, only when speed warrants it.
+export const MotionBlur: React.FC<{vx?: number; vy?: number; gain?: number; max?: number; children: React.ReactNode}> = ({
+  vx = 0, vy = 0, gain = 0.5, max = 16, children,
+}) => {
+  const sx = Math.min(max, Math.abs(vx) * gain);
+  const sy = Math.min(max, Math.abs(vy) * gain);
+  if (sx < 0.6 && sy < 0.6) return <>{children}</>;   // no blur when nearly still
+  const id = gid(`mb${Math.round(sx * 10)}_${Math.round(sy * 10)}`);
+  return (
+    <g filter={`url(#${id})`}>
+      <filter id={id} x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation={`${sx.toFixed(2)} ${sy.toFixed(2)}`} />
+      </filter>
+      {children}
+    </g>
+  );
+};
+
 // Convenience: emit a set of FormGradients for a palette of bases in one <defs>.
 export const FormGradients: React.FC<{bases: Record<string, string>}> = ({bases}) => (
   <>
