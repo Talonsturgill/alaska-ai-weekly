@@ -1,0 +1,185 @@
+#!/usr/bin/env python3
+"""VO SOUND CHECK — the QC gate that enforces docs/craft/VO_DIRECTION.md on a
+Gemini TTS take. Given a rendered wav and the intended SPOKEN script, it scores:
+
+  1. word_accuracy  — ASR-transcribe (faster-whisper) and compare to the script.
+                      Catches dropped/added words and the 500 "text instead of
+                      audio" fallback. (1 - WER)
+  2. no_leak        — the transcript must NOT contain any tag word or director's-
+                      note word (e.g. "whispers", "director", "transcript"). Catches
+                      vocalized-markup / notes-read-aloud failures.
+  3. expressive     — pitch (f0) std-dev in semitones must clear a monotone floor.
+                      A flat read is the robotic tell; this enforces tone fluctuation.
+  4. duration       — within the target window (pace on target).
+  5. loudness       — integrated LUFS within a broadcast-safe band.
+
+Usage (single take):
+  python scripts/vo_soundcheck.py --audio take.wav --script "the spoken words" [--json]
+Programmatic:
+  from vo_soundcheck import check, pick_best
+  rep = check(wav_path, spoken_text, tags=[...])
+  best_idx, reports = pick_best([w1,w2,w3], spoken_text, tags=[...])
+"""
+import argparse, json, os, re, sys
+
+# tolerances (tuned for a ~55s brisk social VO)
+WER_MAX = 0.08          # <= 8% word error
+PITCH_STD_MIN = 1.6     # semitones; below this = monotone
+LUFS_MIN, LUFS_MAX = -20.0, -12.0
+VOICED_MIN = 0.35       # at least this fraction voiced (not silence/noise)
+NOTE_WORDS = {"transcript", "director", "profile", "narrator", "audio", "preamble", "aloud"}
+
+
+def _canon_token(tok):
+    """Canonicalize a token so spelling differences (500 vs five hundred, A.I. vs
+    AI) don't count as word errors. Digits -> words via num2words; leave the rest."""
+    t = tok.strip("+%").replace(",", "")
+    if t.isdigit():
+        try:
+            from num2words import num2words
+            return num2words(int(t)).replace("-", " ").replace(" and ", " ").split()
+        except Exception:
+            return [tok]
+    return [tok]
+
+
+def _norm_words(s):
+    raw = [w for w in re.sub(r"[^a-z0-9' ]", " ", s.lower()).split() if w]
+    expanded = []
+    for w in raw:
+        expanded.extend(_canon_token(w))
+    # collapse runs of single letters into one word: a i -> ai, u a f -> uaf
+    out, run = [], []
+    for w in expanded:
+        if len(w) == 1 and w.isalpha():
+            run.append(w)
+        else:
+            if run:
+                out.append("".join(run)); run = []
+            out.append(w)
+    if run:
+        out.append("".join(run))
+    return out
+
+
+def _wer(ref, hyp):
+    r, h = _norm_words(ref), _norm_words(hyp)
+    if not r:
+        return 0.0
+    # Levenshtein over word lists
+    dp = list(range(len(h) + 1))
+    for i in range(1, len(r) + 1):
+        prev, dp[0] = dp[0], i
+        for j in range(1, len(h) + 1):
+            cur = dp[j]
+            dp[j] = min(dp[j] + 1, dp[j - 1] + 1, prev + (r[i - 1] != h[j - 1]))
+            prev = cur
+    return dp[len(h)] / len(r)
+
+
+def _transcribe(wav):
+    from faster_whisper import WhisperModel
+    m = WhisperModel("base", device="cpu", compute_type="int8")
+    segs, _ = m.transcribe(wav, language="en", vad_filter=False)
+    return " ".join(s.text.strip() for s in segs)
+
+
+def _pitch_std_semitones(wav):
+    import librosa
+    import numpy as np
+    y, sr = librosa.load(wav, sr=22050, mono=True)
+    f0, voiced, _ = librosa.pyin(y, fmin=70, fmax=400, sr=sr,
+                                 frame_length=2048, hop_length=256)
+    v = f0[~np.isnan(f0)]
+    voiced_frac = float(len(v)) / max(1, len(f0))
+    if len(v) < 10:
+        return 0.0, voiced_frac, len(y) / sr
+    semis = 12.0 * np.log2(v / np.median(v))
+    return float(np.std(semis)), voiced_frac, len(y) / sr
+
+
+def _lufs(wav):
+    import soundfile as sf
+    import pyloudnorm as pyln
+    data, rate = sf.read(wav)
+    if data.ndim > 1:
+        data = data.mean(axis=1)
+    meter = pyln.Meter(rate)
+    return float(meter.integrated_loudness(data))
+
+
+def check(wav, spoken_text, tags=None, dur_lo=8.0, dur_hi=75.0):
+    tags = tags or []
+    heard = _transcribe(wav)
+    wer = _wer(spoken_text, heard)
+    heard_words = set(_norm_words(heard))
+    tag_words = set(w for t in tags for w in _norm_words(t))
+    leaked = sorted((tag_words | NOTE_WORDS) & heard_words)
+    pstd, voiced, dur = _pitch_std_semitones(wav)
+    try:
+        lufs = _lufs(wav)
+    except Exception:
+        lufs = None
+
+    checks = {
+        "word_accuracy": {"wer": round(wer, 3), "pass": wer <= WER_MAX},
+        "no_leak": {"leaked": leaked, "pass": len(leaked) == 0},
+        "expressive": {"pitch_std_semitones": round(pstd, 2), "voiced_frac": round(voiced, 2),
+                       "pass": pstd >= PITCH_STD_MIN and voiced >= VOICED_MIN},
+        "duration": {"seconds": round(dur, 2), "pass": dur_lo <= dur <= dur_hi},
+        "loudness": {"lufs": None if lufs is None else round(lufs, 1),
+                     "pass": lufs is None or LUFS_MIN <= lufs <= LUFS_MAX},
+    }
+    # score = accuracy + expressiveness headroom, penalized hard for leaks
+    score = (1 - wer) * 0.5 + min(pstd / 4.0, 1.0) * 0.4 + (0.1 if not leaked else -0.5)
+    passed = all(c["pass"] for c in checks.values())
+    return {"pass": passed, "score": round(score, 3), "heard": heard, "checks": checks,
+            "diagnosis": _diagnose(checks)}
+
+
+def _diagnose(c):
+    if not c["no_leak"]["pass"]:
+        return f"LEAK: model spoke {c['no_leak']['leaked']} — remove those inline tags, move emotion to the notes, re-synth."
+    if not c["word_accuracy"]["pass"]:
+        return f"WORDS: WER {c['word_accuracy']['wer']} too high (dropped/garbled or a 500 text-fallback) — re-roll."
+    if not c["expressive"]["pass"]:
+        return f"MONOTONE: pitch std {c['expressive']['pitch_std_semitones']} st below floor {PITCH_STD_MIN} — add ENERGY CONTRAST between adjacent lines (VO_DIRECTION step 5), then re-synth."
+    if not c["duration"]["pass"]:
+        return f"PACE: {c['duration']['seconds']}s out of window — adjust the brisk-pace note."
+    if not c["loudness"]["pass"]:
+        return f"LEVEL: {c['loudness']['lufs']} LUFS out of band — normalize in the mix."
+    return "clean"
+
+
+def pick_best(wavs, spoken_text, tags=None):
+    reports = [check(w, spoken_text, tags) for w in wavs]
+    passing = [(i, r) for i, r in enumerate(reports) if r["pass"]]
+    if passing:
+        best = max(passing, key=lambda ir: ir[1]["score"])[0]
+    else:
+        best = max(range(len(reports)), key=lambda i: reports[i]["score"])
+    return best, reports
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--audio", required=True)
+    ap.add_argument("--script", required=True, help="the intended SPOKEN words (no tags/notes)")
+    ap.add_argument("--tags", default="", help="comma-sep inline tags used, e.g. '[curious],[wry]'")
+    ap.add_argument("--json", action="store_true")
+    a = ap.parse_args()
+    tags = [t.strip() for t in a.tags.split(",") if t.strip()]
+    rep = check(a.audio, a.script, tags)
+    if a.json:
+        print(json.dumps(rep, indent=2))
+    else:
+        v = "PASS" if rep["pass"] else "FAIL"
+        print(f"{v}  score={rep['score']}  {rep['diagnosis']}")
+        for name, c in rep["checks"].items():
+            print(f"  [{'x' if c['pass'] else ' '}] {name}: {({k:v for k,v in c.items() if k!='pass'})}")
+        print(f"  heard: {rep['heard'][:160]}")
+    sys.exit(0 if rep["pass"] else 1)
+
+
+if __name__ == "__main__":
+    main()

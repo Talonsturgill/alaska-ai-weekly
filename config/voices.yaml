@@ -22,21 +22,33 @@ engines:
     license: "Microsoft Azure Neural TTS — gray area for commercial publishing; fine for drafts"
     install: "pip install --break-system-packages edge-tts  # CA setup required (see SKILL.md)"
     note: "Only when both cloned + kokoro are down; disclose plainly in the draft if it ships."
-  gemini_tts:                   # QUICK-START PRESET (owner-authorized 2026-07-17 as an interim publish voice)
-    license: "Google Gemini API, per-use billing (about $0.05 to $0.15 per dispatch); preset voices, NOT a clone"
-    install: "no local model. Backend: .claude/skills/alaska-dispatch/vo_gemini.py (stdlib urllib, no new deps)."
+  gemini_tts:                   # PUBLISH PRIMARY (owner-approved 2026-07-18; the expressive upgrade)
+    license: "Google Gemini API, per-use billing (about $0.05 to $0.20 per dispatch); preset voices, NOT a clone. Output carries a SynthID watermark — disclose in credits."
+    install: "no local model. Backend: scripts/vo_synth_gemini.py (whole-passage expressive synth + best-of-N + sound check). Needs GEMINI_API_KEY and generativelanguage.googleapis.com allowed."
+    model: "gemini-3.1-flash-tts-preview"        # most expressive (audio-tag system); fallback below
+    fallback_model: "gemini-2.5-pro-preview-tts" # Google's professional-narration model; auto used on repeated 500s
+    voice: "Sulafat"                              # warm; owner pick 2026-07-18 (auditioned Kore/Aoede/Achernar/etc.)
     note: >
-      Prebuilt Google narrator voice (30 options; default 'Charon'). NOT the owner's cloned voice,
-      so the speaker-similarity gate is skipped and the draft says so. TO ENABLE: set env
-      GEMINI_API_KEY (from aistudio.google.com/apikey) and DISPATCH_VOICE=gemini in the routine env;
-      allow generativelanguage.googleapis.com in the network policy. vo_qc.synth_qc auto-routes to it
-      when DISPATCH_VOICE=gemini, so every VO build picks it up with no other change. Optional env:
-      DISPATCH_GEMINI_VOICE, DISPATCH_GEMINI_TTS_MODEL, DISPATCH_GEMINI_STYLE. Interim only: to return
-      to the owner's clone, unset DISPATCH_VOICE (default is cloned:talon).
+      THE EXPRESSIVE PIPELINE (docs/craft/VO_DIRECTION.md): a vo-director agent PLANS the read
+      (per-line intent, emphasis, energy contrast, sparse vetted tags, the brisk-pace notes) into
+      out/dispatch/vo_direction.json, then scripts/vo_synth_gemini.py renders the WHOLE passage in
+      one call (3.1-flash primary, 2.5-pro fallback, retry on the random 500), renders N takes, and
+      scripts/vo_soundcheck.py keeps the best (word accuracy, no spoken-tag leak, pitch-variance/
+      not-monotone, duration, loudness). Captions come from whole-file forced alignment inside
+      vo_synth_gemini (the API has no word timestamps). Emotion lives in the director's notes, NOT in
+      emotion tags (some get spoken aloud). Env overrides: DISPATCH_GEMINI_VOICE, DISPATCH_GEMINI_MODEL,
+      DISPATCH_GEMINI_FALLBACK, VO_TAKES. This REPLACES the old per-line vo_qc/edge path for publish.
+
+# The narrator persona the vo-director grounds the read on (one per piece; VO_DIRECTION.md step 1).
+narrator:
+  name: "Nora"
+  persona: "an Alaska public-radio host: warm, grounded, quietly witty"
+  accent: "neutral American, light and natural (not announcer-y)"
+  baseline_pace: "brisk and energetic, a sharp modern explainer; short natural breaths, never dragging"
 
 defaults:
-  publish_voice: cloned:talon            # chatterbox zero-shot of assets/voice/talon_ref.wav
-  fallback_voice: kokoro:af_heart        # when the clip/stack is absent — disclose the swap
+  publish_voice: gemini:Sulafat          # expressive Gemini pipeline (scripts/vo_synth_gemini.py)
+  fallback_voice: kokoro:af_heart        # only if the Gemini API is unreachable — disclose the swap
   draft_voice:   edge_tts:en-US-AvaMultilingualNeural   # rate -3%; crash net only
   # STANDING RECIPE (owner sign-off 2026-07-15, superseding the 2026-07-14 E2 recipe):
   # ALL narration synthesizes through the QC pipeline vo_qc.py — full-sentence chunks,

@@ -419,13 +419,24 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
 
 ## PHASE 5: BUILD (Remotion + voice QC + aligned captions)
 
-1. VOICE FIRST: synthesize every VO line through the Gemini TTS backend (DISPATCH_VOICE=gemini,
-   the Charon preset narrator — the owner retired the cloned voice for quality). Respell tricky
-   proper nouns phonetically for the TTS input only (e.g. AIDEA -> "eye-DEE-uh") while keeping
-   real spelling on screen/captions. Assemble the VO timeline to the beat starts (build_timeline
-   reads the per-line wavs). Target total ~55-67s; if long, TRIM THE SCRIPT and re-synth only the
-   trimmed lines. Run scene-building in parallel while lines cook. (The cloned-voice path
-   vo_qc.py remains available as a fallback but is OFF by default.)
+1. VOICE FIRST (the EXPRESSIVE Gemini pipeline — docs/craft/VO_DIRECTION.md is authoritative):
+   a. PLAN: spawn the `vo-director` agent on the locked script + the angle. It follows the VO
+      DIRECTION PROCESS (per-line intent, one emphasis word, an energy level with the CONTRAST
+      rule so the read is never monotone, sparse VETTED inline tags, the brisk-pace director's
+      notes) and writes out/dispatch/vo_direction.json with the assembled expressive prompt.
+      Emotion lives in the NOTES, not in emotion tags. Respell tricky proper nouns phonetically in
+      the transcript only (AIDEA -> "eye-DEE-uh"); real spelling stays on screen/captions.
+   b. SYNTH + SOUND CHECK: `python3 scripts/vo_synth_gemini.py` — renders the WHOLE passage in one
+      call (voice Sulafat; gemini-3.1-flash-tts-preview, auto-fallback to gemini-2.5-pro on the
+      random 500), renders VO_TAKES takes, and keeps the BEST by scripts/vo_soundcheck.py (word
+      accuracy, no spoken-tag leak, pitch-variance/not-monotone, duration, loudness). It writes
+      vo.wav, vo_lines.json, words.json, captions.json (whole-file forced alignment) and
+      vo_report.json (the QC scorecard for the Gmail draft). If the best take fails a check, the
+      fix is IN THE PLAN (re-invoke vo-director with the diagnosis: more energy contrast for
+      monotone, move a leaking tag into the notes) then re-synth — do not ship a failed take.
+   Target total ~50-67s; if long, TRIM THE SCRIPT (build_scenes.py retimes the scenes from the new
+   vo_lines.json automatically). Run scene-building in parallel while takes cook. Disclose the
+   SynthID watermark in the draft. (Cloned/kokoro/edge remain as fallbacks only.)
 1a. GROWTH MANDATE (§4.3a): before/while building scenes, read ASSET_MANIFEST.md, then create
    this run's net-new asset(s) + a new pose/action on an existing one + one craft-system
    advance, and register them in the manifest. This is a build deliverable, not optional.
@@ -434,9 +445,10 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
    the draft. Motivated SFX on every beat (>=8 events, >=1 per shot), cut to the picture.
    Mix: VO dominant, music ducked under it, a real >=6dB dip before the button, -14 LUFS
    integrated, TP <= -1.0 dBTP, audible tail.
-3. CAPTIONS: `align_captions.py --audio <final vo> --script <vo text> --out words.json`;
-   captions render inside the Remotion composition from those timings (anti-orphan chunking,
-   scrimmed for readability, numerals as numerals, no orphan payoff words).
+3. CAPTIONS: already produced by vo_synth_gemini.py (whole-file forced alignment of the winning
+   take) as out/dispatch/captions.json + words.json, with inline tags stripped, monotonic and
+   min-dwell timed. They render inside the Remotion composition from those timings (anti-orphan
+   chunking, scrimmed, numerals as numerals, no orphan payoff words). No separate align step.
 4. SCENES: build this run's scenes in video-engine/src/ from beats[].draw — compose from the
    library first; author the episode's 1-2 bespoke hero illustrations to the exemplar bar;
    add any new poses/emotions/FX to lib/ so the cast compounds. Story data via --props.
@@ -486,8 +498,9 @@ both pass.
    < 100 MB); ffprobe-assert 1080x1920 and 1080x1350 so a wrong-ratio cut can never ship.
 2. Upload BOTH + a poster (frame 0) via upload_video.py; verify HTTP 200 permanent links.
 3. dispatch_email.py (NO --temporary): post text, 4:5-primary download buttons, poster, VOICE
-   credit ("Gemini TTS preset narrator (Charon), Google Gemini API" — the owner retired the
-   cloned voice), MUSIC credit with composer + license, SOURCES with per-figure attribution,
+   credit ("Gemini native TTS, voice Sulafat, model gemini-3.1-flash-tts-preview; preset voice
+   with a SynthID watermark, not a clone") plus the vo_report.json sound-check scorecard, MUSIC
+   credit with composer + license, SOURCES with per-figure attribution,
    the honest gate/panel scorecard, the illustrative-numbers note, AND the run's UPGRADE-LOG
    entry (from Phase 8) so every delivery states what changed this run. Hand the payload to the
    Gmail create_draft connector.
