@@ -1,134 +1,146 @@
 [
- {
-  "text": "An AI system is digging into",
-  "start": 0.5,
-  "end": 1.98,
-  "seg": 0
- },
- {
-  "text": "Alaska's ground, hunting for the",
-  "start": 1.98,
-  "end": 3.58,
-  "seg": 0
- },
- {
-  "text": "metals it is built from.",
-  "start": 3.58,
-  "end": 4.64,
-  "seg": 0
- },
- {
-  "text": "The University of Alaska Fairbanks",
-  "start": 8.0,
-  "end": 9.98,
-  "seg": 1
- },
- {
-  "text": "won fifteen million dollars from",
-  "start": 10.14,
-  "end": 12.34,
-  "seg": 1
- },
- {
-  "text": "the National Science Foundation.",
-  "start": 12.34,
-  "end": 13.88,
-  "seg": 1
- },
- {
-  "text": "One of twelve engines picked across",
-  "start": 16.0,
-  "end": 17.6,
-  "seg": 2
- },
- {
-  "text": "twenty states, aimed at Alaska's bedrock.",
-  "start": 17.6,
-  "end": 20.04,
-  "seg": 2
- },
- {
-  "text": "Fifty six of sixty critical minerals",
-  "start": 24.0,
-  "end": 26.28,
-  "seg": 3
- },
- {
-  "text": "sit here: cobalt, graphite, gallium,",
-  "start": 26.28,
-  "end": 28.98,
-  "seg": 3
- },
- {
-  "text": "nickel, rare earths.",
-  "start": 29.1,
-  "end": 30.26,
-  "seg": 3
- },
- {
-  "text": "Crack one open, and inside is",
-  "start": 32.0,
-  "end": 34.14,
-  "seg": 4
- },
- {
-  "text": "the same chip the machine needs",
-  "start": 34.14,
-  "end": 35.74,
-  "seg": 4
- },
- {
-  "text": "to keep thinking.",
-  "start": 35.74,
-  "end": 36.52,
-  "seg": 4
- },
- {
-  "text": "It is mining itself.",
-  "start": 37.06,
-  "end": 38.42,
-  "seg": 5
- },
- {
-  "text": "Up to one hundred sixty million",
-  "start": 40.0,
-  "end": 41.92,
-  "seg": 6
- },
- {
-  "text": "dollars is possible over ten years.",
-  "start": 41.92,
-  "end": 44.28,
-  "seg": 6
- },
- {
-  "text": "That part is not funded yet.",
-  "start": 45.06,
-  "end": 46.4,
-  "seg": 7
- },
- {
-  "text": "Only fifteen million is real.",
-  "start": 46.68,
-  "end": 48.22,
-  "seg": 7
- },
- {
-  "text": "Geologists still have to swing the pick.",
-  "start": 48.68,
-  "end": 50.72,
-  "seg": 8
- },
- {
-  "text": "Alaska found the flashlight.",
-  "start": 52.0,
-  "end": 53.382,
-  "seg": 9
- },
- {
-  "text": "It has not found the minerals yet.",
-  "start": 53.382,
-  "end": 55.8,
-  "seg": 9
- }
+  {
+    "text": "Alaska is about to give away",
+    "start": 0.0,
+    "end": 2.3,
+    "seg": 0
+  },
+  {
+    "text": "thirty one square miles of land.",
+    "start": 2.34,
+    "end": 4.88,
+    "seg": 0
+  },
+  {
+    "text": "For free.",
+    "start": 5.751,
+    "end": 6.711,
+    "seg": 1
+  },
+  {
+    "text": "To a state agency called AIDEA.",
+    "start": 7.171,
+    "end": 9.711,
+    "seg": 1
+  },
+  {
+    "text": "It's birch forest near Houston.",
+    "start": 10.542,
+    "end": 12.922,
+    "seg": 2
+  },
+  {
+    "text": "More than forty miles of mushing trails.",
+    "start": 13.562,
+    "end": 15.922,
+    "seg": 2
+  },
+  {
+    "text": "The plan: data centers.",
+    "start": 16.973,
+    "end": 19.193,
+    "seg": 3
+  },
+  {
+    "text": "A rail hub.",
+    "start": 19.893,
+    "end": 20.833,
+    "seg": 3
+  },
+  {
+    "text": "Power lines.",
+    "start": 21.473,
+    "end": 22.273,
+    "seg": 3
+  },
+  {
+    "text": "No company has signed on yet.",
+    "start": 23.364,
+    "end": 25.744,
+    "seg": 4
+  },
+  {
+    "text": "Houston's town council tried to",
+    "start": 26.635,
+    "end": 29.315,
+    "seg": 5
+  },
+  {
+    "text": "ban it.",
+    "start": 29.355,
+    "end": 30.155,
+    "seg": 5
+  },
+  {
+    "text": "But their line falls two miles short.",
+    "start": 30.546,
+    "end": 33.526,
+    "seg": 6
+  },
+  {
+    "text": "It never reaches this land.",
+    "start": 34.537,
+    "end": 36.577,
+    "seg": 7
+  },
+  {
+    "text": "AIDEA says it straight: no decisions",
+    "start": 37.568,
+    "end": 41.168,
+    "seg": 8
+  },
+  {
+    "text": "have been made.",
+    "start": 41.208,
+    "end": 42.408,
+    "seg": 8
+  },
+  {
+    "text": "Comments close August nineteenth.",
+    "start": 43.319,
+    "end": 45.779,
+    "seg": 9
+  },
+  {
+    "text": "Nothing here is final.",
+    "start": 46.299,
+    "end": 47.659,
+    "seg": 9
+  },
+  {
+    "text": "So the fence stands empty.",
+    "start": 48.63,
+    "end": 51.17,
+    "seg": 10
+  },
+  {
+    "text": "The shadow keeps reaching.",
+    "start": 51.97,
+    "end": 53.65,
+    "seg": 10
+  },
+  {
+    "text": "The dogs still run this trail",
+    "start": 54.741,
+    "end": 57.061,
+    "seg": 11
+  },
+  {
+    "text": "either way.",
+    "start": 57.101,
+    "end": 57.901,
+    "seg": 11
+  },
+  {
+    "text": "Nobody's said yes here.",
+    "start": 59.672,
+    "end": 61.592,
+    "seg": 12
+  },
+  {
+    "text": "Nobody's said no where it counts.",
+    "start": 62.452,
+    "end": 64.152,
+    "seg": 12
+  }
 ]

@@ -201,6 +201,34 @@ clarity of the honest caveat, feasibility with the current library, freshness vs
 and picks a winner, then GRAFTS the best individual beats from the losers into it. The winning
 treatment is recorded in the storyboard as `treatment` with the judge's reasoning.
 
+### 4.1a The art-direction pass (PLAN the look before a single frame is drawn) — AUTHORITATIVE
+
+Set aside real thinking time here. The look is DESIGNED up front, not improvised while
+building. Once the treatment is chosen, convene a short art-direction huddle (no-spawn agents /
+deliberate reasoning) and commit a plan to `out/dispatch/art_direction.json` BEFORE the visual
+sentence pass or any scene code. Winging the visuals inside the build is what produces flat,
+same-y frames; this is where the visual intent gets decided on purpose. The plan MUST cover
+every visual lever, each with a WHY tied to THIS story:
+
+- `palette`: the specific color world (named hex roles: sky, ground, hero, accent, shadow),
+  the mood it encodes, and how it diverges from the last 2 dispatches (no repeat, no default
+  blue-without-reason). 
+- `light`: time of day + light direction + key/fill/rim intent + the depth approach (how forms
+  will read dimensional, not flat) — the plan the lighting engine (lib/lighting.tsx) executes.
+- `shape_language`: the shape grammar carrying the theme (e.g. cold hard rectilinear institution
+  vs soft organic land; angular threat vs rounded warmth) — a deliberate contrast, not default.
+- `casting`: the hero subject and supporting cast — which come from the manifest for continuity
+  and which is the run's NET-NEW asset (per §4.3a), each with a reason it fits this story.
+- `motion_language`: how the world moves and what earns 180-degree motion blur / anticipation /
+  overshoot — the key hero moves named, so motion is designed, not an afterthought.
+- `composition`: the staging approach (focal hierarchy, negative-space beats, the 9:16 AND 4:5
+  safe-area intent), and the one signature shot this piece will be remembered for.
+- `craft_advance`: the ONE engine system this run pushes forward (§4.3a) and how.
+
+This plan is an INPUT the build executes against and the gates check against — not a
+description written afterward. If a build decision contradicts the plan, either fix the build
+or consciously revise the plan (and say why in the retrospective).
+
 ### 4.2 The VO (write it to be performed)
 
 ~120-125 words MAX for 60 seconds in the owner's voice (measured; exceeding this costs a
@@ -216,8 +244,9 @@ a picture, not merely narrated.
 
 For EVERY VO line answer: "what literal cartoon do we draw while this is said?" Record it as
 beats[].draw = {subject, action, emotion, annotation}:
-- subject: WHO/WHAT, usually a character or characterized object WITH A FACE. From the cast
-  library first; 1-2 new bespoke heroes per episode max.
+- subject: WHO/WHAT, usually a character or characterized object WITH A FACE. The HERO of the
+  piece should be net-new or a freshly-diverged take (per the §4.3a growth mandate); pull
+  SUPPORTING subjects from the manifest library for continuity.
 - action: a VERB you can see happening (reaches, slams, floods, overtakes, cowers, signs).
 - emotion: what the face is feeling this beat.
 - annotation: the number/label/arrow that lands with the line, from the fact-check-safe set.
@@ -229,6 +258,34 @@ power"} — that is a slide. If a beat cannot be phrased as "X does Y," it does 
 
 12-16 beats, start-to-start gap <= 5s, beats cover the whole VO timeline, every beat names a
 concrete sound (whoosh, tick, boom, lock, riser, paper-rustle, klaxon, pop).
+
+### 4.3a The growth mandate (COMPOUND, never just reuse) — AUTHORITATIVE
+
+The engine is a WORLD being built by artists who get better every run, NOT a fixed set of
+pieces to re-pose. A run that only re-uses the existing library has FAILED this mandate even
+if the video is fine. Every run MUST:
+
+1. READ `video-engine/src/lib/ASSET_MANIFEST.md` first — it is the inventory of every
+   character, characterized object, creature, prop, environment, pose, emotion, and FX that
+   already exists. You cannot grow what you have not inventoried.
+2. ADD net-new bespoke art to `lib/` — a FLOOR, not a ceiling. Minimum per run:
+   - at least ONE brand-new reusable asset (a new creature for `fauna.tsx`, a new characterized
+     object, a new environment/biome, or a new prop kit), built to the depth-lighting bar
+     (tones()/RimLight/ContactShadow, idle animation), AND
+   - at least one NEW pose / emotion / action / FX added to an EXISTING asset.
+   Prefer filling a named gap in the manifest (the bestiary/environment gap lists are the
+   backlog). Register every addition in ASSET_MANIFEST.md in the SAME commit.
+3. ADVANCE THE CRAFT — push at least one engine system forward (lighting, motion, texture,
+   typography, a new material, a night/aurora light rig...). The manifest's "known next
+   advances" notes are the running to-do. Do not merely consume `lib/lighting.tsx`; extend it.
+4. DIVERGE THE CAST — do not build the hero out of the same character/creature as the last 2
+   dispatches unless the story genuinely demands that exact subject. New story, new faces.
+
+The old "1-2 new bespoke heroes per episode MAX" phrasing is retired: bespoke net-new is the
+JOB, not a rationed exception. Reuse the library for continuity and speed on SUPPORTING
+elements; spend the freed effort making the hero and one system net-new and better than last
+week. Over a month of runs the bestiary, prop kits, biomes, and the lighting engine should be
+visibly, cumulatively richer — that compounding IS the product.
 
 ### 4.4 The scene recipe book (how to stage each kind of information)
 
@@ -288,13 +345,26 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
   storytelling + retention; iterate to ship:true.
 - GATE 0C: flow-critic agent (MODE=PRE) red-teams the beat map (never-rest cadence,
   say-it-show-it coverage, a motivated sound on every beat); iterate to ship:true.
+- GATE 0D (ART DIRECTION): confirm `out/dispatch/art_direction.json` exists and is COMPLETE
+  (all §4.1a levers present, each with a story-specific why), then an art-director critic agent
+  red-teams it: is the palette genuinely fresh + diverged (not default, not a recent repeat);
+  is the shape language a deliberate thematic contrast (not generic); is the light/depth plan
+  concrete; is the run's net-new asset + craft-advance named; is there ONE signature shot?
+  Iterate to ship:true. The plan is now BINDING on the build — Phase 6 checks the render against
+  it. Do not start scene code until 0D ships.
 
 ## PHASE 5: BUILD (Remotion + voice QC + aligned captions)
 
-1. VOICE FIRST (the long pole, ~3.5 min/line): synthesize every VO line through vo_qc.py;
-   collect per-line {similarity, wer, attempts} for the draft. Assemble the VO timeline to the
-   beat starts. Confirm total <= 59s; if long, TRIM THE SCRIPT and re-synth only the trimmed
-   lines. Run scene-building in parallel while lines cook.
+1. VOICE FIRST: synthesize every VO line through the Gemini TTS backend (DISPATCH_VOICE=gemini,
+   the Charon preset narrator — the owner retired the cloned voice for quality). Respell tricky
+   proper nouns phonetically for the TTS input only (e.g. AIDEA -> "eye-DEE-uh") while keeping
+   real spelling on screen/captions. Assemble the VO timeline to the beat starts (build_timeline
+   reads the per-line wavs). Target total ~55-67s; if long, TRIM THE SCRIPT and re-synth only the
+   trimmed lines. Run scene-building in parallel while lines cook. (The cloned-voice path
+   vo_qc.py remains available as a fallback but is OFF by default.)
+1a. GROWTH MANDATE (§4.3a): before/while building scenes, read ASSET_MANIFEST.md, then create
+   this run's net-new asset(s) + a new pose/action on an existing one + one craft-system
+   advance, and register them in the manifest. This is a build deliverable, not optional.
 2. MUSIC + SFX: source ONE fresh free-to-use track with a NAMED composer (get_music.py;
    archive.org/Kevin MacLeod CC-BY proven reachable); never reuse a recent track; credit in
    the draft. Motivated SFX on every beat (>=8 events, >=1 per shot), cut to the picture.
@@ -352,13 +422,37 @@ both pass.
    < 100 MB); ffprobe-assert 1080x1920 and 1080x1350 so a wrong-ratio cut can never ship.
 2. Upload BOTH + a poster (frame 0) via upload_video.py; verify HTTP 200 permanent links.
 3. dispatch_email.py (NO --temporary): post text, 4:5-primary download buttons, poster, VOICE
-   credit ("AI clone of the owner's own voice, Chatterbox MIT, Perth watermark embedded" +
-   the per-line QC similarity summary), MUSIC credit with composer + license, SOURCES with
-   per-figure attribution, the honest gate/panel scorecard, the illustrative-numbers note.
-   Hand the payload to the Gmail create_draft connector.
-4. Git: commit scenes + storyboard + caption + artifacts + stills (NOT heavy mp4s/frames) +
-   the ledger (`scripts/dedupe.py add ... --composition '<fingerprint JSON>'` ALWAYS). Push,
-   open PR (ready, not draft), MERGE to main. No dangling or draft PRs.
+   credit ("Gemini TTS preset narrator (Charon), Google Gemini API" — the owner retired the
+   cloned voice), MUSIC credit with composer + license, SOURCES with per-figure attribution,
+   the honest gate/panel scorecard, the illustrative-numbers note, AND the run's UPGRADE-LOG
+   entry (from Phase 8) so every delivery states what changed this run. Hand the payload to the
+   Gmail create_draft connector.
+4. Git: commit scenes + storyboard + caption + art_direction + artifacts + stills (NOT heavy
+   mp4s/frames) + the ledger (`scripts/dedupe.py add ... --composition '<fingerprint JSON>'`
+   ALWAYS) + the appended docs/RUN_UPGRADES.md. Push, open PR (ready, not draft), MERGE to main.
+   No dangling or draft PRs.
+
+## PHASE 8: RETROSPECTIVE + SELF-UPGRADE (close the loop, every run) — AUTHORITATIVE
+
+The routine must get BETTER every run, not just produce a video. After delivery, do a real
+look-back and make a targeted, logged improvement:
+
+1. LOOK BACK over the whole run honestly: which gates failed and how many iterations each cost;
+   what the scorer panel flagged and whether it was fixed or disclosed; where the art_direction
+   plan was NOT met by the build; what broke, what was slow, what read as a tell; anything the
+   owner called out (log it even if deferred, e.g. "voice too robotic — tune later").
+2. PICK 1-3 TARGETED UPGRADES the run earned — a concrete fix to the ENGINE, the DOCTRINE, the
+   GATES, or the ASSET LIBRARY that would have prevented the worst problem or raised the ceiling
+   (e.g. "give HUD chips form-shading", "add tundra biome", "tighten a gate floor"). Prefer
+   actually MAKING the smallest such upgrade this run; queue the larger ones in the manifest
+   backlog. This is how the craft compounds beyond just adding assets.
+3. APPEND to `docs/RUN_UPGRADES.md` (the persistent fix-log / rollback trail) a dated entry:
+   what shipped, every code/doctrine/asset change committed this run (with commit refs), what
+   was upgraded and WHY, known-issues deferred, and the panel/gate result. This is the log to
+   roll back on if a later run regresses — so it must be specific enough to diff against.
+4. INCLUDE that upgrade-log entry in the Gmail draft (Phase 7 step 3), so the owner sees what
+   changed and can veto/roll back. A run with no logged upgrade and no logged reason is an
+   incomplete run.
 
 ## ACCURACY + CULTURAL RESPECT
 
@@ -382,8 +476,11 @@ beats[].draw to the exemplar craft bar with the taste loop run per scene; new li
 components were committed; captions are forced-aligned (median < 150ms); all audio gates
 passed; the 3-judge panel graded it (median + hard-blocker state disclosed); links verified
 live; the branch is pushed AND MERGED to main; dispatch_history updated with the composition
-fingerprint. Report: story, winning treatment + why, cast/scenes used + library additions,
-palette, voice QC summary, render wall-time, panel result.
+fingerprint. The art_direction plan was written up front (Gate 0D) and the build met it; the
+run's net-new asset + craft-advance were committed and registered in ASSET_MANIFEST.md; and the
+Phase 8 retrospective made a logged upgrade appended to docs/RUN_UPGRADES.md and echoed in the
+Gmail draft. Report: story, winning treatment + why, cast/scenes used + library additions,
+palette, voice summary, render wall-time, panel result, and this run's upgrade.
 
 ## POST-MORTEM MEMORY (why these rules exist)
 

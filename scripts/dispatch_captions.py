@@ -40,20 +40,35 @@ def main():
         wav = os.path.join(AUD, f"vo_line_{i:02d}.wav")
         seg_start = meta["start"]
         seg_end = meta["end"]
-        segs, _ = model.transcribe(wav, word_timestamps=True, language="en",
-                                   initial_prompt=script[i][:180], vad_filter=False)
-        heard = []
-        for s in segs:
-            for w in (s.words or []):
-                heard.append({"w": w.word.strip(), "s": w.start, "e": w.end})
-        # intended tokens for this line
         intended = script[i].split()
-        # align normalized sequences
-        hn = [norm(x["w"]) for x in heard]
         inn = [norm(t) for t in intended]
-        sm = difflib.SequenceMatcher(a=inn, b=hn, autojunk=False)
+
+        # faster-whisper occasionally drops a whole leading/trailing span of a short clip's
+        # words on a given call (confirmed: a clean standalone re-transcription of the same
+        # wav recovers them fine) -- when that happens difflib maps the dropped intended words
+        # to a zero-width heard gap, collapsing them to one instant. Retry a few times and keep
+        # the attempt with the least "gap" damage instead of trusting the first pass blindly.
+        best = None
+        for attempt in range(3):
+            segs, _ = model.transcribe(wav, word_timestamps=True, language="en",
+                                       initial_prompt=script[i][:180], vad_filter=False)
+            heard = []
+            for s in segs:
+                for w in (s.words or []):
+                    heard.append({"w": w.word.strip(), "s": w.start, "e": w.end})
+            hn = [norm(x["w"]) for x in heard]
+            sm = difflib.SequenceMatcher(a=inn, b=hn, autojunk=False)
+            opcodes = sm.get_opcodes()
+            gap_words = sum(i2 - i1 for tag, i1, i2, j1, j2 in opcodes
+                            if tag in ("replace", "delete") and j2 == j1)
+            if best is None or gap_words < best[0]:
+                best = (gap_words, heard, opcodes)
+            if gap_words == 0:
+                break
+        _, heard, opcodes = best
+
         timed = [None] * len(intended)
-        for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        for tag, i1, i2, j1, j2 in opcodes:
             if tag == "equal":
                 for k in range(i2 - i1):
                     h = heard[j1 + k]
@@ -83,9 +98,12 @@ def main():
                 else:
                     timed[k] = (0.0, 0.25)
         # clamp within [0, line_dur] and offset to timeline
+        # (reserve 0.04s of headroom on s so e can never collapse onto s when the
+        # heard timestamp lands at or past line_dur -- that produced zero-duration
+        # cues on trailing words, e.g. "land." at s=e=line_dur)
         line_dur = seg_end - seg_start
         for tok, tm in zip(intended, timed):
-            s = min(max(0.0, tm[0]), line_dur)
+            s = min(max(0.0, tm[0]), max(0.0, line_dur - 0.04))
             e = min(max(s + 0.04, tm[1]), line_dur)
             all_words.append({"w": tok, "s": round(seg_start + s, 3),
                               "e": round(seg_start + e, 3), "seg": i})
@@ -121,6 +139,34 @@ def main():
             merged[-1]["end"] = c["end"]
         else:
             merged.append(c)
+
+    # --- normalize cue timings for readable, monotonic, non-overlapping display ---
+    # whisper's per-line alignment occasionally compresses a trailing word to a
+    # near-zero-width span (e.g. "ban it." at s==e), which renders as an invisible
+    # flash; adjacent segments can also produce a start that precedes the previous
+    # cue's end. Enforce, in one forward pass: (a) each cue starts no earlier than
+    # the previous cue's end, (b) a minimum on-screen dwell, borrowing time up to
+    # the next cue's start so we never overlap it. Display-only; words.json (what
+    # the CAPTION_SYNC gate reads) is untouched.
+    MIN_CUE = 0.8      # seconds a cue must stay up to be readable
+    GAP = 0.04         # min gap between consecutive cues
+    for idx in range(len(merged)):
+        c = merged[idx]
+        raw_next = merged[idx + 1]["start"] if idx + 1 < len(merged) else (c["end"] + MIN_CUE + 1.0)
+        if idx > 0:
+            c["start"] = max(c["start"], merged[idx - 1]["end"] + GAP)
+        # don't let a pushed start collide with the next cue's room
+        c["start"] = min(c["start"], max(0.0, raw_next - 0.2))
+        # minimum dwell, clamped so we never overrun the next cue
+        c["end"] = min(max(c["end"], c["start"] + MIN_CUE), max(c["start"] + 0.2, raw_next - GAP))
+        c["start"], c["end"] = round(c["start"], 3), round(c["end"], 3)
+
+    # assert the invariants the editor flagged: no flash cues, no overlaps
+    flashes = [c for c in merged if c["end"] - c["start"] < 0.3]
+    overlaps = [i for i in range(1, len(merged)) if merged[i]["start"] + 1e-6 < merged[i - 1]["end"]]
+    if flashes or overlaps:
+        print(f"WARNING: {len(flashes)} flash cue(s), {len(overlaps)} overlap(s) after normalize", file=__import__("sys").stderr)
+
     json.dump(merged, open(os.path.join(OUT, "captions.json"), "w"), indent=2)
     print(f"words={len(all_words)} speech_end={speech_end:.2f}s cues={len(merged)}")
     # quick sanity: monotonic starts?

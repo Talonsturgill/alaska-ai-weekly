@@ -1,60 +1,60 @@
 {
- "shots": [
-  {
-   "id": 1,
-   "start": 0,
-   "end": 240,
-   "framing": "subject-portrait",
-   "transition_in": "cut",
-   "note": "the copper machine's absorbed face and drill-head arm punchi"
-  },
-  {
-   "id": 2,
-   "start": 240,
-   "end": 480,
-   "framing": "data-panel",
-   "transition_in": "fui-boot",
-   "note": "a UAF wordmark card and the '$15M YEAR ONE' starburst firing"
-  },
-  {
-   "id": 3,
-   "start": 480,
-   "end": 600,
-   "framing": "map-territory",
-   "transition_in": "map-travel",
-   "note": "the shrinking lime AI-circle converging on one pulsing dot a"
-  },
-  {
-   "id": 4,
-   "start": 600,
-   "end": 960,
-   "framing": "data-panel",
-   "transition_in": "mask-wipe",
-   "note": "the ground opening to a bedrock cross-section on 'bedrock', "
-  },
-  {
-   "id": 5,
-   "start": 960,
-   "end": 1200,
-   "framing": "macro-closeup",
-   "transition_in": "match-action",
-   "note": "the claw hauls one ore chunk, it cracks open to a glowing ch"
-  },
-  {
-   "id": 6,
-   "start": 1200,
-   "end": 1440,
-   "framing": "two-up",
-   "transition_in": "crossfade",
-   "note": "the towering dashed lime $160M ghost model rising on its lin"
-  },
-  {
-   "id": 7,
-   "start": 1440,
-   "end": 1770,
-   "framing": "wide-establish",
-   "transition_in": "hard-cut",
-   "note": "the geologist's pickaxe bouncing off bare bedrock (DOINK), t"
-  }
- ]
+  "shots": [
+    {
+      "id": 1,
+      "start": 0,
+      "end": 316,
+      "framing": "wide-establish",
+      "transition_in": "cut",
+      "note": "aerial push over the dawn parcel, boundary drawing in"
+    },
+    {
+      "id": 2,
+      "start": 316,
+      "end": 701,
+      "framing": "data-panel",
+      "transition_in": "match-cut",
+      "note": "the plan stamps in: data center / rail hub / power lines over the machine-shadow"
+    },
+    {
+      "id": 3,
+      "start": 701,
+      "end": 916,
+      "framing": "subject-portrait",
+      "transition_in": "cut",
+      "note": "the Houston civic figure points at the proposed-ban boundary line"
+    },
+    {
+      "id": 4,
+      "start": 916,
+      "end": 1127,
+      "framing": "macro-closeup",
+      "transition_in": "match-action",
+      "note": "match-cut to the lone survey stake driving in, two miles short"
+    },
+    {
+      "id": 5,
+      "start": 1127,
+      "end": 1459,
+      "framing": "subject-portrait",
+      "transition_in": "cut",
+      "note": "the unsigned AIDEA document, pen hovering; AUG 19 trail post"
+    },
+    {
+      "id": 6,
+      "start": 1459,
+      "end": 1743,
+      "framing": "map-territory",
+      "transition_in": "loopback",
+      "note": "loopback aerial return, the objects held in the empty gap"
+    },
+    {
+      "id": 7,
+      "start": 1743,
+      "end": 2026,
+      "framing": "wide-establish",
+      "transition_in": "settle",
+      "note": "the button: nobody said yes, nobody said no where it counts"
+    }
+  ]
 }

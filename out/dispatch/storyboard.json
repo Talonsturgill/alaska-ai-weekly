@@ -1,149 +1,386 @@
 {
-  "date": "2026-07-17",
-  "title": "IT'S DIGGING FOR ITS OWN PARTS",
-  "concept": "The machine that mines its own parts: UAF's AI hunts Alaska's critical minerals",
+  "date": "2026-07-18",
+  "title": "THE FENCE THAT FALLS SHORT",
+  "concept": "Alaska's state land near Houston, 31 square miles of it, is about to be handed to AIDEA for free to build an AI data-center district. The town tried to fence it off. Their line falls two miles short of the parcel it was built to stop.",
   "derived_from": "scratch",
   "engine": "infographic-2.5d",
-  "treatment": "FUSED (writers-room panel, scorer-graded winner): 'It's Digging For Its Own Parts' (Explainer) crowned as the buildable spine; grafted the Dramatist's rusted-pickaxes and pencil-snap gags and the Comedian's still-hungry chest-socket button. Repainted copper/amethyst/citrine/lime for freshness, camera grammar vertical-descent/cross-section. GATE-0 REVISION: flow-critic (PRE) flagged a systemic say-it-show-it offset (every number drawn 4-12s off its spoken word) and both critics flagged the cargo-ship/Sullivan beat as off-spine; this board RETIMES every callout to land on its exact word (UAF+$15M on 'fifteen million', NSF on 'National Science Foundation', 1-of-12 on the map line, bedrock cross-section on 'bedrock', 56-of-60 wall on its own line, mineral names one-per-word), CUTS the cargo-ship/Sullivan beat (the China context moves to the caption/draft), differentiates the hero as a working DRILLER (new 'focused' machine emotion, copper body, drill-down arm) instead of the 07-16 grinning mascot, and makes the ore-chunk silhouette ghost-match into the empty chest socket before the label.",
+  "treatment": "FUSED (writers-room panel, scorer-graded winner): 'The Fence That Falls Short' (Dramatist) crowned as the buildable spine on scroll-stop power, emotional arc, and feasibility (an abstract machine-shadow needs no bespoke rig, staying inside the 1-2 bespoke-hero budget). Grafted the Explainer's boundary-gap caveat and the Comedian's mushing-trail overlay and sled-dog warmth for grounded human/animal stakes. GATE-0 NOTE: the panel flagged a genre-repetition risk since this is the third state-land-to-AI-infrastructure story this month (after 07-14 and 07-16, both Stak Energy/North Slope); the board leans hard into the jurisdictional-boundary irony, an anti-development ordinance that legally cannot reach the very parcel it targets, as the differentiator, and deliberately drops the 'public comment flood / mailbox is the real vote' beat both prior dispatches already used. GATE-0B REVISION (storyboard-critic): the back third originally rendered the honest caveat as a HUD text panel (a diagram, a stamp, a typed quote, a checklist, a flipping calendar) and ended on a redundant 'STATUS: UNDECIDED' text card, and shot 4 carried its emotional peak on a zoom gimmick that echoed 07-16's signature move. REVISED to stage the entire caveat as physical in-world objects in the dawn landscape: the fence-line's tip MATCH-CUTS (not zooms) into a surveyor's stake planted alone in bare ground, a measuring chain stretched taut across the real gap carries the '2 MI' fact, a pen hovering over an unsigned document carries AIDEA's own honesty, and a carved wooden trail-post carries the August 19 deadline. The ending now holds on these physical objects and the running dog team with no text card, letting the picture alone carry the unresolved standoff.",
   "fingerprint": {
-    "pov": "cross-section-cutaway",
-    "motion_vector": "vertical-descent",
-    "hero_treatment": "single-organic-hero",
-    "layout": "stacked-layers",
-    "register": "editorial-schematic",
-    "camera_strategy": "aerial-descent",
-    "light_story": "night-practical",
-    "palette": "amethyst-plum subsurface bedrock, copper-rose machine metal, citrine-gold ore and chip glow, phosphor-lime AI-search accent",
-    "metaphor": "an AI machine drilling into Alaska's bedrock for the exact critical minerals that go into its own chip, learning the ground (and the funding) have real limits it cannot dig around"
+    "pov": "orbital-aerial",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "landscape-as-subject",
+    "layout": "fullbleed-split",
+    "register": "naturalistic-scene",
+    "camera_strategy": "locked-drift",
+    "light_story": "dawn-backlight",
+    "palette": "birch-white bark, boreal canopy in deep viridian, warm husky-fur amber, cool institutional graphite-blue for the shadow, a small crimson survey-tag accent",
+    "metaphor": "a fence built to stop an AI land grab that does not even reach the property line it was meant to defend"
   },
-  "divergence_note": "Diverges from 2026-07-14 (orbital-aerial, map-territory, blueprint-technical: an aerial blueprint of an UNBUILT data center) and 2026-07-16 (a ground-level characterized-object comedy: a reach-and-bury confrontation over the same Stak proposal) on every one of the fingerprint axes. This board goes UNDERGROUND: cross-section-cutaway pov and stacked-layers layout instead of aerial or map-territory; vertical-descent motion (a drill plunging down) instead of assemble-build or reach-then-bury; a copper DRILLING/CLAW prospecting machine with a working 'focused' face instead of a blue reaching/plug-hungry grinning one; an amethyst-plum subsurface world with copper machine-metal and citrine/lime glow instead of navy-ember-sage or silver-gunmetal-blueprint; and a completely different metaphor, an AI mining the exact minerals it is made of, rather than an AI begging for power it has not secured. Spatial signature (cross-section-cutaway, stacked-layers, vertical-descent) does not repeat any of the last four dispatches' signatures.",
+  "divergence_note": "Diverges from 2026-07-17 (cross-section-cutaway pov, vertical-descent motion, single-organic-hero, stacked-layers layout, editorial-schematic register, aerial-descent camera, night-practical light) on all 7 axes: this board stays above ground (orbital-aerial, not cross-section-cutaway), the dominant motion is a horizontal reach that fails (horizontal-traverse, not vertical-descent), the hero is the LAND itself not a single character (landscape-as-subject, not single-organic-hero), the frame splits rather than stacks (fullbleed-split, not stacked-layers), the render is a lit naturalistic forest world not a diagram (naturalistic-scene, not editorial-schematic), the camera holds in a vigil-still drift rather than descending (locked-drift, not aerial-descent), and it is a misty dawn not a lit night interior (dawn-backlight, not night-practical). Also diverges from 2026-07-16 (characterized-object confrontation comedy) by carrying no personified-object comedy at all, and from 2026-07-14 (map-territory, assemble-build, blueprint-technical) by using a naturalistic forest register instead of blueprint line-art and a failed-reach motion instead of an assembling structure. Spatial signature (orbital-aerial, fullbleed-split, horizontal-traverse) is unique versus the last four dispatches' signatures. Palette (birch-white bark, deep viridian canopy, husky-fur amber, graphite-blue shadow tone, one crimson stamp) shares no token with 07-16 (navy burst, ember red, orange/green) or 07-17 (amethyst-plum, copper, citrine, phosphor-lime).",
   "hook": {
     "pattern": "bold-claim",
-    "frame1": "a copper prospecting machine, its drill-head right arm plunged straight DOWN into the tundra (not the season's up-reaching plug), a working absorbed expression rather than a grin, citrine dust puffing off the spinning bit; the drill-down silhouette is unmistakable within 1s",
-    "headline": "AI IS DIGGING IN ALASKA",
+    "frame1": "a slow aerial push begins over unbroken Mat-Su birch and spruce forest with a single mushing trail below, low dawn mist glowing; a glowing parcel-boundary line is already drawing itself in by 1.0s so the scale-claim reads unmistakably fast",
+    "headline": "31 Square Miles. For Free.",
     "motion_by_s": 1.0,
-    "loopback": "the final beat pushes the camera back into this exact cold-open frame (drill still spinning, dust still puffing) so the machine appears to dig forever, one chest socket now lit but the rest still hollow"
+    "loopback": "the final beat pushes back into this exact aerial framing, the fence-line and the frozen machine-shadow both visible in the gap where the fence falls short, the land holding its unresolved standoff forever on loop"
   },
   "audio_arc": {
-    "build_steps": 4,
-    "dip_at": 51.15,
-    "riser_at": 31.0,
-    "silence_at": 51.15,
-    "payoff_at": 52.0,
-    "button_pattern": "callback"
+    "build_steps": 3,
+    "dip_at": 58.872,
+    "riser_at": 30.546,
+    "silence_at": 58.872,
+    "payoff_at": 59.672,
+    "button_pattern": "callback",
+    "retimed_note": "updated after recovering line 0's audio from the build_timeline.py filename-collision bug (2026-07-18): new timeline total 54.32s. silence_at/dip_at=48.74s is the center of the mix's ducked window (dispatch_mix_2026_07_18.py SILENCE_DIP_CENTER, now computed live from vo_lines.json), matching quality_gate.py's SILENCE_DIP measurement window, inside the true silent gap [47.94,49.54]s before the button line."
   },
   "shots": [
     {
       "id": 1,
-      "t": "0-8",
-      "framing": "subject-portrait",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "single-organic-hero",
-      "centered": "the copper machine's absorbed face and drill-head arm punching down into the ground, then a chip-shaped fleck glinting up",
-      "means": "opens the film: an AI machine physically digging into Alaska, and it is digging for the metals it is built from",
-      "hero": {"name": "Prospecting Machine", "parts": 5, "zones": 2, "detail_note": "copper-toned ink-outlined body, blinking LED status row, down-plunged drill-head arm, working 'focused' eyes and mouth, seamed chest panel with a faint ghost chip-slot"}
+      "t": "0-9",
+      "framing": "wide-establish",
+      "pov": "orbital-aerial",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "centered": "the glowing parcel-boundary line drawing itself across the Mat-Su forest map and swallowing Houston's town icon at scale, then a noncompetitive-conveyance lever locking in with no dollar sign",
+      "means": "opens on the hook: the land, the scale, and the fact that no price was ever attached to it",
+      "hero": {
+        "name": "Parcel Boundary + Conveyance Lever",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "a hard glowing boundary line filling in over hand-inked birch/spruce forest, a tiny Houston town icon dwarfed inside it, a labeled gear-lever with a crossed-out dollar sign, an AIDEA nameplate"
+      }
     },
     {
       "id": 2,
-      "t": "8-16",
-      "framing": "data-panel",
+      "t": "9-18",
+      "framing": "subject-portrait",
       "pov": "eye-level-immersive",
       "layout": "centered-hero-lowerthird",
-      "motion_vector": "push-in-only",
-      "hero_treatment": "data-as-subject",
-      "transition_in": "fui-boot",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "transition_in": "match-action",
       "thread": "build",
-      "centered": "a UAF wordmark card and the '$15M YEAR ONE' starburst firing exactly on 'fifteen million dollars', then the NSF seal on its name",
-      "means": "the award, drawn on its words: UAF, $15M, NSF each appear as they are spoken",
-      "hero": {"name": "Award Card (UAF + $15M + NSF)", "parts": 4, "zones": 2, "detail_note": "UAF wordmark plate, a citrine starburst stat badge reading $15M YEAR ONE, an NSF seal stamp, the copper machine watching from below"}
+      "centered": "a sled-dog team trotting a glowing 40-plus-mile trail overlay across the parcel, then an abstract machine-shadow rising behind them as three icons (data center, rail hub, power line) stamp in",
+      "means": "grounds the human/animal stakes first, then lets the AI-infrastructure shadow rise behind them",
+      "hero": {
+        "name": "Sled-Dog Team + Machine-Shadow",
+        "parts": 5,
+        "zones": 2,
+        "detail_note": "an ink-outlined sled-dog team on a phosphor trail-line, a faceless machine-shadow of servers and antennae lengthening behind, three stamping labeled icons"
+      }
     },
     {
       "id": 3,
-      "t": "16-20",
-      "framing": "map-territory",
-      "pov": "top-down-map",
-      "layout": "map-territory",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "landscape-as-subject",
-      "transition_in": "map-travel",
-      "thread": "travel",
-      "centered": "the shrinking lime AI-circle converging on one pulsing dot as the VO says 'one of twelve engines, twenty states'",
-      "means": "the AI-narrows-the-search mechanism, drawn on the line that names the program's scale",
-      "hero": {"name": "Alaska Map + AI Search-Circle", "parts": 4, "zones": 2, "detail_note": "hand-inked Alaska landmass with scattered red possibility-dots, a dashed lime search-circle contracting to one dot, a '1 OF 12 ENGINES / 20 STATES' callout"}
+      "t": "18-27",
+      "framing": "two-up",
+      "pov": "orbital-aerial",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "crossfade",
+      "thread": "build",
+      "centered": "a blank tenant nameplate swinging empty beneath the shadow, then Houston's civic silhouette raising a determined fence-line across the city limits",
+      "means": "the honest caveat starts here (no operator confirmed) before the town's countermove",
+      "hero": {
+        "name": "Blank Nameplate + Houston Fence-Line",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "an empty swinging sign labeled NO OPERATOR NAMED, a civic-outfit character (existing Character rig) raising a fence-line prop with real weight and intent"
+      }
     },
     {
       "id": 4,
-      "t": "20-32",
-      "framing": "data-panel",
-      "pov": "cross-section-cutaway",
-      "layout": "stacked-layers",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "data-as-subject",
-      "transition_in": "mask-wipe",
-      "thread": "build",
-      "centered": "the ground opening to a bedrock cross-section on 'bedrock', the 56-of-60 periodic wall igniting on its own line, then mineral names lighting one-per-word",
-      "means": "the underground is the data: bedrock, the 56/60 stat, and the mineral names each land on their exact words",
-      "hero": {"name": "Bedrock Cross-Section + Periodic Wall", "parts": 6, "zones": 3, "detail_note": "dashed cross-section ground with labeled gem-toned ore veins, a 56-of-60 periodic wall with individually-lit tiles, one tile a pencil that snaps its tip"}
-    },
-    {
-      "id": 5,
-      "t": "32-40",
+      "t": "27-36",
       "framing": "macro-closeup",
       "pov": "macro-closeup",
       "layout": "single-object-void",
       "motion_vector": "push-in-only",
-      "hero_treatment": "instrument-as-subject",
-      "transition_in": "match-action",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "match-cut",
       "thread": "match",
-      "centered": "the claw hauls one ore chunk, it cracks open to a glowing chip, and the chip ghost-matches into the machine's own empty chest socket",
-      "means": "lands the core irony as a picture: the ore IS the machine's missing part, shape-matched into its chest",
-      "hero": {"name": "Ore-to-Chip + Chest Socket", "parts": 5, "zones": 2, "detail_note": "comic crack-lines splitting rock to a citrine chip, the machine's chest panel hinged open on a dashed socket the chip silhouette-matches into, a MADE WITH label"}
+      "centered": "MATCH-CUT: the fence-line's taut rope tip resolves into a kindred shape, a surveyor's wooden stake planted alone in bare negative space two miles short of the parcel, then the shot pulls back to reveal a measuring chain stretched taut from the stake across the real gap to the parcel edge with a small 2 MI tag",
+      "means": "the emotional and factual peak carried by a true match-cut (a kindred shape landing in a new physical world), not a zoom, and the caveat made measurable in-world instead of as a diagram",
+      "hero": {
+        "name": "Surveyor's Stake + Measuring Chain",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "a weathered wooden stake standing alone in bare ground, a taut metal measuring chain running from it across open negative space to the parcel edge, a small swinging tag reading 2 MI"
+      }
+    },
+    {
+      "id": 5,
+      "t": "36-45",
+      "framing": "subject-portrait",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "centered": "a pen hovers just above an unsigned document beside a small AIDEA nameplate, never touching down, then a weathered wooden trail-post nearby carved with the date AUG 19 stands fixed in the gap",
+      "means": "the honest caveat, drawn as physical non-actions in the landscape (a pen that never signs, a post that only marks a date) instead of a HUD stamp and calendar",
+      "hero": {
+        "name": "Unsigned Document + Deadline Post",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "a suspended pen trembling just above blank paper, a small AIDEA nameplate beside it, a moss-grained wooden post carved with AUG 19 standing a short distance away"
+      }
     },
     {
       "id": 6,
-      "t": "40-48",
-      "framing": "two-up",
-      "pov": "exploded-diagram",
-      "layout": "fullbleed-split",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "data-as-subject",
-      "transition_in": "crossfade",
-      "thread": "carry",
-      "centered": "the towering dashed lime $160M ghost model rising on its line, then a NOT AWARDED stamp as the solid $15M model holds steady",
-      "means": "draws the money caveat honestly: $160M is a contingent ghost, only the solid $15M is real",
-      "hero": {"name": "$15M Solid Model vs $160M Ghost Model", "parts": 3, "zones": 2, "detail_note": "a fully-inked small copper machine beside a 1.8x dashed lime ghost twin pulsing low-opacity, a NOT AWARDED stamp"}
-    },
-    {
-      "id": 7,
-      "t": "48-59",
+      "t": "45-59",
       "framing": "wide-establish",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "single-organic-hero",
-      "transition_in": "hard-cut",
+      "pov": "orbital-aerial",
+      "layout": "fullbleed-split",
+      "motion_vector": "locked-drift",
+      "hero_treatment": "landscape-as-subject",
+      "transition_in": "crossfade",
       "thread": "match",
-      "centered": "the geologist's pickaxe bouncing off bare bedrock (DOINK), then the machine clicking one chip into its socket as the frame pulls back into the exact cold-open composition",
-      "means": "delivers the labor caveat (AI does not swing the pick) and buttons the loop: one part filled, the rest still hungry",
-      "hero": {"name": "Machine (looped) + Geologist's Pickaxe", "parts": 5, "zones": 2, "detail_note": "worker-outfit geologist mid-swing on bare rock with an UNPROVEN AT SCALE stamp, then the copper machine with one lit citrine chip socket and the rest still dashed and empty"}
+      "centered": "the aerial cold-open framing returns, the fence-line, stake, chain, and post all visible in the gap alongside the frozen machine-shadow, none touching, the sled-dog team trotting through the gap past them, camera holding still to the loop with no text card",
+      "means": "the button: nothing has moved, nothing has been decided, the physical objects in the gap and the dogs moving past them carry the standoff without a label",
+      "hero": {
+        "name": "Loopback Vigil Frame",
+        "parts": 5,
+        "zones": 2,
+        "detail_note": "identical composition to shot 1's opening frame, fence-line and machine-shadow held static in the same gap, the stake/chain/post now visible in it, the sled-dog team trotting through the trail between them"
+      }
     }
   ],
   "beats": [
-    {"t": "0-4", "vo": "An AI system is digging into Alaska's ground,", "shows": "copper machine's absorbed 'focused' face and drill-head arm punching DOWN into citrine-lit ground; red boxed headline 'AI IS DIGGING IN ALASKA' snaps in at 1.0s", "sfx": "drill-whir-spinup", "means": "opens on the hook: an AI machine physically digging, headline states the bold claim", "draw": {"subject": "copper-toned prospecting machine with a down-plunged drill arm", "action": "drills straight down into the tundra, spraying citrine dust", "emotion": "focused, absorbed in the work", "annotation": "AI IS DIGGING IN ALASKA"}, "choreo": {"primary": "drill-head spinning and boring downward", "reaction": "machine's eyes tracking the hole, LEDs blinking in sequence", "ambient": "citrine dust motes drifting up, heat-shimmer rising off the copper body"}},
-    {"t": "4-8", "vo": "hunting for the metals it is built from.", "shows": "the drill lifts a small chip-shaped fleck that glints; a faint dashed ghost-chip outline pulses inside the machine's chest panel (foreshadowing 'built from')", "sfx": "glint-shimmer-ting", "means": "shows what the machine is hunting: the metals it is literally built from", "draw": {"subject": "a chip-shaped ore fleck and the machine's chest panel", "action": "the fleck glints up from the bit as a ghost-chip outline pulses in the chest", "emotion": "focused, a flicker of recognition", "annotation": "THE METALS IT IS BUILT FROM"}, "choreo": {"primary": "the fleck rising and catching the light", "reaction": "the chest ghost-chip outline pulsing in answer", "ambient": "drill still turning, dust drifting"}},
-    {"t": "8-12", "vo": "The University of Alaska Fairbanks won fifteen million dollars", "shows": "a UAF wordmark plate boots in; on 'fifteen million dollars' a citrine '$15M, YEAR ONE' starburst badge springs in and lands", "sfx": "badge-ding-pop", "means": "the winner and the number, drawn exactly on the words that name them", "draw": {"subject": "UAF wordmark plate and a $15M starburst badge", "action": "the badge springs in and counts up to $15M as the words are said", "emotion": "triumphant", "annotation": "UAF, $15M YEAR ONE"}, "choreo": {"primary": "badge spring-in and count-up on the word", "reaction": "the copper machine below tips its head up toward the badge", "ambient": "UAF plate settling with a slight overshoot, LED flicker"}},
-    {"t": "12-16", "vo": "from the National Science Foundation.", "shows": "an NSF seal stamps onto the frame on the words 'National Science Foundation'; the $15M badge settles beside it", "sfx": "seal-stamp-thud", "means": "the funder, drawn on its own name", "draw": {"subject": "the NSF seal", "action": "stamps down onto the award card as it is named", "emotion": "official, weighty", "annotation": "NATIONAL SCIENCE FOUNDATION"}, "choreo": {"primary": "the seal thudding down with an ink-settle", "reaction": "the $15M badge nudging aside to make room", "ambient": "faint dust still drifting from the machine below"}},
-    {"t": "16-20", "vo": "One of twelve engines picked across twenty states,", "shows": "cut to a hand-inked Alaska map with dozens of red possibility-dots; a dashed lime AI-circle sweeps and contracts; a '1 OF 12 ENGINES, 20 STATES' callout fires on the line", "sfx": "radar-sweep-tick", "means": "the program's scale, drawn on the words that state it", "draw": {"subject": "Alaska map with a sweeping AI search-circle", "action": "the dashed circle contracts pass by pass toward one pulsing dot", "emotion": "focused, determined", "annotation": "1 OF 12 ENGINES, 20 STATES"}, "choreo": {"primary": "search-circle radius shrinking across two sweep passes", "reaction": "the callout badge springing in on the spoken line", "ambient": "unlit red dots outside the circle dimming"}},
-    {"t": "20-24", "vo": "aimed at Alaska's bedrock.", "shows": "the map's single dot drills DOWN and the ground opens into a dashed bedrock cross-section on the word 'bedrock', gem-toned ore veins beginning to glow", "sfx": "cutaway-reveal-whoosh", "means": "the bedrock, drawn on the word 'bedrock' (fixes the prior orphan)", "draw": {"subject": "bedrock cross-section under the map dot", "action": "the ground splits open to reveal glowing ore veins as 'bedrock' is said", "emotion": "revelatory", "annotation": "ALASKA'S BEDROCK"}, "choreo": {"primary": "the ground-line sweeping open into a cross-section", "reaction": "ore veins beginning to ignite from the drilled dot", "ambient": "citrine glow bleeding up through the dashed ground-line"}},
-    {"t": "24-28", "vo": "Fifty six of sixty critical minerals sit here:", "shows": "the cross-section resolves into a periodic-table wall: 56 tiles ignite phosphor-lime with a staggered ding, 4 stay dark; a hand-drawn lime circle loops the 56 as the number is said; a pencil-tile writes a check then snaps its tip", "sfx": "tile-ding-cascade", "means": "the signature stat, drawn as a countable wall exactly on its own line (the biggest say-it-show-it win)", "draw": {"subject": "periodic-table wall of element tiles", "action": "56 tiles ignite lime in a rapid stagger while 4 stay dark", "emotion": "triumphant abundance", "annotation": "56 OF 60 CRITICAL MINERALS"}, "choreo": {"primary": "tiles lighting in a fast diagonal stagger", "reaction": "the pencil-tile writing a check-mark then snapping its tip", "ambient": "residual green glow flickering across the 4 unlit tiles"}},
-    {"t": "28-32", "vo": "cobalt, graphite, gallium, nickel, rare earths.", "shows": "on the veins, five mineral labels light up ONE PER WORD as they are spoken: COBALT, then GRAPHITE, then GALLIUM, then NICKEL, then RARE EARTHS", "sfx": "label-tick-five", "means": "each mineral name drawn on its own word (fixes the bare 'ORE HAULED')", "draw": {"subject": "the labeled ore veins", "action": "each vein's label ignites in turn as its mineral is named", "emotion": "building momentum", "annotation": "COBALT / GRAPHITE / GALLIUM / NICKEL / RARE EARTHS"}, "choreo": {"primary": "labels igniting one-per-word down the veins", "reaction": "the machine's drill-eye tracking each vein as it lights", "ambient": "gem-tone glows pulsing in sequence"}},
-    {"t": "32-36", "vo": "Crack one open, and inside is the same chip", "shows": "cut to macro: the machine's claw hauls one ore chunk up; snap-zoom (SpeedLines + ImpactStar) as it cracks open along comic crack-lines to reveal a glowing citrine chip silhouette inside", "sfx": "crack-pop-sparkle", "means": "the reveal, drawn on 'the same chip': the ore contains a chip", "draw": {"subject": "a cracking ore chunk in the claw", "action": "splits open to reveal a glowing chip silhouette on the word 'chip'", "emotion": "machine: shock, recognition", "annotation": "THE SAME CHIP"}, "choreo": {"primary": "crack-lines racing across the ore then bursting open", "reaction": "the machine's eyes going wide (shock) at the chip", "ambient": "amber spark-burst flaring behind the chip"}},
-    {"t": "36-40", "vo": "the machine needs to keep thinking. It is mining itself.", "shows": "the chip floats from the claw and its silhouette GHOST-MATCHES into the dashed empty socket on the machine's chest (the shape rhyme), then a 'MADE WITH: COBALT, GRAPHITE, GALLIUM' label snaps beside it", "sfx": "panel-hiss-open", "means": "draws the self-cannibalizing irony as a picture: the chip fits the machine's own empty socket", "draw": {"subject": "the chip and the machine's open chest socket", "action": "the chip silhouette slots toward the identical empty socket as 'mining itself' is said", "emotion": "unsettled recognition", "annotation": "MADE WITH: COBALT, GRAPHITE, GALLIUM"}, "choreo": {"primary": "chip silhouette drifting and aligning to the socket shape", "reaction": "machine's brows dropping from focus to worry", "ambient": "a hollow glow pulsing from inside the empty socket"}},
-    {"t": "40-44", "vo": "Up to one hundred sixty million dollars is possible over ten years.", "shows": "cut to a two-up: a towering 1.8x dashed lime GHOST machine model rises on 'one hundred sixty million', labeled 'UP TO $160M, OVER 10 YEARS', beside the small solid copper machine", "sfx": "ghost-rise-swell", "means": "draws the money ceiling on its words: a big dashed maybe next to the small solid real", "draw": {"subject": "a giant dashed ghost machine model", "action": "rises and pulses low-opacity as the $160M figure is spoken", "emotion": "looming but insubstantial", "annotation": "UP TO $160M, OVER 10 YEARS"}, "choreo": {"primary": "the ghost model rising and its dashed outline pulsing", "reaction": "the small solid model steady in its shadow", "ambient": "lime flecks drifting off the ghost's dashed edges"}},
-    {"t": "44-48", "vo": "That part is not funded yet. Only fifteen million is real.", "shows": "a red 'NOT AWARDED' stamp thuds across the ghost model on 'not funded yet'; the solid '$15M FUNDED' model holds rock-steady and lit as 'only fifteen million is real' is said; the ghost deflates", "sfx": "stamp-thud-deflate", "means": "the honest caveat: the ghost is stamped NOT AWARDED, only the solid $15M is real", "draw": {"subject": "the ghost model and the solid $15M model", "action": "NOT AWARDED stamps over the ghost as it deflates; the solid model stays lit", "emotion": "sober, grounded", "annotation": "NOT AWARDED vs $15M FUNDED"}, "choreo": {"primary": "the NOT AWARDED stamp thudding down and the ghost sagging", "reaction": "the solid $15M model's glow steadying", "ambient": "torn dashed flecks fluttering off the deflating ghost"}},
-    {"t": "48-52", "vo": "Geologists still have to swing the pick.", "shows": "cut wide: a worker-outfit geologist swings a real pickaxe at bare bedrock, a comic DOINK bounce with a vibration squiggle up the arm; an 'UNPROVEN AT SCALE' stamp lands", "sfx": "pickaxe-doink-bounce", "means": "the labor caveat drawn: AI narrows the search, a human still swings, and can still find nothing", "draw": {"subject": "the geologist swinging a pickaxe", "action": "strikes bare bedrock and bounces off with nothing found", "emotion": "determined, unfazed", "annotation": "UNPROVEN AT SCALE"}, "choreo": {"primary": "the pickaxe arc-swing and bounce-back", "reaction": "a vibration squiggle traveling up the arm to a wince", "ambient": "a puff of rock dust at the impact point"}},
-    {"t": "52-59", "vo": "Alaska found the flashlight. It has not found the minerals yet.", "shows": "the machine clicks the citrine chip into ONE chest socket, which lights, while the other sockets stay dashed and empty and its stomach growls; camera slow-pushes back into the exact cold-open composition (drill spinning, citrine dust); hard cut to black on the drill's downbeat", "sfx": "click-lock-growl", "means": "buttons the caveat (partial progress only) and closes the loop back to the opening image", "draw": {"subject": "the same copper machine from the cold open", "action": "clicks one chip home, its other sockets still empty, then resumes drilling as the frame returns to the opening shot", "emotion": "proud but still hungry", "annotation": "FOUND THE FLASHLIGHT, NOT THE MINERALS. YET."}, "choreo": {"primary": "the chip locking into one socket with a flash, then the camera pulling back to the identical cold-open framing", "reaction": "the machine glancing at its still-empty sockets before resuming the drill", "ambient": "citrine dust puffing exactly as at frame zero, loop-perfect"}}
+    {
+      "t": "0-4.5",
+      "vo": "Alaska is about to give away thirty one square miles of land.",
+      "shows": "aerial push over Mat-Su birch and spruce forest, dawn mist; a glowing parcel-boundary line draws itself in and swallows the tiny Houston town icon at scale; headline '31 SQUARE MILES. FOR FREE.' snaps in at 1.0s",
+      "sfx": "low wind ambience, electronic draw-line whoosh",
+      "means": "opens on the hook: the land, and the scale of what is being given away",
+      "draw": {
+        "subject": "a glowing parcel-boundary line over the Mat-Su forest map",
+        "action": "draws itself in and swallows the tiny Houston town icon at scale",
+        "emotion": "quiet alarm at scale",
+        "annotation": "31 SQUARE MILES"
+      },
+      "choreo": {
+        "primary": "boundary line filling in across the map",
+        "reaction": "the Houston town icon shrinking by comparison",
+        "ambient": "dawn mist drifting low over the canopy"
+      }
+    },
+    {
+      "t": "4.5-9",
+      "vo": "For free. To a state agency called AIDEA.",
+      "shows": "a gear-lever mechanism labeled NONCOMPETITIVE CONVEYANCE pulls down beside an AIDEA nameplate; a crossed-out dollar sign locks in",
+      "sfx": "mechanical lever clank, stamp tick",
+      "means": "the no-charge mechanism, drawn as a cold procedural machine, on the words that state it",
+      "draw": {
+        "subject": "a gear-lever labeled NONCOMPETITIVE CONVEYANCE beside an AIDEA nameplate",
+        "action": "the lever pulls down and a crossed-out dollar sign locks in",
+        "emotion": "cold, procedural",
+        "annotation": "NO PRICE STATED \u00b7 AIDEA"
+      },
+      "choreo": {
+        "primary": "the lever pulling and the dollar-sign icon crossing out",
+        "reaction": "the AIDEA nameplate settling into place beside it",
+        "ambient": "faint gear-click residue"
+      }
+    },
+    {
+      "t": "9-13.5",
+      "vo": "It's birch forest near Houston. More than forty miles of mushing trails.",
+      "shows": "cut to eye-level: a sled-dog team trots a glowing trail overlay crossing the parcel, tails up, birch trunks passing",
+      "sfx": "paw-pad patter, distant dog bark, birdsong",
+      "means": "grounds the human and animal stakes on this land before the AI-infrastructure angle arrives",
+      "draw": {
+        "subject": "a sled-dog team on a glowing trail overlay crossing the parcel",
+        "action": "trots the trail, tails up, alive and unbothered",
+        "emotion": "warm, grounded, alive",
+        "annotation": "40+ MILES OF TRAILS"
+      },
+      "choreo": {
+        "primary": "the dog team's trotting gait along the glowing trail line",
+        "reaction": "ears perking at the birdsong",
+        "ambient": "birch leaves stirring, morning light breaking through"
+      }
+    },
+    {
+      "t": "13.5-18",
+      "vo": "The plan: data centers. A rail hub. Power lines.",
+      "shows": "an abstract faceless machine-shadow rises out of the parcel outline behind the trail; three labeled icons (data center, rail hub, power line) stamp in one by one",
+      "sfx": "low ominous riser begins, three stamp-ticks",
+      "means": "the proposed uses, stamped in one by one as they are named, over a shadow that is deliberately not a cute character",
+      "draw": {
+        "subject": "a faceless machine-shadow with three stamping labeled icons",
+        "action": "the shadow lengthens as the icons stamp in one by one",
+        "emotion": "ominous, patient",
+        "annotation": "DATA CENTERS \u00b7 RAIL HUB \u00b7 POWER LINES"
+      },
+      "choreo": {
+        "primary": "the shadow's silhouette lengthening",
+        "reaction": "the sled-dog team's ears flicking toward it, unbothered",
+        "ambient": "the riser building low under the trail ambience"
+      }
+    },
+    {
+      "t": "18-22.5",
+      "vo": "No company has signed on yet.",
+      "shows": "a blank tenant nameplate sign swings, empty, beneath the machine-shadow",
+      "sfx": "creaky sign swing",
+      "means": "the first honest caveat beat: no operator is confirmed",
+      "draw": {
+        "subject": "a blank tenant nameplate sign",
+        "action": "swings empty and unfilled beneath the shadow",
+        "emotion": "uncertain",
+        "annotation": "NO OPERATOR NAMED"
+      },
+      "choreo": {
+        "primary": "the sign swinging on a creaking hinge",
+        "reaction": "the shadow holding still behind it, waiting",
+        "ambient": "a light breeze catching the sign's edge"
+      }
+    },
+    {
+      "t": "22.5-27",
+      "vo": "Houston's town council tried to ban it.",
+      "shows": "Houston's civic silhouette (existing Character rig, civic outfit) raises a fence-line deliberately across the city limits, reaching toward the parcel",
+      "sfx": "metallic fence-clank, riser building toward its peak",
+      "means": "the town's countermove, drawn with real determination",
+      "draw": {
+        "subject": "Houston's civic silhouette raising a fence-line",
+        "action": "extends the fence-line deliberately across the city limits toward the parcel",
+        "emotion": "determined, protective",
+        "annotation": "CITY OF HOUSTON: PROPOSED BAN"
+      },
+      "choreo": {
+        "primary": "the fence-line extending link by link",
+        "reaction": "the civic figure's posture straightening with resolve",
+        "ambient": "the riser climbing under the clank"
+      }
+    },
+    {
+      "t": "27-31.5",
+      "vo": "But their line falls two miles short.",
+      "shows": "MATCH-CUT: the fence-line's taut rope tip resolves into a kindred shape, a surveyor's wooden stake standing alone in bare negative space, dawn light raking across it, no fence beyond",
+      "sfx": "a taut rope-creak resolving into a stake driven into soft ground, thud",
+      "means": "the emotional peak carried by a true match-cut (a kindred shape landing in a new physical world), not a zoom gimmick",
+      "draw": {
+        "subject": "a surveyor's stake planted alone in empty ground",
+        "action": "the fence-line's tip resolves into the stake, standing alone with no fence beyond it",
+        "emotion": "failure, exposed",
+        "annotation": null
+      },
+      "choreo": {
+        "primary": "the stake settling upright after being driven in",
+        "reaction": "the last link of fence-line just behind it, reaching no further",
+        "ambient": "dust settling, dawn light long across bare ground"
+      }
+    },
+    {
+      "t": "31.5-36",
+      "vo": "It never reaches this land.",
+      "shows": "pull back to reveal a surveyor's measuring chain stretched taut from the stake across the real physical gap to the parcel's edge, a small metal tag clipped to it reading 2 MI; a pre-turn silence dip in the mix",
+      "sfx": "silence dip, chain-links settling taut, one soft low tone",
+      "means": "the caveat made physically measurable in the landscape itself, not a HUD diagram",
+      "draw": {
+        "subject": "a surveyor's measuring chain stretched from the stake to the parcel edge",
+        "action": "pulls taut across the gap as a small tag clips into place",
+        "emotion": "stark, plain",
+        "annotation": "2 MI"
+      },
+      "choreo": {
+        "primary": "the chain drawing taut link by link",
+        "reaction": "the tag swinging once then settling still",
+        "ambient": "the mix dropping to near-silence"
+      }
+    },
+    {
+      "t": "36-40.5",
+      "vo": "AIDEA says it straight: no decisions have been made.",
+      "shows": "a pen hovers just above an unsigned document beside a small AIDEA nameplate, trembling, never touching down to sign",
+      "sfx": "a faint pen-nib hover-hum, paper settling",
+      "means": "the agency's own honesty drawn as a physical non-action, a pen that never signs, instead of a stamp and a typed quote",
+      "draw": {
+        "subject": "a pen suspended above an unsigned document",
+        "action": "hovers and trembles, never touches down to sign",
+        "emotion": "matter-of-fact honesty",
+        "annotation": "AIDEA"
+      },
+      "choreo": {
+        "primary": "the pen's slight tremble as it hovers",
+        "reaction": "the blank document's edge lifting faintly in the breeze",
+        "ambient": "quiet, held"
+      }
+    },
+    {
+      "t": "40.5-45",
+      "vo": "Comments close August nineteenth. Nothing here is final.",
+      "shows": "a weathered wooden trail-post stands fixed nearby, a date carved into its grain, AUG 19, moss on its base, the unsigned document still visible at the edge of frame",
+      "sfx": "wood-grain creak, one distant bird call",
+      "means": "the deadline and the unresolved status, drawn as one honest physical object in the landscape rather than a HUD calendar",
+      "draw": {
+        "subject": "a weathered wooden post carved with a date",
+        "action": "stands fixed in the gap, marking the deadline",
+        "emotion": "ticking, unresolved",
+        "annotation": "AUG 19"
+      },
+      "choreo": {
+        "primary": "the camera settling on the carved date",
+        "reaction": "the unsigned document still visible, untouched, at the frame's edge",
+        "ambient": "a single distant bird call"
+      }
+    },
+    {
+      "t": "45-49.5",
+      "vo": "So the fence stands empty. The shadow keeps reaching.",
+      "shows": "return to the aerial cold-open framing, the fence-line, the stake, the chain, and the post all now visible in the gap alongside the frozen machine-shadow, none touching, camera holding still",
+      "sfx": "wind ambience returns, music dips further",
+      "means": "the loopback begins: the standoff is held, not resolved, the physical objects from the caveat now visible together in the gap",
+      "draw": {
+        "subject": "the aerial view again, fence-line, stake, chain, post, and frozen machine-shadow",
+        "action": "camera holds, none of them reach each other",
+        "emotion": "quiet vigil",
+        "annotation": null
+      },
+      "choreo": {
+        "primary": "the camera settling into stillness",
+        "reaction": "the shadow's edge trembling faintly, held",
+        "ambient": "wind returning over the canopy"
+      }
+    },
+    {
+      "t": "49.5-54",
+      "vo": "The dogs still run this trail either way.",
+      "shows": "the sled-dog team trots briskly through the gap between the fence-line and the machine-shadow, undisturbed by either, the one real motion in the closing hold",
+      "sfx": "paw-pad patter, gentle wind",
+      "means": "the grounded human/animal stakes close the emotional arc: life on the land keeps moving regardless of the standoff, and gives the static loopback tail its one beat of real motion",
+      "draw": {
+        "subject": "the sled-dog team on the trail in the gap between fence and shadow",
+        "action": "trots the trail through the gap, unbothered by either side",
+        "emotion": "calm, alive, grounded",
+        "annotation": null
+      },
+      "choreo": {
+        "primary": "the dog team's trotting gait moving through the gap",
+        "reaction": "one dog's head turning toward the shadow mid-stride, unbothered",
+        "ambient": "soft wind over the birch canopy"
+      }
+    },
+    {
+      "t": "54-59",
+      "vo": "Nobody's said yes here. Nobody's said no where it counts.",
+      "shows": "final button: camera settles into the exact loopback framing from the cold open, fence-line, stake, chain, post, and shadow held static in the gap, no text card, the picture alone carries the standoff",
+      "sfx": "soft final music button, tail out",
+      "means": "closes the loop purely on the image: nothing labeled, nothing resolved, the gap itself is the point",
+      "draw": {
+        "subject": "the same aerial parcel, fence-line, stake, chain, post, and machine-shadow composition as the cold open",
+        "action": "camera settles, nothing moves, loop-perfect",
+        "emotion": "unresolved, held",
+        "annotation": null
+      },
+      "choreo": {
+        "primary": "the frame holding motionless on the loop point",
+        "reaction": "the dogs' trail dust settling in the gap, the last motion to fade",
+        "ambient": "wind and distant birdsong tailing into silence"
+      }
+    }
   ]
 }

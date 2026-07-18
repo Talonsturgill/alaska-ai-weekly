@@ -594,3 +594,26 @@ dispatch_history:
     metaphor: an AI machine drilling into Alaska's bedrock for the exact critical
       minerals that go into its own chip, learning the ground (and the funding) have
       real limits it cannot dig around
+- date: '2026-07-18'
+  topic: Alaska DNR preliminary decision to convey ~31 sq mi (19,950 ac) of Mat-Su
+    state forest near Houston to AIDEA at no charge for a data-center/rail/energy
+    district; comments open to Aug 19
+  slug: matsu-aidea-land-conveyance
+  key_entities:
+  - aidea
+  - houston alaska
+  - dnr conveyance
+  - mat-su borough
+  - data center land transfer
+  - randy ruaro
+  archetype: public-land-giveaway-for-AI-infra
+  palette: dawn birch/viridian/husky-amber/graphite/crimson
+  voice: gemini-charon
+  composition:
+    pov: aerial-to-ground
+    hero_treatment: faceless-institution-monolith
+    layout: loopback-vigil
+    register: naturalistic-dawn
+    light_story: dawn-backlight
+    camera_strategy: push-then-loopback
+    motion_vector: boundary-draw+match-cut

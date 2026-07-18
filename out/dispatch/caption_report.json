@@ -3,15 +3,15 @@
   "fails": [],
   "warns": [],
   "metrics": {
-    "chars": 1696,
-    "hook": "AI is now prospecting for the raw materials that AI itself is made of.",
-    "hook_len": 70,
+    "chars": 1755,
+    "hook": "Alaska is proposing to hand a state agency 31 square miles of public forest, for free, before a single company has signed on.",
+    "hook_len": 125,
     "hashtags": [
       "#Alaska",
-      "#CriticalMinerals",
+      "#DataCenters",
       "#ArtificialIntelligence",
-      "#UAF",
-      "#MineralExploration"
+      "#MatSu",
+      "#PublicLands"
     ],
     "n_hashtags": 5,
     "emoji": 0,
