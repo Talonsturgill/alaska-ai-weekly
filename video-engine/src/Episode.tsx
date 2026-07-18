@@ -4,6 +4,7 @@ import {z} from 'zod';
 import {Character} from './lib/Character';
 import {SpeedLines, ImpactStar, ZoomVignette} from './lib/FX';
 import {INK, ICE, SNOW} from './lib/kit';
+import {tones, FormGradient, RimLight, ContactShadow, BrushedMetal, BarkTexture, FoliageSpeckle, GradeLayer, LIGHT} from './lib/lighting';
 
 const BOLD = 'Arial Black, Arial, sans-serif';
 
@@ -47,6 +48,10 @@ const DawnForestBG: React.FC<{f: number; parallax?: number; dogHint?: boolean}> 
       <stop offset="18%" stopColor={GROUND} />
       <stop offset="100%" stopColor={GROUND_D} />
     </linearGradient>
+    {/* shared form-shading gradients for the vegetation (key-lit -> shade in the sun dir) */}
+    <FormGradient id="birchLit" t={tones(BIRCH)} />
+    <FormGradient id="spruceLit" t={tones(VIRIDIAN)} />
+    <FormGradient id="spruceMidLit" t={tones(VIRIDIAN)} softness={0.7} />
     <rect width="1080" height="1080" fill="url(#dawnSun)" />
     {/* sun disc, low on the horizon, soft double-ring glow */}
     <circle cx={540} cy={1040} r={210} fill={SNOW} opacity={0.14} />
@@ -102,16 +107,16 @@ const DawnForestBG: React.FC<{f: number; parallax?: number; dogHint?: boolean}> 
         if (isBirchCanopy) {
           return (
             <g key={i}>
-              <rect x={x + 30} y={1080 - h * 0.5} width={10} height={h * 0.5} fill={BIRCH} stroke={INK} strokeWidth={3} />
-              <ellipse cx={x + 35} cy={1080 - h * 0.55} rx={44} ry={h * 0.36} fill={VIRIDIAN} stroke={INK} strokeWidth={3} opacity={0.94} />
-              <ellipse cx={x + 20} cy={1080 - h * 0.62} rx={26} ry={h * 0.22} fill={VIRIDIAN_D} opacity={0.5} />
+              <rect x={x + 30} y={1080 - h * 0.5} width={10} height={h * 0.5} fill="url(#birchLit)" stroke={INK} strokeWidth={3} />
+              <ellipse cx={x + 35} cy={1080 - h * 0.55} rx={44} ry={h * 0.36} fill="url(#spruceMidLit)" stroke={INK} strokeWidth={3} opacity={0.94} />
+              <FoliageSpeckle cx={x + 35} cy={1080 - h * 0.55} rx={44} ry={h * 0.36} dark={VIRIDIAN_D} light="#3c7a5c" seed={i + 2} opacity={0.5} />
             </g>
           );
         }
         return (
           <g key={i}>
             <path d={`M${x},1080 L${x + 20},${1080 - h * 0.4} L${x + 12},${1080 - h * 0.4} L${x + 32},${1080 - h * 0.72} L${x + 24},${1080 - h * 0.72} L${x + 44},${1080 - h} L${x + 64},${1080 - h * 0.72} L${x + 56},${1080 - h * 0.72} L${x + 76},${1080 - h * 0.4} L${x + 68},${1080 - h * 0.4} L${x + 88},1080 Z`}
-              fill={VIRIDIAN} stroke={INK} strokeWidth={3} strokeLinejoin="round" opacity={0.92} />
+              fill="url(#spruceMidLit)" stroke={INK} strokeWidth={3} strokeLinejoin="round" opacity={0.94} />
             <path d={`M${x + 44},${1080 - h} L${x + 24},${1080 - h * 0.72} L${x + 44},${1080 - h * 0.78} Z`} fill={VIRIDIAN_D} opacity={0.5} />
           </g>
         );
@@ -123,11 +128,12 @@ const DawnForestBG: React.FC<{f: number; parallax?: number; dogHint?: boolean}> 
         const x = i * 300 + 90;
         return (
           <g key={i} transform={`translate(${x},1080)`}>
-            <path d="M-16,0 q-6,-140 4,-260 l24,0 q10,120 4,260 Z" fill={BIRCH} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-            <path d="M4,-260 q10,120 4,260 l8,0 q4,-140 -4,-260 Z" fill={BIRCH_D} opacity={0.6} />
-            {[40, 90, 150, 200].map((yy, j) => (
-              <rect key={j} x={-14} y={-yy} width={10 + (j % 2) * 6} height={9} fill={INK} opacity={0.55} />
-            ))}
+            <ContactShadow cx={0} cy={2} rx={40} ry={11} opacity={0.26} blur={9} />
+            <path d="M-16,0 q-6,-140 4,-260 l24,0 q10,120 4,260 Z" fill="url(#birchLit)" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+            <path d="M4,-260 q10,120 4,260 l8,0 q4,-140 -4,-260 Z" fill={BIRCH_D} opacity={0.55} />
+            {/* rim light on the sun-facing (left) contour */}
+            <RimLight d="M-16,0 q-6,-140 4,-260" w={3.5} opacity={0.6} />
+            <BarkTexture x={-14} y={-250} w={28} h={250} seed={i + 1} opacity={0.5} />
             <path d="M-30,0 q10,-30 0,-46 M-14,0 q4,-24 14,-34 M18,0 q-4,-28 10,-40" fill="none" stroke={GROUND_D} strokeWidth={5} strokeLinecap="round" opacity={0.7} />
           </g>
         );
@@ -141,23 +147,22 @@ const DawnForestBG: React.FC<{f: number; parallax?: number; dogHint?: boolean}> 
 // rig used in prior episodes; it never speaks, never blinks, only lengthens.
 const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: number; grow: number}> = ({x, y, scale = 1, f, grow}) => {
   const sway = 3 * Math.sin(f / 22);
-  const gid = `msLit-${x}-${y}`;
+  const gidLit = `msLit-${x}-${y}`;
+  const mt = tones(GRAPHITE);
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`} opacity={0.92}>
-      <linearGradient id={gid} x1="0%" y1="0%" x2="100%" y2="10%">
-        <stop offset="0%" stopColor="#5c6b7a" />
-        <stop offset="45%" stopColor={GRAPHITE} />
-        <stop offset="100%" stopColor={GRAPHITE_D} />
-      </linearGradient>
+      <FormGradient id={gidLit} t={mt} />
+      <ContactShadow cx={0} cy={4} rx={96} ry={20} opacity={0.32} blur={12} />
       <g transform={`scaleY(${Math.max(0.02, grow)})`} style={{transformOrigin: '0px 0px'}}>
         {/* core tower — no legs (an earlier splayed-cable-conduit pair read as a robot's legs
             across every reviewer this session); it now stands on a solid flared foundation, a
-            deliberately faceless monolith, not a character. Lit gradient (key-light upper-left,
-            falling to graphite-dark) instead of a flat fill for a sense of depth. */}
-        <path d="M-60,0 L-46,-360 L46,-360 L60,0 Z" fill={`url(#${gid})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
-        <path d="M10,-360 L46,-360 L60,0 L26,0 Z" fill={GRAPHITE_D} opacity={0.75} />
-        {/* rim-light on the lit edge */}
-        <path d="M-46,-360 L-60,0" fill="none" stroke="#9aabb8" strokeWidth={3} opacity={0.55} strokeLinecap="round" />
+            deliberately faceless monolith, not a character. Form-shading gradient (key-lit in the
+            sun direction, falling to graphite-dark) + brushed-metal texture instead of a flat fill. */}
+        <path d="M-60,0 L-46,-360 L46,-360 L60,0 Z" fill={`url(#${gidLit})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        <path d="M10,-360 L46,-360 L60,0 L26,0 Z" fill={mt.shade} opacity={0.7} />
+        <BrushedMetal x={-56} y={-358} w={112} h={356} opacity={0.12} />
+        {/* rim-light on the sun-facing (left) edge */}
+        <RimLight d="M-46,-360 L-60,0" w={3.5} opacity={0.6} />
         {/* antenna array, swaying */}
         <g transform={`translate(0,-360) rotate(${sway})`}>
           <line x1={0} y1={0} x2={-40} y2={-90} stroke={INK} strokeWidth={7} strokeLinecap="round" />
@@ -570,6 +575,11 @@ const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
   {from: 784, dur: 164}, {from: 948, dur: 304}, {from: 1252, dur: 378},
 ];
 
+const GradedGrade: React.FC = () => {
+  const f = useCurrentFrame();
+  return <GradeLayer f={f} bloom={0.5} vignette={0.5} grain={0.05} warmth={0.08} />;
+};
+
 export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {
   const bounds = scenes && scenes.length === SCENE_COMPONENTS.length ? scenes : DEFAULT_BOUNDS;
   return (
@@ -579,6 +589,9 @@ export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {
           <C />
         </Sequence>
       ))}
+      {/* filmic finish over the whole composite, but BELOW captions so caption/HUD
+          glyph-edge energy (the quality gate's CAPTION_TEXT/HUD_TEXT checks) stays crisp */}
+      <GradedGrade />
       <Captions captions={captions} />
     </AbsoluteFill>
   );
