@@ -26,10 +26,10 @@
   },
   "audio_arc": {
     "build_steps": 3,
-    "dip_at": 58.872,
-    "riser_at": 30.546,
-    "silence_at": 58.872,
-    "payoff_at": 59.672,
+    "dip_at": 44.655,
+    "riser_at": 23.341,
+    "silence_at": 44.655,
+    "payoff_at": 45.405,
     "button_pattern": "callback",
     "retimed_note": "updated after recovering line 0's audio from the build_timeline.py filename-collision bug (2026-07-18): new timeline total 54.32s. silence_at/dip_at=48.74s is the center of the mix's ducked window (dispatch_mix_2026_07_18.py SILENCE_DIP_CENTER, now computed live from vo_lines.json), matching quality_gate.py's SILENCE_DIP measurement window, inside the true silent gap [47.94,49.54]s before the button line."
   },

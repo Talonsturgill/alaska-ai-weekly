@@ -613,8 +613,8 @@ const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6];
 // S1 0-9.92s (lines 1-2), S2 9.92-20.16s (lines 3-4), S3 20.16-26.24s (lines 5-6),
 // S4 26.24-31.72s (lines 7-8), S5 31.72-41.84s (lines 9-10), S6 41.84-53.34s (lines 11-13).
 const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
-  {from: 0, dur: 316}, {from: 316, dur: 385}, {from: 701, dur: 215},
-  {from: 916, dur: 211}, {from: 1127, dur: 332}, {from: 1459, dur: 567},
+  {from: 0, dur: 244}, {from: 244, dur: 303}, {from: 547, dur: 153},
+  {from: 700, dur: 150}, {from: 850, dur: 252}, {from: 1102, dur: 459},
 ];
 
 const GradedGrade: React.FC = () => {
