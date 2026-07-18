@@ -1,5 +1,40 @@
-{"sources":[
- {"outlet":"UAF Geophysical Institute news release","url":"https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition","note":"$15M (first 2 yrs), up to $160M/10yr, 1 of 12 NSF engines across 20 states, $500K state match, AI to locate deposits","title":"UAF Geophysical Institute","date":"2026-07-14"},
- {"outlet":"Fairbanks Daily News-Miner","url":"https://www.newsminer.com/news/local_news/uaf-strikes-gold-with-15-million-minerals-award/article_548d3488-0c44-4e54-a4eb-089dfc88258e.html","note":"Corroborates $15M/$160M, 56 of 60 USGS critical minerals in Alaska, mineral list, Sen. Sullivan quote","title":"News-Miner","date":"2026-07-15"},
- {"outlet":"UAF GI (leads + roles)","url":"https://www.gi.alaska.edu/news/national-science-foundation-funds-uaf-led-critical-minerals-coalition","note":"Lee Ann Munk (CEO), Robert McCoy (GI director), Brian Stone (performing duties of NSF Director)","title":"UAF GI","date":"2026-07-14"}
-]}
+{
+  "date": "2026-07-18",
+  "story": "Autonomous firefighting drones (Anduril, AURA Foresight, Dryad Networks) reached the finals of the $11M XPRIZE Wildfire competition, live-tested June 2026 near Nenana, Alaska in partnership with UAF's ACUASI. Winner to be announced September 2026.",
+  "key_entities": ["xprize", "dryad networks", "anduril", "aura foresight", "acuasi", "nenana", "autonomous firefighting drone", "silvaguard", "silvanet"],
+  "dedupe_check": "FRESH (re-tested with distinctive entity set; generic-token overlap with 07-11 wildfire-smoke-forecast story on 'uaf'/'wildfire' is not a real duplicate)",
+  "validators": 2,
+  "fact_check_safe_set": {
+    "numbers": [
+      {"text": "$11 million total XPRIZE Wildfire prize purse", "source": "XPRIZE (xprize.org/prizes/wildfire)", "label": "primary"},
+      {"text": "$1 million Lockheed Martin \"Accurate Detection Intelligence\" Bonus Prize", "source": "XPRIZE", "label": "primary"},
+      {"text": "Four-year competition, 2023 to 2026", "source": "XPRIZE", "label": "primary"},
+      {"text": "Autonomous Wildfire Response track: detect and suppress across a simulated area of about 1,000 square kilometers within 10 minutes", "source": "XPRIZE challenge spec", "label": "primary, competition spec not literal test-site footprint"},
+      {"text": "Finals live-tested over two weeks in June 2026 near Nenana, Alaska, in partnership with UAF's ACUASI, which managed the airspace at Nenana Municipal Airport", "source": "XPRIZE finals-testing page + Alaska Legislature doc 10959", "label": "primary + government"},
+      {"text": "Three teams in the autonomous-response final test: Anduril, AURA Foresight, Dryad Networks", "source": "XPRIZE (Anduril confirmed only via this primary source, no independent press names Anduril)", "label": "primary-only for Anduril"},
+      {"text": "More than 130 competing teams overall", "source": "Robohub", "label": "independent"},
+      {"text": "Winner to be announced September 2026, undecided as of publication", "source": "Must Read Alaska + Dryad + XPRIZE", "label": "corroborated"},
+      {"text": "Silvanet sensors detect VOCs, carbon monoxide, and PM2.5; Silvaguard drone carries up to 100 liters of suppressant", "source": "Dryad Networks", "label": "company estimate"},
+      {"text": "Up to 3 controlled test fires per session, no human intervention", "source": "XPRIZE", "label": "primary"},
+      {"text": "More than 1 million acres burned in Alaska in 2025", "source": "Alaska Interagency Coordination Center / Alaska Beacon", "label": "primary/agency"}
+    ],
+    "banned_numbers": [
+      "roughly 300 teams (unsupported; use 'more than 130')",
+      "1.68 million acres (XPRIZE-only estimate that doesn't survive primary check; use 'more than 1 million')",
+      "8-hour drone flight endurance (no source; only the competition's 8-hour monitoring window is sourced)",
+      "'zero humans on scene' as a verbatim quote (use 'no human intervention')"
+    ],
+    "quotes": [
+      {"text": "Detecting fires within minutes and extinguishing them before they become catastrophic is no longer a vision for the future. It is a reality.", "speaker": "Carsten Brinkschulte, Dryad Networks CEO", "source": "Dryad Networks / Business Wire, 2026-07-07"},
+      {"text": "To stand among the final three teams in the world and demonstrate a fully autonomous system that can detect and respond to wildfire ignitions within minutes validates the technology, vision, and dedication of our entire team.", "speaker": "Carsten Brinkschulte, Dryad Networks CEO", "source": "Dryad Networks / Business Wire, 2026-07-07", "note": "full sentence, do not truncate"}
+    ],
+    "honest_caveat": "This was a controlled competition demo on a managed FAA test range with small, deliberately-set test fires, not a real fast-moving uncontrolled wildfire in wind and smoke. No team has won yet; the winner is announced in September 2026. None of these systems has been proven suppressing a real Alaska wildfire at landscape scale."
+  },
+  "urls": [
+    "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response",
+    "https://www.xprize.org/prizes/wildfire",
+    "https://www.businesswire.com/news/home/20260707802818/en/Dryad-Networks-Reaches-XPRIZE-Wildfire-Finals-Milestone-Demonstrating-Autonomous-Detection-and-Suppression-of-Wildfires-in-Alaska",
+    "https://robohub.org/aura-foresight-reaches-global-xprize-wildfire-finals-in-alaska/",
+    "https://mustreadalaska.com/dryad-drones-fight-wildfires-in-remote-alaska-a-gamechanger-for-wildfire-fighting/"
+  ]
+}
