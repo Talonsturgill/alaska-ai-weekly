@@ -14,7 +14,18 @@ WHY THIS EXISTS
 WHAT IT DOES
     For every slide string in copy.json["slides"], verify that the string is
     actually present in that slide's RENDERED text (render_report.json's
-    per-slide text_nodes[].text, which is what the browser laid out). This is
+    per-slide text_nodes[].text, which is what the browser laid out).
+
+    copy.json["slides"] is accepted in EITHER shape: a dict keyed "S1".."S9"
+    (the record form) OR a list of per-slide objects (the copywriter / Phase 6
+    form, each item carrying an integer "n" slide number plus kicker/headline/
+    body/labels/chips/claim_ids). A list is normalized to the "S<n>" dict keyed
+    on each item's "n" field (falling back to 1-based position when "n" is
+    absent) BEFORE any comparison, so the exact same one-directional check runs
+    on both shapes. This normalization changes no matching logic; it only lets
+    the guard run on the real artifact instead of crashing on slides.items().
+
+    The check is
     one-directional by design: every authored slide string must appear in the
     render (copy must not go stale). It does NOT require every rendered node
     to appear in copy (decorative micro-text, coordinates, and progress
@@ -75,6 +86,35 @@ def collect(obj, path):
     return out
 
 
+def normalize_slides(raw):
+    """Return copy.json['slides'] as a dict keyed 'S<n>' regardless of shape.
+
+    A dict is returned unchanged (the record form). A list (the copywriter /
+    Phase 6 form) is keyed by each item's integer 'n' slide number, falling
+    back to 1-based position when 'n' is absent or non-numeric. Anything else
+    yields an empty dict. Non-rendered bookkeeping fields (claim_ids etc.) are
+    left in place; collect() already skips them, so they never cause a miss."""
+    if isinstance(raw, dict):
+        return raw
+    if isinstance(raw, list):
+        out = {}
+        for i, item in enumerate(raw):
+            key = None
+            if isinstance(item, dict):
+                n = item.get("n")
+                if isinstance(n, bool):
+                    n = None
+                if isinstance(n, int):
+                    key = "S%d" % n
+                elif isinstance(n, str) and n.strip().isdigit():
+                    key = "S%d" % int(n.strip())
+            if key is None:
+                key = "S%d" % (i + 1)
+            out[key] = item
+        return out
+    return {}
+
+
 def slide_index(fname):
     m = re.search(r"slide-(\d+)", fname)
     return int(m.group(1)) if m else None
@@ -98,7 +138,7 @@ def check(copy, render_report, window=WINDOW):
     per_slide, deck = build_blobs(render_report)
     misses = []
     checked = 0
-    slides = copy.get("slides", {})
+    slides = normalize_slides(copy.get("slides", {}))
     for skey, sval in slides.items():
         blob = per_slide.get(skey, "")
         for path, s in collect(sval, ""):
@@ -140,7 +180,7 @@ def main():
 
     # Slides authored in copy but with no rendered counterpart are their own
     # (softer) signal; surface them but do not fail on them.
-    authored = set(copy["slides"].keys())
+    authored = set(normalize_slides(copy["slides"]).keys())
     orphan = sorted(authored - rendered_keys, key=lambda s: int(s[1:]) if s[1:].isdigit() else 0)
     for o in orphan:
         print("copy_sync_check: WARN slide %s in copy.json has no rendered slide" % o, file=sys.stderr)

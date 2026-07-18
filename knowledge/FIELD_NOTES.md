@@ -559,3 +559,42 @@ into the doctrine/library files and prune here.
   data-centers-and-electricity (Nos. 1, 4, 6, 10). The frame here is genuinely
   distinct (ratepayer economics / on-off-grid), but if audience data shows topic
   fatigue, space these out.
+
+## 2026-07-18 - upgrade-engineer scan (LinkedIn platform focus, parked candidates)
+
+Frontier focus = LinkedIn platform / algorithm 2026 (rotated off the last three:
+self-improving-pipeline 07-14, procedural-relief 07-15, editorial-dataviz 07-17).
+The whole document-carousel strategy is REVALIDATED, not threatened: PDF/document
+posts remain the single highest-reach native format (reported ~6.60% engagement;
+3-6x the reach of text/image/video), and the March 2026 "Authenticity Update" +
+the 360Brew ranking model reward exactly what this studio already makes (topical
+depth, real dwell time, honest non-baity copy). Current specs are compliant:
+9 slides sits in the reported 8-10 sweet spot (engagement drops after slide 10);
+2160x2700 is portrait 4:5, the recommended feed ratio; the 80px safe zone beats
+the >=50px minimum. No machine change is bounded enough for the daily budget
+(the reactive copy_sync_check fix took the slot), so the levers are PARKED:
+
+- PARKED (strategy -> possible scorer/gate improvement): SAVES are the dominant
+  2026 ranking signal (reported ~5x the reach of a like, ~2x a comment), and
+  infographics are now the single most common format among top-1% posts (28.6%).
+  The lever is SAVE-WORTHINESS: is any single slide a keepable, screenshot-worthy
+  reference on its own? The routine already prizes "a keepable data slide"; the
+  bounded upgrade candidate is to make it explicit -- a storyboard-gate line and
+  a scorer descriptor asking "would a reader SAVE this slide as a standalone
+  reference?" Wants careful wording so it does not become a checkbox; hold to an
+  improvement slot. Sources: https://www.oktopost.com/blog/linkedin-carousel-pdf-best-practices/ ,
+  https://www.dataslayer.ai/blog/linkedin-algorithm-february-2026-whats-working-now
+- PARKED (maintainer strategy note, NOT a machine change): the external-link
+  penalty escalated in 2026 -- posts with an outbound link see ~60% less reach,
+  and as of early 2026 even the "link in first comment" workaround reportedly
+  carries a residual penalty. This studio puts source URLs in the first comment
+  for integrity, which is non-negotiable, so this is a disclosure for the
+  maintainer, not something the machine should auto-change. Possible mitigations
+  worth a human decision: post the sources comment a few minutes AFTER the deck
+  rather than instantly, or lead the caption with the debate/question and keep
+  the link block purely in the comment (already the practice). Source:
+  https://www.dataslayer.ai/blog/linkedin-algorithm-february-2026-whats-working-now
+- CONFIRMED, NO ACTION: dwell time is heavily weighted and each swipe counts, so
+  the tightly-paced one-point-per-slide + alternating text/visual rhythm the
+  storyboard gate already enforces is the correct dwell play; polls collapsed to
+  ~0.07% engagement (the studio never uses them). Nothing to change.

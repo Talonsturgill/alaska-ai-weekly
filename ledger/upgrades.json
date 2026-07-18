@@ -324,6 +324,19 @@
    "verification": "Clean deck PASSes (exit 0): 52 authored slide strings all present in the render, 0 false positives. Defect reconstruction (S5 kicker reverted to the stale 'HOW IT STARTED') FAILs (exit 1) and reports exactly 'S5 kicker.text -> HOW IT STARTED'; an independent body-lead divergence reconstruction also FAILs correctly. Engine untouched and re-verified: qa.py on out/2026-07-17/render unchanged (WARN, 0 fails); examples/demo-deck render+qa unchanged (known slide-03 busy-art WARN, exit 0). No gate/threshold weakened, no new runtime dependency (stdlib only), shipped slides not modified; script parses (ast.parse OK).",
    "rollback": "revert the upgrade(2026-07-17) commit (deletes scripts/copy_sync_check.py and the two Phase 8 / Phase 11 prompt lines; the pipeline reverts to no record-sync check)",
    "commit": "ca63631"
+  },
+  {
+   "run_date": "2026-07-18",
+   "kind": "fix",
+   "area": "scripts",
+   "change": "copy_sync_check.py now accepts copy.json['slides'] in EITHER shape: a dict keyed 'S1'.. (the record form) OR a list of per-slide objects (the copywriter / Phase 6 form). A new normalize_slides() keys a list into the 'S<n>' dict on each item's integer 'n' field (1-based position fallback) before any comparison, in both check() and main()'s orphan scan. Matching logic is unchanged; non-rendered bookkeeping fields (claim_ids etc.) were already in SKIP_KEYS and still cause no miss.",
+   "trigger": "Run 2026-07-18 contract mismatch: the copywriter agent + Phase 6 emit copy.json['slides'] as a LIST of {n, kicker, headline, body, labels, chips, claim_ids}, but copy_sync_check (authored 2026-07-17, only ever verified against that day's DICT-form copy.json) calls slides.items() and crashed with \"AttributeError: 'list' object has no attribute 'items'\" on the real list-form artifact; the showrunner hand-restructured copy.json to a dict to run the Phase 8 / Phase 11 guard. Every list-form run defeats the record-sync net until manually converted. Weakens no gate: it only makes the existing guard runnable on the artifact it guards.",
+   "files": [
+    "scripts/copy_sync_check.py"
+   ],
+   "verification": "Pre-fix HEAD version on a faithful list-form reconstruction of this run's copy.json CRASHES (AttributeError at slides.items(), exit 1). Post-fix: (1) DICT form (shipped out/2026-07-18/copy.json) PASSes exit 0 -- 59 authored strings, backward compat intact; (2) LIST form PASSes exit 0 -- same 59 strings, so normalization is faithful; (3) defect reconstruction (list form with S3 kicker + S3 chip made stale) FAILs exit 1 and reports exactly the S3 kicker and 'chips[1]' misses on the correct slide -- the gate still catches drift. Engine untouched and re-verified: out/2026-07-18/slides render OK + qa PASS 0/0; examples/demo-deck render OK + qa WARN (known slide-03 busy-art warn, exit 0), both unchanged. No gate/threshold weakened; no new runtime dependency (stdlib only); ast.parse OK; shipped slides not modified.",
+   "rollback": "revert the upgrade(2026-07-18) commit (removes normalize_slides() and the two call-site changes; copy_sync_check returns to dict-only, crashing on list-form copy.json)",
+   "commit": "upgrade(2026-07-18) commit on branch tsturg/intelligent-brahmagupta-gg46mr (revert this single prefixed commit to roll back)"
   }
  ],
  "scan_log": [
@@ -388,6 +401,13 @@
    "searches": 4,
    "found": "2026 editorial maps converge on MINIMALIST: calm background (warm light grey / soft beige / very pale blue), one-to-two accent colors for the focal region, LIGHT relief (soft gradients / faint contour-inspired lines / simple water texture) over loud hillshade, label only narrative-referenced features, a small locator inset highlighting the focal region, short annotations. News-map content analysis (Designing Maps in News Stories) quantifies real-desk convention prevalence: scale bar 31.2%, inset 28.1%, legend 25%, north arrow 18.8%. Sources: https://www.onestopmap.com/blog/minimalist-editable-vector-maps/ , https://www.researchgate.net/publication/405348439_Designing_Maps_in_News_Stories_A_Longitudinal_Visual_Content_Analysis_of_Cartographic_Design_in_US_Data_Journalism",
    "outcome": "parked (FIELD_NOTES 2026-07-17: locator-inset + scale-bar + faint-contour light-relief convention set for akgeo map heroes, with source URLs). No frontier code applied: it is an improvement not a reactive fix, it edits shared cartographic rendering craft wanting multi-deck A/B (overlaps the parked relief-depth helper 2026-07-15 and map design-space reference 2026-07-10), and the daily 0-1 budget was taken by the reactive copy-sync fix."
+  },
+  {
+   "run_date": "2026-07-18",
+   "focus": "LinkedIn platform / algorithm 2026 (rotated off the last three foci: self-improving-pipeline 2026-07-14, procedural-relief 2026-07-15, editorial-dataviz 2026-07-17; never a primary focus before)",
+   "searches": 4,
+   "found": "The document-carousel strategy is REVALIDATED: PDF/document posts remain the highest-reach native format (~6.60% engagement; 3-6x text/image/video), and the March 2026 Authenticity Update + the 360Brew ranking model reward topical depth, real dwell time, and honest non-baity copy -- exactly this studio's output. Current specs already compliant: 9 slides sits in the 8-10 sweet spot (reach drops after slide 10), 2160x2700 is the recommended portrait 4:5, the 80px safe zone beats the >=50px minimum. Two levers surfaced but are strategy/craft, not bounded machine changes: SAVES are now the dominant ranking signal (~5x a like, ~2x a comment) with infographics the most common top-1% format (28.6%) -> save-worthiness as an explicit storyboard-gate/scorer objective; and the external-link penalty escalated (~60% less reach with a link, residual penalty even for link-in-first-comment) -> a maintainer strategy note, since sources-in-comments is integrity-required. Sources: https://www.oktopost.com/blog/linkedin-carousel-pdf-best-practices/ , https://www.dataslayer.ai/blog/linkedin-algorithm-february-2026-whats-working-now",
+   "outcome": "parked (FIELD_NOTES 2026-07-18: save-worthiness scorer/gate candidate + escalated external-link-penalty maintainer note, with source URLs). No frontier code applied: both levers are unbounded strategy/craft edits wanting careful design, and the daily 0-1 budget was taken by the reactive copy_sync_check list-form fix."
   }
  ]
 }
