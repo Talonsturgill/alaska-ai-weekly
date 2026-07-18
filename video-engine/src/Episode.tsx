@@ -541,8 +541,8 @@ const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6];
 // S1 0-9.92s (lines 1-2), S2 9.92-20.16s (lines 3-4), S3 20.16-26.24s (lines 5-6),
 // S4 26.24-31.72s (lines 7-8), S5 31.72-41.84s (lines 9-10), S6 41.84-53.34s (lines 11-13).
 const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
-  {from: 0, dur: 298}, {from: 298, dur: 307}, {from: 605, dur: 182},
-  {from: 787, dur: 165}, {from: 952, dur: 303}, {from: 1255, dur: 378},
+  {from: 0, dur: 294}, {from: 294, dur: 307}, {from: 601, dur: 183},
+  {from: 784, dur: 164}, {from: 948, dur: 304}, {from: 1252, dur: 378},
 ];
 
 export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {

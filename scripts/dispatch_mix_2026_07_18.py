@@ -11,7 +11,9 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-VIDEO_SECS = 1633 / 30  # matches Root durationInFrames after adding the pre-button breath gap
+_TIMELINE = json.load(open(os.path.join(OUT, "vo_lines.json")))
+TAIL = 2.6  # hold after the last word, matches scripts/build_scenes.py's TAIL
+VIDEO_SECS = max(x["end"] for x in _TIMELINE["lines"]) + TAIL
 
 
 def run(cmd):
@@ -58,6 +60,7 @@ def sfx(path, kind):
 # SFX events cut to the picture, derived from the VO line starts (out/dispatch/vo_lines.json)
 # so they stay in sync with the actual synthesized timing. L[i] = start time of VO line i.
 _lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
+_lines_by_idx = {x["idx"]: x for x in _lines}
 L = {x["idx"]: x["start"] for x in _lines}
 EVENTS = [
     (L[0] + 0.05, "whoosh"),   # S1: aerial push begins, boundary starts drawing
@@ -84,11 +87,15 @@ EVENTS = [
 # (din = rms(t0-0.35,t0+0.35); neighborhood = rms(t0-3,t0-0.6) vs rms(t0+0.6,t0+3)). The dip must
 # therefore be centered at t0 too, not started at t0 -- starting AT t0 put half the din window
 # outside the ducked region and diluted the measured drop to ~2dB instead of the real ~18dB.
-# True silent gap is [L[11].end, L[12].start] = [48.06, 49.66]s (1.6s). Center at 48.86s with a
-# +/-0.55s dip half-width: dip covers [48.31,49.41], clear of both the gap edges (0.25s buffer
-# each side) AND the gate's neighborhood windows (which start exactly at t0+/-0.6).
-SILENCE_DIP_CENTER = 48.86
+# Center on the true silent gap [L[11].end, L[12].start] (recomputed from the live timeline, not
+# hardcoded, so a future retime can't silently drift this out of the gap again) with a +/-0.55s
+# dip half-width, clear of both the gap edges and the gate's neighborhood windows (which start
+# exactly at t0+/-0.6).
+_gap0, _gap1 = _lines_by_idx[11]["end"], _lines_by_idx[12]["start"]
+SILENCE_DIP_CENTER = round((_gap0 + _gap1) / 2, 3)
 DIP_HALF = 0.55
+assert _gap0 <= SILENCE_DIP_CENTER - DIP_HALF and SILENCE_DIP_CENTER + DIP_HALF <= _gap1, \
+    f"dip window doesn't fit the silent gap [{_gap0},{_gap1}]"
 SILENCE_DIP_AT = SILENCE_DIP_CENTER - DIP_HALF
 DIP_LEN = 2 * DIP_HALF
 
