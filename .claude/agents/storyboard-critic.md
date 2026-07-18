@@ -52,7 +52,9 @@ Do NOT launch or spawn any subagents; do the work yourself and return your resul
    scene change, FAIL it. Confirm transitions MEAN something (a graphic match that rhymes, a hard cut on the
    beat, a carried element, not a stock swipe, not a push-in standing in for a cut), and each shot has a
    CENTER-frame focal action, not just corner chrome.
-5. **Honesty + fit.** The concept fits THIS story and its one honest caveat; the palette is a fresh
+5. **Honesty + fit.** The concept fits THIS story and its earned angle and honest turn (whatever
+   the facts pivot to, a fair counter-point, a real limit, a genuine upside, or an open question,
+   not a forced downbeat); the framing is even-handed, not reflexively sour; the palette is a fresh
    color world; nothing culturally tone-deaf.
 
 ## Return format (strict JSON)

@@ -50,7 +50,7 @@ When grading a rendered video (config/dispatch_rubric.yaml), the review pack in
   "threshold": 8.0,
   "ship": false,
   "weakest_criterion": "Engagement question",
-  "one_sentence_fix": "End with a real, debatable question tied to the post's structural tension instead of a generic prompt."
+  "one_sentence_fix": "End with a real, debatable question tied to the post's actual angle (its tension, open question, or opportunity) instead of a generic prompt."
 }
 ```
 

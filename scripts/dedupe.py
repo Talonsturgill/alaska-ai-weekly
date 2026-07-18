@@ -49,18 +49,24 @@ def main():
     pl = sub.add_parser("list");  pl.add_argument("--days", type=int, default=14)
     pc = sub.add_parser("check"); pc.add_argument("--entities", required=True); pc.add_argument("--days", type=int, default=7)
     pa = sub.add_parser("add")
-    for f in ["date","topic","slug","entities","archetype","palette","voice"]:
-        pa.add_argument("--"+f, default="")
+    for f in ["date","topic","slug","entities","archetype","palette","voice","stance","angle"]:
+        pa.add_argument("--"+f, default="",
+                        help="stance = celebratory|cautionary|curious|mixed (for register rotation); "
+                             "angle = one-sentence thesis" if f in ("stance","angle") else None)
     pa.add_argument("--composition", default="", help="storyboard fingerprint as JSON (the 7 axes)")
     a = ap.parse_args(); d = load()
 
     if a.cmd == "list":
         rs = recent(d, a.days)
         if not rs: print("(ledger empty — anything is fresh)"); return
-        print(f"# Covered in the last {a.days} days — DO NOT repeat:")
+        print(f"# Covered in the last {a.days} days — DO NOT repeat (and rotate STANCE, don't stack one):")
         for e in rs:
             ents = e.get("key_entities") or []
-            print(f"- {e.get('date')} | {e.get('topic')} | entities: {', '.join(ents) if isinstance(ents,list) else ents}")
+            st = e.get("stance") or "?"
+            print(f"- {e.get('date')} | stance={st} | {e.get('topic')} | entities: {', '.join(ents) if isinstance(ents,list) else ents}")
+        stances = [e.get("stance") for e in rs if e.get("stance")]
+        if stances:
+            print(f"# recent stances (oldest→newest): {', '.join(stances)}  — if these skew one way, look hard for the other.")
 
     elif a.cmd == "check":
         cand = norm(a.entities)
@@ -77,7 +83,8 @@ def main():
         entry = {
             "date": a.date or dt.date.today().isoformat(),
             "topic": a.topic, "slug": a.slug, "key_entities": ents,
-            "archetype": a.archetype, "palette": a.palette, "voice": a.voice}
+            "archetype": a.archetype, "palette": a.palette, "voice": a.voice,
+            "stance": a.stance, "angle": a.angle}
         if a.composition:
             try:
                 entry["composition"] = json.loads(a.composition)
