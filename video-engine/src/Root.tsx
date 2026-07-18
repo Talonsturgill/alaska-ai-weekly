@@ -9,15 +9,17 @@ const standoffSchema = z.object({
   noLabel: z.string(),
 });
 
-// 1080x1920 (9:16), 30fps. "Dispatch" = the full ~55s episode timeline (8 scenes
-// wired to the VO line anchors, captions overlaid). "Standoff" kept for look-dev.
+// 1080x1920 (9:16), 30fps. "Dispatch" = the full episode timeline (6 scenes wired
+// to the VO line anchors, captions overlaid). "Standoff" kept for look-dev.
+// 2026-07-18: retimed to the actual synthesized VO (out/dispatch/vo_lines.json,
+// 53.34s = 1600 frames @ 30fps).
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
         id="Dispatch"
         component={Episode}
-        durationInFrames={1770}
+        durationInFrames={1600}
         fps={30}
         width={1080}
         height={1920}

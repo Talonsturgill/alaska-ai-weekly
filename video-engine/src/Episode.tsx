@@ -422,7 +422,7 @@ const S3: React.FC = () => {
   const {fps} = useVideoConfig();
   const signIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 110}});
   const charIn = spring({frame: f - 90, fps, config: {damping: 12, stiffness: 100}});
-  const fenceT = interpolate(f, [110, 230], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const fenceT = interpolate(f, [95, 170], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   return (
     <AbsoluteFill style={{backgroundColor: SKY_HORIZON}}>
       <DawnForestBG f={f} parallax={0.7} />
@@ -537,10 +537,12 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
 
 // ================================================================ TIMELINE
 const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6];
-// 30fps. Shots: S1 0-9s, S2 9-18s, S3 18-27s, S4 27-36s, S5 36-45s, S6 45-59s.
+// 30fps, retimed to the actual synthesized VO (out/dispatch/vo_lines.json, 53.34s total):
+// S1 0-9.92s (lines 1-2), S2 9.92-20.16s (lines 3-4), S3 20.16-26.24s (lines 5-6),
+// S4 26.24-31.72s (lines 7-8), S5 31.72-41.84s (lines 9-10), S6 41.84-53.34s (lines 11-13).
 const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
-  {from: 0, dur: 270}, {from: 270, dur: 270}, {from: 540, dur: 270},
-  {from: 810, dur: 270}, {from: 1080, dur: 270}, {from: 1350, dur: 420},
+  {from: 0, dur: 298}, {from: 298, dur: 307}, {from: 605, dur: 182},
+  {from: 787, dur: 165}, {from: 952, dur: 303}, {from: 1255, dur: 345},
 ];
 
 export const Episode: React.FC<EpisodeProps> = ({captions, scenes}) => {
