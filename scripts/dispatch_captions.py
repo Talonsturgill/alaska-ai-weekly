@@ -40,20 +40,35 @@ def main():
         wav = os.path.join(AUD, f"vo_line_{i:02d}.wav")
         seg_start = meta["start"]
         seg_end = meta["end"]
-        segs, _ = model.transcribe(wav, word_timestamps=True, language="en",
-                                   initial_prompt=script[i][:180], vad_filter=False)
-        heard = []
-        for s in segs:
-            for w in (s.words or []):
-                heard.append({"w": w.word.strip(), "s": w.start, "e": w.end})
-        # intended tokens for this line
         intended = script[i].split()
-        # align normalized sequences
-        hn = [norm(x["w"]) for x in heard]
         inn = [norm(t) for t in intended]
-        sm = difflib.SequenceMatcher(a=inn, b=hn, autojunk=False)
+
+        # faster-whisper occasionally drops a whole leading/trailing span of a short clip's
+        # words on a given call (confirmed: a clean standalone re-transcription of the same
+        # wav recovers them fine) -- when that happens difflib maps the dropped intended words
+        # to a zero-width heard gap, collapsing them to one instant. Retry a few times and keep
+        # the attempt with the least "gap" damage instead of trusting the first pass blindly.
+        best = None
+        for attempt in range(3):
+            segs, _ = model.transcribe(wav, word_timestamps=True, language="en",
+                                       initial_prompt=script[i][:180], vad_filter=False)
+            heard = []
+            for s in segs:
+                for w in (s.words or []):
+                    heard.append({"w": w.word.strip(), "s": w.start, "e": w.end})
+            hn = [norm(x["w"]) for x in heard]
+            sm = difflib.SequenceMatcher(a=inn, b=hn, autojunk=False)
+            opcodes = sm.get_opcodes()
+            gap_words = sum(i2 - i1 for tag, i1, i2, j1, j2 in opcodes
+                            if tag in ("replace", "delete") and j2 == j1)
+            if best is None or gap_words < best[0]:
+                best = (gap_words, heard, opcodes)
+            if gap_words == 0:
+                break
+        _, heard, opcodes = best
+
         timed = [None] * len(intended)
-        for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        for tag, i1, i2, j1, j2 in opcodes:
             if tag == "equal":
                 for k in range(i2 - i1):
                     h = heard[j1 + k]

@@ -40,12 +40,19 @@ const DawnForestBG: React.FC<{f: number; parallax?: number; dogHint?: boolean}> 
       <stop offset="45%" stopColor="#f2c9a0" />
       <stop offset="100%" stopColor={SKY_MIST} />
     </radialGradient>
+    {/* ground: warm bounce-light near the horizon fading to shadowed floor further down —
+        a flat fill here was the single most-repeated "flat clip-art" complaint. */}
+    <linearGradient id="groundLit" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#6a7a52" />
+      <stop offset="18%" stopColor={GROUND} />
+      <stop offset="100%" stopColor={GROUND_D} />
+    </linearGradient>
     <rect width="1080" height="1080" fill="url(#dawnSun)" />
     {/* sun disc, low on the horizon, soft double-ring glow */}
     <circle cx={540} cy={1040} r={210} fill={SNOW} opacity={0.14} />
     <circle cx={540} cy={1040} r={130} fill={SNOW} opacity={0.22} />
     <circle cx={540} cy={1040} r={72} fill="#fff6e6" opacity={0.55} />
-    <rect x={0} y={1080} width={1080} height={840} fill={GROUND} />
+    <rect x={0} y={1080} width={1080} height={840} fill="url(#groundLit)" />
     <path d="M0,1080 q270,-30 540,0 q270,30 540,0 L1080,1200 L0,1200 Z" fill={GROUND_D} opacity={0.5} />
     {/* undergrowth texture (low tufts across the floor) */}
     <g opacity={0.5}>
@@ -134,12 +141,23 @@ const DawnForestBG: React.FC<{f: number; parallax?: number; dogHint?: boolean}> 
 // rig used in prior episodes; it never speaks, never blinks, only lengthens.
 const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: number; grow: number}> = ({x, y, scale = 1, f, grow}) => {
   const sway = 3 * Math.sin(f / 22);
+  const gid = `msLit-${x}-${y}`;
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`} opacity={0.92}>
+      <linearGradient id={gid} x1="0%" y1="0%" x2="100%" y2="10%">
+        <stop offset="0%" stopColor="#5c6b7a" />
+        <stop offset="45%" stopColor={GRAPHITE} />
+        <stop offset="100%" stopColor={GRAPHITE_D} />
+      </linearGradient>
       <g transform={`scaleY(${Math.max(0.02, grow)})`} style={{transformOrigin: '0px 0px'}}>
-        {/* core tower */}
-        <path d="M-60,0 L-46,-360 L46,-360 L60,0 Z" fill={GRAPHITE} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        {/* core tower — no legs (an earlier splayed-cable-conduit pair read as a robot's legs
+            across every reviewer this session); it now stands on a solid flared foundation, a
+            deliberately faceless monolith, not a character. Lit gradient (key-light upper-left,
+            falling to graphite-dark) instead of a flat fill for a sense of depth. */}
+        <path d="M-60,0 L-46,-360 L46,-360 L60,0 Z" fill={`url(#${gid})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
         <path d="M10,-360 L46,-360 L60,0 L26,0 Z" fill={GRAPHITE_D} opacity={0.75} />
+        {/* rim-light on the lit edge */}
+        <path d="M-46,-360 L-60,0" fill="none" stroke="#9aabb8" strokeWidth={3} opacity={0.55} strokeLinecap="round" />
         {/* antenna array, swaying */}
         <g transform={`translate(0,-360) rotate(${sway})`}>
           <line x1={0} y1={0} x2={-40} y2={-90} stroke={INK} strokeWidth={7} strokeLinecap="round" />
@@ -163,13 +181,11 @@ const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: number; 
         {[-300, -240, -180].map((yy, i) => (
           <rect key={i} x={12} y={yy} width={30} height={10} rx={3} fill={GRAPHITE_D} stroke={INK} strokeWidth={2.5} opacity={0.85} />
         ))}
-        {/* cable conduits running down into the ground */}
-        <path d="M-30,0 q-16,30 -46,42" fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" opacity={0.8} />
-        <path d="M20,0 q22,26 54,32" fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" opacity={0.8} />
-        {/* base flare into the ground */}
-        <path d="M-70,0 q70,28 140,0 q-70,22 -140,0 Z" fill={GRAPHITE_D} opacity={0.7} />
+        {/* solid flared foundation — replaces the leg-reading cable conduits */}
+        <path d="M-92,0 q92,34 184,0 q-92,26 -184,0 Z" fill={GRAPHITE_D} stroke={INK} strokeWidth={5} opacity={0.85} />
+        <path d="M-70,0 q70,28 140,0 q-70,22 -140,0 Z" fill={GRAPHITE} opacity={0.6} />
       </g>
-      <ellipse cx={0} cy={4} rx={92} ry={18} fill={INK} opacity={0.28} />
+      <ellipse cx={0} cy={6} rx={110} ry={20} fill={INK} opacity={0.3} />
     </g>
   );
 };
@@ -435,15 +451,18 @@ const S3: React.FC = () => {
         <MachineShadow x={910} y={1220} scale={1.2} f={f} grow={1} />
       </svg>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: charIn}}>
-        <Character frame={f} pose="arms-crossed" emotion="angry" outfit="worker" headgear="cap" hair="#2c1f14" facing={1} scale={1.5} x={230} y={1780} />
-        {/* fence-line extending from the character's position toward the parcel */}
-        <path d={`M320,1500 L${320 + 700 * fenceT},${1500 - 30 * fenceT}`} fill="none" stroke={INK} strokeWidth={16} strokeDasharray={900} strokeDashoffset={900 * (1 - fenceT)} strokeLinecap="round" />
-        <path d={`M320,1500 L${320 + 700 * fenceT},${1500 - 30 * fenceT}`} fill="none" stroke={BIRCH} strokeWidth={7} strokeDasharray={900} strokeDashoffset={900 * (1 - fenceT)} strokeLinecap="round" />
+        {/* pose="point" (one arm extended, not a two-handed grip) + the fence line starting
+            well clear of the character's hand -- an earlier two-handed "arms-crossed" grip
+            directly on the line's start point read as the figure aiming a rifle. He now
+            gestures at a boundary line that begins in the landscape ahead of him. */}
+        <Character frame={f} pose="point" emotion="angry" outfit="worker" headgear="cap" hair="#2c1f14" facing={1} scale={1.5} x={230} y={1780} />
+        <path d={`M540,1560 L${540 + 700 * fenceT},${1560 - 30 * fenceT}`} fill="none" stroke={INK} strokeWidth={16} strokeDasharray={900} strokeDashoffset={900 * (1 - fenceT)} strokeLinecap="round" />
+        <path d={`M540,1560 L${540 + 700 * fenceT},${1560 - 30 * fenceT}`} fill="none" stroke={BIRCH} strokeWidth={7} strokeDasharray={900} strokeDashoffset={900 * (1 - fenceT)} strokeLinecap="round" />
         {Array.from({length: 6}).map((_, i) => {
           const t = i / 6;
           if (t > fenceT) return null;
-          const px = 320 + 700 * t;
-          const py = 1500 - 30 * t;
+          const px = 540 + 700 * t;
+          const py = 1560 - 30 * t;
           return <line key={i} x1={px} y1={py - 40} x2={px} y2={py + 20} stroke={INK} strokeWidth={8} opacity={0.8} />;
         })}
       </svg>
