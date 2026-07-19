@@ -308,17 +308,17 @@ export const HazeOverlay: React.FC<{
       {/* the wash: a translucent color field, desaturating/cooling the scene under it */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: color, opacity: 0.2 * a, mixBlendMode: 'multiply',
+        background: color, opacity: 0.26 * a, mixBlendMode: 'multiply',
       }} />
       {/* a normal-blend tint on top so the haze reads as a real color cast, not
           just a darkening -- multiply alone barely shows against a dark scene */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: color, opacity: 0.3 * a,
+        background: color, opacity: 0.42 * a,
       }} />
       {/* grid lattice: the regulatory-boundary read, alpha-building with `amount` */}
       <svg width="1080" height="1920" viewBox="0 0 1080 1920"
-        style={{position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.5 * a}}>
+        style={{position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.62 * Math.min(1, a)}}>
         <defs>
           <pattern id={id} width={gridSpacing} height={gridSpacing} patternUnits="userSpaceOnUse">
             <path d={`M${gridSpacing},0 L0,0 0,${gridSpacing}`} fill="none" stroke={color} strokeWidth={1.4} opacity={0.55} />

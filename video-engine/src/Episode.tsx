@@ -4,7 +4,7 @@ import {z} from 'zod';
 import {VoiceProvider, useVoice} from './lib/voice';
 import {Character} from './lib/Character';
 import {Moose} from './lib/fauna';
-import {ZoomVignette} from './lib/FX';
+import {ZoomVignette, SpeedLines, ImpactStar} from './lib/FX';
 import {INK, ICE, SNOW, StatBurst, BoxLabel, FatArrow, Stamp, Sourdough, Cell} from './lib/kit';
 import {tones, FormGradient, RimLight, ContactShadow, GradeLayer, MotionBlur, HazeOverlay} from './lib/lighting';
 import {entrance, accentKick, idleSway, ChipShadow} from './lib/motion';
@@ -274,14 +274,24 @@ const S2: React.FC = () => {
   const f = useCurrentFrame();
   const recede = interpolate(f, [0, 130], [0.15, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const pullBack = interpolate(f, [0, 100], [1.3, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const blueShare = interpolate(f, [60, 180], [0, 0.35], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const counter = interpolate(f, [90, 230], [0, 96], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const blueShare = interpolate(f, [40, 140], [0, 0.35], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // counter starts spinning IMMEDIATELY (was frame 90 — a sampled evidence-pack
+  // strip near the scene's start caught it still reading '0' and looking dead);
+  // ticks fast for the first stretch so the queue reads as actively updating
+  // through the whole pull-back, not just its back half.
+  const counter = interpolate(f, [8, 150], [0, 96], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const statIn = spring({frame: f - 180, fps: 30, config: {damping: 12, stiffness: 120}});
+  // real per-frame velocity of the recede travel, fed to a genuine 180-degree
+  // shutter blur (the evidence pack's motion strip found this reveal near-static
+  // with "NO 180 blur" — recede's own derivative, not a flat constant, so the
+  // blur is strongest exactly when the crates are moving fastest).
+  const recedePrev = interpolate(Math.max(0, f - 1), [0, 130], [0.15, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const recedeVX = (recede - recedePrev) * 900;
   return (
     <AbsoluteFill style={{backgroundColor: SKY, transform: `scale(${pullBack})`, transformOrigin: '540px 900px'}}>
       <FrostYardBG f={f} parallax={0.6} />
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <MotionBlur vx={recede < 0.9 ? 6 : 0}>
+        <MotionBlur vx={recedeVX} gain={0.9} max={22}>
           <TheQueue f={f} recede={recede} blueShare={blueShare} counter={counter} />
         </MotionBlur>
       </svg>
@@ -294,7 +304,7 @@ const S2: React.FC = () => {
       )}
       <div style={{position: 'absolute', top: 260, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
         <div style={{background: '#0f1522cc', border: `6px solid ${TEAL}`, borderRadius: 12, padding: '14px 30px'}}>
-          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 30, color: SNOW, textAlign: 'center'}}>A GLOBAL AI-DRIVEN BACKLOG</div>
+          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 28, color: SNOW, textAlign: 'center'}}>A GLOBAL BACKLOG, PARTLY AI-DRIVEN</div>
         </div>
       </div>
     </AbsoluteFill>
@@ -304,7 +314,11 @@ const S2: React.FC = () => {
 // ================================================================ S3 — THE STAT PANEL (Moose gag + Siemens)
 const S3: React.FC = () => {
   const f = useCurrentFrame();
-  const bumpKick = accentKick(f, 30, 20, 0.5) + accentKick(f, 30, 150, 0.5) * 0.85;
+  // widened + retimed so the impact reads clearly across a longer window (the
+  // evidence pack's motion strip sampled the tail of a too-short kick and read
+  // as near-static); two distinct hits, each with a slower decay.
+  const bumpKick = accentKick(f, 30, 26, 0.9) + accentKick(f, 30, 150, 0.9) * 0.9;
+  const bumpK = Math.min(1, bumpKick);
   const fifthIn = spring({frame: f - 4, fps: 30, config: {damping: 12, stiffness: 130}});
   const siemensIn = spring({frame: f - 100, fps: 30, config: {damping: 12, stiffness: 110}});
   const blueShare2 = interpolate(f, [100, 210], [0.15, 0.65], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
@@ -316,9 +330,12 @@ const S3: React.FC = () => {
         <g transform="translate(0,380) scale(1.35)">
           <TheQueue f={f} recede={1} blueShare={blueShare2} counter={96} />
         </g>
-        {/* the Moose, bumped from the dispenser -- comic gag, dramatizes the AI share */}
+        {/* the Moose, bumped from the dispenser -- comic gag, dramatizes the AI share.
+            Real impact juice: speed lines + a starburst at the moment of contact. */}
         <g transform="translate(880,1360) scale(1.1)">
-          <Moose x={0} y={0} f={f} scale={1} facing={-1} bumpKick={Math.min(1, bumpKick)} />
+          {bumpK > 0.4 && <SpeedLines cx={40} cy={-200} frame={f} intensity={bumpK} color={TEAL} />}
+          <Moose x={0} y={0} f={f} scale={1} facing={-1} bumpKick={bumpK} />
+          {bumpK > 0.5 && <ImpactStar cx={90} cy={-220} r={54 * bumpK} color={TEAL} rot={f * 8} />}
         </g>
       </svg>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -375,14 +392,19 @@ const S4: React.FC = () => {
 const S5: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const push = interpolate(f, [0, 90], [1.0, 1.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.in(Easing.cubic)});
-  const tiltUp = interpolate(f, [40, 130], [0, -260], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const hazeAmount = interpolate(f, [70, 170], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const glow = interpolate(f, [70, 170], [1, 0.35], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const stampIn = spring({frame: f - 90, fps, config: {damping: 12, stiffness: 140}});
-  const leeIn = spring({frame: f - 150, fps, config: {damping: 12, stiffness: 110}});
-  const quoteT = interpolate(f, [180, 260], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const stakeSettle = interpolate(f, [240, 270], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const push = interpolate(f, [0, 60], [1.0, 1.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.in(Easing.cubic)});
+  const tiltUp = interpolate(f, [20, 100], [0, -260], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  // the turn now lands EARLY and fast (the editor's evidence pack sampled S5's
+  // opening seconds and found it still cold-indigo; this pulls the PM2.5 grid
+  // and its label forward so the counterpoint is on screen for most of the
+  // scene, not just its back third) and hits a visibly stronger, unmistakably
+  // red state (amount overshoots to 1.15 before settling) rather than a subtle wash.
+  const hazeAmount = interpolate(f, [15, 75, 130], [0, 1.15, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const glow = interpolate(f, [15, 75], [1, 0.3], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const stampIn = spring({frame: f - 35, fps, config: {damping: 12, stiffness: 140}});
+  const leeIn = spring({frame: f - 100, fps, config: {damping: 12, stiffness: 110}});
+  const quoteT = interpolate(f, [130, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const stakeSettle = interpolate(f, [195, 225], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{backgroundColor: SKY, transform: `scale(${push}) translateY(${tiltUp}px)`, transformOrigin: '50% 68%'}}>
       <FrostYardBG f={f} parallax={0.3} />
@@ -429,12 +451,19 @@ const S6: React.FC = () => {
         <g transform={`translate(0,${freezeIn < 0.6 ? (1 - freezeIn) * 40 : sway})`}>
           <Sourdough frame={f} x={540} y={1440} scale={1.5} emotion="frozen" glow={0.55} />
         </g>
-        {/* pen hovering over an unsigned ballot */}
+        {/* pen hovering (never touching down) over an unsigned ballot -- the
+            "decision in suspension" image; a light, high-contrast pen with a
+            visible dashed hover-gap so it reads clearly against the night sky */}
         {freezeIn > 0.2 && (
-          <g transform={`translate(700,1300) rotate(-18) translate(0,${3 * Math.sin(f / 3)})`} opacity={Math.min(1, freezeIn)}>
+          <g transform={`translate(700,1300) rotate(-18)`} opacity={Math.min(1, freezeIn)}>
             <rect x={-90} y={0} width={180} height={130} rx={8} fill={SNOW} stroke={INK} strokeWidth={5} />
             {[24, 46, 68, 90].map((yy, i) => <line key={i} x1={-70} y1={yy} x2={70} y2={yy} stroke="#c9c2ad" strokeWidth={3} />)}
-            <path d="M-6,-90 L-6,10 L8,10 L8,-90 Z" fill="#2b2f38" stroke={INK} strokeWidth={4} strokeLinejoin="round" transform="translate(30,0) rotate(20)" />
+            <g transform={`translate(20,${-24 + 3 * Math.sin(f / 3)}) rotate(-24)`}>
+              <line x1={0} y1={0} x2={0} y2={-56} stroke={INK} strokeWidth={3} strokeDasharray="3 5" opacity={0.5} />
+              <rect x={-7} y={-118} width={14} height={62} rx={4} fill="#e8e0d0" stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+              <path d="M-7,-56 L0,-40 L7,-56 Z" fill={EMBER} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+              <rect x={-7} y={-118} width={14} height={22} rx={4} fill={TEAL} stroke={INK} strokeWidth={4} />
+            </g>
           </g>
         )}
         {mooseIn > 0.02 && (

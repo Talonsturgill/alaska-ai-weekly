@@ -18,10 +18,10 @@
   },
   "hook": {
     "pattern": "in-medias-res",
-    "frame1": "Sourdough's mittened hand holds a frost-crusted $50,000 ticket stub up against a cold indigo pre-sunrise sky, his furnace-window chest glowing warm behind it.",
+    "frame1": "Sourdough stands against a cold indigo pre-sunrise sky, his furnace-window chest glowing warm, a frost-crusted $50,000 HOLD ticket pinned proudly to it.",
     "headline": "He Paid $50K Just To Wait",
     "motion_by_s": 1.2,
-    "loopback": "The frozen ticket stub from frame 1 becomes the frozen, unsigned ballot in the final freeze, same mittened hand, same held pose."
+    "loopback": "The pinned $50,000 ticket from frame 1 rhymes with the unsigned ballot resting against him in the final freeze, same warm chest-glow, same held stillness."
   },
   "audio_arc": {
     "build_steps": ["ticket chime intro", "queue whoosh pull-back", "stat-burst ticks accumulate", "door-slam percussion doubles down", "turbine clank + battery synth rise"],

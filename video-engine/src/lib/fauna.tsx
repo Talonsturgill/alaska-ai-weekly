@@ -43,9 +43,9 @@ export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; f
   const tail = 6 * Math.sin(f / 9);
   // squash-and-stagger: a lateral shove + a volume-preserving squash at the moment
   // of impact, recoiling back upright as bumped relaxes to 0.
-  const staggerX = -bumped * 34 * facing;
-  const sx = 1 + bumped * 0.14;
-  const sy = 1 - bumped * 0.1;
+  const staggerX = -bumped * 68 * facing;
+  const sx = 1 + bumped * 0.26;
+  const sy = 1 - bumped * 0.2;
   return (
     <g transform={`translate(${x + staggerX},${y}) scale(${scale * facing * sx},${scale * sy})`}>
       <FormGradient id={id} t={t} />
