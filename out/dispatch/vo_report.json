@@ -1,0 +1,55 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.98,
+    "heard": "A power plant in North Pole is holding a ticket, $50,000 just to keep its place in line. The line is a global turbine backlog, jammed by AI data centers, GE-Vernova's backlog near a hundred gigawatts, a fifth of it, data centers, Siemens Energy, over 60% of this year's orders are data centers. Fairbanks lost its cheap power in 2024, its gas deal in 2025. The plant planned ahead, a second turbine, $90 to $120 million, plus a battery bed. But North Pole already fails the federal air test. You cannot add to the pollution in a non-attainment area and be legally correct. The board votes July 28th. Nobody's decided. Not even him.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.04,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 6.83,
+        "voiced_frac": 0.57,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 49.56,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": -17.9,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean"
+  },
+  "all_reports": [
+    {
+      "pass": false,
+      "score": 0.952,
+      "diagnosis": "WORDS: WER 0.095 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    },
+    {
+      "pass": true,
+      "score": 0.98,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": false,
+      "score": 0.968,
+      "diagnosis": "LEVEL: -22.5 LUFS out of band \u2014 normalize in the mix."
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

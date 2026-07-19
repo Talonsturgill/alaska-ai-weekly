@@ -617,3 +617,34 @@ dispatch_history:
     light_story: dawn-backlight
     camera_strategy: push-then-loopback
     motion_vector: boundary-draw+match-cut
+- date: '2026-07-19'
+  topic: GVEA weighs second GE LM6000 naphtha turbine for North Pole Power Plant
+  slug: gvea-turbine-north-pole
+  key_entities:
+  - gvea
+  - golden valley electric association
+  - north pole power plant
+  - lm6000
+  - ge vernova
+  - siemens energy
+  - delta wind
+  - patrice lee
+  archetype: enthusiast
+  palette: cold indigo pre-sunrise sky, ember-orange furnace glow, server-teal queue
+    light, ash-red haze warning
+  voice: Gemini native TTS, gemini-3.1-flash-tts-preview, voice Sulafat
+  stance: curious
+  angle: The genuinely interesting story is that a global, AI-driven turbine market
+    is now setting terms inside an Interior Alaska boardroom, and GVEA is so far responding
+    like a sophisticated buyer, not a victim; the honest open question is whether
+    this specific naphtha turbine is the cheapest firm megawatt available before the
+    window closes, or whether Delta Wind plus batteries can actually cover the worst
+    winter hour.
+  composition:
+    pov: eye-level-immersive
+    motion_vector: push-in-only
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    camera_strategy: slow-push-with-tilt-reveal
+    light_story: cold-dawn-then-haze-flush

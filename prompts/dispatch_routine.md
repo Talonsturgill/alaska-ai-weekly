@@ -145,6 +145,13 @@ repeat ever.
 3. Voice venv: `.venv-voice/bin/python -c "import chatterbox, faster_whisper, resemblyzer"`;
    build via scripts/setup_env.sh if missing.
 4. Create the run branch claude/dispatch-<date> off latest main.
+5. STALE-SCRATCH GUARD (added 2026-07-19, see docs/RUN_UPGRADES.md): `out/` is gitignored
+   scratch and can carry files across sessions/containers. This has bitten TWO runs now — 07-18
+   found a stale `shots.json` from 07-17, and 07-19 found a stale `post.txt`/`sources.json`/
+   `shots.json`/`vo_script.json` left over from a run about an ENTIRELY DIFFERENT story. Before
+   Phase 1: `rm -rf out/dispatch` (full wipe, not a per-file check) so every artifact this run
+   reads or writes is provably from this run. Never trust an `out/dispatch/*` file's content
+   without checking it was written or regenerated in the CURRENT run.
 
 ## PHASE 1: RESEARCH (go wide; non-recursive)
 
