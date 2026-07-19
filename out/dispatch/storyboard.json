@@ -25,10 +25,10 @@
   },
   "audio_arc": {
     "build_steps": ["ticket chime intro", "queue whoosh pull-back", "stat-burst ticks accumulate", "door-slam percussion doubles down", "turbine clank + battery synth rise"],
-    "riser_at": 38.0,
-    "dip_at": 40.5,
-    "silence_at": 58.5,
-    "payoff_at": 60.5,
+    "riser_at": 35.34,
+    "dip_at": 38.2,
+    "silence_at": 38.2,
+    "payoff_at": 48.3,
     "button_pattern": "callback"
   },
   "shots": [
