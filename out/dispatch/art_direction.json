@@ -1,0 +1,43 @@
+{
+  "story_ref": "GVEA's Turbine Ticket (out/dispatch/storyboard.json)",
+  "palette": {
+    "sky": {"hex": "#1B2A4A", "role": "cold indigo pre-sunrise sky, the Interior Alaska dawn before the sun clears the ridge"},
+    "ground": {"hex": "#3A4A63", "role": "frost-blue snow shadow base, with a warm peach-cream highlight (#F2DCC4) where dawn light grazes it"},
+    "hero": {"hex": "#FF8C42", "role": "ember-orange furnace-window glow: Sourdough's chest, the warmth of a local institution that planned ahead"},
+    "accent": {"hex": "#3DDBD9", "role": "server-teal queue light: the cold, impersonal glow of the global data-center backlog cutting into the line"},
+    "shadow": {"hex": "#C0392B", "role": "ash-red haze warning: the PM2.5 non-attainment overlay that floods in at the turn, the one color that must never feel decorative, it is the counterpoint made visible"}
+  },
+  "palette_why": "Diverges from the last 2 dispatches: 07-17 was amethyst-plum/copper/citrine/phosphor-lime (a subterranean jewel-tone drill scene); 07-18 was dawn-birch/viridian/husky-amber/graphite/crimson (a naturalistic dawn monolith). This palette shares no meaningful tokens with either. The story motivates every color: warm ember = Sourdough's earned, local competence; cold server-teal = the impersonal global AI-data-center scale that dwarfs him; ash-red = the honest, undodgeable cost (PM2.5 haze) that the competence beat must not paper over. Blue appears here ONLY as the antagonist-adjacent queue light, motivated by the literal server/data-center glow, not as a lazy default backdrop.",
+  "light": {
+    "time_of_day": "pre-sunrise, Interior Alaska winter dawn: sun below the horizon, sky lit but no direct sun yet",
+    "direction": "low, raking key light from due east (off-frame right), long cold shadows",
+    "key_fill_rim": "key = cold indigo ambient sky-fill (soft, shadowless, the pre-dawn look); fill = Sourdough's own furnace-window chest acts as a PRACTICAL warm fill light on his own face and nearby snow, motivated and diegetic; rim = a thin ember-orange rim on Sourdough's silhouette from the eventual sunrise glow at the horizon line",
+    "depth_approach": "layered parallax: a near-frost-particle plane, a mid hero plane (Sourdough/Cell/queue), a far horizon plane (the receding order queue and distant data-center glow); ContactShadow under Sourdough's feet and RimLight per lib/lighting.tsx keep him dimensional against the flat sky",
+    "the_turn_light_change": "at beat 10 (the PM2.5 tilt-up), the practical warm fill from Sourdough's chest visibly DIMS one stop and the ambient sky-fill desaturates toward grey-red as the HazeOverlay (new craft-advance layer, see below) settles over the scene — light itself performs the turn, not just an overlay graphic"
+  },
+  "shape_language": {
+    "grammar": "deliberate contrast: Sourdough, Cell, and the North Pole plant are ROUNDED, blocky, homely industrial shapes (soft rivet domes, a friendly square furnace-window face, mitten-rounded hands) reading as an approachable REGIONAL institution. The global order queue and its data-center cameo silhouettes are COLD RECTILINEAR shapes: sharp uniform crate edges, a hard grid of identical glowing racks, no faces. The haze grid at the turn is an even harder geometric overlay (a literal grid lattice) to make the federal/regulatory nature of the PM2.5 non-attainment zone legible as a shape, not just a color wash.",
+    "why": "the shape grammar carries the thesis: round+warm+local = the plant reading as a person you root for; angular+cold+global = the impersonal market squeezing him; a hard grid = the equally impersonal, equally real regulatory fact he cannot outrun."
+  },
+  "casting": {
+    "from_manifest_for_continuity": ["a background Moose (fauna.tsx) for the recurring comic gag", "AlaskaMini map kit for the North Pole pin and supply-line SwingSigns", "HUD kit (StatBurst/BoxLabel/FatArrow/Stamp) for GE Vernova/Siemens Energy stats and the PM2.5 stamp", "Character rig base for Patrice Lee (parka, worried-then-resolute emotion, arms-crossed pose)"],
+    "net_new_this_run": ["Sourdough: the hero, a personified North Pole Power Plant characterized object (see growth mandate below) — chosen because the story needed a warm, competent, non-antagonist institutional face, and the manifest's only prior institutional character (MachineShadow) is deliberately faceless/cold, wrong register for a competence beat", "Cell: a battery-storage sidekick characterized object — chosen to give the story's real parallel bet (the USDA-backed battery storage) a visual presence without a data dump"],
+    "diverges_from_recent_cast": "does not reuse ServerMachine (the data-center antagonist from a recent dispatch) as the hero, and does not reuse MachineShadow (07-18's faceless monolith) at all in a lead role; ServerMachine appears only as a brief line-cutting cameo customer in the queue, never centered."
+  },
+  "motion_language": {
+    "how_the_world_moves": "the queue is a slow lateral crawl (parallax layers drifting opposite the push); ticket-dispenser and StatBurst pops use spring anticipation+overshoot; the Moose-bump gag uses a sharp squash-stretch impact with speed lines; the two SwingSigns swing shut with a hard snap and a settle-back wobble; the haze grid ROLLS IN as a soft alpha-build over ~1.5s, not a hard cut",
+    "hero_moves_named": ["Sourdough pinning the ticket (beat 1): anticipation reach -> pin -> settle, chest-glow pulse on contact", "the camera pull-back revealing the queue (beat 2): the run's biggest camera move, motivates the 180-degree motion blur system on the receding crates", "the PM2.5 tilt-up (beat 10): the SIGNATURE move, a combined push-through-and-tilt that is this run's craft_advance test case", "Sourdough freezing mid-vote (beat 14): a held breath, no motion, deliberately STILL after 60s of never-rest cadence, to make the freeze read as a real freeze"],
+    "180_blur_and_juice": "180-degree motion blur on the queue pull-back and the whip-pan into the 2024/2025 door-slams; ImpactStar + a 2-4px screen-shake on both SwingSign slams and the Moose-bump; ChipShadow under every HUD stat badge so they sit IN the lit scene"
+  },
+  "composition": {
+    "focal_hierarchy": "Sourdough (or the current shot's hero) always occupies the lower-third centered position per the fingerprint's centered-hero-lowerthird layout; HUD stats and labels are chrome around him, never competing for center; the 9:16 AND 4:5 safe box both keep Sourdough's face and the active StatBurst inside the centered vertical strip so the 4:5 crop never amputates the story",
+    "negative_space_beats": "beat 2 (the queue pull-back) and beat 5/beat 10 (the haze tilt-up) are the two beats that intentionally empty the lower frame to let scale and dread breathe",
+    "signature_shot": "beat 10: the camera pushes THROUGH Sourdough's glowing chest-window and tilts up into a wide shot of North Pole as a translucent red PM2.5 grid rolls over the rooftops, his warm ember light visibly dimming a stop as it happens. This is the shot the run will be remembered for and the next exemplar candidate."
+  },
+  "craft_advance": {
+    "system": "lib/lighting.tsx: a new reusable HazeOverlay/atmospheric-particulate grade layer",
+    "what_it_does": "a translucent, animated color-grade wash (grid-textured, alpha-builds over ~1.5s, desaturates the scene's warm key by one stop while it settles) that any future story needing an air-quality, smoke, or pollution beat can trigger per-scene, tied to a narrative moment rather than applied as a blanket filter",
+    "why_this_run": "the PM2.5 non-attainment turn needed to be felt as a real environmental and lighting change, not just a red sticker slapped over the frame; building it as a reusable lighting-engine system (not a one-off overlay PNG) means the next wildfire-smoke or air-quality Alaska story inherits it for free, advancing lib/lighting.tsx per the growth mandate's 'push at least one engine system forward' requirement",
+    "secondary_asset_growth": "net-new characterized objects Sourdough and Cell registered to the manifest; a new 'bumped-indignant-recover' comic reaction pose added to Moose in fauna.tsx (the existing-asset new-pose requirement)."
+  }
+}

@@ -1,45 +1,18 @@
-# STORYBOARD: 2026-07-18: "The Fence That Falls Short"
+# Dispatch 2026-07-19 — "GVEA's Turbine Ticket"
 
-**Story:** Alaska's DNR issued a preliminary decision to convey about 19,950 acres (over 31
-square miles) of state land near Houston, Alaska to AIDEA, at no charge, for a proposed
-data-center / rail-hub / energy-corridor industrial district. Public comment closes August 19,
-2026. A 40-plus-mile mushing and recreation trail network overlaps the parcel. The City of
-Houston introduced an ordinance to ban such development within city limits, but the parcel sits
-about two miles OUTSIDE city limits, so even a passed ordinance would not legally reach this
-land (vote postponed to Aug 13). AIDEA's own director says no land-use decisions have been made.
+**Story:** Golden Valley Electric Association (GVEA), a Fairbanks-area co-op, is weighing a second ~45MW GE LM6000 naphtha turbine for its North Pole Power Plant. Paid $50,000 in April 2026 to hold an order slot amid a global, AI-data-center-driven turbine backlog (GE Vernova ~100GW backlog, ~20% data-center-tied; Siemens Energy 60-65% of 2026 orders from data centers). Cost: $90M-$120M (range). Board votes July 28, 2026 — undecided. Counterpoint: North Pole sits in a federal PM2.5 non-attainment zone; named advocate Patrice Lee objects on the record.
 
-**Winning treatment:** THE DRAMATIST ("The Fence That Falls Short"), fused with the Explainer's
-boundary-gap caveat and the Comedian's mushing-trail warmth for grounded stakes. Scorer
-reasoning: strongest scroll-stop beat (the fence-line's tip match-cutting into a lone surveyor's
-stake) and rising tension, while staying inside the 1-2 bespoke-hero budget by using an abstract
-machine-shadow instead of a rigged character.
+**Earned angle (Phase 3.5):** Curiosity with earned, provisional competence. GVEA is so far acting like a sophisticated buyer, not a victim of the global AI turbine crunch — but that competence is provisional until the vote, and the air-quality cost is real and must land undodged.
 
-**Genre-freshness note:** this is the third state-land/AI-infrastructure story this month (after
-07-14 and 07-16, both Stak Energy/North Slope). The judge panel flagged this as a moderate risk
-but confirmed the jurisdictional-boundary irony (a ban that cannot legally reach its target) is a
-genuinely new hook, absent from the prior two. The board deliberately drops the "public comment
-flood / mailbox is the real vote" beat that already carried both prior dispatches.
+**Winning treatment:** THE ENTHUSIAST ("The Ticket in the Cold") — hero Sourdough, a net-new personified North Pole Power Plant character who plans ahead, with battery sidekick Cell. Grafted: the Dramatist's global-queue structure and honest freeze-ending; the Comedian's Moose running gag; the Explainer's stat/scale contrasts.
 
-**Gate 0B revision:** the storyboard-critic's first pass (ship:false) found the back third told
-its honest caveat as a HUD text panel (a diagram, a stamp, a typed quote, a checklist, a flipping
-calendar) instead of silent-first, that shot 4's emotional peak rode a snap-zoom echoing 07-16's
-signature move, and that the ending repeated the prior two dispatches' text-card pattern. Fixed:
-the fence-line's tip now MATCH-CUTS into a surveyor's stake planted alone in bare ground, a
-measuring chain stretched across the real gap carries the "2 MI" fact, a pen hovering over an
-unsigned document carries AIDEA's own honesty, and a carved wooden trail-post carries the August
-19 deadline, all physical objects in the landscape. The ending holds on those objects and the
-running dog team with no text card. Re-checked and shipped (ship:true).
+**Hero & growth:** Net-new: Sourdough (characterized object, glowing furnace-window chest) and Cell (battery sidekick). New pose added to existing asset: Moose gets a "bumped-indignant-recover" comic reaction. Craft advance: a reusable HazeOverlay atmospheric/PM2.5 grading layer added to `lib/lighting.tsx`.
 
-**Honest caveat (drawn, not narrated):** a blank tenant nameplate (no operator confirmed), a
-surveyor's stake and measuring chain (the ordinance's line falls two miles short), a pen that
-hovers over an unsigned document and never signs (AIDEA's own "no decisions have been made"),
-and a carved trail-post marking the August 19 comment deadline.
+**Palette:** cold indigo pre-sunrise + ember-orange (hero) + server-teal (queue/antagonist-adjacent) + ash-red (the haze turn). Fresh vs. the last 2 dispatches (amethyst-plum/copper/citrine/phosphor-lime; dawn-birch/viridian/husky-amber/graphite/crimson).
 
-**Composition fingerprint:** orbital-aerial / horizontal-traverse / landscape-as-subject /
-fullbleed-split / naturalistic-scene / locked-drift / dawn-backlight. Diverges from 07-17 on
-8 of 9 axes and from 07-16 on all 9. Palette: birch-white bark, deep viridian canopy, warm
-husky-fur amber, cool graphite-blue for the shadow, a small crimson survey-tag accent.
+**Structure:** 6 shots (~10s each) / 14 beats over ~63s. Cold open: Sourdough pins his $50K ticket. Escalation: the global queue, GE Vernova/Siemens Energy stats, the Moose gag, the 2024/2025 supply-loss doors, the new turbine + battery bet. Turn: the PM2.5 haze rolls in, Patrice Lee's verbatim quote lands, a Delta Wind alternative is offered unresolved. Button: Sourdough freezes mid-vote on an unsigned ballot as the July 28 clock ticks — loops back to the ticket motif; the Moose's ticket gag pays off (`#4,000,001 — DATA CENTERS AHEAD OF YOU`).
 
-**VO (13 lines, ~118 words, ~59s):** see storyboard.json beats[].vo for the full script.
+**VO script (~126 words):**
+> A power plant in North Pole is holding a ticket. Fifty thousand dollars, just to keep his place in line. The line is a global turbine backlog, jammed by AI data centers. GE Vernova's backlog: near a hundred gigawatts. A fifth of it, data centers. Siemens Energy: over sixty percent of this year's orders are data centers. Fairbanks lost its cheap power in twenty twenty four, its gas deal in twenty twenty five. The plant planned ahead: a second turbine, ninety to one hundred twenty million dollars, plus a battery bet. But North Pole already fails the federal air test. "You cannot add to the pollution in a non-attainment area, and be legally correct." The board votes July twenty eighth. Nobody's decided. Not even him.
 
-**Beats:** 13, start-to-start gaps of 4.5s, covering 0-59s.
+Full machine-readable board: `out/dispatch/storyboard.json`. Art direction: `out/dispatch/art_direction.json`. Angle: `out/dispatch/angle.json`.
