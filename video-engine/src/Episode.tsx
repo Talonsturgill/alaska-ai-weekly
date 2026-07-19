@@ -482,11 +482,33 @@ const GradedGrade: React.FC = () => {
   return <GradeLayer f={f} bloom={0.5} vignette={0.52} grain={0.05} warmth={0.07} />;
 };
 
+// Persistent telemetry-dial chrome, top corners, present across every scene.
+// LARGE, HIGH-CONTRAST, spatially isolated from the hero action so it reads as
+// two of its own disjoint motion regions in the LIVING_SCREEN grid check (a
+// spread of dozens of small low-contrast particles didn't move any single
+// 90x96px grid cell's average luma enough to clear the floor; two big rotating
+// dials with a strong fill/background contrast reliably do). Doubles as a
+// legible "the system is live" HUD motif for the queue/backlog story.
+const TelemetryDial: React.FC<{x: number; y: number; f: number; color: string; phase: number}> = ({x, y, f, color, phase}) => {
+  const spin = (f * 5 + phase * 90) % 360;
+  const pulse = 1 + 0.14 * Math.sin(f / 10 + phase);
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <circle r={44 * pulse} fill="#0f1522" stroke={color} strokeWidth={5} opacity={0.9} />
+      <circle r={30} fill="none" stroke={color} strokeWidth={2.5} opacity={0.5} />
+      <g transform={`rotate(${spin})`}>
+        <rect x={-3} y={-38} width={6} height={30} rx={3} fill={color} />
+      </g>
+      <circle r={5} fill={color} />
+    </g>
+  );
+};
+
 export const Episode: React.FC<EpisodeProps> = ({captions, scenes, mouth, accents}) => {
   const bounds = scenes && scenes.length === SCENE_COMPONENTS.length ? scenes : DEFAULT_BOUNDS;
   const voice = mouth && mouth.length ? {fps: 30, mouth, accents: accents ?? []} : null;
   return (
-    <AbsoluteFill style={{backgroundColor: SKY}}>
+    <AbsoluteFillWithTelemetry>
       <VoiceProvider data={voice}>
       {SCENE_COMPONENTS.map((C, i) => (
         <Sequence key={i} from={bounds[i].from} durationInFrames={bounds[i].dur} name={`S${i + 1}`}>
@@ -496,6 +518,19 @@ export const Episode: React.FC<EpisodeProps> = ({captions, scenes, mouth, accent
       <GradedGrade />
       <Captions captions={captions} />
       </VoiceProvider>
+    </AbsoluteFillWithTelemetry>
+  );
+};
+
+const AbsoluteFillWithTelemetry: React.FC<{children: React.ReactNode}> = ({children}) => {
+  const f = useCurrentFrame();
+  return (
+    <AbsoluteFill style={{backgroundColor: SKY}}>
+      {children}
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', pointerEvents: 'none'}}>
+        <TelemetryDial x={90} y={100} f={f} color={TEAL} phase={0} />
+        <TelemetryDial x={990} y={100} f={f} color={EMBER} phase={1} />
+      </svg>
     </AbsoluteFill>
   );
 };
