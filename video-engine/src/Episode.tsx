@@ -406,25 +406,29 @@ const S5: React.FC = () => {
   const quoteT = interpolate(f, [130, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const stakeSettle = interpolate(f, [195, 225], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: SKY, transform: `scale(${push}) translateY(${tiltUp}px)`, transformOrigin: '50% 68%'}}>
-      <FrostYardBG f={f} parallax={0.3} />
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <Sourdough frame={f} x={420} y={1560} scale={1.4} emotion={hazeAmount > 0.4 ? 'faltering' : 'confident'} glow={glow} />
-        {leeIn > 0.02 && (
-          <g opacity={leeIn} transform="translate(0,0)">
-            <Character frame={f} pose="arms-crossed" emotion="worried" outfit="puffer" headgear="beanie" facing={-1} scale={1.3} x={860} y={1660} />
-          </g>
-        )}
-        {stakeSettle > 0.01 && <SurveyStake x={720} y={1740} s={1.0} settle={stakeSettle} f={f} />}
-      </svg>
-      <HazeOverlay amount={hazeAmount} color={HAZE} />
-      {stampIn > 0.02 && (
-        <div style={{position: 'absolute', top: 460, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: stampIn, transform: `scale(${stampIn})`}}>
-          <div style={{background: HAZE, border: `8px solid ${INK}`, borderRadius: 14, padding: '18px 32px'}}>
-            <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 34, color: SNOW, textAlign: 'center', letterSpacing: 1}}>FEDERAL PM2.5<br />NON-ATTAINMENT ZONE</div>
+    <AbsoluteFill style={{backgroundColor: SKY}}>
+      <AbsoluteFill style={{transform: `scale(${push}) translateY(${tiltUp}px)`, transformOrigin: '50% 68%'}}>
+        <FrostYardBG f={f} parallax={0.3} />
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+          <Sourdough frame={f} x={420} y={1560} scale={1.4} emotion={hazeAmount > 0.4 ? 'faltering' : 'confident'} glow={glow} />
+          {leeIn > 0.02 && (
+            <g opacity={leeIn} transform="translate(0,0)">
+              <Character frame={f} pose="arms-crossed" emotion="worried" outfit="puffer" headgear="beanie" facing={-1} scale={1.3} x={860} y={1660} />
+            </g>
+          )}
+          {stakeSettle > 0.01 && <SurveyStake x={720} y={1740} s={1.0} settle={stakeSettle} f={f} />}
+        </svg>
+        <HazeOverlay amount={hazeAmount} color={HAZE} />
+        {stampIn > 0.02 && (
+          <div style={{position: 'absolute', top: 460, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: stampIn, transform: `scale(${stampIn})`}}>
+            <div style={{background: HAZE, border: `8px solid ${INK}`, borderRadius: 14, padding: '18px 32px'}}>
+              <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 34, color: SNOW, textAlign: 'center', letterSpacing: 1}}>FEDERAL PM2.5<br />NON-ATTAINMENT ZONE</div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </AbsoluteFill>
+      {/* kept outside the push/tilt camera transform: at max push+tilt the transform
+          carries this card's top line above the 4:5 crop's safe box */}
       {quoteT > 0.02 && <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}><QuoteCard x={540} y={960} revealT={quoteT} op={Math.min(1, quoteT * 3)} /></svg>}
     </AbsoluteFill>
   );
