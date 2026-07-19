@@ -1,0 +1,9 @@
+Under one road in Utqiagvik, the northernmost US city, two buried cables now teach the frozen ground to forecast its own thaw.
+
+A Penn State team fused physics equations with machine learning into a digital twin of that embankment, fed by three winters of thermal and seismic data. This is narrow, physics-informed AI, not a general one, and it models exactly one kilometer of Alaska permafrost.
+
+The deck walks through the buried fiber, the twin, what it actually forecasts, and the honest limit, one prototype embankment, not a statewide system.
+
+If one lit kilometer can forecast its own thaw, should Alaska fund a decade more of that data, or spend now to rebuild the roads already breaking?
+
+#AlaskaAI #Permafrost #ArcticInfrastructure

@@ -222,6 +222,27 @@
    "instinct": "An isometric SCHEMATIC hero (a fork/pivot/junction) still scores as FLAT artwork-craft unless the focal node is a genuinely RAISED 3D object (an iso pedestal/three-face base + a real contact shadow, not just a flat gold disc) AND the DOF context grid is PRESENT enough to read; a blurred grid at low opacity 'barely registers' and the eye reads a flat two-arrow diagram. Give the one designated depth-showcase slide a dimensional node next iso deck.",
    "evidence": "Run 10 scorer: artwork-craft 7 (weakest), one_sentence_fix was exactly to give the S5 fork hero real dimensional depth; the flat gold disc + faint blurred grid read as a schematic despite the deck's iso chassis. S3/S4 (which used raised slabs/boxes + cast shadows) read dimensional; S5 (disc only) did not.",
    "confidence": 0.6
+  },
+  {
+   "id": "dom-el-referenced-before-it-exists",
+   "learned": "2026-07-19",
+   "instinct": "A classic (non-module) <script> in the slide body runs at parse time, BEFORE any element placed after it exists. renderReady code that does getElementById on a later-in-body div (e.g. the grain overlay) gets null and the whole slide throws. Put every element the art script touches (grain overlay, canvas) BEFORE the scripts, or use a type=module script (deferred to after parse).",
+   "evidence": "Run 2026-07-19 first render: 8 of 9 slides FAILED with 'Cannot read properties of null (reading style)' at the grain-div lookup; the only survivor was the type=module akthree slide. Moving the grain div above the scripts fixed all 8.",
+   "confidence": 0.9
+  },
+  {
+   "id": "never-canvas-fillText-for-labels",
+   "learned": "2026-07-19",
+   "instinct": "Never set meaningful label text with cx.fillText on canvas. Canvas text rasterizes in the vector PDF, is invisible to the LinkedIn ranker and accessibility, is absent from render_report text_nodes, and therefore FAILS copy_sync_check. Set every label in DOM or SVG; reserve canvas for art only.",
+   "evidence": "Run 2026-07-19: S7 loop labels and S8 annotations drawn with fillText tripped copy_sync_check (authored strings not found in render) and would have shipped as raster text in the PDF; converting them to DOM divs fixed both.",
+   "confidence": 0.88
+  },
+  {
+   "id": "inline-svg-needs-display-block",
+   "learned": "2026-07-19",
+   "instinct": "An inline <svg> appended into a positioned div carries a baseline line-box that pushes body scrollHeight past 1350 and trips render.py body_overflow (a hard fail), even with body overflow hidden. Add '#map svg { display:block }' (or display:block on any appended SVG layer) on every d3/SVG map slide.",
+   "evidence": "Run 2026-07-19: the two globe slides (S1, S9) reported body_overflow=true until display:block was added to the appended svg; the demo cartography slide already had this rule and I had omitted it.",
+   "confidence": 0.85
   }
  ]
 }

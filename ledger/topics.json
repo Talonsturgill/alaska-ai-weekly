@@ -456,6 +456,37 @@
     "https://www.adn.com/alaska-news/anchorage/2026/03/27/anchorage-assembly-preemptively-adopts-data-center-regulations/"
    ],
    "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-19",
+   "carousel_no": 11,
+   "topic": "A physics-informed machine-learning digital twin of one Utqiagvik permafrost road embankment (Penn State), built on two buried 1 km fiber-optic cables and three winters of thermal and seismic data (Sept 2021 to June 2024)",
+   "angle": "AI that reads Alaska instead of using it. The point is not a smarter guess, it is a forecast the ground itself keeps correcting; the power and the honest limit are the same fact (one lit kilometer). Net-new topic chosen to break a 4-deck data-center run; honesty-forward (single-source attributed, narrow ML not general AI, one prototype not a statewide deployment).",
+   "entities": [
+    "Penn State",
+    "Ming Xiao",
+    "Tieyuan Zhu",
+    "Utqiagvik",
+    "North Slope",
+    "permafrost",
+    "fiber-optic distributed sensing",
+    "digital twin",
+    "JGR Earth Surface"
+   ],
+   "keywords": [
+    "permafrost",
+    "digital twin",
+    "physics-informed ML",
+    "fiber-optic",
+    "Utqiagvik",
+    "thaw",
+    "Arctic infrastructure",
+    "ground temperature",
+    "distributed sensing"
+   ],
+   "headline": "Reading the Frozen Ground at the Top of America",
+   "sources_lead": "https://phys.org/news/2026-06-digital-twin-alaska-permafrost-real.html",
+   "outcome_notes": "Score 8.81 (threshold 8.3), no hard fails. Chosen over an in-window STAK data-center re-touch (11 days after No.1, would be the 5th data-center deck) to protect feed variety. Single-source (Phys.org; JGR paywalled/not independently checked) framed honestly on S8 and in the first comment. Story ~5 weeks old, framed as recent research not breaking news."
   }
  ]
 }

@@ -1,0 +1,28 @@
+{
+ "carousel_no": 11,
+ "weighted_total": 8.81,
+ "ship_threshold": 8.3,
+ "ships": true,
+ "hard_fails": [],
+ "criteria": [
+  {"name": "Thumb-stop cover", "weight": 0.14, "score": 8, "justification": "S1 globe crowned by Alaska, single gold Utqiagvik pinpoint, huge 6-word headline, clean focal point, reads at thumb. Held from 9: headline poetic not a hard number; polar globe carries mild generic risk."},
+  {"name": "Story arc & swipe momentum", "weight": 0.14, "score": 8, "justification": "hook -> instant pay (S2) -> stakes -> rendered breather -> method -> keepable spec plate -> thesis peak -> honesty -> single-ask close. Cable-spine edge-tease and globe bookends bind it. Held from 9: linear/expository; S3 stakes lean global."},
+  {"name": "Artwork craft & genuine detail", "weight": 0.16, "score": 8, "justification": "S4 hero is genuine akthree GPU PBR cable-in-gravel still-life, film-graded, real contact shadow/DOF/emissive core. Globe limb-shading and cabinet-extruded boxes are real depth. Held from 9: dead lower zones on S5/S8/S9 and simple S5 line-diagram."},
+  {"name": "Story-art fusion", "weight": 0.14, "score": 9, "justification": "Two strands = 2 cables, 1 km x 2 dimension, one gold pinpoint = one site, solid/ghost mirror = real vs twin, predict/measure/correct loop = thesis, ONE gold tick on a vast empty plain + SOURCED vs NOT CHECKED tags render single-source honesty literally."},
+  {"name": "Alaska authenticity & local relevance", "weight": 0.12, "score": 8, "justification": "Utqiagvik named repeatedly, northernmost US city, 71 17 N, North Slope, the road embankment, Alaska on the globe, Alaska-civic close. One imported beat: the actor is a Penn State (Outside) team."},
+  {"name": "Insight density & factual weight", "weight": 0.10, "score": 7, "justification": "Every content slide adds a verified specific, zero filler, but the whole deck rests on ONE fetched source (Phys.org); JGR paper paywalled/unverified. 2F/decade global, billions projection, 10 years aspiration. Honestly disclosed but factual weight is thin."},
+  {"name": "Variety vs ledger", "weight": 0.08, "score": 7, "justification": "Fresh hero concept and atmosphere, but reused subsystems: place-paradox hook (No.7, 4 back), Archivo+Manrope+JBMono (No.8/No.2, outside last-2), and the constellation-fixture house system is a running constant."},
+  {"name": "Legibility & platform fitness", "weight": 0.07, "score": 8, "justification": "All floors met (machine_qa fails=0 warns=0); vector PDF 9.97MB with title; NN/09 counters; reads at 432px. Squeaker: S4 body over graded ochre is the tightest contrast (verified passing)."},
+  {"name": "Copy: voice & hook", "weight": 0.05, "score": 9, "justification": "Hook lands in 126 chars; 740 total; analytical position-taking voice; deck-summary line; real debatable close. Minor listiness in the summary line."},
+  {"name": "Deliverable completeness", "weight": 0.10, "score": 8, "justification": "copy.json carries post copy, 3 hashtags, first-comment source block (Phys.org, JGR DOI flagged paywalled, alaskaaihq.com, engagement prompt, attribution), title, aftercare. assemble_report confirms PDF + 9 slides + thumbs + contact sheet. Held: URL resolution depends on post-scoring merge."}
+ ],
+ "one_sentence_fix": "Fill the dead lower zones on S5, S8, and S9 with genuine graded texture or depth so artwork-craft can clear a 9.",
+ "weakest_criteria": ["Insight density & factual weight", "Variety vs ledger"],
+ "strengths": [
+  "First genuinely rendered PBR hero of the recent series (S4 akthree cable-in-gravel, film-graded) that resolves the chronic flat-hero weakness flagged across Nos. 8-10",
+  "Best-in-class story-art fusion: the single gold tick on an empty plain and the paired SOURCED/NOT-CHECKED evidence tags turn single-source honesty into a designed visual argument",
+  "Rigorous on-slide honesty firewall: narrow-ML-not-general-AI chip (S5/S6), global-not-site and projection hedges (S3), aspiration hedge (S9), claim-not-deployment (S8), paywall disclosure in the first comment",
+  "Zero hard fails; clean vector PDF, counters, and legible type throughout"
+ ],
+ "honest_notes": "SINGLE-SOURCE deck: every permafrost fact traces to one Phys.org press article (Penn State/AGU-sourced, 2026-06-16); the peer-reviewed JGR: Earth Surface paper (DOI 10.1029/2025JF008787) was paywalled (HTTP 402) and is NOT independently verified. Disclosed on S8 (gray NOT CHECKED tag) and in the first comment; that disclosure MUST stay intact when posting. Source ~5 weeks old, framed as recent research not breaking news (fresh 10-day window was dry for net-new in-window AI stories, documented in selection.md). Research actor is Penn State (Outside), not an Alaskan institution. Soft figures hedged on slide: 2F/decade global not the site, billions a projection, 10 years an aspiration, broadly transferable a claim not a deployment. Ships at 8.81 vs 8.3 with no hard fails."
+}

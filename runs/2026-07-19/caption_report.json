@@ -1,0 +1,13 @@
+{
+  "chars": 740,
+  "hook": "Under one road in Utqiagvik, the northernmost US city, two buried cables now teach the frozen ground to forecast its own thaw.",
+  "hook_len": 126,
+  "hashtags": [
+    "#AlaskaAI",
+    "#Permafrost",
+    "#ArcticInfrastructure"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

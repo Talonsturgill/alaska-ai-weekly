@@ -613,3 +613,47 @@ the >=50px minimum. No machine change is bounded enough for the daily budget
   copywriter emit both fields). Weakens no gate; removes a recurring manual
   step. Held this run because Phase 12's daily budget was taken by the
   copy_sync_check list-form fix.
+
+## 2026-07-19 - craft refresh (annotation hierarchy on data slides)
+
+Fresh EuroVis 2026 practitioner study on visualization annotation, useful for
+this studio's keepable data slide:
+- Attention plan, not a pile: pick ONE primary annotation, give it the strongest
+  placement and emphasis so it reads first; keep every other annotation
+  consistently secondary via lighter weight and reduced salience. Busy-ness reads
+  as amateur.
+- Annotate next to the data, not in a detached legend or keyed list. For any
+  small-multiples panel, label in place rather than off to the side.
+- LinkedIn platform side: no change from the 2026-07-18 scan (documents still the
+  highest-reach format, saves the dominant signal, 7 to 10 slides the sweet spot).
+  Logged nothing new there.
+
+## 2026-07-19 - run retro (Carousel No. 11, permafrost digital twin, 8.81)
+
+Story: a Penn State physics-informed ML digital twin of ONE Utqiagvik permafrost
+road embankment (two buried 1 km fiber cables, 3 winters of thermal/seismic data).
+Chosen as a net-new topic over an in-window STAK data-center re-touch (11 days after
+No.1, would have been the 5th data-center deck) to protect feed variety. Single-source
+(Phys.org; the JGR paper was paywalled/HTTP 402), framed honestly on-slide and in the
+first comment; ~5 weeks old, framed as recent research not breaking news.
+
+- WON: the first genuinely rendered PBR hero of the recent series (S4 akthree cable-in-
+  gravel still-life, film-graded), which the scorer said resolves the flat-hero weakness
+  flagged across Nos. 8-10. Best-in-class story-art fusion per the scorer: the lone gold
+  tick on a vast empty plain plus the SOURCED vs NOT CHECKED evidence tags render the
+  single-source honesty as a visual argument.
+- FIBER-CORE CRAFT: an emissive core tube placed INSIDE a larger jacket tube renders
+  invisible. Place the glowing core riding the jacket top CROWN (center y ~ jacket_center
+  + 0.85*radius) so it reads as a lit fiber, and keep the emissive hue cyan with bloom
+  strength <= ~0.45 or it blows out to white/chrome (pixel critic flagged the white read).
+- THREE ENGINE-CRAFT GOTCHAS (now instincts): (1) a classic body <script> runs before
+  later-in-body elements exist -> getElementById(grain) returned null and failed 8 of 9
+  slides; put touched elements before the scripts. (2) canvas fillText labels fail
+  copy_sync_check AND the vector-PDF contract; set every label in DOM/SVG. (3) an inline
+  appended <svg> needs display:block or it trips body_overflow (S1/S9).
+- WATCH-ITEM (scorer): factual weight scored 7 (single-source) and dead lower zones on
+  S5/S8/S9 held artwork-craft at 8. Next permafrost-style deck: corroborate a second
+  independent source before build, and fill empty diagram regions with graded texture/depth.
+- REACTIVE GAP STILL OPEN (logged 2026-07-17/18, held again): gmail_draft.py reads
+  copy.get('post_copy') and copy.get('aftercare'); copy.json now carries both (added this
+  run), but the permanent fallback fix in gmail_draft.py is still a Phase 12 candidate.

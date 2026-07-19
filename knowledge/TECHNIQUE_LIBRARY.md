@@ -493,3 +493,19 @@ annotation is the strongest pair):
 - **Transit/Systems**: 76, 77, 78, 79, 82 + round/round
 - **Hand-Ink**: 59, 60, 61, 62, 63, 71 + one seed per slide
 - **Instrument/Editorial**: 68, 69, 70, 74, 80, 81, 84
+
+58e. **Source-Provenance Evidence Tags** (NEW 2026-07-19) - an honesty beat that renders
+    a story's SOURCING state as design, for single-source or thinly-sourced decks. Two
+    title-block plates (#83) sit side by side: a LEFT plate drawn SOLID with a gold
+    "SOURCED" / "VERIFIED" stamp naming the fetched source and date, and a RIGHT plate
+    drawn as a DASHED phantom (#67) with a gray "NOT CHECKED" stamp naming what could not
+    be independently verified (a paywalled primary paper, a 403, a single secondary source).
+    Weight and dash state, not just colour, carry the meaning: solid = confirmed, ghost =
+    unconfirmed. Pairs naturally with a scale beat (one lit tick on a vast empty plain =
+    "one embankment, not the region") so the deck's factual LIMIT and its factual SOURCE
+    are both drawn, not footnoted. RULES: the gold "SOURCED" stamp is the slide's single
+    saturated-gold moment (gold budget); keep each plate to a stamp plus <= 2 short mono
+    lines; the primary-source disclosure MUST also ride into the first comment. Used as the
+    honesty beat of "Reading the Frozen Ground at the Top of America" (a single-source
+    permafrost digital-twin deck). Generalizes to any deck built on one source, a press
+    release ahead of a paywalled paper, or a claim the studio could not fully verify. D2

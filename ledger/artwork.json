@@ -251,6 +251,29 @@
     "Isometric Wiring-Diagram + Evolving Conduit (NEW): a shared 2:1 dimetric iso world whose ONE glowing conduit changes shape every slide (cut/junction/severed/snap/fork/baseline/dormant/solid-vs-dashed/sealed) and carries a gold progress tick + edge-tease; the off-grid subject rendered as a DETACHED slate slab with NO glow makes 'disconnected' legible at thumb with zero words. Generalizes to any on-grid-vs-off-grid, network, or infrastructure-siting argument."
    ],
    "notes": "Scored 8.90 vs 8.3. Weakest = artwork craft (7): the S5 fork hero reads as a flat two-arrow schematic (the DOF-blurred context grid barely registers) and S5/S8/S9 carry dead lower zones. Story-art fusion 9 (severed stub=no wire, gold node snap=on-grid, equal arrows=could fall/rise, solid vs dashed=adopted vs in-committee). Deliberate iso/flat chassis chosen to break the chronic flat-hero weakness; partially succeeded (S3/S4 read dimensional; S5 hero still flat)."
+  },
+  {
+   "run_date": "2026-07-19",
+   "carousel_no": 11,
+   "slide_count": 9,
+   "hero_structure": "Arctic-place bookends (orthographic globe, Alaska crowning the top of the world, gold Utqiagvik pinpoint) plus a frost-cyan buried-fiber CABLE spine threading permafrost-ochre ground, with an akthree GPU PBR object still-life of the two buried cables in gravel as the photoreal hero (S4).",
+   "atmosphere": "polar-night sky over permafrost-ochre ground: cold deep-night/flag-blue sky, a warm ochre and peat ground band where the ground is the subject (S2/S3/S4/S8), cool navy where the method is (S1/S5/S6/S7/S9). NOT graphite-and-bone survey, NOT thermal ember/amber, NOT blueprint-night iso.",
+   "depth_technique": "akthree GPU PBR still-life (S4, film-graded via akpost, designed Canvas fallback plus snapshot sentinel); d3.geoOrthographic globe with radial limb shading and graticule foreshortening (S1/S9); cabinet-extruded raised cutaways (S2/S5/S6); multiplane vast plain with atmospheric fade (S8).",
+   "line_voice": "Transit/Systems (loop nodes and arrowheads S7) plus Drafting furniture (spec card S6, dimension call S2) plus Instrument/Editorial (mono readouts throughout).",
+   "continuity_device": "the frost-cyan cable/signal spine (edge-tease plus motif evolution, changes SHAPE each slide and exits the right edge) plus the place/palette arc with globe bookends (S1/S9) and cold-sky-to-warm-ground colour coding. NOT iso-conduit motif-evolution (10), NOT thermal search-grid state machine (9).",
+   "hook_archetype": "place-paradox (the most remote ground in America is now the most closely read; the frozen ground now forecasts itself). NOT withheld-fact (8), NOT scene/stakes (9), NOT direct-question (10).",
+   "palette_family": "polar-night navy (#02060F/#081426/#0E2138) plus ice-cyan signal (#5AC8F0) plus forget-me-not prediction (#6EA5FF) plus permafrost ochre and peat (#B5763C/#6E4A2E) plus gravel taupe (#7D7264) plus flag gold (#FFC72C, reserved for place/Polaris/correction). NOT graphite-night+phantom-blue (8), NOT thermal ember/amber (9), NOT blueprint+cyan+salmon+parchment (10).",
+   "type_pairing": "Archivo (variable width axis) display plus Manrope body plus JetBrains Mono instrument. NOT Instrument Serif+Space Grotesk+JBMono (9), NOT Fraunces+Space Grotesk+JBMono (10). Both warm serifs deliberately avoided (exhausted by Nos 9-10).",
+   "narrative_structure": "HOOK (globe/place-paradox) -> pay (physical fact) -> stakes (hedged) -> hero/breather (buried cable) -> point (the twin, narrow ML) -> keepable data (spec plate) -> synthesis (the correcting loop, thesis) -> honesty (one tick plus two evidence tags) -> close (globe returns, single ask).",
+   "variance_dials": {
+    "design_variance": 4,
+    "visual_density": 3,
+    "type_temperature": 3
+   },
+   "new_techniques_logged": [
+    "Source-Provenance Evidence Tags (SOURCED vs NOT CHECKED honesty beat)"
+   ],
+   "notes": "Honesty-as-design: the S8 two-evidence-tags beat (gold VERIFIED/SOURCED press release vs dashed-gray NOT CHECKED paywalled paper) plus one-gold-tick-on-a-vast-empty-plain scale. Scorer 8.81 praised story-art fusion and the first true rendered PBR hero of the series. Watch-item: dead lower zones on S5/S8/S9 held artwork-craft at 8."
   }
  ]
 }

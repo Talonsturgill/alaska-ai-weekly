@@ -106,7 +106,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-18",
+   "last_updated": "2026-07-19",
    "history": [
     {
      "date": "2026-07-08",
@@ -143,6 +143,10 @@
     {
      "date": "2026-07-18",
      "note": "The written comment window closed at 4:30 p.m. July 17, so the lease moves to a pending final decision by DNR Division of Oil and Gas. More than 500 comments on record with fewer than a dozen in support. Reporting notes the campus is off-grid and self-generating on North Slope gas hundreds of miles from urban Alaska, so its fuel use would not directly raise Railbelt household electricity prices. This run reframed the docket around that on-grid versus off-grid distinction."
+    },
+    {
+     "date": "2026-07-19",
+     "note": "Re-verified the DNR primary notice this run. ADL 422741 remains a preliminary decision with no Final Finding and Decision issued yet. The written comment window closed 4:30 p.m. July 17, so the 50-year lease now sits with DNR Division of Oil and Gas for a final best-interest decision. More than 500 comments on record with fewer than a dozen in support, unchanged."
     }
    ]
   },
@@ -363,7 +367,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-18",
+   "last_updated": "2026-07-19",
    "history": [
     {
      "date": "2026-07-08",
@@ -396,6 +400,10 @@
     {
      "date": "2026-07-18",
      "note": "On July 16 the House deadlocked 19 to 19 and the Senate passed the gas-line tax bill 11 to 8 with a 9.4 percent pass-through tax on S corp oil and gas entities. Governor Dunleavy rejected that tax and called a third Alaska LNG special session to convene July 27 in Juneau, so the pipeline tax terms stay unsettled. The AI and data-center link here is indirect, the administration has courted large gas demand to help justify the line."
+    },
+    {
+     "date": "2026-07-19",
+     "note": "The second special session ended today with the Alaska LNG gasline tax bill still unresolved. On July 16 the House deadlocked 19 to 19 and the Senate passed the bill 11 to 8 with a 9.4 percent pass-through tax on S corp oil and gas entities, which Governor Dunleavy rejected. He called a third special session to convene July 27 in Juneau, so the pipeline tax terms stay unsettled and the AI and data-center link stays indirect."
     }
    ]
   },
