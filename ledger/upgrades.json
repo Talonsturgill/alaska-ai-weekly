@@ -337,6 +337,33 @@
    "verification": "Pre-fix HEAD version on a faithful list-form reconstruction of this run's copy.json CRASHES (AttributeError at slides.items(), exit 1). Post-fix: (1) DICT form (shipped out/2026-07-18/copy.json) PASSes exit 0 -- 59 authored strings, backward compat intact; (2) LIST form PASSes exit 0 -- same 59 strings, so normalization is faithful; (3) defect reconstruction (list form with S3 kicker + S3 chip made stale) FAILs exit 1 and reports exactly the S3 kicker and 'chips[1]' misses on the correct slide -- the gate still catches drift. Engine untouched and re-verified: out/2026-07-18/slides render OK + qa PASS 0/0; examples/demo-deck render OK + qa WARN (known slide-03 busy-art warn, exit 0), both unchanged. No gate/threshold weakened; no new runtime dependency (stdlib only); ast.parse OK; shipped slides not modified.",
    "rollback": "revert the upgrade(2026-07-18) commit (removes normalize_slides() and the two call-site changes; copy_sync_check returns to dict-only, crashing on list-form copy.json)",
    "commit": "upgrade(2026-07-18) commit on branch tsturg/intelligent-brahmagupta-gg46mr (revert this single prefixed commit to roll back)"
+  },
+  {
+   "run_date": "2026-07-19",
+   "kind": "fix",
+   "area": "scripts",
+   "change": "gmail_draft.py now falls back post_copy -> caption when 'post_copy' is absent, and synthesizes a default 5-item aftercare checklist (from CAROUSEL_CRAFT cadence/golden-hour rules: Tue-Thu 8-11am AKT, sources comment within 60s, golden-hour replies, saves>comments>shares>likes vs trailing median, evergreen daily-draft cadence) when 'aftercare' is absent, so the Gmail draft's paste-ready post block and aftercare section are never empty. Reads only; never mutates copy.json.",
+   "trigger": "Recurring gap logged 2026-07-17 and 2026-07-18 and again this run: the copywriter/Phase 6 emit 'caption' and no 'aftercare', but gmail_draft.py read copy.get('post_copy') and copy.get('aftercare'), so both draft blocks rendered EMPTY unless the showrunner hand-added post_copy and aftercare to copy.json (done by hand a 3rd time this run). This is the bounded permanent fix.",
+   "files": [
+    "scripts/gmail_draft.py"
+   ],
+   "verification": "On a scratch copy of out/2026-07-19 with 'post_copy' and 'aftercare' REMOVED (caption kept), gmail_draft.py renders the caption text into the post-copy block and all 5 default aftercare items (aftercare <li> block non-empty). On the healthy shipped copy.json (post_copy + authored 4-item aftercare present) it uses the authored values and does NOT inject the default ('Drafts arrive daily' present, 'Treat the deck as evergreen' absent) -> fallback fires only on absence. Shipped copy.json not touched (tested on scratch copies). ast.parse OK. No gate/threshold weakened; no new runtime dependency.",
+   "rollback": "revert the upgrade(2026-07-19) commit (gmail_draft.py returns to copy.get('post_copy','') and copy.get('aftercare',[]) with no fallback)",
+   "commit": "pending upgrade(2026-07-19) commit (showrunner stages this set)"
+  },
+  {
+   "run_date": "2026-07-19",
+   "kind": "fix",
+   "area": "engine",
+   "change": "render.py adds a page.add_init_script hook (a self-invoking IIFE, runs before all slide scripts) that wraps CanvasRenderingContext2D fillText/strokeText and records every non-empty drawn string (deduped, into render_report.slides[].canvas_text); qa.py emits a WARN when a slide draws MEANINGFUL canvas text (>= 4 alphabetic chars, so axis ticks / short unit labels / bare numbers do not trip it), because canvas text is a raster bitmap invisible to render.py's DOM walk, to copy_sync_check, to the LinkedIn ranker, and to accessibility, and it pixelates in the vector PDF. WARN only; never a FAIL.",
+   "trigger": "Run 2026-07-19 gate blind spot: S7 loop labels and S8 annotations were drawn with canvas cx.fillText; they would have shipped as raster text in the vector PDF and copy_sync only caught the ones that were authored copy.json strings. Meaningful-but-unauthored canvas annotations were seen by NO machine gate. Fixed mid-run by converting to DOM. Frontier corroboration (headless-rendering scan): Playwright add_init_script is the sanctioned pre-page-script hook (LambdaTest/Apify docs) and MDN/accessibility sources confirm canvas fillText is raster, inaccessible, and non-scalable. https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text",
+   "files": [
+    ".claude/skills/carousel-engine/render.py",
+    ".claude/skills/carousel-engine/qa.py"
+   ],
+   "verification": "Reconstruction slide drawing cx.fillText('TRAINING LOOP')/strokeText('INFERENCE')/fillText('Model retrains nightly on new data') WARNs on all three (canvas raster text ...), while decorative fillText('2024'/'MW'/'42'/'GW') on the same and a control slide stay SILENT (the >=4-alpha filter). Regression (hook live): out/2026-07-19/slides render OK + qa PASS 0/0 with canvas_text empty on every slide (no false positives), and examples/demo-deck render OK + qa WARN (only the known slide-03 busy-art warn, exit 0) with canvas_text empty -- both identical to baseline. Caught a real bug during verification: a bare arrow-expression add_init_script is injected but never called, so the IIFE form was required (empty capture on the first pass proved the hook was inert). ast.parse OK. No gate/threshold weakened (WARN only); no new runtime dependency (Playwright add_init_script already available); shipped slides/render not modified (verified in scratch dirs).",
+   "rollback": "revert the upgrade(2026-07-19) commit (removes CANVAS_TEXT_HOOK_JS + the add_init_script call + the canvas_text capture in render.py and the canvas-raster-text WARN loop in qa.py; the pipeline reverts to no canvas-text signal)",
+   "commit": "pending upgrade(2026-07-19) commit (showrunner stages this set)"
   }
  ],
  "scan_log": [
@@ -408,6 +435,13 @@
    "searches": 4,
    "found": "The document-carousel strategy is REVALIDATED: PDF/document posts remain the highest-reach native format (~6.60% engagement; 3-6x text/image/video), and the March 2026 Authenticity Update + the 360Brew ranking model reward topical depth, real dwell time, and honest non-baity copy -- exactly this studio's output. Current specs already compliant: 9 slides sits in the 8-10 sweet spot (reach drops after slide 10), 2160x2700 is the recommended portrait 4:5, the 80px safe zone beats the >=50px minimum. Two levers surfaced but are strategy/craft, not bounded machine changes: SAVES are now the dominant ranking signal (~5x a like, ~2x a comment) with infographics the most common top-1% format (28.6%) -> save-worthiness as an explicit storyboard-gate/scorer objective; and the external-link penalty escalated (~60% less reach with a link, residual penalty even for link-in-first-comment) -> a maintainer strategy note, since sources-in-comments is integrity-required. Sources: https://www.oktopost.com/blog/linkedin-carousel-pdf-best-practices/ , https://www.dataslayer.ai/blog/linkedin-algorithm-february-2026-whats-working-now",
    "outcome": "parked (FIELD_NOTES 2026-07-18: save-worthiness scorer/gate candidate + escalated external-link-penalty maintainer note, with source URLs). No frontier code applied: both levers are unbounded strategy/craft edits wanting careful design, and the daily 0-1 budget was taken by the reactive copy_sync_check list-form fix."
+  },
+  {
+   "run_date": "2026-07-19",
+   "focus": "headless-Chromium / Playwright rendering capabilities (rotated off the last 3 foci: procedural-relief 2026-07-15, editorial-dataviz 2026-07-17, LinkedIn-platform 2026-07-18); chosen to serve this run's rendering-robustness theme (8/9 slides failed the first render on a parse-time getElementById-null; S7/S8 shipped raster canvas text)",
+   "searches": 4,
+   "found": "Playwright add_init_script runs before ALL page scripts and is the sanctioned mechanism to wrap CanvasRenderingContext2D methods (LambdaTest/Apify/Playwright docs) -- the exact hook this run's canvas-text WARN uses (note: a bare arrow-expression is injected but never invoked; an IIFE is required). MDN + accessibility sources confirm canvas fillText renders a raster image of text, is not exposed to assistive tech, and pixelates when enlarged, with SVG/DOM the resolution-independent, selectable alternative -- the rationale for WARNing on meaningful canvas text. getElementById-null on a parse-time classic script is a settled class with fixes defer / module (deferred by default) / DOMContentLoaded / script-after-element (MDN, DOM-debugging guides). Playwright 1.60/headless-shell notes reconfirm the 07-13 parked screenshot-determinism risk on any Playwright upgrade. Sources: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text , https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById , https://www.lambdatest.com/automation-testing-advisor/python/playwright-python-add_init_script",
+   "outcome": "applied (canvas-raster-text WARN, render.py+qa.py, the 2026-07-19 engine fix above). Parked (FIELD_NOTES 2026-07-19): a slide-authoring contract rule + optional pre-flight lint for the parse-time getElementById-null / element-referenced-before-defined class (D1: 8/9 slides failed the first render), and a body_overflow diagnostic hint for the inline-appended-SVG baseline line-box (D3) -- both already hard-fail at render, so the bounded win is authoring guidance not a fragile static analyzer this run."
   }
  ]
 }

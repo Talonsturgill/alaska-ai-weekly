@@ -657,3 +657,24 @@ first comment; ~5 weeks old, framed as recent research not breaking news.
 - REACTIVE GAP STILL OPEN (logged 2026-07-17/18, held again): gmail_draft.py reads
   copy.get('post_copy') and copy.get('aftercare'); copy.json now carries both (added this
   run), but the permanent fallback fix in gmail_draft.py is still a Phase 12 candidate.
+  [RESOLVED by upgrade(2026-07-19): gmail_draft.py now falls back post_copy -> caption and
+  synthesizes a default aftercare checklist when the fields are absent.]
+
+### Phase 12 PARKED candidates (2026-07-19)
+
+- PARKED - slide-authoring "element referenced before it is defined" lint. D1 this run:
+  a classic (non-module) body <script> ran at parse time and did getElementById on a
+  grain <div> placed AFTER it, failing 8 of 9 slides ("Cannot read properties of null").
+  render.py already hard-fails on this (page_errors -> exit 1), but late (post-render). A
+  pre-flight static lint could catch it earlier, BUT a reliable one must model defer /
+  module (deferred by default) / DOMContentLoaded / script-after-element guards or it
+  false-positives, so it is parked. Bounded near-term win instead: a SKILL.md slide
+  contract rule -- "any element a parse-time classic script touches must appear before
+  that script, OR wrap the script in DOMContentLoaded / make it type=module / place it
+  last in body." Sources: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+- PARKED - body_overflow diagnostic hint. D3 this run: an inline appended <svg> carries a
+  baseline line-box and tripped render.py body_overflow on S1/S9 (fixed by
+  "#map svg { display:block }"). render.py already hard-fails body_overflow; the marginal
+  improvement is to append "(common cause: an inline <svg>/<canvas> baseline line-box; try
+  display:block on it)" to the body_overflow message so the author does not rediscover the
+  one-line fix. Held: diagnostic-only, no defect can ship, low ROI for an upgrade slot.

@@ -51,6 +51,37 @@ CHROMIUM_ARGS = [
     "--enable-unsafe-swiftshader",      # software WebGL (experimental; probe before relying on it)
 ]
 
+# Instrument canvas text BEFORE any slide script runs (add_init_script runs
+# before all page scripts). Canvas fillText/strokeText ink is a raster bitmap:
+# invisible to render.py's DOM walk, to copy_sync_check, to the LinkedIn ranker,
+# and to accessibility, and it pixelates in the vector PDF. We record every
+# non-empty text call so qa.py can WARN when a slide draws MEANINGFUL text on
+# canvas (2026-07-19: S7 loop labels + S8 annotations were cx.fillText and had
+# to be converted to DOM by hand; no gate saw the unauthored ones). The wrapper
+# only observes and forwards; it never alters the drawn frame.
+CANVAS_TEXT_HOOK_JS = """
+(() => {
+  try {
+    window.__akCanvasText = [];
+    const proto = window.CanvasRenderingContext2D && window.CanvasRenderingContext2D.prototype;
+    if (!proto) return;
+    for (const fn of ['fillText', 'strokeText']) {
+      const orig = proto[fn];
+      if (typeof orig !== 'function') continue;
+      proto[fn] = function (text) {
+        try {
+          const s = (text == null ? '' : String(text));
+          if (s.trim().length && window.__akCanvasText.length < 500) {
+            window.__akCanvasText.push({ text: s.slice(0, 80), fn: fn, font: this.font || '' });
+          }
+        } catch (e) {}
+        return orig.apply(this, arguments);
+      };
+    }
+  } catch (e) {}
+})();
+"""
+
 IN_PAGE_QA_JS = """
 () => {
   const W = window.innerWidth, H = window.innerHeight;
@@ -200,6 +231,19 @@ IN_PAGE_QA_JS = """
     } catch (e) {}
     out.canvases.push(entry);
   }
+  /* CANVAS TEXT (2026-07-19): deduped list of strings drawn via fillText/
+     strokeText, captured by the add_init_script hook before slide scripts ran.
+     qa.py WARNs on the meaningful ones (raster text ships in the vector PDF and
+     is invisible to the ranker/copy_sync/a11y). Only present if the hook ran. */
+  out.canvas_text = [];
+  try {
+    const seen = new Set();
+    for (const e of (window.__akCanvasText || [])) {
+      if (seen.has(e.text)) continue;
+      seen.add(e.text);
+      out.canvas_text.push(e);
+    }
+  } catch (e) {}
   return out;
 }
 """
@@ -235,10 +279,11 @@ def render_slide(browser, path: Path, out_png: Path, width: int, height: int,
                  scale: float, timeout_ms: int) -> dict:
     rec = {"file": path.name, "png": out_png.name, "console_errors": [], "page_errors": [],
            "overflow_warnings": [], "fonts_missing": [], "text_nodes": [],
-           "body_overflow": False, "render_ms": 0, "ok": False}
+           "body_overflow": False, "canvas_text": [], "render_ms": 0, "ok": False}
     t0 = time.time()
     page = browser.new_page(viewport={"width": width, "height": height},
                             device_scale_factor=scale)
+    page.add_init_script(CANVAS_TEXT_HOOK_JS)
     page.on("console", lambda m: rec["console_errors"].append(m.text)
             if m.type in ("error",) else None)
     page.on("pageerror", lambda e: rec["page_errors"].append(str(e)))
@@ -253,7 +298,8 @@ def render_slide(browser, path: Path, out_png: Path, width: int, height: int,
             page.wait_for_timeout(400)
         qa = page.evaluate(IN_PAGE_QA_JS)
         rec.update({k: qa[k] for k in ("text_nodes", "overflow_warnings",
-                                       "fonts_missing", "body_overflow", "canvases")})
+                                       "fonts_missing", "body_overflow", "canvases",
+                                       "canvas_text")})
         page.screenshot(path=str(out_png), clip={"x": 0, "y": 0, "width": width, "height": height})
         rec["ok"] = out_png.exists() and out_png.stat().st_size > 10_000
         if not rec["ok"]:

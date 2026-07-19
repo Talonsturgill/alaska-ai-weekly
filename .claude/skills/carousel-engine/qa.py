@@ -14,6 +14,10 @@ Checks per slide (consuming render_report.json + the PNGs):
     high-contrast structured edges (a canvas/bitmap arc or texture the DOM
     collision gate cannot see). Added 2026-07-10 after canvas flightpath/orbit
     arcs crossed body copy and a headline and machine QA passed both.
+  - CANVAS RASTER TEXT (WARN only): warns when a slide draws meaningful text
+    (>=4 alphabetic chars) via canvas fillText/strokeText, which ships as a
+    bitmap in the vector PDF and is invisible to the ranker/copy_sync/a11y.
+    Added 2026-07-19 after S7/S8 canvas labels had to be converted to DOM by hand.
   - approximate contrast of every non-decorative text node vs its local
     background (WCAG-style luminance ratio; estimate, so thresholds are
     conservative: <2.0 on primary text = FAIL, <3.5 = WARN)
@@ -237,6 +241,29 @@ def main():
                 res["warns"].append(
                     f"unsampleable canvas on {tag} (GL without preserveDrawingBuffer?) — "
                     "verify visually; akthree sets preserveDrawingBuffer for the gate")
+
+        # CANVAS RASTER TEXT (2026-07-19, WARN only). Text drawn via canvas
+        # fillText/strokeText is a raster bitmap: invisible to render.py's DOM
+        # walk, to copy_sync_check (unless the string is an authored copy.json
+        # record), to the LinkedIn ranker, and to accessibility, and it pixelates
+        # in the vector PDF. render.py's init-script hook captured every drawn
+        # string; warn on the MEANINGFUL ones (>= 4 alphabetic chars, so axis
+        # ticks / short unit labels / numbers do not trip it), pointing the
+        # author to move real labels to DOM/SVG. Never a FAIL: aklabel-style
+        # in-scene labels are legitimate, but the raster-text cost is worth a
+        # visible note. (2026-07-19: S7 loop labels + S8 annotations were
+        # cx.fillText and only caught by hand.)
+        seen_ct = set()
+        for ct in rec.get("canvas_text", []):
+            s = (ct.get("text") or "").strip()
+            if s in seen_ct:
+                continue
+            seen_ct.add(s)
+            if sum(c.isalpha() for c in s) >= 4:
+                res["warns"].append(
+                    f"canvas raster text '{s[:40]}' drawn via {ct.get('fn', 'fillText')} "
+                    "-- ships as a bitmap in the vector PDF (invisible to the LinkedIn "
+                    "ranker, copy_sync, and accessibility); move meaningful labels to DOM/SVG")
 
         for e in rec.get("page_errors", []):
             res["fails"].append(f"page error: {e}")

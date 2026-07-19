@@ -38,6 +38,20 @@ from pathlib import Path
 
 from PIL import Image
 
+# Fallback aftercare checklist, synthesized from CAROUSEL_CRAFT "Cadence &
+# aftercare" (Tue-Thu 8-11am AKT; golden hour first 60-90 min; sources comment
+# immediately; saves > comments > shares > likes vs our trailing median;
+# evergreen daily-draft cadence). Used only when copy.json omits 'aftercare',
+# so the one human deliverable never ships an empty aftercare block (the
+# post_copy/aftercare gap recurred 2026-07-17/18/19). No dashes, no colons.
+DEFAULT_AFTERCARE = [
+    "Post Tuesday to Thursday, 8 to 11am Alaska time. The day signal is the robust one; you own the hour.",
+    "Paste the sources comment immediately, within 60 seconds of posting, so the first comment locks in.",
+    "Reply substantively to every comment in the first 60 to 90 minutes. This golden hour drives reach and a dead first hour rarely recovers.",
+    "Judge the deck against our trailing median, weighting saves over comments over shares over likes.",
+    "Treat the deck as evergreen. Drafts arrive daily and you choose which to post and when.",
+]
+
 CSS = """
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a;background:#f6f7f9;margin:0;padding:24px;}
 .wrap{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:30px;}
@@ -146,7 +160,14 @@ def main():
         f'Fix next time: {esc(str(score.get("one_sentence_fix", "?")))}</div>')
     notes = esc(str(score.get("editor_notes_for_email", "") or "None."))
 
-    aftercare = "".join(f"<li>{esc(a)}</li>" for a in copy.get("aftercare", []))
+    # post_copy -> caption fallback: the copywriter/Phase 6 emit 'caption' and
+    # often no 'post_copy'; without this the paste-ready post block renders empty
+    # (recurring gap, 2026-07-17/18/19). Never mutates copy.json.
+    post_copy_text = copy.get("post_copy") or copy.get("caption", "")
+    # aftercare -> synthesized default when the copywriter omits it, so the
+    # "where reach is won" block is never empty.
+    aftercare_items = copy.get("aftercare") or DEFAULT_AFTERCARE
+    aftercare = "".join(f"<li>{esc(a)}</li>" for a in aftercare_items)
 
     site_url = "https://alaskaaihq.com/docket/"
     if docket:
@@ -223,7 +244,7 @@ def main():
   <b>{esc(copy.get('document_title', ''))}</b></div>
 
   <h2>2 &middot; Paste the post copy</h2>
-  <pre class="copy">{esc(copy.get('post_copy', ''))}</pre>
+  <pre class="copy">{esc(post_copy_text)}</pre>
 
   <h2>3 &middot; Post, then paste this as the FIRST comment (within a minute)</h2>
   <pre class="copy">{esc(copy.get('first_comment', ''))}</pre>
