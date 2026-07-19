@@ -283,3 +283,54 @@ export const FormGradients: React.FC<{bases: Record<string, string>}> = ({bases}
     ))}
   </>
 );
+
+// ------------------------------------------------------------- atmospheric particulate grade
+// HazeOverlay — 2026-07-19 CRAFT ADVANCE. A reusable, story-triggered air-quality /
+// smoke / pollution grading layer. Unlike GradeLayer (the constant filmic finish
+// applied to every frame), this is an ANIMATED, NARRATIVE layer: a scene calls it
+// with a 0..1 `amount` that the scene interpolates across a few beats (e.g. a
+// PM2.5 non-attainment turn), and it (a) lays a translucent grid-textured haze
+// wash over the frame, alpha-building in, and (b) desaturates + cools the ambient
+// key by up to one stop so the LIGHT itself performs the turn, not just a red
+// sticker on top of an unchanged scene. Any future wildfire-smoke / air-quality
+// Alaska story inherits this for free. Grid texture (not a smooth gradient) makes
+// the federal/regulatory nature of a "non-attainment zone" legible as a shape.
+export const HazeOverlay: React.FC<{
+  amount: number;              // 0..1, drive from an interpolate() across the turn
+  color?: string;              // the haze color (ash-red/grey by default)
+  gridSpacing?: number;
+}> = ({amount, color = '#C0392B', gridSpacing = 64}) => {
+  if (amount <= 0.01) return null;
+  const a = Math.max(0, Math.min(1, amount));
+  const id = gid(`haze${gridSpacing}`);
+  return (
+    <>
+      {/* the wash: a translucent color field, desaturating/cooling the scene under it */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: color, opacity: 0.26 * a, mixBlendMode: 'multiply',
+      }} />
+      {/* a normal-blend tint on top so the haze reads as a real color cast, not
+          just a darkening -- multiply alone barely shows against a dark scene */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: color, opacity: 0.42 * a,
+      }} />
+      {/* grid lattice: the regulatory-boundary read, alpha-building with `amount` */}
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920"
+        style={{position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.62 * Math.min(1, a)}}>
+        <defs>
+          <pattern id={id} width={gridSpacing} height={gridSpacing} patternUnits="userSpaceOnUse">
+            <path d={`M${gridSpacing},0 L0,0 0,${gridSpacing}`} fill="none" stroke={color} strokeWidth={1.4} opacity={0.55} />
+          </pattern>
+        </defs>
+        <rect width="1080" height="1920" fill={`url(#${id})`} />
+      </svg>
+      {/* a soft top-down desaturating vignette so the ambient key visibly cools */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none', mixBlendMode: 'saturation',
+        background: `linear-gradient(to bottom, rgba(120,120,120,${0.6 * a}) 0%, rgba(120,120,120,${0.15 * a}) 60%, transparent 100%)`,
+      }} />
+    </>
+  );
+};

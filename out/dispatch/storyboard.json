@@ -1,386 +1,183 @@
 {
-  "date": "2026-07-18",
-  "title": "THE FENCE THAT FALLS SHORT",
-  "concept": "Alaska's state land near Houston, 31 square miles of it, is about to be handed to AIDEA for free to build an AI data-center district. The town tried to fence it off. Their line falls two miles short of the parcel it was built to stop.",
-  "derived_from": "scratch",
+  "concept": "GVEA's Turbine Ticket: a proud North Pole power plant holds his place in a global, AI-driven turbine backlog line, and the neighbor breathing the haze his hedge would create is the honest, unresolved cost.",
   "engine": "infographic-2.5d",
-  "treatment": "FUSED (writers-room panel, scorer-graded winner): 'The Fence That Falls Short' (Dramatist) crowned as the buildable spine on scroll-stop power, emotional arc, and feasibility (an abstract machine-shadow needs no bespoke rig, staying inside the 1-2 bespoke-hero budget). Grafted the Explainer's boundary-gap caveat and the Comedian's mushing-trail overlay and sled-dog warmth for grounded human/animal stakes. GATE-0 NOTE: the panel flagged a genre-repetition risk since this is the third state-land-to-AI-infrastructure story this month (after 07-14 and 07-16, both Stak Energy/North Slope); the board leans hard into the jurisdictional-boundary irony, an anti-development ordinance that legally cannot reach the very parcel it targets, as the differentiator, and deliberately drops the 'public comment flood / mailbox is the real vote' beat both prior dispatches already used. GATE-0B REVISION (storyboard-critic): the back third originally rendered the honest caveat as a HUD text panel (a diagram, a stamp, a typed quote, a checklist, a flipping calendar) and ended on a redundant 'STATUS: UNDECIDED' text card, and shot 4 carried its emotional peak on a zoom gimmick that echoed 07-16's signature move. REVISED to stage the entire caveat as physical in-world objects in the dawn landscape: the fence-line's tip MATCH-CUTS (not zooms) into a surveyor's stake planted alone in bare ground, a measuring chain stretched taut across the real gap carries the '2 MI' fact, a pen hovering over an unsigned document carries AIDEA's own honesty, and a carved wooden trail-post carries the August 19 deadline. The ending now holds on these physical objects and the running dog team with no text card, letting the picture alone carry the unresolved standoff.",
+  "derived_from": "scratch",
+  "treatment": "Winning treatment: THE ENTHUSIAST (\"The Ticket in the Cold\"), scored by the writers-room judge over Comedian/Dramatist/Explainer. Hero Sourdough (net-new personified North Pole Power Plant, Character-base + custom glow chest) plans ahead, paying $50,000 to hold a turbine order slot amid a global AI-data-center-driven backlog, hedging with battery sidekick Cell. Judge reasoning: the locked story is a hopeful/competence beat and the routine needed to break a 3-run cautionary skew; Enthusiast was the only treatment scoring top on BOTH fairness (competence AND the PM2.5 counterpoint genuinely land) and freshness. Grafted beats: from the Dramatist, the parallel GE Vernova/Siemens Energy queues, the 2024/2025 supply-loss escalation, and the freeze-mid-decision/loopback button (guarantees the honest open question so a hopeful winner never collapses into a booster ending); from the Comedian, the Moose-bumped-from-the-dispenser running gag paying off with '#4,000,001 - DATA CENTERS AHEAD OF YOU'; from the Explainer, the $50K-deposit-vs-$90-120M-bill scale contrast and the GE Vernova/Siemens Energy stat badges, built from the HUD kit rather than a costly new conveyor mechanism. Sourdough's arc: earned confidence -> provisional humility. He does not resolve to triumph or defeat; the board vote stays genuinely open through the final freeze.",
+  "angle_ref": "out/dispatch/angle.json (Phase 3.5): thesis = a global AI-driven turbine market is setting terms inside an Interior Alaska boardroom; GVEA is so far acting like a sophisticated buyer, not a victim, but the competence is provisional until the July 28 vote and the PM2.5 non-attainment cost are honestly shown. Stance: curious with earned, provisional competence.",
+  "divergence_note": "Diverges from the last 2 dispatches on 6-7 of 7 controlled axes and both freetext axes. 2026-07-17 (UAF critical minerals) was a cross-section-cutaway/vertical-descent/stacked-layers editorial-schematic drilling into bedrock; this board is eye-level-immersive/push-in-only/centered-hero-lowerthird naturalistic-scene, a character portrait, not a cutaway. 2026-07-18 (AIDEA Mat-Su) was an aerial-to-ground faceless-institution-monolith with a loopback-vigil layout and dawn-backlight; this board's hero is a warm, expressive SINGLE character (Sourdough) rather than a faceless monolith, its light story is cold-dawn-to-haze-red rather than dawn-backlight, and its central metaphor (a personified plant holding a place in a literal deli-style global order queue) is unrelated to either prior episode's drill or land-conveyance metaphors. Palette (cold indigo pre-sunrise + ember-orange + server-teal + ash-red) shares no tokens with 07-17's amethyst-plum/copper/citrine/phosphor-lime or 07-18's dawn/birch/viridian/husky-amber/graphite/crimson.",
   "fingerprint": {
-    "pov": "orbital-aerial",
-    "motion_vector": "horizontal-traverse",
-    "hero_treatment": "landscape-as-subject",
-    "layout": "fullbleed-split",
+    "pov": "eye-level-immersive",
+    "motion_vector": "push-in-only",
+    "hero_treatment": "single-organic-hero",
+    "layout": "centered-hero-lowerthird",
     "register": "naturalistic-scene",
-    "camera_strategy": "locked-drift",
-    "light_story": "dawn-backlight",
-    "palette": "birch-white bark, boreal canopy in deep viridian, warm husky-fur amber, cool institutional graphite-blue for the shadow, a small crimson survey-tag accent",
-    "metaphor": "a fence built to stop an AI land grab that does not even reach the property line it was meant to defend"
+    "camera_strategy": "slow-push-with-tilt-reveal",
+    "light_story": "cold-dawn-then-haze-flush",
+    "palette": "cold indigo pre-sunrise sky, ember-orange furnace glow, server-teal queue light, ash-red haze warning",
+    "metaphor": "a proud local power plant holds his place in a global turbine backlog line, and a neighbor at the fence breathes what that line costs"
   },
-  "divergence_note": "Diverges from 2026-07-17 (cross-section-cutaway pov, vertical-descent motion, single-organic-hero, stacked-layers layout, editorial-schematic register, aerial-descent camera, night-practical light) on all 7 axes: this board stays above ground (orbital-aerial, not cross-section-cutaway), the dominant motion is a horizontal reach that fails (horizontal-traverse, not vertical-descent), the hero is the LAND itself not a single character (landscape-as-subject, not single-organic-hero), the frame splits rather than stacks (fullbleed-split, not stacked-layers), the render is a lit naturalistic forest world not a diagram (naturalistic-scene, not editorial-schematic), the camera holds in a vigil-still drift rather than descending (locked-drift, not aerial-descent), and it is a misty dawn not a lit night interior (dawn-backlight, not night-practical). Also diverges from 2026-07-16 (characterized-object confrontation comedy) by carrying no personified-object comedy at all, and from 2026-07-14 (map-territory, assemble-build, blueprint-technical) by using a naturalistic forest register instead of blueprint line-art and a failed-reach motion instead of an assembling structure. Spatial signature (orbital-aerial, fullbleed-split, horizontal-traverse) is unique versus the last four dispatches' signatures. Palette (birch-white bark, deep viridian canopy, husky-fur amber, graphite-blue shadow tone, one crimson stamp) shares no token with 07-16 (navy burst, ember red, orange/green) or 07-17 (amethyst-plum, copper, citrine, phosphor-lime).",
   "hook": {
-    "pattern": "bold-claim",
-    "frame1": "a slow aerial push begins over unbroken Mat-Su birch and spruce forest with a single mushing trail below, low dawn mist glowing; a glowing parcel-boundary line is already drawing itself in by 1.0s so the scale-claim reads unmistakably fast",
-    "headline": "31 Square Miles. For Free.",
-    "motion_by_s": 1.0,
-    "loopback": "the final beat pushes back into this exact aerial framing, the fence-line and the frozen machine-shadow both visible in the gap where the fence falls short, the land holding its unresolved standoff forever on loop"
+    "pattern": "in-medias-res",
+    "frame1": "Sourdough stands against a cold indigo pre-sunrise sky, his furnace-window chest glowing warm, a frost-crusted $50,000 HOLD ticket pinned proudly to it.",
+    "headline": "He Paid $50K Just To Wait",
+    "motion_by_s": 1.2,
+    "loopback": "The pinned $50,000 ticket from frame 1 rhymes with the unsigned ballot resting against him in the final freeze, same warm chest-glow, same held stillness."
   },
   "audio_arc": {
-    "build_steps": 3,
-    "dip_at": 44.655,
-    "riser_at": 23.341,
-    "silence_at": 44.655,
-    "payoff_at": 45.405,
-    "button_pattern": "callback",
-    "retimed_note": "updated after recovering line 0's audio from the build_timeline.py filename-collision bug (2026-07-18): new timeline total 54.32s. silence_at/dip_at=48.74s is the center of the mix's ducked window (dispatch_mix_2026_07_18.py SILENCE_DIP_CENTER, now computed live from vo_lines.json), matching quality_gate.py's SILENCE_DIP measurement window, inside the true silent gap [47.94,49.54]s before the button line."
+    "build_steps": ["ticket chime intro", "queue whoosh pull-back", "stat-burst ticks accumulate", "door-slam percussion doubles down", "turbine clank + battery synth rise"],
+    "riser_at": 35.34,
+    "dip_at": 38.2,
+    "silence_at": 38.2,
+    "payoff_at": 48.3,
+    "button_pattern": "callback"
   },
   "shots": [
     {
-      "id": 1,
-      "t": "0-9",
-      "framing": "wide-establish",
-      "pov": "orbital-aerial",
-      "layout": "fullbleed-split",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "landscape-as-subject",
-      "centered": "the glowing parcel-boundary line drawing itself across the Mat-Su forest map and swallowing Houston's town icon at scale, then a noncompetitive-conveyance lever locking in with no dollar sign",
-      "means": "opens on the hook: the land, the scale, and the fact that no price was ever attached to it",
-      "hero": {
-        "name": "Parcel Boundary + Conveyance Lever",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "a hard glowing boundary line filling in over hand-inked birch/spruce forest, a tiny Houston town icon dwarfed inside it, a labeled gear-lever with a crossed-out dollar sign, an AIDEA nameplate"
-      }
+      "id": 1, "t": "0.0-9.0", "framing": "subject-portrait",
+      "pov": "eye-level-immersive", "layout": "centered-hero-lowerthird", "motion_vector": "push-in-only", "hero_treatment": "single-organic-hero",
+      "centered": "Sourdough pinning his frost-crusted $50,000 ticket to his glowing chest",
+      "means": "opens on the stake: a paid place in line",
+      "hero": {"name": "Sourdough", "parts": 5, "zones": 3, "detail_note": "frost-rimmed rivets on a stubby turbine-hall body, a warm furnace-window chest, a knit watch-cap, mittened hands pinning the ticket"}
     },
     {
-      "id": 2,
-      "t": "9-18",
-      "framing": "subject-portrait",
-      "pov": "eye-level-immersive",
-      "layout": "centered-hero-lowerthird",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "multiplicity-swarm",
-      "transition_in": "match-action",
-      "thread": "build",
-      "centered": "a sled-dog team trotting a glowing 40-plus-mile trail overlay across the parcel, then an abstract machine-shadow rising behind them as three icons (data center, rail hub, power line) stamp in",
-      "means": "grounds the human/animal stakes first, then lets the AI-infrastructure shadow rise behind them",
-      "hero": {
-        "name": "Sled-Dog Team + Machine-Shadow",
-        "parts": 5,
-        "zones": 2,
-        "detail_note": "an ink-outlined sled-dog team on a phosphor trail-line, a faceless machine-shadow of servers and antennae lengthening behind, three stamping labeled icons"
-      }
+      "id": 2, "t": "9.0-19.0", "framing": "map-territory",
+      "pov": "top-down-map", "layout": "map-territory", "motion_vector": "horizontal-traverse", "hero_treatment": "multiplicity-swarm",
+      "transition_in": "pull-out", "thread": "carry",
+      "centered": "the backlog counter ticking up behind Sourdough, tiny at the head of a global line",
+      "means": "scale reveal: he is the smallest customer in the biggest auction on Earth",
+      "hero": {"name": "The Order Queue", "parts": 4, "zones": 2, "detail_note": "a ticket dispenser, a conveyor of riveted turbine crates, a spinning GW backlog counter, blue data-center slices flipping down the line"}
     },
     {
-      "id": 3,
-      "t": "18-27",
-      "framing": "two-up",
-      "pov": "orbital-aerial",
-      "layout": "fullbleed-split",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "structure-as-subject",
-      "transition_in": "crossfade",
-      "thread": "build",
-      "centered": "a blank tenant nameplate swinging empty beneath the shadow, then Houston's civic silhouette raising a determined fence-line across the city limits",
-      "means": "the honest caveat starts here (no operator confirmed) before the town's countermove",
-      "hero": {
-        "name": "Blank Nameplate + Houston Fence-Line",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "an empty swinging sign labeled NO OPERATOR NAMED, a civic-outfit character (existing Character rig) raising a fence-line prop with real weight and intent"
-      }
+      "id": 3, "t": "19.0-30.0", "framing": "data-panel",
+      "pov": "instrument-screen", "layout": "hud-instrument-frame", "motion_vector": "radial-emanate", "hero_treatment": "data-as-subject",
+      "transition_in": "fui-boot", "thread": "build",
+      "centered": "the GE Vernova and Siemens Energy stat badges stamping in over the queue",
+      "means": "names the antagonist force in hard numbers, with a Moose gag to keep it human",
+      "hero": {"name": "Backlog Stat Panel", "parts": 3, "zones": 2, "detail_note": "a GE Vernova StatBurst badge, a Siemens Energy nameplate, a bumped-Moose gag vignette in the corner"}
     },
     {
-      "id": 4,
-      "t": "27-36",
-      "framing": "macro-closeup",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "push-in-only",
-      "hero_treatment": "data-as-subject",
-      "transition_in": "match-cut",
-      "thread": "match",
-      "centered": "MATCH-CUT: the fence-line's taut rope tip resolves into a kindred shape, a surveyor's wooden stake planted alone in bare negative space two miles short of the parcel, then the shot pulls back to reveal a measuring chain stretched taut from the stake across the real gap to the parcel edge with a small 2 MI tag",
-      "means": "the emotional and factual peak carried by a true match-cut (a kindred shape landing in a new physical world), not a zoom, and the caveat made measurable in-world instead of as a diagram",
-      "hero": {
-        "name": "Surveyor's Stake + Measuring Chain",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "a weathered wooden stake standing alone in bare ground, a taut metal measuring chain running from it across open negative space to the parcel edge, a small swinging tag reading 2 MI"
-      }
+      "id": 4, "t": "30.0-40.0", "framing": "two-up",
+      "pov": "eye-level-immersive", "layout": "fullbleed-split", "motion_vector": "vertical-descent", "hero_treatment": "structure-as-subject",
+      "transition_in": "whip-pan", "thread": "travel",
+      "centered": "the old and new turbines standing side by side as the price-range ruler stretches out",
+      "means": "the competence beat: he already moved, at a real, honestly-ranged cost",
+      "hero": {"name": "North Pole Power Plant (old + new turbine)", "parts": 4, "zones": 2, "detail_note": "the veteran 2006 LM6000 unit, the new ~45MW turbine slotting in, two SwingSigns (Southcentral/Enstar) swinging shut, a stretching price-range ruler"}
     },
     {
-      "id": 5,
-      "t": "36-45",
-      "framing": "subject-portrait",
-      "pov": "eye-level-immersive",
-      "layout": "centered-hero-lowerthird",
-      "motion_vector": "push-in-only",
-      "hero_treatment": "structure-as-subject",
-      "transition_in": "hard-cut",
-      "thread": "carry",
-      "centered": "a pen hovers just above an unsigned document beside a small AIDEA nameplate, never touching down, then a weathered wooden trail-post nearby carved with the date AUG 19 stands fixed in the gap",
-      "means": "the honest caveat, drawn as physical non-actions in the landscape (a pen that never signs, a post that only marks a date) instead of a HUD stamp and calendar",
-      "hero": {
-        "name": "Unsigned Document + Deadline Post",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "a suspended pen trembling just above blank paper, a small AIDEA nameplate beside it, a moss-grained wooden post carved with AUG 19 standing a short distance away"
-      }
+      "id": 5, "t": "40.0-52.0", "framing": "alt-vantage",
+      "pov": "orbital-aerial", "layout": "single-object-void", "motion_vector": "vertical-rise", "hero_treatment": "landscape-as-subject",
+      "transition_in": "push-in", "thread": "travel",
+      "centered": "the red PM2.5 haze grid settling over North Pole as Patrice Lee's verbatim quote types on screen",
+      "means": "THE TURN: the honest counterpoint lands as an undodged picture",
+      "hero": {"name": "North Pole under the haze", "parts": 3, "zones": 2, "detail_note": "a translucent red PM2.5 grid overlay, Patrice Lee's typed verbatim quote card, a small Delta Wind SurveyStake spinning"}
     },
     {
-      "id": 6,
-      "t": "45-59",
-      "framing": "wide-establish",
-      "pov": "orbital-aerial",
-      "layout": "fullbleed-split",
-      "motion_vector": "locked-drift",
-      "hero_treatment": "landscape-as-subject",
-      "transition_in": "crossfade",
-      "thread": "match",
-      "centered": "the aerial cold-open framing returns, the fence-line, stake, chain, and post all visible in the gap alongside the frozen machine-shadow, none touching, the sled-dog team trotting through the gap past them, camera holding still to the loop with no text card",
-      "means": "the button: nothing has moved, nothing has been decided, the physical objects in the gap and the dogs moving past them carry the standoff without a label",
-      "hero": {
-        "name": "Loopback Vigil Frame",
-        "parts": 5,
-        "zones": 2,
-        "detail_note": "identical composition to shot 1's opening frame, fence-line and machine-shadow held static in the same gap, the stake/chain/post now visible in it, the sled-dog team trotting through the trail between them"
-      }
+      "id": 6, "t": "52.0-63.0", "framing": "subject-portrait",
+      "pov": "eye-level-immersive", "layout": "centered-hero-lowerthird", "motion_vector": "push-in-only", "hero_treatment": "single-organic-hero",
+      "transition_in": "match-cut", "thread": "match",
+      "centered": "Sourdough frozen mid-vote, pen hovering over an unsigned ballot",
+      "means": "THE BUTTON: an honest freeze that loops back to the ticket motif; the Moose gag pays off",
+      "hero": {"name": "Sourdough (frozen)", "parts": 3, "zones": 2, "detail_note": "an unsigned ballot under a hovering pen, the Moose's disbelieving face at the dispenser reading #4,000,001, the ticket motif rhyme"}
     }
   ],
   "beats": [
     {
-      "t": "0-4.5",
-      "vo": "Alaska is about to give away thirty one square miles of land.",
-      "shows": "aerial push over Mat-Su birch and spruce forest, dawn mist; a glowing parcel-boundary line draws itself in and swallows the tiny Houston town icon at scale; headline '31 SQUARE MILES. FOR FREE.' snaps in at 1.0s",
-      "sfx": "low wind ambience, electronic draw-line whoosh",
-      "means": "opens on the hook: the land, and the scale of what is being given away",
-      "draw": {
-        "subject": "a glowing parcel-boundary line over the Mat-Su forest map",
-        "action": "draws itself in and swallows the tiny Houston town icon at scale",
-        "emotion": "quiet alarm at scale",
-        "annotation": "31 SQUARE MILES"
-      },
-      "choreo": {
-        "primary": "boundary line filling in across the map",
-        "reaction": "the Houston town icon shrinking by comparison",
-        "ambient": "dawn mist drifting low over the canopy"
-      }
+      "t": "0.0-4.0", "vo": "A power plant in North Pole is holding a ticket.",
+      "shows": "Sourdough pins a frost-crusted $50,000 ticket to his glowing chest", "sfx": "paper-rustle + soft chime",
+      "means": "cold open: the stake is a paid place in line",
+      "draw": {"subject": "Sourdough, a warm glowing-chested power-plant character", "action": "blows frost off a paper ticket and pins it to his chest", "emotion": "quiet pride", "annotation": "$50,000 HOLD"},
+      "choreo": {"primary": "Sourdough's hand pinning the ticket", "reaction": "his chest-glow flickers brighter", "ambient": "drifting frost motes and breath fog"}
     },
     {
-      "t": "4.5-9",
-      "vo": "For free. To a state agency called AIDEA.",
-      "shows": "a gear-lever mechanism labeled NONCOMPETITIVE CONVEYANCE pulls down beside an AIDEA nameplate; a crossed-out dollar sign locks in",
-      "sfx": "mechanical lever clank, stamp tick",
-      "means": "the no-charge mechanism, drawn as a cold procedural machine, on the words that state it",
-      "draw": {
-        "subject": "a gear-lever labeled NONCOMPETITIVE CONVEYANCE beside an AIDEA nameplate",
-        "action": "the lever pulls down and a crossed-out dollar sign locks in",
-        "emotion": "cold, procedural",
-        "annotation": "NO PRICE STATED \u00b7 AIDEA"
-      },
-      "choreo": {
-        "primary": "the lever pulling and the dollar-sign icon crossing out",
-        "reaction": "the AIDEA nameplate settling into place beside it",
-        "ambient": "faint gear-click residue"
-      }
+      "t": "4.0-8.0", "vo": "Fifty thousand dollars, just to keep his place in line.",
+      "shows": "camera pulls back revealing a global order queue stretching to the horizon", "sfx": "whoosh pull-back",
+      "means": "scale reveal: he is tiny in an enormous line",
+      "draw": {"subject": "the global order queue", "action": "recedes to a vanishing point behind Sourdough as a backlog counter spins up", "emotion": "awe", "annotation": "a place in line"},
+      "choreo": {"primary": "camera pull-back", "reaction": "Sourdough shrinks in frame", "ambient": "distant conveyor hum"}
     },
     {
-      "t": "9-13.5",
-      "vo": "It's birch forest near Houston. More than forty miles of mushing trails.",
-      "shows": "cut to eye-level: a sled-dog team trots a glowing trail overlay crossing the parcel, tails up, birch trunks passing",
-      "sfx": "paw-pad patter, distant dog bark, birdsong",
-      "means": "grounds the human and animal stakes on this land before the AI-infrastructure angle arrives",
-      "draw": {
-        "subject": "a sled-dog team on a glowing trail overlay crossing the parcel",
-        "action": "trots the trail, tails up, alive and unbothered",
-        "emotion": "warm, grounded, alive",
-        "annotation": "40+ MILES OF TRAILS"
-      },
-      "choreo": {
-        "primary": "the dog team's trotting gait along the glowing trail line",
-        "reaction": "ears perking at the birdsong",
-        "ambient": "birch leaves stirring, morning light breaking through"
-      }
+      "t": "8.0-12.0", "vo": "The line is a global turbine backlog, jammed by AI data centers.",
+      "shows": "glowing blue data-center silhouettes cut into the line ahead of him", "sfx": "electronic tick/klaxon",
+      "means": "names the antagonist force: global AI-driven demand",
+      "draw": {"subject": "data-center silhouettes", "action": "slide ahead of Sourdough in the queue, tickets already stamped SOLD", "emotion": "encroaching pressure", "annotation": "AI data centers"},
+      "choreo": {"primary": "data-center shapes sliding in", "reaction": "Sourdough leans to keep his spot", "ambient": "queue chatter murmur"}
     },
     {
-      "t": "13.5-18",
-      "vo": "The plan: data centers. A rail hub. Power lines.",
-      "shows": "an abstract faceless machine-shadow rises out of the parcel outline behind the trail; three labeled icons (data center, rail hub, power line) stamp in one by one",
-      "sfx": "low ominous riser begins, three stamp-ticks",
-      "means": "the proposed uses, stamped in one by one as they are named, over a shadow that is deliberately not a cute character",
-      "draw": {
-        "subject": "a faceless machine-shadow with three stamping labeled icons",
-        "action": "the shadow lengthens as the icons stamp in one by one",
-        "emotion": "ominous, patient",
-        "annotation": "DATA CENTERS \u00b7 RAIL HUB \u00b7 POWER LINES"
-      },
-      "choreo": {
-        "primary": "the shadow's silhouette lengthening",
-        "reaction": "the sled-dog team's ears flicking toward it, unbothered",
-        "ambient": "the riser building low under the trail ambience"
-      }
+      "t": "12.0-16.0", "vo": "GE Vernova's backlog: near a hundred gigawatts.",
+      "shows": "a GE Vernova StatBurst badge stamps in with the backlog counter spinning up", "sfx": "mechanical counter-tick",
+      "means": "the scale of the global backlog, made numeric",
+      "draw": {"subject": "a StatBurst badge", "action": "stamps onto the queue as the backlog counter spins to a huge number", "emotion": "overwhelmed", "annotation": "~100 GW backlog"},
+      "choreo": {"primary": "counter digits spinning", "reaction": "Sourdough's eyes widen", "ambient": "low mechanical drone"}
     },
     {
-      "t": "18-22.5",
-      "vo": "No company has signed on yet.",
-      "shows": "a blank tenant nameplate sign swings, empty, beneath the machine-shadow",
-      "sfx": "creaky sign swing",
-      "means": "the first honest caveat beat: no operator is confirmed",
-      "draw": {
-        "subject": "a blank tenant nameplate sign",
-        "action": "swings empty and unfilled beneath the shadow",
-        "emotion": "uncertain",
-        "annotation": "NO OPERATOR NAMED"
-      },
-      "choreo": {
-        "primary": "the sign swinging on a creaking hinge",
-        "reaction": "the shadow holding still behind it, waiting",
-        "ambient": "a light breeze catching the sign's edge"
-      }
+      "t": "16.0-20.0", "vo": "A fifth of it, data centers.",
+      "shows": "a background Moose gets bumped from the ticket dispenser by a data-center hand", "sfx": "comic boing/honk",
+      "means": "comic beat dramatizing the AI-share of the backlog",
+      "draw": {"subject": "a background Moose", "action": "reaches for a ticket and gets shoved back by a data-center hand", "emotion": "indignant", "annotation": "1/5 of it: data centers"},
+      "choreo": {"primary": "Moose bumped backward", "reaction": "Moose's antlers wobble", "ambient": "queue murmur continues"}
     },
     {
-      "t": "22.5-27",
-      "vo": "Houston's town council tried to ban it.",
-      "shows": "Houston's civic silhouette (existing Character rig, civic outfit) raises a fence-line deliberately across the city limits, reaching toward the parcel",
-      "sfx": "metallic fence-clank, riser building toward its peak",
-      "means": "the town's countermove, drawn with real determination",
-      "draw": {
-        "subject": "Houston's civic silhouette raising a fence-line",
-        "action": "extends the fence-line deliberately across the city limits toward the parcel",
-        "emotion": "determined, protective",
-        "annotation": "CITY OF HOUSTON: PROPOSED BAN"
-      },
-      "choreo": {
-        "primary": "the fence-line extending link by link",
-        "reaction": "the civic figure's posture straightening with resolve",
-        "ambient": "the riser climbing under the clank"
-      }
+      "t": "20.0-24.5", "vo": "Siemens Energy: over sixty percent of this year's orders are data centers.",
+      "shows": "a Siemens Energy nameplate lights up beside a second queue mostly flipped blue", "sfx": "electric hum swell",
+      "means": "a second, starker data point on AI's share of turbine demand",
+      "draw": {"subject": "a Siemens Energy nameplate", "action": "lights up as a parallel queue's tickets flip server-blue one by one", "emotion": "mounting pressure", "annotation": "60%+ of 2026 orders"},
+      "choreo": {"primary": "tickets flipping blue in sequence", "reaction": "Sourdough grips his ticket tighter", "ambient": "rising synth hum"}
     },
     {
-      "t": "27-31.5",
-      "vo": "But their line falls two miles short.",
-      "shows": "MATCH-CUT: the fence-line's taut rope tip resolves into a kindred shape, a surveyor's wooden stake standing alone in bare negative space, dawn light raking across it, no fence beyond",
-      "sfx": "a taut rope-creak resolving into a stake driven into soft ground, thud",
-      "means": "the emotional peak carried by a true match-cut (a kindred shape landing in a new physical world), not a zoom gimmick",
-      "draw": {
-        "subject": "a surveyor's stake planted alone in empty ground",
-        "action": "the fence-line's tip resolves into the stake, standing alone with no fence beyond it",
-        "emotion": "failure, exposed",
-        "annotation": null
-      },
-      "choreo": {
-        "primary": "the stake settling upright after being driven in",
-        "reaction": "the last link of fence-line just behind it, reaching no further",
-        "ambient": "dust settling, dawn light long across bare ground"
-      }
+      "t": "24.5-29.0", "vo": "Fairbanks lost its cheap power in twenty twenty four,",
+      "shows": "a SwingSign labeled Cheap Southcentral Power swings shut on the AlaskaMini map", "sfx": "clunk/slam",
+      "means": "establishes why the co-op needs new capacity at all, independent of AI",
+      "draw": {"subject": "a SwingSign on the AlaskaMini map", "action": "swings shut over the Southcentral supply line", "emotion": "worry", "annotation": "2024"},
+      "choreo": {"primary": "sign swinging shut", "reaction": "map pin dims", "ambient": "wind gust"}
     },
     {
-      "t": "31.5-36",
-      "vo": "It never reaches this land.",
-      "shows": "pull back to reveal a surveyor's measuring chain stretched taut from the stake across the real physical gap to the parcel's edge, a small metal tag clipped to it reading 2 MI; a pre-turn silence dip in the mix",
-      "sfx": "silence dip, chain-links settling taut, one soft low tone",
-      "means": "the caveat made physically measurable in the landscape itself, not a HUD diagram",
-      "draw": {
-        "subject": "a surveyor's measuring chain stretched from the stake to the parcel edge",
-        "action": "pulls taut across the gap as a small tag clips into place",
-        "emotion": "stark, plain",
-        "annotation": "2 MI"
-      },
-      "choreo": {
-        "primary": "the chain drawing taut link by link",
-        "reaction": "the tag swinging once then settling still",
-        "ambient": "the mix dropping to near-silence"
-      }
+      "t": "29.0-33.5", "vo": "its gas deal in twenty twenty five.",
+      "shows": "a second supply pipe labeled Enstar cracks and snaps shut", "sfx": "snap/crack",
+      "means": "the second door closing, hardening the plant's resolve",
+      "draw": {"subject": "a supply pipe labeled Enstar", "action": "cracks and snaps shut on the map", "emotion": "resolve hardening", "annotation": "2025"},
+      "choreo": {"primary": "pipe snapping", "reaction": "Sourdough's jaw sets", "ambient": "low creak"}
     },
     {
-      "t": "36-40.5",
-      "vo": "AIDEA says it straight: no decisions have been made.",
-      "shows": "a pen hovers just above an unsigned document beside a small AIDEA nameplate, trembling, never touching down to sign",
-      "sfx": "a faint pen-nib hover-hum, paper settling",
-      "means": "the agency's own honesty drawn as a physical non-action, a pen that never signs, instead of a stamp and a typed quote",
-      "draw": {
-        "subject": "a pen suspended above an unsigned document",
-        "action": "hovers and trembles, never touches down to sign",
-        "emotion": "matter-of-fact honesty",
-        "annotation": "AIDEA"
-      },
-      "choreo": {
-        "primary": "the pen's slight tremble as it hovers",
-        "reaction": "the blank document's edge lifting faintly in the breeze",
-        "ambient": "quiet, held"
-      }
+      "t": "33.5-38.5", "vo": "The plant planned ahead: a second turbine, ninety to one hundred twenty million dollars, plus a battery bet.",
+      "shows": "a new ~45MW turbine slots in beside the veteran 2006 unit as a price-range ruler stretches out and Cell's charge bars glow", "sfx": "mechanical clank + rising synth",
+      "means": "the competence beat: he already moved, at a real, honestly-ranged cost",
+      "draw": {"subject": "Sourdough and battery sidekick Cell", "action": "stand together as a new turbine slots in beside the old one and a price ruler stretches out", "emotion": "resolve/confidence", "annotation": "$90M-$120M + battery bet"},
+      "choreo": {"primary": "turbine sliding into place", "reaction": "Cell's charge bars pop up with a spring overshoot", "ambient": "plant machinery hum"}
     },
     {
-      "t": "40.5-45",
-      "vo": "Comments close August nineteenth. Nothing here is final.",
-      "shows": "a weathered wooden trail-post stands fixed nearby, a date carved into its grain, AUG 19, moss on its base, the unsigned document still visible at the edge of frame",
-      "sfx": "wood-grain creak, one distant bird call",
-      "means": "the deadline and the unresolved status, drawn as one honest physical object in the landscape rather than a HUD calendar",
-      "draw": {
-        "subject": "a weathered wooden post carved with a date",
-        "action": "stands fixed in the gap, marking the deadline",
-        "emotion": "ticking, unresolved",
-        "annotation": "AUG 19"
-      },
-      "choreo": {
-        "primary": "the camera settling on the carved date",
-        "reaction": "the unsigned document still visible, untouched, at the frame's edge",
-        "ambient": "a single distant bird call"
-      }
+      "t": "38.5-43.0", "vo": "But North Pole already fails the federal air test.",
+      "shows": "camera pushes past Sourdough's glowing chest and tilts up as a translucent red haze grid settles over the town", "sfx": "low ominous riser",
+      "means": "THE TURN: the honest counterpoint arrives as a picture",
+      "draw": {"subject": "the ground and air over North Pole", "action": "a translucent red PM2.5 haze grid settles over the rooftops as the camera tilts up", "emotion": "confidence faltering", "annotation": "FEDERAL PM2.5 NON-ATTAINMENT ZONE"},
+      "choreo": {"primary": "haze grid rolling in", "reaction": "Sourdough's glow dims a shade and he lowers a mask from his chest", "ambient": "wind through the haze"}
     },
     {
-      "t": "45-49.5",
-      "vo": "So the fence stands empty. The shadow keeps reaching.",
-      "shows": "return to the aerial cold-open framing, the fence-line, the stake, the chain, and the post all now visible in the gap alongside the frozen machine-shadow, none touching, camera holding still",
-      "sfx": "wind ambience returns, music dips further",
-      "means": "the loopback begins: the standoff is held, not resolved, the physical objects from the caveat now visible together in the gap",
-      "draw": {
-        "subject": "the aerial view again, fence-line, stake, chain, post, and frozen machine-shadow",
-        "action": "camera holds, none of them reach each other",
-        "emotion": "quiet vigil",
-        "annotation": null
-      },
-      "choreo": {
-        "primary": "the camera settling into stillness",
-        "reaction": "the shadow's edge trembling faintly, held",
-        "ambient": "wind returning over the canopy"
-      }
+      "t": "43.0-48.0", "vo": "\"You cannot add to the pollution in a non-attainment area, and be legally correct.\"",
+      "shows": "Patrice Lee stands at the fence line as her exact words type out on screen", "sfx": "typewriter-tick + a real dip in the music",
+      "means": "the fair counterpoint lands verbatim, from a named person",
+      "draw": {"subject": "Patrice Lee, a neighbor character at the fence line", "action": "stands in the haze as her verbatim quote types out beside her", "emotion": "grief/accountability", "annotation": "named clean-air advocate, GVEA member"},
+      "choreo": {"primary": "quote typing on screen", "reaction": "Sourdough looks down, ashamed", "ambient": "near-silence, wind only"}
     },
     {
-      "t": "49.5-54",
-      "vo": "The dogs still run this trail either way.",
-      "shows": "the sled-dog team trots briskly through the gap between the fence-line and the machine-shadow, undisturbed by either, the one real motion in the closing hold",
-      "sfx": "paw-pad patter, gentle wind",
-      "means": "the grounded human/animal stakes close the emotional arc: life on the land keeps moving regardless of the standoff, and gives the static loopback tail its one beat of real motion",
-      "draw": {
-        "subject": "the sled-dog team on the trail in the gap between fence and shadow",
-        "action": "trots the trail through the gap, unbothered by either side",
-        "emotion": "calm, alive, grounded",
-        "annotation": null
-      },
-      "choreo": {
-        "primary": "the dog team's trotting gait moving through the gap",
-        "reaction": "one dog's head turning toward the shadow mid-stride, unbothered",
-        "ambient": "soft wind over the birch canopy"
-      }
+      "t": "48.0-52.5", "vo": "",
+      "shows": "a SurveyStake plants quietly beside Sourdough with a small spinning wind-turbine icon", "sfx": "soft wind whoosh",
+      "means": "the honest, unresolved alternative, offered not crowned",
+      "draw": {"subject": "a SurveyStake", "action": "plants in the frost beside Sourdough, a small wind turbine spinning atop it", "emotion": "a quiet, unclaimed option", "annotation": "36MW Delta Wind (proposed)"},
+      "choreo": {"primary": "stake planting, blade spinning", "reaction": "Sourdough glances at it, undecided", "ambient": "soft wind"}
     },
     {
-      "t": "54-59",
-      "vo": "Nobody's said yes here. Nobody's said no where it counts.",
-      "shows": "final button: camera settles into the exact loopback framing from the cold open, fence-line, stake, chain, post, and shadow held static in the gap, no text card, the picture alone carries the standoff",
-      "sfx": "soft final music button, tail out",
-      "means": "closes the loop purely on the image: nothing labeled, nothing resolved, the gap itself is the point",
-      "draw": {
-        "subject": "the same aerial parcel, fence-line, stake, chain, post, and machine-shadow composition as the cold open",
-        "action": "camera settles, nothing moves, loop-perfect",
-        "emotion": "unresolved, held",
-        "annotation": null
-      },
-      "choreo": {
-        "primary": "the frame holding motionless on the loop point",
-        "reaction": "the dogs' trail dust settling in the gap, the last motion to fade",
-        "ambient": "wind and distant birdsong tailing into silence"
-      }
+      "t": "52.5-57.0", "vo": "The board votes July twenty eighth.",
+      "shows": "a GearLever labeled BOARD VOTE hovers between YES and NO as a wall clock ticks", "sfx": "clock tick",
+      "means": "the concrete, dated stake of the still-open decision",
+      "draw": {"subject": "a GearLever labeled BOARD VOTE", "action": "hovers between YES and NO as a wall clock behind it ticks toward the date", "emotion": "suspense", "annotation": "JULY 28, 2026 - undecided"},
+      "choreo": {"primary": "lever quivering between positions", "reaction": "clock hand ticking", "ambient": "low suspense pad"}
+    },
+    {
+      "t": "57.0-63.0", "vo": "Nobody's decided. Not even him.",
+      "shows": "Sourdough freezes mid-vote with a pen hovering over an unsigned ballot, while the Moose finally reaches the dispenser and reads his own absurd number in disbelief", "sfx": "held silence then a soft final chime, the ticket motif returns",
+      "means": "THE BUTTON: an honest freeze, looping back to the ticket motif; the Moose gag pays off",
+      "draw": {"subject": "Sourdough", "action": "freezes mid-vote, pen hovering over an unsigned ballot", "emotion": "unresolved, quietly human", "annotation": "#4,000,001 - DATA CENTERS AHEAD OF YOU (Moose's ticket, background)"},
+      "choreo": {"primary": "pen frozen mid-air", "reaction": "Moose's disbelieving double-take in the background", "ambient": "held silence"}
     }
   ]
 }

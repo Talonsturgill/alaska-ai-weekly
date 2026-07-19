@@ -1,0 +1,42 @@
+{
+  "date": "2026-07-19",
+  "story": "GVEA (Golden Valley Electric Association) weighs a second ~45MW GE LM6000 naphtha turbine for its North Pole Power Plant; board vote scheduled July 28, 2026",
+  "sources": [
+    {
+      "outlet": "Fairbanks Daily News-Miner",
+      "title": "GVEA board to weigh heavy purchase decision in July, as members raise concerns",
+      "url": "https://www.newsminer.com/news/local_news/gvea-board-to-weigh-heavy-purchase-decision-in-july-as-members-raise-concerns/article_c8b5ce9d-5c3a-46bf-b261-436ea4abe02b.html",
+      "note": "Board vote date, ~$120M/45-58MW estimate, Enstar contract end, 250,000 gal/day diesel figure, one of the two Patrice Lee quotes"
+    },
+    {
+      "outlet": "Fairbanks Daily News-Miner",
+      "title": "North Pole turbine proposal sparks clean-air concerns",
+      "url": "https://www.newsminer.com/news/local_news/north-pole-turbine-proposal-sparks-clean-air-concerns/article_3f748ab1-f3cf-4a61-bae0-ec5f4f75949e.html",
+      "note": "$50,000 order-slot reservation (inside a larger April board approval), ~$90M/45MW estimate, PM2.5 non-attainment zone confirmation, 200,000 gal/day diesel figure, 36MW Ameresco Delta Wind + battery storage detail, other Patrice Lee quote"
+    },
+    {
+      "outlet": "GVEA",
+      "title": "CEO's Message: July 2026",
+      "url": "https://www.gvea.com/news-releases/ceos-message-july-2026/",
+      "note": "GVEA's own framing of the upcoming board decision on a second LM6000 or alternative"
+    },
+    {
+      "outlet": "Power Engineering",
+      "title": "Data centers drive record surge in GE Vernova power equipment orders as turbine slots tighten through 2030",
+      "url": "https://www.power-eng.com/gas/turbines/data-centers-drive-record-surge-in-ge-vernova-power-equipment-orders-as-turbine-slots-tighten-through-2030/",
+      "note": "GE Vernova ~100GW gas-turbine backlog, ~20% tied to data centers"
+    },
+    {
+      "outlet": "Energy Connects",
+      "title": "Siemens Energy's gas turbine boom drives highest-ever order backlog",
+      "url": "https://www.energyconnects.com/news/oil/2025/august/siemens-energy-s-gas-turbine-boom-brives-highest-ever-order-backlog-of-136bn/",
+      "note": "About 60% (not an exact 60-65% range) of Siemens Energy's 14GW of gas-turbine orders (2025 year-to-date as of Aug 2025) were for data centers"
+    }
+  ],
+  "notes": [
+    "The Patrice Lee 'You cannot add to the pollution... be legally correct' line and the 'dangerous situation' line are two separate genuine quotes from two different News-Miner articles; treat as attributed to her across both pieces, not one continuous quote.",
+    "Cost is shown as a range ($90M-$120M) because the two News-Miner articles give different figures.",
+    "AI/data-center attribution is this dispatch's analysis, grounded in the GE Vernova/Siemens backlog reporting above, not GVEA's own stated reason for the purchase.",
+    "Board vote had NOT happened as of 2026-07-19 (scheduled July 28, 2026) - framed as pending, not a done deal."
+  ]
+}

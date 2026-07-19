@@ -99,11 +99,20 @@ def _to_44k_int16(pcm_i16):
 # ------------------------------------------------------------------ alignment
 def _align_wholefile(wav24, lines):
     """Whisper word-timestamps on the whole take -> per-line spans + word list +
-    caption cues. Mirrors dispatch_captions but over one file."""
+    caption cues. Mirrors dispatch_captions but over one file.
+
+    NO initial_prompt: passing the script's own opening words as a prompt (as an
+    earlier version did) makes Whisper treat that text as already-spoken context
+    and HALLUCINATE-SKIP the real audio matching it -- reproduced 2026-07-19: a
+    prompt built from this script's first ~220 chars caused the model to skip the
+    first ~14.6s of a real 45s take (word timestamps jumped straight to sentence
+    5), collapsing every earlier line's start/end to the same instant and wrecking
+    caption/scene sync. Confirmed fix: omit initial_prompt entirely (unnecessary
+    here anyway -- alignment is driven by the KNOWN intended text via difflib
+    below, not by transcription accuracy, so no domain-hint prompt is needed)."""
     from faster_whisper import WhisperModel
     m = WhisperModel("small", device="cpu", compute_type="int8")
-    segs, _ = m.transcribe(wav24, word_timestamps=True, language="en", vad_filter=False,
-                           initial_prompt=" ".join(lines)[:220])
+    segs, _ = m.transcribe(wav24, word_timestamps=True, language="en", vad_filter=False)
     heard = []
     for s in segs:
         for w in (s.words or []):
@@ -112,25 +121,61 @@ def _align_wholefile(wav24, lines):
     for i, ln in enumerate(lines):
         for tok in ln.split():
             intended.append((i, tok))
-    inn = [sc._norm_words(t)[0] if sc._norm_words(t) else "" for _, t in intended]
-    hn = [sc._norm_words(x["w"])[0] if sc._norm_words(x["w"]) else "" for x in heard]
+    # EXPAND every token to its FULL normalized word list (not just the first),
+    # keeping an "owner" back-reference to the ORIGINAL token index. A single
+    # token often canonicalizes to several words (num2words: "24"->"twenty four";
+    # this run's $/% expansion: "$50"->"fifty dollars"; a hyphen split by the
+    # regex: "non-attainment"->"non attainment") on BOTH sides independently, so
+    # collapsing to word[0] (an earlier version of this function) silently drops
+    # every word after the first -- reproduced 2026-07-19: it desynced `inn` and
+    # `hn` by a growing offset (each multi-word token ate one array slot instead
+    # of several), which cascaded into reversed/absurd time ranges (a total that
+    # read 434s for a 51s take). Expanding both sides fully keeps `inn`/`hn` in
+    # true 1:1 correspondence with what the matcher is actually comparing.
+    inn, inn_owner = [], []
+    for k, (_, t) in enumerate(intended):
+        for w in sc._norm_words(t):
+            inn.append(w); inn_owner.append(k)
+    hn, hn_owner = [], []
+    for j, x in enumerate(heard):
+        for w in sc._norm_words(x["w"]):
+            hn.append(w); hn_owner.append(j)
     sm = difflib.SequenceMatcher(a=inn, b=hn, autojunk=False)
-    timed = [None] * len(intended)
+    span = [None] * len(intended)   # [k] -> [start, end], accumulated across all its expanded words
+
+    def _extend(k, s, e):
+        if span[k] is None:
+            span[k] = [s, e]
+        else:
+            span[k][0] = min(span[k][0], s); span[k][1] = max(span[k][1], e)
+
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag == "equal":
-            for k in range(i2 - i1):
-                timed[i1 + k] = (heard[j1 + k]["s"], heard[j1 + k]["e"])
+            for off in range(i2 - i1):
+                k = inn_owner[i1 + off]
+                hs, he = heard[hn_owner[j1 + off]]["s"], heard[hn_owner[j1 + off]]["e"]
+                _extend(k, hs, he)
         elif tag in ("replace", "delete"):
-            hs = heard[j1]["s"] if j1 < len(heard) else (heard[-1]["e"] if heard else 0)
-            he = heard[j2 - 1]["e"] if 0 < j2 <= len(heard) and j2 > j1 else hs
-            n = max(1, i2 - i1)
-            for k in range(i1, i2):
-                timed[k] = (hs + (he - hs) * k / n, hs + (he - hs) * (k + 1) / n)
+            hs = heard[hn_owner[j1]]["s"] if j1 < len(hn_owner) else (heard[-1]["e"] if heard else 0.0)
+            he = heard[hn_owner[j2 - 1]]["e"] if 0 < j2 <= len(hn_owner) and j2 > j1 else hs
+            ks = sorted(set(inn_owner[i1:i2])) or ([inn_owner[i1]] if i1 < len(inn_owner) else [])
+            n = max(1, len(ks))
+            for idx, k in enumerate(ks):
+                _extend(k, hs + (he - hs) * idx / n, hs + (he - hs) * (idx + 1) / n)
+    timed = [None if s is None else (s[0], s[1]) for s in span]
+    # guard against any inverted/degenerate window (start > end) slipping through
+    timed = [None if t is None else (t[0], max(t[0], t[1])) for t in timed]
     for k in range(len(timed)):
         if timed[k] is None:
             prev = next((timed[j] for j in range(k - 1, -1, -1) if timed[j]), None)
             nxt = next((timed[j] for j in range(k + 1, len(timed)) if timed[j]), None)
             timed[k] = (prev[1], nxt[0]) if prev and nxt else (prev or nxt or (0.0, 0.25))
+    # enforce monotonic non-decreasing starts across the whole take (belt-and-
+    # suspenders: expansion/accumulation above should already guarantee this, but
+    # a forced-alignment output feeding captions/scene-cuts must never regress)
+    for k in range(1, len(timed)):
+        if timed[k][0] < timed[k - 1][0]:
+            timed[k] = (timed[k - 1][0], max(timed[k - 1][0], timed[k][1]))
     words = [{"w": tok, "s": round(timed[n][0], 3), "e": round(max(timed[n][0] + 0.04, timed[n][1]), 3),
               "seg": li} for n, (li, tok) in enumerate(intended)]
     # per-line spans

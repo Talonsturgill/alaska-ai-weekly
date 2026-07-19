@@ -30,21 +30,50 @@ VOICED_MIN = 0.35       # at least this fraction voiced (not silence/noise)
 NOTE_WORDS = {"transcript", "director", "profile", "narrator", "audio", "preamble", "aloud"}
 
 
+def _year_words(n):
+    """Natural date reading for a 4-digit year (1000-2999): two 2-digit groups,
+    e.g. 2024 -> 'twenty twenty four', matching how VO_DIRECTION.md mandates years
+    be spelled phonetically in the script (never num2words' formal 'two thousand
+    twenty-four', which never matches a real script)."""
+    from num2words import num2words
+    hi, lo = n // 100, n % 100
+    hi_w = num2words(hi).replace("-", " ").split()
+    lo_w = (["hundred"] if lo == 0 else num2words(lo).replace("-", " ").split())
+    return hi_w + lo_w
+
+
 def _canon_token(tok):
     """Canonicalize a token so spelling differences (500 vs five hundred, A.I. vs
-    AI) don't count as word errors. Digits -> words via num2words; leave the rest."""
+    AI, 28th vs twenty eighth, 2024 vs twenty twenty four) don't count as word
+    errors. Digits -> words via num2words; leave the rest."""
     t = tok.strip("+%").replace(",", "")
-    if t.isdigit():
-        try:
-            from num2words import num2words
-            return num2words(int(t)).replace("-", " ").replace(" and ", " ").split()
-        except Exception:
-            return [tok]
+    m = re.match(r"^(\d+)(st|nd|rd|th)$", t)
+    try:
+        from num2words import num2words
+        if m:
+            return num2words(int(m.group(1)), to="ordinal").replace("-", " ").replace(" and ", " ").split()
+        if t.isdigit():
+            n = int(t)
+            if 1000 <= n <= 2999 and len(t) == 4:
+                return _year_words(n)
+            return num2words(n).replace("-", " ").replace(" and ", " ").split()
+    except Exception:
+        return [tok]
     return [tok]
 
 
 def _norm_words(s):
-    raw = [w for w in re.sub(r"[^a-z0-9' ]", " ", s.lower()).split() if w]
+    s = s.lower()
+    # currency/percent SYMBOLS carry a spoken word that a bare regex strip would
+    # silently drop ("$50,000" -> heard has no "dollars"; "60%" -> no "percent"),
+    # inflating WER on every number-heavy script (this format has one every run).
+    s = re.sub(r"\$\s?(\d[\d,]*(?:\.\d+)?)", r"\1 dollars", s)
+    s = re.sub(r"(\d)\s?%", r"\1 percent", s)
+    # thousands-separator commas glue a number into one token ("50,000" is ONE
+    # value); stripped by the general regex below they'd split into "50" + "000"
+    # and canonicalize as "fifty" + "zero" instead of "fifty thousand".
+    s = re.sub(r"(?<=\d),(?=\d{3}\b)", "", s)
+    raw = [w for w in re.sub(r"[^a-z0-9' ]", " ", s).split() if w]
     expanded = []
     for w in raw:
         expanded.extend(_canon_token(w))

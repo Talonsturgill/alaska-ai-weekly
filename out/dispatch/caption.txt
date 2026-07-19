@@ -1,15 +1,13 @@
-Alaska is proposing to hand a state agency 31 square miles of public forest, for free, before a single company has signed on.
+A Fairbanks power co-op just paid $50,000 for the right to wait in line.
 
-The state Department of Natural Resources issued a preliminary decision to convey about 19,950 acres near Houston, in the Mat-Su Borough, to AIDEA, the state's industrial development authority, at no charge. The framing is an industrial and energy district. AIDEA's stated vision includes data centers, an Alaska Railroad freight hub, energy corridors, and advanced manufacturing pads.
+Golden Valley Electric Association wants a second turbine at its North Pole plant, and the line it is standing in is a global one. GE Vernova is sitting on a turbine backlog near 100 gigawatts, about a fifth of it tied to data centers. Siemens Energy says data centers now make up more than 60 percent of this year's gas turbine orders. Neither company says "AI." The industry press does, and the arithmetic is not subtle: this is the AI buildout eating the world's supply of firm power equipment, and a small Interior Alaska utility is now bidding against it.
 
-Data centers are the physical body of the AI boom. Racks, power, cooling, and a great deal of land. So this one is worth sitting with. A public forest is being lined up as a landing pad for that buildout, and right now there is no named operator, no stated price, and no final decision on how any of it would actually be used.
+GVEA has a real reason to want the megawatts. It lost cheap purchased power from Southcentral in 2024, its Enstar gas contract ended in 2025, and it burns up to 250,000 gallons of diesel a day some winters. So the co-op paid a $50,000 deposit in April just to hold a manufacturing slot, ahead of a board vote on July 28 for a second gas turbine priced between 90 and 120 million dollars, plus a separate bet on battery storage. Read one way, that is a utility that saw a supply squeeze coming and moved early. That is a genuinely underrated skill in 2026.
 
-Two honest caveats keep this from tipping into alarm. AIDEA says no land use decisions have been made, and the DNR notice itself does not name data centers. Public comment stays open through August 19. Nothing here is signed.
+Read the other way: North Pole already fails the federal PM2.5 standard, and a member and clean-air advocate, Patrice Lee, has raised real concern about adding a combustion turbine in a place that already fails the air test. A 36 megawatt wind project in Delta Junction has been floated as an alternative. Nobody has shown, in public, that wind and batteries could cover Fairbanks on the coldest night of the year. Nobody has shown they could not, either.
 
-The detail that stays with me is a jurisdictional one. Houston's own council moved to weigh in, but the parcel sits about two miles outside the city, past the line where its authority runs out. Roughly 42 miles of mushing and recreation trails cross that land either way.
+The real story is not "AI is coming for Alaska's power." It is that a slow moving global hardware market now sets deadlines for small utility boards, and the tradeoff those boards face, cost versus air versus certainty, has to get made in public, on a clock they did not set.
 
-So the question is not whether AI needs somewhere to live. It plainly does. The question is what public land is worth, and who gets to speak for it, when the giveaway arrives before the plan.
+If you sat on that board, would you sign for the turbine on July 28, or bet the winter on wind and batteries that are not built yet?
 
-If your state offered free public land to court a data center that has no operator yet, would you call that smart investment or a gamble with the commons?
-
-#Alaska #DataCenters #ArtificialIntelligence #MatSu #PublicLands
+#Alaska #EnergyPolicy #AI #Fairbanks #CleanAir
