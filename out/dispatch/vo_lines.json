@@ -1,70 +1,85 @@
 {
+  "total": 49.04,
+  "voice": "Sulafat",
+  "model": "gemini-3.1-flash-tts-preview",
   "lines": [
     {
       "idx": 0,
+      "text": "A power plant in North Pole is holding a ticket.",
       "start": 0.0,
-      "end": 4.099
+      "end": 2.86
     },
     {
       "idx": 1,
-      "start": 4.499,
-      "end": 7.726
+      "text": "Fifty thousand dollars, just to keep his place in line.",
+      "start": 3.42,
+      "end": 6.14
     },
     {
       "idx": 2,
-      "start": 8.126,
-      "end": 12.813
+      "text": "The line is a global turbine backlog, jammed by AI data centers.",
+      "start": 6.82,
+      "end": 11.12
     },
     {
       "idx": 3,
-      "start": 13.213,
-      "end": 17.82
+      "text": "GE Vernova's backlog: near a hundred gigawatts.",
+      "start": 11.46,
+      "end": 14.94
     },
     {
       "idx": 4,
-      "start": 18.22,
-      "end": 20.085
+      "text": "A fifth of it, data centers.",
+      "start": 15.22,
+      "end": 17.06
     },
     {
       "idx": 5,
-      "start": 20.485,
-      "end": 22.941
+      "text": "Siemens Energy: over sixty percent of this year's orders are data centers.",
+      "start": 17.48,
+      "end": 21.76
     },
     {
       "idx": 6,
-      "start": 23.341,
-      "end": 25.805
+      "text": "Fairbanks lost its cheap power in twenty twenty four, its gas deal in twenty twenty five.",
+      "start": 22.4,
+      "end": 27.28
     },
     {
       "idx": 7,
-      "start": 26.205,
-      "end": 27.921
+      "text": "The plant planned ahead: a second turbine, ninety to one hundred twenty million dollars, plus a battery bet.",
+      "start": 27.94,
+      "end": 34.44
     },
     {
       "idx": 8,
-      "start": 28.321,
-      "end": 32.254
+      "text": "But North Pole already fails the federal air test.",
+      "start": 35.34,
+      "end": 37.9
     },
     {
       "idx": 9,
-      "start": 32.654,
-      "end": 36.318
+      "text": "\"You cannot add to the pollution in a non-attainment area, and be legally correct.\"",
+      "start": 38.8,
+      "end": 43.48
     },
     {
       "idx": 10,
-      "start": 36.718,
-      "end": 41.038
+      "text": "The board votes July twenty eighth.",
+      "start": 44.5,
+      "end": 46.54
     },
     {
       "idx": 11,
-      "start": 41.438,
-      "end": 43.905
+      "text": "Nobody's decided.",
+      "start": 46.66,
+      "end": 47.56
     },
     {
       "idx": 12,
-      "start": 45.405,
-      "end": 49.445
+      "text": "Not even him.",
+      "start": 48.3,
+      "end": 49.04
     }
-  ],
-  "total": 49.845
+  ]
 }

@@ -26,16 +26,28 @@ const uid = (s: string) => {
 // ---------------------------------------------------------------- MOOSE
 // The bull moose: heavy body, dropped muzzle, palmate antlers. Idle: slow head
 // bob + ear flick + tail swish. Emotion via ear/brow set.
-export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; emotion?: 'calm' | 'wary'}> = ({
-  x, y, scale = 1, f, facing = 1, emotion = 'calm',
+// `bumpKick` (0..1, e.g. from lib/motion accentKick at the gag's frame) drives the
+// NEW 2026-07-19 comic reaction pose: a sharp squash-and-recoil sideways stagger,
+// antlers wobbling, ears pinned back indignant, added for the recurring
+// bumped-from-the-ticket-line gag — the growth mandate's new-pose-on-an-existing-
+// asset requirement. 0 = no effect (normal idle), rises to 1 at the impact frame
+// then relaxes back per the caller's easing.
+export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; emotion?: 'calm' | 'wary'; bumpKick?: number}> = ({
+  x, y, scale = 1, f, facing = 1, emotion = 'calm', bumpKick = 0,
 }) => {
   const id = uid(`moose${x}${y}`);
   const t = tones('#5a4632');       // dark brown coat
-  const bob = 3 * Math.sin(f / 26);
-  const earFlick = emotion === 'wary' ? 8 * Math.sin(f / 5) : 3 * Math.sin(f / 18);
+  const bumped = Math.max(0, Math.min(1, bumpKick));
+  const bob = 3 * Math.sin(f / 26) - bumped * 10;
+  const earFlick = (emotion === 'wary' ? 8 * Math.sin(f / 5) : 3 * Math.sin(f / 18)) - bumped * 22;
   const tail = 6 * Math.sin(f / 9);
+  // squash-and-stagger: a lateral shove + a volume-preserving squash at the moment
+  // of impact, recoiling back upright as bumped relaxes to 0.
+  const staggerX = -bumped * 34 * facing;
+  const sx = 1 + bumped * 0.14;
+  const sy = 1 - bumped * 0.1;
   return (
-    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+    <g transform={`translate(${x + staggerX},${y}) scale(${scale * facing * sx},${scale * sy})`}>
       <FormGradient id={id} t={t} />
       <ContactShadow cx={0} cy={4} rx={132} ry={22} opacity={0.3} blur={12} />
       {/* legs */}
@@ -49,28 +61,37 @@ export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; f
       {/* shoulder hump */}
       <path d="M-70,-150 q30,-30 74,-24 q-30,-2 -50,20 Z" fill={t.key} opacity={0.4} />
       {/* neck + head */}
-      <g transform={`translate(120,${-150 + bob}) rotate(${bob * 0.4})`}>
+      <g transform={`translate(120,${-150 + bob}) rotate(${bob * 0.4 - bumped * 16 * facing})`}>
         <path d="M-40,10 q10,-46 46,-54 q40,-8 52,26 q6,44 -18,72 q-30,22 -52,4 q-26,-20 -28,-48 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
         {/* long muzzle */}
         <path d="M44,20 q46,4 58,34 q4,20 -16,28 q-30,8 -50,-8 q-8,-40 8,-54 Z" fill={t.core} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
         <ellipse cx={92} cy={54} rx={11} ry={9} fill={INK} />
         {/* dewlap (the bell) */}
         <path d="M20,58 q8,44 -4,66 q-14,-6 -14,-40 q0,-22 18,-26 Z" fill={t.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-        {/* eye + brow */}
-        <ellipse cx={40} cy={4} rx={8} ry={emotion === 'wary' ? 10 : 8} fill="#fff" stroke={INK} strokeWidth={3} />
-        <circle cx={42} cy={5} r={4.5} fill={INK} />
-        <path d={emotion === 'wary' ? 'M28,-12 q16,-8 30,-2' : 'M28,-8 q16,-4 30,2'} fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />
-        {/* ear, flicking */}
+        {/* eye + brow: bumped adds a wide indignant white-eyed take */}
+        <ellipse cx={40} cy={4} rx={8} ry={bumped > 0.3 ? 11 : emotion === 'wary' ? 10 : 8} fill="#fff" stroke={INK} strokeWidth={3} />
+        <circle cx={42 + (bumped > 0.3 ? -3 : 0)} cy={5} r={bumped > 0.3 ? 3.4 : 4.5} fill={INK} />
+        <path d={bumped > 0.3 ? 'M26,-16 q18,-10 32,-2' : emotion === 'wary' ? 'M28,-12 q16,-8 30,-2' : 'M28,-8 q16,-4 30,2'} fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />
+        {/* ear, flicking (pinned back indignant when bumped) */}
         <g transform={`translate(6,-28) rotate(${earFlick})`}>
           <path d="M0,0 q-22,-10 -30,-30 q18,-4 34,10 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
         </g>
-        {/* palmate antlers */}
+        {/* palmate antlers — wobble on impact */}
         {[1, -1].map((s, i) => (
-          <g key={i} transform={`translate(${8 + s * 2},-46) scale(${s},1)`}>
+          <g key={i} transform={`translate(${8 + s * 2},-46) rotate(${bumped * 10 * s}) scale(${s},1)`}>
             <path d="M0,0 q34,-22 78,-14 q22,4 30,-14 q6,26 -18,34 q10,-2 26,-16 q0,24 -22,30 q10,0 22,-10 q-4,22 -30,24 q-46,4 -84,-24 Z"
               fill={t.key} stroke={INK} strokeWidth={6} strokeLinejoin="round" opacity={0.96} />
           </g>
         ))}
+        {/* small impact stars when the bump lands, cheap comic punctuation */}
+        {bumped > 0.5 && (
+          <g transform="translate(70,-20)" opacity={Math.min(1, (bumped - 0.5) * 3)}>
+            {[0, 120, 240].map((rot, i) => (
+              <path key={i} d="M0,-14 L4,-3 L14,0 L4,3 L0,14 L-4,3 L-14,0 L-4,-3 Z" fill="#ffd23e" stroke={INK} strokeWidth={2.5}
+                transform={`rotate(${rot + f * 6}) translate(${18 + i * 6},0)`} />
+            ))}
+          </g>
+        )}
       </g>
       {/* tail */}
       <g transform={`translate(-116,-96) rotate(${tail})`}>

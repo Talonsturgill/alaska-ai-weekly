@@ -1,5 +1,6 @@
 import React from 'react';
 import {TalkMouth} from './voice';
+import {tones, FormGradient, RimLight, ContactShadow} from './lighting';
 
 // =============================================================================
 // KIT — shared IGS-style drawing helpers for the Dispatch episode. Ink outlines,
@@ -286,6 +287,144 @@ export const AlaskaMini: React.FC<{frame: number; x: number; y: number; scale?: 
           </g>
         </>
       )}
+    </g>
+  );
+};
+
+// =============================================================================
+// SOURDOUGH — 2026-07-19 NET-NEW HERO. A personified regional power plant: warm,
+// competent, rounded/blocky (deliberately the OPPOSITE shape language from the
+// cold rectilinear ServerMachine/MachineShadow institutional heroes). Draw space
+// local ~300 wide x 470 tall, feet/base at (0,0). His furnace-window chest IS his
+// emotional tell (glow dims at the story's turn); a rounded friendly head carries
+// the face. Emotions: proud (cold open) / confident (the competence beat) /
+// faltering (the PM2.5 turn, glow dims + mask lowers) / frozen (the final freeze,
+// no idle motion, held breath).
+// =============================================================================
+export type SourdoughEmotion = 'proud' | 'confident' | 'faltering' | 'frozen';
+
+export const Sourdough: React.FC<{
+  frame: number; x?: number; y?: number; scale?: number; facing?: 1 | -1;
+  emotion?: SourdoughEmotion;
+  /** 0..1 chest-glow intensity; 1 = full warm ember, dims toward 0 at the turn */
+  glow?: number;
+  /** 0..1 accent pulse (lib/motion accentKick) — a small reactive flinch/brighten */
+  accent?: number;
+}> = ({frame: f, x = 0, y = 0, scale = 1, facing = 1, emotion = 'proud', glow = 1, accent = 0}) => {
+  const idle = emotion === 'frozen' ? 0 : 1;
+  const breath = 1 + idle * 0.012 * Math.sin(f / 15);
+  const bob = idle * 2 * Math.sin(f / 21);
+  const blink = idle > 0 && ((f + 30) % 110) < 5 && emotion !== 'faltering';
+  const bodyT = tones('#c9741f');   // warm ember-adjacent housing color
+  const capT = tones('#3A4A63');    // frost-blue knit cap, matches the palette's ground tone
+  const idg = `sd${Math.round(x)}_${Math.round(y)}`;
+  const chestGlow = Math.max(0.08, glow) * (1 + accent * 0.35);
+  const browDrop = emotion === 'faltering' ? 6 : 0;
+  const mouthCurve = emotion === 'confident' ? 10 : emotion === 'faltering' ? -6 : 4;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={`${idg}_body`} t={bodyT} />
+      <FormGradient id={`${idg}_cap`} t={capT} softness={0.85} />
+      <ContactShadow cx={0} cy={4} rx={150} ry={26} opacity={0.32} blur={12} />
+      {/* rounded blocky foundation/body — homely, not institutional */}
+      <g transform={`translate(0,${bob}) scale(1,${breath})`} style={{transformOrigin: '0px -230px'}}>
+        <path d="M-136,0 Q-150,-360 -70,-410 Q0,-446 70,-410 Q150,-360 136,0 Z"
+          fill={`url(#${idg}_body)`} stroke={INK} strokeWidth={OUT} strokeLinejoin="round" />
+        <path d="M20,-420 Q120,-370 118,0 L60,0 Q86,-320 20,-420 Z" fill={bodyT.shade} opacity={0.55} />
+        <RimLight d="M-136,0 Q-150,-360 -70,-410" w={4} opacity={0.5} />
+        {/* frost-rimmed rivets along the body seam */}
+        {[-320, -260, -200, -140, -80, -30].map((yy, i) => (
+          <g key={i}>
+            <circle cx={-108 + (i % 2) * 216} cy={yy} r={7} fill={bodyT.core} stroke={INK} strokeWidth={3} />
+            <circle cx={-108 + (i % 2) * 216} cy={yy} r={2.4} fill="#eef6ff" opacity={0.8} />
+          </g>
+        ))}
+        {/* the furnace-window chest — his emotional tell, dims at the turn */}
+        <g transform="translate(0,-190)">
+          <rect x={-78} y={-58} width={156} height={116} rx={16} fill="#241a12" stroke={INK} strokeWidth={7} />
+          <rect x={-64} y={-44} width={128} height={88} rx={10}
+            fill={`rgba(255,140,66,${0.35 + 0.55 * chestGlow})`} />
+          {/* flame licks inside, brighter with glow */}
+          {[-30, 0, 30].map((fx, i) => (
+            <path key={i} d={`M${fx},${34 - 10 * Math.sin(f / 9 + i)} q${10},${-30 - 8 * chestGlow} 0,${-52 - 10 * chestGlow} q${-10},22 0,${52}`}
+              fill="#ffd9a0" opacity={0.35 + 0.5 * chestGlow} />
+          ))}
+          <rect x={-78} y={-58} width={156} height={116} rx={16} fill="none" stroke={INK} strokeWidth={4} opacity={0.4} />
+        </g>
+        {/* stubby mitten arms */}
+        <path d="M-130,-260 q-46,20 -50,80" fill="none" stroke={INK} strokeWidth={30} strokeLinecap="round" />
+        <path d="M-130,-260 q-46,20 -50,80" fill="none" stroke={bodyT.shade} strokeWidth={18} strokeLinecap="round" />
+        <circle cx={-182} cy={-182} r={22} fill="#f2e6d4" stroke={INK} strokeWidth={6} />
+        <path d="M130,-260 q46,20 50,80" fill="none" stroke={INK} strokeWidth={30} strokeLinecap="round" />
+        <path d="M130,-260 q46,20 50,80" fill="none" stroke={bodyT.core} strokeWidth={18} strokeLinecap="round" />
+        <circle cx={182} cy={-182} r={22} fill="#f2e6d4" stroke={INK} strokeWidth={6} />
+      </g>
+      {/* head */}
+      <g transform={`translate(0,${-436 + bob * 1.3})`}>
+        <circle r={72} fill="#f2e6d4" stroke={INK} strokeWidth={OUT} />
+        <path d="M18,-68 a72,72 0 0 1 50,68 l-16,0 a54,54 0 0 0 -44,-54 Z" fill="#d8cbb0" opacity={0.5} />
+        {/* knit watch-cap, frost-rimmed */}
+        <path d="M-74,-38 a74,64 0 0 1 148,0 q0,-74 -74,-74 q-74,0 -74,74 Z" fill={`url(#${idg}_cap)`} stroke={INK} strokeWidth={7} />
+        <rect x={-78} y={-50} width={156} height={22} rx={11} fill={capT.shade} stroke={INK} strokeWidth={6} />
+        <circle cx={0} cy={-108} r={14} fill="#eef6ff" stroke={INK} strokeWidth={5} />
+        {/* eyes */}
+        {blink ? (
+          <g>
+            <path d="M-38,-10 q12,7 24,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+            <path d="M14,-10 q12,7 24,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+          </g>
+        ) : (
+          <g>
+            <ellipse cx={-26} cy={-10} rx={13} ry={15} fill="#fff" stroke={INK} strokeWidth={5} />
+            <ellipse cx={26} cy={-10} rx={13} ry={15} fill="#fff" stroke={INK} strokeWidth={5} />
+            <circle cx={-24} cy={-8} r={6} fill={INK} />
+            <circle cx={28} cy={-8} r={6} fill={INK} />
+          </g>
+        )}
+        {/* brows: proud/confident lift, faltering drops + worries */}
+        <path d={`M-42,${-36 + browDrop} q14,${emotion === 'faltering' ? 2 : -8} 28,${-2 + browDrop}`} fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+        <path d={`M42,${-36 + browDrop} q-14,${emotion === 'faltering' ? 2 : -8} -28,${-2 + browDrop}`} fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+        {/* mouth */}
+        <path d={`M-20,20 q20,${mouthCurve} 40,0`} fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+        {emotion === 'faltering' && (
+          <path d={`M60,-30 q9,${12 + 4 * Math.sin(f / 8)} 0,${24 + 4 * Math.sin(f / 8)} q-9,-11 0,-24 Z`} fill="#9fd8ff" stroke={INK} strokeWidth={3.5} />
+        )}
+      </g>
+    </g>
+  );
+};
+
+// =============================================================================
+// CELL — 2026-07-19 NET-NEW SIDEKICK. A squat cold-hardened battery unit on sled
+// runners, riding alongside Sourdough as the real parallel bet (the USDA-backed
+// storage hedge). Two-bar charge face; a spring-overshoot pop on `chargeLevel`
+// change is left to the caller (entrance() from lib/motion). Draw space local
+// ~140 wide x 160 tall, base at (0,0).
+// =============================================================================
+export const Cell: React.FC<{
+  frame: number; x?: number; y?: number; scale?: number; facing?: 1 | -1; chargeLevel?: 0 | 1 | 2;
+}> = ({frame: f, x = 0, y = 0, scale = 1, facing = 1, chargeLevel = 1}) => {
+  const t = tones('#2f7d6b');   // cold-hardened teal-green casing
+  const bob = 1.6 * Math.sin(f / 17 + 1);
+  const idg = `cl${Math.round(x)}_${Math.round(y)}`;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={idg} t={t} />
+      <ContactShadow cx={0} cy={2} rx={78} ry={13} opacity={0.28} blur={8} />
+      {/* sled runners */}
+      <path d="M-64,4 q64,16 128,0 l-10,14 q-54,12 -108,0 Z" fill="#8b93a0" stroke={INK} strokeWidth={5} />
+      <g transform={`translate(0,${bob})`}>
+        <rect x={-58} y={-140} width={116} height={140} rx={18} fill={`url(#${idg})`} stroke={INK} strokeWidth={6.5} strokeLinejoin="round" />
+        <path d="M18,-140 q40,6 40,60 l0,80 l-40,0 Z" fill={t.shade} opacity={0.6} />
+        <RimLight d="M-58,-140 Q-58,-70 -58,0" w={3} opacity={0.5} />
+        {/* charge face: two bars, glow scales with chargeLevel */}
+        <rect x={-38} y={-104} width={76} height={54} rx={8} fill="#132018" stroke={INK} strokeWidth={5} />
+        <rect x={-30} y={-96} width={26} height={38} rx={4} fill={chargeLevel >= 1 ? '#3DDBD9' : '#284038'} opacity={chargeLevel >= 1 ? 0.9 : 0.5} />
+        <rect x={4} y={-96} width={26} height={38} rx={4} fill={chargeLevel >= 2 ? '#3DDBD9' : '#284038'} opacity={chargeLevel >= 2 ? 0.9 : 0.5} />
+        {/* a small friendly bolt-eye */}
+        <circle cx={0} cy={-30} r={10} fill="#eef6ff" stroke={INK} strokeWidth={4} />
+        <path d="M-4,-34 l6,6 l-3,2 l6,6" fill="none" stroke={INK} strokeWidth={2.5} strokeLinecap="round" />
+      </g>
     </g>
   );
 };

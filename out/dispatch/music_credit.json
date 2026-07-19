@@ -1,10 +1,10 @@
 {
-  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Wounded.mp3",
-  "title": "Wounded",
+  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Investigations.mp3",
+  "title": "Investigations",
   "composer": "Kevin MacLeod",
   "license": "CC BY 4.0",
   "source": "incompetech.com",
-  "credit": "\"Wounded\" Kevin MacLeod (incompetech.com) - CC BY 4.0",
+  "credit": "\"Investigations\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
   "wav": "out/dispatch/music_bed.wav",
-  "duration": 180.0
+  "duration": 93.5
 }
