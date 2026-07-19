@@ -1012,8 +1012,7 @@ def archive_page(today, site_url, runs):
 </a>""" for r in runs)
     body = f"""<div class="hero" style="min-height:auto;padding-top:9vh">
 <h1>The <em>archive</em></h1>
-<p class="tag">Every deck we have shipped, one verified Alaska and AI story at a time.
-Newest first.</p>
+<p class="tag">One verified Alaska and AI story at a time. Newest first.</p>
 </div>
 <h2 class="vh">Every deck</h2>
 <div class="deckgrid" style="margin-top:44px">{decks}</div>"""
