@@ -1416,9 +1416,11 @@ for Alaska businesses, statewide from Anchorage. That work lives on the
 exactly why the studio knows what actually pays.</p>
 <h2>Who runs it</h2>
 <p>Alaska AI is founded and run by <a href="https://www.linkedin.com/in/talonsturgill">Talon
-Sturgill</a>, born and raised in Anchorage, Alaska. One desk reads the state's AI beat
-every morning, publishes the deck and the docket, and builds AI systems for Alaska
-businesses the rest of the day.</p>
+Sturgill</a>, born and raised in Anchorage and the lead AI engineer at Transform Labs, a
+large lab in the Lower 48 that works with enterprise clients. One desk reads the state's AI
+beat every morning, publishes the deck and the docket, and builds AI systems for Alaska
+businesses the rest of the day. Alaska AI brings that level of expertise directly to Alaska
+to drive the community forward.</p>
 <h2>How the work gets verified</h2>
 <p>Every day Alaska AI works six beats across the state, from power and
 compute to policy and money to what Alaskans are actually saying. Every
@@ -1445,8 +1447,9 @@ The docket and the archive live here. For the studio, start with
          "about": {"@id": org_id(site_url)}},
         org_ld(site_url),
         {"@type": "Person", "@id": f"{site_url}/about/#talon",
-         "name": "Talon Sturgill", "jobTitle": "Founder",
-         "worksFor": {"@id": org_id(site_url)},
+         "name": "Talon Sturgill", "jobTitle": "Lead AI Engineer",
+         "worksFor": [{"@id": org_id(site_url)},
+                      {"@type": "Organization", "name": "Transform Labs"}],
          "url": f"{site_url}/about/",
          "birthPlace": {"@type": "Place", "name": "Anchorage, Alaska"},
          "sameAs": ["https://www.linkedin.com/in/talonsturgill"]}]}
