@@ -73,14 +73,36 @@ const FrostYardBG: React.FC<{f: number; parallax?: number}> = ({f, parallax = 1}
     <rect x={0} y={1150} width={1080} height={770} fill="url(#groundGrad)" />
     {/* snowbank ridge line */}
     <path d="M0,1150 q270,-26 540,0 q270,26 540,0 L1080,1200 L0,1200 Z" fill={GROUND_D} opacity={0.5} />
-    {/* drifting frost/snow particles, nearest parallax layer */}
-    <g opacity={0.6}>
-      {Array.from({length: 30}).map((_, i) => {
+    {/* window flicker on the distant skyline -- a second, independent, spatially
+        disjoint motion source up top so the frame never reads as a single blob
+        of action (CHOREOGRAPHY.md / LIVING_SCREEN gate) */}
+    <g>
+      {Array.from({length: 10}).map((_, i) => {
+        const bx = (i * 107 + 40) % 1080;
+        const by = 1080 - ((i * 61) % 90);
+        const on = ((f / 4 + i * 5) % 23) < 3;
+        return on ? <rect key={i} x={bx} y={by} width={5} height={7} fill="#ffd9a0" opacity={0.7} /> : null;
+      })}
+    </g>
+    {/* three soft mist/gust bands at different screen heights, drifting at
+        different speeds -- guarantees disjoint active regions top/mid/low even
+        in scenes where the hero cast is small or still */}
+    <g opacity={0.3}>
+      {[420, 900, 1400].map((baseY, i) => {
+        const y = baseY + 16 * Math.sin(f / 34 + i * 2);
+        const x = ((f * (0.9 + i * 0.35) * parallax + i * 500) % 1500) - 260;
+        return <ellipse key={i} cx={x} cy={y} rx={260} ry={46} fill={SNOW_C} opacity={0.5} />;
+      })}
+    </g>
+    {/* drifting frost/snow particles, nearest parallax layer -- bigger + brighter
+        so they clear the luma-delta active-region floor, not just decorative */}
+    <g opacity={0.75}>
+      {Array.from({length: 34}).map((_, i) => {
         const seed = i * 71;
-        const x = (seed + f * (0.5 + (seed % 5) * 0.15) * parallax) % 1150 - 40;
+        const x = (seed + f * (0.6 + (seed % 5) * 0.2) * parallax) % 1150 - 40;
         const y = 200 + ((seed * 13) % 1500);
-        const r = 2 + (seed % 4);
-        return <circle key={i} cx={x} cy={y} r={r} fill={SNOW_C} opacity={0.5 + 0.3 * Math.sin(f / 15 + i)} />;
+        const r = 3 + (seed % 5);
+        return <circle key={i} cx={x} cy={y} r={r} fill={SNOW_C} opacity={0.55 + 0.35 * Math.sin(f / 12 + i)} />;
       })}
     </g>
   </svg>
@@ -393,8 +415,8 @@ const S6: React.FC = () => {
   const leverIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 120}});
   const pulled = interpolate(f, [30, 80], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
   const pullBack2 = interpolate(f, [30, 80], [1, 0.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const freezeIn = spring({frame: f - 110, fps, config: {damping: 14, stiffness: 100}});
-  const mooseIn = spring({frame: f - 150, fps, config: {damping: 12, stiffness: 130}});
+  const freezeIn = spring({frame: f - 85, fps, config: {damping: 14, stiffness: 100}});
+  const mooseIn = spring({frame: f - 110, fps, config: {damping: 12, stiffness: 130}});
   const sway = idleSway(f, 3, 1.2, 60);
   return (
     <AbsoluteFill style={{backgroundColor: SKY}}>
