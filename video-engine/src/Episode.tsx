@@ -124,10 +124,10 @@ const SwingSign: React.FC<{x: number; y: number; f: number; text: string; sub: s
       <line x1={0} y1={-60} x2={0} y2={-10} stroke={INK} strokeWidth={5} />
       <g transform={`rotate(${swing})`} style={{transformOrigin: `${x}px ${y - 60}px`}}>
         <ChipShadow>
-          <rect x={-150} y={-10} width={300} height={104} rx={10} fill={SNOW_C} stroke={INK} strokeWidth={6} />
+          <rect x={-190} y={-10} width={380} height={104} rx={10} fill={SNOW_C} stroke={INK} strokeWidth={6} />
         </ChipShadow>
-        <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={28} fill={INK}>{text}</text>
-        <text x={0} y={48} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={28} fill={INK}>{sub}</text>
+        <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={INK} textLength={Math.min(360, text.length * 15.5)} lengthAdjust="spacingAndGlyphs">{text}</text>
+        <text x={0} y={48} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={INK}>{sub}</text>
         <text x={0} y={80} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={HAZE}>{year}</text>
       </g>
     </g>
