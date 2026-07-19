@@ -7,6 +7,30 @@ back on if a later run regresses. Newest first.
 
 ---
 
+## 2026-07-19 (follow-up, owner request) — Phase 8 now FIXES, not just suggests
+
+Owner: "when it does the retro at the end, I want it to also just fix things it found or
+repeat-offender hurdles, on the spot, and in the email tell me the upgrades it did." The old
+Phase 8 said "prefer MAKING the smallest upgrade... queue the larger ones" — a defer-by-default
+bias, and the email had no field for the upgrade log at all (Phase 7 said to include it, but
+`dispatch_email.py` had no `--upgrades` param, so it could only be smuggled into `--note`).
+
+Changes:
+- `prompts/dispatch_routine.md` PHASE 8 rewritten: triage every finding into FIX-THIS-RUN
+  (fixable + verifiable → you MUST make it now, verify before commit) vs. genuinely-too-large
+  (deferred only WITH a concrete plan). Hard REPEAT-OFFENDER rule: anything deferred once and
+  recurred cannot be soft-deferred again — it gets a real code/gate/doctrine fix this run, or an
+  explicit escalation to the owner in the email. Prefer an enforced code guard over a doctrine
+  reminder (run_guard.py is named as the template).
+- `scripts/dispatch_email.py`: new `--upgrades` param renders a first-class "Upgrades shipped
+  this run" section (green block) listing what was actually DONE, one bullet per line.
+- Phase 7 step 3 updated to pass `--upgrades` from Phase 8's fix list, with an ordering note
+  (do the Phase 8 fixes before composing the email so the list is real).
+
+Deferred (with plan, not vague): none — this was itself the fix.
+
+---
+
 ## 2026-07-19 — "He Paid $50K Just To Wait" (GVEA North Pole turbine)
 
 **Shipped:** ~52s vertical Dispatch, Gemini narrator (Sulafat). Story: GVEA paid a $50,000

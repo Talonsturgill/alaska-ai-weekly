@@ -528,9 +528,11 @@ both pass.
    credit ("Gemini native TTS, voice Sulafat, model gemini-3.1-flash-tts-preview; preset voice
    with a SynthID watermark, not a clone") plus the vo_report.json sound-check scorecard, MUSIC
    credit with composer + license, SOURCES with per-figure attribution,
-   the honest gate/panel scorecard, the illustrative-numbers note, AND the run's UPGRADE-LOG
-   entry (from Phase 8) so every delivery states what changed this run. Hand the payload to the
-   Gmail create_draft connector.
+   the honest gate/panel scorecard, the illustrative-numbers note, AND — via `--upgrades` (one
+   fix per line) — the concrete list of what Phase 8 actually FIXED this run (changes committed,
+   not suggestions), plus any repeat-offender escalation. This renders the "Upgrades shipped this
+   run" email section. (Do the Phase 8 look-back + fixes BEFORE this step so the list is real.)
+   Hand the payload to the Gmail create_draft connector.
 4. Git: commit scenes + storyboard + caption + art_direction + artifacts + stills (NOT heavy
    mp4s/frames) + the ledger (`scripts/dedupe.py add ... --composition '<fingerprint JSON>'`
    ALWAYS, and include `--stance <celebratory|cautionary|curious|mixed>` and `--angle "<the
@@ -539,25 +541,45 @@ both pass.
 
 ## PHASE 8: RETROSPECTIVE + SELF-UPGRADE (close the loop, every run) — AUTHORITATIVE
 
-The routine must get BETTER every run, not just produce a video. After delivery, do a real
-look-back and make a targeted, logged improvement:
+The routine must get BETTER every run, not just produce a video. This phase does not merely
+SUGGEST improvements — it MAKES them, on the spot, in this run's PR. A retrospective that only
+files ideas for "later" is what let the stale-scratch bug recur (07-18 deferred it as "regenerate
+per run", 07-19 hit it again). Default to fixing, not deferring.
+
+Ordering note: do this look-back and make its fixes BEFORE you finalize the Phase 7 email, so the
+email's "Upgrades shipped this run" section lists what you actually DID. The fixes are committed
+in this run's single PR and merged with it.
 
 1. LOOK BACK over the whole run honestly: which gates failed and how many iterations each cost;
    what the scorer panel flagged and whether it was fixed or disclosed; where the art_direction
    plan was NOT met by the build; what broke, what was slow, what read as a tell; anything the
-   owner called out (log it even if deferred, e.g. "voice too robotic — tune later").
-2. PICK 1-3 TARGETED UPGRADES the run earned — a concrete fix to the ENGINE, the DOCTRINE, the
-   GATES, or the ASSET LIBRARY that would have prevented the worst problem or raised the ceiling
-   (e.g. "give HUD chips form-shading", "add tundra biome", "tighten a gate floor"). Prefer
-   actually MAKING the smallest such upgrade this run; queue the larger ones in the manifest
-   backlog. This is how the craft compounds beyond just adding assets.
+   owner called out. THEN scan `docs/RUN_UPGRADES.md` for REPEAT OFFENDERS: anything that has now
+   bitten 2+ runs, or was deferred in a prior run and recurred. Name them explicitly.
+2. FIX ON THE SPOT. Triage every finding into exactly one of:
+   (a) FIXABLE AND VERIFIABLE THIS RUN — a concrete change to the ENGINE, DOCTRINE, GATES, or
+       ASSET LIBRARY that you can make AND test before merge. You MUST make these now, this run.
+       This is the default and the point of the phase; do not downgrade a fixable finding to a
+       "suggestion". Verify each one (test-render the affected range, re-run the affected gate,
+       byte-compile a script, whatever proves it works) BEFORE committing — an unverified engine
+       change can break every future run, so verification is non-negotiable, not the fixing.
+   (b) GENUINELY TOO LARGE/RISKY to make and verify safely this run — only these get deferred,
+       and only WITH a concrete plan (what, where, the approach) logged in the manifest backlog,
+       never a vague "improve X later".
+   REPEAT-OFFENDER RULE (hard): a finding already deferred once is NOT eligible for (b) again with
+   a soft note. It gets a real code/gate/doctrine fix THIS run. If it genuinely cannot be fixed
+   this run, it is ESCALATED to the owner in the email (Phase 7 --upgrades / note), stating plainly
+   that it has recurred N times and why it still is not fixed — so a recurring hurdle can never
+   silently rot for a third run.
+   Prefer a permanent, enforced fix over a doctrine reminder (a code guard the pipeline runs beats
+   an instruction the run must remember — the run_guard.py freshness check is the template).
 3. APPEND to `docs/RUN_UPGRADES.md` (the persistent fix-log / rollback trail) a dated entry:
    what shipped, every code/doctrine/asset change committed this run (with commit refs), what
-   was upgraded and WHY, known-issues deferred, and the panel/gate result. This is the log to
-   roll back on if a later run regresses — so it must be specific enough to diff against.
-4. INCLUDE that upgrade-log entry in the Gmail draft (Phase 7 step 3), so the owner sees what
-   changed and can veto/roll back. A run with no logged upgrade and no logged reason is an
-   incomplete run.
+   was upgraded and WHY, the repeat-offenders addressed, known-issues genuinely deferred (with the
+   plan), and the panel/gate result. Specific enough to diff against and roll back on.
+4. REPORT WHAT YOU DID in the Gmail draft: pass the concrete list of fixes MADE this run to
+   `dispatch_email.py --upgrades` (one per line — changes committed, not suggestions), which
+   renders the "Upgrades shipped this run" section. Include any repeat-offender escalation here
+   too. A run with no fix made and no logged reason is an incomplete run.
 
 ## ACCURACY + CULTURAL RESPECT
 

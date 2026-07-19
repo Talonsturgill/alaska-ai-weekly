@@ -35,10 +35,12 @@ pre.post{white-space:pre-wrap;background:#f6f8f9;padding:16px;border-radius:10px
 .poster{margin:16px 0;text-align:center;} .poster img{max-width:300px;width:100%;border-radius:10px;border:1px solid #e3e6e8;}
 ul{padding-left:20px;} li{margin:4px 0;font-size:13.5px;} a{color:#0b6;}
 .warn{background:#fff6e0;border:1px solid #f0d68a;color:#7a5a10;font-size:12.5px;padding:8px 12px;border-radius:8px;margin:10px 0;}
+ul.upg{background:#eefaf1;border:1px solid #bfe6cd;border-radius:10px;padding:12px 12px 12px 32px;}
+ul.upg li{color:#1c5f38;}
 .foot{color:#97a2ab;font-size:11px;margin-top:24px;}
 """
 
-def render(post, poster_html, vids, voice, music, sources, score, note, temporary, date_str, title):
+def render(post, poster_html, vids, voice, music, sources, score, note, temporary, date_str, title, upgrades):
     src = "\n".join(
         f'<li><a href="{s.get("url","")}">{s.get("outlet", s.get("title",""))}</a> &middot; {s.get("note","")}</li>'
         for s in (sources or [])
@@ -58,6 +60,12 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
                   'swipe-only Video tab instead of the feed.</div>') if vids.get("square") else ''
     warn = '<div class="warn">Heads up: these download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
     score_html = f"<h2>Grade</h2><ul><li>{score}</li></ul>" if score else ""
+    # "Upgrades shipped this run" — Phase 8 makes fixes on the spot and reports what it DID here
+    # (one bullet per line of --upgrades). A run that self-improved should say so.
+    up_items = "\n".join(f"<li>{ln.strip().lstrip('-').strip()}</li>"
+                         for ln in (upgrades or "").splitlines() if ln.strip())
+    upgrades_html = (f'<h2>Upgrades shipped this run</h2><ul class="upg">{up_items}</ul>'
+                     if up_items else "")
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
 <div class="wrap">
   <h1>ALASKA.AI &middot; Dispatch ready{(' &middot; ' + title) if title else ''}</h1>
@@ -75,6 +83,7 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
   <h2>Credits (include when you post)</h2>
   <ul><li><b>Voice:</b> {voice}</li><li><b>Music:</b> {music}</li></ul>
   {score_html}
+  {upgrades_html}
   <h2>Sources</h2>
   <ul>{src}</ul>
 
@@ -94,6 +103,10 @@ def main():
     ap.add_argument("--voice", default=""); ap.add_argument("--music", default="")
     ap.add_argument("--sources", default=""); ap.add_argument("--score", default="")
     ap.add_argument("--note", default="On-screen counters/charts are illustrative unless drawn from a live data feed.")
+    ap.add_argument("--upgrades", default="",
+                    help="what Phase 8 actually FIXED/upgraded this run, one item per line (not "
+                         "suggestions -- changes committed this run). Rendered as the 'Upgrades "
+                         "shipped this run' section so the owner sees what self-improved.")
     ap.add_argument("--temporary", action="store_true", help="flag download links as temporary (~1h)")
     ap.add_argument("--date", default=dt.date.today().isoformat()); ap.add_argument("--title", default="")
     ap.add_argument("--to", default="me"); ap.add_argument("--out-html", default="")
@@ -120,7 +133,8 @@ def main():
         except StaleArtifactError as e:
             sys.exit(f"REFUSING TO BUILD DRAFT: --sources is not from this run.\n  {e}")
     html = render(post, poster_html, {"vertical": a.video_url_vertical, "square": a.video_url_square},
-                  a.voice or "(unset)", a.music or "(unset)", sources, a.score, a.note, a.temporary, a.date, a.title)
+                  a.voice or "(unset)", a.music or "(unset)", sources, a.score, a.note, a.temporary, a.date, a.title,
+                  a.upgrades)
     if a.out_html:
         Path(a.out_html).write_text(html); print("wrote", a.out_html)
     payload = {"subject": f"ALASKA.AI · Dispatch ready · {a.date}", "to": a.to, "html_body": html}
