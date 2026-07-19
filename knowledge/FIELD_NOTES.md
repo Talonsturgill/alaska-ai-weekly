@@ -678,3 +678,17 @@ first comment; ~5 weeks old, framed as recent research not breaking news.
   improvement is to append "(common cause: an inline <svg>/<canvas> baseline line-box; try
   display:block on it)" to the body_overflow message so the author does not rediscover the
   one-line fix. Held: diagnostic-only, no defect can ship, low ROI for an upgrade slot.
+
+## 2026-07-19 - reactive gap for next Phase 12 (score_report key names)
+
+gmail_draft.py reads score.get('ship'), score.get('threshold'), and
+score.get('weakest_criterion'), but the scorer agent emits 'ships',
+'ship_threshold', and 'weakest_criteria' (list). Result this run: the draft
+first rendered the orange "Shipped below threshold. 8.81 / 10 vs ?. Weakest: ?"
+banner even though 8.81 is ABOVE the 8.3 threshold. The showrunner hand-added
+the alias keys (ship/threshold/weakest_criterion) to score_report.json and
+regenerated. Bounded permanent fix for a future Phase 12: make gmail_draft.py
+accept either key spelling (ship||ships, threshold||ship_threshold,
+weakest_criterion||weakest_criteria[0]), OR have the scorer emit both. Weakens
+no gate; removes a wrong-banner risk. Held this run (Phase 12 budget spent on
+the two applied fixes).

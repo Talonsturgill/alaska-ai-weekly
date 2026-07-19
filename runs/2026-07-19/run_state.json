@@ -15,11 +15,13 @@
   "flow_review": "done",
   "assemble": "done",
   "scoring": "done",
-  "ship": "in_progress",
-  "upgrade": "pending",
-  "gmail": "pending",
-  "retro": "pending"
+  "ship": "done",
+  "upgrade": "done",
+  "gmail": "done",
+  "retro": "done"
  },
  "weighted_score": 8.81,
- "ships": true
+ "ships": true,
+ "gmail_draft_id": "r1224783538144481495",
+ "complete": true
 }
