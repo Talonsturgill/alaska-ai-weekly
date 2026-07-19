@@ -331,6 +331,19 @@ export const Sourdough: React.FC<{
         <path d="M-136,0 Q-150,-360 -70,-410 Q0,-446 70,-410 Q150,-360 136,0 Z"
           fill={`url(#${idg}_body)`} stroke={INK} strokeWidth={OUT} strokeLinejoin="round" />
         <path d="M20,-420 Q120,-370 118,0 L60,0 Q86,-320 20,-420 Z" fill={bodyT.shade} opacity={0.55} />
+        {/* panel seams: break the fill into riveted plates instead of one flat
+            gradient blob (the rubric's 'plain fill' note) — a center seam plus
+            two side seams, each with a hairline highlight on the lit edge */}
+        <path d="M0,-440 L4,-4" stroke={bodyT.shade} strokeWidth={5} opacity={0.6} />
+        <path d="M-70,-320 Q-40,-330 0,-330" fill="none" stroke={bodyT.key} strokeWidth={3} opacity={0.45} />
+        <path d="M-92,-40 Q-40,-56 40,-52 Q90,-48 118,-30" fill="none" stroke={bodyT.core} strokeWidth={4} opacity={0.4} />
+        {/* a secondary specular streak on the lit shoulder, offset from the rim,
+            for a metal-enamel read rather than a flat vector fill */}
+        <path d="M-92,-330 Q-104,-220 -90,-90" stroke="#ffe8c4" strokeWidth={10} strokeLinecap="round" opacity={0.22} />
+        {/* weathering flecks -- small worn patches near the base, grounded detail */}
+        {[[-70, -30], [56, -18], [-30, -12]].map(([wx, wy], i) => (
+          <ellipse key={i} cx={wx} cy={wy} rx={10} ry={5} fill={bodyT.shade} opacity={0.3} transform={`rotate(${i * 35} ${wx} ${wy})`} />
+        ))}
         <RimLight d="M-136,0 Q-150,-360 -70,-410" w={4} opacity={0.5} />
         {/* frost-rimmed rivets along the body seam */}
         {[-320, -260, -200, -140, -80, -30].map((yy, i) => (
