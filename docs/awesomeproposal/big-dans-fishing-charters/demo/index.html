@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Big Dan's Fishing Charters, interactive demo, prepared by Alaska AI</title>
+<style>
+:root{
+  --bg:#070b12; --panel:#0d1420; --panel2:#111a28; --line:#1e2b3d;
+  --ink:#eef3fb; --muted:#9fb0c6; --faint:#6f7f96;
+  --aur1:#57e0c8; --aur2:#5aa9ff; --aur3:#9b8cff; --warm:#ffd18c;
+  --good:#5fd0a6; --warn:#ffb35c;
+  --maxw:860px;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  margin:0;background:
+    radial-gradient(1100px 500px at 78% -8%, rgba(90,169,255,.12), transparent 60%),
+    radial-gradient(900px 460px at 8% 4%, rgba(87,224,200,.10), transparent 55%),
+    var(--bg);
+  color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.1px;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px 90px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,46px);line-height:1.08;margin:.1em 0 .28em;font-weight:680;letter-spacing:-.4px}
+h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--aur1);margin:0 0 4px;font-weight:640}
+.sec>h3,h3{font-size:clamp(19px,2.8vw,25px);line-height:1.2;margin:.1em 0 .5em;font-weight:640;letter-spacing:-.2px}
+p{margin:0 0 14px}
+a{color:var(--aur2);text-decoration:none;border-bottom:1px solid rgba(90,169,255,.35)}
+strong{color:#fff;font-weight:640}
+.small{font-size:13.5px;color:var(--muted)}
+.faint{color:var(--faint)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+/* cover */
+.cover{padding:64px 0 26px;border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:11px;font-weight:660;letter-spacing:.02em}
+.dot{width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--aur1),var(--aur3));
+  box-shadow:0 0 16px 2px rgba(87,224,200,.5)}
+.quiet{font-size:13.5px;color:var(--faint);max-width:44rem;margin:.4em 0 1.2em;line-height:1.5}
+.byline{font-size:13px;color:var(--faint);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:6px}
+.byline .pill{border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted)}
+.wave{display:block;margin:22px 0 0;opacity:.55}
+
+/* sections */
+.sec{padding:32px 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:0}
+.grid{display:grid;gap:14px}
+@media(min-width:680px){.grid.c2{grid-template-columns:1fr 1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:14px;padding:17px 18px;margin:0 0 12px;break-inside:avoid}
+.card h4{margin:0 0 9px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--aur1);font-weight:640}
+.card p:last-child{margin-bottom:0}
+.quote{border-left:2px solid var(--aur1);padding:6px 0 6px 18px;margin:8px 0 8px;color:#dbe6f5;font-size:18px;line-height:1.5}
+.src{font-size:12px;color:var(--faint)}
+ul.clean{list-style:none;padding:0;margin:0 0 4px}
+ul.clean li{padding:5px 0 5px 0;border-bottom:1px solid rgba(30,43,61,.6)}
+ul.clean li:last-child{border-bottom:0}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:6px;padding:3px 9px;color:var(--muted);margin:0 0 12px}
+.tag.good{color:var(--good);border-color:rgba(95,208,166,.45)}
+.tag.warn{color:var(--warm);border-color:rgba(255,179,92,.45)}
+
+/* not-built callout */
+.callout{background:linear-gradient(180deg,rgba(255,179,92,.07),rgba(255,179,92,.02));
+  border:1px solid rgba(255,179,92,.28);border-radius:14px;padding:16px 18px}
+.callout h4{color:var(--warm);margin:0 0 9px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.callout.small{padding:12px 14px;font-size:13.5px;color:var(--muted);margin:6px 0 0}
+
+/* nav */
+.demo-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px;position:sticky;top:0;
+  background:rgba(7,11,18,.92);backdrop-filter:blur(4px);padding:12px 0;z-index:5;border-bottom:1px solid var(--line)}
+.demo-nav a{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--muted)}
+.demo-nav a:hover{color:var(--ink);border-color:rgba(87,224,200,.5)}
+
+/* tag legend */
+.taglegend{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:6px 0 10px;font-size:13px}
+.taglegend .tag{margin:0}
+
+/* chat panel */
+.chatpanel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;margin-top:6px}
+.toolbar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.feed{display:flex;flex-direction:column;gap:10px;min-height:40px;margin-bottom:16px}
+.bubblerow{display:flex}
+.bubblerow.agent{justify-content:flex-start}
+.bubblerow.guest{justify-content:flex-end}
+.bubble{max-width:80%;padding:10px 14px;border-radius:14px;font-size:14.5px;line-height:1.5}
+.bubble .who{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;opacity:.85}
+.bubble.agent{background:var(--panel2);border:1px solid rgba(87,224,200,.35);border-bottom-left-radius:4px}
+.bubble.agent .who{color:var(--aur1)}
+.bubble.guest{background:rgba(90,169,255,.12);border:1px solid rgba(90,169,255,.3);border-bottom-right-radius:4px}
+.bubble.guest .who{color:var(--aur2)}
+.controls{display:flex;flex-wrap:wrap;gap:10px}
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:999px;
+  padding:9px 16px;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn.next{border-color:rgba(87,224,200,.55);color:var(--aur1)}
+.btn.choice{border-color:rgba(90,169,255,.55);color:var(--aur2)}
+.btn.ghost{background:transparent;color:var(--muted)}
+.btn:hover{filter:brightness(1.15)}
+.donetext{font-size:13.5px;color:var(--faint)}
+
+/* check + artifact cards inside feed */
+.card.check{border-color:rgba(90,169,255,.35);margin:2px 0}
+.card.check ul.clean li{color:var(--ink);font-size:13.5px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.card.artifact{margin:2px 0}
+.card.artifact.good{border-color:rgba(95,208,166,.5)}
+.card.artifact.warn{border-color:rgba(255,179,92,.5)}
+.fields{display:grid;gap:8px;margin-bottom:8px}
+.frow{display:grid;grid-template-columns:150px 1fr;gap:10px;font-size:13.5px;border-top:1px solid rgba(30,43,61,.6);padding-top:7px}
+.frow:first-child{border-top:0;padding-top:0}
+.flab{color:var(--faint);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.fval{color:var(--ink)}
+.noteline{font-style:italic}
+
+/* phone mockup */
+.phonemock{max-width:280px;margin:6px auto 20px;background:#0a0f18;border:1px solid var(--line);
+  border-radius:24px;padding:16px 14px}
+.phonebar{font-size:11px;color:var(--faint);text-align:center;margin-bottom:12px;letter-spacing:.14em;text-transform:uppercase}
+.phonebubble{background:var(--panel2);border:1px solid rgba(87,224,200,.35);border-radius:14px;padding:11px 13px}
+.phonesender{font-size:11px;color:var(--aur1);margin-bottom:4px;font-weight:660}
+.phonetext{font-size:13.5px;line-height:1.45;color:var(--ink)}
+.phonetime{font-size:10.5px;color:var(--faint);margin-top:8px;text-align:right}
+
+/* steps */
+.stepgrid{display:grid;gap:14px}
+@media(min-width:720px){.stepgrid{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:17px 18px}
+.stepnum{width:28px;height:28px;border-radius:50%;background:linear-gradient(160deg,var(--aur1),var(--aur3));
+  color:#04101a;display:flex;align-items:center;justify-content:center;font-weight:760;font-size:13px;margin-bottom:11px}
+.step h4{margin:0 0 6px;font-size:15px;font-weight:640;color:#fff}
+.guarantee{margin-top:16px;border:1px solid rgba(87,224,200,.35);border-radius:14px;padding:17px 19px;
+  background:linear-gradient(180deg,var(--panel2),var(--panel))}
+.guarantee h4{margin:0 0 8px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--aur1)}
+
+footer{color:var(--faint);font-size:12px;padding:26px 0 0;text-align:center}
+
+@media print{
+  .demo-nav,.toolbar,.controls,.btn{display:none !important}
+  .sec,.card,.chatpanel,.step,.phonemock,.guarantee{break-inside:avoid}
+  body{background:var(--bg)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <div class="mark"><span class="dot"></span> Alaska AI</div>
+  <p class="eyebrow" style="margin-top:24px">Interactive demo, prepared for Big Dan's Fishing Charters and Lodge</p>
+  <h1>Four scenarios, run straight from your own boats and your own calendar.</h1>
+  <p class="quiet">This is a scripted demonstration of the proposed build. It is not a live system. It does not connect to FareHarbor, your website, or your phone line, and no real guest ever touches it.</p>
+  <div class="byline">
+    <span class="pill">Tourism and charter fishing</span>
+    <span class="pill">Homer, Seward and Soldotna, AK</span>
+    <span>2026-07-19</span>
+    <span class="faint">Scripted demonstration, built by Alaska AI's agent team, reviewed by a human before it reached you</span>
+  </div>
+  <svg class="wave" viewBox="0 0 800 40" width="100%" height="28" preserveAspectRatio="none">
+    <path d="M0 20 Q 50 0 100 20 T 200 20 T 300 20 T 400 20 T 500 20 T 600 20 T 700 20 T 800 20"
+      fill="none" stroke="#57e0c8" stroke-width="1.4" opacity="0.5"/>
+  </svg>
+</header>
+
+<section class="sec">
+  <h2>Before you play it</h2>
+  <h3>What is real, and what is invented for this demo</h3>
+  <p>Your own site already tells guests what to do when a date will not open online.</p>
+  <div class="quote">For dates not showing availability online, your best bet is to call Sarah at 907-598-3391.</div>
+  <p class="src">From bigdansfishing.com, your own availability page.</p>
+  <p>The scenarios below show what changes once an AI front desk sits in front of that one line. They also show what stays exactly the same.</p>
+  <p>The dates are invented. The names are invented. So is every boat status you will see below. Nothing here is a real guest, and nothing here touches your real calendar or your real phone line.</p>
+
+  <div class="callout" style="margin-top:8px">
+    <h4>Not built into this version</h4>
+    <ul class="clean small">
+      <li>Answer the phone. That is a later phase, gated on confirming your line can support it.</li>
+      <li>Reschedule a trip around weather on its own. That risk is too high for any small operator to hand to a model today.</li>
+      <li>Take a payment or make the call on hunting transport. Both stay with Dan and Sarah, always.</li>
+      <li>Answer questions your own site already answers. This is not a general FAQ bot bolted onto your homepage.</li>
+    </ul>
+  </div>
+
+  <div class="taglegend">
+    <span class="tag good">Handled directly</span>
+    <span class="small faint">the assistant finishes it, using only what the calendar already shows.</span>
+  </div>
+  <div class="taglegend" style="margin-top:-4px">
+    <span class="tag warn">Escalated</span>
+    <span class="small faint">it stops, and Dan and Sarah get the full context.</span>
+  </div>
+</section>
+
+<nav class="demo-nav">
+  <a href="#scn1">1. A trip that's open</a>
+  <a href="#scn2">2. The calendar's blind spot</a>
+  <a href="#scn3">3. A date that's not open</a>
+  <a href="#scn4">4. Hunting transport</a>
+  <a href="#handoff">The handoff, in full</a>
+  <a href="#fits">How this fits</a>
+</nav>
+
+<section class="sec" id="scn1">
+  <h2>Scenario 1</h2>
+  <h3>A trip that's open</h3>
+  <span class="tag good">Handled directly, exact calendar match</span>
+  <p>A guest wants a halibut trip on a date FareHarbor already shows as open. No judgment call needed. Just a clean match and a booking.</p>
+  <div class="chatpanel" data-scenario="1">
+    <div class="toolbar">
+      <button type="button" class="btn ghost show-all">Show full transcript</button>
+      <button type="button" class="btn ghost restart">Restart</button>
+    </div>
+    <div class="feed"></div>
+    <div class="controls"></div>
+  </div>
+</section>
+
+<section class="sec" id="scn2">
+  <h2>Scenario 2</h2>
+  <h3>The calendar's blind spot</h3>
+  <span class="tag good">Handled directly, quirk resolved</span>
+  <p>A guest hits the calendar's own blind spot, the one your availability page already describes. The assistant checks what is actually open underneath the display.</p>
+  <div class="chatpanel" data-scenario="2">
+    <div class="toolbar">
+      <button type="button" class="btn ghost show-all">Show full transcript</button>
+      <button type="button" class="btn ghost restart">Restart</button>
+    </div>
+    <div class="feed"></div>
+    <div class="controls"></div>
+  </div>
+</section>
+
+<section class="sec" id="scn3">
+  <h2>Scenario 3</h2>
+  <h3>A date that's not open</h3>
+  <span class="tag warn">Escalated, off-calendar</span>
+  <p>A guest asks about a date that simply is not open anywhere on the calendar. This is the exact call-Sarah moment your own site already points to.</p>
+  <div class="chatpanel" data-scenario="3">
+    <div class="toolbar">
+      <button type="button" class="btn ghost show-all">Show full transcript</button>
+      <button type="button" class="btn ghost restart">Restart</button>
+    </div>
+    <div class="feed"></div>
+    <div class="controls"></div>
+  </div>
+</section>
+
+<section class="sec" id="scn4">
+  <h2>Scenario 4</h2>
+  <h3>Hunting transport, a safety call</h3>
+  <span class="tag warn">Escalated, safety-adjacent</span>
+  <p>A guest asks about hunting transport. Safety-adjacent requests always go to Dan and Sarah, no matter what the calendar shows.</p>
+  <div class="chatpanel" data-scenario="4">
+    <div class="toolbar">
+      <button type="button" class="btn ghost show-all">Show full transcript</button>
+      <button type="button" class="btn ghost restart">Restart</button>
+    </div>
+    <div class="feed"></div>
+    <div class="controls"></div>
+  </div>
+</section>
+
+<section class="sec" id="handoff">
+  <h2>The handoff, in full</h2>
+  <h3>What Dan and Sarah would actually receive</h3>
+  <p>Scenario 3 above ends with a note landing on Dan and Sarah's side. Here is that same note, shown the way it would actually arrive.</p>
+
+  <div class="phonemock">
+    <div class="phonebar">Text message</div>
+    <div class="phonebubble">
+      <div class="phonesender">Big Dan's Assistant</div>
+      <div class="phonetext">New guest inquiry needs you. Karen Voss wants a Soldotna river trip, September 10, party of four. Not on the calendar. Full details below.</div>
+      <div class="phonetime">9:42 PM</div>
+    </div>
+  </div>
+
+  <div class="card artifact warn">
+    <h4>A guest inquiry that needs your decision</h4>
+    <div class="fields">
+      <div class="frow"><div class="flab">To</div><div class="fval">Dan Spies and Sarah Spies</div></div>
+      <div class="frow"><div class="flab">From</div><div class="fval">Big Dan's Booking Assistant, marked AI</div></div>
+      <div class="frow"><div class="flab">Sent</div><div class="fval">July 19, 2026, 9:42 PM</div></div>
+      <div class="frow"><div class="flab">Why this landed here</div><div class="fval">Off-calendar date, not shown as available online</div></div>
+      <div class="frow"><div class="flab">Guest</div><div class="fval">Karen Voss</div></div>
+      <div class="frow"><div class="flab">Contact</div><div class="fval">907-555-0199</div></div>
+      <div class="frow"><div class="flab">Request</div><div class="fval">River trip out of Soldotna, party of four, September 10</div></div>
+      <div class="frow"><div class="flab">What the guest was told</div><div class="fval">The date does not show as open online. A person will follow up directly.</div></div>
+      <div class="frow"><div class="flab">Chat summary</div><div class="fval">Asked about September 10 for a river trip. Was told the date does not show as open. Gave contact info and party size.</div></div>
+      <div class="frow"><div class="flab">Note</div><div class="fval">This is a routing note, not a recommendation. Nothing has been decided or promised beyond a follow up.</div></div>
+    </div>
+  </div>
+  <p class="small faint">Text. Email. A shared inbox. All three are on the table. Which one gets used is your call, set up before anything goes live.</p>
+</section>
+
+<section class="sec" id="fits">
+  <h2>How this fits your operation</h2>
+  <h3>In plain words</h3>
+  <div class="stepgrid">
+    <div class="step">
+      <div class="stepnum">1</div>
+      <h4>A guest asks</h4>
+      <p class="small">A guest asks the chat widget a question on bigdansfishing.com, any hour of the day.</p>
+    </div>
+    <div class="step">
+      <div class="stepnum">2</div>
+      <h4>The calendar decides</h4>
+      <p class="small">The assistant checks your real FareHarbor calendar. If what they want is open exactly as it shows online, it books it. The confirmation that goes out is the same one your calendar already generates today.</p>
+    </div>
+    <div class="step">
+      <div class="stepnum">3</div>
+      <h4>Dan and Sarah decide the rest</h4>
+      <p class="small">Off-calendar. Cross-location. Weather-related. Safety-adjacent. Any one of those stops the assistant cold. It writes up exactly what it knows. Then it sends that straight to Dan and Sarah. That is the same handoff that happens today, just organized before it lands.</p>
+    </div>
+  </div>
+  <div class="guarantee">
+    <h4>The guarantee</h4>
+    <p class="small">Nobody gets replaced here. Sarah and Dan still make every call this assistant cannot make on its own. It cannot book hunting transport. It cannot reschedule around weather. It cannot take a payment on a judgment call. Those stay human, on purpose.</p>
+  </div>
+</section>
+
+<footer>This is a scripted demonstration built from Big Dan's own publicly posted facts and the attached Field Study.<br>
+It is not a live system, and it does not connect to FareHarbor, your website, or your phone line.<br>
+Prepared by Alaska AI for Big Dan's Fishing Charters and Lodge, July 19, 2026. Not for redistribution.</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var SCENARIOS = {
+    "1": [
+      {type:"guest", text:"Hi, do you have any halibut trips open out of Homer on August 2? Party of two."},
+      {type:"agent", text:"Hi, I'm Big Dan's booking assistant. I'm AI, not a person. Give me a second to check Homer for August 2."},
+      {type:"check", title:"Checking Homer for August 2", lines:["F/V Game Changer, 8:00 AM halibut trip","4 of 12 spots open"], note:"Example data for this demo. Not a live connection."},
+      {type:"agent", text:"Good news, there's room. Four spots are open on the 8am halibut run out of Homer, August 2. Want me to hold two of them?"},
+      {type:"choice", options:[
+        {label:"Yes, hold two spots.", next:[
+          {type:"agent", text:"Can I get a name and a phone number for the hold?"},
+          {type:"guest", text:"Mike Reyes. 907-555-0148."},
+          {type:"agent", text:"You're all set. I'll send the confirmation over now."},
+          {type:"artifact", tone:"good", title:"Booking confirmed", fields:[
+            ["Boat and trip","F/V Game Changer, halibut trip"],
+            ["Date and time","August 2, 8:00 AM, out of Homer"],
+            ["Party","Two, under Mike Reyes"],
+            ["Confirmation","DBD-51120, sent by text and email"]
+          ], footnote:"This booking matched exactly what the calendar already showed as open. No judgment call was made."}
+        ]},
+        {label:"Let me check with my buddy first.", next:[
+          {type:"agent", text:"No problem. Nothing's booked yet. Message back whenever you're ready and I'll check the calendar again."},
+          {type:"note", text:"Scenario ends here. Nothing was booked, and nothing about the real calendar was guessed at."}
+        ]}
+      ]}
+    ],
+    "2": [
+      {type:"guest", text:"I wanted a halibut trip out of Seward on July 25. The site shows a rockfish charter already picked for that day and nothing else."},
+      {type:"agent", text:"Hi, I'm Big Dan's booking assistant. I'm AI, not a person. That's a known quirk in the calendar."},
+      {type:"agent", text:"Once one trip type is picked for a day, the site hides the other options for that same date. Let me check what's actually open across all four boats."},
+      {type:"check", title:"Checking every boat for July 25, Seward", lines:["F/V Double Down, already out on a rockfish charter","F/V Wanka, 3 of 6 spots open, halibut trip, 7:00 AM","F/V Game Changer and F/V Blackjack, no Seward trips that day"], note:"Example data for this demo. Not a live connection."},
+      {type:"agent", text:"The Double Down is already out on a rockfish charter that day. That's what you saw online."},
+      {type:"agent", text:"The Wanka still has room though. Three spots open on the 7am halibut trip out of Seward, July 25. Want me to hold one?"},
+      {type:"guest", text:"Yes, one spot please."},
+      {type:"agent", text:"Can I get a name and a phone number?"},
+      {type:"guest", text:"Priya Nair. 907-555-0176."},
+      {type:"agent", text:"You're all set. I'll send the confirmation now."},
+      {type:"artifact", tone:"good", title:"Booking confirmed", fields:[
+        ["Boat and trip","F/V Wanka, halibut trip"],
+        ["Date and time","July 25, 7:00 AM, out of Seward"],
+        ["Party","One, under Priya Nair"],
+        ["Confirmation","DBD-51121, sent by text and email"]
+      ], footnote:"This is the exact quirk your own availability page describes. The assistant checks the real calendar underneath the display, not just what the page shows."}
+    ],
+    "3": [
+      {type:"guest", text:"Do you have anything open for a river trip out of Soldotna on September 10? I don't see it on the site at all."},
+      {type:"agent", text:"Hi, I'm Big Dan's booking assistant. I'm AI, not a person. I checked, and September 10 isn't showing as open for a Soldotna river trip."},
+      {type:"agent", text:"I'm not going to guess or make something up. This is exactly the kind of date Dan and Sarah handle by hand. I'll send it straight to them instead of leaving you stuck."},
+      {type:"agent", text:"Can I get your name and how many in your party?"},
+      {type:"guest", text:"Karen Voss, party of four."},
+      {type:"agent", text:"And what's the best way to reach you?"},
+      {type:"guest", text:"907-555-0199 works."},
+      {type:"agent", text:"Got it. I've sent this to Dan and Sarah with everything you told me. They'll follow up directly, usually the same day."},
+      {type:"artifact", tone:"warn", title:"Sent to Dan and Sarah", fields:[
+        ["Reason","Off-calendar date, not shown as available online"],
+        ["Guest","Karen Voss"],
+        ["Contact","907-555-0199"],
+        ["Request","River trip out of Soldotna, party of four, September 10"],
+        ["What the guest was told","The date does not show as open online. A person will follow up directly."]
+      ], footnote:"This is a routing note. It does not tell Dan and Sarah what to decide. It just gets them everything they need to call back once."},
+      {type:"callout", text:"This is the same step your own site already asks guests to take, call Sarah directly. The guest never has to track down the number, and Sarah gets the details already sorted before she calls back."}
+    ],
+    "4": [
+      {type:"guest", text:"Can you fit me in for a boat transport for a spring black bear hunt out of Homer, early May?"},
+      {type:"agent", text:"Hi, I'm Big Dan's booking assistant. I'm AI, not a person. I'm not able to book hunting transport myself."},
+      {type:"agent", text:"That depends on tide and your exact drop site, and it's a safety call every time. Dan and Sarah make that call directly, not me."},
+      {type:"agent", text:"I'll send them what you've told me so you're not starting over on the phone. What dates are you thinking?"},
+      {type:"guest", text:"May 6 through May 9."},
+      {type:"agent", text:"And what name and number should Dan and Sarah use to reach you?"},
+      {type:"guest", text:"Jordan Cole. 907-555-0122."},
+      {type:"agent", text:"Sent. Dan and Sarah have your dates and your number. They'll be in touch directly."},
+      {type:"artifact", tone:"warn", title:"Sent to Dan and Sarah", fields:[
+        ["Reason","Safety-adjacent, hunting transport always escalates"],
+        ["Guest","Jordan Cole"],
+        ["Contact","907-555-0122"],
+        ["Request","Spring black bear transport out of Homer, May 6 through May 9"],
+        ["What the guest was told","This always goes to a person. Nothing here gets an automatic yes."]
+      ], footnote:"No calendar check could answer this honestly. Dan and Sarah weigh conditions on the water every time, not a script."},
+      {type:"callout", text:"Hunting transport never gets an automatic yes here. It lands on Dan and Sarah's desk every time, the same as a weather call would."}
+    ]
+  };
+
+  var allControllers = [];
+
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  function renderCheck(turn){
+    var wrap = el("div","card check");
+    wrap.appendChild(el("h4", null, turn.title));
+    var ul = el("ul","clean mono");
+    turn.lines.forEach(function(l){ ul.appendChild(el("li", null, l)); });
+    wrap.appendChild(ul);
+    wrap.appendChild(el("p","small faint", turn.note || "Example data for this demo. Not a live connection."));
+    return wrap;
+  }
+
+  function renderArtifact(turn){
+    var wrap = el("div","card artifact " + (turn.tone||""));
+    wrap.appendChild(el("h4", null, turn.title));
+    var fields = el("div","fields");
+    turn.fields.forEach(function(pair){
+      var row = el("div","frow");
+      row.appendChild(el("div","flab", pair[0]));
+      row.appendChild(el("div","fval", pair[1]));
+      fields.appendChild(row);
+    });
+    wrap.appendChild(fields);
+    if(turn.footnote) wrap.appendChild(el("p","small faint", turn.footnote));
+    return wrap;
+  }
+
+  function renderTurn(feed, turn){
+    if(turn.type === "guest" || turn.type === "agent"){
+      var row = el("div","bubblerow " + turn.type);
+      var b = el("div","bubble " + turn.type);
+      b.appendChild(el("span","who", turn.type === "agent" ? "Booking assistant, AI" : "Guest"));
+      b.appendChild(el("div","txt", turn.text));
+      row.appendChild(b);
+      feed.appendChild(row);
+    } else if(turn.type === "check"){
+      feed.appendChild(renderCheck(turn));
+    } else if(turn.type === "artifact"){
+      feed.appendChild(renderArtifact(turn));
+    } else if(turn.type === "note"){
+      feed.appendChild(el("p","small faint noteline", turn.text));
+    } else if(turn.type === "callout"){
+      var c = el("div","callout small");
+      c.textContent = turn.text;
+      feed.appendChild(c);
+    }
+  }
+
+  function initScenario(panel, turns){
+    var feed = panel.querySelector(".feed");
+    var controls = panel.querySelector(".controls");
+    var queue, idx;
+
+    function reset(){
+      feed.innerHTML = "";
+      queue = turns.slice();
+      idx = 0;
+      if(queue.length){
+        renderTurn(feed, queue[0]);
+        idx = 1;
+      }
+      draw();
+    }
+
+    function draw(){
+      controls.innerHTML = "";
+      if(idx >= queue.length){
+        controls.appendChild(el("span","donetext", "Scenario finished."));
+        return;
+      }
+      var turn = queue[idx];
+      if(turn.type === "choice"){
+        turn.options.forEach(function(opt){
+          var btn = el("button","btn choice", opt.label);
+          btn.type = "button";
+          btn.addEventListener("click", function(){
+            renderTurn(feed, {type:"guest", text: opt.label});
+            queue.splice.apply(queue, [idx+1, 0].concat(opt.next.slice()));
+            idx = idx + 1;
+            draw();
+          });
+          controls.appendChild(btn);
+        });
+      } else {
+        var next = el("button","btn next", "Next");
+        next.type = "button";
+        next.addEventListener("click", function(){
+          renderTurn(feed, turn);
+          idx = idx + 1;
+          draw();
+        });
+        controls.appendChild(next);
+      }
+    }
+
+    function revealAll(){
+      while(idx < queue.length){
+        var turn = queue[idx];
+        if(turn.type === "choice"){
+          var opt = turn.options[0];
+          renderTurn(feed, {type:"guest", text: opt.label});
+          queue.splice.apply(queue, [idx+1, 0].concat(opt.next.slice()));
+          idx = idx + 1;
+        } else {
+          renderTurn(feed, turn);
+          idx = idx + 1;
+        }
+      }
+      draw();
+    }
+
+    reset();
+
+    var toolbar = panel.querySelector(".toolbar");
+    if(toolbar){
+      var showBtn = toolbar.querySelector(".show-all");
+      var resetBtn = toolbar.querySelector(".restart");
+      if(showBtn) showBtn.addEventListener("click", revealAll);
+      if(resetBtn) resetBtn.addEventListener("click", reset);
+    }
+
+    allControllers.push({reset:reset, revealAll:revealAll});
+  }
+
+  function boot(){
+    var panels = document.querySelectorAll(".chatpanel");
+    for(var i=0; i<panels.length; i++){
+      var panel = panels[i];
+      var key = panel.getAttribute("data-scenario");
+      var turns = SCENARIOS[key];
+      if(turns) initScenario(panel, turns);
+    }
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+
+  window.addEventListener("beforeprint", function(){
+    allControllers.forEach(function(c){ c.revealAll(); });
+  });
+})();
+</script>
+<noscript>
+  <p style="max-width:860px;margin:20px auto;color:#9fb0c6;font-size:13.5px">
+    This demo uses a small amount of inline JavaScript so you can click through each scenario.
+    Please open this file in a browser with JavaScript enabled to see the four conversations play out.
+  </p>
+</noscript>
+</body>
+</html>

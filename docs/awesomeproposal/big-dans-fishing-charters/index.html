@@ -1,0 +1,207 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Field Study, Big Dan&#x27;s Fishing Charters</title><style>
+:root{
+  --bg:#070b12; --panel:#0d1420; --panel2:#111a28; --line:#1e2b3d;
+  --ink:#eef3fb; --muted:#9fb0c6; --faint:#6f7f96;
+  --aur1:#57e0c8; --aur2:#5aa9ff; --aur3:#9b8cff; --warm:#ffd18c;
+  --good:#5fd0a6; --warn:#ffb35c;
+  --maxw:820px;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  margin:0;background:
+    radial-gradient(1100px 500px at 78% -8%, rgba(90,169,255,.12), transparent 60%),
+    radial-gradient(900px 460px at 8% 4%, rgba(87,224,200,.10), transparent 55%),
+    var(--bg);
+  color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.1px;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px 90px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+h1{font-size:clamp(30px,5.4vw,50px);line-height:1.04;margin:.1em 0 .28em;font-weight:680;letter-spacing:-.4px}
+h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--aur1);margin:0 0 4px;font-weight:640}
+.sec>h3,h3{font-size:clamp(20px,3vw,27px);line-height:1.15;margin:.1em 0 .5em;font-weight:640;letter-spacing:-.2px}
+p{margin:0 0 14px}
+a{color:var(--aur2);text-decoration:none;border-bottom:1px solid rgba(90,169,255,.35)}
+strong{color:#fff;font-weight:640}
+.small{font-size:13.5px;color:var(--muted)}
+.faint{color:var(--faint)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+/* cover */
+.cover{padding:74px 0 30px;border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:11px;font-weight:660;letter-spacing:.02em}
+.dot{width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--aur1),var(--aur3));
+  box-shadow:0 0 16px 2px rgba(87,224,200,.5)}
+.thesis{font-size:clamp(19px,2.7vw,24px);line-height:1.4;color:var(--ink);max-width:46rem;margin:.2em 0 1.1em;font-weight:480}
+.byline{font-size:13px;color:var(--faint);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.byline .pill{border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted)}
+
+/* sections */
+.sec{padding:34px 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:0}
+.grid{display:grid;gap:14px}
+@media(min-width:680px){.grid.c2{grid-template-columns:1fr 1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:14px;padding:18px 19px}
+.card h4{margin:0 0 7px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--aur1);font-weight:640}
+.card p:last-child{margin-bottom:0}
+.quote{border-left:2px solid var(--aur1);padding:6px 0 6px 18px;margin:4px 0 12px;color:#dbe6f5;font-size:18px;line-height:1.5}
+.src{font-size:12px;color:var(--faint)}
+.src a{color:var(--faint);border-bottom-color:rgba(111,127,150,.4)}
+ul.clean{list-style:none;padding:0;margin:0 0 12px}
+ul.clean li{padding:7px 0 7px 22px;position:relative;border-bottom:1px solid rgba(30,43,61,.6)}
+ul.clean li:last-child{border-bottom:0}
+ul.clean li:before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;
+  background:var(--aur2);box-shadow:0 0 9px rgba(90,169,255,.6)}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:6px;padding:1px 7px;color:var(--muted);margin-left:8px}
+.tag.cash{color:var(--good);border-color:rgba(95,208,166,.4)}
+.tag.capacity{color:var(--warm);border-color:rgba(255,209,140,.35)}
+
+/* tables */
+.tw{overflow-x:auto;margin:0 0 12px;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--faint);font-weight:560;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td .k{color:#fff;font-weight:560}
+
+/* two-column split for goals/non-goals etc */
+.split{display:grid;gap:14px}
+@media(min-width:680px){.split{grid-template-columns:1fr 1fr}}
+
+/* roadmap */
+.road{display:grid;gap:12px}
+@media(min-width:720px){.road{grid-template-columns:repeat(3,1fr)}}
+.lane{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+.lane h4{margin:0 0 3px;font-size:15px;font-weight:640}
+.lane .when{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+.lane.now{border-color:rgba(87,224,200,.4)}
+.lane .item{font-size:14px;padding:8px 0;border-top:1px solid rgba(30,43,61,.7)}
+.lane .item:first-of-type{border-top:0}
+.lane .metric{display:block;color:var(--faint);font-size:12px;margin-top:2px}
+
+/* scenario strip */
+.scn{display:grid;gap:10px;margin:2px 0 12px}
+@media(min-width:640px){.scn{grid-template-columns:repeat(3,1fr)}}
+.scn .b{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--panel)}
+.scn .b .lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.scn .b.cons{border-color:rgba(95,208,166,.45)}
+.scn .b.cons .lab{color:var(--good)}
+.clears{font-size:14px;color:var(--good);margin:0 0 8px}
+
+/* diagram */
+.diagram{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;overflow-x:auto;margin:0 0 10px}
+.diagram svg{display:block;min-width:520px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:6px 15px;font-size:12px;color:var(--muted);margin:2px 2px 0}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+
+/* honest / callout */
+.callout{background:linear-gradient(180deg,rgba(255,179,92,.07),rgba(255,179,92,.02));
+  border:1px solid rgba(255,179,92,.28);border-radius:14px;padding:17px 19px}
+.callout h3{color:var(--warm)}
+.next{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+  border-radius:16px;padding:22px 22px;margin-top:8px}
+
+/* sources */
+ol.src-list{font-size:12.5px;color:var(--faint);padding-left:20px;margin:6px 0 0}
+ol.src-list li{margin:0 0 6px;word-break:break-word}
+ol.src-list a{color:var(--muted)}
+
+footer{color:var(--faint);font-size:12px;padding:26px 0 0;text-align:center}
+
+@media print{
+  body{background:var(--bg)}
+  .sec,.cover{page-break-inside:avoid}
+}
+</style></head><body><div class="wrap">
+<header class="cover">
+<div class="mark"><span class="dot"></span> Alaska AI</div>
+<p class="eyebrow" style="margin-top:26px">Field Study prepared for Big Dan&#x27;s Fishing Charters</p>
+<h1>Every booking your online calendar can&#x27;t answer sends someone straight to Sarah&#x27;s cell phone, and an AI front desk could answer most of those instantly, day or night, without touching anything Sarah and Dan don&#x27;t already review.</h1>
+<p class="thesis">Big Dan&#x27;s own site tells guests exactly what to do when a date doesn&#x27;t show as available online, call Sarah at 907-598-3391. That single line is doing the work of a whole reservations desk across three towns, four boats, five cabins, river trips, and hunting transport, through a short summer season the business itself says fills up fast. No competitor in Homer, Seward, or Soldotna runs anything AI-driven today, so closing this gap is not catching up, it&#x27;s leading.</p>
+<div class="byline"><span class="pill">Tourism</span><span class="pill">Homer, Seward &amp; Soldotna, AK</span><span>2026-07-19</span><span class="faint">Researched and drafted by Alaska AI's agent team, reviewed by a human before it reached you</span></div>
+</header>
+<section class="sec"><h2>What we saw</h2><h3>The homework</h3>
+<div class="grid c2">
+<div class="card"><h4>The business</h4><p>Big Dan&#x27;s Fishing Charters &amp; Lodge is a family-owned saltwater and freshwater fishing operator on the Kenai Peninsula, run by owners Dan and Sarah Spies. Four vessels (the 50-ft Double Down and 42-ft Game Changer catamarans, plus the smaller Wanka and Blackjack) work out of Homer and Seward, guided trips run the Kenai and Kasilof Rivers, five riverfront cabins operate in Soldotna, and the business also runs vessel-based transport for spring black bear and fall Sitka blacktail deer hunts. Bookings run through FareHarbor online, or by calling Sarah directly for anything the calendar can&#x27;t resolve.</p></div>
+<div class="card"><h4>The real pain</h4><div class="quote">For dates not showing availability online, your best bet is to call Sarah at 907-598-3391.</div><p>Sarah Spies, office manager and co-owner, is the named single point of contact for any booking the FareHarbor calendar can&#x27;t resolve, across three locations, four boats, five cabins, river trips, and hunting transport, through a compressed summer season.</p><p class="src">Source: <a href="https://bigdansfishing.com/availability/">https://bigdansfishing.com/availability/</a></p></div>
+</div>
+<div class="split" style="margin-top:14px">
+<div class="card"><h4>The field around them</h4><ul class="clean"><li><strong>O&#x27;Fish&#x27;ial Charters</strong> none found, FareHarbor online booking only <span class="src"><a href="https://bighalibut.com/">source</a></span></li><li><strong>Inlet Charters</strong> none found, FareHarbor online booking only <span class="src"><a href="https://halibutcharters.com/">source</a></span></li><li><strong>Homer Halibut Hunters</strong> a human-staffed live chat tool that routes directly to staff and boat captains, not AI <span class="src"><a href="https://homerhalibuthunters.com/">source</a></span></li><li><strong>Crazy Rays Charters</strong> none found, no online booking system at all, phone-only reservations <span class="src"><a href="https://crazyraysak.com/locations/seward-fishing-charters/">source</a></span></li><li><strong>Alaska Kenai Fishing for Fun</strong> none found, standard online booking button <span class="src"><a href="https://www.akkenaifff.com/">source</a></span></li></ul></div>
+<div class="card"><h4>AI in this industry now</h4><ul class="clean"><li>A named fishing-charter operator (Destin Party Boat Fishing) running an AI chatbot on its existing FareHarbor booking system saw online conversion rise 33.67 percent, phone call volume fall 26 percent, and its toll-free bill fall 68 percent, in the first four months. Vendor-reported case study. <span class="src"><a href="https://www.yonderhq.com/case-study/destin-party-boat-sailing-to-success-with-yonders-tourism-ai-chatbot-and-reviews-platform">source</a></span></li><li>A small two-location cruise operator (Black Cat Cruises) runs an AI chatbot handling around 500 conversations a month, resolving around 60 percent without staff and saving about 10 staff hours a month. Vendor-reported case study. <span class="src"><a href="https://www.yonderhq.com/case-study/black-cat-cruises-chatbot-answers-immediately-24-7">source</a></span></li><li>Federal Reserve data (April 2026) puts AI adoption in accommodation and food services at about 8 percent, versus roughly 33 percent in professional services, the lowest of any sector compared. <span class="src"><a href="https://www.federalreserve.gov/econres/notes/feds-notes/monitoring-ai-adoption-in-the-u-s-economy-20260403.html">source</a></span></li></ul></div>
+</div>
+</section>
+<section class="sec"><h2>The opportunity</h2><h3>Get a fast, reliable answer to any booking question the online calendar can&#x27;t resolve, or that arrives outside business hours, without waiting on a single person&#x27;s callback, across all three locations and both trip families.</h3>
+<p>This is the highest-cited, best-evidenced opportunity in the research, directly quoted on Big Dan&#x27;s own site as the fallback instruction for exactly the busiest part of the business. No competitor in the Homer, Seward, or Soldotna market has moved on it yet, and accommodation and food service businesses overall show the lowest AI adoption of any sector measured, so this is a genuinely early move, not a crowded one.</p>
+<div class="grid c2"><div class="card"><h4>What they use today</h4><p>A phone call or email directly to Sarah Spies, who manually checks cross-location and cross-boat availability herself.</p></div><div class="card"><h4>Why a change is realistic</h4><p>Push is real, a named single point of contact across a structurally complex, three-location, two-trip-type operation during a season where demand already outstrips supply. Pull is concrete, two named small operators in adjacent trades show real gains from exactly this pattern, and it plugs into a system Big Dan&#x27;s already runs. Anxiety is real too, for a five-star, review-driven brand worried about a wrong answer on a weather-sensitive booking, which is exactly why the human escalation path stays mandatory, not optional.</p></div></div>
+</section>
+<section class="sec"><h2>The recommended build</h2><h3>AI front-desk chat agent, FareHarbor-integrated, chat-first</h3>
+<p>Answers guest questions and books whatever FareHarbor already shows as open, 24/7, across all three locations. Anything off-calendar, cross-location, weather-sensitive, or safety-adjacent goes straight to Dan and Sarah with a clean written summary instead of a cold callback, the same handoff that happens today, just with fewer routine calls reaching them first.</p>
+<div class="diagram"><svg viewBox="0 0 1058 298" role="img" aria-label="Architecture diagram" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-end"><path d="M0 0 L10 5 L0 10 z" fill="#5f7290"/></marker></defs><path d="M176 105 C315 105 315 61 454 61" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="315" y="78" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">asks a question</text><path d="M604 61 C636 61 636 105 668 105" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="636" y="78" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">forwards it</text><path d="M818 105 C743 105 743 193 668 193" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="743" y="144" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">understands and replies</text><path d="M668 105 C529 105 529 149 390 149" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="529" y="122" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">checks and books exact matches</text><path d="M818 105 C850 105 850 149 882 149" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="850" y="122" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">reads hours, pricing, policy</text><path d="M668 105 C636 105 636 149 604 149" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="636" y="122" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">routes anything off-calendar or unusual</text><path d="M604 149 C529 149 529 237 454 237" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="529" y="188" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">sends a clean summary</text><path d="M454 237 C315 237 315 193 176 193" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="315" y="210" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">reviews and follows up, same as today</text><rect x="26" y="74" width="150" height="62" rx="11" fill="#1a2740" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="101" y="90" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">PERSON</text><text x="101" y="104" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Prospective Charter</text><text x="101" y="119" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Guest</text><rect x="26" y="162" width="150" height="62" rx="11" fill="#1a2740" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="101" y="178" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">PERSON</text><text x="101" y="199" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Dan &amp; Sarah Spies</text><rect x="240" y="118" width="150" height="62" rx="11" fill="#1a2740" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="315" y="134" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">EXTERNAL</text><text x="315" y="148" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">FareHarbor (your</text><text x="315" y="163" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">booking system)</text><rect x="454" y="30" width="150" height="62" rx="11" fill="#14233a" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="529" y="46" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">THEIR SYSTEM</text><text x="529" y="60" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Chat Widget on</text><text x="529" y="75" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">bigdansfishing.com</text><rect x="454" y="118" width="150" height="62" rx="11" fill="#14233a" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="529" y="134" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">THEIR SYSTEM</text><text x="529" y="148" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Escalation Router</text><text x="529" y="163" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">(hard rule)</text><rect x="454" y="206" width="150" height="62" rx="11" fill="#14233a" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="529" y="222" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">THEIR SYSTEM</text><text x="529" y="236" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Notification</text><text x="529" y="251" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">(email/text)</text><rect x="668" y="74" width="150" height="62" rx="11" fill="#123a34" stroke="#57e0c8" stroke-width="1.4" opacity="0.96"/><text x="743" y="90" fill="#57e0c8" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">WE BUILD</text><text x="743" y="111" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Front-Desk Agent</text><rect x="668" y="162" width="150" height="62" rx="11" fill="#123a34" stroke="#57e0c8" stroke-width="1.4" opacity="0.96"/><text x="743" y="178" fill="#57e0c8" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">WE BUILD</text><text x="743" y="192" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Language Model</text><text x="743" y="207" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">(hosted)</text><rect x="882" y="118" width="150" height="62" rx="11" fill="#241a3a" stroke="#9b8cff" stroke-width="1.4" opacity="0.96"/><text x="957" y="134" fill="#9b8cff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">DATA</text><text x="957" y="148" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Your Business Rules</text><text x="957" y="163" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">(hours, pricing,</text></svg></div><div class="legend"><span><i style="background:#5aa9ff"></i>Person</span><span><i style="background:#5aa9ff"></i>External</span><span><i style="background:#5aa9ff"></i>Their system</span><span><i style="background:#57e0c8"></i>We build</span><span><i style="background:#9b8cff"></i>Data</span></div>
+<p class="small faint">Chat-first MVP. The AI only handles understanding the question and writing the reply, every availability check, booking decision, and escalation is a deterministic rule against FareHarbor and your own settings. Anything unusual goes straight to Dan and Sarah, exactly as it does now.</p>
+<div class="grid c2" style="margin-top:6px"><div class="card"><h4>Where AI fits, and where it does not</h4><p>The availability check and the book-or-route decision are deterministic lookups against FareHarbor, not model guesses, so the AI&#x27;s job is narrowed to understanding the question and writing the reply, which keeps this at a workflow tier rather than an open-ended agent. Where we would NOT use AI, the FAQ layer over Big Dan&#x27;s own three static pages (a rewritten FAQ section does that job with zero hallucination risk), the go or no-go booking decision once FareHarbor&#x27;s calendar already shows a slot open or closed (a straight data read, never a model call), and any weather-related rescheduling or hunting-transport safety decision, which stays a hard rule that always escalates to Dan and Sarah.</p></div><div class="card"><h4>Build vs buy</h4><p>We buy the commodity underneath it, the language model, the database, email and text delivery, and telephony if the phone channel is ever added, and we build only the part that is genuinely Big Dan&#x27;s, the specific booking rules, the escalation logic, and the FareHarbor wiring.</p></div></div>
+</section>
+<section class="sec"><h2>The plan</h2><h3>What we would build, scoped</h3>
+<p>Anyone who wants a trip or cabin not already open on the FareHarbor calendar has exactly one path forward, call Sarah, across four boats, three towns, five cabins, and two hunting seasons, through the short summer season the business tells guests fills up fast.</p>
+<div class="split">
+<div class="card"><h4>Goals</h4><ul class="clean"><li>Answer availability and booking questions instantly through a chat widget, tied live to the real FareHarbor calendar.</li><li>Resolve the calendar&#x27;s known quirk conversationally, surfacing true availability across all four boats and both trip types on request.</li><li>Cut routine, answerable-by-calendar phone and message traffic reaching Sarah&#x27;s cell.</li><li>Escalate cleanly to Dan and Sarah, by name, with full context, for anything off-calendar, cross-location, weather-sensitive, or safety-adjacent.</li></ul></div>
+<div class="card"><h4>Non-goals, on purpose</h4><ul class="clean"><li>Phone-answering AI in Phase 1 <span class="faint">(Telephony integration on your existing line is unconfirmed, we will not promise it before we&#x27;ve verified it.)</span></li><li>Autonomous booking or payment execution off the standard calendar <span class="faint">(Unattended booking gets unreliable fast once it has to chain several judgment steps together, not a bet worth your reputation.)</span></li><li>Weather-driven rescheduling automation <span class="faint">(High cost of error, no small operator anywhere runs this today, held out entirely.)</span></li><li>Cabin-specific guest messaging for the Soldotna cabins <span class="faint">(No cited pain there yet, we would not invent one.)</span></li><li>A general FAQ chatbot <span class="faint">(It would answer questions your site already answers and never touch the actual bottleneck.)</span></li></ul></div>
+</div>
+<h4 style="margin:18px 0 8px;color:var(--aur1);font-size:12px;letter-spacing:.16em;text-transform:uppercase">How we would measure success</h4>
+<div class="tw"><table><thead><tr><th>Metric</th><th>Baseline</th><th>Target</th><th>By when</th></tr></thead><tbody><tr><td class="k">Phone calls to Sarah for routine availability/booking questions</td><td>Not currently logged, we&#x27;d establish it with a two-week manual call-log spot check before launch</td><td>30 percent reduction in routine calls reaching Sarah directly</td><td>60 days after launch</td></tr><tr><td class="k">Chat-to-booking or chat-to-clean-handoff conversion</td><td>0, no chat channel exists today</td><td>At least 15 percent of chat sessions end in a completed booking or a clean handoff</td><td>45 days after launch</td></tr><tr><td class="k">After-hours inquiries answered instead of going unanswered</td><td>Assumed near-zero outside business hours today</td><td>At least 50 percent of after-hours chat volume resolved or captured</td><td>60 days after launch</td></tr><tr><td class="k">Escalation accuracy, correctly routed versus resolved</td><td>New metric, target set from the reliability band this design supports</td><td>85 percent or better correctly self-resolved or escalated</td><td>30 days after launch, re-checked at 90 days</td></tr></tbody></table></div>
+<div class="split">
+<div class="card"><h4>Phase one, must have</h4><ul class="clean"><li>Chat widget wired live to FareHarbor for real-time, cross-boat, cross-location availability</li><li>Deterministic book-or-route logic</li><li>A structured escalation summary to Sarah and Dan for anything off-calendar, cross-location, weather-related, or safety-adjacent</li><li>Handling for the calendar&#x27;s known quirk</li><li>Honest disclosure that it&#x27;s an AI assistant, with a clear path to reach a person</li><li>Confirming FareHarbor API access before build starts</li></ul></div>
+<div class="card"><h4>Deliberately later</h4><ul class="clean"><li>Phone-answering, gated on a confirmed telephony feasibility check</li><li>Conversational fix for the calendar&#x27;s cross-trip-type display quirk</li><li>Cabin-specific guest communication, if evidence shows up</li><li>Weather-driven rescheduling automation</li></ul></div>
+</div>
+<div class="card" style="margin-top:14px"><h4>What we would need from you</h4><ul class="clean"><li>FareHarbor account access, or a willingness to confirm what it exposes for integration</li><li>A decision on how escalations should reach you, text, email, or a shared inbox</li><li>Your rough sense of current call volume and common off-calendar requests</li><li>Sign-off and access to place a chat widget on your site</li><li>Your current phone setup, only if we move to the phone phase</li><li>Someone willing to spot-check a sample of chat transcripts in the first few weeks</li></ul></div>
+<h4 style="margin:18px 0 8px;color:var(--aur1);font-size:12px;letter-spacing:.16em;text-transform:uppercase">Risks, and how we would handle them</h4>
+<div class="tw"><table><thead><tr><th>Risk</th><th>Mitigation</th></tr></thead><tbody><tr><td class="k">FareHarbor may not expose the access this design assumes.</td><td>We confirm this before any build work starts, and downscope honestly if it&#x27;s not available.</td></tr><tr><td class="k">A wrong answer on a weather-sensitive or safety-adjacent question.</td><td>The escalation guardrail is not optional, by design.</td></tr><tr><td class="k">Guests keep calling out of habit.</td><td>We&#x27;d treat that as a signal to improve visibility, checked against a real logged baseline, not assumed away.</td></tr><tr><td class="k">If it underperforms after 60 to 90 days.</td><td>The cost of the chat-only version is small and easy to walk back, checked at 30, 45, and 90 days.</td></tr></tbody></table></div>
+<div class="card" style="margin-top:8px"><h4>Open questions we would resolve together</h4><ul class="clean"><li>Does your FareHarbor plan expose API access, and at what cost? <span class="faint">(Alaska AI, confirming with FareHarbor alongside you)</span></li><li>What&#x27;s the real current call volume and off-calendar request pattern? <span class="faint">(Sarah)</span></li><li>Is a phone integration even feasible on your current line? <span class="faint">(Dan, then Alaska AI)</span></li><li>Who should escalations route to in practice? <span class="faint">(Dan and Sarah)</span></li><li>Who controls the website to add the widget? <span class="faint">(Dan and Sarah)</span></li></ul></div>
+</section>
+<section class="sec"><h2>The numbers</h2><h3>Honest ROI, not a hero number</h3>
+<div class="card"><h4>What it costs to run, five year view</h4><p>We&#x27;re deliberately not quoting a five-year commitment today. Step one, a two-to-four-week baseline check, costs no new dollars, just Sarah logging real call and contact volume before anything is built. And the decision rule is explicit, if that check shows off-calendar inquiry volume at or below the conservative assumption (roughly five a day), our honest recommendation is to stop there and not build, because the math does not clear at that volume. Step two, only if the baseline clears and FareHarbor access is confirmed, is the actual near-term ask, the chat-first walking skeleton plus a chat-only MVP for one peak season, no phone channel. That prices at roughly 8,000 to 14,000 dollars, implementation, training, one season of run cost, and contingency included. Continuing past that first measured season would add a recurring 1,500 to 2,800 dollars a year, a separate renewal decision made only after real results are in, never bundled into today&#x27;s number.</p></div>
+<div class="card" style="margin-top:14px"><h4>Where the value comes from</h4><ul class="clean"><li><strong>Sarah&#x27;s reclaimed time triaging off-calendar inquiries in peak season</strong><span class="tag capacity">capacity</span> <span class="faint">No call-volume baseline exists yet, so this is a planning assumption, not a measured number, and it only becomes cash if a specific deferred hire or redeployment is confirmed.</span></li><li><strong>Recovered peak-season bookings that would otherwise lapse</strong><span class="tag cash">cash</span> <span class="faint">The most speculative line, and the one the baseline check is meant to calibrate before real money moves. If the baseline comes in at or below the conservative assumption, this line shrinks or drops, it does not get defended.</span></li></ul></div>
+<div class="scn" style="margin-top:14px">
+<div class="b cons"><div class="lab">Conservative</div>Lower deflection and conversion assumptions. Cash benefit in the first season is around 700 dollars. Even projected across three renewed seasons, cumulative cash lands around 4,300 to 4,700 dollars against a cumulative cost of roughly 11,000 to 19,600 dollars. On cash alone, this does not clear at any horizon modeled here.</div>
+<div class="b"><div class="lab">Most likely</div>Middle assumptions. Cash benefit around 2,600 dollars the first season, ramping toward 6,200 to 6,900 dollars a season if renewed. Payback in roughly 20 to 30 months.</div>
+<div class="b"><div class="lab">Aggressive</div>Higher assumptions, plus the edge of being the only AI-driven contact channel in the market. First-season cash benefit alone can cover the near-term ask, payback in roughly 10 to 14 months. This is the upside case, not the planning case.</div>
+</div>
+<p><strong>Payback</strong> Roughly 10 to 14 months under aggressive assumptions, 20 to 30 months most likely, measured against the honest near-term ask of 8,000 to 14,000 dollars, not a five-year total nothing has been asked to fund. Stated plainly, the conservative case does not recover cost on cash alone at any horizon modeled here. That is a real finding, not a rounding error, and it is exactly why we&#x27;d start with the no-cost baseline check rather than a build commitment.</p>
+<div class="callout" style="margin-top:8px"><h3>The honest base rate</h3><p>Most AI pilots show no real financial impact, roughly 95 percent by MIT&#x27;s 2025 State of AI in Business research (source 15 below), and AI projects fail at roughly 80 percent by RAND&#x27;s analysis of root causes (source 16 below). This build is designed to sit in the minority that pays, it lives inside the FareHarbor calendar already in use, it routes to the same person who already handles this today, and it&#x27;s scoped to a reliability band we can stand behind, not an autonomous system making judgment calls. But that design edge doesn&#x27;t exempt this case from the base rate&#x27;s real lesson, most pilots fail because they&#x27;re funded on assumption rather than measured baseline, which is exactly why the no-cost check comes before the dollar ask, not after. Honestly, the accommodation and tourism sector overall has the lowest AI adoption of any sector measured (source 13), so this isn&#x27;t chasing a crowded trend, it&#x27;s an early, deliberate move in a segment that hasn&#x27;t made it yet.</p></div>
+<p class="small" style="margin-top:12px"><strong>Who owns the number</strong> Sarah Spies would own running the baseline check and, if it proceeds, tracking chat-handled versus escalated volume against it. Dan Spies would own the go or no-go call on the build itself, and separately on any renewal after the first season is measured.</p>
+</section>
+<section class="sec"><h2>The roadmap</h2><h3>By confidence, not by calendar</h3>
+<div class="road">
+<div class="lane now"><div class="when">Now</div><div class="item">Confirm FareHarbor access and telephony feasibility, and spot-check a real call-volume baseline<span class="metric">A real baseline for missed or delayed off-calendar inquiries, established in days not weeks</span></div><div class="item">Ship the chat-first front-desk agent<span class="metric">Share of off-calendar and after-hours inquiries answered immediately or cleanly handed off, and how many convert to a booking</span></div></div>
+<div class="lane "><div class="when">Next</div><div class="item">Add the phone channel, gated on the Now-phase results and a confirmed telephony check<span class="metric">Share of after-hours calls answered or cleanly escalated instead of going unanswered</span></div></div>
+<div class="lane "><div class="when">Later</div><div class="item">A conversational fix for the calendar&#x27;s own display quirk<span class="metric">Fewer guests silently giving up when one trip type shows as unavailable</span></div><div class="item">Cabin-specific guest communication for the Soldotna cabins, if evidence shows up<span class="metric">No metric yet, watching for real evidence first</span></div></div>
+</div>
+<p class="small faint" style="margin-top:10px">Each phase is earned by the last one&#x27;s real results, not funded up front. You can stop after the chat-only version and keep everything it already delivered.</p>
+</section>
+<section class="sec"><div class="callout"><h3>The honest part, what could make this not work</h3><ul class="clean"><li>We have not yet confirmed FareHarbor grants the API access this build needs, that gets checked before anything is built, not assumed.</li><li>The phone channel, the highest-cited pain, depends on confirming your telephony setup can support it, which is why it&#x27;s a later phase, not part of the first build.</li><li>There is no existing baseline for how many calls or missed inquiries you actually get today, so every ROI number here is a planning assumption, not a measurement, until we run a real spot check.</li><li>The conservative version of the ROI case does not pay back in cash alone at any horizon we modeled, honestly. It clears faster only under more optimistic, but still realistic, assumptions, which is exactly why we&#x27;d start with a no-cost baseline check before any build dollars move.</li><li>The two industry examples we cite (a Florida charter fleet, a New Zealand cruise operator) are vendor-reported case studies, not independently audited, and we&#x27;re not presenting them as guarantees for your business.</li><li>Voice response times in production systems are generally a beat slower than a person, callers notice the pause. This build doesn&#x27;t include phone answering yet for exactly that reason, we&#x27;d rather confirm it works well before promising it.</li></ul></div></section>
+<section class="sec"><div class="next"><h2>What this is</h2><h3>This is the free version of how we work</h3><p>This is the free version of how we work, a real Field Study, done. If it&#x27;s useful, the next step is small, reply and say so, no call and no pitch attached to that reply.</p><p class="small faint">The full picture lives at <a href="https://alaskaaihq.com/services/">alaskaaihq.com/services</a>.</p></div></section>
+<section class="sec"><h2>Sources</h2><ol class="src-list">
+<li>For dates not showing availability online, your best bet is to call Sarah at 907-598-3391. <a href="https://bigdansfishing.com/availability/">https://bigdansfishing.com/availability/</a></li>
+<li>Once a trip has been selected for a certain day, the other varieties will not show as available. <a href="https://bigdansfishing.com/availability/">https://bigdansfishing.com/availability/</a></li>
+<li>Fleet, locations, cabins, and business description (Homer, Seward, Soldotna; four vessels; five cabins; hunting transport). <a href="https://bigdansfishing.com/">https://bigdansfishing.com/</a></li>
+<li>Dan Spies is Owner and Captain, Sarah Spies is Office Manager and Co-Owner; contact email bigdansfishing@gmail.com. <a href="https://bigdansfishing.com/big-dans-crew/">https://bigdansfishing.com/big-dans-crew/</a></li>
+<li>Book your trip well in advance as Big Dan&#x27;s Fishing Charters is highly recommended and tends to fill up quickly. <a href="https://wanderlog.com/place/details/6809116/big-dans-fishing-charters">https://wanderlog.com/place/details/6809116/big-dans-fishing-charters</a></li>
+<li>O&#x27;Fish&#x27;ial Charters runs FareHarbor online booking only, no AI found. <a href="https://bighalibut.com/">https://bighalibut.com/</a></li>
+<li>Inlet Charters runs FareHarbor online booking only, no AI found. <a href="https://halibutcharters.com/">https://halibutcharters.com/</a></li>
+<li>Homer Halibut Hunters runs a human-staffed live chat tool connecting to staff and boat captains, not AI. <a href="https://homerhalibuthunters.com/">https://homerhalibuthunters.com/</a></li>
+<li>Crazy Rays Charters has no online booking system at all, phone-only reservations. <a href="https://crazyraysak.com/locations/seward-fishing-charters/">https://crazyraysak.com/locations/seward-fishing-charters/</a></li>
+<li>Alaska Kenai Fishing for Fun runs a standard online booking button, no AI found. <a href="https://www.akkenaifff.com/">https://www.akkenaifff.com/</a></li>
+<li>Destin Party Boat Fishing&#x27;s AI chatbot case study, online conversion up 33.67 percent, phone calls down 26 percent, toll-free bill down 68 percent. <a href="https://www.yonderhq.com/case-study/destin-party-boat-sailing-to-success-with-yonders-tourism-ai-chatbot-and-reviews-platform">https://www.yonderhq.com/case-study/destin-party-boat-sailing-to-success-with-yonders-tourism-ai-chatbot-and-reviews-platform</a></li>
+<li>Black Cat Cruises&#x27; AI chatbot case study, around 500 conversations a month, around 60 percent resolved without staff. <a href="https://www.yonderhq.com/case-study/black-cat-cruises-chatbot-answers-immediately-24-7">https://www.yonderhq.com/case-study/black-cat-cruises-chatbot-answers-immediately-24-7</a></li>
+<li>Federal Reserve data on AI adoption by sector, accommodation and food services at about 8 percent versus roughly 33 percent for professional services. <a href="https://www.federalreserve.gov/econres/notes/feds-notes/monitoring-ai-adoption-in-the-u-s-economy-20260403.html">https://www.federalreserve.gov/econres/notes/feds-notes/monitoring-ai-adoption-in-the-u-s-economy-20260403.html</a></li>
+<li>US Census Bureau data on AI adoption by firm size, firms under 5 employees adopt far less than firms over 250. <a href="https://www.census.gov/library/stories/2026/05/ai-use-businesses.html">https://www.census.gov/library/stories/2026/05/ai-use-businesses.html</a></li>
+<li>MIT Project NANDA, State of AI in Business 2025, about 95 percent of enterprise generative-AI pilots produce no measurable P&amp;L impact. <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/">https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/</a></li>
+<li>RAND, The Root Causes of Failure for AI Projects, more than 80 percent of AI projects fail, about twice the rate of non-AI IT. <a href="https://www.rand.org/pubs/research_reports/RRA2680-1.html">https://www.rand.org/pubs/research_reports/RRA2680-1.html</a></li>
+</ol></section>
+<footer>Alaska AI, in-state and building. This study was prepared for Big Dan&#x27;s Fishing Charters and is not for redistribution.</footer>
+</div></body></html>
