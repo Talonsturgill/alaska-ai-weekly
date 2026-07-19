@@ -60,6 +60,22 @@ per the routine's stall rule (median plateaued with only illustration-craft styl
    `prompts/dispatch_routine.md` (see PHASE 0 step 5) so no run can ever again silently read a
    previous run's leftover artifact.
 
+   **Follow-up (same day), the REAL fix:** the Phase 0 `rm -rf` above is still a soft fix — it
+   depends on the agent remembering to run it, which is exactly the failure mode that let this bug
+   recur (07-18's retrospective already said "regenerate per run" and it happened again anyway).
+   So this was hardened from doctrine into a CODE GUARD: `scripts/run_guard.py`. First principles —
+   a run starts at instant T (stamped once by `run_guard.py init` in Phase 0); every artifact this
+   run legitimately produces is written at or after T; therefore any scratch file with mtime < T is
+   provably a leftover. Freshness is read straight off the filesystem (mtime is trustworthy here
+   precisely because scratch is gitignored, so git never rewrites its timestamps), so NO producer
+   has to change — which matters because the bug was caused by pipeline DRIFT, and any fix that
+   made every producer stamp/register its output would just re-break on the next pipeline change.
+   `dispatch_email.py` now routes `--post` and `--sources` through `run_guard.fresh()` and HARD-FAILS
+   (with both timestamps) on a stale or unstamped input, with an explicit `--no-freshness-check`
+   escape hatch for deliberate manual use. Net effect: a stale artifact now fails the run loudly at
+   the delivery boundary instead of silently emailing the wrong story. Landed on a follow-up branch
+   off main, not this run's branch.
+
 **Upgrades made this run:**
 - NEW asset `Sourdough` (kit.tsx) — personified regional power-plant hero, warm/rounded/blocky
   shape language (deliberately opposite ServerMachine/MachineShadow's cold rectilinear

@@ -145,13 +145,21 @@ repeat ever.
 3. Voice venv: `.venv-voice/bin/python -c "import chatterbox, faster_whisper, resemblyzer"`;
    build via scripts/setup_env.sh if missing.
 4. Create the run branch claude/dispatch-<date> off latest main.
-5. STALE-SCRATCH GUARD (added 2026-07-19, see docs/RUN_UPGRADES.md): `out/` is gitignored
-   scratch and can carry files across sessions/containers. This has bitten TWO runs now — 07-18
-   found a stale `shots.json` from 07-17, and 07-19 found a stale `post.txt`/`sources.json`/
-   `shots.json`/`vo_script.json` left over from a run about an ENTIRELY DIFFERENT story. Before
-   Phase 1: `rm -rf out/dispatch` (full wipe, not a per-file check) so every artifact this run
-   reads or writes is provably from this run. Never trust an `out/dispatch/*` file's content
-   without checking it was written or regenerated in the CURRENT run.
+5. STAMP THE RUN (stale-scratch guard — added 2026-07-19, see docs/RUN_UPGRADES.md):
+   `out/` is gitignored scratch that survives across container sessions, and the pipeline reads
+   artifacts BY PATH, so a leftover file at the right path silently ships as if it were fresh.
+   This bit TWO runs — 07-18 (stale `shots.json` from 07-17) and 07-19 (a whole different story's
+   `post.txt`/`sources.json`/`shots.json`/`vo_script.json`). The FIRST thing this run does, before
+   producing any artifact:
+       python3 scripts/run_guard.py init --run-id <date>
+   This records the run's start instant. From then on, consumers that route reads through
+   `run_guard.fresh()` (dispatch_email.py already does, for --post and --sources) HARD-FAIL on any
+   `out/dispatch/*` file older than this run — a stale artifact fails the run loudly instead of
+   shipping. This is the enforcing mechanism; it does NOT depend on you remembering to clean up.
+   Optionally `rm -rf out/dispatch` too, to clear orphaned files — but do NOT blanket-wipe if you
+   are resuming a crashed run and want to keep already-paid-for outputs (Gemini TTS takes, the
+   music download); the stamp already protects correctness without destroying those.
+   Rule of thumb: never trust an `out/dispatch/*` file you did not see this run write or regenerate.
 
 ## PHASE 1: RESEARCH (go wide; non-recursive)
 

@@ -15,8 +15,14 @@ Usage:
     --note "On-screen numbers are illustrative unless drawn from a live feed." \
     --temporary --date 2026-06-27 --title "Cook Inlet belugas" --out-html out/dispatch/email.html
 """
-import argparse, base64, json, datetime as dt
+import argparse, base64, json, datetime as dt, sys
 from pathlib import Path
+
+# Run-freshness guard: refuse to email a PREVIOUS run's scratch (see run_guard.py
+# for the 07-18/07-19 stale-artifact incidents this prevents). Import from the
+# sibling scripts/ dir regardless of the caller's cwd.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from run_guard import fresh, StaleArtifactError  # noqa: E402
 
 CSS = """
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#13202b;background:#eef1f3;margin:0;padding:24px;}
@@ -91,8 +97,15 @@ def main():
     ap.add_argument("--temporary", action="store_true", help="flag download links as temporary (~1h)")
     ap.add_argument("--date", default=dt.date.today().isoformat()); ap.add_argument("--title", default="")
     ap.add_argument("--to", default="me"); ap.add_argument("--out-html", default="")
+    ap.add_argument("--no-freshness-check", action="store_true",
+                    help="bypass the run-freshness guard (deliberate manual/standalone use only; "
+                         "the routine must NEVER pass this -- it is how a previous run's scratch ships)")
     a = ap.parse_args()
-    post = Path(a.post).read_text().strip()
+    chk = not a.no_freshness_check
+    try:
+        post = Path(fresh(a.post, check=chk)).read_text().strip()
+    except StaleArtifactError as e:
+        sys.exit(f"REFUSING TO BUILD DRAFT: --post is not from this run.\n  {e}")
     if a.poster_url:
         poster_html = f'<div class="poster"><img src="{a.poster_url}" alt="poster"/></div>'
     elif a.poster and Path(a.poster).exists():
@@ -100,7 +113,12 @@ def main():
         poster_html = f'<div class="poster"><img src="data:image/png;base64,{b64}" alt="poster"/></div>'
     else:
         poster_html = ""
-    sources = json.loads(Path(a.sources).read_text()).get("sources") if a.sources and Path(a.sources).exists() else None
+    sources = None
+    if a.sources and Path(a.sources).exists():
+        try:
+            sources = json.loads(Path(fresh(a.sources, check=chk)).read_text()).get("sources")
+        except StaleArtifactError as e:
+            sys.exit(f"REFUSING TO BUILD DRAFT: --sources is not from this run.\n  {e}")
     html = render(post, poster_html, {"vertical": a.video_url_vertical, "square": a.video_url_square},
                   a.voice or "(unset)", a.music or "(unset)", sources, a.score, a.note, a.temporary, a.date, a.title)
     if a.out_html:
