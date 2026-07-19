@@ -87,7 +87,8 @@ def org_ld(site_url):
             {"@type": "City", "name": "Juneau"},
         ],
         "founder": {"@type": "Person", "name": "Talon Sturgill",
-                    "url": f"{site_url}/about/"},
+                    "url": f"{site_url}/about/",
+                    "sameAs": ["https://www.linkedin.com/in/talonsturgill"]},
         "sameAs": SAMEAS,
         "knowsAbout": ["artificial intelligence", "Alaska AI infrastructure",
                        "AI for small business", "voice agents", "workflow automation",
@@ -1414,10 +1415,10 @@ for Alaska businesses, statewide from Anchorage. That work lives on the
 <a href="../services/">services page</a>. Writing the beat every morning is
 exactly why the studio knows what actually pays.</p>
 <h2>Who runs it</h2>
-<p>Alaska AI is founded and run by Talon Sturgill in Anchorage. One desk
-reads the state's AI beat every morning, publishes the deck and the docket,
-and builds AI systems for Alaska businesses the rest of the day. In state,
-in winter, at the end of the road system like everyone else.</p>
+<p>Alaska AI is founded and run by <a href="https://www.linkedin.com/in/talonsturgill">Talon
+Sturgill</a>, born and raised in Anchorage, Alaska. One desk reads the state's AI beat
+every morning, publishes the deck and the docket, and builds AI systems for Alaska
+businesses the rest of the day.</p>
 <h2>How the work gets verified</h2>
 <p>Every day Alaska AI works six beats across the state, from power and
 compute to policy and money to what Alaskans are actually saying. Every
@@ -1446,7 +1447,9 @@ The docket and the archive live here. For the studio, start with
         {"@type": "Person", "@id": f"{site_url}/about/#talon",
          "name": "Talon Sturgill", "jobTitle": "Founder",
          "worksFor": {"@id": org_id(site_url)},
-         "url": f"{site_url}/about/"}]}
+         "url": f"{site_url}/about/",
+         "birthPlace": {"@type": "Place", "name": "Anchorage, Alaska"},
+         "sameAs": ["https://www.linkedin.com/in/talonsturgill"]}]}
     return page("About Alaska AI - An AI Studio and Daily AI Publication in Anchorage",
                 "Alaska AI is a daily publication on Alaska's AI beat and an AI studio "
                 "in Anchorage, founded by Talon Sturgill. Every fact verified to its "
