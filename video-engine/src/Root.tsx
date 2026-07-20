@@ -14,6 +14,7 @@ import { FaunaShowcase2 } from './FaunaShowcase2';
 import { FaunaShowcase3 } from './FaunaShowcase3';
 import { FaunaShowcase4 } from './FaunaShowcase4';
 import { FaunaShowcase5 } from './FaunaShowcase5';
+import { MaterialShowcase } from './MaterialShowcase';
 import { z } from 'zod';
 
 const standoffSchema = z.object({
@@ -139,6 +140,14 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="FaunaShowcase4"
         component={FaunaShowcase4}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="MaterialShowcase"
+        component={MaterialShowcase}
         durationInFrames={150}
         fps={30}
         width={1080}

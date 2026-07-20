@@ -1,0 +1,33 @@
+{
+  "topic": "Second-by-second retention mechanics in short-form vertical video",
+  "researched": "2026-07-20",
+  "caveat": "Multiplier stats (4.2x impressions, caption lift) come from creator-marketing blogs citing unlinked internal data - directional, not ground truth. Highest-confidence: vidIQ first-party channel figures and YouTube's 2025-03-31 loop-counting policy.",
+  "findings": [
+    {"claim": "The steepest drop on a short-form retention curve is the first 3 seconds; roughly 50-60% of all viewers who abandon a Short do so within the first three seconds, setting the ceiling for the entire curve.", "source_url": "https://www.opus.pro/blog/ideal-youtube-shorts-length-format-retention", "confidence": "high"},
+    {"claim": "Meta's internal research (cited) found the median scroll-or-stay decision happens at ~3.1 seconds.", "source_url": "https://www.strategia-x.com/blog/2026-07-01-vertical-video-retention-editing-playbook/", "confidence": "med"},
+    {"claim": "Auto-looping makes short-form retention roughly double long-form: vidIQ first-party 73.6% average-percentage-viewed on Shorts vs 30.3% long-form.", "source_url": "https://vidiq.com/blog/post/increase-audience-retention-youtube/", "confidence": "high"},
+    {"claim": "Functional intro-retention target: >70% of viewers still watching past second 3; below ~40% the hook is failing regardless of the rest.", "source_url": "https://www.opus.pro/blog/youtube-shorts-hook-formulas", "confidence": "med"},
+    {"claim": "Secondary mid-video sag around 25-35s; top editors place a deliberate pattern interrupt there.", "source_url": "https://edicionvideopro.com/en/editing-for-platforms-video-marketing/pattern-interrupts-tiktok-retention-guide/", "confidence": "med"},
+    {"claim": "High-retention Shorts average one cut / visual event every 2-4 seconds; a meaningful visual shift every 2-3s is the recommended cadence.", "source_url": "https://www.opus.pro/blog/ideal-youtube-shorts-length-format-retention", "confidence": "med"},
+    {"claim": "Cut intervals should be VARIED, not metronomic: fixed-interval cuts habituate and stop working; alternate e.g. 3s, 5s, 2.5s.", "source_url": "https://edicionvideopro.com/en/editing-for-platforms-video-marketing/pattern-interrupts-tiktok-retention-guide/", "confidence": "med"},
+    {"claim": "Successful short-form inverts story structure: lead with the payoff/answer in the first 1-3s; time-to-first-payoff near zero.", "source_url": "https://www.capcut.com/create/short-form-video-storytelling-60-second-arc", "confidence": "med"},
+    {"claim": "Bold-claim and curiosity-gap hooks outperform; recurring high-hold openers: cold-open mid-action, question, visual anomaly, countdown/promise. No logo/title card in first 3s.", "source_url": "https://www.opus.pro/blog/youtube-shorts-hook-formulas", "confidence": "med"},
+    {"claim": "Burned-in captions raise retention ~15-25% (majority watch muted); captions present within the first 3 seconds.", "source_url": "https://www.opus.pro/blog/video-captions-for-maximum-readability", "confidence": "med"},
+    {"claim": "Text overlays: ~4-6 words max, appearing ~200-400ms after the key phrase begins, displayed ~1.5-2.5s.", "source_url": "https://www.strategia-x.com/blog/2026-07-01-vertical-video-retention-editing-playbook/", "confidence": "low"},
+    {"claim": "Loops are a primary tail mechanic: seamless ending flowing back into the opening (match cut, callback line, continuous audio) drives replays the algorithm weights heavily. Hard stops/black frames/freeze frames break loops.", "source_url": "https://virvid.ai/blog/looping-structure-shorts-retention-2026", "confidence": "med"},
+    {"claim": "End-card CTAs hurt short-form completion (a 3s follow-for-more is 15% of a 20s runtime); CTA goes in the caption.", "source_url": "https://virvid.ai/blog/looping-structure-shorts-retention-2026", "confidence": "med"},
+    {"claim": "Since 2025-03-31 each Shorts loop counts as an additional view; replay rate ~10% is excellent, 15-20%+ strong.", "source_url": "https://virvid.ai/blog/looping-structure-shorts-retention-2026", "confidence": "med"},
+    {"claim": "By 2025-26 completion + rewatch overtook the 3-second view as dominant ranking signals; viral completion bar ~70%.", "source_url": "https://www.go-viral.app/blog/tiktok-algorithm-2026/", "confidence": "med"},
+    {"claim": "Length vs completion: <15s = 60-75% avg retention; 15-30s = 55-65%; 30-60s = 40-55%; 60-90s Reels 30-45%. Sweet spot 20-25s (our 60-75s format accepts the lower band as a format tradeoff).", "source_url": "https://retensis.com/blog/audience-retention-benchmarks-2026", "confidence": "med"}
+  ],
+  "actionable_rules": [
+    "Show the payoff subject on screen within the first 1.5 seconds; time-to-first-payoff < 3s.",
+    "Open with a tagged hook type: cold-open mid-action, question, visual anomaly, or countdown/promise. No brand card in the first 3s.",
+    "A new visual event at least every 3 seconds; no static shot over 4 seconds in the first 15s.",
+    "Vary cut intervals; no exact interval repeated 3+ times in a row.",
+    "Deliberate pattern interrupt at the 25-35s mark.",
+    "Captions burned in from second 1; overlays <= 6 words, 1.5-2.5s on screen, cut early not late.",
+    "Loopable ending: final frame match-cuts/callbacks to the opening, audio continuous, no black/freeze tail.",
+    "No spoken end-card CTA; ending <= last 10% of runtime."
+  ]
+}

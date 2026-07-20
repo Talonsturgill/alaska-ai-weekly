@@ -81,6 +81,7 @@ NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam pro
   - Environment kit now TEN biomes (three episode-local + seven shared in lib/biomes.tsx). Every biome candidate from the upgrade backlog is now BUILT.
 
 ## Engine systems (the craft layer — advance these every run, don't just consume them)
+- `lib/materials.tsx` — MATERIALS (NEW 2026-07-20d, Stage3D backlog item (d)): surfaces read as SUBSTANCES, not flat fills. Eight deterministic SVG-pattern overlays: brushedMetal, corrugated, tarmac, granite, bark, planks, snowpack, ice. Usage: `<MaterialDefs />` once per svg, then re-draw any silhouette with `fill={matFill('bark')}` over its lit base (or the `Surface` helper). Seeded imul-hash speckle (no Math.random). Look-dev: MaterialShowcase.tsx incl. an Extrude+material demo. Pairs with the no-flat-single-tone-fills rule.
 - `lib/motion.tsx` — animation principles: entrance() (anticipation/overshoot/squash-stretch + MotionBlur velocity), followThrough() secondary swing, accentKick(), idleSway(), squashStretch(), ChipShadow (HUD chips sit in the scene) — NEW 2026-07-18b
 - `lib/voice.tsx` — VOICE ACTING: VoiceProvider/useVoice (per-frame mouth envelope + emphasis accents from the VO pipeline), TalkMouth flapping mouth; Character + ServerMachine take `talking` — the cast speaks/reacts in sync with the narration — NEW 2026-07-18b
 - `assets/sfx/` designed-foley bank (scripts/build_sfx_library.py, 16 sounds; scripts/sfx_bank.py resolver; drop real CC0 takes in assets/sfx/real/ to upgrade any entry) — NEW 2026-07-18b
