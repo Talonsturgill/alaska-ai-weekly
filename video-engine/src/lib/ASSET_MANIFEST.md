@@ -27,6 +27,7 @@ one line: `Name — kind — file — params/poses — status`.
 - `BaldEagle` — air — fauna.tsx — soaring, fingered primaries, white head/tail, yellow beak — NEW 2026-07-18
 - `Salmon` — water — fauna.tsx — spawning (red/green kype) or ocean chrome; S-curve swim undulation — NEW 2026-07-18
 - `Grizzly` — land — fauna.tsx — NET-NEW 2026-07-20c (asset-library session, UPGRADE #2): purpose-built anatomy PER STANCE (all4: horizontal bulk, hump highest, head slung forward; stand: upright pear-trunk tower, planted hinds, dangling clawed forepaws; fish: head dropped to the waterline + water hint); emotion calm/alert; roar 0..1 head-throw + jaw; breath/sway/ear idles; fur break-up detail; form-shaded + rim + AO. Taste-looped twice (v1 potato-pose redone). fish stance not yet frame-checked — verify before first on-air use — ACTIVE
+- `Caribou` — land — fauna.tsx — NET-NEW 2026-07-20c (asset-library session #2): barren-ground caribou, lighter/leggier than the moose; species reads = pale chest mane + tall C-swept beam antlers w/ forward brow shovel (1.55x, sized in taste pass 2) + pale muzzle + dark socks; `trot` 0..1 diagonal-pair trot with head pump over graze idle; emotion calm/wary; form-shaded + rim + AO. Scatter at depth for a herd — ACTIVE
 - `SledDogTeam` — land — Episode.tsx — gallop gait + 180° motion blur + form-shading (2026-07-18); SHOULD be promoted into fauna.tsx and parameterized — ACTIVE (needs refactor)
 
 ### Bestiary gaps to fill (candidates for upcoming runs' net-new quota)

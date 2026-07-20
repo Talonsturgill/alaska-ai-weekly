@@ -357,3 +357,74 @@ export const Grizzly: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------- CARIBOU
+// NET-NEW 2026-07-20c (asset-library session #2). The barren-ground caribou:
+// lighter build than the moose, C-swept beam antlers with forward shovel, pale
+// neck/mane against a brown body, short tail. `trot` 0..1 blends a leggy trot
+// cycle (diagonal pairs, head pumping) over the idle graze-lift. Emotion via
+// ear + eye. Pairs with multiplicity: scatter several at depth for a herd.
+export const Caribou: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  trot?: number; emotion?: 'calm' | 'wary';
+}> = ({x, y, scale = 1, f, facing = 1, trot = 0, emotion = 'calm'}) => {
+  const id = uid(`cari${x}${y}`);
+  const t = tones('#7a5c3e');            // warm brown coat
+  const tr = Math.max(0, Math.min(1, trot));
+  const gait = f / 4.2;                   // trot cycle phase
+  const bob = 3 * Math.sin(f / 22) + tr * 5 * Math.sin(gait * 2);
+  const earFlick = emotion === 'wary' ? -12 : 3 * Math.sin(f / 17);
+  // diagonal-pair trot: FL+RR vs FR+RL swing in opposition
+  const legSwing = (ph: number) => tr * 24 * Math.sin(gait + ph);
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={4} rx={118} ry={19} opacity={0.3} blur={11} />
+      {/* legs: slender, dark socks; diagonal trot pairs */}
+      {[[-86, 0], [-44, Math.PI], [40, Math.PI], [84, 0]].map(([lx, ph], i) => (
+        <g key={i} transform={`translate(${lx},-108) rotate(${legSwing(ph as number)})`}>
+          <rect x={-8} y={0} width={16} height={78} rx={6} fill={i % 2 ? t.core : t.shade} stroke={INK} strokeWidth={5} />
+          <rect x={-8} y={72} width={16} height={38} rx={5} fill="#3d2e1e" stroke={INK} strokeWidth={4.5} />
+        </g>
+      ))}
+      {/* body: lighter/leggier than the moose */}
+      <g transform={`translate(0,${bob * 0.4})`}>
+        <path d="M-118,-124 q6,-52 58,-64 q56,-14 108,-2 q42,10 48,48 q6,36 -12,60 q-84,20 -172,2 q-28,-12 -30,-44 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={6.5} strokeLinejoin="round" />
+        <path d="M84,-140 q6,36 -12,60 q-36,10 -66,10 q54,-34 42,-82 Z" fill={t.shade} opacity={0.5} />
+        <RimLight d="M-118,-124 q6,-52 58,-64 q56,-14 108,-2" w={4} opacity={0.55} />
+        {/* the pale mane wrapping the chest/neck (species read #1) */}
+        <path d="M42,-186 q34,6 44,34 q10,30 -2,58 q-16,8 -30,4 q16,-50 -12,-96 Z" fill="#e8ddcb" stroke={INK} strokeWidth={5} strokeLinejoin="round" opacity={0.95} />
+        {/* short tail */}
+        <path d="M-116,-118 q-14,4 -14,20 q10,2 16,-6 Z" fill="#e8ddcb" stroke={INK} strokeWidth={4.5} />
+        {/* flank fur break-up */}
+        {[[-70, -104, 9], [-28, -96, 10], [16, -100, 9]].map(([fx, fy, fl], i) => (
+          <path key={i} d={`M${fx},${fy} q${(fl as number) / 2},5 ${fl},2`} fill="none" stroke={t.shade} strokeWidth={2.5} strokeLinecap="round" opacity={0.7} />
+        ))}
+      </g>
+      {/* neck + head, pumping with the trot */}
+      <g transform={`translate(96,${-168 + bob}) rotate(${bob * 0.6 - tr * 4})`}>
+        <path d="M-24,6 q2,-34 30,-42 q30,-8 44,14 q10,18 4,36 q-10,22 -38,20 q-32,-4 -40,-28 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        {/* pale muzzle */}
+        <path d="M42,-8 q22,0 28,12 q2,12 -10,15 q-16,4 -26,-5 q-2,-16 8,-22 Z" fill="#e8ddcb" stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        <ellipse cx={64} cy={8} rx={6.5} ry={5.5} fill={INK} />
+        <ellipse cx={16} cy={-14} rx={6.5} ry={emotion === 'wary' ? 8.5 : 6.5} fill="#fff" stroke={INK} strokeWidth={3} />
+        <circle cx={18} cy={-13} r={3.4} fill={INK} />
+        {/* ear */}
+        <g transform={`translate(-6,-30) rotate(${earFlick})`}>
+          <path d="M0,0 q-16,-8 -22,-24 q14,-3 26,8 Z" fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        </g>
+        {/* C-swept beam antlers + the forward shovel (species read #2) */}
+        {[1, -1].map((s2, i) => (
+          <g key={i} transform={`translate(${2 + s2 * 3},-34) scale(${(s2 === 1 ? 1 : 0.92) * 1.55},1.55) rotate(${s2 * 2})`} opacity={i ? 0.85 : 1}>
+            {/* main beam: sweeps back then curves forward high */}
+            <path d="M0,0 q-26,-34 -18,-72 q6,-30 34,-44 q-14,26 -8,48 q22,-8 34,-26 q-2,24 -20,38 q16,-2 28,-14 q-4,22 -24,30 q-14,28 -26,40 Z"
+              fill={t.key} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+            {/* the forward brow shovel over the muzzle */}
+            {i === 0 && <path d="M4,-6 q22,2 34,16 q-8,10 -22,6 q-14,-6 -12,-22 Z" fill={t.key} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />}
+          </g>
+        ))}
+      </g>
+    </g>
+  );
+};
