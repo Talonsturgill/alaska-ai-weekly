@@ -15,9 +15,9 @@
   "flow_review": "done: flow-critic SHIP 8.3, sequence reads as one; 3 continuity fixes applied (S4/S6/S9 pencil)",
   "assemble": "done: out/2026-07-20/final/carousel.pdf vector 2.2MB, 9 slides, contact_sheet+thumbs",
   "scoring": "done: score_report.json 8.55 vs 8.3, no hard fails, ships",
-  "ship": "in_progress",
-  "upgrade": "pending",
-  "gmail": "pending",
-  "retro": "pending"
+  "ship": "done: merged to main PR#64 (0894350); raw URLs 200; site rebuilt",
+  "upgrade": "done: upgrade(2026-07-20) gmail_draft key-aliasing merged to main PR#65",
+  "gmail": "done: draft id r433116886280109705 (subject 'Written in Pencil')",
+  "retro": "done: FIELD_NOTES retro appended; run complete"
  }
 }
