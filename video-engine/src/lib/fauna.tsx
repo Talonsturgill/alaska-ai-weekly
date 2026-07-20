@@ -238,3 +238,84 @@ export const Salmon: React.FC<{x: number; y: number; scale?: number; f: number; 
     </g>
   );
 };
+
+// ---------------------------------------------------------------- GRIZZLY
+// NET-NEW 2026-07-20c (asset-library session, UPGRADE #2). The brown bear: massive
+// shoulder hump, dished face, small rounded ears, long claws. Poses via `stance`:
+// 'all4' (walking/standing on four), 'stand' (upright on hind legs — the iconic
+// alarmed/curious tower), 'fish' (head low over water, jaws ready — pairs with
+// Salmon for a falls scene). Idle: breath swell + head sway + ear flicks. Emotion
+// via ear set + brow + jaw. `roar` 0..1 opens the jaw with a head-throw.
+export const Grizzly: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  stance?: 'all4' | 'stand' | 'fish'; emotion?: 'calm' | 'alert'; roar?: number;
+}> = ({x, y, scale = 1, f, facing = 1, stance = 'all4', emotion = 'calm', roar = 0}) => {
+  const id = uid(`griz${x}${y}`);
+  const t = tones('#6b4a2f');            // grizzled brown coat
+  const rr = Math.max(0, Math.min(1, roar));
+  const breath = 1 + 0.014 * Math.sin(f / 16);
+  const sway = 3 * Math.sin(f / 24);
+  const earFlick = emotion === 'alert' ? -14 : 3 * Math.sin(f / 19 + 2);
+  const up = stance === 'stand';
+  const fishing = stance === 'fish';
+  const bodyRot = up ? -62 : fishing ? 8 : 0;
+  const headDrop = fishing ? 34 : 0;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={4} rx={up ? 96 : 150} ry={22} opacity={0.3} blur={12} />
+      {/* hind legs (planted) */}
+      {[-96, -52].map((lx, i) => (
+        <path key={i} d={`M${lx},-96 q-6,50 -2,92 l30,0 q2,-40 -4,-88 Z`} fill={i ? t.core : t.shade} stroke={INK} strokeWidth={6} />
+      ))}
+      <g transform={`rotate(${bodyRot}) scale(1,${breath})`} style={{transformOrigin: '-60px -110px'} as any}>
+        {/* fore legs: on all4/fish they plant; standing they dangle as arms */}
+        {[36, 84].map((lx, i) => (
+          <path key={i} d={`M${lx},-118 q${up ? -18 : 4},${up ? 30 : 56} ${up ? -26 : 2},${up ? 62 : 100} l26,${up ? 8 : 0} q${up ? 12 : 2},${up ? -30 : -44} ${up ? 18 : -2},${up ? -58 : -92} Z`}
+            fill={i ? t.shade : t.core} stroke={INK} strokeWidth={6} />
+        ))}
+        {/* claws on the near fore paw */}
+        {[0, 1, 2].map((c) => (
+          <path key={c} d={`M${up ? 52 - c * 9 : 104 + c * 7},${up ? -50 : -18} l${up ? -6 : 7},${up ? 10 : 9}`}
+            stroke="#e8dcc8" strokeWidth={4} strokeLinecap="round" />
+        ))}
+        {/* the massive body: shoulder HUMP is the species-read */}
+        <path d="M-128,-108 q-16,-72 40,-104 q30,-44 96,-40 q64,4 88,44 q18,34 8,74 q-8,40 -44,52 q-96,22 -160,-2 q-24,-10 -28,-24 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+        <path d="M84,-208 q18,34 8,74 q-8,40 -44,52 q40,-56 4,-124 Z" fill={t.shade} opacity={0.55} />
+        {/* the hump highlight */}
+        <path d="M-88,-212 q30,-26 74,-24 q-38,10 -56,34 Z" fill={t.key} opacity={0.45} />
+        <RimLight d="M-128,-108 q-16,-72 40,-104 q30,-44 96,-40" w={4} opacity={0.55} />
+        {/* fur break-up: short strokes along the belly + hump (detail density) */}
+        {[[-70, -96, 8], [-30, -88, 10], [10, -86, 9], [-100, -150, 8], [40, -92, 9]].map(([fx, fy, fl], i) => (
+          <path key={i} d={`M${fx},${fy} q${(fl as number) / 2},6 ${fl},2`} fill="none" stroke={t.shade} strokeWidth={3} strokeLinecap="round" opacity={0.7} />
+        ))}
+        {/* head: dished face, small ears, jaw (roar opens it) */}
+        <g transform={`translate(112,${-170 + sway + headDrop}) rotate(${sway * 0.5 - rr * 18})`}>
+          <path d="M-36,-8 q4,-40 42,-46 q36,-6 52,20 q10,18 2,38 q-14,26 -48,22 q-40,-4 -48,-34 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={6.5} strokeLinejoin="round" />
+          {/* dished muzzle */}
+          <path d="M52,-16 q26,-2 32,14 q2,14 -12,18 q-20,6 -32,-6 q-2,-20 12,-26 Z" fill="#8a6a48" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <ellipse cx={78} cy={2} rx={8} ry={6.5} fill={INK} />
+          {/* jaw: opens with roar */}
+          <g transform={`rotate(${rr * 26} 30 16)`}>
+            <path d="M30,14 q26,4 42,14 q-4,12 -22,12 q-22,-2 -26,-14 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+            {rr > 0.25 && [0, 1].map((k) => <path key={k} d={`M${44 + k * 12},22 l4,8 l5,-7`} fill="#fff" stroke={INK} strokeWidth={2} />)}
+          </g>
+          {/* eye + brow */}
+          <ellipse cx={24} cy={-18} rx={7} ry={emotion === 'alert' ? 9 : 7} fill="#fff" stroke={INK} strokeWidth={3} />
+          <circle cx={26} cy={-17} r={3.8} fill={INK} />
+          <path d={emotion === 'alert' ? 'M12,-32 q14,-8 26,-3' : 'M12,-28 q14,-4 26,0'} fill="none" stroke={INK} strokeWidth={4.5} strokeLinecap="round" />
+          {/* small rounded ears (flick) */}
+          <g transform={`translate(-8,-46) rotate(${earFlick})`}>
+            <circle r={13} fill={t.core} stroke={INK} strokeWidth={5} />
+            <circle r={6} fill={t.shade} />
+          </g>
+          <g transform="translate(28,-52) rotate(6)">
+            <circle r={12} fill={t.base} stroke={INK} strokeWidth={5} />
+            <circle r={5.5} fill={t.shade} />
+          </g>
+        </g>
+      </g>
+    </g>
+  );
+};

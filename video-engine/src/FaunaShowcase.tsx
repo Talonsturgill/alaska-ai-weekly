@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
-import {Moose, Raven, BaldEagle, Salmon} from './lib/fauna';
+import {Moose, Raven, BaldEagle, Salmon, Grizzly} from './lib/fauna';
 import {GradeLayer} from './lib/lighting';
 
 // Look-dev sheet for the Alaska bestiary (lib/fauna.tsx). Not part of a dispatch;
@@ -20,6 +20,8 @@ export const FaunaShowcase: React.FC = () => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect x={0} y={1150} width={1080} height={770} fill="#4a5a3f" />
         <Moose x={300} y={520} scale={1.15} f={f} />
+        <Grizzly x={760} y={520} scale={1.0} f={f} stance="all4" />
+        <Grizzly x={820} y={1620} scale={0.9} f={f} stance="stand" emotion="alert" facing={-1} />
         <BaldEagle x={800} y={430} scale={1.0} f={f} />
         <Raven x={250} y={1180} scale={1.4} f={f} mode="perch" />
         <Raven x={560} y={900} scale={1.1} f={f} mode="fly" />
