@@ -1,9 +1,11 @@
 # Cast & Asset Manifest — Alaska.Ai Dispatch engine
 
 The living inventory of everything the Dispatch video engine can draw. **Every run
-reads this to know what exists, and every run must ADD to it** (see the growth
-doctrine in `prompts/dispatch_routine.md` §4.3a). This file is how the world and the
-craft compound instead of the same few pieces being re-posed forever.
+reads this FIRST and CASTS from this shelf by default** — reuse with fresh staging is
+the point of the library (see the library mandate, `prompts/dispatch_routine.md` §4.3a,
+rebalanced 2026-07-20). Grow it when a story finds a real gap, and register every
+addition here in the same commit. Composition freshness comes from the storyboard
+fingerprint + camera + staging, not from re-drawing the cast.
 
 When you add or upgrade an asset, update this file in the same commit. Keep entries
 one line: `Name — kind — file — params/poses — status`.

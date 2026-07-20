@@ -9,9 +9,9 @@ import {tones, FormGradient, RimLight, ContactShadow, LIGHT} from './lighting';
 // parameterized, idle-animated creature built to the depth-lighting bar
 // (tones()/RimLight/ContactShadow) so it reads lit, not like flat clip-art.
 //
-// GROWTH DOCTRINE: every run ADDS to this file (a new creature, or a new pose/
-// action on an existing one) — see prompts/dispatch_routine.md and
-// lib/ASSET_MANIFEST.md. Do NOT let it stagnate into a fixed reuse pool.
+// LIBRARY DOCTRINE (rebalanced 2026-07-20): CAST from this bestiary by default —
+// reuse with fresh staging is the point. Grow it when a story finds a real gap
+// (see prompts/dispatch_routine.md §4.3a and lib/ASSET_MANIFEST.md).
 //
 // Convention: each creature draws in a local space with feet/belly near y=0,
 // facing right by default; callers place with x/y/scale/facing and pass frame.
