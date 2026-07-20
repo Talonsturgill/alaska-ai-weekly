@@ -8,6 +8,7 @@ import { TwentyFiveD, BorealFlat } from './TwentyFiveD';
 import { Nenana3D } from './Nenana3D';
 import { BiomeShowcase } from './BiomeShowcase';
 import { BiomeShowcase2 } from './BiomeShowcase2';
+import { BiomeShowcase3 } from './BiomeShowcase3';
 import { FaunaShowcase2 } from './FaunaShowcase2';
 import { FaunaShowcase3 } from './FaunaShowcase3';
 import { FaunaShowcase4 } from './FaunaShowcase4';
@@ -96,6 +97,14 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="BiomeShowcase2"
         component={BiomeShowcase2}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="BiomeShowcase3"
+        component={BiomeShowcase3}
         durationInFrames={150}
         fps={30}
         width={1080}

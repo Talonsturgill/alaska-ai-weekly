@@ -460,3 +460,315 @@ export const RiverBG: React.FC<{f: number; season?: 'summer' | 'fall'; riffle?: 
     </svg>
   );
 };
+
+// ---------------------------------------------------------------- MAIN STREET
+// Small-town Alaska main street (Talkeetna/Seward energy): one-point perspective
+// down a gravel road, false-front storefronts converging both sides, power poles
+// with sagging wires, a pennant string fluttering across the street, a big
+// snow-capped massif closing the view. Params: `dusk` 0..1 (warms the sky,
+// lights the windows), `banner`. Motion: pennant flutter, puddle shimmer,
+// cloud drift, dusk window flicker.
+export const MainStreetBG: React.FC<{f: number; dusk?: number; banner?: boolean}> = ({f, dusk = 0, banner = true}) => {
+  const du = Math.max(0, Math.min(1, dusk));
+  const VPX = 540, VPY = 1030;
+  const s = (t: number) => Math.pow(1 - t, 1.4);
+  const gy = (t: number) => VPY + 870 * s(t);
+  const sx = (t: number, baseX: number) => VPX + (baseX - VPX) * s(t);
+  // each building = a camera-facing STOREFRONT face (lit, door + shop window +
+  // sign) plus the street-side wall receding to the VP (shadow side). Without
+  // the front face the row read as leaning cards in pass 1.
+  const facade = (tF: number, tB: number, baseX: number, h: number, col: string, colD: string, key: string, parapet: 'flat' | 'step' | 'arc') => {
+    const sgn = baseX < VPX ? -1 : 1;
+    const xO = sx(tF, baseX + sgn * 420);
+    const xF = sx(tF, baseX), xB = sx(tB, baseX);
+    const yF = gy(tF), yB = gy(tB);
+    const yFT = yF - h * s(tF), yBT = yB - h * s(tB);
+    const sf = s(tF);
+    const dw = 64 * sf, dh = 150 * sf;                      // door
+    const dx = xF + sgn * 90 * sf;
+    const wwx = xF + sgn * 320 * sf, wwx2 = xF + sgn * 170 * sf; // shop window
+    const front = (
+      <g>
+        <rect x={Math.min(xO, xF)} y={yFT} width={Math.abs(xF - xO)} height={yF - yFT} fill={col} />
+        <rect x={Math.min(xO, xF)} y={yFT - 30 * sf} width={Math.abs(xF - xO)} height={30 * sf} fill={colD} />
+        <rect x={dx - dw / 2} y={yF - dh} width={dw} height={dh} fill="#2a2420" />
+        <rect x={Math.min(wwx, wwx2)} y={yF - h * 0.52 * sf} width={Math.abs(wwx2 - wwx)} height={h * 0.3 * sf} fill="#2a3440" />
+        <rect x={Math.min(wwx, wwx2)} y={yF - h * 0.52 * sf} width={Math.abs(wwx2 - wwx)} height={h * 0.3 * sf} fill="#ffb84a" opacity={du * 0.75} />
+        <rect x={Math.min(wwx, wwx2) - 8 * sf} y={yF - h * 0.56 * sf} width={Math.abs(wwx2 - wwx) + 16 * sf} height={h * 0.05 * sf} fill={colD} />
+        <rect x={Math.min(xO, xF)} y={yF - 8 * sf} width={Math.abs(xF - xO)} height={8 * sf} fill={colD} opacity={0.7} />
+      </g>
+    );
+    const xM = (xF + xB) / 2, yMT = (yFT + yBT) / 2;
+    const cap = parapet === 'flat'
+      ? `M${xF},${yFT} L${xB},${yBT} L${xB},${yBT - 26 * s(tB)} L${xF},${yFT - 26 * s(tF)} Z`
+      : parapet === 'step'
+        ? `M${xF},${yFT} L${xB},${yBT} L${xB},${yBT - 20 * s(tB)} L${xM},${yMT - 20 * s((tF + tB) / 2)} L${xM},${yMT - 46 * s((tF + tB) / 2)} L${xF},${yFT - 46 * s(tF)} Z`
+        : `M${xF},${yFT - 8 * s(tF)} Q${xM},${yMT - 60 * s((tF + tB) / 2)} ${xB},${yBT - 8 * s(tB)} L${xB},${yBT} L${xF},${yFT} Z`;
+    // two window quads inset along the wall
+    const win = (ta: number, tb: number) => {
+      const wxF = sx(ta, baseX), wxB = sx(tb, baseX);
+      const wyF = gy(ta) - h * 0.62 * s(ta), wyB = gy(tb) - h * 0.62 * s(tb);
+      const wyF2 = gy(ta) - h * 0.3 * s(ta), wyB2 = gy(tb) - h * 0.3 * s(tb);
+      return `M${wxF},${wyF} L${wxB},${wyB} L${wxB},${wyB2} L${wxF},${wyF2} Z`;
+    };
+    const t1 = tF + (tB - tF) * 0.18, t2 = tF + (tB - tF) * 0.44;
+    const t3 = tF + (tB - tF) * 0.58, t4 = tF + (tB - tF) * 0.86;
+    // window flicker at dusk: each window gates on its own slow sine
+    const wOn = (seed: number) => du * (0.55 + 0.45 * (Math.sin(f / 34 + seed * 2.7) > -0.4 ? 1 : 0.3));
+    return (
+      <g key={key}>
+        <path d={`M${xF},${yF} L${xB},${yB} L${xB},${yBT} L${xF},${yFT} Z`} fill={col} />
+        <path d={`M${xF},${yF} L${xB},${yB} L${xB},${yBT} L${xF},${yFT} Z`} fill="#000" opacity={0.18} />
+        <path d={cap} fill={colD} />
+        <path d={win(t1, t2)} fill="#2a3440" />
+        <path d={win(t3, t4)} fill="#2a3440" />
+        <path d={win(t1, t2)} fill="#ffb84a" opacity={wOn(tF * 10)} />
+        <path d={win(t3, t4)} fill="#ffb84a" opacity={wOn(tF * 10 + 1)} />
+        <path d={`M${xF},${yF} L${xB},${yB} L${xB},${yB - 8 * s(tB)} L${xF},${yF - 8 * s(tF)} Z`} fill={colD} opacity={0.7} />
+        {front}
+      </g>
+    );
+  };
+  const leftRow: Array<[number, number, number, string, string, 'flat' | 'step' | 'arc']> = [
+    [0.02, 0.17, 600, '#8a4438', '#5f2c24', 'step'],
+    [0.19, 0.34, 520, '#3f6a70', '#2a4a50', 'flat'],
+    [0.36, 0.5, 560, '#b08a3c', '#7f6128', 'arc'],
+    [0.52, 0.66, 480, '#6a7a84', '#48545c', 'step'],
+  ];
+  const rightRow: Array<[number, number, number, string, string, 'flat' | 'step' | 'arc']> = [
+    [0.02, 0.16, 540, '#4a6a48', '#324a30', 'arc'],
+    [0.18, 0.33, 620, '#9a5a70', '#6e3c50', 'step'],
+    [0.35, 0.49, 500, '#b8b0a0', '#8a8274', 'flat'],
+    [0.51, 0.65, 540, '#7a5038', '#553524', 'arc'],
+  ];
+  const roadPts = Array.from({length: 12}).map((_, i) => i / 11);
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{position: 'absolute'}}>
+      <defs>
+        <linearGradient id="msSkyD" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#9cc0d8" />
+          <stop offset="100%" stopColor="#dcecf0" />
+        </linearGradient>
+        <linearGradient id="msSkyN" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#4a3a62" />
+          <stop offset="70%" stopColor="#b06a4e" />
+          <stop offset="100%" stopColor="#e8a45e" />
+        </linearGradient>
+      </defs>
+      <rect width={W} height={H} fill="url(#msSkyD)" />
+      <rect width={W} height={H} fill="url(#msSkyN)" opacity={du} />
+      {/* drifting cloud */}
+      {[0, 1].map((i) => {
+        const x = ((f * (0.35 + i * 0.2) + i * 460) % (W + 360)) - 180;
+        return (
+          <g key={i} opacity={0.7 - du * 0.3}>
+            <ellipse cx={x} cy={250 + i * 170} rx={120 + i * 30} ry={24} fill="#f2f8fa" />
+            <ellipse cx={x + 70} cy={260 + i * 170} rx={80} ry={17} fill="#f2f8fa" />
+          </g>
+        );
+      })}
+      {/* the massif closing the street */}
+      <path d={`M180,${VPY} L380,660 q40,-60 90,-20 L540,540 q40,-30 80,20 L720,690 q60,-40 110,20 L900,${VPY} Z`} fill="#7d94a8" />
+      <path d={`M470,640 L540,540 L610,640 q-40,26 -70,-6 q-36,30 -70,6 Z`} fill="#eef5f8" />
+      <path d={`M380,660 q40,-60 90,-20 L500,700 q-60,20 -120,-40 Z`} fill="#eef5f8" opacity={0.8} />
+      <rect x={0} y={VPY - 4} width={W} height={4} fill="#6a8296" opacity={0.6} />
+      {/* gravel road converging to the VP + center dashes + puddle */}
+      <path d={`M${roadPts.map((t) => `${sx(t, 140).toFixed(1)},${gy(t).toFixed(1)}`).join(' L')} L${roadPts.slice().reverse().map((t) => `${sx(t, 940).toFixed(1)},${gy(t).toFixed(1)}`).join(' L')} Z`}
+        fill={du > 0.5 ? '#6a5e54' : '#8a7e70'} />
+      {[0.04, 0.15, 0.26, 0.37, 0.48, 0.59].map((t, i) => (
+        <path key={i} d={`M${540 - 9 * s(t)},${gy(t)} L${540 + 9 * s(t)},${gy(t)} L${540 + 9 * s(t + 0.045)},${gy(t + 0.045)} L${540 - 9 * s(t + 0.045)},${gy(t + 0.045)} Z`}
+          fill="#d8ccb4" opacity={0.75} />
+      ))}
+      <ellipse cx={660} cy={1720} rx={95} ry={20} fill={du > 0.5 ? '#e8a45e' : '#b8d4e0'} opacity={0.55} />
+      <path d={`M${610 + 8 * Math.sin(f / 9)},1718 q40,${-3 + 2 * Math.sin(f / 7)} 90,0`} fill="none" stroke="#f2f8fa" strokeWidth={3} opacity={0.5} />
+      {/* storefront rows, deepest first so near fronts occlude far ones */}
+      {leftRow.slice().reverse().map((b, i) => facade(b[0], b[1], 150, b[2], b[3], b[4], `L${i}`, b[5]))}
+      {rightRow.slice().reverse().map((b, i) => facade(b[0], b[1], 930, b[2], b[3], b[4], `R${i}`, b[5]))}
+      {/* power poles + sagging wires, right side */}
+      {[0.08, 0.26, 0.44].map((t, i) => {
+        const x = sx(t, 962), y = gy(t), hp = 660 * s(t);
+        return (
+          <g key={i}>
+            <rect x={x - 5 * s(t)} y={y - hp} width={10 * s(t)} height={hp} fill="#3a3028" />
+            <rect x={x - 40 * s(t)} y={y - hp + 18 * s(t)} width={80 * s(t)} height={8 * s(t)} fill="#3a3028" />
+          </g>
+        );
+      })}
+      {[[0.08, 0.26], [0.26, 0.44]].map(([ta, tb], i) => {
+        const xa = sx(ta, 962), ya = gy(ta) - 660 * s(ta) + 22 * s(ta);
+        const xb = sx(tb, 962), yb = gy(tb) - 660 * s(tb) + 22 * s(tb);
+        const sag = 46 * s((ta + tb) / 2) + 3 * Math.sin(f / 22 + i);
+        return <path key={i} d={`M${xa},${ya} Q${(xa + xb) / 2},${(ya + yb) / 2 + sag} ${xb},${yb}`} fill="none" stroke="#2a241e" strokeWidth={3.5 * s(ta)} />;
+      })}
+      {/* pennant string across the street */}
+      {banner && (() => {
+        const t = 0.09;
+        const xa = sx(t, 150), xb = sx(t, 930);
+        const ya = gy(t) - 600 * s(t), yb = ya + 10;
+        const cols = ['#d84a3a', '#e8b84a', '#4a8ad8', '#4aa86a', '#d84a3a', '#e8b84a', '#4a8ad8'];
+        return (
+          <g>
+            <path d={`M${xa},${ya} Q${(xa + xb) / 2},${ya + 42} ${xb},${yb}`} fill="none" stroke="#3a3028" strokeWidth={3} />
+            {cols.map((c, i) => {
+              const u = (i + 0.5) / cols.length;
+              const px = xa + (xb - xa) * u;
+              const py = ya + 42 * 4 * u * (1 - u) * 0.5 + (ya - ya) + 21 * Math.sin(Math.PI * u);
+              const fl = 14 * Math.sin(f / 6 + i * 1.3);
+              return <path key={i} d={`M${px - 16},${py} L${px + 16},${py} L${px + fl * 0.3},${py + 40 + fl * 0.2}Z`} fill={c} transform={`rotate(${fl * 0.4} ${px} ${py})`} />;
+            })}
+          </g>
+        );
+      })()}
+    </svg>
+  );
+};
+
+// ---------------------------------------------------------------- NORTH SLOPE OILFIELD
+// Prudhoe Bay energy: a vast flat plain to the horizon, drill-rig derrick +
+// steel modules on a gravel pad, a flare stack burning, the pipeline running
+// across the foreground on VSM supports. Params: `season` winter/summer,
+// `flare` 0..1. Motion: flame flicker + glow breathing, beacon blink, blowing
+// snow (winter) / pond shimmer (summer), drifting cloud.
+export const OilfieldBG: React.FC<{f: number; season?: 'winter' | 'summer'; flare?: number}> = ({f, season = 'winter', flare = 0.8}) => {
+  const fl = Math.max(0, Math.min(1, flare));
+  const win = season === 'winter';
+  const horY = H * 0.62;
+  const plain = win ? '#e6ebf0' : '#8f9a68';
+  const plainD = win ? '#cdd8e2' : '#76824f';
+  const flick = 1 + 0.18 * Math.sin(f / 3) + 0.1 * Math.sin(f / 1.7 + 2);
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{position: 'absolute'}}>
+      <defs>
+        <linearGradient id="ofSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={win ? '#8fa8bc' : '#9cc0d8'} />
+          <stop offset="100%" stopColor={win ? '#e8d8c8' : '#d8e8e2'} />
+        </linearGradient>
+        <radialGradient id="ofGlow">
+          <stop offset="0%" stopColor="#ffb84a" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#ffb84a" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width={W} height={H} fill="url(#ofSky)" />
+      {/* low arctic sun in a haze band, kept LEFT so it never reads as one
+          blob with the flare (they merged in pass 1) */}
+      <ellipse cx={260} cy={horY - 150} rx={340} ry={70} fill="#f2e2ce" opacity={0.6} />
+      <circle cx={260} cy={horY - 160} r={54} fill="#f8ead2" />
+      <circle cx={260} cy={horY - 160} r={38} fill="#fdf6e4" />
+      {/* drifting clouds so the big sky is never dead space */}
+      {[0, 1].map((i) => {
+        const x = ((f * (0.4 + i * 0.25) + i * 520) % (W + 420)) - 210;
+        const y = 260 + i * 210;
+        return (
+          <g key={i} opacity={0.7}>
+            <ellipse cx={x} cy={y} rx={140 + i * 40} ry={26} fill="#eef5f8" />
+            <ellipse cx={x - 70} cy={y + 10} rx={85} ry={18} fill="#eef5f8" />
+            <ellipse cx={x + 80} cy={y + 8} rx={95} ry={20} fill="#eef5f8" />
+          </g>
+        );
+      })}
+      {/* distant rigs on the horizon */}
+      {[220, 420].map((x, i) => (
+        <g key={i} opacity={0.55}>
+          <path d={`M${x - 16},${horY} L${x - 5},${horY - 64} L${x + 5},${horY - 64} L${x + 16},${horY} Z`} fill="#5a6a78" />
+          <rect x={x + 20} y={horY - 22} width={44} height={22} fill="#5a6a78" />
+        </g>
+      ))}
+      {/* the plain with drift/mottle streaks */}
+      <rect x={0} y={horY} width={W} height={H - horY} fill={plain} />
+      {Array.from({length: 7}).map((_, i) => (
+        <ellipse key={i} cx={(i * 271) % W} cy={horY + 60 + i * 105} rx={200 + (i * 67) % 140} ry={16 + i * 4}
+          fill={i % 2 ? plainD : (win ? '#f6fafc' : '#a0aa76')} opacity={0.6} />
+      ))}
+      {/* summer: melt ponds catching the sky */}
+      {!win && [
+        {x: 170, y: horY + 150, rx: 120, ry: 26}, {x: 880, y: horY + 320, rx: 150, ry: 34}, {x: 320, y: horY + 480, rx: 100, ry: 24},
+      ].map((p, i) => (
+        <g key={i}>
+          <ellipse cx={p.x} cy={p.y} rx={p.rx} ry={p.ry} fill="#a8c8d8" />
+          <path d={`M${p.x - p.rx * 0.5 + 10 * Math.sin(f / 11 + i)},${p.y} q${p.rx * 0.4},${-4} ${p.rx * 0.9},0`} fill="none" stroke="#dcecf0" strokeWidth={3} opacity={0.7} />
+        </g>
+      ))}
+      {/* gravel pad */}
+      <path d={`M60,${horY + 330} L900,${horY + 330} L980,${horY + 470} L-20,${horY + 470} Z`} fill={win ? '#c2bcae' : '#b0a894'} />
+      {/* steel modules */}
+      <rect x={120} y={horY + 190} width={230} height={140} fill="#48688a" />
+      <rect x={120} y={horY + 190} width={230} height={26} fill="#365072" />
+      <rect x={168} y={horY + 262} width={40} height={68} fill="#2a3e56" />
+      <rect x={240} y={horY + 230} width={54} height={38} fill="#8fb2cc" />
+      <rect x={370} y={horY + 240} width={150} height={90} fill="#54748e" />
+      <rect x={370} y={horY + 240} width={150} height={20} fill="#3e5a74" />
+      {/* derrick: tapering lattice + blinking beacon */}
+      {(() => {
+        const bx = 620, by = horY + 330, hh = 470;
+        const rail = (sgn: 1 | -1) => `M${bx + sgn * 90},${by} L${bx + sgn * 22},${by - hh}`;
+        return (
+          <g>
+            <path d={`M${bx - 90},${by} L${bx - 22},${by - hh} L${bx + 22},${by - hh} L${bx + 90},${by} Z`} fill="#3a4a58" opacity={0.25} />
+            <path d={rail(1)} stroke="#33434f" strokeWidth={9} fill="none" />
+            <path d={rail(-1)} stroke="#33434f" strokeWidth={9} fill="none" />
+            {Array.from({length: 6}).map((_, i) => {
+              const u0 = i / 6, u1 = (i + 1) / 6;
+              const w0 = 90 - 68 * u0, w1 = 90 - 68 * u1;
+              const y0 = by - hh * u0, y1 = by - hh * u1;
+              return (
+                <g key={i} stroke="#33434f" strokeWidth={5} fill="none">
+                  <path d={`M${bx - w0},${y0} L${bx + w1},${y1}`} />
+                  <path d={`M${bx + w0},${y0} L${bx - w1},${y1}`} />
+                  <path d={`M${bx - w1},${y1} L${bx + w1},${y1}`} />
+                </g>
+              );
+            })}
+            <rect x={bx - 30} y={by - hh - 26} width={60} height={26} fill="#33434f" />
+            <circle cx={bx} cy={by - hh - 34} r={7} fill="#ff4a3a" opacity={Math.sin(f / 9) > 0 ? 1 : 0.15} />
+          </g>
+        );
+      })()}
+      {/* flare stack + living flame */}
+      {(() => {
+        const fx = 860, fy = horY + 330;
+        const tip = fy - 400;
+        return (
+          <g>
+            <ellipse cx={fx} cy={tip - 30} rx={130 * fl * flick} ry={90 * fl * flick} fill="url(#ofGlow)" opacity={0.8 * fl} />
+            <rect x={fx - 8} y={tip} width={16} height={400} fill="#4a5a68" />
+            <path d={`M${fx - 22},${tip} L${fx + 22},${tip} L${fx + 12},${tip + 26} L${fx - 12},${tip + 26} Z`} fill="#33434f" />
+            {fl > 0.05 && (
+              <g transform={`translate(${fx},${tip}) scale(${0.8 + 0.4 * fl})`}>
+                <path d={`M0,0 q${-20 - 8 * Math.sin(f / 3)},${-46} ${-4 + 5 * Math.sin(f / 2.3)},${-88 * flick} q${16},${34} ${20 + 6 * Math.sin(f / 2.7)},${88} Z`} fill="#ff8a2a" />
+                <path d={`M0,-6 q${-10},${-30} ${-2 + 3 * Math.sin(f / 2.1)},${-56 * flick} q${9},${22} ${12},${56} Z`} fill="#ffd24a" />
+              </g>
+            )}
+          </g>
+        );
+      })()}
+      {/* THE pipeline on VSM supports across the foreground */}
+      {(() => {
+        const py = H * 0.83;
+        const seg = (x: number) => py + 14 * Math.sin(x / 260);
+        const xs = Array.from({length: 8}).map((_, i) => i * 155 - 10);
+        return (
+          <g>
+            {xs.map((x, i) => (
+              <g key={i}>
+                <rect x={x - 7} y={seg(x)} width={14} height={150} fill="#4a4238" />
+                <rect x={x - 30} y={seg(x) - 6} width={60} height={13} fill="#4a4238" />
+              </g>
+            ))}
+            <path d={`M-20,${seg(-20) - 28} ${xs.map((x) => `L${x + 75},${seg(x + 75) - 28}`).join(' ')} L1100,${seg(1100) - 28}`}
+              fill="none" stroke="#6e7a84" strokeWidth={48} strokeLinecap="round" />
+            <path d={`M-20,${seg(-20) - 42} ${xs.map((x) => `L${x + 75},${seg(x + 75) - 42}`).join(' ')} L1100,${seg(1100) - 42}`}
+              fill="none" stroke="#b8c4cc" strokeWidth={12} opacity={0.9} />
+            {win && <path d={`M-20,${seg(-20) - 50} ${xs.map((x) => `L${x + 75},${seg(x + 75) - 50}`).join(' ')} L1100,${seg(1100) - 50}`}
+              fill="none" stroke="#f6fafc" strokeWidth={12} opacity={0.9} />}
+          </g>
+        );
+      })()}
+      {/* winter: blowing snow streaks */}
+      {win && Array.from({length: 8}).map((_, i) => {
+        const x = ((f * (11 + (i % 3) * 5) + i * 170) % (W + 340)) - 170;
+        const y = horY + 90 + (i * 137) % (H - horY - 160);
+        return <path key={i} d={`M${x},${y} q60,${-4} 120,0`} fill="none" stroke="#fbfdff" strokeWidth={4} opacity={0.55} strokeLinecap="round" />;
+      })}
+    </svg>
+  );
+};
