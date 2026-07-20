@@ -203,6 +203,58 @@ export const Atmosphere: React.FC<{
   );
 };
 
+// ---------------------------------------------------------------- asset adapter
+// Solidify — give ANY existing 2D hero (Vale, ServerMachine, Moose, ...) real
+// thickness with zero re-authoring. The children render once as the fully-lit
+// front face; behind it, `slices` copies of the SAME children are pushed back in
+// Z with darkening/cooling CSS filters, forming the body. When the camera orbits,
+// the darker body edge appears past the front face's silhouette: a dimensional
+// hero, not a sticker. Cost: slices x the hero's paint cost — fine for 1-2 heroes
+// per scene at slices ~5-6.
+//
+// `camRotY` tilts the body shade warm/cool like Extrude (same key model). Wrap in
+// a Card INSIDE a Plane; author the hero exactly as before.
+export const Solidify: React.FC<{
+  depth?: number; slices?: number; camRotY?: number; children: React.ReactNode;
+}> = ({depth = 34, slices = 5, camRotY = 0, children}) => {
+  const facing = Math.max(-1, Math.min(1, camRotY / 22));   // -1 warm .. +1 cool
+  const layers = [];
+  for (let i = slices; i >= 1; i--) {
+    const t = i / slices;
+    // deeper slices darker; facing-the-key side keeps a touch more warmth
+    const bright = 0.62 - t * 0.3 - facing * 0.06;
+    const sat = 0.55 - t * 0.2;
+    layers.push(
+      <div key={i} style={{
+        position: 'absolute', inset: 0, transformStyle: 'preserve-3d',
+        transform: `translateZ(${-t * depth}px)`,
+        filter: `brightness(${bright}) saturate(${sat})`,
+      }}>
+        {children}
+      </div>
+    );
+  }
+  layers.push(
+    <div key="front" style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d'}}>
+      {children}
+    </div>
+  );
+  return <div style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d'}}>{layers}</div>;
+};
+
+// Card — a positioned host for an existing SVG hero inside a Plane: place at
+// (x, y) with a drawing box w x h, optionally Solidified. The hero component is
+// authored in its own local coords exactly as in the flat engine.
+export const Card: React.FC<{
+  x: number; y: number; w: number; h: number;
+  solid?: boolean; depth?: number; camRotY?: number;
+  children: React.ReactNode;
+}> = ({x, y, w, h, solid = false, depth = 34, camRotY = 0, children}) => (
+  <div style={{position: 'absolute', left: x, top: y, width: w, height: h, transformStyle: 'preserve-3d'}}>
+    {solid ? <Solidify depth={depth} camRotY={camRotY}>{children}</Solidify> : children}
+  </div>
+);
+
 // Project a silhouette onto the ground as a real cast shadow: flatten (scaleY),
 // skew toward the light, darken, blur. `children` is the silhouette to cast.
 export const CastShadow3D: React.FC<{

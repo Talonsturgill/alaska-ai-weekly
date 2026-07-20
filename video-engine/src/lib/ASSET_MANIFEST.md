@@ -65,5 +65,13 @@ unofficial state bird, for comic beats).
   and projected ground cast-shadows (`CastShadow3D`). Proof scenes in `TwentyFiveD.tsx` (comp
   `TwentyFiveD` vs flat `BorealFlat`). NOT yet wired into the Episode pipeline; see UPGRADE_BACKLOG.md
   for the migration plan (per-face Extrude shading + a Character/kit adapter, then migrate one scene).
+- `lib/stage3d.tsx` UPGRADES 2026-07-20b: Extrude now has a REAL per-face light model (side wall
+  responds to the live camera orbit under the fixed screen-left key, back-slice AO); new `Atmosphere`
+  (per-plane aerial perspective: desaturate + contrast-loss + sky veil with depth); new `Solidify` +
+  `Card` asset adapter (ANY existing kit hero gains real body thickness with zero re-authoring:
+  darkened copies stacked in Z behind the lit front face). Proven in `Nenana3D.tsx` (comp `Nenana3D`),
+  the VERTICAL SLICE: Vale on a TRUE 3D runway floor (rotateX'd ground plane, supersampled 2x so the
+  perspective-stretched tarmac stays crisp), camera cranes down through the treeline, flies low over
+  the runway, rises with the liftoff.
 - Known next advances: migrate Episode scenes onto stage3d (planes + camera keyframes), kinetic
   typography, per-material texture library, night/aurora lighting.
