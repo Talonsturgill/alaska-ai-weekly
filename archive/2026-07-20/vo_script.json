@@ -1,0 +1,39 @@
+{
+  "lines": [
+    "The world's hardest test for firefighting robots just ran in Alaska.",
+    "No crew, no pilot. It finds a fire and puts it out on its own.",
+    "The X Prize Wildfire finals. Eleven million dollars, four years long.",
+    "Nearly three hundred teams. Three reached the final. All came to Nenana.",
+    "The University of Alaska ran the airspace over it.",
+    "Here is what they watched.",
+    "A sensor network smells the smoke in minutes and wakes a drone.",
+    "It flies out, finds the flame, drops it. No one touches a controller.",
+    "Dryad, one of the finalists, says it worked.",
+    "But this was one test fire on an airstrip, not a megafire in roadless country.",
+    "And no winner is named until September.",
+    "For once, the AI did not come to take from Alaska. It came to protect it.",
+    "Alaska did not build these machines. It built the range they had to survive."
+  ],
+  "scene_map": "S1 lines 0-1, S2 2-3, S3 4-5, S4 6-7, S5 8-9, S6 10-12 (matches scripts/build_scenes.py SCENE_START_LINE [0,2,4,6,8,10])",
+  "phonetic_and_display_notes": {
+    "X Prize": "spoken 'Ex Prize'; on screen render as 'XPRIZE'",
+    "Dryad": "spoken 'DRY-ad'",
+    "Nenana": "spoken 'nuh-NAN-uh'",
+    "ACUASI": "NOT spoken in VO; appears only on screen as 'UAF ACUASI'",
+    "numbers": "spoken as words; ON SCREEN render as numerals: $11,000,000 (or $11M), 4 years, ~300 teams, 3 finalists, September 2026",
+    "eleven million": "on screen $11M / $11,000,000",
+    "up to 100 liters": "not in VO; on-screen annotation only, labeled 'per Dryad'"
+  },
+  "attribution_guardrails": "Line 8 must read as Dryad's OWN claim (on screen: 'Dryad SAYS'); lines 9-10 carry the honest turn (controlled test, judging pending Sept 2026). ACUASI = 'managed the airspace'. Silvanet/Silvaguard figures labeled 'per Dryad'. On-screen numbers illustrative.",
+  "target_seconds": "50 to 67; if the synth runs long, TRIM (do not time-stretch).",
+  "caption_fixups": {
+    "Ex Prize": "XPRIZE",
+    "X Prize": "XPRIZE",
+    "X-Prize": "XPRIZE",
+    "DRY-ad": "Dryad",
+    "Dry-ad": "Dryad",
+    "nuh-NAN-uh": "Nenana",
+    "Nana": "Nenana"
+  },
+  "caption_fixups_note": "On-screen captions are force-aligned from Whisper's transcript of the PHONETICALLY-respelled audio, so proper-noun respellings ('Ex Prize', 'DRY-ad', 'nuh-NAN-uh'->'Nana') leak onto screen as typos. build_scenes.py applies these display-spelling fixups to every caption cue (case-insensitive, word-boundary) so the REAL spelling always shows. Add a run's phonetic->display pairs here."
+}

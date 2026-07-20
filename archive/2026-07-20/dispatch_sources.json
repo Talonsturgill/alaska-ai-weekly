@@ -1,0 +1,14 @@
+{
+  "sources": [
+    {
+      "url": "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response",
+      "outlet": "XPRIZE Foundation (primary)",
+      "note": "Confirms the Autonomous Wildfire Response finals were held at Nenana Municipal Airport, Alaska (near Fairbanks), June 15-28 2026; 3 finalists in that track (Anduril, AURA Foresight, Dryad); UAF ACUASI 'managed the surrounding airspace'; Dr. Catherine Cahill (Director, ACUASI) and Dr. Laura Conner (UAF Vice Chancellor for Research); $11M, four-year competition."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260707802818/en/Dryad-Networks-Reaches-XPRIZE-Wildfire-Finals-Milestone-Demonstrating-Autonomous-Detection-and-Suppression-of-Wildfires-in-Alaska",
+      "outlet": "Dryad Networks release, Business Wire, 2026-07-07 (primary, company self-report)",
+      "note": "Source for Dryad's OWN claims: it says it demonstrated autonomous detection + suppression during the June 2026 Alaska finals with no human in the loop; Silvanet (30,000+ sensors, 50+ customers); Silvaguard drops up to 100 liters of suppressant; winner announced September 2026. Verbatim CEO quote (Carsten Brinkschulte). All performance figures are Dryad's, judging pending."
+    }
+  ]
+}

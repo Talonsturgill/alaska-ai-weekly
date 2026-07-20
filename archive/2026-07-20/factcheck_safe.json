@@ -1,0 +1,31 @@
+{
+  "story": "XPRIZE Wildfire 'Autonomous Wildfire Response' finals held in Alaska, Nenana Municipal Airport (near Fairbanks), June 15-28 2026; UAF ACUASI managed the airspace. Finalist Dryad Networks says it demonstrated autonomous detection + suppression there, no human in loop. Winner announced Sept 2026.",
+  "cleared_on_screen": [
+    "$11 million XPRIZE Wildfire competition (per XPRIZE / Dryad)",
+    "Four-year competition (per Dryad)",
+    "Nearly 300 teams narrowed to 3 finalists in the Autonomous Wildfire Response track (per XPRIZE/Dryad)",
+    "Finalists: Anduril, AURA Foresight, Dryad (per XPRIZE)",
+    "Finals testing June 15-28, 2026 at Nenana Municipal Airport, Nenana, Alaska (near Fairbanks) (per XPRIZE)",
+    "UAF ACUASI managed the surrounding airspace during the competition (per XPRIZE)",
+    "Dr. Catherine Cahill, Director of ACUASI (per XPRIZE)",
+    "Dr. Laura Conner, UAF Vice Chancellor for Research (per XPRIZE)",
+    "Dryad Silvanet AI sensor network: 30,000+ sensors, 50+ customers (per Dryad)",
+    "Silvaguard suppression drone: up to 100 liters of suppressant (per Dryad)",
+    "Dryad says it demonstrated autonomous detection + suppression during the June 2026 Alaska finals (per Dryad)",
+    "Winner announced September 2026 (per Dryad, judging pending)",
+    "QUOTE (verbatim): 'Detecting fires within minutes and extinguishing them before they become catastrophic is no longer a vision for the future. It is a reality.' — Carsten Brinkschulte, CEO and Co-Founder, Dryad Networks (per Business Wire)"
+  ],
+  "must_hedge_or_cut": [
+    "Frame Dryad performance as its OWN claim ('Dryad says/demonstrated'), NOT a confirmed win. Judging pending Sept 2026.",
+    "'3 finalists' only WITH 'in the Autonomous Wildfire Response track' (separate Space-Based Detection track exists).",
+    "ACUASI = 'managed the airspace', not 'ran the range'. Nenana/ACUASI/UAF/Cahill/Conner attributed to XPRIZE, not Dryad.",
+    "Silvanet/Silvaguard figures labeled 'per Dryad'.",
+    "Nenana = 'near Fairbanks' (no specific drive time). Cut Must Read Alaska (404). Cut VOC/CO/PM2.5 chemistry (unverified).",
+    "A controlled airfield test is NOT a real megafire in roadless boreal forest; do not imply proven at scale.",
+    "Finalists include a defense prime (Anduril): dual-use tech."
+  ],
+  "sources": [
+    "https://www.businesswire.com/news/home/20260707802818/en/Dryad-Networks-Reaches-XPRIZE-Wildfire-Finals-Milestone-Demonstrating-Autonomous-Detection-and-Suppression-of-Wildfires-in-Alaska",
+    "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response"
+  ]
+}

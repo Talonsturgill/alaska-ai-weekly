@@ -1,0 +1,13 @@
+The hardest test for autonomous firefighting robots ran at a Nenana airstrip, and Alaska ran the sky over it.
+
+This month the XPRIZE Wildfire finals for the Autonomous Wildfire Response track, an 11 million dollar, four year competition that narrowed nearly 300 teams to 3 finalists, were held at Nenana Municipal Airport near Fairbanks (June 15 to 28). The University of Alaska's drone center, ACUASI, managed the airspace for the whole thing. One finalist, the German firm Dryad, says its sensor network caught the smoke within minutes, sent a drone to find the flame, and dropped up to 100 liters of suppressant, with no human touching a controller.
+
+If that holds up, it is a machine that finds a fire and puts it out on its own, tested over Alaska ground.
+
+Most Alaska AI headlines lately are about AI done TO Alaska: data centers eyeing the tundra, land conveyances, grid strain. This is the opposite. This is AI aimed at the thing that actually threatens Interior Alaska every summer, and the reason the finals landed here is that Alaska's roadless boreal terrain and UAF's flight test expertise are a genuinely scarce national asset. Alaska did not build these machines. It built the range they had to survive.
+
+Two cautions. This was a controlled airfield test, the performance numbers are Dryad's own, and no winner is named until September. One test ignition and 100 liters is a long way from a roadless megafire that torches hundreds of thousands of acres. And one of the three finalists is a defense prime, so this is dual-use autonomy, not a purely civilian story.
+
+Still, the proving ground is real, and it is ours. The question worth arguing: if a global competition just certified Nenana as a place to test the future of firefighting, should Alaska fund that flight test capacity like the strategic infrastructure it turned out to be, the way it would a port or a fiber line?
+
+#Alaska #AI #Wildfire #Drones #UAS

@@ -648,3 +648,48 @@ dispatch_history:
     register: naturalistic-scene
     camera_strategy: slow-push-with-tilt-reveal
     light_story: cold-dawn-then-haze-flush
+- date: '2026-07-20'
+  topic: XPRIZE Wildfire Autonomous Response finals held in Alaska (Nenana Municipal
+    Airport, June 15-28 2026); UAF ACUASI managed the airspace; finalist Dryad says
+    it demonstrated fully autonomous detection + suppression (Silvanet + Silvaguard,
+    up to 100 L, no human in loop); nearly 300 teams to 3 finalists (Anduril, AURA
+    Foresight, Dryad); $11M 4-year prize; winner announced Sept 2026, judging pending
+  slug: dispatch-2026-07-20-xprize-wildfire-nenana
+  key_entities:
+  - xprize wildfire
+  - dryad networks
+  - nenana
+  - acuasi
+  - uaf
+  - autonomous wildfire drones
+  - silvanet
+  - silvaguard
+  - catherine cahill
+  - anduril
+  - aura foresight
+  - laura conner
+  - autonomous suppression
+  - brinkschulte
+  archetype: 'orbital-aerial guardian-drone capability story: proven IN Alaska not
+    done TO Alaska'
+  palette: black-spruce green + boreal midnight-blue to rose-gold + electric thermal-IR
+    magenta-to-citron + vermilion fireline
+  voice: Gemini native TTS gemini-3.1-flash-tts-preview, voice Sulafat
+  stance: celebratory
+  angle: 'Proven IN Alaska, not done TO Alaska: the global autonomous-wildfire finals
+    ran at a Nenana airstrip with UAF running the sky, making Alaska the proving ground
+    for AI that could defend it, honest that it is a controlled test with judging
+    pending and Alaska made the range not the drones'
+  composition:
+    pov: orbital-aerial
+    motion_vector: radial-emanate
+    hero_treatment: instrument-as-subject
+    layout: aerial-diorama
+    register: instrument-readout
+    camera_strategy: drone-orbit-then-descent-to-airstrip
+    light_story: fire-season-dawn-broken-by-thermal-vision
+    palette: black-spruce green + boreal midnight-blue to rose-gold + electric thermal-IR
+      magenta-to-citron + vermilion fireline
+    metaphor: 'a guardian machine that came to protect the range, not take from it:
+      the autonomous drone as Alaska watchdog over the fire line, seeing heat where
+      a human cannot'

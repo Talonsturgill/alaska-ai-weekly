@@ -72,7 +72,18 @@ runs). Objective quality_gate.py: 9.3/10 with only FIRST_FRAME failing before th
 - `AlaskaMini`'s pin is hardcoded at the North Slope position; for Nenana (interior) it reads
   slightly off-geography. Plan: add an `(x,y)` pin-position prop to AlaskaMini. Minor, deferred.
 
-**Panel/gate result:** PANEL_PLACEHOLDER
+**Panel/gate result:** Objective quality_gate.py 10.0/10 (all 14 checks). Subjective 3-judge panel
+across TWO rounds: round 1 median 7.0 (three HARD BLOCKERS: on-screen caption phonetic leaks
+'Ex Prize'/'DRY-ad'/'nuh-NAN-uh', a compressed verbatim quote, plus a hovering signature liftoff and
+a flat+silent megafire); ALL fixed; round 2 median 8.16 (8.26 / 7.46 / 8.16), editor SHIP,
+flow-critic SHIP, ZERO hard blockers. Shipped below the 9.0 bar under the routine's disclosed-ship
+rule: every concrete named defect was fixed and verified across both panels, and the sole remaining
+gap to 9.0 is unanimous style-register / illustration-craft ceiling (the map blob, triangle-spruce
+treeline, and megafire read flat next to the depth-lit hero; the hero itself reads a touch
+cartoonish). That ceiling is the flat-vector-2D engine itself, which is a large-scale initiative
+(true 2.5D + a deep asset library), now captured in docs/UPGRADE_BACKLOG.md (owner-requested), not a
+mid-run patch. Trajectory 7.0 -> 8.16 shows the fixes landed; disclosed in the Gmail draft with the
+full scorecard.
 
 ---
 
