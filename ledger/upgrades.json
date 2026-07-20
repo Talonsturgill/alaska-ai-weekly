@@ -376,7 +376,8 @@
    ],
    "verification": "On a score_report with ONLY agent-native keys (ships:true, ship_threshold:8.3, weakest_criteria:[...]): gmail_draft.py renders 'Quality gate passed: 8.55 / 10 (threshold 8.3)' and NO 'Shipped below threshold' banner; the pre-fix logic (score.get('ship',False)) resolved False -> wrong below-threshold banner with threshold '?' and weakest '?' (defect reproduced). Below-threshold agent-native (ships:false) renders 'Shipped below threshold. 7.9 / 10 vs 8.3. Weakest: Artwork craft & genuine detail' -> weakest_criteria[0] and ship_threshold resolved correctly. Regression: this run's ACTUAL dual-spelling out/2026-07-20/score_report.json still renders 'Quality gate passed' with no wrong banner. Engine untouched (git diff empty on render.py/qa.py); examples/demo-deck render OK + qa WARN (known slide-03 busy-art warn, exit 0) and out/2026-07-20/render qa WARN 0 fails, both baseline-unchanged. ast.parse OK. No gate/threshold weakened; no new runtime dependency; score_report.json not mutated (tested on scratch copies).",
    "rollback": "revert the upgrade(2026-07-20) commit (gmail_draft.py returns to score.get('ship',False) / score.get('threshold','?') / score.get('weakest_criterion','?') with no aliasing)",
-   "commit": "pending upgrade(2026-07-20) commit (showrunner stages this set)"
+   "commit": "pending upgrade(2026-07-20) commit (showrunner stages this set)",
+   "commit_sha": "dd9ebd6b71c06875d7e87b144ff24ce9d933851b"
   }
  ],
  "scan_log": [
