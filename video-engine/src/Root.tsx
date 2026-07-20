@@ -4,6 +4,17 @@ import { Episode, episodeSchema } from './Episode';
 import { Standoff } from './Standoff';
 import { FaunaShowcase } from './FaunaShowcase';
 import { CraftShowcase } from './CraftShowcase';
+import { TwentyFiveD, BorealFlat } from './TwentyFiveD';
+import { Nenana3D } from './Nenana3D';
+import { BiomeShowcase } from './BiomeShowcase';
+import { BiomeShowcase2 } from './BiomeShowcase2';
+import { BiomeShowcase3 } from './BiomeShowcase3';
+import { PropsShowcase } from './PropsShowcase';
+import { FaunaShowcase2 } from './FaunaShowcase2';
+import { FaunaShowcase3 } from './FaunaShowcase3';
+import { FaunaShowcase4 } from './FaunaShowcase4';
+import { FaunaShowcase5 } from './FaunaShowcase5';
+import { MaterialShowcase } from './MaterialShowcase';
 import { z } from 'zod';
 
 const standoffSchema = z.object({
@@ -58,6 +69,102 @@ export const RemotionRoot: React.FC = () => {
         id="FaunaShowcase"
         component={FaunaShowcase}
         durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="TwentyFiveD"
+        component={TwentyFiveD}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="Nenana3D"
+        component={Nenana3D}
+        durationInFrames={190}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="BiomeShowcase"
+        component={BiomeShowcase}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="BiomeShowcase2"
+        component={BiomeShowcase2}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="BiomeShowcase3"
+        component={BiomeShowcase3}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="PropsShowcase"
+        component={PropsShowcase}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="FaunaShowcase2"
+        component={FaunaShowcase2}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="FaunaShowcase3"
+        component={FaunaShowcase3}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="FaunaShowcase4"
+        component={FaunaShowcase4}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="MaterialShowcase"
+        component={MaterialShowcase}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="FaunaShowcase5"
+        component={FaunaShowcase5}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="BorealFlat"
+        component={BorealFlat}
+        durationInFrames={150}
         fps={30}
         width={1080}
         height={1920}

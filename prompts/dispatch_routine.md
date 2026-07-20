@@ -108,8 +108,11 @@ repeat ever.
 
 ## THE COMMITTED TOOLING (adapt, don't reinvent)
 
-- video-engine/ — the Remotion 2.5D engine. Compositions in src/ (exemplars: IGSHook.tsx,
-  Standoff.tsx — the current craft bar; the best new scene of each run becomes the next
+- video-engine/ — the Remotion 2.5D engine. TRUE-DEPTH SYSTEM: lib/stage3d.tsx (Stage3D
+  camera / Plane / Atmosphere / Extrude / Solidify / CameraMoves) per docs/craft/STAGE3D.md —
+  author scenes WITH a composed camera move and depth planes wherever there is a world to move
+  through (exemplar: Nenana3D.tsx, the vertical slice). Compositions in src/ (exemplars: IGSHook.tsx,
+  Standoff.tsx — the prior craft bar; the best new scene of each run becomes the next
   exemplar). Reusable cast + juice in src/lib/ (Character.tsx: poses, emotions, outfits,
   built-in breath/blink; FX.tsx: SpeedLines, ImpactStar, PaperStorm, ZoomVignette). Render:
   `npx remotion render <Comp> <out.mp4>` (headless-shell baked into remotion.config.ts).
@@ -295,7 +298,8 @@ every visual lever, each with a WHY tied to THIS story:
 - `shape_language`: the shape grammar carrying the theme (e.g. cold hard rectilinear institution
   vs soft organic land; angular threat vs rounded warmth) — a deliberate contrast, not default.
 - `casting`: the hero subject and supporting cast — which come from the manifest for continuity
-  and which is the run's NET-NEW asset (per §4.3a), each with a reason it fits this story.
+  and which (IF ANY) is the run's net-new asset — cast from the manifest FIRST per §4.3a;
+  net-new only where the story finds a real gap — each with a reason it fits this story.
 - `motion_language`: how the world moves and what earns 180-degree motion blur / anticipation /
   overshoot — the key hero moves named, so motion is designed, not an afterthought.
 - `composition`: the staging approach (focal hierarchy, negative-space beats, the 9:16 AND 4:5
@@ -322,7 +326,8 @@ honest pivot is) is always DRAWN as a picture, not merely narrated.
 For EVERY VO line answer: "what literal cartoon do we draw while this is said?" Record it as
 beats[].draw = {subject, action, emotion, annotation}:
 - subject: WHO/WHAT, usually a character or characterized object WITH A FACE. The HERO of the
-  piece should be net-new or a freshly-diverged take (per the §4.3a growth mandate); pull
+  piece is CAST FROM THE MANIFEST LIBRARY when the shelf fits the story (per §4.3a: fit and
+  staging beat novelty; net-new only for a real gap); pull
   SUPPORTING subjects from the manifest library for continuity.
 - action: a VERB you can see happening (reaches, slams, floods, overtakes, cowers, signs).
 - emotion: what the face is feeling this beat.
@@ -336,33 +341,44 @@ power"} — that is a slide. If a beat cannot be phrased as "X does Y," it does 
 12-16 beats, start-to-start gap <= 5s, beats cover the whole VO timeline, every beat names a
 concrete sound (whoosh, tick, boom, lock, riser, paper-rustle, klaxon, pop).
 
-### 4.3a The growth mandate (COMPOUND, never just reuse) — AUTHORITATIVE
+### 4.3a The library mandate: COMPOSE FROM THE SHELF FIRST, then grow it — AUTHORITATIVE
 
-The engine is a WORLD being built by artists who get better every run, NOT a fixed set of
-pieces to re-pose. A run that only re-uses the existing library has FAILED this mandate even
-if the video is fine. Every run MUST:
+(REBALANCED 2026-07-20 after the asset-library build session, owner directive. The old text
+made net-new the point and implied reuse was a failure; now that `lib/` carries a deep
+taste-looped library — a 9-species bestiary in `fauna.tsx`, a vehicle kit in `vehicles.tsx`,
+shared biomes in `biomes.tsx`, the characterized-object cast in `kit.tsx`, and the stage3d
+depth engine — the point is USING that shelf well and growing it where the story finds a gap.)
 
-1. READ `video-engine/src/lib/ASSET_MANIFEST.md` first — it is the inventory of every
-   character, characterized object, creature, prop, environment, pose, emotion, and FX that
-   already exists. You cannot grow what you have not inventoried.
-2. ADD net-new bespoke art to `lib/` — a FLOOR, not a ceiling. Minimum per run:
-   - at least ONE brand-new reusable asset (a new creature for `fauna.tsx`, a new characterized
-     object, a new environment/biome, or a new prop kit), built to the depth-lighting bar
-     (tones()/RimLight/ContactShadow, idle animation), AND
-   - at least one NEW pose / emotion / action / FX added to an EXISTING asset.
-   Prefer filling a named gap in the manifest (the bestiary/environment gap lists are the
-   backlog). Register every addition in ASSET_MANIFEST.md in the SAME commit.
-3. ADVANCE THE CRAFT — push at least one engine system forward (lighting, motion, texture,
-   typography, a new material, a night/aurora light rig...). The manifest's "known next
-   advances" notes are the running to-do. Do not merely consume `lib/lighting.tsx`; extend it.
-4. DIVERGE THE CAST — do not build the hero out of the same character/creature as the last 2
-   dispatches unless the story genuinely demands that exact subject. New story, new faces.
+1. READ `video-engine/src/lib/ASSET_MANIFEST.md` FIRST, every run — it is the inventory of
+   every character, creature, vehicle, biome, prop, pose, emotion, FX, and engine system that
+   already exists. You cannot cast what you have not inventoried.
+2. COMPOSE FROM THE LIBRARY BY DEFAULT. The library exists precisely so scenes are built by
+   CASTING and STAGING existing assets (with their params: stances, emotions, speeds, seasons,
+   hueShifts...) rather than authoring from scratch. Reusing a library asset as the HERO is
+   GOOD when it fits the story — a wildfire story should cast Vale, a fisheries story the
+   FishingBoat + Salmon + Grizzly, a night story AuroraNightBG. Fit and staging beat novelty.
+   FRESHNESS comes from the composition (the 7-axis fingerprint, the camera moves, the staging,
+   which assets are combined), which storyboard_check already enforces — NOT from re-drawing
+   the cast. Do not rebuild something the shelf already has; do not one-off a variant inline
+   (extend the asset's params instead, so the improvement compounds).
+3. GROW WHERE THE STORY FINDS A GAP. When the story needs something the manifest lacks, build
+   it as a REUSABLE library asset to the established bar (tones()/RimLight/ContactShadow, idle
+   animation, params) and register it in ASSET_MANIFEST.md in the same commit. Target: fill
+   real gaps (the manifest's gap lists are the backlog); a run where the shelf already covered
+   everything owes no net-new art — note that in the retrospective and spend the effort on
+   craft instead.
+4. STILL ADVANCE THE CRAFT — push at least one engine system forward per run (lighting, motion,
+   stage3d, texture, typography...), or make a real quality upgrade to an EXISTING asset (a new
+   pose/emotion/param, richer shading). The manifest's "known next advances" are the running
+   to-do.
+5. CAST FRESHNESS, NOT CAST CHURN — avoid the same HERO asset in back-to-back dispatches
+   playing the same ROLE (yesterday's hero can be today's supporting cast, or return in a
+   genuinely different role/staging). This is about the audience not seeing a rerun, not a
+   ban on reuse.
 
-The old "1-2 new bespoke heroes per episode MAX" phrasing is retired: bespoke net-new is the
-JOB, not a rationed exception. Reuse the library for continuity and speed on SUPPORTING
-elements; spend the freed effort making the hero and one system net-new and better than last
-week. Over a month of runs the bestiary, prop kits, biomes, and the lighting engine should be
-visibly, cumulatively richer — that compounding IS the product.
+Over a month of runs the library gets deeper AND more-used: the same beloved cast returning in
+new stagings is a FEATURE (franchise continuity), and every genuinely new story teaches the
+shelf a new asset. That compounding IS the product.
 
 ### 4.4 The scene recipe book (how to stage each kind of information)
 
@@ -414,10 +430,17 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
 
 - Write out/dispatch/storyboard.json: concept, treatment (+ judge reasoning), engine:
   infographic-2.5d, derived_from: scratch, fingerprint (palette, metaphor, layout axes),
-  beats[] with draw + t + vo + sfx + means, shots[] (framing, transition_in, thread), hook
+  beats[] with draw + t + vo + sfx + means, shots[] (framing, transition_in, thread, camera: composed stage3d CameraMoves
+  ('craneDown+dollyThrough', or 'static:<reason>'), stage3d: 'planes' | 'flat:<reason>'), hook
   block (pattern, frame1, headline 3-8 words, motion_by_s <= 1.3, loopback), audio_arc
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern), divergence_note.
   Plus storyboard.md for humans.
+- ENGAGEMENT plan (docs/craft/ENGAGEMENT.md — read it in the directors room): the board
+  also declares `reveals` [{t, type, what, hold_s 0.4-0.8}] with at least ONE scale-class
+  reveal (scale-pullback / morph-to-chart / build-on) at the escalation point, and marks one
+  beat in the 25-38s window with `rehook: <what re-grabs a sagging viewer>`. Beat timing is
+  JITTERED (front-loaded density in the first 10s, never 3 near-identical gaps in a row) —
+  flow_check enforces FRONTLOAD / METRONOME / REHOOK.
 - GATE 0A: `python3 scripts/storyboard_check.py` exit 0 (divergence vs recent history, shot
   structure, flow block; 2.5D boards skip the legacy 3D camera/light vocab).
 - GATE 0B: storyboard-critic agent red-teams for genuine divergence + silent-first
@@ -452,9 +475,10 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
    Target total ~50-67s; if long, TRIM THE SCRIPT (build_scenes.py retimes the scenes from the new
    vo_lines.json automatically). Run scene-building in parallel while takes cook. Disclose the
    SynthID watermark in the draft. (Cloned/kokoro/edge remain as fallbacks only.)
-1a. GROWTH MANDATE (§4.3a): before/while building scenes, read ASSET_MANIFEST.md, then create
-   this run's net-new asset(s) + a new pose/action on an existing one + one craft-system
-   advance, and register them in the manifest. This is a build deliverable, not optional.
+1a. LIBRARY MANDATE (§4.3a): before/while building scenes, read ASSET_MANIFEST.md and CAST from
+   the shelf (fauna.tsx bestiary, vehicles.tsx, biomes.tsx, kit.tsx cast, stage3d) by default;
+   create net-new reusable assets only where the story finds a real gap (register in the
+   manifest same-commit), and make one craft-system advance or existing-asset upgrade per run.
 2. MUSIC + SFX: the music is a CREATIVE CHOICE tied to the angle — map the Phase 3.5 stance
    through `angle_to_mood` in config/music_sources.yaml, then source ONE fresh track with that
    mood and a NAMED composer (get_music.py; the expanded verified pool covers playful/hopeful/

@@ -31,6 +31,20 @@ the current flat scene, and if it clears the bar, migrate the scene-authoring AP
 Dispatch is 2.5D by default. This is the single biggest lever on the "looks designed and expensive"
 axis the rubric grades.
 
+**STATUS 2026-07-20: prototype landed and proven.** `video-engine/src/lib/stage3d.tsx` implements
+the real engine (`Stage3D` shared virtual camera via CSS 3D perspective; `Plane` depth layers with
+automatic perspective parallax + overscan; `Extrude` solid dimensional forms; `CastShadow3D`
+projected ground shadows). `video-engine/src/TwentyFiveD.tsx` is a proof scene (comp `TwentyFiveD`)
+plus a flat `BorealFlat` for A/B. The camera dollies THROUGH a layered boreal treeline and orbits to
+reveal the hero's extruded side wall; the before/after is unmistakable (foreground spruces sweep past
+while the ridge barely moves; the hero reads as a solid volume, not a sticker). REMAINING to close
+the initiative: (a) richer per-face shading on `Extrude` (a real key/side/top light model, not just a
+darkening stack); (b) a `Character`/kit adapter so existing heroes author into a Plane and can be
+lightly extruded; (c) migrate the Episode scene-authoring API onto Stage3D (planes + camera keyframes
+per scene) and re-point the storyboard `camera_strategy` axis at real camera moves; (d) a material/
+texture pass so surfaces read as substances at depth. Do (a)+(b) first, then migrate one scene as a
+vertical slice before converting all six.
+
 ---
 
 ## 2. AN ASSET-CREATION SESSION — build a library of amazing reusable art up front
@@ -48,6 +62,18 @@ compounds slowly, and each run's hero is built under time pressure inside the pi
 - Each asset built once, deliberately, to the highest quality, with full pose/emotion/animation
   sets — so a run composes a showstopper from a rich shelf instead of authoring the hero from
   scratch every time.
+
+**STATUS 2026-07-20 (COMPLETE — the full session landed everything on this list, all
+taste-looped).** Final tally: bestiary at 21 (Moose, Raven, BaldEagle, Salmon, Grizzly, Caribou,
+Orca, Puffin, Wolf, RedFox, DallSheep, SeaOtter, Humpback, Ptarmigan, KingCrab, Mosquito, Lynx,
+MountainGoat, BlackBear, Walrus, Beluga + SledDogTeam promoted out of Episode.tsx with `dogs`
+param); vehicle kit `lib/vehicles.tsx` (BushPlane 3-mode, Snowmachine, FishingBoat); biome kit
+`lib/biomes.tsx` at seven shared biomes (AuroraNightBG, TundraBG, FjordBG, GlacierBG, RiverBG,
+MainStreetBG, OilfieldBG — every candidate built); generalized props kit `lib/props.tsx` (nine
+props, all story copy parameterized). Everything registered in ASSET_MANIFEST.md with pose/param
+docs; look-dev comps FaunaShowcase2-5, BiomeShowcase1-3, PropsShowcase. The per-run growth mandate
+now composes from this shelf by default (dispatch_routine.md §4.3a) and grows it only where a story
+finds a real gap.
 
 **Approach:** treat it like a studio "model sheet" sprint. Pick the 15-20 highest-frequency Alaska
 subjects, build them to the Vale/Sourdough bar with idle animation + emotion params, register each
@@ -76,6 +102,18 @@ reason to leave. We have the never-rest gate (a beat every <5s) but that is a fl
 **Approach:** a research-and-apply cycle. Fan out researcher agents on the questions above, converge
 the findings into `docs/craft/ENGAGEMENT.md`, then land the enforceable pieces (gate thresholds,
 new critic checks, engine motion primitives) so every future run is measured against the higher bar.
+
+**STATUS 2026-07-20: COMPLETE.** Four research fan-outs (retention mechanics, pattern-interrupt
+cadence, motion-design coolness, audio engagement) landed in `docs/research/engagement/*.json` with
+sources + confidence ratings, synthesized into `docs/craft/ENGAGEMENT.md` (the second-by-second
+doctrine + enforcement map). Enforceable pieces landed the same day: flow_check.py gained FRONTLOAD
+(>=3 beats in the first 10s), METRONOME (no 3+ near-identical consecutive gaps — back-test caught
+the 07-20 board pacing 3.5s x10), REHOOK (a declared re-hook beat in the 25-38s drift window) and a
+WPM warning band; storyboard_check.py gained REVEALS (a declared reveal list with >=1 scale-class
+reveal, each with a 0.4-0.8s hold); lib/motion.tsx gained the EASE tokens (enter/move/overshoot —
+linear easing banned), anticipate(), holdPayoff(), staggerDelay(); both critics now read
+ENGAGEMENT.md and judge reveal grammar, re-hook quality, and interrupt variety. The storyboard spec
+in dispatch_routine.md §4.5 requires the new `reveals` + `rehook` declarations.
 
 ---
 

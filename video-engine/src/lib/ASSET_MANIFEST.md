@@ -1,9 +1,11 @@
 # Cast & Asset Manifest — Alaska.Ai Dispatch engine
 
 The living inventory of everything the Dispatch video engine can draw. **Every run
-reads this to know what exists, and every run must ADD to it** (see the growth
-doctrine in `prompts/dispatch_routine.md` §4.3a). This file is how the world and the
-craft compound instead of the same few pieces being re-posed forever.
+reads this FIRST and CASTS from this shelf by default** — reuse with fresh staging is
+the point of the library (see the library mandate, `prompts/dispatch_routine.md` §4.3a,
+rebalanced 2026-07-20). Grow it when a story finds a real gap, and register every
+addition here in the same commit. Composition freshness comes from the storyboard
+fingerprint + camera + staging, not from re-drawing the cast.
 
 When you add or upgrade an asset, update this file in the same commit. Keep entries
 one line: `Name — kind — file — params/poses — status`.
@@ -26,20 +28,41 @@ one line: `Name — kind — file — params/poses — status`.
 - `Raven` — air/perch — fauna.tsx — mode: perch/fly; head-tilt, throat hackles, wing-beat cycle — NEW 2026-07-18
 - `BaldEagle` — air — fauna.tsx — soaring, fingered primaries, white head/tail, yellow beak — NEW 2026-07-18
 - `Salmon` — water — fauna.tsx — spawning (red/green kype) or ocean chrome; S-curve swim undulation — NEW 2026-07-18
-- `SledDogTeam` — land — Episode.tsx — gallop gait + 180° motion blur + form-shading (2026-07-18); SHOULD be promoted into fauna.tsx and parameterized — ACTIVE (needs refactor)
+- `Grizzly` — land — fauna.tsx — NET-NEW 2026-07-20c (asset-library session, UPGRADE #2): purpose-built anatomy PER STANCE (all4: horizontal bulk, hump highest, head slung forward; stand: upright pear-trunk tower, planted hinds, dangling clawed forepaws; fish: head dropped to the waterline + water hint); emotion calm/alert; roar 0..1 head-throw + jaw; breath/sway/ear idles; fur break-up detail; form-shaded + rim + AO. Taste-looped twice (v1 potato-pose redone). fish stance not yet frame-checked — verify before first on-air use — ACTIVE
+- `Caribou` — land — fauna.tsx — NET-NEW 2026-07-20c (asset-library session #2): barren-ground caribou, lighter/leggier than the moose; species reads = pale chest mane + tall C-swept beam antlers w/ forward brow shovel (1.55x, sized in taste pass 2) + pale muzzle + dark socks; `trot` 0..1 diagonal-pair trot with head pump over graze idle; emotion calm/wary; form-shaded + rim + AO. Scatter at depth for a herd — ACTIVE
+- `Orca` — water — fauna.tsx — NET-NEW 2026-07-20c (asset-library session #2): killer whale; species reads = TALL upright dorsal blade (rebuilt in taste pass 2 from a stub) + bold white eye patch + white belly sweep + gray saddle; `surface` 0..1 arcs a porpoising breach w/ blowhole spray; swim undulation, sculling pectoral, fluke follow-through; form-shaded + rim — ACTIVE
+- `Puffin` — air/coastal — fauna.tsx — NET-NEW 2026-07-20c (asset-library session #2): horned puffin, upright tuxedo build (big head, short body = endearing); white face disc + oversized orange/yellow parrot bill + orange feet; `flap` 0..1 fast wing whirr; waddle-shift + head-tilt + blink idles; cleared taste loop first pass — ACTIVE
+- `Wolf` — land — fauna.tsx — NET-NEW 2026-07-20c: gray wolf, level topline + deep chest, grizzled saddle BAND (taste pass 2: v1's saddle read as a crater), straight bushy tail (the wolf tell), cream legs/belly, amber eyes; `howl` 0..1 (muzzle skyward, closed eye, open throat, breath puff), `stalk` 0..1 (head below shoulder, crouch, ears pinned), emotion calm/alert; breath/ear-swivel/tail idles — ACTIVE
+- `RedFox` — land — fauna.tsx — NET-NEW 2026-07-20c: flame-red coat, black stockings + ear tips, white bib/cheek/tail-tip (diagnostic), huge radar ears, near-body-length lush tail; `pounce` 0..1 arcs the full mouse-jump (crouch -> vault -> nose-down dive); light-bounce/ear-radar/tail-curl idles; cleared taste loop first pass (best first-pass of the session) — ACTIVE
+- `DallSheep` — land/alpine — fauna.tsx — NET-NEW 2026-07-20c: snow-white mountain monarch; massive amber curl horns w/ growth ridges (`ewe` swaps to spikes), roman nose, wool scallop texture, dark hooves; `graze` 0..1 drops the head w/ jaw chew; breath/ear/weight-shift idles; cleared first pass — ACTIVE
+- `SeaOtter` — water/coastal — fauna.tsx — NET-NEW 2026-07-20c: floats on its back w/ paws cracking a shell on its chest (`withRock`, tick-tock beat + splash), whisker twitch, kicky webbed feet, waterline hint; `mode` float/dive; pale face fur; cleared first pass — ACTIVE
+- `Humpback` — water — fauna.tsx — NET-NEW 2026-07-20c: `mode` cruise (surfacing back + V-mist blow) / breach (arcing clear, LONG white pectoral flung, throat grooves, tubercle knobs, spray sheet) / fluke (the classic tail-up dive w/ scalloped white-under flukes + water drip); cleared first pass — ACTIVE
+- `Ptarmigan` — land/alpine — fauna.tsx — NET-NEW 2026-07-20c: the state bird; `season` winter (all-white + black tail edge + red eye comb) / summer (mottled brown); feathered snowshoe feet; pecking-bob + head-jerk idles; `flush` 0..1 startle wing-burst w/ snow poof; cleared first pass — ACTIVE
+- `KingCrab` — water/comic — fauna.tsx — NET-NEW 2026-07-20c: Bering Sea money crab; spiky carmine carapace, googly eyestalks, one OVERSIZED snapping right claw (`clawSnap`), six wave-phase scuttle legs (`scuttle`); cleared first pass — ACTIVE
+- `Mosquito` — air/comic — fauna.tsx — NET-NEW 2026-07-20c: the unofficial state bird, built for comic beats; comically long proboscis, red eye, whiny wing blur, striped abdomen, dangly legs; `divebomb` attack arc, `swat` tumble w/ dizzy stars; cleared first pass — ACTIVE
+- `SledDogTeam` — land — fauna.tsx — PROMOTED 2026-07-20d out of Episode.tsx (built 07-18): gallop gait (two-segment folding legs, suspension bound), 180° motion smear via `vx`, form-shaded amber coats, gang line; `dogs` 1-6 sets the string length — ACTIVE
+- `Lynx` — land — fauna.tsx — NET-NEW 2026-07-20d: the snow ghost; black EAR TUFTS + wide facial ruff + stub black-tipped tail + snowshoe paws; `stance` sit (seated triangle, rebuilt pass 2) / stalk (belly-low creep w/ folded Z-legs); slow blink, ear-tuft swivel, tail twitch — ACTIVE
+- `MountainGoat` — land/alpine — fauna.tsx — NET-NEW 2026-07-20d: chalk-white shag w/ pantaloon fringe, chin BEARD (swaying), short BLACK recurved spike horns (deliberately distinct from DallSheep's amber curls); `stance` stand / climb (24° grade on a drawn cliff ledge); cleared first pass — ACTIVE
+- `BlackBear` — land — fauna.tsx — NET-NEW 2026-07-20d: deliberately the anti-Grizzly: NO hump, straight roman face, tall attached ears (pass 2: tucked into the skull), glossy blue-black w/ tan muzzle + small chest blaze; `stance` all4 / stand, `sniff` lifts the nose; stand paws edge-lit + breaking the silhouette (passes 2-3) — ACTIVE
+- `Walrus` — coastal — fauna.tsx — NET-NEW 2026-07-20d: hauled-out blubber mound w/ skin folds, long white TUSKS, bristle mustache pad, bloodshot eye; `huff` 0..1 rears chest+head TOGETHER about the tail base (pass-2 rebuild after the body deformed apart from the head) w/ breath puff; rear-flipper flap idle — ACTIVE
+- `Beluga` — water — fauna.tsx — NET-NEW 2026-07-20d: white whale w/ bulbous MELON (wobble idle), NO dorsal (ridge line), permanent upcurved smile; `mode` cruise (waterline y=0, undulation, `blow` mist) / spy (near-vertical spyhop emerging THROUGH splash rings); face repositioned onto the nose in pass 2 — ACTIVE
 
-### Bestiary gaps to fill (candidates for upcoming runs' net-new quota)
-grizzly/black bear, caribou, red fox, dall sheep, sea otter, humpback whale, orca,
-puffin, ptarmigan (state bird), wolf, lynx, mountain goat, king crab, mosquito (the
-unofficial state bird, for comic beats).
+### Bestiary gaps
+NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam promotion (21 fauna assets total). Future growth is story-driven (new poses on existing cast count).
 
 ## Props & set pieces
 - `AlaskaMini` — map of Alaska w/ pulsing pin — kit.tsx — ACTIVE
-- `StatCard` / `Nameplate` / `SwingSign` / `GearLever` / `SurveyStake` / `MeasuringChain` / `PenAndDocument` / `TrailPost` / `ParcelBoundary` — Episode.tsx — episode-local props (candidates to generalize into a shared props kit) — ACTIVE
+- SHARED PROPS KIT — lib/props.tsx — NEW 2026-07-20d: the episode-local props generalized with ALL story copy as params (a prop with baked-in text is an episode-local, not a library asset): `StatCard` (big stat chip, tintable), `Nameplate` (identity plate), `SwingSign` (hanging sign, 1-3 lines, pivot bug fixed), `GearLever` (pulled 0..1 + optional DENIED badge), `SurveyStake` (settle drop-in), `MeasuringChain` (pays out + distance tag), `PenAndDocument` (pen hovers trembling, never signs; optional party plate), `TrailPost` (two-line sign), `BoundaryReveal` (glowing boundary traces any closed path `d` + optional town marker) — look-dev in PropsShowcase.tsx — ACTIVE
+  - Episode.tsx copies remain episode-local history; new scenes import from lib/props.tsx.
 - `BoxLabel` / `StatBurst` / `FatArrow` / `Stamp` — HUD/label kit — kit.tsx — ACTIVE
   - NOTE: these HUD chips still render as flat fills over the lit world (flagged by the
     scorer panel 2026-07-18). Next craft-advance: give the label/chip kit form-shading + a
     drop shadow so overlays sit IN the lit scene, not on top of it.
+
+## Vehicles (the Alaska machine kit) — lib/vehicles.tsx (NEW 2026-07-20c, asset-library session #2)
+- `BushPlane` — air/ground/water — vehicles.tsx — high-wing taildragger (Super Cub silhouette); `mode` ground (tundra tires, slow prop) / fly (prop blur disc, bank bob) / float (pontoons, heave); airfoil wing slab + lift struts, real rudder blade (both from taste pass 2), cabin glass, engine cowl, N-number panel N907AK, rivets; `propSpeed` override; `body` tint — ACTIVE
+- `Snowmachine` — land/winter — vehicles.tsx — rural workhorse: track w/ scrolling lugs + front ski, hood + windshield + handlebars + seat, headlight lights at speed; `speed` 0..1 drives vibration + kicked snow spray; `body` tint — ACTIVE
+- `FishingBoat` — water — vehicles.tsx — seiner/troller work boat: sheer-bow hull + waterline stripe, wheelhouse w/ windows, mast + boom + rigging lines, aft net drum, rail buoys, blinking masthead nav light; `heave` 0..1 swell rock; masthead is a gull-perch point (pair with Raven/Puffin); `hull` tint — ACTIVE
 
 ## Look-dev harnesses
 - `CraftShowcase` — motion/voice/SFX-era look-dev comp (entrance, followThrough, TalkMouth ramp, talking cast) — CraftShowcase.tsx — NEW 2026-07-18b
@@ -48,10 +71,17 @@ unofficial state bird, for comic beats).
 - `DawnForestBG` — boreal birch/spruce dawn, parallax treeline, mist, birds, ground gradient, form-shaded trunks + bark texture + foliage speckle — Episode.tsx (2026-07-18) — ACTIVE
 - `FrostYardBG` — NET-NEW 2026-07-19 — interior powerplant-yard/dusk biome: parallax mist/gust bands, flickering skyline windows, drifting snow particles, `parallax` prop for depth-of-field scene layering — Episode.tsx — ACTIVE
 - `NenanaRangeBG` — NET-NEW 2026-07-20 — boreal AIRSTRIP biome (distinct from DawnForestBG's full forest and FrostYardBG's utility yard): a flat man-made tarmac foreground with a painted runway centerline + receding blue edge lights to a vanishing point, fronted by a LOW distant black-spruce band (3-4 parallax sub-bands = the supporting aerial-depth refinement), under a boreal midnight-blue -> rose-gold sky. `dawn` 0..1 warms night->sunrise; `parallax` DOF; `showStrip`; dawn-mist drift + fading stars (second disjoint motion region) — Episode.tsx — ACTIVE
-  - Environment kit now THREE biomes. Candidates for growth: tundra, coastal/fjord, glacier,
-    river/stream, town/main-street, North Slope oilfield, night/aurora.
+- `AuroraNightBG` — NET-NEW 2026-07-20c (asset-library session #2, lib/biomes.tsx — the SHARED biome home; episode-locals stay in Episode.tsx): the night/aurora rig ("known next advance" since 07-18, now built). Deep star-field night (two twinkle layers) + 2-3 ANIMATED aurora curtains (blurred screen-blend ray stacks breathing on slow sine phases, hue-shifting green->teal->violet), aurora-lit snow horizon, low spruce silhouettes, drifting snow sparkle; params `intensity`, `hueShift` (0 green / ~40 teal / ~120 violet), `groundY`, `moon`. 3 disjoint motion regions guaranteed — ACTIVE
+- `TundraBG` — NET-NEW 2026-07-20c (lib/biomes.tsx): open North Slope/western tundra under a big sky: banded tundra colors to a FLAT horizon, kettle ponds catching the sky, drifting flat-bottom clouds, wind-shivering cottongrass tufts; params `season` summer/autumn, `wind`, `groundY` — ACTIVE
+- `FjordBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): Southeast fjord: steep forested walls dropping to still green water, distant headland ridges closing the throat (aerial perspective), soft BLURRED hanging mist bands hugging the walls (feGaussianBlur, wide filter region), circling gull specks, wall reflections + shimmer; params `mist`, `waterY` — ACTIVE
+- `GlacierBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): tidewater glacier face: fissured blue-white ice wall with jagged serac top edge, deep-blue crevasse strokes, `calve` 0..1 tips and drops a slab with impact splash (>0.7), dark water with drifting bergy bits; params `calve`, `waterY`. THE stage for climate/ice stories — ACTIVE
+- `RiverBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): Interior braided river built off ONE parametric centerline (channel, gravel margins, flow-aligned braid-bar island, current lines, riffle sparkle all share it — nothing floats or lands off the water), mottled vegetated banks (never flat fills), bank spruces scaling toward the viewer, distant snow-patched range + drifting clouds; params `season` summer/fall (fall adds red dwarf-birch shrubs), `riffle`. THE salmon-story stage (pair with Salmon, Grizzly 'fish', FishingBoat) — ACTIVE
+- `MainStreetBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): small-town main street in one-point perspective: false-front storefronts converging both sides (camera-facing lit faces with door/shop window/sign + shadow-side walls), gravel road with center dashes + puddle shimmer, power poles with sagging wires, pennant string fluttering across the street, snow-capped massif closing the view; params `dusk` 0..1 (dusk sky + per-window warm flicker), `banner`. THE community/politics/town-hall stage — ACTIVE
+- `OilfieldBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): North Slope oilfield: flat plain to the horizon, low arctic sun in a haze band (kept left of the flare), derrick lattice with blinking beacon, steel modules on a gravel pad, flare stack with living flicker flame + breathing glow, THE pipeline running the foreground on VSM supports, distant rigs; params `season` winter (blowing snow) / summer (melt ponds), `flare` 0..1. THE energy/economy stage — ACTIVE
+  - Environment kit now TEN biomes (three episode-local + seven shared in lib/biomes.tsx). Every biome candidate from the upgrade backlog is now BUILT.
 
 ## Engine systems (the craft layer — advance these every run, don't just consume them)
+- `lib/materials.tsx` — MATERIALS (NEW 2026-07-20d, Stage3D backlog item (d)): surfaces read as SUBSTANCES, not flat fills. Eight deterministic SVG-pattern overlays: brushedMetal, corrugated, tarmac, granite, bark, planks, snowpack, ice. Usage: `<MaterialDefs />` once per svg, then re-draw any silhouette with `fill={matFill('bark')}` over its lit base (or the `Surface` helper). Seeded imul-hash speckle (no Math.random). Look-dev: MaterialShowcase.tsx incl. an Extrude+material demo. Pairs with the no-flat-single-tone-fills rule.
 - `lib/motion.tsx` — animation principles: entrance() (anticipation/overshoot/squash-stretch + MotionBlur velocity), followThrough() secondary swing, accentKick(), idleSway(), squashStretch(), ChipShadow (HUD chips sit in the scene) — NEW 2026-07-18b
 - `lib/voice.tsx` — VOICE ACTING: VoiceProvider/useVoice (per-frame mouth envelope + emphasis accents from the VO pipeline), TalkMouth flapping mouth; Character + ServerMachine take `talking` — the cast speaks/reacts in sync with the narration — NEW 2026-07-18b
 - `assets/sfx/` designed-foley bank (scripts/build_sfx_library.py, 16 sounds; scripts/sfx_bank.py resolver; drop real CC0 takes in assets/sfx/real/ to upgrade any entry) — NEW 2026-07-18b
@@ -59,5 +89,19 @@ unofficial state bird, for comic beats).
 - `lib/lighting.tsx` — tones() ramps, FormGradient, RimLight, ContactShadow, BrushedMetal/BarkTexture/FoliageSpeckle, GradeLayer (bloom+vignette+grain), MotionBlur (180° anisotropic) — NEW 2026-07-18; `HazeOverlay` NEW 2026-07-19 — translucent grid-textured animated air-quality/pollution grading layer (`amount` 0..1 drives wash + tint + grid opacity), for a story's environmental-stakes turn
 - `lib/FX.tsx` — SpeedLines, ImpactStar, PaperStorm, ZoomVignette; `SmellRings` NEW 2026-07-20 (radial VOC/smoke detection rings emanating from a sensor node, radial-emanate motion) + `ScanReticle` NEW 2026-07-20 (thermal-lock targeting reticle: rotating corner brackets that SNAP inward and clamp on a target, `lock` 0..1) — ACTIVE
 - `lib/lighting.tsx` CRAFT ADVANCE 2026-07-20: `IRVision` — a reusable false-color THERMAL/IR heat-vision look system (magenta->coral->citron heat ramp centered on the hot target + sensor scanlines + refresh sweep + a boxed THERMAL HUD tag), `amount` 0..1 crossfades the drone's-eye view in. Any future sensor/thermal/IR Alaska story inherits it. The run's SINGLE primary craft advance (atmospheric-perspective aerial-depth treeline in NenanaRangeBG is a supporting refinement).
-- Known next advances: kinetic typography, per-material
-  texture library, a real cast-shadow projector (not just contact AO), night/aurora lighting.
+- `lib/stage3d.tsx` — TRUE 2.5D ENGINE (NEW 2026-07-20, UPGRADE_BACKLOG #1 prototype). A real shared
+  virtual camera via CSS 3D perspective (`Stage3D`: dolly/truck/boom/orbit/roll), depth layers with
+  automatic perspective parallax + overscan (`Plane`), solid extruded dimensional forms (`Extrude`),
+  and projected ground cast-shadows (`CastShadow3D`). Proof scenes in `TwentyFiveD.tsx` (comp
+  `TwentyFiveD` vs flat `BorealFlat`). NOT yet wired into the Episode pipeline; see UPGRADE_BACKLOG.md
+  for the migration plan (per-face Extrude shading + a Character/kit adapter, then migrate one scene).
+- `lib/stage3d.tsx` UPGRADES 2026-07-20b: Extrude now has a REAL per-face light model (side wall
+  responds to the live camera orbit under the fixed screen-left key, back-slice AO); new `Atmosphere`
+  (per-plane aerial perspective: desaturate + contrast-loss + sky veil with depth); new `Solidify` +
+  `Card` asset adapter (ANY existing kit hero gains real body thickness with zero re-authoring:
+  darkened copies stacked in Z behind the lit front face). Proven in `Nenana3D.tsx` (comp `Nenana3D`),
+  the VERTICAL SLICE: Vale on a TRUE 3D runway floor (rotateX'd ground plane, supersampled 2x so the
+  perspective-stretched tarmac stays crisp), camera cranes down through the treeline, flies low over
+  the runway, rises with the liftoff.
+- Known next advances: migrate Episode scenes onto stage3d (planes + camera keyframes), kinetic
+  typography, per-material texture library, night/aurora lighting.

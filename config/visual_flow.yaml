@@ -33,6 +33,15 @@ score:
   hard_gate: [beats_min, max_gap, coverage, sfx_min_total]   # these fail the run
   advisory:  [median_gap_in_target, sfx_per_shot, head_start]  # these warn + feed the critic
 
+engagement:
+  # ENGAGEMENT doctrine (docs/craft/ENGAGEMENT.md, upgrade #3 2026-07-20). Enforced by flow_check.py.
+  frontload_window_s: 10        # the first N seconds carry the piece's highest beat density
+  frontload_min_beats: 3        # >= this many beats must START inside the window
+  metronome_tol_s: 0.4          # gaps within +/- this of each other count as "the same interval"
+  metronome_max_run: 2          # more than this many consecutive same-interval gaps = habituation, FAIL
+  rehook_window_s: [25, 38]     # one beat in this window must declare `rehook` (the escalation/promise turn)
+  wpm_warn: [130, 190]          # VO pace warning band (words per minute vs speech_end)
+
 choreo:
   # THE LIVING SCREEN (docs/craft/CHOREOGRAPHY.md). Beats must declare their motion choreography,
   # and the rendered picture must prove layered, disjoint motion (not one ticker on a held frame).

@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
-import {Moose, Raven, BaldEagle, Salmon} from './lib/fauna';
+import {Moose, Raven, BaldEagle, Salmon, Grizzly, Caribou, Orca, Puffin} from './lib/fauna';
+import {BushPlane, Snowmachine, FishingBoat} from './lib/vehicles';
 import {GradeLayer} from './lib/lighting';
 
 // Look-dev sheet for the Alaska bestiary (lib/fauna.tsx). Not part of a dispatch;
@@ -20,6 +21,14 @@ export const FaunaShowcase: React.FC = () => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect x={0} y={1150} width={1080} height={770} fill="#4a5a3f" />
         <Moose x={300} y={520} scale={1.15} f={f} />
+        <Grizzly x={300} y={1080} scale={0.95} f={f} stance="all4" />
+        <Grizzly x={780} y={1780} scale={0.85} f={f} stance="stand" emotion="alert" facing={-1} />
+        <Caribou x={250} y={1760} scale={1.0} f={f} trot={0.6} />
+        <Orca x={290} y={780} scale={0.8} f={f} surface={0.7} />
+        <Puffin x={470} y={1160} scale={1.1} f={f} flap={0.3} />
+        <BushPlane x={800} y={980} scale={0.85} f={f} mode="fly" />
+        <Snowmachine x={170} y={1500} scale={1.0} f={f} speed={0.6} />
+        <FishingBoat x={430} y={1930} scale={0.8} f={f} heave={0.6} />
         <BaldEagle x={800} y={430} scale={1.0} f={f} />
         <Raven x={250} y={1180} scale={1.4} f={f} mode="perch" />
         <Raven x={560} y={900} scale={1.1} f={f} mode="fly" />

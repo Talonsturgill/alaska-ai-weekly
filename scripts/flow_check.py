@@ -50,7 +50,8 @@ def load_beats(sb):
         if isinstance(b, dict):
             a, e = _parse_t(b.get("t"))
             out.append({"i": i, "t0": a, "t1": e, "vo": b.get("vo", ""), "shows": b.get("shows", b.get("new", "")),
-                        "sfx": b.get("sfx", ""), "means": b.get("means", ""), "choreo": b.get("choreo"), "obj": True})
+                        "sfx": b.get("sfx", ""), "means": b.get("means", ""), "choreo": b.get("choreo"),
+                        "rehook": b.get("rehook", ""), "obj": True})
         else:
             out.append({"i": i, "t0": None, "t1": None, "vo": "", "shows": str(b), "sfx": "", "means": "", "obj": False})
     return out, fmt
@@ -87,6 +88,43 @@ def analyze(dirp):
                                  f"sweet spot")
         if starts[0] > cov["head_start_s"]:
             R["warnings"].append(f"head_start: first beat at {starts[0]}s (> {cov['head_start_s']}s); open on the stake sooner")
+
+        # ---- ENGAGEMENT block (docs/craft/ENGAGEMENT.md, upgrade #3) ----
+        eng = CFG.get("engagement") or {}
+        if eng:
+            # FRONTLOAD: the first N seconds carry the piece's highest density
+            fw, fmin = eng["frontload_window_s"], eng["frontload_min_beats"]
+            early = sum(1 for s0 in starts if s0 < fw)
+            R["metrics"]["frontload_beats"] = early
+            if early < fmin:
+                R["problems"].append(f"FRONTLOAD: only {early} beats start inside the first {fw}s "
+                                     f"(< {fmin}); 50-60% of abandonment happens up front — front-load "
+                                     f"the density (ENGAGEMENT.md §2.1)")
+            # METRONOME: 3+ consecutive near-identical gaps habituate the eye
+            tol, max_run = eng["metronome_tol_s"], eng["metronome_max_run"]
+            run, worst_run, run_val = 1, 1, None
+            for i in range(1, len(gaps)):
+                if abs(gaps[i] - gaps[i - 1]) <= tol:
+                    run += 1
+                    if run > worst_run:
+                        worst_run, run_val = run, gaps[i]
+                else:
+                    run = 1
+            R["metrics"]["metronome_worst_run"] = worst_run
+            if worst_run > max_run:
+                R["problems"].append(f"METRONOME: {worst_run} consecutive beat gaps within ±{tol}s of "
+                                     f"each other (~{run_val}s each); fixed cadence habituates — jitter "
+                                     f"the intervals (ENGAGEMENT.md §2.3)")
+            # REHOOK: one declared re-hook beat in the drift window
+            rlo, rhi = eng["rehook_window_s"]
+            piece_end = max((b["t1"] or b["t0"]) for b in timed)
+            if piece_end > rhi:                       # short pieces are exempt
+                rehooks = [b for b in timed if str(b.get("rehook", "")).strip() and rlo <= b["t0"] <= rhi]
+                R["metrics"]["rehook_beats_in_window"] = len(rehooks)
+                if not rehooks:
+                    R["problems"].append(f"REHOOK: no beat in the {rlo}-{rhi}s drift window declares "
+                                         f"`rehook` (the escalation/promise turn that re-grabs a sagging "
+                                         f"viewer — ENGAGEMENT.md §2.4)")
     elif fmt != "object":
         R["problems"].append(f"beats are the OLD prose format ({fmt}); upgrade to timed objects "
                              f"{{t,vo,shows,sfx,means}} so cadence + coverage are checkable (VISUAL_FLOW.md §3)")
@@ -135,6 +173,23 @@ def analyze(dirp):
             if worst > cov["max_uncovered_vo_gap_s"]:
                 R["problems"].append(f"coverage: a {worst}s stretch of VO has no beat illustrating it "
                                      f"(> {cov['max_uncovered_vo_gap_s']}s), orphan narration")
+        # WPM (ENGAGEMENT.md §6): pace band warning against the measured speech length
+        wp = d / "audio" / "words60.json"
+        eng = CFG.get("engagement") or {}
+        if speech_end and eng.get("wpm_warn") and wp.exists():
+            try:
+                wdata = json.loads(wp.read_text() or "[]")
+                words = wdata.get("words", wdata) if isinstance(wdata, dict) else wdata
+                n_words = len(words)
+            except (json.JSONDecodeError, ValueError):
+                n_words = 0
+            if n_words and speech_end > 10:
+                wpm = round(n_words / (speech_end / 60.0))
+                lo_w, hi_w = eng["wpm_warn"]
+                R["metrics"]["vo_wpm"] = wpm
+                if not (lo_w <= wpm <= hi_w):
+                    R["warnings"].append(f"WPM: VO paces at {wpm} wpm (band {lo_w}-{hi_w}); "
+                                         f"target 150-175 for this format (ENGAGEMENT.md §6)")
 
     # ---- SFX events (sound-paired-to-picture), if the mix emitted them ----
     ev_p = d / sc["events_json"]

@@ -1,0 +1,38 @@
+{
+  "topic": "What makes motion design read as cool/premium vs merely clear",
+  "researched": "2026-07-20",
+  "findings": [
+    {"claim": "Linear motion is the #1 amateur tell; elements must accelerate from rest and decelerate into targets. Ease-out for entrances, ease-in-out for moves.", "source_url": "https://joshcollinsworth.com/blog/easing-curves", "confidence": "high"},
+    {"claim": "Overshoot-and-settle (bezier control y>1, e.g. cubic-bezier(0.68,-0.6,0.32,1.6)) is the core confident-landing signal; reserve for ONE element per frame.", "source_url": "https://joshcollinsworth.com/blog/easing-curves", "confidence": "high"},
+    {"claim": "Duration bands that read as designed: micro-UI <300ms; social transitions 400-600ms; cinematic reveals 800ms-2s; hero moments 1-3s.", "source_url": "https://www.imagine.art/blogs/how-to-create-satisfying-motion-design", "confidence": "med"},
+    {"claim": "Staggered stop points sell composure: primary settles first, secondaries trail 50-100ms, trailing elements overshoot slightly.", "source_url": "https://www.imagine.art/blogs/how-to-create-satisfying-motion-design", "confidence": "high"},
+    {"claim": "Staggered cascades (~60-90ms/item) turn simultaneous pop-in into a reading path.", "source_url": "https://medium.com/@onifkay/creating-staggered-animations-with-framer-motion-0e7dc90eae33", "confidence": "high"},
+    {"claim": "Secondary motion/follow-through (shadows, accents lagging the primary) is the most overlooked pro differentiator.", "source_url": "https://www.schoolofmotion.com/blog/secondary-animation", "confidence": "high"},
+    {"claim": "Anticipation is three beats (setup, build, action); its LENGTH sets tone - long build = suspense, short snap = surprise. ~6-12 frames at 30fps before a payoff.", "source_url": "https://blog.cg-wire.com/anticipation-principle/", "confidence": "high"},
+    {"claim": "The comedic hold: a still beat after the reveal lands (~0.4-0.8s) IS the punctuation - no motion during the hold.", "source_url": "https://educationalvoice.co.uk/animation-for-comedy/", "confidence": "med"},
+    {"claim": "Reveals are architected withholding (telegraph then disclose), distinct from surprise/misdirection.", "source_url": "https://beverlyboy.com/filmmaking/what-is-a-reveal-shot/", "confidence": "med"},
+    {"claim": "Reveal primitives by content: scale-from-anchor for icons/badges; mask/wipe for text/photos; trim-path draw-on for lines/diagrams; scale-pullback for the true-scale whoa; fake-morph (crossfade + subtle transform) beats true point-morph for dissimilar silhouettes.", "source_url": "https://cursa.app/en/page/shape-animation-techniques-reveals-morphs-and-trim-paths-style-motion", "confidence": "high"},
+    {"claim": "9:16 trades width for DEPTH: 3+ z-layers, foreground anchor, tight blocking.", "source_url": "https://www.axisaistudios.com/blog/how-to-shoot-for-the-vertical-frame-a-cinematography-guide", "confidence": "med"},
+    {"claim": "Two instant designed-look moves: rim/back light separating subject from background, and palette discipline where the single off-palette accent auto-becomes the focal point.", "source_url": "https://www.drawstory.ai/blog/cinematic-composition-techniques", "confidence": "med"},
+    {"claim": "Motion must arrive somewhere: every move resolves to a strong static frame (visual resolution).", "source_url": "https://www.imagine.art/blogs/how-to-create-satisfying-motion-design", "confidence": "med"}
+  ],
+  "technique_library": [
+    {"name": "premiumEaseOut", "how": "cubic-bezier(0.16,1,0.3,1)-style for every entrance", "when": "default entrance curve"},
+    {"name": "overshootSettle", "how": "bezier y>1, pass 5-10% beyond target, settle 120-200ms", "when": "hero labels/key numbers; one per frame"},
+    {"name": "staggerCascade", "how": "delay = index * 60-90ms, shared enter curve", "when": "any multi-element block"},
+    {"name": "trailingSettleOffset", "how": "primary stops first; secondaries +50-100ms; accents lag, lower amplitude", "when": "group moves"},
+    {"name": "scaleFromAnchorReveal", "how": "pivot at reveal origin, scale 0->100%", "when": "icons, badges, chips"},
+    {"name": "maskWipeReveal", "how": "matte sweeps across artwork; hard edge for graphics, feathered for soft", "when": "text blocks, photos, map fills"},
+    {"name": "trimPathDrawOn", "how": "stroke path 0->100%, chain with stagger", "when": "underlines, connectors, routes, diagrams"},
+    {"name": "buildOnAssembly", "how": "diagram self-assembles: draw-on lines, scale-in nodes, fade labels, staggered", "when": "structure/relationship explainers"},
+    {"name": "morphToChart", "how": "fake-morph crossfade + subtle transform; object dissolves into its data form", "when": "object becomes metric"},
+    {"name": "scalePullbackReveal", "how": "tight detail -> pull out to disclose true scale, ease-out landing", "when": "the whoa beat, once per section"},
+    {"name": "anticipationBeat", "how": "small opposing prep move 6-12 frames before the payoff", "when": "before every major reveal"},
+    {"name": "holdPayoff", "how": "0.4-0.8s still hold after the reveal lands", "when": "after every major reveal"},
+    {"name": "squashStretchAccent", "how": "stretch along motion vector, squash on landing, resolve in 100-150ms", "when": "impacts, weighty number pops"},
+    {"name": "depthLayerRig", "how": "3+ z-layers with parallax + atmospheric fade (= our Stage3D)", "when": "every vertical hero frame"},
+    {"name": "rimLightSeparation", "how": "bright edge behind subject + slight background darken", "when": "any hero frame at risk of merging"},
+    {"name": "paletteDiscipline", "how": "limited palette; ONE accent hue used once as the focal signal", "when": "every frame"},
+    {"name": "oneReadPerFrame", "how": "single focal element via thirds + silhouette clarity + reserved accent", "when": "composition gate for every frame"}
+  ]
+}

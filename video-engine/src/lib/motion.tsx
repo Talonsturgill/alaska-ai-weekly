@@ -127,3 +127,47 @@ export const ChipShadow: React.FC<{dx?: number; dy?: number; opacity?: number; c
     {children}
   </g>
 );
+
+// ============================================================================
+// ENGAGEMENT primitives (docs/craft/ENGAGEMENT.md §3-4, upgrade #3 2026-07-20).
+// The research-backed motion vocabulary: named easing tokens (linear easing is
+// BANNED outside continuous loops), the anticipate->disclose->hold reveal
+// grammar, and the stagger cascade. All pure functions of frame/fps so they
+// stay deterministic.
+// ============================================================================
+
+// Named easing tokens. Use with Remotion's interpolate(..., {easing: Easing.bezier(...EASE.enter)}).
+// enter: strong ease-out (fast start, long soft tail) — every entrance.
+// move: ease-in-out — on-screen repositioning.
+// overshoot: passes the target then settles — ONE element per frame, usually the key number.
+export const EASE = {
+  enter: [0.16, 1, 0.3, 1] as const,
+  move: [0.65, 0, 0.35, 1] as const,
+  overshoot: [0.68, -0.55, 0.27, 1.55] as const,
+} as const;
+
+// anticipate(): the telegraph before a payoff. Returns a small OPPOSING offset
+// (0..1 of `amp`, as a signed factor) for the `frames`-long wind-up ending at
+// `payoffFrame`; 0 after the payoff starts. Apply against the payoff direction
+// (e.g. scale 1 - 0.06 * anticipate(...) before a scale-up pop).
+// Research: 6-12 frames at 30fps; longer build = suspense, shorter = snap.
+export function anticipate(frame: number, payoffFrame: number, frames = 9): number {
+  const start = payoffFrame - frames;
+  if (frame < start || frame >= payoffFrame) return 0;
+  const t = (frame - start) / frames;
+  return Math.sin(t * Math.PI * 0.5);          // ramps 0 -> 1 into the payoff
+}
+
+// holdPayoff(): the still beat AFTER a reveal lands — the pause IS the
+// punctuation. Returns 1 while inside the hold window (no new motion should
+// start), else 0. Doctrine band: 0.4-0.8s.
+export function holdPayoff(frame: number, fps: number, revealEndFrame: number, holdS = 0.6): number {
+  return frame >= revealEndFrame && frame < revealEndFrame + holdS * fps ? 1 : 0;
+}
+
+// staggerDelay(): frames of delay for item i in a cascade. 60-90ms/item turns
+// a simultaneous pop-in into a reading path. Caps the total cascade so late
+// items never overrun the shot.
+export function staggerDelay(i: number, fps: number, stepMs = 75, maxTotalS = 1.2): number {
+  return Math.min(i * (stepMs / 1000), maxTotalS) * fps;
+}

@@ -1,0 +1,28 @@
+{
+  "topic": "How sound drives second-by-second engagement (SFX, music, VO)",
+  "researched": "2026-07-20",
+  "caveat": "SFX Engine retention figures (35%/42%) are single-vendor with unlinked studies (med). LUFS targets, TikTok/Kantar stats, VO pace bands are high/med and well-sourced.",
+  "findings": [
+    {"claim": "Precise SFX timing can raise retention up to 35%; comedic/payoff effects land best 0.2-0.5s AFTER the beat.", "source_url": "https://sfxengine.com/blog/sound-effects-timing-in-comedy-videos", "confidence": "med"},
+    {"claim": "Impact SFX: +2 to +5 frames after the on-screen event (~85-210ms), not the exact frame; gag build -10 to -30 frames before.", "source_url": "https://sfxengine.com/blog/sound-effects-timing-in-comedy-videos", "confidence": "med"},
+    {"claim": "EQ-shape SFX out of the VO band: +3-6dB presence at 2-5kHz, high-pass below ~120Hz.", "source_url": "https://sfxengine.com/blog/sound-effects-timing-in-comedy-videos", "confidence": "med"},
+    {"claim": "88% of TikTok users say sound is essential; 73% would stop-and-look for content with audio.", "source_url": "https://www.socialmediatoday.com/news/tiktok-shares-new-insights-into-the-importance-of-sound-for-marketing-promo/601569/", "confidence": "high"},
+    {"claim": "Master to -14 LUFS integrated, true-peak -1 dBTP (-1.5 YouTube); hotter gets crushed by platform normalization.", "source_url": "https://clickyapps.com/creator/video/guides/lufs-targets-2025", "confidence": "high"},
+    {"claim": "Fixed loudness hierarchy: VO > music > SFX-as-accent; music sits below VO.", "source_url": "https://www.motiontheagency.com/blog/sound-design-for-explainer-videos", "confidence": "high"},
+    {"claim": "60-90s shorts VO pace: ~170 WPM energetic band (130 calm, 150 conversational, 190-200 fast).", "source_url": "https://goteleprompter.com/blog/video-script-length-guide/", "confidence": "med"},
+    {"claim": "60s script = 100-150 words; hook front-loaded into the first ~2 seconds.", "source_url": "https://goteleprompter.com/blog/video-script-length-guide/", "confidence": "med"},
+    {"claim": "Silence/abrupt audio drops are pattern interrupts: drop to silence 0.3-0.8s before a reveal.", "source_url": "https://www.venturevideos.com/insight/the-impact-of-sound-design-in-explainer-video-production", "confidence": "med"},
+    {"claim": "Every discrete visual event gets an audible correlate (whoosh on transition, click on UI, impact on landing).", "source_url": "https://www.motiontheagency.com/blog/sound-design-for-explainer-videos", "confidence": "med"},
+    {"claim": "Music energy maps the narrative arc; switch sections at narrative turns, energy rising into the payoff.", "source_url": "https://www.trackclub.com/resources/music-for-explainer-videos", "confidence": "med"}
+  ],
+  "actionable_rules": [
+    "Master to -14 LUFS integrated (accept -15 to -13); true-peak ceiling -1.0 dBTP.",
+    "Music ducked >= 6dB below VO during narration.",
+    "VO cadence 150-175 WPM; warn under 130 or over 190.",
+    "Hook line + audio accent within the first 2.0 seconds.",
+    "Impact SFX +2 to +5 frames after the visual event; payoff SFX +0.2-0.5s after the beat.",
+    "Every transition/reveal has a matched sound event within ±150ms.",
+    "Music drop-to-silence (0.3-0.8s) or section switch before each major reveal; one interrupt in the 25-35s window.",
+    "Accent SFX high-passed ~120Hz, presence 2-5kHz, true-peak 3-4dB under VO."
+  ]
+}

@@ -206,6 +206,35 @@ def main():
                 problems.append(f"beat {i} missing draw.{missing} — every beat is a VISUAL SENTENCE "
                                 f"(subject with a face does a visible verb, with its annotation); "
                                 f"a beat without a draw is a slide (prompts/dispatch_routine.md §4.3)")
+        # ---- STAGE3D ENFORCEMENT (2026-07-20, UPGRADE #1 wired into pre-planning) ----
+        # The true-depth engine (lib/stage3d.tsx, docs/craft/STAGE3D.md) is now the default.
+        # Every shot must PLAN its camera and its depth: `camera` names composed moves from
+        # the CameraMoves vocab (or 'static' WITH a stated reason), and `stage3d` declares
+        # the shot's depth plan ('planes' = a Stage3D world, or 'flat:<reason>' for shots
+        # where depth genuinely adds nothing, e.g. a full-frame data panel). Unplanned
+        # camera/depth is what made the old scenes read as slides; the gate refuses it.
+        CAM_MOVES = {"dollythrough", "orbitreveal", "cranedown", "truckacross", "risewith", "static"}
+        for i, sh in enumerate(shots):
+            cam_f = str(sh.get("camera", "")).strip().lower()
+            if not cam_f:
+                problems.append(f"shot {sh.get('id', i + 1)} declares no `camera` — every 2.5D shot names its "
+                                f"composed CameraMoves ({sorted(CAM_MOVES)}, '+'-composed, e.g. "
+                                f"'craneDown+dollyThrough'), or 'static:<reason>' (docs/craft/STAGE3D.md).")
+            else:
+                moves = [m.split(":")[0] for m in re.split(r"[+,]", cam_f) if m.strip()]
+                bad = [m for m in moves if m.replace("-", "") not in CAM_MOVES]
+                if bad:
+                    problems.append(f"shot {sh.get('id', i + 1)} camera move(s) {bad} not in the stage3d vocab "
+                                    f"{sorted(CAM_MOVES)} (lib/stage3d.tsx CameraMoves).")
+                if moves == ["static"] and ":" not in cam_f:
+                    problems.append(f"shot {sh.get('id', i + 1)} camera 'static' needs a reason "
+                                    f"('static:<why this shot earns a locked camera>').")
+            st = str(sh.get("stage3d", "")).strip().lower()
+            if not st:
+                problems.append(f"shot {sh.get('id', i + 1)} declares no `stage3d` — 'planes' (a Stage3D depth "
+                                f"world; the default) or 'flat:<reason>' (why depth adds nothing here).")
+            elif st.startswith("flat") and ":" not in st:
+                problems.append(f"shot {sh.get('id', i + 1)} stage3d 'flat' needs a reason ('flat:<why>').")
 
     # ---- 1e. HOOK / HERO / AUDIO_ARC blocks (docs/craft/HOOK_CRAFT.md, HERO_CRAFT.md, VOICE_AND_SCORE.md) ----
     HOOK_PATTERNS = {"anomaly-question", "in-medias-res", "bold-claim", "stakes-antagonist"}
@@ -239,6 +268,31 @@ def main():
             problems.append(f"shot {sh.get('id', i+1)} missing a hero block with parts>=3, zones>=2, name, "
                             f"detail_note — a single-primitive hero cannot read designed or perform "
                             f"(HERO_CRAFT.md shape-hierarchy law)")
+    # ---- 1f. REVEALS (docs/craft/ENGAGEMENT.md §3: telegraph -> disclose -> hold) ----
+    REVEAL_TYPES = {"scale-pullback", "mask-wipe", "trim-path", "scale-from-anchor", "morph-to-chart", "build-on"}
+    SCALE_CLASS = {"scale-pullback", "morph-to-chart", "build-on"}
+    rv = sb.get("reveals") or []
+    if not rv:
+        problems.append("missing top-level `reveals` list — the board declares its designed reveal moments "
+                        "(ENGAGEMENT.md §3: [{t, type, what, hold_s}], type in "
+                        + str(sorted(REVEAL_TYPES)) + ")")
+    else:
+        bad_rv = [r.get("type") for r in rv if norm_tag(r.get("type")) not in REVEAL_TYPES]
+        if bad_rv:
+            problems.append(f"reveals type(s) {bad_rv} not in the reveal vocabulary {sorted(REVEAL_TYPES)}")
+        if not any(norm_tag(r.get("type")) in SCALE_CLASS for r in rv):
+            problems.append("no scale-class reveal declared (scale-pullback / morph-to-chart / build-on) — "
+                            "every piece gets at least one true-scale 'whoa' beat aligned to the escalation "
+                            "(ENGAGEMENT.md §3)")
+        for r in rv:
+            try:
+                hold = float(r.get("hold_s", -1))
+            except (TypeError, ValueError):
+                hold = -1
+            if not (0.3 <= hold <= 1.2):
+                problems.append(f"reveal '{r.get('what', r.get('type'))}' hold_s={r.get('hold_s')} — every "
+                                f"reveal lands with a 0.4-0.8s still HOLD (accepted band 0.3-1.2); the pause "
+                                f"is the punctuation")
     aa = sb.get("audio_arc") or {}
     if not aa:
         problems.append("missing top-level `audio_arc` block (VOICE_AND_SCORE.md: {build_steps, dip_at, "

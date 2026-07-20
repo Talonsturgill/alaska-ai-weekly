@@ -1,0 +1,43 @@
+{
+  "topic": "Pattern-interrupt cadence and visual-novelty pacing in top explainer content",
+  "researched": "2026-07-20",
+  "caveat": "Highest confidence: peer-reviewed Hollywood shot-length study (PMC3485803) and the leaked MrBeast production handbook. Kurzgesagt/Infographics Show/Johnny Harris findings rest on process breakdowns (med).",
+  "findings": [
+    {"claim": "Hollywood average shot length fell from ~10s (1930s-40s) to below 4s after 2000 (r=-.75, 160 films measured); motion per shot rose in parallel.", "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3485803/", "confidence": "high"},
+    {"claim": "High-performing short-form averages one cut every 2-4 seconds; a top-100-Shorts analysis found 2.5s average clip length correlated with ~35% higher completion than 4s+.", "source_url": "https://www.opus.pro/blog/ideal-youtube-shorts-length-format-retention", "confidence": "med"},
+    {"claim": "The 5-second rule: never a 5-second block where nothing on screen changes. Niche pacing: B2B every 8-10s, Gen Z entertainment every 2-3s.", "source_url": "https://joyspace.ai/pattern-interrupt-reset-attention-span", "confidence": "med"},
+    {"claim": "A pattern interrupt buys ~5 more seconds of watch time each; place one at 25-35s where new viewers drift.", "source_url": "https://www.capcut.com/create/pattern-interrupt-technique-short-form-video", "confidence": "med"},
+    {"claim": "Fixed-cadence interrupts habituate ('the brain detects the pattern and stops reacting'); jitter intervals, and cap stacking (deliberate disruption, not digital whiplash).", "source_url": "https://joyspace.ai/pattern-interrupt-reset-attention-span", "confidence": "med"},
+    {"claim": "MrBeast: the first minute is the most important; front-load the best visuals/music/effects; typical videos lose ~21M viewers in the opening 60s.", "source_url": "https://www.danielscrivner.com/how-to-succeed-in-mrbeast-production-summary/", "confidence": "high"},
+    {"claim": "MrBeast structures re-hooks at fixed beats (~min 3, ~min 6/halfway); back-half viewers watch semi-passively and tolerate longer holds.", "source_url": "https://www.danielscrivner.com/how-to-succeed-in-mrbeast-production-summary/", "confidence": "high"},
+    {"claim": "Micro-hooks/cliffhangers every 30-60s ('that's not even the crazy part'); all dead air removed.", "source_url": "https://medium.com/@prismiqpro/creative-spotlight-how-mrbeast-transforms-spectacle-into-stakes-youtube-analysis-video-editing-tips-2db492d2d2c9", "confidence": "med"},
+    {"claim": "Kurzgesagt: all animation timed to the voiceover; every on-screen element animated manually so secondary/background motion is essentially continuous; per-video original score with deep booms on key words; split-second easter-egg gags as micro-rewards.", "source_url": "https://www.toolify.ai/ai-news/creating-a-kurzgesagt-video-masterpiece-in-1200-hours-54169", "confidence": "med"},
+    {"claim": "Infographics Show sustains long runtimes with a fixed template: recurring silhouettes/icon sets, motion-graphic data reveals, short clearly-labeled segments - not editing gimmicks.", "source_url": "https://becomeviral.com/blog/infographics-show-case-study", "confidence": "med"},
+    {"claim": "Johnny Harris designs visuals FIRST (script serves visuals) and layers texture (film burns, light leaks, grain) over nearly every static asset; three-act arc with an explicit promise restated.", "source_url": "https://medium.com/@LMK_writing/how-johnny-harris-mastered-visual-storytelling-on-youtube-343ddf9160ec", "confidence": "med"}
+  ],
+  "interrupt_taxonomy": [
+    {"name": "hard-cut-context-switch", "use": "backbone cadence; 2-4s short-form, 4-8s explainer"},
+    {"name": "zoom-punch", "use": "emphasis on key word/stat; jittered, never metronomic"},
+    {"name": "b-roll-flash", "use": "1-2s cutaway insert for novelty without changing the argument"},
+    {"name": "stat-card-kinetic-text", "use": "every key number rendered on screen synced to the spoken word"},
+    {"name": "scale-reveal", "use": "pull back to recontextualize scale; the wow beat, one per major section"},
+    {"name": "palette-flip", "use": "section boundaries; low-frequency, high-salience"},
+    {"name": "whip-pan", "use": "energetic bridge between beats"},
+    {"name": "reaction-insert", "use": "re-hook / comic relief via character reaction or aside"},
+    {"name": "sound-accent", "use": "reinforces nearly every visual interrupt; silence itself is an interrupt"},
+    {"name": "ambient-motion-texture", "use": "keeps quiet narration stretches alive between hard interrupts"}
+  ],
+  "actionable_rules": [
+    "Never a 5-second block with no on-screen change; for our 2.5D explainer target a new visual idea every 4-8s with beats every <5s as the hard floor.",
+    "Jitter interrupt spacing; never the same interrupt type on a fixed interval 3+ times.",
+    "First 10s: highest visual-change density of the piece; payoff-promise stated and shown.",
+    "Explicit re-hook at 25-35s, then near the 1/2 mark.",
+    "Every stat/number renders as an on-screen card synced to the spoken word.",
+    "Sound accent paired with every major visual interrupt.",
+    "Continuous secondary motion during narration stretches with no hard cut - no fully static asset.",
+    "Max 2 simultaneous interrupt types in any ~1s window.",
+    "At least one scale-reveal per major section, aligned to narrative escalation.",
+    "Section boundaries get a high-salience interrupt (palette flip or whip-pan + label card).",
+    "Escalate density in the front half; slightly longer holds allowed in the back half, never below the 5s floor."
+  ]
+}
