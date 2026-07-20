@@ -7,6 +7,21 @@ into the doctrine/library files and prune here.
 
 ---
 
+## 2026-07-20 - craft refresh (run 12 pre-research pass)
+
+- Platform numbers RECONFIRMED, nothing to change: document/carousel posts remain
+  the highest-reach native format (~6.6% ER), saves are the dominant 2026 signal
+  (~5x a like), dwell 15 to 20s, 8 to 10 slides the sweet spot, 1080x1350 the
+  ratio. (dataslayer/oktopost/contentdrips 2026.)
+- One marginally-fresh craft handle for the keepable data slide, consistent with
+  the 07-19 annotation note: 2026 editorial dataviz desks frame good annotation as
+  "deliberate subtraction, not addition" (FT chief data reporter) - place titles,
+  labels, gridlines, color so each element supports comprehension or is cut; one
+  primary annotation reads first, all others stay visibly secondary. Reinforces
+  existing practice; no gate change.
+
+---
+
 ## 2026-07-17 - run 9 retro (Carousel No. 9, "No Road Out. Quinhagak Flies Its Own Eyes", 9.07)
 
 - FULL-STUDIO RUN, no usage-limit degradation. 6 scouts + fact-checker + 3 treatment-directors + copywriter + 5 pixel critics + flow-critic + scorer all ran. Shipped 9.07 vs 8.3, vector PDF 7.86MB, 9 slides, zero hard fails.
