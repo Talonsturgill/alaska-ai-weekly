@@ -1175,3 +1175,421 @@ export const SledDogTeam: React.FC<{x: number; y: number; scale?: number; f: num
     </g>
   );
 };
+
+// ---------------------------------------------------------------- LYNX
+// NET-NEW 2026-07-20d (asset-library session #2, gap list). The snow ghost:
+// black EAR TUFTS, wide facial ruff, stilt legs on huge snowshoe paws, stub
+// black-tipped tail. `stance` 'sit' (upright, radar ears) | 'stalk' (belly-low
+// creep). Idles: ear-tuft swivel, ruff breath, tail-stub twitch, slow blink.
+export const Lynx: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  stance?: 'sit' | 'stalk';
+}> = ({x, y, scale = 1, f, facing = 1, stance = 'sit'}) => {
+  const id = uid(`lynx${x}${y}`);
+  const t = tones('#b8a488');            // tawny gray
+  const sit = stance === 'sit';
+  const earSwivel = 7 * Math.sin(f / 17);
+  const tailTwitch = 9 * Math.sin(f / 8);
+  const breath = 1 + 0.012 * Math.sin(f / 16);
+  const creep = sit ? 0 : 2.2 * Math.sin(f / 20);   // slow stalking sway
+  const blink = Math.sin(f / 47) > 0.96 ? 0.15 : 1;
+  const paw = (px: number, py: number) => (
+    <path d={`M${px - 15},${py} q0,-12 15,-12 q15,0 15,12 q0,7 -15,7 q-15,0 -15,-7 Z`} fill={t.core} stroke={INK} strokeWidth={4.5} />
+  );
+  const head = (hx: number, hy: number, rot: number) => (
+    <g transform={`translate(${hx},${hy}) rotate(${rot})`}>
+      {/* skull + the wide RUFF flares */}
+      <path d="M-24,4 q-4,-26 18,-32 q26,-8 38,8 q8,12 2,24 q-10,14 -30,12 q-22,-2 -28,-12 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      <path d="M-22,10 q-14,4 -20,14 q12,7 26,0 Z" fill="#e8e0d0" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+      <path d="M20,16 q10,8 6,16 q-14,2 -20,-8 Z" fill="#e8e0d0" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+      {/* ruff streaks */}
+      <path d="M-30,16 q-6,4 -9,9 M18,20 q4,5 3,9" fill="none" stroke={INK} strokeWidth={2.5} opacity={0.6} />
+      {/* muzzle + nose */}
+      <path d="M26,0 q14,2 18,10 q0,8 -10,9 q-12,1 -16,-7 q-2,-8 8,-12 Z" fill="#e8e0d0" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+      <path d="M40,6 q5,2 3,6 l-6,-1 Z" fill="#8a5a5a" stroke={INK} strokeWidth={2.5} />
+      {/* eye: gold, slow blink */}
+      <g transform={`scale(1,${blink})`}>
+        <ellipse cx={10} cy={-8} rx={5.5} ry={5} fill="#e8c04a" stroke={INK} strokeWidth={2.5} />
+        <ellipse cx={11} cy={-7.5} rx={2} ry={3.4} fill={INK} />
+      </g>
+      {/* triangular ears with the BLACK TUFTS (diagnostic) */}
+      {[[-8, -26, -10], [14, -28, 12]].map(([ex, ey, er], i) => (
+        <g key={i} transform={`translate(${ex},${ey}) rotate(${(er as number) + earSwivel})`}>
+          <path d="M0,0 L-9,-22 L12,-6 Z" fill={t.base} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+          <path d={`M-9,-22 q-3,-8 ${2 + 2 * Math.sin(f / 9 + i)},-16`} fill="none" stroke={INK} strokeWidth={3.5} strokeLinecap="round" />
+        </g>
+      ))}
+    </g>
+  );
+  return (
+    <g transform={`translate(${x + creep},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={4} rx={sit ? 66 : 88} ry={13} opacity={0.28} blur={9} />
+      {sit ? (
+        <g>
+          {/* SEATED TRIANGLE (pass-2 rebuild: pass 1 read as a standing blob):
+              big round haunch planted at the rear, chest column rising to the
+              head over the front legs */}
+          <g transform={`scale(1,${breath})`}>
+            <path d="M-64,-2 q-24,-40 -6,-72 q14,-24 44,-28 q10,-28 34,-32 q22,-2 30,16 q8,20 4,52 q-4,34 -12,64 Z"
+              fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+            {/* haunch read: inner thigh arc */}
+            <path d="M-52,-8 q-16,-34 2,-58 q12,-18 32,-20" fill="none" stroke={t.shade} strokeWidth={3.5} opacity={0.7} />
+            <RimLight d="M-70,-74 q14,-24 44,-28 q10,-28 34,-32" w={3} opacity={0.55} />
+            {/* faint coat spots */}
+            {[[-34, -44], [-16, -64], [-40, -24], [6, -76], [-6, -34]].map(([sx2, sy2], i) => (
+              <circle key={i} cx={sx2} cy={sy2} r={3} fill={t.shade} opacity={0.5} />
+            ))}
+          </g>
+          {/* hind paw peeking at the haunch base */}
+          {paw(-38, 0)}
+          {/* stub tail with black tip, twitching */}
+          <g transform={`translate(-66,-24) rotate(${tailTwitch})`}>
+            <path d="M0,0 q-16,2 -22,12 q8,8 20,4 Z" fill={t.base} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+            <path d="M-22,12 q-4,3 -2,7 q6,1 10,-4 Z" fill={INK} />
+          </g>
+          {/* stilt front legs down to snowshoe paws */}
+          <rect x={14} y={-66} width={15} height={62} rx={6} fill={t.base} stroke={INK} strokeWidth={4.5} />
+          <rect x={38} y={-64} width={15} height={60} rx={6} fill={t.core} stroke={INK} strokeWidth={4.5} />
+          {paw(22, 0)}
+          {paw(46, 0)}
+          {head(34, -128, -4)}
+        </g>
+      ) : (
+        <g>
+          {/* belly-low creep: long body, folded stilts */}
+          <g transform={`scale(1,${breath})`}>
+            <path d="M-74,-34 q-8,-26 20,-34 q40,-12 88,-8 q28,4 34,22 q4,14 -4,24 q-56,12 -110,4 q-24,-4 -28,-8 Z"
+              fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+            <RimLight d="M-74,-34 q-8,-26 20,-34 q40,-12 88,-8" w={3} opacity={0.55} />
+            {[[-40, -48], [-10, -56], [22, -52], [-28, -36], [8, -40]].map(([sx2, sy2], i) => (
+              <circle key={i} cx={sx2} cy={sy2} r={3} fill={t.shade} opacity={0.5} />
+            ))}
+          </g>
+          <g transform={`translate(-70,-52) rotate(${tailTwitch * 0.5})`}>
+            <path d="M0,0 q-16,-2 -24,6 q6,9 20,7 Z" fill={t.base} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+            <path d="M-24,6 q-5,2 -4,7 q7,2 11,-3 Z" fill={INK} />
+          </g>
+          {/* folded Z-legs planted on the paws (pass 2: stroked bends, the
+              pass-1 zero-offset quadratics vanished) */}
+          {[-52, -24, 26, 54].map((lx, i) => (
+            <g key={i}>
+              <path d={`M${lx + (i < 2 ? 6 : -6)},-36 L${lx + (i < 2 ? -6 : 6)},-20 L${lx},-6`}
+                fill="none" stroke={i % 2 ? t.core : t.base} strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" />
+              {paw(lx, 0)}
+            </g>
+          ))}
+          {head(66, -66, 6)}
+        </g>
+      )}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- MOUNTAIN GOAT
+// NET-NEW 2026-07-20d (gap list). The cliff walker: shaggy WHITE coat with
+// pantaloon fringe, chin BEARD, short black recurved horns (both sexes), black
+// hooves on tiny ledges. Distinct from DallSheep: taller shoulder, square shag
+// body, beard, black spike horns (not amber curls). `stance` 'stand' |
+// 'climb' (fores up a 24-degree grade). Idles: beard sway, breath, ear flick.
+export const MountainGoat: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  stance?: 'stand' | 'climb';
+}> = ({x, y, scale = 1, f, facing = 1, stance = 'stand'}) => {
+  const id = uid(`mgoat${x}${y}`);
+  const t = tones('#f0ece0');            // chalk white
+  const climb = stance === 'climb';
+  const grade = climb ? -14 : 0;
+  const breath = 1 + 0.012 * Math.sin(f / 15);
+  const beardSway = 5 * Math.sin(f / 13);
+  const earFlick = 4 * Math.sin(f / 21 + 2);
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) rotate(${grade})`}>
+      <FormGradient id={id} t={t} />
+      {!climb && <ContactShadow cx={0} cy={4} rx={92} ry={15} opacity={0.26} blur={10} />}
+      {/* legs with shaggy pantaloons + black hooves */}
+      {[-64, -34, 34, 62].map((lx, i) => (
+        <g key={i}>
+          <path d={`M${lx - 12},-92 q-4,18 -2,30 q8,6 24,0 q4,-14 0,-30 Z`} fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+          <rect x={lx - 7} y={-64} width={15} height={56} rx={6} fill={i % 2 ? t.core : t.base} stroke={INK} strokeWidth={5} />
+          <rect x={lx - 8} y={-12} width={17} height={12} rx={3} fill="#22201c" stroke={INK} strokeWidth={3.5} />
+        </g>
+      ))}
+      {/* square shaggy body: scalloped belly fringe */}
+      <g transform={`scale(1,${breath})`}>
+        <path d="M-96,-88 q-8,-46 26,-58 q42,-16 88,-10 q38,6 48,34 q8,24 -2,44 q-30,10 -66,10 q-8,-8 -16,0 q-10,-8 -18,0 q-10,-8 -18,1 q-8,-8 -16,-1 q-8,-6 -16,-4 q-6,-8 -10,-16 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        <path d="M58,-122 q10,28 0,44 q-20,7 -42,8 q34,-22 28,-54 Z" fill={t.shade} opacity={0.5} />
+        <RimLight d="M-96,-88 q-8,-46 26,-58 q42,-16 88,-10" w={3.5} opacity={0.6} />
+        {/* shag streaks */}
+        {[[-70, -100], [-40, -116], [-8, -120], [22, -112], [-56, -76]].map(([wx, wy], i) => (
+          <path key={i} d={`M${wx},${wy} q3,7 0,14`} fill="none" stroke={t.shade} strokeWidth={2.5} strokeLinecap="round" opacity={0.55} />
+        ))}
+      </g>
+      {/* stub tail up */}
+      <path d="M-94,-100 q-12,-6 -12,-18 q10,-2 16,8 Z" fill={t.core} stroke={INK} strokeWidth={4} />
+      {/* neck + head: long face, black nose, BEARD, spike horns */}
+      <g transform={`translate(74,-128) rotate(${climb ? -8 : 2})`}>
+        <path d="M-26,6 q-4,-24 16,-32 q24,-8 38,4 q12,12 8,28 q-4,18 -28,18 q-26,0 -34,-18 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+        {/* long muzzle, black nose pad */}
+        <path d="M28,-2 q16,4 20,16 q0,10 -12,11 q-14,1 -18,-9 q-2,-12 10,-18 Z" fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        <path d="M44,14 q6,2 4,7 l-8,-2 Z" fill="#22201c" stroke={INK} strokeWidth={2.5} />
+        <ellipse cx={8} cy={-8} rx={5.5} ry={5} fill="#c8a44a" stroke={INK} strokeWidth={2.5} />
+        <circle cx={9} cy={-7} r={2.5} fill={INK} />
+        {/* the BEARD, swaying */}
+        <g transform={`translate(18,22) rotate(${beardSway})`}>
+          <path d="M0,0 q-8,4 -8,18 q0,8 6,12 q8,-2 10,-12 q2,-12 -8,-18 Z" fill={t.core} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+          <path d="M-2,6 q-1,8 1,14 M4,6 q1,8 0,14" fill="none" stroke={t.shade} strokeWidth={2} opacity={0.6} />
+        </g>
+        {/* ear */}
+        <g transform={`translate(-16,-18) rotate(${earFlick})`}>
+          <path d="M0,0 q-16,-2 -22,-12 q10,-6 22,0 Z" fill={t.core} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+        </g>
+        {/* short BLACK recurved spike horns (both sexes) */}
+        <path d="M-4,-26 q-4,-18 6,-30 q6,10 4,30 Z" fill="#2a2622" stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
+        <path d="M10,-28 q-2,-20 10,-32 q6,12 2,32 Z" fill="#3a342e" stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
+      </g>
+      {/* climb: a tiny cliff ledge under the hooves */}
+      {climb && (
+        <g>
+          <path d="M-90,0 L96,0 L110,26 q-60,14 -140,10 q-50,-4 -84,-14 Z" fill="#6a7280" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M-70,8 q30,8 70,6 M-20,18 q26,4 60,0" fill="none" stroke="#4c5460" strokeWidth={3} opacity={0.7} />
+        </g>
+      )}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- BLACK BEAR
+// NET-NEW 2026-07-20d (gap list). Deliberately DISTINCT from Grizzly: NO
+// shoulder hump, straight roman face line, taller pointed ears, rangier build,
+// glossy blue-black coat with a tan muzzle. `stance` 'all4' | 'stand';
+// `sniff` 0..1 lifts the nose to test the air. Idles: nose wiggle, ear turn,
+// weight shift.
+export const BlackBear: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  stance?: 'all4' | 'stand'; sniff?: number;
+}> = ({x, y, scale = 1, f, facing = 1, stance = 'all4', sniff = 0}) => {
+  const id = uid(`bbear${x}${y}`);
+  const t = tones('#33302f');            // glossy blue-black
+  const sn = Math.max(0, Math.min(1, sniff));
+  const all4 = stance === 'all4';
+  const shift = 2 * Math.sin(f / 26);
+  const noseWiggle = sn * 2.5 * Math.sin(f / 4);
+  const earTurn = 5 * Math.sin(f / 19);
+  const breath = 1 + 0.014 * Math.sin(f / 15);
+  const head = (hx: number, hy: number, rot: number) => (
+    <g transform={`translate(${hx},${hy}) rotate(${rot - sn * 22})`}>
+      {/* TALL rounded ears (bigger than Grizzly's nubs), drawn FIRST and tucked
+          into the skull so they attach (pass 1: separate circles read Mickey) */}
+      {[[-12, -18, -8], [14, -20, 10]].map(([ex, ey, er], i) => (
+        <g key={i} transform={`translate(${ex},${ey}) rotate(${(er as number) + earTurn})`}>
+          <circle r={8.5} fill={t.base} stroke={INK} strokeWidth={4} />
+          <circle r={3.8} cy={1} fill={t.shade} />
+        </g>
+      ))}
+      {/* straight roman profile: flat forehead-to-nose line (the anti-Grizzly) */}
+      <path d="M-26,6 q-4,-26 18,-32 q26,-8 44,2 q10,6 8,18 q-2,16 -26,18 q-30,2 -44,-6 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+      {/* tan muzzle straight off the brow */}
+      <g transform={`translate(0,${noseWiggle * 0.4})`}>
+        <path d="M30,-8 q18,2 24,12 q2,10 -10,12 q-16,2 -22,-8 q-2,-10 8,-16 Z" fill="#a8845c" stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        <path d={`M48,2 q7,2 5,8 l-9,-2 Z`} fill={INK} />
+      </g>
+      <ellipse cx={8} cy={-10} rx={4.5} ry={4} fill="#6a4a2e" stroke={INK} strokeWidth={2.5} />
+      <circle cx={9} cy={-9} r={2.2} fill={INK} />
+    </g>
+  );
+  return (
+    <g transform={`translate(${x + (all4 ? shift : 0)},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={4} rx={all4 ? 104 : 66} ry={16} opacity={0.3} blur={11} />
+      {all4 ? (
+        <g>
+          {/* rangy legs */}
+          {[-72, -40, 38, 68].map((lx, i) => (
+            <g key={i}>
+              <rect x={lx - 10} y={-84} width={20} height={80} rx={8} fill={i % 2 ? t.core : t.base} stroke={INK} strokeWidth={5.5} />
+              <path d={`M${lx - 12},-6 q10,-6 24,0 l0,6 -24,0 Z`} fill={t.shade} stroke={INK} strokeWidth={4} />
+            </g>
+          ))}
+          {/* level back, rump highest — NO hump */}
+          <g transform={`scale(1,${breath})`}>
+            <path d="M-96,-80 q-10,-44 26,-56 q44,-16 96,-10 q36,6 44,32 q6,22 -2,40 q-60,16 -132,6 q-26,-6 -32,-12 Z"
+              fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+            {/* glossy sheen band */}
+            <path d="M-70,-124 q50,-14 96,-6" fill="none" stroke="#5c5654" strokeWidth={5} opacity={0.5} strokeLinecap="round" />
+            <RimLight d="M-96,-80 q-10,-44 26,-56 q44,-16 96,-10" w={3.5} opacity={0.55} />
+          </g>
+          <path d="M-94,-88 q-12,0 -14,10 q8,6 16,0 Z" fill={t.core} stroke={INK} strokeWidth={4} />
+          {head(84, -110, 4)}
+        </g>
+      ) : (
+        <g>
+          {/* standing: slim pear, forepaws hanging */}
+          <g transform={`scale(1,${breath})`}>
+            <path d="M-40,-4 q-22,-56 -12,-118 q8,-50 44,-58 q38,-8 54,28 q14,34 8,86 q-4,38 -14,62 Z"
+              fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+            <RimLight d="M-52,-122 q8,-50 44,-58 q38,-8 54,28" w={3.5} opacity={0.55} />
+            {/* small tan chest blaze (common on blacks); pass 1 also stacked a
+                big shade overlay here that read as a hole in the belly */}
+            <path d="M14,-140 q9,7 9,22 q-2,10 -11,12 q-5,-15 -5,-27 q2,-7 7,-7 Z" fill="#a8845c" opacity={0.85} stroke={INK} strokeWidth={3} />
+          </g>
+          {/* hanging forepaws: edge-lit so they read as limbs IN FRONT of the
+              chest, not holes in it (pass-2 note: dark-on-dark showed voids) */}
+          <g transform={`translate(42,-98) rotate(${10 + 3 * Math.sin(f / 12)})`}>
+            <path d="M0,0 q16,10 14,34 q-2,10 -12,10 q-10,-2 -10,-14 q0,-20 8,-30 Z" fill="#454140" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+            <path d="M0,0 q16,10 14,34" fill="none" stroke="#6a6462" strokeWidth={3} opacity={0.9} strokeLinecap="round" />
+          </g>
+          <g transform={`translate(-30,-94) rotate(${-8 - 3 * Math.sin(f / 12)})`}>
+            <path d="M0,0 q-12,12 -8,34 q2,10 12,8 q8,-2 8,-14 q-2,-18 -12,-28 Z" fill="#454140" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+            <path d="M0,0 q-12,12 -8,34" fill="none" stroke="#6a6462" strokeWidth={3} opacity={0.9} strokeLinecap="round" />
+          </g>
+          {/* planted hind feet */}
+          <path d="M-34,0 q2,-10 16,-10 q12,0 12,10 Z" fill={t.shade} stroke={INK} strokeWidth={4.5} />
+          <path d="M8,0 q2,-10 16,-10 q12,0 12,10 Z" fill={t.shade} stroke={INK} strokeWidth={4.5} />
+          {head(18, -196, -6)}
+        </g>
+      )}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- WALRUS
+// NET-NEW 2026-07-20d (gap list). The hauled-out heavyweight: mountain of
+// cinnamon blubber with skin folds, long white TUSKS, bristle mustache pad,
+// tiny bloodshot eyes. `huff` 0..1 rears the chest up on the fore flippers
+// with a visible breath puff. Idles: bulk breath, whisker shiver, rear-flipper
+// flap.
+export const Walrus: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1; huff?: number;
+}> = ({x, y, scale = 1, f, facing = 1, huff = 0}) => {
+  const id = uid(`walrus${x}${y}`);
+  const t = tones('#b87a5c');            // cinnamon hide
+  const hf = Math.max(0, Math.min(1, huff));
+  const breath = 1 + 0.02 * Math.sin(f / 13);
+  const whisker = 1.5 * Math.sin(f / 6);
+  const flap = 12 * Math.max(0, Math.sin(f / 22));
+  const rear = hf * 16;                    // chest lift
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={4} rx={130} ry={18} opacity={0.3} blur={12} />
+      {/* rear flipper fan, lazy flap */}
+      <g transform={`translate(-118,-16) rotate(${flap})`}>
+        <path d="M0,0 q-26,-14 -34,-34 q14,-8 28,2 q-2,-14 8,-22 q12,6 12,22 q14,-8 22,0 q-6,20 -36,32 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      </g>
+      {/* body + head rear TOGETHER about the tail base (pass 2: the pass-1
+          body path self-deformed with huff and the head floated free) */}
+      <g transform={`rotate(${-hf * 9} -118 0)`}>
+        <g transform={`scale(1,${breath})`}>
+          {/* the blubber mound: high shoulder, tapered rear */}
+          <path d="M-126,-2 q-12,-42 22,-64 q36,-24 84,-26 q46,-2 74,20 q20,16 22,38 q2,22 -10,34 q-70,14 -140,6 q-40,-6 -52,-8 Z"
+            fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+          {/* skin folds across the shoulder */}
+          {[[-84, -30, 44], [-44, -52, 52], [2, -66, 48]].map(([fx2, fy2, fw], i) => (
+            <path key={i} d={`M${fx2},${fy2} q${(fw as number) / 2},${10 + i * 2} ${fw},0`} fill="none" stroke={t.shade} strokeWidth={4} opacity={0.6} strokeLinecap="round" />
+          ))}
+          <RimLight d="M-104,-66 q36,-24 84,-26 q46,-2 74,20" w={3.5} opacity={0.5} />
+        </g>
+        {/* head: merged into the front of the mound */}
+        <g transform={`translate(78,-56)`}>
+          <path d="M-30,10 q-8,-30 16,-40 q26,-10 42,6 q12,12 8,28 q-6,20 -32,18 q-26,-2 -34,-12 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          {/* bloodshot little eye */}
+          <ellipse cx={0} cy={-14} rx={4} ry={3.5} fill="#d8b09a" stroke={INK} strokeWidth={2.5} />
+          <circle cx={1} cy={-13.5} r={1.8} fill={INK} />
+          {/* the MUSTACHE pad: bristle dots, shivering */}
+          <g transform={`translate(${whisker},0)`}>
+            <path d="M14,-8 q18,2 22,14 q0,10 -12,12 q-18,2 -24,-10 q-2,-10 14,-16 Z" fill="#d8b09a" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+            {[[22, 0], [29, 4], [22, 8], [31, 10], [25, 13], [34, 5]].map(([bx, by], i) => (
+              <circle key={i} cx={bx} cy={by} r={1.6} fill={INK} opacity={0.8} />
+            ))}
+          </g>
+          {/* the TUSKS: long white sabers */}
+          <path d="M14,16 q4,40 -4,72 q-7,-3 -8,-12 q-2,-32 3,-60 Z" fill="#f0ead8" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+          <path d="M28,16 q5,36 -1,64 q-7,-3 -8,-11 q-3,-27 0,-53 Z" fill="#e0d8c2" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+        </g>
+      </g>
+      {/* fore flipper stays planted while the chest rears */}
+      <path d="M30,-4 q2,-24 24,-28 q18,-2 22,14 q2,14 -14,18 q-20,4 -32,-4 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      {/* huff: breath puff */}
+      {hf > 0.4 && (
+        <g opacity={(hf - 0.4) * 1.6}>
+          {[0, 1, 2].map((i) => (
+            <circle key={i} cx={140 + i * 16 + hf * 10} cy={-92 - rear * 2 - i * 12} r={7 + i * 4} fill="#eef2f4" opacity={0.7 - i * 0.18} />
+          ))}
+        </g>
+      )}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- BELUGA
+// NET-NEW 2026-07-20d (gap list, bestiary complete). The white whale: bulbous
+// MELON forehead, no dorsal fin (just a ridge), permanent upcurved smile.
+// `mode` 'cruise' (waterline at y=0, gentle undulation + optional `blow` mist)
+// | 'spy' (vertical spyhop, head high). Idles: melon wobble, fluke beat,
+// smile-eye squint.
+export const Beluga: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  mode?: 'cruise' | 'spy'; blow?: number;
+}> = ({x, y, scale = 1, f, facing = 1, mode = 'cruise', blow = 0}) => {
+  const id = uid(`beluga${x}${y}`);
+  const t = tones('#e8ecec');            // white whale
+  const bl = Math.max(0, Math.min(1, blow));
+  const cruise = mode === 'cruise';
+  const undulate = 3 * Math.sin(f / 14);
+  const flukeBeat = 10 * Math.sin(f / 14 - 1.2);
+  const melonWobble = 1 + 0.05 * Math.sin(f / 9);
+  const bob = cruise ? 2 * Math.sin(f / 18) : 0;
+  const body = (
+    <g>
+      {/* smooth torpedo, melon up top, NO dorsal — just a ridge line */}
+      <path d="M-118,-24 q-6,-30 30,-40 q48,-16 96,-10 q40,6 52,26 q8,16 0,30 q-52,20 -120,12 q-46,-6 -58,-18 Z"
+        fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+      <path d="M-58,-62 q40,-10 84,-6" fill="none" stroke={t.shade} strokeWidth={3} opacity={0.6} strokeLinecap="round" />
+      <RimLight d="M-118,-24 q-6,-30 30,-40 q48,-16 96,-10" w={3.5} opacity={0.6} />
+      {/* side flipper, small + curled */}
+      <path d={`M6,-8 q10,16 2,${28 + undulate * 0.6} q-14,2 -18,-10 q-2,-12 16,-18 Z`} fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+      {/* flukes on a narrow peduncle, beating */}
+      <g transform={`translate(-112,-30) rotate(${flukeBeat})`}>
+        <path d="M0,0 q-22,-2 -34,-16 q10,-10 26,-4 q-4,-12 6,-18 q10,6 10,20 q14,-4 22,4 q-8,12 -30,14 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      </g>
+      {/* head: MELON + smile (pass 2: sat at x=70, fully off the nose) */}
+      <g transform={`translate(30,-40)`}>
+        <g transform={`scale(1,${melonWobble})`}>
+          <path d="M-18,-14 q4,-18 24,-16 q16,2 18,16 Z" fill={t.base} stroke={INK} strokeWidth={4} strokeLinejoin="round" opacity={0.9} />
+        </g>
+        {/* the SMILE: upcurved mouth line */}
+        <path d="M8,22 q16,6 30,-2" fill="none" stroke={INK} strokeWidth={3.5} strokeLinecap="round" />
+        <circle cx={6} cy={4} r={3.4} fill={INK} />
+        <path d="M2,-1 q4,-3 8,-1" fill="none" stroke={INK} strokeWidth={2} opacity={0.6} />
+      </g>
+    </g>
+  );
+  return (
+    <g transform={`translate(${x},${y + bob}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      {cruise ? (
+        <g transform={`rotate(${undulate * 0.6})`}>
+          {body}
+          {/* blowhole mist */}
+          {bl > 0.05 && (
+            <g opacity={bl}>
+              {[0, 1, 2].map((i) => (
+                <ellipse key={i} cx={44 + (i - 1) * 10} cy={-78 - i * 14 - bl * 8} rx={6 + i * 5} ry={4 + i * 3} fill="#eef5f8" opacity={0.75 - i * 0.2} />
+              ))}
+            </g>
+          )}
+        </g>
+      ) : (
+        <g>
+          {/* spyhop: near-vertical, head clear of the waterline (y=0 is the
+              surface); rings BEHIND so the body emerges through them */}
+          <ellipse cx={0} cy={2} rx={64} ry={12} fill="none" stroke="#cfe6f0" strokeWidth={5} opacity={0.8} />
+          <ellipse cx={0} cy={2} rx={88 + 6 * Math.sin(f / 9)} ry={16} fill="none" stroke="#cfe6f0" strokeWidth={3} opacity={0.4} />
+          <g transform="rotate(-82 0 0) translate(30,16)">{body}</g>
+        </g>
+      )}
+    </g>
+  );
+};

@@ -41,9 +41,14 @@ one line: `Name — kind — file — params/poses — status`.
 - `KingCrab` — water/comic — fauna.tsx — NET-NEW 2026-07-20c: Bering Sea money crab; spiky carmine carapace, googly eyestalks, one OVERSIZED snapping right claw (`clawSnap`), six wave-phase scuttle legs (`scuttle`); cleared first pass — ACTIVE
 - `Mosquito` — air/comic — fauna.tsx — NET-NEW 2026-07-20c: the unofficial state bird, built for comic beats; comically long proboscis, red eye, whiny wing blur, striped abdomen, dangly legs; `divebomb` attack arc, `swat` tumble w/ dizzy stars; cleared first pass — ACTIVE
 - `SledDogTeam` — land — fauna.tsx — PROMOTED 2026-07-20d out of Episode.tsx (built 07-18): gallop gait (two-segment folding legs, suspension bound), 180° motion smear via `vx`, form-shaded amber coats, gang line; `dogs` 1-6 sets the string length — ACTIVE
+- `Lynx` — land — fauna.tsx — NET-NEW 2026-07-20d: the snow ghost; black EAR TUFTS + wide facial ruff + stub black-tipped tail + snowshoe paws; `stance` sit (seated triangle, rebuilt pass 2) / stalk (belly-low creep w/ folded Z-legs); slow blink, ear-tuft swivel, tail twitch — ACTIVE
+- `MountainGoat` — land/alpine — fauna.tsx — NET-NEW 2026-07-20d: chalk-white shag w/ pantaloon fringe, chin BEARD (swaying), short BLACK recurved spike horns (deliberately distinct from DallSheep's amber curls); `stance` stand / climb (24° grade on a drawn cliff ledge); cleared first pass — ACTIVE
+- `BlackBear` — land — fauna.tsx — NET-NEW 2026-07-20d: deliberately the anti-Grizzly: NO hump, straight roman face, tall attached ears (pass 2: tucked into the skull), glossy blue-black w/ tan muzzle + small chest blaze; `stance` all4 / stand, `sniff` lifts the nose; stand paws edge-lit + breaking the silhouette (passes 2-3) — ACTIVE
+- `Walrus` — coastal — fauna.tsx — NET-NEW 2026-07-20d: hauled-out blubber mound w/ skin folds, long white TUSKS, bristle mustache pad, bloodshot eye; `huff` 0..1 rears chest+head TOGETHER about the tail base (pass-2 rebuild after the body deformed apart from the head) w/ breath puff; rear-flipper flap idle — ACTIVE
+- `Beluga` — water — fauna.tsx — NET-NEW 2026-07-20d: white whale w/ bulbous MELON (wobble idle), NO dorsal (ridge line), permanent upcurved smile; `mode` cruise (waterline y=0, undulation, `blow` mist) / spy (near-vertical spyhop emerging THROUGH splash rings); face repositioned onto the nose in pass 2 — ACTIVE
 
-### Bestiary gaps remaining (the 2026-07-20 library session banked 12 of the 14)
-lynx, mountain goat, black bear (distinct build from Grizzly), walrus, beluga.
+### Bestiary gaps
+NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam promotion (21 fauna assets total). Future growth is story-driven (new poses on existing cast count).
 
 ## Props & set pieces
 - `AlaskaMini` — map of Alaska w/ pulsing pin — kit.tsx — ACTIVE

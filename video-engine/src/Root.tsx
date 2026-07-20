@@ -13,6 +13,7 @@ import { PropsShowcase } from './PropsShowcase';
 import { FaunaShowcase2 } from './FaunaShowcase2';
 import { FaunaShowcase3 } from './FaunaShowcase3';
 import { FaunaShowcase4 } from './FaunaShowcase4';
+import { FaunaShowcase5 } from './FaunaShowcase5';
 import { z } from 'zod';
 
 const standoffSchema = z.object({
@@ -138,6 +139,14 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="FaunaShowcase4"
         component={FaunaShowcase4}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="FaunaShowcase5"
+        component={FaunaShowcase5}
         durationInFrames={150}
         fps={30}
         width={1080}

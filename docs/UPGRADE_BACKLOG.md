@@ -63,14 +63,17 @@ compounds slowly, and each run's hero is built under time pressure inside the pi
   sets — so a run composes a showstopper from a rich shelf instead of authoring the hero from
   scratch every time.
 
-**STATUS 2026-07-20 (session 1): 9 assets landed, all taste-looped.** Bestiary +4 (Grizzly —
-redone once, per-stance anatomy; Caribou — antlers resized; Orca — dorsal blade rebuilt; Puffin —
-first pass), a NEW vehicle kit `lib/vehicles.tsx` (BushPlane 3-mode, Snowmachine, FishingBoat), and
-a NEW shared biome home `lib/biomes.tsx` (AuroraNightBG — the long-backlogged night/aurora rig,
-curtains softened in pass 2; TundraBG). All registered in ASSET_MANIFEST. REMAINING for later
-sessions: bestiary tail (wolf, fox, dall sheep, sea otter, humpback, ptarmigan, king crab,
-mosquito), coastal/fjord + glacier + river + main-street + oilfield biomes, a generalized props
-kit, and promoting SledDogTeam out of Episode.tsx.
+**STATUS 2026-07-20 (COMPLETE — the full session landed everything on this list, all
+taste-looped).** Final tally: bestiary at 21 (Moose, Raven, BaldEagle, Salmon, Grizzly, Caribou,
+Orca, Puffin, Wolf, RedFox, DallSheep, SeaOtter, Humpback, Ptarmigan, KingCrab, Mosquito, Lynx,
+MountainGoat, BlackBear, Walrus, Beluga + SledDogTeam promoted out of Episode.tsx with `dogs`
+param); vehicle kit `lib/vehicles.tsx` (BushPlane 3-mode, Snowmachine, FishingBoat); biome kit
+`lib/biomes.tsx` at seven shared biomes (AuroraNightBG, TundraBG, FjordBG, GlacierBG, RiverBG,
+MainStreetBG, OilfieldBG — every candidate built); generalized props kit `lib/props.tsx` (nine
+props, all story copy parameterized). Everything registered in ASSET_MANIFEST.md with pose/param
+docs; look-dev comps FaunaShowcase2-5, BiomeShowcase1-3, PropsShowcase. The per-run growth mandate
+now composes from this shelf by default (dispatch_routine.md §4.3a) and grows it only where a story
+finds a real gap.
 
 **Approach:** treat it like a studio "model sheet" sprint. Pick the 15-20 highest-frequency Alaska
 subjects, build them to the Vale/Sourdough bar with idle animation + emotion params, register each
