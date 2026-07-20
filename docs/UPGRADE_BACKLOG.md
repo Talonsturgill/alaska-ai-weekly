@@ -63,6 +63,15 @@ compounds slowly, and each run's hero is built under time pressure inside the pi
   sets — so a run composes a showstopper from a rich shelf instead of authoring the hero from
   scratch every time.
 
+**STATUS 2026-07-20 (session 1): 9 assets landed, all taste-looped.** Bestiary +4 (Grizzly —
+redone once, per-stance anatomy; Caribou — antlers resized; Orca — dorsal blade rebuilt; Puffin —
+first pass), a NEW vehicle kit `lib/vehicles.tsx` (BushPlane 3-mode, Snowmachine, FishingBoat), and
+a NEW shared biome home `lib/biomes.tsx` (AuroraNightBG — the long-backlogged night/aurora rig,
+curtains softened in pass 2; TundraBG). All registered in ASSET_MANIFEST. REMAINING for later
+sessions: bestiary tail (wolf, fox, dall sheep, sea otter, humpback, ptarmigan, king crab,
+mosquito), coastal/fjord + glacier + river + main-street + oilfield biomes, a generalized props
+kit, and promoting SledDogTeam out of Episode.tsx.
+
 **Approach:** treat it like a studio "model sheet" sprint. Pick the 15-20 highest-frequency Alaska
 subjects, build them to the Vale/Sourdough bar with idle animation + emotion params, register each
 in `ASSET_MANIFEST.md`. The per-run growth mandate then shifts from "build a hero from zero" to
