@@ -150,13 +150,32 @@ def main():
         f"<tr><td>{esc(c['name'])}</td><td>{c['score']}</td>"
         f"<td>{c['weight']}</td><td>{esc(str(c.get('notes', '')))[:160]}</td></tr>"
         for c in score.get("criteria", []))
-    ship = score.get("ship", False)
+    # Scorer-key aliasing: the scorer agent's native JSON uses 'ships',
+    # 'ship_threshold', and 'weakest_criteria' (a list), while the documented
+    # schema / this script historically read 'ship', 'threshold',
+    # 'weakest_criterion' (singular). Accept EITHER spelling so an
+    # agent-native score_report never renders the wrong "shipped below
+    # threshold" banner (the showrunner had to hand-write both spellings,
+    # recurring 2026-07-19/20). Never mutates score_report.json.
+    def _alias(*keys, default=None):
+        for k in keys:
+            v = score.get(k)
+            if v is not None and v != "":
+                return v
+        return default
+
+    ship = bool(_alias("ship", "ships", default=False))
+    threshold = _alias("threshold", "ship_threshold", default="?")
+    weakest = _alias("weakest_criterion", default=None)
+    if weakest is None:
+        wc = score.get("weakest_criteria")
+        weakest = wc[0] if isinstance(wc, list) and wc else "?"
     ship_html = (
         f'<div class="ok"><b>Quality gate passed:</b> {score.get("weighted_total", "?")} / 10 '
-        f'(threshold {score.get("threshold", "?")}).</div>' if ship else
+        f'(threshold {threshold}).</div>' if ship else
         f'<div class="flag"><b>Shipped below threshold.</b> '
-        f'{score.get("weighted_total", "?")} / 10 vs {score.get("threshold", "?")}. '
-        f'Weakest: {esc(str(score.get("weakest_criterion", "?")))}. '
+        f'{score.get("weighted_total", "?")} / 10 vs {threshold}. '
+        f'Weakest: {esc(str(weakest))}. '
         f'Fix next time: {esc(str(score.get("one_sentence_fix", "?")))}</div>')
     notes = esc(str(score.get("editor_notes_for_email", "") or "None."))
 

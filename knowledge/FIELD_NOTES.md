@@ -746,3 +746,71 @@ accept either key spelling (ship||ships, threshold||ship_threshold,
 weakest_criterion||weakest_criteria[0]), OR have the scorer emit both. Weakens
 no gate; removes a wrong-banner risk. Held this run (Phase 12 budget spent on
 the two applied fixes).
+[RESOLVED by upgrade(2026-07-20): gmail_draft.py now resolves ship via
+ship||ships, threshold via threshold||ship_threshold, and weakest via
+weakest_criterion||weakest_criteria[0] through a local _alias() helper, so an
+agent-native score_report renders the correct banner with no hand-editing.]
+
+## 2026-07-20 - Carousel No. 12 "Written in Pencil" (8.55, shipped, merged)
+
+Clean run: no usage-limit degradation, no environment breakage, no retries; the
+akthree GPU pencil hero (S5) rendered. Scorer weakest criterion was artwork
+craft (7): 8 of 9 slides are deliberately flat editorial argument with one
+rendered hero, and the hero reads slightly like a gold rod without a fully
+distinct graphite writing tip (logged growth edge, not gate-level).
+
+- COMPOSITION BLIND SPOT (recurring, confirmed via machine_qa.json): S6's
+  headline overprinted the ISOTYPE grid of SVG <rect> marks and BOTH the
+  text-vs-text collision gate (07-08) and the PNG busy-art edge-density
+  tripwire (07-10) passed it clean -- only the pixel critic caught it. The grid
+  rects are low-contrast enough that bg edge density under the headline glyphs
+  stayed below the 0.03 warn floor. Same class as canvas/SVG art invisible to
+  the DOM text-vs-text walk.
+- Minor recurring (authoring discipline, not gate-level): two bodies wrapped to
+  4 lines vs a 3-line dossier target (render.py reports line boxes); several
+  data-decorative kickers/labels at 18-23px pass qa as data-decorative;
+  low-contrast gold counters (~1.5-2.9:1) on lit-paper slides pass qa because
+  they are data-decorative furniture (parked 07-11 contrast-floor idea).
+
+### Phase 12 PARKED candidates (2026-07-20)
+
+Frontier focus: typography / layout craft (last touched 2026-07-09; distinct
+from the last four foci procedural-relief 07-15, editorial-dataviz 07-17,
+LinkedIn-platform 07-18, headless-Chromium 07-19).
+
+- PARKED - SVG/DOM TEXT-HALO helper (the aklabel.js analogue for vector text).
+  aklabel.js gives canvas-drawn labels an opaque knockout plate, but DOM/SVG
+  text sitting over SVG marks (this run's S6 headline over the ISOTYPE grid; any
+  label over relief/chart marks) has no equivalent. The settled dataviz
+  technique is a TEXT HALO: a contrasting-color outline behind the glyphs so
+  contrast depends on (text, halo) not the art beneath. Concrete portable
+  implementation, no new dep: SVG <text> with stroke=<halo-color>,
+  stroke-width ~= 0.12-0.18em, stroke-linejoin=round, and paint-order="stroke
+  fill" so the halo paints behind the fill (single element, no duplicate);
+  halo color auto-picked near-black/near-white from the text luminance, mirroring
+  aklabel's plate rule. Held: it is an IMPROVEMENT not a reactive fix (the daily
+  0-1 budget was taken by the score-key fix), and it edits shared rendering craft
+  wanting a multi-deck A/B. Sources:
+  https://data.europa.eu/apps/data-visualisation-guide/text-halos ,
+  https://courses.ems.psu.edu/geog486/node/557
+- PARKED - text-over-SVG-mark QA warn (bounding the S6 blind spot). A gate that
+  intersected primary text boxes against non-text SVG marks (<rect>/<path>/
+  <circle>/<line>) would catch the ISOTYPE-grid overprint the two existing gates
+  miss, BUT it false-positives on the many slides where text legitimately sits
+  over background panels, cards, and chips. Not safely boundable this run without
+  a mark-intent attribute (a data-mark or data-overlap-ok on the art, analogous
+  to the text-side data-overlap-ok the 07-08 gate already honors). Bounded near
+  term is authoring guidance instead: put a halo (above helper) under any
+  headline that crosses a mark field. Held pending the intent-attribute design.
+- PARKED - tabular lining figures on number-heavy stat slides. Datawrapper /
+  Type Network confirm tabular figures (font-feature-settings "tnum" 1, or a
+  lining/tabular numeral style) align numerals in columns and all-cap headline
+  settings; several stat slides (S8 borough list, S6 step numbers) would read
+  cleaner with tnum locked on. Craft note, not a gate. Sources:
+  https://www.datawrapper.de/blog/fonts-for-data-visualization ,
+  https://typenetwork.com/articles/opentype-at-work-figure-styles
+- RECONFIRMED (no change): CSS text-wrap: balance/pretty still do NOT guarantee
+  a headline line count nor prevent overflow, and pretty ignores widows (Chrome
+  for Developers / MDN, Sept 2025) -- so aktype.js AK.fitText (JS binary-search
+  fit-to-box) remains the correct headline mechanism, unchanged since 07-09. The
+  4-line body overflow is authoring discipline, not a wrap-CSS fix.
