@@ -841,3 +841,150 @@ export const SeaOtter: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------- HUMPBACK
+// NET-NEW 2026-07-20c (asset-library session #2). The whale of Southeast:
+// knobbled head (tubercles), impossibly long white pectorals, throat grooves,
+// the fluke-up dive. `mode`: 'breach' (body arcing clear, pecs flung, spray),
+// 'fluke' (the classic tail-up dive silhouette), 'cruise' (level swim, blow).
+export const Humpback: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  mode?: 'cruise' | 'breach' | 'fluke';
+}> = ({x, y, scale = 1, f, facing = 1, mode = 'cruise'}) => {
+  const id = uid(`hump${x}${y}`);
+  const t = tones('#2c3a4a');            // slate blue-gray
+  const undul = 3 * Math.sin(f / 12);
+  if (mode === 'fluke') {
+    // the classic dive: tail stock rising out of the water, flukes spread
+    const drip = (f % 40) / 40;
+    return (
+      <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+        <FormGradient id={id} t={t} />
+        {/* waterline */}
+        <path d={`M-140,0 q70,${5 + 3 * Math.sin(f / 9)} 140,0 q70,-5 150,2`} fill="none" stroke="#7fb6d9" strokeWidth={6} strokeLinecap="round" opacity={0.8} />
+        {/* tail stock arcing up */}
+        <path d="M-40,6 q-10,-70 24,-118 q10,-12 24,-10 q16,26 10,64 q-6,42 -30,70 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        {/* the flukes: two trailing-edge-scalloped blades, white beneath */}
+        <g transform={`translate(10,-120) rotate(${4 * Math.sin(f / 16)})`}>
+          <path d="M0,0 q-46,-28 -88,-20 q-10,14 4,26 q40,22 82,10 Z" fill={t.base} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+          <path d="M2,0 q48,-30 92,-24 q12,14 -2,28 q-42,24 -88,12 Z" fill={t.core} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+          <path d="M-84,-16 q40,18 80,10 l-2,8 q-40,10 -76,-8 Z" fill="#e8eef4" opacity={0.85} />
+        </g>
+        {/* dripping water off the flukes */}
+        {[0, 1, 2].map((k) => (
+          <circle key={k} cx={-30 + k * 34} cy={-96 + drip * 90 + k * 8} r={3.5 - k * 0.6} fill="#cfe6f2" opacity={Math.max(0, 0.9 - drip)} />
+        ))}
+      </g>
+    );
+  }
+  if (mode === 'breach') {
+    return (
+      <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) rotate(-34)`}>
+        <FormGradient id={id} t={t} />
+        {/* arcing body clear of the water */}
+        <path d="M-140,-10 q-16,-40 20,-58 q60,-34 150,-28 q60,6 76,40 q10,26 -8,44 q-90,30 -180,14 q-46,-8 -58,-12 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={6.5} strokeLinejoin="round" />
+        {/* throat grooves */}
+        {[0, 1, 2, 3].map((k) => (
+          <path key={k} d={`M${-60 + k * 6},${10 - k * 10} q90,22 170,6`} fill="none" stroke="#e8eef4" strokeWidth={3} opacity={0.5} />
+        ))}
+        {/* the LONG white pectoral flung out */}
+        <g transform={`translate(30,-6) rotate(${18 + 6 * Math.sin(f / 10)})`}>
+          <path d="M0,0 q40,44 96,58 q16,-4 12,-20 q-30,-44 -84,-56 q-20,2 -24,18 Z" fill="#e8eef4" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          {/* knobbled leading edge */}
+          {[0.25, 0.5, 0.75].map((tt, i) => <circle key={i} cx={tt * 96} cy={tt * 52 - 6} r={3} fill={t.shade} opacity={0.7} />)}
+        </g>
+        {/* knobbled rostrum (tubercles) + eye + jaw line */}
+        {[[112, -54], [128, -44], [140, -30]].map(([tx, ty], i) => <circle key={i} cx={tx} cy={ty} r={3.4} fill={t.key} stroke={INK} strokeWidth={2} />)}
+        <circle cx={104} cy={-6} r={6} fill={INK} />
+        <path d="M150,-16 q-40,18 -96,14" fill="none" stroke={INK} strokeWidth={4} opacity={0.7} />
+        <RimLight d="M-140,-10 q-16,-40 20,-58 q60,-34 150,-28" w={4} opacity={0.6} />
+        {/* breach spray sheeting off */}
+        {[0, 1, 2, 3, 4].map((k) => (
+          <circle key={k} cx={-100 - k * 22 + 8 * Math.sin(f / 5 + k)} cy={30 + k * 12} r={7 - k} fill="#cfe6f2" opacity={0.8 - k * 0.14} />
+        ))}
+      </g>
+    );
+  }
+  // cruise: level swim with the blow
+  return (
+    <g transform={`translate(${x},${y + undul}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <path d={`M-160,-16 q70,${6 + 3 * Math.sin(f / 8)} 160,0 q80,-6 170,4`} fill="none" stroke="#7fb6d9" strokeWidth={6} strokeLinecap="round" opacity={0.7} />
+      {/* long back breaking the surface, small dorsal hump */}
+      <path d="M-130,-18 q-8,-30 30,-40 q70,-22 150,-12 q44,6 56,26 q6,14 -4,22 q-100,18 -186,8 q-40,-6 -46,-4 Z"
+        fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M28,-62 q12,-10 22,-2 q4,8 -4,14 q-14,2 -18,-12 Z" fill={t.base} stroke={INK} strokeWidth={4.5} />
+      {/* knobbled rostrum + eye */}
+      {[[86, -50], [100, -42], [112, -32]].map(([tx, ty], i) => <circle key={i} cx={tx} cy={ty} r={3} fill={t.key} stroke={INK} strokeWidth={2} />)}
+      <circle cx={78} cy={-18} r={5.5} fill={INK} />
+      <RimLight d="M-130,-18 q-8,-30 30,-40 q70,-22 150,-12" w={3.5} opacity={0.55} />
+      {/* the blow: a tall V mist column */}
+      <g opacity={0.5 + 0.3 * Math.sin(f / 20)}>
+        {[0, 1, 2, 3].map((k) => (
+          <circle key={k} cx={96 + (k % 2 ? 7 : -7) * (k / 2)} cy={-72 - k * 16} r={5 + k * 2.4} fill="#dcecf5" opacity={0.65 - k * 0.12} />
+        ))}
+      </g>
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- PTARMIGAN
+// NET-NEW 2026-07-20c (asset-library session #2). The state bird: a plump
+// grouse; `season` 'winter' (all-white with the black tail edge + red eye comb)
+// or 'summer' (mottled brown). Feathered snowshoe feet. Idles: pecking bob,
+// head jerk, feather shake; `flush` 0..1 startles it into a wing-burst.
+export const Ptarmigan: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  season?: 'winter' | 'summer'; flush?: number;
+}> = ({x, y, scale = 1, f, facing = 1, season = 'winter', flush = 0}) => {
+  const id = uid(`ptar${x}${y}${season}`);
+  const t = tones(season === 'winter' ? '#eef0ee' : '#8a6a44');
+  const flu = Math.max(0, Math.min(1, flush));
+  const peck = flu > 0.2 ? 0 : Math.max(0, Math.sin(f / 8)) * 12;
+  const jerk = 4 * Math.sin(f / 23);
+  const wingBurst = flu * (26 + 10 * Math.sin(f / 1.8));
+  return (
+    <g transform={`translate(${x},${y - flu * 40}) scale(${scale * facing},${scale}) rotate(${-flu * 14})`}>
+      <FormGradient id={id} t={t} />
+      {flu < 0.2 && <ContactShadow cx={0} cy={2} rx={44} ry={9} opacity={0.28} blur={8} />}
+      {/* feathered snowshoe feet */}
+      {[-12, 12].map((fx, i) => (
+        <g key={i}>
+          <path d={`M${fx - 10},-4 q10,-6 20,0 l-4,6 -12,0 Z`} fill={t.base} stroke={INK} strokeWidth={3} />
+        </g>
+      ))}
+      {/* plump body */}
+      <path d="M-40,-30 q-10,-38 18,-52 q26,-14 50,-2 q20,12 18,38 q-2,22 -20,30 q-34,12 -58,-4 q-8,-6 -8,-10 Z"
+        fill={`url(#${id})`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      {/* summer mottling / winter purity */}
+      {season === 'summer' && [[-18, -52, 5], [4, -60, 4], [18, -44, 5], [-8, -38, 4]].map(([mx, my, mr], i) => (
+        <circle key={i} cx={mx} cy={my} r={mr} fill="#5f4a2c" opacity={0.65} />
+      ))}
+      {/* the black tail edge (winter diagnostic) */}
+      <path d="M-38,-34 q-14,2 -20,10 q8,8 20,4 Z" fill={season === 'winter' ? '#1c1c22' : '#3a2c1c'} stroke={INK} strokeWidth={3.5} />
+      <RimLight d="M-40,-30 q-10,-38 18,-52 q26,-14 50,-2" w={3} opacity={0.6} />
+      {/* wing (bursts on flush) */}
+      <g transform={`translate(-8,-52) rotate(${wingBurst})`}>
+        <path d="M0,0 q-24,4 -34,18 q12,10 30,4 q10,-8 4,-22 Z" fill={t.core} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+      </g>
+      {/* head on a pecking bob */}
+      <g transform={`translate(30,${-64 + peck}) rotate(${jerk})`}>
+        <circle r={16} fill={`url(#${id})`} stroke={INK} strokeWidth={4.5} />
+        {/* the red eye comb */}
+        <path d="M-6,-12 q6,-8 14,-4 q-2,6 -12,7 Z" fill="#e8402f" stroke={INK} strokeWidth={2.5} />
+        <circle cx={4} cy={-4} r={3.4} fill={INK} />
+        <circle cx={5.2} cy={-5} r={1.2} fill="#fff" />
+        {/* stubby beak */}
+        <path d="M14,0 l10,3 -10,4 Z" fill="#3a342c" stroke={INK} strokeWidth={2.5} />
+      </g>
+      {/* flush snow-poof */}
+      {flu > 0.3 && (
+        <g opacity={(flu - 0.3) * 1.4}>
+          {[0, 1, 2].map((k) => <circle key={k} cx={-20 - k * 12} cy={6 + k * 4} r={5 - k} fill="#f2f6f8" opacity={0.8 - k * 0.2} />)}
+        </g>
+      )}
+    </g>
+  );
+};
