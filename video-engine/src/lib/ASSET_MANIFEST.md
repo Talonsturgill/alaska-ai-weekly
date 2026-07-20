@@ -40,14 +40,15 @@ one line: `Name — kind — file — params/poses — status`.
 - `Ptarmigan` — land/alpine — fauna.tsx — NET-NEW 2026-07-20c: the state bird; `season` winter (all-white + black tail edge + red eye comb) / summer (mottled brown); feathered snowshoe feet; pecking-bob + head-jerk idles; `flush` 0..1 startle wing-burst w/ snow poof; cleared first pass — ACTIVE
 - `KingCrab` — water/comic — fauna.tsx — NET-NEW 2026-07-20c: Bering Sea money crab; spiky carmine carapace, googly eyestalks, one OVERSIZED snapping right claw (`clawSnap`), six wave-phase scuttle legs (`scuttle`); cleared first pass — ACTIVE
 - `Mosquito` — air/comic — fauna.tsx — NET-NEW 2026-07-20c: the unofficial state bird, built for comic beats; comically long proboscis, red eye, whiny wing blur, striped abdomen, dangly legs; `divebomb` attack arc, `swat` tumble w/ dizzy stars; cleared first pass — ACTIVE
-- `SledDogTeam` — land — Episode.tsx — gallop gait + 180° motion blur + form-shading (2026-07-18); SHOULD be promoted into fauna.tsx and parameterized — ACTIVE (needs refactor)
+- `SledDogTeam` — land — fauna.tsx — PROMOTED 2026-07-20d out of Episode.tsx (built 07-18): gallop gait (two-segment folding legs, suspension bound), 180° motion smear via `vx`, form-shaded amber coats, gang line; `dogs` 1-6 sets the string length — ACTIVE
 
 ### Bestiary gaps remaining (the 2026-07-20 library session banked 12 of the 14)
 lynx, mountain goat, black bear (distinct build from Grizzly), walrus, beluga.
 
 ## Props & set pieces
 - `AlaskaMini` — map of Alaska w/ pulsing pin — kit.tsx — ACTIVE
-- `StatCard` / `Nameplate` / `SwingSign` / `GearLever` / `SurveyStake` / `MeasuringChain` / `PenAndDocument` / `TrailPost` / `ParcelBoundary` — Episode.tsx — episode-local props (candidates to generalize into a shared props kit) — ACTIVE
+- SHARED PROPS KIT — lib/props.tsx — NEW 2026-07-20d: the episode-local props generalized with ALL story copy as params (a prop with baked-in text is an episode-local, not a library asset): `StatCard` (big stat chip, tintable), `Nameplate` (identity plate), `SwingSign` (hanging sign, 1-3 lines, pivot bug fixed), `GearLever` (pulled 0..1 + optional DENIED badge), `SurveyStake` (settle drop-in), `MeasuringChain` (pays out + distance tag), `PenAndDocument` (pen hovers trembling, never signs; optional party plate), `TrailPost` (two-line sign), `BoundaryReveal` (glowing boundary traces any closed path `d` + optional town marker) — look-dev in PropsShowcase.tsx — ACTIVE
+  - Episode.tsx copies remain episode-local history; new scenes import from lib/props.tsx.
 - `BoxLabel` / `StatBurst` / `FatArrow` / `Stamp` — HUD/label kit — kit.tsx — ACTIVE
   - NOTE: these HUD chips still render as flat fills over the lit world (flagged by the
     scorer panel 2026-07-18). Next craft-advance: give the label/chip kit form-shading + a

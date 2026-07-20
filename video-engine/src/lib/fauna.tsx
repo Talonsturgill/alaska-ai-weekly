@@ -1,6 +1,6 @@
 import React from 'react';
 import {INK} from './Character';
-import {tones, FormGradient, RimLight, ContactShadow, LIGHT} from './lighting';
+import {tones, FormGradient, RimLight, ContactShadow, LIGHT, MotionBlur} from './lighting';
 
 // =============================================================================
 // FAUNA — the Alaska bestiary. The cast library had exactly one animal (the sled
@@ -1112,6 +1112,66 @@ export const Mosquito: React.FC<{
           ))}
         </g>
       )}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- SLED DOG TEAM
+// PROMOTED 2026-07-20d from Episode.tsx (built 07-18, gallop gait + motion blur;
+// flagged "needs refactor" in the manifest since). Now parameterized: `dogs`
+// sets the string length, `vx` drives the 180-degree-shutter smear while the
+// team is moving. Gallop: faster cycle, two-segment folding legs, a real
+// vertical bound (suspension) so the team reads as RUNNING, not a sliding
+// sprite. A gang line links the dogs.
+export const SledDogTeam: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; vx?: number; dogs?: number}> = ({
+  x, y, scale = 1, f, facing = 1, vx = 0, dogs = 3,
+}) => {
+  const id = uid(`sled${x}${y}`);
+  const AMBER = '#c67c3e';
+  const AMBER_D = '#8f5726';
+  const HARNESS = '#5c4326';
+  const n = Math.max(1, Math.min(6, Math.round(dogs)));
+  const Dog: React.FC<{dx: number; phase: number}> = ({dx, phase}) => {
+    const ph = f / 3.4 + phase;
+    const stride = Math.sin(ph);
+    const legF = 24 * stride;
+    const legB = -24 * stride;
+    const kneeF = 10 * Math.max(0, Math.cos(ph));
+    const kneeB = 10 * Math.max(0, -Math.cos(ph));
+    const bound = 8 * Math.max(0, Math.sin(ph * 2)) - 2;
+    return (
+      <g transform={`translate(${dx},${-bound})`}>
+        <path d={`M-18,10 q${-8 + kneeB},14 ${-18 + legF},24`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M-8,10 q${8 - kneeF},14 ${-8 + legB},24`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M14,10 q${-8 + kneeB},14 ${14 + legB},24`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M24,10 q${8 - kneeF},14 ${24 + legF},24`} fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        <path d="M-30,-6 q34,-20 68,0 q6,16 -4,26 q-30,10 -60,0 q-10,-10 -4,-26 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <path d="M8,-10 q22,2 30,14 q4,10 -4,18 q-14,6 -28,2 Z" fill={AMBER_D} opacity={0.55} />
+        <path d="M-30,-6 q34,-20 68,0" fill="none" stroke={LIGHT.rim} strokeWidth={2.5} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
+        <path d={`M-30,-2 q-22,${-8 - 4 * Math.sin(f / 5 + phase)} -14,-24`} fill="none" stroke={AMBER} strokeWidth={8} strokeLinecap="round" />
+        <g transform="translate(38,-14)">
+          <path d="M-4,0 q18,-14 32,0 q4,10 -4,16 q-16,6 -28,-2 Z" fill={AMBER} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M22,2 q10,0 14,6 q-2,4 -8,4 q-6,-2 -6,-10 Z" fill={AMBER_D} stroke={INK} strokeWidth={3.5} />
+          <path d="M2,-6 L-4,-20 L6,-10 Z" fill={AMBER} stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
+          <path d="M14,-8 L14,-22 L22,-10 Z" fill={AMBER} stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
+          <circle cx={20} cy={4} r={2.6} fill={INK} />
+        </g>
+        <path d="M-6,-10 q26,-6 44,-4" stroke={HARNESS} strokeWidth={4} opacity={0.7} />
+      </g>
+    );
+  };
+  const spread = (n - 1) * 70;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={tones(AMBER)} softness={0.85} />
+      <ContactShadow cx={0} cy={38} rx={60 + spread / 2 + 50} ry={15} opacity={0.24} blur={9} />
+      <MotionBlur vx={vx} gain={0.7} max={13}>
+        {/* gang line linking the string */}
+        {n > 1 && <path d={`M${-spread / 2 - 30},-4 L${spread / 2 + 40},-8`} stroke={HARNESS} strokeWidth={4} opacity={0.6} />}
+        {Array.from({length: n}).map((_, i) => (
+          <Dog key={i} dx={-spread / 2 + i * 70} phase={i * 1.4} />
+        ))}
+      </MotionBlur>
     </g>
   );
 };
