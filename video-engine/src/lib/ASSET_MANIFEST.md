@@ -45,6 +45,11 @@ unofficial state bird, for comic beats).
     scorer panel 2026-07-18). Next craft-advance: give the label/chip kit form-shading + a
     drop shadow so overlays sit IN the lit scene, not on top of it.
 
+## Vehicles (the Alaska machine kit) — lib/vehicles.tsx (NEW 2026-07-20c, asset-library session #2)
+- `BushPlane` — air/ground/water — vehicles.tsx — high-wing taildragger (Super Cub silhouette); `mode` ground (tundra tires, slow prop) / fly (prop blur disc, bank bob) / float (pontoons, heave); airfoil wing slab + lift struts, real rudder blade (both from taste pass 2), cabin glass, engine cowl, N-number panel N907AK, rivets; `propSpeed` override; `body` tint — ACTIVE
+- `Snowmachine` — land/winter — vehicles.tsx — rural workhorse: track w/ scrolling lugs + front ski, hood + windshield + handlebars + seat, headlight lights at speed; `speed` 0..1 drives vibration + kicked snow spray; `body` tint — ACTIVE
+- `FishingBoat` — water — vehicles.tsx — seiner/troller work boat: sheer-bow hull + waterline stripe, wheelhouse w/ windows, mast + boom + rigging lines, aft net drum, rail buoys, blinking masthead nav light; `heave` 0..1 swell rock; masthead is a gull-perch point (pair with Raven/Puffin); `hull` tint — ACTIVE
+
 ## Look-dev harnesses
 - `CraftShowcase` — motion/voice/SFX-era look-dev comp (entrance, followThrough, TalkMouth ramp, talking cast) — CraftShowcase.tsx — NEW 2026-07-18b
 

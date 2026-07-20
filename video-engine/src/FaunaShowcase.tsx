@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {Moose, Raven, BaldEagle, Salmon, Grizzly, Caribou, Orca, Puffin} from './lib/fauna';
+import {BushPlane, Snowmachine, FishingBoat} from './lib/vehicles';
 import {GradeLayer} from './lib/lighting';
 
 // Look-dev sheet for the Alaska bestiary (lib/fauna.tsx). Not part of a dispatch;
@@ -25,6 +26,9 @@ export const FaunaShowcase: React.FC = () => {
         <Caribou x={250} y={1760} scale={1.0} f={f} trot={0.6} />
         <Orca x={290} y={780} scale={0.8} f={f} surface={0.7} />
         <Puffin x={470} y={1160} scale={1.1} f={f} flap={0.3} />
+        <BushPlane x={800} y={980} scale={0.85} f={f} mode="fly" />
+        <Snowmachine x={170} y={1500} scale={1.0} f={f} speed={0.6} />
+        <FishingBoat x={430} y={1930} scale={0.8} f={f} heave={0.6} />
         <BaldEagle x={800} y={430} scale={1.0} f={f} />
         <Raven x={250} y={1180} scale={1.4} f={f} mode="perch" />
         <Raven x={560} y={900} scale={1.1} f={f} mode="fly" />
