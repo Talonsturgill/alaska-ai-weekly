@@ -2,26 +2,33 @@ import React from 'react';
 import {AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
 import {z} from 'zod';
 import {VoiceProvider, useVoice} from './lib/voice';
-import {Character} from './lib/Character';
 import {Moose} from './lib/fauna';
-import {ZoomVignette, SpeedLines, ImpactStar} from './lib/FX';
-import {INK, ICE, SNOW, StatBurst, BoxLabel, FatArrow, Stamp, Sourdough, Cell} from './lib/kit';
-import {tones, FormGradient, RimLight, ContactShadow, GradeLayer, MotionBlur, HazeOverlay} from './lib/lighting';
-import {entrance, accentKick, idleSway, ChipShadow} from './lib/motion';
+import {SpeedLines, ImpactStar, ZoomVignette, SmellRings, ScanReticle} from './lib/FX';
+import {INK, ICE, SNOW, OUT, StatBurst, BoxLabel, FatArrow, Stamp, AlaskaMini, ServerMachine, Vale} from './lib/kit';
+import {tones, FormGradient, RimLight, ContactShadow, GradeLayer, MotionBlur, IRVision} from './lib/lighting';
+import {entrance, accentKick, ChipShadow} from './lib/motion';
 
 const BOLD = 'Arial Black, Arial, sans-serif';
 
-// ---- 2026-07-19 palette: cold indigo pre-sunrise + ember-orange (hero) + server-teal (queue) + ash-red (haze turn) ----
-const SKY = '#1B2A4A';
-const SKY_HI = '#33456e';
-const GROUND = '#3A4A63';
-const GROUND_HI = '#F2DCC4';
-const GROUND_D = '#232f45';
-const EMBER = '#FF8C42';
-const TEAL = '#3DDBD9';
-const TEAL_D = '#1f8f8c';
-const HAZE = '#C0392B';
-const SNOW_C = '#eef4fb';
+// ---- 2026-07-20 palette (storyboard-locked, 9/9 axes fresh vs last 2) ----
+// black-spruce green + boreal midnight-blue -> rose-gold horizon + gunmetal drone
+// + electric thermal-IR magenta-to-citron + vermilion fireline.
+const NIGHT = '#141F38';
+const SKY_MID = '#22335C';
+const ROSE = '#E8A87C';
+const SUNGLOW = '#F4A65B';
+const SPRUCE = '#243A2E';
+const SPRUCE_D = '#152318';
+const SPRUCE_HI = '#38583f';
+const GUN = '#8C99A8';
+const EYE = '#FFCE6B';
+const IR_MAG = '#FF4FD8';
+const IR_COR = '#FF7F6B';
+const IR_CIT = '#FFE24A';
+const FIRE = '#FF6A2F';
+const FIRE_D = '#E8402F';
+const TARMAC = '#2b3340';
+const CAP_BORDER = '#cfe0f2';
 
 export const episodeSchema = z.object({
   captions: z.array(z.object({text: z.string(), start: z.number(), end: z.number(), seg: z.number()})),
@@ -33,457 +40,557 @@ export const episodeSchema = z.object({
 });
 export type EpisodeProps = z.infer<typeof episodeSchema>;
 
-// ================================================================ shared frost-yard background
-// A cold Interior Alaska pre-dawn: an industrial utility yard rather than the
-// boreal-forest biome used in prior episodes (that environment stays reserved
-// for wilderness stories). Layered parallax: far town-skyline silhouette, mid
-// snowbank ridge, near drifting frost/snow particles.
-const FrostYardBG: React.FC<{f: number; parallax?: number}> = ({f, parallax = 1}) => (
-  <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stopColor={SKY} />
-      <stop offset="55%" stopColor={SKY_HI} />
-      <stop offset="100%" stopColor="#4a5a78" />
-    </linearGradient>
-    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stopColor={GROUND_HI} stopOpacity={0.5} />
-      <stop offset="22%" stopColor={GROUND} />
-      <stop offset="100%" stopColor={GROUND_D} />
-    </linearGradient>
-    <rect width="1080" height="1180" fill="url(#skyGrad)" />
-    {/* faint horizon glow where the coming sunrise will break (rim-only, never a shadow-casting key) */}
-    <ellipse cx={860} cy={1150} rx={340} ry={110} fill={EMBER} opacity={0.12} />
-    {/* stars fading with the dawn */}
-    <g opacity={0.5}>
-      {Array.from({length: 24}).map((_, i) => {
-        const x = (i * 173) % 1080;
-        const y = (i * 97) % 640;
-        const tw = 0.4 + 0.4 * Math.sin(f / 20 + i);
-        return <circle key={i} cx={x} cy={y} r={1.6} fill="#fff" opacity={Math.max(0, tw)} />;
-      })}
-    </g>
-    {/* distant North Pole skyline silhouette, slow parallax */}
-    <g opacity={0.55} transform={`translate(${-((f * 0.08 * parallax) % 260)},0)`}>
-      {Array.from({length: 9}).map((_, i) => {
-        const x = i * 260;
-        const h = 60 + ((i * 47) % 5) * 22;
-        return <rect key={i} x={x} y={1150 - h} width={34 + (i % 3) * 10} height={h} fill="#111a30" />;
-      })}
-    </g>
-    <rect x={0} y={1150} width={1080} height={770} fill="url(#groundGrad)" />
-    {/* snowbank ridge line */}
-    <path d="M0,1150 q270,-26 540,0 q270,26 540,0 L1080,1200 L0,1200 Z" fill={GROUND_D} opacity={0.5} />
-    {/* window flicker on the distant skyline -- a second, independent, spatially
-        disjoint motion source up top so the frame never reads as a single blob
-        of action (CHOREOGRAPHY.md / LIVING_SCREEN gate) */}
-    <g>
-      {Array.from({length: 10}).map((_, i) => {
-        const bx = (i * 107 + 40) % 1080;
-        const by = 1080 - ((i * 61) % 90);
-        const on = ((f / 4 + i * 5) % 23) < 3;
-        return on ? <rect key={i} x={bx} y={by} width={5} height={7} fill="#ffd9a0" opacity={0.7} /> : null;
-      })}
-    </g>
-    {/* three soft mist/gust bands at different screen heights, drifting at
-        different speeds -- guarantees disjoint active regions top/mid/low even
-        in scenes where the hero cast is small or still */}
-    <g opacity={0.3}>
-      {[420, 900, 1400].map((baseY, i) => {
-        const y = baseY + 16 * Math.sin(f / 34 + i * 2);
-        const x = ((f * (0.9 + i * 0.35) * parallax + i * 500) % 1500) - 260;
-        return <ellipse key={i} cx={x} cy={y} rx={260} ry={46} fill={SNOW_C} opacity={0.5} />;
-      })}
-    </g>
-    {/* drifting frost/snow particles, nearest parallax layer -- bigger + brighter
-        so they clear the luma-delta active-region floor, not just decorative */}
-    <g opacity={0.75}>
-      {Array.from({length: 34}).map((_, i) => {
-        const seed = i * 71;
-        const x = (seed + f * (0.6 + (seed % 5) * 0.2) * parallax) % 1150 - 40;
-        const y = 200 + ((seed * 13) % 1500);
-        const r = 3 + (seed % 5);
-        return <circle key={i} cx={x} cy={y} r={r} fill={SNOW_C} opacity={0.55 + 0.35 * Math.sin(f / 12 + i)} />;
-      })}
-    </g>
-  </svg>
-);
-
-// ================================================================ small reusable props (this run's palette)
-const Nameplate: React.FC<{x: number; y: number; text: string; sub?: string; op?: number}> = ({x, y, text, sub, op = 1}) => (
-  <g transform={`translate(${x},${y})`} opacity={op}>
-    <rect x={-150} y={-40} width={300} height={sub ? 88 : 60} rx={10} fill={ICE} stroke={INK} strokeWidth={6} />
-    <text x={0} y={sub ? -8 : 10} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={36} fill={INK} letterSpacing={1.5} stroke={ICE} strokeWidth={3} paintOrder="stroke">{text}</text>
-    {sub && <text x={0} y={30} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={20} fill={TEAL_D}>{sub}</text>}
-  </g>
-);
-
-const SwingSign: React.FC<{x: number; y: number; f: number; text: string; sub: string; year: string; op?: number}> = ({x, y, f, text, sub, year, op = 1}) => {
-  const swing = 6 * Math.sin(f / 18);
+// ================================================================ NenanaRangeBG (NET-NEW biome)
+// A boreal AIRSTRIP biome: a flat man-made tarmac foreground with a painted runway
+// centerline + edge lights receding to a vanishing point, fronted by a LOW distant
+// black-spruce treeline band (3-4 parallax sub-bands, the supporting aerial-depth
+// refinement), under a boreal midnight-blue -> rose-gold sky. `dawn` 0..1 warms the
+// sky from pre-dawn night to sunrise. Distinct from DawnForestBG (full forest, no
+// tarmac) and FrostYardBG (utility yard). Params: dawn, parallax, showStrip.
+const NenanaRangeBG: React.FC<{f: number; dawn?: number; parallax?: number; showStrip?: boolean}> = ({
+  f, dawn = 0, parallax = 1, showStrip = true,
+}) => {
+  const d = Math.max(0, Math.min(1, dawn));
+  const skyTop = NIGHT;
+  const horizon = d > 0.02 ? ROSE : '#2a3a63';
   return (
-    <g transform={`translate(${x},${y})`} opacity={op}>
-      <line x1={0} y1={-60} x2={0} y2={-10} stroke={INK} strokeWidth={5} />
-      <g transform={`rotate(${swing})`} style={{transformOrigin: `${x}px ${y - 60}px`}}>
-        <ChipShadow>
-          <rect x={-190} y={-10} width={380} height={104} rx={10} fill={SNOW_C} stroke={INK} strokeWidth={6} />
-        </ChipShadow>
-        <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={INK} textLength={Math.min(360, text.length * 15.5)} lengthAdjust="spacingAndGlyphs">{text}</text>
-        <text x={0} y={48} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={INK}>{sub}</text>
-        <text x={0} y={80} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={HAZE}>{year}</text>
+    <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+      <defs>
+        <linearGradient id="nrSky" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={skyTop} />
+          <stop offset="60%" stopColor={SKY_MID} />
+          <stop offset="100%" stopColor={horizon} />
+        </linearGradient>
+        <linearGradient id="nrGround" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={TARMAC} />
+          <stop offset="100%" stopColor="#171d26" />
+        </linearGradient>
+      </defs>
+      <rect width="1080" height="1250" fill="url(#nrSky)" />
+      {/* sunrise glow at the horizon, grows with dawn */}
+      <ellipse cx={640} cy={1220} rx={520} ry={150} fill={SUNGLOW} opacity={0.10 + 0.32 * d} />
+      {/* fading stars up top (second disjoint motion region) */}
+      <g opacity={0.6 * (1 - d)}>
+        {Array.from({length: 26}).map((_, i) => {
+          const x = (i * 173) % 1080;
+          const y = (i * 89) % 620;
+          const tw = 0.4 + 0.5 * Math.sin(f / 19 + i);
+          return <circle key={i} cx={x} cy={y} r={1.7} fill="#fff" opacity={Math.max(0, tw)} />;
+        })}
       </g>
-    </g>
-  );
-};
-
-const GearLever: React.FC<{x: number; y: number; f: number; pulled: number}> = ({x, y, f, pulled}) => (
-  <g transform={`translate(${x},${y})`}>
-    <rect x={-80} y={-12} width={160} height={50} rx={12} fill="#8b93a0" stroke={INK} strokeWidth={6} />
-    <circle cx={-46} cy={14} r={11} fill={GROUND_D} stroke={INK} strokeWidth={4} />
-    <g transform={`rotate(${-38 + 38 * pulled} -46 14)`}>
-      <rect x={-53} y={-4} width={13} height={78} rx={6.5} fill="#c9cfd8" stroke={INK} strokeWidth={5} />
-      <circle cx={-46} cy={-6} r={14} fill={TEAL} stroke={INK} strokeWidth={5} />
-    </g>
-  </g>
-);
-
-const SurveyStake: React.FC<{x: number; y: number; s?: number; settle: number; f: number}> = ({x, y, s = 1, settle, f}) => {
-  const spin = f * 4;
-  return (
-    <g transform={`translate(${x},${y}) scale(${s})`}>
-      <ellipse cx={0} cy={4} rx={40} ry={9} fill={INK} opacity={0.25} />
-      <g transform={`translate(0,${-32 * (1 - settle)})`} opacity={Math.min(1, settle * 1.6)}>
-        <path d="M-10,0 L-10,-110 L0,-124 L10,-110 L10,0 Z" fill="#8a6239" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-        {/* small wind-turbine icon: a mast + spinning blades, the honest unresolved alternative */}
-        <g transform="translate(0,-140)">
-          <line x1={0} y1={0} x2={0} y2={-30} stroke={INK} strokeWidth={5} />
-          <g transform={`translate(0,-30) rotate(${spin})`}>
-            {[0, 120, 240].map((rot, i) => (
-              <path key={i} d="M0,0 L5,-4 L34,0 L5,4 Z" fill={ICE} stroke={INK} strokeWidth={3.5} strokeLinejoin="round" transform={`rotate(${rot})`} />
-            ))}
-            <circle r={5} fill={INK} />
-          </g>
+      {/* low black-spruce treeline: 3 parallax sub-bands, desaturating toward horizon */}
+      {[[1180, SPRUCE_D, 0.20, 46], [1215, '#1c3024', 0.4, 60], [1250, SPRUCE, 0.7, 78]].map(([baseY, col, opac, hh], bi) => (
+        <g key={bi} transform={`translate(${-((f * 0.05 * parallax * (bi + 1)) % 120)},0)`}>
+          {Array.from({length: 26}).map((_, i) => {
+            const x = i * 68 - 60;
+            const h = (hh as number) * (0.7 + ((i * 37) % 6) / 10);
+            return <path key={i} d={`M${x},${baseY as number} l${18},${-h} l${18},${h} Z`} fill={col as string} opacity={opac as number} />;
+          })}
         </g>
-      </g>
-    </g>
-  );
-};
-
-const PriceRuler: React.FC<{x: number; y: number; growT: number}> = ({x, y, growT}) => {
-  const w = 460 * growT;
-  return (
-    <g transform={`translate(${x},${y})`} opacity={Math.min(1, growT * 3)}>
-      <rect x={0} y={-22} width={w} height={44} rx={10} fill={HAZE} stroke={INK} strokeWidth={6} />
-      {growT > 0.15 && (
-        <text x={Math.min(w - 14, 14)} y={9} textAnchor="start" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={SNOW} stroke={INK} strokeWidth={2} paintOrder="stroke">$90M</text>
+      ))}
+      {/* tarmac ground */}
+      <rect x={0} y={1250} width={1080} height={670} fill="url(#nrGround)" />
+      {showStrip && (
+        <>
+          {/* runway centerline dashes receding to a vanishing point */}
+          {Array.from({length: 8}).map((_, i) => {
+            const t = i / 8;
+            const y = 1300 + t * 560;
+            const w = 60 - t * 46;
+            return <rect key={i} x={540 - w / 2} y={y} width={w} height={30 - t * 22} rx={4} fill={ROSE} opacity={0.55 - t * 0.3} />;
+          })}
+          {/* edge lights, two receding rows, gentle blink */}
+          {Array.from({length: 7}).map((_, i) => {
+            const t = i / 7;
+            const y = 1300 + t * 560;
+            const spread = 360 - t * 300;
+            const on = ((f / 6 + i) % 9) < 6;
+            return (
+              <g key={i}>
+                <circle cx={540 - spread} cy={y} r={7 - t * 4} fill={on ? '#6cc8ff' : '#26507a'} />
+                <circle cx={540 + spread} cy={y} r={7 - t * 4} fill={on ? '#6cc8ff' : '#26507a'} />
+              </g>
+            );
+          })}
+        </>
       )}
-      {growT > 0.9 && (
-        <text x={w - 14} y={9} textAnchor="end" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={SNOW} stroke={INK} strokeWidth={2} paintOrder="stroke">$120M</text>
-      )}
-    </g>
-  );
-};
-
-// The order queue: a ticket-dispenser + a conveyor of riveted turbine crates
-// receding to a horizon, with a running backlog counter and server-blue
-// data-center silhouettes cutting into the line.
-const TheQueue: React.FC<{f: number; recede: number; blueShare: number; counter: number}> = ({f, recede, blueShare, counter}) => {
-  const n = 9;
-  return (
-    <g>
-      {Array.from({length: n}).map((_, i) => {
-        const t = i / (n - 1);
-        const px = 200 + t * 780 * recede;
-        const scale = 1.55 - t * 0.95;
-        const py = 1280 - t * 260;
-        const isBlue = i / n < blueShare;
-        const t2 = tones(isBlue ? TEAL_D : '#7a8598');
-        return (
-          <g key={i} transform={`translate(${px},${py}) scale(${scale})`}>
-            <FormGradient id={`q${i}`} t={t2} />
-            <ContactShadow cx={0} cy={44} rx={70} ry={14} opacity={0.28} blur={8} />
-            <rect x={-58} y={-90} width={116} height={130} rx={12} fill={`url(#q${i})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
-            <rect x={-58} y={-90} width={30} height={130} rx={10} fill={t2.shade} opacity={0.5} />
-            {isBlue && <circle cx={0} cy={-30} r={10} fill="#eafffe" opacity={0.8 + 0.2 * Math.sin(f / 5 + i)} />}
-            {[-56, -20, 16].map((yy, j) => <line key={j} x1={-52} y1={yy} x2={52} y2={yy} stroke={INK} strokeWidth={3} opacity={0.4} />)}
-          </g>
-        );
-      })}
-      {/* ticket dispenser at the head of the line */}
-      <g transform="translate(150,1290) scale(1.35)">
-        <rect x={-56} y={-96} width={112} height={140} rx={14} fill={SNOW_C} stroke={INK} strokeWidth={6} />
-        <rect x={-44} y={-80} width={88} height={44} rx={6} fill={INK} />
-        <text x={0} y={-52} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill={TEAL}>NOW SERVING</text>
-        <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={38} fill={INK}>{Math.round(counter)}</text>
+      {/* dawn-mist drift bands */}
+      <g opacity={0.28}>
+        {[1140, 1320].map((baseY, i) => {
+          const y = baseY + 14 * Math.sin(f / 33 + i * 2);
+          const x = ((f * (0.8 + i * 0.4) * parallax + i * 500) % 1500) - 260;
+          return <ellipse key={i} cx={x} cy={y} rx={280} ry={40} fill="#cfe0f2" opacity={0.5} />;
+        })}
       </g>
-    </g>
+    </svg>
   );
 };
 
-// ================================================================ Patrice Lee's verbatim quote card (typewriter reveal)
-const QuoteCard: React.FC<{x: number; y: number; revealT: number; op: number}> = ({x, y, revealT, op}) => {
-  const full = 'You cannot add to the pollution\nin a non-attainment area, and\nbe legally correct.';
-  const chars = Math.round(full.length * revealT);
-  const shown = full.slice(0, chars);
+// ================================================================ small helpers
+const Flame: React.FC<{x: number; y: number; s: number; f: number; out?: number}> = ({x, y, s, f, out = 0}) => {
+  const life = 1 - Math.max(0, Math.min(1, out));
+  const flick = 1 + 0.12 * Math.sin(f / 4);
+  if (life <= 0.02) return null;
   return (
-    <g transform={`translate(${x},${y})`} opacity={op}>
-      <rect x={-330} y={-118} width={660} height={200} rx={16} fill="#0f1522ee" stroke={SNOW_C} strokeWidth={5} />
-      <text x={-300} y={-70} fontFamily="Georgia, serif" fontStyle="italic" fontSize={30} fill={SNOW_C}>
-        {shown.split('\n').map((ln, i) => (
-          <tspan key={i} x={-300} dy={i === 0 ? 0 : 38}>{ln}</tspan>
-        ))}
-      </text>
-      <text x={-300} y={64} fontFamily={BOLD} fontWeight={900} fontSize={22} fill={TEAL}>PATRICE LEE, clean-air advocate</text>
+    <g transform={`translate(${x},${y}) scale(${s * life},${s * life * flick})`} opacity={life}>
+      <path d={`M0,0 q${-26},${-30} ${-14},${-70} q${-4},${-30} ${14},${-56} q${-6},34 ${10},${52} q${8 + 4 * Math.sin(f / 5)},${20} 0,${22} q${-14},2 ${-20},${-8} Z`}
+        fill={FIRE_D} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      <path d={`M0,-6 q${-14},${-24} ${-6},${-52} q${6},20 ${12},${36} q${4},${16} ${-6},${16} Z`} fill={IR_CIT} opacity={0.85} />
     </g>
   );
 };
 
-// ================================================================ S1 — THE TICKET (cold open)
+const HeadCard: React.FC<{text: string; sub?: string; op: number; y?: number}> = ({text, sub, op, y = 300}) => (
+  <div style={{position: 'absolute', top: y, left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: op}}>
+    <div style={{background: IR_CIT, color: INK, fontFamily: BOLD, fontWeight: 900, fontSize: 82, letterSpacing: 1,
+      padding: '10px 30px', borderRadius: 12, border: `7px solid ${INK}`, transform: 'rotate(-2deg)', boxShadow: '0 8px 0 rgba(0,0,0,0.35)', textAlign: 'center', lineHeight: 1.02}}>
+      {text}
+    </div>
+    {sub && <div style={{marginTop: 14, background: INK, color: '#fff', fontFamily: BOLD, fontWeight: 900, fontSize: 40, letterSpacing: 2, padding: '6px 22px', borderRadius: 8}}>{sub}</div>}
+  </div>
+);
+
+// ================================================================ S1 — COLD OPEN (beats 0-1)
 const S1: React.FC = () => {
   const f = useCurrentFrame();
-  const {fps} = useVideoConfig();
   const voice = useVoice();
-  const e = entrance(f, fps, 2, {preset: {damping: 14, stiffness: 130}});
-  const push = interpolate(f, [0, 205], [1.0, 1.035], {extrapolateRight: 'clamp'});
-  const labelIn = spring({frame: f - 30, fps, config: {damping: 13, stiffness: 140}});
-  const accent = accentKick(f, fps, 76);
+  // VALE hovers over the dark treeline; eye snaps to lock on the spark by ~1.2s (36f)
+  const lock = interpolate(f, [24, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const sparkGrow = interpolate(f, [10, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // headline is poster-grade from frame 0 (bold ink present at f0 for FIRST_FRAME);
+  // the hook's MOTION by ~1.2s is the eye-snap + spark, not the card's fade-in.
+  const headOp = interpolate(f, [0, 10], [0.92, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // beat 1 (~line 1, local ~105f+): ghost controller crossed out
+  const ghost = interpolate(f, [110, 130], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const crossT = interpolate(f, [120, 140], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const push = interpolate(f, [0, 120], [1.0, 1.08], {extrapolateRight: 'clamp'});
+  const eyeFlick = f > 118 && f < 132 ? 1 : 0;
   return (
-    <AbsoluteFill style={{backgroundColor: SKY, transform: `scale(${push})`, transformOrigin: '50% 62%'}}>
-      <FrostYardBG f={f} />
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform={`translate(0,${20 * (1 - e.scale)}) scale(${e.scale})`} style={{transformOrigin: '540px 1300px'}}>
-          <Sourdough frame={f} x={540} y={1440} scale={1.5} emotion="proud" glow={1} accent={accent} />
-        </g>
-        {labelIn > 0.02 && (
-          <g transform={`translate(720,${1200 - 40 * (1 - labelIn)})`} opacity={labelIn}>
-            <ChipShadow><BoxLabel x={0} y={0} text="$50,000 HOLD" w={340} h={78} fs={36} fill={EMBER} color={INK} /></ChipShadow>
+    <AbsoluteFill>
+      <div style={{position: 'absolute', inset: 0, transform: `scale(${push})`, transformOrigin: '540px 760px'}}>
+        <NenanaRangeBG f={f} dawn={0} showStrip={false} />
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+          {/* the spark igniting below the treeline */}
+          <g transform="translate(540,1230)">
+            <circle r={6 + sparkGrow * 10} fill={IR_CIT} opacity={0.9} />
+            {sparkGrow > 0.2 && <Flame x={0} y={18} s={0.5 * sparkGrow} f={f} />}
+            {[0, 1, 2, 3, 4].map((i) => (
+              <circle key={i} cx={Math.cos(i * 1.3 + f / 6) * (14 + sparkGrow * 20)} cy={-Math.abs(Math.sin(i + f / 7)) * (20 + sparkGrow * 30)} r={2.5} fill={IR_COR} opacity={sparkGrow * 0.8} />
+            ))}
           </g>
-        )}
-      </svg>
-      <div style={{position: 'absolute', top: 300, left: 0, right: 0, display: 'flex', justifyContent: 'center', transform: `translateY(${-120 * (1 - e.scale)}px)`}}>
-        <div style={{background: '#0f1522', border: `8px solid ${SNOW_C}`, borderRadius: 14, padding: '22px 38px', maxWidth: 900}}>
-          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 68, lineHeight: 1.08, color: SNOW, textAlign: 'center'}}>
-            He Paid $50K<br />Just To Wait.
-          </div>
-        </div>
+          {/* VALE holding station, eye snaps to lock */}
+          <g transform="translate(540,720)">
+            <Vale frame={f} scale={1.05} emotion={lock > 0.5 ? 'locked' : 'vigilant'} eyeLock={lock} accent={voice.accentAt(f)} />
+          </g>
+          {/* ghost controller + cross (beat 1) */}
+          {ghost > 0.02 && (
+            <g transform="translate(300,1120)" opacity={ghost}>
+              <rect x={-70} y={-34} width={140} height={68} rx={14} fill="#5a6b86" stroke={INK} strokeWidth={5} opacity={0.7} />
+              <circle cx={-40} cy={0} r={12} fill="#3a4a63" stroke={INK} strokeWidth={4} />
+              <circle cx={40} cy={0} r={12} fill="#3a4a63" stroke={INK} strokeWidth={4} />
+              <ellipse cx={0} cy={-58} rx={40} ry={20} fill="#c9d6e8" opacity={0.5} />
+            </g>
+          )}
+          {crossT > 0.02 && (
+            <g transform="translate(300,1120)" opacity={crossT}>
+              <line x1={-86} y1={-52} x2={86} y2={52} stroke={FIRE_D} strokeWidth={16} strokeLinecap="round" />
+              <line x1={86} y1={-52} x2={-86} y2={52} stroke={FIRE_D} strokeWidth={16} strokeLinecap="round" />
+            </g>
+          )}
+        </svg>
       </div>
+      {lock > 0.8 && f < 52 && <ZoomVignette amount={interpolate(f, [40, 50], [0, 0.5], {extrapolateRight: 'clamp'})} />}
+      <HeadCard text="FIREFIGHTING ROBOTS." sub="TESTED IN ALASKA" op={headOp} />
+      {crossT > 0.3 && <div style={{position: 'absolute', top: 1230, left: 0, right: 0, textAlign: 'center', fontFamily: BOLD, fontWeight: 900, fontSize: 54, color: '#fff', opacity: crossT, textShadow: '2px 3px 0 #000'}}>NO CREW  ·  NO PILOT</div>}
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S2 — THE GLOBAL QUEUE
+// ================================================================ S2 — SETUP (beats 2-4)
 const S2: React.FC = () => {
   const f = useCurrentFrame();
-  const recede = interpolate(f, [0, 130], [0.15, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const pullBack = interpolate(f, [0, 100], [1.3, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const blueShare = interpolate(f, [40, 140], [0, 0.35], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // counter starts spinning IMMEDIATELY (was frame 90 — a sampled evidence-pack
-  // strip near the scene's start caught it still reading '0' and looking dead);
-  // ticks fast for the first stretch so the queue reads as actively updating
-  // through the whole pull-back, not just its back half.
-  const counter = interpolate(f, [8, 150], [0, 96], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const statIn = spring({frame: f - 180, fps: 30, config: {damping: 12, stiffness: 120}});
-  // real per-frame velocity of the recede travel, fed to a genuine 180-degree
-  // shutter blur (the evidence pack's motion strip found this reveal near-static
-  // with "NO 180 blur" — recede's own derivative, not a flat constant, so the
-  // blur is strongest exactly when the crates are moving fastest).
-  const recedePrev = interpolate(Math.max(0, f - 1), [0, 130], [0.15, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const recedeVX = (recede - recedePrev) * 900;
+  const {fps} = useVideoConfig();
+  // beat 2 (~0-3.5s): XPRIZE badge slam
+  const badge = spring({frame: f - 6, fps, config: {damping: 12, stiffness: 170}});
+  const ringWind = interpolate(f, [18, 54], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // beat 3 (~3.5-7s / local ~105f): funnel 300->3
+  const funnelT = interpolate(f, [96, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const platesIn = interpolate(f, [150, 180], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const dualTag = interpolate(f, [186, 200], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // beat 4 (~7-10.5s / local ~210f): pin drops on Alaska
+  const mapIn = interpolate(f, [206, 236], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const stage = f < 190 ? 0 : 1;   // 0 = badge+funnel, 1 = map+pin
+  const finalists = ['ANDURIL', 'AURA FORESIGHT', 'DRYAD'];
   return (
-    <AbsoluteFill style={{backgroundColor: SKY, transform: `scale(${pullBack})`, transformOrigin: '540px 900px'}}>
-      <FrostYardBG f={f} parallax={0.6} />
+    <AbsoluteFill style={{backgroundColor: NIGHT}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <MotionBlur vx={recedeVX} gain={0.9} max={22}>
-          <TheQueue f={f} recede={recede} blueShare={blueShare} counter={counter} />
-        </MotionBlur>
+        <rect width="1080" height="1920" fill="url(#nrSky)" opacity={0.5} />
+        {/* HUD scanline shimmer */}
+        {Array.from({length: 14}).map((_, i) => <line key={i} x1={0} y1={i * 140 + (f % 140)} x2={1080} y2={i * 140 + (f % 140)} stroke={IR_MAG} strokeWidth={1} opacity={0.05} />)}
       </svg>
-      {statIn > 0.02 && (
+      {stage === 0 && (
         <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-          <g transform={`translate(780,${820 - 40 * (1 - statIn)}) scale(${statIn})`}>
-            <ChipShadow><StatBurst cx={0} cy={0} scale={1.05} big="~100 GW" lines={['GE VERNOVA', 'BACKLOG']} fill={TEAL} /></ChipShadow>
+          {/* XPRIZE badge */}
+          <g transform={`translate(540,560) scale(${0.5 + badge * 0.6})`}>
+            <StatBurst cx={0} cy={0} big="$11M" lines={['XPRIZE WILDFIRE', '4 YEARS']} fill={IR_CIT} big_fs={92} />
+            <g transform="rotate(-90)" opacity={0.5}>
+              <circle r={190} fill="none" stroke={IR_COR} strokeWidth={6} strokeDasharray={`${ringWind * 1194} 1194`} />
+            </g>
+          </g>
+          {/* funnel 300 -> 3 */}
+          {funnelT > 0.02 && (
+            <g transform="translate(540,1080)" opacity={Math.min(1, funnelT * 2)}>
+              <path d="M-260,0 L260,0 L120,220 L-120,220 Z" fill="#1b2740" stroke={INK} strokeWidth={7} opacity={0.85} />
+              <text x={0} y={-24} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={48} fill="#fff">~300 TEAMS</text>
+              {Array.from({length: 22}).map((_, i) => {
+                const prog = (funnelT * 1.6 + i / 22) % 1;
+                const cx = Math.cos(i * 2.1) * 220 * (1 - prog);
+                const cy = prog * 210;
+                return <rect key={i} x={cx - 9} y={cy - 9} width={18} height={18} rx={3} fill={STEELish(i)} opacity={1 - prog} />;
+              })}
+              {/* 3 finalist plates clank out */}
+              {finalists.map((n, i) => (
+                <g key={i} transform={`translate(${(i - 1) * 240},${300 + (1 - platesIn) * 40})`} opacity={platesIn}>
+                  <rect x={-112} y={-34} width={224} height={68} rx={10} fill={ICE} stroke={INK} strokeWidth={6} />
+                  <text x={0} y={9} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={n.length > 10 ? 23 : n.length > 8 ? 30 : 38} fill={INK}>{n}</text>
+                  {i === 0 && dualTag > 0.1 && (
+                    <g transform="translate(0,-56)" opacity={dualTag}>
+                      <rect x={-96} y={-20} width={192} height={34} rx={6} fill={IR_MAG} stroke={INK} strokeWidth={4} />
+                      <text x={0} y={4} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill="#fff">DEFENSE PRIME · DUAL-USE</text>
+                    </g>
+                  )}
+                </g>
+              ))}
+              <text x={0} y={340 + 44} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={IR_CIT}>3 FINALISTS · Autonomous Wildfire Response track</text>
+            </g>
+          )}
+        </svg>
+      )}
+      {stage === 1 && (
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+          <g transform={`translate(300,700) scale(${1.4 * mapIn + 0.001})`} opacity={mapIn}>
+            <AlaskaMini frame={f} x={0} y={0} scale={1} pin={mapIn > 0.6} />
+          </g>
+          {mapIn > 0.6 && (
+            <g transform="translate(720,760)" opacity={interpolate(f, [230, 250], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
+              <BoxLabel x={0} y={0} text="NENANA" sub="ALASKA" w={300} h={96} fs={54} fill={IR_CIT} />
+            </g>
+          )}
+        </svg>
+      )}
+    </AbsoluteFill>
+  );
+};
+function STEELish(i: number) { return ['#5d7fae', '#7fa1cc', '#4a5a78'][i % 3]; }
+
+// ================================================================ S3 — ALASKA AIRSPACE (beats 5-6)
+const S3: React.FC = () => {
+  const f = useCurrentFrame();
+  // beat 5 (airspace grid sweep over the map + ACUASI nameplate) — scene dur ~143f
+  const sweep = interpolate(f, [6, 50], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const nameIn = interpolate(f, [34, 58], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // beat 6 (dive through the pin into the treeline, Moose alert)
+  const dive = interpolate(f, [60, 98], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const mapScale = 1 + dive * 5;
+  const showGround = dive > 0.55;
+  const mooseAlert = interpolate(f, [100, 134], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  return (
+    <AbsoluteFill style={{backgroundColor: NIGHT}}>
+      {!showGround ? (
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+          <rect width="1080" height="1920" fill="url(#nrSky)" opacity={0.55} />
+          <g transform={`translate(540,900) scale(${1.5 * mapScale}) translate(-240,-130)`} opacity={dive < 0.8 ? 1 : interpolate(dive, [0.8, 1], [1, 0])}>
+            <AlaskaMini frame={f} x={0} y={0} scale={1} pin pinLabel="NENANA" />
+            {/* airspace lattice sweeping across */}
+            <g opacity={0.85}>
+              {Array.from({length: 12}).map((_, i) => {
+                const gx = i * 44;
+                const on = gx / 528 < sweep;
+                return on ? <line key={`v${i}`} x1={gx} y1={20} x2={gx} y2={280} stroke={IR_CIT} strokeWidth={2} opacity={0.5} /> : null;
+              })}
+              {Array.from({length: 7}).map((_, i) => {
+                const gy = 20 + i * 44;
+                const on = (i * 44) / 264 < sweep;
+                return on ? <line key={`h${i}`} x1={0} y1={gy} x2={528} y2={gy} stroke={IR_CIT} strokeWidth={2} opacity={0.5} /> : null;
+              })}
+              {/* a drifting aircraft blip on the lattice */}
+              <circle cx={80 + (f * 2) % 400} cy={120} r={5} fill={IR_MAG} />
+            </g>
+          </g>
+        </svg>
+      ) : (
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+          <NenanaRangeBG f={f} dawn={0.15} parallax={1.3} showStrip={false} />
+          {/* Moose watcher on the treeline, alert (new pose) */}
+          <g transform="translate(210,1360) scale(0.8)">
+            <Moose x={0} y={0} f={f} facing={1} emotion="calm" alert={mooseAlert} />
           </g>
         </svg>
       )}
-      <div style={{position: 'absolute', top: 260, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
-        <div style={{background: '#0f1522cc', border: `6px solid ${TEAL}`, borderRadius: 12, padding: '14px 30px'}}>
-          <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 28, color: SNOW, textAlign: 'center'}}>A GLOBAL BACKLOG, PARTLY AI-DRIVEN</div>
+      {nameIn > 0.02 && !showGround && (
+        <div style={{position: 'absolute', top: 1340, left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: nameIn}}>
+          <div style={{background: INK, color: '#fff', fontFamily: BOLD, fontWeight: 900, fontSize: 46, padding: '10px 28px', borderRadius: 10, border: `5px solid ${IR_CIT}`, textAlign: 'center'}}>UAF ACUASI</div>
+          <div style={{marginTop: 8, background: 'rgba(16,20,30,0.85)', color: '#fff', fontFamily: BOLD, fontWeight: 700, fontSize: 30, padding: '6px 18px', borderRadius: 8}}>managed the airspace · Dr. Catherine Cahill, Director</div>
         </div>
-      </div>
+      )}
+      {showGround && (
+        <div style={{position: 'absolute', top: 300, left: 0, right: 0, textAlign: 'center', fontFamily: BOLD, fontWeight: 900, fontSize: 40, color: '#fff', textShadow: '2px 3px 0 #000'}}>NENANA · June 15-28, 2026</div>
+      )}
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S3 — THE STAT PANEL (Moose gag + Siemens)
-const S3: React.FC = () => {
-  const f = useCurrentFrame();
-  // widened + retimed so the impact reads clearly across a longer window (the
-  // evidence pack's motion strip sampled the tail of a too-short kick and read
-  // as near-static); two distinct hits, each with a slower decay.
-  const bumpKick = accentKick(f, 30, 26, 0.9) + accentKick(f, 30, 150, 0.9) * 0.9;
-  const bumpK = Math.min(1, bumpKick);
-  const fifthIn = spring({frame: f - 4, fps: 30, config: {damping: 12, stiffness: 130}});
-  const siemensIn = spring({frame: f - 100, fps: 30, config: {damping: 12, stiffness: 110}});
-  const blueShare2 = interpolate(f, [100, 210], [0.15, 0.65], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  return (
-    <AbsoluteFill style={{backgroundColor: '#111a30'}}>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {/* HUD instrument frame */}
-        <rect x={40} y={220} width={1000} height={1480} rx={28} fill="none" stroke={TEAL} strokeWidth={5} opacity={0.4} />
-        <g transform="translate(0,380) scale(1.35)">
-          <TheQueue f={f} recede={1} blueShare={blueShare2} counter={96} />
-        </g>
-        {/* the Moose, bumped from the dispenser -- comic gag, dramatizes the AI share.
-            Real impact juice: speed lines + a starburst at the moment of contact. */}
-        <g transform="translate(880,1360) scale(1.1)">
-          {bumpK > 0.4 && <SpeedLines cx={40} cy={-200} frame={f} intensity={bumpK} color={TEAL} />}
-          <Moose x={0} y={0} f={f} scale={1} facing={-1} bumpKick={bumpK} />
-          {bumpK > 0.5 && <ImpactStar cx={90} cy={-220} r={54 * bumpK} color={TEAL} rot={f * 8} />}
-        </g>
-      </svg>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform={`translate(300,${820 - 30 * (1 - fifthIn)}) scale(${fifthIn})`}>
-          <ChipShadow><StatBurst cx={0} cy={0} scale={0.92} big="1/5" lines={['OF IT:', 'DATA CENTERS']} fill={TEAL} /></ChipShadow>
-        </g>
-        {siemensIn > 0.02 && (
-          <g transform={`translate(780,${820 - 30 * (1 - siemensIn)}) scale(${siemensIn})`} opacity={siemensIn}>
-            <ChipShadow><StatBurst cx={0} cy={0} scale={1.05} big="60%+" lines={['SIEMENS ENERGY', '2026 ORDERS']} fill={HAZE} /></ChipShadow>
-          </g>
-        )}
-      </svg>
-    </AbsoluteFill>
-  );
-};
-
-// ================================================================ S4 — THE DOORS CLOSE / THE BET (two-up)
+// ================================================================ S4 — MECHANISM / SIGNATURE (beats 7-9)
 const S4: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const sign1 = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 120}});
-  const sign2 = spring({frame: f - 130, fps, config: {damping: 12, stiffness: 120}});
-  const turbineIn = spring({frame: f - 220, fps, config: {damping: 13, stiffness: 100}});
-  const rulerT = interpolate(f, [260, 360], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const cellCharge: 0 | 1 | 2 = f > 330 ? 2 : f > 260 ? 1 : 0;
-  const accent = accentKick(f, fps, 260);
+  const voice = useVoice();
+  // beat 7 (sensor smells smoke (rings), VALE eye wakes) — scene dur ~260f
+  const sniff = interpolate(f, [6, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const wake = interpolate(f, [28, 52], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // beat 8 (launch + IR reticle lock, the snap-zoom peak)
+  const launch = spring({frame: f - 80, fps, config: {damping: 13, stiffness: 130}});
+  const lock = interpolate(f, [124, 142], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const irOn = interpolate(f, [104, 134], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const snapZoom = interpolate(f, [138, 150, 176], [1, 2.3, 1.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // beat 9 (suppressant drop, fire out)
+  const drop = interpolate(f, [180, 212], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const fireOut = interpolate(f, [206, 246], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const valeX = 300 + launch * 240;
+  const valeY = 640 - launch * 40 + 30 * Math.sin(f / 12);
+  const vx = launch > 0.02 && launch < 0.98 ? 22 : 0;
+  const heatX = 700, heatY = 1180;
   return (
-    <AbsoluteFill style={{backgroundColor: '#233047'}}>
-      <FrostYardBG f={f} parallax={0.4} />
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {sign1 > 0.02 && <g opacity={sign1}><SwingSign x={280} y={520} f={f} text="CHEAP SOUTHCENTRAL" sub="POWER: LOST" year="2024" /></g>}
-        {sign2 > 0.02 && <g opacity={sign2}><SwingSign x={720} y={620} f={f} text="ENSTAR GAS" sub="CONTRACT: ENDED" year="2025" /></g>}
-      </svg>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {/* the veteran 2006 unit */}
-        <g transform="translate(320,1500) scale(0.5)" opacity={0.85}>
-          <Sourdough frame={f} x={0} y={0} scale={1} emotion="confident" glow={0.85} />
-        </g>
-        {/* the new turbine + battery bet, sliding in */}
-        <g transform={`translate(${760 - 60 * (1 - turbineIn)},1500) scale(${0.62 * Math.min(1, turbineIn)})`} opacity={Math.min(1, turbineIn * 1.4)}>
-          <Sourdough frame={f} x={0} y={0} scale={1} emotion="confident" glow={1} accent={accent} />
-          <Cell frame={f} x={190} y={40} scale={0.9} chargeLevel={cellCharge} />
-        </g>
-        {rulerT > 0.01 && <PriceRuler x={310} y={1780} growT={rulerT} />}
-      </svg>
-      <div style={{position: 'absolute', top: 1840, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: rulerT > 0.5 ? 1 : 0}}>
-        <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 26, color: SNOW_C}}>+ A BATTERY BET</div>
+    <AbsoluteFill style={{backgroundColor: NIGHT}}>
+      <div style={{position: 'absolute', inset: 0, transform: `scale(${snapZoom})`, transformOrigin: `${valeX}px ${valeY}px`}}>
+        <NenanaRangeBG f={f} dawn={0.1} parallax={1.6} showStrip={false} />
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+          {/* the fire on the range floor */}
+          <Flame x={heatX} y={1210} s={1.3} f={f} out={fireOut} />
+          {/* sensor node on a spruce trunk, smelling smoke */}
+          <g transform="translate(430,1150)">
+            <rect x={-10} y={0} width={20} height={80} fill={SPRUCE_D} stroke={INK} strokeWidth={4} />
+            <SmellRings cx={0} cy={-6} frame={f} intensity={sniff} maxR={300} />
+          </g>
+          {/* smoke wisps */}
+          {sniff > 0.2 && Array.from({length: 5}).map((_, i) => (
+            <ellipse key={i} cx={heatX - 20 + 30 * Math.sin(f / 20 + i)} cy={1150 - ((f * 1.4 + i * 40) % 240)} rx={26} ry={18} fill="#6b7280" opacity={0.25 * sniff * (1 - fireOut)} />
+          ))}
+          {/* VALE flying out, then locking + dropping */}
+          <g transform={`translate(${valeX},${valeY})`}>
+            <MotionBlur vx={vx} gain={0.6}>
+              <Vale frame={f} scale={0.8} emotion={lock > 0.5 ? 'locked' : 'resolute'} eyeLock={lock} accent={voice.accentAt(f)} />
+            </MotionBlur>
+          </g>
+          {/* suppressant arc + splash */}
+          {drop > 0.02 && drop < 1 && (
+            <path d={`M${valeX},${valeY + 70} Q${(valeX + heatX) / 2},${valeY - 40} ${heatX},1200`} fill="none" stroke="#8fd4ff" strokeWidth={16 * (1 - drop)} strokeLinecap="round" opacity={0.85} />
+          )}
+          {fireOut > 0.1 && fireOut < 1 && (
+            <g opacity={1 - fireOut}>{Array.from({length: 8}).map((_, i) => (
+              <ellipse key={i} cx={heatX + Math.cos(i) * 40 * fireOut} cy={1180 - ((f * 2 + i * 30) % 200) * fireOut} rx={30} ry={22} fill="#e8eef5" opacity={0.4 * fireOut} />
+            ))}</g>
+          )}
+        </svg>
+        {/* the IR thermal-vision look, on during the lock (the drone's-eye view) */}
+        <IRVision f={f} amount={irOn * (1 - fireOut)} heat={{x: heatX, y: heatY, r: 300}} tag="THERMAL" />
+        {lock > 0.05 && (
+          <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+            <ScanReticle cx={heatX} cy={1195} frame={f} lock={lock} size={170} />
+          </svg>
+        )}
       </div>
+      {lock > 0.55 && f < 176 && (
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+          <SpeedLines cx={heatX} cy={1195} frame={f} intensity={interpolate(f, [156, 168], [1, 0], {extrapolateRight: 'clamp'})} color={IR_CIT} />
+          <ImpactStar cx={heatX} cy={1195} r={interpolate(f, [154, 162], [0, 70], {extrapolateRight: 'clamp'})} color={IR_CIT} />
+        </svg>
+      )}
+      <HeadCard text="THERMAL LOCK" op={interpolate(f, [138, 152, 190, 202], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} y={230} />
+      {drop > 0.3 && <div style={{position: 'absolute', top: 1560, left: 0, right: 0, textAlign: 'center', fontFamily: BOLD, fontWeight: 900, fontSize: 44, color: '#fff', textShadow: '2px 3px 0 #000', opacity: Math.min(1, drop)}}>up to 100 L suppressant · per Dryad</div>}
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S5 — THE HAZE (signature turn: push through chest, tilt up)
+// ================================================================ S5 — THE TURN (beats 10-11)
 const S5: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const push = interpolate(f, [0, 60], [1.0, 1.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.in(Easing.cubic)});
-  const tiltUp = interpolate(f, [20, 100], [0, -260], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  // the turn now lands EARLY and fast (the editor's evidence pack sampled S5's
-  // opening seconds and found it still cold-indigo; this pulls the PM2.5 grid
-  // and its label forward so the counterpoint is on screen for most of the
-  // scene, not just its back third) and hits a visibly stronger, unmistakably
-  // red state (amount overshoots to 1.15 before settling) rather than a subtle wash.
-  const hazeAmount = interpolate(f, [15, 75, 130], [0, 1.15, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const glow = interpolate(f, [15, 75], [1, 0.3], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const stampIn = spring({frame: f - 35, fps, config: {damping: 12, stiffness: 140}});
-  const leeIn = spring({frame: f - 100, fps, config: {damping: 12, stiffness: 110}});
-  const quoteT = interpolate(f, [130, 210], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const stakeSettle = interpolate(f, [195, 225], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const voice = useVoice();
+  // beat 10 (~0-3.5s): DRYAD SAYS readout ribbon off VALE, over drifting steam
+  const ribbon = interpolate(f, [8, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const quote = "...no longer a vision. It is a reality.";
+  const chars = Math.floor(interpolate(f, [16, 70], [0, quote.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const stamp = spring({frame: f - 72, fps, config: {damping: 9, stiffness: 200}});
+  const stage = f < 96 ? 0 : 1;
+  // beat 11 (~3.5-7s): megafire wall rises to dwarf the test flame
+  const wall = interpolate(f, [100, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: SKY}}>
-      <AbsoluteFill style={{transform: `scale(${push}) translateY(${tiltUp}px)`, transformOrigin: '50% 68%'}}>
-        <FrostYardBG f={f} parallax={0.3} />
-        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-          <Sourdough frame={f} x={420} y={1560} scale={1.4} emotion={hazeAmount > 0.4 ? 'faltering' : 'confident'} glow={glow} />
-          {leeIn > 0.02 && (
-            <g opacity={leeIn} transform="translate(0,0)">
-              <Character frame={f} pose="arms-crossed" emotion="worried" outfit="puffer" headgear="beanie" facing={-1} scale={1.3} x={860} y={1660} />
+    <AbsoluteFill style={{backgroundColor: NIGHT}}>
+      {stage === 0 ? (
+        <>
+          <NenanaRangeBG f={f} dawn={0.12} showStrip={false} />
+          <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+            {/* drifting steam from the doused fire */}
+            {Array.from({length: 6}).map((_, i) => (
+              <ellipse key={i} cx={640 + 40 * Math.sin(f / 18 + i)} cy={1240 - ((f * 1.2 + i * 50) % 300)} rx={40} ry={26} fill="#e8eef5" opacity={0.22} />
+            ))}
+            {/* VALE hovering, a readout ribbon unspooling from its hull */}
+            <g transform="translate(300,760)"><Vale frame={f} scale={0.9} emotion="calm" eyeLock={0.2} accent={voice.accentAt(f)} /></g>
+            {ribbon > 0.02 && (
+              <g transform="translate(420,760)" opacity={ribbon}>
+                <path d={`M0,0 L${520 * ribbon},0`} stroke={IR_CIT} strokeWidth={4} />
+                <rect x={40} y={-70} width={560} height={150} rx={12} fill="#0f1626" stroke={IR_CIT} strokeWidth={5} opacity={0.95} />
+                <text x={64} y={-24} fontFamily={BOLD} fontWeight={900} fontSize={30} fill="#fff">{quote.slice(0, chars)}</text>
+                <text x={64} y={42} fontFamily={BOLD} fontWeight={700} fontSize={24} fill={IR_COR}>- Carsten Brinkschulte, CEO, Dryad</text>
+              </g>
+            )}
+          </svg>
+          {stamp > 0.05 && <Stamp cx={700} cy={640} s={stamp} text="DRYAD SAYS" rot={-14} color={IR_MAG} />}
+        </>
+      ) : (
+        <>
+          <NenanaRangeBG f={f} dawn={0.05} showStrip={false} />
+          <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+            {/* the towering megafire wall rising, spreading across a roadless horizon */}
+            <g opacity={Math.min(1, wall * 1.2)}>
+              <path d={`M0,1920 L0,${1300 - wall * 700} Q270,${1180 - wall * 760} 540,${1280 - wall * 700} Q810,${1180 - wall * 760} 1080,${1300 - wall * 700} L1080,1920 Z`}
+                fill={FIRE_D} stroke={INK} strokeWidth={6} />
+              <path d={`M0,1920 L0,${1420 - wall * 620} Q300,${1320 - wall * 660} 640,${1400 - wall * 620} Q900,${1330 - wall * 660} 1080,${1420 - wall * 620} L1080,1920 Z`}
+                fill={FIRE} opacity={0.85} />
+              {/* flame licks along the ridge */}
+              {Array.from({length: 10}).map((_, i) => (
+                <path key={i} d={`M${60 + i * 108},${1300 - wall * 690} q${-16},${-46 - 10 * Math.sin(f / 5 + i)} 0,${-84} q16,40 0,84 Z`} fill={IR_CIT} opacity={0.7 * wall} />
+              ))}
+              {/* roiling smoke + ash */}
+              {Array.from({length: 8}).map((_, i) => (
+                <ellipse key={i} cx={100 + i * 130} cy={(1200 - wall * 700) - ((f * 1.5 + i * 40) % 300)} rx={70} ry={50} fill="#4a4038" opacity={0.35 * wall} />
+              ))}
             </g>
-          )}
-          {stakeSettle > 0.01 && <SurveyStake x={720} y={1740} s={1.0} settle={stakeSettle} f={f} />}
-        </svg>
-        <HazeOverlay amount={hazeAmount} color={HAZE} />
-        {stampIn > 0.02 && (
-          <div style={{position: 'absolute', top: 460, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: stampIn, transform: `scale(${stampIn})`}}>
-            <div style={{background: HAZE, border: `8px solid ${INK}`, borderRadius: 14, padding: '18px 32px'}}>
-              <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 34, color: SNOW, textAlign: 'center', letterSpacing: 1}}>FEDERAL PM2.5<br />NON-ATTAINMENT ZONE</div>
-            </div>
-          </div>
-        )}
-      </AbsoluteFill>
-      {/* kept outside the push/tilt camera transform: at max push+tilt the transform
-          carries this card's top line above the 4:5 crop's safe box */}
-      {quoteT > 0.02 && <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}><QuoteCard x={540} y={960} revealT={quoteT} op={Math.min(1, quoteT * 3)} /></svg>}
+            {/* the tiny fenced test flame + small VALE, dwarfed */}
+            <g transform="translate(540,1560)">
+              <rect x={-90} y={-10} width={180} height={12} fill="#6b7280" stroke={INK} strokeWidth={3} />
+              <Flame x={0} y={-10} s={0.4} f={f} />
+              <g transform="translate(120,-30) scale(0.32)"><Vale frame={f} scale={1} emotion="calm" eyeLock={0.1} /></g>
+              <text x={0} y={60} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill="#fff" style={{textShadow: '2px 2px 0 #000'} as any}>one test ignition</text>
+            </g>
+          </svg>
+          <div style={{position: 'absolute', top: 340, left: 0, right: 0, textAlign: 'center', fontFamily: BOLD, fontWeight: 900, fontSize: 52, color: IR_CIT, textShadow: '2px 3px 0 #000', opacity: wall}}>NOT a roadless megafire</div>
+        </>
+      )}
     </AbsoluteFill>
   );
 };
 
-// ================================================================ S6 — THE FREEZE (loopback button)
+// ================================================================ S6 — BUTTON (beats 12-14)
 const S6: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const leverIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 120}});
-  const pulled = interpolate(f, [30, 80], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
-  const pullBack2 = interpolate(f, [30, 80], [1, 0.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const freezeIn = spring({frame: f - 85, fps, config: {damping: 14, stiffness: 100}});
-  const mooseIn = spring({frame: f - 110, fps, config: {damping: 12, stiffness: 130}});
-  const sway = idleSway(f, 3, 1.2, 60);
+  const voice = useVoice();
+  // beat 12 (~0-3.5s): pending trophy on September
+  const trophyFlick = 0.5 + 0.5 * Math.sin(f / 5);
+  const pendStamp = spring({frame: f - 30, fps, config: {damping: 10, stiffness: 180}});
+  // beat 13 (~3.5-7s / local ~105f): extraction rig recedes vs VALE guarding
+  const serverShrink = interpolate(f, [110, 160], [1, 0.2], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const serverX = interpolate(f, [110, 170], [640, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const armPull = interpolate(f, [104, 128], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // beat 14 (~7-14s / local ~210f): VALE liftoff, dawn, ACUASI lower-third (signature)
+  const dawn = interpolate(f, [210, 300], [0.2, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const liftoff = spring({frame: f - 220, fps, config: {damping: 15, stiffness: 90}});
+  const stage = f < 96 ? 0 : (f < 200 ? 1 : 2);
   return (
-    <AbsoluteFill style={{backgroundColor: SKY}}>
-      <FrostYardBG f={f} />
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g opacity={Math.max(0, 1 - pullBack2)}>
-          <GearLever x={540} y={800} f={f} pulled={pulled * 0.4} />
-          <Nameplate x={540} y={900} text="BOARD VOTE" sub="JULY 28, 2026" op={leverIn} />
-        </g>
-        <g transform={`translate(0,${freezeIn < 0.6 ? (1 - freezeIn) * 40 : sway})`}>
-          <Sourdough frame={f} x={540} y={1440} scale={1.5} emotion="frozen" glow={0.55} />
-        </g>
-        {/* pen hovering (never touching down) over an unsigned ballot -- the
-            "decision in suspension" image; a light, high-contrast pen with a
-            visible dashed hover-gap so it reads clearly against the night sky */}
-        {freezeIn > 0.2 && (
-          <g transform={`translate(700,1300) rotate(-18)`} opacity={Math.min(1, freezeIn)}>
-            <rect x={-90} y={0} width={180} height={130} rx={8} fill={SNOW} stroke={INK} strokeWidth={5} />
-            {[24, 46, 68, 90].map((yy, i) => <line key={i} x1={-70} y1={yy} x2={70} y2={yy} stroke="#c9c2ad" strokeWidth={3} />)}
-            <g transform={`translate(20,${-24 + 3 * Math.sin(f / 3)}) rotate(-24)`}>
-              <line x1={0} y1={0} x2={0} y2={-56} stroke={INK} strokeWidth={3} strokeDasharray="3 5" opacity={0.5} />
-              <rect x={-7} y={-118} width={14} height={62} rx={4} fill="#e8e0d0" stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
-              <path d="M-7,-56 L0,-40 L7,-56 Z" fill={EMBER} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
-              <rect x={-7} y={-118} width={14} height={22} rx={4} fill={TEAL} stroke={INK} strokeWidth={4} />
+    <AbsoluteFill style={{backgroundColor: NIGHT}}>
+      {stage === 0 && (
+        <>
+          <NenanaRangeBG f={f} dawn={0.12} showStrip={false} />
+          <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+            {/* dashed-ghost pending trophy on a calendar */}
+            <g transform="translate(540,820)" opacity={0.5 + 0.5 * trophyFlick}>
+              <path d="M-60,-80 h120 v30 a60,60 0 0 1 -120,0 Z" fill="none" stroke={IR_CIT} strokeWidth={6} strokeDasharray="12 10" />
+              <rect x={-20} y={-10} width={40} height={50} fill="none" stroke={IR_CIT} strokeWidth={6} strokeDasharray="12 10" />
+              <rect x={-56} y={40} width={112} height={20} rx={5} fill="none" stroke={IR_CIT} strokeWidth={6} strokeDasharray="12 10" />
             </g>
-          </g>
-        )}
-        {mooseIn > 0.02 && (
-          <g transform={`translate(160,${1620 - 30 * (1 - mooseIn)}) scale(0.5)`} opacity={mooseIn}>
-            <Moose x={0} y={0} f={f} scale={1} facing={1} />
-            <g transform="translate(140,-260)">
-              <ChipShadow><BoxLabel x={0} y={0} text="#4,000,001" w={280} h={64} fs={30} fill={ICE} sub="DATA CENTERS AHEAD OF YOU" /></ChipShadow>
+            <g transform="translate(540,1060)">
+              <rect x={-180} y={-70} width={360} height={140} rx={12} fill="#0f1626" stroke="#fff" strokeWidth={5} />
+              <text x={0} y={-10} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={64} fill="#fff">SEPTEMBER</text>
+              <text x={0} y={44} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={40} fill={IR_COR}>2026</text>
             </g>
-          </g>
-        )}
-      </svg>
+          </svg>
+          {pendStamp > 0.05 && <Stamp cx={540} cy={900} s={pendStamp} text="JUDGING PENDING" rot={-8} color="#9fb2d6" />}
+        </>
+      )}
+      {stage === 1 && (
+        <>
+          <NenanaRangeBG f={f} dawn={0.35} showStrip={false} />
+          <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+            {/* the greedy extraction machine drives a pipe into the land + drags a
+                resource-arrow OUT, then recedes (take), vs VALE shielding the treeline */}
+            <g transform={`translate(${serverX},900) scale(${serverShrink})`} opacity={serverShrink}>
+              <ServerMachine frame={f} x={0} y={0} scale={0.7} emotion="ghost" />
+              {/* pipe into the land + reversed resource arrow */}
+              <path d="M-20,180 L-20,300" stroke={INK} strokeWidth={14} />
+              <g opacity={armPull}>
+                <FatArrow d="M-20,300 L-20,120" revealT={armPull} color={IR_MAG} head={[-20, 120]} headRot={-90} />
+              </g>
+            </g>
+            {/* VALE plants a shielding guard stance over the treeline */}
+            <g transform="translate(360,1120)"><Vale frame={f} scale={1.0} emotion="resolute" eyeLock={0.4} accent={voice.accentAt(f)} groundY={200} /></g>
+            {/* Moose watching, smug (alert eases to calm) */}
+            <g transform="translate(840,1340) scale(0.6)"><Moose x={0} y={0} f={f} facing={-1} emotion="calm" alert={0.4} /></g>
+          </svg>
+          <div style={{position: 'absolute', top: 320, left: 0, right: 0, textAlign: 'center'}}>
+            <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, color: '#fff', background: 'rgba(16,20,30,0.8)', padding: '8px 24px', borderRadius: 10, textShadow: '2px 2px 0 #000'}}>not TAKING from the land · PROTECTING it</span>
+          </div>
+        </>
+      )}
+      {stage === 2 && (
+        <>
+          <NenanaRangeBG f={f} dawn={dawn} parallax={1} showStrip />
+          <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+            {/* VALE lifting off the airstrip at dawn (signature shot), loops to the open */}
+            <g transform={`translate(540,${1300 - liftoff * 420})`}>
+              <MotionBlur vy={liftoff > 0.05 && liftoff < 0.95 ? 14 : 0} gain={0.6}>
+                <Vale frame={f} scale={1.15} emotion="resolute" eyeLock={0.3} accent={voice.accentAt(f)} groundY={liftoff < 0.1 ? 150 : undefined} />
+              </MotionBlur>
+            </g>
+          </svg>
+          <div style={{position: 'absolute', bottom: 470, left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <div style={{background: INK, color: '#fff', fontFamily: BOLD, fontWeight: 900, fontSize: 40, padding: '10px 26px', borderRadius: 10, border: `5px solid ${IR_CIT}`}}>UAF ACUASI · Nenana, Alaska</div>
+            <div style={{marginTop: 10, background: IR_CIT, color: INK, fontFamily: BOLD, fontWeight: 900, fontSize: 44, padding: '8px 24px', borderRadius: 10, transform: 'rotate(-1.5deg)'}}>Alaska built the RANGE</div>
+          </div>
+        </>
+      )}
     </AbsoluteFill>
   );
 };
 
-// ================================================================ CAPTIONS overlay
+// ================================================================ TIMELINE
+const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6];
+const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
+  {from: 0, dur: 210}, {from: 210, dur: 315}, {from: 525, dur: 210},
+  {from: 735, dur: 315}, {from: 1050, dur: 240}, {from: 1290, dur: 420},
+];
+
+const GradedGrade: React.FC = () => {
+  const f = useCurrentFrame();
+  return <GradeLayer f={f} bloom={0.5} vignette={0.5} grain={0.05} warmth={0.06} />;
+};
+
+// Persistent thermal-telemetry dial chrome, top corners (LIVING_SCREEN: two large,
+// high-contrast, spatially isolated motion regions), in the run's IR palette.
+const TelemetryDial: React.FC<{x: number; y: number; f: number; color: string; phase: number}> = ({x, y, f, color, phase}) => {
+  const spin = (f * 5 + phase * 90) % 360;
+  const pulse = 1 + 0.14 * Math.sin(f / 10 + phase);
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <circle r={44 * pulse} fill="#0f1522" stroke={color} strokeWidth={5} opacity={0.9} />
+      <circle r={30} fill="none" stroke={color} strokeWidth={2.5} opacity={0.5} />
+      <g transform={`rotate(${spin})`}><rect x={-3} y={-38} width={6} height={30} rx={3} fill={color} /></g>
+      <circle r={5} fill={color} />
+    </g>
+  );
+};
+
 const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -492,48 +599,12 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
   if (!cue) return null;
   return (
     <div style={{position: 'absolute', bottom: 340, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 60px'}}>
-      <div style={{background: 'rgba(16,20,30,0.82)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${SNOW_C}`}}>
+      <div style={{background: 'rgba(16,20,30,0.82)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${CAP_BORDER}`}}>
         <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, lineHeight: 1.12, color: '#fff', textAlign: 'center', letterSpacing: 0.5, textShadow: `2px 3px 0 rgba(0,0,0,0.6)`}}>
           {cue.text}
         </div>
       </div>
     </div>
-  );
-};
-
-// ================================================================ TIMELINE
-const SCENE_COMPONENTS: React.FC[] = [S1, S2, S3, S4, S5, S6];
-// Fallback bounds (30fps); scripts/build_scenes.py overrides with the actual
-// synthesized VO timing at render time (out/dispatch/episode_props.json).
-const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
-  {from: 0, dur: 205}, {from: 205, dur: 252}, {from: 457, dur: 215},
-  {from: 672, dur: 388}, {from: 1060, dur: 275}, {from: 1335, dur: 214},
-];
-
-const GradedGrade: React.FC = () => {
-  const f = useCurrentFrame();
-  return <GradeLayer f={f} bloom={0.5} vignette={0.52} grain={0.05} warmth={0.07} />;
-};
-
-// Persistent telemetry-dial chrome, top corners, present across every scene.
-// LARGE, HIGH-CONTRAST, spatially isolated from the hero action so it reads as
-// two of its own disjoint motion regions in the LIVING_SCREEN grid check (a
-// spread of dozens of small low-contrast particles didn't move any single
-// 90x96px grid cell's average luma enough to clear the floor; two big rotating
-// dials with a strong fill/background contrast reliably do). Doubles as a
-// legible "the system is live" HUD motif for the queue/backlog story.
-const TelemetryDial: React.FC<{x: number; y: number; f: number; color: string; phase: number}> = ({x, y, f, color, phase}) => {
-  const spin = (f * 5 + phase * 90) % 360;
-  const pulse = 1 + 0.14 * Math.sin(f / 10 + phase);
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <circle r={44 * pulse} fill="#0f1522" stroke={color} strokeWidth={5} opacity={0.9} />
-      <circle r={30} fill="none" stroke={color} strokeWidth={2.5} opacity={0.5} />
-      <g transform={`rotate(${spin})`}>
-        <rect x={-3} y={-38} width={6} height={30} rx={3} fill={color} />
-      </g>
-      <circle r={5} fill={color} />
-    </g>
   );
 };
 
@@ -543,13 +614,13 @@ export const Episode: React.FC<EpisodeProps> = ({captions, scenes, mouth, accent
   return (
     <AbsoluteFillWithTelemetry>
       <VoiceProvider data={voice}>
-      {SCENE_COMPONENTS.map((C, i) => (
-        <Sequence key={i} from={bounds[i].from} durationInFrames={bounds[i].dur} name={`S${i + 1}`}>
-          <C />
-        </Sequence>
-      ))}
-      <GradedGrade />
-      <Captions captions={captions} />
+        {SCENE_COMPONENTS.map((C, i) => (
+          <Sequence key={i} from={bounds[i].from} durationInFrames={bounds[i].dur} name={`S${i + 1}`}>
+            <C />
+          </Sequence>
+        ))}
+        <GradedGrade />
+        <Captions captions={captions} />
       </VoiceProvider>
     </AbsoluteFillWithTelemetry>
   );
@@ -558,11 +629,11 @@ export const Episode: React.FC<EpisodeProps> = ({captions, scenes, mouth, accent
 const AbsoluteFillWithTelemetry: React.FC<{children: React.ReactNode}> = ({children}) => {
   const f = useCurrentFrame();
   return (
-    <AbsoluteFill style={{backgroundColor: SKY}}>
+    <AbsoluteFill style={{backgroundColor: NIGHT}}>
       {children}
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', pointerEvents: 'none'}}>
-        <TelemetryDial x={90} y={100} f={f} color={TEAL} phase={0} />
-        <TelemetryDial x={990} y={100} f={f} color={EMBER} phase={1} />
+        <TelemetryDial x={90} y={100} f={f} color={IR_CIT} phase={0} />
+        <TelemetryDial x={990} y={100} f={f} color={IR_MAG} phase={1} />
       </svg>
     </AbsoluteFill>
   );

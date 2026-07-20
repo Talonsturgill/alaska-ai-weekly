@@ -29,6 +29,12 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         schema={episodeSchema}
         defaultProps={{ captions: [] }}
+        // Duration follows the VO: read `total` (frames) from episode_props.json so the
+        // tail (the S6 button) is never truncated when the narration retimes the piece.
+        // Prior bug (2026-07-20): hardcoded 1561 cut the last ~4.5s of a 1699f render.
+        calculateMetadata={({ props }) => ({
+          durationInFrames: (props as { total?: number }).total ?? 1561,
+        })}
       />
       <Composition
         id="Standoff"

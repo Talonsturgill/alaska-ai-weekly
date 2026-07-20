@@ -441,3 +441,126 @@ export const Cell: React.FC<{
     </g>
   );
 };
+
+// =============================================================================
+// VALE — 2026-07-20 NET-NEW HERO. A characterized autonomous wildfire-response
+// drone (the guardian). Deliberate shape language: rounded, symmetric, protective
+// gunmetal machine, the OPPOSITE of both the fire's jagged chaos and the greedy
+// rectilinear ServerMachine. Its single big camera-EYE is the emotional tell (an
+// iris that dilates when scanning and CLAMPS small + hard on a lock). Quad rotor
+// arms with spinning blur discs, a suppressant-tank belly with a fill gauge,
+// landing skids, blinking running lights. Built to the depth bar (tones/FormGradient/
+// RimLight/ContactShadow) with an idle hover-bob + blink. Draw space local, hub at
+// (0,0); caller places with x/y/scale/facing/frame. `emotion`: vigilant (scanning) /
+// locked (clamped on target, brows in) / resolute (steady, determined) / calm.
+// `eyeLock` 0..1 drives the iris clamp; `accent` 0..1 a reactive brighten (lib/motion
+// accentKick); `groundY` (px below hub) draws a ground contact shadow when landed.
+// =============================================================================
+export type ValeEmotion = 'vigilant' | 'locked' | 'resolute' | 'calm';
+
+export const Vale: React.FC<{
+  frame: number; x?: number; y?: number; scale?: number; facing?: 1 | -1;
+  emotion?: ValeEmotion; eyeLock?: number; accent?: number; groundY?: number; rotor?: boolean;
+}> = ({frame: f, x = 0, y = 0, scale = 1, facing = 1, emotion = 'vigilant', eyeLock = 0, accent = 0, groundY, rotor = true}) => {
+  const bodyT = tones('#8C99A8');   // cool gunmetal
+  const tankT = tones('#3f6f6a');   // teal suppressant tank
+  const idg = `vale${Math.round(x)}_${Math.round(y)}`;
+  const bob = 4 * Math.sin(f / 16);
+  const lock = Math.max(0, Math.min(1, eyeLock));
+  // iris: wide when scanning, clamps SMALL and bright when locked
+  const iris = 20 - lock * 11 + (emotion === 'vigilant' ? 2 * Math.sin(f / 7) : 0);
+  const eyeGlow = 0.5 + 0.5 * lock + accent * 0.4;
+  const blink = ((f + 12) % 150) < 5 && lock < 0.3;
+  const rot = (f * 34) % 360;       // rotor spin phase
+  const browIn = emotion === 'locked' ? 8 : emotion === 'resolute' ? 4 : 0;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={`${idg}_b`} t={bodyT} />
+      <FormGradient id={`${idg}_t`} t={tankT} />
+      {groundY !== undefined && <ContactShadow cx={0} cy={groundY} rx={128} ry={20} opacity={0.3} blur={12} />}
+      <g transform={`translate(0,${bob})`}>
+        {/* ---- rotor arms (X-quad), spinning blur discs at each tip ---- */}
+        {[[-150, -20, 1], [150, -20, -1], [-120, 34, 1], [120, 34, -1]].map(([ax, ay, dir], i) => (
+          <g key={i}>
+            <path d={`M0,-4 L${ax},${ay}`} stroke={INK} strokeWidth={17} strokeLinecap="round" />
+            <path d={`M0,-4 L${ax},${ay}`} stroke={bodyT.core} strokeWidth={9} strokeLinecap="round" />
+            {/* motor housing */}
+            <circle cx={ax} cy={ay} r={16} fill={`url(#${idg}_b)`} stroke={INK} strokeWidth={5} />
+            {/* spinning rotor disc: two translucent blurred ellipses + a hint blade */}
+            {rotor && (
+              <g transform={`translate(${ax},${ay - 6})`}>
+                <ellipse cx={0} cy={0} rx={54} ry={9} fill="#cdd6e0" opacity={0.22} />
+                <ellipse cx={0} cy={0} rx={54} ry={9} fill="none" stroke="#eef4fb" strokeWidth={2} opacity={0.4} />
+                <line x1={-52 * Math.cos(rot / 57)} y1={0} x2={52 * Math.cos(rot / 57)} y2={0} stroke="#eef4fb" strokeWidth={3} opacity={0.5} transform={`rotate(${(dir as number) * rot})`} />
+              </g>
+            )}
+          </g>
+        ))}
+        {/* ---- landing skids ---- */}
+        {[-1, 1].map((s, i) => (
+          <g key={i}>
+            <path d={`M${s * 44},96 L${s * 70},150`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+            <path d={`M${s * 40},150 L${s * 96},150`} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+            <path d={`M${s * 40},150 L${s * 96},150`} stroke={bodyT.shade} strokeWidth={4} strokeLinecap="round" />
+          </g>
+        ))}
+        {/* ---- suppressant tank belly (with fill gauge + nozzle) ---- */}
+        <g transform="translate(0,74)">
+          <ellipse cx={0} cy={0} rx={70} ry={44} fill={`url(#${idg}_t)`} stroke={INK} strokeWidth={6} />
+          <path d="M18,-40 q40,10 40,40 q0,26 -20,38 q28,-30 -20,-78 Z" fill={tankT.shade} opacity={0.5} />
+          <RimLight d="M-64,-10 q6,-34 60,-38" w={3} opacity={0.5} />
+          {/* fill gauge: 3 ticks lit */}
+          <rect x={-30} y={-8} width={60} height={16} rx={5} fill="#10201d" stroke={INK} strokeWidth={3} />
+          {[-1, 0, 1].map((k, i) => <rect key={i} x={-24 + i * 18} y={-4} width={12} height={8} rx={2} fill="#37e0d8" opacity={0.9} />)}
+          {/* nozzle */}
+          <path d="M0,40 l-10,20 l20,0 Z" fill={bodyT.core} stroke={INK} strokeWidth={4} />
+        </g>
+        {/* ---- central hub body ---- */}
+        <g>
+          <path d="M-96,-6 Q-96,-58 0,-58 Q96,-58 96,-6 Q96,44 0,44 Q-96,44 -96,-6 Z"
+            fill={`url(#${idg}_b)`} stroke={INK} strokeWidth={OUT} strokeLinejoin="round" />
+          <path d="M20,-56 Q96,-46 96,-6 Q96,40 30,44 Q86,-4 20,-56 Z" fill={bodyT.shade} opacity={0.5} />
+          {/* panel seams + rivets (detail density) */}
+          <path d="M-70,-30 Q0,-40 70,-30" fill="none" stroke={bodyT.key} strokeWidth={3} opacity={0.45} />
+          <path d="M-78,16 Q0,26 78,16" fill="none" stroke={bodyT.core} strokeWidth={4} opacity={0.4} />
+          {[-70, -36, 36, 70].map((rx2, i) => (
+            <g key={i}><circle cx={rx2} cy={-40} r={5} fill={bodyT.core} stroke={INK} strokeWidth={2.5} /><circle cx={rx2} cy={-40} r={1.8} fill="#eef6ff" opacity={0.8} /></g>
+          ))}
+          {/* top sensor mast + blinking running lights */}
+          <rect x={-4} y={-78} width={8} height={22} rx={3} fill={bodyT.core} stroke={INK} strokeWidth={3} />
+          <circle cx={0} cy={-82} r={6} fill={((f % 40) < 20) ? '#ff5a4d' : '#5a1f1c'} stroke={INK} strokeWidth={2.5} />
+          <circle cx={-84} cy={0} r={5} fill={((f % 46) < 23) ? '#4dff9e' : '#1c5a3a'} />
+          <circle cx={84} cy={0} r={5} fill={((f % 46) < 23) ? '#4dff9e' : '#1c5a3a'} />
+          <RimLight d="M-96,-6 Q-96,-58 0,-58 Q96,-58 96,-6" w={4} opacity={0.55} />
+        </g>
+        {/* ---- the camera-EYE (the emotional tell) ---- */}
+        <g transform="translate(0,-6)">
+          {/* housing ring */}
+          <circle r={42} fill="#12161f" stroke={INK} strokeWidth={OUT} />
+          <circle r={42} fill="none" stroke={bodyT.key} strokeWidth={3} opacity={0.5} />
+          {blink ? (
+            <path d="M-30,0 q30,16 60,0" fill="none" stroke="#FFCE6B" strokeWidth={7} strokeLinecap="round" transform="translate(-30,0)" />
+          ) : (
+            <>
+              {/* glowing iris ring */}
+              <circle r={30} fill="none" stroke="#FFCE6B" strokeWidth={5} opacity={0.5 + 0.4 * eyeGlow} />
+              {/* lens iris (dilates/clamps) */}
+              <circle r={iris} fill={`rgba(255,206,107,${0.55 + 0.45 * eyeGlow})`} stroke="#FF7F3D" strokeWidth={3} />
+              <circle r={Math.max(4, iris * 0.42)} fill="#2a1400" />
+              {/* catch-light glint */}
+              <circle cx={-iris * 0.4} cy={-iris * 0.4} r={3.4} fill="#fff" opacity={0.9} />
+              {/* lock ticks appear as it clamps */}
+              {lock > 0.4 && [0, 90, 180, 270].map((deg, i) => (
+                <line key={i} x1={0} y1={-34} x2={0} y2={-40} stroke="#FFE24A" strokeWidth={3}
+                  transform={`rotate(${deg})`} opacity={Math.min(1, (lock - 0.4) * 2.5)} />
+              ))}
+            </>
+          )}
+          {/* brows: drive the read (locked = hard inward, resolute = set) */}
+          <path d={`M-40,${-44 + browIn} q18,${-6 + browIn * 0.4} 34,${browIn * 0.5}`} fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <path d={`M40,${-44 + browIn} q-18,${-6 + browIn * 0.4} -34,${browIn * 0.5}`} fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
+        </g>
+      </g>
+    </g>
+  );
+};

@@ -7,6 +7,75 @@ back on if a later run regresses. Newest first.
 
 ---
 
+## 2026-07-20 — "Alaska Ran the Sky" (Dryad / XPRIZE Wildfire finals at Nenana)
+
+**Shipped:** ~57s vertical Dispatch, Gemini narrator (Sulafat, 54s read). Story: the XPRIZE
+Wildfire "Autonomous Wildfire Response" finals were physically held in Alaska (Nenana Municipal
+Airport, near Fairbanks, June 15 to 28 2026), UAF's ACUASI managed the airspace, and finalist
+Dryad Networks says it demonstrated fully autonomous detection and suppression there, no human in
+the loop. Earned angle (three-analyst angle room converged): proven IN Alaska, not done TO Alaska;
+Alaska is the proving ground; honest guardrail drawn as a picture (controlled airfield test,
+judging pending September, one test ignition vs a roadless megafire, Alaska made the range not the
+drones, Anduril dual-use). Stance: celebratory (rotates off the recent cautionary AI-infrastructure
+runs). Objective quality_gate.py: 9.3/10 with only FIRST_FRAME failing before the poster-frame fix
+(see below); LinkedIn caption scorer 8.68 (ship 8.5).
+
+**Bugs found and FIXED this run (the real retrospective material):**
+1. **`out/` scratch was git-TRACKED** (a new vector of the recurring stale-scratch class the 07-18
+   and 07-19 retros both flagged). A prior commit force-added `out/dispatch/*` despite `.gitignore`,
+   so a fresh `git checkout -B main origin/main` silently restored the ALREADY-SHIPPED 07-19 GVEA
+   turbine dispatch with a fresh checkout mtime, defeating run_guard.py's mtime freshness check.
+   Confirmed live at run start (out/dispatch held the complete GVEA dispatch). ROOT-CAUSE FIX:
+   `git rm -r --cached out/` so `.gitignore` actually takes effect (commit on this branch); each
+   run still explicitly commits only the specific artifacts it wants kept.
+2. **VO soundcheck crashed on a missing `librosa`** (ModuleNotFoundError in vo_soundcheck.py's
+   pitch-variance gate) AFTER paying for 4 Gemini takes. Same silent-missing-dep class as the 07-18
+   faster_whisper/resemblyzer gap. FIXED: installed librosa AND added `librosa, faster_whisper` to
+   `scripts/setup_env.sh` (idempotent top-up) so it never recurs.
+3. **WER canonicalizer inflated on compound splits (REPEAT-OFFENDER class).** Whisper transcribes
+   closed compounds as two words ("airstrip"->"air strip", "megafire"->"mega fire"), so every take
+   of this compound-heavy script scored 2 word-errors PER compound and all 4 takes landed 0.09-0.10
+   vs the 0.08 threshold on a genuinely-correct read. This is the SAME canonicalizer-precision class
+   as the 07-19 $/% fix, so per the repeat-offender rule it got a real code fix, not a defer:
+   `scripts/vo_soundcheck.py` now joins a curated set of closed compounds SYMMETRICALLY (ref AND hyp)
+   before the Levenshtein, so it can only cancel a tokenization mismatch, never invent a missing word.
+   VERIFIED: script-vs-heard WER dropped 0.093 -> 0.034 (passes) while a garbage take stayed 0.966
+   (the fix does not mask real errors).
+4. **`Root.tsx` durationInFrames was hardcoded (1561f) and truncated the render.** The real VO
+   retimed the piece to 1699f, so the first full render silently cut the last ~4.5s (the S6 button /
+   signature liftoff). ENFORCED FIX: the Dispatch composition now derives its duration from the VO
+   via `calculateMetadata` reading `total` from episode_props.json, so the tail can never be truncated
+   again on a retime.
+5. **`scripts/dispatch_mix.py` had a hardcoded VIDEO_SECS (1673f) and a STALE EVENTS list** (the
+   07-16 Stak "square mile / gigawatt / paper storm" beats). FIXED: VIDEO_SECS now derives from
+   `vo_lines.json` (max end + tail), and the SFX EVENTS were rewritten for this story's beats
+   (>= 1 per scene, 22 events). Also deepened the pre-button music dip to clear the >=6 dB gate
+   (measured 16.7 dB) and aligned storyboard `audio_arc.silence_at` to the real 44.2s dip.
+
+**Upgrades made this run (growth mandate):**
+- NEW HERO `Vale` (kit.tsx) — the guardian autonomous wildfire drone, expressive camera-eye tell
+  (iris clamps on a lock), quad rotors + suppressant-tank belly, built to the depth bar.
+- NEW BIOME `NenanaRangeBG` (Episode.tsx) — boreal airstrip (tarmac + runway lights + low spruce
+  band), provably distinct from DawnForestBG / FrostYardBG. Environment kit now three biomes.
+- NEW CRAFT ADVANCE (single primary) `IRVision` (lib/lighting.tsx) — reusable false-color thermal/IR
+  heat-vision look system (magenta->coral->citron ramp + scanlines + THERMAL HUD); inherited by any
+  future sensor/thermal Alaska story. Plus `SmellRings` + `ScanReticle` FX (lib/FX.tsx).
+- NEW POSE `Moose.alert` (fauna.tsx) — ear-perk + head-raise sky-watcher, distinct from bumpKick.
+- All registered in `lib/ASSET_MANIFEST.md` in this run's commit.
+
+**Known issues deferred (with a concrete plan, not vague):**
+- Scene-internal beat timings are still ABSOLUTE frame numbers hand-tuned to the VO bounds (S3/S4
+  had to be re-timed by hand this run when the real VO made those scenes shorter than the drafts
+  assumed). Plan: pass each scene's `dur` (from episode_props scenes) into the scene component so
+  beat interpolations scale proportionally, removing the manual retime step. Deferred (a build-time
+  refactor of all 6 scenes; too large to verify safely mid-run) — logged here as the plan.
+- `AlaskaMini`'s pin is hardcoded at the North Slope position; for Nenana (interior) it reads
+  slightly off-geography. Plan: add an `(x,y)` pin-position prop to AlaskaMini. Minor, deferred.
+
+**Panel/gate result:** PANEL_PLACEHOLDER
+
+---
+
 ## 2026-07-19 (follow-up, owner request) — Phase 8 now FIXES, not just suggests
 
 Owner: "when it does the retro at the end, I want it to also just fix things it found or

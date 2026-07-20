@@ -34,3 +34,8 @@ __pycache__/
 .claude/skills/alaska-dispatch/shots.json
 .claude/skills/alaska-dispatch/render_manifest.json
 models/
+
+# Remotion / build caches (regenerable, never commit)
+.cache/
+.remotion/
+video-engine/.remotion/
