@@ -6,6 +6,7 @@ import { FaunaShowcase } from './FaunaShowcase';
 import { CraftShowcase } from './CraftShowcase';
 import { TwentyFiveD, BorealFlat } from './TwentyFiveD';
 import { Nenana3D } from './Nenana3D';
+import { BiomeShowcase } from './BiomeShowcase';
 import { z } from 'zod';
 
 const standoffSchema = z.object({
@@ -76,6 +77,14 @@ export const RemotionRoot: React.FC = () => {
         id="Nenana3D"
         component={Nenana3D}
         durationInFrames={190}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="BiomeShowcase"
+        component={BiomeShowcase}
+        durationInFrames={150}
         fps={30}
         width={1080}
         height={1920}
