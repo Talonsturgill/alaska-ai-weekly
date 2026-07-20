@@ -175,6 +175,32 @@ export const Extrude: React.FC<{
   return <div style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d'}}>{layers}</div>;
 };
 
+// ---------------------------------------------------------------- camera library
+// Named cinematic moves: each returns a Camera for progress p (0..1, pre-eased by
+// the caller with Remotion's interpolate/Easing). Compose by summing fields.
+// These are the vocabulary the storyboard's `camera_strategy` axis should name.
+export const CameraMoves = {
+  // push deep into the scene through the layers (the signature 2.5D move)
+  dollyThrough: (p: number, dist = 900): Camera => ({z: -200 + p * (dist + 200)}),
+  // sweep around the hero, revealing solidified/extruded side walls
+  orbitReveal: (p: number, deg = 24): Camera => ({rotY: -deg / 2 + p * deg}),
+  // start high looking down, crane to eye level (the establish -> intimate move)
+  craneDown: (p: number, drop = 380): Camera => ({y: -drop + p * drop, rotX: -12 + p * 12}),
+  // low fast lateral slide (a drive-by / flyover feel)
+  truckAcross: (p: number, dist = 300): Camera => ({x: -dist / 2 + p * dist}),
+  // rise with a subject (pair with a hero's liftoff)
+  riseWith: (p: number, height = 360): Camera => ({y: p * -height, rotX: p * -6}),
+} as const;
+
+export function composeCams(...cams: Camera[]): Camera {
+  const out: Required<Camera> = {x: 0, y: 0, z: 0, rotX: 0, rotY: 0, rotZ: 0};
+  for (const c of cams) {
+    out.x += c.x ?? 0; out.y += c.y ?? 0; out.z += c.z ?? 0;
+    out.rotX += c.rotX ?? 0; out.rotY += c.rotY ?? 0; out.rotZ += c.rotZ ?? 0;
+  }
+  return out;
+}
+
 // ---------------------------------------------------------------- depth atmosphere
 // Aerial perspective: real air between the camera and a far plane. Wrap a Plane's
 // content in <Atmosphere z={...}> and distance desaturates, cools toward the sky

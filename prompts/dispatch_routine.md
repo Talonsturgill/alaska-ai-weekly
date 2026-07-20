@@ -108,8 +108,11 @@ repeat ever.
 
 ## THE COMMITTED TOOLING (adapt, don't reinvent)
 
-- video-engine/ — the Remotion 2.5D engine. Compositions in src/ (exemplars: IGSHook.tsx,
-  Standoff.tsx — the current craft bar; the best new scene of each run becomes the next
+- video-engine/ — the Remotion 2.5D engine. TRUE-DEPTH SYSTEM: lib/stage3d.tsx (Stage3D
+  camera / Plane / Atmosphere / Extrude / Solidify / CameraMoves) per docs/craft/STAGE3D.md —
+  author scenes WITH a composed camera move and depth planes wherever there is a world to move
+  through (exemplar: Nenana3D.tsx, the vertical slice). Compositions in src/ (exemplars: IGSHook.tsx,
+  Standoff.tsx — the prior craft bar; the best new scene of each run becomes the next
   exemplar). Reusable cast + juice in src/lib/ (Character.tsx: poses, emotions, outfits,
   built-in breath/blink; FX.tsx: SpeedLines, ImpactStar, PaperStorm, ZoomVignette). Render:
   `npx remotion render <Comp> <out.mp4>` (headless-shell baked into remotion.config.ts).
