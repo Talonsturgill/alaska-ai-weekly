@@ -428,3 +428,115 @@ export const Caribou: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------- ORCA
+// NET-NEW 2026-07-20c (asset-library session #2). The killer whale: glossy
+// black body, white eye patch + chin + belly sweep, gray saddle patch behind
+// the tall dorsal fin. `surface` 0..1 arcs the body through a breach curve
+// (0 = level cruise, 1 = full porpoising arc); swim undulation + pec/fluke
+// secondary motion; a blowhole spray puff near the top of the arc.
+export const Orca: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1; surface?: number;
+}> = ({x, y, scale = 1, f, facing = 1, surface = 0}) => {
+  const id = uid(`orca${x}${y}`);
+  const t = tones('#1a222e');            // glossy near-black
+  const su = Math.max(0, Math.min(1, surface));
+  const undul = 4 * Math.sin(f / 9);
+  const arc = -su * 22;                   // body pitch through the breach
+  const fluke = 10 * Math.sin(f / 7) + su * 8;
+  const spray = su > 0.6;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) rotate(${arc})`}>
+      <FormGradient id={id} t={t} />
+      {/* body: torpedo with the blunt orca head */}
+      <g transform={`translate(0,${undul})`}>
+        <path d="M-150,-40 q-24,-34 -6,-58 q40,-38 130,-40 q86,-2 132,30 q28,20 24,44 q-6,30 -50,40 q-110,26 -196,2 q-28,-8 -34,-18 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={6.5} strokeLinejoin="round" />
+        {/* white belly sweep */}
+        <path d="M-140,-32 q60,26 180,16 q46,-6 88,-24 q6,18 -22,30 q-96,30 -196,4 q-36,-10 -50,-26 Z" fill="#eef4f8" stroke={INK} strokeWidth={4.5} opacity={0.96} />
+        {/* gray saddle patch behind the dorsal */}
+        <path d="M-24,-92 q30,-8 54,2 q-6,16 -26,20 q-22,2 -28,-22 Z" fill="#8fa0ae" stroke={INK} strokeWidth={3.5} opacity={0.9} />
+        {/* the TALL dorsal fin (species read #1): a genuine upright blade */}
+        <path d={`M-24,-92 q-2,-92 22,-152 q34,40 38,104 q2,34 -18,50 Z`} fill={t.base} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+        <path d="M0,-240 q28,38 32,96 q-8,-12 -22,-16 Z" fill={t.shade} opacity={0.6} />
+        {/* white eye patch (species read #2) + eye + chin white */}
+        <path d="M66,-72 q36,-16 62,0 q6,18 -18,26 q-36,8 -44,-26 Z" fill="#eef4f8" stroke={INK} strokeWidth={4.5} />
+        <circle cx={66} cy={-42} r={5.5} fill={INK} />
+        <path d="M118,-42 q18,4 22,16 q-14,8 -28,0 Z" fill="#eef4f8" stroke={INK} strokeWidth={3.5} />
+        <RimLight d="M-150,-40 q-24,-34 -6,-58 q40,-38 130,-40" w={4} opacity={0.6} />
+        {/* pectoral paddle, sculling */}
+        <g transform={`translate(52,-14) rotate(${8 + 6 * Math.sin(f / 8)})`}>
+          <path d="M0,0 q26,10 30,36 q-20,10 -36,-2 q-6,-22 6,-34 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        </g>
+        {/* tail stock + flukes with follow-through */}
+        <g transform={`translate(-152,-52) rotate(${fluke})`}>
+          <path d="M0,0 q-30,4 -44,-10 q-8,-14 4,-24 q10,-4 18,4 Z" fill={t.base} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M-40,-8 q-26,-18 -28,-42 q22,2 34,20 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M-40,-12 q-30,10 -40,32 q24,4 38,-12 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        </g>
+        {/* blowhole spray at the top of the arc */}
+        {spray && (
+          <g opacity={Math.min(1, (su - 0.6) * 3)}>
+            {[0, 1, 2, 3].map((k) => (
+              <circle key={k} cx={96 + k * 4 - 6 * Math.sin(k * 2)} cy={-112 - k * 14 - 4 * Math.sin(f / 3 + k)} r={5 - k} fill="#cfe6f2" opacity={0.8 - k * 0.15} />
+            ))}
+          </g>
+        )}
+      </g>
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- PUFFIN
+// NET-NEW 2026-07-20c (asset-library session #2). The horned puffin: upright
+// tuxedo seabird, oversized orange-yellow parrot bill, orange feet, white face
+// disc. Endearing by build (big head, short body). `flap` 0..1 whirrs the
+// stubby wings (they beat FAST); idle: waddle-shift + head tilt + blink.
+export const Puffin: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1; flap?: number;
+}> = ({x, y, scale = 1, f, facing = 1, flap = 0}) => {
+  const id = uid(`puff${x}${y}`);
+  const t = tones('#1c2430');
+  const fl = Math.max(0, Math.min(1, flap));
+  const waddle = 3 * Math.sin(f / 14);
+  const tilt = 6 * Math.sin(f / 21);
+  const wing = fl * 34 * Math.sin(f / 1.6) + (1 - fl) * (4 + 3 * Math.sin(f / 18));
+  const blink = ((f + 40) % 130) < 5;
+  return (
+    <g transform={`translate(${x + waddle},${y}) scale(${scale * facing},${scale}) rotate(${waddle * 0.6})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={2} rx={54} ry={12} opacity={0.3} blur={9} />
+      {/* orange feet */}
+      {[-16, 14].map((fx, i) => (
+        <path key={i} d={`M${fx},-6 l-8,8 l10,0 l-4,-8 l8,8 l6,-2 Z`} fill="#f08a2e" stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
+      ))}
+      {/* tuxedo body: black back, white front */}
+      <path d="M-44,-64 q-10,-64 22,-96 q30,-28 62,-8 q26,18 24,62 q-2,44 -22,66 q-44,18 -74,-6 q-10,-8 -12,-18 Z"
+        fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M-26,-58 q-6,-52 18,-76 q22,-18 38,-2 q18,20 14,54 q-4,38 -18,52 q-32,10 -52,-28 Z" fill="#f2f6f8" stroke={INK} strokeWidth={4} />
+      <RimLight d="M-44,-64 q-10,-64 22,-96 q30,-28 62,-8" w={3.5} opacity={0.55} />
+      {/* stubby wing (fast whirr when flapping) */}
+      <g transform={`translate(-30,-96) rotate(${wing})`}>
+        <path d="M0,0 q-34,10 -44,38 q22,10 40,-4 q10,-16 4,-34 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      </g>
+      {/* head: white face disc + the BILL */}
+      <g transform={`translate(18,-136) rotate(${tilt})`}>
+        <circle r={34} fill={t.base} stroke={INK} strokeWidth={5.5} />
+        <circle cx={8} cy={2} r={24} fill="#f2f6f8" stroke={INK} strokeWidth={4} />
+        {/* oversized parrot bill: orange with a yellow ridge */}
+        <path d="M26,-8 q30,-8 44,6 q-8,22 -32,20 q-16,-2 -18,-14 q0,-8 6,-12 Z" fill="#f08a2e" stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        <path d="M28,-10 q26,-6 40,6 l-6,5 q-16,-10 -34,-4 Z" fill="#ffd23e" stroke={INK} strokeWidth={3} />
+        {/* eye + the little horn tick */}
+        {blink ? (
+          <path d="M2,-8 q6,4 12,0" fill="none" stroke={INK} strokeWidth={3.5} strokeLinecap="round" />
+        ) : (
+          <>
+            <circle cx={8} cy={-8} r={5.5} fill={INK} />
+            <circle cx={10} cy={-10} r={1.8} fill="#fff" />
+          </>
+        )}
+        <path d="M4,-16 q4,-8 12,-8" fill="none" stroke={INK} strokeWidth={2.5} strokeLinecap="round" />
+      </g>
+    </g>
+  );
+};
