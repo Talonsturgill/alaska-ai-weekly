@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame, Easing} from 'remotion';
-import {Stage3D, Plane, Extrude, CastShadow3D, Camera} from './lib/stage3d';
-import {tones, RimLight} from './lib/lighting';
+import {Stage3D, Plane, Extrude, CastShadow3D, Atmosphere, Camera} from './lib/stage3d';
+import {tones} from './lib/lighting';
 
 // =============================================================================
 // TwentyFiveD — a PROOF scene for the true-2.5D engine (UPGRADE_BACKLOG #1).
@@ -90,19 +90,19 @@ const hexPath = (cx: number, cy: number, r: number) => {
   return p.join(' ');
 };
 
-const SensorBeacon: React.FC<{f: number}> = ({f}) => {
+const SensorBeacon: React.FC<{f: number; camRotY: number}> = ({f, camRotY}) => {
   const bodyT = tones(GUN);
   const pulse = 0.6 + 0.4 * Math.sin(f / 8);
   return (
     <div style={{position: 'absolute', left: W / 2 - 150, top: H * 0.5 - 140, width: 300, height: 420, transformStyle: 'preserve-3d'}}>
-      {/* the extruded hexagonal prism body (real thickness) */}
-      <Extrude depth={90} slices={10} dir={{x: 0.5, y: 0.2}} render={(shade) => {
-        const col = shade > 0.85 ? bodyT.key : shade > 0.6 ? bodyT.base : shade > 0.4 ? bodyT.core : bodyT.shade;
+      {/* the extruded hexagonal prism body: side wall lit by the actual camera orbit */}
+      <Extrude depth={90} slices={10} camRotY={camRotY} base={GUN} render={(face, shade) => {
+        if (face === 'front') return null;   // front face drawn in detail below
         return (
           <svg width={300} height={420} viewBox="0 0 300 420" style={{position: 'absolute'}}>
-            <polygon points={hexPath(150, 250, 120)} fill={col} />
-            <rect x={30} y={130} width={240} height={130} fill={col} />
-            <polygon points={hexPath(150, 130, 120)} fill={col} />
+            <polygon points={hexPath(150, 250, 120)} fill={shade} />
+            <rect x={30} y={130} width={240} height={130} fill={shade} />
+            <polygon points={hexPath(150, 130, 120)} fill={shade} />
           </svg>
         );
       }} />
@@ -143,15 +143,15 @@ function cam(f: number): Camera {
 
 const GROUND_Y = H * 0.72;
 
-const SceneContents: React.FC<{f: number; flat: boolean}> = ({f, flat}) => {
+const SceneContents: React.FC<{f: number; flat: boolean; camRotY?: number}> = ({f, flat, camRotY = 0}) => {
   // in flat mode everything collapses to z=0 with no camera parallax
   const z = (d: number) => (flat ? 0 : d);
   return (
     <>
       <Plane z={z(1900)} fill><Sky /></Plane>
-      <Plane z={z(1300)} fill><Ridge baseY={GROUND_Y - 40} amp={260} fill="#2f3f63" /></Plane>
-      <Plane z={z(950)} fill><TreeBand baseY={GROUND_Y} h={150} fill="#1c3024" count={20} step={70} jitter={3} /></Plane>
-      <Plane z={z(520)} fill><TreeBand baseY={GROUND_Y + 30} h={230} fill={SPRUCE} count={16} step={92} jitter={7} /></Plane>
+      <Plane z={z(1300)} fill><Atmosphere z={z(1300)}><Ridge baseY={GROUND_Y - 40} amp={260} fill="#2f3f63" /></Atmosphere></Plane>
+      <Plane z={z(950)} fill><Atmosphere z={z(950)}><TreeBand baseY={GROUND_Y} h={150} fill="#1c3024" count={20} step={70} jitter={3} /></Atmosphere></Plane>
+      <Plane z={z(520)} fill><Atmosphere z={z(520)}><TreeBand baseY={GROUND_Y + 30} h={230} fill={SPRUCE} count={16} step={92} jitter={7} /></Atmosphere></Plane>
       {/* ground plane */}
       <Plane z={z(240)} fill>
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{position: 'absolute'}}>
@@ -164,7 +164,7 @@ const SceneContents: React.FC<{f: number; flat: boolean}> = ({f, flat}) => {
         <CastShadow3D x={W / 2 - 120} y={GROUND_Y + 150} scaleX={1.4} lean={0.7} squash={0.22} blur={16} opacity={0.36}>
           <svg width={320} height={200} viewBox="0 0 320 200"><polygon points={hexPath(160, 120, 120)} fill="#000" /><rect x={40} y={40} width={240} height={110} fill="#000" /></svg>
         </CastShadow3D>
-        <SensorBeacon f={f} />
+        <SensorBeacon f={f} camRotY={camRotY} />
       </Plane>
       {/* a couple NEAR spruces that sweep fast past the camera (foreground parallax) */}
       <Plane z={z(40)}>
@@ -179,10 +179,11 @@ const SceneContents: React.FC<{f: number; flat: boolean}> = ({f, flat}) => {
 
 export const TwentyFiveD: React.FC = () => {
   const f = useCurrentFrame();
+  const c = cam(f);
   return (
     <AbsoluteFill style={{backgroundColor: NIGHT}}>
-      <Stage3D camera={cam(f)} background={NIGHT}>
-        <SceneContents f={f} flat={false} />
+      <Stage3D camera={c} background={NIGHT}>
+        <SceneContents f={f} flat={false} camRotY={c.rotY ?? 0} />
       </Stage3D>
       <div style={{position: 'absolute', left: 30, top: 30, background: IR_CIT, color: INK, fontFamily: 'Arial Black', fontWeight: 900, fontSize: 30, padding: '6px 16px', borderRadius: 8}}>TRUE 2.5D</div>
     </AbsoluteFill>
