@@ -1,0 +1,60 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 4,
+  "soundcheck": {
+    "pass": false,
+    "score": 0.954,
+    "heard": "The world's hardest test for firefighting robots just ran in Alaska. No crew, no pilot. It finds a fire and puts it out on its own. The X-Prize Wildfire Finals, $11 million dollars, four years long. Nearly 300 teams. Three reached the final. All came to Nana. The University of Alaska ran the airspace over it. Here is what they watched. A sensor network smells the smoke in minutes and wakes a drone. It flies out, finds the flame, drops it. No one touches a controller. Dryad, one of the finalists, says it worked. But this was one test fire on an air strip. Not a mega fire in roadless country. And no winner is named until September. For once the AI did not come to take from Alaska. It came to protect it. Alaska did not build these machines. It built the range they had to survive.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.093,
+        "pass": false
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.19,
+        "voiced_frac": 0.46,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 54.56,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "WORDS: WER 0.093 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+  },
+  "all_reports": [
+    {
+      "pass": false,
+      "score": 0.947,
+      "diagnosis": "WORDS: WER 0.106 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    },
+    {
+      "pass": false,
+      "score": 0.95,
+      "diagnosis": "WORDS: WER 0.099 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    },
+    {
+      "pass": false,
+      "score": 0.954,
+      "diagnosis": "WORDS: WER 0.093 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    },
+    {
+      "pass": false,
+      "score": 0.95,
+      "diagnosis": "WORDS: WER 0.099 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

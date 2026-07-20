@@ -32,14 +32,19 @@ const uid = (s: string) => {
 // bumped-from-the-ticket-line gag — the growth mandate's new-pose-on-an-existing-
 // asset requirement. 0 = no effect (normal idle), rises to 1 at the impact frame
 // then relaxes back per the caller's easing.
-export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; emotion?: 'calm' | 'wary'; bumpKick?: number}> = ({
-  x, y, scale = 1, f, facing = 1, emotion = 'calm', bumpKick = 0,
+export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; emotion?: 'calm' | 'wary'; bumpKick?: number; alert?: number}> = ({
+  x, y, scale = 1, f, facing = 1, emotion = 'calm', bumpKick = 0, alert = 0,
 }) => {
   const id = uid(`moose${x}${y}`);
   const t = tones('#5a4632');       // dark brown coat
   const bumped = Math.max(0, Math.min(1, bumpKick));
+  // NEW 2026-07-20 pose `alert` (0..1): ears perk fully UP + forward, head/neck
+  // RAISES, a nostril-flare sniff, eyes track upward at the passing drone. The
+  // OPPOSITE motion from `bumpKick` (a lateral squash-recoil): no shove, an upward
+  // watching lift. Satisfies the existing-asset new-pose growth quota.
+  const al = Math.max(0, Math.min(1, alert));
   const bob = 3 * Math.sin(f / 26) - bumped * 10;
-  const earFlick = (emotion === 'wary' ? 8 * Math.sin(f / 5) : 3 * Math.sin(f / 18)) - bumped * 22;
+  const earFlick = (emotion === 'wary' ? 8 * Math.sin(f / 5) : 3 * Math.sin(f / 18)) - bumped * 22 - al * 26;
   const tail = 6 * Math.sin(f / 9);
   // squash-and-stagger: a lateral shove + a volume-preserving squash at the moment
   // of impact, recoiling back upright as bumped relaxes to 0.
@@ -60,17 +65,19 @@ export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; f
       <RimLight d="M-108,-150 q40,-56 118,-48" w={4} opacity={0.55} />
       {/* shoulder hump */}
       <path d="M-70,-150 q30,-30 74,-24 q-30,-2 -50,20 Z" fill={t.key} opacity={0.4} />
-      {/* neck + head */}
-      <g transform={`translate(120,${-150 + bob}) rotate(${bob * 0.4 - bumped * 16 * facing})`}>
+      {/* neck + head — `alert` raises + tilts the head up to watch the sky */}
+      <g transform={`translate(120,${-150 + bob - al * 26}) rotate(${bob * 0.4 - bumped * 16 * facing - al * 12 * facing})`}>
         <path d="M-40,10 q10,-46 46,-54 q40,-8 52,26 q6,44 -18,72 q-30,22 -52,4 q-26,-20 -28,-48 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
         {/* long muzzle */}
         <path d="M44,20 q46,4 58,34 q4,20 -16,28 q-30,8 -50,-8 q-8,-40 8,-54 Z" fill={t.core} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
         <ellipse cx={92} cy={54} rx={11} ry={9} fill={INK} />
         {/* dewlap (the bell) */}
         <path d="M20,58 q8,44 -4,66 q-14,-6 -14,-40 q0,-22 18,-26 Z" fill={t.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-        {/* eye + brow: bumped adds a wide indignant white-eyed take */}
-        <ellipse cx={40} cy={4} rx={8} ry={bumped > 0.3 ? 11 : emotion === 'wary' ? 10 : 8} fill="#fff" stroke={INK} strokeWidth={3} />
-        <circle cx={42 + (bumped > 0.3 ? -3 : 0)} cy={5} r={bumped > 0.3 ? 3.4 : 4.5} fill={INK} />
+        {/* eye + brow: bumped adds a wide indignant take; alert tracks the pupil UP */}
+        <ellipse cx={40} cy={4} rx={8} ry={bumped > 0.3 || al > 0.3 ? 11 : emotion === 'wary' ? 10 : 8} fill="#fff" stroke={INK} strokeWidth={3} />
+        <circle cx={42 + (bumped > 0.3 ? -3 : 0)} cy={5 - al * 5} r={bumped > 0.3 ? 3.4 : 4.5} fill={INK} />
+        {/* alert: a nostril-flare sniff line at the muzzle tip */}
+        {al > 0.3 && <path d="M96,50 q10,-4 14,2" fill="none" stroke={INK} strokeWidth={3} strokeLinecap="round" opacity={Math.min(1, (al - 0.3) * 2)} />}
         <path d={bumped > 0.3 ? 'M26,-16 q18,-10 32,-2' : emotion === 'wary' ? 'M28,-12 q16,-8 30,-2' : 'M28,-8 q16,-4 30,2'} fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />
         {/* ear, flicking (pinned back indignant when bumped) */}
         <g transform={`translate(6,-28) rotate(${earFlick})`}>

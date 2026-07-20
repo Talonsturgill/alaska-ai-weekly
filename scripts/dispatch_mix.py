@@ -11,9 +11,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
 OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
-FF = os.environ.get("FFMPEG_BIN", "/usr/local/bin/ffmpeg")
+FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-VIDEO_SECS = 1673/30  # match Root durationInFrames (1673f)
+# VIDEO_SECS is DERIVED from the VO timing below (never hardcode: a stale 1673f value
+# would truncate or pad the 2026-07-20 1699f master). Set right after vo_lines loads.
 
 
 def run(cmd):
@@ -37,32 +38,41 @@ def sfx(path, kind):
 # sync when the narration changes. L[i] = start time of VO line i.
 _lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
 L = {x["idx"]: x["start"] for x in _lines}
+_TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
+VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never hardcode
+
+# SFX events cut to THIS story's beats (Dryad / XPRIZE / Nenana autonomous wildfire
+# drone), placed off VO line starts L[i] so they stay in sync if the narration
+# retimes. Kinds resolve via the designed-foley bank (sfx_bank.py). >= 1 per scene,
+# motivated per beat (docs: VOICE_AND_SCORE / the audio_arc block in storyboard.json).
 EVENTS = [
-    (L[0] + 0.10, "whoosh"),   # S1 machine appears
-    (L[1] + 1.80, "pop"),      # square mile
-    (L[1] + 3.80, "riser"),    # plug reaches / gigawatt
-    (L[2] + 0.00, "whoosh"),   # S2 in
-    (L[2] + 3.30, "ding"),     # +30% badge
-    (L[3] + 0.00, "whoosh"),   # S3 in
-    (L[3] + 2.50, "pop"),      # $500M
-    (L[3] + 4.10, "thud"),     # $10B leaps
-    (L[4] + 0.00, "klaxon"),   # S4 revolt
-    (L[4] + 1.40, "paper"),    # paper storm
-    (L[4] + 2.60, "ding"),     # 500+ badge
-    (L[5] + 0.00, "whoosh"),   # S5 in ("Some kept it short.")
-    (L[5] + 0.60, "thud"),     # HELL NO bubble lands (silent hold)
-    (L[5] + 1.70, "pop"),      # NO AI card (silent hold)
-    (L[5] + 3.40, "riser"),    # snap-zoom onto the face (closing punctuation)
-    (L[6] + 0.00, "stamp"),    # S6 PROPOSAL stamp
-    (L[6] + 3.60, "pop"),      # caveat label
-    (L[7] + 0.00, "whoosh"),   # S7 in
-    (L[7] + 1.40, "ding"),     # calendar 17
-    (L[7] + 3.00, "riser"),    # LAST CALL
-    (L[8] + 0.00, "whoosh"),   # S8 button
-    (L[8] + 2.30, "ding"),     # question CTA
+    (L[0] + 0.10, "whoosh"),   # S1: VALE appears over the treeline
+    (L[0] + 1.60, "pop"),      # the spark ignites, the eye locks
+    (L[1] + 1.40, "stamp"),    # NO CREW / NO PILOT cross stamps
+    (L[2] + 0.10, "thud"),     # S2: $11M XPRIZE badge slams in
+    (L[2] + 2.10, "ding"),     # the 4-year ring winds
+    (L[3] + 0.10, "whoosh"),   # the ~300 -> 3 funnel
+    (L[3] + 1.90, "pop"),      # finalist plates clank out
+    (L[3] + 3.40, "thud"),     # the Nenana pin locks
+    (L[4] + 0.20, "riser"),    # S3: the airspace grid sweeps
+    (L[4] + 1.60, "ding"),     # ACUASI confirm chime
+    (L[5] + 0.20, "whoosh"),   # dive through the pin to the range
+    (L[6] + 0.30, "pop"),      # S4: sensor ping (smells the smoke)
+    (L[6] + 1.70, "riser"),    # the detection riser, VALE wakes
+    (L[7] + 0.10, "whoosh"),   # VALE launches
+    (L[7] + 1.90, "thud"),     # the thermal reticle LOCK stinger
+    (L[7] + 3.30, "whoosh"),   # the suppressant drop / hiss
+    (L[8] + 1.40, "stamp"),    # S5: the DRYAD SAYS ink-stamp
+    (L[9] + 0.40, "boom"),     # the megafire wall rises (scale-turn crescendo)
+    (L[9] + 1.90, "thud"),     # the wall towers and holds (sonify the loudest picture)
+    (L[9] + 3.40, "boom"),     # a second distant concussion under the held wall
+    (L[10] + 1.10, "stamp"),   # S6: the JUDGING PENDING stamp
+    (L[11] + 1.90, "ding"),    # the warm resolve after the silence dip
+    (L[12] + 0.40, "whoosh"),  # VALE liftoff (the button)
+    (L[12] + 2.00, "riser"),   # the final rise
 ]
 
-SILENCE_DIP_AT = L[8] - 0.6   # the breath just before the button
+SILENCE_DIP_AT = L[11] - 0.6   # the breath just before the reframe / button
 DIP_LEN = 0.8
 
 
@@ -86,7 +96,7 @@ def main():
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
         f"atrim=0:{VIDEO_SECS},volume=0.32,"
-        f"volume=enable='between(t,{dip0},{dip1})':volume=0.18[bedraw]"
+        f"volume=enable='between(t,{dip0},{dip1})':volume=0.11[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)
     fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.04:ratio=9:attack=6:release=320:makeup=1[bed]")

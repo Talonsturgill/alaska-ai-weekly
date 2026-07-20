@@ -1,0 +1,70 @@
+{
+  "run": "2026-07-20",
+  "story": "Autonomous AI wildfire-response drones field-tested in Alaska (Dryad / XPRIZE Wildfire finals at Nenana; UAF ACUASI ran the airspace).",
+  "angle_executed": "Proven IN Alaska, not done TO Alaska. Alaska is the proving ground. Honest guardrail: controlled airfield test, judging pending Sept 2026, Alaska made the range not the drones.",
+
+  "palette": {
+    "roles": {
+      "sky": "#22335C boreal midnight-blue warming to #E8A87C rose-gold at the horizon",
+      "ground": "#243A2E (black-spruce forest green)",
+      "hero": "#8C99A8 cool gunmetal guardian-drone body with a warm #FFCE6B camera-eye",
+      "accent": "#FF4FD8 -> #FF7F6B -> #FFE24A THERMAL-IR false-color heat-vision ramp (magenta to coral to citron: the signature, genuinely new palette element, the drone's-eye sight)",
+      "fire": "#FF6A2F vermilion fireline escalating to #E8402F",
+      "shadow": "#0E1622"
+    },
+    "mood": "A cold Interior first-light where a calm, purposeful machine stands guard. Boreal midnight-blue warming to rose-gold + spruce green read as HOME/PLACE (what is being protected); the electric thermal-IR magenta reads as the AI SENSE (how it sees). The vermilion fireline is the only chaotic hot note.",
+    "divergence_from_recent": "07-19 was cold-indigo frost-yard, push-in-only. 07-18 aerial-to-ground faceless-monolith. 07-17 amethyst-plum subsurface cutaway. This run's dominant is BLACK-SPRUCE GREEN + a BOREAL MIDNIGHT-BLUE-TO-ROSE-GOLD sky + a NET-NEW thermal-IR magenta-to-citron heat-vision accent + a vermilion fireline. Storyboard_check confirms 9/9 axes differ from both prior runs. No default blue-without-reason; the blue is a motivated pre-sunrise sky the first light warms off."
+  },
+
+  "light": {
+    "time_of_day": "Interior Alaska summer dawn (fire season), low sun screen-left matching lib/lighting.tsx LIGHT.dir (-0.42,-0.91).",
+    "key_fill_rim": "Warm dawn key (#ffe8c4) low screen-left; cool sky-bounce fill on shadow side; bright rim on the drone's lit contour and the spruce crowns. The FIRE self-illuminates (a second, warm, local light source that up-lights the drone belly when it descends to drop).",
+    "depth_approach": "CRAFT ADVANCE (this run): atmospheric-perspective aerial depth. The orbital-aerial POV stages 3-4 parallax treeline bands that desaturate and cool toward the horizon (far bands lift toward sky value + lose contrast), so the boreal range reads as receding roadless distance, not a flat cutout. Forms use tones()/FormGradient/RimLight/ContactShadow as always."
+  },
+
+  "shape_language": "Three deliberate grammars in contrast: (1) the GUARDIAN MACHINE (drone + sensor nodes): precise, rounded-protective, purposeful, symmetric, calm; (2) the FIRE: chaotic, jagged, organic, asymmetric, hot; (3) the GREEDY INSTITUTION (library ServerMachine, appears only at the reframe beat): cold, angular, rectilinear, hungry. The guardian drone is shaped as the deliberate opposite of both the fire's chaos and the ServerMachine's greed. This visually carries 'AI came to protect, not take.'",
+
+  "casting": {
+    "hero_net_new": "VALE, a characterized autonomous suppression drone (net-new bespoke hero, §4.3a): a single expressive camera-eye lens (iris that dilates/locks), quad rotor arms with follow-through, a suppressant-tank belly, running lights. Emotions via the eye + posture: vigilant / locked-on / resolute / calm-guard. Built to the depth bar (tones/RimLight/ContactShadow, idle hover-bob, blink/iris). This is the run's net-new reusable asset.",
+    "supporting_from_library": [
+      "Moose (fauna.tsx) as a comic background watcher on the treeline, reacting to the drone (uses/needs a NEW 'alert/ear-perk sniff' pose added to the existing asset = the existing-asset growth quota).",
+      "ServerMachine (kit.tsx) as the greedy data-center institution, appearing ONLY at the reframe beat (11), turned away/shrinking, to contrast 'take from' vs 'protect'.",
+      "AlaskaMini (kit.tsx) map with a pin on Nenana + airspace grid.",
+      "BoxLabel / StatBurst / Nameplate / Stamp HUD kit for labels."
+    ]
+  },
+
+  "motion_language": {
+    "world_motion": "Dawn is slow and still (breath, drifting mist, fading stars) UNTIL the sensor fires. Then energy ramps: radial-emanate VOC 'smell' rings pulse out from the ignition (the sensor smelling smoke), the drone LAUNCHES with anticipation->overshoot and 180deg motion blur, traverses the treeline (orbital-aerial), the IR reticle SNAPS a lock on the flame, and the suppressant drops in an eased arc.",
+    "earns_180_blur": "The drone launch and the orbital traverse earn full motion blur (lib/lighting MotionBlur). The reticle lock is a snap (anticipation + impact star).",
+    "signature_snap_zoom": "ONE dramatic snap-zoom onto VALE's camera-eye at the emotional peak (the moment it locks onto the flame, beat 7): spring to ~2.4x, speed lines, impact star, vignette slam. This is the 'a face feeling the beat' moment."
+  },
+
+  "composition": {
+    "focal_hierarchy": "Story happens center-frame; telemetry dials + captions are chrome. Every beat lands its one action at center.",
+    "negative_space": "The dawn sky is the negative-space beat (the reframe/button breathe against open sky).",
+    "safe_areas": "Hero action + all captions kept inside the centered 4:5 safe box (1080x1350 crop) as well as 9:16; the airstrip signature shot is framed so the 4:5 crop never amputates the drone or the ACUASI lower-third.",
+    "signature_shot": "VALE lifting off against the flat Nenana airstrip and low black-spruce treeline at dawn, ACUASI named in the lower-third. The frame the piece is remembered for; it also closes the loop to the cold open's treeline."
+  },
+
+  "craft_advance": "SINGLE PRIMARY (per the exactly-one doctrine): the IR/THERMAL VISION LOOK SYSTEM (net-new engine system, lib/lighting.tsx IRVision). A reusable false-color heat-vision overlay: a magenta->coral->citron heat ramp, horizontal scanlines, a lock reticle (lib/FX.tsx ScanReticle), and a 'THERMAL' HUD tag, applied to a region so the drone's-eye view is a distinct rendered LOOK, not a sticker. Any future sensor/thermal/IR Alaska story inherits it. Registered in ASSET_MANIFEST.md. NOTE: atmospheric-perspective aerial depth (the parallax desaturating treeline bands) is a SUPPORTING lighting refinement this run, NOT a co-headline craft advance, so Phase 6 checks ONE primary advance.",
+
+  "net_new_biome_spec": {
+    "name": "NenanaRangeBG (boreal-airstrip biome, net-new vs the existing DawnForestBG full-forest and FrostYardBG utility-yard)",
+    "differs_from_DawnForestBG": "DawnForestBG is a full boreal birch/spruce FOREST treeline with no man-made ground. NenanaRangeBG is a FLAT MAN-MADE AIRSTRIP foreground (tarmac with painted runway centerline markings + edge lights) fronted by a LOW distant black-spruce band on the horizon, i.e. an airfield cut into the boreal, not a forest interior. Different ground plane, different silhouette, different purpose.",
+    "params_to_the_biome_bar": ["parallax (DOF depth prop, like FrostYardBG)", "tarmac ground with painted runway centerline + threshold markings", "a row of blue/white airstrip edge lights receding to a vanishing point", "a low black-spruce treeline band on the horizon (3-4 parallax sub-bands, the supporting aerial-depth refinement)", "boreal midnight-blue-to-rose-gold sky gradient with a horizon sunrise glow", "dawn-mist drift bands + a sparse rising-ember/pollen particle layer", "fading stars up top for a second disjoint motion region"]
+  },
+  "existing_asset_new_pose_spec": {
+    "asset": "Moose (fauna.tsx)",
+    "new_param": "alert (0..1): ears perk fully UP and forward, head/neck RAISES, a nostril-flare sniff, eyes tracking upward at the passing drone.",
+    "distinct_from_existing": "The manifest's existing new pose is bumpKick (a lateral squash-and-recoil comic BUMP/stagger, 2026-07-19). alert is the OPPOSITE motion: no lateral shove, an upward head-raise + ear-perk watching pose (curiosity/vigilance), not a knocked-sideways recoil. Genuinely distinct pose, satisfies the existing-asset growth quota."
+  },
+  "servermachine_reframe_state": "At beat 13 the reused ServerMachine (kit.tsx antagonist) plays its 'ghost'/nervous emotion with a shrink+turn-away pose: it drives a pipe into the land and drags a resource-arrow OUT, then recedes (scales down + slides off frame) as VALE takes the shielding guard stance. This is a checkable reuse spec, not a gesture.",
+
+  "growth_mandate_checklist": {
+    "net_new_reusable_asset": "VALE the guardian suppression drone (bespoke hero, kit.tsx) + NenanaRangeBG boreal-airstrip biome (Episode.tsx, specced above, provably distinct from DawnForestBG).",
+    "new_pose_on_existing_asset": "Moose `alert` param (fauna.tsx) - ear-perk + head-raise watcher, distinct from the existing `bumpKick` recoil pose.",
+    "craft_system_advance": "IR/thermal vision look system (lib/lighting.tsx IRVision + lib/FX.tsx ScanReticle) - the SINGLE primary advance; atmospheric aerial depth is a supporting refinement only.",
+    "cast_divergence": "Hero is net-new (VALE drone), not reused from the last 2 dispatches (Sourdough powerplant / GVEA cast)."
+  }
+}

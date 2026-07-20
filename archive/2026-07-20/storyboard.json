@@ -1,0 +1,155 @@
+{
+  "concept": "Autonomous AI wildfire-response drones were field-tested in Alaska: the XPRIZE Wildfire finals ran at Nenana Municipal Airport with UAF ACUASI managing the airspace, and finalist Dryad says it demonstrated fully autonomous detection and suppression, no human in the loop. The Dispatch follows a characterized guardian drone (VALE) from the moment a sensor network smells smoke to the drop, then turns honest (a controlled test, judging pending September, Alaska made the range not the drones) and lands the reframe: for once the AI came to protect Alaska, not take from it.",
+  "engine": "infographic-2.5d",
+  "derived_from": "scratch",
+  "palette": "Black-spruce forest green under a deep boreal midnight-blue that warms to rose-gold at the horizon, a cool gunmetal guardian drone, and a NET-NEW electric thermal-IR heat-vision ramp (magenta to coral to citron) for the machine's sight; a hot vermilion fireline is the only chaotic note.",
+
+  "fingerprint": {
+    "pov": "orbital-aerial",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "aerial-diorama",
+    "register": "instrument-readout",
+    "camera_strategy": "drone-orbit-then-descent-to-airstrip",
+    "light_story": "fire-season-dawn-broken-by-thermal-vision",
+    "palette": "black-spruce green + boreal midnight-blue to rose-gold horizon + gunmetal guardian drone + electric thermal-IR magenta-to-citron heat-vision + vermilion fireline",
+    "metaphor": "a guardian machine that came to protect the range, not take from it: the autonomous drone as Alaska's watchdog over the fire line, seeing heat where a human cannot"
+  },
+
+  "treatment": {
+    "logline": "The world's hardest autonomous-firefighting test ran over a little Alaska airstrip, and for once the AI in the sky came to protect the state, not take from it, though it has only proven it on one test fire so far.",
+    "cold_open": "Black spruce at pre-dawn. A single warm ember point hovers in the dark: it is the camera-eye of VALE, a guardian drone, holding station over the treeline. Below, a spark catches. VALE's iris snaps wide and locks. Burned-in: FIREFIGHTING ROBOTS. TESTED IN ALASKA.",
+    "escalation": "Beat by beat the stakes and the wonder rise: the $11M four-year XPRIZE stakes slam in; nearly 300 teams funnel to 3 finalists who all flew to Nenana; Alaska's map lights and UAF ACUASI's airspace grid sweeps over it; then the mechanism, a sensor network SMELLS the smoke in radial rings, VALE launches with a blurred overshoot, its thermal-IR vision reticle snaps a lock on the flame (the snap-zoom peak), and it drops the suppressant in an eased arc.",
+    "the_turn": "Drawn, not just narrated: the single test flame and the 100-liter drone are set against a towering megafire wall spreading across roadless country that dwarfs them, and a pending-September ghost trophy sits un-awarded. The honest limit lands as a picture: real capability, not yet proven at scale, judged by no one yet.",
+    "the_button": "The reframe: the greedy ServerMachine (the data-center institution from prior dispatches) is turned away and shrinking while VALE stands guard over the treeline. Then the signature shot: VALE lifting off against the flat Nenana airstrip and low spruce at dawn, ACUASI named in the lower-third, closing the loop back to the cold-open treeline. Final card poses the question about treating that range as strategic infrastructure.",
+    "sight_gags": [
+      {"t": 9.0, "gag": "The ~300 losing team logos get vacuumed into a funnel and only 3 nameplates clank out the bottom."},
+      {"t": 21.0, "gag": "A Moose on the treeline ear-perks and does a comic double-take as VALE whirs past overhead (recurring background watcher)."},
+      {"t": 55.0, "gag": "In the reframe, the greedy ServerMachine sulks and sidesteps out of frame while the Moose, now smug, watches VALE stand guard; payoff of the running Moose gag."}
+    ],
+    "lens_reasoning": "Held all four writers-room lenses in one treatment: ENTHUSIAST leads (the genuine wonder of an autonomous detect-and-suppress, Alaska as the proving ground, per the angle-room convergence); DRAMATIST supplies the honest open question drawn as the megafire-scale turn and the pending trophy; EXPLAINER makes the mechanism physical (the sensor SMELLS smoke as radial rings, the IR reticle lock, the 100L arc); COMEDIAN supplies the recurring Moose watcher and the funnel gag for charm. The Enthusiast leads because the angle room unanimously found this is a genuine win, and the Dramatist's open question is grafted in as the fair counterpoint so the piece is never one-sided."
+  },
+
+  "hook": {
+    "pattern": "bold-claim",
+    "frame1": "VALE the guardian drone hovers over a dark black-spruce treeline at pre-dawn, its single camera-eye a warm ember point; a spark ignites below and the eye's iris is mid-snap. Fully lit, ink-outlined, ember-and-teal, reads at 120px.",
+    "headline": "FIREFIGHTING ROBOTS. TESTED IN ALASKA.",
+    "motion_by_s": 1.2,
+    "loopback": "The button returns to this exact treeline at dawn with VALE, now lifting off having done the job, so the last image rhymes with the first."
+  },
+
+  "audio_arc": {
+    "build_steps": ["pre-dawn wind + low guardian-drone hum", "ember crackle + iris click", "XPRIZE badge slam + funnel whoosh", "airspace grid sweep", "sensor ping into launch riser", "reticle-lock stinger", "suppressant whoosh + hiss", "scale-turn low boom", "pre-button silence dip", "warm resolve chord on the liftoff button"],
+    "dip_at": 44.2,
+    "riser_at": 27.0,
+    "silence_at": 44.2,
+    "payoff_at": 45.0,
+    "button_pattern": "callback"
+  },
+
+  "shots": [
+    {
+      "id": 1, "t": "0.0-7.0", "framing": "subject-portrait",
+      "pov": "orbital-aerial", "layout": "centered-hero", "motion_vector": "push-in-only", "hero_treatment": "instrument-as-subject",
+      "transition_in": "", "thread": "match",
+      "centered": "VALE's camera-eye snapping to lock on the spark below",
+      "means": "establishes the guardian machine and the threat in one frame",
+      "hero": {"name": "VALE (guardian suppression drone)", "parts": 6, "zones": 4, "detail_note": "iris-ring camera lens with dilating pupil, 4 rotor arms with guarded ducts, suppressant-tank belly with a fill gauge, skid legs, running lights, vents and rivets; lit crown / core / shadow belly / bright rim zones"}
+    },
+    {
+      "id": 2, "t": "7.0-15.5", "framing": "data-panel",
+      "pov": "instrument-screen", "layout": "data-panel", "motion_vector": "assemble-build", "hero_treatment": "data-as-subject",
+      "transition_in": "fui-boot", "thread": "build",
+      "centered": "the $11M / 4-year badge and the 300-to-3 funnel assembling",
+      "means": "boots the competition data into being: the stakes and the field",
+      "hero": {"name": "XPRIZE stat-badge + finalist funnel", "parts": 5, "zones": 2, "detail_note": "starburst $11M badge, 4-year ring, a funnel that vacuums ~300 team chips down to 3 outlined finalist nameplates (Anduril, AURA Foresight, Dryad), a Nenana pin; lit face + shaded body"}
+    },
+    {
+      "id": 3, "t": "15.5-22.0", "framing": "map-territory",
+      "pov": "top-down-map", "layout": "map-diorama", "motion_vector": "map-travel", "hero_treatment": "landscape-as-subject",
+      "transition_in": "map-travel", "thread": "travel",
+      "centered": "the Nenana pin pulsing as the airspace grid sweeps over the Alaska map",
+      "means": "carries the field onto Alaska ground and hands the airspace to UAF ACUASI",
+      "hero": {"name": "Alaska map diorama with airspace grid", "parts": 4, "zones": 2, "detail_note": "form-shaded Alaska landmass, pulsing Nenana pin, a labeled airspace lattice that sweeps on, an ACUASI nameplate; lit relief + shadow coastline"}
+    },
+    {
+      "id": 4, "t": "22.0-36.5", "framing": "alt-vantage",
+      "pov": "orbital-aerial", "layout": "fullbleed-aerial", "motion_vector": "radial-emanate", "hero_treatment": "instrument-as-subject",
+      "transition_in": "whip-pan", "thread": "carry",
+      "centered": "the IR reticle snapping a lock on the flame, then the suppressant drop",
+      "means": "the mechanism made physical: smell the smoke, launch, lock, drop; the signature sequence",
+      "hero": {"name": "VALE over the burning treeline (thermal-IR)", "parts": 6, "zones": 4, "detail_note": "VALE in flight with motion-blurred rotors and a false-color thermal-IR vision overlay (magenta-orange-yellow heat ramp, scanlines, lock reticle), radial VOC 'smell' rings from a sensor node, a 100L suppressant arc; lit crown / core / underlit-by-fire belly / rim"}
+    },
+    {
+      "id": 5, "t": "36.5-48.5", "framing": "two-up",
+      "pov": "eye-level-immersive", "layout": "fullbleed-split", "motion_vector": "horizontal-traverse", "hero_treatment": "landscape-as-subject",
+      "transition_in": "hard-cut", "thread": "match",
+      "centered": "the towering megafire wall dwarfing the single test flame and the small drone",
+      "means": "the honest turn drawn as scale: one test fire vs a roadless megafire, judging pending",
+      "hero": {"name": "megafire wall vs the test flame (scale turn)", "parts": 4, "zones": 3, "detail_note": "a vast jagged organic megafire wall spreading across a roadless boreal horizon, a tiny fenced test flame + VALE beside a dashed-ghost pending-September trophy; lit smoke crown / mid flame / dark forest floor"}
+    },
+    {
+      "id": 6, "t": "48.5-60.0", "framing": "subject-portrait",
+      "pov": "orbital-aerial", "layout": "centered-hero", "motion_vector": "vertical-rise", "hero_treatment": "instrument-as-subject",
+      "transition_in": "graphic-match", "thread": "carry",
+      "centered": "VALE lifting off against the Nenana airstrip and treeline at dawn (the signature shot)",
+      "means": "the reframe and callback: AI that guards, not takes; loops back to the cold-open treeline",
+      "hero": {"name": "VALE liftoff over Nenana airstrip (button)", "parts": 6, "zones": 4, "detail_note": "VALE rising with anticipation/overshoot, dawn rim light, the flat airstrip and low spruce, a shrinking turned-away ServerMachine in the background, ACUASI lower-third; lit crown / core / shadow / dawn rim"}
+    }
+  ],
+
+  "beats": [
+    {"id": 0, "t": "0.0-3.5", "vo": "The world's hardest test for firefighting robots just ran in Alaska.", "shows": "VALE's ember camera-eye locking a spark, headline burned in",
+     "draw": {"subject": "VALE, a guardian suppression drone with a single ember camera-eye", "action": "holds station over the dark spruce treeline and snaps its iris wide to lock on a spark igniting below", "emotion": "vigilant, coiled", "annotation": "FIREFIGHTING ROBOTS. TESTED IN ALASKA."},
+     "choreo": {"primary": "VALE hover-bob and iris snap to lock", "reaction": "the spark below flares up as the eye clamps on", "ambient": "pre-dawn mist drifts, stars fade, spruce sway"}, "sfx": "pre-dawn wind, low drone hum, ember crackle, iris click", "means": "cold-open claim plus the threat, in one frame"},
+    {"id": 1, "t": "3.5-7.0", "vo": "No crew, no pilot. It finds a fire and puts it out on its own.", "shows": "a ghost pilot hand and controller, crossed out",
+     "draw": {"subject": "VALE and a ghosted human hand on a controller", "action": "VALE's eye flicks toward the spark as the ghost hand and controller fade out and get a crossed-out stamp, and it steadies itself alone", "emotion": "calm autonomy", "annotation": "NO CREW  ·  NO PILOT"},
+     "choreo": {"primary": "the ghost controller dissolves and a red cross rubber-stamps over it", "reaction": "VALE's eye flicks to the spark, then it tips itself level, running lights blink on", "ambient": "drifting embers and mist"}, "sfx": "soft power-up chord, hard rubber-stamp thunk", "means": "names the astonishing part: nobody is flying it, with a fractional nod to 'finds a fire'"},
+    {"id": 2, "t": "7.0-10.5", "vo": "The X Prize Wildfire finals. Eleven million dollars, four years long.", "shows": "the $11M XPRIZE starburst badge",
+     "draw": {"subject": "a starburst XPRIZE stat-badge", "action": "slams into frame and a 4-year ring winds around it", "emotion": "big-stakes arrival", "annotation": "XPRIZE WILDFIRE  ·  $11,000,000  ·  4 YEARS"},
+     "choreo": {"primary": "the badge slams in with an overshoot", "reaction": "the 4-year ring winds around it and ticks", "ambient": "HUD scanlines shimmer, sparks drift"}, "sfx": "badge slam, riser tick", "means": "sets the scale of the contest"},
+    {"id": 3, "t": "10.5-14.0", "vo": "Nearly three hundred teams. Three reached the final. All came to Nenana.", "shows": "the ~300 to 3 finalist funnel (names verified on XPRIZE page)",
+     "draw": {"subject": "a funnel of ~300 team chips", "action": "vacuums the chips down and clanks out 3 finalist nameplates (Anduril, AURA Foresight, Dryad), the Anduril plate carrying a small 'defense prime, dual-use' tag", "emotion": "narrowing pressure", "annotation": "~300 -> 3 FINALISTS  ·  Autonomous Wildfire Response track"},
+     "choreo": {"primary": "team chips swirl down the funnel", "reaction": "3 nameplates clank out the bottom and stack; a tiny 'dual-use' tag flips up on Anduril", "ambient": "loose chips rattle around the rim"}, "sfx": "funnel whoosh, three clanks", "means": "the field narrows to the final three; the honest dual-use aside (Anduril is a defense prime) is acknowledged, not hidden"},
+    {"id": 4, "t": "14.0-17.5", "vo": "Nearly three hundred teams. Three reached the final. All came to Nenana.", "shows": "the Nenana pin dropping on Alaska",
+     "draw": {"subject": "an Alaska map diorama", "action": "a pin arcs down and locks on Nenana as the map slides up into frame", "emotion": "landing in place", "annotation": "NENANA, ALASKA"},
+     "choreo": {"primary": "the pin arcs down and locks with a pulse", "reaction": "concentric pin-rings ripple out across the map", "ambient": "map relief shading breathes, coastline shimmer"}, "sfx": "pin lock, soft thud", "means": "the contest lands on Alaska ground"},
+    {"id": 5, "t": "17.5-21.0", "vo": "The University of Alaska ran the airspace over it.", "shows": "the ACUASI airspace grid sweeping the map",
+     "draw": {"subject": "the Alaska map with a pulsing Nenana pin", "action": "a labeled airspace grid sweeps across the map and an ACUASI nameplate snaps in", "emotion": "steady authority", "annotation": "UAF ACUASI managed the airspace  ·  Dr. Catherine Cahill, Director"},
+     "choreo": {"primary": "the airspace lattice sweeps left to right over the map", "reaction": "the Nenana pin pulses brighter as the grid passes it", "ambient": "faint aircraft blips drift along the lattice"}, "sfx": "grid sweep, confirm chime", "means": "Alaska's concrete role: it ran the sky"},
+    {"id": 6, "t": "21.0-24.5", "vo": "Here is what they watched.", "shows": "the dive through the pin into the treeline, a Moose watching",
+     "draw": {"subject": "the camera diving through the Nenana pin", "action": "zooms through the pin from the map into a ground-level treeline as a Moose ear-perks at the edge", "emotion": "anticipation", "annotation": "NENANA  ·  June 15-28, 2026"},
+     "choreo": {"primary": "the camera dives through the pin, the treeline rushes up", "reaction": "a Moose ear-perks and does a comic double-take", "ambient": "spruce parallax, first-light haze"}, "sfx": "whoosh dive, moose grunt", "means": "travel from the map to the range floor"},
+    {"id": 7, "t": "24.5-28.0", "vo": "A sensor network smells the smoke in minutes and wakes a drone.", "shows": "radial VOC smell-rings from a sensor node",
+     "draw": {"subject": "a Silvanet sensor node on a spruce trunk", "action": "pulses radial VOC smell rings outward from a fresh ignition, and a dormant VALE's eye blinks awake", "emotion": "alarm rising to alert", "annotation": "detects in minutes  ·  30,000+ sensors (per Dryad)"},
+     "choreo": {"primary": "radial rings emanate outward from the sensor node", "reaction": "VALE's eye blinks awake and brightens", "ambient": "smoke wisps curl up, embers rise"}, "sfx": "sensor ping, ascending riser", "means": "the detection mechanism, drawn as smell"},
+    {"id": 8, "t": "28.0-31.5", "vo": "It flies out, finds the flame, drops it. No one touches a controller.", "shows": "VALE's thermal-IR reticle snapping a lock on the flame",
+     "draw": {"subject": "VALE in flight seeing through thermal-IR vision", "action": "launches with a blurred overshoot and its IR reticle SNAPS a lock on the flame in a snap-zoom on the eye", "emotion": "locked-on resolve", "annotation": "THERMAL LOCK  ·  no human in the loop (per Dryad)"},
+     "choreo": {"primary": "VALE launches with anticipation and overshoot under 180deg blur", "reaction": "the IR reticle snaps and clamps on the flame", "ambient": "heat shimmer, the false-color IR field pulses"}, "sfx": "rotor whir, reticle-lock stinger", "means": "the signature: autonomous detect and lock"},
+    {"id": 9, "t": "31.5-35.0", "vo": "It flies out, finds the flame, drops it. No one touches a controller.", "shows": "the 100-liter suppressant arc dousing the fire",
+     "draw": {"subject": "VALE over the flame", "action": "drops a 100-liter suppressant arc that douses the fire into a hiss of steam", "emotion": "decisive relief", "annotation": "up to 100 L suppressant (per Dryad)"},
+     "choreo": {"primary": "suppressant arcs down and splashes over the flame", "reaction": "the fire collapses into a rising steam plume", "ambient": "settling embers, drifting steam"}, "sfx": "suppressant whoosh, fire hiss, steam", "means": "the drop: autonomous suppression"},
+    {"id": 10, "t": "35.0-39.0", "vo": "Dryad, one of the finalists, says it worked.", "shows": "a readout ribbon unspooling from VALE's hull with the DRYAD SAYS quote, over the doused-fire steam",
+     "draw": {"subject": "VALE over the just-doused fire, a telemetry readout ribbon unspooling from its hull", "action": "a readout ribbon extends off VALE's hull and types out the Brinkschulte quote as an angled DRYAD SAYS ink-stamp slaps over it, the drifting steam from the drop still behind", "emotion": "proud but unproven", "annotation": "'...no longer a vision for the future. It is a reality.' - Carsten Brinkschulte, CEO, Dryad (per Dryad)"},
+     "choreo": {"primary": "the readout ribbon unspools from VALE and the quote types along it", "reaction": "the angled DRYAD SAYS ink-stamp slaps down; VALE's eye holds steady", "ambient": "steam from the doused fire drifts up behind, running lights blink"}, "sfx": "ribbon whir, typewriter ticks, slappy angled ink-stamp", "means": "the claim rides a picture (VALE's own readout) so DRYAD SAYS reads as attribution, not a floating slide"},
+    {"id": 11, "t": "39.0-43.0", "vo": "But this was one test fire on an airstrip, not a megafire in roadless country.", "shows": "a megafire wall rising to dwarf the test flame",
+     "draw": {"subject": "a towering megafire wall vs the small test flame and VALE", "action": "the vast jagged megafire wall rises and spreads across a roadless horizon, dwarfing the fenced test flame and the little drone", "emotion": "sobering scale", "annotation": "one test ignition  vs  a roadless Interior megafire"},
+     "choreo": {"primary": "the megafire wall rises and spreads across the horizon", "reaction": "VALE and the test flame shrink to specks beside it", "ambient": "smoke roils upward, ash falls"}, "sfx": "low scale boom, distant fire roar", "means": "the honest turn drawn as scale"},
+    {"id": 12, "t": "43.0-47.0", "vo": "And no winner is named until September.", "shows": "a dashed-ghost pending trophy on September",
+     "draw": {"subject": "a dashed-ghost trophy on a pending calendar", "action": "the un-awarded trophy flickers in dashed outline as a hollow JUDGING PENDING stamp lands, suspended, on SEPTEMBER 2026", "emotion": "suspended, honest", "annotation": "winner announced September 2026  ·  judging pending"},
+     "choreo": {"primary": "the ghost trophy flickers in dashed outline", "reaction": "a hollow, suspended JUDGING PENDING stamp settles on the calendar", "ambient": "a clock hand sweeps, dust motes drift"}, "sfx": "hollow suspended stamp, clock tick", "means": "the result is not final; keep it honest"},
+    {"id": 13, "t": "47.0-51.0", "vo": "For once, the AI did not come to take from Alaska. It came to protect it.", "shows": "an extraction rig drawing a resource-arrow OUT of the land, receding, vs VALE shielding the treeline",
+     "draw": {"subject": "a greedy extraction machine (the ServerMachine as a data-center silhouette) vs VALE the guardian", "action": "the ServerMachine drives a pipe into the land and drags a resource-arrow OUT of it, then that whole TAKING rig recedes and shrinks away, while VALE plants itself and spreads a shielding stance OVER the treeline as a smug Moose watches", "emotion": "quiet pride, resolve", "annotation": "not a machine TAKING from the land  ·  a guardian PROTECTING it"},
+     "choreo": {"primary": "the extraction rig's resource-arrow reverses and the whole TAKING machine sidesteps and shrinks out of frame", "reaction": "VALE plants down and spreads a shielding guard stance over the treeline; the Moose smug-nods", "ambient": "the silence dip; first light warms the treeline"}, "sfx": "silence dip, then a warm resolve chord", "means": "the reframe drawn so the muted eye reads take-vs-protect BEFORE the caption: an extraction arrow pulled OUT of the land receding, vs a machine shielding it"},
+    {"id": 14, "t": "51.0-56.5", "vo": "Alaska did not build these machines. It built the range they had to survive.", "shows": "VALE lifting off over the Nenana airstrip at dawn (signature shot)",
+     "draw": {"subject": "VALE lifting off against the Nenana airstrip at dawn", "action": "VALE rises with an eased overshoot against the flat airstrip and low spruce, first light breaking, ACUASI named below; loops back to the cold-open treeline", "emotion": "earned, hopeful", "annotation": "Alaska built the range  ·  proven IN Alaska"},
+     "choreo": {"primary": "VALE lifts off with anticipation and overshoot, rising", "reaction": "dawn rim-light sweeps the airstrip; the ACUASI lower-third slides in", "ambient": "dawn birds, grass ripple, distant treeline parallax"}, "sfx": "liftoff whoosh, warm sustained chord, dawn birds", "means": "the button and callback, lands on the signature image"}
+  ],
+
+  "divergence_note": "This diverges hard from the last two dispatches. 07-19 (GVEA turbine) was an eye-level-immersive, push-in-only, single-organic-hero character portrait in a cold-indigo frost yard with a naturalistic-scene register; 07-18 (Mat-Su AIDEA land) was an aerial-to-ground faceless-institution-monolith in a naturalistic dawn. This run is an orbital-aerial, radial-emanate, instrument-as-subject piece in an instrument-readout register, with a NET-NEW warm-dawn-amber plus black-spruce-green plus electric thermal-IR palette (magenta to yellow heat vision, never used before), a NET-NEW guardian-drone hero (VALE), and a NET-NEW craft advance (an IR/thermal vision look system plus atmospheric-perspective aerial depth). The metaphor is a guardian machine that protects the range rather than a monolith that takes the land, which is the opposite emotional shape from the recent AI-infrastructure dispatches.",
+
+  "sources": [
+    "https://www.businesswire.com/news/home/20260707802818/en/Dryad-Networks-Reaches-XPRIZE-Wildfire-Finals-Milestone-Demonstrating-Autonomous-Detection-and-Suppression-of-Wildfires-in-Alaska",
+    "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response"
+  ]
+}

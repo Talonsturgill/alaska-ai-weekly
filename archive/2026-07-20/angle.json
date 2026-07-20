@@ -1,0 +1,36 @@
+{
+  "story": "The XPRIZE Wildfire 'Autonomous Wildfire Response' finals were held in Alaska, at Nenana Municipal Airport (near Fairbanks), June 15-28, 2026, with UAF's ACUASI managing the airspace; finalist Dryad Networks says it demonstrated autonomous detection AND suppression of a fire there, no human in the loop. Winner announced September 2026.",
+  "thesis": "For once the Alaska-AI story is not something done TO Alaska but something proven IN it. The global race to build machines that spot a wildfire and put it out on their own, with nobody at the controls, just ran its hardest finals at a small airfield in Nenana, and the University of Alaska ran the sky over it. That reframes Alaska from AI's dumping ground (data centers dropped on the tundra) to the proving ground where the AI that could defend Alaska gets tested, which matters for a state where fire is an existential summer threat. The honest open question, kept to one clean guardrail: Nenana was a controlled test the companies grade themselves on, judging is not final until September, and one small test ignition with up to a hundred liters of suppressant is a long way from a real Interior megafire burning across roadless country. Alaska made the range, not the drones. It has not yet been proven at scale.",
+  "angle_room_convergence": "Three independent analysts (wonder lens, skeptic lens, Alaska-institutional lens) converged on the SAME earned angle: Alaska as the proving ground, 'proven IN Alaska, not done TO Alaska.' The skeptic conceded the valence lands closer to genuine win than caution (the marquee facts are independently confirmed on XPRIZE's page; belaboring the obvious scale gap manufactures a downside nobody disputes). All three named the SAME signature shot. High-confidence lock.",
+  "signature_shot": "A suppression drone lifting off against the flat Nenana airstrip and low Interior-Alaska treeline, with a lower-third naming UAF ACUASI as airspace manager. The muted viewer must see aircraft-over-Alaska-ground (the proving ground itself), not a stock fire or a foreign logo.",
+  "valence": "wonder plus earned, provisional optimism, held with one honest open question. Net forward-looking (a genuine capability and a real Alaska role), not cautionary, not booster.",
+  "stance_for_ledger": "celebratory",
+  "engagement_question_seed": "If Nenana just proved Alaska is a nationally significant flight-test range, should the state treat that capacity (UAF ACUASI) as strategic infrastructure, the way it would a port or a fiber line?",
+  "stance_rotation_note": "Recent runs skewed cautionary/curious on AI infrastructure (Stak data center 07-14/16, Mat-Su AIDEA land 07-18, GVEA turbine 07-19 curious). This is the genuine Alaska-AI capability/wonder story the automation would otherwise skip. Leading with earned admiration rotates the register honestly.",
+  "strongest_supporting_facts": [
+    "The XPRIZE Wildfire finals for autonomous response were physically held in Alaska: Nenana Municipal Airport, June 15-28, 2026, with UAF ACUASI managing the surrounding airspace and making evaluation of the autonomous aircraft possible (per XPRIZE). Alaska is the national proving ground for this, in Alaskans' own backyard.",
+    "This is AI aimed at a real Alaska threat, not extraction from Alaska: wildfire is an existential Interior summer hazard, and the whole point of the tech is minutes-fast detection and suppression before a fire runs.",
+    "The capability being tested is genuinely new: a sensor network that flags an ignition within minutes and dispatches a drone that finds and hits the fire with no human at the controls (Dryad says its Silvanet plus Silvaguard did exactly this at Nenana). $11M, four-year, nearly 300 teams narrowed to 3 finalists in the Autonomous Wildfire Response track (Anduril, AURA Foresight, Dryad)."
+  ],
+  "fair_counterpoint_it_must_honor": "On screen, plainly: what happened at Nenana was a controlled test, and the success claims are the companies' own. Judging is not final until September 2026, so 'Dryad demonstrated' is not 'Dryad won' and not an independently verified result. A single test ignition at an airfield is not a hundred-thousand-acre megafire in roadless boreal forest; autonomous suppression of one small fire is a long way from replacing crews and air tankers. And the finalists include a defense prime (Anduril): this is dual-use technology. Hold the real wonder and the honest 'not proven at scale yet' at the same time.",
+  "runner_up_angles_and_why_they_lost": [
+    "Pure booster ('Alaska leads the autonomous-firefighting revolution'): too credulous. Judging is pending and Nenana was a controlled demo graded by the entrants. Its best fact (Alaska as the proving ground) was kept and grafted into the thesis, demoted from verdict to evidence.",
+    "Pure skeptic ('it is vaporware / just a press release'): too sour. The XPRIZE finals, the Nenana venue, and ACUASI's airspace role are independently confirmed on XPRIZE's own page, and the capability is genuinely impressive. Its caution was kept as the honest open question, not the lead.",
+    "Militarization ('Anduril and the defense industry come for wildfire'): real and worth an honest aside, but making it the center would force a doom frame onto a genuine capability story. Noted as a fair counterpoint (dual-use), not the thesis.",
+    "Institutional win ('UAF/ACUASI scores a national contract'): true and grafted in as Alaska's concrete role, but alone it buries the actual wonder, the autonomous detect-and-suppress demo the muted viewer needs to SEE."
+  ],
+  "who_it_serves": "Alaskans see their state is not only a place AI is done TO (data centers on the tundra) but a place where the AI that could defend Alaska gets proven, with UAF as a nationally significant asset in their backyard, and they get an honest read on exactly how far the technology actually is.",
+  "on_screen_labeling_rules": [
+    "Frame Dryad's performance as 'Dryad says' / 'Dryad demonstrated', NEVER as a confirmed win. Judging pending, winner announced September 2026.",
+    "'3 finalists' must always be scoped to 'the Autonomous Wildfire Response track' (a separate Space-Based Detection track exists).",
+    "ACUASI's role on screen = 'managed the airspace' (not 'ran the range' / 'hosted everything'). Nenana/ACUASI/UAF/Cahill/Conner are attributed to XPRIZE, not to Dryad.",
+    "Silvanet (30,000+ sensors, 50+ customers) and Silvaguard (up to 100 liters) are labeled 'per Dryad' (company self-report).",
+    "Dr. Laura Conner is 'Vice Chancellor for Research' (not 'VP'). Dr. Catherine Cahill is 'Director of ACUASI'.",
+    "Nenana is 'near Fairbanks' (do not assert a specific drive time). Drop the Must Read Alaska source (404).",
+    "On-screen numbers are illustrative unless from a live feed; say so in the draft."
+  ],
+  "sources": [
+    "https://www.businesswire.com/news/home/20260707802818/en/Dryad-Networks-Reaches-XPRIZE-Wildfire-Finals-Milestone-Demonstrating-Autonomous-Detection-and-Suppression-of-Wildfires-in-Alaska",
+    "https://www.xprize.org/news/finals-testing-autonomous-wildfire-response"
+  ]
+}

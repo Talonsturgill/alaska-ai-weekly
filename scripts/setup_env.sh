@@ -10,6 +10,15 @@ command -v ffmpeg >/dev/null 2>&1 || { apt-get update -qq && apt-get install -y 
 # python deps (only install if missing)
 python3 -c "import PIL,numpy,scipy,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
   || pip install --break-system-packages -q pillow numpy scipy edge-tts soundfile pyyaml
+# librosa + faster_whisper: the Gemini VO pipeline's soundcheck (scripts/vo_soundcheck.py
+# pitch-variance gate) imports librosa, and scripts/vo_synth_gemini.py's whole-file forced
+# alignment imports faster_whisper, both under the SYSTEM python3 (not the voice venv). They
+# were silently missing from this env, so vo_synth_gemini crashed at the soundcheck stage on
+# 2026-07-20 AFTER paying for 4 Gemini takes. Same silent-missing-dep class as the 07-18
+# faster_whisper/resemblyzer gap. Idempotent top-up so it never recurs:
+python3 -c "import librosa, faster_whisper" >/dev/null 2>&1 \
+  || pip install --break-system-packages -q librosa faster_whisper \
+  || echo "setup_env: WARN librosa/faster_whisper install failed (Gemini VO soundcheck/align will break)"
 # DIMENSIONAL ENGINE (3D): taichi is the primary renderer (CPU JIT, ~0.45s/frame @1080x1920)
 python3 -c "import taichi" >/dev/null 2>&1 \
   || pip install --break-system-packages -q taichi

@@ -295,6 +295,69 @@ export const FormGradients: React.FC<{bases: Record<string, string>}> = ({bases}
 // sticker on top of an unchanged scene. Any future wildfire-smoke / air-quality
 // Alaska story inherits this for free. Grid texture (not a smooth gradient) makes
 // the federal/regulatory nature of a "non-attainment zone" legible as a shape.
+// ------------------------------------------------------------- IR / thermal vision look system
+// IRVision — 2026-07-20 CRAFT ADVANCE (the run's SINGLE primary engine advance).
+// A reusable false-color HEAT-VISION look for a machine's-eye view (the autonomous
+// drone's thermal sensor). Unlike GradeLayer (constant filmic finish) or HazeOverlay
+// (a pollution wash), this RE-RENDERS a region as if seen through a thermal camera:
+//   (a) a false-color heat ramp (cool magenta bg -> coral -> hot citron) via a
+//       screen-blended radial from the heat source, so the FIRE reads as the hottest
+//       point and the cold forest reads magenta/indigo,
+//   (b) horizontal sensor SCANLINES + a faint refresh sweep,
+//   (c) a boxed "THERMAL" HUD tag + corner ticks so it reads as an instrument feed.
+// `amount` 0..1 crossfades the whole look in (the drone switching to IR); `heat`
+// {x,y,r} is the hot target the ramp centers on. Any future sensor/thermal/IR Alaska
+// story inherits this. Deterministic in f; cheap (gradients + a few lines).
+export const IRVision: React.FC<{
+  f: number; amount: number;
+  heat?: {x: number; y: number; r: number};
+  region?: {x: number; y: number; w: number; h: number};
+  tag?: string;
+}> = ({f, amount, heat = {x: 540, y: 900, r: 260}, region = {x: 0, y: 0, w: 1080, h: 1920}, tag = 'THERMAL'}) => {
+  const a = Math.max(0, Math.min(1, amount));
+  if (a <= 0.01) return null;
+  const id = gid(`ir${Math.round(heat.x)}_${Math.round(heat.y)}`);
+  const sweepY = region.y + ((f * 9) % region.h);        // the refresh sweep line
+  const scan = Math.max(6, Math.round(region.h / 150));
+  return (
+    <>
+      {/* base thermal cast: cool magenta/indigo over the whole region */}
+      <div style={{position: 'absolute', left: region.x, top: region.y, width: region.w, height: region.h,
+        pointerEvents: 'none', background: '#2a0b4a', opacity: 0.5 * a, mixBlendMode: 'color'}} />
+      {/* false-color heat ramp centered on the hot target (screen blend = the hot core glows) */}
+      <svg width={region.w} height={region.h} viewBox={`0 0 ${region.w} ${region.h}`}
+        style={{position: 'absolute', left: region.x, top: region.y, pointerEvents: 'none', mixBlendMode: 'screen', opacity: a}}>
+        <radialGradient id={`${id}_h`} cx={`${(heat.x / region.w) * 100}%`} cy={`${(heat.y / region.h) * 100}%`} r={`${(heat.r / region.w) * 100}%`}>
+          <stop offset="0%" stopColor="#FFE24A" />
+          <stop offset="34%" stopColor="#FF7F3D" />
+          <stop offset="68%" stopColor="#FF4FD8" />
+          <stop offset="100%" stopColor="#2a0b4a" stopOpacity={0} />
+        </radialGradient>
+        <rect width={region.w} height={region.h} fill={`url(#${id}_h)`} />
+      </svg>
+      {/* horizontal sensor scanlines */}
+      <svg width={region.w} height={region.h} viewBox={`0 0 ${region.w} ${region.h}`}
+        style={{position: 'absolute', left: region.x, top: region.y, pointerEvents: 'none', opacity: 0.28 * a}}>
+        {Array.from({length: scan}).map((_, i) => {
+          const y = (i + 0.5) * (region.h / scan);
+          return <line key={i} x1={0} y1={y} x2={region.w} y2={y} stroke="#0a0a12" strokeWidth={2} />;
+        })}
+        {/* refresh sweep */}
+        <rect x={0} y={sweepY - 20} width={region.w} height={40} fill="#FFE24A" opacity={0.12} />
+        {/* corner ticks + THERMAL tag */}
+        <g stroke="#FFE24A" strokeWidth={4} fill="none" opacity={0.8}>
+          <path d={`M24,44 L24,20 L48,20`} /><path d={`M${region.w - 24},44 L${region.w - 24},20 L${region.w - 48},20`} />
+        </g>
+        <g transform={`translate(40,${region.h - 54})`} opacity={0.9}>
+          <rect x={0} y={-26} width={168} height={40} rx={6} fill="#0a0a12" stroke="#FFE24A" strokeWidth={3} />
+          <circle cx={24} cy={-6} r={8} fill="#FF4FD8" />
+          <text x={44} y={2} fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={22} fill="#FFE24A" letterSpacing={2}>{tag}</text>
+        </g>
+      </svg>
+    </>
+  );
+};
+
 export const HazeOverlay: React.FC<{
   amount: number;              // 0..1, drive from an interpolate() across the turn
   color?: string;              // the haze color (ash-red/grey by default)

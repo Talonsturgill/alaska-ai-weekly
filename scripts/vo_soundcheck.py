@@ -88,7 +88,25 @@ def _norm_words(s):
             out.append(w)
     if run:
         out.append("".join(run))
-    return out
+    # COMPOUND JOIN (2026-07-20): Whisper transcribes closed compounds as two words
+    # ("airstrip" -> "air strip", "megafire" -> "mega fire", "wildfire" -> "wild fire"),
+    # so a script using the closed form scored 2 word-errors PER compound and inflated
+    # WER above threshold on every take of a compound-heavy script (the Nenana/wildfire
+    # run: all 4 takes 0.09-0.10 vs 0.08 max, purely from air/strip + mega/fire). Same
+    # canonicalizer-precision class as the earlier $/% fix. Join a curated set of common
+    # closed compounds SYMMETRICALLY (applied to ref AND hyp), so it can only cancel a
+    # tokenization mismatch, never invent a missing word: if the hyp truly dropped a
+    # word, the bigram won't be present to join. Extend the set as new compounds recur.
+    _COMPOUNDS = {("air", "strip"): "airstrip", ("mega", "fire"): "megafire",
+                  ("wild", "fire"): "wildfire", ("data", "center"): "datacenter",
+                  ("data", "centers"): "datacenters", ("grid", "lock"): "gridlock"}
+    joined, i = [], 0
+    while i < len(out):
+        if i + 1 < len(out) and (out[i], out[i + 1]) in _COMPOUNDS:
+            joined.append(_COMPOUNDS[(out[i], out[i + 1])]); i += 2
+        else:
+            joined.append(out[i]); i += 1
+    return joined
 
 
 def _wer(ref, hyp):

@@ -93,6 +93,53 @@ export const PaperStorm: React.FC<{frame: number; count?: number; originX?: numb
   </g>
 );
 
+// SmellRings — 2026-07-20 NET-NEW FX. Radial VOC/smoke "smell" rings emanating
+// from a sensor's detection point (the Silvanet-network beat): concentric rings
+// expand + fade outward, carrying the invisible-detection idea as a visible pulse
+// (radial-emanate motion). `progress` 0..1 drives the wave; `hot` tints them toward
+// the ember/detection color. Cheap: a handful of stroked circles, deterministic in f.
+export const SmellRings: React.FC<{cx: number; cy: number; frame: number; color?: string; count?: number; maxR?: number; intensity?: number}> = ({
+  cx, cy, frame: f, color = '#FF7F6B', count = 4, maxR = 360, intensity = 1,
+}) => (
+  <g opacity={intensity}>
+    {Array.from({length: count}).map((_, i) => {
+      const phase = ((f / 26) + i / count) % 1;      // each ring offset around the cycle
+      const r = 24 + phase * maxR;
+      const op = Math.max(0, (1 - phase)) * 0.7;
+      const w = 8 * (1 - phase) + 2;
+      return <circle key={i} cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth={w} opacity={op * intensity} />;
+    })}
+    {/* the detecting node core, gently throbbing */}
+    <circle cx={cx} cy={cy} r={10 + 3 * Math.sin(f / 6)} fill={color} stroke={INK} strokeWidth={4} opacity={0.9 * intensity} />
+  </g>
+);
+
+// ScanReticle — 2026-07-20 NET-NEW FX. A thermal-lock targeting reticle for the
+// drone's IR vision: rotating corner brackets that SNAP inward and clamp onto a
+// target, with a crosshair + a "LOCK" tick. `lock` 0..1 drives the snap (0 = wide
+// open + spinning, 1 = clamped tight + steady). Pair with an ImpactStar at lock.
+export const ScanReticle: React.FC<{cx: number; cy: number; frame: number; lock?: number; color?: string; size?: number}> = ({
+  cx, cy, frame: f, lock = 0, color = '#FFE24A', size = 150,
+}) => {
+  const k = Math.max(0, Math.min(1, lock));
+  const gap = size * (1.0 - 0.55 * k);          // brackets clamp inward as lock rises
+  const spin = (1 - k) * ((f * 3) % 360);        // spins while searching, steadies on lock
+  const b = size * 0.34;                          // bracket arm length
+  const corner = (sx: number, sy: number) => (
+    <path d={`M${sx * gap},${sy * gap - sy * b} L${sx * gap},${sy * gap} L${sx * gap - sx * b},${sy * gap}`}
+      fill="none" stroke={color} strokeWidth={6} strokeLinecap="round" />
+  );
+  return (
+    <g transform={`translate(${cx},${cy}) rotate(${spin})`} opacity={0.5 + 0.5 * k}>
+      {corner(1, 1)}{corner(-1, 1)}{corner(1, -1)}{corner(-1, -1)}
+      {/* crosshair */}
+      <line x1={-size * 0.18} y1={0} x2={size * 0.18} y2={0} stroke={color} strokeWidth={3} opacity={0.8} />
+      <line x1={0} y1={-size * 0.18} x2={0} y2={size * 0.18} stroke={color} strokeWidth={3} opacity={0.8} />
+      <circle r={size * 0.1} fill="none" stroke={color} strokeWidth={3} opacity={0.5 + 0.5 * k} />
+    </g>
+  );
+};
+
 // Darkened-corner vignette that slams in with a dramatic zoom.
 export const ZoomVignette: React.FC<{amount: number}> = ({amount}) => (
   <div
