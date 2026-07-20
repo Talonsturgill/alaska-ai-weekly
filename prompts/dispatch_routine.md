@@ -417,7 +417,8 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
 
 - Write out/dispatch/storyboard.json: concept, treatment (+ judge reasoning), engine:
   infographic-2.5d, derived_from: scratch, fingerprint (palette, metaphor, layout axes),
-  beats[] with draw + t + vo + sfx + means, shots[] (framing, transition_in, thread), hook
+  beats[] with draw + t + vo + sfx + means, shots[] (framing, transition_in, thread, camera: composed stage3d CameraMoves
+  ('craneDown+dollyThrough', or 'static:<reason>'), stage3d: 'planes' | 'flat:<reason>'), hook
   block (pattern, frame1, headline 3-8 words, motion_by_s <= 1.3, loopback), audio_arc
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern), divergence_note.
   Plus storyboard.md for humans.

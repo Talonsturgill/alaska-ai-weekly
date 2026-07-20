@@ -147,6 +147,50 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     else:
         checks.append({"name":"SCENE_STRUCTURE","pass":False,
             "detail":"no shots.json — a Dispatch must be a SEQUENCE of shots with motivated transitions, not one continuous scene (a 'oner'). Storyboard >=4 shots and emit them via dispatch_core.write_shots(...). See config/shot_structure.yaml."})
+
+    # 4d) CAMERA_MOTION (2026-07-20, UPGRADE #1 enforced render-side) — the stage3d engine's
+    # planned camera must PHYSICALLY move. For each storyboard shot declaring a camera move
+    # (anything but 'static:*'), compare downsampled frames at 25% and 75% of the shot: a real
+    # dolly/orbit/crane displaces the WHOLE frame (most coarse cells change), while a locked
+    # frame with idle animation only changes local cells. Enforces docs/craft/STAGE3D.md rule 2
+    # ("a scene with a static camera wastes the engine") against the actual render.
+    try:
+        _sbp=os.path.join(os.path.dirname(os.path.abspath(frames_dir)),"storyboard.json")
+        _sb=json.load(open(_sbp)) if os.path.exists(_sbp) else {}
+        _sh=_sb.get("shots",[]); _eng=(str(_sb.get("engine",""))).strip().lower()
+        if _eng=="infographic-2.5d" and _sh:
+            cams=[str(s.get("camera","")).strip().lower() for s in _sh]
+            if not any(cams):
+                checks.append({"name":"CAMERA_MOTION","pass":False,
+                    "detail":"storyboard shots declare no `camera` moves — every 2.5D shot names composed CameraMoves or 'static:<reason>' (storyboard_check enforces the plan; this verifies the render). See docs/craft/STAGE3D.md."})
+            else:
+                MOVE_FRAC=0.30                        # a real camera move shifts >=30% of coarse cells
+                CELL_D=2.4                            # per-cell luma delta that counts as 'changed'
+                fails=[]; measured=0
+                def _cellfrac(a,b): d=np.abs(a-b); return float((d>CELL_D).mean())
+                for s2,cdecl in zip(_sh,cams):
+                    if not cdecl or cdecl.startswith("static"): continue
+                    st2=int(s2.get("start",0)); en2=int(s2.get("end",0) or 0)
+                    if en2<=st2:                       # storyboard shots may carry t-seconds instead of frames
+                        try:
+                            t0,t1=[float(x) for x in str(s2.get("t","0-0")).replace(" to ","-").split("-")[:2]]
+                            st2,en2=int(t0*fps),int(t1*fps)
+                        except Exception: continue
+                    if en2-st2<int(1.5*fps): continue
+                    a=_lumf(st2+int((en2-st2)*0.25)); b=_lumf(st2+int((en2-st2)*0.75))
+                    fr=_cellfrac(a,b); measured+=1
+                    if fr<MOVE_FRAC: fails.append([s2.get("id","?"),round(fr,2)])
+                m["camera_motion_measured"]=measured
+                if measured==0:
+                    checks.append({"name":"CAMERA_MOTION","pass":True,
+                        "detail":"no non-static shots long enough to measure (all static:<reason> or <1.5s)"})
+                else:
+                    checks.append({"name":"CAMERA_MOTION","pass":(not fails),
+                        "detail":(f"{measured} moving shots measured; " +
+                                  (f"shots {fails} show <{int(MOVE_FRAC*100)}% frame displacement — the declared camera move did not render; use Stage3D CameraMoves, not a locked frame" if fails
+                                   else f"all clear the {int(MOVE_FRAC*100)}% whole-frame displacement floor — the planned camera moves are real"))})
+    except Exception as _e:
+        checks.append({"name":"CAMERA_MOTION","pass":False,"detail":f"could not verify camera motion ({_e})"})
     # 5) CAPTION_SYNC — captions are voice-driven
     ok_sync=False; det="words60.json missing — captions not voice-synced"
     if os.path.exists(words_path):
