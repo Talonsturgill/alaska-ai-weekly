@@ -63,7 +63,9 @@ EVENTS = [
     (L[7] + 1.90, "thud"),     # the thermal reticle LOCK stinger
     (L[7] + 3.30, "whoosh"),   # the suppressant drop / hiss
     (L[8] + 1.40, "stamp"),    # S5: the DRYAD SAYS ink-stamp
-    (L[9] + 0.50, "thud"),     # the megafire scale boom
+    (L[9] + 0.40, "boom"),     # the megafire wall rises (scale-turn crescendo)
+    (L[9] + 1.90, "thud"),     # the wall towers and holds (sonify the loudest picture)
+    (L[9] + 3.40, "boom"),     # a second distant concussion under the held wall
     (L[10] + 1.10, "stamp"),   # S6: the JUDGING PENDING stamp
     (L[11] + 1.90, "ding"),    # the warm resolve after the silence dip
     (L[12] + 0.40, "whoosh"),  # VALE liftoff (the button)

@@ -19,9 +19,29 @@ TAIL = 2.6  # hold after the last word
 SCENE_START_LINE = [0, 2, 4, 6, 8, 10]
 
 
+def _apply_caption_fixups(caps):
+    """On-screen captions are force-aligned from Whisper's transcript of the
+    PHONETICALLY-respelled audio, so proper-noun respellings ('Ex Prize', 'DRY-ad',
+    'Nana' for Nenana) leak onto screen as typos (the 2026-07-20 panel caught all three
+    as hard blockers). vo_script.json declares a `caption_fixups` {phonetic: display}
+    map; apply it to every cue text (case-insensitive, word-boundary) so the REAL
+    spelling always shows. Permanent pipeline fix so no future run leaks a respelling."""
+    import re as _re
+    sp = os.path.join(OUT, "vo_script.json")
+    fixups = json.load(open(sp)).get("caption_fixups", {}) if os.path.exists(sp) else {}
+    if not fixups:
+        return caps
+    for c in caps:
+        t = c.get("text", "")
+        for wrong, right in fixups.items():
+            t = _re.sub(r"\b" + _re.escape(wrong) + r"\b", right, t, flags=_re.IGNORECASE)
+        c["text"] = t
+    return caps
+
+
 def main():
     lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
-    caps = json.load(open(os.path.join(OUT, "captions.json")))
+    caps = _apply_caption_fixups(json.load(open(os.path.join(OUT, "captions.json"))))
     start = {L["idx"]: L["start"] for L in lines}
     last_end = max(L["end"] for L in lines)
     total_s = last_end + TAIL

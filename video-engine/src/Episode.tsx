@@ -178,10 +178,12 @@ const S1: React.FC = () => {
               <circle key={i} cx={Math.cos(i * 1.3 + f / 6) * (14 + sparkGrow * 20)} cy={-Math.abs(Math.sin(i + f / 7)) * (20 + sparkGrow * 30)} r={2.5} fill={IR_COR} opacity={sparkGrow * 0.8} />
             ))}
           </g>
-          {/* VALE holding station, eye snaps to lock */}
-          <g transform="translate(540,720)">
-            <Vale frame={f} scale={1.05} emotion={lock > 0.5 ? 'locked' : 'vigilant'} eyeLock={lock} accent={voice.accentAt(f)} />
+          {/* VALE holding station, eye SNAPS to lock (scale-pop + jerk sell the snap) */}
+          <g transform={`translate(540,${720 + (f > 34 && f < 46 ? 8 : 0)}) scale(${interpolate(f, [30, 38, 50], [1.05, 1.19, 1.05], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})})`}>
+            <Vale frame={f} scale={1.0} emotion={lock > 0.5 ? 'locked' : 'vigilant'} eyeLock={lock} accent={voice.accentAt(f)} />
           </g>
+          {/* the lock impact on the eye */}
+          {lock > 0.6 && f < 52 && <ImpactStar cx={540} cy={710} r={interpolate(f, [36, 44], [0, 46], {extrapolateRight: 'clamp'})} color={IR_CIT} />}
           {/* ghost controller + cross (beat 1) */}
           {ghost > 0.02 && (
             <g transform="translate(300,1120)" opacity={ghost}>
@@ -213,13 +215,14 @@ const S2: React.FC = () => {
   // beat 2 (~0-3.5s): XPRIZE badge slam
   const badge = spring({frame: f - 6, fps, config: {damping: 12, stiffness: 170}});
   const ringWind = interpolate(f, [18, 54], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // beat 3 (~3.5-7s / local ~105f): funnel 300->3
-  const funnelT = interpolate(f, [96, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const platesIn = interpolate(f, [150, 180], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const dualTag = interpolate(f, [186, 200], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // beat 4 (~7-10.5s / local ~210f): pin drops on Alaska
-  const mapIn = interpolate(f, [206, 236], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const stage = f < 190 ? 0 : 1;   // 0 = badge+funnel, 1 = map+pin
+  // beat 3 (funnel 300->3) — hold the plates + Anduril dual-use tag on screen long
+  // enough to read before cutting to the map (panel: the tag barely rendered).
+  const funnelT = interpolate(f, [90, 138], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const platesIn = interpolate(f, [138, 170], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const dualTag = interpolate(f, [176, 196], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // beat 4 (pin drops on Alaska)
+  const mapIn = interpolate(f, [230, 260], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const stage = f < 224 ? 0 : 1;   // 0 = badge+funnel+plates+tag, 1 = map+pin
   const finalists = ['ANDURIL', 'AURA FORESIGHT', 'DRYAD'];
   return (
     <AbsoluteFill style={{backgroundColor: NIGHT}}>
@@ -272,7 +275,7 @@ const S2: React.FC = () => {
             <AlaskaMini frame={f} x={0} y={0} scale={1} pin={mapIn > 0.6} />
           </g>
           {mapIn > 0.6 && (
-            <g transform="translate(720,760)" opacity={interpolate(f, [230, 250], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
+            <g transform="translate(720,760)" opacity={interpolate(f, [254, 274], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
               <BoxLabel x={0} y={0} text="NENANA" sub="ALASKA" w={300} h={96} fs={54} fill={IR_CIT} />
             </g>
           )}
@@ -382,15 +385,26 @@ const S4: React.FC = () => {
               <Vale frame={f} scale={0.8} emotion={lock > 0.5 ? 'locked' : 'resolute'} eyeLock={lock} accent={voice.accentAt(f)} />
             </MotionBlur>
           </g>
-          {/* suppressant arc + splash */}
-          {drop > 0.02 && drop < 1 && (
-            <path d={`M${valeX},${valeY + 70} Q${(valeX + heatX) / 2},${valeY - 40} ${heatX},1200`} fill="none" stroke="#8fd4ff" strokeWidth={16 * (1 - drop)} strokeLinecap="round" opacity={0.85} />
+          {/* suppressant arc (dwells across the drop), an impact splash at contact,
+              then a rising steam plume that follows through (the panel wanted the
+              arc -> impact -> steam payoff to read) */}
+          {drop > 0.02 && drop < 0.96 && (
+            <>
+              <path d={`M${valeX},${valeY + 70} Q${(valeX + heatX) / 2},${valeY - 30} ${heatX},1200`} fill="none" stroke="#8fd4ff" strokeWidth={18} strokeLinecap="round" opacity={0.9} />
+              <path d={`M${valeX},${valeY + 70} Q${(valeX + heatX) / 2},${valeY - 30} ${heatX},1200`} fill="none" stroke="#eaf6ff" strokeWidth={7} strokeLinecap="round" opacity={0.6} />
+            </>
           )}
-          {fireOut > 0.1 && fireOut < 1 && (
-            <g opacity={1 - fireOut}>{Array.from({length: 8}).map((_, i) => (
-              <ellipse key={i} cx={heatX + Math.cos(i) * 40 * fireOut} cy={1180 - ((f * 2 + i * 30) % 200) * fireOut} rx={30} ry={22} fill="#e8eef5" opacity={0.4 * fireOut} />
-            ))}</g>
-          )}
+          {/* impact splash burst at contact */}
+          {drop > 0.55 && drop < 0.95 && Array.from({length: 9}).map((_, i) => {
+            const a = (i / 9) * Math.PI - Math.PI;
+            const r = interpolate(drop, [0.55, 0.95], [0, 70]);
+            return <circle key={i} cx={heatX + Math.cos(a) * r} cy={1200 + Math.sin(a) * r * 0.5} r={7 * (1 - drop)} fill="#cfeaff" opacity={0.8 * (1 - drop)} />;
+          })}
+          {/* rising steam plume follow-through as the fire dies */}
+          {fireOut > 0.08 && Array.from({length: 10}).map((_, i) => {
+            const rise = ((f * 2.2 + i * 34) % 260);
+            return <ellipse key={i} cx={heatX + 26 * Math.sin(f / 16 + i)} cy={1200 - rise * Math.min(1, fireOut * 1.4)} rx={26 + rise * 0.14} ry={20} fill="#e8eef5" opacity={0.42 * Math.min(1, fireOut * 1.3) * (1 - rise / 300)} />;
+          })}
         </svg>
         {/* the IR thermal-vision look, on during the lock (the drone's-eye view) */}
         <IRVision f={f} amount={irOn * (1 - fireOut)} heat={{x: heatX, y: heatY, r: 300}} tag="THERMAL" />
@@ -407,7 +421,11 @@ const S4: React.FC = () => {
         </svg>
       )}
       <HeadCard text="THERMAL LOCK" op={interpolate(f, [138, 152, 190, 202], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} y={230} />
-      {drop > 0.3 && <div style={{position: 'absolute', top: 1560, left: 0, right: 0, textAlign: 'center', fontFamily: BOLD, fontWeight: 900, fontSize: 44, color: '#fff', textShadow: '2px 3px 0 #000', opacity: Math.min(1, drop)}}>up to 100 L suppressant · per Dryad</div>}
+      {drop > 0.3 && (
+        <div style={{position: 'absolute', top: 1360, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: Math.min(1, drop)}}>
+          <div style={{background: 'rgba(16,20,30,0.9)', border: `4px solid ${IR_CIT}`, borderRadius: 10, padding: '8px 22px', fontFamily: BOLD, fontWeight: 900, fontSize: 40, color: '#fff'}}>up to 100 L suppressant · per Dryad</div>
+        </div>
+      )}
     </AbsoluteFill>
   );
 };
@@ -419,8 +437,12 @@ const S5: React.FC = () => {
   const voice = useVoice();
   // beat 10 (~0-3.5s): DRYAD SAYS readout ribbon off VALE, over drifting steam
   const ribbon = interpolate(f, [8, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const quote = "...no longer a vision. It is a reality.";
-  const chars = Math.floor(interpolate(f, [16, 70], [0, quote.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  // FULL verbatim clause (the panel flagged the compressed 'no longer a vision. It is
+  // a reality.' as an altered quote). Wrapped across two lines to fit the ribbon card.
+  const quoteL1 = "...no longer a vision for the";
+  const quoteL2 = "future. It is a reality.";
+  const quoteFull = quoteL1 + " " + quoteL2;
+  const chars = Math.floor(interpolate(f, [16, 76], [0, quoteFull.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   const stamp = spring({frame: f - 72, fps, config: {damping: 9, stiffness: 200}});
   const stage = f < 96 ? 0 : 1;
   // beat 11 (~3.5-7s): megafire wall rises to dwarf the test flame
@@ -439,10 +461,12 @@ const S5: React.FC = () => {
             <g transform="translate(300,760)"><Vale frame={f} scale={0.9} emotion="calm" eyeLock={0.2} accent={voice.accentAt(f)} /></g>
             {ribbon > 0.02 && (
               <g transform="translate(420,760)" opacity={ribbon}>
-                <path d={`M0,0 L${520 * ribbon},0`} stroke={IR_CIT} strokeWidth={4} />
-                <rect x={40} y={-70} width={560} height={150} rx={12} fill="#0f1626" stroke={IR_CIT} strokeWidth={5} opacity={0.95} />
-                <text x={64} y={-24} fontFamily={BOLD} fontWeight={900} fontSize={30} fill="#fff">{quote.slice(0, chars)}</text>
-                <text x={64} y={42} fontFamily={BOLD} fontWeight={700} fontSize={24} fill={IR_COR}>- Carsten Brinkschulte, CEO, Dryad</text>
+                <path d={`M0,0 L${420 * ribbon},0`} stroke={IR_CIT} strokeWidth={4} />
+                <rect x={40} y={-96} width={600} height={196} rx={12} fill="#0f1626" stroke={IR_CIT} strokeWidth={5} opacity={0.96} />
+                <text x={64} y={-52} fontFamily={BOLD} fontWeight={900} fontSize={30} fill="#fff">{quoteFull.slice(0, chars).slice(0, quoteL1.length)}</text>
+                <text x={64} y={-14} fontFamily={BOLD} fontWeight={900} fontSize={30} fill="#fff">{chars > quoteL1.length ? quoteFull.slice(quoteL1.length + 1, chars) : ""}</text>
+                <text x={64} y={44} fontFamily={BOLD} fontWeight={700} fontSize={23} fill={IR_COR}>- Carsten Brinkschulte,</text>
+                <text x={64} y={74} fontFamily={BOLD} fontWeight={700} fontSize={23} fill={IR_COR}>CEO, Dryad Networks</text>
               </g>
             )}
           </svg>
@@ -457,14 +481,27 @@ const S5: React.FC = () => {
               <path d={`M0,1920 L0,${1300 - wall * 700} Q270,${1180 - wall * 760} 540,${1280 - wall * 700} Q810,${1180 - wall * 760} 1080,${1300 - wall * 700} L1080,1920 Z`}
                 fill={FIRE_D} stroke={INK} strokeWidth={6} />
               <path d={`M0,1920 L0,${1420 - wall * 620} Q300,${1320 - wall * 660} 640,${1400 - wall * 620} Q900,${1330 - wall * 660} 1080,${1420 - wall * 620} L1080,1920 Z`}
-                fill={FIRE} opacity={0.85} />
-              {/* flame licks along the ridge */}
-              {Array.from({length: 10}).map((_, i) => (
-                <path key={i} d={`M${60 + i * 108},${1300 - wall * 690} q${-16},${-46 - 10 * Math.sin(f / 5 + i)} 0,${-84} q16,40 0,84 Z`} fill={IR_CIT} opacity={0.7 * wall} />
-              ))}
-              {/* roiling smoke + ash */}
+                fill={FIRE} opacity={0.9} />
+              {/* HEAT STRIATION bands inside the wall (breaks the flat fill into a textured, roiling body) */}
+              {Array.from({length: 7}).map((_, i) => {
+                const by = (1440 - wall * 600) + i * 70 + 6 * Math.sin(f / 8 + i);
+                return <path key={i} d={`M0,${by} q270,${-18 - 8 * Math.sin(f / 6 + i)} 540,0 q270,18 540,0`} fill="none" stroke={i % 2 ? FIRE_D : IR_CIT} strokeWidth={5} opacity={(i % 2 ? 0.4 : 0.3) * wall} />;
+              })}
+              {/* flame TONGUES along the ridge, licking and flickering */}
+              {Array.from({length: 14}).map((_, i) => {
+                const h = 60 + 34 * Math.abs(Math.sin(f / 5 + i * 1.3));
+                const rx = 40 + i * 74;
+                return <path key={i} d={`M${rx},${1300 - wall * 690} q${-14},${-h} 0,${-h * 1.4} q14,${h * 0.4} 0,${h * 1.4} Z`} fill={i % 3 === 0 ? IR_CIT : '#ffb066'} opacity={(0.55 + 0.3 * Math.sin(f / 4 + i)) * wall} />;
+              })}
+              {/* rising embers + ash (live particulate, not a static gradient) */}
+              {Array.from({length: 16}).map((_, i) => {
+                const seed = i * 61;
+                const up = ((f * 2.4 + seed) % 420);
+                return <circle key={i} cx={(seed * 7) % 1080} cy={(1300 - wall * 690) - up} r={2.5 + (seed % 3)} fill={i % 2 ? IR_CIT : '#ff8a3d'} opacity={(0.7 - up / 600) * wall} />;
+              })}
+              {/* roiling smoke */}
               {Array.from({length: 8}).map((_, i) => (
-                <ellipse key={i} cx={100 + i * 130} cy={(1200 - wall * 700) - ((f * 1.5 + i * 40) % 300)} rx={70} ry={50} fill="#4a4038" opacity={0.35 * wall} />
+                <ellipse key={i} cx={100 + i * 130} cy={(1200 - wall * 700) - ((f * 1.5 + i * 40) % 300)} rx={80} ry={54} fill="#4a4038" opacity={0.32 * wall} />
               ))}
             </g>
             {/* the tiny fenced test flame + small VALE, dwarfed */}
@@ -494,9 +531,16 @@ const S6: React.FC = () => {
   const serverShrink = interpolate(f, [110, 160], [1, 0.2], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const serverX = interpolate(f, [110, 170], [640, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const armPull = interpolate(f, [104, 128], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // beat 14 (~7-14s / local ~210f): VALE liftoff, dawn, ACUASI lower-third (signature)
-  const dawn = interpolate(f, [210, 300], [0.2, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const liftoff = spring({frame: f - 220, fps, config: {damping: 15, stiffness: 90}});
+  // beat 14 (~7-14s / local ~210f): VALE liftoff, dawn, ACUASI lower-third (signature).
+  // The panel flagged the button as a HOVER; give it real anticipation (a crouch dip),
+  // a springy overshoot rise with big vertical travel, motion blur, and a lower-third
+  // that slides in (not held static) so the closing 6s reads as a departure, not a bob.
+  const dawn = interpolate(f, [210, 320], [0.2, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const anticip = interpolate(f, [206, 226], [0, 28], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); // crouch
+  const rise = spring({frame: f - 226, fps, config: {damping: 8, stiffness: 52}});                            // overshoot spring
+  const valeLiftY = 1330 + anticip - rise * 660;
+  const riseVy = (f > 226 && f < 288) ? 24 : 0;
+  const lowerIn = spring({frame: f - 244, fps, config: {damping: 13, stiffness: 120}});
   const stage = f < 96 ? 0 : (f < 200 ? 1 : 2);
   return (
     <AbsoluteFill style={{backgroundColor: NIGHT}}>
@@ -547,16 +591,21 @@ const S6: React.FC = () => {
         <>
           <NenanaRangeBG f={f} dawn={dawn} parallax={1} showStrip />
           <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+            {/* downwash dust kicked up at the moment of liftoff (secondary motion) */}
+            {rise > 0.02 && rise < 0.6 && Array.from({length: 7}).map((_, i) => (
+              <ellipse key={i} cx={540 + (i - 3) * 46} cy={1470 + 10 * Math.sin(f / 5 + i)} rx={30 * (1 - rise)} ry={10} fill="#cfe0f2" opacity={0.4 * (1 - rise)} />
+            ))}
             {/* VALE lifting off the airstrip at dawn (signature shot), loops to the open */}
-            <g transform={`translate(540,${1300 - liftoff * 420})`}>
-              <MotionBlur vy={liftoff > 0.05 && liftoff < 0.95 ? 14 : 0} gain={0.6}>
-                <Vale frame={f} scale={1.15} emotion="resolute" eyeLock={0.3} accent={voice.accentAt(f)} groundY={liftoff < 0.1 ? 150 : undefined} />
+            <g transform={`translate(540,${valeLiftY})`}>
+              <MotionBlur vy={riseVy} gain={0.6}>
+                <Vale frame={f} scale={1.15} emotion="resolute" eyeLock={0.3} accent={voice.accentAt(f)} groundY={f < 216 ? 160 : undefined} />
               </MotionBlur>
             </g>
           </svg>
-          <div style={{position: 'absolute', bottom: 470, left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          <div style={{position: 'absolute', bottom: 470, left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center',
+            transform: `translateY(${(1 - lowerIn) * 90}px)`, opacity: lowerIn}}>
             <div style={{background: INK, color: '#fff', fontFamily: BOLD, fontWeight: 900, fontSize: 40, padding: '10px 26px', borderRadius: 10, border: `5px solid ${IR_CIT}`}}>UAF ACUASI · Nenana, Alaska</div>
-            <div style={{marginTop: 10, background: IR_CIT, color: INK, fontFamily: BOLD, fontWeight: 900, fontSize: 44, padding: '8px 24px', borderRadius: 10, transform: 'rotate(-1.5deg)'}}>Alaska built the RANGE</div>
+            <div style={{marginTop: 10, background: IR_CIT, color: INK, fontFamily: BOLD, fontWeight: 900, fontSize: 44, padding: '8px 24px', borderRadius: 10, transform: `rotate(-1.5deg) scale(${0.9 + lowerIn * 0.1})`}}>Alaska built the RANGE</div>
           </div>
         </>
       )}
