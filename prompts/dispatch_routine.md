@@ -345,8 +345,12 @@ concrete sound (whoosh, tick, boom, lock, riser, paper-rustle, klaxon, pop).
 
 (REBALANCED 2026-07-20 after the asset-library build session, owner directive. The old text
 made net-new the point and implied reuse was a failure; now that `lib/` carries a deep
-taste-looped library — a 9-species bestiary in `fauna.tsx`, a vehicle kit in `vehicles.tsx`,
-shared biomes in `biomes.tsx`, the characterized-object cast in `kit.tsx`, and the stage3d
+taste-looped library — a 21-species bestiary + SledDogTeam in `fauna.tsx`, a vehicle kit in
+`vehicles.tsx`, seven shared biomes in `biomes.tsx` (aurora night, tundra, fjord, glacier,
+river, main street, oilfield), the generalized props kit in `props.tsx` (StatCard, Nameplate,
+SwingSign, GearLever, SurveyStake, MeasuringChain, PenAndDocument, TrailPost, BoundaryReveal —
+all story copy as params), the materials system in `materials.tsx` (eight substance overlays
+so no surface is a flat fill), the characterized-object cast in `kit.tsx`, and the stage3d
 depth engine — the point is USING that shelf well and growing it where the story finds a gap.)
 
 1. READ `video-engine/src/lib/ASSET_MANIFEST.md` FIRST, every run — it is the inventory of
@@ -476,7 +480,8 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
    vo_lines.json automatically). Run scene-building in parallel while takes cook. Disclose the
    SynthID watermark in the draft. (Cloned/kokoro/edge remain as fallbacks only.)
 1a. LIBRARY MANDATE (§4.3a): before/while building scenes, read ASSET_MANIFEST.md and CAST from
-   the shelf (fauna.tsx bestiary, vehicles.tsx, biomes.tsx, kit.tsx cast, stage3d) by default;
+   the shelf (fauna.tsx bestiary, vehicles.tsx, biomes.tsx, props.tsx, materials.tsx,
+   kit.tsx cast, stage3d) by default;
    create net-new reusable assets only where the story finds a real gap (register in the
    manifest same-commit), and make one craft-system advance or existing-asset upgrade per run.
 2. MUSIC + SFX: the music is a CREATIVE CHOICE tied to the angle — map the Phase 3.5 stance
