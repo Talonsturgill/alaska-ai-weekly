@@ -540,3 +540,153 @@ export const Puffin: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------- WOLF
+// NET-NEW 2026-07-20c (asset-library session #2). The gray wolf: lean deep-
+// chested frame, straight bushy tail (never curled — that's the dog tell),
+// grizzled gray saddle over cream legs/belly, amber eyes. `howl` 0..1 tips the
+// muzzle skyward with a closed-eye throat stretch; `stalk` 0..1 lowers the head
+// below the shoulder line, ears pinned forward, tail flat. Idles: breath, ear
+// swivel, tail sway.
+export const Wolf: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  howl?: number; stalk?: number; emotion?: 'calm' | 'alert';
+}> = ({x, y, scale = 1, f, facing = 1, howl = 0, stalk = 0, emotion = 'calm'}) => {
+  const id = uid(`wolf${x}${y}`);
+  const t = tones('#6e7480');            // grizzled gray
+  const hw = Math.max(0, Math.min(1, howl));
+  const st = Math.max(0, Math.min(1, stalk)) * (1 - hw);
+  const breath = 1 + 0.013 * Math.sin(f / 15);
+  const earSwivel = emotion === 'alert' || st > 0.3 ? -10 : 4 * Math.sin(f / 18);
+  const tailSway = (1 - st) * 5 * Math.sin(f / 13);
+  const headDrop = st * 44;
+  const headTip = -hw * 52 + st * 10;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={4} rx={116} ry={18} opacity={0.3} blur={11} />
+      {/* legs: cream, lean */}
+      {[[-78, 0], [-40, Math.PI], [42, Math.PI], [80, 0]].map(([lx, ph], i) => (
+        <g key={i} transform={`translate(${lx},-96) rotate(${st * 6 * Math.sin((ph as number) + 1)})`}>
+          <rect x={-8} y={0} width={16} height={94 - st * 18} rx={6} fill={i % 2 ? '#c9c2b4' : '#b5ac9c'} stroke={INK} strokeWidth={5} />
+        </g>
+      ))}
+      {/* body: deep chest tapering to lean hips; stalk crouches it */}
+      <g transform={`translate(0,${st * 16}) scale(1,${breath})`}>
+        <path d="M-116,-108 q-10,-40 18,-54 l52,-14 q60,-10 104,0 q34,8 44,36 q8,24 -4,44 q-70,18 -156,4 q-38,-8 -58,-16 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        {/* the grizzled saddle: a BAND along the topline (not a closed oval) */}
+        <path d="M-98,-160 l52,-14 q60,-10 104,0 q20,5 32,16 l-6,10 q-24,-12 -60,-14 q-56,-4 -100,8 q-16,5 -26,10 Z" fill={t.shade} opacity={0.65} />
+        {/* cream belly */}
+        <path d="M-96,-90 q60,18 150,8 q-4,12 -22,16 q-80,10 -122,-10 Z" fill="#c9c2b4" stroke={INK} strokeWidth={3.5} opacity={0.9} />
+        <RimLight d="M-112,-104 q-8,-44 30,-58 q44,-18 96,-14" w={3.5} opacity={0.55} />
+        {/* fur break-up */}
+        {[[-64, -122, 9], [-18, -128, 10], [30, -120, 9]].map(([fx, fy, fl], i) => (
+          <path key={i} d={`M${fx},${fy} q${(fl as number) / 2},5 ${fl},2`} fill="none" stroke={t.shade} strokeWidth={2.5} strokeLinecap="round" opacity={0.75} />
+        ))}
+      </g>
+      {/* STRAIGHT bushy tail (the wolf tell) */}
+      <g transform={`translate(-112,${-118 + st * 22}) rotate(${tailSway + st * 14})`}>
+        <path d="M0,0 q-40,6 -64,28 q-10,12 -4,24 q22,4 44,-10 q22,-16 24,-42 Z" fill={t.core} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+        <path d="M-56,24 q-8,10 -4,22 q14,2 26,-6 Z" fill="#c9c2b4" stroke={INK} strokeWidth={3.5} />
+      </g>
+      {/* neck wedge into the chest, then the head (bigger, connected) */}
+      <path d={`M64,${-150 + headDrop * 0.5} q28,-16 56,-10 l14,26 q-30,14 -58,6 Z`} fill={t.base} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      <g transform={`translate(112,${-152 + headDrop}) rotate(${headTip}) scale(1.28)`}>
+        <path d="M-30,4 q0,-30 26,-38 q28,-8 42,10 q10,14 6,30 q-8,20 -34,18 q-30,-2 -40,-20 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+        {/* long tapered muzzle */}
+        <path d="M34,-12 q28,-2 40,8 q4,10 -6,15 q-18,7 -32,-2 q-6,-12 -2,-21 Z" fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        <ellipse cx={72} cy={0} rx={6} ry={5} fill={INK} />
+        {/* cream chin/cheek */}
+        <path d="M-2,14 q18,10 36,4 q-4,10 -18,12 q-16,0 -18,-16 Z" fill="#c9c2b4" stroke={INK} strokeWidth={3.5} />
+        {/* howl: closed-arc eye + open muzzle; else amber eye */}
+        {hw > 0.4 ? (
+          <path d="M8,-14 q7,5 14,0" fill="none" stroke={INK} strokeWidth={3.5} strokeLinecap="round" />
+        ) : (
+          <>
+            <ellipse cx={14} cy={-12} rx={6.5} ry={st > 0.3 ? 5 : 6.5} fill="#e8b23e" stroke={INK} strokeWidth={3} />
+            <circle cx={16} cy={-11} r={3} fill={INK} />
+          </>
+        )}
+        {hw > 0.4 && <path d={`M56,4 q10,6 6,${14 + hw * 6} q-12,2 -16,-8 Z`} fill="#5b1b1b" stroke={INK} strokeWidth={3.5} />}
+        {/* pricked ears */}
+        {[[-8, -30, -6], [14, -34, 8]].map(([ex, ey, er], i) => (
+          <g key={i} transform={`translate(${ex},${ey}) rotate(${(er as number) + earSwivel})`}>
+            <path d="M0,0 L-9,-24 L10,-6 Z" fill={i ? t.base : t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+          </g>
+        ))}
+      </g>
+      {/* howl breath puff */}
+      {hw > 0.6 && (
+        <g opacity={(hw - 0.6) * 2}>
+          {[0, 1, 2].map((k) => (
+            <circle key={k} cx={150 + k * 12} cy={-210 - k * 18} r={6 - k} fill="#e8eef5" opacity={0.7 - k * 0.2} />
+          ))}
+        </g>
+      )}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- RED FOX
+// NET-NEW 2026-07-20c (asset-library session #2). Small, quick, delicate:
+// flame-red coat, black stockings + ear tips, white chest bib and tail tip
+// (the diagnostic), huge triangular ears, a lush tail nearly body-length.
+// `pounce` 0..1 arcs the mouse-jump (crouch -> vault, forepaws tucked);
+// idles: light bounce, ear radar, tail curl.
+export const RedFox: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1; pounce?: number;
+}> = ({x, y, scale = 1, f, facing = 1, pounce = 0}) => {
+  const id = uid(`fox${x}${y}`);
+  const t = tones('#c25a28');            // flame red
+  const po = Math.max(0, Math.min(1, pounce));
+  // pounce arc: crouch (0-0.3), vault up (0.3-0.7), nose-down dive (0.7-1)
+  const crouch = po < 0.3 ? po / 0.3 : Math.max(0, 1 - (po - 0.3) / 0.25);
+  const vault = po > 0.3 ? Math.sin(((po - 0.3) / 0.7) * Math.PI) : 0;
+  const dive = po > 0.7 ? (po - 0.7) / 0.3 : 0;
+  const bounce = (1 - po) * 1.8 * Math.sin(f / 11);
+  const earRadar = 6 * Math.sin(f / 16);
+  const tailCurl = 8 * Math.sin(f / 14) + po * 22;
+  return (
+    <g transform={`translate(${x},${y + bounce - vault * 88}) scale(${scale * facing},${scale}) rotate(${-vault * 10 + dive * 38 + crouch * 4})`}>
+      <FormGradient id={id} t={t} />
+      {po < 0.2 && <ContactShadow cx={0} cy={4} rx={74} ry={13} opacity={0.28} blur={9} />}
+      {/* black-stocking legs (tucked in the vault) */}
+      {[[-46, 0], [-20, Math.PI], [24, Math.PI], [48, 0]].map(([lx, ph], i) => (
+        <g key={i} transform={`translate(${lx},-58) rotate(${vault * (i < 2 ? 34 : -20)})`}>
+          <rect x={-6} y={0} width={12} height={56 - crouch * 14 - vault * 10} rx={5} fill="#1c1c22" stroke={INK} strokeWidth={4} />
+        </g>
+      ))}
+      {/* body: small and delicate */}
+      <g transform={`scale(1,${1 - crouch * 0.14})`}>
+        <path d="M-64,-62 q-6,-30 22,-40 q30,-12 62,-8 q28,4 38,24 q8,18 0,32 q-44,14 -94,4 q-24,-6 -28,-12 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+        {/* white chest bib */}
+        <path d="M38,-84 q18,10 20,32 q-2,16 -14,20 q-8,-30 -22,-46 Z" fill="#f2ede2" stroke={INK} strokeWidth={3.5} />
+        <RimLight d="M-64,-62 q-6,-30 22,-40 q30,-12 62,-8" w={3} opacity={0.55} />
+      </g>
+      {/* the LUSH tail with the white tip (diagnostic) */}
+      <g transform={`translate(-62,${-70}) rotate(${tailCurl})`}>
+        <path d="M0,0 q-44,-2 -72,20 q-16,14 -12,30 q20,10 48,-2 q30,-14 36,-48 Z" fill={t.base} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <path d="M-78,44 q-8,8 -6,18 q16,4 30,-6 Z" fill="#f2ede2" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+        <path d="M-6,4 q-30,0 -50,14" fill="none" stroke={t.shade} strokeWidth={3} opacity={0.6} />
+      </g>
+      {/* head: sharp small face, huge ears */}
+      <g transform={`translate(64,${-84 + crouch * 10}) rotate(${dive * 24})`}>
+        <path d="M-22,2 q-2,-22 18,-28 q22,-6 32,8 q8,12 2,24 q-8,14 -28,12 q-20,-2 -24,-16 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        {/* white cheek + sharp muzzle */}
+        <path d="M22,-4 q18,-2 26,6 q2,8 -6,10 q-14,4 -22,-4 q-2,-8 2,-12 Z" fill="#f2ede2" stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
+        <ellipse cx={46} cy={4} rx={4.5} ry={4} fill={INK} />
+        <ellipse cx={6} cy={-8} rx={5} ry={po > 0.3 ? 6 : 5} fill="#e8b23e" stroke={INK} strokeWidth={2.5} />
+        <circle cx={7.5} cy={-7} r={2.4} fill={INK} />
+        {/* HUGE triangular ears, black-tipped, radar-swiveling */}
+        {[[-10, -22, -8], [10, -24, 10]].map(([ex, ey, er], i) => (
+          <g key={i} transform={`translate(${ex},${ey}) rotate(${(er as number) + earRadar})`}>
+            <path d="M0,0 L-10,-28 L12,-8 Z" fill={t.base} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+            <path d="M-10,-28 L-4,-12 L4,-16 Z" fill="#1c1c22" />
+          </g>
+        ))}
+      </g>
+    </g>
+  );
+};
