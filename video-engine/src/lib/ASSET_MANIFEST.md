@@ -59,5 +59,11 @@ unofficial state bird, for comic beats).
 - `lib/lighting.tsx` — tones() ramps, FormGradient, RimLight, ContactShadow, BrushedMetal/BarkTexture/FoliageSpeckle, GradeLayer (bloom+vignette+grain), MotionBlur (180° anisotropic) — NEW 2026-07-18; `HazeOverlay` NEW 2026-07-19 — translucent grid-textured animated air-quality/pollution grading layer (`amount` 0..1 drives wash + tint + grid opacity), for a story's environmental-stakes turn
 - `lib/FX.tsx` — SpeedLines, ImpactStar, PaperStorm, ZoomVignette; `SmellRings` NEW 2026-07-20 (radial VOC/smoke detection rings emanating from a sensor node, radial-emanate motion) + `ScanReticle` NEW 2026-07-20 (thermal-lock targeting reticle: rotating corner brackets that SNAP inward and clamp on a target, `lock` 0..1) — ACTIVE
 - `lib/lighting.tsx` CRAFT ADVANCE 2026-07-20: `IRVision` — a reusable false-color THERMAL/IR heat-vision look system (magenta->coral->citron heat ramp centered on the hot target + sensor scanlines + refresh sweep + a boxed THERMAL HUD tag), `amount` 0..1 crossfades the drone's-eye view in. Any future sensor/thermal/IR Alaska story inherits it. The run's SINGLE primary craft advance (atmospheric-perspective aerial-depth treeline in NenanaRangeBG is a supporting refinement).
-- Known next advances: kinetic typography, per-material
-  texture library, a real cast-shadow projector (not just contact AO), night/aurora lighting.
+- `lib/stage3d.tsx` — TRUE 2.5D ENGINE (NEW 2026-07-20, UPGRADE_BACKLOG #1 prototype). A real shared
+  virtual camera via CSS 3D perspective (`Stage3D`: dolly/truck/boom/orbit/roll), depth layers with
+  automatic perspective parallax + overscan (`Plane`), solid extruded dimensional forms (`Extrude`),
+  and projected ground cast-shadows (`CastShadow3D`). Proof scenes in `TwentyFiveD.tsx` (comp
+  `TwentyFiveD` vs flat `BorealFlat`). NOT yet wired into the Episode pipeline; see UPGRADE_BACKLOG.md
+  for the migration plan (per-face Extrude shading + a Character/kit adapter, then migrate one scene).
+- Known next advances: migrate Episode scenes onto stage3d (planes + camera keyframes), kinetic
+  typography, per-material texture library, night/aurora lighting.

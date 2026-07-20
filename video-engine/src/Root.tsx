@@ -4,6 +4,7 @@ import { Episode, episodeSchema } from './Episode';
 import { Standoff } from './Standoff';
 import { FaunaShowcase } from './FaunaShowcase';
 import { CraftShowcase } from './CraftShowcase';
+import { TwentyFiveD, BorealFlat } from './TwentyFiveD';
 import { z } from 'zod';
 
 const standoffSchema = z.object({
@@ -58,6 +59,22 @@ export const RemotionRoot: React.FC = () => {
         id="FaunaShowcase"
         component={FaunaShowcase}
         durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="TwentyFiveD"
+        component={TwentyFiveD}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="BorealFlat"
+        component={BorealFlat}
+        durationInFrames={150}
         fps={30}
         width={1080}
         height={1920}

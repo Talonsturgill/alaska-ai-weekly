@@ -31,6 +31,20 @@ the current flat scene, and if it clears the bar, migrate the scene-authoring AP
 Dispatch is 2.5D by default. This is the single biggest lever on the "looks designed and expensive"
 axis the rubric grades.
 
+**STATUS 2026-07-20: prototype landed and proven.** `video-engine/src/lib/stage3d.tsx` implements
+the real engine (`Stage3D` shared virtual camera via CSS 3D perspective; `Plane` depth layers with
+automatic perspective parallax + overscan; `Extrude` solid dimensional forms; `CastShadow3D`
+projected ground shadows). `video-engine/src/TwentyFiveD.tsx` is a proof scene (comp `TwentyFiveD`)
+plus a flat `BorealFlat` for A/B. The camera dollies THROUGH a layered boreal treeline and orbits to
+reveal the hero's extruded side wall; the before/after is unmistakable (foreground spruces sweep past
+while the ridge barely moves; the hero reads as a solid volume, not a sticker). REMAINING to close
+the initiative: (a) richer per-face shading on `Extrude` (a real key/side/top light model, not just a
+darkening stack); (b) a `Character`/kit adapter so existing heroes author into a Plane and can be
+lightly extruded; (c) migrate the Episode scene-authoring API onto Stage3D (planes + camera keyframes
+per scene) and re-point the storyboard `camera_strategy` axis at real camera moves; (d) a material/
+texture pass so surfaces read as substances at depth. Do (a)+(b) first, then migrate one scene as a
+vertical slice before converting all six.
+
 ---
 
 ## 2. AN ASSET-CREATION SESSION — build a library of amazing reusable art up front
