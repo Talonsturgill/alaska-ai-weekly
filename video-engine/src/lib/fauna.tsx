@@ -690,3 +690,154 @@ export const RedFox: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------- DALL SHEEP
+// NET-NEW 2026-07-20c (asset-library session #2). The white mountain monarch:
+// snow-white coat, massive amber curl horns (ram; `ewe` swaps to short spikes),
+// blocky roman nose, perched on crags. `graze` 0..1 drops the head to feed;
+// idles: breath, jaw chew when grazing, ear flick, weight shift.
+export const DallSheep: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  ewe?: boolean; graze?: number;
+}> = ({x, y, scale = 1, f, facing = 1, ewe = false, graze = 0}) => {
+  const id = uid(`dall${x}${y}`);
+  const t = tones('#e8e4da');            // snow white (warm)
+  const gz = Math.max(0, Math.min(1, graze));
+  const breath = 1 + 0.012 * Math.sin(f / 15);
+  const shift = 2 * Math.sin(f / 28);
+  const chew = gz * 3 * Math.sin(f / 5);
+  const headDrop = gz * 58;
+  const earFlick = 4 * Math.sin(f / 19 + 1);
+  return (
+    <g transform={`translate(${x + shift},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={4} rx={96} ry={16} opacity={0.28} blur={10} />
+      {/* sturdy legs, dark hooves */}
+      {[-62, -30, 30, 60].map((lx, i) => (
+        <g key={i}>
+          <rect x={lx - 8} y={-88} width={16} height={82} rx={6} fill={i % 2 ? t.core : t.base} stroke={INK} strokeWidth={5} />
+          <rect x={lx - 8} y={-12} width={16} height={12} rx={3} fill="#3a342c" stroke={INK} strokeWidth={3.5} />
+        </g>
+      ))}
+      {/* compact woolly body */}
+      <g transform={`scale(1,${breath})`}>
+        <path d="M-92,-92 q-10,-40 22,-56 q36,-20 84,-16 q40,4 54,30 q10,22 2,42 q-58,18 -128,6 q-28,-6 -34,-6 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        <path d="M64,-134 q10,22 2,42 q-26,9 -54,10 q38,-26 30,-56 Z" fill={t.shade} opacity={0.55} />
+        <RimLight d="M-92,-92 q-10,-40 22,-56 q36,-20 84,-16" w={3.5} opacity={0.6} />
+        {/* wool texture scallops */}
+        {[[-58, -108, 10], [-20, -118, 11], [16, -112, 10], [-40, -96, 9]].map(([wx, wy, wr], i) => (
+          <path key={i} d={`M${wx},${wy} q${(wr as number) / 2},${(wr as number) / 2} ${wr},0`} fill="none" stroke={t.shade} strokeWidth={2.5} strokeLinecap="round" opacity={0.6} />
+        ))}
+      </g>
+      {/* stub tail */}
+      <path d="M-88,-96 q-10,2 -12,12 q8,4 14,-2 Z" fill={t.core} stroke={INK} strokeWidth={4} />
+      {/* neck + head with the horn curl */}
+      <g transform={`translate(78,${-118 + headDrop}) rotate(${gz * 26})`}>
+        <path d="M-24,4 q-2,-26 20,-32 q24,-6 36,8 q10,12 6,26 q-6,18 -30,16 q-24,-2 -32,-18 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+        {/* roman nose muzzle */}
+        <path d={`M30,-6 q18,2 24,${12 + chew * 0.4} q0,10 -12,11 q-14,2 -20,-8 q-2,-10 8,-15 Z`} fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        <ellipse cx={48} cy={10} rx={4.5} ry={4} fill={INK} />
+        <ellipse cx={8} cy={-10} rx={5.5} ry={5} fill="#e8b23e" stroke={INK} strokeWidth={2.5} />
+        <circle cx={9} cy={-9} r={2.6} fill={INK} />
+        {/* ear */}
+        <g transform={`translate(-12,-20) rotate(${earFlick})`}>
+          <path d="M0,0 q-14,-4 -20,-14 q10,-5 20,2 Z" fill={t.core} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+        </g>
+        {/* horns: massive amber curl (ram) or ewe spikes */}
+        {ewe ? (
+          <path d="M-2,-26 q-2,-16 8,-22 q8,8 4,22 Z" fill="#c9a06a" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+        ) : (
+          <>
+            {/* far horn */}
+            <path d="M-8,-24 q-30,-12 -34,-40 q-2,-24 16,-34 q22,-10 36,6 q10,14 2,26 q-6,10 -16,10 q-8,0 -12,-8"
+              fill="none" stroke="#b08a54" strokeWidth={13} strokeLinecap="round" opacity={0.75} />
+            {/* near horn: the full curl */}
+            <path d="M2,-28 q-34,-14 -38,-46 q-2,-28 20,-38 q26,-12 42,8 q12,16 2,30 q-8,12 -20,11 q-10,-1 -14,-10"
+              fill="none" stroke="#c9a06a" strokeWidth={15} strokeLinecap="round" />
+            {/* growth ridges */}
+            {[0.25, 0.5, 0.75].map((tt, i) => (
+              <circle key={i} cx={2 - 36 * Math.sin(tt * 3.6)} cy={-28 - 40 * Math.sin(tt * 2.6)} r={2.2} fill="#8a6a3e" opacity={0.8} />
+            ))}
+          </>
+        )}
+      </g>
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- SEA OTTER
+// NET-NEW 2026-07-20c (asset-library session #2). The charmer: floats on its
+// back, paws on chest, big whiskered muzzle. `mode`: 'float' (backstroke bob,
+// optional `withRock` cracking a shell with tick-tock paws) or 'dive' (arched
+// porpoise silhouette). Idles: water bob, paw tap, whisker twitch, kicky feet.
+export const SeaOtter: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  mode?: 'float' | 'dive'; withRock?: boolean;
+}> = ({x, y, scale = 1, f, facing = 1, mode = 'float', withRock = true}) => {
+  const id = uid(`otter${x}${y}`);
+  const t = tones('#5a4634');            // rich brown
+  const bob = 3 * Math.sin(f / 14);
+  const paw = withRock ? 10 * Math.sin(f / 6) : 3 * Math.sin(f / 12);
+  const feetKick = 8 * Math.sin(f / 9);
+  if (mode === 'dive') {
+    return (
+      <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) rotate(-18)`}>
+        <FormGradient id={id} t={t} />
+        <path d="M-90,-20 q-14,-26 8,-38 q50,-26 118,-14 q34,8 40,30 q4,18 -12,26 q-70,20 -128,6 q-22,-6 -26,-10 Z"
+          fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+        <path d="M-88,-24 q-30,10 -40,30 q16,8 34,-2 q14,-10 16,-26 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <circle cx={62} cy={-34} r={5} fill={INK} />
+        <RimLight d="M-90,-20 q-14,-26 8,-38 q50,-26 118,-14" w={3.5} opacity={0.55} />
+      </g>
+    );
+  }
+  return (
+    <g transform={`translate(${x},${y + bob}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      {/* water line hint */}
+      <path d={`M-120,6 q60,${4 + 2 * Math.sin(f / 10)} 120,0 q60,-4 130,2`} fill="none" stroke="#7fb6d9" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+      {/* the floating back-body: a relaxed banana */}
+      <path d="M-104,-10 q-16,-24 6,-36 q40,-22 106,-18 q46,4 64,24 q10,14 0,26 q-40,18 -104,14 q-52,-4 -72,-10 Z"
+        fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+      {/* pale chest/face fur */}
+      <path d="M18,-52 q30,-4 46,10 q6,10 -2,18 q-24,10 -44,-2 q-8,-16 0,-26 Z" fill="#a8886a" stroke={INK} strokeWidth={3.5} opacity={0.9} />
+      <RimLight d="M-104,-10 q-16,-24 6,-36 q40,-22 106,-18" w={3.5} opacity={0.5} />
+      {/* kicky webbed feet up out of the water */}
+      <g transform={`translate(-92,-34) rotate(${feetKick})`}>
+        <path d="M0,0 q-18,-14 -34,-12 q-4,10 8,18 q14,8 26,2 Z" fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+      </g>
+      <g transform={`translate(-70,-40) rotate(${-feetKick * 0.7})`}>
+        <path d="M0,0 q-16,-16 -32,-16 q-6,10 6,20 q14,9 26,4 Z" fill={t.shade} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+      </g>
+      {/* head: big round, whiskered muzzle */}
+      <g transform={`translate(64,-46)`}>
+        <circle r={30} fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} />
+        <circle cx={6} cy={6} r={19} fill="#a8886a" stroke={INK} strokeWidth={3.5} />
+        {/* muzzle + nose */}
+        <ellipse cx={10} cy={4} rx={9} ry={7} fill="#e8ddcb" stroke={INK} strokeWidth={3} />
+        <path d="M6,0 l8,0 l-4,5 Z" fill={INK} />
+        {/* whiskers twitch */}
+        {[-1, 0, 1].map((k) => (
+          <path key={k} d={`M18,${2 + k * 4} q14,${k * 2 + 2 * Math.sin(f / 8)} 26,${k * 3}`} fill="none" stroke="#e8ddcb" strokeWidth={2} strokeLinecap="round" />
+        ))}
+        {/* eyes + tiny ears */}
+        <circle cx={-6} cy={-8} r={4} fill={INK} />
+        <circle cx={-4.6} cy={-9.4} r={1.4} fill="#fff" />
+        <circle cx={-24} cy={-14} r={5} fill={t.core} stroke={INK} strokeWidth={3} />
+      </g>
+      {/* paws on chest, cracking a shell tick-tock */}
+      <g transform={`translate(30,-56) rotate(${paw})`}>
+        <circle cx={0} cy={0} r={9} fill={t.core} stroke={INK} strokeWidth={4} />
+        <circle cx={-18} cy={2} r={9} fill={t.shade} stroke={INK} strokeWidth={4} />
+        {withRock && <ellipse cx={-9} cy={-8} rx={11} ry={8} fill="#8b93a0" stroke={INK} strokeWidth={3.5} />}
+      </g>
+      {/* splash droplets on the paw beat */}
+      {withRock && Math.abs(Math.sin(f / 6)) > 0.92 && (
+        <g opacity={0.8}>
+          {[0, 1].map((k) => <circle key={k} cx={26 + k * 14} cy={-78 - k * 6} r={3} fill="#cfe6f2" />)}
+        </g>
+      )}
+    </g>
+  );
+};

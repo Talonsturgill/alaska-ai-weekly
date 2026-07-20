@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
-import {Wolf, RedFox} from './lib/fauna';
+import {Wolf, RedFox, DallSheep, SeaOtter} from './lib/fauna';
 
 // look-dev batch 2: each asset in clear space on a neutral tundra-dusk ground
 export const FaunaShowcase2: React.FC = () => {
