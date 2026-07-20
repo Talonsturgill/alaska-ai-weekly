@@ -988,3 +988,130 @@ export const Ptarmigan: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------- KING CRAB
+// NET-NEW 2026-07-20c (asset-library session #2). The Bering Sea money crab:
+// spiky carmine carapace, one oversized right claw, six walking legs that
+// scuttle. `scuttle` 0..1 walks it sideways (legs ripple in wave phase);
+// `clawSnap` 0..1 snaps the big claw open-shut. Eyestalks with googly reach.
+export const KingCrab: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  scuttle?: number; clawSnap?: number;
+}> = ({x, y, scale = 1, f, facing = 1, scuttle = 0, clawSnap = 0}) => {
+  const id = uid(`crab${x}${y}`);
+  const t = tones('#c23a28');            // carmine
+  const sc = Math.max(0, Math.min(1, scuttle));
+  const snap = Math.max(0, Math.min(1, clawSnap)) * (0.5 + 0.5 * Math.sin(f / 4));
+  const bob = 2 * Math.sin(f / 12) + sc * 2 * Math.sin(f / 3);
+  return (
+    <g transform={`translate(${x + sc * 3 * Math.sin(f / 3)},${y + bob}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={id} t={t} />
+      <ContactShadow cx={0} cy={4} rx={92} ry={14} opacity={0.3} blur={10} />
+      {/* six walking legs, wave-phase scuttle, spiky joints */}
+      {[[-70, 0], [-46, 1], [-22, 2], [26, 2.4], [50, 1.2], [74, 0.2]].map(([lx, ph], i) => {
+        const lift = sc * 8 * Math.max(0, Math.sin(f / 3 + (ph as number) * 2));
+        const spread = i < 3 ? -1 : 1;
+        return (
+          <g key={i} transform={`translate(${lx},-40)`}>
+            <path d={`M0,0 q${spread * 12},14 ${spread * 10},${34 - lift} q${spread * 2},8 ${spread * 12},${10 - lift * 0.4}`}
+              fill="none" stroke={INK} strokeWidth={10} strokeLinecap="round" />
+            <path d={`M0,0 q${spread * 12},14 ${spread * 10},${34 - lift} q${spread * 2},8 ${spread * 12},${10 - lift * 0.4}`}
+              fill="none" stroke={i % 2 ? t.core : t.base} strokeWidth={5.5} strokeLinecap="round" />
+          </g>
+        );
+      })}
+      {/* spiky carapace */}
+      <path d="M-78,-56 q-8,-34 24,-46 q34,-14 74,-10 q34,4 48,26 q10,20 0,36 q-46,16 -104,8 q-34,-6 -42,-14 Z"
+        fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      {/* carapace spikes */}
+      {[[-58, -96], [-28, -106], [6, -108], [38, -100], [62, -84]].map(([sx2, sy2], i) => (
+        <path key={i} d={`M${sx2},${sy2} l5,-12 l6,11 Z`} fill={t.key} stroke={INK} strokeWidth={3} strokeLinejoin="round" />
+      ))}
+      {/* shell mottling */}
+      {[[-40, -74, 5], [-6, -82, 4], [24, -72, 5]].map(([mx, my, mr], i) => (
+        <circle key={i} cx={mx} cy={my} r={mr} fill={t.shade} opacity={0.5} />
+      ))}
+      <RimLight d="M-78,-56 q-8,-34 24,-46 q34,-14 74,-10" w={3.5} opacity={0.55} />
+      {/* the OVERSIZED right claw, snapping */}
+      <g transform="translate(96,-64) rotate(-8)">
+        <path d="M-10,10 q-4,-18 12,-24 q20,-6 34,4 q12,10 10,26 q-4,18 -24,20 q-22,2 -32,-26 Z" fill={t.base} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+        {/* fixed finger */}
+        <path d="M28,10 q22,2 34,12 q-4,10 -16,10 q-16,-2 -24,-12 Z" fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        {/* snapping thumb */}
+        <g transform={`rotate(${-18 - snap * 26} 22 2)`}>
+          <path d="M22,2 q24,-8 38,-2 q0,10 -12,12 q-16,2 -26,-10 Z" fill={t.key} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+        </g>
+      </g>
+      {/* smaller left claw */}
+      <g transform="translate(-92,-58) rotate(14)">
+        <path d="M0,0 q-16,-4 -22,6 q2,10 14,10 q12,-2 8,-16 Z" fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+      </g>
+      {/* eyestalks */}
+      {[[46, -8], [66, 6]].map(([ex], i) => (
+        <g key={i} transform={`translate(${28 + i * 22},-102)`}>
+          <line x1={0} y1={14} x2={0} y2={0} stroke={INK} strokeWidth={4.5} />
+          <circle cy={-4} r={7} fill="#fff" stroke={INK} strokeWidth={3.5} />
+          <circle cx={1.5} cy={-4} r={3} fill={INK} />
+        </g>
+      ))}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- MOSQUITO
+// NET-NEW 2026-07-20c (asset-library session #2). The unofficial state bird,
+// built for COMIC beats: comically oversized proboscis, whiny wing blur,
+// dangling legs. `divebomb` 0..1 arcs an attack run; `swat` 0..1 sends it
+// tumbling with dizzy stars. Hover wobble idle.
+export const Mosquito: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  divebomb?: number; swat?: number;
+}> = ({x, y, scale = 1, f, facing = 1, divebomb = 0, swat = 0}) => {
+  const id = uid(`mosq${x}${y}`);
+  const t = tones('#4a4436');
+  const dv = Math.max(0, Math.min(1, divebomb)) * (1 - swat);
+  const sw = Math.max(0, Math.min(1, swat));
+  const wob = (1 - dv - sw) * 4;
+  const hx = wob * Math.sin(f / 5) + dv * 30;
+  const hy = wob * Math.cos(f / 4) + dv * 46 - sw * 20;
+  const tumble = sw * (f * 14 % 360);
+  return (
+    <g transform={`translate(${x + hx},${y + hy}) scale(${scale * facing},${scale}) rotate(${dv * 38 + tumble})`}>
+      <FormGradient id={id} t={t} />
+      {/* wing blur (the whine) */}
+      {[-1, 1].map((s2, i) => (
+        <ellipse key={i} cx={-6} cy={-16 + s2 * 2} rx={26} ry={7} fill="#cdd6e0" opacity={0.4}
+          transform={`rotate(${s2 * (28 + 14 * Math.sin(f * 2.2 + i))} -6 -14)`} />
+      ))}
+      {/* thorax + striped abdomen */}
+      <ellipse cx={0} cy={-6} rx={16} ry={12} fill={`url(#${id})`} stroke={INK} strokeWidth={4.5} />
+      <g transform="rotate(24 10 0)">
+        <ellipse cx={-22} cy={4} rx={20} ry={9} fill={t.core} stroke={INK} strokeWidth={4} />
+        {[0, 1, 2].map((k) => <line key={k} x1={-32 + k * 8} y1={-2} x2={-30 + k * 8} y2={10} stroke={t.shade} strokeWidth={3} />)}
+      </g>
+      {/* dangly legs */}
+      {[[-4, 0], [4, 0.8], [10, 1.6]].map(([lx, ph], i) => (
+        <path key={i} d={`M${lx},4 q${2 + Math.sin(f / 6 + (ph as number)) * 2},10 ${8 + Math.sin(f / 6 + (ph as number)) * 3},16`}
+          fill="none" stroke={INK} strokeWidth={2.5} strokeLinecap="round" />
+      ))}
+      {/* head + big eye + THE PROBOSCIS */}
+      <g transform="translate(16,-10)">
+        <circle r={9} fill={t.base} stroke={INK} strokeWidth={4} />
+        <circle cx={2} cy={-2} r={4.5} fill="#e8402f" stroke={INK} strokeWidth={2.5} />
+        <circle cx={3.4} cy={-3.2} r={1.6} fill="#fff" />
+        {/* comically long needle */}
+        <line x1={8} y1={2} x2={40} y2={12} stroke={INK} strokeWidth={4} strokeLinecap="round" />
+        <line x1={8} y1={2} x2={40} y2={12} stroke="#8b93a0" strokeWidth={2} strokeLinecap="round" />
+      </g>
+      {/* swat dizzy stars */}
+      {sw > 0.3 && (
+        <g opacity={(sw - 0.3) * 1.4}>
+          {[0, 120, 240].map((rot, i) => (
+            <path key={i} d="M0,-8 L2,-2 L8,0 L2,2 L0,8 L-2,2 L-8,0 L-2,-2 Z" fill="#ffd23e" stroke={INK} strokeWidth={1.5}
+              transform={`rotate(${rot + f * 8}) translate(20,0)`} />
+          ))}
+        </g>
+      )}
+    </g>
+  );
+};

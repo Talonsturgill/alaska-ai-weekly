@@ -38,12 +38,12 @@ one line: `Name — kind — file — params/poses — status`.
 - `SeaOtter` — water/coastal — fauna.tsx — NET-NEW 2026-07-20c: floats on its back w/ paws cracking a shell on its chest (`withRock`, tick-tock beat + splash), whisker twitch, kicky webbed feet, waterline hint; `mode` float/dive; pale face fur; cleared first pass — ACTIVE
 - `Humpback` — water — fauna.tsx — NET-NEW 2026-07-20c: `mode` cruise (surfacing back + V-mist blow) / breach (arcing clear, LONG white pectoral flung, throat grooves, tubercle knobs, spray sheet) / fluke (the classic tail-up dive w/ scalloped white-under flukes + water drip); cleared first pass — ACTIVE
 - `Ptarmigan` — land/alpine — fauna.tsx — NET-NEW 2026-07-20c: the state bird; `season` winter (all-white + black tail edge + red eye comb) / summer (mottled brown); feathered snowshoe feet; pecking-bob + head-jerk idles; `flush` 0..1 startle wing-burst w/ snow poof; cleared first pass — ACTIVE
+- `KingCrab` — water/comic — fauna.tsx — NET-NEW 2026-07-20c: Bering Sea money crab; spiky carmine carapace, googly eyestalks, one OVERSIZED snapping right claw (`clawSnap`), six wave-phase scuttle legs (`scuttle`); cleared first pass — ACTIVE
+- `Mosquito` — air/comic — fauna.tsx — NET-NEW 2026-07-20c: the unofficial state bird, built for comic beats; comically long proboscis, red eye, whiny wing blur, striped abdomen, dangly legs; `divebomb` attack arc, `swat` tumble w/ dizzy stars; cleared first pass — ACTIVE
 - `SledDogTeam` — land — Episode.tsx — gallop gait + 180° motion blur + form-shading (2026-07-18); SHOULD be promoted into fauna.tsx and parameterized — ACTIVE (needs refactor)
 
-### Bestiary gaps to fill (candidates for upcoming runs' net-new quota)
-grizzly/black bear, caribou, red fox, dall sheep, sea otter, humpback whale, orca,
-puffin, ptarmigan (state bird), wolf, lynx, mountain goat, king crab, mosquito (the
-unofficial state bird, for comic beats).
+### Bestiary gaps remaining (the 2026-07-20 library session banked 12 of the 14)
+lynx, mountain goat, black bear (distinct build from Grizzly), walrus, beluga.
 
 ## Props & set pieces
 - `AlaskaMini` — map of Alaska w/ pulsing pin — kit.tsx — ACTIVE

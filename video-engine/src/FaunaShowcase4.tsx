@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
-import {Humpback, Ptarmigan} from './lib/fauna';
+import {Humpback, Ptarmigan, KingCrab, Mosquito} from './lib/fauna';
 
 export const FaunaShowcase4: React.FC = () => {
   const f = useCurrentFrame();
@@ -10,6 +10,11 @@ export const FaunaShowcase4: React.FC = () => {
   return (
     <AbsoluteFill style={{background: 'linear-gradient(#cdd9de 30%, #6f9ab8 31%, #4a7695)'}}>
       <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <KingCrab x={250} y={280} scale={1.2} f={f} scuttle={0.5} clawSnap={0.8} />
+        {cap(250, 380, 'KING CRAB')}
+        <Mosquito x={720} y={200} scale={2.2} f={f} />
+        {cap(720, 380, 'MOSQUITO hover')}
+        <Mosquito x={920} y={150} scale={1.8} f={f} swat={0.9} />
         <Humpback x={270} y={760} scale={1.0} f={f} mode="cruise" />
         {cap(270, 880, 'HUMPBACK cruise')}
         <Humpback x={800} y={700} scale={0.85} f={f} mode="breach" facing={-1} />
