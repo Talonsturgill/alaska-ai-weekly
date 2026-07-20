@@ -111,3 +111,12 @@ with the open? Red-team each shot's hero block — are the declared parts/zones 
 (70/20/10) or a relabel of a primitive? Red-team the audio_arc — is the silence placed immediately
 before the payoff word, and is the button a callback/question/tricolon rather than a flat
 declarative? Vague declarations pass the schema but fail YOU.
+
+ENGAGEMENT GATE (docs/craft/ENGAGEMENT.md): storyboard_check enforced that `reveals` exist and a
+scale-class reveal is declared; you judge whether they are DESIGNED. Is the scale-class reveal at
+the story's true escalation point (the moment the stakes recontextualize), or bolted on anywhere?
+Is each reveal's primitive right for its content (pullback for scale, draw-on for routes/diagrams,
+morph for object-becomes-data)? Is the `rehook` beat in the 25-38s window a real second hook — an
+escalation, a promised payoff arriving, a reversal — or the schema filled in with the next beat's
+copy? Does the beat timing read jittered and front-loaded, with the back half allowed slightly
+longer holds? A board that satisfies the fields but would still pace like a metronome fails YOU.

@@ -435,6 +435,12 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
   block (pattern, frame1, headline 3-8 words, motion_by_s <= 1.3, loopback), audio_arc
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern), divergence_note.
   Plus storyboard.md for humans.
+- ENGAGEMENT plan (docs/craft/ENGAGEMENT.md — read it in the directors room): the board
+  also declares `reveals` [{t, type, what, hold_s 0.4-0.8}] with at least ONE scale-class
+  reveal (scale-pullback / morph-to-chart / build-on) at the escalation point, and marks one
+  beat in the 25-38s window with `rehook: <what re-grabs a sagging viewer>`. Beat timing is
+  JITTERED (front-loaded density in the first 10s, never 3 near-identical gaps in a row) —
+  flow_check enforces FRONTLOAD / METRONOME / REHOOK.
 - GATE 0A: `python3 scripts/storyboard_check.py` exit 0 (divergence vs recent history, shot
   structure, flow block; 2.5D boards skip the legacy 3D camera/light vocab).
 - GATE 0B: storyboard-critic agent red-teams for genuine divergence + silent-first

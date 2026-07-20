@@ -103,6 +103,18 @@ reason to leave. We have the never-rest gate (a beat every <5s) but that is a fl
 the findings into `docs/craft/ENGAGEMENT.md`, then land the enforceable pieces (gate thresholds,
 new critic checks, engine motion primitives) so every future run is measured against the higher bar.
 
+**STATUS 2026-07-20: COMPLETE.** Four research fan-outs (retention mechanics, pattern-interrupt
+cadence, motion-design coolness, audio engagement) landed in `docs/research/engagement/*.json` with
+sources + confidence ratings, synthesized into `docs/craft/ENGAGEMENT.md` (the second-by-second
+doctrine + enforcement map). Enforceable pieces landed the same day: flow_check.py gained FRONTLOAD
+(>=3 beats in the first 10s), METRONOME (no 3+ near-identical consecutive gaps — back-test caught
+the 07-20 board pacing 3.5s x10), REHOOK (a declared re-hook beat in the 25-38s drift window) and a
+WPM warning band; storyboard_check.py gained REVEALS (a declared reveal list with >=1 scale-class
+reveal, each with a 0.4-0.8s hold); lib/motion.tsx gained the EASE tokens (enter/move/overshoot —
+linear easing banned), anticipate(), holdPayoff(), staggerDelay(); both critics now read
+ENGAGEMENT.md and judge reveal grammar, re-hook quality, and interrupt variety. The storyboard spec
+in dispatch_routine.md §4.5 requires the new `reveals` + `rehook` declarations.
+
 ---
 
 ### How these relate to the per-run loop

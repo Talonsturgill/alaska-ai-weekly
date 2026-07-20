@@ -268,6 +268,31 @@ def main():
             problems.append(f"shot {sh.get('id', i+1)} missing a hero block with parts>=3, zones>=2, name, "
                             f"detail_note — a single-primitive hero cannot read designed or perform "
                             f"(HERO_CRAFT.md shape-hierarchy law)")
+    # ---- 1f. REVEALS (docs/craft/ENGAGEMENT.md §3: telegraph -> disclose -> hold) ----
+    REVEAL_TYPES = {"scale-pullback", "mask-wipe", "trim-path", "scale-from-anchor", "morph-to-chart", "build-on"}
+    SCALE_CLASS = {"scale-pullback", "morph-to-chart", "build-on"}
+    rv = sb.get("reveals") or []
+    if not rv:
+        problems.append("missing top-level `reveals` list — the board declares its designed reveal moments "
+                        "(ENGAGEMENT.md §3: [{t, type, what, hold_s}], type in "
+                        + str(sorted(REVEAL_TYPES)) + ")")
+    else:
+        bad_rv = [r.get("type") for r in rv if norm_tag(r.get("type")) not in REVEAL_TYPES]
+        if bad_rv:
+            problems.append(f"reveals type(s) {bad_rv} not in the reveal vocabulary {sorted(REVEAL_TYPES)}")
+        if not any(norm_tag(r.get("type")) in SCALE_CLASS for r in rv):
+            problems.append("no scale-class reveal declared (scale-pullback / morph-to-chart / build-on) — "
+                            "every piece gets at least one true-scale 'whoa' beat aligned to the escalation "
+                            "(ENGAGEMENT.md §3)")
+        for r in rv:
+            try:
+                hold = float(r.get("hold_s", -1))
+            except (TypeError, ValueError):
+                hold = -1
+            if not (0.3 <= hold <= 1.2):
+                problems.append(f"reveal '{r.get('what', r.get('type'))}' hold_s={r.get('hold_s')} — every "
+                                f"reveal lands with a 0.4-0.8s still HOLD (accepted band 0.3-1.2); the pause "
+                                f"is the punctuation")
     aa = sb.get("audio_arc") or {}
     if not aa:
         problems.append("missing top-level `audio_arc` block (VOICE_AND_SCORE.md: {build_steps, dip_at, "
