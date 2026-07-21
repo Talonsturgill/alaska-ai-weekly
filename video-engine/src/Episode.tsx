@@ -343,6 +343,13 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   const pulled = spring({frame: f - 6, fps, config: {damping: 8, stiffness: 200}});
   const pulledPrev = spring({frame: f - 7, fps, config: {damping: 8, stiffness: 200}});
   const clunkAt = 14;
+  // VanBuskirk drives the pull: she leans forward INTO the lever as it travels, then rocks back
+  // and settles once it bites -- so the operator moves WITH her own action instead of holding a
+  // fixed pose while only the spark animates below her (a 2026-07-21 editor residual: "a detached
+  // spark with a motionless operator"). Reach tracks the spring; a small overshoot on the settle.
+  const reach = interpolate(pulled, [0, 0.7, 1], [0, 26, 14], {extrapolateRight: 'clamp'});
+  const reachTilt = interpolate(pulled, [0, 0.7, 1], [0, 7, 3.4], {extrapolateRight: 'clamp'});
+  const settleKick = f > clunkAt && f < clunkAt + 8 ? -5 * Math.sin((f - clunkAt) / 8 * Math.PI) : 0;
   return (
     <AbsoluteFill style={{backgroundColor: OAK_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -354,7 +361,7 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
               <GearLever x={0} y={0} pulled={Math.min(1, pulled)} />
             </MotionBlur>
           </g>
-          <g transform="translate(-20,-260)">
+          <g transform={`translate(${-20 + reach + settleKick},-260) rotate(${reachTilt} 0 260)`}>
             <Character frame={f} x={0} y={0} scale={1.05} facing={1} outfit="vest" emotion="neutral" pose="point" talking={voice.opennessAt(gf) * 0.5} />
           </g>
         </g>
