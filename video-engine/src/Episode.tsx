@@ -213,7 +213,11 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
 const S6: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const drop = interpolate(f, [0, 151], [-30, 6], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  // a real cranedown + slight dolly-out (the CAMERA_MOTION gate needs >=30% whole-frame
+  // displacement across the shot; the old 36px drop read as a locked frame).
+  const camY = interpolate(f, [0, 145], [-170, 90], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const camS = interpolate(f, [0, 145], [1.16, 1.0], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const drop = 0;
   const collapse = interpolate(f, [6, 40], [1, 0.255], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const bounce = f > 40 && f < 58 ? -0.028 * Math.sin((f - 40) / 18 * Math.PI) : 0;
   const barFrac = Math.max(0.2, collapse + bounce);
@@ -225,7 +229,7 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
     <AbsoluteFill style={{backgroundColor: INKC}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill="#12201d" />
-        <g transform={`translate(0,${drop})`}>
+        <g transform={`translate(540,${960 + camY}) scale(${camS}) translate(-540,-960)`}>
           {/* ghost pod of the ~1,000 missing belugas */}
           <g opacity={ghostOp}>
             {Array.from({length: 22}).map((_, i) => (
