@@ -2,8 +2,11 @@
 """Mix the Dispatch master audio: VO (dominant) + ducked music bed + SFX events,
 with a real pre-button silence dip, normalized to -14 LUFS / TP <= -1.0 dBTP.
 
-SFX are synthesized in-process (short WAVs via ffmpeg lavfi) so no external assets
-are needed, then placed at scene beats. Music ducks under VO via sidechaincompress.
+SFX are resolved from the designed-foley bank (assets/sfx via scripts/sfx_bank.py).
+Music ducks under VO via sidechaincompress.
+
+2026-07-21 "The Pen That Won't Land" (KPBSD AI policy). Episode-local: this file is
+rewritten per run with EVENTS matched to THIS story's beats/storyboard.json.
 """
 import json, os, subprocess, sys, math
 
@@ -13,8 +16,6 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-# VIDEO_SECS is DERIVED from the VO timing below (never hardcode: a stale 1673f value
-# would truncate or pad the 2026-07-20 1699f master). Set right after vo_lines loads.
 
 
 def run(cmd):
@@ -34,57 +35,46 @@ def sfx(path, kind):
     from sfx_bank import resolve as _resolve
     _sh.copyfile(_resolve(kind), path)
 
+
 # SFX events cut to the picture, derived from the VO line starts so they stay in
-# sync when the narration changes. L[i] = start time of VO line i.
+# sync when the narration changes. L[i] = start time of VO line i (0-indexed, 9
+# lines this run). Kinds resolve via the designed-foley bank (sfx_bank.py); every
+# storyboard beat gets a motivated, concrete sound (never bare "music"/"sound").
 _lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
 L = {x["idx"]: x["start"] for x in _lines}
 _TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
 VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never hardcode
 
-# SFX events cut to THIS story's beats (Dryad / XPRIZE / Nenana autonomous wildfire
-# drone), placed off VO line starts L[i] so they stay in sync if the narration
-# retimes. Kinds resolve via the designed-foley bank (sfx_bank.py). >= 1 per scene,
-# motivated per beat (docs: VOICE_AND_SCORE / the audio_arc block in storyboard.json).
 EVENTS = [
-    # S1: the question + the argument (The Referee Arrives, 2026-07-20b)
-    (L[0] + 0.10, "tick"),     # the odometer's soft first click at the lens
-    (L[0] + 0.55, "pop"),      # digit flips to 0001 (the hook's motion mark)
-    (L[1] + 0.30, "whoosh"),   # pull-out swell: the argument revealed
-    (L[1] + 2.30, "clank"),    # dueling tally cards slam in
-    (L[1] + 3.60, "snap"),     # the raven plucks a tally stroke
-    # S2: two honest banks
-    (L[2] + 0.25, "creak"),    # the SMOKEHOUSE sign creaks over bare racks
-    (L[2] + 3.30, "creak"),    # the swing sign creaks again over the racks
-    (L[3] + 1.10, "whoosh"),   # the eager salmon fling
-    (L[3] + 1.60, "pop"),      # the splash lands on the neighbor
-    (L[3] + 3.90, "boom"),     # the cold ocean mass presses the run-curve down
-    # S3: the counting room
-    (L[4] + 0.20, "paper"),    # the paper storm burying the observer
-    (L[4] + 1.30, "tick"),     # the human clock ticking slow
-    (L[4] + 2.50, "thud"),     # pollock tower slams through the ceiling
-    (L[5] + 1.70, "riser"),    # the brass head strafes the wall
-    (L[5] + 2.70, "ding"),     # the clock lands on HOURS
-    # S4: the lineup + the bill
-    (L[6] + 1.00, "tick"),     # the clicker's first ratchet (85,000 latches)
-    (L[6] + 3.85, "chime"),    # the 97% scorecard follows
-    (L[6] + 6.00, "stamp"),    # STILL RESEARCH: hard metal die
-    (L[7] + 0.40, "paper"),    # the bill page settles
-    (L[7] + 2.40, "thud"),     # TRANSPARENCY: wet ink pad (distinct timbre)
-    # S5: the referee + the boom-up
-    (L[8] + 1.55, "klaxon"),   # the whistle blast (short, hushed after)
-    (L[8] + 2.80, "snap"),     # the clicker zip-locks on the count
-    (L[8] + 3.80, "riser"),    # the composed boom-up begins
-    (L[8] + 6.20, "whoosh"),   # hollow wind over the empty river
-    # S6: the count comes home + the button
-    (L[10] + 0.80, "creak"),   # weir timber sways as she steps to the stake
-    (L[10] + 2.55, "thud"),    # the weir stake driven home (wooden thunk)
-    (L[10] + 3.40, "tick"),    # odometer +1 as a sockeye passes
-    (L[10] + 4.90, "tick"),    # +2, the raven scratches its own tally
-    (L[11] + 1.80, "tick"),    # the button's single soft click
-    (L[11] + 2.90, "chime"),   # the warm resolve: YOU DO.
+    # S1 (line 0): cold open — the machine at work beside the trembling pen
+    (L[0] + 0.10, "chime"),    # soft classroom ambience swell
+    (L[0] + 3.60, "tick"),     # the pen's faint tremble-tick on the easel
+    # S2 (line 1): the tools at work
+    (L[1] + 0.20, "pop"),      # keyboard-tap / margin-note pop-ins
+    # S3 (line 2): the ledger — $8,300 + the paired stamps
+    (L[2] + 0.10, "ding"),     # cash-register ding, the receipt tape unspools
+    (L[2] + 2.60, "stamp"),    # the paired PAID/DRAFT stamp-thuds
+    # S4 (line 3): the timeline gap
+    (L[3] + 0.10, "creak"),    # the '2025' SwingSign creaks in
+    (L[3] + 2.70, "chain"),    # the MeasuringChain pays out
+    # S5 (line 4): the fork — Dendurent's ADAPTABLE lever
+    (L[4] + 0.10, "riser"),    # footsteps + the tension riser begins
+    (L[4] + 3.10, "snap"),     # the ADAPTABLE lever's rubber-band boing
+    (L[4] + 5.70, "thud"),     # VanBuskirk's footstep-plant on CONCRETE
+    # S6 (line 5): the payoff — CONCRETE bites
+    (L[5] + 0.30, "clank"),    # the CONCRETE lever's hard mechanical clunk
+    # S7 (line 6): the impasse
+    (L[6] + 0.20, "clank"),    # the TallyCounter dial jams
+    (L[6] + 1.50, "tick"),     # the held clock-tick
+    # S8 (line 7): THE TURN — the floor-level paper stream
+    (L[7] + 0.10, "whoosh"),   # the boom-drop reveal
+    (L[7] + 2.00, "paper"),    # the continuous paper-rustle stream
+    # S9 (line 8): button — the Raven, the loop closes
+    (L[8] + 0.10, "paw"),      # the Raven's landing hop + ruffle
+    (L[8] + 2.50, "whoosh"),   # the final gust as the pen puffs back up
 ]
 
-SILENCE_DIP_AT = L[11] - 0.62  # the breath before the button (the >=6dB gate dip)
+SILENCE_DIP_AT = L[8] + 3.4  # the breath before "or describe it" (the >=6dB gate dip)
 DIP_LEN = 0.8
 
 
@@ -107,9 +97,9 @@ def main():
     dip0, dip1 = SILENCE_DIP_AT, SILENCE_DIP_AT + DIP_LEN
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
-        f"atrim=0:{VIDEO_SECS},volume=0.32,"
-        f"volume=enable='between(t,{dip0},{dip1})':volume=0.11,"
-        f"volume=enable='between(t,{L[8] + 1.4},{L[8] + 3.2})':volume=0.13[bedraw]"
+        f"atrim=0:{VIDEO_SECS},volume=0.30,"
+        f"volume=enable='between(t,{dip0},{dip1})':volume=0.10,"
+        f"volume=enable='between(t,{L[4] + 0.0},{L[4] + 2.0})':volume=0.13[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)
     fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.04:ratio=9:attack=6:release=320:makeup=1[bed]")
