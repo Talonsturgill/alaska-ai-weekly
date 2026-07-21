@@ -1985,48 +1985,63 @@ export const Walrus: React.FC<{
 // smile-eye squint.
 export const Beluga: React.FC<{
   x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
-  mode?: 'cruise' | 'spy'; blow?: number;
-}> = ({x, y, scale = 1, f, facing = 1, mode = 'cruise', blow = 0}) => {
+  mode?: 'cruise' | 'spy'; blow?: number; swim?: number;
+}> = ({x, y, scale = 1, f, facing = 1, mode = 'cruise', blow = 0, swim = 1}) => {
   const id = uid(`beluga${x}${y}`);
   const t = tones('#e8ecec');            // white whale
   const bl = Math.max(0, Math.min(1, blow));
   const cruise = mode === 'cruise';
-  const undulate = 3 * Math.sin(f / 14);
-  const flukeBeat = 10 * Math.sin(f / 14 - 1.2);
-  const melonWobble = 1 + 0.05 * Math.sin(f / 9);
-  const bob = cruise ? 2 * Math.sin(f / 18) : 0;
+  // 2026-07-21c UPGRADE (panel: the hero read as a frozen plain sprite lagging the props).
+  // A visible carangiform swim + breath + a travelling back-glint + countershade + blink.
+  const sw = Math.max(0, Math.min(1, swim));
+  const undulate = (cruise ? 5.5 : 3) * sw * Math.sin(f / 13);
+  const bodyArc = 5 * sw * Math.sin(f / 13 - 0.5);
+  const flukeBeat = (16 * sw) * Math.sin(f / 13 - 1.4);
+  const pedBend = 6 * sw * Math.sin(f / 13 - 1.9);
+  const flipper = 30 + 10 * sw * Math.sin(f / 13 - 0.8);
+  const melonWobble = 1 + 0.06 * Math.sin(f / 9);
+  const breath = 1 + 0.03 * sw * Math.sin(f / 22);
+  const bob = cruise ? 3 * sw * Math.sin(f / 18) : 0;
+  const glintX = -70 + ((f * 2.2) % 200);
+  const blink = (f % 150) < 6;
+  const BODY_D = "M-118,-24 q-6,-30 30,-40 q48,-16 96,-10 q40,6 52,26 q8,16 0,30 q-52,20 -120,12 q-46,-6 -58,-18 Z";
   const body = (
-    <g>
-      {/* smooth torpedo, melon up top, NO dorsal — just a ridge line */}
-      <path d="M-118,-24 q-6,-30 30,-40 q48,-16 96,-10 q40,6 52,26 q8,16 0,30 q-52,20 -120,12 q-46,-6 -58,-18 Z"
-        fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
-      <path d="M-58,-62 q40,-10 84,-6" fill="none" stroke={t.shade} strokeWidth={3} opacity={0.6} strokeLinecap="round" />
-      <RimLight d="M-118,-24 q-6,-30 30,-40 q48,-16 96,-10" w={3.5} opacity={0.6} />
-      {/* side flipper, small + curled */}
-      <path d={`M6,-8 q10,16 2,${28 + undulate * 0.6} q-14,2 -18,-10 q-2,-12 16,-18 Z`} fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
-      {/* flukes on a narrow peduncle, beating */}
-      <g transform={`translate(-112,-30) rotate(${flukeBeat})`}>
-        <path d="M0,0 q-22,-2 -34,-16 q10,-10 26,-4 q-4,-12 6,-18 q10,6 10,20 q14,-4 22,4 q-8,12 -30,14 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+    <g transform={`skewY(${bodyArc})`}>
+      <path d={BODY_D} fill={`url(#${id})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+      <clipPath id={`${id}_cl`}><path d={BODY_D} /></clipPath>
+      <g clipPath={`url(#${id}_cl)`}>
+        <ellipse cx={-20} cy={26} rx={130} ry={26} fill={t.shade} opacity={0.4} />
+        <ellipse cx={glintX} cy={-30} rx={26} ry={9} fill="#ffffff" opacity={0.28} style={{mixBlendMode: 'screen'}} />
+        <ellipse cx={glintX - 60} cy={-24} rx={16} ry={6} fill="#ffffff" opacity={0.18} style={{mixBlendMode: 'screen'}} />
       </g>
-      {/* head: MELON + smile (pass 2: sat at x=70, fully off the nose) */}
+      <path d="M-58,-62 q40,-10 84,-6" fill="none" stroke={t.shade} strokeWidth={3} opacity={0.6} strokeLinecap="round" />
+      <RimLight d="M-118,-24 q-6,-30 30,-40 q48,-16 96,-10" w={4} opacity={0.7} />
+      <path d={`M${glintX - 18},-44 q18,-6 36,0`} fill="none" stroke="#ffffff" strokeWidth={3} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
+      <path d={`M6,-8 q10,16 2,${flipper} q-14,2 -18,-10 q-2,-12 16,-18 Z`} fill={t.core} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+      <g transform={`translate(-112,-30) rotate(${pedBend})`}>
+        <g transform={`rotate(${flukeBeat})`}>
+          <path d="M0,0 q-22,-2 -34,-16 q10,-10 26,-4 q-4,-12 6,-18 q10,6 10,20 q14,-4 22,4 q-8,12 -30,14 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        </g>
+      </g>
       <g transform={`translate(30,-40)`}>
         <g transform={`scale(1,${melonWobble})`}>
           <path d="M-18,-14 q4,-18 24,-16 q16,2 18,16 Z" fill={t.base} stroke={INK} strokeWidth={4} strokeLinejoin="round" opacity={0.9} />
+          <path d="M-6,-24 q10,-4 18,2" fill="none" stroke="#ffffff" strokeWidth={2.5} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
         </g>
-        {/* the SMILE: upcurved mouth line */}
         <path d="M8,22 q16,6 30,-2" fill="none" stroke={INK} strokeWidth={3.5} strokeLinecap="round" />
-        <circle cx={6} cy={4} r={3.4} fill={INK} />
-        <path d="M2,-1 q4,-3 8,-1" fill="none" stroke={INK} strokeWidth={2} opacity={0.6} />
+        {blink
+          ? <path d="M2,4 q4,2 8,0" fill="none" stroke={INK} strokeWidth={2.6} strokeLinecap="round" />
+          : <circle cx={6} cy={4} r={3.4} fill={INK} />}
+        {!blink && <path d="M2,-1 q4,-3 8,-1" fill="none" stroke={INK} strokeWidth={2} opacity={0.6} />}
       </g>
     </g>
   );
   return (
-    <g transform={`translate(${x},${y + bob}) scale(${scale * facing},${scale})`}>
+    <g transform={`translate(${x},${y + bob}) scale(${scale * facing},${scale * breath})`}>
       <FormGradient id={id} t={t} />
       {cruise ? (
         <g transform={`rotate(${undulate * 0.6})`}>
           {body}
-          {/* blowhole mist */}
           {bl > 0.05 && (
             <g opacity={bl}>
               {[0, 1, 2].map((i) => (
@@ -2037,8 +2052,6 @@ export const Beluga: React.FC<{
         </g>
       ) : (
         <g>
-          {/* spyhop: near-vertical, head clear of the waterline (y=0 is the
-              surface); rings BEHIND so the body emerges through them */}
           <ellipse cx={0} cy={2} rx={64} ry={12} fill="none" stroke="#cfe6f0" strokeWidth={5} opacity={0.8} />
           <ellipse cx={0} cy={2} rx={88 + 6 * Math.sin(f / 9)} ry={16} fill="none" stroke="#cfe6f0" strokeWidth={3} opacity={0.4} />
           <g transform="rotate(-82 0 0) translate(30,16)">{body}</g>

@@ -78,3 +78,23 @@ print("certifi CA ok:", certifi.where())
 PY
 done
 echo "setup_env: ready"
+
+# AUTO-PUSH GUARDRAIL (2026-07-21): the container is ephemeral and reclaimed on inactivity;
+# a run once lost a fully-built video because work was committed but never pushed. Activate the
+# tracked post-commit hook so EVERY commit on a run branch auto-mirrors to origin. core.hooksPath
+# is repo-local (not carried by a fresh clone), so we re-apply it here on every fresh container.
+if [ -f .githooks/post-commit ]; then
+  chmod +x .githooks/post-commit 2>/dev/null || true
+  git config core.hooksPath .githooks 2>/dev/null || true
+  echo "setup_env: auto-push post-commit hook activated (core.hooksPath=.githooks)"
+fi
+
+# NODE / REMOTION deps for the video engine. The fresh clone has no node_modules; without this
+# the render step fails with "remotion: not found" on every fresh container. Idempotent.
+if [ -f video-engine/package.json ]; then
+  if [ ! -x video-engine/node_modules/.bin/remotion ]; then
+    ( cd video-engine && npm install --no-audit --no-fund ) \
+      && echo "setup_env: video-engine node deps installed" \
+      || echo "setup_env: WARN npm install failed (render will break)"
+  fi
+fi

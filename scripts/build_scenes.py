@@ -17,7 +17,9 @@ TAIL = 2.6  # hold after the last word
 # (an earlier list here silently mismatched SCENE_COMPONENTS.length, so Episode fell
 # back to its hardcoded DEFAULT_BOUNDS and ignored this file's retimed scenes -- keep
 # this list's length equal to SCENE_COMPONENTS.length every run.)
-SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+# 2026-07-21c beluga run: 10 VO lines mapped to 9 scenes; S4 (the robot eye) spans lines
+# 3-4 (the look + the ear-and-eye stereo payoff), so line 4 has no scene of its own.
+SCENE_START_LINE = [0, 1, 2, 3, 5, 6, 7, 8, 9]
 
 
 def _apply_caption_fixups(caps):
@@ -32,10 +34,14 @@ def _apply_caption_fixups(caps):
     fixups = json.load(open(sp)).get("caption_fixups", {}) if os.path.exists(sp) else {}
     if not fixups:
         return caps
+    # Use alnum lookarounds, NOT \b: \b fails on tokens whose edge char is punctuation
+    # (e.g. "A.I." ends in '.', so \b after it never matches and the fixup silently no-ops —
+    # the 2026-07-21c panel caught "A.I." leaking on screen while NOAA/GAIA normalized fine).
+    # Longest keys first so a key that is a prefix of another can't pre-empt it.
     for c in caps:
         t = c.get("text", "")
-        for wrong, right in fixups.items():
-            t = _re.sub(r"\b" + _re.escape(wrong) + r"\b", right, t, flags=_re.IGNORECASE)
+        for wrong, right in sorted(fixups.items(), key=lambda kv: -len(kv[0])):
+            t = _re.sub(r"(?<![A-Za-z0-9])" + _re.escape(wrong) + r"(?![A-Za-z0-9])", right, t, flags=_re.IGNORECASE)
         c["text"] = t
     return caps
 

@@ -78,37 +78,36 @@ _TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
 VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never hardcode
 
 EVENTS = [
-    # S1 (line 0): cold open — the machine at work beside the trembling pen
-    (L[0] + 0.10, "chime", "standard", 0.0),    # soft classroom swell (center)
-    (L[0] + 3.60, "tick",  "standard", -0.5),   # the pen's tremble-tick, easel left
-    # S2 (line 1): the tools at work
-    (L[1] + 0.20, "pop",   "standard", 0.3),    # keyboard-tap / margin-note pop-ins
-    # S3 (line 2): the ledger — $8,300 + the paired stamps
-    (L[2] + 0.10, "ding",  "standard", 0.4),    # cash-register ding, receipt right
-    (L[2] + 2.60, "stamp", "hero", 0.0),        # the paired PAID/DRAFT stamp-thuds
-    # S4 (line 3): the timeline gap
-    (L[3] + 0.10, "creak", "standard", -0.6),   # the '2025' SwingSign creaks in
-    (L[3] + 2.70, "chain", "standard", 0.5),    # the MeasuringChain pays out
-    # S5 (line 4): the fork — Dendurent's ADAPTABLE lever
-    (L[4] + 0.10, "riser", "standard", 0.0),    # footsteps + the tension riser begins
-    (L[4] + 3.10, "snap",  "standard", -0.4),   # the ADAPTABLE lever's rubber-band boing
-    (L[4] + 5.70, "thud",  "standard", 0.4),    # VanBuskirk's footstep-plant on CONCRETE
-    # S6 (line 5): the payoff — CONCRETE bites
-    (L[5] + 0.30, "clank", "hero", 0.0),        # the CONCRETE lever's hard mechanical clunk
-    # S7 (line 6): the impasse (dial jam = mechanism SNAP, not a third clank —
-    # the family assert forbids back-to-back metal, and it was reading samey)
-    (L[6] + 0.20, "snap",  "standard", 0.35),   # the TallyCounter's first jam-catch
-    (L[6] + 1.50, "tick",  "standard", 0.35),   # the held clock-tick, mid-attempt
-    (L[6] + 2.66, "clank", "standard", 0.35),   # the final roll-attempt snaps back to 0000
-    # S8 (line 7): THE TURN — the floor-level paper stream
-    (L[7] + 0.10, "whoosh", "hero", 0.0),       # the boom-drop reveal
-    (L[7] + 2.00, "paper",  "texture", -0.3),   # the continuous paper-rustle stream
-    # S9 (line 8): button — the Raven, the loop closes
-    (L[8] + 0.10, "caw",    "standard", -0.4),  # the Raven's landing hop + ruffle
-    (L[8] + 6.65, "whoosh", "texture", 0.3),    # the DRAFT-scramble gust, in the silent tail
+    # S1 (line 0): cold open — the whale surfaces, both sensors snap on
+    (L[0] + 0.20, "chime",  "standard", 0.0),   # sub-surface hush + soft blow (center)
+    (L[0] + 2.40, "snap",   "hero", 0.0),       # the reticle lock clack + sonar ping
+    # S2 (line 1): the two watchers power on
+    (L[1] + 0.20, "pop",    "standard", -0.3),  # two-system power-up (mooring left, satellite right)
+    # S3 (line 2): the robot EAR listens
+    (L[2] + 0.20, "ding",   "standard", 0.4),   # the mooring's detect chime
+    (L[2] + 3.20, "tick",   "standard", 0.3),   # the classify tick (detect -> BELUGA)
+    # S4 (line 3): the robot EYE punches down and locks
+    (L[3] + 0.20, "whoosh", "hero", 0.0),       # the orbital whoosh through cloud
+    (L[3] + 3.70, "snap",   "hero", 0.0),       # the reticle CLAMP on the white smudge
+    # (line 4): the ear+eye stereo payoff
+    (L[4] + 0.20, "chime",  "standard", 0.0),   # the harmonic swell (both overlays on one whale)
+    # S5 (line 5): the count lands on 331
+    (L[5] + 0.20, "riser",  "standard", 0.0),   # the counter riser
+    (L[5] + 1.80, "thud",   "standard", 0.3),   # the soft landing hit on 331
+    # S6 (line 6): the decline collapses
+    (L[6] + 0.20, "creak",  "standard", -0.3),  # the groaning descent of the collapsing bar
+    (L[6] + 3.60, "stamp",  "hero", 0.0),       # the -80% / ENDANGERED stamp
+    # S7 (line 7): the turn — the boat wake rolls over the whale
+    (L[7] + 0.20, "whoosh", "texture", -0.3),   # muffled engine + hollow water
+    # S8 (line 8): the hard, open number keys in
+    (L[8] + 0.20, "clank",  "standard", 0.0),   # the keyed-in confirm on 331
+    # S9 (line 9): the fork, the dive, the raven
+    (L[9] + 0.20, "tick",   "standard", 0.0),   # the fork's low tick
+    (L[9] + 3.80, "whoosh", "texture", 0.2),    # the dive swish
+    (L[9] + 4.80, "caw",    "standard", -0.4),  # one raven caw on the last frame
 ]
 
-SILENCE_DIP_AT = L[8] + 3.4  # the breath before "or describe it" (the >=6dB gate dip)
+SILENCE_DIP_AT = L[9] - 0.9  # the breath in the gap before the button/loopback (the >=6dB gate dip)
 DIP_LEN = 0.8
 
 
