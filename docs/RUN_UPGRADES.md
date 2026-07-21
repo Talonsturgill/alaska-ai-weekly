@@ -535,3 +535,55 @@ not a one-off correction. The 07-21 episode stays FINAL.
 5. EVAL-TRACKER MERGE FIX (found while recording these findings): eval_tracker.py record now MERGES
    findings into an existing date+slug entry instead of replacing it — a re-record was silently
    erasing the run's panel_rounds + earlier findings.
+
+## 2026-07-21c — DISPATCH: "Ear and Eye on the Ice-White Whale" (belugas watched by AI ear + eye)
+
+Owner-requested EXTRA run. Story: two fresh, NOAA-led AI systems now monitor Cook Inlet's endangered
+belugas off Anchorage from two directions at once — a robot EAR (an open-source deep-learning
+passive-acoustic detector, Marine Mammal Science online June 7 2026, Castellote/NOAA + Microsoft AI
+for Good) and a robot EYE (NOAA's GAIA satellite computer vision, 5 Cook Inlet areas; NOAA + USGS +
+Microsoft AI for Good + Naval Research Laboratory; page updated June 25 2026). Earned angle
+(celebratory with an honest turn): the stereo-sensing capability is a genuine Alaska-AI win, but
+watching is not saving — 331 belugas remain (down from ~1,300 in 1979, 279 by 2018, ~80% decline,
+still ESA-endangered), and the count is a floor Alaska defends or a countdown on record. Hero rotated
+OFF ServerMachine to the Beluga; palette silty pewter water + ice-white whale + mint sonar +
+signal-gold lock (no tokens shared with the last two runs).
+
+### INCIDENT: total work loss to container reclamation (and the permanent fix)
+Mid-run, the ephemeral container was reclaimed during a render wait and re-cloned fresh at main,
+destroying a fully-built, gate-passed video plus all uncommitted scratch AND every LOCAL-ONLY commit
+(the routine had committed but never pushed). Root cause of the TOTAL loss: committing is not durable
+in this environment — only origin is. PERMANENT FIX shipped this run:
+1. `.githooks/post-commit` (tracked) auto-mirrors EVERY commit on a run branch to origin in the
+   background (never main, never blocks the commit, retries with backoff). A reclamation can now cost
+   at most the current in-flight render, never authored/committed code again. Verified working.
+2. `scripts/setup_env.sh` re-applies `core.hooksPath=.githooks` on every fresh container (the config
+   is repo-local and not carried by a clone), so the guardrail survives re-clones.
+3. `scripts/setup_env.sh` also now installs the video-engine node deps (the fresh clone had no
+   node_modules, so render failed with "remotion: not found" — a second fresh-container gap).
+
+### Engine work (rebuilt after the reset)
+- lib/sensors.tsx (NET-NEW): SatelliteEye (orbital robot eye / GAIA) + ListeningMooring (seafloor
+  robot ear, emits sonar rings). Reusable for any remote-sensing / passive-acoustic story.
+- lib/lighting.tsx WaterColumn (NET-NEW, primary craft advance): the underwater-light system the
+  shelf lacked (god-rays, silt haze, caustics, marine snow); every future ocean/dive story inherits it.
+- lib/fauna.tsx Beluga upgrade: a visible carangiform swim (bigger tail-stroke, body flex, breath),
+  a travelling back-glint, countershade, and eye blink — closes the panel's frozen-sprite/finish-parity
+  finding; compounds across every future beluga scene.
+- Population-count integrity: the 331 readout is clamped so it never displays a beluga count above
+  NOAA's estimate (an earlier "strain" overshoot briefly showed false counts labeled "belugas left"; a
+  Gate B hard blocker, fixed here from the start).
+- S6 CAMERA_MOTION: the decline scene needed a real cranedown with full-frame MOVING texture (a
+  WaterColumn inside the camera group) — a flat background outside the camera group read as a locked
+  frame to the objective gate even with a large crane.
+
+### Policy
+- Commit/PR authorship: added a permanent CLAUDE.md rule — never author or co-author the owner's
+  commits or PRs as Claude/Anthropic (no Co-Authored-By, no session trailer, no "Generated with"
+  line, and the commit author/committer is the owner). Applied retroactively to this branch.
+
+### Gate record
+Gate 0A PASS (9/9 axes diverged vs both prior runs, 9 distinct shot-worlds). 0E naive cold-read SHIP
+(retold the causal chain, all actors from text alone, single question). Objective quality_gate:
+10.0/10 (all checks) after the HUD-band, music_status, silence_at, and S6-camera fixes. Gate B panel:
+(pending/see ledger). Caption objective linter PASS (2021 chars, 5 hashtags, strong hook).
