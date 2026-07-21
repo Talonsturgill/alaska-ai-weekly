@@ -46,33 +46,45 @@ VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never har
 # retimes. Kinds resolve via the designed-foley bank (sfx_bank.py). >= 1 per scene,
 # motivated per beat (docs: VOICE_AND_SCORE / the audio_arc block in storyboard.json).
 EVENTS = [
-    (L[0] + 0.10, "whoosh"),   # S1: VALE appears over the treeline
-    (L[0] + 1.60, "pop"),      # the spark ignites, the eye locks
-    (L[1] + 1.40, "stamp"),    # NO CREW / NO PILOT cross stamps
-    (L[2] + 0.10, "thud"),     # S2: $11M XPRIZE badge slams in
-    (L[2] + 2.10, "ding"),     # the 4-year ring winds
-    (L[3] + 0.10, "whoosh"),   # the ~300 -> 3 funnel
-    (L[3] + 1.90, "pop"),      # finalist plates clank out
-    (L[3] + 3.40, "thud"),     # the Nenana pin locks
-    (L[4] + 0.20, "riser"),    # S3: the airspace grid sweeps
-    (L[4] + 1.60, "ding"),     # ACUASI confirm chime
-    (L[5] + 0.20, "whoosh"),   # dive through the pin to the range
-    (L[6] + 0.30, "pop"),      # S4: sensor ping (smells the smoke)
-    (L[6] + 1.70, "riser"),    # the detection riser, VALE wakes
-    (L[7] + 0.10, "whoosh"),   # VALE launches
-    (L[7] + 1.90, "thud"),     # the thermal reticle LOCK stinger
-    (L[7] + 3.30, "whoosh"),   # the suppressant drop / hiss
-    (L[8] + 1.40, "stamp"),    # S5: the DRYAD SAYS ink-stamp
-    (L[9] + 0.40, "boom"),     # the megafire wall rises (scale-turn crescendo)
-    (L[9] + 1.90, "thud"),     # the wall towers and holds (sonify the loudest picture)
-    (L[9] + 3.40, "boom"),     # a second distant concussion under the held wall
-    (L[10] + 1.10, "stamp"),   # S6: the JUDGING PENDING stamp
-    (L[11] + 1.90, "ding"),    # the warm resolve after the silence dip
-    (L[12] + 0.40, "whoosh"),  # VALE liftoff (the button)
-    (L[12] + 2.00, "riser"),   # the final rise
+    # S1: the question + the argument (The Referee Arrives, 2026-07-20b)
+    (L[0] + 0.10, "tick"),     # the odometer's soft first click at the lens
+    (L[0] + 0.55, "pop"),      # digit flips to 0001 (the hook's motion mark)
+    (L[1] + 0.30, "whoosh"),   # pull-out swell: the argument revealed
+    (L[1] + 2.30, "clank"),    # dueling tally cards slam in
+    (L[1] + 3.60, "snap"),     # the raven plucks a tally stroke
+    # S2: two honest banks
+    (L[2] + 0.25, "creak"),    # the SMOKEHOUSE sign creaks over bare racks
+    (L[2] + 3.30, "creak"),    # the swing sign creaks again over the racks
+    (L[3] + 1.10, "whoosh"),   # the eager salmon fling
+    (L[3] + 1.60, "pop"),      # the splash lands on the neighbor
+    (L[3] + 3.90, "boom"),     # the cold ocean mass presses the run-curve down
+    # S3: the counting room
+    (L[4] + 0.20, "paper"),    # the paper storm burying the observer
+    (L[4] + 1.30, "tick"),     # the human clock ticking slow
+    (L[4] + 2.50, "thud"),     # pollock tower slams through the ceiling
+    (L[5] + 1.70, "riser"),    # the brass head strafes the wall
+    (L[5] + 2.70, "ding"),     # the clock lands on HOURS
+    # S4: the lineup + the bill
+    (L[6] + 1.00, "tick"),     # the clicker's first ratchet (85,000 latches)
+    (L[6] + 3.85, "chime"),    # the 97% scorecard follows
+    (L[6] + 6.00, "stamp"),    # STILL RESEARCH: hard metal die
+    (L[7] + 0.40, "paper"),    # the bill page settles
+    (L[7] + 2.40, "thud"),     # TRANSPARENCY: wet ink pad (distinct timbre)
+    # S5: the referee + the boom-up
+    (L[8] + 1.55, "klaxon"),   # the whistle blast (short, hushed after)
+    (L[8] + 2.80, "snap"),     # the clicker zip-locks on the count
+    (L[8] + 3.80, "riser"),    # the composed boom-up begins
+    (L[8] + 6.20, "whoosh"),   # hollow wind over the empty river
+    # S6: the count comes home + the button
+    (L[10] + 0.80, "creak"),   # weir timber sways as she steps to the stake
+    (L[10] + 2.55, "thud"),    # the weir stake driven home (wooden thunk)
+    (L[10] + 3.40, "tick"),    # odometer +1 as a sockeye passes
+    (L[10] + 4.90, "tick"),    # +2, the raven scratches its own tally
+    (L[11] + 1.80, "tick"),    # the button's single soft click
+    (L[11] + 2.90, "chime"),   # the warm resolve: YOU DO.
 ]
 
-SILENCE_DIP_AT = L[11] - 0.6   # the breath just before the reframe / button
+SILENCE_DIP_AT = L[11] - 0.62  # the breath before the button (the >=6dB gate dip)
 DIP_LEN = 0.8
 
 
@@ -96,7 +108,8 @@ def main():
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
         f"atrim=0:{VIDEO_SECS},volume=0.32,"
-        f"volume=enable='between(t,{dip0},{dip1})':volume=0.11[bedraw]"
+        f"volume=enable='between(t,{dip0},{dip1})':volume=0.11,"
+        f"volume=enable='between(t,{L[8] + 1.4},{L[8] + 3.2})':volume=0.13[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)
     fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.04:ratio=9:attack=6:release=320:makeup=1[bed]")
@@ -113,7 +126,7 @@ def main():
     n = 2 + len(sfx_labels)
     fc.append(f"{mix_in}amix=inputs={n}:normalize=0:dropout_transition=0[premix]")
     # final loudness normalize + true-peak limit
-    fc.append(f"[premix]loudnorm=I=-14:TP=-1.0:LRA=11,alimiter=limit=0.94[out]")
+    fc.append(f"[premix]loudnorm=I=-14:TP=-1.2:LRA=11,alimiter=limit=0.86:level=false[out]")
 
     filtergraph = ";".join(fc)
     master = os.path.join(AUD, "master.wav")

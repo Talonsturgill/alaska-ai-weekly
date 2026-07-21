@@ -1,0 +1,17 @@
+A federal model now spots 97% of fish in trawl net footage. Alaska's salmon fight was never about counting. It is about who gets believed.
+
+For years the bycatch argument has run on numbers nobody fully trusts. Subsistence families on the Yukon have gone through what ADFG calls a prolonged period of low productivity. The pollock fleet, which genuinely does not want salmon in its nets, points out that bycatch is incidental and capped, and that ocean conditions drive much of the decline. Both sides are arguing from counts the other side can wave away.
+
+That is what makes the quiet technical story here more interesting than the loud political one. NOAA's Alaska Fisheries Science Center trained a YOLOv11 model on more than 85,000 labeled annotations, 11,572 salmon and 73,394 pollock across about 17,000 frames, to read net camera footage.
+
+Per NOAA it detects 97% of fish at 82% prediction accuracy. Per National Fisherman it cuts the frames a human reviewer must check by 85%, turning days or weeks of observer work into hours. NOAA is honest that this is research, not a system deployed on deck.
+
+And the version of this that matters most is not federal at all. At Redoubt Lake, the Sitka Tribe of Alaska, a federally recognized tribal government, put a $200,000 USFWS Tribal Wildlife Grant into AI monitoring for its own subsistence sockeye fishery. The grant title says it plainly: Artificial Intelligence for Subsistence Salmon Monitoring and Management.
+
+Their river, their count. Nobody waiting on somebody else's number.
+
+None of this refills a single river, and anyone selling AI as the fix for the runs is selling something. But in a fight where every side distrusts every other side's numbers, a fast, auditable, locally owned count changes who has to be believed. Sullivan's revamped Bycatch Reduction and Research Act, reported July 17 by KUCB, is asking for exactly that kind of trust in law.
+
+The machine is a referee, not a rescue. Whose count would you trust on your own river?
+
+#Alaska #AI #Fisheries #Salmon #TribalSovereignty

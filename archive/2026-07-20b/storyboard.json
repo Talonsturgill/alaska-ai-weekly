@@ -1,0 +1,516 @@
+{
+  "concept": "THE REFEREE ARRIVES: Alaska's bitter salmon bycatch argument finally gets a machine that can count what nobody could agree on, and the count that matters most is the one the Sitka Tribe of Alaska built for its own river.",
+  "run": "2026-07-20b",
+  "engine": "infographic-2.5d",
+  "derived_from": "scratch",
+  "angle": {
+    "thesis": "AI is not going to bring the salmon back, but it is handing Alaskans a faster, harder-to-argue-with count of what is actually in the net and on the river, and the most consequential version is the Sitka Tribe of Alaska building that count for its own subsistence fishery instead of waiting on anyone else's numbers.",
+    "valence": "net positive, honestly bounded",
+    "supporting_facts": [
+      "Sitka Tribe of Alaska: $200,000 USFWS Tribal Wildlife Grant (Oct 16, 2024), 'Artificial Intelligence for Subsistence Salmon Monitoring and Management', Redoubt Lake",
+      "NOAA AFSC customized YOLOv11: 97% of fish detected, 82% prediction accuracy (per NOAA); 85% fewer frames need human review, days-or-weeks becomes hours (per National Fisherman); research, not deployed",
+      "Sullivan Bycatch Reduction and Research Act: introduced Jan 7 2026, revamped version reported July 17 2026 (KUCB)"
+    ],
+    "fair_counterpoint": "NOAA's model is research showing promise, not deployed on deck; Western Alaska declines are driven substantially by ocean and climate conditions; bycatch is incidental and capped. The referee does not rescue the fish.",
+    "runner_ups": "Measurement Layer (killed: unsupported legal-trigger claim), Who Controls the Count (untellable muted, survives as subtext), Measurement Is Not a Cure (doom valence, survives as the one-line bound)"
+  },
+  "treatment": {
+    "winner": "THE DRAMATIST: The Referee Arrives",
+    "judge_reasoning": "Won on emotional arc (9) and fairness (9): the boom-up reveal of the referee on a dry gravel bar IS the thesis as one frame. Grafts: Explainer's recurring caption question (open hook + button resolve) and RESEARCH stamp and fogged-lens loop image; Comedian's pollock-stack scale gag; Enthusiast's she-built-it authorship beat and raven open-to-close tally match cut. ScanReticle dropped entirely per Gate 0D: the count is a mechanical TallyCounter.",
+    "recurring_gag": "the Raven keeping its own honest tally, open to close",
+    "signature_shot": "boom-up pull-back: referee ankle-deep on a dry gravel bar, a true count over a near-empty river (at most 3 fish visible at widest)"
+  },
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "multiplicity-swarm",
+    "layout": "fullbleed-split",
+    "register": "naturalistic-scene",
+    "camera_strategy": "rise-reveal",
+    "light_story": "dawn-backlight",
+    "palette": "bone-tan gravel, milky glacial jade, dawn cream amber, sockeye crimson accent, counter-brass and dial-cream",
+    "metaphor": "the bitter salmon argument finally gets a referee: a counting clicker that settles numbers no one could agree on, and a tribal weir that brings the count home"
+  },
+  "palette": "bone-tan gravel, milky glacial jade, dawn cream amber, sockeye crimson accent, counter-brass and dial-cream",
+  "light": {
+    "sun": "low dawn sun from screen-right, long raking shadows across the gravel bars",
+    "mood": "exposed honest morning light: the river laid bare is the argument laid bare"
+  },
+  "divergence_note": "The last two dispatches were night worlds: 07-19 a cold indigo powerplant vigil (eye-level, centered hero, push-in only), 07-20 an orbital-aerial thermal-IR drone piece over a fire range (radial emanate, instrument readout). This board is a DAY diorama: an eye-level two-bank river argument in bone-tan and jade, horizontal traverse of crowds and fish, a multiplicity-swarm ensemble instead of a single machine hero, and a rise-reveal signature crane instead of a descent or orbit. The count mark is a mechanical cream-and-brass TallyCounter, deliberately not the ScanReticle HUD language of 07-20 and not the mint count overlays of 07-08/07-11. Palette shares zero tokens with either of the last two runs.",
+  "beats": [
+    {
+      "t": 0.0,
+      "vo": 0,
+      "draw": {
+        "subject": "chrome salmon nose against a fogged underwater lens",
+        "action": "noses up to the glass as a cream odometer digit flips to 0001",
+        "emotion": "wary curiosity",
+        "annotation": "WHO COUNTS THIS FISH?"
+      },
+      "sfx": "soft mechanical click",
+      "means": "the question the whole piece answers, asked as a picture",
+      "shows": "the fogged lens, the salmon nose, the flipping cream digit",
+      "choreo": {
+        "primary": "the odometer digit flips to 0001 exactly as the question lands",
+        "reaction": "the salmon flinches back a half-body, fins flare, then settles closer",
+        "ambient": "silt motes drift, condensation drips crawl the glass, water caustics shimmer"
+      }
+    },
+    {
+      "t": 2.6,
+      "vo": 1,
+      "draw": {
+        "subject": "two crowds on opposite gravel banks (subsistence family left, pollock crew right)",
+        "action": "shout jagged speech shards past each other over one thin braided channel",
+        "emotion": "furious, talking past",
+        "annotation": "ONE RIVER. TWO COUNTS."
+      },
+      "sfx": "crowd walla swell",
+      "means": "the argument is loud and nobody is looking at the fish",
+      "shows": "the two-bank river diorama and both shouting crowds",
+      "choreo": {
+        "primary": "camera pulls wide as the two crowds lean in and shout past each other",
+        "reaction": "speech shards collide mid-river and shatter into splinters that rain on the water",
+        "ambient": "channel current slides, far ridge parallax drifts, clothing flaps in the wind"
+      }
+    },
+    {
+      "t": 6.0,
+      "vo": 1,
+      "draw": {
+        "subject": "two opposing StatCards with mismatched totals",
+        "action": "slam in tilted against each other while a raven plucks the decimal point off one and flaps away",
+        "emotion": "false vindication on the card owner's face",
+        "annotation": "totals visibly do not match"
+      },
+      "sfx": "card slap, pluck pop, caw",
+      "means": "a decade of numbers nobody trusts, made physical",
+      "shows": "the dueling mismatched StatCards and the decimal-thief raven",
+      "choreo": {
+        "primary": "two StatCards slam in tilted against each other with overshoot",
+        "reaction": "the raven's pluck makes the total balloon 10x and the card owner puffs up proudly",
+        "ambient": "cards wobble on their spikes, raven feathers ruffle, crowd fists keep pumping"
+      }
+    },
+    {
+      "t": 9.5,
+      "vo": 2,
+      "draw": {
+        "subject": "SMOKEHOUSE swing sign over bare drying racks, worried family beneath",
+        "action": "sign creaks in the wind over empty racks",
+        "emotion": "quiet worry",
+        "annotation": "Yukon kings: 'a prolonged period of low productivity' (ADFG)"
+      },
+      "sfx": "wind, wood creak",
+      "means": "the human cost upriver, played straight",
+      "shows": "the SMOKEHOUSE sign, the bare racks, the worried family",
+      "choreo": {
+        "primary": "the swing sign creaks to a stop over the empty racks as the line lands",
+        "reaction": "the family's shoulders drop together, a child looks up at the parent",
+        "ambient": "wind ripples grass tufts, loose twine sways from the racks, low mist slides"
+      }
+    },
+    {
+      "t": 13.5,
+      "vo": 3,
+      "draw": {
+        "subject": "pollock crewman on the heaving deck",
+        "action": "shakes a lone salmon out of the net so eagerly it splashes his neighbor",
+        "emotion": "exasperated sincerity",
+        "annotation": "bycatch: incidental and capped"
+      },
+      "sfx": "wet fling, splash",
+      "means": "the fleet's fair point drawn fair: they do not want this fish",
+      "shows": "the fleet's deck and the flung salmon",
+      "choreo": {
+        "primary": "the crewman shakes the salmon out of the net in a motion-blurred fling",
+        "reaction": "the splash soaks his neighbor who recoils and shakes off spray",
+        "ambient": "the boat heaves on the swell, rigging lines sway, gulls wheel far back"
+      }
+    },
+    {
+      "t": 17.5,
+      "vo": 3,
+      "draw": {
+        "subject": "a cold ocean swell as a cross-section",
+        "action": "a visibly cold current mass physically shoves the red run-curve downward; the boat above tips and rights itself",
+        "emotion": "indifferent vastness",
+        "annotation": "ocean and climate drive much of the decline"
+      },
+      "sfx": "deep swell whoosh",
+      "means": "the honest driver nobody can regulate",
+      "shows": "the ocean cross-section pressing the run-curve down",
+      "choreo": {
+        "primary": "the cold current mass shoves the run-curve down in one physical push",
+        "reaction": "the boat above tips and rights itself as the curve bottoms out",
+        "ambient": "cross-section bubbles rise, current bands slide at different depths"
+      }
+    },
+    {
+      "t": 20.5,
+      "vo": 4,
+      "draw": {
+        "subject": "buried human observer at a light table",
+        "action": "drowns in a paper storm of net-cam frames while calendar pages tear off reading DAYS then WEEKS",
+        "emotion": "exhausted",
+        "annotation": "DAYS... WEEKS..."
+      },
+      "sfx": "paper frenzy, clock tick slowing",
+      "means": "the old bottleneck: human review at human speed",
+      "shows": "the buried observer, the paper storm, the shedding calendar",
+      "choreo": {
+        "primary": "calendar pages tear off DAYS then WEEKS and join the paper storm",
+        "reaction": "the observer sinks deeper with each page, pencil drooping until it drops",
+        "ambient": "papers flutter continuously, the desk lamp flickers, dust hangs in the beam"
+      }
+    },
+    {
+      "t": 24.0,
+      "vo": 5,
+      "draw": {
+        "subject": "frame-stacks as towers",
+        "action": "pollock stack builds through the ceiling while a modest salmon pile waves a tiny STILL HERE flag",
+        "emotion": "the salmon pile sheepish, the clock smug",
+        "annotation": "the training pile: every fish hand-labeled"
+      },
+      "sfx": "stacked slams, flag flutter",
+      "means": "scale of the training data as a picture; the numeral lands when it is spoken (28.5)",
+      "shows": "the pollock tower and the salmon pile with its flag",
+      "choreo": {
+        "primary": "the pollock frame-tower builds through the ceiling in stacked slams",
+        "reaction": "each slam shakes the room 2px and the little salmon pile waves its flag harder",
+        "ambient": "loose frames vibrate, ceiling dust falls, the brass head's sweep-light strafes"
+      }
+    },
+    {
+      "t": 26.3,
+      "vo": 5,
+      "draw": {
+        "subject": "the brass counting head and a wall clock",
+        "action": "sweeps the whole frame wall in one strafing pass as the clock spins and lands on HOURS",
+        "emotion": "the clock smug, the observer blinking awake",
+        "annotation": "days or weeks becomes HOURS (per National Fisherman)"
+      },
+      "sfx": "rising whir, ding",
+      "means": "the speed win, given its own breath",
+      "shows": "the sweep pass and the clock landing on HOURS",
+      "choreo": {
+        "primary": "the brass head strafes the wall in one pass and the clock lands on HOURS with a ding",
+        "reaction": "reviewed frames flip green in the sweep's wake; the observer sits up",
+        "ambient": "paper flakes settle, lamp glow steadies, dust drifts"
+      }
+    },
+    {
+      "t": 28.5,
+      "vo": 6,
+      "rehook": "the machine out-counts everyone in the room and gets stamped STILL RESEARCH in the same breath",
+      "draw": {
+        "subject": "pollock and red-kype sockeye in a police lineup",
+        "action": "a brass clicker wheel ratchets as it tallies the sockeye; a big stamp thuds STILL RESEARCH over the scorecard",
+        "emotion": "pollock sweating one bead, sockeye deadpan",
+        "annotation": "85,000+ fish labels; 97% spotted, 82% accuracy (per NOAA AFSC)"
+      },
+      "sfx": "wheel ratchet, hard metal die stamp",
+      "means": "capability and honesty in one frame; both spoken numbers drawn at their moment",
+      "shows": "the fish lineup, the ratcheting clicker wheel, the STILL RESEARCH stamp",
+      "choreo": {
+        "primary": "the 85,000+ chip latches onto the clicker's first tally tick exactly as the words land, then the 97% scorecard follows",
+        "reaction": "the pollock sweats a single bead and leans away; the stamp thud bounces both fish",
+        "ambient": "lineup height-lines shimmer, wheel teeth glint, stamp ink mist settles"
+      }
+    },
+    {
+      "t": 33.0,
+      "vo": 7,
+      "draw": {
+        "subject": "a Senate bill document with a trembling pen",
+        "action": "pen hovers, a stamp lands TRANSPARENCY on the page",
+        "emotion": "institutional urgency",
+        "annotation": "Bycatch Reduction and Research Act, revamped July 17 (KUCB)"
+      },
+      "sfx": "paper rustle, pen scratch, wet ink pad press",
+      "means": "the in-window peg: the law now demands trusted numbers",
+      "shows": "the bill document, the trembling pen, the TRANSPARENCY stamp",
+      "choreo": {
+        "primary": "the TRANSPARENCY stamp lands on the page with a squash and settle",
+        "reaction": "the trembling pen jumps at the thud and hovers again, still unsigned",
+        "ambient": "page corners lift in a draft, dust motes cross the lamp light"
+      }
+    },
+    {
+      "t": 36.5,
+      "vo": 8,
+      "draw": {
+        "subject": "a referee in a striped vest",
+        "action": "steps to mid-river, inflates chest, blows the whistle, raises a clicker that spins and locks on a clean total; both crowds lower their signs",
+        "emotion": "calm authority; crowds stunned silent",
+        "annotation": "one count both sides can read (STILL RESEARCH tag on the clicker)"
+      },
+      "sfx": "whistle blast, clicker zip-lock, sudden hush",
+      "means": "the fight finally has a referee",
+      "shows": "the referee mid-river, the whistle, the raised locking clicker",
+      "choreo": {
+        "primary": "the referee blows the whistle and the raised clicker spins then locks",
+        "reaction": "both crowds freeze mid-shout and lower their signs in a staggered cascade; a small STILL RESEARCH tag swings from the clicker",
+        "ambient": "river current keeps sliding, vest stripes flutter, whistle lanyard sways"
+      }
+    },
+    {
+      "t": 40.0,
+      "vo": 8,
+      "draw": {
+        "subject": "the whole river valley from above, rising",
+        "action": "camera booms up and pulls back until the referee is tiny on a dry gravel bar, at most 3 fish visible in the entire channel",
+        "emotion": "hollow clarity",
+        "annotation": "a true count. an almost empty river."
+      },
+      "sfx": "airy riser then hollow wind",
+      "means": "the thesis as one frame: referees settle arguments, they do not refill rivers",
+      "shows": "the rising wide: the tiny referee, the gravel ribcage, the near-empty channel",
+      "choreo": {
+        "primary": "the camera booms up and pulls back in one composed rise",
+        "reaction": "a single lone fish crosses the empty channel under the hold; a cloud shadow rakes across the gravel",
+        "ambient": "atmosphere haze deepens with altitude, water glints crawl, shadows rake long"
+      }
+    },
+    {
+      "t": 45.0,
+      "vo": 9,
+      "draw": {
+        "subject": "a biologist in a Sitka Tribe of Alaska vest at Redoubt Lake",
+        "action": "plants a timber video weir into the gravel with both hands; the counter chip anchors to HER stake",
+        "emotion": "steady ownership",
+        "annotation": "$200,000 USFWS Tribal Wildlife Grant"
+      },
+      "sfx": "wooden thunk, water burble",
+      "means": "she did not receive the machine, she built it",
+      "shows": "the Sitka biologist planting the timber weir, the anchoring counter chip",
+      "choreo": {
+        "primary": "an empty stake hole and her hands enter frame first (0.4s telegraph), then she drives the weir stake home with both hands, squash then settle",
+        "reaction": "the counter chip anchors to the stake and its housing glints as water ripples out",
+        "ambient": "lake shimmer band, spruce shore sway, dawn rim light breathing"
+      }
+    },
+    {
+      "t": 49.5,
+      "vo": 10,
+      "draw": {
+        "subject": "sockeye swimming through the weir camera lane",
+        "action": "cream odometer digits roll +1 +2 +3 as each passes; the raven perches on the rail keeping its own scratch tally, unimpressed",
+        "emotion": "salmon businesslike, raven skeptical",
+        "annotation": "SITKA TRIBE OF ALASKA: their river, their count"
+      },
+      "sfx": "click click, caw",
+      "means": "self-determination as infrastructure, with the honest-tally gag paying off",
+      "shows": "the weir lane odometer rolling as sockeye pass, the raven's scratch tally",
+      "choreo": {
+        "primary": "cream odometer digits roll +1 +2 +3 as each sockeye crosses the lane",
+        "reaction": "the raven adds a scratch mark after each click, head-tilting at the machine",
+        "ambient": "salmon queue undulates, water sparkle, rail grain highlights shift"
+      }
+    },
+    {
+      "t": 53.0,
+      "vo": 11,
+      "draw": {
+        "subject": "the fogged lens from the cold open",
+        "action": "the same chrome salmon noses up; the odometer flips one more digit; the caption question resolves",
+        "emotion": "quiet resolve",
+        "annotation": "WHO COUNTS THIS FISH? ... YOU DO."
+      },
+      "sfx": "single soft click, music button",
+      "means": "loop closed: the question got an answer",
+      "shows": "the fogged lens again, the final digit flip, the resolving caption",
+      "choreo": {
+        "primary": "the odometer flips one final digit as the caption resolves to YOU DO.",
+        "reaction": "the salmon holds its gaze at the lens a beat then swims on",
+        "ambient": "silt motes drift, caustics shimmer, the glass fog slowly re-blooms"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "t": "0.0-6.0",
+      "framing": "macro-closeup",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "",
+      "thread": "",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "centered": "the salmon nose and the flipping cream digit at frame center",
+      "means": "open on the question",
+      "hero": {
+        "name": "chrome salmon at the lens",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "salmon body S-curve, pectoral and tail fins, wary eye, fogged lens ring with condensation drips, brass odometer chip with rolling cream digit, drifting silt motes"
+      }
+    },
+    {
+      "id": 2,
+      "t": "6.0-13.5",
+      "framing": "wide-establish",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "transition_in": "pull-out",
+      "thread": "carry",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "centered": "the thin braided channel between the two shouting banks",
+      "means": "the lens pulls back to reveal the argument the fish lives inside",
+      "hero": {
+        "name": "the dueling banks diorama",
+        "parts": 9,
+        "zones": 3,
+        "detail_note": "left bank family (flannel, vest, worried faces), right bank crew and boat, jagged speech shards, two tilted mismatched StatCards, raven mid-decimal-heist, gravel bar ribcage, gaunt channel, far ridge in atmosphere"
+      }
+    },
+    {
+      "id": 3,
+      "t": "13.5-20.5",
+      "framing": "two-up",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "camera": "truckAcross+craneDown",
+      "stage3d": "planes",
+      "centered": "the fishing boat riding the swell above the pressed-down run curve",
+      "means": "travel to the fleet's world and slice it honest: deck above, ocean forces below",
+      "hero": {
+        "name": "FishingBoat on the honest ocean",
+        "parts": 8,
+        "zones": 3,
+        "detail_note": "sheer-bow hull with waterline stripe, wheelhouse windows, mast and rigging, net drum with the flung salmon arc, splash on the neighbor, cross-section waterline, cold swell mass, red run-curve bending down"
+      }
+    },
+    {
+      "id": 4,
+      "t": "20.5-33.0",
+      "framing": "push-detail",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "centered": "the counting room: the frame-wall grid, the towers, the lineup, the ratcheting clicker wheel",
+      "means": "a paper sheet wipes us into the counting room where the bottleneck breaks",
+      "hero": {
+        "name": "the counting machine at work",
+        "parts": 10,
+        "zones": 3,
+        "detail_note": "buried observer with pencil, paper storm sheets, calendar shedding pages, grid wall of net-cam frames, pollock tower through ceiling, salmon pile with flag, brass counting head with cream dial, clock spinning to HOURS, lineup fish with expressions, STILL RESEARCH stamp"
+      }
+    },
+    {
+      "id": 5,
+      "t": "33.0-36.5",
+      "framing": "macro-closeup",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "static:a trembling pen over a document reads strongest locked; all motion lives in the pen tremble and the stamp",
+      "stage3d": "flat:full-frame document close-up, depth adds nothing to a flat page",
+      "centered": "the pen tip hovering over the bill title",
+      "means": "one calendar page from the paper storm lands and becomes the bill",
+      "hero": {
+        "name": "the bill and the trembling pen",
+        "parts": 5,
+        "zones": 2,
+        "detail_note": "document with ruled lines and title block, hovering pen with red grip band, TRANSPARENCY stamp, wax-paper texture, drop shadow"
+      }
+    },
+    {
+      "id": 6,
+      "t": "36.5-45.0",
+      "framing": "alt-vantage",
+      "pov": "orbital-aerial",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "camera": "riseWith+dollyThrough",
+      "stage3d": "planes",
+      "centered": "the referee small and centered on the dry gravel bar, clicker held high",
+      "means": "the stamp's thud becomes the whistle blast; the camera rises from the settled fight to the empty truth",
+      "hero": {
+        "name": "the referee on the dry bar",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "striped vest with ink outlines, whistle with lanyard, raised brass clicker with cream dial, ankle-deep waterline ring, long raking dawn shadow, gravel ribcage bars receding, at most 3 fish flecks in the channel"
+      }
+    },
+    {
+      "id": 7,
+      "t": "45.0-58.0",
+      "framing": "subject-portrait",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "centered": "the timber weir lane and its rolling odometer, biologist standing at her stake",
+      "means": "the clicker's circular dial graphic-matches to the weir's circular odometer housing: the count comes home",
+      "hero": {
+        "name": "the Redoubt Lake video weir",
+        "parts": 9,
+        "zones": 3,
+        "detail_note": "timber legs with grain and pegs, camera housing with lens ring, brass odometer chip with rolling cream digits, biologist in tribal vest planting the stake, sockeye passing in the lane, raven scratch-tally on the rail, water shimmer band, spruce shore, warm dawn rim"
+      }
+    }
+  ],
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "extreme close: a chrome salmon nose against a fogged underwater lens, a brass chip's cream digit mid-flip to 0001, silt motes drifting, caption WHO COUNTS THIS FISH?",
+    "headline": "WHO COUNTS THIS FISH?",
+    "motion_by_s": 0.5,
+    "loopback": "the same fogged lens returns at the button; the odometer flips once more and the caption question resolves to YOU DO."
+  },
+  "audio_arc": {
+    "build_steps": 3,
+    "dip_at": 36.0,
+    "riser_at": 40.0,
+    "silence_at": 36.5,
+    "payoff_at": 45.0,
+    "button_pattern": "question",
+    "notes": "riser at 40.0 must fully resolve to hollow wind with zero residual music before the 45.0 payoff swell; impact SFX land +2 to +5 frames after their visual event; the STILL RESEARCH die stamp (28.5) and TRANSPARENCY ink pad (33.0) use distinct timbres"
+  },
+  "reveals": [
+    {
+      "t": 24.0,
+      "type": "build-on",
+      "what": "pollock frame-tower builds through the ceiling beside the modest salmon pile; the clock lands on HOURS",
+      "hold_s": 0.6
+    },
+    {
+      "t": 40.0,
+      "type": "scale-pullback",
+      "what": "boom-up reveals the referee tiny on a dry gravel bar over a near-empty river (at most 3 fish visible)",
+      "hold_s": 0.8
+    },
+    {
+      "t": 49.5,
+      "type": "scale-from-anchor",
+      "what": "odometer digits roll upward from the weir chip anchor as each sockeye passes",
+      "hold_s": 0.4
+    }
+  ]
+}

@@ -12,12 +12,12 @@ import {TalkMouth} from './voice';
 
 export const INK = '#101423';
 
-export type Pose = 'stand' | 'arms-crossed' | 'point' | 'panic';
+export type Pose = 'stand' | 'arms-crossed' | 'point' | 'panic' | 'raise';
 export type Emotion = 'neutral' | 'angry' | 'worried' | 'shock' | 'smug';
 // Everyday Alaskan gear (deliberately NOT the fur-ruff parka, which reads as
 // Inupiat/Inuit-coded; the crowd must read as generic residents). 'parka' is kept
 // for legacy scenes but new crowds use puffer/flannel/vest + varied headgear.
-export type Outfit = 'parka' | 'suit' | 'worker' | 'puffer' | 'flannel' | 'vest';
+export type Outfit = 'parka' | 'suit' | 'worker' | 'puffer' | 'flannel' | 'vest' | 'referee';
 export type Headgear = 'bare' | 'beanie' | 'cap' | 'trapper' | 'hood';
 
 export interface CharacterProps {
@@ -44,6 +44,9 @@ const OUTFITS: Record<Outfit, {main: string; shade: string; trim: string; pants:
   puffer: {main: '#2f7d6b', shade: '#215c4e', trim: '#173f35', pants: '#3a4250'},
   flannel: {main: '#b23a3a', shade: '#8a2a2a', trim: '#e0d2c0', pants: '#38404e'},
   vest: {main: '#c98a2a', shade: '#a06e1f', trim: '#4a4238', pants: '#3a4250'},
+  // the official's shirt (2026-07-20b, "The Referee Arrives"): cream base, ink
+  // stripes drawn as an outfit overlay below; pants stay dark
+  referee: {main: '#f2efe6', shade: '#cfc9b8', trim: '#101423', pants: '#2c3440'},
 };
 
 export const Character: React.FC<CharacterProps> = ({
@@ -184,6 +187,22 @@ export const Character: React.FC<CharacterProps> = ({
             <circle cx={80} cy={168 - 4 * Math.sin(f / 8)} r={15} fill={skin} stroke={INK} strokeWidth={5} />
           </g>
         );
+      case 'raise':
+        // one arm thrust high (the raised-clicker pose, 2026-07-20b): scenes place
+        // a prop (e.g. props.TallyCounter clicker) at the raised hand, local
+        // (150,500)-space ≈ (150+58*facing, 500-360-118) before scene transforms
+        return (
+          <g>
+            {/* off arm at the side */}
+            <path d="M-46,266 q-16,44 -8,84" fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
+            <path d="M-46,266 q-16,44 -8,84" fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
+            <circle cx={-54} cy={352} r={14} fill={skin} stroke={INK} strokeWidth={5} />
+            {/* raised arm, nearly vertical with a live micro-sway */}
+            <path d={`M46,258 q26,-70 ${12 + 2 * Math.sin(f / 10)},-140`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
+            <path d={`M46,258 q26,-70 ${12 + 2 * Math.sin(f / 10)},-140`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
+            <circle cx={58 + 2 * Math.sin(f / 10)} cy={118} r={15} fill={skin} stroke={INK} strokeWidth={5} />
+          </g>
+        );
       default: // stand
         return (
           <g>
@@ -206,9 +225,10 @@ export const Character: React.FC<CharacterProps> = ({
       <FormGradient id={`${uid}_pants`} t={tones(c.pants)} softness={0.85} />
       <g transform="translate(150,500)">
         {/* soft, light-direction contact shadow (AO) grounding the figure */}
-        <ContactShadow cx={0} cy={4} rx={92} ry={17} opacity={0.3} blur={10} />
+        <ContactShadow cx={0} cy={4} rx={96} ry={18} opacity={0.42} blur={10} />
         {/* legs */}
         <rect x={-40} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
+        <rect x={-40} y={-160} width={34} height={150} rx={16} fill={INK} opacity={0.18} />
         <rect x={8} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
         {/* boots */}
         <path d="M-44,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
@@ -218,9 +238,12 @@ export const Character: React.FC<CharacterProps> = ({
           <g transform="translate(0,-160)">
             <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" fill={`url(#${uid}_body)`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
             {/* core shade on the shadow side + rim light on the sun-facing (left) contour */}
-            <path d="M34,-200 q52,10 58,50 l10,144 q2,16 -16,16 h-52 Z" fill={tMain.shade} opacity={0.7} />
-            <RimLight d="M-92,-150 q6,-56 92,-56" w={4} opacity={0.55} />
-            <path d="M-78,-178 q12,-14 34,-18 l-6,70 q-20,-4 -32,-14 Z" fill="#ffffff" opacity={0.16} />
+            <path d="M34,-200 q52,10 58,50 l10,144 q2,16 -16,16 h-52 Z" fill={tMain.shade} opacity={0.88} />
+            <RimLight d="M-92,-150 q6,-56 92,-56" w={6} opacity={0.85} />
+            <path d="M-78,-178 q12,-14 34,-18 l-6,70 q-20,-4 -32,-14 Z" fill="#ffffff" opacity={0.24} />
+            {/* fabric sheen band + under-shade so the jacket reads as material, not a fill */}
+            <path d="M-60,-120 q60,18 120,4 l0,26 q-60,14 -120,-4 Z" fill="#ffffff" opacity={0.08} />
+            <path d="M-88,-30 q88,26 176,0 l0,30 q-88,22 -176,0 Z" fill={tMain.shade} opacity={0.45} />
             {outfit === 'parka' && (
               <g>
                 <path d="M0,-196 L0,4" stroke={INK} strokeWidth={5} />
@@ -259,6 +282,22 @@ export const Character: React.FC<CharacterProps> = ({
                   <path key={`v${i}`} d={`M${xx},-198 L${xx},2`} stroke={c.shade} strokeWidth={6} opacity={0.5} />
                 ))}
                 <path d="M-40,-192 L0,-150 L40,-192" fill="none" stroke={INK} strokeWidth={5} />
+              </g>
+            )}
+            {outfit === 'referee' && (
+              <g>
+                {/* vertical official stripes over the cream shirt */}
+                {[-66, -33, 0, 33, 66].map((xx, i) => (
+                  <path key={i} d={`M${xx},-198 q${xx * 0.06},100 0,200`} stroke={c.trim} strokeWidth={16} fill="none" opacity={0.92} />
+                ))}
+                {/* collar + whistle on a lanyard */}
+                <path d="M-40,-192 L0,-150 L40,-192" fill="none" stroke={INK} strokeWidth={5} />
+                <path d="M0,-150 q-4,36 0,66" stroke="#2c3440" strokeWidth={4} fill="none" />
+                <g transform="translate(2,-78)">
+                  <rect x={-16} y={-9} width={30} height={18} rx={9} fill="#e0b23a" stroke={INK} strokeWidth={4.5} />
+                  <circle cx={16} cy={0} r={9} fill="#e0b23a" stroke={INK} strokeWidth={4.5} />
+                  <circle cx={-8} cy={0} r={3} fill={INK} />
+                </g>
               </g>
             )}
             {outfit === 'vest' && (

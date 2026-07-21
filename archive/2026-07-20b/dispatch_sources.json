@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "outlet": "NOAA AFSC feature story, Sept 30 2025",
+      "url": "https://www.fisheries.noaa.gov/feature-story/faster-analysis-data-evaluate-bycatch-reduction-efforts-pollock-fishery",
+      "note": "97% of fish detected, 82% prediction accuracy; 85,000+ annotations (11,572 salmon; 73,394 pollock)"
+    },
+    {
+      "outlet": "National Fisherman (Carli Clancy), Oct 9 2025",
+      "url": "https://www.nationalfisherman.com/smarter-nets-and-faster-data-for-the-alaska-pollock-fishery",
+      "note": "85% fewer frames needing human review; days or weeks becomes hours"
+    },
+    {
+      "outlet": "KUCB (Maggie Nelson) + Sullivan Senate office",
+      "url": "https://www.kucb.org/industry/2026-07-17/sen-sullivans-revamped-bycatch-bill-pushes-for-regulatory-transparency-and-tougher-foreign-fishing-standards",
+      "note": "Bycatch Reduction and Research Act: introduced Jan 7 2026 (Sullivan, Murkowski, Begich); revamped version reported July 17 2026"
+    },
+    {
+      "outlet": "USFWS via Alaska Sporting Journal, Oct 16 2024",
+      "url": "https://aksportingjournal.com/sitka-tribe-salmon-monitoring-among-usfws-native-american-fish-and-wildlife-habitat-projects/",
+      "note": "$200,000 USFWS Tribal Wildlife Grant, Sitka Tribe of Alaska, Redoubt Lake: 'Artificial Intelligence for Subsistence Salmon Monitoring and Management'"
+    },
+    {
+      "outlet": "ADFG (primary, standing management page)",
+      "url": "https://www.adfg.alaska.gov/index.cfm?adfg=CommercialByAreaYukon.main",
+      "note": "Yukon Chinook: 'a prolonged period of low productivity' causing hardship in the Yukon drainage"
+    }
+  ]
+}

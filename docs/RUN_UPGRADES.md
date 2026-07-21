@@ -263,3 +263,58 @@ Delivered below the 9.0 subjective bar by owner decision, disclosed here.
 recovery → scene retime → HUD_TEXT fix → lighting engine → full-frame lighting →
 motion pass → Gemini VO retime → roster-growth system → art-direction/retrospective
 doctrine. See `git log` on the branch for exact refs.
+
+## 2026-07-20b — "The Referee Arrives" (salmon bycatch meets the AI that counts the fish) — EXTRA TEST RUN
+
+Shipped: ~61s Dispatch (4:5 LinkedIn + 9:16 TikTok cuts, permanent links verified 200), Gmail
+draft, disclosed-scorecard ship. Objective gate 10.0/10 on the delivery render (LIVING_SCREEN
+100%, zero dead windows). 3-judge panel: first pass median 7.96, fix round verified by regrade,
+final median 8.36 (J1 8.56 / J2 8.10 / J3 8.36), ZERO hard blockers across both rounds. Shipped
+under the rubric's stall rule (concrete defects all fixed; remaining asks are 9-tier polish).
+Owner ran this as a second same-day run to test the whole automation; dedupe cadence rule
+bypassed by owner instruction, story dedupe still enforced (FRESH).
+
+### Fixes MADE this run (committed, not suggestions)
+1. scripts/dispatch_mix.py: alimiter was running with its default `level=true`, which silently
+   NORMALIZES the signal UP after loudnorm — the master left the mixer at +0.0 dBTP. Fixed with
+   `alimiter=limit=0.86:level=false` (delivered master: -14.5 LUFS, -1.3 dBTP). This class of
+   bug would have shipped a clipping-risk master on every future run.
+2. lib/props.tsx TallyCounter: odometer variant displayed the PREVIOUS digit at rest (flip=0
+   showed prev instead of the target) — the button beat read 0001->0000->0002. Fixed at the
+   component level.
+3. 4:5 SAFE-BOX incident: the burned-in hook headline sat at y=210, ABOVE the 4:5 center-crop's
+   top edge (y=285) — the LinkedIn cut would have amputated the hook. Moved all burned-in plates
+   inside the safe box. RULE FOR FUTURE RUNS: any screen-space chrome must sit inside y 285-1635.
+4. Character rig global depth lift (the panel's #1 lever, +0.40 median): core shade 0.88,
+   doubled rim light, fabric sheen band + under-shade, far-leg AO, stronger contact shadows.
+   Applies to every future dispatch's human cast.
+5. GradeLayer grain vs LIVING_SCREEN interaction (doctrine note): raising grain 0.05->0.085 to
+   kill sky banding LIFTED the median luma-delta and suppressed motion-region detection —
+   HOOK_WINDOW dropped from 4 regions to 2 and failed. Settled at 0.065 + stronger authored hook
+   motion. Lesson: grain is not free; verify LIVING_SCREEN/HOOK_WINDOW after any grade change.
+6. Stage3D episode migration (the manifest's #1 "known next advance"): the signature boom-up
+   crane (S5) is the first Episode scene on Stage3D (riseWith + dollyThrough over an overscanned
+   2400x3200 world plane). Learned: non-fill Planes render as cut-out boxes unless the world
+   plane is overscanned well past the frame at max pull-back; documented in the scene comment.
+7. Net-new library: TallyCounter (mechanical clicker + odometer count marks), VideoWeir
+   (fisheries-monitoring stage), Character 'referee' outfit + 'raise' pose. All registered in
+   ASSET_MANIFEST.md.
+8. Editor fact-hardening: unverified co-sponsor attribution removed from the bill card (the
+   July revamp is Sullivan's per KUCB; the Jan trio stays off-screen), counting plates re-worded
+   to "N labels" so training annotations cannot read as population counts.
+
+### Deferred WITH plan (first-time deferrals, manifest backlog)
+- Fish body-deformation swim (panel: fish translate as rigid sprites): add a spine-follow
+  deform to fauna Salmon (tail-to-head phase lag on the body path), ~1 session, in fauna.tsx.
+- Human ensemble micro-texture ("simple cartoon" tell): fabric hatch + skin specular pass on
+  the Character rig at the lighting layer, behind a `detail` prop so showcase scenes stay cheap.
+- Kinetic caption treatment (mid-sentence chunk complaint): word-level caption reveal driven by
+  words.json timings in the Captions component.
+
+### Panel/gate record
+Gate 0A PASS (7/9 + 9/9 axes diverged, 7 shot-worlds); 0B ship (5 improvements applied);
+0C revise->ship (85,000 number-sync repaired on the board); 0D revise->ship (ScanReticle killed,
+mechanical TallyCounter adopted, mint dropped for cream-and-brass). Objective gate: 10.0/10.
+Caption Gate A PASS (2,052 chars, hook 138) + scorer 8.66 ship + editor fixes applied.
+Panel medians: 7.96 -> 8.36 after the verified fix round. VO: Gemini Sulafat take 0/3, score
+0.964, WER 0.071, pitch var 4.33 st, 59.0s.
