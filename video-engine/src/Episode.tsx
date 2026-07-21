@@ -274,9 +274,13 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const pulled = interpolate(f, [PUSH_AT + 6, PUSH_AT + 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const pulledPrev = interpolate(f - 1, [PUSH_AT + 6, PUSH_AT + 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const capOp = interpolate(f, [SNAP_AT, SNAP_AT + 12, PUSH_AT + 170, PUSH_AT + 185], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // VanBuskirk strides in from beat 10 onward (the later ~third of the shot)
-  const vbStride = interpolate(f, [190, 240], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const vbStridePrev = interpolate(f - 1, [190, 240], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  // VanBuskirk strides in from beat 10 onward (the later ~third of the shot). This scene
+  // (shot E) runs 210 local frames — the stride window must land INSIDE that, with a beat
+  // to spare for the arrived pose + nameplate to actually read, or the stride silently never
+  // finishes (a 2026-07-21 round-3 panel catch: at [190,240] against a 210-frame scene, she
+  // only ever covered 38% of the walk and never reached the 'point' pose or her nameplate).
+  const vbStride = interpolate(f, [130, 195], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const vbStridePrev = interpolate(f - 1, [130, 195], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const vbVx = (vbStride - vbStridePrev) * -240; // px/frame of the stride, for directional blur
   return (
     <AbsoluteFill style={{backgroundColor: INKC}}>
@@ -311,9 +315,12 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
             text off-frame. Never show both at once: Dendurent's only in the wide shot before
             the snap-zoom takes hold, a hard gap during the stride, VanBuskirk's only once she
             has arrived (storyboard specifies a hard-cut fork, not a cross-fade -- this plus the
-            fixed screen position guarantees no collision AND no crop). */}
+            fixed screen position guarantees no collision AND no crop). VanBuskirk's sits lower
+            than Dendurent's (y=880 not 780): by the time she arrives, Dendurent's verbatim quote
+            card (top:520, ~230px tall) is still up, and the two used to overlap right where her
+            plate rendered. */}
         {vbStride < 0.15 && f < SNAP_AT + 4 && <Nameplate x={300} y={780} text="DENDURENT" sub="ADAPTABLE" />}
-        {vbStride > 0.6 && <Nameplate x={780} y={780} text="VANBUSKIRK" sub="CONCRETE" subColor={PAID} />}
+        {vbStride > 0.6 && <Nameplate x={780} y={880} text="VANBUSKIRK" sub="CONCRETE" subColor={PAID} />}
       </svg>
       {/* Dendurent's verbatim caption overlay */}
       <div style={{position: 'absolute', top: 520, left: 60, right: 60, textAlign: 'center', opacity: capOp}}>
