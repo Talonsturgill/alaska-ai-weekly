@@ -77,13 +77,15 @@ const Classroom: React.FC<{f: number; dusk?: number}> = ({f, dusk = 1}) => {
 const DraftEasel: React.FC<{x: number; y: number; s?: number; f: number; op?: number; reletter?: number}> = ({x, y, s = 1, f, op = 1, reletter = 0}) => {
   const hover = 1;
   // kinetic-type scramble (craft advance): on a gust, glyphs of "DRAFT" independently
-  // scramble through nearby letters before resettling, seeded per-glyph (no Math.random).
+  // glitch through NON-ALPHABETIC symbols before resettling (never real letters, so the
+  // scramble can never coincidentally spell a real word mid-transition), seeded per-glyph
+  // and re-picked every frame (no Math.random, deterministic from f).
   const GLYPHS = 'DRAFT'.split('');
-  const NEAR = 'CQERASTGFHDL';
+  const NEAR = '#%&@?!+*';
   const scrambled = GLYPHS.map((ch, i) => {
     const seed = (i * 37 + 11) % NEAR.length;
     const localT = Math.max(0, Math.min(1, reletter * 3 - i * 0.4));
-    return localT < 1 && localT > 0 ? NEAR[(seed + Math.floor(f / 2)) % NEAR.length] : ch;
+    return localT < 1 && localT > 0 ? NEAR[(seed + f) % NEAR.length] : ch;
   }).join('');
   return (
     <g transform={`translate(${x},${y}) scale(${s})`} opacity={op}>
@@ -219,8 +221,10 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
         <g transform="translate(760,1360)">
           <Stamp cx={0} cy={0} s={draftS} text="DRAFT" rot={7} color={DRAFT} onPaper />
         </g>
-        {paidS > 0.9 && <ImpactStar cx={300} cy={1320} r={50} color={PAID} />}
-        {draftS > 0.9 && <ImpactStar cx={760} cy={1360} r={50} color={DRAFT} />}
+        {/* impact bursts offset to a CORNER of each stamp so the PAID/DRAFT text (the
+            accessibility-load-bearing signal) is never occluded */}
+        {paidS > 0.9 && <ImpactStar cx={300 + 240} cy={1320 - 60} r={34} color={PAID} />}
+        {draftS > 0.9 && <ImpactStar cx={760 + 240} cy={1360 - 60} r={34} color={DRAFT} />}
       </svg>
     </AbsoluteFill>
   );
@@ -293,10 +297,16 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
           <g transform={`translate(${1020 - vbStride * 240},980)`}>
             <Character frame={f} x={0} y={0} scale={0.85} facing={-1} outfit="vest" emotion="neutral" pose={vbStride > 0.5 ? 'point' : 'stand'} />
           </g>
-          <Nameplate x={300} y={780} text="DENDURENT" sub="ADAPTABLE" />
-          <Nameplate x={780} y={780} text="VANBUSKIRK" sub="CONCRETE" subColor={PAID} />
         </g>
         {snap > 0.9 && snap < 1.4 && <SpeedLines cx={540} cy={960} frame={f} intensity={0.7} />}
+        {/* nameplates live OUTSIDE the push/snap-zoom camera group as fixed screen-space HUD
+            labels so the snap-zoom (push*snapScale can reach ~2x) never crops or pans their
+            text off-frame. Never show both at once: Dendurent's only in the wide shot before
+            the snap-zoom takes hold, a hard gap during the stride, VanBuskirk's only once she
+            has arrived (storyboard specifies a hard-cut fork, not a cross-fade -- this plus the
+            fixed screen position guarantees no collision AND no crop). */}
+        {vbStride < 0.15 && f < SNAP_AT + 4 && <Nameplate x={300} y={780} text="DENDURENT" sub="ADAPTABLE" />}
+        {vbStride > 0.6 && <Nameplate x={780} y={780} text="VANBUSKIRK" sub="CONCRETE" subColor={PAID} />}
       </svg>
       {/* Dendurent's verbatim caption overlay */}
       <div style={{position: 'absolute', top: 520, left: 60, right: 60, textAlign: 'center', opacity: capOp}}>
@@ -347,6 +357,13 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
   const voice = useVoice();
   const gf = from + f;
   const jamShake = f > 20 && f < 30 ? Math.sin(f * 3) * 4 : 0;
+  // the dial visibly TRIES to roll (0 -> 0.7) then jams and snaps back to 0, twice, so the
+  // failure reads as motion, not a held frame.
+  const attempt = (t: number) => {
+    const local = t % 40;
+    return local < 18 ? interpolate(local, [0, 18], [0, 0.7], {easing: Easing.out(Easing.cubic)}) : 0;
+  };
+  const roll = f < 80 ? attempt(f) : 0;
   return (
     <AbsoluteFill style={{backgroundColor: INKC}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -360,7 +377,7 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
           <Character frame={f} x={0} y={0} scale={0.8} facing={-1} outfit="vest" emotion="worried" pose="stand" />
         </g>
         <g transform={`translate(${540 + jamShake},1250)`}>
-          <ChipShadow><TallyCounter x={0} y={0} s={1.1} f={f} variant="odometer" count="0000" roll={0} tag="RULES IN FORCE" /></ChipShadow>
+          <ChipShadow><TallyCounter x={0} y={0} s={1.1} f={f} variant="odometer" count="0000" roll={roll} tag="RULES IN FORCE" /></ChipShadow>
         </g>
       </svg>
     </AbsoluteFill>
@@ -372,55 +389,62 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
 // half-built PRIVACY gate. The signature shot.
 const S8: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const boomT = interpolate(f, [0, 26], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
+  // the boom-drop: a real, sustained crane-down + dolly-through, not a snap. Starts pulled
+  // back and high (as if still at table height looking down) and settles into the floor-level
+  // framing over ~1.7s, easing out so it reads as a deliberate camera move, not a cut.
+  const boomT = interpolate(f, [0, 50], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const camScale = interpolate(boomT, [0, 1], [0.78, 1.0]);
+  const camY = interpolate(boomT, [0, 1], [-220, 0]);
   const N = 7;
   return (
     <AbsoluteFill style={{backgroundColor: INKC}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill={INKC} />
-        {/* the underside of the argument: table legs + feet at the very top edge, receding */}
-        <g opacity={interpolate(boomT, [0, 1], [0, 0.7])}>
-          <rect x={220} y={0} width={36} height={260} fill="#0f1420" />
-          <rect x={824} y={0} width={36} height={260} fill="#0f1420" />
-          <rect x={250} y={200} width={100} height={90} rx={10} fill="#2c2a30" />
-          <rect x={730} y={200} width={100} height={90} rx={10} fill="#2c2a30" />
-        </g>
-        {/* the floor plane fills most of the frame: a true floor-level vantage */}
-        <rect x={0} y={260} width={1080} height={1660} fill={OAK_D} />
-        <RimLight d="M0,264 L1080,264" w={6} opacity={0.35} color={GLOW} />
-        {/* floor plank seams receding toward the machine (depth cue) */}
-        {[0, 1, 2, 3, 4].map((i) => (
-          <line key={i} x1={90 + i * 220} y1={260} x2={540 + (i - 2) * 60} y2={1920} stroke="#4a3722" strokeWidth={3} opacity={0.35} />
-        ))}
-        <ContactShadow cx={540} cy={1720} rx={420} ry={70} opacity={0.32} />
-        {/* the continuous paper-airplane stream, floor level, traveling into the intake */}
-        {Array.from({length: N}).map((_, i) => {
-          const speed = 5.6 + (i % 3) * 0.7;
-          const x = ((f * speed + i * 150) % 1300) - 80;
-          const lane = 520 + (i % 4) * 220;
-          const y = lane + 22 * Math.sin(f / 9 + i * 2);
-          const s = 0.7 + (lane - 520) / 900;
-          return (
-            <MotionBlur key={i} vx={speed} gain={0.7}>
-              <g transform={`translate(${x},${y}) scale(${s}) rotate(${-6 + 4 * Math.sin(f / 7 + i)})`}>
-                <path d="M-40,0 L40,-12 L12,0 L40,12 Z" fill={PAPER} stroke={INKC} strokeWidth={3} />
-                {i % 2 === 0 && <line x1={-16} y1={-3} x2={16} y2={-3} stroke={DRAFT} strokeWidth={3} opacity={0.7} />}
-              </g>
-            </MotionBlur>
-          );
-        })}
-        {/* the copper machine's intake, receiving the stream, large and centered-right */}
-        <g transform="translate(830,1360) scale(1.05)">
-          <ContactShadow cx={0} cy={470} rx={200} ry={36} opacity={0.35} />
-          <ServerMachine frame={f} x={0} y={0} facing={-1} tint="copper" emotion="focused" />
-        </g>
-        {/* the shrink-wrapped PRIVACY gate, half-built, beside the intake */}
-        <g transform="translate(230,1420) scale(1.3)">
-          <g opacity={0.85}>
-            <GearLever x={0} y={0} pulled={0} />
+        <g transform={`translate(540,${960 + camY}) scale(${camScale}) translate(-540,-960)`}>
+          {/* the underside of the argument: table legs + feet at the very top edge, receding */}
+          <g opacity={interpolate(boomT, [0.3, 1], [0, 0.7], {extrapolateLeft: 'clamp'})}>
+            <rect x={220} y={0} width={36} height={260} fill="#0f1420" />
+            <rect x={824} y={0} width={36} height={260} fill="#0f1420" />
+            <rect x={250} y={200} width={100} height={90} rx={10} fill="#2c2a30" />
+            <rect x={730} y={200} width={100} height={90} rx={10} fill="#2c2a30" />
           </g>
-          <rect x={-90} y={-40} width={180} height={90} fill="#fff" opacity={0.24} stroke="#fff" strokeWidth={2} strokeDasharray="6 5" />
-          <BoxLabel x={0} y={-78} text="PRIVACY" fs={26} w={200} h={54} fill={PAPER} color={DRAFT} />
+          {/* the floor plane fills most of the frame: a true floor-level vantage */}
+          <rect x={0} y={260} width={1080} height={1660} fill={OAK_D} />
+          <RimLight d="M0,264 L1080,264" w={6} opacity={0.35} color={GLOW} />
+          {/* floor plank seams receding toward the machine (depth cue) */}
+          {[0, 1, 2, 3, 4].map((i) => (
+            <line key={i} x1={90 + i * 220} y1={260} x2={540 + (i - 2) * 60} y2={1920} stroke="#4a3722" strokeWidth={3} opacity={0.35} />
+          ))}
+          <ContactShadow cx={540} cy={1720} rx={420} ry={70} opacity={0.32} />
+          {/* the continuous paper-airplane stream, floor level, traveling into the intake */}
+          {Array.from({length: N}).map((_, i) => {
+            const speed = 5.6 + (i % 3) * 0.7;
+            const x = ((f * speed + i * 150) % 1300) - 80;
+            const lane = 520 + (i % 4) * 220;
+            const y = lane + 22 * Math.sin(f / 9 + i * 2);
+            const s = 0.7 + (lane - 520) / 900;
+            return (
+              <MotionBlur key={i} vx={speed} gain={0.7}>
+                <g transform={`translate(${x},${y}) scale(${s}) rotate(${-6 + 4 * Math.sin(f / 7 + i)})`}>
+                  <path d="M-40,0 L40,-12 L12,0 L40,12 Z" fill={PAPER} stroke={INKC} strokeWidth={3} />
+                  {i % 2 === 0 && <line x1={-16} y1={-3} x2={16} y2={-3} stroke={DRAFT} strokeWidth={3} opacity={0.7} />}
+                </g>
+              </MotionBlur>
+            );
+          })}
+          {/* the copper machine's intake, receiving the stream, large and centered-right */}
+          <g transform="translate(830,1360) scale(1.05)">
+            <ContactShadow cx={0} cy={470} rx={200} ry={36} opacity={0.35} />
+            <ServerMachine frame={f} x={0} y={0} facing={-1} tint="copper" emotion="focused" />
+          </g>
+          {/* the shrink-wrapped PRIVACY gate, half-built, beside the intake */}
+          <g transform="translate(230,1420) scale(1.3)">
+            <g opacity={0.85}>
+              <GearLever x={0} y={0} pulled={0} />
+            </g>
+            <rect x={-90} y={-40} width={180} height={90} fill="#fff" opacity={0.24} stroke="#fff" strokeWidth={2} strokeDasharray="6 5" />
+            <BoxLabel x={0} y={-78} text="PRIVACY" fs={26} w={200} h={54} fill={PAPER} color={DRAFT} />
+          </g>
         </g>
       </svg>
     </AbsoluteFill>
