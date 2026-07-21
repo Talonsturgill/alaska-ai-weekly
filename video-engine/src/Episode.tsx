@@ -272,9 +272,12 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const snap = spring({frame: f - SNAP_AT, fps, config: {damping: 10, stiffness: 140}});
   const snapScale = 1 + Math.min(0.55, snap * 0.55);
   const pulled = interpolate(f, [PUSH_AT + 6, PUSH_AT + 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const pulledPrev = interpolate(f - 1, [PUSH_AT + 6, PUSH_AT + 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const capOp = interpolate(f, [SNAP_AT, SNAP_AT + 12, PUSH_AT + 170, PUSH_AT + 185], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // VanBuskirk strides in from beat 10 onward (the later ~third of the shot)
   const vbStride = interpolate(f, [190, 240], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const vbStridePrev = interpolate(f - 1, [190, 240], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const vbVx = (vbStride - vbStridePrev) * -240; // px/frame of the stride, for directional blur
   return (
     <AbsoluteFill style={{backgroundColor: INKC}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -284,7 +287,9 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
         <g transform={`translate(540,${1050 - (push - 1) * 200}) scale(${push * snapScale}) translate(-540,-1050)`}>
           {/* the GearLever bank, centered */}
           <g transform="translate(300,1150)">
-            <GearLever x={0} y={0} pulled={pulled} />
+            <MotionBlur vx={(pulled - pulledPrev) * 260} vy={(pulled - pulledPrev) * 260} gain={1}>
+              <GearLever x={0} y={0} pulled={pulled} />
+            </MotionBlur>
           </g>
           <g transform="translate(780,1150)">
             <GearLever x={0} y={0} pulled={vbStride > 0.7 ? 1 : 0} />
@@ -295,7 +300,9 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
           </g>
           {/* VanBuskirk striding to the CONCRETE lever */}
           <g transform={`translate(${1020 - vbStride * 240},980)`}>
-            <Character frame={f} x={0} y={0} scale={0.85} facing={-1} outfit="vest" emotion="neutral" pose={vbStride > 0.5 ? 'point' : 'stand'} />
+            <MotionBlur vx={vbVx} gain={0.6}>
+              <Character frame={f} x={0} y={0} scale={0.85} facing={-1} outfit="vest" emotion="neutral" pose={vbStride > 0.5 ? 'point' : 'stand'} />
+            </MotionBlur>
           </g>
         </g>
         {snap > 0.9 && snap < 1.4 && <SpeedLines cx={540} cy={960} frame={f} intensity={0.7} />}
@@ -327,6 +334,7 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   const voice = useVoice();
   const gf = from + f;
   const pulled = spring({frame: f - 6, fps, config: {damping: 8, stiffness: 200}});
+  const pulledPrev = spring({frame: f - 7, fps, config: {damping: 8, stiffness: 200}});
   const clunkAt = 14;
   return (
     <AbsoluteFill style={{backgroundColor: OAK_D}}>
@@ -335,7 +343,9 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
         <g transform="translate(540,1000)">
           <ContactShadow cx={0} cy={280} rx={340} ry={40} opacity={0.32} />
           <g transform="scale(1.5)">
-            <GearLever x={0} y={0} pulled={Math.min(1, pulled)} />
+            <MotionBlur vx={(pulled - pulledPrev) * 300} vy={(pulled - pulledPrev) * 300} gain={1}>
+              <GearLever x={0} y={0} pulled={Math.min(1, pulled)} />
+            </MotionBlur>
           </g>
           <g transform="translate(-20,-260)">
             <Character frame={f} x={0} y={0} scale={1.05} facing={1} outfit="vest" emotion="neutral" pose="point" talking={voice.opennessAt(gf) * 0.5} />
@@ -458,7 +468,11 @@ const S9: React.FC<{from?: number}> = ({from = 0}) => {
   const voice = useVoice();
   const gf = from + f;
   const RETURN_AT = 90;
-  const gustAt = RETURN_AT + 30;
+  // the DRAFT-scramble gust lives in the SILENT TAIL after the last word (speech ends at
+  // local f~183 for this run's VO length), never during the climactic final line -- a round-2
+  // panel hard blocker was the scramble garbling DRAFT right as "will control the classroom,
+  // or describe it" lands. Parked here it reads as a last flourish over the hang-time instead.
+  const gustAt = 200;
   const dipOp = interpolate(f, [RETURN_AT + 55, RETURN_AT + 70], [1, 0.55], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const ravenY = interpolate(f, [0, 22], [-180, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   return (

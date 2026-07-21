@@ -197,6 +197,20 @@ def d_paw():       # soft muffled footfall
     pad = lp(noise(int(SR * 0.06)), 600) * env_exp(int(SR * 0.06), 70) * 0.5
     return mix(body, pad)
 
+def d_caw():        # raven call: two rasping downward caws (landing/commentary beat)
+    def one_caw():
+        n = int(SR * 0.14)
+        tone = sweep_sine(950, 420, 0.14, 1.3) * env_ar(n, 0.01, 0.09) * 0.55
+        rasp = bp(noise(n), 700, 3200) * env_ar(n, 0.008, 0.1) * 0.7
+        return mix(tone, rasp)
+    c1 = one_caw()
+    gap = int(SR * 0.09)
+    c2 = one_caw() * 0.8
+    out = np.zeros(c1.size + gap + c2.size)
+    out[:c1.size] += c1
+    out[c1.size + gap:c1.size + gap + c2.size] += c2
+    return out
+
 def d_klaxon():    # two-tone alert, band-limited square-ish
     t = t_axis(0.5)
     f = np.where((t * 4).astype(int) % 2 == 0, 392.0, 311.0)
@@ -209,7 +223,7 @@ DESIGNS = {
     "thud": d_thud, "stamp": d_stamp, "boom": d_boom, "pop": d_pop, "snap": d_snap,
     "tick": d_tick, "ding": d_ding, "chime": d_chime, "clank": d_clank, "chain": d_chain,
     "whoosh": d_whoosh, "riser": d_riser, "creak": d_creak, "paper": d_paper,
-    "paw": d_paw, "klaxon": d_klaxon,
+    "paw": d_paw, "klaxon": d_klaxon, "caw": d_caw,
 }
 
 

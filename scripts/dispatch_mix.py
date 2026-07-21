@@ -64,14 +64,15 @@ EVENTS = [
     # S6 (line 5): the payoff — CONCRETE bites
     (L[5] + 0.30, "clank"),    # the CONCRETE lever's hard mechanical clunk
     # S7 (line 6): the impasse
-    (L[6] + 0.20, "clank"),    # the TallyCounter dial jams
-    (L[6] + 1.50, "tick"),     # the held clock-tick
+    (L[6] + 0.20, "clank"),    # the TallyCounter dial's first jam attempt
+    (L[6] + 1.50, "tick"),     # the held clock-tick, mid-attempt
+    (L[6] + 2.66, "clank"),    # the dial's final roll-attempt snaps back to 0000 for good
     # S8 (line 7): THE TURN — the floor-level paper stream
     (L[7] + 0.10, "whoosh"),   # the boom-drop reveal
     (L[7] + 2.00, "paper"),    # the continuous paper-rustle stream
     # S9 (line 8): button — the Raven, the loop closes
-    (L[8] + 0.10, "paw"),      # the Raven's landing hop + ruffle
-    (L[8] + 2.50, "whoosh"),   # the final gust as the pen puffs back up
+    (L[8] + 0.10, "caw"),      # the Raven's landing hop + ruffle (a bird, not a footstep)
+    (L[8] + 6.65, "whoosh"),   # the DRAFT-scramble gust, now parked in the silent post-VO tail
 ]
 
 SILENCE_DIP_AT = L[8] + 3.4  # the breath before "or describe it" (the >=6dB gate dip)

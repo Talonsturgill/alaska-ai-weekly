@@ -23,3 +23,4 @@ scripts/sfx_bank.py prefers real/ over the synth bank automatically.
 - `paper.wav` — 0.70s — designed synth — no attribution needed
 - `paw.wav` — 0.09s — designed synth — no attribution needed
 - `klaxon.wav` — 0.50s — designed synth — no attribution needed
+- `caw.wav` — 0.37s — designed synth — no attribution needed
