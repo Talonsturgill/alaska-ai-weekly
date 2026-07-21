@@ -121,7 +121,7 @@ runs:
       URL and renders them inline with visible URLs, main() hard-fails (exit 1) if sources are missing/empty,
       and alaskaihq.com is a permanent line in Sources cited.'
     fix_commits:
-    - this-pr
+    - a54a75b
   - signature: narrator-lip-sync-mouths
     axis: animation
     status: root_caused
@@ -130,7 +130,7 @@ runs:
       ambientMouth() discards per-word amplitude and renders a slow word-independent chat cycle; Character.tsx
       + kit.tsx route all talking through it, so no scene can reintroduce lip-sync.'
     fix_commits:
-    - this-pr
+    - a54a75b
   - signature: sfx-single-take-monotony
     axis: sound
     status: root_caused
@@ -141,7 +141,7 @@ runs:
       jitter/storyboard pan, VO-slot EQ, no-consecutive-family schedule assert, plus 30 curated CC0 Kenney
       real takes (fetch_sfx.py) that win per kind.'
     fix_commits:
-    - this-pr
+    - a54a75b
   - signature: hero-asset-rerun-square-guy
     axis: casting
     status: root_caused
@@ -150,7 +150,7 @@ runs:
       matches either of the last TWO dispatches, add --hero/--cast persist casting to state.yaml (backfilled),
       list prints the recent-hero roster, and the routine prompt makes the check a hard gate.'
     fix_commits:
-    - this-pr
+    - a54a75b
 resolved:
   flat-vector-human-rig:
     run: '2026-07-21'
@@ -163,3 +163,23 @@ resolved:
       the rubric recalibrated (style charter: flat-vector is the brand, judged within-style, threshold
       8.6). Verification: median 8.76 PASS, editor SHIP, zero hard blockers. If this signature recurs,
       the style charter is being ignored or the parity slipped.'
+  email-sources-pointer-not-inline:
+    run: '2026-07-21'
+    commits:
+    - a54a75b
+    note: 'owner-fix session PR #62'
+  narrator-lip-sync-mouths:
+    run: '2026-07-21'
+    commits:
+    - a54a75b
+    note: 'owner-fix session PR #62'
+  sfx-single-take-monotony:
+    run: '2026-07-21'
+    commits:
+    - a54a75b
+    note: 'owner-fix session PR #62'
+  hero-asset-rerun-square-guy:
+    run: '2026-07-21'
+    commits:
+    - a54a75b
+    note: 'owner-fix session PR #62'
