@@ -7,6 +7,35 @@ back on if a later run regresses. Newest first.
 
 ---
 
+## 2026-07-21 (caption/comment hygiene) — sources+credits out of the post body, no colons ever
+
+**Context:** after #64 merged, the owner flagged three concrete defects in how the LinkedIn copy was
+delivered: (1) sources AND the music credit were pasted INTO the post body and ALSO duplicated in
+their own section; the owner only wants them in their own section, which goes in the FIRST COMMENT,
+not the post; (2) the music credit sat above the hashtags, so selecting the post body to copy it
+dragged the credit along; (3) sources were rendered as email hyperlinks with the raw URL sometimes
+dropped, so pasting into LinkedIn lost the actual links. Plus a standing writing rule: **never use a
+colon, ever** — the routine prompt had explicitly PERMITTED colons, and captions kept shipping them.
+
+**Root cause:** the rule that got broken was in `prompts/dispatch_routine.md` line 86-88, which listed
+colons as ALLOWED punctuation, and the caption spec never said sources/credits stay out of the post
+body. `scripts/caption_check.py` (the objective gate) enforced neither, so both slipped past.
+
+**Fixes (so it cannot recur):**
+- `prompts/dispatch_routine.md`: brand-voice punctuation rule now bans em/en dashes, semicolons AND
+  colons everywhere; Phase 6B caption spec now states the post body is ONLY hook + argument + CTA +
+  hashtags, and sources/music/voice credit are delivered ONLY in the Gmail comment block.
+- `scripts/caption_check.py` (hard gate): `:` added to banned punctuation; new BODY checks hard-fail
+  the caption if it contains any URL/domain or a sources/music/credit marker. Verified: the old-style
+  caption now FAILS on colon + URL + credit line; a clean caption PASSES.
+- `scripts/dispatch_email.py`: new "First comment (copy/paste)" plain-text `<pre>` block with each
+  source as `Title` then its raw `URL` on its own line, plus `Music,` and `Voice,` credit lines
+  (comma, not colon), plus the alaskaihq.com line. The post block is post-only; a clickable Sources
+  list stays below for reference. The comment block is the canonical copy-paste target for the first
+  comment, with real URLs that survive the paste.
+
+---
+
 ## 2026-07-21 (follow-up session) — Style Charter + character parity pass + delivery-link hardening
 
 **Context:** after the main 2026-07-21 dispatch merged (#60), the owner (a) reported the Gmail

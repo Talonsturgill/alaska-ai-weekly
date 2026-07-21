@@ -96,6 +96,8 @@ ALASKAIHQ_LI = ('<li><b>Every Alaska + AI decision and update we track, in one p
 
 def render(post, poster_html, vids, voice, music, sources, score, note, temporary, date_str, title, upgrades,
            sourcing_note=""):
+    def esc(x):
+        return (x or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     src = "\n".join(
         f'<li><a href="{s["url"]}">{s["label"]}</a>'
         f'{(" &middot; " + s["note"]) if s.get("note") else ""}'
@@ -105,6 +107,20 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
     if sourcing_note:
         src += f'\n<li style="color:#6a7782;"><i>Sourcing note: {sourcing_note}</i></li>'
     src += "\n" + ALASKAIHQ_LI
+    # THE COMMENT BLOCK (2026-07-21 owner ask): sources + music + voice must land in ONE plain-text,
+    # selectable block the owner pastes into the LinkedIn FIRST COMMENT (never the post). Real URLs
+    # on their own line under each title so they survive the paste. No colons (brand voice), so
+    # labels use a comma. This is the canonical home for sources/credits; the post body has none.
+    cl = ["Sources", ""]
+    for s in sources:
+        cl.append(esc(s["label"]))
+        cl.append(esc(s["url"]))
+        cl.append("")
+    cl.append("More Alaska and AI updates, alaskaihq.com")
+    cl.append("")
+    if music: cl.append(f"Music, {esc(music)}")
+    if voice: cl.append(f"Voice, {esc(voice)}")
+    comment_text = "\n".join(cl)
     buttons = ""
     # LinkedIn is PRIMARY, so the 4:5 leads: 4:5 shows in the MAIN HOME FEED beside the post copy;
     # 9:16 gets routed into LinkedIn's swipe-only vertical Video tab. Post the 4:5 to LinkedIn.
@@ -138,13 +154,16 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
   {poster_html}
 
   <h2>Post text (copy/paste)</h2>
+  <div class="sub" style="margin-bottom:8px;">The post body only. Sources and credits are NOT in here on purpose, they go in the first comment (next block).</div>
   <pre class="post">{post}</pre>
 
-  <h2>Credits (include when you post)</h2>
-  <ul><li><b>Voice:</b> {voice}</li><li><b>Music:</b> {music}</li></ul>
+  <h2>First comment (copy/paste)</h2>
+  <div class="sub" style="margin-bottom:8px;">Paste this as the FIRST COMMENT on the post, not in the post itself. Plain text with the real URLs so the links survive the paste.</div>
+  <pre class="post">{comment_text}</pre>
+
   {score_html}
   {upgrades_html}
-  <h2>Sources</h2>
+  <h2>Sources (clickable reference)</h2>
   <ul>{src}</ul>
 
   <div class="foot">Generated {dt.datetime.utcnow().isoformat()}Z by the Alaska.Ai Dispatch routine. {note}</div>

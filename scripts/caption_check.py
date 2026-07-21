@@ -26,7 +26,13 @@ AI_TELLS=["delve","tapestry","testament","landscape of","ever-evolving","ever-ch
           "embark","robust solution","seamless","cutting-edge","revolutionize","supercharge","skyrocket",
           "here's the honest part","here is the honest part","here's what matters","here is what matters",
           "here's where the frame breaks","here is where the frame breaks"]
-BANNED_PUNCT={"—":"em dash","–":"en dash",";":"semicolon","“":"curly quote","”":"curly quote","‘":"curly quote","’":"curly apostrophe"}
+BANNED_PUNCT={"—":"em dash","–":"en dash",";":"semicolon",":":"colon","“":"curly quote","”":"curly quote","‘":"curly quote","’":"curly apostrophe"}
+# Sources + music/voice credit belong in the copy-paste COMMENT block (dispatch_email.py), never
+# in the post body (2026-07-21 owner catch: they got pasted into the post AND duplicated, and the
+# music credit sat above the hashtags blocking the copy of the post text). Any of these in the
+# body is a hard fail.
+URL_RE=re.compile(r"https?://|www\.\w|\b\w[\w.-]*\.(?:com|org|gov|net|edu|io)\b", re.I)
+CREDIT_RE=re.compile(r"(?im)(^\s*(sources?|music|credits?|composer)\b|licen[sc]ed under|\bcc[\s-]?by\b|creative commons|incompetech)")
 EMOJI=re.compile("[\U0001F000-\U0001FAFF\U00002600-\U000027BF\U0001F1E6-\U0001F1FF←-⇿⌀-⏿]")
 UNICODE_BOLD=re.compile("[\U0001D400-\U0001D7FF]")     # math alphanumerics = fake bold/italic
 BULLETY=re.compile(r"^\s*([•▪✓✅➤→\-\*])\s")
@@ -71,9 +77,13 @@ def lint(text):
     if n_bold>0: fails.append(f"FORMAT: {n_bold} Unicode-bold chars — reads as generated; use plain text + whitespace")
     if n_emoji>3: fails.append(f"FORMAT: {n_emoji} emoji — over-formatted; LinkedIn 2026 rewards restraint")
     if n_bullets>6: warns.append(f"FORMAT: {n_bullets} bullet lines — heavy; prose with whitespace reads more human")
-    # brand voice: banned punctuation
+    # brand voice: banned punctuation (colon included — rewrite the sentence, never a colon)
     hits={name for ch,name in BANNED_PUNCT.items() if ch in t}
-    if hits: fails.append("PUNCT: brand voice bans "+", ".join(sorted(hits))+" (use periods, commas, 'X to Y' ranges)")
+    if hits: fails.append("PUNCT: brand voice bans "+", ".join(sorted(hits))+" (use periods, commas, parentheses, 'X to Y' ranges — a colon means rewrite the sentence)")
+    # sources + credits must NOT be in the post body — they go in the copy-paste comment block
+    if URL_RE.search(t): fails.append("BODY: a URL/domain is in the post — sources go ONLY in the Gmail draft's comment block, never in the post text")
+    cred=CREDIT_RE.search(t)
+    if cred: fails.append(f"BODY: a sources/credit marker ('{cred.group(0).strip()}') is in the post — move sources + music + voice credit to the comment block, keep the post body to hook + argument + question + hashtags")
     # AI tells
     low=t.lower(); tells=sorted({w for w in AI_TELLS if w in low})
     if tells: fails.append("AI-TELLS: drop "+", ".join(tells))

@@ -83,10 +83,11 @@ repeat ever.
    2026-07-17 dispatch shipped SILENT: a bare `ffmpeg -i video -i audio` with no `-map` took
    the render's empty audio track, and the quality gate only probed the wav, not the mp4.
    Always volumedetect the delivered cuts before upload.
-5. NO EM DASHES OR EN DASHES. ANYWHERE. EVER. Not in VO, captions, on-screen labels, the
-   LinkedIn post, the Gmail draft, or credits. Ranges are "X to Y"; use commas, periods,
-   parentheses, colons; middot as an on-screen separator. scripts/caption_check.py enforces
-   the post; YOU hold the line everywhere else.
+5. NO EM DASHES OR EN DASHES, NO SEMICOLONS, NO COLONS. ANYWHERE. EVER. Not in VO, captions,
+   on-screen labels, the LinkedIn post, the Gmail draft, or credits. Ranges are "X to Y"; use
+   commas, periods, and parentheses to join clauses (a colon is NEVER the answer, rewrite the
+   sentence), and the middot as an on-screen separator. scripts/caption_check.py hard-fails the
+   post on any of these; YOU hold the line everywhere else (VO, on-screen, credits).
 6. NO-STALL / KEEP-ALIVE DISCIPLINE (why past runs sat idle for many minutes). This is a long
    pipeline with long jobs (voice synth ~45 min, Remotion renders minutes, critic/panel agents).
    Stalls came from three failure modes; each has a fix, use them EVERY run:
@@ -589,14 +590,23 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
 
 ## PHASE 6B: THE LINKEDIN CAPTION
 
-Dwell-time-first caption that takes a POSITION: hook <= 140 chars inside the mobile fold
+Dwell-time-first caption that takes a POSITION. Hook <= 140 chars inside the mobile fold
 (concrete fact or sharp claim, no throat-clearing), 900-2200 chars total (sweet spot
 1300-1900), specifics from the fact-check-safe set only, an argument a smart reader could
 push back on, restraint (no bold-unicode, <=3 emoji, no bullet walls), a genuine CTA question
-tied to the take, 3-5 hashtags at the end. No dashes/semicolons/AI-tells/savior framing.
-GATE A: `python3 scripts/caption_check.py out/dispatch/caption.txt` exit 0. GATE B: editor
-then scorer vs config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until
-both pass.
+tied to the take, 3-5 hashtags at the very end. No dashes, NO colons, no semicolons, no
+AI-tells, no savior framing.
+
+THE POST BODY IS ONLY hook + argument + CTA question + hashtags. Sources and the music/voice
+credit NEVER go in the post body (the 2026-07-21 owner catch: they were pasted into the post
+AND duplicated, and the music credit sat above the hashtags blocking the copy of the post).
+They are delivered SEPARATELY in the Gmail draft's copy-paste comment block (dispatch_email.py
+renders it) as plain "Title / URL" lines the owner drops into the LinkedIn FIRST COMMENT, not
+the post. So caption.txt ends at the hashtags: no "Sources:" list, no URLs, no "Music" line.
+
+GATE A: `python3 scripts/caption_check.py out/dispatch/caption.txt` exit 0 (it hard-fails a
+colon, any URL, or a sources/credit line in the body). GATE B: editor then scorer vs
+config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both pass.
 
 ## PHASE 7: DELIVER, FULLY DONE (no pending states)
 
