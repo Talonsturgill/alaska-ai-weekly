@@ -392,10 +392,19 @@ depth engine — the point is USING that shelf well and growing it where the sto
    stage3d, texture, typography...), or make a real quality upgrade to an EXISTING asset (a new
    pose/emotion/param, richer shading). The manifest's "known next advances" are the running
    to-do.
-5. CAST FRESHNESS, NOT CAST CHURN — avoid the same HERO asset in back-to-back dispatches
-   playing the same ROLE (yesterday's hero can be today's supporting cast, or return in a
-   genuinely different role/staging). This is about the audience not seeing a rerun, not a
-   ban on reuse.
+5. CAST FRESHNESS, NOT CAST CHURN — HARD GATE (2026-07-21 owner rule: "we keep using this
+   little square guy in like every video"). The same library asset must NOT play the
+   HERO/AI-embodiment in back-to-back dispatches. At directors-room time, DECLARE the hero
+   asset and run `python3 scripts/dedupe.py check --entities "..." --hero <Asset>` — a HERO
+   RERUN exits 1 and the casting must change before the storyboard proceeds. The AI-presence
+   is whatever THIS story's tool actually is, not a default server box: the shelf holds 5
+   characterized objects (ServerMachine, MachineShadow, Sourdough, Cell, Vale), 21 fauna, 3
+   vehicles, and the props kit — a counting story can star the TallyCounter/VideoWeir, a
+   drone story Vale, a grid story Sourdough+Cell, a sensor story an instrumented animal.
+   Yesterday's hero can still appear as SUPPORTING cast, or return later in a genuinely
+   different role/staging. `dedupe.py list` prints the recent-hero roster; Phase 7's
+   `dedupe.py add` MUST pass `--hero <Asset> --cast "<featured assets>"` so the gate has
+   memory.
 
 Over a month of runs the library gets deeper AND more-used: the same beloved cast returning in
 new stagings is a FEATURE (franchise continuity), and every genuinely new story teaches the
@@ -517,10 +526,18 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
    through `angle_to_mood` in config/music_sources.yaml, then source ONE fresh track with that
    mood and a NAMED composer (get_music.py; the expanded verified pool covers playful/hopeful/
    tense/wry/wonder; never reuse a recent track; credit in the draft). SFX come from the
-   DESIGNED FOLEY BANK (assets/sfx via scripts/sfx_bank.py — real impacts, bells, whooshes,
-   creaks; never bare lavfi sines; a curated real recording dropped at assets/sfx/real/<kind>.wav
-   wins automatically). Motivated SFX on every beat (>=8 events, >=1 per shot), cut to the
-   picture. Mix: VO dominant, music ducked under it, a real >=6dB dip before the button,
+   VARIANT FOLEY BANK (assets/sfx via scripts/sfx_bank.py): 6 sibling takes per kind
+   (layered transient+body+room-tail+sweetener; modal metal, granular paper, Karplus-Strong
+   plucks), shuffle-bagged per episode with `resolve(kind, episode_seed=DATE)` so no two
+   plays reuse a take; curated CC0 recordings at assets/sfx/real/<kind>*.wav win wholesale.
+   Motivated SFX on every beat (>=8 events, >=1 per shot), cut to the picture, and PERFORMED
+   per event (2026-07-21 owner rule — "boring, reusing the same sfx" must not recur):
+   class gain tiers (hero ~-11 dBFS / standard ~-15 / texture ~-19; NEVER a flat volume),
+   deterministic crc32(DATE:idx) jitter (pitch by family, +/-1.5dB, +/-15ms), pan from the
+   prop's storyboard x (max +/-0.35; hero payoffs centered), 3kHz/-2.5dB VO-slot EQ + 100Hz
+   high-pass on the bed and all sustained sfx, and the dispatch_mix.py check_schedule assert:
+   NO two consecutive events from the same sound family, at most one riser per episode.
+   Mix: VO dominant, music ducked under it, a real >=6dB dip before the button,
    -14 LUFS integrated, TP <= -1.0 dBTP, audible tail.
 3. CAPTIONS + ACTING DATA: vo_synth_gemini.py already produced captions.json + words.json
    (whole-file forced alignment, tags stripped, monotonic) AND — via scripts/vo_envelope.py —
@@ -529,10 +546,14 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
 4. SCENES: build this run's scenes in video-engine/src/ from beats[].draw — compose from the
    library first; author the episode's 1-2 bespoke hero illustrations to the exemplar bar;
    add any new poses/emotions/FX to lib/ so the cast compounds. Story data via --props.
-   MAKE THE CAST ACT WITH THE VOICE (lib/voice.tsx): any on-screen speaker gets
-   `talking={useVoice().opennessAt(globalFrame)}` so its mouth flaps with the narration, and
-   the emphasis beats (`useVoice().accentAt`) drive flinches, chip pops, and gesture kicks —
-   the picture must visibly REACT on the emphasized words. USE THE MOTION LAYER
+   MAKE THE CAST ACT WITH THE VOICE (lib/voice.tsx) — but NEVER LIP-SYNC THE NARRATOR
+   (2026-07-21 owner rule: word-synced mouths read as a failed narration attempt). Pass
+   `talking={useVoice().opennessAt(globalFrame)}` to mark WHO is speaking in the scene; the
+   rig routes it through `ambientMouth()`, which renders a slow conversational cycle
+   (characters chatting with EACH OTHER), never per-word flapping — do not bypass it by
+   driving TalkMouth openness directly. The emphasis beats (`useVoice().accentAt`) still
+   drive flinches, chip pops, and gesture kicks — the picture must visibly REACT on the
+   emphasized words with its BODY, not its mouth. USE THE MOTION LAYER
    (lib/motion.tsx): entrances via entrance() (anticipation -> overshoot -> squash/stretch,
    feed .vy into MotionBlur), secondary followThrough() on every attached part (flags, arms,
    tags, antennae), ChipShadow under HUD chips. A linear scale-in is below the bar.

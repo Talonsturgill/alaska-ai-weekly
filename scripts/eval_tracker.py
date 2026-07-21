@@ -80,11 +80,20 @@ def cmd_record(a):
         fnd["signature"] = _norm_sig(fnd.get("signature") or fnd.get("axis", ""))
         if "axis" in fnd:
             fnd["axis"] = _norm_sig(fnd["axis"])
-    # replace any existing entry for this date+slug (idempotent re-record). Normalize the date to a
-    # string on BOTH sides — yaml.safe_load parses an unquoted YYYY-MM-DD as a datetime.date, so a
-    # str key would never match a seeded date-typed entry and would silently duplicate the run.
+    # MERGE into any existing entry for this date+slug (idempotent re-record). Normalize the date
+    # to a string on BOTH sides — yaml.safe_load parses an unquoted YYYY-MM-DD as a datetime.date,
+    # so a str key would never match a seeded date-typed entry and would silently duplicate the run.
+    # Merging (not replacing) matters: findings arrive incrementally — the taste-loop records its
+    # panel findings mid-run, and post-ship owner feedback appends MORE findings later. A replace
+    # here silently erased a run's panel_rounds + earlier findings (caught 2026-07-21).
     key = (str(a.date), a.slug)
+    prev = next((r for r in d["runs"] if (str(r.get("date")), r.get("slug")) == key), None)
     d["runs"] = [r for r in d["runs"] if (str(r.get("date")), r.get("slug")) != key]
+    if prev:
+        rounds = rounds or prev.get("panel_rounds", [])
+        merged = {f.get("signature"): f for f in prev.get("findings", [])}
+        merged.update({f.get("signature"): f for f in findings})  # new wins per signature
+        findings = list(merged.values())
     d["runs"].append({
         "date": a.date,
         "slug": a.slug,

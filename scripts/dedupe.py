@@ -48,12 +48,19 @@ def main():
     ap = argparse.ArgumentParser(); sub = ap.add_subparsers(dest="cmd", required=True)
     pl = sub.add_parser("list");  pl.add_argument("--days", type=int, default=14)
     pc = sub.add_parser("check"); pc.add_argument("--entities", required=True); pc.add_argument("--days", type=int, default=7)
+    pc.add_argument("--hero", default="",
+                    help="the library asset cast as this run's HERO / AI-embodiment (e.g. ServerMachine, "
+                         "Vale, Sourdough). HARD GATE (2026-07-21 owner rule): the same hero asset in "
+                         "either of the last TWO dispatches = HERO RERUN, exit 1 — recast from the "
+                         "manifest (5 characterized objects, 21 fauna, vehicles, props).")
     pa = sub.add_parser("add")
     for f in ["date","topic","slug","entities","archetype","palette","voice","stance","angle"]:
         pa.add_argument("--"+f, default="",
                         help="stance = celebratory|cautionary|curious|mixed (for register rotation); "
                              "angle = one-sentence thesis" if f in ("stance","angle") else None)
     pa.add_argument("--composition", default="", help="storyboard fingerprint as JSON (the 7 axes)")
+    pa.add_argument("--hero", default="", help="library asset cast as the HERO/AI-embodiment this run (required for the rotation gate)")
+    pa.add_argument("--cast", default="", help="comma list of featured library assets this run (for roster pressure in `list`)")
     a = ap.parse_args(); d = load()
 
     if a.cmd == "list":
@@ -67,6 +74,10 @@ def main():
         stances = [e.get("stance") for e in rs if e.get("stance")]
         if stances:
             print(f"# recent stances (oldest→newest): {', '.join(stances)}  — if these skew one way, look hard for the other.")
+        heroes = [f"{e.get('date')}:{e.get('hero')}" for e in rs if e.get("hero")]
+        if heroes:
+            print(f"# recent HERO assets (oldest→newest): {', '.join(heroes)}  — the next hero must differ "
+                  f"from the last TWO (dedupe.py check --hero <Asset> enforces this).")
 
     elif a.cmd == "check":
         cand = norm(a.entities)
@@ -76,6 +87,19 @@ def main():
             shared = cand & entity_key(e)
             if len(shared) >= 2:
                 print(f"DUP: overlaps {e.get('date')} \"{e.get('topic')}\" on {sorted(shared)}"); sys.exit(1)
+        # HERO-ASSET ROTATION GATE (2026-07-21 owner rule: "we keep using this little square guy
+        # in like every video"). The same library asset must not play the HERO/AI-embodiment in
+        # back-to-back dispatches — with a 26-asset shelf, the audience should never see a rerun.
+        if a.hero:
+            hist = sorted(d["dispatch_history"], key=lambda e: str(e.get("date")))
+            last_heroes = [(e.get("date"), e.get("hero")) for e in hist if e.get("hero")][-2:]
+            for hd, hh in last_heroes:
+                if hh and hh.strip().lower() == a.hero.strip().lower():
+                    print(f"HERO RERUN: {a.hero} was the hero on {hd} — recast. The manifest has 5 "
+                          f"characterized objects, 21 fauna, 3 vehicles and a props kit; the AI-presence "
+                          f"does NOT have to be a server (a drone, a counter, a plant, a phone, a weir-cam "
+                          f"...whatever THIS story's tool actually is).")
+                    sys.exit(1)
         print("FRESH"); sys.exit(0)
 
     elif a.cmd == "add":
@@ -85,6 +109,14 @@ def main():
             "topic": a.topic, "slug": a.slug, "key_entities": ents,
             "archetype": a.archetype, "palette": a.palette, "voice": a.voice,
             "stance": a.stance, "angle": a.angle}
+        if a.hero:
+            entry["hero"] = a.hero.strip()
+        else:
+            print("WARNING: no --hero passed; the next run's hero-rotation gate will be blind to this "
+                  "dispatch's casting. Pass the library asset that played the hero/AI-embodiment.",
+                  file=sys.stderr)
+        if a.cast:
+            entry["cast"] = [x.strip() for x in a.cast.split(",") if x.strip()]
         if a.composition:
             try:
                 entry["composition"] = json.loads(a.composition)

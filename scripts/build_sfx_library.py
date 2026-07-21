@@ -1,34 +1,51 @@
 #!/usr/bin/env python3
-"""BUILD THE SFX BANK — designed foley, not beeps.
+"""BUILD THE SFX BANK — designed foley with VARIANTS, not one static take.
 
-The old mix synthesized every effect as a bare lavfi sine ("thud" = a 90 Hz
-beep). This builds assets/sfx/<kind>.wav with actual sound design in numpy:
+2026-07-21 owner note: "ours is boring and reusing the same sfx". The old bank
+rendered ONE wav per kind, so a clank on July 18 was bit-identical to a clank on
+July 21 (and to the other clank 30 seconds earlier). This rebuild encodes the
+game-audio doctrine (Wwise/FMOD round-robin, School-of-Motion layering):
 
-  impacts   = pitch-swept sub body + onset click + filtered noise shell
-  metal     = inharmonic partial stacks (bell/clank physics) + transient
-  whoosh    = pink noise through a swept band-pass with a doppler-ish arc
-  creak     = accelerating stick-slip pulse train through a resonance
-  paper     = crackle burst train, high-passed
-  riser     = swept noise + a rising harmonic under it
+  VARIANTS   6 takes per kind (<kind>_v1..v6.wav), each sampled from a per-kind
+             PARAM FAMILY (sfxr-style ranges), so takes are siblings, not clones.
+             scripts/sfx_bank.py shuffle-bags them with no-repeat-last-2.
+  LAYERING   every hit is Transient + Body + Tail (+ sweetener):
+             - transient (1-15ms) = material; body (50-400ms) = weight;
+             - TAIL: a small-room reverb (Schroeder comb+allpass) — the layer
+               the old bank lacked entirely, which is why it read "synthesized";
+             - sweeteners: paper grains after a stamp, mechanism rattle after a
+               clank, air tick after a pop.
+  PHYSICS    metal = modal stacks with stiff-bar inharmonicity
+             f_n = n*f0*sqrt(1 + B*n^2), per-partial decay ~ f (highs die
+             first), struck (noise-burst) onset; per-variant f0 +/-3% + B jitter
+             = endless non-repeating clanks. paper = granular synthesis (15-60ms
+             band-passed Hann grains, density-enveloped). snap = Karplus-Strong.
+  DETERMINISM every variant is seeded from crc32(kind:vN) — same repo state
+             reproduces the bank bit-identically; no salted hash(), no clock.
 
-Deterministic (seeded), 44.1k 16-bit stereo, peaks at -6 dBFS, gentle tanh
-saturation for character. Run once; the bank is committed so every future run
-mixes with the same designed sounds.
+44.1k 16-bit stereo, peaks at -6 dBFS, gentle tanh saturation. The bank is
+committed; every future run mixes from the same takes (variety comes from the
+shuffle-bag + the per-event jitter in dispatch_mix.py).
 
-UPGRADE PATH FOR REAL RECORDINGS: if assets/sfx/real/<kind>.wav exists (a
-curated CC0/PD recording, logged in assets/sfx/MANIFEST.md), it WINS over the
-synth. scripts/sfx_bank.py resolves in that order. Drop better takes in over
-time; nothing else changes.
+UPGRADE PATH FOR REAL RECORDINGS: curated CC0/PD takes at
+assets/sfx/real/<kind>*.wav (logged in assets/sfx/MANIFEST.md) win over the
+synth bank in scripts/sfx_bank.py. Multiple real takes per kind join the
+shuffle-bag alongside nothing else — real replaces synth per kind, wholesale.
 """
 import os
+import zlib
 import numpy as np
-from scipy.signal import butter, sosfilt
+from scipy.signal import butter, sosfilt, lfilter
 
 SR = 44100
+VARIANTS = 6
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
 BANK = os.path.join(REPO, "assets", "sfx")
-rng = np.random.default_rng(49)  # deterministic bank
+
+
+def seed_for(kind, v):
+    return zlib.crc32(f"akai-sfx:{kind}:v{v}".encode()) % (2**32)
 
 
 def t_axis(dur):
@@ -63,11 +80,7 @@ def hp(x, fc, order=4):
     return sosfilt(sos, x)
 
 
-def noise(n):
-    return rng.standard_normal(n)
-
-
-def pink(n):
+def pink(rng, n):
     # Voss-ish: sum of octave-spaced LP noise
     x = np.zeros(n)
     for oct_ in range(5):
@@ -84,16 +97,9 @@ def sweep_sine(f0, f1, dur, curve=1.0):
     return np.sin(ph)
 
 
-def partial_stack(f0, ratios, decays, dur, detune=0.002):
-    t = t_axis(dur); x = np.zeros(t.size)
-    for r, d in zip(ratios, decays):
-        f = f0 * r * (1 + rng.uniform(-detune, detune))
-        x += np.sin(2 * np.pi * f * t + rng.uniform(0, 6.28)) * env_exp(t.size, d) / len(ratios)
-    return x
-
-
-def click(dur=0.006, fc=3000):
-    return bp(noise(int(SR * dur)), fc * 0.5, fc * 2) * env_exp(int(SR * dur), 600)
+def click(rng, dur=0.006, fc=3000):
+    n = int(SR * dur)
+    return bp(rng.standard_normal(n), fc * 0.5, fc * 2) * env_exp(n, 600)
 
 
 def mix(*parts):
@@ -104,116 +110,244 @@ def mix(*parts):
     return out
 
 
-# ---------------------------------------------------------------- the designs
-def d_thud():      # cartoon body-impact: sub sweep + knock + noise shell
-    body = sweep_sine(130, 42, 0.32, 0.5) * env_exp(int(SR * 0.32), 11) * 1.0
-    knock = lp(noise(int(SR * 0.05)), 900) * env_exp(int(SR * 0.05), 90) * 0.8
-    shell = lp(noise(int(SR * 0.2)), 400) * env_exp(int(SR * 0.2), 22) * 0.35
-    return mix(body, knock, shell)
-
-def d_stamp():     # heavier: deeper sub + paper slap on top
-    body = sweep_sine(100, 34, 0.42, 0.5) * env_exp(int(SR * 0.42), 8) * 1.1
-    slap = bp(noise(int(SR * 0.04)), 700, 5000) * env_exp(int(SR * 0.04), 140) * 0.9
-    return mix(body, slap)
-
-def d_boom():      # scene-scale impact, longer bloom
-    body = sweep_sine(90, 30, 0.9, 0.4) * env_exp(int(SR * 0.9), 4.2) * 1.1
-    air = lp(pink(int(SR * 0.7)), 500) * env_exp(int(SR * 0.7), 6) * 0.5
-    return mix(body, click(0.008, 1200) * 0.5, air)
-
-def d_pop():       # bubble pop: fast chirp + tiny click
-    chirp = sweep_sine(950, 340, 0.09, 1.6) * env_exp(int(SR * 0.09), 55)
-    return mix(chirp, click(0.004, 4000) * 0.5)
-
-def d_snap():      # finger snap: broadband crack + 90Hz bump
-    crack = bp(noise(int(SR * 0.03)), 1500, 9000) * env_exp(int(SR * 0.03), 220) * 1.0
-    bump = sweep_sine(160, 80, 0.07, 1) * env_exp(int(SR * 0.07), 60) * 0.5
-    return mix(crack, bump)
-
-def d_tick():      # clock tick: tight resonant click
-    return bp(noise(int(SR * 0.012)), 1800, 5200) * env_exp(int(SR * 0.012), 420)
-
-def d_ding():      # small bright bell: inharmonic partials, long tail
-    return partial_stack(880, [1, 2.71, 4.07, 5.4], [3.2, 5.5, 8, 12], 1.1)
-
-def d_chime():     # softer, warmer bell (win/positive accent)
-    return partial_stack(660, [1, 2.0, 2.96, 4.1], [2.6, 4, 6, 9], 1.3)
-
-def d_clank():     # struck metal: dense inharmonic stack + hard transient
-    body = partial_stack(310, [1, 1.63, 2.29, 3.42, 4.8], [9, 12, 16, 22, 30], 0.5)
-    return mix(click(0.005, 2500) * 0.9, body)
-
-def d_chain():     # a handful of clank-lets, irregular
-    out = np.zeros(int(SR * 0.5))
-    tpos = 0.0
-    for i in range(6):
-        c = partial_stack(500 + rng.uniform(-80, 220), [1, 1.51, 2.3, 3.9], [18, 25, 32, 40], 0.16) * rng.uniform(0.4, 1.0)
-        s = int(tpos * SR)
-        out[s:s + c.size] += c[:max(0, out.size - s)]
-        tpos += rng.uniform(0.03, 0.08)
+def at(base, part, t):
+    """Overlay `part` onto `base` starting at time t (seconds), growing base."""
+    s = int(t * SR)
+    n = max(base.size, s + part.size)
+    out = np.zeros(n)
+    out[:base.size] += base
+    out[s:s + part.size] += part
     return out
 
-def d_whoosh():    # air pass: pink noise through a swept band-pass, arc envelope
-    n = int(SR * 0.55)
-    x = pink(n)
-    # three chunks with rising then falling center freq = doppler-ish
+
+# --------------------------------------------------------------- room + physics
+def reverb_tail(x, decay_s=0.25, wet=0.22, bright=4200):
+    """Small-room Schroeder reverb (4 combs + 2 allpasses) — the TAIL layer.
+    Grounds a synthesized hit in a space; the single biggest 'produced' cue."""
+    if wet <= 0:
+        return x
+    y = np.zeros(x.size + int(SR * decay_s * 2.5))
+    y[:x.size] = x
+    combs = [(0.0297, 0.72), (0.0371, 0.68), (0.0411, 0.64), (0.0437, 0.60)]
+    wetsig = np.zeros_like(y)
+    for d, g0 in combs:
+        D = int(d * SR)
+        g = g0 * np.exp(-6.91 * d / max(0.05, decay_s))  # RT60-ish scaling
+        a = np.zeros(D + 1); a[0] = 1; a[-1] = -g
+        wetsig += lfilter([1.0], a, y) / len(combs)
+    for d in (0.005, 0.0017):
+        D = int(d * SR); g = 0.7
+        b = np.zeros(D + 1); b[0] = -g; b[-1] = 1
+        a = np.zeros(D + 1); a[0] = 1; a[-1] = -g
+        wetsig = lfilter(b, a, wetsig)
+    wetsig = lp(wetsig, bright)  # rooms darken tails
+    return y * (1 - wet * 0.4) + wetsig * wet
+
+
+def modal_metal(rng, f0, B, n_partials, decay_base, dur, strike_fc=2600):
+    """Struck metal: stiff-bar modal stack f_n = n*f0*sqrt(1+B*n^2), per-partial
+    decay proportional to frequency (highs die first), noise-burst onset."""
+    t = t_axis(dur)
+    x = np.zeros(t.size)
+    for nn in range(1, n_partials + 1):
+        fn = nn * f0 * np.sqrt(1 + B * nn * nn)
+        if fn > SR / 2 - 200:
+            break
+        dec = decay_base * (fn / f0) ** 0.7
+        amp = 1.0 / (nn ** 0.8)
+        x += amp * np.sin(2 * np.pi * fn * t + rng.uniform(0, 6.28)) * env_exp(t.size, dec)
+    x /= max(1, n_partials * 0.45)
+    strike = click(rng, 0.003, strike_fc)
+    return mix(strike * 0.9, x)
+
+
+def grains(rng, n_grains, dur, lo=1500, hi=8000, glen=(0.015, 0.06),
+           density_env=None, pitch_spread=0.0):
+    """Granular noise texture: Hann-windowed band-passed bursts scattered over
+    dur. THE paper engine — reads as moving paper, not a looped crackle."""
+    n = int(SR * dur)
+    out = np.zeros(n)
+    for i in range(n_grains):
+        u = rng.uniform()
+        if density_env is not None:
+            u = u ** density_env  # <1 biases early, >1 biases late
+        s = int(u * (dur - glen[1]) * SR)
+        gl = int(SR * rng.uniform(*glen))
+        c = rng.uniform(-1, 1)
+        f_lo, f_hi = lo * (2 ** (c * pitch_spread)), hi * (2 ** (c * pitch_spread))
+        g = bp(rng.standard_normal(gl), f_lo, f_hi) * np.hanning(gl) * rng.uniform(0.25, 1.0)
+        out[s:s + gl] += g[:max(0, n - s)]
+    return out
+
+
+def ks_pluck(rng, f0, dur, damp=0.996, blend=0.5):
+    """Karplus-Strong pluck; damp<1 shortens, blend<0.5 dulls. The 'rubber-band
+    boing' voice for snaps/levers."""
+    D = int(SR / f0)
+    buf = rng.uniform(-1, 1, D)
+    n = int(SR * dur)
+    out = np.empty(n)
+    for i in range(n):
+        out[i] = buf[i % D]
+        nxt = damp * (blend * buf[i % D] + (1 - blend) * buf[(i + 1) % D])
+        buf[i % D] = nxt
+    return out
+
+
+def u(rng, lo_hi):
+    return rng.uniform(*lo_hi)
+
+
+# ---------------------------------------------------------------- the designs
+# Each design takes rng and samples its own params from the family ranges, so
+# every variant is a sibling take: same material, different performance.
+
+def d_thud(rng):    # body-impact: sub sweep + knock + noise shell + debris
+    dur = u(rng, (0.28, 0.36)); f_hi = u(rng, (118, 145)); f_lo = u(rng, (38, 48))
+    body = sweep_sine(f_hi, f_lo, dur, 0.5) * env_exp(int(SR * dur), u(rng, (9, 13)))
+    knock = lp(rng.standard_normal(int(SR * 0.05)), 900) * env_exp(int(SR * 0.05), 90) * 0.8
+    shell = lp(rng.standard_normal(int(SR * 0.2)), 400) * env_exp(int(SR * 0.2), 22) * 0.35
+    x = mix(body, knock, shell)
+    x = at(x, grains(rng, 5, 0.09, 700, 3000) * 0.12, 0.03)   # sweetener: debris
+    return reverb_tail(x, 0.16, 0.16)
+
+def d_stamp(rng):   # deep sub + slap + PAPER-GRAIN sweetener + desk-room tail
+    dur = u(rng, (0.36, 0.46))
+    body = sweep_sine(u(rng, (92, 110)), u(rng, (30, 38)), dur, 0.5) * env_exp(int(SR * dur), u(rng, (7, 9.5))) * 1.1
+    slap = bp(rng.standard_normal(int(SR * 0.04)), 700, 5000) * env_exp(int(SR * 0.04), 140) * 0.9
+    x = mix(body, slap)
+    # the paper being compressed, 25-80ms after the hit — makes it "stamp on
+    # paper" instead of "kick drum"
+    x = at(x, grains(rng, rng.integers(8, 13), 0.08, 1500, 7000) * 0.22, 0.025)
+    return reverb_tail(x, 0.15, 0.2)
+
+def d_boom(rng):    # scene-scale impact, longer bloom + room
+    dur = u(rng, (0.8, 1.0))
+    body = sweep_sine(u(rng, (82, 98)), u(rng, (26, 34)), dur, 0.4) * env_exp(int(SR * dur), u(rng, (3.8, 4.8))) * 1.1
+    air = lp(pink(rng, int(SR * 0.7)), 500) * env_exp(int(SR * 0.7), 6) * 0.5
+    x = mix(body, click(rng, 0.008, 1200) * 0.5, air)
+    return reverb_tail(x, 0.5, 0.24, 2800)
+
+def d_pop(rng):     # UI pop: pitch-drop blip + snap transient + tiny air tail
+    f0 = u(rng, (820, 1050)); f1 = f0 * u(rng, (0.55, 0.7))
+    chirp = sweep_sine(f0, f1, 0.05, 1.4) * env_exp(int(SR * 0.05), 55)
+    snapl = click(rng, 0.003, u(rng, (2600, 4200))) * 1.15   # snap ~+2dB over body
+    tail = lp(rng.standard_normal(int(SR * 0.08)), 8000) * env_exp(int(SR * 0.08), 60) * 0.12
+    return mix(chirp, snapl, at(np.zeros(1), tail, 0.012))
+
+def d_snap(rng):    # lever/rubber-band: Karplus-Strong pluck + crack + bump
+    f0 = u(rng, (150, 240))
+    pluck = ks_pluck(rng, f0, 0.28, damp=u(rng, (0.994, 0.9975)), blend=u(rng, (0.42, 0.55))) * 0.8
+    crack = bp(rng.standard_normal(int(SR * 0.03)), 1500, 9000) * env_exp(int(SR * 0.03), 220)
+    bump = sweep_sine(160, 80, 0.07, 1) * env_exp(int(SR * 0.07), 60) * 0.45
+    return reverb_tail(mix(crack, pluck, bump), 0.12, 0.12)
+
+def d_tick(rng):    # clock tick: tight resonant click, per-take color
+    fc = u(rng, (1700, 2600))
+    n = int(SR * 0.012)
+    x = bp(rng.standard_normal(n), fc, fc * 2.9) * env_exp(n, u(rng, (360, 480)))
+    return reverb_tail(x, 0.09, 0.1)
+
+def d_ding(rng):    # small bright bell: modal stack, bell ratios, long ring
+    f0 = 880 * u(rng, (0.97, 1.03))
+    return modal_metal(rng, f0, u(rng, (0.0008, 0.004)), 7, u(rng, (2.8, 3.8)), 1.1, 5200) * 0.9
+
+def d_chime(rng):   # softer warm bell (win/positive accent)
+    f0 = 660 * u(rng, (0.97, 1.03))
+    x = modal_metal(rng, f0, u(rng, (0.0006, 0.003)), 6, u(rng, (2.2, 3.0)), 1.3, 3800) * 0.85
+    return reverb_tail(x, 0.35, 0.14)
+
+def d_clank(rng):   # struck machine metal: inharmonic modal + mechanism rattle
+    f0 = 310 * u(rng, (0.97, 1.03)); B = u(rng, (0.05, 0.22))
+    x = modal_metal(rng, f0, B, 9, u(rng, (8, 12)), 0.6)
+    # sweetener: the linkage settling — 2-3 quiet pitch-varied micro-clinks
+    for dt in (0.025, 0.06, 0.11)[:rng.integers(2, 4)]:
+        c = modal_metal(rng, f0 * u(rng, (1.3, 2.1)), B, 4, 26, 0.12) * 0.3
+        x = at(x, c, dt)
+    return reverb_tail(x, 0.3, 0.18)
+
+def d_chain(rng):   # a handful of clank-lets, irregular
+    out = np.zeros(int(SR * 0.55))
+    tpos = 0.0
+    for i in range(int(rng.integers(5, 8))):
+        c = modal_metal(rng, u(rng, (430, 730)), u(rng, (0.08, 0.25)), 5,
+                        u(rng, (16, 26)), 0.16) * u(rng, (0.4, 1.0))
+        out = at(out, c, tpos)
+        tpos += u(rng, (0.03, 0.085))
+    return reverb_tail(out, 0.2, 0.15)
+
+def d_whoosh(rng):  # air pass: swept band-pass pink noise, asymmetric arc,
+    dur = u(rng, (0.5, 0.62))          # volume env decoupled from filter env
+    n = int(SR * dur)
+    x = pink(rng, n)
+    peak_at = u(rng, (0.35, 0.5))      # fast-in slow-out arc
+    lo0, hi0 = u(rng, (180, 260)), u(rng, (800, 1100))
+    loP, hiP = u(rng, (450, 650)), u(rng, (2200, 3200))
+    seg_n = 8
     segs = []
-    for i, (lo, hi) in enumerate([(200, 900), (500, 2600), (300, 1200)]):
-        seg = bp(x[i * n // 3:(i + 1) * n // 3], lo, hi)
-        segs.append(seg)
+    for i in range(seg_n):
+        p = i / (seg_n - 1)
+        m = (p / peak_at) if p < peak_at else 1 - (p - peak_at) / (1 - peak_at)
+        m = m ** 0.8
+        segs.append(bp(x[i * n // seg_n:(i + 1) * n // seg_n],
+                       lo0 + (loP - lo0) * m, hi0 + (hiP - hi0) * m))
     y = np.concatenate(segs)
-    return y * env_ar(y.size, 0.12, 0.28)
+    vol = env_ar(y.size, dur * peak_at * 0.7, dur * (1 - peak_at) * 0.9)
+    return reverb_tail(y * vol, 0.14, 0.1)
 
-def d_riser():     # build: swept noise + rising harmonic, crescendo
-    n = int(SR * 0.95)
-    nz = hp(pink(n), 300) * np.linspace(0.15, 1.0, n) ** 1.5
-    tone = sweep_sine(180, 640, 0.95, 1.2) * np.linspace(0.1, 0.8, n) ** 1.4 * 0.6
+def d_riser(rng):   # build: detuned tone pair + noise, exp sweep, crescendo
+    dur = u(rng, (0.9, 1.05)); n = int(SR * dur)
+    nz = hp(pink(rng, n), 300) * np.linspace(0.15, 1.0, n) ** 1.5
+    f_end = u(rng, (560, 700)); f_start = f_end / 2 ** (u(rng, (10, 12)) / 12)
+    det = 2 ** (u(rng, (0.010, 0.015)) / 12)   # 10-15 cent detune spread
+    tone = (sweep_sine(f_start, f_end, dur, 1.6) +
+            sweep_sine(f_start * det, f_end * det, dur, 1.6)) * 0.5
+    tone *= np.linspace(0.1, 0.8, n) ** 1.4 * 0.6
     y = mix(bp(nz, 400, 5200), tone)
-    return y * env_ar(y.size, 0.5, 0.06)
+    return y * env_ar(y.size, dur * 0.55, 0.06)
 
-def d_creak():     # stick-slip: accelerating pulse train through a resonance
+def d_creak(rng):   # stick-slip pulse train + wood-modal body underneath
     n = int(SR * 0.5)
     out = np.zeros(n)
-    tpos = 0.0; gap = 0.035
+    tpos = 0.0; gap = u(rng, (0.03, 0.042))
+    res = u(rng, (750, 1100))
     while tpos < 0.42:
-        c = click(0.005, 900) * rng.uniform(0.5, 1.0)
+        c = click(rng, 0.005, res) * rng.uniform(0.5, 1.0)
         s = int(tpos * SR)
         out[s:s + c.size] += c[:max(0, n - s)]
         gap *= 0.86  # accelerates = the creak "gives"
         tpos += max(0.006, gap + rng.uniform(-0.004, 0.004))
-    return bp(out, 300, 2200) * env_ar(n, 0.02, 0.15)
+    x = bp(out, 300, 2200) * env_ar(n, 0.02, 0.15)
+    wood = modal_metal(rng, u(rng, (140, 190)), 0.0, 4, 30, 0.3) * 0.25  # B~0 = wood
+    return reverb_tail(mix(x, wood), 0.13, 0.12)
 
-def d_paper():     # rustle/crumple: crackle burst train, high-passed
-    n = int(SR * 0.7)
-    out = np.zeros(n)
-    for _ in range(90):
-        s = int(rng.uniform(0, 0.62) * SR)
-        c = hp(noise(int(SR * rng.uniform(0.002, 0.007))), 1200) * rng.uniform(0.2, 1.0)
-        out[s:s + c.size] += c[:max(0, n - s)]
-    return out * env_ar(n, 0.05, 0.25) * 0.8
+def d_paper(rng):   # rustle/crumple: GRANULAR — density-enveloped noise grains
+    dur = u(rng, (0.65, 0.8))
+    x = grains(rng, int(rng.integers(45, 75)), dur, 1500, 8000,
+               glen=(0.015, 0.06), density_env=u(rng, (0.7, 1.4)), pitch_spread=0.33)
+    return x * env_ar(int(x.size), 0.05, 0.25) * 0.85
 
-def d_paw():       # soft muffled footfall
-    body = sweep_sine(190, 95, 0.09, 0.8) * env_exp(int(SR * 0.09), 45) * 0.7
-    pad = lp(noise(int(SR * 0.06)), 600) * env_exp(int(SR * 0.06), 70) * 0.5
-    return mix(body, pad)
+def d_paw(rng):     # soft muffled footfall
+    body = sweep_sine(u(rng, (175, 205)), u(rng, (88, 102)), 0.09, 0.8) * env_exp(int(SR * 0.09), 45) * 0.7
+    pad = lp(rng.standard_normal(int(SR * 0.06)), 600) * env_exp(int(SR * 0.06), 70) * 0.5
+    return reverb_tail(mix(body, pad), 0.1, 0.1)
 
-def d_caw():        # raven call: two rasping downward caws (landing/commentary beat)
-    def one_caw():
-        n = int(SR * 0.14)
-        tone = sweep_sine(950, 420, 0.14, 1.3) * env_ar(n, 0.01, 0.09) * 0.55
-        rasp = bp(noise(n), 700, 3200) * env_ar(n, 0.008, 0.1) * 0.7
+def d_caw(rng):     # raven call: two rasping downward caws, per-take pitch
+    base = u(rng, (880, 1020))
+    def one_caw(scale):
+        n = int(SR * u(rng, (0.12, 0.16)))
+        dur = n / SR
+        tone = sweep_sine(base * scale, base * scale * 0.44, dur, 1.3) * env_ar(n, 0.01, 0.09) * 0.55
+        rasp = bp(rng.standard_normal(n), 700, 3200) * env_ar(n, 0.008, 0.1) * 0.7
         return mix(tone, rasp)
-    c1 = one_caw()
-    gap = int(SR * 0.09)
-    c2 = one_caw() * 0.8
-    out = np.zeros(c1.size + gap + c2.size)
-    out[:c1.size] += c1
-    out[c1.size + gap:c1.size + gap + c2.size] += c2
-    return out
+    c1 = one_caw(1.0)
+    x = at(c1, one_caw(u(rng, (0.9, 1.0))) * 0.8, c1.size / SR + u(rng, (0.07, 0.11)))
+    return reverb_tail(x, 0.3, 0.12, 3000)   # outdoors = a longer, darker tail
 
-def d_klaxon():    # two-tone alert, band-limited square-ish
+def d_klaxon(rng):  # two-tone alert, band-limited square-ish
+    fa, fb = 392 * u(rng, (0.97, 1.03)), 311 * u(rng, (0.97, 1.03))
     t = t_axis(0.5)
-    f = np.where((t * 4).astype(int) % 2 == 0, 392.0, 311.0)
+    f = np.where((t * u(rng, (3.6, 4.4))).astype(int) % 2 == 0, fa, fb)
     ph = 2 * np.pi * np.cumsum(f) / SR
     y = np.tanh(1.8 * np.sin(ph)) * 0.8
     return lp(y, 2400) * env_ar(t.size, 0.02, 0.1)
@@ -246,24 +380,36 @@ def main():
     from scipy.io import wavfile
     rows = []
     for kind, fn in DESIGNS.items():
-        y = finish(fn())
-        path = os.path.join(BANK, f"{kind}.wav")
-        wavfile.write(path, SR, (y * 32767).astype(np.int16))
-        dur = y.shape[0] / SR
-        peak = float(np.max(np.abs(y)))
-        rows.append((kind, dur, peak))
-        print(f"  {kind:8} {dur:5.2f}s  peak {20*np.log10(peak):5.1f} dBFS")
+        durs = []
+        for v in range(1, VARIANTS + 1):
+            rng = np.random.default_rng(seed_for(kind, v))
+            y = finish(fn(rng))
+            path = os.path.join(BANK, f"{kind}_v{v}.wav")
+            wavfile.write(path, SR, (y * 32767).astype(np.int16))
+            durs.append(y.shape[0] / SR)
+            if v == 1:
+                # back-compat alias: plain <kind>.wav = v1 (old episode-local
+                # mixes and the self-heal path in sfx_bank keep working)
+                wavfile.write(os.path.join(BANK, f"{kind}.wav"), SR, (y * 32767).astype(np.int16))
+        rows.append((kind, durs))
+        print(f"  {kind:8} {VARIANTS} takes  {min(durs):4.2f}-{max(durs):4.2f}s")
     man = os.path.join(BANK, "MANIFEST.md")
     with open(man, "w") as f:
-        f.write("# SFX bank — designed foley (scripts/build_sfx_library.py)\n\n")
-        f.write("Deterministic numpy sound design (seeded), 44.1k/16-bit stereo, -6 dBFS peaks.\n")
+        f.write("# SFX bank — designed foley with variants (scripts/build_sfx_library.py)\n\n")
+        f.write("Deterministic numpy sound design (crc32-seeded), 44.1k/16-bit stereo, -6 dBFS\n")
+        f.write("peaks. Each kind ships SIX sibling takes (`<kind>_v1..v6.wav`) sampled from a\n")
+        f.write("param family — scripts/sfx_bank.py shuffle-bags them (no-repeat-last-2) so no\n")
+        f.write("two plays of a kind in an episode (or across weeks) are the same take.\n")
+        f.write("Layering: transient + body + Schroeder room tail (+ sweetener). Metal is modal\n")
+        f.write("(f_n = n*f0*sqrt(1+B*n^2)); paper is granular; snap is Karplus-Strong.\n")
         f.write("License: original synthesis, no third-party material.\n\n")
-        f.write("To UPGRADE any entry with a real recording: put a curated CC0/public-domain\n")
-        f.write("take at `assets/sfx/real/<kind>.wav` and log its source + license here.\n")
-        f.write("scripts/sfx_bank.py prefers real/ over the synth bank automatically.\n\n")
-        for kind, dur, peak in rows:
-            f.write(f"- `{kind}.wav` — {dur:.2f}s — designed synth — no attribution needed\n")
-    print(f"bank: {len(rows)} sounds -> {BANK}")
+        f.write("To UPGRADE any kind with real recordings: put curated CC0/public-domain takes\n")
+        f.write("at `assets/sfx/real/<kind>*.wav` (e.g. clank_a.wav, clank_b.wav) and log source\n")
+        f.write("+ license here. sfx_bank.py then shuffle-bags the real takes for that kind\n")
+        f.write("instead of the synth ones, automatically.\n\n")
+        for kind, durs in rows:
+            f.write(f"- `{kind}_v1..v{VARIANTS}.wav` — {min(durs):.2f}-{max(durs):.2f}s — designed synth — no attribution needed\n")
+    print(f"bank: {len(rows)} kinds x {VARIANTS} takes -> {BANK}")
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ Usage:
     --note "On-screen numbers are illustrative unless drawn from a live feed." \
     --temporary --date 2026-06-27 --title "Cook Inlet belugas" --out-html out/dispatch/email.html
 """
-import argparse, base64, json, datetime as dt, sys
+import argparse, base64, json, datetime as dt, re, sys
 from pathlib import Path
 
 # Run-freshness guard: refuse to email a PREVIOUS run's scratch (see run_guard.py
@@ -40,11 +40,71 @@ ul.upg li{color:#1c5f38;}
 .foot{color:#97a2ab;font-size:11px;margin-top:24px;}
 """
 
-def render(post, poster_html, vids, voice, music, sources, score, note, temporary, date_str, title, upgrades):
+def _label_for(url):
+    """Readable label for a bare source URL: the registrable domain, uppercased outlet-style."""
+    m = re.match(r"https?://(?:www\.)?([^/]+)", url or "")
+    return (m.group(1) if m else url or "source")
+
+
+def parse_sources(data):
+    """Extract EVERY source from the run's sources.json regardless of which schema the
+    fact-check phase emitted. Accepts: a `sources` list of {title/outlet/url/note} dicts,
+    a `primary_urls` list of URL strings, or (fallback) any http(s) URLs found anywhere in
+    the document. Returns (items, sourcing_note) where items is a list of {url,label,note}.
+
+    WHY THIS IS PARANOID (2026-07-21 owner catch): the old code read ONLY `.get("sources")`
+    and silently fell back to a 'See DISPATCH.md on GitHub' pointer when the key was absent —
+    which shipped a draft that made the owner go fetch their own sources. The email IS the
+    deliverable; every source must be IN it. There is no pointer fallback anymore: the
+    caller hard-fails if this returns no sources."""
+    items, seen = [], set()
+
+    def add(url, label=None, note=""):
+        u = (url or "").strip()
+        if u.startswith("http") and u not in seen:
+            seen.add(u)
+            items.append({"url": u, "label": label or _label_for(u), "note": note})
+
+    for s in data.get("sources") or []:
+        if isinstance(s, dict):
+            add(s.get("url"), s.get("outlet") or s.get("title"), s.get("note", ""))
+        elif isinstance(s, str):
+            add(s)
+    for u in data.get("primary_urls") or []:
+        if isinstance(u, str):
+            add(u)
+    if not items:  # last resort: harvest any URL anywhere in the doc, never silently none
+        def walk(v):
+            if isinstance(v, str):
+                for u in re.findall(r"https?://[^\s\"'<>\\]+", v):
+                    add(u)
+            elif isinstance(v, list):
+                for x in v:
+                    walk(x)
+            elif isinstance(v, dict):
+                for x in v.values():
+                    walk(x)
+        walk(data)
+    return items, (data.get("sourcing_note") or "").strip()
+
+
+# The permanent tail of every sources section: the owner's public decision/update log.
+# Hardcoded in the template ON PURPOSE so no run can forget it.
+ALASKAIHQ_LI = ('<li><b>Every Alaska + AI decision and update we track, in one place:</b> '
+                '<a href="https://alaskaihq.com">alaskaihq.com</a></li>')
+
+
+def render(post, poster_html, vids, voice, music, sources, score, note, temporary, date_str, title, upgrades,
+           sourcing_note=""):
     src = "\n".join(
-        f'<li><a href="{s.get("url","")}">{s.get("outlet", s.get("title",""))}</a> &middot; {s.get("note","")}</li>'
-        for s in (sources or [])
-    ) or "<li>See DISPATCH.md in the run branch for full sources + fact-check.</li>"
+        f'<li><a href="{s["url"]}">{s["label"]}</a>'
+        f'{(" &middot; " + s["note"]) if s.get("note") else ""}'
+        f'<br><span style="color:#6a7782;font-size:12px;">{s["url"]}</span></li>'
+        for s in sources
+    )
+    if sourcing_note:
+        src += f'\n<li style="color:#6a7782;"><i>Sourcing note: {sourcing_note}</i></li>'
+    src += "\n" + ALASKAIHQ_LI
     buttons = ""
     # LinkedIn is PRIMARY, so the 4:5 leads: 4:5 shows in the MAIN HOME FEED beside the post copy;
     # 9:16 gets routed into LinkedIn's swipe-only vertical Video tab. Post the 4:5 to LinkedIn.
@@ -126,15 +186,23 @@ def main():
         poster_html = f'<div class="poster"><img src="data:image/png;base64,{b64}" alt="poster"/></div>'
     else:
         poster_html = ""
-    sources = None
-    if a.sources and Path(a.sources).exists():
-        try:
-            sources = json.loads(Path(fresh(a.sources, check=chk)).read_text()).get("sources")
-        except StaleArtifactError as e:
-            sys.exit(f"REFUSING TO BUILD DRAFT: --sources is not from this run.\n  {e}")
+    # SOURCES ARE MANDATORY AND INLINE (2026-07-21 owner rule): the email is the whole
+    # deliverable — the owner must never have to fetch their own sources from GitHub.
+    # No pointer fallback exists; zero parseable sources = no draft.
+    if not a.sources or not Path(a.sources).exists():
+        sys.exit("REFUSING TO BUILD DRAFT: --sources is required and must point at this run's "
+                 "sources.json (the email must carry every source inline).")
+    try:
+        src_data = json.loads(Path(fresh(a.sources, check=chk)).read_text())
+    except StaleArtifactError as e:
+        sys.exit(f"REFUSING TO BUILD DRAFT: --sources is not from this run.\n  {e}")
+    sources, sourcing_note = parse_sources(src_data)
+    if not sources:
+        sys.exit("REFUSING TO BUILD DRAFT: no sources could be parsed from --sources — the email "
+                 "must list every source inline (no 'see the repo' pointers). Fix sources.json.")
     html = render(post, poster_html, {"vertical": a.video_url_vertical, "square": a.video_url_square},
                   a.voice or "(unset)", a.music or "(unset)", sources, a.score, a.note, a.temporary, a.date, a.title,
-                  a.upgrades)
+                  a.upgrades, sourcing_note)
     if a.out_html:
         Path(a.out_html).write_text(html); print("wrote", a.out_html)
     payload = {"subject": f"ALASKA.AI · Dispatch ready · {a.date}", "to": a.to, "html_body": html}
