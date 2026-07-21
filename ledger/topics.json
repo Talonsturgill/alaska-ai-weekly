@@ -526,6 +526,48 @@
     "https://www.edtechinnovationhub.com/news/alaska-becomes-32nd-us-state-to-release-k-12-ai-education-framework"
    ],
    "outcome_notes": ""
+  },
+  {
+   "run_date": "2026-07-21",
+   "carousel_no": 13,
+   "topic": "AI acoustic and satellite monitoring of the endangered Cook Inlet beluga whale (NOAA Fisheries + Microsoft AI for Good + ADF&G dual-stage deep-learning detector-classifier)",
+   "angle": "A better ear is not a recovery. AI gives Alaska's most endangered whale a sharper always-on ear (and, separately, satellite eyes) that tells managers where and when the Cook Inlet belugas are in a wall of ship noise, but hearing is not healing: the machine measures the whale, it cannot move it. Net-new marine-mammal AI pivot off the fatigued data-center beat; honesty-forward (hedged 331, no invented accuracy figure).",
+   "entities": [
+    "Cook Inlet beluga",
+    "NOAA Fisheries",
+    "Microsoft AI for Good",
+    "Alaska Department of Fish and Game",
+    "Marine Mammal Science",
+    "U.S. Geological Survey",
+    "Naval Research Laboratory",
+    "Verena Gill",
+    "Manuel Castellote",
+    "Cook Inlet",
+    "Anchorage"
+   ],
+   "keywords": [
+    "beluga",
+    "endangered species",
+    "passive acoustic monitoring",
+    "bioacoustics",
+    "deep learning",
+    "detect and classify",
+    "contrastive audio-language models",
+    "active learning",
+    "satellite detection",
+    "Cook Inlet",
+    "ESA",
+    "population decline",
+    "daily presence",
+    "marine mammal"
+   ],
+   "headline": "Now a machine can hear them through the ship noise.",
+   "sources_lead": [
+    "https://api.crossref.org/works/10.1111/mms.70213",
+    "https://www.fisheries.noaa.gov/species/beluga-whale",
+    "https://www.fisheries.noaa.gov/alaska/science-data/satellite-monitoring-cook-inlet-beluga-whales"
+   ],
+   "outcome_notes": "Shipped 8.77 vs 8.3, 9 slides, vector PDF 7.8MB, zero hard fails. Full studio (6 scouts + fact-checker + 3 treatment-directors + copywriter + 5 pixel critics + flow-critic + scorer). Net-new marine-mammal acoustic AI, deliberate break from the 4-deck data-center fatigue. Weakest = artwork-craft (7): the S3 beluga shipped as the designed Canvas fallback (akthree transparent-subject snapshot sentinel false-negatived) and reads flat."
   }
  ]
 }

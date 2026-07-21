@@ -1,0 +1,24 @@
+{
+  "run_date": "2026-07-21",
+  "carousel_no": 13,
+  "weighted_total": 8.77,
+  "threshold": 8.3,
+  "ship": true,
+  "revision_rounds": 1,
+  "hard_fails": [],
+  "scores": {
+    "thumb_stop_cover": 7,
+    "story_arc_swipe": 8,
+    "artwork_craft": 7,
+    "story_art_fusion": 9,
+    "alaska_authenticity": 8,
+    "insight_density": 8,
+    "variety_vs_ledger": 9,
+    "legibility_platform": 8,
+    "copy_voice_hook": 9,
+    "deliverable_completeness": 8
+  },
+  "weakest_criterion": "Artwork craft and genuine detail",
+  "one_sentence_fix": "Rebuild the S3 beluga to read as a dimensional cold-rim-lit animal rather than a flat illustration (recover the GPU PBR path or hand-shade a gradient-mesh with real volume), and fill the dead lower-thirds on S3/S5/S8.",
+  "editor_notes": "No hard fails; ships at 8.77 vs 8.3. Caveats disclosed in the email: (1) the S3 beluga hero is the designed Canvas fallback because the akthree GPU snapshot sentinel false-negatived on the transparent subject, and it reads flat (the deck's weakest surface). (2) Honesty is clean: no invented detection-accuracy percentage, the 331 count is hedged (may be stabilizing, still about three quarters below 1979), and the S8 boundary box shows noise/prey/habitat with no intake port."
+}

@@ -509,3 +509,30 @@ annotation is the strongest pair):
     honesty beat of "Reading the Frozen Ground at the Top of America" (a single-source
     permafrost digital-twin deck). Generalizes to any deck built on one source, a press
     release ahead of a paywalled paper, or a claim the studio could not fully verify. D2
+
+58f. **Single-Signal-That-Never-Multiplies motif** (NEW 2026-07-21) - a continuity + honesty
+    device for any "better instrument, not a fix" story. ONE small warm accent-point (here a gold
+    beluga "call") is the deck's only warm element, and it changes STATE across every slide (cover
+    faint call in the murk -> passes the detect ring -> a needle punching up through a noise band ->
+    resolves into the lit species channel -> the single datapoint on the honest chart -> seals into
+    the Polaris at close) but is NEVER duplicated into a chorus. The restraint carries the argument:
+    a clearer signal is not more animals. Pair with (a) a visibly UNCHANGED environment between the
+    first content slide and the turn slide (same cold water = the world the instrument cannot move),
+    and (b) a mono depth/telemetry readout that advances as the progress meter. RULES: the accent is
+    the strict single-hue budget, audited on EVERY secondary label so nothing else leaks warm; cool
+    (snow/ice/steel) everything that is not the signal; a functional "stop/blocked" role may use a
+    distinct red without breaking the warm-accent budget. Used as the spine of "A Better Ear Is Not a
+    Recovery". Generalizes to monitoring/detection/measurement stories whose point is that sensing is
+    not solving. D2
+
+58g. **Boundary-Box Limit beat** (NEW 2026-07-21) - the honesty TURN drawn as a diagram. The
+    instrument (a compact glyph of the machine + its one output token + a mono "OUTPUT: WHERE AND
+    WHEN" chip) sits INSIDE a dashed drafting boundary box; the forces the machine cannot touch
+    (noise, prey, habitat) sit OUTSIDE it, drawn as arrows that travel toward the box and STOP dead
+    at the wall with a short red blocked-cap and NO intake port. The visual claim: the instrument
+    measures the subject, it cannot move it. Keep the box's interior output cool/gold-single and the
+    blocked-caps red (functional stop colour); route all labels in DOM/SVG on knockout plates; place
+    the box near optical centre so the lower third is not dead. Used as S8 of "A Better Ear Is Not a
+    Recovery" (measures but cannot move the whale). Generalizes to any deck arguing that a tool's
+    output is narrower than the problem (monitoring vs recovery, prediction vs prevention, a metric
+    vs the thing it measures). D2

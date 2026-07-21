@@ -1,0 +1,9 @@
+Cook Inlet has about 331 belugas left, and AI can finally hear them through the ship noise.
+
+NOAA Fisheries, Microsoft AI for Good and Alaska Fish and Game built a two stage listener: one model flags a sound, another names the species. A separate NOAA effort is adding satellite eyes.
+
+These 9 slides walk through the machine, the wall of noise it fights, and one honest chart: 331 today, still about three quarters below the 1,300 counted in 1979.
+
+A sharper ear tells managers where and when the belugas are. It does not quiet the ships or refill the prey. So what would it actually take to turn a clearer signal into more whales?
+
+#CookInletBeluga #MarineBioacoustics #AlaskaScience

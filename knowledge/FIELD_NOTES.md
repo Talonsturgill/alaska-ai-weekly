@@ -7,7 +7,51 @@ into the doctrine/library files and prune here.
 
 ---
 
-## 2026-07-20 - run retro (Carousel No. 12, "Written in Pencil", 8.55)
+## 2026-07-21 - run retro (Carousel No. 13, "A Better Ear Is Not a Recovery", 8.77)
+
+- FULL-STUDIO RUN, no usage-limit degradation. 6 scouts + fact-checker + 3 treatment-directors +
+  copywriter + 5 pixel critics + flow-critic + scorer all ran. Shipped 8.77 vs 8.3, vector PDF 7.8MB,
+  9 slides, zero hard fails.
+- STORY. First marine-mammal / endangered-species acoustic-AI deck of the series: NOAA Fisheries +
+  Microsoft AI for Good + ADF&G built a deep-learning dual-stage detector-then-classifier (contrastive
+  audio-language models + active learning) to hear rare Cook Inlet beluga calls in a ship-noisy inlet and
+  firm up daily presence; a separate NOAA-led effort (USGS, Microsoft AI for Good, Naval Research Lab)
+  adds satellite detection. Deliberate NET-NEW pivot off the fatigued data-center beat (Nos 1,4,6,10) and
+  every recent cold-infrastructure hero. Thesis "a better ear is not a recovery" (hearing is not healing).
+- FACT-CHECK sharpened the honesty spine. The acoustic paper's full text is paywalled (Wiley 403), so the
+  method is asserted only from the abstract and NO detection-accuracy percentage is claimed (none exists).
+  The fact-checker corrected the population framing: NOAA says the best estimate 331 "may be stabilizing
+  and possibly increasing" YET the population "has not recovered as expected" -> the deck draws neither a
+  "still crashing" curve nor a recovery hockey stick; the S7 chart shows the ~80% collapse (1,300 1979 ->
+  279 2018), a small hedged 331 uptick in a dashed uncertainty band, and a dotted 1979 baseline rule so the
+  gap IS the argument. Dropped the scout's unproven "116,103 caribou" (fallback story) and fixed an author
+  affiliation.
+- CRAFT. New chassis: a continuous underwater Cook Inlet depth-world (camera descent + mono depth readout as
+  progress) carried by a SINGLE warm gold "call" that changes state but NEVER multiplies (a clearer signal
+  is not more whales), sealing into the Polaris; the water reads visibly UNCHANGED S1 vs S8, and the S8
+  boundary box shows noise/prey/habitat as arrows that stop at the wall with no intake port. Story-art
+  fusion 9, variety 9, flow SHIP (sequence_reads_as_one, motif_reads_across_all_9). Two new techniques + 3
+  instincts logged.
+- HERO / GROWTH EDGE (recurring). Artwork-craft capped at 7 again: the S3 beluga shipped as the DESIGNED
+  CANVAS FALLBACK because the akthree GPU path false-negatived. Lesson (new instinct): an akthree object
+  composited over a TRANSPARENT background makes AKT.snapshot's black-frame sentinel read empty samples as
+  a dead frame and silently drop to the fallback; render the subject on an OPAQUE in-palette bg and
+  composite the whole frame, or make the 2D illustration the hero on purpose. The fallback beluga reads
+  clearly as a beluga but flat; Phase 12 candidate = a bounded akthree object-hero-on-opaque-bg helper.
+- PIXEL CATCHES machine QA missed (qa PASS 0/0): S2 top-heavy with a dead lower band; S4 core metaphor not
+  reading (faint noise band + gold needle reading as the mooring cable) PLUS a gold SHIP NOISE readout;
+  S8 gold leaking onto the SHIP NOISE/PREY/HABITAT input labels; S3 body wrapping to 8 lines. New instinct:
+  audit every secondary label for accent-color leak before render (gold = the call ONLY). All fixed and
+  re-verified to ship; RECORD-SYNC caught one drift (S7 "2008 endangered" -> "2008 listed endangered")
+  reconciled before ship.
+- DOCKET: no new AI-infrastructure decision (a beluga-monitoring story is not infrastructure). Material
+  in-window update tracked: the City of Houston ban ordinance vs the AIDEA Mat-Su data-center park (Aug 13
+  council vote added). Re-verified STAK (comment closed, pending final decision), AKLNG (third special
+  session July 27), Air Force EUL (no award as of July 19). docket_alerts result noted at ship.
+- NEXT: a published beluga-model accuracy number or a Sealaska Tlingit-AI-translator second source remain
+  strong future angles; the akthree-on-opaque-bg object-hero helper would retire the chronic flat-hero cap.
+
+
 
 - FULL-STUDIO RUN, no usage-limit degradation. 6 scouts + fact-checker + 3 treatment-directors +
   copywriter + 5 pixel critics + flow-critic + scorer all ran. Shipped 8.55 vs 8.3, vector PDF 2.2MB,

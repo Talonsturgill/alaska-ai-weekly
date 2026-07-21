@@ -297,6 +297,30 @@
     "Gradebook-page motif + evolving pencil (NEW): a ruled gradebook/ledger page as the shared editorial substrate carried by ONE pencil that changes STATE every slide and whose LENGTH encodes a shrinking deadline runway (full at the hero, worn stub near the deadline), plus one rendered object hero of the same pencil; carries a text/policy story with 8 flat editorial slides and one climbed rung of the rendered ladder. Generalizes to any rulemaking, policy, drafting, or education story."
    ],
    "notes": "Scored 8.55 vs 8.3, zero hard fails, vector PDF 2.2MB. Weakest = artwork craft (7): 8 of 9 slides flat editorial (deliberately argued) carried by one rendered pencil hero that still reads slightly like a gold rod without a fully distinct graphite writing tip. Story-art fusion 8. Net-new topic (AI in K-12 education, never covered in 11 prior decks). Low-contrast accent furniture (gold counter on paper, red-on-cream) darkened before ship. Flow-critic SHIP 8.3 sequence-reads-as-one."
+  },
+  {
+   "run_date": "2026-07-21",
+   "carousel_no": 13,
+   "slide_count": 9,
+   "hero_structure": "Continuous underwater Cook Inlet depth-world (camera descends the water column) with a crafted stylized illustrated beluga hero (S3), a crafted 3D steel hydrophone (S4), and a SINGLE warm gold 'call' motif that changes STATE but NEVER multiplies. NOT thermal search-grid over AK3D valley (9), iso wiring-diagram (10), globe bookends + buried cable (11), or gradebook-page + pencil (12).",
+   "atmosphere": "abyssal Cook Inlet water column: steel-teal murk, volumetric surface shafts, marine snow, a glacial-silt ship-noise band. NOT blueprint-night iso (10), polar-night permafrost-ochre (11), gradebook-at-night (12).",
+   "depth_technique": "multiplane parallax water column + volumetric surface shafts + DOF foreground particulate + a crafted 3D hydrophone (cabinet extrusion + rim light, S4); the S3 beluga hero is a shaded 2D illustration argued deliberate (akthree GPU path attempted but the transparent-subject black-frame snapshot sentinel false-negatived, forcing the designed Canvas fallback). Honest parallel-linear projection on the S7 chart.",
+   "line_voice": "instrument/editorial + transit/systems (ring gates, classify fork + human loop, boundary box, leaders, drafting furniture)",
+   "continuity_device": "camera-descent (mono depth readout as progress meter) + motif:single-gold-call-that-never-multiplies (seals into the Polaris at close) + ship-noise-band edge-tease. NOT cable/signal spine (11), NOT gradebook+pencil (12).",
+   "hook_archetype": "sensory/number cold-open (a single faint gold call deep in dark water + the '331 LEFT' stat). NOT direct-question (10), place-paradox (11), before-after/named-tension (12).",
+   "palette_family": "abyssal-teal + glacial-silt + beluga-pearl + call-gold (deep_night #02060F / water #06202B/#0A2A38/#0E2A3A, silt #47575B, pearl #EAF2F0, snow #F4F8FF, gold #FFC72C RESERVED for the call / the S7 331 datapoint / the Polaris). NOT blueprint+cyan+salmon+parchment (10), polar-navy+cyan+ochre (11), chalkboard-slate+lit-paper (12).",
+   "type_pairing": "Space Grotesk (display + body/labels) + JetBrains Mono (instrument). Pure cool, no serif. NOT Archivo+Manrope+JBMono (11), NOT Bricolage+Instrument Serif+JBMono (12).",
+   "narrative_structure": "argument / honesty-as-edge: sensory hook -> the machine (detect+classify) -> the stakes (beluga hero, down ~80%) -> the noise problem -> how it works (+ human loop) -> satellite breather (the one altitude flip) -> keepable honest chart (1,300->279->331 hedged) -> the boundary/limit (measures but cannot move) -> single ask.",
+   "variance_dials": {
+    "design_variance": 4,
+    "visual_density": 3,
+    "type_temperature": 2
+   },
+   "new_techniques_logged": [
+    "Single-call-that-never-multiplies motif: ONE warm signal-point that changes STATE across the whole deck (cover faint call -> detect-ring center -> descending needle -> beluga classify node -> chart 331 datapoint -> Polaris seal) but is NEVER duplicated, so 'a clearer signal is not more whales'; the restraint IS the honesty argument. Pairs with a visibly UNCHANGED environment S1 vs S8.",
+    "Boundary-box limit beat: the instrument drawn inside a dashed frame; the untouched threats (noise/prey/habitat) drawn as arrows that STOP at the wall with a red blocked-cap and no intake port = 'the machine measures the whale, it cannot move it'. Generalizes to any better-instrument-not-a-fix story."
+   ],
+   "notes": "Scored 8.77 vs 8.3. Story-art fusion 9 (the never-multiplying call + the unchanged water + the honest chart + the boundary box). Variety 9. Weakest = artwork craft 7: the S3 beluga shipped as the Canvas fallback and reads flat/cartoonish (akthree transparent-subject snapshot false-negative); dead lower thirds on S3/S5/S8. Flow-critic SHIP, sequence_reads_as_one true, motif_reads_across_all_9 true."
   }
  ]
 }

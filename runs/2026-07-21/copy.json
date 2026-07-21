@@ -1,0 +1,148 @@
+{
+ "document_title": "A Better Ear Is Not a Recovery",
+ "slides": [
+  {
+   "n": 1,
+   "kicker": "COOK INLET BELUGA  ·  331 LEFT",
+   "headline": "Now a machine can\nhear them through\nthe ship noise.",
+   "body": "",
+   "annotations": [],
+   "labels": [
+    "ALASKA.AI",
+    "61 13 N  149 54 W"
+   ],
+   "counter": "01 / 09"
+  },
+  {
+   "n": 2,
+   "kicker": "THE MACHINE",
+   "headline": "Two gates. One\nwhite whale.",
+   "body": "NOAA Fisheries, Microsoft AI for Good and Alaska Fish and Game built a deep learning listener in two stages. Stage one flags a sound. Stage two names the species behind it.",
+   "annotations": [],
+   "labels": [
+    "STAGE 1  DETECT",
+    "STAGE 2  CLASSIFY",
+    "-05 M"
+   ],
+   "counter": "02 / 09"
+  },
+  {
+   "n": 3,
+   "kicker": "THE STAKES",
+   "headline": "Down almost 80\npercent.",
+   "body": "Cook Inlet's belugas are a genetically distinct population, cut off from every other Alaska stock. They fell from about 1,300 whales in 1979 to 279 by 2018, and were listed endangered in 2008.",
+   "annotations": [
+    "1,300 in 1979   to   279 in 2018"
+   ],
+   "labels": [
+    "-20 M"
+   ],
+   "counter": "03 / 09"
+  },
+  {
+   "n": 4,
+   "kicker": "WHY IT IS HARD",
+   "headline": "A whale in a wall\nof noise.",
+   "body": "Ocean noise is one of the biggest threats NOAA lists for these belugas. In a crowded inlet a single call can vanish under a passing ship. Hearing them at all is the first problem.",
+   "annotations": [],
+   "labels": [
+    "SHIP NOISE  ||||||||||||  HIGH",
+    "BELUGA CALL  |  faint",
+    "-25 M"
+   ],
+   "counter": "04 / 09"
+  },
+  {
+   "n": 5,
+   "kicker": "STAGE 1  ->  STAGE 2",
+   "headline": "It learns the calls\nit used to miss.",
+   "body": "The model uses contrastive audio language models and active learning. It sorts a sound into beluga, killer whale or humpback, flags the calls it is unsure of for a person to label, and firms up a daily read of where belugas are.",
+   "annotations": [],
+   "labels": [
+    "BELUGA",
+    "KILLER WHALE",
+    "HUMPBACK",
+    "UNSURE -> HUMAN",
+    "-30 M"
+   ],
+   "counter": "05 / 09"
+  },
+  {
+   "n": 6,
+   "kicker": "A SECOND SENSE",
+   "headline": "Ears below.\nEyes above.",
+   "body": "A separate NOAA led effort, with the U.S. Geological Survey, Microsoft AI for Good and the Naval Research Laboratory, is teaching a cloud model to spot the same whales in satellite images.",
+   "annotations": [],
+   "labels": [
+    "NOAA",
+    "USGS",
+    "MICROSOFT AI FOR GOOD",
+    "NAVAL RESEARCH LAB",
+    "+ SURFACE"
+   ],
+   "counter": "06 / 09"
+  },
+  {
+   "n": 7,
+   "kicker": "THE HONEST NUMBERS",
+   "headline": "331 today. Still far\nbelow 1979.",
+   "body": "",
+   "annotations": [
+    "NOAA says 331 may be stabilizing, still about three quarters below the 1,300 of 1979."
+   ],
+   "labels": [
+    "1979",
+    "2007 hunt closed",
+    "2008 listed endangered",
+    "2011 critical habitat",
+    "2018",
+    "now",
+    "-20 M"
+   ],
+   "counter": "07 / 09"
+  },
+  {
+   "n": 8,
+   "kicker": "THE LIMIT",
+   "headline": "The machine measures\nthe whale. It cannot\nmove it.",
+   "body": "A sharper ear tells managers where and when the belugas are. It does not quiet the ships, refill the prey, or clear the inlet. The hunt has been closed since 2007, and the whales still have not recovered.",
+   "annotations": [],
+   "labels": [
+    "SHIP NOISE",
+    "PREY",
+    "HABITAT",
+    "-20 M"
+   ],
+   "counter": "08 / 09"
+  },
+  {
+   "n": 9,
+   "kicker": "",
+   "headline": "A better ear is\nnot a recovery.",
+   "body": "AI can finally hear Alaska's most endangered whale. What would it take to bring it back?",
+   "annotations": [],
+   "labels": [
+    "Sources in comments",
+    "ALASKA.AI",
+    "alaskaaihq.com"
+   ],
+   "counter": "09 / 09"
+  }
+ ],
+ "caption": "Cook Inlet has about 331 belugas left, and AI can finally hear them through the ship noise.\n\nNOAA Fisheries, Microsoft AI for Good and Alaska Fish and Game built a two stage listener: one model flags a sound, another names the species. A separate NOAA effort is adding satellite eyes.\n\nThese 9 slides walk through the machine, the wall of noise it fights, and one honest chart: 331 today, still about three quarters below the 1,300 counted in 1979.\n\nA sharper ear tells managers where and when the belugas are. It does not quiet the ships or refill the prey. So what would it actually take to turn a clearer signal into more whales?\n\n#CookInletBeluga #MarineBioacoustics #AlaskaScience",
+ "hashtags": [
+  "#CookInletBeluga",
+  "#MarineBioacoustics",
+  "#AlaskaScience"
+ ],
+ "first_comment": "Sources for this deck, primary first.\n\nMarine Mammal Science, June 7 2026, https://doi.org/10.1111/mms.70213\nNOAA Fisheries, Cook Inlet beluga whale species page, https://www.fisheries.noaa.gov/species/beluga-whale\nNOAA Fisheries, satellite monitoring of Cook Inlet belugas, https://www.fisheries.noaa.gov/alaska/science-data/satellite-monitoring-cook-inlet-beluga-whales\n\nHonesty note. The acoustic paper's methods here are drawn from its published abstract, and no detection accuracy figure is claimed because none appears in that abstract.\n\nKnow this story firsthand? Add context or a correction below.",
+ "aftercare": [
+  "Post from a personal profile if possible; the analytical voice travels further from a person than a page. Tue to Thu 8 to 11am AKT are strong slots; cadence is your call.",
+  "Verify the PDF uploaded as a document (carousel) post, not flat images, and that all 9 slides swipe in order.",
+  "Paste per-slide alt text when you upload so the deck is accessible and ranker-legible.",
+  "Confirm the 3 hashtags sit at the very end of the caption and no link is in the body.",
+  "Paste the sources block as the first comment within 60 seconds of posting.",
+  "Reply to comments in the first 90 minutes; note saves and comments after 48 hours for the ledger."
+ ],
+ "post_copy": "Cook Inlet has about 331 belugas left, and AI can finally hear them through the ship noise.\n\nNOAA Fisheries, Microsoft AI for Good and Alaska Fish and Game built a two stage listener: one model flags a sound, another names the species. A separate NOAA effort is adding satellite eyes.\n\nThese 9 slides walk through the machine, the wall of noise it fights, and one honest chart: 331 today, still about three quarters below the 1,300 counted in 1979.\n\nA sharper ear tells managers where and when the belugas are. It does not quiet the ships or refill the prey. So what would it actually take to turn a clearer signal into more whales?\n\n#CookInletBeluga #MarineBioacoustics #AlaskaScience"
+}

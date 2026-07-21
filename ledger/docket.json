@@ -151,6 +151,10 @@
     {
      "date": "2026-07-20",
      "note": "Re-verified via Northern Journal. The extended written comment window closed July 17 with more than 500 comments on record and fewer than a dozen in support, and DNR will assess the comments before a final decision on the 50-year lease. No Final Finding and Decision is posted yet."
+    },
+    {
+     "date": "2026-07-21",
+     "note": "Carried forward against Alaska Beacon and DataCenterDynamics reporting. The written comment window on ADL 422741 closed 4:30 p.m. July 17 with more than 500 comments on record and fewer than a dozen in favor, and the roughly one square mile campus (up to 3 GW, an estimated 350 to 500 million cubic feet of gas per day) now sits with the DNR Division of Oil and Gas for a Final Finding and Decision. No decision is posted yet this run."
     }
    ]
   },
@@ -221,6 +225,10 @@
     {
      "date": "2026-07-17",
      "note": "Lease proposals were due June 29 and no developer selection or award has been made public as of this run. Carried forward as pending."
+    },
+    {
+     "date": "2026-07-21",
+     "note": "A July 19 industry analysis (AIX Energy) notes the Alaska Enhanced Use Lease solicitation for commercial AI data centers on about 4,700 acres across 12 parcels at JBER, Eielson and Clear has moved out of its open proposal phase with no developer award announced, and that unlike the Lower 48 portfolio (which set 100 MW and 500 million dollar minimums) the Alaska request's specific megawatt and capital thresholds are not disclosed. Carried forward as pending decision."
     }
    ]
   },
@@ -408,6 +416,10 @@
     {
      "date": "2026-07-19",
      "note": "The second special session ended today with the Alaska LNG gasline tax bill still unresolved. On July 16 the House deadlocked 19 to 19 and the Senate passed the bill 11 to 8 with a 9.4 percent pass-through tax on S corp oil and gas entities, which Governor Dunleavy rejected. He called a third special session to convene July 27 in Juneau, so the pipeline tax terms stay unsettled and the AI and data-center link stays indirect."
+    },
+    {
+     "date": "2026-07-21",
+     "note": "Six days out from the third special session, which convenes July 27 in Juneau. Per Anchorage Daily News and Alaska Public Media reporting from July 16 and July 20 the up to 55 billion dollar, 800 mile gas line tax terms remain unsettled after the July 16 House deadlock, with some legislators blaming Hilcorp for the bill's collapse and the governor rejecting that claim. The tie to AI compute stays indirect, the administration has courted large gas demand, including proposed data centers, to help justify the line."
     }
    ]
   },
@@ -469,6 +481,11 @@
      "kind": "milestone"
     },
     {
+     "date": "2026-08-13",
+     "label": "Houston City Council vote on a data-center ban ordinance (postponed from July 16)",
+     "kind": "vote"
+    },
+    {
      "date": "2026-08-19",
      "label": "Public comment closes",
      "kind": "deadline"
@@ -497,7 +514,7 @@
     }
    ],
    "first_seen": "2026-07-17",
-   "last_updated": "2026-07-18",
+   "last_updated": "2026-07-21",
    "history": [
     {
      "date": "2026-07-17",
@@ -506,6 +523,10 @@
     {
      "date": "2026-07-18",
      "note": "Re-verified against Alaska Beacon and Alaska News Source. The 41 page DNR preliminary decision would transfer about 30 square miles of state land north of Houston to AIDEA at no cost for a multi use industrial and energy development district that includes data centers, with public comment open through 5 p.m. August 19. AIDEA director Randy Ruaro said there are no pre determined and set land use decisions. Houston Council Member Johansen introduced a June ordinance to ban data centers within city limits and the council postponed the vote to August 13. Unlike the off grid North Slope campus, a Railbelt data center here could move household bills either way depending on the utility rate deal."
+    },
+    {
+     "date": "2026-07-21",
+     "note": "Re-verified against Mat-Su Sentinel and Alaska News Source reporting from July 15 and 16. The City of Houston council took up Council Member Lisa Johansen's ordinance to ban data center development inside city limits and voted July 16 to postpone action to its August 13 meeting, so a small municipality is now moving to zone out the buildout on the state parcel next door on permafrost thaw and water supply grounds. DNR public comment on the no cost land transfer to AIDEA still runs through 5 p.m. August 19. Added the August 13 council vote as a tracked key date."
     }
    ]
   },

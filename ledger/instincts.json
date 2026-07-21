@@ -31,9 +31,9 @@
    "id": "machine-qa-is-not-taste",
    "learned": "2026-07-08",
    "instinct": "Never treat a machine_qa PASS as composition approval; the pixel critics judge composition, hierarchy, and collision at full size and thumb size.",
-   "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective. | CONFIRMED 2026-07-11: critics caught ~10 canvas-vs-DOM overlaps + low-contrast in-section labels that machine_qa PASSED (S2 legend/homes, S3 curve labels, S4 readouts on ochre, S6 SUSPENDED, S7 flag mash, S8 context on ochre). | CONFIRMED 2026-07-13: pixel critics caught a favored honesty panel (S3), a bottle-read turbine (S4), and a strikethrough ledger (S7) that machine_qa PASSED clean. | CONFIRMED 2026-07-14: qa PASS with 0 warnings, but the ship decision rested on the showrunner reading every full-size PNG and the contact sheet for composition | CONFIRMED 2026-07-18: qa PASS 0/0 yet showrunner+pixel critics caught S3 body-vs-readout collision, S4 tight gutter, S6 parchment contrast, S7 label-box overprint, S8 canvas-label routing; composition read by eye and critics, not qa.",
+   "evidence": "A slide with the terrain crammed into the bottom 15% and a stat row colliding with the ridge passed every objective gate. | CONFIRMED 2026-07-08: pixel/scorer caught 4 DOM collisions (slide 3 overlap hard fail, slide 8 door graze, slide 9 coastline, slide 2 crowding) that machine_qa PASSED | CONFIRMED 2026-07-09: machine_qa PASSED (WARN) but pixel critics caught the S4 '12 fish' claim being uncountable, the S5 unblurred foreground (DOF), and the S6 dishonest 0-year nub bar -- all composition/honesty, not objective. | CONFIRMED 2026-07-11: critics caught ~10 canvas-vs-DOM overlaps + low-contrast in-section labels that machine_qa PASSED (S2 legend/homes, S3 curve labels, S4 readouts on ochre, S6 SUSPENDED, S7 flag mash, S8 context on ochre). | CONFIRMED 2026-07-13: pixel critics caught a favored honesty panel (S3), a bottle-read turbine (S4), and a strikethrough ledger (S7) that machine_qa PASSED clean. | CONFIRMED 2026-07-14: qa PASS with 0 warnings, but the ship decision rested on the showrunner reading every full-size PNG and the contact sheet for composition | CONFIRMED 2026-07-18: qa PASS 0/0 yet showrunner+pixel critics caught S3 body-vs-readout collision, S4 tight gutter, S6 parchment contrast, S7 label-box overprint, S8 canvas-label routing; composition read by eye and critics, not qa. | CONFIRMED 2026-07-21: qa PASS 0/0 yet pixel critics caught S2 top-heavy dead-lower-band, S4 core metaphor not reading (faint noise band + needle-as-cable), S8 gold leak on input labels, S3 8-line body -- all composition/semantic, invisible to qa.",
    "confidence": 0.99,
-   "last_confirmed": "2026-07-18"
+   "last_confirmed": "2026-07-21"
   },
   {
    "id": "d3-zoom-manual",
@@ -47,9 +47,9 @@
    "id": "verify-body-line-count",
    "learned": "2026-07-08",
    "instinct": "Before rendering, sanity-check long serif/body copy line counts against any fixed-position labels, bars, or plates; DOM text overlaps pass machine QA but fail the eye.",
-   "evidence": "Slide 3 body wrapped to 4 lines and overlapped the 'URBAN ALASKA GRID PEAK' bar label (a scorer-caught hard fail); slide 5 quote 4 slid under the Boyle plate. Both passed machine_qa safe-zone checks. | CONFIRMED 2026-07-09: four headline-wrap collisions (S1/S4/S7/S8) all traced to a display headline in a container narrower than its longest line; each machine_qa-FAILED as a text overprint. | CONFIRMED 2026-07-11: S2/S3/S4 body blocks overran their planned line counts into the section; capping max-width so the body ENDS in the sky zone fixed all three. | CONFIRMED 2026-07-18: S3 body overran into the readouts (qa FAILed the safe-zone but the collision was a relayout fix); capping the measure so it ends in the sky zone cleared it.",
-   "confidence": 0.95,
-   "last_confirmed": "2026-07-18"
+   "evidence": "Slide 3 body wrapped to 4 lines and overlapped the 'URBAN ALASKA GRID PEAK' bar label (a scorer-caught hard fail); slide 5 quote 4 slid under the Boyle plate. Both passed machine_qa safe-zone checks. | CONFIRMED 2026-07-09: four headline-wrap collisions (S1/S4/S7/S8) all traced to a display headline in a container narrower than its longest line; each machine_qa-FAILED as a text overprint. | CONFIRMED 2026-07-11: S2/S3/S4 body blocks overran their planned line counts into the section; capping max-width so the body ENDS in the sky zone fixed all three. | CONFIRMED 2026-07-18: S3 body overran into the readouts (qa FAILed the safe-zone but the collision was a relayout fix); capping the measure so it ends in the sky zone cleared it. | CONFIRMED 2026-07-21: S3 body wrapped to 8 lines vs a 6-line plan in a narrow column beside the whale; widening the measure + one font step down fixed it.",
+   "confidence": 0.99,
+   "last_confirmed": "2026-07-21"
   },
   {
    "id": "data-decorative-on-leaf",
@@ -71,9 +71,9 @@
    "id": "budget-the-lower-third",
    "learned": "2026-07-09",
    "instinct": "Budget the bottom third of every slide deliberately: a data readout, a caption, an anchor, or an intentional quiet zone -- do not let it default to dead empty space the scorer reads as thin craft.",
-   "evidence": "Scorer (8.83) capped Artwork Craft at 7 partly for 'large empty lower thirds' on several slides (S2, S6, S7, S8) even though every slide passed gates and critics.",
-   "confidence": 0.6,
-   "last_confirmed": "2026-07-09"
+   "evidence": "Scorer (8.83) capped Artwork Craft at 7 partly for 'large empty lower thirds' on several slides (S2, S6, S7, S8) even though every slide passed gates and critics. | CONFIRMED 2026-07-21: pixel critics flagged dead lower ~40% on S2 and S8; lowering/enlarging the diagram and dropping the boundary box filled them.",
+   "confidence": 0.65,
+   "last_confirmed": "2026-07-21"
   },
   {
    "instinct": "Canvas-drawn art can overprint DOM text without tripping qa.py (it only checks DOM line boxes); route every canvas path/arc/diagram around the text blocks at PLAN time and have pixel critics explicitly check canvas-vs-text collision.",
@@ -266,6 +266,30 @@
    "instinct": "An akthree object hero still reads as a monochrome gold/plastic rod unless its STORY-CRITICAL functional detail is a distinct contrasting material (a dark graphite writing tip actually contacting a drawn line), because a warm rim over a single-material barrel gilds the whole object. Give the one designated hero its key detail in a contrasting material and place it on the thing it acts on, not just good lighting.",
    "evidence": "Run 12 S5 pencil: pixel + scorer both read it as slightly 'gold rod'; darkening the nib and adding a half-written line under the tip helped but the barrel still gilds under the rim. Logged as the artwork-craft growth edge (7).",
    "confidence": 0.6
+  },
+  {
+   "id": "akthree-transparent-subject-snapshot-false-negative",
+   "learned": "2026-07-21",
+   "instinct": "A rendered akthree object composited over a TRANSPARENT background (alpha renderer, subject filling under ~half the frame) makes AKT.snapshot's black-frame sentinel false-negative, because most of its 24 random samples hit empty pixels, so .ok reads false and the slide silently drops to its Canvas fallback. Either render the akthree subject on an OPAQUE in-palette background and composite the whole frame, or design the 2D illustration to BE the hero; do not rely on transparent-bg akthree for a small foreground subject.",
+   "evidence": "Run 13 S3 beluga: alpha-composited akthree whale snapshot returned ok=false every render (transparent water), forcing the Canvas fallback, which shipped and scored the deck's weakest criterion (artwork-craft 7, 'reads flat').",
+   "confidence": 0.7,
+   "last_confirmed": "2026-07-21"
+  },
+  {
+   "id": "audit-accent-leak-before-render",
+   "instinct": "Reserve the deck's single warm accent for its ONE semantic meaning and audit EVERY secondary label/kicker/readout for accent-color leak BEFORE render; the recurring pixel-critic catch is the accent hue bleeding onto elements that are not the accent (a gold noise readout, gold threat labels, a gold kicker) which inverts or dilutes the semantics. Cool everything that is not the accent.",
+   "evidence": "Run 13: pixel critics caught gold on the S4 SHIP NOISE readout (noise is not the hero color), the S8 SHIP NOISE/PREY/HABITAT input labels, and the S1 kicker, all diluting the 'gold = the whale's call' rule; recoloring them cool restored the single-accent read.",
+   "confidence": 0.72,
+   "learned": "2026-07-21",
+   "last_confirmed": "2026-07-21"
+  },
+  {
+   "id": "never-multiplying-motif-as-honesty",
+   "instinct": "For a 'better instrument, not a fix' story, a single evolving motif-point that NEVER multiplies plus a visibly UNCHANGED environment across the deck argues the thesis better than any caption: one call, never a chorus (a clearer signal is not more whales), and the same cold water on the first content slide and the turn slide proves 'measures but cannot move'. Pair with a boundary-box beat (inputs the instrument has no port for).",
+   "evidence": "Run 13 (A Better Ear Is Not a Recovery): scorer story-art-fusion 9 and flow-critic motif_reads_across_all_9 true both credited the single-gold-call-that-never-multiplies + water-unchanged-S1-vs-S8 + the S8 boundary box as the thesis rendered as design.",
+   "confidence": 0.7,
+   "learned": "2026-07-21",
+   "last_confirmed": "2026-07-21"
   }
  ]
 }

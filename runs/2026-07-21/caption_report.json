@@ -1,0 +1,13 @@
+{
+  "chars": 685,
+  "hook": "Cook Inlet has about 331 belugas left, and AI can finally hear them through the ship noise.",
+  "hook_len": 91,
+  "hashtags": [
+    "#CookInletBeluga",
+    "#MarineBioacoustics",
+    "#AlaskaScience"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

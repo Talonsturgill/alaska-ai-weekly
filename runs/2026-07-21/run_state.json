@@ -1,0 +1,23 @@
+{
+ "run_date": "2026-07-21",
+ "carousel_no": 13,
+ "phases": {
+  "wake": "done",
+  "craft_refresh": "done (nothing new; FIELD_NOTES unchanged)",
+  "research": "done (6 scouts)",
+  "claims": "done (16 beluga + 6 caribou verified)",
+  "docket": "done (AIDEA Houston ban ordinance + STAK/AKLNG/AirForce re-verify)",
+  "selection": "done (Cook Inlet beluga AI acoustic monitoring)",
+  "directors_room": "done (3 treatments synthesized; storyboard.md written, gate PASS)",
+  "copy": "done (caption PASS 685c; copy.json; first_comment lint clean)",
+  "art_build": "done (9 slides, qa PASS 0/0, vector PDF 8.13MB)",
+  "pixel_review": "done (all 9 ship after 1 revision round on S2/3/4/8)",
+  "flow_review": "done (flow-critic SHIP, sequence_reads_as_one)",
+  "assemble": "done (vector PDF 8.17MB, 9 slides)",
+  "scoring": "done (8.77 vs 8.3, SHIP, zero hard fails)",
+  "ship": "committing (runs/ + ledgers + docs + knowledge); merge + gmail pending",
+  "upgrade": "pending",
+  "gmail": "pending",
+  "retro": "pending"
+ }
+}
