@@ -266,14 +266,20 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const {fps} = useVideoConfig();
   const voice = useVoice();
   const gf = from + f;
-  const PUSH_AT = 74; // ~2.5s scene-time: push to Dendurent
-  const SNAP_AT = 96; // the verbatim-quote snap-zoom
-  const push = interpolate(f, [PUSH_AT, PUSH_AT + 40], [1.0, 1.32], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const snap = spring({frame: f - SNAP_AT, fps, config: {damping: 10, stiffness: 140}});
-  const snapScale = 1 + Math.min(0.55, snap * 0.55);
-  const pulled = interpolate(f, [PUSH_AT + 6, PUSH_AT + 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const pulledPrev = interpolate(f - 1, [PUSH_AT + 6, PUSH_AT + 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const capOp = interpolate(f, [SNAP_AT, SNAP_AT + 12, PUSH_AT + 170, PUSH_AT + 185], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const PUSH_AT = 44; // push to Dendurent early, so her quote reads BEFORE VanBuskirk enters
+  const SNAP_AT = 50; // the verbatim-quote emphasis punch (with the card appearing)
+  // 2026-07-21: gentle push in on Dendurent while her quote card holds (~2.5s to read), then RELEASE
+  // back to a WIDE two-shot and clear the card BEFORE VanBuskirk enters (local 130), so her
+  // articulated walk-in is fully framed with no head occlusion. Previously the "snap" was a spring
+  // that settled to +0.55 and left the whole scene at ~2x zoom, cropping VanBuskirk's entire stride
+  // off the right edge, and the card lingered over both heads -- which is why the panel kept reading
+  // her walk as a rigid sprite-slide.
+  const push = interpolate(f, [PUSH_AT, PUSH_AT + 24, 108, 128], [1.0, 1.15, 1.15, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
+  const punch = f > SNAP_AT && f < SNAP_AT + 26 ? 0.16 * Math.sin(((f - SNAP_AT) / 26) * Math.PI) : 0; // transient quote emphasis, not a sustained zoom
+  const camScale = push + punch;
+  const pulled = interpolate(f, [8, 34], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); // Dendurent's ADAPTABLE lever pulls during the establish
+  const pulledPrev = interpolate(f - 1, [8, 34], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const capOp = interpolate(f, [SNAP_AT, SNAP_AT + 14, 112, 128], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); // card clears before the walk (130)
   // VanBuskirk strides in from beat 10 onward (the later ~third of the shot). This scene
   // (shot E) runs 210 local frames — the stride window must land INSIDE that, with a beat
   // to spare for the arrived pose + nameplate to actually read, or the stride silently never
@@ -288,7 +294,7 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
         <rect width={1080} height={1920} fill={SKY} opacity={0.5} />
         <rect x={0} y={1200} width={1080} height={720} fill={OAK_D} />
         <ContactShadow cx={540} cy={1240} rx={480} ry={50} opacity={0.3} />
-        <g transform={`translate(540,${1050 - (push - 1) * 200}) scale(${push * snapScale}) translate(-540,-1050)`}>
+        <g transform={`translate(540,${1050 - (camScale - 1) * 200}) scale(${camScale}) translate(-540,-1050)`}>
           {/* the GearLever bank, centered */}
           <g transform="translate(300,1150)">
             <MotionBlur vx={(pulled - pulledPrev) * 260} vy={(pulled - pulledPrev) * 260} gain={1}>
@@ -302,14 +308,16 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
           <g transform="translate(300,980)">
             <Character frame={f} x={0} y={0} scale={0.85} facing={1} outfit="suit" emotion="neutral" pose="stand" talking={voice.opennessAt(gf) * 0.5} />
           </g>
-          {/* VanBuskirk striding to the CONCRETE lever */}
+          {/* VanBuskirk striding to the CONCRETE lever -- now an ARTICULATED walk: legs alternate
+              around the hips with the phase driven by her real travel (vbStride) so the feet don't
+              skate, until she plants (vbStride>0.88) and points. */}
           <g transform={`translate(${1020 - vbStride * 240},980)`}>
             <MotionBlur vx={vbVx} gain={0.6}>
-              <Character frame={f} x={0} y={0} scale={0.85} facing={-1} outfit="vest" emotion="neutral" pose={vbStride > 0.5 ? 'point' : 'stand'} />
+              <Character frame={f} x={0} y={0} scale={0.85} facing={-1} outfit="vest" emotion="neutral" pose={vbStride > 0.5 ? 'point' : 'stand'} walking={vbStride > 0.02 && vbStride < 0.88} walkPhase={vbStride * Math.PI * 4} />
             </MotionBlur>
           </g>
         </g>
-        {snap > 0.9 && snap < 1.4 && <SpeedLines cx={540} cy={960} frame={f} intensity={0.7} />}
+        {punch > 0.1 && <SpeedLines cx={540} cy={960} frame={f} intensity={0.7} />}
         {/* nameplates live OUTSIDE the push/snap-zoom camera group as fixed screen-space HUD
             labels so the snap-zoom (push*snapScale can reach ~2x) never crops or pans their
             text off-frame. Never show both at once: Dendurent's only in the wide shot before
@@ -319,11 +327,12 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
             than Dendurent's (y=880 not 780): by the time she arrives, Dendurent's verbatim quote
             card (top:520, ~230px tall) is still up, and the two used to overlap right where her
             plate rendered. */}
-        {vbStride < 0.15 && f < SNAP_AT + 4 && <Nameplate x={300} y={780} text="DENDURENT" sub="ADAPTABLE" />}
+        {f < SNAP_AT && <Nameplate x={300} y={780} text="DENDURENT" sub="ADAPTABLE" />}
         {vbStride > 0.6 && <Nameplate x={780} y={880} text="VANBUSKIRK" sub="CONCRETE" subColor={PAID} />}
       </svg>
-      {/* Dendurent's verbatim caption overlay */}
-      <div style={{position: 'absolute', top: 520, left: 60, right: 60, textAlign: 'center', opacity: capOp}}>
+      {/* Dendurent's verbatim caption overlay — sits in the UPPER third so it clears the pushed-in
+          character heads (which reach ~y=520 at 1.15x) instead of clipping them */}
+      <div style={{position: 'absolute', top: 180, left: 60, right: 60, textAlign: 'center', opacity: capOp}}>
         <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 40, lineHeight: 1.25, color: '#fff', background: 'rgba(27,33,48,0.9)', padding: '20px 26px', borderRadius: 14, border: `5px solid ${GLOW}`}}>
           "If you are putting such strict parameters, it may really limit where we're going to be continuously changing the language."
           <div style={{fontSize: 24, marginTop: 10, opacity: 0.85, fontWeight: 700}}>Kari Dendurent, KPBSD Assistant Superintendent</div>

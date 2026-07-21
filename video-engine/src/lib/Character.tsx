@@ -35,6 +35,12 @@ export interface CharacterProps {
   /** 0..1 mouth openness from lib/voice (useVoice().opennessAt) — when set, the
       mouth flaps with the narration instead of the static emotion shape */
   talking?: number;
+  /** true = play an articulated walk cycle (alternating leg swing around the hips,
+      a step-synced body bob, and an arm counter-swing) instead of standing still.
+      Optional `walkPhase` lets a scene drive the cycle from real travel distance so
+      the feet don't skate; when omitted the phase advances from the frame. */
+  walking?: boolean;
+  walkPhase?: number;
 }
 
 const OUTFITS: Record<Outfit, {main: string; shade: string; trim: string; pants: string}> = {
@@ -62,6 +68,8 @@ export const Character: React.FC<CharacterProps> = ({
   x = 0,
   y = 0,
   talking,
+  walking = false,
+  walkPhase,
 }) => {
   const c = OUTFITS[outfit];
   const breath = 1 + 0.018 * Math.sin(f / 13);
@@ -74,8 +82,18 @@ export const Character: React.FC<CharacterProps> = ({
   // spread WIDE by x so two figures in the same two-shot visibly sway out of lockstep (per the
   // flow-critic's cosmetic note), not merely a hair apart.
   const swayPhase = x * 0.02 + y * 0.003;
-  const sway = pose === 'stand' ? 6.8 * Math.sin(f / 44 + swayPhase) : 0;
-  const swayTilt = pose === 'stand' ? 1.7 * Math.sin(f / 44 + swayPhase) : 0;
+  const idle = pose === 'stand' && !walking; // a walking figure gets the stride cycle, not idle sway
+  const sway = idle ? 6.8 * Math.sin(f / 44 + swayPhase) : 0;
+  const swayTilt = idle ? 1.7 * Math.sin(f / 44 + swayPhase) : 0;
+  // ---- articulated walk cycle (2026-07-21 panel: the human leads "translate as rigid sprites,
+  // they don't walk"). When `walking`, the two legs swing fore/aft in opposition around the hips,
+  // the body bobs at 2x the step rate (up on mid-stride), and the arms counter-swing. Phase comes
+  // from the scene's real travel (`walkPhase`) when supplied so the feet don't skate, else advances
+  // from the frame. Amplitudes are tuned to read clearly at 9:16 phone scale without going rubbery.
+  const stridePh = walking ? (walkPhase !== undefined ? walkPhase : f * 0.5) : 0;
+  const legSwing = walking ? 22 * Math.sin(stridePh) : 0;         // deg, +left/-right leg
+  const walkBob = walking ? -7 * Math.abs(Math.sin(stridePh)) : 0; // lift on mid-stride
+  const armSwing = walking ? 16 * Math.sin(stridePh) : 0;         // arms counter-swing the legs
   const blink = ((f + 11) % 92) < 5;
   const skinShade = '#c99268';
   // per-instance ids so each figure's form-shading gradients stay unique in the doc
@@ -243,19 +261,22 @@ export const Character: React.FC<CharacterProps> = ({
       <g transform="translate(150,500)">
         {/* soft, light-direction contact shadow (AO) grounding the figure */}
         <ContactShadow cx={0} cy={4} rx={96} ry={18} opacity={0.42} blur={10} />
-        {/* legs */}
-        <rect x={-40} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
-        <rect x={-40} y={-160} width={34} height={150} rx={16} fill={INK} opacity={0.18} />
-        <rect x={8} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
-        {/* cloth-fold creases: cheap deterministic material texture (lighting.tsx's own doctrine
-            for "not a flat fill") so the pant legs read as fabric, not painted rectangles */}
-        <path d="M-30,-120 q6,20 -2,50" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
-        <path d="M18,-100 q6,24 -3,60" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
-        {/* boots */}
-        <path d="M-44,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
-        <path d="M4,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
-        {/* torso (breath) */}
-        <g transform={`translate(0,${-160 + bob}) scale(1,${breath}) translate(0,160)`}>
+        {/* legs + boots grouped PER SIDE around each hip (pivot at the leg top, y=-160) so a walk
+            swings each leg as a unit; the cloth crease + boot ride with their leg. Left and right
+            swing in opposition (legSwing / -legSwing) for a real alternating stride. */}
+        <g transform={`rotate(${legSwing} -23 -160)`}>
+          <rect x={-40} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
+          <rect x={-40} y={-160} width={34} height={150} rx={16} fill={INK} opacity={0.18} />
+          <path d="M-30,-120 q6,20 -2,50" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
+          <path d="M-44,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
+        </g>
+        <g transform={`rotate(${-legSwing} 25 -160)`}>
+          <rect x={8} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
+          <path d="M18,-100 q6,24 -3,60" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
+          <path d="M4,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
+        </g>
+        {/* torso (breath + walk bob) */}
+        <g transform={`translate(0,${-160 + bob + walkBob}) scale(1,${breath}) translate(0,160)`}>
           <g transform="translate(0,-160)">
             <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" fill={`url(#${uid}_body)`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
             {/* core shade on the shadow side + rim light on the sun-facing (left) contour */}
@@ -265,6 +286,14 @@ export const Character: React.FC<CharacterProps> = ({
             {/* fabric sheen band + under-shade so the jacket reads as material, not a fill */}
             <path d="M-60,-120 q60,18 120,4 l0,26 q-60,14 -120,-4 Z" fill="#ffffff" opacity={0.08} />
             <path d="M-88,-30 q88,26 176,0 l0,30 q-88,22 -176,0 Z" fill={tMain.shade} opacity={0.45} />
+            {/* VOLUMETRIC COAT MODELING (2026-07-21 panel: coats read "flat plain-fill" next to the
+                depth-lit props). The right already carries the core shadow; add the three cues that
+                turn a flat panel into a rounded FORM: a soft central light column offset toward the
+                upper-left key, a far-LEFT turn-shade so the lit edge rolls off instead of ending in a
+                hard flat line, and a hem ambient-occlusion band where the coat belly turns under. */}
+            <ellipse cx={-14} cy={-124} rx={30} ry={86} fill="#ffffff" opacity={0.08} />
+            <path d="M-92,-150 q6,-56 30,-58 l-3,22 q-22,7 -25,42 l-5,66 q-4,-40 3,-72 Z" fill={tMain.shade} opacity={0.24} />
+            <path d="M-84,-16 q84,26 168,0 l3,22 q-86,24 -174,0 Z" fill={INK} opacity={0.15} />
             {outfit === 'parka' && (
               <g>
                 <path d="M0,-196 L0,4" stroke={INK} strokeWidth={5} />
@@ -332,12 +361,13 @@ export const Character: React.FC<CharacterProps> = ({
               </g>
             )}
             {/* arms attach at shoulder height inside torso group (pose coords are authored
-                around y~260-360; shift them up to chest height in torso space) */}
-            <g transform="translate(0,-360)">{arms()}</g>
+                around y~260-360; shift them up to chest height in torso space). During a walk the
+                whole arm mass counter-swings the legs for upper-body follow-through. */}
+            <g transform={`translate(0,-360) rotate(${-armSwing * 0.5} 0 0)`}>{arms()}</g>
           </g>
         </g>
         {/* head — everyday Alaskan headgear (never the Native-coded fur ruff) */}
-        <g transform={`translate(0,${-368 + bob * 1.4})`}>
+        <g transform={`translate(0,${-368 + bob * 1.4 + walkBob})`}>
           {(() => {
             const hg = outfit === 'parka' ? 'trapper' : headgear;
             const beanieCol = c.main;
