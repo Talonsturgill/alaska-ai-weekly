@@ -77,8 +77,11 @@ ul.check{padding-left:20px;font-size:14px;} ul.check li{margin:5px 0;}
 import re as _re
 
 _POST_URL = _re.compile(r"https?://|doi\.org|www\.", _re.I)
-_SRC_HEAD = _re.compile(r"(?i)^\s*(sources?|credits?|music|audio|soundtrack|sound|track)\b"
-                        r"\s*($|[:,]|for\b|below\b|in\b|by\b|courtesy\b|credits?\b)")
+# Sources/credits headers ("Sources for this deck", "Credits") match loosely;
+# media words ("Music", "Audio", "Sound", "Track") need the stronger
+# by/courtesy/credit signal so story sentences about sound never match.
+_SRC_HEAD = _re.compile(r"(?i)^\s*(sources?|credits?)\b\s*($|[:,]|for\b|below\b|in\b)"
+                        r"|^\s*(music|audio|soundtrack|sound|track)\b\s*([:,]|by\b|courtesy\b|credits?\b)")
 
 
 def _strip_sources_from_post(text):

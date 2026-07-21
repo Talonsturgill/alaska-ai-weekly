@@ -80,8 +80,12 @@ def lint(text):
     # in the paste-ready comment blocks, never in the post (maintainer rule,
     # 2026-07-21: a delivered draft carried sources AND music credits in the
     # post above the hashtags as well as in their own sections).
-    if re.search(r"(?im)^\s*(sources?|credits?|music|audio|soundtrack|sound|track)\b"
-                 r"\s*($|[:,]|for\b|below\b|in\b|by\b|courtesy\b|credits?\b)", t):
+    # Two shapes: a sources header ("Sources...", "Sources for this deck") and a
+    # credit line ("Music, X", "Audio by Y", "Credits..."). Media words need the
+    # stronger by/courtesy/credit signal so story sentences like "Sound in Cook
+    # Inlet has doubled" never false-positive.
+    if re.search(r"(?im)^\s*(sources?|credits?)\b\s*($|[:,]|for\b|below\b|in\b)"
+                 r"|^\s*(music|audio|soundtrack|sound|track)\b\s*([:,]|by\b|courtesy\b|credits?\b)", t):
         fails.append("SOURCES/CREDITS: sources or credits block in the post copy; "
                      "they go ONLY in the comment paste blocks")
 
