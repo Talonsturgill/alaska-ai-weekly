@@ -318,3 +318,35 @@ mechanical TallyCounter adopted, mint dropped for cream-and-brass). Objective ga
 Caption Gate A PASS (2,052 chars, hook 138) + scorer 8.66 ship + editor fixes applied.
 Panel medians: 7.96 -> 8.36 after the verified fix round. VO: Gemini Sulafat take 0/3, score
 0.964, WER 0.071, pitch var 4.33 st, 59.0s.
+
+## 2026-07-21 — CRAFT SESSION (no episode): fish mastery + Anchorage kit + the smartness gate
+
+Owner-directed engine session after cold-watching the 07-20b cut. No video shipped; the
+2026-07-20b episode stays FINAL and untouched.
+
+1. lib/fishcraft.tsx NET-NEW — the shared fish-realism engine (chrome layer stack, shingle
+   scales, carangiform traveling-wave swim with emergent figure-8 tail, gill pulse, rippling
+   fin membranes). Doctrine + sources: docs/craft/FISHCRAFT.md. This also RETIRES the
+   "fish body-deformation swim" deferral from the 07-20b list: fish now swim on a spine wave,
+   not as rigid sprites.
+2. Sockeye REBUILT on fishcraft (v3, 8 taste rounds); Coho, RainbowTrout, Halibut NET-NEW
+   (owner: "salmon are silver and scaly and shiny" — chrome ocean phase is the default hero
+   look). Audition sheet: FishShowcase.tsx.
+3. Hard-won SVG rules now encoded in fishcraft + FISHCRAFT.md: single-closed-loop outlines
+   (two concatenated subpaths auto-close with chord artifacts: three taste rounds chased a
+   "shine stripe" that was actually unfilled background through the body); spec bands fade
+   before the caudal wrist; body profiles keep a wrist floor; uid() must hash ALL variant
+   props; never blur thin strokes (filled gradient bands instead).
+4. AnchorageSkylineBG NET-NEW in lib/biomes.tsx (4 taste rounds): Sleeping Lady, Chugach wall
+   with termination dust + Flattop, ConocoPhillips/Atwood slabs, Hotel Captain Cook mustard
+   steps, Cook Inlet, coastal trail; animated floatplane + Alaska Railroad. Plus two verified
+   local-flavor reference docs: docs/craft/ANCHORAGE_LANDMARKS.md and
+   docs/craft/ALASKA_NOSTALGIA.md (usage + sensitivity + trademark rules inside).
+5. NARRATIVE INTELLIGENCE fix (owner: the cut "didn't feel intelligently narrated, it felt
+   random"): §4.2 of prompts/dispatch_routine.md now carries the causal-chain law (every line
+   answers therefore/but/because; actors named before use; one story question; trim whole
+   facts, never connectives) and Phase 4.5 gains GATE 0E, a naive cold-read critic that sees
+   ONLY the VO text and must retell the causal chain, identify every actor from the text
+   alone, and state the piece's single question before any synth. Root cause: the 125-word
+   compression stripped connective tissue and every existing gate looked at visuals or
+   pacing; nobody ever read the script cold.
