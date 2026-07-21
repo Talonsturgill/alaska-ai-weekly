@@ -78,3 +78,13 @@ print("certifi CA ok:", certifi.where())
 PY
 done
 echo "setup_env: ready"
+
+# AUTO-PUSH GUARDRAIL (2026-07-21): the container is ephemeral and reclaimed on inactivity;
+# a run once lost a fully-built video because work was committed but never pushed. Activate the
+# tracked post-commit hook so EVERY commit on a run branch auto-mirrors to origin. core.hooksPath
+# is repo-local (not carried by a fresh clone), so we re-apply it here on every fresh container.
+if [ -f .githooks/post-commit ]; then
+  chmod +x .githooks/post-commit 2>/dev/null || true
+  git config core.hooksPath .githooks 2>/dev/null || true
+  echo "setup_env: auto-push post-commit hook activated (core.hooksPath=.githooks)"
+fi
