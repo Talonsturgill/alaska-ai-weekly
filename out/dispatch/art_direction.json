@@ -1,0 +1,12 @@
+{
+  "run": "2026-07-21c", "title": "Ear and Eye on the Ice-White Whale",
+  "palette": {"roles": {"sky":"#b9c4c7","water_surface":"#7f9791","water_deep":"#33463f","hero":"#eef2f1","accent_sensor":"#31e0b6","accent_lock":"#ffd24a","shadow":"#141d1b"},
+    "divergence": "silty pewter glacial water + ice-white whale + mint synthetic sonar + signal-gold lock + ink; not the prior dusk-indigo/copper or bone-tan/jade runs; only sharp saturated color is the synthetic sensor light"},
+  "shape_language": {"grammar": "rounded organic whale (living pole) vs sharp synthetic sensors (SatelliteEye angular body/wings/lens; ListeningMooring rigid cylinder + rings)"},
+  "casting": {"hero": "Beluga (fauna.tsx), rotates off ServerMachine",
+    "net_new": ["SatelliteEye (orbital robot eye / GAIA)", "ListeningMooring (seafloor robot ear)"],
+    "supporting": ["Raven (loopback button)", "AnchorageSkylineBG (lowkey Cook Inlet cameo)"]},
+  "craft_advance": {"primary": "WaterColumn underwater-light system in lib/lighting.tsx (god-rays, silt haze, caustics, marine snow)",
+    "supporting": "SatelliteEye + ListeningMooring in lib/sensors.tsx; SmellRings repurposed as sonar, ScanReticle as the orbital lock"},
+  "signature_shot": "S4 orbital zoom: punch down through clouds, reticle clamps the white smudge = beluga"
+}

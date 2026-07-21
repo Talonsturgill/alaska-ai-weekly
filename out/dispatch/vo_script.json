@@ -1,0 +1,24 @@
+{
+  "title": "Ear and Eye on the Ice-White Whale",
+  "run": "2026-07-21c",
+  "target_seconds": [50, 66],
+  "word_count": 127,
+  "lines": [
+    "Off Anchorage swims one of the rarest whales on Earth. It just got two watchers.",
+    "Noah switched on two A.I. systems to find Cook Inlet's belugas.",
+    "One listens. A deep learning model reads the noisy inlet and finds a single beluga call.",
+    "One looks. Guy-uh scans satellite photos from orbit for the white smudge of a whale.",
+    "Ear and eye, the same whale, at once, for the first time.",
+    "It matters because only about three thirty one of these belugas are left.",
+    "There were thirteen hundred in nineteen seventy nine. A drop of almost eighty percent.",
+    "But watching is not saving. Sharper eyes do not quiet the boats or refill the salmon these whales need.",
+    "What the A.I. gives Alaska is one hard, open number. Three thirty one.",
+    "Whether that becomes a floor to defend, or just a countdown on record, no machine decides."
+  ],
+  "caption_fixups": {
+    "Noah": "NOAA", "Guy-uh": "GAIA", "A.I.": "AI",
+    "three thirty one": "331", "Three thirty one": "331",
+    "thirteen hundred": "1,300", "nineteen seventy nine": "1979", "eighty percent": "80 percent"
+  },
+  "notes": "Spoken 'Noah'=NOAA and 'Guy-uh'=GAIA are phonetic respellings restored by caption_fixups. Numbers spoken as words, drawn as numerals. No em or en dashes. 127 words ~55-63s."
+}

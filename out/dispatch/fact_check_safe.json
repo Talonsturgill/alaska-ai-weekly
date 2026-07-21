@@ -1,0 +1,18 @@
+{
+  "story": "Two AI systems now watch Cook Inlet's endangered belugas: a robot ear (deep-learning passive acoustics) and a robot eye (GAIA satellite computer vision). Both fresh June 2026, NOAA-led. Honest turn: watching is not saving.",
+  "on_screen_safe": {
+    "population_now": "331 (NOAA most-recent estimate)",
+    "population_1979": "about 1,300 (NOAA, 1979)",
+    "population_2018": "279 (NOAA, 2018)",
+    "decline": "nearly 80% (1979 to 2018)",
+    "status": "Endangered under the Endangered Species Act (Cook Inlet DPS)",
+    "gaia": "GAIA = Geospatial Artificial Intelligence For Animals; machine learning / computer vision on very-high-resolution satellite imagery; NOAA page updated 06/25/2026",
+    "gaia_partners": "NOAA Fisheries, U.S. Geological Survey, Microsoft AI for Good, Naval Research Laboratory",
+    "gaia_areas": "5 areas across Cook Inlet: upper inlet (Susitna Delta, Chickaloon Bay, Turnagain and Knik Arms), Trading Bay, Redoubt Bay, Kenai, Tuxedni Bay",
+    "acoustic_paper": "Adaptive Acoustic Monitoring for Endangered Cook Inlet Beluga Whales in Complex Soundscapes, Marine Mammal Science, online June 7 2026, DOI 10.1111/mms.70213",
+    "acoustic_method": "open-source deep learning framework for passive acoustic monitoring; dual-stage model that separates signal detection from species classification",
+    "acoustic_team": "Manuel Castellote (NOAA Fisheries) + Microsoft AI for Good (Dodhia, Miao, Lavista Ferres)",
+    "honest_limit": "AI improves monitoring; it does not by itself reverse the decline. NOAA attributes the endangered status to ocean noise, prey limitations, habitat impacts, contaminants, predation, and strandings."
+  },
+  "do_not_use": ["381 (wrong; use 331)", "13,000 hours of audio (paywalled, unverified)", "5 to 7 month deployment cadence (unverified)", "the long robustness/adaptability/domain-generalization quote (unverified)"]
+}
