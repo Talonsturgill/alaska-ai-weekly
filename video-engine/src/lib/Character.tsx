@@ -72,8 +72,11 @@ export const Character: React.FC<CharacterProps> = ({
   walkPhase,
 }) => {
   const c = OUTFITS[outfit];
-  const breath = 1 + 0.018 * Math.sin(f / 13);
-  const bob = 3.4 * Math.sin(f / 13);
+  // breathing: a visible chest rise+fall. Bumped round 10 — the panel kept reading standers as
+  // "frozen sprites" partly because the old amplitude was too small to register in a ~0.5s review
+  // strip; a clearer breath (plus the weight-shift below) means any half-second window shows life.
+  const breath = 1 + 0.03 * Math.sin(f / 12);
+  const bob = 4.2 * Math.sin(f / 12);
   // idle weight-shift: a slow lateral hip sway + matching lean while standing still, so a
   // held beat (fork impasse, tally jam, button) reads as a person shifting their weight, not
   // a frozen sprite (a 2026-07-21 panel note across 5 rounds: "characters go static between
@@ -83,8 +86,14 @@ export const Character: React.FC<CharacterProps> = ({
   // flow-critic's cosmetic note), not merely a hair apart.
   const swayPhase = x * 0.02 + y * 0.003;
   const idle = pose === 'stand' && !walking; // a walking figure gets the stride cycle, not idle sway
-  const sway = idle ? 6.8 * Math.sin(f / 44 + swayPhase) : 0;
-  const swayTilt = idle ? 1.7 * Math.sin(f / 44 + swayPhase) : 0;
+  // idle life = a slow WEIGHT-SHIFT (big, ~3s period: the body eases onto one hip, holds, eases
+  // back) layered with a faster micro-sway, so a standing figure reads as a person shifting their
+  // weight rather than a frozen sprite. Round 10 added the weight-shift term on top of the round-6
+  // micro-sway: the panel kept reading standers as frozen because a single slow sine barely moves
+  // inside a ~0.5s review strip; the two-rate blend guarantees visible frame-to-frame motion.
+  const shift = idle ? 9 * Math.sin(f / 88 + swayPhase) : 0;   // weight-shift onto a hip
+  const sway = idle ? shift + 3.4 * Math.sin(f / 34 + swayPhase * 1.7) : 0;
+  const swayTilt = idle ? 2.4 * Math.sin(f / 88 + swayPhase) + 0.6 * Math.sin(f / 34 + swayPhase * 1.7) : 0;
   // ---- articulated walk cycle (2026-07-21 panel: the human leads "translate as rigid sprites,
   // they don't walk"). When `walking`, the two legs swing fore/aft in opposition around the hips,
   // the body bobs at 2x the step rate (up on mid-stride), and the arms counter-swing. Phase comes
@@ -157,8 +166,10 @@ export const Character: React.FC<CharacterProps> = ({
         {/* mouth — when `talking` is provided (0..1 from lib/voice), the mouth
             FLAPS with the narration instead of holding the static emotion shape */}
         {talking !== undefined ? (
-          <g transform="translate(2,14)">
-            <TalkMouth openness={talking} w={44} ink={INK}
+          <g transform="translate(2,15)">
+            {/* round 10: narrower mouth (44->36) so the talking shape reads as a subtler lit mouth
+                rather than the wide open pink grin the panel kept calling cartoon-simple */}
+            <TalkMouth openness={talking * 0.88} w={36} ink={INK}
                        mood={emotion === 'angry' || emotion === 'worried' ? 'frown' : emotion === 'smug' ? 'smile' : 'neutral'} />
           </g>
         ) : (

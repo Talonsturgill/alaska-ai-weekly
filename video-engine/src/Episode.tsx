@@ -564,9 +564,11 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
   // cue"). Each cue now springs in with a small scale overshoot + upward settle keyed to ITS start,
   // so the type pops on the beat instead of hard-cutting. Cheap, deterministic, phone-legible.
   const local = f - Math.round(cue.start * fps);
-  const pop = spring({frame: local, fps, config: {damping: 12, stiffness: 200}});
-  const scale = interpolate(pop, [0, 1], [0.9, 1], {extrapolateRight: 'clamp'});
-  const rise = interpolate(pop, [0, 1], [16, 0], {extrapolateRight: 'clamp'});
+  // a springier, longer pop (softer damping = a real overshoot that reads across ~0.5s, not a
+  // 3-frame snap the review strip sampled right past). Round 10: the panel couldn't SEE the pop.
+  const pop = spring({frame: local, fps, config: {damping: 9, stiffness: 130}});
+  const scale = interpolate(pop, [0, 1], [0.82, 1], {extrapolateRight: 'clamp'});
+  const rise = interpolate(pop, [0, 1], [26, 0], {extrapolateRight: 'clamp'});
   return (
     <div style={{position: 'absolute', bottom: 340, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 60px'}}>
       <div style={{background: 'rgba(27,33,48,0.84)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${GLOW}`, transform: `translateY(${rise}px) scale(${scale})`, transformOrigin: 'center bottom'}}>
