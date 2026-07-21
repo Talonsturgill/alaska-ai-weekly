@@ -14,6 +14,8 @@ import { FaunaShowcase2 } from './FaunaShowcase2';
 import { FaunaShowcase3 } from './FaunaShowcase3';
 import { FaunaShowcase4 } from './FaunaShowcase4';
 import { FaunaShowcase5 } from './FaunaShowcase5';
+import { FishShowcase } from './FishShowcase';
+import { CityShowcase } from './CityShowcase';
 import { MaterialShowcase } from './MaterialShowcase';
 import { z } from 'zod';
 
@@ -157,6 +159,22 @@ export const RemotionRoot: React.FC = () => {
         id="FaunaShowcase5"
         component={FaunaShowcase5}
         durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="FishShowcase"
+        component={FishShowcase}
+        durationInFrames={90}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="CityShowcase"
+        component={CityShowcase}
+        durationInFrames={90}
         fps={30}
         width={1080}
         height={1920}

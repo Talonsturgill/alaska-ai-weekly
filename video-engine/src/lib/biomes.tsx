@@ -772,3 +772,214 @@ export const OilfieldBG: React.FC<{f: number; season?: 'winter' | 'summer'; flar
     </svg>
   );
 };
+
+// ---------------------------------------------------------------- ANCHORAGE SKYLINE
+// NET-NEW 2026-07-21, v2 after taste-loop (v1 stacked the city INTO the inlet).
+// Reference: docs/craft/ANCHORAGE_LANDMARKS.md. The postcard order (coastal-
+// trail vantage): sky -> tiny pale DENALI far north on the horizon -> MT.
+// SUSITNA "SLEEPING LADY" reclining across the water -> the CHUGACH wall ->
+// the low city band ON ITS BLUFF (ConocoPhillips + Atwood slabs, the Hotel
+// Captain Cook's three stair-stepped MUSTARD towers) -> COOK INLET in the
+// FOREGROUND -> the Tony Knowles coastal-trail strip at the bottom (stage for
+// a wandering moose). Fall = termination dust + golden light. Landmarks stay
+// lowkey background; never pointed at.
+export const AnchorageSkylineBG: React.FC<{
+  f: number; season?: 'summer' | 'fall'; denali?: boolean; floatplane?: boolean; train?: boolean;
+}> = ({f, season = 'summer', denali = true, floatplane = true, train = false}) => {
+  const fall = season === 'fall';
+  const skyTop = fall ? '#f2d3a0' : '#cfe4ee';
+  const skyLow = fall ? '#e6a968' : '#a8cadb';
+  const chug1 = fall ? '#6a7050' : '#54705c';   // lit face
+  const chug2 = fall ? '#4c523a' : '#3d5546';   // shade face
+  const inlet1 = fall ? '#a8b8ae' : '#8fb0b6';
+  const inlet2 = fall ? '#7c9088' : '#6a8c94';
+  const MUST = '#d2a63c';
+  const MUST_D = '#9c7a26';
+  const INKB = '#2c3138';
+  const CITY_Y = 1140;          // rooftop baseline (city band bottom edge)
+  const WATER_Y = 1180;         // inlet starts (in FRONT of the city bluff)
+  const TRAIL_Y = 1620;
+  const planeX = ((f * 2.6 + 700) % (W + 500)) - 250;
+  const win = (x: number, y: number, w: number, rows: number, cols: number, lit: number) => (
+    Array.from({length: rows * cols}).map((_, i) => {
+      const r = Math.floor(i / cols), c = i % cols;
+      const on = ((x * 7 + r * 13 + c * 5) % 10) < lit;
+      return <rect key={i} x={x + 8 + c * ((w - 12) / cols)} y={y + 10 + r * 22} width={(w - 12) / cols - 6} height={12}
+        fill={on ? (fall ? '#f6d88a' : '#dce8ee') : '#39434c'} opacity={on ? 0.95 : 0.6} />;
+    })
+  );
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{position: 'absolute'}}>
+      <defs>
+        <linearGradient id="ancSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={skyTop} />
+          <stop offset="100%" stopColor={skyLow} />
+        </linearGradient>
+        <linearGradient id="ancInlet" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={inlet1} />
+          <stop offset="100%" stopColor={inlet2} />
+        </linearGradient>
+        <linearGradient id="ancTower" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor={fall ? '#d8cab0' : '#cdd6dc'} />
+          <stop offset="62%" stopColor={fall ? '#b8a888' : '#a8b4bc'} />
+          <stop offset="100%" stopColor={fall ? '#96876a' : '#87939c'} />
+        </linearGradient>
+        <linearGradient id="ancMust" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#e4bc56" />
+          <stop offset="60%" stopColor={MUST} />
+          <stop offset="100%" stopColor="#b08a2c" />
+        </linearGradient>
+      </defs>
+      <rect width={W} height={H} fill="url(#ancSky)" />
+      {/* low sun + drifting clouds (ambient region 1) */}
+      <circle cx={190} cy={430} r={64} fill="#fdf3d8" opacity={0.9} />
+      <circle cx={190} cy={430} r={110} fill="#fceec2" opacity={0.35} />
+      {[0, 1, 2].map((i) => {
+        const cx = ((f * (0.5 + i * 0.3) + i * 430) % (W + 400)) - 200;
+        return <ellipse key={i} cx={cx} cy={300 + i * 120} rx={140 - i * 26} ry={17} fill="#fff" opacity={0.45} />;
+      })}
+      {/* Denali: lone white massif floating on the far-north horizon */}
+      {denali && (
+        <g opacity={0.9}>
+          <path d="M28,880 L86,782 L104,806 L120,788 L150,812 L196,880 Z" fill="#f6fafb" stroke="#c2d4da" strokeWidth={3.5} />
+          <path d="M86,782 L104,806 L96,880 L60,880 Z" fill="#dce8ec" opacity={0.8} />
+        </g>
+      )}
+      {/* Sleeping Lady (Mt. Susitna): the reclining woman, left horizon across the
+          water: head knob, chest rise, long legs tapering away */}
+      <g opacity={0.85}>
+        <path d={`M-40,${CITY_Y - 26} L-40,912 L20,910 q22,-2 34,-18 q10,-14 24,-14 q14,0 22,12 q8,12 22,16 q30,8 52,26 q36,26 96,34 q60,8 130,10 L340,${CITY_Y - 26} Z`}
+          fill={fall ? '#b0a28c' : '#9cadb4'} />
+        <path d={`M-40,940 L340,${CITY_Y - 30} L340,${CITY_Y - 26} L-40,${CITY_Y - 26} Z`} fill={fall ? '#9c8f7a' : '#8a9ba2'} opacity={0.7} />
+      </g>
+      {/* CHUGACH WALL: one continuous irregular ridge running down BEHIND the city
+          band (no sky gap), with lit/shade facets, foothills, and dust caps */}
+      <g>
+        <path d={`M150,${CITY_Y} L150,930 q60,-30 110,-96 L330,720 L420,672 L500,782 L560,742 L634,636 L706,760 L782,706 L852,664 L930,782 L988,742 L1080,660 L1080,${CITY_Y} Z`} fill={chug1} />
+        {/* shade faces: each falls from its summit along the descent lines */}
+        <path d={`M420,672 L500,782 L536,860 L470,${CITY_Y} L400,${CITY_Y} L392,760 Z`} fill={chug2} opacity={0.55} />
+        <path d={`M634,636 L706,760 L724,846 L664,${CITY_Y} L600,${CITY_Y} L608,742 Z`} fill={chug2} opacity={0.5} />
+        <path d={`M852,664 L930,782 L946,858 L888,${CITY_Y} L826,${CITY_Y} L830,742 Z`} fill={chug2} opacity={0.5} />
+        {/* Flattop's flat table on the right shoulder */}
+        <path d={`M960,800 L992,756 L1052,756 L1080,792 L1080,${CITY_Y} L960,${CITY_Y} Z`} fill={chug2} opacity={0.9} />
+        <path d="M992,756 L1052,756 L1046,770 L1000,770 Z" fill="#fbfdff" opacity={fall ? 1 : 0.6} />
+        {/* termination dust caps following the real summits */}
+        <g opacity={fall ? 1 : 0.55}>
+          <path d="M398,700 L420,672 L444,704 L430,714 L412,706 Z" fill="#fbfdff" />
+          <path d="M612,668 L634,636 L658,670 L644,682 L626,672 Z" fill="#fbfdff" />
+          <path d="M832,692 L852,664 L876,694 L862,706 L846,696 Z" fill="#fbfdff" />
+          <path d="M310,742 L330,720 L352,748 L332,756 Z" fill="#fbfdff" opacity={0.8} />
+        </g>
+        {/* solid foothill treeline just behind the rooftops */}
+        <path d={`M150,${CITY_Y} q120,-52 260,-40 l14,-14 l12,14 q140,14 300,-10 l12,-14 l14,14 q160,18 300,-6 l10,-12 l12,12 q60,4 86,2 L1080,${CITY_Y} Z`}
+          fill={chug2} />
+      </g>
+      {/* THE CITY BAND on its bluff (in front of the Chugach base) */}
+      <g>
+        {/* bluff */}
+        <rect x={0} y={CITY_Y} width={W} height={WATER_Y - CITY_Y + 14} fill={fall ? '#8a7c5e' : '#74806a'} />
+        <line x1={0} y1={CITY_Y} x2={W} y2={CITY_Y} stroke={INKB} strokeWidth={3} opacity={0.4} />
+        {/* filler low blocks, boxy, window grids, rooftop clutter */}
+        {[[16, 66, 88], [116, 92, 96], [386, 60, 78], [478, 104, 92], [700, 72, 84], [796, 56, 110], [918, 88, 90]].map(([bx, bh, bw], i) => (
+          <g key={i}>
+            <rect x={bx} y={CITY_Y - bh} width={bw} height={bh} fill="url(#ancTower)" stroke={INKB} strokeWidth={4} />
+            {win(bx, CITY_Y - bh, bw, Math.max(1, Math.floor(bh / 26)), 3, 4)}
+            <rect x={bx + bw * 0.2} y={CITY_Y - bh - 8} width={10} height={8} fill={INKB} opacity={0.7} />
+            {i % 2 === 0 && <line x1={bx + bw * 0.7} y1={CITY_Y - bh} x2={bx + bw * 0.7} y2={CITY_Y - bh - 16} stroke={INKB} strokeWidth={3} />}
+          </g>
+        ))}
+        {/* ConocoPhillips + Atwood: the two tallest slabs */}
+        <g>
+          <rect x={560} y={CITY_Y - 218} width={66} height={218} fill="url(#ancTower)" stroke={INKB} strokeWidth={4.5} />
+          {win(560, CITY_Y - 218, 66, 8, 3, 5)}
+          <rect x={560} y={CITY_Y - 218} width={66} height={10} fill="#e8eef2" opacity={0.7} />
+          <rect x={634} y={CITY_Y - 184} width={58} height={184} fill="url(#ancTower)" stroke={INKB} strokeWidth={4.5} opacity={0.96} />
+          {win(634, CITY_Y - 184, 58, 7, 3, 4)}
+          <line x1={593} y1={CITY_Y - 218} x2={593} y2={CITY_Y - 234} stroke={INKB} strokeWidth={3.5} />
+          <circle cx={593} cy={CITY_Y - 238} r={3.5} fill="#e84c3c" opacity={0.6 + 0.4 * Math.sin(f / 9)} />
+        </g>
+        {/* HOTEL CAPTAIN COOK: three stair-stepped mustard towers, shaded */}
+        <g>
+          {[[168, 118, 54], [228, 164, 56], [290, 198, 58]].map(([bx, bh, bw], i) => (
+            <g key={i}>
+              <rect x={bx} y={CITY_Y - bh} width={bw} height={bh} fill="url(#ancMust)" stroke={MUST_D} strokeWidth={4.5} />
+              {Array.from({length: Math.floor(bh / 24)}).map((_, r) => (
+                <rect key={r} x={bx + 7} y={CITY_Y - bh + 10 + r * 24} width={bw - 14} height={5.5} fill={MUST_D} opacity={0.45} />
+              ))}
+              <rect x={bx} y={CITY_Y - bh} width={bw} height={7} fill="#f0d488" opacity={0.8} />
+            </g>
+          ))}
+        </g>
+      </g>
+      {/* COOK INLET in the FOREGROUND, with moving glints + a gull (regions 2+3) */}
+      <rect x={0} y={WATER_Y} width={W} height={TRAIL_Y - WATER_Y} fill="url(#ancInlet)" />
+      {/* city reflections: broken vertical smears that wobble with the water */}
+      <g opacity={0.3}>
+        {[[576, 40, 110, '#e8eef2'], [648, 30, 84, '#cfd8dc'], [186, 34, 70, MUST], [244, 36, 84, MUST], [304, 38, 96, MUST]].map(([rx, rw, rh, rc], i) => (
+          <path key={i}
+            d={`M${rx},${WATER_Y} q${6 * Math.sin(f / 16 + (i as number))},${(rh as number) * 0.4} 0,${rh} l${rw},0 q${-6 * Math.sin(f / 16 + (i as number))},${-(rh as number) * 0.5} 0,${-rh} Z`}
+            fill={rc as string} />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <path key={`b${i}`} d={`M${170 + i * 240},${WATER_Y + 40 + i * 26} q60,8 140,2`} stroke={inlet1} strokeWidth={10} fill="none" opacity={0.8} />
+        ))}
+      </g>
+      {[0, 1, 2, 3].map((i) => {
+        const gx = ((f * (0.9 + i * 0.35) + i * 300) % (W + 240)) - 120;
+        return <path key={i} d={`M${gx},${WATER_Y + 60 + i * 96} q46,-7 92,0`} fill="none" stroke="#f2f8f6" strokeWidth={4} opacity={0.5} strokeLinecap="round" />;
+      })}
+      {/* mudflat streak (bore-tide Anchorage water is silty) */}
+      <path d={`M0,${TRAIL_Y - 60} q300,${-16 + 6 * Math.sin(f / 30)} 640,-8 q260,6 440,-14 L1080,${TRAIL_Y} L0,${TRAIL_Y} Z`} fill={fall ? '#9a8a70' : '#8a9078'} opacity={0.5} />
+      {/* optional blue-and-gold Alaska Railroad consist skirting the waterline */}
+      {train && (
+        <g transform={`translate(${((f * 1.8) % (W + 500)) - 250},${TRAIL_Y - 66})`}>
+          {[0, 1, 2].map((c) => (
+            <g key={c} transform={`translate(${c * -132},0)`}>
+              <rect x={-60} y={-30} width={120} height={30} rx={6} fill="#1e3f6e" stroke={INKB} strokeWidth={3.5} />
+              <rect x={-60} y={-16} width={120} height={7} fill="#e8b23a" />
+              {c === 0 && <rect x={38} y={-44} width={26} height={14} rx={4} fill="#1e3f6e" stroke={INKB} strokeWidth={3} />}
+              <circle cx={-34} cy={2} r={7} fill={INKB} />
+              <circle cx={34} cy={2} r={7} fill={INKB} />
+            </g>
+          ))}
+        </g>
+      )}
+      {/* the Tony Knowles coastal-trail strip: curving path, wooden rail, shrubs */}
+      <rect x={0} y={TRAIL_Y} width={W} height={H - TRAIL_Y} fill={fall ? '#8a7c50' : '#6b7a52'} />
+      {/* wooden railing along the waterline */}
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+        <g key={`rp${i}`} transform={`translate(${40 + i * 145},${TRAIL_Y + 6})`}>
+          <rect x={-5} y={-34} width={10} height={40} rx={3} fill="#8a6a42" stroke={INKB} strokeWidth={2.5} />
+        </g>
+      ))}
+      <path d={`M0,${TRAIL_Y - 16} q270,-8 540,-2 q290,6 540,-8`} fill="none" stroke="#8a6a42" strokeWidth={8} opacity={0.95} />
+      <path d={`M0,${TRAIL_Y - 14} q270,-8 540,-2 q290,6 540,-8`} fill="none" stroke={INKB} strokeWidth={2} opacity={0.4} />
+      {/* the paved trail curving through */}
+      <path d={`M-20,${TRAIL_Y + 120} q300,-40 560,-14 q300,30 560,-30 l0,70 q-260,44 -560,24 q-300,-20 -560,14 Z`}
+        fill={fall ? '#b8a67c' : '#a8a684'} stroke={INKB} strokeWidth={3.5} opacity={0.92} />
+      <path d={`M-20,${TRAIL_Y + 152} q300,-36 560,-12 q300,26 560,-28`} fill="none" stroke="#8a7a5c" strokeWidth={3} strokeDasharray="24 22" opacity={0.5} />
+      {/* alder shrubs + fireweed pokes */}
+      {Array.from({length: 7}).map((_, i) => (
+        <g key={`sh${i}`} transform={`translate(${(30 + i * 163) % W},${TRAIL_Y + 46 + (i * 71) % 150})`}>
+          <ellipse cx={0} cy={0} rx={26 + (i % 3) * 8} ry={14 + (i % 2) * 5} fill={fall ? '#7c6c3c' : '#55663c'} stroke={INKB} strokeWidth={2.5} opacity={0.9} />
+          {(i % 3 === 0) && <path d={`M${18 + (i % 2) * 6},2 q3,-22 0,-30 M${20 + (i % 2) * 6},-26 l4,4 M${16 + (i % 2) * 6},-18 l-4,4`} stroke={fall ? '#b05a7c' : '#c46a90'} strokeWidth={3} fill="none" />}
+        </g>
+      ))}
+      {/* red-and-white floatplane crossing (Lake Hood habit; ambient region 4) */}
+      {floatplane && (
+        <g transform={`translate(${planeX},${520 + 10 * Math.sin(f / 14)}) rotate(-3)`}>
+          <ellipse cx={0} cy={0} rx={46} ry={12} fill="#d8402c" stroke="#7c2014" strokeWidth={4} />
+          <rect x={-8} y={-18} width={36} height={12} rx={6} fill="#f4f6f8" stroke="#7c2014" strokeWidth={3.5} />
+          <path d="M-2,-6 L-34,-24 L-16,-3 Z" fill="#f4f6f8" stroke="#7c2014" strokeWidth={3.5} />
+          <rect x={40} y={-8} width={10} height={16} rx={3} fill="#f4f6f8" stroke="#7c2014" strokeWidth={3} />
+          <line x1={-20} y1={12} x2={-20} y2={22} stroke="#7c2014" strokeWidth={3.5} />
+          <line x1={18} y1={12} x2={18} y2={22} stroke="#7c2014" strokeWidth={3.5} />
+          <ellipse cx={-14} cy={26} rx={24} ry={5.5} fill="#e8e2d4" stroke="#7c2014" strokeWidth={3.5} />
+          <ellipse cx={22} cy={26} rx={24} ry={5.5} fill="#e8e2d4" stroke="#7c2014" strokeWidth={3.5} />
+          {/* prop blur disc */}
+          <ellipse cx={52} cy={0} rx={4} ry={15 + 3 * Math.sin(f * 2)} fill="#c8ccd0" opacity={0.6} />
+        </g>
+      )}
+    </svg>
+  );
+};

@@ -1,6 +1,7 @@
 import React from 'react';
 import {INK} from './Character';
 import {tones, FormGradient, RimLight, ContactShadow, LIGHT, MotionBlur} from './lighting';
+import {makeSpine, smoothPath, FishSurface, FinMembrane, FishSkin, CHROME_SKIN, FINK} from './fishcraft';
 
 // =============================================================================
 // FAUNA — the Alaska bestiary. The cast library had exactly one animal (the sled
@@ -201,39 +202,492 @@ export const BaldEagle: React.FC<{x: number; y: number; scale?: number; f: numbe
 // ---------------------------------------------------------------- SALMON
 // The sockeye run. Idle/swim: body S-curve undulation + tail sweep. Spawning
 // red body / green head option via `spawning`.
-export const Salmon: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; spawning?: boolean}> = ({
-  x, y, scale = 1, f, facing = 1, spawning = true,
-}) => {
-  const id = uid(`salmon${x}${y}`);
-  const body = spawning ? '#c0392b' : '#8fa2b0';
-  const t = tones(body);
-  const head = spawning ? '#3f6b3a' : '#5a6b74';
-  const th = tones(head);
-  const und = 10 * Math.sin(f / 6);        // body undulation
-  const tailSweep = 22 * Math.sin(f / 5);
+export const Salmon: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1; spawning?: boolean;
+  /** swim amplitude 0..1 (0 = hold in current; 1 = traveling swim) */
+  swim?: number;
+  /** male morphology 0..1: dorsal hump + elongated toothy kype (defaults to spawning) */
+  kype?: number;
+  /** underwater caustic dapples (turn on for submerged scenes) */
+  caustics?: boolean;
+}> = ({x, y, scale = 1, f, facing = 1, spawning = true, swim = 1, kype, caustics = false}) => {
+  // =========================================================================
+  // SOCKEYE v3 (fishcraft engine). ADFG/NOAA anatomy: spawning = scarlet body,
+  // olive-green head w/ clean nape break, male hump + hooked toothy kype, drab
+  // gray-green UNSPOTTED tail; ocean = CHROME: steel-silver mirror flank,
+  // blue-green back, white belly, fine back stipple only. Full salmonid fin
+  // set incl. the adipose nub. Surface + swim come from lib/fishcraft (chrome
+  // layer stack, shingle scales, carangiform traveling wave, gill pulse,
+  // rippling membranes). Owner note that drove v3: "salmon are silver and
+  // scaly and shiny" — the silver phase is the DEFAULT hero look.
+  // =========================================================================
+  const K0 = kype !== undefined ? 1 : 0;
+  const id = uid(`salmon${x}${y}${spawning ? 's' : 'o'}${swim}${K0}${caustics ? 'c' : ''}`);
+  const K = kype !== undefined ? Math.max(0, Math.min(1, kype)) : (spawning ? 1 : 0);
+  const sp = makeSpine(f, {len: 232, nose: 128, T: 0.55, swim, ampBL: 0.085});
+  // caudal-wrist FLOOR (v8): the old profile's sine saturated by u~0.85 and the
+  // rear quarter collapsed to a ~6px rod (the "skewer" read). Real salmon keep
+  // a chunky wrist ~9-10% of body length right to the tail base.
+  const dTop = (u: number) => {
+    const base = 6 + 30 * Math.sin(Math.PI * Math.min(1, u * 1.05));
+    const hump = K * 11 * Math.exp(-Math.pow((u - 0.34) / 0.13, 2));
+    return Math.max(9 + 2 * (1 - u), base) + hump;
+  };
+  const dBot = (u: number) => Math.max(8, 5 + 26 * Math.sin(Math.PI * Math.min(1, u * 1.02)));
+  const skin: FishSkin = spawning
+    ? {back: '#8e1f1a', shoulder: '#b3312a', flank: '#d84b3a', preBelly: '#e06552', belly: '#e88a74',
+       irid1: '#e8a03c', irid2: '#d84b3a', irid3: '#b04a8c', scaleEdge: '#5c0f0c', sheenGain: 0.24, scaleAmp: 0.3}
+    : {...CHROME_SKIN};
+  const HEAD = spawning ? '#4f7040' : '#aebfc9';
+  const HEAD_D = spawning ? '#35502c' : '#7d929e';
+  const TAILC = spawning ? '#6b7562' : '#8a9aa2';
+  const th = tones(HEAD);
+  const NOSE = 128;
+  const snoutLen = 14 + K * 15;
+  const nape = {X: sp.sx(0.22), Y: sp.sway(0.22)};
+  const tailB = {X: sp.sx(1), Y: sp.sway(1)};
+  const finC = spawning ? '#a8352a' : '#95a8b2';
+  const finD = spawning ? '#6e1c15' : '#5f7480';
   return (
-    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
-      <FormGradient id={id} t={t} />
-      <FormGradient id={`${id}h`} t={th} />
-      {/* tail */}
-      <g transform={`translate(-96,${und * 0.4}) rotate(${tailSweep})`}>
-        <path d="M0,0 q-34,-30 -48,-6 q10,6 22,4 q-16,20 -18,34 q30,-8 44,-26 q6,18 4,32 q22,-30 -4,-48 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+    <g transform={`translate(${x},${y + sp.bobY}) scale(${scale * facing},${scale}) rotate(${sp.yaw + sp.roll * 0.4} ${NOSE - 232 * 0.35} 0)`}>
+      <FormGradient id={`${id}h`} t={th} softness={0.85} />
+      {/* forked caudal: heave + pitch coupling (the figure-8 emerges) */}
+      <g transform={`translate(${tailB.X},${tailB.Y}) rotate(${sp.tailAngle})`}>
+        <path d="M2,0 q-26,-34 -52,-40 q8,16 6,30 q-14,4 -26,12 q12,8 26,12 q2,14 -6,30 q26,-6 52,-40 Z"
+          fill={TAILC} stroke={FINK} strokeWidth={5.5} strokeLinejoin="round" />
+        {[-30, -18, 16, 28].map((ry, i) => (
+          <path key={i} d={`M0,${ry * 0.2} L${-40 - (i % 2) * 6},${ry}`} stroke={FINK} strokeWidth={2} opacity={0.35} fill="none" />
+        ))}
+        <path d="M-6,-34 q-20,-4 -40,-4" fill="none" stroke="#ffffff" strokeWidth={2} opacity={0.3} style={{mixBlendMode: 'screen'} as any} />
       </g>
-      {/* body, curved */}
-      <path d={`M-92,${und * 0.4} q40,-52 96,${-40 + und} q60,${8 + und} 84,2 q-24,44 -84,${44 + und} q-56,${8 - und} -96,${-6 + und * 0.4} Z`}
-        fill={`url(#${id})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-      <RimLight d={`M-92,${und * 0.4} q40,-52 96,${-40 + und}`} w={4} opacity={0.5} />
-      {/* dorsal + adipose + pelvic fins */}
-      <path d={`M-6,${-38 + und} q18,-22 40,-14 q-8,16 -30,20 Z`} fill={t.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-      <path d={`M-24,${34 + und} q10,20 30,22 q-4,-18 -16,-28 Z`} fill={t.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-      {/* green kype head */}
-      <g transform={`translate(78,${und})`}>
-        <path d="M0,-40 q40,-6 58,16 q10,20 -2,40 q-30,16 -58,2 q-14,-30 2,-58 Z" fill={`url(#${id}h)`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-        {/* hooked jaw (kype) */}
-        <path d="M50,14 q30,2 40,22 q-2,10 -16,8 q6,10 -8,12 q-20,-2 -24,-24 Z" fill={th.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-        <circle cx={22} cy={-6} r={9} fill="#f0e6c8" stroke={INK} strokeWidth={3} />
-        <circle cx={24} cy={-5} r={4.5} fill={INK} />
-        <path d="M8,20 q22,6 40,2" fill="none" stroke={INK} strokeWidth={3} opacity={0.6} />
+      {/* pelvic + anal behind the body */}
+      <FinMembrane x={sp.sx(0.55)} y={sp.sway(0.55) + dBot(0.55) - 3} rot={12 + sp.slope(0.55)} f={f}
+        length={26} depth={20} color={finC} dark={finD} rays={3} phase={0.8} />
+      <FinMembrane x={sp.sx(0.78)} y={sp.sway(0.78) + dBot(0.78) - 2} rot={30 + sp.slope(0.78)} f={f}
+        length={30} depth={20} color={finC} dark={finD} rays={4} phase={1.6} />
+      {/* THE BODY: countershade + scales + specular chrome + rim (fishcraft) */}
+      <FishSurface uid={id} sp={sp} dTop={dTop} dBot={dBot} skin={skin} caustics={caustics} outlineW={6.5}>
+        {/* ocean phase: fine dark stipple on the BACK only (sockeye lack big spots) */}
+        {!spawning && [0.28, 0.36, 0.45, 0.53, 0.62, 0.7, 0.78].map((u, i) => (
+          <circle key={i} cx={sp.sx(u) - 3 + (i % 3) * 6} cy={sp.sway(u) - dTop(u) * (0.55 + (i % 2) * 0.16)} r={1.7} fill={FINK} opacity={0.45} />
+        ))}
+        {/* lateral line: a faint broken pore-line, not a stripe */}
+        <path d={smoothPath(Array.from({length: 13}, (_, i) => {
+          const u = i / 12; return [sp.sx(u), sp.sway(u) + 2] as [number, number];
+        }))} fill="none" stroke={skin.back} strokeWidth={1.2} opacity={0.28} strokeDasharray="5 9" />
+      </FishSurface>
+      {/* dorsal + adipose riding the spine */}
+      <g transform={`translate(${sp.sx(0.46)},${sp.sway(0.46) - dTop(0.46) + 2}) rotate(${sp.slope(0.46)})`}>
+        <path d="M-16,2 q6,-26 34,-30 q2,16 -8,30 Z" fill={spawning ? skin.back : finC} stroke={FINK} strokeWidth={4.5} strokeLinejoin="round" />
+        {[0, 1, 2].map((i) => <path key={i} d={`M${-8 + i * 8},0 L${2 + i * 9},-24`} stroke={finD} strokeWidth={1.6} opacity={0.45} fill="none" />)}
+        <path d="M18,-28 q-8,14 -10,28" fill="none" stroke="#fff" strokeWidth={1.8} opacity={0.4} style={{mixBlendMode: 'screen'} as any} />
+      </g>
+      <path d={`M${sp.sx(0.84) - 6},${sp.sway(0.84) - dTop(0.84) + 2} q8,-9 16,-2 q-4,7 -14,6 Z`}
+        fill={spawning ? skin.back : finC} stroke={FINK} strokeWidth={3.5} strokeLinejoin="round" />
+      {/* HEAD: one OUTER-CONTOUR path string shared by the fill and the ink stroke
+          (guarantees alignment); the nape edge fades via gradient, no seam */}
+      <defs>
+        <linearGradient id={`${id}_napefade`} x1={nape.X + 2} x2={nape.X + 22} y1="0" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor={HEAD} stopOpacity={0} />
+          <stop offset="1" stopColor={HEAD} stopOpacity={1} />
+        </linearGradient>
+      </defs>
+      <g transform={`translate(0,${sp.sway(0.08)})`}>
+        {(() => {
+          const crownY = -dTop(0.2) * 0.8;
+          const cheekY = dBot(0.2) * 0.9;
+          const outer = `M${nape.X + 18},${crownY} q30,-7 56,0 L${NOSE + snoutLen - 8},-9 q8,5 8,12 q-2,7 -9,9 q-18,15 -49,14 q-20,-1 -34,-6`;
+          const wedge = `${outer} L${nape.X - 12},${cheekY} L${nape.X - 12},${crownY + 4} Z`;
+          return (
+            <g>
+              <path d={wedge} fill={`url(#${id}_napefade)`} stroke="none" />
+              <path d={outer} fill="none" stroke={FINK} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
+            </g>
+          );
+        })()}
+        {/* operculum: breathes (asymmetric gill pulse) */}
+        <g transform={`translate(${nape.X + 10},0) scale(${1 + 0.05 * sp.gill},1) translate(${-(nape.X + 10)},0)`}>
+          <path d={`M${nape.X + 10},${-dTop(0.22) + 8} q14,22 2,40`} fill="none" stroke={FINK} strokeWidth={3.5} opacity={0.55} />
+          <path d={`M${nape.X + 2},${-dTop(0.22) + 4} q10,24 0,42 q-8,-2 -10,-6 Z`} fill={HEAD_D} opacity={0.5} />
+        </g>
+        {/* head sheen so the head belongs to the same shiny animal */}
+        <path d={`M${nape.X + 14},${-dTop(0.22) + 10} q30,2 52,12`} fill="none" stroke="#fff" strokeWidth={3.5}
+          opacity={spawning ? 0.22 : 0.45} strokeLinecap="round" style={{mixBlendMode: 'screen'} as any} />
+        {K > 0.3 ? (
+          <g>
+            {/* spawning kype: hooked snout + upturned white-margined jaw + teeth */}
+            <path d={`M${NOSE + snoutLen - 10},-8 q${8 + K * 6},6 ${4 + K * 3},${14 + K * 5} q-6,${3 + K * 3} -12,${1 + K * 2} Z`}
+              fill={th.core} stroke={FINK} strokeWidth={4.5} strokeLinejoin="round" />
+            <path d={`M${NOSE + snoutLen - 30},14 q${16 + K * 8},${2 + K * 6} ${24 + K * 8},${-2 + K * 2} q-2,6 -8,8 q-14,4 -22,-1 Z`}
+              fill="#efe8da" stroke={FINK} strokeWidth={4} strokeLinejoin="round" />
+            {[0, 1, 2].map((i) => (
+              <path key={i} d={`M${NOSE + snoutLen - 24 + i * 7},${11 - i} l2.6,${5 + K * 2} l2.6,-${5 + K * 2}`} fill="#fff" stroke={FINK} strokeWidth={1.6} />
+            ))}
+          </g>
+        ) : (
+          <path d={`M${NOSE + snoutLen - 4},6 q-16,8 -34,7`} fill="none" stroke={FINK} strokeWidth={4} strokeLinecap="round" />
+        )}
+        <circle cx={NOSE - 26} cy={-8} r={9.5} fill="#e8c860" stroke={FINK} strokeWidth={3} />
+        <circle cx={NOSE - 25} cy={-8} r={5} fill={FINK} />
+        <circle cx={NOSE - 27.5} cy={-10} r={1.8} fill="#fff" opacity={0.9} />
+        <circle cx={NOSE - 6} cy={-10} r={1.6} fill={FINK} opacity={0.6} />
+      </g>
+      {/* pectoral over the head base, sculling on its own rhythm */}
+      <FinMembrane x={sp.sx(0.24) + 6} y={sp.sway(0.24) + dBot(0.24) - 8} rot={20 + sp.pecAngle} f={f}
+        length={30} depth={22} color={finC} dark={finD} rays={3} phase={0.3} />
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- COHO (silver salmon)
+// NET-NEW 2026-07-21 (fish-mastery). ADFG field marks: ocean phase is the
+// BRILLIANT CHROME fish (steel-blue back, mirror silver flank, white belly);
+// small black spots on the BACK and the UPPER TAIL LOBE ONLY (the coho tell
+// vs chinook), and a PALE/WHITE gum base at the teeth. Spawning male: dark
+// olive/blackish head and back, maroon-brick flanks, modest hump, strong kype.
+export const Coho: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1; spawning?: boolean;
+  swim?: number; caustics?: boolean;
+}> = ({x, y, scale = 1, f, facing = 1, spawning = false, swim = 1, caustics = false}) => {
+  const id = uid(`coho${x}${y}${spawning ? 's' : 'o'}${swim}${caustics ? 'c' : ''}`);
+  const K = spawning ? 1 : 0;
+  const sp = makeSpine(f, {len: 244, nose: 134, T: 0.5, swim, ampBL: 0.08});
+  const dTop = (u: number) => {
+    const base = 6 + 32 * Math.sin(Math.PI * Math.min(1, u * 1.05));
+    const hump = K * 6 * Math.exp(-Math.pow((u - 0.34) / 0.14, 2)); // modest coho hump
+    return Math.max(9 + 2 * (1 - u), base) + hump; // caudal-wrist floor, no skewer
+  };
+  const dBot = (u: number) => Math.max(8, 5 + 27 * Math.sin(Math.PI * Math.min(1, u * 1.02)));
+  const skin: FishSkin = spawning
+    ? {back: '#20281c', shoulder: '#33402c', flank: '#7c2e2e', preBelly: '#8c3a2e', belly: '#4a4640',
+       irid1: '#8c5a2e', irid2: '#7c2e2e', irid3: '#5a3a5c', scaleEdge: '#141a10', sheenGain: 0.18, scaleAmp: 0.25}
+    : {back: '#26485e', shoulder: '#8fa4b2', flank: '#d8dde1', preBelly: '#eef2f4', belly: '#f8fafb',
+       irid1: '#39d0c8', irid2: '#5a7bf0', irid3: '#e56ab0', scaleEdge: '#0a1a24', sheenGain: 1, scaleAmp: 0.6};
+  const HEAD = spawning ? '#2c3624' : '#a8bcc6';
+  const th = tones(HEAD);
+  const TAILC = spawning ? '#3c4434' : '#c2c8cd';
+  const finC = spawning ? '#4a4038' : '#8a9299';
+  const finD = spawning ? '#2c261e' : '#5a6870';
+  const NOSE = 134;
+  const snoutLen = 12 + K * 16;
+  const nape = {X: sp.sx(0.22), Y: sp.sway(0.22)};
+  return (
+    <g transform={`translate(${x},${y + sp.bobY}) scale(${scale * facing},${scale}) rotate(${sp.yaw + sp.roll * 0.4} ${NOSE - 244 * 0.35} 0)`}>
+      {/* moderately forked silvery tail: SPOTS ON THE UPPER LOBE ONLY */}
+      <g transform={`translate(${sp.sx(1)},${sp.sway(1)}) rotate(${sp.tailAngle})`}>
+        <path d="M2,0 q-26,-36 -54,-42 q9,17 7,31 q-15,4 -27,13 q13,8 27,12 q2,15 -7,31 q28,-6 54,-41 Z"
+          fill={TAILC} stroke={FINK} strokeWidth={5.5} strokeLinejoin="round" />
+        {[-32, -20, 16, 30].map((ry, i) => (
+          <path key={i} d={`M0,${ry * 0.2} L${-42 - (i % 2) * 6},${ry}`} stroke={FINK} strokeWidth={2} opacity={0.35} fill="none" />
+        ))}
+        {[[-40, -26], [-26, -32], [-14, -18], [-34, -12]].map(([sxx, syy], i) => (
+          <circle key={`ts${i}`} cx={sxx} cy={syy} r={2.1} fill={FINK} opacity={0.65} />
+        ))}
+      </g>
+      <FinMembrane x={sp.sx(0.56)} y={sp.sway(0.56) + dBot(0.56) - 3} rot={12 + sp.slope(0.56)} f={f}
+        length={26} depth={20} color={finC} dark={finD} rays={3} phase={0.8} />
+      <FinMembrane x={sp.sx(0.79)} y={sp.sway(0.79) + dBot(0.79) - 2} rot={16 + sp.slope(0.79)} f={f}
+        length={30} depth={20} color={finC} dark={finD} rays={4} phase={1.6} />
+      <FishSurface uid={id} sp={sp} dTop={dTop} dBot={dBot} skin={skin} caustics={caustics} outlineW={6.5}>
+        {/* back spots (upper third only), both phases */}
+        {[0.26, 0.33, 0.41, 0.48, 0.56, 0.63, 0.71, 0.78, 0.85].map((u, i) => (
+          <circle key={i} cx={sp.sx(u) - 3 + (i % 3) * 7} cy={sp.sway(u) - dTop(u) * (0.5 + (i % 3) * 0.14)} r={2.2}
+            fill={FINK} opacity={spawning ? 0.5 : 0.55} />
+        ))}
+        <path d={smoothPath(Array.from({length: 13}, (_, i) => {
+          const u = i / 12; return [sp.sx(u), sp.sway(u) + 2] as [number, number];
+        }))} fill="none" stroke={skin.back} strokeWidth={1.2} opacity={0.26} strokeDasharray="5 9" />
+      </FishSurface>
+      <g transform={`translate(${sp.sx(0.47)},${sp.sway(0.47) - dTop(0.47) + 2}) rotate(${sp.slope(0.47)})`}>
+        <path d="M-16,2 q6,-27 35,-31 q2,17 -8,31 Z" fill={finC} stroke={FINK} strokeWidth={4.5} strokeLinejoin="round" />
+        {[0, 1, 2].map((i) => <path key={i} d={`M${-8 + i * 8},0 L${2 + i * 9},-25`} stroke={finD} strokeWidth={1.6} opacity={0.45} fill="none" />)}
+      </g>
+      <path d={`M${sp.sx(0.85) - 6},${sp.sway(0.85) - dTop(0.85) + 2} q8,-9 16,-2 q-4,7 -14,6 Z`}
+        fill={finC} stroke={FINK} strokeWidth={3.5} strokeLinejoin="round" />
+      {/* head with shared outer contour; pale gum line on the jaw (the coho tell) */}
+      <defs>
+        <linearGradient id={`${id}_napefade`} x1={nape.X - 10} x2={nape.X + 26} y1="0" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor={HEAD} stopOpacity={0} />
+          <stop offset="1" stopColor={HEAD} stopOpacity={1} />
+        </linearGradient>
+      </defs>
+      <g transform={`translate(0,${sp.sway(0.08)})`}>
+        {(() => {
+          const crownY = -dTop(0.2) * 0.8;
+          const cheekY = dBot(0.2) * 0.9;
+          const outer = `M${nape.X + 18},${crownY} q30,-7 58,0 L${NOSE + snoutLen - 8},-9 q8,5 8,12 q-2,7 -9,9 q-18,15 -50,14 q-20,-1 -35,-6`;
+          const wedge = `${outer} L${nape.X - 12},${cheekY} L${nape.X - 12},${crownY + 4} Z`;
+          return (
+            <g>
+              <path d={wedge} fill={`url(#${id}_napefade)`} stroke="none" />
+              <path d={outer} fill="none" stroke={FINK} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
+            </g>
+          );
+        })()}
+        <g transform={`translate(${nape.X + 10},0) scale(${1 + 0.05 * sp.gill},1) translate(${-(nape.X + 10)},0)`}>
+          <path d={`M${nape.X + 12},${-dTop(0.2) * 0.55} q14,22 2,40`} fill="none" stroke={FINK} strokeWidth={3.5} opacity={0.55} />
+        </g>
+        {K > 0.3 ? (
+          <g>
+            <path d={`M${NOSE + snoutLen - 10},-8 q13,6 8,18 q-6,5 -13,3 Z`} fill={th.core} stroke={FINK} strokeWidth={4.5} strokeLinejoin="round" />
+            {/* white gum base at the teeth: THE coho ID mark */}
+            <path d={`M${NOSE + snoutLen - 34},14 q22,8 32,0 q-2,7 -9,9 q-15,4 -23,-2 Z`} fill="#e9e2da" stroke={FINK} strokeWidth={4} strokeLinejoin="round" />
+            {[0, 1, 2].map((i) => (
+              <path key={i} d={`M${NOSE + snoutLen - 27 + i * 7},12 l2.4,6 l2.4,-6`} fill="#fff" stroke={FINK} strokeWidth={1.5} />
+            ))}
+          </g>
+        ) : (
+          <g>
+            <path d={`M${NOSE + snoutLen - 4},6 q-16,9 -35,8`} fill="none" stroke={FINK} strokeWidth={4} strokeLinecap="round" />
+            <path d={`M${NOSE + snoutLen - 12},9 q-10,4 -20,4`} fill="none" stroke="#e9e2da" strokeWidth={2.5} opacity={0.9} strokeLinecap="round" />
+          </g>
+        )}
+        <circle cx={NOSE - 24} cy={-8} r={9} fill={spawning ? '#c8a03c' : '#dce4e8'} stroke={FINK} strokeWidth={3} />
+        <circle cx={NOSE - 23} cy={-8} r={4.8} fill={FINK} />
+        <circle cx={NOSE - 25.5} cy={-10} r={1.7} fill="#fff" opacity={0.9} />
+      </g>
+      <FinMembrane x={sp.sx(0.24) + 6} y={sp.sway(0.24) + dBot(0.24) - 8} rot={20 + sp.pecAngle} f={f}
+        length={30} depth={22} color={finC} dark={finD} rays={3} phase={0.3} />
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- RAINBOW TROUT
+// NET-NEW 2026-07-21. ADFG field marks: olive-to-blue-green back, the PINK
+// LATERAL STRIPE gill-to-tail + rosy cheek, silver lower sides, white belly;
+// PROFUSE small black spots above the lateral line and onto the dorsal,
+// adipose and BOTH tail lobes in radiating rows; squared (barely forked)
+// spotted tail; small mouth that does NOT reach past the eye.
+export const RainbowTrout: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  swim?: number; caustics?: boolean;
+}> = ({x, y, scale = 1, f, facing = 1, swim = 1, caustics = false}) => {
+  const id = uid(`rbt${x}${y}${swim}${caustics ? 'c' : ''}`);
+  const sp = makeSpine(f, {len: 216, nose: 118, T: 0.46, swim, ampBL: 0.075});
+  const dTop = (u: number) => Math.max(8 + 2 * (1 - u), 6 + 30 * Math.sin(Math.PI * Math.min(1, u * 1.05)));
+  const dBot = (u: number) => Math.max(7, 5 + 27 * Math.sin(Math.PI * Math.min(1, u * 1.02)));
+  const skin: FishSkin = {
+    back: '#3e5b4e', shoulder: '#6f8a6a', flank: '#cbd2d2', preBelly: '#e8ecea', belly: '#f3f4f2',
+    irid1: '#7cc8a8', irid2: '#d45c6e', irid3: '#e0a0b0', scaleEdge: '#22302a', sheenGain: 0.75, scaleAmp: 0.5,
+  };
+  const finC = '#9aa89c';
+  const finD = '#5c6a5e';
+  const NOSE = 118;
+  const nape = {X: sp.sx(0.22), Y: sp.sway(0.22)};
+  // deterministic speckle field (no Math.random in Remotion)
+  const spots: Array<[number, number, number]> = [];
+  for (let i = 0; i < 46; i++) {
+    const u = 0.16 + ((i * 37) % 68) / 100;
+    const v = 0.06 + ((i * 53) % 46) / 100; // upper half + a few below midline
+    spots.push([u, v, 1.5 + ((i * 29) % 10) / 9]);
+  }
+  return (
+    <g transform={`translate(${x},${y + sp.bobY}) scale(${scale * facing},${scale}) rotate(${sp.yaw + sp.roll * 0.4} ${NOSE - 216 * 0.35} 0)`}>
+      {/* squared, fully SPOTTED tail (both lobes, radiating rows) */}
+      <g transform={`translate(${sp.sx(1)},${sp.sway(1)}) rotate(${sp.tailAngle})`}>
+        <path d="M2,-2 q-20,-26 -44,-32 q6,14 5,26 q-9,4 -16,8 q7,5 16,8 q1,12 -5,26 q24,-6 44,-32 Z"
+          fill="#a8b0a4" stroke={FINK} strokeWidth={5.5} strokeLinejoin="round" />
+        {Array.from({length: 12}).map((_, i) => (
+          <circle key={i} cx={-10 - ((i * 17) % 30)} cy={-24 + ((i * 23) % 48)} r={1.8} fill={FINK} opacity={0.6} />
+        ))}
+      </g>
+      <FinMembrane x={sp.sx(0.56)} y={sp.sway(0.56) + dBot(0.56) - 3} rot={12 + sp.slope(0.56)} f={f}
+        length={24} depth={18} color={finC} dark={finD} rays={3} phase={0.8} />
+      <FinMembrane x={sp.sx(0.79)} y={sp.sway(0.79) + dBot(0.79) - 2} rot={16 + sp.slope(0.79)} f={f}
+        length={27} depth={18} color={finC} dark={finD} rays={4} phase={1.6} />
+      <FishSurface uid={id} sp={sp} dTop={dTop} dBot={dBot} skin={skin} caustics={caustics} outlineW={6}>
+        {/* THE pink lateral stripe, gill to tail, riding the spine */}
+        <path d={smoothPath(Array.from({length: 13}, (_, i) => {
+          const u = 0.14 + (i / 12) * 0.86; return [sp.sx(u), sp.sway(u) + 1] as [number, number];
+        }))} fill="none" stroke="#d45c6e" strokeWidth={13} opacity={0.6} strokeLinecap="round" />
+        <path d={smoothPath(Array.from({length: 13}, (_, i) => {
+          const u = 0.14 + (i / 12) * 0.86; return [sp.sx(u), sp.sway(u) + 1] as [number, number];
+        }))} fill="none" stroke="#e0607a" strokeWidth={5} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'} as any} />
+        {/* profuse small black spots above the line (resident form: some below) */}
+        {spots.map(([u, v, r], i) => (
+          <circle key={i} cx={sp.sx(u)} cy={sp.sway(u) - dTop(u) + (dTop(u) + dBot(u)) * v} r={r}
+            fill={FINK} opacity={0.6} />
+        ))}
+      </FishSurface>
+      {/* spotted dorsal + adipose */}
+      <g transform={`translate(${sp.sx(0.47)},${sp.sway(0.47) - dTop(0.47) + 2}) rotate(${sp.slope(0.47)})`}>
+        <path d="M-15,2 q6,-24 32,-28 q2,15 -8,28 Z" fill={finC} stroke={FINK} strokeWidth={4.5} strokeLinejoin="round" />
+        {[0, 1, 2, 3].map((i) => <circle key={i} cx={-4 + i * 7} cy={-8 - (i % 2) * 7} r={1.6} fill={FINK} opacity={0.6} />)}
+      </g>
+      <g>
+        <path d={`M${sp.sx(0.85) - 6},${sp.sway(0.85) - dTop(0.85) + 2} q8,-8 15,-2 q-4,7 -13,6 Z`}
+          fill={finC} stroke={FINK} strokeWidth={3.5} strokeLinejoin="round" />
+        <circle cx={sp.sx(0.85) + 1} cy={sp.sway(0.85) - dTop(0.85) - 1} r={1.3} fill={FINK} opacity={0.6} />
+      </g>
+      {/* head: rosy gill cheek; SMALL mouth ending under the eye */}
+      <defs>
+        <linearGradient id={`${id}_napefade`} x1={nape.X - 10} x2={nape.X + 24} y1="0" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#5c7260" stopOpacity={0} />
+          <stop offset="1" stopColor="#5c7260" stopOpacity={1} />
+        </linearGradient>
+      </defs>
+      <g transform={`translate(0,${sp.sway(0.08)})`}>
+        {(() => {
+          const crownY = -dTop(0.2) * 0.8;
+          const cheekY = dBot(0.2) * 0.9;
+          const outer = `M${nape.X + 16},${crownY} q28,-6 52,0 L${NOSE + 6},-9 q8,5 8,11 q-2,7 -9,9 q-16,13 -44,12 q-18,-1 -31,-5`;
+          const wedge = `${outer} L${nape.X - 12},${cheekY} L${nape.X - 12},${crownY + 4} Z`;
+          return (
+            <g>
+              <path d={wedge} fill={`url(#${id}_napefade)`} stroke="none" />
+              {/* rosy cheek blush on the gill plate */}
+              <ellipse cx={nape.X + 26} cy={2} rx={16} ry={13} fill="#d97f8c" opacity={0.55} />
+              <path d={outer} fill="none" stroke={FINK} strokeWidth={5.5} strokeLinecap="round" strokeLinejoin="round" />
+            </g>
+          );
+        })()}
+        <path d={`M${nape.X + 12},${-dTop(0.2) * 0.5} q13,20 2,37`} fill="none" stroke={FINK} strokeWidth={3.2} opacity={0.5} />
+        {/* small mouth: ends BELOW the eye, never past it */}
+        <path d={`M${NOSE + 4},5 q-10,6 -22,6`} fill="none" stroke={FINK} strokeWidth={3.5} strokeLinecap="round" />
+        <circle cx={NOSE - 20} cy={-7} r={8.5} fill="#e8d8a0" stroke={FINK} strokeWidth={3} />
+        <circle cx={NOSE - 19} cy={-7} r={4.4} fill={FINK} />
+        <circle cx={NOSE - 21.5} cy={-9} r={1.6} fill="#fff" opacity={0.9} />
+      </g>
+      <FinMembrane x={sp.sx(0.24) + 5} y={sp.sway(0.24) + dBot(0.24) - 7} rot={20 + sp.pecAngle} f={f}
+        length={26} depth={19} color={finC} dark={finD} rays={3} phase={0.3} />
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- PACIFIC HALIBUT
+// NET-NEW 2026-07-21. ADFG field marks: the giant RIGHT-EYED flatfish lying on
+// its side: elongated-diamond outline, BOTH eyes on the dark mottled gray-brown
+// eyed side (drawn as the up-facing side), white blind side beneath; a LONG
+// continuous dorsal fringe along the whole top edge and anal fringe along the
+// bottom, both undulating (that ripple IS how it swims); broad crescent
+// unforked tail; big nearly-symmetric jaw; lateral line ARCHING high over the
+// pectoral. Drawn side-on as seen from a diver: camo side toward camera.
+export const Halibut: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
+  swim?: number; caustics?: boolean;
+}> = ({x, y, scale = 1, f, facing = 1, swim = 0.6, caustics = false}) => {
+  const id = uid(`hal${x}${y}${swim}${caustics ? 'c' : ''}`);
+  const sw = Math.max(0, Math.min(1, swim));
+  const ph = f / 4.6;
+  // gentle whole-body flex (flatfish undulation), nose u=0 .. tail base u=1
+  const LEN = 300;
+  const NOSE = 160;
+  const sxx = (u: number) => NOSE - LEN * u;
+  const flex = (u: number) => (3 + 9 * sw) * Math.sin(ph - u * 2.0) * (0.2 + 0.8 * u);
+  // diamond profile: deepest mid-body
+  const dHalf = (u: number) => Math.max(10, 64 * Math.sin(Math.PI * Math.min(1, 0.08 + u * 0.88)));
+  const N = 16;
+  const top: Array<[number, number]> = Array.from({length: N + 1}, (_, i) => {
+    const u = i / N; return [sxx(u), flex(u) - dHalf(u)];
+  });
+  const bot: Array<[number, number]> = Array.from({length: N + 1}, (_, i) => {
+    const u = i / N; return [sxx(u), flex(u) + dHalf(u)];
+  });
+  const outline = smoothPath([...top, ...[...bot].reverse()], true); // single closed loop, no chord artifacts
+  // undulating fin fringes (the swim): sampled ribbons outside the body edge
+  const fringe = (side: 1 | -1): string => {
+    const pts: Array<[number, number]> = Array.from({length: 13}, (_, i) => {
+      const u = 0.06 + (i / 12) * 0.86;
+      const wave = (6 + 8 * sw) * Math.sin(ph * 1.6 - u * 5.2 + (side === 1 ? 0 : 0.9));
+      // fringe width TAPERS with the body profile AND to a point at both ends
+      // (constant width read as a barrel rim; blunt caps read as a collar)
+      const endTaper = Math.max(0, Math.min(1, (u - 0.02) / 0.16, (0.98 - u) / 0.12));
+      const fw = Math.max(2, (4 + (dHalf(u) - 10) * 0.42 + wave * 0.5) * endTaper);
+      return [sxx(u), flex(u) + side * (dHalf(u) + fw)];
+    });
+    const back: Array<[number, number]> = Array.from({length: 13}, (_, i) => {
+      const u = 0.92 - (i / 12) * 0.86;
+      return [sxx(u), flex(u) + side * dHalf(u)];
+    });
+    return smoothPath([...pts, ...back], true); // single closed loop
+  };
+  const mottle: Array<[number, number, number]> = [];
+  for (let i = 0; i < 26; i++) {
+    const u = 0.08 + ((i * 41) % 80) / 100;
+    const v = -0.7 + ((i * 59) % 140) / 100;
+    mottle.push([u, v, 4 + ((i * 31) % 12)]);
+  }
+  return (
+    <g transform={`translate(${x},${y + 4 * Math.sin(f / 40)}) scale(${scale * facing},${scale})`}>
+      <defs>
+        <clipPath id={`${id}_clip`}><path d={outline} /></clipPath>
+        <radialGradient id={`${id}_body`} cx="0.42" cy="0.4" r="0.75">
+          <stop offset="0" stopColor="#7a6b54" />
+          <stop offset="0.55" stopColor="#5a4b3b" />
+          <stop offset="1" stopColor="#3a3128" />
+        </radialGradient>
+      </defs>
+      {/* dorsal + anal fringes undulating (drawn behind the body); darker than
+          the body + rayed so they read as FIN, not more body */}
+      <path d={fringe(-1)} fill="#2e261c" stroke={FINK} strokeWidth={4.5} strokeLinejoin="round" opacity={0.95} />
+      <path d={fringe(1)} fill="#2e261c" stroke={FINK} strokeWidth={4.5} strokeLinejoin="round" opacity={0.95} />
+      {([-1, 1] as const).flatMap((side) => [0.14, 0.28, 0.42, 0.56, 0.7, 0.84].map((u) => {
+        const wave = (6 + 8 * sw) * Math.sin(ph * 1.6 - u * 5.2 + (side === 1 ? 0 : 0.9));
+        const endTaper = Math.max(0, Math.min(1, (u - 0.02) / 0.16, (0.98 - u) / 0.12));
+        const fw = Math.max(2, (4 + (dHalf(u) - 10) * 0.42 + wave * 0.5) * endTaper);
+        return (
+          <path key={`fr${side}${u}`}
+            d={`M${sxx(u)},${flex(u) + side * (dHalf(u) - 4)} L${sxx(u) - 3},${flex(u) + side * (dHalf(u) + fw - 2)}`}
+            stroke="#141008" strokeWidth={1.8} opacity={0.5} fill="none" />
+        );
+      }))}
+      {/* broad crescent unforked tail */}
+      <g transform={`translate(${sxx(1)},${flex(1)}) rotate(${(10 + 8 * sw) * Math.sin(ph - 2.6)})`}>
+        <path d="M2,-14 q-30,-12 -48,-30 q4,20 -2,30 q6,2 6,14 q0,12 -6,14 q6,10 2,30 q18,-18 48,-30 q4,-14 0,-28 Z"
+          fill="#4a3e30" stroke={FINK} strokeWidth={5} strokeLinejoin="round" />
+        {[-18, 0, 18].map((ry, i) => (
+          <path key={i} d={`M-2,${ry * 0.4} L-34,${ry}`} stroke={FINK} strokeWidth={1.8} opacity={0.35} fill="none" />
+        ))}
+      </g>
+      {/* the flat camo body */}
+      <path d={outline} fill={`url(#${id}_body)`} stroke={FINK} strokeWidth={6.5} strokeLinejoin="round" />
+      <g clipPath={`url(#${id}_clip)`}>
+        {/* camo mottling: irregular blotches + pale dapples, never uniform */}
+        {mottle.map(([u, v, r], i) => (
+          <ellipse key={i} cx={sxx(u)} cy={flex(u) + v * dHalf(u) * 0.8} rx={r} ry={r * 0.7}
+            fill={i % 3 === 0 ? '#7a6b54' : '#3a3128'} opacity={i % 3 === 0 ? 0.5 : 0.55} />
+        ))}
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={`d${i}`} cx={sxx(0.15 + i * 0.13)} cy={flex(0.15 + i * 0.13) + (i % 2 ? -12 : 14)} r={2.6}
+            fill="#a89878" opacity={0.7} />
+        ))}
+        {/* clear the camo behind the eyes so the face reads (look-dev round 2) */}
+        <ellipse cx={sxx(0.12)} cy={flex(0.12) - dHalf(0.12) * 0.4} rx={42} ry={30} fill="#6a5b46" opacity={0.7} />
+        {/* the HIGH-ARCHED lateral line over the pectoral: the halibut tell */}
+        <path d={`M${sxx(0.1)},${flex(0.1)} q-14,-34 -44,-38 q-26,-2 -36,10 T${sxx(0.55)},${flex(0.55) + 2} L${sxx(0.97)},${flex(0.97)}`}
+          fill="none" stroke="#2c2620" strokeWidth={2.6} opacity={0.75} />
+        {/* soft top-light + belly shade for dimension */}
+        <path d={smoothPath(top.map(([px, py]) => [px, py + 16] as [number, number]))} fill="none" stroke="#fff"
+          strokeWidth={16} opacity={0.13} strokeLinecap="round" style={{mixBlendMode: 'screen'} as any} />
+        <path d={smoothPath(bot.map(([px, py]) => [px, py - 12] as [number, number]))} fill="none" stroke="#14100c"
+          strokeWidth={14} opacity={0.2} strokeLinecap="round" />
+        {caustics && [0, 1, 2, 3].map((i) => (
+          <ellipse key={i} cx={sxx(0.15 + i * 0.22) + 10 * Math.sin(ph * 0.5 + i * 2)} cy={flex(0.15 + i * 0.22) - 20 + 6 * Math.sin(ph * 0.3 + i)}
+            rx={18} ry={9} fill="#fff" opacity={0.14} style={{mixBlendMode: 'screen'} as any} />
+        ))}
+      </g>
+      {/* pectoral on the eyed side */}
+      <g transform={`translate(${sxx(0.3)},${flex(0.3) + 4}) rotate(${16 + 10 * Math.sin(f / 16)})`}>
+        <path d="M0,0 q6,18 -4,34 q-14,-6 -16,-22 q6,-10 20,-12 Z" fill="#3a3128" stroke={FINK} strokeWidth={4} strokeLinejoin="round" />
+      </g>
+      {/* the head: BOTH eyes on the eyed side near the high forehead; big
+          slanted jaw drawn INSIDE the silhouette (v1's floated outside = beak) */}
+      <g>
+        <path d={`M${NOSE - 4},${flex(0.01) - 2} q-12,15 -36,19`} fill="none" stroke={FINK} strokeWidth={5} strokeLinecap="round" />
+        <path d={`M${NOSE - 8},${flex(0.01) + 4} q-10,11 -28,14`} fill="none" stroke="#a89878" strokeWidth={2.6} opacity={0.85} />
+        {/* two eyes, stacked on the up side, big enough to beat the camo */}
+        <g transform={`translate(${sxx(0.09)},${flex(0.09) - dHalf(0.09) * 0.42})`}>
+          <circle cx={0} cy={0} r={10.5} fill="#e8d9a8" stroke={FINK} strokeWidth={3.5} />
+          <circle cx={1} cy={0} r={5.2} fill={FINK} />
+          <circle cx={-1.8} cy={-2.2} r={1.8} fill="#fff" opacity={0.9} />
+          <path d="M-10,-9 q10,-6 20,-2" fill="none" stroke={FINK} strokeWidth={2.5} opacity={0.6} strokeLinecap="round" />
+        </g>
+        <g transform={`translate(${sxx(0.16)},${flex(0.16) - dHalf(0.16) * 0.62})`}>
+          <circle cx={0} cy={0} r={9} fill="#e8d9a8" stroke={FINK} strokeWidth={3.5} />
+          <circle cx={1} cy={0} r={4.6} fill={FINK} />
+          <circle cx={-1.6} cy={-2} r={1.6} fill="#fff" opacity={0.9} />
+          <path d="M-9,-8 q9,-5 18,-2" fill="none" stroke={FINK} strokeWidth={2.5} opacity={0.6} strokeLinecap="round" />
+        </g>
       </g>
     </g>
   );

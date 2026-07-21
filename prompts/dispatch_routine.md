@@ -321,6 +321,23 @@ or question that demands the next line), escalating middle that rides the treatm
 stated plainly, a button that lands with the final image. The turn (whatever the earned angle's
 honest pivot is) is always DRAWN as a picture, not merely narrated.
 
+NARRATIVE INTELLIGENCE (LAW, added 2026-07-21 after the owner cold-watched a shipped cut and
+reported it "just saying shit... it felt random"): compression is where coherence dies. When a
+draft is trimmed to the word budget, the connective tissue goes first and what remains is a
+list of true statements that only makes sense to someone who already read the research. So:
+- The script is a CAUSAL CHAIN, not a collage. Every line after the hook must answer
+  "therefore", "but", or "because" against the line before it. If two adjacent lines can be
+  swapped with no loss of sense, the script is a list, not a story: rewrite it.
+- NAME ACTORS BEFORE USING THEM. No entity (a fleet, an agency, a bill, a lab) may appear as
+  a bare reference before a line establishes who it is and what it wants, in plain words. The
+  naive viewer has zero Alaska context and zero memory of last week's episode.
+- ONE STORY QUESTION. The hook plants a single concrete question; the middle escalates that
+  question (not sibling facts); the turn answers it; the button echoes it. A fact that does
+  not serve the question gets cut no matter how good it is.
+- Trim by cutting WHOLE FACTS, never the little words ("so", "but", "because", "which means")
+  that hold the chain together. After every trim pass, re-run the chain test on the trimmed
+  text, then send it to Gate 0E (Phase 4.5) before any synth.
+
 ### 4.3 The visual sentence pass
 
 For EVERY VO line answer: "what literal cartoon do we draw while this is said?" Record it as
@@ -458,6 +475,18 @@ worlds, no flat single-tone fills, no glyphs that read as broken assets.
   concrete; is the run's net-new asset + craft-advance named; is there ONE signature shot?
   Iterate to ship:true. The plan is now BINDING on the build — Phase 6 checks the render against
   it. Do not start scene code until 0D ships.
+- GATE 0E (NAIVE COLD-READ, added 2026-07-21; the smartness gate): spawn an editor agent that
+  is shown ONLY the final VO script text. No storyboard, no research, no headline, no context
+  beyond "this is the narration of a 60 second video". Include the verbatim no-spawn line. It
+  must return JSON with: (a) a retelling of the story in its own words as a causal chain
+  ("X happened, so Y, but Z, which means W"), (b) for every actor named in the script, who
+  they are AS ESTABLISHED BY THE SCRIPT TEXT ALONE, and (c) the single question the piece
+  answers. If it cannot do all three without guessing, it returns ship:false plus the first
+  line where it got lost and why. Rewrite the VO (per the §4.2 narrative-intelligence law)
+  and re-run to ship:true BEFORE any synth. The writers room knows the research and cannot
+  un-know it; only a cold reader can test what the script actually says. This gate exists
+  because a shipped cut passed every visual gate while narrating a fact-list the owner could
+  not follow.
 
 ## PHASE 5: BUILD (Remotion + voice QC + aligned captions)
 
