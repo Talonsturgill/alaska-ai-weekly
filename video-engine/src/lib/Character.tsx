@@ -99,7 +99,11 @@ export const Character: React.FC<CharacterProps> = ({
   // so round 6 roughly doubles the amplitude to make the weight-shift unmistakable). Phase is
   // spread WIDE by x so two figures in the same two-shot visibly sway out of lockstep (per the
   // flow-critic's cosmetic note), not merely a hair apart.
-  const swayPhase = x * 0.02 + y * 0.003;
+  // phase MUST differ between two figures sharing a frame or their idle life reads as lockstep
+  // "thin" motion (verification-panel catch: scenes position characters via wrapper transforms, so
+  // the x/y PROPS are often 0 for every figure and the old x/y-only hash never actually engaged —
+  // hash in outfit + facing so any two distinct cast members desync deterministically).
+  const swayPhase = x * 0.02 + y * 0.003 + outfit.length * 1.7 + (facing === 1 ? 0 : 2.1);
   const idle = pose === 'stand' && !walking; // a walking figure gets the stride cycle, not idle sway
   // idle life = a slow WEIGHT-SHIFT (big, ~3s period: the body eases onto one hip, holds, eases
   // back) layered with a faster micro-sway, so a standing figure reads as a person shifting their
