@@ -1,0 +1,55 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": false,
+    "score": 0.948,
+    "heard": "Off Anchorage swims one of the rarest whales on Earth. It just got two watchers. Noah switched on two AI systems to find Cook Inlet's Beluga's. One listens, a deep learning model reads the noisy inlet and finds a single beluga call. One looks, Gaia scans satellite photos from orbit for the white smudge of a whale. Ear and eye, the same whale, at once, for the first time. It matters because only about 331 of these belugas are left. There were 1,300 in 1979, a drop of almost 80%. But watching is not saving. Sharper eyes do not quiet the boats or refill the salmon these whales need. What the AI gives Alaska is one hard open number, 331. Whether that becomes a floor to defend or just a countdown on record, no machine decides.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.103,
+        "pass": false
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.18,
+        "voiced_frac": 0.55,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 55.12,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "WORDS: WER 0.103 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+  },
+  "all_reports": [
+    {
+      "pass": false,
+      "score": 0.948,
+      "diagnosis": "WORDS: WER 0.103 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    },
+    {
+      "pass": false,
+      "score": 0.938,
+      "diagnosis": "WORDS: WER 0.124 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    },
+    {
+      "pass": false,
+      "score": 0.934,
+      "diagnosis": "WORDS: WER 0.131 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "frame": 140,
+    "word": "watchers",
+    "energy": 4,
+    "lineIdx": 0
+  },
+  {
+    "frame": 200,
+    "word": "two",
+    "energy": 2,
+    "lineIdx": 1
+  },
+  {
+    "frame": 314,
+    "word": "listens",
+    "energy": 4,
+    "lineIdx": 2
+  },
+  {
+    "frame": 499,
+    "word": "looks",
+    "energy": 3,
+    "lineIdx": 3
+  },
+  {
+    "frame": 775,
+    "word": "first",
+    "energy": 5,
+    "lineIdx": 4
+  },
+  {
+    "frame": 856,
+    "word": "three",
+    "energy": 3,
+    "lineIdx": 5
+  },
+  {
+    "frame": 1057,
+    "word": "eighty",
+    "energy": 4,
+    "lineIdx": 6
+  },
+  {
+    "frame": 1148,
+    "word": "saving",
+    "energy": 2,
+    "lineIdx": 7
+  },
+  {
+    "frame": 1393,
+    "word": "open",
+    "energy": 4,
+    "lineIdx": 8
+  },
+  {
+    "frame": 1629,
+    "word": "decides",
+    "energy": 2,
+    "lineIdx": 9
+  }
+]

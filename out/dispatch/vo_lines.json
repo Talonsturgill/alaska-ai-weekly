@@ -1,0 +1,67 @@
+{
+  "total": 54.58,
+  "voice": "Sulafat",
+  "model": "gemini-3.1-flash-tts-preview",
+  "lines": [
+    {
+      "idx": 0,
+      "text": "Off Anchorage swims one of the rarest whales on Earth. It just got two watchers.",
+      "start": 0.0,
+      "end": 5.26
+    },
+    {
+      "idx": 1,
+      "text": "Noah switched on two A.I. systems to find Cook Inlet's belugas.",
+      "start": 5.78,
+      "end": 9.68
+    },
+    {
+      "idx": 2,
+      "text": "One listens. A deep learning model reads the noisy inlet and finds a single beluga call.",
+      "start": 10.2,
+      "end": 15.74
+    },
+    {
+      "idx": 3,
+      "text": "One looks. Guy-uh scans satellite photos from orbit for the white smudge of a whale.",
+      "start": 16.34,
+      "end": 21.34
+    },
+    {
+      "idx": 4,
+      "text": "Ear and eye, the same whale, at once, for the first time.",
+      "start": 21.98,
+      "end": 26.44
+    },
+    {
+      "idx": 5,
+      "text": "It matters because only about three thirty one of these belugas are left.",
+      "start": 26.44,
+      "end": 30.96
+    },
+    {
+      "idx": 6,
+      "text": "There were thirteen hundred in nineteen seventy nine. A drop of almost eighty percent.",
+      "start": 31.6,
+      "end": 36.42
+    },
+    {
+      "idx": 7,
+      "text": "But watching is not saving. Sharper eyes do not quiet the boats or refill the salmon these whales need.",
+      "start": 36.42,
+      "end": 43.12
+    },
+    {
+      "idx": 8,
+      "text": "What the A.I. gives Alaska is one hard, open number. Three thirty one.",
+      "start": 43.78,
+      "end": 48.92
+    },
+    {
+      "idx": 9,
+      "text": "Whether that becomes a floor to defend, or just a countdown on record, no machine decides.",
+      "start": 49.6,
+      "end": 54.58
+    }
+  ]
+}
