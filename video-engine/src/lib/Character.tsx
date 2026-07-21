@@ -266,14 +266,22 @@ export const Character: React.FC<CharacterProps> = ({
             swing in opposition (legSwing / -legSwing) for a real alternating stride. */}
         <g transform={`rotate(${legSwing} -23 -160)`}>
           <rect x={-40} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
-          <rect x={-40} y={-160} width={34} height={150} rx={16} fill={INK} opacity={0.18} />
+          {/* leg volume: lit highlight down the sun-facing edge + shade down the shadow edge, so
+              the pipe reads as a cylinder, not a flat fill (2026-07-21 round-9 rig pass: legs were
+              the last plain-fill surface Judge 1 flagged after the coats got volume). */}
+          <rect x={-38} y={-156} width={9} height={142} rx={4.5} fill="#fff" opacity={0.12} />
+          <rect x={-16} y={-158} width={10} height={146} rx={5} fill={INK} opacity={0.26} />
           <path d="M-30,-120 q6,20 -2,50" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
           <path d="M-44,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
+          <path d="M-44,-14 h20 v16 h-26 a8,8 0 0 1 -8,-8 q0,-8 14,-8 Z" fill="#fff" opacity={0.14} />
         </g>
         <g transform={`rotate(${-legSwing} 25 -160)`}>
           <rect x={8} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
+          <rect x={10} y={-156} width={9} height={142} rx={4.5} fill="#fff" opacity={0.12} />
+          <rect x={32} y={-158} width={10} height={146} rx={5} fill={INK} opacity={0.26} />
           <path d="M18,-100 q6,24 -3,60" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
           <path d="M4,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
+          <path d="M4,-14 h20 v16 h-26 a8,8 0 0 1 -8,-8 q0,-8 14,-8 Z" fill="#fff" opacity={0.14} />
         </g>
         {/* torso (breath + walk bob) */}
         <g transform={`translate(0,${-160 + bob + walkBob}) scale(1,${breath}) translate(0,160)`}>
@@ -385,22 +393,24 @@ export const Character: React.FC<CharacterProps> = ({
                   <stop offset="100%" stopColor={tSkin.shade} />
                 </radialGradient>
                 <circle r={56} fill={`url(#${uid}_headlit)`} stroke={INK} strokeWidth={6} />
-                <path d="M14,-54 a56,56 0 0 1 42,54 l-14,0 a42,42 0 0 0 -34,-42 Z" fill={skinShade} opacity={0.5} />
-                {/* facial-plane shading (2026-07-21 round 6): the head was a lit sphere but the
-                    FACE itself read as a flat oval with dot eyes -- the panel's last-standing
-                    craft note. Add the three planes a face actually has, as SHADING only (no new
-                    outlined features, so the minimal IGS house-face style is preserved): a soft
-                    nose-bridge shadow on the light-away side of center, a brow/socket shadow the
-                    eyes sit under, and a jaw/chin under-shadow. Lit from upper-screen-left, so the
-                    shadows fall to the right and under. */}
-                <g opacity={0.9}>
-                  {/* nose plane: a thin soft shadow down the shadow side of the bridge + a faint lit edge */}
-                  <path d="M3,-8 q5,10 2,20 q-4,4 -8,2" fill="none" stroke={skinShade} strokeWidth={4} opacity={0.28} strokeLinecap="round" />
-                  <path d="M-1,-8 q-3,10 -1,19" fill="none" stroke={LIGHT.key} strokeWidth={2.5} opacity={0.3} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
+                {/* whole shadow-side cheek falls into core shade — the single biggest read of a lit
+                    face, strengthened round 9 (2 judges still read the face as a flat disc through
+                    round 8; the prior planes were too faint to register at phone scale). */}
+                <path d="M12,-52 a56,56 0 0 1 44,52 a56,56 0 0 1 -30,50 q-18,-6 -20,-30 l4,-40 Z" fill={skinShade} opacity={0.42} />
+                {/* facial-plane shading (round 6, deepened round 9): the three planes a real face has,
+                    as SHADING only (no new outlined features, so the minimal IGS house-face style is
+                    kept): a soft key highlight on the sun-facing cheek + nose-bridge, a nose shadow on
+                    the shadow side, a brow/eye-socket shadow the eyes sit under, and a jaw/chin
+                    under-shadow. Lit from upper-screen-left; shadows fall right and under. */}
+                <ellipse cx={-22} cy={-14} rx={18} ry={26} fill={LIGHT.key} opacity={0.22} style={{mixBlendMode: 'screen'}} />
+                <g>
+                  {/* nose plane: a soft shadow down the shadow side of the bridge + a lit edge */}
+                  <path d="M3,-8 q6,11 2,21 q-5,4 -9,2" fill="none" stroke={skinShade} strokeWidth={5} opacity={0.42} strokeLinecap="round" />
+                  <path d="M-2,-8 q-3,11 -1,20" fill="none" stroke={LIGHT.key} strokeWidth={3} opacity={0.4} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
                   {/* brow/eye-socket shadow the eyes sit beneath, giving the upper face a plane break */}
-                  <path d="M-34,-24 q34,-12 66,-2 l0,7 q-33,-9 -66,3 Z" fill={skinShade} opacity={0.16} />
+                  <path d="M-34,-26 q34,-12 66,-2 l0,9 q-33,-9 -66,3 Z" fill={skinShade} opacity={0.24} />
                   {/* jaw / chin under-shadow (form turning away at the bottom of the face) */}
-                  <path d="M-30,30 q30,20 60,2 q-8,22 -30,24 q-22,-1 -30,-26 Z" fill={skinShade} opacity={0.22} />
+                  <path d="M-30,30 q30,20 60,2 q-8,24 -30,26 q-22,-1 -30,-28 Z" fill={skinShade} opacity={0.34} />
                 </g>
                 {/* rim on the sun-facing cheek */}
                 <path d="M-40,-40 a56,56 0 0 0 -14,44" fill="none" stroke={LIGHT.rim} strokeWidth={3.5} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />

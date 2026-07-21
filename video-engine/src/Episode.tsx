@@ -560,9 +560,16 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
   const t = f / fps;
   const cue = captions.find((c) => t >= c.start && t < c.end + 0.05);
   if (!cue) return null;
+  // kinetic caption (2026-07-21 round-9: the panel flagged the caption pills as a "static box every
+  // cue"). Each cue now springs in with a small scale overshoot + upward settle keyed to ITS start,
+  // so the type pops on the beat instead of hard-cutting. Cheap, deterministic, phone-legible.
+  const local = f - Math.round(cue.start * fps);
+  const pop = spring({frame: local, fps, config: {damping: 12, stiffness: 200}});
+  const scale = interpolate(pop, [0, 1], [0.9, 1], {extrapolateRight: 'clamp'});
+  const rise = interpolate(pop, [0, 1], [16, 0], {extrapolateRight: 'clamp'});
   return (
     <div style={{position: 'absolute', bottom: 340, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 60px'}}>
-      <div style={{background: 'rgba(27,33,48,0.84)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${GLOW}`}}>
+      <div style={{background: 'rgba(27,33,48,0.84)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${GLOW}`, transform: `translateY(${rise}px) scale(${scale})`, transformOrigin: 'center bottom'}}>
         <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, lineHeight: 1.12, color: '#fff', textAlign: 'center', letterSpacing: 0.5, textShadow: `2px 3px 0 rgba(0,0,0,0.6)`}}>
           {cue.text}
         </div>
