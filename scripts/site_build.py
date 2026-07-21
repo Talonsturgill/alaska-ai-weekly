@@ -950,7 +950,7 @@ AI beat, verified to the source and told for Alaskans. From the Slope to Southea
          "alternateName": "Alaska AI HQ",
          "publisher": {"@id": org_id(site_url)}}]}
     return page("Alaska AI - AI Consulting and Daily AI News for Alaska",
-                "Alaska's AI desk in Anchorage. Daily verified stories on Alaska and AI, "
+                "Alaska's AI studio in Anchorage. Daily verified stories on Alaska and AI, "
                 "a public docket of AI infrastructure decisions, and AI consulting for "
                 "Alaska businesses.", body, "", "home", today, site_url, "", ld=ld)
 
@@ -1162,7 +1162,7 @@ built. Bring us a specific ask or let the Field Study find the highest payers.</
   systems end to end, on shift around the clock.</p></div>
   <div class="step" data-reveal><div class="k">06 &middot; CONNECT</div><h3>The digital crew</h3>
   <p>Connected agents running the back office together, a working model of your operation.
-  This is the ceiling, and this desk has built it before.</p></div>
+  This is the ceiling, and we have built it before.</p></div>
 </div>"""
 
     tiers = f"""<h2 data-reveal>Three ways in</h2>
@@ -1177,7 +1177,7 @@ ends with something you own. Prices are where the work starts, scoped in the ope
     actually pays in your business and a working prototype of the best bet. Most firms sell
     a slide deck at this stage. The prototype comes standard here.</p>
     <div class="access">If the honest answer is that AI does not pay in your business yet,
-    that is the answer you get. The desk that verifies every claim on the docket does not
+    that is the answer you get. The same people who verify every claim on the docket do not
     sell systems that do not pay.</div>
   </div>
 </div>
@@ -1231,7 +1231,7 @@ we already run.</p>
 
     trust = """<h2 data-reveal>Grown-up about security and your data</h2>
 <p class="sub" data-reveal>The systems we build are not science projects. They run on
-infrastructure your own IT team already trusts, built by a desk that takes your data as
+infrastructure your own IT team already trusts, built by people who take your data as
 seriously as you do.</p>
 <div class="steps">
   <div class="step" data-reveal><div class="k">01 &middot; ENTERPRISE CLOUD</div><h3>Azure, AWS, or Google</h3>
@@ -1242,16 +1242,16 @@ seriously as you do.</p>
   <p>Your records, your proposals, your proprietary work stay in your control and are handled
   to the standard your industry demands. Access is scoped to the job.</p></div>
   <div class="step" data-reveal><div class="k">03 &middot; SHOWS ITS WORK</div><h3>Provenance is in our blood</h3>
-  <p>The same desk that will not publish a claim without a source builds AI that does the
-  same. Answers you can trace, not answers it made up. In a business where a wrong number
-  costs real money, that is the whole point.</p></div>
+  <p>We will not publish a claim without a source, and the AI we build holds the same
+  standard. Answers you can trace, not answers it made up. In a business where a wrong
+  number costs real money, that is the whole point.</p></div>
 </div>"""
 
     body = f"""<div class="hero heroanim">
 <div><div class="daylight">{daylight_chip(today)}</div></div>
 <h1>Put AI to work <em>in Alaska</em></h1>
-<p class="tag">Alaska AI reads the state's AI beat every morning. The rest of the day, this
-desk builds AI systems for Alaska businesses. Digital employees for the jobs you cannot
+<p class="tag">Alaska AI reads the state's AI beat every morning. The rest of the day, we
+build AI systems for Alaska businesses. Digital employees for the jobs you cannot
 fill, paperwork engines for the filings that never stop, and straight answers about what
 pays and what does not.</p>
 <div class="ctarow">
@@ -1278,26 +1278,25 @@ production, and keep improving them for as long as they run.</p>
 the Valley. Processors in Kodiak and Dutch Harbor. Native corporations with a proposal desk
 and a federal deadline. Contractors, utilities, and the shops that keep them all supplied.
 If you already know what you want built, bring it. If you only know that AI matters and you
-do not want to become an engineer to win with it, you are exactly who this desk works for.</p>
+do not want to become an engineer to win with it, you are exactly who we work for.</p>
 <h2 data-reveal>Straight answers</h2>
 <p class="sub" data-reveal>The questions every owner asks first, answered the way we would
 answer them across a table.</p>
 <h3 data-reveal>Who is Alaska AI?</h3>
-<p data-reveal>Alaska AI is an AI studio and daily publication in Anchorage. One desk reads
-the state's AI beat every morning, publishes the deck and the docket, and builds AI systems
-for Alaska businesses the rest of the day. Founded and run in state by Talon Sturgill.</p>
-<h3 data-reveal>What does AI consulting cost in Alaska?</h3>
-<p data-reveal>The Field Study starts at $2,500 and tells you exactly what AI is worth in
-your operation before you commit to anything. Builds start at $6,000. The Partnership, an
-embedded AI engineer plus standing AI leadership, starts at $6,000 a month. Every price is
-scoped in the open before work begins.</p>
+<p data-reveal>Alaska AI is an AI studio and daily publication in Anchorage. It publishes
+the state's AI beat every morning and builds AI systems for Alaska businesses. Founded and
+run in state by Talon Sturgill.</p>
 <h3 data-reveal>What can AI actually do for an Alaska business?</h3>
-<p data-reveal>The proven wins are unglamorous. A front desk that answers every call and
-books while you sleep. Assistants that know your own files cold. Paperwork engines for the
-proposals, permits and filings that never stop. Digital employees for the seasonal jobs you
-cannot fill. We tell you plainly when a plain rule beats an AI, because it often does.</p>
+<p data-reveal>More than most people think. Answer every call and web inquiry day or night
+and book while you sleep. Draft the proposals, permits, invoices and filings that eat your
+week. Read years of your own records and answer questions about them in plain English.
+Forecast demand from your own seasons, build the schedule, route the trucks, watch the
+inventory. Count fish, pallets or vehicles on a camera feed. Write the marketing, follow up
+every lead, translate for guests, screen resumes, catch billing errors. That list is a
+start, not a ceiling. And we still say it plainly when a simple rule beats an AI, because
+sometimes it does.</p>
 <h3 data-reveal>Do you only work in Anchorage?</h3>
-<p data-reveal>No. The desk sits in Anchorage and works statewide, from the Slope to
+<p data-reveal>No. Alaska AI is based in Anchorage and works statewide, from the Slope to
 Southeast. Lodges, clinics, processors, Native corporations and contractors anywhere in
 Alaska, remote first and on site when it matters.</p>
 <h3 data-reveal>Do we need to be technical to work with you?</h3>
@@ -1337,7 +1336,7 @@ on whether the Field Study fits, and a no costs you nothing.{talk_first}</p>
   </div>
 </form>
 <p class="fineprint" data-reveal>No pitch deck, no drip campaign. One reply, from the same
-desk that writes the deck. Prefer email? docket@alaskaaihq.com reaches the same place.</p>
+people who write the deck. Prefer email? docket@alaskaaihq.com reaches the same place.</p>
 <div class="about-line" data-reveal><p>Prices are starting points, scoped in the open before
 any work begins. The docket stays free. The deck ships daily either way.</p></div>"""
 
@@ -1361,7 +1360,7 @@ any work begins. The docket stays free. The deck ships daily either way.</p></di
                                       "priceCurrency": "USD"}}]}
     return page("AI Consulting for Alaska Businesses - Alaska AI",
                 "AI consulting and builds for Alaska businesses. Voice agents, digital "
-                "employees and paperwork engines from an Anchorage desk. The Field Study "
+                "employees and paperwork engines from an Anchorage studio. The Field Study "
                 "from $2,500.",
                 body, "../", "services", today, site_url, "services/", ld=ld,
                 crumbs=[("Alaska AI", ""), ("Services", "services/")])
@@ -1400,7 +1399,7 @@ def about_page(today, site_url):
     body = f"""<div class="hero" style="min-height:auto;padding-top:9vh">
 <h1>Built in the <em>North</em></h1>
 <p class="tag">Alaska AI is a daily publication and an AI studio in Anchorage, Alaska.
-One desk, two jobs, every fact verified to its source.</p>
+One team, two jobs, every fact verified to its source.</p>
 </div>
 <div class="prose" data-reveal>
 <h2>What Alaska AI is</h2>
@@ -1409,7 +1408,7 @@ lifetimes, told from the only place we would tell it from. AI is arriving in
 Alaska the way pipelines and railroads once did, as land leases, gas
 contracts, utility votes and federal solicitations. Alaskans deserve to see
 it coming, in plain English, with receipts.</p>
-<p>The same desk is a working AI studio. It builds voice agents, assistants
+<p>Alaska AI is also a working AI studio. It builds voice agents, assistants
 trained on a company's own files, paperwork engines and digital employees
 for Alaska businesses, statewide from Anchorage. That work lives on the
 <a href="../services/">services page</a>. Writing the beat every morning is
@@ -1425,7 +1424,7 @@ compute to policy and money to what Alaskans are actually saying. Every
 number and quote is re-fetched from a primary source before it can appear
 on a slide, the docket, or this site, and each one carries its own claim
 record. Every deck's artwork is drawn fresh from code for its story. The
-same desk maintains <a href="../docket/">the Alaska AI Docket</a>, a public
+same team maintains <a href="../docket/">the Alaska AI Docket</a>, a public
 tracker of every AI infrastructure decision in the state and whether the
 public gets a say in it, published as open data.</p>
 <h2>Where to find us</h2>
