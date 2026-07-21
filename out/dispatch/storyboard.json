@@ -39,7 +39,7 @@
     ],
     "dip_at": 47.9,
     "riser_at": 27.0,
-    "silence_at": 48.5,
+    "silence_at": 49.22,
     "payoff_at": 55.0,
     "button_pattern": "callback"
   },
