@@ -88,3 +88,13 @@ if [ -f .githooks/post-commit ]; then
   git config core.hooksPath .githooks 2>/dev/null || true
   echo "setup_env: auto-push post-commit hook activated (core.hooksPath=.githooks)"
 fi
+
+# NODE / REMOTION deps for the video engine. The fresh clone has no node_modules; without this
+# the render step fails with "remotion: not found" on every fresh container. Idempotent.
+if [ -f video-engine/package.json ]; then
+  if [ ! -x video-engine/node_modules/.bin/remotion ]; then
+    ( cd video-engine && npm install --no-audit --no-fund ) \
+      && echo "setup_env: video-engine node deps installed" \
+      || echo "setup_env: WARN npm install failed (render will break)"
+  fi
+fi
