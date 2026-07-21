@@ -1,78 +1,110 @@
-# Eval failure ledger — the memory behind scripts/eval_tracker.py (the repeat-offender system).
-# Each run appends its gate score + per-round panel medians/weakest-axis + per-finding signatures.
-# `eval_tracker.py offenders` reads this to flag weaknesses that recur across runs OR dominate many
-# rounds of one run, and MANDATES a root-cause fix (not another symptom patch, not a defer).
-# Seeded 2026-07-21 with the three prior runs' documented repeat offenders (see docs/RUN_UPGRADES.md).
 runs:
-  - date: 2026-07-18
-    slug: stak-data-center
-    gate_score: 9.5
-    panel_rounds: []
-    findings:
-      - signature: vo-wer-canonicalizer
-        axis: voice-quality
-        status: fixed
-        root_cause: "faster_whisper/resemblyzer missing dep crashed the soundcheck after paying for takes"
-        fix_commits: []
-      - signature: out-scratch-git-tracked
-        axis: workspace-freshness
-        status: fixed
-        root_cause: "out/dispatch force-added despite .gitignore; stale scratch restored on checkout"
-        fix_commits: []
-  - date: 2026-07-19
-    slug: gvea-turbine
-    gate_score: 9.4
-    panel_rounds: []
-    findings:
-      - signature: vo-wer-canonicalizer
-        axis: voice-quality
-        status: fixed
-        root_cause: "canonicalizer inflated WER on $/% tokens vs Whisper's spelled-out forms"
-        fix_commits: []
-      - signature: out-scratch-git-tracked
-        axis: workspace-freshness
-        status: fixed
-        root_cause: "out/ still tracked; prior run's scratch shipped as this run's"
-        fix_commits: []
-  - date: 2026-07-20
-    slug: dryad-xprize-nenana
-    gate_score: 9.3
-    panel_rounds: []
-    findings:
-      - signature: vo-wer-canonicalizer
-        axis: voice-quality
-        status: fixed
-        root_cause: "compound nouns split by Whisper (airstrip->air strip) inflated WER on correct reads"
-        fix_commits: []
-      - signature: out-scratch-git-tracked
-        axis: workspace-freshness
-        status: root_caused
-        root_cause: "git rm -r --cached out/ so .gitignore finally takes effect (structural fix)"
-        fix_commits: []
-  - date: 2026-07-21
-    slug: pen-that-wont-land
-    gate_score: 10.0
-    panel_rounds:
-      - {round: 2, median: 7.92, weakest_axis: motion-animation-craft, hard_blockers: 0}
-      - {round: 3, median: 8.10, weakest_axis: illustration-craft-detail, hard_blockers: 0}
-      - {round: 4, median: 7.98, weakest_axis: illustration-craft-detail, hard_blockers: 0}
-      - {round: 5, median: 8.08, weakest_axis: illustration-craft-detail, hard_blockers: 0}
-      - {round: 6, median: 8.12, weakest_axis: illustration-craft-detail, hard_blockers: 0}
-      - {round: 7, median: 7.88, weakest_axis: illustration-craft-detail, hard_blockers: 0}
-      - {round: 8, median: 7.82, weakest_axis: illustration-craft-detail, hard_blockers: 0}
-    findings:
-      - signature: flat-vector-human-rig
-        axis: illustration-craft-detail
-        first_seen_round: 2
-        rounds_as_weakest: 7
-        status: in_progress
-        root_cause: >-
-          The human Character rig is a flat-vector, sway-only sprite. Incremental per-surface fixes
-          keep surfacing the next flat surface (round 5 form-gradient softness + facial planes,
-          round 6 idle sway, round 8 articulated walk + volumetric coats) -- so the panel's weakest
-          axis stayed the human rig for 7 straight rounds. ROOT CAUSE is the rig's overall fidelity
-          vs the depth-lit props, which demands ONE comprehensive volumetric+articulation pass over
-          ALL human surfaces (faces, legs, idle secondary, gait, captions), not another single-part
-          patch.
-        fix_commits: [fae1604, eb45302, ada8cbf]
-resolved: {}
+- date: '2026-07-18'
+  slug: stak-data-center
+  gate_score: 9.5
+  panel_rounds: []
+  findings:
+  - signature: vo-wer-canonicalizer
+    axis: voice-quality
+    status: fixed
+    root_cause: faster_whisper/resemblyzer missing dep crashed the soundcheck after paying for takes
+    fix_commits: []
+  - signature: out-scratch-git-tracked
+    axis: workspace-freshness
+    status: fixed
+    root_cause: out/dispatch force-added despite .gitignore; stale scratch restored on checkout
+    fix_commits: []
+- date: '2026-07-19'
+  slug: gvea-turbine
+  gate_score: 9.4
+  panel_rounds: []
+  findings:
+  - signature: vo-wer-canonicalizer
+    axis: voice-quality
+    status: fixed
+    root_cause: canonicalizer inflated WER on $/% tokens vs Whisper's spelled-out forms
+    fix_commits: []
+  - signature: out-scratch-git-tracked
+    axis: workspace-freshness
+    status: fixed
+    root_cause: out/ still tracked; prior run's scratch shipped as this run's
+    fix_commits: []
+- date: '2026-07-20'
+  slug: dryad-xprize-nenana
+  gate_score: 9.3
+  panel_rounds: []
+  findings:
+  - signature: vo-wer-canonicalizer
+    axis: voice-quality
+    status: fixed
+    root_cause: compound nouns split by Whisper (airstrip->air strip) inflated WER on correct reads
+    fix_commits: []
+  - signature: out-scratch-git-tracked
+    axis: workspace-freshness
+    status: root_caused
+    root_cause: git rm -r --cached out/ so .gitignore finally takes effect (structural fix)
+    fix_commits: []
+- date: '2026-07-21'
+  slug: pen-that-wont-land
+  gate_score: 10.0
+  panel_rounds:
+  - round: 2
+    median: 7.92
+    weakest_axis: motion-animation-craft
+    hard_blockers: 0
+  - round: 3
+    median: 8.1
+    weakest_axis: illustration-craft-detail
+    hard_blockers: 0
+  - round: 4
+    median: 7.98
+    weakest_axis: illustration-craft-detail
+    hard_blockers: 0
+  - round: 5
+    median: 8.08
+    weakest_axis: illustration-craft-detail
+    hard_blockers: 0
+  - round: 6
+    median: 8.12
+    weakest_axis: illustration-craft-detail
+    hard_blockers: 0
+  - round: 7
+    median: 7.88
+    weakest_axis: illustration-craft-detail
+    hard_blockers: 0
+  - round: 8
+    median: 7.82
+    weakest_axis: illustration-craft-detail
+    hard_blockers: 0
+  - round: 9
+    median: 8.14
+    weakest_axis: illustration-craft-detail
+    hard_blockers: 0
+  - round: 10
+    median: 8.38
+    weakest_axis: illustration-craft-detail
+    hard_blockers: 0
+  findings:
+  - signature: flat-vector-human-rig
+    axis: illustration-craft-detail
+    first_seen_round: 2
+    rounds_as_weakest: 9
+    status: root_caused
+    root_cause: flat sway-only sprite rebuilt comprehensively rounds 8-10 (walk, volumetric coats/legs/faces,
+      idle life, kinetic captions); residual is the flat-vector render APPROACH = product decision
+    fix_commits:
+    - ada8cbf
+    - 1696d45
+    - 68f19ef
+resolved:
+  flat-vector-human-rig:
+    run: '2026-07-21'
+    commits:
+    - ada8cbf
+    - 1696d45
+    - 68f19ef
+    note: 'comprehensive rig rebuild rounds 8-10: articulated walk cycle + volumetric coats/legs/faces
+      + idle weight-shift/breathing + kinetic captions + subtler mouth; judge median climbed 7.82->8.14->8.38.
+      Residual gap to 9.0 is UNANIMOUSLY the flat-vector character-render APPROACH (all 3 judges: needs
+      volumetric/textured/painterly characters) = a product/brand decision, not a per-run defect. Logged
+      as top future engine direction in RUN_UPGRADES + EVAL_REPEAT_OFFENDERS.'

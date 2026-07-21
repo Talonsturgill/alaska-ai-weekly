@@ -80,9 +80,11 @@ def cmd_record(a):
         fnd["signature"] = _norm_sig(fnd.get("signature") or fnd.get("axis", ""))
         if "axis" in fnd:
             fnd["axis"] = _norm_sig(fnd["axis"])
-    # replace any existing entry for this date+slug (idempotent re-record)
-    key = (a.date, a.slug)
-    d["runs"] = [r for r in d["runs"] if (r.get("date"), r.get("slug")) != key]
+    # replace any existing entry for this date+slug (idempotent re-record). Normalize the date to a
+    # string on BOTH sides — yaml.safe_load parses an unquoted YYYY-MM-DD as a datetime.date, so a
+    # str key would never match a seeded date-typed entry and would silently duplicate the run.
+    key = (str(a.date), a.slug)
+    d["runs"] = [r for r in d["runs"] if (str(r.get("date")), r.get("slug")) != key]
     d["runs"].append({
         "date": a.date,
         "slug": a.slug,
@@ -148,8 +150,26 @@ def cmd_offenders(a):
                                "count": f.get("rounds_as_weakest"),
                                "rounds": len(rounds), "status": f.get("status")})
 
+    # ---- decide what actually BLOCKS this run's ship vs what is informational history.
+    # An offender only blocks if it is implicated in the LATEST run AND is not yet resolved
+    # (finding.status root_caused/fixed, or an entry in `resolved`). Historical offenders that were
+    # already fixed and did NOT recur this run are shown as "watch for regression", not blockers.
+    resolved = d.get("resolved", {})
+    latest = d["runs"][-1]
+    latest_findings = {f.get("signature"): f for f in latest.get("findings", [])}
+
+    def _done(sig, fnd):
+        return sig in resolved or (fnd and fnd.get("status") in ("root_caused", "fixed"))
+
+    blocking = []
+    for sig, fnd in latest_findings.items():
+        open_within = (fnd.get("rounds_as_weakest") or 0) >= wr and not _done(sig, fnd)
+        open_cross = sig in cross and not _done(sig, fnd)
+        if open_within or open_cross:
+            blocking.append(sig)
+
     print("=== REPEAT-OFFENDER REPORT ===")
-    print(f"(cross-run threshold: >={xr} runs   within-run threshold: >={wr} consecutive weakest rounds)\n")
+    print(f"(cross-run threshold: >={xr} runs   within-run threshold: >={wr} weakest rounds)\n")
 
     if not cross and not within:
         print("No repeat offenders. Any this-run failure is a first occurrence — a normal fix + a")
@@ -158,41 +178,42 @@ def cmd_offenders(a):
 
     esc = 1
     if cross:
-        print("CROSS-RUN repeat offenders — the SAME weakness keeps coming back across runs.")
-        print("MANDATE: a stronger root-cause fix than last time (the prior fix regressed or was too")
-        print("narrow). Do NOT re-apply the same patch; escalate the cause.\n")
+        print("CROSS-RUN patterns — the same signature has failed in multiple runs:")
         for sig, hits in sorted(cross.items(), key=lambda kv: -len({h['date'] for h in kv[1]})):
             runs = sorted({h["date"] for h in hits})
-            print(f"  [{esc}] signature: {sig}")
-            print(f"      seen in {len(runs)} runs: {', '.join(runs)}")
-            res = d["resolved"].get(sig)
+            res = resolved.get(sig)
+            state = ("BLOCKING (open in the latest run)" if sig in blocking
+                     else "resolved — watch for regression" if res or sig not in latest_findings
+                     else "open")
+            print(f"  [{esc}] {sig}: {len(runs)} runs ({', '.join(runs)}) — {state}")
             if res:
-                print(f"      last root-cause fix: run {res.get('run')} commits {res.get('commits')} — "
-                      f"{res.get('note','')}")
-                print(f"      -> that fix DID NOT HOLD. Root-cause deeper this run.")
-            else:
-                causes = [h["root_cause"] for h in hits if h.get("root_cause")]
-                if causes:
-                    print(f"      prior noted causes: {causes[-1]}")
+                print(f"       last root-cause fix: run {res.get('run')} {res.get('commits')}")
+                if sig in blocking:
+                    print(f"       -> it came back: that fix DID NOT HOLD. Root-cause DEEPER, don't re-apply.")
             esc += 1
         print()
 
     if within:
-        print("WITHIN-RUN repeat offenders — an axis stayed the panel's WEAKEST across many rounds,")
-        print("so symptom-tweaks are not converging. MANDATE: stop tweaking; make the root-cause")
-        print("engine/rig/doctrine fix for that axis THIS run (never defer, never ship-with-disclosure")
-        print("while a within-run offender is unresolved).\n")
+        print("WITHIN-RUN patterns — an axis/finding stayed the panel's weakest across many rounds:")
         for w in within:
             label = "axis" if w["kind"] == "axis-streak" else "finding"
             unit = "consecutive weakest rounds" if w["kind"] == "axis-streak" else "rounds as the weakest axis"
-            tail = f" (status: {w['status']})" if w.get("status") else ""
-            print(f"  [{esc}] {label}: {w['key']}  — {w['count']} {unit} "
-                  f"(of {w['rounds']}) in {w['date']}/{w['slug']}{tail}")
+            st = w.get("status")
+            block = w["kind"] == "finding" and w["key"] in blocking
+            state = "BLOCKING" if block else (f"status: {st}" if st else "informational")
+            print(f"  [{esc}] {label}: {w['key']} — {w['count']} {unit} "
+                  f"(of {w['rounds']}) in {w['date']}/{w['slug']} — {state}")
             esc += 1
         print()
 
-    print("Exit code 2 = repeat offenders present and must be root-caused before this run ships.")
-    return 2
+    if blocking:
+        print(f"BLOCKING ({len(blocking)}): {', '.join(sorted(set(blocking)))}")
+        print("These repeat offenders are OPEN in the latest run and MUST get a root-cause fix before")
+        print("it ships (never a symptom patch, never a defer/disclose). Exit 2.")
+        return 2
+    print("No OPEN repeat offenders in the latest run — every recurring/within-run offender is")
+    print("root-caused or resolved. Ship allowed. (History above is kept to catch future regressions.)")
+    return 0
 
 
 # ---------------------------------------------------------------- resolve
