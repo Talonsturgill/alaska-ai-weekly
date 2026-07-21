@@ -34,10 +34,14 @@ def _apply_caption_fixups(caps):
     fixups = json.load(open(sp)).get("caption_fixups", {}) if os.path.exists(sp) else {}
     if not fixups:
         return caps
+    # Use alnum lookarounds, NOT \b: \b fails on tokens whose edge char is punctuation
+    # (e.g. "A.I." ends in '.', so \b after it never matches and the fixup silently no-ops —
+    # the 2026-07-21c panel caught "A.I." leaking on screen while NOAA/GAIA normalized fine).
+    # Longest keys first so a key that is a prefix of another can't pre-empt it.
     for c in caps:
         t = c.get("text", "")
-        for wrong, right in fixups.items():
-            t = _re.sub(r"\b" + _re.escape(wrong) + r"\b", right, t, flags=_re.IGNORECASE)
+        for wrong, right in sorted(fixups.items(), key=lambda kv: -len(kv[0])):
+            t = _re.sub(r"(?<![A-Za-z0-9])" + _re.escape(wrong) + r"(?![A-Za-z0-9])", right, t, flags=_re.IGNORECASE)
         c["text"] = t
     return caps
 

@@ -71,7 +71,7 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
             <ScanReticle cx={40} cy={-6} frame={f} lock={Math.min(1, lock)} color={GOLD} size={250} />
           </g>
           {lock > 0.55 && lock < 1.5 && <SpeedLines cx={560} cy={990} frame={f} intensity={0.7} color={GOLD} />}
-          {lock > 0.85 && lock < 1.4 && <ImpactStar cx={600} cy={905} r={44} color={GOLD} />}
+          {lock > 0.85 && lock < 1.4 && <ImpactStar cx={690} cy={840} r={40} color={GOLD} />}
         </g>
       </svg>
       <div style={{position: 'absolute', top: 300, left: 0, right: 0, textAlign: 'center', opacity: headlineOp}}>
@@ -173,7 +173,7 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
             <ScanReticle cx={0} cy={0} frame={f} lock={Math.min(1, lock)} color={GOLD} size={190} />
             {phaseB > 0.2 && <SmellRings cx={-40} cy={0} frame={f} color={MINT} count={3} maxR={220} intensity={phaseB} />}
           </g>
-          {lock > 0.85 && lock < 1.4 && <ImpactStar cx={70} cy={-40} r={40} color={GOLD} />}
+          {lock > 0.85 && lock < 1.4 && <ImpactStar cx={150} cy={-120} r={38} color={GOLD} />}
         </g>
       </svg>
       <BoxLabel x={540} y={250} text={phaseB > 0.4 ? 'EAR + EYE · FIRST TIME' : 'GAIA · DETECTED'} fs={32} w={560} h={66} fill={PANEL} color={INKC} />
@@ -222,7 +222,7 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   const collapse = interpolate(f, [6, 40], [1, 0.255], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const bounce = f > 40 && f < 58 ? -0.028 * Math.sin((f - 40) / 18 * Math.PI) : 0;
   const barFrac = Math.max(0.2, collapse + bounce);
-  const ghostOp = interpolate(f, [10, 42], [0, 0.55], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const ghostOp = interpolate(f, [2, 26], [0, 0.72], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const STAMP_AT = 78;
   const stampS = spring({frame: f - STAMP_AT, fps, config: {damping: 9, stiffness: 210}});
   const H = 760;
@@ -237,7 +237,7 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
           {/* ghost pod of the ~1,000 missing belugas */}
           <g opacity={ghostOp}>
             {Array.from({length: 22}).map((_, i) => (
-              <g key={i} transform={`translate(${60 + (i % 6) * 165},${230 + Math.floor(i / 6) * 80}) scale(0.28)`}>
+              <g key={i} transform={`translate(${60 + (i % 6) * 165},${230 + Math.floor(i / 6) * 80}) scale(0.34)`}>
                 <Beluga x={0} y={0} scale={1} f={f + i * 7} facing={i % 2 ? 1 : -1} mode="cruise" swim={0.4} />
               </g>
             ))}
@@ -283,7 +283,8 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
         </g>
         {/* empty net drifting */}
         <g transform={`translate(${820 - swim * 60},1320)`} opacity={0.5}>
-          <path d="M0,0 l120,0 l-14,120 l-92,0 Z" fill="none" stroke="#dfeee7" strokeWidth={2} strokeDasharray="5 6" />
+          <path d="M0,0 l120,0 l-14,120 l-92,0 Z" fill="#0d1815" opacity={0.55} stroke="#9fb3ab" strokeWidth={3} strokeLinejoin="round" />
+          <path d="M0,0 l120,0 l-14,120 l-92,0 Z" fill="none" stroke="#cfe0d8" strokeWidth={1.5} strokeDasharray="6 7" />
         </g>
         {/* threat labels drifting past the useless HUD */}
         {threats.map((tx, i) => {
@@ -331,6 +332,10 @@ const S9: React.FC<{from?: number}> = ({from = 0}) => {
   const headerOp = Math.max(0, Math.min(1, (back - 0.55) / 0.45));
   const ravenIn = interpolate(f, [RETURN_AT + 30, RETURN_AT + 52], [-160, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const blow = interpolate(f, [RETURN_AT + 20, RETURN_AT + 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // the whale dives under at the button (with real directional motion blur — panel ask)
+  const diveY = interpolate(f, [RETURN_AT + 50, RETURN_AT + 100], [0, 360], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.in(Easing.cubic)});
+  const diveVy = interpolate(f, [RETURN_AT + 50, RETURN_AT + 75, RETURN_AT + 100], [0, 13, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const diveOp = interpolate(f, [RETURN_AT + 80, RETURN_AT + 105], [1, 0.35], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{backgroundColor: INKC}}>
       {/* the fork (fades out as the loop returns) */}
@@ -349,10 +354,14 @@ const S9: React.FC<{from?: number}> = ({from = 0}) => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: back}}>
         <g opacity={0.5}><g transform="translate(0,-560)"><AnchorageSkylineBG f={f} season="summer" denali floatplane={false} train={false} /></g></g>
         <g transform="translate(0,300)"><WaterColumn f={f} intensity={1} surfaceY={-360} deep={WDEEP} shallow={WSURF} rays={6} /></g>
-        <Whale x={520} y={1010} scale={1.4} f={f} facing={1} mode="cruise" blow={blow} sweep={0.5} />
-        <g transform="translate(520,1005)">
-          <SmellRings cx={-52} cy={0} frame={f} color={MINT} count={3} maxR={260} intensity={0.5} />
-          <ScanReticle cx={40} cy={-6} frame={f} lock={0.95} color={GOLD} size={230} />
+        <g opacity={diveOp}>
+          <MotionBlur vy={diveVy} gain={0.8}>
+            <Whale x={520} y={1010 + diveY} scale={1.4} f={f} facing={1} mode="cruise" blow={blow} sweep={0.5} />
+          </MotionBlur>
+          <g transform={`translate(520,${1005 + diveY})`}>
+            <SmellRings cx={-52} cy={0} frame={f} color={MINT} count={3} maxR={260} intensity={0.5} />
+            <ScanReticle cx={40} cy={-6} frame={f} lock={0.95} color={GOLD} size={230} />
+          </g>
         </g>
         <g transform={`translate(160,${1260 + ravenIn}) scale(1.2)`}><Raven x={0} y={0} f={f} mode="perch" /></g>
       </svg>
