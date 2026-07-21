@@ -9,6 +9,13 @@ seed_sources:
     - {url: "https://www.alaskajournal.com",          outlet: "Alaska Journal of Commerce",            credibility: "high"}
     - {url: "https://www.akbizmag.com",               outlet: "Alaska Business",                       credibility: "high"}
     - {url: "https://www.alaska-native-news.com",     outlet: "Alaska Native News",                    credibility: "medium"}
+    # Promoted 2026-07-21 from researcher new_sources_to_consider (dispatch runs kept
+    # surfacing them; KUCB broke the 07-20b bycatch-bill story):
+    - {url: "https://www.kucb.org",                   outlet: "KUCB (Unalaska/Aleutians)",             credibility: "high"}
+    - {url: "https://www.kyuk.org",                   outlet: "KYUK (Bethel, Y-K Delta)",              credibility: "high"}
+    - {url: "https://www.kdll.org",                   outlet: "KDLL (Kenai Peninsula)",                credibility: "high"}
+    - {url: "https://www.newsminer.com",              outlet: "Fairbanks Daily News-Miner",            credibility: "high"}
+    - {url: "https://www.nationalfisherman.com",      outlet: "National Fisherman (trade)",            credibility: "medium"}
 
   research_orgs:
     - {url: "https://news.uaf.edu",                   outlet: "UAF News",                              credibility: "primary"}
@@ -19,6 +26,9 @@ seed_sources:
 
   government:
     - {url: "https://www.alaska.gov/news.html",       outlet: "State of Alaska",                       credibility: "primary"}
+    # Promoted 2026-07-21: both were load-bearing primary sources in the 07-20b dispatch
+    - {url: "https://www.adfg.alaska.gov",            outlet: "Alaska Dept of Fish and Game",          credibility: "primary"}
+    - {url: "https://www.fisheries.noaa.gov",         outlet: "NOAA Fisheries (Alaska region)",        credibility: "primary"}
     - {url: "https://www.muni.org/Departments/Mayor", outlet: "Muni of Anchorage",                     credibility: "primary"}
     - {url: "https://www.fairbanksalaska.us/news",    outlet: "City of Fairbanks",                     credibility: "primary"}
 
