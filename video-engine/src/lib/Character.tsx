@@ -66,6 +66,13 @@ export const Character: React.FC<CharacterProps> = ({
   const c = OUTFITS[outfit];
   const breath = 1 + 0.011 * Math.sin(f / 13);
   const bob = 2.2 * Math.sin(f / 13);
+  // idle weight-shift: a slow lateral hip sway + matching lean while standing still, so a
+  // held beat (fork impasse, tally jam, button) reads as a person shifting their weight, not
+  // a frozen sprite (a 2026-07-21 panel note across 4 rounds: "characters go static between
+  // moves"). Phased by position so two standing figures in the same shot don't sway in lockstep.
+  const swayPhase = (x + y) * 0.01;
+  const sway = pose === 'stand' ? 3.4 * Math.sin(f / 46 + swayPhase) : 0;
+  const swayTilt = pose === 'stand' ? 0.9 * Math.sin(f / 46 + swayPhase) : 0;
   const blink = ((f + 11) % 92) < 5;
   const skinShade = '#c99268';
   // per-instance ids so each figure's form-shading gradients stay unique in the doc
@@ -90,6 +97,9 @@ export const Character: React.FC<CharacterProps> = ({
             <ellipse cx={19} cy={-14} rx={emotion === 'shock' ? 13 : 9.5} ry={emotion === 'smug' ? 6 : emotion === 'shock' ? 15 : 11} fill="#fff" stroke={INK} strokeWidth={4.5} />
             <circle cx={-15 + 2 * facing} cy={-13} r={emotion === 'shock' ? 3.4 : 4.4} fill={INK} />
             <circle cx={21 + 2 * facing} cy={-13} r={emotion === 'shock' ? 3.4 : 4.4} fill={INK} />
+            {/* catchlight: a tiny lit-side highlight on each pupil so the eyes read as wet/alive, not flat dots */}
+            <circle cx={-17 + 2 * facing} cy={-16} r={1.7} fill="#fff" opacity={0.9} />
+            <circle cx={21 + 2 * facing} cy={-16} r={1.7} fill="#fff" opacity={0.9} />
           </g>
         )}
         {/* brows */}
@@ -218,11 +228,15 @@ export const Character: React.FC<CharacterProps> = ({
   };
 
   return (
-    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) translate(-150,-500)`}>
-      {/* form-shading gradients for this figure (jacket + skin + pants), lit by the global sun dir */}
-      <FormGradient id={`${uid}_body`} t={tMain} />
-      <FormGradient id={`${uid}_skin`} t={tSkin} softness={0.8} />
-      <FormGradient id={`${uid}_pants`} t={tones(c.pants)} softness={0.85} />
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) translate(-150,-500) translate(${sway},0) rotate(${swayTilt} 150 500)`}>
+      {/* form-shading gradients for this figure (jacket + skin + pants), lit by the global sun dir.
+          Softness is deliberately tighter than the FormGradient default (1): at 1 the light/shade
+          stops fall mostly OUTSIDE the shape's own bounds, so only a sliver of the key-to-shade
+          range is ever visible and every character read as flat clip-art next to harder-lit props
+          (2026-07-21 panel, 4 straight rounds citing the same "flat vector fill" defect). */}
+      <FormGradient id={`${uid}_body`} t={tMain} softness={0.62} />
+      <FormGradient id={`${uid}_skin`} t={tSkin} softness={0.6} />
+      <FormGradient id={`${uid}_pants`} t={tones(c.pants)} softness={0.55} />
       <g transform="translate(150,500)">
         {/* soft, light-direction contact shadow (AO) grounding the figure */}
         <ContactShadow cx={0} cy={4} rx={96} ry={18} opacity={0.42} blur={10} />
@@ -230,6 +244,10 @@ export const Character: React.FC<CharacterProps> = ({
         <rect x={-40} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
         <rect x={-40} y={-160} width={34} height={150} rx={16} fill={INK} opacity={0.18} />
         <rect x={8} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
+        {/* cloth-fold creases: cheap deterministic material texture (lighting.tsx's own doctrine
+            for "not a flat fill") so the pant legs read as fabric, not painted rectangles */}
+        <path d="M-30,-120 q6,20 -2,50" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
+        <path d="M18,-100 q6,24 -3,60" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
         {/* boots */}
         <path d="M-44,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
         <path d="M4,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
