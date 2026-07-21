@@ -10,13 +10,14 @@ OUT = os.path.join(REPO, "out", "dispatch")
 FPS = 30
 TAIL = 2.6  # hold after the last word
 
-# scene -> index of the VO line that starts it. The current Episode has 6 scenes
-# (S1..S6 in video-engine/src/Episode.tsx, SCENE_COMPONENTS), each spanning two VO
-# lines except S6 which carries the final three (lines 10,11,12):
-#   S1 lines 0-1  S2 lines 2-3  S3 lines 4-5  S4 lines 6-7  S5 lines 8-9  S6 lines 10-12
-# (an earlier 8-entry list here silently mismatched SCENE_COMPONENTS.length, so Episode
-# fell back to its hardcoded DEFAULT_BOUNDS and ignored this file's retimed scenes.)
-SCENE_START_LINE = [0, 2, 4, 6, 8, 10]
+# scene -> index of the VO line that starts it. 2026-07-21 "The Pen That Won't Land"
+# has 9 scenes (S1..S9 in video-engine/src/Episode.tsx, SCENE_COMPONENTS) mapped 1:1
+# to the 9 VO lines (vo_script.json has exactly 9 lines this run):
+#   S1 line 0  S2 line 1  S3 line 2  S4 line 3  S5 line 4  S6 line 5  S7 line 6  S8 line 7  S9 line 8
+# (an earlier list here silently mismatched SCENE_COMPONENTS.length, so Episode fell
+# back to its hardcoded DEFAULT_BOUNDS and ignored this file's retimed scenes -- keep
+# this list's length equal to SCENE_COMPONENTS.length every run.)
+SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 
 def _apply_caption_fixups(caps):

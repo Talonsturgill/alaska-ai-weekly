@@ -21,13 +21,24 @@ const CRIMSON = '#c0392b';
 const GRAPHITE_D = '#232c34';
 
 // A big loud stat chip: one number/phrase, optional sub line.
-export const StatCard: React.FC<{x: number; y: number; big: string; sub?: string; op?: number; scale?: number; color?: string}> = ({x, y, big, sub, op = 1, scale = 1, color = CRIMSON}) => (
-  <g transform={`translate(${x},${y}) scale(${scale})`} opacity={op}>
-    <rect x={-260} y={-64} width={520} height={sub ? 128 : 96} rx={16} fill={color} stroke={INK} strokeWidth={8} />
-    <text x={0} y={sub ? -12 : big.length > 10 ? 10 : 16} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={sub ? 58 : 46} fill={SNOW} letterSpacing={1} stroke={INK} strokeWidth={2.5} paintOrder="stroke">{big}</text>
-    {sub && <text x={0} y={38} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={SNOW} opacity={0.9}>{sub}</text>}
-  </g>
-);
+// `formShaded` (NEW 2026-07-21, clears the flat-HUD-chip deferral, ASSET_MANIFEST.md):
+// gives the chip real dimensional shading (tones/FormGradient) + a ContactShadow so it
+// sits IN the lit scene. Off by default so existing calls render unchanged.
+export const StatCard: React.FC<{x: number; y: number; big: string; sub?: string; op?: number; scale?: number; color?: string; formShaded?: boolean}> = ({x, y, big, sub, op = 1, scale = 1, color = CRIMSON, formShaded = false}) => {
+  const cardTones = tones(color);
+  const gid = `statcard_${x}_${y}`;
+  const h = sub ? 128 : 96;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`} opacity={op}>
+      {formShaded && <ContactShadow cx={0} cy={h / 2 + 14} rx={280} ry={20} opacity={0.3} />}
+      {formShaded && <defs><FormGradient id={gid} t={cardTones} softness={0.8} /></defs>}
+      <rect x={-260} y={-64} width={520} height={h} rx={16} fill={formShaded ? `url(#${gid})` : color} stroke={INK} strokeWidth={8} />
+      {formShaded && <RimLight d={`M-260,-56 L-252,${h / 2 - 8}`} w={5} opacity={0.4} />}
+      <text x={0} y={sub ? -12 : big.length > 10 ? 10 : 16} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={sub ? 58 : 46} fill={SNOW} letterSpacing={1} stroke={INK} strokeWidth={2.5} paintOrder="stroke">{big}</text>
+      {sub && <text x={0} y={38} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={SNOW} opacity={0.9}>{sub}</text>}
+    </g>
+  );
+};
 
 // A small identity plate (institution, place, person).
 export const Nameplate: React.FC<{x: number; y: number; text: string; sub?: string; op?: number; subColor?: string}> = ({x, y, text, sub, op = 1, subColor = '#e0921a'}) => (

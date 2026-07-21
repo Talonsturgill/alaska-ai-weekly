@@ -28,8 +28,8 @@ dispatch_history:
     palette: glacial teal-green + aurora
     metaphor: sound made visible — the whale's call drawn as an acoustic echo
 - date: '2026-06-26'
-  topic: Permafrost digital twin under a road in Utqiagvik (Penn State + UAF, physics-informed ML + fiber-optic
-    sensing)
+  topic: Permafrost digital twin under a road in Utqiagvik (Penn State + UAF, physics-informed
+    ML + fiber-optic sensing)
   slug: dispatch-2026-06-26-permafrost
   key_entities:
   - permafrost
@@ -41,8 +41,10 @@ dispatch_history:
   - thaw
   - machine learning
   - north slope
-  archetype: cross-section + two-worlds split (real ground vs digital twin) + descending thaw front
-  palette: thermal duotone (ice-indigo base, ochre active layer, coral thaw front, gold AI)
+  archetype: cross-section + two-worlds split (real ground vs digital twin) + descending
+    thaw front
+  palette: thermal duotone (ice-indigo base, ochre active layer, coral thaw front,
+    gold AI)
   voice: edge_tts:en-US-AndrewMultilingualNeural
   composition:
     pov: cross-section-cutaway
@@ -53,8 +55,8 @@ dispatch_history:
     palette: thermal duotone (ice-indigo, ochre, coral, gold)
     metaphor: a digital twin learning ahead of the real ground
 - date: '2026-06-30'
-  topic: Kenai River salmon counted by imaging sonar + computer vision (ADFG ARIS; arXiv 2502.05129; Atlas
-    et al. BC system)
+  topic: Kenai River salmon counted by imaging sonar + computer vision (ADFG ARIS;
+    arXiv 2502.05129; Atlas et al. BC system)
   slug: dispatch-2026-06-30-riversonar
   key_entities:
   - kenai
@@ -77,14 +79,14 @@ dispatch_history:
     hero_treatment: multiplicity-swarm
     layout: hud-instrument-frame
     register: instrument-readout
-    palette: amber acoustic echoes on abyssal black water-column, cool cyan UI chrome, a single warning-coral
-      accent
-    metaphor: the machine counting the run — each fish becomes a boxed, classified echo the instant it
-      trips the count line
+    palette: amber acoustic echoes on abyssal black water-column, cool cyan UI chrome,
+      a single warning-coral accent
+    metaphor: the machine counting the run — each fish becomes a boxed, classified
+      echo the instant it trips the count line
 - date: '2026-07-01'
-  topic: 'Yakutat microplate razor edge: an ML model pulled about 1,750 uncatalogued quakes out of a decade
-    of Alaska seismic noise, tracing a 250 km buried plate edge under southern Alaska that may load the
-    Denali Fault'
+  topic: 'Yakutat microplate razor edge: an ML model pulled about 1,750 uncatalogued
+    quakes out of a decade of Alaska seismic noise, tracing a 250 km buried plate
+    edge under southern Alaska that may load the Denali Fault'
   slug: dispatch-2026-07-01-yakutat-edge
   key_entities:
   - yakutat
@@ -108,12 +110,13 @@ dispatch_history:
     hero_treatment: structure-as-subject
     layout: map-territory
     register: editorial-schematic
-    palette: basalt and obsidian ground, an incandescent crimson-to-orange seismic line, bone-white station
-      pins, a faint slate graticule
+    palette: basalt and obsidian ground, an incandescent crimson-to-orange seismic
+      line, bone-white station pins, a faint slate graticule
     metaphor: the machine draws the hidden edge
 - date: '2026-07-02'
-  topic: Air Force offered ~4,700 acres at JBER/Eielson/Clear for AI data centers; Cook Inlet gas collapse
-    leaves GVEA unable to feed them; the AI boom priced the ~$120M turbine fix +195%
+  topic: Air Force offered ~4,700 acres at JBER/Eielson/Clear for AI data centers;
+    Cook Inlet gas collapse leaves GVEA unable to feed them; the AI boom priced the
+    ~$120M turbine fix +195%
   slug: dispatch-2026-07-02-circuit
   key_entities:
   - air force
@@ -139,11 +142,13 @@ dispatch_history:
     layout: grid-modular
     register: data-brutalist
     palette: warm parchment field, carbon ink, hot vermilion signal, cold pewter
-    metaphor: the circuit that will not close, AI demand raised the price of the power it needs
+    metaphor: the circuit that will not close, AI demand raised the price of the power
+      it needs
 - date: '2026-07-03'
-  topic: 'XPRIZE Wildfire autonomous-drone finals in Nenana, Alaska: Anduril, Dryad, and AURA Foresight
-    AI systems had 10 minutes to detect and suppress a controlled wildfire in a 1,000 km2 UAF/ACUASI test
-    box, no human in the loop; $3.5M track prize, no winner announced yet'
+  topic: 'XPRIZE Wildfire autonomous-drone finals in Nenana, Alaska: Anduril, Dryad,
+    and AURA Foresight AI systems had 10 minutes to detect and suppress a controlled
+    wildfire in a 1,000 km2 UAF/ACUASI test box, no human in the loop; $3.5M track
+    prize, no winner announced yet'
   slug: dispatch-2026-07-03-tenminuteclock
   key_entities:
   - xprize
@@ -160,10 +165,11 @@ dispatch_history:
   - lattice
   - detect and suppress
   - fairbanks
-  archetype: 'field-HUD instrument: a machine''s ten-minute clock (orbital night canopy, detection grid,
-    converging swarm, target-lock countdown, frayed proven/unproven split)'
-  palette: deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet AI detection grid,
-    ember-amber accents
+  archetype: 'field-HUD instrument: a machine''s ten-minute clock (orbital night canopy,
+    detection grid, converging swarm, target-lock countdown, frayed proven/unproven
+    split)'
+  palette: deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet
+    AI detection grid, ember-amber accents
   voice: kokoro:am_fenrir
   composition:
     pov: orbital-aerial
@@ -171,12 +177,13 @@ dispatch_history:
     hero_treatment: multiplicity-swarm
     layout: hud-instrument-frame
     register: instrument-readout
-    palette: deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet AI detection grid,
-      ember-amber accents
-    metaphor: an AI races its own ten-minute clock to answer a fire it was built to expect
+    palette: deep spruce-black canopy, white-hot ignition flare, phosphor cyan-violet
+      AI detection grid, ember-amber accents
+    metaphor: an AI races its own ten-minute clock to answer a fire it was built to
+      expect
 - date: '2026-07-05'
-  topic: UAF probabilistic depth model predicts Chinook salmon depth occupancy to reduce pollock trawl
-    bycatch in the Gulf of Alaska
+  topic: UAF probabilistic depth model predicts Chinook salmon depth occupancy to
+    reduce pollock trawl bycatch in the Gulf of Alaska
   slug: dispatch-2026-07-05-depthmodel
   key_entities:
   - chinook
@@ -192,8 +199,8 @@ dispatch_history:
   - courtney
   - animal biotelemetry
   archetype: instrument-as-subject cross-section explainer, editorial-schematic register
-  palette: abyssal indigo-navy water column, a bioluminescent gold band, moonlit silver for the night
-    pass, one coral-dawn beat at the diel turn
+  palette: abyssal indigo-navy water column, a bioluminescent gold band, moonlit silver
+    for the night pass, one coral-dawn beat at the diel turn
   voice: kokoro:bf_emma
   composition:
     pov: cross-section-cutaway
@@ -201,10 +208,10 @@ dispatch_history:
     hero_treatment: instrument-as-subject
     layout: stacked-layers
     register: editorial-schematic
-    palette: abyssal indigo-navy water column, a bioluminescent gold band, moonlit silver for the night
-      pass, one coral-dawn beat at the diel turn
-    metaphor: 'the depth model breathes: a probability tide rising and falling through day and night,
-      and the net must find the one door it leaves open'
+    palette: abyssal indigo-navy water column, a bioluminescent gold band, moonlit
+      silver for the night pass, one coral-dawn beat at the diel turn
+    metaphor: 'the depth model breathes: a probability tide rising and falling through
+      day and night, and the net must find the one door it leaves open'
 - date: '2026-07-06'
   topic: ANTHC/Stanford rural medevac decision AI + tribal data governance
   slug: launchcall
@@ -224,14 +231,17 @@ dispatch_history:
     hero_treatment: data-as-subject
     layout: hud-instrument-frame
     register: blueprint-technical
-    palette: overcast gunmetal-grey sky over pale birch-white snow, a warm marigold-orange risk needle,
-      a cool glacier-blue console glow, and one flat charcoal void for the still-unwritten rule
-    metaphor: the model can score the risk before the plane leaves the ground. The rulebook for who owns
-      the data hasn't been written yet, and a person's hand, not the model, still makes the call
+    palette: overcast gunmetal-grey sky over pale birch-white snow, a warm marigold-orange
+      risk needle, a cool glacier-blue console glow, and one flat charcoal void for
+      the still-unwritten rule
+    metaphor: the model can score the risk before the plane leaves the ground. The
+      rulebook for who owns the data hasn't been written yet, and a person's hand,
+      not the model, still makes the call
 - date: '2026-07-08'
-  topic: OWL weakly-supervised model (Microsoft AI for Good) counts Alaska caribou in aerial survey photos
-    from a single point per animal, validated on ADFG 2022 Central Arctic census (F1 0.965, +3.1%), honest
-    that its accuracy is regime-dependent and slips in the densest herds
+  topic: OWL weakly-supervised model (Microsoft AI for Good) counts Alaska caribou
+    in aerial survey photos from a single point per animal, validated on ADFG 2022
+    Central Arctic census (F1 0.965, +3.1%), honest that its accuracy is regime-dependent
+    and slips in the densest herds
   slug: the-count-from-a-dot
   key_entities:
   - caribou
@@ -246,10 +256,10 @@ dispatch_history:
   - aerial survey
   - herdnet
   - pamperin
-  archetype: 'top-down aerial census: a living herd counted from a single dot per animal, honest about
-    the dense crush where the count slips'
-  palette: 'autumn tundra: rust and cranberry groundcover, ochre plus brass lichen, caribou-brown herd,
-    dusk slate shadow, a single phosphor-mint count overlay'
+  archetype: 'top-down aerial census: a living herd counted from a single dot per
+    animal, honest about the dense crush where the count slips'
+  palette: 'autumn tundra: rust and cranberry groundcover, ochre plus brass lichen,
+    caribou-brown herd, dusk slate shadow, a single phosphor-mint count overlay'
   voice: kokoro:af_heart
   composition:
     pov: top-down-map
@@ -257,15 +267,16 @@ dispatch_history:
     hero_treatment: multiplicity-swarm
     layout: map-territory
     register: naturalistic-scene
-    palette: 'autumn tundra: rust and cranberry groundcover, ochre plus brass lichen, caribou-brown herd,
-      dusk slate shadow, a single phosphor-mint count overlay'
-    metaphor: the machine learns to count a living herd from a lone dot per animal, and admits the crowded
-      crush where its certainty thins
+    palette: 'autumn tundra: rust and cranberry groundcover, ochre plus brass lichen,
+      caribou-brown herd, dusk slate shadow, a single phosphor-mint count overlay'
+    metaphor: the machine learns to count a living herd from a lone dot per animal,
+      and admits the crowded crush where its certainty thins
 - date: '2026-07-09'
-  topic: VOISS-Net, an Alaska Volcano Observatory / UAF deep-learning CNN, reads a volcano's seismic and
-    infrasound spectrograms to classify tremor, explosion, quake and noise (about 87% accuracy, trained
-    on 270,000+ spectrograms across 7 volcanoes), while Great Sitkin erupts now at WATCH/ORANGE; honest
-    that it names the sound but cannot foresee the eruption, and a human stays on watch
+  topic: VOISS-Net, an Alaska Volcano Observatory / UAF deep-learning CNN, reads a
+    volcano's seismic and infrasound spectrograms to classify tremor, explosion, quake
+    and noise (about 87% accuracy, trained on 270,000+ spectrograms across 7 volcanoes),
+    while Great Sitkin erupts now at WATCH/ORANGE; honest that it names the sound
+    but cannot foresee the eruption, and a human stays on watch
   slug: the-mountain-listens
   key_entities:
   - voiss-net
@@ -282,10 +293,11 @@ dispatch_history:
   - aleutian arc
   - eruption
   - volcano seismicity
-  archetype: 'eye-level-immersive instrument-readout: a machine that HEARS a volcano, its seismic + infrasound
-    voice drawn as a spectrogram a CNN classifies, honest that hearing is not foreseeing'
-  palette: basalt-black night, ash-plume umber, molten ember and magma-red, a sulphur-gold warning band,
-    and a cold infrasound teal trace
+  archetype: 'eye-level-immersive instrument-readout: a machine that HEARS a volcano,
+    its seismic + infrasound voice drawn as a spectrogram a CNN classifies, honest
+    that hearing is not foreseeing'
+  palette: basalt-black night, ash-plume umber, molten ember and magma-red, a sulphur-gold
+    warning band, and a cold infrasound teal trace
   voice: edge_tts:en-US-AndrewMultilingualNeural
   composition:
     pov: eye-level-immersive
@@ -293,14 +305,16 @@ dispatch_history:
     hero_treatment: landscape-as-subject
     layout: single-object-void
     register: instrument-readout
-    palette: basalt-black night, ash-plume umber, molten ember and magma-red, a sulphur-gold warning band,
-      and a cold infrasound teal trace
-    metaphor: a machine learns to HEAR a volcano, reading its seismic and infrasound voice as a spectrogram
-      to name tremor from explosion, honest that hearing the mountain is not foreseeing when it will blow
+    palette: basalt-black night, ash-plume umber, molten ember and magma-red, a sulphur-gold
+      warning band, and a cold infrasound teal trace
+    metaphor: a machine learns to HEAR a volcano, reading its seismic and infrasound
+      voice as a spectrogram to name tremor from explosion, honest that hearing the
+      mountain is not foreseeing when it will blow
 - date: '2026-07-10'
-  topic: 'Wood River (Bristol Bay) drone-in-a-box + computer-vision sockeye counting pilot: a person hand-labels
-    several thousand fish to teach the model while ADFG towers keep the official count (KDLG 2026-07-03);
-    honest that it is untested against tower counts and a river shadow can fool it'
+  topic: 'Wood River (Bristol Bay) drone-in-a-box + computer-vision sockeye counting
+    pilot: a person hand-labels several thousand fish to teach the model while ADFG
+    towers keep the official count (KDLG 2026-07-03); honest that it is untested against
+    tower counts and a river shadow can fool it'
   slug: teaching-the-machine-to-see
   key_entities:
   - bristol bay
@@ -316,10 +330,10 @@ dispatch_history:
   - van vactor
   - ian chiu
   - aleknagik
-  archetype: 'macro-closeup editorial teaching-worksheet: a phosphor-yellow human mark descends onto ONE
-    fish; human-labor-first inversion of the counting genre'
-  palette: sockeye crimson, glacial pale-blue river, river-gravel sage-green, cedar tower-wood, a phosphor-yellow
-    human label mark, deep charcoal
+  archetype: 'macro-closeup editorial teaching-worksheet: a phosphor-yellow human
+    mark descends onto ONE fish; human-labor-first inversion of the counting genre'
+  palette: sockeye crimson, glacial pale-blue river, river-gravel sage-green, cedar
+    tower-wood, a phosphor-yellow human label mark, deep charcoal
   voice: kokoro:af_bella
   composition:
     pov: macro-closeup
@@ -327,15 +341,17 @@ dispatch_history:
     hero_treatment: single-organic-hero
     layout: fullbleed-split
     register: editorial-schematic
-    palette: sockeye crimson, glacial pale-blue river, river-gravel sage-green, cedar tower-wood, a phosphor-yellow
-      human label mark, deep charcoal
-    metaphor: to retire a seventy year hand count, a person still teaches the machine to see the run one
-      fish at a time, and until it is proven the towers keep the record
+    palette: sockeye crimson, glacial pale-blue river, river-gravel sage-green, cedar
+      tower-wood, a phosphor-yellow human label mark, deep charcoal
+    metaphor: to retire a seventy year hand count, a person still teaches the machine
+      to see the run one fish at a time, and until it is proven the towers keep the
+      record
 - date: '2026-07-11'
-  topic: 'UAF Geophysical Institute ML (CNN1D, Dong + Mao, ACS ES&T Air 2026) bias-corrects NOAA HRRR-Smoke
-    surface PM2.5 wildfire-smoke forecasts for Alaska: up to 5x surface undercount cut to about 2x; cause
-    is vertical (inversion lid traps smoke low, model paints it thin and high); honest that it sharpens
-    the number but cannot move the smoke and misses fires under cloud'
+  topic: 'UAF Geophysical Institute ML (CNN1D, Dong + Mao, ACS ES&T Air 2026) bias-corrects
+    NOAA HRRR-Smoke surface PM2.5 wildfire-smoke forecasts for Alaska: up to 5x surface
+    undercount cut to about 2x; cause is vertical (inversion lid traps smoke low,
+    model paints it thin and high); honest that it sharpens the number but cannot
+    move the smoke and misses fires under cloud'
   slug: the-lid
   key_entities:
   - hrrr-smoke
@@ -350,10 +366,10 @@ dispatch_history:
   - temperature inversion
   - uafsmoke
   - air quality
-  archetype: 'atmospheric field-documentary: aerial descent into a smoke-choked valley, the air itself
-    as hero'
-  palette: wildfire-smoke ochre and sepia pall, blood-orange sun disk, soot-brown spruce, bone-grey inversion
-    lid, one mint forecast line
+  archetype: 'atmospheric field-documentary: aerial descent into a smoke-choked valley,
+    the air itself as hero'
+  palette: wildfire-smoke ochre and sepia pall, blood-orange sun disk, soot-brown
+    spruce, bone-grey inversion lid, one mint forecast line
   voice: kokoro:bf_emma
   composition:
     pov: orbital-aerial
@@ -363,15 +379,16 @@ dispatch_history:
     register: naturalistic-scene
     camera_strategy: aerial-descent
     light_story: storm-dramatic
-    palette: wildfire-smoke ochre and sepia pall, a dim blood-orange sun disk, soot-brown spruce silhouettes,
-      a bone-grey inversion lid, and one clean mint forecast line
-    metaphor: a warm lid traps the smoke low where people breathe; the model looks for it thin and high,
-      so a machine learns to look down, and still falls short of the air in the lungs
+    palette: wildfire-smoke ochre and sepia pall, a dim blood-orange sun disk, soot-brown
+      spruce silhouettes, a bone-grey inversion lid, and one clean mint forecast line
+    metaphor: a warm lid traps the smoke low where people breathe; the model looks
+      for it thin and high, so a machine learns to look down, and still falls short
+      of the air in the lungs
 - date: '2026-07-12'
-  topic: 'THE FAKE THAT SWAM: an AI-generated image claimed a beluga escaped Seward''s Alaska SeaLife
-    Center to reunite with her calf; close to 6M views (APM) before debunk; a detector could only say
-    82.6 percent likely AI (Snopes/Hive), and the institution (since 1998, zero escapes) corrected the
-    record'
+  topic: 'THE FAKE THAT SWAM: an AI-generated image claimed a beluga escaped Seward''s
+    Alaska SeaLife Center to reunite with her calf; close to 6M views (APM) before
+    debunk; a detector could only say 82.6 percent likely AI (Snopes/Hive), and the
+    institution (since 1998, zero escapes) corrected the record'
   slug: dispatch-2026-07-12-thefakethatswam
   key_entities:
   - alaska sealife center
@@ -385,12 +402,12 @@ dispatch_history:
   - alaska public media
   - media literacy
   - ai fabrication
-  archetype: 'inversion: AI as the source of the lie; truth held by an institution — night-practical tank
-    interior vs viral feed'
-  palette: aquarium teal-black water, pearl beluga white, toxic synthetic magenta, phone-glow cyan, warning-red
-    correction stamp
-  voice: 'edge_tts:en-US-EmmaMultilingualNeural (kokoro unavailable: g2p model blocked by env network
-    policy)'
+  archetype: 'inversion: AI as the source of the lie; truth held by an institution
+    — night-practical tank interior vs viral feed'
+  palette: aquarium teal-black water, pearl beluga white, toxic synthetic magenta,
+    phone-glow cyan, warning-red correction stamp
+  voice: 'edge_tts:en-US-EmmaMultilingualNeural (kokoro unavailable: g2p model blocked
+    by env network policy)'
   composition:
     pov: eye-level-immersive
     motion_vector: horizontal-traverse
@@ -399,15 +416,16 @@ dispatch_history:
     register: naturalistic-scene
     camera_strategy: orbit-reveal
     light_story: night-practical
-    palette: aquarium teal-black water, pearl beluga white, a toxic synthetic magenta, phone-glow cyan,
-      a warning-red correction stamp
-    metaphor: the fake beluga dissolves into generated pixels while the real one holds; truth is the thing
-      the machine cannot certify
+    palette: aquarium teal-black water, pearl beluga white, a toxic synthetic magenta,
+      phone-glow cyan, a warning-red correction stamp
+    metaphor: the fake beluga dissolves into generated pixels while the real one holds;
+      truth is the thing the machine cannot certify
 - date: '2026-07-13'
-  topic: 'An LLM (ChatGPT) screened ~1,100 NEH grants for ''DEI'', flagging an Alaska Native Language
-    Archive grant at UAF among ~1,400 terminated ($100M+, 22 days); a court ruled it unlawful (May 2026,
-    McMahon) and reinstatement began June 2026. Honest AI angle: the model did not decide, a person aimed
-    it and signed, and offered back is not restored.'
+  topic: 'An LLM (ChatGPT) screened ~1,100 NEH grants for ''DEI'', flagging an Alaska
+    Native Language Archive grant at UAF among ~1,400 terminated ($100M+, 22 days);
+    a court ruled it unlawful (May 2026, McMahon) and reinstatement began June 2026.
+    Honest AI angle: the model did not decide, a person aimed it and signed, and offered
+    back is not restored.'
   slug: dispatch-2026-07-13-sortedbyamachine
   key_entities:
   - alaska native language archive
@@ -424,10 +442,11 @@ dispatch_history:
   - indigenous language revitalization
   - mcmahon ruling
   - uaf
-  archetype: 'top-down data-brutalist machine triage: a cold grid of grant records sorted by a scanner,
-    one warm amber archive flagged and terminated, then a court-green reversal; human hand on the lever'
-  palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination mark, honey-amber
-    archive warmth, evergreen court reversal, slate modular grid
+  archetype: 'top-down data-brutalist machine triage: a cold grid of grant records
+    sorted by a scanner, one warm amber archive flagged and terminated, then a court-green
+    reversal; human hand on the lever'
+  palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination
+    mark, honey-amber archive warmth, evergreen court reversal, slate modular grid
   voice: edge_tts:en-US-AvaMultilingualNeural
   composition:
     pov: top-down-map
@@ -437,15 +456,16 @@ dispatch_history:
     register: data-brutalist
     camera_strategy: track-follow
     light_story: noon-hard
-    palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination mark, honey-amber
-      archive warmth, evergreen court reversal, slate modular grid
+    palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination
+      mark, honey-amber archive warmth, evergreen court reversal, slate modular grid
     metaphor: a crude machine sorting a people's memory into keep and delete
 - date: '2026-07-13'
-  topic: An LLM (ChatGPT) was used in spring 2025 to screen ~1,100 NEH grant abstracts with the blunt
-    prompt 'does this relate at all to DEI? Yes/No'; ~1,400 grants terminated ($100M, 22 days) including
-    an Alaska Native Language Archive grant at UAF; a federal court ruled it unlawful (May 2026), reinstatement
-    began June 2026; honest that the model did not decide, a person aimed it and signed, and offered back
-    is not restored
+  topic: An LLM (ChatGPT) was used in spring 2025 to screen ~1,100 NEH grant abstracts
+    with the blunt prompt 'does this relate at all to DEI? Yes/No'; ~1,400 grants
+    terminated ($100M, 22 days) including an Alaska Native Language Archive grant
+    at UAF; a federal court ruled it unlawful (May 2026), reinstatement began June
+    2026; honest that the model did not decide, a person aimed it and signed, and
+    offered back is not restored
   slug: dispatch-2026-07-13-sortedbyamachine
   key_entities:
   - neh
@@ -460,10 +480,10 @@ dispatch_history:
   - court ruling
   - reinstatement
   - ai accountability
-  archetype: top-down data-brutalist machine grid vs warm human archive; cold institutional triage vs
-    a people's memory
-  palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination mark, honey-amber
-    archive warmth, evergreen court reversal, slate modular grid
+  archetype: top-down data-brutalist machine grid vs warm human archive; cold institutional
+    triage vs a people's memory
+  palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination
+    mark, honey-amber archive warmth, evergreen court reversal, slate modular grid
   voice: edge_tts:en-US-AvaMultilingualNeural
   composition:
     pov: top-down-map
@@ -473,16 +493,18 @@ dispatch_history:
     register: data-brutalist
     camera_strategy: track-follow
     light_story: noon-hard
-    palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination mark, honey-amber
-      archive warmth, evergreen court reversal, slate modular grid
+    palette: institutional cold-grey fluorescent, manila tan dossier, crimson termination
+      mark, honey-amber archive warmth, evergreen court reversal, slate modular grid
     metaphor: a crude machine sorting a people's memory into keep and delete
 - date: '2026-07-14'
-  topic: 'THE CLAIM ON THE TUNDRA: Stak Energy proposed a gigawatt gas-fired AI data center on a square
-    mile of North Slope state land near Deadhorse. Cost estimates span a company-disclosed twentyfold
-    range (about 500 million dollars initial site work vs over 10 billion for the full build), no confirmed
-    customers or chips. Over 500 public comments logged, fewer than a dozen supportive; state has not
-    decided; comment window closes July 17, 2026. Honest angle: the AI buildout arrives with confident
-    scale claims but no settled numbers, and the public process is the actual check.'
+  topic: 'THE CLAIM ON THE TUNDRA: Stak Energy proposed a gigawatt gas-fired AI data
+    center on a square mile of North Slope state land near Deadhorse. Cost estimates
+    span a company-disclosed twentyfold range (about 500 million dollars initial site
+    work vs over 10 billion for the full build), no confirmed customers or chips.
+    Over 500 public comments logged, fewer than a dozen supportive; state has not
+    decided; comment window closes July 17, 2026. Honest angle: the AI buildout arrives
+    with confident scale claims but no settled numbers, and the public process is
+    the actual check.'
   slug: the-claim-on-the-tundra
   key_entities:
   - stak energy
@@ -498,8 +520,9 @@ dispatch_history:
   - gigawatt
   - form letters
   archetype: unbuilt-blueprint-over-real-land
-  palette: silver-white overcast sky over sage and ochre tundra, gunmetal turbine steel, electric blueprint
-    cyan wireframe, sodium flare orange, signal-red deadline flag
+  palette: silver-white overcast sky over sage and ochre tundra, gunmetal turbine
+    steel, electric blueprint cyan wireframe, sodium flare orange, signal-red deadline
+    flag
   voice: cloned:talon (take A, E2 clarity dials)
   composition:
     pov: orbital-aerial
@@ -510,12 +533,13 @@ dispatch_history:
     camera_strategy: rise-reveal
     light_story: overcast-diffuse
 - date: '2026-07-16'
-  topic: 'HELL NO ON THE TUNDRA: comedic dispatch on Stak Energy''s proposed gigawatt gas-fired AI data
-    center ~25mi south of Deadhorse; 500+ public comments, fewer than a dozen in favor (real ''HELL NO
-    to any data centers'' / ''NO AI''); 20x cost range $500M lease-doc site work to $10B+ full build (CSO
-    John Boyle); no confirmed customers/chips; state undecided; comment window (Alaska DNR, ADL 422741)
-    closes July 17. Greedy server-machine buried by public comment, revealed as unbuilt PROPOSAL, mailbox
-    is the real vote.'
+  topic: 'HELL NO ON THE TUNDRA: comedic dispatch on Stak Energy''s proposed gigawatt
+    gas-fired AI data center ~25mi south of Deadhorse; 500+ public comments, fewer
+    than a dozen in favor (real ''HELL NO to any data centers'' / ''NO AI''); 20x
+    cost range $500M lease-doc site work to $10B+ full build (CSO John Boyle); no
+    confirmed customers/chips; state undecided; comment window (Alaska DNR, ADL 422741)
+    closes July 17. Greedy server-machine buried by public comment, revealed as unbuilt
+    PROPOSAL, mailbox is the real vote.'
   slug: stak-energy-north-slope-hell-no
   key_entities:
   - stak energy
@@ -543,10 +567,11 @@ dispatch_history:
     hero: greedy-server-machine vs everyresident
     layout: map + bars + confrontation
     register: IGS comedic infographic
-    metaphor: hungry machine whose numbers wont settle, checked by a paper-flood and a mailbox
+    metaphor: hungry machine whose numbers wont settle, checked by a paper-flood and
+      a mailbox
 - date: '2026-07-17'
-  topic: UAF wins $15M NSF Critical Mineral Accelerator Engine using AI to prospect Alaska's critical
-    minerals
+  topic: UAF wins $15M NSF Critical Mineral Accelerator Engine using AI to prospect
+    Alaska's critical minerals
   slug: dispatch-2026-07-17-uaf-critical-minerals-ai
   key_entities:
   - UAF
@@ -564,13 +589,15 @@ dispatch_history:
     register: editorial-schematic
     camera_strategy: aerial-descent
     light_story: night-practical
-    palette: amethyst-plum subsurface bedrock, copper-rose machine metal, citrine-gold ore and chip glow,
-      phosphor-lime AI-search accent
-    metaphor: an AI machine drilling into Alaska's bedrock for the exact critical minerals that go into
-      its own chip, learning the ground (and the funding) have real limits it cannot dig around
+    palette: amethyst-plum subsurface bedrock, copper-rose machine metal, citrine-gold
+      ore and chip glow, phosphor-lime AI-search accent
+    metaphor: an AI machine drilling into Alaska's bedrock for the exact critical
+      minerals that go into its own chip, learning the ground (and the funding) have
+      real limits it cannot dig around
 - date: '2026-07-18'
-  topic: Alaska DNR preliminary decision to convey ~31 sq mi (19,950 ac) of Mat-Su state forest near Houston
-    to AIDEA at no charge for a data-center/rail/energy district; comments open to Aug 19
+  topic: Alaska DNR preliminary decision to convey ~31 sq mi (19,950 ac) of Mat-Su
+    state forest near Houston to AIDEA at no charge for a data-center/rail/energy
+    district; comments open to Aug 19
   slug: matsu-aidea-land-conveyance
   key_entities:
   - aidea
@@ -603,14 +630,15 @@ dispatch_history:
   - delta wind
   - patrice lee
   archetype: enthusiast
-  palette: cold indigo pre-sunrise sky, ember-orange furnace glow, server-teal queue light, ash-red haze
-    warning
+  palette: cold indigo pre-sunrise sky, ember-orange furnace glow, server-teal queue
+    light, ash-red haze warning
   voice: Gemini native TTS, gemini-3.1-flash-tts-preview, voice Sulafat
   stance: curious
-  angle: The genuinely interesting story is that a global, AI-driven turbine market is now setting terms
-    inside an Interior Alaska boardroom, and GVEA is so far responding like a sophisticated buyer, not
-    a victim; the honest open question is whether this specific naphtha turbine is the cheapest firm megawatt
-    available before the window closes, or whether Delta Wind plus batteries can actually cover the worst
+  angle: The genuinely interesting story is that a global, AI-driven turbine market
+    is now setting terms inside an Interior Alaska boardroom, and GVEA is so far responding
+    like a sophisticated buyer, not a victim; the honest open question is whether
+    this specific naphtha turbine is the cheapest firm megawatt available before the
+    window closes, or whether Delta Wind plus batteries can actually cover the worst
     winter hour.
   composition:
     pov: eye-level-immersive
@@ -621,10 +649,11 @@ dispatch_history:
     camera_strategy: slow-push-with-tilt-reveal
     light_story: cold-dawn-then-haze-flush
 - date: '2026-07-20'
-  topic: XPRIZE Wildfire Autonomous Response finals held in Alaska (Nenana Municipal Airport, June 15-28
-    2026); UAF ACUASI managed the airspace; finalist Dryad says it demonstrated fully autonomous detection
-    + suppression (Silvanet + Silvaguard, up to 100 L, no human in loop); nearly 300 teams to 3 finalists
-    (Anduril, AURA Foresight, Dryad); $11M 4-year prize; winner announced Sept 2026, judging pending
+  topic: XPRIZE Wildfire Autonomous Response finals held in Alaska (Nenana Municipal
+    Airport, June 15-28 2026); UAF ACUASI managed the airspace; finalist Dryad says
+    it demonstrated fully autonomous detection + suppression (Silvanet + Silvaguard,
+    up to 100 L, no human in loop); nearly 300 teams to 3 finalists (Anduril, AURA
+    Foresight, Dryad); $11M 4-year prize; winner announced Sept 2026, judging pending
   slug: dispatch-2026-07-20-xprize-wildfire-nenana
   key_entities:
   - xprize wildfire
@@ -641,14 +670,16 @@ dispatch_history:
   - laura conner
   - autonomous suppression
   - brinkschulte
-  archetype: 'orbital-aerial guardian-drone capability story: proven IN Alaska not done TO Alaska'
-  palette: black-spruce green + boreal midnight-blue to rose-gold + electric thermal-IR magenta-to-citron
-    + vermilion fireline
+  archetype: 'orbital-aerial guardian-drone capability story: proven IN Alaska not
+    done TO Alaska'
+  palette: black-spruce green + boreal midnight-blue to rose-gold + electric thermal-IR
+    magenta-to-citron + vermilion fireline
   voice: Gemini native TTS gemini-3.1-flash-tts-preview, voice Sulafat
   stance: celebratory
-  angle: 'Proven IN Alaska, not done TO Alaska: the global autonomous-wildfire finals ran at a Nenana
-    airstrip with UAF running the sky, making Alaska the proving ground for AI that could defend it, honest
-    that it is a controlled test with judging pending and Alaska made the range not the drones'
+  angle: 'Proven IN Alaska, not done TO Alaska: the global autonomous-wildfire finals
+    ran at a Nenana airstrip with UAF running the sky, making Alaska the proving ground
+    for AI that could defend it, honest that it is a controlled test with judging
+    pending and Alaska made the range not the drones'
   composition:
     pov: orbital-aerial
     motion_vector: radial-emanate
@@ -657,18 +688,20 @@ dispatch_history:
     register: instrument-readout
     camera_strategy: drone-orbit-then-descent-to-airstrip
     light_story: fire-season-dawn-broken-by-thermal-vision
-    palette: black-spruce green + boreal midnight-blue to rose-gold + electric thermal-IR magenta-to-citron
-      + vermilion fireline
-    metaphor: 'a guardian machine that came to protect the range, not take from it: the autonomous drone
-      as Alaska watchdog over the fire line, seeing heat where a human cannot'
+    palette: black-spruce green + boreal midnight-blue to rose-gold + electric thermal-IR
+      magenta-to-citron + vermilion fireline
+    metaphor: 'a guardian machine that came to protect the range, not take from it:
+      the autonomous drone as Alaska watchdog over the fire line, seeing heat where
+      a human cannot'
 - date: '2026-07-21'
-  topic: 'THE REFEREE ARRIVES: Alaska''s salmon bycatch fight meets the AI that counts the fish. NOAA
-    AFSC''s YOLOv11 reads trawl net-cam footage (97% detected, 82% accuracy, 85,000+ annotations, 85%
-    fewer frames reviewed, days-to-hours per National Fisherman; research not deployed); Sullivan''s revamped
-    Bycatch Reduction and Research Act (KUCB July 17) demands trusted counts; the Sitka Tribe of Alaska
-    runs its own AI video weir at Redoubt Lake ($200k USFWS Tribal Wildlife Grant). Honest angle: the
-    machine is a referee, not a rescue; ocean/climate drives declines; whoever holds the count no longer
-    waits on anyone else''s number.'
+  topic: 'THE REFEREE ARRIVES: Alaska''s salmon bycatch fight meets the AI that counts
+    the fish. NOAA AFSC''s YOLOv11 reads trawl net-cam footage (97% detected, 82%
+    accuracy, 85,000+ annotations, 85% fewer frames reviewed, days-to-hours per National
+    Fisherman; research not deployed); Sullivan''s revamped Bycatch Reduction and
+    Research Act (KUCB July 17) demands trusted counts; the Sitka Tribe of Alaska
+    runs its own AI video weir at Redoubt Lake ($200k USFWS Tribal Wildlife Grant).
+    Honest angle: the machine is a referee, not a rescue; ocean/climate drives declines;
+    whoever holds the count no longer waits on anyone else''s number.'
   slug: ''
   key_entities:
   - salmon bycatch
@@ -692,9 +725,10 @@ dispatch_history:
   palette: ''
   voice: ''
   stance: mixed
-  angle: AI is not going to bring the salmon back, but it hands Alaskans a faster, harder-to-argue-with
-    count of what is in the net and on the river; the most consequential version is the Sitka Tribe of
-    Alaska building that count for its own subsistence fishery instead of waiting on anyone else's numbers
+  angle: AI is not going to bring the salmon back, but it hands Alaskans a faster,
+    harder-to-argue-with count of what is in the net and on the river; the most consequential
+    version is the Sitka Tribe of Alaska building that count for its own subsistence
+    fishery instead of waiting on anyone else's numbers
   composition:
     pov: eye-level-immersive
     motion_vector: horizontal-traverse
@@ -703,7 +737,37 @@ dispatch_history:
     register: naturalistic-scene
     camera_strategy: rise-reveal
     light_story: dawn-backlight
-    palette: bone-tan gravel, milky glacial jade, dawn cream amber, sockeye crimson accent, counter-brass
-      and dial-cream
-    metaphor: 'the bitter salmon argument finally gets a referee: a counting clicker that settles numbers
-      no one could agree on, and a tribal weir that brings the count home'
+    palette: bone-tan gravel, milky glacial jade, dawn cream amber, sockeye crimson
+      accent, counter-brass and dial-cream
+    metaphor: 'the bitter salmon argument finally gets a referee: a counting clicker
+      that settles numbers no one could agree on, and a tribal weir that brings the
+      count home'
+- date: '2026-07-21'
+  topic: KPBSD AI policy adoption before governance
+  slug: pen-that-wont-land
+  key_entities:
+  - KPBSD
+  - Kenai Peninsula Borough School District
+  - Kari Dendurent
+  - Mica VanBuskirk
+  - MagicSchool
+  - Google Gemini
+  archetype: instrument-as-subject
+  palette: cool slate-indigo dusk + honeyed window-glow + copper hero + red/green
+    stamps
+  voice: Sulafat measured public-radio
+  stance: mixed
+  angle: KPBSD adopted AI in classrooms before writing a rule; the real test is whether
+    the coming policy binds practice or just describes it
+  composition:
+    pov: eye-level-immersive
+    layout: centered-hero-lowerthird
+    motion_vector: vertical-descent
+    hero_treatment: instrument-as-subject
+    register: naturalistic-scene
+    camera_strategy: boom-drop-reveal
+    light_story: small-town-blue-hour-window-glow
+    palette: cool slate-indigo dusk + honeyed window-glow + copper hero + red/green
+      stamps
+    metaphor: a trembling pen deciding whether a policy binds a classroom already
+      running on AI or just describes it

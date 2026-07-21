@@ -90,17 +90,37 @@ export const FatArrow: React.FC<{d: string; revealT: number; color?: string; hea
 );
 
 // A wet-ink rubber STAMP that thuds down (scale/settle handled by caller via s).
-export const Stamp: React.FC<{cx: number; cy: number; s: number; text: string; rot?: number; color?: string}> = ({
-  cx, cy, s, text, rot = -8, color = RED,
-}) => (
-  <g transform={`translate(${cx},${cy}) rotate(${rot}) scale(${s})`} opacity={Math.min(1, s * 1.4)}>
-    <rect x={-300} y={-70} width={600} height={140} rx={12} fill="none" stroke={color} strokeWidth={12} />
-    <rect x={-300} y={-70} width={600} height={140} rx={12} fill="none" stroke={color} strokeWidth={3} opacity={0.5} transform="rotate(0.6)" />
-    <text x={0} y={26} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={82} fill={color} letterSpacing={6}>
-      {text}
-    </text>
-  </g>
-);
+// `onPaper` (NEW 2026-07-21, clears the flat-HUD-chip deferral for this run's central
+// accent, ASSET_MANIFEST.md): draws a form-shaded ink-on-paper card behind the ring
+// (tones/FormGradient + ContactShadow) so the stamp sits IN the lit scene instead of
+// floating as a flat overlay. Off by default so existing episode-local calls render
+// unchanged; new scenes should pass onPaper.
+export const Stamp: React.FC<{cx: number; cy: number; s: number; text: string; rot?: number; color?: string; onPaper?: boolean}> = ({
+  cx, cy, s, text, rot = -8, color = RED, onPaper = false,
+}) => {
+  const paperTones = tones('#f4efe0');
+  const gid = `stampPaper_${cx}_${cy}`;
+  return (
+    <g transform={`translate(${cx},${cy})`} opacity={Math.min(1, s * 1.4)}>
+      {onPaper && (
+        <>
+          <ContactShadow cx={0} cy={92 * s} rx={340 * s} ry={26 * s} opacity={0.28} />
+          <defs><FormGradient id={gid} t={paperTones} softness={0.7} /></defs>
+          <rect x={-330 * s} y={-96 * s} width={660 * s} height={192 * s} rx={14 * s} fill={`url(#${gid})`} stroke={INK} strokeWidth={6} />
+        </>
+      )}
+      <g transform={`rotate(${rot}) scale(${s})`}>
+        <rect x={-300} y={-70} width={600} height={140} rx={12} fill="none" stroke={color} strokeWidth={12} />
+        <rect x={-300} y={-70} width={600} height={140} rx={12} fill="none" stroke={color} strokeWidth={3} opacity={0.5} transform="rotate(0.6)" />
+        {/* ink-bleed edge irregularity, a real rubber-stamp impression is never a clean vector ring */}
+        <rect x={-296} y={-66} width={592} height={132} rx={10} fill="none" stroke={color} strokeWidth={2} opacity={0.35} transform="rotate(-0.8) translate(2,-3)" />
+        <text x={0} y={26} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={82} fill={color} letterSpacing={6}>
+          {text}
+        </text>
+      </g>
+    </g>
+  );
+};
 
 // =============================================================================
 // SERVER MACHINE — the antagonist hero, characterized with a face + emotions.

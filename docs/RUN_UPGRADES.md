@@ -7,6 +7,103 @@ back on if a later run regresses. Newest first.
 
 ---
 
+## 2026-07-21 — "The Pen That Won't Land" (KPBSD adopts AI before it writes the rule)
+
+**Shipped:** ~52.6s vertical + 4:5 Dispatch, Gemini narrator (Sulafat, 9-line read). Story: the
+Kenai Peninsula Borough School District already runs MagicSchool and Google Gemini with real
+students (an $8,300 three-year MagicSchool subscription), an AI committee began meeting in 2025, and
+the district's first academic-honesty/student-data policy is *still a draft*. Earned angle
+(open_question stance, rotating off the 07-20 celebratory run): adoption came first, governance is
+still catching up, and the real test is whether the coming policy binds what teachers do or just
+describes what already happened. Even-handed fork — Assistant Superintendent Kari Dendurent (keep it
+adaptable) vs Board member Mica VanBuskirk (make it concrete a teacher can follow) — both steel-manned,
+plus the honest turn (student work flows through a commercial platform regardless while the pen
+doesn't move). Objective quality_gate.py: **10.0/10 PASS** (all 15 checks). LinkedIn caption scorer
+8.90 (ship 8.5).
+
+**Panel outcome (disclosed honestly):** editor SHIP (zero concrete defects, zero hard blockers);
+flow-critic ship; 3-judge scores 7.52 / 7.88 / 8.82, **median 7.88**, zero hard blockers. Shipped via
+the routine's documented escape hatch after **6 taste-loop rounds** (judge medians 7.92 → 8.10 → 7.98
+→ 8.08 → 8.12 → 7.88): the median stalled zero-hard-blocker and every concrete named defect was fixed,
+so the only remaining gap is the flat-vector house-style human rig, which all three judges independently
+named as a *rig/style investment, not a fixable one-shot defect* (see deferred known-issue below).
+
+**Bugs found and FIXED this run (real Phase-8 material, all committed to the run branch):**
+1. **`lib/lighting.tsx` FormGradient was silently under-shading every character — the root cause of
+   FOUR straight panel rounds citing "flat vector fill" humans.** Character.tsx already called
+   FormGradient for body/skin/pants, but at the default softness (0.8–1.0) the gradient's light→shade
+   stops fall mostly OUTSIDE the shape's own bounds, so only a sliver of the key-to-shade range ever
+   renders inside the character — the shading was doing almost nothing. ROOT-CAUSE FIX: tightened the
+   per-figure softness (body 1.0→0.62, skin 0.8→0.6, pants 0.85→0.55) so the full range reads within
+   the shape. GENERALIZABLE: any shape using FormGradient at high softness is under-shaded; treat
+   softness ≲0.65 as the default for shape-filling forms. Commit `fae1604`.
+2. **Human faces were flat dot-eye ovals (the highest-weighted axis's ceiling).** Added facial-plane
+   shading — a nose-bridge shadow + lit edge, a brow/eye-socket shadow, and a jaw/chin under-shadow —
+   as SHADING ONLY so the minimal IGS house-face vocabulary (dot eyes + smile) is preserved, plus eye
+   catchlights and pant cloth-fold creases. Lifted a judge's Illustration score 7→9. Commits `fae1604`,
+   `eb45302`.
+3. **Standing characters froze between moves (held-beat "posed sprite" tell).** Added a position-phased
+   idle weight-shift (lateral sway + matching lean) and a deeper breathing bob to `pose="stand"`
+   figures; round-5 added it too subtle to perceive, round-6 roughly doubled the amplitude (3.4→6.8px)
+   until it read. Commits `fae1604`, `eb45302`.
+4. **NEW DOCTRINE — a character "pointing at" a prop is NOT operating it.** In S6 (the CONCRETE payoff)
+   VanBuskirk's point-pose arm extended into empty background while the lever sat as a detached object
+   at her feet — the impact spark read as a detached flash near a motionless operator. FIX: restaged so
+   her hand co-locates with the lever's grip at hand height and her torso leans into the pull. RULE for
+   future runs: when a beat is "character operates prop," place the prop's grip AT the character's hand
+   (compute the rig's pose-hand offset), never rely on a gesture pose aimed at empty space. Commit
+   `a2fe48e`.
+5. **Animation interpolate ranges must be validated against the actual scene length.** VanBuskirk's
+   stride used `interpolate(f,[190,240],…)` in an S5 that is only 210 frames long, so she silently
+   completed just 38% of her walk and never reached her arrived pose or nameplate. FIX: refit the range
+   ([130,195]) to land inside the scene. RULE: cross-check every scene-local interpolate window against
+   `shots.json` durations, or the motion silently never finishes. Commit `f86514b`.
+6. **SFX semantic mismatch — a `paw`/footfall was used for the Raven's landing.** Added a purpose-built
+   `d_caw` (two rasping downward calls) to `scripts/build_sfx_library.py` and the bank; also added a
+   dedicated dial-jam `clank` and retimed the closing gust's whoosh. Commit `32b916d`.
+7. **Kinetic-type DRAFT scramble could spell a real word AND collided with the climactic VO line.** The
+   scramble pool was real letters (could read "CRAFT") and fired during "…control the classroom, or
+   describe it." FIX: switched to a non-alphabetic symbol pool (can never spell a word) and retimed the
+   gust into the silent post-VO tail. Commits `b0488e4`, `32b916d`.
+8. **Form-shaded HUD chips (cleared a standing deferral).** `kit.tsx` Stamp gained `onPaper` (ink-on-
+   paper card w/ ContactShadow+FormGradient behind the ring) and `props.tsx` StatCard gained
+   `formShaded`, so the PAID/DRAFT stamps and the $8,300 card read as lit objects, not flat chips.
+9. **NEW ENGINE SYSTEM — the repeat-offender eval tracker (the run's headline self-upgrade).** The
+   eval gates tell us what fails every run, but nothing remembered it, so the same weakness kept
+   coming back and getting symptom-patched (the VO WER canonicalizer failed 3 runs running; git-
+   tracked `out/` scratch recurred 3 runs; and THIS run's flat human rig was the panel's weakest axis
+   for 7 straight rounds before it was actually rebuilt). Added `scripts/eval_tracker.py` +
+   `config/eval_ledger.yaml` + `docs/EVAL_REPEAT_OFFENDERS.md`: it records each run's gate/panel
+   results and flags REPEAT OFFENDERS — cross-run (same signature in ≥2 runs) and within-run (an axis
+   weakest ≥3 rounds, keyed on the finding so a root cause can't hide by rotating between rubric
+   labels) — and exits non-zero to BLOCK shipping until each is root-caused (never symptom-patched,
+   never disclosed-around). `resolve` records the fixing commits so a later recurrence proves the
+   prior fix didn't hold. Commit `ac51a73`. This is the mechanism that stops the taste loop from
+   re-teaching us the same lesson.
+10. **HUMAN-RIG REBUILD — the 7-round within-run repeat offender, root-caused (rounds 8–9).** Flagged
+   by the new tracker as the offender that MUST get one comprehensive pass, not another single-surface
+   patch. Shipped: (a) an articulated **walk cycle** in `Character.tsx` (`walking`/`walkPhase` — legs
+   swing fore/aft in opposition around the hips, body bobs at 2× step rate, arms counter-swing, phase
+   driven by real travel so the feet don't skate); (b) **volumetric body modeling** on coats (central
+   light column + far-edge turn-shade + hem AO), **legs** (cylinder lit-edge + shade-edge + boot
+   highlight), and **faces** (a full shadow-side cheek falloff + brighter sun-cheek key + deepened
+   nose/brow/jaw planes, kept within the minimal dot-eye house style); (c) an **S5 reframe** — the
+   verbatim-quote zoom was a spring stuck at ~2× that cropped VanBuskirk's whole stride off-frame (the
+   real reason the panel kept reading her walk as a sprite-slide); it's now a transient punch that
+   releases to a wide two-shot, quote card moved to the upper third + retimed to read before the walk;
+   (d) **kinetic captions** (per-cue spring-in). Commits `ada8cbf`, `1696d45` (plus the rounds 5–6
+   FormGradient-softness + facial-plane groundwork in `fae1604`, `eb45302`).
+
+**Residual / logged for the owner (not a per-run tweak):** the human characters read markedly better
+than 9 rounds ago (they walk, the coats/legs/faces carry volume, captions are kinetic), but the panel
+grades against a "looks expensive / zero amateur tells" 10 that the deliberately-minimal flat-vector
+IGS house style structurally caps around the mid-8s. Crossing 9.0 on the character axis would require
+changing the character-render approach itself (painterly / textured / 3D characters) — a product/brand
+decision, logged as the top future engine direction, not something to force inside a daily taste loop.
+Every non-character axis already sits at a solid 8–9.
+
+---
+
 ## 2026-07-20 — "Alaska Ran the Sky" (Dryad / XPRIZE Wildfire finals at Nenana)
 
 **Shipped:** ~57s vertical Dispatch, Gemini narrator (Sulafat, 54s read). Story: the XPRIZE
