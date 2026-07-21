@@ -68,8 +68,8 @@ def org_ld(site_url):
         "name": "Alaska AI",
         "alternateName": ["Alaska.Ai", "Alaska AI HQ"],
         "url": f"{site_url}/",
-        "logo": {"@type": "ImageObject", "url": f"{site_url}/apple-touch-icon.png",
-                 "width": 180, "height": 180},
+        "logo": {"@type": "ImageObject", "url": f"{site_url}/logo.png",
+                 "width": 512, "height": 512},
         "image": f"{site_url}/og.png",
         "description": "Alaska AI is the daily publication on Alaska's AI beat and an "
                        "AI studio in Anchorage that builds AI systems for Alaska "
@@ -148,6 +148,38 @@ def flag_sky():
             f"{stars}{polaris}</svg>")
 
 
+# ---------- the brand mark (the real logo: gold Alaska on the night) ----------
+
+_AK_CACHE = {}
+
+
+def _ak_d(max_points, keep_rings, box=100, pad=4):
+    """SVG path of the true Alaska silhouette from the committed geodata,
+    projected with the same Albers the docket map uses. Cached, nav and
+    footer ask for it on every page."""
+    key = (max_points, keep_rings, box, pad)
+    if key not in _AK_CACHE:
+        paths = db.alaska_paths(max_points=max_points, keep_rings=keep_rings)
+        T = db.fit_transform(paths, box, box, pad)
+        _AK_CACHE[key] = db.path_d(paths, T)
+    return _AK_CACHE[key]
+
+
+def ak_mark():
+    """Inline brand mark for the nav and footer, the state in gold."""
+    return ('<svg class="akmark" viewBox="0 0 100 100" aria-hidden="true">'
+            f'<path d="{_ak_d(700, 5)}" fill="#ffc72c"/></svg>')
+
+
+def ak_favicon():
+    """Favicon data URI, the logo tile: gold Alaska on the night square."""
+    from urllib.parse import quote
+    svg = ("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
+           "<rect width='100' height='100' rx='16' fill='#02060f'/>"
+           f"<path d='{_ak_d(240, 3, box=100, pad=8)}' fill='#ffc72c'/></svg>")
+    return "data:image/svg+xml," + quote(svg, safe="")
+
+
 # ---------- shared chrome ----------
 
 def nav(prefix, active):
@@ -159,7 +191,7 @@ def nav(prefix, active):
         f'<a href="{prefix}{href or "./"}"{on if key.lower().startswith(active) else ""}>{key}</a>'
         for href, key in links)
     return f"""<nav class="topnav">
-  <a class="wordmark" href="{prefix}./">{db.POLARIS}<span>ALASKA.AI</span></a>
+  <a class="wordmark" href="{prefix}./">{ak_mark()}<span>ALASKA.AI</span></a>
   <div class="navlinks">{a}</div>
 </nav>"""
 
@@ -181,7 +213,7 @@ method="post" target="_blank">
 def footer(prefix, today):
     return f"""<footer>
 <div class="foot-grid">
-  <div class="foot-brand">{db.POLARIS}<span>ALASKA.AI</span></div>
+  <div class="foot-brand">{ak_mark()}<span>ALASKA.AI</span></div>
   <div class="foot-links">
     <a href="{prefix}docket/">THE DOCKET</a>
     <a href="{prefix}archive/">ARTICLES</a>
@@ -291,6 +323,9 @@ border-bottom:1px solid rgba(28,51,80,.7);transition:opacity .35s;}
 font-size:15px;letter-spacing:.24em;color:var(--snow);text-decoration:none;font-weight:500;}
 .wordmark .polaris{width:17px;height:17px;transition:transform .5s;}
 .wordmark:hover .polaris{transform:rotate(90deg) scale(1.15);}
+.akmark{filter:drop-shadow(0 0 7px rgba(255,199,44,.55));flex:none;}
+.wordmark .akmark{width:30px;height:30px;transition:transform .5s;}
+.wordmark:hover .akmark{transform:scale(1.12);}
 .navlinks{margin-left:auto;display:flex;gap:26px;font-family:JBMono,monospace;
 font-size:12px;letter-spacing:.16em;}
 .navlinks a{color:var(--mute);text-decoration:none;padding:6px 0;position:relative;}
@@ -544,6 +579,7 @@ footer{margin-top:70px;border-top:1px solid var(--line);padding-top:30px;}
 .foot-brand{display:flex;align-items:center;gap:12px;font-family:JBMono,monospace;
 font-size:13px;letter-spacing:.22em;color:var(--snow);}
 .foot-brand .polaris{width:15px;height:15px;}
+.foot-brand .akmark{width:26px;height:26px;}
 .foot-links{margin-left:auto;display:flex;gap:22px;font-family:JBMono,monospace;
 font-size:11.5px;letter-spacing:.14em;}
 .foot-links a{color:var(--mute);text-decoration:none;transition:color .2s;}
@@ -738,7 +774,7 @@ def page(title, desc, body, prefix, active, today, site_url, path, og_image="og.
 <meta property="og:image:alt" content="{esc(title)}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="{canonical}">
-<link rel="icon" href="{db.FAVICON}">
+<link rel="icon" href="{ak_favicon()}">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 {preload}
 {ld_html}
@@ -1472,7 +1508,8 @@ The stars will get you home.</p>
 
 
 def touch_icon(out):
-    """A 180px gold Polaris on the night, for phone home screens."""
+    """The logo tile at 180px for phone home screens: the gold Alaska
+    silhouette (true geodata) on the night, with a soft glow."""
     try:
         from PIL import Image, ImageDraw
     except ImportError:
@@ -1480,15 +1517,15 @@ def touch_icon(out):
     s = 180
     im = Image.new("RGB", (s, s), (2, 6, 15))
     dr = ImageDraw.Draw(im)
-    cx, cy, R, r = s / 2, s / 2, 62, 15
-    pts = []
-    for i in range(8):
-        a = math.pi / 2 * (i / 2.0) - math.pi / 2
-        rad = R if i % 2 == 0 else r
-        pts.append((cx + rad * math.cos(a), cy + rad * math.sin(a)))
-    for gr, col in ((1.5, (80, 62, 10)), (1.18, (166, 130, 26)), (1.0, (255, 199, 44))):
-        glow = [(cx + (x - cx) * gr, cy + (y - cy) * gr) for x, y in pts]
-        dr.polygon(glow, fill=col)
+    paths = db.alaska_paths(max_points=1400, keep_rings=6)
+    T = db.fit_transform(paths, s, s, 16)
+    rings = [[T(p) for p in path] for path in paths]
+    cx = cy = s / 2
+    for gr, col in ((1.10, (80, 62, 10)), (1.045, (166, 130, 26)), (1.0, (255, 199, 44))):
+        for pts in rings:
+            glow = [(cx + (x - cx) * gr, cy + (y - cy) * gr) for x, y in pts]
+            if len(glow) >= 3:
+                dr.polygon(glow, fill=col)
     im.save(out / "apple-touch-icon.png", optimize=True)
 
 
