@@ -617,6 +617,7 @@ dispatch_history:
     light_story: dawn-backlight
     camera_strategy: push-then-loopback
     motion_vector: boundary-draw+match-cut
+  hero: MachineShadow
 - date: '2026-07-19'
   topic: GVEA weighs second GE LM6000 naphtha turbine for North Pole Power Plant
   slug: gvea-turbine-north-pole
@@ -648,6 +649,7 @@ dispatch_history:
     register: naturalistic-scene
     camera_strategy: slow-push-with-tilt-reveal
     light_story: cold-dawn-then-haze-flush
+  hero: Sourdough
 - date: '2026-07-20'
   topic: XPRIZE Wildfire Autonomous Response finals held in Alaska (Nenana Municipal
     Airport, June 15-28 2026); UAF ACUASI managed the airspace; finalist Dryad says
@@ -693,6 +695,7 @@ dispatch_history:
     metaphor: 'a guardian machine that came to protect the range, not take from it:
       the autonomous drone as Alaska watchdog over the fire line, seeing heat where
       a human cannot'
+  hero: Vale
 - date: '2026-07-21'
   topic: 'THE REFEREE ARRIVES: Alaska''s salmon bycatch fight meets the AI that counts
     the fish. NOAA AFSC''s YOLOv11 reads trawl net-cam footage (97% detected, 82%
@@ -742,6 +745,7 @@ dispatch_history:
     metaphor: 'the bitter salmon argument finally gets a referee: a counting clicker
       that settles numbers no one could agree on, and a tribal weir that brings the
       count home'
+  hero: ServerMachine
 - date: '2026-07-21'
   topic: KPBSD AI policy adoption before governance
   slug: pen-that-wont-land
@@ -771,3 +775,14 @@ dispatch_history:
       stamps
     metaphor: a trembling pen deciding whether a policy binds a classroom already
       running on AI or just describes it
+  hero: ServerMachine
+  cast:
+  - ServerMachine
+  - Character(flannel/suit/vest)
+  - Raven
+  - TallyCounter
+  - GearLever
+  - StatCard
+  - SwingSign
+  - PenAndDocument
+  - MainStreetBG

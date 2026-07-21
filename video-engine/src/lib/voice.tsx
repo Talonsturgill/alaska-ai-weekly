@@ -82,9 +82,29 @@ export function useVoice(): VoiceApi {
 }
 
 // ---------------------------------------------------------------------------
+// ambientMouth — 2026-07-21 OWNER RULE: characters NEVER lip-sync the narrator.
+// Word-synced mouth flapping reads as a failed narration attempt (owner note on
+// the 2026-07-21 dispatch: "it looked like they were trying to narrate").
+// Scenes may keep passing useVoice().opennessAt(f) as `talking` — the rigs route
+// it through THIS converter, which discards the per-word amplitude entirely and
+// renders a slow, small, word-independent conversational cycle instead (people
+// chatting IN the scene, not mouthing the voiceover). The cycle dips fully
+// closed once per period so it reads as natural talk, and callers pass a phase
+// so two figures in a two-shot never chew in sync. Enforced here in the engine
+// so no future scene can reintroduce lip-sync by passing raw openness.
+// ---------------------------------------------------------------------------
+export const ambientMouth = (talking: number | undefined, f: number, phase = 0): number | undefined => {
+  if (talking === undefined) return undefined;
+  // ~0.85s period at 30fps, max ~0.3 open, bottoms below TalkMouth's closed
+  // threshold (0.06) so the mouth visibly closes between "phrases".
+  return Math.max(0, 0.17 + 0.145 * Math.sin(f / 4.2 + phase));
+};
+
+// ---------------------------------------------------------------------------
 // TalkMouth — a flapping mouth. Drawn in a local space centered at (0,0),
 // `w` wide. openness 0 = closed line, 1 = full open with teeth + tongue.
-// Drop into any face; drive openness from useVoice().opennessAt(globalFrame).
+// Drop into any face. Rigs must drive openness via ambientMouth(...) — never
+// raw useVoice().opennessAt (see the owner rule above).
 // ---------------------------------------------------------------------------
 export const TalkMouth: React.FC<{
   openness: number;           // 0..1

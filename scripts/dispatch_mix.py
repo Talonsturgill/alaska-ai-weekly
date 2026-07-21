@@ -2,13 +2,31 @@
 """Mix the Dispatch master audio: VO (dominant) + ducked music bed + SFX events,
 with a real pre-button silence dip, normalized to -14 LUFS / TP <= -1.0 dBTP.
 
-SFX are resolved from the designed-foley bank (assets/sfx via scripts/sfx_bank.py).
-Music ducks under VO via sidechaincompress.
+2026-07-21 SOUND-DESIGN OVERHAUL (owner: "ours is boring and reusing the same
+sfx"). Every event is now PERFORMED, not placed:
+  - VARIANT TAKES: sfx_bank.resolve(kind, episode_seed=DATE) shuffle-bags the
+    6-take bank so no two plays of a kind reuse a take;
+  - CLASS GAIN TIERS instead of flat volume=0.5 — hero hits peak ~-11 dBFS,
+    standard accents ~-15, textures/sweeteners ~-19 (VO peaks -12..-6 stays
+    the anchor);
+  - DETERMINISTIC JITTER from crc32(DATE:idx): pitch (cents by family: UI ~40,
+    impacts ~75, paper ~150, metal ~30 — metal variety lives in the modal
+    variants), volume +/-1.5 dB, timing +/-15 ms (humanizes the grid);
+  - PAN FROM THE PICTURE: each event carries the prop's storyboard x as a pan
+    in [-1,1], scaled to max +/-0.35; hero payoff hits stay centered
+    (mono-compatible for phone speakers);
+  - FREQUENCY SLOTTING: the bed and all SUSTAINED sfx (whoosh/riser/paper/
+    chain/creak) get a wide -2.5 dB dip at 3 kHz + a 100 Hz high-pass so they
+    never fight VO intelligibility (2-5 kHz); short transients keep their
+    energy — they read between syllables;
+  - SCHEDULING ASSERT: no two consecutive events from the same sound FAMILY
+    (spectral sameness is what reads "repetitive", not the count).
 
-2026-07-21 "The Pen That Won't Land" (KPBSD AI policy). Episode-local: this file is
-rewritten per run with EVENTS matched to THIS story's beats/storyboard.json.
+2026-07-21 "The Pen That Won't Land" (KPBSD AI policy). Episode-local: this
+file is rewritten per run with EVENTS matched to THIS story's beats/storyboard;
+the doctrine above and the machinery below CARRY OVER unchanged.
 """
-import json, os, subprocess, sys, math
+import json, os, subprocess, sys, math, zlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
@@ -16,6 +34,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
+DATE = "2026-07-21"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -26,20 +45,33 @@ def run(cmd):
     return r
 
 
-def sfx(path, kind):
-    """Resolve a named effect from the designed-foley bank (assets/sfx via
-    scripts/sfx_bank.py: real/ recording > synth bank > self-heal rebuild).
-    Bank files are 44.1k stereo, -6 dBFS peak — keep per-event volume <= 0.9."""
-    import shutil as _sh, sys as _sys, os as _os
-    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-    from sfx_bank import resolve as _resolve
-    _sh.copyfile(_resolve(kind), path)
+# --- sound families (spectral neighborhoods, for the repetition assert + jitter)
+FAMILY = {
+    "thud": "sub", "stamp": "sub", "boom": "sub", "paw": "sub",
+    "clank": "metal", "chain": "metal", "klaxon": "metal",
+    "ding": "bell", "chime": "bell",
+    "tick": "click", "pop": "blip", "snap": "pluck",
+    "whoosh": "air", "riser": "air",
+    "paper": "texture", "creak": "texture",
+    "caw": "bird",
+}
+SUSTAINED = {"whoosh", "riser", "paper", "chain", "creak"}   # get VO-slot EQ
+PITCH_CENTS = {"sub": 75, "metal": 30, "bell": 25, "click": 40, "blip": 40,
+               "pluck": 60, "air": 50, "texture": 150, "bird": 60}
+# class -> target peak dBFS; bank takes peak at -6 dBFS, so gain = target+6 dB
+CLASS_DB = {"hero": -11.0, "standard": -15.0, "texture": -19.0}
+
+
+def jit(idx, salt, lo, hi):
+    """Deterministic uniform in [lo,hi] from (DATE, event idx, salt)."""
+    h = zlib.crc32(f"{DATE}:{idx}:{salt}".encode()) / 0xFFFFFFFF
+    return lo + (hi - lo) * h
 
 
 # SFX events cut to the picture, derived from the VO line starts so they stay in
 # sync when the narration changes. L[i] = start time of VO line i (0-indexed, 9
-# lines this run). Kinds resolve via the designed-foley bank (sfx_bank.py); every
-# storyboard beat gets a motivated, concrete sound (never bare "music"/"sound").
+# lines this run). Each event: (time, kind, class, pan) — pan is the prop's
+# storyboard x mapped to [-1,1] (0 = center), scaled by 0.35 in the graph.
 _lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
 L = {x["idx"]: x["start"] for x in _lines}
 _TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
@@ -47,71 +79,116 @@ VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never har
 
 EVENTS = [
     # S1 (line 0): cold open — the machine at work beside the trembling pen
-    (L[0] + 0.10, "chime"),    # soft classroom ambience swell
-    (L[0] + 3.60, "tick"),     # the pen's faint tremble-tick on the easel
+    (L[0] + 0.10, "chime", "standard", 0.0),    # soft classroom swell (center)
+    (L[0] + 3.60, "tick",  "standard", -0.5),   # the pen's tremble-tick, easel left
     # S2 (line 1): the tools at work
-    (L[1] + 0.20, "pop"),      # keyboard-tap / margin-note pop-ins
+    (L[1] + 0.20, "pop",   "standard", 0.3),    # keyboard-tap / margin-note pop-ins
     # S3 (line 2): the ledger — $8,300 + the paired stamps
-    (L[2] + 0.10, "ding"),     # cash-register ding, the receipt tape unspools
-    (L[2] + 2.60, "stamp"),    # the paired PAID/DRAFT stamp-thuds
+    (L[2] + 0.10, "ding",  "standard", 0.4),    # cash-register ding, receipt right
+    (L[2] + 2.60, "stamp", "hero", 0.0),        # the paired PAID/DRAFT stamp-thuds
     # S4 (line 3): the timeline gap
-    (L[3] + 0.10, "creak"),    # the '2025' SwingSign creaks in
-    (L[3] + 2.70, "chain"),    # the MeasuringChain pays out
+    (L[3] + 0.10, "creak", "standard", -0.6),   # the '2025' SwingSign creaks in
+    (L[3] + 2.70, "chain", "standard", 0.5),    # the MeasuringChain pays out
     # S5 (line 4): the fork — Dendurent's ADAPTABLE lever
-    (L[4] + 0.10, "riser"),    # footsteps + the tension riser begins
-    (L[4] + 3.10, "snap"),     # the ADAPTABLE lever's rubber-band boing
-    (L[4] + 5.70, "thud"),     # VanBuskirk's footstep-plant on CONCRETE
+    (L[4] + 0.10, "riser", "standard", 0.0),    # footsteps + the tension riser begins
+    (L[4] + 3.10, "snap",  "standard", -0.4),   # the ADAPTABLE lever's rubber-band boing
+    (L[4] + 5.70, "thud",  "standard", 0.4),    # VanBuskirk's footstep-plant on CONCRETE
     # S6 (line 5): the payoff — CONCRETE bites
-    (L[5] + 0.30, "clank"),    # the CONCRETE lever's hard mechanical clunk
-    # S7 (line 6): the impasse
-    (L[6] + 0.20, "clank"),    # the TallyCounter dial's first jam attempt
-    (L[6] + 1.50, "tick"),     # the held clock-tick, mid-attempt
-    (L[6] + 2.66, "clank"),    # the dial's final roll-attempt snaps back to 0000 for good
+    (L[5] + 0.30, "clank", "hero", 0.0),        # the CONCRETE lever's hard mechanical clunk
+    # S7 (line 6): the impasse (dial jam = mechanism SNAP, not a third clank —
+    # the family assert forbids back-to-back metal, and it was reading samey)
+    (L[6] + 0.20, "snap",  "standard", 0.35),   # the TallyCounter's first jam-catch
+    (L[6] + 1.50, "tick",  "standard", 0.35),   # the held clock-tick, mid-attempt
+    (L[6] + 2.66, "clank", "standard", 0.35),   # the final roll-attempt snaps back to 0000
     # S8 (line 7): THE TURN — the floor-level paper stream
-    (L[7] + 0.10, "whoosh"),   # the boom-drop reveal
-    (L[7] + 2.00, "paper"),    # the continuous paper-rustle stream
+    (L[7] + 0.10, "whoosh", "hero", 0.0),       # the boom-drop reveal
+    (L[7] + 2.00, "paper",  "texture", -0.3),   # the continuous paper-rustle stream
     # S9 (line 8): button — the Raven, the loop closes
-    (L[8] + 0.10, "caw"),      # the Raven's landing hop + ruffle (a bird, not a footstep)
-    (L[8] + 6.65, "whoosh"),   # the DRAFT-scramble gust, now parked in the silent post-VO tail
+    (L[8] + 0.10, "caw",    "standard", -0.4),  # the Raven's landing hop + ruffle
+    (L[8] + 6.65, "whoosh", "texture", 0.3),    # the DRAFT-scramble gust, in the silent tail
 ]
 
 SILENCE_DIP_AT = L[8] + 3.4  # the breath before "or describe it" (the >=6dB gate dip)
 DIP_LEN = 0.8
 
 
+def check_schedule(events):
+    """No two consecutive events share a sound family — spectral repetition is
+    the 'boring sfx' failure mode. Also: at most one riser per episode."""
+    seq = sorted(events, key=lambda e: e[0])
+    for a, b in zip(seq, seq[1:]):
+        fa, fb = FAMILY[a[1]], FAMILY[b[1]]
+        if fa == fb:
+            raise SystemExit(
+                f"SFX SCHEDULE: consecutive '{fa}' family events at {a[0]:.2f}s "
+                f"({a[1]}) and {b[0]:.2f}s ({b[1]}) — recast one to a different "
+                f"family (spectral sameness reads as repetition).")
+    risers = [e for e in events if e[1] == "riser"]
+    if len(risers) > 1:
+        raise SystemExit(f"SFX SCHEDULE: {len(risers)} risers — reserve the riser "
+                         f"for exactly one moment per episode.")
+    print(f"sfx schedule OK: {len(events)} events, no consecutive family repeats")
+
+
 def main():
+    sys.path.insert(0, HERE)
+    from sfx_bank import resolve
+
+    check_schedule(EVENTS)
     os.makedirs(os.path.join(AUD, "sfx"), exist_ok=True)
-    # 1) build SFX one-shots
-    kinds = sorted(set(k for _, k in EVENTS))
-    for k in kinds:
-        sfx(os.path.join(AUD, "sfx", f"{k}.wav"), k)
+
+    # 1) deal a variant take per EVENT (shuffle-bag, episode-seeded) — events of
+    #    the same kind get different takes, in deterministic order
+    takes = []
+    for i, (t, kind, cls, pan) in enumerate(EVENTS):
+        takes.append(resolve(kind, episode_seed=DATE))
 
     # 2) assemble inputs: [0]=VO padded to VIDEO, [1]=music looped/trimmed, then SFX
     inputs = ["-i", os.path.join(AUD, "vo.wav"), "-i", os.path.join(OUT, "music_bed.wav")]
-    for t, k in EVENTS:
-        inputs += ["-i", os.path.join(AUD, "sfx", f"{k}.wav")]
+    for p in takes:
+        inputs += ["-i", p]
 
     fc = []
     # VO: pad to full length, keep dominant; split (one copy to mix, one as sidechain key)
     fc.append(f"[0:a]aformat=sample_rates={SR}:channel_layouts=stereo,apad=whole_dur={VIDEO_SECS},volume=1.0,asplit=2[vo][vok]")
-    # Music: loop, trim, base level, with a scripted volume dip before the button
+    # Music: loop, trim, base level, VO-slot EQ (wide -2.5dB dip at 3k so the bed
+    # never fights intelligibility), scripted dip before the button, gentle lift
+    # in the post-VO tail where there's no voice to serve
     dip0, dip1 = SILENCE_DIP_AT, SILENCE_DIP_AT + DIP_LEN
+    vo_end = max(x["end"] for x in _lines)
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
-        f"atrim=0:{VIDEO_SECS},volume=0.30,"
+        f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.30,"
         f"volume=enable='between(t,{dip0},{dip1})':volume=0.10,"
-        f"volume=enable='between(t,{L[4] + 0.0},{L[4] + 2.0})':volume=0.13[bedraw]"
+        f"volume=enable='between(t,{L[4] + 0.0},{L[4] + 2.0})':volume=0.13,"
+        f"volume=enable='gt(t,{vo_end + 0.4})':volume=1.3[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)
     fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.04:ratio=9:attack=6:release=320:makeup=1[bed]")
-    # SFX: delay each to its event time
+
+    # SFX: per-event performance — pitch/volume/timing jitter, class gain, pan
     sfx_labels = []
-    for i, (t, k) in enumerate(EVENTS):
+    for i, (t, kind, cls, pan) in enumerate(EVENTS):
         idx = 2 + i
-        ms = int(t * 1000)
+        fam = FAMILY[kind]
+        cents = jit(i, "pitch", -PITCH_CENTS[fam], PITCH_CENTS[fam])
+        rate = 2 ** (cents / 1200)
+        gain_db = CLASS_DB[cls] + 6.0 + jit(i, "vol", -1.5, 1.5)   # bank peaks -6
+        t_actual = max(0.0, t + jit(i, "time", -0.015, 0.015))
+        ms = int(t_actual * 1000)
+        p = max(-1.0, min(1.0, pan)) * 0.35
+        gl, gr = math.cos((p + 1) * math.pi / 4), math.sin((p + 1) * math.pi / 4)
+        chain = [f"[{idx}:a]aformat=sample_rates={SR}:channel_layouts=stereo",
+                 f"asetrate={int(SR * rate)}", f"aresample={SR}"]
+        if kind in SUSTAINED:
+            chain += ["highpass=f=100", "equalizer=f=3000:t=q:w=1:g=-2.5"]
+        chain += [f"volume={10 ** (gain_db / 20):.4f}",
+                  f"pan=stereo|c0={gl:.3f}*c0|c1={gr:.3f}*c1",
+                  f"adelay={ms}|{ms}"]
         lbl = f"s{i}"
-        fc.append(f"[{idx}:a]aformat=sample_rates={SR}:channel_layouts=stereo,adelay={ms}|{ms},volume=0.5[{lbl}]")
+        fc.append(",".join(chain) + f"[{lbl}]")
         sfx_labels.append(f"[{lbl}]")
+
     # mix VO + bed + all sfx
     mix_in = "[vo][bed]" + "".join(sfx_labels)
     n = 2 + len(sfx_labels)
@@ -125,8 +202,11 @@ def main():
          "-ar", str(SR), "-ac", "2", "-t", str(VIDEO_SECS), master])
     print("wrote", master)
 
-    # write sfx_events.json for the gate
-    json.dump({"events": [{"t": t, "kind": k} for t, k in EVENTS],
+    # write sfx_events.json for the gate (schema: t/kind as before, + performance)
+    json.dump({"events": [
+                   {"t": t, "kind": k, "class": c, "pan": p,
+                    "take": os.path.basename(takes[i]), "family": FAMILY[k]}
+                   for i, (t, k, c, p) in enumerate(EVENTS)],
                "silence_dip_at": SILENCE_DIP_AT, "count": len(EVENTS)},
               open(os.path.join(AUD, "sfx_events.json"), "w"), indent=2)
 

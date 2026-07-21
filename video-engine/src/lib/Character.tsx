@@ -1,6 +1,6 @@
 import React from 'react';
 import {tones, FormGradient, RimLight, ContactShadow, LIGHT} from './lighting';
-import {TalkMouth} from './voice';
+import {TalkMouth, ambientMouth} from './voice';
 
 // =============================================================================
 // CHARACTER — the parameterized IGS-style person rig (the cast system).
@@ -41,8 +41,10 @@ export interface CharacterProps {
   scale?: number;
   x?: number;
   y?: number; // feet anchor in scene coords
-  /** 0..1 mouth openness from lib/voice (useVoice().opennessAt) — when set, the
-      mouth flaps with the narration instead of the static emotion shape */
+  /** pass useVoice().opennessAt(globalFrame) to mark this figure as a speaker in the
+      scene. NOTE (2026-07-21 owner rule): the rig does NOT lip-sync this value — it is
+      routed through ambientMouth(), which renders a slow word-independent chat cycle,
+      because narrator-synced mouth flapping reads as a failed narration attempt. */
   talking?: number;
   /** true = play an articulated walk cycle (alternating leg swing around the hips,
       a step-synced body bob, and an arm counter-swing) instead of standing still.
@@ -201,9 +203,11 @@ export const Character: React.FC<CharacterProps> = ({
             FLAPS with the narration instead of holding the static emotion shape */}
         {talking !== undefined ? (
           <g transform="translate(2,15)">
-            {/* round 10: narrower mouth (44->36) so the talking shape reads as a subtler lit mouth
-                rather than the wide open pink grin the panel kept calling cartoon-simple */}
-            <TalkMouth openness={talking * 0.88} w={36} ink={INK}
+            {/* narrower mouth (round 10), and the openness comes from ambientMouth — a slow chat
+                cycle, NEVER the narrator's per-word amplitude (2026-07-21 owner rule: word-synced
+                mouths read as a failed narration attempt; characters talk to each other, not for
+                the voiceover) */}
+            <TalkMouth openness={ambientMouth(talking, f, swayPhase) ?? 0} w={36} ink={INK}
                        mood={emotion === 'angry' || emotion === 'worried' ? 'frown' : emotion === 'smug' ? 'smile' : 'neutral'} />
           </g>
         ) : (

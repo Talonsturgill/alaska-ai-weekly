@@ -1,5 +1,5 @@
 import React from 'react';
-import {TalkMouth} from './voice';
+import {TalkMouth, ambientMouth} from './voice';
 import {tones, FormGradient, RimLight, ContactShadow} from './lighting';
 
 // =============================================================================
@@ -234,7 +234,7 @@ export const ServerMachine: React.FC<{
                 the machine speaks/reacts in sync with the narration */}
             {!ghost && talking !== undefined ? (
               <g transform="translate(0,-262)">
-                <TalkMouth openness={talking} w={110} ink={INK}
+                <TalkMouth openness={ambientMouth(talking, f, x * 0.05 + 2.6) ?? 0} w={110} ink={INK}
                            mood={emotion === 'nervous' ? 'frown' : emotion === 'greedy' ? 'smile' : 'neutral'} />
               </g>
             ) : (

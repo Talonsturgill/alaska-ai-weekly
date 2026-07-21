@@ -497,3 +497,41 @@ Owner-directed engine session after cold-watching the 07-20b cut. No video shipp
    alone, and state the piece's single question before any synth. Root cause: the 125-word
    compression stripped connective tissue and every existing gate looked at visuals or
    pacing; nobody ever read the script cold.
+
+## 2026-07-21b — OWNER-FIX SESSION (no episode): 5 post-ship corrections, all automated so they can't recur
+
+Owner cold-watched the shipped "Pen That Won't Land" cut + email and flagged 5 misses. Per the
+repeat-offender doctrine each got a ROOT-CAUSE automation fix (recorded in config/eval_ledger.yaml),
+not a one-off correction. The 07-21 episode stays FINAL.
+
+1. EMAIL SOURCES INLINE, ALWAYS (owner: "the whole point is to have everything in the email"):
+   scripts/dispatch_email.py parse_sources() now harvests every source URL from the run artifacts
+   and renders them inline with visible URLs; main() HARD-FAILS (exit 1) if sources are missing or
+   empty — a GitHub pointer can never ship again. Sources-cited also permanently ends with
+   alaskaihq.com (the public tracker of all Alaska+AI decisions/updates).
+2. NO NARRATOR LIP-SYNC (owner: "it looked like they were trying to narrate... quality looks
+   poor"): lib/voice.tsx ambientMouth() converts any `talking` signal into a slow, word-independent
+   conversational cycle (dips fully closed each period, per-figure phase). Character.tsx + kit.tsx
+   route ALL mouths through it — enforced at engine level so no scene can pass raw opennessAt again.
+   Characters may chat with each other; they never mouth the VO.
+3. SFX OVERHAUL (owner: "ours is boring and reusing the same sfx"): two research passes (craft
+   doctrine + license-clean sources) informed a full rebuild —
+   - build_sfx_library.py: 6 sibling takes per kind from param families; every hit is
+     transient+body+Schroeder-room-tail(+sweetener); metal is modal (f_n = n*f0*sqrt(1+B*n^2)),
+     paper is granular, snap is Karplus-Strong; crc32-seeded, bit-reproducible.
+   - sfx_bank.py: per-episode shuffle-bag (no-repeat-last-2) over takes; real recordings win per kind.
+   - fetch_sfx.py NET-NEW: CC0-only harvester (Kenney packs, provenance manifest w/ sha256);
+     30 real takes committed for clank/thud/ding/paw/pop/chime. Sonniss/Pixabay/Mixkit explicitly
+     barred (redistribution bans); BBC RemArc barred (non-commercial).
+   - dispatch_mix.py: class gain tiers (hero -11 / standard -15 / texture -19 dBFS) replace flat
+     volume=0.5; deterministic pitch/volume/timing jitter; pan from storyboard x (max ±0.35, heroes
+     centered); 3kHz VO-slot EQ + 100Hz HP on bed + sustained sfx; check_schedule() asserts no two
+     consecutive events share a sound family and ≤1 riser. Verified end-to-end on the 07-21 stems:
+     -14.1 LUFS, 18 events, 0 family repeats.
+4. HERO-ASSET ROTATION (owner: "we keep using this little square guy in like every video"):
+   dedupe.py check --hero exits 1 if the candidate hero matches either of the last TWO dispatches;
+   add --hero/--cast persists casting (state.yaml backfilled 07-18..07-21); list prints the recent-
+   hero roster. Routine prompt makes the check a hard pre-storyboard gate.
+5. EVAL-TRACKER MERGE FIX (found while recording these findings): eval_tracker.py record now MERGES
+   findings into an existing date+slug entry instead of replacing it — a re-record was silently
+   erasing the run's panel_rounds + earlier findings.

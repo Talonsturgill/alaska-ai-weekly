@@ -113,6 +113,44 @@ runs:
       standers moved in lockstep; hash now includes outfit+facing
     fix_commits:
     - post-7887707
+  - signature: email-sources-pointer-not-inline
+    axis: delivery
+    status: root_caused
+    root_cause: 'dispatch_email.py silently fell back to a GitHub link when --sources was missing instead
+      of failing; owner rule: EVERYTHING lives in the email. Fixed: parse_sources() harvests every source
+      URL and renders them inline with visible URLs, main() hard-fails (exit 1) if sources are missing/empty,
+      and alaskaihq.com is a permanent line in Sources cited.'
+    fix_commits:
+    - this-pr
+  - signature: narrator-lip-sync-mouths
+    axis: animation
+    status: root_caused
+    root_cause: 'Character/ServerMachine mouths were driven by raw useVoice().opennessAt so figures appeared
+      to mouth the narration (owner: looked like a failed narration attempt). Fixed at ENGINE level: lib/voice.tsx
+      ambientMouth() discards per-word amplitude and renders a slow word-independent chat cycle; Character.tsx
+      + kit.tsx route all talking through it, so no scene can reintroduce lip-sync.'
+    fix_commits:
+    - this-pr
+  - signature: sfx-single-take-monotony
+    axis: sound
+    status: root_caused
+    root_cause: 'build_sfx_library.py rendered ONE static wav per kind and dispatch_mix.py placed every
+      event at flat volume=0.5 center-panned, so takes repeated identically within and across episodes.
+      Fixed: 6-variant param-family bank (transient+body+room-tail+sweetener layering, modal metal, granular
+      paper, Karplus-Strong), sfx_bank shuffle-bag with no-repeat-last-2, per-event class gain tiers/pitch-volume-timing
+      jitter/storyboard pan, VO-slot EQ, no-consecutive-family schedule assert, plus 30 curated CC0 Kenney
+      real takes (fetch_sfx.py) that win per kind.'
+    fix_commits:
+    - this-pr
+  - signature: hero-asset-rerun-square-guy
+    axis: casting
+    status: root_caused
+    root_cause: 'No gate stopped the same library asset (ServerMachine) playing the AI-embodiment hero
+      run after run despite a 26-asset shelf. Fixed: dedupe.py check --hero exits 1 if the candidate hero
+      matches either of the last TWO dispatches, add --hero/--cast persist casting to state.yaml (backfilled),
+      list prints the recent-hero roster, and the routine prompt makes the check a hard gate.'
+    fix_commits:
+    - this-pr
 resolved:
   flat-vector-human-rig:
     run: '2026-07-21'
