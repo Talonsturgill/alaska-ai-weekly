@@ -84,18 +84,35 @@ runs:
     median: 8.38
     weakest_axis: illustration-craft-detail
     hard_blockers: 0
+  - round: 11
+    median: 8.76
+    weakest_axis: accuracy-sourcing
+    hard_blockers: 0
   findings:
   - signature: flat-vector-human-rig
     axis: illustration-craft-detail
     first_seen_round: 2
     rounds_as_weakest: 9
     status: root_caused
-    root_cause: flat sway-only sprite rebuilt comprehensively rounds 8-10 (walk, volumetric coats/legs/faces,
-      idle life, kinetic captions); residual is the flat-vector render APPROACH = product decision
+    root_cause: 'TWO stacked causes: (1) the rig was a flat sway-only sprite -- rebuilt rounds 8-10 (walk
+      cycle, volumetric coats/legs/faces, idle life, kinetic captions) then brought to full finish parity
+      in the owner-approved parity pass (faces/hands/fabric/light-wrap); (2) the RUBRIC was miscalibrated
+      -- it graded the flat-vector brand style itself as a defect, fixed by the style_charter + within-style
+      descriptors + 8.6 threshold. Verification round 11: median 8.76 PASS, editor SHIP, zero hard blockers.'
     fix_commits:
     - ada8cbf
     - 1696d45
     - 68f19ef
+    - '7887707'
+  - signature: idle-sway-phase-lockstep
+    axis: motion-animation-craft
+    first_seen_round: 11
+    rounds_as_weakest: 0
+    status: root_caused
+    root_cause: sway phase hashed Character x/y props which are 0 for wrapper-positioned figures, so paired
+      standers moved in lockstep; hash now includes outfit+facing
+    fix_commits:
+    - post-7887707
 resolved:
   flat-vector-human-rig:
     run: '2026-07-21'
@@ -103,8 +120,8 @@ resolved:
     - ada8cbf
     - 1696d45
     - 68f19ef
-    note: 'comprehensive rig rebuild rounds 8-10: articulated walk cycle + volumetric coats/legs/faces
-      + idle weight-shift/breathing + kinetic captions + subtler mouth; judge median climbed 7.82->8.14->8.38.
-      Residual gap to 9.0 is UNANIMOUSLY the flat-vector character-render APPROACH (all 3 judges: needs
-      volumetric/textured/painterly characters) = a product/brand decision, not a per-run defect. Logged
-      as top future engine direction in RUN_UPGRADES + EVAL_REPEAT_OFFENDERS.'
+    - '7887707'
+    note: 'Rig rebuilt to full parity (walk, volumetric faces/legs/coats, hands, fabric, light-wrap) AND
+      the rubric recalibrated (style charter: flat-vector is the brand, judged within-style, threshold
+      8.6). Verification: median 8.76 PASS, editor SHIP, zero hard blockers. If this signature recurs,
+      the style charter is being ignored or the parity slipped.'

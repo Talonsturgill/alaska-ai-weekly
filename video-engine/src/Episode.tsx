@@ -306,7 +306,7 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
           </g>
           {/* Dendurent at the ADAPTABLE lever */}
           <g transform="translate(300,980)">
-            <Character frame={f} x={0} y={0} scale={0.85} facing={1} outfit="suit" emotion="neutral" pose="stand" talking={voice.opennessAt(gf) * 0.5} />
+            <Character frame={f} x={0} y={0} scale={0.85} facing={1} outfit="suit" emotion="neutral" pose="stand" glasses talking={voice.opennessAt(gf) * 0.5} />
           </g>
           {/* VanBuskirk striding to the CONCRETE lever -- now an ARTICULATED walk: legs alternate
               around the hips with the phase driven by her real travel (vbStride) so the feet don't
@@ -406,7 +406,7 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
         <rect x={0} y={1200} width={1080} height={720} fill={OAK_D} />
         <ContactShadow cx={540} cy={1240} rx={420} ry={44} opacity={0.3} />
         <g transform="translate(420,1000)">
-          <Character frame={f} x={0} y={0} scale={0.8} facing={1} outfit="suit" emotion="worried" pose="stand" talking={voice.opennessAt(gf) * 0.4} />
+          <Character frame={f} x={0} y={0} scale={0.8} facing={1} outfit="suit" emotion="worried" pose="stand" glasses talking={voice.opennessAt(gf) * 0.4} />
         </g>
         <g transform="translate(660,1000)">
           <Character frame={f} x={0} y={0} scale={0.8} facing={-1} outfit="vest" emotion="worried" pose="stand" />

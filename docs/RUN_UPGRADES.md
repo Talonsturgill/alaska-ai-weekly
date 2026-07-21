@@ -7,6 +7,56 @@ back on if a later run regresses. Newest first.
 
 ---
 
+## 2026-07-21 (follow-up session) — Style Charter + character parity pass + delivery-link hardening
+
+**Context:** after the main 2026-07-21 dispatch merged (#60), the owner (a) reported the Gmail
+draft's video links downloaded as an unopenable extensionless blob, and (b) asked the two strategic
+questions the 9-round taste-loop had earned: *what exactly keeps failing the panel, and is the bar
+even right?* Diagnosis: the objective gate never failed once (10/10 every round); the ONLY failing
+standard was the subjective rubric's "looks expensive / zero amateur tells" Illustration descriptor
+(weight 0.16) grading the deliberately-chosen flat-vector house style as a defect — a calibration
+problem, not (only) a craft problem. Owner decision: **do both A and B.**
+
+**A — STYLE CHARTER + rubric recalibration** (`config/dispatch_rubric.yaml`): the flat-vector IGS
+look is now formally the brand. New `style_charter` block: judges grade execution WITHIN the style
+(form shading, AO, material cues, articulation, and finish PARITY between characters and props);
+"make it painterly/3D/higher-fidelity" notes are explicitly out of scope and must not cap a score;
+concrete within-style flaws still count fully. Illustration/Motion 10-descriptors rewritten to the
+within-style standard; `ship_threshold` recalibrated 9.0 → 8.6 (where "excellent within the brand"
+lands empirically). Hard blockers unchanged. This ends the whack-a-mole where the panel's weakest
+axis was the house style itself for 9 straight rounds.
+
+**B — CHARACTER-ART PARITY PASS** (`Character.tsx`, pure SVG, zero filters, render cost measured
+flat at ~225s/1580f): designed faces (colored iris + eyelids + drawn nose + ears + blush + hair
+shine/part, optional wire `glasses` — Dendurent wears them), real hands (form-shaded palm + thumb +
+finger grooves + knuckle highlight + trim sleeve cuffs) replacing the mitten circles in all five
+poses, per-outfit fabric (suit lapels + shirt cuffs + pocket square + seam; puffer/vest quilt TUBE
+shading + zipper pull), light-wrap (left-contour rim, under-chin AO on the chest, shoulder-joint AO,
+stitched hems, boot sole seams). New Character props: `eyes`, `glasses`.
+
+**VERIFICATION (the point of the exercise):** fresh 4-agent panel vs the recalibrated rubric on the
+re-rendered cut: editor SHIP (zero new defects — glasses/hands/text all checked), judges
+**8.02 / 8.76 / 8.90 → median 8.76 ≥ 8.6 PASS**, zero hard blockers, gate 10.0/10 with
+LIVING_SCREEN 100%. Judge 2's one named concrete flaw was root-caused on the spot and fixed before
+ship: **the idle-sway phase hash never engaged** (it hashed the Character x/y PROPS, which are 0 for
+wrapper-positioned figures, so paired standers swayed in lockstep and read "thin"); the hash now
+includes outfit+facing so any two cast members desync deterministically. Re-rendered, re-gated,
+strip-verified.
+
+**Also fixed this session — delivery-link hardening** (`scripts/upload_video.py`, PR #61): a
+`--name` without an extension shipped an extensionless blob that raw.githubusercontent served as
+`application/octet-stream` + nosniff (won't open). Now the source file's extension is force-appended
+to the hosted name, and `verify()` requires an OPENABLE link (extension + non-HTML + content-length
+== local size), exiting non-zero before a bad link can reach a draft. Unit-tested against the exact
+mistake + live-checked good/bad URLs.
+
+**Doctrine takeaways:** (1) when a subjective gate pins the same axis for many rounds, check the
+CALIBRATION of the standard before burning more craft rounds — the eval tracker now records this
+class; (2) "HTTP 200" is not "the link works" — verify the artifact opens as what it claims to be;
+(3) per-figure animation phase must hash on identity, not on props that scenes may leave at 0.
+
+---
+
 ## 2026-07-21 — "The Pen That Won't Land" (KPBSD adopts AI before it writes the rule)
 
 **Shipped:** ~52.6s vertical + 4:5 Dispatch, Gemini narrator (Sulafat, 9-line read). Story: the

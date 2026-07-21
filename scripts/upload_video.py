@@ -9,10 +9,14 @@ Order of preference (so delivery is PERMANENT by default with ZERO setup):
      Keep each file < 100 MB (GitHub's hard push limit) — encode the hosted cut accordingly.
   3) NO-AUTH temporary host (tmpfiles.org, ~1h) — last resort if the git push fails.
 
-Prints `HOST=permanent|temporary` to stderr and self-verifies HTTP 200 before printing the URL.
+Prints `HOST=permanent|temporary` to stderr and self-verifies the URL is an OPENABLE media link
+(200 + correct extension + full content-length, not just any 200) before printing it. A --name
+without an extension is auto-corrected to the source file's extension, so a hosted link can never
+be an extensionless octet-stream blob that won't open.
 
 Usage:
   python scripts/upload_video.py --file out/dispatch/dispatch.mp4 --name dispatch-2026-06-27.mp4
+  # --name may omit the extension; it is appended from --file automatically.
 """
 import argparse, base64, os, subprocess, sys, tempfile, re, json, shutil
 
@@ -84,15 +88,48 @@ def via_tmpfiles(file):
     except Exception: raise RuntimeError("tmpfiles parse failed: " + (r.stdout or "")[:200])
     return u.replace("tmpfiles.org/", "tmpfiles.org/dl/")
 
-def verify(url):
-    r = sh(["curl", "-sSL", "-o", "/dev/null", "-w", "%{http_code}", "--max-time", "180", url])
-    return (r.stdout or "").strip() == "200"
+def ensure_ext(name, file):
+    """Force the hosted name to carry the SOURCE file's real extension. Without an extension,
+    raw.githubusercontent serves the file as application/octet-stream with nosniff, so a browser
+    downloads an extensionless blob that won't open in any player (the 2026-07-21 bug: a --name
+    without '.mp4' shipped a dead link). If --name already ends with the right extension, keep it;
+    otherwise append it (never silently host an extensionless or wrong-extension media file)."""
+    ext = os.path.splitext(file)[1]  # e.g. ".mp4" / ".png"
+    if ext and not name.lower().endswith(ext.lower()):
+        name = name + ext
+    return name
+
+def verify(url, file):
+    """A link is only 'good' if it will actually OPEN as the media file, which HTTP 200 alone does
+    not prove. Check three things off the response headers: (1) 200, (2) the URL path ends with the
+    source file's extension (so it downloads/plays as .mp4/.png, not an extensionless blob), and
+    (3) the served Content-Length equals the local file size (the whole file is really there, and it
+    is not a small HTML error page). Returns (ok, detail)."""
+    ext = os.path.splitext(file)[1].lower()
+    if ext and not url.lower().split("?")[0].endswith(ext):
+        return False, f"URL does not end with '{ext}' (would download as an unopenable file): {url}"
+    r = sh(["curl", "-sSLI", "--max-time", "180", url])
+    if r.returncode != 0:
+        return False, "HEAD request failed: " + (r.stderr or "")[-200:]
+    head = r.stdout
+    codes = re.findall(r"HTTP/\d(?:\.\d)?\s+(\d{3})", head)
+    if not codes or codes[-1] != "200":
+        return False, f"HTTP status {codes[-1] if codes else '?'} (expected 200)"
+    if re.search(r"(?im)^content-type:\s*text/html", head):
+        return False, "served as text/html (looks like an error page, not the media file)"
+    m = re.search(r"(?im)^content-length:\s*(\d+)", head)
+    if m:
+        remote, local = int(m.group(1)), os.path.getsize(file)
+        if remote != local:
+            return False, f"content-length {remote} != local file size {local} (truncated/wrong upload)"
+    return True, "ok"
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--file", required=True); ap.add_argument("--name", default=None)
     ap.add_argument("--no-github", action="store_true", help="skip the GitHub media-branch host")
-    a = ap.parse_args(); name = a.name or os.path.basename(a.file)
+    a = ap.parse_args()
+    name = ensure_ext(a.name or os.path.basename(a.file), a.file)
     url = None; kind = None; errs = []
     if rclone_configured() and have_rclone():
         try: url, kind = via_rclone(a.file, name), "permanent"
@@ -106,10 +143,11 @@ def main():
     if not url:
         print("ERROR: all upload hosts failed:\n  " + "\n  ".join(errs), file=sys.stderr); sys.exit(1)
     if errs: print("(fell through: " + "; ".join(errs) + ")", file=sys.stderr)
-    ok = verify(url)
-    print(f"HOST={kind} VERIFIED={'200' if ok else 'FAILED'}", file=sys.stderr)
+    ok, detail = verify(url, a.file)
+    print(f"HOST={kind} VERIFIED={'ok' if ok else 'FAILED'} ({detail})", file=sys.stderr)
     if not ok:
-        print("WARNING: link did not verify HTTP 200 - re-upload/retry before creating the draft", file=sys.stderr); sys.exit(3)
+        print(f"WARNING: link is not a valid, openable media URL - do NOT put it in the draft. {detail}",
+              file=sys.stderr); sys.exit(3)
     print(url)   # LAST line = the URL the routine captures
 
 if __name__ == "__main__":

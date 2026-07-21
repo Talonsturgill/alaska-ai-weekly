@@ -8,6 +8,15 @@ import {TalkMouth} from './voice';
 // Every shape ink-outlined; torso/head carry shade + highlight tones; idle
 // breath + blink built in (pass the frame). Poses/emotions/outfits are props,
 // so one rig yields a whole cast that REACTS to the story.
+//
+// 2026-07-21 PARITY PASS (owner-approved, see config/dispatch_rubric.yaml
+// style_charter): the cast is brought to FINISH PARITY with the props while
+// staying strictly flat-vector SVG (no filters, no 3D, render cost flat) —
+// real faces (iris + lids + drawn nose + ears + blush + hair shine, optional
+// glasses), real hands (palm/thumb/finger grooves + sleeve cuffs), per-outfit
+// fabric (suit lapels + pocket square, quilt tube shading, hem stitching),
+// light-wrap (left-contour rim, under-chin AO, shoulder-joint AO, boot soles),
+// on top of the articulated walk cycle + idle weight-shift/breath.
 // =============================================================================
 
 export const INK = '#101423';
@@ -41,6 +50,10 @@ export interface CharacterProps {
       the feet don't skate; when omitted the phase advances from the frame. */
   walking?: boolean;
   walkPhase?: number;
+  /** iris color (2026-07-21 parity pass — eyes gained a colored iris under the pupil) */
+  eyes?: string;
+  /** round wire glasses (cast differentiation for officials/experts) */
+  glasses?: boolean;
 }
 
 const OUTFITS: Record<Outfit, {main: string; shade: string; trim: string; pants: string}> = {
@@ -70,6 +83,8 @@ export const Character: React.FC<CharacterProps> = ({
   talking,
   walking = false,
   walkPhase,
+  eyes = '#41607d',
+  glasses = false,
 }) => {
   const c = OUTFITS[outfit];
   // breathing: a visible chest rise+fall. Bumped round 10 — the panel kept reading standers as
@@ -84,7 +99,11 @@ export const Character: React.FC<CharacterProps> = ({
   // so round 6 roughly doubles the amplitude to make the weight-shift unmistakable). Phase is
   // spread WIDE by x so two figures in the same two-shot visibly sway out of lockstep (per the
   // flow-critic's cosmetic note), not merely a hair apart.
-  const swayPhase = x * 0.02 + y * 0.003;
+  // phase MUST differ between two figures sharing a frame or their idle life reads as lockstep
+  // "thin" motion (verification-panel catch: scenes position characters via wrapper transforms, so
+  // the x/y PROPS are often 0 for every figure and the old x/y-only hash never actually engaged —
+  // hash in outfit + facing so any two distinct cast members desync deterministically).
+  const swayPhase = x * 0.02 + y * 0.003 + outfit.length * 1.7 + (facing === 1 ? 0 : 2.1);
   const idle = pose === 'stand' && !walking; // a walking figure gets the stride cycle, not idle sway
   // idle life = a slow WEIGHT-SHIFT (big, ~3s period: the body eases onto one hip, holds, eases
   // back) layered with a faster micro-sway, so a standing figure reads as a person shifting their
@@ -125,8 +144,15 @@ export const Character: React.FC<CharacterProps> = ({
           <g>
             <ellipse cx={-17} cy={-14} rx={emotion === 'shock' ? 13 : 9.5} ry={emotion === 'smug' ? 6 : emotion === 'shock' ? 15 : 11} fill="#fff" stroke={INK} strokeWidth={4.5} />
             <ellipse cx={19} cy={-14} rx={emotion === 'shock' ? 13 : 9.5} ry={emotion === 'smug' ? 6 : emotion === 'shock' ? 15 : 11} fill="#fff" stroke={INK} strokeWidth={4.5} />
+            {/* iris (2026-07-21 parity pass): a colored ring under the pupil so the eyes read as
+                designed EYES, not ink dots — the single cheapest "finish parity" win on the face */}
+            <circle cx={-15 + 2 * facing} cy={-13} r={emotion === 'shock' ? 5.2 : 6.6} fill={eyes} opacity={0.95} />
+            <circle cx={21 + 2 * facing} cy={-13} r={emotion === 'shock' ? 5.2 : 6.6} fill={eyes} opacity={0.95} />
             <circle cx={-15 + 2 * facing} cy={-13} r={emotion === 'shock' ? 3.4 : 4.4} fill={INK} />
             <circle cx={21 + 2 * facing} cy={-13} r={emotion === 'shock' ? 3.4 : 4.4} fill={INK} />
+            {/* upper eyelid line — the eye sits under a lid, not floating on the face */}
+            <path d="M-26,-22 q9,-6 18,-2" stroke={INK} strokeWidth={2.8} opacity={0.35} fill="none" strokeLinecap="round" />
+            <path d="M10,-24 q9,-4 18,0" stroke={INK} strokeWidth={2.8} opacity={0.35} fill="none" strokeLinecap="round" />
             {/* catchlight: a tiny lit-side highlight on each pupil so the eyes read as wet/alive, not flat dots */}
             <circle cx={-17 + 2 * facing} cy={-16} r={1.7} fill="#fff" opacity={0.9} />
             <circle cx={21 + 2 * facing} cy={-16} r={1.7} fill="#fff" opacity={0.9} />
@@ -163,6 +189,14 @@ export const Character: React.FC<CharacterProps> = ({
             <path d="M29,-29 q-10,-4 -20,-1" stroke={INK} strokeWidth={6} strokeLinecap="round" fill="none" />
           </g>
         )}
+        {/* nose (2026-07-21 parity pass): a small drawn nose over the round-9 plane shading, so the
+            face has actual features between the eyes and mouth — kept light so the friendly house
+            face survives, but no longer a featureless oval */}
+        <path d={`M${1 + facing},-6 q5,9 1,16 q-2,2 -6,1`} stroke={INK} strokeWidth={3.2} opacity={0.5} fill="none" strokeLinecap="round" />
+        <path d={`M${-2 + facing},-4 q-2,8 0,14`} stroke={skinShade} strokeWidth={4} opacity={0.5} fill="none" strokeLinecap="round" />
+        {/* cheek blush — warmth so the skin reads as skin, not a flat swatch */}
+        <ellipse cx={-29} cy={7} rx={7.5} ry={4.5} fill="#c96f4a" opacity={0.17} />
+        <ellipse cx={33} cy={7} rx={7.5} ry={4.5} fill="#c96f4a" opacity={0.17} />
         {/* mouth — when `talking` is provided (0..1 from lib/voice), the mouth
             FLAPS with the narration instead of holding the static emotion shape */}
         {talking !== undefined ? (
@@ -185,9 +219,44 @@ export const Character: React.FC<CharacterProps> = ({
         {(emotion === 'worried' || emotion === 'shock') && (
           <path d={`M44,-30 q7,${10 + 3 * Math.sin(f / 9)} 0,${18 + 3 * Math.sin(f / 9)} q-7,-8 0,-18 Z`} fill="#9fd8ff" stroke={INK} strokeWidth={3} />
         )}
+        {/* round wire glasses (cast differentiation — e.g. the district official). Drawn last so
+            they sit over the eyes; a faint lens tint + a lit glint sell the glass. */}
+        {glasses && (
+          <g>
+            <circle cx={-17} cy={-14} r={15} fill="#dfeaf2" opacity={0.16} />
+            <circle cx={19} cy={-14} r={15} fill="#dfeaf2" opacity={0.16} />
+            <circle cx={-17} cy={-14} r={15} fill="none" stroke={INK} strokeWidth={3.4} />
+            <circle cx={19} cy={-14} r={15} fill="none" stroke={INK} strokeWidth={3.4} />
+            <path d="M-2,-16 q2,-3 6,0" stroke={INK} strokeWidth={3.2} fill="none" strokeLinecap="round" />
+            <line x1={-32} y1={-18} x2={-52} y2={-10} stroke={INK} strokeWidth={3} strokeLinecap="round" />
+            <line x1={34} y1={-18} x2={54} y2={-10} stroke={INK} strokeWidth={3} strokeLinecap="round" />
+            <path d="M-27,-22 q4,-4 9,-3" stroke="#fff" strokeWidth={2.4} opacity={0.5} fill="none" strokeLinecap="round" />
+          </g>
+        )}
       </g>
     );
   };
+
+  // ---- hand (2026-07-21 parity pass) --------------------------------------
+  // A real cartoon hand — form-shaded palm + thumb + finger grooves + a trim-colored sleeve cuff —
+  // replacing the featureless mitten circle (a judge-cited "amateur tell"). `rot` aims the cuff at
+  // the arm it hangs from (0 = arm above the hand); grooves/thumb ride the rotation. Pure shapes,
+  // no filters, so the render cost is unchanged.
+  const hand = (hx: number, hy: number, rot = 0, r = 15) => (
+    <g transform={`translate(${hx},${hy}) rotate(${rot})`}>
+      {/* sleeve cuff at the wrist (toward the arm) */}
+      <rect x={-r * 0.85} y={-r * 1.55} width={r * 1.7} height={r * 0.8} rx={r * 0.32} fill={c.trim} stroke={INK} strokeWidth={3.5} />
+      {/* palm (form-shaded, not a flat disc) */}
+      <circle r={r} fill={`url(#${uid}_skin)`} stroke={INK} strokeWidth={5} />
+      {/* thumb */}
+      <ellipse cx={-r * 0.72} cy={r * 0.24} rx={r * 0.4} ry={r * 0.55} fill={skin} stroke={INK} strokeWidth={3.5} />
+      {/* finger grooves */}
+      <path d={`M${-r * 0.12},${r * 0.1} v${r * 0.72}`} stroke={INK} strokeWidth={2.2} opacity={0.4} strokeLinecap="round" fill="none" />
+      <path d={`M${r * 0.38},${r * 0.05} v${r * 0.66}`} stroke={INK} strokeWidth={2.2} opacity={0.4} strokeLinecap="round" fill="none" />
+      {/* knuckle highlight (key light from upper-left) */}
+      <path d={`M${-r * 0.5},${-r * 0.45} q${r * 0.5},${-r * 0.3} ${r},0`} stroke="#fff" strokeWidth={2.5} opacity={0.24} fill="none" strokeLinecap="round" />
+    </g>
+  );
 
   // ---- arms per pose -------------------------------------------------------
   const arms = () => {
@@ -199,8 +268,8 @@ export const Character: React.FC<CharacterProps> = ({
             <path d="M-52,278 q30,26 62,18 L52,282" fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
             <path d="M52,294 q-30,24 -62,16 L-52,296" fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d="M52,294 q-30,24 -62,16 L-52,296" fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
-            <circle cx={-54} cy={296} r={15} fill={skin} stroke={INK} strokeWidth={5} />
-            <circle cx={54} cy={282} r={15} fill={skin} stroke={INK} strokeWidth={5} />
+            {hand(-54, 296, 90)}
+            {hand(54, 282, -90)}
           </g>
         );
       case 'point':
@@ -213,7 +282,8 @@ export const Character: React.FC<CharacterProps> = ({
             <path d={`M46,262 q52,-6 96,${-18 + 3 * Math.sin(f / 11)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d={`M46,262 q52,-6 96,${-18 + 3 * Math.sin(f / 11)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
             <g transform={`translate(148,${242 + 3 * Math.sin(f / 11)})`}>
-              <circle r={15} fill={skin} stroke={INK} strokeWidth={5} />
+              {hand(0, 0, -90)}
+              {/* extended pointing finger stays on top of the new hand */}
               <rect x={8} y={-7} width={30} height={13} rx={6.5} fill={skin} stroke={INK} strokeWidth={4.5} />
             </g>
           </g>
@@ -225,8 +295,8 @@ export const Character: React.FC<CharacterProps> = ({
             <path d={`M-46,256 q-40,-42 -34,${-86 + 4 * Math.sin(f / 8)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
             <path d={`M46,256 q40,-42 34,${-86 - 4 * Math.sin(f / 8)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d={`M46,256 q40,-42 34,${-86 - 4 * Math.sin(f / 8)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-            <circle cx={-80} cy={168 + 4 * Math.sin(f / 8)} r={15} fill={skin} stroke={INK} strokeWidth={5} />
-            <circle cx={80} cy={168 - 4 * Math.sin(f / 8)} r={15} fill={skin} stroke={INK} strokeWidth={5} />
+            {hand(-80, 168 + 4 * Math.sin(f / 8), 140)}
+            {hand(80, 168 - 4 * Math.sin(f / 8), -140)}
           </g>
         );
       case 'raise':
@@ -238,11 +308,11 @@ export const Character: React.FC<CharacterProps> = ({
             {/* off arm at the side */}
             <path d="M-46,266 q-16,44 -8,84" fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d="M-46,266 q-16,44 -8,84" fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
-            <circle cx={-54} cy={352} r={14} fill={skin} stroke={INK} strokeWidth={5} />
+            {hand(-54, 352, 0, 14)}
             {/* raised arm, nearly vertical with a live micro-sway */}
             <path d={`M46,258 q26,-70 ${12 + 2 * Math.sin(f / 10)},-140`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d={`M46,258 q26,-70 ${12 + 2 * Math.sin(f / 10)},-140`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-            <circle cx={58 + 2 * Math.sin(f / 10)} cy={118} r={15} fill={skin} stroke={INK} strokeWidth={5} />
+            {hand(58 + 2 * Math.sin(f / 10), 118, 180)}
           </g>
         );
       default: // stand
@@ -252,8 +322,8 @@ export const Character: React.FC<CharacterProps> = ({
             <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
             <path d={`M46,266 q14,46 6,${88 - 2 * Math.sin(f / 13)}`} fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
             <path d={`M46,266 q14,46 6,${88 - 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
-            <circle cx={-52} cy={358} r={14} fill={skin} stroke={INK} strokeWidth={5} />
-            <circle cx={52} cy={356} r={14} fill={skin} stroke={INK} strokeWidth={5} />
+            {hand(-52, 358, 0, 14)}
+            {hand(52, 356, 0, 14)}
           </g>
         );
     }
@@ -285,6 +355,8 @@ export const Character: React.FC<CharacterProps> = ({
           <path d="M-30,-120 q6,20 -2,50" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
           <path d="M-44,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
           <path d="M-44,-14 h20 v16 h-26 a8,8 0 0 1 -8,-8 q0,-8 14,-8 Z" fill="#fff" opacity={0.14} />
+          {/* sole seam — the boot has a built sole, not a painted blob */}
+          <path d="M-54,-3 h52" stroke={INK} strokeWidth={2.4} opacity={0.45} strokeLinecap="round" />
         </g>
         <g transform={`rotate(${-legSwing} 25 -160)`}>
           <rect x={8} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
@@ -293,6 +365,7 @@ export const Character: React.FC<CharacterProps> = ({
           <path d="M18,-100 q6,24 -3,60" stroke={INK} strokeWidth={2.5} opacity={0.22} fill="none" strokeLinecap="round" />
           <path d="M4,-14 h44 v10 a6,6 0 0 1 -6,6 h-50 a8,8 0 0 1 -8,-8 q0,-8 20,-8 Z" fill="#5b4632" stroke={INK} strokeWidth={5} />
           <path d="M4,-14 h20 v16 h-26 a8,8 0 0 1 -8,-8 q0,-8 14,-8 Z" fill="#fff" opacity={0.14} />
+          <path d="M-6,-3 h52" stroke={INK} strokeWidth={2.4} opacity={0.45} strokeLinecap="round" />
         </g>
         {/* torso (breath + walk bob) */}
         <g transform={`translate(0,${-160 + bob + walkBob}) scale(1,${breath}) translate(0,160)`}>
@@ -324,6 +397,13 @@ export const Character: React.FC<CharacterProps> = ({
               <g>
                 <path d="M0,-190 L-16,-120 L0,-40 L16,-120 Z" fill={c.trim} stroke={INK} strokeWidth={4.5} />
                 <path d="M-40,-192 L0,-140 L40,-192" fill="none" stroke={INK} strokeWidth={5} />
+                {/* tailoring (parity pass): lit + shaded LAPELS and a pocket square, so the suit
+                    reads as a cut garment, not a painted V */}
+                <path d="M-40,-192 L-4,-138 L-30,-146 Z" fill={tMain.key} opacity={0.55} stroke={INK} strokeWidth={3} strokeLinejoin="round" />
+                <path d="M40,-192 L4,-138 L30,-146 Z" fill={tMain.shade} opacity={0.75} stroke={INK} strokeWidth={3} strokeLinejoin="round" />
+                <path d="M-56,-124 l15,-2 -6,11 Z" fill="#e9e9e2" stroke={INK} strokeWidth={2.4} strokeLinejoin="round" />
+                <path d="M-60,-118 q9,-3 18,-1" stroke={INK} strokeWidth={2.6} opacity={0.5} fill="none" strokeLinecap="round" />
+                <path d="M-24,-52 q24,10 48,0" stroke={INK} strokeWidth={2.5} opacity={0.3} fill="none" />
               </g>
             )}
             {outfit === 'worker' && (
@@ -336,7 +416,13 @@ export const Character: React.FC<CharacterProps> = ({
               <g>
                 <path d="M0,-200 L0,4" stroke={INK} strokeWidth={5} />
                 {[-120, -76, -32, 12].map((yy, i) => (
-                  <path key={i} d={`M-90,${yy} q90,20 180,0`} fill="none" stroke={INK} strokeWidth={4} opacity={0.5} />
+                  <g key={i}>
+                    {/* quilt TUBE shading (parity pass): each down-filled band gets a lit top arc and
+                        a shaded under-arc, so the quilting reads puffy, not ruled lines on a fill */}
+                    <path d={`M-84,${yy - 26} q84,19 168,0`} stroke="#fff" strokeWidth={9} opacity={0.10} fill="none" strokeLinecap="round" />
+                    <path d={`M-84,${yy - 7} q84,19 168,0`} stroke={INK} strokeWidth={8} opacity={0.12} fill="none" strokeLinecap="round" />
+                    <path d={`M-90,${yy} q90,20 180,0`} fill="none" stroke={INK} strokeWidth={4} opacity={0.5} />
+                  </g>
                 ))}
                 <path d="M-86,-150 q86,26 172,0" fill="none" stroke={c.shade} strokeWidth={14} />
               </g>
@@ -374,15 +460,33 @@ export const Character: React.FC<CharacterProps> = ({
                 <path d="M-52,-196 q52,-8 104,0 l0,200 h-104 Z" fill={c.shade} opacity={0.35} />
                 <path d="M0,-198 L0,4" stroke={INK} strokeWidth={5} />
                 {[-120, -70, -20, 30].map((yy, i) => (
-                  <path key={i} d={`M-52,${yy} h104`} stroke={INK} strokeWidth={3.5} opacity={0.4} />
+                  <g key={i}>
+                    {/* quilt tube shading on the vest panel too (parity pass) */}
+                    <path d={`M-50,${yy - 30} h100`} stroke="#fff" strokeWidth={8} opacity={0.10} strokeLinecap="round" />
+                    <path d={`M-50,${yy - 8} h100`} stroke={INK} strokeWidth={7} opacity={0.11} strokeLinecap="round" />
+                    <path d={`M-52,${yy} h104`} stroke={INK} strokeWidth={3.5} opacity={0.4} />
+                  </g>
                 ))}
                 <path d="M-86,-150 q86,26 172,0" fill="none" stroke="#e8e0d0" strokeWidth={12} />
+                {/* zipper pull on the placket */}
+                <circle cx={0} cy={-108} r={4.5} fill="#c9cfd8" stroke={INK} strokeWidth={2.5} />
               </g>
             )}
+            {/* LIGHT-WRAP + GROUNDING (2026-07-21 parity pass): the three cues that marry the
+                garment to the light and the head to the body — a left-contour rim on the lit edge,
+                the head's cast shadow on the chest (under-chin AO), and a stitched hem. Drawn over
+                the outfit overlays so they read on every costume. */}
+            <RimLight d="M-92,-148 q-8,74 -14,138" w={4} opacity={0.4} />
+            <ellipse cx={0} cy={-146} rx={42} ry={10} fill={INK} opacity={0.14} />
+            <path d="M-84,-2 q84,22 168,0" fill="none" stroke={INK} strokeWidth={2.5} strokeDasharray="7 6" opacity={0.3} />
             {/* arms attach at shoulder height inside torso group (pose coords are authored
                 around y~260-360; shift them up to chest height in torso space). During a walk the
                 whole arm mass counter-swings the legs for upper-body follow-through. */}
             <g transform={`translate(0,-360) rotate(${-armSwing * 0.5} 0 0)`}>{arms()}</g>
+            {/* shoulder-joint AO where the arm mass meets the torso — the joint reads attached,
+                not floating (part of the light-wrap pass) */}
+            <ellipse cx={-47} cy={-96} rx={13} ry={9} fill={INK} opacity={0.13} />
+            <ellipse cx={47} cy={-96} rx={13} ry={9} fill={INK} opacity={0.13} />
           </g>
         </g>
         {/* head — everyday Alaskan headgear (never the Native-coded fur ruff) */}
@@ -403,6 +507,12 @@ export const Character: React.FC<CharacterProps> = ({
                   <stop offset="58%" stopColor={skin} />
                   <stop offset="100%" stopColor={tSkin.shade} />
                 </radialGradient>
+                {/* ears (2026-07-21 parity pass): drawn UNDER the head circle so they poke out the
+                    sides — the head reads as a head, not a ball. Inner-ear shade for depth. */}
+                <ellipse cx={-56} cy={2} rx={10} ry={13} fill={skin} stroke={INK} strokeWidth={5} />
+                <ellipse cx={56} cy={2} rx={10} ry={13} fill={skin} stroke={INK} strokeWidth={5} />
+                <path d="M-58,-2 q4,4 3,9" stroke={skinShade} strokeWidth={3} opacity={0.6} fill="none" strokeLinecap="round" />
+                <path d="M58,-2 q-4,4 -3,9" stroke={skinShade} strokeWidth={3} opacity={0.6} fill="none" strokeLinecap="round" />
                 <circle r={56} fill={`url(#${uid}_headlit)`} stroke={INK} strokeWidth={6} />
                 {/* whole shadow-side cheek falls into core shade — the single biggest read of a lit
                     face, strengthened round 9 (2 judges still read the face as a flat disc through
@@ -427,7 +537,12 @@ export const Character: React.FC<CharacterProps> = ({
                 <path d="M-40,-40 a56,56 0 0 0 -14,44" fill="none" stroke={LIGHT.rim} strokeWidth={3.5} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
                 {/* hair (visible under bare/cap/hood) */}
                 {(hg === 'bare' || hg === 'cap' || hg === 'hood') && (
-                  <path d="M-56,-4 a56,56 0 0 1 112,0 q-18,-36 -56,-36 q-38,0 -56,36 Z" fill={hair} stroke={INK} strokeWidth={5} />
+                  <g>
+                    <path d="M-56,-4 a56,56 0 0 1 112,0 q-18,-36 -56,-36 q-38,0 -56,36 Z" fill={hair} stroke={INK} strokeWidth={5} />
+                    {/* hair shine + part line — hair as a lit material, not a flat cap */}
+                    <path d="M-34,-32 q16,-12 40,-9" stroke="#fff" strokeWidth={5} opacity={0.22} fill="none" strokeLinecap="round" />
+                    <path d={`M${-10 * facing},-46 q${6 * facing},14 ${4 * facing},24`} stroke={INK} strokeWidth={2.4} opacity={0.35} fill="none" strokeLinecap="round" />
+                  </g>
                 )}
                 {/* beanie: knit cap + fold band + pom */}
                 {hg === 'beanie' && (
