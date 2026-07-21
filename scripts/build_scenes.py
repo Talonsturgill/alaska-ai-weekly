@@ -17,7 +17,9 @@ TAIL = 2.6  # hold after the last word
 # (an earlier list here silently mismatched SCENE_COMPONENTS.length, so Episode fell
 # back to its hardcoded DEFAULT_BOUNDS and ignored this file's retimed scenes -- keep
 # this list's length equal to SCENE_COMPONENTS.length every run.)
-SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+# 2026-07-21c beluga run: 10 VO lines mapped to 9 scenes; S4 (the robot eye) spans lines
+# 3-4 (the look + the ear-and-eye stereo payoff), so line 4 has no scene of its own.
+SCENE_START_LINE = [0, 1, 2, 3, 5, 6, 7, 8, 9]
 
 
 def _apply_caption_fixups(caps):

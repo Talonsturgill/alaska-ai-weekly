@@ -397,3 +397,44 @@ export const HazeOverlay: React.FC<{
     </>
   );
 };
+
+// ---- WaterColumn (2026-07-21c NET-NEW, primary craft advance) ------------------------------
+// The underwater-light system the shelf lacked (all prior water was SURFACE biomes). A depth
+// gradient + descending god-ray shafts + silt haze + rising marine snow. Renders INSIDE an <svg>.
+// Reusable for any future ocean / dive / subsea story. Deterministic (no Math.random).
+export const WaterColumn: React.FC<{
+  f: number; intensity?: number; surfaceY?: number; deep?: string; shallow?: string; rays?: number;
+}> = ({f, intensity = 1, surfaceY = 0, deep = '#33463f', shallow = '#7f9791', rays = 6}) => {
+  const id = 'wc' + Math.round(surfaceY) + '_' + Math.round(rays);
+  const a = Math.max(0, Math.min(1, intensity));
+  const W = 1080, H = 1920;
+  return (
+    <g style={{pointerEvents: 'none'}}>
+      <linearGradient id={`${id}_grad`} x1="0" y1={surfaceY} x2="0" y2={H} gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor={shallow} />
+        <stop offset="1" stopColor={deep} />
+      </linearGradient>
+      <rect x={0} y={surfaceY} width={W} height={H - surfaceY} fill={`url(#${id}_grad)`} />
+      <g style={{mixBlendMode: 'screen'}} opacity={0.5 * a}>
+        {Array.from({length: rays}).map((_, i) => {
+          const bx = (i + 0.5) * (W / rays) + 40 * Math.sin(f / 90 + i);
+          const sway = 30 * Math.sin(f / 70 + i * 1.3);
+          const w = 60 + 30 * Math.sin(f / 50 + i);
+          return (
+            <path key={i} d={`M${bx - w / 2},${surfaceY} L${bx + w / 2},${surfaceY} L${bx + w / 2 + sway + 120},${H} L${bx - w / 2 + sway},${H} Z`}
+              fill="#eaf3ee" opacity={0.10 + 0.05 * Math.sin(f / 40 + i)} />
+          );
+        })}
+      </g>
+      <rect x={0} y={surfaceY} width={W} height={H - surfaceY} fill={deep} opacity={0.12 * a} />
+      <g opacity={0.5 * a}>
+        {Array.from({length: 26}).map((_, i) => {
+          const x = (i * 137) % W;
+          const y = H - ((f * (0.5 + (i % 3) * 0.3) + i * 90) % (H - surfaceY));
+          const r = 1.6 + (i % 3) * 0.9;
+          return <circle key={i} cx={x + 12 * Math.sin(f / 30 + i)} cy={y} r={r} fill="#dfeee7" opacity={0.25 + 0.15 * Math.sin(f / 20 + i)} />;
+        })}
+      </g>
+    </g>
+  );
+};

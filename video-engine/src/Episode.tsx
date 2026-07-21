@@ -2,28 +2,25 @@ import React from 'react';
 import {AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
 import {z} from 'zod';
 import {VoiceProvider, useVoice} from './lib/voice';
-import {Raven} from './lib/fauna';
-import {SpeedLines, ImpactStar, ZoomVignette} from './lib/FX';
-import {BoxLabel, Stamp, ServerMachine} from './lib/kit';
-import {StatCard, Nameplate, SwingSign, PenAndDocument, MeasuringChain, GearLever, TallyCounter} from './lib/props';
-import {MainStreetBG} from './lib/biomes';
-import {tones, FormGradient, RimLight, ContactShadow, GradeLayer, MotionBlur} from './lib/lighting';
-import {entrance, ChipShadow} from './lib/motion';
-import {Character} from './lib/Character';
+import {Beluga, Raven} from './lib/fauna';
+import {SatelliteEye, ListeningMooring} from './lib/sensors';
+import {SmellRings, ScanReticle, ImpactStar, SpeedLines, ZoomVignette} from './lib/FX';
+import {BoxLabel} from './lib/kit';
+import {StatCard} from './lib/props';
+import {AnchorageSkylineBG} from './lib/biomes';
+import {tones, FormGradient, RimLight, ContactShadow, GradeLayer, MotionBlur, WaterColumn} from './lib/lighting';
 
 const BOLD = 'Arial Black, Arial, sans-serif';
 
-// ---- 2026-07-21 palette ("The Pen That Won't Land", art_direction-locked) ----
-// cool slate-indigo dusk sky + honeyed window-glow key + copper ServerMachine hero +
-// a red DRAFT / green PAID ink-stamp accent pair + ink-charcoal shadow.
-const SKY = '#454e63';
-const GLOW = '#d99a4e';
-const DRAFT = '#c0392b';
-const PAID = '#3f7d4f';
-const INKC = '#1b2130';
-const OAK = '#8b5e3c';
-const OAK_D = '#5f3f26';
-const PAPER = '#f4efe0';
+// ---- 2026-07-21c palette ("Ear and Eye on the Ice-White Whale", art_direction-locked) ----
+// silty pewter water + ice-white beluga hero + mint synthetic sonar + signal-gold lock + ink.
+const SKY = '#b9c4c7';
+const WSURF = '#7f9791';
+const WDEEP = '#33463f';
+const MINT = '#31e0b6';
+const GOLD = '#ffd24a';
+const INKC = '#141d1b';
+const PANEL = '#e9efe9';
 
 export const episodeSchema = z.object({
   captions: z.array(z.object({text: z.string(), start: z.number(), end: z.number(), seg: z.number()})),
@@ -35,450 +32,220 @@ export const episodeSchema = z.object({
 });
 export type EpisodeProps = z.infer<typeof episodeSchema>;
 
-// =============================================================== shared set pieces
-
-// A warm oak-toned classroom interior, MainStreetBG glimpsed through the window
-// behind (the "living classroom" pole of the shape-language contrast: rounded
-// desks, wood grain, flannel — everything ServerMachine is not).
-const Classroom: React.FC<{f: number; dusk?: number}> = ({f, dusk = 1}) => {
-  const tOak = tones(OAK);
-  return (
-    <g>
-      <rect width={1080} height={1920} fill={INKC} />
-      {/* the window onto Main Street, dusk exterior doing the real key light */}
-      <g transform="translate(540,560)">
-        <rect x={-420} y={-260} width={840} height={520} rx={10} fill={SKY} stroke={INKC} strokeWidth={10} />
-        <g transform="scale(0.62) translate(-260,-200)">
-          <MainStreetBG f={f} dusk={dusk} banner={false} />
-        </g>
-        <rect x={-420} y={-260} width={840} height={520} rx={10} fill="none" stroke={OAK_D} strokeWidth={24} />
-        <line x1={0} y1={-260} x2={0} y2={260} stroke={OAK_D} strokeWidth={14} />
-        <line x1={-420} y1={0} x2={420} y2={0} stroke={OAK_D} strokeWidth={14} />
-        {/* window-glow wash into the room */}
-        <rect x={-420} y={-260} width={840} height={520} fill={GLOW} opacity={0.1} />
+// ============================================================= shared: the whale
+// A single reusable beluga staging with an optional mint "sweep rim" that fires ONLY
+// while a sensor sweep is touching it (the sensors are the only sharp man-made light).
+const Whale: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; mode?: 'cruise' | 'spy'; blow?: number; sweep?: number}> = ({x, y, scale = 1, f, facing = 1, mode = 'cruise', blow = 0, sweep = 0}) => (
+  <g>
+    <Beluga x={x} y={y} scale={scale} f={f} facing={facing} mode={mode} blow={blow} />
+    {sweep > 0.05 && (
+      <g transform={`translate(${x},${y}) scale(${scale})`} opacity={Math.min(1, sweep)} style={{mixBlendMode: 'screen'}}>
+        <ellipse cx={0} cy={-6} rx={172} ry={70} fill="none" stroke={MINT} strokeWidth={6} opacity={0.7} />
       </g>
-      {/* the classroom floor + oak desk, warm and rounded */}
-      <defs><FormGradient id="oakDesk" t={tOak} softness={0.8} /></defs>
-      <rect x={0} y={1120} width={1080} height={800} fill="#2c2a30" />
-      <ContactShadow cx={540} cy={1200} rx={480} ry={60} opacity={0.35} />
-      <rect x={90} y={1080} width={900} height={140} rx={26} fill="url(#oakDesk)" stroke={INKC} strokeWidth={10} />
-      <rect x={90} y={1080} width={900} height={18} rx={9} fill="#a9754a" opacity={0.6} />
-      {/* window-glow rim on the desk edge */}
-      <RimLight d="M120,1082 L960,1082" w={6} opacity={0.5} color={GLOW} />
-      {/* idle dust motes */}
-      {Array.from({length: 8}).map((_, i) => (
-        <circle key={i} cx={(i * 173 + f * 0.4) % 1080} cy={300 + (i * 211) % 700} r={2.4} fill={GLOW} opacity={0.18 + 0.1 * Math.sin(f / 30 + i)} />
-      ))}
-    </g>
-  );
-};
+    )}
+  </g>
+);
 
-// The DRAFT easel: PenAndDocument on a stand, the through-line image of the whole film.
-const DraftEasel: React.FC<{x: number; y: number; s?: number; f: number; op?: number; reletter?: number}> = ({x, y, s = 1, f, op = 1, reletter = 0}) => {
-  const hover = 1;
-  // kinetic-type scramble (craft advance): on a gust, glyphs of "DRAFT" independently
-  // glitch through NON-ALPHABETIC symbols before resettling (never real letters, so the
-  // scramble can never coincidentally spell a real word mid-transition), seeded per-glyph
-  // and re-picked every frame (no Math.random, deterministic from f).
-  const GLYPHS = 'DRAFT'.split('');
-  const NEAR = '#%&@?!+*';
-  const scrambled = GLYPHS.map((ch, i) => {
-    const seed = (i * 37 + 11) % NEAR.length;
-    const localT = Math.max(0, Math.min(1, reletter * 3 - i * 0.4));
-    return localT < 1 && localT > 0 ? NEAR[(seed + f) % NEAR.length] : ch;
-  }).join('');
-  return (
-    <g transform={`translate(${x},${y}) scale(${s})`} opacity={op}>
-      {/* easel legs */}
-      <line x1={-150} y1={200} x2={-40} y2={-40} stroke={OAK_D} strokeWidth={14} strokeLinecap="round" />
-      <line x1={150} y1={200} x2={40} y2={-40} stroke={OAK_D} strokeWidth={14} strokeLinecap="round" />
-      <line x1={-90} y1={200} x2={90} y2={200} stroke={OAK_D} strokeWidth={12} strokeLinecap="round" />
-      <ContactShadow cx={0} cy={210} rx={140} ry={20} opacity={0.3} />
-      <PenAndDocument x={0} y={-40} hover={hover} f={f} />
-      <g transform="translate(0,-40)">
-        <Stamp cx={0} cy={60} s={0.42} text={reletter > 0.05 ? scrambled : 'DRAFT'} rot={-6} color={DRAFT} onPaper={false} />
-      </g>
-    </g>
-  );
-};
-
-// =============================================================== S1: cold open
-// Beat 1-2 / Shot A. Frame-1 hook: the tool already working beside the unsigned rule.
+// ============================================================= S1: cold open
 const S1: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
   const voice = useVoice();
   const gf = from + f;
-  const push = interpolate(f, [0, 200], [1.0, 1.06], {extrapolateRight: 'clamp', easing: Easing.out(Easing.ease)});
-  const headlineOp = interpolate(f, [0, 150, 175], [1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const easelIn = entrance(f, 30, 4, {drop: 0});
-  const tremblePulse = 0.6 + 0.4 * Math.sin(f / 3);
+  const drop = interpolate(f, [0, 167], [-26, 10], {extrapolateRight: 'clamp', easing: Easing.out(Easing.ease)});
+  const push = interpolate(f, [0, 167], [1.0, 1.06], {extrapolateRight: 'clamp'});
+  const blow = interpolate(f, [20, 44, 70], [0, 1, 0.2], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const LOCK_AT = 70;
+  const lock = spring({frame: f - LOCK_AT, fps, config: {damping: 11, stiffness: 190}});
+  const sweep = interpolate(f, [LOCK_AT - 6, LOCK_AT + 8, 130], [0, 1, 0.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const headlineOp = interpolate(f, [0, 130, 160], [1, 1, 0.9], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill>
+    <AbsoluteFill style={{backgroundColor: WDEEP}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform={`translate(540,960) scale(${push}) translate(-540,-960)`}>
-          <Classroom f={f} dusk={1} />
-          {/* the teacher + copper ServerMachine, working side by side */}
-          <g transform="translate(340,1030)">
-            <Character frame={f} x={0} y={0} scale={0.92} facing={1} outfit="flannel" emotion="neutral" pose="stand" talking={voice.opennessAt(gf) * 0.6} />
+        <g transform={`translate(540,${960 + drop}) scale(${push}) translate(-540,-960)`}>
+          <g opacity={0.5}><g transform="translate(0,-560)"><AnchorageSkylineBG f={f} season="summer" denali floatplane={false} train={false} /></g></g>
+          <g transform="translate(0,300)"><WaterColumn f={f} intensity={1} surfaceY={-360} deep={WDEEP} shallow={WSURF} rays={6} /></g>
+          <Whale x={520} y={1000} scale={1.5} f={f} facing={1} mode="cruise" blow={blow} sweep={sweep} />
+          <g transform="translate(520,995)">
+            {lock > 0.05 && <SmellRings cx={-52} cy={0} frame={f} color={MINT} count={4} maxR={300} intensity={Math.min(1, lock)} />}
+            <ScanReticle cx={40} cy={-6} frame={f} lock={Math.min(1, lock)} color={GOLD} size={250} />
           </g>
-          <g transform="translate(700,1000)">
-            <ServerMachine frame={f} x={0} y={0} scale={0.62} facing={-1} tint="copper" emotion="focused" talking={voice.opennessAt(gf)} />
-          </g>
-          {/* a small stack of papers between them (idle life: top sheet drifts) */}
-          <g transform="translate(520,1140)">
-            {[0, 1, 2].map((i) => (
-              <rect key={i} x={-46} y={-10 - i * 6} width={92} height={64} rx={4} fill={PAPER} stroke={INKC} strokeWidth={3}
-                transform={`rotate(${(i - 1) * 4 + Math.sin(f / 20 + i) * 1.2})`} />
-            ))}
-          </g>
-          {/* the DRAFT easel, background, the story's other half */}
-          <g opacity={easelIn.on ? 1 : 0} transform={`translate(0,${easelIn.dy})`}>
-            <DraftEasel x={880} y={760} s={0.62} f={f} op={0.92} />
-          </g>
+          {lock > 0.55 && lock < 1.5 && <SpeedLines cx={560} cy={990} frame={f} intensity={0.7} color={GOLD} />}
+          {lock > 0.85 && lock < 1.4 && <ImpactStar cx={600} cy={905} r={44} color={GOLD} />}
         </g>
       </svg>
-      {/* the frame-1 headline: bold ink present at frame 0 */}
-      <div style={{position: 'absolute', top: 210, left: 0, right: 0, textAlign: 'center', opacity: headlineOp}}>
-        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 68, color: '#fff', background: 'rgba(27,33,48,0.86)', padding: '14px 36px', borderRadius: 14, border: `6px solid ${GLOW}`, textShadow: '3px 4px 0 rgba(0,0,0,0.55)', letterSpacing: 0.5}}>
-          THE PEN THAT WON'T SIGN
+      <div style={{position: 'absolute', top: 300, left: 0, right: 0, textAlign: 'center', opacity: headlineOp}}>
+        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 66, color: '#fff', background: 'rgba(20,29,27,0.82)', padding: '14px 34px', borderRadius: 14, border: `6px solid ${MINT}`, textShadow: '3px 4px 0 rgba(0,0,0,0.5)', letterSpacing: 0.5}}>
+          TWO EYES ON THE LAST WHALES
         </span>
       </div>
-      {gf > 0 && voice.accentAt(gf) > 0.5 && <ZoomVignette amount={0.1 * voice.accentAt(gf)} />}
+      {voice.accentAt(gf) > 0.5 && <ZoomVignette amount={0.09 * voice.accentAt(gf)} />}
     </AbsoluteFill>
   );
 };
 
-// =============================================================== S2: the tools at work
-// Beat 3 / Shot B. Push-detail on the worksheet: MagicSchool + Gemini helping.
+// ============================================================= S2: the two watchers
 const S2: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const voice = useVoice();
-  const gf = from + f;
-  const noteIn = interpolate(f, [10, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const rise = interpolate(f, [0, 131], [120, -120], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const satOn = interpolate(f, [16, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const moorOn = interpolate(f, [8, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{backgroundColor: INKC}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect width={1080} height={1920} fill={OAK_D} opacity={0.9} />
-        {/* the worksheet, large, filling the insert */}
-        <g transform="translate(540,860)">
-          <ContactShadow cx={0} cy={330} rx={360} ry={40} opacity={0.35} />
-          <rect x={-320} y={-380} width={640} height={720} rx={14} fill={PAPER} stroke={INKC} strokeWidth={8} />
-          {Array.from({length: 12}).map((_, i) => (
-            <line key={i} x1={-260} y1={-320 + i * 52} x2={260} y2={-320 + i * 52} stroke="#d8cfb2" strokeWidth={3} />
-          ))}
-          {/* AI margin-note glyphs typing in along the edge */}
-          {[0, 1, 2, 3].map((i) => (
-            <g key={i} opacity={interpolate(f, [10 + i * 8, 26 + i * 8], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-              <circle cx={300} cy={-300 + i * 90} r={10} fill={PAID} opacity={0.85} />
-              <line x1={276} y1={-300 + i * 90} x2={230} y2={-300 + i * 90} stroke={PAID} strokeWidth={4} opacity={0.6} />
-            </g>
-          ))}
+        <g transform={`translate(0,${rise})`}>
+          <rect x={0} y={-260} width={1080} height={760} fill={SKY} />
+          <rect x={0} y={-260} width={1080} height={760} fill={GOLD} opacity={0.04} />
+          <g opacity={satOn} transform="translate(760,150)"><SatelliteEye x={0} y={0} scale={0.62} f={f} scanCone={0} lensGlow={0.3} /></g>
+          <rect x={0} y={500} width={1080} height={1620} fill={WDEEP} />
+          <g transform="translate(0,500)"><WaterColumn f={f} intensity={0.85} surfaceY={0} deep={WDEEP} shallow={WSURF} rays={5} /></g>
+          <rect x={0} y={492} width={1080} height={16} fill={WSURF} opacity={0.9} />
+          <Whale x={430} y={980} scale={0.82} f={f} facing={1} mode="cruise" />
+          <g opacity={moorOn} transform="translate(300,1700)"><ListeningMooring x={0} y={0} scale={0.9} f={f} detect={0.2} /></g>
         </g>
-        {/* MagicSchool (copper hero) leaning in from the left */}
-        <g transform="translate(150,1350) scale(0.5)">
-          <ServerMachine frame={f} x={0} y={0} facing={1} tint="copper" emotion="focused" talking={voice.opennessAt(gf)} />
-        </g>
-        {/* the second AI unit (Gemini): same rig re-instanced, copper, smaller,
-            secondary staging so it reads as a second instance, never steel/greedy */}
-        <g transform="translate(940,1400) scale(0.34)">
-          <ServerMachine frame={f + 14} x={0} y={0} facing={-1} tint="copper" emotion="focused" />
-        </g>
-        <BoxLabel x={540} y={1660} text="MagicSchool · Google Gemini" fs={30} w={520} h={64} fill={PAPER} color={INKC} />
       </svg>
-      {gf > 0 && voice.accentAt(gf) > 0.5 && <ZoomVignette amount={0.08 * voice.accentAt(gf)} />}
+      <BoxLabel x={540} y={250} text="NOAA · 2 AI SYSTEMS" fs={34} w={520} h={70} fill={PANEL} color={INKC} />
     </AbsoluteFill>
   );
 };
 
-// =============================================================== S3: the ledger
-// Beat 4-5 / Shot C. $8,300 + receipt unspool + the paired PAID/DRAFT stamps.
+// ============================================================= S3: the robot ear
 const S3: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const cardIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 170}});
-  const tapeLen = interpolate(f, [8, 60], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const STAMP_AT = 78;
-  const paidS = spring({frame: f - STAMP_AT, fps, config: {damping: 9, stiffness: 220}});
-  const draftS = spring({frame: f - (STAMP_AT + 4), fps, config: {damping: 9, stiffness: 220}});
+  const push = interpolate(f, [0, 60], [1.15, 1.0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const detect = interpolate(f, [14, 40], [0.2, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const boxIn = interpolate(f, [70, 88], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const tagIn = interpolate(f, [96, 112], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const wavePts = Array.from({length: 40}).map((_, i) => {
+    const spike = i === 20 ? 46 * detect : 0;
+    const y = Math.sin((i + f * 0.5) / 2) * 6 + spike * Math.exp(-Math.pow(i - 20, 2) / 8);
+    return `${-190 + i * 9.5},${-y}`;
+  }).join(' ');
   return (
-    <AbsoluteFill style={{backgroundColor: INKC}}>
+    <AbsoluteFill style={{backgroundColor: WDEEP}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect width={1080} height={1920} fill={INKC} />
-        <g transform={`translate(540,700) scale(${cardIn})`}>
-          <StatCard x={0} y={0} big="$8,300" sub="3-YEAR MAGICSCHOOL SUBSCRIPTION" formShaded color={DRAFT} />
+        <WaterColumn f={f} intensity={0.9} surfaceY={0} deep="#22322c" shallow={WDEEP} rays={4} />
+        <g transform={`translate(540,1150) scale(${push})`}>
+          <ListeningMooring x={0} y={220} scale={1.25} f={f} detect={detect} />
         </g>
-        {/* the receipt tape unspooling and pooling on the floor (craft-advance param) */}
-        <g transform="translate(540,780)">
-          <path
-            d={`M0,0 C${40 * tapeLen},${140 * tapeLen} ${-30 * tapeLen},${260 * tapeLen} ${20 * tapeLen},${360 * tapeLen} S${-40 * tapeLen},${520 * tapeLen} ${10 * tapeLen},${620 * tapeLen}`}
-            fill="none" stroke={PAPER} strokeWidth={64} strokeLinecap="round" opacity={tapeLen > 0.02 ? 0.95 : 0} />
-          {tapeLen > 0.85 && <ellipse cx={10} cy={640} rx={90} ry={26} fill={PAPER} opacity={0.9} stroke={INKC} strokeWidth={4} />}
+        {/* the readout: waveform gets boxed DETECT, then labeled BELUGA */}
+        <g transform="translate(540,620)">
+          <rect x={-230} y={-70} width={460} height={140} rx={12} fill="#0f1c1a" stroke={INKC} strokeWidth={5} opacity={0.94} />
+          <polyline points={wavePts} fill="none" stroke={MINT} strokeWidth={3.5} transform="translate(0,0)" />
+          <g opacity={boxIn}>
+            <rect x={-18} y={-52} width={70} height={104} fill="none" stroke={GOLD} strokeWidth={4} />
+          </g>
+          <g opacity={tagIn}><BoxLabel x={150} y={-40} text="BELUGA" fs={26} w={150} h={48} fill={MINT} color={INKC} /></g>
         </g>
-        {/* the paired stamps: PAID lands on the receipt, DRAFT lands on the easel, same beat */}
-        <g transform="translate(300,1320)">
-          <Stamp cx={0} cy={0} s={paidS} text="PAID" rot={-6} color={PAID} onPaper />
-        </g>
-        <g transform="translate(760,1360)">
-          <Stamp cx={0} cy={0} s={draftS} text="DRAFT" rot={7} color={DRAFT} onPaper />
-        </g>
-        {/* impact bursts offset to a CORNER of each stamp so the PAID/DRAFT text (the
-            accessibility-load-bearing signal) is never occluded */}
-        {paidS > 0.9 && <ImpactStar cx={300 + 240} cy={1320 - 60} r={34} color={PAID} />}
-        {draftS > 0.9 && <ImpactStar cx={760 + 240} cy={1360 - 60} r={34} color={DRAFT} />}
       </svg>
+      <BoxLabel x={540} y={250} text="DEEP LEARNING · LISTENS" fs={32} w={560} h={66} fill={PANEL} color={INKC} />
     </AbsoluteFill>
   );
 };
 
-// =============================================================== S4: the timeline gap
-// Beat 6-7 / Shot D. MainStreetBG establishing, the '2025' sign, the MeasuringChain.
+// ============================================================= S4: the robot eye (SIGNATURE) + stereo payoff
 const S4: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const craneY = interpolate(f, [0, 210], [40, -20], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
-  const dolly = interpolate(f, [0, 210], [1.08, 1.0], {extrapolateRight: 'clamp'});
-  const taut = interpolate(f, [70, 190], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const {fps} = useVideoConfig();
+  // orbital punch-down, then the reticle clamps the white smudge, then the stereo payoff.
+  const dive = interpolate(f, [0, 60], [0.55, 1.0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const cone = interpolate(f, [6, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const LOCK_AT = 78;
+  const lock = spring({frame: f - LOCK_AT, fps, config: {damping: 11, stiffness: 200}});
+  const phaseB = interpolate(f, [96, 120], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); // stereo reveal
+  const camY = interpolate(dive, [0.55, 1], [-140, 0]);
   return (
-    <AbsoluteFill>
+    <AbsoluteFill style={{backgroundColor: '#9fb0b2'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform={`translate(540,${960 + craneY}) scale(${dolly}) translate(-540,-960)`}>
-          <MainStreetBG f={f} dusk={1} banner={false} />
-          <g transform="translate(360,1080) scale(1.15)">
-            <SwingSign x={0} y={0} f={f} lines={['2025']} />
+        {/* cloud deck up top, silty inlet below */}
+        <rect width={1080} height={1920} fill="#aebfc0" />
+        <g opacity={interpolate(f, [0, 50], [1, 0.3], {extrapolateRight: 'clamp'})}>
+          {[0, 1, 2, 3].map((i) => <ellipse key={i} cx={(i * 330 + f * 1.5) % 1200 - 60} cy={220 + (i % 2) * 90} rx={190} ry={70} fill="#ffffff" opacity={0.5} />)}
+        </g>
+        <g transform="translate(0,760)"><WaterColumn f={f} intensity={0.7} surfaceY={0} deep={WDEEP} shallow={WSURF} rays={5} /></g>
+        <g transform={`translate(540,${300 + camY}) scale(${0.5 + dive * 0.5})`}>
+          <SatelliteEye x={0} y={0} scale={0.66} f={f} scanCone={cone} lensGlow={0.5} />
+        </g>
+        {/* the white smudge that resolves into a whale, at the inlet */}
+        <g transform={`translate(540,1250)`}>
+          <Whale x={0} y={0} scale={0.5 + phaseB * 0.92} f={f} facing={1} mode="cruise" sweep={phaseB} />
+          <g transform="translate(0,-6)">
+            <ScanReticle cx={0} cy={0} frame={f} lock={Math.min(1, lock)} color={GOLD} size={190} />
+            {phaseB > 0.2 && <SmellRings cx={-40} cy={0} frame={f} color={MINT} count={3} maxR={220} intensity={phaseB} />}
           </g>
-          <g transform="translate(340,1440)">
-            <Character frame={f} x={0} y={0} scale={0.8} facing={1} outfit="vest" emotion="neutral" pose="stand" />
-          </g>
-          <MeasuringChain x1={400} y1={1140} x2={760} y2={1500} taut={taut} label="?" />
-          <g transform="translate(780,1540) scale(0.42)" opacity={taut}>
-            <DraftEasel x={0} y={0} f={f} />
-          </g>
+          {lock > 0.85 && lock < 1.4 && <ImpactStar cx={70} cy={-40} r={40} color={GOLD} />}
         </g>
       </svg>
+      <BoxLabel x={540} y={250} text={phaseB > 0.4 ? 'EAR + EYE · FIRST TIME' : 'GAIA · DETECTED'} fs={32} w={560} h={66} fill={PANEL} color={INKC} />
     </AbsoluteFill>
   );
 };
 
-// =============================================================== S5: the fork
-// Beat 8-10 / Shot E. Wide two-shot on the GearLever bank, push to Dendurent, snap-zoom
-// on her verbatim caption, then VanBuskirk strides in and plants on CONCRETE.
+// ============================================================= S5: the number 331
 const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const voice = useVoice();
-  const gf = from + f;
-  const PUSH_AT = 44; // push to Dendurent early, so her quote reads BEFORE VanBuskirk enters
-  const SNAP_AT = 50; // the verbatim-quote emphasis punch (with the card appearing)
-  // 2026-07-21: gentle push in on Dendurent while her quote card holds (~2.5s to read), then RELEASE
-  // back to a WIDE two-shot and clear the card BEFORE VanBuskirk enters (local 130), so her
-  // articulated walk-in is fully framed with no head occlusion. Previously the "snap" was a spring
-  // that settled to +0.55 and left the whole scene at ~2x zoom, cropping VanBuskirk's entire stride
-  // off the right edge, and the card lingered over both heads -- which is why the panel kept reading
-  // her walk as a rigid sprite-slide.
-  const push = interpolate(f, [PUSH_AT, PUSH_AT + 24, 108, 128], [1.0, 1.15, 1.15, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
-  const punch = f > SNAP_AT && f < SNAP_AT + 26 ? 0.16 * Math.sin(((f - SNAP_AT) / 26) * Math.PI) : 0; // transient quote emphasis, not a sustained zoom
-  const camScale = push + punch;
-  const pulled = interpolate(f, [8, 34], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); // Dendurent's ADAPTABLE lever pulls during the establish
-  const pulledPrev = interpolate(f - 1, [8, 34], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const capOp = interpolate(f, [SNAP_AT, SNAP_AT + 14, 112, 128], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); // card clears before the walk (130)
-  // VanBuskirk strides in from beat 10 onward (the later ~third of the shot). This scene
-  // (shot E) runs 210 local frames — the stride window must land INSIDE that, with a beat
-  // to spare for the arrived pose + nameplate to actually read, or the stride silently never
-  // finishes (a 2026-07-21 round-3 panel catch: at [190,240] against a 210-frame scene, she
-  // only ever covered 38% of the walk and never reached the 'point' pose or her nameplate).
-  const vbStride = interpolate(f, [130, 195], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const vbStridePrev = interpolate(f - 1, [130, 195], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const vbVx = (vbStride - vbStridePrev) * -240; // px/frame of the stride, for directional blur
-  return (
-    <AbsoluteFill style={{backgroundColor: INKC}}>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect width={1080} height={1920} fill={SKY} opacity={0.5} />
-        <rect x={0} y={1200} width={1080} height={720} fill={OAK_D} />
-        <ContactShadow cx={540} cy={1240} rx={480} ry={50} opacity={0.3} />
-        <g transform={`translate(540,${1050 - (camScale - 1) * 200}) scale(${camScale}) translate(-540,-1050)`}>
-          {/* the GearLever bank, centered */}
-          <g transform="translate(300,1150)">
-            <MotionBlur vx={(pulled - pulledPrev) * 260} vy={(pulled - pulledPrev) * 260} gain={1}>
-              <GearLever x={0} y={0} pulled={pulled} />
-            </MotionBlur>
-          </g>
-          <g transform="translate(780,1150)">
-            <GearLever x={0} y={0} pulled={vbStride > 0.7 ? 1 : 0} />
-          </g>
-          {/* Dendurent at the ADAPTABLE lever */}
-          <g transform="translate(300,980)">
-            <Character frame={f} x={0} y={0} scale={0.85} facing={1} outfit="suit" emotion="neutral" pose="stand" glasses talking={voice.opennessAt(gf) * 0.5} />
-          </g>
-          {/* VanBuskirk striding to the CONCRETE lever -- now an ARTICULATED walk: legs alternate
-              around the hips with the phase driven by her real travel (vbStride) so the feet don't
-              skate, until she plants (vbStride>0.88) and points. */}
-          <g transform={`translate(${1020 - vbStride * 240},980)`}>
-            <MotionBlur vx={vbVx} gain={0.6}>
-              <Character frame={f} x={0} y={0} scale={0.85} facing={-1} outfit="vest" emotion="neutral" pose={vbStride > 0.5 ? 'point' : 'stand'} walking={vbStride > 0.02 && vbStride < 0.88} walkPhase={vbStride * Math.PI * 4} />
-            </MotionBlur>
-          </g>
-        </g>
-        {punch > 0.1 && <SpeedLines cx={540} cy={960} frame={f} intensity={0.7} />}
-        {/* nameplates live OUTSIDE the push/snap-zoom camera group as fixed screen-space HUD
-            labels so the snap-zoom (push*snapScale can reach ~2x) never crops or pans their
-            text off-frame. Never show both at once: Dendurent's only in the wide shot before
-            the snap-zoom takes hold, a hard gap during the stride, VanBuskirk's only once she
-            has arrived (storyboard specifies a hard-cut fork, not a cross-fade -- this plus the
-            fixed screen position guarantees no collision AND no crop). VanBuskirk's sits lower
-            than Dendurent's (y=880 not 780): by the time she arrives, Dendurent's verbatim quote
-            card (top:520, ~230px tall) is still up, and the two used to overlap right where her
-            plate rendered. */}
-        {f < SNAP_AT && <Nameplate x={300} y={780} text="DENDURENT" sub="ADAPTABLE" />}
-        {vbStride > 0.6 && <Nameplate x={780} y={880} text="VANBUSKIRK" sub="CONCRETE" subColor={PAID} />}
-      </svg>
-      {/* Dendurent's verbatim caption overlay — sits in the UPPER third so it clears the pushed-in
-          character heads (which reach ~y=520 at 1.15x) instead of clipping them */}
-      <div style={{position: 'absolute', top: 180, left: 60, right: 60, textAlign: 'center', opacity: capOp}}>
-        <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 40, lineHeight: 1.25, color: '#fff', background: 'rgba(27,33,48,0.9)', padding: '20px 26px', borderRadius: 14, border: `5px solid ${GLOW}`}}>
-          "If you are putting such strict parameters, it may really limit where we're going to be continuously changing the language."
-          <div style={{fontSize: 24, marginTop: 10, opacity: 0.85, fontWeight: 700}}>Kari Dendurent, KPBSD Assistant Superintendent</div>
-        </div>
-      </div>
-    </AbsoluteFill>
-  );
-};
-
-// =============================================================== S6: the payoff
-// Beat 11 / Shot F. VanBuskirk pulls CONCRETE, teeth bite.
-const S6: React.FC<{from?: number}> = ({from = 0}) => {
-  const f = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const voice = useVoice();
-  const gf = from + f;
-  const pulled = spring({frame: f - 6, fps, config: {damping: 8, stiffness: 200}});
-  const pulledPrev = spring({frame: f - 7, fps, config: {damping: 8, stiffness: 200}});
-  const clunkAt = 14;
-  // Round-7 staging fix (2026-07-21 editor: "operator/lever disconnect -- her hand points at
-  // empty background while a separate lever sparks at her feet"). She now stands at the LEFT and
-  // her pointing hand actually lands ON the lever's grip at the right, at hand height -- the lever
-  // is no longer a detached object on the floor. Her whole torso leans INTO the pull and rocks
-  // back on the bite (Judge 2: "the lean must be carried by her body, not the gear"). The rig's
-  // point-pose fingertip sits ~ (+214,-255) from the feet anchor at scale 1.05; the lever grip is
-  // placed to meet it, and the handle's own rotation only travels ~16px so the hand stays on it.
-  const lean = interpolate(pulled, [0, 0.7, 1], [0, 6.5, 4], {extrapolateRight: 'clamp'});
-  const settleKick = f > clunkAt && f < clunkAt + 9 ? -3.5 * Math.sin((f - clunkAt) / 9 * Math.PI) : 0;
-  return (
-    <AbsoluteFill style={{backgroundColor: OAK_D}}>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect width={1080} height={1920} fill={OAK_D} />
-        {/* VanBuskirk on the left, leaning into the grip */}
-        <g transform={`translate(400,1060) rotate(${lean + settleKick} 0 -20)`}>
-          <Character frame={f} x={0} y={0} scale={1.05} facing={1} outfit="vest" emotion="neutral" pose="point" talking={voice.opennessAt(gf) * 0.5} />
-        </g>
-        {/* the CONCRETE lever, its grip meeting her pointing hand at ~ (614,805) */}
-        <g transform="translate(690,812) scale(1.25)">
-          <ContactShadow cx={0} cy={70} rx={150} ry={26} opacity={0.32} />
-          <MotionBlur vx={(pulled - pulledPrev) * 300} vy={(pulled - pulledPrev) * 300} gain={1}>
-            <GearLever x={0} y={0} pulled={Math.min(1, pulled)} />
-          </MotionBlur>
-        </g>
-        {f > clunkAt && f < clunkAt + 10 && <ImpactStar cx={648} cy={806} r={64} color={PAID} />}
-      </svg>
-      <div style={{position: 'absolute', bottom: 640, left: 0, right: 0, textAlign: 'center'}}>
-        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, color: PAID, background: 'rgba(27,33,48,0.85)', padding: '10px 30px', borderRadius: 12, border: `4px solid ${PAID}`}}>CONCRETE</span>
-      </div>
-    </AbsoluteFill>
-  );
-};
-
-// =============================================================== S7: the impasse
-// Beat 12 / Shot G. Both stand together, TallyCounter jams at 0.
-const S7: React.FC<{from?: number}> = ({from = 0}) => {
-  const f = useCurrentFrame();
-  const voice = useVoice();
-  const gf = from + f;
-  const jamShake = f > 20 && f < 30 ? Math.sin(f * 3) * 4 : 0;
-  // the dial visibly TRIES to roll (0 -> 0.7) then jams and snaps back to 0, twice, so the
-  // failure reads as motion, not a held frame.
-  const attempt = (t: number) => {
-    const local = t % 40;
-    return local < 18 ? interpolate(local, [0, 18], [0, 0.7], {easing: Easing.out(Easing.cubic)}) : 0;
-  };
-  const roll = f < 80 ? attempt(f) : 0;
-  return (
-    <AbsoluteFill style={{backgroundColor: INKC}}>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect width={1080} height={1920} fill={SKY} opacity={0.4} />
-        <rect x={0} y={1200} width={1080} height={720} fill={OAK_D} />
-        <ContactShadow cx={540} cy={1240} rx={420} ry={44} opacity={0.3} />
-        <g transform="translate(420,1000)">
-          <Character frame={f} x={0} y={0} scale={0.8} facing={1} outfit="suit" emotion="worried" pose="stand" glasses talking={voice.opennessAt(gf) * 0.4} />
-        </g>
-        <g transform="translate(660,1000)">
-          <Character frame={f} x={0} y={0} scale={0.8} facing={-1} outfit="vest" emotion="worried" pose="stand" />
-        </g>
-        <g transform={`translate(${540 + jamShake},1250)`}>
-          <ChipShadow><TallyCounter x={0} y={0} s={1.1} f={f} variant="odometer" count="0000" roll={roll} tag="RULES IN FORCE" /></ChipShadow>
-        </g>
-      </svg>
-    </AbsoluteFill>
-  );
-};
-
-// =============================================================== S8: THE TURN
-// Beat 13-14 / Shot H. Boom-drop to floor level: the continuous paper stream, the
-// half-built PRIVACY gate. The signature shot.
-const S8: React.FC<{from?: number}> = ({from = 0}) => {
-  const f = useCurrentFrame();
-  // the boom-drop: a real, sustained crane-down + dolly-through, not a snap. Starts pulled
-  // back and high (as if still at table height looking down) and settles into the floor-level
-  // framing over ~1.7s, easing out so it reads as a deliberate camera move, not a cut.
-  const boomT = interpolate(f, [0, 50], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const camScale = interpolate(boomT, [0, 1], [0.78, 1.0]);
-  const camY = interpolate(boomT, [0, 1], [-220, 0]);
-  const N = 7;
+  const cardIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 170}});
+  const push = interpolate(f, [0, 122], [1.0, 1.07], {extrapolateRight: 'clamp'});
+  // the count climbs UP to 331 and LANDS; NEVER displays a value above 331 (false count = a
+  // labeled beluga population above NOAA's estimate; the panel hard-blocked an overshoot).
+  const countUp = interpolate(f, [8, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const shown = Math.min(331, Math.round(331 * countUp));
+  const landed = f >= 44;
+  const led = landed && (Math.sin(f / 7) > 0.2) ? 1 : 0.3;
   return (
     <AbsoluteFill style={{backgroundColor: INKC}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill={INKC} />
-        <g transform={`translate(540,${960 + camY}) scale(${camScale}) translate(-540,-960)`}>
-          {/* the underside of the argument: table legs + feet at the very top edge, receding */}
-          <g opacity={interpolate(boomT, [0.3, 1], [0, 0.7], {extrapolateLeft: 'clamp'})}>
-            <rect x={220} y={0} width={36} height={260} fill="#0f1420" />
-            <rect x={824} y={0} width={36} height={260} fill="#0f1420" />
-            <rect x={250} y={200} width={100} height={90} rx={10} fill="#2c2a30" />
-            <rect x={730} y={200} width={100} height={90} rx={10} fill="#2c2a30" />
+        <g transform="translate(0,0)"><WaterColumn f={f} intensity={0.4} surfaceY={0} deep="#101816" shallow="#1c2b28" rays={4} /></g>
+        <g transform={`translate(540,1250) scale(${push})`}>
+          <g transform={`scale(${cardIn})`}>
+            <StatCard x={0} y={0} big={String(shown)} sub="COOK INLET BELUGAS" formShaded color={MINT} scale={1.2} />
           </g>
-          {/* the floor plane fills most of the frame: a true floor-level vantage */}
-          <rect x={0} y={260} width={1080} height={1660} fill={OAK_D} />
-          <RimLight d="M0,264 L1080,264" w={6} opacity={0.35} color={GLOW} />
-          {/* floor plank seams receding toward the machine (depth cue) */}
-          {[0, 1, 2, 3, 4].map((i) => (
-            <line key={i} x1={90 + i * 220} y1={260} x2={540 + (i - 2) * 60} y2={1920} stroke="#4a3722" strokeWidth={3} opacity={0.35} />
-          ))}
-          <ContactShadow cx={540} cy={1720} rx={420} ry={70} opacity={0.32} />
-          {/* the continuous paper-airplane stream, floor level, traveling into the intake */}
-          {Array.from({length: N}).map((_, i) => {
-            const speed = 5.6 + (i % 3) * 0.7;
-            const x = ((f * speed + i * 150) % 1300) - 80;
-            const lane = 520 + (i % 4) * 220;
-            const y = lane + 22 * Math.sin(f / 9 + i * 2);
-            const s = 0.7 + (lane - 520) / 900;
-            return (
-              <MotionBlur key={i} vx={speed} gain={0.7}>
-                <g transform={`translate(${x},${y}) scale(${s}) rotate(${-6 + 4 * Math.sin(f / 7 + i)})`}>
-                  <path d="M-40,0 L40,-12 L12,0 L40,12 Z" fill={PAPER} stroke={INKC} strokeWidth={3} />
-                  {i % 2 === 0 && <line x1={-16} y1={-3} x2={16} y2={-3} stroke={DRAFT} strokeWidth={3} opacity={0.7} />}
-                </g>
-              </MotionBlur>
-            );
-          })}
-          {/* the copper machine's intake, receiving the stream, large and centered-right */}
-          <g transform="translate(830,1360) scale(1.05)">
-            <ContactShadow cx={0} cy={470} rx={200} ry={36} opacity={0.35} />
-            <ServerMachine frame={f} x={0} y={0} facing={-1} tint="copper" emotion="focused" />
+          <circle cx={220} cy={-150} r={12} fill={landed ? '#e06a4a' : MINT} opacity={led} />
+        </g>
+      </svg>
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================= S6: the decline
+const S6: React.FC<{from?: number}> = ({from = 0}) => {
+  const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const drop = interpolate(f, [0, 151], [-30, 6], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const collapse = interpolate(f, [6, 40], [1, 0.255], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const bounce = f > 40 && f < 58 ? -0.028 * Math.sin((f - 40) / 18 * Math.PI) : 0;
+  const barFrac = Math.max(0.2, collapse + bounce);
+  const ghostOp = interpolate(f, [10, 42], [0, 0.55], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const STAMP_AT = 78;
+  const stampS = spring({frame: f - STAMP_AT, fps, config: {damping: 9, stiffness: 210}});
+  const H = 760;
+  return (
+    <AbsoluteFill style={{backgroundColor: INKC}}>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <rect width={1080} height={1920} fill="#12201d" />
+        <g transform={`translate(0,${drop})`}>
+          {/* ghost pod of the ~1,000 missing belugas */}
+          <g opacity={ghostOp}>
+            {Array.from({length: 22}).map((_, i) => (
+              <g key={i} transform={`translate(${60 + (i % 6) * 165},${230 + Math.floor(i / 6) * 80}) scale(0.28)`}>
+                <Beluga x={0} y={0} scale={1} f={f + i * 7} facing={i % 2 ? 1 : -1} mode="cruise" swim={0.4} />
+              </g>
+            ))}
           </g>
-          {/* the shrink-wrapped PRIVACY gate, half-built, beside the intake */}
-          <g transform="translate(230,1420) scale(1.3)">
-            <g opacity={0.85}>
-              <GearLever x={0} y={0} pulled={0} />
-            </g>
-            <rect x={-90} y={-40} width={180} height={90} fill="#fff" opacity={0.24} stroke="#fff" strokeWidth={2} strokeDasharray="6 5" />
-            <BoxLabel x={0} y={-78} text="PRIVACY" fs={26} w={200} h={54} fill={PAPER} color={DRAFT} />
+          {/* the bar */}
+          <rect x={360} y={1500 - H * barFrac} width={200} height={H * barFrac} rx={8} fill={MINT} stroke={INKC} strokeWidth={5} />
+          <rect x={360} y={1500 - H * barFrac} width={200} height={16} fill="#fff" opacity={0.3} />
+          <line x1={80} y1={1500} x2={1000} y2={1500} stroke={WSURF} strokeWidth={4} />
+          {/* readout: sublabel ABOVE the value, both clear of the bar */}
+          <text x={540} y={1208} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={MINT} letterSpacing={1}>BELUGAS · 1979 TO TODAY</text>
+          <text x={540} y={1270} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={52} fill="#ffffff" stroke={INKC} strokeWidth={4} paintOrder="stroke" letterSpacing={2}>1,300 → 279 → 331</text>
+        </g>
+        <g transform="translate(540,760)" opacity={Math.min(1, stampS)}>
+          <g transform={`rotate(-8) scale(${stampS})`}>
+            <rect x={-190} y={-46} width={380} height={92} rx={8} fill="none" stroke="#e0483a" strokeWidth={7} />
+            <text x={0} y={16} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={44} fill="#e0483a">-80% · ENDANGERED</text>
           </g>
         </g>
       </svg>
@@ -486,69 +253,132 @@ const S8: React.FC<{from?: number}> = ({from = 0}) => {
   );
 };
 
-// =============================================================== S9: the button
-// Beat 15-16 / Shot I. The Raven comments; the loop closes on the cold-open frame.
-const S9: React.FC<{from?: number}> = ({from = 0}) => {
+// ============================================================= S7: the turn
+const S7: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const voice = useVoice();
-  const gf = from + f;
-  const RETURN_AT = 90;
-  // the DRAFT-scramble gust lives in the SILENT TAIL after the last word (speech ends at
-  // local f~183 for this run's VO length), never during the climactic final line -- a round-2
-  // panel hard blocker was the scramble garbling DRAFT right as "will control the classroom,
-  // or describe it" lands. Parked here it reads as a last flourish over the hang-time instead.
-  const gustAt = 200;
-  const dipOp = interpolate(f, [RETURN_AT + 55, RETURN_AT + 70], [1, 0.55], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const ravenY = interpolate(f, [0, 22], [-180, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const swim = interpolate(f, [0, 210], [0, 1], {extrapolateRight: 'clamp'});
+  const wakeX = interpolate(f, [20, 90], [-300, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const threats = ['OCEAN NOISE', 'LOST SALMON', 'HABITAT'];
+  return (
+    <AbsoluteFill style={{backgroundColor: WDEEP}}>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <WaterColumn f={f} intensity={0.8} surfaceY={0} deep="#2a3a34" shallow={WDEEP} rays={5} />
+        {/* boat wake rolling over the whale */}
+        <g transform={`translate(${wakeX},420)`} opacity={0.5}>
+          <path d="M-120,0 q120,50 240,0 q-60,40 -120,40 q-60,0 -120,-40 Z" fill="#101816" opacity={0.5} />
+          <ellipse cx={60} cy={20} rx={140} ry={20} fill="#0c1512" opacity={0.4} />
+        </g>
+        <g transform="translate(500,980)">
+          <Whale x={0} y={0} scale={1.15} f={f} facing={1} mode="cruise" sweep={0.4} />
+          <ScanReticle cx={30} cy={-6} frame={f} lock={0.9} color={GOLD} size={210} />
+          <SmellRings cx={-40} cy={0} frame={f} color={MINT} count={3} maxR={200} intensity={0.5} />
+        </g>
+        {/* empty net drifting */}
+        <g transform={`translate(${820 - swim * 60},1320)`} opacity={0.5}>
+          <path d="M0,0 l120,0 l-14,120 l-92,0 Z" fill="none" stroke="#dfeee7" strokeWidth={2} strokeDasharray="5 6" />
+        </g>
+        {/* threat labels drifting past the useless HUD */}
+        {threats.map((tx, i) => {
+          const op = interpolate(f, [40 + i * 26, 60 + i * 26, 150 + i * 26, 175 + i * 26], [0, 0.9, 0.9, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+          return <g key={i} opacity={op}><BoxLabel x={760} y={640 + i * 90} text={tx} fs={26} w={280} h={54} fill="#1c2b28" color="#e06a4a" /></g>;
+        })}
+      </svg>
+      <div style={{position: 'absolute', top: 260, left: 0, right: 0, textAlign: 'center'}}>
+        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 52, color: '#fff', background: 'rgba(20,29,27,0.85)', padding: '10px 30px', borderRadius: 12, border: `5px solid #e06a4a`}}>WATCHING ≠ SAVING</span>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================= S8: the hard, open number
+const S8: React.FC<{from?: number}> = ({from = 0}) => {
+  const f = useCurrentFrame();
+  const push = interpolate(f, [0, 90], [1.08, 1.0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const keyIn = interpolate(f, [10, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const tagIn = interpolate(f, [40, 58], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const cursor = (f % 30) < 15 ? 1 : 0.1;
   return (
     <AbsoluteFill style={{backgroundColor: INKC}}>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}} opacity={dipOp}>
-        <g>
-          {/* the classroom, present the whole scene: the loop closes on this exact frame */}
-          <Classroom f={f} dusk={1} />
-          <g transform="translate(340,1030)">
-            <Character frame={f} x={0} y={0} scale={0.92} facing={1} outfit="flannel" emotion="neutral" pose="stand" talking={voice.opennessAt(gf) * 0.3} />
-          </g>
-          <g transform="translate(700,1000)">
-            <ServerMachine frame={f} x={0} y={0} scale={0.62} facing={-1} tint="copper" emotion="focused" talking={voice.opennessAt(gf) * 0.3} />
-          </g>
-          <g transform="translate(880,760) scale(0.78)">
-            <DraftEasel x={0} y={0} f={f} op={1} reletter={f > gustAt && f < gustAt + 18 ? (f - gustAt) / 18 : 0} />
-            <g transform={`translate(-70,${-140 + ravenY})`}>
-              <Raven x={0} y={0} scale={1.1} f={f} mode="perch" />
-            </g>
-          </g>
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <rect width={1080} height={1920} fill="#0f1c1a" />
+        <g transform={`translate(540,960) scale(${push})`}>
+          <rect x={-300} y={-190} width={600} height={380} rx={18} fill="#12201d" stroke={MINT} strokeWidth={5} opacity={0.94} />
+          <text x={0} y={40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={200} fill="#ffffff" opacity={keyIn}>331</text>
+          <rect x={150} y={-60} width={10} height={90} fill={MINT} opacity={cursor * keyIn} />
+          <g opacity={tagIn}><BoxLabel x={0} y={120} text="OPEN · UPDATED 06/25/2026" fs={28} w={480} h={56} fill={MINT} color={INKC} /></g>
         </g>
       </svg>
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================= S9: the button
+const S9: React.FC<{from?: number}> = ({from = 0}) => {
+  const f = useCurrentFrame();
+  const forkIn = interpolate(f, [10, 50], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const countdown = 331 - Math.floor(interpolate(f, [50, 150], [0, 41], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const RETURN_AT = 120;
+  const back = interpolate(f, [RETURN_AT, RETURN_AT + 22], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const forkLabelOp = Math.max(0, Math.min(1, (0.55 - back) / 0.55));
+  const headerOp = Math.max(0, Math.min(1, (back - 0.55) / 0.45));
+  const ravenIn = interpolate(f, [RETURN_AT + 30, RETURN_AT + 52], [-160, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const blow = interpolate(f, [RETURN_AT + 20, RETURN_AT + 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  return (
+    <AbsoluteFill style={{backgroundColor: INKC}}>
+      {/* the fork (fades out as the loop returns) */}
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: 1 - back}}>
+        <rect width={1080} height={1920} fill="#12201d" />
+        <text x={540} y={520} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={150} fill="#ffffff">331</text>
+        {/* floor branch */}
+        <line x1={540} y1={560} x2={900} y2={560 + 0} stroke={MINT} strokeWidth={8} opacity={forkIn} strokeDasharray="1000" strokeDashoffset={(1 - forkIn) * 400} />
+        <g transform="translate(760,900)"><Whale x={0} y={0} scale={0.7} f={f} facing={1} mode="cruise" /></g>
+        {/* countdown branch */}
+        <line x1={540} y1={560} x2={200} y2={900} stroke="#e06a4a" strokeWidth={8} opacity={forkIn} />
+        <text x={190} y={960} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={54} fill="#e06a4a" opacity={forkIn}>{countdown}</text>
+        <g opacity={forkLabelOp}><BoxLabel x={540} y={360} text="FLOOR or COUNTDOWN?" fs={34} w={520} h={70} fill={PANEL} color={INKC} /></g>
+      </svg>
+      {/* the loopback: return to the cold-open whale, sensors still on */}
+      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: back}}>
+        <g opacity={0.5}><g transform="translate(0,-560)"><AnchorageSkylineBG f={f} season="summer" denali floatplane={false} train={false} /></g></g>
+        <g transform="translate(0,300)"><WaterColumn f={f} intensity={1} surfaceY={-360} deep={WDEEP} shallow={WSURF} rays={6} /></g>
+        <Whale x={520} y={1010} scale={1.4} f={f} facing={1} mode="cruise" blow={blow} sweep={0.5} />
+        <g transform="translate(520,1005)">
+          <SmellRings cx={-52} cy={0} frame={f} color={MINT} count={3} maxR={260} intensity={0.5} />
+          <ScanReticle cx={40} cy={-6} frame={f} lock={0.95} color={GOLD} size={230} />
+        </g>
+        <g transform={`translate(160,${1260 + ravenIn}) scale(1.2)`}><Raven x={0} y={0} f={f} mode="perch" /></g>
+      </svg>
+      <div style={{position: 'absolute', top: 300, left: 0, right: 0, textAlign: 'center', opacity: headerOp}}>
+        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 48, color: '#fff', background: 'rgba(20,29,27,0.82)', padding: '10px 28px', borderRadius: 12, border: `4px solid ${MINT}`}}>NO MACHINE DECIDES</span>
+      </div>
     </AbsoluteFill>
   );
 };
 
 const SCENE_COMPONENTS: React.FC<{from?: number}>[] = [S1, S2, S3, S4, S5, S6, S7, S8, S9];
 const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
-  {from: 0, dur: 195}, {from: 195, dur: 123}, {from: 318, dur: 192},
-  {from: 510, dur: 210}, {from: 720, dur: 309}, {from: 1029, dur: 102},
-  {from: 1131, dur: 84}, {from: 1215, dur: 216}, {from: 1431, dur: 219},
+  {from: 0, dur: 168}, {from: 168, dur: 131}, {from: 299, dur: 175},
+  {from: 474, dur: 210}, {from: 684, dur: 150}, {from: 834, dur: 150},
+  {from: 984, dur: 240}, {from: 1224, dur: 180}, {from: 1404, dur: 240},
 ];
 
 const GradedGrade: React.FC = () => {
   const f = useCurrentFrame();
-  return <GradeLayer f={f} bloom={0.4} vignette={0.44} grain={0.06} warmth={0.05} />;
+  return <GradeLayer f={f} bloom={0.38} vignette={0.44} grain={0.06} warmth={-0.02} />;
 };
 
-// Persistent corner chrome (LIVING_SCREEN: two spatially isolated motion regions):
-// left, a small perched raven idle; right, a slow-rolling tally chip (rules-in-force
-// motif carried in miniature through the whole runtime).
 const CornerChrome: React.FC = () => {
   const f = useCurrentFrame();
-  const roll = (f % 90) < 12 ? ((f % 90) / 12) : 0;
   return (
     <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', pointerEvents: 'none'}}>
-      <g transform={`translate(78,90) scale(0.4)`} opacity={0.8}>
-        <Raven x={0} y={0} scale={1} f={f} mode="perch" />
-      </g>
-      <g transform="translate(984,96)" opacity={0.88}>
-        <TallyCounter x={0} y={0} s={0.46} f={f} variant="odometer" count="0000" roll={roll} />
+      <g transform="translate(78,90) scale(0.4)" opacity={0.75}><Raven x={0} y={0} scale={1} f={f} mode="perch" /></g>
+      <g transform="translate(980,96)" opacity={0.85}>
+        <circle cx={0} cy={0} r={26} fill="none" stroke={MINT} strokeWidth={3} opacity={0.6} />
+        <circle cx={0} cy={0} r={4 + 3 * Math.sin(f / 6)} fill={MINT} opacity={0.7} />
+        {[0, 1, 2].map((i) => {
+          const ph = ((f / 24) + i / 3) % 1;
+          return <circle key={i} cx={0} cy={0} r={6 + ph * 30} fill="none" stroke={MINT} strokeWidth={2} opacity={(1 - ph) * 0.5} />;
+        })}
       </g>
     </svg>
   );
@@ -560,18 +390,13 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
   const t = f / fps;
   const cue = captions.find((c) => t >= c.start && t < c.end + 0.05);
   if (!cue) return null;
-  // kinetic caption (2026-07-21 round-9: the panel flagged the caption pills as a "static box every
-  // cue"). Each cue now springs in with a small scale overshoot + upward settle keyed to ITS start,
-  // so the type pops on the beat instead of hard-cutting. Cheap, deterministic, phone-legible.
   const local = f - Math.round(cue.start * fps);
-  // a springier, longer pop (softer damping = a real overshoot that reads across ~0.5s, not a
-  // 3-frame snap the review strip sampled right past). Round 10: the panel couldn't SEE the pop.
   const pop = spring({frame: local, fps, config: {damping: 9, stiffness: 130}});
   const scale = interpolate(pop, [0, 1], [0.82, 1], {extrapolateRight: 'clamp'});
   const rise = interpolate(pop, [0, 1], [26, 0], {extrapolateRight: 'clamp'});
   return (
     <div style={{position: 'absolute', bottom: 340, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 60px'}}>
-      <div style={{background: 'rgba(27,33,48,0.84)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${GLOW}`, transform: `translateY(${rise}px) scale(${scale})`, transformOrigin: 'center bottom'}}>
+      <div style={{background: 'rgba(20,29,27,0.84)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${MINT}`, transform: `translateY(${rise}px) scale(${scale})`, transformOrigin: 'center bottom'}}>
         <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, lineHeight: 1.12, color: '#fff', textAlign: 'center', letterSpacing: 0.5, textShadow: `2px 3px 0 rgba(0,0,0,0.6)`}}>
           {cue.text}
         </div>
