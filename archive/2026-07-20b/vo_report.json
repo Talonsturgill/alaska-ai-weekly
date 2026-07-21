@@ -1,0 +1,55 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.964,
+    "heard": "Who counts this fish? Two crowds keep shouting different numbers across one thin river. Upriver, the smokehouses are quiet. The kings keep failing. The troll fleet hates salmon in its nets too. The ocean drives much of this. Counting the catch took an observer weeks. Now a Noah model reads the net cameras in hours. Trained on 85,000 labeled fish. 97% spotted. Still research. This month a Senate bill demanded numbers everyone can trust. The fight finally has a referee. But referees settle arguments. They do not refill rivers. So who holds the counter? At Redout Lake, the Sitka tribe of Alaska built its own weir. Their river, their count. The machine won't refill the river. But who's count you trust?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.071,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.33,
+        "voiced_frac": 0.42,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 58.96,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean"
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.964,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": false,
+      "score": 0.952,
+      "diagnosis": "WORDS: WER 0.095 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    },
+    {
+      "pass": false,
+      "score": 0.956,
+      "diagnosis": "WORDS: WER 0.087 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

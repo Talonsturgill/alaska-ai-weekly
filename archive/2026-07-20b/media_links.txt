@@ -1,0 +1,4 @@
+4:5 LinkedIn feed cut: https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-07-20b-4x5.mp4
+9:16 TikTok cut:       https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-07-20b-9x16.mp4
+Poster:                https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-07-20b-poster.png
+All verified HTTP 200 at upload time (2026-07-21T01:30Z).

@@ -1,0 +1,17 @@
+{
+  "thesis": "AI is not going to bring the salmon back, but it is handing Alaskans a faster, harder-to-argue-with count of what is actually in the net and on the river, and the most consequential version is the Sitka Tribe of Alaska building that count for its own subsistence fishery instead of waiting on anyone else's numbers.",
+  "valence": "net positive, honestly bounded (conditional optimism)",
+  "stance_for_ledger": "mixed",
+  "strongest_supporting_facts": [
+    "Sitka Tribe of Alaska, a federally recognized tribal government, holds a $200,000 USFWS Tribal Wildlife Grant (announced Oct 16, 2024) for AI subsistence salmon monitoring at Redoubt Lake, grant titled 'Artificial Intelligence for Subsistence Salmon Monitoring and Management'.",
+    "NOAA AFSC's customized YOLOv11 detects 97% of fish (82% prediction accuracy, per NOAA); per National Fisherman it cuts frames needing human review by 85%, doing in hours what a trained observer needs days or weeks for. Research showing promise, not yet deployed.",
+    "Sen. Sullivan's revamped Bycatch Reduction and Research Act (KUCB July 17, 2026; introduced Jan 7, 2026 with Murkowski and Begich) pushes regulatory transparency and proven bycatch-reduction gear, putting the fight over trusted counts on the current legislative clock."
+  ],
+  "fair_counterpoint": "NOAA's model is research showing promise, NOT deployed real-time on deck, and needs more Chinook-heavy testing before operational use. A better count does not reverse the runs: Western Alaska salmon declines are driven substantially by ocean and climate conditions, and bycatch is incidental and capped. The referee does not rescue the fish, and the trawl fleet's fair point stands.",
+  "runner_up_angles": [
+    {"angle": "A: The Measurement Layer", "why_lost": "its sharpest claim (AI count as legal harvest trigger) unsupported by the safe set; stripped, it reduces to the merge's speed beat"},
+    {"angle": "B: Who Controls the Count", "why_lost": "correct insight, wrong format: governance abstraction dies on a muted deck; survives as subtext through the Sitka protagonist"},
+    {"angle": "C: Measurement Is Not a Cure", "why_lost": "overreads 'substantial' into 'mostly', doom valence the brand forbids; survives as the one-line bound in the fair counterpoint"}
+  ],
+  "cross_challenge": "full round run 2026-07-20b: A killed on the unsupported legal-trigger claim; B challenged as untellable-muted; C challenged as reflex-doom; D survived all three lenses and was chosen as spine, absorbing A's in-season clock and B's ownership edge."
+}

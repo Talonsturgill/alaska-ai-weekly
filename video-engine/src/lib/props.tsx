@@ -1,5 +1,6 @@
 import React from 'react';
 import {INK, ICE, SNOW, RED} from './kit';
+import {tones, FormGradient, RimLight, ContactShadow} from './lighting';
 
 // =============================================================================
 // PROPS — the generalized physical-prop kit (asset-library session #2,
@@ -150,6 +151,153 @@ export const TrailPost: React.FC<{x: number; y: number; s?: number; top?: string
     {bottom && <text x={0} y={-144} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={34} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">{bottom}</text>}
   </g>
 );
+
+// =============================================================================
+// TallyCounter — the MECHANICAL count mark (NET-NEW 2026-07-20b, "The Referee
+// Arrives"). Deliberately a physical object you could hold (brass housing,
+// cream dial, rolling digits, click motion), NOT a HUD reticle/bracket: the
+// story's point is who HOLDS the counter. Two variants:
+//   variant="clicker"  — the hand-held dial: a circular cream face whose needle
+//                        spins with `spin` (0..1 progress) and hard-locks at 1;
+//                        `count` prints in the small window.
+//   variant="odometer" — the mounted chip: rolling flip digits showing `count`,
+//                        `roll` 0..1 animates the ones-digit mid-flip.
+// =============================================================================
+const BRASS = '#a8763e';
+const BRASS_D = '#7c5628';
+const DIAL = '#f7f1df';
+
+export const TallyCounter: React.FC<{
+  x: number; y: number; s?: number; f: number;
+  variant?: 'clicker' | 'odometer';
+  count?: string; spin?: number; roll?: number; tag?: string;
+}> = ({x, y, s = 1, f, variant = 'clicker', count = '0001', spin = 1, roll = 0, tag}) => {
+  const tB = tones(BRASS);
+  const uid = `tally${Math.round(x)}_${Math.round(y)}_${variant}`;
+  if (variant === 'clicker') {
+    const k = Math.max(0, Math.min(1, spin));
+    // needle whirls fast early, settles hard at the end (eased lock)
+    const ang = 360 * 3 * (1 - Math.pow(1 - k, 3));
+    const lockKick = k >= 1 ? 0 : 4 * Math.sin(f / 2) * (1 - k);
+    return (
+      <g transform={`translate(${x},${y}) scale(${s}) rotate(${lockKick})`}>
+        <FormGradient id={`${uid}_b`} t={tB} />
+        <ContactShadow cx={0} cy={64} rx={44} ry={9} opacity={0.25} blur={8} />
+        {/* thumb plunger + grip ring */}
+        <rect x={-10} y={-86} width={20} height={26} rx={8} fill={BRASS_D} stroke={INK} strokeWidth={5} />
+        <path d="M-6,20 a30,30 0 1 0 12,0" fill="none" stroke={BRASS_D} strokeWidth={12} opacity={0.9} />
+        {/* brass housing */}
+        <circle r={62} fill={`url(#${uid}_b)`} stroke={INK} strokeWidth={7} />
+        <RimLight d="M-58,-20 a62,62 0 0 1 34,-38" w={4} opacity={0.6} />
+        {/* cream dial face */}
+        <circle r={46} fill={DIAL} stroke={INK} strokeWidth={5} />
+        {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
+          <line key={a} x1={0} y1={-40} x2={0} y2={-33} stroke={INK} strokeWidth={3} transform={`rotate(${a})`} opacity={0.7} />
+        ))}
+        {/* needle: whirl then hard lock */}
+        <g transform={`rotate(${ang})`}>
+          <path d="M0,8 L-4,0 L0,-38 L4,0 Z" fill={RED} stroke={INK} strokeWidth={3} />
+        </g>
+        <circle r={6} fill={INK} />
+        {/* count window */}
+        <rect x={-30} y={16} width={60} height={22} rx={5} fill="#fff" stroke={INK} strokeWidth={4} />
+        <text x={0} y={33} textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight={900} fontSize={17} fill={INK} letterSpacing={2}>{count}</text>
+        {tag && (
+          <g transform={`translate(54,44) rotate(${8 + 3 * Math.sin(f / 16)})`}>
+            <line x1={-8} y1={-14} x2={0} y2={0} stroke={INK} strokeWidth={3} />
+            <rect x={-44} y={0} width={88} height={24} rx={5} fill={ICE} stroke={INK} strokeWidth={4} />
+            <text x={0} y={17} textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight={900} fontSize={13} fill={RED}>{tag}</text>
+          </g>
+        )}
+      </g>
+    );
+  }
+  // odometer chip: brass housing, rolling cream flip-digits
+  const digits = count.split('');
+  const r = Math.max(0, Math.min(1, roll));
+  const w = digits.length * 34 + 24;
+  return (
+    <g transform={`translate(${x},${y}) scale(${s})`}>
+      <FormGradient id={`${uid}_b`} t={tB} />
+      <rect x={-w / 2} y={-34} width={w} height={68} rx={10} fill={`url(#${uid}_b)`} stroke={INK} strokeWidth={6} />
+      <RimLight d={`M${-w / 2},-14 a10,10 0 0 1 8,-18`} w={3.5} opacity={0.55} />
+      {digits.map((d, i) => {
+        const isOnes = i === digits.length - 1;
+        const flip = isOnes ? r : 0;
+        const prev = isOnes ? String((parseInt(d, 10) + 9) % 10) : d;
+        return (
+          <g key={i} transform={`translate(${-w / 2 + 12 + 17 + i * 34},0)`}>
+            <rect x={-15} y={-26} width={30} height={52} rx={4} fill={DIAL} stroke={INK} strokeWidth={4} />
+            <line x1={-15} y1={0} x2={15} y2={0} stroke={INK} strokeWidth={1.5} opacity={0.5} />
+            {/* mid-flip: previous digit rolls up and out, new digit rolls in */}
+            <g>
+              {flip < 0.05 ? (
+                <text x={0} y={11} textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight={900} fontSize={30} fill={INK}>{d}</text>
+              ) : (
+                <g>
+                  <text x={0} y={11 - 44 * flip} textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight={900} fontSize={30} fill={INK} opacity={1 - flip * 0.9}>{prev}</text>
+                  <text x={0} y={11 + 44 * (1 - flip)} textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight={900} fontSize={30} fill={INK} opacity={flip}>{d}</text>
+                </g>
+              )}
+            </g>
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+// =============================================================================
+// VideoWeir — the tribal camera-lane weir set piece (NET-NEW 2026-07-20b).
+// Hand-built warm timber (self-determination reads as craftsmanship): angled
+// leg pairs driven into the gravel, a plank walkway, the camera housing with a
+// lens ring looking into the lane, and a mounted TallyCounter odometer chip.
+// `plant` 0..1 drops it in with a settle; the scene drives `roll`/`count` on
+// the chip as fish pass. Water is the SCENE's job; the weir sits on it.
+// =============================================================================
+export const VideoWeir: React.FC<{
+  x: number; y: number; s?: number; f: number; plant?: number;
+  count?: string; roll?: number;
+}> = ({x, y, s = 1, f, plant = 1, count = '0000', roll = 0}) => {
+  const p = Math.max(0, Math.min(1, plant));
+  const drop = (1 - p) * -60;
+  const tW = tones(WOOD);
+  const uid = `weir${Math.round(x)}_${Math.round(y)}`;
+  return (
+    <g transform={`translate(${x},${y + drop}) scale(${s})`} opacity={Math.min(1, p * 1.5)}>
+      <FormGradient id={`${uid}_w`} t={tW} />
+      <ContactShadow cx={0} cy={8} rx={190} ry={16} opacity={0.28 * p} blur={10} />
+      {/* leg pairs (A-frames) into the gravel */}
+      {[-150, -50, 50, 150].map((lx, i) => (
+        <g key={i} transform={`translate(${lx},0)`}>
+          <path d="M-20,0 L-4,-120 L4,-120 L-10,0 Z" fill={`url(#${uid}_w)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M20,0 L6,-120 L-2,-120 L12,0 Z" fill={tW.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          {/* rounded peg */}
+          <circle cx={0} cy={-118} r={7} fill={tW.key} stroke={INK} strokeWidth={4} />
+        </g>
+      ))}
+      {/* plank walkway with grain */}
+      <rect x={-200} y={-138} width={400} height={26} rx={6} fill={`url(#${uid}_w)`} stroke={INK} strokeWidth={6} />
+      {[-170, -120, -70, -20, 30, 80, 130].map((gx, i) => (
+        <line key={i} x1={gx} y1={-136} x2={gx + 8} y2={-114} stroke={INK} strokeWidth={2} opacity={0.3} />
+      ))}
+      <RimLight d="M-200,-132 h400" w={4} opacity={0.5} />
+      {/* picket lane guides under water line */}
+      {[-180, -140, -100, 100, 140, 180].map((px, i) => (
+        <line key={i} x1={px} y1={-4} x2={px} y2={44} stroke={tW.shade} strokeWidth={7} opacity={0.75} />
+      ))}
+      {/* camera housing looking into the lane */}
+      <g transform={`translate(-8,${-176 + 1.5 * Math.sin(f / 22)})`}>
+        <rect x={-34} y={-24} width={68} height={48} rx={10} fill="#3c464f" stroke={INK} strokeWidth={6} />
+        <circle cx={22} cy={0} r={13} fill="#9fc4d8" stroke={INK} strokeWidth={5} />
+        <circle cx={25} cy={-3} r={4} fill="#fff" opacity={0.8} />
+        <circle cx={-18} cy={-10} r={4} fill={RED} opacity={0.6 + 0.4 * Math.sin(f / 8)} />
+      </g>
+      {/* mounted odometer chip */}
+      <TallyCounter x={110} y={-176} s={0.72} f={f} variant="odometer" count={count} roll={roll} />
+    </g>
+  );
+};
 
 // A glowing boundary tracing itself in (`revealT` 0..1) around any closed path,
 // with an optional labeled town marker inside. `d` MUST be a closed path;

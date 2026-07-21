@@ -1,0 +1,78 @@
+{
+  "shots": [
+    {
+      "id": 1,
+      "start": 0,
+      "end": 201,
+      "framing": "wide-establish",
+      "transition_in": "",
+      "note": "macro lens open pulling out to the two-bank argument"
+    },
+    {
+      "id": 2,
+      "start": 201,
+      "end": 351,
+      "framing": "subject-portrait",
+      "transition_in": "whip-pan",
+      "note": "the quiet smokehouse"
+    },
+    {
+      "id": 3,
+      "start": 351,
+      "end": 542,
+      "framing": "two-up",
+      "transition_in": "whip-pan",
+      "note": "fleet deck + the honest ocean cross-section"
+    },
+    {
+      "id": 4,
+      "start": 542,
+      "end": 740,
+      "framing": "push-detail",
+      "transition_in": "mask-wipe",
+      "note": "the counting room"
+    },
+    {
+      "id": 5,
+      "start": 740,
+      "end": 969,
+      "framing": "data-panel",
+      "transition_in": "hard-cut",
+      "note": "the lineup + chips + STILL RESEARCH"
+    },
+    {
+      "id": 6,
+      "start": 969,
+      "end": 1105,
+      "framing": "macro-closeup",
+      "transition_in": "carried-element",
+      "note": "the bill and the trembling pen"
+    },
+    {
+      "id": 7,
+      "start": 1105,
+      "end": 1434,
+      "framing": "alt-vantage",
+      "transition_in": "match-cut",
+      "note": "the referee + the boom-up (stage3d)"
+    },
+    {
+      "id": 8,
+      "start": 1434,
+      "end": 1641,
+      "framing": "subject-portrait",
+      "transition_in": "graphic-match",
+      "note": "Redoubt Lake weir"
+    },
+    {
+      "id": 9,
+      "start": 1641,
+      "end": 1829,
+      "framing": "macro-closeup",
+      "transition_in": "crossfade",
+      "note": "the button: the lens returns, YOU DO."
+    }
+  ],
+  "fps": 30,
+  "total": 1829
+}

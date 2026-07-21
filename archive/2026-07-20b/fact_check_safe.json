@@ -1,0 +1,53 @@
+{
+  "story": "AI vs salmon bycatch: the nets have eyes now (Sullivan bill July 17 hook + NOAA YOLOv11 + SalmonVision tribal weirs)",
+  "run": "2026-07-20b",
+  "in_window_peg": "Sullivan 'revamped' Bycatch Reduction and Research Act, KUCB 2026-07-17 (Maggie Nelson); original bill Jan 7, 2026 (Sullivan, Murkowski, Begich)",
+  "numbers_allowed_on_screen": [
+    {"value": "97% of fish detected, 82% prediction accuracy", "label": "per NOAA AFSC"},
+    {"value": "~90% detection, 72% accuracy at 50% overlap", "label": "per National Fisherman"},
+    {"value": "99.3% accuracy predicting salmon presence on full tows", "label": "per National Fisherman"},
+    {"value": "85% fewer frames needing human review", "label": "per National Fisherman"},
+    {"value": "85,000+ annotations (11,572 salmon; 73,394 pollock) across ~17,000 frames", "label": "per NOAA AFSC"},
+    {"value": "$200,000 USFWS Tribal Wildlife Grant, Sitka Tribe of Alaska, Redoubt Lake", "label": "USFWS, announced Oct 16, 2024"},
+    {"value": "SalmonVision: initial mAP 67.6%; coho >90%; sockeye >80%; 2.5M annotated frames; 16 sites, goal 100 watersheds by 2028", "label": "per SalmonVision project (reported, blog source) - MEDIUM confidence"},
+    {"value": "Bill introduced Jan 7, 2026; revamped version reported July 17, 2026", "label": "KUCB / Sullivan Senate office"}
+  ],
+  "quotes_allowed": [
+    {"text": "There is a real and urgent need to empower local and indigenous communities with in season information on the status of salmon populations returning to their watersheds.", "speaker": "Dr. William Atlas, Wild Salmon Center", "label": "reported (single source) - MEDIUM confidence", "dashes": "none"},
+    {"text": "What takes a trained observer days or weeks can be run by the model in a matter of hours.", "speaker": "National Fisherman (Carli Clancy), describing NOAA's model", "label": "per National Fisherman", "dashes": "none"}
+  ],
+  "quotes_banned_as_written": [
+    "Sullivan KUCB quote (contains two em dashes) - paraphrase only, no direct on-screen use unless re-punctuated",
+    "'Models can process fishing tows in hours...' - NOT verbatim, do not use"
+  ],
+  "cut_unverifiable": [
+    "EFP #2025-01 renewal / Sept 30 2026 authorization / permit-holder names - NOAA page 404. NO on-screen use.",
+    "Pilot Station sonar 102,756 Yukon Chinook count - unverifiable, CUT",
+    "B-season June 10 open date - soften to 'the summer season is underway'",
+    "'1 hour of footage per ~1 minute' SalmonVision throughput - CUT",
+    "'electronic monitoring/reporting' as a bill provision - appears in neither source, CUT",
+    "'real-time' on genetic stock ID - DROP the 'real-time'",
+    "'tribe stepped up after federal cuts' causal framing - blog-only, DO NOT assert"
+  ],
+  "context_verified": [
+    {"sentence": "Chinook salmon on the Yukon River have been in a prolonged period of low productivity, which has caused significant hardship for residents of the Yukon River drainage.", "label": "ADFG (primary, standing management page)", "url": "https://www.adfg.alaska.gov/index.cfm?adfg=CommercialByAreaYukon.main", "status": "VERIFIED"},
+    {"sentence": "In April 2024, the Alaska Department of Fish and Game and Fisheries and Oceans Canada signed an agreement aimed at the recovery of Yukon River Chinook salmon.", "label": "ADFG press release Apr 1, 2024", "status": "VERIFIED (do NOT say 'seven-year' - unconfirmed)"},
+    {"sentence": "Dutch Harbor, Alaska has been the leading US port for seafood volume for more than 25 consecutive years.", "label": "NOAA Fisheries of the United States", "status": "VERIFIED"},
+    {"sentence": "'Bering Sea pollock = largest US fishery by volume'", "status": "LABELED ONLY - say 'one of the largest fisheries in the world, per NOAA' instead"},
+    {"sentence": "Any specific 2026 in-season Yukon Chinook figure", "status": "CUT - no fetchable dated source"}
+  ],
+  "fairness_must_include": [
+    "NOAA's YOLOv11 is RESEARCH showing promise, NOT deployed real-time on deck; needs more Chinook-heavy testing before operational use (NOAA's own framing).",
+    "Trawl-sector fair point: salmon bycatch is incidental and capped; Western Alaska salmon declines are driven substantially by ocean/climate conditions, not bycatch alone.",
+    "Sitka Tribe of Alaska = federally recognized tribal government; frame Redoubt Lake work as tribal-led self-determination (grant title: 'Artificial Intelligence for Subsistence Salmon Monitoring and Management')."
+  ],
+  "sources": {
+    "kucb": "https://www.kucb.org/industry/2026-07-17/sen-sullivans-revamped-bycatch-bill-pushes-for-regulatory-transparency-and-tougher-foreign-fishing-standards",
+    "sullivan_release": "https://www.sullivan.senate.gov/newsroom/press-releases/sullivan-murkowski-begich-introduce-bycatch-reduction-and-research-act",
+    "noaa": "https://www.fisheries.noaa.gov/feature-story/faster-analysis-data-evaluate-bycatch-reduction-efforts-pollock-fishery",
+    "national_fisherman": "https://www.nationalfisherman.com/smarter-nets-and-faster-data-for-the-alaska-pollock-fishery",
+    "salmonvision": "https://salmonvision.org/about/",
+    "currentflowstate": "https://www.currentflowstate.com/salmon-vision-the-ai-revolution-comes-to-salmon-conservation/",
+    "aksportingjournal": "https://aksportingjournal.com/sitka-tribe-salmon-monitoring-among-usfws-native-american-fish-and-wildlife-habitat-projects/"
+  }
+}

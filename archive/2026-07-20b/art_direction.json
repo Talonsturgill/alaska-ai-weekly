@@ -1,0 +1,60 @@
+{
+  "run": "2026-07-20b",
+  "story": "The Referee Arrives (salmon bycatch meets the AI that counts the fish)",
+  "palette": {
+    "roles": {
+      "sky": "#f2d8a0 dawn cream to #e8a86b warm rose-amber (low morning light)",
+      "ground": "#cbb894 bone-tan gravel bars + #8a7a5c taupe shadow (the exposed ribcage of a low river)",
+      "water": "#7fae9e milky glacial jade shallows + #3f6f63 deep pool green",
+      "hero": "chrome silver-blue Salmon + #c23b2e sockeye crimson (spawning red)",
+      "accent_act1": "#c23b2e sockeye crimson (the fish is the focal signal while the argument rages)",
+      "accent_act2": "counter-brass #a8763e housing + dial-cream #f7f1df face with ink digits: the count signal is a PHYSICAL mechanical object (cream dial, rolling digits, click motion), not a glowing HUD color. Deliberately NOT mint/phosphor (mint was the 07-08 caribou count overlay and the 07-11 forecast line, the channel's creeping house color for 'the AI's clean number'), NOT IR citron, NOT server-teal.",
+      "shadow_ink": "#14201c green-cast near-black ink"
+    },
+    "mood": "exposed, drained, honest morning light: the river laid bare is the argument laid bare. The act-shift from crimson accent to the cream-and-brass mechanical counter IS the story arriving.",
+    "divergence": "07-19 was cold indigo night + ember orange + server teal; 07-20 was black-spruce green + midnight-blue to rose-gold + IR magenta-citron + vermilion. This run is a DAY palette dominated by bone gravel + milky jade + dawn amber: no night sky, no IR, no ember. Also guarded against 07-10 (teaching-the-machine-to-see: sockeye crimson + glacial river + gravel): that board was a close-up single-fish staging in saturated river blues; this one is a wide two-bank DIORAMA in bone-tan daylight with an ensemble cast, crimson spent only as the act-1 focal accent, and the build must NOT drift back toward a close-up-on-one-fish staging."
+  },
+  "light": {
+    "time": "low dawn sun from screen-right",
+    "key": "warm amber directional from right, long cool shadows raking left across gravel bars",
+    "fill": "cool jade bounce up from the water onto characters' underside",
+    "rim": "pale gold rim on every hero silhouette (RimLight), stronger on the referee in the signature shot",
+    "depth": "Stage3D planes with Atmosphere on the far ridge band; water shimmer as a separate motion region; ContactShadow under every grounded cast member; forms read dimensional via tones()/FormGradient per the depth bar"
+  },
+  "shape_language": {
+    "the_argument": "jagged and angular: shout-shards, opposing tilted StatCards, hard zigzag speech geometry",
+    "the_river_and_fish": "smooth S-curves, braided channel curves, salmon undulation",
+    "the_count": "MECHANICAL, not HUD: a hand-held clicker dial (rotating counter wheel, hard click settle) and an odometer-style flip-digit tally chip on the weir. NO ScanReticle, no brackets, no lock-on marks anywhere in this piece: the count is a physical object you could hold, which is the story's whole point (who HOLDS the counter)",
+    "institutions_vs_hands": "NOAA lab desk world rectilinear gray; the Sitka weir hand-built warm timber with rounded pegs (self-determination reads as craftsmanship, not machinery)",
+    "why": "the story is an angular argument laid over an organic river, resolved by precise-but-gentle count geometry: three registers a muted viewer can tell apart at a glance"
+  },
+  "casting": {
+    "hero": "Salmon (fauna.tsx, chrome + spawning red variants) as the through-line character; Character rig as the human ensemble (subsistence family flannel/vest, pollock crew worker, buried observer, THE REFEREE, Sitka biologist vest)",
+    "supporting": "FishingBoat (vehicles.tsx), Raven (recurring honest-tally gag, open-to-close match cut), Moose alert-pose cameo (tracks the ticking counter sound), RiverBG (biomes.tsx, THE salmon stage, summer), props kit (StatCard, SwingSign, Nameplate, Stamp, PenAndDocument), PaperStorm",
+    "from_manifest": "every cast member above is on the shelf; freshness comes from staging (dueling banks, boom-up reveal, weir authorship beat)",
+    "net_new": [
+      "TallyCounter: a reusable mechanical count mark (props.tsx): hand-held clicker dial variant (rotating wheel, click settle) + odometer flip-digit chip variant (rolling cream digits in a brass housing). THE run's count signal, physically distinct from any HUD reticle; built to tones/RimLight/ContactShadow bar, digits as params",
+      "VideoWeir: a reusable camera-lane weir set piece (props.tsx) with timber legs, camera housing, and a TallyCounter chip mounted on it: the missing fisheries-monitoring prop; all copy as params",
+      "Character rig growth: 'referee' outfit (striped vest + whistle) + a raised-clicker pose, registered to the rig not one-offed"
+    ],
+    "count_mark_divergence": "yesterday's Vale dispatch used the ScanReticle RED/citron IR thermal LOCK-ON that SNAPS around a subject. This run REMOVES the reticle entirely: the count is a MECHANICAL clicker/odometer with cream dial faces and brass housing, clicking upward, held in hands. Different object class, different color logic (physical cream/brass vs glowing HUD), different verb (tally vs lock), different ownership grammar (held, not overlaid)."
+  },
+  "motion_language": {
+    "argument_beats": "sharp opposing jabs and shakes, cards slamming with overshoot, stamps thudding",
+    "fish": "continuous S-curve undulation; the salmon fling gets 180-degree motion blur and a splash",
+    "the_count": "mechanical clicker spin with a hard eased settle; odometer digits roll upward and land with a click, never a glowing overlay",
+    "hero_moves": [
+      "the raven decimal-snatch (fast peck + flap-off, motion blur)",
+      "the whistle anticipation (chest inflate, 8-frame hold) before the signature boom",
+      "the SIGNATURE BOOM-UP: composed Stage3D crane rising + dolly back over a true rotateX ground plane, atmosphere deepening as the empty river reveals"
+    ],
+    "earned_blur": "raven snatch, salmon fling, card slams; nothing else smears"
+  },
+  "composition": {
+    "staging": "9:16 master with all story inside the centered 4:5 safe box; dueling banks stage left/right of center; captions bottom-third above the 4:5 cut",
+    "negative_space": "the signature frame spends its emptiness on purpose: a small referee centered in a wide bone-colored river bed, the eye caught by the cream-and-brass counter and its click-driven digit flip (motion, not hue, carries the look-here)",
+    "signature_shot": "BOOM-UP PULL-BACK: referee ankle-deep on a dry gravel bar, clicker locked on a true count, over a river with almost no fish. HARD TARGET: at the widest frame, AT MOST 3 fish visible in the entire river: the emptiness is composed on purpose, not improvised at build time",
+    "focal_rule": "one accent hue per frame (crimson in act one, the cream-dial counter in act two); off-palette = look here, spent once"
+  },
+  "craft_advance": "Migrate the signature scene onto Stage3D: a composed craneDown-reversed (rise) + dollyThrough-back camera move over a true rotateX ground plane (the manifest's number-one 'known next advance': Episode scenes onto stage3d). Supporting: TallyCounter + VideoWeir join props.tsx as reusable library assets and the Character rig gains the referee outfit + clicker pose."
+}

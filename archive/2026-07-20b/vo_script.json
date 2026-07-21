@@ -1,0 +1,26 @@
+{
+  "title": "The Referee Arrives",
+  "run": "2026-07-20b",
+  "target_seconds": [50, 62],
+  "word_count": 125,
+  "lines": [
+    "Who counts this fish?",
+    "Two crowds keep shouting different numbers across one thin river.",
+    "Upriver, the smokehouses are quiet. The kings keep failing.",
+    "The trawl fleet hates salmon in its nets too. The ocean drives much of this.",
+    "Counting the catch took an observer weeks.",
+    "Now a Noah model reads the net cameras in hours.",
+    "Trained on eighty five thousand labeled fish. Ninety seven percent spotted. Still research.",
+    "This month a Senate bill demanded numbers everyone can trust.",
+    "The fight finally has a referee. But referees settle arguments. They do not refill rivers.",
+    "So who holds the counter?",
+    "At Redoubt Lake, the Sitka Tribe of Alaska built its own weir. Their river. Their count.",
+    "The machine won't refill the river. But whose count do you trust?"
+  ],
+  "caption_fixups": {
+    "Noah": "NOAA",
+    "eighty five thousand": "85,000",
+    "ninety seven percent": "97%"
+  },
+  "notes": "Spoken 'Noah' is the phonetic respelling of NOAA (display spelling restored by caption_fixups). Numbers spoken as words, drawn as numerals in the scene annotations. No em or en dashes anywhere. 125 words at a brisk read lands ~50-56s."
+}

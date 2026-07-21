@@ -11,7 +11,7 @@ When you add or upgrade an asset, update this file in the same commit. Keep entr
 one line: `Name — kind — file — params/poses — status`.
 
 ## Characters (people)
-- `Character` — human rig — Character.tsx — poses: stand/arms-crossed/point/panic; emotions: neutral/angry/worried/shock/smug; outfits: parka/suit/worker/puffer/flannel/vest; headgear: bare/beanie/cap/trapper/hood (bands raised off the eyes 2026-07-18b, no more 'burglar mask'); `talking` prop = TalkMouth lip-flap; form-shaded + rim + contact shadow — ACTIVE
+- `Character` — human rig — Character.tsx — poses: stand/arms-crossed/point/panic/raise (raise NEW 2026-07-20b: one arm thrust high w/ micro-sway, scenes mount a prop at the raised hand); emotions: neutral/angry/worried/shock/smug; outfits: parka/suit/worker/puffer/flannel/vest/referee (referee NEW 2026-07-20b: cream shirt w/ ink official stripes + collar + brass whistle on a lanyard); headgear: bare/beanie/cap/trapper/hood (bands raised off the eyes 2026-07-18b, no more 'burglar mask'); `talking` prop = TalkMouth lip-flap; form-shaded + rim + contact shadow — ACTIVE
 
 ## Characterized objects (heroes with a face / bespoke silhouette)
 - `ServerMachine` — the data-center/AI antagonist — kit.tsx — emotions: greedy/focused/nervous/shock/ghost; tints: steel/copper; `talking` prop = lip-flap — ACTIVE
@@ -52,6 +52,8 @@ NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam pro
 
 ## Props & set pieces
 - `AlaskaMini` — map of Alaska w/ pulsing pin — kit.tsx — ACTIVE
+- `TallyCounter` — NET-NEW 2026-07-20b ("The Referee Arrives") — the MECHANICAL count mark: `variant="clicker"` (hand-held brass dial, needle whirls w/ `spin` 0..1 and hard-locks, count window, optional swinging `tag`) / `variant="odometer"` (mounted brass chip, cream flip-digits, `roll` 0..1 animates the ones digit; rest-digit display bug fixed same run) — props.tsx — deliberately a physical object you could HOLD, never a HUD reticle; form-shaded + rim + contact shadow — ACTIVE
+- `VideoWeir` — NET-NEW 2026-07-20b — the tribal camera-lane weir set piece: warm timber A-frame legs w/ pegs, plank walkway w/ grain, picket lane guides, camera housing w/ blinking rec light, mounted TallyCounter odometer; `plant` 0..1 drops it in with a settle; fisheries-monitoring stage for any future salmon/counting story — props.tsx — ACTIVE
 - SHARED PROPS KIT — lib/props.tsx — NEW 2026-07-20d: the episode-local props generalized with ALL story copy as params (a prop with baked-in text is an episode-local, not a library asset): `StatCard` (big stat chip, tintable), `Nameplate` (identity plate), `SwingSign` (hanging sign, 1-3 lines, pivot bug fixed), `GearLever` (pulled 0..1 + optional DENIED badge), `SurveyStake` (settle drop-in), `MeasuringChain` (pays out + distance tag), `PenAndDocument` (pen hovers trembling, never signs; optional party plate), `TrailPost` (two-line sign), `BoundaryReveal` (glowing boundary traces any closed path `d` + optional town marker) — look-dev in PropsShowcase.tsx — ACTIVE
   - Episode.tsx copies remain episode-local history; new scenes import from lib/props.tsx.
 - `BoxLabel` / `StatBurst` / `FatArrow` / `Stamp` — HUD/label kit — kit.tsx — ACTIVE
@@ -103,5 +105,10 @@ NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam pro
   the VERTICAL SLICE: Vale on a TRUE 3D runway floor (rotateX'd ground plane, supersampled 2x so the
   perspective-stretched tarmac stays crisp), camera cranes down through the treeline, flies low over
   the runway, rises with the liftoff.
-- Known next advances: migrate Episode scenes onto stage3d (planes + camera keyframes), kinetic
-  typography, per-material texture library, night/aurora lighting.
+- Known next advances: migrate MORE Episode scenes onto stage3d (first landed 2026-07-20b: the
+  boom-up crane in "The Referee Arrives"; lesson: overscan non-fill world planes well past the
+  frame at max pull-back or they render as cut-out boxes), kinetic typography, per-material
+  texture library, night/aurora lighting. PANEL-BACKED BACKLOG (2026-07-20b, first-time
+  deferrals with plans in docs/RUN_UPGRADES.md): fauna Salmon spine-follow swim deform;
+  Character rig micro-texture pass behind a `detail` prop; word-level kinetic captions driven
+  by words.json.
