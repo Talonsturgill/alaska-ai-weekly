@@ -231,6 +231,9 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill="#12201d" />
         <g transform={`translate(${540 + camX},${960 + camY}) scale(${camS}) translate(-540,-960)`}>
+          {/* full-frame moving texture INSIDE the camera group so the crane registers as real
+              whole-frame displacement (a flat bg outside the group read as a locked frame) */}
+          <WaterColumn f={f} intensity={0.5} surfaceY={-420} deep="#101816" shallow="#1f302c" rays={5} />
           {/* ghost pod of the ~1,000 missing belugas */}
           <g opacity={ghostOp}>
             {Array.from({length: 22}).map((_, i) => (
