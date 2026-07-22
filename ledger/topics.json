@@ -568,6 +568,46 @@
     "https://www.fisheries.noaa.gov/alaska/science-data/satellite-monitoring-cook-inlet-beluga-whales"
    ],
    "outcome_notes": "Shipped 8.77 vs 8.3, 9 slides, vector PDF 7.8MB, zero hard fails. Full studio (6 scouts + fact-checker + 3 treatment-directors + copywriter + 5 pixel critics + flow-critic + scorer). Net-new marine-mammal acoustic AI, deliberate break from the 4-deck data-center fatigue. Weakest = artwork-craft (7): the S3 beluga shipped as the designed Canvas fallback (akthree transparent-subject snapshot sentinel false-negatived) and reads flat."
+  },
+  {
+   "run_date": "2026-07-22",
+   "carousel_no": 14,
+   "topic": "Alaska DNR preliminary decision (ADL 234762) to convey about 19,950 acres (~31 sq mi) of public land two miles north of Houston, Mat-Su, to AIDEA at NO cost for a multi-use industrial and energy district that includes scalable data centers; public comment closes 5 p.m. Aug 19, 2026",
+   "angle": "The giveaway, surveyed. The state is not waiting for AI infrastructure, it is pre-paying for it by handing its own development authority a township-sized block of public land for nothing, betting free ground summons data centers; the giveaway IS the subsidy and the comment window is the last price control. Public-land-and-process framing (who decides, who pays, the Houston ban) - deliberately NOT the power-bill economics of No.10 (07-18) nor the North Slope STAK campus of No.1 (07-08).",
+   "entities": [
+    "AIDEA",
+    "Alaska Department of Natural Resources",
+    "Houston (Alaska)",
+    "Matanuska-Susitna Borough",
+    "Lisa Johansen",
+    "ADL 234762",
+    "Virginia (data-center comparison)",
+    "Anchorage"
+   ],
+   "keywords": [
+    "data center",
+    "AI infrastructure",
+    "public land",
+    "land conveyance",
+    "AIDEA",
+    "preliminary decision",
+    "no cost",
+    "industrial park",
+    "Mat-Su",
+    "Houston",
+    "comment period",
+    "zoning",
+    "data-center ban",
+    "township",
+    "cadastral"
+   ],
+   "headline": "31 square miles of public land. Free.",
+   "sources_lead": [
+    "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224431",
+    "https://www.matsusentinel.com/state-agency-plans-houston-area-industrial-park-data-centers-distribution-hub/",
+    "https://www.alaskasnewssource.com/2026/07/17/new-state-proposal-could-bring-data-centers-mat-su-part-industrial-park/"
+   ],
+   "outcome_notes": "Shipped 8.86 vs 8.3, 9 slides, vector PDF 8.82MB, zero hard fails. Full studio (6 scouts + fact-checker + 3 treatment-directors + copywriter + 5 pixel critics + flow-critic + scorer). AI-infrastructure land decision (data centers = AI's physical plant); distinct DECISION/angle/entities from prior data-center decks. Weakest = artwork-craft (7): low-poly terrain coarse under zoom + the S2 raised cadastral plate read flat despite layered drop-shadows."
   }
  ]
 }

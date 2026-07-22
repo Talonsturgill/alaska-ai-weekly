@@ -536,3 +536,25 @@ annotation is the strongest pair):
     Recovery" (measures but cannot move the whale). Generalizes to any deck arguing that a tool's
     output is narrower than the problem (monitoring vs recovery, prediction vs prevention, a metric
     vs the thing it measures). D2
+
+58h. **Cadastral-Plate-on-Relief + Evolving Parcel Motif** (NEW 2026-07-22) - a chassis
+    for any land / place / public-decision / siting story. Build a shared oblique AK3D
+    hillshade-relief terrain (fbm heightfield, Lambert + exp2 fog, akpost grade) with the
+    SAME seed + camera on every "ground" slide so the backdrop is literally continuous,
+    and stamp ONE gold cadastral PARCEL polygon on it as the recurring hero that changes
+    STATE with the narrative (dashed "proposed" -> filled "deed" + dimension -> use-zone
+    stipple -> dashed "speculative/unbuilt" footprints -> intact vs an adjacent
+    jurisdiction boundary -> faint distant ghost -> flat on a process timeline -> resolves
+    into the Polaris). Pair with a top-down PLSS section-grid PLAT register for the
+    data/process beats (a 6x6 township inset encodes acreage honestly as "about N of 36
+    sections"), and let the deck-level "camera move" be the register shift from oblique
+    GROUND to top-down PAPER (ground -> paperwork -> your comment). RULES that make it read:
+    reserve gold for ONE meaning (the land at stake) and HOLD IT OUT entirely on the pure
+    data slide so the meaning holds; a second cool accent (forget-me-not) carries the human/
+    town voice with zero cross-leak; edge-tease a section line off the right of the ground
+    slides. CRAFT CAVEAT (scorer, run 14): a flat SVG polygon does NOT read as a RAISED
+    plate even with stacked drop-shadows, and a low-poly heightfield reads coarse under
+    zoom - for the ONE dimensional hero beat build a real extruded solid (visible side face
+    + contact shadow) or apply the 2.5D relit-heightfield Sobel form-shading helper. Used as
+    the hero + continuity chassis of "The Giveaway, Surveyed" (AIDEA Houston land conveyance).
+    Generalizes to any land-lease, siting, zoning, boundary, or public-comment story. D3

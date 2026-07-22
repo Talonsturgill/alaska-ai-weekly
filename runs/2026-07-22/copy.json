@@ -1,0 +1,158 @@
+{
+  "run_date": "2026-07-22",
+  "carousel_no": 14,
+  "document_title": "The Giveaway, Surveyed. Alaska's Free Land for AI",
+  "deck_summary_line": "A nine-slide look at Alaska's plan to convey 31 square miles of public land to its own development agency at no cost for a data-center district, and the public comment window that closes August 19.",
+  "post_copy": "Alaska is moving to hand 31 square miles of public land to its own development agency for zero dollars.\n\nThe proposed conveyance covers 19,950 acres two miles north of Houston, planned as an industrial and energy district that would host data centers. The land itself is the subsidy, offered before a single tenant has to show up.\n\nThe deck walks through the deed, the data-center gap the state is chasing, the town council member fighting it, and the comment window that closes at 5 p.m. on August 19.\n\nIs free public land a fair way to attract an industry, or should the state set a price the neighbors help decide?",
+  "hashtags": [
+    "#MatSu",
+    "#DataCenters",
+    "#PublicLands"
+  ],
+  "first_comment": "Sources, primary first\nAlaska DNR Online Public Notices, preliminary decision on ADL 234762, https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224431\nMat-Su Sentinel, state agency plans Houston-area industrial park with data centers, https://www.matsusentinel.com/state-agency-plans-houston-area-industrial-park-data-centers-distribution-hub/\nAlaska's News Source, new state proposal could bring data centers to the Mat-Su, https://www.alaskasnewssource.com/2026/07/17/new-state-proposal-could-bring-data-centers-mat-su-part-industrial-park/\nEvery decision we track, with live deadlines, lives at alaskaaihq.com\nKnow this parcel or the comment process firsthand? Add context below.",
+  "slides": [
+    {
+      "n": 1,
+      "kicker": "PUBLIC LAND / MAT-SU BOROUGH",
+      "headline": "31 SQUARE / MILES OF / PUBLIC LAND. / FREE.",
+      "body": "The state moved to give it to its own development agency.",
+      "labels": [
+        "01 / 09",
+        "61°38'N 149°49'W",
+        "0   5 mi",
+        "ADL 234762"
+      ],
+      "claim_ids": [
+        "aidea-sqmi-31",
+        "aidea-nocost-conveyance"
+      ]
+    },
+    {
+      "n": 2,
+      "kicker": "THE DEED",
+      "headline": "19,950 acres. / No price.",
+      "body": "Under a preliminary decision, a state agency would convey about 19,950 acres of public land, roughly 31 square miles, to AIDEA, the state development authority. The site sits two miles north of Houston. Case ADL 234762.",
+      "labels": [
+        "19,950 ac",
+        "$0",
+        "ADL 234762",
+        "02 / 09"
+      ],
+      "claim_ids": [
+        "aidea-acreage-19950",
+        "aidea-sqmi-31",
+        "aidea-nocost-conveyance",
+        "aidea-location-houston",
+        "aidea-adl-234762"
+      ]
+    },
+    {
+      "n": 3,
+      "kicker": "THE USE",
+      "headline": "What the land is for",
+      "body": "The plan is a multi-use industrial and energy district, and scalable data centers are named among the uses, per the project decision and local coverage. Data centers are the physical plant of modern AI. Free land is meant to pull them in.",
+      "labels": [
+        "PER THE PROJECT DECISION AND LOCAL COVERAGE",
+        "INDUSTRIAL",
+        "ENERGY",
+        "DATA CENTERS",
+        "03 / 09"
+      ],
+      "claim_ids": [
+        "aidea-data-centers-use"
+      ]
+    },
+    {
+      "n": 4,
+      "kicker": "THE GAP",
+      "headline": "Alaska has 8. / Virginia has 639.",
+      "body": "Alaska has 8 data centers, among the fewest of any state. Virginia has 639. The state sees a hole to fill, and cheap public land is one lever it can pull.",
+      "labels": [
+        "ALASKA 8",
+        "VIRGINIA 639",
+        "AS REPORTED BY ALASKA'S NEWS SOURCE",
+        "= 1 data center",
+        "04 / 09"
+      ],
+      "claim_ids": [
+        "aidea-ak-8-datacenters",
+        "aidea-va-639-datacenters"
+      ]
+    },
+    {
+      "n": 5,
+      "kicker": "THE BET",
+      "headline": "Not answering demand. / Building it.",
+      "body": "This is build it and they will come, aimed at a public asset. Free land is the subsidy, spent before a single data center exists.",
+      "labels": [
+        "PROPOSED, NOT BUILT",
+        "05 / 09"
+      ],
+      "claim_ids": [
+        "aidea-nocost-conveyance",
+        "aidea-data-centers-use"
+      ]
+    },
+    {
+      "n": 6,
+      "kicker": "THE RESISTANCE",
+      "headline": "The town next door says no",
+      "body": "Houston City Council member Lisa Johansen has proposed banning data centers inside city limits. But the state parcel sits about two miles north of Houston, outside the line a town of a few thousand can draw. The town can zone itself, not the land next door.",
+      "labels": [
+        "HOUSTON",
+        "CITY LIMIT",
+        "STATE PARCEL 2 MI N",
+        "about 2 mi",
+        "06 / 09"
+      ],
+      "claim_ids": [
+        "aidea-houston-ban",
+        "aidea-location-houston"
+      ]
+    },
+    {
+      "n": 7,
+      "kicker": "",
+      "headline": "The choice was never data centers or nothing.",
+      "body": "It is the terms. Free or priced. Who zones it, who profits, and who carries the cost if the servers never come. Right now it is only a boundary on a map, which is what a comment period is for.",
+      "labels": [
+        "PRELIMINARY DECISION, NOT FINAL",
+        "07 / 09"
+      ],
+      "claim_ids": []
+    },
+    {
+      "n": 8,
+      "kicker": "THE WINDOW",
+      "headline": "It is not decided yet",
+      "body": "This is a preliminary decision. Public comment on case ADL 234762 runs through 5:00 p.m. on Wednesday, August 19, 2026. If nothing significant changes, the state can then issue it as the final finding and decision.",
+      "labels": [
+        "JUL 10 PRELIMINARY DECISION",
+        "AUG 19 COMMENT CLOSES 5 PM",
+        "THEN FINAL FINDING",
+        "08 / 09"
+      ],
+      "claim_ids": [
+        "aidea-comment-deadline",
+        "aidea-adl-234762"
+      ]
+    },
+    {
+      "n": 9,
+      "kicker": "ONE ASK",
+      "headline": "Comment before Aug 19",
+      "body": "Read case ADL 234762 and tell the state what 31 square miles of public land is worth. That is the one price control left before this goes final. Should the state give public land away to attract data centers, or set a price the town next door helps decide?",
+      "labels": [
+        "Sources in comments.",
+        "ALASKA.AI",
+        "alaskaaihq.com",
+        "09 / 09"
+      ],
+      "claim_ids": [
+        "aidea-adl-234762",
+        "aidea-sqmi-31",
+        "aidea-comment-deadline"
+      ]
+    }
+  ]
+}

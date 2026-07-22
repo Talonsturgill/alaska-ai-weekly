@@ -1,0 +1,13 @@
+{
+  "chars": 651,
+  "hook": "Alaska is moving to hand 31 square miles of public land to its own development agency for zero dollars.",
+  "hook_len": 103,
+  "hashtags": [
+    "#MatSu",
+    "#DataCenters",
+    "#PublicLands"
+  ],
+  "fails": [],
+  "warns": [],
+  "verdict": "PASS"
+}

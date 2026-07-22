@@ -106,7 +106,7 @@
     }
    ],
    "first_seen": "2026-07-08",
-   "last_updated": "2026-07-20",
+   "last_updated": "2026-07-22",
    "history": [
     {
      "date": "2026-07-08",
@@ -155,6 +155,10 @@
     {
      "date": "2026-07-21",
      "note": "Carried forward against Alaska Beacon and DataCenterDynamics reporting. The written comment window on ADL 422741 closed 4:30 p.m. July 17 with more than 500 comments on record and fewer than a dozen in favor, and the roughly one square mile campus (up to 3 GW, an estimated 350 to 500 million cubic feet of gas per day) now sits with the DNR Division of Oil and Gas for a Final Finding and Decision. No decision is posted yet this run."
+    },
+    {
+     "date": "2026-07-22",
+     "note": "Re-verified the DNR primary notice ADL 422741. It remains a preliminary decision with no Final Finding and Decision posted. The written comment window closed 4:30 p.m. July 17, so the 50 year lease now sits with DNR Division of Oil and Gas for a final best interest decision. More than 500 comments on record with fewer than a dozen in support, unchanged this run."
     }
    ]
   },
@@ -498,6 +502,11 @@
    },
    "sources": [
     {
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224431",
+     "outlet": "Alaska DNR Online Public Notices",
+     "date": "2026-07-10"
+    },
+    {
      "url": "https://www.dermotcole.com/reportingfromalaska/2026/7/13/khxwch2o4tgrjxuwycm8kmjzjtp69q",
      "outlet": "Reporting From Alaska",
      "date": "2026-07-13"
@@ -514,7 +523,7 @@
     }
    ],
    "first_seen": "2026-07-17",
-   "last_updated": "2026-07-21",
+   "last_updated": "2026-07-22",
    "history": [
     {
      "date": "2026-07-17",
@@ -527,6 +536,10 @@
     {
      "date": "2026-07-21",
      "note": "Re-verified against Mat-Su Sentinel and Alaska News Source reporting from July 15 and 16. The City of Houston council took up Council Member Lisa Johansen's ordinance to ban data center development inside city limits and voted July 16 to postpone action to its August 13 meeting, so a small municipality is now moving to zone out the buildout on the state parcel next door on permafrost thaw and water supply grounds. DNR public comment on the no cost land transfer to AIDEA still runs through 5 p.m. August 19. Added the August 13 council vote as a tracked key date."
+    },
+    {
+     "date": "2026-07-22",
+     "note": "Selected as this run's carousel. Re-verified the DNR primary notice ADL 234762. It remains a preliminary decision proposing a noncompetitive no-cost conveyance of about 19,950 acres of state land roughly two miles north of Houston to AIDEA, with written public comment open through 5 p.m. August 19. The notice says that if no significant change is required the preliminary decision will issue as the Final Finding and Decision. Daniel Jenkins is the listed contact. This is the one open comment room among the tracked decisions."
     }
    ]
   },

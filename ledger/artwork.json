@@ -321,6 +321,29 @@
     "Boundary-box limit beat: the instrument drawn inside a dashed frame; the untouched threats (noise/prey/habitat) drawn as arrows that STOP at the wall with a red blocked-cap and no intake port = 'the machine measures the whale, it cannot move it'. Generalizes to any better-instrument-not-a-fix story."
    ],
    "notes": "Scored 8.77 vs 8.3. Story-art fusion 9 (the never-multiplying call + the unchanged water + the honest chart + the boundary box). Variety 9. Weakest = artwork craft 7: the S3 beluga shipped as the Canvas fallback and reads flat/cartoonish (akthree transparent-subject snapshot false-negative); dead lower thirds on S3/S5/S8. Flow-critic SHIP, sequence_reads_as_one true, motif_reads_across_all_9 true."
+  },
+  {
+   "run_date": "2026-07-22",
+   "carousel_no": 14,
+   "slide_count": 9,
+   "hero_structure": "Oblique AK3D boreal HILLSHADE-RELIEF terrain of the Susitna lowlands (shared identical seed+camera across the land slides) with a single gold CADASTRAL PARCEL polygon stamped on the ground as the recurring hero, plus a top-down PLSS section-grid PLAT register for the data/process beats; a top-right 6x6 township inset encodes 'about 31 of 36 sections'. NOT iso wiring-diagram (10), globe-bookends+buried-cable (11), gradebook-page+pencil (12), or underwater depth-world (13). First cartographic/terrain hero in the recent series; explicitly NOT the 07-18 isometric blueprint (relief + top-down plat, never iso extrusion).",
+   "atmosphere": "BOREAL survey-green (dark spruce-black base #0A140E/#0F1D15/#14271C, sunlit-ridge greens via AKC.ramp, low haze horizon), akpost dark-arctic grade + grain tile. NOT polar-permafrost-ochre (11), gradebook-at-night (12), abyssal Cook Inlet teal (13).",
+   "depth_technique": "AK3D software-3D fbm heightfield (Lambert+exp2 fog) finished with akpost (bloom/ACES/IGN dither); parcel raised via layered SVG drop-shadow (read flat per scorer, the run's craft shortfall). Plat slides argue flat deliberately.",
+   "line_voice": "Drafting/instrument: dimension calls (#73), leader lines (#72), survey scale bar, dashed phantom footprints (#67), section-line edge-tease, JBMono instrument labels.",
+   "continuity_device": "motif-evolution (ONE gold parcel that changes STATE every slide: dashed-proposed -> filled-deed -> use-stipple -> [gold HELD OUT on the S4 data slide] -> dashed-speculative -> intact-vs-blue-city-limit -> faint-ghost -> flat-on-timeline -> resolves into the gold Polaris) + section-line edge-tease + palette arc (cold boreal -> gold civic deadline/Polaris) + register shift ground->plat. NOT gradebook+pencil (12), NOT camera-descent+single-gold-call (13).",
+   "hook_archetype": "big-number monument ('31 square miles of public land. Free.'). NOT direct-question (10), place-paradox (11), before-after/named-tension (12), sensory/number cold-open (13).",
+   "palette_family": "boreal spruce-green base + sunlit-ridge greens + forget-me-not #6EA5FF (the human/town voice: Houston, city limit, the Alaska 8) + flag gold #FFC72C (RESERVED for the public land at stake: parcel, $0, Aug 19 gate, Polaris) + neutral slate #6E7A72 (the 639 ISOTYPE crowd). NOT polar-navy+cyan+ochre (11), chalkboard+lit-paper (12), abyssal-teal+silt+pearl (13).",
+   "type_pairing": "Archivo (display, width 80-118 + weight 740-800 axes; width-as-pressure) + JetBrains Mono (instrument) + ONE Fraunces italic line (S7 breather only, the single editorial-soul accent). NOT Bricolage+InstrumentSerif+JBMono (12), NOT SpaceGrotesk+JBMono pure-cool (13).",
+   "narrative_structure": "9-beat argument, ground->paper->your comment: hook -> deed -> use -> gap(data) -> bet(turn) -> resistance(counter, equal weight) -> breather/false-binary -> window(process) -> single-ask close. Fairness architecture (boosters S4 vs resisters S6 at equal visual weight).",
+   "variance_dials": {
+    "design_variance": 3,
+    "visual_density": 4,
+    "type_temperature": 2
+   },
+   "new_techniques_logged": [
+    "58h Cadastral-Plate-on-Relief + evolving gold parcel motif (TECHNIQUE_LIBRARY)"
+   ],
+   "notes": "Scorer 8.86, zero hard fails, honesty pass. Story-art fusion 9 (gold-parcel single-meaning motif, 8-vs-639 ISOTYPE, S6 geography-defeats-the-ordinance). Recurring ceiling: artwork-craft 7 (coarse low-poly + flat raised-plate). Next run should build the LAND hero as a real extruded solid or apply the parked 2.5D relit-heightfield Sobel helper."
   }
  ]
 }

@@ -901,3 +901,43 @@ dimensional.
   WebGL fragment shader and pre-baked normal textures -- not portable to pure 2D
   canvas and off-policy (external asset pipeline). The Sobel-from-procedural-
   height path above is the offline, dependency-free form that fits this studio.
+
+## 2026-07-22 - craft refresh (cartographic direction pass)
+
+- If a data/choropleth slide ships this run, pick the class-interval method
+  deliberately and NAME it in the dossier (natural-breaks/Jenks for skewed
+  Alaska data, quantile only when comparing rank, equal-interval for evenly
+  spread values); the method silently changes the map's argument. Use a
+  single-hue SEQUENTIAL ramp for magnitude, a two-hue DIVERGING ramp only
+  around a true midpoint. Strip decoration: no default legends, no county
+  borders louder than the data. Sources:
+  https://handsondataviz.org/design-choropleth.html ,
+  https://www.directionsmag.com/article/3363
+- LinkedIn 2026 sources reconfirm the existing numbers (8-10 slides, one idea
+  per slide, hook first, single CTA, first-hour comment replies); no change to
+  CAROUSEL_CRAFT.
+
+## 2026-07-22 - retro (No.14 "The Giveaway, Surveyed", AIDEA Houston land conveyance)
+
+- SHIPPED 8.86 vs 8.3, 9 slides, vector PDF 8.82MB, zero hard fails, honesty pass.
+  Full studio ran clean end to end (6 scouts, fact-checker, 3 treatment-directors,
+  copywriter, 5 pixel critics all "ship" round 1, flow-critic "ship", scorer).
+- WHAT WORKED: the cartographic parcel-motif chassis (oblique AK3D boreal
+  hillshade-relief + ONE gold cadastral parcel that changes state every slide +
+  top-down PLAT register for data/process beats) diverged cleanly from the last 4
+  decks and scored story-art-fusion 9 and variety 9. The 8-vs-639 ISOTYPE and the
+  S6 "city limit stops 2 mi short of the parcel" map are the strongest fusion beats.
+- HONESTY: the DNR primary notice never printed "data centers"; rendering the
+  attribution as an on-slide chip (PER THE PROJECT DECISION AND LOCAL COVERAGE) and
+  crediting 8/639 on-slide (AS REPORTED BY ...) turned the fact-checker's flags into
+  visible design and passed the scorer honesty check. Reusable pattern.
+- RECURRING CEILING (two runs now): artwork-craft capped at 7 by an underbuilt hero.
+  A flat SVG polygon "raised plate" does NOT read as raised even with two stacked
+  drop-shadows, and the low-poly AK3D heightfield reads coarse under zoom. Next
+  LAND-hero run should build the parcel as a REAL extruded solid (side face +
+  contact shadow) OR finally build+A/B the parked 2.5D relit-heightfield Sobel
+  form-shading helper (parked 07-21). This is the single highest-value craft upgrade.
+- Flow fix that helped: slide 5 (THE BET) originally echoed slide 3's message; trimming
+  it to a lighter 2-line assertion carried by the phantom-footprints graphic fixed the
+  4->5 junction and gave the dense 2-6 stretch a micro-breath. Tethering the S4 ISOTYPE
+  outlier with the coord footer + edge-tease kept it inside the sequence.

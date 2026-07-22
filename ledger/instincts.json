@@ -15,9 +15,9 @@
    "id": "compute-3d-composition",
    "learned": "2026-07-08",
    "instinct": "Plan every 3D camera with the horizonY arithmetic in ak3d.js before rendering; never eyeball camera placement.",
-   "evidence": "Two consecutive smoke-test terrain renders buried the mountain range in the bottom 15% of frame until the projection math was computed explicitly. | CONFIRMED 2026-07-08: slide 4 planned the low horizon at an explicit y and used parallax planes, not eyeballed camera; monumental result",
+   "evidence": "Two consecutive smoke-test terrain renders buried the mountain range in the bottom 15% of frame until the projection math was computed explicitly. | CONFIRMED 2026-07-08: slide 4 planned the low horizon at an explicit y and used parallax planes, not eyeballed camera; monumental result | CONFIRMED 2026-07-22: No.14 terrain camera planned via horizonY arithmetic (cy 405, pitch -0.32), terrain filled the lower field as composed.",
    "confidence": 0.9,
-   "last_confirmed": "2026-07-08"
+   "last_confirmed": "2026-07-22"
   },
   {
    "id": "grain-as-tile",
@@ -290,6 +290,30 @@
    "confidence": 0.7,
    "learned": "2026-07-21",
    "last_confirmed": "2026-07-21"
+  },
+  {
+   "id": "cartographic-parcel-motif-chassis",
+   "learned": "2026-07-22",
+   "instinct": "For a land/place/decision story, an oblique AK3D hillshade-relief terrain (shared identical seed+camera across the land slides) plus ONE gold cadastral PARCEL polygon that changes STATE every slide is a strong, offline, low-risk continuity chassis, and a top-down section-grid PLAT register is a clean second register for the data/process beats; the ground->paper register shift reads as one composed sequence.",
+   "evidence": "No.14 (07-22) 'The Giveaway, Surveyed' shipped 8.86 with story-art-fusion 9 and variety 9 on exactly this chassis; flow-critic confirmed the parcel state-machine + palette arc read as one filmstrip.",
+   "confidence": 0.75,
+   "last_confirmed": "2026-07-22"
+  },
+  {
+   "id": "land-hero-must-be-real-solid",
+   "learned": "2026-07-22",
+   "instinct": "A flat SVG polygon 'raised plate' does NOT read as raised even with two stacked drop-shadows, and a low-poly AK3D heightfield reads coarse/gamey under zoom; to climb the rendered ladder for a LAND/parcel hero, build the parcel as a REAL extruded solid (visible side face + contact shadow) or apply the parked 2.5D relit-heightfield Sobel form-shading helper. Do not rely on drop-shadow alone.",
+   "evidence": "Two runs capped artwork-craft at 7 on an underbuilt hero: No.13 (07-21) beluga Canvas fallback flat, No.14 (07-22) cadastral plate read flat despite layered drop-shadows (scorer one_sentence_fix both runs).",
+   "confidence": 0.72,
+   "last_confirmed": "2026-07-22"
+  },
+  {
+   "id": "honest-attribution-as-furniture",
+   "learned": "2026-07-22",
+   "instinct": "When the primary notice does not literally state the punchy fact (the DNR notice never printed 'data centers'), render the attribution as on-slide design furniture (a mono chip 'PER THE PROJECT DECISION AND LOCAL COVERAGE') and credit single-source stats on-slide ('AS REPORTED BY ...'); the fact-checker's attributed/dropped flags become visible honesty and the scorer's honesty check passes clean.",
+   "evidence": "No.14 (07-22): fact-checker flagged 'data centers' as attachment/coverage-sourced and '8/639' as single-outlet; rendering both as attribution chips scored honesty pass and insight-density 8.",
+   "confidence": 0.72,
+   "last_confirmed": "2026-07-22"
   }
  ]
 }
