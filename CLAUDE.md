@@ -44,6 +44,10 @@ claude.ai/code/routines (not in this repo).
 - `.claude/skills/alaska-ai-brief/` — the parametric image renderer (auto-discovered).
 - `.claude/skills/deep-research-ak/` — search-query + credibility checklist for the research phase.
 - `scripts/gmail_draft.py` — builds the Gmail HTML body + base64 image payload.
+- `scripts/publish_feed.py` — pushes each shipped Dispatch video's entry into the
+  alaskaaihq.com/videos feed manifest (docs/videos/videos.json in the
+  Talonsturgill/alaskaaicarousels repo). Called by the dispatch routine Phase 7 step 2b;
+  requires the routine environment to have push access to that repo.
 - `examples/` — the canonical published post used as the style anchor.
 - `prompts/routine_instructions.md` — version-controlled copy of the routine prompt.
 - `assets/` — placeholder for any committed brand assets (cover/profile are static; uploaded to FB manually).
