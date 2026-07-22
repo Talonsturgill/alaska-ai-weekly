@@ -19,6 +19,21 @@ python3 -c "import PIL,numpy,scipy,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
 python3 -c "import librosa, faster_whisper" >/dev/null 2>&1 \
   || pip install --break-system-packages -q librosa faster_whisper \
   || echo "setup_env: WARN librosa/faster_whisper install failed (Gemini VO soundcheck/align will break)"
+# num2words: vo_soundcheck.py's WER canonicalizer converts digit tokens (heard: "4,700",
+# "50") to their spelled-out word form (reference script: "four thousand seven hundred",
+# "fifty") so a correct read doesn't get penalized for spelling numbers differently than
+# it says them. THIRD instance of the silent-missing-dep class (07-18 faster_whisper/
+# resemblyzer, 07-20 librosa/faster_whisper, now this): with num2words absent,
+# _canon_token's ImportError is swallowed by a bare except and every digit token is left
+# unconverted, silently inflating WER on every number-heavy script (2026-07-22: 3 straight
+# real takes scored 0.081-0.144, just over/near the 0.08 ceiling, purely from this, not
+# from an actual bad read). Standard pip install builds a docopt wheel that fails under
+# this env's patched setuptools (same class of failure as the voice-venv chatterbox
+# install below); --no-deps skips it since num2words' core `num2words()` function does
+# not need docopt at import or call time (only its bundled CLI script does).
+python3 -c "import num2words" >/dev/null 2>&1 \
+  || pip install --break-system-packages -q --no-deps num2words \
+  || echo "setup_env: WARN num2words install failed (WER canonicalizer will under-count digit tokens, inflating WER on number-heavy scripts)"
 # DIMENSIONAL ENGINE (3D): taichi is the primary renderer (CPU JIT, ~0.45s/frame @1080x1920)
 python3 -c "import taichi" >/dev/null 2>&1 \
   || pip install --break-system-packages -q taichi
