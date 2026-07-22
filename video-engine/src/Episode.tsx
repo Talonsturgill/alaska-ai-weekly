@@ -111,8 +111,8 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <CornerPings f={f} />
         <rect width={1080} height={1920} fill={NAVY_D} />
+        <CornerPings f={f} />
         {/* schematic map: three base marks connected by a coastline path, 12 parcel tiles tiling in */}
         <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" strokeDashoffset={dashTravel} />
         {Array.from({length: 12}).map((_, i) => {
@@ -170,8 +170,8 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <CornerPings f={f} />
         <FrostVoid f={gf} />
+        <CornerPings f={f} />
         <rect width={1080} height={1920} fill={NAVY_D} opacity={wipeOut} />
         <g transform={`translate(540,${1150 + craneY}) scale(${push})`}>
           {/* a large soft floodlight glow riding the camera group -- a real crane move
@@ -213,8 +213,8 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: '#12161f'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <CornerPings f={f} />
         <rect width={1080} height={1920} fill="#12161f" />
+        <CornerPings f={f} />
         {/* blueprint grid */}
         {Array.from({length: 14}).map((_, i) => <line key={`v${i}`} x1={i * 80} y1={0} x2={i * 80} y2={1920} stroke={GUNMETAL} strokeWidth={1} opacity={0.12} />)}
         {Array.from({length: 24}).map((_, i) => <line key={`h${i}`} x1={0} y1={i * 80} x2={1080} y2={i * 80} stroke={GUNMETAL} strokeWidth={1} opacity={0.12} />)}
@@ -266,8 +266,8 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <CornerPings f={f} />
         <FrostVoid f={from + f} />
+        <CornerPings f={f} />
         <g transform={`translate(540,${960 + dollyY}) scale(${dollyScale}) translate(-540,-960)`}>
           <ellipse cx={540} cy={860} rx={640} ry={540} fill={CAUTION} opacity={0.05} />
           {/* distant gate, small, in the background, nudging */}
@@ -306,8 +306,8 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: '#1a2230'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <CornerPings f={f} />
         <rect width={1080} height={1920} fill="#1a2230" />
+        <CornerPings f={f} />
         <rect y={1200} width={1080} height={720} fill="#0f141c" />
         <g transform={`translate(${truckX},0)`}>
         <ellipse cx={540} cy={700} rx={650} ry={480} fill="#3a4a66" opacity={0.18} />
@@ -360,8 +360,8 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <CornerPings f={f} />
         <FrostVoid f={from + f} />
+        <CornerPings f={f} />
         <g opacity={gustOp}>
           {Array.from({length: 10}).map((_, i) => (
             <line key={i} x1={i * 110} y1={200} x2={i * 110 + 60} y2={220} stroke={FROST} strokeWidth={2} opacity={0.3} />
@@ -394,8 +394,8 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <CornerPings f={f} />
         <FrostVoid f={from + f} />
+        <CornerPings f={f} />
         <g transform={`translate(${540 + gripShift},1150)`}>
           <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={pulse} scale={1.4} />
           <g transform="translate(-260,180)"><TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" /></g>
