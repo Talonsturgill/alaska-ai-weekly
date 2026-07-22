@@ -141,15 +141,27 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
         <CornerPings f={f} breath={0} />
         {/* schematic map: three base marks connected by a coastline path, 12 parcel tiles tiling in */}
         <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" strokeDashoffset={dashTravel} />
+        {/* form-shaded parcel tiles: a FormGradient fill (key->core->shade in the
+            global light dir) + a thin RimLight on the lit top edge + a soft
+            ContactShadow, so the 12 tiles carry the same finish language as the
+            rest of the piece instead of reading as flat clip-art. The pop-in
+            spring + on/off opacity envelope (LIVING_SCREEN/EVENT_CADENCE) is
+            untouched -- only the FILL treatment changed. */}
+        <defs><FormGradient id="s1tile" t={tones(CAUTION)} softness={0.7} /></defs>
         {Array.from({length: 12}).map((_, i) => {
           const gx = 220 + (i % 4) * 180;
           const gy = 560 + Math.floor(i / 4) * 160;
           const on = i < tilesOn ? 1 : 0;
           const pop = spring({frame: f - i * 5, fps: 30, config: {damping: 12, stiffness: 180}});
+          const vis = on * Math.min(1, pop);
           return (
-            <rect key={i} x={gx} y={gy} width={140} height={110} rx={8}
-              fill={CAUTION} opacity={on * 0.28 * Math.min(1, pop)}
-              stroke={on ? CAUTION : GUNMETAL} strokeWidth={3} strokeOpacity={on ? 0.8 : 0.3} />
+            <g key={i}>
+              {on ? <ContactShadow cx={gx + 74} cy={gy + 118} rx={64} ry={9} opacity={0.18 * vis} blur={7} /> : null}
+              <rect x={gx} y={gy} width={140} height={110} rx={8}
+                fill={on ? 'url(#s1tile)' : CAUTION} opacity={on ? 0.42 * vis : 0.28 * vis}
+                stroke={on ? CAUTION : GUNMETAL} strokeWidth={3} strokeOpacity={on ? 0.8 : 0.3} />
+              {on ? <RimLight d={`M${gx + 10},${gy + 7} L${gx + 130},${gy + 7}`} w={2.5} opacity={0.5 * vis} /> : null}
+            </g>
           );
         })}
         {[['JBER', 260], ['EIELSON', 540], ['CLEAR SFS', 820]].map(([label, x], i) => (
@@ -259,8 +271,8 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
           <rect x={-200} y={-120} width={400} height={240} rx={10} fill={FROST} stroke={INK} strokeWidth={6} />
           <text x={0} y={-40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={INK}>DEED</text>
           <text x={0} y={0} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill="#5a6270">STAMPED · DAF</text>
-          <rect x={-90} y={30} width={180} height={54} rx={6} fill="none" stroke="#c0392b" strokeWidth={5} transform="rotate(-6)" />
-          <text x={0} y={68} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill="#c0392b" transform="rotate(-6)">DAF KEEPS LAND</text>
+          <rect x={-114} y={30} width={228} height={54} rx={6} fill="none" stroke="#c0392b" strokeWidth={5} transform="rotate(-6)" />
+          <text x={0} y={68} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill="#c0392b" transform="rotate(-6)" textLength={210} lengthAdjust="spacingAndGlyphs">DAF KEEPS LAND</text>
         </g>
         {/* dollar arrow pumping back to the deed */}
         <g transform="translate(540,1020)" opacity={Math.min(1, deedIn)}>
@@ -279,8 +291,8 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
           <circle r={8} fill={FROST} />
           <text x={0} y={150} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={32} fill={FROST}>UP TO 50 YEARS</text>
           <g opacity={reportedIn} transform="translate(120,-90)">
-            <rect x={-46} y={-20} width={92} height={40} rx={8} fill={CAUTION} stroke={INK} strokeWidth={4} />
-            <text x={0} y={6} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill={INK}>REPORTED</text>
+            <rect x={-64} y={-20} width={128} height={40} rx={8} fill={CAUTION} stroke={INK} strokeWidth={4} />
+            <text x={0} y={6} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill={INK} textLength={112} lengthAdjust="spacingAndGlyphs">REPORTED</text>
           </g>
         </g>
       </svg>
@@ -317,12 +329,21 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
             <CheckpointGateLever x={0} y={0} pulled={nudge} signalPulse={0} />
           </g>
           <g transform={`translate(420,${1300 + e.dy}) scale(${e.scale})`}>
-            <MachineShadow x={0} y={0} scale={1.1} f={f} grow={Math.min(1, e.scale)} />
+            {/* idle life: a slow ambient glow that breathes across the beat + a
+                subtle scale-breath on the tower (planted at its base) so the
+                monolith reads as a live institutional presence, not a static
+                sprite -- consistent with it being faceless (no literal anima). */}
+            <ellipse cx={0} cy={-190} rx={185} ry={330} fill={CAUTION}
+              opacity={(0.05 + 0.045 * (0.5 + 0.5 * Math.sin(f / 21))) * Math.min(1, e.scale)}
+              style={{mixBlendMode: 'screen'}} />
+            <g transform={`scale(${1 + 0.015 * Math.sin(f / 26)})`} style={{transformOrigin: '0px 0px'}}>
+              <MachineShadow x={0} y={0} scale={1.1} f={f} grow={Math.min(1, e.scale)} />
+            </g>
           </g>
           <g transform={`translate(700,900) scale(${Math.min(1, cardIn)})`} opacity={Math.min(1, cardIn) + glowOnce * 0.3}>
             <rect x={-220} y={-150} width={440} height={260} rx={12} fill={FROST} stroke={INK} strokeWidth={6}
               style={{filter: glowOnce > 0.1 ? `drop-shadow(0 0 ${18 * glowOnce}px ${CAUTION})` : undefined}} />
-            <text x={0} y={-100} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={20} fill="#3a4048">ROBERT MORIARTY, DEPT. OF THE AIR FORCE</text>
+            <text x={0} y={-100} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={19} fill="#3a4048" textLength={414} lengthAdjust="spacingAndGlyphs">ROBERT MORIARTY, DEPT. OF THE AIR FORCE</text>
             <text x={0} y={-45} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>&quot;A UNIQUE OPPORTUNITY</text>
             <text x={0} y={-3} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>FOR A TRUE</text>
             <text x={0} y={39} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>PUBLIC-PRIVATE PARTNERSHIP.&quot;</text>

@@ -106,6 +106,11 @@ EVENTS = [
     # S7 (line 8): the signal pulses once, then the loop tick
     (L[8] + 2.0,  "ding",   "standard", 0.0),
     (VIDEO_SECS - _TAIL - 0.4, "tick", "standard", 0.0),
+    # S7 closing hold (wordmark rise / loop point): one soft caution-yellow
+    # signal-light pulse as the sole terminal event — the quiet "button" on the
+    # held breath, sonifying the 41.8s->end tail so the ear keeps advancing with
+    # the eye into the hard loop (bell family, non-consecutive with the loop tick)
+    (VIDEO_SECS - _TAIL + 1.3, "chime", "standard", 0.0),
 ]
 
 SILENCE_DIP_AT = L[8] - 0.6  # the breath before the closing question (the >=6dB gate dip)
