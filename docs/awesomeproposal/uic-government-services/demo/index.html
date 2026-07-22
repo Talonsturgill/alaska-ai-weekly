@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UIC Government Services, Bowhead Family of Companies | Working Demonstration | Alaska AI</title>
+<style>
+:root{
+  --bg:#070b12; --panel:#0d1420; --panel2:#111a28; --line:#1e2b3d;
+  --ink:#eef3fb; --muted:#9fb0c6; --faint:#6f7f96;
+  --aur1:#57e0c8; --aur2:#5aa9ff; --aur3:#9b8cff; --warm:#ffd18c;
+  --good:#5fd0a6; --warn:#ffb35c; --bad:#ff8a8a;
+  --maxw:920px;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  margin:0;background:
+    radial-gradient(1100px 500px at 78% -8%, rgba(90,169,255,.12), transparent 60%),
+    radial-gradient(900px 460px at 8% 4%, rgba(87,224,200,.10), transparent 55%),
+    var(--bg);
+  color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.1px;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px 100px}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+h1{font-size:clamp(26px,4.6vw,42px);line-height:1.08;margin:.1em 0 .3em;font-weight:680;letter-spacing:-.3px}
+h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--aur1);margin:0 0 6px;font-weight:640}
+h3{font-size:clamp(19px,2.6vw,25px);line-height:1.2;margin:.1em 0 .5em;font-weight:640;letter-spacing:-.1px}
+h4{margin:0 0 7px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--aur1);font-weight:640}
+p{margin:0 0 14px}
+a{color:var(--aur2);text-decoration:none;border-bottom:1px solid rgba(90,169,255,.35)}
+strong{color:#fff;font-weight:640}
+.small{font-size:13.5px}
+.faint{color:var(--faint)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.muted{color:var(--muted)}
+
+/* cover */
+.cover{padding:56px 0 24px;border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:11px;font-weight:660;letter-spacing:.02em;margin-bottom:22px}
+.dot{width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--aur1),var(--aur3));
+  box-shadow:0 0 16px 2px rgba(87,224,200,.5)}
+.thesis{font-size:clamp(16px,2.1vw,18px);line-height:1.55;color:var(--muted);max-width:52rem;margin:.4em 0 1.1em;font-weight:440}
+.strapline{font-size:clamp(15px,1.9vw,17px);line-height:1.5;color:var(--ink);max-width:52rem;margin:0 0 1.2em;padding:12px 16px;border-left:2px solid var(--aur1);background:var(--panel)}
+.byline{font-size:12.5px;color:var(--faint);display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:6px}
+.byline .pill{border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted)}
+
+.notice{border:1px solid var(--line);border-left:3px solid var(--warm);background:var(--panel);
+  border-radius:10px;padding:14px 16px;font-size:13.5px;color:var(--muted);margin:22px 0 30px}
+.notice strong{color:var(--warm)}
+
+/* stepper */
+.stepper{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;position:sticky;top:0;z-index:5;
+  background:linear-gradient(var(--bg) 82%, transparent);padding:10px 0}
+.step-btn{flex:1 1 200px;text-align:left;background:var(--panel);border:1px solid var(--line);
+  color:var(--muted);border-radius:10px;padding:10px 13px;font-size:13.5px;cursor:pointer;
+  font-family:inherit;letter-spacing:.01em}
+.step-btn.active{border-color:var(--aur1);color:#fff;background:var(--panel2)}
+.step-btn.locked{opacity:.55;cursor:not-allowed}
+.step-btn .badge{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-top:3px;color:var(--warn)}
+.step-btn.active .badge, .step-btn:not(.locked) .badge{color:var(--good)}
+
+.banner{margin:0 0 18px;padding:12px 15px;border-radius:10px;border:1px solid rgba(255,179,92,.5);
+  background:rgba(255,179,92,.08);color:#ffd9a8;font-size:14px}
+
+/* panels */
+.step-panel{padding:20px 0 40px;border-bottom:1px solid var(--line)}
+.step-panel:last-of-type{border-bottom:0}
+.callout-required{border:1px solid rgba(255,179,92,.45);background:rgba(255,179,92,.07);
+  border-radius:10px;padding:12px 15px;color:#ffd9a8;font-size:14.5px;margin:10px 0 16px}
+
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 14px}
+.flag-sample{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bad);
+  border:1px solid rgba(255,138,138,.4);border-radius:6px;padding:3px 8px}
+
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:14px;padding:16px 18px;margin:0 0 14px}
+.card p:last-child{margin-bottom:0}
+.src{font-size:12px;color:var(--faint);margin-top:4px}
+
+.sol-card .clause-list{margin:8px 0 0;padding-left:20px}
+.sol-card .clause-list li{margin-bottom:9px;color:var(--ink)}
+
+.btn{font-family:inherit;font-size:14px;background:var(--panel2);color:var(--ink);
+  border:1px solid var(--line);border-radius:9px;padding:10px 16px;cursor:pointer}
+.btn.primary{border-color:var(--aur1);color:#04231c;background:linear-gradient(180deg,var(--aur1),#3fc3a9)}
+.btn.small{font-size:13px;padding:7px 12px}
+.btn.warn{border-color:rgba(255,179,92,.5)}
+.btn.ghost{background:transparent}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+.status-line{font-size:14px;color:var(--muted);margin:10px 0}
+.status-line.good{color:var(--good)}
+
+.result-card{margin-top:14px}
+
+/* matrix rows */
+.row{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 10px;background:var(--panel)}
+.row-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.rid{font-family:ui-monospace,monospace;font-size:12px;color:var(--faint);border:1px solid var(--line);
+  border-radius:6px;padding:1px 7px}
+.rcat{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--aur2);
+  border:1px solid rgba(90,169,255,.35);border-radius:6px;padding:2px 8px}
+.rvol{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.rtext{font-size:14.5px;color:var(--ink);margin:0 0 4px}
+.rsec{margin:0 0 8px}
+.rnote{font-size:13.5px;color:var(--warm);margin:0 0 10px}
+.rctrl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rstatus{font-size:13px;color:var(--faint)}
+.row.is-approved{border-color:rgba(95,208,166,.5)}
+.row.is-approved .rstatus{color:var(--good)}
+.row.is-flagged{border-color:rgba(255,179,92,.5)}
+.row.is-flagged .rstatus{color:var(--warn)}
+.row.is-routed{border-color:rgba(155,140,255,.5)}
+.row.is-routed .rstatus{color:var(--aur3)}
+
+.signoff-card{border-color:rgba(87,224,200,.4)}
+.confirm-row{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:var(--ink);margin:10px 0 14px}
+.confirm-row input{margin-top:4px}
+
+.locked-card{opacity:.75;border-style:dashed}
+.locked-card p{color:var(--faint);font-style:italic}
+
+/* handoff document */
+.doc-sheet{position:relative;background:#f4f1e9;color:#1c2130;border-radius:12px;
+  padding:38px 40px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);font-size:14.5px;line-height:1.55}
+.doc-sheet h4{color:#1c2130;font-size:12.5px}
+.doc-sheet hr{border:none;border-top:1px solid #d8d2c2;margin:18px 0}
+.watermark{position:absolute;top:34%;left:-15%;width:140%;text-align:center;transform:rotate(-16deg);
+  font-size:clamp(28px,5.4vw,50px);font-weight:800;letter-spacing:.03em;color:rgba(178,40,40,.14);
+  pointer-events:none;user-select:none;white-space:nowrap}
+.slip{position:relative;font-size:13.5px;color:#333c4d;display:grid;gap:5px;margin-bottom:6px}
+.slip .lab{font-weight:700;color:#1c2130;margin-right:6px}
+.docsrc{font-size:12px;color:#767a86;margin-top:-6px}
+.lockedtext{color:#767a86;font-style:italic}
+.docfoot{font-size:13px;color:#4a3a2a;background:#efe2c9;border-radius:8px;padding:10px 13px}
+
+/* operation + honesty sections */
+.sec{padding:34px 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:0}
+.road{display:grid;gap:12px}
+@media(min-width:720px){.road{grid-template-columns:repeat(3,1fr)}}
+.lane{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 17px}
+.lane .num{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.lane p{font-size:14.5px;margin:0}
+
+ul.clean{list-style:none;padding:0;margin:0 0 12px}
+ul.clean li{padding:8px 0 8px 22px;position:relative;border-bottom:1px solid rgba(30,43,61,.6);font-size:14.5px;color:var(--muted)}
+ul.clean li:last-child{border-bottom:0}
+ul.clean li:before{content:"";position:absolute;left:2px;top:16px;width:7px;height:7px;border-radius:50%;
+  background:var(--aur2);box-shadow:0 0 9px rgba(90,169,255,.6)}
+
+footer{padding:30px 0 10px;font-size:12.5px;color:var(--faint)}
+
+@media print{
+  body{background:#fff;color:#111}
+  .stepper, .banner, .status-line, button{display:none !important}
+  [hidden]{display:block !important}
+  .card, .doc-sheet, .row{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="cover">
+    <div class="mark"><span class="dot"></span> Alaska AI</div>
+    <div class="eyebrow">Working demonstration, prepared for UIC Government Services</div>
+    <h1>RFP Shredder and Compliance Matrix, with a first-draft assembly assistant</h1>
+    <p class="thesis">This is a scripted walkthrough of the build proposed in your Field Study. It runs entirely inside this one file, offline, with no connection to any live system and no UIC data of any kind. The sample solicitation and requirement text below are illustrative examples built only for this demonstration, not a real pursuit.</p>
+    <div class="strapline">A checkpointed workflow, not an agent. A solicitation becomes a compliance matrix. A human has to approve it. Only then does drafting begin. Pricing and the Technical Volume are never touched by this system, at any step.</div>
+    <div class="byline">
+      <span class="pill">Bowhead Family of Companies</span>
+      <span class="pill">UIC Government Services</span>
+      <span class="pill">Federal 8(a) contracting</span>
+      <span class="pill">Prepared by Alaska AI</span>
+    </div>
+  </header>
+
+  <div class="notice"><strong>What you are looking at.</strong> A working, click-through model of the tool described in your Field Study. It identifies itself honestly as an Alaska AI demonstration at every step, it never pretends to be a person, and it never processes anything classified or sensitive. Click through the four steps below in order. Steps 2 through 4 stay locked until the step before them is actually done, the same way the real build would work.</div>
+
+  <nav class="stepper" id="stepper">
+    <button class="step-btn active" data-step="1" onclick="goToStep(1)">Step 1<span class="badge">Available</span></button>
+    <button class="step-btn locked" data-step="2" onclick="goToStep(2)">Step 2<span class="badge">Locked</span></button>
+    <button class="step-btn locked" data-step="3" onclick="goToStep(3)">Step 3<span class="badge">Locked</span></button>
+    <button class="step-btn locked" data-step="4" onclick="goToStep(4)">Step 4<span class="badge">Locked</span></button>
+  </nav>
+  <div id="banner" class="banner" hidden></div>
+
+  <!-- STEP 1 -->
+  <section class="step-panel" data-step="1">
+    <h2>Step 1 of 4</h2>
+    <h3>Solicitation Intake and Shredding</h3>
+    <p>Your shared BD and proposal staff choose which live solicitation goes into the tool. Nothing runs on its own here. Below is a sample solicitation excerpt built only for this demonstration.</p>
+    <div class="tag-row">
+      <span class="flag-sample">Sample, illustrative only</span>
+      <span class="flag-sample">Not a real solicitation</span>
+    </div>
+    <div class="card sol-card">
+      <h4>Sample solicitation excerpt</h4>
+      <p class="mono small faint">Solicitation No. XXXX-26-R-XXXX, a sample number for this demonstration only</p>
+      <p class="mono small faint">Section L, Instructions to Offerors, excerpt</p>
+      <ol class="clause-list">
+        <li>The offeror shall demonstrate a minimum of five years of relevant past performance on federal information technology support contracts of similar scope and dollar value.</li>
+        <li>The offeror shall submit a Small Business Subcontracting Plan in accordance with FAR 52.219-9, or provide evidence of small business status.</li>
+        <li>Key personnel proposed for the Program Manager and Information System Security Officer positions shall hold an active DoD Secret clearance at time of proposal submission.</li>
+        <li>The offeror shall describe its approach to maintaining NIST SP 800-171 compliance across all covered contractor information systems.</li>
+        <li>The offeror shall propose a transition plan not to exceed 30 calendar days from contract award.</li>
+        <li>The offeror shall submit invoices monthly in accordance with DFARS 252.232-7003.</li>
+        <li>The offeror shall submit a completed price proposal in accordance with Section B and the pricing template at Attachment 3.</li>
+      </ol>
+    </div>
+    <button id="shredBtn" class="btn primary" onclick="shredSolicitation()">Shred This Solicitation</button>
+    <p id="shredStatus" class="status-line" hidden>Reading the solicitation and proposing candidate requirements. This is extraction only. Nothing is approved yet.</p>
+    <div id="shredResult" class="card result-card" hidden>
+      <h4>7 candidate requirements proposed</h4>
+      <p>The shredder read the sample solicitation and proposed 7 candidate requirements below. It does not decide which are correct. That decision belongs to your proposal manager in Step 2, and it is required before anything else happens.</p>
+      <p><button class="btn" onclick="goToStep(2)">Go to Step 2, Compliance Matrix Sign-off</button></p>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step-panel" data-step="2" hidden>
+    <h2>Step 2 of 4</h2>
+    <h3>Compliance Matrix, Human Sign-off Required</h3>
+    <p class="callout-required">This step cannot be bypassed. No draft gets assembled until a human reviews every row below and signs off on the matrix. There is no exception built into this tool.</p>
+    <p>Review each requirement the way your proposal manager would. Approve it, flag it for correction, or acknowledge that it routes straight to your existing human process. Every row needs an action. None are pre-approved.</p>
+
+    <div id="matrixRows">
+      <div class="row" data-row="1" data-status="pending">
+        <div class="row-top"><span class="rid">R1</span><span class="rcat">Past Performance</span><span class="rvol faint">Past Performance Volume</span></div>
+        <p class="rtext">"The offeror shall demonstrate a minimum of five years of relevant past performance on federal information technology support contracts of similar scope and dollar value."</p>
+        <p class="rsec small faint">Section L.1, sample solicitation</p>
+        <div class="rctrl">
+          <button class="btn small" onclick="setRow(this,'approved')">Approve</button>
+          <button class="btn small warn" onclick="setRow(this,'flagged')">Flag for correction</button>
+          <span class="rstatus">Pending review</span>
+        </div>
+      </div>
+
+      <div class="row" data-row="2" data-status="pending">
+        <div class="row-top"><span class="rid">R2</span><span class="rcat">Small Business</span><span class="rvol faint">Business Volume</span></div>
+        <p class="rtext">"The offeror shall submit a Small Business Subcontracting Plan in accordance with FAR 52.219-9, or provide evidence of small business status."</p>
+        <p class="rsec small faint">Section L.2, sample solicitation</p>
+        <div class="rctrl">
+          <button class="btn small" onclick="setRow(this,'approved')">Approve</button>
+          <button class="btn small warn" onclick="setRow(this,'flagged')">Flag for correction</button>
+          <span class="rstatus">Pending review</span>
+        </div>
+      </div>
+
+      <div class="row" data-row="3" data-status="pending">
+        <div class="row-top"><span class="rid">R3</span><span class="rcat">Staffing and Security</span><span class="rvol faint">Management Volume</span></div>
+        <p class="rtext">"Key personnel proposed for the Program Manager and Information System Security Officer positions shall hold an active DoD Secret clearance at time of proposal submission."</p>
+        <p class="rsec small faint">Section L.3, sample solicitation</p>
+        <div class="rctrl">
+          <button class="btn small" onclick="setRow(this,'approved')">Approve</button>
+          <button class="btn small warn" onclick="setRow(this,'flagged')">Flag for correction</button>
+          <span class="rstatus">Pending review</span>
+        </div>
+      </div>
+
+      <div class="row" data-row="4" data-status="pending">
+        <div class="row-top"><span class="rid">R4</span><span class="rcat">Cybersecurity</span><span class="rvol faint">Technical Volume</span></div>
+        <p class="rtext">"The offeror shall describe its approach to maintaining NIST SP 800-171 compliance across all covered contractor information systems."</p>
+        <p class="rsec small faint">Section L.4, sample solicitation</p>
+        <p class="rnote">This is Technical Volume content. This tool never drafts the Technical Volume. It stays entirely with your engineering team, the same as today.</p>
+        <div class="rctrl">
+          <button class="btn small" onclick="setRow(this,'routed')">Acknowledge, route to your team</button>
+          <span class="rstatus">Pending review</span>
+        </div>
+      </div>
+
+      <div class="row" data-row="5" data-status="pending">
+        <div class="row-top"><span class="rid">R5</span><span class="rcat">Transition</span><span class="rvol faint">Management Volume</span></div>
+        <p class="rtext">"The offeror shall propose a transition plan not to exceed 30 calendar days from contract award."</p>
+        <p class="rsec small faint">Section L.5, sample solicitation</p>
+        <div class="rctrl">
+          <button class="btn small" onclick="setRow(this,'approved')">Approve</button>
+          <button class="btn small warn" onclick="setRow(this,'flagged')">Flag for correction</button>
+          <span class="rstatus">Pending review</span>
+        </div>
+      </div>
+
+      <div class="row" data-row="6" data-status="pending">
+        <div class="row-top"><span class="rid">R6</span><span class="rcat">Administration</span><span class="rvol faint">Administrative Volume</span></div>
+        <p class="rtext">"The offeror shall submit invoices monthly in accordance with DFARS 252.232-7003."</p>
+        <p class="rsec small faint">Section L.6, sample solicitation</p>
+        <div class="rctrl">
+          <button class="btn small" onclick="setRow(this,'approved')">Approve</button>
+          <button class="btn small warn" onclick="setRow(this,'flagged')">Flag for correction</button>
+          <span class="rstatus">Pending review</span>
+        </div>
+      </div>
+
+      <div class="row" data-row="7" data-status="pending">
+        <div class="row-top"><span class="rid">R7</span><span class="rcat">Pricing</span><span class="rvol faint">Price Volume</span></div>
+        <p class="rtext">"The offeror shall submit a completed price proposal in accordance with Section B and the pricing template at Attachment 3."</p>
+        <p class="rsec small faint">Section L.7, sample solicitation</p>
+        <p class="rnote">This is Price Volume content. This tool never drafts pricing. DCAA-sensitive pricing stays entirely with your pricing team, the same as today.</p>
+        <div class="rctrl">
+          <button class="btn small" onclick="setRow(this,'routed')">Acknowledge, route to your team</button>
+          <span class="rstatus">Pending review</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card signoff-card">
+      <h4>Proposal Manager sign-off</h4>
+      <p class="small muted"><span id="pendingCount">7</span> of <span id="totalCount">7</span> requirements still need review.</p>
+      <label class="confirm-row"><input type="checkbox" id="confirmSignoff"> I have reviewed every requirement above and I approve this compliance matrix for drafting.</label>
+      <button id="signoffBtn" class="btn primary" onclick="attemptSignoff()">Approve Matrix and Continue</button>
+      <p id="signoffSuccess" class="status-line good" hidden>Matrix signed off. Step 3 is now available.</p>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step-panel" data-step="3" hidden>
+    <h2>Step 3 of 4</h2>
+    <h3>First-Draft Assembly</h3>
+    <p>Only the approved and routed rows from your signed-off matrix move forward. Drafting pulls only from a non-CUI boilerplate and past-proposal corpus, scoped to one pilot subsidiary at launch. It never touches pricing and it never touches the Technical Volume.</p>
+    <button id="assembleBtn" class="btn primary" onclick="assembleDraft()">Assemble First-Pass Draft</button>
+    <p id="assembleStatus" class="status-line" hidden>Retrieving matching boilerplate passages from the non-CUI corpus.</p>
+
+    <div id="draftPreview" hidden>
+      <div class="card">
+        <h4>Corporate Capability Overview</h4>
+        <p>Bowhead, the federal services family of Ukpeagvik Inupiat Corporation, supports more than 3,000 employees across over 300 prime and subcontracts through a family of mostly 8(a)-certified subsidiaries.</p>
+        <p class="src">Source, Corporate Capability Statement, non-CUI pilot corpus. Underlying figures verified at bowhead.com/about.</p>
+      </div>
+      <div class="card">
+        <h4>Past Performance, R1</h4>
+        <p>[First-pass reference pulled from the past-proposal library, matched to the five-year IT support requirement. Needs SME confirmation of currency and relevance before use.]</p>
+        <p class="src">Source, Past Performance Library, non-CUI pilot corpus.</p>
+      </div>
+      <div class="card">
+        <h4>Small Business Subcontracting Plan, R2</h4>
+        <p>[Standard FAR 52.219-9 format template pulled from the boilerplate library. Subcontracting goals and points of contact still need to be entered.]</p>
+        <p class="src">Source, Small Business Subcontracting Plan Template, non-CUI pilot corpus.</p>
+      </div>
+      <div class="card">
+        <h4>Key Personnel and Staffing, R3</h4>
+        <p>[Standard resume format and clearance-verification language pulled from the staffing boilerplate library. Named candidates and clearance verification still need to be inserted.]</p>
+        <p class="src">Source, Staffing and Security Boilerplate Library, non-CUI pilot corpus.</p>
+      </div>
+      <div class="card">
+        <h4>Transition Plan, R5</h4>
+        <p>[Standard 30-day transition methodology template pulled from the boilerplate library. Contract-specific milestones still need to be filled in.]</p>
+        <p class="src">Source, Transition Plan Template, non-CUI pilot corpus.</p>
+      </div>
+      <div class="card locked-card">
+        <h4>Technical Volume, R4</h4>
+        <p>Not generated. Existing human process. Written entirely by your engineering team, the same as today.</p>
+      </div>
+      <div class="card locked-card">
+        <h4>Price Volume, R7</h4>
+        <p>Not generated. Existing human process. DCAA-sensitive pricing stays entirely with your pricing team, the same as today.</p>
+      </div>
+      <p><button class="btn" onclick="goToStep(4)">Go to Step 4, the Handoff Artifact</button></p>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step-panel" data-step="4" hidden>
+    <h2>Step 4 of 4</h2>
+    <h3>The Handoff Artifact</h3>
+    <p>This is what actually lands in your proposal lead's hands. Not a chat window, a document, clearly marked, with the real review still ahead of it.</p>
+
+    <div class="doc-sheet">
+      <div class="watermark">DRAFT, NOT FOR SUBMISSION</div>
+      <div class="slip">
+        <div><span class="lab">To</span> Assigned proposal lead and subject matter experts</div>
+        <div><span class="lab">From</span> RFP Shredder and Compliance Matrix, a scripted Alaska AI demonstration, not a person</div>
+        <div><span class="lab">Re</span> First-pass draft, sample solicitation XXXX-26-R-XXXX</div>
+        <div><span class="lab">Status</span> Draft. Not for submission.</div>
+        <div><span class="lab">Compliance matrix</span> Signed off by your proposal manager, <span id="signoffTimestamp">not yet recorded in this session</span></div>
+      </div>
+      <hr>
+      <h4>Corporate Capability Overview</h4>
+      <p>Bowhead, the federal services family of Ukpeagvik Inupiat Corporation, supports more than 3,000 employees across over 300 prime and subcontracts through a family of mostly 8(a)-certified subsidiaries.</p>
+      <p class="docsrc">Source, Corporate Capability Statement, non-CUI pilot corpus.</p>
+      <h4>Past Performance</h4>
+      <p>[First-pass reference pulled from the past-proposal library. Requires SME confirmation before use.]</p>
+      <p class="docsrc">Source, Past Performance Library, non-CUI pilot corpus.</p>
+      <h4>Small Business Subcontracting Plan</h4>
+      <p>[Standard FAR 52.219-9 template. Needs subcontracting goals and points of contact entered.]</p>
+      <p class="docsrc">Source, Small Business Subcontracting Plan Template, non-CUI pilot corpus.</p>
+      <h4>Key Personnel and Staffing</h4>
+      <p>[Standard resume and clearance-verification format. Needs named candidates and verification inserted.]</p>
+      <p class="docsrc">Source, Staffing and Security Boilerplate Library, non-CUI pilot corpus.</p>
+      <h4>Transition Plan</h4>
+      <p>[Standard 30-day transition methodology template. Needs contract-specific milestones filled in.]</p>
+      <p class="docsrc">Source, Transition Plan Template, non-CUI pilot corpus.</p>
+      <h4>Technical Volume</h4>
+      <p class="lockedtext">Not included. Existing human process. Written entirely by your engineering team.</p>
+      <h4>Price Volume</h4>
+      <p class="lockedtext">Not included. Existing human process. Owned entirely by your pricing team.</p>
+      <hr>
+      <p class="docfoot">This draft is not submittable as it stands. It requires subject-matter-expert review, a completed Technical Volume, and a completed Price Volume before it goes anywhere near a contracting officer.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>How this sits in your operation</h2>
+    <h3>Three plain steps, not a black box</h3>
+    <div class="road">
+      <div class="lane">
+        <div class="num">One</div>
+        <p>Your BD and proposal staff choose which live solicitation goes through the tool. Nothing runs on its own and nothing gets picked for you.</p>
+      </div>
+      <div class="lane">
+        <div class="num">Two</div>
+        <p>Every compliance matrix needs your proposal manager's sign-off before any draft gets written. Every time, with no exception built into the tool.</p>
+      </div>
+      <div class="lane">
+        <div class="num">Three</div>
+        <p>The first-pass draft goes to your subject matter experts to edit, never to a contracting officer. Pricing and the Technical Volume stay written entirely by your people, the way they are today.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>What this demo is, and is not</h2>
+    <ul class="clean">
+      <li>This is a scripted demonstration, built by Alaska AI, of the build described in your Field Study. It is not a live system and it is not connected to anything.</li>
+      <li>The solicitation and requirement text in Steps 1 through 4 are illustrative samples built for this demonstration. No real UIC or Bowhead solicitation, proposal, or contract data was used anywhere in this file.</li>
+      <li>The build is scoped as a fixed, checkpointed workflow, not an autonomous agent. The human sign-off on the compliance matrix is mandatory and cannot be skipped, that gate is the whole point.</li>
+      <li>At launch, the corpus this tool draws from is scoped to non-CUI, public content only, and to one pilot subsidiary. No CUI-classified content is processed by this build until your own compliance team clears an infrastructure path for that, per your Field Study.</li>
+      <li>This tool never drafts DCAA-sensitive pricing narratives and never drafts the Technical Volume. Both stay entirely with your people, exactly as scoped in your Field Study.</li>
+      <li>The Field Study attached alongside this demonstration carries the full plan, the honest ROI range, the risks, and the open questions. This file is the walkthrough, that document is the record.</li>
+    </ul>
+    <p><button class="btn ghost" onclick="location.reload()">Reset this demo</button></p>
+  </section>
+
+  <footer>
+    Prepared by Alaska AI for UIC Government Services, the Bowhead Family of Companies, Ukpeagvik Inupiat Corporation. A scripted demonstration of a proposed build, not a live product.
+  </footer>
+</div>
+
+<script>
+var state = { shredded:false, signedOff:false, drafted:false };
+
+var lockedMessages = {
+  2: "Step 2 is locked until a solicitation has been shredded in Step 1.",
+  3: "Step 3 is locked until the compliance matrix in Step 2 has a completed human sign-off. That gate cannot be skipped.",
+  4: "Step 4 is locked until a first-pass draft has been assembled in Step 3."
+};
+
+function showBanner(msg){
+  var b = document.getElementById('banner');
+  b.textContent = msg;
+  b.hidden = false;
+}
+function hideBanner(){
+  document.getElementById('banner').hidden = true;
+}
+
+function setTabLocked(n, locked){
+  var btn = document.querySelector('.step-btn[data-step="'+n+'"]');
+  var badge = btn.querySelector('.badge');
+  if(locked){
+    btn.classList.add('locked');
+    badge.textContent = 'Locked';
+  } else {
+    btn.classList.remove('locked');
+    badge.textContent = 'Available';
+  }
+}
+
+function goToStep(n){
+  var btn = document.querySelector('.step-btn[data-step="'+n+'"]');
+  if(btn.classList.contains('locked')){
+    showBanner(lockedMessages[n]);
+    return;
+  }
+  hideBanner();
+  document.querySelectorAll('.step-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.step-panel').forEach(function(p){
+    p.hidden = (p.getAttribute('data-step') !== String(n));
+  });
+  window.scrollTo({top: btn.offsetTop - 90, behavior:'smooth'});
+}
+
+function shredSolicitation(){
+  var btn = document.getElementById('shredBtn');
+  btn.disabled = true;
+  document.getElementById('shredStatus').hidden = false;
+  setTimeout(function(){
+    document.getElementById('shredStatus').hidden = true;
+    document.getElementById('shredResult').hidden = false;
+    state.shredded = true;
+    setTabLocked(2, false);
+  }, 1300);
+}
+
+function setRow(btn, status){
+  var row = btn.closest('.row');
+  row.setAttribute('data-status', status);
+  var label = status === 'approved' ? 'Approved'
+            : status === 'flagged' ? 'Flagged for correction'
+            : 'Routed to human process';
+  row.querySelector('.rstatus').textContent = label;
+  row.classList.remove('is-approved','is-flagged','is-routed');
+  row.classList.add('is-' + status);
+  updateReviewCount();
+}
+
+function updateReviewCount(){
+  var rows = document.querySelectorAll('#matrixRows .row');
+  var pending = 0;
+  rows.forEach(function(r){ if(r.getAttribute('data-status') === 'pending') pending++; });
+  document.getElementById('pendingCount').textContent = pending;
+  document.getElementById('totalCount').textContent = rows.length;
+}
+
+function attemptSignoff(){
+  var rows = document.querySelectorAll('#matrixRows .row');
+  var pending = 0;
+  rows.forEach(function(r){ if(r.getAttribute('data-status') === 'pending') pending++; });
+  var confirmBox = document.getElementById('confirmSignoff');
+
+  if(pending > 0){
+    showBanner(pending + ' of ' + rows.length + ' requirements still need review. This gate does not open until every row has been reviewed. Nothing moves to drafting until then.');
+    return;
+  }
+  if(!confirmBox.checked){
+    showBanner('Check the confirmation box below the matrix to complete sign-off. This step requires an explicit human action, not a default.');
+    return;
+  }
+  hideBanner();
+  state.signedOff = true;
+  setTabLocked(3, false);
+  document.getElementById('signoffSuccess').hidden = false;
+  document.getElementById('signoffBtn').disabled = true;
+
+  var now = new Date();
+  var stamp = now.toLocaleDateString(undefined, {year:'numeric',month:'long',day:'numeric'}) + ', ' + now.toLocaleTimeString();
+  document.getElementById('signoffTimestamp').textContent = stamp + ' (this session)';
+}
+
+function assembleDraft(){
+  document.getElementById('assembleBtn').disabled = true;
+  document.getElementById('assembleStatus').hidden = false;
+  setTimeout(function(){
+    document.getElementById('assembleStatus').hidden = true;
+    document.getElementById('draftPreview').hidden = false;
+    state.drafted = true;
+    setTabLocked(4, false);
+  }, 1300);
+}
+</script>
+</body>
+</html>

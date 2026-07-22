@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reservations-Staff Copilot, a demonstration for Alaska Wildland Adventures</title>
+<style>
+:root{
+  --bg:#070b12; --panel:#0d1420; --panel2:#111a28; --line:#1e2b3d;
+  --ink:#eef3fb; --muted:#9fb0c6; --faint:#6f7f96;
+  --aur1:#57e0c8; --aur2:#5aa9ff; --aur3:#9b8cff; --warm:#ffd18c;
+  --good:#5fd0a6; --warn:#ffb35c;
+  --maxw:900px;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  margin:0;background:
+    radial-gradient(1100px 500px at 78% -8%, rgba(90,169,255,.12), transparent 60%),
+    radial-gradient(900px 460px at 8% 4%, rgba(87,224,200,.10), transparent 55%),
+    var(--bg);
+  color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.1px;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px 90px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,46px);line-height:1.06;margin:.1em 0 .3em;font-weight:680;letter-spacing:-.4px}
+h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--aur1);margin:0 0 4px;font-weight:640}
+h3{font-size:clamp(19px,2.8vw,25px);line-height:1.18;margin:.1em 0 .5em;font-weight:640;letter-spacing:-.2px}
+p{margin:0 0 14px}
+a{color:var(--aur2);text-decoration:none;border-bottom:1px solid rgba(90,169,255,.35)}
+strong{color:#fff;font-weight:640}
+.small{font-size:13.5px;color:var(--muted)}
+.faint{color:var(--faint)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+.cover{padding:70px 0 28px;border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:11px;font-weight:660;letter-spacing:.02em}
+.dot{width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--aur1),var(--aur3));
+  box-shadow:0 0 16px 2px rgba(87,224,200,.5)}
+.thesis{font-size:clamp(17px,2.4vw,20px);line-height:1.5;color:var(--muted);max-width:44rem;margin:.3em 0 1.1em;font-weight:460}
+.byline{font-size:13px;color:var(--faint);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-bottom:16px}
+.byline .pill{border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted)}
+.scriptline{font-size:13px;color:var(--warm);border:1px solid rgba(255,209,140,.3);
+  background:rgba(255,209,140,.06);border-radius:10px;padding:9px 13px;display:inline-block;max-width:100%}
+
+.sec{padding:32px 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:0}
+.grid{display:grid;gap:14px}
+@media(min-width:680px){.grid.c2{grid-template-columns:1fr 1fr}}
+@media(min-width:760px){.grid.c3{grid-template-columns:repeat(3,1fr)}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:14px;padding:18px 19px}
+.card h4{margin:0 0 7px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--aur1);font-weight:640}
+.card p:last-child{margin-bottom:0}
+.quote{border-left:2px solid var(--aur1);padding:6px 0 6px 18px;margin:4px 0 12px;color:#dbe6f5;font-size:16.5px;line-height:1.55}
+.src{font-size:12px;color:var(--faint)}
+.src a{color:var(--faint);border-bottom-color:rgba(111,127,150,.4)}
+ul.clean{list-style:none;padding:0;margin:0 0 12px}
+ul.clean li{padding:7px 0 7px 22px;position:relative;border-bottom:1px solid rgba(30,43,61,.6)}
+ul.clean li:last-child{border-bottom:0}
+ul.clean li:before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;
+  background:var(--aur2);box-shadow:0 0 9px rgba(90,169,255,.6)}
+
+.callout{background:linear-gradient(180deg,rgba(255,179,92,.07),rgba(255,179,92,.02));
+  border:1px solid rgba(255,179,92,.28);border-radius:14px;padding:17px 19px}
+.callout h3{color:var(--warm);margin-top:0}
+
+/* scenario picker */
+.scenario-picker{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}
+@media(min-width:720px){.scenario-picker{grid-template-columns:repeat(4,1fr)}}
+.scenario-btn{text-align:left;cursor:pointer;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:13px 14px;color:var(--ink);font:inherit;transition:border-color .15s,transform .1s}
+.scenario-btn:hover{border-color:rgba(90,169,255,.5)}
+.scenario-btn.active{border-color:var(--aur1);box-shadow:0 0 0 1px rgba(87,224,200,.25),0 0 22px rgba(87,224,200,.1)}
+.scenario-btn .lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+.scenario-btn .lab.warn{color:var(--warm)}
+.scenario-btn .ttl{font-size:14.5px;font-weight:620;line-height:1.3}
+.scenario-btn .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+
+/* step dots */
+.stepbar{display:flex;align-items:center;gap:6px;margin:2px 0 20px;flex-wrap:wrap}
+.stepdot{display:flex;align-items:center;gap:8px;cursor:pointer;padding:6px 10px;border-radius:999px;
+  border:1px solid var(--line);background:var(--panel);font-size:12px;color:var(--faint);letter-spacing:.04em}
+.stepdot .n{width:18px;height:18px;border-radius:50%;border:1px solid var(--faint);display:flex;
+  align-items:center;justify-content:center;font-size:10.5px;color:var(--faint)}
+.stepdot.active{color:var(--ink);border-color:var(--aur1)}
+.stepdot.active .n{border-color:var(--aur1);color:var(--aur1);background:rgba(87,224,200,.08)}
+.stepdot.done .n{border-color:var(--aur2);color:var(--aur2)}
+.stepline{flex:1;height:1px;background:var(--line);min-width:12px}
+
+.stage{display:none}
+.stage.show{display:block;animation:rise .25s ease}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--muted)}
+.tag.channel{color:var(--aur2);border-color:rgba(90,169,255,.4)}
+
+/* inline reference chips inside draft text */
+.ref{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:700;padding:1px 6px;
+  border-radius:5px;vertical-align:middle;margin:0 1px;cursor:default;letter-spacing:.02em}
+.ref.source{color:var(--aur1);border:1px solid rgba(87,224,200,.4);background:rgba(87,224,200,.07)}
+.ref.lookup{color:var(--warn);border:1px solid rgba(255,179,92,.45);background:rgba(255,179,92,.08)}
+.ref.nosource{color:var(--aur3);border:1px solid rgba(155,140,255,.45);background:rgba(155,140,255,.08)}
+.merge{border:1px dashed var(--faint);border-radius:5px;padding:0 5px;color:var(--muted);font-style:italic}
+
+.draftbox{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+  font-size:15px;line-height:1.7}
+.draftbox p{margin:0 0 12px}
+.draftbox .sign{color:var(--muted);margin-top:4px}
+
+.ground{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+.ground .row{display:flex;gap:10px;font-size:13px;color:var(--muted);padding:6px 0}
+.ground .row .badge{flex:0 0 auto;font-size:10px;font-weight:700;letter-spacing:.06em;border-radius:5px;
+  padding:2px 7px;height:fit-content}
+.ground .row .badge.source{color:var(--aur1);border:1px solid rgba(87,224,200,.4)}
+.ground .row .badge.lookup{color:var(--warn);border:1px solid rgba(255,179,92,.45)}
+.ground .row .badge.nosource{color:var(--aur3);border:1px solid rgba(155,140,255,.45)}
+
+.retrieval-strip{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 4px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:9px 12px;font-size:13px;max-width:340px}
+.chip .doc{color:#fff;font-weight:620;font-size:13.5px}
+.chip .note{color:var(--muted);font-size:12.5px;margin-top:3px}
+.nomatch{border:1px solid rgba(155,140,255,.4);background:rgba(155,140,255,.06);border-radius:10px;
+  padding:13px 15px;color:var(--muted);font-size:14px}
+.nomatch strong{color:var(--aur3)}
+
+/* the handoff artifact panel */
+.artifact{border:1px solid rgba(87,224,200,.35);border-radius:16px;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(87,224,200,.08),0 22px 50px -30px rgba(87,224,200,.35);margin-top:4px}
+.artifact-bar{background:var(--panel2);border-bottom:1px solid var(--line);padding:11px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.artifact-bar .name{font-size:13px;color:var(--ink);font-weight:620}
+.artifact-bar .staffonly{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);
+  border:1px solid rgba(255,209,140,.35);border-radius:6px;padding:2px 8px}
+.artifact-body{background:var(--panel);padding:18px 18px 20px}
+textarea.editbox{width:100%;min-height:190px;background:var(--panel2);border:1px solid var(--line);
+  border-radius:10px;color:var(--ink);font:14.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  padding:14px 15px;resize:vertical}
+textarea.editbox:focus{outline:none;border-color:var(--aur2)}
+.artifact-actions{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+button.btn{font:inherit;font-size:14px;font-weight:620;border-radius:10px;padding:10px 18px;cursor:pointer;
+  border:1px solid var(--line);background:var(--panel2);color:var(--ink);transition:border-color .15s}
+button.btn.primary{border-color:rgba(87,224,200,.5);background:rgba(87,224,200,.08);color:#eafff9}
+button.btn.primary:hover{border-color:var(--aur1)}
+button.btn:hover{border-color:var(--aur2)}
+button.btn:disabled{opacity:.45;cursor:default}
+.approved-note{margin-top:12px;font-size:13.5px;color:var(--good);border:1px solid rgba(95,208,166,.35);
+  background:rgba(95,208,166,.06);border-radius:10px;padding:11px 14px;display:none}
+.approved-note.show{display:block}
+.step-nav{display:flex;justify-content:flex-end;margin-top:18px}
+
+/* operation steps */
+.opgrid{display:grid;gap:14px}
+@media(min-width:760px){.opgrid{grid-template-columns:repeat(3,1fr)}}
+.opcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px}
+.opcard .num{font-size:12px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase;margin-bottom:8px}
+.opcard h4{margin:0 0 8px;font-size:15.5px;color:#fff}
+
+footer{color:var(--faint);font-size:12px;padding:26px 0 0;text-align:center;line-height:1.7}
+
+@media print{
+  body{background:var(--bg)}
+  .sec{page-break-inside:avoid}
+  .stage{display:block !important}
+  .stepbar,.step-nav,.scenario-picker{display:none !important}
+  textarea.editbox{min-height:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <div class="mark"><span class="dot"></span> Alaska AI</div>
+  <p class="eyebrow" style="margin-top:26px">Interactive demo, prepared for Alaska Wildland Adventures</p>
+  <h1>Reservations-Staff Copilot</h1>
+  <p class="thesis">A scripted walkthrough of the build recommended in the attached Field Study. Not a live system. Every guest question, source passage, and draft below is illustrative, built only from Alaska Wildland Adventures' own verified public content. No message on this page is ever sent to a real guest.</p>
+  <div class="byline">
+    <span class="pill">Tourism</span>
+    <span class="pill">Kenai Peninsula, Alaska</span>
+    <span>2026-07-22</span>
+  </div>
+  <div class="scriptline">This is a scripted demonstration of the proposed build, not the product itself. Prepared by Alaska AI.</div>
+</header>
+
+<section class="sec">
+  <h2>Why this, and why now</h2>
+  <h3>Two things Alaska Wildland Adventures already says about itself</h3>
+  <div class="grid c2">
+    <div class="card">
+      <h4>The reservations promise</h4>
+      <div class="quote">"our reservations team will respond shortly with ways to build your dream Alaska vacation... Please check your spam filter if you haven't heard from us within 48 hours."</div>
+      <p class="src">Source <a href="https://www.alaskawildland.com/reservations/online-reservations/">alaskawildland.com/reservations/online-reservations</a></p>
+    </div>
+    <div class="card">
+      <h4>The Seward staff, one job posting</h4>
+      <div class="quote">"Responsibilities include answering phones, taking kayak reservations, greeting guests, labeling luggage, shuttling guests and supplies, sorting backhaul items, processing garbage/recycling, and occasionally accompanying misplaced guests through Seward."</div>
+      <p class="src">Source <a href="https://www.alaskawildland.com/employment/wp-job-openings/">alaskawildland.com/employment/wp-job-openings</a></p>
+    </div>
+  </div>
+  <p class="small faint" style="margin-top:2px">A small seasonal team is already answering phones, taking reservations, and doing hands-on guest logistics at the same time. The build below does not touch the phones, the luggage, or the boats. It only makes the reply-drafting part faster and more accurate.</p>
+</section>
+
+<section class="sec">
+  <h2>What this tool actually does</h2>
+  <h3>An internal assistant, not a guest-facing chatbot</h3>
+  <p>This is trained on Alaska Wildland Adventures' own package pages, lodge pages, itineraries, and policies. It helps the reservations team draft accurate guest replies faster. No guest ever talks to it. A person reads, edits, and sends every reply by hand, the same way they do today.</p>
+  <div class="callout">
+    <h3>Two rules this tool never breaks</h3>
+    <ul class="clean">
+      <li><strong>It never talks to a guest.</strong> Every draft goes to a person first, and only a person sends it.</li>
+      <li><strong>It never generates a price, a date, or an availability answer.</strong> Those always come from a separate lookup table or get flagged for a person to confirm. A wrong logistics answer about a boat or flightseeing only lodge costs more than a slow one, so this build is staff-facing on purpose.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec">
+  <h2>Try it</h2>
+  <h3>Four real questions this reservations team would recognize</h3>
+  <p class="small faint">Guest names below are illustrative placeholders. Every fact about Alaska Wildland Adventures in these drafts traces to their own published content. Pick a question, then step through what the copilot does with it.</p>
+
+  <div class="scenario-picker" id="scenarioPicker"></div>
+
+  <div class="stepbar" id="stepbar"></div>
+
+  <div id="stageArea">
+    <div class="stage" id="stage0"></div>
+    <div class="stage" id="stage1"></div>
+    <div class="stage" id="stage2"></div>
+    <div class="stage" id="stage3"></div>
+  </div>
+
+  <div class="step-nav">
+    <button class="btn primary" id="advanceBtn"></button>
+  </div>
+</section>
+
+<section class="sec">
+  <h2>Under the hood</h2>
+  <h3>Three pieces, none of them magic</h3>
+  <div class="grid c3">
+    <div class="card">
+      <h4>Their own content</h4>
+      <p class="small">Lodge pages, package pages, itineraries, and posted policies, indexed and tagged by lodge, so an answer about Skilak Lake never gets mixed up with Kenai Fjords National Park.</p>
+    </div>
+    <div class="card">
+      <h4>A separate lookup table</h4>
+      <p class="small">Price, date, and availability answers come from a dedicated table, never from the language model. If the table does not have it, the draft is flagged for a person to confirm.</p>
+    </div>
+    <div class="card">
+      <h4>A draft log</h4>
+      <p class="small">Every draft, and every edit a staffer makes to it, is logged. That log is the real accuracy record this build needs before anything guest-facing is even considered.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <h2>How this sits in your operation</h2>
+  <h3>Three steps, and a person on every one of them</h3>
+  <div class="opgrid">
+    <div class="opcard">
+      <div class="num">Step one</div>
+      <h4>The inquiry arrives the same way it does today</h4>
+      <p class="small">Through the web reservations form or a phone call to the Seward office. Nothing about how a guest reaches Alaska Wildland Adventures changes.</p>
+    </div>
+    <div class="opcard">
+      <div class="num">Step two</div>
+      <h4>A staffer opens it in the Reply Assistant</h4>
+      <p class="small">The tool pulls the right passages from AWA's own pages and documents, tagged by lodge, and drafts a reply with a citation next to every claim. Price and availability are never generated, only looked up or flagged.</p>
+    </div>
+    <div class="opcard">
+      <div class="num">Step three</div>
+      <h4>A person edits and sends it</h4>
+      <p class="small">The staffer reads the draft, corrects or adds whatever the tool missed, and sends it from their own email, exactly as they do today. No draft reaches a guest until a person has read it and pressed send.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Alaska AI. This page is a scripted demonstration of the build proposed for Alaska Wildland Adventures, not a live product.<br>
+  Nothing on this page sends a message to a real guest. The full research and recommendation sit in the accompanying Field Study.
+</footer>
+
+</div>
+
+<script>
+(function(){
+
+var SCENARIOS = [
+  {
+    id: "mobility",
+    label: "Access and mobility",
+    lodgeTag: "Kenai Backcountry Lodge, Skilak Lake",
+    channel: "Guest reservations request form",
+    question: "What's the best way to get to Kenai Backcountry Lodge, and is it okay for someone with limited mobility?",
+    guestPh: "the guest",
+    retrieval: {
+      matched: true,
+      hits: [
+        {doc:"Kenai Backcountry Lodge page", url:"https://www.alaskawildland.com/lodges/kenai-backcountry-lodge/", note:"States the lodge sits on Skilak Lake and is boat access only."}
+      ],
+      summary: "1 passage cleared the confidence threshold, tagged to Kenai Backcountry Lodge."
+    },
+    grounding: [
+      {n:1, kind:"source", label:"Kenai Backcountry Lodge page", url:"https://www.alaskawildland.com/lodges/kenai-backcountry-lodge/", note:"Skilak Lake location, boat access only."},
+      {n:2, kind:"nosource", label:"Accessibility accommodations", url:null, note:"Not addressed anywhere in AWA's own content. Flagged for a staffer to confirm directly with the guest."}
+    ],
+    draft: [
+      "Hello {{GUEST}}.",
+      "Kenai Backcountry Lodge sits on Skilak Lake and the only way in is by boat {{REF:1}}. There is no road access to this lodge.",
+      "On the question about limited mobility, this reply will not guess {{REF:2}}. A staffer will confirm the details directly with you before your trip.",
+      "Thank you for looking at Alaska Wildland Adventures."
+    ],
+    signoff: "AWA Reservations Team",
+    edited: "Hi Dana.\n\nKenai Backcountry Lodge sits on Skilak Lake. The only way in is by boat, there is no road access.\n\nOn the mobility question I do not want to guess. Let me check with our lodge team about the dock and walkway and call you back today.\n\nThanks for looking at Alaska Wildland Adventures.\n\nAWA Reservations Team"
+  },
+  {
+    id: "package",
+    label: "Package and price",
+    lodgeTag: "Kenai to Denali multi-lodge trip",
+    channel: "Phone, logged by reservations staff",
+    question: "We're interested in the multi-lodge trip that connects the Kenai Peninsula to Denali. What does that itinerary include, and what's the cost for two adults?",
+    guestPh: "the guest",
+    retrieval: {
+      matched: true,
+      hits: [
+        {doc:"AWA Lodges overview, Kenai Riverside Lodge (Alaska 11-Day Grand Adventure)", url:"https://www.alaskawildland.com/lodges/kenai-riverside-lodge/", note:"Describes the 11-day itinerary staying at all three Kenai Peninsula lodges plus Denali National Park."},
+        {doc:"Pricing and Availability table", url:null, note:"A live data table, not a content passage. Never written to by the model.", isLookup:true}
+      ],
+      summary: "1 content passage cleared the confidence threshold. Price and dates route to the lookup table instead."
+    },
+    grounding: [
+      {n:1, kind:"source", label:"AWA Lodges overview, Kenai Riverside Lodge", url:"https://www.alaskawildland.com/lodges/kenai-riverside-lodge/", note:"The Alaska 11-Day Grand Adventure stays at all three Kenai Peninsula lodges plus Denali National Park."},
+      {n:2, kind:"lookup", label:"Pricing and Availability table", url:null, note:"Deterministic lookup, not generated. Confirms current package cost and open dates for two adults."}
+    ],
+    draft: [
+      "Hello {{GUEST}}.",
+      "Our Alaska 11-Day Grand Adventure stays at all three of our Kenai Peninsula lodges and includes a stay in Denali National Park {{REF:1}}.",
+      "The exact nights, lodges on your dates, and the cost for two adults come from a live check, not a number generated here {{REF:2}}. I will have that back to you shortly.",
+      "Thank you for looking at Alaska Wildland Adventures."
+    ],
+    signoff: "AWA Reservations Team",
+    edited: "Hi Sam.\n\nOur Alaska 11-Day Grand Adventure stays at all three of our Kenai Peninsula lodges and includes a stay in Denali National Park.\n\nI have the current package sheet open now and I am confirming exact nights and pricing for two adults. I will call you by tomorrow with real numbers.\n\nThanks for looking at Alaska Wildland Adventures.\n\nAWA Reservations Team"
+  },
+  {
+    id: "riverside",
+    label: "Access, easy case",
+    lodgeTag: "Kenai Riverside Lodge, Cooper Landing",
+    channel: "Guest reservations request form",
+    question: "Is Kenai Riverside Lodge easy to get to, or do we need a boat or floatplane like some of your other lodges?",
+    guestPh: "the guest",
+    retrieval: {
+      matched: true,
+      hits: [
+        {doc:"AWA Lodges overview, Kenai Riverside Lodge", url:"https://www.alaskawildland.com/lodges/kenai-riverside-lodge/", note:"Cooper Landing location, road accessible, contrasted with the boat and flightseeing only lodges."}
+      ],
+      summary: "1 passage cleared the confidence threshold, tagged to Kenai Riverside Lodge."
+    },
+    grounding: [
+      {n:1, kind:"source", label:"AWA Lodges overview, Kenai Riverside Lodge", url:"https://www.alaskawildland.com/lodges/kenai-riverside-lodge/", note:"Cooper Landing location, road accessible."}
+    ],
+    draft: [
+      "Hello {{GUEST}}.",
+      "Good news on this one. Kenai Riverside Lodge is in Cooper Landing and it is road accessible {{REF:1}}. Our other two lodges are boat or flightseeing access only.",
+      "Thank you for looking at Alaska Wildland Adventures."
+    ],
+    signoff: "AWA Reservations Team",
+    edited: "Hi Morgan.\n\nGood news on this one. Kenai Riverside Lodge is in Cooper Landing and it is road accessible. Our other two lodges are boat or flightseeing access only.\n\nThanks for looking at Alaska Wildland Adventures.\n\nAWA Reservations Team"
+  },
+  {
+    id: "outofscope",
+    label: "Out of scope",
+    warn: true,
+    lodgeTag: "Kenai Fjords Glacier Lodge, Pedersen Lagoon",
+    channel: "Guest reservations request form",
+    question: "I need to stay reachable for work. Is there reliable cell signal or wifi at Kenai Fjords Glacier Lodge?",
+    guestPh: "the guest",
+    retrieval: {
+      matched: false,
+      hits: [],
+      summary: "0 passages cleared the confidence threshold. Nothing in AWA's own content addresses cell signal or wifi at any lodge."
+    },
+    grounding: [],
+    draft: null,
+    noDraftNote: "No grounded draft is available. The copilot will not guess at an answer with no source behind it. This reply needs a staffer to write it from scratch.",
+    edited: ""
+  }
+];
+
+var currentIndex = 0;
+var currentStep = 0; // 0 inquiry, 1 retrieval, 2 draft, 3 staff review
+var STEP_LABELS = ["Inquiry", "Retrieval", "AI draft", "Staff review"];
+var ADVANCE_LABELS = [
+  "Run the copilot",
+  "Show the drafted reply",
+  "Show the staff review",
+  "Start over"
+];
+
+function esc(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function refChip(n, kind){
+  var label = kind === "source" ? ("[" + n + "]") : (kind === "lookup" ? ("CONFIRM " + n) : ("CONFIRM " + n));
+  return '<span class="ref ' + kind + '">' + label + "</span>";
+}
+
+function renderDraftLine(line, scenario){
+  var out = esc(line);
+  out = out.replace(/\{\{GUEST\}\}/g, '<span class="merge">guest name</span>');
+  out = out.replace(/\{\{REF:(\d+)\}\}/g, function(m, num){
+    var n = parseInt(num, 10);
+    var g = null;
+    for (var i=0;i<scenario.grounding.length;i++){
+      if (scenario.grounding[i].n === n){ g = scenario.grounding[i]; break; }
+    }
+    var kind = g ? g.kind : "source";
+    return refChip(n, kind);
+  });
+  return out;
+}
+
+function scenarioPickerHTML(){
+  var html = "";
+  SCENARIOS.forEach(function(s, i){
+    html += '<button type="button" class="scenario-btn' + (i===currentIndex?" active":"") + '" data-i="' + i + '">'
+      + '<div class="lab' + (s.warn?" warn":"") + '">' + (s.warn ? "Honest failure mode" : "Scenario " + (i+1)) + '</div>'
+      + '<div class="ttl">' + esc(s.label) + '</div>'
+      + '<div class="sub">' + esc(s.lodgeTag) + '</div>'
+      + '</button>';
+  });
+  return html;
+}
+
+function stepbarHTML(){
+  var html = "";
+  for (var i=0;i<4;i++){
+    var cls = "stepdot" + (i===currentStep?" active":"") + (i<currentStep?" done":"");
+    html += '<div class="' + cls + '" data-step="' + i + '"><span class="n">' + (i+1) + '</span>' + STEP_LABELS[i] + '</div>';
+    if (i<3) html += '<div class="stepline"></div>';
+  }
+  return html;
+}
+
+function stage0HTML(s){
+  return '<div class="card">'
+    + '<span class="tag channel">' + esc(s.channel) + '</span>'
+    + '<div class="quote" style="margin-top:12px">' + esc(s.question) + '</div>'
+    + '<p class="small faint" style="margin-top:2px">This is how a real inquiry reaches Alaska Wildland Adventures today, through the reservations form or a phone call, with a stated 48 hour reply window and a small staff reading and answering it by hand.</p>'
+    + '</div>';
+}
+
+function stage1HTML(s){
+  var html = '<div class="card"><h4>Retrieval, over their own content</h4>';
+  if (!s.retrieval.matched){
+    html += '<div class="nomatch"><strong>No match.</strong> ' + esc(s.retrieval.summary) + '</div>';
+  } else {
+    html += '<div class="retrieval-strip">';
+    s.retrieval.hits.forEach(function(h){
+      html += '<div class="chip"><div class="doc">' + esc(h.doc) + (h.isLookup ? ' <span class="tag" style="margin-left:6px;color:var(--warn);border-color:rgba(255,179,92,.4)">data table</span>' : '') + '</div>'
+        + '<div class="note">' + esc(h.note) + '</div>'
+        + (h.url ? '<div class="note" style="margin-top:4px"><a href="' + esc(h.url) + '">' + esc(h.url) + '</a></div>' : '')
+        + '</div>';
+    });
+    html += '</div>';
+    html += '<p class="small faint" style="margin-top:8px">' + esc(s.retrieval.summary) + '</p>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function stage2HTML(s){
+  var html = '<div class="card"><h4>AI-drafted reply, not sent, for staff review only</h4>';
+  if (!s.draft){
+    html += '<div class="nomatch"><strong>No draft available.</strong> ' + esc(s.noDraftNote) + '</div>';
+  } else {
+    html += '<div class="draftbox">';
+    s.draft.forEach(function(line){
+      html += '<p>' + renderDraftLine(line, s) + '</p>';
+    });
+    html += '<p class="sign">' + esc(s.signoff) + '</p>';
+    html += '</div>';
+    if (s.grounding.length){
+      html += '<div class="ground">';
+      s.grounding.forEach(function(g){
+        var badgeLabel = g.kind === "source" ? ("SOURCE " + g.n) : (g.kind === "lookup" ? ("LOOKUP " + g.n) : ("NO SOURCE " + g.n));
+        html += '<div class="row"><span class="badge ' + g.kind + '">' + badgeLabel + '</span>'
+          + '<span><strong style="color:#fff">' + esc(g.label) + '.</strong> ' + esc(g.note)
+          + (g.url ? ' <a href="' + esc(g.url) + '">' + esc(g.url) + '</a>' : '')
+          + '</span></div>';
+      });
+      html += '</div>';
+    }
+  }
+  html += '</div>';
+  return html;
+}
+
+function stage3HTML(s){
+  var html = '<div class="artifact">'
+    + '<div class="artifact-bar"><span class="name">AWA Reservations, Reply Assistant</span><span class="staffonly">Internal tool, staff only</span></div>'
+    + '<div class="artifact-body">'
+    + '<p class="small faint" style="margin-top:0">A staffer reads the AI draft, edits it in their own words, and approves it before anything is sent. Nothing below is ever sent from this page.</p>'
+    + '<textarea class="editbox" id="editbox">' + esc(s.edited) + '</textarea>'
+    + '<div class="artifact-actions">'
+    + '<button class="btn primary" id="approveBtn">' + (s.draft ? "Approve draft" : "Log as fully manual") + '</button>'
+    + '<button class="btn" id="resetEditBtn">Reset edit</button>'
+    + '</div>'
+    + '<div class="approved-note" id="approvedNote"></div>'
+    + '</div></div>';
+  return html;
+}
+
+function renderStages(){
+  var s = SCENARIOS[currentIndex];
+  document.getElementById("stage0").innerHTML = stage0HTML(s);
+  document.getElementById("stage1").innerHTML = stage1HTML(s);
+  document.getElementById("stage2").innerHTML = stage2HTML(s);
+  document.getElementById("stage3").innerHTML = stage3HTML(s);
+  for (var i=0;i<4;i++){
+    document.getElementById("stage"+i).className = "stage" + (i===currentStep ? " show" : "");
+  }
+  document.getElementById("advanceBtn").textContent = ADVANCE_LABELS[currentStep];
+
+  var approveBtn = document.getElementById("approveBtn");
+  var resetEditBtn = document.getElementById("resetEditBtn");
+  var editbox = document.getElementById("editbox");
+  var approvedNote = document.getElementById("approvedNote");
+  if (approveBtn){
+    approveBtn.addEventListener("click", function(){
+      approvedNote.textContent = "Logged. A reservations staffer would send this from their own email client, exactly as they do today. This demo does not send anything, to a guest or anyone else.";
+      approvedNote.className = "approved-note show";
+      approveBtn.disabled = true;
+    });
+  }
+  if (resetEditBtn){
+    resetEditBtn.addEventListener("click", function(){
+      editbox.value = s.edited;
+      approvedNote.className = "approved-note";
+      approveBtn.disabled = false;
+    });
+  }
+}
+
+function renderPicker(){
+  document.getElementById("scenarioPicker").innerHTML = scenarioPickerHTML();
+  var btns = document.querySelectorAll(".scenario-btn");
+  btns.forEach(function(b){
+    b.addEventListener("click", function(){
+      currentIndex = parseInt(this.getAttribute("data-i"), 10);
+      currentStep = 0;
+      renderPicker();
+      renderStepbar();
+      renderStages();
+    });
+  });
+}
+
+function renderStepbar(){
+  document.getElementById("stepbar").innerHTML = stepbarHTML();
+  var dots = document.querySelectorAll(".stepdot");
+  dots.forEach(function(d){
+    d.addEventListener("click", function(){
+      currentStep = parseInt(this.getAttribute("data-step"), 10);
+      renderStepbar();
+      renderStages();
+    });
+  });
+}
+
+document.getElementById("advanceBtn").addEventListener("click", function(){
+  if (currentStep < 3){
+    currentStep += 1;
+  } else {
+    currentStep = 0;
+  }
+  renderStepbar();
+  renderStages();
+});
+
+renderPicker();
+renderStepbar();
+renderStages();
+
+})();
+</script>
+</body>
+</html>

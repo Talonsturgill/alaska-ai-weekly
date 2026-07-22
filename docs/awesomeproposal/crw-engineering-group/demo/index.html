@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRW Engineering Group, Proposal and SOQ Engine, an interactive demonstration</title>
+<style>
+:root{
+  --bg:#070b12; --panel:#0d1420; --panel2:#111a28; --line:#1e2b3d;
+  --ink:#eef3fb; --muted:#9fb0c6; --faint:#6f7f96;
+  --aur1:#57e0c8; --aur2:#5aa9ff; --aur3:#9b8cff; --warm:#ffd18c;
+  --good:#5fd0a6; --warn:#ffb35c; --bad:#ff8f7a;
+  --maxw:900px;
+  --paper:#f7f4ec; --paper-ink:#242017;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  margin:0;background:
+    radial-gradient(1100px 500px at 78% -8%, rgba(90,169,255,.12), transparent 60%),
+    radial-gradient(900px 460px at 8% 4%, rgba(87,224,200,.10), transparent 55%),
+    var(--bg);
+  color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.1px;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px 90px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,46px);line-height:1.06;margin:.1em 0 .3em;font-weight:680;letter-spacing:-.4px}
+h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--aur1);margin:0 0 6px;font-weight:640}
+h3{font-size:clamp(19px,2.7vw,25px);line-height:1.2;margin:.1em 0 .5em;font-weight:640;letter-spacing:-.2px}
+h4{margin:0 0 7px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--aur1);font-weight:640}
+p{margin:0 0 14px}
+a{color:var(--aur2);text-decoration:none;border-bottom:1px solid rgba(90,169,255,.35)}
+strong{color:#fff;font-weight:640}
+.small{font-size:13.5px;color:var(--muted)}
+.faint{color:var(--faint)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+/* cover */
+.cover{padding:64px 0 26px;border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:11px;font-weight:660;letter-spacing:.02em}
+.dot{width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--aur1),var(--aur3));
+  box-shadow:0 0 16px 2px rgba(87,224,200,.5)}
+.quietline{font-size:14px;color:var(--muted);border-left:2px solid var(--line);padding-left:12px;margin:14px 0 20px}
+.byline{font-size:13px;color:var(--faint);display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:10px}
+.byline .pill{border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted)}
+
+/* sections */
+.sec{padding:32px 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:0}
+.grid{display:grid;gap:14px}
+@media(min-width:680px){.grid.c2{grid-template-columns:1fr 1fr}}
+@media(min-width:760px){.grid.c3{grid-template-columns:repeat(3,1fr)}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:14px;padding:18px 19px}
+.card p:last-child{margin-bottom:0}
+
+/* scenario tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 20px}
+.tab-btn{font:inherit;font-size:14px;background:var(--panel);color:var(--muted);border:1px solid var(--line);
+  border-radius:999px;padding:9px 16px;cursor:pointer;transition:border-color .15s,color .15s}
+.tab-btn:hover{border-color:var(--aur2)}
+.tab-btn.active{color:#fff;border-color:var(--aur1);background:linear-gradient(180deg,rgba(87,224,200,.12),rgba(87,224,200,.03))}
+.tab-btn .sub{display:block;font-size:11px;color:var(--faint);font-weight:400;margin-top:2px}
+.tab-btn.active .sub{color:var(--muted)}
+
+/* stepper */
+.stepper{display:flex;gap:6px;margin:0 0 22px;flex-wrap:wrap}
+.step-dot{font:inherit;font-size:12.5px;background:var(--panel);color:var(--faint);border:1px solid var(--line);
+  border-radius:10px;padding:9px 13px;cursor:pointer;text-align:left;flex:1 1 150px;transition:border-color .15s,color .15s}
+.step-dot b{display:block;color:var(--muted);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px}
+.step-dot.active{border-color:var(--aur2);color:#fff}
+.step-dot.active b{color:var(--aur2)}
+.step-dot:hover{border-color:var(--aur3)}
+
+/* tag chips signaling what kind of step this is (honesty coding) */
+.tagrow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.tagchip{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:7px;padding:4px 10px;font-weight:640}
+.tagchip.ai{color:var(--aur1);background:rgba(87,224,200,.1);border:1px solid rgba(87,224,200,.35)}
+.tagchip.rule{color:var(--aur2);background:rgba(90,169,255,.08);border:1px solid rgba(90,169,255,.3)}
+.tagchip.human{color:var(--warm);background:rgba(255,209,140,.09);border:1px solid rgba(255,209,140,.3)}
+
+/* step panels */
+.panel{display:none;animation:fadein .25s ease}
+.panel.active{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.sol-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.sol-title{font-size:17px;font-weight:640;color:#fff;margin:0 0 4px}
+.sol-meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin:6px 0 12px}
+.sol-meta span b{color:var(--ink);font-weight:600}
+.excerpt{border-left:2px solid var(--aur3);padding:8px 0 8px 16px;color:#dbe6f5;font-size:14.5px;font-style:italic;margin:0}
+.illus{font-size:12px;color:var(--faint);margin-top:10px}
+
+.controls{display:flex;justify-content:flex-end;gap:10px;margin-top:8px}
+button.btn{font:inherit;font-size:14px;font-weight:600;background:linear-gradient(180deg,var(--aur1),#39c1a8);
+  color:#03211c;border:none;border-radius:10px;padding:11px 18px;cursor:pointer}
+button.btn:hover{filter:brightness(1.06)}
+button.btn.ghost{background:var(--panel);color:var(--muted);border:1px solid var(--line)}
+button.btn.ghost:hover{border-color:var(--aur2);color:#fff}
+button.btn:disabled{opacity:.4;cursor:not-allowed;filter:none}
+
+/* checklist table */
+.tw{overflow-x:auto;margin:0 0 12px;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--faint);font-weight:560;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;font-size:11.5px;font-weight:640;letter-spacing:.03em;border-radius:7px;padding:3px 9px;white-space:nowrap}
+.chip.ok{color:var(--good);background:rgba(95,208,166,.1);border:1px solid rgba(95,208,166,.35)}
+.chip.att{color:var(--warn);background:rgba(255,179,92,.1);border:1px solid rgba(255,179,92,.35)}
+
+/* section sub tabs */
+.subtabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}
+.subtab-btn{font:inherit;font-size:13px;background:var(--panel);color:var(--muted);border:1px solid var(--line);
+  border-radius:8px;padding:7px 12px;cursor:pointer}
+.subtab-btn.active{color:#fff;border-color:var(--aur1)}
+.draftbox{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:17px 19px;font-size:15px;line-height:1.7}
+.draftbox .cite{color:var(--aur2);font-size:11px;vertical-align:super;border:none;padding:0 1px}
+.placeholder{color:var(--warm);background:rgba(255,209,140,.08);border-radius:4px;padding:0 3px}
+.srclist{font-size:12.5px;color:var(--faint);margin:12px 0 0;padding-top:10px;border-top:1px solid var(--line)}
+.srclist div{margin:3px 0}
+
+/* review workspace */
+.review-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 12px;background:var(--panel)}
+.review-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.review-head label{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);cursor:pointer}
+.review-head input[type=checkbox]{width:16px;height:16px;accent-color:var(--aur1)}
+[contenteditable=true]{outline:none;border-radius:8px;padding:2px 4px;margin:-2px -4px}
+[contenteditable=true]:focus{background:rgba(90,169,255,.06);box-shadow:0 0 0 1px rgba(90,169,255,.4)}
+.edithint{font-size:11.5px;color:var(--faint);margin-top:8px}
+.confirm{display:none;margin-top:14px;border:1px solid rgba(95,208,166,.4);background:rgba(95,208,166,.06);
+  border-radius:12px;padding:14px 16px;color:#cdece0;font-size:14px}
+.confirm.show{display:block}
+.badge-nosubmit{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--bad);
+  border:1px solid rgba(255,143,122,.4);background:rgba(255,143,122,.08);border-radius:7px;padding:3px 9px;margin-bottom:10px}
+
+/* handoff artifact, paper look */
+.paper-wrap{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin:0 0 8px}
+.paper{background:var(--paper);color:var(--paper-ink);border-radius:6px;padding:34px 36px;
+  font-family:Georgia,"Times New Roman",serif;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.paper .letterhead{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #242017;
+  padding-bottom:10px;margin-bottom:16px}
+.paper .letterhead .co{font-size:15px;font-weight:700}
+.paper .letterhead .co small{display:block;font-family:-apple-system,sans-serif;font-size:11px;font-weight:400;color:#6a6455}
+.paper .draftstamp{font-family:-apple-system,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:#a4402f;border:1px solid #a4402f;border-radius:5px;padding:4px 8px;white-space:nowrap}
+.paper h5{font-family:-apple-system,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:#6a6455;margin:20px 0 6px}
+.paper h5:first-of-type{margin-top:6px}
+.paper p{font-size:14.5px;line-height:1.7;margin:0 0 10px}
+.paper .exhibit{font-family:-apple-system,sans-serif;font-size:12.5px;margin-top:6px}
+.paper .exhibit table{min-width:0;font-size:12px}
+.paper .exhibit th,.paper .exhibit td{border-bottom:1px solid #d9d3c2;padding:6px 8px}
+.paper .exhibit th{color:#6a6455}
+.paper .exhibit .chip.ok{color:#2f7a5c;background:#e4f2ea;border-color:#bfe0cf}
+.paper .exhibit .chip.att{color:#96591f;background:#faedd9;border-color:#f0d3a3}
+.paper .foot{font-family:-apple-system,sans-serif;font-size:10.5px;color:#8a8474;margin-top:18px;padding-top:10px;border-top:1px solid #d9d3c2}
+.paper .cite{color:#5b6f8a;font-size:10px;vertical-align:super}
+
+/* operation steps */
+.op-steps{display:grid;gap:14px}
+@media(min-width:720px){.op-steps{grid-template-columns:repeat(3,1fr)}}
+.op-step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 19px}
+.op-step .n{font-size:12px;color:var(--aur1);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-weight:640}
+.op-step h4{font-size:15px;text-transform:none;letter-spacing:0;color:#fff;margin:0 0 6px}
+
+/* callouts */
+.callout{background:linear-gradient(180deg,rgba(255,179,92,.07),rgba(255,179,92,.02));
+  border:1px solid rgba(255,179,92,.28);border-radius:14px;padding:18px 20px}
+.callout h3{color:var(--warm);margin-top:0}
+ul.clean{list-style:none;padding:0;margin:0}
+ul.clean li{padding:8px 0 8px 20px;position:relative;border-bottom:1px solid rgba(30,43,61,.6);font-size:14.5px}
+ul.clean li:last-child{border-bottom:0}
+ul.clean li:before{content:"";position:absolute;left:2px;top:16px;width:7px;height:7px;border-radius:50%;
+  background:var(--warm);box-shadow:0 0 9px rgba(255,209,140,.5)}
+
+footer{color:var(--faint);font-size:12px;padding:26px 0 0;text-align:center}
+
+@media print{
+  body{background:var(--bg)}
+  .sec,.cover{page-break-inside:avoid}
+  .tabs,.stepper,.controls,button,.edithint{display:none !important}
+  .panel{display:block !important}
+}
+@media(max-width:600px){
+  .paper{padding:22px 18px}
+  .review-head{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <div class="mark"><span class="dot"></span> Alaska AI</div>
+  <p class="eyebrow" style="margin-top:24px">Interactive demonstration, prepared for Brian Looney and CRW Engineering Group, Inc.</p>
+  <h1>Walk a real solicitation through the Proposal and SOQ Engine.</h1>
+  <p class="quietline">This is a scripted demonstration of the build proposed in CRW's Field Study. It is not a live system, nothing here is connected to CRW's systems, and no data leaves this page.</p>
+  <div class="byline">
+    <span class="pill">80+ staff</span>
+    <span class="pill">Anchorage and Palmer offices</span>
+    <span class="pill">Public-sector and tribal infrastructure work</span>
+    <span class="pill">Prepared by Alaska AI</span>
+  </div>
+</header>
+
+<section class="sec">
+  <h2>Why this, why now</h2>
+  <h3>Six openings, one BD calendar</h3>
+  <p>CRW's careers page runs an evergreen, always-hiring posture, and this year six paid openings sat open at once across CAD, inspection, and three separate PE disciplines, at an 80-person firm. The people who write past-performance write-ups, staffing bios, and qualifications narratives for a proposal are the same people the firm is short on. This demo shows a first draft of those sections landing before anyone opens a blank document, and a compliance checklist catching a missed form before a reviewer's first read.</p>
+  <div class="card">
+    <h4>About CRW, for context</h4>
+    <p class="small">Full-service, Alaska-based multidisciplinary civil engineering and land surveying firm. More than 80 staff. Offices in Anchorage, Palmer, and Olympia, Washington. Disciplines span airport, civil, structural, electrical, mechanical, environmental, and geotechnical engineering, water and wastewater, transportation and rural infrastructure, land surveying, and construction administration. Source, crweng.com.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <h2>Pick a pursuit</h2>
+  <h3>Three pursuit types CRW runs on</h3>
+  <p class="small">Each is written to match the compliance format that pursuit type actually uses. None is a real, currently open solicitation, this is illustrative content built to show how the tool behaves.</p>
+  <div class="tabs" id="scenarioTabs">
+    <button class="tab-btn active" data-action="goto-scenario" data-scenario="village">Rural village water and sewer<span class="sub">Statement of Qualifications</span></button>
+    <button class="tab-btn" data-action="goto-scenario" data-scenario="transportation">State highway resurfacing<span class="sub">Request for Proposals</span></button>
+    <button class="tab-btn" data-action="goto-scenario" data-scenario="airport">Airport apron and taxiway<span class="sub">AIP Statement of Qualifications</span></button>
+  </div>
+
+  <div class="stepper" id="stepper">
+    <button class="step-dot active" data-action="goto-step" data-step="1"><b>Step 1</b>Solicitation in</button>
+    <button class="step-dot" data-action="goto-step" data-step="2"><b>Step 2</b>Compliance checklist</button>
+    <button class="step-dot" data-action="goto-step" data-step="3"><b>Step 3</b>Draft sections</button>
+    <button class="step-dot" data-action="goto-step" data-step="4"><b>Step 4</b>Human review</button>
+  </div>
+
+  <div id="panelHost"></div>
+</section>
+
+<section class="sec" id="handoffSection">
+  <h2>The handoff artifact</h2>
+  <h3>What lands in the reviewer's inbox</h3>
+  <p class="small">Once a BD coordinator or PM approves the draft above, this is the packet they actually work from, the drafted sections and the compliance checklist together, rendered as one document. Nobody outside CRW ever sees this until a human sends it. It updates with whichever pursuit type is selected above.</p>
+  <div class="paper-wrap"><div class="paper" id="paperArtifact"></div></div>
+</section>
+
+<section class="sec">
+  <h2>How it sits in your operation</h2>
+  <div class="op-steps">
+    <div class="op-step">
+      <div class="n">One</div>
+      <h4>A solicitation drops</h4>
+      <p class="small">When a state, federal, or tribal RFP or SOQ posts, a BD coordinator drops the PDF in. Nothing happens on its own before that.</p>
+    </div>
+    <div class="op-step">
+      <div class="n">Two</div>
+      <h4>A draft comes back</h4>
+      <p class="small">Within the same work session, the checklist and first-pass sections are ready. No page limit or missing form gets caught only after a human already read the whole thing by hand.</p>
+    </div>
+    <div class="op-step">
+      <div class="n">Three</div>
+      <h4>A human ships it</h4>
+      <p class="small">A BD coordinator or PM reviews every line, edits what needs editing, and is the only one who can call a draft ready. CRW's own staff still submit the proposal through the agency's portal, the same way they do today.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="callout">
+    <h3>What this demo is not</h3>
+    <ul class="clean">
+      <li>No automated or AI-assisted submission exists or is planned anywhere in this build. A human submits every proposal, every time, through the agency's own portal.</li>
+      <li>The compliance checklist is a plain yes or no rule check. One AI read pulls the requirements out of the solicitation text, then a deterministic rule engine verifies them, never a second round of AI judgment.</li>
+      <li>No stamped engineering content, calculations, drainage design, structural design, is drafted or reviewed anywhere in this tool. That work carries the sealing engineer's own personal liability and this build never touches it.</li>
+      <li>The proposal and resume library shown here is illustrative. CRW's real files are not connected today, ingesting and permissioning them is the first phase of the actual build.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Prepared by Alaska AI for CRW Engineering Group, Inc. A scripted demonstration of the proposed build, not a live system.<br>
+  Company facts drawn from crweng.com and public job postings, checked before this was built. July 2026.
+</footer>
+
+</div>
+
+<script>
+(function(){
+
+var SCENARIOS = {
+  village: {
+    tabLabel: "rural village water and sewer",
+    solTitle: "Rural Community Water and Sewer System Improvements, Statement of Qualifications",
+    illus: "Illustrative SOQ, written to match the format CRW's rural and tribal sanitation pursuits run against. Not a real, currently open procurement.",
+    deadline: "Due 21 calendar days from issue, 4:00 PM Alaska Standard Time",
+    pageLimit: "20 pages, excluding forms",
+    excerpt: "Statements of Qualifications shall not exceed twenty pages, excluding SF 330 Part II resumes and required forms. Offerors shall submit SF 330 Parts I and II, a project approach narrative, and no fewer than three references for similar rural water or sewer system work completed within the last ten years. All addenda must be acknowledged in writing. Late submittals will not be considered.",
+    checklist: [
+      {req:"Page limit, 20 pages excluding forms", rule:"Draft narrative currently runs 17 pages", ok:true},
+      {req:"SF 330 Part I", rule:"Form attached", ok:true},
+      {req:"SF 330 Part II resumes, one per named key discipline", rule:"2 of 3 required discipline resumes attached, water and wastewater PE resume missing", ok:false},
+      {req:"Three references, work completed within ten years", rule:"3 references attached, all within range", ok:true},
+      {req:"Addendum acknowledgment", rule:"Addendum 1 acknowledged, Addendum 2 issued and not yet acknowledged", ok:false},
+      {req:"Insurance certificate current", rule:"Certificate on file, valid through the response window", ok:true}
+    ],
+    sections: {
+      pp: {
+        label:"Past performance",
+        html:"CRW Engineering Group provides planning, design, and construction administration for rural water and sewer system improvements, drawing on its water and wastewater and rural infrastructure engineering disciplines.<sup class=\"cite\">[1]</sup> The firm's project teams work out of its Anchorage and Palmer offices, both within regular reach of Southcentral project sites.<sup class=\"cite\">[1]</sup> <span class=\"placeholder\">[Insert specific project reference and owner contact here, pulled from CRW's past-performance library once it is ingested.]</span><sup class=\"cite\">[2]</sup>"
+      },
+      staff: {
+        label:"Staffing",
+        html:"Principal-in-Charge, Brian Looney, President.<sup class=\"cite\">[1]</sup> <span class=\"placeholder\">[Insert project manager and water and wastewater discipline lead, resumes pulled from CRW's own staff library once it is ingested.]</span><sup class=\"cite\">[2]</sup>"
+      },
+      qual: {
+        label:"Qualifications",
+        html:"CRW Engineering Group is a full-service, Alaska-based multidisciplinary civil engineering and land surveying firm with more than 80 staff across offices in Anchorage, Palmer, and Olympia, Washington.<sup class=\"cite\">[1]</sup> The firm's water and wastewater, rural infrastructure, and construction-administration disciplines line up directly with this solicitation's scope.<sup class=\"cite\">[1]</sup>"
+      }
+    }
+  },
+  transportation: {
+    tabLabel: "state highway resurfacing",
+    solTitle: "Highway Resurfacing and Drainage Rehabilitation, Design Services Request for Proposals",
+    illus: "Illustrative RFP, written to match state DOT&PF transportation solicitation formats. Not a real, currently open procurement.",
+    deadline: "Due 30 calendar days from issue, 4:00 PM Alaska Standard Time",
+    pageLimit: "15 pages, excluding appendices",
+    excerpt: "Proposals shall not exceed fifteen pages, excluding appendices and required forms. Offerors shall submit a Disadvantaged Business Enterprise utilization form, a certificate of insurance, an organization chart identifying key staff, and acknowledgment of all addenda issued prior to the proposal due date.",
+    checklist: [
+      {req:"Page limit, 15 pages excluding appendices", rule:"Draft narrative currently runs 15 pages", ok:true},
+      {req:"Disadvantaged Business Enterprise utilization form", rule:"Form not yet attached", ok:false},
+      {req:"Certificate of insurance", rule:"Certificate on file, current", ok:true},
+      {req:"Organization chart, key staff identified", rule:"Chart attached, transportation PE and EIT named", ok:true},
+      {req:"Addenda acknowledgment, two addenda issued", rule:"Both addenda acknowledged", ok:true},
+      {req:"Similar transportation project experience, minimum two", rule:"Two project summaries attached", ok:true}
+    ],
+    sections: {
+      pp: {
+        label:"Past performance",
+        html:"CRW Engineering Group's transportation and civil engineering disciplines cover roadway, drainage, and rural infrastructure design across Southcentral Alaska.<sup class=\"cite\">[1]</sup> <span class=\"placeholder\">[Insert specific resurfacing or drainage project reference here, pulled from CRW's past-performance library once it is ingested.]</span><sup class=\"cite\">[2]</sup>"
+      },
+      staff: {
+        label:"Staffing",
+        html:"Principal-in-Charge, Brian Looney, President.<sup class=\"cite\">[1]</sup> <span class=\"placeholder\">[Insert transportation PE and EIT resumes here, pulled from CRW's own staff library once it is ingested.]</span><sup class=\"cite\">[2]</sup>"
+      },
+      qual: {
+        label:"Qualifications",
+        html:"CRW Engineering Group is a full-service, Alaska-based multidisciplinary civil engineering and land surveying firm with more than 80 staff across offices in Anchorage, Palmer, and Olympia, Washington.<sup class=\"cite\">[1]</sup> The firm's transportation and civil engineering disciplines line up directly with this solicitation's scope.<sup class=\"cite\">[1]</sup>"
+      }
+    }
+  },
+  airport: {
+    tabLabel: "airport apron and taxiway",
+    solTitle: "Airport Improvement Program, Apron and Taxiway Rehabilitation Design, Statement of Qualifications",
+    illus: "Illustrative SOQ, written to match FAA Airport Improvement Program solicitation formats. Not a real, currently open procurement.",
+    deadline: "Due 21 calendar days from issue, 4:00 PM Alaska Standard Time",
+    pageLimit: "25 pages",
+    excerpt: "Statements of Qualifications shall follow FAA Advisory Circular 150/5100-14 format and shall not exceed twenty-five pages. Offerors shall submit a Disadvantaged Business Enterprise goal disclosure, a certification of eligibility, and no fewer than three references for similar airport design work.",
+    checklist: [
+      {req:"Format, FAA AC 150/5100-14", rule:"Draft follows the required section order", ok:true},
+      {req:"Page limit, 25 pages", rule:"Draft narrative currently runs 19 pages", ok:true},
+      {req:"DBE goal disclosure", rule:"Disclosure attached", ok:true},
+      {req:"Certification of eligibility", rule:"Certification not yet signed", ok:false},
+      {req:"Three references, similar airport work", rule:"Only 2 references attached", ok:false}
+    ],
+    sections: {
+      pp: {
+        label:"Past performance",
+        html:"CRW Engineering Group's airport engineering discipline covers planning, design, and construction administration for airfield infrastructure.<sup class=\"cite\">[1]</sup> <span class=\"placeholder\">[Insert specific apron, taxiway, or runway project reference here, pulled from CRW's past-performance library once it is ingested.]</span><sup class=\"cite\">[2]</sup>"
+      },
+      staff: {
+        label:"Staffing",
+        html:"Principal-in-Charge, Brian Looney, President.<sup class=\"cite\">[1]</sup> <span class=\"placeholder\">[Insert airport-discipline PE and construction administration lead resumes here, pulled from CRW's own staff library once it is ingested.]</span><sup class=\"cite\">[2]</sup>"
+      },
+      qual: {
+        label:"Qualifications",
+        html:"CRW Engineering Group is a full-service, Alaska-based multidisciplinary civil engineering and land surveying firm with more than 80 staff across offices in Anchorage, Palmer, and Olympia, Washington.<sup class=\"cite\">[1]</sup> The firm's airport engineering discipline lines up directly with this solicitation's scope.<sup class=\"cite\">[1]</sup>"
+      }
+    }
+  }
+};
+
+var CITE_NOTE = 'Retrieval placeholder. CRW\'s actual past-performance and staff libraries are not yet ingested, so the engine leaves the specific reference blank instead of inventing one.';
+var CITE_FIRM = 'CRW firm capability statement and leadership page, crweng.com';
+
+var state = { scenario: "village", step: 1, subtab: "pp" };
+
+function esc(s){ return s; } // content is authored, not user-supplied
+
+function checklistTable(data, small){
+  var rows = data.checklist.map(function(c){
+    var chip = c.ok ? '<span class="chip ok">Present</span>' : '<span class="chip att">Needs attention</span>';
+    return '<tr><td class="k">'+c.req+'</td><td>'+c.rule+'</td><td>'+chip+'</td></tr>';
+  }).join('');
+  return '<div class="tw"><table'+(small?' style="min-width:0"':'')+'><thead><tr><th>Requirement</th><th>Rule checked</th><th>Status</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+}
+
+function renderStep1(data){
+  return ''
+  +'<div class="tagrow"><span class="tagchip rule">Solicitation intake</span></div>'
+  +'<div class="sol-card">'
+    +'<div class="sol-title">'+data.solTitle+'</div>'
+    +'<div class="sol-meta"><span><b>Page limit</b> '+data.pageLimit+'</span><span><b>Deadline</b> '+data.deadline+'</span></div>'
+    +'<blockquote class="excerpt">'+data.excerpt+'</blockquote>'
+    +'<p class="illus">'+data.illus+'</p>'
+  +'</div>'
+  +'<p class="small">A BD coordinator drops the solicitation PDF in as it comes off the procurement portal. Nothing else happens until this step.</p>'
+  +'<div class="controls"><button class="btn" data-action="goto-step" data-step="2">Read the solicitation, extract requirements</button></div>';
+}
+
+function renderStep2(data){
+  return ''
+  +'<div class="tagrow"><span class="tagchip ai">One AI read</span><span class="tagchip rule">Deterministic rule engine</span></div>'
+  +'<p class="small">One AI read pulled these requirements out of the solicitation text above. Everything in the table below is a plain yes or no check, run by a rule engine, not a second AI judgment call. This is the same discipline the study scoped in, no AI opinion on whether the SOQ is compliance-complete.</p>'
+  +checklistTable(data,false)
+  +'<div class="controls"><button class="btn" data-action="goto-step" data-step="3">Draft the proposal sections</button></div>';
+}
+
+function renderStep3(data){
+  var keys = ["pp","staff","qual"];
+  var tabs = keys.map(function(k){
+    var active = state.subtab===k ? ' active' : '';
+    return '<button class="subtab-btn'+active+'" data-action="goto-subtab" data-subtab="'+k+'">'+data.sections[k].label+'</button>';
+  }).join('');
+  var sec = data.sections[state.subtab];
+  return ''
+  +'<div class="tagrow"><span class="tagchip ai">Retrieval plus one drafting call</span></div>'
+  +'<p class="small">Retrieval pulls only from documents this reviewer is permitted to see, then drafts a first pass. Every sentence traces to a source below. Where the library has no specific match yet, the draft says so instead of inventing one.</p>'
+  +'<div class="subtabs">'+tabs+'</div>'
+  +'<div class="draftbox">'
+    +'<p>'+sec.html+'</p>'
+    +'<div class="srclist"><div>[1] '+CITE_FIRM+'</div><div>[2] '+CITE_NOTE+'</div></div>'
+  +'</div>'
+  +'<div class="controls"><button class="btn" data-action="goto-step" data-step="4">Send to human review</button></div>';
+}
+
+function reviewItem(data, key){
+  var sec = data.sections[key];
+  var editable = key==='pp';
+  return '<div class="review-item">'
+    +'<div class="review-head"><strong>'+sec.label+'</strong>'
+    +'<label><input type="checkbox" class="approve-check" data-key="'+key+'"> Approved for assembly</label></div>'
+    +'<p'+(editable?' contenteditable="true" id="editPP"':'')+'>'+sec.html+'</p>'
+    +(editable?'<p class="edithint">Click the paragraph above and edit it. This is exactly what CRW\'s reviewer would do before anything ships. Nothing typed here leaves this page. <a href="#" data-action="reset-draft">Reset to the original draft</a></p>':'')
+  +'</div>';
+}
+
+function renderStep4(data){
+  var html = ''
+  +'<div class="tagrow"><span class="tagchip human">Human review, edit, approve</span></div>'
+  +'<span class="badge-nosubmit">No automated submission exists</span>'
+  +checklistTable(data,true)
+  +reviewItem(data,'pp')
+  +reviewItem(data,'staff')
+  +reviewItem(data,'qual')
+  +'<div class="controls"><button class="btn" id="markReadyBtn" disabled data-action="mark-ready">Mark ready for BD assembly</button></div>'
+  +'<div class="confirm" id="confirmBox">Marked ready for the BD coordinator\'s final assembly. This tool does not submit anything. CRW staff still submit the finished proposal through the agency\'s portal, the same way they do today.</div>';
+  return html;
+}
+
+var STEP_RENDER = {1:renderStep1, 2:renderStep2, 3:renderStep3, 4:renderStep4};
+var ORIGINAL_PP = {};
+
+function renderHandoff(data){
+  var pp = document.getElementById('editPP');
+  var ppHtml = (pp && state.step===4) ? pp.innerHTML : data.sections.pp.html;
+  var el = document.getElementById('paperArtifact');
+  el.innerHTML = ''
+    +'<div class="letterhead"><div class="co">CRW Engineering Group, Inc.<small>Draft proposal section, prepared for internal review</small></div>'
+    +'<div class="draftstamp">Draft, review required</div></div>'
+    +'<h5>Pursuit</h5><p>'+data.solTitle+'</p>'
+    +'<h5>Past performance</h5><p>'+ppHtml+'</p>'
+    +'<h5>Staffing</h5><p>'+data.sections.staff.html+'</p>'
+    +'<h5>Qualifications</h5><p>'+data.sections.qual.html+'</p>'
+    +'<h5>Compliance checklist, exhibit</h5><div class="exhibit">'+checklistTable(data,true)+'</div>'
+    +'<div class="foot">Sources. [1] '+CITE_FIRM+'. [2] '+CITE_NOTE+' Reviewed and edited by CRW\'s BD coordinator or PM before use. Not submitted by this tool.</div>';
+}
+
+function renderAll(){
+  var data = SCENARIOS[state.scenario];
+
+  document.querySelectorAll('#scenarioTabs .tab-btn').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-scenario')===state.scenario);
+  });
+  document.querySelectorAll('#stepper .step-dot').forEach(function(b){
+    b.classList.toggle('active', Number(b.getAttribute('data-step'))===state.step);
+  });
+
+  var host = document.getElementById('panelHost');
+  host.innerHTML = '<div class="panel active">'+STEP_RENDER[state.step](data)+'</div>';
+
+  if(state.step===4){
+    var boxId = 'editPP';
+    if(!(data.solTitle in ORIGINAL_PP)) ORIGINAL_PP[data.solTitle] = data.sections.pp.html;
+    updateMarkReadyState();
+  }
+
+  renderHandoff(data);
+}
+
+function updateMarkReadyState(){
+  var checks = document.querySelectorAll('.approve-check');
+  var checked = document.querySelectorAll('.approve-check:checked');
+  var btn = document.getElementById('markReadyBtn');
+  if(btn) btn.disabled = !(checks.length>0 && checked.length===checks.length);
+}
+
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-action]');
+  if(!t) return;
+  var action = t.getAttribute('data-action');
+  if(action==='goto-scenario'){
+    state.scenario = t.getAttribute('data-scenario');
+    state.step = 1; state.subtab = 'pp';
+    renderAll();
+  } else if(action==='goto-step'){
+    state.step = Number(t.getAttribute('data-step'));
+    renderAll();
+  } else if(action==='goto-subtab'){
+    state.subtab = t.getAttribute('data-subtab');
+    renderAll();
+  } else if(action==='mark-ready'){
+    var box = document.getElementById('confirmBox');
+    if(box) box.classList.add('show');
+    document.getElementById('markReadyBtn').disabled = true;
+    renderHandoff(SCENARIOS[state.scenario]);
+  } else if(action==='reset-draft'){
+    e.preventDefault();
+    var data = SCENARIOS[state.scenario];
+    var pp = document.getElementById('editPP');
+    if(pp) pp.innerHTML = data.sections.pp.html;
+    renderHandoff(data);
+  }
+});
+
+document.addEventListener('change', function(e){
+  if(e.target.classList && e.target.classList.contains('approve-check')){
+    updateMarkReadyState();
+  }
+});
+
+document.addEventListener('input', function(e){
+  if(e.target && e.target.id==='editPP'){
+    renderHandoff(SCENARIOS[state.scenario]);
+  }
+});
+
+renderAll();
+
+})();
+</script>
+</body>
+</html>

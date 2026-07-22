@@ -1,0 +1,217 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Field Study, Alaska Wildland Adventures</title><style>
+:root{
+  --bg:#070b12; --panel:#0d1420; --panel2:#111a28; --line:#1e2b3d;
+  --ink:#eef3fb; --muted:#9fb0c6; --faint:#6f7f96;
+  --aur1:#57e0c8; --aur2:#5aa9ff; --aur3:#9b8cff; --warm:#ffd18c;
+  --good:#5fd0a6; --warn:#ffb35c;
+  --maxw:820px;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  margin:0;background:
+    radial-gradient(1100px 500px at 78% -8%, rgba(90,169,255,.12), transparent 60%),
+    radial-gradient(900px 460px at 8% 4%, rgba(87,224,200,.10), transparent 55%),
+    var(--bg);
+  color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:.1px;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px 90px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+h1{font-size:clamp(30px,5.4vw,50px);line-height:1.04;margin:.1em 0 .28em;font-weight:680;letter-spacing:-.4px}
+h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--aur1);margin:0 0 4px;font-weight:640}
+.sec>h3,h3{font-size:clamp(20px,3vw,27px);line-height:1.15;margin:.1em 0 .5em;font-weight:640;letter-spacing:-.2px}
+p{margin:0 0 14px}
+a{color:var(--aur2);text-decoration:none;border-bottom:1px solid rgba(90,169,255,.35)}
+strong{color:#fff;font-weight:640}
+.small{font-size:13.5px;color:var(--muted)}
+.faint{color:var(--faint)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+/* cover */
+.cover{padding:74px 0 30px;border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:11px;font-weight:660;letter-spacing:.02em}
+.dot{width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--aur1),var(--aur3));
+  box-shadow:0 0 16px 2px rgba(87,224,200,.5)}
+.thesis{font-size:clamp(19px,2.7vw,24px);line-height:1.4;color:var(--ink);max-width:46rem;margin:.2em 0 1.1em;font-weight:480}
+.byline{font-size:13px;color:var(--faint);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.byline .pill{border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted)}
+
+/* sections */
+.sec{padding:34px 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:0}
+.grid{display:grid;gap:14px}
+@media(min-width:680px){.grid.c2{grid-template-columns:1fr 1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:14px;padding:18px 19px}
+.card h4{margin:0 0 7px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--aur1);font-weight:640}
+.card p:last-child{margin-bottom:0}
+.quote{border-left:2px solid var(--aur1);padding:6px 0 6px 18px;margin:4px 0 12px;color:#dbe6f5;font-size:18px;line-height:1.5}
+.src{font-size:12px;color:var(--faint)}
+.src a{color:var(--faint);border-bottom-color:rgba(111,127,150,.4)}
+ul.clean{list-style:none;padding:0;margin:0 0 12px}
+ul.clean li{padding:7px 0 7px 22px;position:relative;border-bottom:1px solid rgba(30,43,61,.6)}
+ul.clean li:last-child{border-bottom:0}
+ul.clean li:before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;
+  background:var(--aur2);box-shadow:0 0 9px rgba(90,169,255,.6)}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:6px;padding:1px 7px;color:var(--muted);margin-left:8px}
+.tag.cash{color:var(--good);border-color:rgba(95,208,166,.4)}
+.tag.capacity{color:var(--warm);border-color:rgba(255,209,140,.35)}
+
+/* tables */
+.tw{overflow-x:auto;margin:0 0 12px;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--faint);font-weight:560;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td .k{color:#fff;font-weight:560}
+
+/* two-column split for goals/non-goals etc */
+.split{display:grid;gap:14px}
+@media(min-width:680px){.split{grid-template-columns:1fr 1fr}}
+
+/* roadmap */
+.road{display:grid;gap:12px}
+@media(min-width:720px){.road{grid-template-columns:repeat(3,1fr)}}
+.lane{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+.lane h4{margin:0 0 3px;font-size:15px;font-weight:640}
+.lane .when{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+.lane.now{border-color:rgba(87,224,200,.4)}
+.lane .item{font-size:14px;padding:8px 0;border-top:1px solid rgba(30,43,61,.7)}
+.lane .item:first-of-type{border-top:0}
+.lane .metric{display:block;color:var(--faint);font-size:12px;margin-top:2px}
+
+/* scenario strip */
+.scn{display:grid;gap:10px;margin:2px 0 12px}
+@media(min-width:640px){.scn{grid-template-columns:repeat(3,1fr)}}
+.scn .b{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--panel)}
+.scn .b .lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.scn .b.cons{border-color:rgba(95,208,166,.45)}
+.scn .b.cons .lab{color:var(--good)}
+.clears{font-size:14px;color:var(--good);margin:0 0 8px}
+
+/* diagram */
+.diagram{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;overflow-x:auto;margin:0 0 10px}
+.diagram svg{display:block;min-width:520px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:6px 15px;font-size:12px;color:var(--muted);margin:2px 2px 0}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+
+/* honest / callout */
+.callout{background:linear-gradient(180deg,rgba(255,179,92,.07),rgba(255,179,92,.02));
+  border:1px solid rgba(255,179,92,.28);border-radius:14px;padding:17px 19px}
+.callout h3{color:var(--warm)}
+.next{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+  border-radius:16px;padding:22px 22px;margin-top:8px}
+
+/* embedded demo */
+.demoembed{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin:6px 0 0}
+.demoembed iframe{display:block;width:100%;height:660px;border:0;background:var(--bg)}
+@media print{.demoembed{display:none}}
+
+/* sources */
+ol.src-list{font-size:12.5px;color:var(--faint);padding-left:20px;margin:6px 0 0}
+ol.src-list li{margin:0 0 6px;word-break:break-word}
+ol.src-list a{color:var(--muted)}
+
+footer{color:var(--faint);font-size:12px;padding:26px 0 0;text-align:center}
+
+@media print{
+  body{background:var(--bg)}
+  .sec,.cover{page-break-inside:avoid}
+}
+</style></head><body><div class="wrap">
+<header class="cover">
+<div class="mark"><span class="dot"></span> Alaska AI</div>
+<p class="eyebrow" style="margin-top:26px">Field Study prepared for Alaska Wildland Adventures</p>
+<h1>Your reservations page tells every guest a person will answer within 48 hours, and your own job postings show that person is also answering phones, shuttling luggage, and sorting backhaul at the same time, so the fastest honest win is giving your small reservations team a tool that drafts accurate, cited replies for them, not a chatbot that talks to guests.</h1>
+<p class="thesis">Alaska Wildland Adventures runs three lodges with genuinely different access logistics (road-accessible Cooper Landing, boat-only Skilak Lake, boat-and-flightseeing Kenai Fjords National Park) plus a Seward water-taxi operation, on a high-touch, agent-assisted sales model, not instant-book. The company&#x27;s own reservations page sets a 48-hour reply expectation, and its own hiring posts show the same small seasonal team juggling phones, reservations, and hands-on guest logistics simultaneously, hardest during the May and June training ramp when new hires are least prepared. No verified Kenai Peninsula competitor, including the larger Pursuit Alaska Collection, has any AI-enabled guest communication layer, so the honest opening is not a race to match a competitor, it is closing a gap nobody local has closed yet.</p>
+<div class="byline"><span class="pill">Tourism</span><span class="pill">Kenai Peninsula &amp; Southcentral Alaska</span><span>2026-07-22</span><span class="faint">Researched and drafted by Alaska AI's agent team, reviewed by a human before it reached you</span></div>
+</header>
+<section class="sec"><h2>What we saw</h2><h3>The homework</h3>
+<div class="grid c2">
+<div class="card"><h4>The business</h4><p>Alaska Wildland Adventures is a lodge-based ecotourism operator founded in 1977, owned and run by Kirk Hoessle since 1987. It operates three lodges (Cooper Landing, Skilak Lake, and Kenai Fjords National Park) plus a Seward water-taxi and day-trip operation, selling multi-day all-inclusive packages, guided fishing, and day trips. Reservations are handled through a request form or phone with manual staff follow-up, not an instant-book system.</p></div>
+<div class="card"><h4>The real pain</h4><div class="quote">our reservations team will respond shortly with ways to build your dream Alaska vacation... Please check your spam filter if you haven&#x27;t heard from us within 48 hours.</div><p>This is Alaska Wildland Adventures&#x27; own stated reservations promise (source 1). A second hiring post for Seward-based staff (source 2) lists answering phones, taking kayak reservations, greeting guests, labeling luggage, shuttling supplies, and sorting backhaul as one combined role, and a separate seasonal manager posting (source 3) notes the schedule flexes hardest during the May and June training period.</p><p class="src">Source: <a href="https://www.alaskawildland.com/reservations/online-reservations/">https://www.alaskawildland.com/reservations/online-reservations/</a></p></div>
+</div>
+<div class="split" style="margin-top:14px">
+<div class="card"><h4>The field around them</h4><ul class="clean"><li><strong>Pursuit Alaska Collection (Kenai Fjords Wilderness Lodge, Kenai Fjords Tours, Seward Windsong Lodge)</strong> A real-time online booking engine with live availability and advance-rate pricing across day tours. No chatbot or AI assistant found. <span class="src"><a href="https://www.alaskacollection.com/day-tours/kenai-fjords-tours/">source</a></span></li><li><strong>Great Alaska Adventures (Sterling)</strong> Phone, email, and a contact form only. No chatbot or automation. <span class="src"><a href="https://www.greatalaska.com/">source</a></span></li><li><strong>Alaska Rivers Company (Cooper Landing)</strong> A basic contact form and phone. No chatbot or automation. <span class="src"><a href="https://www.alaskariverscompany.com/">source</a></span></li></ul></div>
+<div class="card"><h4>AI in this industry now</h4><ul class="clean"><li>SoFLA Vacations (6 boutique properties, Miami/Keys/NY) deployed an AI voice agent that answers the phone first, integrated with its booking system. The owner reports it more than paid for itself in the first month, mostly from after-hours calls that used to go to voicemail. <span class="src"><a href="https://hoteltechnologynews.com/2026/06/how-independent-hotels-can-use-ai-voice-agents-to-capture-after-hours-demand/">source</a></span></li><li>Trapp Family Lodge and Resort, a 96-room family-owned Vermont lodge, reports AI webchat cut guest message response time from 9 minutes to under 30 seconds and reduced call volume to staff by 30 percent (a vendor case study, presented here as vendor-sourced precedent, not a verified independent result). <span class="src"><a href="https://www.canarytechnologies.com/customers/trapp-family-lodge">source</a></span></li><li>The honest counterweight: a Texas A&amp;M survey found that discomfort from an inaccurate hotel booking chatbot reduced willingness to continue the interaction by roughly 38 percent and nearly doubled booking abandonment. <span class="src"><a href="https://techxplore.com/news/2026-05-hotel-chatbots-customers.html">source</a></span></li><li>Consumer group Which? found TripAdvisor&#x27;s AI-generated review summaries have downplayed serious guest complaints at specific properties (described by location and type, not named directly). This is why this study recommends the copilot always cite its source rather than summarize unsupported. <span class="src"><a href="https://futurism.com/artificial-intelligence/ai-whitewashing-bad-reviews-holiday-resorts">source</a></span></li></ul></div>
+</div>
+</section>
+<section class="sec"><h2>The opportunity</h2><h3>Give every guest inquiry a fast, trustworthy first answer, and take the routine, repetitive share of that inquiry volume off the small seasonal team&#x27;s plate.</h3>
+<p>This is the highest-importance, lowest-current-satisfaction job we found. The 48-hour promise and the stacked Seward job duties are both directly cited, not inferred, and no local competitor has closed this gap yet.</p>
+<div class="grid c2"><div class="card"><h4>What they use today</h4><p>A web request form or phone call, followed by manual staff research and reply, within a stated 48-hour window.</p></div><div class="card"><h4>Why a change is realistic</h4><p>Push, the 48-hour wait and the documented multi-duty overload are real and named in AWA&#x27;s own materials. Pull, zero verified Kenai Peninsula competitors have any AI guest-communication layer. Anxiety, several lodges are boat- or flightseeing-access only, where a wrong logistics answer is genuinely costly, and AWA&#x27;s sales model is deliberately high-touch, not instant-book. That anxiety is exactly why this study recommends starting staff-facing, with a human reviewing and sending every reply, rather than a guest-facing bot on day one.</p></div></div>
+</section>
+<section class="sec"><h2>The recommended build</h2><h3>Reservations-Staff Copilot</h3>
+<p>An internal assistant trained on Alaska Wildland Adventures&#x27; own package pages, lodge pages, itineraries, and policies that helps the reservations team draft accurate guest replies faster. Every draft carries a citation back to the source document. No guest ever interacts with the AI. Staff review, edit, and send every reply themselves, and pricing, availability, and any booking commitment are never generated, only looked up in a dedicated table or flagged for a human to confirm.</p>
+<div class="diagram"><svg viewBox="0 0 1058 298" role="img" aria-label="Architecture diagram" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-end"><path d="M0 0 L10 5 L0 10 z" fill="#5f7290"/></marker></defs><path d="M390 61 C422 61 422 105 454 105" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="422" y="78" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">crawled, scheduled</text><path d="M390 149 C422 149 422 105 454 105" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="422" y="122" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">staff-uploaded</text><path d="M604 105 C743 105 743 61 882 61" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="743" y="78" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">chunked, lodge-tagged</text><path d="M176 149 C315 149 315 193 454 193" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="315" y="166" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">pastes guest inquiry</text><path d="M604 193 C636 193 636 105 668 105" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="636" y="144" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">sends inquiry + lodge</text><path d="M818 105 C850 105 850 61 882 61" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="850" y="78" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">reads passages</text><path d="M818 105 C850 105 850 149 882 149" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="850" y="122" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">deterministic lookup</text><path d="M818 105 C743 105 743 193 668 193" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="743" y="144" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">requests cited draft</text><path d="M818 193 C743 193 743 105 668 105" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="743" y="144" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">returns draft + citations</text><path d="M668 105 C636 105 636 193 604 193" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="636" y="144" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">returns draft to staff</text><path d="M176 149 C315 149 315 193 454 193" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="315" y="166" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">edits and approves</text><path d="M604 193 C743 193 743 237 882 237" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="743" y="210" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">logs draft vs sent</text><path d="M176 149 C208 149 208 237 240 237" fill="none" stroke="#3a4a63" stroke-width="1.5" marker-end="url(#arw)"/><text x="208" y="188" fill="#8698b3" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">sends manually</text><rect x="26" y="118" width="150" height="62" rx="11" fill="#1a2740" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="101" y="134" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">PERSON</text><text x="101" y="148" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Reservations/sales</text><text x="101" y="163" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">staff</text><rect x="240" y="30" width="150" height="62" rx="11" fill="#1a2740" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="315" y="46" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">EXTERNAL</text><text x="315" y="60" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">alaskawildland.com</text><text x="315" y="75" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">content</text><rect x="240" y="118" width="150" height="62" rx="11" fill="#1a2740" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="315" y="134" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">EXTERNAL</text><text x="315" y="148" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Staff-provided</text><text x="315" y="163" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">package/policy</text><rect x="240" y="206" width="150" height="62" rx="11" fill="#1a2740" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="315" y="222" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">EXTERNAL</text><text x="315" y="236" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Staff&#x27;s own email</text><text x="315" y="251" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">client</text><rect x="454" y="74" width="150" height="62" rx="11" fill="#14233a" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="529" y="90" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">THEIR SYSTEM</text><text x="529" y="104" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Content Ingestion</text><text x="529" y="119" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Pipeline</text><rect x="454" y="162" width="150" height="62" rx="11" fill="#14233a" stroke="#5aa9ff" stroke-width="1.4" opacity="0.96"/><text x="529" y="178" fill="#5aa9ff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">THEIR SYSTEM</text><text x="529" y="192" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Reply Assistant</text><text x="529" y="207" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">(internal tool)</text><rect x="668" y="74" width="150" height="62" rx="11" fill="#123a34" stroke="#57e0c8" stroke-width="1.4" opacity="0.96"/><text x="743" y="90" fill="#57e0c8" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">WE BUILD</text><text x="743" y="111" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Reply Orchestrator</text><rect x="668" y="162" width="150" height="62" rx="11" fill="#123a34" stroke="#57e0c8" stroke-width="1.4" opacity="0.96"/><text x="743" y="178" fill="#57e0c8" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">WE BUILD</text><text x="743" y="199" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Base LLM API</text><rect x="882" y="30" width="150" height="62" rx="11" fill="#241a3a" stroke="#9b8cff" stroke-width="1.4" opacity="0.96"/><text x="957" y="46" fill="#9b8cff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">DATA</text><text x="957" y="60" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Vector Store</text><text x="957" y="75" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">(lodge-tagged)</text><rect x="882" y="118" width="150" height="62" rx="11" fill="#241a3a" stroke="#9b8cff" stroke-width="1.4" opacity="0.96"/><text x="957" y="134" fill="#9b8cff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">DATA</text><text x="957" y="148" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Pricing &amp;</text><text x="957" y="163" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Availability Table</text><rect x="882" y="206" width="150" height="62" rx="11" fill="#241a3a" stroke="#9b8cff" stroke-width="1.4" opacity="0.96"/><text x="957" y="222" fill="#9b8cff" font-size="9" text-anchor="middle" font-family="ui-monospace,monospace" letter-spacing="0.6" opacity="0.85">DATA</text><text x="957" y="243" fill="#eef3fb" font-size="12.5" text-anchor="middle" font-weight="600">Draft Log (eval set)</text></svg></div><div class="legend"><span><i style="background:#5aa9ff"></i>Person</span><span><i style="background:#5aa9ff"></i>External</span><span><i style="background:#5aa9ff"></i>Their system</span><span><i style="background:#57e0c8"></i>We build</span><span><i style="background:#9b8cff"></i>Data</span></div>
+<p class="small faint">AWA&#x27;s own content feeds a lodge-tagged retrieval index. Staff paste a guest inquiry into a small internal tool. An orchestrator retrieves the right passages, forces any price or availability question through a deterministic table instead of the model, and drafts cited reply text. Staff edit and send by hand, and every draft is logged to build tomorrow&#x27;s eval set.</p>
+<div class="grid c2" style="margin-top:6px"><div class="card"><h4>Where AI fits, and where it does not</h4><p>This is the one candidate that clears the feasibility ladder cleanly. It is staff-facing, so a wrong draft is caught before a guest ever sees it, which matters because several lodges are boat- or flightseeing-access only where a wrong logistics answer would be costly. We deliberately did NOT recommend a guest-facing chat or voice assistant yet, and we killed two other candidates outright, an AI staffing-schedule tool (the real fix is a deterministic formula over arrival and occupancy data, not a model, and that data is not even digitized yet) and an AI waitlist-nurture tool (built on a wait-list claim we could only confirm as an inference, not a verified fact, so confirming the data comes first).</p></div><div class="card"><h4>Build vs buy</h4><p>We buy the commodity parts, the vector search index and the base language model. We build the two things that are actually AWA-specific, the retrieval pipeline that tags every answer by which lodge it came from, and the rule that pricing, availability, and booking commitments are never left to the model.</p></div></div>
+</section>
+<section class="sec"><h2>See it working</h2><h3>A live demo, built on your own facts</h3>
+<p>This is a scripted demonstration of the build above, running on your own operation. It is honest about being a demo, and it does nothing the study did not scope. Click through it right here, or <a href="demo/index.html" target="_blank" rel="noopener">open it full screen</a>.</p>
+<div class="demoembed"><iframe src="demo/index.html" title="Interactive demo of the recommended build" loading="lazy"></iframe></div>
+</section>
+<section class="sec"><h2>The plan</h2><h3>What we would build, scoped</h3>
+<p>AWA&#x27;s reservations page promises a 48-hour reply, and its own hiring posts show the small seasonal team simultaneously covering phones, reservations, and hands-on guest logistics, hardest during the May and June training ramp.</p>
+<div class="split">
+<div class="card"><h4>Goals</h4><ul class="clean"><li>Cut the time it takes reservations staff to draft an accurate reply to a common guest question.</li><li>Make every AI-suggested draft traceable to the specific document it came from.</li><li>Shorten the time it takes a new seasonal hire to answer guest questions independently during the May/June training ramp.</li><li>Make the stated 48-hour reply commitment easier to hold during peak season without adding headcount.</li></ul></div>
+<div class="card"><h4>Non-goals, on purpose</h4><ul class="clean"><li>No guest-facing chat or auto-send in Phase 1 <span class="faint">(Several lodges are boat- or flightseeing-access only, and a wrong answer about access carries real cost. Staying staff-facing until a proven eval set exists.)</span></li><li>No AI-generated pricing, availability, or booking commitments <span class="faint">(These must come from AWA&#x27;s own systems or a live person, never generated text.)</span></li><li>No integration with a live booking or reservation system in Phase 1 <span class="faint">(Phase 1 is retrieval over static documents only; live-system integration is not yet justified.)</span></li></ul></div>
+</div>
+<h4 style="margin:18px 0 8px;color:var(--aur1);font-size:12px;letter-spacing:.16em;text-transform:uppercase">How we would measure success</h4>
+<div class="tw"><table><thead><tr><th>Metric</th><th>Baseline</th><th>Target</th><th>By when</th></tr></thead><tbody><tr><td class="k">Median time to draft a reply to a common guest question</td><td>assumed unknown, shadow-logged for two weeks before go-live</td><td>reduce median draft time by 30 percent</td><td>within 60 days of go-live</td></tr><tr><td class="k">Share of AI drafts sent with only light edits and zero factual errors on lodge access or logistics</td><td>0 percent (no AI drafting exists today)</td><td>at least 70 percent light-edit-only, zero uncorrected access or logistics errors reaching a sent reply</td><td>first 90 days live</td></tr><tr><td class="k">Compliance with the stated 48-hour reply commitment during peak season</td><td>assumed unknown, pulled from the prior May-June peak&#x27;s reply timestamps</td><td>maintain or improve against that pulled baseline without adding headcount</td><td>one full peak season after go-live</td></tr></tbody></table></div>
+<div class="split">
+<div class="card"><h4>Phase one, must have</h4><ul class="clean"><li>Ingest AWA&#x27;s package pages, lodge pages, itineraries, and posted policies into a retrieval index.</li><li>Build a real eval set from a labeled sample of historical guest inquiries with AWA staff.</li><li>A draft-assist workflow where staff see a suggested reply, edit it, and send it themselves.</li><li>Every AI draft carries a citation back to its source document.</li><li>Extra scrutiny in the eval set for lodge-access and logistics questions.</li></ul></div>
+<div class="card"><h4>Deliberately later</h4><ul class="clean"><li>Guest-facing chat</li><li>Live booking/availability integration</li><li>Voice/phone assist for the Seward line</li><li>Multi-language support</li></ul></div>
+</div>
+<div class="card" style="margin-top:14px"><h4>What we would need from you</h4><ul class="clean"><li>Access to internal package and policy documents beyond the public site.</li><li>A designated reservations staffer to review drafts and help build the eval set.</li><li>Sign-off that no live pricing or availability may ever be generated by the tool.</li><li>Confirmation of which tool staff currently use for guest correspondence.</li></ul></div>
+<h4 style="margin:18px 0 8px;color:var(--aur1);font-size:12px;letter-spacing:.16em;text-transform:uppercase">Risks, and how we would handle them</h4>
+<div class="tw"><table><thead><tr><th>Risk</th><th>Mitigation</th></tr></thead><tbody><tr><td class="k">No eval set exists yet, so accuracy cannot be proven on day one.</td><td>Building it from real historical inquiries is explicit Phase 1 scope, and go-live is gated on staff review of it.</td></tr><tr><td class="k">A confidently wrong answer about boat- or flightseeing-only lodge access could misdirect a guest.</td><td>Entirely staff-facing, human reviews and sends every reply, nothing auto-sends.</td></tr></tbody></table></div>
+<div class="card" style="margin-top:8px"><h4>Open questions we would resolve together</h4><ul class="clean"><li>Which tool do reservations staff actually use today for guest correspondence? <span class="faint">(Alaska Wildland Adventures)</span></li><li>What is the actual current average reply time against the stated 48-hour promise? <span class="faint">(Alaska Wildland Adventures)</span></li><li>Are seasonal reservations and managerial staff paid overtime during peak season, or is the schedule flex absorbed by salaried or exempt roles? <span class="faint">(Alaska Wildland Adventures)</span></li></ul></div>
+</section>
+<section class="sec"><h2>The numbers</h2><h3>Honest ROI, not a hero number</h3>
+<div class="card"><h4>What it costs to run, five year view</h4><p>Modeled over 3 years, a bounded pilot with no PMS or telephony integration, just an index over content AWA already publishes plus a simple internal tool. Costs include build and setup, a short staff training, ongoing hosting and monitoring, and a 15 to 20 percent contingency reserve.</p></div>
+<div class="card" style="margin-top:14px"><h4>Where the value comes from</h4><ul class="clean"><li><strong>Guest-reply drafting and research time saved during peak season</strong><span class="tag cash">cash</span> <span class="faint">Converts to cash through avoided peak-season overtime, read as consistent with AWA&#x27;s own hiring materials, which describe the seasonal manager schedule flexing hardest during the May and June training period, though the source itself does not use the word overtime.</span></li><li><strong>Redeployed capacity toward the stacked phone, kayak-booking, and guest-logistics duties described in AWA&#x27;s own Seward hiring post</strong><span class="tag capacity">capacity</span> <span class="faint">Not counted as cash, since no decision has been made to defer a hire or avoid a backfill with the freed time.</span></li><li><strong>Lower risk of breaching the stated 48-hour response window</strong><span class="tag capacity">capacity</span> <span class="faint">Not quantified, tracked as a secondary signal only.</span></li></ul></div>
+<div class="scn" style="margin-top:14px">
+<div class="b cons"><div class="lab">Conservative</div>A small reservations team, a modest assumed drafting-time baseline (about 20 hours a week across the team during the 18-week peak season), and a modest 28 percent time cut. This recovers about 104 percent of total cost over 3 years, with payback in month 32 of 36, thin and late, and we say so plainly rather than smoothing it over.</div>
+<div class="b"><div class="lab">Most likely</div>A slightly richer assumed baseline (24 hours a week, a 35 percent cut) recovers about 200 percent of total cost over 3 years, with payback around month 17.</div>
+<div class="b"><div class="lab">Aggressive</div>A higher assumed baseline (28 hours a week, a 45 percent cut) with a leaner build recovers about 470 percent of total cost over 3 years, with payback around month 7. Even here the absolute dollars stay modest, this is a small internal tool, not a platform.</div>
+</div>
+<p class="clears">The conservative case still clears the bar. That is the case we would stand behind.</p>
+<p><strong>Payback</strong> About 7 months aggressive, 17 months most likely, and 32 months conservative. The conservative payback is past the 18 to 24 month band that should normally prompt a second look at whether this is the right-sized solution, and we are naming that honestly. It clears, thinly, because the team and the build are both genuinely small, not because the benefit side was inflated. Every scenario&#x27;s cash payback depends on one unverified assumption, that AWA actually pays overtime to seasonal reservations or managerial staff during peak season. If that is not the case, this benefit reduces to an unquantified capacity gain like the other two, and all three scenarios would need to be rebuilt as capacity-only before funding any next phase. We recommend treating year one as instrumented decision data, measured hours saved, actual overtime change if any, and accepted-versus-edited draft rates, that gates any expansion.</p>
+<div class="callout" style="margin-top:8px"><h3>The honest base rate</h3><p>Independent research finds roughly 95 percent of enterprise generative-AI pilots show no profit-and-loss impact, and roughly 80 percent of AI projects fail outright. This build is scoped to sit in the minority that pays because it is narrow (an index over content AWA already publishes), workflow-embedded (staff already draft these replies by hand today), carries zero guest-facing risk (a human reviews and sends every draft), and is measured from day one through the eval set it builds as a byproduct.</p></div>
+<p class="small" style="margin-top:12px"><strong>Who owns the number</strong> Amy LaHaie, General Manager of Administration and Programming, who would own the accepted-versus-edited eval set and the before-and-after time numbers.</p>
+</section>
+<section class="sec"><h2>The roadmap</h2><h3>By confidence, not by calendar</h3>
+<div class="road">
+<div class="lane now"><div class="when">Now</div><div class="item">Reservations-Staff Copilot, an internal drafting assistant grounded in AWA&#x27;s own content, staff review and send every draft<span class="metric">average staff minutes to draft a guest reply, and the share of drafts sent with only light edits</span></div><div class="item">A curated content corpus and a real accepted-versus-edited eval set, built as a byproduct of the pilot<span class="metric">count of real staff-reviewed reply events captured</span></div></div>
+<div class="lane "><div class="when">Next</div><div class="item">A text-only (not voice) guest inquiry assistant, grounded only in AWA&#x27;s own verified content, always handing off anything booking, payment, or safety related to a person<span class="metric">share of routine inquiries correctly answered without escalation, measured against the eval set the Now phase built</span></div></div>
+<div class="lane "><div class="when">Later</div><div class="item">A phone or voice channel for guest inquiries, once telephony and latency are separately scoped<span class="metric">share of after-hours or overflow calls resolved without a callback</span></div><div class="item">Arrival-driven staff scheduling, which should be a deterministic formula once arrival and occupancy data is digitized, not an AI build<span class="metric">scheduled labor-hours variance against actual arrivals</span></div><div class="item">Nurturing the flagship-lodge waitlist, contingent on first confirming it is real, accessible, consented data<span class="metric">waitlist-to-booking conversion uplift</span></div></div>
+</div>
+<p class="small faint" style="margin-top:10px">The Next phase is not funded until the Now-phase pilot produces a real eval set at a stated volume and clears a stated accuracy bar. Each Later item carries its own named precondition before it is even scoped.</p>
+</section>
+<section class="sec"><div class="callout"><h3>The honest part, what could make this not work</h3><ul class="clean"><li>No eval set of real historical guest inquiries exists yet. Until one is built and reviewed by AWA staff, we cannot promise a specific accuracy number, only the process for proving one.</li><li>The conservative ROI case clears, but only by month 32 of a 36-month window, a thin and late margin we are not rounding up.</li><li>Both industry case studies we cite (Trapp Family Lodge and SoFLA Vacations) are vendor-reported, not independently verified, and we present them as precedent, not as AWA&#x27;s own expected outcome.</li><li>This tool never talks to a guest and never generates a price, date, or availability answer. If that boundary is ever loosened, the honest study accompanying that change would need to restart the feasibility case from scratch.</li></ul></div></section>
+<section class="sec"><div class="next"><h2>What this is</h2><h3>This is the free version of how we work</h3><p>If any of this is useful, reply and we will talk about what a real pilot looks like. No pressure either way, the study is yours regardless.</p><p class="small faint">The full picture lives at <a href="https://alaskaaihq.com/services/">alaskaaihq.com/services</a>.</p></div></section>
+<section class="sec"><h2>Sources</h2><ol class="src-list">
+<li>48-hour reservations response window <a href="https://www.alaskawildland.com/reservations/online-reservations/">https://www.alaskawildland.com/reservations/online-reservations/</a></li>
+<li>Seward staff duties (phones, reservations, guest logistics) <a href="https://www.alaskawildland.com/employment/wp-job-openings/">https://www.alaskawildland.com/employment/wp-job-openings/</a></li>
+<li>Seasonal manager flex hours, May/June ramp <a href="https://www.alaskawildland.com/employment/alaska-adventures-job-openings/">https://www.alaskawildland.com/employment/alaska-adventures-job-openings/</a></li>
+<li>2027 wait list on flagship lodge (inference-tier) <a href="https://www.alaskawildland.com/lodges/kenai-backcountry-lodge/">https://www.alaskawildland.com/lodges/kenai-backcountry-lodge/</a></li>
+<li>Company history, Kirk Hoessle ownership since 1987 <a href="https://www.alaskawildland.com/about/">https://www.alaskawildland.com/about/</a></li>
+<li>Leadership roster (Jeff Pedersen, Amy LaHaie) <a href="https://www.alaskawildland.com/about/home-office/">https://www.alaskawildland.com/about/home-office/</a></li>
+<li>Verified contact, Kelsey Clifford <a href="https://www.alaskawildland.com/about/media/">https://www.alaskawildland.com/about/media/</a></li>
+<li>Pursuit Alaska Collection booking engine, no AI found <a href="https://www.alaskacollection.com/day-tours/kenai-fjords-tours/">https://www.alaskacollection.com/day-tours/kenai-fjords-tours/</a></li>
+<li>Great Alaska Adventures, no AI found <a href="https://www.greatalaska.com/">https://www.greatalaska.com/</a></li>
+<li>Alaska Rivers Company, no AI found <a href="https://www.alaskariverscompany.com/">https://www.alaskariverscompany.com/</a></li>
+<li>SoFLA Vacations AI voice agent outcome <a href="https://hoteltechnologynews.com/2026/06/how-independent-hotels-can-use-ai-voice-agents-to-capture-after-hours-demand/">https://hoteltechnologynews.com/2026/06/how-independent-hotels-can-use-ai-voice-agents-to-capture-after-hours-demand/</a></li>
+<li>Trapp Family Lodge AI webchat outcome <a href="https://www.canarytechnologies.com/customers/trapp-family-lodge">https://www.canarytechnologies.com/customers/trapp-family-lodge</a></li>
+<li>Chatbot inaccuracy reducing booking willingness (hype flag) <a href="https://techxplore.com/news/2026-05-hotel-chatbots-customers.html">https://techxplore.com/news/2026-05-hotel-chatbots-customers.html</a></li>
+<li>TripAdvisor AI summaries downplaying complaints at unnamed properties (hype flag) <a href="https://futurism.com/artificial-intelligence/ai-whitewashing-bad-reviews-holiday-resorts">https://futurism.com/artificial-intelligence/ai-whitewashing-bad-reviews-holiday-resorts</a></li>
+<li>Kenai Riverside Lodge location (Cooper Landing, road-accessible) and the 11-Day Grand Adventure multi-lodge itinerary to Denali <a href="https://www.alaskawildland.com/lodges/kenai-riverside-lodge/">https://www.alaskawildland.com/lodges/kenai-riverside-lodge/</a></li>
+<li>Kenai Fjords Glacier Lodge location (Pedersen Lagoon, boat-access only from Seward) <a href="https://www.alaskawildland.com/lodges/kenai-fjords-glacier-lodge/">https://www.alaskawildland.com/lodges/kenai-fjords-glacier-lodge/</a></li>
+</ol></section>
+<footer>Alaska AI. This study was prepared for Alaska Wildland Adventures and is not for redistribution.</footer>
+</div></body></html>
