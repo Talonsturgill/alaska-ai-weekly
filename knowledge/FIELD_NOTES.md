@@ -901,3 +901,18 @@ dimensional.
   WebGL fragment shader and pre-baked normal textures -- not portable to pure 2D
   canvas and off-policy (external asset pipeline). The Sobel-from-procedural-
   height path above is the offline, dependency-free form that fits this studio.
+
+## 2026-07-22 - craft refresh (cartographic direction pass)
+
+- If a data/choropleth slide ships this run, pick the class-interval method
+  deliberately and NAME it in the dossier (natural-breaks/Jenks for skewed
+  Alaska data, quantile only when comparing rank, equal-interval for evenly
+  spread values); the method silently changes the map's argument. Use a
+  single-hue SEQUENTIAL ramp for magnitude, a two-hue DIVERGING ramp only
+  around a true midpoint. Strip decoration: no default legends, no county
+  borders louder than the data. Sources:
+  https://handsondataviz.org/design-choropleth.html ,
+  https://www.directionsmag.com/article/3363
+- LinkedIn 2026 sources reconfirm the existing numbers (8-10 slides, one idea
+  per slide, hook first, single CTA, first-hour comment replies); no change to
+  CAROUSEL_CRAFT.
