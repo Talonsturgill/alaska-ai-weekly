@@ -48,11 +48,11 @@ const CornerPings: React.FC<{f: number}> = ({f}) => {
   return (
     <>
       {pts.map(([x, y, phase, period], i) => {
-        const pulse = 0.25 + 0.45 * (0.5 + 0.5 * Math.sin((f + phase) / period));
+        const pulse = 0.15 + 0.65 * (0.5 + 0.5 * Math.sin((f + phase) / period));
         return (
           <g key={i} transform={`translate(${x},${y})`}>
-            <circle r={10} fill={CAUTION} opacity={pulse} />
-            <circle r={18} fill="none" stroke={CAUTION} strokeWidth={2} opacity={pulse * 0.5} />
+            <circle r={16} fill={CAUTION} opacity={pulse} />
+            <circle r={26} fill="none" stroke={CAUTION} strokeWidth={3} opacity={pulse * 0.5} />
           </g>
         );
       })}
@@ -150,7 +150,7 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
   const push = interpolate(f, [0, 132], [1.0, 1.1], {extrapolateRight: 'clamp'});
   // real craneDown: the whole framing descends over the shot (CAMERA_MOTION needs a
   // genuine whole-frame displacement, not just a scale push on a mostly-black void)
-  const craneY = interpolate(f, [0, 132], [-160, 0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const craneY = interpolate(f, [0, 132], [-240, 20], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const rackIn = spring({frame: f - 10, fps, config: {damping: 12, stiffness: 170}});
   const plateA = interpolate(f, [16, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const plateB = interpolate(f, [30, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
@@ -293,7 +293,7 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const propIn = interpolate(f, [175, 200], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const dip = interpolate(f, [175, 230], [0, -18], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // real truckAcross: the whole framing trucks sideways over the shot
-  const truckX = interpolate(f, [0, 264], [260, -260], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const truckX = interpolate(f, [0, 264], [340, -340], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   return (
     <AbsoluteFill style={{backgroundColor: '#1a2230'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
