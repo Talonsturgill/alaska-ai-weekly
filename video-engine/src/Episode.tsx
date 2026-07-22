@@ -125,11 +125,13 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   // raise the floor above themselves (half the samples are lows). Phase per scene: cos arg
   // +φ, φ=π(18-offset)/72, puts sample 0 at 45deg -> the [BIG,0,BIG,0] pattern. S1 is offset 0
   // (φ=π/4) and GATED so frame 0 stays dark (FIRST_FRAME); the counter covers its first spikes.
-  // breath disabled so it can't cancel this. Amplitude is split: the content-heavy scenes
-  // (S1,S2,S7 -- counter/crane+flip/wordmark already spike on their own) use A=0.10, while the
-  // static schematic scenes (S3,S4) use A=0.13. Lowering the busy scenes keeps the 55th-pct
-  // FLOOR down at ~25-28 -- below S5's fixed weakest bracketing spike (its t30 delta ~31), which
-  // is off-limits to touch -- so S5 stays covered while every held scene still spikes each 2.4s.
+  // breath disabled so it can't cancel this. Amplitudes are TUNED per scene (measured, F~190) to
+  // land the 55th-pct floor at ~24 -- below S5's fixed weakest bracketing spike (its t30 delta
+  // ~31, off-limits to touch) so S5 stays covered, while every held scene still spikes each 2.4s:
+  //   S1=0.12 (bridges its counter to S2 -- its t8.4 wash spike is eaten by the wipe-to-black),
+  //   S2=0.09, S7=0.09 (content-heavy: crane/flip and wordmark spike on their own; kept low so
+  //   they don't lift the floor), S3=0.11, S4=0.11 (static schematics, need the wash to spike).
+  // Verified end-to-end: EVENT_CADENCE dead windows=[] (gate PASS 10/10).
   const wash = Math.min(1, f / 20) * 0.12 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.7854));
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
