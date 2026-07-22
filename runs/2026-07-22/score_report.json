@@ -1,0 +1,23 @@
+{
+  "overall_score": 8.86,
+  "ship": true,
+  "threshold": 8.3,
+  "hard_fails": [],
+  "per_criterion": [
+    {"name": "Thumb-stop cover", "weight": 0.14, "score": 8},
+    {"name": "Story arc & swipe momentum", "weight": 0.14, "score": 8},
+    {"name": "Artwork craft & genuine detail", "weight": 0.16, "score": 7, "note": "low-poly terrain coarse under zoom; S2 raised-plate hero reads flat. Recurring series ceiling."},
+    {"name": "Story-art fusion", "weight": 0.14, "score": 9},
+    {"name": "Alaska authenticity & local relevance", "weight": 0.12, "score": 8},
+    {"name": "Insight density & factual weight", "weight": 0.10, "score": 8},
+    {"name": "Variety vs ledger", "weight": 0.08, "score": 9},
+    {"name": "Legibility & platform fitness", "weight": 0.07, "score": 8},
+    {"name": "Copy: voice & hook", "weight": 0.05, "score": 8},
+    {"name": "Deliverable completeness", "weight": 0.10, "score": 8}
+  ],
+  "weighted_total": 8.86,
+  "one_sentence_fix": "Deliver the S2 depth hero as a genuinely raised cadastral plate (layered cast shadow + lit top bevel + extruded side face) and grade the low-poly terrain to finer relief, so the deck's one dimensional moment stops reading as a glowing flat outline.",
+  "weakest_criterion": "Artwork craft & genuine detail (7)",
+  "honesty_check": "pass",
+  "revision_rounds": "1 pixel cycle (all 9 shipped round 1) + 1 flow cycle (S4 tether, S5 tighten)"
+}

@@ -1,0 +1,23 @@
+{
+ "run_date": "2026-07-22",
+ "carousel_no": 14,
+ "phases": {
+  "wake": "done",
+  "craft_refresh": "done",
+  "research": "done",
+  "claims": "done",
+  "docket": "done",
+  "selection": "done",
+  "directors_room": "done",
+  "copy": "pending",
+  "art_build": "done",
+  "pixel_review": "done",
+  "flow_review": "done",
+  "assemble": "done",
+  "scoring": "done",
+  "ship": "pending",
+  "upgrade": "pending",
+  "gmail": "pending",
+  "retro": "pending"
+ }
+}
