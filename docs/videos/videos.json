@@ -1,0 +1,198 @@
+{
+  "note": "Alaska AI video feed manifest. Newest first. The dispatch routine in alaska-ai-weekly appends a new entry each run via scripts/publish_feed.py. id must be unique (used for dedupe + deep links).",
+  "media_base": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/",
+  "videos": [
+    {
+      "id": "2026-07-22-checkpoint-lever",
+      "date": "2026-07-22",
+      "title": "The Checkpoint Lever",
+      "caption": "The Air Force offered 4,700 acres across three Alaska bases for AI data centers. Nobody has been picked yet, and the lease is still open.",
+      "video": "dispatch_2026-07-22_9x16.mp4",
+      "poster": "dispatch_2026-07-22_poster.png"
+    },
+    {
+      "id": "2026-07-21c-ear-and-eye",
+      "date": "2026-07-21",
+      "title": "Ear and Eye on the Ice-White Whale",
+      "caption": "Two NOAA-led AI systems now watch Cook Inlet's endangered belugas from two directions at once, a robot ear underwater and a robot eye in orbit. 331 belugas remain.",
+      "video": "dispatch_2026-07-21c_9x16.mp4",
+      "poster": "dispatch_2026-07-21c_poster.png"
+    },
+    {
+      "id": "2026-07-21-pen-that-wont-land",
+      "date": "2026-07-21",
+      "title": "The Pen That Won't Land",
+      "caption": "Kenai Peninsula schools adopted an AI policy before the governance to back it up. The pen hovers over the signature line.",
+      "video": "alaska-pen-that-wont-sign-916-final2-2026-07-21.mp4",
+      "poster": "alaska-pen-that-wont-sign-poster-final2-2026-07-21.png"
+    },
+    {
+      "id": "2026-07-20b-referee-arrives",
+      "date": "2026-07-20",
+      "title": "The Referee Arrives",
+      "caption": "Alaska's salmon bycatch fight meets the AI that counts the fish. NOAA's model reads trawl net-cam footage, and the Sitka Tribe runs its own AI video weir.",
+      "video": "dispatch-2026-07-20b-9x16.mp4",
+      "poster": "dispatch-2026-07-20b-poster.png"
+    },
+    {
+      "id": "2026-07-20-alaska-ran-the-sky",
+      "date": "2026-07-20",
+      "title": "Alaska Ran the Sky",
+      "caption": "The XPRIZE Wildfire autonomous-drone finals were held at Nenana, Alaska. UAF ran the airspace while AI systems raced to detect and put out a fire with no human in the loop.",
+      "video": "dispatch-2026-07-20-vertical-916.mp4",
+      "poster": "dispatch-2026-07-20-poster.png"
+    },
+    {
+      "id": "2026-07-19-gvea-turbine",
+      "date": "2026-07-19",
+      "title": "He Paid $50K Just to Wait",
+      "caption": "Golden Valley Electric weighs a second naphtha turbine at North Pole as new demand, including AI, presses on the Interior grid.",
+      "video": "dispatch-2026-07-19-916.mp4",
+      "poster": ""
+    },
+    {
+      "id": "2026-07-18-matsu-conveyance",
+      "date": "2026-07-18",
+      "title": "31 Square Miles, No Charge",
+      "caption": "Alaska DNR's preliminary decision would convey about 19,950 acres of Mat-Su state forest to AIDEA at no charge for a data-center, rail and energy district.",
+      "video": "dispatch-2026-07-18-916.mp4",
+      "poster": "dispatch-2026-07-18-poster.png"
+    },
+    {
+      "id": "2026-07-17-mineral-hunt",
+      "date": "2026-07-17",
+      "title": "The $15M Mineral Hunt",
+      "caption": "UAF won a $15M NSF award to use AI to prospect Alaska's critical minerals.",
+      "video": "dispatch-2026-07-17-vertical.mp4",
+      "poster": "dispatch-2026-07-17-poster.png"
+    },
+    {
+      "id": "2026-07-16-hell-no-on-the-tundra",
+      "date": "2026-07-16",
+      "title": "Hell No on the Tundra",
+      "caption": "Stak Energy's proposed gigawatt AI data center near Deadhorse drew 500+ public comments, fewer than a dozen in favor. The mailbox is the real vote.",
+      "video": "dispatch-2026-07-16-916.mp4",
+      "poster": "dispatch-2026-07-16-poster.png"
+    },
+    {
+      "id": "2026-07-14-claim-on-the-tundra",
+      "date": "2026-07-14",
+      "title": "The Claim on the Tundra",
+      "caption": "A gigawatt gas-fired AI data center proposed on a square mile of North Slope state land, with cost estimates spanning a twentyfold range and no confirmed customers.",
+      "video": "dispatch_2026-07-14_9x16.mp4",
+      "poster": "dispatch_2026-07-14_poster.png"
+    },
+    {
+      "id": "2026-07-13-sorted-by-a-machine",
+      "date": "2026-07-13",
+      "title": "Sorted by a Machine",
+      "caption": "An LLM screened ~1,100 federal grants and an Alaska Native Language Archive grant was among ~1,400 terminated. A court ruled it unlawful. The model did not decide, a person aimed it.",
+      "video": "dispatch-2026-07-13-vertical.mp4",
+      "poster": "dispatch-2026-07-13-poster.png"
+    },
+    {
+      "id": "2026-07-12-the-fake-that-swam",
+      "date": "2026-07-12",
+      "title": "The Fake That Swam",
+      "caption": "An AI-generated image claimed a beluga escaped Seward's SeaLife Center. Nearly 6 million views before the debunk, and the detector could only say 82.6 percent likely AI.",
+      "video": "dispatch-2026-07-12-thefakethatswam-916.mp4",
+      "poster": "dispatch-2026-07-12-thefakethatswam-poster.png"
+    },
+    {
+      "id": "2026-07-11-the-lid",
+      "date": "2026-07-11",
+      "title": "The Lid",
+      "caption": "A UAF model bias-corrects wildfire smoke forecasts for Alaska, where an inversion lid traps smoke low and the forecast paints it thin and high.",
+      "video": "dispatch-2026-07-11-thelid-9x16.mp4",
+      "poster": "dispatch-2026-07-11-thelid-poster.png"
+    },
+    {
+      "id": "2026-07-10-teaching-the-machine",
+      "date": "2026-07-10",
+      "title": "Teaching the Machine to See",
+      "caption": "On Bristol Bay's Wood River, a person hand-labels thousands of sockeye to teach a drone's computer vision while the ADFG towers keep the official count.",
+      "video": "dispatch-2026-07-10-9x16.mp4",
+      "poster": "dispatch-2026-07-10-poster.png"
+    },
+    {
+      "id": "2026-07-09-the-mountain-listens",
+      "date": "2026-07-09",
+      "title": "The Mountain Listens",
+      "caption": "VOISS-Net, an Alaska Volcano Observatory deep-learning model, reads a volcano's seismic and infrasound spectrograms while Great Sitkin erupts. It names the sound. A human stays on watch.",
+      "video": "dispatch-2026-07-09-volcano-916.mp4",
+      "poster": "dispatch-2026-07-09-volcano-poster.png"
+    },
+    {
+      "id": "2026-07-08-count-from-a-dot",
+      "date": "2026-07-08",
+      "title": "The Count From a Dot",
+      "caption": "A weakly-supervised model counts Alaska caribou in aerial survey photos from a single point per animal, validated on ADFG's Central Arctic census.",
+      "video": "dispatch-2026-07-08-916.mp4",
+      "poster": "dispatch-2026-07-08-poster.png"
+    },
+    {
+      "id": "2026-07-06-launch-call",
+      "date": "2026-07-06",
+      "title": "The Launch Call",
+      "caption": "ANTHC and Stanford built a decision AI for rural Alaska medevac calls, with tribal data governance at the center.",
+      "video": "dispatch-2026-07-06-launchcall-9x16.mp4",
+      "poster": "dispatch-2026-07-06-launchcall-poster.png"
+    },
+    {
+      "id": "2026-07-05-depth-model",
+      "date": "2026-07-05",
+      "title": "The Depth Model",
+      "caption": "A UAF probabilistic model predicts where Chinook salmon swim in the water column, to help pollock trawlers avoid them.",
+      "video": "dispatch-2026-07-05-916.mp4",
+      "poster": "dispatch-2026-07-05-poster.png"
+    },
+    {
+      "id": "2026-07-04-whale-spotter",
+      "date": "2026-07-04",
+      "title": "The Whale Spotter",
+      "caption": "An AI eye for spotting whales in Alaska waters.",
+      "video": "dispatch-2026-07-04-whalespotter-9x16.mp4",
+      "poster": "dispatch-2026-07-04-whalespotter-poster.png"
+    },
+    {
+      "id": "2026-07-03-ten-minute-clock",
+      "date": "2026-07-03",
+      "title": "The Ten-Minute Clock",
+      "caption": "At the XPRIZE Wildfire finals in Nenana, autonomous AI drone systems had ten minutes to find and suppress a controlled wildfire. No human in the loop.",
+      "video": "dispatch-2026-07-03-916.mp4",
+      "poster": "dispatch-2026-07-03-poster.png"
+    },
+    {
+      "id": "2026-07-02-the-circuit",
+      "date": "2026-07-02",
+      "title": "The Circuit",
+      "caption": "The Air Force offered 4,700 acres for AI data centers while Cook Inlet's gas squeeze leaves the Interior grid straining to feed them.",
+      "video": "dispatch-2026-07-02-916.mp4",
+      "poster": "dispatch-2026-07-02-poster.png"
+    },
+    {
+      "id": "2026-07-01-razor-edge",
+      "date": "2026-07-01",
+      "title": "The Razor Edge",
+      "caption": "An ML model pulled about 1,750 uncatalogued quakes out of a decade of Alaska seismic noise, tracing a 250 km buried plate edge under southern Alaska.",
+      "video": "dispatch-2026-07-01-yakutat-916.mp4",
+      "poster": "dispatch-2026-07-01-yakutat-poster.png"
+    },
+    {
+      "id": "2026-06-30-river-sonar",
+      "date": "2026-06-30",
+      "title": "The River Sonar",
+      "caption": "Kenai River salmon counted by imaging sonar and computer vision.",
+      "video": "dispatch-2026-06-30-riversonar-9x16.mp4",
+      "poster": "dispatch-2026-06-30-riversonar-poster.png"
+    },
+    {
+      "id": "2026-06-26-digital-twin",
+      "date": "2026-06-26",
+      "title": "The Digital Twin",
+      "caption": "A permafrost digital twin under a road in Utqiagvik, built from physics-informed ML and fiber-optic sensing.",
+      "video": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/dispatch-2026-06-26-9x16.mp4",
+      "poster": ""
+    }
+  ]
+}
