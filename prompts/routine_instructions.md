@@ -373,13 +373,19 @@ JSON in its final message, which YOU persist to
    storyboard.md, claims.json, copy.json, caption.txt + caption_report.json,
    score_report.json, machine_qa.json, assemble_report.json, selection.md,
    plan.md, run_state.json.
-2. Rebuild the public site (home, docket, archive, per-deck pages, about)
+2. Rebuild the public site (home, docket, archive, per-deck pages, about,
+   and the Bottleneck Scanner at scan/ plus its homepage section)
    and commit it with the run: `python scripts/site_build.py --date <date>`
    (it validates ledger/docket.json, reads runs/ for the archive, and
    refuses banned punctuation on every page; a FAIL here blocks the ship
    until fixed). Because the archive reads runs/, run it AFTER step 1
    copies runs/<date>/. docs/ changes ride the run commit; the Pages
-   workflow republishes on merge.
+   workflow republishes on merge. The scanner section and scan/ page are
+   part of site_build.py and regenerate on every build; their backend
+   (Supabase Edge Functions + an API-triggered routine) lives in the
+   alaska-ai-scanner repo and is NOT this routine's concern. Never remove
+   them, never edit docs/scan/ by hand, and if site_build.py ever fails
+   inside scan_page() or scan_html(), fix the build, do not drop the page.
 3. Subscriber alerts: run `python scripts/docket_alerts.py --date <date>`.
    It sends AT MOST one Buttondown email per run, only for real docket
    events (a comment window newly open, a deadline or vote inside 48

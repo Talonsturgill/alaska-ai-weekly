@@ -64,6 +64,8 @@ this one.
   at most one Buttondown subscriber email per run for live docket events;
   SKIPs without BUTTONDOWN_API_KEY), site_build.py (builds the
   whole public site into docs/: home, docket, archive + per-deck pages,
+  services, the Bottleneck Scanner at scan/ + its homepage section
+  (backend lives in the alaska-ai-scanner repo; never remove them),
   about; validates ledger/docket.json and lint-gates every page), and
   docket_build.py (shared library: projection, docket components, gates —
   site_build imports it).
