@@ -51,7 +51,7 @@ const CornerPings: React.FC<{f: number}> = ({f}) => {
   // WHOLE-FRAME MEAN luma delta, and four small 16px corner dots cover too little
   // area (<0.2% of the frame) to move that mean at all, even swinging opacity
   // hard. A big low-opacity wash does, without reading as a visible effect.
-  const breath = 0.028 + 0.022 * Math.sin(f / 8.5);
+  const breath = 0.05 + 0.045 * Math.sin(f / 8.5);
   return (
     <>
       <rect width={1080} height={1920} fill={FROST} opacity={breath} />
