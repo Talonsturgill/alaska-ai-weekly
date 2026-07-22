@@ -106,7 +106,11 @@ export const Character: React.FC<CharacterProps> = ({
   // the x/y PROPS are often 0 for every figure and the old x/y-only hash never actually engaged —
   // hash in outfit + facing so any two distinct cast members desync deterministically).
   const swayPhase = x * 0.02 + y * 0.003 + outfit.length * 1.7 + (facing === 1 ? 0 : 2.1);
-  const idle = pose === 'stand' && !walking; // a walking figure gets the stride cycle, not idle sway
+  // a walking figure gets the stride cycle, not idle sway. 'arms-crossed' is a HELD standing pose
+  // (a person waiting/watching) — it earns the same weight-shift/breath idle so it never reads as a
+  // frozen sprite (panel catch on the arms-crossed neighbor figure); the sway is a whole-figure
+  // translate/tilt that leaves the crossed-arms pose geometry itself unchanged.
+  const idle = (pose === 'stand' || pose === 'arms-crossed') && !walking;
   // idle life = a slow WEIGHT-SHIFT (big, ~3s period: the body eases onto one hip, holds, eases
   // back) layered with a faster micro-sway, so a standing figure reads as a person shifting their
   // weight rather than a frozen sprite. Round 10 added the weight-shift term on top of the round-6

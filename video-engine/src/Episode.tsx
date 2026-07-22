@@ -459,8 +459,13 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
           <g transform={`translate(-260,${180 - post.dy}) scale(${Math.max(0.02, post.scale)})`}>
             <TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" />
           </g>
-          {/* gloved hand steadying the lever from below */}
-          <g transform={`translate(70,${140 - 60 * handIn})`} opacity={Math.min(1, handIn * 1.4)}>
+          {/* gloved hand steadying the lever from below: cups the striped arm's
+              lower section (arm centerline sits at ~x-95 for the frozen-halfway
+              angle) and rises up into the grip, rotated to lie along the arm --
+              so the closing image reads as a hand STEADYING the lever (agency,
+              not loss), which the editor couldn't find when it floated off to
+              the side. Bumped scale + tucked onto the arm; opacity ramp kept. */}
+          <g transform={`translate(-92,${218 - 60 * handIn}) rotate(20) scale(1.2)`} opacity={Math.min(1, handIn * 1.4)}>
             <ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} />
             <rect x={-14} y={-24} width={12} height={26} rx={5} fill="#5a4a3a" stroke={INK} strokeWidth={4} />
           </g>
@@ -492,7 +497,9 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
         <g transform={`translate(${540 + gripShift},1150)`}>
           <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={pulse} scale={1.4} />
           <g transform="translate(-260,180)"><TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" /></g>
-          <g transform="translate(70,80)"><ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} /></g>
+          {/* the steadying hand held on the lever through the outro (matches S6's
+              gripped position so it doesn't jump across the cut) */}
+          <g transform="translate(-92,158) rotate(20) scale(1.2)"><ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} /><rect x={-14} y={-24} width={12} height={26} rx={5} fill="#5a4a3a" stroke={INK} strokeWidth={4} /></g>
         </g>
         <g transform={`translate(540,${420 + wordmarkIn})`} opacity={wordmarkOp}>
           <StatCard x={0} y={0} big="4,700 ACRES" scale={statOp} color={GUNMETAL} formShaded />
