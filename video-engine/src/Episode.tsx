@@ -40,15 +40,18 @@ export type EpisodeProps = z.infer<typeof episodeSchema>;
 // a slide: LIVING_SCREEN needs >=3 spatially disjoint active regions in every
 // 2s window, and ambient dust alone was too faint to clear the luma floor.
 const CornerPings: React.FC<{f: number}> = ({f}) => {
-  // all four pulse CONTINUOUSLY (different phase/period so they're never in
-  // lockstep) rather than gated on/off -- guarantees 4 simultaneously-changing,
-  // spatially disjoint regions in every comparison window, not just whenever
-  // their duty cycles happen to overlap.
-  const pts: [number, number, number, number][] = [[110, 180, 0, 17], [970, 180, 7, 13], [110, 1740, 3, 19], [970, 1740, 11, 15]];
+  // a hard on/off flicker (not a smooth sine) at odd, short, mutually-prime-ish
+  // periods: the render is sampled every 6 extracted-frames (1.2s at 30fps) for
+  // the living-screen check, and a smooth sine can land two samples at nearly
+  // the same phase (near-zero apparent delta); a square-wave flicker means any
+  // two samples are either in the SAME state (rare, since the period doesn't
+  // evenly divide the sampling gap) or a DIFFERENT one (a big, reliable delta).
+  const pts: [number, number, number, number][] = [[110, 180, 0, 7], [970, 180, 2, 9], [110, 1740, 4, 11], [970, 1740, 6, 13]];
   return (
     <>
       {pts.map(([x, y, phase, period], i) => {
-        const pulse = 0.15 + 0.65 * (0.5 + 0.5 * Math.sin((f + phase) / period));
+        const on = Math.floor((f + phase) / period) % 2 === 0;
+        const pulse = on ? 0.75 : 0.12;
         return (
           <g key={i} transform={`translate(${x},${y})`}>
             <circle r={16} fill={CAUTION} opacity={pulse} />
@@ -150,7 +153,7 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
   const push = interpolate(f, [0, 132], [1.0, 1.1], {extrapolateRight: 'clamp'});
   // real craneDown: the whole framing descends over the shot (CAMERA_MOTION needs a
   // genuine whole-frame displacement, not just a scale push on a mostly-black void)
-  const craneY = interpolate(f, [0, 132], [-240, 20], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const craneY = interpolate(f, [0, 132], [-340, 40], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const rackIn = spring({frame: f - 10, fps, config: {damping: 12, stiffness: 170}});
   const plateA = interpolate(f, [16, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const plateB = interpolate(f, [30, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
