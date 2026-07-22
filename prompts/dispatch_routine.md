@@ -613,6 +613,18 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
 1. Encode 9:16 master + 4:5 center-crop (H.264 High, faststart, AAC 48k, -14 LUFS, each
    < 100 MB); ffprobe-assert 1080x1920 and 1080x1350 so a wrong-ratio cut can never ship.
 2. Upload BOTH + a poster (frame 0) via upload_video.py; verify HTTP 200 permanent links.
+2b. PUBLISH TO THE SITE FEED: `python3 scripts/publish_feed.py --id <run-slug> --date <date>
+   --title "<display title>" --caption "<1-2 sentence VERIFIED summary, fact-check-safe-set
+   language only>" --video-url "<the verified 9:16 URL from step 2>" --poster-url "<the
+   verified poster URL>"`. This prepends the run's entry to docs/videos/videos.json in the
+   Talonsturgill/alaskaaicarousels repo (the alaskaaihq.com/videos vertical feed) and pushes
+   it to main, so the site updates the same day the video ships. Idempotent by --id (re-runs
+   replace, never duplicate). If it exits non-zero (most likely: the routine environment
+   lacks push access to alaskaaicarousels), DO NOT block or roll back delivery -- the video,
+   email, and merge all proceed -- but the failure MUST be surfaced in the Gmail draft's
+   note so the owner knows the site feed is stale and why. Title/caption rules: the title is
+   the run's display title (the storyboard/treatment title, short); the caption uses only
+   verified fact-check-safe-set language, no clickbait beyond what the sources support.
 3. dispatch_email.py (NO --temporary): post text, 4:5-primary download buttons, poster, VOICE
    credit ("Gemini native TTS, voice Sulafat, model gemini-3.1-flash-tts-preview; preset voice
    with a SynthID watermark, not a clone") plus the vo_report.json sound-check scorecard, MUSIC
@@ -686,7 +698,9 @@ and compensating the relevant tribes where a story warrants it.
 
 A video Dispatch is ALWAYS delivered (or an explicit no-story-clears-the-bar stop). A Gmail
 draft exists with post text, credits (voice QC report included), sources, the honest scorecard,
-and WORKING permanent links for BOTH cuts (4:5 labeled as the LinkedIn feed cut). Gate 0
+and WORKING permanent links for BOTH cuts (4:5 labeled as the LinkedIn feed cut). The run's
+entry was published to the alaskaaihq.com/videos feed via scripts/publish_feed.py (or its
+failure was explicitly surfaced in the Gmail draft's note -- never silently skipped). Gate 0
 passed; the writers-room treatment is recorded; scenes were built in the Remotion engine from
 beats[].draw to the exemplar craft bar with the taste loop run per scene; new library
 components were committed; captions are forced-aligned (median < 150ms); all audio gates
