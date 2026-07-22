@@ -121,7 +121,7 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   // reused blindly). fade-in over 20f keeps a full wash off frame 0 (FIRST_FRAME poster
   // contrast). Amplitude 0.12 (op range 0..0.24) measured to clear the ~14.8 luma floor with
   // margin at every sample pair; CornerPings breath is disabled here so it can't cancel it.
-  const wash = Math.min(1, f / 20) * (0.10 + 0.055 * Math.sin((2 * Math.PI * f) / 144));
+  const wash = Math.min(1, f / 20) * (0.10 + 0.10 * Math.sin((2 * Math.PI * f) / 144));
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -445,7 +445,7 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
   // 0.60 min here -- the phase must be solved for each scene's own offset). Amplitude 0.12
   // (op range 0..0.24) measured to clear the ~14.8 luma floor with margin at every sample
   // pair (behind the wordmark/lever); CornerPings breath is disabled here so it can't cancel it.
-  const wash = 0.10 + 0.045 * Math.sin((2 * Math.PI * f) / 72);
+  const wash = 0.10 + 0.075 * Math.sin((2 * Math.PI * f) / 72);
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
