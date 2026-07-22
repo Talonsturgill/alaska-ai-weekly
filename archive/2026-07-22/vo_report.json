@@ -1,0 +1,55 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.966,
+    "heard": "The Air Force just offered 4,700 acres of military land in Alaska for lease to build AI data centers, 12 parcels across three Alaska bases. It's not a sale. The Air Force keeps the land and gets fair market value, reportedly for up to 50 years. The Air Force's Robert Moriarty calls it a unique public-private partnership, and that's a real opportunity. But Sarah Hollister, three generations on this land, says the noise would be like a vacuum cleaner, running 24-7. Nobody has been picked yet. The lease is still open. So what has to be true for this to actually be a win for Alaska?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.009,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 3.71,
+        "voiced_frac": 0.53,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 42.8,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean"
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.966,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.966,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.958,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

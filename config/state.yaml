@@ -786,3 +786,41 @@ dispatch_history:
   - SwingSign
   - PenAndDocument
   - MainStreetBG
+- date: '2026-07-22'
+  topic: Air Force Enhanced Use Lease offering ~4,700 acres for AI data centers at
+    JBER, Eielson AFB, Clear Space Force Station
+  slug: checkpoint-lever-frozen-midpoint
+  key_entities:
+  - jber
+  - eielson air force base
+  - clear space force station
+  - enhanced use lease
+  - robert moriarty
+  - sarah hollister
+  - joint base elmendorf richardson
+  - golden valley electric association
+  archetype: AcreageCounterMap + CheckpointGateLever hero
+  palette: gunmetal steel-gray + arctic frost-white + caution-yellow signal light
+    + storm-navy shadow
+  voice: Gemini native TTS, Sulafat
+  stance: curious
+  angle: The Air Force put nearly 4,700 acres of active base land on the table for
+    AI data centers, and as of air date nobody has been picked yet, the decision is
+    still open, not a win or a loss
+  hero: CheckpointGateLever
+  cast:
+  - CheckpointGateLever
+  - MachineShadow
+  - Character(Hollister)
+  - StatCard
+  - Nameplate
+  - SwingSign
+  - TrailPost
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: push-in-only
+    hero_treatment: instrument-as-subject
+    layout: single-object-void
+    register: editorial-schematic
+    camera_strategy: locked-drift
+    light_story: night-practical

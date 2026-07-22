@@ -22,9 +22,10 @@ sfx"). Every event is now PERFORMED, not placed:
   - SCHEDULING ASSERT: no two consecutive events from the same sound FAMILY
     (spectral sameness is what reads "repetitive", not the count).
 
-2026-07-21 "The Pen That Won't Land" (KPBSD AI policy). Episode-local: this
-file is rewritten per run with EVENTS matched to THIS story's beats/storyboard;
-the doctrine above and the machinery below CARRY OVER unchanged.
+2026-07-22 "The checkpoint lever frozen at the midpoint" (Air Force EUL AI
+data center dispatch). Episode-local: this file is rewritten per run with
+EVENTS matched to THIS story's beats/storyboard; the doctrine above and the
+machinery below CARRY OVER unchanged.
 """
 import json, os, subprocess, sys, math, zlib
 
@@ -34,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-07-21"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-07-22"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -68,46 +69,51 @@ def jit(idx, salt, lo, hi):
     return lo + (hi - lo) * h
 
 
-# SFX events cut to the picture, derived from the VO line starts so they stay in
-# sync when the narration changes. L[i] = start time of VO line i (0-indexed, 9
-# lines this run). Each event: (time, kind, class, pan) — pan is the prop's
-# storyboard x mapped to [-1,1] (0 = center), scaled by 0.35 in the graph.
+# SFX events cut to the picture, derived from vo_lines.json (out/dispatch/vo_lines.json,
+# idx 0-8, this run's 9 spoken lines) plus fixed offsets into the retimed scenes
+# (out/dispatch/episode_props.json > scenes[], scripts/build_scenes.py). Each event:
+# (time, kind, class, pan) — pan is the prop's approximate storyboard x mapped to
+# [-1,1], scaled by 0.35 in the graph.
 _lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
 L = {x["idx"]: x["start"] for x in _lines}
 _TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
 VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never hardcode
 
 EVENTS = [
-    # S1 (line 0): cold open — the whale surfaces, both sensors snap on
-    (L[0] + 0.20, "chime",  "standard", 0.0),   # sub-surface hush + soft blow (center)
-    (L[0] + 2.40, "snap",   "hero", 0.0),       # the reticle lock clack + sonar ping
-    # S2 (line 1): the two watchers power on
-    (L[1] + 0.20, "pop",    "standard", -0.3),  # two-system power-up (mooring left, satellite right)
-    # S3 (line 2): the robot EAR listens
-    (L[2] + 0.20, "ding",   "standard", 0.4),   # the mooring's detect chime
-    (L[2] + 3.20, "tick",   "standard", 0.3),   # the classify tick (detect -> BELUGA)
-    # S4 (line 3): the robot EYE punches down and locks
-    (L[3] + 0.20, "whoosh", "hero", 0.0),       # the orbital whoosh through cloud
-    (L[3] + 3.70, "snap",   "hero", 0.0),       # the reticle CLAMP on the white smudge
-    # (line 4): the ear+eye stereo payoff
-    (L[4] + 0.20, "chime",  "standard", 0.0),   # the harmonic swell (both overlays on one whale)
-    # S5 (line 5): the count lands on 331
-    (L[5] + 0.20, "riser",  "standard", 0.0),   # the counter riser
-    (L[5] + 1.80, "thud",   "standard", 0.3),   # the soft landing hit on 331
-    # S6 (line 6): the decline collapses
-    (L[6] + 0.20, "creak",  "standard", -0.3),  # the groaning descent of the collapsing bar
-    (L[6] + 3.60, "stamp",  "hero", 0.0),       # the -80% / ENDANGERED stamp
-    # S7 (line 7): the turn — the boat wake rolls over the whale
-    (L[7] + 0.20, "whoosh", "texture", -0.3),   # muffled engine + hollow water
-    # S8 (line 8): the hard, open number keys in
-    (L[8] + 0.20, "clank",  "standard", 0.0),   # the keyed-in confirm on 331
-    # S9 (line 9): the fork, the dive, the raven
-    (L[9] + 0.20, "tick",   "standard", 0.0),   # the fork's low tick
-    (L[9] + 3.80, "whoosh", "texture", 0.2),    # the dive swish
-    (L[9] + 4.80, "caw",    "standard", -0.4),  # one raven caw on the last frame
+    # S1 (line 0): the acreage counter ticks up over the tiling parcel map
+    (L[0] + 0.0,  "tick",   "standard", 0.0),
+    # S1->S2 mask-wipe into the checkpoint gate (fires near the end of S1's hold)
+    (L[1] - 0.2,  "whoosh", "standard", 0.0),
+    # S2 (line 1): the server-rack glyph pops in, the base nameplates stamp down
+    (L[1] + 0.3,  "pop",    "standard", -0.2),
+    (L[1] + 0.8,  "stamp",  "standard", 0.0),
+    # S2 (line 2, "It's not a sale"): the StatCard flip
+    (L[2] + 0.1,  "pop",    "standard", -0.1),
+    # S3 (line 3): the EUL cutaway — the deed stamps DAF, the clock cranks
+    (L[3] + 0.2,  "stamp",  "hero", 0.0),
+    (L[3] + 2.3,  "tick",   "standard", 0.0),
+    # S4 (line 4): MachineShadow presents the Moriarty card, the lever nudges
+    (L[4] + 1.0,  "creak",  "standard", 0.2),
+    (L[5] - 0.2,  "whoosh", "standard", 0.3),
+    # S5 (line 5): Hollister turns, the vacuum drone passes, the property-value dip
+    (L[5] + 0.13, "creak",  "standard", -0.2),
+    (L[5] + 5.3,  "whoosh", "hero", 0.4),
+    (L[6] - 1.14, "tick",   "standard", 0.3),
+    # S6 (line 6): match-cut return to the frozen lever — THE turn, one riser
+    (L[6] + 0.0,  "riser",  "hero", 0.0),
+    (L[6] + 0.5,  "stamp",  "standard", -0.3),
+    (L[7] + 0.21, "creak",  "standard", 0.3),
+    # S7 (line 8): the signal pulses once, then the loop tick
+    (L[8] + 2.0,  "ding",   "standard", 0.0),
+    (VIDEO_SECS - _TAIL - 0.4, "tick", "standard", 0.0),
+    # S7 closing hold (wordmark rise / loop point): one soft caution-yellow
+    # signal-light pulse as the sole terminal event — the quiet "button" on the
+    # held breath, sonifying the 41.8s->end tail so the ear keeps advancing with
+    # the eye into the hard loop (bell family, non-consecutive with the loop tick)
+    (VIDEO_SECS - _TAIL + 1.3, "chime", "standard", 0.0),
 ]
 
-SILENCE_DIP_AT = L[9] - 0.9  # the breath in the gap before the button/loopback (the >=6dB gate dip)
+SILENCE_DIP_AT = L[8] - 0.6  # the breath before the closing question (the >=6dB gate dip)
 DIP_LEN = 0.8
 
 
@@ -159,7 +165,6 @@ def main():
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
         f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.30,"
         f"volume=enable='between(t,{dip0},{dip1})':volume=0.10,"
-        f"volume=enable='between(t,{L[4] + 0.0},{L[4] + 2.0})':volume=0.13,"
         f"volume=enable='gt(t,{vo_end + 0.4})':volume=1.3[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)

@@ -1,0 +1,497 @@
+{
+  "concept": "The checkpoint lever frozen at the midpoint: an honest open-question dispatch on the Air Force's ~4,700-acre AI data center land offer at JBER, Eielson AFB, and Clear Space Force Station",
+  "engine": "infographic-2.5d",
+  "derived_from": "scratch",
+  "treatment": "dramatist (winner, with grafts from enthusiast + explainer per Phase 4.1 scorer judgment)",
+  "angle": "open_question/curiosity: the Air Force put ~4,700 acres on the table for AI data centers, up to a reported 50 years, and as of 2026-07-22 nobody has been picked yet -- the decision is still open, not a win or a loss",
+  "pivot_note": "The writers room (all 4 pitches) independently converged on a trembling-pen/unsigned-document hero. Checking config/state.yaml before locking scene code revealed the 2026-07-21 'pen-that-wont-land' dispatch (KPBSD AI policy story) ALREADY used that exact central image. Pivoted the hero to a checkpoint-gate barrier lever frozen at the midpoint -- same 'undecided' thesis, a genuinely different physical object, to satisfy Gate 0A composition divergence honestly rather than gaming it.",
+  "fingerprint": {
+    "pov": "cross-section-cutaway",
+    "motion_vector": "push-in-only",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "single-object-void",
+    "register": "editorial-schematic",
+    "camera_strategy": "locked-drift",
+    "light_story": "night-practical",
+    "palette": "gunmetal steel-gray + arctic frost-white + caution-yellow signal light + storm-navy shadow",
+    "metaphor": "a checkpoint barrier lever frozen exactly halfway between raised and lowered, guarding a lease big enough to reshape a neighborhood, while the base and the neighbor it borders wait on the same unmoving arm"
+  },
+  "palette": "gunmetal steel-gray + arctic frost-white + caution-yellow signal light + storm-navy shadow",
+  "divergence_note": "This diverges from the last two dispatches on nearly every axis. The 07-21 bycatch piece was an eye-level-immersive fullbleed-split with a multiplicity-swarm of fish and a referee-clicker metaphor. The 07-21 pen-that-wont-land piece used a trembling-pen-over-paper hero in a centered-hero-lowerthird layout with naturalistic small-town dusk light. This piece instead cuts into the mechanism with a cross-section pov, holds its hero alone in negative space (single-object-void), renders the lease machinery as an editorial schematic rather than a naturalistic scene, replaces any paper/pen imagery with a physical checkpoint-gate lever frozen at the midpoint, lights it with cold night-practical sources rather than dusk or dawn, and uses a gunmetal/frost/caution-yellow palette sharing no color vocabulary with either predecessor. ACKNOWLEDGED PRIOR-ART NOTE (caught by the storyboard-critic, outside the 2-dispatch numeric window): 2026-07-02 'dispatch-2026-07-02-circuit' already covered the same underlying Air Force EUL land offer (same 4,700 acres, same 3 bases) under a DIFFERENT primary claim, the Cook Inlet gas collapse pricing GVEA's turbine fix +195%, an energy-supply-crisis angle. This dispatch deliberately does NOT re-cover that gas/turbine/grid-pricing story. Its claim is different: the decision is still pending as of today and nobody has been picked, told through a resident (Sarah Hollister) not featured in the 07-02 piece, with her noise and property-value concerns, not a grid-cost framing. The prior worry beat that risked overlapping 07-02 (a GVEA grid-load meter) was cut and replaced with a property-value concern to keep clean separation from the 07-02 story's actual subject matter. SECOND ACKNOWLEDGED ECHO (caught on re-review): the supporting grammar here, a faceless MachineShadow monolith representing an institutional land process, a public/federal land-for-AI decision, and a closing loopback with a human hand at the mechanism, rhymes with 2026-07-18's Mat-Su/AIDEA dispatch more closely than with either 07-02 or 07-21. That dispatch's composition (pov=aerial-to-ground, layout=loopback-vigil, hero=faceless-institution-monolith) is a real structural cousin. This piece still earns its own composition (cross-section macro into a single-object-void hero, not aerial-to-ground into a vigil layout, and a genuinely new prop, CheckpointGateLever, not a bare monolith-as-hero), but the family resemblance in staging grammar (MachineShadow + land decision + loopback) is a deliberate, acknowledged reuse of an established Alaska.Ai visual vocabulary for institutional-land stories, not an accident.",
+  "hook": {
+    "pattern": "bold-claim",
+    "frame1": "a map of three Alaska bases blanketed in glowing parcel tiles as a counter races past 4,700",
+    "headline": "4,700 Acres. Nobody's Signed.",
+    "motion_by_s": 0.3,
+    "loopback": "the acreage counter ticks once more and cuts hard back to frame 1, the decision perpetually unmade"
+  },
+  "reveals": [
+    {
+      "t": 1.0,
+      "type": "scale-pullback",
+      "what": "a single glowing parcel tile pulls back to reveal it multiplied across all 4,700 acres on the map",
+      "hold_s": 0.6
+    },
+    {
+      "t": 13.5,
+      "type": "build-on",
+      "what": "the Enhanced Use Lease mechanism builds on screen piece by piece: deed stays put, dollar-arrow pumps back, a clock cranks to 50 years",
+      "hold_s": 0.6
+    }
+  ],
+  "audio_arc": {
+    "build_steps": [
+      "counter-tick energy 0-5s",
+      "institutional low drone under the Moriarty beat",
+      "vacuum-cleaner texture under Hollister's line",
+      "near-silence at the permafrost/grid worry beat",
+      "a slow riser into 'nobody has been picked yet'",
+      "a real 6dB dip before the closing question",
+      "a held pad note under the button"
+    ],
+    "dip_at": 37.54,
+    "riser_at": 34.5,
+    "silence_at": 37.9,
+    "payoff_at": 38.14,
+    "button_pattern": "question"
+  },
+  "shots": [
+    {
+      "id": 1,
+      "t": "0.0-8.8",
+      "framing": "map-territory",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "thread": "match",
+      "centered": "the acreage counter and tiling parcel-grid over a map of the three bases",
+      "means": "establishes scale before a word is spoken, then the wipe carries it into a concrete place",
+      "camera": "static:the acreage count is the whole point of this shot and holding lets the number land",
+      "stage3d": "flat:a data/map overlay reads best as a flat graphic, not a 3D world",
+      "hero": {
+        "name": "AcreageCounterMap",
+        "parts": 4,
+        "zones": 3,
+        "detail_note": "map carries terrain hatching and base-outline texture, glowing parcel tiles, ticking counter digits, base-name labels -- not a flat vector map"
+      }
+    },
+    {
+      "id": 2,
+      "t": "8.8-13.2",
+      "framing": "subject-portrait",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "mask-wipe",
+      "thread": "match",
+      "centered": "the checkpoint gate lever frozen exactly halfway, caution-yellow ready-lights unlit on both sides, the server-rack glyph and base nameplates stamping in, the NOT FOR SALE flip",
+      "means": "carries the 'still undecided' idea from an abstract map into a concrete physical object, then corrects the sale/lease misread",
+      "camera": "cranedown",
+      "stage3d": "planes",
+      "hero": {
+        "name": "CheckpointGateLever",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "brushed-metal material overlay, rim light, contact shadow on the barrier arm, lever pivot bolt detail, unlit caution-yellow signal housings"
+      }
+    },
+    {
+      "id": 3,
+      "t": "13.2-19.1",
+      "framing": "data-panel",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "centered": "the Enhanced Use Lease cutaway: a deed stamped DAF stays bolted down, a dollar-arrow pumps back fair market value, a clock cranks to 50 years with a reported tag",
+      "means": "explains the mechanism the gate is deciding on",
+      "camera": "static:a schematic reads clean and legible only if the camera holds",
+      "stage3d": "flat:an exploded technical diagram is deliberately flat/blueprint, depth would clutter the labels",
+      "hero": {
+        "name": "EULSchematic",
+        "parts": 4,
+        "zones": 3,
+        "detail_note": "blueprint linework, a soft schematic glow rim, DAF deed stamp texture, ticking clock hand"
+      }
+    },
+    {
+      "id": 4,
+      "t": "19.1-25.69",
+      "framing": "subject-portrait",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "centered": "MachineShadow, the faceless institutional presence, holds up a StatCard with the Moriarty quote while the distant gate lever nudges and settles",
+      "means": "the institutional voice, weighted honestly, not mocked, foreshadowing the ending image",
+      "camera": "dollythrough",
+      "stage3d": "planes",
+      "hero": {
+        "name": "MachineShadow",
+        "parts": 3,
+        "zones": 2,
+        "detail_note": "brushed-metal monolith body, rim light, faint institutional seal etched on the surface, deliberately no face"
+      }
+    },
+    {
+      "id": 5,
+      "t": "25.69-34.5",
+      "framing": "two-up",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "centered": "Sarah Hollister on her frost yard, the gate visible small in the distance behind her, a vacuum-cleaner icon humming past, a property-value arrow dipping",
+      "means": "travels from the institution to the neighbor it borders",
+      "camera": "truckacross",
+      "stage3d": "planes",
+      "hero": {
+        "name": "Character-Hollister",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "form-shaded parka, rim light, contact shadow, breath-fog idle, house silhouette behind her"
+      }
+    },
+    {
+      "id": 6,
+      "t": "34.5-38.14",
+      "framing": "push-detail",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "back at the gate: the lever still frozen at halfway, a TrailPost reading STILL OPEN, a gloved hand resting steady beneath it",
+      "means": "returns to the hero object to deliver the honest verdict",
+      "camera": "static:the held frame IS the point and nothing has moved so the shot must prove that by not moving the camera either",
+      "stage3d": "planes",
+      "hero": {
+        "name": "CheckpointGateLever",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "same hero as shot 2, now with a steadying gloved hand and the TrailPost added, fresh contact shadow"
+      }
+    },
+    {
+      "id": 7,
+      "t": "38.14-44.8",
+      "framing": "data-panel",
+      "pov": "macro-closeup",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "crossfade",
+      "thread": "carry",
+      "centered": "the held lever and hand carry through as the ALASKA.AI wordmark and the 4,700-acre stat rise into frame for the closing question and loop",
+      "means": "the object carries into the brand sign-off and the open question, then loops",
+      "camera": "static:the closing hold and the loop both depend on the frame staying put",
+      "stage3d": "planes",
+      "hero": {
+        "name": "CheckpointGateLever",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "same lever and hand from shot 6, now backdrop to the rising wordmark and stat, one caution-yellow signal pulse as the sole terminal event"
+      }
+    }
+  ],
+  "beats": [
+    {
+      "t": "0.0-1.2",
+      "vo": "",
+      "shows": "a single glowing parcel tile tiles rapidly outward across the tundra map while a counter spins upward",
+      "draw": {
+        "subject": "tiling parcel-grid over a map of three Alaska bases",
+        "action": "tiles rapidly outward, a counter spins upward",
+        "emotion": "anticipatory",
+        "annotation": "4,700 ACRES"
+      },
+      "sfx": "tick",
+      "means": "establishes scale before a word is spoken",
+      "choreo": {
+        "primary": "counter digits spin and parcel tiles snap in left-to-right",
+        "reaction": "map base gently parallax-drifts under the tiling",
+        "ambient": "faint aurora shimmer along the map's horizon band"
+      }
+    },
+    {
+      "t": "1.2-5.0",
+      "vo": "The Air Force just offered four thousand seven hundred acres of Alaska base land,",
+      "shows": "the map's glow sweeps into a physical checkpoint gate emerging from mist",
+      "draw": {
+        "subject": "the map dissolves toward a checkpoint gate",
+        "action": "glow sweeps from the map into a physical barrier gate",
+        "emotion": "tense-still",
+        "annotation": "OFFERED FOR LEASE"
+      },
+      "sfx": "whoosh",
+      "means": "carries scale into a concrete place",
+      "choreo": {
+        "primary": "mask-wipe glow travels frame-left to frame-right",
+        "reaction": "gate silhouette resolves into focus as the glow passes",
+        "ambient": "drifting ground-frost particles"
+      }
+    },
+    {
+      "t": "5.0-9.3",
+      "vo": "for lease, to build AI data centers. Twelve parcels, across three Alaska bases.",
+      "shows": "a small server-rack glyph pops in beside three base Nameplates that stamp in one by one",
+      "draw": {
+        "subject": "a server-rack glyph and three base Nameplates stamp in beside the gate",
+        "action": "the rack glyph pops in first, then the three plates stamp down one by one",
+        "emotion": "matter-of-fact",
+        "annotation": "AI DATA CENTER \u00b7 JBER / EIELSON / CLEAR SFS - 12 PARCELS"
+      },
+      "sfx": "hit-hit-hit-staggered",
+      "means": "draws the actual thing being built, then names the actors before using them again",
+      "choreo": {
+        "primary": "the rack glyph pops in then each Nameplate stamps down with a small impact bounce",
+        "reaction": "the gate's warning lights flicker once per stamp",
+        "ambient": "steady wind-driven frost drift"
+      }
+    },
+    {
+      "t": "9.3-12.6",
+      "vo": "It's not a sale.",
+      "shows": "a StatCard '4,700 ACRES' flips over to reveal 'NOT FOR SALE'",
+      "draw": {
+        "subject": "a StatCard '4,700 ACRES' flips",
+        "action": "flips over to reveal 'NOT FOR SALE'",
+        "emotion": "corrective",
+        "annotation": "NOT FOR SALE"
+      },
+      "sfx": "pop",
+      "means": "corrects the most common misread of an Enhanced Use Lease",
+      "choreo": {
+        "primary": "card flip rotates on its vertical axis with an overshoot settle",
+        "reaction": "a tiny sold-sign icon snaps in half beside it",
+        "ambient": "gate lights continue their slow unlit idle"
+      }
+    },
+    {
+      "t": "12.6-17.2",
+      "vo": "The Air Force keeps the land, and gets fair market value,",
+      "shows": "the EUL cutaway begins assembling: a deed stamps DAF and stays bolted down",
+      "draw": {
+        "subject": "the EUL cutaway schematic begins to assemble",
+        "action": "a deed stamps DAF and stays bolted to the ground",
+        "emotion": "explanatory",
+        "annotation": "DAF KEEPS THE LAND"
+      },
+      "sfx": "hit",
+      "means": "explains the mechanism before the number that depends on it",
+      "choreo": {
+        "primary": "deed stamp slams down with a settle bounce",
+        "reaction": "a dollar-arrow begins pumping back toward the deed",
+        "ambient": "schematic grid lines softly pulse"
+      }
+    },
+    {
+      "t": "17.2-20.4",
+      "vo": "reportedly for up to fifty years.",
+      "shows": "a clock hand cranks to 50 YRS with a small 'reported' tag popping in",
+      "draw": {
+        "subject": "a clock face beside the schematic",
+        "action": "the hand cranks forward to 50 YRS, a 'reported' tag pops in",
+        "emotion": "honestly hedged",
+        "annotation": "REPORTED: UP TO 50 YEARS"
+      },
+      "sfx": "tick",
+      "means": "flags the one unconfirmed number honestly",
+      "choreo": {
+        "primary": "clock hand sweeps with mechanical ratchet motion",
+        "reaction": "the reported tag flutters as it clips onto the clock",
+        "ambient": "the dollar-arrow keeps pumping in the background"
+      }
+    },
+    {
+      "t": "20.4-25.0",
+      "vo": "The Air Force's Robert Moriarty calls it a unique public-private partnership,",
+      "shows": "MachineShadow presents a StatCard with the quote, and behind it the checkpoint lever nudges a few degrees upward under the institution's pitch, then eases back to frozen-halfway",
+      "draw": {
+        "subject": "MachineShadow holds up a StatCard while the distant gate lever visibly nudges",
+        "action": "presents the card and the barrier arm briefly lifts under the institution's push, then settles back to halfway",
+        "emotion": "formal-proud",
+        "annotation": "\"a unique opportunity for a true public-private partnership\" -- Robert Moriarty, Dept. of the Air Force"
+      },
+      "sfx": "servo-whir-card-set",
+      "means": "the institutional voice, given its real weight and a real visible push on the still-undecided lever",
+      "choreo": {
+        "primary": "MachineShadow's arm extends the card into frame with a slow mechanical swing",
+        "reaction": "the background lever lifts a few degrees then eases back down, foreshadowing the ending image",
+        "ambient": "a low institutional drone hums under the shot"
+      }
+    },
+    {
+      "t": "25.0-28.3",
+      "vo": "and that's a real opportunity.",
+      "shows": "the StatCard glows warmly once in acknowledgment, then the frame whip-pans away toward a distant house",
+      "draw": {
+        "subject": "the StatCard glows once, then the frame whips toward Eielson Farm Road",
+        "action": "the card brightens briefly, a real acknowledged upside, then the camera whip-pans hard off the monolith toward a distant frost yard",
+        "emotion": "pivoting",
+        "annotation": "EIELSON FARM ROAD"
+      },
+      "sfx": "whoosh",
+      "means": "the honest turn toward the fair counter-point",
+      "choreo": {
+        "primary": "whip-pan motion blur streaks horizontally",
+        "reaction": "a house silhouette resolves into focus as the pan settles",
+        "ambient": "wind ambience rises through the pan"
+      },
+      "rehook": "the hard whip-pan away from the institution's warm pitch toward a real family home is the piece's pivot -- it re-grabs the viewer right as the partnership framing might start to feel like the whole story"
+    },
+    {
+      "t": "28.3-32.8",
+      "vo": "But Sarah Hollister, three generations on this land,",
+      "shows": "Sarah Hollister turns to face camera on her frost yard, arms crossed against the cold",
+      "draw": {
+        "subject": "Sarah Hollister on a frost yard, her house behind her",
+        "action": "turns to face camera, arms crossed against the cold",
+        "emotion": "wary-resolved",
+        "annotation": "SARAH HOLLISTER - THIRD GENERATION, EIELSON FARM ROAD"
+      },
+      "sfx": "frost-crunch-parka-shift",
+      "means": "names the actor before her quote lands",
+      "choreo": {
+        "primary": "Hollister's turn-to-camera has a settling weight-shift",
+        "reaction": "her breath fogs visibly in the cold",
+        "ambient": "distant gate lights blink small in the background"
+      }
+    },
+    {
+      "t": "32.8-36.1",
+      "vo": "says the noise would be like a vacuum cleaner, running twenty-four seven.",
+      "shows": "a plain upright vacuum-cleaner icon hums past behind her as she speaks",
+      "draw": {
+        "subject": "Hollister speaks as a vacuum-cleaner icon hums past behind her",
+        "action": "her breath fogs as she talks over the drone of the vacuum",
+        "emotion": "frustrated-tired",
+        "annotation": "\"like a vacuum cleaner, twenty-four seven\" -- Sarah Hollister"
+      },
+      "sfx": "vacuum-drone",
+      "means": "makes her abstract complaint concretely audible, the sound IS the content of this line",
+      "choreo": {
+        "primary": "vacuum icon trundles left to right at a steady drone-matched pace",
+        "reaction": "Hollister's shoulders tense slightly as it passes",
+        "ambient": "vacuum drone rises under her line, ducked under the VO"
+      }
+    },
+    {
+      "t": "36.1-40.6",
+      "vo": "",
+      "shows": "a small property-value arrow dips beside her as she watches the distant gate",
+      "draw": {
+        "subject": "a StatCard drifts up beside her: a property-value arrow",
+        "action": "the arrow dips slightly as she glances toward the distant gate",
+        "emotion": "quietly worried",
+        "annotation": "PROPERTY VALUES?"
+      },
+      "sfx": "faint-tick-creak",
+      "means": "shows her unanswered concern as a silent held beat, not asserted as fact (deliberately NOT the grid/power-cost framing, that ground belongs to a different Alaska.Ai dispatch, see divergence_note)",
+      "choreo": {
+        "primary": "the arrow dips in a small increment then holds",
+        "reaction": "Hollister's gaze tracks toward the gate in the distance",
+        "ambient": "the drone dies down to near silence, a faint creak of cold metal"
+      }
+    },
+    {
+      "t": "40.6-44.0",
+      "vo": "Nobody has been picked yet.",
+      "shows": "match-cut back to the checkpoint gate lever, frozen exactly halfway, no light lit on either side",
+      "draw": {
+        "subject": "the checkpoint gate lever, frozen exactly halfway",
+        "action": "holds dead still, no light lit on either side",
+        "emotion": "suspended",
+        "annotation": "NO OPERATOR SELECTED"
+      },
+      "sfx": "low-hit-wind-swell",
+      "means": "the freshest true fact returns the piece to its hero object, marked with real weight on the cut",
+      "choreo": {
+        "primary": "the lever holds perfectly still, zero drift",
+        "reaction": "a single wind gust stirs frost dust past it",
+        "ambient": "a held, ringing near-silence"
+      }
+    },
+    {
+      "t": "44.0-48.5",
+      "vo": "The lease is still open.",
+      "shows": "a TrailPost plants itself beside the lever and settles into the frost ground",
+      "draw": {
+        "subject": "a TrailPost plants itself beside the lever",
+        "action": "settles into the frost ground with a soft thud",
+        "emotion": "plain and honest",
+        "annotation": "AS OF TODAY: STILL OPEN"
+      },
+      "sfx": "hit",
+      "means": "states the honest status plainly, no spin either direction",
+      "choreo": {
+        "primary": "TrailPost drops in with an anticipation-overshoot-settle bounce",
+        "reaction": "frost dust puffs where it lands",
+        "ambient": "a slow riser begins building underneath"
+      }
+    },
+    {
+      "t": "48.5-52.0",
+      "vo": "So what has to be true, for this to actually be a win, for Alaska?",
+      "shows": "a gloved hand reaches in beneath the lever, steadying it without pulling it either way",
+      "draw": {
+        "subject": "a gloved hand reaches in beneath the lever",
+        "action": "steadies it without pulling it either way",
+        "emotion": "resolute-hopeful",
+        "annotation": "STILL OPEN"
+      },
+      "sfx": "glove-creak-metal-tremble",
+      "means": "reframes the blank line as agency, not loss, honoring the fair upside",
+      "choreo": {
+        "primary": "the hand's approach has a slow deliberate reach with a soft settle",
+        "reaction": "the lever gives the faintest sympathetic tremble then stills",
+        "ambient": "music dips a real 6dB ahead of the question landing"
+      }
+    },
+    {
+      "t": "52.0-56.0",
+      "vo": "",
+      "shows": "the full frame holds on the lever, hand, and the glowing 4,700-acre stat overhead, then one caution-yellow signal light pulses once, unresolved",
+      "draw": {
+        "subject": "the full frame holds on the lever, hand, and the glowing stat overhead",
+        "action": "holds nearly still, then a single caution-yellow signal light on the gate housing pulses once and goes dark again, deciding nothing",
+        "emotion": "open, unresolved, calm",
+        "annotation": "WHAT HAS TO BE TRUE, FOR THIS TO WIN?"
+      },
+      "sfx": "signal-pulse",
+      "means": "lets the open question sit before the loop, with one live terminal event so the hold reads as a held breath, not a frozen frame",
+      "choreo": {
+        "primary": "the signal light brightens and fades on a slow pulse",
+        "reaction": "the gloved hand's grip shifts a fraction under it",
+        "ambient": "faint aurora shimmer continues drifting overhead"
+      }
+    },
+    {
+      "t": "56.0-60.0",
+      "vo": "",
+      "shows": "a small ALASKA.AI wordmark fades in low in the corner as the acreage counter ticks once more and the frame cuts hard back to frame 1",
+      "draw": {
+        "subject": "the acreage counter ticks once more, then cuts, with the wordmark resolving low in frame",
+        "action": "a single tick echoes the cold open's counter, the brand wordmark fades in and holds, then hard-cuts back to frame 1",
+        "emotion": "held, cyclical",
+        "annotation": "4,700 ACRES \u00b7 ALASKA.AI"
+      },
+      "sfx": "tick",
+      "means": "the loop makes the unresolved decision literally perpetual, closed out with a real brand sign-off rather than just cutting to black",
+      "choreo": {
+        "primary": "counter digit ticks once with a sharp snap",
+        "reaction": "wordmark fades up softly",
+        "ambient": "hard-cut whoosh into the loop"
+      }
+    }
+  ]
+}

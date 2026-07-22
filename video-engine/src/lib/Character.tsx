@@ -56,6 +56,11 @@ export interface CharacterProps {
   eyes?: string;
   /** round wire glasses (cast differentiation for officials/experts) */
   glasses?: boolean;
+  /** per-figure multiplier on the idle weight-shift/sway amplitude (default 1). Lets a specific
+      scene widen ONLY that figure's sway when a large camera move (e.g. S5's truck-pan) visually
+      dominates the default-amplitude idle, without touching the shared idle system for every other
+      pose==='stand' figure elsewhere in the cast. */
+  idleGain?: number;
 }
 
 const OUTFITS: Record<Outfit, {main: string; shade: string; trim: string; pants: string}> = {
@@ -87,6 +92,7 @@ export const Character: React.FC<CharacterProps> = ({
   walkPhase,
   eyes = '#41607d',
   glasses = false,
+  idleGain = 1,
 }) => {
   const c = OUTFITS[outfit];
   // breathing: a visible chest rise+fall. Bumped round 10 — the panel kept reading standers as
@@ -106,15 +112,22 @@ export const Character: React.FC<CharacterProps> = ({
   // the x/y PROPS are often 0 for every figure and the old x/y-only hash never actually engaged —
   // hash in outfit + facing so any two distinct cast members desync deterministically).
   const swayPhase = x * 0.02 + y * 0.003 + outfit.length * 1.7 + (facing === 1 ? 0 : 2.1);
-  const idle = pose === 'stand' && !walking; // a walking figure gets the stride cycle, not idle sway
+  // a walking figure gets the stride cycle, not idle sway. 'arms-crossed' is a HELD standing pose
+  // (a person waiting/watching) — it earns the same weight-shift/breath idle so it never reads as a
+  // frozen sprite (panel catch on the arms-crossed neighbor figure); the sway is a whole-figure
+  // translate/tilt that leaves the crossed-arms pose geometry itself unchanged.
+  const idle = (pose === 'stand' || pose === 'arms-crossed') && !walking;
   // idle life = a slow WEIGHT-SHIFT (big, ~3s period: the body eases onto one hip, holds, eases
   // back) layered with a faster micro-sway, so a standing figure reads as a person shifting their
   // weight rather than a frozen sprite. Round 10 added the weight-shift term on top of the round-6
   // micro-sway: the panel kept reading standers as frozen because a single slow sine barely moves
   // inside a ~0.5s review strip; the two-rate blend guarantees visible frame-to-frame motion.
-  const shift = idle ? 9 * Math.sin(f / 88 + swayPhase) : 0;   // weight-shift onto a hip
-  const sway = idle ? shift + 3.4 * Math.sin(f / 34 + swayPhase * 1.7) : 0;
-  const swayTilt = idle ? 2.4 * Math.sin(f / 88 + swayPhase) + 0.6 * Math.sin(f / 34 + swayPhase * 1.7) : 0;
+  // idleGain (default 1) scales the whole idle amplitude for a specific figure whose sway a big
+  // camera move would otherwise swamp (S5's Hollister under the truck-pan) -- targeted, so no other
+  // standing cast member is affected.
+  const shift = idle ? idleGain * 9 * Math.sin(f / 88 + swayPhase) : 0;   // weight-shift onto a hip
+  const sway = idle ? shift + idleGain * 3.4 * Math.sin(f / 34 + swayPhase * 1.7) : 0;
+  const swayTilt = idle ? idleGain * (2.4 * Math.sin(f / 88 + swayPhase) + 0.6 * Math.sin(f / 34 + swayPhase * 1.7)) : 0;
   // ---- articulated walk cycle (2026-07-21 panel: the human leads "translate as rigid sprites,
   // they don't walk"). When `walking`, the two legs swing fore/aft in opposition around the hips,
   // the body bobs at 2x the step rate (up on mid-stride), and the arms counter-swing. Phase comes

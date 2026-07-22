@@ -1,0 +1,21 @@
+{
+  "phase": "3.5 angle room synthesis",
+  "story": "Air Force Enhanced Use Lease offering ~4,700 acres at JBER, Eielson AFB, and Clear SFS for private AI data centers",
+  "thesis": "The Air Force put nearly 4,700 acres of active base land on the table for AI data centers, up to 50 years, real fair-market revenue, cold-climate compute logic, and as of today nobody has been picked yet, so the honest story is that the decision is still open, not a win or a loss.",
+  "strongest_supporting_facts": [
+    "RFLP issued April 10, 2026; proposal deadline June 29, 2026 (extended once already); NO operator or award has been publicly announced as of air date 2026-07-22 — the outcome is literally undecided.",
+    "The Enhanced Use Lease mechanism is a real structured deal, not a giveaway: DAF retains the underlying land and is guaranteed at least fair market value from whoever wins.",
+    "The only on-record public reaction is resident Sarah Hollister's concrete, named concern (noise like 'a vacuum cleaner 24 hours a day, seven days a week', permafrost heat risk, property values, GVEA grid load on 3 of the sites) — real stakes for a real family, still unanswered."
+  ],
+  "fair_counter_point_it_must_honor": "The Air Force's own framing is a legitimate institutional stake, not empty spin: Robert Moriarty's 'a unique opportunity for a true public-private partnership' reflects a genuine potential win (guaranteed revenue, use of otherwise underutilized land, national compute capacity), and dismissing it outright would be reflexively sour, not honest.",
+  "runner_up_angles_considered": [
+    {"angle": "Celebrate the public-private-partnership mechanism outright", "why_it_lost": "No award has been made and key terms (confirmed lease length, permafrost/grid mitigation commitments) are unconfirmed. Celebrating an undecided bid is premature, not earned."},
+    {"angle": "Straight resident-harm/cautionary framing", "why_it_lost": "Would assert permafrost damage or unfair grid costs as documented fact when they are still a resident's stated worry, not a finding. Also would be a THIRD straight cautionary/skeptical dispatch after Stak and AIDEA, violating stance rotation."},
+    {"angle": "Structural 'no seat at the table' framing", "why_it_lost": "The analyst who proposed it self-qualified that a NEPA-style federal review likely still applies, so asserting residents have zero process would overstate the facts. Folded into the open-question framing as a live question (where is the public hearing for the people bearing the noise?) rather than an asserted failure."},
+    {"angle": "Genuine wonder / cold-climate-engineering celebration", "why_it_lost": "The analyst assigned this lens concluded, honestly, that the strongest 'cool tech' claims (free cold-air cooling, subarctic engineering feats) are NOT in the fact-check-safe set, so celebration would require asserting unverified claims. Correctly declined."}
+  ],
+  "winning_valence": "open_question / curiosity",
+  "valence_rationale": "All 4 independent analysts converged here despite starting from different lenses (pro-partnership, resident-cost, structural, wonder). It is the one framing that matches the literal state of the facts (nothing decided yet), respects both the government's real stake and the resident's real concern without spinning either away, and rotates the channel's register away from two consecutive cautionary data-center dispatches (Stak, AIDEA) without manufacturing false enthusiasm.",
+  "stance_for_ledger": "curious",
+  "hook_frame": "This is a decision Alaska hasn't made yet, framed as: what has to be true for this to be a real win, not just a bid?"
+}

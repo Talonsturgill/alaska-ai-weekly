@@ -36,7 +36,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Dispatch"
         component={Episode}
-        durationInFrames={1561}
+        durationInFrames={1800}
         fps={30}
         width={1080}
         height={1920}
@@ -45,8 +45,9 @@ export const RemotionRoot: React.FC = () => {
         // Duration follows the VO: read `total` (frames) from episode_props.json so the
         // tail (the S6 button) is never truncated when the narration retimes the piece.
         // Prior bug (2026-07-20): hardcoded 1561 cut the last ~4.5s of a 1699f render.
+        // 2026-07-22: default bumped to 1800 (60.0s @ 30fps) to match this run's storyboard.
         calculateMetadata={({ props }) => ({
-          durationInFrames: (props as { total?: number }).total ?? 1561,
+          durationInFrames: (props as { total?: number }).total ?? 1800,
         })}
       />
       <Composition

@@ -584,3 +584,58 @@ export const Vale: React.FC<{
     </g>
   );
 };
+
+// =============================================================================
+// MachineShadow -- PROMOTED 2026-07-22 out of Episode.tsx (built 07-18, listed
+// ACTIVE in ASSET_MANIFEST.md but left as episode-local history and lost when
+// later runs rewrote Episode.tsx). A deliberately faceless institutional
+// monolith: no legs (an earlier splayed-cable-conduit pair read as a robot's
+// legs across every reviewer), a lit gradient tower on a solid flared
+// foundation, a swaying antenna array, a cold procedural status-light column
+// (server telemetry, no expression), vent louvers, and a ground contact
+// shadow. `grow` 0..1 scales it in vertically (a build-in entrance); pass 1
+// for an already-present monolith.
+// =============================================================================
+const MS_GRAPHITE = '#3a4652';
+const MS_GRAPHITE_D = '#232c34';
+
+export const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: number; grow?: number}> = ({x, y, scale = 1, f, grow = 1}) => {
+  const sway = 3 * Math.sin(f / 22);
+  const gid = `msLit-${Math.round(x)}-${Math.round(y)}`;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`} opacity={0.92}>
+      <linearGradient id={gid} x1="0%" y1="0%" x2="100%" y2="10%">
+        <stop offset="0%" stopColor="#5c6b7a" />
+        <stop offset="45%" stopColor={MS_GRAPHITE} />
+        <stop offset="100%" stopColor={MS_GRAPHITE_D} />
+      </linearGradient>
+      <g transform={`scaleY(${Math.max(0.02, grow)})`} style={{transformOrigin: '0px 0px'}}>
+        <path d="M-60,0 L-46,-360 L46,-360 L60,0 Z" fill={`url(#${gid})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+        <path d="M10,-360 L46,-360 L60,0 L26,0 Z" fill={MS_GRAPHITE_D} opacity={0.75} />
+        <path d="M-46,-360 L-60,0" fill="none" stroke="#9aabb8" strokeWidth={3} opacity={0.55} strokeLinecap="round" />
+        <g transform={`translate(0,-360) rotate(${sway})`}>
+          <line x1={0} y1={0} x2={-40} y2={-90} stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <line x1={0} y1={0} x2={10} y2={-110} stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <line x1={0} y1={0} x2={54} y2={-70} stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <circle cx={-40} cy={-90} r={7} fill={MS_GRAPHITE_D} stroke={INK} strokeWidth={4} />
+          <circle cx={10} cy={-110} r={7} fill={MS_GRAPHITE_D} stroke={INK} strokeWidth={4} />
+          <circle cx={54} cy={-70} r={7} fill={MS_GRAPHITE_D} stroke={INK} strokeWidth={4} />
+        </g>
+        {[-260, -180, -100, -30].map((yy, i) => (
+          <path key={i} d={`M${-52 + i * 2},${yy} L${52 - i * 2},${yy}`} stroke={INK} strokeWidth={4} opacity={0.5} />
+        ))}
+        {Array.from({length: 6}).map((_, i) => {
+          const yy = -320 + i * 44;
+          const on = ((f / 6 + i * 3) % 11) < 4;
+          return <circle key={i} cx={-30} cy={yy} r={5} fill={on ? '#e8b45a' : MS_GRAPHITE_D} stroke={INK} strokeWidth={2.5} />;
+        })}
+        {[-300, -240, -180].map((yy, i) => (
+          <rect key={i} x={12} y={yy} width={30} height={10} rx={3} fill={MS_GRAPHITE_D} stroke={INK} strokeWidth={2.5} opacity={0.85} />
+        ))}
+        <path d="M-92,0 q92,34 184,0 q-92,26 -184,0 Z" fill={MS_GRAPHITE_D} stroke={INK} strokeWidth={5} opacity={0.85} />
+        <path d="M-70,0 q70,28 140,0 q-70,22 -140,0 Z" fill={MS_GRAPHITE} opacity={0.6} />
+      </g>
+      <ellipse cx={0} cy={6} rx={110} ry={20} fill={INK} opacity={0.3} />
+    </g>
+  );
+};

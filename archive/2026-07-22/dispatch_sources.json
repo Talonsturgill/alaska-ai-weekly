@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "url": "https://www.af.mil",
+      "outlet": "af.mil (U.S. Air Force)",
+      "note": "Official release, 2026-04-10: ~4,700 acres / 12 parcels offered across JBER, Eielson AFB, and Clear Space Force Station via an Enhanced Use Lease; Robert Moriarty (Deputy Assistant Secretary of the Air Force for Installations) quote, \"This is a unique opportunity for a true public-private partnership.\""
+    },
+    {
+      "url": "https://www.spaceforce.mil",
+      "outlet": "spaceforce.mil (U.S. Space Force)",
+      "note": "Co-source for Clear Space Force Station's inclusion in the same land offer."
+    },
+    {
+      "url": "https://www.airandspaceforces.com",
+      "outlet": "Air & Space Forces Magazine",
+      "note": "Secondary source for the reported up-to-50-year lease term, which is NOT stated in the primary DAF release and is labeled REPORTED on screen and in the caption accordingly."
+    },
+    {
+      "url": "https://www.alaskasnewssource.com",
+      "outlet": "Alaska's News Source (KTUU/KTVF)",
+      "note": "2026-06-08/06-12 coverage: proposal deadline (extended to June 29), and Sarah Hollister's on-record concern, \"it's like having a vacuum cleaner on 24 hours a day, seven days a week.\""
+    }
+  ],
+  "sourcing_note": "The reported 50-year lease length is trade-press-sourced only (not DAF-confirmed) and is labeled 'reported' on screen and in the caption. As of air date 2026-07-22, no operator selection or award has been publicly announced across af.mil, spaceforce.mil, or Alaska press; the story is reported as a pending decision, not a resolved one."
+}

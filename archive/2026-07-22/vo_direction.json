@@ -1,0 +1,102 @@
+{
+  "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
+  "notes": "Style: warm, grounded, genuinely curious Alaska public-radio register. This is an open question, not a celebration and not a warning. The Air Force's public-private-partnership stake carries real institutional weight (no smugness, no mockery). Sarah Hollister's noise complaint is a tired, lived, respected concern, not comic relief. The closing line is a real question, direct to camera, warm and curious, never cynical or falsely upbeat. Pace: brisk, a sharp modern explainer; let the numbers land; vary the tone line to line.",
+  "style_prompt": "Style: warm, grounded, quietly witty Alaska public-radio host. Play this as genuine open curiosity, not celebration and not caution. When the Air Force official calls it a unique public-private partnership and a real opportunity, let it land with genuine institutional weight, no smugness, no eye-roll. When Sarah Hollister talks about the noise, treat it as a tired, real, three-generations lived concern, warmer and slower, never a punchline. End on a real open question posed straight to camera, warm and curious, not cynical, not falsely upbeat.\nPace: BRISK and energetic, keep it moving like a sharp modern explainer. Short natural breaths only, no long pauses, do not drag. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let the numbers land.",
+  "lines": [
+    {
+      "idx": 0,
+      "text": "[curious] The Air Force just offered four thousand seven hundred acres of military land in Alaska, for lease, to build AI data centers.",
+      "intent": "hook",
+      "emphasis": "acres",
+      "energy": 4,
+      "tags": [
+        "[curious]"
+      ],
+      "pause_before": false,
+      "why": "Bright forward-lean hook; the scale of the land offer is the pull, so the number carries it."
+    },
+    {
+      "idx": 1,
+      "text": "Twelve parcels, across three Alaska bases.",
+      "intent": "stat",
+      "emphasis": "twelve",
+      "energy": 3,
+      "tags": [],
+      "pause_before": false,
+      "why": "Settle from the hook to lay in the concrete count and the base names cleanly."
+    },
+    {
+      "idx": 2,
+      "text": "It's not a sale.",
+      "intent": "reveal",
+      "emphasis": "not",
+      "energy": 2,
+      "tags": [],
+      "pause_before": true,
+      "why": "A beat before, then drop low so the correction lands as a real turn, not an aside."
+    },
+    {
+      "idx": 3,
+      "text": "The Air Force keeps the land, and gets fair market value, reportedly for up to fifty years.",
+      "intent": "stat",
+      "emphasis": "fifty",
+      "energy": 3,
+      "tags": [],
+      "pause_before": false,
+      "why": "Even, informative build; slow just slightly on fifty years so the term length registers."
+    },
+    {
+      "idx": 4,
+      "text": "The Air Force's Robert Moriarty calls it a unique public-private partnership, and that's a real opportunity.",
+      "intent": "stakes",
+      "emphasis": "opportunity",
+      "energy": 4,
+      "tags": [],
+      "pause_before": false,
+      "why": "Firm, grounded lift so the institutional case carries genuine weight, no smugness."
+    },
+    {
+      "idx": 5,
+      "text": "But Sarah Hollister, three generations on this land, says the noise would be like a vacuum cleaner, running twenty-four seven.",
+      "intent": "reveal",
+      "emphasis": "vacuum",
+      "energy": 2,
+      "tags": [],
+      "pause_before": true,
+      "why": "Beat, then settle warmer and slower; her lived, tired concern is not a punchline, and the drop from 4 makes the contrast land."
+    },
+    {
+      "idx": 6,
+      "text": "Nobody has been picked yet.",
+      "intent": "setup",
+      "emphasis": "yet",
+      "energy": 3,
+      "tags": [],
+      "pause_before": false,
+      "why": "Lift back up, matter-of-fact, to reset the state of play before the question."
+    },
+    {
+      "idx": 7,
+      "text": "The lease is still open.",
+      "intent": "setup",
+      "emphasis": "open",
+      "energy": 2,
+      "tags": [],
+      "pause_before": false,
+      "why": "Ease down so the openness feels like real live stakes, not filler, and sets the runway for the button."
+    },
+    {
+      "idx": 8,
+      "text": "[curious] So what has to be true, for this to actually be a win, for Alaska?",
+      "intent": "button",
+      "emphasis": "true",
+      "energy": 4,
+      "tags": [
+        "[curious]"
+      ],
+      "pause_before": false,
+      "why": "Direct to camera, warm and genuinely curious lift; the question is real, so land 'true' clean, not cynical or hype."
+    }
+  ],
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty; neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, grounded, quietly witty Alaska public-radio host. Play this as genuine open curiosity, not celebration and not caution. When the Air Force official calls it a unique public-private partnership and a real opportunity, let it land with genuine institutional weight, no smugness, no eye-roll. When Sarah Hollister talks about the noise, treat it as a tired, real, three-generations lived concern, warmer and slower, never a punchline. End on a real open question posed straight to camera, warm and curious, not cynical, not falsely upbeat.\nPace: BRISK and energetic, keep it moving like a sharp modern explainer. Short natural breaths only, no long pauses, do not drag. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let the numbers land.\nTranscript:\n[curious] The Air Force just offered four thousand seven hundred acres of military land in Alaska, for lease, to build AI data centers. Twelve parcels, across three Alaska bases. It's not a sale. The Air Force keeps the land, and gets fair market value, reportedly for up to fifty years. The Air Force's Robert Moriarty calls it a unique public-private partnership, and that's a real opportunity. But Sarah Hollister, three generations on this land, says the noise would be like a vacuum cleaner, running twenty-four seven. Nobody has been picked yet. The lease is still open. [curious] So what has to be true, for this to actually be a win, for Alaska?"
+}
