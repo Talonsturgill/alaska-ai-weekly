@@ -46,6 +46,13 @@ def main():
     ap.add_argument("--caption", required=True, help="1-2 sentence verified summary shown under the title")
     ap.add_argument("--video-url", required=True, help="permanent 9:16 mp4 URL (upload_video.py output, verified live)")
     ap.add_argument("--poster-url", default="", help="permanent poster PNG URL (optional but strongly preferred)")
+    ap.add_argument("--video-mobile-url", default="",
+                    help="permanent 720x1280 mobile rendition URL -- the feed page serves THIS to "
+                         "phones (the 1080p master is 15MB+; the rendition ~3-6MB). Omitting it "
+                         "makes the page fall back to the heavy master on mobile, so pass it "
+                         "whenever the rendition was produced (Phase 7 step 1 produces it).")
+    ap.add_argument("--poster-thumb-url", default="",
+                    help="permanent 540x960 JPEG poster thumb URL (~<80KB vs the 300-600KB PNG)")
     ap.add_argument("--repo", default=REPO)
     ap.add_argument("--branch", default="main")
     a = ap.parse_args()
@@ -69,6 +76,12 @@ def main():
             "video": a.video_url,
             "poster": a.poster_url,
         }
+        # optional mobile-optimized fields: the feed page prefers these on phones and
+        # falls back to video/poster when absent, so only include them when real
+        if a.video_mobile_url:
+            entry["video_mobile"] = a.video_mobile_url
+        if a.poster_thumb_url:
+            entry["poster_thumb"] = a.poster_thumb_url
         vids = [v for v in vids if v.get("id") != a.id]  # idempotent replace
         vids.insert(0, entry)                             # newest first
         m["videos"] = vids
