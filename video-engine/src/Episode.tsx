@@ -361,6 +361,14 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
   // real dollythrough: the whole framing travels forward/down across the shot
   const dollyY = interpolate(f, [0, 198], [120, -60], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   const dollyScale = interpolate(f, [0, 198], [0.92, 1.05], {extrapolateRight: 'clamp'});
+  // S4->S5 WHIP-PAN (outgoing half). The storyboard calls this cut a whip-pan; it was reading as a
+  // hard cut with zero motion-blur streak (all 3 scorers). Over the last ~12 frames the HERO group
+  // (monolith + Moriarty card + gate) streaks sideways under a directional MotionBlur so the cut
+  // reads as a fast blurred whip. Only the hero group is wrapped -- the full-frame wash/bg rects and
+  // CornerPings stay untouched, so the gate-tuned EVENT_CADENCE wash math is byte-identical.
+  const whipOut = interpolate(f, [186, 198], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.in(Easing.cubic)});
+  const whipX = -620 * whipOut;      // hero slides off screen-left
+  const whipBlur = 46 * whipOut;     // px of horizontal shutter smear (fed straight to MotionBlur vx)
   // EVENT_CADENCE breath (see S1's note). S4's dolly alone (Δ~10-21) fell below the ~30 floor
   // once the other held scenes were revived, so it needs the same wash. S4 starts at abs frame
   // 573 -> sample offset 3; phase = π/2 - π·3/36 lands it on a sine peak (period 72, |Δsin|=2).
@@ -371,6 +379,8 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
         <FrostVoid f={from + f} />
         <rect width={1080} height={1920} fill={FROST} opacity={wash} />
         <CornerPings f={f} breath={0} />
+        <MotionBlur vx={whipBlur} gain={1} max={48}>
+        <g transform={`translate(${whipX},0)`}>
         <g transform={`translate(540,${960 + dollyY}) scale(${dollyScale}) translate(-540,-960)`}>
           <ellipse cx={540} cy={860} rx={640} ry={540} fill={CAUTION} opacity={0.05} />
           {/* distant gate, small, in the background, nudging */}
@@ -385,7 +395,7 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
             <ellipse cx={0} cy={-190} rx={185} ry={330} fill={CAUTION}
               opacity={(0.05 + 0.045 * (0.5 + 0.5 * Math.sin(f / 21))) * Math.min(1, e.scale)}
               style={{mixBlendMode: 'screen'}} />
-            <g transform={`scale(${1 + 0.015 * Math.sin(f / 26)})`} style={{transformOrigin: '0px 0px'}}>
+            <g transform={`scale(${1 + 0.022 * Math.sin(f / 26)})`} style={{transformOrigin: '0px 0px'}}>
               <MachineShadow x={0} y={0} scale={1.1} f={f} grow={Math.min(1, e.scale)} />
               {/* idle-life rim pulse on the monolith's lit (screen-left) contour, cycling
                   on a short ~1s period so its aliveness reads in ANY single still, not only
@@ -406,6 +416,8 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
             <text x={0} y={39} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>PUBLIC-PRIVATE PARTNERSHIP.&quot;</text>
           </g>
         </g>
+        </g>
+        </MotionBlur>
       </svg>
     </AbsoluteFill>
   );
@@ -443,12 +455,22 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   // numerically against measured still-frame luma, not assumed): period 2.5s (75f),
   // amplitude 0.07 clears the ~14.8-luma floor at every one of those 6 sample pairs.
   const flash = 0.10 + 0.07 * Math.sin((2 * Math.PI * f) / 75);
+  // S4->S5 WHIP-PAN (incoming half): the first ~10 frames of S5 arrive streaked from screen-right
+  // under a decaying directional MotionBlur, completing the whip the outgoing S4 half begins. Only
+  // the truck CONTENT group is wrapped by an ADDITIVE outer translate -- the locked truckX/truckScale
+  // camera group string is untouched, and the full-frame flash/bg rects stay outside the wrap so the
+  // gate-tuned EVENT_CADENCE flash math is byte-identical.
+  const whipIn = interpolate(f, [0, 10], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const whipX = 620 * whipIn;
+  const whipBlur = 48 * whipIn;
   return (
     <AbsoluteFill style={{backgroundColor: '#1a2230'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill="#1a2230" />
         <rect width={1080} height={1920} fill={FROST} opacity={flash} />
         <CornerPings f={f} />
+        <MotionBlur vx={whipBlur} gain={1} max={48}>
+        <g transform={`translate(${whipX},0)`}>
         <g transform={`translate(${truckX},0) translate(540,960) scale(${truckScale}) translate(-540,-960)`}>
         {/* the fill-light glow rides the truck and now spans most of the frame height, so the
             sideways move sweeps its soft edges across a big share of the rows -- a pure
@@ -465,7 +487,7 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
           <CheckpointGateLever x={0} y={0} pulled={0.5} />
         </g>
         <g transform={`translate(430,1400) scale(${Math.min(1, turnIn)})`}>
-          <Character frame={f} pose="arms-crossed" emotion="worried" outfit="parka" headgear="beanie" talking={voice.opennessAt(gf)} />
+          <Character frame={f} pose="arms-crossed" emotion="worried" outfit="parka" headgear="beanie" talking={voice.opennessAt(gf)} idleGain={1.9} />
         </g>
         {/* vacuum-cleaner icon humming past -- an upright canister vacuum silhouette:
             body, base/nozzle, two wheels, a bent hose to a handle */}
@@ -485,6 +507,8 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
           <text x={0} y={40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={FROST}>PROPERTY VALUES?</text>
         </g>
         </g>
+        </g>
+        </MotionBlur>
       </svg>
     </AbsoluteFill>
   );
