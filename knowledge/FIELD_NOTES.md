@@ -7,6 +7,23 @@ into the doctrine/library files and prune here.
 
 ---
 
+## 2026-07-22 - site change (maintainer session, not a run)
+
+- THE SITE NOW CARRIES THE BOTTLENECK SCANNER. site_build.py gained scan_html()
+  (a homepage section right after the hero, a one-field form that GETs to
+  scan/) and scan_page() (the scan/ page, full form + polling + result iframe),
+  plus a footer link, a sitemap entry, and an llms.txt line. Both are emitted
+  by EVERY build, so a routine rebuild keeps them without knowing anything.
+  The backend (Supabase Edge Functions, scanner schema, API-triggered scan
+  routine) lives in the alaska-ai-scanner repo. If a build fails inside these
+  functions, fix the build. Never remove the section or the page to ship.
+- The .subscribe input styling now also covers input[type=text] (the scanner
+  form field). Cosmetic, shared, safe.
+- NOTE. The previously deployed pages had background-image:url(none), the film
+  grain asset had been missing in a prior build environment. This rebuild
+  re-embedded the noise data URI from assets/, which is the script working as
+  designed, not a regression.
+
 ## 2026-07-21 - run retro (Carousel No. 13, "A Better Ear Is Not a Recovery", 8.77)
 
 - FULL-STUDIO RUN, no usage-limit degradation. 6 scouts + fact-checker + 3 treatment-directors +

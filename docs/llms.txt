@@ -7,6 +7,7 @@
 ## Core pages
 
 - [AI consulting for Alaska businesses](https://alaskaaihq.com/services/)
+- [The Bottleneck Scanner, an honest free read of where AI would and would not help a business](https://alaskaaihq.com/scan/)
 - [The Alaska AI Docket, every AI infrastructure decision in the state](https://alaskaaihq.com/docket/)
 - [Articles, one verified Alaska and AI story a day](https://alaskaaihq.com/archive/)
 - [About Alaska AI](https://alaskaaihq.com/about/)

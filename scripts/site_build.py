@@ -210,6 +210,24 @@ method="post" target="_blank">
 </form>"""
 
 
+def scan_html():
+    """Homepage section for the Bottleneck Scanner (the alaska-ai-scanner
+    repo's public front door). Pure HTML, no JS here, the one field submits as
+    a GET to the scan page, which prefills and runs the real flow."""
+    return """<h2 data-reveal id="scan">Would AI actually help your business</h2>
+<p class="sub" data-reveal>Our scanner reads your own public pages and hands back an honest map.
+The pockets where AI earns its place, the ones where a plain rule wins first, and the
+ones it should not touch. Free, one to two minutes, no signup to see it.</p>
+<form class="subscribe" data-reveal action="scan/" method="get">
+  <label class="vh" for="scan-url">Your website</label>
+  <input type="text" name="url" id="scan-url" required placeholder="yourbusiness.com"
+  autocomplete="url" inputmode="url">
+  <button class="cta gold" type="submit">SCAN MY BUSINESS</button>
+</form>
+<p class="fineprint" data-reveal>We fetch only your own public pages and we never promise outcomes.
+When the honest answer is that you do not need AI, the scan says so. That is the point.</p>"""
+
+
 def footer(prefix, today):
     return f"""<footer>
 <div class="foot-grid">
@@ -217,6 +235,7 @@ def footer(prefix, today):
   <div class="foot-links">
     <a href="{prefix}docket/">THE DOCKET</a>
     <a href="{prefix}archive/">ARTICLES</a>
+    <a href="{prefix}scan/">THE SCANNER</a>
     <a href="{prefix}services/">SERVICES</a>
     <a href="{prefix}about/">ABOUT</a>
     <a href="{prefix}docket.json">DATA</a>
@@ -543,11 +562,11 @@ border:1px solid var(--line);border-radius:12px;padding:24px 26px;}
 /* ---------- subscribe ---------- */
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
 .subscribe{display:flex;gap:12px;flex-wrap:wrap;max-width:560px;}
-.subscribe input[type=email]{flex:1;min-width:230px;background:rgba(10,22,38,.85);
+.subscribe input[type=email],.subscribe input[type=text]{flex:1;min-width:230px;background:rgba(10,22,38,.85);
 border:1px solid var(--line);border-radius:6px;padding:13px 16px;color:var(--snow);
 font-family:JBMono,monospace;font-size:13.5px;letter-spacing:.03em;transition:border-color .2s;}
-.subscribe input[type=email]::placeholder{color:#5f7390;}
-.subscribe input[type=email]:focus{border-color:var(--gold);outline:none;}
+.subscribe input[type=email]::placeholder,.subscribe input[type=text]::placeholder{color:#5f7390;}
+.subscribe input[type=email]:focus,.subscribe input[type=text]:focus{border-color:var(--gold);outline:none;}
 .subscribe .cta{border:none;cursor:pointer;font-family:JBMono,monospace;}
 .fineprint{font-family:JBMono,monospace;font-size:11px;color:#5a6d87;
 letter-spacing:.08em;margin-top:14px;}
@@ -975,6 +994,7 @@ AI beat, verified to the source and told for Alaskans. From the Slope to Southea
 </div>
 {stats}
 </div>
+{scan_html()}
 {latest_html}
 {closing}
 {steps}
@@ -1431,6 +1451,128 @@ one business day. {thanks_line}</p>
                 noindex=True)
 
 
+def scan_page(today, site_url):
+    """The Bottleneck Scanner tool page (backend lives in the alaska-ai-scanner
+    repo, Supabase Edge Functions + an API-triggered Claude routine). Three
+    modes in one page, a full form (prefilled from ?url= when the homepage
+    section submits here), a waiting view that polls scan-result, and the
+    finished scan rendered in a sandboxed iframe. The function URL and the
+    publishable key are public by design, the database itself is unreachable
+    from the browser."""
+    body = """<div class="hero" style="min-height:auto;padding-top:9vh">
+<div class="chip kind">FREE &middot; ONE TO TWO MINUTES &middot; NO SIGNUP TO SEE IT</div>
+<h1 style="margin-top:14px">Would AI actually help <em>your business</em></h1>
+<p class="tag">Drop your website. Our scanner reads your own public pages and hands back an
+honest map. The pockets where AI earns its place, the ones where a plain rule wins first,
+and the ones it should not touch at all. When the honest answer is that you do not need AI,
+it says so. That is the point.</p>
+</div>
+<div id="scanapp">
+<form class="leadform" id="scanform" style="max-width:640px">
+  <label>Your website<input type="text" name="url" id="f-url" required
+    placeholder="yourbusiness.com" autocomplete="url" inputmode="url"></label>
+  <label>Booking or scheduling link, optional<input type="text" name="booking" id="f-booking"
+    placeholder="yourbusiness.com/book"></label>
+  <label>A current job posting, optional but a strong signal<textarea name="jobs" id="f-jobs"
+    placeholder="Paste a job post or its link"></textarea></label>
+  <button class="cta gold" id="f-go" type="submit">SCAN MY BUSINESS</button>
+  <p class="fineprint" id="f-err" style="color:#ff9e9e"></p>
+</form>
+<p class="fineprint">We fetch only your own public pages. We never fetch or reference another
+company, and we never promise outcomes. The scan describes bottlenecks with a source for
+every observation.</p>
+</div>
+<script>
+(function(){
+  var FN = "https://gsuvfpnyzebycqhsekus.supabase.co/functions/v1";
+  var PUBKEY = "sb_publishable_7Ax5z5BRwIGspG4ok4Hv1Q_6ZpN5fnl";
+  var HEADERS = { "content-type": "application/json", "apikey": PUBKEY,
+                  "authorization": "Bearer " + PUBKEY };
+  var app = document.getElementById("scanapp");
+  var params = new URLSearchParams(location.search);
+  var token = params.get("token");
+  var pre = params.get("url");
+
+  function waiting(){
+    app.innerHTML = '<div style="text-align:center;padding:60px 0">' +
+      '<div style="width:26px;height:26px;border:3px solid rgba(90,200,240,.25);' +
+      'border-top-color:var(--blue);border-radius:50%;margin:0 auto 18px;' +
+      'animation:scanspin .9s linear infinite"></div>' +
+      '<p class="sub" style="margin:0 auto 6px;max-width:520px">Reading your public footprint ' +
+      'and laddering the honest calls.</p>' +
+      '<p class="fineprint">This takes one to two minutes. Keep this tab open, ' +
+      'or bookmark this link and come back.</p></div>' +
+      '<style>@keyframes scanspin{to{transform:rotate(360deg)}}</style>';
+  }
+
+  function fail(msg){
+    app.innerHTML = '<div style="text-align:center;padding:60px 0">' +
+      '<p class="sub" style="margin:0 auto 10px;max-width:520px">' + msg + '</p>' +
+      '<p class="fineprint"><a href="./" style="color:var(--blue)">Run it again</a></p></div>';
+  }
+
+  function poll(){
+    waiting();
+    var tries = 0;
+    var t = setInterval(function(){
+      tries++;
+      fetch(FN + "/scan-result?token=" + encodeURIComponent(token), { headers: HEADERS })
+        .then(function(r){ return r.json(); }).catch(function(){ return {}; })
+        .then(function(d){
+          if (d.status === "done" || d.status === "degraded") {
+            clearInterval(t);
+            var f = document.createElement("iframe");
+            f.setAttribute("sandbox", "allow-forms allow-popups allow-top-navigation-by-user-activation");
+            f.setAttribute("style", "width:100%;border:0;min-height:85vh;border-radius:10px;background:#02060F");
+            f.srcdoc = d.html || "";
+            app.innerHTML = "";
+            app.appendChild(f);
+          } else if (d.status === "failed" || d.error === "not found") {
+            clearInterval(t);
+            fail("That scan did not finish. It happens when a site blocks reading or the " +
+                 "footprint is unreachable.");
+          } else if (tries > 90) {
+            clearInterval(t);
+            fail("This is taking longer than usual. Bookmark this link and check back in a bit.");
+          }
+        });
+    }, 3000);
+  }
+
+  function wire(){
+    if (pre) { document.getElementById("f-url").value = pre; }
+    document.getElementById("scanform").addEventListener("submit", function(e){
+      e.preventDefault();
+      var btn = document.getElementById("f-go"), err = document.getElementById("f-err");
+      err.textContent = ""; btn.disabled = true; btn.textContent = "STARTING...";
+      fetch(FN + "/scan-request", { method: "POST", headers: HEADERS, body: JSON.stringify({
+        url: document.getElementById("f-url").value,
+        booking_url: document.getElementById("f-booking").value || null,
+        jobs: document.getElementById("f-jobs").value || null
+      })}).then(function(r){ return r.json().then(function(d){ return { ok: r.ok, d: d }; }); })
+      .then(function(x){
+        if (!x.ok) { throw new Error(x.d.error || "could not start the scan"); }
+        location.search = "?token=" + encodeURIComponent(x.d.token);
+      }).catch(function(ex){
+        err.textContent = ex.message;
+        btn.disabled = false; btn.textContent = "SCAN MY BUSINESS";
+      });
+    });
+  }
+
+  if (token) { poll(); } else { wire(); }
+})();
+</script>"""
+    ld = {"@context": "https://schema.org", "@graph": [
+        org_ld(site_url),
+        breadcrumb_ld(site_url, [("Home", ""), ("The Scanner", "scan/")])]}
+    return page("The Bottleneck Scanner - Alaska AI",
+                "Drop your website and get an honest map of where AI would help your "
+                "Alaska business, where a plain rule wins first, and where AI should "
+                "not go at all. Free, no signup to see it.",
+                body, "../", "scanner", today, site_url, "scan/", ld=ld)
+
+
 def about_page(today, site_url):
     body = f"""<div class="hero" style="min-height:auto;padding-top:9vh">
 <h1>Built in the <em>North</em></h1>
@@ -1536,7 +1678,7 @@ def sitemap(site_url, runs, today):
     priority and changefreq, so neither is emitted."""
     iso = today.isoformat()
     entries = []
-    for u in ("", "docket/", "archive/", "services/", "about/"):
+    for u in ("", "docket/", "archive/", "services/", "scan/", "about/"):
         lm = f"<lastmod>{iso}</lastmod>" if u in ("", "docket/", "archive/") else ""
         entries.append(f"<url><loc>{site_url}/{u}</loc>{lm}</url>")
     for r in runs:
@@ -1560,6 +1702,7 @@ def llms_txt(site_url):
 ## Core pages
 
 - [AI consulting for Alaska businesses]({site_url}/services/)
+- [The Bottleneck Scanner, an honest free read of where AI would and would not help a business]({site_url}/scan/)
 - [The Alaska AI Docket, every AI infrastructure decision in the state]({site_url}/docket/)
 - [Articles, one verified Alaska and AI story a day]({site_url}/archive/)
 - [About Alaska AI]({site_url}/about/)
@@ -1597,6 +1740,7 @@ def build(today, out_dir, site_url=None, domain=""):
         "archive/index.html": archive_page(today, site_url, runs),
         "services/index.html": services_page(today, site_url),
         "services/thanks/index.html": services_thanks_page(today, site_url),
+        "scan/index.html": scan_page(today, site_url),
         "about/index.html": about_page(today, site_url),
         "404.html": not_found_page(today, site_url),
     }
