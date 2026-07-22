@@ -9,15 +9,16 @@
   "docket": "done",
   "selection": "done",
   "directors_room": "done",
-  "copy": "pending",
+  "copy": "done",
   "art_build": "done",
   "pixel_review": "done",
   "flow_review": "done",
   "assemble": "done",
   "scoring": "done",
-  "ship": "pending",
-  "upgrade": "pending",
-  "gmail": "pending",
-  "retro": "pending"
- }
+  "ship": "done",
+  "upgrade": "done",
+  "gmail": "done",
+  "retro": "done"
+ },
+ "completed": true
 }
