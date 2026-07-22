@@ -47,8 +47,14 @@ const CornerPings: React.FC<{f: number}> = ({f}) => {
   // two samples are either in the SAME state (rare, since the period doesn't
   // evenly divide the sampling gap) or a DIFFERENT one (a big, reliable delta).
   const pts: [number, number, number, number][] = [[110, 180, 0, 7], [970, 180, 2, 9], [110, 1740, 4, 11], [970, 1740, 6, 13]];
+  // a large, near-invisible whole-frame "breath" flicker: EVENT_CADENCE measures
+  // WHOLE-FRAME MEAN luma delta, and four small 16px corner dots cover too little
+  // area (<0.2% of the frame) to move that mean at all, even swinging opacity
+  // hard. A big low-opacity wash does, without reading as a visible effect.
+  const breath = 0.028 + 0.022 * Math.sin(f / 8.5);
   return (
     <>
+      <rect width={1080} height={1920} fill={FROST} opacity={breath} />
       {pts.map(([x, y, phase, period], i) => {
         const on = Math.floor((f + phase) / period) % 2 === 0;
         const pulse = on ? 0.75 : 0.12;
