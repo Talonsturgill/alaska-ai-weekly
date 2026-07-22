@@ -305,7 +305,7 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const propIn = interpolate(f, [175, 200], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const dip = interpolate(f, [175, 230], [0, -18], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // real truckAcross: the whole framing trucks sideways over the shot
-  const truckX = interpolate(f, [0, 264], [340, -340], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const truckX = interpolate(f, [0, 264], [430, -430], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   return (
     <AbsoluteFill style={{backgroundColor: '#1a2230'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
