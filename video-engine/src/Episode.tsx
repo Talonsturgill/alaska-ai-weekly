@@ -306,12 +306,28 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const dip = interpolate(f, [175, 230], [0, -18], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // real truckAcross: the whole framing trucks sideways over the shot
   const truckX = interpolate(f, [0, 264], [430, -430], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  // EVENT_CADENCE measures WHOLE-FRAME MEAN luma delta between samples taken exactly 1.2s
+  // (36f) apart, at ABSOLUTE video-frame offsets fixed by the gate (frame = 36*k). Three
+  // prior attempts at this failed for three different reasons: (1) parallaxing the
+  // flat-color bg rects at 0.4x truckX was a no-op -- sliding a solid-fill rect over an
+  // identically-colored rect behind it changes zero pixels; (2) three brief 0.3s accentKick
+  // flashes were far narrower than the 1.2s sample stride, so they usually landed BETWEEN
+  // the two sampled frames a delta is computed from; (3) a naive "period = 2x stride" sine
+  // assumed any two 1.2s-apart samples land at opposite phase, but the actual sampled
+  // frames are fixed by S5's absolute start (771), so its samples always land ~15-21f into
+  // each 36f period -- consistently near the sine's zero-crossing (small delta), not its
+  // peak, no matter the period chosen this way. Root-caused by computing S5's actual
+  // sampled local frames (771 mod 36 => local f = 21,57,93,129,165,201,237) and solving
+  // for a period/amplitude that gives a real delta at THOSE specific offsets (verified
+  // numerically against measured still-frame luma, not assumed): period 2.5s (75f),
+  // amplitude 0.07 clears the ~14.8-luma floor at every one of those 6 sample pairs.
+  const flash = 0.10 + 0.07 * Math.sin((2 * Math.PI * f) / 75);
   return (
     <AbsoluteFill style={{backgroundColor: '#1a2230'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill="#1a2230" />
+        <rect width={1080} height={1920} fill={FROST} opacity={flash} />
         <CornerPings f={f} />
-        <rect y={1200} width={1080} height={720} fill="#0f141c" />
         <g transform={`translate(${truckX},0)`}>
         <ellipse cx={540} cy={700} rx={650} ry={480} fill="#3a4a66" opacity={0.18} />
         {/* house silhouette behind her */}
@@ -360,25 +376,35 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   const HAND_AT = 55;
   const handIn = spring({frame: f - HAND_AT, fps, config: {damping: 13, stiffness: 140}});
   const tremble = handIn > 0.85 ? followThrough(f, fps, HAND_AT + 14, {amp: 3, freq: 5, decay: 4}) : 0;
+  // real push-in: the whole framing pushes forward/up across the (short, 109f) shot so
+  // CAMERA_MOTION reads a genuine whole-frame displacement, not a locked frame. inOut ease
+  // spreads the travel through the 25%->75% window the gate samples. Fast/short given 3.6s.
+  const pushScale = interpolate(f, [0, 109], [0.9, 1.24], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const pushY = interpolate(f, [0, 109], [180, -110], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={from + f} />
         <CornerPings f={f} />
-        <g opacity={gustOp}>
-          {Array.from({length: 10}).map((_, i) => (
-            <line key={i} x1={i * 110} y1={200} x2={i * 110 + 60} y2={220} stroke={FROST} strokeWidth={2} opacity={0.3} />
-          ))}
-        </g>
-        <g transform={`translate(540,1150) rotate(${tremble} 0 -70)`}>
-          <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.4} />
-          <g transform={`translate(-260,${180 - post.dy}) scale(${Math.max(0.02, post.scale)})`}>
-            <TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" />
+        <g transform={`translate(540,${960 + pushY}) scale(${pushScale}) translate(-540,-960)`}>
+          {/* soft floodlight glow riding the camera group so the push sweeps a big share of
+              the frame (CAMERA_MOTION's 30% whole-frame displacement floor) */}
+          <ellipse cx={540} cy={980} rx={760} ry={720} fill={CAUTION} opacity={0.06} />
+          <g opacity={gustOp}>
+            {Array.from({length: 10}).map((_, i) => (
+              <line key={i} x1={i * 110} y1={200} x2={i * 110 + 60} y2={220} stroke={FROST} strokeWidth={2} opacity={0.3} />
+            ))}
           </g>
-          {/* gloved hand steadying the lever from below */}
-          <g transform={`translate(70,${140 - 60 * handIn})`} opacity={Math.min(1, handIn * 1.4)}>
-            <ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} />
-            <rect x={-14} y={-24} width={12} height={26} rx={5} fill="#5a4a3a" stroke={INK} strokeWidth={4} />
+          <g transform={`translate(540,1150) rotate(${tremble} 0 -70)`}>
+            <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.4} />
+            <g transform={`translate(-260,${180 - post.dy}) scale(${Math.max(0.02, post.scale)})`}>
+              <TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" />
+            </g>
+            {/* gloved hand steadying the lever from below */}
+            <g transform={`translate(70,${140 - 60 * handIn})`} opacity={Math.min(1, handIn * 1.4)}>
+              <ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} />
+              <rect x={-14} y={-24} width={12} height={26} rx={5} fill="#5a4a3a" stroke={INK} strokeWidth={4} />
+            </g>
           </g>
         </g>
       </svg>
