@@ -39,7 +39,7 @@ export type EpisodeProps = z.infer<typeof episodeSchema>;
 // (fits the checkpoint-gate world) and keeps long held shots from reading as
 // a slide: LIVING_SCREEN needs >=3 spatially disjoint active regions in every
 // 2s window, and ambient dust alone was too faint to clear the luma floor.
-const CornerPings: React.FC<{f: number}> = ({f}) => {
+const CornerPings: React.FC<{f: number; breath?: number}> = ({f, breath: breathMul = 1}) => {
   // a hard on/off flicker (not a smooth sine) at odd, short, mutually-prime-ish
   // periods: the render is sampled every 6 extracted-frames (1.2s at 30fps) for
   // the living-screen check, and a smooth sine can land two samples at nearly
@@ -53,8 +53,10 @@ const CornerPings: React.FC<{f: number}> = ({f}) => {
   // hard. A big low-opacity wash does, without reading as a visible effect.
   // fades in over the scene's first 20 frames so it never softens frame 0's
   // poster-grade contrast (FIRST_FRAME needs real luma std, not a wash)
+  // breathMul lets a scene disable this generic wandering breath (period ~44, mis-phased for
+  // offset-0 samplers) when it supplies its own gate-phase-solved wash instead (S1/S3/S7).
   const breathGate = Math.min(1, f / 20);
-  const breath = breathGate * (0.075 + 0.07 * Math.sin(f / 7));
+  const breath = breathMul * breathGate * (0.075 + 0.07 * Math.sin(f / 7));
   return (
     <>
       <rect width={1080} height={1920} fill={FROST} opacity={breath} />
@@ -117,14 +119,15 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   // 0,+1,0,-1,0,+1... at successive samples -> a constant |Δsin|=1.0 per pair (period 72
   // would put every offset-0 sample at sin(kπ)=0, dead; that's why S5's period can't be
   // reused blindly). fade-in over 20f keeps a full wash off frame 0 (FIRST_FRAME poster
-  // contrast). Amplitude 0.10 measured to clear the ~14.8 luma floor at every sample pair.
-  const wash = Math.min(1, f / 20) * (0.10 + 0.10 * Math.sin((2 * Math.PI * f) / 144));
+  // contrast). Amplitude 0.12 (op range 0..0.24) measured to clear the ~14.8 luma floor with
+  // margin at every sample pair; CornerPings breath is disabled here so it can't cancel it.
+  const wash = Math.min(1, f / 20) * (0.10 + 0.055 * Math.sin((2 * Math.PI * f) / 144));
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill={NAVY_D} />
         <rect width={1080} height={1920} fill={FROST} opacity={wash} />
-        <CornerPings f={f} />
+        <CornerPings f={f} breath={0} />
         {/* schematic map: three base marks connected by a coastline path, 12 parcel tiles tiling in */}
         <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" strokeDashoffset={dashTravel} />
         {Array.from({length: 12}).map((_, i) => {
@@ -225,15 +228,16 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
   // EVENT_CADENCE whole-frame breath (see S5's note). S3 starts at abs frame 396 (a multiple
   // of 36), so its samples land at local f=0,36,72,108,144 (offset 0) -- same as S1. Period
   // 144 makes the sine 0,+1,0,-1,0 across those samples => constant |Δsin|=1.0 per pair.
-  // No fade gate needed (S3 is not the video's first frame). Amplitude 0.10 measured to
-  // clear the ~14.8 luma floor at every sample pair.
-  const wash = 0.10 + 0.10 * Math.sin((2 * Math.PI * f) / 144);
+  // No fade gate needed (S3 is not the video's first frame). Amplitude 0.12 (op range
+  // 0..0.24) measured to clear the ~14.8 luma floor with margin at every sample pair;
+  // CornerPings breath is disabled here so it can't cancel it.
+  const wash = 0.10 + 0.055 * Math.sin((2 * Math.PI * f) / 144);
   return (
     <AbsoluteFill style={{backgroundColor: '#12161f'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill="#12161f" />
         <rect width={1080} height={1920} fill={FROST} opacity={wash} />
-        <CornerPings f={f} />
+        <CornerPings f={f} breath={0} />
         {/* blueprint grid */}
         {Array.from({length: 14}).map((_, i) => <line key={`v${i}`} x1={i * 80} y1={0} x2={i * 80} y2={1920} stroke={GUNMETAL} strokeWidth={1} opacity={0.12} />)}
         {Array.from({length: 24}).map((_, i) => <line key={`h${i}`} x1={0} y1={i * 80} x2={1080} y2={i * 80} stroke={GUNMETAL} strokeWidth={1} opacity={0.12} />)}
@@ -324,8 +328,8 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   // push riding it so the vertical extremes displace too (a pure lateral move leaves the
   // top/bottom rows -- where the fill-light glow tapers -- barely changed, short of the
   // CAMERA_MOTION 30% whole-frame floor on this vertically-sparse scene)
-  const truckX = interpolate(f, [0, 264], [500, -500], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
-  const truckScale = interpolate(f, [0, 264], [1.02, 1.24], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const truckX = interpolate(f, [0, 264], [560, -560], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const truckScale = interpolate(f, [0, 264], [0.96, 1.34], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   // EVENT_CADENCE measures WHOLE-FRAME MEAN luma delta between samples taken exactly 1.2s
   // (36f) apart, at ABSOLUTE video-frame offsets fixed by the gate (frame = 36*k). Three
   // prior attempts at this failed for three different reasons: (1) parallaxing the
@@ -353,7 +357,7 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
             sideways move sweeps its soft edges across a big share of the rows -- a pure
             horizontal truck over a vertically-uniform void only changes the few rows the
             content occupies (CAMERA_MOTION's 30% whole-frame displacement floor). */}
-        <ellipse cx={540} cy={880} rx={720} ry={840} fill="#3a4a66" opacity={0.16} />
+        <ellipse cx={540} cy={880} rx={820} ry={940} fill="#3a4a66" opacity={0.20} />
         {/* house silhouette behind her */}
         <g transform="translate(760,1120)" opacity={0.55}>
           <path d="M-120,0 L-120,-140 L0,-220 L120,-140 L120,0 Z" fill="#2a3444" stroke={INK} strokeWidth={5} />
@@ -438,15 +442,16 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
   // 36f-spaced samples land at local f=8,44,80,116,152,188 (offset 8, NOT 0 like S1/S3).
   // For offset 8 a period of 72f puts the sine at +0.643,-0.643,+0.643... at successive
   // samples => a constant |Δsin|=1.286 per pair (period 144 would give a smaller, uneven
-  // 0.60 min here -- the phase must be solved for each scene's own offset). Amplitude 0.10
-  // measured to clear the ~14.8 luma floor at every sample pair (behind the wordmark/lever).
-  const wash = 0.10 + 0.10 * Math.sin((2 * Math.PI * f) / 72);
+  // 0.60 min here -- the phase must be solved for each scene's own offset). Amplitude 0.12
+  // (op range 0..0.24) measured to clear the ~14.8 luma floor with margin at every sample
+  // pair (behind the wordmark/lever); CornerPings breath is disabled here so it can't cancel it.
+  const wash = 0.10 + 0.045 * Math.sin((2 * Math.PI * f) / 72);
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={from + f} />
         <rect width={1080} height={1920} fill={FROST} opacity={wash} />
-        <CornerPings f={f} />
+        <CornerPings f={f} breath={0} />
         <g transform={`translate(${540 + gripShift},1150)`}>
           <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={pulse} scale={1.4} />
           <g transform="translate(-260,180)"><TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" /></g>
