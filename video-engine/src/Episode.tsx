@@ -52,7 +52,9 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
   const count = Math.round(interpolate(f, [0, 90], [0, 4700], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}));
   const tilesOn = Math.floor(interpolate(f, [0, 100], [0, 12], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
-  const wipeIn = interpolate(f, [110, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // scene is ~264f once retimed to the actual VO line -- hold the count, only wipe
+  // to black in the last ~15 frames so S1 doesn't sit on a blank hold before S2 cuts in
+  const wipeIn = interpolate(f, [240, 264], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const headlineOp = interpolate(f, [4, 20], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
@@ -104,12 +106,14 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
   const plateA = interpolate(f, [16, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const plateB = interpolate(f, [30, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const plateC = interpolate(f, [44, 58], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const FLIP_AT = 128;
+  const FLIP_AT = 75; // scene is ~132f (4.4s) once retimed to the actual VO; leave room to settle
   const flip = spring({frame: f - FLIP_AT, fps, config: {damping: 13, stiffness: 160}});
+  const wipeOut = interpolate(f, [0, 14], [1, 0], {extrapolateRight: 'clamp'}); // sells the mask-wipe cut in from S1
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={gf} />
+        <rect width={1080} height={1920} fill={NAVY_D} opacity={wipeOut} />
         <g transform={`translate(540,1150) scale(${push})`}>
           <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.35} />
           {/* server-rack glyph, popping in beside the nameplates */}
@@ -191,7 +195,7 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
   const cardIn = spring({frame: f - 30, fps, config: {damping: 12, stiffness: 170}});
   // foreshadowing lever nudge: rises a few degrees under the pitch, eases back to halfway
   const nudge = interpolate(f, [40, 70, 110], [0.5, 0.63, 0.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
-  const glowOnce = interpolate(f, [150, 175, 200], [0, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const glowOnce = interpolate(f, [130, 150, 170], [0, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -204,12 +208,12 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
           <MachineShadow x={0} y={0} scale={1.1} f={f} grow={Math.min(1, e.scale)} />
         </g>
         <g transform={`translate(700,900) scale(${Math.min(1, cardIn)})`} opacity={Math.min(1, cardIn) + glowOnce * 0.3}>
-          <rect x={-220} y={-140} width={440} height={220} rx={12} fill={FROST} stroke={INK} strokeWidth={6}
+          <rect x={-220} y={-150} width={440} height={260} rx={12} fill={FROST} stroke={INK} strokeWidth={6}
             style={{filter: glowOnce > 0.1 ? `drop-shadow(0 0 ${18 * glowOnce}px ${CAUTION})` : undefined}} />
-          <text x={0} y={-70} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={22} fill="#3a4048">ROBERT MORIARTY, DEPT. OF THE AIR FORCE</text>
-          <text x={0} y={-20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>&quot;A UNIQUE OPPORTUNITY</text>
-          <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>FOR A TRUE</text>
-          <text x={0} y={60} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>PUBLIC-PRIVATE PARTNERSHIP.&quot;</text>
+          <text x={0} y={-100} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={20} fill="#3a4048">ROBERT MORIARTY, DEPT. OF THE AIR FORCE</text>
+          <text x={0} y={-45} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>&quot;A UNIQUE OPPORTUNITY</text>
+          <text x={0} y={-3} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>FOR A TRUE</text>
+          <text x={0} y={39} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>PUBLIC-PRIVATE PARTNERSHIP.&quot;</text>
         </g>
       </svg>
     </AbsoluteFill>
@@ -270,11 +274,12 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const gustOp = interpolate(f, [0, 20, 40], [0, 0.4, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const POST_AT = 100;
+  // scene is only ~109f (3.6s) once retimed to the actual (shorter-than-planned) VO
+  const POST_AT = 15;
   const post = entrance(f, fps, POST_AT, {drop: 90, preset: {damping: 11, stiffness: 190}});
-  const HAND_AT = 220;
+  const HAND_AT = 55;
   const handIn = spring({frame: f - HAND_AT, fps, config: {damping: 13, stiffness: 140}});
-  const tremble = handIn > 0.85 ? followThrough(f, fps, HAND_AT + 18, {amp: 3, freq: 5, decay: 4}) : 0;
+  const tremble = handIn > 0.85 ? followThrough(f, fps, HAND_AT + 14, {amp: 3, freq: 5, decay: 4}) : 0;
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>

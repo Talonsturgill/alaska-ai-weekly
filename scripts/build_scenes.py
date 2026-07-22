@@ -10,16 +10,16 @@ OUT = os.path.join(REPO, "out", "dispatch")
 FPS = 30
 TAIL = 2.6  # hold after the last word
 
-# scene -> index of the VO line that starts it. 2026-07-21 "The Pen That Won't Land"
-# has 9 scenes (S1..S9 in video-engine/src/Episode.tsx, SCENE_COMPONENTS) mapped 1:1
-# to the 9 VO lines (vo_script.json has exactly 9 lines this run):
-#   S1 line 0  S2 line 1  S3 line 2  S4 line 3  S5 line 4  S6 line 5  S7 line 6  S8 line 7  S9 line 8
-# (an earlier list here silently mismatched SCENE_COMPONENTS.length, so Episode fell
-# back to its hardcoded DEFAULT_BOUNDS and ignored this file's retimed scenes -- keep
-# this list's length equal to SCENE_COMPONENTS.length every run.)
-# 2026-07-21c beluga run: 10 VO lines mapped to 9 scenes; S4 (the robot eye) spans lines
-# 3-4 (the look + the ear-and-eye stereo payoff), so line 4 has no scene of its own.
-SCENE_START_LINE = [0, 1, 2, 3, 5, 6, 7, 8, 9]
+# scene -> index of the VO line that starts it. 2026-07-22 "the checkpoint lever frozen
+# at the midpoint" has 7 scenes (S1..S7 in video-engine/src/Episode.tsx, SCENE_COMPONENTS)
+# mapped onto 9 VO lines (vo_lines.json has exactly 9 lines this run, some scenes span 2
+# lines of VO): S1 line0 (map/counter+offer), S2 line1 (parcels+NOT FOR SALE+"not a sale"
+# is still S2's content but starts visually at the parcels line), S3 line3 (EUL
+# mechanism), S4 line4 (MachineShadow/Moriarty), S5 line5 (Hollister), S6 line6 (lever
+# return, covers "nobody picked"+"still open"), S7 line8 (closing question+hold+loop).
+# (keep this list's length equal to SCENE_COMPONENTS.length every run -- an earlier list
+# here silently mismatched it once and Episode fell back to hardcoded DEFAULT_BOUNDS.)
+SCENE_START_LINE = [0, 1, 3, 4, 5, 6, 8]
 
 
 def _apply_caption_fixups(caps):
