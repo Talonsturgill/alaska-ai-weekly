@@ -1,6 +1,6 @@
 import React from 'react';
 import {INK, ICE, SNOW, RED} from './kit';
-import {tones, FormGradient, RimLight, ContactShadow} from './lighting';
+import {tones, FormGradient, RimLight, ContactShadow, BrushedMetal} from './lighting';
 
 // =============================================================================
 // PROPS — the generalized physical-prop kit (asset-library session #2,
@@ -151,17 +151,26 @@ export const PenAndDocument: React.FC<{x: number; y: number; hover: number; f: n
 };
 
 // A trail marker post with a two-line sign (e.g. a date: "AUG" / "19").
-export const TrailPost: React.FC<{x: number; y: number; s?: number; top?: string; bottom?: string}> = ({x, y, s = 1, top, bottom}) => (
-  <g transform={`translate(${x},${y}) scale(${s})`}>
-    <ellipse cx={0} cy={4} rx={44} ry={9} fill={INK} opacity={0.25} />
-    <path d="M-16,0 L-16,-220 L16,-220 L16,0 Z" fill={WOOD} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
-    <path d="M4,-220 L16,-220 L16,0 L4,0 Z" fill={WOOD_D} opacity={0.7} />
-    <path d="M-16,-40 q16,-10 32,0" stroke={MOSS} strokeWidth={10} fill="none" opacity={0.8} />
-    {(top || bottom) && <rect x={-34} y={-198} width={68} height={64} rx={6} fill={BIRCH} stroke={INK} strokeWidth={5} />}
-    {top && <text x={0} y={-174} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">{top}</text>}
-    {bottom && <text x={0} y={-144} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={34} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">{bottom}</text>}
-  </g>
-);
+export const TrailPost: React.FC<{x: number; y: number; s?: number; top?: string; bottom?: string}> = ({x, y, s = 1, top, bottom}) => {
+  // sign board auto-widens for longer top/bottom words (2026-07-22 fix: the
+  // original fixed 68x64 box was sized for a single short icon-word and made
+  // two full-length lines like "AS OF TODAY"/"STILL OPEN" overlap illegibly).
+  const longest = Math.max(top?.length ?? 0, bottom?.length ?? 0);
+  const boardW = Math.max(68, longest * 15 + 20);
+  const hasBoth = Boolean(top) && Boolean(bottom);
+  const boardH = hasBoth ? 92 : 64;
+  return (
+    <g transform={`translate(${x},${y}) scale(${s})`}>
+      <ellipse cx={0} cy={4} rx={44} ry={9} fill={INK} opacity={0.25} />
+      <path d="M-16,0 L-16,-220 L16,-220 L16,0 Z" fill={WOOD} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M4,-220 L16,-220 L16,0 L4,0 Z" fill={WOOD_D} opacity={0.7} />
+      <path d="M-16,-40 q16,-10 32,0" stroke={MOSS} strokeWidth={10} fill="none" opacity={0.8} />
+      {(top || bottom) && <rect x={-boardW / 2} y={-198 - (hasBoth ? 14 : 0)} width={boardW} height={boardH} rx={6} fill={BIRCH} stroke={INK} strokeWidth={5} />}
+      {top && <text x={0} y={hasBoth ? -180 : -174} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">{top}</text>}
+      {bottom && <text x={0} y={hasBoth ? -140 : -144} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={GRAPHITE_D} stroke={BIRCH} strokeWidth={3} paintOrder="stroke">{bottom}</text>}
+    </g>
+  );
+};
 
 // =============================================================================
 // TallyCounter — the MECHANICAL count mark (NET-NEW 2026-07-20b, "The Referee
@@ -327,3 +336,57 @@ export const BoundaryReveal: React.FC<{revealT: number; d: string; perim?: numbe
     )}
   </g>
 );
+
+// =============================================================================
+// CheckpointGateLever -- NET-NEW 2026-07-22 (Air Force EUL dispatch, "the
+// checkpoint lever frozen at the midpoint"). An access-control/decision-gate
+// prop the library lacked. Composes GearLever's `pulled` 0..1 mechanic (the
+// lever-position value) but owns its own geometry: a striped barrier arm on a
+// pivot post, a pivot bolt, and two signal-light housings either side of the
+// post. `pulled` 0..1 sets the arm angle (0 = down/closed, 1 = up/open; the
+// dispatch holds it at exactly 0.5, neither). `signalPulse` 0..1 drives BOTH
+// housing lights brightening together (caution-yellow only, no red/green --
+// this asset never renders a red/green pair, keeping the palette locked to
+// the run's gunmetal/frost/caution-yellow world). Form-shaded (tones +
+// FormGradient), RimLight along the arm's top edge, ContactShadow at the base.
+export const CheckpointGateLever: React.FC<{
+  x: number; y: number; pulled: number; signalPulse?: number; scale?: number;
+}> = ({x, y, pulled, signalPulse = 0, scale = 1}) => {
+  const metal = tones('#7c8592');
+  const uid = `cgl_${x}_${y}`;
+  const angle = -2 + pulled * 47; // 0 = resting just past horizontal, 0.5 = frozen halfway (~21deg), 1 = near-vertical
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <ContactShadow cx={0} cy={14} rx={120} ry={22} opacity={0.34} blur={9} />
+      {/* base post */}
+      <rect x={-22} y={-96} width={44} height={110} rx={8} fill={metal.base} stroke={INK} strokeWidth={6} />
+      <defs><FormGradient id={`${uid}_post`} t={metal} softness={0.9} /></defs>
+      <rect x={-22} y={-96} width={44} height={110} rx={8} fill={`url(#${uid}_post)`} opacity={0.55} />
+      <BrushedMetal x={-22} y={-96} w={44} h={110} opacity={0.16} />
+      <RimLight d="M-22,-96 L-22,14" w={4} opacity={0.5} />
+      {/* pivot bolt */}
+      <circle cx={0} cy={-70} r={13} fill={GRAPHITE_D} stroke={INK} strokeWidth={5} />
+      <circle cx={0} cy={-70} r={4} fill="#c9cfd8" />
+      {/* two signal-light housings, either side of the post, caution-yellow only */}
+      {[[-46, -18], [46, -18]].map(([hx, hy], i) => (
+        <g key={i} transform={`translate(${hx},${hy})`}>
+          <rect x={-14} y={-14} width={28} height={28} rx={6} fill={GRAPHITE_D} stroke={INK} strokeWidth={5} />
+          <circle cx={0} cy={0} r={8} fill="#4a3f10" />
+          <circle cx={0} cy={0} r={8} fill="#ffcf3f" opacity={signalPulse * 0.9} style={{mixBlendMode: 'screen'}} />
+          {signalPulse > 0.15 && <circle cx={0} cy={0} r={13} fill="none" stroke="#ffcf3f" strokeWidth={2} opacity={signalPulse * 0.5} />}
+        </g>
+      ))}
+      {/* the striped barrier arm, on the pivot */}
+      <g transform={`rotate(${angle} 0 -70)`}>
+        <rect x={-14} y={-78} width={28} height={220} rx={10} fill={metal.core} stroke={INK} strokeWidth={6} />
+        <defs><FormGradient id={`${uid}_arm`} t={metal} softness={0.85} /></defs>
+        <rect x={-14} y={-78} width={28} height={220} rx={10} fill={`url(#${uid}_arm)`} opacity={0.5} />
+        {Array.from({length: 5}).map((_, i) => (
+          <rect key={i} x={-14} y={-64 + i * 44} width={28} height={22} fill={i % 2 === 0 ? '#1a1d24' : '#ffcf3f'} opacity={0.85} />
+        ))}
+        <RimLight d="M-14,-78 L-14,142" w={3.5} opacity={0.55} />
+        <circle cx={0} cy={142} r={10} fill={metal.shade} stroke={INK} strokeWidth={4} />
+      </g>
+    </g>
+  );
+};

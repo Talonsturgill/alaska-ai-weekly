@@ -2,25 +2,22 @@ import React from 'react';
 import {AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
 import {z} from 'zod';
 import {VoiceProvider, useVoice} from './lib/voice';
-import {Beluga, Raven} from './lib/fauna';
-import {SatelliteEye, ListeningMooring} from './lib/sensors';
-import {SmellRings, ScanReticle, ImpactStar, SpeedLines, ZoomVignette} from './lib/FX';
-import {BoxLabel} from './lib/kit';
-import {StatCard} from './lib/props';
-import {AnchorageSkylineBG} from './lib/biomes';
-import {tones, FormGradient, RimLight, ContactShadow, GradeLayer, MotionBlur, WaterColumn} from './lib/lighting';
+import {Character} from './lib/Character';
+import {MachineShadow, INK} from './lib/kit';
+import {CheckpointGateLever, StatCard, Nameplate, TrailPost} from './lib/props';
+import {tones, FormGradient, RimLight, ContactShadow, GradeLayer, MotionBlur} from './lib/lighting';
+import {entrance, followThrough, accentKick} from './lib/motion';
 
 const BOLD = 'Arial Black, Arial, sans-serif';
 
-// ---- 2026-07-21c palette ("Ear and Eye on the Ice-White Whale", art_direction-locked) ----
-// silty pewter water + ice-white beluga hero + mint synthetic sonar + signal-gold lock + ink.
-const SKY = '#b9c4c7';
-const WSURF = '#7f9791';
-const WDEEP = '#33463f';
-const MINT = '#31e0b6';
-const GOLD = '#ffd24a';
-const INKC = '#141d1b';
-const PANEL = '#e9efe9';
+// ---- 2026-07-22 palette (art_direction-locked, gunmetal steel-gray + arctic
+// frost-white + caution-yellow signal light + storm-navy shadow) ----
+const NAVY = '#0d1420';
+const NAVY_D = '#070b12';
+const FROST = '#e8edf2';
+const GUNMETAL = '#7c8592';
+const CAUTION = '#ffcf3f';
+const INKC = '#0b0f16';
 
 export const episodeSchema = z.object({
   captions: z.array(z.object({text: z.string(), start: z.number(), end: z.number(), seg: z.number()})),
@@ -32,228 +29,270 @@ export const episodeSchema = z.object({
 });
 export type EpisodeProps = z.infer<typeof episodeSchema>;
 
-// ============================================================= shared: the whale
-// A single reusable beluga staging with an optional mint "sweep rim" that fires ONLY
-// while a sensor sweep is touching it (the sensors are the only sharp man-made light).
-const Whale: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; mode?: 'cruise' | 'spy'; blow?: number; sweep?: number}> = ({x, y, scale = 1, f, facing = 1, mode = 'cruise', blow = 0, sweep = 0}) => (
-  <g>
-    <Beluga x={x} y={y} scale={scale} f={f} facing={facing} mode={mode} blow={blow} />
-    {sweep > 0.05 && (
-      <g transform={`translate(${x},${y}) scale(${scale})`} opacity={Math.min(1, sweep)} style={{mixBlendMode: 'screen'}}>
-        <ellipse cx={0} cy={-6} rx={172} ry={70} fill="none" stroke={MINT} strokeWidth={6} opacity={0.7} />
-      </g>
-    )}
+// ============================================================= shared: frost void
+// The near-black staging void every hero shot holds in (art_direction.json
+// depth_approach). Drifting frost particles on a closer parallax plane, no
+// biome plate -- a reusable answer for stories with no matching biome.
+const FrostVoid: React.FC<{f: number; opacity?: number}> = ({f, opacity = 1}) => (
+  <g opacity={opacity}>
+    <rect width={1080} height={1920} fill={NAVY_D} />
+    <rect width={1080} height={1920} fill={NAVY} opacity={0.5} />
+    {Array.from({length: 26}).map((_, i) => {
+      const seed = i * 37;
+      const x = (seed * 13 + f * 0.6) % 1160 - 40;
+      const y = (seed * 29 + f * 1.1) % 2000 - 40;
+      const r = 1.4 + (i % 4) * 0.6;
+      return <circle key={i} cx={x} cy={y} r={r} fill={FROST} opacity={0.18 + (i % 3) * 0.08} />;
+    })}
   </g>
 );
 
-// ============================================================= S1: cold open
+// ============================================================= S1: the acreage count (0.0-5.0s)
 const S1: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const voice = useVoice();
-  const gf = from + f;
-  const drop = interpolate(f, [0, 167], [-26, 10], {extrapolateRight: 'clamp', easing: Easing.out(Easing.ease)});
-  const push = interpolate(f, [0, 167], [1.0, 1.06], {extrapolateRight: 'clamp'});
-  const blow = interpolate(f, [20, 44, 70], [0, 1, 0.2], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const LOCK_AT = 70;
-  const lock = spring({frame: f - LOCK_AT, fps, config: {damping: 11, stiffness: 190}});
-  const sweep = interpolate(f, [LOCK_AT - 6, LOCK_AT + 8, 130], [0, 1, 0.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const headlineOp = interpolate(f, [0, 130, 160], [1, 1, 0.9], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const count = Math.round(interpolate(f, [0, 90], [0, 4700], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}));
+  const tilesOn = Math.floor(interpolate(f, [0, 100], [0, 12], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const wipeIn = interpolate(f, [110, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const headlineOp = interpolate(f, [4, 20], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: WDEEP}}>
+    <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform={`translate(540,${960 + drop}) scale(${push}) translate(-540,-960)`}>
-          <g opacity={0.5}><g transform="translate(0,-560)"><AnchorageSkylineBG f={f} season="summer" denali floatplane={false} train={false} /></g></g>
-          <g transform="translate(0,300)"><WaterColumn f={f} intensity={1} surfaceY={-360} deep={WDEEP} shallow={WSURF} rays={6} /></g>
-          <Whale x={520} y={1000} scale={1.5} f={f} facing={1} mode="cruise" blow={blow} sweep={sweep} />
-          <g transform="translate(520,995)">
-            {lock > 0.05 && <SmellRings cx={-52} cy={0} frame={f} color={MINT} count={4} maxR={300} intensity={Math.min(1, lock)} />}
-            <ScanReticle cx={40} cy={-6} frame={f} lock={Math.min(1, lock)} color={GOLD} size={250} />
+        <rect width={1080} height={1920} fill={NAVY_D} />
+        {/* schematic map: three base marks connected by a coastline path, 12 parcel tiles tiling in */}
+        <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" />
+        {Array.from({length: 12}).map((_, i) => {
+          const gx = 220 + (i % 4) * 180;
+          const gy = 560 + Math.floor(i / 4) * 160;
+          const on = i < tilesOn ? 1 : 0;
+          const pop = spring({frame: f - i * 5, fps: 30, config: {damping: 12, stiffness: 180}});
+          return (
+            <rect key={i} x={gx} y={gy} width={140} height={110} rx={8}
+              fill={CAUTION} opacity={on * 0.28 * Math.min(1, pop)}
+              stroke={on ? CAUTION : GUNMETAL} strokeWidth={3} strokeOpacity={on ? 0.8 : 0.3} />
+          );
+        })}
+        {[['JBER', 260], ['EIELSON', 540], ['CLEAR SFS', 820]].map(([label, x], i) => (
+          <g key={i} opacity={interpolate(f, [30 + i * 8, 50 + i * 8], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
+            <circle cx={x as number} cy={480} r={7} fill={CAUTION} />
+            <text x={x as number} y={460} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill={FROST}>{label as string}</text>
           </g>
-          {lock > 0.55 && lock < 1.5 && <SpeedLines cx={560} cy={990} frame={f} intensity={0.7} color={GOLD} />}
-          {lock > 0.85 && lock < 1.4 && <ImpactStar cx={690} cy={840} r={40} color={GOLD} />}
-        </g>
+        ))}
+        <text x={540} y={1000} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={120} fill={FROST} stroke={INK} strokeWidth={4} paintOrder="stroke">
+          {count.toLocaleString()}
+        </text>
+        <text x={540} y={1060} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={30} fill={CAUTION} letterSpacing={2}>ACRES</text>
+        {/* mask-wipe into the gate world */}
+        <rect width={1080} height={1920} fill={NAVY_D} opacity={wipeIn} />
       </svg>
-      <div style={{position: 'absolute', top: 300, left: 0, right: 0, textAlign: 'center', opacity: headlineOp}}>
-        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 66, color: '#fff', background: 'rgba(20,29,27,0.82)', padding: '14px 34px', borderRadius: 14, border: `6px solid ${MINT}`, textShadow: '3px 4px 0 rgba(0,0,0,0.5)', letterSpacing: 0.5}}>
-          TWO EYES ON THE LAST WHALES
+      <div style={{position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', opacity: headlineOp}}>
+        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 54, color: FROST, background: 'rgba(11,15,22,0.82)', padding: '14px 30px', borderRadius: 14, border: `5px solid ${CAUTION}`}}>
+          4,700 ACRES. NOBODY'S SIGNED.
         </span>
       </div>
-      {voice.accentAt(gf) > 0.5 && <ZoomVignette amount={0.09 * voice.accentAt(gf)} />}
     </AbsoluteFill>
   );
 };
 
-// ============================================================= S2: the two watchers
+// ============================================================= S2: the gate (5.0-12.6s)
 const S2: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const rise = interpolate(f, [0, 131], [120, -120], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
-  const satOn = interpolate(f, [16, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const moorOn = interpolate(f, [8, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const {fps} = useVideoConfig();
+  const gf = from + f;
+  const voice = useVoice();
+  const push = interpolate(f, [0, 228], [1.0, 1.06], {extrapolateRight: 'clamp'});
+  const rackIn = spring({frame: f - 10, fps, config: {damping: 12, stiffness: 170}});
+  const plateA = interpolate(f, [16, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const plateB = interpolate(f, [30, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const plateC = interpolate(f, [44, 58], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const FLIP_AT = 128;
+  const flip = spring({frame: f - FLIP_AT, fps, config: {damping: 13, stiffness: 160}});
   return (
-    <AbsoluteFill style={{backgroundColor: INKC}}>
+    <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <g transform={`translate(0,${rise})`}>
-          <rect x={0} y={-260} width={1080} height={760} fill={SKY} />
-          <rect x={0} y={-260} width={1080} height={760} fill={GOLD} opacity={0.04} />
-          <g opacity={satOn} transform="translate(760,150)"><SatelliteEye x={0} y={0} scale={0.62} f={f} scanCone={0} lensGlow={0.3} /></g>
-          <rect x={0} y={500} width={1080} height={1620} fill={WDEEP} />
-          <g transform="translate(0,500)"><WaterColumn f={f} intensity={0.85} surfaceY={0} deep={WDEEP} shallow={WSURF} rays={5} /></g>
-          <rect x={0} y={492} width={1080} height={16} fill={WSURF} opacity={0.9} />
-          <Whale x={430} y={980} scale={0.82} f={f} facing={1} mode="cruise" />
-          <g opacity={moorOn} transform="translate(300,1700)"><ListeningMooring x={0} y={0} scale={0.9} f={f} detect={0.2} /></g>
+        <FrostVoid f={gf} />
+        <g transform={`translate(540,1150) scale(${push})`}>
+          <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.35} />
+          {/* server-rack glyph, popping in beside the nameplates */}
+          <g opacity={Math.min(1, rackIn)} transform={`translate(-260,-40) scale(${Math.min(1, rackIn)})`}>
+            <rect x={-30} y={-70} width={60} height={140} rx={6} fill={tones('#4a5462').base} stroke={INK} strokeWidth={4} />
+            {[0, 1, 2, 3].map((i) => <rect key={i} x={-22} y={-58 + i * 32} width={44} height={20} rx={2} fill={GUNMETAL} stroke={INK} strokeWidth={2} />)}
+            {[0, 1, 2, 3].map((i) => <circle key={i} cx={-14} cy={-48 + i * 32} r={3} fill={((f / 5 + i) % 8) < 4 ? CAUTION : '#3a4048'} />)}
+          </g>
+          <g transform="translate(190,-160)" opacity={plateA}><Nameplate x={0} y={0} text="JBER" /></g>
+          <g transform="translate(190,-90)" opacity={plateB}><Nameplate x={0} y={0} text="EIELSON" /></g>
+          <g transform="translate(190,-20)" opacity={plateC}><Nameplate x={0} y={0} text="CLEAR SFS" /></g>
+          <text x={0} y={-260} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={CAUTION} opacity={plateC} letterSpacing={1.5}>12 PARCELS</text>
+          {/* NOT FOR SALE flip */}
+          <g transform="translate(-40,180)" opacity={Math.min(1, flip * 1.4)}>
+            <g transform={`scale(${1 - 0.3 * Math.abs(Math.sin(Math.min(1, flip) * Math.PI))},1)`}>
+              <StatCard x={0} y={0} big={flip < 0.5 ? '4,700 ACRES' : 'NOT FOR SALE'} scale={0.7} color={GUNMETAL} formShaded />
+            </g>
+          </g>
         </g>
       </svg>
-      <BoxLabel x={540} y={250} text="NOAA · 2 AI SYSTEMS" fs={34} w={520} h={70} fill={PANEL} color={INKC} />
+      {voice.accentAt(gf) > 0.5 && accentKick(gf, fps, gf) > 0 && null}
     </AbsoluteFill>
   );
 };
 
-// ============================================================= S3: the robot ear
+// ============================================================= S3: the EUL mechanism (12.6-20.4s)
 const S3: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const push = interpolate(f, [0, 60], [1.15, 1.0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const detect = interpolate(f, [14, 40], [0.2, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const boxIn = interpolate(f, [70, 88], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const tagIn = interpolate(f, [96, 112], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const wavePts = Array.from({length: 40}).map((_, i) => {
-    const spike = i === 20 ? 46 * detect : 0;
-    const y = Math.sin((i + f * 0.5) / 2) * 6 + spike * Math.exp(-Math.pow(i - 20, 2) / 8);
-    return `${-190 + i * 9.5},${-y}`;
-  }).join(' ');
+  const {fps} = useVideoConfig();
+  const deedIn = spring({frame: f - 6, fps, config: {damping: 11, stiffness: 190}});
+  const arrowPump = (Math.sin(f / 9) + 1) / 2;
+  const clockHand = interpolate(f, [70, 124], [0, 230], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const reportedIn = interpolate(f, [110, 130], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: WDEEP}}>
+    <AbsoluteFill style={{backgroundColor: '#12161f'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <WaterColumn f={f} intensity={0.9} surfaceY={0} deep="#22322c" shallow={WDEEP} rays={4} />
-        <g transform={`translate(540,1150) scale(${push})`}>
-          <ListeningMooring x={0} y={220} scale={1.25} f={f} detect={detect} />
+        <rect width={1080} height={1920} fill="#12161f" />
+        {/* blueprint grid */}
+        {Array.from({length: 14}).map((_, i) => <line key={`v${i}`} x1={i * 80} y1={0} x2={i * 80} y2={1920} stroke={GUNMETAL} strokeWidth={1} opacity={0.12} />)}
+        {Array.from({length: 24}).map((_, i) => <line key={`h${i}`} x1={0} y1={i * 80} x2={1080} y2={i * 80} stroke={GUNMETAL} strokeWidth={1} opacity={0.12} />)}
+        <g transform={`translate(540,700) scale(${Math.min(1, deedIn)})`}>
+          <rect x={-200} y={-120} width={400} height={240} rx={10} fill={FROST} stroke={INK} strokeWidth={6} />
+          <text x={0} y={-40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={INK}>DEED</text>
+          <text x={0} y={0} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill="#5a6270">STAMPED · DAF</text>
+          <rect x={-90} y={30} width={180} height={54} rx={6} fill="none" stroke="#c0392b" strokeWidth={5} transform="rotate(-6)" />
+          <text x={0} y={68} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill="#c0392b" transform="rotate(-6)">DAF KEEPS LAND</text>
         </g>
-        {/* the readout: waveform gets boxed DETECT, then labeled BELUGA */}
-        <g transform="translate(540,620)">
-          <rect x={-230} y={-70} width={460} height={140} rx={12} fill="#0f1c1a" stroke={INKC} strokeWidth={5} opacity={0.94} />
-          <polyline points={wavePts} fill="none" stroke={MINT} strokeWidth={3.5} transform="translate(0,0)" />
-          <g opacity={boxIn}>
-            <rect x={-18} y={-52} width={70} height={104} fill="none" stroke={GOLD} strokeWidth={4} />
+        {/* dollar arrow pumping back to the deed */}
+        <g transform="translate(540,1020)" opacity={Math.min(1, deedIn)}>
+          <path d={`M-40,0 Q0,${-30 - arrowPump * 14} 40,0`} fill="none" stroke={CAUTION} strokeWidth={8} strokeLinecap="round" markerEnd="url(#arrowhead)" />
+          <text x={0} y={50} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={CAUTION}>FAIR MARKET VALUE</text>
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill={CAUTION} />
+            </marker>
+          </defs>
+        </g>
+        {/* clock */}
+        <g transform="translate(540,1360)">
+          <circle r={110} fill="none" stroke={FROST} strokeWidth={6} />
+          <line x1={0} y1={0} x2={0} y2={-90} stroke={FROST} strokeWidth={6} strokeLinecap="round" transform={`rotate(${clockHand})`} />
+          <circle r={8} fill={FROST} />
+          <text x={0} y={150} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={32} fill={FROST}>UP TO 50 YEARS</text>
+          <g opacity={reportedIn} transform="translate(120,-90)">
+            <rect x={-46} y={-20} width={92} height={40} rx={8} fill={CAUTION} stroke={INK} strokeWidth={4} />
+            <text x={0} y={6} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill={INK}>REPORTED</text>
           </g>
-          <g opacity={tagIn}><BoxLabel x={150} y={-40} text="BELUGA" fs={26} w={150} h={48} fill={MINT} color={INKC} /></g>
         </g>
       </svg>
-      <BoxLabel x={540} y={250} text="DEEP LEARNING · LISTENS" fs={32} w={560} h={66} fill={PANEL} color={INKC} />
     </AbsoluteFill>
   );
 };
 
-// ============================================================= S4: the robot eye (SIGNATURE) + stereo payoff
+// ============================================================= S4: MachineShadow + Moriarty (20.4-28.3s)
 const S4: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  // orbital punch-down, then the reticle clamps the white smudge, then the stereo payoff.
-  const dive = interpolate(f, [0, 60], [0.55, 1.0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const cone = interpolate(f, [6, 40], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const LOCK_AT = 78;
-  const lock = spring({frame: f - LOCK_AT, fps, config: {damping: 11, stiffness: 200}});
-  const phaseB = interpolate(f, [96, 120], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}); // stereo reveal
-  const camY = interpolate(dive, [0.55, 1], [-140, 0]);
+  const e = entrance(f, fps, 0, {drop: 200, preset: {damping: 12, stiffness: 130}});
+  const cardIn = spring({frame: f - 30, fps, config: {damping: 12, stiffness: 170}});
+  // foreshadowing lever nudge: rises a few degrees under the pitch, eases back to halfway
+  const nudge = interpolate(f, [40, 70, 110], [0.5, 0.63, 0.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const glowOnce = interpolate(f, [150, 175, 200], [0, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: '#9fb0b2'}}>
+    <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        {/* cloud deck up top, silty inlet below */}
-        <rect width={1080} height={1920} fill="#aebfc0" />
-        <g opacity={interpolate(f, [0, 50], [1, 0.3], {extrapolateRight: 'clamp'})}>
-          {[0, 1, 2, 3].map((i) => <ellipse key={i} cx={(i * 330 + f * 1.5) % 1200 - 60} cy={220 + (i % 2) * 90} rx={190} ry={70} fill="#ffffff" opacity={0.5} />)}
+        <FrostVoid f={from + f} />
+        {/* distant gate, small, in the background, nudging */}
+        <g transform="translate(820,1500) scale(0.45)" opacity={0.7}>
+          <CheckpointGateLever x={0} y={0} pulled={nudge} signalPulse={0} />
         </g>
-        <g transform="translate(0,760)"><WaterColumn f={f} intensity={0.7} surfaceY={0} deep={WDEEP} shallow={WSURF} rays={5} /></g>
-        <g transform={`translate(540,${300 + camY}) scale(${0.5 + dive * 0.5})`}>
-          <SatelliteEye x={0} y={0} scale={0.66} f={f} scanCone={cone} lensGlow={0.5} />
+        <g transform={`translate(420,${1300 + e.dy}) scale(${e.scale})`}>
+          <MachineShadow x={0} y={0} scale={1.1} f={f} grow={Math.min(1, e.scale)} />
         </g>
-        {/* the white smudge that resolves into a whale, at the inlet */}
-        <g transform={`translate(540,1250)`}>
-          <Whale x={0} y={0} scale={0.5 + phaseB * 0.92} f={f} facing={1} mode="cruise" sweep={phaseB} />
-          <g transform="translate(0,-6)">
-            <ScanReticle cx={0} cy={0} frame={f} lock={Math.min(1, lock)} color={GOLD} size={190} />
-            {phaseB > 0.2 && <SmellRings cx={-40} cy={0} frame={f} color={MINT} count={3} maxR={220} intensity={phaseB} />}
-          </g>
-          {lock > 0.85 && lock < 1.4 && <ImpactStar cx={150} cy={-120} r={38} color={GOLD} />}
+        <g transform={`translate(700,900) scale(${Math.min(1, cardIn)})`} opacity={Math.min(1, cardIn) + glowOnce * 0.3}>
+          <rect x={-220} y={-140} width={440} height={220} rx={12} fill={FROST} stroke={INK} strokeWidth={6}
+            style={{filter: glowOnce > 0.1 ? `drop-shadow(0 0 ${18 * glowOnce}px ${CAUTION})` : undefined}} />
+          <text x={0} y={-70} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={22} fill="#3a4048">ROBERT MORIARTY, DEPT. OF THE AIR FORCE</text>
+          <text x={0} y={-20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>&quot;A UNIQUE OPPORTUNITY</text>
+          <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>FOR A TRUE</text>
+          <text x={0} y={60} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>PUBLIC-PRIVATE PARTNERSHIP.&quot;</text>
         </g>
       </svg>
-      <BoxLabel x={540} y={250} text={phaseB > 0.4 ? 'EAR + EYE · FIRST TIME' : 'GAIA · DETECTED'} fs={32} w={560} h={66} fill={PANEL} color={INKC} />
     </AbsoluteFill>
   );
 };
 
-// ============================================================= S5: the number 331
+// ============================================================= S5: Sarah Hollister (28.3-40.6s)
 const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const cardIn = spring({frame: f - 4, fps, config: {damping: 12, stiffness: 170}});
-  const push = interpolate(f, [0, 122], [1.0, 1.07], {extrapolateRight: 'clamp'});
-  // the count climbs UP to 331 and LANDS; NEVER displays a value above 331 (false count = a
-  // labeled beluga population above NOAA's estimate; the panel hard-blocked an overshoot).
-  const countUp = interpolate(f, [8, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const shown = Math.min(331, Math.round(331 * countUp));
-  const landed = f >= 44;
-  const led = landed && (Math.sin(f / 7) > 0.2) ? 1 : 0.3;
+  const gf = from + f;
+  const voice = useVoice();
+  const turnIn = spring({frame: f - 4, fps, config: {damping: 13, stiffness: 150}});
+  const vacX = interpolate(f, [130, 220], [-200, 900], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const propIn = interpolate(f, [230, 260], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const dip = interpolate(f, [230, 300], [0, -18], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: INKC}}>
+    <AbsoluteFill style={{backgroundColor: '#1a2230'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect width={1080} height={1920} fill={INKC} />
-        <g transform="translate(0,0)"><WaterColumn f={f} intensity={0.4} surfaceY={0} deep="#101816" shallow="#1c2b28" rays={4} /></g>
-        <g transform={`translate(540,1250) scale(${push})`}>
-          <g transform={`scale(${cardIn})`}>
-            <StatCard x={0} y={0} big={String(shown)} sub="COOK INLET BELUGAS" formShaded color={MINT} scale={1.2} />
-          </g>
-          <circle cx={220} cy={-150} r={12} fill={landed ? '#e06a4a' : MINT} opacity={led} />
+        <rect width={1080} height={1920} fill="#1a2230" />
+        <rect y={1200} width={1080} height={720} fill="#0f141c" />
+        {/* house silhouette behind her */}
+        <g transform="translate(760,1120)" opacity={0.55}>
+          <path d="M-120,0 L-120,-140 L0,-220 L120,-140 L120,0 Z" fill="#2a3444" stroke={INK} strokeWidth={5} />
+          <rect x={-40} y={-90} width={50} height={90} fill="#182028" />
+        </g>
+        {/* the gate, small, distant */}
+        <g transform="translate(160,1300) scale(0.32)" opacity={0.5}>
+          <CheckpointGateLever x={0} y={0} pulled={0.5} />
+        </g>
+        <g transform={`translate(430,1400) scale(${Math.min(1, turnIn)})`}>
+          <Character frame={f} pose="arms-crossed" emotion="worried" outfit="parka" headgear="beanie" talking={voice.opennessAt(gf)} />
+        </g>
+        {/* vacuum-cleaner icon humming past -- an upright canister vacuum silhouette:
+            body, base/nozzle, two wheels, a bent hose to a handle */}
+        <g transform={`translate(${vacX},1560)`} opacity={interpolate(f, [110, 130, 210, 230], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
+          <ellipse cx={0} cy={26} rx={40} ry={9} fill={INK} opacity={0.3} />
+          <rect x={-22} y={-72} width={44} height={90} rx={18} fill={GUNMETAL} stroke={INK} strokeWidth={5} />
+          <rect x={-22} y={-40} width={44} height={14} fill="#5a6270" opacity={0.6} />
+          <rect x={-30} y={10} width={60} height={18} rx={8} fill="#3a4048" stroke={INK} strokeWidth={4} />
+          <circle cx={-20} cy={26} r={9} fill={INK} />
+          <circle cx={20} cy={26} r={9} fill={INK} />
+          <path d="M14,-58 q34,-8 34,-46 q0,-14 -14,-14" fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <rect x={22} y={-124} width={30} height={12} rx={5} fill="#5a6270" stroke={INK} strokeWidth={4} />
+        </g>
+        {/* property-value arrow, dipping */}
+        <g transform="translate(760,1500)" opacity={propIn}>
+          <path d={`M-30,0 L30,0 L${30 + dip * 0.3},${dip}`} fill="none" stroke={CAUTION} strokeWidth={6} strokeLinecap="round" />
+          <text x={0} y={40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={FROST}>PROPERTY VALUES?</text>
         </g>
       </svg>
     </AbsoluteFill>
   );
 };
 
-// ============================================================= S6: the decline
+// ============================================================= S6: the lever returns (40.6-52.0s)
 const S6: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  // a real cranedown + slight dolly-out (the CAMERA_MOTION gate needs >=30% whole-frame
-  // displacement across the shot; the old 36px drop read as a locked frame).
-  const camY = interpolate(f, [0, 145], [-300, 230], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
-  const camX = interpolate(f, [0, 145], [70, -70], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
-  const camS = interpolate(f, [0, 145], [1.3, 1.0], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
-  const drop = 0;
-  const collapse = interpolate(f, [6, 40], [1, 0.255], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const bounce = f > 40 && f < 58 ? -0.028 * Math.sin((f - 40) / 18 * Math.PI) : 0;
-  const barFrac = Math.max(0.2, collapse + bounce);
-  const ghostOp = interpolate(f, [2, 26], [0, 0.72], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const STAMP_AT = 78;
-  const stampS = spring({frame: f - STAMP_AT, fps, config: {damping: 9, stiffness: 210}});
-  const H = 760;
+  const gustOp = interpolate(f, [0, 20, 40], [0, 0.4, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const POST_AT = 100;
+  const post = entrance(f, fps, POST_AT, {drop: 90, preset: {damping: 11, stiffness: 190}});
+  const HAND_AT = 220;
+  const handIn = spring({frame: f - HAND_AT, fps, config: {damping: 13, stiffness: 140}});
+  const tremble = handIn > 0.85 ? followThrough(f, fps, HAND_AT + 18, {amp: 3, freq: 5, decay: 4}) : 0;
   return (
-    <AbsoluteFill style={{backgroundColor: INKC}}>
+    <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect width={1080} height={1920} fill="#12201d" />
-        <g transform={`translate(${540 + camX},${960 + camY}) scale(${camS}) translate(-540,-960)`}>
-          {/* full-frame moving texture INSIDE the camera group so the crane registers as real
-              whole-frame displacement (a flat bg outside the group read as a locked frame) */}
-          <WaterColumn f={f} intensity={0.5} surfaceY={-420} deep="#101816" shallow="#1f302c" rays={5} />
-          {/* ghost pod of the ~1,000 missing belugas */}
-          <g opacity={ghostOp}>
-            {Array.from({length: 22}).map((_, i) => (
-              <g key={i} transform={`translate(${60 + (i % 6) * 165},${230 + Math.floor(i / 6) * 80}) scale(0.34)`}>
-                <Beluga x={0} y={0} scale={1} f={f + i * 7} facing={i % 2 ? 1 : -1} mode="cruise" swim={0.4} />
-              </g>
-            ))}
-          </g>
-          {/* the bar */}
-          <rect x={360} y={1500 - H * barFrac} width={200} height={H * barFrac} rx={8} fill={MINT} stroke={INKC} strokeWidth={5} />
-          <rect x={360} y={1500 - H * barFrac} width={200} height={16} fill="#fff" opacity={0.3} />
-          <line x1={80} y1={1500} x2={1000} y2={1500} stroke={WSURF} strokeWidth={4} />
-          {/* readout: sublabel ABOVE the value, both clear of the bar */}
-          <text x={540} y={1208} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={MINT} letterSpacing={1}>BELUGAS · 1979 TO TODAY</text>
-          <text x={540} y={1270} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={52} fill="#ffffff" stroke={INKC} strokeWidth={4} paintOrder="stroke" letterSpacing={2}>1,300 → 279 → 331</text>
+        <FrostVoid f={from + f} />
+        <g opacity={gustOp}>
+          {Array.from({length: 10}).map((_, i) => (
+            <line key={i} x1={i * 110} y1={200} x2={i * 110 + 60} y2={220} stroke={FROST} strokeWidth={2} opacity={0.3} />
+          ))}
         </g>
-        <g transform="translate(540,760)" opacity={Math.min(1, stampS)}>
-          <g transform={`rotate(-8) scale(${stampS})`}>
-            <rect x={-190} y={-46} width={380} height={92} rx={8} fill="none" stroke="#e0483a" strokeWidth={7} />
-            <text x={0} y={16} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={44} fill="#e0483a">-80% · ENDANGERED</text>
+        <g transform={`translate(540,1150) rotate(${tremble} 0 -70)`}>
+          <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.4} />
+          <g transform={`translate(-260,${180 - post.dy}) scale(${Math.max(0.02, post.scale)})`}>
+            <TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" />
+          </g>
+          {/* gloved hand steadying the lever from below */}
+          <g transform={`translate(70,${140 - 60 * handIn})`} opacity={Math.min(1, handIn * 1.4)}>
+            <ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} />
+            <rect x={-14} y={-24} width={12} height={26} rx={5} fill="#5a4a3a" stroke={INK} strokeWidth={4} />
           </g>
         </g>
       </svg>
@@ -261,144 +300,42 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   );
 };
 
-// ============================================================= S7: the turn
+// ============================================================= S7: hold, signal pulse, wordmark, loop (52.0-60.0s)
 const S7: React.FC<{from?: number}> = ({from = 0}) => {
   const f = useCurrentFrame();
-  const swim = interpolate(f, [0, 210], [0, 1], {extrapolateRight: 'clamp'});
-  const wakeX = interpolate(f, [20, 90], [-300, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const threats = ['OCEAN NOISE', 'LOST SALMON', 'HABITAT'];
+  const pulse = interpolate(f, [0, 60, 120], [0, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const gripShift = interpolate(f, [55, 70], [0, 3], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const wordmarkIn = interpolate(f, [120, 160], [30, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const wordmarkOp = interpolate(f, [120, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const statOp = interpolate(f, [120, 150], [0.5, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{backgroundColor: WDEEP}}>
+    <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <WaterColumn f={f} intensity={0.8} surfaceY={0} deep="#2a3a34" shallow={WDEEP} rays={5} />
-        {/* boat wake rolling over the whale */}
-        <g transform={`translate(${wakeX},420)`} opacity={0.5}>
-          <path d="M-120,0 q120,50 240,0 q-60,40 -120,40 q-60,0 -120,-40 Z" fill="#101816" opacity={0.5} />
-          <ellipse cx={60} cy={20} rx={140} ry={20} fill="#0c1512" opacity={0.4} />
+        <FrostVoid f={from + f} />
+        <g transform={`translate(${540 + gripShift},1150)`}>
+          <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={pulse} scale={1.4} />
+          <g transform="translate(-260,180)"><TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" /></g>
+          <g transform="translate(70,80)"><ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} /></g>
         </g>
-        <g transform="translate(500,980)">
-          <Whale x={0} y={0} scale={1.15} f={f} facing={1} mode="cruise" sweep={0.4} />
-          <ScanReticle cx={30} cy={-6} frame={f} lock={0.9} color={GOLD} size={210} />
-          <SmellRings cx={-40} cy={0} frame={f} color={MINT} count={3} maxR={200} intensity={0.5} />
+        <g transform={`translate(540,${420 + wordmarkIn})`} opacity={wordmarkOp}>
+          <StatCard x={0} y={0} big="4,700 ACRES" scale={statOp} color={GUNMETAL} formShaded />
         </g>
-        {/* empty net drifting */}
-        <g transform={`translate(${820 - swim * 60},1320)`} opacity={0.5}>
-          <path d="M0,0 l120,0 l-14,120 l-92,0 Z" fill="#0d1815" opacity={0.55} stroke="#9fb3ab" strokeWidth={3} strokeLinejoin="round" />
-          <path d="M0,0 l120,0 l-14,120 l-92,0 Z" fill="none" stroke="#cfe0d8" strokeWidth={1.5} strokeDasharray="6 7" />
+        <g transform={`translate(540,${560 + wordmarkIn})`} opacity={wordmarkOp}>
+          <text x={0} y={0} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={CAUTION} letterSpacing={3}>ALASKA.AI</text>
         </g>
-        {/* threat labels drifting past the useless HUD */}
-        {threats.map((tx, i) => {
-          const op = interpolate(f, [40 + i * 26, 60 + i * 26, 150 + i * 26, 175 + i * 26], [0, 0.9, 0.9, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-          return <g key={i} opacity={op}><BoxLabel x={760} y={640 + i * 90} text={tx} fs={26} w={280} h={54} fill="#1c2b28" color="#e06a4a" /></g>;
-        })}
       </svg>
-      <div style={{position: 'absolute', top: 260, left: 0, right: 0, textAlign: 'center'}}>
-        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 52, color: '#fff', background: 'rgba(20,29,27,0.85)', padding: '10px 30px', borderRadius: 12, border: `5px solid #e06a4a`}}>WATCHING ≠ SAVING</span>
+      <div style={{position: 'absolute', top: 220, left: 0, right: 0, textAlign: 'center', opacity: interpolate(f, [0, 30], [0, 1], {extrapolateRight: 'clamp'})}}>
+        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, color: FROST, background: 'rgba(11,15,22,0.82)', padding: '12px 28px', borderRadius: 14, border: `5px solid ${CAUTION}`}}>
+          WHAT HAS TO BE TRUE, FOR THIS TO WIN?
+        </span>
       </div>
     </AbsoluteFill>
   );
 };
-
-// ============================================================= S8: the hard, open number
-const S8: React.FC<{from?: number}> = ({from = 0}) => {
-  const f = useCurrentFrame();
-  const push = interpolate(f, [0, 90], [1.08, 1.0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const keyIn = interpolate(f, [10, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const tagIn = interpolate(f, [40, 58], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const cursor = (f % 30) < 15 ? 1 : 0.1;
-  return (
-    <AbsoluteFill style={{backgroundColor: INKC}}>
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
-        <rect width={1080} height={1920} fill="#0f1c1a" />
-        <g transform={`translate(540,960) scale(${push})`}>
-          <rect x={-300} y={-190} width={600} height={380} rx={18} fill="#12201d" stroke={MINT} strokeWidth={5} opacity={0.94} />
-          <text x={0} y={40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={200} fill="#ffffff" opacity={keyIn}>331</text>
-          <rect x={150} y={-60} width={10} height={90} fill={MINT} opacity={cursor * keyIn} />
-          <g opacity={tagIn}><BoxLabel x={0} y={120} text="OPEN · UPDATED 06/25/2026" fs={28} w={480} h={56} fill={MINT} color={INKC} /></g>
-        </g>
-      </svg>
-    </AbsoluteFill>
-  );
-};
-
-// ============================================================= S9: the button
-const S9: React.FC<{from?: number}> = ({from = 0}) => {
-  const f = useCurrentFrame();
-  const forkIn = interpolate(f, [10, 50], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const countdown = 331 - Math.floor(interpolate(f, [50, 150], [0, 41], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
-  const RETURN_AT = 120;
-  const back = interpolate(f, [RETURN_AT, RETURN_AT + 22], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const forkLabelOp = Math.max(0, Math.min(1, (0.55 - back) / 0.55));
-  const headerOp = Math.max(0, Math.min(1, (back - 0.55) / 0.45));
-  const ravenIn = interpolate(f, [RETURN_AT + 30, RETURN_AT + 52], [-160, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const blow = interpolate(f, [RETURN_AT + 20, RETURN_AT + 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // the whale dives under at the button (with real directional motion blur — panel ask)
-  const diveY = interpolate(f, [RETURN_AT + 50, RETURN_AT + 100], [0, 360], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.in(Easing.cubic)});
-  const diveVy = interpolate(f, [RETURN_AT + 50, RETURN_AT + 75, RETURN_AT + 100], [0, 13, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const diveOp = interpolate(f, [RETURN_AT + 80, RETURN_AT + 105], [1, 0.35], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  return (
-    <AbsoluteFill style={{backgroundColor: INKC}}>
-      {/* the fork (fades out as the loop returns) */}
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: 1 - back}}>
-        <rect width={1080} height={1920} fill="#12201d" />
-        <text x={540} y={520} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={150} fill="#ffffff">331</text>
-        {/* floor branch */}
-        <line x1={540} y1={560} x2={900} y2={560 + 0} stroke={MINT} strokeWidth={8} opacity={forkIn} strokeDasharray="1000" strokeDashoffset={(1 - forkIn) * 400} />
-        <g transform="translate(760,900)"><Whale x={0} y={0} scale={0.7} f={f} facing={1} mode="cruise" /></g>
-        {/* countdown branch */}
-        <line x1={540} y1={560} x2={200} y2={900} stroke="#e06a4a" strokeWidth={8} opacity={forkIn} />
-        <text x={190} y={960} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={54} fill="#e06a4a" opacity={forkIn}>{countdown}</text>
-        <g opacity={forkLabelOp}><BoxLabel x={540} y={360} text="FLOOR or COUNTDOWN?" fs={34} w={520} h={70} fill={PANEL} color={INKC} /></g>
-      </svg>
-      {/* the loopback: return to the cold-open whale, sensors still on */}
-      <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', opacity: back}}>
-        <g opacity={0.5}><g transform="translate(0,-560)"><AnchorageSkylineBG f={f} season="summer" denali floatplane={false} train={false} /></g></g>
-        <g transform="translate(0,300)"><WaterColumn f={f} intensity={1} surfaceY={-360} deep={WDEEP} shallow={WSURF} rays={6} /></g>
-        <g opacity={diveOp}>
-          <MotionBlur vy={diveVy} gain={0.8}>
-            <Whale x={520} y={1010 + diveY} scale={1.4} f={f} facing={1} mode="cruise" blow={blow} sweep={0.5} />
-          </MotionBlur>
-          <g transform={`translate(520,${1005 + diveY})`}>
-            <SmellRings cx={-52} cy={0} frame={f} color={MINT} count={3} maxR={260} intensity={0.5} />
-            <ScanReticle cx={40} cy={-6} frame={f} lock={0.95} color={GOLD} size={230} />
-          </g>
-        </g>
-        <g transform={`translate(160,${1260 + ravenIn}) scale(1.2)`}><Raven x={0} y={0} f={f} mode="perch" /></g>
-      </svg>
-      <div style={{position: 'absolute', top: 300, left: 0, right: 0, textAlign: 'center', opacity: headerOp}}>
-        <span style={{fontFamily: BOLD, fontWeight: 900, fontSize: 48, color: '#fff', background: 'rgba(20,29,27,0.82)', padding: '10px 28px', borderRadius: 12, border: `4px solid ${MINT}`}}>NO MACHINE DECIDES</span>
-      </div>
-    </AbsoluteFill>
-  );
-};
-
-const SCENE_COMPONENTS: React.FC<{from?: number}>[] = [S1, S2, S3, S4, S5, S6, S7, S8, S9];
-const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
-  {from: 0, dur: 168}, {from: 168, dur: 131}, {from: 299, dur: 175},
-  {from: 474, dur: 210}, {from: 684, dur: 150}, {from: 834, dur: 150},
-  {from: 984, dur: 240}, {from: 1224, dur: 180}, {from: 1404, dur: 240},
-];
 
 const GradedGrade: React.FC = () => {
   const f = useCurrentFrame();
-  return <GradeLayer f={f} bloom={0.38} vignette={0.44} grain={0.06} warmth={-0.02} />;
-};
-
-const CornerChrome: React.FC = () => {
-  const f = useCurrentFrame();
-  return (
-    <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute', pointerEvents: 'none'}}>
-      <g transform="translate(78,90) scale(0.4)" opacity={0.75}><Raven x={0} y={0} scale={1} f={f} mode="perch" /></g>
-      <g transform="translate(980,96)" opacity={0.85}>
-        <circle cx={0} cy={0} r={26} fill="none" stroke={MINT} strokeWidth={3} opacity={0.6} />
-        <circle cx={0} cy={0} r={4 + 3 * Math.sin(f / 6)} fill={MINT} opacity={0.7} />
-        {[0, 1, 2].map((i) => {
-          const ph = ((f / 24) + i / 3) % 1;
-          return <circle key={i} cx={0} cy={0} r={6 + ph * 30} fill="none" stroke={MINT} strokeWidth={2} opacity={(1 - ph) * 0.5} />;
-        })}
-      </g>
-    </svg>
-  );
+  return <GradeLayer f={f} bloom={0.3} vignette={0.4} grain={0.05} warmth={-0.06} />;
 };
 
 const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) => {
@@ -413,7 +350,7 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
   const rise = interpolate(pop, [0, 1], [26, 0], {extrapolateRight: 'clamp'});
   return (
     <div style={{position: 'absolute', bottom: 340, left: 0, right: 0, display: 'flex', justifyContent: 'center', padding: '0 60px'}}>
-      <div style={{background: 'rgba(20,29,27,0.84)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${MINT}`, transform: `translateY(${rise}px) scale(${scale})`, transformOrigin: 'center bottom'}}>
+      <div style={{background: 'rgba(11,15,22,0.86)', borderRadius: 14, padding: '16px 30px', maxWidth: 940, border: `4px solid ${CAUTION}`, transform: `translateY(${rise}px) scale(${scale})`, transformOrigin: 'center bottom'}}>
         <div style={{fontFamily: BOLD, fontWeight: 900, fontSize: 46, lineHeight: 1.12, color: '#fff', textAlign: 'center', letterSpacing: 0.5, textShadow: `2px 3px 0 rgba(0,0,0,0.6)`}}>
           {cue.text}
         </div>
@@ -421,6 +358,13 @@ const Captions: React.FC<{captions: EpisodeProps['captions']}> = ({captions}) =>
     </div>
   );
 };
+
+const SCENE_COMPONENTS: React.FC<{from?: number}>[] = [S1, S2, S3, S4, S5, S6, S7];
+const DEFAULT_BOUNDS: {from: number; dur: number}[] = [
+  {from: 0, dur: 150}, {from: 150, dur: 228}, {from: 378, dur: 234},
+  {from: 612, dur: 237}, {from: 849, dur: 369}, {from: 1218, dur: 342},
+  {from: 1560, dur: 240},
+];
 
 export const Episode: React.FC<EpisodeProps> = ({captions, scenes, mouth, accents}) => {
   const bounds = scenes && scenes.length === SCENE_COMPONENTS.length ? scenes : DEFAULT_BOUNDS;
@@ -434,7 +378,6 @@ export const Episode: React.FC<EpisodeProps> = ({captions, scenes, mouth, accent
           </Sequence>
         ))}
         <GradedGrade />
-        <CornerChrome />
         <Captions captions={captions} />
       </VoiceProvider>
     </AbsoluteFill>
