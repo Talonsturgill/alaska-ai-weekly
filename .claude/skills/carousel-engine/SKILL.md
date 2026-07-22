@@ -103,6 +103,19 @@ FAIL. `qa.py` warnings are advisories for the pixel critics, not free passes.
 ## Art libraries (committed, offline)
 
 - `assets/js/noise.js` — seeded simplex 2D/3D, fbm, domain warp (`AK.*`)
+- `assets/js/akrelief.js` — 2.5D relit-heightfield FORM-shading (`AK.reliefShade`),
+  the offline/CPU analogue of `AKT.objectHero`'s rim-carve. A flat filled region
+  reads as a shaded dimensional SOLID: builds a heightfield (noise.js fbm/warp by
+  default, or a `height(u,v)` callback for a dome/bevel/ridge), derives per-pixel
+  normals from a 3x3 Sobel, Lambert-shades against a NW key (or the MDOW multi-
+  azimuth set via `{multidirectional:true}`), maps a shadow->lit ramp, optional
+  silhouette `mask`. Load AFTER noise.js. Use it for a LAND/object hero (the
+  cadastral-plate / boreal-relief beat) so it stops reading flat — the recurring
+  artwork-craft=7 ceiling of 2026-07-21/07-22. `strength` is a gradient multiplier
+  (noise fields ~2-6; a smooth macro dome/bevel ~60-200). Writes ImageData via
+  putImageData (REPLACES pixels incl. alpha), so shade onto its own layer/before
+  compositing other art. Shades ART only; text stays DOM/SVG; never encode
+  quantity in the relief.
 - `assets/js/akgeo.js` — Alaska projection + regional zoom (`AKGeo.*`).
   NEVER fitExtent to a small lon/lat bbox (renders a giant fill disc);
   use `AKGeo.zoomTo(proj, geo, lonlat, targetXY, zoom)` and draw the

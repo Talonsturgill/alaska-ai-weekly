@@ -941,3 +941,28 @@ dimensional.
   it to a lighter 2-line assertion carried by the phantom-footprints graphic fixed the
   4->5 junction and gave the dense 2-6 stretch a micro-breath. Tethering the S4 ISOTYPE
   outlier with the coord footer + edge-tease kept it inside the sequence.
+
+## 2026-07-22 - upgrade-engineer (parked helper BUILT; editorial-cartography scan)
+
+- APPLIED (was PARKED 2026-07-21): the 2.5D relit-heightfield Sobel form-shading helper
+  is now committed as assets/js/akrelief.js (AK.reliefShade). It attacks the recurring
+  artwork-craft=7 ceiling (flat hero two runs running) directly: a flat filled region
+  becomes a shaded dimensional SOLID via heightfield -> 3x3 Sobel normals -> Lambert,
+  zero new deps (pure ImageData over noise.js). Verified on two smoke slides (noise
+  boulder std 53.2; smooth NW-lit dome std 58.4, NW/SE rim ratio 2.62), render+qa PASS,
+  demo-deck + this run's slides unchanged. NEXT LAND/object-hero run: reach for
+  AK.reliefShade instead of a flat SVG polygon + drop-shadows. strength is a gradient
+  multiplier (noise fields ~2-6; smooth macro dome/bevel ~60-200); putImageData REPLACES
+  pixels so shade on its own layer. Still open to design as one module with the parked
+  relief-depth helper (07-15) and strata-texture/rim-light helper (07-11).
+- FRONTIER (editorial dataviz/cartography, last touched 07-17): multidirectional
+  oblique-weighted hillshade (MDOW: azimuths ~225/270/315/360, aspect-weighted) is the
+  settled way to make relief read rich without one harsh light (ArcGIS Terrain Tools
+  origin; MapTiler 2026-02 4-direction hillshade; Eduard Cloud v1.0 ML Swiss-style).
+  Adopted as the {multidirectional:true} option in akrelief.js; single NW key stays the
+  default for object roundness. Cadastral-map minimalism (one accent for the focal parcel,
+  no legend/border louder than the data) reconfirmed the chip-attribution practice, no
+  change. Sources:
+  https://www.maptiler.com/news/2026/02/multidirectional-hillshades-and-terrain-color-ramps-for-web-maps/ ,
+  https://gist.github.com/maning/28ad9ebb1dcb1ea85440 , https://eduard.earth/ ,
+  https://github.com/mattdesl/lwjgl-basics/wiki/ShaderLesson6
