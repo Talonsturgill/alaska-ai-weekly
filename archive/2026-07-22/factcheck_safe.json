@@ -1,0 +1,23 @@
+{
+  "story": "Air Force Enhanced Use Lease offering for private AI data centers at JBER, Eielson AFB, and Clear Space Force Station",
+  "window_note": "RFLP issued April 10, 2026; proposal deadline June 29, 2026; no award/selection announced as of air date 2026-07-22. Pitched honestly as a pending decision, not breaking news.",
+  "safe_facts": [
+    {"claim": "Land offered for AI data centers across 3 Alaska installations", "value": "~4,700 acres, 12 parcels, Joint Base Elmendorf-Richardson + Eielson Air Force Base + Clear Space Force Station", "source": "af.mil / spaceforce.mil, 2026-04-10", "confidence": "high, both validators independently confirmed"},
+    {"claim": "Lease mechanism", "value": "Enhanced Use Lease (DAF leases non-excess land to a private partner for long-term commercial use; DAF receives at least fair market value)", "source": "af.mil, 2026-04-10", "confidence": "high"},
+    {"claim": "Lease length", "value": "reported by trade press as up to 50 years; NOT stated in the primary DAF release", "source": "Air & Space Forces Magazine (secondary)", "confidence": "medium - label on screen as reported, do not present as DAF-confirmed"},
+    {"claim": "Proposal deadline", "value": "June 29, 2026 (extended from an original May 29 date)", "source": "Alaska's News Source (KTUU/KTVF), 2026-06-08/06-12", "confidence": "high, both validators confirmed"},
+    {"claim": "Official quote", "value": "\"This is a unique opportunity for a true public-private partnership.\"", "source": "Robert Moriarty, Deputy Assistant Secretary of the Air Force for Installations, af.mil 2026-04-10", "confidence": "high, verbatim confirmed by both validators"},
+    {"claim": "Resident concern (real, named, verified)", "value": "Sarah Hollister, whose family has a third-generation home on Eielson Farm Road near eligible land, on the noise: \"it's like having a vacuum cleaner on 24 hours a day, seven days a week\"; also raised permafrost/heat concerns (\"data centers tend to let off a ton of heat, and what can that do to our permafrost?\"), property values, and grid load", "source": "Alaska's News Source (KTUU/KTVF), 2026-06-08", "confidence": "high, independently live-fetched and confirmed by validator 2"},
+    {"claim": "Grid concern", "value": "three of the proposed sites would draw on the Golden Valley Electric Association grid", "source": "Alaska's News Source, 2026-06-08 (reporter framing / resident concern, NOT a GVEA official statement)", "confidence": "medium - attribute to reporting/resident concern only, GVEA itself has made no public statement"},
+    {"claim": "Current status", "value": "No operator selection or award has been publicly announced as of 2026-07-22; proposals are presumably under evaluation", "source": "absence of any post-deadline announcement across af.mil, spaceforce.mil, and Alaska press", "confidence": "high"}
+  ],
+  "cut_do_not_use": [
+    {"claim": "North Pole Middle School / \"less than a mile\" proximity framing", "reason": "CONTESTED: validator 1 attributed it to the News-Miner; validator 2 independently fetched the News-Miner coverage and found no school content whatsoever, and traced the real Hollister quotes to a different outlet (Alaska's News Source). Unverifiable by the stricter live-fetch check. CUT per doctrine (unverifiable = cut)."},
+    {"claim": "\"a constant hum\" quote attributed to Sarah Hollister", "reason": "Confirmed FABRICATED by validator 1 (does not appear in the source it was drawn from). CUT."},
+    {"claim": "Ben Eielson Jr./Sr. High School building reuse", "reason": "Only sourced to the same contested News-Miner article thread as the school-proximity claim; not independently re-confirmed. CUT for safety, not essential to the story."},
+    {"claim": "Solicitation number AFCEC-26-R-0006", "reason": "Unverified by either validator against a live primary source. Do not cite a solicitation number on screen."},
+    {"claim": "July 20-22 Eielson Industry Day (mixed-use EUL, 3,967 acres)", "reason": "Validator 2 found this is a SEPARATE, unrelated mixed-use development lease (residential/commercial/office), not an update on the AI data center project. Do not conflate."}
+  ],
+  "dedupe_entities": "jber, eielson air force base, clear space force station, enhanced use lease, robert moriarty, sarah hollister, joint base elmendorf richardson, golden valley electric association",
+  "dedupe_check_result": "FRESH (2026-07-22, confirmed distinct from Stak Energy North Slope and AIDEA Mat-Su prior dispatches)"
+}

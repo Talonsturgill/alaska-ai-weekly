@@ -1,0 +1,45 @@
+{
+  "phase": "4.1a art direction huddle",
+  "story": "Air Force Enhanced Use Lease AI data center offer at JBER, Eielson AFB, Clear SFS",
+  "palette": {
+    "sky": "storm-navy shadow (deep cold blue-black, the night the gate stands watch in)",
+    "ground": "arctic frost-white (frozen ground, breath-fog, drifting particles)",
+    "hero": "gunmetal steel-gray (the CheckpointGateLever and its housing)",
+    "accent": "caution-yellow signal light (the unlit ready-lights on the gate, the StatCard/reveal punctuation)",
+    "shadow": "storm-navy deepened further for contact shadows and negative space",
+    "mood": "an institutional, held-breath cold. Not the aurora-lit wonder of the wildfire dispatch, not the bone-tan warmth of the salmon dispatch, not the honeyed dusk of the pen-policy dispatch. A checkpoint at night, waiting.",
+    "diverges_from_last_2": "07-21 bycatch used bone-tan/milky-jade/dawn-cream-amber/sockeye-crimson (warm, natural, daylight). 07-21 pen-policy used cool-slate-indigo-dusk/honeyed-window-glow/copper/red-green (warm domestic dusk). This palette shares zero color vocabulary with either, confirmed by storyboard_check.py's token-overlap gate (which passed)."
+  },
+  "light": {
+    "time_of_day": "night, a working institutional floodlight setting, not dusk or dawn",
+    "direction": "hard side-key from an unseen checkpoint floodlight, raking across the lever's brushed metal to carve its form; a cool rim light from the frost-white ground bounce",
+    "key_fill_rim_intent": "key = floodlight (cold white-yellow, hard), fill = ambient frost-blue bounce off the ground (soft, low), rim = a thin caution-yellow edge along the lever's silhouette so it reads as a dimensional object alone in the void",
+    "depth_approach": "depth (lib/stage3d.tsx Plane) is used on the five in-world object/character shots: 2 and 6 (the lever, mid-ground plane, near-black void behind it, drifting frost particles on a closer parallax plane), 4 and 5 (MachineShadow and Hollister, each staged as a real dimensional presence in their own space), and 7 (the closing held lever carrying into the rising wordmark and stat). Shots 1 (the map) and 3 (the schematic) are deliberately flat (matches storyboard.json's stage3d:'flat' declarations) because a data/map overlay and an exploded technical diagram both read best as flat graphics, not 3D worlds.",
+    "why_this_story": "This story's honest emotional register is suspended tension, not triumph or dread. A floodlit night-void gives the lever gravity and isolation without editorializing toward doom (no storm-dramatic) or false warmth (no dawn-backlight)."
+  },
+  "shape_language": {
+    "grammar": "hard rectilinear institutional geometry (the gate, the barrier arm, the schematic grid) against ONE soft human silhouette (Sarah Hollister's parka, breath-fog) and one soft gesture (the gloved hand steadying the lever). The contrast IS the thesis: cold bureaucratic machinery meeting a real, rounded, breathing person.",
+    "deliberate_contrast": "MachineShadow and the gate itself are angular, faceless, flat-planed. Hollister and the steadying hand are rounded, textured (parka quilting via lib/materials.tsx), breathing. Nothing about the institution is villainous, it is simply geometric and cold by design, exactly matching the fair-counter-point requirement (a legitimate stake presented without a face is not a smear).",
+    "why_this_story": "The earned angle holds two honest things at once (the institution's real stake, the resident's real cost). Shape language does that holding visually: one language for the process, one for the person, meeting at the same object (the lever) neither one controls yet."
+  },
+  "casting": {
+    "hero": "CheckpointGateLever -- NET-NEW characterized prop, built this run for props.tsx. It extends GearLever's existing pulled 0..1 mechanic (cast from the shelf per the library mandate's 'compose from the library first' rule) but adds genuinely new geometry the shelf lacked: a barrier arm, a lever pivot bolt, and dual signal-light housings, enough parts/zones to read as its own object, not a re-skinned GearLever. This IS the run's library-growth contribution (corrected from an earlier draft of this plan that tried to claim it as a non-growth restage while also giving it new geometry -- an art-director critic caught the contradiction; this run honestly owns it as net-new).",
+    "hero_freshness_check": "Confirmed via scripts/dedupe.py check --hero: last two heroes were Vale (2026-07-20) and ServerMachine (2026-07-21, used twice). CheckpointGateLever/GearLever is neither, satisfies the no-back-to-back-hero-repeat hard gate.",
+    "supporting": "MachineShadow (existing asset, the faceless institutional presence, ACTIVE per ASSET_MANIFEST.md) and Character (existing rig, cast as Sarah Hollister and as the steadying Alaskan hand in the turn).",
+    "why_this_fits": "MachineShadow was purpose-built for 'faceless institutional monolith, deliberately cold' (07-18), which is exactly what an unnamed federal leasing process needs, no invented face for an entity that has not chosen a side. Character's existing emotion/pose range (worried, neutral, arms-crossed) covers Hollister's wary-resolved read without new rig work."
+  },
+  "motion_language": {
+    "how_the_world_moves": "near-total stillness broken by small, precise, motivated moves: a counter ticking, a card flipping, a stamp thunking down, a whip-pan pivot, a hand's slow deliberate reach. NOTHING moves without a reason. The lever itself moves only TWICE in the whole piece: a small foreshadowing nudge at 20.4s as the institution's pitch pushes on it, easing back to frozen-halfway, and the single sympathetic tremble at the very end. Both are deliberate, and the near-repeat is the point, the lever almost moves, twice, and never actually does.",
+    "hero_moves_named": "the lever's foreshadowing nudge at 20.4s (rises a few degrees under the institutional pitch, eases back to halfway), the whip-pan at 25.0s (institution to resident, the piece's rehook), the TrailPost drop-in at 44.0s (anticipation-overshoot-settle), the gloved hand's reach at 48.5s (slow deliberate approach, soft settle, the lever's second and final sympathetic tremble then stillness).",
+    "why_this_story": "A story whose thesis is 'nothing has been decided' earns its motion budget by making stillness the loudest choice. Reserving real movement for named, load-bearing beats (not constant animation for its own sake) makes the held lever read as a deliberate choice, not a rendering shortcut. Every beat's choreo{primary,reaction,ambient} still guarantees the living-screen minimum (see storyboard.json)."
+  },
+  "composition": {
+    "focal_hierarchy": "shots 2 and 6 (the lever) use single-object-void, the hero alone in negative space so it cannot be missed. Shot 3 (the schematic) uses grid-modular for legible mechanism labels. Shot 5 (Hollister) uses stacked-layers so her frost yard and the distant gate share the frame honestly, neither erasing the other.",
+    "safe_area_9x16_and_4x5": "hero action and all captions stay within the centered 4:5 safe box (per repo policy), verified at build time by the caption/frame render pipeline. The single-object-void shots are inherently center-weighted, which serves both crops without special-casing.",
+    "signature_shot": "shots 6 into 7, the final held pair: shot 6 (40.6-52.0) holds the frozen lever, the gloved hand beneath it, and the TrailPost reading STILL OPEN; shot 7 (52.0-60.0) carries that same lever and hand through a crossfade as the glowing 4,700-acre stat and the ALASKA.AI wordmark rise overhead, one caution-yellow signal pulse marks the only terminal event, then it loops. This is the shot pair the piece should be remembered for, the moment the whole thesis becomes one picture."
+  },
+  "craft_advance": {
+    "this_run": "The primary craft advance IS the CheckpointGateLever prop itself (see casting.hero): a new reusable checkpoint/barrier-gate asset for props.tsx, filling a real gap (no existing prop represented an access-control/decision-gate object before this run), registered in ASSET_MANIFEST.md in the Phase 7 commit. Secondary technique note, NOT claimed as this run's advance since it has prior art: staging a hero in a near-black stage3d void (Plane, no biome plate) was already used for 2026-07-09's single-object-void basalt-black treatment; this run's use of it is a legitimate reuse of a proven technique for a story with no matching biome, not a new capability.",
+    "existing_asset_upgrade": "CheckpointGateLever is registered in ASSET_MANIFEST.md in the Phase 7 commit as its OWN new prop entry, owning the barrier arm, pivot bolt, and dual signal housings. GearLever is referenced only as the composed-from source for the shared pulled 0..1 mechanic (the lever-position value), not as the owner of the new geometry -- no geometry is double-claimed between the two entries."
+  }
+}
