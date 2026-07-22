@@ -139,6 +139,35 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
         <rect width={1080} height={1920} fill={NAVY_D} />
         <rect width={1080} height={1920} fill={FROST} opacity={wash} />
         <CornerPings f={f} breath={0} />
+        {/* map SUBSTRATE (storyboard detail_note: the map must carry terrain hatching
+            and base-outline texture so it reads as a real place, not a bare grid on
+            black). Static, low-opacity, BEHIND the parcel tiles / coastline / counter /
+            labels -- deliberately subtle so it never competes with the LIVING_SCREEN /
+            EVENT_CADENCE motion and can't soften frame 0's FIRST_FRAME contrast. */}
+        <defs>
+          <clipPath id="s1mapclip"><rect x={120} y={410} width={840} height={370} rx={20} /></clipPath>
+        </defs>
+        <g opacity={0.9}>
+          {/* faint map bed so the texture has a place to sit */}
+          <rect x={120} y={410} width={840} height={370} rx={20} fill={NAVY} opacity={0.35} stroke={GUNMETAL} strokeWidth={2} strokeOpacity={0.18} />
+          <g clipPath="url(#s1mapclip)">
+            {/* terrain hatching: thin diagonal cross-hatch suggesting topography/tundra */}
+            {Array.from({length: 26}).map((_, i) => (
+              <line key={`th${i}`} x1={80 + i * 60} y1={790} x2={80 + i * 60 - 420} y2={400} stroke={GUNMETAL} strokeWidth={1.4} opacity={0.11} />
+            ))}
+            {Array.from({length: 26}).map((_, i) => (
+              <line key={`ch${i}`} x1={80 + i * 60 - 420} y1={790} x2={80 + i * 60} y2={400} stroke={FROST} strokeWidth={1} opacity={0.05} />
+            ))}
+          </g>
+          {/* base-outline texture: three soft irregular perimeters (distinct from the
+              rectangular parcel grid) under the three base marks, so each base reads as
+              a real installation footprint, not just a labelled dot */}
+          {[260, 540, 820].map((bx, i) => (
+            <path key={`bo${i}`}
+              d={`M${bx - 92},505 Q${bx - 104},448 ${bx - 34},440 Q${bx + 60},432 ${bx + 96},486 Q${bx + 110},548 ${bx + 34},562 Q${bx - 58},572 ${bx - 92},505 Z`}
+              fill={CAUTION} fillOpacity={0.04} stroke={CAUTION} strokeWidth={2} strokeOpacity={0.2} strokeDasharray="5 7" />
+          ))}
+        </g>
         {/* schematic map: three base marks connected by a coastline path, 12 parcel tiles tiling in */}
         <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" strokeDashoffset={dashTravel} />
         {/* form-shaded parcel tiles: a FormGradient fill (key->core->shade in the
@@ -274,21 +303,41 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
           <rect x={-114} y={30} width={228} height={54} rx={6} fill="none" stroke="#c0392b" strokeWidth={5} transform="rotate(-6)" />
           <text x={0} y={68} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill="#c0392b" transform="rotate(-6)" textLength={210} lengthAdjust="spacingAndGlyphs">DAF KEEPS LAND</text>
         </g>
-        {/* dollar arrow pumping back to the deed */}
+        {/* dollar arrow pumping back to the deed -- a FILLED ribbon arrow (key/fill/rim
+            shaded), not a thin stroked line, so its finish matches the DEED card and the
+            MachineShadow-family props instead of reading near-wireframe next to them */}
         <g transform="translate(540,1020)" opacity={Math.min(1, deedIn)}>
-          <path d={`M-40,0 Q0,${-30 - arrowPump * 14} 40,0`} fill="none" stroke={CAUTION} strokeWidth={8} strokeLinecap="round" markerEnd="url(#arrowhead)" />
-          <text x={0} y={50} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={CAUTION}>FAIR MARKET VALUE</text>
-          <defs>
-            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-              <path d="M0,0 L10,5 L0,10 Z" fill={CAUTION} />
-            </marker>
-          </defs>
+          <defs><FormGradient id="s3arrow" t={tones(CAUTION)} softness={0.85} /></defs>
+          {(() => { const ay = -34 - arrowPump * 14; return (
+            <g>
+              <path
+                d={`M-46,9 Q-6,${ay + 17} 24,7 L24,17 L54,0 L24,-17 L24,-7 Q-6,${ay} -46,-7 Z`}
+                fill="url(#s3arrow)" stroke={INK} strokeWidth={3} strokeLinejoin="round" />
+              <RimLight d={`M-46,-7 Q-6,${ay} 24,-7`} w={3} opacity={0.6} />
+            </g>
+          ); })()}
+          <text x={0} y={54} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill={CAUTION}>FAIR MARKET VALUE</text>
         </g>
-        {/* clock */}
+        {/* clock -- a FILLED, form-shaded face (not a thin-outline wireframe) with tick
+            marks, a tapered filled hand and a rim highlight, so its finish sits level with
+            the DEED card / monolith in the same frame (style_charter finish-parity rule) */}
         <g transform="translate(540,1360)">
-          <circle r={110} fill="none" stroke={FROST} strokeWidth={6} />
-          <line x1={0} y1={0} x2={0} y2={-90} stroke={FROST} strokeWidth={6} strokeLinecap="round" transform={`rotate(${clockHand})`} />
-          <circle r={8} fill={FROST} />
+          <defs><FormGradient id="s3clockface" t={tones('#cdd6df')} /></defs>
+          <ContactShadow cx={0} cy={116} rx={96} ry={16} opacity={0.3} blur={12} />
+          <circle r={110} fill="url(#s3clockface)" stroke={INK} strokeWidth={6} />
+          <circle r={96} fill="none" stroke={INK} strokeWidth={2} opacity={0.22} />
+          <RimLight d="M-70,-85 A110,110 0 0 1 85,-70" w={4} opacity={0.55} />
+          {Array.from({length: 12}).map((_, i) => {
+            const a = (i / 12) * Math.PI * 2;
+            const x0 = Math.sin(a) * 90, y0 = -Math.cos(a) * 90;
+            const x1 = Math.sin(a) * 102, y1 = -Math.cos(a) * 102;
+            return <line key={i} x1={x0} y1={y0} x2={x1} y2={y1} stroke={INK} strokeWidth={i % 3 === 0 ? 5 : 2.5} opacity={0.55} />;
+          })}
+          <g transform={`rotate(${clockHand})`}>
+            <path d="M-7,12 L-3,-94 L3,-94 L7,12 Z" fill={INK} stroke={INK} strokeWidth={2} strokeLinejoin="round" />
+            <path d="M-2.5,-92 L2.5,-92 L1.5,10 L-1.5,10 Z" fill="#5a6270" opacity={0.7} />
+          </g>
+          <circle r={11} fill={FROST} stroke={INK} strokeWidth={3} />
           <text x={0} y={150} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={32} fill={FROST}>UP TO 50 YEARS</text>
           <g opacity={reportedIn} transform="translate(120,-90)">
             <rect x={-64} y={-20} width={128} height={40} rx={8} fill={CAUTION} stroke={INK} strokeWidth={4} />
@@ -338,6 +387,14 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
               style={{mixBlendMode: 'screen'}} />
             <g transform={`scale(${1 + 0.015 * Math.sin(f / 26)})`} style={{transformOrigin: '0px 0px'}}>
               <MachineShadow x={0} y={0} scale={1.1} f={f} grow={Math.min(1, e.scale)} />
+              {/* idle-life rim pulse on the monolith's lit (screen-left) contour, cycling
+                  on a short ~1s period so its aliveness reads in ANY single still, not only
+                  across motion (the scale-breath alone is too slow/subtle to catch in a lone
+                  frame). Rides the same scale(1.1) as the tower so it hugs the left edge. */}
+              <g transform="scale(1.1)">
+                <RimLight d="M-46,-360 L-60,0" w={7}
+                  opacity={(0.5 + 0.35 * Math.sin((2 * Math.PI * f) / 30)) * Math.min(1, e.scale)} />
+              </g>
             </g>
           </g>
           <g transform={`translate(700,900) scale(${Math.min(1, cardIn)})`} opacity={Math.min(1, cardIn) + glowOnce * 0.3}>
