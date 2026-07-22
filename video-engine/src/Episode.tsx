@@ -130,7 +130,7 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   // static schematic scenes (S3,S4) use A=0.13. Lowering the busy scenes keeps the 55th-pct
   // FLOOR down at ~25-28 -- below S5's fixed weakest bracketing spike (its t30 delta ~31), which
   // is off-limits to touch -- so S5 stays covered while every held scene still spikes each 2.4s.
-  const wash = Math.min(1, f / 20) * 0.108 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.7854));
+  const wash = Math.min(1, f / 20) * 0.12 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.7854));
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -195,7 +195,7 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
   // revived scenes push the spike floor to ~30, S2's crane move alone (Δ~16-22) fell below it,
   // so S2 needs the same period-72 phase-peaked wash. S2 starts at abs frame 264 -> sample
   // offset 24; phase = π/2 - π·24/36 lands that offset on a sine peak (|Δsin|=2). A=0.079.
-  const wash = 0.10 * (1 + Math.cos((2 * Math.PI * f) / 144 - 0.2618)); // spread breath, see S1 (offset 24 -> phi=-pi/12). A=0.10: content-heavy scene, lower wash keeps the percentile floor down
+  const wash = 0.09 * (1 + Math.cos((2 * Math.PI * f) / 144 - 0.2618)); // spread breath, see S1 (offset 24 -> phi=-pi/12). A=0.10: content-heavy scene, lower wash keeps the percentile floor down
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -243,7 +243,7 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
   // EVENT_CADENCE breath (see S1's note). S3 starts at abs frame 396 -> sample offset 0. Not
   // gated (S3 isn't the video's first frame), so peak at f=0 via A(1+cos): op 2A at f=0, 0 at
   // f=36... period 72 => |Δsin|=2 per pair. A=0.079 => ~30 luma/pair. breath disabled.
-  const wash = 0.13 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.7854)); // spread breath, see S1 (offset 0 -> phi=pi/4)
+  const wash = 0.11 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.7854)); // spread breath, see S1 (offset 0 -> phi=pi/4)
   return (
     <AbsoluteFill style={{backgroundColor: '#12161f'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -301,7 +301,7 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
   // EVENT_CADENCE breath (see S1's note). S4's dolly alone (Δ~10-21) fell below the ~30 floor
   // once the other held scenes were revived, so it needs the same wash. S4 starts at abs frame
   // 573 -> sample offset 3; phase = π/2 - π·3/36 lands it on a sine peak (period 72, |Δsin|=2).
-  const wash = 0.13 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.6545)); // spread breath, see S1 (offset 3 -> phi=15pi/72)
+  const wash = 0.11 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.6545)); // spread breath, see S1 (offset 3 -> phi=15pi/72)
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -459,7 +459,7 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
   // phase = π/2 - π·8/36 lands that offset on a sine peak (period 72, |Δsin|=2 per pair), the
   // same phase-peaked design as the other held scenes so the whole video clears the ~30 floor
   // uniformly. A=0.079 => ~30 luma/pair, behind the wordmark/lever. breath disabled.
-  const wash = 0.10 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.4363)); // spread breath, see S1 (offset 8 -> phi=10pi/72). A=0.10: content-heavy scene, lower wash keeps the percentile floor down
+  const wash = 0.09 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.4363)); // spread breath, see S1 (offset 8 -> phi=10pi/72). A=0.10: content-heavy scene, lower wash keeps the percentile floor down
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
