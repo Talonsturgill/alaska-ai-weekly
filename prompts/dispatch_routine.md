@@ -612,11 +612,23 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
 
 1. Encode 9:16 master + 4:5 center-crop (H.264 High, faststart, AAC 48k, -14 LUFS, each
    < 100 MB); ffprobe-assert 1080x1920 and 1080x1350 so a wrong-ratio cut can never ship.
-2. Upload BOTH + a poster (frame 0) via upload_video.py; verify HTTP 200 permanent links.
+   ALSO encode the MOBILE FEED RENDITION from the 9:16 master -- the alaskaaihq.com/videos
+   feed serves this to phones (the 1080p master is 15MB+; phones need ~3-6MB to feel
+   TikTok-smooth):
+     ffmpeg -i master_9x16.mp4 -vf scale=720:1280 -c:v libx264 -profile:v main -crf 26 \
+       -maxrate 1400k -bufsize 2800k -pix_fmt yuv420p -movflags +faststart \
+       -c:a aac -b:a 96k -ar 48000 master_9x16_720.mp4
+   plus a poster thumb: ffmpeg -i poster.png -vf scale=540:960 -q:v 5 poster_thumb.jpg
+   ffprobe-assert 720x1280 on the rendition and check the thumb is < 100 KB.
+2. Upload the two full cuts + poster (frame 0) + the 720p rendition + the poster thumb via
+   upload_video.py; verify HTTP 200 permanent links for ALL of them.
 2b. PUBLISH TO THE SITE FEED: `python3 scripts/publish_feed.py --id <run-slug> --date <date>
    --title "<display title>" --caption "<1-2 sentence VERIFIED summary, fact-check-safe-set
    language only>" --video-url "<the verified 9:16 URL from step 2>" --poster-url "<the
-   verified poster URL>"`. This prepends the run's entry to docs/videos/videos.json in the
+   verified poster URL>" --video-mobile-url "<the verified 720p rendition URL>"
+   --poster-thumb-url "<the verified poster-thumb URL>"`. The mobile fields keep the feed
+   fast on phones (the page falls back to the heavy master without them -- never skip them
+   when step 1's rendition succeeded). This prepends the run's entry to docs/videos/videos.json in the
    Talonsturgill/alaskaaicarousels repo (the alaskaaihq.com/videos vertical feed) and pushes
    it to main, so the site updates the same day the video ships. Idempotent by --id (re-runs
    replace, never duplicate). If it exits non-zero (most likely: the routine environment
