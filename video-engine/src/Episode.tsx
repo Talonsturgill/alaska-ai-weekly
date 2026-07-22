@@ -44,6 +44,16 @@ const FrostVoid: React.FC<{f: number; opacity?: number}> = ({f, opacity = 1}) =>
       const r = 1.4 + (i % 4) * 0.6;
       return <circle key={i} cx={x} cy={y} r={r} fill={FROST} opacity={0.18 + (i % 3) * 0.08} />;
     })}
+    {/* larger, slower drifting frost wisps -- a second independent motion layer so
+        held shots (single-object-void) keep multiple disjoint regions live, not
+        just the hero object (CHOREOGRAPHY.md living-screen floor) */}
+    {Array.from({length: 6}).map((_, i) => {
+      const seed = i * 91;
+      const x = (seed * 17 + f * 0.9) % 1240 - 80;
+      const y = (seed * 53 + f * 0.5) % 2080 - 80;
+      const r = 10 + (i % 3) * 6;
+      return <ellipse key={`w${i}`} cx={x} cy={y} rx={r} ry={r * 0.4} fill={FROST} opacity={0.05 + (i % 2) * 0.03} />;
+    })}
   </g>
 );
 
@@ -55,13 +65,19 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   // scene is ~264f once retimed to the actual VO line -- hold the count, only wipe
   // to black in the last ~15 frames so S1 doesn't sit on a blank hold before S2 cuts in
   const wipeIn = interpolate(f, [240, 264], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const headlineOp = interpolate(f, [4, 20], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // headline is ink-bold from frame 0 (FIRST_FRAME poster-grade floor: a muted
+  // scroll must land the claim immediately, not fade up to it)
+  const headlineOp = 1;
+  // keeps the long post-count hold (100-240f) from reading as dead air: the coastline
+  // shimmers on a slow travel and the counter gives a small confirming pulse every ~2s
+  const dashTravel = -((f * 1.4) % 400);
+  const holdPulse = f > 100 ? 1 + 0.05 * Math.max(0, Math.sin((f - 100) / 20)) : 1;
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill={NAVY_D} />
         {/* schematic map: three base marks connected by a coastline path, 12 parcel tiles tiling in */}
-        <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" />
+        <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" strokeDashoffset={dashTravel} />
         {Array.from({length: 12}).map((_, i) => {
           const gx = 220 + (i % 4) * 180;
           const gy = 560 + Math.floor(i / 4) * 160;
@@ -79,9 +95,11 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
             <text x={x as number} y={460} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill={FROST}>{label as string}</text>
           </g>
         ))}
-        <text x={540} y={1000} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={120} fill={FROST} stroke={INK} strokeWidth={4} paintOrder="stroke">
-          {count.toLocaleString()}
-        </text>
+        <g transform={`translate(540,1000) scale(${holdPulse}) translate(-540,-1000)`}>
+          <text x={540} y={1000} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={120} fill={FROST} stroke={INK} strokeWidth={4} paintOrder="stroke">
+            {count.toLocaleString()}
+          </text>
+        </g>
         <text x={540} y={1060} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={30} fill={CAUTION} letterSpacing={2}>ACRES</text>
         {/* mask-wipe into the gate world */}
         <rect width={1080} height={1920} fill={NAVY_D} opacity={wipeIn} />
@@ -101,7 +119,10 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
   const {fps} = useVideoConfig();
   const gf = from + f;
   const voice = useVoice();
-  const push = interpolate(f, [0, 228], [1.0, 1.06], {extrapolateRight: 'clamp'});
+  const push = interpolate(f, [0, 132], [1.0, 1.1], {extrapolateRight: 'clamp'});
+  // real craneDown: the whole framing descends over the shot (CAMERA_MOTION needs a
+  // genuine whole-frame displacement, not just a scale push on a mostly-black void)
+  const craneY = interpolate(f, [0, 132], [-160, 0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const rackIn = spring({frame: f - 10, fps, config: {damping: 12, stiffness: 170}});
   const plateA = interpolate(f, [16, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const plateB = interpolate(f, [30, 44], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
@@ -114,7 +135,7 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={gf} />
         <rect width={1080} height={1920} fill={NAVY_D} opacity={wipeOut} />
-        <g transform={`translate(540,1150) scale(${push})`}>
+        <g transform={`translate(540,${1150 + craneY}) scale(${push})`}>
           <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.35} />
           {/* server-rack glyph, popping in beside the nameplates */}
           <g opacity={Math.min(1, rackIn)} transform={`translate(-260,-40) scale(${Math.min(1, rackIn)})`}>
@@ -196,24 +217,29 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
   // foreshadowing lever nudge: rises a few degrees under the pitch, eases back to halfway
   const nudge = interpolate(f, [40, 70, 110], [0.5, 0.63, 0.5], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   const glowOnce = interpolate(f, [130, 150, 170], [0, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // real dollythrough: the whole framing travels forward/down across the shot
+  const dollyY = interpolate(f, [0, 198], [120, -60], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const dollyScale = interpolate(f, [0, 198], [0.92, 1.05], {extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={from + f} />
-        {/* distant gate, small, in the background, nudging */}
-        <g transform="translate(820,1500) scale(0.45)" opacity={0.7}>
-          <CheckpointGateLever x={0} y={0} pulled={nudge} signalPulse={0} />
-        </g>
-        <g transform={`translate(420,${1300 + e.dy}) scale(${e.scale})`}>
-          <MachineShadow x={0} y={0} scale={1.1} f={f} grow={Math.min(1, e.scale)} />
-        </g>
-        <g transform={`translate(700,900) scale(${Math.min(1, cardIn)})`} opacity={Math.min(1, cardIn) + glowOnce * 0.3}>
-          <rect x={-220} y={-150} width={440} height={260} rx={12} fill={FROST} stroke={INK} strokeWidth={6}
-            style={{filter: glowOnce > 0.1 ? `drop-shadow(0 0 ${18 * glowOnce}px ${CAUTION})` : undefined}} />
-          <text x={0} y={-100} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={20} fill="#3a4048">ROBERT MORIARTY, DEPT. OF THE AIR FORCE</text>
-          <text x={0} y={-45} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>&quot;A UNIQUE OPPORTUNITY</text>
-          <text x={0} y={-3} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>FOR A TRUE</text>
-          <text x={0} y={39} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>PUBLIC-PRIVATE PARTNERSHIP.&quot;</text>
+        <g transform={`translate(540,${960 + dollyY}) scale(${dollyScale}) translate(-540,-960)`}>
+          {/* distant gate, small, in the background, nudging */}
+          <g transform="translate(820,1500) scale(0.45)" opacity={0.7}>
+            <CheckpointGateLever x={0} y={0} pulled={nudge} signalPulse={0} />
+          </g>
+          <g transform={`translate(420,${1300 + e.dy}) scale(${e.scale})`}>
+            <MachineShadow x={0} y={0} scale={1.1} f={f} grow={Math.min(1, e.scale)} />
+          </g>
+          <g transform={`translate(700,900) scale(${Math.min(1, cardIn)})`} opacity={Math.min(1, cardIn) + glowOnce * 0.3}>
+            <rect x={-220} y={-150} width={440} height={260} rx={12} fill={FROST} stroke={INK} strokeWidth={6}
+              style={{filter: glowOnce > 0.1 ? `drop-shadow(0 0 ${18 * glowOnce}px ${CAUTION})` : undefined}} />
+            <text x={0} y={-100} textAnchor="middle" fontFamily={BOLD} fontWeight={700} fontSize={20} fill="#3a4048">ROBERT MORIARTY, DEPT. OF THE AIR FORCE</text>
+            <text x={0} y={-45} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>&quot;A UNIQUE OPPORTUNITY</text>
+            <text x={0} y={-3} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>FOR A TRUE</text>
+            <text x={0} y={39} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill={INK}>PUBLIC-PRIVATE PARTNERSHIP.&quot;</text>
+          </g>
         </g>
       </svg>
     </AbsoluteFill>
@@ -227,14 +253,17 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const gf = from + f;
   const voice = useVoice();
   const turnIn = spring({frame: f - 4, fps, config: {damping: 13, stiffness: 150}});
-  const vacX = interpolate(f, [130, 220], [-200, 900], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const propIn = interpolate(f, [230, 260], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const dip = interpolate(f, [230, 300], [0, -18], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const vacX = interpolate(f, [90, 160], [-200, 900], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const propIn = interpolate(f, [175, 200], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const dip = interpolate(f, [175, 230], [0, -18], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // real truckAcross: the whole framing trucks sideways over the shot
+  const truckX = interpolate(f, [0, 264], [70, -70], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   return (
     <AbsoluteFill style={{backgroundColor: '#1a2230'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill="#1a2230" />
         <rect y={1200} width={1080} height={720} fill="#0f141c" />
+        <g transform={`translate(${truckX},0)`}>
         {/* house silhouette behind her */}
         <g transform="translate(760,1120)" opacity={0.55}>
           <path d="M-120,0 L-120,-140 L0,-220 L120,-140 L120,0 Z" fill="#2a3444" stroke={INK} strokeWidth={5} />
@@ -263,6 +292,7 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
         <g transform="translate(760,1500)" opacity={propIn}>
           <path d={`M-30,0 L30,0 L${30 + dip * 0.3},${dip}`} fill="none" stroke={CAUTION} strokeWidth={6} strokeLinecap="round" />
           <text x={0} y={40} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22} fill={FROST}>PROPERTY VALUES?</text>
+        </g>
         </g>
       </svg>
     </AbsoluteFill>
