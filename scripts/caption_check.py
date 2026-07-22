@@ -38,7 +38,7 @@ UNICODE_BOLD = re.compile("[\U0001D400-\U0001D7FF]")
 URLISH = re.compile(r"https?://|www\.|\S+\.(com|org|net|io|gov|edu)/\S*", re.I)
 
 
-def lint(text):
+def lint(text, ledger_entries=None):
     fails, warns = [], []
     t = text.rstrip("\n")
     lines = t.split("\n")
@@ -115,9 +115,27 @@ def lint(text):
     if content_lines and not content_lines[-1].strip().endswith("?"):
         fails.append("CLOSE: final content line must be an engagement question ending with ?")
 
-    # deck summary heuristic: some line mentions slides/deck/carousel or a count
-    if not re.search(r"\b(\d+\s+slides?|swipe|deck|carousel|walks? through)\b", low):
-        warns.append("SUMMARY: no deck-summary line detected (accessibility + ranker)")
+    # variety engine: banned furniture, the connective tissue that made every
+    # caption read like a mail merge (9 of the first 14 runs used it). The
+    # old SUMMARY warn that ENCOURAGED a deck-pointer line is retired.
+    for phrase in ("deck walks through", "slides walk through", "walks you through",
+                   "deck walks you", "this deck walks", "the deck covers"):
+        if phrase in low:
+            fails.append(f"FURNITURE: banned template phrase '{phrase}' "
+                         "(see knowledge/CAPTION_CRAFT.md)")
+    if re.search(r"(?i)\bthese \d+ slides\b", t):
+        fails.append("FURNITURE: 'these N slides' as connective tissue "
+                     "(see knowledge/CAPTION_CRAFT.md)")
+
+    # variety engine: the opening may not repeat any recent run's opening
+    if ledger_entries:
+        first4 = " ".join(re.findall(r"[a-z0-9']+", low)[:4])
+        for e in ledger_entries[-12:]:
+            prev4 = " ".join(re.findall(r"[a-z0-9']+", str(e.get("first_words", "")).lower())[:4])
+            if first4 and first4 == prev4:
+                fails.append(f"VARIETY: first words repeat the {e.get('run_date')} caption "
+                             f"('{first4}...'); open differently")
+                break
 
     return {"chars": n, "hook": hook, "hook_len": len(hook),
             "hashtags": tags, "fails": fails, "warns": warns,
@@ -125,14 +143,22 @@ def lint(text):
 
 
 def main():
-    if len(sys.argv) > 1:
-        src = Path(sys.argv[1])
+    args = [a for a in sys.argv[1:]]
+    ledger_entries = None
+    if "--ledger" in args:
+        i = args.index("--ledger")
+        ledger_path = Path(args[i + 1])
+        del args[i:i + 2]
+        if ledger_path.exists():
+            ledger_entries = json.loads(ledger_path.read_text()).get("entries", [])
+    if args:
+        src = Path(args[0])
         text = src.read_text()
         out = src.parent / "caption_report.json"
     else:
         text = sys.stdin.read()
         out = Path("caption_report.json")
-    rep = lint(text)
+    rep = lint(text, ledger_entries)
     out.write_text(json.dumps(rep, indent=2))
     for f in rep["fails"]:
         print("FAIL:", f)

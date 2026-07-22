@@ -45,6 +45,7 @@ this one.
 - `config/` — brand.yaml (voice + constellation tokens), sources.yaml,
   scoring_rubric.yaml.
 - `ledger/` — topics.json (dedupe), artwork.json (variety engine),
+  captions.json (caption variety engine, enforced by the Phase 6 room),
   instincts.json (self-improvement), upgrades.json (automation-change
   trail: Phase 12's machine upgrades, surfaced in every dated Gmail draft;
   each set reverts as one `upgrade(<date>):` commit), docket.json (the

@@ -220,6 +220,13 @@ def main():
     # often no 'post_copy'; without this the paste-ready post block renders empty
     # (recurring gap, 2026-07-17/18/19). Never mutates copy.json.
     post_copy_text = _strip_sources_from_post(copy.get("post_copy") or copy.get("caption", ""))
+    # The hashtag tail is guaranteed from the canonical hashtags field, so the
+    # paste-ready post ALWAYS ends with the tags even when post_copy omits
+    # them (it did on 2026-07-22, the maintainer pastes this block whole).
+    tags = [t if str(t).startswith("#") else f"#{t}" for t in (copy.get("hashtags") or [])]
+    if tags and not post_copy_text.rstrip().endswith(tags[-1]):
+        if "#" not in post_copy_text.split("\n")[-1]:
+            post_copy_text = post_copy_text.rstrip() + "\n\n" + " ".join(tags)
     # aftercare -> synthesized default when the copywriter omits it, so the
     # "where reach is won" block is never empty.
     aftercare_items = copy.get("aftercare") or DEFAULT_AFTERCARE

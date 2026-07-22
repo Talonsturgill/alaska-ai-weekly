@@ -1,0 +1,155 @@
+{
+ "_spec": {
+  "purpose": "Caption variety-engine ledger. The caption room MUST read this before writing and the showrunner MUST append after delivery. Divergence rules (hard constraints): opening_move must differ from the last 6 entries; structure from the last 3; closing_move phrasing from the last 1; the caption's first 4 words must not match any of the last 12 entries (caption_check --ledger enforces mechanically). Novel moves are encouraged, name them NEW:<name> and add them to CAPTION_CRAFT.md.",
+  "entry_schema": {
+   "run_date": "YYYY-MM-DD",
+   "opening_move": "from CAPTION_CRAFT.md",
+   "structure": "from CAPTION_CRAFT.md",
+   "closing_move": "fork|stake|prediction|who-decides|price|NEW:...",
+   "first_words": "first 8 words of the shipped caption",
+   "hook_type": "free text"
+  }
+ },
+ "entries": [
+  {
+   "run_date": "2026-07-08",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Alaska got more than 500 public comments on",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-09",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "A hand-clicker on a Bristol Bay tower has",
+   "hook_type": "statement",
+   "furniture": false,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-10",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Three Alaska volcanoes are on elevated alert at",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-11",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "On July 10, state regulators rejected Alaska's plan",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-12",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Five teams are racing across 1,000 square kilometers",
+   "hook_type": "statement",
+   "furniture": false,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-13",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Golden Valley Electric's board weighs $120 million in",
+   "hook_type": "statement",
+   "furniture": false,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-14",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "An Alaska Native-owned firm just won a $24.96M",
+   "hook_type": "statement",
+   "furniture": false,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-15",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Alaska just won a decade-scale federal bet to",
+   "hook_type": "statement",
+   "furniture": false,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-17",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Quinhagak has no road out, so the roadless",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-18",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "A data center on the North Slope cannot",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-19",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Under one road in Utqiagvik, the northernmost US",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-20",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "A Kenai school district bought an $8,300 AI",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-21",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Cook Inlet has about 331 belugas left, and",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  },
+  {
+   "run_date": "2026-07-22",
+   "opening_move": "LEGACY STANDARD",
+   "structure": "hook-context-deckpointer-question",
+   "closing_move": "bolted question",
+   "first_words": "Alaska is moving to hand 31 square miles",
+   "hook_type": "statement",
+   "furniture": true,
+   "note": "seeded from history 2026-07-22; the shape the variety engine exists to retire"
+  }
+ ]
+}

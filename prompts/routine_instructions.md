@@ -28,8 +28,9 @@ maintainer can post in ninety seconds.
    Never silently exit; never silently ship garbage.
 7. Subagent spawning is BOUNDED and showrunner-only. Only the showrunner
    spawns subagents, and only the fixed planned set each phase names (6
-   scouts; 1 fact-checker; 3 treatment-directors; 1 copywriter; pixel-critics
-   one per 1 to 2 slides; 1 flow-critic; 1 scorer; 1 upgrade-engineer). Never
+   scouts; 1 fact-checker; 3 treatment-directors; 2 caption-directors; 1
+   caption-critic; 1 copywriter; pixel-critics one per 1 to 2 slides; 1
+   flow-critic; 1 scorer; 1 upgrade-engineer). Never
    spawn agents beyond that planned set on your own initiative, and a subagent
    is a leaf worker that must NEVER spawn its own subagents. An agent once
    chose, on its own, to spawn about 20 extra agents and burned tokens for
@@ -52,6 +53,7 @@ maintainer can post in ninety seconds.
   `config/sources.yaml` (seeds + sourcing rules),
   `config/scoring_rubric.yaml` (the gate).
 - Ledgers: `ledger/topics.json`, `ledger/artwork.json`,
+  `ledger/captions.json` (the caption variety engine),
   `ledger/instincts.json` — read at wake, append at retro — plus
   `ledger/upgrades.json`, the automation-change trail appended by
   Phase 12 and surfaced in every Gmail draft, and `ledger/docket.json`,
@@ -61,7 +63,7 @@ maintainer can post in ninety seconds.
   render.py, qa.py, assemble.py, bootstrap.sh). Art libraries and geodata
   under `assets/` (see SKILL.md).
 - Subagents (Task tool): `scout`, `fact-checker`, `treatment-director`,
-  `copywriter`, `pixel-critic`, `flow-critic`, `scorer`,
+  `caption-director`, `caption-critic`, `copywriter`, `pixel-critic`, `flow-critic`, `scorer`,
   `upgrade-engineer` (Phase 12; pinned to Opus).
 - Scripts: `scripts/caption_check.py`, `scripts/gmail_draft.py`.
 - Built-in WebSearch/WebFetch for all research (they route through
@@ -227,14 +229,40 @@ This is where the deck is actually made. Spend real effort here.
    in the mono face near the brand mark, per CAROUSEL_CRAFT); >= 2 continuity devices; every number on
    every slide has a claim-id; the variety divergence is stated.
 
-## PHASE 6 — COPY CHAMBER
+## PHASE 6 — COPY CHAMBER (the caption room)
 
-Spawn `copywriter` with the storyboard + claims + brand.yaml. Apply its
-slide-copy corrections back into the storyboard. Write the post copy to
-`out/<date>/caption.txt` and run:
-`python scripts/caption_check.py out/<date>/caption.txt`
-If FAIL: fix (yourself or via one more copywriter round) and re-lint
-until PASS. Save the final copywriter JSON to `out/<date>/copy.json`.
+The caption is conceived fresh per run, never a filled template. Read
+`ledger/captions.json` and `knowledge/CAPTION_CRAFT.md` first.
+
+1. THE ASSIGNMENTS. From CAPTION_CRAFT's menus, pick TWO different opening
+   moves and structures that honor the ledger's divergence rules (opening
+   move differs from the last 6 entries, structure from the last 3, closing
+   phrasing from the last 1). Pick the two the STORY most rewards, then let
+   the room fight it out.
+2. THE ROOM. Spawn TWO `caption-director` agents in parallel, one
+   assignment each, both with the claims, the storyboard, and the recent
+   ledger entries. Each returns one complete caption candidate.
+3. THE JUDGE. Spawn `caption-critic` with both candidates, the ledger, and
+   the claims. Apply its verdict: ship the winner, apply its one fix, or on
+   "neither" reassign per its recommendation and re-run ONE director once
+   (cap one extra round, then the showrunner writes the caption itself under
+   the same laws).
+4. Spawn `copywriter` with the WINNING caption, storyboard, claims, and
+   brand.yaml for everything else it owns: the first-comment source block,
+   document title, slide-copy polish, and aftercare. The caption itself is
+   the room's, byte for byte. `post_copy` in copy.json MUST be the final
+   linted caption verbatim, INCLUDING the hashtag line (2026-07-22 shipped
+   without tags because post_copy diverged from the caption; gmail_draft now
+   re-appends the canonical tags as a last resort, but never rely on it).
+5. Write the winner to `out/<date>/caption.txt` and run:
+   `python scripts/caption_check.py out/<date>/caption.txt --ledger ledger/captions.json`
+   If FAIL: fix and re-lint until PASS (the variety gates fail repeated
+   openings and banned furniture, see CAPTION_CRAFT).
+6. Save the final JSON to `out/<date>/copy.json` with the room's
+   `opening_move`, `structure`, and `closing_move` carried in a
+   `caption_meta` field. At ship (Phase 11), append the ledger entry to
+   `ledger/captions.json` (run_date, moves, first 8 words, hook_type) in the
+   same commit as the run artifacts.
 HARD RULE (2026-07-21): the post copy NEVER contains a sources list,
 source citations, music or audio credits, credits of any kind, or URLs.
 All of that lives ONLY in the paste-ready comment blocks (sources in the
