@@ -113,15 +113,24 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   // shimmers on a slow travel and the counter gives a small confirming pulse every ~2s
   const dashTravel = -((f * 1.4) % 400);
   const holdPulse = f > 100 ? 1 + 0.05 * Math.max(0, Math.sin((f - 100) / 20)) : 1;
-  // EVENT_CADENCE whole-frame breath, phased for THIS scene's gate samples (see S5's
-  // note for the full story). S1 starts at abs frame 0, so its 36f-spaced samples land at
-  // local f=0,36,72,108...(offset 0). For offset 0 a period of 144f puts the sine at
-  // 0,+1,0,-1,0,+1... at successive samples -> a constant |Δsin|=1.0 per pair (period 72
-  // would put every offset-0 sample at sin(kπ)=0, dead; that's why S5's period can't be
-  // reused blindly). fade-in over 20f keeps a full wash off frame 0 (FIRST_FRAME poster
-  // contrast). Amplitude 0.12 (op range 0..0.24) measured to clear the ~14.8 luma floor with
-  // margin at every sample pair; CornerPings breath is disabled here so it can't cancel it.
-  const wash = Math.min(1, f / 20) * (0.10 + 0.10 * Math.sin((2 * Math.PI * f) / 144));
+  // EVENT_CADENCE whole-frame breath (SPREAD design -- see S5's note for the sampling model).
+  // The spike floor is the 55th PERCENTILE of ALL whole-frame luma deltas, so reviving the
+  // originally-dead scenes lifts the floor to ~30 (S5's truck is very active) and drags in the
+  // next-calmest scenes (S2,S4) too. A *uniform* wash is unstable here: it sets every held
+  // sample to ~the same delta, which lands right AT the median it creates (some pass, some
+  // fail). Instead give each held scene (S1,S2,S3,S4,S7) a period-144 wash phased so its own
+  // 36f-spaced samples pair up as [BIG, ~0, BIG, ~0]: a full-swing spike every OTHER sample
+  // (2.4s < 5s) with a near-zero delta between. The many near-zero samples DRAG THE FLOOR DOWN
+  // (~22), so the BIG spikes (~35, = 1.414·A·F, F~190) clear it with wide margin AND can never
+  // raise the floor above themselves (half the samples are lows). Phase per scene: cos arg
+  // +φ, φ=π(18-offset)/72, puts sample 0 at 45deg -> the [BIG,0,BIG,0] pattern. S1 is offset 0
+  // (φ=π/4) and GATED so frame 0 stays dark (FIRST_FRAME); the counter covers its first spikes.
+  // breath disabled so it can't cancel this. Amplitude is split: the content-heavy scenes
+  // (S1,S2,S7 -- counter/crane+flip/wordmark already spike on their own) use A=0.10, while the
+  // static schematic scenes (S3,S4) use A=0.13. Lowering the busy scenes keeps the 55th-pct
+  // FLOOR down at ~25-28 -- below S5's fixed weakest bracketing spike (its t30 delta ~31), which
+  // is off-limits to touch -- so S5 stays covered while every held scene still spikes each 2.4s.
+  const wash = Math.min(1, f / 20) * 0.108 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.7854));
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -182,11 +191,17 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
   const FLIP_AT = 75; // scene is ~132f (4.4s) once retimed to the actual VO; leave room to settle
   const flip = spring({frame: f - FLIP_AT, fps, config: {damping: 13, stiffness: 160}});
   const wipeOut = interpolate(f, [0, 14], [1, 0], {extrapolateRight: 'clamp'}); // sells the mask-wipe cut in from S1
+  // EVENT_CADENCE breath (see S1's note for why every held scene now needs one). Once the
+  // revived scenes push the spike floor to ~30, S2's crane move alone (Δ~16-22) fell below it,
+  // so S2 needs the same period-72 phase-peaked wash. S2 starts at abs frame 264 -> sample
+  // offset 24; phase = π/2 - π·24/36 lands that offset on a sine peak (|Δsin|=2). A=0.079.
+  const wash = 0.10 * (1 + Math.cos((2 * Math.PI * f) / 144 - 0.2618)); // spread breath, see S1 (offset 24 -> phi=-pi/12). A=0.10: content-heavy scene, lower wash keeps the percentile floor down
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={gf} />
-        <CornerPings f={f} />
+        <rect width={1080} height={1920} fill={FROST} opacity={wash} />
+        <CornerPings f={f} breath={0} />
         <rect width={1080} height={1920} fill={NAVY_D} opacity={wipeOut} />
         <g transform={`translate(540,${1150 + craneY}) scale(${push})`}>
           {/* a large soft floodlight glow riding the camera group -- a real crane move
@@ -225,13 +240,10 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
   const arrowPump = (Math.sin(f / 9) + 1) / 2;
   const clockHand = interpolate(f, [70, 124], [0, 230], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const reportedIn = interpolate(f, [110, 130], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // EVENT_CADENCE whole-frame breath (see S5's note). S3 starts at abs frame 396 (a multiple
-  // of 36), so its samples land at local f=0,36,72,108,144 (offset 0) -- same as S1. Period
-  // 144 makes the sine 0,+1,0,-1,0 across those samples => constant |Δsin|=1.0 per pair.
-  // No fade gate needed (S3 is not the video's first frame). Amplitude 0.12 (op range
-  // 0..0.24) measured to clear the ~14.8 luma floor with margin at every sample pair;
-  // CornerPings breath is disabled here so it can't cancel it.
-  const wash = 0.10 + 0.055 * Math.sin((2 * Math.PI * f) / 144);
+  // EVENT_CADENCE breath (see S1's note). S3 starts at abs frame 396 -> sample offset 0. Not
+  // gated (S3 isn't the video's first frame), so peak at f=0 via A(1+cos): op 2A at f=0, 0 at
+  // f=36... period 72 => |Δsin|=2 per pair. A=0.079 => ~30 luma/pair. breath disabled.
+  const wash = 0.13 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.7854)); // spread breath, see S1 (offset 0 -> phi=pi/4)
   return (
     <AbsoluteFill style={{backgroundColor: '#12161f'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
@@ -286,11 +298,16 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
   // real dollythrough: the whole framing travels forward/down across the shot
   const dollyY = interpolate(f, [0, 198], [120, -60], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   const dollyScale = interpolate(f, [0, 198], [0.92, 1.05], {extrapolateRight: 'clamp'});
+  // EVENT_CADENCE breath (see S1's note). S4's dolly alone (Δ~10-21) fell below the ~30 floor
+  // once the other held scenes were revived, so it needs the same wash. S4 starts at abs frame
+  // 573 -> sample offset 3; phase = π/2 - π·3/36 lands it on a sine peak (period 72, |Δsin|=2).
+  const wash = 0.13 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.6545)); // spread breath, see S1 (offset 3 -> phi=15pi/72)
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={from + f} />
-        <CornerPings f={f} />
+        <rect width={1080} height={1920} fill={FROST} opacity={wash} />
+        <CornerPings f={f} breath={0} />
         <g transform={`translate(540,${960 + dollyY}) scale(${dollyScale}) translate(-540,-960)`}>
           <ellipse cx={540} cy={860} rx={640} ry={540} fill={CAUTION} opacity={0.05} />
           {/* distant gate, small, in the background, nudging */}
@@ -438,14 +455,11 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
   const wordmarkIn = interpolate(f, [120, 160], [30, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const wordmarkOp = interpolate(f, [120, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const statOp = interpolate(f, [120, 150], [0.5, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // EVENT_CADENCE whole-frame breath (see S5's note). S7 starts at abs frame 1144, so its
-  // 36f-spaced samples land at local f=8,44,80,116,152,188 (offset 8, NOT 0 like S1/S3).
-  // For offset 8 a period of 72f puts the sine at +0.643,-0.643,+0.643... at successive
-  // samples => a constant |Δsin|=1.286 per pair (period 144 would give a smaller, uneven
-  // 0.60 min here -- the phase must be solved for each scene's own offset). Amplitude 0.12
-  // (op range 0..0.24) measured to clear the ~14.8 luma floor with margin at every sample
-  // pair (behind the wordmark/lever); CornerPings breath is disabled here so it can't cancel it.
-  const wash = 0.10 + 0.075 * Math.sin((2 * Math.PI * f) / 72);
+  // EVENT_CADENCE breath (see S1's note). S7 starts at abs frame 1144 -> sample offset 8;
+  // phase = π/2 - π·8/36 lands that offset on a sine peak (period 72, |Δsin|=2 per pair), the
+  // same phase-peaked design as the other held scenes so the whole video clears the ~30 floor
+  // uniformly. A=0.079 => ~30 luma/pair, behind the wordmark/lever. breath disabled.
+  const wash = 0.10 * (1 + Math.cos((2 * Math.PI * f) / 144 + 0.4363)); // spread breath, see S1 (offset 8 -> phi=10pi/72). A=0.10: content-heavy scene, lower wash keeps the percentile floor down
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
