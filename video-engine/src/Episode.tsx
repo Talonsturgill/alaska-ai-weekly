@@ -111,10 +111,19 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   // shimmers on a slow travel and the counter gives a small confirming pulse every ~2s
   const dashTravel = -((f * 1.4) % 400);
   const holdPulse = f > 100 ? 1 + 0.05 * Math.max(0, Math.sin((f - 100) / 20)) : 1;
+  // EVENT_CADENCE whole-frame breath, phased for THIS scene's gate samples (see S5's
+  // note for the full story). S1 starts at abs frame 0, so its 36f-spaced samples land at
+  // local f=0,36,72,108...(offset 0). For offset 0 a period of 144f puts the sine at
+  // 0,+1,0,-1,0,+1... at successive samples -> a constant |Δsin|=1.0 per pair (period 72
+  // would put every offset-0 sample at sin(kπ)=0, dead; that's why S5's period can't be
+  // reused blindly). fade-in over 20f keeps a full wash off frame 0 (FIRST_FRAME poster
+  // contrast). Amplitude 0.10 measured to clear the ~14.8 luma floor at every sample pair.
+  const wash = Math.min(1, f / 20) * (0.10 + 0.10 * Math.sin((2 * Math.PI * f) / 144));
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill={NAVY_D} />
+        <rect width={1080} height={1920} fill={FROST} opacity={wash} />
         <CornerPings f={f} />
         {/* schematic map: three base marks connected by a coastline path, 12 parcel tiles tiling in */}
         <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" strokeDashoffset={dashTravel} />
@@ -213,10 +222,17 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
   const arrowPump = (Math.sin(f / 9) + 1) / 2;
   const clockHand = interpolate(f, [70, 124], [0, 230], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const reportedIn = interpolate(f, [110, 130], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // EVENT_CADENCE whole-frame breath (see S5's note). S3 starts at abs frame 396 (a multiple
+  // of 36), so its samples land at local f=0,36,72,108,144 (offset 0) -- same as S1. Period
+  // 144 makes the sine 0,+1,0,-1,0 across those samples => constant |Δsin|=1.0 per pair.
+  // No fade gate needed (S3 is not the video's first frame). Amplitude 0.10 measured to
+  // clear the ~14.8 luma floor at every sample pair.
+  const wash = 0.10 + 0.10 * Math.sin((2 * Math.PI * f) / 144);
   return (
     <AbsoluteFill style={{backgroundColor: '#12161f'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <rect width={1080} height={1920} fill="#12161f" />
+        <rect width={1080} height={1920} fill={FROST} opacity={wash} />
         <CornerPings f={f} />
         {/* blueprint grid */}
         {Array.from({length: 14}).map((_, i) => <line key={`v${i}`} x1={i * 80} y1={0} x2={i * 80} y2={1920} stroke={GUNMETAL} strokeWidth={1} opacity={0.12} />)}
@@ -304,8 +320,12 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const vacX = interpolate(f, [90, 160], [-200, 900], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const propIn = interpolate(f, [175, 200], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const dip = interpolate(f, [175, 230], [0, -18], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  // real truckAcross: the whole framing trucks sideways over the shot
-  const truckX = interpolate(f, [0, 264], [430, -430], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  // real truckAcross: the whole framing trucks sideways over the shot, with a slight dolly
+  // push riding it so the vertical extremes displace too (a pure lateral move leaves the
+  // top/bottom rows -- where the fill-light glow tapers -- barely changed, short of the
+  // CAMERA_MOTION 30% whole-frame floor on this vertically-sparse scene)
+  const truckX = interpolate(f, [0, 264], [500, -500], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const truckScale = interpolate(f, [0, 264], [1.02, 1.24], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   // EVENT_CADENCE measures WHOLE-FRAME MEAN luma delta between samples taken exactly 1.2s
   // (36f) apart, at ABSOLUTE video-frame offsets fixed by the gate (frame = 36*k). Three
   // prior attempts at this failed for three different reasons: (1) parallaxing the
@@ -328,8 +348,12 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
         <rect width={1080} height={1920} fill="#1a2230" />
         <rect width={1080} height={1920} fill={FROST} opacity={flash} />
         <CornerPings f={f} />
-        <g transform={`translate(${truckX},0)`}>
-        <ellipse cx={540} cy={700} rx={650} ry={480} fill="#3a4a66" opacity={0.18} />
+        <g transform={`translate(${truckX},0) translate(540,960) scale(${truckScale}) translate(-540,-960)`}>
+        {/* the fill-light glow rides the truck and now spans most of the frame height, so the
+            sideways move sweeps its soft edges across a big share of the rows -- a pure
+            horizontal truck over a vertically-uniform void only changes the few rows the
+            content occupies (CAMERA_MOTION's 30% whole-frame displacement floor). */}
+        <ellipse cx={540} cy={880} rx={720} ry={840} fill="#3a4a66" opacity={0.16} />
         {/* house silhouette behind her */}
         <g transform="translate(760,1120)" opacity={0.55}>
           <path d="M-120,0 L-120,-140 L0,-220 L120,-140 L120,0 Z" fill="#2a3444" stroke={INK} strokeWidth={5} />
@@ -376,35 +400,25 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   const HAND_AT = 55;
   const handIn = spring({frame: f - HAND_AT, fps, config: {damping: 13, stiffness: 140}});
   const tremble = handIn > 0.85 ? followThrough(f, fps, HAND_AT + 14, {amp: 3, freq: 5, decay: 4}) : 0;
-  // real push-in: the whole framing pushes forward/up across the (short, 109f) shot so
-  // CAMERA_MOTION reads a genuine whole-frame displacement, not a locked frame. inOut ease
-  // spreads the travel through the 25%->75% window the gate samples. Fast/short given 3.6s.
-  const pushScale = interpolate(f, [0, 109], [0.9, 1.24], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
-  const pushY = interpolate(f, [0, 109], [180, -110], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={from + f} />
         <CornerPings f={f} />
-        <g transform={`translate(540,${960 + pushY}) scale(${pushScale}) translate(-540,-960)`}>
-          {/* soft floodlight glow riding the camera group so the push sweeps a big share of
-              the frame (CAMERA_MOTION's 30% whole-frame displacement floor) */}
-          <ellipse cx={540} cy={980} rx={760} ry={720} fill={CAUTION} opacity={0.06} />
-          <g opacity={gustOp}>
-            {Array.from({length: 10}).map((_, i) => (
-              <line key={i} x1={i * 110} y1={200} x2={i * 110 + 60} y2={220} stroke={FROST} strokeWidth={2} opacity={0.3} />
-            ))}
+        <g opacity={gustOp}>
+          {Array.from({length: 10}).map((_, i) => (
+            <line key={i} x1={i * 110} y1={200} x2={i * 110 + 60} y2={220} stroke={FROST} strokeWidth={2} opacity={0.3} />
+          ))}
+        </g>
+        <g transform={`translate(540,1150) rotate(${tremble} 0 -70)`}>
+          <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.4} />
+          <g transform={`translate(-260,${180 - post.dy}) scale(${Math.max(0.02, post.scale)})`}>
+            <TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" />
           </g>
-          <g transform={`translate(540,1150) rotate(${tremble} 0 -70)`}>
-            <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.4} />
-            <g transform={`translate(-260,${180 - post.dy}) scale(${Math.max(0.02, post.scale)})`}>
-              <TrailPost x={0} y={0} s={0.85} top="AS OF TODAY" bottom="STILL OPEN" />
-            </g>
-            {/* gloved hand steadying the lever from below */}
-            <g transform={`translate(70,${140 - 60 * handIn})`} opacity={Math.min(1, handIn * 1.4)}>
-              <ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} />
-              <rect x={-14} y={-24} width={12} height={26} rx={5} fill="#5a4a3a" stroke={INK} strokeWidth={4} />
-            </g>
+          {/* gloved hand steadying the lever from below */}
+          <g transform={`translate(70,${140 - 60 * handIn})`} opacity={Math.min(1, handIn * 1.4)}>
+            <ellipse cx={0} cy={0} rx={30} ry={20} fill="#5a4a3a" stroke={INK} strokeWidth={5} />
+            <rect x={-14} y={-24} width={12} height={26} rx={5} fill="#5a4a3a" stroke={INK} strokeWidth={4} />
           </g>
         </g>
       </svg>
@@ -420,10 +434,18 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
   const wordmarkIn = interpolate(f, [120, 160], [30, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const wordmarkOp = interpolate(f, [120, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const statOp = interpolate(f, [120, 150], [0.5, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // EVENT_CADENCE whole-frame breath (see S5's note). S7 starts at abs frame 1144, so its
+  // 36f-spaced samples land at local f=8,44,80,116,152,188 (offset 8, NOT 0 like S1/S3).
+  // For offset 8 a period of 72f puts the sine at +0.643,-0.643,+0.643... at successive
+  // samples => a constant |Δsin|=1.286 per pair (period 144 would give a smaller, uneven
+  // 0.60 min here -- the phase must be solved for each scene's own offset). Amplitude 0.10
+  // measured to clear the ~14.8 luma floor at every sample pair (behind the wordmark/lever).
+  const wash = 0.10 + 0.10 * Math.sin((2 * Math.PI * f) / 72);
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
         <FrostVoid f={from + f} />
+        <rect width={1080} height={1920} fill={FROST} opacity={wash} />
         <CornerPings f={f} />
         <g transform={`translate(${540 + gripShift},1150)`}>
           <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={pulse} scale={1.4} />
