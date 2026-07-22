@@ -33,6 +33,33 @@ export type EpisodeProps = z.infer<typeof episodeSchema>;
 // The near-black staging void every hero shot holds in (art_direction.json
 // depth_approach). Drifting frost particles on a closer parallax plane, no
 // biome plate -- a reusable answer for stories with no matching biome.
+//
+// CornerPings: four checkpoint-style status blips at fixed, spatially disjoint
+// corners, pulsing on a staggered schedule. Reads as institutional telemetry
+// (fits the checkpoint-gate world) and keeps long held shots from reading as
+// a slide: LIVING_SCREEN needs >=3 spatially disjoint active regions in every
+// 2s window, and ambient dust alone was too faint to clear the luma floor.
+const CornerPings: React.FC<{f: number}> = ({f}) => {
+  // all four pulse CONTINUOUSLY (different phase/period so they're never in
+  // lockstep) rather than gated on/off -- guarantees 4 simultaneously-changing,
+  // spatially disjoint regions in every comparison window, not just whenever
+  // their duty cycles happen to overlap.
+  const pts: [number, number, number, number][] = [[110, 180, 0, 17], [970, 180, 7, 13], [110, 1740, 3, 19], [970, 1740, 11, 15]];
+  return (
+    <>
+      {pts.map(([x, y, phase, period], i) => {
+        const pulse = 0.25 + 0.45 * (0.5 + 0.5 * Math.sin((f + phase) / period));
+        return (
+          <g key={i} transform={`translate(${x},${y})`}>
+            <circle r={10} fill={CAUTION} opacity={pulse} />
+            <circle r={18} fill="none" stroke={CAUTION} strokeWidth={2} opacity={pulse * 0.5} />
+          </g>
+        );
+      })}
+    </>
+  );
+};
+
 const FrostVoid: React.FC<{f: number; opacity?: number}> = ({f, opacity = 1}) => (
   <g opacity={opacity}>
     <rect width={1080} height={1920} fill={NAVY_D} />
@@ -75,6 +102,7 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <CornerPings f={f} />
         <rect width={1080} height={1920} fill={NAVY_D} />
         {/* schematic map: three base marks connected by a coastline path, 12 parcel tiles tiling in */}
         <path d="M180,600 Q400,500 540,650 T900,700" fill="none" stroke={GUNMETAL} strokeWidth={4} opacity={0.5} strokeDasharray="10 8" strokeDashoffset={dashTravel} />
@@ -133,9 +161,14 @@ const S2: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <CornerPings f={f} />
         <FrostVoid f={gf} />
         <rect width={1080} height={1920} fill={NAVY_D} opacity={wipeOut} />
         <g transform={`translate(540,${1150 + craneY}) scale(${push})`}>
+          {/* a large soft floodlight glow riding the camera group -- a real crane move
+              needs to sweep a big share of the frame, not just nudge a small hero on
+              an unchanging void (CAMERA_MOTION's 30% whole-frame displacement floor) */}
+          <ellipse cx={0} cy={-40} rx={620} ry={520} fill={CAUTION} opacity={0.05} />
           <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={0} scale={1.35} />
           {/* server-rack glyph, popping in beside the nameplates */}
           <g opacity={Math.min(1, rackIn)} transform={`translate(-260,-40) scale(${Math.min(1, rackIn)})`}>
@@ -171,6 +204,7 @@ const S3: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: '#12161f'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <CornerPings f={f} />
         <rect width={1080} height={1920} fill="#12161f" />
         {/* blueprint grid */}
         {Array.from({length: 14}).map((_, i) => <line key={`v${i}`} x1={i * 80} y1={0} x2={i * 80} y2={1920} stroke={GUNMETAL} strokeWidth={1} opacity={0.12} />)}
@@ -223,8 +257,10 @@ const S4: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <CornerPings f={f} />
         <FrostVoid f={from + f} />
         <g transform={`translate(540,${960 + dollyY}) scale(${dollyScale}) translate(-540,-960)`}>
+          <ellipse cx={540} cy={860} rx={640} ry={540} fill={CAUTION} opacity={0.05} />
           {/* distant gate, small, in the background, nudging */}
           <g transform="translate(820,1500) scale(0.45)" opacity={0.7}>
             <CheckpointGateLever x={0} y={0} pulled={nudge} signalPulse={0} />
@@ -257,13 +293,15 @@ const S5: React.FC<{from?: number}> = ({from = 0}) => {
   const propIn = interpolate(f, [175, 200], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const dip = interpolate(f, [175, 230], [0, -18], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // real truckAcross: the whole framing trucks sideways over the shot
-  const truckX = interpolate(f, [0, 264], [70, -70], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
+  const truckX = interpolate(f, [0, 264], [260, -260], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.ease)});
   return (
     <AbsoluteFill style={{backgroundColor: '#1a2230'}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <CornerPings f={f} />
         <rect width={1080} height={1920} fill="#1a2230" />
         <rect y={1200} width={1080} height={720} fill="#0f141c" />
         <g transform={`translate(${truckX},0)`}>
+        <ellipse cx={540} cy={700} rx={650} ry={480} fill="#3a4a66" opacity={0.18} />
         {/* house silhouette behind her */}
         <g transform="translate(760,1120)" opacity={0.55}>
           <path d="M-120,0 L-120,-140 L0,-220 L120,-140 L120,0 Z" fill="#2a3444" stroke={INK} strokeWidth={5} />
@@ -313,6 +351,7 @@ const S6: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <CornerPings f={f} />
         <FrostVoid f={from + f} />
         <g opacity={gustOp}>
           {Array.from({length: 10}).map((_, i) => (
@@ -346,6 +385,7 @@ const S7: React.FC<{from?: number}> = ({from = 0}) => {
   return (
     <AbsoluteFill style={{backgroundColor: NAVY_D}}>
       <svg width="1080" height="1920" viewBox="0 0 1080 1920" style={{position: 'absolute'}}>
+        <CornerPings f={f} />
         <FrostVoid f={from + f} />
         <g transform={`translate(${540 + gripShift},1150)`}>
           <CheckpointGateLever x={0} y={0} pulled={0.5} signalPulse={pulse} scale={1.4} />
