@@ -99,7 +99,8 @@ def _norm_words(s):
     # word, the bigram won't be present to join. Extend the set as new compounds recur.
     _COMPOUNDS = {("air", "strip"): "airstrip", ("mega", "fire"): "megafire",
                   ("wild", "fire"): "wildfire", ("data", "center"): "datacenter",
-                  ("data", "centers"): "datacenters", ("grid", "lock"): "gridlock"}
+                  ("data", "centers"): "datacenters", ("grid", "lock"): "gridlock",
+                  ("air", "base"): "airbase"}
     joined, i = [], 0
     while i < len(out):
         if i + 1 < len(out) and (out[i], out[i + 1]) in _COMPOUNDS:

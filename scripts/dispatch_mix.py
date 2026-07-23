@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-07-22"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-07-23"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -80,40 +80,33 @@ _TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
 VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never hardcode
 
 EVENTS = [
-    # S1 (line 0): the acreage counter ticks up over the tiling parcel map
-    (L[0] + 0.0,  "tick",   "standard", 0.0),
-    # S1->S2 mask-wipe into the checkpoint gate (fires near the end of S1's hold)
-    (L[1] - 0.2,  "whoosh", "standard", 0.0),
-    # S2 (line 1): the server-rack glyph pops in, the base nameplates stamp down
-    (L[1] + 0.3,  "pop",    "standard", -0.2),
-    (L[1] + 0.8,  "stamp",  "standard", 0.0),
-    # S2 (line 2, "It's not a sale"): the StatCard flip
-    (L[2] + 0.1,  "pop",    "standard", -0.1),
-    # S3 (line 3): the EUL cutaway — the deed stamps DAF, the clock cranks
-    (L[3] + 0.2,  "stamp",  "hero", 0.0),
-    (L[3] + 2.3,  "tick",   "standard", 0.0),
-    # S4 (line 4): MachineShadow presents the Moriarty card, the lever nudges
-    (L[4] + 1.0,  "creak",  "standard", 0.2),
-    (L[5] - 0.2,  "whoosh", "standard", 0.3),
-    # S5 (line 5): Hollister turns, the vacuum drone passes, the property-value dip
-    (L[5] + 0.13, "creak",  "standard", -0.2),
-    (L[5] + 5.3,  "whoosh", "hero", 0.4),
-    (L[6] - 1.14, "tick",   "standard", 0.3),
-    # S6 (line 6): match-cut return to the frozen lever — THE turn, one riser
-    (L[6] + 0.0,  "riser",  "hero", 0.0),
-    (L[6] + 0.5,  "stamp",  "standard", -0.3),
-    (L[7] + 0.21, "creak",  "standard", 0.3),
-    # S7 (line 8): the signal pulses once, then the loop tick
-    (L[8] + 2.0,  "ding",   "standard", 0.0),
-    (VIDEO_SECS - _TAIL - 0.4, "tick", "standard", 0.0),
-    # S7 closing hold (wordmark rise / loop point): one soft caution-yellow
-    # signal-light pulse as the sole terminal event — the quiet "button" on the
-    # held breath, sonifying the 41.8s->end tail so the ear keeps advancing with
-    # the eye into the hard loop (bell family, non-consecutive with the loop tick)
-    (VIDEO_SECS - _TAIL + 1.3, "chime", "standard", 0.0),
+    # S1 (line 0): the reticle sweeps the silt, then the pixel grid locks onto the smudge
+    (L[0] + 1.0,  "tick",   "standard", 0.0),
+    (L[0] + 3.0,  "snap",   "hero",     0.0),
+    # S2 (line 1): the 331 badge pops in, the decline curve plunges
+    (L[1] + 0.2,  "pop",    "standard", 0.0),
+    (L[1] + 2.8,  "boom",   "standard", -0.2),
+    # S3 (line 2): the SatelliteEye rises to orbit — the one riser
+    (L[2] + 0.3,  "riser",  "hero",     0.0),
+    # S4 (lines 3-4): GAIA/partners click in, the conveyor runs, the annotation hand stamps
+    (L[3] + 0.4,  "ding",   "standard", 0.0),
+    (L[4] + 0.2,  "tick",   "standard", -0.4),
+    (L[4] + 2.5,  "stamp",  "hero",     0.0),
+    # S5 (lines 5-6): the satellite strains, then tilts straight down (cone shaft)
+    (L[5] + 0.3,  "creak",  "standard", 0.0),
+    (L[6] + 0.2,  "whoosh", "standard", 0.0),
+    # S6 (lines 7-8): the airspace rings crowd in, the cone squeezes, JUNE 2025 stamps empty, the '?'
+    (L[7] + 0.2,  "boom",   "hero",     -0.3),
+    (L[7] + 2.5,  "clank",  "standard", 0.3),
+    (L[8] + 0.2,  "stamp",  "standard", 0.0),
+    (L[8] + 3.2,  "pop",    "standard", 0.0),
+    # S7 (lines 9-10): the hopeful chime as the whale brightens, the reticle settles, the terminal button
+    (L[9] + 0.3,  "chime",  "standard", 0.0),
+    (L[10] + 0.2, "tick",   "standard", 0.0),
+    (VIDEO_SECS - _TAIL + 1.0, "chime", "standard", 0.0),
 ]
 
-SILENCE_DIP_AT = L[8] - 0.6  # the breath before the closing question (the >=6dB gate dip)
+SILENCE_DIP_AT = L[10] - 0.6  # the breath before the closing question (the >=6dB gate dip)
 DIP_LEN = 0.8
 
 

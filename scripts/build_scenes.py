@@ -19,7 +19,11 @@ TAIL = 2.6  # hold after the last word
 # return, covers "nobody picked"+"still open"), S7 line8 (closing question+hold+loop).
 # (keep this list's length equal to SCENE_COMPONENTS.length every run -- an earlier list
 # here silently mismatched it once and Episode fell back to hardcoded DEFAULT_BOUNDS.)
-SCENE_START_LINE = [0, 1, 3, 4, 5, 6, 8]
+# 2026-07-23 "Counting Belugas From Orbit": 7 scenes (S1..S7) onto 11 VO lines.
+# S1 L0 (silt/find-the-whale), S2 L1 (331+decline), S3 L2 (from space, SatelliteEye),
+# S4 L3-L4 (GAIA+partners, the learning pipeline), S5 L5-L6 (cannot-count-yet, needs a
+# clear look), S6 L7-L8 (June 2025 empty, sky booked), S7 L9-L10 (holding on, the question).
+SCENE_START_LINE = [0, 1, 2, 3, 5, 7, 9]
 
 
 def _apply_caption_fixups(caps):
