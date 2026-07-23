@@ -824,3 +824,49 @@ dispatch_history:
     register: editorial-schematic
     camera_strategy: locked-drift
     light_story: night-practical
+- date: '2026-07-23'
+  topic: 'NOAA/USGS GAIA machine-vision learning to find the endangered Cook Inlet
+    belugas (about 331 left, ESA-listed 2008, down ~80% since 1979) in very-high-resolution
+    satellite imagery via the USGS EarthExplorer API, with expert annotation; experimental,
+    not deployed. Honest turn: June 2025 tasking aligned with the aerial survey yielded
+    no imagery, NOAA says likely competing priorities near the Port of Anchorage and
+    JBER; whether space-based monitoring supplements the aerial counts turns on getting
+    clear satellite passes over one crowded slice of sky.'
+  slug: beluga-from-orbit
+  key_entities:
+  - cook inlet beluga
+  - noaa gaia
+  - geospatial ai for animals
+  - usgs earthexplorer
+  - microsoft ai for good
+  - naval research laboratory
+  - satellite machine vision
+  - endangered beluga
+  - aerial abundance survey
+  - kim goetz
+  - port of anchorage
+  - jber
+  - cook inlet
+  archetype: ''
+  palette: Cook Inlet pewter-teal silt, orbital blue-black, detection cyan to warning
+    amber, beluga bone-white
+  voice: ''
+  stance: curious
+  angle: A new orbital eye is learning to find Alaska's rarest whales, and the honest
+    question is whether the sky it needs ever stays open.
+  hero: SatelliteEye
+  cast:
+  - SatelliteEye
+  - Beluga
+  composition:
+    pov: top-down-map
+    motion_vector: radial-emanate
+    hero_treatment: data-as-subject
+    layout: hud-instrument-frame
+    register: instrument-readout
+    camera_strategy: aerial-descent
+    light_story: overcast-diffuse
+    palette: Cook Inlet pewter-teal silt, orbital blue-black, detection cyan to warning
+      amber, beluga bone-white
+    metaphor: teaching a computer to find a nearly invisible whale in a muddy satellite
+      pixel, and the one clear slice of sky it needs is already booked

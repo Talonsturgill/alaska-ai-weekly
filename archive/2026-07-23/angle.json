@@ -1,0 +1,21 @@
+{
+  "thesis": "NOAA is teaching a computer to find Alaska's most endangered whales from space, a genuinely new way to see the nearly unseeable. It cannot count belugas yet, and whether it ever can turns on one very Alaskan question, can it get a clear, repeated look through a slice of sky that Anchorage's port and Elmendorf already fill.",
+  "valence": "curious",
+  "register_note": "wonder-forward curiosity. Genuine admiration for the capability leads; the honest open question is the earned turn; the possibly-stabilizing population is the hopeful counterweight. NOT reflexive doom, NOT overclaimed deployment.",
+  "strongest_supporting_facts": [
+    "GAIA (NOAA lead, with USGS, Microsoft AI for Good, Naval Research Laboratory) pairs very-high-resolution satellite imagery with machine learning and expert human annotation to build an automated beluga-detection system, and automates imagery retrieval through the USGS EarthExplorer API.",
+    "The Cook Inlet belugas are genuinely hard to see (turbid glacial-silt water) and down to a best estimate of 331 (2022 aerial survey), after an ~80% fall from ~1,300 in 1979, though the trend may now be stabilizing and possibly increasing.",
+    "In June 2025, satellite tasking aligned with the aerial abundance survey yielded NO imagery for the month, likely due to competing priorities near the Port of Anchorage and Joint Base Elmendorf-Richardson."
+  ],
+  "fair_counterpoint_to_honor": "This is early, experimental research being built, not a deployed counter, and it is genuinely worth doing. The 331 count comes from aerial surveys, not the AI. The population may even be recovering. So the honest note is 'a promising, unfinished tool with one very Alaskan dependency', never 'a failed or wasteful system'.",
+  "runner_up_angles": [
+    "Pure CELEBRATION (Alaska as proving ground for a new eye): lost because it risks implying an operational counter and borrowing optimism from the 331 aerial number GAIA did not produce. Its true point (the capability is real and credible) is grafted in as the wonder that opens the piece.",
+    "Pure CAUTION (a data-starved, hard problem): lost because it leans one hedged 'likely' month into a harder alarm than the facts support, tipping toward the reflexive sourness the brand rejects. Its true point (the imagery-starvation is load-bearing, not a footnote) is grafted in as the honest turn."
+  ],
+  "signature_images": [
+    "A near-invisible pale beluga under swirling gray glacial silt, resolving into findability as a satellite reticle and pixel grid settle onto it (the new eye).",
+    "A machine-detection box hovering over that faint shape marked with a QUESTION MARK instead of a confidence score, and a filmstrip frame stamped 'JUNE 2025 - NO IMAGERY' (the honest limit).",
+    "Top-down Cook Inlet silt water, a satellite imaging cone reaching down, crowded by overlapping airspace rings labeled PORT OF ANCHORAGE and JBER: one narrow slice of sky, three claims on it (the Alaskan dependency)."
+  ],
+  "one_story_question": "Can a computer learn to find Alaska's rarest whales from orbit before the sky it needs is booked?"
+}

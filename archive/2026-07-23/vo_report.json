@@ -1,0 +1,60 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 3,
+  "takes": 4,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.98,
+    "heard": "Under the gray silt of Cook Inlet, swims one of the rarest whales on Earth, almost invisible. About 331 Cook Inlet Belugas are left, down roughly 80% since 1979. So NOAA is trying something new. Find them from space. A NOAA project called Gaya, built with USGS, Microsoft, and the Navy. It reads satellite photos and learns from people, one labeled whale at a time. But it cannot count Belugas yet. It is still learning to see. And to work, it needs a clear look straight down. In June 2025, it lined up with the whale survey and came back empty. The Anchorage sky was likely booked, a busy port and an airbase wanting the same slice. The whales may finally be holding on, and this new eye is real. The question is whether the sky it needs ever stays open.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.039,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 8.26,
+        "voiced_frac": 0.62,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 65.16,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean"
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.935,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.974,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.974,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.98,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

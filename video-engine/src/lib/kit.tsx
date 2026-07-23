@@ -639,3 +639,136 @@ export const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: n
     </g>
   );
 };
+
+// ============================================================= SatelliteEye (NET-NEW 2026-07-23)
+// The AI-presence hero for "Counting Belugas From Orbit": a small, earnest imaging
+// satellite whose single downward camera-EYE is the emotional tell. Deliberate shape
+// language: a compact, friendly boxy bus with wide solar wings, the OPPOSITE of a cold
+// institutional monolith -- an earnest little worker looking down at Earth. NOT a
+// server box; the honest embodiment of a satellite doing machine vision.
+//   emotion: 'searching' (iris wide, sweeping) | 'straining' (squint + optional sweat)
+//            | 'found' (iris CLAMPS small+bright, lock ticks) | 'waiting' (droop, dim)
+//   eyeLock 0..1 drives the clamp; accent 0..1 = VO-emphasis reactivity (a gesture kick,
+//   never a mouth); scanCone 0..1 fades in a downward imaging cone; strain 0..1 a comic
+//   squint + sweat bead (used only on the satellite, never the whale). Built to the depth
+//   bar (tones/FormGradient/RimLight/ContactShadow) with idle bob + blink + panel shimmer.
+export type SatEmotion = 'searching' | 'straining' | 'found' | 'waiting';
+export const SatelliteEye: React.FC<{
+  frame: number; x?: number; y?: number; scale?: number; facing?: 1 | -1;
+  emotion?: SatEmotion; eyeLock?: number; accent?: number; scanCone?: number; strain?: number;
+}> = ({frame: f, x = 0, y = 0, scale = 1, facing = 1, emotion = 'searching', eyeLock = 0, accent = 0, scanCone = 0, strain = 0}) => {
+  const bodyT = tones('#9AA6B4');   // cool pewter-gunmetal bus
+  const cellT = tones('#2b3a6b');   // indigo solar cells
+  const idg = `sat${Math.round(x)}_${Math.round(y)}`;
+  const bob = 5 * Math.sin(f / 17) + accent * 4;
+  const lock = Math.max(0, Math.min(1, eyeLock));
+  // iris: wide + sweeping while searching, CLAMPS small + bright when found (locked)
+  const sweep = emotion === 'searching' ? 6 * Math.sin(f / 9) : 0;
+  const squint = emotion === 'straining' ? 6 : 0;
+  const iris = 26 - lock * 15 - squint + (emotion === 'searching' ? 2 * Math.sin(f / 6) : 0);
+  const found = emotion === 'found' || lock > 0.5;
+  const irisColor = found ? '#FFC94A' : '#37e0d8';   // cyan scanning -> amber found
+  const irisEdge = found ? '#FF8A3D' : '#1aa39c';
+  const eyeGlow = 0.45 + 0.5 * lock + accent * 0.4;
+  const blink = ((f + 20) % 165) < 5 && lock < 0.3;
+  const dishBlink = (f % 44) < 22;
+  const wingFlutter = 1.5 * Math.sin(f / 23);
+  const droop = emotion === 'waiting' ? 8 : 0;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={`${idg}_b`} t={bodyT} />
+      <FormGradient id={`${idg}_c`} t={cellT} softness={0.6} />
+      {/* downward imaging cone (fades in for the scan beats) */}
+      {scanCone > 0.01 && (
+        <g opacity={scanCone * 0.5}>
+          <path d="M-30,150 L-150,560 L150,560 L30,150 Z" fill={found ? '#FFC94A' : '#37e0d8'} opacity={0.10} />
+          <path d="M-30,150 L-150,560" stroke={found ? '#FFC94A' : '#37e0d8'} strokeWidth={3} opacity={0.5} />
+          <path d="M30,150 L150,560" stroke={found ? '#FFC94A' : '#37e0d8'} strokeWidth={3} opacity={0.5} />
+          {/* scan sweep line traveling down the cone */}
+          <line x1={-110 - 40 * ((f / 30) % 1) + 40} y1={150 + 410 * ((f / 30) % 1)}
+                x2={110 + 40 * ((f / 30) % 1) - 40} y2={150 + 410 * ((f / 30) % 1)}
+                stroke={found ? '#FFE39A' : '#8ff7f0'} strokeWidth={3} opacity={0.6} />
+        </g>
+      )}
+      <g transform={`translate(0,${bob + droop})`}>
+        {/* ---- solar wings (2), indigo cells on booms ---- */}
+        {[-1, 1].map((s, wi) => (
+          <g key={wi} transform={`translate(${s * 116},0) rotate(${s * wingFlutter})`}>
+            {/* boom */}
+            <path d={`M${-s * 40},0 L0,0`} stroke={INK} strokeWidth={11} strokeLinecap="round" />
+            <path d={`M${-s * 40},0 L0,0`} stroke={bodyT.core} strokeWidth={5} strokeLinecap="round" />
+            {/* panel */}
+            <g transform={`translate(${s * 60},0)`}>
+              <rect x={-52} y={-58} width={104} height={116} rx={5} fill={`url(#${idg}_c)`} stroke={INK} strokeWidth={6} />
+              {/* cell grid */}
+              {[-38, -19, 0, 19, 38].map((cx, i) => <line key={i} x1={cx} y1={-56} x2={cx} y2={56} stroke="#141c38" strokeWidth={2.5} opacity={0.8} />)}
+              {[-40, -20, 0, 20, 40].map((cy, i) => <line key={i} x1={-50} y1={cy} x2={50} y2={cy} stroke="#141c38" strokeWidth={2.5} opacity={0.8} />)}
+              {/* sun glint sweeping across the panel */}
+              <rect x={-52} y={-58} width={104} height={116} rx={5} fill="none" stroke="#9fb4ff" strokeWidth={2} opacity={0.35} />
+              <path d={`M${-52 + 104 * ((f / 90 + wi * 0.5) % 1)},-58 l24,0 l-30,116 l-24,0 Z`} fill="#cde0ff" opacity={0.10} />
+              <RimLight d="M-46,-54 L46,-54" w={3} opacity={0.4} />
+            </g>
+          </g>
+        ))}
+        {/* ---- top: high-gain dish + status light + whip antenna ---- */}
+        <g transform="translate(30,-70)">
+          <line x1={-30} y1={20} x2={0} y2={-6} stroke={INK} strokeWidth={6} />
+          <ellipse cx={6} cy={-14} rx={26} ry={16} fill={`url(#${idg}_b)`} stroke={INK} strokeWidth={5} transform="rotate(-24 6 -14)" />
+          <ellipse cx={6} cy={-14} rx={13} ry={8} fill={bodyT.shade} transform="rotate(-24 6 -14)" opacity={0.6} />
+          <circle cx={6} cy={-14} r={3.5} fill="#e8f0ff" />
+        </g>
+        <g transform="translate(-34,-64)">
+          <rect x={-3} y={-30} width={6} height={34} rx={3} fill={bodyT.core} stroke={INK} strokeWidth={3} />
+          <circle cx={0} cy={-34} r={6} fill={dishBlink ? '#ff5a4d' : '#5a1f1c'} stroke={INK} strokeWidth={2.5} />
+        </g>
+        {/* ---- central bus body ---- */}
+        <g>
+          <ContactShadow cx={0} cy={150} rx={120} ry={20} opacity={0.26} blur={12} />
+          <rect x={-92} y={-58} width={184} height={150} rx={20} fill={`url(#${idg}_b)`} stroke={INK} strokeWidth={OUT} strokeLinejoin="round" />
+          {/* shade side */}
+          <path d="M40,-56 Q90,-52 90,-38 L90,74 Q90,90 44,90 Q86,20 40,-56 Z" fill={bodyT.shade} opacity={0.5} />
+          {/* panel seams + rivets */}
+          <path d="M-72,-30 Q0,-38 72,-30" fill="none" stroke={bodyT.key} strokeWidth={3} opacity={0.45} />
+          <path d="M-80,54 Q0,62 80,54" fill="none" stroke={bodyT.core} strokeWidth={4} opacity={0.4} />
+          {[-66, -30, 30, 66].map((rx2, i) => (
+            <g key={i}><circle cx={rx2} cy={-40} r={5} fill={bodyT.core} stroke={INK} strokeWidth={2.5} /><circle cx={rx2} cy={-40} r={1.8} fill="#eef6ff" opacity={0.8} /></g>
+          ))}
+          {/* thruster nozzles top */}
+          {[-40, 40].map((nx, i) => <rect key={i} x={nx - 8} y={-70} width={16} height={14} rx={3} fill={bodyT.core} stroke={INK} strokeWidth={3} />)}
+          <RimLight d="M-92,-38 Q-92,-58 -72,-58 L72,-58" w={4} opacity={0.55} />
+        </g>
+        {/* ---- brow panels (expression) above the imaging eye ---- */}
+        <g transform="translate(0,10)">
+          <path d={`M-58,${-4 + (found ? 10 : 0) + strain * 6} q22,${-10 - strain * 4} 44,${(found ? 4 : -2)}`} fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          <path d={`M58,${-4 + (found ? 10 : 0) + strain * 6} q-22,${-10 - strain * 4} -44,${(found ? 4 : -2)}`} fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
+        </g>
+        {/* ---- the downward imaging EYE (the emotional tell) ---- */}
+        <g transform={`translate(${sweep},92)`}>
+          {/* lens barrel jutting from the belly, pointing down */}
+          <rect x={-30} y={-6} width={60} height={30} rx={8} fill={`url(#${idg}_b)`} stroke={INK} strokeWidth={5} />
+          <circle cx={0} cy={44} r={46} fill="#0c1120" stroke={INK} strokeWidth={OUT} />
+          <circle cx={0} cy={44} r={46} fill="none" stroke={bodyT.key} strokeWidth={3} opacity={0.5} />
+          {blink ? (
+            <path d="M-34,44 q34,18 68,0" fill="none" stroke={irisColor} strokeWidth={7} strokeLinecap="round" transform="translate(-34,0)" />
+          ) : (
+            <>
+              <circle cx={0} cy={44} r={33} fill="none" stroke={irisColor} strokeWidth={5} opacity={0.4 + 0.45 * eyeGlow} />
+              <circle cx={0} cy={44} r={Math.max(7, iris)} fill={irisColor} opacity={0.55 + 0.4 * eyeGlow} stroke={irisEdge} strokeWidth={3} />
+              <circle cx={0} cy={44} r={Math.max(3, Math.max(7, iris) * 0.42)} fill="#05121a" />
+              <circle cx={-Math.max(7, iris) * 0.4} cy={44 - Math.max(7, iris) * 0.4} r={3.4} fill="#fff" opacity={0.9} />
+              {/* lock ticks when found */}
+              {found && [0, 90, 180, 270].map((deg, i) => (
+                <line key={i} x1={0} y1={44 - 38} x2={0} y2={44 - 44} stroke="#FFE24A" strokeWidth={3}
+                  transform={`rotate(${deg} 0 44)`} opacity={Math.min(1, lock * 2)} />
+              ))}
+            </>
+          )}
+          {/* comic strain sweat bead (satellite only) */}
+          {strain > 0.3 && (
+            <path d={`M52,${6 - 10 * ((f / 24) % 1)} q-6,10 0,16 q6,-6 0,-16 Z`} fill="#8ecbff" stroke={INK} strokeWidth={2} opacity={Math.min(1, strain)} />
+          )}
+        </g>
+      </g>
+    </g>
+  );
+};

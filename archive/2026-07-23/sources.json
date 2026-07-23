@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {"title": "NOAA Fisheries — Satellite Monitoring of Cook Inlet Beluga Whales (GAIA)", "outlet": "NOAA Fisheries (Alaska)", "url": "https://www.fisheries.noaa.gov/alaska/science-data/satellite-monitoring-cook-inlet-beluga-whales", "note": "GAIA method (machine learning + very-high-resolution satellite imagery + expert annotation), the June 2025 tasking that yielded no imagery (likely competing priorities near the Port of Anchorage and JBER), partner list, EarthExplorer API. Page updated June 2026."},
+    {"title": "NOAA Fisheries — Geospatial Artificial Intelligence For Animals (GAIA)", "outlet": "NOAA Fisheries", "url": "https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/geospatial-artificial-intelligence-animals", "note": "GAIA integrates VHR satellite imagery with cloud computing, geospatial analysis, and machine learning; automates imagery retrieval via the USGS EarthExplorer API."},
+    {"title": "NOAA Fisheries — Beluga Whale species page", "outlet": "NOAA Fisheries", "url": "https://www.fisheries.noaa.gov/species/beluga-whale", "note": "Cook Inlet population ESA-listed endangered in 2008; declined ~80% from ~1,300 (1979) to ~279 (2018); best current estimate 331, may be stabilizing."},
+    {"title": "NOAA Fisheries — New abundance estimate for endangered Cook Inlet beluga whales", "outlet": "NOAA Fisheries feature story", "url": "https://www.fisheries.noaa.gov/feature-story/new-abundance-estimate-endangered-cook-inlet-beluga-whales", "note": "331 best estimate from the 2022 aerial survey (range 290 to 386), an aerial-survey result not an AI output; Kim Goetz (AFSC) cautions estimates vary year to year."}
+  ]
+}

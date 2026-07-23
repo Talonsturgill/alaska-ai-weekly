@@ -1,0 +1,47 @@
+{
+  "story": "NOAA's GAIA machine-vision tries to find endangered Cook Inlet belugas in satellite imagery; honest open question about the clear sky it needs.",
+  "palette": {
+    "roles": {
+      "sky": "#0b1020 (orbital blue-black)",
+      "ground": "#5c6b63 (Cook Inlet pewter-teal glacial silt)",
+      "water_deep": "#3a4a44",
+      "hero": "#9AA6B4 (SatelliteEye pewter-gunmetal bus)",
+      "accent": "#37e0d8 detection cyan is the scanning machine-vision (the eye, the reticle, the pipeline). #FFC94A warning-amber is pinned ONLY to STAKES and CLAIMS: the endangered-count 331 badge, the airspace claim rings (PORT OF ANCHORAGE / JBER), and the unresolved question-mark box. Amber is NEVER a triumphant lock on the whale, because the piece deliberately never lands a confirmed find (GAIA cannot count yet); the resolve on the whale is cool cyan-to-bone-white, not amber.",
+      "whale": "#e9edf0 (beluga bone-white, treated with care, never comic)",
+      "shadow": "#05121a"
+    },
+    "amber_honesty_rule": "Amber appears only on: the 331 stakes badge, the JBER/Port claim rings, and the question-mark box. It must never fire as a confidence/count lock on the whale. The satellite's eye stays cyan (searching/straining) all run and never turns amber-found, so no frame implies a real detection.",
+    "mood": "a cold, patient, overcast orbital look: muddy silt water under a soft high light, punctuated by the cool cyan glow of a machine trying to see. The whale's resolve is cool white, not warm; amber is reserved for stakes and claims.",
+    "diverges_from_last_2": "07-22 was a warm-less cross-section schematic in night-practical single-object-void; 07-21b was a small-town blue-hour naturalistic scene with copper hero. This is a top-down instrument-readout of silt water and orbital black, a cyan-to-amber detection world neither recent piece used. No default blue-for-no-reason: the blue-black IS orbit and the teal IS glacial silt, both literal."
+  },
+  "light": {
+    "sun": "soft, high, diffuse north light (overcast) on the silt water; the satellite side-lit from screen-left key",
+    "direction": "key screen-left, cool fill, a faint cyan practical from the eye's own glow",
+    "depth_approach": "top-down water rendered with layered silt swirl planes (parallax drift) + a closer marine-snow/particle plane; the satellite carries FormGradient/RimLight/ContactShadow so it sits dimensional over the flat water; the imaging cone is a translucent depth volume from sat to water",
+    "mood": "the light MEANS patience and difficulty: a flat, shadowless sky over water that hides its subject. The warm light (amber) is withheld from the whale, it lives only on the stakes and the competing claims; the machine's own light stays cool cyan, an eye that never gets its clean lock"
+  },
+  "shape_language": "SatelliteEye is compact, boxy, wide-winged and earnest, a friendly little worker, the deliberate OPPOSITE of a cold institutional monolith. The airspace claims are hard rectilinear rings/badges (institutional, competing). The whale is a soft, organic, barely-there curve. Soft-organic subject vs hard-rectilinear claims vs earnest-machine agent.",
+  "casting": {
+    "hero": "SatelliteEye (NET-NEW this run, a real library gap: no satellite/orbital asset existed) - the honest AI-presence, a satellite doing machine vision. Differs from the last two heroes (ServerMachine, CheckpointGateLever).",
+    "organic_subject": "Beluga (existing fauna, cast as the nearly-invisible subject, rendered pale under silt, treated with genuine care)",
+    "supporting": "reticle + pixel-grid HUD, StatCard/Nameplate/BoxLabel props, an EarthExplorer conveyor + an annotation hand (episode-local), airspace rings/badges (episode-local)",
+    "net_new": "SatelliteEye (registered in ASSET_MANIFEST.md same commit)"
+  },
+  "motion_language": {
+    "hero_moves": [
+      "the imaging reticle SWEEPS the silt hunting (searching), then a pixel grid SNAPS onto the smudge (found)",
+      "the SatelliteEye iris dilates while searching and CLAMPS small+bright when it locks",
+      "the pipeline conveyor pulls frames left-to-right with each stage clicking in",
+      "the airspace rings SLAM over the imaging cone (the turn), a filmstrip frame stamps empty"
+    ],
+    "earns_blur": "the reticle snap and the ring-slam earn anticipation + overshoot; a whip-pan carries orbit-to-water; numbers count up with easing and land with a hit",
+    "180_motion_blur": "the ring-slam and the reticle snap"
+  },
+  "composition": {
+    "focal_hierarchy": "each shot has exactly ONE center-frame focal action (S1 the smudge resolving, S2 the count, S3 the satellite in orbit, S4 the pipeline stage under the pointer, S5 the straining eye, S6 the contested slice of sky, S7 the whale re-settling under the reticle). Captions and corner chrome are peripheral; the story is center-frame.",
+    "negative_space_beats": "the vast empty silt water in the open and the button (the whale alone in the gray)",
+    "safe_area": "hero action + captions inside the centered 4:5 box; the top-down water fills the 9:16",
+    "signature_shot": "the near-invisible pale beluga under swirling silt RESOLVING into findability as the satellite reticle and pixel grid settle onto it, cyan light blooming - the moment a nearly-unseeable animal becomes findable from orbit"
+  },
+  "craft_advance": "SatelliteEye is the net-new asset; the craft-system advance this run is a reusable top-down GLACIAL-SILT WATER treatment (layered swirling silt planes + marine-snow particles + a translucent imaging-cone volume) authored as an episode surface, plus the SatelliteEye's dilating/clamping imaging-eye tell. The silt-water + imaging-cone are candidates to promote into lib/biomes.tsx (a top-down water biome) in a later run; noted in the retrospective."
+}

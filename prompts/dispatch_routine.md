@@ -144,10 +144,18 @@ repeat ever.
    .claude/skills/alaska-dispatch/vo_qc.py, scripts/align_captions.py, scripts/dedupe.py.
    If ANY are missing you are on a stale checkout: `git fetch origin main && git checkout -B
    main origin/main` and re-check. Only if origin/main also lacks them: stop and notify.
-2. `cd video-engine && npm install` if node_modules is missing (npm needs the proxy CA:
-   `npm config set cafile /root/.ccr/ca-bundle.crt`).
-3. Voice venv: `.venv-voice/bin/python -c "import chatterbox, faster_whisper, resemblyzer"`;
-   build via scripts/setup_env.sh if missing.
+2. RUN `bash scripts/setup_env.sh` UNCONDITIONALLY (it is idempotent). It installs the
+   SYSTEM-python VO deps the Gemini pipeline needs (faster_whisper, soundfile, librosa,
+   num2words via --no-deps) and the video-engine node deps. DO NOT skip this because the
+   old chatterbox voice-venv is unused now: the fourth silent-missing-dep incident
+   (2026-07-23) was a fresh container WITHOUT these deps, so vo_soundcheck crashed on a
+   missing librosa and num2words was absent (inflating WER on every numeric script). The
+   fixes already live in setup_env.sh; the only miss was not running it. Running it first
+   makes the whole silent-missing-dep class impossible. (npm still needs the proxy CA:
+   `npm config set cafile /root/.ccr/ca-bundle.crt`.)
+3. Voice venv (ONLY if using the retired cloned-voice fallback): `.venv-voice/bin/python -c
+   "import chatterbox, faster_whisper, resemblyzer"`; build via scripts/setup_env.sh if missing.
+   The default Gemini VO pipeline does NOT need this venv.
 4. Create the run branch claude/dispatch-<date> off latest main.
 5. STAMP THE RUN (stale-scratch guard — added 2026-07-19, see docs/RUN_UPGRADES.md):
    `out/` is gitignored scratch that survives across container sessions, and the pipeline reads

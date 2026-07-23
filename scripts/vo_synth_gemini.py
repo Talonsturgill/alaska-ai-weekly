@@ -220,10 +220,20 @@ def main():
     spoken = " ".join(lines)
     tags = sorted({t for l in plan["lines"] for t in l.get("tags", [])})
 
+    # REUSE (2026-07-23): a crashed run after synth (e.g. the librosa gap that killed the
+    # soundcheck) should not re-spend TTS calls re-rendering identical takes. With
+    # VO_REUSE_TAKES=1, reuse any vo_take_{n}.wav already on disk from THIS run instead of
+    # re-synthesizing it. Opt-in only, so default behavior is unchanged; reuse is safe here
+    # because run_guard already stamps the run and the takes are this run's own output.
+    REUSE = os.environ.get("VO_REUSE_TAKES", "") == "1"
     takes = []
     for n in range(TAKES):
-        pcm, used = _synth_retry(prompt)
         p = os.path.join(AUD, f"vo_take_{n}.wav")
+        if REUSE and os.path.exists(p):
+            takes.append((p, MODEL))
+            print(f"take {n}: reused {os.path.getsize(p)} bytes (VO_REUSE_TAKES=1)")
+            continue
+        pcm, used = _synth_retry(prompt)
         _save_24k(pcm, p)
         takes.append((p, used))
         print(f"take {n}: {len(pcm)/24000:.1f}s ({used})")
