@@ -1,0 +1,43 @@
+{
+  "story": "NOAA Fisheries' GAIA (Geospatial Artificial Intelligence for Animals), with USGS, is building an experimental machine-learning system to detect endangered Cook Inlet beluga whales in very-high-resolution satellite imagery.",
+  "story_slug": "beluga-from-orbit",
+  "display_title": "Counting Belugas From Orbit",
+  "primary_sources": [
+    "https://www.fisheries.noaa.gov/alaska/science-data/satellite-monitoring-cook-inlet-beluga-whales",
+    "https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/geospatial-artificial-intelligence-animals",
+    "https://www.fisheries.noaa.gov/species/beluga-whale",
+    "https://www.fisheries.noaa.gov/feature-story/new-abundance-estimate-endangered-cook-inlet-beluga-whales"
+  ],
+  "fact_check_safe_set": [
+    {"fact": "331 belugas", "label": "best current Cook Inlet abundance estimate, 2022 aerial survey (range 290-386). NOT an AI result.", "source": "noaa beluga species page + feature story"},
+    {"fact": "ESA-listed endangered in 2008", "label": "confirmed on two NOAA pages", "source": "noaa"},
+    {"fact": "declined ~80% from ~1,300 (1979) to ~279 (2018)", "label": "NOAA", "source": "noaa beluga species page"},
+    {"fact": "may be stabilizing and possibly increasing, ~0.2%/yr 2012-2022", "label": "NOAA, hedged ('possibly')", "source": "noaa"},
+    {"fact": "GAIA integrates very-high-resolution satellite imagery with cloud computing, geospatial analysis, and machine learning", "label": "machine learning (NOAA's word) - experimental, building an automated detection system, NOT deployed", "source": "gaia page"},
+    {"fact": "training datasets built with expert human annotation", "label": "human-in-the-loop; not a finished autonomous detector", "source": "satellite-monitoring page"},
+    {"fact": "Partners: NOAA Fisheries (lead), USGS, Microsoft AI for Good, Naval Research Laboratory", "label": "verbatim NOAA partner list (also Maxar, ESRI, NGA, NRO)", "source": "satellite-monitoring + gaia page"},
+    {"fact": "automates satellite imagery retrieval via the USGS EarthExplorer API", "label": "verbatim NOAA", "source": "gaia page"},
+    {"fact": "June 2025: tasking aligned with the aerial abundance survey yielded no imagery that month, likely due to competing priorities near the Port of Anchorage and Joint Base Elmendorf-Richardson", "label": "NOAA example; cause stated as 'likely', not fact", "source": "satellite-monitoring page"},
+    {"fact": "source pages last updated June 2026 (satellite-monitoring 06/25/2026, GAIA 06/18/2026)", "label": "freshness", "source": "noaa"}
+  ],
+  "attributable_quote": {
+    "text": "While this is certainly encouraging news, it is important to recognize that abundance estimates can vary from year to year due to a number of factors.",
+    "speaker": "Kim Goetz, marine mammal biologist, Alaska Fisheries Science Center",
+    "source_url": "https://www.fisheries.noaa.gov/feature-story/new-abundance-estimate-endangered-cook-inlet-beluga-whales",
+    "note": "about the abundance estimate, not GAIA"
+  },
+  "honesty_guardrails": [
+    "Say 'machine learning' (NOAA's word), never 'deep learning' or a named architecture.",
+    "Never attribute the 331 count to GAIA/satellite - it is an aerial-survey number.",
+    "The AI system is EXPERIMENTAL: building training datasets, not a deployed counter. Do not imply it operationally counts belugas.",
+    "The military-airspace cause is NOAA's 'likely', not confirmed fact.",
+    "No accuracy/detection-rate figures exist for belugas - do not invent any.",
+    "Belugas in turbid glacial-silt water are genuinely hard to see from above - a hard problem, not a solved one."
+  ],
+  "counterpoints": [
+    "The detector is early-stage/experimental, not replacing aerial surveys.",
+    "The pipeline can be starved of imagery (June 2025 yielded none).",
+    "The tool itself does not save whales; the population trend is driven by other factors.",
+    "The hopeful trend (possibly increasing) is a survey result, hedged by NOAA."
+  ]
+}

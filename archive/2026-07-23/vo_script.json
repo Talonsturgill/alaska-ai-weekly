@@ -1,0 +1,24 @@
+{
+  "title": "Counting Belugas From Orbit",
+  "lines": [
+    "Under the gray silt of Cook Inlet swims one of the rarest whales on earth, almost invisible.",
+    "About three hundred thirty one Cook Inlet belugas are left, down roughly eighty percent since 1979.",
+    "So NOAA is trying something new. Find them from space.",
+    "A NOAA project called Gaia, built with U S G S, Microsoft, and the Navy.",
+    "It reads satellite photos and learns from people, one labeled whale at a time.",
+    "But it cannot count belugas yet. It is still learning to see.",
+    "And to work, it needs a clear look straight down.",
+    "In June 2025, it lined up with the whale survey and came back empty.",
+    "The Anchorage sky was likely booked, a busy port and an air base wanting the same slice.",
+    "The whales may finally be holding on, and this new eye is real.",
+    "The question is whether the sky it needs ever stays open."
+  ],
+  "caption_fixups": {
+    "GUY-uh": "GAIA",
+    "NOH-uh": "NOAA",
+    "U S G S": "USGS",
+    "three hundred thirty one": "331"
+  },
+  "synthid_disclosure": "Gemini native TTS, preset voice Sulafat, carries a SynthID watermark (not a clone).",
+  "honesty_check": "ML not 'deep learning'; 331 is an aerial-survey number, never attributed to GAIA; June 2025 cause is NOAA's 'likely'; the tool is experimental, not a deployed counter."
+}

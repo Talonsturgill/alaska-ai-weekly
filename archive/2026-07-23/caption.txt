@@ -1,0 +1,15 @@
+NOAA is trying to count Alaska's rarest whales from space, and one crowded slice of sky may decide whether it ever works.
+
+There are about 331 Cook Inlet belugas left. That is down roughly 80 percent since 1979, and they are nearly impossible to see, even up close, in the milky glacial silt.
+
+So NOAA Fisheries and the USGS, with Microsoft and the Naval Research Laboratory, are building something called GAIA. The idea is genuinely new. Teach a machine to find belugas in very high resolution satellite imagery, one hand labeled whale at a time, and pull the pictures automatically through the USGS EarthExplorer feed.
+
+The honest catch is that it cannot count belugas yet. It is experimental, still building its training data, and the official 331 estimate still comes from crewed aerial surveys, not the AI.
+
+It also carries a very Alaskan dependency. To learn, it needs clear, repeated looks straight down. In June 2025 a tasking window lined up with the beluga survey and returned no imagery at all. NOAA says that likely reflects competing priorities near the Port of Anchorage and Joint Base Elmendorf Richardson.
+
+That tension is the real story. A whale counting satellite, a working port, and an air base can all want the same narrow slice of sky. The tool is credible and the belugas may even be stabilizing. Whether space based monitoring ever supplements the aerial counts may depend less on the model and more on who gets the sky.
+
+If Alaska wants cheaper, more frequent eyes on its most endangered species, is guaranteed satellite tasking over Cook Inlet worth fighting for?
+
+#Alaska #ArtificialIntelligence #CookInlet #Conservation #RemoteSensing

@@ -1,0 +1,627 @@
+{
+  "title": "Counting Belugas From Orbit",
+  "concept": "NOAA's GAIA machine-vision is being taught to find the endangered Cook Inlet belugas in satellite imagery, a genuinely new way to see the nearly unseeable. It cannot count them yet, and whether it ever can turns on one very Alaskan question, can it get a clear look through a slice of sky the Port of Anchorage and Elmendorf already fill.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "angle": {
+    "thesis": "A new orbital eye is learning to find Alaska's rarest whales, and the honest question is whether the sky it needs ever stays open.",
+    "valence": "curious",
+    "supporting_facts": [
+      "GAIA (NOAA lead, USGS, Microsoft AI for Good, Naval Research Laboratory) pairs very-high-resolution satellite imagery with machine learning and expert human annotation, retrieving imagery via the USGS EarthExplorer API.",
+      "Cook Inlet belugas are down to a best estimate of 331 (2022 aerial survey), an ~80% fall from ~1,300 in 1979, though the trend may be stabilizing.",
+      "In June 2025, tasking aligned with the aerial survey yielded no imagery, likely due to competing priorities near the Port of Anchorage and JBER."
+    ],
+    "fair_counterpoint": "The tool is experimental (not deployed), the 331 count is an aerial-survey number not an AI result, and the whales may be recovering, so this is a promising unfinished tool, never a failure.",
+    "runner_ups": "Pure celebration (risked implying deployment) and pure caution (leaned a hedged month into sourness); both grafted in as the opening wonder and the honest turn."
+  },
+  "treatment": {
+    "winner": "The Explainer (clarity as spectacle)",
+    "judge_reasoning": "Four convergent treatments; the Explainer wins on the strongest scroll-stop (FIND THE WHALE makes the muted viewer squint), the most REVELATION currency (a moving cutaway pipeline that makes the invisible ML process physical), and the best feasibility in the flat-vector engine. Grafted: the Enthusiast's honest AERIAL-not-me stamp (keeps 331 off the AI) and its button line about the sky letting it look; the Dramatist's confidence-score-as-question-mark recurring motif; the Comedian's booked-sky payoff. Fair by construction: the wonder leads, the honest open question is the earned turn, the possibly-stabilizing population is the counterweight.",
+    "logline": "NOAA is teaching a machine to find Alaska's rarest whales in satellite photos, and whether it ever works turns on one very Alaskan question, can it get a clear look through a slice of sky the port and the air base already own."
+  },
+  "fingerprint": {
+    "pov": "top-down-map",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "data-as-subject",
+    "layout": "hud-instrument-frame",
+    "register": "instrument-readout",
+    "camera_strategy": "aerial-descent",
+    "light_story": "overcast-diffuse",
+    "palette": "Cook Inlet pewter-teal silt, orbital blue-black, detection cyan to warning amber, beluga bone-white",
+    "metaphor": "teaching a computer to find a nearly invisible whale in a muddy satellite pixel, and the one clear slice of sky it needs is already booked"
+  },
+  "palette": "Cook Inlet pewter-teal silt, orbital blue-black, detection cyan to warning amber, beluga bone-white",
+  "light": {
+    "sun": "soft, high, diffuse north light (overcast) on the silt water, the satellite key from screen-left",
+    "mood": "patient and difficult, a flat shadowless sky over water that hides its subject, warm amber only where the eye locks on"
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "Top-down swirling glacial silt water filling the 9:16 frame, a pale beluga smudge barely visible in it, ink-bold FIND THE WHALE burned in from frame 0.",
+    "headline": "FIND THE WHALE",
+    "motion_by_s": 1.3,
+    "loopback": "The closing shot returns to this same silt and pale smudge with the reticle re-settling, the question now whether the sky it needs ever stays open."
+  },
+  "audio_arc": {
+    "build_steps": [
+      0,
+      15.4,
+      26.8,
+      42.8
+    ],
+    "dip_at": 60.4,
+    "riser_at": 15.4,
+    "silence_at": 60.4,
+    "payoff_at": 61.2,
+    "button_pattern": "question"
+  },
+  "reveals": [
+    {
+      "t": 10.8,
+      "type": "morph-to-chart",
+      "what": "the 331 count gives way to a plunging decline curve from 1,300 (1979) to 279 (2018) then a faint uptick toward recovery",
+      "hold_s": 0.6
+    },
+    {
+      "t": 15.4,
+      "type": "scale-pullback",
+      "what": "pull back from the inlet water to reveal the whole SatelliteEye in orbit above it, recontextualizing the search as seen from space",
+      "hold_s": 0.7
+    },
+    {
+      "t": 26.8,
+      "type": "build-on",
+      "what": "the GAIA learning pipeline assembles stage by stage, EarthExplorer retrieval then expert annotation then the ML detector",
+      "hold_s": 0.5
+    }
+  ],
+  "divergence_note": "This diverges hard from the last two dispatches. 07-22 (the checkpoint lever) was a cross-section-cutaway in single-object-void, an editorial-schematic held in a locked-drift night-practical frame. 07-21 (the server) was an eye-level naturalistic small-town scene with a boom-drop reveal and a copper hero. This piece is a top-down-map instrument-readout of glacial-silt water and orbital blue-black, an aerial-descent camera in overcast-diffuse light, hero_treatment data-as-subject (the detection and the count), a radial-emanate scan as the dominant motion. Different POV, layout, motion, hero, register, camera and light, and a detection cyan-to-amber palette neither recent piece used. The hero is the net-new SatelliteEye, not a reused server box or lever.",
+  "beats": [
+    {
+      "t": 0.5,
+      "vo": "L0",
+      "shows": "top-down silt water and a faint pale beluga smudge",
+      "draw": {
+        "subject": "top-down glacial-silt water with a faint pale beluga",
+        "action": "swims barely visible under swirling silt",
+        "emotion": "hidden and fragile",
+        "annotation": "COOK INLET"
+      },
+      "choreo": {
+        "primary": "silt planes swirl and drift",
+        "reaction": "the pale beluga curve undulates faintly",
+        "ambient": "marine-snow particles drift on a near plane"
+      },
+      "sfx": "low water rumble",
+      "means": "establish the nearly invisible subject"
+    },
+    {
+      "t": 2.5,
+      "vo": "L0",
+      "shows": "a cyan reticle sweeping the murk, FIND THE WHALE title",
+      "draw": {
+        "subject": "satellite reticle and pixel grid",
+        "action": "sweeps the murk then snaps a pixel grid onto the smudge",
+        "emotion": "searching",
+        "annotation": "FIND THE WHALE"
+      },
+      "choreo": {
+        "primary": "cyan reticle sweeps then snaps a pixel grid onto the smudge",
+        "reaction": "the smudge brightens a notch as it resolves",
+        "ambient": "silt keeps swirling"
+      },
+      "sfx": "scan sweep then lock tick",
+      "means": "the muted viewer is made to squint"
+    },
+    {
+      "t": 5.0,
+      "vo": "L0",
+      "shows": "the smudge resolving into a pale whale shape",
+      "draw": {
+        "subject": "the pale beluga smudge",
+        "action": "brightens and sharpens a notch under the pixel grid",
+        "emotion": "fragile",
+        "annotation": "ALMOST INVISIBLE"
+      },
+      "choreo": {
+        "primary": "the whale form sharpens",
+        "reaction": "the reticle brackets clamp inward",
+        "ambient": "silt swirl continues"
+      },
+      "sfx": "soft resolve shimmer",
+      "means": "the nearly unseeable becomes findable"
+    },
+    {
+      "t": 7.6,
+      "vo": "L1",
+      "shows": "a starburst 331 stat badge (as it is spoken)",
+      "draw": {
+        "subject": "starburst stat badge",
+        "action": "counts up to 331 and lands with a hit",
+        "emotion": "sobering",
+        "annotation": "331 LEFT, 2022 AERIAL SURVEY"
+      },
+      "choreo": {
+        "primary": "331 counts up and lands with a hit",
+        "reaction": "the badge starburst flares on impact",
+        "ambient": "faint scanlines flicker"
+      },
+      "sfx": "counter ticks then thud",
+      "means": "how few remain, and whose number it is (not the AI)"
+    },
+    {
+      "t": 10.8,
+      "vo": "L1",
+      "shows": "a decline curve plunging then a faint uptick",
+      "draw": {
+        "subject": "decline curve",
+        "action": "plunges from 1,300 to 279 then ticks faintly upward",
+        "emotion": "grave then a flicker of hope",
+        "annotation": "DOWN ~80% SINCE 1979"
+      },
+      "choreo": {
+        "primary": "curve plunges 1,300 to 279 then ticks up",
+        "reaction": "an anchor-drop marker falls with the curve",
+        "ambient": "grid lines parallax"
+      },
+      "sfx": "descending whoosh then soft rise",
+      "means": "the crash and the hedged maybe-recovery"
+    },
+    {
+      "t": 15.4,
+      "vo": "L2",
+      "shows": "the SatelliteEye rising into orbit, FROM SPACE",
+      "draw": {
+        "subject": "SatelliteEye rising into orbit",
+        "action": "settles above Cook Inlet and reaches an imaging cone down",
+        "emotion": "earnest and curious",
+        "annotation": "FROM SPACE"
+      },
+      "choreo": {
+        "primary": "satellite rises into orbit and drops an imaging cone",
+        "reaction": "the eye iris dilates as it scans",
+        "ambient": "stars twinkle and the Earth curve glows"
+      },
+      "sfx": "riser then orbital hum",
+      "means": "the new idea, drawn as a scale pullback to orbit"
+    },
+    {
+      "t": 18.2,
+      "vo": "L2",
+      "shows": "the imaging cone reaching down to the inlet",
+      "draw": {
+        "subject": "SatelliteEye",
+        "action": "tips its glowing eye down and the cone reaches the water",
+        "emotion": "curious",
+        "annotation": "LOOKING DOWN"
+      },
+      "choreo": {
+        "primary": "the cone reaches down to the Earth curve",
+        "reaction": "the eye glow brightens",
+        "ambient": "atmosphere band shimmers"
+      },
+      "sfx": "soft chime",
+      "means": "the eye trains on the inlet"
+    },
+    {
+      "t": 21.4,
+      "vo": "L3",
+      "shows": "the GAIA nameplate and partner chips",
+      "draw": {
+        "subject": "GAIA nameplate and partner chips",
+        "action": "slide in and click into a row beside the satellite",
+        "emotion": "assembling",
+        "annotation": "GAIA / NOAA / USGS / MICROSOFT / NAVY"
+      },
+      "choreo": {
+        "primary": "GAIA plate slides in and partner chips click into a row",
+        "reaction": "the satellite eye pings toward each chip",
+        "ambient": "solar-panel glint sweeps"
+      },
+      "sfx": "chips click in",
+      "means": "name the tool and its serious backers"
+    },
+    {
+      "t": 24.0,
+      "vo": "L3-L4",
+      "shows": "the GAIA pipeline booting, the eye pinging its partners",
+      "draw": {
+        "subject": "SatelliteEye and the GAIA console",
+        "action": "the eye pings each partner chip as the pipeline boots up",
+        "emotion": "eager",
+        "annotation": "BUILT TOGETHER"
+      },
+      "choreo": {
+        "primary": "the pipeline console boots, panels lighting in sequence",
+        "reaction": "the satellite eye pings toward each chip",
+        "ambient": "solar glint sweeps"
+      },
+      "sfx": "boot chirps",
+      "means": "bridge the naming to the doing, the partners built it"
+    },
+    {
+      "t": 26.8,
+      "vo": "L4",
+      "shows": "the EarthExplorer conveyor and an annotation hand stamping",
+      "draw": {
+        "subject": "EarthExplorer conveyor and an annotation hand",
+        "action": "pulls satellite frames while a hand stamps a labeled box on a whale pixel",
+        "emotion": "diligent",
+        "annotation": "EARTHEXPLORER API / EXPERT ANNOTATION"
+      },
+      "choreo": {
+        "primary": "conveyor pulls frames and a hand stamps a labeled box",
+        "reaction": "each stamped frame pops",
+        "ambient": "belt lugs scroll"
+      },
+      "sfx": "conveyor clacks then stamp",
+      "means": "how it learns, a human in the loop"
+    },
+    {
+      "t": 30.0,
+      "vo": "L4",
+      "shows": "the ML detector snapping onto pixel-whales",
+      "draw": {
+        "subject": "ML detector box",
+        "action": "practices snapping onto pixel-whales, getting faster",
+        "emotion": "learning",
+        "annotation": "ONE LABELED WHALE AT A TIME"
+      },
+      "choreo": {
+        "primary": "detector box snaps onto pixel-whales faster and faster",
+        "reaction": "a tally of learned frames ticks up",
+        "ambient": "conveyor keeps rolling"
+      },
+      "sfx": "rapid soft locks",
+      "means": "the model learning the shape"
+    },
+    {
+      "t": 33.3,
+      "vo": "L5",
+      "shows": "the CANNOT COUNT BELUGAS YET label stamping in",
+      "draw": {
+        "subject": "SatelliteEye",
+        "action": "aims its glowing eye down, iris wide and unsure",
+        "emotion": "honest",
+        "annotation": "CANNOT COUNT BELUGAS YET"
+      },
+      "choreo": {
+        "primary": "satellite eye aims down, iris wide and unsure",
+        "reaction": "the honest label stamps in hard",
+        "ambient": "cone shimmer"
+      },
+      "sfx": "label-stamp thunk",
+      "means": "the plain honest limit"
+    },
+    {
+      "t": 35.8,
+      "vo": "L5",
+      "shows": "the satellite straining, iris narrowing",
+      "draw": {
+        "subject": "SatelliteEye straining",
+        "action": "narrows its iris hard at the murk, servos leaning in",
+        "emotion": "straining but earnest",
+        "annotation": "STILL LEARNING TO SEE"
+      },
+      "choreo": {
+        "primary": "iris narrows hard, the body leans into the strain",
+        "reaction": "brows knit and a faint effort bead forms",
+        "ambient": "hover bob"
+      },
+      "sfx": "servo strain creak",
+      "means": "rehook, the earnest machine struggling",
+      "rehook": "the little satellite visibly straining to see is the mid-video re-grab"
+    },
+    {
+      "t": 38.8,
+      "vo": "L6",
+      "shows": "the NEEDS A CLEAR LOOK STRAIGHT DOWN shaft",
+      "draw": {
+        "subject": "SatelliteEye",
+        "action": "tilts to look straight down, the cone narrowing to a bright shaft",
+        "emotion": "determined",
+        "annotation": "NEEDS A CLEAR LOOK STRAIGHT DOWN"
+      },
+      "choreo": {
+        "primary": "satellite tilts straight down, cone narrows to a shaft",
+        "reaction": "the silt water below brightens where the shaft touches",
+        "ambient": "running lights blink"
+      },
+      "sfx": "servo whir then shaft hum",
+      "means": "set up the dependency"
+    },
+    {
+      "t": 42.8,
+      "vo": "L7",
+      "shows": "the JUNE 2025 filmstrip stamping empty",
+      "draw": {
+        "subject": "JUNE 2025 filmstrip frame",
+        "action": "rolls in over the silt and stamps empty and black",
+        "emotion": "empty",
+        "annotation": "JUNE 2025 / NO IMAGERY"
+      },
+      "choreo": {
+        "primary": "a filmstrip frame rolls in and stamps empty black",
+        "reaction": "the imaging cone hunts the blank water",
+        "ambient": "silt drift"
+      },
+      "sfx": "blank clack",
+      "means": "the month the survey lined up and got nothing (L7)"
+    },
+    {
+      "t": 45.0,
+      "vo": "L7",
+      "shows": "the imaging cone hunting the empty silt",
+      "draw": {
+        "subject": "the imaging cone over empty silt",
+        "action": "sweeps the blank water finding nothing",
+        "emotion": "searching in vain",
+        "annotation": "CAME BACK EMPTY"
+      },
+      "choreo": {
+        "primary": "the cone sweeps the blank water",
+        "reaction": "the whale stays hidden in silt",
+        "ambient": "marine snow drifts"
+      },
+      "sfx": "hollow sweep",
+      "means": "nothing to see this month"
+    },
+    {
+      "t": 48.7,
+      "vo": "L8",
+      "shows": "the PORT OF ANCHORAGE and JBER rings crowding in, LIKELY BOOKED",
+      "draw": {
+        "subject": "airspace claim rings over the imaging cone",
+        "action": "PORT OF ANCHORAGE and JBER rings crowd over the same slice, LIKELY BOOKED",
+        "emotion": "thwarted",
+        "annotation": "PORT OF ANCHORAGE / JBER (LIKELY)"
+      },
+      "choreo": {
+        "primary": "the claim rings crowd over the cone",
+        "reaction": "the imaging cone flickers, squeezed",
+        "ambient": "silt water drifts"
+      },
+      "sfx": "heavy stamps",
+      "means": "the sky was likely booked, correlation not stated cause (L8)"
+    },
+    {
+      "t": 51.8,
+      "vo": "L8",
+      "shows": "the detection box blinking a question mark",
+      "draw": {
+        "subject": "detection box over the faint whale",
+        "action": "blinks a question mark where a confidence score should be",
+        "emotion": "unresolved",
+        "annotation": "?"
+      },
+      "choreo": {
+        "primary": "detection box blinks a question mark, not a score",
+        "reaction": "the faint whale dims back under silt",
+        "ambient": "scanlines drift"
+      },
+      "sfx": "soft query tone",
+      "means": "the ambivalence in one glyph"
+    },
+    {
+      "t": 55.4,
+      "vo": "L9",
+      "shows": "the whale brightening, the eye is real",
+      "draw": {
+        "subject": "the pale beluga in silt",
+        "action": "brightens a hopeful notch as the reticle re-settles",
+        "emotion": "patient and hopeful",
+        "annotation": "THE EYE IS REAL"
+      },
+      "choreo": {
+        "primary": "the whale brightens a hopeful notch",
+        "reaction": "the question mark softens",
+        "ambient": "silt swirls and marine snow drifts"
+      },
+      "sfx": "gentle hopeful chime",
+      "means": "whales may be holding on, the eye is real"
+    },
+    {
+      "t": 58.5,
+      "vo": "L9",
+      "shows": "the whale held, reticle settling (loop begins)",
+      "draw": {
+        "subject": "SatelliteEye reticle and the pale whale (loop)",
+        "action": "eases back down and re-settles over the smudge, a patient blink",
+        "emotion": "patient",
+        "annotation": "STILL WATCHING"
+      },
+      "choreo": {
+        "primary": "reticle eases down and re-settles over the smudge",
+        "reaction": "the eye softens to a patient blink",
+        "ambient": "silt swirl continues"
+      },
+      "sfx": "soft settle",
+      "means": "loop back to the open, the question unresolved"
+    },
+    {
+      "t": 61.2,
+      "vo": "L10",
+      "shows": "the closing question landing on the held silt frame",
+      "draw": {
+        "subject": "the held silt frame and pale whale",
+        "action": "the closing question stamps in as the reticle holds",
+        "emotion": "open",
+        "annotation": "WILL THE SKY STAY OPEN"
+      },
+      "choreo": {
+        "primary": "the closing question stamps in over the held frame",
+        "reaction": "the whale gives a last faint pulse",
+        "ambient": "silt swirl continues"
+      },
+      "sfx": "soft settle",
+      "means": "the question lands on its word, unresolved by design"
+    },
+    {
+      "t": 62.8,
+      "vo": "L10",
+      "shows": "the ALASKA.AI wordmark on the held silt frame",
+      "draw": {
+        "subject": "ALASKA.AI wordmark",
+        "action": "settles under the held silt image",
+        "emotion": "calm",
+        "annotation": "ALASKA.AI"
+      },
+      "choreo": {
+        "primary": "wordmark settles under the held image",
+        "reaction": "a soft cyan glow pulses once",
+        "ambient": "water shimmer"
+      },
+      "sfx": "soft tag",
+      "means": "the brand button on the held silt frame"
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "t": "0.0-7.4",
+      "framing": "wide-establish",
+      "pov": "top-down-map",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "hero": {
+        "name": "Cook Inlet silt water + beluga smudge + reticle",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "layered swirling silt planes (parallax), a pale bone-white beluga curve half-dissolved in murk, a thin cyan reticle, a resolving pixel grid, marine-snow particles on a near plane. The whale is soft-organic and treated with care, never comic."
+      },
+      "transition_in": "",
+      "thread": "",
+      "centered": "the pale beluga smudge resolving under the reticle at frame center",
+      "means": "open on the nearly unseeable subject"
+    },
+    {
+      "id": 2,
+      "t": "7.4-15.5",
+      "framing": "data-panel",
+      "pov": "instrument-screen",
+      "layout": "stacked-layers",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:data-panel-earns-a-locked-frame",
+      "stage3d": "flat:full-frame-data-panel-depth-adds-nothing",
+      "hero": {
+        "name": "331 stat badge + decline curve",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "a form-shaded starburst 331 badge, a labeled decline curve from 1,300 to 279 with a faint uptick, an axis, an honest 2022-aerial-survey tag. Ink outlines, multi-tone fills."
+      },
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "centered": "the 331 badge then the plunging curve at center",
+      "means": "link the invisible whale to how few are left"
+    },
+    {
+      "id": 3,
+      "t": "15.5-21.4",
+      "framing": "alt-vantage",
+      "pov": "orbital-aerial",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "riseWith",
+      "stage3d": "planes",
+      "hero": {
+        "name": "SatelliteEye in orbit",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "net-new SatelliteEye: boxy pewter bus, two indigo solar wings, high-gain dish, blinking lights, the downward glowing imaging eye (the tell), an imaging cone reaching to the inlet curve below. Form-shaded, rim-lit, contact shadow."
+      },
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "centered": "the SatelliteEye centered in orbital black, cone reaching down",
+      "means": "reveal the new eye above the search"
+    },
+    {
+      "id": 4,
+      "t": "21.4-33.2",
+      "framing": "data-panel",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "hero": {
+        "name": "the GAIA learning pipeline",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "a moving cutaway conveyor: GAIA nameplate + partner chips, an EarthExplorer retrieval hopper, an expert-annotation hand stamping labeled boxes, an ML detector box learning. Fat outlined arrows carry the flow, each stage clicks with a sound."
+      },
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "centered": "the conveyor stage under the pointer at each click, center-frame",
+      "means": "make the invisible ML process physical"
+    },
+    {
+      "id": 5,
+      "t": "33.2-42.7",
+      "framing": "subject-portrait",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "hero": {
+        "name": "SatelliteEye straining",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "push in on the SatelliteEye, iris wide then squinting, a faint effort bead (earnest, not comic) (on the satellite, never the whale), brows set, the honest CANNOT COUNT YET / STILL LEARNING labels. The cone narrows to a bright shaft as it tilts straight down."
+      },
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "centered": "the straining imaging eye at center",
+      "means": "the honest limit, the machine still learning"
+    },
+    {
+      "id": 6,
+      "t": "42.7-54.6",
+      "framing": "map-territory",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "hero": {
+        "name": "the crowded-sky map",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "top-down Cook Inlet, the satellite imaging cone reaching down, overlapping airspace rings labeled PORT OF ANCHORAGE and JBER crowding the same slice tagged LIKELY BOOKED, a JUNE 2025 filmstrip frame stamping empty, a detection box blinking a question mark. The rings and the empty month read as CORRELATION on one shared slice of sky, not a stated mechanical cause (NOAA says 'likely'). Hard rectilinear institutional claims vs the soft water."
+      },
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "centered": "the contested slice of sky where cone and rings overlap, center-frame",
+      "means": "the turn, why the learning stalls"
+    },
+    {
+      "id": 7,
+      "t": "54.6-67.3",
+      "framing": "subject-portrait",
+      "pov": "top-down-map",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "hero": {
+        "name": "the whale in silt (loop) + wordmark",
+        "parts": 4,
+        "zones": 3,
+        "detail_note": "loop back to the opening silt water and pale beluga, the reticle re-settling and the eye softening to a patient blink, the closing question and the ALASKA.AI wordmark. Negative space, the whale alone in the gray."
+      },
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "the pale whale smudge re-centered under the settling reticle",
+      "means": "loop the question back to the open, unresolved"
+    }
+  ]
+}

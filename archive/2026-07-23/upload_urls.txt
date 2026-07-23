@@ -1,0 +1,5 @@
+v9x16=https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/beluga-orbit-2026-07-23-dispatch_master_9x16.mp4
+v4x5=https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/beluga-orbit-2026-07-23-dispatch_master_4x5.mp4
+v720=https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/beluga-orbit-2026-07-23-dispatch_9x16_720.mp4
+poster=https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/beluga-orbit-2026-07-23-poster.png
+thumb=https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/beluga-orbit-2026-07-23-poster_thumb.jpg
