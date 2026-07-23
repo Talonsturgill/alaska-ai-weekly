@@ -164,7 +164,11 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
   // immediately) then sharpens as the reticle locks
   const resolve = interpolate(f, [0, 120], [0.42, 0.92], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const wipe = interpolate(f, [200, 222], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const push = interpolate(f, [0, 222], [1.0, 1.06], {extrapolateRight: 'clamp'});
+  const push = interpolate(f, [0, 222], [1.0, 1.13], {extrapolateRight: 'clamp'});
+  // craneDown: the silt world drifts across the frame (real whole-frame displacement,
+  // CAMERA_MOTION). The static HUD frame + vignette stay put; only the water/whale/reticle crane.
+  const camX = interpolate(f, [0, 222], [95, -95], {extrapolateRight: 'clamp'});
+  const camY = interpolate(f, [0, 222], [-70, 95], {extrapolateRight: 'clamp'});
   const bktBlink = (f % 44) < 30;
   return (
     <AbsoluteFill style={{backgroundColor: SILT_D}}>
@@ -175,7 +179,7 @@ const S1: React.FC<{from?: number}> = ({from = 0}) => {
             <stop offset="100%" stopColor="#02040a" stopOpacity={0.9} />
           </radialGradient>
         </defs>
-        <g transform={`translate(540,960) scale(${push}) translate(-540,-960)`}>
+        <g transform={`translate(${camX},${camY}) translate(540,960) scale(${push}) translate(-540,-960)`}>
           <SiltWater f={f} />
           <BelugaSmudge x={540} y={1120} f={f} resolve={resolve} />
           <Reticle cx={540} cy={1120} f={f} sweep={sweepIn} lock={lock} found={false} />
