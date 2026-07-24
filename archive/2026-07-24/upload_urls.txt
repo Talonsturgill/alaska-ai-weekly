@@ -1,0 +1,3 @@
+dispatch_9x16.mp4=https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/ak-dispatch-2026-07-24-dispatch_9x16.mp4
+dispatch_4x5.mp4=https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/ak-dispatch-2026-07-24-dispatch_4x5.mp4
+dispatch_9x16_720.mp4=https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/ak-dispatch-2026-07-24-dispatch_9x16_720.mp4

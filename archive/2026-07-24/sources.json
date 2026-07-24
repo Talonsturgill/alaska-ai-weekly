@@ -1,0 +1,35 @@
+{
+  "sources": [
+    {
+      "title": "Quinhagak locals bridge drones and traditional knowledge (Byron Petluska, Sean Gleason, Angelina Olrun, the Nunalleq origin, the training)",
+      "outlet": "KYUK, Samantha Watson, 2026-07-14",
+      "url": "https://www.kyuk.org/science-and-environment/2026-07-14/quinhagak-locals-bridge-drones-and-traditional-knowledge-now-theyre-teaching-others-how-to-do-it",
+      "note": "primary reporting"
+    },
+    {
+      "title": "Same story, republished",
+      "outlet": "KNBA, 2026-07-20",
+      "url": "https://www.knba.org/news/2026-07-20/quinhagak-locals-bridge-drones-and-traditional-knowledge-now-theyre-teaching-others-how-to-do-it",
+      "note": "republish"
+    },
+    {
+      "title": "Same story, republished",
+      "outlet": "KDLG, 2026-07-14",
+      "url": "https://www.kdlg.org/alaska-state-news/2026-07-14/quinhagak-locals-bridge-drones-and-traditional-knowledge-now-theyre-teaching-others-how-to-do-it",
+      "note": "republish"
+    },
+    {
+      "title": "Nalaquq as the village corporation's tech arm; the 14-week course; villages Quinhagak, Eek, Goodnews Bay, Platinum; completed training with Quinhagak, Eek, Goodnews Bay",
+      "outlet": "Nalaquq (company site)",
+      "url": "https://nalaquq.com/",
+      "note": "company primary source"
+    },
+    {
+      "title": "SOAR program, $12.4M federal SMART grant to Alaska DOT&PF, US-made Skydio X10, beyond visual line of sight / drone-in-a-box / Starlink, 22 stationed in Alaska with 35 more planned",
+      "outlet": "Alaska Business Magazine, 2025-01-17 (BACKGROUND, out of window)",
+      "url": "https://www.akbizmag.com/featured/dotpf-awarded-grant-funding-for-rural-drones-seward-highway-avalanche-mitigation/",
+      "note": "2025 state-grant background; autonomy/AI framing attaches here, not to the KYUK reporting"
+    }
+  ],
+  "sourcing_note": "AI and autonomy language attaches only to the Skydio platform and the 2025 SOAR program (labeled background). The KYUK reporting frames the win around Yup'ik land knowledge and never says AI or autonomy. On-screen illustrative elements are noted below."
+}

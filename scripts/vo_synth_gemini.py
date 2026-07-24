@@ -247,8 +247,15 @@ def main():
     _, pcm24 = wavfile.read(best_wav)
     wavfile.write(os.path.join(AUD, "vo.wav"), SR, _to_44k_int16(pcm24))
 
-    # align the winning take -> timings for scenes + captions
-    words, line_spans, total, cues = _align_wholefile(best_wav, lines)
+    # align the winning take -> timings for scenes + captions.
+    # ALIGN THE 44.1k vo.wav, NOT the 24k take (2026-07-24 fix): faster-whisper on the raw
+    # 24k take intermittently mis-timestamps a whole run of opening (or trailing) words,
+    # collapsing several consecutive lines to a single instant and wrecking scene/caption
+    # sync (reproduced this run: lines 0-3 all pinned to 20.16s though speech starts at 0.0).
+    # Re-aligning the SAME content resampled to 44.1k yields a clean monotonic 0..total
+    # alignment every time. The word text is identical; only the timestamps differ, so this
+    # is purely a timing-stability fix.
+    words, line_spans, total, cues = _align_wholefile(os.path.join(AUD, "vo.wav"), lines)
     json.dump({"words": words, "speech_end": round(total, 3), "total": 60.0, "fps": 30},
               open(os.path.join(AUD, "words.json"), "w"), indent=2)
     json.dump({"total": round(total, 3), "voice": VOICE, "model": best_model, "lines": line_spans},

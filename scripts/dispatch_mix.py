@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-07-23"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-07-24"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -80,34 +80,37 @@ _TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
 VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never hardcode
 
 EVENTS = [
-    # S1 (line 0): the reticle sweeps the silt, then the pixel grid locks onto the smudge
-    (L[0] + 1.0,  "tick",   "standard", 0.0),
-    (L[0] + 3.0,  "snap",   "hero",     0.0),
-    # S2 (line 1): the 331 badge pops in, the decline curve plunges
-    (L[1] + 0.2,  "pop",    "standard", 0.0),
-    (L[1] + 2.8,  "boom",   "standard", -0.2),
-    # S3 (line 2): the SatelliteEye rises to orbit — the one riser
-    (L[2] + 0.3,  "riser",  "hero",     0.0),
-    # S4 (lines 3-4): GAIA/partners click in, the conveyor runs, the annotation hand stamps
-    (L[3] + 0.4,  "ding",   "standard", 0.0),
-    (L[4] + 0.2,  "tick",   "standard", -0.4),
-    (L[4] + 2.5,  "stamp",  "hero",     0.0),
-    # S5 (lines 5-6): the satellite strains, then tilts straight down (cone shaft)
-    (L[5] + 0.3,  "creak",  "standard", 0.0),
-    (L[6] + 0.2,  "whoosh", "standard", 0.0),
-    # S6 (lines 7-8): the airspace rings crowd in, the cone squeezes, JUNE 2025 stamps empty, the '?'
-    (L[7] + 0.2,  "boom",   "hero",     -0.3),
-    (L[7] + 2.5,  "clank",  "standard", 0.3),
-    (L[8] + 0.2,  "stamp",  "standard", 0.0),
-    (L[8] + 3.2,  "pop",    "standard", 0.0),
-    # S7 (lines 9-10): the hopeful chime as the whale brightens, the reticle settles, the terminal button
-    (L[9] + 0.3,  "chime",  "standard", 0.0),
-    (L[10] + 0.2, "tick",   "standard", 0.0),
-    (VIDEO_SECS - _TAIL + 1.0, "chime", "standard", 0.0),
+    # S1 (lines 0-1): the drone-in-a-box pops its lid, spec labels tick, banner snaps, cold fleet stacks
+    (L[0] + 0.6,  "pop",    "hero",     -0.2),
+    (L[0] + 1.8,  "tick",   "standard",  0.3),
+    (L[1] + 0.3,  "snap",   "standard", -0.2),
+    (L[1] + 1.9,  "clank",  "texture",   0.3),
+    # S2 (line 2): the camera lifts off, the delta opens, the "2 people" scale hit
+    (L[2] + 0.4,  "whoosh", "standard",  0.0),
+    (L[2] + 3.6,  "boom",   "standard",  0.0),
+    # S3 (line 3): Byron's nameplate, the radio pings scratching track-lines on the land
+    (L[3] + 0.4,  "ding",   "standard", -0.3),
+    (L[3] + 2.6,  "tick",   "standard",  0.2),
+    # S4 (line 4): the maze MULTIPLIES (the one riser, the rehook), the WHERE-TO-LOOK slot blinks
+    (L[4] + 0.3,  "riser",  "hero",      0.0),
+    (L[4] + 3.0,  "pop",    "standard",  0.0),
+    # S5 (lines 5-6): the traced slough warms (chime), then Petrel snaps to the pointed heading
+    (L[5] + 1.6,  "chime",  "hero",     -0.2),
+    (L[6] + 0.2,  "whoosh", "standard",  0.2),
+    # S6 (lines 7-8): the found bloom lands, the REMOVE box spins, the village spark relay, nodes pop
+    (L[7] + 0.3,  "boom",   "hero",      0.0),
+    (L[7] + 2.8,  "clank",  "standard", -0.3),
+    (L[8] + 1.6,  "ding",   "standard",  0.2),
+    (L[8] + 3.4,  "pop",    "standard",  0.3),
+    # S7 (line 9): Petrel settles warm and turns to the hand (button), a soft closing tick
+    (L[9] + 0.5,  "chime",  "standard",  0.0),
+    (VIDEO_SECS - _TAIL + 1.0, "tick", "texture", 0.0),
 ]
 
-SILENCE_DIP_AT = L[10] - 0.6  # the breath before the closing question (the >=6dB gate dip)
-DIP_LEN = 0.8
+# The breath before the PAYOFF turn ("Someone who reads the land did", ~41s) — aligned to the
+# storyboard audio_arc.silence_at=39.5 (a real VO gap, the [short pause] in line 7) so the >=6dB gate dip lands in true silence.
+SILENCE_DIP_AT = 39.5
+DIP_LEN = 0.65
 
 
 def check_schedule(events):
@@ -157,7 +160,7 @@ def main():
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
         f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.30,"
-        f"volume=enable='between(t,{dip0},{dip1})':volume=0.10,"
+        f"volume=enable='between(t,{dip0},{dip1})':volume=0.06,"
         f"volume=enable='gt(t,{vo_end + 0.4})':volume=1.3[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)

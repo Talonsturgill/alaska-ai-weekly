@@ -1,0 +1,21 @@
+{
+  "thesis": "The drone industry is racing to take the human out of the loop with drone-in-a-box autonomy. A Yup'ik village in Quinhagak is doing the opposite, and it works: they scaled the scarce input, trained local pilots who already read the land, and now they teach other villages. Autonomy fielded the tool; local knowledge is the decisive intelligence.",
+  "supporting_facts": [
+    "Gleason (c10): Yup'ik and Alaska Native pilots excel 'because it's where they grew up.' The person running the training names local knowledge as the decisive variable, not the flight computer.",
+    "The org's behavior is the proof: drones first flew in for outsiders' work at the Nunalleq dig (c12); the village could have flown for hire, and instead built a 14-week course and now TEACHES Quinhagak, Eek, Goodnews Bay, Platinum (c13, c14). They scaled pilots, not boxes.",
+    "The industry contrast (2025 background, c16): the state SOAR program fields the US-made, autonomy-capable Skydio X10 and openly pursues Beyond Visual Line of Sight, drone-in-a-box operation over Starlink. The stated direction is to remove the operator; the win on the ground is a human-training win."
+  ],
+  "fair_counter_point_to_honor": "The autonomy is genuinely real and genuinely fielded (22 drones and docks stationed in Alaska, 35 more planned, c17). That capability is exactly what lowered the barrier enough for a village to run its own program. This is not anti-AI: capable autonomy PLUS local expertise beats capable autonomy alone. Autonomy raised the ceiling; trained local pilots are what turn it into search-and-rescue and subsistence value.",
+  "valence": "celebratory (a genuine, bounded Alaska-Native-led win), rotating off the recent curious/mixed streak.",
+  "honesty_guardrails": [
+    "The KYUK reporting never says AI or autonomy; keep the human-knowledge frame primary as the source does.",
+    "AI/autonomy language attaches ONLY to the Skydio X10 platform and the SOAR program (2025 background, labeled), never to the villagers' words or actions.",
+    "Reindeer/salmon computer-vision counting is ASPIRATION ('wants to', 'aims to'), never a deployed system.",
+    "Do not claim AI finds the lost person; that is Petluska plus a thermal camera plus local knowledge (c09).",
+    "Cultural: name Nalaquq and the roles precisely; never name the village corporation (unverified); never present Yup'ik opinion as a bloc; pro-Alaska not savior; no characterized-object humor on any real named person; no Native iconography or unverified Native words on screen."
+  ],
+  "runner_up_angles": [
+    "Straight self-determination / infrastructure-sovereignty (Analyst A): true and moving, but the more expected angle and quieter on AI. Grafted in as the spine, not the headline.",
+    "Pure SAR-utility 'drones save lives faster in the bush' (c08/c09): under-uses Gleason's c10 and the industry contrast, and risks sounding like a product testimonial. Used as one beat, not the thesis."
+  ]
+}

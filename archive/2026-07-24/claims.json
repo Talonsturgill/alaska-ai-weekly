@@ -1,0 +1,31 @@
+{
+  "run_id": "2026-07-24",
+  "story": "Quinhagak locals bridge drones and traditional knowledge, now they're teaching others",
+  "canonical_source": "KYUK, Samantha Watson, 2026-07-14",
+  "honesty_guardrail": "The KYUK/KNBA/KDLG reporting NEVER uses the words AI, autonomy, autonomous, or computer vision. It frames the win around Yup'ik traditional land knowledge. Any AI/autonomy language is OURS, tied to the drone PLATFORM (Skydio X10) and the state SOAR program (2025 background), never to the KYUK reporting. Keep the human-knowledge frame primary. Reindeer/salmon computer-vision COUNTING is an ASPIRATION (a trainee's stated goal / program direction), not a deployed system, and must be phrased 'wants to' / 'aims to'.",
+  "safe_set": [
+    {"id": "c01", "label": "KYUK/reporting", "onscreen_ok": true, "text": "Quinhagak, on the Yukon-Kuskokwim Delta, western Alaska"},
+    {"id": "c03", "label": "KYUK/reporting", "onscreen_ok": true, "text": "Nalaquq, the tech-solutions arm of Quinhagak's village corporation (do NOT name the corporation)"},
+    {"id": "c04", "label": "KYUK/reporting", "onscreen_ok": true, "text": "Angelina Olrun, 19, a reindeer herder from Mekoryuk, training to fly"},
+    {"id": "c05", "label": "KYUK/reporting", "onscreen_ok": true, "text": "Byron Petluska, Quinhagak search and rescue, also a fish counter"},
+    {"id": "c06", "label": "KYUK/reporting", "onscreen_ok": true, "text": "Sean Gleason, drone-training instructor and former archaeologist (Nalaquq R&D lead per Nalaquq)"},
+    {"id": "c08", "label": "KYUK quote (Petluska)", "onscreen_ok": true, "text": "We get weekly calls for search and rescue, weekly. Sometimes three times a week. Sometimes every day."},
+    {"id": "c09", "label": "KYUK quote (Petluska)", "onscreen_ok": true, "text": "It locates people way faster. It keeps the team ready to go straight towards the person they're looking for."},
+    {"id": "c10", "label": "KYUK quote (Gleason)", "onscreen_ok": true, "text": "our Yup'ik and Alaska Native pilots tend to excel in those spaces because it's where they grew up"},
+    {"id": "c11", "label": "KYUK quote (Olrun)", "onscreen_ok": true, "text": "I'm doing this so I could count reindeer, like, basically find reindeer."},
+    {"id": "c12", "label": "KYUK/reporting", "onscreen_ok": true, "text": "The drones first came to survey the Nunalleq archaeological dig near Quinhagak"},
+    {"id": "c13", "label": "per Nalaquq (2025 program)", "onscreen_ok": true, "text": "a 14-week drone-training course; villages Quinhagak, Eek, Goodnews (Bay), Platinum"},
+    {"id": "c14", "label": "per Nalaquq", "onscreen_ok": true, "text": "Skydio drone training completed with Quinhagak, Eek, and Goodnews Bay"},
+    {"id": "c15", "label": "per 2025 Alaska Business Magazine (state grant)", "onscreen_ok": true, "text": "$12.4 million federal SMART grant to Alaska DOT&PF for rural drones (SOAR program)"},
+    {"id": "c16", "label": "per 2025 state grant announcement", "onscreen_ok": true, "text": "US-made Skydio X10; SOAR pursues Beyond Visual Line of Sight, drone-in-a-box, Starlink"},
+    {"id": "c17", "label": "per 2025 reporting", "onscreen_ok": true, "text": "22 drones and docking stations already stationed in Alaska, 35 more planned (do NOT say '57 planned statewide')"}
+  ],
+  "killed": [
+    "The parent village-corporation proper name (Qanirtuuq) — unverified, never on screen.",
+    "The six-day power outage / drones-inspect-power-lines detail — unverified, excluded.",
+    "Specific Skydio X10 autonomy specs (obstacle avoidance / navigation / subject tracking) as reporting — only usable as a labeled Skydio product spec, not as fact from the story.",
+    "A deployed reindeer/salmon computer-vision COUNTING layer — unsupported; only as aspiration ('wants to count reindeer').",
+    "'57 drones planned statewide' — distorts the source (50 across AK+CA = 35 AK + 15 CA, beyond 22 stationed).",
+    "Attributing the 'locates people faster' quote to Gleason — it is Petluska."
+  ]
+}

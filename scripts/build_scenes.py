@@ -23,7 +23,7 @@ TAIL = 2.6  # hold after the last word
 # S1 L0 (silt/find-the-whale), S2 L1 (331+decline), S3 L2 (from space, SatelliteEye),
 # S4 L3-L4 (GAIA+partners, the learning pipeline), S5 L5-L6 (cannot-count-yet, needs a
 # clear look), S6 L7-L8 (June 2025 empty, sky booked), S7 L9-L10 (holding on, the question).
-SCENE_START_LINE = [0, 1, 2, 3, 5, 7, 9]
+SCENE_START_LINE = [0, 2, 3, 4, 5, 7, 9]
 
 
 def _apply_caption_fixups(caps):

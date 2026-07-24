@@ -870,3 +870,54 @@ dispatch_history:
       amber, beluga bone-white
     metaphor: teaching a computer to find a nearly invisible whale in a muddy satellite
       pixel, and the one clear slice of sky it needs is already booked
+- date: '2026-07-24'
+  topic: Quinhagak/Nalaquq Yup'ik drone-pilot training for SAR and subsistence; the
+    village that scaled trained local pilots (not autonomous boxes) and now teaches
+    other villages. Autonomy fielded the tool (Skydio X10, SOAR drone-in-a-box, 2025
+    background); local land knowledge is the decisive intelligence.
+  slug: box-that-waits
+  key_entities:
+  - quinhagak
+  - nalaquq
+  - yup'ik drone pilots
+  - byron petluska
+  - sean gleason
+  - angelina olrun
+  - search and rescue
+  - soar program
+  - skydio x10
+  - drone-in-a-box
+  - bvlos
+  - eek
+  - goodnews bay
+  - kanektok river
+  - nunalleq
+  - yukon-kuskokwim delta
+  archetype: ''
+  palette: warm tundra gold and sage green under a low midnight sun, cloudberry coral
+    accent, cold quarantined slate for the industry render, deep spruce dark
+  voice: warm proud plainspoken; a wry setup on the industry plan then invested conviction
+  stance: celebratory
+  angle: 'The drone industry races to remove the pilot; Quinhagak did the opposite
+    and it works: they trained local Yup''ik pilots who read the land and now teach
+    other villages, so autonomy fielded the tool while local knowledge is the decisive
+    intelligence.'
+  hero: Petrel
+  cast:
+  - Petrel
+  - PetrelDock
+  - Character
+  - TundraDelta
+  - SloughMaze
+  composition:
+    pov: orbital-aerial
+    motion_vector: assemble-build
+    hero_treatment: single-organic-hero
+    layout: fullbleed-split
+    register: naturalistic-scene
+    camera_strategy: track-follow
+    light_story: dawn-backlight
+    palette: warm tundra gold and sage green under a low midnight sun, cloudberry
+      coral accent, cold quarantined slate industry render, deep spruce dark
+    metaphor: the box that flies itself but waits for the hand that knows the land;
+      local knowledge as the one lit path through a maze of identical sloughs

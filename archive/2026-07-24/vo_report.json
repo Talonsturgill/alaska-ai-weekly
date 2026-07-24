@@ -1,0 +1,55 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.972,
+    "heard": "Across the drone industry, one plan \u2013 remove the pilot, let the machine fly itself out of a box. But on the Yukon Cusco Quim Delta, the country is enormous, and a search team is two people. Byron Petluska runs search and rescue in Quinigok, the calls come weekly, sometimes daily. A drone can fly anywhere, it still cannot know which cloud to search. Sean Gleason, who trains them, says they excel because it is where they grew up. The pilot points, a thermal camera answers. The box did not find the lost person. Someone who reads the land did. So the Yubik company Nala Cook did not just fly, it taught the next village. The tool flies itself, it still waits for someone who knows the land.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.056,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 6.21,
+        "voiced_frac": 0.43,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 54.16,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean"
+  },
+  "all_reports": [
+    {
+      "pass": false,
+      "score": 0.956,
+      "diagnosis": "WORDS: WER 0.088 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    },
+    {
+      "pass": true,
+      "score": 0.972,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.968,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

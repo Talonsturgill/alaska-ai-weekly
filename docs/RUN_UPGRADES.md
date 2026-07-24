@@ -789,3 +789,66 @@ CAPTION_SYNC 149 cues, MUSIC sourced (Frost Waltz, Kevin MacLeod CC BY 4.0), SFX
 SILENCE_DIP 15.6dB, LIVING_SCREEN 94%, HOOK_WINDOW, FIRST_FRAME all pass). Panel: editor SHIP,
 flow-critic SHIP, scorer median 8.6 (8.64/8.5/8.62), zero hard blockers. LinkedIn caption:
 linter PASS (1662 chars, 121-char hook, 5 hashtags), editor+scorer 8.9.
+
+## 2026-07-24 -- "The Box That Waits for You" (Quinhagak / Nalaquq drone-pilot training)
+
+**Shipped:** a ~56s 2.5D infographic Dispatch on the Yup'ik village of Quinhagak, where the
+company Nalaquq trained local drone pilots for search and rescue and subsistence and now teaches
+other villages. Earned angle (celebratory, register-rotated off a curious/mixed streak): the
+industry races to remove the pilot, and Quinhagak did the opposite and it works, so autonomy
+fielded the tool while local land knowledge is the decisive intelligence. Net-new hero Petrel
+(a warm SAR drone-in-a-box that defers to the pilot's pointing hand). Delivered: Gmail draft,
+5 verified permanent media links, alaskaaihq.com/videos feed updated, branch merged to main.
+
+**Repeat-offender addressed with a PERMANENT fix (VO forced-alignment collapse):**
+`_align_wholefile` in `scripts/vo_synth_gemini.py` now aligns the 44.1k `vo.wav`, not the 24k
+take. faster-whisper on the raw 24k take intermittently mis-timestamps a whole RUN of consecutive
+VO lines onto a single instant (reproduced twice this run: first lines 6-9, then after a re-synth
+lines 0-3, both pinned to ~20-33s while speech actually starts at 0.0s), which silently wrecks
+`build_scenes.py` scene bounds and every caption cue. This is the same alignment-desync class the
+07-19 and 07-23 notes patched piecemeal; the structural fix (align the resampled 44.1k wav, whose
+word timestamps come out clean and monotonic every time) makes the whole class impossible rather
+than adding another doc reminder. Verified: re-aligning the same take on the 44.1k wav yields a
+clean 0..53.6s monotonic span for all 10 lines.
+
+**Craft advance:** the HUD label/chip kit (`BoxLabel`, `StatBurst` in kit.tsx) is now form-shaded
+(FormGradient fill + top highlight strip + drop/contact shadow), clearing the 2026-07-18 scorer-
+panel flat-chip flag so overlays sit IN the lit world. Opt out with `flat` for legacy callers.
+
+**Net-new asset:** `Petrel` + `PetrelDock` (kit.tsx, registered in ASSET_MANIFEST.md same commit):
+a warm-cream rounded SAR drone-in-a-box hero with a teal thermal camera-eye and a defer-to-the-
+hand interaction (idle-searches to the wrong side, then SNAPS to a pointed heading); the dock is
+the cold quarantined-slate industry box.
+
+**Panel-driven fixes made this run (both panels, all concrete defects + hard-flags fixed before
+ship):** removed unsupported on-screen numbers (the REMOVE/MULTIPLY scoreboard is now NON-numeric,
+killing the "1 OPERATORS" typo the panel flagged as a hard blocker); reconciled the village count
+to 3 per claim c14 (Quinhagak, Eek, Goodnews Bay) with Nalaquq shown as the company origin, not a
+trained village; replaced the undisclosed hard number "2 PEOPLE" with "A SMALL TEAM"; rebuilt the
+signature snap (S5) and the button defer (S7) with anticipation, overshoot, body rotation and
+motion blur (both had read as near-static holds); tightened coral discipline so #FF5A3C fires only
+at the found-bloom and the empty WHERE-TO-LOOK slot; made the braided-water maze VISIBLY multiply
+(channels spawn via stroke reveal) and moved the WHERE-TO-LOOK slot clear of the caption on a dark
+backing; upgraded the four-wheeler to a recognizable ATV and the search track-lines to GPS-style
+dashed paths.
+
+**Known-issues, genuinely deferred (style-register fine-craft, with a plan):** the re-panel median
+is 8.30 (8.30/8.18/8.38), zero hard blockers, below the 8.6 excellence bar. The remaining gap is
+diffuse within-style polish, not a concrete defect: (1) more visible idle life (breath + weight-
+shift) on HELD human figures (the Character rig has it built in but the panel graded it thin,
+partly an evidence gap since no Byron/Gleason motion strip was provided) -- plan: add a low-
+amplitude desynced secondary idle and always emit a held-figure filmstrip for the panel; (2)
+richer delta wide-shot backgrounds (kettle-pond/tannin-sheen density) when the subject is small
+-- plan: a reusable textured tundra-delta background variant; (3) firmer ATV silhouette and a less
+crowded village-relay layout. Delivered under the routine's deliver-with-disclosure rule (median
+below threshold, zero hard blockers, only style-register complaints) rather than looping a 4th
+render; the honest scorecard is disclosed in the Gmail draft.
+
+**Gate record:** quality_gate.py 10.0/10 (SHARPNESS, HUD/CAPTION text, EVENT_CADENCE 0 dead gap,
+BEAT_DENSITY 24, SCENE_STRUCTURE 7 shots, CAMERA_MOTION all moving shots clear 30%, CAPTION_SYNC
+124 cues, MUSIC sourced ("Inspired", Kevin MacLeod CC BY 4.0), SFX 18 events, SILENCE_DIP 8.3dB,
+LIVING_SCREEN 93%, HOOK_WINDOW, FIRST_FRAME all pass). Gate 0: storyboard_check divergence 9/9
+axes vs both prior dispatches; storyboard-critic SHIP, flow-critic PRE+POST SHIP, art-director
+critic SHIP, Gate 0E cold-read SHIP. Panel: 3-judge median 8.30, zero hard blockers; editor first
+pass flagged the on-screen numbers (fixed), re-verified clean. LinkedIn caption: linter PASS
+(1615 chars, 92-char hook, 5 hashtags), editor+scorer 8.74.
