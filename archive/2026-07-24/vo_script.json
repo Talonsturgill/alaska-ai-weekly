@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-07-24",
+  "title": "The Box That Waits for You",
+  "angle": "The drone industry races to remove the human (drone-in-a-box autonomy). Quinhagak did the opposite and it works: they trained local Yup'ik pilots who read the land, and now teach other villages. Autonomy fielded the tool; local knowledge is the decisive intelligence.",
+  "display_script": "Across the drone industry, one plan. Remove the pilot. Let the machine fly itself, out of a box. But on the Yukon-Kuskokwim Delta, the country is enormous, and a search team is two people. Byron Petluska runs search and rescue in Quinhagak. The calls come weekly, sometimes daily. A drone can fly anywhere. It still cannot know which slough to search. Sean Gleason, who trains them, says they excel because it is where they grew up. The pilot points. A thermal camera answers. The box did not find the lost person. Someone who reads the land did. So the Yup'ik company Nalaquq did not just fly. It taught the next village. The tool flies itself. It still waits for someone who knows the land.",
+  "lines": [
+    "Across the drone industry, one plan. Remove the pilot.",
+    "Let the machine fly itself, out of a box.",
+    "But on the Yukon-Kuskokwim Delta, the country is enormous, and a search team is two people.",
+    "Byron Petluska runs search and rescue in Quinhagak. The calls come weekly, sometimes daily.",
+    "A drone can fly anywhere. It still cannot know which slough to search.",
+    "Sean Gleason, who trains them, says they excel because it is where they grew up.",
+    "The pilot points. A thermal camera answers.",
+    "The box did not find the lost person. Someone who reads the land did.",
+    "So the Yup'ik company Nalaquq did not just fly. It taught the next village.",
+    "The tool flies itself. It still waits for someone who knows the land."
+  ],
+  "caption_fixups": {},
+  "phonetic_notes": "For the SPOKEN transcript only (vo-director + synth): Kuskokwim = 'KUSS-koh-kwim'; Quinhagak = 'KWIN-ha-gak'; Yup'ik = 'YOO-pik'; Nalaquq = 'nah-LAH-kok'; slough = 'slew'; Petluska = 'pet-LOOSE-ka'; Gleason = 'GLEE-son'. Real spelling stays on screen via caption_fixups."
+}

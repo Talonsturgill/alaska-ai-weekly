@@ -38,22 +38,35 @@ export function burst(cx: number, cy: number, spikes: number, r1: number, r2: nu
 }
 
 // A shouty boxed label (the genre's caption card).
+// CRAFT ADVANCE 2026-07-24: HUD chips get FORM-SHADING (a FormGradient fill instead of a flat
+// single-tone) + a DROP/CONTACT SHADOW, so overlays sit IN the lit scene instead of floating as
+// flat fills on top (the manifest's named next-advance, flagged by the 07-18 scorer panel). Opt
+// out with `flat` for any legacy caller that wants the old flat chip.
 export const BoxLabel: React.FC<{
   x: number; y: number; text: string; w?: number; h?: number; fs?: number;
-  fill?: string; color?: string; rot?: number; sub?: string;
-}> = ({x, y, text, w = 320, h = 74, fs = 40, fill = ICE, color = INK, rot = 0, sub}) => (
-  <g transform={`translate(${x},${y}) rotate(${rot})`}>
-    <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={11} fill={fill} stroke={INK} strokeWidth={7} />
-    <text x={0} y={sub ? -4 : fs * 0.34} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={fs} fill={color} letterSpacing={1}>
-      {text}
-    </text>
-    {sub && (
-      <text x={0} y={h / 2 - 12} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={fs * 0.5} fill={color} opacity={0.8}>
-        {sub}
+  fill?: string; color?: string; rot?: number; sub?: string; flat?: boolean;
+}> = ({x, y, text, w = 320, h = 74, fs = 40, fill = ICE, color = INK, rot = 0, sub, flat = false}) => {
+  const gid = `boxlbl_${Math.round(x)}_${Math.round(y)}_${w}`;
+  const t = tones(fill);
+  return (
+    <g transform={`translate(${x},${y}) rotate(${rot})`}>
+      {!flat && <>
+        <ellipse cx={0} cy={h / 2 + 4} rx={w / 2 * 0.9} ry={9} fill={INK} opacity={0.22} style={{filter: 'blur(5px)'}} />
+        <defs><FormGradient id={gid} t={t} softness={0.8} /></defs>
+      </>}
+      <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={11} fill={flat ? fill : `url(#${gid})`} stroke={INK} strokeWidth={7} />
+      {!flat && <rect x={-w / 2 + 4} y={-h / 2 + 4} width={w - 8} height={h * 0.34} rx={8} fill={t.key} opacity={0.35} />}
+      <text x={0} y={sub ? -4 : fs * 0.34} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={fs} fill={color} letterSpacing={1}>
+        {text}
       </text>
-    )}
-  </g>
-);
+      {sub && (
+        <text x={0} y={h / 2 - 12} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={fs * 0.5} fill={color} opacity={0.8}>
+          {sub}
+        </text>
+      )}
+    </g>
+  );
+};
 
 // Starburst stat badge with a big number + label lines.
 export const StatBurst: React.FC<{
@@ -61,6 +74,8 @@ export const StatBurst: React.FC<{
   fill?: string; rot?: number; big_fs?: number;
 }> = ({cx, cy, scale = 1, big, lines = [], fill = AMBER, rot = 0, big_fs = 88}) => (
   <g transform={`translate(${cx},${cy}) scale(${scale}) rotate(${rot})`}>
+    {/* CRAFT ADVANCE 2026-07-24: drop shadow so the badge sits IN the lit scene, not on top */}
+    <ellipse cx={0} cy={16} rx={150} ry={26} fill={INK} opacity={0.22} style={{filter: 'blur(7px)'}} />
     <polygon points={burst(0, 0, 14, 172, 132)} fill={fill} stroke={INK} strokeWidth={8} strokeLinejoin="round" />
     <polygon points={burst(0, 0, 14, 146, 112)} fill="none" stroke={AMBER_D} strokeWidth={5} opacity={0.7} />
     <text x={0} y={lines.length ? -6 : big_fs * 0.34} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={big_fs} fill={INK}>
@@ -768,6 +783,140 @@ export const SatelliteEye: React.FC<{
             <path d={`M52,${6 - 10 * ((f / 24) % 1)} q-6,10 0,16 q6,-6 0,-16 Z`} fill="#8ecbff" stroke={INK} strokeWidth={2} opacity={Math.min(1, strain)} />
           )}
         </g>
+      </g>
+    </g>
+  );
+};
+
+// ============================================================= PETREL (NET-NEW 2026-07-24)
+// The SAR "drone-in-a-box" hero for "The Box That Waits for You". Deliberate shape language:
+// a small, ROUNDED, WARM-cream helper (the opposite of a cold institutional monolith), genuinely
+// capable but INCOMPLETE without the pilot. A single teal thermal camera-EYE is the emotional
+// tell. The signature interaction is DEFER-TO-THE-HAND: `heading` leans/faces the drone toward a
+// pointed direction; when idle-searching it drifts to the WRONG side, then SNAPS to `heading`.
+//   emotion: 'cocky' (chest up, brows high) | 'eager' (searching, eye wide, a little wrong)
+//            | 'lost' (uncertain, eye darts, brows worried) | 'purposeful' (locked on the heading)
+//            | 'deferential' (settled, turned to the hand, eye soft)
+//   eyeDilate 0..1 : 1 = wide searching, 0 = clamped/locked. accent 0..1 = VO-emphasis body kick.
+//   heading (deg, -40..40) : which way it leans/faces (the pilot's pointed direction). groundY: contact shadow.
+// Built to the depth bar (tones/FormGradient/RimLight/ContactShadow) with idle hover-bob + blink + rotor spin.
+export type PetrelEmotion = 'cocky' | 'eager' | 'lost' | 'purposeful' | 'deferential';
+export const Petrel: React.FC<{
+  frame: number; x?: number; y?: number; scale?: number; facing?: 1 | -1;
+  emotion?: PetrelEmotion; eyeDilate?: number; accent?: number; heading?: number; groundY?: number; rotor?: boolean;
+}> = ({frame: f, x = 0, y = 0, scale = 1, facing = 1, emotion = 'eager', eyeDilate = 1, accent = 0, heading = 0, groundY, rotor = true}) => {
+  const bodyT = tones('#EBD9B0');   // warm cream shell
+  const trimT = tones('#D9B87A');   // gold trim
+  const idg = `petrel${Math.round(x)}_${Math.round(y)}`;
+  const bob = 5 * Math.sin(f / 15);
+  const dil = Math.max(0, Math.min(1, eyeDilate));
+  const kick = Math.max(0, Math.min(1, accent));
+  // idle-search drift to the WRONG side (eager/lost), then the scene drives `heading` on the snap
+  const searchDrift = (emotion === 'eager' || emotion === 'lost') ? 9 * Math.sin(f / 33) : 0;
+  const lean = heading + searchDrift;                 // degrees
+  const iris = 8 + dil * 12;                           // wide searching -> clamps small
+  const eyeGlow = 0.55 + (1 - dil) * 0.45 + kick * 0.3;
+  const blink = ((f + 20) % 165) < 5;
+  const rot = (f * 30) % 360;
+  const browIn = emotion === 'purposeful' ? 7 : emotion === 'lost' ? -3 : emotion === 'cocky' ? 5 : 2;
+  const chest = emotion === 'cocky' ? -6 : emotion === 'deferential' ? 4 : 0;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
+      <FormGradient id={`${idg}_b`} t={bodyT} />
+      <FormGradient id={`${idg}_t`} t={trimT} />
+      {groundY !== undefined && <ContactShadow cx={0} cy={groundY} rx={116} ry={18} opacity={0.28} blur={12} />}
+      <g transform={`translate(0,${bob + chest}) rotate(${lean * 0.35})`}>
+        {/* ---- rotor arms (X-quad) with spinning blur discs ---- */}
+        {[[-134, -16, 1], [134, -16, -1], [-108, 30, 1], [108, 30, -1]].map(([ax, ay, dir], i) => (
+          <g key={i}>
+            <path d={`M0,-2 L${ax},${ay}`} stroke={INK} strokeWidth={15} strokeLinecap="round" />
+            <path d={`M0,-2 L${ax},${ay}`} stroke={trimT.core} strokeWidth={7} strokeLinecap="round" />
+            <circle cx={ax} cy={ay} r={14} fill={`url(#${idg}_t)`} stroke={INK} strokeWidth={5} />
+            {rotor && (
+              <g transform={`translate(${ax},${ay - 5})`}>
+                <ellipse cx={0} cy={0} rx={48} ry={8} fill="#f3ead2" opacity={0.22} />
+                <ellipse cx={0} cy={0} rx={48} ry={8} fill="none" stroke="#fff8e6" strokeWidth={2} opacity={0.4} />
+                <line x1={-46} y1={0} x2={46} y2={0} stroke="#fff8e6" strokeWidth={3} opacity={0.5} transform={`rotate(${(dir as number) * rot})`} />
+              </g>
+            )}
+          </g>
+        ))}
+        {/* ---- landing skids ---- */}
+        {[-1, 1].map((s, i) => (
+          <g key={i}>
+            <path d={`M${s * 40},88 L${s * 64},138`} stroke={INK} strokeWidth={8} strokeLinecap="round" />
+            <path d={`M${s * 36},138 L${s * 88},138`} stroke={INK} strokeWidth={8} strokeLinecap="round" />
+            <path d={`M${s * 36},138 L${s * 88},138`} stroke={trimT.shade} strokeWidth={4} strokeLinecap="round" />
+          </g>
+        ))}
+        {/* ---- rounded hub body (deliberately soft/friendly) ---- */}
+        <g>
+          <path d="M-88,-2 Q-88,-56 0,-56 Q88,-56 88,-2 Q88,54 0,54 Q-88,54 -88,-2 Z"
+            fill={`url(#${idg}_b)`} stroke={INK} strokeWidth={OUT} strokeLinejoin="round" />
+          <path d="M18,-54 Q88,-44 88,-2 Q88,50 26,54 Q80,-2 18,-54 Z" fill={bodyT.shade} opacity={0.45} />
+          {/* warm panel seams + rivets (detail density) */}
+          <path d="M-64,-28 Q0,-38 64,-28" fill="none" stroke={bodyT.key} strokeWidth={3} opacity={0.5} />
+          <path d="M-72,18 Q0,28 72,18" fill="none" stroke={trimT.core} strokeWidth={4} opacity={0.4} />
+          {[-64, -32, 32, 64].map((rx2, i) => (
+            <g key={i}><circle cx={rx2} cy={-38} r={4.5} fill={trimT.core} stroke={INK} strokeWidth={2.5} /><circle cx={rx2} cy={-38} r={1.6} fill="#fff7e2" opacity={0.85} /></g>
+          ))}
+          {/* top nub + soft running lights (warm, not cold) */}
+          <rect x={-4} y={-74} width={8} height={20} rx={3} fill={trimT.core} stroke={INK} strokeWidth={3} />
+          <circle cx={0} cy={-78} r={5.5} fill={((f % 44) < 22) ? '#ffcf7a' : '#7a5a2a'} stroke={INK} strokeWidth={2.5} />
+          <circle cx={-78} cy={2} r={4.5} fill={((f % 50) < 25) ? '#9ee6b0' : '#3a5a44'} />
+          <circle cx={78} cy={2} r={4.5} fill={((f % 50) < 25) ? '#9ee6b0' : '#3a5a44'} />
+          <RimLight d="M-88,-2 Q-88,-56 0,-56 Q88,-56 88,-2" w={4} opacity={0.55} />
+        </g>
+        {/* ---- the teal camera-EYE (the emotional tell) ---- */}
+        <g transform="translate(0,-2)">
+          <circle r={38} fill="#0e1a1a" stroke={INK} strokeWidth={OUT} />
+          <circle r={38} fill="none" stroke={bodyT.key} strokeWidth={3} opacity={0.5} />
+          {blink ? (
+            <path d="M-26,0 q26,14 52,0" fill="none" stroke="#7fe6dc" strokeWidth={6} strokeLinecap="round" transform="translate(-26,0)" />
+          ) : (
+            <>
+              <circle r={27} fill="none" stroke="#6FB0A6" strokeWidth={5} opacity={0.5 + 0.4 * eyeGlow} />
+              <circle r={iris} fill={`rgba(111,224,216,${0.5 + 0.45 * eyeGlow})`} stroke="#2fb9ad" strokeWidth={3} />
+              <circle r={Math.max(4, iris * 0.42)} fill="#04201d" />
+              <circle cx={-iris * 0.4} cy={-iris * 0.4} r={3} fill="#fff" opacity={0.9} />
+              {/* lock ticks appear as it clamps onto a heading */}
+              {dil < 0.35 && [0, 90, 180, 270].map((deg, i) => (
+                <line key={i} x1={0} y1={-31} x2={0} y2={-37} stroke="#8ff0e4" strokeWidth={3}
+                  transform={`rotate(${deg})`} opacity={Math.min(1, (0.35 - dil) * 3)} />
+              ))}
+            </>
+          )}
+          {/* brows drive the read */}
+          <path d={`M-36,${-40 + browIn} q16,${-6 + browIn * 0.4} 30,${browIn * 0.5}`} fill="none" stroke={INK} strokeWidth={6.5} strokeLinecap="round" />
+          <path d={`M36,${-40 + browIn} q-16,${-6 + browIn * 0.4} -30,${browIn * 0.5}`} fill="none" stroke={INK} strokeWidth={6.5} strokeLinecap="round" />
+        </g>
+      </g>
+    </g>
+  );
+};
+
+// PetrelDock -- the cold slate "drone-in-a-box" the industry ships. Deliberately COLD and
+// rectilinear (the quarantined blue), the opposite of Petrel's warm roundness. `lidOpen` 0..1
+// tips the lid; Petrel rises out of it in the hook and the button.
+export const PetrelDock: React.FC<{f: number; x: number; y: number; scale?: number; lidOpen?: number}> = ({f, x, y, scale = 1, lidOpen = 1}) => {
+  const t = tones('#8B98A6');   // cold slate (quarantined industry blue-gray)
+  const lo = Math.max(0, Math.min(1, lidOpen));
+  const gid = `dock${Math.round(x)}_${Math.round(y)}`;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <ContactShadow cx={0} cy={12} rx={150} ry={22} opacity={0.3} />
+      <defs><FormGradient id={gid} t={t} /></defs>
+      {/* box shell */}
+      <rect x={-140} y={-96} width={280} height={108} rx={12} fill={`url(#${gid})`} stroke={INK} strokeWidth={OUT} />
+      <path d="M60,-96 L140,-96 L140,12 L60,12 Z" fill={t.shade} opacity={0.55} />
+      {/* cold rectilinear vents + status LEDs */}
+      {[-1, 0, 1].map((k, i) => <rect key={i} x={-40 + k * 44 - 14} y={-30} width={28} height={30} rx={3} fill="#2b3742" stroke={INK} strokeWidth={3} />)}
+      {[-110, -86, -62].map((lx, i) => <circle key={i} cx={lx} cy={-78} r={5} fill={((f / 6 + i * 2) % 9) < 4 ? '#7fd7ff' : '#28425a'} stroke={INK} strokeWidth={2.5} />)}
+      <text x={0} y={4} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill="#dfe7ee" letterSpacing={2} opacity={0.85}>DRONE-IN-A-BOX</text>
+      {/* hinged lid (tips open) */}
+      <g transform={`translate(0,-96) rotate(${-lo * 108})`} style={{transformOrigin: '-140px -96px'} as any}>
+        <rect x={-140} y={-22} width={280} height={24} rx={8} fill={t.core} stroke={INK} strokeWidth={OUT} />
+        <rect x={-140} y={-22} width={280} height={10} rx={5} fill={t.key} opacity={0.4} />
       </g>
     </g>
   );

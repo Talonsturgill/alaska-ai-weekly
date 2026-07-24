@@ -1,0 +1,58 @@
+{
+  "run_id": "2026-07-24",
+  "title": "The Box That Waits for You",
+  "one_line": "Warm living Yukon-Kuskokwim tundra vs a cold rectilinear industry render, so the palette itself argues the thesis: the land (and the people who read it) is warm, the autonomy-without-people is cold.",
+  "palette": {
+    "roles": {
+      "sky": "#F4C15A (low midnight-sun amber)",
+      "sky_deep": "#E0922E (warm ember-amber dusk band, kept clear of the reserved coral)",
+      "ground": "#7E8B5A (sage tundra green)",
+      "ground_gold": "#C9A24B (tundra gold / lichen)",
+      "water": "#5E6B45 (tannin slough, cool-warm)",
+      "hero": "#EBD9B0 warm cream body + #6FB0A6 teal thermal eye (Petrel, a WARM friendly machine, not cold-blue)",
+      "accent_thermal": "#FF5A3C (cloudberry/coral signal, RESERVED)",
+      "industry_cold": "#8B98A6 desaturated gray-blue (quarantined to the industry render only)",
+      "shadow": "#2A3428 (deep spruce)",
+      "text_cream": "#F5ECD6"
+    },
+    "mood": "proud, warm, plainspoken, a genuine bounded win under a huge sky",
+    "divergence": "Diverges hard from the last two dispatches: 07-23 was Cook Inlet pewter-teal / orbital blue-black / detection-cyan; 07-22 was the checkpoint palette. This run is WARM EARTH (amber, sage, gold) with cold gray-blue used ONLY as the quarantined industry look, so blue never leads. No default blue.",
+    "thermal_rule": "Coral/thermal #FF5A3C appears ONLY at human-decisive moments: the found-person bloom (a soft abstract heat signature, never a face or figure) and the empty WHERE-TO-LOOK slot the machine cannot fill. The dusk sky band uses ember-amber #E0922E, deliberately separated in hue/chroma from the reserved coral so the signal stays unique."
+  },
+  "light": {
+    "time": "late-summer midnight sun, ~11pm low golden light",
+    "direction": "warm key low from screen-left, long raking shadows across lichen; cool sky fill",
+    "depth": "stage3d/parallax on the delta (far tundra band drifts against a slow push; near sloughs on a closer plane); forms carry key/fill/rim + contact shadow (lib/lighting tones/FormGradient/RimLight/ContactShadow)",
+    "engine": "lighting.tsx; thermal beats crossfade to a warm IR false-color (coral hot on cool green) via a local heat treatment"
+  },
+  "shape_language": "Deliberate contrast: the LAND is organic and rounded (soft braided sloughs, low tundra swells, rounded hills); the INDUSTRY render is cold and rectilinear (grid overlays, catalog boxes, tidy autonomy arcs, a fleet of identical docked boxes). Petrel the hero drone is intentionally ROUNDED and friendly, because it is not the villain, the point is it is capable but incomplete without the pilot.",
+  "casting": {
+    "hero": "Petrel (NET-NEW) — a small, rounded, warm-cream SAR drone-in-a-box helper with a single teal thermal camera-eye; genuinely capable, hovers eager while searching (a little wrong), and DEFERS to the human hand, snapping to whatever direction the pilot points. It embodies the thesis. NOT CheckpointGateLever, NOT SatelliteEye (clears the two-back hero rule). Fills a real shelf gap (a SAR drone-in-a-box; Vale is a wildfire drone).",
+    "supporting": [
+      "Pilot (Character rig, parka, dignified) — the pointing hand; the true narrative hero.",
+      "Byron Petluska (Character rig, SAR) — dignified, name-plated, near a four-wheeler-scale prop; never caricatured.",
+      "Sean Gleason (Character rig, instructor) — dignified, name-plated; gestures at the land, not a screen."
+    ],
+    "manifest_first": "Human figures come from the Character rig; biome from a bespoke Y-K Delta tundra/slough treatment (tundra + braided-water lineage of TundraBG/RiverBG). Only Petrel is net-new.",
+    "cultural": "Real named people rendered with dignity, neutral respectful features, no exaggeration, no Native iconography, no Native-language words on screen, never a bloc, pro-Alaska never savior. No characterized-object humor on any real person.",
+    "honesty_pin": "RENDER-CRITICAL (Gate 0B): the box must NEVER be shown finding the person. The thermal false-color floods in ONLY after Petrel snaps to the pilot's pointed heading; the found bloom is the CAMERA's output aimed by local knowledge, never Petrel's own autonomous scan/detection. Land 'The box did not find the lost person' on the bloom."
+  },
+  "motion_language": {
+    "hero_moves": [
+      "Petrel HOVER (idle bob, camera-eye drifting to the wrong ridge) = searching without knowing.",
+      "THE POINT: a human hand rises, Petrel SNAPS to that heading (anticipation dip, overshoot, settle) with 180-degree motion blur = knowledge aiming the tool. This is the signature move and it loops the film.",
+      "Counters count up with easing and LAND with a hit (22 stationed and 35 planned; the 1 to 4 villages multiply)."
+    ],
+    "earns_blur": "Petrel's snap-to-heading, the slough-light sweep, the REMOVE/MULTIPLY counters."
+  },
+  "composition": {
+    "safe": "hero action + captions kept inside the centered 4:5 safe box within the 9:16 master; captions ~46px bold, legible muted.",
+    "negative_space": "cold open: the tiny drone against the enormous delta (mismatch sells the scale before a word).",
+    "signature_shot": "Among HUNDREDS of identical cold slough channels, the ONE the human hand traces warms and lights coral-gold while the rest stay grey. The thesis in a single image: local knowledge is the one lit path through the maze."
+  },
+  "craft_advance": {
+    "primary": "Give the HUD label/chip kit (BoxLabel / StatBurst in kit.tsx) real form-shading (FormGradient) + a drop/contact shadow so overlays sit IN the lit world instead of as flat fills on top. This is the manifest's own named next-advance (flagged by the 07-18 scorer panel).",
+    "net_new_asset": "Petrel (SAR drone-in-a-box) built to the depth bar (tones/FormGradient/RimLight/ContactShadow, idle bob + blink + eye dilation) with a new defer-to-the-hand interaction; registered in ASSET_MANIFEST.md same commit.",
+    "supporting": "A bespoke braided-slough LABYRINTH treatment (recursive cold channels with one warm-lit path) as the scale-reveal device."
+  }
+}
