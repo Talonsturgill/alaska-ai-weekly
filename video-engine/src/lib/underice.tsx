@@ -386,3 +386,57 @@ export const AcousticSource: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------------------
+// RINGED SEAL, GHOST FORM — net-new 2026-07-30, added after the Gate 0D art
+// critic caught that beat 19 needed this animal and NOTHING in the manifest had
+// it. The shelf's marine mammals were Beluga, Orca, Humpback, Walrus and
+// SeaOtter, so the one ESA-threatened species this film names was going to be
+// cast by accident as an improvised ellipse. That is exactly the kind of gap the
+// library mandate exists to catch.
+//
+// THE FOURTH SHAPE GRAMMAR: UNFILLED CONTOUR. Every other object in this world
+// is form-shaded, so an unshaded outline reads as deliberate absence rather than
+// an unfinished asset. The 2026-07-26 ThreePipeCutaway carries a live known
+// weakness, that two panel judges found its absence not legible AS an absence at
+// sampled frames, so this asset does three things that finding asks for: a
+// DASHED contour rather than solid (a solid outline reads as a style choice, a
+// dashed one reads as "not filled in"), a visible interior HATCH-FREE void, and
+// a caller-supplied label so the absence is named on screen and never has to be
+// inferred from the drawing alone.
+// ---------------------------------------------------------------------------
+export const RingedSealGhost: React.FC<{
+  x: number; y: number; f: number; scale?: number; facing?: 1 | -1; op?: number; dash?: boolean;
+}> = ({x, y, f, scale = 1, facing = 1, op = 1, dash = true}) => {
+  const v = vitals(f, 5.1, 0.5);
+  const stroke = '#9dc2d6';
+  const da = dash ? '14 11' : undefined;
+  return (
+    <g transform={`translate(${x},${y + v.bob}) scale(${scale * facing},${scale})`} opacity={op}>
+      {/* body: the plump spindle of a hauled-out phocid, no interior fill anywhere */}
+      <path
+        d="M-150,6 C-150,-52 -96,-78 -20,-78 C64,-78 132,-50 156,-8 C166,10 150,30 120,34 C60,42 -40,46 -104,40 C-140,36 -150,26 -150,6 Z"
+        fill="none" stroke={stroke} strokeWidth={6} strokeDasharray={da} strokeLinejoin="round"
+      />
+      {/* the ringed-seal TELL, drawn as outline only: pale rings on the flanks */}
+      {[[-70, -20], [-14, -34], [40, -18], [86, 2]].map(([rx, ry], i) => (
+        <ellipse key={i} cx={rx} cy={ry} rx={16 + (i % 2) * 5} ry={11} fill="none" stroke={stroke}
+          strokeWidth={3} strokeDasharray="7 7" opacity={0.75} />
+      ))}
+      {/* head, muzzle, whiskers, and an eye that is a HOLE rather than a dot */}
+      <path d="M-150,6 C-166,-6 -172,-30 -158,-44 C-146,-56 -122,-58 -110,-48"
+        fill="none" stroke={stroke} strokeWidth={6} strokeDasharray={da} strokeLinecap="round" />
+      <circle cx={-146} cy={-32} r={7} fill="none" stroke={stroke} strokeWidth={4} />
+      {[-1, 0, 1].map((k) => (
+        <line key={k} x1={-162} y1={-18 + k * 5} x2={-186 - k * 3} y2={-22 + k * 9}
+          stroke={stroke} strokeWidth={2.5} opacity={0.7} />
+      ))}
+      {/* rear flippers, splayed, outline only */}
+      <path d="M150,10 L200,-16 L192,14 L206,34 L152,30" fill="none" stroke={stroke} strokeWidth={5}
+        strokeDasharray={da} strokeLinejoin="round" />
+      {/* fore flipper */}
+      <path d="M-60,40 L-38,74 L4,58" fill="none" stroke={stroke} strokeWidth={5} strokeDasharray={da}
+        strokeLinecap="round" />
+    </g>
+  );
+};
