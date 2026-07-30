@@ -1,6 +1,6 @@
 import React from 'react';
 import {INK, ICE, SNOW, RED} from './kit';
-import {tones, FormGradient, RimLight, ContactShadow, BrushedMetal} from './lighting';
+import {tones, paleTones, FormGradient, RimLight, ContactShadow, BrushedMetal} from './lighting';
 
 // =============================================================================
 // PROPS — the generalized physical-prop kit (asset-library session #2,
@@ -52,7 +52,7 @@ export const StatCard: React.FC<{x: number; y: number; big: string; sub?: string
 // sitting on top of the lit world. It now carries the same contract as the rest of the kit
 // (FormGradient body + ContactShadow + a rim on the light-side edge); pass `flat` to opt out.
 export const Nameplate: React.FC<{x: number; y: number; text: string; sub?: string; op?: number; subColor?: string; flat?: boolean}> = ({x, y, text, sub, op = 1, subColor = '#e0921a', flat = false}) => {
-  const plateTones = tones(ICE);
+  const plateTones = paleTones(ICE);
   const gid = `nameplate_${Math.round(x)}_${Math.round(y)}`;
   const h = sub ? 88 : 60;
   return (
