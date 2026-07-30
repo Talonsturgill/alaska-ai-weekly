@@ -78,6 +78,42 @@ dispatch happens entirely inside an office, so both gaps were load-bearing.
   legible enough as an absence at sampled frames. Next pass should scale the pipes up, label the
   capped end, and animate flow in one and two so the dead one reads by contrast — ACTIVE
 
+## Under-ice (the library's FIRST SUBMERGED WORLD) — lib/underice.tsx
+NET-NEW 2026-07-30 for the Arctic Mobile Observing System Dispatch (ONR Year 9, 91 FR 46055). Two
+real gaps justified this rather than inventing net-new work: the shelf had an orbital eye, a seafloor
+ear, a ground ear and two aerial machines but NOTHING THAT SWIMS, and all eleven biomes were above
+water so a story set under a metre of sea ice could not be staged at all.
+- `IceGlider` — the run's HERO, the UNDER-ICE SWIMMER — underice.tsx — Shape-language decision that
+  drives the whole asset: a buoyancy-driven glider HAS NO PROPELLER, so its verb cannot be thrust, it
+  is PITCH AND SINK. That is drawn literally as a slow sawtooth on an irrational period, and the tail
+  is deliberately BARE so the missing propeller reads as a design fact rather than an omission.
+  `emotion` gliding / listening / hibernating / lost / fixed, carried by THREE things at once because
+  one eye was not enough to read at frame size (the same lesson as the 07-25 SeismicStation horn and
+  the 07-26 TaperedCone): the iris (real 8 to 20 range, CLAMPS small and bright on `fixed` meaning the
+  machine knows where it is), the body attitude (yaw wanders on `lost`, squares up on `fixed`), and a
+  BROW BAR whose angle carries the state even when the eye is dark. `pitch` overrides the sawtooth,
+  `ping` + `pingFrom` bloom inbound acoustic arcs ARRIVING from a bearing (this machine receives, it
+  does not emit), `eyeLock`, `rime` creeps frost from the tail forward as it sits still, `accent` VO
+  reactivity, `gain` freezes vitals for a held beat. Mid-body swept wings drawn as separate lit and
+  shaded faces, CTD sensor stack on the spine, pressure-hull seams, payload bay. Routed through
+  vitals(). Taste-looped 4 passes — ACTIVE
+- `UnderIceBG` — the TWELFTH biome and the first submerged one — underice.tsx — inverts every other
+  biome in the kit: the bright hard detailed plane is the CEILING and depth falls away below into near
+  black, with an enforced value ladder so three depth planes separate inside one hue family (the
+  flat-blue trap an underwater scene falls into by default). The jagged underside is ONE CONTINUOUS
+  POLYGON of mostly-flat runs punctuated by three irregular pressure-ridge keels. HARD-WON: pass 2
+  drew 22 evenly spaced outlined triangles and they read as decorative BUNTING, pass 3 made them a
+  uniform sawtooth and it read as a ZIPPER. A rough edge has to be part of the slab silhouette, not a
+  row of separate objects under it, and it needs flat runs for the keels to read against. `lead` opens
+  a crack of daylight overhead, the only warm colour available down here and therefore the strongest
+  focal signal in frame, so spend it once. `iceY`, `parallax`, `motes`, `hue` — ACTIVE
+- `AcousticSource` — the moored 900 Hz navigation source the glider listens FOR — underice.tsx —
+  deliberately hard and vertical against the glider's soft horizontal drift: seabed anchor, taut
+  mooring line, ribbed transducer can, `pulse` emits expanding rings. The emit/receive split is a
+  deliberate pair with IceGlider's inbound arcs — ACTIVE
+- Look-dev: `UnderIceLook` (UnderIceLook.tsx) — all five glider states, the biome, and the source in
+  emitting and silent states, in one frame.
+
 ## Fauna (the Alaska bestiary) — lib/fauna.tsx
 - `Moose` — land — fauna.tsx — emotion: calm/wary; idle head-bob/ear-flick/tail; palmate antlers; form-shaded + rim + AO — NEW 2026-07-18; `bumpKick` 0..1 NEW 2026-07-19: a comic bumped-indignant-recover reaction pose (squash-and-stagger, pinned ears, wide indignant eyes, antler wobble, impact stars); `alert` 0..1 NEW 2026-07-20: ears perk fully UP+forward, head/neck RAISES, nostril-flare sniff, pupil tracks upward — the OPPOSITE motion from bumpKick's lateral recoil (a watching-the-sky pose), used for the drone-watcher gag — existing-asset new-pose growth quota
 - `Raven` — air/perch — fauna.tsx — mode: perch/fly; head-tilt, throat hackles, wing-beat cycle — NEW 2026-07-18
@@ -147,7 +183,7 @@ NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam pro
 - `MainStreetBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): small-town main street in one-point perspective: false-front storefronts converging both sides (camera-facing lit faces with door/shop window/sign + shadow-side walls), gravel road with center dashes + puddle shimmer, power poles with sagging wires, pennant string fluttering across the street, snow-capped massif closing the view; params `dusk` 0..1 (dusk sky + per-window warm flicker), `banner`. THE community/politics/town-hall stage — ACTIVE
 - `OilfieldBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): North Slope oilfield: flat plain to the horizon, low arctic sun in a haze band (kept left of the flare), derrick lattice with blinking beacon, steel modules on a gravel pad, flare stack with living flicker flame + breathing glow, THE pipeline running the foreground on VSM supports, distant rigs; params `season` winter (blowing snow) / summer (melt ponds), `flare` 0..1. THE energy/economy stage — ACTIVE
 - `AnchorageSkylineBG` — NET-NEW 2026-07-21 (lib/biomes.tsx, owner directive "bake the Anchorage skyline in as an artifact"): the verified local-recognition postcard, drawn back-to-front per docs/craft/ANCHORAGE_LANDMARKS.md: sky, tiny lone Denali (`denali`), Mt. Susitna "Sleeping Lady" reclining ridge, continuous faceted Chugach wall w/ termination-dust caps + Flattop + foothill treeline, downtown band on the bluff (ConocoPhillips + Atwood slabs, Hotel Captain Cook three stepped mustard towers), Cook Inlet water w/ wobble reflections, coastal-trail foreground (railing, path, alders, fireweed); params `season` summer/fall, `denali`, `floatplane` (animated Lake Hood red/white floatplane), `train` (blue/gold Alaska Railroad consist). Taste-looped 4 rounds. USAGE RULES in ANCHORAGE_LANDMARKS.md: lowkey background cameo, 1-2 landmarks max, Anchorage-set stories only — ACTIVE
-  - Environment kit now ELEVEN biomes (three episode-local + eight shared in lib/biomes.tsx). Every biome candidate from the upgrade backlog is now BUILT.
+  - Environment kit now TWELVE biomes (three episode-local, eight shared in lib/biomes.tsx, plus UnderIceBG in lib/underice.tsx, the first submerged one). Every biome candidate from the upgrade backlog is now BUILT.
   - Local-flavor reference docs (NEW 2026-07-21): docs/craft/ANCHORAGE_LANDMARKS.md (skyline formula + insider props + usage rules) and docs/craft/ALASKA_NOSTALGIA.md (top-12 local-grin list, bygone businesses, famous Alaskans w/ sensitivity rules, historic eras, trademark homage-not-copy guide). Consult BOTH in the directors room when a story is set in/near Anchorage or wants a nostalgia beat.
 
 ## Engine systems (the craft layer — advance these every run, don't just consume them)

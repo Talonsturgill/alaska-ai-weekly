@@ -20,6 +20,7 @@ import { CityShowcase } from './CityShowcase';
 import { StationLook } from './StationLook';
 import { MaterialShowcase } from './MaterialShowcase';
 import { z } from 'zod';
+import { UnderIceLook } from './UnderIceLook';
 
 const standoffSchema = z.object({
   yesCount: z.number(),
@@ -207,6 +208,14 @@ export const RemotionRoot: React.FC = () => {
         id="BorealFlat"
         component={BorealFlat}
         durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="UnderIceLook"
+        component={UnderIceLook}
+        durationInFrames={120}
         fps={30}
         width={1080}
         height={1920}
