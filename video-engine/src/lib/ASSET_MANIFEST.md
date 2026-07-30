@@ -81,8 +81,8 @@ dispatch happens entirely inside an office, so both gaps were load-bearing.
 ## Under-ice (the library's FIRST SUBMERGED WORLD) — lib/underice.tsx
 NET-NEW 2026-07-30 for the Arctic Mobile Observing System Dispatch (ONR Year 9, 91 FR 46055). Two
 real gaps justified this rather than inventing net-new work: the shelf had an orbital eye, a seafloor
-ear, a ground ear and two aerial machines but NOTHING THAT SWIMS, and all eleven biomes were above
-water so a story set under a metre of sea ice could not be staged at all.
+ear, a ground ear and two aerial machines but NO MACHINE THAT SWIMS, and NO SUBMERGED BIOME existed, so a story set under a metre of sea ice could not be
+staged at all.
 - `IceGlider` — the run's HERO, the UNDER-ICE SWIMMER — underice.tsx — Shape-language decision that
   drives the whole asset: a buoyancy-driven glider HAS NO PROPELLER, so its verb cannot be thrust, it
   is PITCH AND SINK. That is drawn literally as a slow sawtooth on an irrational period, and the tail
@@ -97,7 +97,7 @@ water so a story set under a metre of sea ice could not be staged at all.
   reactivity, `gain` freezes vitals for a held beat. Mid-body swept wings drawn as separate lit and
   shaded faces, CTD sensor stack on the spine, pressure-hull seams, payload bay. Routed through
   vitals(). Taste-looped 4 passes — ACTIVE
-- `UnderIceBG` — the TWELFTH biome and the first submerged one — underice.tsx — inverts every other
+- `UnderIceBG` — the THIRTEENTH biome and the first submerged one — underice.tsx — inverts every other
   biome in the kit: the bright hard detailed plane is the CEILING and depth falls away below into near
   black, with an enforced value ladder so three depth planes separate inside one hue family (the
   flat-blue trap an underwater scene falls into by default). The jagged underside is ONE CONTINUOUS
@@ -111,6 +111,17 @@ water so a story set under a metre of sea ice could not be staged at all.
   deliberately hard and vertical against the glider's soft horizontal drift: seabed anchor, taut
   mooring line, ribbed transducer can, `pulse` emits expanding rings. The emit/receive split is a
   deliberate pair with IceGlider's inbound arcs — ACTIVE
+- `RingedSealGhost` — the UNFILLED CONTOUR, net-new 2026-07-30 — underice.tsx — added mid-run after
+  the Gate 0D art critic caught that beat 19 needed this animal and the shelf's marine mammals were
+  Beluga, Orca, Humpback, Walrus and SeaOtter, so the one ESA-threatened species the film names was
+  about to be improvised as an ellipse. THE FOURTH SHAPE GRAMMAR: in a world where every object is
+  form-shaded, UNSHADED is itself a grammar and it is this film's whole thesis. Three things make the
+  absence read AS absence rather than as an unfinished asset, which is the live known weakness on the
+  07-26 ThreePipeCutaway: the contour is DASHED (a solid outline reads as a style choice, a dashed one
+  reads as not filled in), the interior is a true void with no hatch, and the caller supplies a label
+  so the absence is named rather than inferred. Ringed-seal tells drawn as outline only: pale flank
+  rings, roman muzzle, whiskers, an eye that is a hole rather than a dot, splayed rear flippers.
+  `dash` can solidify it for any future non-absence use — ACTIVE
 - Look-dev: `UnderIceLook` (UnderIceLook.tsx) — all five glider states, the biome, and the source in
   emitting and silent states, in one frame.
 
@@ -183,7 +194,11 @@ NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam pro
 - `MainStreetBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): small-town main street in one-point perspective: false-front storefronts converging both sides (camera-facing lit faces with door/shop window/sign + shadow-side walls), gravel road with center dashes + puddle shimmer, power poles with sagging wires, pennant string fluttering across the street, snow-capped massif closing the view; params `dusk` 0..1 (dusk sky + per-window warm flicker), `banner`. THE community/politics/town-hall stage — ACTIVE
 - `OilfieldBG` — NET-NEW 2026-07-20d (lib/biomes.tsx): North Slope oilfield: flat plain to the horizon, low arctic sun in a haze band (kept left of the flare), derrick lattice with blinking beacon, steel modules on a gravel pad, flare stack with living flicker flame + breathing glow, THE pipeline running the foreground on VSM supports, distant rigs; params `season` winter (blowing snow) / summer (melt ponds), `flare` 0..1. THE energy/economy stage — ACTIVE
 - `AnchorageSkylineBG` — NET-NEW 2026-07-21 (lib/biomes.tsx, owner directive "bake the Anchorage skyline in as an artifact"): the verified local-recognition postcard, drawn back-to-front per docs/craft/ANCHORAGE_LANDMARKS.md: sky, tiny lone Denali (`denali`), Mt. Susitna "Sleeping Lady" reclining ridge, continuous faceted Chugach wall w/ termination-dust caps + Flattop + foothill treeline, downtown band on the bluff (ConocoPhillips + Atwood slabs, Hotel Captain Cook three stepped mustard towers), Cook Inlet water w/ wobble reflections, coastal-trail foreground (railing, path, alders, fireweed); params `season` summer/fall, `denali`, `floatplane` (animated Lake Hood red/white floatplane), `train` (blue/gold Alaska Railroad consist). Taste-looped 4 rounds. USAGE RULES in ANCHORAGE_LANDMARKS.md: lowkey background cameo, 1-2 landmarks max, Anchorage-set stories only — ACTIVE
-  - Environment kit now TWELVE biomes (three episode-local, eight shared in lib/biomes.tsx, plus UnderIceBG in lib/underice.tsx, the first submerged one). Every biome candidate from the upgrade backlog is now BUILT.
+  - Environment kit now THIRTEEN biomes: three episode-local, eight shared in lib/biomes.tsx,
+    PaperOfficeBG in lib/paper.tsx (the first interior, 07-26), and UnderIceBG in
+    lib/underice.tsx (the first submerged one, 07-30). CORRECTED 2026-07-30: the previous
+    total said TWELVE by summing 3 + 8 + 1 and silently dropped PaperOfficeBG, a miscount
+    that had stood since 07-26. Caught by the Gate 0D art critic, not by any code check. Every biome candidate from the upgrade backlog is now BUILT.
   - Local-flavor reference docs (NEW 2026-07-21): docs/craft/ANCHORAGE_LANDMARKS.md (skyline formula + insider props + usage rules) and docs/craft/ALASKA_NOSTALGIA.md (top-12 local-grin list, bygone businesses, famous Alaskans w/ sensitivity rules, historic eras, trademark homage-not-copy guide). Consult BOTH in the directors room when a story is set in/near Anchorage or wants a nostalgia beat.
 
 ## Engine systems (the craft layer — advance these every run, don't just consume them)
