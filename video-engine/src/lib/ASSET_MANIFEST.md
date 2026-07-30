@@ -115,9 +115,15 @@ NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam pro
 - SHARED PROPS KIT — lib/props.tsx — NEW 2026-07-20d: the episode-local props generalized with ALL story copy as params (a prop with baked-in text is an episode-local, not a library asset): `StatCard` (big stat chip, tintable), `Nameplate` (identity plate), `SwingSign` (hanging sign, 1-3 lines, pivot bug fixed), `GearLever` (pulled 0..1 + optional DENIED badge), `SurveyStake` (settle drop-in), `MeasuringChain` (pays out + distance tag), `PenAndDocument` (pen hovers trembling, never signs; optional party plate), `TrailPost` (two-line sign), `BoundaryReveal` (glowing boundary traces any closed path `d` + optional town marker) — look-dev in PropsShowcase.tsx — ACTIVE
   - Episode.tsx copies remain episode-local history; new scenes import from lib/props.tsx.
 - `BoxLabel` / `StatBurst` / `FatArrow` / `Stamp` — HUD/label kit — kit.tsx — ACTIVE
-  - NOTE: these HUD chips still render as flat fills over the lit world (flagged by the
-    scorer panel 2026-07-18). Next craft-advance: give the label/chip kit form-shading + a
-    drop shadow so overlays sit IN the lit scene, not on top of it.
+  - CLOSED 2026-07-30 (the flat-HUD-chip repeat offender, flagged by the scorer panel on
+    2026-07-18, again on 07-26, and still listed open on 07-29). The shading itself landed
+    on 07-21/07-24, but it landed as OPT-IN flags defaulting to OFF (`StatCard formShaded`,
+    `Stamp onPaper`), so a scene that simply called the prop still got a flat chip and the
+    panel kept re-finding it. The real fix was the DEFAULT: `props.tsx` `StatCard` and
+    `Nameplate` are now form-shaded + contact-shadowed BY DEFAULT with a `flat` opt-out, and
+    `Nameplate` gained a dimensional path it never had. `kit.tsx` `BoxLabel` (shaded unless
+    `flat`) and `StatBurst` (always shaded) were already correct. Lesson worth keeping: a
+    default-off fix is a doctrine reminder wearing a code costume.
 
 ## Vehicles (the Alaska machine kit) — lib/vehicles.tsx (NEW 2026-07-20c, asset-library session #2)
 - `BushPlane` — air/ground/water — vehicles.tsx — high-wing taildragger (Super Cub silhouette); `mode` ground (tundra tires, slow prop) / fly (prop blur disc, bank bob) / float (pontoons, heave); airfoil wing slab + lift struts, real rudder blade (both from taste pass 2), cabin glass, engine cowl, N-number panel N907AK, rivets; `propSpeed` override; `body` tint — ACTIVE
