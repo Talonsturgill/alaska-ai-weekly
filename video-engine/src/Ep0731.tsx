@@ -295,16 +295,18 @@ const SkyDeck: React.FC<{f: number; y: number; north?: number}> = ({f, y, north 
       <path d={`M-60,${y * 0.16} Q270,${y * (0.10 - north * 0.02)} 560,${y * 0.17}
                 T1140,${y * 0.13} L1140,${y * 0.30} L-60,${y * 0.33} Z`}
         fill="#e8f0f5" opacity={0.2 + north * 0.16} />
-      {Array.from({length: 11}).map((_, i) => {
-        const band = i % rows;
-        const d = (band + 1) / rows;                       // 0..1 depth, 1 = nearest
-        const yy = y * (0.1 + band * 0.17) + ((i * 29) % 40);
-        const drift = ((i * 211 + f * (0.24 + d * 0.5)) % 1460) - 190;
+      {Array.from({length: 8}).map((_, i) => {
+        // depth is DECORRELATED from vertical position, so the deck reads as weather
+        // rather than as rows. A first pass banded them and it looked like wallpaper.
+        const d = ((i * 37) % 100) / 100 * 0.8 + 0.2;      // 0.2..1 depth, 1 = nearest
+        const yy = y * (0.07 + ((i * 53) % 100) / 100 * 0.34);
+        const drift = ((i * 331 + f * (0.18 + d * 0.55)) % 1620) - 260;
         // north: flat banded stratus. south: taller broken cumulus.
-        const w = (86 + d * 210) * (1 + north * 0.55);
-        const h = (20 + d * 44) * (1 - north * 0.5);
+        const jig = 0.66 + ((i * 71) % 100) / 100 * 0.7;   // no two the same size
+        const w = (86 + d * 230) * (1 + north * 0.55) * jig;
+        const h = (18 + d * 46) * (1 - north * 0.5) * (2 - jig) * 0.72;
         return (
-          <g key={i} transform={`translate(${drift},${yy})`} opacity={(0.5 + d * 0.42) * (1 - north * 0.14)}>
+          <g key={i} transform={`translate(${drift},${yy})`} opacity={(0.3 + d * 0.5) * (1 - north * 0.14) * (0.7 + ((i * 17) % 100) / 300)}>
             <ellipse cx={0} cy={0} rx={w} ry={h} fill="#f4f9fc" />
             {north < 0.5 && (
               <>
