@@ -1555,7 +1555,6 @@ phrase-aware caption breaking; and three factual repairs the film needed — a p
 decision no longer described as an opened lease, a utility's four-way conditional no longer
 flattened to "already stopped", and the "only rule in the way" claim qualified to match its
 own card.
-
 ### 2026-07-31 — three hypotheses about the score, two of them wrong, measured not argued
 
 The four axes carrying 55% of the weighted deficit (Hook 0.44, Motion 0.38, Illustration 0.37,
