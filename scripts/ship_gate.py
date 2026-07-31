@@ -57,6 +57,11 @@ RUBRIC = ROOT / "config" / "dispatch_rubric.yaml"
 # every artifact a viewer could actually receive
 DELIVERABLES = ["master_9x16.mp4", "master_4x5.mp4", "master_9x16_720.mp4"]
 
+# Everything whose contents can change what a frame looks like. If any of it is NEWER than
+# the deliverables, the deliverables were rendered from code that no longer exists.
+SOURCE_GLOBS = ["video-engine/src/**/*.tsx", "video-engine/src/**/*.ts",
+                "scripts/dispatch_mix.py", "scripts/build_scenes.py"]
+
 
 def sha(p: Path) -> str:
     h = hashlib.sha256()
@@ -81,6 +86,51 @@ def ship_threshold() -> float:
     except Exception:
         pass
     return 8.6
+
+
+def newest_source():
+    """(mtime, path) of the newest file that can change a rendered frame."""
+    import glob
+    newest = (0.0, None)
+    for g in SOURCE_GLOBS:
+        for f in glob.glob(str(ROOT / g), recursive=True):
+            m = os.path.getmtime(f)
+            if m > newest[0]:
+                newest = (m, os.path.relpath(f, ROOT))
+    return newest
+
+
+def check_render_is_current():
+    """THE GAP THIS CLOSES (2026-07-31, found the hard way on the fourth editing round).
+
+    ship_gate binds the panel's verdict to the DELIVERABLE's bytes and the evidence to those
+    same bytes. That is airtight against grading one cut and shipping another. It is
+    completely blind to a third failure: a deliverable rendered from SOURCE THAT HAS SINCE
+    CHANGED.
+
+    That is exactly what happened. A render command silently did not run, I read the tail of
+    a stale log as proof it had, and then muxed and graded a video that predated half an hour
+    of fixes. Every hash matched perfectly, because the evidence really was cut from the
+    deliverable -- the deliverable was just thirty minutes behind the code. A judge caught it
+    by noticing that a shot the run described did not exist in the frames, which cost the
+    panel a whole round.
+
+    A timestamp check is cheap and it makes that mistake impossible to repeat."""
+    mtime, path = newest_source()
+    if path is None:
+        return
+    stale = []
+    for n in DELIVERABLES:
+        f = RENDER / n
+        if f.exists() and f.stat().st_mtime < mtime - 1:
+            stale.append(f"{n} ({time.strftime('%H:%M:%S', time.localtime(f.stat().st_mtime))})")
+    if stale:
+        fail([f"DELIVERABLE IS OLDER THAN THE SOURCE IT CLAIMS TO BE A RENDER OF.",
+              f"  newest source: {path} at {time.strftime('%H:%M:%S', time.localtime(mtime))}",
+              f"  stale output:  {', '.join(stale)}",
+              "Every hash in this gate can match while the video is still a render of code "
+              "that no longer exists. Re-render, re-cut the evidence from the new render, "
+              "and re-grade. Do not trust a log tail as proof a render ran -- check the file."])
 
 
 def artifact_state():
@@ -132,6 +182,7 @@ def fail(lines, median=None):
 
 
 def cmd_record(a):
+    check_render_is_current()
     arts, ev = artifact_state()
     if not ev:
         fail([f"no review evidence in {REVIEW} — the panel cannot have looked at anything. "
@@ -174,6 +225,7 @@ def cmd_record(a):
 
 
 def cmd_check(a):
+    check_render_is_current()
     problems = []
     if not VERDICT.exists():
         fail([f"no {VERDICT.name}. The 3-judge panel has not graded this cut. "

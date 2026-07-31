@@ -1155,12 +1155,49 @@ const S7: React.FC = () => {
 --------------------------------------------------------------------------- */
 const S8: React.FC = () => {
   const f = useCurrentFrame();
-  const pile = interpolate(f, [8, 120], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const pile = interpolate(f, [0, 108], [0.16, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const eleven = interpolate(f, [118, 152], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <Stage grade={<Day f={f} amount={0.75} haze={0.24} />} bg="#c6d0d6">
+      {/* THE ROOM. Measured, this was the single emptiest frame in the film at 76.8%
+          low-information: the shot opened on a bare wall, a bare desk and four flying
+          slips. A public comment docket happens somewhere, and the somewhere is the fix —
+          a notice board with the docket number, a counter, and a filed tray, so the beat
+          has a place instead of a void, and the stack has something to be measured against. */}
+      <rect x={0} y={0} width={1080} height={1330} fill="#bcc7cd" />
+      <rect x={0} y={430} width={1080} height={16} fill="#9aa7b0" />
+      {/* the public notice board */}
+      {/* on the wall BEHIND the stack, clear of the headline card and inside the
+          x 108..972 band (at 196 it collided with the card and clipped the left edge) */}
+      <g transform="translate(276,742)">
+        <rect x={-150} y={-132} width={300} height={264} rx={10} fill="#a8b3ba" stroke={INK} strokeWidth={8} />
+        <rect x={-134} y={-116} width={268} height={232} rx={6} fill="#e8e2d2" />
+        <text x={0} y={-74} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24}
+          fill={INK} letterSpacing={0.6}>PUBLIC COMMENT</text>
+        {[0, 1, 2, 3, 4].map((k) => (
+          <rect key={k} x={-112} y={-40 + k * 30} width={224 - (k % 2) * 46} height={8} rx={4}
+            fill="#8b98a3" opacity={0.75} />
+        ))}
+        <rect x={-112} y={94} width={128} height={10} rx={5} fill="#8b98a3" opacity={0.6} />
+      </g>
+      {/* a filed tray on the counter, already holding what came in before */}
+      <g transform="translate(886,1300)">
+        <rect x={-140} y={-18} width={280} height={40} rx={7} fill="#7f8b95" stroke={INK} strokeWidth={7} />
+        {[0, 1, 2, 3, 4, 5].map((k) => (
+          <rect key={k} x={-120} y={-30 - k * 11} width={240 - (k % 3) * 16} height={9} rx={3}
+            fill="#f4f0e4" stroke={INK} strokeWidth={3} />
+        ))}
+      </g>
       <rect x={0} y={1330} width={1080} height={590} fill="#8d7a5f" />
       <rect x={0} y={1330} width={1080} height={590} fill={matFill('planks')} opacity={0.4} />
+      {/* the counter's front edge, so the bottom of frame is furniture and not a brown field */}
+      <rect x={-40} y={1330} width={1160} height={26} rx={8} fill="#6f6154" stroke={INK} strokeWidth={7} />
+      {[150, 540, 930].map((gx) => (
+        <rect key={gx} x={gx - 9} y={1356} width={18} height={564} fill="#6f6154" opacity={0.5} />
+      ))}
+      <rect x={0} y={1356} width={1080} height={70} fill={INK} opacity={0.16} />
+      <rect x={-40} y={1782} width={1160} height={26} rx={6} fill="#5e5348" opacity={0.7} />
+      <rect x={0} y={1808} width={1080} height={112} fill={INK} opacity={0.1} />
       {/* the stack, climbing past frame */}
       {Array.from({length: 34}).map((_, i) => {
         const p = i / 34;
