@@ -1099,6 +1099,29 @@ const S7: React.FC = () => {
       ))}
       <rect x={0} y={1180} width={1080} height={740} fill="#8d7a5f" />
       <rect x={0} y={1180} width={1080} height={740} fill={matFill('planks')} opacity={0.4} />
+      {/* THE DESK IT IS HAPPENING ON. Measured, this is the emptiest shot left in the film
+          at 60% low-information, and all of it is the bare plank band under the book. A desk
+          in a records office has things on it; the things are the beat's own subject. */}
+      <rect x={0} y={1180} width={1080} height={26} fill={INK} opacity={0.14} />
+      <g transform="translate(296,1560)">
+        <ContactShadow cx={0} cy={70} rx={190} ry={22} opacity={0.3} />
+        <rect x={-170} y={-16} width={340} height={54} rx={9} fill="#7f8b95" stroke={INK} strokeWidth={8} />
+        {[0, 1, 2, 3].map((k) => (
+          <rect key={k} x={-150} y={-34 - k * 15} width={300 - (k % 2) * 40} height={12} rx={4}
+            fill="#f4f0e4" stroke={INK} strokeWidth={4} />
+        ))}
+        <text x={0} y={26} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={20}
+          fill={INK} letterSpacing={1.4}>FILED</text>
+      </g>
+      {/* the stamp that has nothing to stamp */}
+      <g transform="translate(880,1600) rotate(-8)">
+        <ContactShadow cx={0} cy={62} rx={92} ry={18} opacity={0.28} />
+        <rect x={-84} y={22} width={168} height={40} rx={8} fill="#6f6154" stroke={INK} strokeWidth={7} />
+        <rect x={-30} y={-44} width={60} height={70} rx={10} fill="#7f8b95" stroke={INK} strokeWidth={7} />
+        <rect x={-52} y={-66} width={104} height={30} rx={11} fill="#5d6a54" stroke={INK} strokeWidth={7} />
+      </g>
+      {/* the near edge of the desk, so the bottom of frame is furniture and not a field */}
+      <rect x={-40} y={1852} width={1160} height={68} rx={10} fill="#6f6154" stroke={INK} strokeWidth={8} />
       {/* the bound statute book, open on two blank pages */}
       {/* 1.22 pushed the book's right leaf to x=1077, past the frame edge — judge 1 found
           a cream document clipped at the right edge in two separate tiles. The rig is
