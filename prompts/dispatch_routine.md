@@ -814,6 +814,28 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
    If you find yourself writing a sentence that explains why a below-bar film is acceptable this
    once, delete the sentence and go fix the film.
 
+   THE PLATEAU RULE (added 2026-07-31 after a seventeen-round run). If TWO CONSECUTIVE rounds
+   fail to raise the panel median, stop patching and TELL THE OWNER THE NUMBER. This is not an
+   escape hatch and it changes nothing about shipping: the film still does not ship, the branch
+   still carries its evidence, and quality is still never a blocker. What it changes is who is
+   told. That run's medians ran 7.37, 7.50, 7.18, 7.22, 7.18, 7.58, 7.44, 7.70, 7.61, 7.20;
+   every round's named defects were fixed and verified, and the score still did not climb,
+   because a panel re-grading the same film finds new defects at about the rate old ones get
+   fixed. One judge said so outright: "composition and writing both rose on your fixes, and I
+   stopped discounting the static turn, which I had been generous about for two rounds."
+
+   When you hit the plateau, say all of this to the owner in one message: the current median
+   and the three judges' numbers, which defects are FIXED AND VERIFIED, and specifically WHY
+   the remainder is not patchable — name the shots and the treatment decision behind them. The
+   owner sets the bar and is the only one who can release a floor for a run, and they cannot
+   exercise that judgement if the run never surfaces the plateau. A run that quietly burns ten
+   more renders proving the same number is not being rigorous, it is withholding a decision
+   that belongs to someone else.
+
+   A plateau is a signal about the TREATMENT, not the polish. If the remaining notes are about
+   staging, frame division, dead space or where the camera is, they were decided at Gate 0 and
+   they need re-boarding, not another render.
+
 1. Encode 9:16 master + 4:5 center-crop (H.264 High, faststart, AAC 48k, -14 LUFS, each
    < 100 MB); ffprobe-assert 1080x1920 and 1080x1350 so a wrong-ratio cut can never ship.
    ALSO encode the MOBILE FEED RENDITION from the 9:16 master -- the alaskaaihq.com/videos
