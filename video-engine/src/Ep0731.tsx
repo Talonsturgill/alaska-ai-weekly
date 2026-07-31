@@ -577,8 +577,8 @@ const Powerline: React.FC<{f: number; y: number; n?: number; flip?: boolean}> = 
 };
 
 /** a hard boxed plate in the house register */
-const Plate: React.FC<{x: number; y: number; text: string; sub?: string; sub2?: string; op?: number; w?: number; size?: number; subSize?: number}> = ({
-  x, y, text, sub, sub2, op = 1, w = 700, size = 38, subSize,
+const Plate: React.FC<{x: number; y: number; text: string; sub?: string; sub2?: string; op?: number; w?: number; size?: number; subSize?: number; placedByParent?: boolean}> = ({
+  x, y, text, sub, sub2, op = 1, w = 700, size = 38, subSize, placedByParent = false,
 }) => {
   const h = sub2 ? 190 : sub ? 142 : 88;
   // THE CARD CLAMPS ITSELF NOW (2026-07-31, panel round 7 hard fail). Two cards were
@@ -589,7 +589,15 @@ const Plate: React.FC<{x: number; y: number; text: string; sub?: string; sub2?: 
   // happened to get caught: a Plate may not cross the 4:5 top line or the caption band,
   // whatever y it is handed. Callers keep saying where they WANT it; the card refuses to
   // go somewhere it cannot be read.
-  const yc = Math.min(Math.max(y, SAFE_TOP + h / 2 + 12), CAPTION_TOP - h / 2 - 10);
+  // ...UNLESS THE PARENT IS DOING THE PLACING, which is the bug this clamp caused when it
+  // shipped. Two call sites position a card with an outer transform and pass y=0, and a
+  // clamp written in FRAME coordinates read that 0 as "far too high", pushed it to 341, and
+  // then the parent's translate added its own 343 on top. The title card landed at 684,
+  // across the hero prop, in the film's most important frame. A guard that cannot tell
+  // local coordinates from frame coordinates has to be told, so those two callers say so.
+  const yc = placedByParent
+    ? y
+    : Math.min(Math.max(y, SAFE_TOP + h / 2 + 12), CAPTION_TOP - h / 2 - 10);
   return (
     <g transform={`translate(${x},${yc})`} opacity={op}>
       <ContactShadow cx={0} cy={h / 2 + 12} rx={w / 2 * 0.9} ry={13} opacity={0.3} />
@@ -700,7 +708,7 @@ const S1Road: React.FC<{f: number; fps: number}> = ({f, fps}) => {
       {/* THE HEADLINE, on screen from frame 0 */}
       <g transform={`translate(540,${SAFE_TOP + 58}) scale(${1 + stamp * 0.055})`}
          style={{transformOrigin: '540px 343px'}}>
-        <Plate x={0} y={0} w={864} size={46} text="THE GATE WITH NO NUMBER" />
+        <Plate x={0} y={0} w={864} size={46} text="THE GATE WITH NO NUMBER" placedByParent />
       </g>
     </Stage>
   );
@@ -811,7 +819,7 @@ const S2: React.FC = () => {
         </g>
       </g>
       <g opacity={clockIn.t} transform={`translate(540,${SAFE_TOP + 130 - (1 - clockIn.t) * 20})`}>
-        <Plate x={0} y={0} w={640} text="NO END DATE" size={40} />
+        <Plate x={0} y={0} w={640} text="NO END DATE" size={40} placedByParent />
       </g>
     </Stage>
   );
@@ -1402,7 +1410,15 @@ const S8: React.FC = () => {
           </g>
         );
       })}
-      <PaperStorm frame={f} count={26} originX={1180} originY={400} targetX={540} targetY={1200} spread={340} />
+      {/* THE FASTEST THING IN THE FILM HAD NO BLUR ON IT (round 8 and 9, judge 3, twice:
+          "the falling comment sheets travel ~900px/s with no motion blur"). At 900px/s a
+          sheet crosses 30 pixels between frames, which is exactly the regime a shutter is
+          supposed to smear. Wrapped in the same MotionBlur the gate boom uses, at a
+          strength tuned to the storm's own fall speed rather than a constant, so the sheets
+          smear while they are travelling and land crisp. */}
+      <MotionBlur vx={11} vy={26} gain={0.34} max={9}>
+        <PaperStorm frame={f} count={26} originX={1180} originY={400} targetX={540} targetY={1200} spread={340} />
+      </MotionBlur>
       {/* eleven, separately countable, on top */}
       <g opacity={eleven}>
         {Array.from({length: 11}).map((_, i) => (
@@ -1863,10 +1879,18 @@ const S11: React.FC = () => {
                 image depends on: a window that is LIT, so the viewer understands the
                 household has power and the line still never reaches the machine. And the
                 line lands ON the gravel, short, with a visible gap. */}
+            {/* CONTRAST, ON THE ONE FRAME THAT CARRIES THE THESIS. Round 9, judges 1 and 2
+                agreeing: "the lit kitchen and the dead-stop dashed line are graded into the
+                sky value... the single image that carries the thesis is the lowest-contrast
+                frame in the film". The house was painted in the same mid-value family as
+                the tundra behind it, so the household read as scenery. It is a value step
+                and a half darker now, with a warm spill around the lit window, so the one
+                thing in frame that HAS power is the brightest thing in frame. */}
             <g opacity={pullOut} transform="translate(196,846)">
-              <ContactShadow cx={0} cy={112} rx={132} ry={18} opacity={0.3} />
-              <rect x={-104} y={-8} width={208} height={122} rx={7} fill="#93a0a9" stroke={INK} strokeWidth={7} />
-              <path d="M-126,-8 L0,-104 L126,-8 Z" fill="#6f7a83" stroke={INK} strokeWidth={7} />
+              <ContactShadow cx={0} cy={112} rx={132} ry={18} opacity={0.42} />
+              <ellipse cx={12} cy={56} rx={186} ry={132} fill="#ffd79a" opacity={0.22} />
+              <rect x={-104} y={-8} width={208} height={122} rx={7} fill="#6b7783" stroke={INK} strokeWidth={7} />
+              <path d="M-126,-8 L0,-104 L126,-8 Z" fill="#4a545d" stroke={INK} strokeWidth={7} />
               <rect x={54} y={-88} width={30} height={52} rx={4} fill="#6f7a83" stroke={INK} strokeWidth={6} />
               {/* the lit window: warm interior against a cool exterior, with mullions */}
               <rect x={-52} y={20} width={104} height={72} rx={5} fill="#ffe9c8" stroke={INK} strokeWidth={6} />
@@ -1885,12 +1909,17 @@ const S11: React.FC = () => {
             </g>
             {/* the line runs out of dashes on the gravel, well short of the machine's feet */}
             <g opacity={pullOut}>
-              <path d="M316,738 C392,846 452,948 486,1078" stroke={INK} strokeWidth={7}
-                strokeDasharray="20 18" fill="none" opacity={0.75} />
-              <ellipse cx={486} cy={1086} rx={30} ry={9} fill={INK} opacity={0.22} />
-              <circle cx={486} cy={1078} r={10} fill={INK} opacity={0.8} />
+              {/* the line is the argument, so it is drawn at argument weight: a bone halo so
+                  it separates from the ground it dies on, then full ink over it */}
+              <path d="M316,738 C392,846 452,948 486,1078" stroke={BONE} strokeWidth={15}
+                fill="none" opacity={0.4} />
+              <path d="M316,738 C392,846 452,948 486,1078" stroke={INK} strokeWidth={10}
+                strokeDasharray="22 16" fill="none" opacity={1} />
+              <ellipse cx={486} cy={1090} rx={38} ry={12} fill={INK} opacity={0.3} />
+              <circle cx={486} cy={1078} r={15} fill={INK} />
+              <circle cx={486} cy={1078} r={7} fill={BONE} opacity={0.55} />
               {/* the gap, measured on the ground so the eye reads a DISTANCE not a stop */}
-              <path d="M506,1090 L604,1112" stroke={INK} strokeWidth={5} strokeDasharray="7 12" opacity={0.5} />
+              <path d="M506,1090 L604,1112" stroke={INK} strokeWidth={7} strokeDasharray="8 11" opacity={0.72} />
             </g>
           </g>
           {/* judge 1 could not resolve this subline at delivered size and could not tell

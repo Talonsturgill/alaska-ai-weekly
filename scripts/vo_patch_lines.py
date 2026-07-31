@@ -285,16 +285,39 @@ def main():
     # while correctly reporting failure. A tool that fails loudly and still mutates the
     # artifact is worse than one that crashes. Check the candidate in memory first; only a
     # passing check earns the right to overwrite anything.
+    # "WOULD REGRESS" HAS TO BE MEASURED AGAINST SOMETHING (fixed 2026-07-31, round 9).
+    #
+    # This block used to print the words "would regress" and then test an ABSOLUTE pass/fail
+    # from vo_soundcheck. Those are different questions, and on this script they gave
+    # opposite answers: the candidate scored wer 0.249 and was refused, while the vo.wav it
+    # was replacing scored 0.355 on the same measure. The tool blocked an improvement and
+    # said the improvement was a regression.
+    #
+    # The reason the absolute threshold is wrong here is ordinary: this narration is full of
+    # proper nouns and spoken numerals that ASR reliably mangles. It hears "To get electric"
+    # for "Chugach Electric" and writes "50-year" where the script says "fifty year". None of
+    # that is a defect in the read, and none of it changes when a line is patched, so an
+    # absolute floor measures the transcriber, not the take.
+    #
+    # So: transcribe the CURRENT file first, and refuse only when the candidate is genuinely
+    # worse than what is already on disk. A small tolerance absorbs ASR jitter between two
+    # runs over near-identical audio. The safety property is unchanged, nothing is written
+    # until the candidate has been checked, and the check now answers the question the error
+    # message always claimed to be asking.
     import tempfile as _tf
+    full_txt = " ".join(l["text"] for l in lines)
+    base = sc.check(os.path.join(AUD, "vo.wav"), full_txt, dur_lo=1.0, dur_hi=600.0)
+    base_wer = base["checks"]["word_accuracy"]["wer"]
     with _tf.TemporaryDirectory() as td:
         cand = os.path.join(td, "cand.wav")
         _save_wav(cand, new_audio)
-        full_txt = " ".join(l["text"] for l in lines)
         pre = sc.check(cand, full_txt, dur_lo=1.0, dur_hi=600.0)
-    if not pre["checks"]["word_accuracy"]["pass"]:
+    cand_wer = pre["checks"]["word_accuracy"]["wer"]
+    print(f"  whole-file wer: on disk {base_wer:.3f} -> candidate {cand_wer:.3f}")
+    if cand_wer > base_wer + 0.02:
         raise SystemExit(
-            f"whole-file word accuracy would regress (wer="
-            f"{pre['checks']['word_accuracy']['wer']}). NOTHING WAS WRITTEN; vo.wav, "
+            f"whole-file word accuracy WOULD REGRESS: {base_wer:.3f} on disk vs "
+            f"{cand_wer:.3f} for the candidate. NOTHING WAS WRITTEN; vo.wav, "
             f"vo_lines.json and captions.json are untouched.\n  heard: {pre['heard'][:200]}")
 
     _save_wav(os.path.join(AUD, "vo.wav"), new_audio)
