@@ -84,7 +84,7 @@ EVENTS = [
     # Every event is motivated by a visible mechanical action. The single riser is
     # spent on the shadow that crosses both panels of the split, which is the frame
     # where the whole argument resolves.
-    (0.12, "thud", "hero", 0.0),
+    (0.58, "thud", "hero", 0.0),
     (2.93, "creak", "standard", 0.0),
     (4.09, "pop", "standard", 0.0),
     (4.99, "snap", "standard", 0.0),
@@ -105,9 +105,9 @@ EVENTS = [
     (46.24, "whoosh", "texture", 0.0),
     (48.52, "clank", "texture", 0.0),
     (52.06, "whoosh", "standard", 0.0),
-    (55.16, "chime", "hero", 0.0),
+    (56.52, "chime", "hero", 0.0),
     (58.41, "tick", "hero", 0.0),
-    (61.08, "pop", "standard", 0.0),
+    (60.72, "pop", "standard", 0.0),
     (65.19, "riser", "hero", 0.0),
     (68.66, "creak", "texture", 0.0),
     (70.15, "boom", "hero", 0.0),

@@ -1,6 +1,7 @@
 import React from 'react';
-import {INK, tones, paleTones, FormGradient, RimLight, ContactShadow, BrushedMetal} from './lighting';
-import {vitals} from './motion';
+import {Easing} from 'remotion';
+import {INK, tones, paleTones, FormGradient, RimLight, ContactShadow, BrushedMetal, MotionBlur} from './lighting';
+import {vitals, EASE} from './motion';
 
 // =============================================================================
 // CIVICS — the RULES kit. NET-NEW 2026-07-31 for "the line that isn't drawn".
@@ -34,10 +35,24 @@ const MONO = '"JetBrains Mono", ui-monospace, monospace';
 /** verdicts a conditional gate can reach. `asking` is the resting state. */
 export type Verdict = 'asking' | 'pass' | 'block';
 
+/**
+ * VERDICT LAMPS ARE PINNED, NOT CHOSEN (2026-07-31 panel, hard finding).
+ *
+ * The obvious palette for a gate is red-stop / green-go, and that is what this was. But
+ * art_direction.json's binding rule licenses exactly TWO reds in the whole film -- the
+ * band on New York's bounded plate and the edge of the slot when it is cut -- so that the
+ * threshold red at 55.8s is the FIRST red the viewer has seen. A red blocking lamp in the
+ * first fifteen seconds spends that first-red before the film reaches the frame it was
+ * saved for, and the judge caught it: "the plan's single most emphasised rule is broken."
+ *
+ * So block is an UNLIT lamp, not a red one, and it is legible without colour: the brow
+ * bar drops, the arm sits down across the road, and the housing reads dark against a lit
+ * amber neighbour. Absence of light is a stronger "no" here than another colour anyway.
+ */
 const LAMP = {
-  asking: '#e8b23a',
-  pass: '#3fb46e',
-  block: '#e0362c',
+  asking: '#e8b23a',   // amber: the resting state, a rule mid-question
+  pass: '#b9d24a',     // citron, the brand's own go colour. never green.
+  block: '#3a4149',    // unlit slate. NEVER RED -- see above.
 };
 
 /**
@@ -77,6 +92,7 @@ export const Gate: React.FC<{
   const brow = verdict === 'block' ? -7 : verdict === 'pass' ? 5 : 0;
   const blink = ((f + Math.round(phase * 37)) % 104) < 5;
   const lamp = LAMP[verdict];
+  const lit = verdict !== 'block';
   // an inspecting gate sweeps its look; a decided one locks forward
   const look = verdict === 'asking' ? Math.sin(f / 26 + phase) * 3.4 : 0;
   const kick = accent * 3;
@@ -121,9 +137,11 @@ export const Gate: React.FC<{
           <g transform="translate(0,-62)">
             <rect x={-15} y={-16} width={30} height={26} rx={7} fill="#232c34" stroke={INK} strokeWidth={5} />
             <circle cx={0} cy={-3} r={8} fill="#2a2f36" />
-            <circle cx={0} cy={-3} r={8} fill={lamp} opacity={0.95} style={{mixBlendMode: 'screen'}} />
-            <circle cx={0} cy={-3} r={13} fill="none" stroke={lamp} strokeWidth={2.5}
-              opacity={verdict === 'asking' ? 0.28 + 0.22 * Math.sin(f / 7 + phase) : 0.5} />
+            {/* an unlit lamp must not screen-blend, or "off" glows like "on" */}
+            <circle cx={0} cy={-3} r={8} fill={lamp} opacity={lit ? 0.95 : 1}
+              style={lit ? {mixBlendMode: 'screen'} : undefined} />
+            <circle cx={0} cy={-3} r={13} fill="none" stroke={lit ? lamp : '#161b21'} strokeWidth={2.5}
+              opacity={verdict === 'asking' ? 0.28 + 0.22 * Math.sin(f / 7 + phase) : lit ? 0.5 : 0.75} />
           </g>
         </g>
 
@@ -397,9 +415,37 @@ export const AperturePlate: React.FC<{
 }> = ({f, x, y, cut = 0, cutW = 120, cutLabel, scale = 1, tint = '#93a0ad'}) => {
   const body = tones(tint);
   const uid = `ap_${Math.round(x)}_${Math.round(y)}`;
+  // How far the cut has actually been made. The slot's GEOMETRY tracks this, so the
+  // opening is made on screen instead of popping to full size the instant cut passes
+  // its threshold, and everything downstream of it can be driven from one number.
+  const open = clamp01((cut - 0.05) / 0.95);
+  const slotW = cutW * (0.16 + 0.84 * open);
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`}>
-      <defs><FormGradient id={`${uid}_p`} t={body} softness={0.9} /></defs>
+      <defs>
+        <FormGradient id={`${uid}_p`} t={body} softness={0.9} />
+        {/* daylight loses itself as it travels, so the bar fades out down the road */}
+        <linearGradient id={`${uid}_beam`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#fff6dd" stopOpacity={0.55} />
+          <stop offset="0.5" stopColor="#fff6dd" stopOpacity={0.32} />
+          <stop offset="1" stopColor="#fff6dd" stopOpacity={0} />
+        </linearGradient>
+      </defs>
+
+      {/* ---- THE CAST BAR. It belongs to the OPENING, not to the plate (2026-07-31
+             panel, judge 1, staging + physics). Both plates used to throw a pale
+             trapezoid because the callers drew the wedge beside the rig instead of
+             through it, which muddied the one event the turn depends on: daylight
+             coming through the new opening for the FIRST time. An uncut plate throws
+             no bar, so this is drawn only when there is a hole, its width is the
+             hole's width, and its brightness is how far the cut has got. Drawn first
+             so the plate body occludes its head and it reads as light landing beyond
+             the plate rather than as a shape stuck on the front. ---- */}
+      {open > 0 && (
+        <path
+          d={`M${-slotW / 2},122 L${slotW / 2},122 L${slotW * 0.92},430 L${-slotW * 0.92},430 Z`}
+          fill={`url(#${uid}_beam)`} opacity={0.62 * open} />
+      )}
       <ContactShadow cx={0} cy={196} rx={116} ry={19} opacity={0.3} />
       <rect x={-104} y={-40} width={208} height={228} rx={8} fill={body.base} stroke={INK} strokeWidth={8} />
       <rect x={-104} y={-40} width={208} height={228} rx={8} fill={`url(#${uid}_p)`} opacity={0.5} />
@@ -409,10 +455,10 @@ export const AperturePlate: React.FC<{
       ))}
       {cut > 0.05 ? (
         <>
-          <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="#cddbe4" />
-          <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none" stroke={INK} strokeWidth={8} />
-          <rect x={-cutW / 2 + 7} y={37} width={cutW - 14} height={12} rx={4} fill={INK} opacity={0.22} />
-          <line x1={-cutW / 2} y1={30} x2={cutW / 2} y2={30} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
+          <rect x={-slotW / 2} y={30} width={slotW} height={92} rx={6} fill="#cddbe4" />
+          <rect x={-slotW / 2} y={30} width={slotW} height={92} rx={6} fill="none" stroke={INK} strokeWidth={8} />
+          <rect x={-slotW / 2 + 7} y={37} width={Math.max(0, slotW - 14)} height={12} rx={4} fill={INK} opacity={0.22} />
+          <line x1={-slotW / 2} y1={30} x2={slotW / 2} y2={30} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
           {cutLabel && (
             <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
               fontSize={19} fill={INK} letterSpacing={1.2}>{cutLabel}</text>
@@ -434,15 +480,46 @@ export const AperturePlate: React.FC<{
 };
 
 /**
+ * THE SWEEP CURVE, AND THE SMEAR AT ITS PEAK (2026-07-31 panel, judge 1, motion).
+ *
+ * Pass 1 drove the hands with `sweep * 360`: a LINEAR function of the caller's linear
+ * ramp, so every frame stepped the same ~45 degrees and nothing smeared at any speed.
+ * The judge read that as a sprite flipping through poses rather than a hand running,
+ * ON THE FILM'S DESIGNATED REVEAL. A hand winds up, runs through the middle, and
+ * settles, and at its fastest it should leave a smear.
+ *
+ * So the angle is eased (EASE.move, ease-in-out) INSIDE the component: a caller that
+ * hands over a plain linear ramp still gets a real motion curve, and no call site
+ * changes. `sweepFrames` is how many frames that caller takes to run sweep 0..1
+ * (Ep0731's S10 sweep is 60 frames, hence the default) and is used ONLY to sample the
+ * angle one frame back, exactly the way Ep0731's `theFall` samples its boom, so
+ * MotionBlur is driven by a measured per-frame angular delta and not by a guess.
+ */
+const SWEEP_EASE = Easing.bezier(...EASE.move);
+const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
+const sweepAngle = (s: number) => SWEEP_EASE(clamp01(s)) * 360;
+
+/**
  * THE CAP CLOCK, ALONE. Same reason as AperturePlate. `sweep` 0..1 runs the hands a
  * full turn so a bounded rule can visibly END, while an unbounded one holds an empty
  * hub that is ABSOLUTELY STILL, which is the film's declared stillness-as-absence beat.
  */
 export const CapClock: React.FC<{
   f: number; x: number; y: number; hands?: number; sweep?: number; scale?: number; tint?: string;
-}> = ({f, x, y, hands = 0, sweep = 0, scale = 1, tint = '#93a0ad'}) => {
+  sweepFrames?: number;
+}> = ({f, x, y, hands = 0, sweep = 0, scale = 1, tint = '#93a0ad', sweepFrames = 60}) => {
   const plate = paleTones('#e9eff4');
   const uid = `cc_${Math.round(x)}_${Math.round(y)}`;
+
+  // angle now, angle one frame back, and the tip speed that difference implies.
+  const ang = sweepAngle(sweep);
+  const prevAng = sweepAngle(sweep - 1 / Math.max(1, sweepFrames));
+  const tipV = Math.abs(ang - prevAng) * (Math.PI / 180) * 34;   // user units/frame at the tip
+  // the cap is in SCREEN pixels, so a big clock cannot smear itself illegible: the
+  // same panel separately failed a frame for blur so heavy the subject was "an
+  // unreadable grey smear". The goal is speed, not mush.
+  const blurMax = 8 / Math.max(0.2, scale);
+
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`}>
       <defs><FormGradient id={`${uid}_d`} t={plate} softness={0.7} /></defs>
@@ -459,12 +536,17 @@ export const CapClock: React.FC<{
       })}
       {hands > 0.05 ? (
         <g opacity={hands}>
-          <g transform={`rotate(${sweep * 360} 0 0)`}>
-            <line x1={0} y1={0} x2={0} y2={-34} stroke={INK} strokeWidth={9} strokeLinecap="round" />
-          </g>
-          <g transform={`rotate(${sweep * 30} 0 0)`}>
-            <line x1={0} y1={0} x2={0} y2={-22} stroke={INK} strokeWidth={7} strokeLinecap="round" />
-          </g>
+          {/* only the MOVING parts smear. The hub is the pivot and stays crisp, which is
+              what sells the smear as speed rather than as a soft drawing. */}
+          <MotionBlur vx={tipV * 0.8} vy={tipV * 0.8} gain={0.7} max={blurMax}>
+            <g transform={`rotate(${ang} 0 0)`}>
+              <line x1={0} y1={0} x2={0} y2={-34} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+            </g>
+            {/* the hour hand keeps its 12:1 gearing off the same eased angle */}
+            <g transform={`rotate(${ang / 12} 0 0)`}>
+              <line x1={0} y1={0} x2={0} y2={-22} stroke={INK} strokeWidth={7} strokeLinecap="round" />
+            </g>
+          </MotionBlur>
           <circle cx={0} cy={0} r={7} fill={INK} />
         </g>
       ) : (
