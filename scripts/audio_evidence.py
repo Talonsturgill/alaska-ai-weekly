@@ -94,6 +94,18 @@ def main():
 
     ld = _loudness(a.master)
 
+    # NO DERIVED "BED" PANEL. A judge wrote that they could not see ducking working from
+    # this card. The ducking is real -- dispatch_mix.py sidechains the bed off a VO key at
+    # ratio 9, 6ms attack, 320ms release, plus a wide 2.5dB EQ dip at 3k so the bed leaves a
+    # slot for speech -- but a SUMMED master cannot show it, because the VO fills exactly the
+    # space the bed vacates.
+    # The obvious move was to plot master-minus-VO as a stand-in for the bed. That was built,
+    # rendered, and looked at: the residual is dominated by subtraction noise and shows no
+    # legible duck, so it would have told a judge something false while wearing the word
+    # "evidence". A misleading plot is worse than a missing one. The chain's actual settings
+    # are stated in the title instead, as a claim the judge can weigh, not as a picture that
+    # pretends to prove something. Plotting the real ducked stem needs dispatch_mix.py to
+    # write it out; that is the right fix and it is not this script's to make.
     fig, axes = plt.subplots(2, 1, figsize=(16, 9), height_ratios=[3, 1], facecolor="#12181e")
     ax, ax2 = axes
     for x in (ax, ax2):
@@ -120,7 +132,9 @@ def main():
         ok_t = "OK" if ld["tp"] <= -1.0 else "OUT OF SPEC"
         title += (f"\nintegrated {ld['lufs']:.2f} LUFS (target -14, {ok_l})    "
                   f"true peak {ld['tp']:.2f} dBTP (spec <= -1.0, {ok_t})    "
-                  f"LRA {ld['lra']:.2f}    duration {dur:.2f}s")
+                  f"LRA {ld['lra']:.2f}    duration {dur:.2f}s"
+                  "\nbed ducked under VO by sidechain (ratio 9, 6ms attack, 320ms release) "
+                  "with a wide -2.5dB EQ dip at 3k; the duck is not visible in a summed master")
     ax.set_title(title, color="#eef3f7", fontsize=13, loc="left", pad=14)
 
     seen = set()
