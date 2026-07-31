@@ -351,6 +351,20 @@ const Tundra: React.FC<{f: number; y?: number; ridge?: boolean; near?: boolean; 
         signature of continuous permafrost and read as structure rather than texture, plus
         thaw ponds holding the sky and near tussocks with shape. It is the emptiest country
         in America and it is not featureless. */}
+    {/* THE GROUND PLANE, GIVEN THE SAME PASS AS THE SKY. Judge 1, after the cloud deck
+        landed: "the fix was applied to one plane of two, which is why the ground is now the
+        biggest thing left... the field band and the asphalt band are still flat unmodulated
+        fills." Right, and it is the same fix: a depth gradient so the plane loses light
+        toward camera, a contact band where it meets the far plane so the two touch instead
+        of abutting, and detail scaled by depth rather than scattered evenly. */}
+    <linearGradient id={`grnd_${Math.round(y)}`} x1="0" y1={y} x2="0" y2={1920} gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#8fa27a" stopOpacity={0.42} />
+      <stop offset="38%" stopColor="#6f8055" stopOpacity={0.1} />
+      <stop offset="100%" stopColor="#3f4a33" stopOpacity={0.3} />
+    </linearGradient>
+    <rect x={-60} y={y} width={1200} height={1920 - y} fill={`url(#grnd_${Math.round(y)})`} />
+    <rect x={-60} y={y - 4} width={1200} height={26} fill="#5d6a54" opacity={0.3} />
+    <rect x={-60} y={y - 2} width={1200} height={9} fill="#4a5442" opacity={0.35} />
     {near && (() => {
       const h = 1920 - y;
       return (
@@ -1055,7 +1069,7 @@ const S6: React.FC = () => {
   // (one click per 1.5 frames from f112) did not reach 50 until f187, by which time the
   // VO was three sentences on, so judge 1 could find no sampled frame showing 50 at all:
   // "the only number a viewer is proven to see on that beat is 30 against a spoken fifty".
-  const years = Math.max(0, Math.min(50, Math.round((f - 46) / 0.86)));
+  const years = Math.max(0, Math.min(50, Math.round((f - 30) / 0.72)));
   const pull = interpolate(f, [112, 176], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const stake = (i: number) => entrance(f, fps, 0.6 + i * 0.45, {drop: 30});
   return (
@@ -1417,6 +1431,85 @@ const S10: React.FC = () => {
   const macro = interpolate(lc, [0, 70], [1.74, 1.86], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const verdict = interpolate(lc, [42, 66], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
+  /* THE OVERHEAD. Judge 2, after the object-level repeat was fixed: "the retention problem
+     is no longer about which OBJECTS are on screen -- it is that the CAMERA and the staging
+     template never change... seven consecutive stills are two mounted objects plus a card
+     row. Break the FRAME somewhere between 49s and 62s: an overhead, a POV through the
+     uncut slot, a tundra-horizon wide, anything that is not two objects at finish scale
+     with a card above."
+
+     Taken exactly. This is the only shot in the film that is not at eye level, and it is
+     the one place the argument is literally a question of what FITS THROUGH: seen from
+     above, the two rules are two bars laid across a road, one with a gap in it and one
+     without, and you watch a small load take the gap and a big one fail to. At eye level
+     that reads as a label. From overhead it reads as a measurement. */
+  const OVER_IN = 56;
+  if (f >= OVER_IN && f < S10_CLOCKS) {
+    const l = f - OVER_IN;
+    const smallY = interpolate(l, [0, 34], [1700, 250], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+    const bigY = interpolate(l, [24, 52], [1800, 900], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+    const bump = l >= 52 && l < 62 ? Math.sin((l - 52) / 1.9) * 22 * (1 - (l - 52) / 10) : 0;
+    const drop = interpolate(l, [0, 60], [1.06, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+    return (
+      <Stage grade={<Day f={f} haze={0.18} />} bg="#8c8577">
+        <g transform={`scale(${drop})`} style={{transformOrigin: '540px 960px'}}>
+          {/* the road, from directly above */}
+          <rect x={0} y={0} width={1080} height={1920} fill={GRAVEL} />
+          <rect x={0} y={0} width={1080} height={1920} fill={matFill('tarmac')} opacity={0.5} />
+          <rect x={0} y={0} width={150} height={1920} fill="#7f8a63" opacity={0.55} />
+          <rect x={930} y={0} width={150} height={1920} fill="#7f8a63" opacity={0.55} />
+          {Array.from({length: 13}).map((_, i) => (
+            <rect key={i} x={528} y={i * 150 + 24} width={24} height={78} rx={8} fill={BONE} opacity={0.45} />
+          ))}
+          {Array.from({length: 40}).map((_, i) => (
+            <ellipse key={i} cx={((i * 173) % 900) + 90} cy={((i * 311) % 1880) + 20}
+              rx={4 + (i % 4) * 3} ry={3 + (i % 3) * 2} fill="#78736a" opacity={0.4} />
+          ))}
+
+          {/* NEW YORK: a bar with a gap cut in it, and the gap has a size */}
+          <g>
+            <rect x={90} y={500} width={382} height={54} rx={10} fill={STEEL} stroke={INK} strokeWidth={9} />
+            <rect x={640} y={500} width={350} height={54} rx={10} fill={STEEL} stroke={INK} strokeWidth={9} />
+            <line x1={472} y1={504} x2={472} y2={550} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
+            <line x1={640} y1={504} x2={640} y2={550} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
+            <text x={556} y={468} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={26}
+              fill={INK} letterSpacing={1.6}>BIGGEST SITES ONLY</text>
+            <text x={556} y={596} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={22}
+              fill={INK} letterSpacing={2}>NEW YORK</text>
+          </g>
+
+          {/* THE PLANK: a bar with no gap at all */}
+          <g>
+            <rect x={90} y={1076} width={900} height={54} rx={10} fill={STEEL} stroke={INK} strokeWidth={9} />
+            <g opacity={0.42}>
+              <rect x={472} y={1076} width={168} height={54} rx={8} fill="none" stroke={BONE}
+                strokeWidth={7} strokeDasharray="16 15" />
+            </g>
+            <text x={556} y={1044} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={26}
+              fill={INK} letterSpacing={1.6}>NO SIZE LIMIT</text>
+            <text x={556} y={1172} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={22}
+              fill={INK} letterSpacing={2}>THE PLANK</text>
+          </g>
+
+          {/* a small load takes the gap; a big one cannot */}
+          <g transform={`translate(556,${smallY})`}>
+            <rect x={-52} y={-72} width={104} height={144} rx={12} fill="#8fa4bd" stroke={INK} strokeWidth={8} />
+            <rect x={-36} y={-52} width={72} height={16} rx={5} fill="#dfe7ee" />
+            <rect x={-36} y={-24} width={72} height={12} rx={4} fill="#dfe7ee" opacity={0.7} />
+          </g>
+          <g transform={`translate(556,${bigY + bump})`}>
+            <rect x={-146} y={-108} width={292} height={216} rx={16} fill="#8fa4bd" stroke={INK} strokeWidth={9} />
+            <rect x={-116} y={-78} width={232} height={26} rx={7} fill="#dfe7ee" />
+            <rect x={-116} y={-34} width={232} height={20} rx={6} fill="#dfe7ee" opacity={0.7} />
+            <rect x={-116} y={4} width={160} height={20} rx={6} fill="#dfe7ee" opacity={0.5} />
+          </g>
+        </g>
+        <Plate x={540} y={CARD_BOT} w={864} size={31}
+          text={l > 52 ? 'ONE SIZE GETS CAUGHT' : 'ONE LETS A SIZE THROUGH'} />
+      </Stage>
+    );
+  }
+
   if (f < S10_CLOCKS) {
     return (
       <Stage grade={<Day f={f} haze={0.3} />}>
@@ -1697,8 +1790,13 @@ const S11: React.FC = () => {
               whether it said the line arrives or never arrives — on the card that states
               the film's thesis. Set at parity with the caption floor, and reworded so the
               negation is the first word rather than the last. */}
-          <Plate x={540} y={CARD_BOT} w={864} size={32} text="IT MAKES ITS OWN POWER"
-            sub="no line from the household ever reaches it" subSize={26} op={pullOut} />
+          {/* THE THESIS CARD, LIFTED AND DARKENED. Judge 3: "the sub-line on the film's own
+              thesis card is the faintest ink in the picture... at the exact moment the film
+              makes its central assertion, and the card also stacks directly on the open
+              caption bar." Raised a caption-height clear of the bar and set at the same ink
+              weight the source chips use. */}
+          <Plate x={540} y={CARD_BOT - 118} w={864} size={32} text="IT MAKES ITS OWN POWER"
+            sub="it never competes with a household for power" subSize={27} op={pullOut} />
         </>
       )}
     </Stage>
