@@ -217,6 +217,14 @@ export const ThresholdGate: React.FC<{
   x: number;
   y: number;
   boom?: number;          // 0 = raised/clear, 1 = slammed down
+  /** Angular velocity of the boom this frame, in degrees. Drives motion blur ON THE BOOM
+   *  ALONE. Added 2026-07-31 after the panel found the caller wrapping this whole rig in
+   *  MotionBlur: "strip_boomfall frame 6 smears the stationary NO CUT plate, whose position
+   *  is identical in frames 5, 6 and 7, and blows the robot's clock head into an unreadable
+   *  white blob. Blur is being applied to the whole foreground group rather than to the
+   *  actual mover." A rig that owns the moving part should own the smear for it, so a caller
+   *  cannot make that mistake again. */
+  boomVel?: number;
   cut?: number;           // 0..1 a real sorting aperture is present in the plate
   hands?: number;         // 0..1 clock hands present
   lamp?: number;          // 0..1 decision lamp, only lights when a threshold fired
@@ -228,7 +236,7 @@ export const ThresholdGate: React.FC<{
   phase?: number;
   tint?: string;
 }> = ({
-  f, x, y, boom = 0, cut = 0, cutW = 120, cutLabel, hands = 0, lamp = 0,
+  f, x, y, boom = 0, boomVel = 0, cut = 0, cutW = 120, cutLabel, hands = 0, lamp = 0,
   label, scale = 1, accent = 0, phase = 0, tint = '#93a0ad',
 }) => {
   const body = tones(tint);
@@ -378,17 +386,19 @@ export const ThresholdGate: React.FC<{
         </g>
       </g>
 
-      {/* ---- the striped boom on a visible pivot ---- */}
+      {/* ---- the striped boom on a visible pivot. THE ONLY THING THAT SMEARS. ---- */}
       <g transform="translate(26,-108)">
         <circle cx={0} cy={0} r={11} fill="#232c34" stroke={INK} strokeWidth={5} />
-        <g transform={`rotate(${armAngle} 0 0)`}>
-          <rect x={0} y={-10} width={252} height={20} rx={8} fill={body.core} stroke={INK} strokeWidth={5.5} />
-          {Array.from({length: 5}).map((_, i) => (
-            <rect key={i} x={12 + i * 46} y={-10} width={23} height={20}
-              fill={i % 2 === 0 ? '#1a1d24' : '#f0f3f6'} opacity={0.85} />
-          ))}
-          <RimLight d="M4,-8 L248,-8" w={3} opacity={0.5} />
-        </g>
+        <MotionBlur vy={boomVel} gain={0.34} max={6}>
+          <g transform={`rotate(${armAngle} 0 0)`}>
+            <rect x={0} y={-10} width={252} height={20} rx={8} fill={body.core} stroke={INK} strokeWidth={5.5} />
+            {Array.from({length: 5}).map((_, i) => (
+              <rect key={i} x={12 + i * 46} y={-10} width={23} height={20}
+                fill={i % 2 === 0 ? '#1a1d24' : '#f0f3f6'} opacity={0.85} />
+            ))}
+            <RimLight d="M4,-8 L248,-8" w={3} opacity={0.5} />
+          </g>
+        </MotionBlur>
       </g>
 
       {label && (
