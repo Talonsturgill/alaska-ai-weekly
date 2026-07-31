@@ -1413,3 +1413,73 @@ bar, ship:false from all three. Their concrete hard fails were fixed and re-rend
   for the registry.
 - Judge 2's structural note stands: the film's two most valuable windows, the opening six
   seconds and the closing fifteen, are its two least active.
+
+---
+
+## 2026-07-31 — "The Gate With No Number"
+
+**Shipped:** a 93.3s Dispatch on Jonathan Kreiss-Tomkins's data-center moratorium plank,
+its two specific divergences from the New York model it names, and the paradox that a
+size-blind, end-date-free pause lands hardest on the one facility that makes its own power.
+
+**What the loop cost, honestly.** Six editing rounds took the panel median from 6.98 to
+8.10, roughly +0.3 a round at about twenty-five minutes and a full render each. The owner
+called that a diminishing return mid-run and lowered the standing bar from 8.6 to 7.8. The
+bar is still the only exit from the loop; what changed is where it sits, decided by the
+person who set it.
+
+**Engine and gate changes committed this run:**
+
+1. **Source-freshness check** (`ship_gate.py`). A render command silently did not run, its
+   stale log tail read as success, and the panel graded a video half an hour behind the
+   code. Every hash matched, because the evidence really was cut from the file that shipped.
+   The gate now compares deliverable mtimes against the newest engine source and blocks.
+2. **Composition lock** (`render.sh`). See below.
+3. **Blank-frame gate** (`ship_gate.py`). See below.
+4. **Surgical VO line patching** (`vo_patch_lines.py`, new). Re-synth one line and splice it
+   into its existing slot, so a wording fix no longer recascades every scene bound, sfx
+   event and caption cue. It verifies the candidate against a transcription BEFORE writing,
+   after its first version silenced the entire 91s VO by dividing float32 samples by 32768.
+5. **Dead-space meter** (`dead_space_check.py`, new). "The frame feels empty" was the single
+   most repeated panel finding across two rounds and survived a whole editing round of
+   texture work, because texture is not information. Now a per-shot number: 46.9% mean on
+   the shipped cut.
+6. **Audio evidence card** (`audio_evidence.py`, new). A judge was scoring sound at the
+   rubric's modal 7.0 for lack of any evidence, which was the correct thing to do with
+   nothing to look at. The card carries the waveform, VO envelope, measured LUFS/TP/LRA and
+   the full sfx schedule. A derived "ducking" panel was built, looked at, found to be
+   subtraction noise proving nothing, and deleted rather than shipped as false evidence.
+7. **Mix arc** (`dispatch_mix.py`). Single-pass loudnorm is a slow AGC and was eating any
+   shape it was handed; replaced with a measure pass plus a linear correction. The bed now
+   follows the script, thinning to roughly half under the two concession lines and swelling
+   into the closing questions, and the automation moved downstream of the sidechain, where a
+   ratio-9 compressor had been partly undoing it. Measured: short-term loudness runs -17.4
+   LUFS at 49.5s to -12.2 at 88.5s where it was flat.
+8. **Owner release** (`ship_gate.py`). A dated, single-run, owner-written lower floor. Not a
+   flag, not run-grantable, waives nothing else.
+
+**THE WRONG-FILM INCIDENT (the one worth reading).**
+
+Late in the run I rendered composition `Dispatch`. `Root.tsx` keeps every past episode
+registered under its own id, and `Dispatch` is still wired to the July 26 film. The render
+succeeded, exited 0, and produced 93.3 seconds of the WRONG EPISODE at this run's length,
+with this run's captions burned over the top and about thirty seconds of blank grey at the
+end where that episode had simply run out of scenes.
+
+Every check in the pipeline passed. The sha256 bindings matched because the bytes were
+self-consistent. The freshness check passed because the file was new. `mux_and_verify.sh`
+passed because there was audio. The ffprobe assertions passed because the dimensions were
+right. All of them answer "is this deliverable current and well formed". Not one of them
+answered "is this the right movie", and the only reason it did not reach the panel is that
+the dead-space meter reported 90% on the last three shots and I opened a frame.
+
+Two permanent guards, both verified before commit:
+- `render.sh` reads the run's composition id from `out/dispatch/.run_stamp.json` and refuses
+  any other id (tested: `render.sh still 12 Dispatch` now exits 3 with a named reason).
+- `ship_gate.py` samples 28 frames across the deliverable and fails on effectively
+  featureless frames (tested against the bad render: fired on 8 of 20 samples, naming 56.0s
+  through 79.3s).
+
+The lesson generalises past this bug: every check we had verified a PROPERTY of the artifact
+and none verified its IDENTITY. A guard that asks "is this the thing we meant to make" is
+worth more than another guard that asks "is this well formed".
