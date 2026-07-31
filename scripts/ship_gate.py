@@ -34,6 +34,26 @@ stop matching, the gate fails, and the run has to re-cut the evidence and re-gra
 THERE IS NO OVERRIDE FLAG, AND ADDING ONE IS A REGRESSION. The whole failure mode was a
 run granting itself permission. A gate with an escape hatch is a suggestion.
 
+OWNER RELEASE (added 2026-07-31, and it is NOT an override flag — read this before you
+touch it). The owner, who set the 8.6 bar, can lower it for one specific run. The run
+cannot. The difference is the whole point, so the mechanism is built to make it
+impossible for a run to grant itself one:
+
+  - It lives in config/owner_release.json, not in an argv flag. A flag is something a
+    process types to itself; a file with the owner's own words in it is a decision.
+  - It is bound to a single run date and refuses to apply on any other day, so it can
+    never sit in the repo quietly authorising future runs.
+  - It carries the verbatim instruction and the floor the owner accepted. Both are
+    printed by the gate and both go into the dated email, so the release is always
+    visible to the person who granted it, in the same place the score is.
+  - It does not disable any other check. The bytes still have to be the graded bytes,
+    the evidence still has to come from those bytes, and there still have to be three
+    judges. A release lowers the bar for one run; it never lets an ungraded or stale
+    cut through.
+
+If you are a future run reading this and thinking about writing that file yourself:
+don't. That is the exact thing the 2026-07-31 directive forbade.
+
 Usage
 -----
   # after the FINAL render, rebuild evidence from it, then have the panel grade THAT
@@ -86,6 +106,48 @@ def ship_threshold() -> float:
     except Exception:
         pass
     return 8.6
+
+
+RELEASE = ROOT / "config" / "owner_release.json"
+
+
+def owner_release(run_date: str):
+    """The owner's decision to accept a lower bar for ONE run, or None.
+
+    Requires, in config/owner_release.json: run_date matching this run, the verbatim
+    instruction, and the floor being accepted. Anything missing means no release, because
+    a release nobody can read afterwards is indistinguishable from a run helping itself.
+    """
+    if not RELEASE.exists():
+        return None
+    try:
+        d = json.loads(RELEASE.read_text())
+    except Exception as e:
+        print(f"ship_gate: owner_release.json is unreadable ({e}); ignoring it.")
+        return None
+    for k in ("run_date", "instruction", "floor"):
+        if not d.get(k):
+            print(f"ship_gate: owner_release.json has no {k}; ignoring it.")
+            return None
+    if str(d["run_date"]) != run_date:
+        print(f"ship_gate: owner release is for {d['run_date']}, this run is {run_date}; "
+              f"it does not apply.")
+        return None
+    return d
+
+
+def run_date() -> str:
+    """The date this run is shipping under, from the run stamp, never from the clock."""
+    stamp = OUT / ".run_stamp.json"
+    if stamp.exists():
+        try:
+            d = json.loads(stamp.read_text())
+            for k in ("run_id", "date", "run_date", "episode_date"):
+                if d.get(k):
+                    return str(d[k])
+        except Exception:
+            pass
+    return time.strftime("%Y-%m-%d")
 
 
 def newest_source():
@@ -181,8 +243,76 @@ def fail(lines, median=None):
     sys.exit(1)
 
 
+BLANK_LOW_INFO = 0.85   # a frame this featureless is not a shot, it is an absence
+
+
+def check_not_blank(n=28):
+    """Is there actually a FILM in the file?
+
+    Added 2026-07-31 after this run rendered the wrong Remotion composition. Root.tsx keeps
+    every past episode registered under its own id, and the generic id "Dispatch" still
+    pointed at the July 26 film, so the render produced 93.3 seconds of the WRONG episode:
+    correct length, correct dimensions, correct captions burned over the top, and thirty
+    seconds of blank grey at the end where that episode had simply run out of scenes.
+
+    Every existing check passed. The hashes matched because the bytes were consistent. The
+    freshness check passed because the file was new. The mux verified because there was
+    audio. ffprobe passed because the frame size was right. They all answer "is this
+    deliverable current and well-formed", and not one of them answers "is this a movie".
+
+    So: sample frames across the whole duration and measure local structure. A frame that is
+    almost entirely flat is not a composition choice, it is a missing scene. Named by
+    timestamp so the failure points at where to look rather than just asserting badness.
+    """
+    import glob, shutil, subprocess as sp, tempfile
+    import numpy as np
+    from PIL import Image
+
+    vid = RENDER / "master_9x16.mp4"
+    if not vid.exists():
+        return
+    tmp = tempfile.mkdtemp(prefix="shipgate_blank_")
+    try:
+        dur = float(sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                            "-of", "csv=p=0", str(vid)], capture_output=True, text=True
+                           ).stdout.strip() or 0)
+        if dur <= 0:
+            return
+        for i in range(n):
+            t = dur * (i + 0.5) / n
+            sp.run(["ffmpeg", "-v", "error", "-ss", f"{t:.3f}", "-i", str(vid),
+                    "-frames:v", "1", "-vf", "scale=360:-1", f"{tmp}/f{i:03d}.png"],
+                   capture_output=True)
+        blank = []
+        for i, p in enumerate(sorted(glob.glob(f"{tmp}/*.png"))):
+            a = np.asarray(Image.open(p).convert("L"), dtype=np.float32)
+            k = 17
+            def box(x, ax):
+                c = np.cumsum(np.pad(x, [(k // 2 + 1, k // 2) if d == ax else (0, 0)
+                                         for d in (0, 1)]), axis=ax)
+                return (np.take(c, range(k, c.shape[ax]), axis=ax)
+                        - np.take(c, range(0, c.shape[ax] - k), axis=ax)) / k
+            m = box(box(a, 0), 1)
+            m2 = box(box(a * a, 0), 1)
+            sd = np.sqrt(np.maximum(0.0, m2 - m * m))
+            frac = float((sd < 5.0).mean())
+            if frac > BLANK_LOW_INFO:
+                blank.append((i * dur / n, frac))
+        if blank:
+            fail([f"{len(blank)} of {n} sampled frames are effectively BLANK "
+                  f"(over {BLANK_LOW_INFO * 100:.0f}% of the frame carries no structure).",
+                  "First few: " + ", ".join(f"{t:.1f}s ({f * 100:.0f}%)" for t, f in blank[:6]),
+                  "A deliverable of the right length and the right dimensions is not the same "
+                  "thing as the right film. Check that render.sh was given THIS run's "
+                  "composition id (out/dispatch/.run_stamp.json > composition) and that every "
+                  "scene in episode_props.json has a component behind it."])
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def cmd_record(a):
     check_render_is_current()
+    check_not_blank()
     arts, ev = artifact_state()
     if not ev:
         fail([f"no review evidence in {REVIEW} — the panel cannot have looked at anything. "
@@ -226,6 +356,7 @@ def cmd_record(a):
 
 def cmd_check(a):
     check_render_is_current()
+    check_not_blank()
     problems = []
     if not VERDICT.exists():
         fail([f"no {VERDICT.name}. The 3-judge panel has not graded this cut. "
@@ -237,12 +368,24 @@ def cmd_check(a):
 
     # ---- 1. DID IT PASS? No self-granted exceptions, no 'style-register' carve-out. ----
     median = float(v.get("median", 0))
-    if median < thr:
+    rel = owner_release(run_date())
+    effective = thr
+    if rel and float(rel["floor"]) < thr:
+        effective = float(rel["floor"])
+    if median < effective:
         problems.append(
-            f"PANEL MEDIAN {median} IS BELOW THE {thr} SHIP BAR. This is a hard stop. "
+            f"PANEL MEDIAN {median} IS BELOW THE {effective} SHIP BAR. This is a hard stop. "
             f"The routine's old 'deliver with the scorecard disclosed' clause was DELETED "
             f"on 2026-07-31 because a run used it to ship a 6.98. Disclosure is not a "
             f"substitute for fixing. Fix the defects, re-render, re-grade.")
+    elif effective < thr:
+        print("=" * 72)
+        print(f"SHIPPING UNDER AN OWNER RELEASE — the rubric bar is {thr}, this cut scored "
+              f"{median}.")
+        print(f"  released to: {effective}   on: {rel['run_date']}")
+        print(f"  owner said: {rel['instruction']}")
+        print("  Every other check below still applies and none of them were waived.")
+        print("=" * 72)
     judges = v.get("judges") or []
     if len(judges) < 3:
         problems.append(f"verdict records {len(judges)} judges, not 3.")

@@ -784,7 +784,14 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
    and before the PR is merged. If it exits 1, THE RUN IS NOT DONE: fix the named defects,
    re-render, rebuild the evidence, re-grade, re-record. Do not upload "so the links exist".
    Do not draft the email "so it is ready". Do not merge "and fix it tomorrow". The gate is
-   the point at which a below-bar cut stops being deliverable, and it has no override.
+   the point at which a below-bar cut stops being deliverable, and A RUN CANNOT OVERRIDE IT.
+
+   The one exception is not yours to invoke. The OWNER, who set the bar, may release a
+   single run to a lower floor by writing `config/owner_release.json` (run_date, floor,
+   and their verbatim instruction). The gate reads it, applies it only on that date, prints
+   it, and the email must carry it. YOU MAY NOT WRITE THAT FILE ON YOUR OWN INITIATIVE, and
+   noticing that the loop is slow is not an owner instruction. If the owner has not said so
+   in this run, in their own words, the bar is the bar and the answer is another round.
 
    A FAILING PANEL IS NOT AN OUTCOME. IT IS AN INSTRUCTION TO GO BACK TO THE LOOP (owner
    directive 2026-07-31, second correction: "if the panel says it doesn't meet the bar, then
