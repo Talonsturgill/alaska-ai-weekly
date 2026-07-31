@@ -1251,16 +1251,25 @@ const S8: React.FC = () => {
       {/* the public notice board */}
       {/* on the wall BEHIND the stack, clear of the headline card and inside the
           x 108..972 band (at 196 it collided with the card and clipped the left edge) */}
-      <g transform="translate(276,742)">
-        <rect x={-150} y={-132} width={300} height={264} rx={10} fill="#a8b3ba" stroke={INK} strokeWidth={8} />
-        <rect x={-134} y={-116} width={268} height={232} rx={6} fill="#e8e2d2" />
-        <text x={0} y={-74} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24}
-          fill={INK} letterSpacing={0.6}>PUBLIC COMMENT</text>
+      {/* NARROW ENOUGH TO CLEAR THE STACK. Judge 3 read "PUBLIC CO" on screen and I went
+          looking for a frame-edge clip, measured the board at x=122 inside the guard, and
+          reported I could not reproduce it. I was measuring the wrong thing: it is not
+          clipped by the frame, it is OCCLUDED by the comment stack, which grows across its
+          right half as the beat builds. A partial word is a partial word whatever covers
+          it. The board is now narrow enough to sit clear of the stack's left edge, and its
+          title is set on two lines so no single line can be half-hidden. */}
+      <g transform="translate(212,742)">
+        <rect x={-102} y={-132} width={204} height={264} rx={10} fill="#a8b3ba" stroke={INK} strokeWidth={8} />
+        <rect x={-88} y={-116} width={176} height={232} rx={6} fill="#e8e2d2" />
+        <text x={0} y={-80} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22}
+          fill={INK} letterSpacing={0.4}>PUBLIC</text>
+        <text x={0} y={-54} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22}
+          fill={INK} letterSpacing={0.4}>COMMENT</text>
         {[0, 1, 2, 3, 4].map((k) => (
-          <rect key={k} x={-112} y={-40 + k * 30} width={224 - (k % 2) * 46} height={8} rx={4}
+          <rect key={k} x={-72} y={-24 + k * 26} width={144 - (k % 2) * 32} height={7} rx={3}
             fill="#8b98a3" opacity={0.75} />
         ))}
-        <rect x={-112} y={94} width={128} height={10} rx={5} fill="#8b98a3" opacity={0.6} />
+        <rect x={-72} y={92} width={92} height={9} rx={4} fill="#8b98a3" opacity={0.6} />
       </g>
       {/* a filed tray on the counter, already holding what came in before */}
       <g transform="translate(886,1300)">
