@@ -51,6 +51,7 @@ OUT = ROOT / "out" / "dispatch"
 RENDER = OUT / "render"
 REVIEW = OUT / "review"
 VERDICT = OUT / "panel_verdict.json"
+ATTEMPTS = OUT / "gate_attempts.json"
 RUBRIC = ROOT / "config" / "dispatch_rubric.yaml"
 
 # every artifact a viewer could actually receive
@@ -95,15 +96,38 @@ def artifact_state():
     return arts, ev
 
 
-def fail(lines):
+def log_attempt(reasons, median=None):
+    """Every blocked attempt is appended, so the editing loop is auditable and a run
+    cannot quietly stall in it. This is a LEDGER, not a budget: there is no attempt
+    count at which stopping becomes allowed."""
+    hist = []
+    if ATTEMPTS.exists():
+        try:
+            hist = json.loads(ATTEMPTS.read_text())
+        except Exception:
+            hist = []
+    hist.append({"at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                 "attempt": len(hist) + 1, "median": median, "reasons": reasons})
+    ATTEMPTS.write_text(json.dumps(hist, indent=2))
+    return len(hist)
+
+
+def fail(lines, median=None):
+    n = log_attempt(lines, median)
     print("=" * 72)
-    print("SHIP GATE: BLOCKED. Nothing may be uploaded, emailed, or merged.")
+    print(f"SHIP GATE: BLOCKED  (editing round {n})")
     print("=" * 72)
     for l in lines:
         print(f"  FAIL  {l}")
     print()
-    print("  There is no override flag. Fix the cause, re-render, rebuild the review")
-    print("  evidence FROM the new render, have the panel grade THAT, then re-record.")
+    print("  THIS IS NOT AN OUTCOME. IT IS AN INSTRUCTION TO GO BACK INTO THE LOOP.")
+    print("  Return to Phase 6. Take the panel's named defects, fix them, re-render,")
+    print("  rebuild the evidence FROM the new render, re-grade, re-record, run this again.")
+    print()
+    print("  There is no override flag and there is no round count at which stopping")
+    print("  becomes acceptable. A below-bar film is unfinished, not failed. The only")
+    print("  exit from this loop is a passing median. Quality is never a blocker;")
+    print("  the only thing that legitimately halts a run is a tool that will not run.")
     sys.exit(1)
 
 
@@ -199,7 +223,7 @@ def cmd_check(a):
             problems.append(f"review evidence {name} changed after grading.")
 
     if problems:
-        fail(problems)
+        fail(problems, median=median)
 
     print("=" * 72)
     print("SHIP GATE: PASS")
@@ -207,6 +231,12 @@ def cmd_check(a):
     print(f"  panel median {median} >= {thr}   judges={judges}")
     print(f"  {len(arts)} deliverables hash-match the graded cut")
     print(f"  {len(graded_ev)} pieces of review evidence hash-match")
+    if ATTEMPTS.exists():
+        try:
+            n = len(json.loads(ATTEMPTS.read_text()))
+            print(f"  cleared after {n} blocked round(s) in the editing loop")
+        except Exception:
+            pass
     print("  you may upload, email and merge.")
 
 

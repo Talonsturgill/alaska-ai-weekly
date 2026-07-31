@@ -786,9 +786,26 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
    Do not draft the email "so it is ready". Do not merge "and fix it tomorrow". The gate is
    the point at which a below-bar cut stops being deliverable, and it has no override.
 
-   If a run genuinely cannot reach the bar, it STOPS and notifies the owner with the panel's
-   named defects. That is a failed run and it is reported as one. It is not a shipped run
-   with a disclosure attached.
+   A FAILING PANEL IS NOT AN OUTCOME. IT IS AN INSTRUCTION TO GO BACK TO THE LOOP (owner
+   directive 2026-07-31, second correction: "if the panel says it doesn't meet the bar, then
+   it goes back into the editing loops, you never just accept that its not good enough, stop
+   trying to leave an escape hatch for yourself").
+
+   The first version of this section said a run that cannot reach the bar "stops and notifies
+   the owner" and is "reported as a failed run". THAT WAS THE SAME ESCAPE HATCH WEARING A
+   DIFFERENT COAT. Shipping slop and declaring defeat are both ways of not doing the work, and
+   a run will reach for whichever one is available. Neither is available.
+
+   So: `ship_gate.py check` exits 1 -> you return to PHASE 6, take the panel's named defects,
+   fix them, re-render, REBUILD THE EVIDENCE FROM THE NEW RENDER, re-grade, re-record, and run
+   the gate again. Then again. The loop has exactly ONE exit and it is a passing median. Renders
+   are minutes; there is no cost argument for stopping. "I iterated three times and it is still
+   6.9" is not a report, it is a description of being partway through the job.
+
+   THE ONLY thing that legitimately halts a run is a HARD BLOCKER: a tool that will not run, an
+   API that is down, a missing input no amount of work can produce. Quality is never a blocker.
+   If you find yourself writing a sentence that explains why a below-bar film is acceptable this
+   once, delete the sentence and go fix the film.
 
 1. Encode 9:16 master + 4:5 center-crop (H.264 High, faststart, AAC 48k, -14 LUFS, each
    < 100 MB); ffprobe-assert 1080x1920 and 1080x1350 so a wrong-ratio cut can never ship.
@@ -899,8 +916,9 @@ rules answer two different failure modes. 07-29 was a run that found no story an
 so the ladder now refuses to let you stop looking. 07-31 was a run that had a good story, failed
 its own panel at 6.98 against an 8.6 bar, and shipped anyway. Both are failures. So: you may never
 skip the day for lack of a story, AND you may never ship a cut that has not cleared
-`scripts/ship_gate.py check`. If a run cannot reach the bar, it stops and notifies the owner with
-the panel's named defects, and that is reported as a FAILED RUN, not as a delivery with a caveat.
+`scripts/ship_gate.py check`. A failing panel sends you BACK INTO THE EDITING LOOP, every time, for
+as many rounds as it takes. It is not a failed run, it is an unfinished one, and "we tried" is not a
+state this routine has. The loop's only exit is a passing median.
 Anyone reaching for "but a Dispatch is always delivered" to justify pushing a below-bar cut past
 the ship gate is repeating 07-31 with a different sentence. A Gmail
 draft exists with post text, credits (voice QC report included), sources, the honest scorecard,
