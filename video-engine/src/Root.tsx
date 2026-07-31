@@ -23,6 +23,7 @@ import { z } from 'zod';
 import { UnderIceLook } from './UnderIceLook';
 import { GateLook } from './GateLook';
 import { Ep0730, ep0730Schema } from './Ep0730';
+import { Ep0731, ep0731Schema } from './Ep0731';
 
 const standoffSchema = z.object({
   yesCount: z.number(),
@@ -241,6 +242,19 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{ captions: [] }}
         calculateMetadata={({ props }) => ({
           durationInFrames: (props as {total?: number}).total ?? 2001,
+        })}
+      />
+      <Composition
+        id="Dispatch0731"
+        component={Ep0731}
+        durationInFrames={2799}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={ep0731Schema}
+        defaultProps={{ captions: [] }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: (props as {total?: number}).total ?? 2799,
         })}
       />
     </>

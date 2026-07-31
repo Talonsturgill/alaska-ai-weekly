@@ -384,3 +384,95 @@ export const ThresholdGate: React.FC<{
     </g>
   );
 };
+
+/**
+ * THE APERTURE PLATE, ALONE. Extracted 2026-07-31 so a scene can stage the film's
+ * argument at full width without the post and boom eating the frame. The turn is a
+ * COMPARISON of two plates, and two whole rigs side by side in a 1080-wide frame push
+ * both plates off the edges, which is exactly what the first render did.
+ */
+export const AperturePlate: React.FC<{
+  f: number; x: number; y: number; cut?: number; cutW?: number; cutLabel?: string;
+  scale?: number; tint?: string;
+}> = ({f, x, y, cut = 0, cutW = 120, cutLabel, scale = 1, tint = '#93a0ad'}) => {
+  const body = tones(tint);
+  const uid = `ap_${Math.round(x)}_${Math.round(y)}`;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <defs><FormGradient id={`${uid}_p`} t={body} softness={0.9} /></defs>
+      <ContactShadow cx={0} cy={196} rx={116} ry={19} opacity={0.3} />
+      <rect x={-104} y={-40} width={208} height={228} rx={8} fill={body.base} stroke={INK} strokeWidth={8} />
+      <rect x={-104} y={-40} width={208} height={228} rx={8} fill={`url(#${uid}_p)`} opacity={0.5} />
+      <BrushedMetal x={-104} y={-40} w={208} h={228} opacity={0.16} />
+      {[[-84,-20],[84,-20],[-84,168],[84,168]].map(([bx,by],i)=>(
+        <circle key={i} cx={bx} cy={by} r={6} fill="#2b333b" stroke={INK} strokeWidth={3.5} />
+      ))}
+      {cut > 0.05 ? (
+        <>
+          <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="#cddbe4" />
+          <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none" stroke={INK} strokeWidth={8} />
+          <rect x={-cutW / 2 + 7} y={37} width={cutW - 14} height={12} rx={4} fill={INK} opacity={0.22} />
+          <line x1={-cutW / 2} y1={30} x2={cutW / 2} y2={30} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
+          {cutLabel && (
+            <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+              fontSize={19} fill={INK} letterSpacing={1.2}>{cutLabel}</text>
+          )}
+        </>
+      ) : (
+        <>
+          <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none" stroke={INK}
+            strokeWidth={6} strokeDasharray="15 15" opacity={0.42} />
+          <text x={0} y={86} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+            fontSize={25} fill={INK} opacity={0.6} letterSpacing={1.8}>NO CUT</text>
+          <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+            fontSize={19} fill={INK} opacity={0.75} letterSpacing={1.2}>NO SIZE LIMIT</text>
+        </>
+      )}
+      <RimLight d="M-100,-34 L-100,182" w={4.5} opacity={0.45} />
+    </g>
+  );
+};
+
+/**
+ * THE CAP CLOCK, ALONE. Same reason as AperturePlate. `sweep` 0..1 runs the hands a
+ * full turn so a bounded rule can visibly END, while an unbounded one holds an empty
+ * hub that is ABSOLUTELY STILL, which is the film's declared stillness-as-absence beat.
+ */
+export const CapClock: React.FC<{
+  f: number; x: number; y: number; hands?: number; sweep?: number; scale?: number; tint?: string;
+}> = ({f, x, y, hands = 0, sweep = 0, scale = 1, tint = '#93a0ad'}) => {
+  const plate = paleTones('#e9eff4');
+  const uid = `cc_${Math.round(x)}_${Math.round(y)}`;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <defs><FormGradient id={`${uid}_d`} t={plate} softness={0.7} /></defs>
+      <ContactShadow cx={0} cy={72} rx={54} ry={12} opacity={0.24} />
+      <circle cx={0} cy={0} r={52} fill={`url(#${uid}_d)`} stroke={INK} strokeWidth={7} />
+      {Array.from({length: 12}).map((_, i) => {
+        const a = (i * 30) * Math.PI / 180;
+        const long = i % 3 === 0;
+        return (
+          <line key={i} x1={Math.sin(a) * (long ? 30 : 36)} y1={-Math.cos(a) * (long ? 30 : 36)}
+            x2={Math.sin(a) * 43} y2={-Math.cos(a) * 43}
+            stroke={INK} strokeWidth={long ? 6 : 3} strokeLinecap="round" opacity={0.75} />
+        );
+      })}
+      {hands > 0.05 ? (
+        <g opacity={hands}>
+          <g transform={`rotate(${sweep * 360} 0 0)`}>
+            <line x1={0} y1={0} x2={0} y2={-34} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+          </g>
+          <g transform={`rotate(${sweep * 30} 0 0)`}>
+            <line x1={0} y1={0} x2={0} y2={-22} stroke={INK} strokeWidth={7} strokeLinecap="round" />
+          </g>
+          <circle cx={0} cy={0} r={7} fill={INK} />
+        </g>
+      ) : (
+        <>
+          <circle cx={0} cy={0} r={11} fill="none" stroke={INK} strokeWidth={5} strokeDasharray="7 7" opacity={0.6} />
+          <circle cx={0} cy={0} r={3.4} fill={INK} opacity={0.5} />
+        </>
+      )}
+    </g>
+  );
+};
