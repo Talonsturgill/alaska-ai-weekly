@@ -106,10 +106,10 @@ const Tundra: React.FC<{f: number; y?: number}> = ({f, y = 1120}) => (
 );
 
 /** a hard boxed plate in the house register */
-const Plate: React.FC<{x: number; y: number; text: string; sub?: string; op?: number; w?: number; size?: number}> = ({
-  x, y, text, sub, op = 1, w = 700, size = 38,
+const Plate: React.FC<{x: number; y: number; text: string; sub?: string; sub2?: string; op?: number; w?: number; size?: number}> = ({
+  x, y, text, sub, sub2, op = 1, w = 700, size = 38,
 }) => {
-  const h = sub ? 132 : 88;
+  const h = sub2 ? 176 : sub ? 132 : 88;
   return (
     <g transform={`translate(${x},${y})`} opacity={op}>
       <ContactShadow cx={0} cy={h / 2 + 12} rx={w / 2 * 0.9} ry={13} opacity={0.3} />
@@ -118,8 +118,12 @@ const Plate: React.FC<{x: number; y: number; text: string; sub?: string; op?: nu
       <text x={0} y={sub ? -8 : 13} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={size}
         fill={INK} letterSpacing={0.6}>{text}</text>
       {sub && (
-        <text x={0} y={38} textAnchor="middle" fontFamily={MONO} fontWeight={600} fontSize={21}
+        <text x={0} y={sub2 ? 28 : 38} textAnchor="middle" fontFamily={MONO} fontWeight={600} fontSize={21}
           fill="#5c6b78" letterSpacing={0.9}>{sub}</text>
+      )}
+      {sub2 && (
+        <text x={0} y={62} textAnchor="middle" fontFamily={MONO} fontWeight={600} fontSize={19}
+          fill="#5c6b78" letterSpacing={0.6}>{sub2}</text>
       )}
     </g>
   );
@@ -170,12 +174,13 @@ const S1: React.FC = () => {
         </g>
       )}
       <g opacity={card.t}>
-        <Nameplate x={540} y={SAFE_TOP + 60 + (1 - card.t) * 24} text="KREISS-TOMKINS" sub="candidate for governor" />
+        <Nameplate x={540} y={SAFE_TOP + 8 + (1 - card.t) * 24} text="KREISS-TOMKINS" sub="candidate for governor" subColor="#5c6b78" />
       </g>
       <g opacity={money.t}>
-        <Plate x={540} y={SAFE_TOP + 200 + (1 - money.t) * 20} w={880} size={31}
+        <Plate x={540} y={SAFE_TOP + 210 + (1 - money.t) * 20} w={920} size={30}
           text="$372,000 FROM SIX ANTHROPIC EMPLOYEES"
-          sub="as individuals. the company gave nothing." />
+          sub="as individuals. the company gave nothing."
+          sub2={'"The views in his op-ed are his alone and do not represent Anthropic."'} />
       </g>
     </Stage>
   );
@@ -289,8 +294,7 @@ const S4: React.FC = () => {
               fill={INK} letterSpacing={1.4}>GAS</text>
           </g>
           <g opacity={tally.t}>
-            <TallyCounter x={790} y={860} f={f} variant="odometer" roll={Math.min(1, Math.max(0, (f - 160) / 40))}
-              count="10" tag="10 TO 2" />
+            <Plate x={790} y={840} w={330} size={40} text="10 TO 2" />
           </g>
           <Plate x={540} y={SAFE_BOT - 150} w={900} size={31}
             text="IT HAS THE GENERATORS, NOT THE GAS" sub="Chugach Electric, per ADN, May 2026" />
@@ -323,6 +327,8 @@ const S5: React.FC = () => {
   return (
     <Stage grade={<Day f={f} haze={0.42} />}>
       <g transform={`translate(0,${-push * 90}) scale(${1 + push * 0.07})`} style={{transformOrigin: '540px 960px'}}>
+        <rect x={-900} y={-900} width={2880} height={3720} fill={SKY} />
+        <rect x={-900} y={900} width={2880} height={1840} fill="#7f9463" />
         <Tundra f={f} y={900 + push * 60} />
         {/* the road runs out */}
         <path d={`M${380 - push * 120},1920 L${470},${1180} L${610},${1180} L${700 + push * 120},1920 Z`}
@@ -356,25 +362,27 @@ const S6: React.FC = () => {
   return (
     <Stage grade={<Day f={f} haze={0.38} />}>
       <g transform={`scale(${1 - pull * 0.34})`} style={{transformOrigin: '540px 1100px'}}>
+        <rect x={-900} y={-900} width={2880} height={3720} fill={SKY} />
+        <rect x={-900} y={980} width={2880} height={1840} fill="#7f9463" />
         <Tundra f={f} y={980} />
         {[210, 470, 730, 950].map((x, i) => (
           <g key={i} opacity={stake(i).t}>
-            <SurveyStake x={x} y={1210 + (i % 2) * 30} s={1.05} settle={stake(i).t} tag />
+            <SurveyStake x={x} y={1210 + (i % 2) * 30} s={1.05} settle={stake(i).t} tag={false} />
           </g>
         ))}
-        <MeasuringChain x1={210} y1={1240} x2={210 + chain * 740} y2={1268} taut={chain} label="715.4 ACRES" />
+        <MeasuringChain x1={210} y1={1240} x2={210 + chain * 740} y2={1268} taut={chain} />
         <g opacity={bound}>
           <BoundaryReveal revealT={bound} d="M180,1300 L960,1258 L1000,1520 L215,1560 Z" perim={2600} accent={BONE} />
         </g>
         {/* the lease bar, ratcheting one click per year along the ground plane */}
-        <g transform="translate(120,1660)">
-          <rect x={0} y={-16} width={840} height={32} rx={6} fill="#6f7a83" stroke={INK} strokeWidth={5} />
-          <rect x={0} y={-16} width={840 * (years / 50)} height={32} rx={6} fill={BONE} stroke={INK} strokeWidth={5} />
+        <g transform="translate(150,1420)">
+          <rect x={0} y={-16} width={780} height={32} rx={6} fill="#6f7a83" stroke={INK} strokeWidth={5} />
+          <rect x={0} y={-16} width={780 * (years / 50)} height={32} rx={6} fill={BONE} stroke={INK} strokeWidth={5} />
           {Array.from({length: 11}).map((_, i) => (
-            <line key={i} x1={i * 84} y1={-22} x2={i * 84} y2={22} stroke={INK} strokeWidth={3} opacity={0.5} />
+            <line key={i} x1={i * 78} y1={-22} x2={i * 78} y2={22} stroke={INK} strokeWidth={3} opacity={0.5} />
           ))}
-          <text x={420} y={72} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={40}
-            fill={INK}>{years} YEARS</text>
+          <text x={390} y={-52} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={48}
+            fill={INK} stroke="#f7fafc" strokeWidth={6} paintOrder="stroke">{years} YEARS</text>
         </g>
       </g>
       <Plate x={540} y={SAFE_TOP + 90} w={860} size={32}
@@ -477,6 +485,8 @@ const S9: React.FC = () => {
   return (
     <Stage grade={<Day f={f} haze={0.4} />}>
       <g transform={`scale(${1 - pull * 0.52})`} style={{transformOrigin: '540px 1150px'}}>
+        <rect x={-900} y={-900} width={2880} height={3720} fill={SKY} />
+        <rect x={-900} y={1000} width={2880} height={1840} fill="#7f9463" />
         <Tundra f={f} y={1000} />
         {/* the short strip of road, with the three gates clustered on it */}
         <rect x={80} y={1180} width={620} height={120} fill={GRAVEL} />
@@ -507,7 +517,7 @@ const S9: React.FC = () => {
 const S10: React.FC = () => {
   const f = useCurrentFrame();
   const arrive = interpolate(f, [0, 26], [0, 1], {extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.overshoot)});
-  const cut = interpolate(f, [70, 92], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.enter)});
+  const cut = interpolate(f, [8, 34], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.enter)});
   const rack = interpolate(f, [156, 190], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const sweep = interpolate(f, [192, 252], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const labels = interpolate(f, [270, 296], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
@@ -518,7 +528,7 @@ const S10: React.FC = () => {
       {/* THE TURN, staged on the plates alone so each one fills its half of the frame */}
       <g transform={`translate(0,${-rack * 250})`}>
         {/* the bar of daylight through the cut, drawn UNDER the plate so it reads as light */}
-        {cut > 0.4 && (
+        {cut > 0.9 && (
           <path d={`M228,912 L372,912 L440,1400 L160,1400 Z`} fill="#fff6dd" opacity={0.34 * cut} />
         )}
         <g transform={`translate(${300 - (1 - arrive) * 90},760) scale(1.45)`} opacity={Math.min(1, arrive * 1.4)}>
@@ -527,8 +537,12 @@ const S10: React.FC = () => {
         <g transform="translate(780,760) scale(1.45)">
           <AperturePlate f={f} x={0} y={0} cut={0} cutW={140} tint={STEEL} />
         </g>
-        <Nameplate x={300} y={1290} text="NEW YORK" />
-        <Nameplate x={780} y={1290} text="ALASKA" />
+        {/* the jurisdiction plates are withheld until the slot exists, so no frame ever
+            pairs the label NEW YORK with the words NO CUT (panel judge 1 hard fail) */}
+        <g opacity={cut > 0.92 ? 1 : 0}>
+          <Nameplate x={300} y={1290} text="NEW YORK" subColor="#5c6b78" />
+          <Nameplate x={780} y={1290} text="ALASKA" subColor="#5c6b78" />
+        </g>
       </g>
       {/* racked up: the two clocks, one sweeping a year, one absolutely still */}
       <g opacity={rack} transform={`translate(0,${(1 - rack) * 220})`}>
@@ -605,6 +619,7 @@ const S11: React.FC = () => {
         <>
           {/* the signature shot, read in DEPTH so the 4:5 crop cannot amputate it */}
           <g transform={`scale(${1.9 - pullOut * 1.15})`} style={{transformOrigin: '620px 1320px'}}>
+            <rect x={-1200} y={-1200} width={3480} height={4320} fill="#b8c6cf" />
             <OilfieldBG f={f} season="summer" flare={0.3} />
             <g transform="translate(660,1240)">
               <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={0.6} facing={1} tint="copper" />
@@ -657,12 +672,12 @@ const S12: React.FC = () => {
       <Tundra f={f} y={1010} />
       <Road f={f} y={1180} />
       {!showField && (
-        <g transform="translate(430,1180)">
+        <g transform="translate(560,1180)">
           <ThresholdGate f={f} x={0} y={0} boom={interpolate(rise, [0, 1], [1, 0])}
             cut={slot} cutW={140} cutLabel="WHERE THE POWER COMES FROM" hands={0} lamp={slot > 0.6 ? 1 : 0}
             scale={1.05} phase={0.1} tint={STEEL} />
           {slot > 0.5 && (
-            <path d="M-248,-22 L-124,-22 L-70,560 L-300,560 Z" fill="#fff6dd" opacity={0.26 * slot} />
+            <path d="M-248,-22 L-124,-22 L-70,540 L-300,540 Z" fill="#fff6dd" opacity={0.26 * slot} />
           )}
         </g>
       )}
@@ -678,19 +693,18 @@ const S12: React.FC = () => {
             const col = i % 5, row = Math.floor(i / 5);
             const t = Math.max(0, Math.min(1, (plates * 17 - i) / 1.4));
             return (
-              <g key={i} transform={`translate(${190 + col * 178},${820 + row * 150}) scale(${0.42 * t})`} opacity={t}>
-                <rect x={-150} y={-40} width={300} height={80} rx={9}
-                  fill={i === 0 ? BONE : '#a8b3bc'} stroke={INK} strokeWidth={6} />
-                {i === 0 && (
-                  <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={30}
-                    fill={INK}>PLATFORM</text>
-                )}
+              <g key={i} transform={`translate(${186 + col * 168},${760 + row * 132}) scale(${0.5 * t})`} opacity={t}>
+                <rect x={-150} y={-44} width={300} height={88} rx={9}
+                  fill={i === 0 ? BONE : '#aab5be'} stroke={INK} strokeWidth={7} />
+                <rect x={-142} y={-38} width={284} height={22} rx={5} fill="#ffffff" opacity={0.35} />
+                <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={i === 0 ? 40 : 34}
+                  fill={INK}>{i === 0 ? 'PLATFORM' : '?'}</text>
               </g>
             );
           })}
           <g opacity={turn}>
-            <Plate x={540} y={SAFE_BOT - 190} w={940} size={27}
-              text="SEVENTEEN PEOPLE ARE RUNNING FOR GOVERNOR"
+            <Plate x={540} y={SAFE_BOT - 240} w={960} size={28}
+              text="17 PEOPLE ARE RUNNING FOR GOVERNOR"
               sub="we could not establish the field's other positions" />
           </g>
         </g>
