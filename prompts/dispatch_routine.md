@@ -793,6 +793,14 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
    noticing that the loop is slow is not an owner instruction. If the owner has not said so
    in this run, in their own words, the bar is the bar and the answer is another round.
 
+   HOW THE PANEL IS CONVENED is specified in `config/panel_protocol.md` and it is not
+   optional. In short: judges score from the evidence pack ALONE and commit their axis scores
+   BEFORE being shown what changed; a re-grade carries that judge's own previous card and must
+   name any axis it moves by more than 1.0 and say whether the film moved or the standard did;
+   and a median drop over 0.4 on a cut with no reverted change is treated as a panel event and
+   re-run once before it is acted on. Never re-grade bytes that have not been re-rendered --
+   that measures the panel, not the film.
+
    A FAILING PANEL IS NOT AN OUTCOME. IT IS AN INSTRUCTION TO GO BACK TO THE LOOP (owner
    directive 2026-07-31, second correction: "if the panel says it doesn't meet the bar, then
    it goes back into the editing loops, you never just accept that its not good enough, stop
