@@ -21,6 +21,7 @@ import { StationLook } from './StationLook';
 import { MaterialShowcase } from './MaterialShowcase';
 import { z } from 'zod';
 import { UnderIceLook } from './UnderIceLook';
+import { GateLook } from './GateLook';
 import { Ep0730, ep0730Schema } from './Ep0730';
 
 const standoffSchema = z.object({
@@ -209,6 +210,14 @@ export const RemotionRoot: React.FC = () => {
         id="BorealFlat"
         component={BorealFlat}
         durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="GateLook"
+        component={GateLook}
+        durationInFrames={120}
         fps={30}
         width={1080}
         height={1920}
