@@ -271,7 +271,7 @@ const Road: React.FC<{f: number; y?: number; drift?: number}> = ({f, y = 1180, d
  *  and because it lives in the shared helper every scene gets it at once. Values follow
  *  the art direction's ladder: the far plane loses ~22 percent L and ~35 percent chroma
  *  into the sky veil, so it recedes instead of competing with the subject. */
-const Tundra: React.FC<{f: number; y?: number; ridge?: boolean}> = ({f, y = 1120, ridge = true}) => (
+const Tundra: React.FC<{f: number; y?: number; ridge?: boolean; near?: boolean}> = ({f, y = 1120, ridge = true, near = true}) => (
   <g>
     <TundraBG f={f} season="summer" wind={0.55} groundY={y} />
     {ridge && (
@@ -288,6 +288,72 @@ const Tundra: React.FC<{f: number; y?: number; ridge?: boolean}> = ({f, y = 1120
           fill="#8ba396" opacity={0.6} />
       </g>
     )}
+    {/* THE NEAR TUNDRA. Same finding, other biome. After the road band was given a shoulder
+        ditch, the dead-space meter showed the shots NORTH of the last gate unmoved at 61 to
+        65 percent — precisely the shots that deliberately have no transmission line, and
+        which mostly draw tundra rather than road. Their emptiness is thematically correct
+        (nothing reaches up here) and still scores badly, because "nothing reaches here" is
+        an argument about infrastructure, not a licence for a blank plane.
+        So the ground gets what is actually on it: polygon frost cracks, which are the real
+        signature of continuous permafrost and read as structure rather than texture, plus
+        thaw ponds holding the sky and near tussocks with shape. It is the emptiest country
+        in America and it is not featureless. */}
+    {near && (() => {
+      const h = 1920 - y;
+      return (
+        <g>
+          {/* ice-wedge polygons, the giveaway of permafrost ground, in perspective */}
+          {Array.from({length: 7}).map((_, r) => {
+            const t = (r + 1) / 8, e = t * t;
+            const yy = y + 20 + e * (h - 20);
+            const step = 90 + e * 420;
+            return (
+              <g key={r} opacity={0.16 + e * 0.16}>
+                <path d={`M-80,${yy} L1160,${yy}`} stroke="#5d6a54" strokeWidth={1.5 + e * 4} fill="none" />
+                {Array.from({length: 14}).map((_, c) => {
+                  const xx = 540 + (c - 7) * step + ((r * 53) % 60);
+                  return <path key={c} d={`M${xx},${yy} L${xx + (c - 7) * 9},${yy + step * 0.6}`}
+                    stroke="#5d6a54" strokeWidth={1.5 + e * 3.5} fill="none" />;
+                })}
+              </g>
+            );
+          })}
+          {/* thaw ponds, holding the sky */}
+          {Array.from({length: 9}).map((_, i) => {
+            const t = 0.18 + ((i * 37) % 78) / 100, e = t * t;
+            const yy = y + 30 + e * (h - 30);
+            const xx = ((i * 173) % 1160) - 40;
+            const rw = 26 + e * 190;
+            return (
+              <g key={i}>
+                <ellipse cx={xx} cy={yy} rx={rw} ry={rw * 0.24} fill="#8ea7b8" opacity={0.6} />
+                <ellipse cx={xx} cy={yy - rw * 0.05} rx={rw * 0.76} ry={rw * 0.13} fill="#c6d9e6" opacity={0.5} />
+                <ellipse cx={xx} cy={yy + rw * 0.16} rx={rw} ry={rw * 0.1} fill="#6d7f63" opacity={0.35} />
+              </g>
+            );
+          })}
+          {/* near tussocks: cottongrass clumps with real silhouette */}
+          {Array.from({length: 20}).map((_, i) => {
+            const t = 0.45 + ((i * 41) % 55) / 100, e = t * t;
+            const yy = y + 40 + e * (h - 40);
+            const xx = ((i * 127) % 1180) - 50;
+            const sz = 10 + e * 52;
+            return (
+              <g key={i} opacity={0.55}>
+                <ellipse cx={xx} cy={yy} rx={sz * 0.9} ry={sz * 0.3} fill="#5f7047" opacity={0.5} />
+                {[-2, -1, 0, 1, 2].map((k) => (
+                  <path key={k}
+                    d={`M${xx + k * sz * 0.24},${yy} Q${xx + k * sz * 0.5},${yy - sz * 0.7} ${xx + k * sz * 0.8 + Math.sin(f / 38 + i + k) * sz * 0.1},${yy - sz * 1.25}`}
+                    stroke="#6b7d4f" strokeWidth={Math.max(1.4, sz * 0.1)} fill="none" strokeLinecap="round" />
+                ))}
+                <circle cx={xx + Math.sin(f / 38 + i) * sz * 0.1} cy={yy - sz * 1.3} r={sz * 0.16}
+                  fill="#f2f0e4" opacity={0.75} />
+              </g>
+            );
+          })}
+        </g>
+      );
+    })()}
   </g>
 );
 
@@ -950,7 +1016,7 @@ const S6: React.FC = () => {
           So the BIOME NEVER SCALES. It stays full-bleed and only the SUBJECTS pull back,
           which is the read the shot wanted anyway: the machine gets small in open country,
           the country does not get small too. */}
-      <Tundra f={f} y={980} />
+      <Tundra f={f} y={840} />
       <g transform={`scale(${1 - pull * 0.34})`} style={{transformOrigin: '540px 1100px'}}>
         {[210, 470, 730, 950].map((x, i) => (
           <g key={i} opacity={stake(i).t}>
@@ -966,7 +1032,11 @@ const S6: React.FC = () => {
             sitting inside BoundaryReveal's perspective quad, and the eye merged the two
             into one broken object. Two different measurements (how much land, how long)
             need two separate places on screen. */}
-        <g transform="translate(150,1660)">
+        {/* ABOVE the parcel quad, not below it. Separating the bar from the boundary
+            outline (so the two stopped reading as one broken object) pushed it to y=1660,
+            which is inside the caption reserve -- the label ended up ghosted behind the
+            caption bar. Above the quad it is clear of both. */}
+        <g transform="translate(150,1156)">
           <rect x={0} y={-16} width={780} height={32} rx={6} fill="#6f7a83" stroke={INK} strokeWidth={5} />
           <rect x={0} y={-16} width={780 * (years / 50)} height={32} rx={6} fill={BONE} stroke={INK} strokeWidth={5} />
           {Array.from({length: 11}).map((_, i) => (
