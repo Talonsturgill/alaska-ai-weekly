@@ -76,17 +76,65 @@ const CARD_BOT = CAPTION_TOP - 98;
  * ENTIRE 2026-07-30 night grade a no-op in the shipped film while look-dev looked graded.
  * The slot makes the correct placement the only placement a scene can use.
  */
+/** WEATHER CROSSING THE SHOT, so no frame is ever the previous frame.
+ *
+ *  Round 7, all three judges, independently: strip_paradox is eight consecutive frames
+ *  identical except one blink; strip_newyork is seven of eight pixel-identical; the
+ *  concession's first four frames do not change at all. Those are HELD shots, and a hold
+ *  is a legitimate choice, but a hold with nothing alive in it is a freeze.
+ *
+ *  Per-shot idle rigs did not close this and would not: they live on the SUBJECTS, and a
+ *  subject at 0.46 scale breathing six pixels moves less than a pixel over a quarter of a
+ *  second. So the life goes where the whole frame can carry it. A big soft cloud shadow
+ *  crosses every shot on a slow diagonal, and the haze breathes underneath it. It is the
+ *  thing the film is actually standing in -- broken cumulus over open country -- and it
+ *  means every frame differs from its neighbour by a real value shift across real area,
+ *  not by a sub-pixel jitter that only a diff can find.
+ *
+ *  Deliberately NOT a camera push: scaling about centre walks anything near the frame
+ *  margins outward, and this film had two safe-area breaches this round already. A value
+ *  layer cannot move a card off the edge.
+ */
+const CrossingWeather: React.FC<{f: number}> = ({f}) => {
+  const drift = (f % 420) / 420;                 // 14s to cross, restarts per shot
+  const cx = -420 + drift * 1920;
+  const cy = 300 + drift * 980;
+  const breathe = 0.5 + 0.5 * Math.sin(f / 41);  // prime-ish against the drift
+  return (
+    <g style={{mixBlendMode: 'multiply'}}>
+      <defs>
+        <radialGradient id="xw_a">
+          <stop offset="0%" stopColor="#6f7f8e" stopOpacity={0.20 + breathe * 0.05} />
+          <stop offset="62%" stopColor="#8a97a3" stopOpacity={0.08} />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity={0} />
+        </radialGradient>
+        <radialGradient id="xw_b">
+          <stop offset="0%" stopColor="#7a8894" stopOpacity={0.13} />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      <ellipse cx={cx} cy={cy} rx={760} ry={430} fill="url(#xw_a)" />
+      <ellipse cx={cx - 690} cy={cy + 260} rx={520} ry={300} fill="url(#xw_b)" />
+      <ellipse cx={cx + 640} cy={cy - 300} rx={470} ry={280} fill="url(#xw_b)" />
+    </g>
+  );
+};
+
 const Stage: React.FC<{children: React.ReactNode; grade?: React.ReactNode; bg?: string}> = ({
   children, grade, bg = SKY,
-}) => (
-  <AbsoluteFill style={{backgroundColor: bg}}>
-    <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-      <MaterialDefs />
-      {children}
-    </svg>
-    {grade}
-  </AbsoluteFill>
-);
+}) => {
+  const f = useCurrentFrame();
+  return (
+    <AbsoluteFill style={{backgroundColor: bg}}>
+      <svg viewBox="0 0 1080 1920" width="1080" height="1920">
+        <MaterialDefs />
+        {children}
+        <CrossingWeather f={f} />
+      </svg>
+      {grade}
+    </AbsoluteFill>
+  );
+};
 
 /** the standing daylight grade for this film. One bearing, upper screen left. */
 const Day: React.FC<{f: number; amount?: number; haze?: number}> = ({f, amount = 0.9, haze = 0.34}) => (
@@ -533,8 +581,17 @@ const Plate: React.FC<{x: number; y: number; text: string; sub?: string; sub2?: 
   x, y, text, sub, sub2, op = 1, w = 700, size = 38, subSize,
 }) => {
   const h = sub2 ? 190 : sub ? 142 : 88;
+  // THE CARD CLAMPS ITSELF NOW (2026-07-31, panel round 7 hard fail). Two cards were
+  // authored at SAFE_TOP + 28, which is a CENTRE, so a 142-tall card put its top border at
+  // 242 and the 4:5 rendition, which crops to y 285..1635, sliced the chrome off both. The
+  // same arithmetic mistake is available at every call site and had already been made
+  // twice, so the fix belongs in the component rather than in the two call sites that
+  // happened to get caught: a Plate may not cross the 4:5 top line or the caption band,
+  // whatever y it is handed. Callers keep saying where they WANT it; the card refuses to
+  // go somewhere it cannot be read.
+  const yc = Math.min(Math.max(y, SAFE_TOP + h / 2 + 12), CAPTION_TOP - h / 2 - 10);
   return (
-    <g transform={`translate(${x},${y})`} opacity={op}>
+    <g transform={`translate(${x},${yc})`} opacity={op}>
       <ContactShadow cx={0} cy={h / 2 + 12} rx={w / 2 * 0.9} ry={13} opacity={0.3} />
       <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={10} fill="#f7fafc" stroke={INK} strokeWidth={6} />
       <rect x={-w / 2 + 5} y={-h / 2 + 5} width={w - 10} height={h * 0.28} rx={7} fill="#ffffff" opacity={0.5} />
@@ -747,7 +804,7 @@ const S2: React.FC = () => {
         <rect x={-92} y={-10} width={184} height={132} rx={7} fill="none" stroke={BONE}
           strokeWidth={7} strokeDasharray="17 16" opacity={0.72} />
         <text x={0} y={196} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={30}
-          fill={BONE} opacity={0.8} letterSpacing={2.4}>NO CUT</text>
+          fill={BONE} opacity={0.8} letterSpacing={2.4}>NO CUTOFF</text>
         {/* the machine, small and soft, seen through where the slot should be */}
         <g opacity={0.5} style={{filter: 'blur(2.4px)'}}>
           <ServerMachine frame={f} emotion="focused" x={0} y={58} scale={0.2} tint="steel" />
@@ -791,8 +848,8 @@ const S3: React.FC = () => {
           they are staged in DEPTH: the near gate is large and low, the far one is smaller
           and higher, which buys both real scale AND a Z axis this shot never had. */}
       {[
-        {x: 372, y: 1214, cond: 'DO YOU HAVE GAS', src: 'CHUGACH ELECTRIC', v: 'asking' as const, s: 1.72, ph: 0},
-        {x: 806, y: 1002, cond: 'SHOW UTILITY CAPACITY', src: 'AO 2026-27', v: 'asking' as const, s: 1.02, ph: 0.51},
+        {x: 400, y: 1214, cond: 'DO YOU HAVE GAS', src: 'CHUGACH ELECTRIC', v: 'asking' as const, s: 1.72, ph: 0},
+        {x: 780, y: 1002, cond: 'SHOW UTILITY CAPACITY', src: 'AO 2026-27', v: 'asking' as const, s: 1.02, ph: 0.51},
       ].map((g, i) => (
         <g key={i} opacity={rise[i].t} transform={`translate(0,${(1 - rise[i].t) * 70})`}>
           <Gate f={f} x={g.x} y={g.y} condition={g.cond} source={g.src} verdict={g.v}
@@ -904,9 +961,9 @@ const S4: React.FC = () => {
       {!showPlate && !closeUp && (
         <>
           {/* staged in depth for the same reason as S3, and at a size that reads muted */}
-          <Gate f={f} x={846} y={1042} condition="SHOW UTILITY CAPACITY" source="AO 2026-27"
+          <Gate f={f} x={780} y={1042} condition="SHOW UTILITY CAPACITY" source="AO 2026-27"
             verdict={g2} scale={1.04} phase={0.4} tint={STEEL} />
-          <Gate f={f} x={330} y={1194} condition="DO YOU HAVE GAS" source="CHUGACH ELECTRIC"
+          <Gate f={f} x={364} y={1194} condition="DO YOU HAVE GAS" source="CHUGACH ELECTRIC"
             verdict={g1} scale={1.5} phase={0} tint={STEEL} />
           {/* THE GAS GAUGE. Panel judge 3: "enlarge, print a scale, pin the needle to a
               marked empty stop." Judge 1 separately measured it at under a tenth of frame
@@ -1401,7 +1458,7 @@ const S9: React.FC = () => {
           <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={0.72} facing={1} tint="steel" />
         </g>
       </g>
-      <Plate x={540} y={SAFE_TOP + 110} w={820} size={35} text="HE IS RIGHT THAT THERE IS A HOLE"
+      <Plate x={540} y={SAFE_TOP + 110} w={820} size={35} text="HE'S RIGHT THAT THERE'S A HOLE"
         op={Math.min(1, interpolate(f, [60, 90], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}))} />
       <Plate x={540} y={CARD_BOT} w={864} size={32} text="ANCHORAGE IS ONE BOROUGH"
         sub="a patchwork, not a process" op={Math.min(1, pull * 2)} />
@@ -1687,7 +1744,7 @@ const S11: React.FC = () => {
                 </g>
               );
             })}
-            <g transform="translate(150,1140) scale(0.74)">
+            <g transform="translate(238,1140) scale(0.74)">
               <Gate f={f} x={0} y={0} condition="DO YOU HAVE GAS" source="CHUGACH" verdict="block" scale={1} tint={STEEL} />
             </g>
             <g transform="translate(392,1056)">
@@ -1819,8 +1876,17 @@ const S11: React.FC = () => {
               makes its central assertion, and the card also stacks directly on the open
               caption bar." Raised a caption-height clear of the bar and set at the same ink
               weight the source chips use. */}
-          <Plate x={540} y={CARD_BOT - 118} w={864} size={32} text="IT MAKES ITS OWN POWER"
-            sub="it never competes with a household for power" subSize={27} op={pullOut} />
+          {/* AND NOW IT IS AT THE TOP, BECAUSE THE PROBLEM WAS NEVER THE HEIGHT. Round 7,
+              judge 3, hard fail: the card sat at 1133..1275 and the hero machine and its
+              plug prop crossed straight through it inside the protected band, so the
+              headline washed out and the subline's tail was covered. Two rounds have now
+              moved this card DOWN the frame to dodge the caption bar and straight into the
+              subject. The bottom third of this shot is where the whole point of the shot
+              lives: the dashed line stopping short on the gravel, the measured gap, the
+              machine's feet. Nothing may sit there. The sky above the kitchen is empty and
+              stays empty, so the card goes there and the picture below it is left alone. */}
+          <Plate x={540} y={SAFE_TOP + 92} w={864} size={32} text="IT MAKES ITS OWN POWER"
+            sub="generated at the gas source, not off the Railbelt" subSize={27} op={pullOut} />
         </>
       )}
     </Stage>
@@ -1945,7 +2011,7 @@ const S12: React.FC = () => {
             whole shot, because a limit that arrives after the claim is not a disclosure. */}
         <g opacity={Math.min(1, cascade * 6)}>
           <Plate x={540} y={1258} w={864} size={22}
-            text="WE COULD NOT ESTABLISH THE FIELD'S OTHER POSITIONS" />
+            text="WE COULDN'T ESTABLISH THE OTHER POSITIONS" />
         </g>
         <g opacity={chip}>
           <Plate x={540} y={CARD_BOT + 78} w={864} size={30}

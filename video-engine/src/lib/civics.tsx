@@ -155,7 +155,7 @@ export const Gate: React.FC<{
             fontSize={26} fill={INK} letterSpacing={0.4}>{condition}</text>
           {source && (
             <text x={0} y={60} textAnchor="middle" fontFamily={MONO} fontWeight={600}
-              fontSize={17} fill="#5c6b78" letterSpacing={0.8}>{source}</text>
+              fontSize={22} fill="#4a5a67" letterSpacing={0.8}>{source}</text>
           )}
         </g>
 
@@ -296,7 +296,7 @@ export const ThresholdGate: React.FC<{
             <line x1={-cutW / 2} y1={30} x2={cutW / 2} y2={30} stroke="#c0392b" strokeWidth={11}
               strokeLinecap="round" />
             <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={19} fill={INK} letterSpacing={1.2}>{cutLabel ?? 'SIZE LIMIT'}</text>
+              fontSize={24} fill={INK} letterSpacing={1.2}>{cutLabel ?? 'SIZE LIMIT'}</text>
           </>
         ) : (
           <>
@@ -306,9 +306,9 @@ export const ThresholdGate: React.FC<{
             <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none"
               stroke={INK} strokeWidth={6} strokeDasharray="15 15" opacity={0.42} />
             <text x={0} y={86} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={25} fill={INK} opacity={0.6} letterSpacing={1.8}>NO CUT</text>
+              fontSize={25} fill={INK} opacity={0.72} letterSpacing={1.2}>NO CUTOFF</text>
             <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={19} fill={INK} opacity={0.75} letterSpacing={1.2}>NO SIZE LIMIT</text>
+              fontSize={24} fill={INK} opacity={0.85} letterSpacing={1.2}>NO SIZE LIMIT</text>
           </>
         )}
         <RimLight d="M-100,-34 L-100,182" w={4.5} opacity={0.45} />
@@ -486,7 +486,7 @@ export const AperturePlate: React.FC<{
           <line x1={-slotW / 2} y1={30} x2={slotW / 2} y2={30} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
           {cutLabel && (
             <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={19} fill={INK} letterSpacing={1.2}>{cutLabel}</text>
+              fontSize={24} fill={INK} letterSpacing={1.2}>{cutLabel}</text>
           )}
         </>
       ) : (
@@ -494,9 +494,9 @@ export const AperturePlate: React.FC<{
           <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none" stroke={INK}
             strokeWidth={6} strokeDasharray="15 15" opacity={0.42} />
           <text x={0} y={86} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-            fontSize={25} fill={INK} opacity={0.6} letterSpacing={1.8}>NO CUT</text>
+            fontSize={25} fill={INK} opacity={0.72} letterSpacing={1.2}>NO CUTOFF</text>
           <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-            fontSize={19} fill={INK} opacity={0.75} letterSpacing={1.2}>NO SIZE LIMIT</text>
+            fontSize={24} fill={INK} opacity={0.85} letterSpacing={1.2}>NO SIZE LIMIT</text>
         </>
       )}
       <RimLight d="M-100,-34 L-100,182" w={4.5} opacity={0.45} />
