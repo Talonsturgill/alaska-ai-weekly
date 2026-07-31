@@ -1144,7 +1144,9 @@ const S7: React.FC = () => {
         <text x={0} y={68} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={36}
           fill={INK} letterSpacing={0.6}>LEASE</text>
       </g>
-      <Plate x={540} y={CARD_BOT} w={840} size={34} text="NO STATUTE ON WHO PAYS" op={Math.min(1, riffle * 2)} />
+      <Plate x={540} y={CARD_BOT} w={900} size={34} text="NO STATUTE ON WHO PAYS"
+        sub="the plank's own premise: no comprehensive regulation yet"
+        op={Math.min(1, riffle * 2)} />
     </Stage>
   );
 };
@@ -1523,7 +1525,8 @@ const S11: React.FC = () => {
           {/* ONE shadow crossing both panels */}
           <rect x={shadow} y={0} width={300} height={1920} fill="#0d1620" opacity={0.26} />
           <Plate x={312} y={CARD_BOT} w={404} size={27} text="ALREADY STOPPED" />
-          <Plate x={768} y={CARD_BOT} w={404} size={24} text="THE ONLY THING IN THE WAY" />
+          <Plate x={768} y={CARD_BOT} w={420} size={22} text="THE ONLY DATA-CENTER RULE"
+            sub="in the way up here" />
         </>
       ) : (
         <>
@@ -1629,8 +1632,8 @@ const S12: React.FC = () => {
   const fieldPull = interpolate(f, [ACT_B, ACT_B + 140], [1.14, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
 
   // ---- C. the button, matched to frame 0, and the boom RISES with real blur ----
-  const rise = interpolate(f, [ACT_C + 158, ACT_C + 210], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
-  const riseVel = rise - interpolate(f - 1, [ACT_C + 158, ACT_C + 210], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const rise = interpolate(f, [ACT_C + 152, ACT_C + 178], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const riseVel = rise - interpolate(f - 1, [ACT_C + 152, ACT_C + 178], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const q1 = entrance(f, fps, (ACT_C + 10) / 30, {drop: 38});
   const q2 = entrance(f, fps, (ACT_C + 84) / 30, {drop: 38});
   // the questions clear frame over the last 30 frames, restoring the opening composition
