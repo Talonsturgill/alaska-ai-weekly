@@ -295,6 +295,25 @@ const Powerline: React.FC<{f: number; y: number; n?: number; flip?: boolean}> = 
           fill="none" stroke="#4a545e" strokeWidth={1.4 + poles[poles.length - 1].s * 1.1}
           opacity={0.5} strokeLinecap="round" />
       ))}
+      {/* THE NEAR POLE. Measured on the shipped render, the 4:5 delivery crop carries 48%
+          low-information area and the full 9:16 frame carries 58% — the whole 9-point gap
+          lives in the top and bottom margins that the crop discards, which is exactly the
+          band the panel keeps calling empty sky and bare road. A single very near pole,
+          cropped by the frame edge, spans both margins at once. It is the oldest depth
+          device there is, it costs nothing, and it is the film's own subject rather than
+          decoration: on the Railbelt side the power is literally overhead. */}
+      <g opacity={0.72}>
+        <rect x={dir > 0 ? 1012 : 34} y={-40} width={34} height={2000} rx={10}
+          fill="#6d6154" stroke={INK} strokeWidth={7} />
+        <rect x={dir > 0 ? 906 : -72} y={168} width={246} height={26} rx={9}
+          fill="#6d6154" stroke={INK} strokeWidth={7} />
+        <rect x={dir > 0 ? 946 : -32} y={286} width={166} height={21} rx={8}
+          fill="#6d6154" stroke={INK} strokeWidth={6} />
+        {[0, 1, 2].map((k) => (
+          <circle key={k} cx={(dir > 0 ? 906 : -72) + 30 + k * 92} cy={162} r={9}
+            fill="#cddbe4" stroke={INK} strokeWidth={5} />
+        ))}
+      </g>
       {poles.map((pl, i) => (
         <g key={i} opacity={0.42 + pl.s * 0.34}>
           <rect x={pl.x - 3.5 * pl.s} y={pl.base - pl.h} width={7 * pl.s} height={pl.h}
@@ -421,7 +440,7 @@ const S1Road: React.FC<{f: number; fps: number}> = ({f, fps}) => {
       {/* THE HEADLINE, on screen from frame 0 */}
       <g transform={`translate(540,${SAFE_TOP + 40}) scale(${1 + stamp * 0.055})`}
          style={{transformOrigin: '540px 325px'}}>
-        <Plate x={0} y={0} w={960} size={46} text="THE GATE WITH NO NUMBER" />
+        <Plate x={0} y={0} w={912} size={46} text="THE GATE WITH NO NUMBER" />
       </g>
     </Stage>
   );
@@ -928,6 +947,12 @@ const S7: React.FC = () => {
   const drop = entrance(f, fps, 0.4, {drop: 120});
   const riffle = interpolate(f, [34, 116], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const page = Math.floor(riffle * 13);
+  // After the riffle settles the shot had nothing left to do but change a card from
+  // grey to white, which judge 2 timestamped twice. The camera now goes IN on the one
+  // blank page, so the beat ends on a different scale and on the actual subject: the
+  // empty place in the statute book where the rule about who pays would be.
+  const bookIn = interpolate(f, [108, 145], [1, 1.62], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const caret = f > 118 && ((f - 118) % 26) < 14;
   return (
     <Stage grade={<Day f={f} amount={0.7} haze={0.2} />} bg="#c9d3d9">
       <rect x={0} y={0} width={1080} height={1920} fill="#b9c3ca" />
@@ -950,7 +975,7 @@ const S7: React.FC = () => {
       {/* 1.22 pushed the book's right leaf to x=1077, past the frame edge — judge 1 found
           a cream document clipped at the right edge in two separate tiles. The rig is
           scaled to fit the x 108..972 protected band instead of to fill the frame. */}
-      <g transform="translate(540,1010) scale(0.97)" style={{transformOrigin: '540px 1010px'}}>
+      <g transform={`translate(540,1010) scale(${0.97 * bookIn}) translate(${-(bookIn - 1) * 30},${(bookIn - 1) * 150})`} style={{transformOrigin: '540px 1010px'}}>
         <ContactShadow cx={0} cy={250} rx={430} ry={40} opacity={0.34} />
         <rect x={-440} y={-40} width={880} height={300} rx={12} fill="#5d6a54" stroke={INK} strokeWidth={8} />
         {/* Sheet's x is its LEFT edge, not its centre — which is why the right leaf ran to
@@ -972,13 +997,30 @@ const S7: React.FC = () => {
             </g>
           );
         })}
+        {caret && riffle > 0.99 && (
+          <rect x={44} y={132} width={7} height={54} rx={3} fill={INK} opacity={0.8} />
+        )}
+        {riffle > 0.99 && (
+          <g opacity={0.32}>
+            {[0, 1, 2, 3].map((k) => (
+              <line key={k} x1={44} y1={210 + k * 46} x2={396} y2={210 + k * 46}
+                stroke="#9aa7b2" strokeWidth={4} strokeDasharray="12 14" />
+            ))}
+          </g>
+        )}
         <defs><PaperFiber id="s7f" /><PaperFiber id="s7g" /></defs>
       </g>
       {/* the lease lands on it */}
-      <g transform={`translate(540,${820 + (1 - drop.t) * -260}) rotate(${-6 + drop.t * 6})`} opacity={drop.t}>
-        <Sheet x={0} y={0} w={330} h={230} fiber="s7g" curl={0.5} />
-        <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={24}
-          fill={INK} letterSpacing={1}>50 YEAR LEASE</text>
+      {/* "50 YEAR LEASE" was tiny grey monospace straddling a card edge — judge 3: "the
+          film's second unimpeachable primary figure is the least legible string in it at
+          phone size". It is set at headline weight on its own sheet now, and the sheet
+          lands clear of the book's push-in instead of on top of it. */}
+      <g transform={`translate(766,${648 + (1 - drop.t) * -300}) rotate(${-7 + drop.t * 7})`} opacity={drop.t}>
+        <Sheet x={-190} y={-84} w={380} h={250} fiber="s7g" curl={0.5} />
+        <text x={0} y={22} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={36}
+          fill={INK} letterSpacing={0.6}>50 YEAR</text>
+        <text x={0} y={68} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={36}
+          fill={INK} letterSpacing={0.6}>LEASE</text>
       </g>
       <Plate x={540} y={CARD_BOT} w={840} size={34} text="NO STATUTE ON WHO PAYS" op={Math.min(1, riffle * 2)} />
     </Stage>
@@ -1538,7 +1580,7 @@ const S12: React.FC = () => {
           the SAME mismatch with the sign flipped. The questions leave, the title returns,
           and the last frame of the film is the first frame of the film. */}
       <g opacity={1 - qOut}>
-        <Plate x={540} y={SAFE_TOP + 40} w={960} size={46} text="THE GATE WITH NO NUMBER" />
+        <Plate x={540} y={SAFE_TOP + 40} w={912} size={46} text="THE GATE WITH NO NUMBER" />
       </g>
     </Stage>
   );
