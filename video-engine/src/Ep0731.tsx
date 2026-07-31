@@ -958,7 +958,13 @@ const S5: React.FC = () => {
             distant subject is a shot of nothing travelling. */}
         {/* it used to stay fully opaque while translating off frame, so sampled frames
             read "OW UTILITY CAPACITY". It is gone before it reaches the edge now. */}
-        <g opacity={Math.max(0, 1 - push * 2.2)} transform={`translate(${332 - push * 560},${1206 + push * 420}) scale(${1.5 - push * 0.5})`}>
+        {/* THE HARD FAIL, PROPERLY FIXED THIS TIME. Fading faster did not work and could not:
+            the gate started at x=332 with a condition board reaching +/-227px, so the board's
+            left edge was at 105 BEFORE the shot moved at all, and any leftward travel clipped
+            it. Judges read the result as the non-word "OW UTILITY CAPACITY" in three separate
+            rounds. The fix is geometry, not timing -- the rig starts far enough right that it
+            has room to travel, and is gone before its board can reach the guard. */}
+        <g opacity={Math.max(0, 1 - push * 3.4)} transform={`translate(${560 - push * 560},${1206 + push * 420}) scale(${1.5 - push * 0.5})`}>
           <Gate f={f} x={0} y={0} condition="SHOW UTILITY CAPACITY" source="AO 2026-27" verdict="pass" scale={1} tint={STEEL} />
         </g>
       </g>
