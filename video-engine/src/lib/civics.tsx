@@ -78,7 +78,13 @@ const LAMP = {
  *  it is too wide for the plate's half-width budget, squeezed horizontally to fit. It stays
  *  at full height, so it stays legible, and it can never be the thing that crosses the band.
  */
-const FIT_HALF = 132;          // local units; at the film's 1.45 plate scale this is 191px
+// A LABEL MAY NOT BE WIDER THAN THE PLATE IT IS PRINTED ON. 132 was chosen to look right and
+// it was still too generous: at the loop frame the plate is drawn at 1.74, so a 132-unit half
+// becomes 230 delivered pixels and a plate centred at x=300 pushed its label out to x=70,
+// against a protected band that starts at 108 (round 14, judge 3, at the poster AND the loop
+// frame). The plate's own body half-width is 104, and a printed label that overhangs the metal
+// it is engraved on was never right anyway. Now the budget is the object.
+const FIT_HALF = 104;
 const MONO_ADV = 0.62;         // JetBrains Mono advance per em, measured
 
 const FitLabel: React.FC<{y: number; text: string; size?: number; opacity?: number}> = ({
@@ -486,6 +492,22 @@ export const AperturePlate: React.FC<{
           <stop offset="0.45" stopColor="#fff6dd" stopOpacity={0.5} />
           <stop offset="1" stopColor="#fff6dd" stopOpacity={0} />
         </linearGradient>
+        {/* LIGHT HAS SOFT SIDES. Round 13 and 14, judge 1: "a uniform cream trapezoid with
+            hard edges, zero falloff, zero density gradient... it reads as paint on the road,
+            not light through a slot", on the film's declared payoff event. The length-wise
+            fade was there; the CROSS-wise one was not, so both long edges were ruled lines.
+            This mask feathers the beam across its width and is combined with the existing
+            fade along its length. */}
+        <linearGradient id={`${uid}_beamx`} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#fff" stopOpacity={0} />
+          <stop offset="22%" stopColor="#fff" stopOpacity={0.92} />
+          <stop offset="50%" stopColor="#fff" stopOpacity={1} />
+          <stop offset="78%" stopColor="#fff" stopOpacity={0.92} />
+          <stop offset="100%" stopColor="#fff" stopOpacity={0} />
+        </linearGradient>
+        <mask id={`${uid}_beammask`}>
+          <rect x={-260} y={100} width={520} height={360} fill={`url(#${uid}_beamx)`} />
+        </mask>
       </defs>
 
       {/* ---- THE CAST BAR. It belongs to the OPENING, not to the plate (2026-07-31
@@ -498,14 +520,25 @@ export const AperturePlate: React.FC<{
              so the plate body occludes its head and it reads as light landing beyond
              the plate rather than as a shape stuck on the front. ---- */}
       {open > 0 && (
-        <path
-          d={`M${-slotW / 2},122 L${slotW / 2},122 L${slotW * 0.92},430 L${-slotW * 0.92},430 Z`}
-          fill={`url(#${uid}_beam)`} opacity={0.86 * open} />
-      )}
-      {open > 0 && (
-        <path
-          d={`M${-slotW * 0.34},122 L${slotW * 0.34},122 L${slotW * 0.6},430 L${-slotW * 0.6},430 Z`}
-          fill={`url(#${uid}_beam)`} opacity={0.6 * open} />
+        <g mask={`url(#${uid}_beammask)`}>
+          <path
+            d={`M${-slotW / 2},122 L${slotW / 2},122 L${slotW * 0.92},430 L${-slotW * 0.92},430 Z`}
+            fill={`url(#${uid}_beam)`} opacity={0.86 * open} />
+          <path
+            d={`M${-slotW * 0.34},122 L${slotW * 0.34},122 L${slotW * 0.6},430 L${-slotW * 0.6},430 Z`}
+            fill={`url(#${uid}_beam)`} opacity={0.6 * open} />
+          {/* dust in the beam, so the light has something to be visible IN */}
+          {Array.from({length: 14}).map((_, i) => {
+            const t = ((i * 37) % 100) / 100;
+            const yy = 130 + t * 290;
+            const spread = slotW * (0.5 + t * 0.42);
+            return (
+              <circle key={i} cx={-spread + ((i * 53 + Math.round(f * 0.7)) % Math.max(1, spread * 2))}
+                cy={yy} r={1.4 + t * 2.2} fill="#fff8e2"
+                opacity={(0.5 - t * 0.34) * open} />
+            );
+          })}
+        </g>
       )}
       <ContactShadow cx={0} cy={196} rx={116} ry={19} opacity={0.3} />
       <rect x={-104} y={-40} width={208} height={228} rx={8} fill={body.base} stroke={INK} strokeWidth={8} />

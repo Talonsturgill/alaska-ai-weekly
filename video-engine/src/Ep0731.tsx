@@ -1587,7 +1587,18 @@ const S9: React.FC = () => {
    Then the two clocks, where the empty hub is the ONLY absolutely still thing in
    frame. VO lines 11 to 13. Open loop pays here.
 --------------------------------------------------------------------------- */
-const S10_CLOCKS = 118, S10_MACRO = 244;
+// THE COMPARISON MUST NOT CONCLUDE BEFORE THE VOICE NAMES IT (round 12, 13 and 14, judge 2,
+// three times, and the last time as "the beat the whole film is built to deliver, playing as
+// narration-over-slideshow"). Act A used to seat both plates, both jurisdiction labels, the
+// cut, and the verdict card inside its first 34 frames, which is 53.7s. The VO does not name
+// New York's scope until 55.7s. So a viewer read the conclusion two seconds before hearing
+// the premise, and the reveal chime then fired on a reveal that was already spent.
+//
+// Act A is lengthened from 118 frames to 190 and its internal beats are re-keyed so the cut
+// lands at local frame 94, which is 55.7s to the frame, exactly under "New York's covers only
+// the biggest sites". Acts B and C absorb the difference; both were running longer than their
+// content needed, which is why this was payable without touching the scene's total.
+const S10_CLOCKS = 190, S10_MACRO = 280;
 
 const S10: React.FC = () => {
   const f = useCurrentFrame();
@@ -1609,13 +1620,15 @@ const S10: React.FC = () => {
      Nothing in act A is still on screen in act B. That is the point. */
 
   // ---- A. the plates, and a size threshold you can watch work ----
-  const arrive = interpolate(f, [0, 26], [0, 1], {extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.overshoot)});
-  const cut = interpolate(f, [8, 34], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.enter)});
+  // The rig ARRIVES on "modeled on New York's" (52.6s), which is motivated. Everything that
+  // states the conclusion waits for 55.7s.
+  const arrive = interpolate(f, [4, 40], [0, 1], {extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.overshoot)});
+  const cut = interpolate(f, [66, 94], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.enter)});
   // a SMALL load goes straight through New York's slot: not covered, not stopped
-  const smallX = interpolate(f, [44, 78], [1180, -160], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const smallX = interpolate(f, [104, 138], [1180, -160], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   // a BIG one does not fit, and is caught by the very same opening
-  const bigX = interpolate(f, [72, 96], [1200, 470], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
-  const bigStop = f >= 96 && f < 112 ? Math.sin((f - 96) / 2.2) * 24 * (1 - (f - 96) / 16) : 0;
+  const bigX = interpolate(f, [132, 156], [1200, 470], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const bigStop = f >= 156 && f < 172 ? Math.sin((f - 156) / 2.2) * 24 * (1 - (f - 156) / 16) : 0;
 
   // ---- B. the clocks, at crown level, their own frame ----
   const lb = f - S10_CLOCKS;
@@ -1725,10 +1738,10 @@ const S10: React.FC = () => {
           <AperturePlate f={f} x={0} y={0} cut={0} cutW={140} tint={STEEL} />
         </g>
         {/* the small load passes clean through the opening; the big one cannot */}
-        <g transform={`translate(${smallX},1006)`} opacity={f > 40 && f < 84 ? 1 : 0}>
+        <g transform={`translate(${smallX},1006)`} opacity={f > 100 && f < 144 ? 1 : 0}>
           <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={0.24} facing={1} tint="steel" />
         </g>
-        <g transform={`translate(${bigX + bigStop},890)`} opacity={f > 68 ? 1 : 0}>
+        <g transform={`translate(${bigX + bigStop},890)`} opacity={f > 128 ? 1 : 0}>
           <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={0.86} facing={1} tint="steel" />
         </g>
         {/* the jurisdiction plates are withheld until the slot exists, so no frame ever
@@ -1738,7 +1751,7 @@ const S10: React.FC = () => {
           <Nameplate x={780} y={1150} text="THE PLANK" subColor="#5c6b78" />
         </g>
         <Plate x={540} y={CARD_BOT} w={864} size={31}
-          text={f > 96 ? 'ONE SIZE GETS CAUGHT' : 'ONE LETS A SIZE THROUGH'}
+          text={f > 156 ? 'ONE SIZE GETS CAUGHT' : 'ONE LETS A SIZE THROUGH'}
           op={Math.min(1, cut * 2)} />
       </Stage>
     );
@@ -1788,7 +1801,10 @@ const S10: React.FC = () => {
       <Tundra f={f} y={1330} />
       <Powerline f={f} y={1330} n={4} flip />
       <Road f={f} y={1520} />
-      <g transform={`translate(300,884) scale(${macro})`}>
+      {/* moved inward: at 1.74 the plate's own half-width is 181px, so a centre at 300 put its
+          left edge at 119 and anything printed on it at less. 348 clears the band with the
+          margin the plan asks for, and the shot reads the same. */}
+      <g transform={`translate(348,884) scale(${macro})`}>
         <AperturePlate f={f} x={0} y={0} cut={0} cutW={140} tint={STEEL} />
       </g>
       <g>
@@ -1912,7 +1928,10 @@ const S11: React.FC = () => {
                 muted. */}
             {/* wholly inside the right panel: the seam is at x=536 and this rig's plate
                 must not straddle it, or the two halves read as one muddled space */}
-            <g transform="translate(818,1140) scale(0.8)">
+            {/* raised so the plate's engraved NO SIZE LIMIT clears the card below it. Judge 1
+                found type sitting on type here: the label landed at y=1311 and the card's top
+                edge is 1251. */}
+            <g transform="translate(818,1040) scale(0.8)">
               <ThresholdGate f={f} x={0} y={0} boom={interpolate(fall.angle, [-76, 0], [0, 1])}
                 boomVel={fall.vel} cut={0} cutW={120} hands={0} lamp={0} scale={1} phase={0.55} tint={STEEL} />
             </g>
@@ -1957,8 +1976,13 @@ const S11: React.FC = () => {
               whoever made it and carries the rest of the hedge, and the VO line at 64.7 was
               re-recorded to match, "since Chugach says it lacks the gas for a big one"
               rather than "since the gas shortage already blocks a big one". */}
-          <Plate x={312} y={CARD_BOT} w={436} size={24} text="CHUGACH SAYS NOT AT THIS SIZE"
-            sub="size, economics, timing, terms" subSize={22} />
+          {/* Round 14, judge 1: the sub-line was truncated by the hard centre seam and the
+              card's left edge sat at 94, inside the band. Both were width arithmetic: a
+              30-character mono sub-line at 22px measures 436, which is the card's entire
+              width with nothing left for padding. Shorter line, narrower card, moved inboard
+              so it clears 108 on the left and the seam on the right. */}
+          <Plate x={326} y={CARD_BOT} w={412} size={23} text="CHUGACH SAYS NOT AT THIS SIZE"
+            sub="size, economics, timing" subSize={22} />
           <Plate x={768} y={CARD_BOT} w={408} size={22} text="THE ONLY DATA-CENTER RULE"
             sub="in the way up here" />
         </>
@@ -2234,7 +2258,7 @@ const S12: React.FC = () => {
         <Tundra f={f} y={1360} />
         <Powerline f={f} y={1360} n={4} />
         <Road f={f} y={1560} />
-        <g transform={`translate(500,640) scale(${push})`}>
+        <g transform={`translate(540,640) scale(${push})`}>
           <AperturePlate f={f} x={0} y={0} cut={0} cutW={140} tint={STEEL} />
           {/* the hole that was never cut, breathing so the eye goes to the absence */}
           <rect x={-70} y={30} width={140} height={92} rx={6} fill="#fff6dd" opacity={pulse * 0.22} />
