@@ -305,8 +305,9 @@ export const ThresholdGate: React.FC<{
                 and labelled (the 07-30 RingedSealGhost lesson). */}
             <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none"
               stroke={INK} strokeWidth={6} strokeDasharray="15 15" opacity={0.42} />
-            <text x={0} y={86} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={25} fill={INK} opacity={0.72} letterSpacing={1.2}>NO CUTOFF</text>
+            <rect x={-84} y={62} width={168} height={34} rx={5} fill={body.base} />
+            <text x={0} y={88} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+              fontSize={25} fill={INK} opacity={0.82} letterSpacing={1.2}>NO CUTOFF</text>
             <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
               fontSize={24} fill={INK} opacity={0.85} letterSpacing={1.2}>NO SIZE LIMIT</text>
           </>
@@ -445,6 +446,9 @@ export const AperturePlate: React.FC<{
             the real one obviously daylight. Warmer, brighter at the mouth, and it now
             carries a hot core, so the cut plate is unambiguously the only object in frame
             putting light on the ground. */}
+        <clipPath id={`${uid}_face`}>
+          <rect x={-104} y={-40} width={208} height={228} rx={8} />
+        </clipPath>
         <linearGradient id={`${uid}_beam`} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#fff3c8" stopOpacity={0.88} />
           <stop offset="0.45" stopColor="#fff6dd" stopOpacity={0.5} />
@@ -475,6 +479,18 @@ export const AperturePlate: React.FC<{
       <rect x={-104} y={-40} width={208} height={228} rx={8} fill={body.base} stroke={INK} strokeWidth={8} />
       <rect x={-104} y={-40} width={208} height={228} rx={8} fill={`url(#${uid}_p)`} opacity={0.5} />
       <BrushedMetal x={-104} y={-40} w={208} h={228} opacity={0.16} />
+      {/* CLOUD LIGHT MOVING ON STEEL (2026-07-31, round 8). All three judges found the
+          two-plate reveal frozen: seven of eight consecutive frames pixel-identical on the
+          beat the whole open loop pays off into. The plates are the subject there and they
+          have nothing to do between the cut and the cutaway, so they get the one thing a
+          brushed-steel face does under broken cumulus: a soft specular band that travels
+          down it. Slow enough to read as weather, fast enough that no two frames match. */}
+      <g clipPath={`url(#${uid}_face)`}>
+        <rect x={-104} y={-40 + ((f * 1.35 + x * 0.17) % 300) - 60} width={208} height={54}
+          fill="#ffffff" opacity={0.085} />
+        <rect x={-104} y={-40 + ((f * 1.35 + x * 0.17 + 150) % 300) - 40} width={208} height={26}
+          fill="#0d1620" opacity={0.05} />
+      </g>
       {[[-84,-20],[84,-20],[-84,168],[84,168]].map(([bx,by],i)=>(
         <circle key={i} cx={bx} cy={by} r={6} fill="#2b333b" stroke={INK} strokeWidth={3.5} />
       ))}
@@ -493,8 +509,12 @@ export const AperturePlate: React.FC<{
         <>
           <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none" stroke={INK}
             strokeWidth={6} strokeDasharray="15 15" opacity={0.42} />
-          <text x={0} y={86} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-            fontSize={25} fill={INK} opacity={0.72} letterSpacing={1.2}>NO CUTOFF</text>
+          {/* the dashed rule was passing straight through the letterforms (round 8, judge 3:
+              "a rule crosses the glyphs, clearest on the final F"). The word gets its own
+              knockout out of the plate face so the absence is labelled, not scribbled on. */}
+          <rect x={-84} y={62} width={168} height={34} rx={5} fill={body.base} />
+          <text x={0} y={88} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+            fontSize={25} fill={INK} opacity={0.82} letterSpacing={1.2}>NO CUTOFF</text>
           <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
             fontSize={24} fill={INK} opacity={0.85} letterSpacing={1.2}>NO SIZE LIMIT</text>
         </>
