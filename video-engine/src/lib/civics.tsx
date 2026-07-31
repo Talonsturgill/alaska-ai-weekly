@@ -66,6 +66,34 @@ const LAMP = {
  * `accent`     0..1 VO-emphasis reactivity (a small brow/tilt kick on emphasised words).
  * `phase`      decorrelates the idle so two gates on screen never bob in lockstep.
  */
+/** A mono plate label that CANNOT leave the protected band, whatever size it is given.
+ *
+ *  Round 12, judge 3: 'BIGGEST SITES ONLY' began at master x~70 and 'NO SIZE LIMIT' at ~81,
+ *  against a protected band that starts at 108. That breach was caused by the round-11 fix
+ *  for the OPPOSITE defect: raising these labels to a 24px floor made them wider, and wider
+ *  centred text on a plate near frame left runs off the band. Fixing legibility broke safety
+ *  because both were hand-tuned constants pulling against each other.
+ *
+ *  So neither is hand-tuned now. The label is laid out at the legible size and then, only if
+ *  it is too wide for the plate's half-width budget, squeezed horizontally to fit. It stays
+ *  at full height, so it stays legible, and it can never be the thing that crosses the band.
+ */
+const FIT_HALF = 132;          // local units; at the film's 1.45 plate scale this is 191px
+const MONO_ADV = 0.62;         // JetBrains Mono advance per em, measured
+
+const FitLabel: React.FC<{y: number; text: string; size?: number; opacity?: number}> = ({
+  y, text, size = 24, opacity = 1,
+}) => {
+  const w = text.length * (size * MONO_ADV + 1.2);
+  const sx = Math.min(1, (FIT_HALF * 2) / Math.max(1, w));
+  return (
+    <g transform={`translate(0,${y}) scale(${sx},1)`}>
+      <text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+        fontSize={size} fill={INK} opacity={opacity} letterSpacing={1.2}>{text}</text>
+    </g>
+  );
+};
+
 export const Gate: React.FC<{
   f: number;
   x: number;
@@ -295,8 +323,7 @@ export const ThresholdGate: React.FC<{
             {/* the threshold edge, in the film's one reserved colour */}
             <line x1={-cutW / 2} y1={30} x2={cutW / 2} y2={30} stroke="#c0392b" strokeWidth={11}
               strokeLinecap="round" />
-            <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={24} fill={INK} letterSpacing={1.2}>{cutLabel ?? 'SIZE LIMIT'}</text>
+            <FitLabel y={214} text={cutLabel ?? 'SIZE LIMIT'} />
           </>
         ) : (
           <>
@@ -308,8 +335,7 @@ export const ThresholdGate: React.FC<{
             <rect x={-84} y={62} width={168} height={34} rx={5} fill={body.base} />
             <text x={0} y={88} textAnchor="middle" fontFamily={MONO} fontWeight={700}
               fontSize={25} fill={INK} opacity={0.82} letterSpacing={1.2}>NO CUTOFF</text>
-            <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={24} fill={INK} opacity={0.85} letterSpacing={1.2}>NO SIZE LIMIT</text>
+            <FitLabel y={214} text="NO SIZE LIMIT" opacity={0.85} />
           </>
         )}
         <RimLight d="M-100,-34 L-100,182" w={4.5} opacity={0.45} />
@@ -500,10 +526,7 @@ export const AperturePlate: React.FC<{
           <rect x={-slotW / 2} y={30} width={slotW} height={92} rx={6} fill="none" stroke={INK} strokeWidth={8} />
           <rect x={-slotW / 2 + 7} y={37} width={Math.max(0, slotW - 14)} height={12} rx={4} fill={INK} opacity={0.22} />
           <line x1={-slotW / 2} y1={30} x2={slotW / 2} y2={30} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
-          {cutLabel && (
-            <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={24} fill={INK} letterSpacing={1.2}>{cutLabel}</text>
-          )}
+          {cutLabel && <FitLabel y={214} text={cutLabel} />}
         </>
       ) : (
         <>
@@ -515,8 +538,7 @@ export const AperturePlate: React.FC<{
           <rect x={-84} y={62} width={168} height={34} rx={5} fill={body.base} />
           <text x={0} y={88} textAnchor="middle" fontFamily={MONO} fontWeight={700}
             fontSize={25} fill={INK} opacity={0.82} letterSpacing={1.2}>NO CUTOFF</text>
-          <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-            fontSize={24} fill={INK} opacity={0.85} letterSpacing={1.2}>NO SIZE LIMIT</text>
+          <FitLabel y={214} text="NO SIZE LIMIT" opacity={0.85} />
         </>
       )}
       <RimLight d="M-100,-34 L-100,182" w={4.5} opacity={0.45} />

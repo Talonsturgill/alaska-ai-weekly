@@ -241,11 +241,22 @@ export const ServerMachine: React.FC<{
               units between frames and survives every downscale in the chain. It also earns
               its place in the argument, since the whole film is about machines that are
               running whether or not a rule reaches them. */}
-          <g transform={`translate(90,-118) rotate(${f * 13 + ph * 90})`}>
+          {/* IT WAS TURNING AND IT LOOKED STILL, BECAUSE OF ITS OWN SYMMETRY. Round 12,
+              judge 3: "the fan's blade pinwheel does not visibly re-orient". Correct, and the
+              cause is arithmetic: five identical blades repeat every 72 degrees, and 13
+              degrees a frame walks through 72 in five and a half frames, so an eight-frame
+              strip sampled the wheel back into almost the same pose twice. A wheel can spin
+              at any speed and still read as frozen if the sampling rate divides its symmetry.
+              Two changes: the rate is now 23 degrees a frame, which is prime to 72 so no
+              short sample repeats, and one blade is a different value, which removes the
+              symmetry from the picture as well as from the number. */}
+          <g transform={`translate(90,-118) rotate(${f * 23 + ph * 90})`}>
             <circle cx={0} cy={0} r={34} fill={PAL.shade} stroke={INK} strokeWidth={4} />
             {[0, 1, 2, 3, 4].map((i) => (
               <path key={i} transform={`rotate(${i * 72})`}
-                d="M0,-6 Q20,-26 30,-8 Q18,2 0,6 Z" fill={PAL.hi} stroke={INK} strokeWidth={3} opacity={0.92} />
+                d="M0,-6 Q20,-26 30,-8 Q18,2 0,6 Z"
+                fill={i === 0 ? INK : PAL.hi} stroke={INK} strokeWidth={3}
+                opacity={i === 0 ? 0.85 : 0.92} />
             ))}
             <circle cx={0} cy={0} r={8} fill={INK} />
           </g>

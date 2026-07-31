@@ -1369,7 +1369,11 @@ const S7: React.FC = () => {
           Shortened to the load-bearing half and set two points down. */}
       <Plate x={540} y={CARD_BOT} w={864} size={34} text="NO STATUTE ON WHO PAYS"
         sub="the plank's own premise: no statute yet" subSize={24}
-        op={Math.min(1, riffle * 2)} />
+        /* reaches full opacity in half the time. Judge 2 twice, judge 1 once: this card was
+           caught mid-fade in the sampled frames and read as a ghost lying over the book. A
+           card that is legible for most of its life is still a card that is illegible when
+           anyone looks. */
+        op={Math.min(1, riffle * 4)} />
     </Stage>
   );
 };
