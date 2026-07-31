@@ -699,7 +699,17 @@ const S1Road: React.FC<{f: number; fps: number}> = ({f, fps}) => {
       {/* x=470, not 430: at 430 the plate's NO SIZE LIMIT label started at frame x=73,
           inside the unsafe left margin, on the poster frame AND the loop frame. The open
           and the close must move together or the loop stops matching. */}
-      <g transform="translate(470,1010) scale(1.34)">
+      {/* THE ONE THE PANEL KEPT FINDING, AND I KEPT FIXING SOMEWHERE ELSE. Three rounds of
+          "x=108 broken at the poster frame and the loop frame", and three rounds of me
+          re-placing the MACRO plate, which was never the plate they meant. The arithmetic:
+          ThresholdGate hangs its plate group at local x=-186 and the plate's own half-width
+          is 104, so its left edge sits at -290 local, and at this rig's 1.34 scale that is
+          389 delivered pixels left of the rig's origin. A rig at 470 therefore put the plate
+          body at 81 and its label at 78, against a band that starts at 108. The rig needs to
+          be at 497 or better; it is at 512, which leaves a real margin rather than a
+          rounding one. BOTH instances move, because this is the opening frame and the loop
+          frame and the loop only matches if they are identical. */}
+      <g transform="translate(512,1010) scale(1.34)">
         <ThresholdGate f={f} x={0} y={0} boom={interpolate(fall.angle, [-76, 0], [0, 1])}
           boomVel={fall.vel} cut={0} cutW={130} hands={0} lamp={0} scale={1} phase={0.1} tint={STEEL} />
       </g>
@@ -1752,7 +1762,8 @@ const S10: React.FC = () => {
             plate beside it has a hole in it. An uncut plate now throws nothing, because
             the thing that throws the light is the hole. */}
         <g transform={`translate(${300 - (1 - arrive) * 90},640) scale(1.45)`} opacity={Math.min(1, arrive * 1.4)}>
-          <AperturePlate f={f} x={0} y={0} cut={cut} cutW={140} cutLabel="BIGGEST SITES ONLY" tint={STEEL} />
+          <AperturePlate f={f} x={0} y={0} cut={cut} cutW={140} cutLabel="BIGGEST SITES ONLY"
+            tint={STEEL} absence={false} />
         </g>
         <g transform="translate(780,640) scale(1.45)">
           <AperturePlate f={f} x={0} y={0} cut={0} cutW={140} tint={STEEL} />
@@ -1766,7 +1777,14 @@ const S10: React.FC = () => {
         </g>
         {/* the jurisdiction plates are withheld until the slot exists, so no frame ever
             pairs the label NEW YORK with the words NO CUT (panel judge 1 hard fail) */}
-        <g opacity={cut > 0.92 ? 1 : 0}>
+        {/* THE JURISDICTIONS ARE NAMED AS SOON AS THEY ARE SEATED. They used to wait for the
+            cut, so for three seconds the frame held two unlabelled, identical plates under
+            the line reporting his claim that they are the same thing, and judges 1 and 2
+            both read that as the picture asserting the sameness the film exists to disprove.
+            Named, they read as two jurisdictions not yet compared, which is exactly the
+            state the argument is in at that moment. The withheld thing is now only the
+            LABEL ON THE SLOT, which is the actual finding. */}
+        <g opacity={Math.min(1, arrive * 1.6)}>
           <Nameplate x={300} y={1150} text="NEW YORK" subColor="#5c6b78" />
           <Nameplate x={780} y={1150} text="THE PLANK" subColor="#5c6b78" />
         </g>
@@ -2199,9 +2217,15 @@ const S12: React.FC = () => {
               const t = Math.max(0, Math.min(1, (cascade * 19 - i) / 1.3));
               const iv = vitals(f, i * 0.37, 1);
               const x = BAND_L + PW / 2 + col * pitch;
+              // THEY SIT ON THE GROUND NOW. Round 15 and 16, judge 1: "17 nameplates at
+              // identical size with an identical drop shadow at every depth, no ground
+              // contact, no perspective scaling... a floating UI grid over a landscape they
+              // never contact", as the film's closing image. Rows are scaled by depth and
+              // their shadows widen and soften with them, which is the whole difference
+              // between a grid drawn ON the picture and a field standing IN it.
               return (
                 <g key={i}
-                   transform={`translate(${x},${706 + row * 124 + iv.bob * 2.6}) rotate(${iv.bob * 0.22}) scale(${0.55 * t * (i === 0 ? 1.16 : 1)})`}
+                   transform={`translate(${x},${706 + row * 124 + iv.bob * 2.6}) rotate(${iv.bob * 0.22}) scale(${0.55 * t * (i === 0 ? 1.16 : 1) * (0.82 + row * 0.075)})`}
                    opacity={t}>
                   {/* ROUND 8. Judge 1: "the single differentiated PLATFORM plate is identical
                       in value and size to the sixteen '?' plates, so the one-vs-sixteen point
@@ -2211,7 +2235,8 @@ const S12: React.FC = () => {
                       sixteen get a real bevel and a seated shadow so the grid stops reading as
                       UI chips pasted over a landscape. Judge 2 also found the grid frozen for
                       a five second hold, so the idle bob is tripled and carries a little roll. */}
-                  <ContactShadow cx={0} cy={54} rx={126} ry={12} opacity={i === 0 ? 0.34 : 0.24} />
+                  <ContactShadow cx={0} cy={54} rx={126 + row * 12} ry={11 + row * 3}
+                    opacity={(i === 0 ? 0.34 : 0.24) + row * 0.035} />
                   <rect x={-134} y={-44} width={268} height={88} rx={9}
                     fill={i === 0 ? '#ffffff' : '#9aa6b0'} stroke={INK} strokeWidth={7} />
                   <rect x={-134} y={-44} width={268} height={88} rx={9} fill="none"
@@ -2318,7 +2343,17 @@ const S12: React.FC = () => {
       {/* x=470, not 430: at 430 the plate's NO SIZE LIMIT label started at frame x=73,
           inside the unsafe left margin, on the poster frame AND the loop frame. The open
           and the close must move together or the loop stops matching. */}
-      <g transform="translate(470,1010) scale(1.34)">
+      {/* THE ONE THE PANEL KEPT FINDING, AND I KEPT FIXING SOMEWHERE ELSE. Three rounds of
+          "x=108 broken at the poster frame and the loop frame", and three rounds of me
+          re-placing the MACRO plate, which was never the plate they meant. The arithmetic:
+          ThresholdGate hangs its plate group at local x=-186 and the plate's own half-width
+          is 104, so its left edge sits at -290 local, and at this rig's 1.34 scale that is
+          389 delivered pixels left of the rig's origin. A rig at 470 therefore put the plate
+          body at 81 and its label at 78, against a band that starts at 108. The rig needs to
+          be at 497 or better; it is at 512, which leaves a real margin rather than a
+          rounding one. BOTH instances move, because this is the opening frame and the loop
+          frame and the loop only matches if they are identical. */}
+      <g transform="translate(512,1010) scale(1.34)">
         <ThresholdGate f={f} x={0} y={0} boom={rise} boomVel={riseVel * 76} cut={0} cutW={140}
           hands={0} lamp={0} scale={1} phase={0.1} tint={STEEL} />
       </g>

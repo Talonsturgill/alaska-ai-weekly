@@ -461,7 +461,14 @@ export const ThresholdGate: React.FC<{
 export const AperturePlate: React.FC<{
   f: number; x: number; y: number; cut?: number; cutW?: number; cutLabel?: string;
   scale?: number; tint?: string;
-}> = ({f, x, y, cut = 0, cutW = 120, cutLabel, scale = 1, tint = '#93a0ad'}) => {
+  /** Print the dashed ghost + NO CUTOFF / NO SIZE LIMIT when uncut. Default on. Turn it OFF
+   *  for a plate that is ABOUT to be cut: round 16, judges 1 and 2 both found that for the
+   *  three seconds before the slot is made, New York's plate and the plank's plate were
+   *  identical objects both stamped NO CUTOFF, so the picture asserted the sameness the
+   *  whole film exists to disprove, under the line that reports his claim of it. A plate
+   *  whose slot has not been cut yet has not yet said anything. */
+  absence?: boolean;
+}> = ({f, x, y, cut = 0, cutW = 120, cutLabel, scale = 1, tint = '#93a0ad', absence = true}) => {
   const body = tones(tint);
   const uid = `ap_${Math.round(x)}_${Math.round(y)}`;
   // How far the cut has actually been made. The slot's GEOMETRY tracks this, so the
@@ -567,7 +574,7 @@ export const AperturePlate: React.FC<{
           <line x1={-slotW / 2} y1={30} x2={slotW / 2} y2={30} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
           {cutLabel && <FitLabel y={214} text={cutLabel} />}
         </>
-      ) : (
+      ) : absence ? (
         <>
           <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none" stroke={INK}
             strokeWidth={6} strokeDasharray="15 15" opacity={0.42} />
@@ -579,7 +586,7 @@ export const AperturePlate: React.FC<{
             fontSize={25} fill={INK} opacity={0.82} letterSpacing={1.2}>NO CUTOFF</text>
           <FitLabel y={214} text="NO SIZE LIMIT" opacity={0.85} />
         </>
-      )}
+      ) : null}
       <RimLight d="M-100,-34 L-100,182" w={4.5} opacity={0.45} />
     </g>
   );
