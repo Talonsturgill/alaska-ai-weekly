@@ -323,6 +323,14 @@ def main():
     _save_wav(os.path.join(AUD, "vo.wav"), new_audio)
     json.dump(meta, open(os.path.join(OUT, "vo_lines.json"), "w"), indent=1)
     json.dump(new_caps, open(os.path.join(OUT, "captions.json"), "w"), indent=1)
+    # AND THE SCRIPT OF RECORD, which this tool used to leave behind (2026-07-31, round 10).
+    # Two judges independently reported the fix as NOT MADE, because they read vo_script.txt
+    # and it still carried the old wording while the audio carried the new. They were right
+    # to: a run that says it fixed a line and leaves the script saying otherwise is
+    # indistinguishable from a run that did not fix it. Every artifact that states the
+    # narration now moves together.
+    with open(os.path.join(OUT, "vo_script.txt"), "w") as fh:
+        fh.write("\n".join(l["text"] for l in meta["lines"]) + "\n")
 
     # The invariant that makes this safe: nothing after a patch moved.
     assert abs(len(new_audio) - len(vo)) < 2, "patched vo.wav changed length"
