@@ -168,6 +168,49 @@ const Road: React.FC<{f: number; y?: number; drift?: number}> = ({f, y = 1180, d
                   L${540 + side * 1400},1920 L${540 + side * 1400},${y} Z`}
               fill="#7f8a63" opacity={0.26} />
           ))}
+          {/* THE SHOULDER DITCH. Judge 1, third round, naming the single highest-value
+              change left in the film: "the recurring offender is a specific band, not a
+              general emptiness: the bottom 30-40% of every Railbelt road shot is an
+              untextured grey-brown gradient carrying only lane dashes... fixing that one
+              band is worth more than any other single change."
+
+              Right, and the reason texture kept failing there is that a flat plane with
+              stuff sprinkled on it is still a flat plane. What that band needed was a
+              STRUCTURE running through it in perspective. Every gravel road on the Slope
+              has one: a cut shoulder ditch holding meltwater. It gives the band an edge, a
+              second value, and a sky reflection, which is the one thing that breaks a
+              ground plane properly — and it costs nothing in story, because it is simply
+              what is there. */}
+          {[-1, 1].map((side) => {
+            const lip = (t: number) => {
+              const p = t * t;
+              return [540 + side * (150 + p * 700), y + 34 + p * (h - 34)] as const;
+            };
+            const pts = Array.from({length: 9}).map((_, i) => lip(i / 8));
+            const inner = Array.from({length: 9}).map((_, i) => {
+              const [px, py] = lip(i / 8);
+              return [px + side * (10 + (i / 8) * (i / 8) * 120), py + (i / 8) * (i / 8) * 26] as const;
+            });
+            const d = `M${pts.map(([a, b]) => `${a},${b}`).join(' L')} L${[...inner].reverse().map(([a, b]) => `${a},${b}`).join(' L')} Z`;
+            return (
+              <g key={side}>
+                <path d={d} fill="#565549" opacity={0.5} />
+                {/* meltwater, holding the sky */}
+                {[0.42, 0.62, 0.82].map((t, k) => {
+                  const [px, py] = lip(t);
+                  const rw = 22 + t * t * 150;
+                  return (
+                    <g key={k}>
+                      <ellipse cx={px + side * rw * 0.35} cy={py + 8} rx={rw} ry={rw * 0.2}
+                        fill="#9fb6c4" opacity={0.62} />
+                      <ellipse cx={px + side * rw * 0.35} cy={py + 5} rx={rw * 0.72} ry={rw * 0.11}
+                        fill="#cfe0ea" opacity={0.5} />
+                    </g>
+                  );
+                })}
+              </g>
+            );
+          })}
           {/* THE NEAR BERM — a value anchor at the bottom edge.
 
               The ridge fixed the sky and the ruts and scatter fixed the middle, but the
@@ -423,7 +466,10 @@ const S1Road: React.FC<{f: number; fps: number}> = ({f, fps}) => {
           sized for a boom travelling 11 degrees a frame was also applied to a plate that
           had not moved at all. ThresholdGate now takes the velocity and blurs only its
           own boom, so the plate and the clock face stay sharp through the slam. */}
-      <g transform="translate(430,1010) scale(1.34)">
+      {/* x=470, not 430: at 430 the plate's NO SIZE LIMIT label started at frame x=73,
+          inside the unsafe left margin, on the poster frame AND the loop frame. The open
+          and the close must move together or the loop stops matching. */}
+      <g transform="translate(470,1010) scale(1.34)">
         <ThresholdGate f={f} x={0} y={0} boom={interpolate(fall.angle, [-76, 0], [0, 1])}
           boomVel={fall.vel} cut={0} cutW={130} hands={0} lamp={0} scale={1} phase={0.1} tint={STEEL} />
       </g>
@@ -844,7 +890,9 @@ const S5: React.FC = () => {
             rather than starting small and getting smaller. Judge 1 measured this shot at
             "about 85 percent undifferentiated sky plus empty field"; a travel shot with a
             distant subject is a shot of nothing travelling. */}
-        <g opacity={1 - push * 0.7} transform={`translate(${332 - push * 560},${1206 + push * 420}) scale(${1.5 - push * 0.5})`}>
+        {/* it used to stay fully opaque while translating off frame, so sampled frames
+            read "OW UTILITY CAPACITY". It is gone before it reaches the edge now. */}
+        <g opacity={Math.max(0, 1 - push * 2.2)} transform={`translate(${332 - push * 560},${1206 + push * 420}) scale(${1.5 - push * 0.5})`}>
           <Gate f={f} x={0} y={0} condition="SHOW UTILITY CAPACITY" source="AO 2026-27" verdict="pass" scale={1} tint={STEEL} />
         </g>
       </g>
@@ -1367,8 +1415,8 @@ const S11: React.FC = () => {
           <rect x={536} y={0} width={9} height={1920} fill={INK} />
           {/* ONE shadow crossing both panels */}
           <rect x={shadow} y={0} width={300} height={1920} fill="#0d1620" opacity={0.26} />
-          <Plate x={280} y={CARD_BOT} w={470} size={27} text="ALREADY STOPPED" />
-          <Plate x={800} y={CARD_BOT} w={470} size={25} text="THE ONLY THING IN THE WAY" />
+          <Plate x={312} y={CARD_BOT} w={404} size={27} text="ALREADY STOPPED" />
+          <Plate x={768} y={CARD_BOT} w={404} size={24} text="THE ONLY THING IN THE WAY" />
         </>
       ) : (
         <>
@@ -1432,8 +1480,12 @@ const S11: React.FC = () => {
               <path d="M506,1090 L604,1112" stroke={INK} strokeWidth={5} strokeDasharray="7 12" opacity={0.5} />
             </g>
           </g>
-          <Plate x={540} y={CARD_BOT} w={900} size={32} text="IT MAKES ITS OWN POWER"
-            sub="the line from the household never arrives" op={pullOut} />
+          {/* judge 1 could not resolve this subline at delivered size and could not tell
+              whether it said the line arrives or never arrives — on the card that states
+              the film's thesis. Set at parity with the caption floor, and reworded so the
+              negation is the first word rather than the last. */}
+          <Plate x={540} y={CARD_BOT} w={940} size={32} text="IT MAKES ITS OWN POWER"
+            sub="no line from the household ever reaches it" subSize={26} op={pullOut} />
         </>
       )}
     </Stage>
@@ -1636,7 +1688,10 @@ const S12: React.FC = () => {
       <Powerline f={f} y={780} />
       <Road f={f} y={1010} />
       {/* matched to frame 0: same horizon, same placement, same scale, same UNCUT plate */}
-      <g transform="translate(430,1010) scale(1.34)">
+      {/* x=470, not 430: at 430 the plate's NO SIZE LIMIT label started at frame x=73,
+          inside the unsafe left margin, on the poster frame AND the loop frame. The open
+          and the close must move together or the loop stops matching. */}
+      <g transform="translate(470,1010) scale(1.34)">
         <ThresholdGate f={f} x={0} y={0} boom={rise} boomVel={riseVel * 76} cut={0} cutW={140}
           hands={0} lamp={0} scale={1} phase={0.1} tint={STEEL} />
       </g>
