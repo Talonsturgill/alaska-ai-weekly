@@ -199,17 +199,18 @@ export const ThresholdGate: React.FC<{
   x: number;
   y: number;
   boom?: number;          // 0 = raised/clear, 1 = slammed down
-  marks?: number;         // 0..1 size gradations present
+  cut?: number;           // 0..1 a real sorting aperture is present in the plate
   hands?: number;         // 0..1 clock hands present
   lamp?: number;          // 0..1 decision lamp, only lights when a threshold fired
-  needle?: number;        // -1..1 where the needle sits when there IS a scale
+  cutW?: number;          // width of that aperture, i.e. how big a load may pass
+  cutLabel?: string;      // what the limit is called on the plate
   label?: string;         // the jurisdiction plate
   scale?: number;
   accent?: number;
   phase?: number;
   tint?: string;
 }> = ({
-  f, x, y, boom = 0, marks = 0, hands = 0, lamp = 0, needle = 0,
+  f, x, y, boom = 0, cut = 0, cutW = 120, cutLabel, hands = 0, lamp = 0,
   label, scale = 1, accent = 0, phase = 0, tint = '#93a0ad',
 }) => {
   const body = tones(tint);
@@ -219,10 +220,6 @@ export const ThresholdGate: React.FC<{
   const armAngle = -78 + boom * 78;
   const blink = ((f + Math.round(phase * 53)) % 112) < 5;
 
-  // With no gradations the needle has nothing to resolve against, so it RATTLES.
-  // With gradations it settles where the caller points it. The motion itself is the tell.
-  const rattle = (1 - marks) * Math.sin(f / 1.7 + phase) * 26;
-  const needleDeg = marks > 0.5 ? needle * 62 : rattle;
   const lampColor = lamp > 0.05 ? '#e8b23a' : '#3a4149';
 
   return (
@@ -233,59 +230,62 @@ export const ThresholdGate: React.FC<{
         <FormGradient id={`${uid}_d`} t={plate} softness={0.7} />
       </defs>
 
-      {/* ---- THE ROAD SCALE PLATE. The size threshold lives here, and it is the single
-             most important object in the whole asset, so it is drawn BIG. Look-dev pass 1
-             sized it as a realistic little gauge beside the post and the marks/no-marks
-             difference vanished at 0.3 scale, which is the exact failure this rig cannot
-             afford (the argument IS the difference). Pass 2 roughly doubles it, doubles
-             the mark weight, and gives the blank state a loud labelled void. ---- */}
-      <g transform="translate(-176,-26)">
-        <rect x={-120} y={92} width={300} height={30} rx={6} fill="#5d666f" stroke={INK} strokeWidth={5} />
-        <circle cx={0} cy={0} r={112} fill={`url(#${uid}_d)`} stroke={INK} strokeWidth={9} />
-        {/* bezel ticks + rivets: detail density so the plate reads as a built instrument */}
-        {Array.from({length: 12}).map((_, i) => {
-          const a = (i * 30) * Math.PI / 180;
-          return <circle key={i} cx={Math.sin(a) * 102} cy={-Math.cos(a) * 102} r={3.4} fill={INK} opacity={0.45} />;
-        })}
-        {/* gradations, oversized WELL past realism so presence/absence reads at thumbnail */}
-        {marks > 0.05 && Array.from({length: 9}).map((_, i) => {
-          const a = (-64 + i * 16) * Math.PI / 180;
-          const long = i % 2 === 0;
-          const r0 = long ? 44 : 62;
-          return (
-            <line key={i}
-              x1={Math.sin(a) * r0} y1={-Math.cos(a) * r0}
-              x2={Math.sin(a) * 92} y2={-Math.cos(a) * 92}
-              stroke={INK} strokeWidth={long ? 13 : 7} strokeLinecap="round" opacity={marks} />
-          );
-        })}
-        {/* the RED BAND at the top of a bounded scale: the threshold itself, visible as colour */}
-        {marks > 0.5 && (
-          <path d="M52,-76 A 94 94 0 0 1 92,-18" fill="none" stroke="#c0392b" strokeWidth={16}
-            strokeLinecap="round" opacity={0.9} />
-        )}
-        {/* THE VOID. A blank face reads as "empty gauge". A DASHED ARC PLUS A PRINTED WORD
-            reads as "the marks are missing", which is the 07-30 RingedSealGhost lesson. */}
-        {marks < 0.5 && (
-          <>
-            <path d="M-80,-66 A 94 94 0 0 1 80,-66" fill="none" stroke={INK} strokeWidth={7}
-              strokeDasharray="16 20" opacity={0.5} strokeLinecap="round" />
-            <text x={0} y={62} textAnchor="middle" fontFamily={MONO} fontWeight={700}
-              fontSize={27} fill={INK} opacity={0.66} letterSpacing={2}>NO SCALE</text>
-          </>
-        )}
-        {/* the needle. On a blank face it RATTLES, and gets motion arcs so the flailing reads. */}
-        {marks < 0.5 && (
-          <>
-            <path d="M-40,-6 A 44 44 0 0 1 -22,-40" fill="none" stroke={INK} strokeWidth={3.5} opacity={0.3} />
-            <path d="M40,-6 A 44 44 0 0 0 22,-40" fill="none" stroke={INK} strokeWidth={3.5} opacity={0.3} />
-          </>
-        )}
-        <g transform={`rotate(${needleDeg} 0 0)`}>
-          <path d="M0,-96 L11,0 L-11,0 Z" fill="#c0392b" stroke={INK} strokeWidth={5} />
+      {/* ---- THE SORTING APERTURE. The size threshold lives here.
+             DESIGN CHANGE, and the reason is worth keeping. Pass 1 to 3 drew this as a
+             SCALE PLATE with a needle and gradations, and it worked. It was dropped anyway
+             because the 2026-07-30 Dispatch had already used "a gauge with no scale printed
+             behind its needle" as its own thesis image, one run earlier. The composition-axes
+             gate compares palette and metaphor tokens and would have caught it, but a viewer
+             would have FELT it first, and that run's own retrospective flagged story-shape
+             repetition as the thing the gate cannot see.
+             An aperture is also the better drawing on the merits: a dial reports that nothing
+             is measured, a slot shows WHICH LOAD GETS THROUGH, which is the actual argument.
+             `cut` 0..1 opens a real hole sized by `cutW`. At 0 the plate is SOLID, and a solid
+             plate stops everything it meets rather than discriminating. ---- */}
+      <g transform="translate(-186,-92)">
+        <ContactShadow cx={0} cy={188} rx={112} ry={18} opacity={0.3} />
+        {/* the plate body, drawn as two halves around the cut so the opening is real geometry */}
+        <g>
+          <rect x={-104} y={-40} width={208} height={228} rx={8}
+            fill={body.base} stroke={INK} strokeWidth={8} />
+          <rect x={-104} y={-40} width={208} height={228} rx={8}
+            fill={`url(#${uid}_p)`} opacity={0.5} />
+          <BrushedMetal x={-104} y={-40} w={208} h={228} opacity={0.16} />
+          {/* corner bolts: detail density, so the plate reads as fabricated */}
+          {[[-84,-20],[84,-20],[-84,168],[84,168]].map(([bx,by],i)=>(
+            <circle key={i} cx={bx} cy={by} r={6} fill="#2b333b" stroke={INK} strokeWidth={3.5} />
+          ))}
         </g>
-        <circle cx={0} cy={0} r={16} fill="#2b333b" stroke={INK} strokeWidth={6} />
-        <circle cx={-4} cy={-4} r={4} fill="#c9cfd8" opacity={0.7} />
+
+        {cut > 0.05 ? (
+          <>
+            {/* THE CUT. A real opening, with a lit inner reveal so it reads as a hole
+                through a thick plate rather than as a painted rectangle. */}
+            <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="#cddbe4" />
+            <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6}
+              fill="none" stroke={INK} strokeWidth={8} />
+            <rect x={-cutW / 2 + 7} y={37} width={cutW - 14} height={12} rx={4}
+              fill={INK} opacity={0.22} />
+            {/* the threshold edge, in the film's one reserved colour */}
+            <line x1={-cutW / 2} y1={30} x2={cutW / 2} y2={30} stroke="#c0392b" strokeWidth={11}
+              strokeLinecap="round" />
+            <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+              fontSize={19} fill={INK} letterSpacing={1.2}>{cutLabel ?? 'SIZE LIMIT'}</text>
+          </>
+        ) : (
+          <>
+            {/* THE UNCUT PLATE. A dashed ghost of the opening that was never made, plus a
+                printed word, because an absence only reads as an absence when it is dashed
+                and labelled (the 07-30 RingedSealGhost lesson). */}
+            <rect x={-cutW / 2} y={30} width={cutW} height={92} rx={6} fill="none"
+              stroke={INK} strokeWidth={6} strokeDasharray="15 15" opacity={0.42} />
+            <text x={0} y={86} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+              fontSize={25} fill={INK} opacity={0.6} letterSpacing={1.8}>NO CUT</text>
+            <text x={0} y={214} textAnchor="middle" fontFamily={MONO} fontWeight={700}
+              fontSize={19} fill={INK} opacity={0.75} letterSpacing={1.2}>NO SIZE LIMIT</text>
+          </>
+        )}
+        <RimLight d="M-100,-34 L-100,182" w={4.5} opacity={0.45} />
       </g>
 
       {/* ---- the post: rounded head, brow bar, two lidded eyes. A doorman, not a slab. ---- */}
@@ -374,7 +374,7 @@ export const ThresholdGate: React.FC<{
       </g>
 
       {label && (
-        <g transform="translate(96,120)">
+        <g transform="translate(150,168)">
           <rect x={-118} y={-24} width={236} height={48} rx={9}
             fill={`url(#${uid}_d)`} stroke={INK} strokeWidth={5} />
           <text x={0} y={10} textAnchor="middle" fontFamily={BOLD} fontWeight={900}

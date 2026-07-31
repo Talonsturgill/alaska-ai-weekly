@@ -35,20 +35,21 @@ export const GateLook: React.FC = () => {
         {/* ---- THE TURN FRAME: one rig, two configurations ---- */}
         {/* NEW YORK: gradations present, clock has hands, a threshold actually fired */}
         <ThresholdGate f={f} x={300} y={1180} label="NEW YORK"
-          boom={1} marks={1} hands={1} lamp={1} needle={0.55} scale={0.66} phase={0.12} />
+          boom={1} cut={1} cutW={120} cutLabel="BIGGEST SITES ONLY" hands={1} lamp={1}
+          scale={0.6} phase={0.12} />
 
         {/* ALASKA: same rig, blank plate, handless clock, lamp dark */}
         <ThresholdGate f={f} x={780} y={1180} label="ALASKA"
-          boom={1} marks={0} hands={0} lamp={0} scale={0.66} phase={0.44} />
+          boom={1} cut={0} cutW={120} hands={0} lamp={0} scale={0.6} phase={0.44} />
 
         {/* ---- thumbnail legibility strip: the same pair at feed size ---- */}
-        <ThresholdGate f={f} x={330} y={1660} boom={1} marks={1} hands={1} lamp={1}
-          needle={0.55} scale={0.3} phase={0.7} />
-        <ThresholdGate f={f} x={720} y={1660} boom={1} marks={0} hands={0} lamp={0}
-          scale={0.3} phase={0.9} />
+        <ThresholdGate f={f} x={330} y={1660} boom={1} cut={1} cutW={120} hands={1} lamp={1}
+          scale={0.28} phase={0.7} />
+        <ThresholdGate f={f} x={720} y={1660} boom={1} cut={0} cutW={120} hands={0} lamp={0}
+          scale={0.28} phase={0.9} />
         <text x={540} y={1810} textAnchor="middle" fontFamily="'JetBrains Mono', monospace"
           fontSize={26} fontWeight={700} fill="#16202a">
-          same rig at 0.3 scale. can you still tell them apart
+          same rig at 0.28 scale. can you still tell them apart
         </text>
       </svg>
       <DayGrade f={f} amount={0.85} floor={0.55} haze={0.3} sunX={840} sunY={210} sunIntensity={0.5} />
