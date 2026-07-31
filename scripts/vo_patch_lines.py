@@ -57,11 +57,22 @@ WER_MAX = 0.10      # a replacement that is not what we asked for is not a fix
 
 
 def _load_wav(path):
+    """Normalise to float [-1,1] REGARDLESS of the file's sample format.
+
+    THE BUG THIS FIXES, and it destroyed a VO track before it was caught: this used to
+    divide unconditionally by 32768, which is right for the int16 file the synth writes and
+    catastrophically wrong for the float32 file THIS TOOL writes. So the first patch worked
+    and the second silenced all 91 seconds -- a tool whose own output it could not read
+    back. Scale from the dtype, never from an assumption about who wrote the file."""
     from scipy.io import wavfile
     sr, y = wavfile.read(path)
     if y.ndim > 1:
         y = y.mean(axis=1)
-    return sr, y.astype(np.float32) / 32768.0
+    if np.issubdtype(y.dtype, np.integer):
+        y = y.astype(np.float32) / float(np.iinfo(y.dtype).max + 1)
+    else:
+        y = y.astype(np.float32)
+    return sr, y
 
 
 def _save_wav(path, y, sr=SR):
@@ -268,6 +279,24 @@ def main():
         print(f"  PATCHED  {L['start']:.2f}..{new_end:.2f}  ({len(cues)} caption cues)")
 
     new_caps.sort(key=lambda c: c["start"])
+
+    # VERIFY BEFORE COMMITTING. This used to write vo.wav, THEN run the whole-file
+    # soundcheck, THEN exit nonzero if it failed -- which left a corrupted track on disk
+    # while correctly reporting failure. A tool that fails loudly and still mutates the
+    # artifact is worse than one that crashes. Check the candidate in memory first; only a
+    # passing check earns the right to overwrite anything.
+    import tempfile as _tf
+    with _tf.TemporaryDirectory() as td:
+        cand = os.path.join(td, "cand.wav")
+        _save_wav(cand, new_audio)
+        full_txt = " ".join(l["text"] for l in lines)
+        pre = sc.check(cand, full_txt, dur_lo=1.0, dur_hi=600.0)
+    if not pre["checks"]["word_accuracy"]["pass"]:
+        raise SystemExit(
+            f"whole-file word accuracy would regress (wer="
+            f"{pre['checks']['word_accuracy']['wer']}). NOTHING WAS WRITTEN; vo.wav, "
+            f"vo_lines.json and captions.json are untouched.\n  heard: {pre['heard'][:200]}")
+
     _save_wav(os.path.join(AUD, "vo.wav"), new_audio)
     json.dump(meta, open(os.path.join(OUT, "vo_lines.json"), "w"), indent=1)
     json.dump(new_caps, open(os.path.join(OUT, "captions.json"), "w"), indent=1)
@@ -281,14 +310,11 @@ def main():
         print(f"  line {r['line']}: wer={r['wer']} pace={r['pace']}x "
               f"{r['start']:.2f}..{r['end']:.2f} (slot to {r['slot_end']:.2f})")
 
-    # whole-file re-check, because a good splice can still break the passage
-    full = " ".join(l["text"] for l in lines)
-    res = sc.check(os.path.join(AUD, "vo.wav"), full, dur_lo=1.0, dur_hi=600.0)
+    # report the (already-passed) whole-file check for the record
+    res = pre
     print(f"\nwhole-file soundcheck: pass={res['pass']} "
           f"wer={res['checks']['word_accuracy']['wer']} "
           f"pitch_std={res['checks']['expressive']['pitch_std_semitones']}")
-    if not res["checks"]["word_accuracy"]["pass"]:
-        raise SystemExit("whole-file word accuracy regressed — the splice is not clean")
     json.dump({"patches": report, "soundcheck": res},
               open(os.path.join(OUT, "vo_patch_report.json"), "w"), indent=2)
     print("-> out/dispatch/vo_patch_report.json")
