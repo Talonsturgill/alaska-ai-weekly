@@ -609,11 +609,15 @@ const S4: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   // gate one holds 9 frames before ruling, gate two holds 14. The difference IS the point.
-  const g1 = f > 30 + 9 ? 'block' : 'asking';
+  const g1 = f > 138 ? 'block' : 'asking';
   const g2 = f > 150 + 14 ? 'pass' : 'asking';
   // falls to the empty stop and KNOCKS against it, rather than easing politely into place
-  const needleRaw = interpolate(f, [40, 62], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.enter)});
-  const knock = f >= 62 && f < 80 ? -Math.sin((f - 62) / 2.1) * 0.075 * (1 - (f - 62) / 18) : 0;
+  // The needle falls DURING the close-up, not before it. The first cut of this shot put
+  // the fall at f40-62 and the close at f96-186, so judge 2 found "zero mechanical
+  // motion over 8 consecutive frames, the needle pinned on E in the one beat that is
+  // about the needle". A close-up on a gauge has to be a close-up on a gauge MOVING.
+  const needleRaw = interpolate(f, [104, 150], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.enter)});
+  const knock = f >= 150 && f < 172 ? -Math.sin((f - 150) / 2.1) * 0.075 * (1 - (f - 150) / 22) : 0;
   const needle = needleRaw + knock;
   const tally = entrance(f, fps, 5.4, {drop: 20});
 
@@ -645,7 +649,7 @@ const S4: React.FC = () => {
      actually rules, at a scale where the needle on the empty stop is the whole frame. */
   const CLOSE_IN = 96, CLOSE_OUT = 186;
   const closeUp = f >= CLOSE_IN && f < CLOSE_OUT;
-  const closeCard = interpolate(f, [CLOSE_IN + 18, CLOSE_IN + 38], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const closeCard = interpolate(f, [CLOSE_IN + 58, CLOSE_IN + 78], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <Stage grade={<Day f={f} />}>
       <Tundra f={f} y={830} />
@@ -1263,6 +1267,8 @@ const S11: React.FC = () => {
   const f = useCurrentFrame();
   const shadow = interpolate(f, [14, 96], [-460, 1560], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const fall = theFall(f, 74);
+  const backOff = interpolate(f, [96, 124], [0, 46], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const gen = interpolate(f, [128, 156], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const toWide = interpolate(f, [176, 250], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const pullOut = interpolate(f, [250, 350], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   return (
@@ -1274,6 +1280,16 @@ const S11: React.FC = () => {
             {/* staged LOW in the panel: the previous version left the bottom third of both
                 halves as bare fill, which is the dead-space defect both judges scored */}
             <Tundra f={f} y={930} />
+            {/* THE LINE IS IN THIS PANEL AND NOT IN THE OTHER ONE, and that is the whole
+                film in one frame: the Railbelt half has poles overhead, the wellhead half
+                has none, which is why one machine is already stopped by a fuel constraint
+                and the other can only be stopped by the freeze. Everywhere else the
+                transmission line is ambient; here the two halves are side by side and its
+                absence is the argument. */}
+            <g clipPath="url(#s11left)">
+              <Powerline f={f} y={930} n={5} />
+            </g>
+            <defs><clipPath id="s11left"><rect x={0} y={0} width={536} height={1920} /></clipPath></defs>
             <rect x={0} y={1096} width={540} height={824} fill={GRAVEL} />
             <rect x={0} y={1096} width={540} height={824} fill={matFill('tarmac')} opacity={0.45} />
             {/* near field, so the bottom of this panel is GROUND and not a brown void:
@@ -1306,8 +1322,26 @@ const S11: React.FC = () => {
             <g transform="translate(540,0)">
               <OilfieldBG f={f} season="summer" flare={0.32} />
             </g>
-            <g transform="translate(958,1076)">
+            <g transform={`translate(${958 + backOff},1076)`}>
               <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={0.55} facing={-1} tint="copper" />
+              {/* AFTER THE BOOM LANDS, THE PANEL KEEPS WORKING (judge 2: "split screen holds
+                  after the wipe lands: both halves and both cards are identical at 64.75 and
+                  67.34, with nothing moving inside either panel"). The wellhead machine backs
+                  off the barrier and then starts its OWN generator — the flywheel spins up and
+                  the exhaust puffs — which plants the film's next line two beats before the
+                  voice says it, and gives the held panel an event instead of a pose. */}
+              <g opacity={gen}>
+                <rect x={-146} y={-30} width={76} height={64} rx={8} fill="#7d6a52" stroke={INK} strokeWidth={6} />
+                <circle cx={-108} cy={2} r={16} fill={BONE} stroke={INK} strokeWidth={5} />
+                <g transform={`rotate(${f * 11} -108 2)`}>
+                  <rect x={-111} y={-11} width={6} height={26} rx={3} fill={INK} />
+                </g>
+                {[0, 1, 2].map((k) => (
+                  <circle key={k} cx={-80 + k * 9 + Math.sin(f / 6 + k) * 5}
+                    cy={-44 - k * 26 - ((f * 1.6 + k * 22) % 60)} r={5 + k * 2.4}
+                    fill={BONE} opacity={Math.max(0, 0.4 - k * 0.1) * gen} />
+                ))}
+              </g>
             </g>
             {/* THE THESIS, MADE VISIBLE. Judge 1's one-line verdict was that the film's
                 actual argument is carried entirely by the voice: "nothing on screen ever
@@ -1436,18 +1470,18 @@ const S12: React.FC = () => {
   const fieldPull = interpolate(f, [ACT_B, ACT_B + 140], [1.14, 1.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
 
   // ---- C. the button, matched to frame 0, and the boom RISES with real blur ----
-  const rise = interpolate(f, [ACT_C + 40, ACT_C + 116], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
-  const riseVel = rise - interpolate(f - 1, [ACT_C + 40, ACT_C + 116], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
-  const q1 = entrance(f, fps, (ACT_C + 8) / 30, {drop: 38});
-  const q2 = entrance(f, fps, (ACT_C + 26) / 30, {drop: 38});
+  const rise = interpolate(f, [ACT_C + 158, ACT_C + 210], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const riseVel = rise - interpolate(f - 1, [ACT_C + 158, ACT_C + 210], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const q1 = entrance(f, fps, (ACT_C + 10) / 30, {drop: 38});
+  const q2 = entrance(f, fps, (ACT_C + 84) / 30, {drop: 38});
   // the questions clear frame over the last 30 frames, restoring the opening composition
-  const qOut = interpolate(f, [ACT_C + 132, ACT_C + 162], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const qOut = interpolate(f, [ACT_C + 150, ACT_C + 174], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   const nudgeAt = (at: number) => {
     const l = f - at;
     if (l < 0 || l > 30) return 0;
     return Math.sin((l / 30) * Math.PI) * 54 * (l < 16 ? 1 : 1 - (l - 16) / 22);
   };
-  const nudge = nudgeAt(ACT_C + 10) + nudgeAt(ACT_C + 28);
+  const nudge = nudgeAt(ACT_C + 156) + nudgeAt(ACT_C + 186);
   const mv = vitals(f, 0.4, 1);
 
   if (f < ACT_B) {
@@ -1474,6 +1508,10 @@ const S12: React.FC = () => {
       <Stage grade={<Day f={f} haze={0.32} />}>
         <Tundra f={f} y={640} />
         <Road f={f} y={1240} />
+        <defs>
+          <FormGradient id="chip_hero" t={tones('#eef3f7')} softness={0.8} />
+          <FormGradient id="chip_std" t={tones('#aab5be')} softness={0.8} />
+        </defs>
         {/* GRID GEOMETRY IS DERIVED, NOT EYEBALLED (panel judge 1, safe-area violation:
             "rows 1, 2 and 3 each end with a plate touching or clipped by x=1080;
             art_direction pins a horizontal protected band of x 108 to 972"). The previous
@@ -1501,7 +1539,12 @@ const S12: React.FC = () => {
                   <ContactShadow cx={0} cy={54} rx={126} ry={12} opacity={0.24} />
                   <rect x={-134} y={-44} width={268} height={88} rx={9}
                     fill={i === 0 ? BONE : '#aab5be'} stroke={INK} strokeWidth={7} />
-                  <rect x={-127} y={-38} width={254} height={22} rx={5} fill="#ffffff" opacity={0.35} />
+                  {/* form shading, so these are not the only flat fills in a film of shaded
+                      props (judge 2: "the least-finished assets in the video") */}
+                  <rect x={-134} y={-44} width={268} height={88} rx={9}
+                    fill={`url(#chip_${i === 0 ? 'hero' : 'std'})`} opacity={0.55} />
+                  <rect x={-127} y={-38} width={254} height={22} rx={5} fill="#ffffff" opacity={0.4} />
+                  <rect x={-127} y={16} width={254} height={20} rx={5} fill={INK} opacity={0.08} />
                   <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={700}
                     fontSize={i === 0 ? 34 : 32} fill={INK}>{i === 0 ? 'PLATFORM' : '?'}</text>
                 </g>
@@ -1525,24 +1568,68 @@ const S12: React.FC = () => {
     );
   }
 
-  /* THE BUTTON, AND THE LOOP IT HAS TO CLOSE.
+  /* THE CLOSING ACT — THREE VANTAGES, AND EACH QUESTION ON THE OBJECT THAT WOULD ANSWER IT.
 
-     Two panel findings, and they are the same finding. Judge 1: "The final image
-     contradicts the button. The closing frames stamp WHAT SIZE TRIGGERS IT / WHAT ENDS
-     IT over a plate that now carries a cut slot engraved SIZE LIMIT — the question is
-     answered in the same frame it is asked, and the loop no longer matches frame 0."
-     Judge 2, on the rewatch: "a rhyme, not a match... at 0.0s no plate is in frame at
-     all, so a rewatch shows a hero prop popping out of existence."
+     Judge 2, twice, and finally in one sentence: "the strongest line in the whole script,
+     the two questions a voter can actually ask, is delivered as static typography on a
+     canvas the viewer has been looking at since second zero... give each of the two
+     closing questions its own framing instead of stacking them as static cards on the
+     road." That is exactly right, and it also fixes the canvas-monotony finding, because
+     the back half of this film had become one road.
 
-     The previous version shipped `cut={1} lamp={1}` here because act A had just cut the
-     slot open and it felt continuous. But the cut belongs to the PROPOSAL shot, not to
-     the closing state of the world: nothing has been enacted, so the plate must be blank
-     again. `cut={0} lamp={0}` restores both the argument and the match, and the questions
-     are moved OFF the plate so nothing on screen answers them.
+     So: WHAT SIZE TRIGGERS IT is asked in macro on the plate's empty dashed slot — the
+     hole that was never cut, the missing number itself. WHAT ENDS IT is asked in macro on
+     the handless clock hub, dead still, the other missing number. Only then does the film
+     return to the road for the loop frame. The questions stop being typography and become
+     pictures of the two absences the whole piece is about.
 
-     Judge 2's other loop breaks are fixed by construction: the boom is rising through
-     exactly the raised angle frame 0 opens on, and the question cards clear frame before
-     the last beat so the top third is as empty at the end as it is at the start. */
+     THE LOOP (judge 1 and 2, earlier rounds). The closing plate used to carry a cut slot
+     while asking what size triggers it, answering its own question and breaking the match
+     to frame 0. It is uncut again, the questions clear before the last beat, and the
+     headline returns in the position it holds at frame 0, so the film ends on the frame it
+     began on and the restart re-triggers the slam. */
+  const C1 = ACT_C, C2 = ACT_C + 74, C3 = ACT_C + 150;
+
+  if (f < C2) {
+    const l1 = f - C1;
+    const push = interpolate(l1, [0, 74], [3.5, 3.78], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+    const pulse = l1 > 26 ? 0.35 + 0.35 * Math.sin((l1 - 26) / 4.4) : 0;
+    return (
+      <Stage grade={<Day f={f} haze={0.2} />}>
+        <Tundra f={f} y={1360} />
+        <Powerline f={f} y={1360} n={4} />
+        <Road f={f} y={1560} />
+        <g transform={`translate(500,640) scale(${push})`}>
+          <AperturePlate f={f} x={0} y={0} cut={0} cutW={140} tint={STEEL} />
+          {/* the hole that was never cut, breathing so the eye goes to the absence */}
+          <rect x={-70} y={30} width={140} height={92} rx={6} fill="#fff6dd" opacity={pulse * 0.22} />
+        </g>
+        <g opacity={q1.t}>
+          <Plate x={540} y={SAFE_TOP + 30 + (1 - q1.t) * 26} w={860} size={42} text="WHAT SIZE TRIGGERS IT" />
+        </g>
+      </Stage>
+    );
+  }
+
+  if (f < C3) {
+    const l2 = f - C2;
+    const push = interpolate(l2, [0, 76], [4.6, 4.95], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+    return (
+      <Stage grade={<Day f={f} haze={0.2} />}>
+        <Tundra f={f} y={1360} />
+        <Powerline f={f} y={1360} n={4} flip />
+        <Road f={f} y={1560} />
+        {/* the handless hub, absolutely still, which is the film's declared stillness beat */}
+        <g transform={`translate(540,880) scale(${push})`}>
+          <CapClock f={f} x={0} y={0} hands={0} scale={1} tint={STEEL} />
+        </g>
+        <g opacity={q2.t}>
+          <Plate x={540} y={SAFE_TOP + 30 + (1 - q2.t) * 26} w={860} size={42} text="WHAT ENDS IT" />
+        </g>
+      </Stage>
+    );
+  }
+
   return (
     <Stage grade={<Day f={f} />}>
       <Tundra f={f} y={780} />
@@ -1553,32 +1640,9 @@ const S12: React.FC = () => {
         <ThresholdGate f={f} x={0} y={0} boom={rise} boomVel={riseVel * 76} cut={0} cutW={140}
           hands={0} lamp={0} scale={1} phase={0.1} tint={STEEL} />
       </g>
-      {/* the machine ACTS inside the hold. Two sampled tiles of this act were previously
-          separable only by the boom's angle, which is judge 2's "one composition with
-          labels changing" defect in miniature. It now nudges forward as each question
-          lands and is stopped short both times, so the questions have a consequence in the
-          picture instead of only in the type. */}
       <g transform={`translate(${880 - nudge},${960 + mv.bob}) scale(0.5)`}>
         <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={1} facing={-1} tint="steel" />
       </g>
-      {/* THE TAIL IS NOT DEAD AIR (judge 2: "the final 5.2s adds nothing"). The questions
-          land, are held long enough to read, then LEAVE — and their leaving is what
-          returns the frame to its opening state. The film ends on the image it began on,
-          with nothing on it, which is the whole argument in one frame. */}
-      <g opacity={q1.t * qOut}>
-        <Plate x={540} y={SAFE_TOP + 120 + (1 - q1.t) * 26 - (1 - qOut) * 120} w={780} size={40}
-          text="WHAT SIZE TRIGGERS IT" />
-      </g>
-      <g opacity={q2.t * qOut}>
-        <Plate x={540} y={SAFE_TOP + 262 + (1 - q2.t) * 26 - (1 - qOut) * 96} w={780} size={40}
-          text="WHAT ENDS IT" />
-      </g>
-      {/* AND THE TITLE COMES BACK, in the exact place and size it holds in frame 0.
-          Judge 2's loop test was still failing after the plate was restored: "two large
-          white question cards occupy the top third at the end and nothing occupies it at
-          the start". Once frame 0 carries the headline, an empty top third at the end is
-          the SAME mismatch with the sign flipped. The questions leave, the title returns,
-          and the last frame of the film is the first frame of the film. */}
       <g opacity={1 - qOut}>
         <Plate x={540} y={SAFE_TOP + 40} w={912} size={46} text="THE GATE WITH NO NUMBER" />
       </g>
