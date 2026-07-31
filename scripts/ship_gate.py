@@ -423,7 +423,12 @@ def cmd_check(a):
     print("=" * 72)
     print("SHIP GATE: PASS")
     print("=" * 72)
-    print(f"  panel median {median} >= {thr}   judges={judges}")
+    # print the EFFECTIVE bar, not the rubric one. The first version of this line printed
+    # "7.2 >= 7.5" under a release, which is a false statement in the pass banner of the gate
+    # whose entire job is to not let false statements through.
+    print(f"  panel median {median} >= {effective} (rubric bar {thr})   judges={judges}"
+          if effective != thr else
+          f"  panel median {median} >= {thr}   judges={judges}")
     print(f"  {len(arts)} deliverables hash-match the graded cut")
     print(f"  {len(graded_ev)} pieces of review evidence hash-match")
     if ATTEMPTS.exists():
