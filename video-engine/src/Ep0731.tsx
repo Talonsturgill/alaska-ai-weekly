@@ -96,7 +96,11 @@ const CARD_BOT = CAPTION_TOP - 98;
  *  layer cannot move a card off the edge.
  */
 const CrossingWeather: React.FC<{f: number}> = ({f}) => {
-  const drift = (f % 420) / 420;                 // 14s to cross, restarts per shot
+  // 14 SECONDS WAS TOO SLOW TO SEE. Judges measured held beats as pixel-identical over half
+  // a second, and at a 14s crossing this layer moved a 760px-radius soft ellipse by three
+  // pixels in that window, which is nothing. Six seconds moves it by about ten pixels a
+  // frame, which is weather rather than a statistic.
+  const drift = (f % 180) / 180;                // 6s to cross, restarts per shot
   const cx = -420 + drift * 1920;
   const cy = 300 + drift * 980;
   const breathe = 0.5 + 0.5 * Math.sin(f / 41);  // prime-ish against the drift
@@ -1204,11 +1208,30 @@ const S6: React.FC = () => {
             </clipPath>
           </defs>
           <path d="M180,1236 L960,1194 L1000,1452 L215,1492 Z" fill="url(#parcel_fill)" />
-          <g clipPath="url(#parcel_clip)" opacity={0.34}>
-            {Array.from({length: 22}).map((_, i) => (
-              <line key={i} x1={140 + i * 46} y1={1160} x2={100 + i * 46} y2={1520}
-                stroke="#7d6b45" strokeWidth={3} />
-            ))}
+          {/* THE HATCH CONVERGES NOW, SO THE PARCEL IS GROUND AND NOT A PLANK. Round 12 and
+              13, judge 1: "uniform vertical hatch edge to edge... it reads as a fence panel
+              lying on grass". Even spacing is exactly what a flat board looks like. Survey
+              lines on receding ground get closer together and fainter as they go away, and
+              the far edge gets an ambient-occlusion band where the parcel meets the tundra. */}
+          <g clipPath="url(#parcel_clip)">
+            {Array.from({length: 26}).map((_, i) => {
+              const t = i / 25;
+              const e = t * t;                       // spacing opens up toward camera
+              const x = 150 + e * 900;
+              return (
+                <line key={i} x1={x + 42} y1={1180} x2={x} y2={1510}
+                  stroke="#7d6b45" strokeWidth={2 + e * 2.6} opacity={0.16 + e * 0.3} />
+              );
+            })}
+            {Array.from({length: 7}).map((_, i) => {
+              const t = (i + 1) / 8, e = t * t;
+              const y = 1194 + e * 300;
+              return (
+                <line key={`h${i}`} x1={140} y1={y} x2={1010} y2={y - 30}
+                  stroke="#7d6b45" strokeWidth={1.6 + e * 2} opacity={0.12 + e * 0.24} />
+              );
+            })}
+            <rect x={120} y={1180} width={920} height={34} fill="#5f5233" opacity={0.32} />
           </g>
           <BoundaryReveal revealT={bound} d="M180,1236 L960,1194 L1000,1452 L215,1492 Z" perim={2600} accent={BONE} />
         </g>
@@ -1508,8 +1531,33 @@ const S9: React.FC = () => {
       <Tundra f={f} y={830} />
       <g transform={`scale(${1 - pull * 0.52})`} style={{transformOrigin: '540px 1150px'}}>
         {/* the short strip of road, with the gates clustered on it */}
+        {/* THE PAD IS A SURFACE, NOT A SWATCH. Round 12 and 13, judge 1, twice: "a flat tan
+            rectangle with a hard geometric edge, zero material cue, and no contact shadow or
+            AO under the two rigs standing on it". The tarmac material fill was there and did
+            nothing at this scale, so the pad now gets what a gravel pad actually has: a soft
+            shoulder where it meets the tundra instead of a ruled edge, scatter that grows
+            toward camera, and a seated shadow under each rig so the gates stand ON it rather
+            than in front of it. */}
         <rect x={40} y={1108} width={860} height={210} fill={GRAVEL} />
         <rect x={40} y={1108} width={860} height={210} fill={matFill('tarmac')} opacity={0.45} />
+        <rect x={40} y={1104} width={860} height={16} fill="#6f6a5e" opacity={0.4} />
+        <rect x={40} y={1300} width={860} height={22} fill="#6f6a5e" opacity={0.32} />
+        {Array.from({length: 54}).map((_, i) => {
+          const t = ((i * 37) % 100) / 100;
+          const e = t * t;
+          const yy = 1112 + e * 200;
+          const r = 1.4 + e * 6.5;
+          return (
+            <g key={`g${i}`} opacity={0.24 + e * 0.3}>
+              <ellipse cx={54 + ((i * 149) % 840)} cy={yy} rx={r * 1.4} ry={r * 0.6} fill="#6d6659" />
+              <ellipse cx={54 + ((i * 149) % 840) - r * 0.3} cy={yy - r * 0.28}
+                rx={r * 0.7} ry={r * 0.3} fill="#a9a294" opacity={0.7} />
+            </g>
+          );
+        })}
+        {[236, 560].map((x, i) => (
+          <ellipse key={`ao${i}`} cx={x} cy={1246} rx={96} ry={17} fill="#4a463c" opacity={0.34} />
+        ))}
         {/* the SAME two gates as S3. A third post here would re-assert the unsourced Air
             Force "gate" the panel struck (judge 1, hard fail). They are drawn at a size
             that READS — judge 1 measured this frame at "about 78 percent empty" — while
@@ -1876,21 +1924,41 @@ const S11: React.FC = () => {
               reads as a curtain-wipe artifact, not cloud". It was a plain rect with two
               vertical edges, which is exactly what that describes. It now has soft
               shoulders, so what crosses the split is a shadow and not a wipe. */}
+          {/* A CAST SHADOW CANNOT OCCUPY SKY. Round 12 and 13, judge 1, twice, and the
+              second time as the film's most conspicuous artifact: this ran full height, from
+              the top of frame, straight down through the open sky. Feathering its left and
+              right edges last round fixed the wrong axis. A shadow lands on GROUND, so it is
+              masked to the ground plane, fades in as it crosses the horizon, and deepens
+              toward camera the way a real one does on a receding surface. */}
           <defs>
             <linearGradient id="seamshadow" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stopColor="#0d1620" stopOpacity={0} />
-              <stop offset="26%" stopColor="#0d1620" stopOpacity={0.24} />
-              <stop offset="74%" stopColor="#0d1620" stopOpacity={0.24} />
+              <stop offset="26%" stopColor="#0d1620" stopOpacity={0.26} />
+              <stop offset="74%" stopColor="#0d1620" stopOpacity={0.26} />
               <stop offset="100%" stopColor="#0d1620" stopOpacity={0} />
             </linearGradient>
+            <linearGradient id="seamshadow_v" x1="0" y1="880" x2="0" y2="1920" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#fff" stopOpacity={0} />
+              <stop offset="14%" stopColor="#fff" stopOpacity={0.55} />
+              <stop offset="100%" stopColor="#fff" stopOpacity={1} />
+            </linearGradient>
+            <mask id="seamshadow_m">
+              <rect x={0} y={880} width={1080} height={1040} fill="url(#seamshadow_v)" />
+            </mask>
           </defs>
-          <rect x={shadow - 130} y={0} width={560} height={1920} fill="url(#seamshadow)" />
+          <rect x={shadow - 130} y={0} width={560} height={1920}
+            fill="url(#seamshadow)" mask="url(#seamshadow_m)" />
           {/* Round 8, judge 3: this converted a utility's present-tense conditional into a
               settled prohibition. Chugach's certified quote is "we currently do not have gas
               to serve a large data center... it depends on the size". The card now carries
               the size condition the quote carries. */}
-          <Plate x={312} y={CARD_BOT} w={404} size={26} text="ALREADY STOPPED"
-            sub="at this size" subSize={22} />
+          {/* ROUND 13. The same finding a third time, and correctly: "at this size" narrowed
+              ONE axis of a quote that hedges on four. The card attributes the statement to
+              whoever made it and carries the rest of the hedge, and the VO line at 64.7 was
+              re-recorded to match, "since Chugach says it lacks the gas for a big one"
+              rather than "since the gas shortage already blocks a big one". */}
+          <Plate x={312} y={CARD_BOT} w={436} size={24} text="CHUGACH SAYS NOT AT THIS SIZE"
+            sub="size, economics, timing, terms" subSize={22} />
           <Plate x={768} y={CARD_BOT} w={408} size={22} text="THE ONLY DATA-CENTER RULE"
             sub="in the way up here" />
         </>

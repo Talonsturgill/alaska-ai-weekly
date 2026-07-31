@@ -57,6 +57,9 @@ DANGLING = {
     # negated auxiliaries, which are the same class wearing an apostrophe
     "doesn't", "don't", "didn't", "isn't", "aren't", "wasn't", "weren't", "won't",
     "can't", "couldn't", "shouldn't", "wouldn't", "hasn't", "haven't", "hadn't",
+    # complementizers and adverbs that point forward at what has not arrived yet
+    "whether", "instead", "because", "although", "unless", "until", "before", "after",
+    "rather", "either", "neither", "such", "how", "why", "which",
 }
 # NOT transitive verbs. The obvious next move after judge 3 listed "Anchorage requires |
 # proof" was to add requires/covers/says to the set. That was tried and made the film worse:
