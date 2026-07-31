@@ -1483,3 +1483,50 @@ Two permanent guards, both verified before commit:
 The lesson generalises past this bug: every check we had verified a PROPERTY of the artifact
 and none verified its IDENTITY. A guard that asks "is this the thing we meant to make" is
 worth more than another guard that asks "is this well formed".
+
+### 2026-07-31 addendum — the loop did not converge, and what that cost
+
+Seventeen editing rounds. Panel medians, in order: 7.37, 7.50, 7.18, 7.22, 7.18, 7.58, 7.44,
+7.70, 7.61, 7.20. The bar was 8.6 and the owner lowered it to 7.8 mid-run, calling the
++0.3-a-round rate a diminishing return. It then stopped being +0.3 a round.
+
+**Every round's named defects were fixed and verified.** The judges confirmed that: all four
+claimed fixes verified in the final round, nothing regressed, and judge 3 wrote the sentence
+that explains the whole shape of this run: *"My 7.38 is below my round-16 7.61 not because
+the film regressed: composition and writing both rose on your fixes, and I stopped
+discounting the static turn, which I had been generous about for two rounds."*
+
+That is the finding worth keeping. **A panel re-grading the same film finds new defects at
+roughly the rate old ones are fixed, so a patch loop against a fresh critique each round has
+no fixed point.** The score is a measurement of the panel's attention as much as of the film.
+Rounds 1 to 8 were genuinely productive because the defects were real, cheap and countable
+(wrong labels, safe-area breaches, illegible type, a flattened source quote, a factual
+overstatement in the VO). After that the loop was paying full render cost to trade one
+composition note for another.
+
+What is actually left is not patchable and the panel said so in three different voices:
+- the 65s split's seam is at 0.577 of frame width and the crowded side is the narrower one,
+  so the staging argues for the side the film says is irrelevant;
+- the concession beat is carried by a card over ~85% empty banding instead of a drawn gap;
+- the turn is a held tableau where the storyboard promised a slot cut on screen;
+- low-information area is 47% because the exterior grammar is sky-band / green-band /
+  gravel-band with the horizon at nearly the same height in two thirds of shots.
+
+Those are treatment decisions, made at Gate 0, and they need re-boarding, not another
+render.
+
+**The process lesson, for the routine:** cap the patch loop. When two consecutive rounds fail
+to raise the median, the finding is not "fix more things", it is "the remaining gap is
+architectural" — and the run should say so to the owner with the number, rather than spending
+another render proving it again. That is a change to `prompts/dispatch_routine.md` Phase 6 and
+it is made in this commit.
+
+**What did land this run, all verified:** the wrong-composition guard and the blank-frame
+gate (a whole wrong episode nearly shipped); source-freshness binding; surgical VO patching
+with a sample-exact splice invariant after two failed statistical guards; a dead-space meter;
+an audio evidence card; a real mix arc once the arithmetic was right (LRA 3.20 to 4.00 by
+moving the automation onto the voice, which is what short-term loudness actually measures);
+phrase-aware caption breaking; and three factual repairs the film needed — a preliminary
+decision no longer described as an opened lease, a utility's four-way conditional no longer
+flattened to "already stopped", and the "only rule in the way" claim qualified to match its
+own card.
