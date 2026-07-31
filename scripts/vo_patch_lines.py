@@ -285,40 +285,49 @@ def main():
     # while correctly reporting failure. A tool that fails loudly and still mutates the
     # artifact is worse than one that crashes. Check the candidate in memory first; only a
     # passing check earns the right to overwrite anything.
-    # "WOULD REGRESS" HAS TO BE MEASURED AGAINST SOMETHING (fixed 2026-07-31, round 9).
+    # THE GUARD IS AN EXACT INVARIANT NOW, NOT AN ASR SCORE (2026-07-31, round 11).
     #
-    # This block used to print the words "would regress" and then test an ABSOLUTE pass/fail
-    # from vo_soundcheck. Those are different questions, and on this script they gave
-    # opposite answers: the candidate scored wer 0.249 and was refused, while the vo.wav it
-    # was replacing scored 0.355 on the same measure. The tool blocked an improvement and
-    # said the improvement was a regression.
+    # This block has been wrong twice, in opposite directions, and both versions failed for
+    # the same underlying reason: they asked a NON-DETERMINISTIC instrument a yes/no
+    # question.
     #
-    # The reason the absolute threshold is wrong here is ordinary: this narration is full of
-    # proper nouns and spoken numerals that ASR reliably mangles. It hears "To get electric"
-    # for "Chugach Electric" and writes "50-year" where the script says "fifty year". None of
-    # that is a defect in the read, and none of it changes when a line is patched, so an
-    # absolute floor measures the transcriber, not the take.
+    #   v1 tested an absolute whole-file accuracy threshold and called a failure a
+    #      "regression". It refused a patch that scored 0.249 against a file on disk scoring
+    #      0.355, i.e. it blocked an improvement.
+    #   v2 fixed that by comparing candidate to on-disk with a 0.02 tolerance. Then the
+    #      metric was measured properly: three consecutive runs over IDENTICAL audio and
+    #      IDENTICAL text returned 0.018, 0.378 and 0.037. A spread of 0.36 on a quantity
+    #      whose real change is a couple of words. No tolerance below 0.36 can be a guard,
+    #      and a tolerance of 0.36 would pass a file that had been destroyed.
     #
-    # So: transcribe the CURRENT file first, and refuse only when the candidate is genuinely
-    # worse than what is already on disk. A small tolerance absorbs ASR jitter between two
-    # runs over near-identical audio. The safety property is unchanged, nothing is written
-    # until the candidate has been checked, and the check now answers the question the error
-    # message always claimed to be asking.
-    import tempfile as _tf
-    full_txt = " ".join(l["text"] for l in lines)
-    base = sc.check(os.path.join(AUD, "vo.wav"), full_txt, dur_lo=1.0, dur_hi=600.0)
-    base_wer = base["checks"]["word_accuracy"]["wer"]
-    with _tf.TemporaryDirectory() as td:
-        cand = os.path.join(td, "cand.wav")
-        _save_wav(cand, new_audio)
-        pre = sc.check(cand, full_txt, dur_lo=1.0, dur_hi=600.0)
-    cand_wer = pre["checks"]["word_accuracy"]["wer"]
-    print(f"  whole-file wer: on disk {base_wer:.3f} -> candidate {cand_wer:.3f}")
-    if cand_wer > base_wer + 0.02:
-        raise SystemExit(
-            f"whole-file word accuracy WOULD REGRESS: {base_wer:.3f} on disk vs "
-            f"{cand_wer:.3f} for the candidate. NOTHING WAS WRITTEN; vo.wav, "
-            f"vo_lines.json and captions.json are untouched.\n  heard: {pre['heard'][:200]}")
+    # The whole-file transcription was never the right instrument. What this tool actually
+    # promises is exact and checkable without ASR: everything outside the patched slots is
+    # the ORIGINAL SAMPLES, untouched, and the file length is unchanged. That is asserted
+    # below, sample for sample. The patched line itself is verified where verification is
+    # precise and stable: per-line ASR against that line's own text, which already ran above
+    # and which measured 0.000 to 0.095 consistently across every take.
+    #
+    # An exact invariant that holds is worth more than a fuzzy one that fires at random.
+    import numpy as _np
+    if len(new_audio) != len(vo):
+        raise SystemExit(f"patched vo.wav changed length ({len(vo)} -> {len(new_audio)}); "
+                         f"NOTHING WAS WRITTEN.")
+    patched = []
+    for r in report:
+        i = r["line"]
+        s0 = int(round(lines[i]["start"] * sr))
+        s1 = int(round((lines[i + 1]["start"] if i + 1 < len(lines) else r["end"]) * sr))
+        patched.append((s0, s1))
+    keep = _np.ones(len(vo), dtype=bool)
+    for s0, s1 in patched:
+        keep[max(0, s0):min(len(vo), s1)] = False
+    if not _np.array_equal(vo[keep], new_audio[keep]):
+        n = int((vo[keep] != new_audio[keep]).sum())
+        raise SystemExit(f"{n} samples OUTSIDE the patched slots changed. The splice is not "
+                         f"surgical and NOTHING WAS WRITTEN; vo.wav, vo_lines.json and "
+                         f"captions.json are untouched.")
+    print(f"  splice verified: {len(patched)} slot(s) replaced, "
+          f"{int(keep.sum())} samples outside them bit-identical")
 
     _save_wav(os.path.join(AUD, "vo.wav"), new_audio)
     json.dump(meta, open(os.path.join(OUT, "vo_lines.json"), "w"), indent=1)
@@ -341,12 +350,16 @@ def main():
         print(f"  line {r['line']}: wer={r['wer']} pace={r['pace']}x "
               f"{r['start']:.2f}..{r['end']:.2f} (slot to {r['slot_end']:.2f})")
 
-    # report the (already-passed) whole-file check for the record
-    res = pre
-    print(f"\nwhole-file soundcheck: pass={res['pass']} "
-          f"wer={res['checks']['word_accuracy']['wer']} "
-          f"pitch_std={res['checks']['expressive']['pitch_std_semitones']}")
-    json.dump({"patches": report, "soundcheck": res},
+    # The record is the per-line verification plus the splice invariant. There is no
+    # whole-file ASR number here any more, and printing one would be worse than printing
+    # nothing: measured over three runs on identical audio it ranged 0.018 to 0.378, so any
+    # single value would read as a fact and be noise.
+    json.dump({"patches": report,
+               "splice_verified": True,
+               "note": ("Per-line ASR verification plus a sample-exact check that everything "
+                        "outside the patched slots is unchanged. The whole-file ASR score was "
+                        "removed on 2026-07-31 after it measured 0.018/0.378/0.037 on three "
+                        "runs over identical input.")},
               open(os.path.join(OUT, "vo_patch_report.json"), "w"), indent=2)
     print("-> out/dispatch/vo_patch_report.json")
 

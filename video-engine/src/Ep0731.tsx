@@ -610,7 +610,7 @@ const Plate: React.FC<{x: number; y: number; text: string; sub?: string; sub2?: 
           fill="#3c4954" letterSpacing={0.9}>{sub}</text>
       )}
       {sub2 && (
-        <text x={0} y={66} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={22}
+        <text x={0} y={66} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={24}
           fill="#3c4954" letterSpacing={0.6}>{sub2}</text>
       )}
     </g>
@@ -759,7 +759,7 @@ const S1Portrait: React.FC<{f: number; fps: number}> = ({f, fps}) => {
           <ContactShadow cx={0} cy={196} rx={274} ry={17} opacity={0.28} />
           <rect x={-300} y={-168} width={600} height={356} rx={10} fill="#f7fafc" stroke={INK} strokeWidth={6} />
           <rect x={-295} y={-163} width={590} height={54} rx={7} fill="#ffffff" opacity={0.5} />
-          <text x={0} y={-118} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={19}
+          <text x={0} y={-118} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={24}
             fill="#5c6b78" letterSpacing={1.4}>THE PLANK, VERBATIM</text>
           {['"Institute a moratorium on', 'all new data centers', '(similar to New York State)',
             'until the legislature can pass', 'comprehensive regulation on',
@@ -767,7 +767,7 @@ const S1Portrait: React.FC<{f: number; fps: number}> = ({f, fps}) => {
             <text key={i} x={0} y={-62 + i * 40} textAnchor="middle" fontFamily={BOLD} fontWeight={900}
               fontSize={i === 1 ? 30 : 26} fill={INK} opacity={quoteIn > i / 6 ? 1 : 0}>{ln}</text>
           ))}
-          <text x={0} y={182} textAnchor="middle" fontFamily={MONO} fontWeight={600} fontSize={18}
+          <text x={0} y={182} textAnchor="middle" fontFamily={MONO} fontWeight={600} fontSize={24}
             fill="#5c6b78" letterSpacing={0.6}>his published platform</text>
         </g>
       </g>
@@ -999,7 +999,7 @@ const S4: React.FC = () => {
             })}
             <text x={-58} y={26} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={INK}>E</text>
             <text x={58} y={26} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill={INK}>F</text>
-            <text x={0} y={-40} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={17}
+            <text x={0} y={-40} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={24}
               fill="#5c6b78" letterSpacing={1.2}>1/2</text>
             {/* the EMPTY STOP: a physical peg the needle actually lands against */}
             <g transform={`rotate(-62 0 0)`}>
@@ -1186,7 +1186,30 @@ const S6: React.FC = () => {
           </g>
         ))}
         <MeasuringChain x1={210} y1={1240} x2={210 + chain * 740} y2={1268} taut={chain} />
+        {/* THE PARCEL IS THE SUBJECT, SO IT IS PAINTED (round 11, judge 1: "the parcel
+            boundary is an unshaded flat quad with a hairline outline, the only unshaded fill
+            in the film, and the weakest-staged frame in it"). It carries the run's second
+            unimpeachable primary figure and it was drawn as a wireframe. It now has a
+            ground-toned interior that is lighter at the far edge and darker toward camera,
+            a hatched margin so the enclosure reads as surveyed rather than merely outlined,
+            and the reveal stroke on top of all of it. */}
         <g opacity={bound}>
+          <defs>
+            <linearGradient id="parcel_fill" x1="0" y1="1194" x2="0" y2="1492" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#cbb98d" stopOpacity={0.86} />
+              <stop offset="100%" stopColor="#a08c5f" stopOpacity={0.92} />
+            </linearGradient>
+            <clipPath id="parcel_clip">
+              <path d="M180,1236 L960,1194 L1000,1452 L215,1492 Z" />
+            </clipPath>
+          </defs>
+          <path d="M180,1236 L960,1194 L1000,1452 L215,1492 Z" fill="url(#parcel_fill)" />
+          <g clipPath="url(#parcel_clip)" opacity={0.34}>
+            {Array.from({length: 22}).map((_, i) => (
+              <line key={i} x1={140 + i * 46} y1={1160} x2={100 + i * 46} y2={1520}
+                stroke="#7d6b45" strokeWidth={3} />
+            ))}
+          </g>
           <BoundaryReveal revealT={bound} d="M180,1236 L960,1194 L1000,1452 L215,1492 Z" perim={2600} accent={BONE} />
         </g>
         {/* THE LEASE BAR SITS BELOW THE PARCEL, NOT INSIDE IT. Judge 1 read this element
@@ -1209,9 +1232,20 @@ const S6: React.FC = () => {
               until f=112, so for 3.7 seconds the film asserted a number that contradicted the
               narration. The label now does not exist until the first click, and the counter
               can never render a zero. */}
+          {/* A STROKE HALO IS NOT A BACKGROUND. Round 10 and 11, judge 1 both times: a
+              survey stake passes straight through the word gap and the numerals sit at weak
+              figure/ground on the pale bar. A halo only thickens the letterforms; whatever
+              is behind them still shows through the counters and the spaces. The number gets
+              an actual plate, which is what every other load-bearing figure in this film
+              already sits on. */}
           {years >= 1 && (
-            <text x={390} y={-52} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={48}
-              fill={INK} stroke="#f7fafc" strokeWidth={6} paintOrder="stroke">{years} YEARS</text>
+            <g transform="translate(390,-58)">
+              <rect x={-150} y={-40} width={300} height={74} rx={9}
+                fill="#f7fafc" stroke={INK} strokeWidth={6} />
+              <rect x={-144} y={-34} width={288} height={20} rx={5} fill="#ffffff" opacity={0.55} />
+              <text x={0} y={20} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={48}
+                fill={INK}>{years} YEARS</text>
+            </g>
           )}
         </g>
       </g>
@@ -1266,7 +1300,7 @@ const S7: React.FC = () => {
           <rect key={k} x={-150} y={-34 - k * 15} width={300 - (k % 2) * 40} height={12} rx={4}
             fill="#f4f0e4" stroke={INK} strokeWidth={4} />
         ))}
-        <text x={0} y={26} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={20}
+        <text x={0} y={26} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={24}
           fill={INK} letterSpacing={1.4}>FILED</text>
       </g>
       {/* the stamp that has nothing to stamp */}
@@ -1370,9 +1404,9 @@ const S8: React.FC = () => {
       <g transform="translate(212,742)">
         <rect x={-102} y={-132} width={204} height={264} rx={10} fill="#a8b3ba" stroke={INK} strokeWidth={8} />
         <rect x={-88} y={-116} width={176} height={232} rx={6} fill="#e8e2d2" />
-        <text x={0} y={-80} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22}
+        <text x={0} y={-80} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24}
           fill={INK} letterSpacing={0.4}>PUBLIC</text>
-        <text x={0} y={-54} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={22}
+        <text x={0} y={-54} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24}
           fill={INK} letterSpacing={0.4}>COMMENT</text>
         {[0, 1, 2, 3, 4].map((k) => (
           <rect key={k} x={-72} y={-24 + k * 26} width={144 - (k % 2) * 32} height={7} rx={3}
@@ -1442,6 +1476,13 @@ const S8: React.FC = () => {
 const S9: React.FC = () => {
   const f = useCurrentFrame();
   const roll = interpolate(f, [10, 96], [-240, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  // SAME ENGINE, INCONSISTENT APPLICATION (round 11, judge 3): the falling boom is blurred
+  // and the tumbling comment sheets are blurred, and this machine crosses roughly its own
+  // width in four frames with hard edges. Sampled against the previous frame, so the smear
+  // is the shot's real speed rather than a constant, which means it blurs through the fast
+  // middle of the entrance and lands crisp.
+  const rollPrev = interpolate(f - 1, [10, 96], [-240, 1200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
+  const rollVel = roll - rollPrev;
   const pull = interpolate(f, [130, 250], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(...EASE.move)});
   return (
     <Stage grade={<Day f={f} haze={0.4} />}>
@@ -1474,9 +1515,11 @@ const S9: React.FC = () => {
             source="" verdict="pass" scale={0.72} phase={i * 0.43} tint={STEEL} />
         ))}
         {/* a machine rolls past the last post into open ground, unchallenged */}
-        <g transform={`translate(${roll},1080)`}>
-          <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={0.72} facing={1} tint="steel" />
-        </g>
+        <MotionBlur vx={rollVel} vy={0} gain={0.5} max={14}>
+          <g transform={`translate(${roll},1080)`}>
+            <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={0.72} facing={1} tint="steel" />
+          </g>
+        </MotionBlur>
       </g>
       <Plate x={540} y={SAFE_TOP + 110} w={820} size={35} text="HE'S RIGHT THAT THERE'S A HOLE"
         op={Math.min(1, interpolate(f, [60, 90], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}))} />
@@ -1575,7 +1618,7 @@ const S10: React.FC = () => {
             <line x1={640} y1={504} x2={640} y2={550} stroke="#c0392b" strokeWidth={11} strokeLinecap="round" />
             <text x={556} y={468} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={26}
               fill={INK} letterSpacing={1.6}>BIGGEST SITES ONLY</text>
-            <text x={556} y={596} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={22}
+            <text x={556} y={596} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={24}
               fill={INK} letterSpacing={2}>NEW YORK</text>
           </g>
 
@@ -1588,7 +1631,7 @@ const S10: React.FC = () => {
             </g>
             <text x={556} y={1044} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={26}
               fill={INK} letterSpacing={1.6}>NO SIZE LIMIT</text>
-            <text x={556} y={1172} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={22}
+            <text x={556} y={1172} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={24}
               fill={INK} letterSpacing={2}>THE PLANK</text>
           </g>
 

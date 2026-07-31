@@ -155,7 +155,7 @@ export const Gate: React.FC<{
             fontSize={26} fill={INK} letterSpacing={0.4}>{condition}</text>
           {source && (
             <text x={0} y={60} textAnchor="middle" fontFamily={MONO} fontWeight={600}
-              fontSize={22} fill="#4a5a67" letterSpacing={0.8}>{source}</text>
+              fontSize={24} fill="#4a5a67" letterSpacing={0.8}>{source}</text>
           )}
         </g>
 

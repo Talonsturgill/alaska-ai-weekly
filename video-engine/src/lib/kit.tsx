@@ -982,7 +982,7 @@ export const PetrelDock: React.FC<{f: number; x: number; y: number; scale?: numb
       {/* cold rectilinear vents + status LEDs */}
       {[-1, 0, 1].map((k, i) => <rect key={i} x={-40 + k * 44 - 14} y={-30} width={28} height={30} rx={3} fill="#2b3742" stroke={INK} strokeWidth={3} />)}
       {[-110, -86, -62].map((lx, i) => <circle key={i} cx={lx} cy={-78} r={5} fill={((f / 6 + i * 2) % 9) < 4 ? '#7fd7ff' : '#28425a'} stroke={INK} strokeWidth={2.5} />)}
-      <text x={0} y={4} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={20} fill="#dfe7ee" letterSpacing={2} opacity={0.85}>DRONE-IN-A-BOX</text>
+      <text x={0} y={4} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={24} fill="#dfe7ee" letterSpacing={2} opacity={0.85}>DRONE-IN-A-BOX</text>
       {/* hinged lid (tips open) */}
       <g transform={`translate(0,-96) rotate(${-lo * 108})`} style={{transformOrigin: '-140px -96px'} as any}>
         <rect x={-140} y={-22} width={280} height={24} rx={8} fill={t.core} stroke={INK} strokeWidth={OUT} />
