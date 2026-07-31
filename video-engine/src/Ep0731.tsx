@@ -603,9 +603,9 @@ const S1Road: React.FC<{f: number; fps: number}> = ({f, fps}) => {
         </g>
       )}
       {/* THE HEADLINE, on screen from frame 0 */}
-      <g transform={`translate(540,${SAFE_TOP + 40}) scale(${1 + stamp * 0.055})`}
-         style={{transformOrigin: '540px 325px'}}>
-        <Plate x={0} y={0} w={912} size={46} text="THE GATE WITH NO NUMBER" />
+      <g transform={`translate(540,${SAFE_TOP + 58}) scale(${1 + stamp * 0.055})`}
+         style={{transformOrigin: '540px 343px'}}>
+        <Plate x={0} y={0} w={864} size={46} text="THE GATE WITH NO NUMBER" />
       </g>
     </Stage>
   );
@@ -1912,7 +1912,7 @@ const S12: React.FC = () => {
         <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={1} facing={-1} tint="steel" />
       </g>
       <g opacity={1 - qOut}>
-        <Plate x={540} y={SAFE_TOP + 40} w={864} size={46} text="THE GATE WITH NO NUMBER" />
+        <Plate x={540} y={SAFE_TOP + 58} w={864} size={46} text="THE GATE WITH NO NUMBER" />
       </g>
     </Stage>
   );
