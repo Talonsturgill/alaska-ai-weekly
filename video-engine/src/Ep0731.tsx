@@ -271,9 +271,60 @@ const Road: React.FC<{f: number; y?: number; drift?: number}> = ({f, y = 1180, d
  *  and because it lives in the shared helper every scene gets it at once. Values follow
  *  the art direction's ladder: the far plane loses ~22 percent L and ~35 percent chroma
  *  into the sky veil, so it recedes instead of competing with the subject. */
-const Tundra: React.FC<{f: number; y?: number; ridge?: boolean; near?: boolean}> = ({f, y = 1120, ridge = true, near = true}) => (
+/**
+ * THE SKY, which after four rounds of ground work is the last flat thing in the film.
+ *
+ * Judge 1, third round, after the road and the tundra were fixed: "what is worst NOW is the
+ * SKY. It is the same flat vertical gradient with the same two or three unshaded lozenge
+ * clouds in essentially every outdoor frame, occupying 30 to 55 percent of the picture, and
+ * it never changes across 93 seconds: no weather, no cloud scale or drift variation,
+ * nothing that distinguishes the Anchorage act from the North Slope act."
+ *
+ * Both halves of that are worth fixing, and the second one is the interesting half. A sky
+ * that never changes is not just empty, it throws away a free storytelling axis: the film
+ * travels 500 miles north, and the weather should know it. So the cloud deck is driven by a
+ * `north` parameter the scenes already imply -- low banded stratus and a colder, higher veil
+ * up on the Slope, taller broken cumulus down on the Railbelt -- and the clouds carry form
+ * shading and drift at depth-scaled rates instead of sitting as flat lozenges.
+ */
+const SkyDeck: React.FC<{f: number; y: number; north?: number}> = ({f, y, north = 0}) => {
+  const rows = 4;
+  return (
+    <g>
+      {/* a high veil, colder and flatter the further north we are */}
+      <path d={`M-60,${y * 0.16} Q270,${y * (0.10 - north * 0.02)} 560,${y * 0.17}
+                T1140,${y * 0.13} L1140,${y * 0.30} L-60,${y * 0.33} Z`}
+        fill="#e8f0f5" opacity={0.2 + north * 0.16} />
+      {Array.from({length: 11}).map((_, i) => {
+        const band = i % rows;
+        const d = (band + 1) / rows;                       // 0..1 depth, 1 = nearest
+        const yy = y * (0.1 + band * 0.17) + ((i * 29) % 40);
+        const drift = ((i * 211 + f * (0.24 + d * 0.5)) % 1460) - 190;
+        // north: flat banded stratus. south: taller broken cumulus.
+        const w = (86 + d * 210) * (1 + north * 0.55);
+        const h = (20 + d * 44) * (1 - north * 0.5);
+        return (
+          <g key={i} transform={`translate(${drift},${yy})`} opacity={(0.5 + d * 0.42) * (1 - north * 0.14)}>
+            <ellipse cx={0} cy={0} rx={w} ry={h} fill="#f4f9fc" />
+            {north < 0.5 && (
+              <>
+                <ellipse cx={-w * 0.34} cy={-h * 0.42} rx={w * 0.44} ry={h * 0.86} fill="#f7fbfd" />
+                <ellipse cx={w * 0.3} cy={-h * 0.3} rx={w * 0.38} ry={h * 0.7} fill="#f7fbfd" />
+              </>
+            )}
+            {/* form shading: the underside is always the cooler value */}
+            <ellipse cx={w * 0.06} cy={h * 0.42} rx={w * 0.92} ry={h * 0.42} fill="#cfe0ea" opacity={0.55} />
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+const Tundra: React.FC<{f: number; y?: number; ridge?: boolean; near?: boolean; north?: number}> = ({f, y = 1120, ridge = true, near = true, north = 0}) => (
   <g>
     <TundraBG f={f} season="summer" wind={0.55} groundY={y} />
+    <SkyDeck f={f} y={y} north={north} />
     {ridge && (
       <g>
         {/* far range, most desaturated, sits highest */}
@@ -441,7 +492,7 @@ const Powerline: React.FC<{f: number; y: number; n?: number; flip?: boolean}> = 
 const Plate: React.FC<{x: number; y: number; text: string; sub?: string; sub2?: string; op?: number; w?: number; size?: number; subSize?: number}> = ({
   x, y, text, sub, sub2, op = 1, w = 700, size = 38, subSize,
 }) => {
-  const h = sub2 ? 176 : sub ? 132 : 88;
+  const h = sub2 ? 190 : sub ? 142 : 88;
   return (
     <g transform={`translate(${x},${y})`} opacity={op}>
       <ContactShadow cx={0} cy={h / 2 + 12} rx={w / 2 * 0.9} ry={13} opacity={0.3} />
@@ -450,12 +501,12 @@ const Plate: React.FC<{x: number; y: number; text: string; sub?: string; sub2?: 
       <text x={0} y={sub ? -8 : 13} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={size}
         fill={INK} letterSpacing={0.6}>{text}</text>
       {sub && (
-        <text x={0} y={sub2 ? 28 : 38} textAnchor="middle" fontFamily={MONO} fontWeight={600} fontSize={subSize ?? 21}
-          fill="#5c6b78" letterSpacing={0.9}>{sub}</text>
+        <text x={0} y={sub2 ? 28 : 38} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={subSize ?? 26}
+          fill="#3c4954" letterSpacing={0.9}>{sub}</text>
       )}
       {sub2 && (
-        <text x={0} y={62} textAnchor="middle" fontFamily={MONO} fontWeight={600} fontSize={19}
-          fill="#5c6b78" letterSpacing={0.6}>{sub2}</text>
+        <text x={0} y={66} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={22}
+          fill="#3c4954" letterSpacing={0.6}>{sub2}</text>
       )}
     </g>
   );
@@ -575,7 +626,7 @@ const S1Portrait: React.FC<{f: number; fps: number}> = ({f, fps}) => {
       <Character frame={f} pose="stand" emotion="neutral" outfit="suit" headgear="bare"
         facing={1} x={272} y={1236} scale={1.24} glasses={false} trim="#38506b" idleGain={2.4} />
       <g opacity={nameIn.t} transform={`translate(0,${(1 - nameIn.t) * 20})`}>
-        <Plate x={742} y={742} w={580} size={33} text="KREISS-TOMKINS" sub="candidate for governor" />
+        <Plate x={742} y={742} w={460} size={33} text="KREISS-TOMKINS" sub="candidate for governor" />
       </g>
       {/* THE PLANK'S OWN WORDS, NOT THE DONATION.
 
@@ -617,7 +668,7 @@ const S1Portrait: React.FC<{f: number; fps: number}> = ({f, fps}) => {
       </g>
       {/* the two words the whole film turns on are the two the plank does not contain */}
       <g opacity={disc.t}>
-        <Plate x={540} y={CARD_BOT + 26} w={1000} size={30}
+        <Plate x={540} y={CARD_BOT + 26} w={864} size={30}
           text="NO SIZE. NO DATE."
           sub="the two numbers the plank does not contain" subSize={22} />
       </g>
@@ -806,7 +857,7 @@ const S4: React.FC = () => {
           <g transform={`translate(${790 + (1 - closeCard) * 40},1258)`}>
             <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={0.52} facing={1} tint="steel" />
           </g>
-          <Plate x={540} y={CARD_BOT} w={900} size={31}
+          <Plate x={540} y={CARD_BOT} w={864} size={31}
             text="IT HAS THE GENERATORS, NOT THE GAS" sub="the constraint is fuel, not capacity" />
         </>
       )}
@@ -876,7 +927,7 @@ const S4: React.FC = () => {
             </g>
           </g>
 
-          <Plate x={540} y={CARD_BOT} w={900} size={31}
+          <Plate x={540} y={CARD_BOT} w={864} size={31}
             text="IT HAS THE GENERATORS, NOT THE GAS" sub="Chugach Electric, per ADN, May 2026" />
         </>
       )}
@@ -895,7 +946,7 @@ const S4: React.FC = () => {
               beats later; under the Anchorage-ordinance line it was answering a question
               the film had not asked yet (judge 1, picture/VO beat mismatch). This says what
               the shot actually shows: one refusal, two loads, no threshold between them. */}
-          <Plate x={540} y={CARD_BOT} w={900} size={33} text="THE SAME REFUSAL, EITHER SIZE" />
+          <Plate x={540} y={CARD_BOT} w={864} size={33} text="THE SAME REFUSAL, EITHER SIZE" />
         </>
       )}
     </Stage>
@@ -923,7 +974,7 @@ const S5: React.FC = () => {
       <g transform={`translate(0,${-push * 90}) scale(${1 + push * 0.14})`} style={{transformOrigin: '540px 1100px'}}>
         <rect x={-2600} y={-2600} width={7400} height={8600} fill={SKY} />
         <rect x={-2600} y={640} width={7400} height={6000} fill="#7f9463" />
-        <Tundra f={f} y={640 + push * 40} />
+        <Tundra f={f} y={640 + push * 40} north={interpolate(push, [0, 1], [0.15, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} />
         {/* the road runs out */}
         <path d={`M${380 - push * 120},1920 L${470},${1180} L${610},${1180} L${700 + push * 120},1920 Z`}
           fill={GRAVEL} />
@@ -1022,7 +1073,7 @@ const S6: React.FC = () => {
           So the BIOME NEVER SCALES. It stays full-bleed and only the SUBJECTS pull back,
           which is the read the shot wanted anyway: the machine gets small in open country,
           the country does not get small too. */}
-      <Tundra f={f} y={840} />
+      <Tundra f={f} y={840} north={1} />
       <g transform={`scale(${1 - pull * 0.34})`} style={{transformOrigin: '540px 1100px'}}>
         {[210, 470, 730, 950].map((x, i) => (
           <g key={i} opacity={stake(i).t}>
@@ -1173,7 +1224,7 @@ const S7: React.FC = () => {
         <text x={0} y={68} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={36}
           fill={INK} letterSpacing={0.6}>LEASE</text>
       </g>
-      <Plate x={540} y={CARD_BOT} w={900} size={34} text="NO STATUTE ON WHO PAYS"
+      <Plate x={540} y={CARD_BOT} w={864} size={34} text="NO STATUTE ON WHO PAYS"
         sub="the plank's own premise: no comprehensive regulation yet"
         op={Math.min(1, riffle * 2)} />
     </Stage>
@@ -1249,8 +1300,10 @@ const S8: React.FC = () => {
             fill={CITRON} stroke={INK} strokeWidth={4} />
         ))}
       </g>
-      <Plate x={540} y={SAFE_TOP + 120} w={900} size={33}
-        text="MORE THAN 500 COMMENTS" sub="fewer than a dozen supportive" op={Math.min(1, pile * 1.8)} />
+      <Plate x={540} y={SAFE_TOP + 120} w={864} size={33}
+        text="MORE THAN 500 COMMENTS" sub="fewer than a dozen supportive"
+        sub2="ArcticToday, on the DNR comment period"
+        op={Math.min(1, pile * 1.8)} />
     </Stage>
   );
 };
@@ -1301,7 +1354,7 @@ const S9: React.FC = () => {
       </g>
       <Plate x={540} y={SAFE_TOP + 110} w={820} size={35} text="HE IS RIGHT THAT THERE IS A HOLE"
         op={Math.min(1, interpolate(f, [60, 90], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}))} />
-      <Plate x={540} y={CARD_BOT} w={900} size={32} text="ANCHORAGE IS ONE BOROUGH"
+      <Plate x={540} y={CARD_BOT} w={864} size={32} text="ANCHORAGE IS ONE BOROUGH"
         sub="a patchwork, not a process" op={Math.min(1, pull * 2)} />
     </Stage>
   );
@@ -1384,7 +1437,7 @@ const S10: React.FC = () => {
           <Nameplate x={300} y={1150} text="NEW YORK" subColor="#5c6b78" />
           <Nameplate x={780} y={1150} text="THE PLANK" subColor="#5c6b78" />
         </g>
-        <Plate x={540} y={CARD_BOT} w={900} size={31}
+        <Plate x={540} y={CARD_BOT} w={864} size={31}
           text={f > 96 ? 'ONE SIZE GETS CAUGHT' : 'ONE LETS A SIZE THROUGH'}
           op={Math.min(1, cut * 2)} />
       </Stage>
@@ -1411,8 +1464,8 @@ const S10: React.FC = () => {
         <CapClock f={f} x={300} y={700} hands={1} sweep={sweep} scale={2.2} tint={STEEL} />
         <CapClock f={f} x={780} y={700} hands={0} scale={2.2} tint={STEEL} />
         <g opacity={clockCards}>
-          <Plate x={300} y={1300} w={470} size={26} text="ENDS WITHIN A YEAR" sub="new york" />
-          <Plate x={780} y={1300} w={470} size={26} text="NO END DATE" sub="the plank" />
+          <Plate x={300} y={1300} w={384} size={26} text="ENDS WITHIN A YEAR" sub="new york" />
+          <Plate x={780} y={1300} w={384} size={26} text="NO END DATE" sub="the plank" />
         </g>
       </Stage>
     );
@@ -1420,24 +1473,34 @@ const S10: React.FC = () => {
 
   return (
     <Stage grade={<Day f={f} haze={0.2} />} bg="#b7c6d1">
-      {/* MACRO. Two faces of steel. One has a hole in it and one does not, and at this
-          scale that is the entire policy difference, with no label doing the work. */}
-      {/* A REAL MACRO, not a slightly tighter wide. At 1.9 this shot was separable from
-          the act-A wide only by reading the labels, which at thumbnail size means it was
-          not separable at all — the same "escalates by label, not by picture" failure the
-          act was restructured to cure. At 2.85 the two plate faces fill the frame, the
-          horizon drops out of the way, and the steel is at finish scale: bevels, bolts,
-          brushed fill, the engraved NO CUT, and one red edge. */}
+      {/* THE PLANK'S TWO ABSENCES, TOGETHER — not a third plate|plate comparison.
+
+          Judge 2, naming the film's dead zone: "the two-plate composition is returned to
+          four separate times in 13s with only the card row swapping text... this is the
+          film's dead zone and it sits exactly where vertical-video drop-off peaks." Three
+          of those four returns were act A and this act, which was only a tighter version of
+          the same frontal plate|plate setup — separable by scale, not by subject.
+
+          So this act stops comparing plates. It pairs the two things THE PLANK does not
+          have: the slot that was never cut, and the clock that has no hands. Different
+          objects, different silhouettes, and it is exactly what the card above has been
+          asserting in words for two acts. */}
       <Tundra f={f} y={1330} />
+      <Powerline f={f} y={1330} n={4} flip />
       <Road f={f} y={1520} />
-      <g transform={`translate(320,880) scale(${macro})`}>
-        <AperturePlate f={f} x={0} y={0} cut={1} cutW={140} cutLabel="BIGGEST SITES ONLY" tint={STEEL} />
-      </g>
-      <g transform={`translate(768,880) scale(${macro})`}>
+      <g transform={`translate(300,884) scale(${macro})`}>
         <AperturePlate f={f} x={0} y={0} cut={0} cutW={140} tint={STEEL} />
       </g>
+      <g>
+        <ContactShadow cx={790} cy={1330} rx={70} ry={16} opacity={0.3} />
+        <rect x={772} y={1010} width={36} height={320} rx={12} fill="#7d8894" stroke={INK} strokeWidth={8} />
+        <rect x={738} y={1292} width={104} height={44} rx={10} fill="#6f7a83" stroke={INK} strokeWidth={8} />
+      </g>
+      <g transform={`translate(790,806) scale(${macro * 1.62})`}>
+        <CapClock f={f} x={0} y={0} hands={0} scale={1} tint={STEEL} />
+      </g>
       <g opacity={verdict}>
-        <Plate x={540} y={SAFE_TOP + 40} w={940} size={33} text="NO SIZE LIMIT   AND   NO END DATE"
+        <Plate x={540} y={SAFE_TOP + 40} w={864} size={33} text="NO SIZE LIMIT   AND   NO END DATE"
           sub="the plank, against the model it names" />
       </g>
     </Stage>
@@ -1554,7 +1617,7 @@ const S11: React.FC = () => {
           {/* ONE shadow crossing both panels */}
           <rect x={shadow} y={0} width={300} height={1920} fill="#0d1620" opacity={0.26} />
           <Plate x={312} y={CARD_BOT} w={404} size={27} text="ALREADY STOPPED" />
-          <Plate x={768} y={CARD_BOT} w={420} size={22} text="THE ONLY DATA-CENTER RULE"
+          <Plate x={768} y={CARD_BOT} w={408} size={22} text="THE ONLY DATA-CENTER RULE"
             sub="in the way up here" />
         </>
       ) : (
@@ -1623,7 +1686,7 @@ const S11: React.FC = () => {
               whether it said the line arrives or never arrives — on the card that states
               the film's thesis. Set at parity with the caption floor, and reworded so the
               negation is the first word rather than the last. */}
-          <Plate x={540} y={CARD_BOT} w={940} size={32} text="IT MAKES ITS OWN POWER"
+          <Plate x={540} y={CARD_BOT} w={864} size={32} text="IT MAKES ITS OWN POWER"
             sub="no line from the household ever reaches it" subSize={26} op={pullOut} />
         </>
       )}
@@ -1687,7 +1750,7 @@ const S12: React.FC = () => {
             cutLabel="WHERE THE POWER COMES FROM" tint={STEEL} />
         </g>
         <g opacity={seat.t}>
-          <Plate x={540} y={SAFE_TOP + 28 + (1 - seat.t) * 22} w={940} size={29}
+          <Plate x={540} y={SAFE_TOP + 28 + (1 - seat.t) * 22} w={864} size={29}
             text="CONDITION IT ON WHERE THE POWER COMES FROM" sub="not on whether the building is new" />
         </g>
       </Stage>
@@ -1748,11 +1811,11 @@ const S12: React.FC = () => {
             element of that beat"). It now seats with the FIRST plate and holds for the
             whole shot, because a limit that arrives after the claim is not a disclosure. */}
         <g opacity={Math.min(1, cascade * 6)}>
-          <Plate x={540} y={1258} w={880} size={22}
+          <Plate x={540} y={1258} w={864} size={22}
             text="WE COULD NOT ESTABLISH THE FIELD'S OTHER POSITIONS" />
         </g>
         <g opacity={chip}>
-          <Plate x={540} y={CARD_BOT + 78} w={960} size={30}
+          <Plate x={540} y={CARD_BOT + 78} w={864} size={30}
             text="17 PEOPLE ARE RUNNING FOR GOVERNOR" />
         </g>
       </Stage>
@@ -1838,7 +1901,7 @@ const S12: React.FC = () => {
         <ServerMachine frame={f} emotion="focused" x={0} y={0} scale={1} facing={-1} tint="steel" />
       </g>
       <g opacity={1 - qOut}>
-        <Plate x={540} y={SAFE_TOP + 40} w={912} size={46} text="THE GATE WITH NO NUMBER" />
+        <Plate x={540} y={SAFE_TOP + 40} w={864} size={46} text="THE GATE WITH NO NUMBER" />
       </g>
     </Stage>
   );
