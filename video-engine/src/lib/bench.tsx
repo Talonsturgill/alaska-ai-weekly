@@ -60,7 +60,30 @@ export const ShortlistCard: React.FC<{
   const id = uid(`card${x}${y}${names.join()}`);
   const stock = tones('#f2ece0');
   const n = Math.max(1, Math.min(3, names.length));
-  const W = 150 + (n - 1) * 92;                     // ONE name 150, THREE names 334
+
+  // TEXT FITTING, and it is not optional (Gate 0D, 2026-08-01, called this a hard blocker on
+  // the film's own thesis object). Pass 1 used a fixed 76px bay and a fixed fontSize 17. At
+  // that size "FISHER CALDERA" measures about 148px and "EMMONS LAKE" about 115px in Arial
+  // Black, so on the three-name card the outer bay's text ran off the stock entirely. The card
+  // is the whole performance of this asset; a card whose names overflow is not a subtler bug
+  // than a broken render, it is the same bug.
+  //
+  // Arial Black advances at roughly 0.62em for mixed uppercase, which is close enough to size a
+  // bay from and deliberately errs wide. The bay is derived from the LONGEST name, the font
+  // shrinks only if that would push the card past MAXW, and the card's width is then derived
+  // from the bay rather than assumed. So W still grows with the number of names (the tell) but
+  // now it grows to fit real words.
+  const ADV = 0.62, PAD = 18, GAP = 16, MAXW = 430, FS_MAX = 19, FS_MIN = 13;
+  const longest = Math.max(...names.slice(0, n).map((s) => s.length), 1);
+  let fs = FS_MAX;
+  let bayW = Math.max(78, longest * fs * ADV + 16);
+  let W = PAD * 2 + n * bayW + (n - 1) * GAP;
+  if (W > MAXW) {                                   // shrink to fit, never overflow
+    const room = (MAXW - PAD * 2 - (n - 1) * GAP) / n - 16;
+    fs = Math.max(FS_MIN, room / (longest * ADV));
+    bayW = Math.max(78, longest * fs * ADV + 16);
+    W = PAD * 2 + n * bayW + (n - 1) * GAP;
+  }
   const H = 116;
   const o = Math.max(0, Math.min(1, out));
   const slide = (1 - o) * -H * 0.9;                 // rises out of the slot
@@ -78,13 +101,13 @@ export const ShortlistCard: React.FC<{
       ))}
       {/* the header rule, and a count of how many names this answer needed */}
       <line x1={-W / 2 + 12} y1={-H / 2 + 26} x2={W / 2 - 12} y2={-H / 2 + 26} stroke={INK} strokeWidth={2.5} opacity={0.5} />
-      {names.slice(0, 3).map((nm, i) => (
-        <g key={nm} transform={`translate(${-W / 2 + 20 + i * 92},0)`}>
-          {/* each name gets its own bay, so THREE names visibly occupy three bays */}
-          <rect x={0} y={-8} width={76} height={44} rx={3}
+      {names.slice(0, n).map((nm, i) => (
+        <g key={nm} transform={`translate(${-W / 2 + PAD + i * (bayW + GAP)},0)`}>
+          {/* each name gets its own bay, sized from the LONGEST name so nothing overflows */}
+          <rect x={0} y={-8} width={bayW} height={44} rx={3}
                 fill={matched && accentFill ? accentFill : '#cfd4cc'} opacity={matched ? 0.9 : 0.5}
                 stroke={INK} strokeWidth={2.5} />
-          <text x={38} y={22} textAnchor="middle" fontSize={17} fontFamily="Arial Black, Arial, sans-serif"
+          <text x={bayW / 2} y={22} textAnchor="middle" fontSize={fs} fontFamily="Arial Black, Arial, sans-serif"
                 fill={INK} letterSpacing={0.4}>{nm}</text>
         </g>
       ))}
@@ -167,7 +190,7 @@ export const AshReader: React.FC<{
         {[-22, -44, -66].map((ry) => (
           <line key={ry} x1={-30} y1={ry} x2={30} y2={ry} stroke={INK} strokeWidth={2.6} opacity={0.65} />
         ))}
-        <ellipse cx={0} cy={-96} rx={34} ry={11} fill={brass.light} stroke={INK} strokeWidth={4.5} />
+        <ellipse cx={0} cy={-96} rx={34} ry={11} fill={brass.key} stroke={INK} strokeWidth={4.5} />
         <ellipse cx={0} cy={-95} rx={20} ry={6} fill={GLASS} opacity={0.9} stroke={INK} strokeWidth={2.5} />
       </g>
 
@@ -248,7 +271,7 @@ export const DistanceCalipers: React.FC<{
               stroke={INK} strokeWidth={i % 3 === 0 ? 2.6 : 1.6} opacity={0.65} />
       ))}
       {/* the pivot */}
-      <circle cx={0} cy={-6} r={13} fill={brass.light} stroke={INK} strokeWidth={4} />
+      <circle cx={0} cy={-6} r={13} fill={brass.key} stroke={INK} strokeWidth={4} />
       <circle cx={0} cy={-6} r={4} fill={INK} />
       {/* the two jaws, opening by `span`. THIS is the measurement. */}
       {[-1, 1].map((sgn) => (
@@ -277,10 +300,24 @@ export const DistanceCalipers: React.FC<{
 // -----------------------------------------------------------------------------
 export const CoreColumn: React.FC<{
   x: number; y: number; f: number; h?: number; w?: number;
-  bands: {at: number; lit?: number; named?: boolean}[];   // at = 0..1 down the column
-  accentFill?: string;                                     // resolved accent for a named band
+  /**
+   * at    0..1 down the column
+   * lit   0..1 how strongly the lamp has found it
+   * named a recurring NAME-CLASS on this band. It is a class, never a specimen count: the
+   *       same name recurs at many depths, because c10 says these centers keep producing
+   *       nearly invariant magmas. Never stage a countable "N of 37".
+   * still PER-BAND MOTION CHANNEL (added 2026-08-01 after Gate 0D). The signature shot needs
+   *       three bands DEAD STILL while the rest are quietly restless, and pass 1 applied ONE
+   *       sway to the whole group so bands inherited it wholesale and the contrast, which IS
+   *       the poster frame's argument, was literally unbuildable.
+   * mark  a re-identifiable tell (a double-torn corner plus one conspicuously deep tooth) so
+   *       the open-loop band can be recognised 52 seconds and two shots later.
+   */
+  bands: {at: number; lit?: number; named?: string; still?: boolean; mark?: boolean}[];
+  accentFill?: string;                                     // resolved accent, from useAccent()
   phase?: number;
-}> = ({x, y, f, h = 620, w = 74, bands, accentFill, phase = 0}) => {
+  labelScale?: number;                                     // name plates scale with the pull-back
+}> = ({x, y, f, h = 620, w = 74, bands, accentFill, phase = 0, labelScale = 1}) => {
   const id = uid(`core${x}${y}`);
   const mud = tones('#4a4234');
   const sway = Math.sin(f / 61 + phase) * 0.35;
@@ -303,22 +340,98 @@ export const CoreColumn: React.FC<{
         const by = -b.at * h;
         const lit = Math.max(0, Math.min(1, b.lit ?? 0));
         const fill = b.named && accentFill ? accentFill : '#cfd4cc';
+        // PER-BAND UNREST. A named band holds DEAD STILL (that steadiness is the argument);
+        // an unnamed one breathes on its own irrational period so a field of them never
+        // re-phases into a visible pulse.
+        const restless = b.still || b.named ? 0 : 1;
+        const jy = restless * Math.sin(f / (19 + (i % 7) * 2.3) + i * 2.399) * 1.6;
+        const jo = restless * Math.sin(f / (23 + (i % 5) * 3.1) + i) * 0.10;
+        const corner = b.mark ? 9 : 0;                  // the double-torn corner tell
         return (
-          <g key={i}>
+          <g key={i} transform={`translate(0,${jy})`}>
             {/* ragged band top: the ash settled, it was not machined in */}
             <path
-              d={`M${-w / 2},${by} L${-w / 2 + w * 0.3},${by - 3} L${-w / 2 + w * 0.62},${by + 2}
-                  L${w / 2},${by - 2} L${w / 2},${by + 13} L${-w / 2},${by + 14} Z`}
-              fill={fill} stroke={INK} strokeWidth={3} opacity={0.45 + lit * 0.55}
+              d={`M${-w / 2 - corner},${by} L${-w / 2 + w * 0.3},${by - 3} L${-w / 2 + w * 0.62},${by + 2}
+                  L${w / 2},${by - 2} L${w / 2},${by + 13} L${-w / 2 - corner * 0.6},${by + 14} Z`}
+              fill={fill} stroke={INK} strokeWidth={3} opacity={Math.max(0, 0.45 + lit * 0.55 + jo)}
             />
+            {b.mark && (
+              /* one conspicuously deep tooth, so this band is re-identifiable across shots */
+              <path d={`M${-w / 2 - corner},${by + 3} L${-w / 2 - corner - 11},${by + 7} L${-w / 2 - corner},${by + 11} Z`}
+                    fill={fill} stroke={INK} strokeWidth={2.5} opacity={Math.max(0, 0.5 + lit * 0.5)} />
+            )}
             {lit > 0.02 && (
               <path d={`M${-w / 2},${by + 1} L${w / 2},${by - 1}`} stroke="#fffaf0" strokeWidth={2.4}
                     opacity={lit * 0.7} />
+            )}
+            {/* THE NAME PLATE. Gate 0D: the poster frame promises named bands and pass 1 could
+                only TINT one, so the frame's whole point had no geometry. A small machined plate
+                on a stem, sized by labelScale so it survives the pull-back. */}
+            {b.named && (
+              <g transform={`translate(${w / 2 + 10},${by + 6}) scale(${labelScale})`}>
+                <line x1={0} y1={0} x2={13} y2={0} stroke={INK} strokeWidth={3} />
+                <rect x={13} y={-13} width={b.named.length * 8.4 + 16} height={26} rx={3}
+                      fill={accentFill || '#cfd4cc'} stroke={INK} strokeWidth={3} />
+                <text x={13 + (b.named.length * 8.4 + 16) / 2} y={6} textAnchor="middle" fontSize={15}
+                      fontFamily="Arial Black, Arial, sans-serif" fill={INK}>{b.named}</text>
+              </g>
             )}
           </g>
         );
       })}
       <RimLight d={`M${w / 2 - 3},${-h + 6} L${w / 2 - 3},-8`} w={3} color="#d8c79a" opacity={0.4} />
+    </g>
+  );
+};
+
+// -----------------------------------------------------------------------------
+// AshCrumbs — THE CROSS-SCENE GAG, as one shared deterministic component.
+// Gate 0D, correctly: the eraser-crumb callback requires crumbs to curl off the glacier
+// blade, drift in the far atmosphere plane of EVERY scene after the wipe, and one to land
+// and seat some seventy seconds later. That is a continuity requirement, and a continuity
+// requirement re-improvised per scene silently does not happen. So it is ONE component with
+// a global-frame phase, mounted in every scene from the wipe onward at the same seed.
+//
+// `landing` promotes ONE crumb out of the drift and seats it, which is the payoff beat.
+// -----------------------------------------------------------------------------
+export const AshCrumbs: React.FC<{
+  f: number;                      // GLOBAL frame, so the drift is continuous across cuts
+  count?: number;
+  opacity?: number;               // far-plane crumbs sit low; the payoff crumb comes forward
+  landing?: number;               // 0..1 seats crumb 0 into a slot at (landX, landY)
+  landX?: number; landY?: number;
+  w?: number; h?: number;
+}> = ({f, count = 14, opacity = 0.3, landing = 0, landX = 540, landY = 1500, w = 1080, h = 1920}) => {
+  const L = Math.max(0, Math.min(1, landing));
+  return (
+    <g style={{pointerEvents: 'none'}}>
+      {Array.from({length: count}).map((_, i) => {
+        // deterministic imul hash, never Math.random, so the drift is identical every render
+        const hx = Math.abs(Math.imul(i + 13, 2654435761)) % 1000 / 1000;
+        const hs = Math.abs(Math.imul(i + 71, 40503)) % 1000 / 1000;
+        const speed = 22 + hs * 26;
+        const x = hx * w + Math.sin(f / (61 + i * 3.7) + i) * 26;
+        const y = ((f * speed) / 30 + hx * h * 1.7) % (h * 1.25) - h * 0.12;
+        const rot = (f * (0.5 + hs)) % 360;
+        if (i === 0 && L > 0.01) {
+          // THE PAYOFF CRUMB: leaves the drift, arcs to the slot, compresses as it seats
+          const e = L * L * (3 - 2 * L);                       // smoothstep, never linear
+          const px = x + (landX - x) * e;
+          const py = y + (landY - y) * e;
+          const squash = 1 + 0.45 * Math.max(0, Math.sin(Math.PI * Math.min(1, L * 1.15)));
+          return (
+            <g key={i} transform={`translate(${px},${py}) rotate(${rot * (1 - e)}) scale(${squash},${2 - squash})`}
+               opacity={0.9}>
+              <path d="M-7,3 L-3,-6 L3,-7 L7,-1 L4,5 L-2,7 Z" fill="#cfd4cc" stroke={INK} strokeWidth={2} />
+            </g>
+          );
+        }
+        return (
+          <g key={i} transform={`translate(${x},${y}) rotate(${rot}) scale(0.62)`} opacity={opacity}>
+            <path d="M-7,3 L-3,-6 L3,-7 L7,-1 L4,5 L-2,7 Z" fill="#cfd4cc" stroke={INK} strokeWidth={2} />
+          </g>
+        );
+      })}
     </g>
   );
 };
