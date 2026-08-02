@@ -39,7 +39,17 @@ TAIL = 2.6  # hold after the last word
 # on the capped third pipe + the pawl + the two records), S7 L9-L10 (the arrow on the
 # doorless wall + the door swinging free), S8 L11-L12 (NO ALGORITHM + the signature shot),
 # S9 L13 (the button, back at the same table, staying interior).
-SCENE_START_LINE = [0, 1, 2, 3, 5, 6, 7, 8, 9, 11, 14, 16]   # 2026-07-31: 12 shots onto 19 VO lines, see out/dispatch/storyboard.json
+# 2026-08-02 "The Copy In The Mud": TWELVE shots (S1..S12 in video-engine/src/Ep0802.tsx) onto
+# 16 VO lines. Shot boundaries are anchored to VO LINE STARTS so the picture can never drift
+# from the words. S1 L0 (the lamp arrives + the notches), S2 L1 (the stack + THE BLADE WIPE),
+# S3 L2 (the bench lamp match-cut + the USGS AVO plate), S4 L3 (THE DROP through the waterline
+# + the coring punch), S5 L4 (eight columns rise + the running count to 70), S6 L5 (the sort
+# down to 37), S7 L6-L7 (THE CARD PRINTS WIDE + the shard's machined edge), S8 L8 (the grain
+# runs the chain), S9 L9 (the three name plates + the strips stack + MAGENTA FUSES),
+# S10 L10-L11 (out of register + THE SIGNATURE PULL-BACK + the set-down), S11 L12-L13 (the dark
+# bench + the calipers + COULD and COULDN'T + the crumb lands), S12 L14-L15 (the button + the
+# lamp withdrawing onto the unread stripe, which is frame 1 unlit).
+SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 14]
 
 
 def _apply_caption_fixups(caps):
@@ -80,7 +90,15 @@ def main():
         end = bounds[i + 1] if i + 1 < len(bounds) else total_f
         scenes.append({"from": b, "dur": end - b})
 
-    props = {"captions": caps, "scenes": scenes, "total": total_f}
+    # THE VO LINE START TABLE, and it is not a convenience (2026-08-02).
+    # Scenes used to hardcode beat times as ABSOLUTE seconds copied off the storyboard. That
+    # silently rots the moment the VO is re-synthesized, because a new take shifts every line
+    # start by a different amount (this run: up to 1.8s of drift between the archived board and
+    # the re-synth). The picture then plays against words it was not cut to, and no gate catches
+    # it because the scene BOUNDARIES are still correct. Shipping the line table lets a scene
+    # anchor each beat to the VO LINE IT BELONGS TO, so the film re-times itself with the voice.
+    props = {"captions": caps, "scenes": scenes, "total": total_f,
+             "lines": [round(L["start"], 3) for L in sorted(lines, key=lambda x: x["idx"])]}
     # voice-acting data (scripts/vo_envelope.py): per-frame mouth envelope + the
     # vo-director's emphasis accents, for lib/voice.tsx. Optional, additive.
     mt = os.path.join(OUT, "mouth_track.json")
