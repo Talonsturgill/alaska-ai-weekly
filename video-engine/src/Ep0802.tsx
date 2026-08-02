@@ -67,6 +67,10 @@ const CARD_BOT = CAPTION_TOP - 98;
 
 const FPS = 30;
 
+/** the three bands the abstract licenses naming (c10), and where they sit. */
+const NAMED_BANDS = [{col: 1, k: 3, name: 'KATMAI'}, {col: 4, k: 5, name: 'FISHER CALDERA'}, {col: 6, k: 2, name: 'EMMONS LAKE'}];
+
+
 /**
  * EVERY BEAT IN THIS FILM IS ANCHORED TO A VO LINE, NEVER TO AN ABSOLUTE SECOND.
  *
@@ -290,13 +294,13 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
   const d = Math.max(0.1, L(1) - L(0));            // this scene's real duration, from the take
   const p = f / FPS / d;
   // THE LAMP ARRIVES: a hard 4-frame snap, no sweep. Frame 1 must already be moving.
-  const lampOn = interpolate(f, [0, 3], [0.62, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const lampOn = interpolate(f, [0, 3], [0.88, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   // THE NOTCHES RESOLVE: focus pulls in a quarter of the way through the line, teeth sharpen
-  const notch = interpolate(p, [0.02, 0.30], [0.18, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
+  const notch = interpolate(p, [0.0, 0.26], [0.42, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   // THE STACK: the pull-back begins in the last half second and hands off to S2
   const pull = interpolate(p, [0.91, 1.0], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_IN});
   const cam = composeCams(CameraMoves.truckAcross(p, 210), {z: pull * -520});
-  const head = interpolate(f, [2, 9], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  const head = interpolate(f, [0, 6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const headOut = interpolate(p, [0.84, 0.94], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <Stage
@@ -1376,7 +1380,29 @@ const S10: React.FC<SceneProps> = ({from, L}) => {
       means: 'a trace element signature matched to a source volcano',
       rects: [{x: 0, y: 380, w: 1080, h: 1180}],
     }]}>
-      <Stage grade={<Room f={g} lamp={0.9 - setDown * 0.35} />}>
+      <Stage
+        grade={<Room f={g} lamp={0.9 - setDown * 0.35} />}
+        over={
+          /* THE MATCH PLATES, above the grade and projected onto their own bands. Deriving a
+             plate's position from its column and never checking it against the frame cost this
+             run three panel rounds, the last of which printed "ATMAI" on screen. The frame now
+             gets the last word (MatchPlate clamps), and the grade no longer gets to wash out
+             the three names the whole film is built toward. */
+          pull > 0.7 ? (
+            <svg viewBox="0 0 1080 1920" width="1080" height="1920" style={{position: 'absolute', inset: 0}}>
+              {NAMED_BANDS.map((nb) => {
+                const per = nb.col < 6 ? 9 : 8;
+                const bandY = 1430 - (0.09 + nb.k * (0.82 / per)) * 720;
+                const q = project(150 + nb.col * 111, bandY, 640 - pull * 640);
+                return (
+                  <MatchPlate key={nb.name} colX={q.x} bandY={q.y} text={nb.name} fill={RHYOLITE}
+                              scale={q.k} op={Math.min(1, (pull - 0.7) * 6)} />
+                );
+              })}
+            </svg>
+          ) : null
+        }
+      >
         <Stage3D camera={{z: 640 - pull * 640}}>
           <Plane z={900}>
             <Atmosphere z={900} skyTint="#0d151a" strength={1}>
@@ -1399,23 +1425,15 @@ const S10: React.FC<SceneProps> = ({from, L}) => {
                 const bands = Array.from({length: per}).map((_, k) => ({
                   at: 0.09 + k * (0.82 / per),
                   lit: 0.85,
-                  // THE NAMES SET AS THE MOVE LANDS. At full label size they are clipped by the
-                  // frame edge while the camera is still pushed in, so they are withheld until
-                  // the pull-back has almost arrived. That is also the better beat: eight cores
-                  // are revealed, and THEN three of them turn out to have names.
-                  named: k === namedIdx && pull > 0.72 ? nameFor : undefined,
+                  // the plate is NOT drawn by the column any more: it is drawn in the
+                  // clamped pass below, after every column, so it can never ride a frame edge
                   still: k === namedIdx,
-                  // ALWAYS LEFT, and the reason is paint order, not taste. Columns are drawn
-                  // left to right, so a plate hanging RIGHT off column i is painted over by
-                  // column i+1 (KATMAI came back as "|AI" behind the next column). A plate
-                  // hanging LEFT lands on columns already drawn, so it stays on top.
-                  side: 'left' as 'left' | 'right',
                   // the open-loop band: the deep tooth + double torn corner, planted at 72.6
                   mark: i === 3 && k === 4,
                 }));
                 return (
                   <CoreColumn key={i} x={x} y={1430} f={g} h={720} w={70} bands={bands} phase={i}
-                              accentFill={RHYOLITE} labelScale={interpolate(pull, [0, 1], [1.1, 1.62])} />
+                              accentFill={RHYOLITE} />
                 );
               })}
               {/* OUT OF REGISTER: a neighbouring band's strips land crossed and never fuse */}
@@ -1611,18 +1629,22 @@ const CouldPanel: React.FC<{f: number; x: number; y: number; on: number; slot: n
       </g>
       {/* RIGHT: COULDN'T. pearl bands, plates NOT seated, the slot left honestly open. */}
       <g transform="translate(236,0)">
-        <text x={0} y={-140} textAnchor="middle" fontSize={38} fontFamily={BOLD} fill={BONE}>COULDN'T</text>
-        {[0, 1, 2].map((i) => {
+        <text x={0} y={-186} textAnchor="middle" fontSize={38} fontFamily={BOLD} fill={BONE}>COULDN'T</text>
+        {/* SIX, FADING OUT INTO THE DARK, not three. A 3-against-3 panel implies a roughly
+            even nameable/unnameable split, and no source states any fraction. This side has to
+            read as "and others", never as a count. */}
+        {[0, 1, 2, 3, 4, 5].map((i) => {
           const drift = Math.sin(f / (21 + i * 3.4) + i * 2.4) * 2.2;
           // they extinguish in sequence: one after another drops out of the lamp's reach
-          const gone = Math.max(0, Math.min(1, (dim - i * 0.24) * 3.2));
+          const gone = Math.max(0, Math.min(1, (dim - i * 0.16) * 4.5));
           return (
-            <g key={i} transform={`translate(0,${-74 + i * 74 + drift})`} opacity={on * (1 - gone * 0.78)}>
+            <g key={i} transform={`translate(0,${-74 + i * 74 + drift}) scale(${1 - gone * 0.5},${1 - gone * 0.85})`}
+               opacity={on * (1 - gone * 0.97)}>
               <rect x={-132} y={-20} width={264} height={40} rx={4} fill={ASH} stroke={INK} strokeWidth={4}
-                    opacity={0.72} />
+                    opacity={0.95} />
               {/* the empty brass slot, cut wide, still open */}
               <rect x={140} y={-16} width={78 * slot} height={32} rx={3} fill="#0b1013" stroke={BRASS}
-                    strokeWidth={3} opacity={slot} />
+                    strokeWidth={3} opacity={slot * (1 - gone)} />
             </g>
           );
         })}
@@ -1661,7 +1683,22 @@ const S12: React.FC<SceneProps> = ({from, total, L}) => {
       means: 'a trace element signature matched to a source volcano',
       rects: [{x: 0, y: 380, w: 1080, h: 1180}],
     }]}>
-      <Stage grade={<Room f={g} lamp={1 - withdraw * 0.92} />}>
+      <Stage
+        grade={<Room f={g} lamp={1 - withdraw * 0.92} />}
+        over={
+          <svg viewBox="0 0 1080 1920" width="1080" height="1920" style={{position: 'absolute', inset: 0}}>
+            {NAMED_BANDS.map((nb) => {
+              const per = nb.col < 6 ? 9 : 8;
+              const bandY = 1430 - (0.09 + nb.k * (0.82 / per)) * 720;
+              const q = project(150 + nb.col * 111, bandY, cam.z ?? 0);
+              return (
+                <MatchPlate key={nb.name} colX={q.x} bandY={q.y} text={nb.name} fill={RHYOLITE}
+                            scale={q.k} op={1 - withdraw * 0.75} />
+              );
+            })}
+          </svg>
+        }
+      >
         <Stage3D camera={cam}>
           <Plane z={900}>
             <Atmosphere z={900} skyTint="#0d151a" strength={1}>
@@ -1683,18 +1720,12 @@ const S12: React.FC<SceneProps> = ({from, total, L}) => {
                 const bands = Array.from({length: per}).map((_, k) => ({
                   at: 0.09 + k * (0.82 / per),
                   lit: 0.85 * (1 - withdraw * 0.85),
-                  named: k === namedIdx ? nameFor : undefined,
                   still: k === namedIdx,
-                  // ALWAYS LEFT, and the reason is paint order, not taste. Columns are drawn
-                  // left to right, so a plate hanging RIGHT off column i is painted over by
-                  // column i+1 (KATMAI came back as "|AI" behind the next column). A plate
-                  // hanging LEFT lands on columns already drawn, so it stays on top.
-                  side: 'left' as 'left' | 'right',
                 }));
                 return (
                   <g key={i} opacity={1 - withdraw * 0.55}>
                     <CoreColumn x={x} y={1430} f={g} h={720} w={70} bands={bands} phase={i}
-                                accentFill={RHYOLITE} labelScale={1.62} />
+                                accentFill={RHYOLITE} />
                   </g>
                 );
               })}
@@ -1723,6 +1754,45 @@ const S12: React.FC<SceneProps> = ({from, total, L}) => {
         </svg>
       </Stage>
     </AccentRegistry>
+  );
+};
+
+/** Project a point on the columns' depth plane into frame coordinates. Same maths the
+ *  Stage3D Plane applies, so an above-the-grade overlay can sit exactly on a band. */
+const project = (x: number, y: number, camZ: number, planeZ = 110) => {
+  const k = 1400 / (1400 + planeZ - camZ);
+  return {x: 540 + (x - 540) * k, y: 960 + (y - 960) * k, k};
+};
+
+/**
+ * A match plate, drawn in its own pass and CLAMPED to the safe area.
+ *
+ * `colX` is the column it belongs to and `bandY` the band it names. The plate is placed to
+ * whichever side has room, then clamped so its full width sits inside [MARGIN, 1080-MARGIN],
+ * and the leader line is drawn from the plate's edge to the band afterwards, so stretching it
+ * is what absorbs the clamp. A name the film is built on can never be cut again.
+ */
+const MatchPlate: React.FC<{
+  colX: number; bandY: number; text: string; fill: string; scale?: number; op?: number;
+}> = ({colX, bandY, text, fill, scale = 1, op = 1}) => {
+  const MARGIN = 34;
+  const pw = (text.length * 20 + 40) * scale;
+  const ph = 52 * scale;
+  // prefer the side with more room, then clamp the whole box into frame
+  const wantLeft = colX > 540;
+  let x0 = wantLeft ? colX - 46 * scale - pw : colX + 46 * scale;
+  x0 = Math.max(MARGIN, Math.min(1080 - MARGIN - pw, x0));
+  const anchorX = x0 + (wantLeft ? pw : 0);        // the plate edge the leader leaves from
+  return (
+    <g opacity={op}>
+      {/* the leader stretches to cover whatever the clamp moved */}
+      <line x1={anchorX} y1={bandY} x2={colX} y2={bandY} stroke={INK} strokeWidth={3.5} opacity={0.9} />
+      <rect x={x0} y={bandY - ph / 2} width={pw} height={ph} rx={5} fill={fill} stroke={INK} strokeWidth={4} />
+      <rect x={x0 + 5} y={bandY - ph / 2 + 6} width={pw - 10} height={ph - 12} rx={3} fill="#0a0508" opacity={0.94} />
+      <text x={x0 + pw / 2} y={bandY + 10 * scale} textAnchor="middle" fontSize={30 * scale}
+            fontFamily={BOLD} fill="#ffffff" textLength={pw - 24} lengthAdjust="spacingAndGlyphs"
+            stroke="#0a0508" strokeWidth={3 * scale} paintOrder="stroke">{text}</text>
+    </g>
   );
 };
 

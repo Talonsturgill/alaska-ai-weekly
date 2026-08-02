@@ -463,11 +463,20 @@ export const LayeredLand: React.FC<{
           }).join(' L');
           return (
             <g key={i}>
-              <path d={`M${pts}`} stroke={isBand ? '#cfd4cc' : INK} strokeWidth={isBand ? 9 + j * 4 : 2.4}
-                    fill="none" opacity={isBand ? 0.9 : 0.4} strokeLinecap="round" />
+              {/* THE PAGE ITSELF: a lit leaf, not a hairline. The narration says the layers
+                  stack like pages and then the ice scrapes the page blank, so the stack has to
+                  be legible BEFORE the blade arrives or the erasure erases nothing the viewer
+                  ever saw. Pass 1 drew these at a few percent contrast and a judge correctly
+                  reported that the film's whole premise never landed. */}
+              <path d={`M${pts}`} stroke={isBand ? '#d9ddd4' : '#0c1210'} strokeWidth={isBand ? 20 + j * 8 : 5}
+                    fill="none" opacity={isBand ? 0.98 : 0.75} strokeLinecap="round" />
               {isBand && (
-                <path d={`M${pts}`} stroke="#fffaf0" strokeWidth={2} fill="none" opacity={0.35}
-                      transform="translate(0,-4)" />
+                <>
+                  <path d={`M${pts}`} stroke="#ffffff" strokeWidth={5} fill="none" opacity={0.8}
+                        transform="translate(0,-8)" />
+                  <path d={`M${pts}`} stroke="#7d8478" strokeWidth={4} fill="none" opacity={0.7}
+                        transform="translate(0,9)" />
+                </>
               )}
             </g>
           );
