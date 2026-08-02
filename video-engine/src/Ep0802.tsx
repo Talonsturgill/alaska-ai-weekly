@@ -764,10 +764,23 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
   const g = from + f;
   const d = Math.max(0.1, L(5) - L(4));
   const p = f / FPS / d;
-  const rise = interpolate(p, [0.08, 0.28], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
-  // THE RUNNING COUNT: bands light one after another across "seventy ash layers"
-  const runCount = interpolate(p, [0.02, 0.30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
-  const shown = Math.round(runCount * 70);
+  const rise = interpolate(p, [0.02, 0.14], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  /**
+   * THE COUNT NOW COUNTS WHAT IS ON SCREEN.
+   *
+   * Once the columns began arriving one at a time (the fix for the 25-second held image the
+   * panel named), the counter kept running on its own interpolation, so the film showed
+   * "67 ASH LAYERS OUT OF 8 CORES" over two visible cores. A number that contradicts its own
+   * picture is worse than no number: it is the one thing a viewer can check.
+   */
+  const ARRIVE0 = Math.round(0.06 * d * FPS);      // frame the first column lands
+  const ARRIVE_STEP = 7;                           // frames between arrivals
+  const PER = [9, 9, 9, 9, 9, 9, 8, 8];            // 6*9 + 2*8 = 70 tephras across 8 cores
+  const arrived = Math.max(0, Math.min(8, Math.floor((f - ARRIVE0) / ARRIVE_STEP) + 1));
+  const partial = Math.max(0, Math.min(1, (((f - ARRIVE0) % ARRIVE_STEP) + ARRIVE_STEP) % ARRIVE_STEP / ARRIVE_STEP));
+  let shown = 0;
+  for (let k = 0; k < arrived; k++) shown += PER[k];
+  if (arrived > 0 && arrived < 8) shown += Math.round(PER[arrived] * partial);
   const cam = CameraMoves.riseWith(p, 210);
   const COLS = 8;
   return (
@@ -791,8 +804,8 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
               const eIn = entrance(f, FPS, Math.round(0.06 * d * FPS) + i * 7, {drop: 520, preset: POP});
               const grow = interpolate(Math.min(1, eIn.t), [0, 1], [0.05, 1], {extrapolateRight: 'clamp'});
               // 70 bands total across 8 columns, distributed so no column is empty
-              const per = i < 6 ? 9 : 8;                          // 6*9 + 2*8 = 70
-              const before = i < 6 ? i * 9 : 54 + (i - 6) * 8;
+              const per = PER[i];
+              const before = PER.slice(0, i).reduce((t, v) => t + v, 0);
               const bands = Array.from({length: per}).map((_, k) => {
                 const idx = before + k;
                 return {
