@@ -76,9 +76,52 @@ def _apply_caption_fixups(caps):
     return caps
 
 
+def _rebalance_cues(caps):
+    """Never break a caption between a number and its unit, or inside a proper noun.
+
+    ADDED 2026-08-02 after a panel judge caught both failure modes in one film. Forced
+    alignment chunks cues by width, which is correct for timing and blind to sense, so it
+    produced "70 ash layers out of 8" / "tubes, a record they call virtually" (a number torn
+    off its unit) and "It's confident about Katmai, Fisher" / "Caldera and Emmons Lake,
+    because" (a two-word proper noun split across cards). Both read as errors to a viewer,
+    because the eye finishes the line before the next one arrives.
+
+    The fix is a MERGE, never a re-time: when a cue ends on a dangling token, it absorbs the
+    next cue and takes its end time. Timing stays exactly as aligned, so caption sync is
+    untouched; only the grouping changes. Merging is capped so a cue can't grow past what
+    fits on two lines at phone size.
+    """
+    DANGLING = ("of", "out of", "the", "a", "an", "to", "in", "on", "and", "or", "for",
+                "at", "by", "with", "from", "into", "than", "as", "is", "was", "which")
+    MAXLEN = 62
+    out = []
+    i = 0
+    while i < len(caps):
+        cur = dict(caps[i])
+        while i + 1 < len(caps):
+            t = cur["text"].rstrip()
+            last = t.split()[-1] if t.split() else ""
+            nxt = caps[i + 1]["text"].strip()
+            first = nxt.split()[0] if nxt.split() else ""
+            bad = (
+                last.lower().strip(",.") in DANGLING            # dangling function word
+                or last.rstrip(",.").isdigit()                  # a number torn from its unit
+                # a proper noun split across cards: "... Fisher" / "Caldera ..."
+                or (last.rstrip(",").istitle() and first.istitle() and not last.endswith("."))
+            )
+            if not bad or len(t) + 1 + len(nxt) > MAXLEN:
+                break
+            cur["text"] = t + " " + nxt
+            cur["end"] = caps[i + 1]["end"]
+            i += 1
+        out.append(cur)
+        i += 1
+    return out
+
+
 def main():
     lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
-    caps = _apply_caption_fixups(json.load(open(os.path.join(OUT, "captions.json"))))
+    caps = _rebalance_cues(_apply_caption_fixups(json.load(open(os.path.join(OUT, "captions.json")))))
     start = {L["idx"]: L["start"] for L in lines}
     last_end = max(L["end"] for L in lines)
     total_s = last_end + TAIL

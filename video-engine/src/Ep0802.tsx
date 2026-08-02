@@ -259,15 +259,15 @@ const Chip: React.FC<{x: number; y: number; text: string; sub?: string; op?: num
   x, y, text, sub, op = 1, size = 40,
 }) => {
   const w = Math.max(text.length, (sub ?? '').length * 0.72) * size * 0.66 + 48;
-  const h = sub ? 104 : 66;
+  const h = sub ? 118 : 66;
   return (
     <g transform={`translate(${x},${y})`} opacity={op}>
-      <rect x={-w / 2 + 3} y={-h / 2 + 5} width={w} height={h} rx={7} fill="#000" opacity={0.4} />
-      <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={7} fill="#141c21" stroke={BONE} strokeWidth={4} />
-      <text x={0} y={sub ? -6 : 13} textAnchor="middle" fontSize={size} fontFamily={BOLD} fill={BONE}>{text}</text>
+      <rect x={-w / 2 + 3} y={-h / 2 + 5} width={w} height={h} rx={7} fill="#000" opacity={0.55} />
+      <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={7} fill="#080d10" stroke={BONE} strokeWidth={4} />
+      <text x={0} y={sub ? -8 : 13} textAnchor="middle" fontSize={size} fontFamily={BOLD} fill="#ffffff">{text}</text>
       {sub && (
-        <text x={0} y={32} textAnchor="middle" fontSize={size * 0.5} fontFamily={MONO} fill="#9fb3ae"
-              letterSpacing={1.2}>{sub}</text>
+        <text x={0} y={34} textAnchor="middle" fontSize={Math.max(24, size * 0.62)} fontFamily={MONO}
+              fill="#e2ece8" letterSpacing={1.2}>{sub}</text>
       )}
     </g>
   );
@@ -288,13 +288,13 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
   const d = Math.max(0.1, L(1) - L(0));            // this scene's real duration, from the take
   const p = f / FPS / d;
   // THE LAMP ARRIVES: a hard 4-frame snap, no sweep. Frame 1 must already be moving.
-  const lampOn = interpolate(f, [0, 4], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const lampOn = interpolate(f, [0, 3], [0.62, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   // THE NOTCHES RESOLVE: focus pulls in a quarter of the way through the line, teeth sharpen
-  const notch = interpolate(p, [0.24, 0.49], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
+  const notch = interpolate(p, [0.02, 0.30], [0.18, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   // THE STACK: the pull-back begins in the last half second and hands off to S2
   const pull = interpolate(p, [0.91, 1.0], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_IN});
   const cam = composeCams(CameraMoves.truckAcross(p, 210), {z: pull * -520});
-  const head = interpolate(p, [0.05, 0.16], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  const head = interpolate(f, [2, 9], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const headOut = interpolate(p, [0.84, 0.94], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <Stage
@@ -478,7 +478,7 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
   const erased = interpolate(bladeX, [-260, 1400], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const crumbs = interpolate(p, [0.70, 1.0], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // the blade is the only thing that earns motion blur here
-  const bladeV = blade > 0.001 && blade < 0.999 ? 42 : 0;
+  const bladeV = blade > 0.001 && blade < 0.999 ? 96 : 0;
   return (
     <Stage grade={<Room f={g} lamp={0.86} />}>
       <Stage3D camera={{}}>
@@ -501,7 +501,7 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
         <Plane z={-60}>
           <svg viewBox="0 0 1080 1920" width="1080" height="1920">
             {blade > 0.0005 && (
-              <MotionBlur vx={bladeV} gain={0.8} max={16}>
+              <MotionBlur vx={bladeV} gain={1.6} max={34}>
                 <ErasingBlade x={bladeX} groundY={1380} h={860} f={g} />
               </MotionBlur>
             )}
@@ -659,9 +659,15 @@ const S4: React.FC<SceneProps> = ({from, L}) => {
   const p = f / FPS / d;
   // THE DROP: the film's only vertical move, spent once, on "under the Gulf of Alaska"
   const drop = interpolate(p, [0.17, 0.55], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
-  // THE PUNCH: lands on "punched from the seafloor", the line's last clause
-  const punch = spring({frame: f - Math.round(0.80 * d * FPS), fps: FPS, config: SNAP});
+  // THE PUNCH: anticipation lift, then a hard fast drive, then overshoot and settle. Pass 1
+  // used a bare spring over 150px and the filmstrip showed the tube moving a few pixels with
+  // no impact at all, which all three judges named. A punch is the one beat in this film that
+  // is allowed to be violent.
+  const punchAt = Math.round(0.78 * d * FPS);
+  const lift = interpolate(f, [punchAt - 12, punchAt], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  const punch = spring({frame: f - punchAt, fps: FPS, config: {damping: 12, stiffness: 320}});
   const drive = Math.max(0, Math.min(1, punch));
+  const punchV = (drive > 0.02 && drive < 0.97) ? 60 : 0;
   const cam = composeCams(CameraMoves.craneDown(Math.min(1, p * 1.4), 420), {y: drop * 240});
   // the waterline sits at 640 and travels UP past the camera as we drop through it
   const waterY = interpolate(drop, [0, 1], [640, -420], {extrapolateRight: 'clamp'});
@@ -691,7 +697,7 @@ const S4: React.FC<SceneProps> = ({from, L}) => {
           <svg viewBox="0 0 1080 1920" width="1080" height="1920">
             {/* THE PUNCH: a turned steel tube drives into the torn floor and lifts a plug. */}
             <g opacity={interpolate(drop, [0.55, 0.85], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-              <CoringTube x={540} y={1250} f={g} drive={drive}
+              <CoringTube x={540} y={1250 - lift * 70} f={g} drive={drive * 2.1}
                           lift={interpolate(p, [0.93, 1.0], [0, 0.55], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} />
             </g>
             {/* the impact puff when the shoe bites */}
@@ -779,8 +785,11 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
           <svg viewBox="0 0 1080 1920" width="1080" height="1920">
             <ContactShadow cx={540} cy={1442} rx={500} ry={22} opacity={0.6} blur={20} />
             {Array.from({length: COLS}).map((_, i) => {
-              const x = 106 + i * 124;
-              const grow = interpolate(rise, [0, 1], [0.05, 1], {extrapolateRight: 'clamp'});
+              const x = 150 + i * 111;
+              // staggered arrival: column i rises on its own beat, so the shot is eight
+              // events rather than one held frame under continuous narration
+              const eIn = entrance(f, FPS, Math.round(0.06 * d * FPS) + i * 7, {drop: 520, preset: POP});
+              const grow = interpolate(Math.min(1, eIn.t), [0, 1], [0.05, 1], {extrapolateRight: 'clamp'});
               // 70 bands total across 8 columns, distributed so no column is empty
               const per = i < 6 ? 9 : 8;                          // 6*9 + 2*8 = 70
               const before = i < 6 ? i * 9 : 54 + (i - 6) * 8;
@@ -792,8 +801,9 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
                 };
               });
               return (
-                <g key={i} transform={`translate(0,${(1 - grow) * 420})`} opacity={rise}>
-                  <CoreColumn x={x} y={1430} f={g} h={720 * grow} w={78} bands={bands} phase={i} />
+                <g key={i} transform={`translate(0,${eIn.dy}) scale(${eIn.sx},${eIn.sy})`}
+                   opacity={Math.min(1, eIn.t * 1.4)} style={{transformOrigin: `${x}px 1430px`}}>
+                  <CoreColumn x={x} y={1430} f={g} h={720 * grow} w={70} bands={bands} phase={i} />
                 </g>
               );
             })}
@@ -920,7 +930,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
   // notch pays off the tell S1 planted and never explained.
   const push = interpolate(t, [L(7) + 0.34, L(8) - 0.5], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   const cam = composeCams(CameraMoves.dollyThrough(Math.min(1, p * 0.55), 420), {z: push * 520});
-  const cardV = out > 0.02 && out < 0.98 ? 24 : 0;
+  const cardV = out > 0.02 && out < 0.98 ? 52 : 0;
   return (
     <Stage grade={<Room f={g} lamp={0.55 + 0.45 * dip} />}>
       <Stage3D camera={cam}>
@@ -1112,9 +1122,9 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
   const plates = interpolate(p, [0.02, 0.13], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const seat = interpolate(p, [0.15, 0.33], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   // THE REPETITION: five successive strips land in register across "eruption after eruption"
-  const stack = interpolate(p, [0.58, 0.92], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const stack = interpolate(p, [0.40, 0.90], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // MAGENTA FUSES: the film's loudest moment, and its first use of the reserved hue
-  const fuse = interpolate(p, [0.91, 0.985], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  const fuse = interpolate(p, [0.90, 0.98], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const cam = composeCams(CameraMoves.riseWith(p, 120), CameraMoves.truckAcross(p, 110));
   return (
     <AccentRegistry accents={[{
@@ -1123,7 +1133,32 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
       // licensed ONLY on the fusing stack and the three name plates it names
       rects: [{x: 180, y: 560, w: 720, h: 560}, {x: 60, y: SAFE_TOP, w: 960, h: 260}],
     }]}>
-      <Stage grade={<Room f={g} lamp={0.92} />}>
+      <Stage
+        grade={<Room f={g} lamp={0.92} />}
+        over={
+          /* THE FUSE, ABOVE THE GRADE. The reserved rhyolite is this film's ONE focal signal,
+             and in the graded render it was arriving as pale pink: NightGrade's practical and
+             the lamp throw are screen-blend layers over the whole SVG, and screen washes
+             saturation out of exactly the hue you most need to survive. The strips themselves
+             stay where they belong in the depth stack; this adds the bloom the moment is
+             supposed to have, on top of the grade, so the turn actually lands as a colour
+             event. It is spent ONLY here and only while the fuse is happening. */
+          fuse > 0.02 ? (
+            <svg viewBox="0 0 1080 1920" width="1080" height="1920"
+                 style={{position: 'absolute', inset: 0, mixBlendMode: 'screen'}}>
+              <defs>
+                <radialGradient id="fuseglow">
+                  <stop offset="0%" stopColor={RHYOLITE} stopOpacity={0.85} />
+                  <stop offset="45%" stopColor={RHYOLITE} stopOpacity={0.34} />
+                  <stop offset="100%" stopColor={RHYOLITE} stopOpacity={0} />
+                </radialGradient>
+              </defs>
+              <ellipse cx={540} cy={905} rx={430 + fuse * 190} ry={250 + fuse * 120}
+                       fill="url(#fuseglow)" opacity={Math.min(1, fuse * 1.3)} />
+            </svg>
+          ) : null
+        }
+      >
         <Stage3D camera={cam}>
           <Plane z={820}>
             <Atmosphere z={820} skyTint="#0d151a" strength={0.9}>
@@ -1230,18 +1265,23 @@ const StripStack: React.FC<{f: number; x: number; y: number; progress: number; f
       return `L${tx + w / 17},${15 + d * 27} L${tx + w / 5.5},0 `;
     }).join('')} L${w},0 L${w},-34 L${-w},-34 Z`;
   const W = 196;
+  const slam = 1 - Math.sin(Math.min(1, fuse * 1.6) * Math.PI) * 0.16;
   return (
-    <g transform={`translate(${x},${y})`}>
+    <g transform={`translate(${x},${y}) scale(${1 / slam},${slam})`}>
       {Array.from({length: N}).map((_, i) => {
-        const at = Math.max(0, Math.min(1, (progress - i * 0.185) * 6));
+        // arrivals are SPREAD so five separate landings are visible, not one packed instant
+        const at = Math.max(0, Math.min(1, (progress - i * 0.17) * 3.6));
         const e = at * at * (3 - 2 * at);
-        // each strip falls to its OWN slot in the stack, then the slots converge on the fuse
         const slot = (i - (N - 1) / 2) * GAP * (1 - close * 0.52);
-        const dy = slot + (1 - e) * -300;
+        const dy = slot + (1 - e) * -420;
+        // SQUASH ON CONTACT: the strip flattens as it lands and springs back. Without this the
+        // arrival is a translate, and a translate that ends is not an impact.
+        const land = Math.max(0, Math.min(1, (at - 0.72) / 0.28));
+        const sq = 1 + Math.sin(land * Math.PI) * 0.42;
         const px = x, py = y + slot;
         const lit = fuse > 0.02 && at > 0.85;
         return (
-          <g key={i} transform={`translate(0,${dy})`} opacity={e}>
+          <g key={i} transform={`translate(0,${dy}) scale(${sq},${2 - sq})`} opacity={e}>
             <path d={strip(W)} fill={lit ? accent(RHYOLITE, px, py) : ASH} stroke={INK} strokeWidth={5}
                   strokeLinejoin="round" />
             {lit && (
@@ -1307,7 +1347,7 @@ const S10: React.FC<SceneProps> = ({from, L}) => {
               {/* THE EIGHT COLUMNS. Three carry a steady magenta name; the rest stay pearl,
                   unnamed, and quietly restless. That difference IS the argument. */}
               {Array.from({length: 8}).map((_, i) => {
-                const x = 106 + i * 124;
+                const x = 150 + i * 111;
                 const per = i < 6 ? 9 : 8;
                 const namedIdx = i === 1 ? 3 : i === 4 ? 5 : i === 6 ? 2 : -1;
                 const nameFor = i === 1 ? named[0] : i === 4 ? named[1] : i === 6 ? named[2] : undefined;
@@ -1325,7 +1365,7 @@ const S10: React.FC<SceneProps> = ({from, L}) => {
                   mark: i === 3 && k === 4,
                 }));
                 return (
-                  <CoreColumn key={i} x={x} y={1430} f={g} h={720} w={78} bands={bands} phase={i}
+                  <CoreColumn key={i} x={x} y={1430} f={g} h={720} w={70} bands={bands} phase={i}
                               accentFill={RHYOLITE} labelScale={interpolate(pull, [0, 1], [1.1, 1.62])} />
                 );
               })}
@@ -1349,7 +1389,7 @@ const S10: React.FC<SceneProps> = ({from, L}) => {
           <LampThrow f={g} strength={0.85 - setDown * 0.4} />
           <Motes f={g} op={0.26} />
           <g opacity={interpolate(t, [L(10) + 6.22, L(10) + 6.82, L(11) + 2.14, L(11) + 2.64], [0, 1, 1, 0], {extrapolateRight: 'clamp'})}>
-            <Chip x={540} y={CARD_BOT} text="THE ROCK MADE THE DIFFERENCE" size={38} />
+            <Chip x={540} y={SAFE_TOP + 96} text="THE ROCK MADE THE DIFFERENCE" size={38} />
           </g>
         </svg>
       </Stage>
@@ -1575,7 +1615,7 @@ const S12: React.FC<SceneProps> = ({from, total, L}) => {
               <ContactShadow cx={540} cy={1442} rx={500} ry={22} opacity={0.5 * (1 - withdraw)} blur={20} />
               {/* the eight columns hold, three still named. The poster frame, one last time. */}
               {Array.from({length: 8}).map((_, i) => {
-                const x = 106 + i * 124;
+                const x = 150 + i * 111;
                 const per = i < 6 ? 9 : 8;
                 const namedIdx = i === 1 ? 3 : i === 4 ? 5 : i === 6 ? 2 : -1;
                 const nameFor = i === 1 ? 'KATMAI' : i === 4 ? 'FISHER CALDERA' : i === 6 ? 'EMMONS LAKE' : undefined;
@@ -1592,7 +1632,7 @@ const S12: React.FC<SceneProps> = ({from, total, L}) => {
                 }));
                 return (
                   <g key={i} opacity={1 - withdraw * 0.55}>
-                    <CoreColumn x={x} y={1430} f={g} h={720} w={78} bands={bands} phase={i}
+                    <CoreColumn x={x} y={1430} f={g} h={720} w={70} bands={bands} phase={i}
                                 accentFill={RHYOLITE} labelScale={1.62} />
                   </g>
                 );

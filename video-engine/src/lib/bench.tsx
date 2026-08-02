@@ -86,7 +86,7 @@ export const ShortlistCard: React.FC<{
   }
   const H = 116;
   const o = Math.max(0, Math.min(1, out));
-  const slide = (1 - o) * -H * 0.9;                 // rises out of the slot
+  const slide = (1 - o) * -H * 2.6;                 // rises OUT OF the slot, real travel
   const flutter = Math.sin(f / 13 + x) * 0.8 * o;   // paper is never dead still
   return (
     <g transform={`translate(${x},${y + slide}) rotate(${rot + flutter}) scale(${scale})`} opacity={Math.min(1, o * 1.6)}>
@@ -395,15 +395,18 @@ export const CoreColumn: React.FC<{
                  three could be NAMED. The side is now the caller's choice, defaulting to the
                  old behaviour so no existing scene moves. */
               const sgn = (b.side ?? 'right') === 'left' ? -1 : 1;
-              const pw = b.named.length * 11.2 + 26;
+              const pw = b.named.length * 20 + 40;
               return (
                 <g transform={`translate(${sgn * (w / 2 + 10)},${by + 6}) scale(${labelScale})`}>
                   <line x1={0} y1={0} x2={sgn * 13} y2={0} stroke={INK} strokeWidth={3} />
-                  <rect x={sgn > 0 ? 13 : -13 - pw} y={-13} width={pw} height={26} rx={3}
-                        fill={accentFill || '#cfd4cc'} stroke={INK} strokeWidth={3} />
-                  <text x={sgn > 0 ? 13 + pw / 2 : -13 - pw / 2} y={6} textAnchor="middle" fontSize={15}
-                        fontFamily="Arial Black, Arial, sans-serif" fill={INK}
-                        textLength={pw - 14} lengthAdjust="spacingAndGlyphs">{b.named}</text>
+                  <rect x={sgn > 0 ? 13 : -13 - pw} y={-26} width={pw} height={52} rx={5}
+                        fill={accentFill || '#cfd4cc'} stroke={INK} strokeWidth={4} />
+                  {/* a dark bed under the type: pink-on-pink microcaps was the exact complaint */}
+                  <rect x={(sgn > 0 ? 13 : -13 - pw) + 6} y={-19} width={pw - 12} height={38} rx={3}
+                        fill="#1a0d14" opacity={0.72} />
+                  <text x={sgn > 0 ? 13 + pw / 2 : -13 - pw / 2} y={11} textAnchor="middle" fontSize={30}
+                        fontFamily="Arial Black, Arial, sans-serif" fill="#ffffff"
+                        textLength={pw - 24} lengthAdjust="spacingAndGlyphs">{b.named}</text>
                 </g>
               );
             })()}
