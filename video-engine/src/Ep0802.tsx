@@ -1044,11 +1044,11 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
             <Bench f={g} y={1440} lit={0.9} />
             <AshReader x={540} y={1180} f={g} scale={1.9} emotion="reading" feed={travel} lamp={0} groundY={196} />
             {/* THE CHAIN: three stations, fat outlined arrows between them, each clicking in */}
-            <g transform="translate(540,772) scale(1.18) translate(-540,-772)">
+            <g transform="translate(540,772) scale(1.04) translate(-540,-772)">
             {[
-              {x: 268, y: 748, label: 'SAMPLE'},
+              {x: 306, y: 748, label: 'SAMPLE'},
               {x: 540, y: 700, label: 'READ'},
-              {x: 812, y: 748, label: 'RANKED SET'},
+              {x: 774, y: 748, label: 'RANKED SET'},
             ].map((st, i) => {
               const on = stage(i * 0.3);
               const e = 0.9 + on * 0.1;
@@ -1062,7 +1062,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
               );
             })}
             {/* fat outlined arrows carrying the flow */}
-            {[[352, 738, 462, 710], [618, 710, 728, 738]].map(([x1, y1, x2, y2], i) => (
+            {[[386, 738, 468, 712], [612, 712, 694, 738]].map(([x1, y1, x2, y2], i) => (
               <g key={i} opacity={0.3 + stage(0.15 + i * 0.3) * 0.7}>
                 <path d={`M${x1},${y1} L${x2 - 26},${y2}`} stroke={INK} strokeWidth={16} strokeLinecap="round" />
                 <path d={`M${x1},${y1} L${x2 - 26},${y2}`} stroke={BRASS} strokeWidth={9} strokeLinecap="round" />
@@ -1071,7 +1071,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
               </g>
             ))}
             {/* the grain itself, travelling the chain */}
-            <g transform={`translate(${268 + travel * 544},${740 - Math.sin(travel * Math.PI) * 44})`}>
+            <g transform={`translate(${306 + travel * 468},${740 - Math.sin(travel * Math.PI) * 44})`}>
               <path d="M-11,5 L-5,-10 L6,-11 L12,-1 L8,8 L-3,11 Z" fill="#f2f4f1" stroke={INK} strokeWidth={3} />
             </g>
             </g>
@@ -1146,7 +1146,7 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
                 );
               })}
               {/* TWO SHARDS INTERLOCK: the teeth seat with no gap, because the chemistry matches */}
-              <g transform="translate(540,1200) scale(1.5) translate(-540,-1200)"><InterlockPair f={g} x={540} y={1200} seat={seat} fade={1 - stack} /></g>
+              <g transform="translate(540,1120) scale(1.34) translate(-540,-1120)"><InterlockPair f={g} x={540} y={1120} seat={seat} fade={1 - stack} /></g>
               {/* THE STRIPS STACK, then FUSE */}
               <g transform="translate(540,900) scale(1.22) translate(-540,-900)"><StripStack f={g} x={540} y={900} progress={stack} fuse={fuse} /></g>
             </svg>
@@ -1316,7 +1316,11 @@ const S10: React.FC<SceneProps> = ({from, L}) => {
                   lit: 0.85,
                   named: k === namedIdx ? nameFor : undefined,
                   still: k === namedIdx,
-                  side: (i >= 4 ? 'left' : 'right') as 'left' | 'right',
+                  // ALWAYS LEFT, and the reason is paint order, not taste. Columns are drawn
+                  // left to right, so a plate hanging RIGHT off column i is painted over by
+                  // column i+1 (KATMAI came back as "|AI" behind the next column). A plate
+                  // hanging LEFT lands on columns already drawn, so it stays on top.
+                  side: 'left' as 'left' | 'right',
                   // the open-loop band: the deep tooth + double torn corner, planted at 72.6
                   mark: i === 3 && k === 4,
                 }));
@@ -1381,20 +1385,30 @@ const SetDownHand: React.FC<{f: number; x: number; y: number; press: number}> = 
     <g transform={`translate(${x},${y})`}>
       {/* the flannel sleeve: torn cuff, checked, human */}
       <g transform={`scale(${squash},${2 - squash})`}>
-        <path d="M-330,120 L-330,20 L60,4 L60,116 Z" fill="#6d4f42" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-        {Array.from({length: 6}).map((_, i) => (
-          <line key={i} x1={-320 + i * 62} y1={16} x2={-320 + i * 62} y2={118} stroke="#8a6552" strokeWidth={7}
-                opacity={0.7} />
+        {/* the sleeve, shorter so it frames the hand instead of being the whole object */}
+        <path d="M-250,124 L-250,26 L-10,8 L-10,116 Z" fill="#6d4f42" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        {Array.from({length: 4}).map((_, i) => (
+          <line key={i} x1={-238 + i * 58} y1={22} x2={-238 + i * 58} y2={122} stroke="#8a6552" strokeWidth={8}
+                opacity={0.65} />
         ))}
-        {[36, 70].map((yy) => (
-          <line key={yy} x1={-330} y1={yy} x2={60} y2={yy - 4} stroke="#8a6552" strokeWidth={7} opacity={0.7} />
+        {[46, 82].map((yy) => (
+          <line key={yy} x1={-250} y1={yy} x2={-10} y2={yy - 4} stroke="#8a6552" strokeWidth={8} opacity={0.65} />
         ))}
-        {/* the hand: three fingers over the wear-polished edge, no more detail than that */}
-        <path d="M56,10 L150,2 L182,34 L176,96 L60,110 Z" fill="#c79a76" stroke={INK} strokeWidth={5}
+        {/* the cuff: a hard machined edge between cloth and skin, so the two read as two things */}
+        <rect x={-30} y={2} width={30} height={120} rx={5} fill="#4f3930" stroke={INK} strokeWidth={5} />
+        {/* THE HAND, big enough to read: a back-of-hand mass with SEPARATED fingers over the edge */}
+        <path d="M-8,14 L110,4 L150,40 L146,104 L-8,118 Z" fill="#c79a76" stroke={INK} strokeWidth={5}
               strokeLinejoin="round" />
-        {[34, 62, 88].map((yy) => (
-          <line key={yy} x1={96} y1={yy} x2={172} y2={yy - 3} stroke={INK} strokeWidth={3} opacity={0.35} />
+        <path d="M-8,20 L96,12 L120,30 L20,44 Z" fill="#dcb08a" opacity={0.55} />
+        {[[112, 22], [126, 50], [122, 80]].map(([fx, fy], i) => (
+          <g key={i}>
+            <path d={`M${fx},${fy} q46,4 62,22 q-14,20 -60,14 Z`} fill="#c79a76" stroke={INK}
+                  strokeWidth={4.5} strokeLinejoin="round" />
+          </g>
         ))}
+        {/* the thumb, which is what makes a hand read as a hand and not as a mitten */}
+        <path d="M-2,104 q40,26 84,14 q-6,24 -50,26 q-34,0 -40,-24 Z" fill="#b98b68" stroke={INK}
+              strokeWidth={4.5} strokeLinejoin="round" />
       </g>
       <ContactShadow cx={-120} cy={128} rx={230} ry={18} opacity={0.5 * press} blur={16} />
     </g>
@@ -1469,7 +1483,7 @@ const S11: React.FC<SceneProps> = ({from, L}) => {
           <LampThrow f={g} strength={0.85 - dark * 0.45} />
           <Motes f={g} op={0.22} />
           <g opacity={interpolate(t, [L(12) + 2.7, L(12) + 3.3, L(12) + 4.3, L(12) + 4.8], [0, 1, 1, 0], {extrapolateRight: 'clamp'})}>
-            <Chip x={540} y={CARD_BOT} text="THIS FORECASTS NOTHING" size={48} />
+            <Chip x={540} y={CARD_BOT - 148} text="THIS FORECASTS NOTHING" size={48} />
           </g>
         </svg>
       </Stage>
@@ -1570,7 +1584,11 @@ const S12: React.FC<SceneProps> = ({from, total, L}) => {
                   lit: 0.85 * (1 - withdraw * 0.85),
                   named: k === namedIdx ? nameFor : undefined,
                   still: k === namedIdx,
-                  side: (i >= 4 ? 'left' : 'right') as 'left' | 'right',
+                  // ALWAYS LEFT, and the reason is paint order, not taste. Columns are drawn
+                  // left to right, so a plate hanging RIGHT off column i is painted over by
+                  // column i+1 (KATMAI came back as "|AI" behind the next column). A plate
+                  // hanging LEFT lands on columns already drawn, so it stays on top.
+                  side: 'left' as 'left' | 'right',
                 }));
                 return (
                   <g key={i} opacity={1 - withdraw * 0.55}>
