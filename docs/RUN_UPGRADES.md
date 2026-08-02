@@ -7,6 +7,71 @@ back on if a later run regresses. Newest first.
 
 ---
 
+## 2026-08-02 — "The Copy In The Mud" (the USGS ash archive nobody built, read out of Gulf of Alaska mud)
+
+**Shipped:** 98.8s vertical + 4:5 Dispatch, Gemini narrator (Sulafat, 16-line read, soundcheck 0.986 clean,
+96.2s). Story: glaciers scraped a lot of Alaska's eruption record off the land, so Lubbers, Loewen and
+Wallace of the USGS Alaska Volcano Observatory in Anchorage read a surviving copy out of Gulf of Alaska
+seafloor mud. 70 marine core tephras, 37 eruptions across eight cores, machine learning classification and
+conformal prediction assigning the most probable source **or sources**, and multivariate distance metrics
+where classification was not the right instrument. The earned angle: the confidence is a property of the
+ROCK before it is a property of the classifier, because Katmai, Fisher Caldera and Emmons Lake had been
+writing nearly invariant trace element ratios for a very long time.
+
+**THIS RUN EXISTS BECAUSE THE LAST ONE DID NOT SHIP.** The 2026-08-01 run planned and gated this exact
+film, synthesized its VO, fixed two engine bugs, and then wrote a queue file and shipped no frames. This
+run took the queued story per Phase 0.5, rebuilt what the container had lost, and built the film.
+
+**Sourcing limitation, disclosed:** the full text is paywalled (Wiley 402, pubs.usgs.gov 403). EVERYTHING
+on screen comes from the abstract, retrieved verbatim and identically from two independent indexes. The
+algorithm is never named or drawn, no year span is given, and no Katmai fraction is stated, because none
+of those are verifiable. The film says out loud that it forecasts nothing and that this is not a first.
+
+**Gates:** story_gate PASS (queued). dedupe FRESH on the honest distinctive set; the first two checks
+DUP'd only on generic tokens ('alaska','gulf' against a salmon story, then 'center','data' against a data
+centre story), which is token collision, not subject repeat. storyboard_check PASS (9/9 and 8/9 axes
+diverge from the last two). flow_check PASS (32 beats, median gap 3.1s, max 4.6s, 2 rehooks, 53s open
+loop, 41 sfx events, >=2 per shot). caption_check PASS. Audio: -14.0 LUFS, TP -1.2 dBTP, 0.90s silence
+dip fitted inside a real VO gap.
+
+**Two real bugs the ROUGH CUT caught, both of which would have shipped silently:**
+
+1. **`Stage` wrapped its children in an `<svg>`, so `Stage3D`'s `<div>`s landed in the SVG namespace and
+   painted NOTHING.** Every scene rendered as an empty graded rectangle with only captions on it. This is
+   the same failure class the Ep0731 header documents for DayGrade, arriving from the opposite direction:
+   there an HTML grade was placed inside a scene's svg, here the entire 3D stage was. Fixed by making
+   Stage a plain HTML container, with MaterialDefs in one hidden document-level svg since SVG defs
+   resolve by id across the document.
+
+2. **Scenes were timing their beats to ABSOLUTE seconds copied off the storyboard.** The board was timed
+   against the 08-01 synth; this run re-synthesized, and every line start moved by a different amount, up
+   to 1.8s. Nothing fails loudly, because `build_scenes.py` derives the scene BOUNDARIES from the new
+   line table, so the cuts stay right and only the beats inside them drift onto the wrong words.
+   **PERMANENT FIX, and it is a code fix rather than a doctrine reminder:** `build_scenes.py` now emits
+   the VO line start table into `episode_props.json`, `ep0802Schema` carries it, and every scene takes
+   `L(i)` and expresses each beat as an offset from the line it belongs to. Re-synth the voice and the
+   picture re-times itself. (Caught because the schedule generator hard-errored on the missing key, which
+   is the only reason it was noticed at all — worth making other consumers fail that loudly too.)
+
+**Upgrades committed this run:**
+- `scripts/build_scenes.py` — ships the VO line start table (the fix above).
+- `video-engine/src/Ep0802.tsx` — the twelve-scene film; `SceneProps`/`L()` line-anchored beat timing.
+- `video-engine/src/lib/bench.tsx` — net-new `LayeredLand`, `ErasingBlade`, `CoringTube`, `BrassPlate`;
+  `CoreColumn.bands[].side` so a name plate can hang inboard; `DistanceCalipers` rebuilt to the bar.
+- `video-engine/src/lib/ASSET_MANIFEST.md` — all of the above registered, with the next advance named.
+- `config/music_sources.yaml` — two ambient tracks added. **This was a real shortage, not a nicety:** the
+  curious/wonder branch of `angle_to_mood` had exactly three usable tracks and by this run all three had
+  played within ten days, so "source a fresh track" and "match the committed valence" had become
+  impossible to satisfy at once. Daily cadence drains a narrow branch fast.
+- `scripts/dispatch_mix.py` — this film's 41-event schedule, derived from the shipped take's line table
+  rather than typed, so the sound moves with the picture on a re-synth.
+
+**Known issue, named rather than deferred quietly:** `AshReader`'s head reads as a box on a column at
+small scale. The film survives it by staging the reader large, and the manifest now carries it as the
+family's next advance so a run that needs it in a wide shot fixes it first.
+
+---
+
 ## 2026-07-25 — "The One It Didn't Hear" (Alaska's landslide detector + the NSF award nobody reported)
 
 **Shipped:** 61.3s vertical + 4:5 Dispatch, Gemini narrator (Sulafat, 12-line read, soundcheck 0.989 clean).
