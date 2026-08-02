@@ -200,8 +200,8 @@ const Motes: React.FC<{f: number; n?: number; op?: number}> = ({f, n = 26, op = 
  * opens its own <svg>, and MaterialDefs lives in one hidden document-level <svg> because
  * SVG defs resolve by id across the whole document.
  */
-const Stage: React.FC<{children: React.ReactNode; grade?: React.ReactNode; bg?: string}> = ({
-  children, grade, bg = ROOMDARK,
+const Stage: React.FC<{children: React.ReactNode; grade?: React.ReactNode; over?: React.ReactNode; bg?: string}> = ({
+  children, grade, over, bg = ROOMDARK,
 }) => (
   <AbsoluteFill style={{backgroundColor: bg}}>
     <svg width="0" height="0" style={{position: 'absolute'}} aria-hidden><MaterialDefs /></svg>
@@ -212,6 +212,7 @@ const Stage: React.FC<{children: React.ReactNode; grade?: React.ReactNode; bg?: 
                   'rgba(158,164,170,1) 66%, rgba(58,64,70,1) 90%, rgba(26,31,37,1) 100%)',
     }} />
     {grade}
+    {over}
   </AbsoluteFill>
 );
 
@@ -237,14 +238,21 @@ const Room: React.FC<{f: number; amount?: number; lamp?: number}> = ({f, amount 
 );
 
 /** a headline plate for the hook, held inside the 4:5 safe box */
-const Headline: React.FC<{text: string; op?: number; y?: number}> = ({text, op = 1, y = SAFE_TOP + 66}) => (
-  <g opacity={op}>
-    <text x={540} y={y} textAnchor="middle" fontSize={72} fontFamily={BOLD} fill="#0a0e11"
-          stroke="#0a0e11" strokeWidth={12} strokeLinejoin="round" opacity={0.7}>{text}</text>
-    <text x={540} y={y} textAnchor="middle" fontSize={72} fontFamily={BOLD} fill={BONE}
-          letterSpacing={0.5}>{text}</text>
-  </g>
-);
+const Headline: React.FC<{text: string; op?: number; y?: number}> = ({text, op = 1, y = SAFE_TOP + 66}) => {
+  const w = text.length * 43 + 76;
+  return (
+    <g opacity={op}>
+      {/* a real plate, because grey type on a lit tan field is not a hook headline */}
+      <rect x={540 - w / 2} y={y - 62} width={w} height={86} rx={9} fill="#0b1114" opacity={0.82} />
+      <rect x={540 - w / 2} y={y - 62} width={w} height={86} rx={9} fill="none" stroke={BONE}
+            strokeWidth={4} opacity={0.75} />
+      <text x={540} y={y} textAnchor="middle" fontSize={72} fontFamily={BOLD} fill="#0a0e11"
+            stroke="#0a0e11" strokeWidth={13} strokeLinejoin="round">{text}</text>
+      <text x={540} y={y} textAnchor="middle" fontSize={72} fontFamily={BOLD} fill="#ffffff"
+            letterSpacing={0.5}>{text}</text>
+    </g>
+  );
+};
 
 /** a small honest label chip. Never a colon, never a dash. */
 const Chip: React.FC<{x: number; y: number; text: string; sub?: string; op?: number; size?: number}> = ({
@@ -289,7 +297,17 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
   const head = interpolate(p, [0.05, 0.16], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const headOut = interpolate(p, [0.84, 0.94], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <Stage grade={<Room f={g} lamp={lampOn} />}>
+    <Stage
+      grade={<Room f={g} lamp={lampOn} />}
+      over={
+        <svg viewBox="0 0 1080 1920" width="1080" height="1920" style={{position: 'absolute', inset: 0}}>
+          <g opacity={head * headOut}>
+            <Headline text="THE COPY" y={SAFE_TOP + 92} />
+            <Headline text="IN THE MUD" y={SAFE_TOP + 186} />
+          </g>
+        </svg>
+      }
+    >
       <Stage3D camera={cam}>
         {/* FAR: the room continues past the specimen, barely */}
         <Plane z={900}>
@@ -317,10 +335,6 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
       <svg viewBox="0 0 1080 1920" width="1080" height="1920" style={{position: 'absolute', inset: 0}}>
         <LampThrow f={g} strength={lampOn} />
         <Motes f={g} op={0.34 * lampOn} />
-        <g opacity={head * headOut}>
-          <Headline text="THE COPY" y={SAFE_TOP + 92} />
-          <Headline text="IN THE MUD" y={SAFE_TOP + 186} />
-        </g>
       </svg>
     </Stage>
   );
@@ -328,7 +342,7 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
 
 /** the wet olive-black sediment bed. TORN, granular, never a flat fill. */
 const MudBed: React.FC<{f: number; y: number; h?: number; op?: number}> = ({f, y, h = 620, op = 1}) => {
-  const mud = tones('#2b281d');
+  const mud = tones('#1d1b14');
   const X0 = -1100, X1 = 2180, W = X1 - X0;   // oversized: no plate edge may enter frame
   const pts = Array.from({length: 21}).map((_, i) => {
     const p = i / 20;
@@ -362,10 +376,10 @@ const MudBed: React.FC<{f: number; y: number; h?: number; op?: number}> = ({f, y
         const cx = X0 + hx * W, cy = y + 22 + hy * (h - 40), r = 3 + hr * 9;
         return (
           <g key={i}>
-            <ellipse cx={cx} cy={cy} rx={r} ry={r * 0.72} fill={hr > 0.55 ? '#5b5647' : '#3a3629'}
-                     stroke={INK} strokeWidth={1.6} opacity={0.55} />
+            <ellipse cx={cx} cy={cy} rx={r} ry={r * 0.72} fill={hr > 0.55 ? '#4a4638' : '#26241a'}
+                     stroke={INK} strokeWidth={2} opacity={0.8} />
             <ellipse cx={cx - r * 0.28} cy={cy - r * 0.3} rx={r * 0.4} ry={r * 0.26}
-                     fill="#7d7863" opacity={0.4} />
+                     fill="#6e6a56" opacity={0.55} />
           </g>
         );
       })}
@@ -746,7 +760,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
   const p = f / FPS / d;
   const rise = interpolate(p, [0.08, 0.28], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   // THE RUNNING COUNT: bands light one after another across "seventy ash layers"
-  const runCount = interpolate(p, [0.33, 0.86], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  const runCount = interpolate(p, [0.02, 0.30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const shown = Math.round(runCount * 70);
   const cam = CameraMoves.riseWith(p, 210);
   const COLS = 8;
@@ -790,7 +804,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
         <AshCrumbs f={g} count={14} opacity={0.2} />
         <LampThrow f={g} strength={0.8} />
         <Motes f={g} op={0.26} />
-        <g opacity={interpolate(p, [0.38, 0.45], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
+        <g opacity={interpolate(p, [0.02, 0.07], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
           <Chip x={540} y={CARD_BOT} text={`${shown} ASH LAYERS`} sub="OUT OF 8 CORES" size={54} />
         </g>
       </svg>
