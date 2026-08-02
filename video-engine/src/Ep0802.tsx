@@ -1367,7 +1367,11 @@ const S10: React.FC<SceneProps> = ({from, L}) => {
                 const bands = Array.from({length: per}).map((_, k) => ({
                   at: 0.09 + k * (0.82 / per),
                   lit: 0.85,
-                  named: k === namedIdx ? nameFor : undefined,
+                  // THE NAMES SET AS THE MOVE LANDS. At full label size they are clipped by the
+                  // frame edge while the camera is still pushed in, so they are withheld until
+                  // the pull-back has almost arrived. That is also the better beat: eight cores
+                  // are revealed, and THEN three of them turn out to have names.
+                  named: k === namedIdx && pull > 0.72 ? nameFor : undefined,
                   still: k === namedIdx,
                   // ALWAYS LEFT, and the reason is paint order, not taste. Columns are drawn
                   // left to right, so a plate hanging RIGHT off column i is painted over by
