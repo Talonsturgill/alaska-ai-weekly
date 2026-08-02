@@ -121,6 +121,58 @@ const LampThrow: React.FC<{f: number; cx?: number; cy?: number; r?: number; stre
   );
 };
 
+/**
+ * THE ROOM ITSELF, and it exists because dead_space_check measured the film at 52.7 percent
+ * low-information area on the final render, over budget, with the hook frame worst at 81.
+ *
+ * The single-object-void layout in the art-direction plan is deliberate and stays. But "the
+ * specimen sits in deep near-black" was being built as "there is nothing behind the specimen",
+ * and those are different pictures. A dark room still has a room in it: a pegboard wall, the
+ * tools somebody hung on it, jars on a shelf. Drawn at low contrast and low value so it never
+ * competes with the lit subject, it turns empty frame into DEPTH, which is what the plan asked
+ * for in the first place (three declared planes, atmosphere on the far one).
+ */
+const RoomBack: React.FC<{f: number; y?: number; op?: number}> = ({f, y = 250, op = 1}) => {
+  return (
+    <g opacity={op}>
+      {/* flat, dark, and far wider than frame: this is the room's VALUE FLOOR, not a subject */}
+      <rect x={-1500} y={-1200} width={4080} height={4200} fill="#0f1a18" />
+      {/* pegboard perforations: a regular grid, because the wall is BUILT (turned, not torn) */}
+      {Array.from({length: 22}).map((_, r) =>
+        Array.from({length: 26}).map((_, c) => (
+          <circle key={`${r}-${c}`} cx={-420 + c * 74} cy={y - 180 + r * 62} r={3.6}
+                  fill="#182724" opacity={0.85} />
+        ))
+      )}
+      {/* the tool silhouettes somebody hung up, in near-value so they read as shape only */}
+      {[[128, 'M0,0 L0,150 M-26,0 L26,0 M-16,150 L16,150'],
+        [252, 'M0,0 L0,120 M0,120 L-30,168 M0,120 L30,168'],
+        [905, 'M0,0 L0,138 M-22,138 A22,22 0 0 0 22,138 Z'],
+        [1010, 'M0,0 L0,96 M-30,96 L30,96 M-30,96 L-30,150 M30,96 L30,150']].map(([x, d], i) => (
+        <g key={i} transform={`translate(${x},${y - 40 + (i % 2) * 46})`}>
+          <path d={d as string} stroke="#0a1412" strokeWidth={12} fill="none" strokeLinecap="round" />
+          <path d={d as string} stroke="#243330" strokeWidth={5} fill="none" strokeLinecap="round" />
+        </g>
+      ))}
+      {/* a shelf with sample jars: the story's own furniture, and it fills the upper void */}
+      <rect x={-460} y={y + 470} width={2000} height={16} fill="#1a2624" stroke="#0a1412" strokeWidth={4} />
+      {Array.from({length: 14}).map((_, i) => {
+        const jx = -360 + i * 122;
+        const h = 74 + ((Math.abs(Math.imul(i + 5, 40503)) % 100) / 100) * 44;
+        const fill = 0.35 + ((Math.abs(Math.imul(i + 19, 69069)) % 100) / 100) * 0.45;
+        return (
+          <g key={i} transform={`translate(${jx},${y + 470})`}>
+            <rect x={-26} y={-h} width={52} height={h} rx={4} fill="#1c2926" stroke="#0a1412" strokeWidth={3.5} />
+            {/* the sediment sitting in the jar, which is what this room is full of */}
+            <rect x={-22} y={-h * fill} width={44} height={h * fill - 4} rx={2} fill="#2a3129" opacity={0.9} />
+            <rect x={-20} y={-h - 7} width={40} height={9} rx={2} fill="#243230" stroke="#0a1412" strokeWidth={3} />
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
 /** MOTES: the dust that proves there is air between the camera and the specimen. */
 const Motes: React.FC<{f: number; n?: number; op?: number}> = ({f, n = 26, op = 0.32}) => (
   <g style={{pointerEvents: 'none'}}>
@@ -243,7 +295,8 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
         <Plane z={900}>
           <Atmosphere z={900} skyTint="#0d151a" strength={0.9}>
             <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-              <rect x={0} y={1180} width={1080} height={740} fill="#10171b" />
+              <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1180} width={4080} height={740} fill="#10171b" />
               <path d="M0,1180 L1080,1174" stroke={INK} strokeWidth={6} opacity={0.8} />
             </svg>
           </Atmosphere>
@@ -275,7 +328,7 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
 
 /** the wet olive-black sediment bed. TORN, granular, never a flat fill. */
 const MudBed: React.FC<{f: number; y: number; h?: number; op?: number}> = ({f, y, h = 620, op = 1}) => {
-  const mud = tones(MUD);
+  const mud = tones('#2b281d');
   const X0 = -1100, X1 = 2180, W = X1 - X0;   // oversized: no plate edge may enter frame
   const pts = Array.from({length: 21}).map((_, i) => {
     const p = i / 20;
@@ -296,15 +349,32 @@ const MudBed: React.FC<{f: number; y: number; h?: number; op?: number}> = ({f, y
                   const jj = (Math.abs(Math.imul(i * 11 + k, 40503)) % 1000) / 1000;
                   return `L${X0 + (k + 1) * (W / 9)},${yy + (jj - 0.5) * 16}`;
                 }).join('')}`}
-                stroke={INK} strokeWidth={2 + j * 3} fill="none" opacity={0.16 + j * 0.1} />
+                stroke={INK} strokeWidth={3 + j * 4} fill="none" opacity={0.3 + j * 0.18} />
         );
       })}
       {/* wet sheen: the lamp finds the moisture, upper screen left */}
       <path d={`M${pts}`} stroke="#8fa9a2" strokeWidth={4} fill="none" opacity={0.34} />
-      {Array.from({length: 120}).map((_, i) => {
+      {/* CLASTS: pebbles and shell hash in the sediment, big enough to read at phone scale */}
+      {Array.from({length: 150}).map((_, i) => {
         const hx = (Math.abs(Math.imul(i + 3, 2654435761)) % 1000) / 1000;
         const hy = (Math.abs(Math.imul(i + 61, 40503)) % 1000) / 1000;
-        return <circle key={i} cx={X0 + hx * W} cy={y + 18 + hy * (h - 30)} r={1.5 + hy * 1.6} fill={INK} opacity={0.22} />;
+        const hr = (Math.abs(Math.imul(i + 97, 69069)) % 1000) / 1000;
+        const cx = X0 + hx * W, cy = y + 22 + hy * (h - 40), r = 3 + hr * 9;
+        return (
+          <g key={i}>
+            <ellipse cx={cx} cy={cy} rx={r} ry={r * 0.72} fill={hr > 0.55 ? '#5b5647' : '#3a3629'}
+                     stroke={INK} strokeWidth={1.6} opacity={0.55} />
+            <ellipse cx={cx - r * 0.28} cy={cy - r * 0.3} rx={r * 0.4} ry={r * 0.26}
+                     fill="#7d7863" opacity={0.4} />
+          </g>
+        );
+      })}
+      {/* fine pitting between the clasts */}
+      {Array.from({length: 200}).map((_, i) => {
+        const hx = (Math.abs(Math.imul(i + 211, 2654435761)) % 1000) / 1000;
+        const hy = (Math.abs(Math.imul(i + 13, 40503)) % 1000) / 1000;
+        return <circle key={i} cx={X0 + hx * W} cy={y + 18 + hy * (h - 30)} r={1.8 + hy * 2.2}
+                       fill={INK} opacity={0.34} />;
       })}
     </g>
   );
@@ -465,7 +535,8 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
         <Plane z={1000}>
           <Atmosphere z={1000} skyTint="#0d151a" strength={0.9}>
             <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-              <rect x={0} y={1240} width={1080} height={680} fill="#101a1d" />
+              <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1240} width={4080} height={680} fill="#101a1d" />
               <path d="M0,1240 L1080,1236" stroke={INK} strokeWidth={5} opacity={0.7} />
             </svg>
           </Atmosphere>
@@ -685,7 +756,8 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
         <Plane z={1100}>
           <Atmosphere z={1100} skyTint="#0d151a" strength={1}>
             <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-              <rect x={0} y={1500} width={1080} height={420} fill="#0f181c" />
+              <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1500} width={4080} height={420} fill="#0f181c" />
             </svg>
           </Atmosphere>
         </Plane>
@@ -750,7 +822,8 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
         <Plane z={900}>
           <Atmosphere z={900} skyTint="#0d151a" strength={0.9}>
             <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-              <rect x={0} y={1460} width={1080} height={460} fill="#0f181c" />
+              <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1460} width={4080} height={460} fill="#0f181c" />
             </svg>
           </Atmosphere>
         </Plane>
@@ -840,7 +913,8 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
         <Plane z={800}>
           <Atmosphere z={800} skyTint="#0d151a" strength={0.9}>
             <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-              <rect x={0} y={1500} width={1080} height={420} fill="#0f181c" />
+              <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1500} width={4080} height={420} fill="#0f181c" />
             </svg>
           </Atmosphere>
         </Plane>
@@ -946,7 +1020,8 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
         <Plane z={760}>
           <Atmosphere z={760} skyTint="#0d151a" strength={0.9}>
             <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-              <rect x={0} y={1440} width={1080} height={480} fill="#0f181c" />
+              <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1440} width={4080} height={480} fill="#0f181c" />
             </svg>
           </Atmosphere>
         </Plane>
@@ -1039,7 +1114,8 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
           <Plane z={820}>
             <Atmosphere z={820} skyTint="#0d151a" strength={0.9}>
               <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-                <rect x={0} y={1460} width={1080} height={460} fill="#0f181c" />
+                <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1460} width={4080} height={460} fill="#0f181c" />
               </svg>
             </Atmosphere>
           </Plane>
@@ -1206,7 +1282,8 @@ const S10: React.FC<SceneProps> = ({from, L}) => {
           <Plane z={900}>
             <Atmosphere z={900} skyTint="#0d151a" strength={1}>
               <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-                <rect x={0} y={1520} width={1080} height={400} fill="#0f181c" />
+                <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1520} width={4080} height={400} fill="#0f181c" />
               </svg>
             </Atmosphere>
           </Plane>
@@ -1349,7 +1426,8 @@ const S11: React.FC<SceneProps> = ({from, L}) => {
           <Plane z={860}>
             <Atmosphere z={860} skyTint="#0d151a" strength={0.95}>
               <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-                <rect x={0} y={1480} width={1080} height={440} fill="#0f181c" />
+                <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1480} width={4080} height={440} fill="#0f181c" />
               </svg>
             </Atmosphere>
           </Plane>
@@ -1459,7 +1537,8 @@ const S12: React.FC<SceneProps> = ({from, total, L}) => {
           <Plane z={900}>
             <Atmosphere z={900} skyTint="#0d151a" strength={1}>
               <svg viewBox="0 0 1080 1920" width="1080" height="1920">
-                <rect x={0} y={1520} width={1080} height={400} fill="#0f181c" />
+                <RoomBack f={g} y={300} op={0.95} />
+              <rect x={-1500} y={1520} width={4080} height={400} fill="#0f181c" />
               </svg>
             </Atmosphere>
           </Plane>
