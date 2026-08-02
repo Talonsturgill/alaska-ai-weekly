@@ -200,8 +200,9 @@ const Motes: React.FC<{f: number; n?: number; op?: number}> = ({f, n = 26, op = 
  * opens its own <svg>, and MaterialDefs lives in one hidden document-level <svg> because
  * SVG defs resolve by id across the whole document.
  */
-const Stage: React.FC<{children: React.ReactNode; grade?: React.ReactNode; over?: React.ReactNode; bg?: string}> = ({
-  children, grade, over, bg = ROOMDARK,
+const Stage: React.FC<{children: React.ReactNode; grade?: React.ReactNode; over?: React.ReactNode;
+  overTop?: React.ReactNode; bg?: string}> = ({
+  children, grade, over, overTop, bg = ROOMDARK,
 }) => (
   <AbsoluteFill style={{backgroundColor: bg}}>
     <svg width="0" height="0" style={{position: 'absolute'}} aria-hidden><MaterialDefs /></svg>
@@ -213,6 +214,7 @@ const Stage: React.FC<{children: React.ReactNode; grade?: React.ReactNode; over?
     }} />
     {grade}
     {over}
+    {overTop}
   </AbsoluteFill>
 );
 
@@ -473,14 +475,26 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
   const stack = interpolate(p, [0, 0.2], [0, 1], {extrapolateRight: 'clamp', easing: E_OUT});
   // THE BLADE WIPE: enters on "then glaciers", clears frame by the end of the line.
   // LINEAR ON PURPOSE — the one unaeased motion in the film is what reads as inhuman.
-  const blade = interpolate(p, [0.40, 0.96], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const blade = interpolate(p, [0.44, 0.86], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const bladeX = -260 + blade * 1760;
   const erased = interpolate(bladeX, [-260, 1400], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const crumbs = interpolate(p, [0.70, 1.0], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // the blade is the only thing that earns motion blur here
-  const bladeV = blade > 0.001 && blade < 0.999 ? 96 : 0;
+  // per-frame displacement, measured rather than assumed: 1760px of travel across the window
+  const bladeSpan = 0.86 - 0.44;
+  const bladePxPerFrame = 1760 / (bladeSpan * d * FPS);
+  const bladeV = blade > 0.001 && blade < 0.999 ? bladePxPerFrame : 0;
   return (
-    <Stage grade={<Room f={g} lamp={0.86} />}>
+    <Stage
+      grade={<Room f={g} lamp={0.86} />}
+      over={
+        <svg viewBox="0 0 1080 1920" width="1080" height="1920" style={{position: 'absolute', inset: 0}}>
+          <g opacity={interpolate(p, [0.07, 0.2, 0.62, 0.74], [0, 1, 1, 0], {extrapolateRight: 'clamp'})}>
+            <Chip x={540} y={CARD_BOT} text="THE LAYERS STACK LIKE PAGES" size={38} />
+          </g>
+        </svg>
+      }
+    >
       <Stage3D camera={{}}>
         <Plane z={1300}>
           <Atmosphere z={1300} skyTint="#0d151a" strength={1}>
@@ -501,7 +515,7 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
         <Plane z={-60}>
           <svg viewBox="0 0 1080 1920" width="1080" height="1920">
             {blade > 0.0005 && (
-              <MotionBlur vx={bladeV} gain={1.6} max={34}>
+              <MotionBlur vx={bladeV} gain={1.1} max={40}>
                 <ErasingBlade x={bladeX} groundY={1380} h={860} f={g} />
               </MotionBlur>
             )}
@@ -516,9 +530,6 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
         </g>
         <LampThrow f={g} strength={0.7} />
         <Motes f={g} op={0.2} />
-        <g opacity={interpolate(p, [0.07, 0.2, 0.62, 0.74], [0, 1, 1, 0], {extrapolateRight: 'clamp'})}>
-          <Chip x={540} y={CARD_BOT} text="THE LAYERS STACK LIKE PAGES" size={38} />
-        </g>
       </svg>
     </Stage>
   );
@@ -701,16 +712,27 @@ const S4: React.FC<SceneProps> = ({from, L}) => {
                           lift={interpolate(p, [0.93, 1.0], [0, 0.55], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} />
             </g>
             {/* the impact puff when the shoe bites */}
-            {drive > 0.4 && (
-              <g opacity={interpolate(p, [0.82, 0.97], [0.7, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-                {Array.from({length: 12}).map((_, i) => {
-                  const a = (i / 12) * Math.PI * 2;
-                  const r = 60 + Math.max(0, p - 0.81) * d * 130;
-                  return <circle key={i} cx={540 + Math.cos(a) * r * 1.5} cy={1250 + Math.sin(a) * r * 0.4}
-                                 r={5 + i % 3} fill="#7d8a80" opacity={0.5} />;
-                })}
-              </g>
-            )}
+            {/* THE IMPACT. A punch with no ejecta is a poke: a mud plume throws up and out from
+                the entry, a displacement ridge humps around the shaft, and both settle. */}
+            {drive > 0.25 && (() => {
+              const age = Math.max(0, (f - punchAt) / FPS);          // seconds since contact
+              const fade = Math.max(0, 1 - age / 0.9);
+              return (
+                <g opacity={fade}>
+                  <path d={`M420,1252 q60,-${26 * fade} 120,0 q60,${20 * fade} 120,0`}
+                        stroke="#6b6450" strokeWidth={10} fill="none" opacity={0.75} />
+                  {Array.from({length: 18}).map((_, i) => {
+                    const h = (Math.abs(Math.imul(i + 7, 2654435761)) % 1000) / 1000;
+                    const sgn = i % 2 === 0 ? 1 : -1;
+                    const vx = sgn * (90 + h * 230);
+                    const px = 540 + vx * age;
+                    const py = 1250 - (300 + h * 220) * age + 900 * age * age;
+                    return <circle key={i} cx={px} cy={py} r={4 + h * 8} fill={h > 0.5 ? '#6b6450' : '#4a4636'}
+                                   stroke={INK} strokeWidth={1.6} opacity={0.85} />;
+                  })}
+                </g>
+              );
+            })()}
           </svg>
         </Plane>
       </Stage3D>
@@ -774,7 +796,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
    * picture is worse than no number: it is the one thing a viewer can check.
    */
   const ARRIVE0 = Math.round(0.06 * d * FPS);      // frame the first column lands
-  const ARRIVE_STEP = 7;                           // frames between arrivals
+  const ARRIVE_STEP = 4;                           // frames between arrivals
   const PER = [9, 9, 9, 9, 9, 9, 8, 8];            // 6*9 + 2*8 = 70 tephras across 8 cores
   const arrived = Math.max(0, Math.min(8, Math.floor((f - ARRIVE0) / ARRIVE_STEP) + 1));
   const partial = Math.max(0, Math.min(1, (((f - ARRIVE0) % ARRIVE_STEP) + ARRIVE_STEP) % ARRIVE_STEP / ARRIVE_STEP));
@@ -784,7 +806,16 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
   const cam = CameraMoves.riseWith(p, 210);
   const COLS = 8;
   return (
-    <Stage grade={<Room f={g} lamp={0.9} />}>
+    <Stage
+      grade={<Room f={g} lamp={0.9} />}
+      over={
+        <svg viewBox="0 0 1080 1920" width="1080" height="1920" style={{position: 'absolute', inset: 0}}>
+          <g opacity={interpolate(p, [0.02, 0.07], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
+            <Chip x={540} y={CARD_BOT} text={`${shown} ASH LAYERS`} sub="OUT OF 8 CORES" size={54} />
+          </g>
+        </svg>
+      }
+    >
       <Stage3D camera={cam}>
         <Plane z={1100}>
           <Atmosphere z={1100} skyTint="#0d151a" strength={1}>
@@ -801,7 +832,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
               const x = 150 + i * 111;
               // staggered arrival: column i rises on its own beat, so the shot is eight
               // events rather than one held frame under continuous narration
-              const eIn = entrance(f, FPS, Math.round(0.06 * d * FPS) + i * 7, {drop: 520, preset: POP});
+              const eIn = entrance(f, FPS, Math.round(0.06 * d * FPS) + i * 4, {drop: 520, preset: POP});
               const grow = interpolate(Math.min(1, eIn.t), [0, 1], [0.05, 1], {extrapolateRight: 'clamp'});
               // 70 bands total across 8 columns, distributed so no column is empty
               const per = PER[i];
@@ -827,9 +858,6 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
         <AshCrumbs f={g} count={14} opacity={0.2} />
         <LampThrow f={g} strength={0.8} />
         <Motes f={g} op={0.26} />
-        <g opacity={interpolate(p, [0.02, 0.07], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-          <Chip x={540} y={CARD_BOT} text={`${shown} ASH LAYERS`} sub="OUT OF 8 CORES" size={54} />
-        </g>
       </svg>
     </Stage>
   );
@@ -968,7 +996,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
               {out > 0.01 && (
                 <MotionBlur vy={cardV} gain={0.6} max={10}>
                   <g transform={`translate(540,${742})`}>
-                    <ShortlistCard x={0} y={0} f={g} names={['KATMAI', 'FISHER CALDERA', 'EMMONS LAKE']}
+                    <ShortlistCard x={0} y={0} f={g} names={['', '', '']}
                                    out={out} matched={false} scale={1.85} />
                   </g>
                 </MotionBlur>
@@ -990,7 +1018,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
         <LampThrow f={g} strength={0.5 + 0.5 * dip} />
         <Motes f={g} op={0.24} />
         <g opacity={interpolate(t, [L(6) + 1.36, L(6) + 1.96, L(7) - 0.06, L(7) + 0.44], [0, 1, 1, 0], {extrapolateRight: 'clamp'})}>
-          <Chip x={540} y={CARD_BOT} text="THREE NAMES, NOT ONE" size={42} />
+          <Chip x={540} y={CARD_BOT} text="A NAME, OR NAMES" size={46} />
         </g>
         <g opacity={interpolate(t, [L(7) + 1.94, L(7) + 2.54], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
           <Chip x={540} y={CARD_BOT} text="TRACE ELEMENTS" sub="A CHEMICAL HANDWRITING" size={46} />
@@ -1166,10 +1194,17 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
                   <stop offset="100%" stopColor={RHYOLITE} stopOpacity={0} />
                 </radialGradient>
               </defs>
-              <ellipse cx={540} cy={905} rx={430 + fuse * 190} ry={250 + fuse * 120}
-                       fill="url(#fuseglow)" opacity={Math.min(1, fuse * 1.3)} />
+              <ellipse cx={540} cy={905} rx={300 + fuse * 120} ry={180 + fuse * 80}
+                       fill="url(#fuseglow)" opacity={Math.max(0, Math.min(1, fuse * 3) - fuse * fuse * 1.9)} />
             </svg>
           ) : null
+        }
+        overTop={
+          <svg viewBox="0 0 1080 1920" width="1080" height="1920" style={{position: 'absolute', inset: 0}}>
+            <g opacity={interpolate(p, [0.36, 0.42, 0.55, 0.60], [0, 1, 1, 0], {extrapolateRight: 'clamp'})}>
+              <Chip x={540} y={CARD_BOT} text="THE SAME RATIOS" sub="ERUPTION AFTER ERUPTION" size={44} />
+            </g>
+          </svg>
         }
       >
         <Stage3D camera={cam}>
@@ -1204,9 +1239,6 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
           <AshCrumbs f={g} count={14} opacity={0.18} />
           <LampThrow f={g} strength={0.85} />
           <Motes f={g} op={0.26} />
-          <g opacity={interpolate(p, [0.36, 0.42, 0.55, 0.60], [0, 1, 1, 0], {extrapolateRight: 'clamp'})}>
-            <Chip x={540} y={CARD_BOT} text="THE SAME RATIOS" sub="ERUPTION AFTER ERUPTION" size={44} />
-          </g>
         </svg>
       </Stage>
     </AccentRegistry>
@@ -1270,7 +1302,7 @@ const StripStack: React.FC<{f: number; x: number; y: number; progress: number; f
   const accent = useAccent();
   const N = 5;
   const GAP = 34;                                    // visible separation while they arrive
-  const close = fuse * fuse * (3 - 2 * fuse);        // the gap collapses only on the fuse
+  const close = Math.min(1, fuse * 1.8);            // the gap CLOSES on the flip, not slowly
   const strip = (w: number) =>
     `M${-w},0 ${Array.from({length: 8}).map((_, k) => {
       const tx = -w + k * (w / 4);
@@ -1285,7 +1317,7 @@ const StripStack: React.FC<{f: number; x: number; y: number; progress: number; f
         // arrivals are SPREAD so five separate landings are visible, not one packed instant
         const at = Math.max(0, Math.min(1, (progress - i * 0.17) * 3.6));
         const e = at * at * (3 - 2 * at);
-        const slot = (i - (N - 1) / 2) * GAP * (1 - close * 0.52);
+        const slot = (i - (N - 1) / 2) * GAP * (1 - close * 0.94);
         const dy = slot + (1 - e) * -420;
         // SQUASH ON CONTACT: the strip flattens as it lands and springs back. Without this the
         // arrival is a translate, and a translate that ends is not an impact.
@@ -1306,9 +1338,9 @@ const StripStack: React.FC<{f: number; x: number; y: number; progress: number; f
       })}
       {/* THE FUSE FLASH: the film's loudest single moment, and its only bloom */}
       {fuse > 0.02 && (
-        <g style={{mixBlendMode: 'screen'}} opacity={Math.max(0, 1 - fuse * 0.75)}>
-          <circle cx={0} cy={0} r={90 + fuse * 300} fill={accent(RHYOLITE, x, y)} opacity={0.34} />
-          <circle cx={0} cy={0} r={40 + fuse * 130} fill="#ffd6e8" opacity={0.3} />
+        <g style={{mixBlendMode: 'screen'}} opacity={Math.max(0, 1 - fuse * 2.6)}>
+          <circle cx={0} cy={0} r={90 + fuse * 150} fill={accent(RHYOLITE, x, y)} opacity={0.34} />
+          <circle cx={0} cy={0} r={40 + fuse * 70} fill="#ffd6e8" opacity={0.3} />
         </g>
       )}
     </g>
@@ -1499,6 +1531,8 @@ const S11: React.FC<SceneProps> = ({from, L}) => {
   const both = interpolate(t, [L(13) + 2.06, L(13) + 3.46], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   // THE CRUMB LANDS: the open loop planted at the blade wipe, paid 75 seconds later
   const crumb = interpolate(t, [L(13) + 4.26, L(14)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
+  // the unnamed bands extinguish across "and which they couldn't"
+  const dimOut = interpolate(t, [L(13) + 3.2, L(14) - 0.15], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const cam = CameraMoves.dollyThrough(p * 0.5, 300);
   return (
     <AccentRegistry accents={[{
@@ -1523,12 +1557,20 @@ const S11: React.FC<SceneProps> = ({from, L}) => {
               <AshReader x={318} y={1160} f={g} scale={1.35} emotion="settled" feed={0} lamp={0} groundY={210} />
               {/* THE CALIPERS, brought in on a human hand: a person choosing another tool */}
               <g opacity={cal}>
-                <DistanceCalipers x={772} y={1300} f={g} span={interpolate(cal, [0, 1], [0.15, 0.72])}
-                                  handIn={cal} scale={1.5} label="CHEMICAL DISTANCE" />
+                <DistanceCalipers
+                  x={772} y={1300} f={g}
+                  /* THE MEASUREMENT IS THE EVENT. The jaws come in nearly closed and STEP open
+                     in two discrete moves on "they measure chemical distance", so the tool does
+                     the thing the line names instead of arriving already set. */
+                  span={interpolate(t,
+                    [L(12) + 0.5, L(12) + 1.4, L(12) + 2.0, L(12) + 3.0, L(12) + 3.6],
+                    [0.08, 0.08, 0.44, 0.44, 0.78],
+                    {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT})}
+                  handIn={cal} scale={1.5} label="CHEMICAL DISTANCE" />
               </g>
               {/* COULD AND COULDN'T, in ONE frame */}
               <g opacity={both}>
-                <g transform="translate(540,878) scale(1.1) translate(-540,-878)"><CouldPanel f={g} x={540} y={830} on={both} slot={slot} /></g>
+                <g transform="translate(540,878) scale(1.1) translate(-540,-878)"><CouldPanel f={g} x={540} y={830} on={both} slot={slot} dim={dimOut} /></g>
               </g>
             </svg>
           </Plane>
@@ -1549,7 +1591,7 @@ const S11: React.FC<SceneProps> = ({from, L}) => {
 };
 
 /** COULD and COULDN'T held in one frame. Named bands steady, unnamed ones honest and open. */
-const CouldPanel: React.FC<{f: number; x: number; y: number; on: number; slot: number}> = ({f, x, y, on, slot}) => {
+const CouldPanel: React.FC<{f: number; x: number; y: number; on: number; slot: number; dim: number}> = ({f, x, y, on, slot, dim}) => {
   const accent = useAccent();
   return (
     <g transform={`translate(${x},${y})`}>
@@ -1572,8 +1614,10 @@ const CouldPanel: React.FC<{f: number; x: number; y: number; on: number; slot: n
         <text x={0} y={-140} textAnchor="middle" fontSize={38} fontFamily={BOLD} fill={BONE}>COULDN'T</text>
         {[0, 1, 2].map((i) => {
           const drift = Math.sin(f / (21 + i * 3.4) + i * 2.4) * 2.2;
+          // they extinguish in sequence: one after another drops out of the lamp's reach
+          const gone = Math.max(0, Math.min(1, (dim - i * 0.24) * 3.2));
           return (
-            <g key={i} transform={`translate(0,${-74 + i * 74 + drift})`} opacity={on}>
+            <g key={i} transform={`translate(0,${-74 + i * 74 + drift})`} opacity={on * (1 - gone * 0.78)}>
               <rect x={-132} y={-20} width={264} height={40} rx={4} fill={ASH} stroke={INK} strokeWidth={4}
                     opacity={0.72} />
               {/* the empty brass slot, cut wide, still open */}
