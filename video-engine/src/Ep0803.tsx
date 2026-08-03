@@ -309,8 +309,10 @@ const Card: React.FC<{x: number; y: number; text: string; sub?: string; w?: numb
         {text}
       </text>
       {sub && (
-        <text x={0} y={38} textAnchor="middle" fill={INK} opacity={0.78}
-              style={{font: `700 27px ${MONO}`}}>{sub}</text>
+        <text x={0} y={38} textAnchor="middle" fill={INK} opacity={0.82}
+              style={{font: `700 ${Math.max(17, Math.min(27, Math.floor((w - 44) / (sub.length * 0.60))))}px ${MONO}`}}>
+          {sub}
+        </text>
       )}
     </g>
   );
@@ -552,7 +554,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
       )}
       <Card x={540} y={CARD_TOP_Y}
             text={recut < 1 ? 'RE-CUT FOR ALASKA' : windows ? 'ONE SAFE DAY' : 'READING DECADES OF WEATHER'}
-            sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, re-cut to the Canadian Forest Fire Weather Index'
+            sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, re-cut to the Canadian FWI'
                            : 'statistical and machine-learning techniques (NSF)'} w={960} />
       <CornerTool f={g} />
     </World>
@@ -602,7 +604,6 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
         <Card x={540} y={CARD_BOT - 20} text="MUNICIPAL / FEDERAL / TRIBAL / NON-PROFIT" w={980} />
       </g>
       <Card x={540} y={CARD_TOP_Y} text="A COUNT YOU CAN HAND OVER" w={780} />
-      <CornerTool f={g} />
     </World>
   );
 };
@@ -656,8 +657,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
         </g>
       ))}
       <Card x={540} y={CARD_BOT - 20} text="THE GRANT PAYS FOR THIS PART TOO"
-            sub="relationship-building + curriculum for a four-year wildland fire program" w={980} />
-      <CornerTool f={g} />
+            sub="+ curriculum for a four-year wildland fire program" w={980} />
     </World>
   );
 };
@@ -715,7 +715,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
                   fill={on ? ENAMEL : '#2b3a35'} stroke={INK} strokeWidth={6} />
             {on && <path d="M-140,0 L-86,0 M-96,-12 L-84,0 L-96,12" stroke={INK} strokeWidth={7} fill="none" />}
             <text x={0} y={8} textAnchor="middle" fill={on ? INK : '#5d6b6d'}
-                  style={{font: `700 21px ${MONO}`}}>{['FORECAST', 'PARTNERS', 'DEGREE'][i]}</text>
+                  style={{font: `700 21px ${MONO}`}}>{['FORECAST', 'PARTNERS', 'CURRICULUM'][i]}</text>
           </g>
         );
       })}
