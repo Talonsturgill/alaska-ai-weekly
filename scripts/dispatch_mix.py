@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-08-02"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-08-03"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -80,52 +80,40 @@ _TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
 VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never hardcode
 
 EVENTS = [
-    # ---- 2026-08-02 "The Copy In The Mud". 12 shots, 16 VO lines, 32 beats.
-    # Every event is motivated by a visible mechanical action, and the times are DERIVED from
-    # the shipped take's vo_lines.json rather than typed, so a re-synth moves the sound with
-    # the picture. The single riser is spent on the signature pull-back onto eight columns,
-    # which is the frame where the film's argument resolves.
-    (0.18, "thud", "hero", -0.2),
-    (1.95, "tick", "texture", -0.1),
-    (7.37, "paper", "standard", 0.0),
-    (9.51, "chain", "hero", -0.3),
-    (11.55, "creak", "texture", 0.25),
-    (13.26, "snap", "hero", -0.25),
-    (14.87, "clank", "standard", 0.0),
-    (18.97, "whoosh", "hero", 0.0),
-    (22.85, "boom", "hero", 0.0),
-    (23.84, "creak", "texture", 0.15),
-    (25.02, "chain", "standard", -0.2),
-    (27.16, "tick", "hero", 0.0),
-    (28.84, "pop", "texture", 0.2),
-    (30.21, "tick", "standard", 0.1),
-    (32.3, "paper", "standard", -0.15),
-    (34.56, "stamp", "hero", 0.0),
-    (38.88, "creak", "texture", 0.0),
-    (39.64, "snap", "hero", 0.0),
-    (42.82, "whoosh", "texture", 0.15),
-    (46.89, "pop", "standard", -0.3),
-    (48.14, "tick", "standard", 0.0),
-    (49.59, "clank", "standard", 0.3),
-    (52.92, "chime", "standard", 0.0),
-    (54.52, "snap", "hero", 0.0),
-    (59.01, "tick", "texture", 0.18),
-    (59.86, "pop", "texture", -0.18),
-    (60.72, "tick", "texture", 0.18),
-    (61.57, "pop", "texture", -0.18),
-    (62.53, "boom", "hero", 0.0),
-    (62.91, "ding", "hero", 0.0),
-    (66.48, "clank", "texture", 0.25),
-    (68.43, "riser", "hero", 0.0),
-    (71.88, "paper", "texture", -0.2),
-    (73.98, "thud", "hero", -0.15),
-    (77.35, "clank", "standard", 0.3),
-    (78.95, "pop", "texture", 0.0),
-    (81.5, "snap", "standard", 0.2),
-    (84.66, "chime", "hero", 0.0),
-    (86.91, "tick", "texture", 0.0),
-    (89.84, "stamp", "hero", 0.0),
-    (93.94, "creak", "texture", -0.25),
+    # ---- 2026-08-03 "The Days You Are Allowed To Burn". 10 shots, 17 VO lines, 30 beats.
+    # Times are DERIVED from the shipped take's vo_lines.json, not typed, so a re-synth moves
+    # the sound with the picture. Every event is motivated by a visible mechanical action in its
+    # own beat. The single riser is spent on the drain, where the prohibition map tears loose.
+    (0.00, "tick", "standard", -0.11),   # THE WASH FLOODS OUT
+    (2.73, "clank", "texture", -0.28),   # THE COUNTER RUNS AWAY
+    (5.00, "pop", "standard", 0.28),   # THE SECOND COUNTER IS DEAD
+    (8.58, "thud", "hero", 0.00),   # NSF SETS DOWN
+    (11.50, "clank", "standard", -0.17),   # UAF SLIDES IN AND LOCKS
+    (14.74, "stamp", "hero", 0.00),   # THE FIGURE STAMPS
+    (17.95, "pop", "standard", 0.00),   # THE TORCH TILTS
+    (20.65, "creak", "texture", 0.08),   # THE LINE CRAWLS
+    (24.21, "tick", "standard", -0.24),   # ONE TREATED PATCH
+    (27.64, "snap", "hero", 0.00),   # THE CRADLE IS EMPTY
+    (31.37, "clank", "standard", 0.11),   # THE ENGINE ASSEMBLES
+    (33.51, "tick", "standard", -0.08),   # THE INTAKE IS RE-CUT
+    (36.06, "thud", "standard", -0.16),   # THE REJECT CHUTE
+    (38.12, "clank", "hero", 0.00),   # THE PUNCH
+    (39.89, "tick", "standard", 0.18),   # PULL BACK ALONG THE RIBBON
+    (42.45, "paper", "standard", 0.01),   # THE SHEET IS PUSHED ACROSS
+    (44.11, "tick", "texture", 0.16),   # THE PLANNER STAYS BEHIND
+    (45.83, "clank", "hero", 0.00),   # FOUR FIELDS COLLIDE
+    (48.35, "thud", "texture", -0.07),   # THE GROUND UNDER ALL FOUR
+    (50.85, "paper", "texture", 0.17),   # FOUR HANDS ARRIVE
+    (54.21, "clank", "standard", -0.21),   # THE PLATES TURN TO FACE
+    (58.30, "tick", "hero", 0.00),   # THE RULE SNAPS IN
+    (60.39, "boom", "standard", 0.07),   # FOUR SEASONS BURN PAST
+    (63.17, "snap", "hero", 0.00),   # THREE ARROWS STRIKE
+    (65.14, "creak", "texture", -0.14),   # THE ARROW DISASSEMBLES
+    (67.96, "clank", "standard", -0.18),   # THE TORCH SWINGS DOWN
+    (70.96, "paper", "texture", 0.19),   # THE BLANK SHEET LOWERS
+    (74.01, "riser", "hero", 0.00),   # THE WASH DRAINS OFF
+    (77.77, "chime", "hero", 0.00),   # THE WINDOWS OPEN
+    (80.75, "tick", "standard", -0.11),   # THE PULASKI FLIPS
 ]
 
 

@@ -49,7 +49,17 @@ TAIL = 2.6  # hold after the last word
 # S10 L10-L11 (out of register + THE SIGNATURE PULL-BACK + the set-down), S11 L12-L13 (the dark
 # bench + the calipers + COULD and COULDN'T + the crumb lands), S12 L14-L15 (the button + the
 # lamp withdrawing onto the unread stripe, which is frame 1 unlit).
-SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 14]
+# 2026-08-03 "The Days You Are Allowed To Burn": 10 shots onto 17 VO lines, derived FROM the
+# beat table rather than written alongside it (the Gate 0C finding that killed the first board:
+# beats had been re-timed and re-anchored while the shots kept their old boundaries, so seven
+# beats played inside shots that did not contain their subject).
+# S1 L0-L1 (the wash + the paired counters), S2 L2 (the award plates + the stamp),
+# S3 L3-L4 (the drip torch + the flame line + one treated patch), S4 L5 (the empty cradle),
+# S5 L6-L7 (the engine assembles, the intake re-cut, the reject chute, THE PUNCH, the pullback),
+# S6 L8-L9 (the sheet handed across + the four fields colliding), S7 L10-L11 (four hands + the
+# plates turning), S8 L12-L13 (the 2026-2030 rule + the empty liability box), S9 L14 (the waiting
+# crew), S10 L15-L16 (the wash drains, the windows open, the pulaski flips).
+SCENE_START_LINE = [0, 2, 3, 5, 6, 8, 10, 12, 14, 15]
 
 
 def _apply_caption_fixups(caps):
