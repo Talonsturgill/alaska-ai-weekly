@@ -75,6 +75,45 @@ const FALLBACK_LINES = [
 type SceneProps = {from: number; total: number; L: (i: number) => number};
 
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
+
+/** A BURN WINDOW, form-shaded. The panel's sharpest craft note was that the green
+ *  chips were single-tone fills inside an outline, which made the film's only accent
+ *  and its entire data payload the flattest object on screen. A window is a cut
+ *  APERTURE, so it gets a lit top-left bevel, a shaded lower-right return, a bone
+ *  rim on the light side and an inner occlusion line. */
+const WindowChip: React.FC<{
+  x: number; y: number; w: number; h: number; fill: string; dashed?: boolean;
+}> = ({x, y, w, h, fill, dashed = false}) => {
+  const id = `wc${Math.round(x)}${Math.round(y)}${w}`;
+  if (dashed) {
+    return (
+      <g>
+        <rect x={x} y={y} width={w} height={h} rx={3} fill="none"
+              stroke={BONE} strokeWidth={4} strokeDasharray="9 7" opacity={0.95} />
+        <rect x={x} y={y} width={w} height={h} rx={3} fill="none"
+              stroke={INK} strokeWidth={1.6} strokeDasharray="9 7" opacity={0.5} />
+      </g>
+    );
+  }
+  return (
+    <g>
+      <defs>
+        <linearGradient id={id} x1="0" y1="0" x2="0.7" y2="1">
+          <stop offset="0%" stopColor="#7ee0ab" />
+          <stop offset="52%" stopColor={fill} />
+          <stop offset="100%" stopColor="#2a8f5e" />
+        </linearGradient>
+      </defs>
+      <rect x={x} y={y} width={w} height={h} rx={3} fill={`url(#${id})`} stroke={INK} strokeWidth={4} />
+      {/* the lit bevel return, top and left */}
+      <path d={`M${x + 3},${y + h - 3} L${x + 3},${y + 3} L${x + w - 3},${y + 3}`}
+            fill="none" stroke="#c9f5dd" strokeWidth={3} opacity={0.75} />
+      {/* the occluded return, bottom and right */}
+      <path d={`M${x + 3},${y + h - 3} L${x + w - 3},${y + h - 3} L${x + w - 3},${y + 3}`}
+            fill="none" stroke="#1d6b46" strokeWidth={3} opacity={0.8} />
+    </g>
+  );
+};
 /** deterministic hash; never Math.random (it re-rolls every frame) */
 const hh = (i: number, s = 1) => {
   const x = Math.imul(i * 2654435761 + s * 40503, 2246822519);
@@ -244,7 +283,7 @@ const Counter: React.FC<{
         {blur ? '███' : value}
       </text>
       <text x={0} y={48} textAnchor="middle" fill={INK}
-            style={{font: `700 17px ${MONO}`, letterSpacing: 1}}>{label}</text>
+            style={{font: `700 22px ${MONO}`, letterSpacing: 1}}>{label}</text>
       {[-56, 56].map((sx) => (
         <circle key={sx} cx={sx} cy={-42} r={4} fill={body.shade} stroke={INK} strokeWidth={2} />
       ))}
@@ -271,24 +310,24 @@ const Card: React.FC<{x: number; y: number; text: string; sub?: string; w?: numb
       </text>
       {sub && (
         <text x={0} y={38} textAnchor="middle" fill={INK} opacity={0.78}
-              style={{font: `600 23px ${MONO}`}}>{sub}</text>
+              style={{font: `700 27px ${MONO}`}}>{sub}</text>
       )}
     </g>
   );
 };
 
 /** every scene mounts this: haze volume + dark anchor + grade */
-const World: React.FC<{f: number; children: React.ReactNode; anchorY?: number; hazeAmt?: number}> = ({
-  f, children, anchorY = 1480, hazeAmt = 1,
+const World: React.FC<{f: number; children: React.ReactNode; anchorY?: number; hazeAmt?: number; interior?: boolean}> = ({
+  f, children, anchorY = 1480, hazeAmt = 1, interior = false,
 }) => (
   <>
     <AbsoluteFill style={{background: `linear-gradient(180deg, #f0d8b6 0%, ${SKY} 46%, #d9b291 100%)`}} />
     <AbsoluteFill>
       <svg viewBox="0 0 1080 1920" width="100%" height="100%">
         <MaterialDefs />
-        <FarRidge f={f} y={Math.min(1040, anchorY - 380)} />
-        <Haze f={f} amount={0.85 * hazeAmt} />
-        <SpruceWall f={f} y={anchorY} />
+        {!interior && <FarRidge f={f} y={Math.min(1040, anchorY - 380)} />}
+        {!interior && <Haze f={f} amount={0.85 * hazeAmt} />}
+        {!interior && <SpruceWall f={f} y={anchorY} />}
         {children}
       </svg>
     </AbsoluteFill>
@@ -352,7 +391,7 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
                 fill="#d8cfbb" stroke={INK} strokeWidth={6} />
           <line x1={-90} y1={20} x2={90} y2={20} stroke={INK} strokeWidth={4} opacity={0.35} />
           <text x={0} y={-4} textAnchor="middle" fill={INK} opacity={0.42}
-                style={{font: `700 22px ${MONO}`}}>ARRIVES</text>
+                style={{font: `700 26px ${MONO}`}}>ARRIVES</text>
         </g>
       </g>
       <CornerTool f={g} />
@@ -513,7 +552,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
       )}
       <Card x={540} y={CARD_TOP_Y}
             text={recut < 1 ? 'RE-CUT FOR ALASKA' : windows ? 'ONE SAFE DAY' : 'READING DECADES OF WEATHER'}
-            sub={recut < 1 ? 'the Lower 48 planner does not speak the Canadian Fire Weather Index'
+            sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, re-cut to the Canadian Forest Fire Weather Index'
                            : 'statistical and machine-learning techniques (NSF)'} w={960} />
       <CornerTool f={g} />
     </World>
@@ -534,7 +573,7 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
     {a: 20, c: '#b8894a'}, {a: 70, c: '#7d8f92'}, {a: 115, c: '#8a6a52'}, {a: 160, c: '#5f7a6a'},
   ];
   return (
-    <World f={g} anchorY={1600} hazeAmt={0.6}>
+    <World f={g} anchorY={1600} hazeAmt={0.6} interior>
       {/* the plank table IS the dark anchor */}
       <rect x={0} y={620} width={1080} height={900} fill="#3b2f24" stroke={INK} strokeWidth={7} />
       {Array.from({length: 6}).map((_, i) => (
@@ -546,12 +585,11 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
         <rect x={-160} y={-110} width={320} height={220} rx={6}
               fill="#efeade" stroke={INK} strokeWidth={6} />
         {[0, 1, 2].map((i) => (
-          <rect key={i} x={-110 + i * 78} y={-30} width={40} height={54} rx={3}
-                fill={accentBox(BURNABLE, 100 + push * 300 + i * 78, 870, 40, 54)}
-                stroke={INK} strokeWidth={4} />
+          <WindowChip key={i} x={-110 + i * 78} y={-30} w={40} h={54}
+                      fill={accentBox(BURNABLE, 100 + push * 300 + i * 78, 870, 40, 54)} />
         ))}
         <text x={0} y={-58} textAnchor="middle" fill={INK}
-              style={{font: `700 22px ${MONO}`}}>SAFE DAYS</text>
+              style={{font: `700 26px ${MONO}`}}>SAFE DAYS</text>
       </g>
       {/* four hatched jurisdictions colliding over one piece of ground */}
       <g opacity={fields}>
@@ -584,15 +622,15 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
     {x: 190, y: 1180, r: 0}, {x: 890, y: 1180, r: 180},
   ];
   return (
-    <World f={g} anchorY={1620} hazeAmt={0.45}>
+    <World f={g} anchorY={1620} hazeAmt={0.45} interior>
       <rect x={0} y={560} width={1080} height={1060} fill="#3b2f24" stroke={INK} strokeWidth={7} />
       {/* the sheet, close, lit from beneath through its own holes */}
       <g transform="translate(540,960)">
         <rect x={-250} y={-170} width={500} height={340} rx={8}
               fill="#efeade" stroke={INK} strokeWidth={7} />
         {[0, 1, 2].map((i) => (
-          <rect key={i} x={-170 + i * 120} y={-50} width={62} height={86} rx={4}
-                fill={accentBox(BURNABLE, 370 + i * 120, 910, 62, 86)} stroke={INK} strokeWidth={5} />
+          <WindowChip key={i} x={-170 + i * 120} y={-50} w={62} h={86}
+                      fill={accentBox(BURNABLE, 370 + i * 120, 910, 62, 86)} />
         ))}
       </g>
       {/* four hands stopping short, then landing */}
@@ -612,13 +650,13 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
         <g key={`p${i}`} transform={`translate(${s.x},${s.y - 130}) rotate(${(1 - turn) * (i % 2 ? 40 : -40)})`}>
           <rect x={-84} y={-26} width={168} height={52} rx={6}
                 fill={ENAMEL} stroke={INK} strokeWidth={5} />
-          <text x={0} y={8} textAnchor="middle" fill={INK} style={{font: `700 19px ${MONO}`}}>
+          <text x={0} y={8} textAnchor="middle" fill={INK} style={{font: `700 23px ${MONO}`}}>
             {['MUNICIPAL', 'FEDERAL', 'TRIBAL', 'NON-PROFIT'][i]}
           </text>
         </g>
       ))}
       <Card x={540} y={CARD_BOT - 20} text="THE GRANT PAYS FOR THIS PART TOO"
-            sub="sustained relationship-building + a new four-year wildland fire degree" w={980} />
+            sub="relationship-building + curriculum for a four-year wildland fire program" w={980} />
       <CornerTool f={g} />
     </World>
   );
@@ -641,13 +679,17 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
       {/* the machined rule */}
       <g opacity={rule}>
         <rect x={90} y={700} width={900 * rule} height={22} rx={4} fill={STEELOX} stroke={INK} strokeWidth={5} />
-        {[0, 1, 2, 3, 4].map((i) => (
-          <g key={i} opacity={rule * 4 > i ? 1 : 0}>
-            <line x1={110 + i * 218} y1={700} x2={110 + i * 218} y2={664} stroke={INK} strokeWidth={6} />
-            <text x={110 + i * 218} y={646} textAnchor="middle" fill={BONE}
-                  style={{font: `700 24px ${MONO}`}}>{2026 + i}</text>
-          </g>
-        ))}
+        {[0, 1, 2, 3, 4].map((i) => {
+          const last = i === 4;
+          return (
+          <g key={i} opacity={rule * 5 > i ? 1 : 0}>
+            <line x1={110 + i * 218} y1={700} x2={110 + i * 218} y2={last ? 652 : 664}
+                  stroke={last ? '#ffd98a' : INK} strokeWidth={last ? 9 : 6} />
+            <text x={110 + i * 218} y={last ? 634 : 646} textAnchor="middle"
+                  fill={last ? '#ffd98a' : BONE}
+                  style={{font: `${last ? 900 : 700} ${last ? 30 : 24}px ${MONO}`}}>{2026 + i}</text>
+          </g>);
+        })}
       </g>
       {/* four stands burning and regrowing, untreated */}
       {[0, 1, 2, 3].map((i) => {
@@ -673,7 +715,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
                   fill={on ? ENAMEL : '#2b3a35'} stroke={INK} strokeWidth={6} />
             {on && <path d="M-140,0 L-86,0 M-96,-12 L-84,0 L-96,12" stroke={INK} strokeWidth={7} fill="none" />}
             <text x={0} y={8} textAnchor="middle" fill={on ? INK : '#5d6b6d'}
-                  style={{font: `700 17px ${MONO}`}}>{['FORECAST', 'PARTNERS', 'DEGREE'][i]}</text>
+                  style={{font: `700 21px ${MONO}`}}>{['FORECAST', 'PARTNERS', 'DEGREE'][i]}</text>
           </g>
         );
       })}
@@ -681,7 +723,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
         <rect x={-150} y={-42} width={300} height={84} rx={0}
               fill="none" stroke={INK} strokeWidth={6} strokeDasharray="18 14" />
         <text x={0} y={8} textAnchor="middle" fill={BONE} opacity={0.85}
-              style={{font: `700 20px ${MONO}`}}>LIABILITY</text>
+              style={{font: `700 24px ${MONO}`}}>LIABILITY</text>
         {/* the arrow that reaches the contour and comes apart */}
         <g opacity={1 - dis}>
           <path d={`M${-320 + dis * 140},0 L${-166},0`} stroke={INK} strokeWidth={7} fill="none" />
@@ -710,10 +752,18 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
   return (
     <World f={g} anchorY={1120}>
       {/* the crew, at ~20% of frame height so they read as PEOPLE not specks */}
-      {[0, 1, 2].map((i) => (
-        <g key={i} transform={`translate(${340 + i * 190},1210) scale(1.5)`}>
-          <Character frame={g} pose={i === 0 ? 'stand' : 'arms-crossed'} emotion="neutral"
-                     outfit="vest" headgear="cap" />
+      {[
+        {x: 320, sc: 1.42, pose: 'stand' as const, emo: 'worried' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const},
+        {x: 540, sc: 1.58, pose: 'arms-crossed' as const, emo: 'neutral' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const},
+        {x: 748, sc: 1.34, pose: 'stand' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const},
+      ].map((c, i) => (
+        <g key={i}>
+          {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}
+          <ellipse cx={c.x} cy={1188} rx={52 * c.sc} ry={11} fill={SHADOW} opacity={0.42} />
+          <g transform={`translate(${c.x},1180) scale(${c.sc})`}>
+            <Character frame={g + i * 37} pose={c.pose} emotion={c.emo}
+                       outfit={c.out} headgear={c.hat} facing={c.face} />
+          </g>
         </g>
       ))}
       {/* the unlit torch swings down and knocks the boot */}
@@ -726,13 +776,13 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         <rect x={-92} y={-64} width={184} height={128} rx={6}
               fill="#efeade" stroke={INK} strokeWidth={6} />
         <text x={0} y={6} textAnchor="middle" fill={INK} opacity={0.4}
-              style={{font: `700 20px ${MONO}`}}>NO DAY</text>
+              style={{font: `700 24px ${MONO}`}}>NO DAY</text>
       </g>
       {/* the engine, a pale speck deep in the haze */}
       <g opacity={0.42} transform="translate(880,900) scale(0.2)">
         <BurnWindowEngine x={0} y={0} f={g} feed={1} groundY={120} />
       </g>
-      <Card x={540} y={CARD_BOT - 20} text="A CREW WITH NO DAY TO GO ON" w={840} />
+      <Card x={540} y={CARD_TOP_Y} text="A CREW WITH NO DAY TO GO ON" w={840} />
       <CornerTool f={g} />
     </World>
   );
@@ -771,13 +821,12 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
           const wh = w.hero ? 118 : 58;
           return (
             <g key={i} opacity={p}>
-              <rect x={w.x - ww / 2} y={w.y - wh / 2} width={ww} height={wh} rx={3}
-                    fill={harden > 0.5 ? accentBox(BURNABLE, w.x - ww / 2, w.y - wh / 2, ww, wh) : 'none'}
-                    stroke={INK} strokeWidth={harden > 0.5 ? 4 : 3}
-                    strokeDasharray={harden > 0.5 ? undefined : '10 8'} />
+              <WindowChip x={w.x - ww / 2} y={w.y - wh / 2} w={ww} h={wh}
+                          dashed={harden <= 0.5}
+                          fill={harden > 0.5 ? accentBox(BURNABLE, w.x - ww / 2, w.y - wh / 2, ww, wh) : BURNABLE} />
               {w.hero && harden > 0.6 && (
                 <text x={w.x} y={w.y + wh / 2 + 30} textAnchor="middle" fill={INK}
-                      style={{font: `700 22px ${MONO}`}}>2030</text>
+                      style={{font: `700 26px ${MONO}`}}>2030</text>
               )}
             </g>
           );

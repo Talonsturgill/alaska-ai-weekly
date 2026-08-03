@@ -340,7 +340,10 @@ export const BurnWindowEngine: React.FC<{
             <g key={i}>
               <rect x={wx} y={-11} width={19} height={22} rx={2}
                     fill={windowFill || BURNABLE} stroke={INK} strokeWidth={3} />
-              <rect x={wx + 3} y={-8} width={13} height={5} rx={1} fill="#ffffff" opacity={0.42} />
+              <path d={`M${wx + 2},${9} L${wx + 2},${-9} L${wx + 17},${-9}`} fill="none"
+                    stroke="#c9f5dd" strokeWidth={2.4} opacity={0.8} />
+              <path d={`M${wx + 2},${9} L${wx + 17},${9} L${wx + 17},${-9}`} fill="none"
+                    stroke="#1d6b46" strokeWidth={2.4} opacity={0.85} />
             </g>
           );
         })}
@@ -382,10 +385,19 @@ export const PunchedWindow: React.FC<{
                 fill={`url(#${id}beam)`} />
         </g>
       )}
+      <defs>
+        <linearGradient id={`${id}f`} x1="0" y1="0" x2="0.7" y2="1">
+          <stop offset="0%" stopColor="#7ee0ab" />
+          <stop offset="52%" stopColor={fill || BURNABLE} />
+          <stop offset="100%" stopColor="#2a8f5e" />
+        </linearGradient>
+      </defs>
       <rect x={-w / 2} y={-hgt / 2} width={w} height={hgt} rx={3}
-            fill={fill || BURNABLE} stroke={INK} strokeWidth={6} />
-      <rect x={-w / 2 + 8} y={-hgt / 2 + 8} width={w * 0.34} height={hgt * 0.2} rx={2}
-            fill="#ffffff" opacity={0.4} />
+            fill={`url(#${id}f)`} stroke={INK} strokeWidth={6} />
+      <path d={`M${-w / 2 + 5},${hgt / 2 - 5} L${-w / 2 + 5},${-hgt / 2 + 5} L${w / 2 - 5},${-hgt / 2 + 5}`}
+            fill="none" stroke="#c9f5dd" strokeWidth={4} opacity={0.8} />
+      <path d={`M${-w / 2 + 5},${hgt / 2 - 5} L${w / 2 - 5},${hgt / 2 - 5} L${w / 2 - 5},${-hgt / 2 + 5}`}
+            fill="none" stroke="#1d6b46" strokeWidth={4} opacity={0.85} />
       {label && (
         <text x={0} y={hgt / 2 + 34} textAnchor="middle" fill={INK}
               style={{font: `700 ${Math.round(w * 0.2)}px "JetBrains Mono", ui-monospace, monospace`}}>
