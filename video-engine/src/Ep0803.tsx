@@ -194,7 +194,7 @@ const AlaskaField: React.FC<{
 
 /** the corner icon, PLANTED in shot 1 so the button has something to flip */
 const CornerTool: React.FC<{f: number; flip?: number; x?: number; y?: number}> = ({
-  f, flip = 0, x = 940, y = 1330,
+  f, flip = 0, x = 952, y = 1118,
 }) => {
   const p = clamp01(flip);
   const rot = p * 180;
