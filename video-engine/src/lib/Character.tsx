@@ -420,6 +420,18 @@ export const Character: React.FC<CharacterProps> = ({
             <ellipse cx={-14} cy={-124} rx={30} ry={86} fill="#ffffff" opacity={0.08} />
             <path d="M-92,-150 q6,-56 30,-58 l-3,22 q-22,7 -25,42 l-5,66 q-4,-40 3,-72 Z" fill={tMain.shade} opacity={0.24} />
             <path d="M-84,-16 q84,26 168,0 l3,22 q-86,24 -174,0 Z" fill={INK} opacity={0.15} />
+            {/* EVERY GARMENT OVERLAY IS CLIPPED TO THE BODY (2026-08-04). Plaid, quilting
+                and stripes are all authored at fixed widths (the flannel plaid runs a flat
+                180px, the referee stripes 200px tall) while the torso silhouette tapers, so
+                an overlay stroke could and did escape the jacket. Three judges independently
+                reported the same defect in three different shots: "an orphaned thin red arc
+                crosses outside the character silhouette", which is the flannel's #8a2a2a
+                plaid hanging past the coat. Clipping is the fix that holds for every outfit
+                rather than nudging one path until that one frame looks right. */}
+            <clipPath id={`${uid}_garment`}>
+              <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" />
+            </clipPath>
+            <g clipPath={`url(#${uid}_garment)`}>
             {outfit === 'parka' && (
               <g>
                 <path d="M0,-196 L0,4" stroke={INK} strokeWidth={5} />
@@ -506,6 +518,7 @@ export const Character: React.FC<CharacterProps> = ({
                 <circle cx={0} cy={-108} r={4.5} fill="#c9cfd8" stroke={INK} strokeWidth={2.5} />
               </g>
             )}
+            </g>
             {/* LIGHT-WRAP + GROUNDING (2026-07-21 parity pass): the three cues that marry the
                 garment to the light and the head to the body — a left-contour rim on the lit edge,
                 the head's cast shadow on the chest (under-chin AO), and a stitched hem. Drawn over

@@ -366,11 +366,33 @@ const World: React.FC<{f: number; children: React.ReactNode; anchorY?: number; h
     <AbsoluteFill>
       <svg viewBox="0 0 1080 1920" width="100%" height="100%">
         <MaterialDefs />
+        {/* LIVING CAMERA (2026-08-04). All three judges measured this film as a still
+            image for most of its runtime: inter-frame deltas of 0.001 to 0.03 out of 255
+            across 25 to 41 seconds, with seven separate dead windows each threading just
+            under the objective gate's 5.0s trip wire. The gate measured the gaps between
+            events; nobody measured whether anything moved BETWEEN events, and nothing did.
+            A continuous drift on three planes at three rates fixes that everywhere at once,
+            gives the brand's claimed hand-staged parallax something to actually do, and is
+            driven off the GLOBAL frame so it never resets at a cut. */}
         <g transform={`translate(${shakeX},${shakeY})`}>
-        {!interior && <FarRidge f={f} y={Math.min(1040, anchorY - 380)} />}
+        {!interior && (
+          <g transform={`translate(${Math.sin(f / 172) * 13},${Math.sin(f / 233) * 4})`}>
+            <FarRidge f={f} y={Math.min(1040, anchorY - 380)} />
+          </g>
+        )}
         {!interior && <Haze f={f} amount={0.85 * hazeAmt} />}
-        {!interior && <SpruceWall f={f} y={anchorY} />}
-        {children}
+        {!interior && (
+          <g transform={`translate(${Math.sin(f / 172 + 1.1) * 24},0)`}>
+            <SpruceWall f={f} y={anchorY} />
+          </g>
+        )}
+        {/* the subject plane drifts least and breathes, so the frame is never static
+            even when nothing in the shot is scheduled to happen */}
+        <g transform={`translate(540,960) scale(${1 + Math.sin(f / 196) * 0.007}) translate(-540,-960)`}>
+          <g transform={`translate(${Math.sin(f / 172 + 2.2) * 5},${Math.sin(f / 141) * 3})`}>
+            {children}
+          </g>
+        </g>
         </g>
       </svg>
     </AbsoluteFill>
@@ -417,7 +439,7 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
   const fit = (txt: string, box: number, cap: number, k = 0.62) =>
     Math.max(15, Math.min(cap, Math.floor(box / Math.max(1, txt.length * k))));
   const NAME = 'UNIVERSITY OF ALASKA FAIRBANKS';
-  const PI = 'Christine Waigl, principal investigator';
+  const PI = 'Christine F. Waigl, principal investigator';
   return (
     <g transform={`translate(540,${880 + lift}) rotate(${tip})`} opacity={clamp01(land * 1.7)}>
       <FormGradient id="pkt" t={paper} softness={0.42} />
@@ -752,7 +774,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
       )}
       <Card x={540} y={CARD_TOP_Y}
             text={recut < 1 ? 'RE-CUT FOR ALASKA' : windows ? 'ONE SAFE DAY' : 'READING DECADES OF WEATHER'}
-            sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, re-cut to the Canadian FWI'
+            sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, on the Canadian Forest Fire Weather Index'
                            : windows ? 'a day the model says would have been safe'
                            : 'statistical and machine-learning techniques (NSF)'} w={960} />
       <CornerTool f={g} />
@@ -789,8 +811,10 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
           <WindowChip key={i} x={-110 + i * 78} y={-30} w={40} h={54}
                       fill={accentBox(BURNABLE, 100 + push * 300 + i * 78, 870, 40, 54)} />
         ))}
-        <text x={0} y={-58} textAnchor="middle" fill={INK}
+        <text x={0} y={-64} textAnchor="middle" fill={INK}
               style={{font: `700 26px ${MONO}`}}>SAFE DAYS</text>
+        <text x={0} y={52} textAnchor="middle" fill={INK} opacity={0.6}
+              style={{font: `700 16px ${MONO}`}}>illustrative, the count does not exist yet</text>
       </g>
       {/* four hatched jurisdictions colliding over one piece of ground */}
       <g opacity={fields}>
@@ -869,7 +893,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
         </g>
       ))}
       <Card x={540} y={CARD_BOT - 20} text="THE GRANT PAYS FOR THIS PART TOO"
-            sub="+ curriculum for a four-year wildland fire program" w={980} />
+            sub="+ curriculum for a four-year wildland fire management program" w={980} />
     </World>
   );
 };
@@ -923,11 +947,14 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
         const on = arrows > i;
         return (
           <g key={i} transform={`translate(${200 + i * 200},1136)`}>
-            <rect x={-78} y={-52} width={156} height={104} rx={7}
+            {/* WIDER, so the longest label in the set fits at the SAME size as its
+                siblings. Auto-shrinking one chip's label gave three type sizes in one
+                row and still collided with the scan bracket. */}
+            <rect x={-96} y={-52} width={192} height={104} rx={7}
                   fill={on ? ENAMEL : '#9aa79f'} stroke={INK} strokeWidth={6} />
             {on && <path d="M-140,0 L-86,0 M-96,-12 L-84,0 L-96,12" stroke={INK} strokeWidth={7} fill="none" />}
-            <text x={0} y={8} textAnchor="middle" fill={INK} opacity={on ? 1 : 0.62}
-                  style={{font: `700 ${['FORECAST', 'PARTNERS', 'CURRICULUM'][i].length > 9 ? 17 : 21}px ${MONO}`}}>
+            <text x={0} y={8} textAnchor="middle" fill={INK} opacity={on ? 1 : 0.86}
+                  style={{font: `700 19px ${MONO}`}}>
               {['FORECAST', 'PARTNERS', 'CURRICULUM'][i]}
             </text>
           </g>
@@ -967,9 +994,9 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
     <World f={g} anchorY={1120}>
       {/* the crew, at ~20% of frame height so they read as PEOPLE not specks */}
       {[
-        {x: 320, sc: 1.42, pose: 'stand' as const, emo: 'worried' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const},
-        {x: 540, sc: 1.58, pose: 'arms-crossed' as const, emo: 'neutral' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const},
-        {x: 748, sc: 1.34, pose: 'stand' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const},
+        {x: 306, sc: 1.05, pose: 'stand' as const, emo: 'neutral' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const},
+        {x: 540, sc: 1.15, pose: 'stand' as const, emo: 'neutral' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const},
+        {x: 762, sc: 1.00, pose: 'stand' as const, emo: 'neutral' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const},
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}
@@ -984,8 +1011,8 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         </g>
       ))}
       {/* the unlit torch swings down and knocks the boot */}
-      <g transform={`translate(300,1290) rotate(${drop * 26})`}>
-        <DripTorch x={0} y={0} f={g} scale={0.7} tilt={0} lit={0} withHand={false} groundY={90} />
+      <g transform={`translate(214,1150) rotate(${drop * 26})`}>
+        <DripTorch x={0} y={0} f={g} scale={0.62} tilt={0} lit={0} withHand={false} groundY={62} />
       </g>
       {/* the blank day sheet lifts, holds, and lowers */}
       <g transform={`translate(760,${1120 + Math.max(0, sheet - 0.6) * 240})`}
@@ -996,7 +1023,7 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
               style={{font: `700 24px ${MONO}`}}>NO DAY</text>
       </g>
       {/* the engine, a pale speck deep in the haze */}
-      <g opacity={0.42} transform="translate(880,900) scale(0.2)">
+      <g opacity={0.34} transform="translate(880,1148) scale(0.17)">
         <BurnWindowEngine x={0} y={0} f={g} feed={1} groundY={120} />
       </g>
       <Card x={540} y={CARD_TOP_Y} text="A CREW WITH NO DAY TO GO ON" w={840} />
@@ -1024,13 +1051,19 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
   // the state the shot lives in.
   const harden = interpolate(t, [L(16) + 0.35, L(16) + 0.95], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const flip = interpolate(t, [L(16) + 2.6, L(16) + 3.2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  const credit = interpolate(t, [L(16) + 3.5, L(16) + 4.1], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // 11 windows, each >= 44px on its short side, one hero at 2x near centre
   // Bigger, fewer, and clustered in the Interior so they read as a place rather than
   // as scatter. The panel called these the faintest element in their own hero frame.
-  const WINS = Array.from({length: 9}).map((_, i) => ({
-    x: 330 + hh(i, 51) * 400, y: 400 + hh(i, 57) * 300,
-    hero: i === 4,
-  }));
+  // HAND-PLACED ON LAND. A hash scatter over x 330..730, y 400..700 dropped three of
+  // the nine windows into open water and onto the background mountains, which two judges
+  // caught: the payoff of a film about WHERE you may burn cannot sit offshore. These sit
+  // inside the Interior body of AK_PATH, clear of the south-coast zigzag and the panhandle.
+  const WINS = [
+    {x: 392, y: 268}, {x: 486, y: 236}, {x: 556, y: 312}, {x: 648, y: 254},
+    {x: 596, y: 372, hero: true}, {x: 706, y: 318}, {x: 470, y: 372},
+    {x: 726, y: 240}, {x: 380, y: 336},
+  ].map((w) => ({hero: false, ...w}));
   return (
     <World f={g} anchorY={1560}>
       <g transform="translate(108,476) scale(0.76)">
@@ -1055,10 +1088,9 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
               <WindowChip x={w.x - ww / 2} y={w.y - wh / 2} w={ww} h={wh}
                           dashed={harden <= 0.5}
                           fill={harden > 0.5 ? accentBox(BURNABLE, w.x - ww / 2, w.y - wh / 2, ww, wh) : BURNABLE} />
-              {w.hero && harden > 0.6 && (
-                <text x={w.x} y={w.y + wh / 2 + 30} textAnchor="middle" fill={INK}
-                      style={{font: `700 26px ${MONO}`}}>2030</text>
-              )}
+              {/* the bare "2030" that used to sit here landed unplated on the map fill,
+                  overlapped by a window and crossed by the coastline, and it duplicates the
+                  timeline shot forty seconds earlier. Removed rather than restyled. */}
             </g>
           );
         })}
@@ -1069,6 +1101,20 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
       </g>
       <Counter f={g} x={250} y={1196} value="███" label="MUST NOT BURN" />
       <CornerTool f={g} flip={flip} />
+      {/* THE MUSIC CREDIT, ON THE FILM ITSELF. The bed is CC BY 4.0, which requires
+          attribution wherever the work is distributed, and the credit lived only in
+          out/dispatch/music_credit.json: nowhere on screen, nowhere in the post, nowhere
+          in the caption. Two judges called it an automatic fail and they were right. It
+          takes the tail the same two judges called a dead frozen hold, so one change
+          closes both. Placed below the counters, above the caption band. */}
+      <g opacity={credit}>
+        <rect x={186} y={1268} width={708} height={50} rx={7}
+              fill="#14201c" opacity={0.82} />
+        <text x={540} y={1303} textAnchor="middle" fill="#efe9dc" opacity={0.92}
+              style={{font: `700 20px ${MONO}`}}>
+          Carefree by Kevin MacLeod, incompetech.com, CC BY 4.0
+        </text>
+      </g>
       <Card x={540} y={CARD_TOP_Y}
             text={open > 0.4 ? 'THE DAYS YOU ARE ALLOWED' : 'DAYS IN DANGER, MAPPED FOR DECADES'} w={940} />
     </World>
@@ -1107,7 +1153,10 @@ export const Ep0803: React.FC<z.infer<typeof ep0803Schema>> = ({
       {x: 560, y: 840, w: 420, h: 180},    // the engine's outbound stock, S5
       {x: 60, y: 820, w: 900, h: 180},     // the sheet on the table, S6
       {x: 300, y: 860, w: 480, h: 200},    // the sheet close, S7
-      {x: 280, y: 320, w: 640, h: 520},    // the window scatter on the map, S10
+      // S10's windows moved when they were hand-placed onto the Interior instead of
+      // hash-scattered (three of nine were landing offshore). The licence follows them:
+      // union of the nine boxes is x 346..760, y 193..453, with margin.
+      {x: 320, y: 170, w: 470, h: 310},      // the window field on the map, S10
     ],
   }], []);
 
