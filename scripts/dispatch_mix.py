@@ -163,6 +163,11 @@ BED_ARC = [
     (73.9, 1.26),   # the wash drains
     (77.7, 1.55),   # the windows open. The payoff, and the loudest the bed gets.
     (81.2, 1.20),   # tail under the credit
+    # RESOLVE, DON'T CUT. A judge measured the bed still at about -25 dBFS a tenth of a
+    # second from the last frame, ramping off in roughly 60ms, so the film's final audible
+    # moment was a splice rather than an ending. Fade it under the credit card instead.
+    (82.4, 0.72),
+    (83.7, 0.00),
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,

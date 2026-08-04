@@ -744,14 +744,20 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
             windowFill={accentBox(BURNABLE, 660, 900, 40, 44)} />
         </g>
         {/* THE PUNCH HEAD, big enough to read, driving down onto the stock */}
-        <g opacity={build} transform={`translate(838,${596 + punch * 300})`}>
+        {/* GEOMETRY REWORKED so the head stays on the plate. At base 596 with 300 of
+            travel, the reared-back head topped out at y=356: sliced by the square crop at
+            420 and bisected by the title card's baseplate at 485..575, which two judges
+            read as an accidental off-canvas placement rather than a machine. Shorter head,
+            shorter travel, same contact point at 926, so the move still lands on the stock
+            and the whole tool is inside the frame through the entire stroke. */}
+        <g opacity={build} transform={`translate(838,${756 + punch * 140})`}>
           <MotionBlur vy={punchVel * 70} gain={1.2}>
-            <rect x={-46} y={-150} width={92} height={150} rx={6}
+            <rect x={-46} y={-118} width={92} height={118} rx={6}
                   fill={STEELOX} stroke={INK} strokeWidth={6} />
             {/* the compression spring visibly loads as the head rears back */}
             {[0, 1, 2, 3].map((i) => (
-              <line key={i} x1={-34} y1={-140 + i * (30 + punch * -14)}
-                    x2={34} y2={-126 + i * (30 + punch * -14)}
+              <line key={i} x1={-34} y1={-108 + i * (24 + punch * -10)}
+                    x2={34} y2={-96 + i * (24 + punch * -10)}
                     stroke={INK} strokeWidth={5} opacity={0.55} />
             ))}
             {/* hardened cutting shoe, reusing CoringTube's geometry idea */}
@@ -801,7 +807,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
       <Card x={540} y={CARD_TOP_Y}
             text={recut < 1 ? 'RE-CUT FOR ALASKA' : windows ? 'ONE SAFE DAY' : 'READING DECADES OF WEATHER'}
             sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, on the Canadian Forest Fire Weather Index (NSF)'
-                           : windows ? 'a day the model says would have been safe'
+                           : windows ? 'a day a model would have called safe'
                            : 'statistical and machine-learning techniques (NSF)'} w={960} />
       <CornerTool f={g} />
     </World>

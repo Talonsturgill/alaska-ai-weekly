@@ -34,7 +34,7 @@ MOVES = [
     # between two samples, so a judge reported that the exact figure "does not appear on
     # screen at any sampled second" and marked claims c1's stated safeguard unmet. It was
     # on screen the whole time. The film's single most important frame gets its own strip.
-    ("award", 2, 7.05),      # the OBLIGATED stamp presses and $1,588,147 lands
+    ("award", 2, 4.75),      # the OBLIGATED stamp presses and $1,588,147 lands
     ("punch", 7, 0.78),      # the punch head drives and cuts the window
     ("drain", 15, 1.30),     # the ember wash tears loose and runs off frame
     ("windows", 16, 1.10),   # the apertures open across the map and harden
