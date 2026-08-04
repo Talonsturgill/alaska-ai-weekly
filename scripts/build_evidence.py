@@ -34,7 +34,7 @@ MOVES = [
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--video", default=os.path.join(OUT, "dispatch_4x5.mp4"))
+    ap.add_argument("--video", default=os.path.join(OUT, "dispatch_square.mp4"))
     ap.add_argument("--frames", type=int, default=14)
     a = ap.parse_args()
 

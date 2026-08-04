@@ -45,12 +45,16 @@ ffmpeg -y -i "$OUT/dispatch_master.mp4" -vf scale=720:1280 \
 ffmpeg -y -ss 0 -i "$OUT/dispatch_square.mp4" -frames:v 1 "$OUT/poster.png" -v error
 ffmpeg -y -i "$OUT/poster.png" -vf scale=540:540 -q:v 5 "$OUT/poster_thumb.jpg" -v error
 
-dim () { ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$1" | tr -d ','; }
+# ffprobe csv=p=0 emits "1080,1920," so split on the comma and drop the trailing empty
+# field. Deleting the comma instead concatenates the two numbers into "10801920".
+# ffprobe csv=p=0 emits "1080,1920," with a TRAILING comma, so naive shell splitting
+# leaves an empty third field and the parameter expansions pick up the wrong halves.
+# Ask ffprobe for one dimension at a time; unambiguous and no parsing at all.
+vdim () { ffprobe -v error -select_streams v:0 -show_entries "stream=$2" -of "default=nw=1:nk=1" "$1" | head -1; }
 
 assert_dim () {
   local f="$1" want_w="$2" want_h="$3" label="$4"
-  local got; got="$(dim "$f")"
-  local gw="${got% *}" gh="${got#* }"
+  local gw gh; gw="$(vdim "$f" width)"; gh="$(vdim "$f" height)"
   if [ "$gw" != "$want_w" ] || [ "$gh" != "$want_h" ]; then
     echo "ASPECT ASSERT FAILED: $label is ${gw}x${gh}, expected ${want_w}x${want_h} ($f)" >&2
     exit 1

@@ -239,7 +239,7 @@ const AlaskaField: React.FC<{
 
 /** the corner icon, PLANTED in shot 1 so the button has something to flip */
 const CornerTool: React.FC<{f: number; flip?: number; x?: number; y?: number}> = ({
-  f, flip = 0, x = 948, y = 1046,
+  f, flip = 0, x = 128, y = 1046,
 }) => {
   const p = clamp01(flip);
   const rot = p * 180;
@@ -565,7 +565,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
             windowFill={accentBox(BURNABLE, 660, 900, 40, 44)} />
         </g>
         {/* THE PUNCH HEAD, big enough to read, driving down onto the stock */}
-        <g opacity={build} transform={`translate(742,${628 + punch * 150})`}>
+        <g opacity={build} transform={`translate(838,${596 + punch * 300})`}>
           <MotionBlur vy={punchVel * 70} gain={1.2}>
             <rect x={-46} y={-150} width={92} height={150} rx={6}
                   fill={STEELOX} stroke={INK} strokeWidth={6} />
@@ -583,20 +583,20 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
         {/* THE CONTACT FLASH */}
         {hit > 0 && (
           <g opacity={hit}>
-            <circle cx={742} cy={806} r={40 + (1 - hit) * 90} fill="none"
+            <circle cx={838} cy={926} r={40 + (1 - hit) * 90} fill="none"
                     stroke="#fff6dd" strokeWidth={9 * hit} />
             {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
-              <line key={a} x1={742 + Math.cos(a * Math.PI / 180) * 48}
-                    y1={806 + Math.sin(a * Math.PI / 180) * 48}
-                    x2={742 + Math.cos(a * Math.PI / 180) * (96 + (1 - hit) * 60)}
-                    y2={806 + Math.sin(a * Math.PI / 180) * (96 + (1 - hit) * 60)}
+              <line key={a} x1={838 + Math.cos(a * Math.PI / 180) * 48}
+                    y1={926 + Math.sin(a * Math.PI / 180) * 48}
+                    x2={838 + Math.cos(a * Math.PI / 180) * (96 + (1 - hit) * 60)}
+                    y2={926 + Math.sin(a * Math.PI / 180) * (96 + (1 - hit) * 60)}
                     stroke="#fff6dd" strokeWidth={7 * hit} strokeLinecap="round" />
             ))}
           </g>
         )}
         {/* THE WASTE SLUG, curling away and dropping out of frame */}
         {slug > 0.01 && slug < 1 && (
-          <g transform={`translate(${742 + slug * 130},${812 + slug * slug * 420}) rotate(${slug * 340})`}
+          <g transform={`translate(${838 + slug * 130},${944 + slug * slug * 420}) rotate(${slug * 340})`}
              opacity={1 - slug * 0.5}>
             <rect x={-14} y={-16} width={28} height={32} rx={3}
                   fill="#c9d6d8" stroke={INK} strokeWidth={4} />
@@ -613,15 +613,16 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
       {/* the punched window, staged LARGE, with the film's one hard beam */}
       {windows > 0 && (
         <g opacity={interpolate(pull, [0, 0.6], [1, 0], {extrapolateRight: 'clamp'})}
-           transform={`translate(${shakeX},${shakeY}) translate(742,846) scale(${
+           transform={`translate(${shakeX},${shakeY}) translate(838,926) scale(${
              1 + 0.34 * Math.max(0, 1 - (pf - CONTACT) / 9)})`}>
           <PunchedWindow x={0} y={0} f={g} w={132} hgt={168} beam={beam}
-                         fill={accentBox(BURNABLE, 676, 762, 132, 168)} />
+                         fill={accentBox(BURNABLE, 772, 842, 132, 168)} />
         </g>
       )}
       <Card x={540} y={CARD_TOP_Y}
             text={recut < 1 ? 'RE-CUT FOR ALASKA' : windows ? 'ONE SAFE DAY' : 'READING DECADES OF WEATHER'}
             sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, re-cut to the Canadian FWI'
+                           : windows ? 'a day the model says would have been safe'
                            : 'statistical and machine-learning techniques (NSF)'} w={960} />
       <CornerTool f={g} />
     </World>
@@ -947,7 +948,7 @@ export const Ep0803: React.FC<z.infer<typeof ep0803Schema>> = ({
     hue: BURNABLE,
     means: 'a day you may burn',
     rects: [
-      {x: 380, y: 360, w: 360, h: 340},    // the punched window staged large, S5
+      {x: 700, y: 760, w: 340, h: 360},    // the punched window, cut into the stock, S5
       {x: 560, y: 840, w: 420, h: 180},    // the engine's outbound stock, S5
       {x: 60, y: 820, w: 900, h: 180},     // the sheet on the table, S6
       {x: 300, y: 860, w: 480, h: 200},    // the sheet close, S7
