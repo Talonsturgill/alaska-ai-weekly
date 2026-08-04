@@ -1343,12 +1343,19 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
             size. It is house ink at full strength, over a ruled date row that has
             been struck through, so the card SHOWS the absence instead of whispering
             it. */}
-        <line x1={-62} y1={-22} x2={62} y2={-22} stroke={INK} strokeWidth={3} opacity={0.32} />
-        <line x1={-62} y1={34} x2={62} y2={34} stroke={INK} strokeWidth={3} opacity={0.32} />
-        <text x={0} y={6} textAnchor="middle" fill={INK} opacity={0.88}
+        {/* THE STRIKE WAS THROUGH THE WRONG THING, and it was my addition. A red bar
+            across the words NO DAY reads as cancelling them, which asserts that there
+            IS a day and inverts both the plate above it and the caption below it. The
+            strike belongs on the thing that is absent: an empty date slot, ruled like a
+            roster and crossed out, with NO DAY left clean underneath as the conclusion
+            rather than as the thing being negated. */}
+        <rect x={-64} y={-48} width={128} height={34} rx={3}
+              fill="none" stroke={INK} strokeWidth={3} opacity={0.5} />
+        <line x1={-70} y1={-10} x2={70} y2={-52} stroke="#8a2a2a" strokeWidth={5}
+              strokeLinecap="round" opacity={0.85} />
+        <line x1={-62} y1={40} x2={62} y2={40} stroke={INK} strokeWidth={3} opacity={0.32} />
+        <text x={0} y={26} textAnchor="middle" fill={INK} opacity={0.9}
               style={{font: `700 26px ${MONO}`, letterSpacing: 1}}>NO DAY</text>
-        <line x1={-70} y1={26} x2={70} y2={-38} stroke="#8a2a2a" strokeWidth={5}
-              strokeLinecap="round" opacity={0.8} />
       </g>
       {/* the distant-machine speck used to live here. Three judges read it as a ghosted
           duplicate prop or a compositing artifact rather than as depth, which is a fair

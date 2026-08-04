@@ -166,7 +166,7 @@ BED_ARC = [
     # RESOLVE, DON'T CUT. A judge measured the bed still at about -25 dBFS a tenth of a
     # second from the last frame, ramping off in roughly 60ms, so the film's final audible
     # moment was a splice rather than an ending. Fade it under the credit card instead.
-    (82.4, 0.72),
+    (82.9, 0.94),
     (83.7, 0.00),
 ]
 
@@ -302,13 +302,33 @@ def main():
     # in the post-VO tail where there's no voice to serve
     dip0, dip1 = SILENCE_DIP_AT, SILENCE_DIP_AT + DIP_LEN
     vo_end = max(x["end"] for x in _lines)
-    arc = pw_expr(BED_ARC + [(vo_end + 0.4, 1.60)])
+    # AND THE TAIL LIFT WAS APPENDED OUT OF ORDER. BED_ARC already ends with points at
+    # 81.2, 82.4 and 83.7; appending (vo_end + 0.4, 1.60) put a t=81.5 point AFTER the
+    # t=83.7 one, so the piecewise envelope was non-monotonic in time and the lift the
+    # comment above promises never happened. A judge measured the 2.6s tail, the one
+    # stretch in the film with no voice at all, sitting at -30.5 dBFS and fading rather
+    # than opening. Sort by time, and hold the lift long enough to be heard before the
+    # credit fade takes it.
+    arc = pw_expr(sorted(BED_ARC + [(vo_end + 0.4, 1.62), (vo_end + 1.4, 1.55)]))
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
         f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.30[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)
-    fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.04:ratio=9:attack=6:release=320:makeup=1[bedduck]")
+    # THE BED NEVER OPENED INTO GAPS THAT ALREADY EXISTED (2026-08-04). Two judges
+    # measured this independently in the same round: the VO leaves 21 gaps of 0.35s or
+    # longer, 13 of them over 0.50s, about 11.9s of silence in total, and the bed sat
+    # flat through all of them. The run's own evidence pack had been claiming there was
+    # only one such gap and that the flat loudness range was structural, so the fix kept
+    # being aimed at cutting VO instead of at this line.
+    #
+    # release=320ms was the cause. After a line ends the gain recovers on a 320ms time
+    # constant, so a 0.5s gap closes again before the bed has come up meaningfully and a
+    # 0.7s gap only gets part way. At 150ms the bed is substantially back inside every
+    # gap over about 0.4s, which is 13 of them. Ratio eases 9 -> 6 so the duck is a lean
+    # rather than a clamp, and the threshold rises slightly so quiet consonants stop
+    # holding the bed down through the tail of a line.
+    fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.055:ratio=6:attack=8:release=150:makeup=1[bedduck]")
     # THE ARC GOES AFTER THE DUCK, NOT BEFORE IT. Placed upstream, the arc feeds a ratio-9
     # compressor: a quieter bed sits closer to the threshold, gets less gain reduction, and
     # comes out the far side pushed back toward where it started. The compressor was undoing
