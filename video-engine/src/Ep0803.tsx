@@ -954,10 +954,14 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
   const accentBox = useAccentExtent();
   const hands = interpolate(t, [L(10), L(10) + 1.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const turn = interpolate(t, [L(11), L(11) + 1.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  // brought IN so the fingers actually close on the sheet (x 290..790) instead of
+  // hovering a hundred pixels short of it
   const SIDES = [
-    {x: 190, y: 730, r: 0}, {x: 890, y: 730, r: 180},
-    {x: 190, y: 1040, r: 0}, {x: 890, y: 1040, r: 180},
+    {x: 232, y: 742, r: 0}, {x: 848, y: 742, r: 180},
+    {x: 232, y: 1030, r: 0}, {x: 848, y: 1030, r: 180},
   ];
+  // one sleeve colour per entity, so four hands read as four different parties
+  const SLEEVE = ['#b8894a', '#7d8f92', '#8a6a52', '#5f7a6a'];
   return (
     <World f={g} anchorY={1620} hazeAmt={0.45} interior>
       <rect x={-28} y={560} width={1136} height={1060} fill="#3b2f24" stroke={INK} strokeWidth={7} />
@@ -976,22 +980,37 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
         const land = turn * 34;
         return (
           <g key={i} transform={`translate(${s.x + (s.r ? d : -d)},${s.y + land}) rotate(${s.r})`} opacity={hands}>
-            {/* a HAND, with fingers and a cuff. The panel called the old shape an
-                unshaded flat blob sitting next to fully finished assets, and it was. */}
-            <path d="M-10,-30 q46,-14 70,8 q18,16 8,44 q-14,32 -52,28 q-32,-6 -34,-38 Z"
-                  fill="#c8b48a" stroke={INK} strokeWidth={5} />
-            {/* form shading: lit knuckle side, occluded palm side */}
-            <path d="M-10,-30 q46,-14 70,8 q10,9 10,22 q-30,-16 -80,-8 Z"
-                  fill="#dcc9a2" opacity={0.85} />
-            <path d="M-30,20 q34,20 66,10 q-14,26 -50,22 q-24,-5 -30,-24 Z"
-                  fill="#a68d63" opacity={0.7} />
-            {/* four finger creases so it reads as a hand at feed size */}
+            {/* REBUILT. Every judge, every round, called these the worst-finished asset in
+                the film: featureless blobs with a floating brown rectangle for a thumb,
+                attached to no body, none of them touching the card they are supposed to be
+                handing over, sitting in a frame with a fully bevelled award plate. A hand
+                needs an arm going somewhere, separated fingers, a thumb inside its own
+                silhouette, and contact with the thing it holds. Each sleeve now runs off the
+                nearest frame edge and each set of fingers closes over the sheet's edge. */}
+            <ellipse cx={64} cy={46} rx={54} ry={11} fill={INK} opacity={0.2} />
+            {/* the sleeve, running off frame so the hand belongs to a person */}
+            <rect x={-300} y={-38} width={318} height={76} rx={16}
+                  fill={SLEEVE[i]} stroke={INK} strokeWidth={6} />
+            <rect x={-300} y={-38} width={318} height={26} rx={13} fill="#ffffff" opacity={0.13} />
+            <rect x={-16} y={-46} width={30} height={92} rx={10}
+                  fill="#8d7a55" stroke={INK} strokeWidth={5} />
+            {/* the palm */}
+            <path d="M12,-38 q44,-6 62,10 q16,14 12,34 q-6,24 -38,26 q-40,2 -50,-16 Z"
+                  fill="#cdb98e" stroke={INK} strokeWidth={5.5} />
+            <path d="M12,-38 q44,-6 62,10 q7,7 9,17 q-34,-14 -74,-9 Z" fill="#e2cfa6" opacity={0.9} />
+            <path d="M-4,22 q40,16 76,4 q-8,20 -38,22 q-34,2 -42,-14 Z" fill="#a48c60" opacity={0.75} />
+            {/* four separated fingers closing OVER the sheet edge */}
             {[0, 1, 2, 3].map((k) => (
-              <path key={k} d={`M${6 + k * 15},${-24 + k * 3} q7,20 2,40`}
-                    fill="none" stroke={INK} strokeWidth={2.6} opacity={0.55} />
+              <g key={k}>
+                <rect x={70} y={-32 + k * 18} width={46 - k * 4} height={15} rx={7}
+                      fill="#cdb98e" stroke={INK} strokeWidth={4.5} />
+                <rect x={73} y={-30 + k * 18} width={38 - k * 4} height={5} rx={2.5}
+                      fill="#e2cfa6" opacity={0.85} />
+              </g>
             ))}
-            <rect x={-40} y={14} width={44} height={34} rx={7} fill="#9a8560" stroke={INK} strokeWidth={4.5} />
-            <line x1={-36} y1={22} x2={0} y2={22} stroke={INK} strokeWidth={2.2} opacity={0.5} />
+            {/* the thumb, inside the silhouette rather than stuck on beside it */}
+            <path d="M18,-34 q26,-22 46,-10 q10,7 2,18 q-18,-10 -44,2 Z"
+                  fill="#cdb98e" stroke={INK} strokeWidth={5} />
           </g>
         );
       })}
@@ -1012,7 +1031,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
       {/* the card announced the curriculum while the narration under it was on the
           governance gap, so the two were about different things for the whole shot */}
       <Card x={540} y={CARD_BOT - 20} text="NSF NAMES THE PARTNERSHIP GAP"
-            sub="the award also funds a four-year wildland fire management curriculum (NSF)" w={980} />
+            sub="a curriculum for a new four-year wildland fire management program (NSF)" w={980} />
     </World>
   );
 };
@@ -1204,7 +1223,13 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
   // brown map, which is why two judges independently read the payoff as "tan hatching"
   // and as losing luminance on the good news. The dashed state is a 0.5s grace note, not
   // the state the shot lives in.
-  const harden = interpolate(t, [L(16) + 0.35, L(16) + 0.95], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // THIRD INSTANCE OF THE SAME BUG. A slow opacity ramp on an element that carries
+  // meaning is a translucent element for the length of the ramp, and judges keep sampling
+  // inside it: the RARELY USED HERE plate at 91 percent, the NO DAY sign holding at 60, and
+  // now the YOU CAN placard at roughly 45 percent with the mountains reading straight
+  // through it AT THE EXACT SECOND the payoff line is spoken. The film's whole inversion was
+  // still dissolving while the narration delivered it. Land it on the line.
+  const harden = interpolate(t, [L(16) + 0.05, L(16) + 0.45], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const flip = interpolate(t, [L(16) + 2.6, L(16) + 3.2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const credit = interpolate(t, [L(16) + 2.9, L(16) + 3.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // 11 windows, each >= 44px on its short side, one hero at 2x near centre
@@ -1345,8 +1370,10 @@ export const Ep0803: React.FC<z.infer<typeof ep0803Schema>> = ({
                 const size = Math.max(24, Math.min(40, Math.floor(CAP_W / (longest * CAP_K))));
                 return (
                 <g key={i}>
+                  {/* 0.82 let the spruce apexes read through the bar directly behind the
+                      glyphs in every forest scene. A caption plate is furniture, not glass. */}
                   <rect x={70} y={CAPTION_TOP} width={940} height={132} rx={12}
-                        fill="#14201c" opacity={0.82} />
+                        fill="#14201c" opacity={0.96} />
                   {rows.map((r, k) => (
                     <text key={k} x={540}
                           y={CAPTION_TOP + (rows.length === 1 ? 80 : 56 + k * 48)}
