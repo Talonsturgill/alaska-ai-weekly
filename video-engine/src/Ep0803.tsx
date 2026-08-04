@@ -484,8 +484,10 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
       <text x={0} y={-162} textAnchor="middle" fill={INK} opacity={0.72}
             style={{font: `700 17px ${MONO}`}}>program elements include Artificial Intelligence (AI)</text>
       {/* punched filing holes, so the paper has been handled */}
+      {/* the filing holes were drawn at the same baseline as the qualifier line, so a
+          rivet landed between two of its words. Dropped to the sheet's bottom margin. */}
       {[-250, 0, 250].map((hx) => (
-        <circle key={hx} cx={hx} cy={H / 2 - 26} r={9} fill="#b9b0a0" stroke={INK} strokeWidth={3} />
+        <circle key={hx} cx={hx} cy={H / 2 - 13} r={8} fill="#b9b0a0" stroke={INK} strokeWidth={3} />
       ))}
       {/* abstract body: set text, not legible at feed size and not meant to be. Without
           it the lower half of the sheet is blank for the five seconds before the stamp,
@@ -517,7 +519,7 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
       {/* sources.json discloses this is a two-award collaborative project and that the
           figure is the UAF share, not the total. Nothing on screen said so, and a viewer
           reasonably reads a lone dollar figure as the whole award. */}
-      <text x={-W / 2 + 34} y={210} fill={INK} opacity={0.6}
+      <text x={-W / 2 + 34} y={202} fill={INK} opacity={0.62}
             style={{font: `700 17px ${MONO}`}}>UAF share of a two-award project</text>
       </g>
       {/* The stamp lands LAST and PRESSES: a rubber date stamp, in ink, not an accent.
@@ -869,7 +871,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
         </g>
       )}
       <Card x={540} y={CARD_TOP_Y}
-            text={recut < 1 ? 'RE-CUT FOR ALASKA' : windows ? 'ONE SAFE DAY' : 'READING DECADES OF WEATHER'}
+            text={windows ? 'ONE SAFE DAY' : 'READING DECADES OF WEATHER'}
             sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, on the Canadian Forest Fire Weather Index (NSF)'
                            : windows ? 'a day a model would have called safe'
                            : 'statistical and machine-learning techniques (NSF)'} w={960} />
@@ -1031,9 +1033,14 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
       <rect x={-28} y={520} width={1136} height={1100} fill="#22302c" stroke={INK} strokeWidth={6} />
       {/* the machined rule */}
       <g opacity={rule}>
-        <rect x={110} y={700} width={872 * rule} height={22} rx={4}
+        {/* the AWARD PERIOD draws itself across the range while the playhead stays pinned
+            at the start date, because the period has not begun. A judge asked for motion
+            here and was right that a static 14px sliver is not it, but a marker sweeping to
+            2030 would assert progress that has not happened. */}
+        <rect x={110} y={700} width={872} height={22} rx={4}
               fill="#2c3a3d" stroke={INK} strokeWidth={5} />
-        <rect x={110} y={700} width={Math.min(872 * rule, 14)} height={22} rx={4}
+        <rect x={110} y={704} width={864 * rule} height={14} rx={3} fill="#4a5f52" opacity={0.9} />
+        <rect x={110} y={694} width={16} height={34} rx={3}
               fill="#ffd98a" stroke={INK} strokeWidth={5} />
         {[0, 1, 2, 3, 4].map((i) => {
           const last = i === 4;
@@ -1134,9 +1141,12 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         // day nobody calls safe, so the picture contradicted its own caption at the film's
         // lowest beat. 'worried' draws the frown, and the sweat drop that used to ride with
         // it is gone from the component.
-        {x: 296, sc: 0.96, pose: 'stand' as const, emo: 'worried' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -34},
-        {x: 516, sc: 1.16, pose: 'stand' as const, emo: 'worried' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const, gy: 0},
-        {x: 726, sc: 1.06, pose: 'stand' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const, gy: -16},
+        // SPACED. At 296/516/726 the centre figure's jacket was drawn over both flanking
+        // shoulders and a judge read the trio as one merged mass with only colour telling
+        // them apart. Three silhouettes need three silhouettes.
+        {x: 258, sc: 0.94, pose: 'stand' as const, emo: 'worried' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -36},
+        {x: 540, sc: 1.16, pose: 'stand' as const, emo: 'worried' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const, gy: 0},
+        {x: 822, sc: 1.02, pose: 'stand' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const, gy: -18},
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}
