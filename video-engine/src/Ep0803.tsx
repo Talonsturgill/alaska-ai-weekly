@@ -635,7 +635,12 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
       <DripTorch x={flameX + 52} y={1032} f={g} scale={1.0} tilt={tilt} lit={tilt} groundY={148} />
       <Card x={540} y={CARD_TOP_Y} text="A FIRE YOU SET ON PURPOSE" w={760} />
       <g opacity={patch}>
-        <Card x={540} y={700} text="RARELY USED HERE" sub="prescribed burning remains underused in Alaska (NSF)" w={880} />
+        {/* NEGATIVE SPACE, not just "somewhere else". At 1174 this card sat across the
+            crew's legs and the flame line it was captioning; moving it to 700 put it on the
+            burn boss's face, which is worse. The band between the title plate's baseplate
+            (575) and the top of the figures' heads (about 760) is the only gap in this shot
+            that holds a 132px card without touching anything. */}
+        <Card x={540} y={666} text="RARELY USED HERE" sub="prescribed burning remains underused in Alaska (NSF)" w={880} />
       </g>
       <CornerTool f={g} />
     </World>
@@ -974,8 +979,10 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
           funds that claims.json does not carry: c7 says the STATE LACKS community
           partnerships, and nothing in the record says the money pays to convene anyone.
           The curriculum IS funded (c12), so the card now claims only that. */}
-      <Card x={540} y={CARD_BOT - 20} text="THE AWARD ALSO BUILDS A CURRICULUM"
-            sub="a new four-year wildland fire management program (NSF)" w={980} />
+      {/* the card announced the curriculum while the narration under it was on the
+          governance gap, so the two were about different things for the whole shot */}
+      <Card x={540} y={CARD_BOT - 20} text="NSF NAMES THE PARTNERSHIP GAP"
+            sub="the award also funds a four-year wildland fire management curriculum (NSF)" w={980} />
     </World>
   );
 };
@@ -1095,9 +1102,13 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
     <World f={g} anchorY={912}>
       {/* the crew, at ~20% of frame height so they read as PEOPLE not specks */}
       {[
-        {x: 296, sc: 0.96, pose: 'stand' as const, emo: 'neutral' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -34},
-        {x: 516, sc: 1.16, pose: 'stand' as const, emo: 'neutral' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const, gy: 0},
-        {x: 726, sc: 1.06, pose: 'stand' as const, emo: 'neutral' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const, gy: -16},
+        // THEY WERE ALL SMILING under the line about not being able to staff a crew for a
+        // day nobody calls safe, so the picture contradicted its own caption at the film's
+        // lowest beat. 'worried' draws the frown, and the sweat drop that used to ride with
+        // it is gone from the component.
+        {x: 296, sc: 0.96, pose: 'stand' as const, emo: 'worried' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -34},
+        {x: 516, sc: 1.16, pose: 'stand' as const, emo: 'worried' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const, gy: 0},
+        {x: 726, sc: 1.06, pose: 'stand' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const, gy: -16},
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}

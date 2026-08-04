@@ -249,8 +249,10 @@ export const Character: React.FC<CharacterProps> = ({
             {emotion === 'neutral' && <path d="M-10,14 q12,6 24,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
           </>
         )}
-        {/* worried/angry sweat drop */}
-        {(emotion === 'worried' || emotion === 'shock') && (
+        {/* The sweat drop was a manga cue used nowhere else in this house style, and a
+            judge flagged it as reading as a different visual language. Kept for 'shock'
+            only, where it is a beat rather than a mood. */}
+        {(emotion === 'shock') && (
           <path d={`M44,-30 q7,${10 + 3 * Math.sin(f / 9)} 0,${18 + 3 * Math.sin(f / 9)} q-7,-8 0,-18 Z`} fill="#9fd8ff" stroke={INK} strokeWidth={3} />
         )}
         {/* round wire glasses (cast differentiation — e.g. the district official). Drawn last so
