@@ -1153,7 +1153,11 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
   const g = f + from;
   const t = g / FPS;
   const rule = interpolate(t, [L(12), L(12) + 1.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
-  const seasons = interpolate(t, [L(12) + 2.2, L(13)], [0, 4], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // THE STANDS FINISHED THEIR CYCLE IN THE FIRST THIRD OF THE SHOT and then held for
+  // six seconds, which is why a judge measured two 90px bands with zero changed pixels
+  // across 59.5 to 66.4s. Same four seasons, spread over the whole beat, so the one
+  // continuous thing in the frame is continuous for the whole time the frame is up.
+  const seasons = interpolate(t, [L(12) + 1.0, L(13) + 3.2], [0, 4], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const arrows = interpolate(t, [L(13) + 0.2, L(13) + 1.8], [0, 3], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const dis = interpolate(t, [L(13) + 2.6, L(13) + 3.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
@@ -1445,9 +1449,13 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
           takes the tail the same two judges called a dead frozen hold, so one change
           closes both. Placed below the counters, above the caption band. */}
       <g opacity={credit}>
+        {/* THE LICENCE LINE WAS THE LEAST READABLE TEXT IN THE FILM, measured at
+            3.22:1, and it is the one line a CC BY licence obliges to be readable. The
+            plate was the cause: at 0.82 the background read through the dark fill and
+            lifted it toward the text. Opaque plate, opaque text, about 14:1. */}
         <rect x={186} y={1268} width={708} height={50} rx={7}
-              fill="#14201c" opacity={0.82} />
-        <text x={540} y={1303} textAnchor="middle" fill="#efe9dc" opacity={0.92}
+              fill="#14201c" />
+        <text x={540} y={1303} textAnchor="middle" fill="#efe9dc"
               style={{font: `700 20px ${MONO}`}}>
           Carefree by Kevin MacLeod, incompetech.com, CC BY 4.0
         </text>
