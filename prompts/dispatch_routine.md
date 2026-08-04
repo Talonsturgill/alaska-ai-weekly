@@ -1049,6 +1049,21 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
    dead-space meter on the SQUARE CUT before you spend a panel on it:
 
        python3 scripts/dead_space_check.py --every 30
+       python3 scripts/text_fit_check.py
+
+   `text_fit_check.py` asserts that every plated monospace string fits inside the plate
+   drawn behind it. Run it BEFORE the render, not after: it reads the engine source and
+   needs no frames, so it is the cheapest gate in the run and it catches the single most
+   repeated defect in this film's history. Three strings shipped past every other gate in
+   one cut, one of them scored a hard blocker and held to the final frame of both
+   deliverables. The failure is always the same: type gets resized to answer a legibility
+   note and the plate behind it does not get re-measured. That is arithmetic, not taste,
+   and no judge should have to catch it.
+
+   Read its coverage line. It prints every string it could NOT measure and why. A pass
+   with a string you care about sitting in the "not measured" list is not a pass on that
+   string. The first build of this gate reported green while silently skipping the exact
+   blocker, because the plate's x was written `{540 - 358}` rather than as a bare number.
 
    It samples the cut that ships, reports low-information area per shot, and EXITS 1 on a
    regression. Rewritten 2026-08-04 because the previous version read PNGs from a directory

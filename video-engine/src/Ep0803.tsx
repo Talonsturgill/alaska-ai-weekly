@@ -487,7 +487,7 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
       {/* the filing holes were drawn at the same baseline as the qualifier line, so a
           rivet landed between two of its words. Dropped to the sheet's bottom margin. */}
       {[-250, 0, 250].map((hx) => (
-        <circle key={hx} cx={hx} cy={H / 2 - 13} r={8} fill="#b9b0a0" stroke={INK} strokeWidth={3} />
+        <circle key={hx} cx={hx} cy={H / 2 - 6} r={6} fill="#b9b0a0" stroke={INK} strokeWidth={3} />
       ))}
       {/* abstract body: set text, not legible at feed size and not meant to be. Without
           it the lower half of the sheet is blank for the five seconds before the stamp,
@@ -511,10 +511,15 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
       <line x1={-W / 2 + 34} y1={-8} x2={W / 2 - 34} y2={-8}
             stroke={INK} strokeWidth={3.5} opacity={0.4} />
       <g opacity={clamp01(stamp * 2)}>
-        <line x1={-W / 2 + 34} y1={122} x2={W / 2 - 34} y2={122} stroke={INK} strokeWidth={3} opacity={0.34} />
-        <text x={-W / 2 + 34} y={182} fill={INK}
-              style={{font: `900 ${66 - (1 - clamp01(stamp)) * 22}px ${BOLD}`, letterSpacing: 1}}>$1,588,147</text>
-        <text x={W / 2 - 34} y={178} textAnchor="end" fill={INK} opacity={0.78}
+        {/* THE COMMAS CUT THROUGH THE QUALIFIER. At 66px the descender of the
+            thousands comma reaches y=196 and the qualifier's cap top sat at y=188, so
+            the one line that stops a reader taking $1,588,147 for the project total was
+            struck through by the figure it qualifies. The rule moves up to buy leading,
+            the figure drops a step, and every baseline below it clears by measurement. */}
+        <line x1={-W / 2 + 34} y1={104} x2={W / 2 - 34} y2={104} stroke={INK} strokeWidth={3} opacity={0.34} />
+        <text x={-W / 2 + 34} y={170} fill={INK}
+              style={{font: `900 ${62 - (1 - clamp01(stamp)) * 20}px ${BOLD}`, letterSpacing: 1}}>$1,588,147</text>
+        <text x={W / 2 - 34} y={166} textAnchor="end" fill={INK} opacity={0.78}
               style={{font: `700 23px ${MONO}`}}>July 31, 2026</text>
       {/* sources.json discloses this is a two-award collaborative project and that the
           figure is the UAF share, not the total. Nothing on screen said so, and a viewer
@@ -524,7 +529,7 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
           the editorial headlines run 40 to 50. This line exists so nobody reads $1,588,147
           as the project total. Integrity that is technically present and practically
           invisible is not integrity. */}
-      <text x={-W / 2 + 34} y={206} fill={INK} opacity={0.78}
+      <text x={-W / 2 + 34} y={212} fill={INK} opacity={0.78}
             style={{font: `700 25px ${MONO}`}}>UAF share of a two-award project</text>
       </g>
       {/* The stamp lands LAST and PRESSES: a rubber date stamp, in ink, not an accent.
@@ -921,8 +926,12 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
               stroke="#2a2018" strokeWidth={5} opacity={0.7} />
       ))}
       {/* the punched sheet, pushed across */}
-      <g transform={`translate(${250 + push * 290},790) scale(1.34) rotate(${-4 + push * 3})`}>
-        <rect x={-160} y={-110} width={320} height={220} rx={6}
+      <g transform={`translate(${272 + push * 268},790) scale(1.34) rotate(${-4 + push * 3})`}>
+        {/* SIZED OFF ITS OWN STRING. At 320 wide this card gave its disclosure line
+            5px of margin and two judges measured the terminal glyph merging into the
+            border. 26 chars * 19px * 0.602 = 297px of text needs 372px of inner width
+            to carry a real 37px margin. */}
+        <rect x={-192} y={-110} width={384} height={220} rx={6}
               fill="#efeade" stroke={INK} strokeWidth={6} />
         {[0, 1, 2].map((i) => (
           <WindowChip key={i} x={-110 + i * 78} y={-30} w={40} h={54}
@@ -1030,8 +1039,13 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
       })}
       {/* the four plates rotating to face one another */}
       {SIDES.map((s, i) => (
-        <g key={`p${i}`} transform={`translate(${s.x},${s.y - 120}) rotate(${(1 - turn) * (i % 2 ? 40 : -40)})`}>
-          <rect x={-84} y={-26} width={168} height={52} rx={6}
+        {/* THE LABELS OVERLAPPED THE SHEET THEY ANNOTATE. The sheet spans x 290..790
+            and these sat at 232/848 with an 84px half-width, so both pairs crossed its
+            border by 26px. The hands keep their positions (they were brought in on
+            purpose so the fingers close on the card); only the plates step outboard, to
+            174 and 904, which clears the sheet by 16px on both sides. */}
+        <g key={`p${i}`} transform={`translate(${s.x + (i % 2 ? 56 : -58)},${s.y - 120}) rotate(${(1 - turn) * (i % 2 ? 40 : -40)})`}>
+          <rect x={-92} y={-26} width={184} height={52} rx={6}
                 fill={ENAMEL} stroke={INK} strokeWidth={5} />
           <text x={0} y={8} textAnchor="middle" fill={INK} style={{font: `700 23px ${MONO}`}}>
             {['MUNICIPAL', 'FEDERAL', 'TRIBAL', 'NON-PROFIT'][i]}
