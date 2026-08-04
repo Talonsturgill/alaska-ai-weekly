@@ -1184,13 +1184,19 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
               const h = 110 * (1 - burn * 0.8 + grow * 0.5);
               return (
                 <g>
-                  <ellipse cx={2} cy={62} rx={40} ry={8} fill="#16241f" opacity={0.5} />
-                  <rect x={-7} y={30} width={14} height={32} rx={3} fill="#4a3526" stroke={INK} strokeWidth={5} />
-                  <path d={`M0,60 L-42,60 L0,${60 - h} L42,60 Z`} fill="#2b4a42" stroke={INK} strokeWidth={6} />
-                  <path d={`M0,58 L-38,58 L0,${62 - h} Z`} fill={SPRUCE} />
+                  {/* THE STANDS READ AS WIREFRAME. Filled #2b4a42 against a field of
+                      almost exactly the same value, all that survived was the ink
+                      outline, so four solid trees rendered as four empty triangles in
+                      the one shot that is about forest growing back. Lit at a value
+                      that separates from the ground, with the shadow side kept dark so
+                      they still have form rather than becoming flat cutouts. */}
+                  <ellipse cx={2} cy={62} rx={40} ry={8} fill="#0d1714" opacity={0.6} />
+                  <rect x={-7} y={30} width={14} height={32} rx={3} fill="#6b4c33" stroke={INK} strokeWidth={5} />
+                  <path d={`M0,60 L-42,60 L0,${60 - h} L42,60 Z`} fill="#4a7d6b" stroke={INK} strokeWidth={6} />
+                  <path d={`M0,58 L-38,58 L0,${62 - h} Z`} fill="#5d9179" />
                   <path d={`M0,${60 - h * 0.34} L-27,${60 - h * 0.34} L0,${60 - h * 0.82} L27,${60 - h * 0.34} Z`}
-                        fill="#2b4a42" stroke={INK} strokeWidth={6} />
-                  <path d={`M0,${58 - h * 0.34} L-24,${58 - h * 0.34} L0,${62 - h * 0.82} Z`} fill={SPRUCE} />
+                        fill="#4a7d6b" stroke={INK} strokeWidth={6} />
+                  <path d={`M0,${58 - h * 0.34} L-24,${58 - h * 0.34} L0,${62 - h * 0.82} Z`} fill="#5d9179" />
                 </g>
               );
             })()}
@@ -1278,14 +1284,14 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         // SPACED. At 296/516/726 the centre figure's jacket was drawn over both flanking
         // shoulders and a judge read the trio as one merged mass with only colour telling
         // them apart. Three silhouettes need three silhouettes.
-        {x: 258, sc: 0.94, pose: 'stand' as const, emo: 'worried' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -36},
-        {x: 540, sc: 1.16, pose: 'stand' as const, emo: 'worried' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const, gy: 0},
+        {x: 258, sc: 0.94, pose: 'stand' as const, emo: 'worried' as const, out: 'nomex' as const, hat: 'hardhat' as const, face: 1 as const, gy: -36},
+        {x: 540, sc: 1.16, pose: 'stand' as const, emo: 'worried' as const, out: 'nomex' as const, hat: 'hardhat' as const, face: -1 as const, gy: 0},
         // ONE OF THEM GESTURES. A judge's summary line was that not one character in the
         // film ever gestures, across five figures and 84 seconds, and that was true. The
         // right-hand crew member points at the blank NO DAY card beside them.
         // moved right so the pointing arm clears the middle figure instead of crossing its
         // torso, which read to a judge as a detached limb laid over another character
-        {x: 884, sc: 1.02, pose: 'point' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: -1 as const, gy: -18},
+        {x: 884, sc: 1.02, pose: 'point' as const, emo: 'worried' as const, out: 'nomex' as const, hat: 'hardhat' as const, face: -1 as const, gy: -18},
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}
