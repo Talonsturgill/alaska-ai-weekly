@@ -649,7 +649,13 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
         <Character frame={g} pose="stand" emotion="neutral"
                    outfit="vest" headgear="cap" facing={-1} />
       </g>
-      <DripTorch x={flameX + 52} y={1032} f={g} scale={1.0} tilt={tilt} lit={tilt} groundY={148} />
+      {/* THE TORCH CARRIED ITS OWN DETACHED GLOVE. DripTorch draws a hand when withHand
+          is on, and that cream shape sat beside the burn boss holding nothing, which three
+          judges read variously as an unheld hard hat, an unidentified blob, and a prop held
+          from the wrong end by the wrong person. The boss has hands. Turn the glove off and
+          put the tool in one of them. */}
+      <DripTorch x={flameX + 60} y={1026} f={g} scale={1.0} tilt={tilt} lit={tilt}
+                 withHand={false} groundY={154} />
       <Card x={540} y={CARD_TOP_Y} text="A FIRE YOU SET ON PURPOSE" w={760} />
       <g opacity={patch}>
         {/* NEGATIVE SPACE, not just "somewhere else". At 1174 this card sat across the
