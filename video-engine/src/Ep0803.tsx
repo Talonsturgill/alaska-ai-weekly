@@ -1165,7 +1165,10 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         // them apart. Three silhouettes need three silhouettes.
         {x: 258, sc: 0.94, pose: 'stand' as const, emo: 'worried' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -36},
         {x: 540, sc: 1.16, pose: 'stand' as const, emo: 'worried' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const, gy: 0},
-        {x: 822, sc: 1.02, pose: 'stand' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const, gy: -18},
+        // ONE OF THEM GESTURES. A judge's summary line was that not one character in the
+        // film ever gestures, across five figures and 84 seconds, and that was true. The
+        // right-hand crew member points at the blank NO DAY card beside them.
+        {x: 822, sc: 1.02, pose: 'point' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: -1 as const, gy: -18},
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}
@@ -1189,7 +1192,7 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
           bled through the placard face. Two judges read it as a failed blend and a stale
           duplicate sprite, which is exactly what a 0.6 plate over a figure looks like. It
           fades IN and stays solid. */}
-      <g transform={`translate(760,${1120 + Math.max(0, sheet - 0.6) * 240})`}
+      <g transform={`translate(690,${1004 + Math.max(0, sheet - 0.6) * 240})`}
          opacity={interpolate(sheet, [0, 0.15], [0, 1], {extrapolateRight: 'clamp'})}>
         <rect x={-92} y={-64} width={184} height={128} rx={6}
               fill="#efeade" stroke={INK} strokeWidth={6} />

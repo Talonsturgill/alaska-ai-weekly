@@ -250,10 +250,19 @@ export const Character: React.FC<CharacterProps> = ({
         ) : (
           <>
             {emotion === 'angry' && <path d="M-14,14 q15,-9 29,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
-            {emotion === 'worried' && <path d="M-10,14 q11,7 22,0 q-11,10 -22,0 Z" fill="#7a2f2f" stroke={INK} strokeWidth={4.5} />}
+            {/* THIS DREW A SMILE. The old path was a thin lens whose both curves bulged
+                DOWNWARD, so at face scale a "worried" character rendered a gentle upward
+                mouth line. Three crew stood under "you can't staff a crew for a day nobody
+                calls safe" grinning, and two judges called it out as the picture
+                contradicting its own caption. A frown curves UP at the corners. */}
+            {emotion === 'worried' && (
+              <path d="M-13,21 q13,-11 26,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+            )}
             {emotion === 'shock' && <ellipse cx={2} cy={18} rx={12} ry={16} fill="#7a2f2f" stroke={INK} strokeWidth={5} />}
             {emotion === 'smug' && <path d="M-12,12 q16,10 30,-4" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
-            {emotion === 'neutral' && <path d="M-10,14 q12,6 24,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
+            {/* and 'neutral' bulged downward too, i.e. every default face in the film was
+                quietly smiling. Flattened. */}
+            {emotion === 'neutral' && <path d="M-11,16 q11,3 22,0" fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />}
           </>
         )}
         {/* The sweat drop was a manga cue used nowhere else in this house style, and a
