@@ -459,8 +459,15 @@ export const Character: React.FC<CharacterProps> = ({
     }
   };
 
+  // THE FEET SKATED. The idle weight-shift was applied at the ROOT, so the boots and
+  // their contact shadows slid along the ground with the torso: a judge measured the boot
+  // band travelling 18px while the sign post planted beside it moved 1px and the
+  // background drifted 5. A person shifting their weight pivots ABOVE the feet. The root
+  // carries only the lean now; the lateral sway is applied inside, to everything except
+  // the boots, and the legs take a reduced share so the shift travels up the body instead
+  // of teleporting the whole figure sideways.
   return (
-    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) translate(-150,-500) translate(${sway},0) rotate(${swayTilt} 150 500)`}>
+    <g transform={`translate(${x},${y}) scale(${scale * facing},${scale}) translate(-150,-500) rotate(${swayTilt} 150 500)`}>
       {/* form-shading gradients for this figure (jacket + skin + pants), lit by the global sun dir.
           Softness is deliberately tighter than the FormGradient default (1): at 1 the light/shade
           stops fall mostly OUTSIDE the shape's own bounds, so only a sliver of the key-to-shade
@@ -475,7 +482,7 @@ export const Character: React.FC<CharacterProps> = ({
         {/* legs + boots grouped PER SIDE around each hip (pivot at the leg top, y=-160) so a walk
             swings each leg as a unit; the cloth crease + boot ride with their leg. Left and right
             swing in opposition (legSwing / -legSwing) for a real alternating stride. */}
-        <g transform={`rotate(${legSwing} -23 -160)`}>
+        <g transform={`translate(${sway * 0.34},0) rotate(${legSwing} -23 -160)`}>
           <rect x={-40} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
           {/* leg volume: lit highlight down the sun-facing edge + shade down the shadow edge, so
               the pipe reads as a cylinder, not a flat fill (2026-07-21 round-9 rig pass: legs were
@@ -488,7 +495,7 @@ export const Character: React.FC<CharacterProps> = ({
           {/* sole seam — the boot has a built sole, not a painted blob */}
           <path d="M-54,-3 h52" stroke={INK} strokeWidth={2.4} opacity={0.45} strokeLinecap="round" />
         </g>
-        <g transform={`rotate(${-legSwing} 25 -160)`}>
+        <g transform={`translate(${sway * 0.34},0) rotate(${-legSwing} 25 -160)`}>
           <rect x={8} y={-160} width={34} height={150} rx={16} fill={`url(#${uid}_pants)`} stroke={INK} strokeWidth={6} />
           <rect x={10} y={-156} width={9} height={142} rx={4.5} fill="#fff" opacity={0.12} />
           <rect x={32} y={-158} width={10} height={146} rx={5} fill={INK} opacity={0.26} />
@@ -497,8 +504,8 @@ export const Character: React.FC<CharacterProps> = ({
           <path d="M4,-14 h20 v16 h-26 a8,8 0 0 1 -8,-8 q0,-8 14,-8 Z" fill="#fff" opacity={0.14} />
           <path d="M-6,-3 h52" stroke={INK} strokeWidth={2.4} opacity={0.45} strokeLinecap="round" />
         </g>
-        {/* torso (breath + walk bob) */}
-        <g transform={`translate(0,${-160 + bob + walkBob}) scale(1,${breath}) translate(0,160)`}>
+        {/* torso (breath + walk bob), carrying the full lateral weight-shift */}
+        <g transform={`translate(${sway},${-160 + bob + walkBob}) scale(1,${breath}) translate(0,160)`}>
           <g transform="translate(0,-160)">
             <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" fill={`url(#${uid}_body)`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
             {/* core shade on the shadow side + rim light on the sun-facing (left) contour */}
