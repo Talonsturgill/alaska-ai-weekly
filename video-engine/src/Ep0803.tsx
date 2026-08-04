@@ -698,7 +698,11 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
   const {fps} = useVideoConfig();
   const accentBox = useAccentExtent();
   const build = interpolate(t, [L(6), L(6) + 1.5], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
-  const recut = interpolate(t, [L(6) + 3.0, L(6) + 4.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // THE HEADLINE ARRIVED AFTER THE LINE IT TITLES. At +3.0 the card still read RE-CUT FOR
+  // ALASKA while the narration was already three seconds into "the team reads decades of
+  // weather", so a viewer landing at 31.9s got a caption and a headline about different
+  // things. A judge flagged the same slip twice. Swapped to land on the line.
+  const recut = interpolate(t, [L(6) + 0.5, L(6) + 1.5], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const feed = build * (0.35 + recut * 0.65);
   const rejects = Math.floor(interpolate(t, [L(6) + 5.0, L(7)], [0, 7], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   // THE PUNCH, REBUILT AS AN IMPACT. The panel's repeated finding was that this read
@@ -924,8 +928,12 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
           </text>
         </g>
       ))}
-      <Card x={540} y={CARD_BOT - 20} text="THE GRANT PAYS FOR THIS PART TOO"
-            sub="+ curriculum for a four-year wildland fire management program" w={980} />
+      {/* The old headline, "THE GRANT PAYS FOR THIS PART TOO", asserted a use of award
+          funds that claims.json does not carry: c7 says the STATE LACKS community
+          partnerships, and nothing in the record says the money pays to convene anyone.
+          The curriculum IS funded (c12), so the card now claims only that. */}
+      <Card x={540} y={CARD_BOT - 20} text="THE AWARD ALSO BUILDS A CURRICULUM"
+            sub="a new four-year wildland fire management program (NSF)" w={980} />
     </World>
   );
 };
