@@ -1217,7 +1217,11 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
   const t = g / FPS;
   const accentBox = useAccentExtent();
   const drain = interpolate(t, [L(15) + 0.2, L(15) + 2.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
-  const open = interpolate(t, [L(16) + 0.1, L(16) + 1.8], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // ALL NINE UP BEFORE THE LINE ENDS. The stagger ran to L(16)+1.8 while `harden` now
+  // completes at +0.45, so a frame sampled at 78.3 showed four windows open, one mid-pop
+  // and four not yet arrived, under a caption already delivering the payoff. The reveal
+  // should be a beat, not a queue.
+  const open = interpolate(t, [L(16) + 0.05, L(16) + 0.85], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // HARDEN EARLY. This used to run L(16)+1.2 to +2.4 (78.9 to 80.1s), so for most of
   // the closing shot the windows were still dashed bone outlines over a dark patch on a
   // brown map, which is why two judges independently read the payoff as "tan hatching"
