@@ -57,13 +57,19 @@ const SHADOW = '#7a5a48';
 const BOLD = 'Arial Black, Arial, sans-serif';
 const MONO = '"JetBrains Mono", ui-monospace, monospace';
 
-/** the 4:5 LinkedIn crop is the deliverable, so every load-bearing element lives here */
-const SAFE_TOP = 285;
-/** the lowest a top card may be CENTRED and still sit wholly inside the 4:5 crop */
-const CARD_TOP_Y = 400;
-const SAFE_BOT = 1635;
-/** the caption reserve is the y-RANGE 1420 to 1635. No card may enter it. */
-const CAPTION_TOP = 1420;
+/** THE 1:1 SQUARE LINKEDIN CROP IS THE DELIVERABLE (corrected 2026-08-03 on owner
+ *  evidence: LinkedIn routes anything TALLER THAN SQUARE into the swipe-only Video tab,
+ *  and the old 4:5 1080x1350 cut is taller than square). A 1:1 centre crop off the
+ *  1080x1920 master takes y 420 to 1500, which is a considerably tighter box than the
+ *  4:5 285 to 1635 this film was originally laid out for, so every load-bearing element
+ *  moves inside it. */
+const SAFE_TOP = 420;
+const SAFE_BOT = 1500;
+/** the lowest a top card may be CENTRED and still sit wholly inside the 1:1 crop
+ *  (420 + half of the tallest 132px card + margin) */
+const CARD_TOP_Y = 530;
+/** the caption reserve is the y-RANGE 1310 to 1442, wholly inside the square box */
+const CAPTION_TOP = 1310;
 const CARD_BOT = CAPTION_TOP - 96;
 const FPS = 30;
 
@@ -233,7 +239,7 @@ const AlaskaField: React.FC<{
 
 /** the corner icon, PLANTED in shot 1 so the button has something to flip */
 const CornerTool: React.FC<{f: number; flip?: number; x?: number; y?: number}> = ({
-  f, flip = 0, x = 952, y = 1118,
+  f, flip = 0, x = 948, y = 1046,
 }) => {
   const p = clamp01(flip);
   const rot = p * 180;
@@ -352,9 +358,9 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
       <g transform="translate(60,300) scale(0.86)">
         <AlaskaField f={g} wash={wash} />
       </g>
-      <Counter f={g} x={250} y={1268} spin={spin} value="███" label="MUST NOT BURN" />
+      <Counter f={g} x={250} y={1196} spin={spin} value="███" label="MUST NOT BURN" />
       <g opacity={deadIn}>
-        <Counter f={g} x={640} y={1268} value="0" dark label="YOU CAN" />
+        <Counter f={g} x={640} y={1196} value="0" dark label="YOU CAN" />
       </g>
       <CornerTool f={g} />
       <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN" w={940} />
@@ -520,16 +526,36 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
   const recut = interpolate(t, [L(6) + 3.0, L(6) + 4.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const feed = build * (0.35 + recut * 0.65);
   const rejects = Math.floor(interpolate(t, [L(6) + 5.0, L(7)], [0, 7], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
-  // THE PUNCH: anticipation (compress), 5-frame stall, then drive
+  // THE PUNCH, REBUILT AS AN IMPACT. The panel's repeated finding was that this read
+  // as a dolly: the stroke existed in the timeline and had no amplitude on screen.
+  // Now it is a full anticipation / drive / contact / overshoot / settle, the head is
+  // large enough to see, the frame shakes on contact, a slug ejects, and the window is
+  // cut INTO the stock rather than floating above the machine.
   const pf = (t - L(7)) * FPS;
-  const punch = pf < 0 ? 0 : pf < 8 ? -0.14 * (pf / 8) : pf < 13 ? -0.14
-    : clamp01((pf - 13) / 5);
-  const windows = pf > 16 ? 1 : 0;
+  const RAISE = 10, HOLD = 6, DRIVE = 4, SETTLE = 12;   // frames
+  const CONTACT = RAISE + HOLD + DRIVE;                 // 20f = 0.67s in
+  const punch =
+    pf < 0 ? 0
+    : pf < RAISE ? -0.30 * (pf / RAISE)                       // rear back, loading
+    : pf < RAISE + HOLD ? -0.30                               // the held beat before it
+    : pf < CONTACT ? -0.30 + 1.30 * ((pf - RAISE - HOLD) / DRIVE)   // DRIVE
+    : pf < CONTACT + SETTLE ? 1.0 - 0.22 * Math.sin(((pf - CONTACT) / SETTLE) * Math.PI)
+    : 1.0;
+  // the head is moving fastest through the drive, which is what earns the blur
+  const punchVel = pf >= RAISE + HOLD && pf < CONTACT ? 1 : 0;
+  const windows = pf >= CONTACT ? 1 : 0;
+  // contact flash + shake, spent over 6 frames only so it reads as a hit not a wobble
+  const hit = pf >= CONTACT && pf < CONTACT + 6 ? 1 - (pf - CONTACT) / 6 : 0;
+  const shakeX = hit > 0 ? (hh(Math.floor(g), 91) - 0.5) * 14 * hit : 0;
+  const shakeY = hit > 0 ? (hh(Math.floor(g), 97) - 0.5) * 10 * hit : 0;
+  // the waste slug curls away and drops out of frame after contact
+  const slug = clamp01((pf - CONTACT) / 22);
   const beam = interpolate(t, [L(7) + 0.6, L(7) + 1.0, L(7) + 2.2], [0, 1, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const pull = interpolate(t, [L(7) + 2.6, L(7) + 4.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   const sc = 1 - pull * 0.42;
   return (
     <World f={g} anchorY={1560} hazeAmt={0.75}>
+      <g transform={`translate(${shakeX},${shakeY})`}>
       <g transform={`translate(540,${900 - pull * 40}) scale(${sc}) translate(-540,-900)`}>
         <g opacity={build}>
           <BurnWindowEngine x={520} y={900} f={g} scale={1.42}
@@ -538,6 +564,44 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
             lamp={windows ? 1 : 0} groundY={150}
             windowFill={accentBox(BURNABLE, 660, 900, 40, 44)} />
         </g>
+        {/* THE PUNCH HEAD, big enough to read, driving down onto the stock */}
+        <g opacity={build} transform={`translate(742,${628 + punch * 150})`}>
+          <MotionBlur vy={punchVel * 70} gain={1.2}>
+            <rect x={-46} y={-150} width={92} height={150} rx={6}
+                  fill={STEELOX} stroke={INK} strokeWidth={6} />
+            {/* the compression spring visibly loads as the head rears back */}
+            {[0, 1, 2, 3].map((i) => (
+              <line key={i} x1={-34} y1={-140 + i * (30 + punch * -14)}
+                    x2={34} y2={-126 + i * (30 + punch * -14)}
+                    stroke={INK} strokeWidth={5} opacity={0.55} />
+            ))}
+            {/* hardened cutting shoe, reusing CoringTube's geometry idea */}
+            <path d="M-30,0 L30,0 L22,30 L-22,30 Z" fill="#b9c6c8" stroke={INK} strokeWidth={6} />
+            <line x1={-22} y1={30} x2={22} y2={30} stroke="#eef4f4" strokeWidth={4} />
+          </MotionBlur>
+        </g>
+        {/* THE CONTACT FLASH */}
+        {hit > 0 && (
+          <g opacity={hit}>
+            <circle cx={742} cy={806} r={40 + (1 - hit) * 90} fill="none"
+                    stroke="#fff6dd" strokeWidth={9 * hit} />
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
+              <line key={a} x1={742 + Math.cos(a * Math.PI / 180) * 48}
+                    y1={806 + Math.sin(a * Math.PI / 180) * 48}
+                    x2={742 + Math.cos(a * Math.PI / 180) * (96 + (1 - hit) * 60)}
+                    y2={806 + Math.sin(a * Math.PI / 180) * (96 + (1 - hit) * 60)}
+                    stroke="#fff6dd" strokeWidth={7 * hit} strokeLinecap="round" />
+            ))}
+          </g>
+        )}
+        {/* THE WASTE SLUG, curling away and dropping out of frame */}
+        {slug > 0.01 && slug < 1 && (
+          <g transform={`translate(${742 + slug * 130},${812 + slug * slug * 420}) rotate(${slug * 340})`}
+             opacity={1 - slug * 0.5}>
+            <rect x={-14} y={-16} width={28} height={32} rx={3}
+                  fill="#c9d6d8" stroke={INK} strokeWidth={4} />
+          </g>
+        )}
         {/* the reject pile: days the machine threw away */}
         {Array.from({length: Math.max(0, rejects)}).map((_, i) => (
           <rect key={i} x={250 + (i % 4) * 26} y={1104 - Math.floor(i / 4) * 14}
@@ -545,11 +609,14 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
                 transform={`rotate(${-14 + hh(i, 17) * 28} ${260 + (i % 4) * 26} ${1110})`} />
         ))}
       </g>
+      </g>
       {/* the punched window, staged LARGE, with the film's one hard beam */}
       {windows > 0 && (
-        <g opacity={interpolate(pull, [0, 0.5], [1, 0], {extrapolateRight: 'clamp'})}>
-          <PunchedWindow x={540} y={520} f={g} w={150} hgt={190} beam={beam}
-                         fill={accentBox(BURNABLE, 465, 425, 150, 190)} label="ONE SAFE DAY" />
+        <g opacity={interpolate(pull, [0, 0.6], [1, 0], {extrapolateRight: 'clamp'})}
+           transform={`translate(${shakeX},${shakeY}) translate(742,846) scale(${
+             1 + 0.34 * Math.max(0, 1 - (pf - CONTACT) / 9)})`}>
+          <PunchedWindow x={0} y={0} f={g} w={132} hgt={168} beam={beam}
+                         fill={accentBox(BURNABLE, 676, 762, 132, 168)} />
         </g>
       )}
       <Card x={540} y={CARD_TOP_Y}
@@ -803,8 +870,10 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
   const harden = interpolate(t, [L(16) + 1.2, L(16) + 2.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const flip = interpolate(t, [L(16) + 2.6, L(16) + 3.2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   // 11 windows, each >= 44px on its short side, one hero at 2x near centre
-  const WINS = Array.from({length: 11}).map((_, i) => ({
-    x: 300 + hh(i, 51) * 470, y: 380 + hh(i, 57) * 360,
+  // Bigger, fewer, and clustered in the Interior so they read as a place rather than
+  // as scatter. The panel called these the faintest element in their own hero frame.
+  const WINS = Array.from({length: 9}).map((_, i) => ({
+    x: 330 + hh(i, 51) * 400, y: 400 + hh(i, 57) * 300,
     hero: i === 4,
   }));
   return (
@@ -817,10 +886,16 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
         {WINS.map((w, i) => {
           const p = clamp01(open * 11 - i);
           if (p <= 0) return null;
-          const ww = w.hero ? 92 : 46;
-          const wh = w.hero ? 118 : 58;
+          const ww = w.hero ? 128 : 68;
+          const wh = w.hero ? 162 : 86;
+          // each window POPS with a spring overshoot instead of fading up
+          const pop = 1 + 0.42 * Math.max(0, 1 - p * 4);
           return (
-            <g key={i} opacity={p}>
+            <g key={i} opacity={p}
+               transform={`translate(${w.x},${w.y}) scale(${pop}) translate(${-w.x},${-w.y})`}>
+              {/* darken the ground under each window so the accent has something to sit on */}
+              <rect x={w.x - ww / 2 - 9} y={w.y - wh / 2 - 9} width={ww + 18} height={wh + 18}
+                    rx={5} fill="#241a12" opacity={0.55} />
               <WindowChip x={w.x - ww / 2} y={w.y - wh / 2} w={ww} h={wh}
                           dashed={harden <= 0.5}
                           fill={harden > 0.5 ? accentBox(BURNABLE, w.x - ww / 2, w.y - wh / 2, ww, wh) : BURNABLE} />
@@ -834,9 +909,9 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
       </g>
       {/* the dead counter finally lights, and shows a DASH, not a number */}
       <g opacity={harden}>
-        <Counter f={g} x={640} y={1268} value="—" label="YOU CAN" />
+        <Counter f={g} x={640} y={1196} value="—" label="YOU CAN" />
       </g>
-      <Counter f={g} x={250} y={1268} value="███" label="MUST NOT BURN" />
+      <Counter f={g} x={250} y={1196} value="███" label="MUST NOT BURN" />
       <CornerTool f={g} flip={flip} />
       <Card x={540} y={CARD_TOP_Y}
             text={open > 0.4 ? 'THE DAYS YOU ARE ALLOWED' : 'DAYS IN DANGER, MAPPED FOR DECADES'} w={940} />

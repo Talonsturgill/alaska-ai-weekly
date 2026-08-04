@@ -191,11 +191,22 @@ hatch with better manners.
 
 ## PLATFORMS: LINKEDIN FIRST, ALSO TIKTOK
 
-- Master 9:16 1080x1920 @30fps. ALSO export a 4:5 1080x1350 center-crop; keep hero action and
-  captions inside the centered 4:5 safe box so the crop never amputates the story.
-- THE 4:5 IS THE LINKEDIN DELIVERABLE: 4:5 lands in the main home feed next to the caption;
-  9:16 gets routed into LinkedIn's swipe-only Video tab. The 9:16 is the TikTok cut. Label both
-  correctly in the draft (dispatch_email.py already does).
+- Master 9:16 1080x1920 @30fps. ALSO export a 1:1 SQUARE 1080x1080 center-crop; keep hero action
+  and captions inside the centered 1:1 safe box (y 420 to 1500 of the master) so the crop never
+  amputates the story.
+- THE 1:1 SQUARE IS THE LINKEDIN DELIVERABLE (CORRECTED 2026-08-03 on owner evidence).
+  LinkedIn routes ANY video TALLER THAN SQUARE into the swipe-only Video tab. Square lands in the
+  MAIN HOME FEED next to the caption. The 9:16 is the TikTok cut.
+  THIS FILE PREVIOUSLY SAID 4:5 1080x1350 WAS THE MAIN-FEED CUT AND THAT WAS WRONG. 1080x1350 is
+  0.8 aspect, still taller than wide, so every dispatch shipped under that rule was being routed
+  into the Video tab. The owner noticed the symptom directly: engagement rate up, impressions
+  down, which is what a smaller and more committed Video-tab audience looks like. The owner
+  supplied a main-feed video for comparison and it probes 1080x1080.
+  WHY THIS REGRESSED ONCE BEFORE: the same claim was written in three places that each read as
+  authoritative alone (this file, scripts/dispatch_email.py's button labels, and the encode
+  command's own ffprobe assert). Fixing one left the other two contradicting it and the next run
+  believed the doc. If you are changing the delivery aspect again, change all three, and change
+  the assert, because the assert is the only one that fails loudly.
 - Open captions always (most plays are muted). The hook must be legible and MOVING by ~1.3s.
 - Endings invite thoughtful comments (a genuine question, not engagement bait).
 
@@ -384,7 +395,7 @@ enforced in code by DEDUPE_WINDOW_DAYS in scripts/dedupe.py, so `list` and `chec
   caption cues come from its words JSON. Approximated/scaled/hand-shifted timings are banned.
 - scripts/dedupe.py; scripts/get_music.py (archive.org reachable; Kevin MacLeod CC-BY proven);
   scripts/upload_video.py (permanent GitHub media-branch links, verify HTTP 200);
-  scripts/dispatch_email.py (4:5-primary buttons; omit --temporary, links are permanent);
+  scripts/dispatch_email.py (1:1-square-primary buttons; omit --temporary, links are permanent);
   scripts/caption_check.py + config/linkedin_caption_rubric.yaml;
   scripts/make_review_sheets.py (contact sheets + motion filmstrips; any frames dir);
   scripts/storyboard_check.py (Gate 0A; accepts engine: infographic-2.5d);
@@ -655,7 +666,7 @@ every visual lever, each with a WHY tied to THIS story:
   net-new only where the story finds a real gap — each with a reason it fits this story.
 - `motion_language`: how the world moves and what earns 180-degree motion blur / anticipation /
   overshoot — the key hero moves named, so motion is designed, not an afterthought.
-- `composition`: the staging approach (focal hierarchy, negative-space beats, the 9:16 AND 4:5
+- `composition`: the staging approach (focal hierarchy, negative-space beats, the 9:16 AND 1:1 square
   safe-area intent), and the one signature shot this piece will be remembered for.
 - `craft_advance`: the ONE engine system this run pushes forward (§4.3a) and how.
 
@@ -1085,8 +1096,11 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
    of that instruction and it exits 1 until two real cuts exist. Note it is NOT part of this
    delivery sequence and must never be added to it — it refuses stops, ship_gate refuses ships.
 
-1. Encode 9:16 master + 4:5 center-crop (H.264 High, faststart, AAC 48k, -14 LUFS, each
-   < 100 MB); ffprobe-assert 1080x1920 and 1080x1350 so a wrong-ratio cut can never ship.
+1. Encode 9:16 master + 1:1 SQUARE center-crop (H.264 High, faststart, AAC 48k, -14 LUFS, each
+   < 100 MB); ffprobe-assert 1080x1920 and 1080x1080 so a wrong-ratio cut can never ship.
+   The square crop is `crop=1080:1080:0:420` off the 1080x1920 master (centred vertically).
+   A 1080x1350 cut is NOT the LinkedIn deliverable and must never be labelled as the main-feed
+   cut; see the PLATFORMS section for the evidence and for why that error survived one fix.
    ALSO encode the MOBILE FEED RENDITION from the 9:16 master -- the alaskaaihq.com/videos
    feed serves this to phones (the 1080p master is 15MB+; phones need ~3-6MB to feel
    TikTok-smooth):
@@ -1112,7 +1126,7 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
    note so the owner knows the site feed is stale and why. Title/caption rules: the title is
    the run's display title (the storyboard/treatment title, short); the caption uses only
    verified fact-check-safe-set language, no clickbait beyond what the sources support.
-3. dispatch_email.py (NO --temporary): post text, 4:5-primary download buttons, poster, VOICE
+3. dispatch_email.py (NO --temporary): post text, 1:1-square-primary download buttons, poster, VOICE
    credit ("Gemini native TTS, voice Sulafat, model gemini-3.1-flash-tts-preview; preset voice
    with a SynthID watermark, not a clone") plus the vo_report.json sound-check scorecard, MUSIC
    credit with composer + license, SOURCES with per-figure attribution,

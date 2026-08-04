@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+# ============================================================================
+# ENCODE THE DELIVERABLES, WITH THE ASPECT ASSERTED.
+#
+# WHY THIS EXISTS (2026-08-03). The LinkedIn deliverable was 4:5 1080x1350 for
+# months on the belief that 4:5 lands in the main home feed. It does not.
+# LinkedIn routes ANY video TALLER THAN SQUARE into the swipe-only Video tab,
+# and 1080x1350 is 0.8 aspect. The owner supplied a video that does land in the
+# main feed and it probes 1080x1080. The symptom they had already noticed was
+# engagement rate up and impressions down, which is what a smaller, more
+# committed Video-tab audience looks like.
+#
+# The reason the earlier attempt at this fix did not stick is that the claim
+# lived in three places that each read as authoritative alone: the routine doc,
+# the email button labels, and the ad-hoc ffmpeg command a run typed each time.
+# The first two are prose and prose does not fail. THIS SCRIPT IS THE THIRD ONE,
+# and it ASSERTS, so a wrong-ratio cut cannot leave the machine quietly.
+#
+# Usage: scripts/encode_deliverables.sh [master_mute.mp4] [master.wav]
+# ============================================================================
+set -euo pipefail
+cd "$(dirname "$0")/.."
+OUT=out/dispatch
+MUTE="${1:-$OUT/render_mute.mp4}"
+WAV="${2:-$OUT/audio/master.wav}"
+
+# THE CONTRACT. Change these and you change the deliverable; the asserts below
+# will hold you to whatever you write here.
+SQUARE_W=1080; SQUARE_H=1080          # LinkedIn MAIN FEED. Must not be taller than wide.
+VERT_W=1080;   VERT_H=1920            # TikTok / LinkedIn Video tab.
+SQUARE_CROP_Y=$(( (VERT_H - SQUARE_H) / 2 ))   # 420, centred
+
+bash scripts/mux_and_verify.sh "$MUTE" "$WAV" "$OUT/dispatch_master.mp4"
+
+ffmpeg -y -i "$OUT/dispatch_master.mp4" \
+  -vf "crop=${SQUARE_W}:${SQUARE_H}:0:${SQUARE_CROP_Y}" \
+  -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p -movflags +faststart \
+  -c:a aac -b:a 192k -ar 48000 "$OUT/dispatch_square.mp4" -v error
+
+ffmpeg -y -i "$OUT/dispatch_master.mp4" -vf scale=720:1280 \
+  -c:v libx264 -profile:v main -crf 26 -maxrate 1400k -bufsize 2800k \
+  -pix_fmt yuv420p -movflags +faststart -c:a aac -b:a 96k -ar 48000 \
+  "$OUT/dispatch_master_720.mp4" -v error
+
+ffmpeg -y -ss 0 -i "$OUT/dispatch_square.mp4" -frames:v 1 "$OUT/poster.png" -v error
+ffmpeg -y -i "$OUT/poster.png" -vf scale=540:540 -q:v 5 "$OUT/poster_thumb.jpg" -v error
+
+dim () { ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$1" | tr -d ','; }
+
+assert_dim () {
+  local f="$1" want_w="$2" want_h="$3" label="$4"
+  local got; got="$(dim "$f")"
+  local gw="${got% *}" gh="${got#* }"
+  if [ "$gw" != "$want_w" ] || [ "$gh" != "$want_h" ]; then
+    echo "ASPECT ASSERT FAILED: $label is ${gw}x${gh}, expected ${want_w}x${want_h} ($f)" >&2
+    exit 1
+  fi
+  echo "  OK  $label ${gw}x${gh}  $(du -h "$f" | cut -f1)"
+}
+
+echo "aspect asserts:"
+assert_dim "$OUT/dispatch_master.mp4"     "$VERT_W"   "$VERT_H"   "9:16 master (TikTok / Video tab)"
+assert_dim "$OUT/dispatch_square.mp4"     "$SQUARE_W" "$SQUARE_H" "1:1 square (LinkedIn MAIN FEED)"
+assert_dim "$OUT/dispatch_master_720.mp4" 720         1280        "720p mobile feed rendition"
+
+# THE LOAD-BEARING ONE. A LinkedIn cut taller than it is wide goes to the Video tab.
+if [ "$SQUARE_H" -gt "$SQUARE_W" ]; then
+  echo "ASPECT ASSERT FAILED: the LinkedIn cut is ${SQUARE_W}x${SQUARE_H}, which is TALLER THAN WIDE." >&2
+  echo "  LinkedIn routes anything taller than square into the swipe-only Video tab." >&2
+  echo "  That is the 2026-08-03 regression. The main-feed cut must be square or wider." >&2
+  exit 1
+fi
+echo "  OK  the LinkedIn cut is not taller than wide, so it stays in the main feed"
