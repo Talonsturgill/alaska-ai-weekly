@@ -1,0 +1,52 @@
+{
+  "scores": {
+    "Hook strength": {
+      "raw": 8,
+      "weight": 0.15,
+      "weighted": 1.20,
+      "notes": "Opens with a concrete count (three federal decisions), names three domains, and immediately surfaces the structural tension that Alaska had no position ready. No banned phrases. Slightly summary-register rather than landing on a single sharpest tension, which keeps it from a 10, but it is specific, position-implied, and not generic."
+    },
+    "Local relevance": {
+      "raw": 10,
+      "weight": 0.20,
+      "weighted": 2.00,
+      "notes": "Every story carries named Alaska anchors: Susitna River watershed, west of Skwentna, Mat-Su Borough, Terra Energy Center Corp. for story 1; Gulf of Alaska, UAF, Russ Hopcroft, Ocean Station Papa for story 2; AFA Council 30, LeiLauni Scheideman, Roger Kaye of Fairbanks, HCR 3 for story 3. No story reads as imported national content with a thin AK gloss."
+    },
+    "Factual density": {
+      "raw": 10,
+      "weight": 0.15,
+      "weighted": 1.50,
+      "notes": "Specifics appear in virtually every sentence: $89 million, June 4, 1.25-gigawatt, Susitna River watershed, west of Skwentna, Flatlands Energy (identified as Canadian), Mat-Su Borough, three moorings, Ocean Station Papa, UAF, Russ Hopcroft, super El Nino summer 2026, Great American Artificial Intelligence Act, 269-page draft, three years, HCR 3, Roger Kaye of Fairbanks, AFA Council 30, LeiLauni Scheideman, June 1. No paragraph drifts into vague summary."
+    },
+    "Source quality": {
+      "raw": 8,
+      "weight": 0.15,
+      "weighted": 1.20,
+      "notes": "Story 1 backed by DOE primary source plus ADN and Latitude Media. Story 2 backed by Alaska Public Media plus AGU/Eos. Story 3 backed by Roll Call for the bill fact; the HCR 3 non-advancement claim comes only from a Roger Kaye advocacy letter (validator flagged confidence: medium, needs_softening: true), but the post handles this correctly by attributing the claim inline to that letter. All claims are sourced; no naked assertions. Slight deduction because one claim relies on a single secondary advocacy source without independent corroboration, even though it is disclosed."
+    },
+    "Voice match": {
+      "raw": 9,
+      "weight": 0.15,
+      "weighted": 1.35,
+      "notes": "Closely matches post_001.md in structure: hook naming a count, conventional framing, structural counter-move, named juxtaposition (coal vs. ocean monitoring), stakes, engagement question. Takes clear positions ('It's harder to tell in Alaska'; the tricolon 'There is no mine. There's no transmission line. There's no power-purchase agreement.' is exactly the structural analytical voice). No banned phrases, no emojis, no hashtags, no 'we' speaking as Alaskans."
+    },
+    "Readability (mobile)": {
+      "raw": 9,
+      "weight": 0.10,
+      "weighted": 0.90,
+      "notes": "Approximately 358 words, squarely inside the 280-420 target. Paragraphs are 2-4 sentences. The three-sentence fragment paragraph ('There is no mine...') is exceptionally scannable. No wall-of-text blocks."
+    },
+    "Engagement question": {
+      "raw": 9,
+      "weight": 0.10,
+      "weighted": 0.90,
+      "notes": "The closing question is directly tied to the structural tension named in the hook and carried throughout. It is debatable, invites real answers, and avoids the generic or 'follow us' failure modes. Marginally not a 10 because 'Alaska's institutions' is slightly broad, but it is clearly on-topic and non-generic."
+    }
+  },
+  "weighted_total": 9.05,
+  "threshold": 8.0,
+  "ship": true,
+  "one_sentence_fix": "N/A — post meets ship threshold.",
+  "run_date": "2026-06-06",
+  "volume": "VOL. 04"
+}
