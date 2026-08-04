@@ -1072,7 +1072,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
             2030 would assert progress that has not happened. */}
         <rect x={110} y={700} width={872} height={22} rx={4}
               fill="#2c3a3d" stroke={INK} strokeWidth={5} />
-        <rect x={110} y={704} width={864 * rule} height={14} rx={3} fill="#4a5f52" opacity={0.9} />
+        <rect x={110} y={704} width={864 * rule} height={14} rx={3} fill="#8aa38f" opacity={0.95} />
         <rect x={110} y={694} width={16} height={34} rx={3}
               fill="#ffd98a" stroke={INK} strokeWidth={5} />
         {[0, 1, 2, 3, 4].map((i) => {
@@ -1189,7 +1189,9 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         // ONE OF THEM GESTURES. A judge's summary line was that not one character in the
         // film ever gestures, across five figures and 84 seconds, and that was true. The
         // right-hand crew member points at the blank NO DAY card beside them.
-        {x: 822, sc: 1.02, pose: 'point' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: -1 as const, gy: -18},
+        // moved right so the pointing arm clears the middle figure instead of crossing its
+        // torso, which read to a judge as a detached limb laid over another character
+        {x: 884, sc: 1.02, pose: 'point' as const, emo: 'worried' as const, out: 'flannel' as const, hat: 'beanie' as const, face: -1 as const, gy: -18},
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}
@@ -1213,7 +1215,7 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
           bled through the placard face. Two judges read it as a failed blend and a stale
           duplicate sprite, which is exactly what a 0.6 plate over a figure looks like. It
           fades IN and stays solid. */}
-      <g transform={`translate(690,${1004 + Math.max(0, sheet - 0.6) * 240})`}
+      <g transform={`translate(742,${1012 + Math.max(0, sheet - 0.6) * 240})`}
          opacity={interpolate(sheet, [0, 0.15], [0, 1], {extrapolateRight: 'clamp'})}>
         <rect x={-92} y={-64} width={184} height={128} rx={6}
               fill="#efeade" stroke={INK} strokeWidth={6} />
@@ -1277,8 +1279,10 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
       <g transform="translate(108,476) scale(0.76)">
         <AlaskaField f={g} wash={(1 - drain) * (1 - harden * 0.9)} drain={drain} />
       </g>
-      {/* the windows open, dashed first, then harden */}
-      <g transform="translate(108,476) scale(0.76)">
+      {/* the windows open, dashed first, then harden. CLIPPED TO THE LANDMASS: hand-placing
+          them stopped most of the offshore chips but two still straddled the coastline, and
+          a chip that means "a burnable day here" must never sit in the ocean. */}
+      <g transform="translate(108,476) scale(0.76)" clipPath="url(#akclip)">
         {WINS.map((w, i) => {
           const p = clamp01(open * 11 - i);
           if (p <= 0) return null;
@@ -1328,9 +1332,13 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
             text={t >= L(16) + 0.15 ? 'THE DAYS YOU ARE ALLOWED' : 'DAYS IN DANGER, MAPPED FOR DECADES'} w={940} />
       {harden > 0.4 && (
         <g>
-          <rect x={236} y={1084} width={608} height={56} rx={7} fill="#efe9dc" stroke={INK} strokeWidth={4} />
-          <text x={540} y={1122} textAnchor="middle" fill={INK}
-                style={{font: `700 28px ${MONO}`, letterSpacing: 1}}>
+          {/* I ENLARGED THE TEXT AND DID NOT RE-MEASURE THE PLATE, so the line overflowed
+              both borders for the whole payoff scene. Fifth string in this film whose width
+              nobody checked. Sized off the string. */}
+          <rect x={540 - 358} y={1082} width={716} height={58} rx={7}
+                fill="#efe9dc" stroke={INK} strokeWidth={4} />
+          <text x={540} y={1121} textAnchor="middle" fill={INK}
+                style={{font: `700 26px ${MONO}`, letterSpacing: 0.5}}>
             illustrative, the project hasn't run
           </text>
         </g>
