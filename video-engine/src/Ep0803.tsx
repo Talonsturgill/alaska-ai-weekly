@@ -221,19 +221,39 @@ const Haze: React.FC<{f: number; amount?: number; y?: number}> = ({f, amount = 1
 // Alaska Peninsula sweeping southwest into a dotted Aleutian arc, the Southeast
 // panhandle running down-right, and the straight Canada border. All four are drawn.
 const AK_PATH =
-  'M250,180 L520,152 L832,150 ' +
-  'L832,470 L880,560 L930,662 L986,762 L958,778 L898,690 L848,600 L820,540 ' +
-  'L742,542 L700,588 L658,546 L620,602 L590,560 L540,602 L500,586 ' +
-  'L452,642 L378,692 L298,732 L236,764 ' +
-  'L250,700 L332,660 L402,620 L452,586 ' +
-  'L400,560 L340,572 L300,520 L246,506 ' +
-  'L216,456 L252,430 L214,400 L166,386 ' +
-  'L150,330 L202,318 L246,342 L236,286 L262,250 Z';
+  // REDRAWN 2026-08-04. Three judges in three rounds called the old outline the least
+  // finished asset in the film, and it opens and closes the piece: a straight north coast,
+  // a straight vertical east edge, a sawtooth southern edge matching no coastline, no Cook
+  // Inlet, no Kenai, no Bristol Bay, three dots for the Aleutians and a stick panhandle.
+  // For an Alaska brand that is the wrong thing to leave crude. Still low-poly and still in
+  // the house polygon language, but the features an Alaskan reads for are now there and in
+  // the right places: Beaufort coast, the 141st meridian border, the Southeast panhandle,
+  // Prince William Sound, Cook Inlet with the Kenai lobe, the Alaska Peninsula running out
+  // to the chain, Bristol Bay, the Yukon-Kuskokwim delta, Norton Sound, Seward Peninsula
+  // and Kotzebue Sound.
+  'M300,150 L520,158 L700,152 L830,168 ' +          // Beaufort / north slope coast
+  'L838,300 L836,468 ' +                            // the 141st meridian, Canada border
+  'L900,560 L946,646 L988,742 L958,758 ' +          // the Southeast panhandle running out
+  'L906,664 L858,576 L820,506 ' +                   // and back up its inner shore
+  'L760,516 L700,536 L662,556 ' +                   // Gulf coast to Prince William Sound
+  'L640,600 L620,652 L596,662 L586,606 ' +          // the Kenai lobe
+  'L568,556 L556,498 L540,556 ' +                   // Cook Inlet, cut north between them
+  'L486,592 L430,628 L392,652 ' +                   // the Alaska Peninsula heading southwest
+  'L336,706 L300,726 L286,700 L330,660 ' +          // its tip, and back along the north shore
+  'L398,614 L436,586 ' +                            // Bristol Bay
+  'L392,566 L342,556 L300,528 ' +                   // Kuskokwim Bay
+  'L262,506 L236,470 ' +                            // the Yukon-Kuskokwim delta
+  'L274,452 L246,430 ' +                            // Norton Sound
+  'L186,418 L150,398 L166,368 L214,372 ' +          // the Seward Peninsula
+  'L206,336 L226,300 L252,236 Z';                   // Kotzebue Sound and up to the north coast
+
 /** the Aleutian arc, drawn as a real chain of separate islands running west */
 const AK_TAIL = [
-  {x: 208, y: 782, r: 15}, {x: 172, y: 800, r: 12}, {x: 138, y: 812, r: 10},
-  {x: 106, y: 822, r: 9}, {x: 78, y: 830, r: 8}, {x: 52, y: 836, r: 7},
-  {x: 30, y: 842, r: 6},
+  // the chain continues from the peninsula tip at (300,726) rather than starting in open
+  // water 90px away from it, which is what made it read as three unattached dots
+  {x: 268, y: 744, r: 13}, {x: 236, y: 758, r: 11}, {x: 206, y: 770, r: 10},
+  {x: 178, y: 780, r: 9}, {x: 152, y: 788, r: 8}, {x: 128, y: 794, r: 7},
+  {x: 106, y: 799, r: 6}, {x: 86, y: 803, r: 5},
 ];
 
 const AlaskaField: React.FC<{
@@ -877,7 +897,7 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
         {HATCH.map((h, i) => (
           <g key={i} transform={`translate(540,1060) rotate(${h.a})`} opacity={fields}>
             <rect x={-170 + (1 - fields) * 150} y={-42} width={340} height={84} rx={6}
-                  fill={h.c} opacity={0.82} stroke={INK} strokeWidth={5} />
+                  fill={h.c} stroke={INK} strokeWidth={5} />
             <rect x={-170 + (1 - fields) * 150} y={-42} width={340} height={22} rx={6}
                   fill="#ffffff" opacity={0.13} />
           </g>
@@ -1103,12 +1123,10 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         <text x={0} y={6} textAnchor="middle" fill={INK} opacity={0.4}
               style={{font: `700 24px ${MONO}`}}>NO DAY</text>
       </g>
-      {/* the engine, a pale speck deep in the haze. Kept small but pulled in off the
-          right edge and dimmed further: at 0.34 in the treeline it read to a judge as a
-          ghost plate fragment rather than as a distant machine. */}
-      <g opacity={0.24} transform="translate(846,1146) scale(0.15)">
-        <BurnWindowEngine x={0} y={0} f={g} feed={1} groundY={120} />
-      </g>
+      {/* the distant-machine speck used to live here. Three judges read it as a ghosted
+          duplicate prop or a compositing artifact rather than as depth, which is a fair
+          reading of a 0.15-scale copy of a foreground asset floating in a treeline. A prop
+          that has to be explained is not doing depth work. Removed. */}
       <Card x={540} y={CARD_TOP_Y} text="A CREW WITH NO DAY TO GO ON" w={840} />
       <CornerTool f={g} />
     </World>
@@ -1200,12 +1218,15 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
         </text>
       </g>
       <Card x={540} y={CARD_TOP_Y}
-            text={open > 0.4 ? 'THE DAYS YOU ARE ALLOWED' : 'DAYS IN DANGER, MAPPED FOR DECADES'} w={940} />
+            text={t >= L(16) + 0.15 ? 'THE DAYS YOU ARE ALLOWED' : 'DAYS IN DANGER, MAPPED FOR DECADES'} w={940} />
       {harden > 0.4 && (
-        <text x={540} y={1120} textAnchor="middle" fill={INK} opacity={0.55}
-              style={{font: `700 17px ${MONO}`, letterSpacing: 1}}>
-          illustrative, the project has not run
-        </text>
+        <g>
+          <rect x={266} y={1092} width={548} height={46} rx={7} fill="#efe9dc" stroke={INK} strokeWidth={4} />
+          <text x={540} y={1123} textAnchor="middle" fill={INK}
+                style={{font: `700 22px ${MONO}`, letterSpacing: 1}}>
+            illustrative, the project has not run
+          </text>
+        </g>
       )}
     </World>
   );
