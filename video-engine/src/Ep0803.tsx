@@ -509,7 +509,11 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
       <g opacity={deadIn}>
         <Counter f={g} x={640} y={1196} value="—" dark label="YOU CAN" />
       </g>
-      <CornerTool f={g} />
+      {/* MOVED OFF THE ALEUTIANS. On its default lower-left anchor this chip sat on
+          the chain and cut it, leaving an orphaned island fragment past its corner that
+          reads as a smudge rather than as geography. The map's right edge is at x=859.
+          The closing bookend carries the same move so the mark does not wander. */}
+      <CornerTool f={g} x={962} />
       <g transform={`translate(540,${CARD_TOP_Y}) scale(${0.82 + 0.18 * slam},${settle * (0.34 + 0.66 * slam)}) translate(-540,${-CARD_TOP_Y})`}
          opacity={clamp01(slam * 2.6)}>
         <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN?" w={940} />
@@ -699,7 +703,18 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
         <rect x={0} y={1250} width={1080} height={60} fill={DUFF} />
         <rect x={0} y={1310} width={1080} height={80} fill="#4e3826" />
         {/* the fuel bar collapses where the line has already passed */}
-        <rect x={0} y={1180} width={flameX} height={34} fill="#3a2b1e" opacity={0.85} />
+        {/* THE BURNED GROUND WAS A BARE RECTANGLE and its corner read as a compositing
+          seam, measured at a 30-level step across 3px. It is the ground the fire has
+          already been over, so it gets a charred leading edge and a few surviving
+          embers instead of a hard right angle. */}
+      <rect x={0} y={1180} width={flameX} height={34} fill="#3a2b1e" opacity={0.85} />
+      <path d={`M${flameX - 26},1180 q10,9 -2,17 q12,9 0,17 L${flameX + 6},1214 L${flameX + 6},1180 Z`}
+            fill="#2a1d13" opacity={0.9} />
+      <rect x={0} y={1180} width={flameX} height={5} fill="#1d140c" opacity={0.55} />
+      {[0.34, 0.62, 0.86].map((k) => (
+        <circle key={k} cx={flameX * k} cy={1188 + Math.sin(g / 7 + k * 9) * 2} r={2.6}
+                fill="#ff9a3c" opacity={0.32 + 0.2 * Math.sin(g / 5 + k * 11)} />
+      ))}
       </g>
       {/* the flame line */}
       <g transform={`translate(${flameX},1176)`}>
@@ -880,6 +895,12 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
       <g>
       <g transform={`translate(540,${900 - pull * 40}) scale(${sc}) translate(-540,-900)`}>
         <g opacity={build}>
+          {/* IT WAS THE ONE OBJECT IN THE FILM THAT FLOATED, for the 10.8s of the
+              longest shot. Everything else grounded in this piece carries an AO pool:
+              the boots, the sign post, the dropped torch. Its ground plane sits at
+              900 + 106*1.42. */}
+          <ellipse cx={528} cy={1052} rx={306} ry={26} fill="#2a2418" opacity={0.34} />
+          <ellipse cx={524} cy={1046} rx={196} ry={16} fill="#1d1a11" opacity={0.4} />
           <BurnWindowEngine x={520} y={900} f={g} scale={1.42}
             emotion={windows ? 'found' : recut < 1 ? 'straining' : 'reading'}
             feed={feed} punch={Math.max(0, punch)} windows={windows ? 1 : 0}
@@ -1206,10 +1227,12 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
                   <ellipse cx={2} cy={62} rx={40} ry={8} fill="#0d1714" opacity={0.6} />
                   <rect x={-7} y={30} width={14} height={32} rx={3} fill="#6b4c33" stroke={INK} strokeWidth={5} />
                   <path d={`M0,60 L-42,60 L0,${60 - h} L42,60 Z`} fill="#4a7d6b" stroke={INK} strokeWidth={6} />
-                  <path d={`M0,58 L-38,58 L0,${62 - h} Z`} fill="#5d9179" />
+                  {/* apex SHARED with the outer silhouette. It used to sit 2px lower, which
+              left a pale sliver at every tip for the whole 9.3s hold. */}
+          <path d={`M0,58 L-38,58 L0,${60 - h} Z`} fill="#5d9179" />
                   <path d={`M0,${60 - h * 0.34} L-27,${60 - h * 0.34} L0,${60 - h * 0.82} L27,${60 - h * 0.34} Z`}
                         fill="#4a7d6b" stroke={INK} strokeWidth={6} />
-                  <path d={`M0,${58 - h * 0.34} L-24,${58 - h * 0.34} L0,${62 - h * 0.82} Z`} fill="#5d9179" />
+                  <path d={`M0,${58 - h * 0.34} L-24,${58 - h * 0.34} L0,${60 - h * 0.82} Z`} fill="#5d9179" />
                 </g>
               );
             })()}
@@ -1314,6 +1337,7 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
           <ellipse cx={c.x + 3} cy={1187 + c.gy} rx={34 * c.sc} ry={9} fill="#3a2718" opacity={0.55} />
           <g transform={`translate(${c.x},${1180 + c.gy}) scale(${c.sc})`}>
             <Character frame={g + i * 37} pose={c.pose} emotion={c.emo}
+                       gesture={c.pose === 'point' ? clamp01((sheet - 0.12) * 2.2) : 1}
                        outfit={c.out} headgear={c.hat} facing={c.face} />
           </g>
         </g>
@@ -1349,7 +1373,11 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
             strike belongs on the thing that is absent: an empty date slot, ruled like a
             roster and crossed out, with NO DAY left clean underneath as the conclusion
             rather than as the thing being negated. */}
-        <rect x={-64} y={-48} width={128} height={34} rx={3}
+        {/* widened to 148: text_fit_check pairs NO DAY with the nearest preceding
+            rect, which is this slot, and at 128 it reported 11.5px of margin against a
+            14px floor. The gate is right to be conservative about which plate owns a
+            string, and a roomier date slot is the better drawing anyway. */}
+        <rect x={-74} y={-48} width={148} height={34} rx={3}
               fill="none" stroke={INK} strokeWidth={3} opacity={0.5} />
         <line x1={-70} y1={-10} x2={70} y2={-52} stroke="#8a2a2a" strokeWidth={5}
               strokeLinecap="round" opacity={0.85} />
@@ -1448,7 +1476,7 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
                  lit={accentBox(BURNABLE, 594, 1168, 92, 44)} />
       </g>
       <Counter f={g} x={250} y={1196} value="███" label="MUST NOT BURN" dim={harden} />
-      <CornerTool f={g} flip={flip} />
+      <CornerTool f={g} flip={flip} x={962} />
       {/* THE MUSIC CREDIT, ON THE FILM ITSELF. The bed is CC BY 4.0, which requires
           attribution wherever the work is distributed, and the credit lived only in
           out/dispatch/music_credit.json: nowhere on screen, nowhere in the post, nowhere

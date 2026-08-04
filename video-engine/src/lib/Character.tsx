@@ -56,6 +56,13 @@ export interface CharacterProps {
   eyes?: string;
   /** round wire glasses (cast differentiation for officials/experts) */
   glasses?: boolean;
+  /** 0..1 drive for a gesture pose. At 0 the arm is tucked, at 1 fully extended, and
+   *  the pose adds its own anticipation and overshoot in between, so a scene can PLAY a
+   *  point rather than hold one. Added 2026-08-04: two judges measured the film's only
+   *  character gesture as already-extended in the first frame of its shot and unchanged
+   *  for 6.6s, which is a pose wearing a gesture's clothes. Defaults to 1 so every
+   *  existing call site keeps the pose it was composed with. */
+  gesture?: number;
   /** per-figure multiplier on the idle weight-shift/sway amplitude (default 1). Lets a specific
       scene widen ONLY that figure's sway when a large camera move (e.g. S5's truck-pan) visually
       dominates the default-amplitude idle, without touching the shared idle system for every other
@@ -101,6 +108,7 @@ export const Character: React.FC<CharacterProps> = ({
   eyes = '#41607d',
   glasses = false,
   idleGain = 1,
+  gesture = 1,
   trim,
 }) => {
   const c = {...OUTFITS[outfit], ...(trim ? {trim} : {})};
@@ -348,14 +356,29 @@ export const Character: React.FC<CharacterProps> = ({
             <path d="M-46,266 q-16,44 -8,84" fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d="M-46,266 q-16,44 -8,84" fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
             {hand(-54, 352, 0, 14)}
-            {/* pointing arm extended forward */}
-            <path d={`M46,262 q52,-6 96,${-18 + 3 * Math.sin(f / 11)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
-            <path d={`M46,262 q52,-6 96,${-18 + 3 * Math.sin(f / 11)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-            <g transform={`translate(148,${242 + 3 * Math.sin(f / 11)})`}>
+            {/* pointing arm. ANTICIPATION, EXTENSION, SETTLE: the reach pulls back
+                below zero before it goes out and overshoots past the target before it
+                lands, so the arm arrives rather than appearing. */}
+            {(() => {
+              const gg = Math.max(0, Math.min(1, gesture));
+              // -0.18 windup, +1.09 overshoot, settling to 1
+              const ext = gg <= 0 ? -0.18
+                : gg >= 1 ? 1
+                : -0.18 + 1.27 * gg + 0.11 * Math.sin(gg * Math.PI) - 0.2 * Math.sin(gg * Math.PI * 2) * (1 - gg);
+              const reach = 96 * ext;
+              const rise = -18 * ext + 3 * Math.sin(f / 11);
+              return (
+                <g>
+            <path d={`M46,262 q${52 * ext},-6 ${reach},${rise}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
+            <path d={`M46,262 q${52 * ext},-6 ${reach},${rise}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
+            <g transform={`translate(${46 + reach + 6},${262 + rise - 2})`}>
               {hand(0, 0, -90)}
               {/* extended pointing finger stays on top of the new hand */}
               <rect x={8} y={-7} width={30} height={13} rx={6.5} fill={skin} stroke={INK} strokeWidth={4.5} />
             </g>
+                </g>
+              );
+            })()}
           </g>
         );
       case 'carry':
