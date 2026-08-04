@@ -140,26 +140,29 @@ EVENTS = [
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (0.0,  1.00),   # cold open: the claim, bed present
-    (9.8,  0.92),   # "real gates already stand here" -- evidence, step back
-    (22.3, 1.14),   # "now go north" -- the turn
-    (31.8, 1.24),   # the wellhead lease, top of the indictment
-    (37.5, 1.12),   # the comment count
-    # ROUND 9, judge 2: "the picture goes quiet exactly where the bed thins to half...
-    # either restore the roll-through or lift the bed 2 to 3 LU across 43.4-51.5s". The
-    # thinning was right in principle and too deep in practice: the concession is the
-    # film's most credibility-critical move and burying it in near-silence made the whole
-    # passage read as a sag rather than as a lowered voice. Lifted about 2.5 dB. It is
-    # still the quietest bed in the film, which is the point, but the beat is no longer
-    # the emptiest thing in the piece.
-    (43.4, 0.70),   # CONCESSION. "So he's right that there's a hole."
-    (51.5, 0.68),   # "a patchwork, not a process" -- still the honest limit
-    (55.7, 0.76),   # New York comparison, bed rebuilds under analysis
-    (63.8, 0.94),
-    (70.0, 1.20),   # "at the wellhead it's the only thing in the way" -- the paradox
-    (77.2, 0.88),   # the prescription, spoken plainly
-    (82.5, 1.34),   # the questions. Swell.
-    (87.9, 1.52),
+    # REWRITTEN 2026-08-04. The arc that was here belonged to a different episode: its
+    # breakpoints were labelled "go north", "the wellhead lease" and "New York comparison",
+    # and its last two nodes sat at 82.5s and 87.9s on a film that ends at 83.76s. So the
+    # bed was following someone else's story and the last move never played. Two judges
+    # measured the consequence from opposite directions, LRA 3.0 across the whole piece and
+    # "the arc is not in the dynamics, so the punch cannot punch". These nodes are this
+    # film's beats, taken from vo_lines.json, and the range is deliberately wider.
+    (0.0,  0.96),   # cold open: decades of days you must not burn
+    (5.0,  1.18),   # "Nobody has mapped the days you can" -- the inversion, lift
+    (8.1,  1.30),   # the award lands
+    (17.8, 1.02),   # what a prescribed burn is, explanatory, step back
+    (23.9, 0.90),   # "It works, and Alaska barely uses it"
+    (27.2, 0.82),   # NSF says the state lacks the tools -- the problem, quietest so far
+    (31.1, 1.10),   # the machine reads decades of weather -- build
+    (38.1, 1.34),   # "That isn't a forecast. It's a count of safe days." -- the turn
+    (45.7, 1.06),   # four entities over one piece of ground
+    (54.5, 0.92),   # the grant pays to get them talking
+    (58.0, 0.62),   # THE HONEST TURN: "But it isn't finished."
+    (63.1, 0.56),   # who pays when a burn escapes -- the floor of the film
+    (67.3, 0.98),   # "But nothing moves without that count" -- rebuild
+    (73.9, 1.26),   # the wash drains
+    (77.7, 1.55),   # the windows open. The payoff, and the loudest the bed gets.
+    (81.2, 1.20),   # tail under the credit
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
