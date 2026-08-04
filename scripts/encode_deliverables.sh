@@ -79,6 +79,25 @@ assert_dim "$OUT/dispatch_master.mp4"     "$VERT_W"   "$VERT_H"   "9:16 master (
 assert_dim "$OUT/dispatch_square.mp4"     "$SQUARE_W" "$SQUARE_H" "1:1 square (LinkedIn MAIN FEED)"
 assert_dim "$OUT/dispatch_master_720.mp4" 720         1280        "720p mobile feed rendition"
 
+# DELIVERED AUDIO, MEASURED ON THE CUT THAT SHIPS. Nothing asserted this before, so the
+# audio gate was only ever checked on the master. The square cut re-encodes audio to AAC and
+# that transcode lifted true peak from -1.12 to -0.94 dBTP, past the -1.0 ceiling the rubric
+# fails a dispatch on, and it would have shipped silently.
+echo "audio asserts (delivered square cut):"
+AJ="$(ffmpeg -i "$OUT/dispatch_square.mp4" -af loudnorm=I=-14:TP=-1.0:LRA=11:print_format=json -f null - 2>&1 | tail -20)"
+A_I="$(printf '%s' "$AJ" | sed -n 's/.*"input_i"[^"]*"\([^"]*\)".*/\1/p' | head -1)"
+A_TP="$(printf '%s' "$AJ" | sed -n 's/.*"input_tp"[^"]*"\([^"]*\)".*/\1/p' | head -1)"
+if [ -z "$A_I" ] || [ -z "$A_TP" ]; then
+  echo "AUDIO ASSERT FAILED: could not measure the delivered cut" >&2; exit 1
+fi
+awk -v i="$A_I" -v tp="$A_TP" 'BEGIN{
+  ok=1
+  if (i < -15.0 || i > -13.0) {printf "AUDIO ASSERT FAILED: %s LUFS is outside -15.0..-13.0\n", i > "/dev/stderr"; ok=0}
+  if (tp > -1.0) {printf "AUDIO ASSERT FAILED: true peak %s dBTP is above the -1.0 ceiling\n", tp > "/dev/stderr"; ok=0}
+  if (ok) printf "  OK  delivered %s LUFS, true peak %s dBTP\n", i, tp
+  exit ok?0:1
+}' || exit 1
+
 # THE LOAD-BEARING ONE. A LinkedIn cut taller than it is wide goes to the Video tab.
 if [ "$SQUARE_H" -gt "$SQUARE_W" ]; then
   echo "ASPECT ASSERT FAILED: the LinkedIn cut is ${SQUARE_W}x${SQUARE_H}, which is TALLER THAN WIDE." >&2

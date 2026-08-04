@@ -364,14 +364,14 @@ def main():
          "-ar", str(SR), "-ac", "2", "-t", str(VIDEO_SECS), premix])
 
     p = subprocess.run([FF, "-i", premix, "-af",
-                        "loudnorm=I=-14:TP=-1.2:LRA=11:print_format=json", "-f", "null", "-"],
+                        "loudnorm=I=-14:TP=-1.8:LRA=11:print_format=json", "-f", "null", "-"],
                        capture_output=True, text=True)
     m = re.search(r"\{[^{}]*input_i[^{}]*\}", p.stderr, re.S)
     if not m:
         raise SystemExit("dispatch_mix: loudnorm analysis pass produced no JSON")
     a = json.loads(m.group(0))
     print(f"premix measured: {a['input_i']} LUFS  TP {a['input_tp']}  LRA {a['input_lra']}")
-    ln = (f"loudnorm=I=-14:TP=-1.2:LRA=11:linear=true"
+    ln = (f"loudnorm=I=-14:TP=-1.8:LRA=11:linear=true"
           f":measured_I={a['input_i']}:measured_TP={a['input_tp']}"
           f":measured_LRA={a['input_lra']}:measured_thresh={a['input_thresh']}"
           f":offset={a['target_offset']}:print_format=summary")
