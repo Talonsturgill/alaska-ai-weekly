@@ -244,8 +244,9 @@ const AlaskaField: React.FC<{
     {AK_TAIL.map((c, i) => (
       <ellipse key={i} cx={c.x} cy={c.y} rx={c.r * 1.5} ry={c.r} fill="#8a6a52" stroke={INK} strokeWidth={5} />
     ))}
+    <clipPath id="akclip"><path d={AK_PATH} /></clipPath>
     {relief && (
-      <g opacity={0.5}>
+      <g opacity={0.5} clipPath="url(#akclip)">
         {Array.from({length: 34}).map((_, i) => {
           const x = 250 + hh(i, 21) * 560;
           const y = 340 + hh(i, 23) * 420;
@@ -425,7 +426,7 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
         <Counter f={g} x={640} y={1196} value="—" dark label="YOU CAN" />
       </g>
       <CornerTool f={g} />
-      <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN" w={940} />
+      <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN?" w={940} />
     </World>
   );
 };
@@ -458,8 +459,10 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
       {/* printed header block */}
       <rect x={-W / 2 + 9} y={-H / 2 + 9} width={W - 18} height={74} rx={5}
             fill="url(#pktb)" stroke={INK} strokeWidth={4.5} />
-      <text x={0} y={-181} textAnchor="middle" fill={INK}
-            style={{font: `700 31px ${MONO}`, letterSpacing: 2}}>NSF AWARD 2536745</text>
+      <text x={0} y={-188} textAnchor="middle" fill={INK}
+            style={{font: `700 29px ${MONO}`, letterSpacing: 2}}>NSF AWARD 2536745</text>
+      <text x={0} y={-162} textAnchor="middle" fill={INK} opacity={0.72}
+            style={{font: `700 17px ${MONO}`}}>program element, Artificial Intelligence (AI)</text>
       {/* punched filing holes, so the paper has been handled */}
       {[-250, 0, 250].map((hx) => (
         <circle key={hx} cx={hx} cy={H / 2 - 26} r={9} fill="#b9b0a0" stroke={INK} strokeWidth={3} />
@@ -467,10 +470,16 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
       {/* abstract body: set text, not legible at feed size and not meant to be. Without
           it the lower half of the sheet is blank for the five seconds before the stamp,
           which is the same dead-frame failure one layer in. */}
-      <g opacity={clamp01(write * 1.2) * 0.34}>
-        {[0, 1, 2, 3].map((i) => (
-          <rect key={i} x={-W / 2 + 34} y={16 + i * 22} height={9} rx={4.5} fill={INK}
-                width={(W - 68) * [1, 0.94, 0.98, 0.55][i] * clamp01(write * 1.6 - i * 0.12)} />
+      <g opacity={clamp01(write * 1.3)}>
+        {['"a proven strategy for reducing this risk"',
+          '"remains underused in Alaska"'].map((line, i) => (
+          <text key={i} x={-W / 2 + 34} y={22 + i * 30} fill={INK} opacity={0.62}
+                style={{font: `700 ${fit(line, W - 68, 21, 0.58)}px ${MONO}`}}
+                clipPath={undefined}>
+            {clamp01(write * 1.7 - i * 0.35) > 0.05
+              ? line.slice(0, Math.ceil(line.length * clamp01(write * 1.7 - i * 0.35)))
+              : ''}
+          </text>
         ))}
       </g>
       <text x={-W / 2 + 34} y={-84} fill={INK}
@@ -516,7 +525,7 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
   const land = spring({frame: Math.max(0, g - (L(2) + 0.25) * FPS), fps, config: {damping: 14, mass: 0.8}});
   const write = interpolate(t, [L(2) + 1.1, L(2) + 3.2], [0, 1],
                             {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
-  const stamp = spring({frame: Math.max(0, g - (L(2) + 6.4) * FPS), fps, config: {damping: 12, mass: 1.5}});
+  const stamp = spring({frame: Math.max(0, g - (L(2) + 4.55) * FPS), fps, config: {damping: 12, mass: 1.5}});
   const shake = stamp > 0.1 && stamp < 0.6 ? (hh(Math.floor(g), 2) - 0.5) * 6 : 0;
   return (
     <World f={g} anchorY={1430}>
@@ -567,7 +576,7 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
   // crawl and handed the shot back its empty frame at 23s.
   const flameX = 400 + crawl * 300;
   return (
-    <World f={g} anchorY={1180}>
+    <World f={g} anchorY={968}>
       {/* the duff, drawn as three shaded strata so fuel is a SUBSTANCE */}
       <g>
         <rect x={0} y={1180} width={1080} height={70} fill="#7a5a3c" stroke={INK} strokeWidth={5} />
@@ -787,7 +796,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
       )}
       <Card x={540} y={CARD_TOP_Y}
             text={recut < 1 ? 'RE-CUT FOR ALASKA' : windows ? 'ONE SAFE DAY' : 'READING DECADES OF WEATHER'}
-            sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, on the Canadian Forest Fire Weather Index'
+            sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, on the Canadian Forest Fire Weather Index (NSF)'
                            : windows ? 'a day the model says would have been safe'
                            : 'statistical and machine-learning techniques (NSF)'} w={960} />
       <CornerTool f={g} />
@@ -937,7 +946,10 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
       <rect x={0} y={520} width={1080} height={1100} fill="#22302c" stroke={INK} strokeWidth={6} />
       {/* the machined rule */}
       <g opacity={rule}>
-        <rect x={90} y={700} width={900 * rule} height={22} rx={4} fill={STEELOX} stroke={INK} strokeWidth={5} />
+        <rect x={110} y={700} width={872 * rule} height={22} rx={4}
+              fill="#2c3a3d" stroke={INK} strokeWidth={5} />
+        <rect x={110} y={700} width={Math.min(872 * rule, 14)} height={22} rx={4}
+              fill="#ffd98a" stroke={INK} strokeWidth={5} />
         {[0, 1, 2, 3, 4].map((i) => {
           const last = i === 4;
           return (
@@ -957,8 +969,19 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
         const grow = p > 0.5 ? (p - 0.5) * 2 : 0;
         return (
           <g key={i} transform={`translate(${190 + i * 218},900)`}>
-            <path d={`M0,${60} L-42,${60} L0,${60 - 110 * (1 - burn * 0.8 + grow * 0.5)} L42,${60} Z`}
-                  fill={SPRUCE} stroke={INK} strokeWidth={4} />
+            {(() => {
+              const h = 110 * (1 - burn * 0.8 + grow * 0.5);
+              return (
+                <g>
+                  <ellipse cx={2} cy={62} rx={40} ry={8} fill="#16241f" opacity={0.5} />
+                  <path d={`M0,60 L-42,60 L0,${60 - h} L42,60 Z`} fill="#2b4a42" stroke={INK} strokeWidth={4} />
+                  <path d={`M0,60 L-42,60 L0,${60 - h} Z`} fill={SPRUCE} />
+                  <path d={`M0,${60 - h * 0.34} L-27,${60 - h * 0.34} L0,${60 - h * 0.82} L27,${60 - h * 0.34} Z`}
+                        fill="#2b4a42" stroke={INK} strokeWidth={3.5} />
+                  <path d={`M0,${60 - h * 0.34} L-27,${60 - h * 0.34} L0,${60 - h * 0.82} Z`} fill={SPRUCE} />
+                </g>
+              );
+            })()}
             {burn > 0.05 && burn < 0.95 && (
               <path d="M-16,50 q10,-34 0,-56 q-14,28 0,56 Z" fill={EMBER} stroke={INK} strokeWidth={3} />
             )}
@@ -969,13 +992,15 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
       {[0, 1, 2].map((i) => {
         const on = arrows > i;
         return (
-          <g key={i} transform={`translate(${200 + i * 200},1136)`}>
+          <g key={i} transform={`translate(${145 + i * 205},1136)`}>
             {/* WIDER, so the longest label in the set fits at the SAME size as its
                 siblings. Auto-shrinking one chip's label gave three type sizes in one
                 row and still collided with the scan bracket. */}
-            <rect x={-96} y={-52} width={192} height={104} rx={7}
+            <rect x={-80} y={-52} width={160} height={104} rx={7}
                   fill={on ? ENAMEL : '#9aa79f'} stroke={INK} strokeWidth={6} />
-            {on && <path d="M-140,0 L-86,0 M-96,-12 L-84,0 L-96,12" stroke={INK} strokeWidth={7} fill="none" />}
+            {on && i > 0 && (
+              <path d="M-118,0 L-88,0 M-98,-11 L-86,0 L-98,11" stroke={INK} strokeWidth={7} fill="none" />
+            )}
             <text x={0} y={8} textAnchor="middle" fill={INK} opacity={on ? 1 : 0.86}
                   style={{font: `700 19px ${MONO}`}}>
               {['FORECAST', 'PARTNERS', 'CURRICULUM'][i]}
@@ -983,23 +1008,25 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
           </g>
         );
       })}
-      <g transform="translate(800,1136)">
-        <rect x={-150} y={-42} width={300} height={84} rx={0}
+      <g transform="translate(850,1136)">
+        <rect x={-120} y={-46} width={240} height={92} rx={0}
               fill="none" stroke={INK} strokeWidth={6} strokeDasharray="18 14" />
         <text x={0} y={8} textAnchor="middle" fill={BONE} opacity={0.85}
               style={{font: `700 24px ${MONO}`}}>LIABILITY</text>
         {/* the arrow that reaches the contour and comes apart */}
         <g opacity={1 - dis}>
-          <path d={`M${-320 + dis * 140},0 L${-166},0`} stroke={INK} strokeWidth={7} fill="none" />
+          <path d={`M${-212 + dis * 46},0 L${-132},0`} stroke={INK} strokeWidth={7} fill="none" />
         </g>
         {dis > 0.2 && [0, 1, 2].map((i) => (
-          <rect key={i} x={-210 + i * 22} y={-6 + dis * (30 + i * 18)} width={16} height={9}
+          <rect key={i} x={-206 + i * 22} y={-6 + dis * (30 + i * 18)} width={16} height={9}
                 fill={INK} opacity={1 - dis} transform={`rotate(${dis * 60 * (i + 1)} ${-202 + i * 22} 0)`} />
         ))}
       </g>
       <Card x={540} y={CARD_TOP_Y} text="THE AWARD RUNS THROUGH 2030"
             sub="Sept 1, 2026 to Aug 31, 2030" w={980} />
-      <CornerTool f={g} />
+      {/* parked in the one corner this shot leaves empty; at the default anchor it sat on
+          the FORECAST chip and swallowed its inbound arrow */}
+      <CornerTool f={g} x={962} y={900} />
     </World>
   );
 };
@@ -1014,7 +1041,7 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
   const drop = interpolate(t, [L(14) + 0.4, L(14) + 1.2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const sheet = interpolate(t, [L(14) + 3.6, L(14) + 5.2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <World f={g} anchorY={1120}>
+    <World f={g} anchorY={912}>
       {/* the crew, at ~20% of frame height so they read as PEOPLE not specks */}
       {[
         {x: 296, sc: 0.96, pose: 'stand' as const, emo: 'neutral' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -34},
@@ -1076,7 +1103,7 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
   // the state the shot lives in.
   const harden = interpolate(t, [L(16) + 0.35, L(16) + 0.95], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const flip = interpolate(t, [L(16) + 2.6, L(16) + 3.2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
-  const credit = interpolate(t, [L(16) + 3.5, L(16) + 4.1], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const credit = interpolate(t, [L(16) + 2.9, L(16) + 3.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // 11 windows, each >= 44px on its short side, one hero at 2x near centre
   // Bigger, fewer, and clustered in the Interior so they read as a place rather than
   // as scatter. The panel called these the faintest element in their own hero frame.
@@ -1143,6 +1170,12 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
       </g>
       <Card x={540} y={CARD_TOP_Y}
             text={open > 0.4 ? 'THE DAYS YOU ARE ALLOWED' : 'DAYS IN DANGER, MAPPED FOR DECADES'} w={940} />
+      {harden > 0.4 && (
+        <text x={540} y={1120} textAnchor="middle" fill={INK} opacity={0.55}
+              style={{font: `700 17px ${MONO}`, letterSpacing: 1}}>
+          illustrative, the project has not run
+        </text>
+      )}
     </World>
   );
 };
