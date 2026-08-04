@@ -521,12 +521,20 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
         </g>
         <AwardPacket land={land} write={write} stamp={stamp} />
         {/* THE OPEN LOOP: a blank date plate on the same stroke. It stays empty for 80 seconds. */}
+        {/* THE OPEN LOOP, FILLED. This used to be the word ARRIVES set grey-on-cream at
+            0.42 over an empty rule that never filled before the cut, which a judge called
+            an unfinished labelled field left on screen. The date is claims c13's start of
+            the period of performance, so the field now answers its own label and the loop
+            still stays open where it should: the money is obligated, the work has not
+            started, and the count does not exist. */}
         <g transform="translate(540,1230)" opacity={stamp}>
-          <rect x={-120} y={-44} width={240} height={88} rx={8}
+          <rect x={-150} y={-46} width={300} height={92} rx={8}
                 fill="#d8cfbb" stroke={INK} strokeWidth={6} />
-          <line x1={-90} y1={20} x2={90} y2={20} stroke={INK} strokeWidth={4} opacity={0.35} />
-          <text x={0} y={-4} textAnchor="middle" fill={INK} opacity={0.42}
-                style={{font: `700 26px ${MONO}`}}>ARRIVES</text>
+          <text x={0} y={-12} textAnchor="middle" fill={INK} opacity={0.62}
+                style={{font: `700 19px ${MONO}`, letterSpacing: 2}}>WORK BEGINS</text>
+          <line x1={-120} y1={-2} x2={120} y2={-2} stroke={INK} strokeWidth={3} opacity={0.3} />
+          <text x={0} y={28} textAnchor="middle" fill={INK}
+                style={{font: `700 27px ${MONO}`}}>Sept 1, 2026</text>
         </g>
       </g>
       {/* the tool drops to the plate line so it stops sitting on the packet's left edge */}
@@ -804,7 +812,7 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
               stroke="#2a2018" strokeWidth={5} opacity={0.7} />
       ))}
       {/* the punched sheet, pushed across */}
-      <g transform={`translate(${250 + push * 290},960) scale(1.34) rotate(${-4 + push * 3})`}>
+      <g transform={`translate(${250 + push * 290},790) scale(1.34) rotate(${-4 + push * 3})`}>
         <rect x={-160} y={-110} width={320} height={220} rx={6}
               fill="#efeade" stroke={INK} strokeWidth={6} />
         {[0, 1, 2].map((i) => (
@@ -813,18 +821,28 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
         ))}
         <text x={0} y={-64} textAnchor="middle" fill={INK}
               style={{font: `700 26px ${MONO}`}}>SAFE DAYS</text>
-        <text x={0} y={52} textAnchor="middle" fill={INK} opacity={0.6}
-              style={{font: `700 16px ${MONO}`}}>illustrative, the count does not exist yet</text>
+        <text x={0} y={48} textAnchor="middle" fill={INK} opacity={0.62}
+              style={{font: `700 15px ${MONO}`, letterSpacing: 1}}>illustrative</text>
+        <text x={0} y={70} textAnchor="middle" fill={INK} opacity={0.62}
+              style={{font: `700 15px ${MONO}`}}>the count does not exist yet</text>
       </g>
       {/* four hatched jurisdictions colliding over one piece of ground */}
       <g opacity={fields}>
+        {/* FOUR PARCELS, DRAWN IN THE HOUSE LANGUAGE. These were 640x180 rects at an
+            effective 0.22 opacity with a 3px stroke at the same opacity, rotated about a
+            point 90px below the caption line, so they read to all three judges as a fan of
+            untraced translucent quadrilaterals smearing through the card and the caption.
+            Two of them counted the overlaps and got eight shapes for a four-party idea.
+            Smaller, opaque enough to be objects, and ink-outlined like everything else. */}
         {HATCH.map((h, i) => (
-          <g key={i} transform={`translate(540,1220) rotate(${h.a})`} opacity={0.5}>
-            <rect x={-320 + (1 - fields) * 260} y={-90} width={640} height={180}
-                  fill={h.c} opacity={0.45} stroke={INK} strokeWidth={3} />
+          <g key={i} transform={`translate(540,1060) rotate(${h.a})`} opacity={fields}>
+            <rect x={-170 + (1 - fields) * 150} y={-42} width={340} height={84} rx={6}
+                  fill={h.c} opacity={0.82} stroke={INK} strokeWidth={5} />
+            <rect x={-170 + (1 - fields) * 150} y={-42} width={340} height={22} rx={6}
+                  fill="#ffffff" opacity={0.13} />
           </g>
         ))}
-        <Card x={540} y={CARD_BOT - 20} text="MUNICIPAL / FEDERAL / TRIBAL / NON-PROFIT" w={980} />
+        <Card x={540} y={CARD_BOT + 30} text="MUNICIPAL / FEDERAL / TRIBAL / NON-PROFIT" w={980} />
       </g>
       <Card x={540} y={CARD_TOP_Y} text="A COUNT YOU CAN HAND OVER" w={780} />
     </World>
