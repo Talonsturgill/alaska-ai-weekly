@@ -70,6 +70,24 @@ const SAFE_BOT = 1500;
 const CARD_TOP_Y = 530;
 /** the caption reserve is the y-RANGE 1310 to 1442, wholly inside the square box */
 const CAPTION_TOP = 1310;
+// CAPTION FITTING. The bar is 940 wide and the text was set at a fixed 40px with no wrap
+// and no fit, so a 50-character cue drew about 944px of glyphs and spilled past both ends
+// of its own plate. Same class as the Card sub-line and the counter placard: a string whose
+// width nobody measured. Measured ratio for this face at weight 800 is ~0.482 em per char.
+const CAP_W = 884;
+const CAP_K = 0.482;
+/** one line if it fits at full size, otherwise two balanced lines broken at a space */
+const capRows = (s: string): string[] => {
+  if (s.length * CAP_K * 40 <= CAP_W) return [s];
+  const w = s.split(' ');
+  if (w.length < 2) return [s];
+  let cut = 1, best = Infinity;
+  for (let k = 1; k < w.length; k++) {
+    const d = Math.abs(w.slice(0, k).join(' ').length - w.slice(k).join(' ').length);
+    if (d < best) {best = d; cut = k;}
+  }
+  return [w.slice(0, cut).join(' '), w.slice(cut).join(' ')];
+};
 const CARD_BOT = CAPTION_TOP - 96;
 const FPS = 30;
 
@@ -140,13 +158,19 @@ const SpruceWall: React.FC<{f: number; y?: number; density?: number; opacity?: n
       const x = -60 + (i * 1220) / density + hh(i, 3) * 44;
       const hgt = 150 + hh(i, 7) * 170;
       const wdt = 40 + hh(i, 11) * 26;       // wide enough to OVERLAP its neighbour
-      const sway = Math.sin(f / 61 + i) * 3;
-      // a spruce is a stack of skirts, not one triangle. Three tiers reads as a tree.
+      // each tree gets its own sway period and lean, so the row stops reading as a
+      // stamped rhythm, and the skirts carry a lit side so it is not one flat tone
+      const sway = Math.sin(f / (44 + hh(i, 23) * 38) + i * 1.7) * (2.2 + hh(i, 29) * 2.6);
+      const lean = (hh(i, 31) - 0.5) * 7;
+      const lit = '#2b4a42';
       return (
-        <g key={i} transform={`translate(${x + sway},${y + 96})`}>
+        <g key={i} transform={`translate(${x + sway},${y + 96}) rotate(${lean})`}>
           <path d={`M0,0 L${-wdt},0 L0,${-hgt * 0.52} L${wdt},0 Z`} fill={SPRUCE} />
+          <path d={`M0,0 L${-wdt},0 L0,${-hgt * 0.52} Z`} fill={lit} opacity={0.55} />
           <path d={`M0,${-hgt * 0.30} L${-wdt * 0.76},${-hgt * 0.30} L0,${-hgt * 0.80} L${wdt * 0.76},${-hgt * 0.30} Z`} fill={SPRUCE} />
+          <path d={`M0,${-hgt * 0.30} L${-wdt * 0.76},${-hgt * 0.30} L0,${-hgt * 0.80} Z`} fill={lit} opacity={0.5} />
           <path d={`M0,${-hgt * 0.60} L${-wdt * 0.5},${-hgt * 0.60} L0,${-hgt} L${wdt * 0.5},${-hgt * 0.60} Z`} fill={SPRUCE} />
+          <path d={`M0,${-hgt * 0.60} L${-wdt * 0.5},${-hgt * 0.60} L0,${-hgt} Z`} fill={lit} opacity={0.45} />
         </g>
       );
     })}
@@ -279,7 +303,7 @@ const Counter: React.FC<{
     <g transform={`translate(${x},${y})`}>
       <FormGradient id={id} t={body} softness={0.6} />
       <ContactShadow cx={0} cy={64} rx={72} ry={11} opacity={0.34} blur={10} />
-      <rect x={-76} y={-56} width={152} height={116} rx={11}
+      <rect x={-104} y={-56} width={208} height={116} rx={11}
             fill={`url(#${id})`} stroke={INK} strokeWidth={6} />
       <rect x={-52} y={-32} width={104} height={52} rx={5}
             fill={dark ? '#2b3a3d' : '#101a1c'} stroke={INK} strokeWidth={4} />
@@ -288,9 +312,12 @@ const Counter: React.FC<{
             style={{font: `700 38px ${MONO}`, letterSpacing: 2}}>
         {blur ? '███' : value}
       </text>
+      {/* AUTO-FIT, same rule the Card sub-lines got. The label used to overflow a 152px
+          plate and render as "ST NOT BUR" in the film's first and last hero frames. */}
       <text x={0} y={48} textAnchor="middle" fill={INK}
-            style={{font: `700 22px ${MONO}`, letterSpacing: 1}}>{label}</text>
-      {[-56, 56].map((sx) => (
+            style={{font: `700 ${Math.max(14, Math.min(22, Math.floor(184 / (label.length * 0.62))))}px ${MONO}`,
+                    letterSpacing: 0.5}}>{label}</text>
+      {[-84, 84].map((sx) => (
         <circle key={sx} cx={sx} cy={-42} r={4} fill={body.shade} stroke={INK} strokeWidth={2} />
       ))}
     </g>
@@ -325,18 +352,21 @@ const Card: React.FC<{x: number; y: number; text: string; sub?: string; w?: numb
 };
 
 /** every scene mounts this: haze volume + dark anchor + grade */
-const World: React.FC<{f: number; children: React.ReactNode; anchorY?: number; hazeAmt?: number; interior?: boolean}> = ({
-  f, children, anchorY = 1480, hazeAmt = 1, interior = false,
+const World: React.FC<{f: number; children: React.ReactNode; anchorY?: number; hazeAmt?: number;
+  interior?: boolean; shakeX?: number; shakeY?: number}> = ({
+  f, children, anchorY = 1480, hazeAmt = 1, interior = false, shakeX = 0, shakeY = 0,
 }) => (
   <>
     <AbsoluteFill style={{background: `linear-gradient(180deg, #f0d8b6 0%, ${SKY} 46%, #d9b291 100%)`}} />
     <AbsoluteFill>
       <svg viewBox="0 0 1080 1920" width="100%" height="100%">
         <MaterialDefs />
+        <g transform={`translate(${shakeX},${shakeY})`}>
         {!interior && <FarRidge f={f} y={Math.min(1040, anchorY - 380)} />}
         {!interior && <Haze f={f} amount={0.85 * hazeAmt} />}
         {!interior && <SpruceWall f={f} y={anchorY} />}
         {children}
+        </g>
       </svg>
     </AbsoluteFill>
     <DayGrade f={f} sky={SKY} bounce={SHADOW} amount={0.55} floor={0.3} haze={0.42} sunX={540} sunY={120} sunIntensity={0.32} />
@@ -369,6 +399,78 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
 };
 
 // =============================================================================
+/** THE AWARD PACKET. S2 used to be three cards dropping onto empty ridge, which is
+    a slide, not a shot, and it sat on the two worst seconds in the film for retention.
+    The packet is the physical thing the whole story turns on, so the money and the
+    recipient are printed ON it and the cards annotate an object instead of floating. */
+const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({land, write, stamp}) => {
+  const W = 780, H = 470;
+  const paper = tones('#efe9dc');
+  const band = tones('#c9bfa4');
+  const lift = (1 - land) * 560;      // flies up from under the frame
+  const tip = (1 - land) * -9;        // and settles out of a tilt
+  const fit = (txt: string, box: number, cap: number, k = 0.62) =>
+    Math.max(15, Math.min(cap, Math.floor(box / Math.max(1, txt.length * k))));
+  const NAME = 'UNIVERSITY OF ALASKA FAIRBANKS';
+  const PI = 'Christine Waigl, principal investigator';
+  return (
+    <g transform={`translate(540,${880 + lift}) rotate(${tip})`} opacity={clamp01(land * 1.7)}>
+      <FormGradient id="pkt" t={paper} softness={0.42} />
+      <FormGradient id="pktb" t={band} softness={0.52} />
+      <ContactShadow cx={8} cy={H / 2 + 18} rx={W / 2 - 26} ry={19} opacity={0.36} blur={20} />
+      {/* the sheet underneath, so this reads as a PACKET and not a single page */}
+      <rect x={-W / 2 + 15} y={-H / 2 + 13} width={W} height={H} rx={7}
+            fill="#d5cdb9" stroke={INK} strokeWidth={5} />
+      <rect x={-W / 2} y={-H / 2} width={W} height={H} rx={8}
+            fill="url(#pkt)" stroke={INK} strokeWidth={6} />
+      {/* printed header block */}
+      <rect x={-W / 2 + 9} y={-H / 2 + 9} width={W - 18} height={74} rx={5}
+            fill="url(#pktb)" stroke={INK} strokeWidth={4.5} />
+      <text x={0} y={-181} textAnchor="middle" fill={INK}
+            style={{font: `700 31px ${MONO}`, letterSpacing: 2}}>NSF AWARD 2536745</text>
+      {/* punched filing holes, so the paper has been handled */}
+      {[-250, 0, 250].map((hx) => (
+        <circle key={hx} cx={hx} cy={H / 2 - 26} r={9} fill="#b9b0a0" stroke={INK} strokeWidth={3} />
+      ))}
+      {/* abstract body: set text, not legible at feed size and not meant to be. Without
+          it the lower half of the sheet is blank for the five seconds before the stamp,
+          which is the same dead-frame failure one layer in. */}
+      <g opacity={clamp01(write * 1.2) * 0.34}>
+        {[0, 1, 2, 3].map((i) => (
+          <rect key={i} x={-W / 2 + 34} y={16 + i * 22} height={9} rx={4.5} fill={INK}
+                width={(W - 68) * [1, 0.94, 0.98, 0.55][i] * clamp01(write * 1.6 - i * 0.12)} />
+        ))}
+      </g>
+      <text x={-W / 2 + 34} y={-84} fill={INK}
+            style={{font: `900 ${fit(NAME, W - 68, 40)}px ${BOLD}`, letterSpacing: 0.5}}>{NAME}</text>
+      <text x={-W / 2 + 34} y={-38} fill={INK} opacity={0.8}
+            style={{font: `700 ${fit(PI, W - 68, 28, 0.6)}px ${MONO}`}}>{PI}</text>
+      <line x1={-W / 2 + 34} y1={-8} x2={W / 2 - 34} y2={-8}
+            stroke={INK} strokeWidth={3.5} opacity={0.4} />
+      <g opacity={clamp01(stamp * 2)}>
+        <line x1={-W / 2 + 34} y1={122} x2={W / 2 - 34} y2={122} stroke={INK} strokeWidth={3} opacity={0.34} />
+        <text x={-W / 2 + 34} y={182} fill={INK}
+              style={{font: `900 ${66 - (1 - clamp01(stamp)) * 22}px ${BOLD}`, letterSpacing: 1}}>$1,588,147</text>
+        <text x={W / 2 - 34} y={178} textAnchor="end" fill={INK} opacity={0.78}
+              style={{font: `700 23px ${MONO}`}}>July 31, 2026</text>
+      </g>
+      {/* the stamp lands LAST and presses: a rubber date stamp, in ink, not an accent */}
+      {stamp > 0.02 && (
+        <g transform={`translate(226,58) rotate(-13) scale(${0.7 + clamp01(stamp) * 0.3})`}
+           opacity={clamp01(stamp * 1.4)}>
+          <rect x={-118} y={-46} width={236} height={92} rx={8}
+                fill="none" stroke={INK} strokeWidth={7} opacity={0.68} />
+          <rect x={-106} y={-34} width={212} height={68} rx={5}
+                fill="none" stroke={INK} strokeWidth={3} opacity={0.5} />
+          <text x={0} y={12} textAnchor="middle" fill={INK} opacity={0.72}
+                style={{font: `900 34px ${BOLD}`, letterSpacing: 3}}>OBLIGATED</text>
+        </g>
+      )}
+    </g>
+  );
+};
+
+// =============================================================================
 // S2 — THE AWARD LANDS. Line 2.
 // =============================================================================
 const S2: React.FC<SceneProps> = ({from, L}) => {
@@ -377,24 +479,22 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
   const t = g / FPS;
   const {fps} = useVideoConfig();
   const drop = spring({frame: Math.max(0, g - L(2) * FPS), fps, config: {damping: 13, mass: 0.7}});
-  const slide = spring({frame: Math.max(0, g - (L(2) + 3.2) * FPS), fps, config: {damping: 15, mass: 0.8}});
+  // THE PACKET IS THE SHOT, so it flies in with the shot. Timed to +1.5 it left 8.7s
+  // bare, which is the exact second the panel named, twice, in the retention window.
+  const land = spring({frame: Math.max(0, g - (L(2) + 0.25) * FPS), fps, config: {damping: 14, mass: 0.8}});
+  const write = interpolate(t, [L(2) + 1.1, L(2) + 3.2], [0, 1],
+                            {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   const stamp = spring({frame: Math.max(0, g - (L(2) + 6.4) * FPS), fps, config: {damping: 9, mass: 0.5}});
   const shake = stamp > 0.1 && stamp < 0.6 ? (hh(Math.floor(g), 2) - 0.5) * 6 : 0;
   return (
     <World f={g} anchorY={1430}>
       <g transform={`translate(${shake},0)`}>
-        <g transform={`translate(540,${560 + (1 - drop) * -420})`} opacity={drop}>
+        <g transform={`translate(540,${500 + (1 - drop) * -420})`} opacity={drop}>
           <Card x={0} y={0} text="NATIONAL SCIENCE FOUNDATION" w={860} />
         </g>
-        <g transform={`translate(${540 + (1 - slide) * -700},760)`} opacity={slide}>
-          <Card x={0} y={0} text="UNIVERSITY OF ALASKA FAIRBANKS"
-                sub="Christine Waigl, principal investigator" w={880} />
-        </g>
-        <g transform={`translate(540,1010) scale(${0.7 + stamp * 0.3})`} opacity={stamp}>
-          <Card x={0} y={0} text="$1,588,147" sub="obligated July 31, 2026" w={640} tint="#ffd98a" />
-        </g>
+        <AwardPacket land={land} write={write} stamp={stamp} />
         {/* THE OPEN LOOP: a blank date plate on the same stroke. It stays empty for 80 seconds. */}
-        <g transform="translate(540,1210)" opacity={stamp}>
+        <g transform="translate(540,1230)" opacity={stamp}>
           <rect x={-120} y={-44} width={240} height={88} rx={8}
                 fill="#d8cfbb" stroke={INK} strokeWidth={6} />
           <line x1={-90} y1={20} x2={90} y2={20} stroke={INK} strokeWidth={4} opacity={0.35} />
@@ -402,7 +502,8 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
                 style={{font: `700 26px ${MONO}`}}>ARRIVES</text>
         </g>
       </g>
-      <CornerTool f={g} />
+      {/* the tool drops to the plate line so it stops sitting on the packet's left edge */}
+      <CornerTool f={g} y={1230} />
     </World>
   );
 };
@@ -417,7 +518,14 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
   const tilt = interpolate(t, [L(3) + 0.2, L(3) + 1.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const crawl = interpolate(t, [L(3) + 2.6, L(4)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   const patch = interpolate(t, [L(4), L(4) + 2.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const flameX = 120 + crawl * 780;
+  // START THE LINE AT 380, NOT 120. The torch hangs to the LEFT of the flame, so a
+  // flame at x=120 puts the only subject in the shot half off the plate, and the square
+  // cut is what LinkedIn shows. A line already part-run also reads as work in progress.
+  // The travel is shortened too, so the burn boss holding the torch stays on the plate
+  // for the whole crawl instead of walking out of the square at the end of it.
+  // travel shortened again: at 430 the boss walked off the right edge by the end of the
+  // crawl and handed the shot back its empty frame at 23s.
+  const flameX = 400 + crawl * 300;
   return (
     <World f={g} anchorY={1180}>
       {/* the duff, drawn as three shaded strata so fuel is a SUBSTANCE */}
@@ -437,7 +545,25 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
                        fill={i % 2 ? '#ffb03a' : EMBER} stroke={INK} strokeWidth={2.4} />;
         })}
       </g>
-      <DripTorch x={flameX - 130} y={980} f={g} scale={1.15} tilt={tilt} lit={tilt} groundY={200} />
+      {/* AND SOMEONE IS HOLDING IT. Scaled up on its own the torch just hung in the sky
+          with no operator and no ground contact, which trades one dead frame for a
+          floating prop. A burn boss watching the line they just laid fills the band
+          between the card and the fuel, and gives the tool a reason to be in the air. */}
+      {/* the holding-line watcher, deep left. A burn is a crew job, and one figure alone
+          left the other two thirds of the plate empty for the whole crawl. */}
+      <ellipse cx={248} cy={1188} rx={54} ry={11} fill="#4a3323" opacity={0.45} />
+      <g transform="translate(244,1180) scale(0.9)">
+        <Character frame={g + 53} pose="arms-crossed" emotion="neutral"
+                   outfit="flannel" headgear="beanie" facing={1} />
+      </g>
+      {/* the burn boss, at 1.12 not 1.5: at 1.5 the head crashed into the title card */}
+      <ellipse cx={flameX + 136} cy={1190} rx={64} ry={13} fill="#4a3323" opacity={0.5} />
+      <ellipse cx={flameX + 132} cy={1187} rx={38} ry={9} fill="#3a2718" opacity={0.55} />
+      <g transform={`translate(${flameX + 130},1180) scale(1.12)`}>
+        <Character frame={g} pose="stand" emotion="neutral"
+                   outfit="vest" headgear="cap" facing={-1} />
+      </g>
+      <DripTorch x={flameX + 52} y={1032} f={g} scale={1.0} tilt={tilt} lit={tilt} groundY={148} />
       <Card x={540} y={CARD_TOP_Y} text="A FIRE YOU SET ON PURPOSE" w={760} />
       <g opacity={patch}>
         <Card x={540} y={CARD_BOT - 40} text="RARELY USED HERE" sub="prescribed burning remains underused in Alaska (NSF)" w={880} />
@@ -554,8 +680,8 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
   const pull = interpolate(t, [L(7) + 2.6, L(7) + 4.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   const sc = 1 - pull * 0.42;
   return (
-    <World f={g} anchorY={1560} hazeAmt={0.75}>
-      <g transform={`translate(${shakeX},${shakeY})`}>
+    <World f={g} anchorY={1560} hazeAmt={0.75} shakeX={shakeX} shakeY={shakeY}>
+      <g>
       <g transform={`translate(540,${900 - pull * 40}) scale(${sc}) translate(-540,-900)`}>
         <g opacity={build}>
           <BurnWindowEngine x={520} y={900} f={g} scale={1.42}
@@ -708,9 +834,22 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
         const land = turn * 34;
         return (
           <g key={i} transform={`translate(${s.x + (s.r ? d : -d)},${s.y + land}) rotate(${s.r})`} opacity={hands}>
+            {/* a HAND, with fingers and a cuff. The panel called the old shape an
+                unshaded flat blob sitting next to fully finished assets, and it was. */}
             <path d="M-10,-30 q46,-14 70,8 q18,16 8,44 q-14,32 -52,28 q-32,-6 -34,-38 Z"
                   fill="#c8b48a" stroke={INK} strokeWidth={5} />
-            <rect x={-34} y={16} width={38} height={32} rx={7} fill="#9a8560" stroke={INK} strokeWidth={4.5} />
+            {/* form shading: lit knuckle side, occluded palm side */}
+            <path d="M-10,-30 q46,-14 70,8 q10,9 10,22 q-30,-16 -80,-8 Z"
+                  fill="#dcc9a2" opacity={0.85} />
+            <path d="M-30,20 q34,20 66,10 q-14,26 -50,22 q-24,-5 -30,-24 Z"
+                  fill="#a68d63" opacity={0.7} />
+            {/* four finger creases so it reads as a hand at feed size */}
+            {[0, 1, 2, 3].map((k) => (
+              <path key={k} d={`M${6 + k * 15},${-24 + k * 3} q7,20 2,40`}
+                    fill="none" stroke={INK} strokeWidth={2.6} opacity={0.55} />
+            ))}
+            <rect x={-40} y={14} width={44} height={34} rx={7} fill="#9a8560" stroke={INK} strokeWidth={4.5} />
+            <line x1={-36} y1={22} x2={0} y2={22} stroke={INK} strokeWidth={2.2} opacity={0.5} />
           </g>
         );
       })}
@@ -778,16 +917,18 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
       {[0, 1, 2].map((i) => {
         const on = arrows > i;
         return (
-          <g key={i} transform={`translate(${200 + i * 200},1210)`}>
+          <g key={i} transform={`translate(${200 + i * 200},1136)`}>
             <rect x={-78} y={-52} width={156} height={104} rx={7}
-                  fill={on ? ENAMEL : '#2b3a35'} stroke={INK} strokeWidth={6} />
+                  fill={on ? ENAMEL : '#9aa79f'} stroke={INK} strokeWidth={6} />
             {on && <path d="M-140,0 L-86,0 M-96,-12 L-84,0 L-96,12" stroke={INK} strokeWidth={7} fill="none" />}
-            <text x={0} y={8} textAnchor="middle" fill={on ? INK : '#5d6b6d'}
-                  style={{font: `700 21px ${MONO}`}}>{['FORECAST', 'PARTNERS', 'CURRICULUM'][i]}</text>
+            <text x={0} y={8} textAnchor="middle" fill={INK} opacity={on ? 1 : 0.62}
+                  style={{font: `700 ${['FORECAST', 'PARTNERS', 'CURRICULUM'][i].length > 9 ? 17 : 21}px ${MONO}`}}>
+              {['FORECAST', 'PARTNERS', 'CURRICULUM'][i]}
+            </text>
           </g>
         );
       })}
-      <g transform="translate(800,1210)">
+      <g transform="translate(800,1136)">
         <rect x={-150} y={-42} width={300} height={84} rx={0}
               fill="none" stroke={INK} strokeWidth={6} strokeDasharray="18 14" />
         <text x={0} y={8} textAnchor="middle" fill={BONE} opacity={0.85}
@@ -801,7 +942,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
                 fill={INK} opacity={1 - dis} transform={`rotate(${dis * 60 * (i + 1)} ${-202 + i * 22} 0)`} />
         ))}
       </g>
-      <Card x={540} y={CARD_TOP_Y} text="NOTHING REACHES A CREW UNTIL 2030"
+      <Card x={540} y={CARD_TOP_Y} text="THE AWARD RUNS THROUGH 2030"
             sub="Sept 1, 2026 to Aug 31, 2030" w={980} />
       <CornerTool f={g} />
     </World>
@@ -827,7 +968,10 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}
-          <ellipse cx={c.x} cy={1188} rx={52 * c.sc} ry={11} fill={SHADOW} opacity={0.42} />
+          {/* boots ON the ground. The panel called this a parity failure and it was:
+              the bench forty seconds earlier gets a shadow and the people did not. */}
+          <ellipse cx={c.x + 5} cy={1190} rx={58 * c.sc} ry={14} fill="#4a3323" opacity={0.5} />
+          <ellipse cx={c.x + 3} cy={1187} rx={34 * c.sc} ry={9} fill="#3a2718" opacity={0.55} />
           <g transform={`translate(${c.x},1180) scale(${c.sc})`}>
             <Character frame={g + i * 37} pose={c.pose} emotion={c.emo}
                        outfit={c.out} headgear={c.hat} facing={c.face} />
@@ -868,7 +1012,12 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
   const accentBox = useAccentExtent();
   const drain = interpolate(t, [L(15) + 0.2, L(15) + 2.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
   const open = interpolate(t, [L(16) + 0.1, L(16) + 1.8], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const harden = interpolate(t, [L(16) + 1.2, L(16) + 2.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // HARDEN EARLY. This used to run L(16)+1.2 to +2.4 (78.9 to 80.1s), so for most of
+  // the closing shot the windows were still dashed bone outlines over a dark patch on a
+  // brown map, which is why two judges independently read the payoff as "tan hatching"
+  // and as losing luminance on the good news. The dashed state is a 0.5s grace note, not
+  // the state the shot lives in.
+  const harden = interpolate(t, [L(16) + 0.35, L(16) + 0.95], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const flip = interpolate(t, [L(16) + 2.6, L(16) + 3.2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   // 11 windows, each >= 44px on its short side, one hero at 2x near centre
   // Bigger, fewer, and clustered in the Interior so they read as a place rather than
@@ -880,7 +1029,7 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
   return (
     <World f={g} anchorY={1560}>
       <g transform="translate(60,300) scale(0.86)">
-        <AlaskaField f={g} wash={1 - drain * 0.98} drain={drain} />
+        <AlaskaField f={g} wash={(1 - drain) * (1 - harden * 0.9)} drain={drain} />
       </g>
       {/* the windows open, dashed first, then harden */}
       <g transform="translate(60,300) scale(0.86)">
@@ -894,9 +1043,10 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
           return (
             <g key={i} opacity={p}
                transform={`translate(${w.x},${w.y}) scale(${pop}) translate(${-w.x},${-w.y})`}>
-              {/* darken the ground under each window so the accent has something to sit on */}
-              <rect x={w.x - ww / 2 - 9} y={w.y - wh / 2 - 9} width={ww + 18} height={wh + 18}
-                    rx={5} fill="#241a12" opacity={0.55} />
+              {harden > 0.5 && (
+                <rect x={w.x - ww / 2 - 7} y={w.y - wh / 2 - 7} width={ww + 14} height={wh + 14}
+                      rx={4} fill="#1a120c" opacity={0.7} />
+              )}
               <WindowChip x={w.x - ww / 2} y={w.y - wh / 2} w={ww} h={wh}
                           dashed={harden <= 0.5}
                           fill={harden > 0.5 ? accentBox(BURNABLE, w.x - ww / 2, w.y - wh / 2, ww, wh) : BURNABLE} />
@@ -969,16 +1119,25 @@ export const Ep0803: React.FC<z.infer<typeof ep0803Schema>> = ({
           <svg viewBox="0 0 1080 1920" width="100%" height="100%">
             {captions
               .filter((c) => f >= c.start * FPS && f <= c.end * FPS)
-              .map((c, i) => (
+              .map((c, i) => {
+                const rows = capRows(c.text);
+                const longest = rows.reduce((m, r) => Math.max(m, r.length), 0);
+                const size = Math.max(24, Math.min(40, Math.floor(CAP_W / (longest * CAP_K))));
+                return (
                 <g key={i}>
                   <rect x={70} y={CAPTION_TOP} width={940} height={132} rx={12}
                         fill="#14201c" opacity={0.82} />
-                  <text x={540} y={CAPTION_TOP + 80} textAnchor="middle" fill="#f6f1e4"
-                        style={{font: `800 40px ${BOLD}`, letterSpacing: 0.5}}>
-                    {c.text}
-                  </text>
+                  {rows.map((r, k) => (
+                    <text key={k} x={540}
+                          y={CAPTION_TOP + (rows.length === 1 ? 80 : 56 + k * 48)}
+                          textAnchor="middle" fill="#f6f1e4"
+                          style={{font: `800 ${size}px ${BOLD}`, letterSpacing: 0.5}}>
+                      {r}
+                    </text>
+                  ))}
                 </g>
-              ))}
+                );
+              })}
           </svg>
         </AbsoluteFill>
       </AbsoluteFill>

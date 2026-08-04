@@ -16,7 +16,7 @@ rather than a doctrine note. Filmstrip centres are now computed from vo_lines.js
 a named offset INTO the line, so re-synthesising the voice moves the evidence with the
 picture exactly as it moves the scenes.
 
-Usage: python3 scripts/build_evidence.py [--video out/dispatch/dispatch_4x5.mp4]
+Usage: python3 scripts/build_evidence.py [--video out/dispatch/dispatch_square.mp4]
 """
 import argparse, glob, json, os, subprocess, sys
 
@@ -26,7 +26,11 @@ EV = os.path.join(REPO, "out", "evidence")
 
 # (name, vo_line, seconds INTO that line where the move actually peaks)
 MOVES = [
-    ("punch", 7, 0.35),      # the punch head drives and cuts the window
+    # CONTACT is 20 frames (0.67s) after the line start: 10 rear-back + 6 hold + 4 drive.
+    # The strip is 8 frames (0.27s) centred on the offset, so 0.35 sampled 38.34-38.60 and
+    # the impact at 38.79 fell OUTSIDE it. Second time this class of bug has cost a panel
+    # round; the offset must be the CONTACT time, not the line start plus a guess.
+    ("punch", 7, 0.78),      # the punch head drives and cuts the window
     ("drain", 15, 1.30),     # the ember wash tears loose and runs off frame
     ("windows", 16, 1.10),   # the apertures open across the map and harden
 ]
@@ -67,7 +71,7 @@ def main():
         x, y = (i % cols) * tw, (i // cols) * (th + 18)
         sheet.paste(im.resize((tw, th)), (x, y))
         d.text((x + 4, y + th + 3), f"t={t:.1f}s", fill="black")
-    sheet.save(os.path.join(EV, "contact_4x5.jpg"), quality=90)
+    sheet.save(os.path.join(EV, "contact_square.jpg"), quality=90)
     print(f"contact sheet: {len(ims)} frames across {end:.1f}s ->", sheet.size)
 
     # ---- motion filmstrips, CENTRED ON THE REAL MOVE ----

@@ -102,8 +102,15 @@ def _rebalance_cues(caps):
     fits on two lines at phone size.
     """
     DANGLING = ("of", "out of", "the", "a", "an", "to", "in", "on", "and", "or", "for",
-                "at", "by", "with", "from", "into", "than", "as", "is", "was", "which")
+                "at", "by", "with", "from", "into", "than", "as", "is", "was", "which",
+                "you", "it", "they", "we", "that", "this", "has", "have", "had", "be")
     MAXLEN = 62
+    # ORPHAN TAILS, added 2026-08-04. The forward-merge above only fires when the CURRENT
+    # cue ends badly, so it never caught a cue whose NEXT cue is a stub. This film shipped
+    # "Nobody has mapped the days you" / "can." and "It works, and Alaska barely uses" /
+    # "it." -- both of the piece's punchlines alone on a card, which reads as a stutter and
+    # throws the line away. A tail of one or two short words is never its own caption.
+    ORPHAN_WORDS, ORPHAN_CHARS = 2, 15
     out = []
     i = 0
     while i < len(caps):
@@ -113,13 +120,26 @@ def _rebalance_cues(caps):
             last = t.split()[-1] if t.split() else ""
             nxt = caps[i + 1]["text"].strip()
             first = nxt.split()[0] if nxt.split() else ""
+            # NEVER merge across a full stop or across a VO line: a caption that spans two
+            # sentences reads as one run-on, and one that spans two lines desyncs from the
+            # shot boundary, which is anchored to the line start. Widening DANGLING without
+            # this guard produced "It works, and Alaska barely uses it. NSF says Alaska lacks"
+            # in one pass -- two sentences from two different lines on a single card.
+            if cur.get("seg") != caps[i + 1].get("seg") or t.endswith((".", "!", "?")):
+                break
             bad = (
                 last.lower().strip(",.") in DANGLING            # dangling function word
                 or last.rstrip(",.").isdigit()                  # a number torn from its unit
                 # a proper noun split across cards: "... Fisher" / "Caldera ..."
                 or (last.rstrip(",").istitle() and first.istitle() and not last.endswith("."))
+                # the next cue is an orphan tail, e.g. "can." or "it."
+                or (len(nxt.split()) <= ORPHAN_WORDS and len(nxt) <= ORPHAN_CHARS)
             )
-            if not bad or len(t) + 1 + len(nxt) > MAXLEN:
+            # an orphan tail gets a longer leash than a normal merge: a stub alone on a
+            # card is a worse defect than a cue the renderer has to set on two lines, and
+            # the renderer now wraps and auto-fits rather than overflowing its own bar.
+            limit = 74 if (len(nxt.split()) <= ORPHAN_WORDS and len(nxt) <= ORPHAN_CHARS) else MAXLEN
+            if not bad or len(t) + 1 + len(nxt) > limit:
                 break
             cur["text"] = t + " " + nxt
             cur["end"] = caps[i + 1]["end"]

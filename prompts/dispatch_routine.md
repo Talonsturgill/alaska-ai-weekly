@@ -1045,8 +1045,21 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
 
 ## PHASE 7: DELIVER, FULLY DONE (no pending states)
 
-0. **THE SHIP GATE, AND IT RUNS FIRST.** Encode everything (step 1), rebuild the review
-   evidence from THAT encode, have the 3-judge panel grade THAT evidence, then:
+0. **THE SHIP GATE, AND IT RUNS FIRST.** Encode everything (step 1), then run the
+   dead-space meter on the SQUARE CUT before you spend a panel on it:
+
+       python3 scripts/dead_space_check.py --every 30
+
+   It samples the cut that ships, reports low-information area per shot, and EXITS 1 on a
+   regression. Rewritten 2026-08-04 because the previous version read PNGs from a directory
+   the pipeline has never produced and returned 0 no matter what it measured, so it was
+   skipped on every run while the panel kept finding empty frames by eye. Read its own
+   docstring before trusting a pass: it measures texture-free area, NOT whether a shot has a
+   subject, and the ceilings are a ratchet against regression rather than a bar. A green
+   meter does not mean the shots are populated.
+
+   Then rebuild the review evidence from THAT encode, have the 3-judge panel grade THAT
+   evidence, then:
 
        python3 scripts/ship_gate.py record --judges <j1>,<j2>,<j3>
        python3 scripts/ship_gate.py check
