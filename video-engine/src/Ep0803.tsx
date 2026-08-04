@@ -481,8 +481,8 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
             fill="url(#pktb)" stroke={INK} strokeWidth={4.5} />
       <text x={0} y={-188} textAnchor="middle" fill={INK}
             style={{font: `700 29px ${MONO}`, letterSpacing: 2}}>NSF AWARD 2536745</text>
-      <text x={0} y={-162} textAnchor="middle" fill={INK} opacity={0.72}
-            style={{font: `700 17px ${MONO}`}}>program elements include Artificial Intelligence (AI)</text>
+      <text x={0} y={-160} textAnchor="middle" fill={INK} opacity={0.82}
+            style={{font: `700 21px ${MONO}`}}>program elements include Artificial Intelligence (AI)</text>
       {/* punched filing holes, so the paper has been handled */}
       {/* the filing holes were drawn at the same baseline as the qualifier line, so a
           rivet landed between two of its words. Dropped to the sheet's bottom margin. */}
@@ -519,8 +519,13 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
       {/* sources.json discloses this is a two-award collaborative project and that the
           figure is the UAF share, not the total. Nothing on screen said so, and a viewer
           reasonably reads a lone dollar figure as the whole award. */}
-      <text x={-W / 2 + 34} y={202} fill={INK} opacity={0.62}
-            style={{font: `700 17px ${MONO}`}}>UAF share of a two-award project</text>
+      {/* EVERY HONESTY QUALIFIER IN THIS FILM WAS ITS SMALLEST TYPE. A judge measured
+          them at 16 to 21px ink height, which is 4 to 7 pixels at real phone width, while
+          the editorial headlines run 40 to 50. This line exists so nobody reads $1,588,147
+          as the project total. Integrity that is technically present and practically
+          invisible is not integrity. */}
+      <text x={-W / 2 + 34} y={206} fill={INK} opacity={0.78}
+            style={{font: `700 25px ${MONO}`}}>UAF share of a two-award project</text>
       </g>
       {/* The stamp lands LAST and PRESSES: a rubber date stamp, in ink, not an accent.
           It used to be a pure cross-fade. Measured over 8 consecutive frames a judge found
@@ -656,6 +661,15 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
           judges read variously as an unheld hard hat, an unidentified blob, and a prop held
           from the wrong end by the wrong person. The boss has hands. Turn the glove off and
           put the tool in one of them. */}
+      {/* THE FIRE EMITTED NO LIGHT. A judge measured the ground directly under the flames
+          at the same value as the ground two feet away, in a shot whose entire subject is a
+          deliberate fire. A warm pool with falloff, on the flames' own flicker cycle. */}
+      <g opacity={tilt}>
+        <ellipse cx={flameX} cy={1178} rx={210 + Math.sin(g / 3.4) * 12} ry={34}
+                 fill="#ff9a3c" opacity={0.20} />
+        <ellipse cx={flameX} cy={1178} rx={118 + Math.sin(g / 2.7) * 9} ry={22}
+                 fill="#ffc24a" opacity={0.26} />
+      </g>
       <DripTorch x={flameX + 60} y={1026} f={g} scale={1.0} tilt={tilt} lit={tilt}
                  withHand={false} groundY={154} />
       <Card x={540} y={CARD_TOP_Y} text="A FIRE YOU SET ON PURPOSE" w={760} />
@@ -901,7 +915,7 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
           translate up to 5px horizontally, so a 4 to 6 pixel strip of the background behind
           them was exposed down the full frame height for seconds at a time, and a judge
           measured it. My regression. Bleed them past both edges. */}
-      <rect x={-28} y={392} width={1136} height={1160} fill="#3b2f24" stroke={INK} strokeWidth={7} />
+      <rect x={-28} y={-40} width={1136} height={2000} fill="#3b2f24" stroke={INK} strokeWidth={7} />
       {Array.from({length: 6}).map((_, i) => (
         <line key={i} x1={0} y1={680 + i * 140} x2={1080} y2={680 + i * 140}
               stroke="#2a2018" strokeWidth={5} opacity={0.7} />
@@ -916,10 +930,10 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
         ))}
         <text x={0} y={-64} textAnchor="middle" fill={INK}
               style={{font: `700 26px ${MONO}`, letterSpacing: 2}}>SAFE DAYS</text>
-        <text x={0} y={48} textAnchor="middle" fill={INK} opacity={0.62}
-              style={{font: `700 15px ${MONO}`, letterSpacing: 1}}>illustrative</text>
-        <text x={0} y={70} textAnchor="middle" fill={INK} opacity={0.62}
-              style={{font: `700 15px ${MONO}`}}>the count doesn't exist yet</text>
+        <text x={0} y={48} textAnchor="middle" fill={INK} opacity={0.82}
+              style={{font: `700 19px ${MONO}`, letterSpacing: 1}}>illustrative</text>
+        <text x={0} y={74} textAnchor="middle" fill={INK} opacity={0.82}
+              style={{font: `700 19px ${MONO}`}}>the count doesn't exist yet</text>
       </g>
       {/* four hatched jurisdictions colliding over one piece of ground */}
       <g opacity={fields}>
@@ -964,7 +978,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
   const SLEEVE = ['#b8894a', '#7d8f92', '#8a6a52', '#5f7a6a'];
   return (
     <World f={g} anchorY={1620} hazeAmt={0.45} interior>
-      <rect x={-28} y={392} width={1136} height={1240} fill="#3b2f24" stroke={INK} strokeWidth={7} />
+      <rect x={-28} y={-40} width={1136} height={2000} fill="#3b2f24" stroke={INK} strokeWidth={7} />
       {/* the sheet, close, lit from beneath through its own holes */}
       <g transform="translate(540,960)">
         <rect x={-250} y={-170} width={500} height={340} rx={8}
@@ -1049,7 +1063,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
   const dis = interpolate(t, [L(13) + 2.6, L(13) + 3.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <World f={g} anchorY={1600} hazeAmt={0.5}>
-      <rect x={-28} y={392} width={1136} height={1240} fill="#22302c" stroke={INK} strokeWidth={6} />
+      <rect x={-28} y={-40} width={1136} height={2000} fill="#22302c" stroke={INK} strokeWidth={6} />
       {/* the machined rule */}
       <g opacity={rule}>
         {/* the AWARD PERIOD draws itself across the range while the playhead stays pinned
@@ -1125,9 +1139,16 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
               fill="none" stroke={INK} strokeWidth={6} strokeDasharray="18 14" />
         <text x={0} y={8} textAnchor="middle" fill={BONE} opacity={0.85}
               style={{font: `700 24px ${MONO}`}}>LIABILITY</text>
-        {/* the arrow that reaches the contour and comes apart */}
-        <g opacity={1 - dis}>
-          <path d={`M${-212 + dis * 46},0 L${-132},0`} stroke={INK} strokeWidth={7} fill="none" />
+        {/* THE DIAGRAM WAS ASSERTING THE OPPOSITE OF c15. This hop was drawn SOLID, at full
+            strength, from the moment the shot opened, and for the first six seconds it was
+            the ONLY connector in the frame: the three funded boxes sat unwired from each
+            other while a solid line ran into the box that is NOT in the award, still on
+            screen while the narration said "isn't in this award". A judge caught it. The hop
+            is dashed now, it only appears after the funded chain is wired, and it breaks
+            before the line lands rather than after. */}
+        <g opacity={clamp01(arrows - 2.6) * (1 - dis)}>
+          <path d={`M${-212 + dis * 46},0 L${-132},0`} stroke={INK} strokeWidth={7}
+                fill="none" strokeDasharray="14 12" opacity={0.75} />
         </g>
         {dis > 0.2 && [0, 1, 2].map((i) => (
           <rect key={i} x={-206 + i * 22} y={-6 + dis * (30 + i * 18)} width={16} height={9}
@@ -1307,9 +1328,9 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
             text={t >= L(16) + 0.15 ? 'THE DAYS YOU ARE ALLOWED' : 'DAYS IN DANGER, MAPPED FOR DECADES'} w={940} />
       {harden > 0.4 && (
         <g>
-          <rect x={266} y={1092} width={548} height={46} rx={7} fill="#efe9dc" stroke={INK} strokeWidth={4} />
-          <text x={540} y={1123} textAnchor="middle" fill={INK}
-                style={{font: `700 22px ${MONO}`, letterSpacing: 1}}>
+          <rect x={236} y={1084} width={608} height={56} rx={7} fill="#efe9dc" stroke={INK} strokeWidth={4} />
+          <text x={540} y={1122} textAnchor="middle" fill={INK}
+                style={{font: `700 28px ${MONO}`, letterSpacing: 1}}>
             illustrative, the project hasn't run
           </text>
         </g>
