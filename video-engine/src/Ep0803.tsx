@@ -751,10 +751,11 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
             past the head's rest position, drawn behind it, and the head is mounted. */}
         <g opacity={build}>
           {[-60, 60].map((dx) => (
-            <rect key={dx} x={838 + dx - 9} y={598} width={18} height={340} rx={4}
+            <rect key={dx} x={838 + dx - 9} y={624} width={18} height={314} rx={4}
                   fill={STEELOX} stroke={INK} strokeWidth={5} />
           ))}
-          <rect x={838 - 86} y={586} width={172} height={26} rx={5}
+          {/* the crossbeam clears the title card's baseplate at 575 */}
+          <rect x={838 - 86} y={612} width={172} height={26} rx={5}
                 fill={STEELOX} stroke={INK} strokeWidth={5} />
           <rect x={838 - 74} y={922} width={148} height={22} rx={4}
                 fill="#3a4a4d" stroke={INK} strokeWidth={5} />
