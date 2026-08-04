@@ -21,7 +21,7 @@ import {TalkMouth, ambientMouth} from './voice';
 
 export const INK = '#101423';
 
-export type Pose = 'stand' | 'arms-crossed' | 'point' | 'panic' | 'raise';
+export type Pose = 'stand' | 'arms-crossed' | 'point' | 'panic' | 'raise' | 'carry';
 export type Emotion = 'neutral' | 'angry' | 'worried' | 'shock' | 'smug';
 // Everyday Alaskan gear (deliberately NOT the fur-ruff parka, which reads as
 // Inupiat/Inuit-coded; the crowd must read as generic residents). 'parka' is kept
@@ -339,6 +339,35 @@ export const Character: React.FC<CharacterProps> = ({
               {/* extended pointing finger stays on top of the new hand */}
               <rect x={8} y={-7} width={30} height={13} rx={6.5} fill={skin} stroke={INK} strokeWidth={4.5} />
             </g>
+          </g>
+        );
+      case 'carry':
+        // CARRYING A TOOL. The near arm reaches down and forward so the fist clears the
+        // torso silhouette entirely, which is what was missing: an arm hanging straight
+        // at the side puts the hand INSIDE the body outline, so any prop placed at it
+        // either disappears behind the figure or has to be nudged out into open air,
+        // where it reads as floating. That nudge is how the drip torch ended up held by
+        // nobody for ten seconds.
+        //
+        // HAND ANCHOR, for scenes placing a prop: this hand is at arms-space (120,330),
+        // which is local (150,500)-space (150 + 120*facing, 310). A scene at
+        // translate(X,Y) scale(S) therefore finds the fist at
+        //     (X + 120*S*facing, Y - 190*S)
+        // and should pass exactly that to the prop's grip origin.
+        return (
+          <g>
+            {/* off arm at the side */}
+            <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
+            <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
+            <path d={`M-49,270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.2} />
+            {hand(-52, 358, 0, 14)}
+            {/* carrying arm: shoulder, elbow forward, fist out past the silhouette. The
+                load makes it hang a little heavier than the free arm, so it breathes on
+                the same cycle at a slightly smaller amplitude. */}
+            <path d={`M46,264 q46,20 74,${64 + 1.5 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
+            <path d={`M46,264 q46,20 74,${64 + 1.5 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
+            <path d={`M44,258 q44,18 70,${58 + 1.5 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.2} />
+            {hand(120, 330 + 1.5 * Math.sin(f / 13), -22, 14)}
           </g>
         );
       case 'panic':

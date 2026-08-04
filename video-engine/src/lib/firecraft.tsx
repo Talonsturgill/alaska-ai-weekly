@@ -125,13 +125,19 @@ export const DripTorch: React.FC<{
   withHand?: boolean;
   phase?: number;
   groundY?: number;
-}> = ({x, y, f, scale = 1, tilt = 0, lit = 0, withHand = true, phase = 0, groundY = 120}) => {
+  gripFingers?: string;   // skin tone: draws fingers closing over the loop handle
+}> = ({x, y, f, scale = 1, tilt = 0, lit = 0, withHand = true, phase = 0, groundY = 120,
+       gripFingers}) => {
   const id = uid(`torch${x}${y}`);
   const body = tones(STEELOX);
   const glove = tones('#c8b48a');
   const v = vitals(f, phase, 0.6);
   const t = Math.max(0, Math.min(1, tilt));
-  const rot = -8 + t * 62;
+  // THE SPOUT USED TO POUR UPWARD. The spout is on the canister's LEFT (x -34..-104)
+  // and the handle on its right, so a POSITIVE (clockwise) rotation swings the spout
+  // toward the sky. `tilt` therefore lifted the fuel away from the ground it is meant
+  // to be laying fire on. Pouring is negative here.
+  const rot = -8 - t * 40;
   const flick = 0.85 + 0.15 * Math.sin(f / 3.1 + phase);
   return (
     <g transform={`translate(${x},${y + v.bob}) scale(${scale})`}>
@@ -139,7 +145,13 @@ export const DripTorch: React.FC<{
       <FormGradient id={`${id}g`} t={glove} softness={0.6} />
       <ContactShadow cx={0} cy={groundY} rx={70} ry={12} opacity={0.34} blur={14} />
 
-      <g transform={`rotate(${rot})`}>
+      {/* THE ORIGIN IS THE GRIP. Everything inside is shifted so that the point a
+          hand closes on, the middle of the loop handle at (44,-8), sits on this
+          component's own (x,y). Two consequences, both of them the point: a scene
+          places the torch by passing the HAND's coordinate and nothing else, and the
+          tilt rotation pivots about the fist rather than about the middle of the fuel
+          can, which is how a tool actually swings when someone is holding it. */}
+      <g transform={`rotate(${rot}) translate(-44,8)`}>
         {/* fuel canister with a real level window, so the tool has consumable state */}
         <rect x={-34} y={-26} width={68} height={78} rx={9} fill={`url(#${id})`} stroke={INK} strokeWidth={5} />
         <rect x={-22} y={-12} width={16} height={50} rx={3} fill="#2c3a3d" stroke={INK} strokeWidth={3} />
@@ -164,13 +176,22 @@ export const DripTorch: React.FC<{
         )}
       </g>
 
-      {/* THE BEAD: fuel leaving the spout on its own arc. This is the verb. */}
-      {t > 0.35 && (
+      {/* THE BEAD: fuel leaving the spout on its own arc. This is the verb.
+          It is emitted from where the spout ACTUALLY IS after the tilt rotation.
+          This group sits outside the rotate, so it used to drip from a fixed point in
+          space while the spout swung somewhere else entirely. */}
+      {t > 0.35 && (() => {
+        const rr = (rot * Math.PI) / 180;
+        // spout tip in grip-origin coords, then rotated by the same tilt
+        const sx = -104 - 44, sy = 74 + 8;
+        const tipX = sx * Math.cos(rr) - sy * Math.sin(rr);
+        const tipY = sx * Math.sin(rr) + sy * Math.cos(rr);
+        return (
         <g opacity={Math.min(1, (t - 0.35) * 3)}>
           {[0, 1, 2].map((i) => {
             const ph = ((f / 9) + i * 0.34) % 1;
-            const bx = -96 - ph * 26;
-            const by = 78 + ph * ph * 150;
+            const bx = tipX + 8 - ph * 14;
+            const by = tipY + 6 + ph * ph * 150;
             return (
               <g key={i} transform={`translate(${bx},${by})`}>
                 <ellipse rx={5.5} ry={8} fill="#ffb03a" stroke={INK} strokeWidth={2.4} />
@@ -178,6 +199,23 @@ export const DripTorch: React.FC<{
               </g>
             );
           })}
+        </g>
+        );
+      })()}
+
+      {/* FINGERS CLOSING OVER THE HANDLE. The character is drawn first and its fist
+          sits behind the loop; without a few finger forms laid over the front of the
+          loop the hand reads as resting near the tool rather than gripping it. Skin
+          tone is passed in by the scene so the fingers match the figure holding it. */}
+      {gripFingers && (
+        <g>
+          <ellipse cx={-2} cy={-2} rx={17} ry={13} fill={gripFingers} stroke={INK} strokeWidth={4} />
+          {[-9, 1, 11].map((fy, i) => (
+            <rect key={i} x={-13} y={fy - 4} width={26} height={8} rx={4}
+                  fill={gripFingers} stroke={INK} strokeWidth={3} opacity={0.98} />
+          ))}
+          {/* the contact tick: a hard AO crease where the fist closes on the metal */}
+          <path d="M-14,-13 q14,-5 28,0" fill="none" stroke={INK} strokeWidth={2.6} opacity={0.5} />
         </g>
       )}
 

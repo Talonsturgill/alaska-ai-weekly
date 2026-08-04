@@ -658,7 +658,7 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
       <ellipse cx={flameX + 136} cy={1190} rx={64} ry={13} fill="#4a3323" opacity={0.5} />
       <ellipse cx={flameX + 132} cy={1187} rx={38} ry={9} fill="#3a2718" opacity={0.55} />
       <g transform={`translate(${flameX + 130},1180) scale(1.12)`}>
-        <Character frame={g} pose="stand" emotion="neutral"
+        <Character frame={g} pose="carry" emotion="neutral"
                    outfit="vest" headgear="cap" facing={-1} />
       </g>
       {/* THE TORCH CARRIED ITS OWN DETACHED GLOVE. DripTorch draws a hand when withHand
@@ -675,8 +675,15 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
         <ellipse cx={flameX} cy={1178} rx={118 + Math.sin(g / 2.7) * 9} ry={22}
                  fill="#ffc24a" opacity={0.26} />
       </g>
-      <DripTorch x={flameX + 60} y={1026} f={g} scale={1.0} tilt={tilt} lit={tilt}
-                 withHand={false} groundY={154} />
+      {/* THE TOOL IS IN THE FIST. Placed at the carry pose's documented hand anchor,
+          (X + 120*S*facing, Y - 190*S) for a figure at translate(X,Y) scale(S). The
+          torch's own origin is its grip point, so this is the whole placement: no
+          nudging a prop toward a hand and hoping, which is how it spent ten seconds
+          hanging in open air with an empty handle beside a man with his arms down.
+          Drawn AFTER the figure so the canister reads in full, with fingers closing
+          over the front of the loop in the figure's own skin tone. */}
+      <DripTorch x={flameX - 4} y={967} f={g} scale={1.0} tilt={tilt} lit={tilt}
+                 withHand={false} groundY={211} gripFingers="#e8b48c" />
       <Card x={540} y={CARD_TOP_Y} text="A FIRE YOU SET ON PURPOSE" w={760} />
       <g opacity={patch}>
         {/* NEGATIVE SPACE, not just "somewhere else". At 1174 this card sat across the
@@ -1037,13 +1044,13 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
           </g>
         );
       })}
-      {/* the four plates rotating to face one another */}
+      {/* the four plates rotating to face one another.
+          THE LABELS OVERLAPPED THE SHEET THEY ANNOTATE. The sheet spans x 290..790
+          and these sat at 232/848 with an 84px half-width, so both pairs crossed its
+          border by 26px. The hands keep their positions (they were brought in on
+          purpose so the fingers close on the card); only the plates step outboard, to
+          174 and 904, which clears the sheet by 16px on both sides. */}
       {SIDES.map((s, i) => (
-        {/* THE LABELS OVERLAPPED THE SHEET THEY ANNOTATE. The sheet spans x 290..790
-            and these sat at 232/848 with an 84px half-width, so both pairs crossed its
-            border by 26px. The hands keep their positions (they were brought in on
-            purpose so the fingers close on the card); only the plates step outboard, to
-            174 and 904, which clears the sheet by 16px on both sides. */}
         <g key={`p${i}`} transform={`translate(${s.x + (i % 2 ? 56 : -58)},${s.y - 120}) rotate(${(1 - turn) * (i % 2 ? 40 : -40)})`}>
           <rect x={-92} y={-26} width={184} height={52} rx={6}
                 fill={ENAMEL} stroke={INK} strokeWidth={5} />
@@ -1058,8 +1065,15 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
           The curriculum IS funded (c12), so the card now claims only that. */}
       {/* the card announced the curriculum while the narration under it was on the
           governance gap, so the two were about different things for the whole shot */}
+      {/* THE SUBLINE EVIDENCED A DIFFERENT CLAIM THAN ITS HEADLINE. This said
+           "a curriculum for a new four-year wildland fire management program (NSF)",
+           which is c12, the award's education activity. The headline is c18, the
+           community-partnerships clause of the c7 sentence. Both facts are sourced,
+           but pairing them under one citation asserts that the curriculum is the
+           partnership finding, which the record does not say. The subline now quotes
+           the clause the headline is about. */}
       <Card x={540} y={CARD_BOT - 20} text="NSF NAMES THE PARTNERSHIP GAP"
-            sub="a curriculum for a new four-year wildland fire management program (NSF)" w={980} />
+            sub="the state lacks community partnerships suited to its unique environment (NSF)" w={980} />
     </World>
   );
 };
@@ -1229,12 +1243,27 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
           bled through the placard face. Two judges read it as a failed blend and a stale
           duplicate sprite, which is exactly what a 0.6 plate over a figure looks like. It
           fades IN and stays solid. */}
-      <g transform={`translate(742,${1012 + Math.max(0, sheet - 0.6) * 240})`}
+      <g transform={`translate(742,${1006 + (1 - clamp01(sheet * 1.4)) * -26})`}
          opacity={interpolate(sheet, [0, 0.15], [0, 1], {extrapolateRight: 'clamp'})}>
+        {/* the stake, driven into the ground the crew is standing on */}
+        <path d="M-7,52 h14 v126 l-7,14 l-7,-14 Z" fill="#7a5c3a" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <path d="M-4,58 v112" stroke="#ffffff" strokeWidth={3} opacity={0.16} strokeLinecap="round" />
+        {/* disturbed earth where it went in, so it is IN the ground and not on it */}
+        <ellipse cx={0} cy={182} rx={34} ry={9} fill="#3a2718" opacity={0.5} />
+        <ellipse cx={0} cy={179} rx={19} ry={5} fill="#2c1d12" opacity={0.55} />
         <rect x={-92} y={-64} width={184} height={128} rx={6}
               fill="#efeade" stroke={INK} strokeWidth={6} />
-        <text x={0} y={6} textAnchor="middle" fill={INK} opacity={0.4}
-              style={{font: `700 24px ${MONO}`}}>NO DAY</text>
+        {/* THE EMPTINESS IS EXPLICIT NOW. "NO DAY" at 0.4 opacity measured 2.5:1
+            against the cream, the weakest string in the film and marginal at phone
+            size. It is house ink at full strength, over a ruled date row that has
+            been struck through, so the card SHOWS the absence instead of whispering
+            it. */}
+        <line x1={-62} y1={-22} x2={62} y2={-22} stroke={INK} strokeWidth={3} opacity={0.32} />
+        <line x1={-62} y1={34} x2={62} y2={34} stroke={INK} strokeWidth={3} opacity={0.32} />
+        <text x={0} y={6} textAnchor="middle" fill={INK} opacity={0.88}
+              style={{font: `700 26px ${MONO}`, letterSpacing: 1}}>NO DAY</text>
+        <line x1={-70} y1={26} x2={70} y2={-38} stroke="#8a2a2a" strokeWidth={5}
+              strokeLinecap="round" opacity={0.8} />
       </g>
       {/* the distant-machine speck used to live here. Three judges read it as a ghosted
           duplicate prop or a compositing artifact rather than as depth, which is a fair
