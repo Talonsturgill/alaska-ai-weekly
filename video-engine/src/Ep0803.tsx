@@ -602,7 +602,7 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
           left the other two thirds of the plate empty for the whole crawl. */}
       <ellipse cx={248} cy={1188} rx={54} ry={11} fill="#4a3323" opacity={0.45} />
       <g transform="translate(244,1180) scale(0.9)">
-        <Character frame={g + 53} pose="arms-crossed" emotion="neutral"
+        <Character frame={g + 53} pose="stand" emotion="neutral"
                    outfit="flannel" headgear="beanie" facing={1} />
       </g>
       {/* the burn boss, at 1.12 not 1.5: at 1.5 the head crashed into the title card */}
@@ -615,7 +615,7 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
       <DripTorch x={flameX + 52} y={1032} f={g} scale={1.0} tilt={tilt} lit={tilt} groundY={148} />
       <Card x={540} y={CARD_TOP_Y} text="A FIRE YOU SET ON PURPOSE" w={760} />
       <g opacity={patch}>
-        <Card x={540} y={CARD_BOT - 40} text="RARELY USED HERE" sub="prescribed burning remains underused in Alaska (NSF)" w={880} />
+        <Card x={540} y={700} text="RARELY USED HERE" sub="prescribed burning remains underused in Alaska (NSF)" w={880} />
       </g>
       <CornerTool f={g} />
     </World>
@@ -740,7 +740,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
           <BurnWindowEngine x={520} y={900} f={g} scale={1.42}
             emotion={windows ? 'found' : recut < 1 ? 'straining' : 'reading'}
             feed={feed} punch={Math.max(0, punch)} windows={windows ? 1 : 0}
-            lamp={windows ? 1 : 0} groundY={150}
+            lamp={windows ? 1 : 0} groundY={106}
             windowFill={accentBox(BURNABLE, 660, 900, 40, 44)} />
         </g>
         {/* THE PUNCH HEAD, big enough to read, driving down onto the stock */}
@@ -988,11 +988,12 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
               return (
                 <g>
                   <ellipse cx={2} cy={62} rx={40} ry={8} fill="#16241f" opacity={0.5} />
-                  <path d={`M0,60 L-42,60 L0,${60 - h} L42,60 Z`} fill="#2b4a42" stroke={INK} strokeWidth={4} />
-                  <path d={`M0,60 L-42,60 L0,${60 - h} Z`} fill={SPRUCE} />
+                  <rect x={-7} y={30} width={14} height={32} rx={3} fill="#4a3526" stroke={INK} strokeWidth={5} />
+                  <path d={`M0,60 L-42,60 L0,${60 - h} L42,60 Z`} fill="#2b4a42" stroke={INK} strokeWidth={6} />
+                  <path d={`M0,58 L-38,58 L0,${62 - h} Z`} fill={SPRUCE} />
                   <path d={`M0,${60 - h * 0.34} L-27,${60 - h * 0.34} L0,${60 - h * 0.82} L27,${60 - h * 0.34} Z`}
-                        fill="#2b4a42" stroke={INK} strokeWidth={3.5} />
-                  <path d={`M0,${60 - h * 0.34} L-27,${60 - h * 0.34} L0,${60 - h * 0.82} Z`} fill={SPRUCE} />
+                        fill="#2b4a42" stroke={INK} strokeWidth={6} />
+                  <path d={`M0,${58 - h * 0.34} L-24,${58 - h * 0.34} L0,${62 - h * 0.82} Z`} fill={SPRUCE} />
                 </g>
               );
             })()}
@@ -1060,7 +1061,7 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
       {[
         {x: 296, sc: 0.96, pose: 'stand' as const, emo: 'neutral' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -34},
         {x: 516, sc: 1.16, pose: 'stand' as const, emo: 'neutral' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const, gy: 0},
-        {x: 726, sc: 1.06, pose: 'arms-crossed' as const, emo: 'neutral' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const, gy: -16},
+        {x: 726, sc: 1.06, pose: 'stand' as const, emo: 'neutral' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const, gy: -16},
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}

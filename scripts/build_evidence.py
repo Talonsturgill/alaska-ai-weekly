@@ -38,6 +38,11 @@ MOVES = [
     ("punch", 7, 0.78),      # the punch head drives and cuts the window
     ("drain", 15, 1.30),     # the ember wash tears loose and runs off frame
     ("windows", 16, 1.10),   # the apertures open across the map and harden
+    # A CHARACTER SHOT. A judge pointed out that none of the strips covered a frame with a
+    # human in it, so idle life on the five held figures could not be confirmed or refuted
+    # from the pack, and said so rather than assuming a freeze. That is an evidence gap, not
+    # a film defect, and it is the pack's job to close it.
+    ("crew", 14, 2.50),      # the three-person crew with no day to go on
 ]
 
 
