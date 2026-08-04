@@ -281,10 +281,15 @@ const CornerTool: React.FC<{f: number; flip?: number; x?: number; y?: number}> =
           </g>
         ) : (
           // DRIP TORCH: the tool that starts one on purpose
-          <g transform="rotate(180)">
-            <rect x={-20} y={-30} width={40} height={52} rx={7} fill={STEELOX} stroke={INK} strokeWidth={4} />
-            <path d="M-20,10 L-46,22 L-56,38" fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
-            <circle cx={-56} cy={38} r={7} fill="#ffc24a" stroke={INK} strokeWidth={3} />
+          <g transform="rotate(180) scale(1.2) translate(22,-9)">
+            {/* SIZED TO MATCH THE PULASKI. The pulaski fills 88 of the badge's 124px and this
+                filled about 52, with a 9px spout, so the film's LAST image was an unreadable
+                grey lozenge where the mode indicator should be. */}
+            <rect x={-22} y={-32} width={44} height={58} rx={8} fill={STEELOX} stroke={INK} strokeWidth={4} />
+            <rect x={-13} y={-20} width={11} height={34} rx={3} fill="#2c3a3d" stroke={INK} strokeWidth={2.5} />
+            <path d="M-22,12 L-48,24 L-58,40" fill="none" stroke={INK} strokeWidth={11} strokeLinecap="round" />
+            <path d="M-22,12 L-48,24 L-58,40" fill="none" stroke="#9fb0b3" strokeWidth={4} strokeLinecap="round" />
+            <circle cx={-58} cy={40} r={9} fill="#ffc24a" stroke={INK} strokeWidth={3.5} />
           </g>
         )}
       </g>
@@ -385,12 +390,12 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
   const deadIn = interpolate(t, [L(1), L(1) + 0.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <World f={g} anchorY={1560}>
-      <g transform="translate(60,300) scale(0.86)">
+      <g transform="translate(108,476) scale(0.76)">
         <AlaskaField f={g} wash={wash} />
       </g>
       <Counter f={g} x={250} y={1196} spin={spin} value="███" label="MUST NOT BURN" />
       <g opacity={deadIn}>
-        <Counter f={g} x={640} y={1196} value="0" dark label="YOU CAN" />
+        <Counter f={g} x={640} y={1196} value="—" dark label="YOU CAN" />
       </g>
       <CornerTool f={g} />
       <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN" w={940} />
@@ -1028,11 +1033,11 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
   }));
   return (
     <World f={g} anchorY={1560}>
-      <g transform="translate(60,300) scale(0.86)">
+      <g transform="translate(108,476) scale(0.76)">
         <AlaskaField f={g} wash={(1 - drain) * (1 - harden * 0.9)} drain={drain} />
       </g>
       {/* the windows open, dashed first, then harden */}
-      <g transform="translate(60,300) scale(0.86)">
+      <g transform="translate(108,476) scale(0.76)">
         {WINS.map((w, i) => {
           const p = clamp01(open * 11 - i);
           if (p <= 0) return null;
