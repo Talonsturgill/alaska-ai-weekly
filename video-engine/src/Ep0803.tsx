@@ -189,7 +189,13 @@ const FarRidge: React.FC<{f: number; y?: number}> = ({f, y = 980}) => (
         return `${x},${y - off - hgt}`;
       }).join(' L');
       return (
-        <path key={k} d={`M-60,${y + 200} L${pts} L1140,${y + 200} Z`}
+        // THE FAR PLANE USED TO STOP IN MID-AIR. Closing each layer at y+200 left a
+        // flat edge with the page's sky gradient visible BELOW it and the treeline
+        // lower still, so three shots stacked ground, then sky, then trees. The far
+        // plane is ground receding to the treeline; it runs to the bottom of the
+        // canvas. The layers are semi-transparent, so this continues their own tone
+        // instead of adding another edge.
+        <path key={k} d={`M-60,1920 L${pts} L1140,1920 Z`}
               fill={SPRUCE} opacity={op} />
       );
     })}
@@ -220,40 +226,68 @@ const Haze: React.FC<{f: number; amount?: number; y?: number}> = ({f, amount = 1
 // viewer actually uses are, in order: the Seward Peninsula bump on the west, the
 // Alaska Peninsula sweeping southwest into a dotted Aleutian arc, the Southeast
 // panhandle running down-right, and the straight Canada border. All four are drawn.
+// A REAL ALASKA, PROJECTED, NOT REMEMBERED (2026-08-04). Four rounds of judges called
+// the hand-drawn outline the least finished asset in the film, and it is the first thing
+// on screen and the last: "the Southeast panhandle is a single straight tapered stick,
+// the Alaska Peninsula is a second straight stick, and the Aleutians are a row of short
+// parallel diagonal hatch marks that read as shading rather than islands. Alaskans will
+// clock this in the first second."
+//
+// Redrawing it by hand a third time would have produced a third drawing from memory. This
+// is the actual state boundary, Albers equal-area conic (standard parallels 55N and 65N,
+// central meridian 154W, the standard projection for Alaska), simplified by
+// Douglas-Peucker to the point where the coastline still reads at feed size. The
+// Aleutians cross the antimeridian, so eastern longitudes shift by -360 to keep the chain
+// continuous instead of wrapping it around the world.
+//
+// The fit is to the MAINLAND rather than to the full extent: the chain reaches 172E, and
+// fitting all of it shrank the state into the right half of the box. The chain runs west
+// out of frame the way it does on a wall map. Fitted into the same box the hand-drawn
+// path occupied, so the clip, the relief, the danger wash and the site chips keep their
+// coordinates.
 const AK_PATH =
-  // REDRAWN 2026-08-04. Three judges in three rounds called the old outline the least
-  // finished asset in the film, and it opens and closes the piece: a straight north coast,
-  // a straight vertical east edge, a sawtooth southern edge matching no coastline, no Cook
-  // Inlet, no Kenai, no Bristol Bay, three dots for the Aleutians and a stick panhandle.
-  // For an Alaska brand that is the wrong thing to leave crude. Still low-poly and still in
-  // the house polygon language, but the features an Alaskan reads for are now there and in
-  // the right places: Beaufort coast, the 141st meridian border, the Southeast panhandle,
-  // Prince William Sound, Cook Inlet with the Kenai lobe, the Alaska Peninsula running out
-  // to the chain, Bristol Bay, the Yukon-Kuskokwim delta, Norton Sound, Seward Peninsula
-  // and Kotzebue Sound.
-  'M300,150 L520,158 L700,152 L830,168 ' +          // Beaufort / north slope coast
-  'L838,300 L836,468 ' +                            // the 141st meridian, Canada border
-  'L900,560 L946,646 L988,742 L958,758 ' +          // the Southeast panhandle running out
-  'L906,664 L858,576 L820,506 ' +                   // and back up its inner shore
-  'L760,516 L700,536 L662,556 ' +                   // Gulf coast to Prince William Sound
-  'L640,600 L620,652 L596,662 L586,606 ' +          // the Kenai lobe
-  'L568,556 L556,498 L540,556 ' +                   // Cook Inlet, cut north between them
-  'L486,592 L430,628 L392,652 ' +                   // the Alaska Peninsula heading southwest
-  'L336,706 L300,726 L286,700 L330,660 ' +          // its tip, and back along the north shore
-  'L398,614 L436,586 ' +                            // Bristol Bay
-  'L392,566 L342,556 L300,528 ' +                   // Kuskokwim Bay
-  'L262,506 L236,470 ' +                            // the Yukon-Kuskokwim delta
-  'L274,452 L246,430 ' +                            // Norton Sound
-  'L186,418 L150,398 L166,368 L214,372 ' +          // the Seward Peninsula
-  'L206,336 L226,300 L252,236 Z';                   // Kotzebue Sound and up to the north coast
+  'M568,202 L641,571 L662,572 L667,565 L678,562 L679,573 L717,598 L723,611 L739,595 L738,583 L741,580 L739,578 L753,565 L759,568 L765,572 L769,582 L775,582 L789,595 L798,597 L811,606 L850,645 L849,650 L856,650 L857,657 L863,658 L866,665 L872,663 L892,667 L903,672 L910,671 L914,677 L913,685 L923,701 L919,721 L915,726 L911,719 L911,727 L905,720 L907,714 L910,714 L912,703 L909,714 L902,715 L903,708 L910,705 L904,707 L896,688 L888,684 L890,677 L874,694 L878,695 L878,703 L875,702 L878,708 L872,706 L868,700 L872,696 L869,683 L878,677 L869,679 L856,671 L856,667 L851,669 L852,660 L850,664 L843,662 L838,658 L842,657 L840,653 L839,656 L832,656 L831,652 L829,656 L823,655 L823,650 L831,644 L824,647 L824,643 L820,641 L823,637 L817,640 L814,635 L830,638 L816,632 L814,626 L823,626 L814,626 L813,632 L807,627 L811,626 L808,618 L807,626 L802,623 L799,610 L802,604 L798,606 L798,619 L784,616 L775,600 L774,604 L771,600 L760,577 L760,584 L757,584 L765,592 L758,587 L773,608 L779,623 L774,624 L768,616 L769,620 L761,623 L760,613 L753,607 L758,601 L753,605 L748,598 L750,610 L744,608 L742,603 L741,605 L738,602 L740,607 L730,602 L735,606 L731,612 L733,608 L742,608 L745,614 L748,613 L746,617 L750,613 L756,620 L758,624 L754,627 L748,623 L747,626 L752,628 L746,628 L747,633 L741,628 L723,623 L726,619 L722,622 L705,608 L699,607 L701,604 L698,607 L670,596 L676,589 L672,582 L674,577 L681,593 L679,583 L686,582 L672,575 L668,586 L659,592 L635,590 L639,586 L635,579 L636,584 L631,587 L607,585 L586,593 L579,593 L584,592 L579,586 L572,588 L564,584 L568,567 L557,583 L543,580 L548,571 L537,574 L540,567 L532,572 L527,571 L538,565 L528,567 L526,564 L528,562 L527,557 L533,554 L527,555 L521,563 L515,561 L514,566 L512,561 L510,566 L509,556 L509,567 L507,564 L504,569 L500,565 L505,551 L500,562 L498,558 L493,561 L493,564 L498,561 L495,571 L488,572 L493,572 L489,577 L494,572 L494,579 L497,572 L498,578 L489,586 L493,582 L498,585 L501,579 L504,584 L496,593 L495,597 L502,594 L500,598 L497,597 L496,606 L493,603 L492,607 L482,606 L482,603 L479,610 L476,600 L472,612 L475,617 L470,607 L467,612 L470,620 L464,614 L465,621 L463,618 L464,623 L459,628 L461,618 L456,628 L455,623 L452,625 L453,630 L447,634 L447,639 L441,635 L444,639 L437,638 L431,642 L425,637 L429,634 L427,632 L432,629 L438,630 L436,627 L445,616 L437,623 L427,618 L438,591 L435,578 L454,564 L458,569 L465,566 L481,570 L460,560 L467,549 L475,545 L472,544 L466,547 L462,556 L452,556 L451,552 L439,565 L432,567 L427,574 L429,578 L426,577 L422,581 L417,589 L419,592 L412,599 L402,596 L413,605 L410,611 L399,614 L404,616 L400,623 L396,623 L398,620 L395,617 L395,623 L392,621 L390,623 L393,626 L387,627 L389,631 L381,634 L385,634 L379,643 L381,648 L390,646 L399,655 L382,670 L384,674 L376,678 L382,678 L378,682 L379,684 L377,683 L377,686 L374,681 L372,688 L362,688 L361,694 L356,696 L356,700 L350,698 L347,707 L341,706 L340,712 L336,710 L329,716 L333,718 L331,725 L326,726 L328,730 L323,727 L322,733 L319,729 L314,737 L308,734 L309,738 L305,739 L307,743 L301,740 L293,745 L298,745 L298,748 L286,749 L280,756 L284,753 L290,756 L285,759 L292,758 L286,762 L285,760 L285,767 L281,765 L284,759 L280,759 L279,768 L275,766 L261,774 L259,770 L256,782 L253,781 L257,780 L257,772 L253,771 L244,778 L238,778 L236,784 L234,779 L230,781 L232,784 L227,781 L218,787 L213,786 L214,781 L217,778 L222,780 L216,776 L211,776 L203,791 L200,790 L200,796 L198,793 L195,797 L189,797 L188,793 L192,794 L186,786 L187,799 L185,796 L179,799 L173,790 L172,795 L175,799 L168,803 L170,791 L177,787 L176,789 L178,790 L187,782 L190,783 L188,781 L208,765 L223,761 L218,763 L230,763 L226,766 L230,774 L233,774 L231,767 L243,773 L236,766 L242,752 L277,730 L274,734 L282,736 L282,725 L291,714 L303,705 L305,708 L310,708 L311,705 L306,708 L304,702 L307,684 L313,679 L318,681 L311,678 L309,673 L323,658 L320,657 L327,642 L320,652 L296,662 L289,654 L291,646 L298,646 L301,650 L291,639 L292,644 L286,651 L284,646 L285,654 L282,654 L285,666 L283,669 L278,668 L272,654 L267,651 L268,647 L261,653 L260,649 L253,645 L253,640 L242,649 L241,646 L233,648 L232,654 L222,657 L222,654 L214,653 L220,653 L225,648 L223,649 L222,638 L228,636 L222,636 L219,628 L227,620 L220,598 L222,589 L219,589 L218,594 L216,586 L222,575 L230,571 L224,569 L218,583 L211,587 L216,590 L213,598 L191,603 L181,599 L182,593 L177,589 L173,578 L171,580 L165,574 L168,569 L160,567 L169,562 L172,553 L184,561 L179,570 L189,563 L192,564 L192,571 L200,565 L191,560 L198,559 L196,554 L189,559 L168,553 L167,551 L176,547 L170,548 L168,544 L171,542 L170,540 L168,544 L165,541 L171,533 L181,527 L170,533 L165,546 L162,545 L161,537 L156,531 L160,527 L153,526 L154,518 L154,521 L161,520 L156,514 L166,514 L165,504 L179,489 L188,494 L185,496 L188,495 L184,488 L192,482 L185,486 L185,477 L190,471 L197,472 L192,467 L197,463 L209,466 L211,470 L206,475 L211,470 L214,474 L219,474 L236,456 L241,459 L238,461 L255,460 L264,448 L259,423 L253,423 L256,418 L262,420 L268,412 L262,403 L265,403 L262,402 L257,408 L251,406 L249,410 L245,410 L231,423 L227,409 L222,411 L228,415 L225,419 L217,411 L196,410 L195,413 L198,412 L193,413 L175,404 L171,397 L173,391 L166,378 L168,374 L169,381 L177,376 L182,378 L161,368 L151,355 L156,352 L152,356 L161,354 L166,348 L170,350 L184,341 L193,345 L197,344 L192,340 L194,336 L202,333 L206,335 L212,330 L220,329 L230,332 L225,331 L227,334 L225,343 L219,346 L223,346 L226,352 L241,352 L242,357 L250,355 L256,359 L262,348 L269,350 L268,355 L270,351 L267,345 L259,343 L256,347 L257,338 L249,327 L247,322 L250,319 L261,341 L268,338 L275,346 L284,343 L284,335 L279,337 L270,334 L264,338 L258,329 L265,320 L254,315 L251,318 L253,311 L249,317 L231,310 L228,289 L200,257 L193,253 L201,253 L205,235 L223,237 L239,235 L253,223 L257,208 L274,188 L278,190 L271,193 L288,190 L300,178 L303,179 L299,183 L303,183 L299,190 L302,188 L304,195 L304,183 L312,182 L306,183 L301,177 L315,169 L310,172 L313,176 L316,171 L332,171 L352,150 L352,156 L363,162 L355,169 L357,176 L368,167 L370,161 L369,166 L371,162 L376,166 L373,171 L381,176 L386,171 L394,169 L402,174 L402,171 L407,172 L404,180 L410,183 L403,184 L415,183 L412,188 L422,191 L428,185 L434,185 L433,189 L446,184 L460,191 L469,190 L472,194 L497,193 L511,199 L522,193 L523,196 L522,193 L529,190 L533,193 L534,189 L562,203 Z';
 
-/** the Aleutian arc, drawn as a real chain of separate islands running west */
+/** the islands big enough to read as land: Kodiak, the panhandle group, Nunivak, the
+    larger Aleutians. Drawn as real shapes rather than as dots. */
+const AK_ISLANDS = [
+  'M424,704 L420,712 L406,709 L405,712 L410,711 L414,714 L413,718 L409,719 L408,715 L402,716 L407,719 L397,721 L396,725 L394,723 L395,727 L389,728 L394,730 L384,740 L381,740 L389,730 L385,731 L390,725 L382,731 L385,725 L373,725 L375,728 L382,725 L377,736 L373,730 L371,719 L367,718 L371,709 L379,703 L384,704 L385,707 L382,708 L386,708 L387,713 L392,719 L387,707 L391,708 L387,704 L393,705 L386,701 L386,697 L391,694 L395,705 L395,699 L399,700 L396,696 L402,701 L400,693 L404,696 L399,689 L410,693 L408,700 L409,695 L416,693 L420,696 L415,701 L419,702 L418,705 Z',
+  'M886,733 L887,739 L881,740 L881,736 L878,737 L880,735 L875,729 L875,734 L873,731 L871,733 L873,729 L870,727 L869,729 L866,722 L866,727 L863,723 L860,726 L858,726 L860,723 L853,725 L852,721 L861,720 L853,717 L856,710 L849,714 L846,713 L844,709 L847,708 L848,702 L844,700 L841,692 L833,692 L832,687 L839,688 L841,685 L846,690 L845,693 L847,695 L855,694 L862,699 L866,706 L867,704 L874,710 L864,707 L863,715 L868,710 L872,712 L868,715 L875,714 L878,718 L875,719 L876,721 L880,717 L882,723 L879,729 L884,726 Z',
+  'M773,661 L768,657 L773,658 L766,654 L768,652 L765,653 L761,648 L756,647 L756,640 L764,644 L753,636 L756,635 L755,631 L760,636 L758,630 L762,631 L764,626 L772,629 L770,634 L767,635 L771,636 L767,637 L771,638 L774,629 L785,631 L787,637 L780,635 L787,639 L785,640 L765,638 L778,642 L779,645 L788,641 L793,650 L788,653 L769,646 L772,649 L771,651 L775,651 L778,656 L776,661 Z',
+  'M81,423 L84,426 L90,423 L96,423 L99,428 L98,433 L112,444 L114,444 L112,442 L121,445 L120,448 L117,451 L108,448 L100,456 L99,448 L92,443 L93,440 L85,431 L73,433 L68,430 L68,423 L73,413 L77,421 L74,421 Z',
+  'M807,663 L803,668 L800,660 L802,659 L800,658 L802,655 L799,653 L805,654 L805,651 L801,652 L798,650 L802,646 L798,648 L795,645 L787,629 L787,623 L786,626 L783,623 L780,616 L788,624 L798,621 L813,640 L796,624 L800,634 L813,646 L808,645 L814,650 L813,652 L807,651 L811,655 Z',
+  'M152,590 L139,592 L141,595 L139,596 L122,583 L118,573 L130,575 L132,572 L144,571 L145,569 L145,573 L153,576 L150,585 Z',
+  'M806,678 L811,701 L805,696 L799,689 L801,682 L800,685 L798,682 L797,687 L797,680 L794,685 L794,678 L789,680 L788,674 L791,670 L786,669 L787,666 L784,667 L785,663 L781,665 L777,661 L781,660 L778,659 L779,652 L783,653 L781,656 L785,653 L786,655 L793,657 L792,659 L795,660 Z',
+  'M173,809 L167,805 L163,809 L148,808 L141,814 L135,815 L131,814 L129,806 L136,804 L142,795 L148,797 L160,792 L165,793 L167,804 L172,805 Z',
+  'M898,697 L901,705 L899,714 L895,713 L895,706 L895,711 L891,712 L893,705 L889,698 L892,705 L891,710 L888,704 L890,712 L881,708 L884,702 L881,699 L884,696 L880,697 L884,693 L879,693 L884,692 L881,689 L886,685 L896,693 Z',
+  'M817,661 L830,660 L832,662 L830,659 L838,660 L842,673 L831,667 L836,674 L839,674 L840,680 L829,683 L824,668 L823,670 L820,668 L822,667 L815,664 Z',
+  'M92,835 L84,841 L82,838 L82,842 L79,839 L79,844 L73,842 L60,848 L52,844 L75,839 L71,837 L75,836 L75,832 L79,836 L79,833 L82,833 L73,827 L77,822 L86,822 L85,829 L92,823 L95,828 L85,834 L90,835 L91,832 Z',
+];
+
+/** everything smaller, as islands rather than as hatch marks */
 const AK_TAIL = [
-  // the chain continues from the peninsula tip at (300,726) rather than starting in open
-  // water 90px away from it, which is what made it read as three unattached dots
-  {x: 268, y: 744, r: 13}, {x: 236, y: 758, r: 11}, {x: 206, y: 770, r: 10},
-  {x: 178, y: 780, r: 9}, {x: 152, y: 788, r: 8}, {x: 128, y: 794, r: 7},
-  {x: 106, y: 799, r: 6}, {x: 86, y: 803, r: 5},
+  {x: 820, y: 684, r: 11.0},
+  {x: 415, y: 678, r: 11.0},
+  {x: 861, y: 688, r: 10.5},
+  {x: 516, y: 598, r: 9.8},
+  {x: 862, y: 736, r: 8.7},
+  {x: 863, y: 679, r: 8.1},
+  {x: 846, y: 670, r: 8.0},
+  {x: 849, y: 680, r: 7.5},
+  {x: 778, y: 668, r: 7.4},
+  {x: 231, y: 793, r: 7.2},
+  {x: 838, y: 698, r: 7.1},
+  {x: 534, y: 584, r: 7.0},
+  {x: 104, y: 821, r: 6.4},
+  {x: 893, y: 719, r: 6.3},
+  {x: 240, y: 655, r: 6.1},
+  {x: 402, y: 725, r: 5.9},
+  {x: 245, y: 800, r: 5.7},
+  {x: 508, y: 588, r: 5.6},
+  {x: 885, y: 715, r: 5.2},
+  {x: 789, y: 619, r: 4.9},
+  {x: 753, y: 642, r: 4.8},
+  {x: 402, y: 687, r: 4.7},
 ];
 
 const AlaskaField: React.FC<{
@@ -261,15 +295,19 @@ const AlaskaField: React.FC<{
 }> = ({f, wash = 1, drain = 0, relief = true}) => (
   <g>
     <path d={AK_PATH} fill="#8a6a52" stroke={INK} strokeWidth={7} />
+    {AK_ISLANDS.map((d, i) => (
+      <path key={`i${i}`} d={d} fill="#8a6a52" stroke={INK} strokeWidth={5} />
+    ))}
     {AK_TAIL.map((c, i) => (
-      <ellipse key={i} cx={c.x} cy={c.y} rx={c.r * 1.5} ry={c.r} fill="#8a6a52" stroke={INK} strokeWidth={5} />
+      <ellipse key={i} cx={c.x} cy={c.y} rx={c.r * 1.5} ry={c.r} fill="#8a6a52" stroke={INK} strokeWidth={4} />
     ))}
     <clipPath id="akclip"><path d={AK_PATH} /></clipPath>
     {relief && (
       <g opacity={0.5} clipPath="url(#akclip)">
         {Array.from({length: 34}).map((_, i) => {
-          const x = 250 + hh(i, 21) * 560;
-          const y = 340 + hh(i, 23) * 420;
+          // ranged over the projected mainland's actual interior, not the old blob's
+          const x = 210 + hh(i, 21) * 400;
+          const y = 230 + hh(i, 23) * 380;
           return <path key={i} d={`M${x},${y} l${16 + hh(i, 4) * 22},${-9 - hh(i, 6) * 9}`}
                        stroke={SPRUCE} strokeWidth={4} strokeLinecap="round" />;
         })}
@@ -436,17 +474,37 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
   const wash = interpolate(t, [L(0), L(0) + 1.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const spin = interpolate(t, [L(0) + 2.6, L(0) + 3.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const deadIn = interpolate(t, [L(1), L(1) + 0.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // NOTHING HAPPENED IN THE FIRST FIVE SECONDS. A judge measured the opening as the
+  // lowest inter-frame change in the film: the title plate and the caption were fully
+  // painted by frame 6, and for the next five seconds the only thing that moved was an
+  // ember bloom behind a static map. On a muted phone feed that is the window where the
+  // viewer decides, and the film was spending it on a slide.
+  //
+  // The question SLAMS in. A hard snap with a real overshoot and settle is a motion
+  // event in the first third of a second, and it is the film's actual hook line, so the
+  // eye lands on the sentence the whole piece answers.
+  const slam = interpolate(t, [L(0), L(0) + 0.30], [0, 1],
+    {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  const settle = 1 + 0.075 * Math.sin(clamp01(slam) * Math.PI);
+  // the counter drops onto its shelf just after, so the beat has a second event
+  const drop = interpolate(t, [L(0) + 0.34, L(0) + 0.74], [0, 1],
+    {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   return (
     <World f={g} anchorY={1560}>
       <g transform="translate(108,476) scale(0.76)">
         <AlaskaField f={g} wash={wash} />
       </g>
-      <Counter f={g} x={250} y={1196} spin={spin} value="███" label="MUST NOT BURN" />
+      <g transform={`translate(0,${(1 - drop) * -46})`} opacity={clamp01(drop * 1.8)}>
+        <Counter f={g} x={250} y={1196} spin={spin} value="███" label="MUST NOT BURN" />
+      </g>
       <g opacity={deadIn}>
         <Counter f={g} x={640} y={1196} value="—" dark label="YOU CAN" />
       </g>
       <CornerTool f={g} />
-      <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN?" w={940} />
+      <g transform={`translate(540,${CARD_TOP_Y}) scale(${0.82 + 0.18 * slam},${settle * (0.34 + 0.66 * slam)}) translate(-540,${-CARD_TOP_Y})`}
+         opacity={clamp01(slam * 2.6)}>
+        <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN?" w={940} />
+      </g>
     </World>
   );
 };
