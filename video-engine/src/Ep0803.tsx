@@ -652,14 +652,14 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
       <ellipse cx={248} cy={1188} rx={54} ry={11} fill="#4a3323" opacity={0.45} />
       <g transform="translate(244,1180) scale(0.9)">
         <Character frame={g + 53} pose="stand" emotion="neutral"
-                   outfit="flannel" headgear="beanie" facing={1} />
+                   outfit="nomex" headgear="hardhat" facing={1} />
       </g>
       {/* the burn boss, at 1.12 not 1.5: at 1.5 the head crashed into the title card */}
       <ellipse cx={flameX + 136} cy={1190} rx={64} ry={13} fill="#4a3323" opacity={0.5} />
       <ellipse cx={flameX + 132} cy={1187} rx={38} ry={9} fill="#3a2718" opacity={0.55} />
       <g transform={`translate(${flameX + 130},1180) scale(1.12)`}>
         <Character frame={g} pose="carry" emotion="neutral"
-                   outfit="vest" headgear="cap" facing={-1} />
+                   outfit="nomex" headgear="hardhat" facing={-1} />
       </g>
       {/* THE TORCH CARRIED ITS OWN DETACHED GLOVE. DripTorch draws a hand when withHand
           is on, and that cream shape sat beside the burn boss holding nothing, which three
@@ -1162,8 +1162,12 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
           </g>
         );
       })}
+      {/* THE ABSENT THING WAS THE BIGGEST THING IN THE ROW. At 240 wide against its
+          three 192px siblings, the dashed chip for the provision that is NOT in the
+          award had more presence than the three that are, which fights its meaning.
+          Normalised to the set. */}
       <g transform="translate(850,1136)">
-        <rect x={-120} y={-46} width={240} height={92} rx={0}
+        <rect x={-96} y={-46} width={192} height={92} rx={0}
               fill="none" stroke={INK} strokeWidth={6} strokeDasharray="18 14" />
         <text x={0} y={8} textAnchor="middle" fill={BONE} opacity={0.85}
               style={{font: `700 24px ${MONO}`}}>LIABILITY</text>
@@ -1187,7 +1191,11 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
             sub="Sept 1, 2026 to Aug 31, 2030" w={980} />
       {/* parked in the one corner this shot leaves empty; at the default anchor it sat on
           the FORECAST chip and swallowed its inbound arrow */}
-      <CornerTool f={g} x={962} y={900} />
+      {/* THE BRAND MARK LEFT ITS ANCHOR AND JOINED THE TREE ROW. Pushed to x=962 it
+          abutted the fourth tree and read as a fifth object in the row rather than as a
+          mark. There is no clear corner in this shot that also clears the chips, so it
+          simply sits this one out: it appears in seven other shots, and a mark that has
+          to fight for space is worse than a mark that skips a beat. */}
     </World>
   );
 };

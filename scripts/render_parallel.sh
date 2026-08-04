@@ -57,6 +57,15 @@ WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
 echo "parallel render: $COMP  $TOTAL frames  $CHUNKS chunks, $SLOTS at a time"
+# DELETE THE OLD FILM BEFORE RENDERING THE NEW ONE (2026-08-04). When a chunk dies the
+# script exits 1, correctly, but it used to leave the PREVIOUS render sitting at $OUT
+# with a plausible size and a valid frame count. Every downstream step then ran happily
+# on yesterday's picture: encode, evidence, panel, all of it scoring a film that does
+# not contain the fixes the run just made. It cost a full panel round to notice, by
+# checking a timestamp by hand. A failed render must leave NO output, so that everything
+# after it fails loudly instead of quietly succeeding on the wrong bytes.
+rm -f "$ABS_OUT"
+
 PER=$(( (TOTAL + CHUNKS - 1) / CHUNKS ))
 LIST="$WORK/list.txt"; : > "$LIST"
 FAIL=0; RUNNING=0

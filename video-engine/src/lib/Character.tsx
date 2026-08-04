@@ -26,8 +26,8 @@ export type Emotion = 'neutral' | 'angry' | 'worried' | 'shock' | 'smug';
 // Everyday Alaskan gear (deliberately NOT the fur-ruff parka, which reads as
 // Inupiat/Inuit-coded; the crowd must read as generic residents). 'parka' is kept
 // for legacy scenes but new crowds use puffer/flannel/vest + varied headgear.
-export type Outfit = 'parka' | 'suit' | 'worker' | 'puffer' | 'flannel' | 'vest' | 'referee';
-export type Headgear = 'bare' | 'beanie' | 'cap' | 'trapper' | 'hood';
+export type Outfit = 'parka' | 'suit' | 'worker' | 'puffer' | 'flannel' | 'vest' | 'referee' | 'nomex';
+export type Headgear = 'bare' | 'beanie' | 'cap' | 'trapper' | 'hood' | 'hardhat';
 
 export interface CharacterProps {
   frame: number;
@@ -78,6 +78,9 @@ const OUTFITS: Record<Outfit, {main: string; shade: string; trim: string; pants:
   // the official's shirt (2026-07-20b, "The Referee Arrives"): cream base, ink
   // stripes drawn as an outfit overlay below; pants stay dark
   referee: {main: '#f2efe6', shade: '#cfc9b8', trim: '#101423', pants: '#2c3440'},
+  // wildland fire Nomex: the yellow shirt over green trousers that every fire crew in
+  // Alaska wears. Distinct from `worker` amber, which is a hi-viz construction tone.
+  nomex: {main: '#e3c247', shade: '#b99a27', trim: '#3f4a33', pants: '#3f4a33'},
 };
 
 export const Character: React.FC<CharacterProps> = ({
@@ -307,6 +310,16 @@ export const Character: React.FC<CharacterProps> = ({
       <path d={`M${r * 0.38},${r * 0.05} v${r * 0.66}`} stroke={INK} strokeWidth={2.2} opacity={0.4} strokeLinecap="round" fill="none" />
       {/* knuckle highlight (key light from upper-left) */}
       <path d={`M${-r * 0.5},${-r * 0.45} q${r * 0.5},${-r * 0.3} ${r},0`} stroke="#fff" strokeWidth={2.5} opacity={0.24} fill="none" strokeLinecap="round" />
+      {/* FINISH PARITY WITH THE PROPS. On a 15px palm a bounding-box gradient spans too
+          few pixels to read, so the hand went out flat next to a drip torch carrying a
+          gradient, a rim light, rivets and a fuel window. A core-shade crescent on the
+          away side and a cast tick under the cuff are what actually turn the disc into
+          a form at this size. */}
+      <path d={`M${r * 0.28},${-r * 0.86} a${r},${r} 0 0 1 0,${r * 1.72} a${r * 0.72},${r} 0 0 0 0,${-r * 1.72} Z`}
+            fill={INK} opacity={0.17} />
+      <path d={`M${-r * 0.72},${-r * 0.5} a${r * 0.86},${r * 0.86} 0 0 1 ${r * 0.9},${-r * 0.24}`}
+            fill="none" stroke="#fff" strokeWidth={2} opacity={0.3} strokeLinecap="round" />
+      <ellipse cx={0} cy={-r * 1.1} rx={r * 0.78} ry={r * 0.24} fill={INK} opacity={0.16} />
     </g>
   );
 
@@ -557,6 +570,36 @@ export const Character: React.FC<CharacterProps> = ({
                 </g>
               </g>
             )}
+            {/* NOMEX. The wildland fire shirt: a collar, a button placket, two flap
+                chest pockets and turned cuffs. It reads as WORK CLOTHING rather than
+                recreation, which is the whole difference a judge was pointing at when
+                they said the crew looked like it was going hiking. Deliberately flatter
+                than the quilted coats so it does not compete with them for volume. */}
+            {outfit === 'nomex' && (
+              <g>
+                {/* yoke seam across the shoulders */}
+                <path d="M-88,-152 q88,30 176,0" fill="none" stroke={INK} strokeWidth={3.5} opacity={0.45} />
+                {/* button placket, offset from centre the way a real front closure is */}
+                <path d="M-8,-196 L-8,4" stroke={INK} strokeWidth={4.5} opacity={0.7} />
+                {[-168, -132, -96, -60, -24].map((by) => (
+                  <circle key={by} cx={-8} cy={by} r={4} fill={c.shade} stroke={INK} strokeWidth={2.4} />
+                ))}
+                {/* collar */}
+                <path d="M-42,-196 q34,26 42,4 q8,22 42,-4 l-6,-16 q-36,20 -72,0 Z"
+                      fill={c.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+                {/* two flap chest pockets */}
+                {[-56, 22].map((px, i) => (
+                  <g key={i}>
+                    <rect x={px} y={-128} width={40} height={46} rx={4}
+                          fill={c.shade} opacity={0.55} stroke={INK} strokeWidth={4} />
+                    <path d={`M${px},-128 h40 v13 h-40 Z`} fill={c.shade} stroke={INK} strokeWidth={4} />
+                    <circle cx={px + 20} cy={-112} r={3.2} fill={c.main} stroke={INK} strokeWidth={2} />
+                  </g>
+                ))}
+                {/* shirt tail hem, tucked */}
+                <path d="M-84,-14 q84,24 168,0" fill="none" stroke={INK} strokeWidth={3} opacity={0.4} />
+              </g>
+            )}
             {outfit === 'vest' && (
               <g>
                 <path d="M-52,-196 q52,-8 104,0 l0,200 h-104 Z" fill={c.shade} opacity={0.35} />
@@ -679,6 +722,31 @@ export const Character: React.FC<CharacterProps> = ({
                   <g>
                     <path d="M-60,-22 a60,42 0 0 1 120,0 l-8,6 h-104 Z" fill="#f2c230" stroke={INK} strokeWidth={6} />
                     <rect x={-70} y={-20} width={140} height={14} rx={7} fill="#f2c230" stroke={INK} strokeWidth={5} />
+                  </g>
+                )}
+                {/* WILDLAND HARD HAT. The full brim, the comb ridge down the crown and
+                    the chin strap are the three things that separate it from a bike
+                    helmet at a glance, and a fire crew without one reads as hikers.
+                    Reachable as a headgear in its own right: the old hat could only be
+                    summoned by pairing outfit 'worker' with headgear 'bare', so no scene
+                    could put a hard hat on anything else. */}
+                {hg === 'hardhat' && (
+                  <g>
+                    {/* THE BRIM SAT ON THE EYES. Authored at cy=-18 with ry=15 it spanned
+                        y -33..-3 and the eyes are at y=-13, so the first render put a hard
+                        rule straight across both faces and read as spectacles, not a hat.
+                        The whole hat sits 20px higher, which is where a hat goes. */}
+                    <ellipse cx={0} cy={-38} rx={76} ry={13} fill="#e0a81f" stroke={INK} strokeWidth={5.5} />
+                    {/* crown */}
+                    <path d="M-56,-40 a56,46 0 0 1 112,0 Z" fill="#f2c230" stroke={INK} strokeWidth={6} />
+                    {/* comb ridge + the shading that makes the crown a dome */}
+                    <path d="M0,-86 q-3,26 -2,46" stroke={INK} strokeWidth={5} opacity={0.55} fill="none" strokeLinecap="round" />
+                    <path d="M-40,-54 a44,38 0 0 1 30,-30 l6,4 a38,34 0 0 0 -26,28 Z" fill="#fff" opacity={0.26} />
+                    <path d="M28,-78 a52,44 0 0 1 28,38 l-22,0 a42,36 0 0 0 -18,-32 Z" fill={INK} opacity={0.16} />
+                    {/* NO CHIN STRAP. It was drawn before face(), so the head fill covered
+                        everything below the brim and all that survived were two dark stubs
+                        sitting exactly where eyebrows go, on a face that already has
+                        eyebrows. A full-brim hat reads as a hard hat on its own. */}
                   </g>
                 )}
                 {face()}
