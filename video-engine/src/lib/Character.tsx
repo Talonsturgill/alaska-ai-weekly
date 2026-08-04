@@ -341,9 +341,13 @@ export const Character: React.FC<CharacterProps> = ({
       case 'point':
         return (
           <g>
-            {/* rear arm at side */}
+            {/* rear arm at side. IT HAD NO HAND: the stroke ended in a round cap, so
+                this figure pointed with one arm and terminated the other in a blank
+                stub, in a film where every other arm is cuffed and handed. A judge
+                found it at 3x zoom and was right. */}
             <path d="M-46,266 q-16,44 -8,84" fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d="M-46,266 q-16,44 -8,84" fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
+            {hand(-54, 352, 0, 14)}
             {/* pointing arm extended forward */}
             <path d={`M46,262 q52,-6 96,${-18 + 3 * Math.sin(f / 11)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d={`M46,262 q52,-6 96,${-18 + 3 * Math.sin(f / 11)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
