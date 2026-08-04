@@ -46,6 +46,19 @@ PROPS="${PROPS:-out/dispatch/episode_props.json}"
 CHUNKS="${4:-12}"
 SLOTS="${SLOTS:-4}"
 
+# A CHUNK CAN HANG FOREVER AFTER BUNDLING (2026-08-04, observed twice in two renders).
+# Remotion prints "Bundling 100%" and then never emits a single "Rendered" line. It does
+# not crash, it does not exit, it just sits. Measured: a healthy 210-frame chunk finishes
+# in 90 to 150 seconds; the hung ones sat past 330 and 700 seconds with zero frames. It
+# hit chunk 0 on one render and chunk 3 on the next, so it is not a property of any shot.
+#
+# Left alone this stalls the WHOLE render behind one dead slot, and a run that is waiting
+# on a process that will never finish looks exactly like a run that is making progress.
+# That is how a routine burns its window and ships nothing. A hang is now a bounded
+# failure: cap the attempt, then retry the chunk from scratch.
+CHUNK_TIMEOUT="${CHUNK_TIMEOUT:-420}"
+TRIES="${TRIES:-3}"
+
 # total frames: from episode_props.json unless the caller states it
 TOTAL="${3:-}"
 if [ -z "$TOTAL" ]; then
@@ -66,6 +79,30 @@ echo "parallel render: $COMP  $TOTAL frames  $CHUNKS chunks, $SLOTS at a time"
 # after it fails loudly instead of quietly succeeding on the wrong bytes.
 rm -f "$ABS_OUT"
 
+# Render one chunk, surviving the post-bundle hang described above. A chunk that produces
+# no output file inside CHUNK_TIMEOUT is killed and retried from scratch. Success is
+# judged on the FILE existing and being non-empty, not on the exit status, because the
+# hang does not set one.
+render_chunk() {
+  local i="$1" A="$2" B="$3" attempt=1
+  while [ "$attempt" -le "$TRIES" ]; do
+    ( cd video-engine && timeout -k 15 "$CHUNK_TIMEOUT" \
+        npx remotion render src/index.ts "$COMP" "$WORK/c$i.mp4" \
+        --props="../$PROPS" --codec=h264 --muted --concurrency=1 --crf=19 \
+        --frames="$A-$B" ) >"$WORK/c$i.attempt$attempt.log" 2>&1 || true
+    if [ -s "$WORK/c$i.mp4" ]; then
+      cp "$WORK/c$i.attempt$attempt.log" "$WORK/c$i.log"
+      [ "$attempt" -gt 1 ] && echo "  chunk $i recovered on attempt $attempt" >&2
+      return 0
+    fi
+    echo "  chunk $i attempt $attempt produced no file (hang or crash), retrying" >&2
+    attempt=$(( attempt + 1 ))
+  done
+  cp "$WORK/c$i.attempt$(( attempt - 1 )).log" "$WORK/c$i.log" 2>/dev/null || true
+  echo "  chunk $i FAILED after $TRIES attempts" >&2
+  return 1
+}
+
 PER=$(( (TOTAL + CHUNKS - 1) / CHUNKS ))
 LIST="$WORK/list.txt"; : > "$LIST"
 FAIL=0; RUNNING=0
@@ -76,9 +113,7 @@ for i in $(seq 0 $((CHUNKS - 1))); do
   [ "$B" -ge "$TOTAL" ] && B=$(( TOTAL - 1 ))
   [ "$A" -gt "$B" ] && continue
   echo "  chunk $i: frames $A-$B"
-  ( cd video-engine && npx remotion render src/index.ts "$COMP" "$WORK/c$i.mp4" \
-      --props="../$PROPS" --codec=h264 --muted --concurrency=1 --crf=19 \
-      --frames="$A-$B" >"$WORK/c$i.log" 2>&1 ) &
+  render_chunk "$i" "$A" "$B" &
   echo "file '$WORK/c$i.mp4'" >> "$LIST"
   RUNNING=$(( RUNNING + 1 ))
   # THE WORK QUEUE. Hold at most SLOTS renders in flight and start the next chunk the
