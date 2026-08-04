@@ -77,7 +77,15 @@ ROUGHCUT = OUT / "roughcut.mp4"
 # Each entry is a list of ACCEPTED PATHS, relative to out/dispatch/, newest naming first.
 DELIVERABLES = [
     ("9:16 master", ["dispatch_master.mp4", "render/master_9x16.mp4"]),
-    ("1:1 square LinkedIn cut", ["dispatch_square.mp4", "dispatch_4x5.mp4", "render/master_4x5.mp4"]),
+    # dispatch_4x5.mp4 USED TO BE LISTED HERE AS AN ALIAS AND THAT WAS A HOLE (2026-08-04).
+    # 4:5 is the aspect this routine deliberately moved AWAY from, because LinkedIn routes
+    # anything taller than square into the swipe-only Video tab, so accepting a 1080x1350
+    # file as proof of "the 1:1 square cut" let the gate be satisfied by the exact mistake
+    # the encode script exists to prevent. Worse, a judge found a stale 4:5 from the PREVIOUS
+    # DAY still sitting in out/dispatch carrying the old VO ("paid" where the record says
+    # obligated), a PI name missing its middle initial, plates that no longer exist in the
+    # film and text clipped at both frame edges. That file satisfied this gate.
+    ("1:1 square LinkedIn cut", ["dispatch_square.mp4", "render/master_4x5.mp4"]),
 ]
 
 # A FILM ON DISK IS NOT A DELIVERED FILM. The second half of the hole: even with the
@@ -86,6 +94,11 @@ DELIVERABLES = [
 # of the owner. Delivery is what the routine promises, so delivery is what this checks.
 # scripts/dispatch_email.py writes this receipt after the Gmail connector accepts a draft.
 DRAFT_RECEIPT = "gmail_draft_receipt.json"
+
+# A deliverable OLDER than the mute render is a leftover from a previous cut, not this run's
+# film. This is how a day-old 4:5 with the wrong voice track sat in the run directory for a
+# whole session looking like a finished artifact.
+FRESHNESS_REFERENCE = "render_mute.mp4"
 
 MIN_BYTES = 200_000          # anything smaller is a stub, not a film
 MIN_SECONDS = 30.0           # the format band is 84-96s; 30 is a generous floor for "a film"
@@ -128,6 +141,11 @@ def video_state():
             continue
         secs, has_v, has_a = info
         problems = []
+        # STALE-DELIVERABLE GUARD. A cut older than the render it is supposed to come from is
+        # a leftover, and a leftover looks exactly like a finished artifact from the outside.
+        ref = OUT / FRESHNESS_REFERENCE
+        if ref.exists() and p.stat().st_mtime + 1 < ref.stat().st_mtime:
+            problems.append(f"older than {FRESHNESS_REFERENCE}, so it is a previous cut")
         if size < MIN_BYTES:
             problems.append(f"{size} bytes is a stub")
         if secs < MIN_SECONDS:
