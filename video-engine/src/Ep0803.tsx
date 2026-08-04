@@ -901,7 +901,7 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
           translate up to 5px horizontally, so a 4 to 6 pixel strip of the background behind
           them was exposed down the full frame height for seconds at a time, and a judge
           measured it. My regression. Bleed them past both edges. */}
-      <rect x={-28} y={620} width={1136} height={900} fill="#3b2f24" stroke={INK} strokeWidth={7} />
+      <rect x={-28} y={392} width={1136} height={1160} fill="#3b2f24" stroke={INK} strokeWidth={7} />
       {Array.from({length: 6}).map((_, i) => (
         <line key={i} x1={0} y1={680 + i * 140} x2={1080} y2={680 + i * 140}
               stroke="#2a2018" strokeWidth={5} opacity={0.7} />
@@ -964,7 +964,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
   const SLEEVE = ['#b8894a', '#7d8f92', '#8a6a52', '#5f7a6a'];
   return (
     <World f={g} anchorY={1620} hazeAmt={0.45} interior>
-      <rect x={-28} y={560} width={1136} height={1060} fill="#3b2f24" stroke={INK} strokeWidth={7} />
+      <rect x={-28} y={392} width={1136} height={1240} fill="#3b2f24" stroke={INK} strokeWidth={7} />
       {/* the sheet, close, lit from beneath through its own holes */}
       <g transform="translate(540,960)">
         <rect x={-250} y={-170} width={500} height={340} rx={8}
@@ -1049,7 +1049,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
   const dis = interpolate(t, [L(13) + 2.6, L(13) + 3.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <World f={g} anchorY={1600} hazeAmt={0.5}>
-      <rect x={-28} y={520} width={1136} height={1100} fill="#22302c" stroke={INK} strokeWidth={6} />
+      <rect x={-28} y={392} width={1136} height={1240} fill="#22302c" stroke={INK} strokeWidth={6} />
       {/* the machined rule */}
       <g opacity={rule}>
         {/* the AWARD PERIOD draws itself across the range while the playhead stays pinned
