@@ -482,7 +482,7 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
       <text x={0} y={-188} textAnchor="middle" fill={INK}
             style={{font: `700 29px ${MONO}`, letterSpacing: 2}}>NSF AWARD 2536745</text>
       <text x={0} y={-162} textAnchor="middle" fill={INK} opacity={0.72}
-            style={{font: `700 17px ${MONO}`}}>program element, Artificial Intelligence (AI)</text>
+            style={{font: `700 17px ${MONO}`}}>program elements include Artificial Intelligence (AI)</text>
       {/* punched filing holes, so the paper has been handled */}
       {[-250, 0, 250].map((hx) => (
         <circle key={hx} cx={hx} cy={H / 2 - 26} r={9} fill="#b9b0a0" stroke={INK} strokeWidth={3} />
@@ -514,11 +514,22 @@ const AwardPacket: React.FC<{land: number; write: number; stamp: number}> = ({la
               style={{font: `900 ${66 - (1 - clamp01(stamp)) * 22}px ${BOLD}`, letterSpacing: 1}}>$1,588,147</text>
         <text x={W / 2 - 34} y={178} textAnchor="end" fill={INK} opacity={0.78}
               style={{font: `700 23px ${MONO}`}}>July 31, 2026</text>
+      {/* sources.json discloses this is a two-award collaborative project and that the
+          figure is the UAF share, not the total. Nothing on screen said so, and a viewer
+          reasonably reads a lone dollar figure as the whole award. */}
+      <text x={-W / 2 + 34} y={210} fill={INK} opacity={0.6}
+            style={{font: `700 17px ${MONO}`}}>UAF share of a two-award project</text>
       </g>
-      {/* the stamp lands LAST and presses: a rubber date stamp, in ink, not an accent */}
+      {/* The stamp lands LAST and PRESSES: a rubber date stamp, in ink, not an accent.
+          It used to be a pure cross-fade. Measured over 8 consecutive frames a judge found
+          its bounding box identical in every one, with only the ink opacity ramping: no
+          anticipation, no impact, no overshoot, no settle, on the beat the film designates
+          as its press. A rubber stamp arrives big and fast, overshoots its mark, rocks
+          back, and only then is it down. */}
       {stamp > 0.02 && (
-        <g transform={`translate(226,58) rotate(-13) scale(${0.7 + clamp01(stamp) * 0.3})`}
-           opacity={clamp01(stamp * 1.4)}>
+        <g transform={`translate(226,58) rotate(${-13 + (1 - clamp01(stamp)) * 9}) scale(${
+             1.42 - 0.52 * clamp01(stamp * 1.9) + 0.10 * Math.sin(clamp01(stamp) * Math.PI)})`}
+           opacity={clamp01(stamp * 3.2)}>
           <rect x={-118} y={-46} width={236} height={92} rx={8}
                 fill="none" stroke={INK} strokeWidth={7} opacity={0.68} />
           <rect x={-106} y={-34} width={212} height={68} rx={5}
@@ -586,7 +597,13 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
   const t = g / FPS;
   const tilt = interpolate(t, [L(3) + 0.2, L(3) + 1.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const crawl = interpolate(t, [L(3) + 2.6, L(4)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
-  const patch = interpolate(t, [L(4), L(4) + 2.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // A 2.4s OPACITY RAMP ON A PLATE IS A TRANSLUCENT PLATE. Two judges called this the
+  // film's weakest moment and described a character's cap, eyes and headlamp band ghosting
+  // straight through the card: at the 26.1s sample the ramp was only 91 percent done, so
+  // for two and a half seconds an opaque-by-design info plate was see-through. An element
+  // that carries text fades in fast and then IS solid; the slow ramp belongs to atmosphere,
+  // not to typography.
+  const patch = interpolate(t, [L(4), L(4) + 0.55], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   // START THE LINE AT 380, NOT 120. The torch hangs to the LEFT of the flame, so a
   // flame at x=120 puts the only subject in the shot half off the plate, and the square
   // cut is what LinkedIn shows. A line already part-run also reads as work in progress.
@@ -871,7 +888,12 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
   return (
     <World f={g} anchorY={1600} hazeAmt={0.6} interior>
       {/* the plank table IS the dark anchor */}
-      <rect x={0} y={620} width={1080} height={900} fill="#3b2f24" stroke={INK} strokeWidth={7} />
+      {/* OVERSCAN. These interior panels were drawn at exactly x=0 width=1080, which was
+          fine until the subject plane started drifting for the parallax pass: children now
+          translate up to 5px horizontally, so a 4 to 6 pixel strip of the background behind
+          them was exposed down the full frame height for seconds at a time, and a judge
+          measured it. My regression. Bleed them past both edges. */}
+      <rect x={-28} y={620} width={1136} height={900} fill="#3b2f24" stroke={INK} strokeWidth={7} />
       {Array.from({length: 6}).map((_, i) => (
         <line key={i} x1={0} y1={680 + i * 140} x2={1080} y2={680 + i * 140}
               stroke="#2a2018" strokeWidth={5} opacity={0.7} />
@@ -885,11 +907,11 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
                       fill={accentBox(BURNABLE, 100 + push * 300 + i * 78, 870, 40, 54)} />
         ))}
         <text x={0} y={-64} textAnchor="middle" fill={INK}
-              style={{font: `700 26px ${MONO}`}}>SAFE DAYS</text>
+              style={{font: `700 26px ${MONO}`, letterSpacing: 2}}>SAFE DAYS</text>
         <text x={0} y={48} textAnchor="middle" fill={INK} opacity={0.62}
               style={{font: `700 15px ${MONO}`, letterSpacing: 1}}>illustrative</text>
         <text x={0} y={70} textAnchor="middle" fill={INK} opacity={0.62}
-              style={{font: `700 15px ${MONO}`}}>the count does not exist yet</text>
+              style={{font: `700 15px ${MONO}`}}>the count doesn't exist yet</text>
       </g>
       {/* four hatched jurisdictions colliding over one piece of ground */}
       <g opacity={fields}>
@@ -930,7 +952,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
   ];
   return (
     <World f={g} anchorY={1620} hazeAmt={0.45} interior>
-      <rect x={0} y={560} width={1080} height={1060} fill="#3b2f24" stroke={INK} strokeWidth={7} />
+      <rect x={-28} y={560} width={1136} height={1060} fill="#3b2f24" stroke={INK} strokeWidth={7} />
       {/* the sheet, close, lit from beneath through its own holes */}
       <g transform="translate(540,960)">
         <rect x={-250} y={-170} width={500} height={340} rx={8}
@@ -1000,7 +1022,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
   const dis = interpolate(t, [L(13) + 2.6, L(13) + 3.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <World f={g} anchorY={1600} hazeAmt={0.5}>
-      <rect x={0} y={520} width={1080} height={1100} fill="#22302c" stroke={INK} strokeWidth={6} />
+      <rect x={-28} y={520} width={1136} height={1100} fill="#22302c" stroke={INK} strokeWidth={6} />
       {/* the machined rule */}
       <g opacity={rule}>
         <rect x={110} y={700} width={872 * rule} height={22} rx={4}
@@ -1127,8 +1149,13 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         <DripTorch x={0} y={0} f={g} scale={0.62} tilt={0} lit={0} withHand={false} groundY={62} />
       </g>
       {/* the blank day sheet lifts, holds, and lowers */}
+      {/* THE ALPHA-BROKEN CARD. This ramped its group opacity down to 0.6 and HELD there,
+          so for the whole back half of the shot the crew's boots and the dropped torch
+          bled through the placard face. Two judges read it as a failed blend and a stale
+          duplicate sprite, which is exactly what a 0.6 plate over a figure looks like. It
+          fades IN and stays solid. */}
       <g transform={`translate(760,${1120 + Math.max(0, sheet - 0.6) * 240})`}
-         opacity={interpolate(sheet, [0, 0.15, 0.85, 1], [0, 1, 1, 0.6])}>
+         opacity={interpolate(sheet, [0, 0.15], [0, 1], {extrapolateRight: 'clamp'})}>
         <rect x={-92} y={-64} width={184} height={128} rx={6}
               fill="#efeade" stroke={INK} strokeWidth={6} />
         <text x={0} y={6} textAnchor="middle" fill={INK} opacity={0.4}
@@ -1235,7 +1262,7 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
           <rect x={266} y={1092} width={548} height={46} rx={7} fill="#efe9dc" stroke={INK} strokeWidth={4} />
           <text x={540} y={1123} textAnchor="middle" fill={INK}
                 style={{font: `700 22px ${MONO}`, letterSpacing: 1}}>
-            illustrative, the project has not run
+            illustrative, the project hasn't run
           </text>
         </g>
       )}

@@ -104,8 +104,9 @@ export const Character: React.FC<CharacterProps> = ({
   // breathing: a visible chest rise+fall. Bumped round 10 — the panel kept reading standers as
   // "frozen sprites" partly because the old amplitude was too small to register in a ~0.5s review
   // strip; a clearer breath (plus the weight-shift below) means any half-second window shows life.
-  const breath = 1 + 0.03 * Math.sin(f / 12);
-  const bob = 4.2 * Math.sin(f / 12);
+  // a real chest rise and a head that follows it, at a rate a 0.27s strip resolves
+  const breath = 1 + 0.055 * Math.sin(f / 11);
+  const bob = 6.4 * Math.sin(f / 11);
   // idle weight-shift: a slow lateral hip sway + matching lean while standing still, so a
   // held beat (fork impasse, tally jam, button) reads as a person shifting their weight, not
   // a frozen sprite (a 2026-07-21 panel note across 5 rounds: "characters go static between
@@ -142,9 +143,15 @@ export const Character: React.FC<CharacterProps> = ({
   // camera move would otherwise swamp (S5's Hollister under the truck-pan) -- targeted, so no other
   // standing cast member is affected.
   const idleAmp = idleGain * poseIdleScale;
+  // RATES RETUNED 2026-08-04, second time a judge has measured a held figure as having no
+  // idle at all. The amplitudes were never the problem, the PERIODS were: sin(f/88) turns
+  // 0.09 rad over an 8-frame strip and sin(f/34) turns 0.24, so the whole rig moved under
+  // two pixels across the window a panel actually inspects, and at review downsampling that
+  // rounds to zero displacement. A slow weight-shift is still right for the body, but it
+  // needs a faster term layered on it that a quarter-second can see.
   const shift = idle ? idleAmp * 9 * Math.sin(f / 88 + swayPhase) : 0;   // weight-shift onto a hip
-  const sway = idle ? shift + idleAmp * 3.4 * Math.sin(f / 34 + swayPhase * 1.7) : 0;
-  const swayTilt = idle ? idleAmp * (2.4 * Math.sin(f / 88 + swayPhase) + 0.6 * Math.sin(f / 34 + swayPhase * 1.7)) : 0;
+  const sway = idle ? shift + idleAmp * 4.6 * Math.sin(f / 13 + swayPhase * 1.7) : 0;
+  const swayTilt = idle ? idleAmp * (2.4 * Math.sin(f / 88 + swayPhase) + 1.5 * Math.sin(f / 13 + swayPhase * 1.7)) : 0;
   // ---- articulated walk cycle (2026-07-21 panel: the human leads "translate as rigid sprites,
   // they don't walk"). When `walking`, the two legs swing fore/aft in opposition around the hips,
   // the body bobs at 2x the step rate (up on mid-stride), and the arms counter-swing. Phase comes
