@@ -744,6 +744,21 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
             windowFill={accentBox(BURNABLE, 660, 900, 40, 44)} />
         </g>
         {/* THE PUNCH HEAD, big enough to read, driving down onto the stock */}
+        {/* THE GANTRY. Once the head was pulled inside the frame it read as an
+            unidentified grey object hovering beside the machine, because nothing connected
+            it to anything: three judges across two rounds described it as a stray asset or
+            an off-canvas accident. A press needs a frame. Two guide rails from the deck up
+            past the head's rest position, drawn behind it, and the head is mounted. */}
+        <g opacity={build}>
+          {[-60, 60].map((dx) => (
+            <rect key={dx} x={838 + dx - 9} y={598} width={18} height={340} rx={4}
+                  fill={STEELOX} stroke={INK} strokeWidth={5} />
+          ))}
+          <rect x={838 - 86} y={586} width={172} height={26} rx={5}
+                fill={STEELOX} stroke={INK} strokeWidth={5} />
+          <rect x={838 - 74} y={922} width={148} height={22} rx={4}
+                fill="#3a4a4d" stroke={INK} strokeWidth={5} />
+        </g>
         {/* GEOMETRY REWORKED so the head stays on the plate. At base 596 with 300 of
             travel, the reared-back head topped out at y=356: sliced by the square crop at
             420 and bisected by the title card's baseplate at 485..575, which two judges
