@@ -299,8 +299,9 @@ const CornerTool: React.FC<{f: number; flip?: number; x?: number; y?: number}> =
 
 /** a counter that can be dead. The pair states the film's premise in one prop. */
 const Counter: React.FC<{
-  f: number; x: number; y: number; spin?: number; value?: string; dark?: boolean; label: string;
-}> = ({f, x, y, spin = 0, value = '0', dark = false, label}) => {
+  f: number; x: number; y: number; spin?: number; value?: string; dark?: boolean;
+  label: string; lit?: string; dim?: number;
+}> = ({f, x, y, spin = 0, value = '0', dark = false, label, lit, dim = 0}) => {
   const id = `ctr${x}`;
   const body = tones(ENAMEL);
   const blur = spin > 0.4;
@@ -312,8 +313,12 @@ const Counter: React.FC<{
             fill={`url(#${id})`} stroke={INK} strokeWidth={6} />
       <rect x={-52} y={-32} width={104} height={52} rx={5}
             fill={dark ? '#2b3a3d' : '#101a1c'} stroke={INK} strokeWidth={4} />
+      {/* THE PERMISSION PLATE MUST GO GREEN. It carried the amber prohibition tick and
+          stayed dark through the exact frames where the green apertures open above it, so
+          the closing image told the viewer the opposite of what the narration said and the
+          two-plate metaphor set up in the first shot never paid off. */}
       <text x={0} y={8} textAnchor="middle"
-            fill={dark ? '#5d6b6d' : '#ffd98a'}
+            fill={lit || (dark ? '#5d6b6d' : '#ffd98a')} opacity={1 - dim * 0.45}
             style={{font: `700 38px ${MONO}`, letterSpacing: 2}}>
         {blur ? '███' : value}
       </text>
@@ -511,7 +516,7 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
   const land = spring({frame: Math.max(0, g - (L(2) + 0.25) * FPS), fps, config: {damping: 14, mass: 0.8}});
   const write = interpolate(t, [L(2) + 1.1, L(2) + 3.2], [0, 1],
                             {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_MOVE});
-  const stamp = spring({frame: Math.max(0, g - (L(2) + 6.4) * FPS), fps, config: {damping: 9, mass: 0.5}});
+  const stamp = spring({frame: Math.max(0, g - (L(2) + 6.4) * FPS), fps, config: {damping: 12, mass: 1.5}});
   const shake = stamp > 0.1 && stamp < 0.6 ? (hh(Math.floor(g), 2) - 0.5) * 6 : 0;
   return (
     <World f={g} anchorY={1430}>
@@ -860,8 +865,8 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
   const hands = interpolate(t, [L(10), L(10) + 1.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const turn = interpolate(t, [L(11), L(11) + 1.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const SIDES = [
-    {x: 190, y: 760, r: 0}, {x: 890, y: 760, r: 180},
-    {x: 190, y: 1180, r: 0}, {x: 890, y: 1180, r: 180},
+    {x: 190, y: 730, r: 0}, {x: 890, y: 730, r: 180},
+    {x: 190, y: 1040, r: 0}, {x: 890, y: 1040, r: 180},
   ];
   return (
     <World f={g} anchorY={1620} hazeAmt={0.45} interior>
@@ -902,7 +907,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
       })}
       {/* the four plates rotating to face one another */}
       {SIDES.map((s, i) => (
-        <g key={`p${i}`} transform={`translate(${s.x},${s.y - 130}) rotate(${(1 - turn) * (i % 2 ? 40 : -40)})`}>
+        <g key={`p${i}`} transform={`translate(${s.x},${s.y - 120}) rotate(${(1 - turn) * (i % 2 ? 40 : -40)})`}>
           <rect x={-84} y={-26} width={168} height={52} rx={6}
                 fill={ENAMEL} stroke={INK} strokeWidth={5} />
           <text x={0} y={8} textAnchor="middle" fill={INK} style={{font: `700 23px ${MONO}`}}>
@@ -1012,17 +1017,17 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
     <World f={g} anchorY={1120}>
       {/* the crew, at ~20% of frame height so they read as PEOPLE not specks */}
       {[
-        {x: 306, sc: 1.05, pose: 'stand' as const, emo: 'neutral' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const},
-        {x: 540, sc: 1.15, pose: 'stand' as const, emo: 'neutral' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const},
-        {x: 762, sc: 1.00, pose: 'stand' as const, emo: 'neutral' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const},
+        {x: 296, sc: 0.96, pose: 'stand' as const, emo: 'neutral' as const, out: 'vest' as const, hat: 'cap' as const, face: 1 as const, gy: -34},
+        {x: 516, sc: 1.16, pose: 'stand' as const, emo: 'neutral' as const, out: 'worker' as const, hat: 'trapper' as const, face: -1 as const, gy: 0},
+        {x: 726, sc: 1.06, pose: 'arms-crossed' as const, emo: 'neutral' as const, out: 'flannel' as const, hat: 'beanie' as const, face: 1 as const, gy: -16},
       ].map((c, i) => (
         <g key={i}>
           {/* the boots sit on the ground: a real occlusion ellipse, exempt from the lifted floor */}
           {/* boots ON the ground. The panel called this a parity failure and it was:
               the bench forty seconds earlier gets a shadow and the people did not. */}
-          <ellipse cx={c.x + 5} cy={1190} rx={58 * c.sc} ry={14} fill="#4a3323" opacity={0.5} />
-          <ellipse cx={c.x + 3} cy={1187} rx={34 * c.sc} ry={9} fill="#3a2718" opacity={0.55} />
-          <g transform={`translate(${c.x},1180) scale(${c.sc})`}>
+          <ellipse cx={c.x + 5} cy={1190 + c.gy} rx={58 * c.sc} ry={14} fill="#4a3323" opacity={0.5} />
+          <ellipse cx={c.x + 3} cy={1187 + c.gy} rx={34 * c.sc} ry={9} fill="#3a2718" opacity={0.55} />
+          <g transform={`translate(${c.x},${1180 + c.gy}) scale(${c.sc})`}>
             <Character frame={g + i * 37} pose={c.pose} emotion={c.emo}
                        outfit={c.out} headgear={c.hat} facing={c.face} />
           </g>
@@ -1040,8 +1045,10 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
         <text x={0} y={6} textAnchor="middle" fill={INK} opacity={0.4}
               style={{font: `700 24px ${MONO}`}}>NO DAY</text>
       </g>
-      {/* the engine, a pale speck deep in the haze */}
-      <g opacity={0.34} transform="translate(880,1148) scale(0.17)">
+      {/* the engine, a pale speck deep in the haze. Kept small but pulled in off the
+          right edge and dimmed further: at 0.34 in the treeline it read to a judge as a
+          ghost plate fragment rather than as a distant machine. */}
+      <g opacity={0.24} transform="translate(846,1146) scale(0.15)">
         <BurnWindowEngine x={0} y={0} f={g} feed={1} groundY={120} />
       </g>
       <Card x={540} y={CARD_TOP_Y} text="A CREW WITH NO DAY TO GO ON" w={840} />
@@ -1115,9 +1122,10 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
       </g>
       {/* the dead counter finally lights, and shows a DASH, not a number */}
       <g opacity={harden}>
-        <Counter f={g} x={640} y={1196} value="—" label="YOU CAN" />
+        <Counter f={g} x={640} y={1196} value="███" label="YOU CAN"
+                 lit={accentBox(BURNABLE, 594, 1168, 92, 44)} />
       </g>
-      <Counter f={g} x={250} y={1196} value="███" label="MUST NOT BURN" />
+      <Counter f={g} x={250} y={1196} value="███" label="MUST NOT BURN" dim={harden} />
       <CornerTool f={g} flip={flip} />
       {/* THE MUSIC CREDIT, ON THE FILM ITSELF. The bed is CC BY 4.0, which requires
           attribution wherever the work is distributed, and the credit lived only in
@@ -1175,6 +1183,7 @@ export const Ep0803: React.FC<z.infer<typeof ep0803Schema>> = ({
       // hash-scattered (three of nine were landing offshore). The licence follows them:
       // union of the nine boxes is x 346..760, y 193..453, with margin.
       {x: 320, y: 170, w: 470, h: 310},      // the window field on the map, S10
+      {x: 570, y: 1150, w: 140, h: 80},      // the YOU CAN plate's readout, S10 payoff
     ],
   }], []);
 

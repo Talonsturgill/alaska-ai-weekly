@@ -302,6 +302,7 @@ export const Character: React.FC<CharacterProps> = ({
             <path d="M-52,278 q30,26 62,18 L52,282" fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
             <path d="M52,294 q-30,24 -62,16 L-52,296" fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d="M52,294 q-30,24 -62,16 L-52,296" fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
+            <path d="M-50,274 q29,25 60,17" fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.18} />
             {hand(-54, 296, 90)}
             {hand(54, 282, -90)}
           </g>
@@ -352,10 +353,18 @@ export const Character: React.FC<CharacterProps> = ({
       default: // stand
         return (
           <g>
+            {/* PAINT ORDER BUG, fixed 2026-08-04. The right arm drew its 22px GARMENT stroke
+                first and its 34px INK stroke on top, so the ink covered the sleeve
+                completely and the arm rendered as a solid black tube on every standing
+                figure in the film. Three judges reported it independently as "flat black
+                fills with zero shading sitting against form-shaded jacket bodies", and it
+                was not a shading gap, it was one pair of lines in the wrong order. */}
             <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-            <path d={`M46,266 q14,46 6,${88 - 2 * Math.sin(f / 13)}`} fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
+            <path d={`M-49,270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.2} />
             <path d={`M46,266 q14,46 6,${88 - 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
+            <path d={`M46,266 q14,46 6,${88 - 2 * Math.sin(f / 13)}`} fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
+            <path d={`M43,270 q13,42 6,${80 - 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={4} strokeLinecap="round" opacity={0.11} />
             {hand(-52, 358, 0, 14)}
             {hand(52, 356, 0, 14)}
           </g>
