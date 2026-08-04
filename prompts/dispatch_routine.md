@@ -194,6 +194,42 @@ hatch with better manners.
 - Master 9:16 1080x1920 @30fps. ALSO export a 1:1 SQUARE 1080x1080 center-crop; keep hero action
   and captions inside the centered 1:1 safe box (y 420 to 1500 of the master) so the crop never
   amputates the story.
+
+### ONE GRADED CUT, ONE DERIVED CUT (AUTHORITATIVE, owner's call 2026-08-04)
+
+**THE PANEL GRADES THE 9:16 MASTER, AND ONLY THE 9:16 MASTER.** The square is derived from
+it and checked mechanically. Do not convene judges on both.
+
+The owner's words: "why not just make one right, THEN reformat a version and make a couple
+tweaks to it, but idk why you would check both videos every single time seems like more
+effort that not even needed to get to the same outcome."
+
+They are right, and it was actively costing quality, not just time. Grading both meant:
+- judges split their findings across two cuts, so half the fix budget each round went to
+  the one with narrower distribution;
+- the composition axis was marked down TWICE for what is a single authoring decision, once
+  as "the 9:16 is a padded square" and once as "the square crop collides with X";
+- the same defect arrived twice in different clothes and got fixed twice.
+
+So the loop is: build the master until the panel passes, then derive the square and run
+ONE mechanical check on it.
+
+    python3 scripts/crop_safety.py
+
+That samples the master at the square's two crop lines (y=420 and y=1500) and reports any
+moment where the crop cuts through something built, which is the only question the derived
+cut raises that the master's own grade does not already answer. Read its output rather than
+its exit code alone: a decorative foreground element crossing the line is fine and expected,
+a headline plate or a character's head is not. It prints how many frames it sampled, and a
+run that sampled nothing is a failure, not a pass.
+
+The square is still the LinkedIn main-feed deliverable and still ships. It is simply no
+longer a second thing to have opinions about. Both cuts still get the aspect and audio
+asserts in encode_deliverables.sh, which are cheap and catch the wrong-ratio class of error
+that this file has been burned by before.
+
+WHEN THE JUDGE PROMPTS ARE WRITTEN, point them at dispatch_master.mp4 and say plainly that
+the square is derived and out of scope. A judge given both WILL grade both.
 - THE 1:1 SQUARE IS THE LINKEDIN DELIVERABLE (CORRECTED 2026-08-03 on owner evidence).
   LinkedIn routes ANY video TALLER THAN SQUARE into the swipe-only Video tab. Square lands in the
   MAIN HOME FEED next to the caption. The 9:16 is the TikTok cut.
