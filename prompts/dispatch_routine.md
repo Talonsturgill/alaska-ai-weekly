@@ -195,6 +195,33 @@ hatch with better manners.
   and captions inside the centered 1:1 safe box (y 420 to 1500 of the master) so the crop never
   amputates the story.
 
+### BUILD TO THE STANDARD BEFORE YOU BUILD A FRAME (AUTHORITATIVE, owner's call 2026-08-05)
+
+**READ `docs/craft/DISPATCH_STANDARD.md` IN FULL AT THE START OF THE AUTHORING PHASE.**
+Not at review time. Before the first frame exists.
+
+The owner's words: "it seems like the video should just be way better before it ever gets
+to the judges, we're relying on so many rounds of improvements and it's masking the fact
+that whoever is creating the video just needs to be upgraded based on everything that the
+judges have been saying, so they output better stuff that's more in-line with what the
+judges even want."
+
+That is the correct diagnosis of what this loop had become. Thirteen rounds of panel
+findings were living in commit messages and inline comments, where the NEXT run's authoring
+step never reads them, so each run rebuilt the same defects and paid three judges to
+rediscover them. The review loop was doing the generator's job.
+
+DISPATCH_STANDARD.md is those findings distilled into instructions you can build from:
+every prop parented to a documented hand anchor, everything grounded casting a contact
+shadow, the weight-shift applied above the feet, plates sized to their strings by
+arithmetic, the ledger recording what the film paints rather than what it planned. Each
+line is a defect a judge actually found, with the measurement.
+
+**THE MAINTENANCE RULE, and it is not optional: every time the panel finds something that
+was knowable in advance, it goes back into DISPATCH_STANDARD.md in the same run.** A
+finding that recurs across runs is a failure of that document, not of the judge. Phase 12
+treats a repeat finding as a standard-file bug.
+
 ### ONE GRADED CUT, ONE DERIVED CUT (AUTHORITATIVE, owner's call 2026-08-04)
 
 **THE PANEL GRADES THE 9:16 MASTER, AND ONLY THE 9:16 MASTER.** The square is derived from
