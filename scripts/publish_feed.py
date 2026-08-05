@@ -24,6 +24,7 @@ push access to the alaskaaicarousels repo) rather than silently skipping — the
 staying current is part of the deliverable, but a feed-push failure must NOT roll
 back or block the already-shipped video/email.
 """
+import os
 import argparse, json, re, subprocess, sys, tempfile, time
 from pathlib import Path
 from urllib.parse import urlparse
@@ -128,7 +129,30 @@ def main():
         m["videos"] = vids
         mpath.write_text(json.dumps(m, indent=2, ensure_ascii=False) + "\n")
 
-        run(["git", "-C", td, "add", MANIFEST])
+        # REBUILD THE SITE, NOT JUST THE FEED (2026-08-05).
+        #
+        # Appending to videos.json publishes the video to /videos, which fetches the feed
+        # at RUNTIME and so was always correct. The homepage is different: its "VIDEOS
+        # PUBLISHED" counter is baked into docs/index.html at BUILD time by
+        # site_build.video_count(). Nothing rebuilt the site after a feed append, and the
+        # Pages workflow uploads docs/ verbatim rather than building it, so the counter sat
+        # at 32 while the feed held 33. The owner caught it by reading the homepage.
+        #
+        # The runtime-fetched page being right is exactly why this stayed invisible: the
+        # surface most likely to be checked was the one that could not drift.
+        #
+        # Best effort by design. If the rebuild fails the feed entry still lands, because a
+        # published video with a stale counter beats a video that never reached the feed.
+        rb = run([sys.executable, os.path.join(td, "scripts", "site_build.py"),
+                  "--date", a.date], ok_fail=True)
+        if rb.returncode == 0:
+            print(f"publish_feed: site rebuilt, homepage counter recomputed from the feed")
+        else:
+            print(f"publish_feed: WARNING -- feed updated but site_build failed, so the "
+                  f"homepage counter will be stale until the next build:\n"
+                  f"{(rb.stderr or '').strip()[:400]}")
+
+        run(["git", "-C", td, "add", "-A"])
         run(["git", "-C", td, "commit", "-m", f"feed: add {a.id} ({a.title})"])
         # network retries with backoff, per repo git policy
         for i, wait in enumerate([0, 2, 4, 8, 16]):
