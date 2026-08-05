@@ -49,7 +49,25 @@ def main():
         intended = script[idx].split()
         if not intended:
             continue
-        hw = [w for w in heard if s0 - 0.02 <= w["s"] < s1 + 0.02]
+        # ASSIGN BY NEAREST LINE, NOT BY A FIXED WINDOW (2026-08-05).
+        #
+        # This used to be `s0 - 0.02 <= w["s"] < s1 + 0.02`, a 20ms tolerance around the
+        # line's slot. Measured on the shipped cut, 7 of 17 lines have their FIRST spoken
+        # word beginning up to 180ms BEFORE the slot boundary, because vo_lines.json slots
+        # are fitted intervals and the forced alignment is where the voice actually is.
+        # Those first words fell outside the window, were excluded from the line, and the
+        # cue's start then fell back to interpolation anchored on the slot. The result was
+        # a systematic bias with no random component at all: every caption late, never
+        # early, mean 45ms and worst 300ms, and the worst offenders were all line starts.
+        #
+        # A wider fixed window would just move the arbitrary number. A word belongs to the
+        # line it is nearest to, so assign it that way and let the slots stop being the
+        # authority on something the alignment measures directly.
+        hw = [w for w in heard
+              if min(range(len(lines)),
+                     key=lambda k: 0.0 if lines[k]["start"] <= w["s"] <= lines[k]["end"]
+                     else min(abs(w["s"] - lines[k]["start"]), abs(w["s"] - lines[k]["end"]))
+                     ) == lines.index(L)]
 
         # map intended tokens onto heard timings; anything the ASR dropped or renamed
         # gets a time interpolated between its nearest matched neighbours, so the text

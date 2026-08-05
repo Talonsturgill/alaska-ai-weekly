@@ -1658,7 +1658,13 @@ export const Ep0803: React.FC<z.infer<typeof ep0803Schema>> = ({
         <AbsoluteFill>
           <svg viewBox="0 0 1080 1920" width="100%" height="100%">
             {captions
-              .filter((c) => f >= c.start * FPS && f <= c.end * FPS)
+              // HALF-OPEN, NOT INCLUSIVE AT BOTH ENDS. captions_from_words.py sets each
+              // cue's end equal to the NEXT cue's start so the band never blinks empty,
+              // and this window was inclusive at both ends, so on any boundary that lands
+              // on a whole frame two cues were live in the same frame: two plates and two
+              // texts drawn over each other. Measured at 5 of 35 boundaries on the shipped
+              // cut. `<` on the end makes each cue own its own frames and nothing else.
+              .filter((c) => f >= c.start * FPS && f < c.end * FPS)
               .map((c, i) => {
                 const rows = capRows(c.text);
                 const longest = rows.reduce((m, r) => Math.max(m, r.length), 0);

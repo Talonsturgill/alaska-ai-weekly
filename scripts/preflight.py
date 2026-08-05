@@ -32,6 +32,8 @@ CHECKS = [
      ["npx", "tsc", "--noEmit", "-p", "video-engine/tsconfig.json"], True),
     ("plated strings fit their plates",
      [sys.executable, "scripts/text_fit_check.py"], True),
+    ("no first person on any surface",
+     [sys.executable, "scripts/voice_check.py"], True),
     ("the square crop cuts nothing built",
      [sys.executable, "scripts/crop_safety.py"], False),
     ("dead space within ceilings",
@@ -69,7 +71,7 @@ def main():
     failures, advisories = [], []
 
     ok, msg = deliverables_are_fresh()
-    if ok is False:
+    if ok is not True:
         failures.append(("deliverables are fresh", msg))
         print(f"  FAIL  deliverables are fresh: {msg}")
     else:
@@ -81,6 +83,11 @@ def main():
         tail = tail[-1] if tail else "(no output)"
         if p.returncode == 0:
             print(f"  OK    {label}: {tail}")
+        elif p.returncode == 2:
+            # every gate in this repo reserves exit 2 for "I measured nothing", which is
+            # never a pass and is never advisory, whatever the check's severity.
+            failures.append((label, f"GATE IS DEAD (exit 2): {tail}"))
+            print(f"  FAIL  {label}: GATE IS DEAD (exit 2): {tail}")
         elif required:
             failures.append((label, tail))
             print(f"  FAIL  {label}: {tail}")

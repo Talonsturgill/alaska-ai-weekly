@@ -30,6 +30,12 @@ AI_TELLS=["delve","tapestry","testament","landscape of","ever-evolving","ever-ch
 # them. Owner directive 2026-07-30, starting with "cannot". Add to this table rather than
 # scattering one-off checks.
 BANNED_FORMAL={"cannot":"can't"}
+# Singular first person only. "we"/"our" are deliberately allowed: the brand may speak as
+# itself, what is banned is a single narrator inserting themselves into a sourced report.
+# Word-boundary anchored and case-sensitive on the pronoun "I" so "AI", "FIRE-WUI" and any
+# other capitalised token containing an I are untouched.
+FIRST_PERSON_RE = re.compile(
+    r"(?<![A-Za-z-])(?:I|I'm|I've|I'd|I'll|me|my|mine|myself)(?![A-Za-z'-])")
 BANNED_PUNCT={"—":"em dash","–":"en dash",";":"semicolon",":":"colon","“":"curly quote","”":"curly quote","‘":"curly quote","’":"curly apostrophe"}
 # Sources + music/voice credit belong in the copy-paste COMMENT block (dispatch_email.py), never
 # in the post body (2026-07-21 owner catch: they got pasted into the post AND duplicated, and the
@@ -95,6 +101,26 @@ def lint(text):
             fails.append(f"REGISTER: '{mm.group(0)}' is banned, write \"{good}\" (owner rule, "
                          f"contractions keep the voice human, not institutional)")
             break
+    # NO FIRST PERSON, ANYWHERE (owner directive 2026-08-05: "the caption should never
+    # say 'I' or speak in the first person").
+    #
+    # The Dispatch is a wire report, not a column. First person turns a sourced finding
+    # into an opinion a reader can dismiss as one person's take, and it makes the brand
+    # the subject when the story is the subject. It also does not survive being read by
+    # someone who does not know who "I" is, which on a feed is almost everyone.
+    #
+    # Enforced as a HARD FAIL and not a doctrine note, for the same reason the contraction
+    # law above is: a style rule nobody checks drifts back within a few runs. This one had
+    # already drifted, the 2026-08-03 post shipped with three first-person sentences.
+    #
+    # "we" and "our" are NOT banned. The brand may speak as itself. What is banned is the
+    # singular narrator.
+    for mm in re.finditer(FIRST_PERSON_RE, t):
+        fails.append(f"VOICE: '{mm.group(0)}' is first person and the Dispatch never speaks "
+                     f"in the first person (owner rule). Rewrite so the finding stands on "
+                     f"its own: 'I read the full record and the words are not in it' becomes "
+                     f"'The full record does not contain the words'.")
+        break
     # sources + credits must NOT be in the post body — they go in the copy-paste comment block
     if URL_RE.search(t): fails.append("BODY: a URL/domain is in the post — sources go ONLY in the Gmail draft's comment block, never in the post text")
     cred=CREDIT_RE.search(t)
