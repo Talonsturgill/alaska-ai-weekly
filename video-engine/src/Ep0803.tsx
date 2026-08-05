@@ -330,6 +330,22 @@ const AlaskaField: React.FC<{
 );
 
 /** the corner icon, PLANTED in shot 1 so the button has something to flip */
+/** THE FILM SHIPPED UNBRANDED. A judge checked ten frames across both aspects at full
+    resolution and found no wordmark, no eyebrow and no signoff anywhere in 83.6 seconds,
+    on a brand channel whose whole purpose is the brand. It sits inside the SQUARE band
+    (y 420..1500 of the master), not in the vertical-only region, because the LinkedIn cut
+    is the one that most needs to say who made it. Small, quiet, and out of the way of
+    every plate: it is a signature, not a bug. */
+const Wordmark: React.FC<{f?: number}> = () => (
+  <g opacity={0.5}>
+    <rect x={40} y={452} width={6} height={26} rx={3} fill={EMBER} />
+    <text x={58} y={473} fill="#f0e6d2"
+          style={{font: `700 21px ${MONO}`, letterSpacing: 3}}>ALASKA.AI</text>
+    <text x={58} y={494} fill="#f0e6d2" opacity={0.72}
+          style={{font: `700 15px ${MONO}`, letterSpacing: 2}}>DISPATCH</text>
+  </g>
+);
+
 const CornerTool: React.FC<{f: number; flip?: number; x?: number; y?: number}> = ({
   f, flip = 0, x = 128, y = 1046,
 }) => {
@@ -559,7 +575,7 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
           the chain and cut it, leaving an orphaned island fragment past its corner that
           reads as a smudge rather than as geography. The map's right edge is at x=859.
           The closing bookend carries the same move so the mark does not wander. */}
-      <CornerTool f={g} x={962} />
+      <Wordmark /><CornerTool f={g} x={962} />
       <g transform={`translate(540,${CARD_TOP_Y}) scale(${0.82 + 0.18 * slam},${settle * (0.34 + 0.66 * slam)}) translate(-540,${-CARD_TOP_Y})`}
          opacity={clamp01(slam * 2.6)}>
         <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN?" w={940} />
@@ -712,7 +728,7 @@ const S2: React.FC<SceneProps> = ({from, L}) => {
         </g>
       </g>
       {/* the tool drops to the plate line so it stops sitting on the packet's left edge */}
-      <CornerTool f={g} y={1230} />
+      <Wordmark /><CornerTool f={g} y={1230} />
     </World>
   );
 };
@@ -821,7 +837,7 @@ const S3: React.FC<SceneProps> = ({from, L}) => {
             that holds a 132px card without touching anything. */}
         <Card x={540} y={650} text="RARELY USED HERE" sub="prescribed burning remains underused in Alaska (NSF)" w={880} />
       </g>
-      <CornerTool f={g} />
+      <Wordmark /><CornerTool f={g} />
     </World>
   );
 };
@@ -884,9 +900,16 @@ const S4: React.FC<SceneProps> = ({from, L}) => {
                   r={1.6 + hh(i, 41) * 2.6} fill="#fff6dd" opacity={0.45} />
         ))}
       </g>
-      <Card x={540} y={CARD_BOT - 60} text="THE INSTRUMENT DOES NOT EXIST"
-            sub="NSF: the state lacks weather forecasting tools" w={920} />
-      <CornerTool f={g} />
+      {/* THE ONE STRING THAT ARGUED AGAINST THE FILM. "NSF: the state lacks weather
+          forecasting tools" reads as a quotation because of the colon, and it is not
+          what NSF wrote. The source sentence qualifies it: tools "suited to its unique
+          environment". Unqualified, it says Alaska has no fire weather forecasting,
+          which is false and which this film disproves twice in its own runtime, once in
+          the opening line and once as a headline at the button. Qualifier restored, and
+          the headline no longer claims a whole category does not exist. */}
+      <Card x={540} y={CARD_BOT - 60} text="NO INSTRUMENT BUILT FOR HERE"
+            sub="NSF: no forecasting tools suited to its unique environment" w={920} />
+      <Wordmark /><CornerTool f={g} />
     </World>
   );
 };
@@ -1035,7 +1058,7 @@ const S5: React.FC<SceneProps> = ({from, L}) => {
             sub={recut < 1 ? 'Prescribed Fire and Smoke Planner, on the Canadian Forest Fire Weather Index (NSF)'
                            : windows ? 'a day a model would have called safe'
                            : 'statistical and machine-learning techniques (NSF)'} w={960} />
-      <CornerTool f={g} />
+      <Wordmark /><CornerTool f={g} />
     </World>
   );
 };
@@ -1207,7 +1230,7 @@ const S7: React.FC<SceneProps> = ({from, L}) => {
            partnership finding, which the record does not say. The subline now quotes
            the clause the headline is about. */}
       <Card x={540} y={CARD_BOT - 20} text="NSF NAMES THE PARTNERSHIP GAP"
-            sub="the state lacks forecasting tools and community partnerships (NSF)" w={980} />
+            sub="lacks tools and partnerships suited to its unique environment (NSF)" w={980} />
     </World>
   );
 };
@@ -1238,7 +1261,13 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
             2030 would assert progress that has not happened. */}
         <rect x={110} y={700} width={872} height={22} rx={4}
               fill="#2c3a3d" stroke={INK} strokeWidth={5} />
-        <rect x={110} y={704} width={864 * rule} height={14} rx={3} fill="#8aa38f" opacity={0.95} />
+        {/* AN UNFILLED TRACK, NOT A PROGRESS BAR. Filled, it read as elapsed time
+            under a caption saying the award runs until 2030, and on the air date none
+            of the period has elapsed: it starts Sept 1 2026. The track draws itself
+            across the range and the head stays parked at the start date. */}
+        <rect x={110} y={704} width={864 * rule} height={14} rx={3}
+              fill="none" stroke="#8aa38f" strokeWidth={3} opacity={0.8} strokeDasharray="10 8" />
+        <rect x={110} y={702} width={18} height={18} rx={3} fill="#ffd98a" stroke={INK} strokeWidth={3} />
         <rect x={110} y={694} width={16} height={34} rx={3}
               fill="#ffd98a" stroke={INK} strokeWidth={5} />
         {[0, 1, 2, 3, 4].map((i) => {
@@ -1436,7 +1465,7 @@ const S9: React.FC<SceneProps> = ({from, L}) => {
           reading of a 0.15-scale copy of a foreground asset floating in a treeline. A prop
           that has to be explained is not doing depth work. Removed. */}
       <Card x={540} y={CARD_TOP_Y} text="A CREW WITH NO DAY TO GO ON" w={840} />
-      <CornerTool f={g} />
+      <Wordmark /><CornerTool f={g} />
     </World>
   );
 };
@@ -1522,7 +1551,7 @@ const S10: React.FC<SceneProps> = ({from, L, total}) => {
                  lit={accentBox(BURNABLE, 594, 1168, 92, 44)} />
       </g>
       <Counter f={g} x={250} y={1196} value="███" label="MUST NOT BURN" dim={harden} />
-      <CornerTool f={g} flip={flip} x={962} />
+      <Wordmark /><CornerTool f={g} flip={flip} x={962} />
       {/* THE MUSIC CREDIT, ON THE FILM ITSELF. The bed is CC BY 4.0, which requires
           attribution wherever the work is distributed, and the credit lived only in
           out/dispatch/music_credit.json: nowhere on screen, nowhere in the post, nowhere

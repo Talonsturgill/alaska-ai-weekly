@@ -310,6 +310,32 @@ def main():
     # than opening. Sort by time, and hold the lift long enough to be heard before the
     # credit fade takes it.
     arc = pw_expr(sorted(BED_ARC + [(vo_end + 0.4, 1.62), (vo_end + 1.4, 1.55)]))
+
+    # OPEN THE BED INTO THE GAPS THAT ACTUALLY EXIST (2026-08-05).
+    #
+    # Three judges measured the same thing from three directions: the bed sits 9 to 15 dB
+    # under the VO and stays there THROUGH the gaps, so the mix never breathes and LRA
+    # sticks at about 4.1 against a 6 to 9 target. The longest gap in the film measured
+    # within 1 dB of the average gap, which is the signature of a bed that is not
+    # responding to the voice at all in the direction that matters.
+    #
+    # Chasing this through the sidechain compressor did not work: shortening the release
+    # from 320ms to 150ms changed the delivered LRA by nothing measurable. So this stops
+    # asking the compressor to infer the gaps and states them. The gaps are KNOWN, to the
+    # word, in the same forced-alignment data the captions are built from. Each one over
+    # half a second gets an explicit lift, ramped in and out so it swells rather than
+    # steps, applied downstream of the duck where it is a clean level move.
+    gap_lift = [(0.0, 1.0)]
+    try:
+        _w = json.load(open(os.path.join(AUD, "words.json")))["words"]
+        _gaps = [(a["e"], b["s"]) for a, b in zip(_w, _w[1:]) if b["s"] - a["e"] >= 0.5]
+        for a, b in _gaps:
+            gap_lift += [(a + 0.05, 1.0), (a + 0.22, 2.05), (b - 0.22, 2.05), (b - 0.05, 1.0)]
+        print(f"bed opens into {len(_gaps)} gaps of 0.5s or longer "
+              f"({sum(b - a for a, b in _gaps):.1f}s of room)")
+    except Exception as e:
+        print(f"bed gap-lift SKIPPED ({e}); the mix will be flatter than it should be")
+    gap_expr = pw_expr(sorted(gap_lift))
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
         f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.30[bedraw]"
@@ -334,7 +360,8 @@ def main():
     # comes out the far side pushed back toward where it started. The compressor was undoing
     # the shape. Downstream it is a clean level move on an already-ducked bed, so the written
     # arc is the arc you hear.
-    fc.append(f"[bedduck]volume=volume={arc}:eval=frame,"
+    fc.append(f"[bedduck]volume=volume={gap_expr}:eval=frame,"
+              f"volume=volume={arc}:eval=frame,"
               f"volume=enable='between(t,{dip0},{dip1})':volume=0.015[bed]")
 
     # SFX: per-event performance — pitch/volume/timing jitter, class gain, pan
