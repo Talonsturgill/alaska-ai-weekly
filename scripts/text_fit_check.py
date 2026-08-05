@@ -49,8 +49,15 @@ MONO_ADV = 0.602
 # phone size. Two judges independently called ~5px "zero margin" at 4x zoom.
 MIN_MARGIN = 14.0
 
+# THE BODY CLASS USED TO EXCLUDE BRACES, so an interpolated <text> never matched this
+# regex AT ALL. That is worse than skipping it: an unmatched run is invisible to the
+# gate AND to the gate's own "not measured" tally, so the coverage line that exists
+# specifically to stop silent skipping was itself silently short. Measured on Ep0803: 29
+# text runs in the file, 18 matched, 11 unaccounted for anywhere in the output.
+# Braces are allowed in now and interpolated bodies are routed to the skip list below,
+# where they are counted and named.
 TEXT_RE = re.compile(
-    r"<text\b(?P<attrs>[^>]*?)>\s*(?P<body>[^<>{}]*?)\s*</text>",
+    r"<text\b(?P<attrs>[^>]*?)>\s*(?P<body>[^<>]*?)\s*</text>",
     re.S,
 )
 # x and width are frequently authored as small arithmetic expressions (x={540 - 358},

@@ -1157,6 +1157,16 @@ config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both
        python3 scripts/ship_gate.py record --judges <j1>,<j2>,<j3>
        python3 scripts/ship_gate.py check
 
+   AFTER the Gmail connector returns a draft id, WRITE THE RECEIPT:
+
+       python3 scripts/record_draft.py --draft-id <id> --subject "<subject>" \
+           --square-url <url> --vertical-url <url>
+
+   `no_exit.py` treats a missing `out/dispatch/gmail_draft_receipt.json` as "nobody has
+   been handed the film" and refuses to let the run end. Nothing invoked record_draft.py,
+   so that leg was unreachable and the gate was permanently red on a run that had actually
+   delivered. A gate that cannot go green is not a gate.
+
    `check` MUST exit 0 before a single byte is uploaded, before the Gmail draft is built,
    and before the PR is merged. If it exits 1, THE RUN IS NOT DONE: fix the named defects,
    re-render, rebuild the evidence, re-grade, re-record. Do not upload "so the links exist".

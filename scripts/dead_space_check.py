@@ -109,6 +109,14 @@ def main():
         fs = sorted(glob.glob(os.path.join(a.frames, "frame_*.png")))
         if not fs:
             raise SystemExit(f"no frames in {a.frames}")
+        # STRIDE IS 1 ON THIS PATH. A pre-extracted frame directory holds CONSECUTIVE
+        # source frames, so fs[i] is source frame i. `stride` stayed at --every here and
+        # the sample placement below multiplied by it a second time, on an index that was
+        # already stepping by --every, producing frame numbers 30x too large. Nearly every
+        # sample then fell outside every shot range, per-shot bucketing came back empty,
+        # and the per-shot hard ceiling could never trip. The video path below is fine
+        # because ffmpeg does the decimation and a.every is reset to 1 for it.
+        stride = 1
     else:
         if not os.path.exists(a.video):
             raise SystemExit(f"no video at {a.video} -- render and encode before measuring it")

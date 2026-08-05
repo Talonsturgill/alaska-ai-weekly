@@ -687,8 +687,14 @@ export const Character: React.FC<CharacterProps> = ({
             <ellipse cx={47} cy={-96} rx={13} ry={9} fill={INK} opacity={0.13} />
           </g>
         </g>
-        {/* head — everyday Alaskan headgear (never the Native-coded fur ruff) */}
-        <g transform={`translate(0,${-368 + bob * 1.4 + walkBob})`}>
+        {/* head — everyday Alaskan headgear (never the Native-coded fur ruff).
+            THE HEAD IS A SIBLING OF THE TORSO, NOT A CHILD OF IT, so when the weight
+            shift moved off the root and onto the torso group, the head got nothing and
+            slid up to ~13.6 local px off its own shoulders at about 2.3Hz. My regression,
+            introduced by the fix that planted the feet. It carries the same lateral shift
+            as the torso it sits on, plus a small extra lead so the head still settles a
+            beat after the body rather than moving as one rigid block. */}
+        <g transform={`translate(${sway * 1.06},${-368 + bob * 1.4 + walkBob})`}>
           {(() => {
             const hg = outfit === 'parka' ? 'trapper' : headgear;
             const beanieCol = c.main;

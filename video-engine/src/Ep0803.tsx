@@ -1073,6 +1073,11 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
   const accentBox = useAccentExtent();
   const push = interpolate(t, [L(8) + 0.2, L(8) + 1.8], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
   const fields = interpolate(t, [L(9), L(9) + 1.5], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: E_OUT});
+  // ONE SOURCE OF TRUTH for the SAFE DAYS card's placement, so the transform that draws
+  // the chips and the accentBox call that licenses them cannot disagree. They did: the
+  // call was hand-typed in screen space and the chips paint inside a scaled group.
+  const CARD_S = 1.34, CARD_Y = 790;
+  const CARD_X = (p: number) => 272 + p * 268;
   const HATCH = [
     {a: 20, c: '#b8894a'}, {a: 70, c: '#7d8f92'}, {a: 115, c: '#8a6a52'}, {a: 160, c: '#5f7a6a'},
   ];
@@ -1090,7 +1095,13 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
               stroke="#2a2018" strokeWidth={5} opacity={0.7} />
       ))}
       {/* the punched sheet, pushed across */}
-      <g transform={`translate(${272 + push * 268},790) scale(1.34) rotate(${-4 + push * 3})`}>
+      {/* THE ACCENT LICENCE WAS BEING ASSERTED IN THE WRONG SPACE. accentBox took
+          hand-typed screen coordinates while the chips paint inside this transform, so
+          the call claimed y 870..924 for boxes that actually land at y 749.8..822.2. A
+          box 97% outside its own licence passed the paint-time check, which makes the
+          registry decorative exactly where it is supposed to bite. Derived from the
+          transform now, so the assertion cannot drift from the drawing. */}
+      <g transform={`translate(${CARD_X(push)},${CARD_Y}) scale(${CARD_S}) rotate(${-4 + push * 3})`}>
         {/* SIZED OFF ITS OWN STRING. At 320 wide this card gave its disclosure line
             5px of margin and two judges measured the terminal glyph merging into the
             border. 26 chars * 19px * 0.602 = 297px of text needs 372px of inner width
@@ -1099,7 +1110,10 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
               fill="#efeade" stroke={INK} strokeWidth={6} />
         {[0, 1, 2].map((i) => (
           <WindowChip key={i} x={-110 + i * 78} y={-30} w={40} h={54}
-                      fill={accentBox(BURNABLE, 100 + push * 300 + i * 78, 870, 40, 54)} />
+                      fill={accentBox(BURNABLE,
+                                      CARD_X(push) + (-110 + i * 78) * CARD_S,
+                                      CARD_Y + -30 * CARD_S,
+                                      40 * CARD_S, 54 * CARD_S)} />
         ))}
         <text x={0} y={-64} textAnchor="middle" fill={INK}
               style={{font: `700 26px ${MONO}`, letterSpacing: 2}}>SAFE DAYS</text>
@@ -1636,7 +1650,11 @@ export const Ep0803: React.FC<z.infer<typeof ep0803Schema>> = ({
     rects: [
       {x: 700, y: 760, w: 340, h: 360},    // the punched window, cut into the stock, S5
       {x: 560, y: 840, w: 420, h: 180},    // the engine's outbound stock, S5
-      {x: 60, y: 820, w: 900, h: 180},     // the sheet on the table, S6
+      // S6 CORRECTED 2026-08-05. The chips paint at y 749.8..822.2 (card at y=790,
+      // scale 1.34, chip local y=-30 h=54), and this rect started at y=820, so the
+      // licence overlapped the real boxes by about two pixels. It passed only because
+      // accentBox was being handed invented coordinates. x spans both push states.
+      {x: 100, y: 735, w: 580, h: 105},    // the sheet on the table, S6
       {x: 300, y: 860, w: 480, h: 200},    // the sheet close, S7
       // S10's windows moved when they were hand-placed onto the Interior instead of
       // hash-scattered (three of nine were landing offshore). The licence follows them:

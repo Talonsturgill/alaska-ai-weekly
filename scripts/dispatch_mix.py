@@ -302,10 +302,13 @@ def main():
     # in the post-VO tail where there's no voice to serve
     dip0, dip1 = SILENCE_DIP_AT, SILENCE_DIP_AT + DIP_LEN
     vo_end = max(x["end"] for x in _lines)
-    # AND THE TAIL LIFT WAS APPENDED OUT OF ORDER. BED_ARC already ends with points at
-    # 81.2, 82.4 and 83.7; appending (vo_end + 0.4, 1.60) put a t=81.5 point AFTER the
-    # t=83.7 one, so the piecewise envelope was non-monotonic in time and the lift the
-    # comment above promises never happened. A judge measured the 2.6s tail, the one
+    # CORRECTION (2026-08-05, found by code review): the paragraph that used to sit here
+    # blamed the flat tail on an out-of-order append making the envelope non-monotonic.
+    # That was wrong. pw_expr has always sorted its breakpoints, so the append order never
+    # mattered and the bug it described never existed. The tail lift IS applied; the tail
+    # is flat for some other reason that is still unexplained, and saying so is better
+    # than leaving a confident wrong story in the file for the next reader to trust.
+    # Sorting is kept because it is correct and cheap, not because it fixed anything. A judge measured the 2.6s tail, the one
     # stretch in the film with no voice at all, sitting at -30.5 dBFS and fading rather
     # than opening. Sort by time, and hold the lift long enough to be heard before the
     # credit fade takes it.
@@ -329,8 +332,21 @@ def main():
     try:
         _w = json.load(open(os.path.join(AUD, "words.json")))["words"]
         _gaps = [(a["e"], b["s"]) for a, b in zip(_w, _w[1:]) if b["s"] - a["e"] >= 0.5]
+        # BREAKPOINTS MUST BE STRICTLY INCREASING. The fixed +-0.05/+-0.22 offsets can
+        # collide or invert when two long gaps are separated by less than 0.10s of speech,
+        # which makes pw_expr divide by a zero-length segment. Clamp each gap's ramp to
+        # the room it actually has, and drop any point that would not advance in time.
+        prev_end = -1.0
         for a, b in _gaps:
-            gap_lift += [(a + 0.05, 1.0), (a + 0.22, 2.05), (b - 0.22, 2.05), (b - 0.05, 1.0)]
+            ramp = min(0.22, (b - a) / 3.0)
+            edge = min(0.05, ramp / 2.0)
+            pts = [(a + edge, 1.0), (a + ramp, 2.05), (b - ramp, 2.05), (b - edge, 1.0)]
+            if pts[0][0] <= prev_end:
+                continue          # this gap starts inside the previous ramp; skip it
+            for t_pt, v in pts:
+                if t_pt > (gap_lift[-1][0] if gap_lift else -1.0):
+                    gap_lift.append((t_pt, v))
+            prev_end = pts[-1][0]
         print(f"bed opens into {len(_gaps)} gaps of 0.5s or longer "
               f"({sum(b - a for a, b in _gaps):.1f}s of room)")
     except Exception as e:
