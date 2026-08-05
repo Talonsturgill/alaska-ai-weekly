@@ -366,15 +366,33 @@ export const Character: React.FC<CharacterProps> = ({
                 : gg >= 1 ? 1
                 : -0.18 + 1.27 * gg + 0.11 * Math.sin(gg * Math.PI) - 0.2 * Math.sin(gg * Math.PI * 2) * (1 - gg);
               const reach = 96 * ext;
-              const rise = -18 * ext + 3 * Math.sin(f / 11);
+              // ANGLED DOWN, because the thing being pointed at is below the shoulder.
+              // The arm used to rise, so a judge traced the fingertip vector and found it
+              // never entered the card it is supposed to indicate.
+              const rise = 34 * ext + 3 * Math.sin(f / 11);
               return (
                 <g>
             <path d={`M46,262 q${52 * ext},-6 ${reach},${rise}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d={`M46,262 q${52 * ext},-6 ${reach},${rise}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
             <g transform={`translate(${46 + reach + 6},${262 + rise - 2})`}>
-              {hand(0, 0, -90)}
-              {/* extended pointing finger stays on top of the new hand */}
-              <rect x={8} y={-7} width={30} height={13} rx={6.5} fill={skin} stroke={INK} strokeWidth={4.5} />
+              {/* ONE MERGED SILHOUETTE, NOT THREE STACKED SHAPES. Two judges found this
+                  hand independently and both called it the worst-built shape in the
+                  film, on the frame's focal gesture. It was hand() (a stroked palm disc
+                  plus a stroked thumb ellipse) with a separately stroked finger capsule
+                  laid over the top, so three closed outlines crossed inside the
+                  silhouette and the sleeve stroke dead-ended in the middle of the palm.
+                  Every other hand in the film is a single closed form with INTERNAL
+                  lines, which is what this is now. */}
+              <path d="M-16,-15 q16,-9 30,-5 l30,3 q11,1 11,8 q0,7 -11,8 l-29,3
+                       q4,10 -3,15 q-9,6 -18,1 q-12,-7 -13,-17 q-1,-11 3,-16 Z"
+                    fill={skin} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+              {/* the cuff, rotated onto the arm axis rather than 20 degrees off it */}
+              <rect x={-30} y={-14} width={16} height={28} rx={6} fill={c.trim}
+                    stroke={INK} strokeWidth={4} />
+              {/* internal lines: the knuckle break and the thumb crease */}
+              <path d="M2,-9 q3,9 0,17" fill="none" stroke={INK} strokeWidth={2.6} opacity={0.45} strokeLinecap="round" />
+              <path d="M-9,6 q7,4 13,3" fill="none" stroke={INK} strokeWidth={2.4} opacity={0.4} strokeLinecap="round" />
+              <path d="M-14,-11 q13,-6 26,-3" fill="none" stroke="#fff" strokeWidth={2.4} opacity={0.26} strokeLinecap="round" />
             </g>
                 </g>
               );

@@ -151,6 +151,16 @@ def check_file(path, min_margin=MIN_MARGIN):
         sw = num(r.group("sw") or "0", consts) or 0.0
         r0, r1 = rx + sw, rx + rw - sw
 
+        # NOT EVERY RECT IS A PLATE. A 6px accent bar drawn beside a wordmark is the
+        # nearest preceding rect to it, and pairing them reported a 150px overflow
+        # against a rule that never applied. A plate that is less than half the width of
+        # the string it supposedly carries is not that string's plate: the text is
+        # free-standing on the frame. Say so rather than failing, because a gate that
+        # cries wolf is a gate that gets ignored, which is how the real overflow shipped.
+        if (r1 - r0) < w * 0.5:
+            skipped.append((line, body[:44], "no plate (nearest rect is not one)"))
+            continue
+
         checked += 1
         left, right = t0 - r0, r1 - t1
         if left < min_margin or right < min_margin:

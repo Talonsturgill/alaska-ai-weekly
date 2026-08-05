@@ -578,7 +578,7 @@ const S1: React.FC<SceneProps> = ({from, L}) => {
       <Wordmark /><CornerTool f={g} x={962} />
       <g transform={`translate(540,${CARD_TOP_Y}) scale(${0.82 + 0.18 * slam},${settle * (0.34 + 0.66 * slam)}) translate(-540,${-CARD_TOP_Y})`}
          opacity={clamp01(slam * 2.6)}>
-        <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS ARE YOU ALLOWED TO BURN?" w={940} />
+        <Card x={540} y={CARD_TOP_Y} text="WHICH DAYS CAN YOU BURN?" w={940} />
       </g>
     </World>
   );
@@ -1124,7 +1124,10 @@ const S6: React.FC<SceneProps> = ({from, L}) => {
                   fill="#ffffff" opacity={0.13} />
           </g>
         ))}
-        <Card x={540} y={CARD_BOT + 30} text="MUNICIPAL / FEDERAL / TRIBAL / NON-PROFIT" w={980} />
+        {/* raised clear of the plank caps. Its top edge cut two of them flat, with fill
+          running straight into the card border while every other plank end in the frame
+          has a rounded, fully outlined cap. */}
+      <Card x={540} y={CARD_BOT + 66} text="MUNICIPAL / FEDERAL / TRIBAL / NON-PROFIT" w={980} />
       </g>
       <Card x={540} y={CARD_TOP_Y} text="A COUNT YOU CAN HAND OVER" w={780} />
     </World>
@@ -1268,6 +1271,16 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
         <rect x={110} y={704} width={864 * rule} height={14} rx={3}
               fill="none" stroke="#8aa38f" strokeWidth={3} opacity={0.8} strokeDasharray="10 8" />
         <rect x={110} y={702} width={18} height={18} rx={3} fill="#ffd98a" stroke={INK} strokeWidth={3} />
+        {/* A TRAVELLING READ-HEAD. The shot held 9.3 seconds at under 1% stage motion on
+            the film's honest turn. The head sweeps the period the award will run, so
+            something is always moving without asserting that any of it has elapsed:
+            it is drawn hollow and trailed, a scan rather than a fill. */}
+        <g opacity={rule}>
+          <rect x={110 + ((g * 2.4) % 864)} y={696} width={4} height={30} rx={2}
+                fill="#ffd98a" opacity={0.75} />
+          <rect x={110} y={708} width={(g * 2.4) % 864} height={6} rx={3}
+                fill="#ffd98a" opacity={0.16} />
+        </g>
         <rect x={110} y={694} width={16} height={34} rx={3}
               fill="#ffd98a" stroke={INK} strokeWidth={5} />
         {[0, 1, 2, 3, 4].map((i) => {
@@ -1325,6 +1338,9 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
             {/* WIDER, so the longest label in the set fits at the SAME size as its
                 siblings. Auto-shrinking one chip's label gave three type sizes in one
                 row and still collided with the scan bracket. */}
+            {/* the chips sat on the same ground as the trees and cast nothing, so one
+                frame ran two grounding languages. */}
+            <ellipse cx={4} cy={56} rx={74} ry={11} fill="#0e1a16" opacity={0.34} />
             <rect x={-80} y={-52} width={160} height={104} rx={7}
                   fill={on ? ENAMEL : '#9aa79f'} stroke={INK} strokeWidth={6} />
             {on && i > 0 && (
@@ -1342,6 +1358,7 @@ const S8: React.FC<SceneProps> = ({from, L}) => {
           award had more presence than the three that are, which fights its meaning.
           Normalised to the set. */}
       <g transform="translate(850,1136)">
+        <ellipse cx={4} cy={50} rx={86} ry={10} fill="#0e1a16" opacity={0.22} />
         <rect x={-96} y={-46} width={192} height={92} rx={0}
               fill="none" stroke={INK} strokeWidth={6} strokeDasharray="18 14" />
         <text x={0} y={8} textAnchor="middle" fill={BONE} opacity={0.85}
