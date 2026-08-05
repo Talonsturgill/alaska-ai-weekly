@@ -198,6 +198,21 @@ hatch with better manners.
 ### BUILD TO THE STANDARD BEFORE YOU BUILD A FRAME (AUTHORITATIVE, owner's call 2026-08-05)
 
 **READ `docs/craft/DISPATCH_STANDARD.md` IN FULL AT THE START OF THE AUTHORING PHASE.**
+
+**AND RUN `python3 scripts/preflight.py` BEFORE CONVENING A PANEL. If it exits nonzero,
+the panel is NOT convened.** (owner, 2026-08-05: "I'm frustrated at ur pre-panel
+performance.")
+
+The mechanical gates in this repo were good and were being run inconsistently, after the
+fact, one at a time, by a run that remembered to. So cuts reached the panel carrying
+defects a script could have named in four seconds, three judges spent twenty minutes each
+rediscovering them, and a whole fix round went on arithmetic. A checklist in a document is
+a suggestion; preflight.py is that checklist as a program. It typechecks the engine,
+measures every plated string against its plate, asserts the cut on disk is NEWER than every
+file that can change a frame, and reports the crop and dead-space meters.
+
+A judge's attention is the most expensive thing in this loop. It must never be spent on
+something a regex can find.
 Not at review time. Before the first frame exists.
 
 The owner's words: "it seems like the video should just be way better before it ever gets
