@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(REPO, "out", "dispatch")
 FPS = 30
-TAIL = 1.5  # hold after the last word
+TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band)
 
 # scene -> index of the VO line that starts it. 2026-07-22 "the checkpoint lever frozen
 # at the midpoint" has 7 scenes (S1..S7 in video-engine/src/Episode.tsx, SCENE_COMPONENTS)
@@ -265,7 +265,7 @@ def _rebalance_cues(caps):
 # So the credits are DERIVED HERE, from the same files the rest of the run is checked
 # against, and rendered by lib/EndCredits.tsx. Nothing is typed per run, so the card cannot
 # drift from the record, and scripts/credits_check.py fails the run if it ever does.
-CREDITS_S = 6.5          # long enough to read a URL out loud, short enough not to be a cost
+CREDITS_S = 4.6          # long enough to read the URL and the CC BY credit, short enough to stay in band
 
 def _source_labels(srcs):
     """Group sources.json into lines a person can read off a phone in six seconds.

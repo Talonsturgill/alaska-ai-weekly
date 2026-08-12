@@ -95,39 +95,39 @@ EVENTS = [
     # none of them could see the cause, because the schedule was internally consistent and
     # simply belonged to a different movie. Same class as the stale filmstrip anchors and the
     # stale bed arc: per-run data read by path that looked plausible and described another film.
-    (0.14, "boom", "hero", 0.0),   # ignite
-    (2.90, "tick", "standard", -0.22),   # tag
-    (7.76, "stamp", "standard", -0.11),   # plate
-    (9.89, "pop", "standard", 0.0),   # count
-    (12.71, "clank", "standard", 0.11),   # stamp
-    (16.83, "whoosh", "standard", 0.22),   # pour
-    (19.37, "tick", "standard", 0.33),   # swell
-    (23.13, "clank", "standard", -0.33),   # bind
-    (28.46, "thud", "hero", 0.0),   # assemble
-    (30.96, "snap", "standard", -0.11),   # split
-    (34.10, "clank", "standard", 0.0),   # bars
-    (37.09, "paper", "standard", 0.11),   # quote
-    (41.03, "whoosh", "standard", 0.22),   # spinup
-    (43.85, "ding", "standard", 0.33),   # twang
-    (46.12, "pop", "standard", -0.33),   # reroute
-    (47.26, "paper", "standard", -0.22),   # draw
-    (52.42, "pop", "texture", -0.22),   # room, filling a 11.4s hole between draw and slips
-    (57.57, "tick", "standard", -0.11),   # slips
-    (62.62, "whoosh", "standard", 0.0),   # intake
-    (65.11, "clank", "hero", 0.0),   # swing
-    (70.75, "snap", "standard", 0.22),   # zero
-    (73.97, "paper", "texture", 0.22),   # room, filling a 7.1s hole between zero and heap
-    (77.18, "thud", "standard", 0.33),   # heap
-    (80.47, "tick", "standard", -0.33),   # sentence
-    (83.85, "paper", "texture", -0.11),   # room, filling a 7.5s hole between sentence and crack
-    (87.24, "snap", "standard", -0.22),   # crack
-    (91.06, "thud", "standard", -0.11),   # seat
-    (96.19, "clank", "standard", 0.0),   # pumps
-    (98.91, "ding", "standard", 0.11),   # meter
-    (102.55, "paper", "texture", -0.22),   # room, filling a 8.0s hole between meter and rise
-    (106.19, "riser", "hero", 0.0),   # rise
-    (109.92, "tick", "standard", 0.33),   # turn
-    (114.16, "stamp", "hero", 0.0),   # button
+    (0.15, "boom", "hero", 0.0),   # ignite
+    (3.20, "tick", "standard", -0.22),   # tag
+    (8.56, "stamp", "standard", -0.11),   # plate
+    (10.91, "pop", "standard", 0.0),   # count
+    (14.02, "clank", "standard", 0.11),   # stamp
+    (18.57, "whoosh", "standard", 0.22),   # pour
+    (21.37, "tick", "standard", 0.33),   # swell
+    (25.52, "clank", "standard", -0.33),   # bind
+    (31.40, "thud", "hero", 0.0),   # assemble
+    (34.16, "snap", "standard", -0.11),   # split
+    (37.62, "clank", "standard", 0.0),   # bars
+    (40.92, "paper", "standard", 0.11),   # quote
+    (45.27, "whoosh", "standard", 0.22),   # spinup
+    (48.38, "ding", "standard", 0.33),   # twang
+    (50.89, "pop", "standard", -0.33),   # reroute
+    (52.14, "paper", "standard", -0.22),   # draw
+    (57.84, "pop", "texture", -0.22),   # room, filling a 11.4s hole between draw and slips
+    (63.52, "tick", "standard", -0.11),   # slips
+    (69.09, "whoosh", "standard", 0.0),   # intake
+    (71.84, "clank", "hero", 0.0),   # swing
+    (78.06, "snap", "standard", 0.22),   # zero
+    (81.61, "paper", "texture", 0.22),   # room, filling a 7.1s hole between zero and heap
+    (85.15, "thud", "standard", 0.33),   # heap
+    (88.78, "tick", "standard", -0.33),   # sentence
+    (92.51, "paper", "texture", -0.11),   # room, filling a 7.5s hole between sentence and crack
+    (96.25, "snap", "standard", -0.22),   # crack
+    (100.47, "thud", "standard", -0.11),   # seat
+    (106.13, "clank", "standard", 0.0),   # pumps
+    (109.13, "ding", "standard", 0.11),   # meter
+    (113.15, "paper", "texture", -0.22),   # room, filling a 8.0s hole between meter and rise
+    (117.16, "riser", "hero", 0.0),   # rise
+    (121.28, "tick", "standard", 0.33),   # turn
+    (125.96, "stamp", "hero", 0.0),   # button
 ]
 
 
@@ -164,36 +164,36 @@ BED_ARC = [
     # arc now DUCKS HARD immediately before each measured gap and swells to 2.25 inside it.
     # Range matters more than level: LRA is the spread, and the spread has to survive loudnorm.
     (0.00, 0.34),
-    (14.12, 0.3),
-    (14.71, 2.25),
-    (15.39, 0.34),
-    (26.65, 0.3),
-    (27.25, 2.25),
-    (27.95, 0.34),
-    (31.20, 0.3),
-    (31.81, 2.25),
-    (32.51, 0.34),
-    (50.52, 0.3),
-    (51.10, 2.25),
-    (51.76, 0.34),
-    (52.19, 0.2),
-    (54.42, 1.05),
-    (57.89, 0.3),
-    (58.81, 2.25),
-    (59.82, 0.34),
-    (63.02, 0.3),
-    (63.62, 2.25),
-    (64.32, 0.34),
-    (74.60, 0.3),
-    (75.18, 2.25),
-    (75.85, 0.34),
-    (93.47, 2.05),
-    (104.46, 0.16),
-    (105.05, 0.3),
-    (105.72, 2.25),
-    (106.48, 0.34),
-    (106.69, 1.9),
-    (112.06, 0.9),
+    (15.58, 0.3),
+    (16.23, 2.25),
+    (16.98, 0.34),
+    (29.40, 0.3),
+    (30.07, 2.25),
+    (30.84, 0.34),
+    (34.42, 0.3),
+    (35.10, 2.25),
+    (35.87, 0.34),
+    (55.74, 0.3),
+    (56.38, 2.25),
+    (57.11, 0.34),
+    (57.58, 0.2),
+    (60.04, 1.05),
+    (63.87, 0.3),
+    (64.89, 2.25),
+    (66.00, 0.34),
+    (69.53, 0.3),
+    (70.19, 2.25),
+    (70.97, 0.34),
+    (82.31, 0.3),
+    (82.95, 2.25),
+    (83.69, 0.34),
+    (103.13, 2.05),
+    (115.25, 0.16),
+    (115.90, 0.3),
+    (116.64, 2.25),
+    (117.48, 0.34),
+    (117.71, 1.9),
+    (123.64, 0.9),
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
