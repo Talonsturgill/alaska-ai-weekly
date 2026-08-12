@@ -169,8 +169,19 @@ def main():
     # a fix I cannot see", about a caption defect that WAS fixed. Stills sample 14 moments
     # out of ~125 seconds, so a caption defect between two samples is unfalsifiable in
     # either direction. The cue list is 6KB and makes every caption in the film checkable.
-    _cues = [{"start": round(c["start"], 2), "end": round(c["end"], 2), "text": c["text"]}
-             for c in _props.get("captions", [])]
+    # episode_props.json now carries cues in the ENGINE's shape, {t, d, text}, because
+    # build_scenes converts at the boundary (2026-08-12: the props used to hand the engine
+    # {start, end}, which its reader compares against undefined, and the film shipped with an
+    # empty caption band for all 4602 frames). This reader still spoke the old shape and
+    # died on KeyError. Accept either, and emit start/end here because that is what a human
+    # grading a cue list wants to read.
+    def _se(c):
+        if "t" in c and "d" in c:
+            return round(c["t"], 2), round(c["t"] + c["d"], 2)
+        return round(c["start"], 2), round(c["end"], 2)
+
+    _cues = [{"start": s, "end": e, "text": c["text"]}
+             for c in _props.get("captions", []) for s, e in [_se(c)]]
     _j.dump({"note": "every open-caption cue in the delivered cut, in order, as built into "
                      "episode_props.json and rendered by the episode. Times are seconds from "
                      "the first frame. Grade caption text against THIS, not against the 14 "
