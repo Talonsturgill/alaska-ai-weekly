@@ -397,7 +397,10 @@ const S5: React.FC<SceneProps & {dur: number}> = (p) => {
         <Plate x={540} y={820} text={`${awards} AWARDS`} size={40} />
       </g>
       <g opacity={elig.o}>
-        <Plate x={540} y={1000} text="ALASKA NATIVE COMMUNITIES STAY ELIGIBLE" size={29} />
+        {/* Split across two plates: at size 29 the single string measured 798px and no x
+            could fit it under the content zoom (zoom_clip_check, 2026-08-12). */}
+        <Plate x={540} y={968} text="ALASKA NATIVE COMMUNITIES" size={29} />
+        <Plate x={540} y={1030} text="STAY ELIGIBLE" size={29} />
       </g>
     </Stage>
   );
@@ -661,7 +664,8 @@ const S11: React.FC<SceneProps & {dur: number}> = (p) => {
         <Plate x={540} y={1170} text="UNIVERSITY OF ALASKA ANCHORAGE  ·  380,000" size={25} />
       </g>
       <g opacity={pen.o}>
-        <Plate x={540} y={1250} text="NAME YOUR PROBLEM   NO MENU" size={31} fill={P.terracotta} />
+        {/* Lifted off the caption band (was y=1250, bottom 1354, band top 1336). */}
+        <Plate x={540} y={1186} text="NAME YOUR PROBLEM   NO MENU" size={31} fill={P.terracotta} />
       </g>
     </Stage>
   );
@@ -703,8 +707,9 @@ const S12: React.FC<SceneProps & {dur: number}> = (p) => {
         <Plate x={540} y={1082} text="THERMAL CONDUCTIVITY OF WARMING PERMAFROST" size={24} />
       </g>
       <g opacity={alak.o}>
-        <Plate x={540} y={1160} text="VILLAGE OF ALAKANUK TRIBE" size={30} />
-        <Plate x={540} y={1232} text="INFRASTRUCTURE COORDINATION" size={26} />
+        {/* Both lifted off the caption band (INFRASTRUCTURE was bottoming at 1329). */}
+        <Plate x={540} y={1108} text="VILLAGE OF ALAKANUK TRIBE" size={30} />
+        <Plate x={540} y={1180} text="INFRASTRUCTURE COORDINATION" size={26} />
       </g>
       {/* 4 FUNDED lands first and bright; the eight get their own later beat and their own
           still hold, because that is the payoff of the film's 88-second loop. Gate 0C. */}

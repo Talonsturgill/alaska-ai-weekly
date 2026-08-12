@@ -126,7 +126,11 @@ TAIL = 1.5  # hold after the last word
 # notice printing its own objections + the red stamp), S11 L14-L15 (THE DIP + one sheet + the
 # warm side step), S12 L16-L17 (twelve slips sort + the two named asks + four over eight below),
 # S13 L18-L19 (the verdict + the envelope closing + the button returning frame 1 inverted).
-SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 7, 8, 9, 12, 14, 16, 18]
+# Remapped 2026-08-12 for the round-2 VO recut: 20 lines became 17, so the old table's
+# last entry (18) no longer exists and every index past 6 pointed at the wrong sentence.
+# 13 shots, 17 lines. Each entry is the VO line a shot opens on; a shot holds until the
+# next entry, so lines 9, 11, 13 and 15 are absorbed into the shot before them.
+SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16]
 
 
 def _apply_caption_fixups(caps):
