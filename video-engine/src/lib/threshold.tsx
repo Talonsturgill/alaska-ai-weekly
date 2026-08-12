@@ -203,7 +203,17 @@ export const Gauge: React.FC<GaugeProps> = ({x, groundY, h, span, f, label, on =
         <rect x={x - 15} y={needleY - 4} width={64} height={8} fill={TH.brassDeep} stroke={INK} strokeWidth={3} />
         <RimLight d={`M ${x - 15} ${needleY - 4} L ${x + 49} ${needleY - 4}`} w={2.5} opacity={0.6} />
       </g>
+      {/* THE GAUGE NUMERAL LANDS ON THE SLAB, WHICH IS ALSO BONE (2026-08-12, panel round 4).
+          Set in TH.bone it was cream on cream: two judges reported reading "100,000" and
+          "300,000" as illegible in the frame where the film's central comparison is made,
+          one of them calling the pair unreadable outright. The numeral cannot be moved,
+          because its whole job is to sit at the height the needle points to, so it carries
+          its own ground instead: a dark chip behind it and an ink stroke around the glyphs,
+          which reads on the slab and on the wall alike. */}
+      <rect x={x + 50} y={needleY - 16} width={label.length * 19 + 18} height={38}
+            fill={INK} opacity={label ? 0.62 : 0} rx={3} />
       <text x={x + 58} y={needleY + 8} fill={TH.bone} fontSize={30}
+            stroke={INK} strokeWidth={4} paintOrder="stroke"
             fontFamily="JetBrains Mono, Consolas, monospace" letterSpacing={1}>{label}</text>
     </g>
   );

@@ -30,7 +30,11 @@ question is no: it has never scored high enough. Do not soften that in any repor
 | 1 | 5.68 / 5.04 / 6.02 | **5.68** | 153.5s cut, no captions, frozen strips |
 | 2 | 5.44 / 5.84 / 6.20 | **5.84** | same 153.5s cut, evidence rebuilt frame-accurately |
 | 3 | 6.92 / 6.21 / 5.83 | **6.21** | 119.57s recut, captions rendering |
-| 4 | not yet run | — | current bytes, all round-3 fixes landed |
+| 4 | 6.45 / 6.74 / 6.29 | **6.45** | 119.57s cut, Rise entrances, thesis on its line |
+| 5 | not yet run | — | current bytes, all round-4 fixes landed |
+
+**Round 4 returned ZERO hard blockers from all three judges, the first time in the run.**
+The remaining gap is craft, not correctness.
 
 **The current bytes are UNGRADED and ship_gate correctly BLOCKS on that.** Round 3 graded the
 pre-fix render. Recording 6.21 against the current cut would be precisely the stale-verdict

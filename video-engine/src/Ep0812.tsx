@@ -409,7 +409,7 @@ const S5: React.FC<SceneProps & {dur: number}> = (p) => {
   const f = useCurrentFrame();
   const rise = spring({frame: Math.max(0, f - 4), fps: FPS, config: SETTLE, durationInFrames: 34});
   const plateH = interpolate(rise, [0, 1], [0, 470]);
-  const nStart = at(p, 4, 3.4);
+  const nStart = at(p, 4, 1.6);
   // Count the WHOLE figure and format it, never a leading digit glued to a fixed tail.
   // A judge photographed "0,800,000" and "0 AWARDS" from the old mid-tween state, which is a
   // wrong number on screen and a hard fail. Every intermediate value is now a real number.
