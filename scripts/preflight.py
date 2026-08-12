@@ -44,6 +44,13 @@ CHECKS = [
     # change gets caught. 2026-08-08: "A I" on screen under a plate reading "AI".
     ("no phonetic respelling survived into the built props",
      [sys.executable, "scripts/caption_spelling_check.py"], True),
+    # Every other caption check in this list asks what the captions SAY or where they SIT.
+    # None of them asked whether they are on screen at all, so on 2026-08-12 a {start,end}
+    # cue met a {t,d} reader, matched no frame, and the film shipped 4602 frames of empty
+    # caption band with a clean preflight. Three judges found it. This reads the delivered
+    # bytes and asks the direct question.
+    ("the captions are actually on screen in the delivered cut",
+     [sys.executable, "scripts/caption_render_check.py"], True),
     # Two elements in the same pixels cost score in three separate panel rounds on
     # 2026-08-06 and were invisible to every other check, because each element is
     # individually fine and the defect lives only in the relationship.

@@ -353,6 +353,32 @@ def main():
     if cred:
         total_f += cred["frames"]
 
+    # THE CAPTION CONTRACT IS {t, d, text} AND IT IS NOT THE SHAPE captions.json USES
+    # (2026-08-12, found by a panel judge, not by any gate).
+    #
+    # captions.json is the forced-alignment output and speaks in {start, end}. Every caption
+    # component this engine has ever had reads {t, d} — Ep0812's is
+    #     cues.find((c) => t >= c.t && t < c.t + c.d)
+    # Handed a {start, end} cue, c.t is undefined, `t >= undefined` is false for every frame,
+    # and .find() returns undefined forever. The component's own guard (`if (!cue) return null`)
+    # then does exactly what it was written to do and draws nothing. So the film rendered with
+    # a completely empty caption band, all 4602 frames of it, and NOTHING objected: the props
+    # were valid JSON, the zod schema is only applied to Studio inputs and not to CLI --props,
+    # caption_check.py lints the caption TEXT rather than its delivery, and the pixel gates look
+    # at the story region. It took three judges reading 57 frames to notice.
+    #
+    # Convert here, at the boundary, because this is the one place that knows both shapes. Do
+    # not "fix" it by teaching the component to accept {start, end} as well: two accepted shapes
+    # is how a mismatch hides, and the next component would have to know both too.
+    caps = [{"t": round(float(c["start"]), 3),
+             "d": round(float(c["end"]) - float(c["start"]), 3),
+             "text": c["text"]}
+            for c in caps]
+    bad = [c for c in caps if c["d"] <= 0]
+    if bad:
+        raise SystemExit(f"build_scenes: {len(bad)} caption cue(s) have a non-positive duration "
+                         f"and would never display: {bad[:3]}")
+
     props = {"captions": caps, "scenes": scenes, "total": total_f,
              "lines": [round(L["start"], 3) for L in sorted(lines, key=lambda x: x["idx"])]}
     # voice-acting data (scripts/vo_envelope.py): per-frame mouth envelope + the
