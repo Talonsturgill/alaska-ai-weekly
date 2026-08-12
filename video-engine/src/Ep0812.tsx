@@ -618,10 +618,16 @@ const S9: React.FC<SceneProps & {dur: number}> = (p) => {
       {/* the one contract pulled forward with the clause circled */}
       <g opacity={contract.o * (1 - collapse)} transform={`translate(0 ${(1 - contract.o) * -60})`}>
         <Plate x={540} y={1010} text="FOUR CONTRACTS INTO ONE" size={34} />
+        {/* 'OVER THEIR OWN DATA' was here and it was the last living piece of KILLED c25
+            (2026-08-12, panel round 6). c25 was cut from the VO and the claim map, and this
+            plate was left behind, so the film went on asserting the vendor-data premise on
+            screen with no claim id and no VO line under it. Both judges filed it as a hard
+            blocker and Accuracy fell to 3.0 and 4.5. A claim is not killed until it is off
+            every surface: the script, the map, the post AND the picture. The circle stays,
+            because it marks the consolidation c12 actually describes. */}
         <Rise o={spread}>
-          <ellipse cx={540} cy={1096} rx={230 * spread} ry={40} fill="none"
+          <ellipse cx={540} cy={1062} rx={230 * spread} ry={38} fill="none"
                    stroke={P.terracotta} strokeWidth={7} />
-          <Plate x={540} y={1070} text="OVER THEIR OWN DATA" size={32} fill={P.terracotta} />
         </Rise>
       </g>
       {/* the collapse into one clean volume — the concession, drawn */}
@@ -630,7 +636,7 @@ const S9: React.FC<SceneProps & {dur: number}> = (p) => {
         <rect x={392} y={FLOOR - 430} width={296} height={430} fill={P.bone}
               stroke={INK} strokeWidth={5} />
         <RimLight d={`M 392 ${FLOOR - 430} L 688 ${FLOOR - 430}`} w={4} opacity={0.85} />
-        <Plate x={540} y={898} text="ONE BODY DOING THAT ONCE" size={31} />
+        <Plate x={540} y={862} text="ONE BODY DOING THAT ONCE" size={31} />
       </Rise>
       <Plate x={540} y={494} text="229 FEDERALLY RECOGNIZED TRIBES" size={34} />
     </Stage>

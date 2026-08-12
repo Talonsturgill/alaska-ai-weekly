@@ -255,6 +255,25 @@ def main():
               open(os.path.join(EV, "motion.json"), "w"), indent=2)
     print("  motion.json written:", {k: v["changed_pct"] for k, v in motion.items()})
 
+    import subprocess as _sp
+    # SAMPLE THE CREDITS CARD (2026-08-12, panel round 6). The still sampler walks the VO's
+    # named moves, and the credits sit AFTER the last word, so it never sampled them. Three
+    # judges in one round reported the CC BY 4.0 music credit as unverifiable or absent and
+    # docked Sound for it; the card was on screen the whole time, at 127.5s, and the pack
+    # simply stopped at 125.0. Attribution is a licence condition, so "the evidence cannot
+    # show it" is not an acceptable resting place. Grab a frame from the last two seconds.
+    try:
+        _dur = float(_sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                              "-of", "csv=p=0", a.video], capture_output=True,
+                             text=True).stdout.strip())
+        _t = max(0.0, _dur - 2.0)
+        _sp.run(["ffmpeg", "-v", "error", "-ss", f"{_t:.2f}", "-i", a.video, "-vframes", "1",
+                 "-q:v", "3", "-y", os.path.join(EV, f"f{_t:06.1f}.jpg")],
+                capture_output=True, text=True)
+        print(f"  credits card sampled at {_t:.1f}s")
+    except Exception as _e:
+        print(f"  !! could not sample the credits card: {_e}")
+
     # THE AUDIO REPORT IS PART OF THE PACK, SO THIS BUILDS IT (2026-08-12).
     # It used to be whatever audio_report.py last happened to write, whenever that was. On
     # this run the pack shipped a report describing a 153.5s cut to a panel grading a 119.57s
@@ -267,7 +286,6 @@ def main():
     # This one was the exception purely because it lived in a different script, so run that
     # script here. A stale number in an evidence pack is worse than a missing one: a missing
     # file is obviously missing, and a stale file is quietly believed.
-    import subprocess as _sp
     _ar = os.path.join(os.path.dirname(os.path.abspath(__file__)), "audio_report.py")
     _r = _sp.run([sys.executable, _ar], capture_output=True, text=True)
     if _r.returncode == 0:
