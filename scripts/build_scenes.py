@@ -115,7 +115,18 @@ TAIL = 1.5  # hold after the last word
 # not a supply), S8 L15-L16 (the payroll accusation, then the crack), S9 L17-L18 (THE ANSWER,
 # energy constrained seats into the core and the plant runs), S10 L19-L21 (THE SIGNATURE, the
 # ring lifts and the tag turns), S11 L22 (the button).
-SCENE_START_LINE = [0, 1, 2, 4, 6, 8, 11, 13, 15, 17, 19, 22]
+# 2026-08-12 "The Smallest Door": THIRTEEN shots (S1..S13 in video-engine/src/Ep0812.tsx)
+# onto 20 VO lines. S1 L0 (the sill lands + the definition), S2 L1 (the agency nameplate +
+# SEDS Alaska figures + the gauge locking at 100,000), S3 L2 (the desk lamp + a slip clearing
+# the low step), S4 L3 (the notice slides in + the chips go dark), S5 L4 (THE REHOOK, the money
+# grew + EAGLE at full size + eligibility unchanged), S6 L5-L6 (the second gauge at 300,000 +
+# the rail extending + the step tripling), S7 L7 (the page turns + the tall slot + its two
+# facts), S8 L8 (THE SIGNATURE RISE, every AI dollar into one slot), S9 L9-L11 (ACT 3, the
+# 229 field + the contract + the collapse into one volume), S10 L12-L13 (the envelopes + the
+# notice printing its own objections + the red stamp), S11 L14-L15 (THE DIP + one sheet + the
+# warm side step), S12 L16-L17 (twelve slips sort + the two named asks + four over eight below),
+# S13 L18-L19 (the verdict + the envelope closing + the button returning frame 1 inverted).
+SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 7, 8, 9, 12, 14, 16, 18]
 
 
 def _apply_caption_fixups(caps):

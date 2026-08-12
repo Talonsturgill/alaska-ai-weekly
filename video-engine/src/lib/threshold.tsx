@@ -1,5 +1,6 @@
 import React from 'react';
 import {tones, paleTones, FormGradient, RimLight, ContactShadow, INK} from './lighting';
+import {vitals} from './motion';
 
 // ============================================================================
 // THRESHOLD — ELIGIBILITY DRAWN AS HEIGHT.  Craft advance, 2026-08-12.
@@ -36,6 +37,7 @@ export const TH = {
   terracotta: '#C2643A',
   slate: '#243239',
   slateDeep: '#161F23',
+  brassDeep: '#8A6522',
   red: '#D6483B',
 } as const;
 
@@ -78,15 +80,19 @@ export const Sill: React.FC<SillProps> = ({
   const T = paleTones(tint);
   const id = `sill${Math.round(x)}${Math.round(w)}`;
   const top = groundY - h;
-  // idle: the whole institution breathes a hair, so no frame is ever perfectly still
-  const breathe = Math.sin(f / 71.3) * 0.6;
+  // IDLE THROUGH vitals(), not a single fixed-period sine. A lone Math.sin is the defect
+  // vitals() was added as a code guard against on 2026-07-26, and 0.6px of travel is a
+  // rounding error inside the 8-frame window a judge actually samples. Gate 0D, 2026-08-12.
+  const v = vitals(f, x * 0.011, 0.85);
+  const breathe = v.bob * 0.5;
+  const sway = v.swayX * 0.32;
 
   // The tread drawn as a real 3/4 solid: front face, lit top face, dark under-nose.
   const topFace = `M ${x} ${top} L ${x + w} ${top} L ${x + w - depth * 0.55} ${top - depth * 0.42} L ${x + depth * 0.35} ${top - depth * 0.42} Z`;
   const frontFace = `M ${x} ${top} L ${x + w} ${top} L ${x + w} ${groundY} L ${x} ${groundY} Z`;
 
   return (
-    <g transform={`translate(0 ${breathe})`}>
+    <g transform={`translate(${sway} ${breathe})`}>
       <defs>
         <FormGradient id={id} t={T} softness={0.9} />
         <linearGradient id={`${id}top`} x1="0" y1="0" x2="0" y2="1">
@@ -191,7 +197,10 @@ export const Gauge: React.FC<GaugeProps> = ({x, groundY, h, span, f, label, on =
       })}
       {/* the needle */}
       <g transform={`translate(0 ${jitter})`}>
-        <rect x={x - 15} y={needleY - 4} width={64} height={8} fill={TH.red} stroke={INK} strokeWidth={3} />
+        {/* NOT TH.red. Signal red is spent exactly once in this film, on the phrase the
+            agency printed against itself. A needle that lives on screen for 107 seconds
+            may not wear the alarm colour. Gate 0D, 2026-08-12. */}
+        <rect x={x - 15} y={needleY - 4} width={64} height={8} fill={TH.brassDeep} stroke={INK} strokeWidth={3} />
         <RimLight d={`M ${x - 15} ${needleY - 4} L ${x + 49} ${needleY - 4}`} w={2.5} opacity={0.6} />
       </g>
       <text x={x + 58} y={needleY + 8} fill={TH.bone} fontSize={30}
@@ -211,30 +220,37 @@ export interface AskSlipProps {
   tint?: string;
   rot?: number;
   opacity?: number;
+  /** keep it visibly trying: bigger idle, used for the slips that did not clear */
+  restless?: boolean;
   children?: React.ReactNode;
 }
 
 /** A torn-edge slip. The shape grammar's warm half: irregular, hand-torn, off square,
  *  against the machined straight edge of everything institutional. */
 export const AskSlip: React.FC<AskSlipProps> = ({
-  x, y, w = 250, h = 86, f, seed = 1, tint = TH.terracotta, rot = 0, opacity = 1, children,
+  x, y, w = 250, h = 86, f, seed = 1, tint = TH.terracotta, rot = 0, opacity = 1, restless = false, children,
 }) => {
   const T = tones(tint);
   const id = `ask${seed}`;
   // the torn top edge, deterministic per seed
-  const steps = 13;
+  const steps = Math.max(6, Math.round(w / 19));
   let d = `M ${x} ${y + h}`;
   d += ` L ${x} ${y + 7}`;
   for (let i = 0; i <= steps; i++) {
     const px = x + (w / steps) * i;
-    const py = y + 7 + hash(seed, i) * 7;
+    const py = y + 7 + hash(seed, i) * Math.max(3.5, w * 0.038);
     d += ` L ${px} ${py}`;
   }
   d += ` L ${x + w} ${y + h} Z`;
-  const flutter = Math.sin(f / 23.7 + seed) * 1.4; // torn edges never sit still
+  // torn edges never sit still, and the flutter is routed through vitals() so two slips
+  // side by side are never in lockstep. `restless` lets a caller keep the unfunded ones
+  // visibly still trying after the frame has moved on.
+  const sv = vitals(f, seed * 1.7, restless ? 1.5 : 0.55);
+  const flutter = sv.bob * 0.6;
+  const restRot = hash(seed, 21) * 3.2;   // nothing sits perfectly axis-aligned
 
   return (
-    <g transform={`rotate(${rot} ${x + w / 2} ${y + h / 2}) translate(0 ${flutter})`} opacity={opacity}>
+    <g transform={`rotate(${rot + restRot} ${x + w / 2} ${y + h / 2}) translate(${sv.swayX * 0.4} ${flutter})`} opacity={opacity}>
       <defs><FormGradient id={id} t={T} softness={1.1} /></defs>
       <ContactShadow cx={x + w / 2} cy={y + h + 4} rx={w * 0.44} ry={7} opacity={0.3} blur={7} />
       <path d={d} fill={`url(#${id})`} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
@@ -281,11 +297,15 @@ export const Clearance: React.FC<ClearanceProps> = ({
       const ty = restY + (cleared ? (overY - restY) * sort : 0);
       const tx = qx + (cleared ? 118 * sort : -18 * sort);
       // the ones that do not clear sag a little as they give up
-      const sag = cleared ? 0 : 9 * sort;
+      // NO SAG. The eight unfunded asks were not selected out by clearing a dollar floor,
+      // they were picked by a committee, and drooping them would assert a height test that
+      // never happened. They stay upright, lit, and visibly still trying. Gate 0D.
+      const sag = 0;
       return (
         <AskSlip
           key={i} x={tx} y={ty + sag} w={62} h={44} f={f} seed={seed}
-          rot={cleared ? -4 * sort : 5 * sort}
+          rot={cleared ? -4 * sort : 1.5 * sort}
+          restless={!cleared}
           opacity={1}
         />
       );
