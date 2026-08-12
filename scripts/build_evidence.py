@@ -255,6 +255,29 @@ def main():
               open(os.path.join(EV, "motion.json"), "w"), indent=2)
     print("  motion.json written:", {k: v["changed_pct"] for k, v in motion.items()})
 
+    # THE AUDIO REPORT IS PART OF THE PACK, SO THIS BUILDS IT (2026-08-12).
+    # It used to be whatever audio_report.py last happened to write, whenever that was. On
+    # this run the pack shipped a report describing a 153.5s cut to a panel grading a 119.57s
+    # one: last_word_ends_s 150.94 and gap entries at 129.52s and 134.98s, both past the end
+    # of the film, with loudness figures a full 0.65 LU off the delivered master. All three
+    # judges spotted it and one filed it as an evidence-hygiene flag, which is a judge's
+    # attention spent on our filing rather than on the film.
+    #
+    # Every other artifact in this directory is rebuilt from the delivered bytes each time.
+    # This one was the exception purely because it lived in a different script, so run that
+    # script here. A stale number in an evidence pack is worse than a missing one: a missing
+    # file is obviously missing, and a stale file is quietly believed.
+    import subprocess as _sp
+    _ar = os.path.join(os.path.dirname(os.path.abspath(__file__)), "audio_report.py")
+    _r = _sp.run([sys.executable, _ar], capture_output=True, text=True)
+    if _r.returncode == 0:
+        print("  audio_report.json rebuilt from the delivered cut")
+    else:
+        # Loud, and not fatal: the rest of the pack is still worth having, but nobody should
+        # be able to read past this and assume the report describes this film.
+        print("  !! audio_report.json COULD NOT BE REBUILT and may describe a different cut:")
+        print("     " + (_r.stderr or _r.stdout).strip()[-300:])
+
 
 if __name__ == "__main__":
     main()

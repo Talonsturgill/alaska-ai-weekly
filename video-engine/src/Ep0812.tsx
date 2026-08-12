@@ -603,7 +603,7 @@ const S9: React.FC<SceneProps & {dur: number}> = (p) => {
 const S10: React.FC<SceneProps & {dur: number}> = (p) => {
   const f = useCurrentFrame();
   const env = (i: number) => interpolate(f, [i * 2.4, i * 2.4 + 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const OBJ = ['OPPORTUNITY COSTS', 'INDIGENOUS DATA SOVEREIGNTY', 'CENTRALIZED PROGRAM DESIGN', 'TRIBAL READINESS'];
+  const OBJ = ['OPPORTUNITY COSTS', 'TRIBAL READINESS', 'CENTRALIZED PROGRAM DESIGN', 'INDIGENOUS DATA SOVEREIGNTY'];
   const line = (i: number) => ent(f, at(p, 13, 0.2 + i * 0.55), SNAP);
   const stampF = at(p, 13, 2.6);
   const stamp = spring({frame: Math.max(0, f - stampF), fps: FPS, config: SNAP, durationInFrames: 12});
@@ -622,7 +622,7 @@ const S10: React.FC<SceneProps & {dur: number}> = (p) => {
       <Plate x={540} y={500} text="THE AGENCY ASKED FOR COMMENT" size={33} />
       <Plate x={540} y={582} text="32 SUBMISSIONS" size={40} fill={P.brass} />
       <g opacity={interpolate(f, [at(p, 12, 3.0), at(p, 12, 4.0)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={668} text="AND PRINTED THE OBJECTIONS ITSELF" size={30} />
+        <Plate x={540} y={668} text="AND PRINTED THE OBJECTIONS" size={30} />
       </g>
       {OBJ.map((s, i) => {
         const e = line(i);
@@ -718,7 +718,7 @@ const S12: React.FC<SceneProps & {dur: number}> = (p) => {
       <Plate x={540} y={500} text="12 WROTE ONE DOWN" size={40} />
       <g opacity={nome.o}>
         <Plate x={540} y={1010} text="NOME JOINT UTILITIES SYSTEM" size={30} />
-        <Plate x={540} y={1082} text="THERMAL CONDUCTIVITY OF WARMING PERMAFROST" size={24} />
+        <Plate x={540} y={1082} text="THERMAL CONDUCTIVITY, WARMING GROUND" size={24} />
       </g>
       <g opacity={alak.o}>
         {/* Both lifted off the caption band (INFRASTRUCTURE was bottoming at 1329). */}
