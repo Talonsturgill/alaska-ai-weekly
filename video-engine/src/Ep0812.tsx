@@ -199,12 +199,18 @@ const backOut = (u: number): number => {
   const c1 = 1.70158, c3 = c1 + 1, x = Math.max(0, Math.min(1, u));
   return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
 };
-const Rise: React.FC<{o: number; dy?: number; children: React.ReactNode}> = ({o, dy = 26, children}) => (
-  <g opacity={Math.max(0, Math.min(1, o))}
-     transform={`translate(0 ${(dy * (1 - backOut(o))).toFixed(2)})`}>
-    {children}
-  </g>
-);
+const Rise: React.FC<{o: number; dy?: number; children: React.ReactNode}> = ({o, dy = 26, children}) => {
+  const rf = useCurrentFrame();
+  const settled = Math.max(0, Math.min(1, o));
+  // breath: only once the entrance has landed, so it never fights the overshoot
+  const breath = Math.sin(rf / 37) * 0.9 * settled;
+  return (
+    <g opacity={settled}
+       transform={`translate(0 ${(dy * (1 - backOut(o)) + breath).toFixed(2)})`}>
+      {children}
+    </g>
+  );
+};
 
 const Plate: React.FC<{
   x: number; y: number; text: string; size?: number; ls?: number;
@@ -221,6 +227,10 @@ const Plate: React.FC<{
     <g>
       <rect x={px + 4} y={y + 5} width={w} height={h} fill={INK} opacity={0.34} />
       <rect x={px} y={y} width={w} height={h} fill={fill} stroke={ink} strokeWidth={4} />
+      {/* form shading on the plate face itself: a lit top edge and a shaded lower body, so
+          the surface that carries most of the film's information is not its flattest. */}
+      <rect x={px + 2} y={y + 2} width={w - 4} height={h * 0.42} fill="#FFFFFF" opacity={0.13} />
+      <rect x={px + 2} y={y + h * 0.62} width={w - 4} height={h * 0.36} fill={INK} opacity={0.09} />
       <text x={px + padX} y={y + padY + fit * 0.78} fill={ink} fontSize={fit}
             fontFamily={MONO} letterSpacing={ls}>{text}</text>
     </g>
@@ -305,7 +315,7 @@ const S1: React.FC<SceneProps & {dur: number}> = (p) => {
           before a single term has been defined. Gate 0B rewrote this hook. */}
       <AskSlip x={hx} y={hy} w={190} h={66} f={f} seed={2} rot={hwalk * 7 - 3} />
       <Head x={540} y={806} text="THE SMALLEST" size={104} />
-      <Head x={540} y={912} text="GRANT THEY WRITE" size={86} />
+      <Head x={540} y={930} text="GRANT THEY WRITE" size={86} />
       <g opacity={card.o} transform={`translate(0 ${(1 - card.o) * 26})`}>
         <Plate x={540} y={1030} text="THE AWARD FLOOR" size={44} fill={P.brass} />
       </g>
@@ -413,12 +423,12 @@ const S5: React.FC<SceneProps & {dur: number}> = (p) => {
   // frame reads as a real number (that guarantee is why the raw/rounded split exists at all:
   // a judge once photographed "0,800,000" out of a mid-tween state).
   const easeOut = (u: number) => 1 - Math.pow(1 - Math.max(0, Math.min(1, u)), 3);
-  const moneyU = easeOut(interpolate(f, [nStart, nStart + 34], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const moneyU = easeOut(interpolate(f, [nStart, nStart + 20], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   const moneyRaw = moneyU * 24000000;
   const money = (Math.round(moneyRaw / 100000) * 100000).toLocaleString('en-US');
   // The awards counter used to skip 28 outright (27 then 29) because a 26-frame ramp over 31
   // values steps by more than one. Ease it and give it the frames to hit every integer.
-  const awardsU = easeOut(interpolate(f, [nStart + 6, nStart + 38], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const awardsU = easeOut(interpolate(f, [nStart + 4, nStart + 22], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   const awards = Math.round(awardsU * 31);
   const elig = ent(f, at(p, 4, 6.6), SETTLE);
   const T = paleTones(P.bone);
@@ -478,7 +488,7 @@ const S6: React.FC<SceneProps & {dur: number}> = (p) => {
         <Plate x={540} y={584} text="ALASKA ONLY  TO  NATIONAL" size={32} />
       </Rise>
       <Rise o={Math.min(1, s1)}>
-        <Head x={540} y={648} text="TRIPLED" size={128} />
+        <Head x={540} y={1044} text="TRIPLED" size={128} />
       </Rise>
     </Stage>
   );
