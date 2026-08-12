@@ -824,7 +824,7 @@ export const Ep0812: React.FC<z.infer<typeof ep0812Schema>> = ({
         <Captions cues={captions} />
         {credits ? (
           <Sequence from={totalF - (credits.frames ?? 195)} durationInFrames={credits.frames ?? 195} name="CREDITS">
-            <EndCredits {...credits} />
+            <EndCredits data={credits} durationInFrames={credits.frames ?? 195} />
           </Sequence>
         ) : null}
       </AbsoluteFill>
