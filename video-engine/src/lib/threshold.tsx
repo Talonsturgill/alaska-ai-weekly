@@ -210,11 +210,31 @@ export const Gauge: React.FC<GaugeProps> = ({x, groundY, h, span, f, label, on =
           because its whole job is to sit at the height the needle points to, so it carries
           its own ground instead: a dark chip behind it and an ink stroke around the glyphs,
           which reads on the slab and on the wall alike. */}
-      <rect x={x + 50} y={needleY - 16} width={label.length * 19 + 18} height={38}
-            fill={INK} opacity={label ? 0.62 : 0} rx={3} />
-      <text x={x + 58} y={needleY + 8} fill={TH.bone} fontSize={30}
-            stroke={INK} strokeWidth={4} paintOrder="stroke"
-            fontFamily="JetBrains Mono, Consolas, monospace" letterSpacing={1}>{label}</text>
+      {/* SIDE-FLIP (2026-08-12, ship-grade blocker). The label sat at x+58 unconditionally,
+          so a gauge standing at x=846 pushed "380,000" off the 1080 frame and it read "38"
+          on screen continuously from 94s to 104s. A number cut in half is a hard blocker in
+          config/dispatch_rubric.yaml, and it would crop worse in 4:5. Measure the label and
+          put it on whichever side of the post can actually hold it. */}
+      {(() => {
+        const lw = label.length * 19 + 18;
+        // THE FRAME EDGE IS NOT AT 1080 IN THESE COORDINATES. Scenes render inside a Stage
+        // with a content zoom (1.22) that magnifies outward from centre, so a label ending at
+        // raw x=1047 lands at 540 + (1047-540)*1.22 = 1158 on screen and is cut off. The
+        // first version of this guard measured raw x, which is why "380,000" still read as
+        // "38". The usable right edge in RAW coordinates is 540 + (1080-540)/1.22, about 983.
+        const right = x + 50 + lw <= 975;
+        const bx = right ? x + 50 : x - 34 - lw;
+        const tx = right ? x + 58 : x - 26 - lw;
+        return (
+          <g>
+            <rect x={bx} y={needleY - 16} width={lw} height={38}
+                  fill={INK} opacity={label ? 0.62 : 0} rx={3} />
+            <text x={tx} y={needleY + 8} fill={TH.bone} fontSize={30}
+                  stroke={INK} strokeWidth={4} paintOrder="stroke"
+                  fontFamily="JetBrains Mono, Consolas, monospace" letterSpacing={1}>{label}</text>
+          </g>
+        );
+      })()}
     </g>
   );
 };

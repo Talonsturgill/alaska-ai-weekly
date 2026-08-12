@@ -385,10 +385,7 @@ const S3: React.FC<SceneProps & {dur: number}> = (p) => {
       <ellipse cx={540} cy={FLOOR - 24} rx={430 * lamp} ry={104 * lamp}
                fill="#F0E2BC" opacity={0.20 * lamp} />
       <AskSlip x={sx} y={sy} w={172} h={62} f={f} seed={3} rot={walk * 8 - 4} />
-      <Plate x={540} y={880} text="A SUM ONE ADMINISTRATOR RUNS" size={36} />
-      <Rise o={interpolate(f, [at(p, 2, 2.6), at(p, 2, 3.4)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={960} text="YOU CAN WALK THROUGH THIS" size={34} fill={P.terracotta} />
-      </Rise>
+      <Plate x={540} y={880} text="A SUM ONE ADMINISTRATOR RUNS" size={36} fill={P.terracotta} />
     </Stage>
   );
 };
