@@ -332,7 +332,17 @@ def _credits():
 
 def main():
     lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
+    # FIXUPS RUN LAST, NOT FIRST (2026-08-12). They used to run only on the way IN, and
+    # _rebalance_cues re-splits cues from the word timings, which rebuilds cue text and
+    # throws the corrected spellings away. So the map was applied, discarded, and the
+    # respelling reached the props anyway: this run built "the A I three Action Institute"
+    # onto the screen with a caption_fixups map sitting right there declaring AI3.
+    # caption_spelling_check reads the BUILT PROPS, so it caught it, and its advice
+    # ("re-run build_scenes.py") could never help, because re-running reproduced it exactly.
+    # Apply on the way in AND on the way out; the inbound pass still helps rebalance split
+    # on corrected text.
     caps = _rebalance_cues(_apply_caption_fixups(json.load(open(os.path.join(OUT, "captions.json")))))
+    caps = _apply_caption_fixups(caps)
     start = {L["idx"]: L["start"] for L in lines}
     last_end = max(L["end"] for L in lines)
     total_s = last_end + TAIL
