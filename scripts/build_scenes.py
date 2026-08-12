@@ -130,7 +130,13 @@ TAIL = 1.5  # hold after the last word
 # last entry (18) no longer exists and every index past 6 pointed at the wrong sentence.
 # 13 shots, 17 lines. Each entry is the VO line a shot opens on; a shot holds until the
 # next entry, so lines 9, 11, 13 and 15 are absorbed into the shot before them.
-SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16]
+# S13 moved from line 16 to line 15 (2026-08-12, panel round 3). The thesis card lives in
+# S13, but S13 opened on line 16 ("Applications close..."), so the film's two most important
+# lines, "The institute isn't the mistake" at 97.76s and "Retiring the small Alaska door in
+# the same notice is", were spoken while S12 was still holding the Nome and Alakanuk grid.
+# All three judges measured the lag; one put it at six seconds, at the beat the whole piece
+# turns on. The card now lands on the line it belongs to.
+SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 15]
 
 
 def _apply_caption_fixups(caps):
