@@ -8,9 +8,22 @@ dispatch_target_seconds: 120
 dispatch_seconds_band:
 - 112
 - 130
+# MEASURED 2026-08-12 and the band below is CALIBRATED TO IT, not to an assumption.
+# Six Gemini takes of a 282 word script came back at 164.3, 175.4, 172.8, 151.4, 167.2 and
+# 156.2 seconds. That is 103 wpm, not the ~140 the old 262-282 band assumed, and every take
+# missed the 112-130s band. vo_synth_gemini's own runtime check computed it out loud: at this
+# rate a 120 second film wants about 206 words.
+#
+# The old band was measured on 2026-08-07 against a different prompt. What changed is that the
+# pace paragraph now names a runtime AND the direction plan carries inline pause tags, and the
+# two together slow the read well below the rate the band was set from. A band and a rate that
+# disagree will silently produce an off-format film on every run, which is what happened here.
+#
+# Do NOT trim a script late to chase this. Re-solving the shot map after the board is locked is
+# the documented way these films break. Write to the band below from the start instead.
 dispatch_vo_words_band:
-- 262
-- 282
+- 200
+- 220
 dispatch_history:
 - date: 2026-06-24
   topic: Cook Inlet beluga acoustic AI (NOAA + Microsoft AI for Good)
