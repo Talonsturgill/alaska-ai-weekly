@@ -31,10 +31,22 @@ question is no: it has never scored high enough. Do not soften that in any repor
 | 2 | 5.44 / 5.84 / 6.20 | **5.84** | same 153.5s cut, evidence rebuilt frame-accurately |
 | 3 | 6.92 / 6.21 / 5.83 | **6.21** | 119.57s recut, captions rendering |
 | 4 | 6.45 / 6.74 / 6.29 | **6.45** | 119.57s cut, Rise entrances, thesis on its line |
-| 5 | not yet run | — | current bytes, all round-4 fixes landed |
+| 5 | 6.69 / 6.82 / 6.23 | **6.69** | 119.57s, gauge numerals grounded, counter fixed |
+| 6 | 6.02 / 5.88 / 5.76 | **5.88** | 129.67s, c25 recut — REGRESSED, see below |
+| 7 | not yet run | — | current bytes, c25 fully removed from every surface |
 
 **Round 4 returned ZERO hard blockers from all three judges, the first time in the run.**
-The remaining gap is craft, not correctness.
+Round 5 reached 6.69 with Accuracy at 9.0 from two judges.
+
+**ROUND 6 REGRESSED TO 5.88 AND IT WAS SELF-INFLICTED.** c25 ("AI comes with a vendor
+contract") was killed from the VO and the claim map after round 5, and left standing in two
+places: the on-screen plate "OVER THEIR OWN DATA" and post.txt's steelman paragraph. The film
+kept asserting the premise with no claim id and no VO line under it. Accuracy fell to 3.0 /
+4.5 / 6.0. Both surfaces are now clean.
+
+**THE RULE THIS COST TWICE (c24, then c25): A CLAIM IS NOT KILLED UNTIL IT IS OFF EVERY
+SURFACE — the script, the per-line map, the post AND the picture.** Cutting the spoken line is
+the easy half; the plate keeps talking. Grep every surface before calling a kill done.
 
 **The current bytes are UNGRADED and ship_gate correctly BLOCKS on that.** Round 3 graded the
 pre-fix render. Recording 6.21 against the current cut would be precisely the stale-verdict
@@ -52,7 +64,7 @@ failure ship_gate was written to make impossible. Do not record a verdict the pa
 ## NEXT ACTION, in order
 
 1. `python3 scripts/build_evidence.py` if anything re-rendered since the last build
-2. Convene panel round 4: 3 `scorer` agents, brief at `/tmp/brief.md` (regenerate if the
+2. Convene panel round 7: 3 `scorer` agents, brief at `/tmp/brief.md` (regenerate if the
    container was recycled; it names the pack paths and carries the corrections below)
 3. `ship_gate.py record --median M --judges a,b,c` then `ship_gate.py check`
 4. **Only on a passing median:** upload cuts, build the email through

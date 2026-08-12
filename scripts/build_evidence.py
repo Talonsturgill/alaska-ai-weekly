@@ -268,7 +268,7 @@ def main():
                              text=True).stdout.strip())
         _t = max(0.0, _dur - 2.0)
         _sp.run(["ffmpeg", "-v", "error", "-ss", f"{_t:.2f}", "-i", a.video, "-vframes", "1",
-                 "-q:v", "3", "-y", os.path.join(EV, f"f{_t:06.1f}.jpg")],
+                 "-q:v", "3", "-y", os.path.join(EV, f"f{_t:05.1f}.jpg")],
                 capture_output=True, text=True)
         print(f"  credits card sampled at {_t:.1f}s")
     except Exception as _e:
