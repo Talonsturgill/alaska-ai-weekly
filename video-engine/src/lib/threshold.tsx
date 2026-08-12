@@ -1,0 +1,294 @@
+import React from 'react';
+import {tones, paleTones, FormGradient, RimLight, ContactShadow, INK} from './lighting';
+
+// ============================================================================
+// THRESHOLD — ELIGIBILITY DRAWN AS HEIGHT.  Craft advance, 2026-08-12.
+//
+// The shelf already has gates that OPEN and CLOSE (ThresholdGate 2026-07-31,
+// CheckpointGateLever 2026-07-22). Both answer a boolean: are you let through.
+// Neither can express the thing this Dispatch is actually about, which is that a
+// rule can stay open to everyone and still exclude by SIZE. An award floor does
+// not refuse anybody. It just gets taller.
+//
+// So this module draws a rule as a STEP, and it draws who can clear it. Three
+// pieces, and they are deliberately separable so a future film can take one:
+//   Sill       — a threshold whose step height is a driven parameter
+//   Gauge      — a brass rule reading that height in the caller's own unit
+//   Clearance  — a queue of objects sorted, visibly, into cleared and not
+//
+// Any future dispatch about a cutoff, a minimum, a quota, a bar or a means test
+// can cast this instead of improvising it. That is the point of putting it in lib/.
+//
+// HOUSE RULES BAKED IN, not left to the caller:
+//  - everything that touches ground casts a ContactShadow (DISPATCH_STANDARD §1)
+//  - no flat single-tone fills; every face is a FormGradient off tones()/paleTones()
+//  - bone is a pale surface, so it shades with paleTones(), never tones() (the
+//    2026-07-30 lesson: tones() turns a near-white base into coloured glass)
+//  - nothing here draws a human figure, and nothing here takes a face. This film's
+//    cultural ruling forbids characterizing anything but paperwork, and a threshold
+//    with eyes would be the exact violation.
+// ============================================================================
+
+export const TH = {
+  bone: '#D9D3C4',
+  boneDeep: '#B9B2A1',
+  brass: '#C99A3B',
+  terracotta: '#C2643A',
+  slate: '#243239',
+  slateDeep: '#161F23',
+  red: '#D6483B',
+} as const;
+
+/** Deterministic hash in [-1,1]. Never Math.random — it breaks resume and re-render parity. */
+const hash = (a: number, b: number): number => {
+  let h = Math.imul(a + 0x9e37, 0x85ebca6b) ^ Math.imul(b + 0x1b3f, 0xc2b2ae35);
+  h = Math.imul(h ^ (h >>> 13), 0x27d4eb2d);
+  return (((h ^ (h >>> 15)) >>> 0) / 4294967295) * 2 - 1;
+};
+
+// ---------------------------------------------------------------- the sill
+export interface SillProps {
+  /** left edge of the threshold in scene space */
+  x: number;
+  /** the FLOOR line the sill stands on (y of the ground plane) */
+  groundY: number;
+  /** width of the step */
+  w: number;
+  /** STEP HEIGHT in px. This is the whole idea: the rule is a number, drawn as a height. */
+  h: number;
+  /** frame, for idle life */
+  f: number;
+  /** 0..1 how lit the jamb lamp is. A dark lamp means the slot is closed. */
+  lamp?: number;
+  /** depth of the tread going back into the frame (2.5D, not a flat rectangle) */
+  depth?: number;
+  tint?: string;
+  /** draws the jamb + lintel above the step. Off for a bare step. */
+  jamb?: boolean;
+  /** how many lamp slots sit in the lintel, and how many are still lit */
+  lampSlots?: number;
+  lampsLit?: number;
+}
+
+/** A threshold. The step is the rule; the jamb and lintel are the institution around it. */
+export const Sill: React.FC<SillProps> = ({
+  x, groundY, w, h, f, lamp = 1, depth = 54, tint = TH.bone,
+  jamb = true, lampSlots = 0, lampsLit = 0,
+}) => {
+  const T = paleTones(tint);
+  const id = `sill${Math.round(x)}${Math.round(w)}`;
+  const top = groundY - h;
+  // idle: the whole institution breathes a hair, so no frame is ever perfectly still
+  const breathe = Math.sin(f / 71.3) * 0.6;
+
+  // The tread drawn as a real 3/4 solid: front face, lit top face, dark under-nose.
+  const topFace = `M ${x} ${top} L ${x + w} ${top} L ${x + w - depth * 0.55} ${top - depth * 0.42} L ${x + depth * 0.35} ${top - depth * 0.42} Z`;
+  const frontFace = `M ${x} ${top} L ${x + w} ${top} L ${x + w} ${groundY} L ${x} ${groundY} Z`;
+
+  return (
+    <g transform={`translate(0 ${breathe})`}>
+      <defs>
+        <FormGradient id={id} t={T} softness={0.9} />
+        <linearGradient id={`${id}top`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={T.key} />
+          <stop offset="100%" stopColor={T.base} />
+        </linearGradient>
+      </defs>
+
+      {/* AO where the step meets the floor. Everything grounded casts. */}
+      <ContactShadow cx={x + w / 2} cy={groundY + 3} rx={w * 0.56} ry={13} opacity={0.44} blur={13} />
+
+      {/* front face of the step */}
+      <path d={frontFace} fill={`url(#${id})`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      {/* the lit top face — this is what makes it read as a step and not a wall */}
+      <path d={topFace} fill={`url(#${id}top)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      {/* dark nose under the lip, the shadow the tread throws on its own face */}
+      <rect x={x} y={top} width={w} height={9} fill={INK} opacity={0.26} />
+      {/* rim on the leading edge: the brightest line in frame, so the eye finds the rule */}
+      <RimLight d={`M ${x} ${top} L ${x + w} ${top}`} w={4} opacity={0.85} />
+
+      {/* tread scoring, deterministic, so a tall step does not read as a flat slab */}
+      {Array.from({length: Math.max(0, Math.floor(h / 46))}, (_, i) => (
+        <rect key={i} x={x + 8} y={top + 22 + i * 46} width={w - 16} height={3}
+              fill={INK} opacity={0.13} />
+      ))}
+
+      {jamb && (
+        <g>
+          {/* left jamb rising out of frame — the institution the step belongs to */}
+          <rect x={x - 46} y={top - 640} width={46} height={640 + h} fill={T.core}
+                stroke={INK} strokeWidth={5} />
+          <rect x={x - 40} y={top - 634} width={9} height={628 + h} fill={T.key} opacity={0.45} />
+          {/* lintel */}
+          <rect x={x - 46} y={top - 700} width={w + 92} height={62} fill={T.core}
+                stroke={INK} strokeWidth={5} />
+          {/* lamp slots in the lintel. Lit ones are brass, dark ones are just holes. */}
+          {Array.from({length: lampSlots}, (_, i) => {
+            const lit = i < lampsLit;
+            const lx = x + (w / (lampSlots + 1)) * (i + 1);
+            const flick = lit ? 0.86 + 0.14 * Math.sin(f / 9 + i * 2.1) : 0;
+            return (
+              <g key={i}>
+                <rect x={lx - 17} y={top - 686} width={34} height={34} rx={3}
+                      fill={lit ? TH.brass : '#0C1316'} stroke={INK} strokeWidth={3} opacity={lit ? flick : 1} />
+                {lit && (
+                  <rect x={lx - 17} y={top - 686} width={34} height={34} rx={3}
+                        fill={TH.brass} opacity={0.34 * flick} style={{filter: 'blur(7px)'}} />
+                )}
+              </g>
+            );
+          })}
+          {/* the intake slot in the jamb, dimmed by `lamp` */}
+          <rect x={x - 38} y={top - 150} width={30} height={96} rx={4}
+                fill="#0C1316" stroke={INK} strokeWidth={3} />
+          <rect x={x - 38} y={top - 150} width={30} height={96} rx={4}
+                fill={TH.brass} opacity={0.5 * lamp} />
+        </g>
+      )}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- the gauge
+export interface GaugeProps {
+  x: number;
+  groundY: number;
+  /** the height the needle reads, in the same px space as Sill.h */
+  h: number;
+  /** total travel of the rule, so ticks stay proportional */
+  span: number;
+  f: number;
+  /** what the needle currently reads, already formatted by the caller */
+  label: string;
+  /** 0..1, lets the caller fade the whole instrument out */
+  on?: number;
+}
+
+/** A brass rule standing beside the sill, reading its height in the caller's unit.
+ *  The gauge is what turns a height back into a NUMBER, which is the round trip the
+ *  film needs: rule to picture to rule. */
+export const Gauge: React.FC<GaugeProps> = ({x, groundY, h, span, f, label, on = 1}) => {
+  const T = tones(TH.brass);
+  const id = `gauge${Math.round(x)}`;
+  const top = groundY - span;
+  const needleY = groundY - h;
+  const jitter = Math.sin(f / 6.3) * 0.7; // the needle never sits perfectly dead
+
+  return (
+    <g opacity={on}>
+      <defs><FormGradient id={id} t={T} softness={0.8} /></defs>
+      <ContactShadow cx={x + 11} cy={groundY + 2} rx={26} ry={8} opacity={0.34} blur={8} />
+      {/* the rule */}
+      <rect x={x} y={top} width={22} height={span} fill={`url(#${id})`} stroke={INK} strokeWidth={4} />
+      {/* ticks, major every fifth */}
+      {Array.from({length: Math.floor(span / 30)}, (_, i) => {
+        const ty = groundY - i * 30;
+        const major = i % 5 === 0;
+        return (
+          <rect key={i} x={x + (major ? 0 : 8)} y={ty} width={major ? 34 : 20} height={major ? 4 : 2.5}
+                fill={INK} opacity={major ? 0.72 : 0.42} />
+        );
+      })}
+      {/* the needle */}
+      <g transform={`translate(0 ${jitter})`}>
+        <rect x={x - 15} y={needleY - 4} width={64} height={8} fill={TH.red} stroke={INK} strokeWidth={3} />
+        <RimLight d={`M ${x - 15} ${needleY - 4} L ${x + 49} ${needleY - 4}`} w={2.5} opacity={0.6} />
+      </g>
+      <text x={x + 58} y={needleY + 8} fill={TH.bone} fontSize={30}
+            fontFamily="JetBrains Mono, Consolas, monospace" letterSpacing={1}>{label}</text>
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- the ask
+export interface AskSlipProps {
+  x: number; y: number;
+  w?: number; h?: number;
+  f: number;
+  /** seed drives the torn edge, so every slip tears differently and deterministically */
+  seed?: number;
+  /** terracotta by default — reserved, by construction, for a slip carrying a named problem */
+  tint?: string;
+  rot?: number;
+  opacity?: number;
+  children?: React.ReactNode;
+}
+
+/** A torn-edge slip. The shape grammar's warm half: irregular, hand-torn, off square,
+ *  against the machined straight edge of everything institutional. */
+export const AskSlip: React.FC<AskSlipProps> = ({
+  x, y, w = 250, h = 86, f, seed = 1, tint = TH.terracotta, rot = 0, opacity = 1, children,
+}) => {
+  const T = tones(tint);
+  const id = `ask${seed}`;
+  // the torn top edge, deterministic per seed
+  const steps = 13;
+  let d = `M ${x} ${y + h}`;
+  d += ` L ${x} ${y + 7}`;
+  for (let i = 0; i <= steps; i++) {
+    const px = x + (w / steps) * i;
+    const py = y + 7 + hash(seed, i) * 7;
+    d += ` L ${px} ${py}`;
+  }
+  d += ` L ${x + w} ${y + h} Z`;
+  const flutter = Math.sin(f / 23.7 + seed) * 1.4; // torn edges never sit still
+
+  return (
+    <g transform={`rotate(${rot} ${x + w / 2} ${y + h / 2}) translate(0 ${flutter})`} opacity={opacity}>
+      <defs><FormGradient id={id} t={T} softness={1.1} /></defs>
+      <ContactShadow cx={x + w / 2} cy={y + h + 4} rx={w * 0.44} ry={7} opacity={0.3} blur={7} />
+      <path d={d} fill={`url(#${id})`} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+      <RimLight d={`M ${x} ${y + h} L ${x + w} ${y + h}`} w={2.5} opacity={0.45} />
+      {children}
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------- clearance
+export interface ClearanceItem {
+  /** the height this item can reach. Below the sill's h and it does not clear. */
+  reach: number;
+  label?: string;
+  seed?: number;
+}
+
+export interface ClearanceProps {
+  items: ClearanceItem[];
+  /** the step height they are being tested against */
+  h: number;
+  x: number;
+  groundY: number;
+  f: number;
+  /** 0..1 drives the sort. 0 = all queued, 1 = fully sorted into cleared and not. */
+  sort: number;
+  spread?: number;
+}
+
+/** Takes a queue and shows, physically, which members clear the step and which do not.
+ *  This is the component that makes an eligibility rule legible without a single word:
+ *  the ones that clear rise over the tread, the ones that do not settle at its foot. */
+export const Clearance: React.FC<ClearanceProps> = ({
+  items, h, x, groundY, f, sort, spread = 74,
+}) => (
+  <g>
+    {items.map((it, i) => {
+      const cleared = it.reach >= h;
+      const seed = it.seed ?? i + 1;
+      // queued position, then either lifted over the tread or settled at its foot
+      const qx = x + i * spread;
+      const restY = groundY - 96;
+      const overY = groundY - h - 104;
+      const ty = restY + (cleared ? (overY - restY) * sort : 0);
+      const tx = qx + (cleared ? 118 * sort : -18 * sort);
+      // the ones that do not clear sag a little as they give up
+      const sag = cleared ? 0 : 9 * sort;
+      return (
+        <AskSlip
+          key={i} x={tx} y={ty + sag} w={62} h={44} f={f} seed={seed}
+          rot={cleared ? -4 * sort : 5 * sort}
+          opacity={1}
+        />
+      );
+    })}
+  </g>
+);
