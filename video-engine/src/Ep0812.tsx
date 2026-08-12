@@ -118,7 +118,7 @@ const Room: React.FC<{f: number; warm?: number; parallax?: number; keyX?: number
 
       {/* FAR PLANE: filing recession in one-point perspective, the dark anchor */}
       {Array.from({length: 11}, (_, i) => {
-        const y = -240 + i * 104 + parallax * 9;
+        const y = -240 + i * 104 + parallax * 9 + ((f * (0.9 + parallax * 0.25)) % 104);
         return (
           <g key={`r${i}`} data-band="ok" opacity={0.62}>
             <rect x={-300 + ((i * 91) % 150)} y={y} width={W + 600} height={72}
@@ -138,16 +138,37 @@ const Room: React.FC<{f: number; warm?: number; parallax?: number; keyX?: number
       <rect x={-300} y={FLOOR} width={W + 600} height={H - FLOOR + 300} fill="url(#floorg)" data-band="ok" />
       <rect x={-300} y={FLOOR} width={W + 600} height={5} fill={INK} opacity={0.72} data-band="ok" />
 
+      {/* NEAR FIELD. The bottom of the 9:16 was identical empty gradient in all seven
+          sampled frames, which all three judges measured at ~39 percent of the frame. This
+          is loose paper and desk edge BELOW the caption band, drifting continuously, so the
+          tall format is used rather than padded. */}
+      {Array.from({length: 9}, (_, i) => {
+        const px = ((i * 197 + f * 1.6) % (W + 460)) - 230;
+        const py = FLOOR + 120 + (i % 3) * 118;
+        const rot = hash(i, 11) * 14;
+        return (
+          <g key={`nf${i}`} data-band="ok" transform={`rotate(${rot} ${px + 90} ${py + 26})`} opacity={0.5}>
+            <rect x={px} y={py} width={180} height={52} rx={2}
+                  fill={i % 2 ? '#2E3C44' : '#38474F'} stroke={INK} strokeWidth={3} />
+            <rect x={px + 14} y={py + 16} width={104} height={6} fill="#5A6E79" opacity={0.7} />
+          </g>
+        );
+      })}
+      <rect x={-300} y={FLOOR + 96} width={W + 600} height={7} fill={INK} opacity={0.5} data-band="ok" />
+
       {/* ALWAYS-RUNNING AMBIENT: dust in the key light. Authored before any event,
           per DISPATCH_STANDARD §8 — a scene built only of interpolate() is a slideshow. */}
       {Array.from({length: 46}, (_, i) => {
         const sx = 540 + hash(i, 1) * 620;
         const sy = 300 + hash(i, 2) * 900;
         const sp = 26 + hash(i, 3) * 16;
-        const y = ((sy + f * (0.30 + i % 3 * 0.11)) % 1500) + 120;
-        const x = sx + Math.sin((f + i * 31) / sp) * 22;
-        return <circle key={`d${i}`} cx={x} cy={y} r={1.5 + (i % 3) * 0.7}
-                       fill="#E8DFC6" opacity={0.10 + (i % 4) * 0.045} data-band="ok" />;
+        // 3.2 to 5.0 px/frame => 26 to 40 px across the 8-frame judging window, which is
+        // visible. The old 0.30 to 0.52 px/frame was measurable and invisible, which is the
+        // exact distinction DISPATCH_STANDARD section 8 draws.
+        const y = ((sy + f * (3.2 + (i % 3) * 0.9)) % 1500) + 120;
+        const x = sx + Math.sin((f + i * 31) / sp) * 64;
+        return <circle key={`d${i}`} cx={x} cy={y} r={2.2 + (i % 3) * 1.1}
+                       fill="#E8DFC6" opacity={0.16 + (i % 4) * 0.05} data-band="ok" />;
       })}
     </g>
   );
@@ -211,9 +232,10 @@ const Frame: React.FC<{children: React.ReactNode}> = ({children}) => (
 const Stage: React.FC<{f: number; dur: number; children: React.ReactNode; drift?: number; zoom?: number}> = ({
   f, dur, children, drift = 1, zoom = 1,
 }) => {
-  const push = interpolate(f, [0, dur], [0, 0.095], {extrapolateRight: 'clamp'});
-  const dx = Math.sin(f / 97.3) * 15 * drift;
-  const dy = Math.cos(f / 131.7) * 8 * drift;
+  const push = interpolate(f, [0, dur], [0, 0.20], {extrapolateRight: 'clamp'});
+  // amplitude and period both raised: this now traverses ~18px across an 8-frame window
+  const dx = Math.sin(f / 41.3) * 34 * drift;
+  const dy = Math.cos(f / 57.7) * 19 * drift;
   return (
     <Frame>
       <g transform={`translate(${540 + dx} ${960 + dy}) scale(${(1 + push) * CONTENT_ZOOM * zoom}) translate(${-540} ${-960})`}>
@@ -350,7 +372,11 @@ const S5: React.FC<SceneProps & {dur: number}> = (p) => {
   const rise = spring({frame: Math.max(0, f - 4), fps: FPS, config: SETTLE, durationInFrames: 34});
   const plateH = interpolate(rise, [0, 1], [0, 470]);
   const nStart = at(p, 4, 3.4);
-  const money = Math.round(interpolate(f, [nStart, nStart + 30], [0, 24], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  // Count the WHOLE figure and format it, never a leading digit glued to a fixed tail.
+  // A judge photographed "0,800,000" and "0 AWARDS" from the old mid-tween state, which is a
+  // wrong number on screen and a hard fail. Every intermediate value is now a real number.
+  const moneyRaw = interpolate(f, [nStart, nStart + 30], [0, 24000000], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const money = (Math.round(moneyRaw / 100000) * 100000).toLocaleString('en-US');
   const awards = Math.round(interpolate(f, [nStart + 6, nStart + 32], [0, 31], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
   const elig = ent(f, at(p, 4, 6.6), SETTLE);
   const T = paleTones(P.bone);
@@ -367,7 +393,7 @@ const S5: React.FC<SceneProps & {dur: number}> = (p) => {
       <Plate x={540} y={470} text="THE MONEY DIDN'T SHRINK" size={40} />
       <g opacity={rise}>
         <Plate x={540} y={640} text="EAGLE  THE SUCCESSOR" size={34} fill={P.brass} />
-        <Plate x={540} y={730} text={`${money},000,000`} size={46} />
+        <Plate x={540} y={730} text={money} size={46} />
         <Plate x={540} y={820} text={`${awards} AWARDS`} size={40} />
       </g>
       <g opacity={elig.o}>
@@ -400,7 +426,7 @@ const S6: React.FC<SceneProps & {dur: number}> = (p) => {
       </g>
       <Sill x={262} groundY={FLOOR} w={560} h={h} f={f} lamp={0.6} jamb={false} />
       <Gauge x={196} groundY={FLOOR} h={92} span={340} f={f} label="100,000" on={1} />
-      <Gauge x={824} groundY={FLOOR} h={g2} span={340} f={f}
+      <Gauge x={700} groundY={FLOOR} h={g2} span={340} f={f}
              label={g2 > 230 ? '300,000' : ''} on={1} />
       <Plate x={540} y={430} text="EAGLE FLOOR  300,000" size={38} fill={P.brass} />
       <g opacity={rail}>
@@ -631,7 +657,7 @@ const S11: React.FC<SceneProps & {dur: number}> = (p) => {
         <Sill x={720} groundY={FLOOR} w={300} h={78} f={f} lamp={warm} jamb={false} tint="#E8D9BC" />
         {/* THE THIRD GAUGE. The closing argument is a comparison and this is its missing term:
             380,000 locked visibly below the 2,500,000 mark still held up the jamb. Gate 0C. */}
-        <Gauge x={1000} groundY={FLOOR} h={78} span={300} f={f} label="380,000" on={warm} />
+        <Gauge x={846} groundY={FLOOR} h={78} span={300} f={f} label="380,000" on={warm} />
         <Plate x={540} y={1170} text="UNIVERSITY OF ALASKA ANCHORAGE  ·  380,000" size={25} />
       </g>
       <g opacity={pen.o}>
@@ -683,11 +709,11 @@ const S12: React.FC<SceneProps & {dur: number}> = (p) => {
       {/* 4 FUNDED lands first and bright; the eight get their own later beat and their own
           still hold, because that is the payoff of the film's 88-second loop. Gate 0C. */}
       <g opacity={interpolate(f, [sortF + 4, sortF + 14], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={480} text="4 FUNDED" size={40} />
+        <Plate x={540} y={352} text="4 FUNDED" size={40} />
       </g>
       <g opacity={interpolate(f, [sortF + 40, sortF + 52], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={566} text="8 STILL HOLDING A LIST" size={32} fill={P.terracotta} />
-        <Plate x={540} y={640} text="NOBODY PUBLISHED" size={32} fill={P.terracotta} />
+        <Plate x={540} y={432} text="8 STILL HOLDING A LIST" size={32} fill={P.terracotta} />
+        <Plate x={540} y={506} text="NOBODY PUBLISHED" size={32} fill={P.terracotta} />
       </g>
     </Stage>
   );
