@@ -684,20 +684,20 @@ const S12: React.FC<SceneProps & {dur: number}> = (p) => {
       <g opacity={1 - sort}>
         {items.map((it, i) => {
           const a = arrive(i);
-          const gx = 150 + (i % 4) * 210;
-          const gy = 470 + Math.floor(i / 4) * 106;
+          const gx = 186 + (i % 4) * 178;
+          const gy = 700 + Math.floor(i / 4) * 106;
           return (
             <g key={i} opacity={a} transform={`translate(${(1 - a) * (hash(i, 5) * 300)} ${(1 - a) * -180})`}>
-              <AskSlip x={gx} y={gy} w={172} h={60} f={f} seed={it.seed} rot={hash(i, 6) * 5} />
+              <AskSlip x={gx} y={gy} w={150} h={58} f={f} seed={it.seed} rot={hash(i, 6) * 5} />
             </g>
           );
         })}
       </g>
       {/* the sort: four clear the step, eight settle at its foot */}
       <g opacity={sort}>
-        <Clearance items={items} h={96} x={150} groundY={FLOOR} f={f} sort={sort} spread={62} />
+        <Clearance items={items} h={118} x={196} groundY={FLOOR} f={f} sort={sort} spread={58} />
       </g>
-      <Plate x={540} y={400} text="12 WROTE ONE DOWN" size={40} />
+      <Plate x={540} y={372} text="12 WROTE ONE DOWN" size={40} />
       <g opacity={nome.o}>
         <Plate x={540} y={1010} text="NOME JOINT UTILITIES SYSTEM" size={30} />
         <Plate x={540} y={1082} text="THERMAL CONDUCTIVITY OF WARMING PERMAFROST" size={24} />
@@ -709,11 +709,11 @@ const S12: React.FC<SceneProps & {dur: number}> = (p) => {
       {/* 4 FUNDED lands first and bright; the eight get their own later beat and their own
           still hold, because that is the payoff of the film's 88-second loop. Gate 0C. */}
       <g opacity={interpolate(f, [sortF + 4, sortF + 14], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={352} text="4 FUNDED" size={40} />
+        <Plate x={540} y={462} text="4 FUNDED" size={40} />
       </g>
       <g opacity={interpolate(f, [sortF + 40, sortF + 52], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={432} text="8 STILL HOLDING A LIST" size={32} fill={P.terracotta} />
-        <Plate x={540} y={506} text="NOBODY PUBLISHED" size={32} fill={P.terracotta} />
+        <Plate x={540} y={542} text="8 STILL HOLDING A LIST" size={32} fill={P.terracotta} />
+        <Plate x={540} y={616} text="NOBODY PUBLISHED" size={32} fill={P.terracotta} />
       </g>
     </Stage>
   );
