@@ -299,7 +299,7 @@ const S2: React.FC<SceneProps & {dur: number}> = (p) => {
       <Gauge x={196} groundY={FLOOR} h={gauge} span={300} f={f}
              label={gauge > 80 ? '100,000' : ''} on={interpolate(f, [gStart - 8, gStart], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} />
       <g opacity={nameplate.o} transform={`translate(0 ${(1 - nameplate.o) * -20})`}>
-        <Plate x={540} y={430} text="ADMINISTRATION FOR NATIVE AMERICANS" size={31} fill={P.brass} />
+        <Plate x={540} y={496} text="ADMINISTRATION FOR NATIVE AMERICANS" size={31} fill={P.brass} />
       </g>
       {['SEDS ALASKA', '2,000,000', '3 AWARDS'].map((s, i) => {
         const e = chip(i);
@@ -351,7 +351,7 @@ const S4: React.FC<SceneProps & {dur: number}> = (p) => {
       <Sill x={262} groundY={FLOOR} w={560} h={118} f={f}
             lamp={die(3)} lampSlots={4} lampsLit={Math.max(0, Math.round(4 * die(0)))} />
       <g opacity={slide.o} transform={`translate(${(1 - slide.o) * 250} 0)`}>
-        <Plate x={540} y={470} text="JULY 28TH 2026" size={44} fill={P.brass} />
+        <Plate x={540} y={499} text="JULY 28TH 2026" size={44} fill={P.brass} />
         <Plate x={540} y={560} text="91 FR 47241" size={34} />
       </g>
       {['SEDS ALASKA', '2,000,000', '3 AWARDS'].map((s, i) => (
@@ -390,7 +390,7 @@ const S5: React.FC<SceneProps & {dur: number}> = (p) => {
             fill="url(#ledger)" stroke={INK} strokeWidth={5} />
       <RimLight d={`M 300 ${FLOOR - plateH} L 780 ${FLOOR - plateH}`} w={4} opacity={0.8} />
       <Sill x={262} groundY={FLOOR} w={560} h={118} f={f} lamp={0.15} jamb={false} />
-      <Plate x={540} y={470} text="THE MONEY DIDN'T SHRINK" size={40} />
+      <Plate x={540} y={497} text="THE MONEY DIDN'T SHRINK" size={40} />
       <g opacity={rise}>
         <Plate x={540} y={640} text="EAGLE  THE SUCCESSOR" size={34} fill={P.brass} />
         <Plate x={540} y={730} text={money} size={46} />
@@ -431,9 +431,9 @@ const S6: React.FC<SceneProps & {dur: number}> = (p) => {
       <Gauge x={196} groundY={FLOOR} h={92} span={340} f={f} label="100,000" on={1} />
       <Gauge x={700} groundY={FLOOR} h={g2} span={340} f={f}
              label={g2 > 230 ? '300,000' : ''} on={1} />
-      <Plate x={540} y={430} text="EAGLE FLOOR  300,000" size={38} fill={P.brass} />
+      <Plate x={540} y={496} text="EAGLE FLOOR  300,000" size={38} fill={P.brass} />
       <g opacity={rail}>
-        <Plate x={540} y={520} text="ALASKA ONLY  TO  NATIONAL" size={32} />
+        <Plate x={540} y={584} text="ALASKA ONLY  TO  NATIONAL" size={32} />
       </g>
       <g opacity={Math.min(1, s1)}>
         <Head x={540} y={912} text="TRIPLED" size={128} />
@@ -479,7 +479,7 @@ const S7: React.FC<SceneProps & {dur: number}> = (p) => {
       </g>
       <Sill x={200} groundY={FLOOR} w={200} h={92} f={f} lamp={0.2} jamb={false} />
       <g opacity={slot}>
-        <Plate x={540} y={470} text="AI3 ACTION INSTITUTE" size={42} fill={P.brass} />
+        <Plate x={540} y={498} text="AI3 ACTION INSTITUTE" size={42} fill={P.brass} />
         {/* the empty engraved strip where a purpose should be */}
         <rect x={368} y={548} width={344} height={46} fill="#101A1F" stroke={INK} strokeWidth={4} />
       </g>
@@ -578,9 +578,9 @@ const S9: React.FC<SceneProps & {dur: number}> = (p) => {
         <rect x={392} y={FLOOR - 430} width={296} height={430} fill={P.bone}
               stroke={INK} strokeWidth={5} />
         <RimLight d={`M 392 ${FLOOR - 430} L 688 ${FLOOR - 430}`} w={4} opacity={0.85} />
-        <Plate x={540} y={1000} text="ONE BODY DOING THAT ONCE IS BETTER" size={31} />
+        <Plate x={540} y={898} text="ONE BODY DOING THAT ONCE IS BETTER" size={31} />
       </g>
-      <Plate x={540} y={400} text="229 FEDERALLY RECOGNIZED TRIBES" size={34} />
+      <Plate x={540} y={494} text="229 FEDERALLY RECOGNIZED TRIBES" size={34} />
     </Stage>
   );
 };
@@ -605,10 +605,10 @@ const S10: React.FC<SceneProps & {dur: number}> = (p) => {
                 fill={P.bone} stroke={INK} strokeWidth={3} opacity={0.94} />
         </g>
       ))}
-      <Plate x={540} y={410} text="THE AGENCY ASKED FOR COMMENT" size={33} />
-      <Plate x={540} y={492} text="32 SUBMISSIONS" size={40} fill={P.brass} />
+      <Plate x={540} y={500} text="THE AGENCY ASKED FOR COMMENT" size={33} />
+      <Plate x={540} y={582} text="32 SUBMISSIONS" size={40} fill={P.brass} />
       <g opacity={interpolate(f, [at(p, 12, 3.0), at(p, 12, 4.0)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={594} text="AND PRINTED THE OBJECTIONS ITSELF" size={30} />
+        <Plate x={540} y={668} text="AND PRINTED THE OBJECTIONS ITSELF" size={30} />
       </g>
       {OBJ.map((s, i) => {
         const e = line(i);
@@ -651,9 +651,9 @@ const S11: React.FC<SceneProps & {dur: number}> = (p) => {
         <rect x={452} y={914} width={176} height={5} fill={INK} opacity={0.5} />
         <rect x={452} y={936} width={120} height={5} fill={INK} opacity={0.5} />
       </g>
-      <Plate x={540} y={420} text="WHAT IS IT PAID TO PRODUCE" size={33} />
+      <Plate x={540} y={500} text="ALASKA NAMES ITS OWN PROBLEMS" size={33} />
       <g opacity={sheet}>
-        <Plate x={540} y={1080} text="A LIST OF WHERE AI COULD HELP" size={34} fill={P.brass} />
+        <Plate x={540} y={1080} text="ASKED ORGANIZATIONS TO NAME ONE" size={34} fill={P.brass} />
       </g>
       {/* the warm low side step opening */}
       <g opacity={warm}>
@@ -661,7 +661,7 @@ const S11: React.FC<SceneProps & {dur: number}> = (p) => {
         {/* THE THIRD GAUGE. The closing argument is a comparison and this is its missing term:
             380,000 locked visibly below the 2,500,000 mark still held up the jamb. Gate 0C. */}
         <Gauge x={846} groundY={FLOOR} h={78} span={300} f={f} label="380,000" on={warm} />
-        <Plate x={540} y={1170} text="UNIVERSITY OF ALASKA ANCHORAGE  ·  380,000" size={25} />
+        <Plate x={540} y={982} text="UNIVERSITY OF ALASKA ANCHORAGE  ·  380,000" size={25} />
       </g>
       <g opacity={pen.o}>
         {/* Lifted off the caption band (was y=1250, bottom 1354, band top 1336). */}
@@ -701,24 +701,23 @@ const S12: React.FC<SceneProps & {dur: number}> = (p) => {
       <g opacity={sort}>
         <Clearance items={items} h={118} x={196} groundY={FLOOR} f={f} sort={sort} spread={58} />
       </g>
-      <Plate x={540} y={372} text="12 WROTE ONE DOWN" size={40} />
+      <Plate x={540} y={500} text="12 WROTE ONE DOWN" size={40} />
       <g opacity={nome.o}>
         <Plate x={540} y={1010} text="NOME JOINT UTILITIES SYSTEM" size={30} />
         <Plate x={540} y={1082} text="THERMAL CONDUCTIVITY OF WARMING PERMAFROST" size={24} />
       </g>
       <g opacity={alak.o}>
         {/* Both lifted off the caption band (INFRASTRUCTURE was bottoming at 1329). */}
-        <Plate x={540} y={1108} text="VILLAGE OF ALAKANUK TRIBE" size={30} />
-        <Plate x={540} y={1180} text="INFRASTRUCTURE COORDINATION" size={26} />
+        <Plate x={540} y={1140} text="VILLAGE OF ALAKANUK TRIBE" size={30} />
+        <Plate x={540} y={1212} text="INFRASTRUCTURE COORDINATION" size={26} />
       </g>
       {/* 4 FUNDED lands first and bright; the eight get their own later beat and their own
           still hold, because that is the payoff of the film's 88-second loop. Gate 0C. */}
       <g opacity={interpolate(f, [sortF + 4, sortF + 14], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={462} text="4 FUNDED" size={40} />
+        <Plate x={540} y={578} text="4 FUNDED" size={40} />
       </g>
       <g opacity={interpolate(f, [sortF + 40, sortF + 52], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}>
-        <Plate x={540} y={542} text="8 STILL HOLDING A LIST" size={32} fill={P.terracotta} />
-        <Plate x={540} y={616} text="NOBODY PUBLISHED" size={32} fill={P.terracotta} />
+        <Plate x={540} y={648} text="8 WENT UNFUNDED" size={32} fill={P.terracotta} />
       </g>
     </Stage>
   );
@@ -753,9 +752,9 @@ const S13: React.FC<SceneProps & {dur: number}> = (p) => {
         <Plate x={540} y={FLOOR - 190} text="THE SAME NOTICE" size={34} />
       </g>
       <g opacity={1 - back}>
-        <Plate x={540} y={430} text="THE INSTITUTE ISN'T THE MISTAKE" size={34} />
+        <Plate x={540} y={500} text="THE INSTITUTE ISN'T THE MISTAKE" size={34} />
         <g opacity={fold}>
-          <Plate x={540} y={512} text="RETIRING THE SMALL ALASKA DOOR IS" size={31} fill={P.terracotta} />
+          <Plate x={540} y={582} text="RETIRING THE SMALL ALASKA DOOR IS" size={31} fill={P.terracotta} />
         </g>
       </g>
 
@@ -773,7 +772,7 @@ const S13: React.FC<SceneProps & {dur: number}> = (p) => {
           <Plate x={540} y={FLOOR - 742} text="2,500,000  ONE NATIONAL AWARD" size={26} fill={P.brass} />
         </g>
         <g opacity={card1.o}>
-          <Plate x={540} y={620} text="APPLICATIONS CLOSE AUGUST 27TH 2026" size={30} />
+          <Plate x={540} y={648} text="APPLICATIONS CLOSE AUGUST 27TH 2026" size={30} />
         </g>
         <g opacity={card2.o}>
           <Plate x={540} y={700} text="IF A VILLAGE LEADS THE WINNING BID" size={30} />

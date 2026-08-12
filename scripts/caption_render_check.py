@@ -32,13 +32,12 @@ be on screen, is there anything in the caption band? It reads the film, not the 
 for the same reason the site sign-off reads the built directory: a build that never happened
 is invisible to a build gate.
 
-Method: for a sample of cues spread across the runtime, extract the frame at the cue's
-midpoint, crop the caption band, and measure two things:
-  1. mean absolute Laplacian (glyph-edge energy) inside the band, which is high for text
-     and near zero for flat background, and
-  2. the band's contrast against the same crop taken from a frame where NO cue is active,
-     which catches a band that is drawn but empty.
-A cue that is supposed to be up and shows neither is a failed caption.
+Method: first check the cue SHAPE, which is the four-second version of this whole file.
+Then, for a sample of cues spread across the runtime, extract the frame at the cue's
+midpoint, crop the caption band, and measure how far its brightest pixels rise above its
+general brightness (YMAX - YHIGH off ffmpeg's signalstats). Bone type on a dark ink bar
+pushes the two far apart; an empty band keeps them together. See text_contrast for the
+calibration numbers and for why it is not the Laplacian measure you would expect.
 
 Exit 0 = captions are on screen. Exit 1 = they are not, and the film is not shippable.
 
@@ -61,32 +60,49 @@ REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 CAPTION_TOP = 1336
 CAPTION_H = 132
 
-# Empirical floor. A flat background crop measures well under 1.0; a crop with the caption
-# bar and one line of 46px bold type in it measures far above 3.0. 2.0 leaves room for a
-# short cue in a dark scene without admitting an empty band.
-EDGE_FLOOR = 2.0
+# Empirical floor for text_contrast(), calibrated on this run's frames: a captioned band
+# measures 204, the two empty bands from the broken cut measure 21 and 59. 120 sits clear of
+# both with room for a short cue on a lighter scene.
+EDGE_FLOOR = 120.0
 
 
-def laplacian_energy(png_path):
-    """Mean absolute Laplacian of the crop, computed without numpy/opencv.
+def text_contrast(png_path):
+    """How far the brightest pixels in the band rise above its general brightness.
 
-    Uses ffmpeg's own convolution so this has no dependency the render does not already
-    have. signalstats reports the mean luma of the filtered plane, which for a Laplacian
-    kernel is exactly the glyph-edge energy we want.
+    Measured as YMAX - YHIGH off ffmpeg's signalstats. The caption is bone (#F4EEE0, luma
+    ~240) set on a dark ink bar, so a band carrying a caption pushes YMAX to ceiling while
+    YHIGH, which tracks the bulk of the band, stays down with the background. A band with
+    no caption in it has the two close together, because whatever is there is all one
+    rough brightness.
+
+    Calibrated on this run's own frames: a captioned band measures 204 (YHIGH 51, YMAX
+    255), and the two empty bands from the broken cut measure 21 and 59. The floor sits
+    well clear of both.
+
+    An earlier draft of this used a Laplacian convolution for glyph-edge energy, which is
+    the more obvious measure and which silently returned 0.0 for every input because the
+    filter's parameter list was malformed and ffmpeg failed the whole graph. It reported
+    every caption missing on a cut whose captions were perfectly legible. A check that
+    cannot fail loudly is worse than no check, so this uses a filter with no parameters to
+    get wrong, and the calibration numbers above are recorded so the floor can be
+    rechecked rather than trusted.
     """
     r = subprocess.run(
         ["ffmpeg", "-v", "error", "-i", png_path,
-         "-vf", "format=gray,convolution='0 -1 0 -1 4 -1 0 -1 0':0:0:0:1:1:1:1,signalstats,"
-                "metadata=print:file=-",
-         "-f", "null", "-"],
+         "-vf", "format=gray,signalstats,metadata=print:file=-", "-f", "null", "-"],
         capture_output=True, text=True)
-    for line in r.stdout.splitlines():
-        if "lavfi.signalstats.YAVG" in line:
+    vals = {}
+    for line in (r.stdout + r.stderr).splitlines():
+        if "lavfi.signalstats.Y" in line and "=" in line:
+            k, _, v = line.strip().partition("=")
             try:
-                return float(line.split("=")[-1].strip())
+                vals[k.rsplit(".", 1)[-1]] = float(v)
             except ValueError:
                 pass
-    return 0.0
+    if "YMAX" not in vals or "YHIGH" not in vals:
+        # Do not return a passing number when the measurement did not happen.
+        return -1.0
+    return vals["YMAX"] - vals["YHIGH"]
 
 
 def crop_band(video, t, dest):
@@ -149,14 +165,14 @@ def main():
         if not crop_band(a.video, mid, png):
             failures.append(f"t={mid:.2f}s: could not extract the frame")
             continue
-        e = laplacian_energy(png)
+        e = text_contrast(png)
         measured.append((mid, e, c["text"][:40]))
         if e < EDGE_FLOOR:
             failures.append(f"t={mid:.2f}s: caption band edge energy {e:.2f} < {EDGE_FLOOR} "
                             f"while the cue {c['text'][:40]!r} should be on screen")
 
     for mid, e, txt in measured:
-        print(f"  t={mid:7.2f}s  edge={e:5.2f}  {txt!r}")
+        print(f"  t={mid:7.2f}s  contrast={e:6.0f}  {txt!r}")
 
     if failures:
         print(f"\nFAIL [caption_render_check] {len(failures)} of {len(sample)} sampled cues are "

@@ -48,7 +48,7 @@ def mono_w(s, size, track=0.5):
 
 def scenes(src):
     starts = [(m.group(1), m.start()) for m in
-              re.finditer(r"^const (S\d+): React\.FC<SceneProps>", src, re.M)]
+              re.finditer(r"^const (S\d+): React\.FC<SceneProps\b[^>]*>", src, re.M)]
     for i, (name, a) in enumerate(starts):
         b = starts[i + 1][1] if i + 1 < len(starts) else len(src)
         yield name, a, src[a:b]
