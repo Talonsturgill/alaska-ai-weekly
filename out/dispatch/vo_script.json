@@ -68,15 +68,17 @@
     },
     {
       "idx": 8,
-      "text": "Alaska has two hundred twenty nine federally recognized tribes, and A I comes with a vendor contract.",
+      "text": "Alaska has two hundred twenty nine federally recognized tribes.",
       "claims": [
         "c21"
       ]
     },
     {
       "idx": 9,
-      "text": "One body negotiating that once is better.",
-      "claims": []
+      "text": "The agency is folding four support contracts into one agreement. One body doing that once is better.",
+      "claims": [
+        "c12"
+      ]
     },
     {
       "idx": 10,

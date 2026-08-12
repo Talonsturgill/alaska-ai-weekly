@@ -485,10 +485,10 @@ const S6: React.FC<SceneProps & {dur: number}> = (p) => {
              label={g2 > 230 ? '300,000' : ''} on={1} />
       <Plate x={540} y={496} text="EAGLE FLOOR  300,000" size={38} fill={P.brass} />
       <Rise o={rail}>
-        <Plate x={540} y={584} text="ALASKA ONLY  TO  NATIONAL" size={32} />
+        <Plate x={540} y={572} text="ALASKA ONLY IS NOW NATIONAL" size={32} />
       </Rise>
       <Rise o={Math.min(1, s1)}>
-        <Head x={540} y={1044} text="TRIPLED" size={128} />
+        <Head x={540} y={704} text="TRIPLED" size={82} />
       </Rise>
     </Stage>
   );
@@ -533,7 +533,7 @@ const S7: React.FC<SceneProps & {dur: number}> = (p) => {
       <Rise o={slot}>
         <Plate x={540} y={498} text="AI3 ACTION INSTITUTE" size={42} fill={P.brass} />
         {/* the empty engraved strip where a purpose should be */}
-        <rect x={368} y={548} width={344} height={46} fill="#101A1F" stroke={INK} strokeWidth={4} />
+        <rect x={470} y={556} width={140} height={38} fill="#101A1F" stroke={INK} strokeWidth={4} />
       </Rise>
       {['ONE AWARD', 'FLOOR 2,500,000'].map((s, i) => {
         const e = chip(i);
@@ -617,7 +617,7 @@ const S9: React.FC<SceneProps & {dur: number}> = (p) => {
       </Rise>
       {/* the one contract pulled forward with the clause circled */}
       <g opacity={contract.o * (1 - collapse)} transform={`translate(0 ${(1 - contract.o) * -60})`}>
-        <Plate x={540} y={1010} text="AI COMES WITH A VENDOR CONTRACT" size={34} />
+        <Plate x={540} y={1010} text="FOUR CONTRACTS INTO ONE" size={34} />
         <Rise o={spread}>
           <ellipse cx={540} cy={1096} rx={230 * spread} ry={40} fill="none"
                    stroke={P.terracotta} strokeWidth={7} />
@@ -630,7 +630,7 @@ const S9: React.FC<SceneProps & {dur: number}> = (p) => {
         <rect x={392} y={FLOOR - 430} width={296} height={430} fill={P.bone}
               stroke={INK} strokeWidth={5} />
         <RimLight d={`M 392 ${FLOOR - 430} L 688 ${FLOOR - 430}`} w={4} opacity={0.85} />
-        <Plate x={540} y={898} text="ONE BODY DOING THAT ONCE IS BETTER" size={31} />
+        <Plate x={540} y={898} text="ONE BODY DOING THAT ONCE" size={31} />
       </Rise>
       <Plate x={540} y={494} text="229 FEDERALLY RECOGNIZED TRIBES" size={34} />
     </Stage>
@@ -717,7 +717,7 @@ const S11: React.FC<SceneProps & {dur: number}> = (p) => {
       </Rise>
       <Rise o={pen.o}>
         {/* Lifted off the caption band (was y=1250, bottom 1354, band top 1336). */}
-        <Plate x={540} y={1186} text="NAME YOUR PROBLEM   NO MENU" size={31} fill={P.terracotta} />
+        <Plate x={540} y={1186} text="NAME YOUR OWN PROBLEM" size={31} fill={P.terracotta} />
       </Rise>
     </Stage>
   );
@@ -755,8 +755,8 @@ const S12: React.FC<SceneProps & {dur: number}> = (p) => {
       </Rise>
       <Plate x={540} y={500} text="12 WROTE ONE DOWN" size={40} />
       <Rise o={nome.o}>
-        <Plate x={540} y={1010} text="NOME JOINT UTILITIES SYSTEM" size={30} />
-        <Plate x={540} y={1082} text="THERMAL CONDUCTIVITY, WARMING GROUND" size={24} />
+        <Plate x={540} y={862} text="NOME JOINT UTILITIES SYSTEM" size={30} />
+        <Plate x={540} y={934} text="THERMAL CONDUCTIVITY, WARMING GROUND" size={24} />
       </Rise>
       <Rise o={alak.o}>
         {/* Both lifted off the caption band (INFRASTRUCTURE was bottoming at 1329). */}

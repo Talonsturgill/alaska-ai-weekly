@@ -229,6 +229,16 @@
       "note": "KILLED 2026-08-12 after panel round 2, and it is contradicted by c16's own verbatim note, which records that the statement-of-need page LISTS the submitted community proposals. If that page lists them, the eight asks are published and the line is simply false. It was also the film's primary open-loop payoff, planted at 14.3s and paid at 102.12s, which is exactly the kind of line that gets written for its shape rather than its truth. Replaced with the fact c16 does carry: eight went unfunded.",
       "verbatim_source": "Contradicted by c16: \"the statement-of-need page lists the submitted community proposals\".",
       "requires": "The unfunded eight are UNFUNDED, not unpublished. Do not conflate the two again."
+    },
+    {
+      "id": "c25",
+      "status": "KILLED",
+      "on_screen": "(cut) AI COMES WITH A VENDOR CONTRACT",
+      "spoken": "(cut) and A I comes with a vendor contract",
+      "source": "none",
+      "note": "KILLED 2026-08-12 after panel round 5. It carried no claim id and it was LOAD-BEARING: the film's entire steelman at 63.68s rested on it. That is the same failure mode that killed c23, a characterization the run made, delivered with the authority of the record. Nothing in the notice says an AI award comes with a vendor contract. The steelman is rebuilt on c12, which is ANA's own sentence about consolidating four TTA contracts into a single agreement.",
+      "verbatim_source": "NOT FOUND. No primary page states this.",
+      "requires": "Do not restore without a primary page that says it in its own words."
     }
   ],
   "killed": [
