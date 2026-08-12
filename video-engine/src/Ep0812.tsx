@@ -117,7 +117,7 @@ const Room: React.FC<{f: number; warm?: number; parallax?: number; keyX?: number
       <rect x={-300} y={-420} width={W + 600} height={FLOOR + 460} fill="url(#wallg)" data-band="ok" />
 
       {/* FAR PLANE: filing recession in one-point perspective, the dark anchor */}
-      {Array.from({length: 11}, (_, i) => {
+      {Array.from({length: 8}, (_, i) => {
         const y = -240 + i * 104 + parallax * 9 + ((f * (0.9 + parallax * 0.25)) % 104);
         return (
           <g key={`r${i}`} data-band="ok" opacity={0.62}>
@@ -158,7 +158,7 @@ const Room: React.FC<{f: number; warm?: number; parallax?: number; keyX?: number
 
       {/* ALWAYS-RUNNING AMBIENT: dust in the key light. Authored before any event,
           per DISPATCH_STANDARD §8 — a scene built only of interpolate() is a slideshow. */}
-      {Array.from({length: 46}, (_, i) => {
+      {Array.from({length: 26}, (_, i) => {
         const sx = 540 + hash(i, 1) * 620;
         const sy = 300 + hash(i, 2) * 900;
         const sp = 26 + hash(i, 3) * 16;

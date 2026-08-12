@@ -252,7 +252,9 @@ export const AskSlip: React.FC<AskSlipProps> = ({
   return (
     <g transform={`rotate(${rot + restRot} ${x + w / 2} ${y + h / 2}) translate(${sv.swayX * 0.4} ${flutter})`} opacity={opacity}>
       <defs><FormGradient id={id} t={T} softness={1.1} /></defs>
-      <ContactShadow cx={x + w / 2} cy={y + h + 4} rx={w * 0.44} ry={7} opacity={0.3} blur={7} />
+      {/* cheap AO: a soft ellipse, not an SVG filter. Twelve filtered shadows in one beat
+          cost more per frame than every other element combined. */}
+      <ellipse cx={x + w / 2 - 4} cy={y + h + 4} rx={w * 0.44} ry={7} fill={INK} opacity={0.26} />
       <path d={d} fill={`url(#${id})`} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
       <RimLight d={`M ${x} ${y + h} L ${x + w} ${y + h}`} w={2.5} opacity={0.45} />
       {children}
