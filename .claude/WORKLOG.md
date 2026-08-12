@@ -33,7 +33,12 @@ question is no: it has never scored high enough. Do not soften that in any repor
 | 4 | 6.45 / 6.74 / 6.29 | **6.45** | 119.57s cut, Rise entrances, thesis on its line |
 | 5 | 6.69 / 6.82 / 6.23 | **6.69** | 119.57s, gauge numerals grounded, counter fixed |
 | 6 | 6.02 / 5.88 / 5.76 | **5.88** | 129.67s, c25 recut — REGRESSED, see below |
-| 7 | not yet run | — | current bytes, c25 fully removed from every surface |
+| 7 | 7.23 / 7.11 / 6.81 | **7.11** | 129.67s, c25 gone from every surface, credits sampled |
+| 8 | not yet run | — | current bytes: motion smear, caption wrap, TTA precision |
+
+**Round 7 recovered to 7.11 with ZERO hard blockers from all three judges.** Accuracy scored
+8.0 / 8.0 / 9.0 and cultural handling 9.0. The gap to 7.5 is now entirely craft: motion and
+staging.
 
 **Round 4 returned ZERO hard blockers from all three judges, the first time in the run.**
 Round 5 reached 6.69 with Accuracy at 9.0 from two judges.
@@ -64,7 +69,7 @@ failure ship_gate was written to make impossible. Do not record a verdict the pa
 ## NEXT ACTION, in order
 
 1. `python3 scripts/build_evidence.py` if anything re-rendered since the last build
-2. Convene panel round 7: 3 `scorer` agents, brief at `/tmp/brief.md` (regenerate if the
+2. Convene panel round 8: 3 `scorer` agents, brief at `/tmp/brief.md` (regenerate if the
    container was recycled; it names the pack paths and carries the corrections below)
 3. `ship_gate.py record --median M --judges a,b,c` then `ship_gate.py check`
 4. **Only on a passing median:** upload cuts, build the email through
@@ -80,9 +85,32 @@ failure ship_gate was written to make impossible. Do not record a verdict the pa
 - Panel 3 graded a stale `audio_report.json` describing the 153.5s cut. `build_evidence.py` now
   regenerates it, so this should not recur, but check `last_word_ends_s` against the runtime.
 
-## Outstanding, named by round 3 and NOT yet fixed
+## Outstanding after round 7 (the ONLY things between 7.11 and the bar)
 
-Motion is the binding constraint (4.5 / 4.5 / 6.5) and is where the remaining points are.
+Every judge, every round, named motion. A directional smear now ships in `Rise` (two ghost
+copies along the travel vector, weighted by speed) but has NOT yet been graded.
+
+- filmstrip_bars, filmstrip_swing and filmstrip_crack are eight frames of global parallax
+  drift with every hero object pixel-static. They need a staged event, not a camera move.
+- The 60s-95s stretch is three consecutive chip-on-slab beats at the same scale and staging.
+  Change scale, camera height or staging on at least three of them.
+- The grade never modulates across 130s, so the honest turn at 109s lands in the same light
+  as the open.
+- No ambient or motivated SFX layer anywhere, against 36.98s of VO gaps.
+- c13 (the 70 percent regional staffing objection) and c14 (ANA's 3.1M/FY answer) are
+  verified and never reach the screen, so the c12 steelman is the film's own unanswered
+  assertion. claims.json says these two MUST be paired and called unresolved.
+
+### Fixed since round 7, awaiting a grade
+- directional motion smear on all 35 Rise entrances
+- captions wrap to two lines at a fixed 42px instead of shrinking to fit (long cues were
+  rendering at roughly half the cap height of short ones)
+- 'EAGLE THE SUCCESSOR' was an uncited characterization on a hero card; now 'SEDS EVOLVED
+  INTO EAGLE', citing c3, ANA's own sentence
+- objection cards were staggered off the line AFTER the one that speaks them, putting the red
+  card on screen 3.4s early; re-anchored and reordered to the spoken order
+- 'FOUR TTA CONTRACTS INTO ONE' restores c12's own wording
+- post lead named the movement c8/c7 source instead of a dangling 'this federal program'
 
 - `filmstrip_assemble` enters three plates by pure opacity crossfade, zero displacement
 - `filmstrip_pour` changes only by a glow ellipse growing under a static slab

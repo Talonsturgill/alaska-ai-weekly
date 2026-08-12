@@ -633,7 +633,7 @@ const S9: React.FC<SceneProps & {dur: number}> = (p) => {
       </Rise>
       {/* the one contract pulled forward with the clause circled */}
       <g opacity={contract.o * (1 - collapse)} transform={`translate(0 ${(1 - contract.o) * -60})`}>
-        <Plate x={540} y={1010} text="FOUR CONTRACTS INTO ONE" size={34} />
+        <Plate x={540} y={1010} text="FOUR TTA CONTRACTS INTO ONE" size={34} />
         {/* 'OVER THEIR OWN DATA' was here and it was the last living piece of KILLED c25
             (2026-08-12, panel round 6). c25 was cut from the VO and the claim map, and this
             plate was left behind, so the film went on asserting the vendor-data premise on
@@ -870,14 +870,28 @@ const Captions: React.FC<{cues: {t: number; d: number; text: string}[]}> = ({cue
   const cue = cues.find((c) => t >= c.t && t < c.t + c.d);
   if (!cue) return null;
   // Captions are NOT inside Stage, so they are not zoomed. Fit to the raw frame.
-  const size = Math.min(46, Math.floor((W - 64) / Math.max(1, cue.text.length * HEAD_ADV)));
+  const SIZE = 42;                       // fixed: every cue is the same height
+  const perLine = Math.max(8, Math.floor((W - 84) / (SIZE * HEAD_ADV)));
+  const words = cue.text.split(' ');
+  const rows: string[] = [];
+  let row = '';
+  for (const w of words) {
+    if (row && (row + ' ' + w).length > perLine) { rows.push(row); row = w; } else {
+      row = row ? row + ' ' + w : w;
+    }
+    if (rows.length === 2) break;          // two lines is the band's capacity
+  }
+  if (row && rows.length < 2) rows.push(row);
+  const top = CAPTION_TOP + (rows.length > 1 ? 46 : 84);
   return (
     <Frame>
       <rect x={0} y={CAPTION_TOP} width={W} height={CAPTION_H} fill={INK} opacity={0.72} />
-      <text x={W / 2} y={CAPTION_TOP + 84} fill="#F4EEE0" fontSize={size} fontFamily={BOLD}
-            fontWeight={800} textAnchor="middle" stroke={INK} strokeWidth={7} paintOrder="stroke">
-        {cue.text}
-      </text>
+      {rows.map((r, i) => (
+        <text key={i} x={W / 2} y={top + i * 52} fill="#F4EEE0" fontSize={SIZE} fontFamily={BOLD}
+              fontWeight={800} textAnchor="middle" stroke={INK} strokeWidth={7} paintOrder="stroke">
+          {r}
+        </text>
+      ))}
     </Frame>
   );
 };
