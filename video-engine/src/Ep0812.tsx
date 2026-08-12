@@ -59,7 +59,7 @@ const P = {
   bone: TH.bone, brass: TH.brass, terracotta: TH.terracotta, red: TH.red,
 } as const;
 
-const FLOOR = 1240;              // the ground plane every sill stands on
+const FLOOR = 1120;              // the ground plane every sill stands on
 
 /** THE WAITING SLIP. Gate 0B found a 64-second emotional vacuum between 21.3s and 86s:
  *  no warm light, no character, only institutions moving paper. This one slip sits at the
@@ -99,9 +99,9 @@ const Room: React.FC<{f: number; warm?: number; parallax?: number; keyX?: number
       <defs>
         <FormGradient id="roomf" t={T} softness={1.3} />
         <linearGradient id="wallg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={P.void} />
-          <stop offset="62%" stopColor={P.slateDeep} />
-          <stop offset="100%" stopColor={P.slate} />
+          <stop offset="0%" stopColor="#1B2830" />
+          <stop offset="55%" stopColor="#22323A" />
+          <stop offset="100%" stopColor="#2C3E47" />
         </linearGradient>
         <radialGradient id="keypool" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#EEE6D2" stopOpacity={0.20 + warm * 0.26} />
@@ -117,14 +117,16 @@ const Room: React.FC<{f: number; warm?: number; parallax?: number; keyX?: number
       <rect x={-300} y={-420} width={W + 600} height={FLOOR + 460} fill="url(#wallg)" data-band="ok" />
 
       {/* FAR PLANE: filing recession in one-point perspective, the dark anchor */}
-      {Array.from({length: 7}, (_, i) => {
-        const y = -180 + i * 118 + parallax * 9;
+      {Array.from({length: 11}, (_, i) => {
+        const y = -240 + i * 104 + parallax * 9;
         return (
-          <g key={`r${i}`} data-band="ok" opacity={0.5}>
-            <rect x={-300 + ((i * 91) % 150)} y={y} width={W + 600} height={64}
-                  fill="#0E161A" stroke={INK} strokeWidth={3} />
-            <rect x={-300 + ((i * 91) % 150) + 40} y={y + 26} width={112} height={7}
-                  fill="#3A4A52" opacity={0.55} />
+          <g key={`r${i}`} data-band="ok" opacity={0.62}>
+            <rect x={-300 + ((i * 91) % 150)} y={y} width={W + 600} height={72}
+                  fill={i % 2 ? "#1A272E" : "#142027"} stroke={INK} strokeWidth={3} />
+            <rect x={-300 + ((i * 91) % 150) + 40} y={y + 30} width={132} height={9}
+                  fill="#4E6470" opacity={0.7} />
+            <rect x={-300 + ((i * 91) % 150) + 520} y={y + 30} width={132} height={9}
+                  fill="#4E6470" opacity={0.5} />
           </g>
         );
       })}
@@ -159,28 +161,47 @@ const Plate: React.FC<{
   x: number; y: number; text: string; size?: number; ls?: number;
   fill?: string; ink?: string; align?: 'left' | 'center';
 }> = ({x, y, text, size = 34, ls = 2, fill = P.bone, ink = INK, align = 'center'}) => {
-  const tw = text.length * size * ADV + ls * Math.max(0, text.length - 1);
+  // shrink the type until the plate fits the frame the zoom leaves, then size the plate to it
   const padX = 26, padY = 15;
+  const fit = Math.min(size, Math.floor((USABLE - padX * 2) / Math.max(1, text.length * ADV + ls)));
+  const tw = text.length * fit * ADV + ls * Math.max(0, text.length - 1);
   const w = tw + padX * 2;
-  const h = size + padY * 2;
+  const h = fit + padY * 2;
   const px = align === 'center' ? x - w / 2 : x;
   return (
     <g>
       <rect x={px + 4} y={y + 5} width={w} height={h} fill={INK} opacity={0.34} />
       <rect x={px} y={y} width={w} height={h} fill={fill} stroke={ink} strokeWidth={4} />
-      <text x={px + padX} y={y + padY + size * 0.78} fill={ink} fontSize={size}
+      <text x={px + padX} y={y + padY + fit * 0.78} fill={ink} fontSize={fit}
             fontFamily={MONO} letterSpacing={ls}>{text}</text>
     </g>
   );
 };
 
 /** A big headline set in the bold face, no plate. Used for the hook only. */
+const HEAD_ADV = 0.66;   // Archivo Black mean advance. 0.575 was optimistic and the first
+                         // rough cut ran the hook off both frame edges.
+// The usable width has to account for the Stage push too, which adds up to 9.5% more zoom
+// across a shot, so a headline that fits on frame 1 can overflow by the end of the hold.
+const USABLE = (W - 150) / (CONTENT_ZOOM * 1.10);
 const Head: React.FC<{x: number; y: number; text: string; size?: number; fill?: string}> = ({
   x, y, text, size = 96, fill = P.bone,
-}) => (
-  <text x={x} y={y} fill={fill} fontSize={size} fontFamily={BOLD} fontWeight={900}
-        letterSpacing={-1} textAnchor="middle"
-        stroke={INK} strokeWidth={9} paintOrder="stroke">{text}</text>
+}) => {
+  // fit to the string. A headline that runs off the frame is arithmetic, not taste.
+  const fit = Math.min(size, Math.floor(USABLE / Math.max(1, text.length * HEAD_ADV)));
+  return (
+    <text x={x} y={y} fill={fill} fontSize={fit} fontFamily={BOLD} fontWeight={900}
+          letterSpacing={-1} textAnchor="middle"
+          stroke={INK} strokeWidth={Math.max(4, fit * 0.09)} paintOrder="stroke">{text}</text>
+  );
+};
+
+/** Each scene owns its own <svg>. Sequence renders a wrapper div, so nesting it INSIDE an
+ *  <svg> silently produces an empty frame -- which is exactly what the first rough cut did. */
+const Frame: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <AbsoluteFill>
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>{children}</svg>
+  </AbsoluteFill>
 );
 
 /* ---------------------------------------------------------------- wrapper */
@@ -194,9 +215,11 @@ const Stage: React.FC<{f: number; dur: number; children: React.ReactNode; drift?
   const dx = Math.sin(f / 97.3) * 15 * drift;
   const dy = Math.cos(f / 131.7) * 8 * drift;
   return (
-    <g transform={`translate(${540 + dx} ${960 + dy}) scale(${(1 + push) * CONTENT_ZOOM * zoom}) translate(${-540} ${-960})`}>
-      {children}
-    </g>
+    <Frame>
+      <g transform={`translate(${540 + dx} ${960 + dy}) scale(${(1 + push) * CONTENT_ZOOM * zoom}) translate(${-540} ${-960})`}>
+        {children}
+      </g>
+    </Frame>
   );
 };
 
@@ -218,7 +241,7 @@ const S1: React.FC<SceneProps & {dur: number}> = (p) => {
     <Stage f={f} dur={p.dur} drift={0.6}>
       <Room f={f} />
       <g transform={`translate(0 ${drop}) scale(1 ${squash})`} style={{transformOrigin: '540px 1240px'}}>
-        <Sill x={330} groundY={FLOOR} w={430} h={92} f={f} lamp={0.55} jamb={false} />
+        <Sill x={262} groundY={FLOOR} w={560} h={118} f={f} lamp={0.55} jamb={false} />
       </g>
       {/* dust kicked up by the landing */}
       {Array.from({length: 16}, (_, i) => {
@@ -231,8 +254,8 @@ const S1: React.FC<SceneProps & {dur: number}> = (p) => {
       {/* A slip clears the low step inside the first second. The film's whole argument,
           before a single term has been defined. Gate 0B rewrote this hook. */}
       <AskSlip x={hx} y={hy} w={190} h={66} f={f} seed={2} rot={hwalk * 7 - 3} />
-      <Head x={540} y={840} text="THE SMALLEST GRANT" size={92} />
-      <Head x={540} y={946} text="THE GOVERNMENT WILL WRITE" size={62} />
+      <Head x={540} y={806} text="THE SMALLEST" size={104} />
+      <Head x={540} y={912} text="GRANT THEY WRITE" size={86} />
       <g opacity={card.o} transform={`translate(0 ${(1 - card.o) * 26})`}>
         <Plate x={540} y={1030} text="THE AWARD FLOOR" size={44} fill={P.brass} />
       </g>
@@ -250,7 +273,7 @@ const S2: React.FC<SceneProps & {dur: number}> = (p) => {
   return (
     <Stage f={f} dur={p.dur} drift={1.1}>
       <Room f={f} parallax={1} />
-      <Sill x={330} groundY={FLOOR} w={430} h={92} f={f} lamp={0.75} lampSlots={4} lampsLit={4} />
+      <Sill x={262} groundY={FLOOR} w={560} h={118} f={f} lamp={0.75} lampSlots={4} lampsLit={4} />
       <Gauge x={196} groundY={FLOOR} h={gauge} span={300} f={f}
              label={gauge > 80 ? '100,000' : ''} on={interpolate(f, [gStart - 8, gStart], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} />
       <g opacity={nameplate.o} transform={`translate(0 ${(1 - nameplate.o) * -20})`}>
@@ -281,7 +304,7 @@ const S3: React.FC<SceneProps & {dur: number}> = (p) => {
   return (
     <Stage f={f} dur={p.dur} drift={0.5} zoom={1.1}>
       <Room f={f} warm={lamp * 0.55} keyX={520} />
-      <Sill x={330} groundY={FLOOR} w={430} h={92} f={f} lamp={0.8} jamb={false} />
+      <Sill x={262} groundY={FLOOR} w={560} h={118} f={f} lamp={0.8} jamb={false} />
       {/* the desk lamp pool: the film's only warm light in act one */}
       <ellipse cx={540} cy={FLOOR - 24} rx={430 * lamp} ry={104 * lamp}
                fill="#F0E2BC" opacity={0.20 * lamp} />
@@ -303,7 +326,7 @@ const S4: React.FC<SceneProps & {dur: number}> = (p) => {
     <Stage f={f} dur={p.dur} drift={0.4} zoom={1.16}>
       <Room f={f} />
       <WaitingSlip f={f} x={150} dim={0.46} />
-      <Sill x={330} groundY={FLOOR} w={430} h={92} f={f}
+      <Sill x={262} groundY={FLOOR} w={560} h={118} f={f}
             lamp={die(3)} lampSlots={4} lampsLit={Math.max(0, Math.round(4 * die(0)))} />
       <g opacity={slide.o} transform={`translate(${(1 - slide.o) * 250} 0)`}>
         <Plate x={540} y={470} text="JULY 28TH 2026" size={44} fill={P.brass} />
@@ -340,7 +363,7 @@ const S5: React.FC<SceneProps & {dur: number}> = (p) => {
       <rect x={300} y={FLOOR - plateH} width={480} height={plateH}
             fill="url(#ledger)" stroke={INK} strokeWidth={5} />
       <RimLight d={`M 300 ${FLOOR - plateH} L 780 ${FLOOR - plateH}`} w={4} opacity={0.8} />
-      <Sill x={330} groundY={FLOOR} w={430} h={92} f={f} lamp={0.15} jamb={false} />
+      <Sill x={262} groundY={FLOOR} w={560} h={118} f={f} lamp={0.15} jamb={false} />
       <Plate x={540} y={470} text="THE MONEY DIDN'T SHRINK" size={40} />
       <g opacity={rise}>
         <Plate x={540} y={640} text="EAGLE  THE SUCCESSOR" size={34} fill={P.brass} />
@@ -375,7 +398,7 @@ const S6: React.FC<SceneProps & {dur: number}> = (p) => {
               width={interpolate(rail, [0, 1], [430, 1720])} height={13}
               fill="#3E4E56" stroke={INK} strokeWidth={4} />
       </g>
-      <Sill x={330} groundY={FLOOR} w={430} h={h} f={f} lamp={0.6} jamb={false} />
+      <Sill x={262} groundY={FLOOR} w={560} h={h} f={f} lamp={0.6} jamb={false} />
       <Gauge x={196} groundY={FLOOR} h={92} span={340} f={f} label="100,000" on={1} />
       <Gauge x={824} groundY={FLOOR} h={g2} span={340} f={f}
              label={g2 > 230 ? '300,000' : ''} on={1} />
@@ -384,7 +407,7 @@ const S6: React.FC<SceneProps & {dur: number}> = (p) => {
         <Plate x={540} y={520} text="ALASKA ONLY  TO  NATIONAL" size={32} />
       </g>
       <g opacity={Math.min(1, s1)}>
-        <Head x={540} y={950} text="TRIPLED" size={112} />
+        <Head x={540} y={912} text="TRIPLED" size={128} />
       </g>
     </Stage>
   );
@@ -451,7 +474,7 @@ const S8: React.FC<SceneProps & {dur: number}> = (p) => {
   const camY = interpolate(climb, [0, 1], [430, -520]);
   const scale = interpolate(climb, [0, 1], [1.30, 0.86]);
   return (
-    <g>
+    <Frame>
       <g transform={`translate(540 960) scale(${scale * CONTENT_ZOOM}) translate(-540 ${-960 + camY})`}>
         <Room f={f} parallax={3} />
         {/* the tall slot at full height */}
@@ -472,7 +495,7 @@ const S8: React.FC<SceneProps & {dur: number}> = (p) => {
         <AskSlip x={232} y={FLOOR - 96} w={96} h={40} f={f} seed={9} />
       </g>
       <Plate x={540} y={1120} text="EVERY AI DOLLAR  ONE GRANT" size={38} />
-    </g>
+    </Frame>
   );
 };
 
@@ -630,7 +653,7 @@ const S12: React.FC<SceneProps & {dur: number}> = (p) => {
   return (
     <Stage f={f} dur={p.dur} drift={1.2}>
       <Room f={f} warm={0.7} keyX={640} parallax={1.6} />
-      <Sill x={330} groundY={FLOOR} w={430} h={96} f={f} lamp={0.9} jamb={false} tint="#E8D9BC" />
+      <Sill x={262} groundY={FLOOR} w={430} h={96} f={f} lamp={0.9} jamb={false} tint="#E8D9BC" />
       {/* twelve slips arriving and sorting into a column */}
       <g opacity={1 - sort}>
         {items.map((it, i) => {
@@ -707,7 +730,7 @@ const S13: React.FC<SceneProps & {dur: number}> = (p) => {
 
       {/* THE BUTTON: frame one returns, inverted — same sill, same slip, new number */}
       <g opacity={back}>
-        <Sill x={330} groundY={FLOOR} w={430} h={92} f={f} lamp={0.55} jamb={false} />
+        <Sill x={262} groundY={FLOOR} w={560} h={118} f={f} lamp={0.55} jamb={false} />
         <AskSlip x={430} y={FLOOR - 156} w={230} h={70} f={f} seed={2} />
         {/* 300,000 ON THE STEP, because that is the floor of the lane an Alaska applicant
             actually competes in. 2,500,000 is ONE NATIONAL AWARD and it is marked far up
@@ -742,15 +765,16 @@ const Captions: React.FC<{cues: {t: number; d: number; text: string}[]}> = ({cue
   const t = f / FPS;
   const cue = cues.find((c) => t >= c.t && t < c.t + c.d);
   if (!cue) return null;
-  const size = 46;
+  // Captions are NOT inside Stage, so they are not zoomed. Fit to the raw frame.
+  const size = Math.min(46, Math.floor((W - 64) / Math.max(1, cue.text.length * HEAD_ADV)));
   return (
-    <g>
+    <Frame>
       <rect x={0} y={CAPTION_TOP} width={W} height={CAPTION_H} fill={INK} opacity={0.72} />
-      <text x={W / 2} y={CAPTION_TOP + 82} fill="#F4EEE0" fontSize={size} fontFamily={BOLD}
+      <text x={W / 2} y={CAPTION_TOP + 84} fill="#F4EEE0" fontSize={size} fontFamily={BOLD}
             fontWeight={800} textAnchor="middle" stroke={INK} strokeWidth={7} paintOrder="stroke">
         {cue.text}
       </text>
-    </g>
+    </Frame>
   );
 };
 
@@ -788,19 +812,16 @@ export const Ep0812: React.FC<z.infer<typeof ep0812Schema>> = ({
   return (
     <VoiceProvider data={(mouth || accents) ? ({mouth, accents} as never) : null}>
       <AbsoluteFill style={{backgroundColor: P.void}}>
-        <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
-          {SCENES.map((Comp, i) => {
-            const b = bounds[i];
-            if (!b || b.dur <= 0) return null;
-            return (
-              <Sequence key={i} from={b.from} durationInFrames={b.dur} name={`S${i + 1}`}>
-                <Comp t0={b.from / fps} L={L} dur={b.dur} />
-              </Sequence>
-            );
-          })}
-          <Captions cues={captions} />
-          <GradeLayer f={0} bloom={0.16} vignette={0.34} grain={0.05} warmth={-0.05} />
-        </svg>
+        {SCENES.map((Comp, i) => {
+          const b = bounds[i];
+          if (!b || b.dur <= 0) return null;
+          return (
+            <Sequence key={i} from={b.from} durationInFrames={b.dur} name={`S${i + 1}`}>
+              <Comp t0={b.from / fps} L={L} dur={b.dur} />
+            </Sequence>
+          );
+        })}
+        <Captions cues={captions} />
         {credits ? (
           <Sequence from={totalF - (credits.frames ?? 195)} durationInFrames={credits.frames ?? 195} name="CREDITS">
             <EndCredits {...credits} />
