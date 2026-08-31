@@ -2683,3 +2683,78 @@ models plate-on-plate; this was a plate under ART. Only looking finds those, whi
   when an upload fails, grep the log for `fell through`, never tail it.
 - `config/panel_anchors.md` still unwritten. Artifacts are preserved at `config/anchors/r9-*.jpg`
   and there are now two rounds of agreed cards to anchor against.
+
+---
+
+## 2026-08-30 — "The Model Made the Number" — shipped at 7.80
+
+Rainmaker's August 23 Kenai cloud-seeding operation became a two-minute evidence audit: a real
+drone-robotics demonstration, real observed radar features, and a roughly 19-million-gallon
+company model estimate with no reported surface gauge or tracer confirmation. The final
+byte-bound panel scored 7.172 / 7.800 / 8.100 (median 7.800), with zero hard blockers. The
+LinkedIn editor scored the post 9.2, and the fresh-frame objective gate scored 10.0/10.
+
+### What failed, and what shipped because it failed
+
+1. **The first flow pass found that Act 3 explained the radar-to-ground test instead of
+   performing it.** The film gained a dominant early `GROUND?` plant, a visible radar descent,
+   separately revealed missing ground instruments, a larger SNOWIE gauge, a compositionally
+   distinct saturated-column countercase, and a measuring cup large enough to land as the final
+   image. The next full judge card moved from 6.794 to 7.158 without relaxing accuracy.
+2. **A fresh 15-fps gate rebuild exposed a 7.2-second dead cadence window that the cached frame
+   directory had hidden.** S7 now carries a continuous model scanner. The affected motion strip
+   moved from 3.8% to 5.5%, and EVENT_CADENCE returned to zero dead windows.
+3. **The second flow pass caught `NEXT TES` in the final cup.** The label was optically clipped
+   although the source string was correct. Its type was reduced, a full-resolution still was
+   inspected, and the final panel explicitly verified `NEXT TEST` in both the evidence frame and
+   delivered master.
+4. **`ship_gate.py check` crashed after recording a valid verdict.** The SFX-validation block
+   reused `ev`, overwriting the evidence-hash dictionary with an event list. Commit `becc627`
+   separates `sfx_payload` / `sfx_events`; the gate then verified 3 deliverables and 58 evidence
+   files against the graded bytes.
+5. **The first permanent media push lost a non-fast-forward race, and the next attempt committed
+   on detached HEAD but pushed a stale local branch.** `upload_video.py` now queries remote branch
+   existence with `ls-remote`, explicitly materializes the remote-tracking ref in main-only
+   clones, starts the worktree directly from that ref, and pushes `HEAD` to the remote branch.
+   All five deterministic media objects subsequently returned HTTP 200 with verified lengths.
+
+### Permanent upgrades in `becc627`
+
+- Remotion browser discovery works on both the production Mac and Linux, while
+  `encode_deliverables.sh` measures file size with portable GNU/BSD `stat` handling.
+- `text_fit_check.py` now mirrors the current `Plate` geometry and deliberate multi-line runs;
+  `ClaimChip` and long plates wrap at authored phone-legible sizes instead of merely existing
+  inside a box.
+- `build_evidence.py` carries this episode's real motion anchors, samples the full film including
+  credits, and builds its pack from the shipped 9:16 master.
+- The 2.5D cadence gate uses its measured median separation and stops at the authored story end,
+  so a required static licence card cannot masquerade as a dead story window.
+- `preflight.py` invokes the repository's pinned TypeScript compiler by absolute path, rather
+  than asking `npx` from the repository root to guess a toolchain.
+- `EvidenceColumn`, `EvidenceState`, `RadarGroundCutaway`, and `SeedDrone` are reusable engine
+  assets, with `EvidenceLook` as their look-development harness and the asset manifest updated.
+- The media uploader and ship gate fixes above are verified in production, not merely unit-level:
+  the hash gate passed, every permanent asset verified live, and the AlaskaAIHQ feed publish
+  succeeded.
+
+### Repeat offenders closed
+
+- **Optically absent motion:** the model lattice passed only after the scanner changed enough
+  pixels to be visible in both the motion strip and fresh machine frames. This follows the
+  08-13 rule that a metric-only gain is not a gain.
+- **Stale or mis-addressed artifacts:** evidence, quality frames, ship verdict, deterministic
+  media names, and feed id were all regenerated or reused from the exact final bytes; no new slug
+  was minted to work around a failed attempt.
+
+### Known issues with concrete next actions
+
+- `config/panel_anchors.md` is still missing. The repository has candidate anchor images but no
+  owner-agreed axis scores, and this run did not manufacture them. This is now an explicit owner
+  escalation: agree the anchor scorecards, then write the file and require it in panel prompts.
+- Three spoken-number captions split semantic units (`nineteen / million gallons`,
+  `eighty nine point / three five`, `eighteen / hundred`). The shared caption grouping should
+  learn protected numeric phrases before the next render; changing that shared timing system
+  after the byte-bound SHIP NOW lock would invalidate the passing panel.
+- The required credit card holds for roughly 13 seconds after narration. The next episode should
+  test a shorter licence-safe card or move the brand/source sign-off into a looped visual ending,
+  then re-run the completion-retention panel rather than trimming credits ad hoc.
