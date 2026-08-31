@@ -1,0 +1,242 @@
+{
+ "run_date": "2026-08-30",
+ "video_seconds": 137.03333333333333,
+ "count": 31,
+ "kinds": [
+  "boom",
+  "chain",
+  "chime",
+  "clank",
+  "creak",
+  "ding",
+  "klaxon",
+  "paper",
+  "pop",
+  "riser",
+  "snap",
+  "stamp",
+  "thud",
+  "tick",
+  "whoosh"
+ ],
+ "note": "written by dispatch_mix.py at mix time from the schedule it performed. One entry per motivated hit: t seconds, kind, loudness class, stereo pan.",
+ "events": [
+  {
+   "t": 0.15,
+   "kind": "whoosh",
+   "class": "standard",
+   "pan": -0.3,
+   "label": "drone enters the cloud"
+  },
+  {
+   "t": 2.8,
+   "kind": "chime",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "modeled headline resolves"
+  },
+  {
+   "t": 5.6,
+   "kind": "stamp",
+   "class": "standard",
+   "pan": 0.14,
+   "label": "Kenai pin lands"
+  },
+  {
+   "t": 9.2,
+   "kind": "creak",
+   "class": "texture",
+   "pan": 0.0,
+   "label": "ground question opens"
+  },
+  {
+   "t": 13.6,
+   "kind": "riser",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "paired drones rise"
+  },
+  {
+   "t": 17.3,
+   "kind": "tick",
+   "class": "standard",
+   "pan": -0.12,
+   "label": "sortie tiles click into folders"
+  },
+  {
+   "t": 21.8,
+   "kind": "clank",
+   "class": "standard",
+   "pan": 0.12,
+   "label": "flare cartridges load"
+  },
+  {
+   "t": 26.6,
+   "kind": "snap",
+   "class": "standard",
+   "pan": 0.0,
+   "label": "payload racks shut"
+  },
+  {
+   "t": 30.4,
+   "kind": "boom",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "coordinated release fills the cloud"
+  },
+  {
+   "t": 34.9,
+   "kind": "ding",
+   "class": "hero",
+   "pan": 0.18,
+   "label": "company-record hoop latches"
+  },
+  {
+   "t": 39.8,
+   "kind": "klaxon",
+   "class": "standard",
+   "pan": 0.0,
+   "label": "radar field boots"
+  },
+  {
+   "t": 43.4,
+   "kind": "pop",
+   "class": "standard",
+   "pan": -0.12,
+   "label": "seven radar features bloom"
+  },
+  {
+   "t": 47.9,
+   "kind": "chain",
+   "class": "standard",
+   "pan": 0.18,
+   "label": "observed-radar hoop latches"
+  },
+  {
+   "t": 52.7,
+   "kind": "thud",
+   "class": "hero",
+   "pan": -0.18,
+   "label": "subtraction gate lowers"
+  },
+  {
+   "t": 56.1,
+   "kind": "chime",
+   "class": "standard",
+   "pan": 0.0,
+   "label": "27-model lattice resolves"
+  },
+  {
+   "t": 61.0,
+   "kind": "whoosh",
+   "class": "standard",
+   "pan": 0.0,
+   "label": "model thread descends"
+  },
+  {
+   "t": 65.2,
+   "kind": "tick",
+   "class": "standard",
+   "pan": 0.16,
+   "label": "company mean converges"
+  },
+  {
+   "t": 69.9,
+   "kind": "boom",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "about-19M headline lands"
+  },
+  {
+   "t": 73.6,
+   "kind": "paper",
+   "class": "texture",
+   "pan": 0.0,
+   "label": "percentile endpoints separate"
+  },
+  {
+   "t": 78.4,
+   "kind": "whoosh",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "camera dives below the radar beam"
+  },
+  {
+   "t": 82.3,
+   "kind": "snap",
+   "class": "standard",
+   "pan": 0.0,
+   "label": "unmeasured descent branches"
+  },
+  {
+   "t": 87.0,
+   "kind": "stamp",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "ground-gauge and tracer voids appear"
+  },
+  {
+   "t": 91.2,
+   "kind": "ding",
+   "class": "standard",
+   "pan": 0.2,
+   "label": "SNOWIE gauge establishes precedent"
+  },
+  {
+   "t": 96.0,
+   "kind": "clank",
+   "class": "standard",
+   "pan": 0.22,
+   "label": "comparison locks side by side"
+  },
+  {
+   "t": 100.0,
+   "kind": "creak",
+   "class": "texture",
+   "pan": 0.0,
+   "label": "saturated-column countercase opens"
+  },
+  {
+   "t": 104.0,
+   "kind": "pop",
+   "class": "standard",
+   "pan": 0.1,
+   "label": "seven-feature evidence returns"
+  },
+  {
+   "t": 106.9,
+   "kind": "thud",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "honest score command lands"
+  },
+  {
+   "t": 109.1,
+   "kind": "chime",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "split verdict resolves"
+  },
+  {
+   "t": 115.38,
+   "kind": "clank",
+   "class": "standard",
+   "pan": -0.18,
+   "label": "drone lands"
+  },
+  {
+   "t": 117.82,
+   "kind": "tick",
+   "class": "hero",
+   "pan": 0.0,
+   "label": "model-number button lands"
+  },
+  {
+   "t": 121.5,
+   "kind": "paper",
+   "class": "standard",
+   "pan": 0.0,
+   "label": "measuring cup slides under the open hoop"
+  }
+ ]
+}

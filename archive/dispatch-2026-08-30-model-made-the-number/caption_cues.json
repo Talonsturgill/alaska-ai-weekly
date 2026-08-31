@@ -1,0 +1,186 @@
+{
+ "note": "every open-caption cue in the delivered cut, in order, as built into episode_props.json and rendered by the episode. Times are seconds from the first frame. Grade caption text against THIS, not against the 14 contact stills, which sample only a fraction of the runtime.",
+ "count": 36,
+ "cues": [
+  {
+   "start": 0.0,
+   "end": 5.93,
+   "text": "A robot entered an Alaska cloud. A model handed it nineteen"
+  },
+  {
+   "start": 5.93,
+   "end": 7.54,
+   "text": "million gallons."
+  },
+  {
+   "start": 8.7,
+   "end": 11.85,
+   "text": "On August twenty third, Rainmaker"
+  },
+  {
+   "start": 11.88,
+   "end": 14.3,
+   "text": "seeded clouds over the Kenai Peninsula."
+  },
+  {
+   "start": 16.12,
+   "end": 19.07,
+   "text": "Two Elijah drones made ten sorties"
+  },
+  {
+   "start": 19.1,
+   "end": 21.26,
+   "text": "in seven coordinated missions,"
+  },
+  {
+   "start": 22.14,
+   "end": 25.08,
+   "text": "releasing nineteen silver iodide flares."
+  },
+  {
+   "start": 26.26,
+   "end": 29.05,
+   "text": "The releases sat in Rainmaker's"
+  },
+  {
+   "start": 29.08,
+   "end": 31.27,
+   "text": "temperature band, totaling roughly"
+  },
+  {
+   "start": 31.3,
+   "end": 33.38,
+   "text": "three hundred seventy four grams."
+  },
+  {
+   "start": 35.12,
+   "end": 40.52,
+   "text": "Rainmaker manually tracked seven features in PAHG NEXRAD data."
+  },
+  {
+   "start": 42.34,
+   "end": 44.4,
+   "text": "The reflectivity was observed."
+  },
+  {
+   "start": 45.42,
+   "end": 46.99,
+   "text": "Calling those features seeding"
+  },
+  {
+   "start": 47.02,
+   "end": 49.34,
+   "text": "signatures was the company's interpretation."
+  },
+  {
+   "start": 50.88,
+   "end": 53.77,
+   "text": "The analysis subtracted five dBZ"
+  },
+  {
+   "start": 53.8,
+   "end": 56.15,
+   "text": "as assumed background across"
+  },
+  {
+   "start": 56.18,
+   "end": 58.34,
+   "text": "twenty seven conversion relationships."
+  },
+  {
+   "start": 60.32,
+   "end": 64.64,
+   "text": "The company mean was fifty seven point six two acre feet, about"
+  },
+  {
+   "start": 64.64,
+   "end": 66.36,
+   "text": "nineteen million gallons."
+  },
+  {
+   "start": 67.98,
+   "end": 71.94,
+   "text": "Its spread was forty one point seven to eighty nine point"
+  },
+  {
+   "start": 71.94,
+   "end": 75.0,
+   "text": "three five acre feet, not total uncertainty."
+  },
+  {
+   "start": 76.76,
+   "end": 79.3,
+   "text": "The lowest radar beam sat roughly eighteen"
+  },
+  {
+   "start": 79.3,
+   "end": 82.5,
+   "text": "hundred to twenty two hundred meters above sea level."
+  },
+  {
+   "start": 84.1,
+   "end": 86.71,
+   "text": "The report provides no ground gauge"
+  },
+  {
+   "start": 86.74,
+   "end": 88.6,
+   "text": "or tracer confirmation at the surface."
+  },
+  {
+   "start": 90.6,
+   "end": 91.96,
+   "text": "Independent SNOWIE"
+  },
+  {
+   "start": 91.99,
+   "end": 93.89,
+   "text": "research tracked seeded plumes"
+  },
+  {
+   "start": 93.92,
+   "end": 95.66,
+   "text": "from radar to ground gauges."
+  },
+  {
+   "start": 97.66,
+   "end": 101.47,
+   "text": "Rainmaker says a saturated column made losses less likely,"
+  },
+  {
+   "start": 101.47,
+   "end": 105.28,
+   "text": "and seven repeated radar features are meaningful evidence."
+  },
+  {
+   "start": 106.9,
+   "end": 108.2,
+   "text": "Score it honestly."
+  },
+  {
+   "start": 109.1,
+   "end": 111.07,
+   "text": "Alaska saw a robotics demonstration"
+  },
+  {
+   "start": 111.1,
+   "end": 113.3,
+   "text": "and a company modeled water total."
+  },
+  {
+   "start": 115.38,
+   "end": 116.88,
+   "text": "The drones delivered the flares."
+  },
+  {
+   "start": 117.82,
+   "end": 119.2,
+   "text": "The model delivered the number."
+  },
+  {
+   "start": 120.88,
+   "end": 123.74,
+   "text": "Next time, send a measuring cup."
+  }
+ ]
+}

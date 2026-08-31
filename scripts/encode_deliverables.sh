@@ -89,11 +89,14 @@ ffmpeg -y -i "$OUT/dispatch_master.mp4" -vf scale=720:1280 \
 HOST_MAX_MB="${HOST_MAX_MB:-95}"
 HOSTED="$OUT/dispatch_master_hosted.mp4"
 hosted_ok=0
+file_size_bytes () {
+  stat -c%s "$1" 2>/dev/null || stat -f%z "$1"
+}
 for crf in 20 22 24 26; do
   ffmpeg -y -i "$OUT/dispatch_master.mp4" \
     -c:v libx264 -profile:v high -crf "$crf" -pix_fmt yuv420p -movflags +faststart \
     -c:a copy "$HOSTED" -v error
-  mb=$(( $(stat -c%s "$HOSTED") / 1048576 ))
+  mb=$(( $(file_size_bytes "$HOSTED") / 1048576 ))
   wh="$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$HOSTED")"
   if [ "$wh" != "${VERT_W},${VERT_H}," ] && [ "$wh" != "${VERT_W},${VERT_H}" ]; then
     echo "  FAIL hosted 9:16 is ${wh}, not ${VERT_W}x${VERT_H}. Resolution is not negotiable." >&2

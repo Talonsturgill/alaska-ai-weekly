@@ -72,13 +72,35 @@ def via_github(file, name):
     branch = os.environ.get("DISPATCH_MEDIA_BRANCH", "dispatch-media")
     wt = tempfile.mkdtemp(prefix="media_wt_")
     try:
-        sh(["git", "-C", root, "fetch", "origin", branch])
-        exists = sh(["git", "-C", root, "rev-parse", "--verify", f"origin/{branch}"]).returncode == 0
-        sh(["git", "-C", root, "worktree", "add", "--force", "--detach", wt])
+        # Some production clones intentionally fetch only `main`. A bare
+        # `git fetch origin dispatch-media` then updates FETCH_HEAD but does not create
+        # `origin/dispatch-media`; the old code concluded the branch did not exist,
+        # created an orphan, transferred the whole video, and lost a non-fast-forward
+        # race at the final push. Fetch into the remote-tracking ref explicitly so the
+        # worktree always starts from the actual media-branch tip.
+        # Remote existence comes from the remote itself. A tracking ref may be absent in
+        # a main-only clone, while a stale LOCAL `dispatch-media` branch may still exist;
+        # neither is authoritative about what GitHub currently has.
+        exists = sh(["git", "-C", root, "ls-remote", "--exit-code", "--heads",
+                     "origin", branch]).returncode == 0
         if exists:
-            sh(["git", "-C", wt, "checkout", "-B", branch, f"origin/{branch}"])
-        else:
-            sh(["git", "-C", wt, "checkout", "--orphan", branch]); sh(["git", "-C", wt, "rm", "-rf", "."])
+            fetched = sh(["git", "-C", root, "fetch", "origin",
+                          f"+refs/heads/{branch}:refs/remotes/origin/{branch}"])
+            if fetched.returncode != 0:
+                raise RuntimeError("git fetch media branch failed: " +
+                                   (fetched.stderr or fetched.stdout)[-300:])
+        add_cmd = ["git", "-C", root, "worktree", "add", "--force", "--detach", wt]
+        if exists:
+            add_cmd.append(f"origin/{branch}")
+        added = sh(add_cmd)
+        if added.returncode != 0:
+            raise RuntimeError("git worktree add failed: " + (added.stderr or added.stdout)[-300:])
+        if not exists:
+            orphan = sh(["git", "-C", wt, "checkout", "--orphan",
+                         f"media-upload-{os.getpid()}"])
+            if orphan.returncode != 0:
+                raise RuntimeError("git orphan checkout failed: " + (orphan.stderr or orphan.stdout)[-300:])
+            sh(["git", "-C", wt, "rm", "-rf", "."])
         os.makedirs(os.path.join(wt, "media"), exist_ok=True)
         shutil.copyfile(file, os.path.join(wt, "media", name))
         sh(["git", "-C", wt, "add", "media/" + name])
@@ -91,7 +113,10 @@ def via_github(file, name):
                 "commit", "-m", f"dispatch media: {name}"])
         if c.returncode != 0 and "nothing to commit" not in (c.stdout + c.stderr):
             raise RuntimeError("git commit failed: " + (c.stderr or c.stdout)[-300:])
-        p = sh(["git", "-C", wt, "push", "-u", "origin", branch])
+        # Push the commit we just made, not a possibly stale local branch of the same
+        # name. The media worktree is deliberately detached when the remote branch
+        # exists, which prevents cross-worktree branch collisions in long-lived clones.
+        p = sh(["git", "-C", wt, "push", "origin", f"HEAD:refs/heads/{branch}"])
         if p.returncode != 0: raise RuntimeError("git push failed: " + p.stderr[-300:])
         return f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/media/{name}"
     finally:

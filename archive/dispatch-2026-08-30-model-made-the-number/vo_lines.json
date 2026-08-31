@@ -1,0 +1,97 @@
+{
+  "total": 123.74,
+  "voice": "Sulafat",
+  "model": "gemini-3.1-flash-tts-preview",
+  "lines": [
+    {
+      "idx": 0,
+      "text": "A robot entered an Alaska cloud. A model handed it nineteen million gallons.",
+      "start": 0.0,
+      "end": 7.34
+    },
+    {
+      "idx": 1,
+      "text": "On August twenty third, Rainmaker seeded clouds over the Kenai Peninsula.",
+      "start": 8.7,
+      "end": 14.3
+    },
+    {
+      "idx": 2,
+      "text": "Two Elijah drones made ten sorties in seven coordinated missions, releasing nineteen silver iodide flares.",
+      "start": 16.12,
+      "end": 24.8
+    },
+    {
+      "idx": 3,
+      "text": "The releases sat in Rainmaker's temperature band, totaling roughly three hundred seventy four grams.",
+      "start": 26.26,
+      "end": 33.38
+    },
+    {
+      "idx": 4,
+      "text": "Rainmaker manually tracked seven features in P A H G NEXRAD data.",
+      "start": 35.12,
+      "end": 40.52
+    },
+    {
+      "idx": 5,
+      "text": "The reflectivity was observed. Calling those features seeding signatures was the company's interpretation.",
+      "start": 42.34,
+      "end": 49.34
+    },
+    {
+      "idx": 6,
+      "text": "The analysis subtracted five D B Z as assumed background across twenty seven conversion relationships.",
+      "start": 50.88,
+      "end": 58.34
+    },
+    {
+      "idx": 7,
+      "text": "The company mean was fifty seven point six two acre feet, about nineteen million gallons.",
+      "start": 60.32,
+      "end": 66.36
+    },
+    {
+      "idx": 8,
+      "text": "Its spread was forty one point seven to eighty nine point three five acre feet, not total uncertainty.",
+      "start": 67.98,
+      "end": 75.0
+    },
+    {
+      "idx": 9,
+      "text": "The lowest radar beam sat roughly eighteen hundred to twenty two hundred meters above sea level.",
+      "start": 76.76,
+      "end": 82.5
+    },
+    {
+      "idx": 10,
+      "text": "The report provides no ground gauge or tracer confirmation at the surface.",
+      "start": 84.1,
+      "end": 88.6
+    },
+    {
+      "idx": 11,
+      "text": "Independent S N O W I E research tracked seeded plumes from radar to ground gauges.",
+      "start": 90.6,
+      "end": 95.66
+    },
+    {
+      "idx": 12,
+      "text": "Rainmaker says a saturated column made losses less likely, and seven repeated radar features are meaningful evidence.",
+      "start": 97.66,
+      "end": 105.06
+    },
+    {
+      "idx": 13,
+      "text": "Score it honestly. Alaska saw a robotics demonstration and a company modeled water total.",
+      "start": 106.9,
+      "end": 113.3
+    },
+    {
+      "idx": 14,
+      "text": "The drones delivered the flares. The model delivered the number. Next time, send a measuring cup.",
+      "start": 115.38,
+      "end": 123.74
+    }
+  ]
+}

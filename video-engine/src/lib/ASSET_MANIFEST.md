@@ -239,6 +239,12 @@ NONE. The 2026-07-20 library session banked all 14 gap species + SledDogTeam pro
   the VERTICAL SLICE: Vale on a TRUE 3D runway floor (rotateX'd ground plane, supersampled 2x so the
   perspective-stretched tarmac stays crisp), camera cranes down through the treeline, flies low over
   the runway, rises with the liftoff.
+- `CameraMoves` — named camera vocabulary exported by `lib/stage3d.tsx`: dollyThrough,
+  orbitReveal, craneDown, truckAcross and riseWith. Compose these rather than hand-writing
+  unrelated camera arithmetic per scene — ACTIVE
+- `EndCredits` — `lib/EndCredits.tsx`; data-driven burned-in sign-off for site, grouped sources
+  and verbatim music licence. `build_scenes.py` owns its data and `credits_check.py` owns its
+  contract — ACTIVE
 - `lib/lighting.tsx` NIGHTGRADE — 2026-07-25 CRAFT ADVANCE (the run's single primary engine advance).
   Every prior Dispatch was a daylight or dusk world. The engine had AuroraNightBG (one specific night
   BIOME) but no general system for making ANY biome read as night with rationed practical light.
@@ -649,6 +655,27 @@ it is made of arithmetic.
   through these components. It is NOT enforced by AccentRegistry, which throws at paint time
   and would kill a render. A repo-level lint on reserved-hue literals is still the open item
   from 2026-08-01.
+
+## THE EVIDENCE-STATE GRAMMAR — lib/evidence_state.tsx (CRAFT ADVANCE 2026-08-30)
+The shelf could draw an observation, a company claim, a model and an absence, but nothing
+prevented a scene from mixing those materials. This layer makes epistemic status a type rather
+than a palette note.
+- `EvidenceState` — discriminated union. `observed` alone accepts physical children;
+  `interpreted` constructs a sourced `ClaimChip`; `modeled` requires path plus fidelity and
+  constructs `Simulated`; `unmeasured` requires path plus label and constructs `Unnamed` with
+  `solid=0` internally. Modeled and unmeasured variants cannot accept physical children,
+  contact or shadows — ACTIVE
+- `EvidenceColumn` — vertical company-record, observed-radar and ground-evidence apparatus.
+  The ground position is a neutral solid `GROUND?` bracket until the source-record reveal,
+  then becomes a dashed labeled absence or a solid confirmed link — ACTIVE
+- `RadarGroundCutaway` — curved observed-radar beam, terrain relief, low-fidelity branching
+  modeled descent and `unknown | unreported | confirmed` surface-evidence state. Owns its
+  atmospheric and terrain subcomponents so it does not depend on phantom shelf assets — ACTIVE
+- `SeedDrone` — schematic cloud-seeding quadrotor with neutral sensor window, flare rack,
+  landing skids and rotors. It has no suppressant tank, expressive eye, lock behavior or
+  autonomy state, and it is never labeled as a literal EL-151 or EL-153 airframe — ACTIVE
+- `EvidenceLook` — phone-scale look-development composition covering the SeedDrone,
+  EvidenceColumn states, RadarGroundCutaway and dense thesis labels — ACTIVE
 
 ## BIOPROCESS — the shelf's FIRST CONTROLLER and FIRST CONTAINED PROCESS — lib/bioprocess.tsx
 NET-NEW 2026-08-09 ("The Method, Not The Metal", NSF award 2614749). REAL GAP, checked against

@@ -150,6 +150,8 @@ export const ClaimChip: React.FC<{
   x: number; y: number; text: string; sub?: string; op?: number; w?: number;
 }> = ({x, y, text, sub, op = 1, w}) => {
   const width = w ?? Math.max(220, text.length * 21 + 64);
+  const titleSize = Math.max(18, Math.min(30, (width - 36) / Math.max(1, text.length * 0.62)));
+  const subSize = sub ? Math.max(14, Math.min(19, (width - 36) / Math.max(1, sub.length * 0.62))) : 19;
   return (
     <g transform={`translate(${x},${y})`} opacity={op}>
       <rect x={-width / 2 + 6} y={-30 + 7} width={width} height={sub ? 92 : 60} fill={INK} opacity={0.28} />
@@ -157,10 +159,10 @@ export const ClaimChip: React.FC<{
             stroke={INK} strokeWidth={4} />
       <rect x={-width / 2} y={-30} width={width} height={12} fill="#a9793c" />
       <text x={0} y={16} textAnchor="middle" fontFamily="Archivo, Arial Black, sans-serif"
-            fontWeight={900} fontSize={30} fill={INK} letterSpacing={0.5}>{text}</text>
+            fontWeight={900} fontSize={titleSize} fill={INK} letterSpacing={0.5}>{text}</text>
       {sub && (
         <text x={0} y={50} textAnchor="middle" fontFamily="JetBrains Mono, monospace"
-              fontSize={19} fill={INK} opacity={0.72} letterSpacing={2}>{sub}</text>
+              fontSize={subSize} fill={INK} opacity={0.72} letterSpacing={2}>{sub}</text>
       )}
     </g>
   );
