@@ -29,7 +29,8 @@ REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 # because it is advisory rather than a fact about correctness.
 CHECKS = [
     ("typecheck the engine",
-     ["npx", "tsc", "--noEmit", "-p", "video-engine/tsconfig.json"], True),
+     [os.path.join(REPO, "video-engine", "node_modules", ".bin", "tsc"),
+      "--noEmit", "-p", "video-engine/tsconfig.json"], True),
     ("plated strings fit their plates",
      [sys.executable, "scripts/text_fit_check.py"], True),
     # Belt and braces. Its real home is Gate 0A', BEFORE the render, where catching a

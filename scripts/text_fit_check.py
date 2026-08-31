@@ -214,6 +214,8 @@ PLATE_CALL_RE = re.compile(r"<Plate\b(?P<attrs>[^>]*?)/>", re.S)
 PLATE_TEXT_RE = re.compile(r'\btext="(?P<t>[^"]*)"')
 PLATE_SIZE_RE = re.compile(r"\bsize=\{(?P<s>[\d.]+)\}")
 PLATE_LS_RE = re.compile(r"\bls=\{(?P<ls>[\d.]+)\}")
+PLATE_W_RE = re.compile(r"\bw=\{(?P<w>[\d.]+)\}")
+PLATE_DISPLAY_RE = re.compile(r"\bdisplayLines=\{\[(?P<body>.*?)\]\}", re.S)
 
 
 def check_plate_call_sites(path, min_px=MIN_PLATE_PX):
@@ -243,10 +245,13 @@ def check_plate_call_sites(path, min_px=MIN_PLATE_PX):
         return float(m.group(1)) if m else default
 
     W = const("W", 1080.0)
-    zoom = const("CONTENT_ZOOM", 1.22)
-    adv = const("ADV", 0.62)
-    usable = (W - 150) / (zoom * 1.10)
-    pad_x = 26.0
+    # Current Remotion episodes draw Plate at frame scale. Plate's fit() uses a
+    # conservative 0.72em advance and 36px total horizontal padding per side.
+    # Older episodes used CONTENT_ZOOM/ADV; keep those as a compatibility path.
+    zoom = const("CONTENT_ZOOM", 1.0)
+    adv = const("ADV", 0.72)
+    default_w = 920.0 if "const Plate:" in src else (W - 150) / (zoom * 1.10)
+    pad_x = 36.0 if "const Plate:" in src else 26.0
 
     fails, checked = [], 0
     for m in PLATE_CALL_RE.finditer(src):
@@ -255,26 +260,35 @@ def check_plate_call_sites(path, min_px=MIN_PLATE_PX):
         if not tm:
             continue  # a computed string; zoom_clip_check reports these as not measured
         text = tm.group("t")
+        wm = PLATE_W_RE.search(attrs)
+        plate_w = float(wm.group("w")) if wm else default_w
+        usable = plate_w - pad_x * 2
         sm = PLATE_SIZE_RE.search(attrs)
-        size = float(sm.group("s")) if sm else 34.0
+        size = float(sm.group("s")) if sm else 40.0
         lsm = PLATE_LS_RE.search(attrs)
-        ls = float(lsm.group("ls")) if lsm else 2.0
-        fit = min(size, math.floor((usable - pad_x * 2) / max(1, len(text) * adv + ls)))
-        checked += 1
-        if fit < min_px:
-            fails.append({
+        ls = float(lsm.group("ls")) if lsm else 0.0
+        dm = PLATE_DISPLAY_RE.search(attrs)
+        display_lines = re.findall(r"['\"]([^'\"]+)['\"]", dm.group("body")) if dm else []
+        runs = display_lines or [text]
+        ideal = 34.0 if display_lines else size
+        for run in runs:
+            fit = max(min_px, min(ideal, usable / max(1, len(run) * adv)))
+            text_w = len(run) * fit * adv + ls * max(0, len(run) - 1)
+            checked += 1
+            if fit <= min_px and text_w > usable:
+                fails.append({
                 "line": src[:m.start()].count("\n") + 1,
-                "text": text,
+                "text": run,
                 "size": f"authored {size:.0f}px, auto-fitted to {fit:.0f}px",
-                "text_w": round(len(text) * fit * adv + ls * max(0, len(text) - 1)),
-                "plate": (0, round(usable)),
+                "text_w": round(text_w),
+                "plate": (0, round(plate_w)),
                 "margin_l": 0,
                 "margin_r": 0,
                 "why": (f"Plate auto-fit drove this string to {fit:.0f}px to make it fit, below "
                         f"the {min_px:.0f}px legibility floor. It is inside its plate and "
                         f"unreadable on a phone. Shorten the string or split it across two "
                         f"plates; do not raise the floor."),
-            })
+                })
     return fails, checked
 
 

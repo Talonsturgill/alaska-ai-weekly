@@ -1,0 +1,245 @@
+{
+  "note": "frame 1 vs frame 8 of each filmstrip window, measured on the delivered cut. changed_pct is the share of pixels differing by more than 12/255. A judge who cannot SEE motion in a strip should read this before recording that the beat is frozen. EVERY WINDOW HERE IS WITHIN A SINGLE SHOT: any window that straddled a cut has been slid clear of it and is marked straddled_cut, because a strip spanning a cut measures the cut and reports it as animation. Before 2026-08-13 it did not do this, and the large figures in older packs are shot changes, not motion. Cross-check against motion_registered.json, which solves the camera out per shot.",
+  "strips": {
+    "cloud_entry": {
+      "centre_s": 0.3,
+      "changed_pct": 3.4,
+      "peak_delta": 239,
+      "window_start_s": 0.17,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "headline_scale": {
+      "centre_s": 2.4,
+      "changed_pct": 4.3,
+      "peak_delta": 222,
+      "window_start_s": 2.27,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "kenai_pin": {
+      "centre_s": 5.6,
+      "changed_pct": 2.7,
+      "peak_delta": 236,
+      "window_start_s": 5.47,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "ground_question": {
+      "centre_s": 9.2,
+      "changed_pct": 7.3,
+      "peak_delta": 228,
+      "window_start_s": 9.07,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "drone_launch": {
+      "centre_s": 13.6,
+      "changed_pct": 3.1,
+      "peak_delta": 236,
+      "window_start_s": 13.47,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "sortie_sort": {
+      "centre_s": 17.3,
+      "changed_pct": 6.1,
+      "peak_delta": 230,
+      "window_start_s": 17.17,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "flare_load": {
+      "centre_s": 21.8,
+      "changed_pct": 4.6,
+      "peak_delta": 216,
+      "window_start_s": 21.67,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "rack_close": {
+      "centre_s": 26.6,
+      "changed_pct": 5.4,
+      "peak_delta": 233,
+      "window_start_s": 26.47,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "cloud_release": {
+      "centre_s": 30.4,
+      "changed_pct": 6.3,
+      "peak_delta": 242,
+      "window_start_s": 30.27,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "record_latch": {
+      "centre_s": 34.9,
+      "changed_pct": 6.2,
+      "peak_delta": 227,
+      "window_start_s": 34.77,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "radar_boot": {
+      "centre_s": 39.8,
+      "changed_pct": 2.7,
+      "peak_delta": 220,
+      "window_start_s": 39.67,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "feature_bloom": {
+      "centre_s": 43.4,
+      "changed_pct": 5.7,
+      "peak_delta": 221,
+      "window_start_s": 43.27,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "radar_latch": {
+      "centre_s": 47.9,
+      "changed_pct": 3.4,
+      "peak_delta": 213,
+      "window_start_s": 47.77,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "subtract_gate": {
+      "centre_s": 52.7,
+      "changed_pct": 4.8,
+      "peak_delta": 217,
+      "window_start_s": 52.57,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "model_lattice": {
+      "centre_s": 56.1,
+      "changed_pct": 5.5,
+      "peak_delta": 235,
+      "window_start_s": 55.97,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "model_thread": {
+      "centre_s": 61.0,
+      "changed_pct": 5.0,
+      "peak_delta": 233,
+      "window_start_s": 60.87,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "mean_resolve": {
+      "centre_s": 65.2,
+      "changed_pct": 3.7,
+      "peak_delta": 231,
+      "window_start_s": 65.07,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "gallon_headline": {
+      "centre_s": 69.9,
+      "changed_pct": 3.5,
+      "peak_delta": 216,
+      "window_start_s": 69.77,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "range_expand": {
+      "centre_s": 73.6,
+      "changed_pct": 3.3,
+      "peak_delta": 229,
+      "window_start_s": 73.47,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "radar_dive": {
+      "centre_s": 78.4,
+      "changed_pct": 3.5,
+      "peak_delta": 219,
+      "window_start_s": 78.27,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "descent_branch": {
+      "centre_s": 82.3,
+      "changed_pct": 2.1,
+      "peak_delta": 230,
+      "window_start_s": 82.17,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "ground_voids": {
+      "centre_s": 87.0,
+      "changed_pct": 3.0,
+      "peak_delta": 224,
+      "window_start_s": 86.87,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "snowie_gauge": {
+      "centre_s": 91.2,
+      "changed_pct": 5.2,
+      "peak_delta": 230,
+      "window_start_s": 91.07,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "comparison": {
+      "centre_s": 96.0,
+      "changed_pct": 2.3,
+      "peak_delta": 231,
+      "window_start_s": 95.87,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "countercase": {
+      "centre_s": 100.1,
+      "changed_pct": 3.8,
+      "peak_delta": 211,
+      "window_start_s": 99.97,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "verdict": {
+      "centre_s": 107.5,
+      "changed_pct": 3.8,
+      "peak_delta": 213,
+      "window_start_s": 107.37,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "flight_medal": {
+      "centre_s": 109.0,
+      "changed_pct": 10.2,
+      "peak_delta": 232,
+      "window_start_s": 108.87,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "landing": {
+      "centre_s": 113.5,
+      "changed_pct": 4.1,
+      "peak_delta": 228,
+      "window_start_s": 113.37,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "button_number": {
+      "centre_s": 116.5,
+      "changed_pct": 5.1,
+      "peak_delta": 241,
+      "window_start_s": 116.37,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "measuring_cup": {
+      "centre_s": 119.0,
+      "changed_pct": 4.7,
+      "peak_delta": 242,
+      "window_start_s": 118.87,
+      "straddled_cut": false,
+      "within_shot": true
+    }
+  }
+}

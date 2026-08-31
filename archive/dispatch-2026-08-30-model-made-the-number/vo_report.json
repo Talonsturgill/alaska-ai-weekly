@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.981,
+    "heard": "A robot entered an Alaska cloud. A model handed at 19 million gallons. On August 23rd, Rainmaker ceded clouds over the Kenai Peninsula. Two Elijah drones made 10 sorties in seven coordinated missions, releasing 19 silver iodide flares. The releases sat in Rainmaker's Temperature Band, totaling roughly 374 grams. Rainmaker manually tracked seven features in Ph.G. Nexrad data. The reflectivity was observed. Calling those features seating signatures was the company's interpretation. The analysis subtracted five DBZ as assumed background, across 27 conversion relationships. The company mean was 57.62 acre feet, about 19 million gallons. Its spread was 41.7 to 89.35 acre feet, not total uncertainty. The lowest radar beam sat roughly 1800 to 2200 meters above sea level. The report provides no ground gauge or tracer confirmation of the surface. Independent snowy research tracked seeded plumes from radar to ground gauges. Rainmaker says a saturated column may losses less likely, and seven repeated radar features are meaningful evidence. Score it honestly. Alaska saw a robotics demonstration and a company modeled water total. The drones delivered the flares. The model delivered the number. Next time, send a measuring cup.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.039,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 9.03,
+        "voiced_frac": 0.6,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 124.2,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 124.2,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.978,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.981,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.981,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-30",
+  "title": "THE MODEL MADE THE NUMBER",
+  "feed": {
+    "id": "2026-08-30-model-made-the-number",
+    "repository": "Talonsturgill/alaskaaicarousels",
+    "branch": "main",
+    "status": "published"
+  },
+  "media": {
+    "vertical_1080x1920": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-08-30-dispatch_master.mp4",
+    "square_1080x1080": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-08-30-dispatch_square.mp4",
+    "mobile_720x1280": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-08-30-dispatch_master_720.mp4",
+    "poster_png": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-08-30-poster.png",
+    "poster_thumb_jpg": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-08-30-poster_thumb.jpg"
+  },
+  "quality": {
+    "objective_gate": 10.0,
+    "judge_scores": [7.172, 7.8, 8.1],
+    "panel_median": 7.8,
+    "ship_bar": 7.0,
+    "hard_blockers": 0,
+    "linkedin_copy_score": 9.2
+  }
+}

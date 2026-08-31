@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .venv/
+.venv-dispatch/
 .venv-voice/
 .env
 # fonts are committed (OFL-licensed) so routine clones don't re-download them

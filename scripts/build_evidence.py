@@ -30,54 +30,38 @@ EV = os.path.join(REPO, "out", "evidence")
 
 # (name, vo_line, seconds INTO that line where the move actually peaks)
 MOVES = [
-    # RE-ANCHORED 2026-08-13 for "The Machine Nobody Wrote Down". Every name above this line
-    # belonged to a previous film and NONE of those beats exist here. Anchor names and offsets
-    # are PER-RUN DATA and a run that changes the film changes them in the same commit, because
-    # a strip pointed at the wrong moment produces a judge finding that is true about the
-    # EVIDENCE and false about the FILM, which is the most expensive kind.
-    # Each strip CENTRES on its own storyboard beat, and the board was remapped onto the
-    # delivered vo_lines.json first, so board and strips are finally on one clock. One strip
-    # per beat, thirty-seven of them, across all fourteen shots.
-    ("land",  0,  0.00),  # opens on the object the film returns to
-    ("tap",  0,  2.15),  # plants loop 1 before anyone knows what it is
-    # 2.66 -> 2.15: the knuckle taps run f58-74, i.e. 1.93-2.47s, so a window centred
-    # at 2.66 opened AFTER the move ended and three judges reported the hand frozen
-    # across all 8 frames. They were right about the strip and wrong about the film.
-    ("stamp",  1,  0.00),  # the one fact the plate does carry
-    ("blanks",  1,  3.73),  # the contrast the whole film rests on
-    ("form",  2,  0.00),  # names the absence as an absence
-    ("record",  2,  4.52),  # the reason nobody can look it up
-    ("drums",  3,  0.00),  # the news peg, dated
-    ("nameplate",  3,  3.86),  # draws the two-award obligation instead of captioning it
-    ("pair",  3,  7.03),  # names the actor before the film uses her
-    ("ring",  4,  0.00),  # the two machines as equals
-    ("note",  4,  3.59),  # the failure mode, drawn
-    ("switchoff",  4,  6.11),  # keeps the operators competent and the room lit
-    ("fuelstop",  5,  0.00),  # why the battery is there at all
-    ("contactor",  5,  2.81),  # the saving made physical
-    ("hold",  6,  0.00),  # the stake, and it plants loop 2
-    ("unroll",  6,  3.75),  # the cost of not knowing, with nothing broken in frame
-    ("collapse",  7,  0.00),  # why the standard fix does not fit
-    ("drawer",  7,  3.86),  # the scale contrast that kills the method
-    ("probeout",  7,  6.80),  # the running gag lands and the bottleneck is named
-    ("probeback",  8,  0.00),  # the proposal, in the record's own words
-    ("shutter",  8,  3.63),  # the answer read off the difference
-    ("pinned",  9,  0.00),  # the fair objection opens
-    ("change",  9,  3.39),  # THE TEST, held and not rescued
-    ("strip",  9,  6.24),  # what changed while the photograph stayed the same
-    ("seat", 10,  0.00),  # the rebuttal, inside the same picture
-    ("crate", 10,  3.11),  # the shape of the answer
-    ("panel", 11,  0.00),  # the operators' half, and it is theirs
-    ("sandia", 11,  3.65),  # the utilities are ahead of the paperwork
-    ("boundary", 11,  5.75),  # the operators' competence is shown, not asserted
-    ("pullback", 12,  0.00),  # the honest size, said out loud
-    ("sheet", 12,  2.80),  # THE SIGNATURE SHOT
-    ("search", 13,  0.00),  # the film's one beat about its own name
-    ("stencil", 13,  2.91),  # the checked absence, drawn as an absence
-    ("breath", 14,  0.00),  # the tense discipline as a picture
-    ("button", 14,  2.60),  # the held breath before the button
-    ("pulse", 15,  0.00),  # the button, and loop 1 pays
-    ("loopback", 15,  3.09),  # the last image, and the loopback
+    # RE-ANCHORED 2026-08-30 for "The Model Made the Number" against the selected
+    # Gemini take. One strip per storyboard beat across all thirteen shots.
+    ("cloud_entry", 0, 0.30),
+    ("headline_scale", 0, 2.40),
+    ("kenai_pin", 0, 5.60),
+    ("ground_question", 1, 0.50),
+    ("drone_launch", 1, 4.90),
+    ("sortie_sort", 2, 1.18),
+    ("flare_load", 2, 5.68),
+    ("rack_close", 3, 0.34),
+    ("cloud_release", 3, 4.14),
+    ("record_latch", 3, 8.64),
+    ("radar_boot", 4, 4.68),
+    ("feature_bloom", 5, 1.06),
+    ("radar_latch", 5, 5.56),
+    ("subtract_gate", 6, 1.82),
+    ("model_lattice", 6, 5.22),
+    ("model_thread", 7, 0.68),
+    ("mean_resolve", 7, 4.88),
+    ("gallon_headline", 8, 1.92),
+    ("range_expand", 8, 5.62),
+    ("radar_dive", 9, 1.64),
+    ("descent_branch", 9, 5.54),
+    ("ground_voids", 10, 2.90),
+    ("snowie_gauge", 11, 0.60),
+    ("comparison", 11, 5.40),
+    ("countercase", 12, 2.44),
+    ("verdict", 13, 0.60),
+    ("flight_medal", 13, 2.10),
+    ("landing", 13, 6.60),
+    ("button_number", 14, 1.12),
+    ("measuring_cup", 14, 3.62),
 ]
 
 
@@ -246,7 +230,7 @@ def main():
             # thing being measured is exactly "did the picture change wholesale".
             probe = os.path.join(EV, f"_p_{name}_%d.jpg")
             subprocess.run(["ffmpeg", "-y", "-ss", f"{t0:.3f}", "-i", a.video, "-frames:v", "8",
-                            "-vsync", "0", "-q:v", "6", "-vf", "scale=120:-1", probe,
+                            "-fps_mode", "passthrough", "-q:v", "6", "-vf", "scale=120:-1", probe,
                             "-v", "error"], check=False)
             pg = sorted(glob.glob(os.path.join(EV, f"_p_{name}_*.jpg")),
                         key=lambda q: int(q.rsplit("_", 1)[1].split(".")[0]))
@@ -272,7 +256,7 @@ def main():
             print(f"  filmstrip {name}: window straddled the cut at {straddled:.2f}s, "
                   f"slid to {t0:.2f}s so the measurement is within-shot")
         subprocess.run(["ffmpeg", "-y", "-ss", f"{t0:.3f}", "-i", a.video, "-frames:v", "8",
-                        "-vsync", "0", "-q:v", "3",
+                        "-fps_mode", "passthrough", "-q:v", "3",
                         os.path.join(EV, f"s_{name}_%d.jpg"), "-v", "error"], check=True)
         g = sorted(glob.glob(os.path.join(EV, f"s_{name}_*.jpg")),
                    key=lambda q: int(q.rsplit("_", 1)[1].split(".")[0]))

@@ -491,11 +491,11 @@ def cmd_check(a):
             "Dispatch about a physical machine may not ship silent.")
     else:
         try:
-            ev = json.loads(sfx.read_text())
-            ev = ev.get("events", ev) if isinstance(ev, dict) else ev
-            if not isinstance(ev, list) or len(ev) < 6:
+            sfx_payload = json.loads(sfx.read_text())
+            sfx_events = sfx_payload.get("events", sfx_payload) if isinstance(sfx_payload, dict) else sfx_payload
+            if not isinstance(sfx_events, list) or len(sfx_events) < 6:
                 problems.append(
-                    f"sfx_events.json carries {len(ev) if isinstance(ev, list) else 0} event(s). "
+                    f"sfx_events.json carries {len(sfx_events) if isinstance(sfx_events, list) else 0} event(s). "
                     f"That is a placeholder, not a sound design. Every judge has capped Sound at "
                     f"6-7 for exactly this.")
         except Exception as e:

@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-08-13"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-08-30"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -77,55 +77,59 @@ def jit(idx, salt, lo, hi):
 _lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
 L = {x["idx"]: x["start"] for x in _lines}
 _TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
-VIDEO_SECS = max(x["end"] for x in _lines) + _TAIL   # derive from VO; never hardcode
+_props = os.path.join(OUT, "episode_props.json")
+VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props) \
+    else max(x["end"] for x in _lines) + _TAIL
 
 EVENTS = [
+    # 2026-08-30 "The Model Made the Number". One motivated hit per storyboard beat,
+    # aligned to the delivered VO and the 13 actual scene boundaries.
+    (0.15, "whoosh", "standard", -0.30),
+    (2.80, "chime", "hero", 0.0),
+    (5.60, "stamp", "standard", 0.14),
+    (9.20, "creak", "texture", 0.0),
+    (13.60, "riser", "hero", 0.0),
+    (17.30, "tick", "standard", -0.12),
+    (21.80, "clank", "standard", 0.12),
+    (26.60, "snap", "standard", 0.0),
+    (30.40, "boom", "hero", 0.0),
+    (34.90, "ding", "hero", 0.18),
+    (39.80, "klaxon", "standard", 0.0),
+    (43.40, "pop", "standard", -0.12),
+    (47.90, "chain", "standard", 0.18),
+    (52.70, "thud", "hero", -0.18),
+    (56.10, "chime", "standard", 0.0),
+    (61.00, "whoosh", "standard", 0.0),
+    (65.20, "tick", "standard", 0.16),
+    (69.90, "boom", "hero", 0.0),
+    (73.60, "paper", "texture", 0.0),
+    (78.40, "whoosh", "hero", 0.0),
+    (82.30, "snap", "standard", 0.0),
+    (87.00, "stamp", "hero", 0.0),
+    (91.20, "ding", "standard", 0.20),
+    (96.00, "clank", "standard", 0.22),
+    (100.00, "creak", "texture", 0.0),
+    (104.00, "pop", "standard", 0.10),
+    (106.90, "thud", "hero", 0.0),
+    (109.10, "chime", "hero", 0.0),
+    (115.38, "clank", "standard", -0.18),
+    (117.82, "tick", "hero", 0.0),
+    (121.50, "paper", "standard", 0.0),
+]
 
-    # 2026-08-13 "The Machine Nobody Wrote Down". PER-RUN DATA, generated from THIS film's
-    # storyboard beats remapped onto the DELIVERED vo_lines.json, so every hit lands on the
-    # frame something actually happens rather than on a grid. Kinds are chosen family-aware,
-    # so the no-consecutive-family assert is satisfied by construction rather than by hand.
-    #
-    # The table that was here belonged to 2026-08-09 and its own comment records what a stale
-    # table costs: three judges independently reported hits landing a second or two off the
-    # named move and eleven closing seconds with no sound, and none could see the cause,
-    # because the schedule was internally consistent and belonged to a different movie.
-    (0.15, "thud", "hero", 0.0),   # opens on the object the film returns to
-    (2.00, "tick", "standard", -0.11),   # plants loop 1 before anyone knows what it is
-    (5.54, "thud", "hero", 0.0),   # the one fact the plate does carry
-    (8.77, "riser", "hero", 0.0),   # the contrast the whole film rests on
-    (12.36, "creak", "standard", 0.22),   # names the absence as an absence
-    (15.68, "tick", "standard", 0.33),   # the reason nobody can look it up
-    (20.85, "stamp", "standard", -0.33),   # the news peg, dated
-    (25.13, "pop", "standard", -0.22),   # draws the two-award obligation instead of captioning
-    (28.03, "snap", "standard", -0.11),   # names the actor before the film uses her
-    (31.38, "clank", "standard", 0.0),   # the two machines as equals
-    (35.16, "whoosh", "hero", 0.0),   # the failure mode, drawn
-    (37.81, "tick", "standard", 0.22),   # keeps the operators competent and the room lit
-    (41.12, "thud", "hero", 0.0),   # why the battery is there at all
-    (44.50, "chain", "standard", -0.33),   # the saving made physical
-    (47.84, "thud", "hero", 0.0),   # the stake, and it plants loop 2
-    (52.08, "whoosh", "hero", 0.0),   # the cost of not knowing, with nothing broken in fram
-    (55.76, "pop", "standard", 0.0),   # why the standard fix does not fit
-    (59.95, "paper", "standard", 0.11),   # the scale contrast that kills the method
-    (63.15, "thud", "hero", 0.0),   # the running gag lands and the bottleneck is named
-    (65.20, "whoosh", "hero", 0.0),   # the proposal, in the record's own words
-    (68.83, "paper", "standard", -0.33),   # the answer read off the difference
-    (73.72, "tick", "standard", -0.22),   # the fair objection opens
-    (78.23, "whoosh", "hero", 0.0),   # THE TEST, held and not rescued
-    (82.03, "pop", "standard", 0.0),   # what changed while the photograph stayed the same
-    (86.15, "snap", "standard", 0.22),   # the shape of the answer
-    (88.38, "thud", "hero", 0.0),   # the operators' half, and it is theirs
-    (92.72, "clank", "standard", -0.33),   # the utilities are ahead of the paperwork
-    (95.22, "thud", "hero", 0.0),   # the operators' competence is shown, not asserted
-    (96.28, "pop", "hero", 0.0),   # the honest size, said out loud
-    (99.63, "whoosh", "hero", 0.0),   # THE SIGNATURE SHOT
-    (102.51, "paper", "standard", 0.11),   # the film's one beat about its own name
-    (106.06, "tick", "standard", 0.22),   # the checked absence, drawn as an absence
-    (110.59, "thud", "hero", 0.0),   # the tense discipline as a picture
-    (113.89, "clank", "standard", -0.33),   # the held breath before the button
-    (115.76, "tick", "hero", 0.0),   # the button, and loop 1 pays
-    (119.70, "whoosh", "hero", 0.0),   # the last image, and the loopback
+EVENT_LABELS = [
+    "drone enters the cloud", "modeled headline resolves", "Kenai pin lands",
+    "ground question opens", "paired drones rise", "sortie tiles click into folders",
+    "flare cartridges load", "payload racks shut", "coordinated release fills the cloud",
+    "company-record hoop latches", "radar field boots", "seven radar features bloom",
+    "observed-radar hoop latches", "subtraction gate lowers", "27-model lattice resolves",
+    "model thread descends", "company mean converges", "about-19M headline lands",
+    "percentile endpoints separate", "camera dives below the radar beam",
+    "unmeasured descent branches", "ground-gauge and tracer voids appear",
+    "SNOWIE gauge establishes precedent", "comparison locks side by side",
+    "saturated-column countercase opens", "seven-feature evidence returns",
+    "honest score command lands", "split verdict resolves", "drone lands",
+    "model-number button lands", "measuring cup slides under the open hoop",
 ]
 
 
@@ -152,46 +156,14 @@ EVENTS = [
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    # RE-ANCHORED 2026-08-12 for the round-2 recut. The VO was cut from 282 words to 222
-    # and the film from 153.5s to 114.2s, so every node authored against the old read sat
-    # late and the last moves fell past the final frame, which is exactly what the stale
-    # per-run guard shouted about. The story beats are unchanged in ORDER, only tighter, so
-    # the time axis is scaled by 114.2/127.8 and anything landing past the end is dropped
-    # rather than clamped onto the last frame.
-    # 2026-08-08 pass 2. Premix LRA 6.50 still delivered 5.7 after normalization, so the
-    # arc now DUCKS HARD immediately before each measured gap and swells to 2.25 inside it.
-    # Range matters more than level: LRA is the spread, and the spread has to survive loudnorm.
-    (0.00, 0.34),
-    (15.58, 0.3),
-    (16.23, 2.25),
-    (16.98, 0.34),
-    (29.40, 0.3),
-    (30.07, 2.25),
-    (30.84, 0.34),
-    (34.42, 0.3),
-    (35.10, 2.25),
-    (35.87, 0.34),
-    (55.74, 0.3),
-    (56.38, 2.25),
-    (57.11, 0.34),
-    (57.58, 0.2),
-    (60.04, 1.05),
-    (63.87, 0.3),
-    (64.89, 2.25),
-    (66.00, 0.34),
-    (69.53, 0.3),
-    (70.19, 2.25),
-    (70.97, 0.34),
-    (82.31, 0.3),
-    (82.95, 2.25),
-    (83.69, 0.34),
-    (103.13, 2.05),
-    (115.25, 0.16),
-    (115.90, 0.3),
-    (116.64, 2.25),
-    (117.48, 0.34),
-    (117.71, 1.9),
-    (123.64, 0.9),
+    # Five-phase weather-documentary arc: wonder, operation, analysis, ground test,
+    # fair countercase and a clean branded resolve through the source credits.
+    (0.00, 0.94), (8.70, 0.88), (16.12, 1.00), (35.12, 0.88),
+    (42.34, 0.76), (50.88, 0.86), (60.32, 1.08), (67.98, 0.92),
+    (76.76, 0.76), (84.10, 0.68), (88.60, 0.30), (90.60, 0.72),
+    (97.66, 0.84), (105.06, 0.30), (106.90, 0.70), (113.30, 0.18),
+    (115.38, 0.95), (123.74, 1.18), (126.34, 0.85), (132.00, 0.58),
+    (137.03, 0.04),
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
@@ -208,8 +180,8 @@ BED_ARC = [
 # hundred and ten bare. A room that is visibly a working plant should hum for its whole runtime,
 # so the bed now runs the full film at a lower level, where it reads as air rather than as an
 # event. Still synthesised, still deterministic, still no attribution owed.
-AMB_IN, AMB_OUT = 0.0, 129.9
-AMB_LEVEL = 0.055
+AMB_IN, AMB_OUT = 0.0, VIDEO_SECS
+AMB_LEVEL = 0.040
 
 
 def _assert_per_run_data_covers_the_film():
@@ -408,6 +380,8 @@ def main():
     sys.path.insert(0, HERE)
     from sfx_bank import resolve
 
+    if len(EVENT_LABELS) != len(EVENTS):
+        raise SystemExit(f"SFX SCHEDULE: {len(EVENTS)} events but {len(EVENT_LABELS)} labels")
     check_schedule(EVENTS)
 
     # THE SOUND DESIGN HAS TO BE VISIBLE, NOT JUST AUDIBLE (2026-08-13).
@@ -431,7 +405,8 @@ def main():
             "kinds": sorted({k for _, k, _, _ in EVENTS}),
             "note": ("written by dispatch_mix.py at mix time from the schedule it performed. "
                      "One entry per motivated hit: t seconds, kind, loudness class, stereo pan."),
-            "events": [{"t": t, "kind": k, "class": c, "pan": p} for t, k, c, p in EVENTS],
+            "events": [{"t": t, "kind": k, "class": c, "pan": p, "label": EVENT_LABELS[i]}
+                       for i, (t, k, c, p) in enumerate(EVENTS)],
         }, open(_sfx_out, "w"), indent=1)
         print(f"sfx_events.json written: {len(EVENTS)} events, {len(set(k for _, k, _, _ in EVENTS))} kinds")
     except Exception as _e:
@@ -606,7 +581,10 @@ def main():
     # changed. Earlier runs measuring -1.67 were not safer, they were luckier.
     # 0.78 is -2.16 dBFS of sample peak, which leaves better than a decibel of headroom for
     # inter-sample overshoot and still clears -14 LUFS comfortably.
-    run([FF, "-y", "-i", premix, "-af", f"{ln},alimiter=limit=0.78:level=false",
+    # Leave explicit AAC reconstruction headroom. The 2026-08-30 Mac encode measured the
+    # PCM master at -2.1 dBTP but the first AAC delivery at -0.95 dBTP. A small static trim
+    # keeps every derived copy below the -1.0 ceiling while preserving the written dynamics.
+    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.7dB,alimiter=limit=0.78:level=false",
          "-ar", str(SR), "-ac", "2", master])
     os.remove(premix)
     print("wrote", master)
@@ -614,7 +592,8 @@ def main():
     # write sfx_events.json for the gate (schema: t/kind as before, + performance)
     json.dump({"events": [
                    {"t": t, "kind": k, "class": c, "pan": p,
-                    "take": os.path.basename(takes[i]), "family": FAMILY[k]}
+                    "take": os.path.basename(takes[i]), "family": FAMILY[k],
+                    "label": EVENT_LABELS[i]}
                    for i, (t, k, c, p) in enumerate(EVENTS)],
                "silence_dip_at": SILENCE_DIP_AT, "count": len(EVENTS)},
               open(os.path.join(AUD, "sfx_events.json"), "w"), indent=2)

@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-08-31T20:39:44Z",
+  "account": "talon.sturgill@gmail.com",
+  "to": "docket@alaskaaihq.com",
+  "subject": "ALASKA.AI · Dispatch ready · 2026-08-30 · THE MODEL MADE THE NUMBER",
+  "status": "saved_unsent",
+  "body_format": "plain_text_with_permanent_urls",
+  "includes": [
+    "linkedin_square_video",
+    "tiktok_vertical_video",
+    "mobile_720p_video",
+    "poster",
+    "linkedin_post",
+    "first_comment_sources",
+    "voice_and_music_credits",
+    "qa_scorecard",
+    "run_upgrades"
+  ]
+}

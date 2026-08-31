@@ -1,0 +1,19 @@
+{
+  "judge_id": 3,
+  "axes": {
+    "Hook & retention": 8.2,
+    "Illustration craft & detail": 7.7,
+    "Motion & animation craft": 7.6,
+    "Composition & staging": 8.0,
+    "Color & grade": 8.1,
+    "Typography & captions": 7.9,
+    "Sound design & mix": 7.8,
+    "VO–illustration sync & entertainment": 8.2,
+    "Accuracy & sourcing": 9.2,
+    "Alaska authenticity & cultural respect": 8.4,
+    "Writing & post quality": 8.7
+  },
+  "weighted_total": 8.1,
+  "hard_blockers": [],
+  "ship": true
+}

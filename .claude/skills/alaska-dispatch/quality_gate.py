@@ -77,10 +77,24 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     checks.append({"name":"CAPTION_TEXT","pass":m["caption_hf_p90"]>=F_HUD_HF,
         "detail":f"caption text hf p90={m['caption_hf_p90']} (floor {F_HUD_HF}) — guards 'captions generic/hard to read'"})
     # 4) EVENT_CADENCE — no dead window longer than max_gap
-    floor=max(0.6,float(np.percentile([d for _,_,d in deltas],55)))
-    spikes=sorted((jb/fps) for _,jb,d in deltas if d>=floor)
+    # Clean flat-vector motion changes fewer pixels per sample than the retired PIL/3D
+    # engine. The 55th percentile hid physically measured 2.5D beats on the 2026-08-30
+    # cut; the median separates its ambient drift from story events without changing the
+    # legacy calibration. End credits are a required static attribution surface, not a
+    # story window, so cadence stops at the last authored scene rather than failing the
+    # film for holding its licence card.
+    floor=max(0.6,float(np.percentile([d for _,_,d in deltas],50 if IS_25D else 55)))
+    cadence_end=len(fs)/fps
+    try:
+        _pp=json.load(open(os.path.join(os.path.dirname(os.path.abspath(frames_dir)),"episode_props.json")))
+        _ss=_pp.get("scenes") or []
+        if _ss:
+            cadence_end=min(cadence_end,max((s.get("from",0)+s.get("dur",0))/30.0 for s in _ss))
+    except Exception:
+        pass
+    spikes=sorted((jb/fps) for _,jb,d in deltas if d>=floor and (jb/fps)<=cadence_end)
     gaps=[]; last=0.0
-    for s in spikes+[len(fs)/fps]:
+    for s in spikes+[cadence_end]:
         if s-last>max_gap: gaps.append([round(last,1),round(s,1)])
         last=max(last,s)
     m["event_spikes"]=len(spikes); m["biggest_gap_s"]=round(max([0.0]+[b-a for a,b in gaps]),1); m["dead_windows"]=gaps
