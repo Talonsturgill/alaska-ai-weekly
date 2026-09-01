@@ -47,8 +47,11 @@ def mono_w(s, size, track=0.5):
 
 
 def scenes(src):
+    # Episode components are allowed to omit the style-space after `:` and may use a
+    # lettered insert such as S9b.  Treat formatting as formatting; a geometry gate must
+    # not go blind because Prettier or an episode author chose `:React.FC`.
     starts = [(m.group(1), m.start()) for m in
-              re.finditer(r"^const (S\d+): React\.FC<SceneProps\b[^>]*>", src, re.M)]
+              re.finditer(r"^const (S\d+[A-Za-z]*):\s*React\.FC<SceneProps\b[^>]*>", src, re.M)]
     for i, (name, a) in enumerate(starts):
         b = starts[i + 1][1] if i + 1 < len(starts) else len(src)
         yield name, a, src[a:b]

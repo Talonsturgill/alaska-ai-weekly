@@ -27,7 +27,7 @@ data center dispatch). Episode-local: this file is rewritten per run with
 EVENTS matched to THIS story's beats/storyboard; the doctrine above and the
 machinery below CARRY OVER unchanged.
 """
-import json, os, re, subprocess, sys, math, zlib
+import json, os, re, subprocess, sys, math, zlib, shutil
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-08-30"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-01"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -70,66 +70,74 @@ def jit(idx, salt, lo, hi):
 
 
 # SFX events cut to the picture, derived from vo_lines.json (out/dispatch/vo_lines.json,
-# idx 0-8, this run's 9 spoken lines) plus fixed offsets into the retimed scenes
+# idx 0-18, this run's 19 spoken lines) plus fixed offsets into the retimed scenes
 # (out/dispatch/episode_props.json > scenes[], scripts/build_scenes.py). Each event:
 # (time, kind, class, pan) — pan is the prop's approximate storyboard x mapped to
 # [-1,1], scaled by 0.35 in the graph.
 _lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
 L = {x["idx"]: x["start"] for x in _lines}
-_TAIL = 2.6   # matches scripts/build_scenes.py TAIL (hold after the last word)
+_TAIL = 1.0   # fallback hold after the last word when episode_props.json is absent
 _props = os.path.join(OUT, "episode_props.json")
 VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props) \
     else max(x["end"] for x in _lines) + _TAIL
 
 EVENTS = [
-    # 2026-08-30 "The Model Made the Number". One motivated hit per storyboard beat,
-    # aligned to the delivered VO and the 13 actual scene boundaries.
+    # 2026-09-01 "The Ceiling Was in the Measurement". Every accent is attached to
+    # a visible ribbon, monitor, uncertainty, evidence-boundary, or source-card move.
     (0.15, "whoosh", "standard", -0.30),
-    (2.80, "chime", "hero", 0.0),
-    (5.60, "stamp", "standard", 0.14),
-    (9.20, "creak", "texture", 0.0),
-    (13.60, "riser", "hero", 0.0),
-    (17.30, "tick", "standard", -0.12),
-    (21.80, "clank", "standard", 0.12),
-    (26.60, "snap", "standard", 0.0),
-    (30.40, "boom", "hero", 0.0),
-    (34.90, "ding", "hero", 0.18),
-    (39.80, "klaxon", "standard", 0.0),
-    (43.40, "pop", "standard", -0.12),
-    (47.90, "chain", "standard", 0.18),
-    (52.70, "thud", "hero", -0.18),
-    (56.10, "chime", "standard", 0.0),
-    (61.00, "whoosh", "standard", 0.0),
-    (65.20, "tick", "standard", 0.16),
-    (69.90, "boom", "hero", 0.0),
-    (73.60, "paper", "texture", 0.0),
-    (78.40, "whoosh", "hero", 0.0),
-    (82.30, "snap", "standard", 0.0),
-    (87.00, "stamp", "hero", 0.0),
-    (91.20, "ding", "standard", 0.20),
-    (96.00, "clank", "standard", 0.22),
-    (100.00, "creak", "texture", 0.0),
-    (104.00, "pop", "standard", 0.10),
-    (106.90, "thud", "hero", 0.0),
-    (109.10, "chime", "hero", 0.0),
-    (115.38, "clank", "standard", -0.18),
-    (117.82, "tick", "hero", 0.0),
-    (121.50, "paper", "standard", 0.0),
+    (1.40, "clank", "hero", 0.0),
+    (L[1] + 0.10, "paper", "texture", -0.18),
+    (L[1] + 2.70, "chime", "standard", 0.18),
+    (L[2] + 0.10, "pop", "standard", -0.14),
+    (L[2] + 3.50, "whoosh", "standard", 0.22),
+    (L[3] + 0.10, "tick", "standard", -0.20),
+    (L[3] + 4.00, "snap", "standard", 0.20),
+    (L[4] + 0.10, "riser", "hero", 0.0),
+    (L[5] + 0.10, "clank", "standard", -0.16),
+    (L[5] + 3.00, "whoosh", "standard", 0.18),
+    (L[6] + 0.10, "tick", "standard", -0.12),
+    (L[6] + 2.90, "boom", "hero", 0.0),
+    (L[7] + 0.10, "paper", "texture", -0.18),
+    (L[7] + 2.20, "chain", "standard", 0.18),
+    (L[8] + 0.10, "chime", "standard", -0.10),
+    (L[8] + 3.10, "clank", "standard", 0.16),
+    (L[9] + 0.10, "whoosh", "standard", 0.0),
+    (L[10] + 0.10, "thud", "hero", 0.0),
+    (L[11] + 0.10, "snap", "standard", -0.15),
+    (L[11] + 3.00, "tick", "standard", 0.15),
+    (L[11] + 6.00, "boom", "hero", 0.0),
+    (L[12] + 0.10, "chain", "standard", 0.18),
+    (L[12] + 2.00, "ding", "standard", -0.18),
+    (L[13] + 0.10, "whoosh", "standard", 0.0),
+    (L[14] + 0.10, "creak", "texture", -0.12),
+    (L[14] + 3.00, "pop", "standard", 0.16),
+    (L[15] + 0.10, "clank", "standard", -0.18),
+    (L[15] + 3.50, "chime", "standard", 0.18),
+    (L[16] + 0.10, "tick", "standard", 0.0),
+    (L[17] + 0.10, "stamp", "hero", 0.0),
+    (L[18] + 0.10, "whoosh", "standard", -0.16),
+    (L[18] + 2.60, "paper", "texture", 0.16),
+    (126.00, "chime", "standard", 0.0),
 ]
 
 EVENT_LABELS = [
-    "drone enters the cloud", "modeled headline resolves", "Kenai pin lands",
-    "ground question opens", "paired drones rise", "sortie tiles click into folders",
-    "flare cartridges load", "payload racks shut", "coordinated release fills the cloud",
-    "company-record hoop latches", "radar field boots", "seven radar features bloom",
-    "observed-radar hoop latches", "subtraction gate lowers", "27-model lattice resolves",
-    "model thread descends", "company mean converges", "about-19M headline lands",
-    "percentile endpoints separate", "camera dives below the radar beam",
-    "unmeasured descent branches", "ground-gauge and tracer voids appear",
-    "SNOWIE gauge establishes precedent", "comparison locks side by side",
-    "saturated-column countercase opens", "seven-feature evidence returns",
-    "honest score command lands", "split verdict resolves", "drone lands",
-    "model-number button lands", "measuring cup slides under the open hoop",
+    "signal ribbon sweeps into frame", "false ceiling snaps into place",
+    "Nature author card unfolds", "UAF coauthor credit rings",
+    "Wind monitor wakes", "L1 distance ribbon crosses the frame",
+    "solar-wind minute ticks in", "polar-cap minute locks beside it",
+    "mismatch question rises", "arrival-time lattice drops",
+    "strength and location uncertainties drift", "simulation clock starts",
+    "saturated-looking curve lands", "calibration sheet opens",
+    "bias correction chain releases", "corrected relation begins climbing",
+    "solid evidence line reaches fifteen", "test card wipes on",
+    "evidence boundary plants at fifteen", "dashed projection begins",
+    "twenty-five marker clicks", "roughly-twice projection lands",
+    "physical-saturation countercase opens", "unresolved badge rings",
+    "no-operational-AI banner sweeps through", "biased fit flexes",
+    "missing information pops out", "hazard icons lock together",
+    "limits card resolves", "apparent ceiling shifts",
+    "evidence boundary stamps in place", "ribbon follows the data",
+    "measurement gap remains open", "source credits settle",
 ]
 
 
@@ -156,14 +164,14 @@ EVENT_LABELS = [
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    # Five-phase weather-documentary arc: wonder, operation, analysis, ground test,
-    # fair countercase and a clean branded resolve through the source credits.
-    (0.00, 0.94), (8.70, 0.88), (16.12, 1.00), (35.12, 0.88),
-    (42.34, 0.76), (50.88, 0.86), (60.32, 1.08), (67.98, 0.92),
-    (76.76, 0.76), (84.10, 0.68), (88.60, 0.30), (90.60, 0.72),
-    (97.66, 0.84), (105.06, 0.30), (106.90, 0.70), (113.30, 0.18),
-    (115.38, 0.95), (123.74, 1.18), (126.34, 0.85), (132.00, 0.58),
-    (137.03, 0.04),
+    # Five-phase science-documentary arc: mystery, measurement, apparent result,
+    # evidence/projection split, boundary-and-button resolve, then source credits.
+    (0.00, 0.95), (L[1], 0.80), (L[2], 1.00), (L[3], 0.90),
+    (L[4], 0.72), (L[5], 0.82), (L[6], 0.88), (L[7], 1.02),
+    (L[8], 1.12), (L[9], 0.34), (L[10], 0.24), (L[11], 0.78),
+    (L[12], 0.42), (L[13], 0.62), (L[14], 0.86), (L[15], 0.68),
+    (L[16], 0.85), (L[17], 0.28), (L[18], 0.62), (120.90, 1.10),
+    (126.00, 0.80), (133.00, 0.05),
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
@@ -181,7 +189,7 @@ BED_ARC = [
 # so the bed now runs the full film at a lower level, where it reads as air rather than as an
 # event. Still synthesised, still deterministic, still no attribution owed.
 AMB_IN, AMB_OUT = 0.0, VIDEO_SECS
-AMB_LEVEL = 0.040
+AMB_LEVEL = 0.025
 
 
 def _assert_per_run_data_covers_the_film():
@@ -441,6 +449,11 @@ def main():
     # documentary narrator does drop under a concession and does lift into a closing
     # question, and unlike the bed it is the thing the meter is listening to.
     vo_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.78) for t, m in BED_ARC])
+    # Ambience and motivated hits otherwise hold the quiet phases up after the VO and bed
+    # arcs have moved.  Carry a gentle version of the same authored arc through the finished
+    # mix so every layer changes together; this raises macro dynamics without changing the
+    # narration-to-bed balance or moving the fitted pre-button pause.
+    mix_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.65) for t, m in BED_ARC])
     fc.append(f"[0:a]aformat=sample_rates={SR}:channel_layouts=stereo,apad=whole_dur={VIDEO_SECS},"
               f"volume=volume={vo_arc}:eval=frame,asplit=2[vo][vok]")
     # Music: loop, trim, base level, VO-slot EQ (wide -2.5dB dip at 3k so the bed
@@ -473,8 +486,11 @@ def main():
     # steps, applied downstream of the duck where it is a clean level move.
     gap_lift = [(0.0, 1.0)]
     try:
-        _w = json.load(open(os.path.join(AUD, "words.json")))["words"]
-        _gaps = [(a["e"], b["s"]) for a, b in zip(_w, _w[1:]) if b["s"] - a["e"] >= 0.5]
+        # Line-to-line breaths are the editorial openings the score should answer. Using
+        # every word-level pause made the filter expression unnecessarily huge on this
+        # 219-word read and exhausted ffmpeg's expression allocator before mixing began.
+        _gaps = [(a["end"], b["start"]) for a, b in zip(_lines, _lines[1:])
+                 if b["start"] - a["end"] >= 0.5]
         for a, b in _gaps:
             gap_lift += [(a + 0.05, 1.0), (a + 0.22, 2.05), (b - 0.22, 2.05), (b - 0.05, 1.0)]
         print(f"bed opens into {len(_gaps)} gaps of 0.5s or longer "
@@ -549,7 +565,13 @@ def main():
     # mix VO + bed + wind + all sfx
     mix_in = "[vo][bed][amb]" + "".join(sfx_labels)
     n = 3 + len(sfx_labels)
-    fc.append(f"{mix_in}amix=inputs={n}:normalize=0:dropout_transition=0[premix]")
+    fc.append(f"{mix_in}amix=inputs={n}:normalize=0:dropout_transition=0[mixed]")
+    # The pre-button breath is a STORY beat, not only a music-bed automation.  A VO line or
+    # motivated hit can otherwise mask the bed dip and leave the delivered mix effectively
+    # flat.  Apply the same fitted window to the full mix so the rendered master contains the
+    # promised pause.  Static two-pass loudness normalization preserves this relative drop.
+    fc.append(f"[mixed]volume=volume={mix_arc}:eval=frame,"
+              f"volume=enable='between(t,{dip0},{dip1})':volume=0.25[premix]")
 
     filtergraph = ";".join(fc)
     master = os.path.join(AUD, "master.wav")
@@ -584,10 +606,21 @@ def main():
     # Leave explicit AAC reconstruction headroom. The 2026-08-30 Mac encode measured the
     # PCM master at -2.1 dBTP but the first AAC delivery at -0.95 dBTP. A small static trim
     # keeps every derived copy below the -1.0 ceiling while preserving the written dynamics.
-    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.7dB,alimiter=limit=0.78:level=false",
+    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.6dB,alimiter=limit=0.78:level=false",
          "-ar", str(SR), "-ac", "2", master])
     os.remove(premix)
     print("wrote", master)
+
+    # Keep the legacy quality-gate aliases synchronized with the actual episode mix.  These
+    # used to survive from a previous run, so a successful new mix could be graded against old
+    # audio and old music credit metadata.
+    shutil.copyfile(master, os.path.join(AUD, "master60.wav"))
+    try:
+        credit = json.load(open(os.path.join(OUT, "music_credit.json")))
+        json.dump({"source": "sourced", "credit": credit["credit"]},
+                  open(os.path.join(AUD, "music_status.json"), "w"), indent=2)
+    except Exception as exc:
+        raise SystemExit(f"dispatch_mix: could not synchronize music_status.json ({exc})")
 
     # write sfx_events.json for the gate (schema: t/kind as before, + performance)
     json.dump({"events": [

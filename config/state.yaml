@@ -1648,3 +1648,37 @@ dispatch_history:
       violet observed radar glass, nickel evidence hoops, chartreuse model hairline
     metaphor: a vertical evidence column latches solid hoops for observations, carries
       modeling as a shadowless thread, and ends at a dashed unreported ground link
+- date: '2026-09-01'
+  topic: The Ceiling Was in the Measurement
+  slug: 2026-09-01-ceiling-in-the-measurement
+  key_entities:
+  - Nithin Sivadas
+  - Doğacan Öztürk
+  - UAF
+  - Nature
+  - NASA Wind
+  archetype: evidence-boundary science correction
+  palette: aubergine-black void,fuchsia signal,cream key,charcoal hardware,mauve evidence,dusty-rose
+    uncertainty
+  voice: Nora
+  stance: curious
+  angle: Measurement uncertainty can make a model learn a physical ceiling that the
+    evidence pipeline drew.
+  hero: SignalRibbon
+  cast:
+  - UpstreamMonitor
+  - UncertaintyLattice
+  - EvidenceTrace
+  - MeasurementField
+  composition:
+    pov: macro-path-to-instrument-cutaway
+    motion_vector: horizontal-traverse-through-signal
+    hero_treatment: single-continuous-signal
+    layout: diagonal-causal-corridor
+    register: scientific-material-theater
+    camera_strategy: ribbon-dolly-through
+    light_story: sunward-hard-key-to-ivory-release
+    palette: aubergine-black void, fuchsia signal, cream key, charcoal hardware, mauve
+      evidence, dusty-rose uncertainty
+    metaphor: one ribbon keeps its path but loses its physical body exactly where
+      observation ends

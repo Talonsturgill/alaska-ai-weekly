@@ -2758,3 +2758,54 @@ LinkedIn editor scored the post 9.2, and the fresh-frame objective gate scored 1
 - The required credit card holds for roughly 13 seconds after narration. The next episode should
   test a shorter licence-safe card or move the brand/source sign-off into a looped visual ending,
   then re-run the completion-retention panel rather than trimming credits ad hoc.
+
+---
+
+## 2026-09-01 — "The Ceiling Was in the Measurement"
+
+An uncertainty-analysis paper became a two-minute evidence boundary: the reported saturation-like
+curve can be reproduced by input uncertainty, the corrected average remains linear only through
+the observed 15 mV/m range, and the roughly twofold response near 25 mV/m remains an extrapolation.
+
+### Permanent upgrades made during the run
+
+1. **Scheduled voice runs now retrieve Gemini from macOS Keychain.** `vo_synth_gemini.py` still
+   prefers an explicit environment variable, then securely falls back to the existing
+   `com.alaskaaihq.gemini` generic-password item on Darwin. The key is neither printed nor written
+   into the repository.
+2. **The real pause now exists in the delivered mix.** The fitted back-half gap used to attenuate
+   only the music bed, so narration or a motivated hit could mask it. `dispatch_mix.py` applies the
+   fitted window to the complete premix and preserves the relative drop through static loudness
+   normalization.
+3. **Legacy quality aliases can no longer grade a new film against old audio.** Each mix now
+   synchronizes `master60.wav` and `music_status.json` from the current master and current sourced
+   music credit. This run exposed both aliases still pointing to the August 30 episode.
+4. **Final-line surgical VO patches preserve their whole slot.** `vo_patch_lines.py` masks through
+   the final slot boundary and accepts both the current `idx` schema and the legacy `i` schema, so a
+   factual wording repair cannot silently fail its outside-the-slot invariant or desynchronize the
+   line manifest.
+5. **The visual vocabulary gained a reusable measurement environment.** `MeasurementField` joins
+   `SignalRibbon`, `UpstreamMonitor`, `UncertaintyLattice`, and `EvidenceTrace`; the instrument rails
+   and routed traces reduced measured square-format dead space from 49.5% to 39.1%.
+6. **Claims are atomic at the source boundary.** Publication, authorship, sampling method, record
+   window, monitor location, and approximate distance are separate claim IDs with reconciled source
+   records, instead of broad bundles whose individual obligations could not be audited.
+
+### Repeat offenders closed
+
+- Camera declarations and quality-shot bounds now describe the rendered episode rather than a stale
+  timing plan. Four authored moving shots clear the whole-frame motion floor; ten deliberately held
+  measurement tableaux are declared `static:<reason>` and carry their motion internally.
+- The evidence builder's motion anchors and the sound-event ledger are episode-specific, so the
+  independent panel can inspect the same visual and audio decisions the encoder shipped.
+
+### What the final panel stopped before release
+
+- The first three-judge pass cleared the numeric bar but correctly refused shipment: delivered
+  LRA was 5.1 LU, a narration sentence was stronger than its c4 source record, and the persistent
+  approximately-twofold projection had dropped the c7-required literal `EXTRAPOLATED` label.
+- The same pass exposed three optical safe-area misses that source arithmetic had not caught. The
+  opening title, `HOW MUCH`, and `SUPPORTED THROUGH 15 mV/m` were pulled inboard and verified in
+  fresh full-resolution evidence.
+- The final exact-byte re-grade scored 8.030, 7.870, and 7.552, with a 7.870 median and zero hard
+  blockers. Delivered audio measured -14.91 LUFS, -2.35 dBTP, and 6.7 LU LRA.

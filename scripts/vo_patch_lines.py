@@ -372,7 +372,11 @@ def main():
     for r in report:
         i = r["line"]
         s0 = int(round(lines[i]["start"] * sr))
-        s1 = int(round((lines[i + 1]["start"] if i + 1 < len(lines) else r["end"]) * sr))
+        # The last line also replaces its trailing room-tone slot. Mask through slot_end,
+        # not the new spoken end, or the exact-sample guard falsely reports that tail as
+        # an out-of-slot mutation and refuses an otherwise surgical final-line patch.
+        s1 = int(round((lines[i + 1]["start"] if i + 1 < len(lines)
+                        else r["slot_end"]) * sr))
         patched.append((s0, s1))
     keep = _np.ones(len(vo), dtype=bool)
     for s0, s1 in patched:
@@ -412,7 +416,10 @@ def main():
         by_idx = {l["idx"]: l["text"] for l in meta["lines"]}
         changed = 0
         for line in doc.get("lines", []):
-            new_t = by_idx.get(line.get("i"))
+            # Current vo_script.json uses `idx`; older episodes used `i`. Accept both so
+            # the script of record cannot silently keep pre-patch wording beside new audio.
+            line_idx = line.get("idx", line.get("i"))
+            new_t = by_idx.get(line_idx)
             if new_t is None:
                 continue
             # BOTH FIELDS, not just `t` (2026-08-06). The entry carries `text` (as written)

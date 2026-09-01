@@ -719,3 +719,31 @@ CONTROLS, and nothing on it is a vessel with a process inside.
 - KNOWN NEXT ADVANCE: no look-dev harness was built. A `BioLook.tsx` with the governor at four
   spin/throttle states, both vessels side by side, and a 0.28-scale legibility strip should
   exist before the next story leans on this family, per the GateLook and BenchLook precedent.
+
+## SPACE-WEATHER SIGNAL FAMILY — lib/spaceweather.tsx (CRAFT ADVANCE 2026-09-01)
+Built for "The Ceiling Was in the Measurement" after a full shelf audit found no neutral
+upstream solar-wind monitor and no way for one continuous path to change evidence material
+without swapping identity.
+- `EvidenceTrace` — the reusable craft advance. One SVG path can be `observed`, `uncertain`,
+  `calibrated`, or `extrapolated` while preserving arc-length phase through fray, reweave,
+  glow and dash transitions. Observed and calibrated segments carry ink body, form, rim and
+  contact presence. Uncertainty adds displaced phase and amplitude ghosts without replacing
+  the source path. Extrapolation is automatically hairline, dashed and shadowless. It composes
+  with the existing EvidenceState semantics rather than inventing a competing epistemic
+  palette — ACTIVE
+- `SignalRibbon` — this episode's configured five-state EvidenceTrace instance: clean,
+  paired, frayed, recalibrated and solid-to-dashed. It is the run's only hero, not a second
+  net-new cast asset — ACTIVE
+- `UpstreamMonitor` — the sole net-new cast asset. A faceless, visibly `WIND · SCHEMATIC`
+  sampling apparatus with deployable panels, booms and antenna geometry. It has no imaging
+  eye, face, AI behavior or claim to literal spacecraft fidelity; it must never be replaced
+  by `SatelliteEye`, whose verb and semantics are wrong for this story — ACTIVE
+- `UncertaintyLattice` — supporting nonlinear field. Empty cells stay visibly open while the
+  field flexes around a blurred path, so flexibility never reads as recovered information —
+  ACTIVE
+- `MeasurementField` — reusable instrument-room environment with two physical telemetry
+  rails, owned ports, status lamps and routed signal traces. It raises information density
+  without pretending decorative texture is evidence and keeps sparse scientific diagrams
+  inside a characterized place — ACTIVE
+- `SPACE` — reserved warm instrument-space tokens: aubergine void, solar-rose signal,
+  solar-ivory key, graphite apparatus, warm neutral and uncertainty ash.

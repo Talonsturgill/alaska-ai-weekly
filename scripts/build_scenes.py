@@ -144,7 +144,18 @@ TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band
 # S8 L7 (company mean and about 19M), S9 L8 (model spread), S10 L9-L10 (radar altitude
 # then the 87-second ground-record payoff), S11 L11 (SNOWIE precedent), S12 L12-L13
 # (Rainmaker countercase and split verdict), S13 L14 (landing, number and measuring cup).
-SCENE_START_LINE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14]
+# 2026-09-01 "The Ceiling Was in the Measurement": FOURTEEN shots (S1..S14 in
+# video-engine/src/Ep0901.tsx) onto 19 VO lines. S1 L0 (ceiling impact), S2 L1
+# (Nature authorship), S3 L2 (Wind today and L1 distance), S4 L3-L4 (paired-minute
+# field and changing signal), S5 L5 (uncertainty mechanics), S6 L6-L7 (simulated
+# ceiling and calibration), S7 L8 (corrected linear relation), S8 L9-L10 (the test
+# and the 15 boundary), S9 L11-L12 (extrapolated two-times result and unresolved
+# later saturation), S10 L13-L14 (no operational AI tested and flexible-model
+# warning), S11 L15 (general hazards with scope limits), S12 L16-L17 (moved ceiling,
+# fixed evidence boundary), S14 L18 (button and loopback). The original combined
+# projection/counterpoint shot held 17.9 seconds, beyond the 16-second oner ceiling,
+# so the unresolved physical-saturation counterpoint opens its own shot at L12.
+SCENE_START_LINE = [0, 1, 2, 3, 5, 6, 8, 9, 11, 12, 13, 15, 16, 18]
 
 
 def _apply_caption_fixups(caps):

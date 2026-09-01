@@ -1,97 +1,93 @@
 {
-  "run_date": "2026-08-30",
-  "title_working": "THE MODEL MADE THE NUMBER",
-  "binding": "This is a build contract. The render must preserve the four evidence states and the schematic-airframe limitation at phone scale.",
+  "run_date": "2026-09-01",
+  "title_working": "THE CEILING WAS IN THE MEASUREMENT",
+  "binding": "The signal ribbon is the only hero. Its physical material must carry the distinction between measured, corrected, extrapolated, and unknown evidence at phone scale.",
   "palette": {
-    "world": "A bright Kenai cloud deck and atmospheric cross-section, moving from electric storm daylight to a warm sunbreak.",
+    "world": "A warm sunward instrument-space, moving from plum-black uncertainty to an ivory-lit correction without becoming default blue or an Alaska-night scene.",
     "roles": {
-      "cloud": "#63D7F2 electric cyan, observed weather and depth",
-      "flare": "#F26B45 persimmon, reserved for physical AgI flare activity",
-      "terrain": "#164B3B deep spruce, Alaska land and the ground plane",
-      "radar": "#7968E8 violet glass, reserved for observed reflectivity only",
-      "record": "#B9C6CE nickel, solid company-reported records and observed latches",
-      "model": "#C6F24A chartreuse, reserved for modeled paths and estimates",
-      "absence": "#DDE5E8 dashed true void, always paired with NOT REPORTED"
+      "void": "#130F12 near-black plum, the spatial field",
+      "signal": "#FF2F6D solar rose, reserved exclusively for the embodied ribbon",
+      "sun_key": "#FFF0D1 solar ivory, verified type and directional key",
+      "instrument": "#4B4348 graphite, UpstreamMonitor and calibration hardware",
+      "neutral": "#A79DA1 warm nickel, source plates and evidence ticks",
+      "uncertainty": "#8D7C86 modeled ash, offset ghosts and unsupported geometry",
+      "projection": "#FF2F6D at 38 percent, dashed, hairline, and shadowless beyond 15 mV/m"
     },
-    "semantic_law": "Observed records are solid nickel or violet. Company interpretation is a separate attributed ClaimChip. Modeled estimates are chartreuse hairlines with no contact shadow. Before the 87-second reveal, the ground state is a neutral solid open bracket labeled GROUND?. Only at the payoff does unreported surface evidence become a dashed void labeled NOT REPORTED. No state may borrow another state's material.",
-    "divergence": "Recent films centered brass and indoor console instruments. This one stays outdoors, changes altitude, uses an open vertical column instead of a dial, and treats a small aircraft against enormous weather as the dominant silhouette."
+    "semantic_law": "Supported evidence has an unbroken body, shaded form, rim, and contact presence. Uncertainty is an offset ghost. Extrapolation keeps the hero hue but loses body, shadow, and continuous edge. Unknown territory is a true void with a dashed boundary.",
+    "divergence": "The previous two films used cold slate teal, bone, brass, terracotta, cyan clouds, persimmon flare, spruce, violet radar, and chartreuse models. This run uses no blue, teal, green, weather collage, or civic threshold. It is a horizontal path film in aubergine, rose, ivory, graphite, and ash."
   },
   "light": {
-    "time_of_day": "late afternoon after a broken storm",
-    "direction": "cool lateral cloud light first, radar glow from within the cross-section, warm rim only after the fair countercase",
-    "depth_approach": "three cloud planes, terrain relief, aerial haze and a lifted black floor; model paths remain self-luminous and shadowless",
-    "the_light_means": "Observation has physical presence. Inference can illuminate a possible path but cannot cast the shadow of a measurement."
+    "time_of_day": "abstract sunward twilight, explicitly not terrestrial Alaska night",
+    "direction": "cause travels upper-left to lower-right from Sun toward Earth",
+    "key": "hard solar ivory from upper-left at about thirty-five degrees, catching ribbon crest and monitor edges",
+    "fill": "low plum fill from lower-right at about one-third key intensity",
+    "rim": "ivory rim on embodied ribbon and apparatus; the modeled segment loses rim at 15 mV/m",
+    "depth_approach": "four planes: monitor booms foreground, ribbon middle, Earth response deep, sparse particulate far field. Slow Stage3D dollies travel along the path rather than orbiting decorative space.",
+    "why": "The viewer should feel a physical signal become less physical exactly where the evidence ends."
   },
   "shape_language": {
-    "thesis": "SOLID HOOPS VERSUS A THREAD THAT NEVER LATCHES.",
-    "observed": "Opaque hoops, square latches and mechanically seated records.",
-    "interpreted": "Paperlike ClaimChips clipped beside observations, explicitly sourced and removable.",
-    "modeled": "Thin continuously resolving chartreuse paths, curved and branchable, with no floor contact.",
-    "unmeasured": "Dashed open geometry with moving phase and a required NOT REPORTED label.",
-    "not_generic": "The contrast is not success versus failure. It is what the campaign recorded, what the radar observed, what the company inferred, and what the surface record did not report."
+    "thesis": "A continuous organic curve meets rigid measurement hardware.",
+    "hero": "The ribbon is tapered, elastic, and capable of fraying into phase echoes and amplitude displacement without changing identity.",
+    "counterform": "UpstreamMonitor and the false ceiling are faceless, orthogonal, mechanically exact, and assembled from misregistered ticks.",
+    "evidence": "Solid through 15, dashed toward 25, and open beyond it. The ceiling is an obstacle produced by mismatches, never a second hero.",
+    "why": "Organic continuity keeps wonder alive while the rigid apparatus makes statistical bias visible as a mechanism."
   },
   "casting": {
-    "hero": "SeedDrone, a net-new schematic cloud-seeding quadrotor",
-    "airframe_rule": "SeedDrone has a neutral sensor window, a flare rack, four rotor discs and landing skids. It has no suppressant tank, no lock-eye behavior and no autonomy animation. Never label the drawn silhouette EL-151 or EL-153; the VO and labels describe the company-reported fleet separately.",
-    "throughline_object": "EvidenceColumn, a vertical three-hoop proof apparatus with no dial and no needle",
+    "hero": "SignalRibbon, this episode's configured instance of the reusable EvidenceTrace engine primitive",
+    "throughline_object": "SignalRibbon in five states: clean, matched, frayed, recalibrated, solid-to-dashed",
     "supporting_from_shelf": [
-      "ClaimChip for Rainmaker attribution",
-      "Simulated for every modeled path",
-      "Unnamed for every unreported instrument silhouette",
-      "Stage3D, Plane, Atmosphere and CameraMoves from lib/stage3d.tsx for the atmospheric descent",
-      "EndCredits from lib/EndCredits.tsx mounted verbatim"
+      "SimField for one-minute pairings",
+      "Simulated for the inherited nonlinear model shape",
+      "EvidenceState for material semantics",
+      "ClaimChip for source-bounded projection and attributed interpretation",
+      "AlaskaMini for UAF authorship only",
+      "Stage3D, Atmosphere, CameraMoves, Plate, Nameplate, and EndCredits"
     ],
-    "human_figures": "None. The operation is told through aircraft, records, radar, models and instruments."
+    "net_new_gap": "UpstreamMonitor, the only net-new cast asset: a visibly SCHEMATIC, faceless non-character representation of upstream solar-wind sampling with timing teeth, magnitude jaws, booms, solar panels, and antenna geometry. It is not SatelliteEye and never implies imaging or AI behavior.",
+    "excluded": ["SeedDrone", "Sill", "SatelliteEye", "AuroraNightBG"],
+    "why": "The shelf has model and evidence grammar but no truthful upstream monitor or one-object path continuity for this mechanism."
   },
   "motion_language": {
-    "signature_move": "THE DESCENT. The camera follows the chartreuse model thread from observed radar altitude toward the ground, where it branches before an open dashed hoop instead of resolving into a measured drop.",
+    "grammar": "elastic tension, controlled fray, reweave, and material loss rather than noisy particle chaos",
     "hero_moves": [
-      "the schematic drone traverses enormous cloud scale, loads flares, releases them and later banks home",
-      "solid evidence hoops latch only when a record or observation arrives",
-      "ClaimChips mount beside observations without closing a hoop",
-      "the model thread continuously re-solves and branches before the surface",
-      "the final measuring cup enters only as the next test, not as a failed campaign instrument"
+      "four-frame recoil before the opening whip, followed by a three-frame overshoot against PHYSICS?",
+      "timing uncertainty creates longitudinal echoes while magnitude uncertainty stretches width and crest height",
+      "calibration draws strands together, pauses two frames, then reweaves with an eight-percent elastic settle",
+      "at 15 mV/m the ribbon retains its arc but evaporates into a crisp dashed projection without a cut",
+      "the AI lattice flexes around the same blurred ribbon and returns it unchanged"
     ],
-    "anti_slideshow": "Every scene carries environmental motion, camera drift and one causal action. Data scenes use one dominant field or transformation at a time."
+    "blur": "one-hundred-eighty-degree directional trailing ghosts only on physical ribbon travel; type, boundary labels, and extrapolated geometry remain crisp",
+    "camera": "slow push on every hold, with one decisive dolly-through the fray and one pullback from ribbon scale to the full AI lattice",
+    "why": "Motion preserves a single continuous thought and makes the evidence-state transition happen as an event, not a disclaimer."
   },
   "composition": {
-    "focal_hierarchy": "One dominant subject and one short annotation per beat. The central column is the orientation object, not a dashboard.",
-    "phone_scale": "One radar field plus a large 7 counter; one 9 x 3 equals 27 transformation; one dominant mean; two short verdict labels. Exact required claim strings may wrap but never compete with a second card.",
-    "safe_area": "All required text and causal objects remain inside the shared 9:16 and derived 1:1 safe box. Atmospheric depth may extend beyond it.",
-    "signature_shot": "At 87 seconds, the curved radar beam hangs far above dark spruce terrain while the shadowless model thread branches. Dashed void silhouettes for a gauge and tracer phase beneath it, labeled NOT REPORTED. The Evidence Column's final hoop remains open.",
-    "negative_space": "The vertical gap between the lowest beam and the surface is the film's largest empty space and its core evidence statement."
+    "focal_hierarchy": "One dominant ribbon action plus one short source or claim plate per beat.",
+    "vertical_safe": "Ribbon lives inside the central sixty-two percent. The monitor occupies upper-left and the Earth response lower-right; labels alternate on outer rails above the caption band.",
+    "square_safe": "The protected central square contains monitor, fray, reweave, 15 boundary, and dashed 25 extension. Outer plates re-stack rather than crop.",
+    "signature_shot": "Inside S8, one unbroken three-quarter cutaway rides the embodied ribbon into the 15 mV/m stop, then tracks the same arc as it loses form, rim, shadow, and continuous edge toward 25 mV/m with EXTRAPOLATED and approximately two-times physically attached. The preceding calibration release is a distinct shot and is not falsely described as part of this oner.",
+    "negative_space": "The true void beyond the 15 boundary is the largest empty space in the film.",
+    "why": "The signature shot lets a muted viewer read the entire argument from material change alone."
+  },
+  "claim_safety": {
+    "wind": "The distance plate says WIND TODAY and is visually separated from the 1995 TO 2019 date-range field.",
+    "projection": "Every 25 mV/m and approximately two-times appearance carries EXTRAPOLATED and PROJECTED GEOMAGNETIC RESPONSE in the same object.",
+    "ai": "The flexible-lattice beat carries NO OPERATIONAL AI TESTED.",
+    "alaska": "AlaskaMini identifies UAF participation only. A persistent closing plate says NO FORECAST, NO CURRENT ALERT, NO ALASKA DATA SET."
   },
   "craft_advance": {
-    "primary": "EvidenceState",
-    "why": "The shelf lacks a construction-time grammar for epistemic state. A wrapper will enforce observed, interpreted, modeled and unmeasured materials so future scenes cannot accidentally give an estimate a shadow or an absence a solid fill.",
-    "components": [
-      "EvidenceState: observed | interpreted | modeled | unmeasured material wrapper",
-      "EvidenceColumn: company-record hoop, observed-radar hoop, attributed chip mount, model channel and dashed ground hoop",
-      "RadarGroundCutaway: curved beam, terrain, unresolved model layer and absent-or-confirmed ground evidence",
-      "SeedDrone: reference-bounded schematic aircraft with flare rack and no autonomy behavior"
-    ],
-    "asset_targets": {
-      "video-engine/src/lib/evidence_state.tsx": {
-        "EvidenceState": "discriminated union. observed accepts physical children; interpreted requires source, label and sublabel and constructs ClaimChip; modeled requires path data, fidelity, drawn and occupied and constructs Simulated with no arbitrary children; unmeasured requires path data, label and f, constructs Unnamed internally with solid fixed at zero, and exposes neither arbitrary children nor a solid prop",
-        "EvidenceColumn": "props f, record, radar, interpretation, model, ground unknown|unreported|confirmed, compact; the ground position is neutral before reveal and dashed only when unreported",
-        "RadarGroundCutaway": "props f, modelProgress, groundEvidence unknown|unreported|confirmed, comparison; owns its cloud planes, curved beam, terrain relief and surface instrument geometry",
-        "SeedDrone": "props f, x, y, scale, facing, flareLoad, landed; fixed neutral sensor window, flare rack, no tank, no lock and no autonomy state"
-      },
-      "video-engine/src/EvidenceLook.tsx": {
-        "EvidenceLook": "look-development composition with full-size and 0.28-scale strips for every evidence state and every dense thesis shot"
-      }
-    }
+    "name": "EvidenceTrace",
+    "target": "video-engine/src/lib/spaceweather.tsx",
+    "contract": "A reusable continuous SVG path renderer whose segments can be observed, propagated-uncertain, calibrated, extrapolated, or unknown while preserving arc-length phase across fray, reweave, morph, glow, and dash transitions.",
+    "quality": "Observed segments receive form shading, rim, and motion blur. Uncertainty adds phase or amplitude displacement without replacing the source path. Extrapolated segments become automatically shadowless, hairline, and dashed.",
+    "why": "Future signal, current, river-flow, migration, and data-pipeline stories can change epistemic state along one throughline without swapping objects or painting a projection as an observation."
   },
   "look_dev_frames": [
-    "SeedDrone silhouette at full size and 0.28 phone scale",
-    "Every EvidenceColumn state side by side at full size and 0.28 phone scale",
-    "S6 observed radar versus company attribution at 47.9 seconds, full size and 0.28 scale",
-    "S7 9 x 3 equals 27 at full size and 0.28 scale",
-    "S8 57.62 to about 19M at full size and 0.28 scale",
-    "S9 exact 41.70 to 89.35 range plus NOT TOTAL UNCERTAINTY in one frame at full size and 0.28 scale",
-    "S10 RadarGroundCutaway at 82.3 and 87.0 seconds, full size and 0.28 scale",
-    "S11 matched SNOWIE and Kenai chains at 96.0 seconds, full size and 0.28 scale",
-    "S12 fair verdict at 104.8 seconds and button at 119.0 seconds, full size and 0.28 scale"
+    "SignalRibbon five-state strip at full size, 9:16 phone size, 4:5 crop, and 1:1 crop",
+    "UpstreamMonitor SCHEMATIC silhouette and distance pullback",
+    "WHEN and HOW MUCH fray dolly-through",
+    "solid 15 mV/m to dashed 25 mV/m signature shot",
+    "flexible AI lattice with NO OPERATIONAL AI TESTED",
+    "closing evidence limit plate at phone size"
   ],
-  "the_one_thing_a_viewer_remembers": "A bright model thread descends through two solid evidence hoops, then branches above one dashed open hoop at the ground."
+  "the_one_thing_a_viewer_remembers": "The same glowing ribbon is solid through fifteen, then loses its body and continues only as a dashed possibility."
 }
