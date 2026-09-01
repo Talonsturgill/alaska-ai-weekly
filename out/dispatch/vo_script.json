@@ -1,27 +1,175 @@
 {
-  "run_date": "2026-08-30",
-  "title": "THE MODEL MADE THE NUMBER",
-  "note": "Two-hundred-seventeen-word causal chain. Every number and technology label traces to claims.json. The operation and radar inputs are credited as real, the causal attribution remains Rainmaker's interpretation, the gallon total stays a company model estimate, and the absence of ground confirmation is never widened into a claim that nothing reached the surface.",
-  "caption_fixups": {
-    "P A H G": "PAHG",
-    "S N O W I E": "SNOWIE",
-    "D B Z": "dBZ"
+ "run_date": "2026-09-01",
+ "title": "THE CEILING WAS IN THE MEASUREMENT",
+ "note": "Two-hundred-nineteen-word causal chain. The film celebrates the correction, holds the average relation to the observed 15 mV/m limit, keeps the roughly twofold response near 25 mV/m extrapolated, and states that no operational AI forecast was tested.",
+ "caption_fixups": {
+  "U A F": "UAF",
+  "L one": "L1",
+  "A I": "AI",
+  "G P S": "GPS"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "What if a ceiling in space was really a blur in the measuring tape?",
+   "claims": [
+    "c4",
+    "c5"
+   ],
+   "t": "What if a ceiling in space was really a blur in the measuring tape?"
   },
-  "lines": [
-    {"idx": 0, "text": "A robot entered an Alaska cloud. A model handed it nineteen million gallons.", "claims": ["c13"]},
-    {"idx": 1, "text": "On August twenty third, Rainmaker seeded clouds over the Kenai Peninsula.", "claims": ["c1"]},
-    {"idx": 2, "text": "Two Elijah drones made ten sorties in seven coordinated missions, releasing nineteen silver iodide flares.", "claims": ["c2", "c3"]},
-    {"idx": 3, "text": "The releases sat in Rainmaker's temperature band, totaling roughly three hundred seventy four grams.", "claims": ["c4", "c6"]},
-    {"idx": 4, "text": "Rainmaker manually tracked seven features in P A H G NEXRAD data.", "claims": ["c7"]},
-    {"idx": 5, "text": "The reflectivity was observed. Calling those features seeding signatures was the company's interpretation.", "claims": ["c8"]},
-    {"idx": 6, "text": "The analysis subtracted five D B Z as assumed background across twenty seven conversion relationships.", "claims": ["c9", "c10"]},
-    {"idx": 7, "text": "The company mean was fifty seven point six two acre feet, about nineteen million gallons.", "claims": ["c11", "c13"]},
-    {"idx": 8, "text": "Its spread was forty one point seven to eighty nine point three five acre feet, not total uncertainty.", "claims": ["c12"]},
-    {"idx": 9, "text": "The lowest radar beam sat roughly eighteen hundred to twenty two hundred meters above sea level.", "claims": ["c15"]},
-    {"idx": 10, "text": "The report provides no ground gauge or tracer confirmation at the surface.", "claims": ["c15"]},
-    {"idx": 11, "text": "Independent S N O W I E research tracked seeded plumes from radar to ground gauges.", "claims": ["c16"]},
-    {"idx": 12, "text": "Rainmaker says a saturated column made losses less likely, and seven repeated radar features are meaningful evidence.", "claims": ["c7", "c19"]},
-    {"idx": 13, "text": "Score it honestly. Alaska saw a robotics demonstration and a company modeled water total.", "claims": ["c11", "c17"]},
-    {"idx": 14, "text": "The drones delivered the flares. The model delivered the number. Next time, send a measuring cup.", "claims": ["c3", "c11"]}
-  ]
+  {
+   "idx": 1,
+   "text": "Physicist Nithin Sivadas led a Nature study with U A F coauthor Do\u011facan \u00d6zt\u00fcrk.",
+   "claims": [
+    "c1",
+    "c12",
+    "c13"
+   ],
+   "t": "Physicist Nithin Sivadas led a Nature study with U A F coauthor Do\u011facan \u00d6zt\u00fcrk."
+  },
+  {
+   "idx": 2,
+   "text": "Today, NASA's Wind spacecraft orbits L one, nine hundred thirty thousand miles sunward.",
+   "claims": [
+    "c3",
+    "c15"
+   ],
+   "t": "Today, NASA's Wind spacecraft orbits L one, nine hundred thirty thousand miles sunward."
+  },
+  {
+   "idx": 3,
+   "text": "The team paired one minute solar wind observations with polar cap responses from nineteen ninety five through twenty nineteen.",
+   "claims": [
+    "c2",
+    "c14"
+   ],
+   "t": "The team paired one minute solar wind observations with polar cap responses from nineteen ninety five through twenty nineteen."
+  },
+  {
+   "idx": 4,
+   "text": "But the signal changes on its trip.",
+   "claims": [
+    "c4"
+   ],
+   "t": "But the signal changes on its trip."
+  },
+  {
+   "idx": 5,
+   "text": "Uncertainty in arrival time, strength, location, and evolution can blur the match between cause and response.",
+   "claims": [
+    "c4"
+   ],
+   "t": "Uncertainty in arrival time, strength, location, and evolution can blur the match between cause and response."
+  },
+  {
+   "idx": 6,
+   "text": "Simulate those mismatches, and a saturated-looking curve appears.",
+   "claims": [
+    "c5"
+   ],
+   "t": "Simulate those mismatches, and a saturated-looking curve appears."
+  },
+  {
+   "idx": 7,
+   "text": "So the researchers calibrated the uncertainty.",
+   "claims": [
+    "c6"
+   ],
+   "t": "So the researchers calibrated the uncertainty."
+  },
+  {
+   "idx": 8,
+   "text": "The corrected average relation rose linearly through the observed limit of fifteen millivolts per meter.",
+   "claims": [
+    "c6"
+   ],
+   "t": "The corrected average relation rose linearly through the observed limit of fifteen millivolts per meter."
+  },
+  {
+   "idx": 9,
+   "text": "Then comes the test.",
+   "claims": [
+    "c6",
+    "c7"
+   ],
+   "t": "Then comes the test."
+  },
+  {
+   "idx": 10,
+   "text": "Evidence stops at fifteen.",
+   "claims": [
+    "c6",
+    "c7"
+   ],
+   "t": "Evidence stops at fifteen."
+  },
+  {
+   "idx": 11,
+   "text": "Near twenty five, projected geomagnetic response reaches roughly twice the older saturated estimate. But that is extrapolated, not observed, and not doubled damage.",
+   "claims": [
+    "c7"
+   ],
+   "t": "Near twenty five, projected geomagnetic response reaches roughly twice the older saturated estimate. But that is extrapolated, not observed, and not doubled damage."
+  },
+  {
+   "idx": 12,
+   "text": "Physical saturation could still appear beyond the data.",
+   "claims": [
+    "c7"
+   ],
+   "t": "Physical saturation could still appear beyond the data."
+  },
+  {
+   "idx": 13,
+   "text": "And no operational A I forecast was tested.",
+   "claims": [
+    "c9"
+   ],
+   "t": "And no operational A I forecast was tested."
+  },
+  {
+   "idx": 14,
+   "text": "A flexible model can fit the biased curve, but can't recover information the measurement blurred.",
+   "claims": [
+    "c9"
+   ],
+   "t": "A flexible model can fit the biased curve, but can't recover information the measurement blurred."
+  },
+  {
+   "idx": 15,
+   "text": "Space weather can affect grids, G P S, aircraft, and satellites. But this is no forecast, current alert, or Alaska data set.",
+   "claims": [
+    "c10",
+    "c11"
+   ],
+   "t": "Space weather can affect grids, G P S, aircraft, and satellites. But this is no forecast, current alert, or Alaska data set."
+  },
+  {
+   "idx": 16,
+   "text": "The apparent ceiling moved.",
+   "claims": [
+    "c5",
+    "c6"
+   ],
+   "t": "The apparent ceiling moved."
+  },
+  {
+   "idx": 17,
+   "text": "The evidence boundary did not.",
+   "claims": [
+    "c6",
+    "c7"
+   ],
+   "t": "The evidence boundary did not."
+  },
+  {
+   "idx": 18,
+   "text": "A model can follow the ribbon. It can't restore what the measurement lost.",
+   "claims": [
+    "c9"
+   ],
+   "t": "A model can follow the ribbon. It can't restore what the measurement lost."
+  }
+ ]
 }

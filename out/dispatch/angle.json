@@ -1,51 +1,38 @@
 {
-  "run_date": "2026-08-30",
-  "title_working": "THE MODEL MADE THE NUMBER",
-  "falsifiability": {
-    "question_answered_first": true,
-    "observation_that_kills_the_thesis": "Contemporaneous surface-gauge or silver-iodide-tracer evidence tied to these releases already existed, was independently analyzed with a credible control area, and corroborated the company-modeled surface range.",
-    "why_that_kills_it": "The thesis is specifically about what this campaign's measurement system established at the surface. Evidence that a contemporaneous, independently analyzed surface check already closed the chain would make that thesis false; radar-only reanalysis would not."
-  },
-  "thesis": "Rainmaker's Kenai campaign was a real Alaska drone-engineering achievement, but its nineteen-million-gallon headline outruns what the measurement system proved because the volume is a company radar-model estimate without ground confirmation.",
-  "why_its_true": {
-    "supporting_facts": [
-      "Rainmaker reports ten sorties grouped into seven coordinated missions, with nineteen flare releases from two Elijah drones.",
-      "The company manually tracked seven radar features, subtracted an assumed five dBZ background, and converted reflectivity through twenty-seven Z-S relationships to a mean estimate of 57.62 acre-feet.",
-      "The lowest radar beam was roughly 1,800 to 2,200 meters MSL, and no Alaska ground gauges or silver-iodide tracer measurements were reported."
-    ],
-    "strongest_fair_point_against": "Seven geolocated releases were followed by seven company-identified evolving radar features, and independent SNOWIE research shows cloud seeding can produce precipitation under suitable conditions. The model operated on real telemetry and radar, not invented inputs.",
-    "survival": "That evidence supports a serious trial and a plausible causal signal. It still does not turn an aloft reflectivity estimate into measured water at the surface."
-  },
-  "who_it_serves": "Alaskans deciding whether weather-modification robotics deserves more testing, public trust, contracts or regulatory attention. It gives them a practical distinction: operational precision can be real even while outcome measurement remains incomplete.",
-  "valence": {
-    "label": "cautiously impressed",
-    "why": "The flight execution and unusually detailed methodology deserve credit. The gallon count, AI framing and any claim of ground delivery require restraint."
-  },
+  "run_date": "2026-09-01",
+  "story_id": "solar-storm-false-ceiling",
+  "thesis": "Measurement uncertainty can make a model learn a physical ceiling that the evidence pipeline drew, and a UAF-coauthored Nature study shows why more flexible AI won't fix that by itself.",
+  "falsifier": "Independent, materially lower-uncertainty observations near the magnetospheric driver still show saturation through 15 mV/m after the same bias correction.",
+  "supporting_facts": [
+    {
+      "claims": ["c4", "c5"],
+      "fact": "Timing and magnitude uncertainty can blur the cause-response match, and the authors reproduced the observed saturation-like curve with that mechanism."
+    },
+    {
+      "claims": ["c6"],
+      "fact": "After calibration, the average relationship stayed linear through the data-supported limit of 15 mV/m."
+    },
+    {
+      "claims": ["c9"],
+      "fact": "The authors explicitly warn that nonlinear AI and machine-learning regressions may inherit analogous measurement-error bias."
+    }
+  ],
+  "fair_counterpoint": "The paper tested no operational AI forecast. It can't establish the physical response beyond 15 mV/m, and its roughly twofold response near 25 mV/m is an extrapolation rather than an observed storm or doubled damage.",
+  "who_it_serves": "Alaska researchers, utilities, aviation and satellite-dependent operators, emergency planners, and public agencies evaluating models built from physical sensor data.",
+  "valence": "Curious and wonder-forward. Celebrate the correction as useful science while letting the same evidence discipline restrain the corrected model's most dramatic extrapolation.",
   "second_movement": {
-    "recontextualizing_fact": "Independent SNOWIE researchers followed seeded plumes through radar to snow gauges at the ground. That precedent shows the mechanism can work while revealing exactly what the Kenai campaign did not measure.",
-    "fair_opposing_case_with_its_own_scene": "Rainmaker's strongest case is not the gallon number. It is recurrence: seven coordinated missions and seven tracked radar features inside favorable cloud conditions. Draw those aligned traces at full strength before revealing the missing ground instrument."
-  },
-  "angle_room": {
-    "analysts": 3,
-    "cross_challenge": [
-      "All three analysts rejected a pure debunking angle because the operation and radar inputs were real and the physical mechanism has independent precedent.",
-      "All three rejected a pure triumph angle because flight precision is not hydrologic validation and specific AI or autonomous execution in Kenai is unsupported.",
-      "The phrase 'the model made the number' survived only with an explicit correction: the model transformed observed inputs; it did not invent the event from nothing."
-    ],
-    "consensus": "Lead with the feat, make the modeling chain visible, let the missing ground measurement become the turn, and end by asking for the next instrument rather than declaring the experiment a failure."
+    "recontextualizing_fact": "The Wind spacecraft observes upstream. The information can change before it meets Earth's magnetic shield, so the breakthrough begins with what was never directly observed at the response point.",
+    "test": "The available correction removes statistical evidence for a ceiling only through 15 mV/m. A future stronger event or better-positioned measurements could still reveal physical saturation. The headline twofold response lies outside the supported range."
   },
   "runner_up_angles": [
     {
-      "angle": "The drones really did something impressive",
-      "why_it_lost": "True but incomplete. It confuses successful placement of material with demonstrated precipitation yield and cannot carry a full two-minute test without narrowing to the evidence gap."
+      "angle": "Constructive Alaska preparedness",
+      "why_it_lost": "NOAA establishes general hazards and Öztürk raises preparedness, but the record contains no Alaska hazard estimate, local operator response, or quantified infrastructure consequence."
     },
     {
-      "angle": "The model made the number",
-      "why_it_lost_as_a_standalone": "Sharp and memorable, but too dismissive unless it first honors the real telemetry, radar observations and physical precedent that constrained the estimate. It survives as the title and turn, not as a sneer."
-    },
-    {
-      "angle": "Alaska should become the proving ground for weather robotics",
-      "why_it_lost": "A policy recommendation exceeds the reporting. The record establishes one company-reported campaign, not enough evidence to decide statewide deployment."
+      "angle": "Evidence-pipeline procurement discipline",
+      "why_it_lost": "Actionable but too normative. The source pack contains no Alaska procurement practice or operational model audit, so the policy prescription would become a second unsupported story."
     }
-  ]
+  ],
+  "room_result": "Two of three cross-challenges selected the wonder-forward thesis. The dissent preferred the evidence-pipeline frame but agreed the film must lead with the scientific achievement and must disclose that AI was not tested and the twofold response was extrapolated."
 }

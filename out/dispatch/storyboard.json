@@ -1,134 +1,1081 @@
 {
-  "run_date": "2026-08-30",
-  "date": "2026-08-30",
-  "title": "THE MODEL MADE THE NUMBER",
-  "total_seconds": 122,
-  "concept": "A tiny drone crosses an enormous Kenai cloud deck while one vertical Evidence Column asks what each step of the campaign actually established. Company-reported flight records and observed radar latch two solid nickel hoops. Company attribution mounts as a labeled ClaimChip, while radar conversion runs as a shadowless chartreuse model thread that cannot latch a hoop. The camera then descends below the radar beam and the column ends in a dashed ground-evidence absence labeled NOT REPORTED. The film gives the operation its earned robotics medal, gives the water total its required company-estimate label, and ends one hoop open rather than pretending either success or failure.",
-  "engine": "infographic-2.5d",
-  "derived_from": "scratch",
-  "palette": "electric cyan cloud world, persimmon flare glow, deep spruce terrain, violet observed radar glass, nickel evidence hoops, chartreuse model hairline",
-  "light": "bright broken storm light becomes a transparent radar glow, then warm late-day sun returns for the fair verdict",
-  "fingerprint": {
-    "pov": "orbital-aerial-to-cross-section",
-    "motion_vector": "vertical-descent-through-evidence",
-    "hero_treatment": "small-machine-against-enormous-weather",
-    "layout": "stacked-atmospheric-layers",
-    "register": "weather-instrument-collage",
-    "camera_strategy": "aerial-descent",
-    "light_story": "storm-dramatic-to-sunbreak",
-    "palette": "electric cyan cloud world, persimmon flare glow, deep spruce terrain, violet observed radar glass, nickel evidence hoops, chartreuse model hairline",
-    "metaphor": "a vertical evidence column latches solid hoops for observations, carries modeling as a shadowless thread, and ends at a dashed unreported ground link"
-  },
-  "divergence_note": "This film is not another indoor orthogonal instrument story like the August 12 threshold or August 13 powerhouse plate. It begins at aircraft scale inside a luminous cloud world, travels vertically through radar altitude to the ground, and changes stages on nearly every cut. Its spatial signature is atmospheric cross-section and descent, its central movement is a tiny machine against weather, and its color story moves from bright cyan and flare orange through violet observed radar and chartreuse modeling before returning to warm daylight.",
+  "concept": "One rose signal ribbon travels from an upstream solar-wind monitor toward Earth, strikes an apparent PHYSICS ceiling, frays into timing and magnitude uncertainty, then reweaves after calibration. Its solid body rises only through the observation-supported boundary at 15 mV/m. Beyond that point, it can continue toward 25 only as a shadowless dashed extrapolation. A flexible AI lattice can follow the inherited shape but cannot restore the information already blurred.",
+  "title": "THE CEILING WAS IN THE MEASUREMENT",
   "angle": {
-    "thesis": "Rainmaker's Kenai campaign was a real Alaska drone-engineering achievement, but its nineteen-million-gallon headline outruns what the measurement system proved because the volume is a company radar-model estimate without ground confirmation.",
-    "supporting_facts": [
-      "Ten sorties in seven coordinated missions released nineteen flares from two drones.",
-      "Seven radar features were manually tracked, then processed with an assumed five dBZ subtraction and twenty-seven radar-to-precipitation relationships.",
-      "The lowest radar beam was roughly 1,800 to 2,200 meters MSL, and no campaign ground gauges or silver-iodide tracers were reported."
+    "thesis": "Measurement uncertainty can make a model learn a physical ceiling that the evidence pipeline drew, and a UAF-coauthored Nature study shows why more flexible AI will not fix that by itself.",
+    "support": [
+      "c4-c5",
+      "c6",
+      "c9"
     ],
-    "fair_counter_point": "The flight execution was substantial, the radar observations were real, seven recurring features are meaningful evidence, and independent SNOWIE research shows the physical mechanism can work under suitable conditions.",
-    "runner_up_angles": [
-      "A pure engineering celebration lost because flight precision is not hydrologic validation.",
-      "A pure model debunk lost because the estimate was constrained by real telemetry and radar rather than invented inputs.",
-      "A policy call for Alaska as a proving ground lost because one company-reported campaign cannot support a statewide recommendation."
-    ]
+    "falsifier": "Independent, materially lower-uncertainty observations near the magnetospheric driver still show saturation through 15 mV/m after the same bias correction.",
+    "fair_counter": "Physical saturation could still appear beyond the observed range; no operational AI forecast was tested; and the roughly twofold response near 25 mV/m is extrapolated, not observed.",
+    "valence": "curious and wonder-forward"
   },
   "treatment": {
-    "winner": "DRAMATIST PLUS ENTHUSIAST OPENING WITH THE EXPLAINER'S EVIDENCE GAUGE",
-    "judge_reasoning": "Four lenses pitched and then challenged each other's two-minute retention plans. The winning hybrid keeps the flare-lit wonder and tiny-aircraft scale of the Enthusiast, the long ground-confirmation loop of the Dramatist, and the Explainer's single evidence-chain spine. Gate 0D replaced the first brass dial concept with a fresh vertical Evidence Column so the film cannot repeat recent instrument silhouettes or let interpretation advance an observation meter. The equation arcade is reduced to one five-second transformation so the middle never becomes homework. The Comedian's stacked cup, coin and calculator metaphors were rejected because multiple throughlines would blur what is observed and what is inferred.",
-    "retention_plan": "Act 1 earns admiration for the coordinated operation. Act 2 reveals how a radar observation becomes a company volume estimate. Act 3 subjects the headline to a real test by descending below the lowest beam, then grants the strongest fair countercase through Rainmaker's attributed saturated-column argument, the seven repeated features, and the SNOWIE precedent. The Evidence Column is the only orientation object and the dashed unreported ground hoop carries the viewer through minute two.",
-    "padding_test": "Every beat must either advance the flight record, transform the radar data into the estimate, test the estimate against ground confirmation, or change the final verdict. Company history, generic cloud-seeding history and regulatory sidebars are cut."
+    "winner": "THE ENTHUSIAST, REFINED INTO ONE SIGNAL-RIBBON FILM",
+    "score": 9.02,
+    "judge_reasoning": "The ribbon carries the epistemology in its own material state. Clean, matched, frayed, rewoven, solid, and dashed are visibly different without introducing competing hero objects. The treatment celebrates a genuine correction, then makes its exciting projection survive a real Act 3 test. It rotates the previous Dispatch's evidence-audit weather column into a horizontal sunward path film. The Comedian's opening ceiling impact, the Explainer's unresolved physical ceiling, and the Dramatist's compact claim test are grafted into the winner.",
+    "grafts": [
+      "The ribbon strikes a low PHYSICS? plate in the first three seconds.",
+      "At the turn, the apparent plate falls while a translucent PHYSICS BEYOND 15? boundary remains unresolved.",
+      "The approximately two-times claim rejects OBSERVED and DOUBLED DAMAGE before docking only at PROJECTED GEOMAGNETIC RESPONSE."
+    ],
+    "retention_plan": "Act 1 plants the question of what happens after supported evidence stops at 15 and reveals the immense upstream distance. Act 2 shows how imperfect matching draws the apparent ceiling. Act 3 lets calibration succeed, then forces the corrected result beyond the evidence boundary. Act 4 asks what a flexible model does with already-blurred input and returns the same ribbon to the opening collision.",
+    "padding_test": "Every beat from 60 to 95 seconds either establishes the supported 15 mV/m boundary, converts the route to 25 into labeled extrapolation, rejects the false observed-or-damage readings, or preserves possible later physical saturation. Removing any one would make the film overclaim. Hazard context is capped at one brief beat."
+  },
+  "engine": "infographic-2.5d",
+  "derived_from": "scratch",
+  "fingerprint": {
+    "pov": "macro-path-to-instrument-cutaway",
+    "motion_vector": "horizontal-traverse-through-signal",
+    "hero_treatment": "single-continuous-signal",
+    "layout": "diagonal-causal-corridor",
+    "register": "scientific-material-theater",
+    "camera_strategy": "ribbon-dolly-through",
+    "light_story": "sunward-hard-key-to-ivory-release",
+    "palette": "aubergine-black void, fuchsia signal, cream key, charcoal hardware, mauve evidence, dusty-rose uncertainty",
+    "metaphor": "one ribbon keeps its path but loses its physical body exactly where observation ends"
   },
   "hook": {
     "pattern": "anomaly-question",
-    "frame1": "A tiny SeedDrone punches through a luminous Kenai cloud carrying one persimmon flare while an immense shadowless chartreuse COMPANY ESTIMATE: ABOUT 19M GALLONS continuously resolves behind it.",
-    "headline": "THE MODEL MADE THE NUMBER",
+    "frame1": "A luminous rose ribbon rockets toward Earth and collides with a graphite PHYSICS? ceiling plate whose bolts lead backward into a measuring apparatus.",
+    "headline": "THE CEILING WAS IN THE MEASUREMENT",
     "motion_by_s": 0.4,
-    "loopback": "The final shot returns to the same cloud crossing, but the headline is now a transparent company-estimate label and the Evidence Column ends at a dashed open ground hoop above a small measuring cup marked NEXT TEST."
+    "loopback": "The final flexible lattice releases the same dashed fibers. They curl backward, become the clean opening ribbon, and hit the same PHYSICS? plate on the loop."
   },
   "audio_arc": {
-    "build_steps": [9.2, 26.6, 47.9, 65.2, 100.1],
-    "dip_at": 73.6,
-    "riser_at": 91.2,
-    "silence_at": 104.9,
-    "payoff_at": 106.9,
+    "build_steps": [
+      7.0,
+      31.5,
+      49.5,
+      67.0,
+      99.5
+    ],
+    "dip_at": 65.66,
+    "riser_at": 82.32,
+    "silence_at": 111.09,
+    "payoff_at": 114.44,
     "button_pattern": "callback",
-    "note": "The bed becomes a radar pulse through the model chain, drops almost to silence below the beam, then returns as warm strings for the fair verdict."
+    "note": "A pulsing instrument bed follows the ribbon. It nearly drops out when evidence stops at 15, rebuilds as the dashed projection is correctly classified, then thins under the final button."
   },
   "open_loop": {
-    "plant_t": 9.2,
-    "pay_t": 87.0,
-    "what": "Did anything watch the estimated water complete the trip from the radar layer to Alaska's ground? The answer lands only after the film descends below the lowest beam and finds that the report provides no campaign ground-gauge or tracer confirmation."
+    "plant_t": 7.0,
+    "pay_t": 88.25,
+    "what": "What happens after the supported evidence stops at 15 mV/m? The approximately two-times path is only extrapolated projected geomagnetic response, and physical saturation beyond the data remains possible."
   },
   "open_loop_2": {
-    "plant_t": 39.8,
-    "pay_t": 69.9,
-    "what": "How did seven tracked radar features become the nineteen-million-gallon headline? The answer is the assumed background subtraction and twenty-seven conversion relationships producing a 57.62-acre-foot mean."
+    "plant_t": 38.9,
+    "pay_t": 64.55,
+    "what": "Does the ceiling survive after uncertainty is calibrated? The corrected average relation rises linearly through 15 mV/m."
   },
   "throughline": {
-    "object": "the Evidence Column, a vertical three-hoop proof apparatus with solid company-record and radar-observation hoops, a shadowless model thread, and a dashed ground-evidence absence",
+    "object": "SignalRibbon",
     "states": [
-      {"at_s": 5.6, "state": "two evidence hoops and one neutral solid open bracket assemble; the unresolved lower bracket is labeled GROUND? without yet revealing the source-record status"},
-      {"at_s": 34.9, "state": "company-reported flight-record hoop solid after the sorties and flares lock in"},
-      {"at_s": 47.9, "state": "observed-radar hoop solid after seven reflectivity features appear, with company attribution on a separate ClaimChip"},
-      {"at_s": 61.0, "state": "a chartreuse shadowless model thread runs through the column without latching the ground hoop"},
-      {"at_s": 69.9, "state": "label changes to COMPANY MODEL ESTIMATE as the mean becomes the headline"},
-      {"at_s": 104.8, "state": "ground hoop remains open while two short labels mount: ROBOTICS DEMONSTRATED and YIELD COMPANY ESTIMATE"},
-      {"at_s": 119.0, "state": "one ring short beneath the landed drone, with a small measuring cup waiting at ground level"}
+      {
+        "at_s": 0.0,
+        "state": "one clean embodied rose signal strikes the apparent ceiling"
+      },
+      {
+        "at_s": 31.0,
+        "state": "one matched minute expands into a field of paired signal and response beads"
+      },
+      {
+        "at_s": 43.8,
+        "state": "the ribbon frays into WHEN phase echoes and HOW MUCH amplitude displacement"
+      },
+      {
+        "at_s": 64.55,
+        "state": "calibration reweaves one embodied solid ribbon rising through 15 mV/m"
+      },
+      {
+        "at_s": 88.25,
+        "state": "the same path has a solid core ending at 15 and shadowless dashed fibers toward 25"
+      },
+      {
+        "at_s": 118.5,
+        "state": "the flexible lattice returns the still-incomplete ribbon, which curls home without regaining its missing body"
+      }
     ],
-    "lands_in_button": "The drone completes its mission while the Evidence Column visibly ends at a dashed, labeled ground-evidence absence."
+    "lands_in_button": "The model follows the dashed ribbon without restoring its missing body, then the path curls back into the opening signal."
   },
   "reveals": [
-    {"t": 30.4, "type": "scale-pullback", "what": "the camera pulls from one flare to nineteen releases distributed across two drones and seven coordinated mission folders", "hold_s": 0.6},
-    {"t": 69.9, "type": "morph-to-chart", "what": "the chartreuse 27-model lattice continuously resolves into one shadowless 57.62-acre-foot mean and then expands into the about-19-million-gallon company-estimate headline", "hold_s": 0.7},
-    {"t": 96.0, "type": "build-on", "what": "the matched SNOWIE chain connects radar to a filling surface gauge while Kenai's corresponding link remains dashed and open", "hold_s": 0.8}
+    {
+      "t": 14.0,
+      "type": "scale-pullback",
+      "what": "a monitor detail pulls back until Earth is roughly 930,000 miles away",
+      "hold_s": 0.6
+    },
+    {
+      "t": 31.0,
+      "type": "build-on",
+      "what": "one matched minute multiplies into the visibly discrete 1995 to 2019 pairing field",
+      "hold_s": 0.7
+    },
+    {
+      "t": 64.55,
+      "type": "morph-to-chart",
+      "what": "the reweave becomes one corrected rising relation and physically lifts the apparent ceiling through 15 mV/m",
+      "hold_s": 0.7
+    },
+    {
+      "t": 96.9,
+      "type": "scale-pullback",
+      "what": "one blurred fiber pulls back into a full flexible nonlinear AI lattice",
+      "hold_s": 0.7
+    }
   ],
   "beats": [
-    {"i": 1, "t": 0.0, "vo": 0, "shows": "SeedDrone punches through a cloud wall and the huge shadowless chartreuse company-estimate headline continuously re-solves behind it", "sfx": "cloud rip and sub hit", "means": "scroll stop through impossible scale while preserving the model material and approximate qualifier", "draw": {"subject": "SeedDrone", "action": "bursts through the luminous cloud and disturbs chartreuse model particles without turning them into radar", "emotion": "focused wonder", "annotation": "COMPANY ESTIMATE  ·  ABOUT 19M GALLONS"}, "choreo": {"primary": "the drone crosses center", "reaction": "the model digits loosen and re-form", "ambient": "cloud curls roll in three depth planes"}},
-    {"i": 2, "t": 2.4, "vo": 0, "shows": "camera pulls wide until SeedDrone is tiny against the Kenai cloud deck", "sfx": "wide airy whoosh", "means": "make the machine feel small and the claim enormous", "draw": {"subject": "the Kenai cloud deck", "action": "swallows the tiny drone into its scale", "emotion": "immense", "annotation": "A TINY ROBOT  ·  A VERY BIG NUMBER"}, "choreo": {"primary": "camera rockets backward", "reaction": "SeedDrone stabilizes in crosswind", "ambient": "sun shafts slide across the cloud top"}},
-    {"i": 3, "t": 5.6, "vo": 1, "shows": "the Kenai pin drops into the Alaska map and locks the Evidence Column's base onto it", "sfx": "map pin pop and nickel base lock", "means": "locate the story and introduce the orientation object through a physical action", "draw": {"subject": "the Kenai pin and Evidence Column", "action": "plant into the map and assemble three vertical hoops", "emotion": "curious", "annotation": "KENAI PENINSULA  ·  AUGUST 23RD, 2026"}, "choreo": {"primary": "the pin plants itself", "reaction": "three hoops spring upright", "ambient": "coastline paper fibers drift"}},
-    {"i": 4, "t": 9.2, "vo": 1, "shows": "a chartreuse modeled hairline descends from the radar layer, branches and remains open above a blank ground layer", "sfx": "descending whistle splitting into unresolved tones", "means": "plant the long ground-confirmation loop without revealing the answer or inventing physical loss", "draw": {"subject": "one modeled path", "action": "branches before a neutral solid open bracket marked GROUND?", "emotion": "unresolved", "annotation": "DID ANYTHING MEASURE THE GROUND?"}, "choreo": {"primary": "the model path descends then branches", "reaction": "the neutral ground bracket stays open", "ambient": "radar sweep continues above"}, "open_loop_plant": true},
-    {"i": 5, "t": 13.6, "vo": 2, "shows": "two schematic seed drones rise from separate launch pads and cross into one flight lane", "sfx": "paired rotor ramps", "means": "name the two-aircraft operation without claiming the drawn silhouette is a literal Elijah airframe", "draw": {"subject": "two schematic seed drones", "action": "launch in staggered formation and align", "emotion": "disciplined", "annotation": "TWO ELIJAH DRONES  ·  COMPANY FLIGHT RECORD"}, "choreo": {"primary": "two drones rise on offset springs", "reaction": "launch flags snap", "ambient": "cloud wisps stream past"}},
-    {"i": 6, "t": 17.3, "vo": 2, "shows": "ten brass sortie tiles click into seven mission folders", "sfx": "ten ticks and seven folder clacks", "means": "reconcile flights and mission groups", "draw": {"subject": "ten sortie tiles", "action": "sort into seven physical mission folders", "emotion": "orderly", "annotation": "10 SORTIES  ·  7 COORDINATED MISSIONS"}, "choreo": {"primary": "tiles sort left to right", "reaction": "folder tabs settle", "ambient": "drone shadows cross the table"}},
-    {"i": 7, "t": 21.8, "vo": 2, "shows": "nineteen flare tokens load into the drone racks and one blinks ready", "sfx": "metal cartridge clicks", "means": "make the release count physical", "draw": {"subject": "nineteen silver-iodide flare tokens", "action": "seat into two payload racks one by one", "emotion": "ready", "annotation": "EL-151 + EL-153  ·  19 AgI FLARES"}, "choreo": {"primary": "tokens snap into racks", "reaction": "payload gauges rise", "ambient": "rotors idle out of phase"}},
-    {"i": 8, "t": 26.6, "vo": 3, "shows": "the two loaded payload racks close while a physical temperature ribbon slides behind them and one compact nominal-total tag locks below", "sfx": "paired rack locks and thermometer glide", "means": "show Rainmaker's reported operating band and keep the nominal arithmetic subordinate", "draw": {"subject": "the two loaded flare racks", "action": "swing shut inside a marked temperature lane and lock beneath the hovering drones", "emotion": "precise but hedged", "annotation": "RAINMAKER BAND −5°C TO −15°C  ·  ≈374 g NOMINAL"}, "choreo": {"primary": "rack doors close", "reaction": "the temperature ribbon seats and the mass tag latches", "ambient": "rotors idle out of phase"}},
-    {"i": 9, "t": 30.4, "vo": 3, "shows": "scale pullback reveals the full two-drone release choreography in a layered cloud cutaway", "sfx": "riser into synchronized flare pops", "means": "pay the engineering wonder with true scale", "draw": {"subject": "the coordinated drone pair", "action": "threads two paths through the cloud and releases timed sparks", "emotion": "capable", "annotation": "COMPANY-REPORTED OPERATION"}, "choreo": {"primary": "drones cross on separate altitude lanes", "reaction": "the Evidence Column's operation hoop prepares to latch", "ambient": "cloud vortices trail both aircraft"}, "rehook": "the one flare becomes a full coordinated operation"},
-    {"i": 10, "t": 34.9, "vo": 3, "shows": "the Evidence Column latches its solid nickel company-record hoop while the neutral ground bracket remains open", "sfx": "heavy nickel lock", "means": "separate the company-reported operational record from outcome proof", "draw": {"subject": "Evidence Column", "action": "latches its top hoop and leaves the radar hoop and neutral ground bracket independent", "emotion": "fair", "annotation": "FLIGHT RECORD  ·  COMPANY REPORTED"}, "choreo": {"primary": "top hoop latch closes", "reaction": "SeedDrone receives a small flight tick", "ambient": "telemetry dots orbit the hoop"}},
-    {"i": 11, "t": 39.8, "vo": 4, "shows": "one dark radar field waits while the headline asks where its number came from", "sfx": "radar boot and question sting", "means": "plant the model-origin loop", "draw": {"subject": "one radar field", "action": "boots and begins sweeping beneath a seven-count register", "emotion": "searching", "annotation": "HOW DID RADAR BECOME 19M?"}, "choreo": {"primary": "sweep ignites", "reaction": "headline folds into a question mark", "ambient": "scanlines crawl"}, "open_loop_2_plant": true},
-    {"i": 12, "t": 43.4, "vo": 4, "shows": "seven violet reflectivity features grow and drift across one field after the releases", "sfx": "seven sonar blooms", "means": "honor the observed radar evidence without multiplying screens", "draw": {"subject": "seven radar reflectivity features", "action": "bloom and travel across one shared radar field", "emotion": "suggestive", "annotation": "7 MANUALLY TRACKED RADAR FEATURES"}, "choreo": {"primary": "features bloom in sequence", "reaction": "the radar hoop begins to close", "ambient": "one radar spoke rotates continuously"}},
-    {"i": 13, "t": 47.9, "vo": 5, "shows": "the solid radar hoop locks while a separate sourced ClaimChip mounts COMPANY INTERPRETATION beside it", "sfx": "nickel latch and paper clip", "means": "draw the epistemic seam before any math", "draw": {"subject": "one observed radar feature and its attribution chip", "action": "passes through the solid hoop while the interpretation clips on beside it", "emotion": "careful", "annotation": "RADAR REFLECTIVITY: OBSERVED  ·  CAUSE: INTERPRETED"}, "choreo": {"primary": "radar hoop latch closes", "reaction": "ClaimChip mounts without filling any hoop", "ambient": "feature continues moving behind both"}},
-    {"i": 14, "t": 52.7, "vo": 6, "shows": "a physical subtraction gate lowers across the observed radar trace before the trace continues into the model, with an attributed Rainmaker-assumption ClaimChip beside it", "sfx": "metal gate drop and muted data step", "means": "make the analyst-selected correction visible without treating it as an observation", "draw": {"subject": "a mechanical subtraction gate across the radar-to-model seam", "action": "lowers across the moving radar trace and passes a reduced chartreuse line into the model", "emotion": "deliberate", "annotation": "RAINMAKER ASSUMPTION  ·  −5 dBZ BACKGROUND"}, "choreo": {"primary": "the subtraction gate lowers into the radar trace", "reaction": "the chartreuse model-input line drops one step and travels onward", "ambient": "manual polygon handles keep drifting"}},
-    {"i": 15, "t": 56.1, "vo": 6, "shows": "nine chartreuse coefficient paths intersect three chartreuse exponent arcs and continuously resolve into one shadowless 27-model label", "sfx": "nine plucks, three arc tones and one shimmer", "means": "compress the conversion ensemble into one phone-legible simulation", "draw": {"subject": "the bounded radar conversion model lattice", "action": "crosses nine shadowless paths with three shadowless arcs and resolves one total", "emotion": "busy but bounded", "annotation": "9 VALUES OF a  ×  3 VALUES OF b  =  27 MODELS"}, "choreo": {"primary": "model paths cross and re-solve", "reaction": "one shadowless 27 label brightens without landing", "ambient": "chartreuse linework hunts on an irrational period"}},
-    {"i": 16, "t": 61.0, "vo": 6, "shows": "a chartreuse shadowless model thread runs down the Evidence Column without latching the neutral ground bracket", "sfx": "arcade roll into a thin electrical shimmer", "means": "show modeling as a different substance rather than another observation", "draw": {"subject": "Evidence Column", "action": "conducts a continuously resolving model thread through its open lower bracket", "emotion": "calculating", "annotation": "COMPANY MODEL OUTPUT  ·  NOT A SURFACE MEASUREMENT"}, "choreo": {"primary": "thread re-solves through the hoops", "reaction": "neutral ground bracket stays open", "ambient": "solid observed hoops remain still"}, "rehook": "the column gains a model thread instead of another proof latch"},
-    {"i": 17, "t": 65.2, "vo": 7, "shows": "the twenty-seven-model lattice resolves into one shadowless marker at 57.62 acre-feet", "sfx": "model resolve and bell hit", "means": "land the company mean", "draw": {"subject": "the model lattice", "action": "continuously resolves into a single floating mean marker without touching the floor", "emotion": "resolved within the model", "annotation": "COMPANY ESTIMATE  ·  MEAN 57.62 ACRE-FEET"}, "choreo": {"primary": "lattice paths converge without landing", "reaction": "mean marker brightens in the model thread only", "ambient": "range whiskers continue breathing"}},
-    {"i": 18, "t": 69.9, "vo": 7, "shows": "57.62 acre-feet expands into 18.8 million gallons and rounds into the familiar headline", "sfx": "volume swell and headline slam", "means": "pay the origin-of-the-number loop", "draw": {"subject": "the company mean marker", "action": "expands as a shadowless chartreuse continuously resolving figure and rounds upward", "emotion": "spectacular but labeled", "annotation": "≈18.8M  →  ABOUT 19M GALLONS"}, "choreo": {"primary": "model number grows through the frame without contact", "reaction": "Evidence Column mounts COMPANY ESTIMATE", "ambient": "model thread and headline continue resolving"}, "open_loop_2_pay": true},
-    {"i": 19, "t": 73.6, "vo": 8, "shows": "two shadowless chartreuse percentile endpoints separate inside a continuously resolving model bracket while a broken question arc extends beyond them", "sfx": "two soft model tones and an unresolved shimmer", "means": "show that the stated model spread is not total uncertainty without giving it physical gates", "draw": {"subject": "the stated model spread", "action": "breathes between two floating endpoints while a no-contact question arc extends beyond it", "emotion": "incomplete", "annotation": "5TH–95TH: 41.70–89.35 ACRE-FEET  ·  NOT TOTAL UNCERTAINTY"}, "choreo": {"primary": "chartreuse endpoints separate without landing", "reaction": "the broken question arc grows past frame", "ambient": "all model linework continuously re-solves"}},
-    {"i": 20, "t": 78.4, "vo": 9, "shows": "camera dives through the bottom of the radar display into a Kenai terrain cross-section", "sfx": "deep descending whoosh", "means": "begin the actual Act 3 test without revealing the ground-record answer early", "draw": {"subject": "the radar beam", "action": "skims above the terrain while the camera descends beneath it", "emotion": "limited by geometry", "annotation": "LOWEST RADAR BEAM  ·  ≈1,800–2,200 m MSL"}, "choreo": {"primary": "camera drops vertically", "reaction": "beam rises away with distance", "ambient": "terrain layers parallax"}},
-    {"i": 21, "t": 82.3, "vo": 9, "shows": "a chartreuse modeled path descends from the beam and branches into unresolved possibilities before the surface", "sfx": "falling whistle splitting into soft unresolved tones", "means": "make the unmeasured descent a distance without inventing what happened inside it", "draw": {"subject": "the modeled precipitation path", "action": "descends as a shadowless hairline and loosens into several unresolved branches", "emotion": "unobserved", "annotation": "UNMEASURED DESCENT"}, "choreo": {"primary": "model thread descends", "reaction": "branches loosen before ground", "ambient": "air currents curl behind without touching the thread"}},
-    {"i": 22, "t": 87.0, "vo": 10, "shows": "the ground layer cracks open and ejects two dashed absence frames for a campaign gauge and tracer, labeled NOT REPORTED", "sfx": "ground seam split, soft dash ticks and a withheld lock", "means": "draw the decisive missing report without implying deployed instruments failed", "draw": {"subject": "the absent campaign ground-evidence instruments", "action": "the ground seam opens and the two dashed true-void frames rise into place", "emotion": "not reported", "annotation": "LOWEST RADAR BEAM  ·  ≈1,800–2,200 m MSL  ·  NO GROUND-GAUGE/TRACER CONFIRMATION REPORTED"}, "choreo": {"primary": "the ground seam opens and both absence frames enter", "reaction": "Evidence Column ground hoop changes from neutral to dashed", "ambient": "model branches continue resolving above"}, "open_loop_pay": true},
-    {"i": 23, "t": 91.2, "vo": 11, "shows": "a full-frame SNOWIE weather cross-section grows beside Kenai and connects a seeded radar plume all the way to filling surface gauges", "sfx": "snow curtain rise and clean connection chime", "means": "give the independent physical precedent its own world", "draw": {"subject": "the independent SNOWIE measurement chain", "action": "draws a seeded plume from radar down into filling surface gauges", "emotion": "demonstrated under suitable conditions", "annotation": "SNOWIE  ·  RADAR + GROUND GAUGES"}, "choreo": {"primary": "connection line draws downward", "reaction": "surface gauges fill", "ambient": "snow curtains drift"}, "rehook": "the missing connection appears in a real independent precedent"},
-    {"i": 24, "t": 96.0, "vo": 11, "shows": "matched SNOWIE and Kenai chains descend together while SNOWIE reaches a gauge and Kenai's final link remains dashed and unresolved", "sfx": "graphic match, gauge fill and unresolved pulse", "means": "clarify precedent without importing validation", "draw": {"subject": "two matched measurement chains", "action": "descend together until one connects to a gauge and the other stops as a dashed open link", "emotion": "fair comparison", "annotation": "PHYSICAL PRECEDENT  ·  NOT KENAI VALIDATION"}, "choreo": {"primary": "chains descend in sync", "reaction": "one gauge fills while the Kenai link remains open", "ambient": "both radar plumes continue moving"}},
-    {"i": 25, "t": 100.1, "vo": 12, "shows": "seven Kenai radar features return at full brightness while Rainmaker's saturated-column argument mounts as an attributed ClaimChip", "sfx": "seven pulses and one paper clip", "means": "give the company's strongest direct countercase at full strength", "draw": {"subject": "the seven observed features and Rainmaker ClaimChip", "action": "pulse around the solid radar hoop while the attributed saturation argument clips on beside them", "emotion": "meaningful but bounded", "annotation": "RAINMAKER ARGUES SATURATED COLUMN REDUCES LOSS RISK"}, "choreo": {"primary": "seven pulses strike the radar hoop", "reaction": "ClaimChip mounts without closing ground", "ambient": "SeedDrone circles behind"}},
-    {"i": 26, "t": 104.8, "vo": 13, "shows": "the Evidence Column assembles two short verdict labels around its dashed open ground hoop", "sfx": "two nickel labels latch", "means": "state the earned angle in one image", "draw": {"subject": "Evidence Column", "action": "latches two honest verdict labels while preserving the open ground absence", "emotion": "settled", "annotation": "ROBOTICS DEMONSTRATED  |  YIELD COMPANY ESTIMATE"}, "choreo": {"primary": "verdict labels seat", "reaction": "SeedDrone receives a small nickel flight medal engraved KENAI AI NOT ESTABLISHED", "ambient": "cloud light brightens"}},
-    {"i": 27, "t": 109.0, "vo": 13, "shows": "the schematic seed drone takes the medal, closes its flare rack and pitches toward the landing corridor", "sfx": "rack lock and rotor pitch change", "means": "leave the verdict through a physical action instead of label housekeeping", "draw": {"subject": "schematic seed drone", "action": "accepts the flight medal, closes its payload rack and banks toward home", "emotion": "mission complete", "annotation": "DRONE ROBOTICS: YES  ·  KENAI AI USE: NOT ESTABLISHED"}, "choreo": {"primary": "the drone banks out", "reaction": "medal swings behind", "ambient": "telemetry lights blink"}},
-    {"i": 28, "t": 113.5, "vo": 14, "shows": "SeedDrone descends through the same cloud opening as the music bed withdraws", "sfx": "rotors soften into landing air", "means": "return the feat to physical scale before the button", "draw": {"subject": "SeedDrone", "action": "descends cleanly toward the Kenai ground", "emotion": "mission complete", "annotation": "THE DRONES DELIVERED THE FLARES"}, "choreo": {"primary": "SeedDrone descends", "reaction": "flight medal swings", "ambient": "cloud gap closes slowly"}},
-    {"i": 29, "t": 116.5, "vo": 14, "shows": "SeedDrone lands while the chartreuse company-estimate headline remains suspended in the model layer", "sfx": "skid touch and distant glass hum", "means": "loop the opening with the evidence distinction intact", "draw": {"subject": "SeedDrone and the Evidence Column", "action": "land together beneath a headline that remains shadowless in the model layer", "emotion": "honest completion", "annotation": "THE MODEL DELIVERED THE NUMBER"}, "choreo": {"primary": "skids settle", "reaction": "ground hoop remains a dashed absence", "ambient": "headline continues re-solving aloft"}},
-    {"i": 30, "t": 119.0, "vo": 14, "shows": "a small measuring cup marked NEXT TEST slides beneath the dashed ground hoop as the scene loops", "sfx": "tiny cup clink", "means": "turn the caveat into the next engineering task", "draw": {"subject": "the waiting ground cup", "action": "slides under the open hoop and catches the first sunbeam", "emotion": "ready for the next test", "annotation": "NEXT TIME  ·  FINISH THE MEASUREMENT"}, "choreo": {"primary": "cup seats", "reaction": "open hoop glows but does not close", "ambient": "radar sweep begins the loop again"}}
+    {
+      "i": 1,
+      "t": 0.0,
+      "vo": 0,
+      "shows": "SignalRibbon whips upward and slams the PHYSICS? plate",
+      "sfx": "ribbon whip and resonant metal bonk",
+      "means": "scroll stop and plant the apparent physical ceiling",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "rockets into the low PHYSICS? plate and buckles into a flat kink",
+        "emotion": "startled curiosity",
+        "annotation": "PHYSICS?"
+      },
+      "choreo": {
+        "primary": "rockets into the low PHYSICS? plate and buckles into a flat kink",
+        "reaction": "the ceiling plate shakes and its bolts rattle",
+        "ambient": "dust and bolt grit fall in shallow focus under a quick orbit"
+      }
+    },
+    {
+      "i": 2,
+      "t": 1.3,
+      "vo": 0,
+      "shows": "the camera orbits and reveals plate bolts leading into measuring ticks",
+      "sfx": "bolt rattle and dust squeak",
+      "means": "make the ceiling look measurement-made before explaining it",
+      "draw": {
+        "subject": "the ceiling bolts",
+        "action": "stretch backward from the impact into the measuring apparatus",
+        "emotion": "suspicious",
+        "annotation": "SPACE OR MEASUREMENT?"
+      },
+      "choreo": {
+        "primary": "stretch backward from the impact into the measuring apparatus",
+        "reaction": "the measuring ticks pull taut behind the impact",
+        "ambient": "dust and bolt grit fall in shallow focus under a quick orbit"
+      }
+    },
+    {
+      "i": 3,
+      "t": 3.8,
+      "vo": 1,
+      "shows": "a Nature folio opens while two author plates lock onto it",
+      "sfx": "paper snap and two nameplate clicks",
+      "means": "name the study and actors before using them",
+      "draw": {
+        "subject": "Nature folio",
+        "action": "opens and seats Nithin Sivadas and UAF coauthor Doğacan Öztürk nameplates",
+        "emotion": "authoritative",
+        "annotation": "NATURE · JULY 15TH, 2026"
+      },
+      "choreo": {
+        "primary": "opens and seats Nithin Sivadas and UAF coauthor Doğacan Öztürk nameplates",
+        "reaction": "the folio pages flutter and both author plates settle",
+        "ambient": "paper fibers drift across the folio under a slow overhead push"
+      }
+    },
+    {
+      "i": 4,
+      "t": 7.0,
+      "vo": 1,
+      "shows": "the ribbon curls past a solid 15 marker and its dashed end points into a locked void",
+      "sfx": "curious pluck",
+      "means": "plant the long question about what survives past the supported evidence",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "curls around the 15 marker and knocks against a locked beyond-data shutter",
+        "emotion": "wonder",
+        "annotation": "WHAT HAPPENS PAST 15?"
+      },
+      "choreo": {
+        "primary": "curls around the 15 marker and knocks against a locked beyond-data shutter",
+        "reaction": "the ceiling tilts but does not answer the question",
+        "ambient": "paper fibers drift across the folio under a slow overhead push"
+      }
+    },
+    {
+      "i": 5,
+      "t": 10.0,
+      "vo": 2,
+      "shows": "UpstreamMonitor extends its booms and catches the sunward ribbon",
+      "sfx": "solar-panel unfold and antenna ping",
+      "means": "establish the neutral sampling instrument",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "passes through the faceless UpstreamMonitor as its sampling booms unfold",
+        "emotion": "precise",
+        "annotation": "WIND TODAY · ABOUT 930,000 MILES SUNWARD"
+      },
+      "choreo": {
+        "primary": "unfolds faceless booms into the passing solar-wind path",
+        "reaction": "the monitor booms recoil from ribbon contact",
+        "ambient": "sparse stars drift in four parallax planes while the camera travels Earthward"
+      }
+    },
+    {
+      "i": 6,
+      "t": 14.0,
+      "vo": 2,
+      "shows": "camera pulls from monitor hardware to the full Sun-Wind-Earth corridor",
+      "sfx": "long spatial pullback whoosh",
+      "means": "make the present-day distance felt at true scale class",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "stretches from Wind across the full corridor toward a tiny Earth",
+        "emotion": "immense",
+        "annotation": "ABOUT 930,000 MILES SUNWARD"
+      },
+      "choreo": {
+        "primary": "unspools from Wind toward a tiny Earth until the distance locks",
+        "reaction": "Earth recedes until the distance chain snaps straight",
+        "ambient": "sparse stars drift in four parallax planes while the camera travels Earthward"
+      }
+    },
+    {
+      "i": 7,
+      "t": 18.8,
+      "vo": 3,
+      "shows": "one signal bead and one polar-response bead clasp across a one-minute notch",
+      "sfx": "paired clock tick and soft latch",
+      "means": "explain the paired unit before the dataset",
+      "draw": {
+        "subject": "one matched minute",
+        "action": "pairs a solar-wind bead with a polar-cap response bead",
+        "emotion": "orderly",
+        "annotation": "1 MINUTE  +  1 MINUTE"
+      },
+      "choreo": {
+        "primary": "pairs a solar-wind bead with a polar-cap response bead",
+        "reaction": "the response bead bounces once inside its paired notch",
+        "ambient": "sparse stars drift in four parallax planes while the camera travels Earthward"
+      }
+    },
+    {
+      "i": 8,
+      "t": 22.4,
+      "vo": 3,
+      "shows": "the pair repeats across a gapped date-range rail",
+      "sfx": "shuffle of many ticks",
+      "means": "show a date range without implying an uninterrupted record",
+      "draw": {
+        "subject": "paired observation field",
+        "action": "populates discrete matched beads across a visibly gapped rail",
+        "emotion": "expansive",
+        "annotation": "1995 TO 2019 · 1-MINUTE MATCHES"
+      },
+      "choreo": {
+        "primary": "populates discrete matched beads across a visibly gapped rail",
+        "reaction": "the gapped date rail widens around discrete islands",
+        "ambient": "paired beads pulse across a gapped field under a widening crane"
+      }
+    },
+    {
+      "i": 9,
+      "t": 27.3,
+      "vo": 4,
+      "shows": "the ribbon leaves the neat pair and enters a long propagation corridor",
+      "sfx": "low Doppler bend",
+      "means": "turn from clean matching to the physical journey",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "travels away from its original timestamp while Earth waits at the far end",
+        "emotion": "uneasy",
+        "annotation": "THE SIGNAL CHANGES"
+      },
+      "choreo": {
+        "primary": "travels away from its original timestamp while Earth waits at the far end",
+        "reaction": "Earth pulses while the timestamp slips behind",
+        "ambient": "paired beads pulse across a gapped field under a widening crane"
+      }
+    },
+    {
+      "i": 10,
+      "t": 31.0,
+      "vo": 5,
+      "shows": "one pair explodes into the entire observation field as nearby clocks drift",
+      "sfx": "field burst and missed high-five tick",
+      "means": "rehook with a scale reveal and show matching pressure",
+      "rehook": "one matched minute explodes into the full pairing field",
+      "draw": {
+        "subject": "the full pairing field",
+        "action": "expands around a single late-arriving timing bead",
+        "emotion": "busy confusion",
+        "annotation": "WHEN"
+      },
+      "choreo": {
+        "primary": "expands around a single late-arriving timing bead",
+        "reaction": "neighboring clocks swing apart as the field expands",
+        "ambient": "paired beads pulse across a gapped field under a widening crane"
+      }
+    },
+    {
+      "i": 11,
+      "t": 35.7,
+      "vo": 5,
+      "shows": "ribbon width swells and shrinks while its phase ghosts lag",
+      "sfx": "elastic twang and phase echoes",
+      "means": "make timing and magnitude uncertainty different physical verbs",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "frays into delayed phase echoes and stretched amplitude strands",
+        "emotion": "strained",
+        "annotation": "TIMING + MAGNITUDE UNCERTAINTY"
+      },
+      "choreo": {
+        "primary": "frays into delayed phase echoes and stretched amplitude strands",
+        "reaction": "the embodied core narrows when the amplitude strand swells",
+        "ambient": "ash ghosts trail the rose core as the camera rides between fibers"
+      }
+    },
+    {
+      "i": 12,
+      "t": 38.9,
+      "vo": 5,
+      "shows": "location and evolution ghosts steer a bead into the neighboring response slot",
+      "sfx": "slot shutter and wrong-bay click",
+      "means": "plant whether calibration can change the ceiling",
+      "draw": {
+        "subject": "an imperfectly matched bead",
+        "action": "misses its response slot and locks into the adjacent one",
+        "emotion": "sheepish",
+        "annotation": "SHIFTED CAUSE-RESPONSE MATCH"
+      },
+      "choreo": {
+        "primary": "misses its response slot and locks into the adjacent one",
+        "reaction": "the intended response slot closes before the late bead arrives",
+        "ambient": "ash ghosts trail the rose core as the camera rides between fibers"
+      }
+    },
+    {
+      "i": 13,
+      "t": 43.8,
+      "vo": 6,
+      "shows": "SimField repeats the mismatches and stacks their response curve",
+      "sfx": "simulation relay chatter",
+      "means": "reproduce the apparent effect without claiming a physical storm",
+      "draw": {
+        "subject": "SimField",
+        "action": "duplicates the mismatch process until points accumulate beneath the plate",
+        "emotion": "methodical",
+        "annotation": "SIMULATED MISMATCHES"
+      },
+      "choreo": {
+        "primary": "duplicates the mismatch process until points accumulate beneath the plate",
+        "reaction": "the apparent plate lowers with each accumulated mismatch",
+        "ambient": "ash ghosts trail the rose core as the camera rides between fibers"
+      }
+    },
+    {
+      "i": 14,
+      "t": 47.6,
+      "vo": 6,
+      "shows": "the accumulated curve flattens and mechanically assembles the low plate",
+      "sfx": "three metal ticks and ceiling lock",
+      "means": "draw the apparent saturation as a product of the matching system",
+      "draw": {
+        "subject": "the mismatched curve",
+        "action": "flattens and bolts the PHYSICS? ceiling into place",
+        "emotion": "convincing but provisional",
+        "annotation": "UNCERTAINTY CAN DRAW A FALSE CEILING"
+      },
+      "choreo": {
+        "primary": "flattens and bolts the PHYSICS? ceiling into place",
+        "reaction": "three loose bolts fall as the curve flattens",
+        "ambient": "ash ghosts trail the rose core as the camera rides between fibers"
+      }
+    },
+    {
+      "i": 15,
+      "t": 52.35,
+      "vo": 7,
+      "shows": "calibration teeth engage the frayed WHEN and HOW MUCH fibers",
+      "sfx": "loom clack and tension riser",
+      "means": "begin the promised correction as a causal mechanism",
+      "draw": {
+        "subject": "calibration rig",
+        "action": "catches each displaced fiber and pulls it toward its paired notch",
+        "emotion": "careful",
+        "annotation": "CALIBRATE THE UNCERTAINTY"
+      },
+      "choreo": {
+        "primary": "catches each displaced fiber and pulls it toward its paired notch",
+        "reaction": "the frayed strands recoil against the calibration teeth",
+        "ambient": "graphite teeth vibrate under tension during the calibration push"
+      }
+    },
+    {
+      "i": 16,
+      "t": 55.75,
+      "vo": 7,
+      "shows": "the fibers pause under tension then begin one elastic reweave",
+      "sfx": "held tension hum and release",
+      "means": "anticipate the correction payoff",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "reweaves its phase and amplitude fibers into one embodied strand",
+        "emotion": "relief",
+        "annotation": "RE-CENTER THE PAIRS"
+      },
+      "choreo": {
+        "primary": "reweaves its phase and amplitude fibers into one embodied strand",
+        "reaction": "the original core brightens as the ghosts draw inward",
+        "ambient": "graphite teeth vibrate under tension during the calibration push"
+      }
+    },
+    {
+      "i": 17,
+      "t": 60.65,
+      "vo": 8,
+      "shows": "music drops as the corrected ribbon drives upward against the ceiling",
+      "sfx": "near-silence then deep ribbon surge",
+      "means": "rehook at the central test and make the correction physical",
+      "rehook": "the corrected ribbon attacks the apparent ceiling",
+      "draw": {
+        "subject": "corrected SignalRibbon",
+        "action": "pushes the plate upward with a clean rising relation",
+        "emotion": "earned confidence",
+        "annotation": "CORRECTED AVERAGE"
+      },
+      "choreo": {
+        "primary": "pushes the plate upward with a clean rising relation",
+        "reaction": "the low plate trembles under the corrected rise",
+        "ambient": "graphite teeth vibrate under tension during the calibration push"
+      }
+    },
+    {
+      "i": 18,
+      "t": 64.55,
+      "vo": 8,
+      "shows": "the low plate releases and the solid ribbon rises through the 15 marker",
+      "sfx": "freight-bolt release and bright resolve",
+      "means": "pay the calibration loop with the exact supported result",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "lifts the apparent ceiling and remains solid through the evidence marker",
+        "emotion": "wonder",
+        "annotation": "CORRECTED RELATION · LINEAR THROUGH 15 mV/m"
+      },
+      "choreo": {
+        "primary": "lifts the apparent ceiling and remains solid through the evidence marker",
+        "reaction": "the released plate falls out of the observed field",
+        "ambient": "graphite teeth vibrate under tension during the calibration push"
+      }
+    },
+    {
+      "i": 19,
+      "t": 68.45,
+      "vo": 9,
+      "shows": "the lifted low plate falls and exposes the solid-to-dashed evidence seam",
+      "sfx": "music dip and plate flip",
+      "means": "announce Act 3 as a real challenge rather than a disclaimer",
+      "draw": {
+        "subject": "SignalRibbon at the evidence seam",
+        "action": "pushes the lifted plate away and enters the 15 mV/m boundary apparatus",
+        "emotion": "demanding",
+        "annotation": "PUSH THE RESULT PAST THE DATA"
+      },
+      "choreo": {
+        "primary": "pushes the lifted plate away and enters the 15 mV/m boundary apparatus",
+        "reaction": "the test bench rotates and clamps at center",
+        "ambient": "ivory fragments fall away while the camera holds the evidence stop"
+      }
+    },
+    {
+      "i": 20,
+      "t": 71.55,
+      "vo": 10,
+      "shows": "the solid ribbon reaches 15 and its body stops dead",
+      "sfx": "hard stop and room-tone vacuum",
+      "means": "make the observation boundary impossible to miss muted",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "halts its shaded physical body at the 15 marker",
+        "emotion": "honest restraint",
+        "annotation": "EVIDENCE STOPS AT 15"
+      },
+      "choreo": {
+        "primary": "halts its shaded physical body at the 15 marker",
+        "reaction": "the 15 marker blocks the shaded body",
+        "ambient": "ivory fragments fall away while the camera holds the evidence stop"
+      }
+    },
+    {
+      "i": 21,
+      "t": 76.35,
+      "vo": 11,
+      "shows": "the same path continues only as dashed shadowless fibers toward 25",
+      "sfx": "dry dash ticks",
+      "means": "change evidence material before revealing the projection",
+      "draw": {
+        "subject": "the projected ribbon fibers",
+        "action": "continue without body or shadow from 15 toward 25",
+        "emotion": "possible, not proven",
+        "annotation": "TOWARD 25 mV/m  ·  EXTRAPOLATED"
+      },
+      "choreo": {
+        "primary": "continue without body or shadow from 15 toward 25",
+        "reaction": "the ribbon rim extinguishes exactly at the boundary",
+        "ambient": "ivory fragments fall away while the camera holds the evidence stop"
+      }
+    },
+    {
+      "i": 22,
+      "t": 80.05,
+      "vo": 11,
+      "shows": "an approximately two-times ClaimChip is stamped out of the dashed fibers",
+      "sfx": "claim-chip stamp and velvet-rope snap",
+      "means": "tie the exciting number physically to extrapolation",
+      "draw": {
+        "subject": "EXTRAPOLATED approximately two-times chip",
+        "action": "emerges from the dashed path while dragging its qualifier",
+        "emotion": "exciting but bounded",
+        "annotation": "AT ABOUT 25 mV/m · EXTRAPOLATED RESPONSE ≈2×"
+      },
+      "choreo": {
+        "primary": "emerges from the dashed path while dragging its qualifier",
+        "reaction": "the qualifier strap pulls the claim chip back toward the dashed path",
+        "ambient": "ivory fragments fall away while the camera holds the evidence stop"
+      }
+    },
+    {
+      "i": 23,
+      "t": 84.95,
+      "vo": 11,
+      "shows": "the chip bounces off OBSERVED and DOUBLED DAMAGE then docks at PROJECTED RESPONSE",
+      "sfx": "two rejection clacks and one clean dock",
+      "means": "classify the claim quickly without repeating the same test",
+      "draw": {
+        "subject": "the approximately two-times chip",
+        "action": "fails two false readings and seats only in the correct claim bay",
+        "emotion": "properly classified",
+        "annotation": "PROJECTED GEOMAGNETIC RESPONSE"
+      },
+      "choreo": {
+        "primary": "fails two false readings and seats only in the correct claim bay",
+        "reaction": "the false bays snap shut before the correct bay opens",
+        "ambient": "the true void darkens behind the test bench during the lateral move"
+      }
+    },
+    {
+      "i": 24,
+      "t": 88.25,
+      "vo": 12,
+      "shows": "the low false plate falls away as a separate translucent beyond-data boundary slides into view",
+      "sfx": "single unresolved glass tone",
+      "means": "pay the main loop while preserving the fair unresolved beyond-data counterpoint",
+      "draw": {
+        "subject": "the unresolved physical ceiling",
+        "action": "slides into view after the low bias-made plate falls away",
+        "emotion": "open question",
+        "annotation": "PHYSICS BEYOND 15?"
+      },
+      "choreo": {
+        "primary": "slides into view after the low bias-made plate falls away",
+        "reaction": "the low false plate falls while a translucent future boundary slides into view",
+        "ambient": "the true void darkens behind the test bench during the lateral move"
+      }
+    },
+    {
+      "i": 25,
+      "t": 93.0,
+      "vo": 13,
+      "shows": "a flexible nonlinear lattice grows around the same frayed input",
+      "sfx": "mesh unfurl and data plucks",
+      "means": "begin the paper's AI warning without implying an AI evaluation",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "enters a flexible nonlinear lattice while keeping its missing alignment visible",
+        "emotion": "impressively flexible",
+        "annotation": "AI WARNING · FLEXIBILITY CAN'T RECOVER LOST INFORMATION\nNO OPERATIONAL AI TESTED"
+      },
+      "choreo": {
+        "primary": "wraps around the inherited blurred ribbon",
+        "reaction": "the lattice opens around the incomplete input",
+        "ambient": "the true void darkens behind the test bench during the lateral move"
+      }
+    },
+    {
+      "i": 26,
+      "t": 96.9,
+      "vo": 14,
+      "shows": "camera pulls from one missing fiber to the entire flexible lattice",
+      "sfx": "wide digital pullback",
+      "means": "rehook and reveal scale while keeping the input loss visible",
+      "rehook": "one blurred fiber becomes a full flexible model",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "travels through the full lattice while empty cells remain open around it",
+        "emotion": "capable but limited",
+        "annotation": "AI WARNING · FLEXIBILITY CAN'T RECOVER LOST INFORMATION\nNO OPERATIONAL AI TESTED"
+      },
+      "choreo": {
+        "primary": "bends precisely around the biased curve while leaving the missing alignment empty",
+        "reaction": "empty cells stay open as the model expands",
+        "ambient": "lattice nodes flicker across depth while the camera pulls to system scale"
+      }
+    },
+    {
+      "i": 27,
+      "t": 101.7,
+      "vo": 14,
+      "shows": "the lattice performs an elegant fold and presents the same low ceiling",
+      "sfx": "wry elastic pretzel pluck",
+      "means": "give the AI warning one memorable visual gag",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "emerges unchanged as the flexible lattice folds beneath the inherited curve",
+        "emotion": "proud but mistaken",
+        "annotation": "AI WARNING · FLEXIBILITY CAN'T RECOVER LOST INFORMATION\nNO OPERATIONAL AI TESTED"
+      },
+      "choreo": {
+        "primary": "folds beautifully under the inherited false ceiling and returns the unchanged ribbon",
+        "reaction": "the biased ceiling lowers again despite the elegant fold",
+        "ambient": "lattice nodes flicker across depth while the camera pulls to system scale"
+      }
+    },
+    {
+      "i": 28,
+      "t": 105.2,
+      "vo": 15,
+      "shows": "grid, GPS, aircraft and satellite icons orbit a neutral GENERAL CONTEXT plate",
+      "sfx": "four restrained icon pings",
+      "means": "show real general hazards without attaching the two-times claim",
+      "draw": {
+        "subject": "general space-weather context icons",
+        "action": "circle a neutral context plate without touching the projection",
+        "emotion": "prepared, not alarmed",
+        "annotation": "GENERAL HAZARDS · GRID · GPS · AIRCRAFT · SATELLITES\nNO FORECAST · NO CURRENT ALERT · NO ALASKA DATA SET"
+      },
+      "choreo": {
+        "primary": "circle a neutral context plate without touching the projection",
+        "reaction": "the context icons separate from the projected path",
+        "ambient": "lattice nodes flicker across depth while the camera pulls to system scale"
+      }
+    },
+    {
+      "i": 29,
+      "t": 110.1,
+      "vo": 15,
+      "shows": "three limit plates clamp across the AlaskaMini authorship marker",
+      "sfx": "three firm plate locks",
+      "means": "prevent forecast, alert, or Alaska-dataset inference",
+      "draw": {
+        "subject": "the scope limits",
+        "action": "lock beside AlaskaMini without changing the signal",
+        "emotion": "clear",
+        "annotation": "NO FORECAST · NO CURRENT ALERT · NO ALASKA DATA SET"
+      },
+      "choreo": {
+        "primary": "lock beside AlaskaMini without changing the signal",
+        "reaction": "the three scope plates close without touching the ribbon",
+        "ambient": "neutral icons orbit slowly above the protected caption band"
+      }
+    },
+    {
+      "i": 30,
+      "t": 113.9,
+      "vo": 16,
+      "shows": "the apparent low plate rises while the 15 boundary stays fixed",
+      "sfx": "soft lift and hard boundary click",
+      "means": "state the turn with one spatial contrast",
+      "draw": {
+        "subject": "the two boundaries",
+        "action": "separate as the apparent ceiling moves and the evidence stop remains",
+        "emotion": "clear-eyed wonder",
+        "annotation": "CEILING MOVED  ·  BOUNDARY DID NOT"
+      },
+      "choreo": {
+        "primary": "separate as the apparent ceiling moves and the evidence stop remains",
+        "reaction": "the moved ceiling rises while the 15 marker grips the path",
+        "ambient": "limit plates settle into a quiet plum field"
+      }
+    },
+    {
+      "i": 31,
+      "t": 116.1,
+      "vo": 17,
+      "shows": "the apparent ceiling continues upward while the 15 boundary clamps the ribbon in place",
+      "sfx": "ascending glass tone cut by a firm clamp",
+      "means": "give the unchanged evidence boundary its own physical beat",
+      "draw": {
+        "subject": "the 15 mV/m evidence boundary",
+        "action": "clamps the solid ribbon while the apparent ceiling rises away",
+        "emotion": "steadfast",
+        "annotation": "EVIDENCE BOUNDARY DID NOT MOVE"
+      },
+      "choreo": {
+        "primary": "the 15 marker clamps the solid ribbon at center",
+        "reaction": "the lifted plate recedes into the upper void",
+        "ambient": "the camera stops moving while only ivory dust continues to fall"
+      }
+    },
+    {
+      "i": 32,
+      "t": 118.5,
+      "vo": 18,
+      "shows": "the lattice releases the dashed fibers which curl back into the clean opening ribbon",
+      "sfx": "warm resolve into loop whip",
+      "means": "land the button and create a seamless loop",
+      "draw": {
+        "subject": "SignalRibbon",
+        "action": "returns without recovered body, curls home, and becomes the opening launch",
+        "emotion": "quietly resolved",
+        "annotation": "A MODEL CAN FOLLOW IT. IT CAN'T RESTORE IT."
+      },
+      "choreo": {
+        "primary": "returns without recovered body, curls home, and becomes the opening launch",
+        "reaction": "the lattice opens and releases the still-incomplete fibers",
+        "ambient": "the opening dust field reforms around the returning loop"
+      }
+    }
   ],
   "shots": [
-    {"id": "S1", "t": "0.0-5.6", "stage": "Kenai cloud exterior", "framing": "wide-establish", "scale": "extreme-wide", "height": "high", "pov": "orbital-aerial", "layout": "single-object-void", "motion_vector": "horizontal-traverse", "hero_treatment": "small-machine-against-weather", "transition_in": null, "thread": "carry", "camera": "dollyThrough+truckAcross", "stage3d": "planes", "centered": true, "means": "a tiny aircraft carries an enormous claim", "hero": {"name": "SeedDrone", "parts": 18, "zones": 4, "detail_note": "neutral sensor window, rounded schematic body, four rotor discs, flare rack, no suppressant tank, no lock behavior and no autonomy cue against three cloud planes"}},
-    {"id": "S2", "t": "5.6-13.6", "stage": "Alaska map table", "framing": "map-territory", "scale": "wide", "height": "overhead", "pov": "top-down-map", "layout": "map-territory", "motion_vector": "assemble-build", "hero_treatment": "structure-as-subject", "transition_in": "match-cut", "thread": "match", "camera": "craneDown", "stage3d": "planes", "centered": true, "means": "the cloud circle becomes a vertical Evidence Column over the Kenai pin", "hero": {"name": "EvidenceColumn", "parts": 12, "zones": 4, "detail_note": "vertical nickel spine, two evidence hoops, solid observation latches, shadowless model thread and a neutral solid open bracket marked GROUND? over a tactile Alaska map"}},
-    {"id": "S3", "t": "13.6-26.6", "stage": "drone loading bench", "framing": "push-detail", "scale": "close", "height": "eye", "pov": "eye-level-immersive", "layout": "grid-modular", "motion_vector": "horizontal-traverse", "hero_treatment": "multiplicity-swarm", "transition_in": "carried-element", "thread": "carry", "camera": "truckAcross", "stage3d": "planes", "centered": true, "means": "the top evidence hoop becomes the sorting rail for sorties and flares", "hero": {"name": "FlareRack", "parts": 22, "zones": 4, "detail_note": "nineteen individual cartridges, two payload rails, fasteners, compact nominal-total tag and secondary rack motion"}},
-    {"id": "S4", "t": "26.6-34.9", "stage": "cloud release cross-section", "framing": "alt-vantage", "scale": "extreme-wide", "height": "low", "pov": "cross-section-cutaway", "layout": "stacked-layers", "motion_vector": "vertical-rise", "hero_treatment": "single-machine-hero", "transition_in": "whip-pan", "thread": "travel", "camera": "riseWith+orbitReveal", "stage3d": "planes", "centered": true, "means": "the bench rail launches into a real cloud flight path", "hero": {"name": "SeedDronePair", "parts": 28, "zones": 5, "detail_note": "two independently phased schematic drones with neutral sensor windows, flare racks, no tanks, no lock behavior, flare sparks, vapor wakes, altitude strata and a solid company-record hoop"}},
-    {"id": "S5", "t": "34.9-43.4", "stage": "vertical evidence field", "framing": "subject-portrait", "scale": "medium", "height": "eye", "pov": "macro-closeup", "layout": "stacked-layers", "motion_vector": "vertical-rise", "hero_treatment": "structure-as-subject", "transition_in": "graphic-match", "thread": "match", "camera": "orbitReveal", "stage3d": "planes", "centered": true, "means": "the circular mission pattern becomes the first solid column hoop", "hero": {"name": "EvidenceColumn", "parts": 12, "zones": 4, "detail_note": "company-record hoop latched solid nickel, observed-radar hoop open, interpretation mount empty, model channel dark and ground bracket neutral, solid and open"}},
-    {"id": "S6", "t": "43.4-52.7", "stage": "PAHG radar room", "framing": "data-panel", "scale": "close", "height": "high", "pov": "instrument-screen", "layout": "hud-instrument-frame", "motion_vector": "scroll-data", "hero_treatment": "data-as-subject", "transition_in": "fui-boot", "thread": "build", "camera": "static:the single radar field moves while the locked vantage clarifies observation", "stage3d": "flat:the radar evidence is a screen-space instrument readout", "centered": true, "means": "flight traces become observed reflectivity features", "hero": {"name": "RadarFeatureField", "parts": 14, "zones": 3, "detail_note": "one moving reflectivity field, one sweep, a phone-scale seven counter, manual polygon handles and a central observation-versus-attribution seam"}},
-    {"id": "S7", "t": "52.7-61.0", "stage": "model lattice", "framing": "alt-vantage", "scale": "wide", "height": "overhead", "pov": "exploded-diagram", "layout": "grid-modular", "motion_vector": "assemble-build", "hero_treatment": "data-as-subject", "transition_in": "mask-wipe", "thread": "build", "camera": "dollyThrough", "stage3d": "planes", "centered": true, "means": "the attributed assumption chip feeds one bounded chartreuse conversion lattice", "hero": {"name": "ModelRecipeLattice", "parts": 14, "zones": 3, "detail_note": "nine chartreuse shadowless coefficient paths, three chartreuse shadowless exponent arcs and one continuously resolving phone-scale 27-model label with no contact or shadow"}},
-    {"id": "S8", "t": "61.0-73.6", "stage": "model thread chamber", "framing": "macro-closeup", "scale": "insert", "height": "low", "pov": "macro-closeup", "layout": "single-object-void", "motion_vector": "vertical-descent", "hero_treatment": "data-as-subject", "transition_in": "morph", "thread": "match", "camera": "riseWith", "stage3d": "planes", "centered": true, "means": "the conversion lattice becomes a shadowless chartreuse thread and emerges as the labeled headline volume", "hero": {"name": "EvidenceColumnModelThread", "parts": 14, "zones": 4, "detail_note": "chartreuse hairline model path with no contact shadow, floating mean marker, breathing range whiskers, neutral solid open ground bracket and COMPANY ESTIMATE ClaimChip"}},
-    {"id": "S9", "t": "73.6-78.4", "stage": "model range field", "framing": "two-up", "scale": "medium", "height": "eye", "pov": "exploded-diagram", "layout": "fullbleed-split", "motion_vector": "horizontal-traverse", "hero_treatment": "data-as-subject", "transition_in": "hard-cut", "thread": "build", "camera": "truckAcross", "stage3d": "planes", "centered": true, "means": "the single mean opens into bounded model spread plus larger unmodeled uncertainty", "hero": {"name": "ModelRangeField", "parts": 10, "zones": 3, "detail_note": "two floating chartreuse percentile endpoints, one shadowless mean marker, a broken no-contact question arc and NOT TOTAL UNCERTAINTY label; no solid gate, rail, floor or shadow"}},
-    {"id": "S10", "t": "78.4-91.2", "stage": "Kenai radar-ground cutaway", "framing": "wide-establish", "scale": "extreme-wide", "height": "high", "pov": "cross-section-cutaway", "layout": "stacked-layers", "motion_vector": "vertical-descent", "hero_treatment": "landscape-as-subject", "transition_in": "pull-out", "thread": "travel", "camera": "craneDown+dollyThrough", "stage3d": "planes", "centered": true, "means": "the model range field clears as the camera descends to the observed radar beam and travels into its unmeasured underside", "hero": {"name": "RadarGroundCutaway", "parts": 20, "zones": 5, "detail_note": "curved beam slice, terrain relief, shadowless branching model path, dashed ground-gauge and tracer absences labeled NOT REPORTED"}},
-    {"id": "S11", "t": "91.2-100.1", "stage": "matched SNOWIE weather cross-section", "framing": "two-up", "scale": "close", "height": "eye", "pov": "cross-section-cutaway", "layout": "fullbleed-split", "motion_vector": "vertical-descent", "hero_treatment": "data-as-subject", "transition_in": "double-exposure", "thread": "match", "camera": "static:the two evidence chains align at identical physical scale for a methodological comparison", "stage3d": "planes", "centered": true, "means": "the open Kenai final link aligns against the SNOWIE radar-to-gauge chain", "hero": {"name": "MeasurementChainPair", "parts": 18, "zones": 4, "detail_note": "two matched radar plumes, one solid surface link, one dashed labeled surface absence, snow gauges and explicit precedent-not-validation label"}},
-    {"id": "S12", "t": "100.1-113.5", "stage": "sunbreak verdict stage", "framing": "subject-portrait", "scale": "medium", "height": "low", "pov": "eye-level-immersive", "layout": "centered-hero-lowerthird", "motion_vector": "assemble-build", "hero_treatment": "single-machine-hero", "transition_in": "assemble", "thread": "build", "camera": "orbitReveal+riseWith", "stage3d": "planes", "centered": true, "means": "the two evidence chains assemble into one vertical column and a fair split verdict", "hero": {"name": "SeedDroneAndEvidenceColumn", "parts": 32, "zones": 6, "detail_note": "SeedDrone with neutral sensor window, no tank, no lock behavior, a nickel flight medal, vertical column with two short verdict labels, open dashed ground hoop and bright sunbreak rim"}},
-    {"id": "S13", "t": "113.5-122.0", "stage": "Kenai landing exterior", "framing": "wide-establish", "scale": "wide", "height": "ground", "pov": "orbital-aerial", "layout": "single-object-void", "motion_vector": "horizontal-traverse", "hero_treatment": "small-machine-against-weather", "transition_in": "carried-element", "thread": "carry", "camera": "truckAcross+craneDown", "stage3d": "planes", "centered": true, "means": "the opening cloud crossing resolves as a landing while the headline stays aloft", "hero": {"name": "SeedDroneAndEvidenceColumn", "parts": 24, "zones": 4, "detail_note": "SeedDrone with neutral sensor window, flare rack, no tank and no lock behavior, skids landing, swinging medal, cloud gap, suspended chartreuse company-estimate headline, one-hoop-short Evidence Column and waiting ground cup"}}
-  ]
+    {
+      "id": "S1",
+      "t": "0.0-6.7667",
+      "stage": "apparent ceiling macro",
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "pov": "instrument-macro",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-impact",
+      "hero_treatment": "single-continuous-signal",
+      "transition_in": null,
+      "thread": "carry",
+      "camera": "static:the apparent ceiling stays locked while the ribbon compresses inside the instrument macro",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "the impact hides then reveals the measuring apparatus",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "form-shaded rose body, ivory crest, ink edge, elastic fibers, emissive trail and impact compression"
+      }
+    },
+    {
+      "id": "S2",
+      "t": "6.7667-14.1667",
+      "stage": "Nature authorship table",
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "overhead",
+      "pov": "document-table",
+      "layout": "asymmetric-rail",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "ribbon-as-question",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "paper and names establish actors before the ribbon asks the question",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "question curl with maintained form shading and moving specular"
+      }
+    },
+    {
+      "id": "S3",
+      "t": "14.1667-23.4333",
+      "stage": "Sun-Wind-Earth corridor",
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "pov": "sunward-corridor",
+      "layout": "diagonal-causal-corridor",
+      "motion_vector": "scale-pullback",
+      "hero_treatment": "signal-against-distance",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "camera": "truckAcross+dollyThrough",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "one monitor sample becomes a 930,000-mile causal distance",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "the embodied rose path stays active through the scale pullback while the faceless UpstreamMonitor and distance chain remain supporting apparatus"
+      }
+    },
+    {
+      "id": "S4",
+      "t": "23.4333-36.7333",
+      "stage": "paired-minute field",
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "pov": "data-field",
+      "layout": "expanding-grid",
+      "motion_vector": "radial-build",
+      "hero_treatment": "multiplicity-from-one",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "static:the paired-minute field holds as the bead grid performs the radial build",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "discrete pairings expand without implying a continuous record",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "one ribbon becomes a field of paired beads while remaining the bright orientation line"
+      }
+    },
+    {
+      "id": "S5",
+      "t": "36.7333-46.0333",
+      "stage": "uncertainty corridor",
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "eye",
+      "pov": "inside-signal",
+      "layout": "layered-strands",
+      "motion_vector": "horizontal-fray",
+      "hero_treatment": "single-object-transform",
+      "transition_in": "push-in",
+      "thread": "travel",
+      "camera": "static:the error decomposition holds its measurement axes while the uncertainty fibers fray",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "timing and magnitude uncertainty have different visible mechanics",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 32,
+        "zones": 6,
+        "detail_note": "phase echoes, amplitude strands, spatial ghosts, evolution drift and original embodied core"
+      }
+    },
+    {
+      "id": "S6",
+      "t": "46.0333-54.3667",
+      "stage": "false-ceiling calibration rig",
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "pov": "instrument-cutaway",
+      "layout": "cause-and-effect",
+      "motion_vector": "reweave-build",
+      "hero_treatment": "signal-operates-machine",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "mismatches build the ceiling and calibration re-centers them",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 32,
+        "zones": 6,
+        "detail_note": "frayed fibers visibly caught and re-tensioned by orthogonal calibration teeth"
+      }
+    },
+    {
+      "id": "S7",
+      "t": "54.3667-62.9667",
+      "stage": "corrected relation release",
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "low",
+      "pov": "graph-as-stage",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "signal-as-proof",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "camera": "static:the observation boundary stays fixed while the solid ribbon stops and the dashed extension appears",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "the apparent ceiling lifts while the solid relation reaches 15",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "one recalibrated form-shaded ribbon with physical body and a clean 15 mV/m stop"
+      }
+    },
+    {
+      "id": "S8",
+      "t": "62.9667-68.4333",
+      "stage": "evidence boundary test",
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "pov": "side-cutaway",
+      "layout": "solid-to-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-object-material-change",
+      "transition_in": "morph",
+      "thread": "match",
+      "camera": "static:the corrected data panel holds its axes while the fitted curve changes state",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "the same path becomes extrapolation without swapping heroes",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 28,
+        "zones": 6,
+        "detail_note": "physical shaded core ends at 15; same path continues hairline, shadowless and dashed"
+      }
+    },
+    {
+      "id": "S9",
+      "t": "68.4333-82.2333",
+      "stage": "claim test and unresolved ceiling",
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "pov": "evidence-bench",
+      "layout": "tri-slot-then-empty-space",
+      "motion_vector": "lateral-test",
+      "hero_treatment": "claim-cut-from-ribbon",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "static:the two-up comparison stays registered while the apparent and corrected paths diverge",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "classify approximately two-times and preserve possible later saturation",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 28,
+        "zones": 6,
+        "detail_note": "dashed projection remains attached to the compact claim chip and unresolved physical ceiling"
+      }
+    },
+    {
+      "id": "S10",
+      "t": "82.2333-86.3",
+      "stage": "unresolved beyond-data chamber",
+      "framing": "alt-vantage",
+      "scale": "close",
+      "height": "low",
+      "pov": "true-void-cutaway",
+      "layout": "single-translucent-boundary",
+      "motion_vector": "reveal-slide",
+      "hero_treatment": "signal-facing-unknown",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "camera": "static:the extrapolation boundary remains fixed while the dashed path reaches toward twenty-five",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "separate the correctly classified projection from the unresolved possibility of later physical saturation",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 28,
+        "zones": 6,
+        "detail_note": "solid body stops at 15 while dashed fibers face a separate translucent boundary in true void"
+      }
+    },
+    {
+      "id": "S11",
+      "t": "86.3-97.6",
+      "stage": "flexible AI lattice",
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "pov": "model-interior",
+      "layout": "nested-nonlinear-field",
+      "motion_vector": "scale-pullback",
+      "hero_treatment": "signal-inside-model",
+      "transition_in": "assemble",
+      "thread": "build",
+      "camera": "static:the AI lattice holds its coordinate frame while inherited bias travels through it",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "flexibility follows the biased input but cannot restore it",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "same frayed input stays visible inside a large flexible shadowless lattice"
+      }
+    },
+    {
+      "id": "S12",
+      "t": "97.6-107.7667",
+      "stage": "model gag to general context",
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "pov": "editorial-stage",
+      "layout": "center-object-orbit",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "signal-returned-unchanged",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "orbitReveal+dollyThrough",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "one wry model beat gives way to bounded hazard context",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "unchanged blurred ribbon exits lattice while neutral context icons orbit separately"
+      }
+    },
+    {
+      "id": "S13",
+      "t": "107.7667-114.4333",
+      "stage": "scope-limit plate",
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "pov": "evidence-card",
+      "layout": "stacked-limits",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "signal-under-constraint",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "camera": "static:the falsifier plate stays locked so the counterevidence condition remains readable",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "the Alaska link is authorship and the film is not a forecast or alert",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "subordinate ribbon behind three clear scope plates above caption band"
+      }
+    },
+    {
+      "id": "S14",
+      "t": "114.4333-120.9333",
+      "stage": "boundary split and loop",
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "pov": "material-theater",
+      "layout": "solid-boundary-and-loop",
+      "motion_vector": "curl-loopback",
+      "hero_treatment": "single-continuous-signal",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "static:the closing evidence boundary holds while the ribbon curls back into the opening pose",
+      "stage3d": "planes",
+      "centered": true,
+      "means": "apparent ceiling moves, evidence boundary stays, and ribbon loops home",
+      "hero": {
+        "name": "SignalRibbon",
+        "parts": 28,
+        "zones": 6,
+        "detail_note": "solid body through 15, dashed fibers beyond, loop curl and opening-pose match"
+      }
+    }
+  ],
+  "divergence_note": "This film replaces the previous vertical weather-evidence descent with a horizontal sunward causal corridor, one continuous organic hero, a warm plum and rose palette, and a macro fiber dolly. It has no drone, civic threshold, instrument dial, evidence column, teal, cyan, green, or default Alaska aurora. The projection and unresolved beyond-data counterpoint are separate shots so neither holds beyond the 16-second oner ceiling.",
+  "total_seconds": 120
 }

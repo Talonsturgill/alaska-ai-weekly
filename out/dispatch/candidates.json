@@ -1,29 +1,29 @@
 {
-  "run_date": "2026-08-30",
-  "window_reported_by_gate": 22,
-  "window_note": "story_gate reported a 22-day owed window because the dispatch ledger's last shipped date is 2026-08-12. The public video feed also contains an unledgered 2026-08-13 dispatch, The Machine Nobody Wrote Down, which was manually added to the exclusion set before research.",
+  "run_date": "2026-09-01",
+  "window_reported_by_gate": 10,
+  "window_note": "The ledger's last shipped Dispatch is August 30th, so the two missed days widen the owed window to ten days.",
   "search_budget": {
     "round_one_researchers": 3,
-    "caps_briefed": "20 WebSearch calls each; known URLs and outlet indexes preferred",
+    "caps_briefed": "At most 20 WebSearch calls each, with known URLs and outlet indexes preferred.",
     "exhausted": false,
-    "note": "Three non-recursive researchers covered science/resources, defense/rural technology, and breaking Alaska outlets. Two additional bounded adversarial checks were reserved for the locked story. No researcher reported a shared-budget exhaustion condition."
+    "note": "Three non-recursive researchers covered current Alaska outlets, defense and rural technology, and science and resources. Two independent validators then tested the locked story."
   },
   "rungs": [
     {
       "rung": "in_window_sweep",
       "attempted": true,
       "found_the_story": true,
-      "note": "Three bounded researchers swept the full 22-day window and excluded both the dispatch ledger and the live-feed-only August 13 video. The Rainmaker operation occurred August 23 and its validation report was published August 24."
+      "note": "UAF published its Alaska-focused release August 28th about a July Nature paper coauthored by a UAF scientist."
     },
     {
       "rung": "outlet_index_sweep",
       "attempted": true,
-      "note": "The breaking-outlet researcher checked Alaska Department of Law, KTOO/Alaska Beacon, Alaska Public Media/KDLL and other current Alaska news surfaces. The Rainmaker story was also cross-checked against the AlaskaAI carousel archive, which had already assembled a source pack on August 27."
+      "note": "The breaking-news lane swept current Alaska outlet and official indexes through September 1st."
     },
     {
       "rung": "widened_window",
       "attempted": false,
-      "note": "Not needed because the selected event is seven days old and inside the owed window."
+      "note": "Not needed because the selected release is inside the owed window."
     },
     {
       "rung": "carried_leads",
@@ -33,7 +33,7 @@
     {
       "rung": "primary_source_mining",
       "attempted": true,
-      "note": "The locked story rests on Rainmaker's detailed Alaska validation report and technical documentation, with its physical observations separated from the company's modeled precipitation estimate."
+      "note": "The locked story rests on the open peer-reviewed Nature paper, the UAF release, NASA mission history, and NOAA and USGS hazard references."
     },
     {
       "rung": "follow_up",
@@ -47,141 +47,94 @@
     }
   ],
   "locked_story": {
-    "id": "rainmaker-kenai-validation",
+    "id": "solar-storm-false-ceiling",
     "found_at_rung": "in_window_sweep",
-    "headline": "THE MODEL MADE THE NUMBER",
-    "one_line": "Rainmaker flew two drones through a Kenai Peninsula cloud on August 23 and logged nineteen silver-iodide flare releases. The machines and radar produced a real, auditable trail; the widely repeated nineteen-million-gallon result did not come from a rain gauge. It came from a company model that identified seven radar signatures, removed an assumed background, and converted reflectivity through twenty-seven published relationships into a mean estimate of 57.62 acre-feet, with a much wider stated range.",
-    "story_question": "What did the drones actually measure, and what did the model add?",
+    "headline": "THE CEILING WAS IN THE MEASUREMENT",
+    "one_line": "A UAF-coauthored Nature study shows that uncertain timing and magnitude between an upstream solar-wind reading and Earth's response can manufacture a convincing saturation ceiling. Correcting the bias removes statistical evidence for that ceiling through the observed range, while the paper warns that nonlinear AI and machine-learning regressions may inherit the same blind spot.",
+    "story_question": "What if the apparent limit on an extreme solar storm was created by the way we measured it?",
     "why_this_one": [
-      "It is inside the owed window: operation August 23, company validation report August 24.",
-      "It has a complete physical chain: two aircraft, nineteen visible releases, flight telemetry, radar signatures, a modeled conversion and a clearly stated uncertainty band.",
-      "It is genuinely filmable: a flare becomes a radar streak, then a family of twenty-seven equations becomes one headline-sized volume.",
-      "The honest angle is neither boosterism nor debunking. The operation produced observable signatures; the amount of precipitation attributed to it is a company estimate rather than a ground measurement.",
-      "It is Alaska-first: the operation took place over the Kenai Peninsula and tests an emerging weather-modification capability in Alaska conditions.",
-      "The automation/AI connection is real only at the platform level and must be labeled carefully. The operation used precision drone deployment and Rainmaker describes its broader forecasting/nowcasting stack as data-driven; the specific precipitation estimate is radar modeling, not proof that AI caused rain."
+      "UAF published the Alaska-focused release August 28th, inside the owed window.",
+      "The open peer-reviewed paper supports a clear mechanism, an apparent ceiling created by measurement uncertainty and regression bias.",
+      "The visual reveal is physical and memorable, with a distant monitor, a distorted signal, a false ceiling, and a corrected line.",
+      "The AI angle is explicit but carefully bounded. The authors warn that nonlinear AI and machine-learning regressions may inherit the same bias, but the study did not test an operational AI forecast.",
+      "The fair countercase is substantial. The corrected relationship is supported only through 15 mV/m, and physical saturation at unobserved strengths remains possible.",
+      "The Alaska connection is UAF coauthorship, not Alaska observations. Poker Flat may appear only as geographic visual context."
     ],
     "primary_sources": [
-      "https://www.rainmaker.com/blog/alaska-validation-report",
-      "https://www.rainmaker.com/blog/rainmaker-alaska-results",
-      "https://www.rainmaker.com/technology"
+      "https://www.nature.com/articles/s41586-026-10757-4",
+      "https://www.uaf.edu/news/extreme-solar-storms-can-hit-earth-harder-than-thought.php",
+      "https://science.nasa.gov/mission/wind/",
+      "https://www.spaceweather.gov/noaa-scales-explanation"
     ],
     "dedupe": {
       "result": "FRESH",
-      "entities_checked": "rainmaker technology, cloud seeding, kenai peninsula, silver iodide, elijah drone, weather modification, stratus",
-      "cross_product_note": "The AlaskaAI carousel covered the event on August 27, but no video dispatch in the ledger or public video feed covers Rainmaker or cloud seeding. The video audience has not been shown this story in this format."
+      "entities_checked": "extreme solar storms, solar wind, WIND spacecraft, polar cap index, measurement uncertainty, Nithin Sivadas, Doğacan Öztürk, magnetosphere, space weather",
+      "cross_product_note": "No matching story was found in the AlaskaAI carousel archive or the Dispatch video ledger."
     },
-    "stance_intent": "Curious and exact. Honor the engineering achievement of a controlled aerial operation while showing the difference between an observed radar signature and a modeled water-volume estimate.",
-    "verification_status": "Two independent adversarial validators were dispatched; the final fact-check-safe set will be narrower than this research summary wherever their checks disagree."
+    "stance_intent": "Curious and exact. Treat the correction as an important warning about models and measurements without turning an extrapolated geomagnetic response into a forecast or a claim about doubled damage.",
+    "verification_status": "Two independent adversarial validators agreed the story is publishable with strict extrapolation, Alaska-role, and AI qualifiers."
   },
   "candidates": [
     {
-      "id": "rainmaker-kenai-validation",
+      "id": "solar-storm-false-ceiling",
       "status": "LOCKED",
-      "headline": "Nineteen flares over the Kenai become seven radar signatures and one modeled water number",
+      "headline": "A UAF coauthor helps show how uncertain measurements can manufacture a solar-storm ceiling",
+      "date": "2026-08-28",
+      "confidence": 0.94
+    },
+    {
+      "id": "western-alaska-drone-community",
+      "status": "RUNNER-UP",
+      "headline": "Local Western Alaska pilots map erosion and infrastructure while a project page reports an AI change-detection layer",
+      "date": "2026-08-07",
+      "why_not": "Excellent Alaska ownership and visual material, but the AI layer is under-specified and the publication hook is outside the owed window.",
+      "carry_forward": true
+    },
+    {
+      "id": "uavsar-nisar-alaska-handoff",
+      "status": "RUNNER-UP",
+      "headline": "NASA's live Alaska radar campaign rehearses the handoff from airborne UAVSAR to orbital NISAR",
       "date": "2026-08-24",
-      "confidence": 0.91
-    },
-    {
-      "id": "meta-child-safety-settlement",
-      "status": "RUNNER-UP",
-      "headline": "Alaska joins a proposed Meta settlement that would require time caps and a non-personalized feed for children",
-      "date": "2026-08-28",
-      "why_not": "Excellent primary sourcing and a genuine recommender-system angle, but federal-court approval is still pending and the visual engine is less distinctive than the physical chain in the locked story. Carry forward if the court approves it.",
+      "why_not": "Current and visual, but it is remote sensing rather than an AI or machine-learning story. The requested flight hours are not proof every flight occurred.",
       "carry_forward": true
     },
     {
-      "id": "juneau-pulsepoint",
+      "id": "t3-drone-storytelling-workshop",
       "status": "REJECTED",
-      "headline": "Juneau begins routing nearby CPR volunteers from live dispatch and location data",
-      "date": "2026-08-28",
-      "why_not": "A strong public-safety automation story but not an AI story. Local deployment scope and cost were not confirmed by a city or fire-department primary release.",
-      "carry_forward": true
-    },
-    {
-      "id": "governor-candidate-ai-survey",
-      "status": "REJECTED",
-      "headline": "Nine Alaska governor candidates split on generated campaign content and AI translation",
-      "date": "2026-08-17",
-      "why_not": "The survey documents positions rather than actual AI use, and its selected-candidate methodology limits the statewide claim. Useful election reporting, weaker mechanism story.",
-      "carry_forward": false
-    },
-    {
-      "id": "mendenhall-forecast-after-action",
-      "status": "REJECTED",
-      "headline": "Mendenhall crested below forecast while barriers, pumps and monitoring largely held",
-      "date": "2026-08-17",
-      "why_not": "Strong sensing and forecasting, but no demonstrated AI or machine-learning system. The causal result cannot be assigned to the forecast alone.",
-      "carry_forward": true
-    },
-    {
-      "id": "spotted-seal-drone-ml",
-      "status": "REJECTED",
-      "headline": "Researchers planned August drone flights to train spotted-seal counting and identification models",
-      "date": "2026-08-15",
-      "why_not": "The source is a research plan. No current primary confirmation established that the scheduled flights began or produced data, so this cannot be narrated as an active field campaign yet.",
-      "carry_forward": true
-    },
-    {
-      "id": "geocryoai-zero-curtain",
-      "status": "RUNNER-UP",
-      "headline": "GeoCryoAI maps the Arctic zero-curtain with physics-informed transfer learning",
-      "date": "2026-08-18",
-      "why_not": "Excellent peer-reviewed science and a real ML method, but the published result is circumarctic. An Alaska-specific map cell, field site or author statement is still needed before localizing the impact.",
+      "headline": "Rural Alaska students are invited to a free drone and storytelling workshop before AFN",
+      "date": "2026-08-31",
+      "why_not": "Fresh and community-grounded, but the workshop is human-piloted drone education with no reported AI system.",
       "carry_forward": true
     },
     {
       "id": "aurora-ai-rural-microgrids",
       "status": "EXCLUDED",
-      "headline": "UAF describes the AURORA-AI award for rural microgrids",
+      "headline": "A local report revisits UAF's AURORA-AI rural-grid project",
       "date": "2026-08-27",
-      "why_not": "Near-duplicate of the August 13 battery-inverter video and earlier AlaskaAI coverage. Same viewer question, same rural-grid setting, and no deployed result.",
+      "why_not": "The Dispatch already covered AURORA-AI on July 29th, and the carousel product returned to it in August.",
       "carry_forward": false
     },
     {
-      "id": "noaa-autonomous-survey-stack",
+      "id": "glacier-bay-seal-nursery-awards",
       "status": "REJECTED",
-      "headline": "NOAA packages Alaska uncrewed surveys, computer vision and AI-assisted fish aging",
-      "date": "2026-08-17",
-      "why_not": "A useful technology inventory rather than a fresh single deployment or result. It needs one current Alaska mission with verified dates, vessel, operating area and output.",
-      "carry_forward": true
-    },
-    {
-      "id": "drones-on-ice-youth",
-      "status": "REJECTED",
-      "headline": "Utqiagvik youth build and fly mini-drones at the BARC Science Fair",
-      "date": "2026-08-26",
-      "why_not": "Strong local and visual material, but it was an educational activity rather than an operational monitoring system and contains no AI claim.",
-      "carry_forward": true
-    },
-    {
-      "id": "statewide-transcription-rfp",
-      "status": "REJECTED",
-      "headline": "A statewide transcription solicitation never says whether the work is human or automated",
-      "date": "2026-08-28",
-      "why_not": "The procurement question is interesting but the notice does not establish AI use, no award is visible, and AlaskaAI already covered the solicitation on August 2.",
-      "carry_forward": false
-    },
-    {
-      "id": "cook-inlet-sheen-infrared-gap",
-      "status": "REJECTED",
-      "headline": "A pilot saw a Cook Inlet sheen that later infrared imaging did not find",
-      "date": "2026-08-28",
-      "why_not": "Secondary-only and not evidence of AI or sensor failure. Dissipation, viewing geometry and changing conditions remain plausible explanations.",
+      "headline": "Two NSF awards connect Glacier Bay iceberg change to harbor-seal nursery habitat",
+      "date": "2026-08-27",
+      "why_not": "Strong Alaska science, but the awards describe future field measurements and ocean modeling with no reported AI or ML method.",
       "carry_forward": true
     }
   ],
   "known_source_limits": [
     {
-      "surface": "Rainmaker Alaska validation report",
-      "limit": "Company-authored report about the company's own operation; every volume result must remain explicitly attributed as an estimate."
+      "surface": "Nature extrapolation",
+      "limit": "The approximately twofold geomagnetic response is extrapolated near 25 mV/m, beyond the data-supported 15 mV/m range. It is not an observed storm, doubled energy, doubled grid current, or doubled damage."
     },
     {
-      "surface": "NOAA weather-modification reporting list",
-      "limit": "The public list was not available in a form that confirmed or refuted an Alaska activity filing, so the film may not claim either compliance or noncompliance."
+      "surface": "Alaska role",
+      "limit": "The Alaska connection is UAF coauthorship. Poker Flat supplied the release photo, not study observations."
     },
     {
-      "surface": "FAA petition record",
-      "limit": "The 2025 petition later produced FAA Exemption No. 25287, and a separate altitude waiver was issued August 17, 2026. Those records do not by themselves establish that every condition was met during the Kenai operation, so the film may state the existence of the exemption and waiver but not certify full operational compliance."
+      "surface": "AI relevance",
+      "limit": "The paper explicitly generalizes the measurement-bias warning to AI and machine-learning regressions but did not test an operational AI forecast model."
     }
   ]
 }

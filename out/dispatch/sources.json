@@ -1,46 +1,47 @@
 {
-  "run_date": "2026-08-30",
-  "title": "The Model Made the Number",
+  "run_date": "2026-09-01",
+  "title": "The Ceiling Was in the Measurement",
   "sources": [
     {
       "id": "s1",
-      "title": "Rainmaker, Alaska Cloud Seeding Validation Report, August 24, 2026",
-      "url": "https://www.rainmaker.com/blog/alaska-validation-report",
-      "claims": ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11", "c12", "c14", "c15", "c19"],
+      "title": "Nature, Uncertainty-induced bias in the estimation of geomagnetic response to extreme solar wind, July 15, 2026",
+      "url": "https://www.nature.com/articles/s41586-026-10757-4",
+      "claims": ["c1", "c2", "c4", "c5", "c6", "c7", "c9", "c11", "c12", "c13", "c14"],
       "used_in_film": true,
-      "note": "Primary company report about its own operation. It is the source for both the operational record and the company's analysis, not an independent validation."
+      "note": "Open peer-reviewed primary paper. The approximately twofold response is an extrapolation outside the data-supported range."
     },
     {
       "id": "s2",
-      "title": "Rainmaker, Rainmaker Reports Approximately 19 Million Gallons of Precipitation in Alaska Validation",
-      "url": "https://www.rainmaker.com/blog/rainmaker-alaska-results",
-      "claims": ["c13"],
+      "title": "University of Alaska Fairbanks, Extreme solar storms can hit Earth harder than thought, August 28, 2026",
+      "url": "https://www.uaf.edu/news/extreme-solar-storms-can-hit-earth-harder-than-thought.php",
+      "urls": ["https://www.uaf.edu/news/extreme-solar-storms-can-hit-earth-harder-than-thought.php", "https://www.nature.com/articles/s41586-026-10757-4"],
+      "claims": ["c1", "c8"],
       "used_in_film": true,
-      "note": "Company summary used only to establish how the detailed report's 57.62-acre-foot mean became the public approximately-19-million-gallon headline."
+      "note": "Primary institutional release for the Alaska publication hook and the coauthor's interpretation."
     },
     {
       "id": "s3",
-      "title": "Rainmaker technology overview",
-      "url": "https://www.rainmaker.com/technology",
-      "claims": ["c17"],
+      "title": "NASA Science, Wind mission",
+      "url": "https://science.nasa.gov/mission/wind/",
+      "claims": ["c3", "c15"],
       "used_in_film": true,
-      "note": "Supports the platform-level robotics and software description. It does not establish AI or autonomous execution in the Kenai mission."
+      "note": "Authoritative mission history. Wind reached its continuing L1 halo orbit after earlier orbital phases."
     },
     {
       "id": "s4",
-      "title": "Friedrich et al., Quantifying snowfall from orographic cloud seeding, Proceedings of the National Academy of Sciences, 2020",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7071876/",
-      "claims": ["c16"],
+      "title": "NOAA Space Weather Prediction Center, NOAA Space Weather Scales",
+      "url": "https://www.spaceweather.gov/noaa-scales-explanation",
+      "claims": ["c10"],
       "used_in_film": true,
-      "note": "Independent physical precedent using radar plus surface gauges. It does not validate Rainmaker's Kenai result."
+      "note": "Authoritative background for general geomagnetic-storm effect categories. It does not quantify consequences from the Nature paper."
     },
     {
       "id": "s5",
-      "title": "Federal Aviation Administration docket decision, Rainmaker Technology Corporation, Exemption No. 25287",
-      "url": "https://www.regulations.gov/document/FAA-2025-1630-0008",
-      "claims": ["c18"],
+      "title": "U.S. Geological Survey, Magnetic Storms and Geoelectric Hazards, February 24, 2026",
+      "url": "https://www.usgs.gov/publications/magnetic-storms-and-geoelectric-hazards",
+      "claims": [],
       "used_in_film": false,
-      "note": "Held in the audit ledger for regulatory accuracy. The final cut need not discuss compliance."
+      "note": "Audit reference showing that grid hazard also depends on subsurface conductivity and grid configuration."
     }
   ]
 }

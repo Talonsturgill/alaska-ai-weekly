@@ -21,9 +21,12 @@ Config (env, with sane defaults):
   DISPATCH_GEMINI_MODEL   default gemini-3.1-flash-tts-preview
   DISPATCH_GEMINI_FALLBACK default gemini-2.5-pro-preview-tts
   VO_TAKES                default 3
-Requires GEMINI_API_KEY (or GOOGLE_API_KEY).
+Requires GEMINI_API_KEY (or GOOGLE_API_KEY). On macOS, a missing environment
+variable falls back to the login Keychain entry used by the local Codex
+automation without printing or persisting the secret.
 """
 import os, sys, json, base64, urllib.request, urllib.error, ssl, time, re, difflib
+import getpass, platform, subprocess
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -44,8 +47,34 @@ CTX = ssl.create_default_context(cafile=CA) if os.path.exists(CA) else ssl.creat
 
 def _key():
     k = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+    if not k and platform.system() == "Darwin":
+        account = os.environ.get("USER") or getpass.getuser()
+        try:
+            found = subprocess.run(
+                [
+                    "security",
+                    "find-generic-password",
+                    "-s",
+                    "com.alaskaaihq.gemini",
+                    "-a",
+                    account,
+                    "-w",
+                ],
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                text=True,
+                timeout=15,
+            ).stdout.strip()
+            if found:
+                k = found
+        except (FileNotFoundError, subprocess.SubprocessError):
+            pass
     if not k:
-        raise SystemExit("No GEMINI_API_KEY / GOOGLE_API_KEY in env.")
+        raise SystemExit(
+            "No GEMINI_API_KEY / GOOGLE_API_KEY in env and no usable macOS "
+            "Keychain entry for service com.alaskaaihq.gemini."
+        )
     return k
 
 
