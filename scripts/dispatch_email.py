@@ -163,6 +163,29 @@ ul.upg li{color:#1c5f38;}
 .foot{color:#97a2ab;font-size:11px;margin-top:24px;}
 """
 
+# Gmail's composer strips stylesheet blocks when a draft is created through the API. Keep the
+# stylesheet for clients that honor it, but duplicate every layout-critical rule inline so the
+# draft that the owner actually opens still has hierarchy, spacing, buttons, and copy-ready line
+# breaks. This is intentionally old-fashioned email HTML.
+S = {
+    "body": 'font-family:Arial,Helvetica,sans-serif;color:#13202b;background:#eef1f3;margin:0;padding:24px;',
+    "wrap": 'max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6e8;border-radius:14px;padding:28px;',
+    "h1": 'font-size:24px;line-height:1.2;margin:0 0 4px;',
+    "sub": 'color:#6a7782;font-size:13px;line-height:1.5;margin-bottom:22px;',
+    "h2": 'font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#516170;margin:26px 0 12px;border-bottom:1px solid #eef0f2;padding-bottom:7px;',
+    "copy": 'background:#f6f8f9;border:1px solid #e3e8eb;padding:16px;border-radius:10px;font-family:Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:#13202b;',
+    "button": 'display:inline-block;background:#FFC72C;color:#13202b;font-weight:700;text-decoration:none;padding:13px 18px;border-radius:9px;font-size:14px;margin:4px 8px 4px 0;',
+    "button_alt": 'display:inline-block;background:#13202b;color:#fff;font-weight:700;text-decoration:none;padding:13px 18px;border-radius:9px;font-size:14px;margin:4px 8px 4px 0;',
+    "button_meta": 'display:block;font-weight:500;font-size:12px;line-height:1.4;margin-top:3px;opacity:.8;',
+    "guide": 'background:#eaf4ff;border:1px solid #b6d8f5;color:#245c8a;font-size:12.5px;line-height:1.5;padding:10px 12px;border-radius:8px;margin:10px 0;',
+    "warn": 'background:#fff6e0;border:1px solid #f0d68a;color:#7a5a10;font-size:12.5px;line-height:1.5;padding:10px 12px;border-radius:8px;margin:10px 0;',
+    "poster": 'margin:18px 0;text-align:center;background:#f5f7f8;padding:18px;border-radius:10px;',
+    "poster_img": 'display:block;width:240px;max-width:100%;height:auto;margin:0 auto;border-radius:10px;border:1px solid #e3e6e8;',
+    "score": 'background:#edf8f1;border:1px solid #bfe0ca;border-radius:10px;padding:12px 16px;',
+    "upgrades": 'background:#eefaf1;border:1px solid #bfe6cd;border-radius:10px;padding:12px 12px 12px 32px;',
+    "foot": 'color:#97a2ab;font-size:11px;line-height:1.5;margin-top:24px;',
+}
+
 def _label_for(url):
     """Readable label for a bare source URL: the registrable domain, uppercased outlet-style."""
     m = re.match(r"https?://(?:www\.)?([^/]+)", url or "")
@@ -271,48 +294,50 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
     if vids.get("square"):
         dur = _dur(vids["square"])
         dur_txt = f' &middot; {dur}' if dur else ""
-        buttons += (f'<a class="dl" href="{vids["square"]}">&#9660;&nbsp; Post to LinkedIn &middot; 1:1 square (main feed)'
-                    f'<small>1080&times;1080{dur_txt} &middot; H.264 MP4 &middot; square stays in the home feed</small></a>')
+        buttons += (f'<a class="dl" style="{S["button"]}" href="{vids["square"]}">&#9660;&nbsp; Post to LinkedIn &middot; 1:1 square (main feed)'
+                    f'<small style="{S["button_meta"]}">1080&times;1080{dur_txt} &middot; H.264 MP4 &middot; square stays in the home feed</small></a>')
     if vids.get("vertical"):
-        buttons += (f'<a class="dl alt" href="{vids["vertical"]}">&#9660;&nbsp; TikTok &middot; 9:16 (full-screen)'
-                    f'<small>1080&times;1920 &middot; on LinkedIn this goes to the vertical Video tab, not the feed</small></a>')
-    feed_guide = ('<div class="warn" style="background:#eaf4ff;border-color:#b6d8f5;color:#245c8a;">'
+        buttons += (f'<a class="dl alt" style="{S["button_alt"]}" href="{vids["vertical"]}">&#9660;&nbsp; TikTok &middot; 9:16 (full-screen)'
+                    f'<small style="{S["button_meta"]}">1080&times;1920 &middot; on LinkedIn this goes to the vertical Video tab, not the feed</small></a>')
+    feed_guide = (f'<div class="warn" style="{S["guide"]}">'
                   'For LinkedIn use the <b>1:1 square</b> cut (top button) so the video lands in the <b>main feed</b> '
                   'next to your caption. The 9:16 is TikTok-native, and uploaded to LinkedIn it gets pulled into the '
                   'swipe-only Video tab instead of the feed.</div>') if vids.get("square") else ''
-    warn = '<div class="warn">Heads up: these download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
-    score_html = f"<h2>Grade</h2><ul><li>{score}</li></ul>" if score else ""
+    warn = f'<div class="warn" style="{S["warn"]}">Heads up: these download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
+    score_html = f'<h2 style="{S["h2"]}">Grade</h2><ul style="{S["score"]}"><li>{score}</li></ul>' if score else ""
     # "Upgrades shipped this run" — Phase 8 makes fixes on the spot and reports what it DID here
     # (one bullet per line of --upgrades). A run that self-improved should say so.
     up_items = "\n".join(f"<li>{ln.strip().lstrip('-').strip()}</li>"
                          for ln in (upgrades or "").splitlines() if ln.strip())
-    upgrades_html = (f'<h2>Upgrades shipped this run</h2><ul class="upg">{up_items}</ul>'
+    upgrades_html = (f'<h2 style="{S["h2"]}">Upgrades shipped this run</h2><ul class="upg" style="{S["upgrades"]}">{up_items}</ul>'
                      if up_items else "")
-    return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
-<div class="wrap">
-  <h1>ALASKA.AI &middot; Dispatch ready{(' &middot; ' + title) if title else ''}</h1>
-  <div class="sub">{date_str} &middot; LinkedIn (primary) + TikTok &middot; review, then post</div>
+    post_html = esc(post).replace("\n", "<br>")
+    comment_html = comment_text.replace("\n", "<br>")
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body style="{S['body']}">
+<div class="wrap" style="{S['wrap']}">
+  <h1 style="{S['h1']}">ALASKA.AI &middot; Dispatch ready{(' &middot; ' + esc(title)) if title else ''}</h1>
+  <div class="sub" style="{S['sub']}">{esc(date_str)} &middot; LinkedIn (primary) + TikTok &middot; review, then post</div>
 
-  <h2>The video</h2>
+  <h2 style="{S['h2']}">The video</h2>
   {buttons}
   {feed_guide}
   {warn}
   {poster_html}
 
-  <h2>Post text (copy/paste)</h2>
-  <div class="sub" style="margin-bottom:8px;">The post body only. Sources and credits are NOT in here on purpose, they go in the first comment (next block).</div>
-  <pre class="post">{post}</pre>
+  <h2 style="{S['h2']}">Post text (copy/paste)</h2>
+  <div class="sub" style="{S['sub']}margin-bottom:8px;">The post body only. Sources and credits are NOT in here on purpose, they go in the first comment (next block).</div>
+  <div class="post" style="{S['copy']}">{post_html}</div>
 
-  <h2>First comment (copy/paste)</h2>
-  <div class="sub" style="margin-bottom:8px;">Paste this as the FIRST COMMENT on the post, not in the post itself. Plain text with the real URLs so the links survive the paste.</div>
-  <pre class="post">{comment_text}</pre>
+  <h2 style="{S['h2']}">First comment (copy/paste)</h2>
+  <div class="sub" style="{S['sub']}margin-bottom:8px;">Paste this as the FIRST COMMENT on the post, not in the post itself. Plain text with the real URLs so the links survive the paste.</div>
+  <div class="post" style="{S['copy']}">{comment_html}</div>
 
   {score_html}
   {upgrades_html}
-  <h2>Sources (clickable reference)</h2>
+  <h2 style="{S['h2']}">Sources (clickable reference)</h2>
   <ul>{src}</ul>
 
-  <div class="foot">Generated {dt.datetime.utcnow().isoformat()}Z by the Alaska.Ai Dispatch routine. {note}</div>
+  <div class="foot" style="{S['foot']}">Generated {dt.datetime.now(dt.timezone.utc).isoformat().replace('+00:00', 'Z')} by the Alaska.Ai Dispatch routine. {esc(note)}</div>
 </div></body></html>"""
 
 def main():
@@ -371,10 +396,10 @@ def main():
         ([("1:1 square cut", a.video_url_square)] if a.video_url_square else []),
         allow_temporary=a.temporary)
     if a.poster_url:
-        poster_html = f'<div class="poster"><img src="{a.poster_url}" alt="poster"/></div>'
+        poster_html = f'<div class="poster" style="{S["poster"]}"><img width="240" style="{S["poster_img"]}" src="{a.poster_url}" alt="poster"/></div>'
     elif a.poster and Path(a.poster).exists():
         b64 = base64.b64encode(Path(a.poster).read_bytes()).decode()
-        poster_html = f'<div class="poster"><img src="data:image/png;base64,{b64}" alt="poster"/></div>'
+        poster_html = f'<div class="poster" style="{S["poster"]}"><img width="240" style="{S["poster_img"]}" src="data:image/png;base64,{b64}" alt="poster"/></div>'
     else:
         poster_html = ""
     # SOURCES ARE MANDATORY AND INLINE (2026-07-21 owner rule): the email is the whole
