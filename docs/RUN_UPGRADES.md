@@ -2843,12 +2843,33 @@ separates the preliminary FY28 budget request from that framework.
 6. **The Gmail draft keeps its audit trail without burying the deliverable.** The required panel
    score and Phase 8 fixes now share one compact, Gmail-inline “Run notes” block. A regression test
    verifies the hierarchy, HTML escaping, copy formatting, and both download-button styles.
+7. **The parallel renderer now runs on the actual macOS routine host.** Commit `ef60b51` replaces
+   Linux-only assumptions about `flock`, `stat -c`, GNU `timeout`, and `wait -n` with portable
+   equivalents: an atomic lock-directory fallback, BSD stat support, a process-group timeout
+   helper, and a Bash 3.2-compatible dynamic child queue. The repaired runner rendered all 4,045
+   frames from the exact current source and then successfully reused its content-keyed chunk cache.
+8. **Gate A now grades the film and mix that actually exist.** Commit `b5c09c6` makes
+   `build_scenes.py` derive `shots.json` from the same current scene bounds as `episode_props.json`,
+   and makes the silence check read the mix ledger's fitted dip rather than the storyboard's
+   obsolete planned second. The film also gained a large `DRAFT UNDER REVIEW` action inside the
+   opening dead window, while six deliberately locked compositions are now declared static with
+   concrete reasons instead of claiming camera moves the pixels did not perform. The exact-byte
+   Gate A moved from 8.0/10 with three failures to 10.0/10 with every check passing.
+9. **The Gmail draft was checked as rendered, not merely generated.** The first visual pass in
+   Gmail exposed narrow-composer overflow risk. The template now gives the wrapper and copy blocks
+   explicit zero minimum width plus emergency wrapping, and fixes the download table to its
+   available width. A second Gmail pass verified the full caption, long source URLs, exact music
+   and voice credits, and the compact run notes without clipping. The draft stayed unsent.
 
 ### Repeat offenders closed
 
 - **Stale per-run evidence anchors:** this was already named on September 1 and recurred on
   September 2. The run did not disclose or defer it; the anchors were replaced and the complete
   evidence pack rebuilt from the final master before panel grading.
+- **Stale quality proof and shot bounds:** the first re-grade found a September 1 quality report
+  and September 1 `shots.json` beside September 2 evidence. The current report was rebuilt, the
+  three real failures it exposed were fixed, and shot-bound generation is now coupled to scene
+  generation so this class cannot silently survive another run.
 - **Rendered text that technically fits but reads badly on a phone:** direct frame inspection
   remains mandatory. Four optical issues were fixed even though the underlying strings and most
   source geometry were valid.
@@ -2861,8 +2882,9 @@ separates the preliminary FY28 budget request from that framework.
 
 ### Final evidence
 
-- Exact-byte panel: 8.248, 7.930, and 7.912; median 7.930; all three judges ship; zero hard
+- Exact-byte final panel: 8.328, 8.086, and 7.912; median 8.086; all three judges ship; zero hard
   blockers.
 - LinkedIn copy: 8.986; zero hard failures.
 - Delivered square audio: -14.95 LUFS integrated and -2.34 dBTP true peak.
-- Ship gate: three deliverables and 64 evidence pieces hash-matched; all 30 beats covered; PASS.
+- Ship gate: three deliverables and 64 evidence pieces hash-matched; all 30 beats covered; PASS
+  after one blocked editing round exposed and closed three stale-proof defects.

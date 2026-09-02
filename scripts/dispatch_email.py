@@ -169,11 +169,11 @@ ul.upg li{color:#1c5f38;}
 # breaks. This is intentionally old-fashioned email HTML.
 S = {
     "body": 'font-family:Arial,Helvetica,sans-serif;color:#13202b;background:#f3f5f6;margin:0;padding:16px 8px;',
-    "wrap": 'width:100%;max-width:620px;box-sizing:border-box;margin:0 auto;background:#fff;border:1px solid #dde3e7;padding:24px;',
+    "wrap": 'width:100%;max-width:620px;min-width:0;box-sizing:border-box;margin:0 auto;background:#fff;border:1px solid #dde3e7;padding:24px;overflow-wrap:anywhere;',
     "h1": 'font-size:24px;line-height:1.2;margin:0 0 4px;',
     "sub": 'color:#6a7782;font-size:13px;line-height:1.5;margin-bottom:22px;',
     "h2": 'font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#516170;margin:26px 0 12px;border-bottom:1px solid #eef0f2;padding-bottom:7px;',
-    "copy": 'border-left:4px solid #FFC72C;padding:2px 0 2px 16px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.62;color:#13202b;',
+    "copy": 'min-width:0;border-left:4px solid #FFC72C;padding:2px 0 2px 16px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.62;color:#13202b;overflow-wrap:anywhere;',
     "button": 'display:block;background:#FFC72C;color:#13202b;font-weight:700;text-decoration:none;padding:14px 16px;border-radius:7px;font-size:15px;text-align:center;',
     "button_alt": 'display:block;background:#13202b;color:#fff;font-weight:700;text-decoration:none;padding:14px 16px;border-radius:7px;font-size:15px;text-align:center;',
     "button_meta": 'display:block;font-weight:500;font-size:12px;line-height:1.4;margin-top:3px;opacity:.8;',
@@ -307,7 +307,7 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
             f'<a class="dl alt" style="{S["button_alt"]}" href="{vids["vertical"]}">Download TikTok video &middot; vertical'
             f'<small style="{S["button_meta"]}">1080&times;1920 &middot; full screen</small></a></td></tr>'
         )
-    buttons = ('<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">'
+    buttons = ('<table role="presentation" width="100%" style="width:100%;max-width:100%;table-layout:fixed;" cellspacing="0" cellpadding="0" border="0">'
                + ''.join(button_rows) + '</table>')
     feed_guide = (f'<div class="warn" style="{S["guide"]}">'
                   'For LinkedIn use the <b>1:1 square</b> cut (top button) so the video lands in the <b>main feed</b> '
