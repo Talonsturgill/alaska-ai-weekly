@@ -24,11 +24,14 @@ class DispatchEmailRenderingTest(unittest.TestCase):
         )
 
         self.assertIn('<body style="', html)
-        self.assertIn('style="display:inline-block;background:#FFC72C', html)
-        self.assertIn('style="display:inline-block;background:#13202b', html)
+        self.assertIn('role="presentation" width="100%"', html)
+        self.assertIn('style="display:block;background:#FFC72C', html)
+        self.assertIn('style="display:block;background:#13202b', html)
         self.assertIn('First &lt;claim&gt;.<br><br>Second &amp; final paragraph.', html)
-        self.assertIn('font-family:Menlo,Consolas,monospace', html)
-        self.assertIn('width="240"', html)
+        self.assertIn('font-family:Arial,Helvetica,sans-serif', html)
+        self.assertNotIn('width="240"', html)
+        self.assertNotIn('Upgrades shipped this run', html)
+        self.assertNotIn('Sources (clickable reference)', html)
 
 
 if __name__ == "__main__":
