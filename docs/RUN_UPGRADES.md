@@ -2809,3 +2809,60 @@ the observed 15 mV/m range, and the roughly twofold response near 25 mV/m remain
   fresh full-resolution evidence.
 - The final exact-byte re-grade scored 8.030, 7.870, and 7.552, with a 7.870 median and zero hard
   blockers. Delivered audio measured -14.91 LUFS, -2.35 dBTP, and 6.7 LU LRA.
+
+---
+
+## 2026-09-02 — "The Diploma Still Has to Be Earned"
+
+The University of Alaska Board's AI Engaged materials became one tactile trust test: AI may
+assist, but a credential should still certify competence the student earned, while consequential
+predictive uses need documented evaluation and meaningful human oversight. The film keeps every
+governance claim conditional because the posted framework remains a draft, and it explicitly
+separates the preliminary FY28 budget request from that framework.
+
+### Permanent upgrades made during the run
+
+1. **Credential governance now has a reusable visual system.** Commit `1dd214b` added
+   `DiplomaPress`, `QuestionToken`, `StampBot`, and `DocumentFlip`. The press turns authorship and
+   competence into physical action, while the carried brass token preserves object continuity
+   across classroom, oversight, clock, and payoff scenes.
+2. **The document transition now completes a readable reverse-face reveal.** The first flip
+   stopped edge-on at 90 degrees. The shared transition now rotates through 180 degrees with
+   anticipation, overshoot, shadow squash, and a settled back face, verified in fresh frames.
+3. **Visual review fixed defects that arithmetic alone missed.** The thesis line, MEANINGFUL
+   plate, decision-record position, and question-token/gauge collision were corrected at phone
+   size before the final render. The text-fit, caption-band, rendered-caption, overlap, zoom, and
+   dead-space gates all pass on the shipping bytes.
+4. **Fact-density review changed the narration, not merely the report.** A surgical replacement
+   compressed the draft-status beat to “Still a draft. Clock stopped. Separate budget.” The patch
+   scored WER 0.0, preserved downstream timing, and made the budget separation audible as well as
+   visible.
+5. **Evidence anchors describe this film.** The stale prior-episode anchor set was replaced with
+   38 story-specific moves. The exact shipped master now has evidence for all 12 shots and all 30
+   storyboard beats across 63 hash-bound samples.
+6. **The Gmail draft keeps its audit trail without burying the deliverable.** The required panel
+   score and Phase 8 fixes now share one compact, Gmail-inline “Run notes” block. A regression test
+   verifies the hierarchy, HTML escaping, copy formatting, and both download-button styles.
+
+### Repeat offenders closed
+
+- **Stale per-run evidence anchors:** this was already named on September 1 and recurred on
+  September 2. The run did not disclose or defer it; the anchors were replaced and the complete
+  evidence pack rebuilt from the final master before panel grading.
+- **Rendered text that technically fits but reads badly on a phone:** direct frame inspection
+  remains mandatory. Four optical issues were fixed even though the underlying strings and most
+  source geometry were valid.
+
+### Known issue escalated
+
+- `config/panel_anchors.md` is still absent. That file needs owner-agreed exemplar axis scores;
+  this run did not invent them. The independent judges disclosed the missing calibration file and
+  still scored only the exact evidence pack under the current rubric.
+
+### Final evidence
+
+- Exact-byte panel: 8.248, 7.930, and 7.912; median 7.930; all three judges ship; zero hard
+  blockers.
+- LinkedIn copy: 8.986; zero hard failures.
+- Delivered square audio: -14.95 LUFS integrated and -2.34 dBTP true peak.
+- Ship gate: three deliverables and 64 evidence pieces hash-matched; all 30 beats covered; PASS.
