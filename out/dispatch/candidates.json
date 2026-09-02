@@ -1,39 +1,39 @@
 {
-  "run_date": "2026-09-01",
+  "run_date": "2026-09-02",
   "window_reported_by_gate": 10,
-  "window_note": "The ledger's last shipped Dispatch is August 30th, so the two missed days widen the owed window to ten days.",
+  "window_note": "The September 1st Dispatch shipped yesterday, so the gate reports the ten-day minimum window.",
   "search_budget": {
     "round_one_researchers": 3,
-    "caps_briefed": "At most 20 WebSearch calls each, with known URLs and outlet indexes preferred.",
+    "caps_briefed": "At most 20 WebSearch calls each, with primary documents and known outlet indexes preferred.",
     "exhausted": false,
-    "note": "Three non-recursive researchers covered current Alaska outlets, defense and rural technology, and science and resources. Two independent validators then tested the locked story."
+    "note": "Three non-recursive researchers covered current Alaska outlets, defense and rural technology, and science and resources. Two independent validators are red-teaming the locked story."
   },
   "rungs": [
     {
       "rung": "in_window_sweep",
       "attempted": true,
       "found_the_story": true,
-      "note": "UAF published its Alaska-focused release August 28th about a July Nature paper coauthored by a UAF scientist."
+      "note": "The University of Alaska released the September 2nd to 3rd Board package on September 1st. It includes the draft AI Engaged statement and implementation plan."
     },
     {
       "rung": "outlet_index_sweep",
       "attempted": true,
-      "note": "The breaking-news lane swept current Alaska outlet and official indexes through September 1st."
+      "note": "Researchers swept Alaska institutional, local-news, federal science, aviation, defense, rural technology, energy, and resource indexes."
     },
     {
       "rung": "widened_window",
       "attempted": false,
-      "note": "Not needed because the selected release is inside the owed window."
+      "note": "Not needed because the selected Board meeting begins today."
     },
     {
       "rung": "carried_leads",
-      "attempted": false,
-      "note": "Not needed after an in-window story locked."
+      "attempted": true,
+      "note": "Recent carried leads were reviewed. The fresh Board package is more current and more directly AI-centered."
     },
     {
       "rung": "primary_source_mining",
       "attempted": true,
-      "note": "The locked story rests on the open peer-reviewed Nature paper, the UAF release, NASA mission history, and NOAA and USGS hazard references."
+      "note": "The locked story rests on the official Board agenda package, the separate draft statement and implementation summary, and the University of Alaska release."
     },
     {
       "rung": "follow_up",
@@ -47,94 +47,86 @@
     }
   ],
   "locked_story": {
-    "id": "solar-storm-false-ceiling",
+    "id": "ua-ai-engaged-draft",
     "found_at_rung": "in_window_sweep",
-    "headline": "THE CEILING WAS IN THE MEASUREMENT",
-    "one_line": "A UAF-coauthored Nature study shows that uncertain timing and magnitude between an upstream solar-wind reading and Earth's response can manufacture a convincing saturation ceiling. Correcting the bias removes statistical evidence for that ceiling through the observed range, while the paper warns that nonlinear AI and machine-learning regressions may inherit the same blind spot.",
-    "story_question": "What if the apparent limit on an extreme solar storm was created by the way we measured it?",
+    "headline": "THE DIPLOMA GETS A CLOCK",
+    "one_line": "The University of Alaska Board will discuss a draft AI Engaged framework that promises earned competence, human oversight, universal AI literacy, and institution-level policies within one year while leaving curriculum decisions with UAA, UAF, and UAS.",
+    "story_question": "Can a statewide AI framework protect what a University of Alaska credential means without taking academic judgment away from its three universities?",
     "why_this_one": [
-      "UAF published the Alaska-focused release August 28th, inside the owed window.",
-      "The open peer-reviewed paper supports a clear mechanism, an apparent ceiling created by measurement uncertainty and regression bias.",
-      "The visual reveal is physical and memorable, with a distant monitor, a distorted signal, a false ceiling, and a corrected line.",
-      "The AI angle is explicit but carefully bounded. The authors warn that nonlinear AI and machine-learning regressions may inherit the same bias, but the study did not test an operational AI forecast.",
-      "The fair countercase is substantial. The corrected relationship is supported only through 15 mV/m, and physical saturation at unobserved strengths remains possible.",
-      "The Alaska connection is UAF coauthorship, not Alaska observations. Poker Flat may appear only as geographic visual context."
+      "The Board meets in Juneau today and tomorrow, which gives the story a same-day public hook.",
+      "The AI angle is the subject itself rather than an editorial bridge from unrelated technology.",
+      "The draft contains a visual operating system with six principles, four priorities, five implementation expectations, and a one-year policy clock.",
+      "The tension is earned and testable. Systemwide consistency has to coexist with faculty judgment, human oversight, and three separately accredited universities.",
+      "The story is distinct from every Dispatch inside the thirty-day dedupe window.",
+      "The draft label is load-bearing. The film must never say the Board adopted or funded the framework."
     ],
     "primary_sources": [
-      "https://www.nature.com/articles/s41586-026-10757-4",
-      "https://www.uaf.edu/news/extreme-solar-storms-can-hit-earth-harder-than-thought.php",
-      "https://science.nasa.gov/mission/wind/",
-      "https://www.spaceweather.gov/noaa-scales-explanation"
+      "https://www.alaska.edu/opa/enews/2026/0901/",
+      "https://pub-alaska.escribemeetings.com/Meeting.aspx?Id=67f56e6e-7e7c-4de6-930e-eef44503d180&Agenda=Agenda&lang=English",
+      "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
+      "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518"
     ],
     "dedupe": {
       "result": "FRESH",
-      "entities_checked": "extreme solar storms, solar wind, WIND spacecraft, polar cap index, measurement uncertainty, Nithin Sivadas, Doğacan Öztürk, magnetosphere, space weather",
-      "cross_product_note": "No matching story was found in the AlaskaAI carousel archive or the Dispatch video ledger."
+      "entities_checked": "University of Alaska Board AI Engaged, systemwide AI Coordinating Council, consequential AI admissions financial aid advising HR analytics, institutional AI policy within one year",
+      "first_check_note": "A broader phrase set collided on generic words earned and one with the August 7th salmon-robot story. The honest distinctive set is fresh."
     },
-    "stance_intent": "Curious and exact. Treat the correction as an important warning about models and measurements without turning an extrapolated geomagnetic response into a forecast or a claim about doubled damage.",
-    "verification_status": "Two independent adversarial validators agreed the story is publishable with strict extrapolation, Alaska-role, and AI qualifiers."
+    "stance_intent": "Constructive scrutiny. Treat the draft as a serious attempt to turn AI from scattered tool use into an accountable university operating framework, then measure it against its own one-year clock and earned-competence promise.",
+    "verification_status": "Primary documents verified. Three independent adversarial reads completed: the credential and human-oversight angle is fully supported; the shared-infrastructure and separate-budget angles are retained only as secondary context with explicit limits."
   },
   "candidates": [
     {
-      "id": "solar-storm-false-ceiling",
+      "id": "ua-ai-engaged-draft",
       "status": "LOCKED",
-      "headline": "A UAF coauthor helps show how uncertain measurements can manufacture a solar-storm ceiling",
-      "date": "2026-08-28",
-      "confidence": 0.94
+      "headline": "University of Alaska Board discusses a draft statewide AI framework",
+      "date": "2026-09-02",
+      "confidence": 0.96
     },
     {
-      "id": "western-alaska-drone-community",
+      "id": "nenana-chaff-drone",
       "status": "RUNNER-UP",
-      "headline": "Local Western Alaska pilots map erosion and infrastructure while a project page reports an AI change-detection layer",
-      "date": "2026-08-07",
-      "why_not": "Excellent Alaska ownership and visual material, but the AI layer is under-specified and the publication hook is outside the owed window.",
+      "headline": "A NOAA filing describes an active Nenana UAS chaff-deployment experiment",
+      "date": "2026-08-23",
+      "why_not": "Exceptionally visual, but the filing proves planned R and D rather than an Alaska flight or result, and the specific Alaska AI implementation is not documented.",
       "carry_forward": true
     },
     {
-      "id": "uavsar-nisar-alaska-handoff",
+      "id": "permafrost-gateway-lake-drainage",
       "status": "RUNNER-UP",
-      "headline": "NASA's live Alaska radar campaign rehearses the handoff from airborne UAVSAR to orbital NISAR",
-      "date": "2026-08-24",
-      "why_not": "Current and visual, but it is remote sensing rather than an AI or machine-learning story. The requested flight hours are not proof every flight occurred.",
-      "carry_forward": true
-    },
-    {
-      "id": "t3-drone-storytelling-workshop",
-      "status": "REJECTED",
-      "headline": "Rural Alaska students are invited to a free drone and storytelling workshop before AFN",
-      "date": "2026-08-31",
-      "why_not": "Fresh and community-grounded, but the workshop is human-piloted drone education with no reported AI system.",
+      "headline": "AI-assisted satellite mapping flags recent Arctic lake drainage",
+      "date": "2026-08-26",
+      "why_not": "The project is genuine AI and visually strong, but the current article's roughly thirty 2026 events are not independently confirmed and its linked map unexpectedly points to July 2025.",
       "carry_forward": true
     },
     {
       "id": "aurora-ai-rural-microgrids",
       "status": "EXCLUDED",
-      "headline": "A local report revisits UAF's AURORA-AI rural-grid project",
+      "headline": "Fresh local coverage revisits UAF's AURORA-AI rural-grid project",
       "date": "2026-08-27",
-      "why_not": "The Dispatch already covered AURORA-AI on July 29th, and the carousel product returned to it in August.",
+      "why_not": "The Dispatch covered AURORA-AI on July 29th, still inside the thirty-day dedupe window.",
       "carry_forward": false
     },
     {
-      "id": "glacier-bay-seal-nursery-awards",
+      "id": "faa-beyond-phase-two",
       "status": "REJECTED",
-      "headline": "Two NSF awards connect Glacier Bay iceberg change to harbor-seal nursery habitat",
+      "headline": "FAA will roughly double the BEYOND drone-integration program",
       "date": "2026-08-27",
-      "why_not": "Strong Alaska science, but the awards describe future field measurements and ocean modeling with no reported AI or ML method.",
+      "why_not": "UAF is a Phase One lead and Alaska operations are well documented, but the new expansion announcement does not identify an AI or machine-learning system or a new Alaska selection.",
       "carry_forward": true
     }
   ],
   "known_source_limits": [
     {
-      "surface": "Nature extrapolation",
-      "limit": "The approximately twofold geomagnetic response is extrapolated near 25 mV/m, beyond the data-supported 15 mV/m range. It is not an observed storm, doubled energy, doubled grid current, or doubled damage."
+      "surface": "Document status",
+      "limit": "The statement is labeled DRAFT and appears as a presentation or update. The posted agenda shows no adoption motion. Say will discuss or proposes, never adopted, enacted, or now requires."
     },
     {
-      "surface": "Alaska role",
-      "limit": "The Alaska connection is UAF coauthorship. Poker Flat supplied the release photo, not study observations."
+      "surface": "Budget",
+      "limit": "The $300,000 UASO AI and enterprise automation item is a separate FY28 budget request in the same Board package. It must not be described as funding for the AI Engaged framework unless the Board documents expressly link them."
     },
     {
-      "surface": "AI relevance",
-      "limit": "The paper explicitly generalizes the measurement-bias warning to AI and machine-learning regressions but did not test an operational AI forecast model."
+      "surface": "Reaction and implementation",
+      "limit": "The sources show no measured outcomes, public reaction, completed policy, or deployed consequential-AI system. The one-year clock begins only if the draft is adopted."
     }
   ]
 }

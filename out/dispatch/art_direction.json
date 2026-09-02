@@ -1,93 +1,104 @@
 {
-  "run_date": "2026-09-01",
-  "title_working": "THE CEILING WAS IN THE MEASUREMENT",
-  "binding": "The signal ribbon is the only hero. Its physical material must carry the distinction between measured, corrected, extrapolated, and unknown evidence at phone scale.",
+  "run_date": "2026-09-02",
+  "story_id": "ua-ai-engaged-draft",
   "palette": {
-    "world": "A warm sunward instrument-space, moving from plum-black uncertainty to an ivory-lit correction without becoming default blue or an Alaska-night scene.",
     "roles": {
-      "void": "#130F12 near-black plum, the spatial field",
-      "signal": "#FF2F6D solar rose, reserved exclusively for the embodied ribbon",
-      "sun_key": "#FFF0D1 solar ivory, verified type and directional key",
-      "instrument": "#4B4348 graphite, UpstreamMonitor and calibration hardware",
-      "neutral": "#A79DA1 warm nickel, source plates and evidence ticks",
-      "uncertainty": "#8D7C86 modeled ash, offset ghosts and unsupported geometry",
-      "projection": "#FF2F6D at 38 percent, dashed, hairline, and shadowless beyond 15 mV/m"
+      "sky": "#32181E",
+      "ground": "#F2E5C4",
+      "hero": "#8E2434",
+      "accent": "#83D9B1",
+      "shadow": "#54252E",
+      "brass": "#D89B32",
+      "campus": "#E6B33D"
     },
-    "semantic_law": "Supported evidence has an unbroken body, shaded form, rim, and contact presence. Uncertainty is an offset ghost. Extrapolation keeps the hero hue but loses body, shadow, and continuous edge. Unknown territory is a true void with a dashed boundary.",
-    "divergence": "The previous two films used cold slate teal, bone, brass, terracotta, cyan clouds, persimmon flare, spruce, violet radar, and chartreuse models. This run uses no blue, teal, green, weather collage, or civic threshold. It is a horizontal path film in aubergine, rose, ivory, graphite, and ash."
+    "mood": "Collegiate oxblood, parchment, marigold, brass, and mint make a public-institution promise feel warm and consequential. Mint appears only when AI is actively assisting.",
+    "divergence": "This avoids September 1's aubergine, fuchsia, and cosmic rose signal world and August 30's cyan, persimmon, spruce, and violet technical field. Parchment is dominant, marigold separates campus judgment, and oxblood anchors human accountability."
   },
   "light": {
-    "time_of_day": "abstract sunward twilight, explicitly not terrestrial Alaska night",
-    "direction": "cause travels upper-left to lower-right from Sun toward Earth",
-    "key": "hard solar ivory from upper-left at about thirty-five degrees, catching ribbon crest and monitor edges",
-    "fill": "low plum fill from lower-right at about one-third key intensity",
-    "rim": "ivory rim on embodied ribbon and apparatus; the modeled segment loses rim at 15 mV/m",
-    "depth_approach": "four planes: monitor booms foreground, ribbon middle, Earth response deep, sparse particulate far field. Slow Stage3D dollies travel along the path rather than orbiting decorative space.",
-    "why": "The viewer should feel a physical signal become less physical exactly where the evidence ends."
+    "time": "Early-morning library light begins cool at the proposal table, warms through the human review desk, and reaches a sunrise backlight on the earned seal.",
+    "direction": "A high-left amber key shapes paper and brass; a low-right mint rim belongs to active AI assistance; oxblood bounce and the #54252E shadow token keep every dark plane warm rather than near-black.",
+    "depth": "Four parallax planes, cast paper shadows, beveled press parts, moving specular bands, contact shadows, and a shallow-focus macro at the stamp make the tactile collage dimensional."
   },
   "shape_language": {
-    "thesis": "A continuous organic curve meets rigid measurement hardware.",
-    "hero": "The ribbon is tapered, elastic, and capable of fraying into phase echoes and amplitude displacement without changing identity.",
-    "counterform": "UpstreamMonitor and the false ceiling are faceless, orthogonal, mechanically exact, and assembled from misregistered ticks.",
-    "evidence": "Solid through 15, dashed toward 25, and open beyond it. The ceiling is an obstacle produced by mismatches, never a second hero.",
-    "why": "Organic continuity keeps wonder alive while the rigid apparatus makes statistical bias visible as a mechanism."
+    "grammar": "Soft paper arcs and hand-cut campus rooms oppose rigid machine rails, gates, and rectangular governance files.",
+    "why": "The film asks where flexible academic judgment must resist an efficient system that wants to flatten every decision."
   },
   "casting": {
-    "hero": "SignalRibbon, this episode's configured instance of the reusable EvidenceTrace engine primitive",
-    "throughline_object": "SignalRibbon in five states: clean, matched, frayed, recalibrated, solid-to-dashed",
-    "supporting_from_shelf": [
-      "SimField for one-minute pairings",
-      "Simulated for the inherited nonlinear model shape",
-      "EvidenceState for material semantics",
-      "ClaimChip for source-bounded projection and attributed interpretation",
-      "AlaskaMini for UAF authorship only",
-      "Stage3D, Atmosphere, CameraMoves, Plate, Nameplate, and EndCredits"
+    "hero": "DiplomaPress, a reusable characterized credential press in video-engine/src/lib/credentials.tsx.",
+    "inventory": [
+      {
+        "beats": "1-2, 28-30",
+        "subject": "DiplomaPress + credential examiner",
+        "source": "net-new DiplomaPress plus existing Character rig and ContactShadow"
+      },
+      {
+        "beats": "3-4",
+        "subject": "AI Engaged proposal mechanism",
+        "source": "existing TypeSlug, PenAndDocument, materials, and motion primitives"
+      },
+      {
+        "beats": "5-7",
+        "subject": "student practice staircase",
+        "source": "existing Character rig plus PenAndDocument and TypeSlug"
+      },
+      {
+        "beats": "8-10",
+        "subject": "campus choice rooms",
+        "source": "existing Gate, Character, GearLever, TypeSlug, and stage3d planes"
+      },
+      {
+        "beats": "11-12",
+        "subject": "council support rail",
+        "source": "existing GearLever and StatCard from props.tsx, ChipShadow and followThrough from motion.tsx, and stage3d planes"
+      },
+      {
+        "beats": "13-15",
+        "subject": "diploma-to-decision-file transformation",
+        "source": "net-new documentFlip transition plus PenAndDocument and TypeSlug"
+      },
+      {
+        "beats": "16-18",
+        "subject": "oversight gate, reviewer, and stamp robot",
+        "source": "existing Gate and Character; net-new StampBot supporting asset in credentials.tsx"
+      },
+      {
+        "beats": "19-21",
+        "subject": "hard-word measurement bench",
+        "source": "existing AllowanceBoard upgraded with empty-gauge mode plus TypeSlug"
+      },
+      {
+        "beats": "22-25",
+        "subject": "conditional clock and plan cards",
+        "source": "existing CapClock, Gate, TypeSlug, and PenAndDocument"
+      },
+      {
+        "beats": "26-27",
+        "subject": "evidence map and two-promise divider",
+        "source": "existing AlaskaMini from kit.tsx, BoundaryReveal and PenAndDocument from props.tsx, Gate from civics.tsx, and TypeSlug from clinic.tsx"
+      }
     ],
-    "net_new_gap": "UpstreamMonitor, the only net-new cast asset: a visibly SCHEMATIC, faceless non-character representation of upstream solar-wind sampling with timing teeth, magnitude jaws, booms, solar panels, and antenna geometry. It is not SatelliteEye and never implies imaging or AI behavior.",
-    "excluded": ["SeedDrone", "Sill", "SatelliteEye", "AuroraNightBG"],
-    "why": "The shelf has model and evidence grammar but no truthful upstream monitor or one-object path continuity for this mechanism."
+    "net_new": "DiplomaPress and its small StampBot supporting pose fill the credential and rubber-stamp gaps; documentFlip is the motion-system advance.",
+    "continuity": "Character, document, gate, type, clock, lighting, materials, and motion systems carry the film. SignalRibbon does not return as hero."
   },
   "motion_language": {
-    "grammar": "elastic tension, controlled fray, reweave, and material loss rather than noisy particle chaos",
+    "grammar": "Paper travels horizontally, the press strikes vertically, and governance assembles radially around the same sheet.",
     "hero_moves": [
-      "four-frame recoil before the opening whip, followed by a three-frame overshoot against PHYSICS?",
-      "timing uncertainty creates longitudinal echoes while magnitude uncertainty stretches width and crest height",
-      "calibration draws strands together, pauses two frames, then reweaves with an eight-percent elastic settle",
-      "at 15 mV/m the ribbon retains its arc but evaporates into a crisp dashed projection without a cut",
-      "the AI lattice flexes around the same blurred ribbon and returns it unchanged"
+      "The stamp anticipates, plunges, and brakes one millimeter above the blank seal",
+      "The diploma flips on its long edge into a consequential-decision file",
+      "The frozen clock tries to tick and is caught by the DRAFT clip",
+      "A human pull lands the seal with overshoot, screen shake, brass glint, and paper follow-through"
     ],
-    "blur": "one-hundred-eighty-degree directional trailing ghosts only on physical ribbon travel; type, boundary labels, and extrapolated geometry remain crisp",
-    "camera": "slow push on every hold, with one decisive dolly-through the fray and one pullback from ribbon scale to the full AI lattice",
-    "why": "Motion preserves a single continuous thought and makes the evidence-state transition happen as an event, not a disclaimer."
+    "blur": "Directional motion blur is reserved for the rejected auto-stamp, the diploma-to-file flip, and the final human press."
   },
   "composition": {
-    "focal_hierarchy": "One dominant ribbon action plus one short source or claim plate per beat.",
-    "vertical_safe": "Ribbon lives inside the central sixty-two percent. The monitor occupies upper-left and the Earth response lower-right; labels alternate on outer rails above the caption band.",
-    "square_safe": "The protected central square contains monitor, fray, reweave, 15 boundary, and dashed 25 extension. Outer plates re-stack rather than crop.",
-    "signature_shot": "Inside S8, one unbroken three-quarter cutaway rides the embodied ribbon into the 15 mV/m stop, then tracks the same arc as it loses form, rim, shadow, and continuous edge toward 25 mV/m with EXTRAPOLATED and approximately two-times physically attached. The preceding calibration release is a distinct shot and is not falsely described as part of this oner.",
-    "negative_space": "The true void beyond the 15 boundary is the largest empty space in the film.",
-    "why": "The signature shot lets a muted viewer read the entire argument from material change alone."
-  },
-  "claim_safety": {
-    "wind": "The distance plate says WIND TODAY and is visually separated from the 1995 TO 2019 date-range field.",
-    "projection": "Every 25 mV/m and approximately two-times appearance carries EXTRAPOLATED and PROJECTED GEOMAGNETIC RESPONSE in the same object.",
-    "ai": "The flexible-lattice beat carries NO OPERATIONAL AI TESTED.",
-    "alaska": "AlaskaMini identifies UAF participation only. A persistent closing plate says NO FORECAST, NO CURRENT ALERT, NO ALASKA DATA SET."
+    "staging": "Alternate macro press inserts, overhead paper choreography, three-room campus split, modular decision files, and an extreme-wide clock chamber. The diploma remains centered across motivated match cuts.",
+    "safe_area": "All load-bearing faces, the diploma, DRAFT, IF ADOPTED, EARNED, and decision labels stay inside the centered 760px square-safe column above the open-caption band.",
+    "signature_shot": "The diploma flips in midair into a four-tab admissions, aid, advising, and HR record while its empty gold seal becomes a literal human-oversight lock."
   },
   "craft_advance": {
-    "name": "EvidenceTrace",
-    "target": "video-engine/src/lib/spaceweather.tsx",
-    "contract": "A reusable continuous SVG path renderer whose segments can be observed, propagated-uncertain, calibrated, extrapolated, or unknown while preserving arc-length phase across fray, reweave, morph, glow, and dash transitions.",
-    "quality": "Observed segments receive form shading, rim, and motion blur. Uncertainty adds phase or amplitude displacement without replacing the source path. Extrapolated segments become automatically shadowless, hairline, and dashed.",
-    "why": "Future signal, current, river-flow, migration, and data-pipeline stories can change epistemic state along one throughline without swapping objects or painting a projection as an observation."
-  },
-  "look_dev_frames": [
-    "SignalRibbon five-state strip at full size, 9:16 phone size, 4:5 crop, and 1:1 crop",
-    "UpstreamMonitor SCHEMATIC silhouette and distance pullback",
-    "WHEN and HOW MUCH fray dolly-through",
-    "solid 15 mV/m to dashed 25 mV/m signature shot",
-    "flexible AI lattice with NO OPERATIONAL AI TESTED",
-    "closing evidence limit plate at phone size"
-  ],
-  "the_one_thing_a_viewer_remembers": "The same glowing ribbon is solid through fifteen, then loses its body and continues only as a dashed possibility."
+    "system": "documentFlip transition primitive in video-engine/src/lib/credentials.tsx",
+    "api": "documentFlip({progress, front, back, tabs, hinge:'long-edge', perspective, shadowDepth})",
+    "how": "The sheet anticipates to minus eight degrees, accelerates through a foreshortened edge-on phase, overshoots to one hundred two degrees, settles at ninety, and drives a separate squash-and-stretch contact shadow. The API can power future credential, permitting, records, and review transformations.",
+    "asset_note": "DiplomaPress is the episode's new hero asset; documentFlip is the single craft-system advance measured independently of the hero addition."
+  }
 }

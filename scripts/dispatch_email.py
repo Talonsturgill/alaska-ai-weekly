@@ -148,12 +148,12 @@ def refuse_unless_copy_is_clean(post_text, source_path):
     sys.exit(2)
 
 CSS = """
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#13202b;background:#eef1f3;margin:0;padding:24px;}
-.wrap{max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6e8;border-radius:14px;padding:28px;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#13202b;background:#f3f5f6;margin:0;padding:16px 8px;}
+.wrap{max-width:620px;margin:0 auto;background:#fff;border:1px solid #dde3e7;padding:24px;}
 h1{font-size:22px;margin:0 0 2px;} .sub{color:#6a7782;font-size:13px;margin-bottom:22px;}
 h2{font-size:15px;letter-spacing:.02em;text-transform:uppercase;color:#516170;margin-top:26px;border-bottom:1px solid #eef0f2;padding-bottom:6px;}
-pre.post{white-space:pre-wrap;background:#f6f8f9;padding:16px;border-radius:10px;font:14px/1.55 ui-monospace,Menlo,monospace;}
-.dl{display:inline-block;background:#FFC72C;color:#13202b;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:10px;font-size:15px;margin:4px 8px 4px 0;}
+.post{white-space:pre-wrap;border-left:4px solid #FFC72C;padding:2px 0 2px 16px;font:15px/1.62 Arial,Helvetica,sans-serif;}
+.dl{display:block;background:#FFC72C;color:#13202b;font-weight:700;text-decoration:none;padding:14px 16px;border-radius:7px;font-size:15px;text-align:center;}
 .dl.alt{background:#13202b;color:#fff;} .dl small{display:block;font-weight:500;font-size:12px;margin-top:2px;opacity:.8;}
 .poster{margin:16px 0;text-align:center;} .poster img{max-width:300px;width:100%;border-radius:10px;border:1px solid #e3e6e8;}
 ul{padding-left:20px;} li{margin:4px 0;font-size:13.5px;} a{color:#0b6;}
@@ -168,14 +168,14 @@ ul.upg li{color:#1c5f38;}
 # draft that the owner actually opens still has hierarchy, spacing, buttons, and copy-ready line
 # breaks. This is intentionally old-fashioned email HTML.
 S = {
-    "body": 'font-family:Arial,Helvetica,sans-serif;color:#13202b;background:#eef1f3;margin:0;padding:24px;',
-    "wrap": 'max-width:720px;margin:0 auto;background:#fff;border:1px solid #e3e6e8;border-radius:14px;padding:28px;',
+    "body": 'font-family:Arial,Helvetica,sans-serif;color:#13202b;background:#f3f5f6;margin:0;padding:16px 8px;',
+    "wrap": 'width:100%;max-width:620px;min-width:0;box-sizing:border-box;margin:0 auto;background:#fff;border:1px solid #dde3e7;padding:24px;overflow-wrap:anywhere;',
     "h1": 'font-size:24px;line-height:1.2;margin:0 0 4px;',
     "sub": 'color:#6a7782;font-size:13px;line-height:1.5;margin-bottom:22px;',
     "h2": 'font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#516170;margin:26px 0 12px;border-bottom:1px solid #eef0f2;padding-bottom:7px;',
-    "copy": 'background:#f6f8f9;border:1px solid #e3e8eb;padding:16px;border-radius:10px;font-family:Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:#13202b;',
-    "button": 'display:inline-block;background:#FFC72C;color:#13202b;font-weight:700;text-decoration:none;padding:13px 18px;border-radius:9px;font-size:14px;margin:4px 8px 4px 0;',
-    "button_alt": 'display:inline-block;background:#13202b;color:#fff;font-weight:700;text-decoration:none;padding:13px 18px;border-radius:9px;font-size:14px;margin:4px 8px 4px 0;',
+    "copy": 'min-width:0;border-left:4px solid #FFC72C;padding:2px 0 2px 16px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.62;color:#13202b;overflow-wrap:anywhere;',
+    "button": 'display:block;background:#FFC72C;color:#13202b;font-weight:700;text-decoration:none;padding:14px 16px;border-radius:7px;font-size:15px;text-align:center;',
+    "button_alt": 'display:block;background:#13202b;color:#fff;font-weight:700;text-decoration:none;padding:14px 16px;border-radius:7px;font-size:15px;text-align:center;',
     "button_meta": 'display:block;font-weight:500;font-size:12px;line-height:1.4;margin-top:3px;opacity:.8;',
     "guide": 'background:#eaf4ff;border:1px solid #b6d8f5;color:#245c8a;font-size:12.5px;line-height:1.5;padding:10px 12px;border-radius:8px;margin:10px 0;',
     "warn": 'background:#fff6e0;border:1px solid #f0d68a;color:#7a5a10;font-size:12.5px;line-height:1.5;padding:10px 12px;border-radius:8px;margin:10px 0;',
@@ -267,7 +267,7 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
     if music: cl.append(f"Music, {esc(music)}")
     if voice: cl.append(f"Voice, {esc(voice)}")
     comment_text = "\n".join(cl)
-    buttons = ""
+    button_rows = []
     # LinkedIn is PRIMARY, so the SQUARE leads. CORRECTED 2026-08-03 on owner evidence: LinkedIn
     # routes ANY video taller than square into the swipe-only Video tab, and 1080x1350 is taller
     # than square, so the old 4:5 label was sending every dispatch to the wrong feed. 1080x1080
@@ -294,50 +294,73 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
     if vids.get("square"):
         dur = _dur(vids["square"])
         dur_txt = f' &middot; {dur}' if dur else ""
-        buttons += (f'<a class="dl" style="{S["button"]}" href="{vids["square"]}">&#9660;&nbsp; Post to LinkedIn &middot; 1:1 square (main feed)'
-                    f'<small style="{S["button_meta"]}">1080&times;1080{dur_txt} &middot; H.264 MP4 &middot; square stays in the home feed</small></a>')
+        button_rows.append(
+            f'<tr><td bgcolor="#FFC72C" style="border-radius:7px;">'
+            f'<a class="dl" style="{S["button"]}" href="{vids["square"]}">Download LinkedIn video &middot; square'
+            f'<small style="{S["button_meta"]}">1080&times;1080{dur_txt} &middot; main feed</small></a></td></tr>'
+        )
     if vids.get("vertical"):
-        buttons += (f'<a class="dl alt" style="{S["button_alt"]}" href="{vids["vertical"]}">&#9660;&nbsp; TikTok &middot; 9:16 (full-screen)'
-                    f'<small style="{S["button_meta"]}">1080&times;1920 &middot; on LinkedIn this goes to the vertical Video tab, not the feed</small></a>')
+        if button_rows:
+            button_rows.append('<tr><td style="height:10px;font-size:0;line-height:0;">&nbsp;</td></tr>')
+        button_rows.append(
+            f'<tr><td bgcolor="#13202b" style="border-radius:7px;">'
+            f'<a class="dl alt" style="{S["button_alt"]}" href="{vids["vertical"]}">Download TikTok video &middot; vertical'
+            f'<small style="{S["button_meta"]}">1080&times;1920 &middot; full screen</small></a></td></tr>'
+        )
+    buttons = ('<table role="presentation" width="100%" style="width:100%;max-width:100%;table-layout:fixed;" cellspacing="0" cellpadding="0" border="0">'
+               + ''.join(button_rows) + '</table>')
     feed_guide = (f'<div class="warn" style="{S["guide"]}">'
                   'For LinkedIn use the <b>1:1 square</b> cut (top button) so the video lands in the <b>main feed</b> '
                   'next to your caption. The 9:16 is TikTok-native, and uploaded to LinkedIn it gets pulled into the '
                   'swipe-only Video tab instead of the feed.</div>') if vids.get("square") else ''
     warn = f'<div class="warn" style="{S["warn"]}">Heads up: these download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
-    score_html = f'<h2 style="{S["h2"]}">Grade</h2><ul style="{S["score"]}"><li>{score}</li></ul>' if score else ""
-    # "Upgrades shipped this run" — Phase 8 makes fixes on the spot and reports what it DID here
-    # (one bullet per line of --upgrades). A run that self-improved should say so.
-    up_items = "\n".join(f"<li>{ln.strip().lstrip('-').strip()}</li>"
-                         for ln in (upgrades or "").splitlines() if ln.strip())
-    upgrades_html = (f'<h2 style="{S["h2"]}">Upgrades shipped this run</h2><ul class="upg" style="{S["upgrades"]}">{up_items}</ul>'
-                     if up_items else "")
+    # Keep the required scorecard and Phase 8 fixes together in one quiet, compact block. The
+    # earlier large green upgrades panel competed with the actual deliverable in Gmail, and the
+    # first simplification overcorrected by hiding the upgrades entirely. This section preserves
+    # the authoritative routine's audit trail without turning the draft into a run report.
+    up_items = "\n".join(
+        f'<li style="margin:5px 0;color:#344957;">{esc(ln.strip().lstrip("-").strip())}</li>'
+        for ln in (upgrades or "").splitlines() if ln.strip()
+    )
+    run_notes_parts = []
+    if score:
+        run_notes_parts.append(
+            f'<div style="font-size:13px;line-height:1.5;color:#24543a;"><b>Delivery check</b> '
+            f'&middot; {esc(score)}</div>'
+        )
+    if up_items:
+        run_notes_parts.append(
+            f'<div style="font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;'
+            f'color:#65757f;margin-top:{"10px" if score else "0"};">Upgrades shipped this run</div>'
+            f'<ul style="margin:5px 0 0;padding-left:19px;font-size:12.5px;line-height:1.45;">'
+            f'{up_items}</ul>'
+        )
+    run_notes_html = (
+        f'<h2 style="{S["h2"]}">Run notes</h2>'
+        f'<div style="{S["score"]}">{"".join(run_notes_parts)}</div>'
+        if run_notes_parts else ""
+    )
     post_html = esc(post).replace("\n", "<br>")
     comment_html = comment_text.replace("\n", "<br>")
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body style="{S['body']}">
 <div class="wrap" style="{S['wrap']}">
-  <h1 style="{S['h1']}">ALASKA.AI &middot; Dispatch ready{(' &middot; ' + esc(title)) if title else ''}</h1>
-  <div class="sub" style="{S['sub']}">{esc(date_str)} &middot; LinkedIn (primary) + TikTok &middot; review, then post</div>
+  <div style="height:7px;background:#FFC72C;font-size:0;line-height:0;margin:-24px -24px 22px;">&nbsp;</div>
+  <div style="font-size:12px;font-weight:700;letter-spacing:1.3px;color:#6a7782;text-transform:uppercase;">ALASKA.AI Dispatch &middot; Ready to post</div>
+  <h1 style="{S['h1']}margin-top:8px;">{esc(title) if title else 'Dispatch ready'}</h1>
+  <div class="sub" style="{S['sub']}">{esc(date_str)} &middot; Draft only</div>
 
   <h2 style="{S['h2']}">The video</h2>
   {buttons}
   {feed_guide}
   {warn}
-  {poster_html}
-
-  <h2 style="{S['h2']}">Post text (copy/paste)</h2>
-  <div class="sub" style="{S['sub']}margin-bottom:8px;">The post body only. Sources and credits are NOT in here on purpose, they go in the first comment (next block).</div>
+  <h2 style="{S['h2']}">LinkedIn caption</h2>
   <div class="post" style="{S['copy']}">{post_html}</div>
 
-  <h2 style="{S['h2']}">First comment (copy/paste)</h2>
-  <div class="sub" style="{S['sub']}margin-bottom:8px;">Paste this as the FIRST COMMENT on the post, not in the post itself. Plain text with the real URLs so the links survive the paste.</div>
+  <h2 style="{S['h2']}">First comment &middot; sources</h2>
   <div class="post" style="{S['copy']}">{comment_html}</div>
 
-  {score_html}
-  {upgrades_html}
-  <h2 style="{S['h2']}">Sources (clickable reference)</h2>
-  <ul>{src}</ul>
-
-  <div class="foot" style="{S['foot']}">Generated {dt.datetime.now(dt.timezone.utc).isoformat().replace('+00:00', 'Z')} by the Alaska.Ai Dispatch routine. {esc(note)}</div>
+  {run_notes_html}
+  <div class="foot" style="{S['foot']}">Draft only &middot; not sent or posted. {esc(note)}</div>
 </div></body></html>"""
 
 def main():
@@ -421,7 +444,7 @@ def main():
                   a.upgrades, sourcing_note)
     if a.out_html:
         Path(a.out_html).write_text(html); print("wrote", a.out_html)
-    payload = {"subject": f"ALASKA.AI · Dispatch ready · {a.date}", "to": a.to, "html_body": html}
+    payload = {"subject": f"Ready to post: {a.title or a.date}", "to": a.to, "html_body": html}
     print(json.dumps(payload))   # LAST line = the draft payload for Gmail create_draft
 
 if __name__ == "__main__":

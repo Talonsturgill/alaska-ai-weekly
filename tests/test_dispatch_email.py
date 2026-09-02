@@ -20,15 +20,24 @@ class DispatchEmailRenderingTest(unittest.TestCase):
             False,
             "2026-09-01",
             "The Ceiling Was in the Measurement",
-            "Gmail-safe rendering",
+            "Gmail-safe rendering\nEscaped <upgrade>",
         )
 
         self.assertIn('<body style="', html)
-        self.assertIn('style="display:inline-block;background:#FFC72C', html)
-        self.assertIn('style="display:inline-block;background:#13202b', html)
+        self.assertIn('role="presentation" width="100%"', html)
+        self.assertIn('max-width:620px;min-width:0', html)
+        self.assertIn('overflow-wrap:anywhere', html)
+        self.assertIn('table-layout:fixed', html)
+        self.assertIn('style="display:block;background:#FFC72C', html)
+        self.assertIn('style="display:block;background:#13202b', html)
         self.assertIn('First &lt;claim&gt;.<br><br>Second &amp; final paragraph.', html)
-        self.assertIn('font-family:Menlo,Consolas,monospace', html)
-        self.assertIn('width="240"', html)
+        self.assertIn('font-family:Arial,Helvetica,sans-serif', html)
+        self.assertNotIn('width="240"', html)
+        self.assertIn('Run notes', html)
+        self.assertIn('Upgrades shipped this run', html)
+        self.assertIn('Gmail-safe rendering', html)
+        self.assertIn('Escaped &lt;upgrade&gt;', html)
+        self.assertNotIn('Sources (clickable reference)', html)
 
 
 if __name__ == "__main__":

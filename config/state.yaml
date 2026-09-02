@@ -1682,3 +1682,40 @@ dispatch_history:
       evidence, dusty-rose uncertainty
     metaphor: one ribbon keeps its path but loses its physical body exactly where
       observation ends
+- date: '2026-09-02'
+  topic: University of Alaska AI Engaged draft
+  slug: ua-ai-engaged-draft
+  key_entities:
+  - University of Alaska
+  - Board of Regents
+  - AI Engaged
+  - UAA
+  - UAF
+  - UAS
+  - student credentials
+  - consequential AI
+  - human oversight
+  archetype: Explainer
+  palette: parchment oxblood brass marigold with mint utility accents
+  voice: Sulafat
+  stance: mixed
+  angle: AI may assist, but a University of Alaska credential must still certify competence
+    a student earned, and consequential AI requires documented evaluation plus meaningful
+    human oversight.
+  hero: DiplomaPress
+  cast:
+  - DiplomaPress
+  - QuestionToken
+  - DocumentFlip
+  - StampBot
+  composition:
+    pov: exploded-diagram
+    motion_vector: assemble-build
+    hero_treatment: instrument-as-subject
+    layout: single-object-void
+    register: tactile-collage
+    palette: parchment oxblood brass marigold with mint utility accents
+    camera_strategy: rack-focus-macro
+    light_story: dawn-backlight
+    metaphor: a diploma press that refuses automation until human judgment can close
+      it

@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-01"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-02"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -82,62 +82,57 @@ VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props)
     else max(x["end"] for x in _lines) + _TAIL
 
 EVENTS = [
-    # 2026-09-01 "The Ceiling Was in the Measurement". Every accent is attached to
-    # a visible ribbon, monitor, uncertainty, evidence-boundary, or source-card move.
-    (0.15, "whoosh", "standard", -0.30),
-    (1.40, "clank", "hero", 0.0),
-    (L[1] + 0.10, "paper", "texture", -0.18),
-    (L[1] + 2.70, "chime", "standard", 0.18),
-    (L[2] + 0.10, "pop", "standard", -0.14),
-    (L[2] + 3.50, "whoosh", "standard", 0.22),
-    (L[3] + 0.10, "tick", "standard", -0.20),
-    (L[3] + 4.00, "snap", "standard", 0.20),
-    (L[4] + 0.10, "riser", "hero", 0.0),
-    (L[5] + 0.10, "clank", "standard", -0.16),
-    (L[5] + 3.00, "whoosh", "standard", 0.18),
-    (L[6] + 0.10, "tick", "standard", -0.12),
-    (L[6] + 2.90, "boom", "hero", 0.0),
-    (L[7] + 0.10, "paper", "texture", -0.18),
-    (L[7] + 2.20, "chain", "standard", 0.18),
-    (L[8] + 0.10, "chime", "standard", -0.10),
-    (L[8] + 3.10, "clank", "standard", 0.16),
-    (L[9] + 0.10, "whoosh", "standard", 0.0),
-    (L[10] + 0.10, "thud", "hero", 0.0),
-    (L[11] + 0.10, "snap", "standard", -0.15),
-    (L[11] + 3.00, "tick", "standard", 0.15),
-    (L[11] + 6.00, "boom", "hero", 0.0),
-    (L[12] + 0.10, "chain", "standard", 0.18),
-    (L[12] + 2.00, "ding", "standard", -0.18),
-    (L[13] + 0.10, "whoosh", "standard", 0.0),
-    (L[14] + 0.10, "creak", "texture", -0.12),
-    (L[14] + 3.00, "pop", "standard", 0.16),
-    (L[15] + 0.10, "clank", "standard", -0.18),
-    (L[15] + 3.50, "chime", "standard", 0.18),
-    (L[16] + 0.10, "tick", "standard", 0.0),
-    (L[17] + 0.10, "stamp", "hero", 0.0),
-    (L[18] + 0.10, "whoosh", "standard", -0.16),
-    (L[18] + 2.60, "paper", "texture", 0.16),
-    (126.00, "chime", "standard", 0.0),
+    # 2026-09-02 "The Diploma Still Has to Be Earned". The sound follows the
+    # press, paper, campus thresholds, oversight gate, conditional clock and seal.
+    (0.12, "whoosh", "standard", 0.28),
+    (1.35, "clank", "hero", 0.0),
+    (L[1] + 0.10, "paper", "texture", -0.20),
+    (L[2] + 0.10, "chime", "standard", 0.0),
+    (L[2] + 2.50, "pop", "standard", 0.18),
+    (L[3] + 0.10, "tick", "standard", -0.22),
+    (L[3] + 2.50, "paper", "texture", 0.15),
+    (L[4] + 0.10, "stamp", "hero", 0.0),
+    (L[5] + 0.10, "whoosh", "standard", -0.22),
+    (L[6] + 0.10, "clank", "standard", 0.18),
+    (L[6] + 3.00, "snap", "standard", 0.26),
+    (L[7] + 0.10, "chime", "standard", 0.0),
+    (L[8] + 0.10, "whoosh", "hero", 0.0),
+    (L[8] + 2.50, "pop", "standard", 0.22),
+    (L[9] + 0.10, "tick", "standard", -0.18),
+    (L[10] + 0.10, "paper", "texture", 0.14),
+    (L[10] + 2.00, "snap", "standard", 0.25),
+    (L[11] + 0.10, "clank", "hero", 0.0),
+    (L[11] + 2.50, "chime", "standard", 0.16),
+    (L[12] + 0.10, "thud", "hero", -0.18),
+    (L[12] + 2.00, "whoosh", "standard", 0.18),
+    (L[13] + 0.10, "tick", "standard", 0.0),
+    (L[14] + 0.10, "boom", "hero", 0.0),
+    (L[15] + 0.10, "creak", "texture", 0.0),
+    (L[15] + 1.80, "tick", "standard", 0.0),
+    (L[16] + 0.10, "clank", "standard", -0.20),
+    (L[17] + 0.10, "whoosh", "hero", 0.0),
+    (L[17] + 2.50, "pop", "standard", 0.20),
+    (L[18] + 0.10, "chime", "standard", 0.0),
+    (L[18] + 3.00, "paper", "texture", -0.15),
+    (L[19] + 0.10, "chain", "standard", 0.20),
+    (L[19] + 1.50, "stamp", "hero", 0.0),
+    (VIDEO_SECS - 0.80, "chime", "standard", 0.0),
 ]
 
 EVENT_LABELS = [
-    "signal ribbon sweeps into frame", "false ceiling snaps into place",
-    "Nature author card unfolds", "UAF coauthor credit rings",
-    "Wind monitor wakes", "L1 distance ribbon crosses the frame",
-    "solar-wind minute ticks in", "polar-cap minute locks beside it",
-    "mismatch question rises", "arrival-time lattice drops",
-    "strength and location uncertainties drift", "simulation clock starts",
-    "saturated-looking curve lands", "calibration sheet opens",
-    "bias correction chain releases", "corrected relation begins climbing",
-    "solid evidence line reaches fifteen", "test card wipes on",
-    "evidence boundary plants at fifteen", "dashed projection begins",
-    "twenty-five marker clicks", "roughly-twice projection lands",
-    "physical-saturation countercase opens", "unresolved badge rings",
-    "no-operational-AI banner sweeps through", "biased fit flexes",
-    "missing information pops out", "hazard icons lock together",
-    "limits card resolves", "apparent ceiling shifts",
-    "evidence boundary stamps in place", "ribbon follows the data",
-    "measurement gap remains open", "source credits settle",
+    "automatic press dives", "emergency brake catches the die",
+    "draft document clips in", "six-four-five mechanism rings",
+    "proposal gears lock", "practice step lands", "revision page follows",
+    "earned token seats", "one-rule roller jams", "campus doors open",
+    "faculty course switch lands", "coordinating council badge rings",
+    "diploma begins the long-edge flip", "decision tabs release",
+    "predictive workflow starts", "decision file opens", "fourth tab snaps",
+    "oversight gate locks", "evaluation ledger opens", "EARNED weight lands",
+    "MEANINGFUL weight follows", "empty gauge searches", "plan hits its own test",
+    "clock glass strains", "stopped hand ticks", "DRAFT clip catches it",
+    "IF ADOPTED key turns", "policy cards assemble", "evidence gauges ring",
+    "two-promise divider slides", "machine hand releases", "human credential press lands",
+    "earned seal resonates",
 ]
 
 
@@ -164,14 +159,14 @@ EVENT_LABELS = [
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    # Five-phase science-documentary arc: mystery, measurement, apparent result,
-    # evidence/projection split, boundary-and-button resolve, then source credits.
-    (0.00, 0.95), (L[1], 0.80), (L[2], 1.00), (L[3], 0.90),
-    (L[4], 0.72), (L[5], 0.82), (L[6], 0.88), (L[7], 1.02),
-    (L[8], 1.12), (L[9], 0.34), (L[10], 0.24), (L[11], 0.78),
-    (L[12], 0.42), (L[13], 0.62), (L[14], 0.86), (L[15], 0.68),
-    (L[16], 0.85), (L[17], 0.28), (L[18], 0.62), (120.90, 1.10),
-    (126.00, 0.80), (133.00, 0.05),
+    # Warm institutional arc: stopped press, earned learning, campus choice,
+    # oversight test, conditional clock, evidence questions and human seal.
+    (0.00, 0.88), (L[1], 0.58), (L[2], 0.82), (L[3], 0.94),
+    (L[4], 1.04), (L[5], 0.76), (L[6], 0.90), (L[7], 1.00),
+    (L[8], 1.10), (L[9], 0.78), (L[10], 0.86), (L[11], 0.62),
+    (L[12], 0.28), (L[13], 0.34), (L[14], 0.72), (L[15], 0.42),
+    (L[16], 0.24), (L[17], 0.86), (L[18], 0.70), (L[19] - 0.80, 0.18),
+    (L[19] + 0.20, 0.96), (VIDEO_SECS - 0.20, 0.62), (VIDEO_SECS, 0.05),
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
@@ -189,7 +184,7 @@ BED_ARC = [
 # so the bed now runs the full film at a lower level, where it reads as air rather than as an
 # event. Still synthesised, still deterministic, still no attribution owed.
 AMB_IN, AMB_OUT = 0.0, VIDEO_SECS
-AMB_LEVEL = 0.025
+AMB_LEVEL = 0.018
 
 
 def _assert_per_run_data_covers_the_film():
