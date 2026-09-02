@@ -1,1081 +1,984 @@
 {
-  "concept": "One rose signal ribbon travels from an upstream solar-wind monitor toward Earth, strikes an apparent PHYSICS ceiling, frays into timing and magnitude uncertainty, then reweaves after calibration. Its solid body rises only through the observation-supported boundary at 15 mV/m. Beyond that point, it can continue toward 25 only as a shadowless dashed extrapolation. A flexible AI lattice can follow the inherited shape but cannot restore the information already blurred.",
-  "title": "THE CEILING WAS IN THE MEASUREMENT",
-  "angle": {
-    "thesis": "Measurement uncertainty can make a model learn a physical ceiling that the evidence pipeline drew, and a UAF-coauthored Nature study shows why more flexible AI will not fix that by itself.",
-    "support": [
-      "c4-c5",
-      "c6",
-      "c9"
-    ],
-    "falsifier": "Independent, materially lower-uncertainty observations near the magnetospheric driver still show saturation through 15 mV/m after the same bias correction.",
-    "fair_counter": "Physical saturation could still appear beyond the observed range; no operational AI forecast was tested; and the roughly twofold response near 25 mV/m is extrapolated, not observed.",
-    "valence": "curious and wonder-forward"
-  },
+  "title": "THE DIPLOMA STILL HAS TO BE EARNED",
+  "concept": "A characterized diploma press refuses an AI auto-stamp, then carries one sheet through classroom judgment, consequential-decision oversight, and a clock that cannot start while the framework remains a draft.",
   "treatment": {
-    "winner": "THE ENTHUSIAST, REFINED INTO ONE SIGNAL-RIBBON FILM",
-    "score": 9.02,
-    "judge_reasoning": "The ribbon carries the epistemology in its own material state. Clean, matched, frayed, rewoven, solid, and dashed are visibly different without introducing competing hero objects. The treatment celebrates a genuine correction, then makes its exciting projection survive a real Act 3 test. It rotates the previous Dispatch's evidence-audit weather column into a horizontal sunward path film. The Comedian's opening ceiling impact, the Explainer's unresolved physical ceiling, and the Dramatist's compact claim test are grafted into the winner.",
-    "grafts": [
-      "The ribbon strikes a low PHYSICS? plate in the first three seconds.",
-      "At the turn, the apparent plate falls while a translucent PHYSICS BEYOND 15? boundary remains unresolved.",
-      "The approximately two-times claim rejects OBSERVED and DOUBLED DAMAGE before docking only at PROJECTED GEOMAGNETIC RESPONSE."
-    ],
-    "retention_plan": "Act 1 plants the question of what happens after supported evidence stops at 15 and reveals the immense upstream distance. Act 2 shows how imperfect matching draws the apparent ceiling. Act 3 lets calibration succeed, then forces the corrected result beyond the evidence boundary. Act 4 asks what a flexible model does with already-blurred input and returns the same ribbon to the opening collision.",
-    "padding_test": "Every beat from 60 to 95 seconds either establishes the supported 15 mV/m boundary, converts the route to 25 into labeled extrapolation, rejects the false observed-or-damage readings, or preserves possible later physical saturation. Removing any one would make the film overclaim. Hazard context is capped at one brief beat."
+    "logline": "UA's draft makes one trust promise in two places: AI may assist, but competence must still be earned and consequential AI must remain meaningfully overseen by people.",
+    "cold_open": "An AI handle drops toward a blank UA diploma and brakes one millimeter above the paper as WHO EARNED IT snaps into frame.",
+    "escalation": "The diploma collects practice, passes three faculty-controlled campus rooms, and rides shared system support before flipping into a consequential-decision file.",
+    "turn": "Meaningful and earned sound strong but are not measurements, so the proposal itself must face an evidence gate.",
+    "button": "The machine steadies the sheet. A human pulls the press.",
+    "judge_reasoning": "The Explainer treatment won for making the classroom and decision-desk promises one causal story. The Comedian's refused auto-stamp, draft clip, and clock gag were grafted in. The Dramatist's seal and hard-word counterpoint strengthened Act 3. The Enthusiast lens contributed the bright shared-support rail without turning the proposal into a sales pitch."
   },
   "engine": "infographic-2.5d",
   "derived_from": "scratch",
+  "total_seconds": 120,
   "fingerprint": {
-    "pov": "macro-path-to-instrument-cutaway",
-    "motion_vector": "horizontal-traverse-through-signal",
-    "hero_treatment": "single-continuous-signal",
-    "layout": "diagonal-causal-corridor",
-    "register": "scientific-material-theater",
-    "camera_strategy": "ribbon-dolly-through",
-    "light_story": "sunward-hard-key-to-ivory-release",
-    "palette": "aubergine-black void, fuchsia signal, cream key, charcoal hardware, mauve evidence, dusty-rose uncertainty",
-    "metaphor": "one ribbon keeps its path but loses its physical body exactly where observation ends"
+    "pov": "exploded-diagram",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "single-object-void",
+    "register": "tactile-collage",
+    "palette": "parchment oxblood brass marigold with mint utility accents",
+    "camera_strategy": "rack-focus-macro",
+    "light_story": "dawn-backlight",
+    "metaphor": "a diploma press that refuses automation until human judgment can close it"
   },
+  "palette": "Warm parchment is the world, oxblood marks institutional promises, marigold separates campus judgment, brass belongs to earned human action, and mint appears only on active AI assistance.",
   "hook": {
-    "pattern": "anomaly-question",
-    "frame1": "A luminous rose ribbon rockets toward Earth and collides with a graphite PHYSICS? ceiling plate whose bolts lead backward into a measuring apparatus.",
-    "headline": "THE CEILING WAS IN THE MEASUREMENT",
-    "motion_by_s": 0.4,
-    "loopback": "The final flexible lattice releases the same dashed fibers. They curl backward, become the clean opening ribbon, and hit the same PHYSICS? plate on the loop."
-  },
-  "audio_arc": {
-    "build_steps": [
-      7.0,
-      31.5,
-      49.5,
-      67.0,
-      99.5
-    ],
-    "dip_at": 65.66,
-    "riser_at": 82.32,
-    "silence_at": 111.09,
-    "payoff_at": 114.44,
-    "button_pattern": "callback",
-    "note": "A pulsing instrument bed follows the ribbon. It nearly drops out when evidence stops at 15, rebuilds as the dashed projection is correctly classified, then thins under the final button."
+    "pattern": "in-medias-res",
+    "frame1": "A dimensional brass press races toward a parchment diploma while a green machine hand reaches for the handle and the seal remains visibly blank.",
+    "headline": "WHO EARNED IT?",
+    "motion_by_s": 0.5,
+    "loopback": "The final human pull lands the same press the opening machine could not close, and the stamped sheet slides back into the opening position."
   },
   "open_loop": {
-    "plant_t": 7.0,
-    "pay_t": 88.25,
-    "what": "What happens after the supported evidence stops at 15 mV/m? The approximately two-times path is only extrapolated projected geomagnetic response, and physical saturation beyond the data remains possible."
+    "plant_t": 1.6,
+    "pay_t": 109.1,
+    "what": "Who gets to close the press? The final human pull answers the opening question."
   },
   "open_loop_2": {
-    "plant_t": 38.9,
-    "pay_t": 64.55,
-    "what": "Does the ceiling survive after uncertainty is calibrated? The corrected average relation rises linearly through 15 mV/m."
+    "plant_t": 45.1,
+    "pay_t": 89.6,
+    "what": "When does the twelve-month clock begin? It stays frozen until IF ADOPTED is shown."
   },
   "throughline": {
-    "object": "SignalRibbon",
+    "object": "the brass WHO EARNED THIS question token",
     "states": [
       {
-        "at_s": 0.0,
-        "state": "one clean embodied rose signal strikes the apparent ceiling"
+        "at_s": 0,
+        "state": "ejected by the automatic press as a scalloped brass WHO EARNED THIS question seal"
       },
       {
-        "at_s": 31.0,
-        "state": "one matched minute expands into a field of paired signal and response beads"
+        "at_s": 29.1,
+        "state": "rides the diploma and locks into the center axle between three faculty-controlled rooms"
       },
       {
-        "at_s": 43.8,
-        "state": "the ribbon frays into WHEN phase echoes and HOW MUCH amplitude displacement"
+        "at_s": 45.1,
+        "state": "stays face-on through the paper flip and snaps into the oversight gate as its engraved escutcheon"
       },
       {
-        "at_s": 64.55,
-        "state": "calibration reweaves one embodied solid ribbon rising through 15 mV/m"
+        "at_s": 61.1,
+        "state": "rotates off the opened gate and onto the evidence-ledger spine at the Act 3 boundary"
       },
       {
-        "at_s": 88.25,
-        "state": "the same path has a solid core ending at 15 and shadowless dashed fibers toward 25"
+        "at_s": 89.6,
+        "state": "stretches into the IF ADOPTED key while preserving its scalloped edge and engraving"
       },
       {
-        "at_s": 118.5,
-        "state": "the flexible lattice returns the still-incomplete ribbon, which curls home without regaining its missing body"
+        "at_s": 97.6,
+        "state": "rolls out of the conditional track toward the evidence map at the Act 4 boundary"
+      },
+      {
+        "at_s": 101.1,
+        "state": "travels along the physical divider between the OVERSIGHT ledger and separate CREDENTIAL lane"
+      },
+      {
+        "at_s": 109.1,
+        "state": "returns to the credential press and rotates from WHO EARNED THIS into the EARNED seal over completed student work"
       }
     ],
-    "lands_in_button": "The model follows the dashed ribbon without restoring its missing body, then the path curls back into the opening signal."
+    "lands_in_button": "The same brass question token becomes the EARNED credential seal; it never becomes a claim that a human must make every consequential final decision."
   },
   "reveals": [
     {
-      "t": 14.0,
+      "t": 29.1,
       "type": "scale-pullback",
-      "what": "a monitor detail pulls back until Earth is roughly 930,000 miles away",
+      "what": "The single diploma pullback reveals three separate campus rooms and one shared support rail.",
       "hold_s": 0.6
     },
     {
-      "t": 31.0,
-      "type": "build-on",
-      "what": "one matched minute multiplies into the visibly discrete 1995 to 2019 pairing field",
-      "hold_s": 0.7
-    },
-    {
-      "t": 64.55,
+      "t": 45.1,
       "type": "morph-to-chart",
-      "what": "the reweave becomes one corrected rising relation and physically lifts the apparent ceiling through 15 mV/m",
-      "hold_s": 0.7
+      "what": "The diploma begins its edge-on perspective flip at 45.1 seconds; the coherent transformation lands when four consequential-use tabs burst at 53.1 seconds.",
+      "hold_s": 0.7,
+      "land_t": 53.1
     },
     {
-      "t": 96.9,
-      "type": "scale-pullback",
-      "what": "one blurred fiber pulls back into a full flexible nonlinear AI lattice",
+      "t": 93.1,
+      "type": "build-on",
+      "what": "The frozen clock chamber opens only to an IF ADOPTED key, revealing the conditional one-year work.",
       "hold_s": 0.7
     }
   ],
+  "audio_arc": {
+    "build_steps": [
+      0.5,
+      18,
+      31,
+      60,
+      93
+    ],
+    "dip_at": 78,
+    "riser_at": 91,
+    "silence_at": 106.5,
+    "payoff_at": 110,
+    "button_pattern": "callback",
+    "note": "Paper percussion and warm mallets build under the press. The bed narrows when meaningful and earned are questioned, then drops six decibels before the human pull and returns with one brass chord."
+  },
   "beats": [
     {
       "i": 1,
-      "t": 0.0,
+      "t": 0,
       "vo": 0,
-      "shows": "SignalRibbon whips upward and slams the PHYSICS? plate",
-      "sfx": "ribbon whip and resonant metal bonk",
-      "means": "scroll stop and plant the apparent physical ceiling",
+      "sfx": "servo dive",
+      "means": "interrupt the expected auto-stamp",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "rockets into the low PHYSICS? plate and buckles into a flat kink",
-        "emotion": "startled curiosity",
-        "annotation": "PHYSICS?"
+        "subject": "DiplomaPress and brass WHO EARNED THIS token",
+        "action": "dives toward the blank seal, brakes one millimeter above it, and ejects the scalloped question token face-on",
+        "emotion": "alarmed",
+        "annotation": "WHO EARNED THIS? · BRASS TOKEN"
       },
+      "shows": "DiplomaPress and brass WHO EARNED THIS token dives toward the blank seal, brakes one millimeter above it, and ejects the scalloped question token face-on; WHO EARNED THIS? · BRASS TOKEN",
       "choreo": {
-        "primary": "rockets into the low PHYSICS? plate and buckles into a flat kink",
-        "reaction": "the ceiling plate shakes and its bolts rattle",
-        "ambient": "dust and bolt grit fall in shallow focus under a quick orbit"
+        "primary": "dives toward the blank seal, brakes one millimeter above it, and ejects the scalloped question token face-on",
+        "reaction": "The press springs compress, its eye slit widens, and the brass die shivers against the emergency brake before rebounding The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "Press belts continue crawling under the sheet while the low camera inches through the oxblood frame"
       }
     },
     {
       "i": 2,
-      "t": 1.3,
+      "t": 1.6,
       "vo": 0,
-      "shows": "the camera orbits and reveals plate bolts leading into measuring ticks",
-      "sfx": "bolt rattle and dust squeak",
-      "means": "make the ceiling look measurement-made before explaining it",
+      "sfx": "metal brake",
+      "means": "plant the press question",
       "draw": {
-        "subject": "the ceiling bolts",
-        "action": "stretch backward from the impact into the measuring apparatus",
-        "emotion": "suspicious",
-        "annotation": "SPACE OR MEASUREMENT?"
+        "subject": "machine hand",
+        "action": "tugs the handle but cannot close the press",
+        "emotion": "confused",
+        "annotation": "EARNED ONLY"
       },
+      "shows": "machine hand tugs the handle but cannot close the press; EARNED ONLY",
       "choreo": {
-        "primary": "stretch backward from the impact into the measuring apparatus",
-        "reaction": "the measuring ticks pull taut behind the impact",
-        "ambient": "dust and bolt grit fall in shallow focus under a quick orbit"
+        "primary": "tugs the handle but cannot close the press",
+        "reaction": "The machine fingers whiten around the handle, elbow cable stretches, then the hand recoils as the EARNED ONLY shutter slams",
+        "ambient": "An overhead counterweight sways opposite the machine arm and brake dust falls through the brass rim light"
       }
     },
     {
       "i": 3,
-      "t": 3.8,
+      "t": 5.1,
       "vo": 1,
-      "shows": "a Nature folio opens while two author plates lock onto it",
-      "sfx": "paper snap and two nameplate clicks",
-      "means": "name the study and actors before using them",
+      "sfx": "paper slap",
+      "means": "establish draft status",
       "draw": {
-        "subject": "Nature folio",
-        "action": "opens and seats Nithin Sivadas and UAF coauthor Doğacan Öztürk nameplates",
-        "emotion": "authoritative",
-        "annotation": "NATURE · JULY 15TH, 2026"
+        "subject": "AI Engaged document",
+        "action": "slides beneath a red clip that stamps DRAFT across the top",
+        "emotion": "under review",
+        "annotation": "AI ENGAGED · DRAFT 2026"
       },
+      "shows": "AI Engaged document slides beneath a red clip that stamps DRAFT across the top; AI ENGAGED · DRAFT 2026",
       "choreo": {
-        "primary": "opens and seats Nithin Sivadas and UAF coauthor Doğacan Öztürk nameplates",
-        "reaction": "the folio pages flutter and both author plates settle",
-        "ambient": "paper fibers drift across the folio under a slow overhead push"
+        "primary": "slides beneath a red clip that stamps DRAFT across the top",
+        "reaction": "The red clip bites the page, bounces twice, and pins one curling corner while the document's status light changes from green to amber",
+        "ambient": "Proposal pages fan slowly under the clip as a board-table lamp sweeps warm light across the DRAFT watermark"
       }
     },
     {
       "i": 4,
-      "t": 7.0,
-      "vo": 1,
-      "shows": "the ribbon curls past a solid 15 marker and its dashed end points into a locked void",
-      "sfx": "curious pluck",
-      "means": "plant the long question about what survives past the supported evidence",
+      "t": 9.6,
+      "vo": 2,
+      "sfx": "three type clicks",
+      "means": "compress the proposed architecture",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "curls around the 15 marker and knocks against a locked beyond-data shutter",
-        "emotion": "wonder",
-        "annotation": "WHAT HAPPENS PAST 15?"
+        "subject": "three TypeSlugs",
+        "action": "snap into a six-four-five stack around the diploma",
+        "emotion": "organized",
+        "annotation": "6 PRINCIPLES · 4 INVESTMENT PRIORITIES · 5 SYSTEM EXPECTATIONS"
       },
+      "shows": "three TypeSlugs snap into a six-four-five stack around the diploma; 6 PRINCIPLES · 4 INVESTMENT PRIORITIES · 5 SYSTEM EXPECTATIONS",
       "choreo": {
-        "primary": "curls around the 15 marker and knocks against a locked beyond-data shutter",
-        "reaction": "the ceiling tilts but does not answer the question",
-        "ambient": "paper fibers drift across the folio under a slow overhead push"
+        "primary": "snap into a six-four-five stack around the diploma",
+        "reaction": "The six, four, and five slugs orbit the blank seal, collide into three toothed gears, and keep turning the proposal mechanism",
+        "ambient": "Gear teeth carry the 6/4/5 stack around the seal while small proposed-principle tabs feed into the machine"
       }
     },
     {
       "i": 5,
-      "t": 10.0,
-      "vo": 2,
-      "shows": "UpstreamMonitor extends its booms and catches the sunward ribbon",
-      "sfx": "solar-panel unfold and antenna ping",
-      "means": "establish the neutral sampling instrument",
+      "t": 13.1,
+      "vo": 3,
+      "sfx": "pencil scratch",
+      "means": "turn policy into effort",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "passes through the faceless UpstreamMonitor as its sampling booms unfold",
-        "emotion": "precise",
-        "annotation": "WIND TODAY · ABOUT 930,000 MILES SUNWARD"
+        "subject": "student character",
+        "action": "climbs a staircase built from attempts, corrections, and practice",
+        "emotion": "determined",
+        "annotation": "EFFORT · PRACTICE · COMPETENCE"
       },
+      "shows": "student character climbs a staircase built from attempts, corrections, and practice; EFFORT · PRACTICE · COMPETENCE",
       "choreo": {
-        "primary": "unfolds faceless booms into the passing solar-wind path",
-        "reaction": "the monitor booms recoil from ribbon contact",
-        "ambient": "sparse stars drift in four parallax planes while the camera travels Earthward"
+        "primary": "climbs a staircase built from attempts, corrections, and practice",
+        "reaction": "The student plants a foot, grips the pencil rail, hauls upward, and exhales as the revision stair locks beneath the diploma",
+        "ambient": "Revision pages slide beneath the student's feet and the staircase grows one tread at a time behind the climb"
       }
     },
     {
       "i": 6,
-      "t": 14.0,
-      "vo": 2,
-      "shows": "camera pulls from monitor hardware to the full Sun-Wind-Earth corridor",
-      "sfx": "long spatial pullback whoosh",
-      "means": "make the present-day distance felt at true scale class",
+      "t": 17.6,
+      "vo": 3,
+      "sfx": "shortcut buzzer",
+      "means": "show what AI cannot replace",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "stretches from Wind across the full corridor toward a tiny Earth",
-        "emotion": "immense",
-        "annotation": "ABOUT 930,000 MILES SUNWARD"
+        "subject": "lime AI shortcut chute",
+        "action": "delivers a hollow cap that the press rejects",
+        "emotion": "sheepish",
+        "annotation": "NO SHORTCUT SEAL"
       },
+      "shows": "lime AI shortcut chute delivers a hollow cap that the press rejects; NO SHORTCUT SEAL",
       "choreo": {
-        "primary": "unspools from Wind toward a tiny Earth until the distance locks",
-        "reaction": "Earth recedes until the distance chain snaps straight",
-        "ambient": "sparse stars drift in four parallax planes while the camera travels Earthward"
+        "primary": "delivers a hollow cap that the press rejects",
+        "reaction": "The shortcut chute coughs, its hatch kicks backward, and the hollow cap tumbles down three steps while the student refuses it",
+        "ambient": "The rejected cap keeps rolling toward a NO SEAL tray while the valid practice stair advances in the opposite direction"
       }
     },
     {
       "i": 7,
-      "t": 18.8,
-      "vo": 3,
-      "shows": "one signal bead and one polar-response bead clasp across a one-minute notch",
-      "sfx": "paired clock tick and soft latch",
-      "means": "explain the paired unit before the dataset",
+      "t": 21.1,
+      "vo": 4,
+      "sfx": "brass latch",
+      "means": "state the earned promise",
       "draw": {
-        "subject": "one matched minute",
-        "action": "pairs a solar-wind bead with a polar-cap response bead",
-        "emotion": "orderly",
-        "annotation": "1 MINUTE  +  1 MINUTE"
+        "subject": "diploma sheet",
+        "action": "absorbs the student's practice blocks until its center becomes solid",
+        "emotion": "proud",
+        "annotation": "A CREDENTIAL STILL CERTIFIES EARNED COMPETENCE"
       },
+      "shows": "diploma sheet absorbs the student's practice blocks until its center becomes solid; A CREDENTIAL STILL CERTIFIES EARNED COMPETENCE",
       "choreo": {
-        "primary": "pairs a solar-wind bead with a polar-cap response bead",
-        "reaction": "the response bead bounces once inside its paired notch",
-        "ambient": "sparse stars drift in four parallax planes while the camera travels Earthward"
+        "primary": "absorbs the student's practice blocks until its center becomes solid",
+        "reaction": "Practice blocks knit through the paper grain, the sheet gains weight, and the student's shoulders settle only after the center becomes solid",
+        "ambient": "The parchment fibers tighten from edge to center and a brass highlight travels across the now-solid competence core"
       }
     },
     {
       "i": 8,
-      "t": 22.4,
-      "vo": 3,
-      "shows": "the pair repeats across a gapped date-range rail",
-      "sfx": "shuffle of many ticks",
-      "means": "show a date range without implying an uninterrupted record",
+      "t": 25.6,
+      "vo": 5,
+      "sfx": "roller jam",
+      "means": "reject one classroom rule",
       "draw": {
-        "subject": "paired observation field",
-        "action": "populates discrete matched beads across a visibly gapped rail",
-        "emotion": "expansive",
-        "annotation": "1995 TO 2019 · 1-MINUTE MATCHES"
+        "subject": "ONE RULE roller",
+        "action": "unfolds too wide and jams before three campus doors",
+        "emotion": "overconfident",
+        "annotation": "NOT ONE CLASSROOM RULE"
       },
+      "shows": "ONE RULE roller unfolds too wide and jams before three campus doors; NOT ONE CLASSROOM RULE",
       "choreo": {
-        "primary": "populates discrete matched beads across a visibly gapped rail",
-        "reaction": "the gapped date rail widens around discrete islands",
-        "ambient": "paired beads pulse across a gapped field under a widening crane"
+        "primary": "unfolds too wide and jams before three campus doors",
+        "reaction": "The roller accelerates, accordion-folds against the three thresholds, and its ONE RULE label peels loose as each campus door stays upright",
+        "ambient": "The three campus threshold lamps blink independently while the jammed roller keeps harmlessly crumpling on its siding"
       }
     },
     {
       "i": 9,
-      "t": 27.3,
-      "vo": 4,
-      "shows": "the ribbon leaves the neat pair and enters a long propagation corridor",
-      "sfx": "low Doppler bend",
-      "means": "turn from clean matching to the physical journey",
+      "t": 29.1,
+      "vo": 6,
+      "sfx": "three door latches and room-tone bloom",
+      "means": "reveal campus judgment",
+      "rehook": "The one-size roller breaks into three faculty-controlled rooms.",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "travels away from its original timestamp while Earth waits at the far end",
-        "emotion": "uneasy",
-        "annotation": "THE SIGNAL CHANGES"
+        "subject": "UAA, UAF, and UAS campus rooms carrying the brass question token",
+        "action": "open separate curriculum doors while the scalloped token rides the diploma and locks into their shared center axle",
+        "emotion": "self-directed",
+        "annotation": "UAA · UAF · UAS KEEP CURRICULUM JUDGMENT"
       },
+      "shows": "UAA, UAF, and UAS campus rooms carrying the brass question token open separate curriculum doors while the scalloped token rides the diploma and locks into their shared center axle; UAA · UAF · UAS KEEP CURRICULUM JUDGMENT",
       "choreo": {
-        "primary": "travels away from its original timestamp while Earth waits at the far end",
-        "reaction": "Earth pulses while the timestamp slips behind",
-        "ambient": "paired beads pulse across a gapped field under a widening crane"
+        "primary": "open separate curriculum doors while the scalloped token rides the diploma and locks into their shared center axle",
+        "reaction": "Three faculty silhouettes pull their doors open against spring resistance, then hold separate sightlines on the shared sheet The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "Campus doors maintain separate opening angles and the camera rises to reveal the common support level below"
       }
     },
     {
       "i": 10,
-      "t": 31.0,
-      "vo": 5,
-      "shows": "one pair explodes into the entire observation field as nearby clocks drift",
-      "sfx": "field burst and missed high-five tick",
-      "means": "rehook with a scale reveal and show matching pressure",
-      "rehook": "one matched minute explodes into the full pairing field",
+      "t": 33.6,
+      "vo": 6,
+      "sfx": "four switch pops",
+      "means": "show course-level choice",
       "draw": {
-        "subject": "the full pairing field",
-        "action": "expands around a single late-arriving timing bead",
-        "emotion": "busy confusion",
-        "annotation": "WHEN"
+        "subject": "faculty hand",
+        "action": "slams a brass switch lever through four course-controlled notches",
+        "emotion": "deliberate",
+        "annotation": "REQUIRE · ENCOURAGE · LIMIT · EXCLUDE"
       },
+      "shows": "faculty hand slams a brass switch lever through four course-controlled notches; REQUIRE · ENCOURAGE · LIMIT · EXCLUDE",
       "choreo": {
-        "primary": "expands around a single late-arriving timing bead",
-        "reaction": "neighboring clocks swing apart as the field expands",
-        "ambient": "paired beads pulse across a gapped field under a widening crane"
+        "primary": "slams a brass switch lever through four course-controlled notches",
+        "reaction": "The faculty wrist winds back, drives the lever through four detents, and lets the switch arm oscillate while each course lamp changes state",
+        "ambient": "Four course-state lamps keep pulsing at different rates as the lever settles between clearly marked detents"
       }
     },
     {
       "i": 11,
-      "t": 35.7,
-      "vo": 5,
-      "shows": "ribbon width swells and shrinks while its phase ghosts lag",
-      "sfx": "elastic twang and phase echoes",
-      "means": "make timing and magnitude uncertainty different physical verbs",
+      "t": 37.1,
+      "vo": 7,
+      "sfx": "rail clack",
+      "means": "show shared uplift underneath",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "frays into delayed phase echoes and stretched amplitude strands",
-        "emotion": "strained",
-        "annotation": "TIMING + MAGNITUDE UNCERTAINTY"
+        "subject": "shared support rail",
+        "action": "carries tools, training, contracts, and legal guidance beneath all three rooms",
+        "emotion": "helpful",
+        "annotation": "SHARED UPLIFT"
       },
+      "shows": "shared support rail carries tools, training, contracts, and legal guidance beneath all three rooms; SHARED UPLIFT",
       "choreo": {
-        "primary": "frays into delayed phase echoes and stretched amplitude strands",
-        "reaction": "the embodied core narrows when the amplitude strand swells",
-        "ambient": "ash ghosts trail the rose core as the camera rides between fibers"
+        "primary": "carries tools, training, contracts, and legal guidance beneath all three rooms",
+        "reaction": "Council rail cars keep circulating tools beneath the rooms; each car slows under a campus, unloads, and rejoins the loop",
+        "ambient": "Rail wheels, hanging tool tags, and training crates keep moving laterally beneath the fixed curriculum floor"
       }
     },
     {
       "i": 12,
-      "t": 38.9,
-      "vo": 5,
-      "shows": "location and evolution ghosts steer a bead into the neighboring response slot",
-      "sfx": "slot shutter and wrong-bay click",
-      "means": "plant whether calibration can change the ceiling",
+      "t": 41.6,
+      "vo": 7,
+      "sfx": "toolbox hinge snap and drawer shuffle",
+      "means": "keep system support separate from curriculum",
       "draw": {
-        "subject": "an imperfectly matched bead",
-        "action": "misses its response slot and locks into the adjacent one",
-        "emotion": "sheepish",
-        "annotation": "SHIFTED CAUSE-RESPONSE MATCH"
+        "subject": "system toolbox",
+        "action": "opens below the rooms but stops at each faculty-controlled threshold",
+        "emotion": "respectful",
+        "annotation": "SUPPORT UNDERNEATH"
       },
+      "shows": "system toolbox opens below the rooms but stops at each faculty-controlled threshold; SUPPORT UNDERNEATH",
       "choreo": {
-        "primary": "misses its response slot and locks into the adjacent one",
-        "reaction": "the intended response slot closes before the late bead arrives",
-        "ambient": "ash ghosts trail the rose core as the camera rides between fibers"
+        "primary": "opens below the rooms but stops at each faculty-controlled threshold",
+        "reaction": "Toolbox arms unfold toward all three rooms, stop at the curriculum thresholds, retract, and reroute underneath without crossing them",
+        "ambient": "Council badge gears turn below the rooms while each threshold casts a moving shadow that the arms never cross"
       }
     },
     {
       "i": 13,
-      "t": 43.8,
-      "vo": 6,
-      "shows": "SimField repeats the mismatches and stacks their response curve",
-      "sfx": "simulation relay chatter",
-      "means": "reproduce the apparent effect without claiming a physical storm",
+      "t": 45.1,
+      "vo": 8,
+      "sfx": "paper flip",
+      "means": "plant the conditional clock while changing stakes",
       "draw": {
-        "subject": "SimField",
-        "action": "duplicates the mismatch process until points accumulate beneath the plate",
-        "emotion": "methodical",
-        "annotation": "SIMULATED MISMATCHES"
+        "subject": "diploma sheet and brass question token",
+        "action": "somersault edge-first into the decision world while the token remains face-on, then snaps into the oversight gate as its engraved escutcheon",
+        "emotion": "newly serious",
+        "annotation": "SECOND TRUST TEST · SAME QUESTION TOKEN"
       },
+      "shows": "diploma sheet and brass question token somersault edge-first into the decision world while the token remains face-on, then snaps into the oversight gate as its engraved escutcheon; SECOND TRUST TEST · SAME QUESTION TOKEN",
       "choreo": {
-        "primary": "duplicates the mismatch process until points accumulate beneath the plate",
-        "reaction": "the apparent plate lowers with each accumulated mismatch",
-        "ambient": "ash ghosts trail the rose core as the camera rides between fibers"
+        "primary": "somersault edge-first into the decision world while the token remains face-on, then snaps into the oversight gate as its engraved escutcheon",
+        "reaction": "The sheet bows, whips through edge-on perspective, strikes the file rail, and exposes four hidden tab springs as the clock drops into focus The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "Front and back paper faces counter-rotate through parallax while the clock chamber descends on a separate depth plane"
       }
     },
     {
       "i": 14,
-      "t": 47.6,
-      "vo": 6,
-      "shows": "the accumulated curve flattens and mechanically assembles the low plate",
-      "sfx": "three metal ticks and ceiling lock",
-      "means": "draw the apparent saturation as a product of the matching system",
+      "t": 49.6,
+      "vo": 9,
+      "sfx": "workflow hum",
+      "means": "name the consequential category",
       "draw": {
-        "subject": "the mismatched curve",
-        "action": "flattens and bolts the PHYSICS? ceiling into place",
-        "emotion": "convincing but provisional",
-        "annotation": "UNCERTAINTY CAN DRAW A FALSE CEILING"
+        "subject": "predictive AI loop",
+        "action": "tries to pull the decision file around a circular workflow",
+        "emotion": "insistent",
+        "annotation": "STUDENT PROGRESS · BUSINESS OPERATIONS"
       },
+      "shows": "predictive AI loop tries to pull the decision file around a circular workflow; STUDENT PROGRESS · BUSINESS OPERATIONS",
       "choreo": {
-        "primary": "flattens and bolts the PHYSICS? ceiling into place",
-        "reaction": "three loose bolts fall as the curve flattens",
-        "ambient": "ash ghosts trail the rose core as the camera rides between fibers"
+        "primary": "tries to pull the decision file around a circular workflow",
+        "reaction": "The predictive loop tightens around the file, drags it halfway around, then stalls visibly at the unoccupied oversight gate",
+        "ambient": "The circular path keeps scrolling under the stalled file and empty reviewer chair, making the blocked motion impossible to miss"
       }
     },
     {
       "i": 15,
-      "t": 52.35,
-      "vo": 7,
-      "shows": "calibration teeth engage the frayed WHEN and HOW MUCH fibers",
-      "sfx": "loom clack and tension riser",
-      "means": "begin the promised correction as a causal mechanism",
+      "t": 53.1,
+      "vo": 10,
+      "sfx": "four tab snaps",
+      "means": "draw sourced examples",
       "draw": {
-        "subject": "calibration rig",
-        "action": "catches each displaced fiber and pulls it toward its paired notch",
-        "emotion": "careful",
-        "annotation": "CALIBRATE THE UNCERTAINTY"
+        "subject": "decision file",
+        "action": "bursts four physical tabs outward with staggered impacts",
+        "emotion": "exposed",
+        "annotation": "ADMISSIONS · AID · ADVISING · HR"
       },
+      "shows": "decision file bursts four tabs outward; ADMISSIONS · AID · ADVISING · HR",
       "choreo": {
-        "primary": "catches each displaced fiber and pulls it toward its paired notch",
-        "reaction": "the frayed strands recoil against the calibration teeth",
-        "ambient": "graphite teeth vibrate under tension during the calibration push"
+        "primary": "bursts four physical tabs outward with staggered impacts",
+        "reaction": "Four tabs fire outward at staggered force, their springs rebound, and the file face shifts from hidden to exposed as each label locks",
+        "ambient": "Each tab casts its own deep paper shadow and continues a small spring wobble while the workflow line circulates beneath it"
       }
     },
     {
       "i": 16,
-      "t": 55.75,
-      "vo": 7,
-      "shows": "the fibers pause under tension then begin one elastic reweave",
-      "sfx": "held tension hum and release",
-      "means": "anticipate the correction payoff",
+      "t": 57.6,
+      "vo": 11,
+      "sfx": "gate lock",
+      "means": "show the formal safeguard",
+      "rehook": "The file cannot exit the loop until two physical locks engage.",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "reweaves its phase and amplitude fibers into one embodied strand",
-        "emotion": "relief",
-        "annotation": "RE-CENTER THE PAIRS"
+        "subject": "oversight gate",
+        "action": "blocks the orbiting file until evaluation and human oversight locks click",
+        "emotion": "unyielding",
+        "annotation": "CONSEQUENTIAL AI · HUMAN OVERSIGHT"
       },
+      "shows": "oversight gate blocks the orbiting file until evaluation and human oversight locks click; CONSEQUENTIAL AI · HUMAN OVERSIGHT",
       "choreo": {
-        "primary": "reweaves its phase and amplitude fibers into one embodied strand",
-        "reaction": "the original core brightens as the ghosts draw inward",
-        "ambient": "graphite teeth vibrate under tension during the calibration push"
+        "primary": "blocks the orbiting file until evaluation and human oversight locks click",
+        "reaction": "Both gate bolts shoot across the path, vibrate under the file's pressure, and hold until the evaluation and oversight indicators light",
+        "ambient": "Lock indicators alternate red to brass and the blocked file continues pressing against the closed gate"
       }
     },
     {
       "i": 17,
-      "t": 60.65,
-      "vo": 8,
-      "shows": "music drops as the corrected ribbon drives upward against the ceiling",
-      "sfx": "near-silence then deep ribbon surge",
-      "means": "rehook at the central test and make the correction physical",
-      "rehook": "the corrected ribbon attacks the apparent ceiling",
+      "t": 61.1,
+      "vo": 11,
+      "sfx": "ledger open",
+      "means": "make oversight active",
       "draw": {
-        "subject": "corrected SignalRibbon",
-        "action": "pushes the plate upward with a clean rising relation",
-        "emotion": "earned confidence",
-        "annotation": "CORRECTED AVERAGE"
+        "subject": "reviewer character and brass question token",
+        "action": "opens the evidence ledger, pulls the file clear, and rotates the scalloped token from the gate onto the ledger spine without changing its engraving",
+        "emotion": "accountable",
+        "annotation": "REVIEWED · RECORDED · TOKEN CARRIED"
       },
+      "shows": "reviewer character and brass question token opens the evidence ledger, pulls the file clear, and rotates the scalloped token from the gate onto the ledger spine without changing its engraving; REVIEWED · RECORDED · TOKEN CARRIED",
       "choreo": {
-        "primary": "pushes the plate upward with a clean rising relation",
-        "reaction": "the low plate trembles under the corrected rise",
-        "ambient": "graphite teeth vibrate under tension during the calibration push"
+        "primary": "opens the evidence ledger, pulls the file clear, and rotates the scalloped token from the gate onto the ledger spine without changing its engraving",
+        "reaction": "The reviewer leans in, braces the ledger with one hand, turns an evidence page, and pulls the file clear with a deliberate second grip The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "Desk lamp glow travels across opened evidence rows while the reviewer continues scanning rather than posing"
       }
     },
     {
       "i": 18,
-      "t": 64.55,
-      "vo": 8,
-      "shows": "the low plate releases and the solid ribbon rises through the 15 marker",
-      "sfx": "freight-bolt release and bright resolve",
-      "means": "pay the calibration loop with the exact supported result",
+      "t": 65.6,
+      "vo": 12,
+      "sfx": "rubber stamp squeak",
+      "means": "begin the counterpoint",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "lifts the apparent ceiling and remains solid through the evidence marker",
-        "emotion": "wonder",
-        "annotation": "CORRECTED RELATION · LINEAR THROUGH 15 mV/m"
+        "subject": "rubber-stamp robot",
+        "action": "offers a weak HUMAN WAS NEARBY stamp that the ledger spits out",
+        "emotion": "embarrassed",
+        "annotation": "MEANINGFUL?"
       },
+      "shows": "rubber-stamp robot offers a weak HUMAN WAS NEARBY stamp that the ledger spits out; MEANINGFUL?",
       "choreo": {
-        "primary": "lifts the apparent ceiling and remains solid through the evidence marker",
-        "reaction": "the released plate falls out of the observed field",
-        "ambient": "graphite teeth vibrate under tension during the calibration push"
+        "primary": "offers a weak HUMAN WAS NEARBY stamp that the ledger spits out",
+        "reaction": "The robot winds up a rubber stamp, overcommits, and recoils when the ledger spits the weak mark back into its face",
+        "ambient": "The rejected stamp strip snakes back into the robot's rollers and its pressure gauge deflates with a comic hiss"
       }
     },
     {
       "i": 19,
-      "t": 68.45,
-      "vo": 9,
-      "shows": "the lifted low plate falls and exposes the solid-to-dashed evidence seam",
-      "sfx": "music dip and plate flip",
-      "means": "announce Act 3 as a real challenge rather than a disclaimer",
+      "t": 69.1,
+      "vo": 12,
+      "sfx": "word blocks drop",
+      "means": "make abstract terms physical",
       "draw": {
-        "subject": "SignalRibbon at the evidence seam",
-        "action": "pushes the lifted plate away and enters the 15 mV/m boundary apparatus",
+        "subject": "MEANINGFUL and EARNED word blocks",
+        "action": "land heavily on an empty measurement scale",
         "emotion": "demanding",
-        "annotation": "PUSH THE RESULT PAST THE DATA"
+        "annotation": "STRONG WORDS · NO MEASURE YET"
       },
+      "shows": "MEANINGFUL and EARNED word blocks land heavily on an empty measurement scale; STRONG WORDS · NO MEASURE YET",
       "choreo": {
-        "primary": "pushes the lifted plate away and enters the 15 mV/m boundary apparatus",
-        "reaction": "the test bench rotates and clamps at center",
-        "ambient": "ivory fragments fall away while the camera holds the evidence stop"
+        "primary": "land heavily on an empty measurement scale",
+        "reaction": "The word blocks crash onto opposite pans, bounce at different heights, and force the scale beam to hunt for a center it cannot find",
+        "ambient": "Scale chains keep oscillating and the empty tick marks drift into focus without resolving either heavy word"
       }
     },
     {
       "i": 20,
-      "t": 71.55,
-      "vo": 10,
-      "shows": "the solid ribbon reaches 15 and its body stops dead",
-      "sfx": "hard stop and room-tone vacuum",
-      "means": "make the observation boundary impossible to miss muted",
+      "t": 73.6,
+      "vo": 13,
+      "sfx": "gauge rattle",
+      "means": "show undefined proof",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "halts its shaded physical body at the 15 marker",
-        "emotion": "honest restraint",
-        "annotation": "EVIDENCE STOPS AT 15"
+        "subject": "measurement gauge",
+        "action": "sweeps its needle across blank marks, then smacks both empty stops",
+        "emotion": "skeptical",
+        "annotation": "POWER? · EVIDENCE?"
       },
+      "shows": "measurement gauge needle sweeps and smacks empty stops; POWER? · EVIDENCE?",
       "choreo": {
-        "primary": "halts its shaded physical body at the 15 marker",
-        "reaction": "the 15 marker blocks the shaded body",
-        "ambient": "ivory fragments fall away while the camera holds the evidence stop"
+        "primary": "sweeps its needle across blank marks, then smacks both empty stops",
+        "reaction": "The gauge needle sweeps past both blank sockets, strikes each stop, recoils, and continues trembling without inventing a reading",
+        "ambient": "The searching beam sweeps the blank instrument face while POWER and EVIDENCE sockets remain physically empty"
       }
     },
     {
       "i": 21,
-      "t": 76.35,
-      "vo": 11,
-      "shows": "the same path continues only as dashed shadowless fibers toward 25",
-      "sfx": "dry dash ticks",
-      "means": "change evidence material before revealing the projection",
+      "t": 77.1,
+      "vo": 14,
+      "sfx": "test gate boom",
+      "means": "turn the proposal on itself",
       "draw": {
-        "subject": "the projected ribbon fibers",
-        "action": "continue without body or shadow from 15 toward 25",
-        "emotion": "possible, not proven",
-        "annotation": "TOWARD 25 mV/m  ·  EXTRAPOLATED"
+        "subject": "AI Engaged plan",
+        "action": "rolls onto the same evaluation gate it proposes for consequential systems",
+        "emotion": "challenged",
+        "annotation": "SURVIVE YOUR OWN TEST"
       },
+      "shows": "AI Engaged plan rolls onto the same evaluation gate it proposes for consequential systems; SURVIVE YOUR OWN TEST",
       "choreo": {
-        "primary": "continue without body or shadow from 15 toward 25",
-        "reaction": "the ribbon rim extinguishes exactly at the boundary",
-        "ambient": "ivory fragments fall away while the camera holds the evidence stop"
+        "primary": "rolls onto the same evaluation gate it proposes for consequential systems",
+        "reaction": "The plan's wheels squeal onto the test track, compress the gate springs, and keep pushing while the gate demands evidence",
+        "ambient": "Test-track rollers keep turning beneath the stationary plan and the gate's brass question mark vibrates from the impact"
       }
     },
     {
       "i": 22,
-      "t": 80.05,
-      "vo": 11,
-      "shows": "an approximately two-times ClaimChip is stamped out of the dashed fibers",
-      "sfx": "claim-chip stamp and velvet-rope snap",
-      "means": "tie the exciting number physically to extrapolation",
+      "t": 81.6,
+      "vo": 15,
+      "sfx": "clock tick attempt",
+      "means": "reveal the waiting clock",
       "draw": {
-        "subject": "EXTRAPOLATED approximately two-times chip",
-        "action": "emerges from the dashed path while dragging its qualifier",
-        "emotion": "exciting but bounded",
-        "annotation": "AT ABOUT 25 mV/m · EXTRAPOLATED RESPONSE ≈2×"
+        "subject": "twelve-month clock",
+        "action": "tries to tick behind glass while a red clip catches its hand",
+        "emotion": "impatient",
+        "annotation": "12 MONTHS · FROZEN"
       },
+      "shows": "twelve-month clock tries to tick behind glass while a red clip catches its hand; 12 MONTHS · FROZEN",
       "choreo": {
-        "primary": "emerges from the dashed path while dragging its qualifier",
-        "reaction": "the qualifier strap pulls the claim chip back toward the dashed path",
-        "ambient": "ivory fragments fall away while the camera holds the evidence stop"
+        "primary": "tries to tick behind glass while a red clip catches its hand",
+        "reaction": "The clock motor strains, advances one tooth, and snaps backward when the red clip catches the second hand behind glass",
+        "ambient": "Clock gears strain behind the glass and a visible zero stays centered under the captured second hand"
       }
     },
     {
       "i": 23,
-      "t": 84.95,
-      "vo": 11,
-      "shows": "the chip bounces off OBSERVED and DOUBLED DAMAGE then docks at PROJECTED RESPONSE",
-      "sfx": "two rejection clacks and one clean dock",
-      "means": "classify the claim quickly without repeating the same test",
+      "t": 85.1,
+      "vo": 16,
+      "sfx": "glass knock",
+      "means": "state clock has not started",
       "draw": {
-        "subject": "the approximately two-times chip",
-        "action": "fails two false readings and seats only in the correct claim bay",
-        "emotion": "properly classified",
-        "annotation": "PROJECTED GEOMAGNETIC RESPONSE"
+        "subject": "DRAFT clip",
+        "action": "pushes the clock hand back to zero",
+        "emotion": "firm",
+        "annotation": "NOT ADOPTED · CLOCK NOT STARTED"
       },
+      "shows": "DRAFT clip pushes the clock hand back to zero; NOT ADOPTED · CLOCK NOT STARTED",
       "choreo": {
-        "primary": "fails two false readings and seats only in the correct claim bay",
-        "reaction": "the false bays snap shut before the correct bay opens",
-        "ambient": "the true void darkens behind the test bench during the lateral move"
+        "primary": "pushes the clock hand back to zero",
+        "reaction": "The clip bends under the clock's torque, slaps the hand to zero, and holds it there while the frozen indicator pulses",
+        "ambient": "A shadow of the stopped hand sweeps backward with each failed attempt while DRAFT remains frontmost"
       }
     },
     {
       "i": 24,
-      "t": 88.25,
-      "vo": 12,
-      "shows": "the low false plate falls away as a separate translucent beyond-data boundary slides into view",
-      "sfx": "single unresolved glass tone",
-      "means": "pay the main loop while preserving the fair unresolved beyond-data counterpoint",
+      "t": 89.6,
+      "vo": 17,
+      "sfx": "key turn",
+      "means": "pay the conditional clock loop",
+      "rehook": "A giant IF ADOPTED key turns, but only inside a clearly conditional vignette.",
       "draw": {
-        "subject": "the unresolved physical ceiling",
-        "action": "slides into view after the low bias-made plate falls away",
-        "emotion": "open question",
-        "annotation": "PHYSICS BEYOND 15?"
+        "subject": "IF ADOPTED key formed from the brass question token",
+        "action": "stretches the same scalloped token into a key, keeps WHO EARNED THIS visible, and throws the conditional gate open",
+        "emotion": "cautiously hopeful",
+        "annotation": "IF ADOPTED · 1 YEAR"
       },
+      "shows": "IF ADOPTED key formed from the brass question token stretches the same scalloped token into a key, keeps WHO EARNED THIS visible, and throws the conditional gate open; IF ADOPTED · 1 YEAR",
       "choreo": {
-        "primary": "slides into view after the low bias-made plate falls away",
-        "reaction": "the low false plate falls while a translucent future boundary slides into view",
-        "ambient": "the true void darkens behind the test bench during the lateral move"
+        "primary": "stretches the same scalloped token into a key, keeps WHO EARNED THIS visible, and throws the conditional gate open",
+        "reaction": "The key coils backward in anticipation, turns through the lock, and throws the conditional gate open as its chain whips then settles The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "Conditional light travels only beyond the open IF ADOPTED gate while the unadopted side of the chamber stays dark"
       }
     },
     {
       "i": 25,
-      "t": 93.0,
-      "vo": 13,
-      "shows": "a flexible nonlinear lattice grows around the same frayed input",
-      "sfx": "mesh unfurl and data plucks",
-      "means": "begin the paper's AI warning without implying an AI evaluation",
+      "t": 93.1,
+      "vo": 17,
+      "sfx": "plan cards assemble",
+      "means": "show what the year would build",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "enters a flexible nonlinear lattice while keeping its missing alignment visible",
-        "emotion": "impressively flexible",
-        "annotation": "AI WARNING · FLEXIBILITY CAN'T RECOVER LOST INFORMATION\nNO OPERATIONAL AI TESTED"
+        "subject": "institution plan cards",
+        "action": "assemble into aligned policy and plan stacks without leaving the conditional frame",
+        "emotion": "purposeful",
+        "annotation": "POLICIES · PLANS"
       },
+      "shows": "institution plan cards assemble into aligned policy and plan stacks without leaving the conditional frame; POLICIES · PLANS",
       "choreo": {
-        "primary": "wraps around the inherited blurred ribbon",
-        "reaction": "the lattice opens around the incomplete input",
-        "ambient": "the true void darkens behind the test bench during the lateral move"
+        "primary": "assemble into aligned policy and plan stacks without leaving the conditional frame",
+        "reaction": "Policy and plan cards fly through the open gate, interlock into two stacks, and keep feeding blank review slots without implying completion",
+        "ambient": "Card edges align into policy and plan stacks as empty evidence ports continue blinking for future work"
       }
     },
     {
       "i": 26,
-      "t": 96.9,
-      "vo": 14,
-      "shows": "camera pulls from one missing fiber to the entire flexible lattice",
-      "sfx": "wide digital pullback",
-      "means": "rehook and reveal scale while keeping the input loss visible",
-      "rehook": "one blurred fiber becomes a full flexible model",
+      "t": 97.6,
+      "vo": 18,
+      "sfx": "three question hits",
+      "means": "define evidence tests",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "travels through the full lattice while empty cells remain open around it",
-        "emotion": "capable but limited",
-        "annotation": "AI WARNING · FLEXIBILITY CAN'T RECOVER LOST INFORMATION\nNO OPERATIONAL AI TESTED"
+        "subject": "three evidence gauges and brass question token",
+        "action": "pause without fabricated readings while the scalloped token rolls out of the conditional track toward the evidence map",
+        "emotion": "expectant",
+        "annotation": "LEARNING? · OVERSIGHT? · CREDENTIAL?"
       },
+      "shows": "three evidence gauges and brass question token pause without fabricated readings while the scalloped token rolls out of the conditional track toward the evidence map; LEARNING? · OVERSIGHT? · CREDENTIAL?",
       "choreo": {
-        "primary": "bends precisely around the biased curve while leaving the missing alignment empty",
-        "reaction": "empty cells stay open as the model expands",
-        "ambient": "lattice nodes flicker across depth while the camera pulls to system scale"
+        "primary": "pause without fabricated readings while the scalloped token rolls out of the conditional track toward the evidence map",
+        "reaction": "Three needles rise toward LEARNING, OVERSIGHT, and CREDENTIAL, stop below unnamed values, and hold their question flags in motion The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "Alaska's paper silhouette breathes under the three gauges while campus pins send unanswered pulses toward them"
       }
     },
     {
       "i": 27,
-      "t": 101.7,
-      "vo": 14,
-      "shows": "the lattice performs an elegant fold and presents the same low ceiling",
-      "sfx": "wry elastic pretzel pluck",
-      "means": "give the AI warning one memorable visual gag",
+      "t": 101.1,
+      "vo": 18,
+      "sfx": "paper refold",
+      "means": "return to the diploma",
       "draw": {
-        "subject": "SignalRibbon",
-        "action": "emerges unchanged as the flexible lattice folds beneath the inherited curve",
-        "emotion": "proud but mistaken",
-        "annotation": "AI WARNING · FLEXIBILITY CAN'T RECOVER LOST INFORMATION\nNO OPERATIONAL AI TESTED"
+        "subject": "consequential decision file, separate diploma sheet, and brass question token",
+        "action": "slides the reviewed file left into an OVERSIGHT ledger, match-cuts a distinct diploma in from the right, and rolls the token along the divider between them",
+        "emotion": "waiting",
+        "annotation": "TWO PROMISES · ONE QUESTION TOKEN"
       },
+      "shows": "consequential decision file, separate diploma sheet, and brass question token slides the reviewed file left into an OVERSIGHT ledger, match-cuts a distinct diploma in from the right, and rolls the token along the divider between them; TWO PROMISES · ONE QUESTION TOKEN",
       "choreo": {
-        "primary": "folds beautifully under the inherited false ceiling and returns the unchanged ribbon",
-        "reaction": "the biased ceiling lowers again despite the elegant fold",
-        "ambient": "lattice nodes flicker across depth while the camera pulls to system scale"
+        "primary": "slides the reviewed file left into an OVERSIGHT ledger, match-cuts a distinct diploma in from the right, and rolls the token along the divider between them",
+        "reaction": "The reviewed file slides left under the ledger cover while a separate credential sheet enters from the right and the divider locks between them The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "The OVERSIGHT ledger remains left and the credential lane remains right as the camera travels across the locked divider"
       }
     },
     {
       "i": 28,
-      "t": 105.2,
-      "vo": 15,
-      "shows": "grid, GPS, aircraft and satellite icons orbit a neutral GENERAL CONTEXT plate",
-      "sfx": "four restrained icon pings",
-      "means": "show real general hazards without attaching the two-times claim",
+      "t": 105.6,
+      "vo": 19,
+      "sfx": "machine grip release and six-decibel music dip",
+      "means": "set up final ownership",
       "draw": {
-        "subject": "general space-weather context icons",
-        "action": "circle a neutral context plate without touching the projection",
-        "emotion": "prepared, not alarmed",
-        "annotation": "GENERAL HAZARDS · GRID · GPS · AIRCRAFT · SATELLITES\nNO FORECAST · NO CURRENT ALERT · NO ALASKA DATA SET"
+        "subject": "machine hand",
+        "action": "steadies the sheet and deliberately releases the handle",
+        "emotion": "helpful",
+        "annotation": "THE MACHINE CAN HELP"
       },
+      "shows": "machine hand steadies the sheet and deliberately releases the handle; THE MACHINE CAN HELP",
       "choreo": {
-        "primary": "circle a neutral context plate without touching the projection",
-        "reaction": "the context icons separate from the projected path",
-        "ambient": "lattice nodes flicker across depth while the camera pulls to system scale"
+        "primary": "steadies the sheet and deliberately releases the handle",
+        "reaction": "The machine palm steadies the credential sheet, fingers uncurl from the handle, and the arm retreats to a clearly supporting position",
+        "ambient": "The machine status shifts from ACTIVE to ASSIST while the human credential lane brightens in brass"
       }
     },
     {
       "i": 29,
-      "t": 110.1,
-      "vo": 15,
-      "shows": "three limit plates clamp across the AlaskaMini authorship marker",
-      "sfx": "three firm plate locks",
-      "means": "prevent forecast, alert, or Alaska-dataset inference",
+      "t": 109.1,
+      "vo": 19,
+      "sfx": "human pull and brass impact",
+      "means": "pay the opening press loop",
       "draw": {
-        "subject": "the scope limits",
-        "action": "lock beside AlaskaMini without changing the signal",
-        "emotion": "clear",
-        "annotation": "NO FORECAST · NO CURRENT ALERT · NO ALASKA DATA SET"
+        "subject": "student work, faculty credential examiner, and brass question token",
+        "action": "place completed work under the diploma press, pull the credential handle, and rotate the scalloped question token into the EARNED seal",
+        "emotion": "responsible",
+        "annotation": "CREDENTIAL SEAL · EARNED"
       },
+      "shows": "student work, faculty credential examiner, and brass question token place completed work under the diploma press, pull the credential handle, and rotate the scalloped question token into the EARNED seal; CREDENTIAL SEAL · EARNED",
       "choreo": {
-        "primary": "lock beside AlaskaMini without changing the signal",
-        "reaction": "the three scope plates close without touching the ribbon",
-        "ambient": "neutral icons orbit slowly above the protected caption band"
+        "primary": "place completed work under the diploma press, pull the credential handle, and rotate the scalloped question token into the EARNED seal",
+        "reaction": "The student pushes completed work under the sheet; the examiner plants both feet, grips the credential handle, pulls, and follows through The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "Press cables lag behind the examiner's pull and the student's completed-work pages flutter from the earned impact"
       }
     },
     {
       "i": 30,
-      "t": 113.9,
-      "vo": 16,
-      "shows": "the apparent low plate rises while the 15 boundary stays fixed",
-      "sfx": "soft lift and hard boundary click",
-      "means": "state the turn with one spatial contrast",
+      "t": 113.6,
+      "vo": 19,
+      "sfx": "seal ring and paper slide",
+      "means": "land the thesis and loop",
       "draw": {
-        "subject": "the two boundaries",
-        "action": "separate as the apparent ceiling moves and the evidence stop remains",
-        "emotion": "clear-eyed wonder",
-        "annotation": "CEILING MOVED  ·  BOUNDARY DID NOT"
+        "subject": "sealed diploma, clipped draft, and brass EARNED token",
+        "action": "slides forward with the same scalloped token now reading EARNED while the separate plan remains clipped DRAFT",
+        "emotion": "earned confidence",
+        "annotation": "EARNED DIPLOMA · DRAFT PLAN STILL UNDER REVIEW"
       },
+      "shows": "sealed diploma, clipped draft, and brass EARNED token slides forward with the same scalloped token now reading EARNED while the separate plan remains clipped DRAFT; EARNED DIPLOMA · DRAFT PLAN STILL UNDER REVIEW",
       "choreo": {
-        "primary": "separate as the apparent ceiling moves and the evidence stop remains",
-        "reaction": "the moved ceiling rises while the 15 marker grips the path",
-        "ambient": "limit plates settle into a quiet plum field"
-      }
-    },
-    {
-      "i": 31,
-      "t": 116.1,
-      "vo": 17,
-      "shows": "the apparent ceiling continues upward while the 15 boundary clamps the ribbon in place",
-      "sfx": "ascending glass tone cut by a firm clamp",
-      "means": "give the unchanged evidence boundary its own physical beat",
-      "draw": {
-        "subject": "the 15 mV/m evidence boundary",
-        "action": "clamps the solid ribbon while the apparent ceiling rises away",
-        "emotion": "steadfast",
-        "annotation": "EVIDENCE BOUNDARY DID NOT MOVE"
-      },
-      "choreo": {
-        "primary": "the 15 marker clamps the solid ribbon at center",
-        "reaction": "the lifted plate recedes into the upper void",
-        "ambient": "the camera stops moving while only ivory dust continues to fall"
-      }
-    },
-    {
-      "i": 32,
-      "t": 118.5,
-      "vo": 18,
-      "shows": "the lattice releases the dashed fibers which curl back into the clean opening ribbon",
-      "sfx": "warm resolve into loop whip",
-      "means": "land the button and create a seamless loop",
-      "draw": {
-        "subject": "SignalRibbon",
-        "action": "returns without recovered body, curls home, and becomes the opening launch",
-        "emotion": "quietly resolved",
-        "annotation": "A MODEL CAN FOLLOW IT. IT CAN'T RESTORE IT."
-      },
-      "choreo": {
-        "primary": "returns without recovered body, curls home, and becomes the opening launch",
-        "reaction": "the lattice opens and releases the still-incomplete fibers",
-        "ambient": "the opening dust field reforms around the returning loop"
+        "primary": "slides forward with the same scalloped token now reading EARNED while the separate plan remains clipped DRAFT",
+        "reaction": "The die rebounds, the sealed diploma curls toward camera, and the separate clipped draft stays behind with its amber review light still blinking The recognizable scalloped brass token and its engraved center remain visible through the settle.",
+        "ambient": "The diploma advances alone into warm light while the AI Engaged document remains clipped DRAFT on a separate rear plane"
       }
     }
   ],
   "shots": [
     {
       "id": "S1",
-      "t": "0.0-6.7667",
-      "stage": "apparent ceiling macro",
+      "t": "0-8",
+      "stage": "press macro",
       "framing": "macro-closeup",
       "scale": "insert",
-      "height": "eye",
-      "pov": "instrument-macro",
+      "height": "low",
+      "pov": "macro-closeup",
       "layout": "single-object-void",
-      "motion_vector": "vertical-impact",
-      "hero_treatment": "single-continuous-signal",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
       "transition_in": null,
       "thread": "carry",
-      "camera": "static:the apparent ceiling stays locked while the ribbon compresses inside the instrument macro",
+      "camera": "dollyThrough",
       "stage3d": "planes",
       "centered": true,
-      "means": "the impact hides then reveals the measuring apparatus",
+      "means": "the rejected stamp plants the story question",
       "hero": {
-        "name": "SignalRibbon",
+        "name": "DiplomaPress",
         "parts": 24,
         "zones": 5,
-        "detail_note": "form-shaded rose body, ivory crest, ink edge, elastic fibers, emissive trail and impact compression"
+        "detail_note": "beveled brass die, oxblood frame, mint machine handle, scalloped WHO EARNED THIS token, AI Engaged document, red DRAFT 2026 clip, expressive eyes, bolts and contact shadow"
       }
     },
     {
       "id": "S2",
-      "t": "6.7667-14.1667",
-      "stage": "Nature authorship table",
-      "framing": "push-detail",
-      "scale": "close",
+      "t": "8-12",
+      "stage": "proposal drafting table",
+      "framing": "data-panel",
+      "scale": "medium",
       "height": "overhead",
-      "pov": "document-table",
-      "layout": "asymmetric-rail",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
       "motion_vector": "assemble-build",
-      "hero_treatment": "ribbon-as-question",
+      "hero_treatment": "data-as-subject",
       "transition_in": "graphic-match",
       "thread": "match",
       "camera": "craneDown+dollyThrough",
       "stage3d": "planes",
       "centered": true,
-      "means": "paper and names establish actors before the ribbon asks the question",
+      "means": "the blank seal matches into the six-four-five architecture",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 24,
+        "name": "ProposalMechanism",
+        "parts": 22,
         "zones": 5,
-        "detail_note": "question curl with maintained form shading and moving specular"
+        "detail_note": "6/4/5 type gears, draft clip, seal socket, proposed-expectation tabs, warm drafting lamp and moving paper feed"
       }
     },
     {
       "id": "S3",
-      "t": "14.1667-23.4333",
-      "stage": "Sun-Wind-Earth corridor",
-      "framing": "wide-establish",
-      "scale": "extreme-wide",
-      "height": "high",
-      "pov": "sunward-corridor",
-      "layout": "diagonal-causal-corridor",
-      "motion_vector": "scale-pullback",
-      "hero_treatment": "signal-against-distance",
-      "transition_in": "pull-out",
-      "thread": "travel",
+      "t": "12-24",
+      "stage": "practice staircase",
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "eye",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "carried-element",
+      "thread": "carry",
       "camera": "truckAcross+dollyThrough",
       "stage3d": "planes",
       "centered": true,
-      "means": "one monitor sample becomes a 930,000-mile causal distance",
+      "means": "the same paper follows the student's visible work",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 24,
-        "zones": 5,
-        "detail_note": "the embodied rose path stays active through the scale pullback while the faceless UpstreamMonitor and distance chain remain supporting apparatus"
+        "name": "StudentPracticeStair",
+        "parts": 28,
+        "zones": 6,
+        "detail_note": "acting student rig, attempt and correction steps, pencil rail, shortcut chute, hollow cap, competence core and carried diploma"
       }
     },
     {
       "id": "S4",
-      "t": "23.4333-36.7333",
-      "stage": "paired-minute field",
+      "t": "24-37",
+      "stage": "three campus rooms",
       "framing": "map-territory",
-      "scale": "wide",
+      "scale": "extreme-wide",
       "height": "high",
-      "pov": "data-field",
-      "layout": "expanding-grid",
-      "motion_vector": "radial-build",
-      "hero_treatment": "multiplicity-from-one",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "camera": "static:the paired-minute field holds as the bead grid performs the radial build",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landscape-as-subject",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "camera": "riseWith+orbitReveal",
       "stage3d": "planes",
       "centered": true,
-      "means": "discrete pairings expand without implying a continuous record",
+      "means": "one diploma reveals three curriculum rooms",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 24,
-        "zones": 5,
-        "detail_note": "one ribbon becomes a field of paired beads while remaining the bright orientation line"
+        "name": "CampusChoiceRooms",
+        "parts": 32,
+        "zones": 7,
+        "detail_note": "jammed one-rule roller, three spruce-free marigold campus rooms, acting faculty silhouettes, four-notch course switch and shared sheet"
       }
     },
     {
       "id": "S5",
-      "t": "36.7333-46.0333",
-      "stage": "uncertainty corridor",
-      "framing": "macro-closeup",
+      "t": "37-45",
+      "stage": "shared support rail",
+      "framing": "alt-vantage",
       "scale": "close",
-      "height": "eye",
-      "pov": "inside-signal",
-      "layout": "layered-strands",
-      "motion_vector": "horizontal-fray",
-      "hero_treatment": "single-object-transform",
-      "transition_in": "push-in",
+      "height": "ground",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "map-travel",
       "thread": "travel",
-      "camera": "static:the error decomposition holds its measurement axes while the uncertainty fibers fray",
+      "camera": "craneDown+dollyThrough",
       "stage3d": "planes",
       "centered": true,
-      "means": "timing and magnitude uncertainty have different visible mechanics",
+      "means": "the support rail moves underneath rather than through faculty doors",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 32,
-        "zones": 6,
-        "detail_note": "phase echoes, amplitude strands, spatial ghosts, evolution drift and original embodied core"
+        "name": "CouncilSupportRail",
+        "parts": 24,
+        "zones": 5,
+        "detail_note": "systemwide council badge, circulating tool and training cars, shared rail, three guarded curriculum thresholds and moving track bed"
       }
     },
     {
       "id": "S6",
-      "t": "46.0333-54.3667",
-      "stage": "false-ceiling calibration rig",
-      "framing": "alt-vantage",
-      "scale": "medium",
+      "t": "45-57.5",
+      "stage": "paper flip void",
+      "framing": "push-detail",
+      "scale": "insert",
       "height": "eye",
-      "pov": "instrument-cutaway",
-      "layout": "cause-and-effect",
-      "motion_vector": "reweave-build",
-      "hero_treatment": "signal-operates-machine",
-      "transition_in": "match-cut",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "morph",
       "thread": "match",
-      "camera": "craneDown+dollyThrough",
+      "camera": "dollyThrough+orbitReveal",
       "stage3d": "planes",
       "centered": true,
-      "means": "mismatches build the ceiling and calibration re-centers them",
+      "means": "the diploma contour morphs into a decision file",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 32,
+        "name": "DocumentFlipAndDecisionFile",
+        "parts": 26,
         "zones": 6,
-        "detail_note": "frayed fibers visibly caught and re-tensioned by orthogonal calibration teeth"
+        "detail_note": "perspective diploma faces, brass seal, predictive workflow loop, four hidden decision tabs, frozen-clock glimpse and deep paper shadow"
       }
     },
     {
       "id": "S7",
-      "t": "54.3667-62.9667",
-      "stage": "corrected relation release",
-      "framing": "subject-portrait",
-      "scale": "wide",
-      "height": "low",
-      "pov": "graph-as-stage",
-      "layout": "single-object-void",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "signal-as-proof",
-      "transition_in": "hard-cut",
+      "t": "57.5-69",
+      "stage": "consequential oversight gate",
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "overhead",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "assemble",
       "thread": "build",
-      "camera": "static:the observation boundary stays fixed while the solid ribbon stops and the dashed extension appears",
+      "camera": "craneDown+dollyThrough",
       "stage3d": "planes",
       "centered": true,
-      "means": "the apparent ceiling lifts while the solid relation reaches 15",
+      "means": "the transformed file sprouts its four sourced tabs",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 24,
-        "zones": 5,
-        "detail_note": "one recalibrated form-shaded ribbon with physical body and a clean 15 mV/m stop"
+        "name": "OversightGate",
+        "parts": 34,
+        "zones": 7,
+        "detail_note": "consequential file, evaluation lock, oversight lock, acting reviewer, opened ledger, stamp robot and circulating decision path"
       }
     },
     {
       "id": "S8",
-      "t": "62.9667-68.4333",
-      "stage": "evidence boundary test",
-      "framing": "data-panel",
-      "scale": "medium",
+      "t": "69-79",
+      "stage": "human oversight desk",
+      "framing": "two-up",
+      "scale": "wide",
       "height": "eye",
-      "pov": "side-cutaway",
-      "layout": "solid-to-void",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
       "motion_vector": "horizontal-traverse",
-      "hero_treatment": "single-object-material-change",
-      "transition_in": "morph",
-      "thread": "match",
-      "camera": "static:the corrected data panel holds its axes while the fitted curve changes state",
+      "hero_treatment": "single-organic-hero",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "camera": "truckAcross+orbitReveal",
       "stage3d": "planes",
       "centered": true,
-      "means": "the same path becomes extrapolation without swapping heroes",
+      "means": "the human reviewer replaces the rubber stamp with an opened ledger",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 28,
+        "name": "HardWordsBench",
+        "parts": 30,
         "zones": 6,
-        "detail_note": "physical shaded core ends at 15; same path continues hairline, shadowless and dashed"
+        "detail_note": "acting reviewer and stamp robot, EARNED and MEANINGFUL weights, AllowanceBoard-derived empty gauge, question sockets and evidence gate"
       }
     },
     {
       "id": "S9",
-      "t": "68.4333-82.2333",
-      "stage": "claim test and unresolved ceiling",
-      "framing": "two-up",
-      "scale": "wide",
-      "height": "eye",
-      "pov": "evidence-bench",
-      "layout": "tri-slot-then-empty-space",
-      "motion_vector": "lateral-test",
-      "hero_treatment": "claim-cut-from-ribbon",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "camera": "static:the two-up comparison stays registered while the apparent and corrected paths diverge",
+      "t": "79-89.5",
+      "stage": "proposal test and clock chamber",
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "low",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "camera": "dollyThrough",
       "stage3d": "planes",
       "centered": true,
-      "means": "classify approximately two-times and preserve possible later saturation",
+      "means": "strong words boot onto an honest empty gauge",
       "hero": {
-        "name": "SignalRibbon",
+        "name": "PlanTestAndClock",
         "parts": 28,
         "zones": 6,
-        "detail_note": "dashed projection remains attached to the compact claim chip and unresolved physical ceiling"
+        "detail_note": "rolling AI Engaged plan, test gate, glass clock, stopped hand, DRAFT clip and strained clock gears"
       }
     },
     {
       "id": "S10",
-      "t": "82.2333-86.3",
-      "stage": "unresolved beyond-data chamber",
-      "framing": "alt-vantage",
-      "scale": "close",
-      "height": "low",
-      "pov": "true-void-cutaway",
-      "layout": "single-translucent-boundary",
-      "motion_vector": "reveal-slide",
-      "hero_treatment": "signal-facing-unknown",
-      "transition_in": "hard-cut",
+      "t": "89.5-101",
+      "stage": "conditional planning chamber",
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "pov": "exploded-diagram",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "mask-wipe",
       "thread": "build",
-      "camera": "static:the extrapolation boundary remains fixed while the dashed path reaches toward twenty-five",
+      "camera": "craneDown+orbitReveal",
       "stage3d": "planes",
       "centered": true,
-      "means": "separate the correctly classified projection from the unresolved possibility of later physical saturation",
+      "means": "the DRAFT clip wipes into the frozen clock and conditional key",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 28,
+        "name": "ConditionalPlanningClock",
+        "parts": 30,
         "zones": 6,
-        "detail_note": "solid body stops at 15 while dashed fibers face a separate translucent boundary in true void"
+        "detail_note": "IF ADOPTED key, conditional arch, clock chamber, policy and plan stacks, blank evidence ports and warm conditional light"
       }
     },
     {
       "id": "S11",
-      "t": "86.3-97.6",
-      "stage": "flexible AI lattice",
+      "t": "101-105.5",
+      "stage": "Alaska evidence map",
       "framing": "map-territory",
-      "scale": "extreme-wide",
-      "height": "high",
-      "pov": "model-interior",
-      "layout": "nested-nonlinear-field",
-      "motion_vector": "scale-pullback",
-      "hero_treatment": "signal-inside-model",
-      "transition_in": "assemble",
-      "thread": "build",
-      "camera": "static:the AI lattice holds its coordinate frame while inherited bias travels through it",
+      "scale": "medium",
+      "height": "overhead",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "camera": "riseWith+dollyThrough",
       "stage3d": "planes",
       "centered": true,
-      "means": "flexibility follows the biased input but cannot restore it",
+      "means": "conditional plan cards travel into three unanswered evidence gauges",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 24,
-        "zones": 5,
-        "detail_note": "same frayed input stays visible inside a large flexible shadowless lattice"
+        "name": "EvidenceMapAndTwoPromiseDivider",
+        "parts": 28,
+        "zones": 6,
+        "detail_note": "Alaska paper map, three unanswered gauges, OVERSIGHT ledger, separate credential lane, locked divider and campus pulses"
       }
     },
     {
       "id": "S12",
-      "t": "97.6-107.7667",
-      "stage": "model gag to general context",
-      "framing": "wide-establish",
-      "scale": "wide",
-      "height": "eye",
-      "pov": "editorial-stage",
-      "layout": "center-object-orbit",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "signal-returned-unchanged",
+      "t": "105.5-120",
+      "stage": "credential press macro",
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "low",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
       "transition_in": "graphic-match",
       "thread": "match",
-      "camera": "orbitReveal+dollyThrough",
+      "camera": "dollyThrough",
       "stage3d": "planes",
       "centered": true,
-      "means": "one wry model beat gives way to bounded hazard context",
+      "means": "the blank seal matches home and a human closes the press",
       "hero": {
-        "name": "SignalRibbon",
-        "parts": 24,
-        "zones": 5,
-        "detail_note": "unchanged blurred ribbon exits lattice while neutral context icons orbit separately"
-      }
-    },
-    {
-      "id": "S13",
-      "t": "107.7667-114.4333",
-      "stage": "scope-limit plate",
-      "framing": "data-panel",
-      "scale": "medium",
-      "height": "eye",
-      "pov": "evidence-card",
-      "layout": "stacked-limits",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "signal-under-constraint",
-      "transition_in": "hard-cut",
-      "thread": "build",
-      "camera": "static:the falsifier plate stays locked so the counterevidence condition remains readable",
-      "stage3d": "planes",
-      "centered": true,
-      "means": "the Alaska link is authorship and the film is not a forecast or alert",
-      "hero": {
-        "name": "SignalRibbon",
-        "parts": 24,
-        "zones": 5,
-        "detail_note": "subordinate ribbon behind three clear scope plates above caption band"
-      }
-    },
-    {
-      "id": "S14",
-      "t": "114.4333-120.9333",
-      "stage": "boundary split and loop",
-      "framing": "subject-portrait",
-      "scale": "close",
-      "height": "eye",
-      "pov": "material-theater",
-      "layout": "solid-boundary-and-loop",
-      "motion_vector": "curl-loopback",
-      "hero_treatment": "single-continuous-signal",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "camera": "static:the closing evidence boundary holds while the ribbon curls back into the opening pose",
-      "stage3d": "planes",
-      "centered": true,
-      "means": "apparent ceiling moves, evidence boundary stays, and ribbon loops home",
-      "hero": {
-        "name": "SignalRibbon",
-        "parts": 28,
+        "name": "CredentialPressPayoff",
+        "parts": 30,
         "zones": 6,
-        "detail_note": "solid body through 15, dashed fibers beyond, loop curl and opening-pose match"
+        "detail_note": "student work, acting faculty credential examiner, human handle, machine support palm, EARNED die, clipped DRAFT plan and impact spark"
       }
     }
   ],
-  "divergence_note": "This film replaces the previous vertical weather-evidence descent with a horizontal sunward causal corridor, one continuous organic hero, a warm plum and rose palette, and a macro fiber dolly. It has no drone, civic threshold, instrument dial, evidence column, teal, cyan, green, or default Alaska aurora. The projection and unresolved beyond-data counterpoint are separate shots so neither holds beyond the 16-second oner ceiling.",
-  "total_seconds": 120
+  "divergence_note": "This is not September 1's flowing cosmic ribbon or August 30's technical field. It is a warm tactile institutional world built around one mechanical refusal, with paper transformations, three campus rooms, a human review desk, and a conditional clock chamber. The dominant motion changes from continuous signal travel to vertical press impacts and perspective paper flips. The register moves from spatial science schematic to collegiate collage, and the hero changes from an energy ribbon to a characterized credential press."
 }

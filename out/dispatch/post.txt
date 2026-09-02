@@ -1,15 +1,17 @@
-A ceiling in space weather may have been hiding in the measurement.
+A diploma should still mean somebody earned it. That remains true even when AI helped along the way.
 
-A new Nature study led by physicist Nithin Sivadas, with UAF coauthor Doğacan Öztürk, revisited how solar wind observations are matched with polar cap responses. The team used one-minute data from 1995 through 2019 and modeled uncertainty in arrival time, strength, location and evolution.
+The University of Alaska Board is discussing AI Engaged today. It is still a draft, and that distinction matters.
 
-Those mismatches alone could draw a curve that looked like the response had saturated. After the uncertainty was calibrated, the average relation stayed linear through the observed limit of 15 millivolts per meter.
+The proposal says UA credentials should continue to certify competence a student earned. It also leaves curriculum judgment with UAA plus UAF and UAS. Faculty could set AI rules ranging from required to excluded based on course objectives.
 
-That changes the argument without erasing the boundary. Evidence stops at 15. Near 25 the projected geomagnetic response is roughly twice the older saturated estimate. That figure is extrapolated rather than observed. It does not mean doubled damage. Physical saturation could still appear beyond the data.
+That is the right starting point. AI can widen access and support practice. It can give faculty better tools. The credential still has to represent the work and judgment of the person whose name is on it.
 
-The larger lesson is about models. A more flexible fit can follow a biased curve with impressive precision while recovering none of the information the measurement blurred. No operational AI forecast was tested in this study.
+The same standard gets sharper when AI influences consequential decisions. For predictive systems affecting admissions or financial aid as well as advising and HR analytics the draft calls for documented evaluation and meaningful human oversight.
 
-Space weather can affect grids, GPS, aircraft and satellites. This result is not a forecast or current alert and it does not use an Alaska data set.
+Those words sound strong. They are not measurements. A serious implementation needs to define who can stop a system. It needs an evidence standard and a way for a student to challenge a result.
 
-Where else are we treating a measurement boundary as a boundary in the world?
+If adopted, institutions would get one year to build policies and plans. The clock has not started. A separate budget request should not be mistaken for funding this framework.
 
-#AlaskaAI #SpaceWeather #ArtificialIntelligence #DataScience
+What evidence would make you trust that AI helped a student learn without weakening what the diploma certifies?
+
+#AlaskaAI #HigherEducation #AIGovernance #ResponsibleAI

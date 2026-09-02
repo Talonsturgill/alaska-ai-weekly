@@ -155,7 +155,7 @@ TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band
 # fixed evidence boundary), S14 L18 (button and loopback). The original combined
 # projection/counterpoint shot held 17.9 seconds, beyond the 16-second oner ceiling,
 # so the unresolved physical-saturation counterpoint opens its own shot at L12.
-SCENE_START_LINE = [0, 1, 2, 3, 5, 6, 8, 9, 11, 12, 13, 15, 16, 18]
+SCENE_START_LINE = [0, 2, 3, 5, 7, 8, 10, 12, 15, 17, 18, 19]
 
 
 def _apply_caption_fixups(caps):

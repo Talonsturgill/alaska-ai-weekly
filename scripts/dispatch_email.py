@@ -314,13 +314,32 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
                   'next to your caption. The 9:16 is TikTok-native, and uploaded to LinkedIn it gets pulled into the '
                   'swipe-only Video tab instead of the feed.</div>') if vids.get("square") else ''
     warn = f'<div class="warn" style="{S["warn"]}">Heads up: these download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
-    score_html = (f'<div style="{S["foot"]}"><b>Delivery check</b> &middot; {esc(score)}</div>'
-                  if score else "")
-    # "Upgrades shipped this run" — Phase 8 makes fixes on the spot and reports what it DID here
-    # (one bullet per line of --upgrades). A run that self-improved should say so.
-    up_items = "\n".join(f"<li>{ln.strip().lstrip('-').strip()}</li>"
-                         for ln in (upgrades or "").splitlines() if ln.strip())
-    upgrades_html = ""
+    # Keep the required scorecard and Phase 8 fixes together in one quiet, compact block. The
+    # earlier large green upgrades panel competed with the actual deliverable in Gmail, and the
+    # first simplification overcorrected by hiding the upgrades entirely. This section preserves
+    # the authoritative routine's audit trail without turning the draft into a run report.
+    up_items = "\n".join(
+        f'<li style="margin:5px 0;color:#344957;">{esc(ln.strip().lstrip("-").strip())}</li>'
+        for ln in (upgrades or "").splitlines() if ln.strip()
+    )
+    run_notes_parts = []
+    if score:
+        run_notes_parts.append(
+            f'<div style="font-size:13px;line-height:1.5;color:#24543a;"><b>Delivery check</b> '
+            f'&middot; {esc(score)}</div>'
+        )
+    if up_items:
+        run_notes_parts.append(
+            f'<div style="font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;'
+            f'color:#65757f;margin-top:{"10px" if score else "0"};">Upgrades shipped this run</div>'
+            f'<ul style="margin:5px 0 0;padding-left:19px;font-size:12.5px;line-height:1.45;">'
+            f'{up_items}</ul>'
+        )
+    run_notes_html = (
+        f'<h2 style="{S["h2"]}">Run notes</h2>'
+        f'<div style="{S["score"]}">{"".join(run_notes_parts)}</div>'
+        if run_notes_parts else ""
+    )
     post_html = esc(post).replace("\n", "<br>")
     comment_html = comment_text.replace("\n", "<br>")
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body style="{S['body']}">
@@ -340,8 +359,7 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
   <h2 style="{S['h2']}">First comment &middot; sources</h2>
   <div class="post" style="{S['copy']}">{comment_html}</div>
 
-  {score_html}
-  {upgrades_html}
+  {run_notes_html}
   <div class="foot" style="{S['foot']}">Draft only &middot; not sent or posted. {esc(note)}</div>
 </div></body></html>"""
 

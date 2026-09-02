@@ -1,38 +1,42 @@
 {
-  "run_date": "2026-09-01",
-  "story_id": "solar-storm-false-ceiling",
-  "thesis": "Measurement uncertainty can make a model learn a physical ceiling that the evidence pipeline drew, and a UAF-coauthored Nature study shows why more flexible AI won't fix that by itself.",
-  "falsifier": "Independent, materially lower-uncertainty observations near the magnetospheric driver still show saturation through 15 mV/m after the same bias correction.",
+  "run_date": "2026-09-02",
+  "story_id": "ua-ai-engaged-draft",
+  "thesis": "The University of Alaska's draft draws its most consequential AI boundary at the meaning of a diploma: AI may assist, but the credential must still certify competence the student earned, while consequential AI decisions remain subject to documented evaluation and meaningful human oversight.",
+  "falsifier": "The angle fails if a final adopted statement removes the earned-competence pledge or the requirement for documented evaluation and meaningful human oversight. Even if adopted, it fails in practice if the one-year work produces paperwork without evidence that learning, oversight, and accountability improved.",
   "supporting_facts": [
     {
-      "claims": ["c4", "c5"],
-      "fact": "Timing and magnitude uncertainty can blur the cause-response match, and the authors reproduced the observed saturation-like curve with that mechanism."
-    },
-    {
-      "claims": ["c6"],
-      "fact": "After calibration, the average relationship stayed linear through the data-supported limit of 15 mV/m."
-    },
-    {
       "claims": ["c9"],
-      "fact": "The authors explicitly warn that nonlinear AI and machine-learning regressions may inherit analogous measurement-error bias."
+      "fact": "The draft says a UA credential will continue to certify competence the student has earned."
+    },
+    {
+      "claims": ["c8"],
+      "fact": "For analytical or predictive AI affecting student progress or business operations, the draft calls for documented evaluation and meaningful human oversight."
+    },
+    {
+      "claims": ["c6", "c7"],
+      "fact": "UAA, UAF, and UAS retain curriculum decisions, and faculty may require, encourage, limit, or exclude AI according to course objectives."
+    },
+    {
+      "claims": ["c5"],
+      "fact": "Only if the draft is adopted would institutions have one year to create policies and plans aligned with the framework."
     }
   ],
-  "fair_counterpoint": "The paper tested no operational AI forecast. It can't establish the physical response beyond 15 mV/m, and its roughly twofold response near 25 mV/m is an extrapolation rather than an observed storm or doubled damage.",
-  "who_it_serves": "Alaska researchers, utilities, aviation and satellite-dependent operators, emergency planners, and public agencies evaluating models built from physical sensor data.",
-  "valence": "Curious and wonder-forward. Celebrate the correction as useful science while letting the same evidence discipline restrain the corrected model's most dramatic extrapolation.",
+  "fair_counterpoint": "These are promises, not controls yet. The draft does not define an earned-competence metric, the authority a human reviewer must possess, an appeal path, or the evidence that would distinguish meaningful oversight from a rubber stamp.",
+  "who_it_serves": "Students and families across UAA, UAF, and UAS; Alaska employers who rely on a UA credential; faculty protecting disciplinary standards; and people affected by AI-assisted admissions, aid, advising, or HR analysis.",
+  "valence": "Constructive and exacting. Treat the draft as a serious public-trust promise, make its safeguards legible, and end on the evidence test that would make the promise real.",
   "second_movement": {
-    "recontextualizing_fact": "The Wind spacecraft observes upstream. The information can change before it meets Earth's magnetic shield, so the breakthrough begins with what was never directly observed at the response point.",
-    "test": "The available correction removes statistical evidence for a ceiling only through 15 mV/m. A future stronger event or better-positioned measurements could still reveal physical saturation. The headline twofold response lies outside the supported range."
+    "recontextualizing_fact": "The same human judgment the draft protects at the diploma also appears at the institutional decision desk, where admissions, financial aid, advising, and HR analytics are named examples of consequential use.",
+    "test": "If adopted, the one-year clock should yield visible policies, evaluated systems, meaningful human ownership, and evidence that instructional uses deepen durable learning rather than simply increase tool activity."
   },
   "runner_up_angles": [
     {
-      "angle": "Constructive Alaska preparedness",
-      "why_it_lost": "NOAA establishes general hazards and Öztürk raises preparedness, but the record contains no Alaska hazard estimate, local operator response, or quantified infrastructure consequence."
+      "angle": "Share the expensive plumbing; keep judgment in the classroom",
+      "why_it_lost": "Shared infrastructure and faculty authority are source-supported, but plumbing is an implementation mechanism, not the human consequence. It also risks implying one uniform academic policy."
     },
     {
-      "angle": "Evidence-pipeline procurement discipline",
-      "why_it_lost": "Actionable but too normative. The source pack contains no Alaska procurement practice or operational model audit, so the policy prescription would become a second unsupported story."
+      "angle": "The separate $300,000 automation request is the first test",
+      "why_it_lost": "The FY28 request is a separate agenda item with no documented link to AI Engaged. Making it the thesis would manufacture a funding connection."
     }
   ],
-  "room_result": "Two of three cross-challenges selected the wonder-forward thesis. The dissent preferred the evidence-pipeline frame but agreed the film must lead with the scientific achievement and must disclose that AI was not tested and the twofold response was extrapolated."
+  "room_result": "Four independent angle passes converged on the earned-diploma and human-accountability thesis. Cross-challenge retained shared system supports as a mechanism, rejected the separate budget request as a framework proxy, and made the DRAFT and IF ADOPTED qualifiers load-bearing."
 }

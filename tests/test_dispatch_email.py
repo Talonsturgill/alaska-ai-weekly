@@ -20,7 +20,7 @@ class DispatchEmailRenderingTest(unittest.TestCase):
             False,
             "2026-09-01",
             "The Ceiling Was in the Measurement",
-            "Gmail-safe rendering",
+            "Gmail-safe rendering\nEscaped <upgrade>",
         )
 
         self.assertIn('<body style="', html)
@@ -30,7 +30,10 @@ class DispatchEmailRenderingTest(unittest.TestCase):
         self.assertIn('First &lt;claim&gt;.<br><br>Second &amp; final paragraph.', html)
         self.assertIn('font-family:Arial,Helvetica,sans-serif', html)
         self.assertNotIn('width="240"', html)
-        self.assertNotIn('Upgrades shipped this run', html)
+        self.assertIn('Run notes', html)
+        self.assertIn('Upgrades shipped this run', html)
+        self.assertIn('Gmail-safe rendering', html)
+        self.assertIn('Escaped &lt;upgrade&gt;', html)
         self.assertNotIn('Sources (clickable reference)', html)
 
 

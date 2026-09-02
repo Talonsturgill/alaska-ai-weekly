@@ -1,5 +1,12 @@
 # Cast & Asset Manifest — Alaska.Ai Dispatch engine
 
+## Grown 2026-09-02 ("The Diploma Still Has to Be Earned")
+
+- `DiplomaPress` — `lib/credentials.tsx` — reusable characterized credential press with machine-support and human-examiner handles, parameterized seal state, DRAFT tag, dimensional die travel, anticipation/brake/impact behavior, and a carried scalloped `QuestionToken`. Built for credential, permitting, records, licensing, and approval stories. ACTIVE.
+- `QuestionToken` — `lib/credentials.tsx` — reusable scalloped brass throughline token whose engraved copy can change without changing its silhouette. It preserves object continuity across abstract governance scenes. ACTIVE.
+- `StampBot` — `lib/credentials.tsx` — small supporting rubber-stamp character with rejection recoil; never the default AI hero. ACTIVE.
+- `DocumentFlip` + `documentFlip(progress)` — `lib/credentials.tsx` — the run's craft-system advance: a long-edge paper transition with minus-eight-degree anticipation, foreshortened edge phase, 102-degree overshoot, 90-degree settle, contact-shadow squash, optional four-tab disclosure, and carried token. ACTIVE.
+
 The living inventory of everything the Dispatch video engine can draw. **Every run
 reads this FIRST and CASTS from this shelf by default** — reuse with fresh staging is
 the point of the library (see the library mandate, `prompts/dispatch_routine.md` §4.3a,

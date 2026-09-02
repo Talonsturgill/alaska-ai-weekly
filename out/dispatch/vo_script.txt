@@ -1,19 +1,20 @@
-What if a ceiling in space was really a blur in the measuring tape?
-Physicist Nithin Sivadas led a Nature study with U A F coauthor Doğacan Öztürk.
-Today, NASA's Wind spacecraft orbits L one, nine hundred thirty thousand miles sunward.
-The team paired one minute solar wind observations with polar cap responses from nineteen ninety five through twenty nineteen.
-But the signal changes on its trip.
-Uncertainty in arrival time, strength, location, and evolution can blur the match between cause and response.
-Simulate those mismatches, and a saturated-looking curve appears.
-So the researchers calibrated the uncertainty.
-The corrected average relation rose linearly through the observed limit of fifteen millivolts per meter.
-Then comes the test.
-Evidence stops at fifteen.
-Near twenty five, projected geomagnetic response reaches roughly twice the older saturated estimate. But that is extrapolated, not observed, and not doubled damage.
-Physical saturation could still appear beyond the data.
-And no operational A I forecast was tested.
-A flexible model can fit the biased curve, but can't recover information the measurement blurred.
-Space weather can affect grids, G P S, aircraft, and satellites. But this is no forecast, current alert, or Alaska data set.
-The apparent ceiling moved.
-The evidence boundary did not.
-A model can follow the ribbon. It can't restore what the measurement lost.
+An automatic press targets a U A diploma. One question stops it. Who earned this?
+AI Engaged is a draft the Board discusses today.
+It proposes six principles, four priorities from classrooms to Arctic research, and five expectations including literacy, security, and oversight.
+But tools should deepen learning, not replace the effort that builds competence.
+So a U A credential would certify what the student earned.
+And one framework would not mean one classroom rule.
+U A A, U A F, and U A S keep curriculum judgment. Faculty choose AI by course.
+A coordinating council would share tools and training.
+Then the diploma flips into a second trust test.
+The draft addresses predictive AI affecting student progress or business operations.
+Examples include admissions, financial aid, advising, and H R analytics.
+Those uses would need documented evaluation and meaningful human oversight.
+Strong words. But meaningful and earned are not measurements.
+It defines neither, nor a reviewer's power.
+So the plan must survive its own test.
+A twelve-month clock waits behind glass.
+Still a draft. Clock stopped. Separate budget.
+If adopted, institutions get one year to build policies and plans.
+Then Alaska gets evidence. Did AI deepen learning? Did oversight matter? Does the diploma still mean what it says?
+The machine can help. A human pulls the press.

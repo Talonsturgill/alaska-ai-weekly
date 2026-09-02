@@ -1,47 +1,61 @@
 {
-  "run_date": "2026-09-01",
-  "title": "The Ceiling Was in the Measurement",
+  "run_date": "2026-09-02",
+  "title": "The Diploma Still Has to Be Earned",
+  "sourcing_note": "Every governance claim describes a draft. The $300,000 item is a separate preliminary FY28 request and is not earmarked to AI Engaged in the posted packet.",
   "sources": [
     {
       "id": "s1",
-      "title": "Nature, Uncertainty-induced bias in the estimation of geomagnetic response to extreme solar wind, July 15, 2026",
-      "url": "https://www.nature.com/articles/s41586-026-10757-4",
-      "claims": ["c1", "c2", "c4", "c5", "c6", "c7", "c9", "c11", "c12", "c13", "c14"],
+      "title": "University of Alaska, September 2026 Board of Regents meeting preview, September 1, 2026",
+      "outlet": "University of Alaska",
+      "url": "https://www.alaska.edu/opa/enews/2026/0901/",
+      "claims": ["c1"],
       "used_in_film": true,
-      "note": "Open peer-reviewed primary paper. The approximately twofold response is an extrapolation outside the data-supported range."
+      "note": "Official institutional preview. It says Ben Shier will discuss AI Engaged during the September 2nd to 3rd meeting."
     },
     {
       "id": "s2",
-      "title": "University of Alaska Fairbanks, Extreme solar storms can hit Earth harder than thought, August 28, 2026",
-      "url": "https://www.uaf.edu/news/extreme-solar-storms-can-hit-earth-harder-than-thought.php",
-      "urls": ["https://www.uaf.edu/news/extreme-solar-storms-can-hit-earth-harder-than-thought.php", "https://www.nature.com/articles/s41586-026-10757-4"],
-      "claims": ["c1", "c8"],
+      "title": "University of Alaska Board of Regents full meeting page, September 2 to 3, 2026",
+      "outlet": "University of Alaska Board of Regents",
+      "url": "https://pub-alaska.escribemeetings.com/Meeting.aspx?Id=67f56e6e-7e7c-4de6-930e-eef44503d180&Agenda=Agenda&lang=English",
+      "claims": ["c1"],
       "used_in_film": true,
-      "note": "Primary institutional release for the Alaska publication hook and the coauthor's interpretation."
+      "note": "Official agenda. AI Engaged appears under Updates and Presentations with no posted adoption motion."
     },
     {
       "id": "s3",
-      "title": "NASA Science, Wind mission",
-      "url": "https://science.nasa.gov/mission/wind/",
-      "claims": ["c3", "c15"],
+      "title": "AI Engaged draft statement, Draft 2026",
+      "outlet": "University of Alaska Board of Regents",
+      "url": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
+      "claims": ["c1", "c2", "c3", "c6", "c9", "c10", "c14", "c15"],
       "used_in_film": true,
-      "note": "Authoritative mission history. Wind reached its continuing L1 halo orbit after earlier orbital phases."
+      "note": "Primary draft statement. Nothing in the posted record establishes adoption."
     },
     {
       "id": "s4",
-      "title": "NOAA Space Weather Prediction Center, NOAA Space Weather Scales",
-      "url": "https://www.spaceweather.gov/noaa-scales-explanation",
-      "claims": ["c10"],
+      "title": "AI Engaged implementation summary, Draft 2026",
+      "outlet": "University of Alaska Board of Regents",
+      "url": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518",
+      "claims": ["c4", "c5", "c7", "c8", "c16", "c17"],
       "used_in_film": true,
-      "note": "Authoritative background for general geomagnetic-storm effect categories. It does not quantify consequences from the Nature paper."
+      "note": "Primary implementation summary. The one-year clock begins only after adoption or approval."
     },
     {
       "id": "s5",
-      "title": "U.S. Geological Survey, Magnetic Storms and Geoelectric Hazards, February 24, 2026",
-      "url": "https://www.usgs.gov/publications/magnetic-storms-and-geoelectric-hazards",
-      "claims": [],
+      "title": "Initial FY28 operating budget request, September 2026",
+      "outlet": "University of Alaska Board of Regents",
+      "url": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=519",
+      "claims": ["c11", "c13"],
       "used_in_film": false,
-      "note": "Audit reference showing that grid hazard also depends on subsurface conductivity and grid configuration."
+      "note": "Primary preliminary budget document. The $300,000 request includes AI and process automation and will be refined before November."
+    },
+    {
+      "id": "s6",
+      "title": "University of Alaska Board of Regents full agenda package, September 2 to 3, 2026",
+      "outlet": "University of Alaska Board of Regents",
+      "url": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=501",
+      "claims": ["c12"],
+      "used_in_film": false,
+      "note": "Primary combined package showing AI Engaged and the budget request as separate agenda items."
     }
   ]
 }
