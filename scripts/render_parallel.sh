@@ -58,12 +58,32 @@ fi
 # A render is exclusive by nature, so say so rather than trusting the caller to have
 # checked. flock releases automatically if the holder is killed, so a crashed run does not
 # leave a lock nobody can clear.
-exec 200>"${TMPDIR:-/tmp}/alaska-dispatch-render.lock"
-if ! flock -n 200; then
-  echo "render_parallel.sh: another render is already running (lock held)." >&2
-  echo "Wait for it, or kill it, before starting a second one. Two concurrent renders" >&2
-  echo "contend for CPU and clobber each other's chunk files." >&2
-  exit 3
+LOCK_DIR=""
+WORK=""
+cleanup() {
+  if [ -n "$WORK" ]; then rm -rf "$WORK"; fi
+  if [ -n "$LOCK_DIR" ]; then rmdir "$LOCK_DIR" 2>/dev/null || true; fi
+}
+trap cleanup EXIT
+if command -v flock >/dev/null 2>&1; then
+  exec 200>"${TMPDIR:-/tmp}/alaska-dispatch-render.lock"
+  if ! flock -n 200; then
+    echo "render_parallel.sh: another render is already running (lock held)." >&2
+    echo "Wait for it, or kill it, before starting a second one. Two concurrent renders" >&2
+    echo "contend for CPU and clobber each other's chunk files." >&2
+    exit 3
+  fi
+else
+  # macOS does not ship the Linux flock command. An atomic lock directory gives the same
+  # one-render-at-a-time guarantee without requiring a package install. It is removed by the
+  # EXIT trap below; a stale directory is therefore evidence of an unclean kill and is named
+  # plainly instead of being misreported as a missing command.
+  LOCK_DIR="${TMPDIR:-/tmp}/alaska-dispatch-render.lockdir"
+  if ! mkdir "$LOCK_DIR" 2>/dev/null; then
+    echo "render_parallel.sh: another render is already running (lock directory held: $LOCK_DIR)." >&2
+    echo "If no renderer process exists, remove that stale lock directory and retry." >&2
+    exit 3
+  fi
 fi
 
 # A SOURCE EDIT DURING A RENDER PRODUCES A MIXED FILM, AND NOTHING DOWNSTREAM CAN SEE IT
@@ -81,8 +101,13 @@ fi
 # changing a pixel - which is exactly what happened the day this was written, when a render
 # was killed on an mtime alone and the edit turned out to be a comment.
 _src_fingerprint() {
-  find video-engine/src -name '*.tsx' -o -name '*.ts' 2>/dev/null \
-    | sort | xargs stat -c '%n %Y %s' 2>/dev/null | sha256sum | cut -c1-16
+  if stat -c '%n %Y %s' video-engine/src/index.ts >/dev/null 2>&1; then
+    find video-engine/src \( -name '*.tsx' -o -name '*.ts' \) -print 2>/dev/null \
+      | sort | xargs stat -c '%n %Y %s' | sha256sum | cut -c1-16
+  else
+    find video-engine/src \( -name '*.tsx' -o -name '*.ts' \) -print 2>/dev/null \
+      | sort | xargs stat -f '%N %m %z' | sha256sum | cut -c1-16
+  fi
 }
 SRC_BEFORE="$(_src_fingerprint)"
 
@@ -154,6 +179,13 @@ SLOTS="${SLOTS:-4}"
 # failure: cap the attempt, then retry the chunk from scratch.
 CHUNK_TIMEOUT="${CHUNK_TIMEOUT:-420}"
 TRIES="${TRIES:-3}"
+if command -v timeout >/dev/null 2>&1; then
+  TIMEOUT_CMD=(timeout -k 15 "$CHUNK_TIMEOUT")
+elif command -v gtimeout >/dev/null 2>&1; then
+  TIMEOUT_CMD=(gtimeout -k 15 "$CHUNK_TIMEOUT")
+else
+  TIMEOUT_CMD=(python3 "$PWD/scripts/run_with_timeout.py" --timeout "$CHUNK_TIMEOUT" --kill-after 15 --)
+fi
 
 # total frames: from episode_props.json unless the caller states it
 TOTAL="${3:-}"
@@ -163,7 +195,6 @@ fi
 
 case "$OUT" in /*) ABS_OUT="$OUT";; *) ABS_OUT="$PWD/$OUT";; esac
 WORK="$(mktemp -d)"
-trap 'rm -rf "$WORK"' EXIT
 
 # CHUNK CACHE, KEYED ON CONTENT (2026-08-09). This routine box restarted twice in one run and
 # each restart killed a render mid-flight, costing ~25 minutes of work that had already been
@@ -209,7 +240,7 @@ render_chunk() {
     return 0
   fi
   while [ "$attempt" -le "$TRIES" ]; do
-    ( cd video-engine && timeout -k 15 "$CHUNK_TIMEOUT" \
+    ( cd video-engine && "${TIMEOUT_CMD[@]}" \
         npx remotion render src/index.ts "$COMP" "$WORK/c$i.mp4" \
         --props="../$PROPS" --codec=h264 --muted --concurrency=1 --crf=19 \
         --frames="$A-$B" ) >"$WORK/c$i.attempt$attempt.log" 2>&1 || true
@@ -229,7 +260,31 @@ render_chunk() {
 
 PER=$(( (TOTAL + CHUNKS - 1) / CHUNKS ))
 LIST="$WORK/list.txt"; : > "$LIST"
-FAIL=0; RUNNING=0
+FAIL=0
+PIDS=()
+
+# Bash 3.2 ships on macOS and does not implement `wait -n`. Polling only the exact child PIDs
+# preserves the dynamic work queue on both old Bash and modern Linux shells, while `wait` still
+# collects the real exit status once a child finishes.
+wait_one_child() {
+  local idx pid
+  while true; do
+    for idx in "${!PIDS[@]}"; do
+      pid="${PIDS[$idx]}"
+      if ! kill -0 "$pid" 2>/dev/null; then
+        wait "$pid" || FAIL=1
+        unset 'PIDS[idx]'
+        if [ -n "${PIDS[*]-}" ]; then
+          PIDS=("${PIDS[@]}")
+        else
+          PIDS=()
+        fi
+        return
+      fi
+    done
+    sleep 0.2
+  done
+}
 
 for i in $(seq 0 $((CHUNKS - 1))); do
   A=$(( i * PER ))
@@ -238,20 +293,18 @@ for i in $(seq 0 $((CHUNKS - 1))); do
   [ "$A" -gt "$B" ] && continue
   echo "  chunk $i: frames $A-$B"
   render_chunk "$i" "$A" "$B" &
+  PIDS+=("$!")
   echo "file '$WORK/c$i.mp4'" >> "$LIST"
-  RUNNING=$(( RUNNING + 1 ))
   # THE WORK QUEUE. Hold at most SLOTS renders in flight and start the next chunk the
   # moment any one of them finishes, so a slow chunk overlaps with fast ones instead of
   # holding the whole render open on its own.
-  if [ "$RUNNING" -ge "$SLOTS" ]; then
-    wait -n || FAIL=1
-    RUNNING=$(( RUNNING - 1 ))
+  if [ "${#PIDS[@]}" -ge "$SLOTS" ]; then
+    wait_one_child
   fi
 done
 
-while [ "$RUNNING" -gt 0 ]; do
-  wait -n || FAIL=1
-  RUNNING=$(( RUNNING - 1 ))
+while [ -n "${PIDS[*]-}" ]; do
+  wait_one_child
 done
 if [ "$FAIL" -ne 0 ]; then
   echo "a chunk failed; logs in $WORK" >&2
