@@ -44,9 +44,13 @@ const Student:React.FC<{f:number;x:number;y:number;climb?:number;point?:number;c
   return <g transform={`translate(${x} ${y+bob})`}><ellipse cx={0} cy={126} rx={68} ry={15} fill={INK} opacity={0.24}/><circle cy={-118} r={48} fill="#d9a37c" stroke={INK} strokeWidth={9}/><path d="M-38,-130 Q0,-166 40,-126" fill={OXBLOOD} stroke={INK} strokeWidth={9}/><circle cx={-16} cy={-112} r={5} fill={INK}/><circle cx={16} cy={-112} r={5} fill={INK}/><path d="M-20,-88 Q0,-75 20,-88" fill="none" stroke={INK} strokeWidth={6}/><rect x={-58} y={-68} width={116} height={150} rx={38} fill={color} stroke={INK} strokeWidth={10}/><path d={`M-43,65 L${-48-leg},130 M43,65 L${48+leg},130`} stroke={INK} strokeWidth={25} strokeLinecap="round"/><path d={`M-48,-42 L${-112-55*point},${20-55*point} M48,-42 L${105+72*point},${5-62*point}`} stroke="#d9a37c" strokeWidth={23} strokeLinecap="round"/></g>;
 };
 
-const S1:React.FC<SceneProps>=(p)=>{const f=useCurrentFrame();const hit=springy(prog(f,0,25));const draft=ease(prog(f,56,86));return <World f={f} dur={p.dur} dark warm={0.25}>
+const S1:React.FC<SceneProps>=(p)=>{const f=useCurrentFrame();const hit=springy(prog(f,0,25));const draft=ease(prog(f,56,86));const review=springy(prog(f,120,154));return <World f={f} dur={p.dur} dark warm={0.25}>
   <g transform="translate(540 630)"><DiplomaPress f={f} x={0} y={0} scale={1.08} pull={hit*0.82} brake={hit} draft={draft>0.2}/></g>
   <g transform={`translate(${540+420*(1-hit)} ${245-120*(1-hit)})`}><QuestionToken scale={0.62+0.22*hit} rot={-12+12*hit} glow={hit}/></g>
+  <g opacity={review} transform={`translate(540 ${865-235*(1-review)}) rotate(${-8+8*review})`}>
+    <rect x={-250} y={-58} width={500} height={116} rx={18} fill={OXBLOOD} stroke={INK} strokeWidth={11}/>
+    <text y={18} textAnchor="middle" fontFamily={BOLD} fontSize={42} fontWeight={900} fill={PAPER}>DRAFT UNDER REVIEW</text>
+  </g>
   <Plate y={1085} text="WHO EARNED THIS?" tone="gold"/><Plate y={1198} text="AI ENGAGED · DRAFT 2026" sub="BOARD DISCUSSION · SEPTEMBER 2" tone="ox"/>
 </World>};
 

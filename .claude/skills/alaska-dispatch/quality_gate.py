@@ -328,10 +328,19 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
         _aa=(json.load(open(_sbp)).get("audio_arc") or {}) if os.path.exists(_sbp) else {}
     except Exception:
         _aa={}
-    if _aa.get("silence_at") is not None:
+    # dispatch_mix.py fits the dip into a measured VO gap, so the performed time can differ
+    # from the storyboard's planned time. Prefer the mix ledger, which names the audio that is
+    # actually on disk; falling back to the board preserves compatibility with older episodes.
+    try:
+        _mix_meta=json.load(open(os.path.join(base,"audio","sfx_events.json")))
+        _performed_silence=_mix_meta.get("silence_dip_at")
+    except Exception:
+        _performed_silence=None
+    _silence_at=_performed_silence if _performed_silence is not None else _aa.get("silence_at")
+    if _silence_at is not None:
         try:
             from scipy.io import wavfile as _wf
-            _t0=float(_aa["silence_at"]); _sr,_wav=_wf.read(os.path.join(base,"audio","master60.wav"))
+            _t0=float(_silence_at); _sr,_wav=_wf.read(os.path.join(base,"audio","master60.wav"))
             _wav=_wav.astype(np.float32); _wav=_wav.mean(1) if _wav.ndim>1 else _wav
             def _rms(a,b):
                 seg=_wav[max(0,int(a*_sr)):int(b*_sr)]
