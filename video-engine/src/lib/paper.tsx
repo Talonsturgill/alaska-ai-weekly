@@ -312,21 +312,56 @@ export const StateLetter: React.FC<{
   );
 };
 
+export type TapeTransport = 'running' | 'paused';
+
+/** Twelve frames of braking at the engine's 30 fps, then an exact phase hold. */
+export const TAPE_BRAKE_FRAMES = 12;
+
+/**
+ * Pure, seek-safe transport: f and pausedAt must share the same frame clock.
+ * pausedAt is the START of braking, not a scene-local elapsed time. The integral
+ * of cubic ease-out velocity preserves position and velocity at the switch and
+ * reaches zero velocity without reversing or snapping either reel. The final
+ * phase includes braking travel. Keep fill fixed across a pause (capacity is not
+ * recording state). An explicit pause without pausedAt parks at phase zero.
+ */
+export const tapeReelPhase = (
+  f: number, fill = 0, transport?: TapeTransport, pausedAt?: number,
+): number => {
+  const k = Math.max(0, Math.min(1, fill));
+  const speed = 5.5 - k * 4.6;
+  // Preserve the original frame-to-phase calculation, including capacity seizure.
+  if (transport === undefined) return k >= 0.995 ? 0 : (f * speed) % 360;
+  if (transport === 'running') return (f * speed) % 360;
+  if (pausedAt === undefined) return 0;
+  if (f <= pausedAt) return (f * speed) % 360;
+  const u = Math.min(1, (f - pausedAt) / TAPE_BRAKE_FRAMES);
+  const coast = TAPE_BRAKE_FRAMES * (1 - Math.pow(1 - u, 4)) / 4;
+  return ((pausedAt + coast) * speed) % 360;
+};
+
 /**
  * FullTapeMachine — the answering machine that carries the whole 3,048 count.
  * The count is made felt against a KNOWN OBJECT WITH FIXED CAPACITY rather than
  * as a ratio, which is how this film honours the ban on dividing 200 into 15,200.
- * `fill` 0..1 fills the tape; at 1 the reels seize and the FULL tag springs up.
+ * Legacy: `fill` 0..1 fills the tape; at 1 reels seize and FULL springs up.
+ * Explicit transport controls rotation independently; FULL still means capacity,
+ * never pause. f/pausedAt share one frame clock. Omit pausedAt for initially OFF.
+ * A paused reel retains its tape and phase; no deletion is depicted.
  */
 export const FullTapeMachine: React.FC<{
   f: number; x: number; y: number; scale?: number; fill?: number;
-}> = ({f, x, y, scale = 1, fill = 0}) => {
-  const t = tones(PAPER.hero);
+  transport?: TapeTransport; pausedAt?: number;
+  bodyColor?: string; accentColor?: string;
+}> = ({f, x, y, scale = 1, fill = 0, transport, pausedAt, bodyColor = PAPER.hero, accentColor}) => {
+  const t = tones(bodyColor);
   const v = vitals(f, 3.0, 0.6);
   const k = Math.max(0, Math.min(1, fill));
   const seized = k >= 0.995;
-  const spin = seized ? 0 : (f * (5.5 - k * 4.6)) % 360;
-  const id = `ftm${Math.round(x)}`;
+  const spin = tapeReelPhase(f, fill, transport, pausedAt);
+  const paused = transport === 'paused' && (pausedAt === undefined || f >= pausedAt);
+  // Coordinate-derived ids collide in the YES/NO diptych and change during travel.
+  const id = `ftm-${React.useId().replace(/:/g, '')}`;
   const tag = seized ? Math.min(1, (f % 90) / 8) : 0;
   return (
     <g transform={`translate(${x},${y + v.bob * 0.6}) scale(${scale})`}>
@@ -339,7 +374,7 @@ export const FullTapeMachine: React.FC<{
         <g key={cx} transform={`translate(${cx},4) rotate(${spin * (i ? -1 : 1)})`}>
           <circle r={54} fill={t.shade} stroke={INK} strokeWidth={4} />
           <circle r={16 + 34 * (i ? 1 - k : k)} fill={PAPER.ink} opacity={0.72} />
-          <circle r={13} fill={PAPER.brass} stroke={INK} strokeWidth={3} />
+          <circle r={13} fill={accentColor ?? PAPER.brass} stroke={INK} strokeWidth={3} />
           {[0, 60, 120, 180, 240, 300].map((a) => (
             <line key={a} x1={0} y1={0} x2={Math.cos((a * Math.PI) / 180) * 50}
                   y2={Math.sin((a * Math.PI) / 180) * 50} stroke={INK} strokeWidth={2.2} opacity={0.5} />
@@ -350,7 +385,7 @@ export const FullTapeMachine: React.FC<{
       {[-30, -18, -6, 6, 18, 30].map((yy) => (
         <line key={yy} x1={-16} y1={yy} x2={16} y2={yy} stroke={INK} strokeWidth={2.4} opacity={0.55} />
       ))}
-      <circle cx={0} cy={-114} r={9} fill={seized ? PAPER.seal : PAPER.stamp} stroke={INK} strokeWidth={3} />
+      <circle cx={0} cy={-114} r={9} fill={seized ? PAPER.seal : paused ? t.shade : accentColor ?? PAPER.stamp} stroke={INK} strokeWidth={3} />
       {/* FULL tag on a spring */}
       {tag > 0 && (
         <g transform={`translate(0,${-150 - tag * 34}) rotate(${Math.sin(f / 3) * 4 * tag})`} opacity={tag}>

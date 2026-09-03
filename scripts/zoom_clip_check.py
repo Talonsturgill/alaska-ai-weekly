@@ -48,6 +48,7 @@ shapes are not graded here.
     python3 scripts/zoom_clip_check.py            # exit 1 on any clipped element
 """
 import glob
+import math
 import os
 import re
 import sys
@@ -64,6 +65,143 @@ CAP_MARGIN = 26      # a plate that touches the caption box reads as occluded
 DEFAULT_SIZE = {"Plate": 40, "BrassPlate": 34}
 LS = 1.6
 NUM = r"-?\d+(?:\.\d+)?"
+
+
+def _matrix_product(a, b):
+    """Compose SVG affine transforms, including nested group transforms."""
+    return (a[0]*b[0]+a[2]*b[1], a[1]*b[0]+a[3]*b[1],
+            a[0]*b[2]+a[2]*b[3], a[1]*b[2]+a[3]*b[3],
+            a[0]*b[4]+a[2]*b[5]+a[4], a[1]*b[4]+a[3]*b[5]+a[5])
+
+
+def literal_transform_matrix(raw):
+    """Resolve literal SVG transforms only. Computed geometry is never zeroed out.
+
+    The shared Label collector returns raw JSX attribute expressions. Numeric literal
+    translate/scale/rotate/matrix lists are exact; templates containing substitutions,
+    variables, CSS transforms and unsupported functions return None.
+    """
+    raw = raw.strip()
+    if raw.startswith('{') and raw.endswith('}'):
+        raw = raw[1:-1].strip()
+    if len(raw) < 2 or raw[0] not in "\"'`" or raw[-1] != raw[0]:
+        return None
+    raw = raw[1:-1]
+    if '${' in raw:
+        return None
+    matrix = (1., 0., 0., 1., 0., 0.)
+    number = r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?"
+    end = 0
+    for match in re.finditer(r"([A-Za-z]+)\s*\(([^()]*)\)", raw):
+        if raw[end:match.start()].strip(' ,\t\n'):
+            return None
+        body = match.group(2)
+        if re.sub(number, '', body).strip(' ,\t\n'):
+            return None
+        vals = [float(v) for v in re.findall(number, body)]
+        kind = match.group(1)
+        if kind == 'translate' and len(vals) in (1, 2):
+            piece = (1., 0., 0., 1., vals[0], vals[1] if len(vals) == 2 else 0.)
+        elif kind == 'scale' and len(vals) in (1, 2):
+            piece = (vals[0], 0., 0., vals[-1], 0., 0.)
+        elif kind == 'rotate' and len(vals) in (1, 3):
+            theta = math.radians(vals[0])
+            c, s = math.cos(theta), math.sin(theta)
+            piece = (c, s, -s, c, 0., 0.)
+            if len(vals) == 3:
+                x, y = vals[1:]
+                piece = _matrix_product((1., 0., 0., 1., x, y),
+                                        _matrix_product(piece, (1., 0., 0., 1., -x, -y)))
+        elif kind == 'matrix' and len(vals) == 6:
+            piece = tuple(vals)
+        else:
+            return None
+        matrix = _matrix_product(matrix, piece)
+        end = match.end()
+    if raw[end:].strip(' ,\t\n'):
+        return None
+    return matrix
+
+
+def label_frame_bounds(label):
+    """Bounds of the current Label plate after literal groups.
+
+    Label is baseline-positioned: rect top y-35, height 54. Type's fitted text
+    stays within width-28 and is covered by the rectangle. Decorative shadow
+    and stroke aren't the text plate box. Unresolved transforms return None.
+    """
+    matrix = (1., 0., 0., 1., 0., 0.)
+    # The AST collector walks from the callsite outward, so compose in reverse.
+    for raw in reversed(label.get('transforms', [])):
+        piece = literal_transform_matrix(raw)
+        if piece is None:
+            return None
+        matrix = _matrix_product(matrix, piece)
+    x, y, width = label['x'], label['y'], label['width']
+    left, right = x-width/2, x+width/2
+    top, bottom = y-35, y-35+54
+    corners = [(matrix[0]*px+matrix[2]*py+matrix[4],
+                matrix[1]*px+matrix[3]*py+matrix[5])
+               for px in (left, right) for py in (top, bottom)]
+    return (min(p[0] for p in corners), max(p[0] for p in corners),
+            min(p[1] for p in corners), max(p[1] for p in corners))
+
+
+def projected_label_scenes(src):
+    """Find the current Shot art routing without pretending Stage3D is a flat camera.
+
+    None means a Stage3D routing we don't understand. The current room-or-scene
+    conditional is recognized from source, not from a hardcoded list of shot IDs.
+    """
+    if '<Stage3D' not in src:
+        return set()
+    compact = re.sub(r'\s+', '', src)
+    rooms = re.search(r'\broom=\[([\d,]+)\]\.includes\(n\)', compact)
+    route = re.search(r'room\|\|n===(\d+)\?<Stage3D', compact)
+    if not rooms or not route or compact.count('<Stage3D') != 1:
+        return None
+    return {int(n) for n in rooms.group(1).split(',')} | {int(route.group(1))}
+
+
+def check_labels(data, src):
+    """Check extracted Label callsites without granting coverage to unknown projection.
+
+    Scene-specific art goes through the conditional Stage3D route; the shared
+    overlay is checked only when it isn't inside a camera/group transform.
+    Report each dynamic label once: its literal width, not its changing text,
+    determines the frame bounds.
+    """
+    bad, unmeasured, cap_bad, measured = [], [], [], 0
+    projected = projected_label_scenes(src)
+    for label in data['calls']:
+        scene = label.get('scene')
+        name = f'S{scene}' if scene is not None else 'overlay'
+        line = label['line']
+        texts = label.get('texts') or ['<dynamic label>']
+        text = ' / '.join(texts)
+        why = None
+        if set(label.get('ancestors', [])) & {'Stage', 'Stage3D', 'Plane'}:
+            why = 'inside a camera component; projection is not measured'
+        elif label.get('inside_art', True) and '<Stage3D' in src and (projected is None or scene in projected):
+            why = 'scene art uses Stage3D; perspective projection is not measured'
+        elif '<Stage' in src and '<Stage3D' not in src:
+            why = 'Label camera routing through Stage is not measured'
+        if why:
+            unmeasured.append((name, line, 'Label', why))
+            continue
+        bounds = label_frame_bounds(label)
+        if bounds is None:
+            unmeasured.append((name, line, 'Label', 'inside a computed or unsupported transform'))
+            continue
+        measured += 1
+        left, right, top, bottom = bounds
+        width, x = right-left, (left+right)/2
+        if left < MARGIN or right > FRAME_W-MARGIN:
+            bad.append((name, line, 'Label', text[:34], round(width), round(left),
+                        round(right), x, MARGIN, FRAME_W-MARGIN))
+        if bottom > CAPTION_TOP-CAP_MARGIN:
+            cap_bad.append((name, line, 'Label', text[:34], round(label['y']), round(bottom)))
+    return bad, unmeasured, measured, cap_bad
 
 
 def mono_w(s: str, size: float, track: float = LS) -> float:
@@ -199,7 +337,8 @@ def w_lit(attrs):
 
 
 def check(path: str):
-    src = open(path).read()
+    with open(path) as source:
+        src = source.read()
     dz = content_zoom(src)
     bad, unmeasured, n = [], [], 0
     cap_bad = []
@@ -320,6 +459,23 @@ def check(path: str):
             x, w = float(xm.group(1)), float(wm.group(1))
             record(m.start(), "rect", f"{w:.0f}px box", x + w / 2 + off, w)
 
+    # Label/Type is a separate real component contract, not an alias for Plate.
+    # The shared AST collector verifies defaults, prop names and Type autofit;
+    # legacy Plate and bare-text coverage above is intentionally unchanged.
+    if re.search(r'<Label\b', src):
+        try:
+            from text_fit_check import collect_labels
+        except ImportError:
+            from scripts.text_fit_check import collect_labels
+        data = collect_labels(path)
+        if data.get('issues'):
+            raise ValueError('Label extraction failed: ' + '; '.join(map(str, data['issues'])))
+        lb, lu, ln, lc = check_labels(data, src)
+        bad.extend(lb)
+        unmeasured.extend(lu)
+        n += ln
+        cap_bad.extend(lc)
+
     return bad, unmeasured, n, per_scene, cap_bad
 
 
@@ -330,7 +486,12 @@ def main() -> int:
         return 1
     total_bad, total_n = 0, 0
     for path in targets:
-        bad, unmeasured, n, per_scene, cap_bad = check(path)
+        try:
+            bad, unmeasured, n, per_scene, cap_bad = check(path)
+        except (ValueError, OSError, ImportError) as exc:
+            print(f'zoom_clip_check: FAIL {path}: {exc}')
+            total_bad += 1
+            continue
         rel = os.path.relpath(path, REPO)
         total_n += n
         print(f"zoom_clip_check: {rel}")

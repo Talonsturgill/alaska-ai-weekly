@@ -247,7 +247,7 @@ def _recaption(y, text, offset, seg):
     with tempfile.TemporaryDirectory() as td:
         p = os.path.join(td, "t.wav")
         _save_wav(p, y)
-        _, _, _, cues = vs._align_wholefile(p, [text])
+        words, _, _, cues = vs._align_wholefile(p, [text])
     out = []
     for c in cues:
         out.append({"text": c["text"], "start": round(c["start"] + offset, 3),
@@ -256,7 +256,9 @@ def _recaption(y, text, offset, seg):
     for a, b in zip(out, out[1:]):
         assert b["start"] >= a["end"] - 1e-6, "cue repair left an overlap"
     assert all(x["end"] - x["start"] >= MIN_DWELL - 1e-6 for x in out), "cue repair left a flash"
-    return out
+    aligned_words = [dict(w, s=round(w['s'] + offset, 3),
+                          e=round(w['e'] + offset, 3), seg=seg) for w in words]
+    return out, aligned_words
 
 
 def main():
@@ -272,6 +274,11 @@ def main():
     meta = json.load(open(os.path.join(OUT, "vo_lines.json")))
     lines = meta["lines"]
     caps = json.load(open(os.path.join(OUT, "captions.json")))
+    # Caption regrouping and emphasis cues read this word ledger. A surgical
+    # replacement must move it with the audio, or later builds resurrect old words.
+    words_path = os.path.join(AUD, "words.json")
+    word_doc = json.load(open(words_path))
+    new_words = list(word_doc["words"])
     sr, vo = _load_wav(os.path.join(AUD, "vo.wav"))
     if sr != SR:
         raise SystemExit(f"expected {SR} Hz vo.wav, got {sr}")
@@ -326,8 +333,9 @@ def main():
         new_audio[s:s + span] = seg
 
         new_end = round(L["start"] + len(fitted) / SR, 3)
-        cues = _recaption(fitted, text, L["start"], idx)
+        cues, aligned_words = _recaption(fitted, text, L["start"], idx)
         new_caps = [c for c in new_caps if c.get("seg") != idx] + cues
+        new_words = [w for w in new_words if w.get("seg") != idx] + aligned_words
         L["text"], L["end"] = text, new_end
         report.append({"line": idx, "text": text, "wer": round(wer, 3),
                        "pace": round(rate, 3), "start": L["start"], "end": new_end,
@@ -392,6 +400,8 @@ def main():
     _save_wav(os.path.join(AUD, "vo.wav"), new_audio)
     json.dump(meta, open(os.path.join(OUT, "vo_lines.json"), "w"), indent=1)
     json.dump(new_caps, open(os.path.join(OUT, "captions.json"), "w"), indent=1)
+    word_doc["words"] = sorted(new_words, key=lambda w: w["s"])
+    json.dump(word_doc, open(words_path, "w"), indent=2)
     # AND THE SCRIPT OF RECORD, which this tool used to leave behind (2026-07-31, round 10).
     # Two judges independently reported the fix as NOT MADE, because they read vo_script.txt
     # and it still carried the old wording while the audio carried the new. They were right

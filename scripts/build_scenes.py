@@ -571,6 +571,11 @@ def main():
     if len(board_shots) != len(scenes):
         raise SystemExit(f"build_scenes: storyboard has {len(board_shots)} shots but episode props have "
                          f"{len(scenes)} scenes; refusing to write a misleading shots.json")
+    # Picture, sound and evidence all consume the conformed beat clock, not
+    # duplicated offsets typed into the episode. The board is already voice-bound.
+    props["beats"] = [{"id": b["id"], "at": b["at_s"],
+                       "label": b["draw"]["annotation"]} for b in board["beats"]]
+    json.dump(props, open(os.path.join(OUT, "episode_props.json"), "w"))
     gate_shots = []
     for i, (scene, shot) in enumerate(zip(scenes, board_shots), start=1):
         gate_shots.append({"id": shot.get("id") or f"S{i}",

@@ -175,7 +175,9 @@ def main():
             blob = f"{d.get('subject','')} {d.get('action','')}"
             if not stages_a_figure(d.get("subject", "")):
                 continue
-            t = float(b.get("t", -1))
+            # Current boards store display ranges alongside a numeric at_s clock.
+            # Read the real start rather than crashing on the valid range contract.
+            t = float(b["at_s"]) if "at_s" in b else float(str(b.get("t", -1)).split("-", 1)[0])
             sc = next((n for n, (x, y) in scenes.items() if x <= t < y), None)
             if sc is None:
                 continue

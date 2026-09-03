@@ -566,7 +566,7 @@ def main():
     # Leave explicit AAC reconstruction headroom. The 2026-08-30 Mac encode measured the
     # PCM master at -2.1 dBTP but the first AAC delivery at -0.95 dBTP. A small static trim
     # keeps every derived copy below the -1.0 ceiling while preserving the written dynamics.
-    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.6dB,alimiter=limit=0.78:level=false",
+    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.78:level=false",
          "-ar", str(SR), "-ac", "2", master])
     os.remove(premix)
     print("wrote", master)

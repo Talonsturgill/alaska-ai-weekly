@@ -27,8 +27,10 @@ nearest preceding <rect> in the same JSX block and asserts the text's box sits i
 the rect's inner box (rect minus its stroke) with MIN_MARGIN to spare on each side.
 
 HONEST LIMITS, stated because a gate that quietly checks nothing is worse than no gate:
-  - It only understands literal sizes and literal strings. Interpolated text ({NAME})
-    and computed sizes (fit(...)) are SKIPPED and counted in the skipped tally.
+  - The legacy mono pass understands literal sizes and strings. The Label/Type
+    adapter additionally measures ternary alternatives and actual props.beats labels,
+    and rejects unknown component arithmetic or geometry. Standalone Type/Note
+    typography is not included in the plated-string count.
   - It only understands textAnchor="middle" and the default start anchor.
   - It cannot see transforms, so it compares text and rect in their shared local space.
     That is the space they are authored in, which is where the bug lives.
@@ -41,6 +43,8 @@ import math
 import os
 import re
 import sys
+import json
+import subprocess
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
@@ -210,6 +214,123 @@ def check_file(path, min_margin=MIN_MARGIN):
 # read in the 2026-08-12 evidence pack.
 MIN_PLATE_PX = 22.0
 
+# Parse JSX structurally rather than stopping at the > in a ternary expression.
+# This adapter recognizes the actual Label/Type contract, and rejects changes to
+# its fit/rectangle arithmetic instead of continuing with stale constants.
+LABEL_AST = r"""
+const fs=require('fs'),path=require('path'),{createRequire}=require('module');
+const ts=createRequire(path.resolve(process.argv[3],'video-engine/package.json'))('typescript');
+const file=process.argv[1], source=fs.readFileSync(file,'utf8');
+const sf=ts.createSourceFile(file,source,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
+const compact=n=>n.getText(sf).replace(/\s/g,'');
+const issues=[],calls=[],vars=new Map(),branches=[];
+const walk=(n,fn)=>{fn(n);ts.forEachChild(n,c=>walk(c,fn));};
+walk(sf,n=>{if(ts.isVariableDeclaration(n)&&ts.isIdentifier(n.name))vars.set(n.name.text,n);});
+const numeric=(n,seen=new Set())=>{
+ if(!n)return null;
+ if(ts.isJsxExpression(n)||ts.isParenthesizedExpression(n))return numeric(n.expression,seen);
+ if(ts.isNumericLiteral(n))return Number(n.text);
+ if(ts.isPrefixUnaryExpression(n)){const v=numeric(n.operand,seen);return v===null?null:n.operator===ts.SyntaxKind.MinusToken?-v:n.operator===ts.SyntaxKind.PlusToken?v:null;}
+ if(ts.isIdentifier(n)&&vars.has(n.text)&&!seen.has(n.text)){return numeric(vars.get(n.text).initializer,new Set([...seen,n.text]));}
+ if(ts.isBinaryExpression(n)){const a=numeric(n.left,seen),b=numeric(n.right,seen);if(a===null||b===null)return null;const op=n.operatorToken.kind;const v=op===ts.SyntaxKind.PlusToken?a+b:op===ts.SyntaxKind.MinusToken?a-b:op===ts.SyntaxKind.AsteriskToken?a*b:op===ts.SyntaxKind.SlashToken?a/b:NaN;return Number.isFinite(v)?v:null;}
+ return null;
+};
+const attrs=n=>Object.fromEntries(n.attributes.properties.filter(ts.isJsxAttribute).map(a=>[a.name.getText(sf),a.initializer]));
+const val=n=>ts.isJsxExpression(n)?n.expression:n;
+const defaults=name=>{const d=vars.get(name);if(!d||!d.initializer||!ts.isArrowFunction(d.initializer))return {};const p=d.initializer.parameters[0];if(!p||!ts.isObjectBindingPattern(p.name))return {};return Object.fromEntries(p.name.elements.map(e=>[e.name.getText(sf),numeric(e.initializer)]));};
+const label=vars.get('Label'),type=vars.get('Type');
+const labelCalls=[];walk(sf,n=>{if((ts.isJsxSelfClosingElement(n)||ts.isJsxOpeningElement(n))&&n.tagName.getText(sf)==='Label')labelCalls.push(n);});
+if(!labelCalls.length){process.stdout.write(JSON.stringify({calls:[],scene_ids:[],issues:[],adapter:null}));process.exit(0);}
+if(!label||!type){process.stdout.write(JSON.stringify({calls:[],scene_ids:[],issues:[{line:1,why:'Label/Type implementation is missing or imported; no local geometry contract'}]}));process.exit(0);}
+const ld=defaults('Label');let font=null,inner=null,rect=null;
+walk(type.initializer,n=>{if(ts.isJsxOpeningElement(n)&&n.tagName.getText(sf)==='text')font=attrs(n).fontSize;});
+walk(label.initializer,n=>{if(ts.isJsxSelfClosingElement(n)){const a=attrs(n);if(n.tagName.getText(sf)==='Type')inner=a;if(n.tagName.getText(sf)==='rect'&&a.x&&compact(val(a.x))==='x-width/2')rect=a;}});
+const fm=font&&compact(val(font)).match(/^Math\.min\(size,width\/\(text\.length\*(0?\.\d+)\)\)$/);
+const pad=inner&&inner.width&&compact(val(inner.width)).match(/^width-(\d+(?:\.\d+)?)$/);
+if(!fm||!pad||!rect||!rect.y||compact(val(rect.y))!=='y-35'||!rect.width||compact(val(rect.width))!=='width'||numeric(rect.height)!==54||!Number.isFinite(ld.x)||!Number.isFinite(ld.width)||numeric(inner&&inner.size)===null){issues.push({line:1,why:'Unrecognized Label/Type fit or rectangle arithmetic; update adapter, do not assume geometry'});}
+const adapter={x:ld.x,width:ld.width,size:numeric(inner&&inner.size),padding:pad?Number(pad[1]):null,advance:fm?Number(fm[1]):null,top:-35,bottom:19};
+const shot=vars.get('Shot');
+if(shot)walk(shot.initializer,n=>{if(ts.isIfStatement(n)){const m=compact(n.expression).match(/^n===(\d+)$/);if(m)branches.push({id:Number(m[1]),node:n});}});
+const ids=[...new Set(branches.map(b=>b.id))].sort((a,b)=>a-b);let sceneIds=[...ids];
+if(ids.some((id,i)=>id!==i+1))issues.push({line:1,why:'Shot n=== branches are not contiguous from 1; scene coverage unresolved'});
+const tail=branches.find(b=>b.id===Math.max(...ids));
+if(tail&&tail.node.elseStatement&&!ts.isIfStatement(tail.node.elseStatement)&&ids.every((id,i)=>id===i+1))sceneIds.push(tail.id+1);
+let props=null;try{props=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));}catch(e){}
+const strings=n=>{n=val(n);if(ts.isStringLiteral(n)||ts.isNoSubstitutionTemplateLiteral(n))return [n.text];if(ts.isConditionalExpression(n)){const a=strings(n.whenTrue),b=strings(n.whenFalse);return a&&b?[...new Set([...a,...b])]:null;}if(ts.isParenthesizedExpression(n))return strings(n.expression);return null;};
+for(const node of labelCalls){
+ const a=attrs(node),line=sf.getLineAndCharacterOfPosition(node.getStart(sf)).line+1;
+ let scene=null,transforms=[],scope=null,insideArt=false,ancestors=[],excluded=[];
+ for(let p=node.parent;p;p=p.parent){
+  if(ts.isVariableDeclaration(p)&&p.initializer&&ts.isArrowFunction(p.initializer)&&!scope)scope=p.name.getText(sf);
+  if(ts.isBinaryExpression(p)&&p.left.getText(sf)==='art'&&p.operatorToken.kind===ts.SyntaxKind.EqualsToken)insideArt=true;
+  if(ts.isIfStatement(p)){const b=branches.find(b=>b.node===p);if(b&&scene===null){if(node.pos>=p.thenStatement.pos&&node.end<=p.thenStatement.end)scene=b.id;else if(p.elseStatement&&!ts.isIfStatement(p.elseStatement)&&b===tail)scene=b.id+1;}}
+  if(ts.isJsxElement(p)){const tag=p.openingElement.tagName.getText(sf);ancestors.push(tag);const pa=attrs(p.openingElement);if(pa.transform)transforms.push(val(pa.transform).getText(sf));}
+  if(ts.isBinaryExpression(p)&&p.operatorToken.kind===ts.SyntaxKind.AmpersandAmpersandToken){const m=compact(p.left).match(/!\(?\[([\d,]+)\]\.includes\(n\)\)?/);if(m)excluded=m[1].split(',').map(Number);}
+ }
+ let texts=a.text?strings(a.text):null,dynamic=null;
+ if(a.text&&compact(val(a.text))==='active.label'){
+   dynamic='active.label';texts=props&&Array.isArray(props.beats)&&props.beats.length&&props.beats.every(b=>typeof b.label==='string')?props.beats.map(b=>b.label):null;
+ }
+ const geometry={};for(const key of ['x','y','width'])geometry[key]=a[key]?numeric(a[key]):key==='y'?null:adapter[key];
+ if(!texts)issues.push({line,why:'Unresolved Label text: '+(a.text?compact(val(a.text)):'missing')});
+ if(Object.values(geometry).some(v=>v===null||!Number.isFinite(v))||geometry.width<=0)issues.push({line,why:'Unresolved or nonpositive Label x/y/width'});
+ if(scope!=='Shot')issues.push({line,why:'Label call outside supported Shot component: '+scope});
+ calls.push({line,texts:texts||[],...geometry,scene,excluded_scenes:excluded,transforms,scope,inside_art:insideArt,ancestors,dynamic});
+}
+if(!sceneIds.length)issues.push({line:1,why:'Label calls present but ZERO Shot n=== branches resolved'});
+if(props&&Array.isArray(props.scenes)&&props.scenes.length!==sceneIds.length)issues.push({line:1,why:'Shot branch count does not match actual episode props scenes'});
+process.stdout.write(JSON.stringify({adapter,calls,scene_ids:sceneIds,issues}));
+"""
+
+
+def collect_labels(path, props_path=None):
+    """Real JSX callsites; dynamic variants use the actual render props, never the board.
+
+    Geometry is local SVG space. Ancestor transforms and downstream camera projection
+    are reported for spatial callers; this function does not pretend to resolve them.
+    """
+    props_path = props_path or os.path.join(REPO, "out/dispatch/episode_props.json")
+    try:
+        # Legacy episodes need no Node/TypeScript dependency to keep their existing
+        # Plate/mono checks. Only real Label source invokes this structural adapter.
+        with open(path) as source:
+            if not re.search(r"<Label\b", source.read()):
+                return {"calls": [], "scene_ids": [], "issues": [], "adapter": None}
+        result = subprocess.run(
+            ["node", "-e", LABEL_AST, os.path.abspath(path), os.path.abspath(props_path), REPO],
+            check=True, text=True, capture_output=True, timeout=30,
+        )
+        return json.loads(result.stdout)
+    except (OSError, subprocess.SubprocessError, ValueError) as exc:
+        return {"calls": [], "scene_ids": [], "adapter": None,
+                "issues": [{"line": 1, "why": "Label AST extraction failed: " + str(exc)}]}
+
+
+def check_label_call_sites(path, min_px=MIN_PLATE_PX, props_path=None):
+    data = collect_labels(path, props_path)
+    failures, checked = [], 0
+    for issue in data["issues"]:
+        failures.append({"line": issue["line"], "text": "<Label>", "size": 0,
+                         "text_w": 0, "plate": [0, 0], "margin_l": 0,
+                         "margin_r": 0, "why": issue["why"]})
+    if failures or not data.get("adapter"):
+        return failures, checked
+    adapter = data["adapter"]
+    for call in data["calls"]:
+        usable = call["width"] - adapter["padding"]
+        for text in call["texts"]:
+            checked += 1
+            fit = min(adapter["size"], usable / (len(text) * adapter["advance"])) if text else adapter["size"]
+            text_w = len(text) * fit * adapter["advance"]
+            if usable <= 0 or fit < min_px or text_w > usable + 1e-6:
+                failures.append({"line": call["line"], "text": text,
+                                 "size": round(fit, 2), "text_w": round(text_w, 2),
+                                 "plate": [0, call["width"]],
+                                 "margin_l": round((call["width"] - text_w) / 2, 2),
+                                 "margin_r": round((call["width"] - text_w) / 2, 2),
+                                 "why": f"Actual Label auto-fit is {fit:.2f}px; required floor is {min_px:.0f}px. Shorten text or enlarge its real plate."})
+    return failures, checked
+
 PLATE_CALL_RE = re.compile(r"<Plate\b(?P<attrs>[^>]*?)/>", re.S)
 PLATE_TEXT_RE = re.compile(r'\btext="(?P<t>[^"]*)"')
 PLATE_SIZE_RE = re.compile(r"\bsize=\{(?P<s>[\d.]+)\}")
@@ -319,6 +440,7 @@ def main():
 
     ap.add_argument("files", nargs="*", default=_this_runs_episode())
     ap.add_argument("--min-margin", type=float, default=MIN_MARGIN)
+    ap.add_argument("--props", help="Actual episode props JSON for dynamic Label text")
     a = ap.parse_args()
 
     total_checked, all_skipped, bad = 0, [], []
@@ -334,6 +456,11 @@ def main():
         for x in pf:
             x["file"] = path
         bad += pf
+        lf, lc = check_label_call_sites(path, props_path=a.props)
+        total_checked += lc
+        for x in lf:
+            x["file"] = path
+        bad += lf
 
     # Coverage is printed, always. The whole reason this file exists is that a gate
     # reported a pass while quietly measuring none of the string that was broken.
@@ -348,8 +475,10 @@ def main():
               f"[{x['plate'][0]}, {x['plate'][1]}]")
         print(f"     margin left {x['margin_l']}px, right {x['margin_r']}px "
               f"(need {a.min_margin}px)")
+        if x.get("why"):
+            print(f"     {x['why']}")
 
-    print(f"text-fit: {total_checked} plated mono strings measured, "
+    print(f"text-fit: {total_checked} plated strings/variants measured (mono, Plate, actual Label), "
           f"{len(all_skipped)} not measured, {len(bad)} failing")
 
     if total_checked == 0:
