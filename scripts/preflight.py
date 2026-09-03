@@ -119,28 +119,9 @@ CHECKS = [
 
 
 def deliverables_are_fresh():
-    """The cut on disk must be NEWER than everything that can change a frame.
-
-    This is the check that catches the failure this repo has been burned by more than any
-    other: a render that died, or an encode that did not rerun, leaving a plausible file
-    with a valid frame count that every downstream step then treats as current.
-    """
-    import glob
-    sources = []
-    for pat in ("video-engine/src/**/*.tsx", "video-engine/src/**/*.ts",
-                "out/dispatch/captions.json", "out/dispatch/episode_props.json",
-                "out/dispatch/audio/master.wav"):
-        sources += glob.glob(os.path.join(REPO, pat), recursive=True)
-    if not sources:
-        return None, "no source files found, which is itself wrong"
-    newest = max(sources, key=os.path.getmtime)
-    cut = os.path.join(REPO, "out", "dispatch", "dispatch_master.mp4")
-    if not os.path.exists(cut):
-        return False, "dispatch_master.mp4 does not exist"
-    if os.path.getmtime(cut) < os.path.getmtime(newest):
-        return False, (f"dispatch_master.mp4 is OLDER than {os.path.relpath(newest, REPO)}. "
-                       f"Re-render and re-encode before grading anything.")
-    return True, f"cut is newer than every source (newest: {os.path.relpath(newest, REPO)})"
+    """The cut must match wrapper-recorded source, mix and delivery contents."""
+    from render_provenance import check_delivery
+    return check_delivery()
 
 
 def git_identity_is_the_owners():

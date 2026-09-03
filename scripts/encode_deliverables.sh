@@ -23,6 +23,7 @@ cd "$(dirname "$0")/.."
 OUT=out/dispatch
 MUTE="${1:-$OUT/render_mute.mp4}"
 WAV="${2:-$OUT/audio/master.wav}"
+python3 scripts/render_provenance.py begin-encode --video "$MUTE"
 
 # THE CONTRACT. Change these and you change the deliverable; the asserts below
 # will hold you to whatever you write here.
@@ -179,3 +180,4 @@ if [ "$SQUARE_H" -gt "$SQUARE_W" ]; then
   exit 1
 fi
 echo "  OK  the LinkedIn cut is not taller than wide, so it stays in the main feed"
+python3 scripts/render_provenance.py finish-encode

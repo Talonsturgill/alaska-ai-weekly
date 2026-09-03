@@ -53,7 +53,10 @@ rm -f "$DONE"
 : > "$LOG"
 touch "$HB"
 
-setsid bash -c '
+# macOS has no setsid executable. Python exposes the same session primitive, so
+# keep one real detached process on both hosts instead of announcing a dead PID.
+command -v python3 >/dev/null 2>&1 || { echo "run_bg.sh: python3 is required" >&2; exit 1; }
+python3 -c 'import os,sys; os.setsid(); os.execvp(sys.argv[1], sys.argv[1:])' bash -c '
   HB="$1"; DONE="$2"; LOG="$3"; HEARTBEAT_S="$4"; shift 4
   ( while true; do touch "$HB"; sleep "$HEARTBEAT_S"; done ) &
   HBPID=$!
@@ -62,7 +65,7 @@ setsid bash -c '
   kill "$HBPID" 2>/dev/null
   touch "$HB"
   echo "$code" > "$DONE"
-' _ "$HB" "$DONE" "$LOG" "$HEARTBEAT_S" "$@" &
+' _ "$HB" "$DONE" "$LOG" "$HEARTBEAT_S" "$@" </dev/null >/dev/null 2>&1 &
 
 echo $! > "$PIDF"
 echo "launched '$NAME' pid=$(cat "$PIDF")"

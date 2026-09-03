@@ -195,6 +195,7 @@ fi
 
 case "$OUT" in /*) ABS_OUT="$OUT";; *) ABS_OUT="$PWD/$OUT";; esac
 WORK="$(mktemp -d)"
+python3 scripts/render_provenance.py begin-render --video "$ABS_OUT"
 
 # CHUNK CACHE, KEYED ON CONTENT (2026-08-09). This routine box restarted twice in one run and
 # each restart killed a render mid-flight, costing ~25 minutes of work that had already been
@@ -330,3 +331,4 @@ if [ "$SRC_BEFORE" != "$SRC_AFTER" ]; then
   echo "  comments the render is fine, and if it touched a rendered value, re-render." >&2
 fi
 echo "  OK  $ABS_OUT  $GOT frames  $(du -h "$ABS_OUT" | cut -f1)"
+python3 scripts/render_provenance.py finish-render --video "$ABS_OUT"
