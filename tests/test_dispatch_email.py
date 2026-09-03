@@ -1,10 +1,19 @@
 import unittest
 
-from scripts.dispatch_email import S, render
+from scripts.dispatch_email import S, render, parse_sources
 from scripts.visible_copy_check import check_email_copy, visible_html_text
 
 
 class DispatchEmailRenderingTest(unittest.TestCase):
+    def test_comment_sources_use_specific_titles_before_shared_outlet(self):
+        sources, _ = parse_sources({"sources": [
+            {"url": "https://example.com/notice", "title": "The announcement", "outlet": "TCC"},
+            {"url": "https://example.com/about", "title": "About TCC", "outlet": "TCC"},
+            {"url": "https://example.com/other", "outlet": "Publisher"},
+        ]})
+        self.assertEqual([s["label"] for s in sources],
+                         ["The announcement", "About TCC", "Publisher"])
+
     def test_permanent_and_temporary_templates_obey_visible_copy_rules(self):
         for temporary in (False, True):
             with self.subTest(temporary=temporary):

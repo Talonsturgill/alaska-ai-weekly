@@ -213,7 +213,7 @@ def parse_sources(data):
 
     for s in data.get("sources") or []:
         if isinstance(s, dict):
-            add(s.get("url"), s.get("outlet") or s.get("title"), s.get("note", ""))
+            add(s.get("url"), s.get("title") or s.get("outlet"), s.get("note", ""))
         elif isinstance(s, str):
             add(s)
     for u in data.get("primary_urls") or []:
