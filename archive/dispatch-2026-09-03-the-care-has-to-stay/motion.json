@@ -1,0 +1,309 @@
+{
+  "note": "frame 1 vs frame 8 of each filmstrip window, measured on the delivered cut. changed_pct is the share of pixels differing by more than 12/255. A judge who cannot SEE motion in a strip should read this before recording that the beat is frozen. EVERY WINDOW HERE IS WITHIN A SINGLE SHOT: any window that straddled a cut has been slid clear of it and is marked straddled_cut, because a strip spanning a cut measures the cut and reports it as animation. Before 2026-08-13 it did not do this, and the large figures in older packs are shot changes, not motion. Cross-check against motion_registered.json, which solves the camera out per shot.",
+  "strips": {
+    "paper_wave_around_waiting_lever": {
+      "centre_s": 0.4,
+      "changed_pct": 0.5,
+      "peak_delta": 210,
+      "window_start_s": 0.27,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "off_hand_anticipates_and_waits": {
+      "centre_s": 2.41,
+      "changed_pct": 3.1,
+      "peak_delta": 236,
+      "window_start_s": 2.28,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "dated_tcc_notice_unfolds": {
+      "centre_s": 5.22,
+      "changed_pct": 3.5,
+      "peak_delta": 245,
+      "window_start_s": 5.09,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "patient_provider_enter_notice_model": {
+      "centre_s": 10.04,
+      "changed_pct": 2.1,
+      "peak_delta": 232,
+      "window_start_s": 9.91,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "small_paperwork_sidecar_revealed": {
+      "centre_s": 14.91,
+      "changed_pct": 8.9,
+      "peak_delta": 242,
+      "window_start_s": 14.78,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "paper_wall_bends_people_turn": {
+      "centre_s": 18.5,
+      "changed_pct": 8.4,
+      "peak_delta": 246,
+      "window_start_s": 18.37,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "permission_token_precedes_recording": {
+      "centre_s": 20.61,
+      "changed_pct": 0.8,
+      "peak_delta": 206,
+      "window_start_s": 20.48,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "consented_reels_produce_draft": {
+      "centre_s": 23.57,
+      "changed_pct": 2.6,
+      "peak_delta": 244,
+      "window_start_s": 23.44,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "provider_pen_stops_draft": {
+      "centre_s": 25.95,
+      "changed_pct": 1.4,
+      "peak_delta": 241,
+      "window_start_s": 25.82,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "draft_returns_for_edit_and_approval": {
+      "centre_s": 29.09,
+      "changed_pct": 1.4,
+      "peak_delta": 252,
+      "window_start_s": 28.96,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "approved_note_enters_chart": {
+      "centre_s": 31.93,
+      "changed_pct": 2.4,
+      "peak_delta": 239,
+      "window_start_s": 31.8,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "medical_decision_stays_with_provider": {
+      "centre_s": 35.68,
+      "changed_pct": 1.5,
+      "peak_delta": 241,
+      "window_start_s": 35.55,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "room_model_lifts_with_open_question": {
+      "centre_s": 37.73,
+      "changed_pct": 5.9,
+      "peak_delta": 235,
+      "window_start_s": 37.6,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "patient_responds_to_provider_attention": {
+      "centre_s": 41.97,
+      "changed_pct": 4.7,
+      "peak_delta": 234,
+      "window_start_s": 41.84,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "recording_only_retention_bracket": {
+      "centre_s": 43.97,
+      "changed_pct": 0.6,
+      "peak_delta": 185,
+      "window_start_s": 43.84,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "recording_and_chart_wells_separate": {
+      "centre_s": 48.11,
+      "changed_pct": 2.2,
+      "peak_delta": 233,
+      "window_start_s": 47.98,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "possible_recording_portion_branches": {
+      "centre_s": 50.79,
+      "changed_pct": 0.8,
+      "peak_delta": 146,
+      "window_start_s": 50.66,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "possible_portion_reaches_improvement_gear": {
+      "centre_s": 55.28,
+      "changed_pct": 0.9,
+      "peak_delta": 208,
+      "window_start_s": 55.15,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "recording_hipaa_policy_shield": {
+      "centre_s": 57.32,
+      "changed_pct": 0.9,
+      "peak_delta": 203,
+      "window_start_s": 57.19,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "warm_yes_room_exposes_linkage": {
+      "centre_s": 61.83,
+      "changed_pct": 1.0,
+      "peak_delta": 245,
+      "window_start_s": 61.7,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "desk_turns_for_conversation": {
+      "centre_s": 66.01,
+      "changed_pct": 4.5,
+      "peak_delta": 244,
+      "window_start_s": 65.88,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "disclosed_terms_precede_choice": {
+      "centre_s": 68.17,
+      "changed_pct": 7.4,
+      "peak_delta": 231,
+      "window_start_s": 68.04,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "informed_yes_engages_recording": {
+      "centre_s": 72.15,
+      "changed_pct": 2.8,
+      "peak_delta": 246,
+      "window_start_s": 72.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "room_pulls_back_onto_announcement": {
+      "centre_s": 75.04,
+      "changed_pct": 5.8,
+      "peak_delta": 239,
+      "window_start_s": 74.91,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "unmeasured_outcome_gauge_separates": {
+      "centre_s": 79.49,
+      "changed_pct": 3.2,
+      "peak_delta": 237,
+      "window_start_s": 79.36,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "portions_retention_question_opens": {
+      "centre_s": 81.79,
+      "changed_pct": 2.7,
+      "peak_delta": 167,
+      "window_start_s": 81.66,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "patient_carries_retention_question": {
+      "centre_s": 86.55,
+      "changed_pct": 3.2,
+      "peak_delta": 247,
+      "window_start_s": 86.42,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "question_and_waiting_choice_return": {
+      "centre_s": 89.4,
+      "changed_pct": 2.3,
+      "peak_delta": 248,
+      "window_start_s": 89.27,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "tell_provider_refusal_acknowledged": {
+      "centre_s": 93.54,
+      "changed_pct": 0.9,
+      "peak_delta": 248,
+      "window_start_s": 93.41,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "off_lever_applies_brake": {
+      "centre_s": 95.32,
+      "changed_pct": 1.2,
+      "peak_delta": 232,
+      "window_start_s": 95.19,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "reels_decelerate_without_deletion": {
+      "centre_s": 98.33,
+      "changed_pct": 9.3,
+      "peak_delta": 201,
+      "window_start_s": 98.2,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "intact_care_room_revealed": {
+      "centre_s": 101.04,
+      "changed_pct": 10.5,
+      "peak_delta": 239,
+      "window_start_s": 100.91,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "stated_terms_tab_attaches": {
+      "centre_s": 105.64,
+      "changed_pct": 2.0,
+      "peak_delta": 238,
+      "window_start_s": 105.51,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "equal_yes_no_rooms_assemble": {
+      "centre_s": 107.41,
+      "changed_pct": 6.2,
+      "peak_delta": 243,
+      "window_start_s": 107.28,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "choice_detents_settle_equally": {
+      "centre_s": 110.54,
+      "changed_pct": 1.8,
+      "peak_delta": 234,
+      "window_start_s": 110.41,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "recorder_steps_aside_care_stays": {
+      "centre_s": 111.53,
+      "changed_pct": 1.0,
+      "peak_delta": 237,
+      "window_start_s": 111.4,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "patient_offers_audience_question": {
+      "centre_s": 115.61,
+      "changed_pct": 2.5,
+      "peak_delta": 250,
+      "window_start_s": 115.48,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "window_hinge_and_title_resolve": {
+      "centre_s": 118.47,
+      "changed_pct": 2.4,
+      "peak_delta": 240,
+      "window_start_s": 118.34,
+      "straddled_cut": false,
+      "within_shot": true
+    }
+  }
+}

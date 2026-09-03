@@ -1719,3 +1719,44 @@ dispatch_history:
     light_story: dawn-backlight
     metaphor: a diploma press that refuses automation until human judgment can close
       it
+- date: '2026-09-03'
+  topic: Tanana Chiefs Conference introduces Sully.ai with patient permission, provider-owned
+    note approval, disclosed recording terms and care unchanged by refusal
+  slug: the-care-has-to-stay
+  key_entities:
+  - Tanana Chiefs Conference
+  - Sully.ai
+  - Interior Alaska
+  - AI medical scribe
+  - patient consent
+  - clinical note
+  - recording retention
+  - deidentified recording portions
+  - provider review
+  archetype: patient-choice control room and detachable clerical sidecar
+  palette: Sunlit sage viridian sea-glass apricot
+  voice: Sulafat
+  stance: mixed
+  angle: A useful AI scribe can reduce clerical work without making recording a condition
+    of care, but informed choice includes both the approved note and disclosed possible
+    reuse of deidentified recording portions.
+  hero: GearLever
+  cast:
+  - HumanPair
+  - Room
+  - Recorder
+  - Lever
+  - GripHand
+  - Note
+  - Wave
+  - Cog
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: horizontal-traverse
+    hero_treatment: structure-as-subject
+    layout: fullbleed-split
+    register: editorial-schematic
+    palette: Sunlit sage viridian sea-glass apricot
+    camera_strategy: rise-reveal-with-source-recontextualization
+    light_story: warm-window-diffuse-daylight
+    metaphor: Detachable clerical sidecar beside a continuous care platform

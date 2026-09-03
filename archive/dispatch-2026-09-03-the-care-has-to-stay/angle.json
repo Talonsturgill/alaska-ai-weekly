@@ -1,0 +1,48 @@
+{
+  "run_date": "2026-09-03",
+  "title": "The Care Has to Stay",
+  "story_id": "tcc-sully-consent",
+  "thesis": "TCC's announced AI scribe offers a useful clerical job without making recording a condition of care. That patient choice concerns both an approved note and disclosed possible reuse of de-identified recording portions.",
+  "falsifier": "The announced commitment fails in practice if refusing recording causes reduced care. This film identifies the standard, not an observed implementation result. The narrow source claim would change if TCC retracts or changes its terms.",
+  "supporting_facts": [
+    {
+      "claims": [
+        "c2",
+        "c6"
+      ],
+      "fact": "Patient permission and refusal without effect on care are explicit."
+    },
+    {
+      "claims": [
+        "c3",
+        "c7"
+      ],
+      "fact": "Attention is the aim; provider approval controls chart inclusion."
+    },
+    {
+      "claims": [
+        "c4",
+        "c5"
+      ],
+      "fact": "The 90-day clock applies to recordings; possible reuse is disclosed separately."
+    }
+  ],
+  "fair_counterpoint": "The notice is not an audit or complete consent manual. It discloses reuse openly, and a patient could reasonably welcome the tool. No measured benefit, privacy failure, derivative retention rule or separate consent mechanism has been established.",
+  "valence": "hopeful",
+  "stance": "Constructively hopeful about a useful narrow job and explicit patient agency; exact about untested promises.",
+  "second_movement": {
+    "recontextualizing_fact": "The source recording and the approved chart note have different roles; de-identified recording portions may improve the system.",
+    "test": "After explaining the full offer, give YES and NO equal dignity. TCC promises care continues either way. A favorable announced design is not proof of patient experience."
+  },
+  "runner_up_angles": [
+    {
+      "angle": "TCC explains refusing recording more clearly than controlling later reuse",
+      "why_it_lost": "True only of this notice's detail; making the gap the main thesis would inflate an introduction into a failed audit."
+    },
+    {
+      "angle": "The Note Has Two Lives",
+      "why_it_lost": "Misleading conflation. Reused portions come from recordings, not the approved chart note."
+    }
+  ],
+  "room_result": "Three independent proposals and full mutual cross-challenge. Unanimous synthesis keeps patient choice central, grafts artifact distinctions, and labels all staged appointments as illustrations of TCC's terms."
+}

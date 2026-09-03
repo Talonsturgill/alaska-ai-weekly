@@ -1,0 +1,179 @@
+{
+ "run_date": "2026-09-03",
+ "title": "THE CARE HAS TO STAY",
+ "note": "Editorial illustration of TCC's announced terms, not patient testimony or a deployment audit.",
+ "caption_fixups": {
+  "A I": "AI",
+  "T C C": "TCC",
+  "Sully dot A I": "Sully.ai"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "What changes when you tell an A I note taker no?",
+   "t": "What changes when you tell an A I note taker no?",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.",
+   "t": "On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.",
+   "claims": [
+    "c1",
+    "c8"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "Its job is paperwork. The aim is less typing and more attention for patients.",
+   "t": "Its job is paperwork. The aim is less typing and more attention for patients.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "With the patient's permission, the tool listens during the appointment and drafts a note.",
+   "t": "With the patient's permission, the tool listens during the appointment and drafts a note.",
+   "claims": [
+    "c2",
+    "c9"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "That draft still has a boss. The provider reviews it, edits it, and approves it.",
+   "t": "That draft still has a boss. The provider reviews it, edits it, and approves it.",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "Only then can it enter the medical record. Sully isn't making medical decisions.",
+   "t": "Only then can it enter the medical record. Sully isn't making medical decisions.",
+   "claims": [
+    "c3",
+    "c10"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "But does that design actually give patients more attention? Keep that question open.",
+   "t": "But does that design actually give patients more attention? Keep that question open.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.",
+   "t": "T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.",
+   "claims": [
+    "c4"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "The technology company may also use de-identified portions of recordings to improve the system.",
+   "t": "The technology company may also use de-identified portions of recordings to improve the system.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "T C C says recording storage follows HIPAA.",
+   "t": "T C C says recording storage follows HIPAA.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "Now give the offer its strongest case. Less typing could mean a better conversation.",
+   "t": "Now give the offer its strongest case. Less typing could mean a better conversation.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.",
+   "t": "And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.",
+   "claims": [
+    "c5",
+    "c2"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "But this notice reports no measured benefits. A sensible design isn't proof that it works.",
+   "t": "But this notice reports no measured benefits. A sensible design isn't proof that it works.",
+   "claims": [
+    "c12"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "One question still matters for that informed choice. How long can de-identified portions be kept?",
+   "t": "One question still matters for that informed choice. How long can de-identified portions be kept?",
+   "claims": [
+    "c4",
+    "c5"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "Ask about those portions before deciding. To decline, just tell your provider.",
+   "t": "Ask about those portions before deciding. To decline, just tell your provider.",
+   "claims": [
+    "c5",
+    "c14"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "Now switch the recorder off. T C C says you can decline or change your mind.",
+   "t": "Now switch the recorder off. T C C says you can decline or change your mind.",
+   "claims": [
+    "c2",
+    "c11"
+   ]
+  },
+  {
+   "idx": 16,
+   "text": "Your care won't be affected. That's its promise, not an independently tested result.",
+   "t": "Your care won't be affected. That's its promise, not an independently tested result.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 17,
+   "text": "Useful A I doesn't need every patient to make the same choice.",
+   "t": "Useful A I doesn't need every patient to make the same choice.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 18,
+   "text": "The machine can step aside. The care has to stay.",
+   "t": "The machine can step aside. The care has to stay.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 19,
+   "text": "Would you want this note taker at your next visit?",
+   "t": "Would you want this note taker at your next visit?",
+   "claims": [
+    "c2"
+   ]
+  }
+ ]
+}

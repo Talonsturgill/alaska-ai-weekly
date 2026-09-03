@@ -1,0 +1,100 @@
+{
+  "role": "Final R4 editor",
+  "run_date": "2026-09-03",
+  "verdict": "ship",
+  "line_edits": [],
+  "risk_flags": [],
+  "ai_tells": [],
+  "blocking_issues": [],
+  "voice_match_score_qualitative": "tight",
+  "readout": "The locked film and post are factually disciplined, culturally respectful, and ready for the scorer panel. They identify Tanana Chiefs Conference and Sully.ai, present the useful clerical case plainly, and keep every important boundary intact. Permission precedes recording. Provider review precedes chart entry. The ninety-day policy stays attached to recordings. Possible reuse is limited to de-identified portions. HIPAA language and continued care are attributed to TCC rather than presented as independent findings. The unknown retention period is asked as a question, not framed as evidence of wrongdoing. No invented patient experience, real patient depiction, medical outcome, deployment count, privacy failure, physical product interface, or separate reuse opt-out is asserted. I found no hard-blocking typo, copy error, attribution error, or culturally inappropriate visual in the reviewed R4 evidence.",
+  "authority_applied": {
+    "editor_role": ".claude/agents/editor.md",
+    "voice": "config/brand.yaml",
+    "surface": "LinkedIn Dispatch under prompts/dispatch_routine.md",
+    "dispatch_rules": "The Dispatch-specific hook, length, punctuation and hashtag rules supersede the weekly Facebook post rules in brand.yaml.",
+    "not_a_scorer": true,
+    "numeric_score": null
+  },
+  "copy_readout": {
+    "post_characters_trimmed": 1714,
+    "hook_characters": 68,
+    "final_hashtags": [
+      "#ArtificialIntelligence",
+      "#Alaska",
+      "#TribalHealth",
+      "#PatientConsent"
+    ],
+    "post_gate": "PASS with zero failures or warnings; 2.95 commas per 100 words.",
+    "argument": "A useful documentation tool and genuine patient choice can coexist. The post credits the announced benefit without converting an aim into a result.",
+    "question": "The closing question asks what readers would need to know before consenting to this specific kind of note taker.",
+    "visible_copy": "Reviewed all 44 built caption cues and the current beat labels and credits. Dates in spoken prose use the required month-first or spoken-ordinal form. On-screen dates are provenance stamps. No banned dash, colon, semicolon, formal-register contraction error, visible pronunciation spelling, or hard-blocking typo was found."
+  },
+  "factual_integrity": [
+    {
+      "boundary": "Announcement versus measured result",
+      "finding": "The film says TCC is introducing Sully.ai and calls reduced typing and increased attention an aim. It expressly says this notice reports no measured benefit."
+    },
+    {
+      "boundary": "Consent and clinical authority",
+      "finding": "Permission comes before recording. The provider reviews, edits and approves the note before chart entry, and Sully.ai is not described as making medical decisions."
+    },
+    {
+      "boundary": "Recording, chart note and reused portions",
+      "finding": "The three artifacts remain distinct. The ninety-day policy applies only to recordings, while reuse is conditional and limited to de-identified portions. No retention period for those portions is invented."
+    },
+    {
+      "boundary": "HIPAA assurance and care promise",
+      "finding": "Both are explicitly attributed to TCC and visually labeled as stated terms rather than an audit or observed patient outcome."
+    },
+    {
+      "boundary": "Refusal procedure and switch illustration",
+      "finding": "The concrete instruction is to tell the provider. The later lever and recorder are unmistakably marked as an illustration of TCC's terms, not a claimed Sully.ai interface or patient-operated clinical device."
+    }
+  ],
+  "cultural_respect": {
+    "verdict": "pass",
+    "finding": "The piece names TCC as an Interior Alaska tribal health organization without borrowing Indigenous symbols, staging ceremony, exoticizing communities, or using patients or tribal culture as a gag. Generic figures illustrate roles and terms; they are not presented as actual patients, named people, or testimony. The editorial critique stays on documentation, consent and evidence status."
+  },
+  "visual_readout": {
+    "contact_sheet": "Reviewed the current R4 contact_square.jpg across the complete sequence. Its progression from useful documentation to consent, artifact separation, the retention question and equal-care ending is coherent and readable.",
+    "s2_shipping_frames": "Reviewed exact R4 frames 145, 318 and 436. The TCC announcement resolves cleanly, identifies Sully.ai as documentation support, and adds Interior Alaska tribal-health context without implying deployment breadth.",
+    "s11_shipping_frames": "Reviewed exact R4 frames 2454, 2548 and 2811. The de-identified-portions retention question becomes visible, is carried toward the provider, and resolves into the source-backed instruction to tell the provider. It remains a question rather than an accusation.",
+    "s13_shipping_frames": "Reviewed exact R4 frames 3297, 3318, 3370 and 3435. The sequence begins with both controls waiting, settles into opposite YES and NO endpoints, and then moves the recorder aside while both care rooms retain equal geometry and dignity. Labels remain legible and the scene is explicitly marked as an illustration of TCC terms.",
+    "credits": "Reviewed the current final credit frame evidence. TANANACHIEFS.ORG and the Wholesome, Kevin MacLeod, incompetech.com, CC BY 4.0 attribution are visible and legible.",
+    "hard_blocking_visible_error": false
+  },
+  "verification_scope": {
+    "source_commit": "2e133c2925c46a0eb255e51eb8a8cd1b8486010a",
+    "source_refetch": false,
+    "audio_listening": false,
+    "basis": "Current claims, sources, angle, VO/caption text, post, objective quality report, R4 contact sheet, final credit evidence and exact R4 shipping frames for S2, S11 and S13.",
+    "quality_report_observed": "PASS, score 10.0. This editor verdict does not independently reproduce its measurements.",
+    "caption_alignment_observed": "PASS, 44 built cues matched to 271 ledger words with 0 ms median boundary error. This is normalized text/timing evidence, not human listening.",
+    "only_file_written": "out/dispatch/editor_final_r4.json",
+    "publication_authorization": "Editorial ship verdict only. Scorer-panel approval, exact-byte ship-gate validation and downstream delivery verification remain separate."
+  },
+  "artifact_sha256": {
+    "out/dispatch/dispatch_master.mp4": "5376a29859cf8d0d39c3781a98ba38b240b6a01c255d2a589d61dbf9c10ed08e",
+    "out/dispatch/dispatch_square.mp4": "cd552488c2c7ce3e86d4cd62eefa8893c323e492b74afabdc37e15b86239a949",
+    "out/dispatch/post.txt": "b6af6cb2c04026b076e8c7274f08d8d05419067d60bdb4b34c3599465d160179",
+    "out/dispatch/vo_script.json": "198b095f81b2cc63f61e808ef685dc46fa479b10d64bcc392e925b7dddc6d78e",
+    "out/dispatch/vo_script.txt": "f47aa16129565142a3ab0abb7d3f7e9a46c954ee389c66b95a84c730ce5eb2ed",
+    "out/dispatch/claims.json": "14695939feb90e1b4a022b2e5d26e0737d8df1b21a0a2fb2b29a00290ec7e051",
+    "out/dispatch/sources.json": "03aa98be164124fa69bb470eb83ccacb24608abade8d5d7df81ce9d1f0131c99",
+    "out/dispatch/episode_props.json": "93c43dcec18fd2a0d02f870d63d3ac4ac5f5fac1436a29d67c23ef305b41de0c"
+  },
+  "viewed_evidence_sha256": {
+    "out/evidence/contact_square.jpg": "9ee3e16dfa89f5b505502ca5b761d725e470cf4bf3af8d58d2bbc14325c4612b",
+    "out/evidence/f126.4.jpg": "de2e5043df9f42a940c7e472e7bd50a21eb0f9be31935e3ac667cb92a93a6e19",
+    "out/dispatch/frames_0903_r4/frame_00145.png": "2b5e9431cd6b44394b8746f20838747c1558ac01b933bdd25e18613b69da1ec5",
+    "out/dispatch/frames_0903_r4/frame_00318.png": "d92730904806280335f7cb42a15550fa53cde1b956c23d58c54077a27c0a0e41",
+    "out/dispatch/frames_0903_r4/frame_02454.png": "953a5bda44dcba20305af4a393fc0f5875d24b39966159d8215de06b811ed2ab",
+    "out/dispatch/frames_0903_r4/frame_02548.png": "090e2d0ff29195e98b5e9b0e8935372ebf822b4c20fc7319df4213f0958c367b",
+    "out/dispatch/frames_0903_r4/frame_02811.png": "c7af112fbab60dde5b4b7f15083ba62d32dcab55ba6443ab312269b2af52e2a8",
+    "out/dispatch/frames_0903_r4/frame_03297.png": "b7c9d2c3b011fa9d38eea2ab75966b9ef7f0e82c2685dd076cc3a2e1d1b4354d",
+    "out/dispatch/frames_0903_r4/frame_03318.png": "7a4b92b43e40beed83651e450728c2ae3232c1a76c198c6f1a96ce40132a7bcc",
+    "out/dispatch/frames_0903_r4/frame_03370.png": "0584e385d5e00bc18a6f5703633b35641579764be0c6ffb21ebc152a381c9ca8",
+    "out/dispatch/frames_0903_r4/frame_03435.png": "54a029189221e8e415aaf42d581298d38d904b65a44866b99eaf96bf8035bd58"
+  }
+}

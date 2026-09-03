@@ -42,6 +42,22 @@ import numpy as np
 FPS = 30
 CAPTION_TOP = 1420          # burned captions live below this; they are not beat events
 MIN_CHANGED = 0.012         # fraction of non-caption pixels that must move within a beat
+
+
+def beat_start(beat):
+    """Return a finite beat start from the current or legacy storyboard clock."""
+    raw = beat.get("at_s")
+    if raw is None:
+        raw = beat.get("t", 0)
+        if isinstance(raw, str) and "-" in raw:
+            raw = raw.split("-", 1)[0]
+    try:
+        value = float(raw)
+    except (TypeError, ValueError):
+        raise ValueError(f"beat has no numeric start: {raw!r}")
+    if not np.isfinite(value) or value < 0:
+        raise ValueError(f"beat has invalid start: {raw!r}")
+    return value
 SAMPLE_STEP = 3             # frames between samples inside a beat window
 MAX_SAMPLES = 10
 
@@ -155,8 +171,8 @@ def analyze(frames_dir: str, storyboard_path: str,
 
     bounds = []
     for i, b in enumerate(beats):
-        t0 = float(b.get("t", 0))
-        t1 = float(beats[i + 1]["t"]) if i + 1 < len(beats) else t0 + 3.0
+        t0 = beat_start(b)
+        t1 = beat_start(beats[i + 1]) if i + 1 < len(beats) else t0 + 3.0
         bounds.append((t0, t1))
 
     rows, problems = [], []

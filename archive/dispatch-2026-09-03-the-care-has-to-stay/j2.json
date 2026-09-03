@@ -1,0 +1,78 @@
+{
+  "judge": 2,
+  "round": "R4",
+  "score_formed_before_prior_card_review": true,
+  "artifact_sha256": {
+    "master": "5376a29859cf8d0d39c3781a98ba38b240b6a01c255d2a589d61dbf9c10ed08e",
+    "square": "cd552488c2c7ce3e86d4cd62eefa8893c323e492b74afabdc37e15b86239a949"
+  },
+  "criteria": [
+    {"name": "Hook & retention", "weight": 0.12, "score": 8.5, "weighted": 1.02, "evidence": "The opening question, waiting lever, surrounding paper and approaching hand establish the refusal problem immediately. The answer stays open until the equal-care payoff, while the announcement-versus-result loop gives the middle a second question."},
+    {"name": "Illustration craft & detail", "weight": 0.16, "score": 8.3, "weighted": 1.328, "evidence": "The tape transport, paper mechanisms, chart-note split, reuse gear, clinic-room models and hand rigs share a polished inked and shaded language. Characters hold finish parity with props, though some wide infographic fields remain intentionally spare."},
+    {"name": "Motion & animation craft", "weight": 0.12, "score": 8.2, "weighted": 0.984, "evidence": "All 38 within-shot eight-frame strips show measured change. Strong moves include the paper wall, room lift, announcement pullback, brake, reel deceleration, intact-care reveal and equal-room assembly. Several information beats rely on small 0.6 to 1.0 percent changes, so the movement is consistently alive rather than maximally expressive."},
+    {"name": "Composition & staging", "weight": 0.08, "score": 8.5, "weighted": 0.68, "evidence": "The 25-frame contact sheet has clear one-glance hierarchy throughout, with headline, hero object and evidence plate separated. The square crop preserves the core read and captions; the busiest retention and dual-room frames remain organized."},
+    {"name": "Color & grade", "weight": 0.08, "score": 8.5, "weighted": 0.68, "evidence": "Sage, viridian, cream and apricot make a fresh health-records paper world rather than default blue. Light, shadow, glass highlights and subtle floor rays keep the palette cohesive across all shots."},
+    {"name": "Typography & captions", "weight": 0.06, "score": 8.8, "weighted": 0.528, "evidence": "Headlines, evidence labels and open captions are consistently legible in the vertical contact frames and square proof. The caption ledger covers 44 cues and 271 words with 0 ms median boundary error, and no visible typo appears in the reviewed frames."},
+    {"name": "Sound design & mix", "weight": 0.10, "score": 9.0, "weighted": 0.9, "evidence": "The exact delivered master and square report -14.84 LUFS, -2.55 dBTP and 6.1 LU LRA. The score is composer-credited, 38 SFX events span the film, 29 are verified audible, and the pre-payoff bed dip measures 6.1 dB. This is evidence review, not a human listening claim."},
+    {"name": "VO–illustration sync & entertainment", "weight": 0.08, "score": 8.5, "weighted": 0.68, "evidence": "The true strips tie each narrated claim to a physical paper or machinery action, and the recording lever provides a readable recurring device. The strongest entertainment beats are consent-before-motion, the provider stopping the draft, the unknown retention card, and the machine stepping aside."},
+    {"name": "Accuracy & sourcing", "weight": 0.10, "score": 9.4, "weighted": 0.94, "evidence": "Fourteen claims are grounded in TCC's first-party announcement and organizational page. Announcement, aim, measured outcome, recording, approved chart note, possible de-identified reuse, HIPAA assurance and care promise remain explicitly distinct. Limitations are attributed and questions are not converted into accusations."},
+    {"name": "Alaska authenticity & cultural respect", "weight": 0.06, "score": 9.2, "weighted": 0.552, "evidence": "The story is specifically about an Interior Alaska tribal health organization, but avoids invented Native words, iconography, savior framing, patient testimony or culture-as-decoration. Generic figures are labeled illustrations and the argument respects both useful local adoption and refusal."},
+    {"name": "Writing & post quality", "weight": 0.04, "score": 9.2, "weighted": 0.368, "evidence": "The VO and post take a crisp position: useful clerical AI and genuine refusal are compatible. The exact 1,714-character post passes its copy gate, names the key terms, distinguishes evidence from promise and closes with a concrete consent question."}
+  ],
+  "weighted_math": "8.5*0.12 + 8.3*0.16 + 8.2*0.12 + 8.5*0.08 + 8.5*0.08 + 8.8*0.06 + 9.0*0.10 + 8.5*0.08 + 9.4*0.10 + 9.2*0.06 + 9.2*0.04 = 8.660",
+  "weighted_total": 8.66,
+  "threshold": 7.0,
+  "ship": true,
+  "hard_blockers": [],
+  "weakest_criterion": "Motion & animation craft",
+  "one_sentence_fix": "No revision is required to ship; optional polish is to give the subtle retention, reuse and HIPAA mechanisms larger secondary travel while preserving their exact factual scopes.",
+  "anchor_disclosure": "config/panel_anchors.md is missing for a second consecutive run. No anchor scores were guessed, reconstructed or waived. This is an unresolved calibration-process escalation, not evidence of a film hard blocker under the supplied rubric.",
+  "evidence_scope": {
+    "contact_frames_reviewed": 25,
+    "true_eight_frame_strips_reviewed": 38,
+    "mobile_review": "Current square contact evidence and exact square hash reviewed.",
+    "quality_gate": "PASS 10.0",
+    "caption_alignment": "PASS, 44 cues, 271 words, 0 ms median boundary error",
+    "audio": "Metric and provenance evidence only; no human listening claim.",
+    "changes_or_retrospective_read_before_scoring": false
+  },
+  "prior_card_comparison": {
+    "prior_card": "out/dispatch/judge_2_r3.json",
+    "read_after_r4_scores_were_saved": true,
+    "axis_deltas": [
+      {"name": "Hook & retention", "r3": 8.0, "r4": 8.5, "delta": 0.5},
+      {"name": "Illustration craft & detail", "r3": 8.1, "r4": 8.3, "delta": 0.2},
+      {"name": "Motion & animation craft", "r3": 7.5, "r4": 8.2, "delta": 0.7},
+      {"name": "Composition & staging", "r3": 7.6, "r4": 8.5, "delta": 0.9},
+      {"name": "Color & grade", "r3": 8.6, "r4": 8.5, "delta": -0.1},
+      {"name": "Typography & captions", "r3": 7.4, "r4": 8.8, "delta": 1.4},
+      {"name": "Sound design & mix", "r3": 7.8, "r4": 9.0, "delta": 1.2},
+      {"name": "VO–illustration sync & entertainment", "r3": 7.8, "r4": 8.5, "delta": 0.7},
+      {"name": "Accuracy & sourcing", "r3": 8.5, "r4": 9.4, "delta": 0.9},
+      {"name": "Alaska authenticity & cultural respect", "r3": 8.5, "r4": 9.2, "delta": 0.7},
+      {"name": "Writing & post quality", "r3": 8.3, "r4": 9.2, "delta": 0.9}
+    ],
+    "moves_over_one_point": [
+      {
+        "axis": "Typography & captions",
+        "explanation": "Both film and standard moved. The film now gives the S13 choice state full-size external WAITING, YES and NO labels with stable light-backed claim plates, eliminating the tiny scaled choice-state read in the decisive payoff. My standard also moved: the R3 card over-penalized the intentionally consistent uppercase system and sentence cue breaks after already finding the type legible. The rubric's 7-level defect is a touch-static system, not an otherwise clean and measured caption implementation, so the evidence-only R4 score is the better calibration."
+      },
+      {
+        "axis": "Sound design & mix",
+        "explanation": "The film did not move on this axis. The worklog confirms voice, board and mix were unchanged between R3 and R4, and the audio-report hash is identical. My standard moved: R3 discounted the score because I had not personally listened, despite the protocol supplying exact encoded loudness, true peak, LRA, 38 motivated events, 29 audible lifts, a measured silence dip and composer credit. I still make no human-listening or subjective-timbre claim; 9.0 reflects the rubric evidence more faithfully."
+      }
+    ]
+  },
+  "fix_verification": {
+    "reviewed_after_scores_locked": true,
+    "source_scope": "Only the S2, S11 and S13 picture branches changed after R3; VO, props, board and mix were unchanged.",
+    "S2": "Verified in the final contact sequence and exact R4 frames. The notice first establishes TCC, date, Sully.ai and documentation support, then the illustrated patient/provider model arrives as the organizational context is spoken. The scene no longer presents all meaning at once before the narration earns it.",
+    "S11": "Verified in the final contact frames and the patient_carries_retention_question, question_and_waiting_choice_return and tell_provider_refusal_acknowledged strips. The patient physically carries the HOW LONG question into the provider exchange, then the hand and waiting control enter only with the source-backed instruction to tell the provider. This resolves the R3 causal handoff defect.",
+    "S13": "Verified in exact R4 frames and the equal-room, choice-detent and recorder-aside strips. Both controls begin at WAITING, move from neutral to opposite YES and NO endpoints, and the provider response follows the performed choice. The recorder runs only on the consented side and later steps aside while room geometry and care dignity remain equal. This resolves the R3 endpoint-without-performed-choice defect.",
+    "remaining_nonblockers": [
+      "Several informational moves remain subtle at under 1 percent changed pixels, although every required true strip contains visible within-shot motion.",
+      "The recurring frontal room and uppercase label system favor editorial clarity over maximal visual variety.",
+      "The credits are intentionally quiet and reduce living-screen density after the narrative ending."
+    ]
+  }
+}

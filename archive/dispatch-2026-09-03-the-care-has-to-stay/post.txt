@@ -1,0 +1,25 @@
+An AI note taker can be useful without making every patient say yes.
+
+On September 2nd, Tanana Chiefs Conference announced it's introducing Sully.ai. The Interior Alaska tribal health organization's aim is less typing and more attention for patients.
+
+That's a worthwhile job for AI. It doesn't need to make medical decisions to matter.
+
+With permission, the tool listens during an appointment and drafts a note. The provider reviews it, makes edits and approves it before it enters the medical record. The machine assists. A person still owns the clinical judgment.
+
+The choice also reaches beyond that note.
+
+TCC says recordings are deleted after 90 days. It also discloses that the technology company may use deidentified portions of recordings to improve the system. The recording, the approved chart note and those portions aren't interchangeable.
+
+An informed yes is reasonable. Less paperwork could make room for a better conversation. TCC's notice reports no measured benefits, though. A sensible design is a starting point, not proof of a better visit.
+
+How long can those deidentified portions be kept? That's a question to ask, not a blank to fill with an accusation.
+
+TCC says patients can decline or change their minds without affecting their care. That's an announced promise, not an independently tested result.
+
+This is the standard worth carrying into Alaska's next AI adoption debate. Judge the tool by the work it does and whether a person can refuse it without losing what they came for.
+
+The machine can step aside. The care has to stay.
+
+What would you need to know before saying yes to an AI note taker at your next appointment?
+
+#ArtificialIntelligence #Alaska #TribalHealth #PatientConsent

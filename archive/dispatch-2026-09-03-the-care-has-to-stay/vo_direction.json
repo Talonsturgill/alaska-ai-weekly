@@ -1,0 +1,316 @@
+{
+  "run_date": "2026-09-03",
+  "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
+  "voice": "Sulafat",
+  "target_seconds": 118,
+  "band_seconds": [
+    112,
+    130
+  ],
+  "predicted_runtime_s": 118,
+  "word_count": 271,
+  "pronunciations": {
+    "HIPAA": "HIP-uh"
+  },
+  "notes": "Patient agency with constructive optimism. Equal warmth for informed yes and informed no. Attribute the HIPAA storage assurance to TCC. Make telling the provider the practical refusal step. Exact attribution, natural breath pauses, no inline tags. The quiet high point is The care has to stay.",
+  "style_prompt": "Style: warm, grounded, constructively hopeful and conversational. Be curious at the opening no. Brighten at the proposed attention benefit, settle at permission, allow a small half smile at the draft having a boss, and become exact at chart approval. Explain recording reuse without menace. State the HIPAA storage assurance plainly with audible attribution to TCC, not as your own certification. Say HIPAA as HIP-uh. Give the instruction to tell your provider warm practical clarity. Give the informed yes genuine warmth, then lower into the absence of measured results without a gotcha tone. Make switching the recorder off a decisive turn. Treat the care guarantee as TCC's promise, not your certification. Land The care has to stay quietly and firmly, then open the final question to the listener. Neutral American accent, natural and not announcer-y. Keep meaningful rises and falls in pitch and energy; low energy means intimate, not whispered. No hype, suspicion, caricature or spoken performance directions.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and eighteen seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: one load-bearing word per line, in transcript order: no; introducing; attention; permission; boss; then; actually; recordings; may; says; better; reasonable; measured; kept; provider; off; promise; choice; stay; you. Let numbers land. Energy arc by line on a one-to-five scale: 4, 3, 4, 2, 4, 2, 3, 2, 3, 4, 3, 4, 2, 3, 2, 4, 2, 3, 1, 3. These are silent directions, never words to read.",
+  "arc": [
+    {
+      "lines": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "register": "Curious opening, useful clerical job, human authority, open measurement question"
+    },
+    {
+      "lines": [
+        7,
+        8,
+        9
+      ],
+      "register": "Precise artifact distinction, possible reuse and the attributed storage safeguard"
+    },
+    {
+      "lines": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "register": "Generous affirmative case, careful evidentiary limits and a concrete patient action"
+    },
+    {
+      "lines": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "register": "Decisive refusal, attributed promise, quiet care-first button, open invitation"
+    }
+  ],
+  "lines": [
+    {
+      "idx": 0,
+      "text": "What changes when you tell an A I note taker no?",
+      "intent": "hook",
+      "emphasis": "no",
+      "energy": 4,
+      "pace": "curious forward lean; let the question genuinely rise",
+      "tags": [],
+      "pause_before": false,
+      "why": "The refusal question welcomes the listener instead of warning them."
+    },
+    {
+      "idx": 1,
+      "text": "On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.",
+      "intent": "setup",
+      "emphasis": "introducing",
+      "energy": 3,
+      "pace": "clean and measured; articulate the organization's full name",
+      "tags": [],
+      "pause_before": false,
+      "why": "Locate the institution and distinguish an announcement from an audited rollout."
+    },
+    {
+      "idx": 2,
+      "text": "Its job is paperwork. The aim is less typing and more attention for patients.",
+      "intent": "setup",
+      "emphasis": "attention",
+      "energy": 4,
+      "pace": "lightly brighten on the patient benefit; natural breath at the period",
+      "tags": [],
+      "pause_before": false,
+      "why": "Let the proposed benefit sound genuinely useful without promising an outcome."
+    },
+    {
+      "idx": 3,
+      "text": "With the patient's permission, the tool listens during the appointment and drafts a note.",
+      "intent": "stakes",
+      "emphasis": "permission",
+      "energy": 2,
+      "pace": "settle warmly and make the permission condition audible",
+      "tags": [],
+      "pause_before": false,
+      "why": "Consent is the condition for the whole workflow."
+    },
+    {
+      "idx": 4,
+      "text": "That draft still has a boss. The provider reviews it, edits it, and approves it.",
+      "intent": "wry",
+      "emphasis": "boss",
+      "energy": 4,
+      "pace": "small half smile on the first sentence; crisp three-part provider action",
+      "tags": [],
+      "pause_before": false,
+      "why": "A light human metaphor clarifies supervision without ridiculing the tool."
+    },
+    {
+      "idx": 5,
+      "text": "Only then can it enter the medical record. Sully isn't making medical decisions.",
+      "intent": "stakes",
+      "emphasis": "then",
+      "energy": 2,
+      "pace": "firm and precise; slightly lengthen the transition into the chart",
+      "tags": [],
+      "pause_before": false,
+      "why": "Make the approval boundary unmistakable."
+    },
+    {
+      "idx": 6,
+      "text": "But does that design actually give patients more attention? Keep that question open.",
+      "intent": "reveal",
+      "emphasis": "actually",
+      "energy": 3,
+      "pace": "inquiring rise, then a calm open ending",
+      "tags": [],
+      "pause_before": true,
+      "why": "Introduce the measurement question without performing suspicion."
+    },
+    {
+      "idx": 7,
+      "text": "T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.",
+      "intent": "stat",
+      "emphasis": "recordings",
+      "energy": 2,
+      "pace": "give ninety-day room, then separate recordings from notes with the period",
+      "tags": [],
+      "pause_before": false,
+      "why": "The retention rule belongs to one artifact, not everything the listener has heard."
+    },
+    {
+      "idx": 8,
+      "text": "The technology company may also use de-identified portions of recordings to improve the system.",
+      "intent": "setup",
+      "emphasis": "may",
+      "energy": 3,
+      "pace": "neutral factual delivery; articulate de-identified without an ominous drop",
+      "tags": [],
+      "pause_before": false,
+      "why": "Possible reuse is disclosed, not an accusation or a certainty."
+    },
+    {
+      "idx": 9,
+      "text": "T C C says recording storage follows HIPAA.",
+      "intent": "setup",
+      "emphasis": "says",
+      "energy": 4,
+      "pace": "clear and matter of fact; lightly lift the institutional attribution without sounding like a certification",
+      "tags": [],
+      "pause_before": false,
+      "why": "Credit the stated privacy safeguard while making TCC the source of the assurance."
+    },
+    {
+      "idx": 10,
+      "text": "Now give the offer its strongest case. Less typing could mean a better conversation.",
+      "intent": "reveal",
+      "emphasis": "better",
+      "energy": 3,
+      "pace": "open and generous; allow a warmer conversational pitch",
+      "tags": [],
+      "pause_before": true,
+      "why": "Give the affirmative case real emotional weight."
+    },
+    {
+      "idx": 11,
+      "text": "And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.",
+      "intent": "stakes",
+      "emphasis": "reasonable",
+      "energy": 4,
+      "pace": "warm confidence, with room for yes to land",
+      "tags": [],
+      "pause_before": false,
+      "why": "Consent to use deserves equal dignity to refusal."
+    },
+    {
+      "idx": 12,
+      "text": "But this notice reports no measured benefits. A sensible design isn't proof that it works.",
+      "intent": "reveal",
+      "emphasis": "measured",
+      "energy": 2,
+      "pace": "lower and exact, no gotcha tone",
+      "tags": [],
+      "pause_before": true,
+      "why": "Distinguish sensible design from evidence without canceling the fair case."
+    },
+    {
+      "idx": 13,
+      "text": "One question still matters for that informed choice. How long can de-identified portions be kept?",
+      "intent": "stakes",
+      "emphasis": "kept",
+      "energy": 3,
+      "pace": "clear and genuinely inquisitive; give the question space without implying an answer",
+      "tags": [],
+      "pause_before": false,
+      "why": "Identify the one unanswered retention question that matters to informed choice."
+    },
+    {
+      "idx": 14,
+      "text": "Ask about those portions before deciding. To decline, just tell your provider.",
+      "intent": "stakes",
+      "emphasis": "provider",
+      "energy": 2,
+      "pace": "warm practical guidance, with one natural breath between the sentences and a clean landing on provider",
+      "tags": [],
+      "pause_before": false,
+      "why": "Turn patient agency into a specific next step without inventing further refusal or deletion mechanics."
+    },
+    {
+      "idx": 15,
+      "text": "Now switch the recorder off. T C C says you can decline or change your mind.",
+      "intent": "reveal",
+      "emphasis": "off",
+      "energy": 4,
+      "pace": "a decisive physical turn, then reassuring patient agency",
+      "tags": [],
+      "pause_before": true,
+      "why": "The recorder-off action answers the opening setup."
+    },
+    {
+      "idx": 16,
+      "text": "Your care won't be affected. That's its promise, not an independently tested result.",
+      "intent": "stakes",
+      "emphasis": "promise",
+      "energy": 2,
+      "pace": "warm first sentence; careful attribution in the second",
+      "tags": [],
+      "pause_before": false,
+      "why": "Respect the no-penalty commitment while labeling its evidentiary status."
+    },
+    {
+      "idx": 17,
+      "text": "Useful A I doesn't need every patient to make the same choice.",
+      "intent": "stakes",
+      "emphasis": "choice",
+      "energy": 3,
+      "pace": "relaxed and quietly optimistic",
+      "tags": [],
+      "pause_before": false,
+      "why": "The principle is useful AI with patient agency."
+    },
+    {
+      "idx": 18,
+      "text": "The machine can step aside. The care has to stay.",
+      "intent": "button",
+      "emphasis": "stay",
+      "energy": 1,
+      "pace": "quietly firm; natural breath between sentences and full landing on stay",
+      "tags": [],
+      "pause_before": true,
+      "why": "This is the emotional center: the tool is optional, the care is not."
+    },
+    {
+      "idx": 19,
+      "text": "Would you want this note taker at your next visit?",
+      "intent": "button",
+      "emphasis": "you",
+      "energy": 3,
+      "pace": "warm direct address with a genuinely open question",
+      "tags": [],
+      "pause_before": false,
+      "why": "Return the decision to the listener without steering them toward yes or no."
+    }
+  ],
+  "contrast_check": {
+    "energies": [
+      4,
+      3,
+      4,
+      2,
+      4,
+      2,
+      3,
+      2,
+      3,
+      4,
+      3,
+      4,
+      2,
+      3,
+      2,
+      4,
+      2,
+      3,
+      1,
+      3
+    ],
+    "adjacent_equal_pairs": 0,
+    "spread": [
+      1,
+      4
+    ]
+  },
+  "synth_risks": [
+    "Tanana Chiefs Conference must be intelligible; no unverified phonetic override is imposed.",
+    "A I and T C C remain exactly as locked for the voice; caption fixups are separate.",
+    "No measured benefits and the promise qualification must remain fully audible. Do not synthesize until the locked transcript identity check passes."
+  ],
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty. Neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, grounded, constructively hopeful and conversational. Be curious at the opening no. Brighten at the proposed attention benefit, settle at permission, allow a small half smile at the draft having a boss, and become exact at chart approval. Explain recording reuse without menace. State the HIPAA storage assurance plainly with audible attribution to TCC, not as your own certification. Say HIPAA as HIP-uh. Give the instruction to tell your provider warm practical clarity. Give the informed yes genuine warmth, then lower into the absence of measured results without a gotcha tone. Make switching the recorder off a decisive turn. Treat the care guarantee as TCC's promise, not your certification. Land The care has to stay quietly and firmly, then open the final question to the listener. Neutral American accent, natural and not announcer-y. Keep meaningful rises and falls in pitch and energy; low energy means intimate, not whispered. No hype, suspicion, caricature or spoken performance directions.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and eighteen seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: one load-bearing word per line, in transcript order: no; introducing; attention; permission; boss; then; actually; recordings; may; says; better; reasonable; measured; kept; provider; off; promise; choice; stay; you. Let numbers land. Energy arc by line on a one-to-five scale: 4, 3, 4, 2, 4, 2, 3, 2, 3, 4, 3, 4, 2, 3, 2, 4, 2, 3, 1, 3. These are silent directions, never words to read.\nTranscript:\nWhat changes when you tell an A I note taker no?\nOn September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.\nIts job is paperwork. The aim is less typing and more attention for patients.\nWith the patient's permission, the tool listens during the appointment and drafts a note.\nThat draft still has a boss. The provider reviews it, edits it, and approves it.\nOnly then can it enter the medical record. Sully isn't making medical decisions.\nBut does that design actually give patients more attention? Keep that question open.\nT C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.\nThe technology company may also use de-identified portions of recordings to improve the system.\nT C C says recording storage follows HIPAA.\nNow give the offer its strongest case. Less typing could mean a better conversation.\nAnd T C C tells patients about the possible reuse. An informed yes is a reasonable choice.\nBut this notice reports no measured benefits. A sensible design isn't proof that it works.\nOne question still matters for that informed choice. How long can de-identified portions be kept?\nAsk about those portions before deciding. To decline, just tell your provider.\nNow switch the recorder off. T C C says you can decline or change your mind.\nYour care won't be affected. That's its promise, not an independently tested result.\nUseful A I doesn't need every patient to make the same choice.\nThe machine can step aside. The care has to stay.\nWould you want this note taker at your next visit?"
+}

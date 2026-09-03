@@ -1,0 +1,1428 @@
+{
+  "run_date": "2026-09-03",
+  "slug": "the-care-has-to-stay",
+  "concept": "A detachable clerical sidecar beside an intact human-care room.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "title": "The Care Has to Stay",
+  "total_seconds": 118.76666666666667,
+  "fingerprint": {
+    "pov": "cross-section-cutaway",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "structure-as-subject",
+    "layout": "fullbleed-split",
+    "register": "editorial-schematic",
+    "palette": "Sunlit sage viridian sea-glass apricot",
+    "camera_strategy": "rise-reveal-with-source-recontextualization",
+    "light_story": "warm-window-diffuse-daylight",
+    "metaphor": "Detachable clerical sidecar beside a continuous care platform"
+  },
+  "palette": "Sunlit sage viridian sea-glass apricot",
+  "divergence_note": "Unlike September 2's vertical credential press in an institutional parchment world and September 1's radial space-signal machinery, this film crosses a sunlit human room, overhead artifact wells and a source-notice model. The center of gravity is an intact relationship, not a seal or a signal.",
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "Large poised recording switch surrounded by a curling paper wave; room outcome concealed.",
+    "headline": "CAN YOU TELL THE MACHINE NO?",
+    "motion_by_s": 0.12,
+    "loopback": "The same lever finally rests OFF while the two people keep facing each other."
+  },
+  "shots": [
+    {
+      "id": 1,
+      "title": "The unanswered switch",
+      "t": "0.000-4.833",
+      "vo_line": 0,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "recorder-macro",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "static:lever anticipation is the action; camera travel adds no meaning",
+      "stage3d": "flat:Lever housing/base 70%, articulated grip/linkage 20%, pin/fastener/scale marks 10%; apricot grip against viridian housing.",
+      "hero": {
+        "name": "The unanswered switch",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Lever housing/base 70%, articulated grip/linkage 20%, pin/fastener/scale marks 10%; apricot grip against viridian housing."
+      },
+      "world_arc": "Enter on a giant waiting lever with paper wrapping its pivot; exit on the half-anticipated hand before any care outcome appears.",
+      "transition_anchor": "First shot: paper curl surrounds a centered lever grip."
+    },
+    {
+      "id": 2,
+      "title": "A dated announcement",
+      "t": "4.833-14.567",
+      "vo_line": 1,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "announcement-desk",
+      "pov": "top-down-map",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "static:fixed overhead source desk keeps date and paper legible",
+      "stage3d": "flat:Notice sheet 70%, date/title band 20%, fold/clip/shadow 10%; sage desk versus cream paper.",
+      "hero": {
+        "name": "A dated announcement",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Notice sheet 70%, date/title band 20%, fold/clip/shadow 10%; sage desk versus cream paper."
+      },
+      "world_arc": "A folded announcement enters from the lever's paper curl; it opens to the date and an illustrative room resting above it.",
+      "transition_anchor": "Carry the cream paper curl into the folded notice at x540 y870."
+    },
+    {
+      "id": 3,
+      "title": "The clerical sidecar",
+      "t": "14.567-20.267",
+      "vo_line": 2,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "care-room",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "hero": {
+        "name": "The clerical sidecar",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Care architecture and two figures 70%, clerical sidecar 20%, window slats/contact shadows 10%; warm room versus mechanical sidecar."
+      },
+      "world_arc": "Start with a large room and upright paper wall; wall bends into the tiny sidecar and people turn toward each other.",
+      "transition_anchor": "Match notice's room cutout rectangle to the full-height room arch; world now eye-level."
+    },
+    {
+      "id": 4,
+      "title": "Consent starts the recorder",
+      "t": "20.267-25.600",
+      "vo_line": 3,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "overhead",
+      "stage": "artifact-workbench",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "static:consent must visibly precede recording from a stable comparison",
+      "stage3d": "flat:Recorder body 70%, two reels and permission token 20%, hub/vents/transport lamp 10%; consent token remains upstream.",
+      "hero": {
+        "name": "Consent starts the recorder",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Recorder body 70%, two reels and permission token 20%, hub/vents/transport lamp 10%; consent token remains upstream."
+      },
+      "world_arc": "Start with physically disconnected permission token; token seats first, linkage moves second, then reels run and DRAFT emerges.",
+      "transition_anchor": "Match sidecar reel circle to large recording reel at x420 y850; overhead permission sequence replaces the room."
+    },
+    {
+      "id": 5,
+      "title": "A draft meets its reviewer",
+      "t": "25.600-37.367",
+      "vo_line": 4,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "review-desk",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "static:review edits and chart handoff must preserve object identity",
+      "stage3d": "flat:Provider and paper 70%, review/edit pen and chart slot 20%, cuffs/paper curl/approval mark 10%; chart is ivory, recording circular.",
+      "hero": {
+        "name": "A draft meets its reviewer",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Provider and paper 70%, review/edit pen and chart slot 20%, cuffs/paper curl/approval mark 10%; chart is ivory, recording circular."
+      },
+      "world_arc": "Draft arrives at provider's pen; the sheet reverses for an edit, returns for approval and enters a separate chart slot. Medical control stays with the human from first frame.",
+      "transition_anchor": "Carry DRAFT sheet from recorder output into the provider's pen at x540 y840."
+    },
+    {
+      "id": 6,
+      "title": "The evidence question",
+      "t": "37.367-43.633",
+      "vo_line": 6,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "care-room",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "hero": {
+        "name": "The evidence question",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Room model 70%, empty benefit gauge 20%, dangling support shadow/question pin 10%; absence of numbers is meaningful."
+      },
+      "world_arc": "Room lifts as an editorial model; attention question gauge arrives empty and stays unmeasured while provider leans toward patient.",
+      "transition_anchor": "Match reviewed sheet's rectangle to the floating room floor; a new unfilled evidence gauge changes the claim."
+    },
+    {
+      "id": 7,
+      "title": "Recording is not the chart",
+      "t": "43.633-50.433",
+      "vo_line": 7,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "overhead",
+      "stage": "artifact-workbench",
+      "pov": "top-down-map",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "static:the policy bracket needs fixed coil versus sheet registration",
+      "stage3d": "flat:Recording and note wells 70%, coil/sheet silhouette 20%, clock bracket/ruled sheet/contact shadows 10%.",
+      "hero": {
+        "name": "Recording is not the chart",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Recording and note wells 70%, coil/sheet silhouette 20%, clock bracket/ruled sheet/contact shadows 10%."
+      },
+      "world_arc": "A recording coil and an approved sheet separate into distinct wells; a 90-day policy bracket attaches only to the coil without depicting deletion.",
+      "transition_anchor": "Match question-gauge circle to recording coil; split wells replace the eye-level room."
+    },
+    {
+      "id": 8,
+      "title": "A disclosed possible branch",
+      "t": "50.433-61.467",
+      "vo_line": 8,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "recording-cutaway",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "static:possible recording branch cannot become a chart branch through parallax",
+      "stage3d": "flat:Recording branch 70%, dotted possible portions and small gear 20%, separate chart shelf and hub details 10%.",
+      "hero": {
+        "name": "A disclosed possible branch",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Recording branch 70%, dotted possible portions and small gear 20%, separate chart shelf and hub details 10%."
+      },
+      "world_arc": "Open an already-disclosed dotted branch from the recording well; a possible excerpt approaches an improvement gear while chart stays separate.",
+      "transition_anchor": "Carry recording coil into left well while new dotted possible branch grows to right; approved chart stays below."
+    },
+    {
+      "id": 9,
+      "title": "The informed YES",
+      "t": "61.467-74.533",
+      "vo_line": 10,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "care-room",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "hero": {
+        "name": "The informed YES",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Facing figures 70%, visible terms and lever linkage 20%, fingers/window/desk shadows 10%; consent precedes running reels."
+      },
+      "world_arc": "Terms open in front of patient before permission seats; provider turns from desk toward patient, then lever housing opens to expose the consent-controlled linkage.",
+      "transition_anchor": "Match disclosure-sheet rectangle to opened terms before a patient; human room replaces the cutaway."
+    },
+    {
+      "id": 10,
+      "title": "The model sits on a notice",
+      "t": "74.533-81.433",
+      "vo_line": 12,
+      "framing": "alt-vantage",
+      "scale": "extreme-wide",
+      "height": "eye",
+      "stage": "announcement-desk",
+      "pov": "orbital-aerial",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "camera": "riseWith+dollyThrough",
+      "stage3d": "planes:desk at z180, notice z70, miniature room z0; rise/backtrack exposes supporting announcement",
+      "hero": {
+        "name": "The model sits on a notice",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Announcement desk 70%, complete miniature room 20%, dated tab and empty gauge 10%; source boundary becomes visible."
+      },
+      "world_arc": "Start inside a convincing warm model; camera rises/backtracks until the whole room rests on a dated announcement. Empty outcomes gauge lands beside it, paying the evidence question.",
+      "transition_anchor": "Carry complete room model through a motivated source-reveal pullback; background desk and date become new information."
+    },
+    {
+      "id": 11,
+      "title": "The question the clock cannot answer",
+      "t": "81.433-94.933",
+      "vo_line": 13,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "overhead",
+      "stage": "artifact-workbench",
+      "pov": "top-down-map",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "static:open-ended retention question is diagrammatic; this is not a real storage product",
+      "stage3d": "flat:Open-ended excerpt bracket 70%, neutral question card 20%, dotted waveform and waiting grip 10%; no false timer.",
+      "hero": {
+        "name": "The question the clock cannot answer",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Open-ended excerpt bracket 70%, neutral question card 20%, dotted waveform and waiting grip 10%; no false timer."
+      },
+      "world_arc": "An already-labeled possible excerpt enters an open-ended retention bracket; question card folds toward viewer while unresolved OFF hand returns.",
+      "transition_anchor": "Match empty evidence bracket to excerpt-retention question bracket; now overhead paper workbench, not camera zoom."
+    },
+    {
+      "id": 12,
+      "title": "OFF does not remove care",
+      "t": "94.933-107.067",
+      "vo_line": 15,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "care-room",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "hero": {
+        "name": "OFF does not remove care",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Intact care platform 70%, hand/paused recorder 20%, brake linkage/unchanged light 10%."
+      },
+      "world_arc": "Hand pulls lever OFF and reels brake; masked room opens on two people who remain facing each other. Source tab attaches beneath their intact platform.",
+      "transition_anchor": "Carry waiting OFF hand from question scene into the lever's physical linkage; eye-level people remain masked until payoff."
+    },
+    {
+      "id": 13,
+      "title": "One room, two choices",
+      "t": "107.067-115.267",
+      "vo_line": 17,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "choice-diptych",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "static:equal geometry makes YES and NO equally dignified",
+      "stage3d": "flat:Matched rooms 70%, contrasting recorder states 20%, equal-sized labels and paired contact shadows 10%.",
+      "hero": {
+        "name": "One room, two choices",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Matched rooms 70%, contrasting recorder states 20%, equal-sized labels and paired contact shadows 10%."
+      },
+      "world_arc": "One common care platform becomes two equally lit rooms; YES recorder runs, NO recorder pauses, both pairs lean toward each other.",
+      "transition_anchor": "Match intact room arch to equal two-room silhouettes; duplication tests choice parity, not a new deployment claim."
+    },
+    {
+      "id": 14,
+      "title": "The care stays",
+      "t": "115.267-118.767",
+      "vo_line": 19,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "care-room",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "hero": {
+        "name": "The care stays",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Human pair 70%, quiet OFF lever 20%, light/shadow/window detail 10%; machine physically subordinated."
+      },
+      "world_arc": "Patient lifts the audience question card; provider follows the gesture; window handle opens and the same warm room holds into credits.",
+      "transition_anchor": "Carry NO room's paused lever to foreground while the second room leaves and the pair becomes the close human focus."
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "t": "0.000-2.062",
+      "anchor": {
+        "vo_line": 0,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "What changes when you tell an A I note taker no?",
+      "shows": "Paper-wave curls around a waiting recording lever; no room outcome is visible.",
+      "sfx": "whoosh",
+      "means": "Can the patient say no?",
+      "draw": {
+        "subject": "Paper-wave curls around a waiting recording lever",
+        "action": "Paper-wave curls around a waiting recording lever; no room outcome is visible.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "Can the patient say no?"
+      },
+      "choreo": {
+        "primary": "Paper-wave curls around a waiting recording lever; no room outcome is visible.",
+        "reaction": "Trailing sheets bend in the lever's wake; its spring arm recoils.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 0.0
+    },
+    {
+      "id": 2,
+      "t": "2.062-4.820",
+      "anchor": {
+        "vo_line": 0,
+        "offset": 2.062,
+        "fraction": 0.42780748663101603
+      },
+      "vo": "What changes when you tell an A I note taker no?",
+      "shows": "Lever hand anticipates the OFF arc then stops short; lever remains visibly waiting.",
+      "sfx": "tick",
+      "means": "An answer is owed.",
+      "draw": {
+        "subject": "Lever hand anticipates the OFF arc then stops short",
+        "action": "Lever hand anticipates the OFF arc then stops short; lever remains visibly waiting.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "An answer is owed."
+      },
+      "choreo": {
+        "primary": "Lever hand anticipates the OFF arc then stops short; lever remains visibly waiting.",
+        "reaction": "Hand withdraws slightly when lever stops; paper settles around the pivot.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 2.062
+    },
+    {
+      "id": 3,
+      "t": "4.820-9.690",
+      "anchor": {
+        "vo_line": 1,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.",
+      "shows": "The dated TCC announcement unfolds beneath the recorder.",
+      "sfx": "paper",
+      "means": "TCC \u00b7 SEPT 2, 2026",
+      "draw": {
+        "subject": "The dated TCC announcement unfolds beneath the recorder.",
+        "action": "The dated TCC announcement unfolds beneath the recorder.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "TCC INTRODUCES SULLY.AI"
+      },
+      "choreo": {
+        "primary": "The dated TCC announcement unfolds beneath the recorder.",
+        "reaction": "Folded paper corners flatten from the opening impulse.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 4.82
+    },
+    {
+      "id": 4,
+      "t": "9.690-14.560",
+      "anchor": {
+        "vo_line": 1,
+        "offset": 4.87,
+        "fraction": 0.5
+      },
+      "vo": "On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.",
+      "shows": "Provider and patient silhouettes enter a large room cutout above the notice.",
+      "sfx": "pop",
+      "means": "INTERIOR ALASKA",
+      "draw": {
+        "subject": "Provider and patient silhouettes enter a large room cutout above the notice.",
+        "action": "Provider and patient silhouettes enter a large room cutout above the notice.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "INTERIOR ALASKA \u00b7 TRIBAL HEALTH"
+      },
+      "choreo": {
+        "primary": "Provider and patient silhouettes enter a large room cutout above the notice.",
+        "reaction": "Room frame widens as its two occupants step apart to make space.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 9.69
+    },
+    {
+      "id": 5,
+      "t": "14.560-18.152",
+      "anchor": {
+        "vo_line": 2,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "Its job is paperwork. The aim is less typing and more attention for patients.",
+      "shows": "Room opens wide; small paperwork sidecar rolls beside the larger human space.",
+      "sfx": "chime",
+      "means": "THE AIM \u00b7 LESS TYPING",
+      "draw": {
+        "subject": "Room opens wide",
+        "action": "Room opens wide; small paperwork sidecar rolls beside the larger human space.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "THE AIM \u00b7 LESS TYPING"
+      },
+      "choreo": {
+        "primary": "Room opens wide; small paperwork sidecar rolls beside the larger human space.",
+        "reaction": "Sidecar wheels settle; human platform stays fixed.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 14.56
+    },
+    {
+      "id": 6,
+      "t": "18.152-20.260",
+      "anchor": {
+        "vo_line": 2,
+        "offset": 3.592,
+        "fraction": 0.6302521008403361
+      },
+      "vo": "Its job is paperwork. The aim is less typing and more attention for patients.",
+      "shows": "Paper stack bends down into the sidecar; both people lean toward each other.",
+      "sfx": "creak",
+      "means": "MORE ATTENTION \u00b7 AIM",
+      "draw": {
+        "subject": "Paper stack bends down into the sidecar",
+        "action": "Paper stack bends down into the sidecar; both people lean toward each other.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "MORE ATTENTION \u00b7 AIM"
+      },
+      "choreo": {
+        "primary": "Paper stack bends down into the sidecar; both people lean toward each other.",
+        "reaction": "Provider turns toward patient as stack drops out of sight.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 18.152
+    },
+    {
+      "id": 7,
+      "t": "20.260-23.222",
+      "anchor": {
+        "vo_line": 3,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "With the patient's permission, the tool listens during the appointment and drafts a note.",
+      "shows": "Permission token seats beside recording lever before the lever moves.",
+      "sfx": "snap",
+      "means": "PATIENT CONSENT FIRST",
+      "draw": {
+        "subject": "Permission token seats beside recording lever before the lever moves.",
+        "action": "Permission token seats beside recording lever before the lever moves.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "PATIENT CONSENT FIRST"
+      },
+      "choreo": {
+        "primary": "Permission token seats beside recording lever before the lever moves.",
+        "reaction": "Lever remains locked until the permission token lands.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 20.26
+    },
+    {
+      "id": 8,
+      "t": "23.222-25.600",
+      "anchor": {
+        "vo_line": 3,
+        "offset": 2.962,
+        "fraction": 0.5546218487394957
+      },
+      "vo": "With the patient's permission, the tool listens during the appointment and drafts a note.",
+      "shows": "Lever pulls ON; reels start and one DRAFT sheet emerges.",
+      "sfx": "clank",
+      "means": "LISTEN \u2192 DRAFT",
+      "draw": {
+        "subject": "Lever pulls ON",
+        "action": "Lever pulls ON; reels start and one DRAFT sheet emerges.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "CONVERSATION TO DRAFT"
+      },
+      "choreo": {
+        "primary": "Lever pulls ON; reels start and one DRAFT sheet emerges.",
+        "reaction": "Reels accelerate after linkage engages; paper follows the turning reels.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 23.222
+    },
+    {
+      "id": 9,
+      "t": "25.600-28.742",
+      "anchor": {
+        "vo_line": 4,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "That draft still has a boss. The provider reviews it, edits it, and approves it.",
+      "shows": "Oversized review pen stops the draft at the provider's hand.",
+      "sfx": "thud",
+      "means": "PROVIDER REVIEWS",
+      "draw": {
+        "subject": "Oversized review pen stops the draft at the provider's hand.",
+        "action": "Oversized review pen stops the draft at the provider's hand.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "PROVIDER REVIEWS AND APPROVES"
+      },
+      "choreo": {
+        "primary": "Oversized review pen stops the draft at the provider's hand.",
+        "reaction": "Sheet buckles against the provider's pen before it can advance.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 25.6
+    },
+    {
+      "id": 10,
+      "t": "28.742-31.580",
+      "anchor": {
+        "vo_line": 4,
+        "offset": 3.142,
+        "fraction": 0.5254901960784314
+      },
+      "vo": "That draft still has a boss. The provider reviews it, edits it, and approves it.",
+      "shows": "Provider edits; sheet reverses a short distance then returns for approval.",
+      "sfx": "paper",
+      "means": "EDITS \u00b7 APPROVES",
+      "draw": {
+        "subject": "Provider edits",
+        "action": "Provider edits; sheet reverses a short distance then returns for approval.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "EDITS \u00b7 APPROVES"
+      },
+      "choreo": {
+        "primary": "Provider edits; sheet reverses a short distance then returns for approval.",
+        "reaction": "Provider's hand follows the returning sheet; edit marks travel with paper.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "rehook": "The draft has a human boss.",
+      "at_s": 28.742
+    },
+    {
+      "id": 11,
+      "t": "31.580-35.333",
+      "anchor": {
+        "vo_line": 5,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "Only then can it enter the medical record. Sully isn't making medical decisions.",
+      "shows": "Reviewed sheet passes into an approved chart slot while recorder remains separate.",
+      "sfx": "ding",
+      "means": "APPROVED NOTE",
+      "draw": {
+        "subject": "Reviewed sheet passes into an approved chart slot while recorder remains separate.",
+        "action": "Reviewed sheet passes into an approved chart slot while recorder remains separate.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "APPROVED NOTE"
+      },
+      "choreo": {
+        "primary": "Reviewed sheet passes into an approved chart slot while recorder remains separate.",
+        "reaction": "Chart slot opens only after approved paper arrives.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 31.58
+    },
+    {
+      "id": 12,
+      "t": "35.333-37.380",
+      "anchor": {
+        "vo_line": 5,
+        "offset": 3.753,
+        "fraction": 0.6470588235294119
+      },
+      "vo": "Only then can it enter the medical record. Sully isn't making medical decisions.",
+      "shows": "Provider turns the medical-decision handle; recorder only delivers the draft on a separate track.",
+      "sfx": "tick",
+      "means": "NO MEDICAL DECISIONS",
+      "draw": {
+        "subject": "Decision handle stays with the provider, beyond the recorder's reach.",
+        "action": "Provider turns the medical-decision handle; recorder only delivers the draft on a separate track.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "NO MEDICAL DECISIONS"
+      },
+      "choreo": {
+        "primary": "Provider turns the medical-decision handle; recorder only delivers the draft on a separate track.",
+        "reaction": "Provider's forearm follows the decision handle; recorder never reaches for it or controls it.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 35.333
+    },
+    {
+      "id": 13,
+      "t": "37.380-41.615",
+      "anchor": {
+        "vo_line": 6,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "But does that design actually give patients more attention? Keep that question open.",
+      "shows": "Room becomes a suspended model; benefit gauge remains unfilled with a question mark.",
+      "sfx": "whoosh",
+      "means": "MORE ATTENTION?",
+      "draw": {
+        "subject": "Room becomes a suspended model",
+        "action": "Room becomes a suspended model; benefit gauge remains unfilled with a question mark.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "MORE ATTENTION?"
+      },
+      "choreo": {
+        "primary": "Room becomes a suspended model; benefit gauge remains unfilled with a question mark.",
+        "reaction": "Model floor lifts away from its previous floor shadow; empty gauge stays attached.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 37.38
+    },
+    {
+      "id": 14,
+      "t": "41.615-43.620",
+      "anchor": {
+        "vo_line": 6,
+        "offset": 4.235,
+        "fraction": 0.6787330316742082
+      },
+      "vo": "But does that design actually give patients more attention? Keep that question open.",
+      "shows": "Provider reaches toward patient while the evidence question hangs above the tiny recorder.",
+      "sfx": "pop",
+      "means": "WHAT WOULD SHOW IT?",
+      "draw": {
+        "subject": "Provider reaches toward patient while the evidence question hangs above the tiny recorder.",
+        "action": "Provider reaches toward patient while the evidence question hangs above the tiny recorder.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "WHAT WOULD SHOW IT?"
+      },
+      "choreo": {
+        "primary": "Provider reaches toward patient while the evidence question hangs above the tiny recorder.",
+        "reaction": "Patient leans in as provider turns; the open gauge turns toward viewer.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 41.615
+    },
+    {
+      "id": 15,
+      "t": "43.620-47.757",
+      "anchor": {
+        "vo_line": 7,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.",
+      "shows": "Ninety-day policy bracket closes around the recording well only; no deletion is performed.",
+      "sfx": "snap",
+      "means": "RECORDINGS \u00b7 90 DAYS",
+      "draw": {
+        "subject": "Recording policy bracket surrounds the coil",
+        "action": "Ninety-day policy bracket closes around the recording well only; no deletion is performed.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "RECORDINGS \u00b7 90 DAYS"
+      },
+      "choreo": {
+        "primary": "Ninety-day policy bracket closes around the recording well only; no deletion is performed.",
+        "reaction": "The physically separate recording lever waits for the patient and provider.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 43.62
+    },
+    {
+      "id": 16,
+      "t": "47.757-50.440",
+      "anchor": {
+        "vo_line": 7,
+        "offset": 4.137,
+        "fraction": 0.6066176470588236
+      },
+      "vo": "T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.",
+      "shows": "The recording well and chart-sheet well slide apart, preserving the bracket on recordings only.",
+      "sfx": "tick",
+      "means": "RECORDING \u2260 APPROVED NOTE",
+      "draw": {
+        "subject": "Recording and approved note split into separate wells",
+        "action": "The recording well and chart-sheet well slide apart, preserving the bracket on recordings only.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "RECORDING \u2260 APPROVED NOTE"
+      },
+      "choreo": {
+        "primary": "The recording well and chart-sheet well slide apart, preserving the bracket on recordings only.",
+        "reaction": "The physically separate recording lever waits for the patient and provider.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 47.757
+    },
+    {
+      "id": 17,
+      "t": "50.440-54.932",
+      "anchor": {
+        "vo_line": 8,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "The technology company may also use de-identified portions of recordings to improve the system.",
+      "shows": "A dotted possible branch grows directly from the recording toward a waveform portion.",
+      "sfx": "whoosh",
+      "means": "MAY \u00b7 DE-IDENTIFIED PORTIONS",
+      "draw": {
+        "subject": "A dotted possible branch grows directly from the recording toward a waveform portion.",
+        "action": "A dotted possible branch grows directly from the recording toward a waveform portion.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "DE-IDENTIFIED PORTIONS MAY BE REUSED"
+      },
+      "choreo": {
+        "primary": "A dotted possible branch grows directly from the recording toward a waveform portion.",
+        "reaction": "Waveform portion follows the new dotted branch, not the sheet.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 50.44
+    },
+    {
+      "id": 18,
+      "t": "54.932-56.920",
+      "anchor": {
+        "vo_line": 8,
+        "offset": 4.492,
+        "fraction": 0.6932773109243697
+      },
+      "vo": "The technology company may also use de-identified portions of recordings to improve the system.",
+      "shows": "Possible portions turn toward an improvement gear; chart remains on its separate shelf.",
+      "sfx": "clank",
+      "means": "POSSIBLE AI IMPROVEMENT",
+      "draw": {
+        "subject": "Possible portions turn toward an improvement gear",
+        "action": "Possible portions turn toward an improvement gear; chart remains on its separate shelf.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "POSSIBLE AI IMPROVEMENT"
+      },
+      "choreo": {
+        "primary": "Possible portions turn toward an improvement gear; chart remains on its separate shelf.",
+        "reaction": "Improvement gear rotates on a possible-recording-purpose branch; no medical control connects to it.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 54.932
+    },
+    {
+      "id": 19,
+      "t": "56.920-61.480",
+      "anchor": {
+        "vo_line": 9,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "T C C says recording storage follows HIPAA.",
+      "shows": "A HIPAA privacy-policy shield folds beside the recording coil only; dotted reuse branch remains separate.",
+      "sfx": "paper",
+      "means": "TCC SAYS \u00b7 RECORDING STORAGE FOLLOWS HIPAA",
+      "draw": {
+        "subject": "The recording policy folds into a privacy shield",
+        "action": "A HIPAA privacy-policy shield folds beside the recording coil only; dotted reuse branch remains separate.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "TCC SAYS \u00b7 RECORDING STORAGE FOLLOWS HIPAA"
+      },
+      "choreo": {
+        "primary": "A HIPAA privacy-policy shield folds beside the recording coil only; dotted reuse branch remains separate.",
+        "reaction": "The physically separate recording lever waits for the patient and provider.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 56.92
+    },
+    {
+      "id": 20,
+      "t": "61.480-65.662",
+      "anchor": {
+        "vo_line": 10,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "Now give the offer its strongest case. Less typing could mean a better conversation.",
+      "shows": "Room returns at full warm scale; lever housing opens to reveal its linkage while patient approaches informed YES.",
+      "sfx": "chime",
+      "means": "ILLUSTRATION \u00b7 TCC TERMS",
+      "draw": {
+        "subject": "Room returns at full warm scale",
+        "action": "Room returns at full warm scale; lever housing opens to reveal its linkage while patient approaches informed YES.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "ILLUSTRATION \u00b7 TCC TERMS"
+      },
+      "choreo": {
+        "primary": "Room returns at full warm scale; lever housing opens to reveal its linkage while patient approaches informed YES.",
+        "reaction": "Open housing swings then settles; patient approaches the visible permission control before reels run.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 61.48
+    },
+    {
+      "id": 21,
+      "t": "65.662-67.820",
+      "anchor": {
+        "vo_line": 10,
+        "offset": 4.182,
+        "fraction": 0.6596638655462185
+      },
+      "vo": "Now give the offer its strongest case. Less typing could mean a better conversation.",
+      "shows": "Desk rotates away; provider leans in toward patient, allowing a whole conversational beat.",
+      "sfx": "pop",
+      "means": "LESS TYPING COULD HELP",
+      "draw": {
+        "subject": "Desk rotates away",
+        "action": "Desk rotates away; provider leans in toward patient, allowing a whole conversational beat.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "LESS TYPING COULD HELP"
+      },
+      "choreo": {
+        "primary": "Desk rotates away; provider leans in toward patient, allowing a whole conversational beat.",
+        "reaction": "Patient leans forward in response to the provider's turn.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "rehook": "An informed yes gets the strongest visual case.",
+      "at_s": 65.662
+    },
+    {
+      "id": 22,
+      "t": "67.820-71.796",
+      "anchor": {
+        "vo_line": 11,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.",
+      "shows": "Disclosed-terms sheet opens before the patient's permission token seats.",
+      "sfx": "paper",
+      "means": "POSSIBLE REUSE DISCLOSED",
+      "draw": {
+        "subject": "Disclosed-terms sheet opens before the patient's permission token seats.",
+        "action": "Disclosed-terms sheet opens before the patient's permission token seats.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "POSSIBLE REUSE DISCLOSED"
+      },
+      "choreo": {
+        "primary": "Disclosed-terms sheet opens before the patient's permission token seats.",
+        "reaction": "Patient's gaze follows disclosed terms before hand reaches control.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 67.82
+    },
+    {
+      "id": 23,
+      "t": "71.796-74.540",
+      "anchor": {
+        "vo_line": 11,
+        "offset": 3.976,
+        "fraction": 0.5916955017301039
+      },
+      "vo": "And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.",
+      "shows": "Permission token seats in the already-exposed linkage; informed YES engages recording.",
+      "sfx": "clank",
+      "means": "INFORMED YES",
+      "draw": {
+        "subject": "Same lever housing opens to show its linkage",
+        "action": "Permission token seats in the already-exposed linkage; informed YES engages recording.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "INFORMED YES"
+      },
+      "choreo": {
+        "primary": "Permission token seats in the already-exposed linkage; informed YES engages recording.",
+        "reaction": "Reel motion responds to the open linkage and permission token.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 71.796
+    },
+    {
+      "id": 24,
+      "t": "74.540-79.140",
+      "anchor": {
+        "vo_line": 12,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "But this notice reports no measured benefits. A sensible design isn't proof that it works.",
+      "shows": "Camera pulls the entire room model back onto the dated public announcement.",
+      "sfx": "whoosh",
+      "means": "ANNOUNCED AIM",
+      "draw": {
+        "subject": "Camera pulls the entire room model back onto the dated public announcement.",
+        "action": "Camera pulls the entire room model back onto the dated public announcement.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "ANNOUNCED AIM"
+      },
+      "choreo": {
+        "primary": "Camera pulls the entire room model back onto the dated public announcement.",
+        "reaction": "Whole room and its shadow shrink together; source date becomes legible.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 74.54
+    },
+    {
+      "id": 25,
+      "t": "79.140-81.440",
+      "anchor": {
+        "vo_line": 12,
+        "offset": 4.6,
+        "fraction": 0.6666666666666666
+      },
+      "vo": "But this notice reports no measured benefits. A sensible design isn't proof that it works.",
+      "shows": "Unfilled outcome gauge separates from the real notice; no invented bar or data appears.",
+      "sfx": "tick",
+      "means": "NO MEASURED BENEFITS HERE",
+      "draw": {
+        "subject": "Unfilled outcome gauge separates from the real notice",
+        "action": "Unfilled outcome gauge separates from the real notice; no invented bar or data appears.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "NO MEASURED BENEFITS HERE"
+      },
+      "choreo": {
+        "primary": "Unfilled outcome gauge separates from the real notice; no invented bar or data appears.",
+        "reaction": "Empty gauge drops beside announcement instead of filling with fake results.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 79.14
+    },
+    {
+      "id": 26,
+      "t": "81.440-86.203",
+      "anchor": {
+        "vo_line": 13,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "One question still matters for that informed choice. How long can de-identified portions be kept?",
+      "shows": "Already-labeled possible waveform portion enters an open-ended retention bracket; the waiting OFF hand reappears behind it.",
+      "sfx": "whoosh",
+      "means": "PORTIONS \u00b7 HOW LONG?",
+      "draw": {
+        "subject": "Possible recording portion and unanswered retention bracket",
+        "action": "Already-labeled possible waveform portion enters an open-ended retention bracket; the waiting OFF hand reappears behind it.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "PORTIONS \u00b7 HOW LONG?"
+      },
+      "choreo": {
+        "primary": "Already-labeled possible waveform portion enters an open-ended retention bracket; the waiting OFF hand reappears behind it.",
+        "reaction": "Bracket opens without an endpoint; waiting hand moves closer without turning the switch yet.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 81.44
+    },
+    {
+      "id": 27,
+      "t": "86.203-89.053",
+      "anchor": {
+        "vo_line": 13,
+        "offset": 4.763,
+        "fraction": 0.6862745098039216
+      },
+      "vo": "One question still matters for that informed choice. How long can de-identified portions be kept?",
+      "shows": "Patient takes the retention-question card toward the provider; possible excerpt stays unresolved in its separate bracket.",
+      "sfx": "pop",
+      "means": "PORTIONS \u00b7 HOW LONG?",
+      "draw": {
+        "subject": "Patient carrying a retention question to the provider",
+        "action": "Patient takes the retention-question card toward the provider; possible excerpt stays unresolved in its separate bracket.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "PORTIONS \u00b7 HOW LONG?"
+      },
+      "choreo": {
+        "primary": "Patient takes the retention-question card toward the provider; possible excerpt stays unresolved in its separate bracket.",
+        "reaction": "Provider turns toward the offered question card; neither bracket nor waveform gains an invented deadline.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 86.203
+    },
+    {
+      "id": 28,
+      "t": "89.053-93.189",
+      "anchor": {
+        "vo_line": 14,
+        "offset": 0.673,
+        "fraction": 0.10294117647058823
+      },
+      "vo": "Ask about those portions before deciding. To decline, just tell your provider.",
+      "shows": "A question card travels to the foreground; tiny lever and waiting hand re-enter behind it.",
+      "sfx": "snap",
+      "means": "ASK BEFORE DECIDING",
+      "draw": {
+        "subject": "A question card travels to the foreground",
+        "action": "A question card travels to the foreground; tiny lever and waiting hand re-enter behind it.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "ASK BEFORE DECIDING"
+      },
+      "choreo": {
+        "primary": "A question card travels to the foreground; tiny lever and waiting hand re-enter behind it.",
+        "reaction": "Waiting hand draws closer as question card passes to viewer.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 89.053
+    },
+    {
+      "id": 29,
+      "t": "93.189-94.920",
+      "anchor": {
+        "vo_line": 14,
+        "offset": 4.809,
+        "fraction": 0.7352941176470589
+      },
+      "vo": "Ask about those portions before deciding. To decline, just tell your provider.",
+      "shows": "Patient turns the question card toward the provider; a speech arc joins them and the provider acknowledges the choice.",
+      "sfx": "riser",
+      "means": "TO DECLINE \u00b7 TELL YOUR PROVIDER",
+      "draw": {
+        "subject": "Patient tells the provider their choice",
+        "action": "Patient turns the question card toward the provider; a speech arc joins them and the provider acknowledges the choice.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "TO DECLINE \u00b7 TELL YOUR PROVIDER"
+      },
+      "choreo": {
+        "primary": "Patient turns the question card toward the provider; a speech arc joins them and the provider acknowledges the choice.",
+        "reaction": "The physically separate recording lever waits for the patient and provider.",
+        "ambient": "Moving desk-light reflection and paper-corner flex beneath foreground action; recording coil moves only when its transport state is running."
+      },
+      "at_s": 93.189
+    },
+    {
+      "id": 30,
+      "t": "94.920-98.032",
+      "anchor": {
+        "vo_line": 15,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "Now switch the recorder off. T C C says you can decline or change your mind.",
+      "shows": "Patient's hand pulls lever through a deliberate OFF arc; brake takes up load.",
+      "sfx": "clank",
+      "means": "YOU CAN DECLINE",
+      "draw": {
+        "subject": "Patient's hand pulls lever through a deliberate OFF arc",
+        "action": "Patient's hand pulls lever through a deliberate OFF arc; brake takes up load.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "YOU CAN DECLINE"
+      },
+      "choreo": {
+        "primary": "Patient's hand pulls lever through a deliberate OFF arc; brake takes up load.",
+        "reaction": "Reels take up braking load from lever's OFF motion.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 94.92
+    },
+    {
+      "id": 31,
+      "t": "98.032-100.640",
+      "anchor": {
+        "vo_line": 15,
+        "offset": 3.112,
+        "fraction": 0.5441176470588236
+      },
+      "vo": "Now switch the recorder off. T C C says you can decline or change your mind.",
+      "shows": "Reels decelerate to a fixed phase; human room remains partially masked until payoff.",
+      "sfx": "creak",
+      "means": "OR CHANGE YOUR MIND",
+      "draw": {
+        "subject": "Reels decelerate to a fixed phase",
+        "action": "Reels decelerate to a fixed phase; human room remains partially masked until payoff.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "OR CHANGE YOUR MIND"
+      },
+      "choreo": {
+        "primary": "Reels decelerate to a fixed phase; human room remains partially masked until payoff.",
+        "reaction": "Trailing belt settles; reel phase freezes without clearing the coil.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "rehook": "The recorder stops. Does the room change?",
+      "at_s": 98.032
+    },
+    {
+      "id": 32,
+      "t": "100.640-105.288",
+      "anchor": {
+        "vo_line": 16,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "Your care won't be affected. That's its promise, not an independently tested result.",
+      "shows": "Room mask pulls away: both people remain facing each other in unchanged warm light.",
+      "sfx": "chime",
+      "means": "TCC SAYS \u00b7 CARE UNAFFECTED",
+      "draw": {
+        "subject": "Room mask pulls away: both people remain facing each other in unchanged warm light.",
+        "action": "Room mask pulls away: both people remain facing each other in unchanged warm light.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "TCC SAYS \u00b7 CARE UNAFFECTED"
+      },
+      "choreo": {
+        "primary": "Room mask pulls away: both people remain facing each other in unchanged warm light.",
+        "reaction": "Provider and patient become visible together; neither exits or loses light.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 100.64
+    },
+    {
+      "id": 33,
+      "t": "105.288-107.060",
+      "anchor": {
+        "vo_line": 16,
+        "offset": 4.648,
+        "fraction": 0.7239819004524888
+      },
+      "vo": "Your care won't be affected. That's its promise, not an independently tested result.",
+      "shows": "Small announcement tab slides beneath room to identify the promise as a stated term.",
+      "sfx": "pop",
+      "means": "STATED TERMS \u00b7 NOT AN AUDIT",
+      "draw": {
+        "subject": "Small announcement tab slides beneath room to identify the promise as a stated term.",
+        "action": "Small announcement tab slides beneath room to identify the promise as a stated term.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "STATED TERMS \u00b7 NOT AN AUDIT"
+      },
+      "choreo": {
+        "primary": "Small announcement tab slides beneath room to identify the promise as a stated term.",
+        "reaction": "Source tab attaches below the same floor rather than replacing people.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 105.288
+    },
+    {
+      "id": 34,
+      "t": "107.060-110.190",
+      "anchor": {
+        "vo_line": 17,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "Useful A I doesn't need every patient to make the same choice.",
+      "shows": "Two equally warm rooms assemble side by side, one recorder running and one paused.",
+      "sfx": "snap",
+      "means": "YES OR NO",
+      "draw": {
+        "subject": "Two equally warm rooms assemble side by side, one recorder running and one paused.",
+        "action": "Two equally warm rooms assemble side by side, one recorder running and one paused.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "YES OR NO"
+      },
+      "choreo": {
+        "primary": "Two equally warm rooms assemble side by side, one recorder running and one paused.",
+        "reaction": "Two rooms separate from common platform, equal dimensions and key light.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 107.06
+    },
+    {
+      "id": 35,
+      "t": "110.190-111.180",
+      "anchor": {
+        "vo_line": 17,
+        "offset": 3.13,
+        "fraction": 0.7598039215686275
+      },
+      "vo": "Useful A I doesn't need every patient to make the same choice.",
+      "shows": "Twin permission detents click into YES and NO while both providers lean equally toward their patients.",
+      "sfx": "tick",
+      "means": "SAME STANDARD OF CARE",
+      "draw": {
+        "subject": "Both providers lean toward their patients",
+        "action": "Twin permission detents click into YES and NO while both providers lean equally toward their patients.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "SAME STANDARD OF CARE"
+      },
+      "choreo": {
+        "primary": "Twin permission detents click into YES and NO while both providers lean equally toward their patients.",
+        "reaction": "Each control pin settles with a tiny tick; neither choice receives more light or dignity.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 110.19
+    },
+    {
+      "id": 36,
+      "t": "111.180-115.260",
+      "anchor": {
+        "vo_line": 18,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "The machine can step aside. The care has to stay.",
+      "shows": "Paused recorder slides aside, revealing the already-continuous care platform; people, room size and light do not change.",
+      "sfx": "whoosh",
+      "means": "THE CARE HAS TO STAY",
+      "draw": {
+        "subject": "Paused recorder slides aside",
+        "action": "Paused recorder slides aside, revealing the already-continuous care platform; people, room size and light do not change.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "THE CARE HAS TO STAY"
+      },
+      "choreo": {
+        "primary": "Paused recorder slides aside, revealing the already-continuous care platform; people, room size and light do not change.",
+        "reaction": "Recorder wheels settle at side; people remain in their original positions and keep attending to each other.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 111.18
+    },
+    {
+      "id": 37,
+      "t": "115.260-118.168",
+      "anchor": {
+        "vo_line": 19,
+        "offset": 0.0,
+        "fraction": 0.0
+      },
+      "vo": "Would you want this note taker at your next visit?",
+      "shows": "Patient lifts a plain question card toward the viewer; provider follows the gesture while the OFF lever stays quiet.",
+      "sfx": "chime",
+      "means": "WOULD YOU WANT IT?",
+      "draw": {
+        "subject": "Final room holds two active listeners while the quiet lever sits OFF in foreground.",
+        "action": "Patient lifts a plain question card toward the viewer; provider follows the gesture while the OFF lever stays quiet.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "WOULD YOU WANT IT?"
+      },
+      "choreo": {
+        "primary": "Patient lifts a plain question card toward the viewer; provider follows the gesture while the OFF lever stays quiet.",
+        "reaction": "Question card catches a soft chime at its stop; both people's gaze follows the offered audience choice.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 115.26
+    },
+    {
+      "id": 38,
+      "t": "118.168-118.767",
+      "anchor": {
+        "vo_line": 19,
+        "offset": 2.908,
+        "fraction": 0.8294117647058823
+      },
+      "vo": "Would you want this note taker at your next visit?",
+      "shows": "Window hinge opens gently with a creak behind both figures; the room's warmth stays constant and the title returns before credits.",
+      "sfx": "creak",
+      "means": "THE CARE HAS TO STAY",
+      "draw": {
+        "subject": "Window light opens gently behind both figures",
+        "action": "Window hinge opens gently with a creak behind both figures; the room's warmth stays constant and the title returns before credits.",
+        "emotion": "Attentive, warmly curious; no villain, no observed patient claim.",
+        "annotation": "THE CARE HAS TO STAY"
+      },
+      "choreo": {
+        "primary": "Window hinge opens gently with a creak behind both figures; the room's warmth stays constant and the title returns before credits.",
+        "reaction": "Window handle follows its hinge; curtain edge trails and settles without changing the equal warmth.",
+        "ambient": "Two independent breathing/eye cycles and soft curtain/light drift; recorder reels move only when consented and running."
+      },
+      "at_s": 118.168
+    }
+  ],
+  "reveals": [
+    {
+      "t": 14.56,
+      "type": "scale-pullback",
+      "what": "Paperwork is a small sidecar beside the large human space.",
+      "hold_s": 0.6,
+      "anticipation": "At t minus 0.30s primary object leans opposite travel, then accelerates into reveal.",
+      "hold": "Hold all focal and secondary arrival motion for 0.6s after disclosure."
+    },
+    {
+      "t": 74.54,
+      "type": "scale-pullback",
+      "what": "Useful model shrinks onto a dated announcement, not an outcomes report.",
+      "hold_s": 0.7,
+      "anticipation": "At t minus 0.30s primary object leans opposite travel, then accelerates into reveal.",
+      "hold": "Hold all focal and secondary arrival motion for 0.7s after disclosure."
+    },
+    {
+      "t": 100.64,
+      "type": "build-on",
+      "what": "Recorder stops; whole care room remains intact under the stated terms.",
+      "hold_s": 0.7,
+      "anticipation": "At t minus 0.30s primary object leans opposite travel, then accelerates into reveal.",
+      "hold": "Hold all focal and secondary arrival motion for 0.7s after disclosure."
+    }
+  ],
+  "open_loop": {
+    "plant_t": 0,
+    "pay_t": 100.64,
+    "what": "What happens to care when the recorder is declined?"
+  },
+  "open_loop_2": {
+    "plant_t": 37.38,
+    "pay_t": 79.14,
+    "what": "Does an appealing design demonstrate the promised attention benefit? No measured benefit is reported here."
+  },
+  "throughline": {
+    "object": "Same recording lever",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "Hand poised; lever WAITING."
+      },
+      {
+        "at_s": 28.742,
+        "state": "Lever ON; draft halted by human review."
+      },
+      {
+        "at_s": 61.48,
+        "state": "Housing exposed and terms sheet open; informed YES controls the linkage."
+      },
+      {
+        "at_s": 98.032,
+        "state": "Lever crosses OFF; reels brake without disappearing."
+      },
+      {
+        "at_s": 115.26,
+        "state": "Lever OFF in foreground, two people remain together."
+      }
+    ],
+    "lands_in_button": "The paused clerical tool leaves the human space intact."
+  },
+  "audio_arc": {
+    "build_steps": [
+      "Room enters with warm marimba bed",
+      "Recording and review add soft paper/metal punctuation",
+      "Possible reuse exposes a thin curious texture",
+      "Evidence-status reveal thins music",
+      "OFF anticipates silence then warm room resolves"
+    ],
+    "dip_at": 79.14,
+    "riser_at": 93.189,
+    "silence_at": 105.81,
+    "payoff_at": 111.18,
+    "button_pattern": "question",
+    "silence_note": "0.90s fitted to the verified gap before line17; closing care principle follows."
+  },
+  "note": "Times are pre-VO plans; retime from stored line anchors after actual forced alignment. No fake UI, identifier-removal mechanics, measured patient outcomes or deletion demonstration. Permanent ILLUSTRATION \u00b7 TCC TERMS label on all care scenes; OFF changes neither care-room size nor warmth."
+}

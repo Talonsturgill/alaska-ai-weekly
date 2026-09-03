@@ -1,0 +1,265 @@
+{
+  "judge": "JUDGE1",
+  "run_date": "2026-09-03",
+  "review_round": "r4",
+  "rubric": "config/dispatch_rubric.yaml",
+  "style_basis": "Execution within the flat-vector IGS 2.5D style charter; no penalty for not being painterly, photorealistic or 3D.",
+  "criteria": [
+    {
+      "name": "Hook & retention",
+      "weight": 0.12,
+      "score": 8.3,
+      "weighted_contribution": 0.996,
+      "notes": "The opening asks a direct patient-choice question over a large hand and recorder; the visible waiting control creates an immediate unresolved mechanism. The payoff arrives late but clearly when the machine stops and care remains. The automated hook windows pass, though the early announcement section contains several quieter held stretches."
+    },
+    {
+      "name": "Illustration craft & detail",
+      "weight": 0.16,
+      "score": 8.2,
+      "weighted_contribution": 1.312,
+      "notes": "The flat-vector house style is consistently finished with ink, form shading, contact shadows, window light, papers, reels, controls and small material details. Props and characters are at broadly similar finish. Several scenes reuse the same clinic-room architecture and sparse pale field, keeping this below exceptional density."
+    },
+    {
+      "name": "Motion & animation craft",
+      "weight": 0.12,
+      "score": 7.7,
+      "weighted_contribution": 0.924,
+      "notes": "The 38 true eight-frame strips show meaningful lever travel, hand anticipation, paper movement, room entrances, card transfers, recorder braking and choice-state changes, plus subtler character life. Some strips show only slight movement across eight frames, and 11 graded two-second windows remain under the three-region living-screen target despite the aggregate pass."
+    },
+    {
+      "name": "Composition & staging",
+      "weight": 0.08,
+      "score": 8.5,
+      "weighted_contribution": 0.68,
+      "notes": "The 25-frame sheet has a consistent top headline, central action, evidence label and caption-band hierarchy. Both 9:16 and center-cropped square frames are balanced and unclipped. A few split-room and small-document labels approach the lower end of comfortable phone reading."
+    },
+    {
+      "name": "Color & grade",
+      "weight": 0.08,
+      "score": 8.1,
+      "weighted_contribution": 0.648,
+      "notes": "Mint, cream, deep green and apricot create a cohesive clinic-document palette with warm/cool separation, light shafts, shadows and a restrained finish. The world suits a healthcare notice but remains deliberately narrow and visually similar across most shots."
+    },
+    {
+      "name": "Typography & captions",
+      "weight": 0.06,
+      "score": 8.7,
+      "weighted_contribution": 0.522,
+      "notes": "Headlines, evidence labels and open captions remain high-contrast and readable in the 390px inspection; the normalized 271-word caption gate passes with 44 cues and zero text mismatches. The type system is disciplined, though supporting labels in dense miniature compositions are small."
+    },
+    {
+      "name": "Sound design & mix",
+      "weight": 0.1,
+      "score": 8.1,
+      "weighted_contribution": 0.81,
+      "notes": "Objective evidence shows -14.84 LUFS, -2.55 dBTP, LRA 6.1, sourced and credited music, 38 scheduled effects across all shots, 29 verified audible lifts, and a measured 6.1 dB silence dip. This is report-based scoring only; no human listening is claimed, so subjective timbre and exact perceptual balance are not elevated further."
+    },
+    {
+      "name": "VO–illustration sync & entertainment",
+      "weight": 0.08,
+      "score": 8,
+      "weighted_contribution": 0.64,
+      "notes": "The picture follows the narration's causal sequence: permission, draft, provider control, recording versus note, possible reuse, evidence limit, retention question, refusal and preserved care. The strongest actions land on the spoken ideas, but repeated room/tableau layouts and several restrained holds keep it from feeling continuously surprising."
+    },
+    {
+      "name": "Accuracy & sourcing",
+      "weight": 0.1,
+      "score": 9,
+      "weighted_contribution": 0.9,
+      "notes": "Fourteen propositions are scoped to two primary TCC pages, with policy and benefit language attributed, recording separated from approved notes and de-identified portions, and the absence of measured outcomes limited to the notice. Illustration labels repeatedly distinguish TCC terms from audit or measured result. The story relies mainly on the announcing institution rather than independent outcome evidence, but says so directly."
+    },
+    {
+      "name": "Alaska authenticity & cultural respect",
+      "weight": 0.06,
+      "score": 8.8,
+      "weighted_contribution": 0.528,
+      "notes": "The film names Tanana Chiefs Conference accurately as an Interior Alaska tribal health organization, avoids generic Native iconography and savior framing, and centers patient choice without treating the institution as suspect. The setting is locally grounded but visually generalized rather than culturally specific."
+    },
+    {
+      "name": "Writing & post quality",
+      "weight": 0.04,
+      "score": 9.1,
+      "weighted_contribution": 0.364,
+      "notes": "The VO and post are unusually clear about announced aims versus outcomes, permission versus refusal, and the unanswered retention question. The 1714-character post passes its objective rubric, opens inside 68 characters, uses four relevant hashtags and closes with a substantive audience question."
+    }
+  ],
+  "rubric_weight_sum": 1,
+  "weighted_total": 8.324,
+  "weighted_math": "0.996 + 1.312 + 0.924 + 0.680 + 0.648 + 0.522 + 0.810 + 0.640 + 0.900 + 0.528 + 0.364 = 8.324",
+  "threshold": 7,
+  "ship": true,
+  "hard_blockers": [],
+  "weakest_criterion": "Motion & animation craft",
+  "weakest_criterion_note": "The aggregate living-screen gate passes, but several eight-frame action windows remain subtle at delivery scale.",
+  "one_sentence_fix": "Increase silhouette-readable travel and settle in the provider acknowledgement and recording-branch beats so their actions read as decisively as the lever brake and room transformations.",
+  "evidence_examined": {
+    "protocol_and_rubric": [
+      "config/panel_protocol.md",
+      "config/dispatch_rubric.yaml"
+    ],
+    "contact_sheet": "out/evidence/contact_square.jpg",
+    "contact_frames_inspected": 25,
+    "individual_stills_directory": "out/evidence",
+    "individual_stills_supplied": 26,
+    "motion_strips_directory": "out/evidence",
+    "motion_strip_count": 38,
+    "motion_strip_method": "Every filmstrip_*.jpg was viewed; each supplied strip contains eight actual frames and reports its centered time plus first-to-eighth-frame pixel change.",
+    "mobile_legibility": {
+      "artifact": "out/dispatch/dispatch_square.mp4",
+      "method": "Six frames decoded directly from the exact square export and scaled to 390x390 in a temporary directory.",
+      "times_s": [
+        0,
+        36.9,
+        60.9,
+        89.4,
+        107.7,
+        126.4
+      ],
+      "result": "Main headlines, claim labels, captions and credits readable; miniature supporting labels in dense split-room compositions are near the comfortable lower limit."
+    },
+    "reports": [
+      "out/dispatch/quality_report.json",
+      "out/evidence/audio_report.json",
+      "out/dispatch/caption_report.json",
+      "out/dispatch/caption_alignment_review.json",
+      "out/dispatch/caption_score.json",
+      "out/dispatch/audio/aac_check.json",
+      "out/dispatch/audio/mix_transcription_review.json",
+      "out/dispatch/audio/music_status.json"
+    ],
+    "content_documents": [
+      "out/dispatch/vo_script.txt",
+      "out/dispatch/post.txt",
+      "out/dispatch/claims.json",
+      "out/dispatch/sources.json"
+    ],
+    "evidence_readme_note": "No README file is present in out/evidence; no missing README contents were inferred."
+  },
+  "hash_bindings": {
+    "verified_with": "shasum -a 256 on exact current local artifacts",
+    "out/dispatch/dispatch_master.mp4": "5376a29859cf8d0d39c3781a98ba38b240b6a01c255d2a589d61dbf9c10ed08e",
+    "out/dispatch/dispatch_square.mp4": "cd552488c2c7ce3e86d4cd62eefa8893c323e492b74afabdc37e15b86239a949",
+    "out/evidence/contact_square.jpg": "9ee3e16dfa89f5b505502ca5b761d725e470cf4bf3af8d58d2bbc14325c4612b",
+    "export_metadata_verified": {
+      "master_dimensions": "1080x1920",
+      "square_dimensions": "1080x1080",
+      "duration_s": 131.066667
+    },
+    "quality_gate_score": 10,
+    "acoustic_report_mix_sha256": "cf973eb43b9f58af672b7880f26de127b7b7516762f323691a9943cfe5045ebd"
+  },
+  "scope_limitations": [
+    "config/panel_anchors.md is absent for the second consecutive Judge 1 run. This is an owner escalation: restore or supply the versioned anchor artifact before the next panel. No anchors, comparative anchor scores or waiver were invented; current scoring therefore uses the written rubric plus current evidence only.",
+    "No human listening was performed. Sound scoring uses delivered encoded-mix measurements, SFX-lift evidence, credits and automated transcription; subjective timbre, performance and moment-to-moment balance are not claimed verified.",
+    "Visual inspection covers all 25 contact-sheet frames, all 38 supplied eight-frame strips, and six exact-export 390px square samples, not continuous human playback of every frame.",
+    "The evidence directory contains no README. Current reports and artifacts were inspected directly, and no README assertions were assumed.",
+    "The 4:5 safe-area claim is supported by the centered square export and current framing evidence; no separate 4:5 export was supplied.",
+    "Recent-palette uniqueness was not independently audited against historical films. The current pack is not default blue and shows no internal palette conflict.",
+    "HIPAA, retention, reuse and care-continuity terms are assessed as clearly attributed TCC notice statements, not independently verified compliance, outcomes or patient experience."
+  ],
+  "scores_locked_before_previous_card": true,
+  "score_lock_record": {
+    "method": "All 11 R4 scores and their evidence notes were committed before opening out/dispatch/judge_1_r3.json or any change history.",
+    "change_history_read_for_scoring": false,
+    "worklog_read_for_scoring": false
+  },
+  "fix_verification": {
+    "previous_card": "out/dispatch/judge_1_r3.json",
+    "previous_weighted_total": 7.814,
+    "current_weighted_total": 8.324,
+    "delta": 0.51,
+    "previous_fix": "Increase the silhouette-readable anticipation and settle on the small provider acknowledgement and recording-branch actions so those beats register as clearly as the large room transformations at phone size.",
+    "status": "partial",
+    "evidence": "The current retention-question sequence now shows a readable HOW LONG card handoff, provider orientation, and a RECORDING WAITING callback before refusal. However, filmstrip_tell_provider_refusal_acknowledged still changes only 0.9% from frame 1 to frame 8, and filmstrip_possible_recording_portion_branches changes 0.8%; both remain visibly subtler than the lever brake and room transformations.",
+    "axis_comparison": [
+      {
+        "name": "Hook & retention",
+        "previous": 7.7,
+        "current": 8.3,
+        "delta": 0.6
+      },
+      {
+        "name": "Illustration craft & detail",
+        "previous": 8,
+        "current": 8.2,
+        "delta": 0.2
+      },
+      {
+        "name": "Motion & animation craft",
+        "previous": 7.2,
+        "current": 7.7,
+        "delta": 0.5
+      },
+      {
+        "name": "Composition & staging",
+        "previous": 7.5,
+        "current": 8.5,
+        "delta": 1
+      },
+      {
+        "name": "Color & grade",
+        "previous": 8.3,
+        "current": 8.1,
+        "delta": -0.2
+      },
+      {
+        "name": "Typography & captions",
+        "previous": 7.2,
+        "current": 8.7,
+        "delta": 1.5
+      },
+      {
+        "name": "Sound design & mix",
+        "previous": 7.6,
+        "current": 8.1,
+        "delta": 0.5
+      },
+      {
+        "name": "VO–illustration sync & entertainment",
+        "previous": 7.7,
+        "current": 8,
+        "delta": 0.3
+      },
+      {
+        "name": "Accuracy & sourcing",
+        "previous": 8.5,
+        "current": 9,
+        "delta": 0.5
+      },
+      {
+        "name": "Alaska authenticity & cultural respect",
+        "previous": 8.2,
+        "current": 8.8,
+        "delta": 0.6
+      },
+      {
+        "name": "Writing & post quality",
+        "previous": 8.3,
+        "current": 9.1,
+        "delta": 0.8
+      }
+    ],
+    "moves_over_one": [
+      {
+        "axis": "Typography & captions",
+        "previous": 7.2,
+        "current": 8.7,
+        "delta": 1.5,
+        "film_element": "The same headline, evidence-label and open-caption system viewed across the current contact sheet and six exact-export 390px samples.",
+        "movement_attribution": "standard_moved",
+        "explanation": "No specific R4 typography redesign was established from evidence-only grading. My current phone-scale inspection and the zero-mismatch caption report support 8.7, so the greater-than-one movement is an explicit recalibration of my standard rather than a claimed film change."
+      }
+    ],
+    "other_notable_movements": [
+      {
+        "axis": "Composition & staging",
+        "previous": 7.5,
+        "current": 8.5,
+        "delta": 1,
+        "film_element": "The centered headline-action-label-caption hierarchy across the 25-frame sheet and square samples.",
+        "movement_attribution": "mixed_or_unestablished",
+        "explanation": "The move is exactly 1.0 and does not trigger the protocol's greater-than-one explanation rule; no specific change-list claim is made."
+      }
+    ]
+  }
+}

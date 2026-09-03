@@ -1,0 +1,87 @@
+{
+  "run_date": "2026-09-03",
+  "window_reported_by_gate": 10,
+  "search_budget": {
+    "researchers": 3,
+    "capped": true,
+    "exhausted": false
+  },
+  "rungs": [
+    {
+      "rung": "in_window_sweep",
+      "attempted": true,
+      "note": "Researchers fetched current public primary reporting."
+    },
+    {
+      "rung": "outlet_index_sweep",
+      "attempted": true,
+      "note": "Researchers fetched current public primary reporting."
+    },
+    {
+      "rung": "widened_window",
+      "attempted": false,
+      "note": "Not needed; fresh in-window primary announcement locked."
+    },
+    {
+      "rung": "carried_leads",
+      "attempted": false,
+      "note": "Not needed; fresh in-window primary announcement locked."
+    },
+    {
+      "rung": "primary_source_mining",
+      "attempted": true,
+      "note": "Researchers fetched current public primary reporting."
+    },
+    {
+      "rung": "follow_up",
+      "attempted": false,
+      "note": "Not needed; fresh in-window primary announcement locked."
+    },
+    {
+      "rung": "pegged_explainer",
+      "attempted": false,
+      "note": "Not needed; fresh in-window primary announcement locked."
+    }
+  ],
+  "locked_story": {
+    "id": "tcc-sully-consent",
+    "found_at_rung": "in_window_sweep",
+    "headline": "The Care Has to Stay",
+    "primary_sources": [
+      "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/"
+    ],
+    "dedupe": "FRESH; TCC Sully.ai is distinct from rural-health awards."
+  },
+  "candidates": [
+    {
+      "headline": "TCC introduces Sully.ai",
+      "status": "SELECTED",
+      "date": "2026-09-02",
+      "reason": "New Native-led implementation announcement with precise consent and review boundaries."
+    },
+    {
+      "headline": "Permafrost Discovery Gateway lake drainage",
+      "status": "RUNNER-UP",
+      "date": "2026-08-26",
+      "reason": "Real AI science; carousel already covered August 28. Current lake count caveat retained."
+    },
+    {
+      "headline": "RHT medicine drone planning",
+      "status": "RUNNER-UP",
+      "date": "2026-08-25",
+      "reason": "Planning only; carousel covered August 30."
+    },
+    {
+      "headline": "RHT AI imaging network",
+      "status": "RUNNER-UP",
+      "date": "2026-08-25",
+      "reason": "Award not verified deployment; carousel covered August 30."
+    },
+    {
+      "headline": "ACEP ARCTIC grant",
+      "status": "REJECTED",
+      "date": "2026-09-01",
+      "reason": "No verified AI mechanism."
+    }
+  ]
+}

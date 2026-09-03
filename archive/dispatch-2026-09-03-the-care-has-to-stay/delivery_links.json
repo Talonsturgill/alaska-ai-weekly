@@ -1,0 +1,13 @@
+{
+  "run_date": "2026-09-03",
+  "title": "The Care Has to Stay",
+  "vertical": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-03-dispatch_master_hosted.mp4",
+  "square": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-03-dispatch_square.mp4",
+  "mobile": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-03-dispatch_master_720.mp4",
+  "poster": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-03-poster.png",
+  "poster_thumb": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-03-poster_thumb.jpg",
+  "feed": "https://alaskaaihq.com/videos/videos.json",
+  "feed_commit": "f9007cfe3bc143bdca72bd0ba311099737760ea6",
+  "feed_workflow": "https://github.com/Talonsturgill/alaskaaicarousels/actions/runs/33785239373",
+  "all_links_verified": true
+}

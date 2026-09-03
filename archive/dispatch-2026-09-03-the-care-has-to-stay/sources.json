@@ -1,0 +1,38 @@
+{
+  "run_date": "2026-09-03",
+  "title": "The Care Has to Stay",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Introducing Sully.ai, September 2nd, 2026",
+      "outlet": "Tanana Chiefs Conference",
+      "url": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "claims": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c9",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14"
+      ],
+      "used_in_film": true,
+      "note": "First-party announcement. Terms are TCC's assurances, not an independent audit."
+    },
+    {
+      "id": "s2",
+      "title": "About Tanana Chiefs Conference",
+      "outlet": "Tanana Chiefs Conference",
+      "url": "https://www.tananachiefs.org/about/",
+      "used_in_film": true,
+      "claims": ["c8"],
+      "note": "Named Interior Alaska tribal consortium; organizational scope is not AI rollout coverage."
+    }
+  ]
+}

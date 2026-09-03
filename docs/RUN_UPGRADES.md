@@ -3017,3 +3017,33 @@ not suppressed. Its 12-percent changed-area threshold differs from the living ch
 separate motion regions. The final flow reviewer must judge those actual scenes and credit holds.
 
 Independent final review, ship lock, publication and Gmail delivery remain pending.
+
+### Final R4 closure
+
+- R4 rendered all 3,932 frames from source commit `2e133c2`. Gate A scored 10.0. The encoded
+  cut delivered 49 distinct visual beats, all six measured camera moves, 53 of 64 living-screen
+  windows, all audio limits, 38 motivated sound events, all 14 claim obligations and zero square
+  crop crossings. Required preflight passed.
+- The final editor and POST flow critic both returned ship with no blocker. Judges scored 8.324,
+  8.660 and 7.782; the median is 8.324 against the 7.0 bar, and every judge reported zero hard
+  blockers. The verdict binds three delivery cuts and 65 evidence pieces by hash. The ship gate
+  passed and verified 38 of 38 storyboard beats on the delivered film.
+- The R3 flow repair was completed in two commits. `88812ff` puts the S2 entrance on its beat,
+  performs the S11 question handoff and visibly moves S13's opposite choice controls. `2e133c2`
+  stages the retention question and provider attention before that handoff, preserving later
+  approved frames exactly. Full-size, 390-pixel and true eight-frame evidence was reviewed before
+  the complete R4 render, then reviewed again from the encoded pack.
+- `beat_delivery.py` now prefers the conformed `at_s` clock and validates legacy numeric or range
+  starts. The prior advisory attempted to cast `0.000-2.062` directly and skipped its own work.
+  Three regression cases cover current, legacy and invalid clocks; the live advisory now measures
+  all 38 beats instead of quietly reporting that it could not run.
+- Five deterministic permanent media assets were uploaded and individually verified. Site feed
+  commit `f9007cfe` completed the `Publish docket site` workflow, and the live
+  `alaskaaihq.com/videos/videos.json` entry was read back with its vertical, mobile, poster and
+  thumbnail URLs.
+- Gmail draft `r8895606142205753731` was created unsent in `talon.sturgill@gmail.com`, addressed to
+  `docket@alaskaaihq.com`. The generated email was rendered at desktop, 390-pixel and 320-pixel
+  widths. Gmail readback retained the exact HTML, subject, recipient, caption and both permanent
+  download links; the returned HTML was rendered again at 390 pixels and inspected.
+- `config/panel_anchors.md` remains the one owner dependency. It is absent for a second run and is
+  explicitly disclosed in the Gmail draft. No calibration examples or waiver were invented.

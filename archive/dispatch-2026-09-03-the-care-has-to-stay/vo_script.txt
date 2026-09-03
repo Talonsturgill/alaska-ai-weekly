@@ -1,0 +1,20 @@
+What changes when you tell an A I note taker no?
+On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.
+Its job is paperwork. The aim is less typing and more attention for patients.
+With the patient's permission, the tool listens during the appointment and drafts a note.
+That draft still has a boss. The provider reviews it, edits it, and approves it.
+Only then can it enter the medical record. Sully isn't making medical decisions.
+But does that design actually give patients more attention? Keep that question open.
+T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.
+The technology company may also use de-identified portions of recordings to improve the system.
+T C C says recording storage follows HIPAA.
+Now give the offer its strongest case. Less typing could mean a better conversation.
+And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.
+But this notice reports no measured benefits. A sensible design isn't proof that it works.
+One question still matters for that informed choice. How long can de-identified portions be kept?
+Ask about those portions before deciding. To decline, just tell your provider.
+Now switch the recorder off. T C C says you can decline or change your mind.
+Your care won't be affected. That's its promise, not an independently tested result.
+Useful A I doesn't need every patient to make the same choice.
+The machine can step aside. The care has to stay.
+Would you want this note taker at your next visit?
