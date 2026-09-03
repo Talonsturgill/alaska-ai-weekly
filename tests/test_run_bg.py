@@ -11,6 +11,7 @@ class BackgroundRunnerTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as root:
             subprocess.run(["bash", str(runner), root, "probe", "--", "bash", "-c",
                             "printf background-ok; exit 7"], check=True, capture_output=True)
+            self.assertTrue((pathlib.Path(root) / "probe.ready").exists())
             marker = pathlib.Path(root) / "probe.done"
             deadline = time.monotonic() + 10
             while not marker.exists() and time.monotonic() < deadline:

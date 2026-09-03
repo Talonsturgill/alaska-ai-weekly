@@ -20,7 +20,7 @@ Programmatic:
   rep = check(wav_path, spoken_text, tags=[...])
   best_idx, reports = pick_best([w1,w2,w3], spoken_text, tags=[...])
 """
-import argparse, json, os, re, sys
+import argparse, json, os, re, sys, time
 
 # THE DURATION WINDOW IS READ FROM CONFIG, NOT HARDCODED (2026-07-30). It used to be a
 # literal dur_hi=75.0, which silently became a run-breaker the moment the format went from
@@ -225,10 +225,17 @@ def _wer(ref, hyp):
 
 
 def _transcribe(wav):
+    print("soundcheck ASR: importing backend", file=sys.stderr, flush=True)
     from faster_whisper import WhisperModel
+    print("soundcheck ASR: loading base model", file=sys.stderr, flush=True)
     m = WhisperModel("base", device="cpu", compute_type="int8")
+    print("soundcheck ASR: model loaded; decoding audio", file=sys.stderr, flush=True)
     segs, _ = m.transcribe(wav, language="en", vad_filter=False)
-    return " ".join(s.text.strip() for s in segs)
+    text = []
+    for segment in segs:
+        text.append(segment.text.strip())
+        print(f"soundcheck ASR: decoded through {segment.end:.1f}s", file=sys.stderr, flush=True)
+    return " ".join(text)
 
 
 def _pitch_std_semitones(wav):
@@ -259,12 +266,16 @@ def check(wav, spoken_text, tags=None, dur_lo=None, dur_hi=None):
     dur_lo = DUR_LO if dur_lo is None else dur_lo
     dur_hi = DUR_HI if dur_hi is None else dur_hi
     tags = tags or []
+    started = time.monotonic()
+    print(f"soundcheck {os.path.basename(wav)}: transcribing", file=sys.stderr, flush=True)
     heard = _transcribe(wav)
+    print(f"soundcheck {os.path.basename(wav)}: ASR complete after {time.monotonic()-started:.1f}s; pitch analysis", file=sys.stderr, flush=True)
     wer = _wer(spoken_text, heard)
     heard_words = set(_norm_words(heard))
     tag_words = set(w for t in tags for w in _norm_words(t))
     leaked = sorted((tag_words | NOTE_WORDS) & heard_words)
     pstd, voiced, dur = _pitch_std_semitones(wav)
+    print(f"soundcheck {os.path.basename(wav)}: pitch complete after {time.monotonic()-started:.1f}s; loudness", file=sys.stderr, flush=True)
     try:
         lufs = _lufs(wav)
     except Exception:

@@ -25,6 +25,15 @@ The standalone detached voice launch did not survive the desktop terminal lifecy
 no live PID or done marker. No duplicate synth remained. The managed terminal session is the
 working path for this run; do not treat a launch message as liveness evidence.
 
+Recovery: first voice-analysis process was terminated after >20m with negligible progress;
+all three completed takes preserved. Existing VO_REUSE_TAKES path avoids re-spending Gemini.
+Current managed session8448 runs HF_HUB_OFFLINE=1 VO_REUSE_TAKES=1 under caffeinate. Cached
+base model loads; take0 ASR/pitch completed and take1 decoding progresses. Soundcheck now
+reports safe stage progress to stderr while keeping JSON stdout intact. No thresholds changed.
+run_bg now waits for a detached-child READY handshake. Cross-terminal desktop probe confirmed
+its log and exit0 marker after the caller returned; the startup race is now reproduced/fixed.
+Caption independent PASS8.86, exact1714chars; Gate0 reviews all ship:true. Rough Ep0903 compiles.
+
 September 2 is shipped in PR #113 at d654382. Its locked outputs are preserved in
 out/dispatch-2026-09-02-shipped and must not be modified. The historical pending-merge line below
 is superseded by that verified merge.
