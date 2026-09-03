@@ -310,10 +310,10 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
     buttons = ('<table role="presentation" width="100%" style="width:100%;max-width:100%;table-layout:fixed;" cellspacing="0" cellpadding="0" border="0">'
                + ''.join(button_rows) + '</table>')
     feed_guide = (f'<div class="warn" style="{S["guide"]}">'
-                  'For LinkedIn use the <b>1:1 square</b> cut (top button) so the video lands in the <b>main feed</b> '
-                  'next to your caption. The 9:16 is TikTok-native, and uploaded to LinkedIn it gets pulled into the '
+                  'For LinkedIn use the <b>square</b> cut (top button) so the video lands in the <b>main feed</b> '
+                  'next to your caption. The vertical cut is TikTok-native, and uploaded to LinkedIn it gets pulled into the '
                   'swipe-only Video tab instead of the feed.</div>') if vids.get("square") else ''
-    warn = f'<div class="warn" style="{S["warn"]}">Heads up: these download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
+    warn = f'<div class="warn" style="{S["warn"]}">Heads up. These download links are temporary (~1 hour). Save the file before it expires, or configure a permanent host.</div>' if temporary else ""
     # Keep the required scorecard and Phase 8 fixes together in one quiet, compact block. The
     # earlier large green upgrades panel competed with the actual deliverable in Gmail, and the
     # first simplification overcorrected by hiding the upgrades entirely. This section preserves
@@ -442,9 +442,17 @@ def main():
     html = render(post, poster_html, {"vertical": a.video_url_vertical, "square": a.video_url_square},
                   a.voice or "(unset)", a.music or "(unset)", sources, a.score, a.note, a.temporary, a.date, a.title,
                   a.upgrades, sourcing_note)
+    # Gate the complete decoded draft copy too, not only post.txt. Template labels
+    # and caller-supplied notes are reader-visible prose under the same house rules.
+    from visible_copy_check import check_email_copy
+    subject = f"Ready to post · {a.title or a.date}"
+    copy_check = check_email_copy(subject, html)
+    if copy_check["status"] != "PASS":
+        sys.exit("REFUSING TO BUILD DRAFT: visible email copy fails house rules.\n" +
+                 json.dumps(copy_check, indent=2))
     if a.out_html:
         Path(a.out_html).write_text(html); print("wrote", a.out_html)
-    payload = {"subject": f"Ready to post: {a.title or a.date}", "to": a.to, "html_body": html}
+    payload = {"subject": subject, "to": a.to, "html_body": html}
     print(json.dumps(payload))   # LAST line = the draft payload for Gmail create_draft
 
 if __name__ == "__main__":

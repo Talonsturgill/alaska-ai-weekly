@@ -33,6 +33,10 @@ CHECKS = [
       "--noEmit", "-p", "video-engine/tsconfig.json"], True),
     ("plated strings fit their plates",
      [sys.executable, "scripts/text_fit_check.py"], True),
+    # The post linter does not see film labels or rebuilt captions. Both carried a
+    # banned colon in the September 3 render despite a clean locked VO script.
+    ("visible source and built props obey the copy rules",
+     [sys.executable, "scripts/visible_copy_check.py"], True),
     # Belt and braces. Its real home is Gate 0A', BEFORE the render, where catching a
     # collision costs nothing instead of seven minutes. It is repeated here because the
     # defect it catches is invisible at every other stage: the source reads fine, tsc is

@@ -45,9 +45,15 @@ S2notice andS11question exchange retain separate physical reactions; S8unhelpful
 were reverted after they merged motion regions. S7bracket/label and!=collision, S12STOPPING
 clearance andS10backdrop seam were fixed and viewed on freshframes. BothS2/S11 true8frame
 stride2strips inspected. This is not final encoded certification.
-R2 pipeline session26369 is running undercaffeinate:3slots/12chunks/3932frames, then encode,
-allframe extractiontoframes_0903_r2, GateA->quality_report.json, build_evidence andpreflight.
-Do not change any render/mix inputs while it runs. Syntaxparse77files0.235s, zero failures.
+R2 completed3932frames, GateA10.0PASS, living54/64(84%), all6camera pairsPASS, required
+preflightPASS. ActualAAC-14.85LUFS/-2.60dBTP. R2 outputs/evidence preserved inround2.
+Final copy audit caught S5 DECISIONS colon and one caption colon. Both corrected upstream,
+timings unchanged. Email subject/feed guide punctuation corrected too. Fresh full-size
+frames1090/2500 inspected and legible. Proper rebuild/remix made new source receipts;
+ambience synthesis changes mix bytes slightly, so do not claim identical PCM. NewAAC
+-14.84LUFS/-2.55dBTP. R3 session72160 runs3slots->encode->all3932frames->GateA->pack->preflight.
+Do not change render/mix inputs while it runs. Parallel bounded check repairs cover copy
+rules, evidence beat-range parsing and staging JSX parsing. No panel or delivery yet.
 Full102Pythontests+4parsertestsPASS. NewmixSILENCE_DIPexact6.087dBPASS. 7f50650 stores44cue
 alignmentmedian0ms(all271words), max487msreadingholds, pluswholemixASRphrasepass. BaseASR
 misheardHIPAA; independentunpromptedsmallmodel3.52scliprecognizesexactHIPAAline. No newvoice.

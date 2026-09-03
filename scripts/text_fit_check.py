@@ -236,12 +236,48 @@ const numeric=(n,seen=new Set())=>{
  return null;
 };
 const attrs=n=>Object.fromEntries(n.attributes.properties.filter(ts.isJsxAttribute).map(a=>[a.name.getText(sf),a.initializer]));
-const val=n=>ts.isJsxExpression(n)?n.expression:n;
+const val=n=>n&&ts.isJsxExpression(n)?n.expression:n;
 const defaults=name=>{const d=vars.get(name);if(!d||!d.initializer||!ts.isArrowFunction(d.initializer))return {};const p=d.initializer.parameters[0];if(!p||!ts.isObjectBindingPattern(p.name))return {};return Object.fromEntries(p.name.elements.map(e=>[e.name.getText(sf),numeric(e.initializer)]));};
+let props=null;try{props=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));}catch(e){}
+const strings=n=>{n=val(n);if(!n)return null;if(ts.isStringLiteral(n)||ts.isNoSubstitutionTemplateLiteral(n))return [n.text];if(ts.isConditionalExpression(n)){const a=strings(n.whenTrue),b=strings(n.whenFalse);return a&&b?[...new Set([...a,...b])]:null;}if(ts.isParenthesizedExpression(n))return strings(n.expression);return null;};
+// Copy coverage is additive and independent of geometry. Only display-bearing
+// attributes and the named headline array are read, never style/code literals.
+const copy_literals=[],copy_issues=[];
+const copyLine=n=>sf.getLineAndCharacterOfPosition(n.getStart(sf)).line+1;
+const addCopy=(n,kind,texts)=>{for(const text of texts)copy_literals.push({line:copyLine(n),kind,text});};
+for(const d of sf.parseDiagnostics)copy_issues.push({line:sf.getLineAndCharacterOfPosition(d.start||0).line+1,why:'TSX parse failed: '+ts.flattenDiagnosticMessageText(d.messageText,' ')});
+const heads=vars.get('HEADS');let headsResolved=false;
+if(heads&&heads.initializer){
+ const before=copy_issues.length;
+ const visitHead=n=>{if(ts.isArrayLiteralExpression(n)){for(const e of n.elements)visitHead(e);}else{const texts=strings(n);if(texts)addCopy(n,'HEADS',texts);else copy_issues.push({line:copyLine(n),why:'Unresolved HEADS display text'});}};
+ visitHead(heads.initializer);headsResolved=copy_issues.length===before&&copy_literals.length>0;
+}
+const copyAttrs={Type:'text',Label:'text',Note:'title',Lever:'label'};
+walk(sf,node=>{
+ if(!(ts.isJsxSelfClosingElement(node)||ts.isJsxOpeningElement(node)))return;
+ const tag=node.tagName.getText(sf),key=copyAttrs[tag];if(!key)return;
+ const a=attrs(node);let value=a[key];
+ if(!value){
+   const component=vars.get(tag),init=component&&component.initializer;
+   const binding=init&&ts.isArrowFunction(init)&&init.parameters[0]&&init.parameters[0].name;
+   const param=binding&&ts.isObjectBindingPattern(binding)&&binding.elements.find(e=>e.name.getText(sf)===key);
+   value=param&&param.initializer;
+   if(!value){if(tag==='Type'||tag==='Label')copy_issues.push({line:copyLine(node),why:'Missing '+tag+'.'+key});return;}
+ }
+ const texts=strings(value);if(texts){addCopy(node,tag+'.'+key,texts);return;}
+ const expr=compact(val(value));let owner=null;
+ for(let p=node.parent;p;p=p.parent){if(ts.isVariableDeclaration(p)&&p.initializer&&ts.isArrowFunction(p.initializer)){owner=p.name.getText(sf);break;}}
+ // These facade values are checked at their actual caller attributes above.
+ if(tag==='Type'&&({Label:'text',Note:'title',Lever:'label'})[owner]===expr)return;
+ if(tag==='Label'&&expr==='active.label'&&props&&Array.isArray(props.beats)&&props.beats.length&&props.beats.every(b=>typeof b.label==='string')){addCopy(node,'Label.text from props.beats',props.beats.map(b=>b.label));return;}
+ const head=vars.get('head');
+ if(tag==='Type'&&/^head\[[01]\]$/.test(expr)&&head&&compact(head.initializer)==='HEADS[n-1]'&&headsResolved)return;
+ copy_issues.push({line:copyLine(node),why:'Unresolved visible '+tag+'.'+key+': '+expr});
+});
 const label=vars.get('Label'),type=vars.get('Type');
 const labelCalls=[];walk(sf,n=>{if((ts.isJsxSelfClosingElement(n)||ts.isJsxOpeningElement(n))&&n.tagName.getText(sf)==='Label')labelCalls.push(n);});
-if(!labelCalls.length){process.stdout.write(JSON.stringify({calls:[],scene_ids:[],issues:[],adapter:null}));process.exit(0);}
-if(!label||!type){process.stdout.write(JSON.stringify({calls:[],scene_ids:[],issues:[{line:1,why:'Label/Type implementation is missing or imported; no local geometry contract'}]}));process.exit(0);}
+if(!labelCalls.length){process.stdout.write(JSON.stringify({calls:[],scene_ids:[],issues:[],adapter:null,copy_literals,copy_issues}));process.exit(0);}
+if(!label||!type){process.stdout.write(JSON.stringify({calls:[],scene_ids:[],issues:[{line:1,why:'Label/Type implementation is missing or imported; no local geometry contract'}],copy_literals,copy_issues}));process.exit(0);}
 const ld=defaults('Label');let font=null,inner=null,rect=null;
 walk(type.initializer,n=>{if(ts.isJsxOpeningElement(n)&&n.tagName.getText(sf)==='text')font=attrs(n).fontSize;});
 walk(label.initializer,n=>{if(ts.isJsxSelfClosingElement(n)){const a=attrs(n);if(n.tagName.getText(sf)==='Type')inner=a;if(n.tagName.getText(sf)==='rect'&&a.x&&compact(val(a.x))==='x-width/2')rect=a;}});
@@ -255,8 +291,6 @@ const ids=[...new Set(branches.map(b=>b.id))].sort((a,b)=>a-b);let sceneIds=[...
 if(ids.some((id,i)=>id!==i+1))issues.push({line:1,why:'Shot n=== branches are not contiguous from 1; scene coverage unresolved'});
 const tail=branches.find(b=>b.id===Math.max(...ids));
 if(tail&&tail.node.elseStatement&&!ts.isIfStatement(tail.node.elseStatement)&&ids.every((id,i)=>id===i+1))sceneIds.push(tail.id+1);
-let props=null;try{props=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));}catch(e){}
-const strings=n=>{n=val(n);if(ts.isStringLiteral(n)||ts.isNoSubstitutionTemplateLiteral(n))return [n.text];if(ts.isConditionalExpression(n)){const a=strings(n.whenTrue),b=strings(n.whenFalse);return a&&b?[...new Set([...a,...b])]:null;}if(ts.isParenthesizedExpression(n))return strings(n.expression);return null;};
 for(const node of labelCalls){
  const a=attrs(node),line=sf.getLineAndCharacterOfPosition(node.getStart(sf)).line+1;
  let scene=null,transforms=[],scope=null,insideArt=false,ancestors=[],excluded=[];
@@ -279,7 +313,7 @@ for(const node of labelCalls){
 }
 if(!sceneIds.length)issues.push({line:1,why:'Label calls present but ZERO Shot n=== branches resolved'});
 if(props&&Array.isArray(props.scenes)&&props.scenes.length!==sceneIds.length)issues.push({line:1,why:'Shot branch count does not match actual episode props scenes'});
-process.stdout.write(JSON.stringify({adapter,calls,scene_ids:sceneIds,issues}));
+process.stdout.write(JSON.stringify({adapter,calls,scene_ids:sceneIds,issues,copy_literals,copy_issues}));
 """
 
 
@@ -291,19 +325,21 @@ def collect_labels(path, props_path=None):
     """
     props_path = props_path or os.path.join(REPO, "out/dispatch/episode_props.json")
     try:
-        # Legacy episodes need no Node/TypeScript dependency to keep their existing
-        # Plate/mono checks. Only real Label source invokes this structural adapter.
+        # Legacy episodes without these components keep their existing Plate/mono
+        # checks without Node. Copy extraction also recognizes non-Label display text.
         with open(path) as source:
-            if not re.search(r"<Label\b", source.read()):
-                return {"calls": [], "scene_ids": [], "issues": [], "adapter": None}
+            if not re.search(r"<(?:Label|Type|Note|Lever)\b|\bHEADS\s*=", source.read()):
+                return {"calls": [], "scene_ids": [], "issues": [], "adapter": None,
+                        "copy_literals": [], "copy_issues": []}
         result = subprocess.run(
             ["node", "-e", LABEL_AST, os.path.abspath(path), os.path.abspath(props_path), REPO],
             check=True, text=True, capture_output=True, timeout=30,
         )
         return json.loads(result.stdout)
     except (OSError, subprocess.SubprocessError, ValueError) as exc:
+        issue = {"line": 1, "why": "Label AST extraction failed: " + str(exc)}
         return {"calls": [], "scene_ids": [], "adapter": None,
-                "issues": [{"line": 1, "why": "Label AST extraction failed: " + str(exc)}]}
+                "issues": [issue], "copy_literals": [], "copy_issues": [issue]}
 
 
 def check_label_call_sites(path, min_px=MIN_PLATE_PX, props_path=None):
