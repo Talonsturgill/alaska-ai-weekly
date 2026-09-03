@@ -60,7 +60,13 @@ fi
 # leave a lock nobody can clear.
 LOCK_DIR=""
 WORK=""
+ABS_OUT=""
+RENDER_STARTED=0
+RENDER_COMPLETE=0
 cleanup() {
+  if [ "$RENDER_STARTED" = 1 ] && [ "$RENDER_COMPLETE" != 1 ]; then
+    rm -f "$ABS_OUT"
+  fi
   if [ -n "$WORK" ]; then rm -rf "$WORK"; fi
   if [ -n "$LOCK_DIR" ]; then rmdir "$LOCK_DIR" 2>/dev/null || true; fi
 }
@@ -86,30 +92,12 @@ else
   fi
 fi
 
-# A SOURCE EDIT DURING A RENDER PRODUCES A MIXED FILM, AND NOTHING DOWNSTREAM CAN SEE IT
-# (2026-08-08). Each chunk runs its own `remotion render`, which bundles from source when
-# THAT CHUNK starts. So an edit landing mid-render is picked up by the chunks that have not
-# started yet and missed by the ones already running, and the concatenated result is part
-# old film and part new with no seam anyone can detect.
-#
-# The freshness check downstream cannot catch this: it compares the finished mp4's mtime
-# against the newest source, and a mixed render is NEWER than every source. It looks fresh
-# precisely because it is.
-#
-# So the fingerprint is taken before the first chunk and checked after the last one. It is
-# a warning rather than a hard failure because a comment-only edit changes the hash without
-# changing a pixel - which is exactly what happened the day this was written, when a render
-# was killed on an mtime alone and the edit turned out to be a comment.
-_src_fingerprint() {
-  if stat -c '%n %Y %s' video-engine/src/index.ts >/dev/null 2>&1; then
-    find video-engine/src \( -name '*.tsx' -o -name '*.ts' \) -print 2>/dev/null \
-      | sort | xargs stat -c '%n %Y %s' | sha256sum | cut -c1-16
-  else
-    find video-engine/src \( -name '*.tsx' -o -name '*.ts' \) -print 2>/dev/null \
-      | sort | xargs stat -f '%N %m %z' | sha256sum | cut -c1-16
-  fi
-}
-SRC_BEFORE="$(_src_fingerprint)"
+# Content receipts below fail closed on changed render inputs. An unchanged
+# checkout timestamp is harmless. Cache publication waits for the same check.
+if [ ! -x video-engine/node_modules/.bin/remotion ]; then
+  echo "render_parallel.sh: local Remotion dependencies are missing; install the locked video-engine dependencies before rendering." >&2
+  exit 4
+fi
 
 # PARSE THE SOURCES BEFORE SPENDING A RENDER ON THEM (2026-08-09).
 # A single misplaced JSX comment - `{/* ... */}` used as the first child of a parenthesised
@@ -154,6 +142,7 @@ fi
 COMP="$1"
 OUT="${2:-out/dispatch/render_mute.mp4}"
 PROPS="${PROPS:-out/dispatch/episode_props.json}"
+PROPS="$(python3 -c 'from pathlib import Path; import sys; print(Path(sys.argv[1]).resolve())' "$PROPS")"
 # MORE CHUNKS THAN SLOTS, ON PURPOSE (2026-08-04). The first version cut the film into
 # exactly one chunk per slot, which is only optimal when every frame costs the same. It
 # does not: on the 2026-08-03 film, chunk 0 held S1 to S3, which carry the characters and
@@ -190,33 +179,26 @@ fi
 # total frames: from episode_props.json unless the caller states it
 TOTAL="${3:-}"
 if [ -z "$TOTAL" ]; then
-  TOTAL="$(python3 -c "import json;print(json.load(open('$PROPS'))['total'])")"
+  TOTAL="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["total"])' "$PROPS")"
 fi
 
 case "$OUT" in /*) ABS_OUT="$OUT";; *) ABS_OUT="$PWD/$OUT";; esac
 WORK="$(mktemp -d)"
-python3 scripts/render_provenance.py begin-render --video "$ABS_OUT"
+CACHE_KEY="$(python3 scripts/render_provenance.py begin-render --video "$ABS_OUT" \
+  --props "$PROPS" --composition "$COMP" --total "$TOTAL" --chunks "$CHUNKS")"
+RENDER_STARTED=1
 
 # CHUNK CACHE, KEYED ON CONTENT (2026-08-09). This routine box restarted twice in one run and
 # each restart killed a render mid-flight, costing ~25 minutes of work that had already been
 # done: chunks 0-3 were sitting complete in a temp dir the next invocation could not see,
 # because WORK is a fresh mktemp every time.
 #
-# A cache here is dangerous in exactly one way, and this script already documents it at length:
-# reusing bytes rendered from code that has since changed ships the wrong film, silently, with
-# every hash matching. So the key is the CONTENT of everything that can change a pixel -- the
-# composition id, the props file, and every engine source -- not an mtime and not a git rev.
-# Any edit anywhere changes the key, which makes a stale hit impossible rather than unlikely.
-# A run that changes one character gets a full re-render, which is the correct and safe cost.
+# The key is the exact receipt manifest: sources, assets, dependency/config files,
+# actual props, composition and chunk partition. Only complete.json makes a cache
+# reusable. New chunks stay in WORK until source and frame-count validation passes.
 CACHE_ROOT="out/dispatch/chunkcache"
-CACHE_KEY="$( { echo "$COMP"; cat "$PROPS" 2>/dev/null; \
-                find video-engine/src -name '*.tsx' -o -name '*.ts' | sort | xargs cat 2>/dev/null; \
-              } | sha256sum | cut -c1-16 )"
 CACHE="$CACHE_ROOT/$CACHE_KEY"
-mkdir -p "$CACHE"
-# keep only the newest few keys so this never becomes a disk leak on a long-lived box
-ls -1dt "$CACHE_ROOT"/*/ 2>/dev/null | tail -n +4 | xargs -r rm -rf
-echo "  chunk cache: $CACHE  ($(ls -1 "$CACHE"/c*.mp4 2>/dev/null | wc -l) chunk(s) already rendered from this exact source)"
+echo "  validated chunk cache: $CACHE"
 
 echo "parallel render: $COMP  $TOTAL frames  $CHUNKS chunks, $SLOTS at a time"
 # DELETE THE OLD FILM BEFORE RENDERING THE NEW ONE (2026-08-04). When a chunk dies the
@@ -229,29 +211,33 @@ echo "parallel render: $COMP  $TOTAL frames  $CHUNKS chunks, $SLOTS at a time"
 rm -f "$ABS_OUT"
 
 # Render one chunk, surviving the post-bundle hang described above. A chunk that produces
-# no output file inside CHUNK_TIMEOUT is killed and retried from scratch. Success is
-# judged on the FILE existing and being non-empty, not on the exit status, because the
-# hang does not set one.
+# no complete output inside CHUNK_TIMEOUT is killed and retried from scratch. A
+# chunk is accepted only with its full expected frame count.
 render_chunk() {
-  local i="$1" A="$2" B="$3" attempt=1
-  # a cached chunk is bytes rendered from THIS EXACT SOURCE, so reusing it is not a shortcut
-  if [ -s "$CACHE/c$i.mp4" ]; then
-    cp "$CACHE/c$i.mp4" "$WORK/c$i.mp4"
-    echo "  chunk $i reused from cache (same source, same props)" >&2
+  local i="$1" A="$2" B="$3" attempt=1 got="" cache_status=0
+  python3 scripts/render_provenance.py restore-chunk --video "$ABS_OUT" \
+      --cache-dir "$CACHE" --chunk "c$i.mp4" --destination "$WORK/c$i.mp4" || cache_status=$?
+  if [ "$cache_status" = 0 ]; then
+    echo "  chunk $i reused from validated cache (input and chunk hashes match)" >&2
     return 0
   fi
+  # A missing/corrupt cache is an ordinary miss (1). Changed/missing source inputs
+  # fail closed (2); do not spend attempts rendering after validation has failed.
+  if [ "$cache_status" != 1 ]; then return "$cache_status"; fi
   while [ "$attempt" -le "$TRIES" ]; do
+    rm -f "$WORK/c$i.mp4"
     ( cd video-engine && "${TIMEOUT_CMD[@]}" \
-        npx remotion render src/index.ts "$COMP" "$WORK/c$i.mp4" \
-        --props="../$PROPS" --codec=h264 --muted --concurrency=1 --crf=19 \
+        npx --no-install remotion render src/index.ts "$COMP" "$WORK/c$i.mp4" \
+        --props="$PROPS" --codec=h264 --muted --concurrency=1 --crf=19 \
         --frames="$A-$B" ) >"$WORK/c$i.attempt$attempt.log" 2>&1 || true
-    if [ -s "$WORK/c$i.mp4" ]; then
-      cp "$WORK/c$i.mp4" "$CACHE/c$i.mp4" 2>/dev/null || true
+    got="$(ffprobe -v error -select_streams v:0 -count_frames \
+      -show_entries stream=nb_read_frames -of default=nw=1:nk=1 "$WORK/c$i.mp4" 2>/dev/null | head -1)" || got=""
+    if [ "$got" = "$(( B - A + 1 ))" ]; then
       cp "$WORK/c$i.attempt$attempt.log" "$WORK/c$i.log"
       [ "$attempt" -gt 1 ] && echo "  chunk $i recovered on attempt $attempt" >&2
       return 0
     fi
-    echo "  chunk $i attempt $attempt produced no file (hang or crash), retrying" >&2
+    echo "  chunk $i attempt $attempt didn't produce all expected frames, retrying" >&2
     attempt=$(( attempt + 1 ))
   done
   cp "$WORK/c$i.attempt$(( attempt - 1 )).log" "$WORK/c$i.log" 2>/dev/null || true
@@ -322,13 +308,7 @@ if [ "$GOT" != "$TOTAL" ]; then
   echo "  A short concat means a chunk boundary is wrong; do NOT ship this file." >&2
   exit 1
 fi
-SRC_AFTER="$(_src_fingerprint)"
-if [ "$SRC_BEFORE" != "$SRC_AFTER" ]; then
-  echo "  WARNING  engine source changed DURING this render ($SRC_BEFORE -> $SRC_AFTER)." >&2
-  echo "  Chunks bundle when they start, so this file may be part old film and part new," >&2
-  echo "  and the downstream freshness check CANNOT see it: a mixed render is newer than" >&2
-  echo "  every source. Diff the change before trusting this cut - if it touched only" >&2
-  echo "  comments the render is fine, and if it touched a rendered value, re-render." >&2
-fi
+python3 scripts/render_provenance.py finish-render --video "$ABS_OUT" \
+  --chunk-dir "$WORK" --cache-dir "$CACHE"
+RENDER_COMPLETE=1
 echo "  OK  $ABS_OUT  $GOT frames  $(du -h "$ABS_OUT" | cut -f1)"
-python3 scripts/render_provenance.py finish-render --video "$ABS_OUT"

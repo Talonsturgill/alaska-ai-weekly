@@ -23,7 +23,7 @@ cd "$(dirname "$0")/.."
 OUT=out/dispatch
 MUTE="${1:-$OUT/render_mute.mp4}"
 WAV="${2:-$OUT/audio/master.wav}"
-python3 scripts/render_provenance.py begin-encode --video "$MUTE"
+python3 scripts/render_provenance.py begin-encode --video "$MUTE" --wav "$WAV"
 
 # THE CONTRACT. Change these and you change the deliverable; the asserts below
 # will hold you to whatever you write here.
@@ -31,17 +31,8 @@ SQUARE_W=1080; SQUARE_H=1080          # LinkedIn MAIN FEED. Must not be taller t
 VERT_W=1080;   VERT_H=1920            # TikTok / LinkedIn Video tab.
 SQUARE_CROP_Y=$(( (VERT_H - SQUARE_H) / 2 ))   # 420, centred
 
-# STALE-MIX GUARD (2026-08-04). vo_patch_lines.py rewrites audio/vo.wav in place and
-# nothing downstream rebuilds the mix, so a run that fixes a factual line in the voice and
-# goes straight to encode ships the OLD voice under the NEW captions. That is the rubric's
-# "captions out of sync" hard blocker, arrived at by doing the right thing. This run hit it:
-# master.wav was 12 hours older than the vo.wav it was supposed to contain.
-if [ "$WAV" -ot "$OUT/audio/vo.wav" ]; then
-  echo "STALE MIX: $WAV is older than $OUT/audio/vo.wav" >&2
-  echo "  The voice track changed after the mix was built. Run scripts/dispatch_mix.py" >&2
-  echo "  before encoding, or the film ships the previous take under the new captions." >&2
-  exit 1
-fi
+# begin-encode validates the mix receipt's actual VO, music/SFX and WAV hashes.
+# Touching unchanged audio is harmless; old mtimes can't conceal changed audio.
 
 bash scripts/mux_and_verify.sh "$MUTE" "$WAV" "$OUT/dispatch_master.mp4"
 

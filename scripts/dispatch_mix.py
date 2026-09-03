@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-02"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-03"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -81,60 +81,17 @@ _props = os.path.join(OUT, "episode_props.json")
 VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props) \
     else max(x["end"] for x in _lines) + _TAIL
 
+# The approved board is the single episode-local source of beat times and sound roles.
+# Times are conformed from actual VO line anchors before mixing.
+_board = json.load(open(os.path.join(OUT, "storyboard.json")))
 EVENTS = [
-    # 2026-09-02 "The Diploma Still Has to Be Earned". The sound follows the
-    # press, paper, campus thresholds, oversight gate, conditional clock and seal.
-    (0.12, "whoosh", "standard", 0.28),
-    (1.35, "clank", "hero", 0.0),
-    (L[1] + 0.10, "paper", "texture", -0.20),
-    (L[2] + 0.10, "chime", "standard", 0.0),
-    (L[2] + 2.50, "pop", "standard", 0.18),
-    (L[3] + 0.10, "tick", "standard", -0.22),
-    (L[3] + 2.50, "paper", "texture", 0.15),
-    (L[4] + 0.10, "stamp", "hero", 0.0),
-    (L[5] + 0.10, "whoosh", "standard", -0.22),
-    (L[6] + 0.10, "clank", "standard", 0.18),
-    (L[6] + 3.00, "snap", "standard", 0.26),
-    (L[7] + 0.10, "chime", "standard", 0.0),
-    (L[8] + 0.10, "whoosh", "hero", 0.0),
-    (L[8] + 2.50, "pop", "standard", 0.22),
-    (L[9] + 0.10, "tick", "standard", -0.18),
-    (L[10] + 0.10, "paper", "texture", 0.14),
-    (L[10] + 2.00, "snap", "standard", 0.25),
-    (L[11] + 0.10, "clank", "hero", 0.0),
-    (L[11] + 2.50, "chime", "standard", 0.16),
-    (L[12] + 0.10, "thud", "hero", -0.18),
-    (L[12] + 2.00, "whoosh", "standard", 0.18),
-    (L[13] + 0.10, "tick", "standard", 0.0),
-    (L[14] + 0.10, "boom", "hero", 0.0),
-    (L[15] + 0.10, "creak", "texture", 0.0),
-    (L[15] + 1.80, "tick", "standard", 0.0),
-    (L[16] + 0.10, "clank", "standard", -0.20),
-    (L[17] + 0.10, "whoosh", "hero", 0.0),
-    (L[17] + 2.50, "pop", "standard", 0.20),
-    (L[18] + 0.10, "chime", "standard", 0.0),
-    (L[18] + 3.00, "paper", "texture", -0.15),
-    (L[19] + 0.10, "chain", "standard", 0.20),
-    (L[19] + 1.50, "stamp", "hero", 0.0),
-    (VIDEO_SECS - 0.80, "chime", "standard", 0.0),
+    (float(str(b["t"]).split("-")[0]), b["sfx"],
+     "hero" if b["id"] in (8, 10, 24, 30, 32, 36) else
+     "texture" if b["sfx"] in ("paper", "creak", "riser") else "standard",
+     0.0 if b["id"] in (30, 32, 36) else (-0.22 if n % 2 else 0.22))
+    for n, b in enumerate(_board["beats"])
 ]
-
-EVENT_LABELS = [
-    "automatic press dives", "emergency brake catches the die",
-    "draft document clips in", "six-four-five mechanism rings",
-    "proposal gears lock", "practice step lands", "revision page follows",
-    "earned token seats", "one-rule roller jams", "campus doors open",
-    "faculty course switch lands", "coordinating council badge rings",
-    "diploma begins the long-edge flip", "decision tabs release",
-    "predictive workflow starts", "decision file opens", "fourth tab snaps",
-    "oversight gate locks", "evaluation ledger opens", "EARNED weight lands",
-    "MEANINGFUL weight follows", "empty gauge searches", "plan hits its own test",
-    "clock glass strains", "stopped hand ticks", "DRAFT clip catches it",
-    "IF ADOPTED key turns", "policy cards assemble", "evidence gauges ring",
-    "two-promise divider slides", "machine hand releases", "human credential press lands",
-    "earned seal resonates",
-]
-
+EVENT_LABELS = [b["shows"] for b in _board["beats"]]
 
 # THE MIX HAS AN ARC NOW (2026-07-31, round 6 panel note: "the mix is flat -- LRA 3.10").
 #
@@ -159,14 +116,12 @@ EVENT_LABELS = [
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    # Warm institutional arc: stopped press, earned learning, campus choice,
-    # oversight test, conditional clock, evidence questions and human seal.
-    (0.00, 0.88), (L[1], 0.58), (L[2], 0.82), (L[3], 0.94),
-    (L[4], 1.04), (L[5], 0.76), (L[6], 0.90), (L[7], 1.00),
-    (L[8], 1.10), (L[9], 0.78), (L[10], 0.86), (L[11], 0.62),
-    (L[12], 0.28), (L[13], 0.34), (L[14], 0.72), (L[15], 0.42),
-    (L[16], 0.24), (L[17], 0.86), (L[18], 0.70), (L[19] - 0.80, 0.18),
-    (L[19] + 0.20, 0.96), (VIDEO_SECS - 0.20, 0.62), (VIDEO_SECS, 0.05),
+    (0.0, 0.72), (L[1], 0.80), (L[2], 1.05), (L[3], 0.84),
+    (L[4], 0.95), (L[6], 0.65), (L[7], 0.78), (L[8], 0.68),
+    (L[10], 1.10), (L[11], 0.92), (L[12], 0.30), (L[13], 0.42),
+    (L[14], 0.70), (L[15], 0.45), (L[16], 1.08), (L[17], 0.92),
+    (L[18] - 0.70, 0.25), (L[18] + 0.20, 1.02), (L[19], 0.86),
+    (VIDEO_SECS - 0.25, 0.70), (VIDEO_SECS, 0.05),
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
@@ -424,6 +379,16 @@ def main():
     for i, (t, kind, cls, pan) in enumerate(EVENTS):
         takes.append(resolve(kind, episode_seed=DATE))
 
+    # Bind this WAV to the exact VO, music, foley and mix-source bytes consumed.
+    provenance_cmd = [sys.executable, os.path.join(HERE, "render_provenance.py")]
+    mix_output = os.path.join(AUD, "master.wav")
+    mix_begin = provenance_cmd + ["begin-mix", "--wav", mix_output,
+        "--vo", os.path.join(AUD, "vo.wav"),
+        "--input", os.path.join(OUT, "music_bed.wav")]
+    for mix_input in sorted(set(takes)):
+        mix_begin += ["--input", mix_input]
+    subprocess.run(mix_begin, check=True)
+
     # 2) assemble inputs: [0]=VO padded to VIDEO, [1]=music looped/trimmed, then SFX,
     #    then [last]=synthesised wind for the north block
     inputs = ["-i", os.path.join(AUD, "vo.wav"), "-i", os.path.join(OUT, "music_bed.wav")]
@@ -625,6 +590,8 @@ def main():
                    for i, (t, k, c, p) in enumerate(EVENTS)],
                "silence_dip_at": SILENCE_DIP_AT, "count": len(EVENTS)},
               open(os.path.join(AUD, "sfx_events.json"), "w"), indent=2)
+
+    subprocess.run(provenance_cmd + ["finish-mix", "--wav", mix_output], check=True)
 
 
 if __name__ == "__main__":

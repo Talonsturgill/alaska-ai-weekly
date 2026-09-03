@@ -5,15 +5,25 @@ Main fetched and prompt read in full. Branch claude/dispatch-2026-09-03 and run 
 Environment setup passed. Keychain credential presence verified without output. Research window 10 days.
 Three researchers, independent validation, FRESH dedupe and story gate passed. Angle room and
 cross-challenge complete. Locked story is TCC's September 2 Sully.ai announcement, title
-The Care Has to Stay. No claim of proven outcomes or completed rollout. Directors room running.
-Next: directors synthesis, Gate 0, voice and whole rough cut,
+The Care Has to Stay. No claim of proven outcomes or completed rollout. Directors room complete.
+Gate 0A/B/C/D/E pass after specific storyboard, fairness and flow revisions. Narration 277 words.
+Three Gemini takes generated (118.2s, 114.3s, 116.2s); soundcheck/alignment running in managed
+terminal session 2512. Episode Dispatch0903 whole crude blocking authored; not yet rendered.
+Next: finish voice and whole rough cut,
 taste loop, objective gates, independent panel, exact-byte ship lock, permanent delivery and merge.
 
 Run improvements: macOS fallback for run_bg.sh (setsid is absent), and content-bound render
 freshness that preserves stale-render protection without treating a git checkout as a source edit.
 Implemented before rendering. Four tests and shell syntax checks pass. Render and encode wrappers
 now mint source-content receipts; preflight and ship verify inputs and output hashes. Timestamp-only
-touches pass, content edits/additions/deletions fail. No delivery bytes exist for this run yet.
+touches pass, content edits/additions/deletions fail. Follow-up review hardened cache and mix
+provenance: complete-manifest cache keys, quarantined chunks until validation, actual props/WAV
+binding and full VO/music/foley mix receipts. 23 regression tests passed before adding the
+storyboard to mix inputs (new schedule reads approved board); rerun pending. No delivery bytes yet.
+
+The standalone detached voice launch did not survive the desktop terminal lifecycle and had
+no live PID or done marker. No duplicate synth remained. The managed terminal session is the
+working path for this run; do not treat a launch message as liveness evidence.
 
 September 2 is shipped in PR #113 at d654382. Its locked outputs are preserved in
 out/dispatch-2026-09-02-shipped and must not be modified. The historical pending-merge line below
