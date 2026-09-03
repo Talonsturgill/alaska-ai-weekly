@@ -2968,6 +2968,17 @@ blockers still apply without a waiver.
   rather than exposing only the first six in prose. Exempt tail windows remain visible but are
   explicitly marked ungraded. Three reporting tests prove ordering, full coverage, exemption and
   non-mutation of measured inputs; no motion calculation, denominator or threshold was changed.
+- `feb3ea9` sustains real camera travel through the shot and preserves labels outside the projected
+  scene. Patient/provider responses and paper/clip follow-through keep the source notice and
+  retention question active. An attempted S8 addition merged separate motion regions and was
+  reverted. Final source stills measure 53/64 living windows (82.8125%) and all six camera pairs
+  pass; original hook [3,4] is unchanged. Fresh eight-frame strips and repaired S7/S12 labels were
+  viewed before the second full export. Encoded-film confirmation remains required.
+- `cedfa81` is the AAC fix; `4e72c07` is complete motion-window reporting. `7f50650` records caption
+  alignment and acoustic checks: all 271 narration words map to 44 built cues, median boundary
+  error 0ms and maximum 487ms including reading holds. Whole-mix ASR passes phrase checks; a
+  separate unprompted small-model clip resolves the base model's HIPAA misrecognition. These are
+  automated checks, not claims that a human listened. All 102 Python and four parser tests pass.
 
 ### Release evidence
 

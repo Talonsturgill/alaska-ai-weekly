@@ -38,6 +38,19 @@ MIX_REQUIRED, and9focused tests+21provenance tests pass. Final encoded cut must 
 cedfa81 commits that AAC guard and mix; the full99Python tests pass. Quality-report diagnostics
 now expose every motion window/weak graded timestamp, including explicitly ungraded tail rows.
 Three new diagnostic tests and2report-CLI tests pass; measurement/thresholds unchanged.
+4e72c07 commits complete motion-window reporting. feb3ea9 commits final picture corrections:
+all6camera pairsPASS and exactfull-size still samples53/64living windows(82.8125%), hook[3,4].
+Source frozen6c0e6f15f57f0078e4cf7a73d50a8410e1cac1a3babd20f15e38e581f51f9f2a.
+S2notice andS11question exchange retain separate physical reactions; S8unhelpful additions
+were reverted after they merged motion regions. S7bracket/label and!=collision, S12STOPPING
+clearance andS10backdrop seam were fixed and viewed on freshframes. BothS2/S11 true8frame
+stride2strips inspected. This is not final encoded certification.
+R2 pipeline session26369 is running undercaffeinate:3slots/12chunks/3932frames, then encode,
+allframe extractiontoframes_0903_r2, GateA->quality_report.json, build_evidence andpreflight.
+Do not change any render/mix inputs while it runs. Syntaxparse77files0.235s, zero failures.
+Full102Pythontests+4parsertestsPASS. NewmixSILENCE_DIPexact6.087dBPASS. 7f50650 stores44cue
+alignmentmedian0ms(all271words), max487msreadingholds, pluswholemixASRphrasepass. BaseASR
+misheardHIPAA; independentunpromptedsmallmodel3.52scliprecognizesexactHIPAAline. No newvoice.
 Read-only early probes flag camera timing: most moving shots finish before GateA's25/75%
 sample pair. Research fixer diagnosed real but front-loaded camera moves and recommended
 symmetric travel over8-92% ofshot, substantial environment planes, stable screen-space labels.
