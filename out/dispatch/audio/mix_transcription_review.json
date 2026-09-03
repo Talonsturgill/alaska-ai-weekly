@@ -1,0 +1,22 @@
+{
+  "run_date": "2026-09-03",
+  "mix_sha256": "da6ed184d33057bd4c9e5ae28ffdd689ac9f4dc7bf6e26ed0dd82ed118fa4e78",
+  "whole_mix": {
+    "tool": "vo_audio_check.py with cached faster-whisper base",
+    "segments": 38,
+    "recognized_words": 257,
+    "banned_phrases": [],
+    "pass": true,
+    "scope": "Final PCM mix before video encoding. Does not replace the later delivered-video audio check."
+  },
+  "named_term_followup": {
+    "reason": "The base-model whole-file transcript rendered HIPAA as hip-hop. The original patched line had WER0; a separate unprompted stronger-model check was used instead of assuming either transcription was right.",
+    "clip_start_s": 56.92,
+    "clip_duration_s": 3.52,
+    "clip_sha256": "e4b52114dc8ab46e2b353bce9a330dccd8511490acb8d157a2546afbee3d9e24",
+    "model": "faster-whisper small, int8, English, no initial prompt, no VAD",
+    "recognized_text": "TCC says recording storage follows HIPAA.",
+    "matches_intended_line": true
+  },
+  "caveat": "Automated acoustic evidence, not a claim that a human listened. ASR segment boundaries are not substituted for the forced-aligned caption clock."
+}

@@ -1,0 +1,14 @@
+{
+  "run_date": "2026-09-03",
+  "props_sha256": "7c0efd0525bd5bd469116093317cc9ad5b4d0c1592a48397322a318ab2da63e8",
+  "words_sha256": "f32e50b1d6008d96234bd5e2fe15b377f276c59626dcb4ef171cac7d52c76f66",
+  "built_cues": 44,
+  "matched_words": 271,
+  "ledger_words": 271,
+  "text_mismatches": [],
+  "median_boundary_error_ms": 0.0,
+  "max_boundary_error_ms": 487.0,
+  "pass": true,
+  "method": "Matched each built cue's normalized word sequence against the chronological forced-aligned word ledger, reversing display-only AI, TCC and Sully.ai substitutions. Measured cue start and end against first and last covered words. Median is below the required 150ms; the maximum includes deliberate reading holds.",
+  "scope": "Built caption timing evidence, not an independent acoustic alignment or proof of rendered visibility. Final frame inspection and caption_render_check remain required."
+}
