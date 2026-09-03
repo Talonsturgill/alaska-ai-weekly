@@ -24,6 +24,7 @@ the loop self-heals and only exits (and ships) on PASS.
 numpy/PIL/scipy only.
 """
 import os, sys, json, argparse, glob
+from pathlib import Path
 import numpy as np
 from PIL import Image
 from scipy.ndimage import laplace
@@ -473,13 +474,18 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--frames",default=os.path.join(HEREd,"frames_v3"))
     ap.add_argument("--words",default=os.path.join(HEREd,"audio","words60.json"))
+    ap.add_argument("--out",help="Report JSON path (default: quality_report.json beside the frames directory)")
     ap.add_argument("--fps",type=int,default=30); ap.add_argument("--max-gap",type=float,default=5.0)
     a=ap.parse_args()
     rep=gate(a.frames,a.words,a.fps,a.max_gap)
-    json.dump(rep,open(os.path.join(HEREd,"quality_report.json"),"w"),indent=2)
+    report_path=Path(a.out).resolve() if a.out else Path(a.frames).resolve().parent/"quality_report.json"
+    report_path.parent.mkdir(parents=True,exist_ok=True)
+    with report_path.open("w") as report_file:
+        json.dump(rep,report_file,indent=2)
     print("=== QUALITY GATE (objective regression guard) ===")
     for c in rep["checks"]: print(f"  [{'PASS' if c['pass'] else 'FAIL'}] {c['name']:13s} {c['detail']}")
     print(f"gate score: {rep['metrics'].get('score','?')}/10  ->  RESULT: {'PASS ✓' if rep['pass'] else 'FAIL ✗'}")
+    print(f"quality report: {report_path}")
     sys.exit(0 if rep["pass"] else 1)
 
 if __name__=="__main__": main()
