@@ -1,5 +1,17 @@
 # Dispatch 2026-09-03 active worklog
 
+## Current release checkpoint
+
+R4 source is frozen at Ep0903 SHA256
+0b5142001b629fe2c52b8a776200373eafc58df0447b5fc48282db69f9a676ce.
+Only S2, S11 and S13 picture branches changed after R3. Voice, props, board and mix are unchanged.
+Independent targeted flow review viewed nine fresh eight-frame strips and full-size states and
+confirmed all three R3 causal/timing findings resolved. This is not final encoded approval.
+Current combined source passes 131 Python tests, 10 Node tests, tsc, text-fit58, overlap14,
+visible-copy125/44/38/3 and claims14. Final full render, Gate A, preflight, POST/panel,
+exact-byte lock, permanent upload/feed, Gmail draft readback and ready PR/merge remain.
+No September 3 upload or Gmail draft has been created.
+
 Execute the complete daily pipeline from prompts/dispatch_routine.md. Draft only, never send.
 Main fetched and prompt read in full. Branch claude/dispatch-2026-09-03 and run stamp created.
 Environment setup passed. Keychain credential presence verified without output. Research window 10 days.
@@ -51,9 +63,18 @@ Final copy audit caught S5 DECISIONS colon and one caption colon. Both corrected
 timings unchanged. Email subject/feed guide punctuation corrected too. Fresh full-size
 frames1090/2500 inspected and legible. Proper rebuild/remix made new source receipts;
 ambience synthesis changes mix bytes slightly, so do not claim identical PCM. NewAAC
--14.84LUFS/-2.55dBTP. R3 session72160 runs3slots->encode->all3932frames->GateA->pack->preflight.
-Do not change render/mix inputs while it runs. Parallel bounded check repairs cover copy
-rules, evidence beat-range parsing and staging JSX parsing. No panel or delivery yet.
+-14.84LUFS/-2.55dBTP. R3 session72160 COMPLETE,3932frames,GateA10PASS,living54/64,
+preflightclear withonlyunchangedarea-sagadvisory. Actualfinalframes1090/2500 inspected.
+Master4eeafa0f08628df5bfdea5e9eda5d6fb1bf287769e9a3cb31002745364eb08df;
+squareab73433975aa8de2e972e847f2ef05f3f98b9f33bca8a7b30b045bd39cc01c7e.
+4c1e76d commitscopy/evidence/stagingguards;4b5053c refreshesexactproofs andretrolog.
+130Pythontests+10Node testsPASS. Branchpushedthrough4b5053c. R3editorSHIP. Twofreshjudges
+score7.814/7.992, bothship withzero hardblockers; no3judgeR3medianclaimed. FLOWPOSTREVISE
+onS11missingcausalhandoff/waitingcontrol andS2/S13mistimedactions. R3alloutputspreservedround3.
+Sourceunlockedafterjudgesfinished. Threeboundedfixersownonlyn===2,n===11,n===13lines;
+VO/props/board/mixstayfixed. Needfreshprobes+R4fullrender/encode/evidence/preflight,
+newflowapproval,regradesame2judgeswithownpriorcards+thirdFRESHjudge, thenexactshiplock.
+5676ce0 improvesemailfirstcommentsourcetitles,4emailtestsPASS. No upload/feed/Gmail/PR/mergeyet.
 Full102Pythontests+4parsertestsPASS. NewmixSILENCE_DIPexact6.087dBPASS. 7f50650 stores44cue
 alignmentmedian0ms(all271words), max487msreadingholds, pluswholemixASRphrasepass. BaseASR
 misheardHIPAA; independentunpromptedsmallmodel3.52scliprecognizesexactHIPAAline. No newvoice.

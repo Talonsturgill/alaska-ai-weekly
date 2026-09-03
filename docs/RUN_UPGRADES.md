@@ -2982,6 +2982,18 @@ blockers still apply without a waiver.
 
 ### Release evidence
 
+R3 passed the objective gates but did not ship. Its independent POST flow review found the
+question-card exchange lacked a causal receiver response and the waiting recording control,
+while two other actions occurred before their intended beats. The R4 scene correction ties
+S2's room entrance to beat 4, gives S11 an offer/receipt/withdrawal and a visibly waiting control
+with a hand that stops short, and moves S13's neutral controls into opposite choices before
+delayed provider reactions. The unknown derivative retention remains a question; the controls
+are illustrations, not invented product behavior. Nine fresh eight-frame strips and full-size
+states were independently inspected. No voice, caption timing or sound mix changed. Combined
+source verification passes 131 Python tests, 10 Node tests, typecheck and the copy/geometry/
+claims checks. Final encoded approval is still required; the two R3 scores alone were not a
+three-judge panel and did not authorize delivery.
+
 R2 rendered all 3,932 frames and passed Gate A at 10.0, with 54/64 living windows and all six
 camera pairs passing. Required preflight passed and actual AAC measured -14.85 LUFS/-2.60 dBTP.
 Final copy inspection then caught two forbidden colons in a plate and a built caption. R2 was
