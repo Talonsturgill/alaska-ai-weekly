@@ -24,6 +24,7 @@ the loop self-heals and only exits (and ships) on PASS.
 numpy/PIL/scipy only.
 """
 import os, sys, json, argparse, glob
+from pathlib import Path
 import numpy as np
 from PIL import Image
 from scipy.ndimage import laplace
@@ -42,6 +43,14 @@ def lum(a): return 0.2126*a[...,0]+0.7152*a[...,1]+0.0722*a[...,2]
 def lap_var(g): return float(laplace(g.astype(np.float32)).var())
 def hf_energy(g): return float(np.abs(laplace(g.astype(np.float32))).mean())
 def region(a,b): x0,y0,x1,y1=b; return a[y0:y1,x0:x1]
+
+def motion_window_diagnostics(wins, cut, window_s, min_regions):
+    """Expose every measured window without changing the gate's denominator or verdict."""
+    rows = [{"start_s": k * window_s, "regions": v, "graded": k < cut,
+             "alive": v >= min_regions} for k, v in sorted(wins.items())]
+    return {"living_screen_windows": rows,
+            "living_screen_weak_windows_s": [r["start_s"] for r in rows
+                                             if r["graded"] and not r["alive"]]}
 
 def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     fs=sorted(glob.glob(os.path.join(frames_dir,"frame_*.png")))
@@ -396,6 +405,7 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
         ok=sum(1 for v in vals if v>=MINR); pct=ok/max(1,len(vals))
         weak=[f"{k*int(WIN)}s" for k,v in sorted(wins.items()) if k<cut and v<MINR]
         m["living_screen_pct"]=round(pct,3)
+        m.update(motion_window_diagnostics(wins, cut, WIN, MINR))
         checks.append({"name":"LIVING_SCREEN","pass":pct>=PASSPCT,
             "detail":f"{ok}/{len(vals)} 2s-windows show >={MINR} disjoint motion regions ({pct:.0%}, floor {PASSPCT:.0%})"
                      +(f" — quiet windows at {weak[:6]}" if weak else "")
@@ -473,13 +483,18 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--frames",default=os.path.join(HEREd,"frames_v3"))
     ap.add_argument("--words",default=os.path.join(HEREd,"audio","words60.json"))
+    ap.add_argument("--out",help="Report JSON path (default: quality_report.json beside the frames directory)")
     ap.add_argument("--fps",type=int,default=30); ap.add_argument("--max-gap",type=float,default=5.0)
     a=ap.parse_args()
     rep=gate(a.frames,a.words,a.fps,a.max_gap)
-    json.dump(rep,open(os.path.join(HEREd,"quality_report.json"),"w"),indent=2)
+    report_path=Path(a.out).resolve() if a.out else Path(a.frames).resolve().parent/"quality_report.json"
+    report_path.parent.mkdir(parents=True,exist_ok=True)
+    with report_path.open("w") as report_file:
+        json.dump(rep,report_file,indent=2)
     print("=== QUALITY GATE (objective regression guard) ===")
     for c in rep["checks"]: print(f"  [{'PASS' if c['pass'] else 'FAIL'}] {c['name']:13s} {c['detail']}")
     print(f"gate score: {rep['metrics'].get('score','?')}/10  ->  RESULT: {'PASS ✓' if rep['pass'] else 'FAIL ✗'}")
+    print(f"quality report: {report_path}")
     sys.exit(0 if rep["pass"] else 1)
 
 if __name__=="__main__": main()

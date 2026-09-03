@@ -1,0 +1,26 @@
+{
+  "patches": [
+    {
+      "line": 9,
+      "text": "T C C says recording storage follows HIPAA.",
+      "wer": 0.0,
+      "pace": 1.0,
+      "start": 56.92,
+      "end": 60.44,
+      "slot_end": 61.48,
+      "cues": 2
+    },
+    {
+      "line": 14,
+      "text": "Ask about those portions before deciding. To decline, just tell your provider.",
+      "wer": 0.0,
+      "pace": 1.0,
+      "start": 88.38,
+      "end": 94.12,
+      "slot_end": 94.92,
+      "cues": 3
+    }
+  ],
+  "splice_verified": true,
+  "note": "Per-line ASR verification plus a sample-exact check that everything outside the patched slots is unchanged. The whole-file ASR score was removed on 2026-07-31 after it measured 0.018/0.378/0.037 on three runs over identical input."
+}

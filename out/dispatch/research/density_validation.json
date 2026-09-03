@@ -1,0 +1,257 @@
+{
+  "run_date": "2026-09-03",
+  "role": "Independent factual-density validator",
+  "verdict": "PASS_14_MEANINGFUL_FACTS_PRESENT_IN_PATCHED_NARRATION",
+  "requires_vo_rewrite_or_shorter_runtime": false,
+  "scope": "Initial review was read-only except this report. Follow-up authorization allowed claims.json, sources.json claim mapping and vo_script.json claims arrays only; those mappings are now updated. Spoken text, audio and scenes remain the producer's responsibility.",
+  "initial_inputs_sha256": {
+    "claims.json": "9aafc3085c8a83a4c46ac0c6e3f501244f92113dd6eb6bbd1a06192a2136917c",
+    "vo_script.json": "467703fb570a969b6e0f12fc2dbd6da0e33dadaaae3b4deda20584f192faa9d4",
+    "vo_lines.json": "8500a986fce64323ec75013d05282fa45d37f92c872e6f1fb8e3499263daac2e"
+  },
+  "primary_sources": {
+    "s1": {
+      "url": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "publication_date": "2026-09-02",
+      "published_metadata": "2026-09-02T15:54:31-08:00",
+      "verification": "Independently re-fetched full article with curl after browser open failed; read complete article, including privacy and patient-choice sections.",
+      "authority_limit": "TCC's stated introduction, terms and assurances, not independently established implementation or outcomes."
+    },
+    "s2": {
+      "url": "https://www.tananachiefs.org/about/",
+      "verification": "Independently fetched institutional about page; organization, mission and region sections support voiced local identity.",
+      "authority_limit": "Institutional context only; geography and membership are not AI deployment coverage."
+    }
+  },
+  "inputs_sha256": {
+    "claims.json": "04aef65e9b80b3b3be0b31e7a3e49952cf46c247536a941e5d0928e987fec579",
+    "sources.json": "03aa98be164124fa69bb470eb83ccacb24608abade8d5d7df81ce9d1f0131c99",
+    "vo_script.json": "198b095f81b2cc63f61e808ef685dc46fa479b10d64bcc392e925b7dddc6d78e",
+    "vo_lines.json": "8e99f10f9aaa57a84c873de4652a2e9c940fab2565a3b0d206b375ec9bc982ae",
+    "audio/words.json": "f32e50b1d6008d96234bd5e2fe15b377f276c59626dcb4ef171cac7d52c76f66",
+    "vo_patch_report.json": "965d1824e1d4f72162a6b1852a3f701eab3155c8340c4ff1ffba2a92990c3e78",
+    "audio/vo.wav": "105ca939ee1d59fdd59026623cd7431a0111327be12c35f8e1e1732d102e16a4"
+  },
+  "gate_measurement": {
+    "measured_speech_end_seconds": 117.78,
+    "current_unique_cited_ids": 14,
+    "independent_meaningful_voiced_facts": 14,
+    "minimum_claims_per_minute": 7.0,
+    "minimum_whole_facts_at_current_runtime": 14,
+    "validated_facts_per_minute": 7.131940906775344,
+    "coverage": 1.0,
+    "gate_command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/vo_claims_check.py",
+    "gate_exit_code": 0,
+    "gate_result": "PASS: 20 narration lines checked against 14 claims; no obligation violated, no unsourced quantity and no unsourced cadence.",
+    "semantic_verification": "All twelve earlier distinct propositions remain present. Recording-scoped HIPAA assurance is now actually voiced in line 9, and the concrete provider refusal channel in line 14. This is not a ledger-only pass."
+  },
+  "patched_voice_verification": {
+    "L9": {"text": "T C C says recording storage follows HIPAA.", "claims": ["c13"], "start": 56.92, "end": 60.44, "wer": 0.0, "pace": 1.0, "verdict": "SUPPORTED_WITH_TCC_ATTRIBUTION_AND_RECORDING_SCOPE"},
+    "L14": {"text": "Ask about those portions before deciding. To decline, just tell your provider.", "claims": ["c5", "c14"], "start": 88.38, "end": 94.12, "wer": 0.0, "pace": 1.0, "verdict": "SUPPORTED_REFUSAL_CHANNEL_PLUS_EDITORIAL_ADVICE"},
+    "word_ledger_check": "Read all twenty segment transcripts from audio/words.json. Both replacements match the script and patch report. The source-supported assertions in the remaining segments remain present.",
+    "splice_verified_in_report": true,
+    "splice_evidence_limit": "Inspected the successful patch report and bound current VO bytes by SHA256. The producer reports 4,721,346 unchanged outside-slot samples; that number is not recorded in this patch report, and this validator did not independently recompute the backup-versus-current sample comparison.",
+    "punctuation_only_difference": "Word-ledger L13 retains the pre-edit colon, while the script has a period; spoken words and meaning are identical. The gate's punctuation defect is resolved in the authoritative script.",
+    "legacy_metadata_note": "audio/words.json still has total=60.0 while speech_end and the actual word timestamps reach 117.78. Density correctly uses measured vo_lines ends. This legacy field was not changed in this bounded task."
+  },
+  "initial_gate_measurement": {
+    "measured_speech_end_seconds": 117.78,
+    "current_unique_cited_ids": 7,
+    "current_claims_per_minute": 3.566,
+    "minimum_claims_per_minute": 7.0,
+    "minimum_whole_facts_at_current_runtime": 14,
+    "independent_meaningful_voiced_facts": 12,
+    "validated_facts_per_minute": 6.113,
+    "maximum_runtime_for_12_facts_at_unchanged_threshold_seconds": 102.85714285714286,
+    "even_generous_13_fact_reading_passes": false,
+    "why": "ceil(117.78 / 60 * 7) = 14. Seven ledger rows bundle several genuinely separate propositions, but questions, restatements and subdivisions of the same approval workflow do not supply the missing two."
+  },
+  "counting_method": "Count independently falsifiable, materially different assertions actually spoken, once each. Keep an announcement and its date together; keep review, editing, approval and chart entry together as one control workflow. Separate recording consent from draft production, and later withdrawal from initial consent, because they change different operational decisions. Count the explicit source-evidence limit once, not each caveat.",
+  "initial_twelve_fact_inventory": [
+    {
+      "fact": "f01",
+      "proposition": "TCC is an Interior Alaska tribal health organization.",
+      "existing_lines": [1],
+      "current_ids": ["c1"],
+      "source": "s2",
+      "evidence_locator": "Organization introduction, healthcare remit, mission and regional description.",
+      "recommendation": "Add one institutional-context claim; do not make separate facts out of each identity adjective."
+    },
+    {
+      "fact": "f02",
+      "proposition": "TCC announced Sully.ai's introduction on September 2nd.",
+      "existing_lines": [1],
+      "current_ids": ["c1"],
+      "source": "s1",
+      "evidence_locator": "Displayed publication date, publication metadata and opening announcement paragraph.",
+      "recommendation": "Retain c1 as one dated announcement, not separate name, date and introduction facts."
+    },
+    {
+      "fact": "f03",
+      "proposition": "TCC's aim is less documentation work and more patient attention.",
+      "existing_lines": [2, 10],
+      "current_ids": ["c7"],
+      "source": "s1",
+      "evidence_locator": "Opening rationale and benefit discussion.",
+      "recommendation": "Retain one attributed aim. Line 10 repeats and fairly tests it, but does not add a measured benefit."
+    },
+    {
+      "fact": "f04",
+      "proposition": "Recording is conditional on patient permission.",
+      "existing_lines": [3, 15],
+      "current_ids": ["c2", "c6"],
+      "source": "s1",
+      "evidence_locator": "Tool definition, privacy introduction and patient-choice section.",
+      "recommendation": "Separate this permission precondition from c2's transformation mechanism. Do not also count initial refusal as a different fact."
+    },
+    {
+      "fact": "f05",
+      "proposition": "The tool converts the visit conversation into a draft note.",
+      "existing_lines": [3],
+      "current_ids": ["c2"],
+      "source": "s1",
+      "evidence_locator": "First paragraph defining the documentation assistant.",
+      "recommendation": "A second c2 proposition is justified: the tool's function is distinct from whether it has permission to operate. Keep listening and drafting together."
+    },
+    {
+      "fact": "f06",
+      "proposition": "Provider review, necessary editing and approval precede chart entry.",
+      "existing_lines": [4, 5],
+      "current_ids": ["c3"],
+      "source": "s1",
+      "evidence_locator": "Provider-review paragraph and repeated chart-entry restriction in privacy section.",
+      "recommendation": "Keep this as one meaningful approval workflow. Do not create separate density points for reviewing, editing, approving and filing. Prefer 'edits as needed' for literal precision."
+    },
+    {
+      "fact": "f07",
+      "proposition": "Sully does not make medical decisions.",
+      "existing_lines": [5],
+      "current_ids": ["c3"],
+      "source": "s1",
+      "evidence_locator": "Clinical-role exclusion immediately after provider-review paragraph.",
+      "recommendation": "Separate this authority boundary from the note-approval workflow. Do not additionally count diagnosis and treatment exclusions unless newly voiced and genuinely needed; they remain one clinical-scope fact."
+    },
+    {
+      "fact": "f08",
+      "proposition": "TCC assigns recordings a 90-day deletion policy.",
+      "existing_lines": [7],
+      "current_ids": ["c4"],
+      "source": "s1",
+      "evidence_locator": "First privacy paragraph.",
+      "recommendation": "Retain c4 once, scoped to recordings and attributed as policy."
+    },
+    {
+      "fact": "f09",
+      "proposition": "The company may reuse deidentified recording portions for system improvement.",
+      "existing_lines": [8, 9, 11],
+      "current_ids": ["c5"],
+      "source": "s1",
+      "evidence_locator": "Second privacy paragraph.",
+      "recommendation": "Retain one proposition covering possible reuse, material and purpose. Publicly disclosing this same possibility is not a new operational fact."
+    },
+    {
+      "fact": "f10",
+      "proposition": "Patients may change their minds after the initial choice.",
+      "existing_lines": [15],
+      "current_ids": ["c6"],
+      "source": "s1",
+      "evidence_locator": "Patient-choice paragraph, sentence following refusal instructions.",
+      "recommendation": "Separate later withdrawal from initial permission: a system could require consent yet offer no subsequent withdrawal. Do not infer undoing earlier reuse or deleting past data."
+    },
+    {
+      "fact": "f11",
+      "proposition": "TCC promises refusal will not affect care.",
+      "existing_lines": [16, 17, 18],
+      "current_ids": ["c6"],
+      "source": "s1",
+      "evidence_locator": "Final sentence of patient-choice paragraph.",
+      "recommendation": "Separate the no-care-penalty promise from permission and later withdrawal. Lines 17 and 18 are editorial applications of this same promise, not extra facts."
+    },
+    {
+      "fact": "f12",
+      "proposition": "This announcement supplies no measured benefit results.",
+      "existing_lines": [12],
+      "current_ids": ["c7"],
+      "source": "s1",
+      "evidence_locator": "Complete article reviewed; benefits are asserted without evaluation methods, outcome measurements or results.",
+      "recommendation": "Add one source-status claim distinct from the stated aim. Keep it narrowly about this notice; do not claim no research exists anywhere. Counting this is already favorable to the existing film."
+    }
+  ],
+  "initial_rewrite_exclusions": [
+    {"lines": [0, 6, 19], "reason": "Hook, open-loop question and audience CTA ask questions rather than assert new evidence."},
+    {"lines": [7], "reason": "Recording-versus-approved-note distinction is important clarity, but repeats the input/output and retention scope already counted; do not use it as a quota filler."},
+    {"lines": [9], "reason": "Second purpose versus medical opinion restates reuse and non-clinical scope."},
+    {"lines": [10, 11], "reason": "The countercase and informed-YES judgment are worthwhile editorial reasoning, not additional observed outcomes."},
+    {"lines": [13, 14], "reason": "The current VO asks about retention and recommends asking. It does not explicitly state a separately verified derivative deadline or even explicitly assert that the notice omits one."},
+    {"lines": [16], "reason": "The independent-testing caveat does not establish a separate evaluation result and overlaps the already-counted source-status limit."},
+    {"lines": [17, 18], "reason": "Adoption principle and button interpret the no-care-penalty promise; repeating it does not increase factual density."}
+  ],
+  "two_additional_facts_now_voiced": [
+    {
+      "fact": "additional_privacy_assurance",
+      "source": "s1",
+      "evidence_locator": "First privacy paragraph, between permission and retention statements.",
+      "supported_new_proposition": "TCC says recordings have secure storage and HIPAA protection.",
+      "count_as": 1,
+      "candidate_replacement_line": 9,
+      "why_meaningful": "Security/privacy safeguards answer a different question from retention or secondary use. Bundle the two linked assurances rather than splitting them to inflate count.",
+      "guard": "Attribute to TCC. This is not a compliance audit or proof of guaranteed anonymity."
+    },
+    {
+      "fact": "additional_refusal_procedure",
+      "source": "s1",
+      "evidence_locator": "Patient-choice paragraph, first sentence.",
+      "source_quote": "If you prefer not to have your visit recorded, simply let your provider know.",
+      "source_quote_word_count": 15,
+      "supported_new_proposition": "The stated refusal procedure is to tell the provider.",
+      "count_as": 1,
+      "candidate_replacement_line": 14,
+      "why_meaningful": "This adds the concrete action/channel currently absent from the film, not merely another statement that refusal is allowed.",
+      "guard": "Do not invent a portal, form, physical switch, separate reuse opt-out or retrospective deletion process."
+    }
+  ],
+  "followup_fourteen_claim_ledger": {
+    "status": "ALL_FOURTEEN_MAPPED_AND_VERIFIED_IN_CURRENT_VOICE",
+    "claim_map": {
+      "c1": {"validated_fact": "f02", "lines": [1]},
+      "c2": {"validated_fact": "f04", "lines": [3, 15]},
+      "c3": {"validated_fact": "f06", "lines": [4, 5]},
+      "c4": {"validated_fact": "f08", "lines": [7]},
+      "c5": {"validated_fact": "f09", "lines": [8]},
+      "c6": {"validated_fact": "f11", "lines": [16]},
+      "c7": {"validated_fact": "f03", "lines": [2]},
+      "c8": {"validated_fact": "f01", "lines": [1]},
+      "c9": {"validated_fact": "f05", "lines": [3]},
+      "c10": {"validated_fact": "f07", "lines": [5]},
+      "c11": {"validated_fact": "f10", "lines": [15]},
+      "c12": {"validated_fact": "f12", "lines": [12]},
+      "c13": {"validated_fact": "additional_privacy_assurance", "lines": [9]},
+      "c14": {"validated_fact": "additional_refusal_procedure", "lines": [14]}
+    },
+    "exact_replacement_validation": {
+      "L9": {
+        "submitted": "T C C says storage follows HIPAA privacy rules.",
+        "verdict": "SUPPORTED_AFTER_RECORDING_SCOPE_ADDED",
+        "approved": "T C C says recording storage follows HIPAA.",
+        "reason": "The actual shorter take retains TCC attribution and recording scope. HIPAA is an acceptable spoken shorthand for the source's privacy-protection assurance, not an independently verified compliance result."
+      },
+      "L14": {
+        "approved": "Ask about those portions before deciding. To decline, just tell your provider.",
+        "verdict": "SUPPORTED",
+        "reason": "The first sentence is editorial advice; the second adds the source's concrete refusal channel."
+      },
+      "L13": {"verdict": "SUPPORTED_PUNCTUATION_ONLY_FIX", "change": "Replace colon with period; retain question rather than invent a derivative retention period."}
+    },
+    "old_id_compatibility": "c1-c7 retain their original primary subjects. c2 is narrowed to permission, c3 remains the single approval workflow, c6 remains the care-penalty promise, and c7 remains the aim. The separately voiced mechanisms, authority boundary, withdrawal, source-status limit and local identity receive c8-c12. Only c13-c14 require new narration.",
+    "gate_run": true,
+    "gate_reason": "Waited for both replacement lines in script, measured line ledger and segment word ledger before running the gate. It now passes semantically as well as numerically."
+  },
+  "recommended_resolution": {
+    "ledger_only_repair_sufficient": false,
+    "path": "Completed: twelve distinct existing propositions plus two genuinely new source-backed replacement lines, without extending measured speech runtime. No further density rewrite is required for these bound inputs.",
+    "runtime_warning": "14 facts pass only at 120 seconds or less of measured narration. Simply appending lines may increase runtime enough to fail again. Source-count restructuring alone must not be called a PASS.",
+    "retain_editorial_value": "Preserve the warm informed-YES countercase and the promised-care payoff; remove redundant explanation before cutting those story functions.",
+    "additional_current_gate_failure": null,
+    "resolved_gate_failure": "The producer replaced L13's colon with a period in vo_script.json. No gate thresholds or rules were changed."
+  }
+}

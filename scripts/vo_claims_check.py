@@ -34,10 +34,11 @@ whether a sentence is true, so it checks the two things a machine CAN check.
 Usage:
     python3 scripts/vo_claims_check.py            # exit 1 on any violation
     python3 scripts/vo_claims_check.py --list     # print what it derived, exit 0
+    python3 scripts/vo_claims_check.py --before-synth  # provisional density, no old timings
 
 It reads the SCRIPT, so it runs BEFORE a second of TTS is spent, which is the whole point.
 """
-import json, re, sys, os
+import json, re, sys, os, math
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
@@ -76,6 +77,7 @@ QUANT = re.compile(
     r"half|most|fewest|largest|smallest|only one|not one|exactly once|every|all of)\b", re.I)
 MIN_CLAIMS_PER_MIN = 7.0    # a 2-minute film owes ~14 facts, not 13
 MIN_CLAIM_COVERAGE = 0.70   # >=70% of what was verified must actually reach the narration
+PROVISIONAL_WORDS_PER_SECOND = 2.4
 
 DATEISH = re.compile(r"\b(august|june|july|september|friday|monday|year one)\b", re.I)
 
@@ -112,10 +114,44 @@ def _claim_span(lines, cid):
     return " ".join(l["text"].lower() for l in lines if lo <= l["idx"] <= hi)
 
 
+def provisional_runtime(script, direction_path):
+    """Estimate from current copy and its declared target, never old audio timings.
+
+    target_seconds is the optional top-level numeric field in vo_direction.json.
+    Taking the larger estimate avoids a short target hiding a long script, or a
+    short script hiding a deliberately slow two-minute read. This cannot replace
+    the normal measured check after synthesis.
+    """
+    words = sum(len(line["text"].split()) for line in script["lines"])
+    if not words:
+        raise ValueError("the current narration has no spoken words")
+    estimate = words / PROVISIONAL_WORDS_PER_SECOND
+    try:
+        with open(direction_path) as stream:
+            direction = json.load(stream)
+    except FileNotFoundError:
+        direction = {}
+    if not isinstance(direction, dict):
+        raise ValueError("vo_direction.json must be an object")
+    target = direction.get("target_seconds")
+    if "target_seconds" in direction:
+        if (isinstance(target, bool) or not isinstance(target, (int, float))
+                or not math.isfinite(target) or target <= 0):
+            raise ValueError("vo_direction.target_seconds must be a finite positive number")
+    seconds = max(estimate, target or 0.0)
+    declared = f"declared target {target:g}s" if target is not None else "no declared target"
+    detail = (f"{seconds:.2f}s = max({declared}, {words} current-script words / "
+              f"{PROVISIONAL_WORDS_PER_SECOND:g} words/sec = {estimate:.2f}s)")
+    return seconds, detail
+
+
 def main():
     show = "--list" in sys.argv
-    script = json.load(open(os.path.join(OUT, "vo_script.json")))
-    claims_doc = json.load(open(os.path.join(OUT, "claims.json")))
+    before_synth = "--before-synth" in sys.argv
+    with open(os.path.join(OUT, "vo_script.json")) as stream:
+        script = json.load(stream)
+    with open(os.path.join(OUT, "claims.json")) as stream:
+        claims_doc = json.load(stream)
     claims = {c["id"]: c for c in claims_doc["claims"]}
 
     problems, notes = [], []
@@ -200,18 +236,32 @@ def main():
     # NOT a bare except. A silent swallow here is how this very check sat dead on its first
     # run: it referenced a name this module does not define, raised, and the handler hid it.
     secs = 0.0
-    _vl = os.path.join(REPO, "out", "dispatch", "vo_lines.json")
-    try:
-        secs = max(x["end"] for x in json.load(open(_vl))["lines"])
-    except (OSError, ValueError, KeyError) as _e:
-        problems.append(f"STORY DENSITY: cannot measure runtime from {_vl} ({_e}). The density "
-                        f"floor is unenforceable without it, so this is a failure, not a skip.")
+    if before_synth:
+        try:
+            secs, estimate_detail = provisional_runtime(
+                script, os.path.join(OUT, "vo_direction.json"))
+            print("PROVISIONAL [before-synth density estimate] " + estimate_detail +
+                  "; vo_lines.json is not read. Measured validation is still required after synthesis.")
+        except (OSError, ValueError, KeyError, TypeError) as _e:
+            problems.append(f"STORY DENSITY: cannot form a PROVISIONAL before-synth estimate ({_e}). "
+                            "Fix the current script/direction before spending on voice synthesis.")
+        if not used:
+            problems.append("STORY DENSITY: no verified claim IDs are voiced in the current script.")
+    else:
+        _vl = os.path.join(REPO, "out", "dispatch", "vo_lines.json")
+        try:
+            with open(_vl) as stream:
+                secs = max(x["end"] for x in json.load(stream)["lines"])
+        except (OSError, ValueError, KeyError) as _e:
+            problems.append(f"STORY DENSITY: cannot measure runtime from {_vl} ({_e}). The density "
+                            f"floor is unenforceable without it, so this is a failure, not a skip.")
     if secs > 0 and used:
         per_min = len(used) / secs * 60.0
         coverage = len(used) / total_claims
         if per_min < MIN_CLAIMS_PER_MIN:
+            runtime_kind = "PROVISIONAL estimated " if before_synth else ""
             problems.append(
-                f"STORY DENSITY: {len(used)} claims across {secs:.0f}s is {per_min:.1f} per minute, "
+                f"STORY DENSITY: {len(used)} claims across {runtime_kind}{secs:.0f}s is {per_min:.1f} per minute, "
                 f"under the {MIN_CLAIMS_PER_MIN} floor. This is the signature of a stretched film: "
                 f"the runtime grew and the story did not. Either put more of the record on screen "
                 f"or make the film shorter.")

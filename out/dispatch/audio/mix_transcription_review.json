@@ -1,0 +1,260 @@
+{
+  "run_date": "2026-09-03",
+  "checked_at_utc": "2026-09-03T15:59:05.622424+00:00",
+  "mix_path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/master.wav",
+  "mix_sha256": "cf973eb43b9f58af672b7880f26de127b7b7516762f323691a9943cfe5045ebd",
+  "previous_mix_sha256": "da6ed184d33057bd4c9e5ae28ffdd689ac9f4dc7bf6e26ed0dd82ed118fa4e78",
+  "new_pcm_not_reused_proof": true,
+  "input_hashes": {
+    "episode_props.json": "93c43dcec18fd2a0d02f870d63d3ac4ac5f5fac1436a29d67c23ef305b41de0c",
+    "captions.json": "40be402af86487141d4311840daea6af94935ac11742592204d1b534ce163b8c",
+    "audio/words.json": "75c84bfafbd465aeec753c0e2ab415387201ba80977d8020fdc19d05cce43edb",
+    "audio/master.wav": "cf973eb43b9f58af672b7880f26de127b7b7516762f323691a9943cfe5045ebd"
+  },
+  "inputs_unchanged_during_checks": true,
+  "whole_mix": {
+    "tool": "Same base-model whole-PCM transcription and phrase rules as scripts/vo_audio_check.py, run in an isolated read-only proof harness with explicit CPU limit",
+    "model": "faster-whisper base, CPU int8, cpu_threads=2, num_workers=1, local_files_only=True",
+    "language": "automatic detection",
+    "detected_language": "en",
+    "initial_prompt": null,
+    "vad_filter": false,
+    "word_timestamps": false,
+    "faster_whisper_version": "1.2.1",
+    "vo_audio_check_sha256": "bf8ecb9dda911cc2b824f4cb86e5a638cbdefeae51317bdcd74a8de3d0afb459",
+    "phrase_rules_sha256": "7bfaa242bb007f38dc0b0859e9cfc521cf21862d5f9b2499c3ff918aa73a5320",
+    "probe_format": "PCM s16le, mono, 16000 Hz, full master duration",
+    "probe_sha256": "8a42c399a858a9835aac63851a52b63541e30500e8f2d38e72548ae164a988f3",
+    "segments": 38,
+    "recognized_words": 256,
+    "banned_phrases": [],
+    "pass": true,
+    "transcript_segments": [
+      {
+        "start_s": 0,
+        "end_s": 5.2,
+        "text": "What changes when you tell an AI note-taker, no?"
+      },
+      {
+        "start_s": 5.2,
+        "end_s": 8.2,
+        "text": "On September 2nd, Tannenaut Chiefs Conference,"
+      },
+      {
+        "start_s": 8.2,
+        "end_s": 11,
+        "text": "an interior Alaska Tribal Health Organization,"
+      },
+      {
+        "start_s": 11,
+        "end_s": 14.4,
+        "text": "announced its introducing Sully.AI."
+      },
+      {
+        "start_s": 14.4,
+        "end_s": 16,
+        "text": "Its job is paperwork."
+      },
+      {
+        "start_s": 16,
+        "end_s": 20.2,
+        "text": "The aim is less typing and more attention for patients."
+      },
+      {
+        "start_s": 20.2,
+        "end_s": 21.8,
+        "text": "With the patient's permission,"
+      },
+      {
+        "start_s": 21.8,
+        "end_s": 25.6,
+        "text": "the tool listens during the appointment and drafts a note."
+      },
+      {
+        "start_s": 25.6,
+        "end_s": 27.6,
+        "text": "That draft still has a boss."
+      },
+      {
+        "start_s": 27.6,
+        "end_s": 31.6,
+        "text": "The provider reviews it, edits it, and approves it."
+      },
+      {
+        "start_s": 31.6,
+        "end_s": 34.6,
+        "text": "Only then can it enter the medical record."
+      },
+      {
+        "start_s": 34.6,
+        "end_s": 37.6,
+        "text": "Sully isn't making medical decisions."
+      },
+      {
+        "start_s": 37.6,
+        "end_s": 41.6,
+        "text": "But does that design actually give patients more attention?"
+      },
+      {
+        "start_s": 41.6,
+        "end_s": 43.6,
+        "text": "Keep that question open."
+      },
+      {
+        "start_s": 43.6,
+        "end_s": 47.32,
+        "text": "TCC gives recordings a 90-day deletion policy."
+      },
+      {
+        "start_s": 47.32,
+        "end_s": 51,
+        "text": "Recordings and approved notes are different things."
+      },
+      {
+        "start_s": 51,
+        "end_s": 53,
+        "text": "The technology company may also use"
+      },
+      {
+        "start_s": 53,
+        "end_s": 56.8,
+        "text": "de-identified portions of recordings to improve the system."
+      },
+      {
+        "start_s": 56.8,
+        "end_s": 61.8,
+        "text": "TCC says recording storage follows hip-hop."
+      },
+      {
+        "start_s": 61.8,
+        "end_s": 64.4,
+        "text": "Now give the offer its strongest case."
+      },
+      {
+        "start_s": 64.4,
+        "end_s": 67.8,
+        "text": "Less typing could mean a better conversation."
+      },
+      {
+        "start_s": 67.8,
+        "end_s": 71.2,
+        "text": "And TCC tells patients about the possible reuse."
+      },
+      {
+        "start_s": 71.2,
+        "end_s": 75,
+        "text": "An informed yes is a reasonable choice."
+      },
+      {
+        "start_s": 75,
+        "end_s": 78,
+        "text": "But this notice reports no measured benefits."
+      },
+      {
+        "start_s": 78,
+        "end_s": 81.8,
+        "text": "A sensible design isn't proof that it works."
+      },
+      {
+        "start_s": 81.8,
+        "end_s": 85,
+        "text": "One question still matters for that informed choice."
+      },
+      {
+        "start_s": 85,
+        "end_s": 88.4,
+        "text": "How long can de-identified portions be kept?"
+      },
+      {
+        "start_s": 88.4,
+        "end_s": 91.8,
+        "text": "Ask about those portions before deciding."
+      },
+      {
+        "start_s": 91.8,
+        "end_s": 95.4,
+        "text": "To decline, just tell your provider."
+      },
+      {
+        "start_s": 95.4,
+        "end_s": 97.6,
+        "text": "Now switch the recorder off."
+      },
+      {
+        "start_s": 97.6,
+        "end_s": 100.6,
+        "text": "TCC says you can decline or change your mind."
+      },
+      {
+        "start_s": 100.6,
+        "end_s": 102.6,
+        "text": "Your care won't be affected."
+      },
+      {
+        "start_s": 102.6,
+        "end_s": 107.2,
+        "text": "That's its promise, not an independently tested result."
+      },
+      {
+        "start_s": 107.2,
+        "end_s": 109.6,
+        "text": "Useful AI doesn't need every patient"
+      },
+      {
+        "start_s": 109.6,
+        "end_s": 111.2,
+        "text": "to make the same choice."
+      },
+      {
+        "start_s": 111.2,
+        "end_s": 113.1,
+        "text": "The patient can step aside."
+      },
+      {
+        "start_s": 113.1,
+        "end_s": 115.6,
+        "text": "The care has to stay."
+      },
+      {
+        "start_s": 115.6,
+        "end_s": 118.6,
+        "text": "Would you want this note-taker at your next visit?"
+      }
+    ],
+    "scope": "Fresh actual PCM mix only; no claim to audit source truth or verify final encoded video audio. Passing means no banned phrase was detected, not a verbatim transcript; base-model proper-name and machine/patient transcription errors remain visible in the recorded segments.",
+    "probe_path": "/tmp/dispatch-proof-refresh.y0vLom/full_pcm_probe.wav"
+  },
+  "named_term_followup": {
+    "reason": "Repeat the separate unprompted small-model check on the NEW PCM; do not carry forward an older clip or its transcript.",
+    "clip_start_s": 56.92,
+    "clip_duration_s": 3.52,
+    "clip_sha256": "1bbdd13a1c99ba98d0bda25411b014045e2c699c015a5559f3655ba499b07105",
+    "clip_format": "PCM s16le, mono, 16000 Hz",
+    "model": "faster-whisper small, CPU int8, cpu_threads=2, num_workers=1, local_files_only=True",
+    "language": "en",
+    "initial_prompt": null,
+    "vad_filter": false,
+    "available": true,
+    "recognized_text": "TCC says recording storage follows HIPAA.",
+    "matches_intended_line": true,
+    "probe_path": "/tmp/dispatch-proof-refresh.y0vLom/hipaa_mix_probe.wav"
+  },
+  "pass": true,
+  "caveat": "Automated acoustic evidence, not human listening and not Gate B. ASR segment boundaries are not the forced-aligned caption clock. Later actual encoded-VO audio check remains required.",
+  "closing_phrase_followup": {
+    "reason": "Fresh whole-mix base ASR substituted patient for machine; independently check that exact passage without prompting.",
+    "clip_start_s": 111.18,
+    "clip_duration_s": 3.42,
+    "clip_sha256": "4dc8f88354107b2d7fa5e6cdba5356a25d444b11b2bc3178f73953043c3a13f5",
+    "mix_sha256": "cf973eb43b9f58af672b7880f26de127b7b7516762f323691a9943cfe5045ebd",
+    "input_unchanged": true,
+    "model": "faster-whisper small, CPU int8, cpu_threads=2, num_workers=1, local_files_only=True",
+    "language": "en",
+    "initial_prompt": null,
+    "vad_filter": false,
+    "clip_format": "PCM s16le, mono, 16000 Hz",
+    "recognized_text": "The machine can step aside. The care has to stay.",
+    "matches_intended_phrase": true,
+    "probe_path": "/tmp/dispatch-proof-refresh.y0vLom/closing_mix_probe.wav"
+  }
+}

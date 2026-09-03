@@ -1,0 +1,20 @@
+{
+  "mode": "pre",
+  "flows": true,
+  "orphan_sentences": [],
+  "resting_or_meaningless_beats": [],
+  "silent_or_generic_sfx_beats": [],
+  "notes": [
+    "Coverage passes: every VO sentence has a literal or explicitly editorial visual. Recording coils, chart sheets and dotted possible portions retain distinct identities. Keep ILLUSTRATION · TCC TERMS visible throughout care scenes, and preserve the distinction between the institutional promise and demonstrated outcomes.",
+    "Rechecked revised beats: 27 now turns the unanswered retention question into a human handoff with a provider response; 37 gives the final audience question a lifted card and shared gaze. Both now advance the picture. The whoosh at 26, detent tick at 35 and actual window-hinge creak at 38 have visible motivation. Keep room warmth unchanged.",
+    "Thirds: 0-40s establishes the switch, source and human review; 40-80s introduces recording policy, possible reuse, informed YES and evidence status rather than merely elaborating. The final third remains weakest comparatively, but the question-to-person handoff now earns its bridge into the OFF payoff instead of repeating the bracket.",
+    "The countercase gets a real warm scene at 59.075-72.25 and narrows honestly when the model returns to the announcement. The two payoffs at 76.5 and 98.6 are properly separated by 22.1 seconds. Rehooks vary from human control to the strongest YES case to the preserved-care test.",
+    "Throughline works in concept: waiting lever, running review, exposed informed linkage, braking OFF, then off beside continuing care. Keep those visible state distinctions on screen, particularly the exposed housing at 65-72s, so orientation is not carried only by labels.",
+    "Room breathing/eye cycles and desk reflection/paper flex now name suitable life beds. OFF reels must remain stationary. Reveals specify anticipation and quiet focal landings; POST must verify stagger, overshoot budget, layered motion and audible synchronization, not infer them from this plan.",
+    "The whole-model-to-announcement transition at 72.25s supplies the late world transformation. Use each reveal's hold_s as authority: the latter two specify 0.7s although shared prose says 0.6s. Both fit the doctrine; implement one explicit interval without competing arrivals.",
+    "Build handoff hygiene: beat 26's draw.subject still mentions old recording-clock separation, but shows, draw.action and choreo correctly depict the unresolved portions question. Use the updated action. Shot 14's world_arc still repeats the recorder-aside move assigned to beat 36; its actual final-shot primary is the question card. Those residual descriptions must not override the corrected timed beats.",
+    "The audio arc remains coherent: warm offer, curious reuse, thinned evidence, silence before OFF payoff, warm resolution. This PASS certifies revised preproduction flow only, not rendered motion, audio alignment or the final film."
+  ],
+  "ship": true,
+  "one_fix": "No further flow redesign is required. Build the corrected timed actions faithfully, especially the retention-question handoff and final audience-question gesture, then verify motion and sound in POST."
+}

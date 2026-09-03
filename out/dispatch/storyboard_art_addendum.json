@@ -1,0 +1,45 @@
+{
+  "review": "Gate 0B and 0D addendum for the two source-backed narration replacements",
+  "scope": "Plan and source-code inspection only. No unseen render scored, no compliance audit performed, no scene code changed. Research-validated claim records c13 and c14 are the factual inputs.",
+  "reviewed_sha256": {
+    "storyboard.json": "2005ca82ee7ed775583298e7a9eb7fcc45ec0bc4eccfbc5cf9035eaa85c678a6",
+    "art_direction.json": "35305ed600912f933c75712f0c999ddb3762c2f23339b791036082849111493d",
+    "vo_script.json": "198b095f81b2cc63f61e808ef685dc46fa479b10d64bcc392e925b7dddc6d78e",
+    "claims.json": "04aef65e9b80b3b3be0b31e7a3e49952cf46c247536a941e5d0928e987fec579",
+    "video-engine/src/Ep0903.tsx": "3267e0fc0263da08519bdc8fa8331e1b577eb1f7af8463a3b3d921b00c78ad9e"
+  },
+  "gate_0b": {
+    "ship": true,
+    "beat_19": "HIPAA shield is explicitly a TCC-stated recording-storage privacy policy, adjacent only to the recording coil. The dotted possible-reuse branch remains separate. It does not establish clinical efficacy, independently verified compliance, anonymity, absence of risk or derivative retention. The narration also attributes the assertion to TCC.",
+    "beat_29": "The patient tells the provider their choice and receives acknowledgment, providing the concrete source-backed refusal channel. The following lever is an editorial mechanism illustration, not an actual patient-operated interface, a required form or a separate opt-out from reuse. Maintain that distinction in the finished framing.",
+    "retention": "The first addition replaces a redundant scope reminder; the second replaces an abstract admonition with a human action. Neither breaks the central lever throughline or the two different loops. Current evidence payoff at 79.14 and care payoff at 100.64 remain 21.5 seconds apart. At eighty seconds the unresolved retention question leads to telling the provider, rather than another clock explanation.",
+    "conclusion": "These two changes preserve the previously approved storyboard structure and improve the concrete refusal procedure. This is not a new final-film grade."
+  },
+  "gate_0d": {
+    "ship": true,
+    "seven_levers": "Palette, light, shape language, casting, motion, composition and craft advance remain intact. Apricot policy shield stays a subordinate recording annotation; the speaking arc assigns meaningful business to the existing generic human pair. Neither addition requires a new hero or changes the one source-notice signature shot.",
+    "guard": "Do not turn the policy shield into an audited-certification seal or let it enclose the possible-reuse gear/chart. Preserve the equal care geometry and lighting under both choices."
+  },
+  "source_code_findings_not_render_verdicts": [
+    {
+      "priority": "required before final evidence",
+      "location": "Ep0903.tsx Shot n12, n13 and n14",
+      "finding": "The binding continuous ILLUSTRATION · TCC TERMS attribution is absent for much of n12 and all n13; n14 says only ILLUSTRATION · YOUR CHOICE. The late n12 source tab does not satisfy a continuous label.",
+      "fix": "Keep one readable TCC-terms illustration label on all hypothetical care/choice frames, including the two-room comparison and ending."
+    },
+    {
+      "priority": "required before final evidence",
+      "location": "Ep0903.tsx Shot n12",
+      "finding": "Lever off=p(30,32) reaches OFF roughly one second after beat 30 begins, but stop=at(31) starts reel braking about two seconds later. Code therefore permits an OFF lever beside still-running reels, contrary to the intended causal performance.",
+      "fix": "Align the lever's OFF arrival and transport brake onset using the same global-frame event; preserve phase-continuous braking and the held-care reveal."
+    }
+  ],
+  "render_verification_remaining": [
+    "Read HIPAA and TCC SAYS at phone size and check the shield covers only recording storage.",
+    "Inspect the tell-provider gesture/speech arc and ensure it is not read as fabricated actual patient testimony.",
+    "Verify actual voice/caption timing and illustration labels on the final portrait and square bytes.",
+    "Verify recorder braking and invariant care geometry/light against the performed OFF event."
+  ],
+  "ship": true,
+  "ship_meaning": "The two plan additions retain Gate 0B/0D approval only; implementation findings and final rendered gates remain separate."
+}

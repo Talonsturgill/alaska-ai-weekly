@@ -51,6 +51,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -75,7 +76,81 @@ OBJECT = re.compile(r"\b(plate|plates|screen|frame|frames|slip|stack|bar|box|box
                     r"sign|chart|card|cards|desk|table|tile|tiles|room|console|spool|"
                     r"grid|map|counter|paper|folder|line|band|door)\b", re.I)
 
-DRIVEN = re.compile(r"\b(interpolate|spring|useCurrentFrame)\b|\bf\b")
+# Parse the actual JSX expression and follow lexically resolved local bindings.
+# A nearby frame prop is not evidence that a constant gesture is animated.
+_CHARACTERS = r"""
+const ts=require(process.argv[1]), fs=require('fs');
+const filename='staging-input.tsx', source=fs.readFileSync(0,'utf8');
+const sf=ts.createSourceFile(filename,source,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
+if(sf.parseDiagnostics.length) throw Error('TSX parse failed');
+const host=ts.createCompilerHost({});
+host.getSourceFile=(name)=>name===filename?sf:undefined;
+const checker=ts.createProgram([filename],{noLib:true,noResolve:true,jsx:ts.JsxEmit.Preserve},host).getTypeChecker();
+const unparen=n=>{while(n&&(ts.isParenthesizedExpression(n)||ts.isAsExpression(n)))n=n.expression;return n;};
+function driven(node,env=new Map(),seen=new Set()) {
+  node=unparen(node); if(!node||seen.has(node))return false;
+  seen=new Set(seen);seen.add(node);
+  if(ts.isIdentifier(node)) {
+    const symbol=checker.getSymbolAtLocation(node);
+    if(env.has(symbol)){const [value,scope]=env.get(symbol);return driven(value,scope,seen);}
+    // Preserve the existing scene-helper contract: an explicit `f` parameter is
+    // its supplied frame clock. This is not a claim to resolve every call site.
+    if(node.text==='f'&&(symbol?.declarations||[]).some(d=>ts.isParameter(d)||
+       (ts.isBindingElement(d)&&ts.isParameter(d.parent.parent))))return true;
+    return (symbol?.declarations||[]).some(d=>ts.isVariableDeclaration(d)&&
+      (d.parent.flags&ts.NodeFlags.Const)&&driven(d.initializer,env,seen));
+  }
+  if(ts.isCallExpression(node)) {
+    const callee=unparen(node.expression), name=callee.getText(sf);
+    if(name==='useCurrentFrame')return true;
+    if(['interpolate','spring'].includes(name)||/^Math\./.test(name)||
+       /\.(accentAt|opennessAt)$/.test(name))
+      return node.arguments.some(a=>driven(a,env,seen));
+    const decls=checker.getSymbolAtLocation(callee)?.declarations||[];
+    for(const decl of decls){
+      const fn=ts.isVariableDeclaration(decl)?unparen(decl.initializer):decl;
+      if(!fn||!(ts.isArrowFunction(fn)||ts.isFunctionExpression(fn)||ts.isFunctionDeclaration(fn)))continue;
+      const scope=new Map(env);
+      fn.parameters.forEach((p,i)=>scope.set(checker.getSymbolAtLocation(p.name),[node.arguments[i]||p.initializer,env]));
+      const body=fn.body;
+      if(body&&!ts.isBlock(body)&&driven(body,scope,seen))return true;
+      if(body&&ts.isBlock(body)&&body.statements.some(s=>ts.isReturnStatement(s)&&driven(s.expression,scope,seen)))return true;
+    }
+    return false; // Unknown calls are not proof of frame-driven acting.
+  }
+  if(ts.isBinaryExpression(node))return driven(node.left,env,seen)||driven(node.right,env,seen);
+  if(ts.isConditionalExpression(node))return driven(node.condition,env,seen)||driven(node.whenTrue,env,seen)||driven(node.whenFalse,env,seen);
+  if(ts.isPrefixUnaryExpression(node)||ts.isPostfixUnaryExpression(node))return driven(node.operand,env,seen);
+  if(ts.isObjectLiteralExpression(node))return node.properties.some(p=>ts.isPropertyAssignment(p)&&driven(p.initializer,env,seen));
+  return false;
+}
+function sceneOf(node){
+  for(let p=node.parent;p;p=p.parent){
+    if(ts.isIfStatement(p)&&p.thenStatement.pos<=node.pos&&node.end<=p.thenStatement.end){
+      const m=p.expression.getText(sf).match(/^n\s*===?\s*(\d+)$/);if(m)return Number(m[1]);
+    }
+    if(ts.isVariableDeclaration(p)&&/^S\d+$/.test(p.name.getText(sf)))return Number(p.name.getText(sf).slice(1));
+  }
+  return 0; // Shared helpers have no single scene; do not invent a call-site mapping.
+}
+const rows=[];
+function visit(node){
+  if((ts.isJsxSelfClosingElement(node)||ts.isJsxOpeningElement(node))&&node.tagName.getText(sf)==='Character'){
+    const attrs=node.attributes.properties.filter(ts.isJsxAttribute);
+    const attr=name=>attrs.find(a=>a.name.getText(sf)===name);
+    const gesture=attr('gesture')?.initializer;
+    const expr=gesture&&ts.isJsxExpression(gesture)?gesture.expression:undefined;
+    const pose=attr('pose')?.initializer, poses=[];
+    function strings(n){if(!n)return;if(ts.isStringLiteral(n))poses.push(n.text);else ts.forEachChild(n,strings);}
+    strings(pose);
+    rows.push({line:sf.getLineAndCharacterOfPosition(node.getStart(sf)).line+1,
+      scene:sceneOf(node),poses,has_gesture:!!gesture,driven:driven(expr),
+      walking:!!(attr('walking')||attr('walkPhase'))});
+  }
+  ts.forEachChild(node,visit);
+}
+visit(sf);process.stdout.write(JSON.stringify(rows));
+"""
 
 
 def stages_a_figure(subject):
@@ -108,45 +183,17 @@ def read_json(p):
     return json.load(open(p)) if os.path.exists(p) else None
 
 
-def char_block(src, i):
-    """The full <Character .../> text, brace-aware.
-
-    A fixed-width slice was the first approach and it silently truncated the S9 crowd,
-    whose gesture prop sits ~430 characters in. It reported a correctly-driven figure as
-    frozen, which is a checker inventing a defect. Read to the matching '/>' at depth 0.
-    """
-    d = 0
-    for j in range(i, min(len(src), i + 4000)):
-        c = src[j]
-        if c == "{":
-            d += 1
-        elif c == "}":
-            d -= 1
-        elif c == "/" and j + 1 < len(src) and src[j + 1] == ">" and d == 0:
-            return src[i:j]
-    return src[i:i + 1500]
-
-
 def scan_engine(path):
     """Every <Character> with its scene number, poses, and whether its gesture is driven."""
-    src = open(path).read()
-    decls = [(int(m.group(2)), m.start())
-             for m in re.finditer(r"^const (S(\d+)): React\.FC<SceneProps\b[^>]*>", src, re.M)]
-    out = []
-    for m in re.finditer(r"<Character\b", src):
-        blk = char_block(src, m.start())
-        scene = 0
-        for num, pos in decls:
-            if pos < m.start():
-                scene = num
-        poses = set(re.findall(r"'(\w+)'", blk)) | set(re.findall(r'pose="(\w+)"', blk))
-        poses &= (GESTURE_POSES | {"stand", "arms-crossed"})
-        g = re.search(r"gesture=\{", blk)
-        driven = bool(g) and bool(DRIVEN.search(blk[g.start():g.start() + 300]))
-        walking = "walking" in blk or "walkPhase" in blk
-        out.append({"line": src[:m.start()].count("\n") + 1, "scene": scene,
-                    "poses": poses, "has_gesture": bool(g), "driven": driven,
-                    "walking": walking})
+    with open(path) as handle:
+        result = subprocess.run(
+            ["node", "-e", _CHARACTERS, os.path.join(REPO, "video-engine", "node_modules", "typescript")],
+            input=handle.read(), text=True, capture_output=True, timeout=30)
+    if result.returncode:
+        raise ValueError(f"cannot resolve Character gestures: {result.stderr.strip()[:300]}")
+    out = json.loads(result.stdout)
+    for row in out:
+        row["poses"] = set(row["poses"]) & (GESTURE_POSES | {"stand", "arms-crossed"})
     return out
 
 
@@ -175,7 +222,9 @@ def main():
             blob = f"{d.get('subject','')} {d.get('action','')}"
             if not stages_a_figure(d.get("subject", "")):
                 continue
-            t = float(b.get("t", -1))
+            # Current boards store display ranges alongside a numeric at_s clock.
+            # Read the real start rather than crashing on the valid range contract.
+            t = float(b["at_s"]) if "at_s" in b else float(str(b.get("t", -1)).split("-", 1)[0])
             sc = next((n for n, (x, y) in scenes.items() if x <= t < y), None)
             if sc is None:
                 continue
@@ -184,12 +233,18 @@ def main():
                 {"t": t, "act": act, "action": str(d.get("action", ""))[:110],
                  "subject": str(d.get("subject", ""))[:70]})
 
-    problems, checked = [], 0
+    problems, checked, unmapped = [], 0, 0
     for path in targets:
         rel = os.path.relpath(path, REPO)
-        for ch in scan_engine(path):
+        try:
+            characters = scan_engine(path)
+        except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
+            problems.append(f"{rel}: staging source could not be checked ({exc})")
+            continue
+        for ch in characters:
             checked += 1
             sc, line = ch["scene"], ch["line"]
+            unmapped += int(sc == 0)
             secs = None
             if sc in scenes:
                 secs = scenes[sc][1] - scenes[sc][0]
@@ -234,7 +289,11 @@ def main():
         print("Where the board already wrote the action, the fix is transcription, not")
         print("invention. Where it did not, the board is the thing to fix first.")
         return 1
-    print(f"staging_check: {checked} figure(s), every one performing what the board staged")
+    print(f"staging_check: {checked} direct Character site(s), no source-level staging violations")
+    if unmapped:
+        print(f"NOTE {unmapped} shared/unmapped site(s) have no resolved call-site scene. "
+              "Frame-parameter gestures are checked, but instance coverage and rendered "
+              "performance still require visual QA.")
     return 0
 
 

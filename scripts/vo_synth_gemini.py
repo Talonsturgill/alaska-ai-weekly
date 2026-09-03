@@ -421,9 +421,28 @@ def repair_prompt(prompt, plan):
     return rebuilt, notes
 
 
+def _require_checked_transcript(lines, prompt):
+    """The words sent to Gemini must be the same JSON script the claim gate read."""
+    with open(os.path.join(OUT, "vo_script.json")) as stream:
+        checked = [_strip_tags(line["text"]) for line in json.load(stream)["lines"]]
+    delimiter = "\nTranscript:\n"
+    body = prompt.split(delimiter, 1)[1] if delimiter in prompt else ""
+    transmitted = [_strip_tags(line) for line in body.splitlines() if _strip_tags(line)]
+    if lines != checked or transmitted != checked:
+        raise SystemExit(
+            "VO CLAIM PRECHECK: the final spoken transcript differs from verified vo_script.json. "
+            "Reconcile vo_script.txt and vo_direction.json with that script before synthesis. "
+            "No Gemini call was made.")
+
+
 def main():
+    # Always run before credentials, takes, retries or any Gemini API spend. Old
+    # vo_lines.json is irrelevant before this script has produced the new voice.
+    subprocess.run([sys.executable, os.path.join(HERE, "vo_claims_check.py"),
+                    "--before-synth"], check=True)
     os.makedirs(AUD, exist_ok=True)
-    plan = json.load(open(os.path.join(OUT, "vo_direction.json")))
+    with open(os.path.join(OUT, "vo_direction.json")) as stream:
+        plan = json.load(stream)
     prompt = plan["assembled_prompt"]
     lines = [_strip_tags(l["text"]) for l in plan["lines"]]  # SPOKEN words only (no tags)
     # THE SCRIPT WINS, AND A MISMATCH IS REPAIRED RATHER THAN FATAL (THE ONE OUTCOME LAW).
@@ -461,6 +480,7 @@ def main():
     _fixes = list(_fixes) + list(_pfixes)
     for _f in _fixes:
         print(f"  !! PROMPT REPAIRED: {_f}")
+    _require_checked_transcript(lines, prompt)
     spoken = " ".join(lines)
     tags = sorted({t for l in plan["lines"] for t in l.get("tags", [])})
 

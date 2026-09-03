@@ -90,14 +90,29 @@ export const SwingSign: React.FC<{x: number; y: number; f: number; lines: string
 };
 
 // An industrial lever on a panel; `pulled` 0..1 throws it, optional denial
-// badge (X + label) fades in as it lands.
-export const GearLever: React.FC<{x: number; y: number; pulled: number; deniedLabel?: string}> = ({x, y, pulled, deniedLabel}) => (
+// badge (X + label) fades in as it lands. Opt-in longThrow attaches a 119px
+// upward shaft and its grip to the same pivot, with an 80-degree readable arc.
+// Default geometry/throw remain unchanged for shipped films.
+export const GearLever: React.FC<{
+  x: number; y: number; pulled: number; deniedLabel?: string;
+  longThrow?: boolean; accentColor?: string;
+}> = ({x, y, pulled, deniedLabel, longThrow = false, accentColor}) => (
   <g transform={`translate(${x},${y})`}>
     <rect x={-80} y={-12} width={160} height={50} rx={12} fill="#8b93a0" stroke={INK} strokeWidth={6} />
     <circle cx={-46} cy={14} r={11} fill={GRAPHITE_D} stroke={INK} strokeWidth={4} />
-    <g transform={`rotate(${-40 + 40 * pulled} -46 14)`}>
-      <rect x={-53} y={-4} width={13} height={78} rx={6.5} fill="#c9cfd8" stroke={INK} strokeWidth={5} />
-      <circle cx={-46} cy={-6} r={14} fill={RED} stroke={INK} strokeWidth={5} />
+    <g transform={`rotate(${-40 + (longThrow ? 80 : 40) * pulled} -46 14)`}>
+      {longThrow ? <>
+        <rect x={-53} y={-105} width={14} height={119} rx={7} fill="#c9cfd8" stroke={INK} strokeWidth={5} />
+        <line x1={-49} y1={-93} x2={-49} y2={4} stroke="#f4f6f8" strokeWidth={3} strokeLinecap="round" />
+        <circle cx={-46} cy={-105} r={19} fill={accentColor ?? RED} stroke={INK} strokeWidth={5} />
+        <path d="M-58,-104 Q-55,-117 -43,-116" fill="none" stroke="#fff4de" strokeWidth={3} strokeLinecap="round" opacity={0.75} />
+        <path d="M-31,-102 Q-31,-91 -44,-89" fill="none" stroke={INK} strokeWidth={4} strokeLinecap="round" opacity={0.3} />
+        <circle cx={-46} cy={14} r={9} fill="#c9cfd8" stroke={INK} strokeWidth={3} />
+        <line x1={-50} y1={14} x2={-42} y2={14} stroke={INK} strokeWidth={2} />
+      </> : <>
+        <rect x={-53} y={-4} width={13} height={78} rx={6.5} fill="#c9cfd8" stroke={INK} strokeWidth={5} />
+        <circle cx={-46} cy={-6} r={14} fill={accentColor ?? RED} stroke={INK} strokeWidth={5} />
+      </>}
     </g>
     {deniedLabel && (
       <g transform="translate(56,-52)" opacity={pulled}>
@@ -109,6 +124,62 @@ export const GearLever: React.FC<{x: number; y: number; pulled: number; deniedLa
     )}
   </g>
 );
+
+/**
+ * GripHand — an ordinary hand approaching a control from the right.
+ * x/y are the actual world-space grip center, not the lever base. At reach=1
+ * the wrapped fingers meet that center; reach=0 starts 400 world pixels right.
+ * Callers ease reach and derive x/y from the moving lever, so contact survives
+ * its arc. Render after the lever: fingers/thumb occlude the grip naturally.
+ * Scale changes anatomy, not the 400px approach. No idle motion moves the hand
+ * off its control. The continuous sleeve runs rightward for offscreen staging.
+ */
+export const GripHand: React.FC<{
+  x: number; y: number; reach: number; scale?: number;
+  skin?: string; cuffColor?: string;
+}> = ({x, y, reach, scale = 1, skin = '#d4a17d', cuffColor = '#60766b'}) => {
+  const contact = Math.max(0, Math.min(1, reach));
+  const skinTones = tones(skin);
+  const cloth = tones(cuffColor);
+  const uid = `grip-${React.useId().replace(/:/g, '')}`;
+  const spread = 5 * (1 - contact);
+  return (
+    <g data-grip-hand="true" transform={`translate(${x + 400 * (1 - contact)},${y}) scale(${scale})`}>
+      <FormGradient id={`${uid}-skin`} t={skinTones} />
+      <FormGradient id={`${uid}-cloth`} t={cloth} />
+      {/* Sleeve continues through the cuff into the wrist; no floating mitten. */}
+      <path data-part="sleeve" d="M92,-31 C214,-44 405,-56 640,-54 L640,62 C405,56 216,44 92,31 Z"
+        fill={`url(#${uid}-cloth)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      <path d="M135,-22 Q365,-41 635,-40" fill="none" stroke={cloth.key} strokeWidth={5} opacity={0.7} />
+      <path d="M141,27 Q353,42 635,47" fill="none" stroke={cloth.shade} strokeWidth={7} opacity={0.65} />
+      <path data-part="wrist" d="M59,-29 Q83,-29 106,-25 L107,26 Q78,29 57,31 Z"
+        fill={`url(#${uid}-skin)`} stroke={INK} strokeWidth={4} />
+      <path data-part="palm" d="M82,-27 Q61,-38 34,-34 Q15,-30 9,-12 L11,24 Q23,45 46,42 Q64,41 83,27 Z"
+        fill={`url(#${uid}-skin)`} stroke={INK} strokeWidth={4.5} strokeLinejoin="round" />
+      {/* Four separately rounded digits close around the left edge of the grip. */}
+      {[0, 1, 2, 3].map((i) => {
+        const yy = -25 + i * 15 + (i - 1.5) * spread;
+        const tip = -20 - (3 - i) * 2 - 12 * (1 - contact);
+        return <g key={i} data-part="finger">
+          <path d={`M33,${yy - 5} Q8,${yy - 14} ${tip},${yy - 7} Q${tip - 9},${yy} ${tip + 1},${yy + 8} Q6,${yy + 13} 34,${yy + 8} Z`}
+            fill={`url(#${uid}-skin)`} stroke={INK} strokeWidth={3.2} strokeLinejoin="round" />
+          <path d={`M${tip + 9},${yy - 4} q-4,5 0,10`} fill="none" stroke={skinTones.shade} strokeWidth={2} />
+          <path d={`M5,${yy - 6} Q18,${yy - 5} 26,${yy - 2}`} fill="none" stroke={skinTones.key} strokeWidth={2.5} strokeLinecap="round" />
+        </g>;
+      })}
+      {/* Opposed thumb crosses the front of the grip; knuckle and nail are distinct. */}
+      <path data-part="thumb" d="M65,-26 Q46,-46 32,-36 L6,-10 Q-2,1 9,11 Q18,17 28,5 L40,-6 Q45,18 68,19"
+        fill={`url(#${uid}-skin)`} stroke={INK} strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" />
+      <path data-part="thumbnail" d="M12,-9 Q16,-15 22,-16 L29,-9 Q24,0 18,3 Z"
+        fill={skinTones.key} stroke={skinTones.shade} strokeWidth={1.8} />
+      <path d="M45,10 Q54,5 63,8" fill="none" stroke={skinTones.shade} strokeWidth={2} strokeLinecap="round" />
+      <path data-part="cuff" d="M89,-37 Q106,-40 122,-34 L126,36 Q108,42 88,35 Z"
+        fill={`url(#${uid}-cloth)`} stroke={INK} strokeWidth={4.5} />
+      <path d="M98,-29 L99,28 M111,-30 L114,30" fill="none" stroke={cloth.key} strokeWidth={2.5} opacity={0.75} />
+      <circle cx={113} cy={21} r={4} fill={cloth.shade} stroke={INK} strokeWidth={1.5} />
+    </g>
+  );
+};
 
 // A driven survey stake; `settle` 0..1 drops it in. Optional red claim tag.
 export const SurveyStake: React.FC<{x: number; y: number; s?: number; settle: number; tag?: boolean}> = ({x, y, s = 1, settle, tag = true}) => (

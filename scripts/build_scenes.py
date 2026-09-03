@@ -156,7 +156,8 @@ TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band
 # fixed evidence boundary), S14 L18 (button and loopback). The original combined
 # projection/counterpoint shot held 17.9 seconds, beyond the 16-second oner ceiling,
 # so the unresolved physical-saturation counterpoint opens its own shot at L12.
-SCENE_START_LINE = [0, 2, 3, 5, 7, 8, 10, 12, 15, 17, 18, 19]
+# September 3: recording choice, human review, source-status test and intact care.
+SCENE_START_LINE = [0, 1, 2, 3, 4, 6, 7, 8, 10, 12, 13, 15, 17, 19]
 
 
 def _apply_caption_fixups(caps):
@@ -570,6 +571,11 @@ def main():
     if len(board_shots) != len(scenes):
         raise SystemExit(f"build_scenes: storyboard has {len(board_shots)} shots but episode props have "
                          f"{len(scenes)} scenes; refusing to write a misleading shots.json")
+    # Picture, sound and evidence all consume the conformed beat clock, not
+    # duplicated offsets typed into the episode. The board is already voice-bound.
+    props["beats"] = [{"id": b["id"], "at": b["at_s"],
+                       "label": b["draw"]["annotation"]} for b in board["beats"]]
+    json.dump(props, open(os.path.join(OUT, "episode_props.json"), "w"))
     gate_shots = []
     for i, (scene, shot) in enumerate(zip(scenes, board_shots), start=1):
         gate_shots.append({"id": shot.get("id") or f"S{i}",

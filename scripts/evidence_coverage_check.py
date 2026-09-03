@@ -31,6 +31,7 @@ grades the pack that exists rather than the pack that was intended.
 import argparse
 import glob
 import json
+import math
 import os
 import re
 import sys
@@ -39,6 +40,42 @@ REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 EV = os.path.join(REPO, "out", "evidence")
 OUT = os.path.join(REPO, "out", "dispatch")
 FPS = 30.0
+
+
+def beat_time(beat):
+    """Use the conformed clock; legacy display ranges contribute their start only.
+
+    A range is not a coverage interval: a sample near its far end must not excuse
+    missing the actual beat. Reject malformed clocks instead of skipping the beat.
+    """
+    def number(value):
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            raise ValueError("at_s must be a numeric clock")
+        value = float(value)
+        if not math.isfinite(value) or value < 0:
+            raise ValueError("beat clocks must be finite and nonnegative")
+        return value
+
+    legacy = None
+    if "t" in beat:
+        raw = beat["t"]
+        if isinstance(raw, (int, float)):
+            legacy = number(raw)
+        elif isinstance(raw, str):
+            decimal = r"(?:\d+(?:\.\d*)?|\.\d+)"
+            match = re.fullmatch(rf"\s*({decimal})(?:\s*(?:-|–|—|to)\s*({decimal}))?\s*", raw)
+            if not match:
+                raise ValueError("t must be seconds or a start-end seconds range")
+            legacy = number(float(match.group(1)))
+            if match.group(2) is not None and number(float(match.group(2))) <= legacy:
+                raise ValueError("t range must end after it starts")
+        else:
+            raise ValueError("t must be seconds or a start-end seconds range")
+    if "at_s" in beat:
+        return number(beat["at_s"])
+    if legacy is None:
+        raise ValueError("beat has neither at_s nor t")
+    return legacy
 
 
 def contact_times():
@@ -104,10 +141,11 @@ def main():
     # 2. every beat covered
     uncovered = []
     for b in beats:
-        t = b.get("t")
-        if t is None:
+        try:
+            t = beat_time(b)
+        except (TypeError, ValueError) as exc:
+            problems.append(f"storyboard beat {b.get('id', '?')}: invalid clock ({exc})")
             continue
-        t = float(t)
         if not any(abs(t - s) <= a.beat_window for s in samples):
             uncovered.append((t, str(b.get("title") or b.get("draw") or "")[:56]))
     if uncovered:

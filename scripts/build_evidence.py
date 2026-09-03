@@ -28,50 +28,90 @@ REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(REPO, "out", "dispatch")
 EV = os.path.join(REPO, "out", "evidence")
 
-# (name, vo_line, seconds INTO that line where the move actually peaks)
+# (name, current storyboard beat id, seconds INTO that beat's action).
+# September 3: all 38 beats, including the new recording-HIPAA and provider
+# refusal moments. Resolve the VO line/offset from the CONFORMED board at runtime,
+# so later timing surgery cannot leave a second, stale clock in the evidence list.
+# The ordinary p(id) ramps last 24 frames: +0.35 samples their eased travel.
+# p(24,45) needs +0.50; the 32/27-frame OFF/reveal moves use +0.40; the
+# twelve-frame reel brake and short final hinge use +0.30 (including settlement).
+# HIPAA is explicitly line(9)-driven in Ep0903, not p(19). Keep that actual
+# onset even while the producer reconforms beat 19 to the patched voice.
+MOVE_RUN_DATE = "2026-09-03"
+LINE_START_ACTIONS = {19: 9}
 MOVES = [
-    # RE-ANCHORED 2026-09-02 for "The Diploma Still Has to Be Earned" against
-    # the selected Gemini take. These centres cover every shot and the physical
-    # actions the storyboard promises, rather than sampling yesterday's film.
-    ("press_brake", 0, 0.40),
-    ("question_token_ejects", 0, 3.00),
-    ("draft_clip_lands", 1, 1.00),
-    ("six_four_five_gears", 2, 0.70),
-    ("priority_gears_lock", 2, 4.00),
-    ("expectations_lock", 2, 8.00),
-    ("staircase_grows", 3, 0.70),
-    ("student_climbs", 3, 3.00),
-    ("earned_core_seats", 4, 0.80),
-    ("one_rule_roller_jams", 5, 0.60),
-    ("thresholds_hold", 5, 2.50),
-    ("campus_doors_open", 6, 0.50),
-    ("faculty_switch_lands", 6, 4.00),
-    ("campus_judgment_holds", 6, 5.50),
-    ("shared_rail_moves", 7, 0.60),
-    ("council_plate_lands", 7, 2.00),
-    ("diploma_flip_begins", 8, 0.80),
-    ("reverse_face_reveals", 8, 3.00),
-    ("decision_tabs_release", 9, 0.70),
-    ("question_token_returns", 9, 3.00),
-    ("workflow_inputs_arrive", 10, 0.60),
-    ("oversight_gate_locks", 11, 0.60),
-    ("stampbot_rejects", 11, 3.00),
-    ("earned_meaningful_drop", 12, 0.60),
-    ("scale_swings", 12, 2.50),
-    ("evidence_questions_appear", 13, 0.80),
-    ("plan_hits_own_test", 14, 0.50),
-    ("clock_strains", 15, 0.60),
-    ("draft_stop_lands", 16, 0.50),
-    ("separate_budget_label", 16, 2.50),
-    ("adoption_key_turns", 17, 0.50),
-    ("plans_assemble", 17, 2.50),
-    ("evidence_gauges_question", 18, 0.50),
-    ("alaska_map_holds", 18, 2.50),
-    ("two_lanes_split", 18, 5.50),
-    ("machine_hand_releases", 19, 0.40),
-    ("human_pulls_press", 19, 1.60),
-    ("earned_seal_resonates", 19, 2.90),
+    ("paper_wave_around_waiting_lever", 1, 0.40),
+    ("off_hand_anticipates_and_waits", 2, 0.35),
+    ("dated_tcc_notice_unfolds", 3, 0.40),
+    ("patient_provider_enter_notice_model", 4, 0.35),
+    ("small_paperwork_sidecar_revealed", 5, 0.35),
+    ("paper_wall_bends_people_turn", 6, 0.35),
+    ("permission_token_precedes_recording", 7, 0.35),
+    ("consented_reels_produce_draft", 8, 0.35),
+    ("provider_pen_stops_draft", 9, 0.35),
+    ("draft_returns_for_edit_and_approval", 10, 0.35),
+    ("approved_note_enters_chart", 11, 0.35),
+    ("medical_decision_stays_with_provider", 12, 0.35),
+    ("room_model_lifts_with_open_question", 13, 0.35),
+    ("patient_responds_to_provider_attention", 14, 0.35),
+    ("recording_only_retention_bracket", 15, 0.35),
+    ("recording_and_chart_wells_separate", 16, 0.35),
+    ("possible_recording_portion_branches", 17, 0.35),
+    ("possible_portion_reaches_improvement_gear", 18, 0.35),
+    ("recording_hipaa_policy_shield", 19, 0.40),
+    ("warm_yes_room_exposes_linkage", 20, 0.35),
+    ("desk_turns_for_conversation", 21, 0.35),
+    ("disclosed_terms_precede_choice", 22, 0.35),
+    ("informed_yes_engages_recording", 23, 0.35),
+    ("room_pulls_back_onto_announcement", 24, 0.50),
+    ("unmeasured_outcome_gauge_separates", 25, 0.35),
+    ("portions_retention_question_opens", 26, 0.35),
+    ("patient_carries_retention_question", 27, 0.35),
+    ("question_and_waiting_choice_return", 28, 0.35),
+    ("tell_provider_refusal_acknowledged", 29, 0.35),
+    ("off_lever_applies_brake", 30, 0.40),
+    ("reels_decelerate_without_deletion", 31, 0.30),
+    ("intact_care_room_revealed", 32, 0.40),
+    ("stated_terms_tab_attaches", 33, 0.35),
+    ("equal_yes_no_rooms_assemble", 34, 0.35),
+    ("choice_detents_settle_equally", 35, 0.35),
+    ("recorder_steps_aside_care_stays", 36, 0.35),
+    ("patient_offers_audience_question", 37, 0.35),
+    ("window_hinge_and_title_resolve", 38, 0.30),
 ]
+
+
+def conformed_moves(board, start):
+    """Resolve named action samples and fail before writing a misleading pack."""
+    if board.get("run_date") != MOVE_RUN_DATE:
+        raise ValueError("evidence move names belong to " + MOVE_RUN_DATE + "; update them for this board")
+    beats = {beat["id"]: beat for beat in board["beats"]}
+    if (len(beats) != len(board["beats"]) or len(MOVES) != len(beats)
+            or set(beats) != {beat for _, beat, _ in MOVES}
+            or len({name for name, _, _ in MOVES}) != len(MOVES)):
+        raise ValueError("evidence MOVES must cover every current board beat exactly once")
+    shots = [(shot["id"], *map(float, shot["t"].split("-"))) for shot in board["shots"]]
+    covered, result = set(), []
+    for name, beat_id, peak_after in MOVES:
+        beat = beats[beat_id]
+        line, off = beat["anchor"]["vo_line"], float(beat["anchor"]["offset"])
+        at = start[line] + off
+        if abs(at - float(beat["at_s"])) > 1 / 30.0:
+            raise ValueError(f"beat {beat_id} is not conformed to the current VO line clock")
+        beat_start, beat_end = map(float, beat["t"].split("-"))
+        if beat_id in LINE_START_ACTIONS:
+            if line != LINE_START_ACTIONS[beat_id]:
+                raise ValueError(f"beat {beat_id} no longer matches its line-driven scene action")
+            off, at = 0.0, start[line]
+            beat_start = at
+        centre = at + peak_after
+        if not beat_start <= centre - 0.13 or centre + (8 / 30.0 - 0.13) > beat_end:
+            raise ValueError(f"beat {beat_id} is too short for its intended motion strip")
+        covered.update(sid for sid, left, right in shots if left <= centre < right)
+        result.append((name, line, off + peak_after))
+    if covered != {sid for sid, _, _ in shots}:
+        raise ValueError("evidence motion samples do not cover every current shot")
+    return result
 
 
 def main():
@@ -82,6 +122,7 @@ def main():
 
     lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
     start = {L["idx"]: L["start"] for L in lines}
+    moves = conformed_moves(json.load(open(os.path.join(OUT, "storyboard.json"))), start)
     # THE FILM, NOT THE NARRATION. `end` was the last VO line's end (122.84s), so the
     # contact sheet stopped there and never photographed the final 2.6 seconds — which is
     # exactly where the sign-off plate and the music credit live. Five judges across three
@@ -221,7 +262,7 @@ def main():
 
     WIN = 8 / 30.0
     motion = {}
-    for name, line, off in MOVES:
+    for name, line, off in moves:
         if line not in start:
             print(f"  SKIP {name}: vo line {line} missing")
             continue

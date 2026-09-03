@@ -1,0 +1,362 @@
+[
+ {
+  "text": "What changes when you tell an",
+  "start": 0.0,
+  "end": 1.97,
+  "seg": 0
+ },
+ {
+  "text": "A I note taker no?",
+  "start": 2.0,
+  "end": 3.94,
+  "seg": 0
+ },
+ {
+  "text": "On September second, Tanana Chiefs",
+  "start": 4.82,
+  "end": 7.45,
+  "seg": 1
+ },
+ {
+  "text": "Conference, an Interior Alaska",
+  "start": 7.48,
+  "end": 9.350000000000001,
+  "seg": 1
+ },
+ {
+  "text": "tribal health organization, announced",
+  "start": 9.38,
+  "end": 11.530000000000001,
+  "seg": 1
+ },
+ {
+  "text": "it's introducing Sully dot A I.",
+  "start": 11.56,
+  "end": 13.62,
+  "seg": 1
+ },
+ {
+  "text": "Its job is paperwork.",
+  "start": 14.56,
+  "end": 15.6,
+  "seg": 2
+ },
+ {
+  "text": "The aim is less typing and",
+  "start": 16.24,
+  "end": 17.91,
+  "seg": 2
+ },
+ {
+  "text": "more attention for patients.",
+  "start": 17.94,
+  "end": 19.2,
+  "seg": 2
+ },
+ {
+  "text": "With the patient's permission,",
+  "start": 20.26,
+  "end": 21.36,
+  "seg": 3
+ },
+ {
+  "text": "the tool listens during the appointment",
+  "start": 21.9,
+  "end": 23.57,
+  "seg": 3
+ },
+ {
+  "text": "and drafts a note.",
+  "start": 23.6,
+  "end": 24.9,
+  "seg": 3
+ },
+ {
+  "text": "That draft still has a boss.",
+  "start": 25.6,
+  "end": 27.06,
+  "seg": 4
+ },
+ {
+  "text": "The provider reviews it, edits",
+  "start": 27.7,
+  "end": 29.41,
+  "seg": 4
+ },
+ {
+  "text": "it, and approves it.",
+  "start": 29.44,
+  "end": 30.68,
+  "seg": 4
+ },
+ {
+  "text": "Only then can it enter the",
+  "start": 31.58,
+  "end": 33.11,
+  "seg": 5
+ },
+ {
+  "text": "medical record.",
+  "start": 33.14,
+  "end": 33.84,
+  "seg": 5
+ },
+ {
+  "text": "Sully isn't making medical decisions.",
+  "start": 34.6,
+  "end": 36.32,
+  "seg": 5
+ },
+ {
+  "text": "But does that design actually give",
+  "start": 37.38,
+  "end": 39.55,
+  "seg": 6
+ },
+ {
+  "text": "patients more attention?",
+  "start": 39.58,
+  "end": 40.64,
+  "seg": 6
+ },
+ {
+  "text": "Keep that question open.",
+  "start": 41.52,
+  "end": 42.48,
+  "seg": 6
+ },
+ {
+  "text": "T C C gives recordings a",
+  "start": 43.62,
+  "end": 45.15,
+  "seg": 7
+ },
+ {
+  "text": "ninety-day deletion policy.",
+  "start": 45.18,
+  "end": 46.6,
+  "seg": 7
+ },
+ {
+  "text": "Recordings and approved notes are",
+  "start": 47.32,
+  "end": 49.17,
+  "seg": 7
+ },
+ {
+  "text": "different things.",
+  "start": 49.2,
+  "end": 49.900000000000006,
+  "seg": 7
+ },
+ {
+  "text": "The technology company may also",
+  "start": 50.44,
+  "end": 52.53,
+  "seg": 8
+ },
+ {
+  "text": "use de-identified portions of recordings",
+  "start": 52.56,
+  "end": 54.75,
+  "seg": 8
+ },
+ {
+  "text": "to improve the system.",
+  "start": 54.78,
+  "end": 56.16,
+  "seg": 8
+ },
+ {
+  "text": "T C C says recording storage",
+  "start": 56.92,
+  "end": 59.25,
+  "seg": 9
+ },
+ {
+  "text": "follows HIPAA.",
+  "start": 59.28,
+  "end": 60.34,
+  "seg": 9
+ },
+ {
+  "text": "Now give the offer its strongest",
+  "start": 61.48,
+  "end": 63.25,
+  "seg": 10
+ },
+ {
+  "text": "case.",
+  "start": 63.28,
+  "end": 63.980000000000004,
+  "seg": 10
+ },
+ {
+  "text": "Less typing could mean a better",
+  "start": 64.46,
+  "end": 66.15,
+  "seg": 10
+ },
+ {
+  "text": "conversation.",
+  "start": 66.18,
+  "end": 66.88000000000001,
+  "seg": 10
+ },
+ {
+  "text": "And T C C tells patients",
+  "start": 67.82,
+  "end": 69.09,
+  "seg": 11
+ },
+ {
+  "text": "about the possible reuse.",
+  "start": 69.12,
+  "end": 70.4,
+  "seg": 11
+ },
+ {
+  "text": "An informed yes is a reasonable",
+  "start": 71.12,
+  "end": 73.07,
+  "seg": 11
+ },
+ {
+  "text": "choice.",
+  "start": 73.1,
+  "end": 73.8,
+  "seg": 11
+ },
+ {
+  "text": "But this notice reports no measured",
+  "start": 74.54,
+  "end": 76.89,
+  "seg": 12
+ },
+ {
+  "text": "benefits.",
+  "start": 76.92,
+  "end": 77.62,
+  "seg": 12
+ },
+ {
+  "text": "A sensible design isn't proof that",
+  "start": 78.04,
+  "end": 80.03,
+  "seg": 12
+ },
+ {
+  "text": "it works.",
+  "start": 80.06,
+  "end": 80.76,
+  "seg": 12
+ },
+ {
+  "text": "One question still matters for",
+  "start": 81.44,
+  "end": 83.33,
+  "seg": 13
+ },
+ {
+  "text": "that informed choice. How long",
+  "start": 83.36,
+  "end": 85.41,
+  "seg": 13
+ },
+ {
+  "text": "can de-identified portions be kept?",
+  "start": 85.44,
+  "end": 87.22,
+  "seg": 13
+ },
+ {
+  "text": "Ask about those portions before",
+  "start": 88.38,
+  "end": 90.33,
+  "seg": 14
+ },
+ {
+  "text": "deciding.",
+  "start": 90.36,
+  "end": 91.06,
+  "seg": 14
+ },
+ {
+  "text": "To decline, just tell your provider.",
+  "start": 91.8,
+  "end": 93.88,
+  "seg": 14
+ },
+ {
+  "text": "Now switch the recorder off.",
+  "start": 94.92,
+  "end": 96.78,
+  "seg": 15
+ },
+ {
+  "text": "T C C says you can",
+  "start": 97.56,
+  "end": 98.45,
+  "seg": 15
+ },
+ {
+  "text": "decline or change your mind.",
+  "start": 98.48,
+  "end": 100.08,
+  "seg": 15
+ },
+ {
+  "text": "Your care won't be affected.",
+  "start": 100.64,
+  "end": 101.86,
+  "seg": 16
+ },
+ {
+  "text": "That's its promise, not an independently",
+  "start": 102.58,
+  "end": 104.71,
+  "seg": 16
+ },
+ {
+  "text": "tested result.",
+  "start": 104.74,
+  "end": 105.46,
+  "seg": 16
+ },
+ {
+  "text": "Useful A I doesn't need every",
+  "start": 107.06,
+  "end": 109.17,
+  "seg": 17
+ },
+ {
+  "text": "patient to make the same choice.",
+  "start": 109.2,
+  "end": 110.34,
+  "seg": 17
+ },
+ {
+  "text": "The machine can step aside.",
+  "start": 111.18,
+  "end": 112.34,
+  "seg": 18
+ },
+ {
+  "text": "The care has to stay.",
+  "start": 113.14,
+  "end": 114.4,
+  "seg": 18
+ },
+ {
+  "text": "Would you want this note taker",
+  "start": 115.26,
+  "end": 116.75,
+  "seg": 19
+ },
+ {
+  "text": "at your next visit?",
+  "start": 116.78,
+  "end": 117.78,
+  "seg": 19
+ }
+]

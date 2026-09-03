@@ -49,12 +49,17 @@ LOG="$MARKER_DIR/$NAME.log"
 PIDF="$MARKER_DIR/$NAME.pid"
 HB="$MARKER_DIR/$NAME.heartbeat"
 DONE="$MARKER_DIR/$NAME.done"
-rm -f "$DONE"
+READY="$MARKER_DIR/$NAME.ready"
+rm -f "$DONE" "$READY"
 : > "$LOG"
 touch "$HB"
 
-setsid bash -c '
-  HB="$1"; DONE="$2"; LOG="$3"; HEARTBEAT_S="$4"; shift 4
+# macOS has no setsid executable. Python exposes the same session primitive, so
+# keep one real detached process on both hosts instead of announcing a dead PID.
+command -v python3 >/dev/null 2>&1 || { echo "run_bg.sh: python3 is required" >&2; exit 1; }
+python3 -c 'import os,sys; os.setsid(); os.execvp(sys.argv[1], sys.argv[1:])' bash -c '
+  HB="$1"; DONE="$2"; LOG="$3"; HEARTBEAT_S="$4"; READY="$5"; shift 5
+  touch "$READY"
   ( while true; do touch "$HB"; sleep "$HEARTBEAT_S"; done ) &
   HBPID=$!
   "$@" >> "$LOG" 2>&1
@@ -62,10 +67,22 @@ setsid bash -c '
   kill "$HBPID" 2>/dev/null
   touch "$HB"
   echo "$code" > "$DONE"
-' _ "$HB" "$DONE" "$LOG" "$HEARTBEAT_S" "$@" &
+' _ "$HB" "$DONE" "$LOG" "$HEARTBEAT_S" "$READY" "$@" </dev/null >/dev/null 2>&1 &
 
-echo $! > "$PIDF"
-echo "launched '$NAME' pid=$(cat "$PIDF")"
+CHILD_PID=$!
+echo "$CHILD_PID" > "$PIDF"
+# Do not let a short-lived caller exit before the child has detached. Desktop
+# terminal cleanup can win that race, leaving an empty log and a fictitious PID.
+for attempt in $(seq 1 40); do
+  [ -f "$READY" ] && break
+  kill -0 "$CHILD_PID" 2>/dev/null || break
+  sleep 0.05
+done
+if [ ! -f "$READY" ]; then
+  echo "run_bg.sh: child did not confirm detached startup; use a managed terminal session." >&2
+  exit 1
+fi
+echo "launched '$NAME' pid=$CHILD_PID"
 echo "  log:   $LOG"
 echo "  done:  $DONE   (poll: test -f this; contents = exit code)"
 echo "  beat:  $HB      (fresh mtime = alive; stale >90s + no .done = wedged)"

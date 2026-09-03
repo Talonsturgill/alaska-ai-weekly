@@ -1,0 +1,127 @@
+{
+ "total": 117.78,
+ "voice": "Sulafat",
+ "model": "gemini-3.1-flash-tts-preview",
+ "lines": [
+  {
+   "idx": 0,
+   "text": "What changes when you tell an A I note taker no?",
+   "start": 0.0,
+   "end": 3.94
+  },
+  {
+   "idx": 1,
+   "text": "On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.",
+   "start": 4.82,
+   "end": 13.62
+  },
+  {
+   "idx": 2,
+   "text": "Its job is paperwork. The aim is less typing and more attention for patients.",
+   "start": 14.56,
+   "end": 19.2
+  },
+  {
+   "idx": 3,
+   "text": "With the patient's permission, the tool listens during the appointment and drafts a note.",
+   "start": 20.26,
+   "end": 24.9
+  },
+  {
+   "idx": 4,
+   "text": "That draft still has a boss. The provider reviews it, edits it, and approves it.",
+   "start": 25.6,
+   "end": 30.68
+  },
+  {
+   "idx": 5,
+   "text": "Only then can it enter the medical record. Sully isn't making medical decisions.",
+   "start": 31.58,
+   "end": 36.32
+  },
+  {
+   "idx": 6,
+   "text": "But does that design actually give patients more attention? Keep that question open.",
+   "start": 37.38,
+   "end": 42.48
+  },
+  {
+   "idx": 7,
+   "text": "T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.",
+   "start": 43.62,
+   "end": 49.8
+  },
+  {
+   "idx": 8,
+   "text": "The technology company may also use de-identified portions of recordings to improve the system.",
+   "start": 50.44,
+   "end": 56.16
+  },
+  {
+   "idx": 9,
+   "text": "T C C says recording storage follows HIPAA.",
+   "start": 56.92,
+   "end": 60.44
+  },
+  {
+   "idx": 10,
+   "text": "Now give the offer its strongest case. Less typing could mean a better conversation.",
+   "start": 61.48,
+   "end": 66.8
+  },
+  {
+   "idx": 11,
+   "text": "And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.",
+   "start": 67.82,
+   "end": 73.54
+  },
+  {
+   "idx": 12,
+   "text": "But this notice reports no measured benefits. A sensible design isn't proof that it works.",
+   "start": 74.54,
+   "end": 80.38
+  },
+  {
+   "idx": 13,
+   "text": "One question still matters for that informed choice. How long can de-identified portions be kept?",
+   "start": 81.44,
+   "end": 87.22
+  },
+  {
+   "idx": 14,
+   "text": "Ask about those portions before deciding. To decline, just tell your provider.",
+   "start": 88.38,
+   "end": 94.12
+  },
+  {
+   "idx": 15,
+   "text": "Now switch the recorder off. T C C says you can decline or change your mind.",
+   "start": 94.92,
+   "end": 100.08
+  },
+  {
+   "idx": 16,
+   "text": "Your care won't be affected. That's its promise, not an independently tested result.",
+   "start": 100.64,
+   "end": 105.46
+  },
+  {
+   "idx": 17,
+   "text": "Useful A I doesn't need every patient to make the same choice.",
+   "start": 107.06,
+   "end": 110.34
+  },
+  {
+   "idx": 18,
+   "text": "The machine can step aside. The care has to stay.",
+   "start": 111.18,
+   "end": 114.4
+  },
+  {
+   "idx": 19,
+   "text": "Would you want this note taker at your next visit?",
+   "start": 115.26,
+   "end": 117.78
+  }
+ ]
+}

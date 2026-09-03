@@ -151,6 +151,34 @@ runs:
       list prints the recent-hero roster, and the routine prompt makes the check a hard gate.'
     fix_commits:
     - a54a75b
+- date: '2026-09-03'
+  slug: the-care-has-to-stay
+  gate_score: 10.0
+  panel_rounds:
+  - round: 4
+    median: 8.324
+    weakest_axis: motion-animation-craft
+    hard_blockers: 0
+  findings:
+  - signature: r3-question-handoff-causality
+    axis: motion-animation-craft
+    first_seen_round: 3
+    rounds_as_weakest: 1
+    status: root_caused
+    root_cause: Question exchange, waiting control and choice detents lacked causal performed timing;
+      corrected and verified on R4 exact evidence.
+    fix_commits:
+    - 88812ff
+    - 2e133c2
+  - signature: beat-delivery-clock-parser
+    axis: delivery
+    first_seen_round: 4
+    rounds_as_weakest: 0
+    status: root_caused
+    root_cause: Advisory parsed current beat range strings as a scalar; it now prefers at_s and validates
+      legacy numeric or range starts.
+    fix_commits:
+    - final-release-commit
 resolved:
   flat-vector-human-rig:
     run: '2026-07-21'

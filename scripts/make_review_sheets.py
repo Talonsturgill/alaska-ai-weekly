@@ -28,6 +28,19 @@ rack) at scale=0.4 — still-probes cannot show ribboning/shear/jitter, strips c
 import argparse, glob, os
 from PIL import Image
 
+
+def strip_indices(frame_count, start, length, step):
+    """Clamp a strip by its last sample, refusing incomplete motion evidence."""
+    if length < 1 or step < 1:
+        raise ValueError("strip length and step must both be positive")
+    span = (length - 1) * step
+    if frame_count < span + 1:
+        raise ValueError(f"insufficient frames: {length} samples at step {step} "
+                         f"need {span + 1} files, found {frame_count}")
+    start = max(0, min(frame_count - 1 - span, start))
+    return [start + j * step for j in range(length)]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--frames", default="out/dispatch/frames_v3")
@@ -40,18 +53,7 @@ def main():
     fs = sorted(glob.glob(os.path.join(a.frames, "frame_*.png")))
     if not fs:
         raise SystemExit(f"no frames in {a.frames}")
-    os.makedirs(a.out, exist_ok=True)
     n = len(fs)
-
-    # contact sheets: stills across the whole timeline
-    total = a.sheets * a.per_sheet
-    picks = [int(i * (n - 1) / (total - 1)) for i in range(total)]
-    for s in range(a.sheets):
-        sheet = Image.new("RGB", (3 * 360, 2 * 640), (10, 10, 14))
-        for j in range(a.per_sheet):
-            im = Image.open(fs[picks[s * a.per_sheet + j]]).resize((360, 640))
-            sheet.paste(im, ((j % 3) * 360, (j // 3) * 640))
-        sheet.save(os.path.join(a.out, f"sheet_{s}.png"))
 
     # motion filmstrips: CONSECUTIVE frames at the key moves
     strips = []
@@ -65,19 +67,38 @@ def main():
     else:
         for k, frac in (("early", 0.15), ("mid", 0.5), ("late", 0.85)):
             strips.append((k, int(n * frac), 2, None))
+    # Validate every requested strip before emitting any partial evidence pack.
+    sampled_strips = []
     for name, f0, st, crop in strips:
-        f0 = max(0, min(n - 1 - a.strip_len * st, f0))
+        try:
+            indices = strip_indices(n, f0, a.strip_len, st)
+        except ValueError as exc:
+            raise SystemExit(f"strip {name!r}: {exc}") from exc
+        sampled_strips.append((name, indices, crop))
+
+    os.makedirs(a.out, exist_ok=True)
+    # contact sheets: stills across the whole timeline (sampling unchanged)
+    total = a.sheets * a.per_sheet
+    picks = [int(i * (n - 1) / (total - 1)) for i in range(total)]
+    for s in range(a.sheets):
+        sheet = Image.new("RGB", (3 * 360, 2 * 640), (10, 10, 14))
+        for j in range(a.per_sheet):
+            im = Image.open(fs[picks[s * a.per_sheet + j]]).resize((360, 640))
+            sheet.paste(im, ((j % 3) * 360, (j // 3) * 640))
+        sheet.save(os.path.join(a.out, f"sheet_{s}.png"))
+
+    for name, indices, crop in sampled_strips:
         # FULL-RES region crops: downscaled whole frames hide sub-4px motion (shutter smear, tail
         # swing) — crop the action region at native resolution so motion evidence survives
         if crop:
             cw, ch = crop[2] - crop[0], crop[3] - crop[1]
             sheet = Image.new("RGB", (a.strip_len * cw, ch), (0, 0, 0))
-            for j in range(a.strip_len):
-                sheet.paste(Image.open(fs[f0 + j * st]).crop(crop), (j * cw, 0))
+            for j, index in enumerate(indices):
+                sheet.paste(Image.open(fs[index]).crop(crop), (j * cw, 0))
         else:
             sheet = Image.new("RGB", (a.strip_len * 270, 480), (0, 0, 0))
-            for j in range(a.strip_len):
-                sheet.paste(Image.open(fs[f0 + j * st]).resize((270, 480)), (j * 270, 0))
+            for j, index in enumerate(indices):
+                sheet.paste(Image.open(fs[index]).resize((270, 480)), (j * 270, 0))
         sheet.save(os.path.join(a.out, f"strip_{name}.png"))
     print(f"review pack: {a.sheets} sheets + {len(strips)} motion strips -> {a.out}")
 

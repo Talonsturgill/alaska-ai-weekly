@@ -1,0 +1,66 @@
+{
+ "measured_on": "dispatch_square.mp4",
+ "also_covers_master": true,
+ "master_measured": {
+  "i": -14.84,
+  "tp": -2.55,
+  "lra": 6.1
+ },
+ "master_identity": "the 9:16 master measures I=-14.84 TP=-2.55 LRA=6.1 against the delivered square's I=-14.84 TP=-2.55 LRA=6.1. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
+ "tool": "ffmpeg loudnorm + forced-alignment word timings",
+ "delivered_i": -14.84,
+ "delivered_tp": -2.55,
+ "delivered_lra": 6.1,
+ "targets": {
+  "i": -14.0,
+  "tp_max": -1.0,
+  "lra": [
+   6.0,
+   9.0
+  ]
+ },
+ "pass": {
+  "loudness": true,
+  "true_peak": true,
+  "lra": true
+ },
+ "vo_gaps_ge_0_35s": 39,
+ "vo_gaps_ge_0_50s": 36,
+ "vo_silence_in_gaps_s": 31.58,
+ "last_word_ends_s": 117.78,
+ "longest_gaps": [
+  {
+   "at": 105.46,
+   "len": 1.6
+  },
+  {
+   "at": 87.22,
+   "len": 1.16
+  },
+  {
+   "at": 42.48,
+   "len": 1.14
+  },
+  {
+   "at": 60.34,
+   "len": 1.14
+  },
+  {
+   "at": 19.2,
+   "len": 1.06
+  },
+  {
+   "at": 36.32,
+   "len": 1.06
+  },
+  {
+   "at": 80.38,
+   "len": 1.06
+  },
+  {
+   "at": 93.88,
+   "len": 1.04
+  }
+ ],
+ "diagnosis": "LRA is inside the 6 to 9 LU target."
+}

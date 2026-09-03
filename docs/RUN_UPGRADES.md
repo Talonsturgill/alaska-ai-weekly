@@ -2888,3 +2888,162 @@ separates the preliminary FY28 budget request from that framework.
 - Delivered square audio: -14.95 LUFS integrated and -2.34 dBTP true peak.
 - Ship gate: three deliverables and 64 evidence pieces hash-matched; all 30 beats covered; PASS
   after one blocked editing round exposed and closed three stale-proof defects.
+
+---
+
+## 2026-09-03 — "The Care Has to Stay"
+
+Tanana Chiefs Conference's September 2 Sully.ai notice becomes a patient-choice story:
+permission precedes recording, the provider owns note approval, and the announced care promise
+does not depend on saying yes. Benefits are aims, not measured outcomes in this notice. The
+recording's ninety-day policy is never assigned to possible deidentified derivatives.
+
+### Verified production upgrades
+
+1. **Freshness follows contents, not checkout timestamps.** `dc86aa9` and `89ddb45` bind renders,
+   cache entries, actual props, mixes and encoded outputs to content hashes. Changed or missing
+   inputs fail; an unchanged git checkout does not invalidate a film. Cache chunks are reusable
+   only after complete manifest and frame-count validation. The mix receipt also includes the
+   current storyboard because it controls the sound-event schedule.
+2. **Background launch has a real readiness boundary.** `dc86aa9` and `0d3eeab` provide a macOS
+   process-session fallback and child READY handshake. A cross-terminal probe verified its
+   completion marker. Voice soundchecks report stage progress on stderr without corrupting JSON.
+   Existing completed takes were reused during recovery; failed launches were not called success.
+3. **Fact density is checked before Gemini spend.** `1792245` adds a provisional pre-synthesis
+   guard using the larger of declared target seconds and current word count / 2.4. It ignores stale
+   voice timings, retains all claim obligations, and requires the actual synthesis prompt to match
+   the checked transcript. Measured post-synthesis checking remains unchanged. Independent review
+   refused to pad seven bundled claims into fourteen; two redundant narration lines were instead
+   replaced with two additional source-backed facts. Both surgical replacements measured WER 0.0,
+   stayed at 1.0x pace and preserved 4,721,346 samples outside their slots exactly.
+4. **Surgical voice edits keep the word ledger current.** `1792245` updates aligned words together
+   with recaptioned replacement slots, after the sample-preservation assertion. Captions and
+   accents can no longer silently revive superseded speech from a stale words.json.
+5. **Real components receive real checks.** `1792245` gives the custom Label component AST-based
+   text-fit, overlap and zoom coverage. The claims gate follows the actual beat-to-active-label
+   renderer and its scene suppression, instead of accepting every string in props. Unresolved
+   geometry is reported explicitly; source reachability is never represented as optical QA.
+   Negative tests cover removed renderers, suppressed text, clipping, overlap and zero coverage.
+6. **The shelf gained a continuous tape brake and articulated grip.** `1792245` adds optional
+   running/paused tape transport with continuous deceleration, a long-throw lever sharing one
+   pivot, and GripHand anchored to the real grip. Legacy defaults remain tested. Six shelf tests
+   pass; fresh frame strips show the approach, OFF travel and brake. The control is an editorial
+   metaphor, not a claim about a real patient interface.
+7. **The frame evidence no longer steals a frame from the preceding move.** `1792245` corrects
+   the final-strip clamp from n-1-length*step to n-1-(length-1)*step and rejects insufficient
+   frames before writing evidence. Five tests verify exact colored-frame sequences, step-two
+   sampling and cropped strips. The actual September 3 pack maps all thirty-eight beats to the
+   conformed voice clock, rather than retaining yesterday's move names.
+8. **Visual review catches what arithmetic cannot.** Four look passes corrected the source-card
+   collision, moving attribution, misplaced lever labels, a premature OFF state, the recording
+   policy's order, and missing continuous illustration/TCC labels. These were viewed again after
+   the edits. The fitted 0.90-second audio dip includes decay tails; its near-silent core is not
+   described as 0.90 seconds of digital silence.
+
+### Repeat-offender escalation
+
+`config/panel_anchors.md` remains absent, as already recorded for September 2. Historical lookup
+found no agreed exemplar scores to recover. An agent cannot invent owner-agreed calibration.
+This is disclosed to judges and must be disclosed in the email; the actual rubric and hard
+blockers still apply without a waiver.
+
+### Full-render corrections
+
+- `b787945` gives the quality gate an explicit report destination and defaults it to the current
+  frames' parent, preventing a stale run report from masquerading as this run. Two CLI tests pass.
+- `be6eaa7` replaces 77 separate syntax-tool launches with one installed esbuild service, while
+  preserving the parser's failure boundary and binding the helper into render provenance.
+  Four tests pass; a full-source run measured 36.721 seconds under competing CPU load.
+- The first complete export failed AAC true peak at -0.48 dBTP although PCM was below -2 dBTP.
+  `mix_aac_check.py` now measures the exact 192k AAC / 48 kHz stereo delivery codec before a mix
+  receipt can complete. Nine tests cover inclusive limits, malformed/nonfinite metrics, codec
+  failures, PCM preservation and stale report prevention. The helper is a required mix input.
+  Isolated-peak limiting plus 0.3 dB output recovery measures -14.85 LUFS, -2.60 dBTP and LRA6.10
+  in the actual AAC preview. The final film's own audio gate remains independently required.
+- First full-frame Gate A scored 8.7 but correctly failed: four camera moves had finished before
+  the 25/75-percent sampling interval, and only 39/64 living-picture windows passed. The complete
+  quiet-window diagnosis is retained. Passing isolated probes is not a full-film pass; final
+  rerender, visual inspection and unchanged gates remain required before the panel.
+- The gate now includes every living-picture window and every weak graded timestamp in its JSON,
+  rather than exposing only the first six in prose. Exempt tail windows remain visible but are
+  explicitly marked ungraded. Three reporting tests prove ordering, full coverage, exemption and
+  non-mutation of measured inputs; no motion calculation, denominator or threshold was changed.
+- `feb3ea9` sustains real camera travel through the shot and preserves labels outside the projected
+  scene. Patient/provider responses and paper/clip follow-through keep the source notice and
+  retention question active. An attempted S8 addition merged separate motion regions and was
+  reverted. Final source stills measure 53/64 living windows (82.8125%) and all six camera pairs
+  pass; original hook [3,4] is unchanged. Fresh eight-frame strips and repaired S7/S12 labels were
+  viewed before the second full export. Encoded-film confirmation remains required.
+- `cedfa81` is the AAC fix; `4e72c07` is complete motion-window reporting. `7f50650` records caption
+  alignment and acoustic checks: all 271 narration words map to 44 built cues, median boundary
+  error 0ms and maximum 487ms including reading holds. Whole-mix ASR passes phrase checks; a
+  separate unprompted small-model clip resolves the base model's HIPAA misrecognition. These are
+  automated checks, not claims that a human listened. All 102 Python and four parser tests pass.
+
+### Release evidence
+
+R3 passed the objective gates but did not ship. Its independent POST flow review found the
+question-card exchange lacked a causal receiver response and the waiting recording control,
+while two other actions occurred before their intended beats. The R4 scene correction ties
+S2's room entrance to beat 4, gives S11 an offer/receipt/withdrawal and a visibly waiting control
+with a hand that stops short, and moves S13's neutral controls into opposite choices before
+delayed provider reactions. The unknown derivative retention remains a question; the controls
+are illustrations, not invented product behavior. Nine fresh eight-frame strips and full-size
+states were independently inspected. No voice, caption timing or sound mix changed. Combined
+source verification passes 131 Python tests, 10 Node tests, typecheck and the copy/geometry/
+claims checks. Final encoded approval is still required; the two R3 scores alone were not a
+three-judge panel and did not authorize delivery.
+
+R2 rendered all 3,932 frames and passed Gate A at 10.0, with 54/64 living windows and all six
+camera pairs passing. Required preflight passed and actual AAC measured -14.85 LUFS/-2.60 dBTP.
+Final copy inspection then caught two forbidden colons in a plate and a built caption. R2 was
+preserved rather than shipped. Both were corrected at source, with word and caption timings
+unchanged. New full-size frames 1090/2500 visibly confirm the changes. R3 is being rendered and
+must independently pass before review or delivery.
+
+`4c1e76d` adds an enforced source/props copy adapter and a decoded-email-text guard. It checks
+123 source variants, 44 captions, 38 beat labels and three credit strings, rejects unresolved
+or empty extraction and preserves URL syntax. It is not OCR or a claim about imported artwork.
+The email subject, format guide and temporary-link warning now obey the same prose rules.
+The complete generated email is gated before writing the payload, not merely its post body.
+The same commit fixes two stale advisory parsers without relaxing thresholds. Evidence coverage
+accepts a finite conformed clock or a validated legacy range start, and checks all 38 beats.
+Staging follows actual TypeScript gesture expressions and aliases, rather than a nearby text
+slice. Its pass covers five direct sites and explicitly discloses two shared-helper sites.
+The full suite passes 130 Python tests plus ten Node parser/shelf tests.
+
+The separate area-novelty advisory still flags six R2 stretches, including the credits. This is
+not suppressed. Its 12-percent changed-area threshold differs from the living check's count of
+separate motion regions. The final flow reviewer must judge those actual scenes and credit holds.
+
+Independent final review, ship lock, publication and Gmail delivery remain pending.
+
+### Final R4 closure
+
+- R4 rendered all 3,932 frames from source commit `2e133c2`. Gate A scored 10.0. The encoded
+  cut delivered 49 distinct visual beats, all six measured camera moves, 53 of 64 living-screen
+  windows, all audio limits, 38 motivated sound events, all 14 claim obligations and zero square
+  crop crossings. Required preflight passed.
+- The final editor and POST flow critic both returned ship with no blocker. Judges scored 8.324,
+  8.660 and 7.782; the median is 8.324 against the 7.0 bar, and every judge reported zero hard
+  blockers. The verdict binds three delivery cuts and 65 evidence pieces by hash. The ship gate
+  passed and verified 38 of 38 storyboard beats on the delivered film.
+- The R3 flow repair was completed in two commits. `88812ff` puts the S2 entrance on its beat,
+  performs the S11 question handoff and visibly moves S13's opposite choice controls. `2e133c2`
+  stages the retention question and provider attention before that handoff, preserving later
+  approved frames exactly. Full-size, 390-pixel and true eight-frame evidence was reviewed before
+  the complete R4 render, then reviewed again from the encoded pack.
+- `beat_delivery.py` now prefers the conformed `at_s` clock and validates legacy numeric or range
+  starts. The prior advisory attempted to cast `0.000-2.062` directly and skipped its own work.
+  Three regression cases cover current, legacy and invalid clocks; the live advisory now measures
+  all 38 beats instead of quietly reporting that it could not run.
+- Five deterministic permanent media assets were uploaded and individually verified. Site feed
+  commit `f9007cfe` completed the `Publish docket site` workflow, and the live
+  `alaskaaihq.com/videos/videos.json` entry was read back with its vertical, mobile, poster and
+  thumbnail URLs.
+- Gmail draft `r8895606142205753731` was created unsent in `talon.sturgill@gmail.com`, addressed to
+  `docket@alaskaaihq.com`. The generated email was rendered at desktop, 390-pixel and 320-pixel
+  widths. Gmail readback retained the exact HTML, subject, recipient, caption and both permanent
+  download links; the returned HTML was rendered again at 390 pixels and inspected.
+- `config/panel_anchors.md` remains the one owner dependency. It is absent for a second run and is
+  explicitly disclosed in the Gmail draft. No calibration examples or waiver were invented.

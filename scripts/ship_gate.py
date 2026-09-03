@@ -193,22 +193,15 @@ def check_render_is_current():
     by noticing that a shot the run described did not exist in the frames, which cost the
     panel a whole round.
 
-    A timestamp check is cheap and it makes that mistake impossible to repeat."""
-    mtime, path = newest_source()
-    if path is None:
-        return
-    stale = []
-    for n in DELIVERABLES:
-        f = RENDER / n
-        if f.exists() and f.stat().st_mtime < mtime - 1:
-            stale.append(f"{n} ({time.strftime('%H:%M:%S', time.localtime(f.stat().st_mtime))})")
-    if stale:
-        fail([f"DELIVERABLE IS OLDER THAN THE SOURCE IT CLAIMS TO BE A RENDER OF.",
-              f"  newest source: {path} at {time.strftime('%H:%M:%S', time.localtime(mtime))}",
-              f"  stale output:  {', '.join(stale)}",
-              "Every hash in this gate can match while the video is still a render of code "
-              "that no longer exists. Re-render, re-cut the evidence from the new render, "
-              "and re-grade. Do not trust a log tail as proof a render ran -- check the file."])
+    Wrapper-created content receipts detect stale inputs without treating an
+    unchanged git checkout as an edit."""
+    # Completed receipts are minted by the wrappers, before panel/ship, and verify
+    # source contents plus output bytes. Git checkout may touch unchanged source.
+    from render_provenance import check_delivery
+    ok, message = check_delivery()
+    if not ok:
+        fail(["RENDER PROVENANCE FAILED: " + message,
+              "Render and encode from the current source before grading or delivering."])
 
 
 def artifact_state():
