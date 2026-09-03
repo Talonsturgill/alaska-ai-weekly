@@ -23,7 +23,7 @@ RENDER_PATTERNS = ('video-engine/src/**/*', 'video-engine/public/**/*',
                    'video-engine/node_modules/.package-lock.json',
                    'out/dispatch/captions.json', 'scripts/build_scenes.py',
                    *RENDER_REQUIRED)
-MIX_REQUIRED = ('scripts/dispatch_mix.py', 'scripts/sfx_bank.py',
+MIX_REQUIRED = ('scripts/dispatch_mix.py', 'scripts/sfx_bank.py', 'scripts/mix_aac_check.py',
                 'out/dispatch/vo_lines.json', 'out/dispatch/episode_props.json',
                 'out/dispatch/storyboard.json')
 MIX_PATTERNS = (*MIX_REQUIRED, 'out/dispatch/music_credit.json',

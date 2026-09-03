@@ -24,18 +24,26 @@ Current PCM mix -14.83LUFS/-2.38dBTP. Scheduled0.90s dip includes tails; core is
 Next: full-resolution final render/encode, rendered objective gates, independent panel,
 exact-byte ship lock, permanent delivery, visually verified Gmail draft and merge.
 Production changes committed as1792245 and plan/proof as4072ded. Render83280 completed all3932
-frames16MB; chunk9 recovered after one Chrome-start timeout. Encode16705 is generating the
-portrait/square/mobile/hosted cuts. Frame extraction+GateA59674 reads actual dispatch_master.mp4
-into frames_0903_r1, reportquality_report_r1.json. No September3 Gmail draft/publication yet.
+frames16MB; chunk9 recovered after one Chrome-start timeout. Encode16705 FAILED on actual AAC
+true peak -0.48dBTP despite passing PCM. GateA59674 completed all3932 actual frames in
+frames_0903_r1: 8.7 FAIL, CAMERA_MOTION S3/S6/S9/S10 and LIVING_SCREEN39/64 (61%, floor80%).
+All other GateA checks pass, including hook[3,4], captions,38SFX and6.3dB silence dip.
+Original R1 cuts/mute/mix/receipts/report copied to out/dispatch/round1; no shipped history changed.
+Exact living diagnosis maps all25weak windows; at least13more must pass with credits unchanged.
+Camera fixer owns Ep0903 and is repairing sustained camera travel and meaningful local actions,
+especially S2/S11. No gate thresholds or criteria were weakened. No September3 Gmail/publication.
+Remix with controlled peak limiting and +0.3dB output passes a real192kAAC48kstereo preview:
+-14.85LUFS, -2.60dBTP, LRA6.10. New scripts/mix_aac_check.py runs before finish-mix, is bound in
+MIX_REQUIRED, and9focused tests+21provenance tests pass. Final encoded cut must still pass too.
 Read-only early probes flag camera timing: most moving shots finish before GateA's25/75%
 sample pair. Research fixer diagnosed real but front-loaded camera moves and recommended
 symmetric travel over8-92% ofshot, substantial environment planes, stable screen-space labels.
 Do not lower camera threshold or relabel static to pass. Confirm actual report, fix named
 failures, probe exactpairs, rerender/regatebeforepanel. No panel convened yet.
-b787945 fixes report output to the current run (--out supported), with2CLI tests. New
-unintegrated parse_engine.cjs/test_parse_engine.cjs parse77files through one esbuild service;
-4testsPASS. Integrate into render_parallel.sh and render_provenance required inputs ONLYafter
-the current encode completes, then test and use for any needed second render.
+b787945 fixes report output to the current run (--out supported), with2CLI tests. be6eaa7
+integrates parse_engine.cjs into render_parallel.sh and its required provenance inputs.
+It parses77files through one esbuild service;4testsPASS and36.721s full-source measurement
+under competing render load. Use this integrated wrapper for the second full render.
 The connected Gmail profile is currently talon.sturgill@gmail.com, not the account stated in
 CLAUDE.md; use the user's explicitly requested connected Gmail, to docket@alaskaaihq.com,
 omit From, and keep unsent. Final email must disclose missing agreed panel anchors.

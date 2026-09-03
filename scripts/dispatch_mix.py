@@ -561,12 +561,11 @@ def main():
     # ceiling sat exactly on the limit it was supposed to protect, with no margin, and the run
     # came out at -0.89 dBTP against a -1.0 ceiling: a hard blocker on a mix nobody had
     # changed. Earlier runs measuring -1.67 were not safer, they were luckier.
-    # 0.78 is -2.16 dBFS of sample peak, which leaves better than a decibel of headroom for
-    # inter-sample overshoot and still clears -14 LUFS comfortably.
-    # Leave explicit AAC reconstruction headroom. The 2026-08-30 Mac encode measured the
-    # PCM master at -2.1 dBTP but the first AAC delivery at -0.95 dBTP. A small static trim
-    # keeps every derived copy below the -1.0 ceiling while preserving the written dynamics.
-    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.78:level=false",
+    # September 3: even PCM -2.35 dBTP reconstructed to -0.48 dBTP in the exact AAC
+    # codec. Limit isolated transients further, then restore 0.3 dB of level after the
+    # limiter. The limiter acts on peaks, not the story's bed/VO arc. The AAC preview
+    # and final encoded cut must still prove both loudness and true peak independently.
+    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.65:level=false,volume=0.3dB",
          "-ar", str(SR), "-ac", "2", master])
     os.remove(premix)
     print("wrote", master)
@@ -591,6 +590,9 @@ def main():
                "silence_dip_at": SILENCE_DIP_AT, "count": len(EVENTS)},
               open(os.path.join(AUD, "sfx_events.json"), "w"), indent=2)
 
+    subprocess.run([sys.executable, os.path.join(HERE, "mix_aac_check.py"),
+                    "--wav", mix_output, "--report", os.path.join(AUD, "aac_check.json")],
+                   check=True)
     subprocess.run(provenance_cmd + ["finish-mix", "--wav", mix_output], check=True)
 
 

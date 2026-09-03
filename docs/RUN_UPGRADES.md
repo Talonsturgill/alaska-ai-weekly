@@ -2947,6 +2947,24 @@ found no agreed exemplar scores to recover. An agent cannot invent owner-agreed 
 This is disclosed to judges and must be disclosed in the email; the actual rubric and hard
 blockers still apply without a waiver.
 
+### Full-render corrections
+
+- `b787945` gives the quality gate an explicit report destination and defaults it to the current
+  frames' parent, preventing a stale run report from masquerading as this run. Two CLI tests pass.
+- `be6eaa7` replaces 77 separate syntax-tool launches with one installed esbuild service, while
+  preserving the parser's failure boundary and binding the helper into render provenance.
+  Four tests pass; a full-source run measured 36.721 seconds under competing CPU load.
+- The first complete export failed AAC true peak at -0.48 dBTP although PCM was below -2 dBTP.
+  `mix_aac_check.py` now measures the exact 192k AAC / 48 kHz stereo delivery codec before a mix
+  receipt can complete. Nine tests cover inclusive limits, malformed/nonfinite metrics, codec
+  failures, PCM preservation and stale report prevention. The helper is a required mix input.
+  Isolated-peak limiting plus 0.3 dB output recovery measures -14.85 LUFS, -2.60 dBTP and LRA6.10
+  in the actual AAC preview. The final film's own audio gate remains independently required.
+- First full-frame Gate A scored 8.7 but correctly failed: four camera moves had finished before
+  the 25/75-percent sampling interval, and only 39/64 living-picture windows passed. The complete
+  quiet-window diagnosis is retained. Passing isolated probes is not a full-film pass; final
+  rerender, visual inspection and unchanged gates remain required before the panel.
+
 ### Release evidence
 
 Pending the full-resolution rendered gate, final evidence pack, independent panel and ship lock.
