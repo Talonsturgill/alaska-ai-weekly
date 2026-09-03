@@ -44,6 +44,14 @@ def lap_var(g): return float(laplace(g.astype(np.float32)).var())
 def hf_energy(g): return float(np.abs(laplace(g.astype(np.float32))).mean())
 def region(a,b): x0,y0,x1,y1=b; return a[y0:y1,x0:x1]
 
+def motion_window_diagnostics(wins, cut, window_s, min_regions):
+    """Expose every measured window without changing the gate's denominator or verdict."""
+    rows = [{"start_s": k * window_s, "regions": v, "graded": k < cut,
+             "alive": v >= min_regions} for k, v in sorted(wins.items())]
+    return {"living_screen_windows": rows,
+            "living_screen_weak_windows_s": [r["start_s"] for r in rows
+                                             if r["graded"] and not r["alive"]]}
+
 def gate(frames_dir, words_path, fps=30, max_gap=5.0):
     fs=sorted(glob.glob(os.path.join(frames_dir,"frame_*.png")))
     if not fs: return {"pass":False,"checks":[{"name":"FRAMES","pass":False,"detail":"no frames in "+frames_dir}],"metrics":{}}
@@ -397,6 +405,7 @@ def gate(frames_dir, words_path, fps=30, max_gap=5.0):
         ok=sum(1 for v in vals if v>=MINR); pct=ok/max(1,len(vals))
         weak=[f"{k*int(WIN)}s" for k,v in sorted(wins.items()) if k<cut and v<MINR]
         m["living_screen_pct"]=round(pct,3)
+        m.update(motion_window_diagnostics(wins, cut, WIN, MINR))
         checks.append({"name":"LIVING_SCREEN","pass":pct>=PASSPCT,
             "detail":f"{ok}/{len(vals)} 2s-windows show >={MINR} disjoint motion regions ({pct:.0%}, floor {PASSPCT:.0%})"
                      +(f" — quiet windows at {weak[:6]}" if weak else "")

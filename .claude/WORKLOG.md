@@ -35,6 +35,9 @@ especially S2/S11. No gate thresholds or criteria were weakened. No September3 G
 Remix with controlled peak limiting and +0.3dB output passes a real192kAAC48kstereo preview:
 -14.85LUFS, -2.60dBTP, LRA6.10. New scripts/mix_aac_check.py runs before finish-mix, is bound in
 MIX_REQUIRED, and9focused tests+21provenance tests pass. Final encoded cut must still pass too.
+cedfa81 commits that AAC guard and mix; the full99Python tests pass. Quality-report diagnostics
+now expose every motion window/weak graded timestamp, including explicitly ungraded tail rows.
+Three new diagnostic tests and2report-CLI tests pass; measurement/thresholds unchanged.
 Read-only early probes flag camera timing: most moving shots finish before GateA's25/75%
 sample pair. Research fixer diagnosed real but front-loaded camera moves and recommended
 symmetric travel over8-92% ofshot, substantial environment planes, stable screen-space labels.

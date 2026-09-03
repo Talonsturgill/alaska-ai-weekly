@@ -2964,6 +2964,10 @@ blockers still apply without a waiver.
   the 25/75-percent sampling interval, and only 39/64 living-picture windows passed. The complete
   quiet-window diagnosis is retained. Passing isolated probes is not a full-film pass; final
   rerender, visual inspection and unchanged gates remain required before the panel.
+- The gate now includes every living-picture window and every weak graded timestamp in its JSON,
+  rather than exposing only the first six in prose. Exempt tail windows remain visible but are
+  explicitly marked ungraded. Three reporting tests prove ordering, full coverage, exemption and
+  non-mutation of measured inputs; no motion calculation, denominator or threshold was changed.
 
 ### Release evidence
 
