@@ -1,14 +1,335 @@
 {
   "run_date": "2026-09-03",
-  "props_sha256": "7c0efd0525bd5bd469116093317cc9ad5b4d0c1592a48397322a318ab2da63e8",
-  "words_sha256": "f32e50b1d6008d96234bd5e2fe15b377f276c59626dcb4ef171cac7d52c76f66",
+  "checked_at_utc": "2026-09-03T15:58:39.304662+00:00",
+  "props_sha256": "93c43dcec18fd2a0d02f870d63d3ac4ac5f5fac1436a29d67c23ef305b41de0c",
+  "words_sha256": "75c84bfafbd465aeec753c0e2ab415387201ba80977d8020fdc19d05cce43edb",
+  "source_captions_sha256": "40be402af86487141d4311840daea6af94935ac11742592204d1b534ce163b8c",
   "built_cues": 44,
   "matched_words": 271,
   "ledger_words": 271,
   "text_mismatches": [],
-  "median_boundary_error_ms": 0.0,
-  "max_boundary_error_ms": 487.0,
+  "median_boundary_error_ms": 0,
+  "max_boundary_error_ms": 487,
   "pass": true,
-  "method": "Matched each built cue's normalized word sequence against the chronological forced-aligned word ledger, reversing display-only AI, TCC and Sully.ai substitutions. Measured cue start and end against first and last covered words. Median is below the required 150ms; the maximum includes deliberate reading holds.",
-  "scope": "Built caption timing evidence, not an independent acoustic alignment or proof of rendered visibility. Final frame inspection and caption_render_check remain required."
+  "method": "Compare normalized chronological token sequences for every built cue with the actual aligned word ledger. Expand display-only AI, TCC and Sully.ai consistently on both sides; lowercase and remove punctuation. Measure absolute cue-start/first-word-start and cue-end/last-word-end errors. This verifies normalized text and timing, not literal punctuation equivalence.",
+  "timestamp_preservation": {
+    "baseline_commit": "7f50650",
+    "all_44_built_cue_times_unchanged": true,
+    "all_source_caption_times_unchanged": true,
+    "all_271_word_times_unchanged": true,
+    "prior_words_sha256": "f32e50b1d6008d96234bd5e2fe15b377f276c59626dcb4ef171cac7d52c76f66",
+    "reconstructed_prior_words_sha256": "f32e50b1d6008d96234bd5e2fe15b377f276c59626dcb4ef171cac7d52c76f66",
+    "word_proof": "Reverse only word 190 choice. -> choice: and word 191 How -> how (zero-based), serialize indent=2 without final newline. Exact prior SHA-256 match proves all remaining fields, including timestamps, were preserved; no old PCM equivalence is inferred."
+  },
+  "cue_boundaries": [
+    {
+      "cue": 0,
+      "first_word": 0,
+      "last_word": 10,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 1,
+      "first_word": 11,
+      "last_word": 19,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 2,
+      "first_word": 20,
+      "last_word": 23,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 3,
+      "first_word": 24,
+      "last_word": 29,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 4,
+      "first_word": 30,
+      "last_word": 43,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 5,
+      "first_word": 44,
+      "last_word": 47,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 6,
+      "first_word": 48,
+      "last_word": 53,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 7,
+      "first_word": 54,
+      "last_word": 57,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 8,
+      "first_word": 58,
+      "last_word": 63,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 9,
+      "first_word": 64,
+      "last_word": 68,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 10,
+      "first_word": 69,
+      "last_word": 72,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 11,
+      "first_word": 73,
+      "last_word": 83,
+      "start_error_ms": 0,
+      "end_error_ms": 360
+    },
+    {
+      "cue": 12,
+      "first_word": 84,
+      "last_word": 85,
+      "start_error_ms": 360,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 13,
+      "first_word": 86,
+      "last_word": 91,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 14,
+      "first_word": 92,
+      "last_word": 94,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 15,
+      "first_word": 95,
+      "last_word": 98,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 16,
+      "first_word": 99,
+      "last_word": 108,
+      "start_error_ms": 0,
+      "end_error_ms": 487
+    },
+    {
+      "cue": 17,
+      "first_word": 109,
+      "last_word": 114,
+      "start_error_ms": 487,
+      "end_error_ms": 100
+    },
+    {
+      "cue": 18,
+      "first_word": 115,
+      "last_word": 119,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 19,
+      "first_word": 120,
+      "last_word": 124,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 20,
+      "first_word": 125,
+      "last_word": 128,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 21,
+      "first_word": 129,
+      "last_word": 136,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 22,
+      "first_word": 137,
+      "last_word": 143,
+      "start_error_ms": 0,
+      "end_error_ms": 320
+    },
+    {
+      "cue": 23,
+      "first_word": 144,
+      "last_word": 150,
+      "start_error_ms": 0,
+      "end_error_ms": 80
+    },
+    {
+      "cue": 24,
+      "first_word": 151,
+      "last_word": 156,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 25,
+      "first_word": 157,
+      "last_word": 160,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 26,
+      "first_word": 161,
+      "last_word": 167,
+      "start_error_ms": 0,
+      "end_error_ms": 260
+    },
+    {
+      "cue": 27,
+      "first_word": 168,
+      "last_word": 177,
+      "start_error_ms": 0,
+      "end_error_ms": 43
+    },
+    {
+      "cue": 28,
+      "first_word": 178,
+      "last_word": 182,
+      "start_error_ms": 43,
+      "end_error_ms": 380
+    },
+    {
+      "cue": 29,
+      "first_word": 183,
+      "last_word": 193,
+      "start_error_ms": 0,
+      "end_error_ms": 286
+    },
+    {
+      "cue": 30,
+      "first_word": 194,
+      "last_word": 197,
+      "start_error_ms": 286,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 31,
+      "first_word": 198,
+      "last_word": 203,
+      "start_error_ms": 0,
+      "end_error_ms": 80
+    },
+    {
+      "cue": 32,
+      "first_word": 204,
+      "last_word": 209,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 33,
+      "first_word": 210,
+      "last_word": 214,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 34,
+      "first_word": 215,
+      "last_word": 220,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 35,
+      "first_word": 221,
+      "last_word": 225,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 36,
+      "first_word": 226,
+      "last_word": 230,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 37,
+      "first_word": 231,
+      "last_word": 238,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 38,
+      "first_word": 239,
+      "last_word": 244,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 39,
+      "first_word": 245,
+      "last_word": 250,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 40,
+      "first_word": 251,
+      "last_word": 255,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 41,
+      "first_word": 256,
+      "last_word": 260,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    },
+    {
+      "cue": 42,
+      "first_word": 261,
+      "last_word": 266,
+      "start_error_ms": 0,
+      "end_error_ms": 30
+    },
+    {
+      "cue": 43,
+      "first_word": 267,
+      "last_word": 270,
+      "start_error_ms": 0,
+      "end_error_ms": 0
+    }
+  ],
+  "scope": "Built-caption normalized text/timing evidence only. The maximum includes reading holds. Not fresh acoustic forced alignment, rendered caption visibility, human listening, or Gate B. Final encoded caption/audio checks remain required."
 }

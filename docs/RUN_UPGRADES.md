@@ -2982,5 +2982,26 @@ blockers still apply without a waiver.
 
 ### Release evidence
 
-Pending the full-resolution rendered gate, final evidence pack, independent panel and ship lock.
-The source build and partial-frame inspection above are not claims of publication or Gmail delivery.
+R2 rendered all 3,932 frames and passed Gate A at 10.0, with 54/64 living windows and all six
+camera pairs passing. Required preflight passed and actual AAC measured -14.85 LUFS/-2.60 dBTP.
+Final copy inspection then caught two forbidden colons in a plate and a built caption. R2 was
+preserved rather than shipped. Both were corrected at source, with word and caption timings
+unchanged. New full-size frames 1090/2500 visibly confirm the changes. R3 is being rendered and
+must independently pass before review or delivery.
+
+`4c1e76d` adds an enforced source/props copy adapter and a decoded-email-text guard. It checks
+123 source variants, 44 captions, 38 beat labels and three credit strings, rejects unresolved
+or empty extraction and preserves URL syntax. It is not OCR or a claim about imported artwork.
+The email subject, format guide and temporary-link warning now obey the same prose rules.
+The complete generated email is gated before writing the payload, not merely its post body.
+The same commit fixes two stale advisory parsers without relaxing thresholds. Evidence coverage
+accepts a finite conformed clock or a validated legacy range start, and checks all 38 beats.
+Staging follows actual TypeScript gesture expressions and aliases, rather than a nearby text
+slice. Its pass covers five direct sites and explicitly discloses two shared-helper sites.
+The full suite passes 130 Python tests plus ten Node parser/shelf tests.
+
+The separate area-novelty advisory still flags six R2 stretches, including the credits. This is
+not suppressed. Its 12-percent changed-area threshold differs from the living check's count of
+separate motion regions. The final flow reviewer must judge those actual scenes and credit holds.
+
+Independent final review, ship lock, publication and Gmail delivery remain pending.
