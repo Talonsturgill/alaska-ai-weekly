@@ -1,0 +1,24 @@
+{
+  "ship": true,
+  "story_retold_as_causal_chain": "Tanana Chiefs Conference announced an AI note-taking tool, so consenting patients can have appointments recorded and draft notes prepared for provider review, but the notice supplies no measured benefit and leaves the retention period for de-identified portions unclear, which means patients have a real decision to make and can decline or change their minds with TCC's promise that their care will not be affected.",
+  "every_named_actor_as_established_by_script_alone": [
+    {
+      "name": "Tanana Chiefs Conference / TCC",
+      "established_identity": "An Interior Alaska tribal health organization introducing Sully.ai; it states the recording policy and promises that declining will not affect care."
+    },
+    {
+      "name": "Sully.ai",
+      "established_identity": "An AI paperwork tool that listens with patient permission and drafts appointment notes; it does not make medical decisions."
+    }
+  ],
+  "other_actor_roles": [
+    "The patient gives permission, can decline, and can change their mind.",
+    "The provider reviews, edits, and approves a draft before it can enter the medical record.",
+    "An unnamed technology company may use de-identified portions of recordings to improve the system; its identity is not explicitly established."
+  ],
+  "single_question_answered": {
+    "question": "What changes when a patient says no to this AI note taker?",
+    "answer": "The patient can decline the recording or change their mind, and TCC promises their care will not be affected; the script explicitly says that promise has not been independently tested."
+  },
+  "first_confusing_line": null
+}

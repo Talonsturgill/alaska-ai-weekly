@@ -1,104 +1,72 @@
 {
-  "run_date": "2026-09-02",
-  "story_id": "ua-ai-engaged-draft",
+  "run_date": "2026-09-03",
+  "story_id": "tcc-sully-ai-consent",
   "palette": {
     "roles": {
-      "sky": "#32181E",
-      "ground": "#F2E5C4",
-      "hero": "#8E2434",
-      "accent": "#83D9B1",
-      "shadow": "#54252E",
-      "brass": "#D89B32",
-      "campus": "#E6B33D"
+      "sky": "#E5F0D9",
+      "ground": "#FAE9CF",
+      "hero": "#207864",
+      "accent": "#EA8C60",
+      "shadow": "#355D50",
+      "paper": "#FFFAE9",
+      "ink": "#193F36"
     },
-    "mood": "Collegiate oxblood, parchment, marigold, brass, and mint make a public-institution promise feel warm and consequential. Mint appears only when AI is actively assisting.",
-    "divergence": "This avoids September 1's aubergine, fuchsia, and cosmic rose signal world and August 30's cyan, persimmon, spruce, and violet technical field. Parchment is dominant, marigold separates campus judgment, and oxblood anchors human accountability."
+    "mood": "Sunlit sage, viridian, sea-glass and apricot: hopeful daylight where both informed choices remain warm.",
+    "divergence": "No oxblood/parchment/brass credential press or aubergine/cosmic-rose signal space. Architectural sage occupies the frame; apricot marks human permission without coding refusal as danger."
   },
   "light": {
-    "time": "Early-morning library light begins cool at the proposal table, warms through the human review desk, and reaches a sunrise backlight on the earned seal.",
-    "direction": "A high-left amber key shapes paper and brass; a low-right mint rim belongs to active AI assistance; oxblood bounce and the #54252E shadow token keep every dark plane warm rather than near-black.",
-    "depth": "Four parallax planes, cast paper shadows, beveled press parts, moving specular bands, contact shadows, and a shallow-focus macro at the stamp make the tactile collage dimensional."
+    "time": "Diffuse late-morning window light",
+    "direction": "Upper-left broad cream key; soft viridian bounce; apricot edge on moving linkage",
+    "depth": "Rear window and wall z=-180; human room z=0; small recorder/desk z=85; near arch z=160. Cast contact shadows connect actors to the same floor."
   },
   "shape_language": {
-    "grammar": "Soft paper arcs and hand-cut campus rooms oppose rigid machine rails, gates, and rectangular governance files.",
-    "why": "The film asks where flexible academic judgment must resist an efficient system that wants to flatten every decision."
+    "grammar": "Large continuous rounded human-care platform; small detachable rectangular clerical sidecar. Round coils are recordings, ivory sheets are approved notes, dotted rounded wave fragments are possible reuse.",
+    "why": "A machine can leave the composition without breaking the people-to-people space."
   },
   "casting": {
-    "hero": "DiplomaPress, a reusable characterized credential press in video-engine/src/lib/credentials.tsx.",
+    "hero": "GearLever recording switch; FullTapeMachine supporting recorder",
     "inventory": [
       {
-        "beats": "1-2, 28-30",
-        "subject": "DiplomaPress + credential examiner",
-        "source": "net-new DiplomaPress plus existing Character rig and ContactShadow"
+        "beats": "1-4,9,18,27-34",
+        "subject": "Recording choice lever",
+        "source": "props.tsx GearLever; upgrade to mechanically coherent transport states via existing FullTapeMachine"
       },
       {
-        "beats": "3-4",
-        "subject": "AI Engaged proposal mechanism",
-        "source": "existing TypeSlug, PenAndDocument, materials, and motion primitives"
+        "beats": "4-10,18-21,28-34",
+        "subject": "Two generic people taking turns and reviewing a note",
+        "source": "Character rig; no ethnic shorthand, no patient testimony, no fake medical UI"
       },
       {
-        "beats": "5-7",
-        "subject": "student practice staircase",
-        "source": "existing Character rig plus PenAndDocument and TypeSlug"
-      },
-      {
-        "beats": "8-10",
-        "subject": "campus choice rooms",
-        "source": "existing Gate, Character, GearLever, TypeSlug, and stage3d planes"
-      },
-      {
-        "beats": "11-12",
-        "subject": "council support rail",
-        "source": "existing GearLever and StatCard from props.tsx, ChipShadow and followThrough from motion.tsx, and stage3d planes"
-      },
-      {
-        "beats": "13-15",
-        "subject": "diploma-to-decision-file transformation",
-        "source": "net-new documentFlip transition plus PenAndDocument and TypeSlug"
-      },
-      {
-        "beats": "16-18",
-        "subject": "oversight gate, reviewer, and stamp robot",
-        "source": "existing Gate and Character; net-new StampBot supporting asset in credentials.tsx"
-      },
-      {
-        "beats": "19-21",
-        "subject": "hard-word measurement bench",
-        "source": "existing AllowanceBoard upgraded with empty-gauge mode plus TypeSlug"
-      },
-      {
-        "beats": "22-25",
-        "subject": "conditional clock and plan cards",
-        "source": "existing CapClock, Gate, TypeSlug, and PenAndDocument"
-      },
-      {
-        "beats": "26-27",
-        "subject": "evidence map and two-promise divider",
-        "source": "existing AlaskaMini from kit.tsx, BoundaryReveal and PenAndDocument from props.tsx, Gate from civics.tsx, and TypeSlug from clinic.tsx"
+        "beats": "6-17,22-26",
+        "subject": "Draft, approved note, recording and possible portions",
+        "source": "paper.tsx Sheet and FullTapeMachine; materials, TypeSlug, ContactShadow and motion primitives"
       }
     ],
-    "net_new": "DiplomaPress and its small StampBot supporting pose fill the credential and rubber-stamp gaps; documentFlip is the motion-system advance.",
-    "continuity": "Character, document, gate, type, clock, lighting, materials, and motion systems carry the film. SignalRibbon does not return as hero."
+    "net_new": "No new hero library; extend existing FullTapeMachine transport API.",
+    "continuity": "Use shelf assets as actors, authored stages and blocking from scratch. Neither SignalRibbon nor DiplomaPress returns."
   },
   "motion_language": {
-    "grammar": "Paper travels horizontally, the press strikes vertically, and governance assembles radially around the same sheet.",
+    "grammar": "Paper first overwhelms, then slides into a subordinate tray. Lever performs a deliberate arc; reels respond. Humans lean toward each other while attention moves away from clerical work.",
     "hero_moves": [
-      "The stamp anticipates, plunges, and brakes one millimeter above the blank seal",
-      "The diploma flips on its long edge into a consequential-decision file",
-      "The frozen clock tries to tick and is caught by the DRAFT clip",
-      "A human pull lands the seal with overshoot, screen shake, brass glint, and paper follow-through"
+      "Opening paper-wave bends toward a waiting lever without answering NO",
+      "Draft shuttles back for a visible review/edit before chart acceptance",
+      "Recording split opens into a dotted MAY branch distinct from the note",
+      "Source-notice pullback exposes the limits of the demonstration",
+      "Lever brakes OFF; detached recorder travels aside while the same-sized room is revealed intact"
     ],
-    "blur": "Directional motion blur is reserved for the rejected auto-stamp, the diploma-to-file flip, and the final human press."
+    "blur": "Brief directional blur only on paper-wave and recorder slide; lever arc uses anticipation and damped settle."
   },
   "composition": {
-    "staging": "Alternate macro press inserts, overhead paper choreography, three-room campus split, modular decision files, and an extreme-wide clock chamber. The diploma remains centered across motivated match cuts.",
-    "safe_area": "All load-bearing faces, the diploma, DRAFT, IF ADOPTED, EARNED, and decision labels stay inside the centered 760px square-safe column above the open-caption band.",
-    "signature_shot": "The diploma flips in midair into a four-tab admissions, aid, advising, and HR record while its empty gold seal becomes a literal human-oversight lock."
+    "staging": "Four sets: cropped recorder macro, sunlit care room, overhead artifact workbench, tilted source-notice desk. Sidecar continually smaller than care; 14 shots alternate insert/wide/close/overhead/extreme-wide.",
+    "safe_area": "Critical composition x120..960 y500..1260, caption band y1336..1468. Full-height room context remains visible outside square crop but no critical claim lives there.",
+    "signature_shot": "The apparent clinic demonstration shrinks onto a dated public announcement: an appealing model, not a measured result. Later the recorder moves out while both people stay in the same light.",
+    "focal_hierarchy": "One focal action per shot at x540 y850. Quiet architectural space surrounds people; recording sidecar stays visibly smaller. Macro inserts fill the safe square when artifact identity matters; no floating UI grid competes with faces.",
+    "attribution": "ILLUSTRATION · TCC TERMS persists over every hypothetical care scene. Source date labels the announcement scene. OFF does not improve, enlarge or brighten care: same geometry, light and dignity."
   },
   "craft_advance": {
-    "system": "documentFlip transition primitive in video-engine/src/lib/credentials.tsx",
-    "api": "documentFlip({progress, front, back, tabs, hinge:'long-edge', perspective, shadowDepth})",
-    "how": "The sheet anticipates to minus eight degrees, accelerates through a foreshortened edge-on phase, overshoots to one hundred two degrees, settles at ninety, and drives a separate squash-and-stretch contact shadow. The API can power future credential, permitting, records, and review transformations.",
-    "asset_note": "DiplomaPress is the episode's new hero asset; documentFlip is the single craft-system advance measured independently of the hero addition."
+    "system": "FullTapeMachine explicit transport and brake-followthrough in video-engine/src/lib/paper.tsx",
+    "api": "transport?: 'running'|'paused', pausedAt?: number",
+    "how": "Preserve original default fill behavior for older films. New explicit paused state freezes reel phase at pausedAt without falsely implying a full tape or deletion; driven lever decelerates into a damped mechanical stop. Demonstrate in this film's final refusal sequence and register in manifest.",
+    "asset_note": "Separates recording state from capacity state, a reusable semantic and performance improvement."
   }
 }

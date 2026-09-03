@@ -1,0 +1,113 @@
+{
+  "run_date": "2026-09-03",
+  "role": "caption_writer",
+  "canonical_file": "out/dispatch/post.txt",
+  "thesis": "Useful clinical AI should earn adoption through its work while preserving a patient's ability to refuse without losing care.",
+  "editorial_arc": [
+    "Concrete patient-choice position",
+    "TCC's announced narrow clerical workflow and provider authority",
+    "Separate recordings, chart notes and possible reuse",
+    "Fair affirmative case and measured-benefit limit",
+    "Open retention question without accusation",
+    "Attributed refusal promise and care-first standard",
+    "Specific reader question"
+  ],
+  "source_mapping": [
+    {
+      "passage": "September 2nd introduction, organization and Sully.ai",
+      "claims": [
+        "c1"
+      ],
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "passage": "Less typing and more patient attention are an aim",
+      "claims": [
+        "c7"
+      ],
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "passage": "Permission, listening and draft note",
+      "claims": [
+        "c2"
+      ],
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "passage": "Provider review, edits, approval and clinical judgment",
+      "claims": [
+        "c3"
+      ],
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "passage": "90-day recording deletion policy",
+      "claims": [
+        "c4"
+      ],
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "passage": "Possible reuse of deidentified portions and unresolved retention question",
+      "claims": [
+        "c5"
+      ],
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "passage": "No measured benefits reported in the notice",
+      "claims": [
+        "c7"
+      ],
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "passage": "Decline or change one's mind without affecting care, explicitly attributed",
+      "claims": [
+        "c6"
+      ],
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "scope_controls": [
+    "Introducing, not completed rollout",
+    "Benefits described as aims or possibilities, not measured outcomes",
+    "Recording deletion not extended to chart notes or reused portions",
+    "Reuse is possible, not universal",
+    "No claim of privacy failure or separate reuse opt-out",
+    "Refusal terms are TCC's promise, not audited patient experience",
+    "No private patient details, political claims, URLs, source list, credits or social posting"
+  ],
+  "hashtag_rationale": "ArtificialIntelligence is the broad topic, Alaska is the geographic topic, TribalHealth and PatientConsent are the narrow subject areas. No live audience-size or reach claims are made.",
+  "objective_gate": {
+    "command": "python3 scripts/caption_check.py out/dispatch/post.txt",
+    "exit_code": 0,
+    "pass": true,
+    "characters": 1714,
+    "hook_characters": 68,
+    "hashtags": 4,
+    "report": "out/dispatch/caption_report.json"
+  },
+  "independent_review": {
+    "completed": false,
+    "required_next": "Separate editor and scorer must review against config/linkedin_caption_rubric.yaml. This writer has not claimed an independent score."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "gate": "0D",
+  "review_scope": "Revised pre-render plan only. No render, implementation or live verification claimed.",
+  "levers": {
+    "palette": {"complete": true, "score": 8, "finding": "Sage/viridian/apricot architecture is distinct from the previous two films' aubergine/fuchsia and parchment/oxblood/brass. Named hex roles and human-choice mood are concrete."},
+    "light": {"complete": true, "score": 8, "finding": "Diffuse upper-left window key, bounce, rim and four depth planes establish the room. Artifact shots deliberately fix registration; signature shot 10 now has real separated desk/notice/model planes and rise/backtrack. The previous static signature contradiction is resolved."},
+    "shape_language": {"complete": true, "score": 8, "finding": "Large rounded continuous human platform contrasts with small rectangular detachable sidecar. Round coils, ivory sheets and dotted portions preserve distinct meanings. OFF explicitly changes neither care geometry nor lighting."},
+    "casting": {"complete": true, "score": 8, "finding": "GearLever, FullTapeMachine, Sheet and generic Character rigs are shelf-first and appropriate. Human tasks are directed. No new hero is needed; transport-state extension is a justified reuse improvement. Current beat-level storyboard controls cast placement over the older inventory ranges."},
+    "motion_language": {"complete": true, "score": 8, "finding": "Paper displacement, review reversal, permission-first linkage, recorder braking and subordinate exit are causal. The false clinical-control reach is gone. Blur and damped settle are assigned sparingly."},
+    "composition": {"complete": true, "score": 8, "finding": "Named safe regions, central focal actions and quiet architectural negative space make the hierarchy executable. Model-on-dated-notice is the signature; unchanged-room reveal is its human payoff. Shot-specific hero tiers and anchors now support the plan. Attribution is continuous on hypothetical care scenes."},
+    "craft_advance": {"complete": true, "score": 9, "finding": "Explicit paused/running transport preserves legacy fill behavior and decouples recording from capacity/deletion. Phase-preserving brake-followthrough is a specific reusable semantic improvement; implementation and regression tests remain required later."}
+  },
+  "findings": [],
+  "verification_obligations": [
+    "Render portrait and square probes for noun-label legibility, contrast and focal hierarchy.",
+    "Verify paused reels preserve phase and never show FULL or imply deletion.",
+    "Verify YES and NO share exact care geometry and lighting, with persistent illustration attribution.",
+    "Respect the separate Gate 0B outcome; this art approval does not bypass remaining storyboard edits."
+  ],
+  "ship": true,
+  "summary": "All seven art levers now form a coherent binding plan, with the original depth/signature and care-expansion contradictions resolved."
+}

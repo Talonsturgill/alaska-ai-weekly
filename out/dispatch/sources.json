@@ -1,61 +1,38 @@
 {
-  "run_date": "2026-09-02",
-  "title": "The Diploma Still Has to Be Earned",
-  "sourcing_note": "Every governance claim describes a draft. The $300,000 item is a separate preliminary FY28 request and is not earmarked to AI Engaged in the posted packet.",
+  "run_date": "2026-09-03",
+  "title": "The Care Has to Stay",
   "sources": [
     {
       "id": "s1",
-      "title": "University of Alaska, September 2026 Board of Regents meeting preview, September 1, 2026",
-      "outlet": "University of Alaska",
-      "url": "https://www.alaska.edu/opa/enews/2026/0901/",
-      "claims": ["c1"],
+      "title": "Introducing Sully.ai, September 2nd, 2026",
+      "outlet": "Tanana Chiefs Conference",
+      "url": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "claims": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c9",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14"
+      ],
       "used_in_film": true,
-      "note": "Official institutional preview. It says Ben Shier will discuss AI Engaged during the September 2nd to 3rd meeting."
+      "note": "First-party announcement. Terms are TCC's assurances, not an independent audit."
     },
     {
       "id": "s2",
-      "title": "University of Alaska Board of Regents full meeting page, September 2 to 3, 2026",
-      "outlet": "University of Alaska Board of Regents",
-      "url": "https://pub-alaska.escribemeetings.com/Meeting.aspx?Id=67f56e6e-7e7c-4de6-930e-eef44503d180&Agenda=Agenda&lang=English",
-      "claims": ["c1"],
+      "title": "About Tanana Chiefs Conference",
+      "outlet": "Tanana Chiefs Conference",
+      "url": "https://www.tananachiefs.org/about/",
       "used_in_film": true,
-      "note": "Official agenda. AI Engaged appears under Updates and Presentations with no posted adoption motion."
-    },
-    {
-      "id": "s3",
-      "title": "AI Engaged draft statement, Draft 2026",
-      "outlet": "University of Alaska Board of Regents",
-      "url": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "claims": ["c1", "c2", "c3", "c6", "c9", "c10", "c14", "c15"],
-      "used_in_film": true,
-      "note": "Primary draft statement. Nothing in the posted record establishes adoption."
-    },
-    {
-      "id": "s4",
-      "title": "AI Engaged implementation summary, Draft 2026",
-      "outlet": "University of Alaska Board of Regents",
-      "url": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518",
-      "claims": ["c4", "c5", "c7", "c8", "c16", "c17"],
-      "used_in_film": true,
-      "note": "Primary implementation summary. The one-year clock begins only after adoption or approval."
-    },
-    {
-      "id": "s5",
-      "title": "Initial FY28 operating budget request, September 2026",
-      "outlet": "University of Alaska Board of Regents",
-      "url": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=519",
-      "claims": ["c11", "c13"],
-      "used_in_film": false,
-      "note": "Primary preliminary budget document. The $300,000 request includes AI and process automation and will be refined before November."
-    },
-    {
-      "id": "s6",
-      "title": "University of Alaska Board of Regents full agenda package, September 2 to 3, 2026",
-      "outlet": "University of Alaska Board of Regents",
-      "url": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=501",
-      "claims": ["c12"],
-      "used_in_film": false,
-      "note": "Primary combined package showing AI Engaged and the budget request as separate agenda items."
+      "claims": ["c8"],
+      "note": "Named Interior Alaska tribal consortium; organizational scope is not AI rollout coverage."
     }
   ]
 }

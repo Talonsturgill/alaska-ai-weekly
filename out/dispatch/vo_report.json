@@ -1,0 +1,60 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.993,
+    "heard": "What changes when you tell an AI note-taker, no? On September 2nd, Tannenaut Chiefs Conference, an interior Alaska Tribal Health Organization, announced its introducing Sully.ai. Its job is paperwork. The aim is less typing and more attention for patients. With the patient's permission, the tool listens during the appointment and drafts a note. That draft still has a boss. The provider reviews it, edits it, and approves it. Only then can it enter the medical record. Sully isn't making medical decisions. But does that design actually give patients more attention? Keep that question open. TCC gives recordings a 90-day deletion policy. Recordings and approved notes are different things. The technology company may also use de-identified portions of recordings to improve the system. That's a possible second purpose, not a second medical opinion. Now give the offer its strongest case. Less typing could mean a better conversation. And TCC tells patients about the possible reuse. An informed yes is a reasonable choice. But this notice reports no measured benefits. A sensible design isn't proof that it works. One question still matters for that informed choice. How long can de-identified portions be capped? Ask what happens to those portions before deciding. Don't fill an unanswered question with an accusation. Now switch the recorder off. TCC says you can decline or change your mind. Your care won't be affected. That's its promise, not an independently tested result. Useful AI doesn't need every patient to make the same choice. The machine can step aside. The care has to stay. Would you want this note-taker at your next visit?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.015,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 9.19,
+        "voiced_frac": 0.52,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 118.16,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 118.16,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.987,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.991,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

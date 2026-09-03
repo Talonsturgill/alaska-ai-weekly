@@ -1,176 +1,194 @@
 {
-  "run_date": "2026-09-02",
-  "title_working": "The Diploma Gets a Clock",
-  "fact_check_verdict": "Publishable only as a story about an unadopted University of Alaska governance draft and a separate preliminary FY28 automation request. It is not a new policy, funded implementation, deployment, or measured result.",
+  "run_date": "2026-09-03",
+  "fact_check_verdict": "Primary sources independently re-fetched. Fourteen meaningful propositions: twelve already voiced and two source-backed replacement lines. Publish as TCC's announced terms, not audited performance or universal rollout. The two added facts count only after their replacement narration is present and measured.",
   "claims": [
     {
       "id": "c1",
-      "status": "verified-primary-draft",
-      "on_screen": "AI ENGAGED · DRAFT 2026",
-      "spoken": "The University of Alaska Board is scheduled to discuss a draft called A I Engaged.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "verbatim_source": "Labeled document status: DRAFT 2026.",
-      "requires": ["Say scheduled to discuss. Never say adopted, approved, enacted, mandated, or in effect."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-announcement",
+      "on_screen": "TCC INTRODUCES SULLY.AI",
+      "spoken": "On September 2nd, Tanana Chiefs Conference announced it is introducing Sully.ai.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "requires": [
+        "Announcement only; no rollout count, complete deployment or measured benefits."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
     },
     {
       "id": "c2",
-      "status": "verified-primary",
-      "on_screen": "6 PRINCIPLES",
-      "spoken": "The draft starts with six principles.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "verbatim_source": "The draft lists Human-Centered, Dedicated to Learning, Access, Ethical & Transparent, Secure & Protected, and Return on Innovation.",
-      "requires": ["Present them as proposed principles, not operating rules."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-announcement",
+      "on_screen": "PATIENT CONSENT FIRST",
+      "spoken": "Recording requires the patient's permission.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "requires": [
+        "No recording without permission; do not imply passive surveillance."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
     },
     {
       "id": "c3",
-      "status": "verified-primary",
-      "on_screen": "4 INVESTMENT PRIORITIES",
-      "spoken": "It names four investment priorities.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "verbatim_source": "The draft lists Student Learning, Faculty Teaching, Administrative Efficiency, and Arctic & Climate Research.",
-      "requires": ["Do not imply any priority is funded or deployed."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-announcement",
+      "on_screen": "PROVIDER REVIEWS AND APPROVES",
+      "spoken": "The provider reviews, edits as needed, and approves before the note reaches the medical record.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "requires": [
+        "The tool does not diagnose, recommend treatments or make medical decisions."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
     },
     {
       "id": "c4",
-      "status": "verified-primary",
-      "on_screen": "5 SYSTEM EXPECTATIONS",
-      "spoken": "Its implementation summary adds five systemwide expectations.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518",
-      "verbatim_source": "The summary lists Institutional Policy, Secure Environments/Data & Tool Governance, Human-in-the-Loop Assurance, Universal AI Literacy, and Appropriate AI in Every Discipline.",
-      "requires": ["Call these proposed expectations or workstreams. Do not call them five adopted policies."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-announcement",
+      "on_screen": "RECORDINGS · 90 DAYS",
+      "spoken": "TCC says recordings are deleted after ninety days.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "requires": [
+        "Attributed policy, not independent audit. Applies to recordings, not chart notes or derived data."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
     },
     {
       "id": "c5",
-      "status": "verified-primary-conditional",
-      "on_screen": "IF ADOPTED · 1 YEAR",
-      "spoken": "If the Board adopts it, a one-year clock starts for a coordinated plan, university policies, and university plans presented to the Board.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518",
-      "verbatim_source": "The implementation summary ties the one-year timeline to approval or adoption.",
-      "requires": ["IF ADOPTED must remain visible. The clock has not started. Do not state a September 2027 deadline."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true, "spoken_contains": ["If"]}
+      "status": "verified-primary-announcement",
+      "on_screen": "DE-IDENTIFIED PORTIONS MAY BE REUSED",
+      "spoken": "The technology company may use de-identified portions of encounter recordings to improve the system.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "requires": [
+        "Do not claim all recordings are reused; no verified retention period for derivatives or separate opt-out mechanism."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
     },
     {
       "id": "c6",
-      "status": "verified-primary",
-      "on_screen": "UAA · UAF · UAS KEEP CURRICULUM JUDGMENT",
-      "spoken": "U A A, U A F, and U A S would keep responsibility for curriculum, academic integrity, faculty use, and research policy.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "verbatim_source": "The draft reserves university-specific curriculum, faculty use of AI, academic-integrity standards, and research policy to the separately accredited universities.",
-      "requires": ["This autonomy remains inside system principles and future system policy. Do not say campuses can ignore system rules."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-announcement",
+      "on_screen": "DECLINING WON'T CHANGE YOUR CARE",
+      "spoken": "TCC says declining won't affect the care you receive.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "requires": [
+        "Do not invent consent revocation mechanics, retrospective deletion or actual patient sentiment."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
     },
     {
       "id": "c7",
-      "status": "verified-primary",
-      "on_screen": "REQUIRE · ENCOURAGE · LIMIT · EXCLUDE",
-      "spoken": "Faculty would decide whether course objectives require, encourage, limit, or exclude A I.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518",
-      "verbatim_source": "The summary says faculty judgment governs whether AI is required, encouraged, limited, or excluded in a course.",
-      "requires": ["Keep the decision tied to course objectives."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-announcement",
+      "on_screen": "MORE ATTENTION",
+      "spoken": "The aim is less typing and more attention for patients.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "requires": [
+        "Stated aim, not measured outcome; do not assert accuracy, reduced burnout or time savings."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
     },
     {
       "id": "c8",
-      "status": "verified-primary",
-      "on_screen": "CONSEQUENTIAL AI · HUMAN OVERSIGHT",
-      "spoken": "Predictive A I affecting admissions, financial aid, advising, or H R analytics would need documented evaluation and meaningful human oversight.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518",
-      "verbatim_source": "The implementation summary names admissions, financial aid, advising, and HR analytics as examples of consequential AI and calls for documented evaluation and meaningful human oversight.",
-      "requires": ["Do not imply UA currently uses AI for these functions or that a human must make every final decision."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-institutional-context",
+      "on_screen": "INTERIOR ALASKA · TRIBAL HEALTH",
+      "spoken": "Tanana Chiefs Conference is an Interior Alaska tribal health organization.",
+      "source": "https://www.tananachiefs.org/about/",
+      "evidence_locator": "Institutional introduction, healthcare remit, mission and regional description.",
+      "density_origin": "f01, already voiced at line 1; one institutional identity, not separate adjective claims.",
+      "requires": [
+        "Institutional context only. No organization geography or membership count establishes Sully deployment coverage."
+      ],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
     },
     {
       "id": "c9",
-      "status": "verified-primary",
-      "on_screen": "A CREDENTIAL STILL CERTIFIES EARNED COMPETENCE",
-      "spoken": "The draft says a U A credential must still certify competence the student earned.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "verbatim_source": "A credential from UA will continue to certify competence the student has earned.",
-      "requires": ["This is a proposed principle, not a measured learning outcome."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-announcement",
+      "on_screen": "CONVERSATION TO DRAFT",
+      "spoken": "The tool listens during the appointment and creates a draft note.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "evidence_locator": "Tool-definition paragraph describing the documentation transformation.",
+      "density_origin": "f05, already voiced at line 3; separated from c2's permission requirement because function and authorization are different propositions.",
+      "requires": [
+        "Listening and draft creation are one mechanism fact, not two. Permission must precede recording; provider approval precedes chart inclusion."
+      ],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
     },
     {
       "id": "c10",
-      "status": "verified-primary",
-      "on_screen": "SHARED UPLIFT",
-      "spoken": "The draft also proposes shared tool review, contracts, training, and legal support regardless of university size or resources.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "verbatim_source": "The draft's Shared Uplift principle describes common infrastructure, professional development, tool evaluation, vendor contracting, and legal guidance regardless of university size or resources.",
-      "requires": ["Describe this as proposed shared capacity. No access outcome or tool list is reported."],
-      "contract": {"must_ship": true, "on_screen_verbatim": true}
+      "status": "verified-primary-announcement",
+      "on_screen": "NO MEDICAL DECISIONS",
+      "spoken": "Sully does not make medical decisions.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "evidence_locator": "Clinical-role exclusion immediately after the provider-review paragraph.",
+      "density_origin": "f07, already voiced at line 5; authority boundary distinct from c3's note-approval workflow.",
+      "requires": [
+        "Clinical-scope restriction, not a claim of accurate diagnosis. Provider review, editing, approval and chart entry remain one c3 fact."
+      ],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
     },
     {
       "id": "c11",
-      "status": "verified-primary-separate-request",
-      "on_screen": "$300K REQUEST · SEPARATE FY28 ITEM",
-      "spoken": "A separate preliminary F Y twenty-eight request seeks three hundred thousand dollars for A I and enterprise automation pilots.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=519",
-      "verbatim_source": "UASO Artificial Intelligence and Enterprise Automation Initiative: $300,000 unrestricted general funds, zero listed FTE, to explore, pilot, and deploy AI and process automation.",
-      "requires": ["Say request, separate, and preliminary. Do not say appropriated, committed, awarded, or exclusively AI spending."],
-      "contract": {"must_ship": false, "on_screen_verbatim": false}
+      "status": "verified-primary-announcement",
+      "on_screen": "YOU CAN CHANGE YOUR MIND",
+      "spoken": "TCC says patients can change their minds about using Sully.ai.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "evidence_locator": "Patient-choice paragraph, sentence following the refusal instruction.",
+      "density_origin": "f10, already voiced at line 15; later withdrawal differs from initial consent and the separate no-care-penalty promise.",
+      "requires": [
+        "No invented withdrawal interface, retrospective deletion, undoing prior reuse or separate reuse opt-out. Initial refusal is not another fact beyond c2."
+      ],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
     },
     {
       "id": "c12",
-      "status": "verified-primary-negative-finding",
-      "on_screen": "NO EARMARK TO AI ENGAGED",
-      "spoken": "The packet does not earmark that money to the draft.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=501",
-      "verbatim_source": "The AI Engaged presentation and the initial FY28 budget review are separate agenda items, and the packet states budget appropriation decisions are outside the AI Engaged implementation effort.",
-      "requires": ["If later official action links the two, update this claim before delivery."],
-      "contract": {"must_ship": false, "on_screen_verbatim": false}
+      "status": "verified-primary-source-scope",
+      "on_screen": "NO MEASURED BENEFITS HERE",
+      "spoken": "This notice reports no measured benefits.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "evidence_locator": "Full article independently read; benefit assertions contain no outcome measurements or evaluation results.",
+      "density_origin": "f12, already voiced at line 12; one evidence-status finding distinct from c7's announced aim.",
+      "requires": [
+        "Limit the absence claim to this notice. Do not claim the tool never works or that no research exists elsewhere. Repeated audit caveats do not add density facts."
+      ],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
     },
     {
       "id": "c13",
-      "status": "verified-primary-preliminary",
-      "on_screen": "REFINE BEFORE NOVEMBER BOARD MEETING",
-      "spoken": "The budget request is still under initial review and is expected to be refined before the November Board meeting.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=519",
-      "verbatim_source": "The proposed request is marked as submitted by MAUs and will be refined and prioritized before the November Board Meeting.",
-      "requires": ["Do not present the amount as a final Board request or state appropriation."],
-      "contract": {"must_ship": false, "on_screen_verbatim": false}
+      "status": "verified-primary-announcement",
+      "on_screen": "TCC SAYS · RECORDING STORAGE FOLLOWS HIPAA",
+      "spoken": "TCC says recording storage follows HIPAA privacy rules.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "evidence_locator": "First privacy paragraph assigns secure storage and HIPAA protection to recordings, separately from the retention deadline.",
+      "density_origin": "New meaningful privacy-protection assertion for replacement line 9; not yet voiced in the pre-rewrite inventory.",
+      "requires": [
+        "Explicitly attribute to TCC and scope to recordings, not reused deidentified portions. Not a compliance audit, security guarantee or proof of anonymity. Treat the linked security/HIPAA assurances as one fact."
+      ],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
     },
     {
       "id": "c14",
-      "status": "verified-primary-detail",
-      "on_screen": "HUMAN-CENTERED · ACCESS · SECURE · TRANSPARENT",
-      "spoken": "The proposed principles include human-centered learning, access, ethical transparency, security, and return on innovation.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "verbatim_source": "The six headings are Human-Centered, Dedicated to Learning, Access, Ethical & Transparent, Secure & Protected, and Return on Innovation.",
-      "requires": ["Keep these inside the six proposed principles."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c15",
-      "status": "verified-primary-detail",
-      "on_screen": "CLASSROOMS TO ARCTIC RESEARCH",
-      "spoken": "The four proposed priorities run from student learning and faculty teaching to administration and Arctic and climate research.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "verbatim_source": "The four priorities are Student Learning, Faculty Teaching, Administrative Efficiency, and Arctic & Climate Research.",
-      "requires": ["Do not imply any priority is funded or operating."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c16",
-      "status": "verified-primary-detail",
-      "on_screen": "LITERACY · SECURITY · HUMAN OVERSIGHT",
-      "spoken": "The proposed expectations include universal AI literacy, secure environments and tool governance, and human-in-the-loop assurance.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518",
-      "verbatim_source": "The five expectations include Secure Environments, Data & Tool Governance; Human-in-the-Loop Assurance; and Universal AI Literacy.",
-      "requires": ["Describe these as proposed expectations, not current protections."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c17",
-      "status": "verified-primary-draft",
-      "on_screen": "SYSTEMWIDE AI COORDINATING COUNCIL",
-      "spoken": "The implementation draft calls for a systemwide AI Coordinating Council.",
-      "source": "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518",
-      "verbatim_source": "The implementation summary calls for a systemwide AI Coordinating Council to coordinate implementation.",
-      "requires": ["Say would or calls for. Do not present the council as already established."],
+      "status": "verified-primary-announcement",
+      "on_screen": "TO DECLINE · TELL YOUR PROVIDER",
+      "spoken": "To decline recording, tell your provider.",
+      "source": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+      "evidence_locator": "Patient-choice paragraph tells patients who prefer no recording to inform their provider.",
+      "density_origin": "New meaningful procedural channel for replacement line 14; not a duplicate assertion that refusal is permitted.",
+      "requires": [
+        "The concrete refusal channel is the provider. Do not invent forms, portals, physical switch controls, separate reuse opt-out or retrospective deletion."
+      ],
       "contract": {"must_ship": true, "on_screen_verbatim": false}
     }
   ]

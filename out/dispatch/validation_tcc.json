@@ -1,0 +1,80 @@
+{
+  "role": "Independent validator",
+  "window": ["2026-08-24", "2026-09-03"],
+  "verdict": "PASS_WITH_WORDING_GUARDS",
+  "verified_findings": [
+    {
+      "story_title": "TCC introduces an optional AI documentation assistant with patient-choice and provider-review boundaries",
+      "primary_source": {
+        "url": "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/",
+        "outlet": "Tanana Chiefs Conference",
+        "pub_date": "2026-09-02",
+        "visible_date": "September 2, 2026",
+        "html_published_time": "2026-09-02T15:54:31-08:00",
+        "html_modified_time": "2026-09-02T15:56:24-08:00",
+        "author": "Institutional article; HTML author metadata points to /author/rachel-reilly/, with no individual byline in extracted article text.",
+        "independently_refetched": true,
+        "retrieval": "web.open failed; curl -fsSL succeeded repeatedly. Parsed complete article and separately checked HTML publication metadata.",
+        "source_type": "First-party institutional announcement, not independent effectiveness or privacy audit. WordPress publishing format alone does not make this an opinion source."
+      },
+      "background_source": {
+        "url": "https://www.tananachiefs.org/about/",
+        "independently_refetched": true,
+        "retrieval": "curl -fsSL; complete article extraction",
+        "background_context": true,
+        "pub_date": null,
+        "supported_context": "Alaska Native nonprofit and Interior Alaska tribal consortium; 42 members, including 39 villages and 37 federally recognized tribes. These are organization counts, not Sully rollout counts."
+      },
+      "supported_facts": [
+        "TCC announced it is introducing Sully.ai for visit documentation.",
+        "Patient permission precedes recording; patients can decline or change their mind without care being affected.",
+        "The tool drafts notes; the provider reviews, edits when necessary and approves before chart inclusion.",
+        "TCC assigns clinical responsibility to providers and excludes diagnosis, treatment recommendations and medical decisions from this tool's role.",
+        "TCC says recordings have secure storage, HIPAA protection and deletion after 90 days.",
+        "TCC discloses possible company reuse of de-identified recording portions to improve the system."
+      ],
+      "quote_check": {
+        "text": "Choosing not to use Sully.ai will not affect the care you receive.",
+        "word_count": 12,
+        "exact_match": true,
+        "location": "Patient-choice section near article end"
+      },
+      "required_caveats": [
+        "Attribute privacy and benefit assertions to TCC, not independent verification.",
+        "Retention disclosure concerns recordings; it does not specify deletion of chart notes, derivatives or model training effects.",
+        "Withdrawal is stated, but retroactive deletion, undoing prior reuse, and separate reuse consent are unspecified.",
+        "No rollout counts, operational dates, model architecture, measured benefits, error rates or patient sentiment are established.",
+        "Do not infer successful de-identification or guaranteed anonymity."
+      ],
+      "deployment_wording": {
+        "approved": "TCC announced it is introducing Sully.ai.",
+        "reject": ["Fully deployed across TCC", "Available in all 42 villages", "Proven to improve accuracy", "Deletes all patient data after 90 days"],
+        "researcher_correction": "Replace deployment announcement with introduction announcement; no completed rollout was verified."
+      },
+      "honest_ai_mechanism": "Audio-to-draft documentation with human approval, not autonomous care.",
+      "confidence": "high for publication and stated institutional terms; unverified for implementation and outcomes",
+      "is_in_window": true,
+      "sourcing_rule_pass": true,
+      "sourcing_rule_reason": "One independently fetched primary institutional announcement is sufficient.",
+      "needs_softening": true,
+      "recommended": true
+    }
+  ],
+  "dedupe": {
+    "result": "PASS_LOCAL_RECORDS",
+    "checked": [
+      "config/state.yaml dispatch_history",
+      "archive and out/dispatch-2026-09-02-shipped textual JSON/YAML/TXT artifacts",
+      "/Users/t/Developer/alaskaaicarousels/ledger/topics.json",
+      "/Users/t/Developer/alaskaaicarousels/runs claims.json and copy.json"
+    ],
+    "terms": ["Sully", "announcement URL", "medical scribe"],
+    "matches": 0,
+    "caveat": "Local publication records checked, not an exhaustive external-web dedupe. TCC's separate medicine-drone planning award is not this story."
+  },
+  "dropped": [],
+  "stats": {"input_count": 1, "verified_count": 1, "drop_rate": "0%"},
+  "recommend_broaden_window": true,
+  "window_note": "Validator format requires this flag below three findings; the winning single Dispatch story passes without broadening.",
+  "scope_note": "Institutional-claim verification only. No medical recommendations, private data, subagents or source changes. Only this validation file was written."
+}

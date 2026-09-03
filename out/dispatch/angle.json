@@ -1,42 +1,48 @@
 {
-  "run_date": "2026-09-02",
-  "story_id": "ua-ai-engaged-draft",
-  "thesis": "The University of Alaska's draft draws its most consequential AI boundary at the meaning of a diploma: AI may assist, but the credential must still certify competence the student earned, while consequential AI decisions remain subject to documented evaluation and meaningful human oversight.",
-  "falsifier": "The angle fails if a final adopted statement removes the earned-competence pledge or the requirement for documented evaluation and meaningful human oversight. Even if adopted, it fails in practice if the one-year work produces paperwork without evidence that learning, oversight, and accountability improved.",
+  "run_date": "2026-09-03",
+  "title": "The Care Has to Stay",
+  "story_id": "tcc-sully-consent",
+  "thesis": "TCC's announced AI scribe offers a useful clerical job without making recording a condition of care. That patient choice concerns both an approved note and disclosed possible reuse of de-identified recording portions.",
+  "falsifier": "The announced commitment fails in practice if refusing recording causes reduced care. This film identifies the standard, not an observed implementation result. The narrow source claim would change if TCC retracts or changes its terms.",
   "supporting_facts": [
     {
-      "claims": ["c9"],
-      "fact": "The draft says a UA credential will continue to certify competence the student has earned."
+      "claims": [
+        "c2",
+        "c6"
+      ],
+      "fact": "Patient permission and refusal without effect on care are explicit."
     },
     {
-      "claims": ["c8"],
-      "fact": "For analytical or predictive AI affecting student progress or business operations, the draft calls for documented evaluation and meaningful human oversight."
+      "claims": [
+        "c3",
+        "c7"
+      ],
+      "fact": "Attention is the aim; provider approval controls chart inclusion."
     },
     {
-      "claims": ["c6", "c7"],
-      "fact": "UAA, UAF, and UAS retain curriculum decisions, and faculty may require, encourage, limit, or exclude AI according to course objectives."
-    },
-    {
-      "claims": ["c5"],
-      "fact": "Only if the draft is adopted would institutions have one year to create policies and plans aligned with the framework."
+      "claims": [
+        "c4",
+        "c5"
+      ],
+      "fact": "The 90-day clock applies to recordings; possible reuse is disclosed separately."
     }
   ],
-  "fair_counterpoint": "These are promises, not controls yet. The draft does not define an earned-competence metric, the authority a human reviewer must possess, an appeal path, or the evidence that would distinguish meaningful oversight from a rubber stamp.",
-  "who_it_serves": "Students and families across UAA, UAF, and UAS; Alaska employers who rely on a UA credential; faculty protecting disciplinary standards; and people affected by AI-assisted admissions, aid, advising, or HR analysis.",
-  "valence": "Constructive and exacting. Treat the draft as a serious public-trust promise, make its safeguards legible, and end on the evidence test that would make the promise real.",
+  "fair_counterpoint": "The notice is not an audit or complete consent manual. It discloses reuse openly, and a patient could reasonably welcome the tool. No measured benefit, privacy failure, derivative retention rule or separate consent mechanism has been established.",
+  "valence": "hopeful",
+  "stance": "Constructively hopeful about a useful narrow job and explicit patient agency; exact about untested promises.",
   "second_movement": {
-    "recontextualizing_fact": "The same human judgment the draft protects at the diploma also appears at the institutional decision desk, where admissions, financial aid, advising, and HR analytics are named examples of consequential use.",
-    "test": "If adopted, the one-year clock should yield visible policies, evaluated systems, meaningful human ownership, and evidence that instructional uses deepen durable learning rather than simply increase tool activity."
+    "recontextualizing_fact": "The source recording and the approved chart note have different roles; de-identified recording portions may improve the system.",
+    "test": "After explaining the full offer, give YES and NO equal dignity. TCC promises care continues either way. A favorable announced design is not proof of patient experience."
   },
   "runner_up_angles": [
     {
-      "angle": "Share the expensive plumbing; keep judgment in the classroom",
-      "why_it_lost": "Shared infrastructure and faculty authority are source-supported, but plumbing is an implementation mechanism, not the human consequence. It also risks implying one uniform academic policy."
+      "angle": "TCC explains refusing recording more clearly than controlling later reuse",
+      "why_it_lost": "True only of this notice's detail; making the gap the main thesis would inflate an introduction into a failed audit."
     },
     {
-      "angle": "The separate $300,000 automation request is the first test",
-      "why_it_lost": "The FY28 request is a separate agenda item with no documented link to AI Engaged. Making it the thesis would manufacture a funding connection."
+      "angle": "The Note Has Two Lives",
+      "why_it_lost": "Misleading conflation. Reused portions come from recordings, not the approved chart note."
     }
   ],
-  "room_result": "Four independent angle passes converged on the earned-diploma and human-accountability thesis. Cross-challenge retained shared system supports as a mechanism, rejected the separate budget request as a framework proxy, and made the DRAFT and IF ADOPTED qualifiers load-bearing."
+  "room_result": "Three independent proposals and full mutual cross-challenge. Unanimous synthesis keeps patient choice central, grafts artifact distinctions, and labels all staged appointments as illustrations of TCC's terms."
 }

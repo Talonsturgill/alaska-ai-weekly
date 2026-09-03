@@ -1,190 +1,179 @@
 {
- "run_date": "2026-09-02",
- "title": "THE DIPLOMA STILL HAS TO BE EARNED",
- "note": "A 120-second causal chain. DRAFT and IF ADOPTED remain load-bearing in voice and picture.",
+ "run_date": "2026-09-03",
+ "title": "THE CARE HAS TO STAY",
+ "note": "Editorial illustration of TCC's announced terms, not patient testimony or a deployment audit.",
  "caption_fixups": {
-  "U A A": "UAA",
-  "U A F": "UAF",
-  "U A S": "UAS",
-  "H R": "HR",
-  "U A credential": "UA credential"
+  "A I": "AI",
+  "T C C": "TCC",
+  "Sully dot A I": "Sully.ai"
  },
  "lines": [
   {
    "idx": 0,
-   "text": "An automatic press targets a U A diploma. One question stops it. Who earned this?",
+   "text": "What changes when you tell an A I note taker no?",
+   "t": "What changes when you tell an A I note taker no?",
    "claims": [
-    "c9"
-   ],
-   "t": "An automatic press targets a U A diploma. One question stops it. Who earned this?"
+    "c6"
+   ]
   },
   {
    "idx": 1,
-   "text": "AI Engaged is a draft the Board discusses today.",
+   "text": "On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.",
+   "t": "On September second, Tanana Chiefs Conference, an Interior Alaska tribal health organization, announced it's introducing Sully dot A I.",
    "claims": [
-    "c1"
-   ],
-   "t": "AI Engaged is a draft the Board discusses today."
+    "c1",
+    "c8"
+   ]
   },
   {
    "idx": 2,
-   "text": "It proposes six principles, four priorities from classrooms to Arctic research, and five expectations including literacy, security, and oversight.",
+   "text": "Its job is paperwork. The aim is less typing and more attention for patients.",
+   "t": "Its job is paperwork. The aim is less typing and more attention for patients.",
    "claims": [
-    "c2",
-    "c3",
-    "c4",
-    "c14",
-    "c15",
-    "c16"
-   ],
-   "t": "It proposes six principles, four priorities from classrooms to Arctic research, and five expectations including literacy, security, and oversight."
+    "c7"
+   ]
   },
   {
    "idx": 3,
-   "text": "But tools should deepen learning, not replace the effort that builds competence.",
+   "text": "With the patient's permission, the tool listens during the appointment and drafts a note.",
+   "t": "With the patient's permission, the tool listens during the appointment and drafts a note.",
    "claims": [
+    "c2",
     "c9"
-   ],
-   "t": "But tools should deepen learning, not replace the effort that builds competence."
+   ]
   },
   {
    "idx": 4,
-   "text": "So a U A credential would certify what the student earned.",
+   "text": "That draft still has a boss. The provider reviews it, edits it, and approves it.",
+   "t": "That draft still has a boss. The provider reviews it, edits it, and approves it.",
    "claims": [
-    "c9"
-   ],
-   "t": "So a U A credential would certify what the student earned."
+    "c3"
+   ]
   },
   {
    "idx": 5,
-   "text": "And one framework would not mean one classroom rule.",
+   "text": "Only then can it enter the medical record. Sully isn't making medical decisions.",
+   "t": "Only then can it enter the medical record. Sully isn't making medical decisions.",
    "claims": [
-    "c6"
-   ],
-   "t": "And one framework would not mean one classroom rule."
+    "c3",
+    "c10"
+   ]
   },
   {
    "idx": 6,
-   "text": "U A A, U A F, and U A S keep curriculum judgment. Faculty choose AI by course.",
+   "text": "But does that design actually give patients more attention? Keep that question open.",
+   "t": "But does that design actually give patients more attention? Keep that question open.",
    "claims": [
-    "c6",
     "c7"
-   ],
-   "t": "U A A, U A F, and U A S keep curriculum judgment. Faculty choose AI by course."
+   ]
   },
   {
    "idx": 7,
-   "text": "A coordinating council would share tools and training.",
+   "text": "T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.",
+   "t": "T C C gives recordings a ninety-day deletion policy. Recordings and approved notes are different things.",
    "claims": [
-    "c10",
-    "c17"
-   ],
-   "t": "A coordinating council would share tools and training."
+    "c4"
+   ]
   },
   {
    "idx": 8,
-   "text": "Then the diploma flips into a second trust test.",
+   "text": "The technology company may also use de-identified portions of recordings to improve the system.",
+   "t": "The technology company may also use de-identified portions of recordings to improve the system.",
    "claims": [
-    "c8",
-    "c9"
-   ],
-   "t": "Then the diploma flips into a second trust test."
+    "c5"
+   ]
   },
   {
    "idx": 9,
-   "text": "The draft addresses predictive AI affecting student progress or business operations.",
+   "text": "T C C says recording storage follows HIPAA.",
+   "t": "T C C says recording storage follows HIPAA.",
    "claims": [
-    "c8"
-   ],
-   "t": "The draft addresses predictive AI affecting student progress or business operations."
+    "c13"
+   ]
   },
   {
    "idx": 10,
-   "text": "Examples include admissions, financial aid, advising, and H R analytics.",
+   "text": "Now give the offer its strongest case. Less typing could mean a better conversation.",
+   "t": "Now give the offer its strongest case. Less typing could mean a better conversation.",
    "claims": [
-    "c8"
-   ],
-   "t": "Examples include admissions, financial aid, advising, and H R analytics."
+    "c7"
+   ]
   },
   {
    "idx": 11,
-   "text": "Those uses would need documented evaluation and meaningful human oversight.",
+   "text": "And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.",
+   "t": "And T C C tells patients about the possible reuse. An informed yes is a reasonable choice.",
    "claims": [
-    "c8"
-   ],
-   "t": "Those uses would need documented evaluation and meaningful human oversight."
+    "c5",
+    "c2"
+   ]
   },
   {
    "idx": 12,
-   "text": "Strong words. But meaningful and earned are not measurements.",
+   "text": "But this notice reports no measured benefits. A sensible design isn't proof that it works.",
+   "t": "But this notice reports no measured benefits. A sensible design isn't proof that it works.",
    "claims": [
-    "c8",
-    "c9"
-   ],
-   "t": "Strong words. But meaningful and earned are not measurements."
+    "c12"
+   ]
   },
   {
    "idx": 13,
-   "text": "It defines neither, nor a reviewer's power.",
+   "text": "One question still matters for that informed choice. How long can de-identified portions be kept?",
+   "t": "One question still matters for that informed choice. How long can de-identified portions be kept?",
    "claims": [
-    "c8",
-    "c9"
-   ],
-   "t": "It defines neither, nor a reviewer's power."
+    "c4",
+    "c5"
+   ]
   },
   {
    "idx": 14,
-   "text": "So the plan must survive its own test.",
+   "text": "Ask about those portions before deciding. To decline, just tell your provider.",
+   "t": "Ask about those portions before deciding. To decline, just tell your provider.",
    "claims": [
-    "c8",
-    "c9"
-   ],
-   "t": "So the plan must survive its own test."
+    "c5",
+    "c14"
+   ]
   },
   {
    "idx": 15,
-   "text": "A twelve-month clock waits behind glass.",
+   "text": "Now switch the recorder off. T C C says you can decline or change your mind.",
+   "t": "Now switch the recorder off. T C C says you can decline or change your mind.",
    "claims": [
-    "c5"
-   ],
-   "t": "A twelve-month clock waits behind glass."
+    "c2",
+    "c11"
+   ]
   },
   {
    "idx": 16,
-   "text": "Still a draft. Clock stopped. Separate budget.",
+   "text": "Your care won't be affected. That's its promise, not an independently tested result.",
+   "t": "Your care won't be affected. That's its promise, not an independently tested result.",
    "claims": [
-    "c1",
-    "c5",
-    "c12"
-   ],
-   "t": "Still a draft. Clock stopped. Separate budget."
+    "c6"
+   ]
   },
   {
    "idx": 17,
-   "text": "If adopted, institutions get one year to build policies and plans.",
+   "text": "Useful A I doesn't need every patient to make the same choice.",
+   "t": "Useful A I doesn't need every patient to make the same choice.",
    "claims": [
-    "c5"
-   ],
-   "t": "If adopted, institutions get one year to build policies and plans."
+    "c6"
+   ]
   },
   {
    "idx": 18,
-   "text": "Then Alaska gets evidence. Did AI deepen learning? Did oversight matter? Does the diploma still mean what it says?",
+   "text": "The machine can step aside. The care has to stay.",
+   "t": "The machine can step aside. The care has to stay.",
    "claims": [
-    "c5",
-    "c8",
-    "c9"
-   ],
-   "t": "Then Alaska gets evidence. Did AI deepen learning? Did oversight matter? Does the diploma still mean what it says?"
+    "c6"
+   ]
   },
   {
    "idx": 19,
-   "text": "The machine can help. A human pulls the press.",
+   "text": "Would you want this note taker at your next visit?",
+   "t": "Would you want this note taker at your next visit?",
    "claims": [
-    "c8",
-    "c9"
-   ],
-   "t": "The machine can help. A human pulls the press."
+    "c2"
+   ]
   }
  ]
 }

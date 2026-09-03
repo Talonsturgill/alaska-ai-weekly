@@ -1,132 +1,87 @@
 {
-  "run_date": "2026-09-02",
+  "run_date": "2026-09-03",
   "window_reported_by_gate": 10,
-  "window_note": "The September 1st Dispatch shipped yesterday, so the gate reports the ten-day minimum window.",
   "search_budget": {
-    "round_one_researchers": 3,
-    "caps_briefed": "At most 20 WebSearch calls each, with primary documents and known outlet indexes preferred.",
-    "exhausted": false,
-    "note": "Three non-recursive researchers covered current Alaska outlets, defense and rural technology, and science and resources. Two independent validators are red-teaming the locked story."
+    "researchers": 3,
+    "capped": true,
+    "exhausted": false
   },
   "rungs": [
     {
       "rung": "in_window_sweep",
       "attempted": true,
-      "found_the_story": true,
-      "note": "The University of Alaska released the September 2nd to 3rd Board package on September 1st. It includes the draft AI Engaged statement and implementation plan."
+      "note": "Researchers fetched current public primary reporting."
     },
     {
       "rung": "outlet_index_sweep",
       "attempted": true,
-      "note": "Researchers swept Alaska institutional, local-news, federal science, aviation, defense, rural technology, energy, and resource indexes."
+      "note": "Researchers fetched current public primary reporting."
     },
     {
       "rung": "widened_window",
       "attempted": false,
-      "note": "Not needed because the selected Board meeting begins today."
+      "note": "Not needed; fresh in-window primary announcement locked."
     },
     {
       "rung": "carried_leads",
-      "attempted": true,
-      "note": "Recent carried leads were reviewed. The fresh Board package is more current and more directly AI-centered."
+      "attempted": false,
+      "note": "Not needed; fresh in-window primary announcement locked."
     },
     {
       "rung": "primary_source_mining",
       "attempted": true,
-      "note": "The locked story rests on the official Board agenda package, the separate draft statement and implementation summary, and the University of Alaska release."
+      "note": "Researchers fetched current public primary reporting."
     },
     {
       "rung": "follow_up",
       "attempted": false,
-      "note": "Not needed."
+      "note": "Not needed; fresh in-window primary announcement locked."
     },
     {
       "rung": "pegged_explainer",
       "attempted": false,
-      "note": "The floor was not reached."
+      "note": "Not needed; fresh in-window primary announcement locked."
     }
   ],
   "locked_story": {
-    "id": "ua-ai-engaged-draft",
+    "id": "tcc-sully-consent",
     "found_at_rung": "in_window_sweep",
-    "headline": "THE DIPLOMA GETS A CLOCK",
-    "one_line": "The University of Alaska Board will discuss a draft AI Engaged framework that promises earned competence, human oversight, universal AI literacy, and institution-level policies within one year while leaving curriculum decisions with UAA, UAF, and UAS.",
-    "story_question": "Can a statewide AI framework protect what a University of Alaska credential means without taking academic judgment away from its three universities?",
-    "why_this_one": [
-      "The Board meets in Juneau today and tomorrow, which gives the story a same-day public hook.",
-      "The AI angle is the subject itself rather than an editorial bridge from unrelated technology.",
-      "The draft contains a visual operating system with six principles, four priorities, five implementation expectations, and a one-year policy clock.",
-      "The tension is earned and testable. Systemwide consistency has to coexist with faculty judgment, human oversight, and three separately accredited universities.",
-      "The story is distinct from every Dispatch inside the thirty-day dedupe window.",
-      "The draft label is load-bearing. The film must never say the Board adopted or funded the framework."
-    ],
+    "headline": "The Care Has to Stay",
     "primary_sources": [
-      "https://www.alaska.edu/opa/enews/2026/0901/",
-      "https://pub-alaska.escribemeetings.com/Meeting.aspx?Id=67f56e6e-7e7c-4de6-930e-eef44503d180&Agenda=Agenda&lang=English",
-      "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=517",
-      "https://pub-alaska.escribemeetings.com/FileStream.ashx?DocumentId=518"
+      "https://www.tananachiefs.org/introducing-sully-ai-helping-providers-focus-on-what-matters-most/"
     ],
-    "dedupe": {
-      "result": "FRESH",
-      "entities_checked": "University of Alaska Board AI Engaged, systemwide AI Coordinating Council, consequential AI admissions financial aid advising HR analytics, institutional AI policy within one year",
-      "first_check_note": "A broader phrase set collided on generic words earned and one with the August 7th salmon-robot story. The honest distinctive set is fresh."
-    },
-    "stance_intent": "Constructive scrutiny. Treat the draft as a serious attempt to turn AI from scattered tool use into an accountable university operating framework, then measure it against its own one-year clock and earned-competence promise.",
-    "verification_status": "Primary documents verified. Three independent adversarial reads completed: the credential and human-oversight angle is fully supported; the shared-infrastructure and separate-budget angles are retained only as secondary context with explicit limits."
+    "dedupe": "FRESH; TCC Sully.ai is distinct from rural-health awards."
   },
   "candidates": [
     {
-      "id": "ua-ai-engaged-draft",
-      "status": "LOCKED",
-      "headline": "University of Alaska Board discusses a draft statewide AI framework",
+      "headline": "TCC introduces Sully.ai",
+      "status": "SELECTED",
       "date": "2026-09-02",
-      "confidence": 0.96
+      "reason": "New Native-led implementation announcement with precise consent and review boundaries."
     },
     {
-      "id": "nenana-chaff-drone",
+      "headline": "Permafrost Discovery Gateway lake drainage",
       "status": "RUNNER-UP",
-      "headline": "A NOAA filing describes an active Nenana UAS chaff-deployment experiment",
-      "date": "2026-08-23",
-      "why_not": "Exceptionally visual, but the filing proves planned R and D rather than an Alaska flight or result, and the specific Alaska AI implementation is not documented.",
-      "carry_forward": true
-    },
-    {
-      "id": "permafrost-gateway-lake-drainage",
-      "status": "RUNNER-UP",
-      "headline": "AI-assisted satellite mapping flags recent Arctic lake drainage",
       "date": "2026-08-26",
-      "why_not": "The project is genuine AI and visually strong, but the current article's roughly thirty 2026 events are not independently confirmed and its linked map unexpectedly points to July 2025.",
-      "carry_forward": true
+      "reason": "Real AI science; carousel already covered August 28. Current lake count caveat retained."
     },
     {
-      "id": "aurora-ai-rural-microgrids",
-      "status": "EXCLUDED",
-      "headline": "Fresh local coverage revisits UAF's AURORA-AI rural-grid project",
-      "date": "2026-08-27",
-      "why_not": "The Dispatch covered AURORA-AI on July 29th, still inside the thirty-day dedupe window.",
-      "carry_forward": false
+      "headline": "RHT medicine drone planning",
+      "status": "RUNNER-UP",
+      "date": "2026-08-25",
+      "reason": "Planning only; carousel covered August 30."
     },
     {
-      "id": "faa-beyond-phase-two",
+      "headline": "RHT AI imaging network",
+      "status": "RUNNER-UP",
+      "date": "2026-08-25",
+      "reason": "Award not verified deployment; carousel covered August 30."
+    },
+    {
+      "headline": "ACEP ARCTIC grant",
       "status": "REJECTED",
-      "headline": "FAA will roughly double the BEYOND drone-integration program",
-      "date": "2026-08-27",
-      "why_not": "UAF is a Phase One lead and Alaska operations are well documented, but the new expansion announcement does not identify an AI or machine-learning system or a new Alaska selection.",
-      "carry_forward": true
-    }
-  ],
-  "known_source_limits": [
-    {
-      "surface": "Document status",
-      "limit": "The statement is labeled DRAFT and appears as a presentation or update. The posted agenda shows no adoption motion. Say will discuss or proposes, never adopted, enacted, or now requires."
-    },
-    {
-      "surface": "Budget",
-      "limit": "The $300,000 UASO AI and enterprise automation item is a separate FY28 budget request in the same Board package. It must not be described as funding for the AI Engaged framework unless the Board documents expressly link them."
-    },
-    {
-      "surface": "Reaction and implementation",
-      "limit": "The sources show no measured outcomes, public reaction, completed policy, or deployed consequential-AI system. The one-year clock begins only if the draft is adopted."
+      "date": "2026-09-01",
+      "reason": "No verified AI mechanism."
     }
   ]
 }

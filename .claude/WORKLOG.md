@@ -7,10 +7,27 @@ Three researchers, independent validation, FRESH dedupe and story gate passed. A
 cross-challenge complete. Locked story is TCC's September 2 Sully.ai announcement, title
 The Care Has to Stay. No claim of proven outcomes or completed rollout. Directors room complete.
 Gate 0A/B/C/D/E pass after specific storyboard, fairness and flow revisions. Narration 277 words.
-Three Gemini takes generated (118.2s, 114.3s, 116.2s); soundcheck/alignment running in managed
-terminal session 2512. Episode Dispatch0903 whole crude blocking authored; not yet rendered.
-Next: finish voice and whole rough cut,
-taste loop, objective gates, independent panel, exact-byte ship lock, permanent delivery and merge.
+Three Gemini takes generated (118.2s, 114.3s, 116.2s); take0 passed WER0.015 and pitch9.19.
+Whole roughcut rendered, muxed with real audio, ffprobed131.0667s and contact sheet LOOKED.
+Independent density review found12meaningful facts inside7bundles, still insufficient for118s.
+Two repetitive lines replaced with sourced recording-HIPAA assurance and tell-provider refusal
+procedure. Surgical patch9/14 passed WER0 each,1.0xpace,4,721,346outside samples unchanged.
+14claim ledger/VO gate passes. Word ledger now moves atomically with surgical captions/audio.
+All14scenes authored and four affected-range visual passes inspected. Hand approaches actual
+lever grip; OFF now aligns with phase-continuous brake, and its label clears exposed linkage.
+Continuous illustration/TCC attribution is on hypothetical care scenes. Source labels and
+policy timing corrected. Claims contract passes14 obligations through actual rendered Label routing.
+Text-fit covers57variants; overlap covers14scenes; unknown transformed bounds remain disclosed.
+71Python tests and6shelf tests pass; final typecheck completing. Narration is271words,
+14independently validated facts in117.78s; patch report binds the two new voice slots.
+Current PCM mix -14.83LUFS/-2.38dBTP. Scheduled0.90s dip includes tails; core is near-silent.
+Next: full-resolution final render/encode, rendered objective gates, independent panel,
+exact-byte ship lock, permanent delivery, visually verified Gmail draft and merge.
+Production changes committed as1792245. Managed final renderer83280 has completed chunks0/1
+and is processing2/3 of12 with2slots. No final encodes or September3 Gmail draft exist yet.
+The connected Gmail profile is currently talon.sturgill@gmail.com, not the account stated in
+CLAUDE.md; use the user's explicitly requested connected Gmail, to docket@alaskaaihq.com,
+omit From, and keep unsent. Final email must disclose missing agreed panel anchors.
 
 Run improvements: macOS fallback for run_bg.sh (setsid is absent), and content-bound render
 freshness that preserves stale-render protection without treating a git checkout as a source edit.

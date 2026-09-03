@@ -2888,3 +2888,66 @@ separates the preliminary FY28 budget request from that framework.
 - Delivered square audio: -14.95 LUFS integrated and -2.34 dBTP true peak.
 - Ship gate: three deliverables and 64 evidence pieces hash-matched; all 30 beats covered; PASS
   after one blocked editing round exposed and closed three stale-proof defects.
+
+---
+
+## 2026-09-03 — "The Care Has to Stay"
+
+Tanana Chiefs Conference's September 2 Sully.ai notice becomes a patient-choice story:
+permission precedes recording, the provider owns note approval, and the announced care promise
+does not depend on saying yes. Benefits are aims, not measured outcomes in this notice. The
+recording's ninety-day policy is never assigned to possible deidentified derivatives.
+
+### Verified production upgrades
+
+1. **Freshness follows contents, not checkout timestamps.** `dc86aa9` and `89ddb45` bind renders,
+   cache entries, actual props, mixes and encoded outputs to content hashes. Changed or missing
+   inputs fail; an unchanged git checkout does not invalidate a film. Cache chunks are reusable
+   only after complete manifest and frame-count validation. The mix receipt also includes the
+   current storyboard because it controls the sound-event schedule.
+2. **Background launch has a real readiness boundary.** `dc86aa9` and `0d3eeab` provide a macOS
+   process-session fallback and child READY handshake. A cross-terminal probe verified its
+   completion marker. Voice soundchecks report stage progress on stderr without corrupting JSON.
+   Existing completed takes were reused during recovery; failed launches were not called success.
+3. **Fact density is checked before Gemini spend.** `1792245` adds a provisional pre-synthesis
+   guard using the larger of declared target seconds and current word count / 2.4. It ignores stale
+   voice timings, retains all claim obligations, and requires the actual synthesis prompt to match
+   the checked transcript. Measured post-synthesis checking remains unchanged. Independent review
+   refused to pad seven bundled claims into fourteen; two redundant narration lines were instead
+   replaced with two additional source-backed facts. Both surgical replacements measured WER 0.0,
+   stayed at 1.0x pace and preserved 4,721,346 samples outside their slots exactly.
+4. **Surgical voice edits keep the word ledger current.** `1792245` updates aligned words together
+   with recaptioned replacement slots, after the sample-preservation assertion. Captions and
+   accents can no longer silently revive superseded speech from a stale words.json.
+5. **Real components receive real checks.** `1792245` gives the custom Label component AST-based
+   text-fit, overlap and zoom coverage. The claims gate follows the actual beat-to-active-label
+   renderer and its scene suppression, instead of accepting every string in props. Unresolved
+   geometry is reported explicitly; source reachability is never represented as optical QA.
+   Negative tests cover removed renderers, suppressed text, clipping, overlap and zero coverage.
+6. **The shelf gained a continuous tape brake and articulated grip.** `1792245` adds optional
+   running/paused tape transport with continuous deceleration, a long-throw lever sharing one
+   pivot, and GripHand anchored to the real grip. Legacy defaults remain tested. Six shelf tests
+   pass; fresh frame strips show the approach, OFF travel and brake. The control is an editorial
+   metaphor, not a claim about a real patient interface.
+7. **The frame evidence no longer steals a frame from the preceding move.** `1792245` corrects
+   the final-strip clamp from n-1-length*step to n-1-(length-1)*step and rejects insufficient
+   frames before writing evidence. Five tests verify exact colored-frame sequences, step-two
+   sampling and cropped strips. The actual September 3 pack maps all thirty-eight beats to the
+   conformed voice clock, rather than retaining yesterday's move names.
+8. **Visual review catches what arithmetic cannot.** Four look passes corrected the source-card
+   collision, moving attribution, misplaced lever labels, a premature OFF state, the recording
+   policy's order, and missing continuous illustration/TCC labels. These were viewed again after
+   the edits. The fitted 0.90-second audio dip includes decay tails; its near-silent core is not
+   described as 0.90 seconds of digital silence.
+
+### Repeat-offender escalation
+
+`config/panel_anchors.md` remains absent, as already recorded for September 2. Historical lookup
+found no agreed exemplar scores to recover. An agent cannot invent owner-agreed calibration.
+This is disclosed to judges and must be disclosed in the email; the actual rubric and hard
+blockers still apply without a waiver.
+
+### Release evidence
+
+Pending the full-resolution rendered gate, final evidence pack, independent panel and ship lock.
+The source build and partial-frame inspection above are not claims of publication or Gmail delivery.

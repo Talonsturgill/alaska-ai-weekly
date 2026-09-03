@@ -1,0 +1,77 @@
+{
+  "artifact": "out/dispatch/post.txt",
+  "text_sha256": "b6af6cb2c04026b076e8c7274f08d8d05419067d60bdb4b34c3599465d160179",
+  "rubric": "config/linkedin_caption_rubric.yaml",
+  "objective_gate": {
+    "pass": true,
+    "method": "Independently ran caption_check.lint on the exact current post without modifying the post or report.",
+    "chars": 1714,
+    "hook_chars": 68,
+    "hashtags": 4,
+    "fails": [],
+    "warns": []
+  },
+  "hard_fails": [],
+  "criteria": [
+    {
+      "name": "Hook / scroll-stop",
+      "score": 8.5,
+      "weight": 0.20,
+      "weighted_points": 1.70,
+      "notes": "A clear pro-utility, pro-choice position fits well inside the mobile fold. It earns the later care-preserved payoff. The next paragraph supplies credible local context rather than intensifying the tension, so this is strong rather than a maximal scroll-stop."
+    },
+    {
+      "name": "Point of view / take",
+      "score": 9.0,
+      "weight": 0.18,
+      "weighted_points": 1.62,
+      "notes": "The adoption standard is explicit and defensible: useful work and meaningful refusal can coexist. The post earns the generalization through TCC's terms instead of merely summarizing a product launch."
+    },
+    {
+      "name": "Substance & specificity",
+      "score": 9.0,
+      "weight": 0.16,
+      "weighted_points": 1.44,
+      "notes": "TCC, Sully.ai, Interior Alaska, September 2nd, provider approval, the 90-day recording policy and possible reuse make this particular story informative. The distinction among recording, chart note and deidentified portions is the non-obvious detail."
+    },
+    {
+      "name": "Readability & restraint",
+      "score": 9.0,
+      "weight": 0.12,
+      "weighted_points": 1.08,
+      "notes": "1714 characters, short paragraphs, deliberate whitespace and no decorative formatting. The privacy paragraph is the densest, but the separate objects remain understandable. Contractions and low comma density keep the voice direct."
+    },
+    {
+      "name": "Engagement design (CTA + comment-bait)",
+      "score": 9.0,
+      "weight": 0.12,
+      "weighted_points": 1.08,
+      "notes": "The final question asks what information a reader would need before consenting at an appointment. It invites reasons and conditions rather than a binary vote or generic thoughts."
+    },
+    {
+      "name": "Brand voice & accuracy",
+      "score": 9.5,
+      "weight": 0.12,
+      "weighted_points": 1.14,
+      "notes": "Alaska-specific and supportive of a useful AI function without boosterism or manufactured suspicion. Claims trace to c1-c7 and the organizational source. The date and 90-day figure appear in the video script. Announcement, aim, possible reuse and lack of measured benefits are distinguished; no rollout count, derivative deadline or consent-revocation mechanism is invented."
+    },
+    {
+      "name": "Hashtag craft",
+      "score": 8.0,
+      "weight": 0.10,
+      "weighted_points": 0.80,
+      "notes": "Four relevant tail tags provide broad AI, local Alaska and two subject-specific entry points. The mix is deliberate, but current audience-size bands were not established, so the rubric's strongest popularity-tier descriptor is not fully evidenced."
+    }
+  ],
+  "weighted_math": "8.5*0.20 + 9*0.18 + 9*0.16 + 9*0.12 + 9*0.12 + 9.5*0.12 + 8*0.10 = 8.86",
+  "weighted_total": 8.86,
+  "threshold": 8.5,
+  "ship": true,
+  "weakest_criterion": "Hashtag craft",
+  "one_sentence_fix": "No revision is required to ship; optional precision polish is to replace 'makes edits' with 'edits as needed' so provider review does not sound as though every draft necessarily requires changes.",
+  "editor_notes": [
+    "The caption-specific LinkedIn rubric governs the four hashtags; the writer's Facebook-only no-hashtag rule does not apply.",
+    "The recommendation and adoption standard are clearly editorial judgments, not reported patient outcomes or medical advice.",
+    "No edits were made to post.txt. This score applies only to the exact hash recorded above."
+  ]
+}
