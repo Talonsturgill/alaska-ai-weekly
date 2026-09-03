@@ -107,20 +107,12 @@ fi
 # and reported "a chunk failed" several minutes later. The real message was on line 3 of a
 # temp log nobody had a path to.
 #
-# esbuild parses the whole engine in well under a second, so the check is free next to a
-# render, and it turns a multi-minute mystery into one line naming the file and the column.
+# Use one installed esbuild service for the whole engine; per-file npx startup can take
+# minutes on the local host. This reports elapsed time rather than promising a duration.
 # It is a PARSE, not a typecheck: it catches the class that stops a bundle dead, and it does
 # not pretend to catch a type error, which Remotion would render straight through anyway.
 if [ -d video-engine/node_modules/esbuild ]; then
-  _parse_err=0
-  for _f in video-engine/src/*.tsx video-engine/src/*.ts video-engine/src/lib/*.tsx; do
-    [ -e "$_f" ] || continue
-    if ! (cd video-engine && npx --no-install esbuild "${_f#video-engine/}" \
-            --log-level=error --outfile=/dev/null) 2>&1; then
-      _parse_err=1
-    fi
-  done
-  if [ "$_parse_err" -ne 0 ]; then
+  if ! node scripts/parse_engine.cjs; then
     echo "render_parallel.sh: the engine does not parse, so no chunk could ever bundle." >&2
     echo "Fix the syntax above and re-launch. Nothing was rendered." >&2
     exit 4

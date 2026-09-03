@@ -18,7 +18,7 @@ SCHEMA = 2
 RENDER_REQUIRED = ('video-engine/src/index.ts', 'video-engine/package.json',
                    'video-engine/package-lock.json', 'video-engine/tsconfig.json',
                    'video-engine/remotion.config.ts', 'scripts/render_parallel.sh',
-                   'scripts/render_provenance.py')
+                   'scripts/render_provenance.py', 'scripts/parse_engine.cjs')
 RENDER_PATTERNS = ('video-engine/src/**/*', 'video-engine/public/**/*',
                    'video-engine/node_modules/.package-lock.json',
                    'out/dispatch/captions.json', 'scripts/build_scenes.py',
