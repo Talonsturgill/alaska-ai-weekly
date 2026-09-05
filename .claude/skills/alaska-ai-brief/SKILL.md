@@ -55,7 +55,7 @@ MONO FONT     JetBrains Mono Regular for telemetry stamps
 - Thin 120px gold rule beneath kicker
 - Topic headline in Fraunces Black, **auto-shrink from 96pt → 64pt** to fit canvas width
 - Italic gold motto beneath headline
-- Footer band at y=H-110 with byline left, coordinates right
+- Footer band at y=H-110 with coordinates stamp centered (no byline)
 - Coordinates stamp `61°13′N · 149°54′W` (Anchorage default, overridable)
 - Thin gold hairline above footer
 
