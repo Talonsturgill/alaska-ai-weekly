@@ -1,0 +1,16 @@
+{
+  "criteria": [
+    {"name": "Hook strength",        "score": 9,  "weight": 0.15, "notes": "Names a concrete tension ('three federal AI threads...don't add up') and hints at the missing governance option. Not a single named deadline in the hook itself, but the structural tension is specific and this-week."},
+    {"name": "Local relevance",      "score": 10, "weight": 0.20, "notes": "Every claim is named-AK: UAF, DIU, JBER, Clear SFS, Eielson, ANLC, Sullivan, Tobin, Alaska's grid. No imported stories."},
+    {"name": "Factual density",      "score": 9,  "weight": 0.15, "notes": "Dates (May 8/9/13/29), counts (1,400 grants, 4,700 acres, 12 sites), named judge, named senators, named bases, named UAF center, minus 40 degrees. Specifics in nearly every sentence."},
+    {"name": "Source quality",       "score": 9,  "weight": 0.15, "notes": "UAF-DIU triple-sourced; DOGE/NEH ruling has PBS+WaPo+Sun Star; ADN/DeMarban primary for AF data centers; Alaska Beacon for daybook. Two highest-leverage stories re-verified by orchestrator. All claims in post map to verified findings."},
+    {"name": "Voice match",          "score": 9,  "weight": 0.15, "notes": "Hits the post_001 structural pattern: conventional read, structurally-false counter, lock-in moment, debatable close. 'That's the lock-in' echoes the anchor. Slight compression vs the cleaner section beats of the example."},
+    {"name": "Readability (mobile)", "score": 8,  "weight": 0.10, "notes": "~360 words, in target band. Paragraph 4 (the McMahon ruling) is dense for mobile and runs long; otherwise scannable."},
+    {"name": "Engagement question",  "score": 10, "weight": 0.10, "notes": "Real, debatable, and tied directly to the host-vs-governance tension that organizes the post. No follow-us, no hashtags."}
+  ],
+  "weighted_total": 9.20,
+  "threshold": 8.0,
+  "ship": true,
+  "weakest_criterion": "Readability (mobile)",
+  "one_sentence_fix": "Split the long McMahon-ruling paragraph after the judge's quote so the ANLC sentence stands alone for mobile scanning."
+}
