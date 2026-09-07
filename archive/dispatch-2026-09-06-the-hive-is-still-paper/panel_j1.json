@@ -1,0 +1,51 @@
+{
+  "judge_id": "J1",
+  "axes": {
+    "Hook & retention": 8.1,
+    "Illustration craft & detail": 6.9,
+    "Motion & animation craft": 6.8,
+    "Composition & staging": 7.7,
+    "Color & grade": 8.1,
+    "Typography & captions": 7.8,
+    "Sound design & mix": 8.2,
+    "VO–illustration sync & entertainment": 7.7,
+    "Accuracy & sourcing": 8.6,
+    "Alaska authenticity & cultural respect": 8.2,
+    "Writing & post quality": 8.6
+  },
+  "weights": {
+    "Hook & retention": 0.12,
+    "Illustration craft & detail": 0.16,
+    "Motion & animation craft": 0.12,
+    "Composition & staging": 0.08,
+    "Color & grade": 0.08,
+    "Typography & captions": 0.06,
+    "Sound design & mix": 0.1,
+    "VO–illustration sync & entertainment": 0.08,
+    "Accuracy & sourcing": 0.1,
+    "Alaska authenticity & cultural respect": 0.06,
+    "Writing & post quality": 0.04
+  },
+  "weighted_total": 7.756,
+  "hard_blockers": [],
+  "concrete_defects": [
+    {"timestamp_s": 35.75, "axis": "Motion & animation craft", "finding": "The cable-unspool strip changes only 0.2 percent of pixels and appears nearly identical frame to frame. The planned subject action is much less legible than the measured camera and background activity."},
+    {"timestamp_s": 55.45, "axis": "Motion & animation craft", "finding": "The Could, not will beat changes only 0.3 percent across its evidence strip. The conditional distinction is clear in text, but the branch itself does not perform emphatically enough to create a strong visual turn."},
+    {"timestamp_s": 60.6, "axis": "Illustration craft & detail", "finding": "The dark proof-bench panel contains extremely low-contrast placeholder forms. The emptiness supports the argument, but the central surface reads under-finished beside the crisp cable, dial, and paper assets."},
+    {"timestamp_s": 83.05, "axis": "Hook & retention", "finding": "The paper-register sequence repeats closely related centered-card compositions through the application notice, study-priority ticket, and calendar. The register change is welcome, but the sustained staging creates the film's clearest retention sag."},
+    {"timestamp_s": 102.95, "axis": "Motion & animation craft", "finding": "The calendar-lock strip changes only 0.5 percent and shows little visible anticipation or settle. The deadline lands through scale and typography more than animated object performance."},
+    {"timestamp_s": 120.93, "axis": "Hook & retention", "finding": "The narration and thesis resolve before a long, quiet credits tail. The required source and music credits are readable, but the extended low-motion ending weakens loop momentum."},
+    {"timestamp_s": 42.0, "axis": "Typography & captions", "finding": "Several tertiary source and qualifier lines are materially smaller than the strong headline and caption system. They retain measurable edge energy but are difficult to parse at phone viewing size."}
+  ],
+  "strengths": [
+    "The opening question and cable-to-hive image establish a specific physical idea immediately, and the one-inch-short callback gives the film a coherent visual thesis rather than a collection of disconnected facts.",
+    "Proposal status is disciplined throughout. Proposed, could, if issued, study priority, no construction, and still to prove remain explicit in both voice and picture.",
+    "The marine-indigo blueprint world with phosphor green and coral accents is story-motivated, cohesive, and distinct from the supplied gray laboratory anchors. The cream federal-record register creates a clear second-act contrast.",
+    "The objective quality report passes every check, including sharpness, text energy, caption synchronization, camera motion, living-screen coverage, hook motion, SFX audibility, and the performed silence dip.",
+    "The mix is delivery-ready at minus 14.45 LUFS, minus 2.44 dBTP, and 6.8 LU, with sourced music, visible licensing credit, and 25 verified audible events from 35 planned SFX.",
+    "The source package carefully separates the applicant proposal, the filed application, and FERC's preliminary-permit process. The film avoids presenting the concept as built, financed, interconnected, or approved.",
+    "The Alaska framing is concrete and locally literate through Cook Inlet, Nikiski, the Railbelt, Alaska-time conversion, and the insistence that value must actually remain in Alaska.",
+    "The post is unusually clean and substantive. It takes a defensible position, preserves every important caveat, avoids formatting gimmicks, and ends with a specific question."
+  ],
+  "ship": true
+}

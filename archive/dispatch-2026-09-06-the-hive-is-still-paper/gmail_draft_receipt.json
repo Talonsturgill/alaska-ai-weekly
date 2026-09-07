@@ -1,0 +1,19 @@
+{
+  "draft_id": "r-3608284396614054568",
+  "message_id": "1a07ca273159562e",
+  "thread_id": "1a07ca0a66d302b4",
+  "status": "DRAFT",
+  "sent": false,
+  "subject": "Ready to post · The Hive Is Still Paper",
+  "recipient": "docket@alaskaaihq.com",
+  "mime_type": "text/html",
+  "body_bytes": 9124,
+  "verified": {
+    "square_video_link": true,
+    "vertical_video_link": true,
+    "caption": true,
+    "sources": true,
+    "panel_score": true,
+    "responsive_width": true
+  }
+}

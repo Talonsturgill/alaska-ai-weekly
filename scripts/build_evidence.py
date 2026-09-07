@@ -37,47 +37,44 @@ EV = os.path.join(REPO, "out", "evidence")
 # twelve-frame reel brake and short final hinge use +0.30 (including settlement).
 # HIPAA is explicitly line(9)-driven in Ep0903, not p(19). Keep that actual
 # onset even while the producer reconforms beat 19 to the patched voice.
-MOVE_RUN_DATE = "2026-09-03"
-LINE_START_ACTIONS = {19: 9}
+MOVE_RUN_DATE = "2026-09-06"
+LINE_START_ACTIONS = {}
 MOVES = [
-    ("paper_wave_around_waiting_lever", 1, 0.40),
-    ("off_hand_anticipates_and_waits", 2, 0.35),
-    ("dated_tcc_notice_unfolds", 3, 0.40),
-    ("patient_provider_enter_notice_model", 4, 0.35),
-    ("small_paperwork_sidecar_revealed", 5, 0.35),
-    ("paper_wall_bends_people_turn", 6, 0.35),
-    ("permission_token_precedes_recording", 7, 0.35),
-    ("consented_reels_produce_draft", 8, 0.35),
-    ("provider_pen_stops_draft", 9, 0.35),
-    ("draft_returns_for_edit_and_approval", 10, 0.35),
-    ("approved_note_enters_chart", 11, 0.35),
-    ("medical_decision_stays_with_provider", 12, 0.35),
-    ("room_model_lifts_with_open_question", 13, 0.35),
-    ("patient_responds_to_provider_attention", 14, 0.35),
-    ("recording_only_retention_bracket", 15, 0.35),
-    ("recording_and_chart_wells_separate", 16, 0.35),
-    ("possible_recording_portion_branches", 17, 0.35),
-    ("possible_portion_reaches_improvement_gear", 18, 0.35),
-    ("recording_hipaa_policy_shield", 19, 0.40),
-    ("warm_yes_room_exposes_linkage", 20, 0.35),
-    ("desk_turns_for_conversation", 21, 0.35),
-    ("disclosed_terms_precede_choice", 22, 0.35),
-    ("informed_yes_engages_recording", 23, 0.35),
-    ("room_pulls_back_onto_announcement", 24, 0.50),
-    ("unmeasured_outcome_gauge_separates", 25, 0.35),
-    ("portions_retention_question_opens", 26, 0.35),
-    ("patient_carries_retention_question", 27, 0.35),
-    ("question_and_waiting_choice_return", 28, 0.35),
-    ("tell_provider_refusal_acknowledged", 29, 0.35),
-    ("off_lever_applies_brake", 30, 0.40),
-    ("reels_decelerate_without_deletion", 31, 0.30),
-    ("intact_care_room_revealed", 32, 0.40),
-    ("stated_terms_tab_attaches", 33, 0.35),
-    ("equal_yes_no_rooms_assemble", 34, 0.35),
-    ("choice_detents_settle_equally", 35, 0.35),
-    ("recorder_steps_aside_care_stays", 36, 0.35),
-    ("patient_offers_audience_question", 37, 0.35),
-    ("window_hinge_and_title_resolve", 38, 0.30),
+    ("shore_plug_stops_short", 1, 0.35),
+    ("compute_hive_descends", 2, 0.35),
+    ("hive_field_multiplies", 3, 0.35),
+    ("nikiski_pin_lands", 4, 0.35),
+    ("turbine_outline_rotates", 5, 0.35),
+    ("turbine_counter_ticks", 6, 0.35),
+    ("power_pulse_reaches_hive", 7, 0.35),
+    ("cooling_arrows_circle", 8, 0.35),
+    ("generation_and_compute_pair", 9, 0.35),
+    ("route_folds_shorter", 10, 0.35),
+    ("cable_unspools_to_nikiski", 11, 0.35),
+    ("power_fiber_cutaway", 12, 0.35),
+    ("estimate_dial_rises", 13, 0.35),
+    ("route_options_wait", 14, 0.35),
+    ("primary_compute_gate_opens", 15, 0.35),
+    ("railbelt_branch_appears", 16, 0.35),
+    ("could_blocks_will", 17, 0.35),
+    ("blueprint_hits_test_bench", 18, 0.35),
+    ("customer_chair_stays_empty", 19, 0.35),
+    ("financing_card_flips_blank", 20, 0.35),
+    ("five_proof_couplings_open", 21, 0.35),
+    ("cable_touches_open_couplings", 22, 0.35),
+    ("bad_stamp_is_rejected", 23, 0.35),
+    ("test_plan_folder_opens", 24, 0.35),
+    ("ferc_sheet_stops_fantasy", 25, 0.35),
+    ("public_comment_tab_opens", 26, 0.35),
+    ("study_priority_ticket_slides", 27, 0.35),
+    ("excavator_brakes_at_rope", 28, 0.35),
+    ("dashed_turbine_remains_untested", 29, 0.35),
+    ("november_calendar_locks", 30, 0.35),
+    ("brief_comment_card_opens", 31, 0.35),
+    ("cable_returns_to_proof_locks", 32, 0.35),
+    ("direct_link_glows_conditionally", 33, 0.35),
+    ("four_proof_locks_hold", 34, 0.35),
+    ("alaska_socket_waits", 35, 0.35),
 ]
 
 
@@ -94,10 +91,21 @@ def conformed_moves(board, start):
     covered, result = set(), []
     for name, beat_id, peak_after in MOVES:
         beat = beats[beat_id]
-        line, off = beat["anchor"]["vo_line"], float(beat["anchor"]["offset"])
-        at = start[line] + off
-        if abs(at - float(beat["at_s"])) > 1 / 30.0:
-            raise ValueError(f"beat {beat_id} is not conformed to the current VO line clock")
+        if "anchor" in beat:
+            line, off = beat["anchor"]["vo_line"], float(beat["anchor"]["offset"])
+            at = start[line] + off
+            if abs(at - float(beat["at_s"])) > 1 / 30.0:
+                raise ValueError(f"beat {beat_id} is not conformed to the current VO line clock")
+        else:
+            # Newer boards persist the conformed absolute clock directly. Recover
+            # the owning VO line so the rest of the evidence pipeline remains
+            # line-relative and reuses the same de-straddling machinery.
+            at = float(beat["at_s"])
+            prior = [idx for idx, line_start in start.items() if line_start <= at + 1 / 30.0]
+            if not prior:
+                raise ValueError(f"beat {beat_id} precedes the first aligned VO line")
+            line = max(prior, key=lambda idx: start[idx])
+            off = at - start[line]
         beat_start, beat_end = map(float, beat["t"].split("-"))
         if beat_id in LINE_START_ACTIONS:
             if line != LINE_START_ACTIONS[beat_id]:

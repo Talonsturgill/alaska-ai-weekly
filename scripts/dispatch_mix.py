@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-03"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-06"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -84,11 +84,22 @@ VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props)
 # The approved board is the single episode-local source of beat times and sound roles.
 # Times are conformed from actual VO line anchors before mixing.
 _board = json.load(open(os.path.join(OUT, "storyboard.json")))
+# The board names the dramatic sound role. This per-run performance map chooses an
+# available foley-bank design for every beat while preserving spectral variety.
+_PERFORMANCE_KINDS = [
+    "tick", "whoosh", "clank", "stamp", "riser", "snap", "whoosh",
+    "pop", "paper", "chime", "chain", "thud", "ding", "tick", "pop",
+    "clank", "stamp", "creak", "snap", "paper", "pop", "clank", "paper",
+    "boom", "chime", "whoosh", "tick", "clank", "paper", "stamp", "ding",
+    "snap", "pop", "creak", "caw",
+]
+if len(_PERFORMANCE_KINDS) != len(_board["beats"]):
+    raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
 EVENTS = [
-    (float(str(b["t"]).split("-")[0]), b["sfx"],
-     "hero" if b["id"] in (8, 10, 24, 30, 32, 36) else
-     "texture" if b["sfx"] in ("paper", "creak", "riser") else "standard",
-     0.0 if b["id"] in (30, 32, 36) else (-0.22 if n % 2 else 0.22))
+    (float(str(b["t"]).split("-")[0]), _PERFORMANCE_KINDS[n],
+     "hero" if b["id"] in (8, 10, 24, 30, 32, 35) else
+     "texture" if _PERFORMANCE_KINDS[n] in ("paper", "creak", "riser") else "standard",
+     0.0 if b["id"] in (24, 30, 32, 35) else (-0.22 if n % 2 else 0.22))
     for n, b in enumerate(_board["beats"])
 ]
 EVENT_LABELS = [b["shows"] for b in _board["beats"]]
@@ -531,7 +542,7 @@ def main():
     # flat.  Apply the same fitted window to the full mix so the rendered master contains the
     # promised pause.  Static two-pass loudness normalization preserves this relative drop.
     fc.append(f"[mixed]volume=volume={mix_arc}:eval=frame,"
-              f"volume=enable='between(t,{dip0},{dip1})':volume=0.25[premix]")
+              f"volume=enable='between(t,{dip0},{dip1})':volume=0.15[premix]")
 
     filtergraph = ";".join(fc)
     master = os.path.join(AUD, "master.wav")
@@ -587,7 +598,9 @@ def main():
                     "take": os.path.basename(takes[i]), "family": FAMILY[k],
                     "label": EVENT_LABELS[i]}
                    for i, (t, k, c, p) in enumerate(EVENTS)],
-               "silence_dip_at": SILENCE_DIP_AT, "count": len(EVENTS)},
+               # quality_gate measures a centered analysis window, so record the center of the
+               # performed dip rather than its filtergraph start time.
+               "silence_dip_at": SILENCE_DIP_AT + DIP_LEN / 2, "count": len(EVENTS)},
               open(os.path.join(AUD, "sfx_events.json"), "w"), indent=2)
 
     subprocess.run([sys.executable, os.path.join(HERE, "mix_aac_check.py"),

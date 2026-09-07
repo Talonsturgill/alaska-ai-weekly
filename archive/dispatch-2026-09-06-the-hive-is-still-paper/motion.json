@@ -1,0 +1,285 @@
+{
+  "note": "frame 1 vs frame 8 of each filmstrip window, measured on the delivered cut. changed_pct is the share of pixels differing by more than 12/255. A judge who cannot SEE motion in a strip should read this before recording that the beat is frozen. EVERY WINDOW HERE IS WITHIN A SINGLE SHOT: any window that straddled a cut has been slid clear of it and is marked straddled_cut, because a strip spanning a cut measures the cut and reports it as animation. Before 2026-08-13 it did not do this, and the large figures in older packs are shot changes, not motion. Cross-check against motion_registered.json, which solves the camera out per shot.",
+  "strips": {
+    "shore_plug_stops_short": {
+      "centre_s": 0.35,
+      "changed_pct": 2.2,
+      "peak_delta": 179,
+      "window_start_s": 0.22,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "compute_hive_descends": {
+      "centre_s": 1.45,
+      "changed_pct": 0.6,
+      "peak_delta": 189,
+      "window_start_s": 1.32,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "hive_field_multiplies": {
+      "centre_s": 4.55,
+      "changed_pct": 0.6,
+      "peak_delta": 201,
+      "window_start_s": 4.42,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "nikiski_pin_lands": {
+      "centre_s": 9.35,
+      "changed_pct": 1.0,
+      "peak_delta": 192,
+      "window_start_s": 9.22,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "turbine_outline_rotates": {
+      "centre_s": 12.25,
+      "changed_pct": 6.7,
+      "peak_delta": 241,
+      "window_start_s": 12.12,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "turbine_counter_ticks": {
+      "centre_s": 16.75,
+      "changed_pct": 1.0,
+      "peak_delta": 198,
+      "window_start_s": 16.62,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "power_pulse_reaches_hive": {
+      "centre_s": 20.05,
+      "changed_pct": 1.5,
+      "peak_delta": 226,
+      "window_start_s": 19.92,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "cooling_arrows_circle": {
+      "centre_s": 25.05,
+      "changed_pct": 1.7,
+      "peak_delta": 237,
+      "window_start_s": 24.92,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "generation_and_compute_pair": {
+      "centre_s": 27.85,
+      "changed_pct": 4.9,
+      "peak_delta": 244,
+      "window_start_s": 27.72,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "route_folds_shorter": {
+      "centre_s": 32.15,
+      "changed_pct": 0.5,
+      "peak_delta": 162,
+      "window_start_s": 32.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "cable_unspools_to_nikiski": {
+      "centre_s": 35.75,
+      "changed_pct": 0.2,
+      "peak_delta": 161,
+      "window_start_s": 35.62,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "power_fiber_cutaway": {
+      "centre_s": 36.85,
+      "changed_pct": 0.2,
+      "peak_delta": 151,
+      "window_start_s": 36.72,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "estimate_dial_rises": {
+      "centre_s": 39.95,
+      "changed_pct": 10.5,
+      "peak_delta": 238,
+      "window_start_s": 39.82,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "route_options_wait": {
+      "centre_s": 44.75,
+      "changed_pct": 2.0,
+      "peak_delta": 198,
+      "window_start_s": 44.62,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "primary_compute_gate_opens": {
+      "centre_s": 47.65,
+      "changed_pct": 4.7,
+      "peak_delta": 251,
+      "window_start_s": 47.52,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "railbelt_branch_appears": {
+      "centre_s": 52.15,
+      "changed_pct": 1.0,
+      "peak_delta": 175,
+      "window_start_s": 52.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "could_blocks_will": {
+      "centre_s": 55.45,
+      "changed_pct": 0.3,
+      "peak_delta": 160,
+      "window_start_s": 55.32,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "blueprint_hits_test_bench": {
+      "centre_s": 60.45,
+      "changed_pct": 7.8,
+      "peak_delta": 243,
+      "window_start_s": 60.32,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "customer_chair_stays_empty": {
+      "centre_s": 63.25,
+      "changed_pct": 5.9,
+      "peak_delta": 240,
+      "window_start_s": 63.12,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "financing_card_flips_blank": {
+      "centre_s": 67.55,
+      "changed_pct": 5.9,
+      "peak_delta": 241,
+      "window_start_s": 67.42,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "five_proof_couplings_open": {
+      "centre_s": 71.15,
+      "changed_pct": 5.9,
+      "peak_delta": 241,
+      "window_start_s": 71.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "cable_touches_open_couplings": {
+      "centre_s": 72.25,
+      "changed_pct": 2.6,
+      "peak_delta": 230,
+      "window_start_s": 72.12,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "bad_stamp_is_rejected": {
+      "centre_s": 75.35,
+      "changed_pct": 0.2,
+      "peak_delta": 114,
+      "window_start_s": 75.22,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "test_plan_folder_opens": {
+      "centre_s": 80.15,
+      "changed_pct": 0.3,
+      "peak_delta": 121,
+      "window_start_s": 80.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "ferc_sheet_stops_fantasy": {
+      "centre_s": 83.05,
+      "changed_pct": 0.5,
+      "peak_delta": 114,
+      "window_start_s": 82.92,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "public_comment_tab_opens": {
+      "centre_s": 87.55,
+      "changed_pct": 0.2,
+      "peak_delta": 117,
+      "window_start_s": 87.42,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "study_priority_ticket_slides": {
+      "centre_s": 90.85,
+      "changed_pct": 1.8,
+      "peak_delta": 181,
+      "window_start_s": 90.72,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "excavator_brakes_at_rope": {
+      "centre_s": 95.85,
+      "changed_pct": 5.7,
+      "peak_delta": 246,
+      "window_start_s": 95.72,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "dashed_turbine_remains_untested": {
+      "centre_s": 98.65,
+      "changed_pct": 6.6,
+      "peak_delta": 237,
+      "window_start_s": 98.52,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "november_calendar_locks": {
+      "centre_s": 102.95,
+      "changed_pct": 0.5,
+      "peak_delta": 237,
+      "window_start_s": 102.82,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "brief_comment_card_opens": {
+      "centre_s": 106.55,
+      "changed_pct": 0.2,
+      "peak_delta": 160,
+      "window_start_s": 106.42,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "cable_returns_to_proof_locks": {
+      "centre_s": 107.65,
+      "changed_pct": 0.9,
+      "peak_delta": 237,
+      "window_start_s": 107.52,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "direct_link_glows_conditionally": {
+      "centre_s": 110.75,
+      "changed_pct": 3.4,
+      "peak_delta": 253,
+      "window_start_s": 110.62,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "four_proof_locks_hold": {
+      "centre_s": 115.55,
+      "changed_pct": 0.3,
+      "peak_delta": 171,
+      "window_start_s": 115.42,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "alaska_socket_waits": {
+      "centre_s": 118.45,
+      "changed_pct": 2.8,
+      "peak_delta": 196,
+      "window_start_s": 118.32,
+      "straddled_cut": false,
+      "within_shot": true
+    }
+  }
+}

@@ -156,8 +156,8 @@ TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band
 # fixed evidence boundary), S14 L18 (button and loopback). The original combined
 # projection/counterpoint shot held 17.9 seconds, beyond the 16-second oner ceiling,
 # so the unresolved physical-saturation counterpoint opens its own shot at L12.
-# September 3: recording choice, human review, source-status test and intact care.
-SCENE_START_LINE = [0, 1, 2, 3, 4, 6, 7, 8, 10, 12, 13, 15, 17, 19]
+# September 6: proposed subsea compute, power routing, proof bench, FERC status and Alaska-value button.
+SCENE_START_LINE = [0, 1, 3, 4, 5, 6, 7, 9, 10, 11, 13, 14, 16, 18]
 
 
 def _apply_caption_fixups(caps):
@@ -192,7 +192,10 @@ def _apply_caption_fixups(caps):
                 head, tail = " ".join(toks[:cut]), " ".join(toks[cut:])
                 at = a.get("text", "").rstrip()
                 bt = b.get("text", "").lstrip()
-                if at.lower().endswith(head.lower()) and bt.lower().startswith(tail.lower()):
+                tail_end = len(tail)
+                whole_tail = (bt.lower().startswith(tail.lower()) and
+                              (len(bt) == tail_end or not bt[tail_end].isalnum()))
+                if at.lower().endswith(head.lower()) and whole_tail:
                     a["text"] = at + " " + bt[:len(tail)]
                     b["text"] = bt[len(tail):].lstrip()
                     break
@@ -200,6 +203,7 @@ def _apply_caption_fixups(caps):
         t = c.get("text", "")
         for wrong, right in sorted(fixups.items(), key=lambda kv: -len(kv[0])):
             t = _re.sub(r"(?<![A-Za-z0-9])" + _re.escape(wrong) + r"(?![A-Za-z0-9])", right, t, flags=_re.IGNORECASE)
+        t = _re.sub(r"\s+([.,!?])", r"\1", t)
         c["text"] = t
     return [c for c in caps if c.get("text", "").strip()]
 
