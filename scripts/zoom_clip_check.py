@@ -240,7 +240,7 @@ def scenes(src: str, default_zoom: float):
     # the closing angle bracket. Keep it anchored on SceneProps so a non-scene component with
     # some other props type is still correctly skipped.
     starts = [(m.start(), m.group(1)) for m in
-              re.finditer(r"^const (S[0-9A-Za-z]*)\s*:\s*React\.FC<SceneProps\b[^>]*>\s*=\s*\(",
+              re.finditer(r"^const (S(?=[0-9])[0-9A-Za-z]*)\s*:\s*React\.FC<SceneProps\b[^>]*>\s*=\s*\(",
                           src, re.M)]
     out = []
     for i, (pos, name) in enumerate(starts):
@@ -266,6 +266,30 @@ def scenes(src: str, default_zoom: float):
                 vals = [float(v) for v in re.findall(NUM, im.group(1))]
                 push = max(vals) if vals else 0.0
         out.append((name, line0, blk, zoom * (1.0 + push), zoom, push, camY))
+    if out:
+        return out
+
+    # Single-router episodes keep all art in one Scene/Shot component. Split its
+    # n=== branches so source geometry still has scene-level coverage.
+    owner = re.search(r"^const (?:Scene|Shot)\s*:\s*React\.FC<SceneProps\b[^>]*>", src, re.M)
+    if not owner:
+        return out
+    tail = src[owner.start():]
+    branches = [(int(m.group(1)), owner.start() + m.start()) for m in
+                re.finditer(r"(?:if|else\s+if)\s*\(n\s*===\s*(\d+)\)\s*art\s*=", tail)]
+    for i, (number, pos) in enumerate(branches):
+        end = branches[i + 1][1] if i + 1 < len(branches) else len(src)
+        if i == len(branches) - 1:
+            final_else = re.search(r"else\s+art\s*=", src[pos:end])
+            if final_else:
+                split = pos + final_else.start()
+                out.append((f"S{number}", src[:pos].count("\n") + 1,
+                            src[pos:split], default_zoom, default_zoom, 0.0, 0.0))
+                out.append((f"S{number + 1}", src[:split].count("\n") + 1,
+                            src[split:end], default_zoom, default_zoom, 0.0, 0.0))
+                continue
+        out.append((f"S{number}", src[:pos].count("\n") + 1,
+                    src[pos:end], default_zoom, default_zoom, 0.0, 0.0))
     return out
 
 
@@ -378,29 +402,32 @@ def check(path: str):
             kind, a = m.group(1), m.group(2)
             xm = re.search(r"\bx=\{(" + NUM + r")\}", a)
             tm = re.search(r'text="([^"]*)"', a)
-            if not tm:
-                skip(m.start(), kind, "text is not a plain literal")
-                continue
-            if not xm:
-                skip(m.start(), kind, f"x is not a plain number: {tm.group(1)[:28]}")
+            expr = re.search(r'text=\{([^}]*)\}', a)
+            label = tm.group(1) if tm else (expr.group(1) if expr else '<dynamic>')
+            # Ep0906's Plate is a centered fixed-width component with no x prop.
+            # For that explicit contract, absent x resolves exactly to 540.
+            centered_contract = kind == 'Plate' and re.search(r"const Plate\s*:\s*React\.FC<\{text:string;y:number;width\?:number", src)
+            if not xm and not centered_contract:
+                skip(m.start(), kind, f"x is not a plain number: {label[:28]}")
                 continue
             off = offset_at(m.start())
             if off is None:
-                skip(m.start(), kind, f"inside a computed transform: {tm.group(1)[:28]}")
+                skip(m.start(), kind, f"inside a computed transform: {label[:28]}")
                 continue
             sm = re.search(r"\bsize=\{(\d+(?:\.\d+)?)\}", a)
             size = float(sm.group(1)) if sm else DEFAULT_SIZE[kind]
-            w = mono_w(tm.group(1), size) + 56
+            wm = re.search(r"\bwidth=\{(" + NUM + r")\}", a)
+            w = float(wm.group(1)) if wm else (820.0 if centered_contract else mono_w(label, size) + 56)
             sub = re.search(r'sub="([^"]*)"', a)
             if sub:
                 w = max(w, mono_w(sub.group(1), size * 0.54, 1.2) + 56)
-            record(m.start(), kind, tm.group(1), float(xm.group(1)) + off, w)
+            record(m.start(), kind, label, (float(xm.group(1)) if xm else 540.0) + off, w)
             ym = re.search(r"\by=\{(" + NUM + r")\}", a)
             if ym:
-                rows = max(1, (len(tm.group(1)) // 34) + 1)
+                rows = max(1, (len(label) // 34) + 1)
                 h = size * 1.16 * rows + (size * 0.54 * 1.5 if sub else 0) + 30
                 y_auth = min(float(ym.group(1)), (CAPTION_TOP - 34) - h / 2)
-                record_caption(m.start(), kind, tm.group(1), y_auth, h)
+                record_caption(m.start(), kind, label, y_auth, h)
 
         # ---- bare centred mono strings --------------------------------------------------
         # This is the class the first version of this checker was blind to, and it is the class

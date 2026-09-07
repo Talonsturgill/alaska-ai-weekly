@@ -1,0 +1,34 @@
+{
+  "judge_id": "J2",
+  "criteria": {
+    "Hook & retention": 8.5,
+    "Illustration craft & detail": 7.6,
+    "Motion & animation craft": 8.0,
+    "Composition & staging": 6.8,
+    "Color & grade": 8.4,
+    "Typography & captions": 8.6,
+    "Sound design & mix": 8.8,
+    "VO–illustration sync & entertainment": 8.4,
+    "Accuracy & sourcing": 9.5,
+    "Alaska authenticity & cultural respect": 9.0,
+    "Writing & post quality": 9.2
+  },
+  "weighted_total": 8.338,
+  "hard_blockers": [],
+  "concrete_defects": [
+    "The 9:16 master leaves roughly its bottom quarter as a largely unmodulated dark field beneath the captions across most scenes. The square crop is safe and well composed, but the vertical staging does not fully use its canvas.",
+    "Several technical props remain outline-led and materially plainer than the R9 anchor's richly layered machinery, especially the turbine field and proof-coupling panels.",
+    "Some named motion strips no longer sample their named event: for example, study_priority_ticket_slides shows ONE INCH SHORT, while test_plan_folder_opens shows the November calendar. The film remains judgeable from the actual frames and global motion evidence, but event-specific evidence indexing should be conformed to the final audio timeline.",
+    "A handful of event windows register only 0.2 to 0.5 percent changed pixels, so their named action is subtler than the otherwise strong continuous camera and ambient motion."
+  ],
+  "strengths": [
+    "The opening plug-and-hive question is immediate, mobile-readable and visually active; the final Alaska-value socket returns the same object with a harder standard for success.",
+    "The final film keeps proposal status unmistakable, separates primary data-center use from conditional Railbelt power, and clearly distinguishes an application notice, a possible preliminary permit and construction authority. All 14 claims resolve to primary FERC materials.",
+    "Typography moved from the prior 4.0 to 8.6 because the film moved, not the judging standard: the visible '100 MW.' typo and awkward P/M caption split are absent from the exact final frames, while the objective caption and HUD checks pass.",
+    "Writing moved from 6.5 to 9.2 because the film and post moved: the repaired copy now carries exact figures, a fair study-before-hype turn and a concrete closing question; the post gate independently scores 9.2.",
+    "Motion moved from 6.2 to 8.0 because the final film moved, not the standard: it now reports 41 visual beats, 58 of 64 living-screen windows passing, eight camera-moving shots above threshold and visible cable, dial, turbine, lock and paper choreography.",
+    "Sound moved from 7.4 to 8.8 because the final evidence moved, not the standard: the exact delivered mix passes at -14.45 LUFS, -2.44 dBTP and 6.8 LU LRA, with sourced composer credit, 35 SFX events, 25 verified audible and a measured 47.5 dB silence dip. This is metric evidence, not a human-listening claim.",
+    "The blueprint-blue palette has a specific story reason—the proposal is still an engineering drawing—and coral gates, chartreuse power paths and the pearl FERC-paper act create clear functional contrast without implying built infrastructure."
+  ],
+  "ship": true
+}

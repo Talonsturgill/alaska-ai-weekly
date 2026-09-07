@@ -1760,3 +1760,36 @@ dispatch_history:
     camera_strategy: rise-reveal-with-source-recontextualization
     light_story: warm-window-diffuse-daylight
     metaphor: Detachable clerical sidecar beside a continuous care platform
+- date: '2026-09-06'
+  topic: DeepGreen Upper Cook Inlet preliminary permit proposal and the proof required
+    for durable Alaska value
+  slug: the-hive-is-still-paper
+  key_entities:
+  - DeepGreen
+  - Federal Energy Regulatory Commission
+  - Upper Cook Inlet
+  - Nikiski
+  - Railbelt
+  - marine hydrokinetic turbines
+  - subsea data center
+  archetype: extension-cord proof bench
+  palette: marine indigo, phosphor chartreuse, warm coral, pearl
+  voice: Gemini Sulafat
+  stance: mixed
+  angle: Bring compute to hard-to-export Cook Inlet energy, then require proof that
+    the physical fit becomes durable Alaska value.
+  hero: SubseaHive
+  cast:
+  - ArmoredCable
+  - HydrokineticTurbine
+  - ProposedArray
+  - SubseaHive
+  composition:
+    pov: exploded-diagram
+    motion_vector: radial-emanate
+    hero_treatment: instrument-as-subject
+    layout: single-object-void
+    register: blueprint-technical
+    camera_strategy: cable-follow-to-paper-collapse
+    light_story: hopeful-warm-caustic-to-paper-toplight
+    metaphor: Armored cable stopped one inch from an Alaska value socket

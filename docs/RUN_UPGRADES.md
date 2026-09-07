@@ -3047,3 +3047,27 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
   download links; the returned HTML was rendered again at 390 pixels and inspected.
 - `config/panel_anchors.md` remains the one owner dependency. It is absent for a second run and is
   explicitly disclosed in the Gmail draft. No calibration examples or waiver were invented.
+
+## 2026-09-06 — The Hive Is Still Paper
+
+- The compact Remotion `Scene`/`Shot` authoring form is now parsed by both plate-overlap and
+  zoom-clip checks, so a one-line component can no longer make either geometry gate silently
+  inspect zero scenes.
+- Caption fixups now require whole-token boundaries before replacing multi-token speech forms.
+  This prevents a singular unit rule from corrupting a plural word and correctly rejoins split
+  initialisms such as `P M` into `PM`.
+- Evidence construction accepts storyboard beats anchored directly by `at_s`, keeping the
+  generated filmstrips aligned with the conformed episode clock instead of an obsolete VO-line
+  offset assumption.
+- A reusable subsea asset family now supplies the armored cable, turbine array, and compute-hive
+  components. Technical survey markers and paper-ledger structure keep independent motion regions
+  alive across the film without moving the locked caption band.
+- The mix ledger now records the center of its performed pre-payoff dip, matching the objective
+  gate's centered analysis window. The delivered dip measures 47.5 dB beneath its neighborhood;
+  the exact encoded mix remains inside the loudness and true-peak limits.
+- The Gmail HTML body now uses border-box sizing at narrow widths. A real 390-pixel render caught
+  the outer padding making the message eight pixels wider than the viewport and clipping its right
+  edge; the regenerated draft is visually checked before connector delivery.
+- Final objective Gate A scores 10.0: 14 shots, 13 real transitions, 41 distinct visual beats,
+  58 of 64 graded living-screen windows, 35 motivated SFX events, and all caption, claim,
+  source, typography, geometry, crop, and delivery-provenance checks pass.

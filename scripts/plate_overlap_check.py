@@ -55,9 +55,33 @@ def scenes(src):
     # not go blind because Prettier or an episode author chose `:React.FC`.
     starts = [(m.group(1), m.start()) for m in
               re.finditer(r"^const (S\d+[A-Za-z]*):\s*React\.FC<SceneProps\b[^>]*>", src, re.M)]
-    for i, (name, a) in enumerate(starts):
-        b = starts[i + 1][1] if i + 1 < len(starts) else len(src)
-        yield name, a, src[a:b]
+    if starts:
+        for i, (name, a) in enumerate(starts):
+            b = starts[i + 1][1] if i + 1 < len(starts) else len(src)
+            yield name, a, src[a:b]
+        return
+
+    # Compact episodes may route every shot through one Scene/Shot component and
+    # select its art with `if (n===1) art=...; else if ...`. Treat each branch as
+    # a real scene. Otherwise a perfectly ordinary component refactor makes this
+    # relationship gate grade zero pixels and fail closed forever.
+    owner = re.search(r"^const (?:Scene|Shot)\s*:\s*React\.FC<SceneProps\b[^>]*>", src, re.M)
+    if not owner:
+        return
+    tail = src[owner.start():]
+    branches = [(int(m.group(1)), owner.start() + m.start()) for m in
+                re.finditer(r"(?:if|else\s+if)\s*\(n\s*===\s*(\d+)\)\s*art\s*=", tail)]
+    for i, (number, a) in enumerate(branches):
+        b = branches[i + 1][1] if i + 1 < len(branches) else len(src)
+        # The final bare `else art=` is the next contiguous scene.
+        if i == len(branches) - 1:
+            m = re.search(r"else\s+art\s*=", src[a:b])
+            if m:
+                split = a + m.start()
+                yield f"S{number}", a, src[a:split]
+                yield f"S{number + 1}", split, src[split:b]
+                continue
+        yield f"S{number}", a, src[a:b]
 
 
 def plates(body, base_line):
@@ -79,9 +103,11 @@ def plates(body, base_line):
             continue
         blk = blk[:end]
         xm, ym = re.search(r"\bx=" + NUM, blk), re.search(r"\by=" + NUM, blk)
-        if not (xm and ym):
+        # The compact episode Plate contract is centered and intentionally has no
+        # x prop. A missing x is therefore exact, not unresolved geometry.
+        if not ym:
             continue
-        x, y = float(xm.group(1)), float(ym.group(1))
+        x, y = (float(xm.group(1)) if xm else 540.0), float(ym.group(1))
         is_head = body[m.start():m.start() + 6].startswith("<Head")
         sm = re.search(r"\bsize=" + NUM, blk)
         size = float(sm.group(1)) if sm else (96.0 if is_head else 26.0)
@@ -89,7 +115,8 @@ def plates(body, base_line):
         texts = [a or b or c for a, b, c in rows if (a or b or c)]
         texts = [t for t in texts if not t.startswith("#")] or [""]
         n = len(texts) if "lines=" in blk else 1
-        wide = max((mono_w(t, size) for t in texts), default=0) + 34
+        wm = re.search(r"\bwidth=" + NUM, blk)
+        wide = float(wm.group(1)) if wm else (820.0 if not xm else max((mono_w(t, size) for t in texts), default=0) + 34)
         h = size + 24 + (n - 1) * (size + 10)
         yy = min(y, CAP_GUARD - h / 2)
         line = base_line + body[:m.start()].count("\n")

@@ -148,8 +148,8 @@ def refuse_unless_copy_is_clean(post_text, source_path):
     sys.exit(2)
 
 CSS = """
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#13202b;background:#f3f5f6;margin:0;padding:16px 8px;}
-.wrap{max-width:620px;margin:0 auto;background:#fff;border:1px solid #dde3e7;padding:24px;}
+body{box-sizing:border-box;width:100%;max-width:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#13202b;background:#f3f5f6;margin:0;padding:0;}
+.wrap{width:96%;max-width:620px;box-sizing:border-box;margin:16px auto;background:#fff;border:1px solid #dde3e7;padding:24px;}
 h1{font-size:22px;margin:0 0 2px;} .sub{color:#6a7782;font-size:13px;margin-bottom:22px;}
 h2{font-size:15px;letter-spacing:.02em;text-transform:uppercase;color:#516170;margin-top:26px;border-bottom:1px solid #eef0f2;padding-bottom:6px;}
 .post{white-space:pre-wrap;border-left:4px solid #FFC72C;padding:2px 0 2px 16px;font:15px/1.62 Arial,Helvetica,sans-serif;}
@@ -168,8 +168,8 @@ ul.upg li{color:#1c5f38;}
 # draft that the owner actually opens still has hierarchy, spacing, buttons, and copy-ready line
 # breaks. This is intentionally old-fashioned email HTML.
 S = {
-    "body": 'font-family:Arial,Helvetica,sans-serif;color:#13202b;background:#f3f5f6;margin:0;padding:16px 8px;',
-    "wrap": 'width:100%;max-width:620px;min-width:0;box-sizing:border-box;margin:0 auto;background:#fff;border:1px solid #dde3e7;padding:24px;overflow-wrap:anywhere;',
+    "body": 'box-sizing:border-box;width:100%;max-width:100%;font-family:Arial,Helvetica,sans-serif;color:#13202b;background:#f3f5f6;margin:0;padding:0;',
+    "wrap": 'width:96%;max-width:620px;min-width:0;box-sizing:border-box;margin:16px auto;background:#fff;border:1px solid #dde3e7;padding:24px;overflow-wrap:anywhere;',
     "h1": 'font-size:24px;line-height:1.2;margin:0 0 4px;',
     "sub": 'color:#6a7782;font-size:13px;line-height:1.5;margin-bottom:22px;',
     "h2": 'font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#516170;margin:26px 0 12px;border-bottom:1px solid #eef0f2;padding-bottom:7px;',

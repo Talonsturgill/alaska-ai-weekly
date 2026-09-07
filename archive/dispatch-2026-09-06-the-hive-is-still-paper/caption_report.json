@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "fails": [],
+  "warns": [],
+  "metrics": {
+    "chars": 1368,
+    "hook": "The DeepGreen Cook Inlet idea is clever. It is also still paper.",
+    "hook_len": 64,
+    "hashtags": [
+      "#Alaska",
+      "#Energy",
+      "#DataCenters",
+      "#Infrastructure"
+    ],
+    "n_hashtags": 4,
+    "emoji": 0,
+    "unicode_bold": 0,
+    "bullet_lines": 0,
+    "sentence_initial_but": 0,
+    "commas_per_100w": 0.0,
+    "passes": true
+  }
+}

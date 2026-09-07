@@ -757,3 +757,9 @@ without swapping identity.
   inside a characterized place — ACTIVE
 - `SPACE` — reserved warm instrument-space tokens: aubergine void, solar-rose signal,
   solar-ivory key, graphite apparatus, warm neutral and uncertainty ash.
+# Subsea infrastructure proposal family
+
+- `SubseaHive` (`subsea.tsx`) — hexagonal subsea-compute pod silhouette with indicator expression; dashed proposal geometry by default.
+- `HydrokineticTurbine` (`subsea.tsx`) — articulated three-blade marine-hydrokinetic rotor with proposed-state line treatment.
+- `ArmoredCable` (`subsea.tsx`) — progressive hybrid cable path with distinct solid-primary and dotted-conditional routing states.
+- `ProposedArray` (`subsea.tsx`) — staggered turbine-and-hive field for scale reveals; always illustrative and shadowless.

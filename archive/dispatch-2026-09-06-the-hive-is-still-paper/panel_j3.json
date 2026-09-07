@@ -1,0 +1,39 @@
+{
+  "judge_id": "J3",
+  "criteria": {
+    "Hook & retention": 8.1,
+    "Illustration craft & detail": 7.1,
+    "Motion & animation craft": 6.8,
+    "Composition & staging": 7.6,
+    "Color & grade": 7.9,
+    "Typography & captions": 7.6,
+    "Sound design & mix": 7.6,
+    "VO–illustration sync & entertainment": 6.8,
+    "Accuracy & sourcing": 8.6,
+    "Alaska authenticity & cultural respect": 8.3,
+    "Writing & post quality": 7.9
+  },
+  "weighted_total": 7.598,
+  "hard_blockers": [],
+  "concrete_defects": [
+    "Motion remains uneven despite the objective pass: bad_stamp_is_rejected, cable_unspools_to_nikiski, power_fiber_cutaway, public_comment_tab_opens, brief_comment_card_opens, and four_proof_locks_hold measure only 0.2% to 0.3% change across their eight-frame strips.",
+    "Several named evidence strips no longer show the named action at their sampled center: generation_and_compute_pair shows ONE CABLE ASHORE, estimate_dial_rises shows the route split, and customer_chair_stays_empty shows the FERC notice. That weakens confidence in exact VO-to-action timing even though caption-to-voice sync passes.",
+    "The registered-motion report remains below its 1.2% reference floor in many shot samples; the film is alive through distributed ambient regions and event bursts more than through consistently strong hero-object performance.",
+    "Compared with the r9 anchor contact sheet, several current diagrams and lock/cable motifs have limited contact shadow, material articulation, and depth separation within the flat-vector style.",
+    "The square poster leaves a clipped fragment of the persistent proposal pill touching the top edge, which reads as an avoidable crop/tangent.",
+    "Only 25 of 35 planned SFX events are verified audible. Every shot is sonified and the gate passes, but ten planned accents do not produce a measurable lift.",
+    "The living-screen report identifies quiet two-second windows at 60s and 64s, plus static outro windows from 120s through 126s."
+  ],
+  "strengths": [
+    "The current objective gate passes at 10.0: sharpness, HUD and caption clarity, event cadence, beat density, scene structure, camera motion, caption sync, music, SFX coverage, silence dip, living-screen coverage, hook motion, and first-frame contrast all clear their thresholds.",
+    "The first half-second now contains a visible plug-and-hive action, and the opening socket question pays off through the one-inch-short and Alaska-value socket imagery.",
+    "The marine-blue, chartreuse, coral, and cream-paper palette is story-motivated and visibly distinct from the gray industrial r9 anchor world.",
+    "Proposal status remains explicit throughout, while the narrative fairly distinguishes primary data-center use, conditional Railbelt power, missing proof, study priority, and lack of construction authority.",
+    "All fourteen claims map to primary FERC materials; the film and post avoid converting the 100 MW estimate into demonstrated output or promising customer, financing, construction, grid, economic, or environmental outcomes.",
+    "The post has a strong LinkedIn hook, specific figures, a balanced pro-test position, a real closing question, and passes its caption gate with a 9.2 score.",
+    "Reported audio measures I=-14.45 LUFS, TP=-2.44 dBTP, and LRA=6.8 LU; sourced music is credited by track, composer, site, and CC BY 4.0 license. This is report-based, not a human-listening claim.",
+    "Motion rises from my prior 5.4 to 6.8 because the film changed, not my standard: the former exact-zero event strips are now nonzero, several key actions reach 4.7% to 10.5% change, and 90.6% of graded two-second windows contain at least three disjoint motion regions.",
+    "Typography and captions rise from my prior 5.0 to 7.6 because the film changed, not my standard: the visible \"100 MW s.\" typo is now \"100 MW.\", the broken \"P\"/\"M\" cue split is now \"PM\" within one cue, and the current caption clarity and synchronization gates pass."
+  ],
+  "ship": true
+}
