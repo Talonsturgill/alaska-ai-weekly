@@ -29,52 +29,43 @@ OUT = os.path.join(REPO, "out", "dispatch")
 EV = os.path.join(REPO, "out", "evidence")
 
 # (name, current storyboard beat id, seconds INTO that beat's action).
-# September 3: all 38 beats, including the new recording-HIPAA and provider
-# refusal moments. Resolve the VO line/offset from the CONFORMED board at runtime,
-# so later timing surgery cannot leave a second, stale clock in the evidence list.
-# The ordinary p(id) ramps last 24 frames: +0.35 samples their eased travel.
-# p(24,45) needs +0.50; the 32/27-frame OFF/reveal moves use +0.40; the
-# twelve-frame reel brake and short final hinge use +0.30 (including settlement).
-# HIPAA is explicitly line(9)-driven in Ep0903, not p(19). Keep that actual
-# onset even while the producer reconforms beat 19 to the patched voice.
-MOVE_RUN_DATE = "2026-09-06"
+# September 10: all 30 rock-glacier beats. Resolve the VO line/offset from the
+# CONFORMED board at runtime, so later timing surgery cannot leave a second,
+# stale clock in the evidence list. Each named sample sits 0.35 seconds into its
+# beat, after the first eased travel is visible and safely away from shot cuts.
+MOVE_RUN_DATE = "2026-09-10"
 LINE_START_ACTIONS = {}
 MOVES = [
-    ("shore_plug_stops_short", 1, 0.35),
-    ("compute_hive_descends", 2, 0.35),
-    ("hive_field_multiplies", 3, 0.35),
-    ("nikiski_pin_lands", 4, 0.35),
-    ("turbine_outline_rotates", 5, 0.35),
-    ("turbine_counter_ticks", 6, 0.35),
-    ("power_pulse_reaches_hive", 7, 0.35),
-    ("cooling_arrows_circle", 8, 0.35),
-    ("generation_and_compute_pair", 9, 0.35),
-    ("route_folds_shorter", 10, 0.35),
-    ("cable_unspools_to_nikiski", 11, 0.35),
-    ("power_fiber_cutaway", 12, 0.35),
-    ("estimate_dial_rises", 13, 0.35),
-    ("route_options_wait", 14, 0.35),
-    ("primary_compute_gate_opens", 15, 0.35),
-    ("railbelt_branch_appears", 16, 0.35),
-    ("could_blocks_will", 17, 0.35),
-    ("blueprint_hits_test_bench", 18, 0.35),
-    ("customer_chair_stays_empty", 19, 0.35),
-    ("financing_card_flips_blank", 20, 0.35),
-    ("five_proof_couplings_open", 21, 0.35),
-    ("cable_touches_open_couplings", 22, 0.35),
-    ("bad_stamp_is_rejected", 23, 0.35),
-    ("test_plan_folder_opens", 24, 0.35),
-    ("ferc_sheet_stops_fantasy", 25, 0.35),
-    ("public_comment_tab_opens", 26, 0.35),
-    ("study_priority_ticket_slides", 27, 0.35),
-    ("excavator_brakes_at_rope", 28, 0.35),
-    ("dashed_turbine_remains_untested", 29, 0.35),
-    ("november_calendar_locks", 30, 0.35),
-    ("brief_comment_card_opens", 31, 0.35),
-    ("cable_returns_to_proof_locks", 32, 0.35),
-    ("direct_link_glows_conditionally", 33, 0.35),
-    ("four_proof_locks_hold", 34, 0.35),
-    ("alaska_socket_waits", 35, 0.35),
+    ("first_pulse_strikes", 1, 0.35),
+    ("second_pulse_strikes", 2, 0.35),
+    ("annual_calendar_turns", 3, 0.35),
+    ("seven_glaciers_rise", 4, 0.35),
+    ("radar_sweeps", 5, 0.35),
+    ("rock_and_ice_split", 6, 0.35),
+    ("sourdough_advances", 7, 0.35),
+    ("neighbor_contrasts", 8, 0.35),
+    ("independent_check_appears", 9, 0.35),
+    ("pixels_arrive", 10, 0.35),
+    ("maps_register", 11, 0.35),
+    ("error_lands", 12, 0.35),
+    ("two_components_selected", 13, 0.35),
+    ("interpreted_outputs_split", 14, 0.35),
+    ("long_crawl_advances", 15, 0.35),
+    ("two_peaks_appear", 16, 0.35),
+    ("melt_alignment_lands", 17, 0.35),
+    ("rain_alignment_lands", 18, 0.35),
+    ("lag_calendar_opens", 19, 0.35),
+    ("proxy_year_arrives", 20, 0.35),
+    ("model_assembles", 21, 0.35),
+    ("empty_borehole_descends", 22, 0.35),
+    ("six_kilometer_gap_opens", 23, 0.35),
+    ("pattern_breaks", 24, 0.35),
+    ("evidence_sorts", 25, 0.35),
+    ("validation_payoff_lands", 26, 0.35),
+    ("proposed_sensor_descends", 27, 0.35),
+    ("next_melt_appointment", 28, 0.35),
+    ("next_rain_appointment", 29, 0.35),
+    ("both_appointments_lock", 30, 0.35),
 ]
 
 
@@ -97,10 +88,10 @@ def conformed_moves(board, start):
             if abs(at - float(beat["at_s"])) > 1 / 30.0:
                 raise ValueError(f"beat {beat_id} is not conformed to the current VO line clock")
         else:
-            # Newer boards persist the conformed absolute clock directly. Recover
-            # the owning VO line so the rest of the evidence pipeline remains
-            # line-relative and reuses the same de-straddling machinery.
-            at = float(beat["at_s"])
+            # Newer boards may persist either an explicit conformed `at_s` or the
+            # documented `t` range alone. Use the range start as the action onset
+            # when `at_s` is absent, matching build_scenes.py's board adapter.
+            at = float(beat.get("at_s", beat["t"].split("-", 1)[0]))
             prior = [idx for idx, line_start in start.items() if line_start <= at + 1 / 30.0]
             if not prior:
                 raise ValueError(f"beat {beat_id} precedes the first aligned VO line")

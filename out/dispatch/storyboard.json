@@ -1,1256 +1,1023 @@
 {
-  "run_date": "2026-09-06",
-  "slug": "the-hive-is-still-paper",
-  "concept": "An armored cable solves a physical distance problem, then stops at the institutional distance between an elegant proposal and durable Alaska value.",
+  "run_date": "2026-09-10",
+  "slug": "the-glacier-that-sped-up-twice",
+  "concept": "One measured displacement ribbon crosses a remote rock glacier, splits into two rhythms, and finally stops at the precise underground observation the study did not have.",
   "derived_from": "scratch",
   "engine": "infographic-2.5d",
-  "title": "The Hive Is Still Paper",
-  "total_seconds": 121,
+  "title": "The Glacier That Sped Up Twice",
+  "total_seconds": 120,
   "fingerprint": {
-    "pov": "exploded-diagram",
-    "motion_vector": "radial-emanate",
-    "hero_treatment": "instrument-as-subject",
-    "layout": "single-object-void",
-    "register": "blueprint-technical",
-    "palette": "Marine indigo phosphor chartreuse warm sunrise coral pearl",
-    "camera_strategy": "cable-follow-to-paper-collapse",
-    "light_story": "hopeful-warm-caustic-to-paper-toplight",
-    "metaphor": "Armored cable stopped one inch from an Alaska value socket"
+    "pov": "terrain-to-core-descent",
+    "motion_vector": "diagonal-shear",
+    "hero_treatment": "landform-as-character",
+    "layout": "vertical-evidence-cutaway",
+    "register": "tactile-science-diorama",
+    "camera_strategy": "orbital-drop-to-borehole",
+    "light_story": "warm-alpenglow-to-cool-subsurface-test",
+    "palette": "volcanic charcoal alpenglow amber radar magenta glacial cyan snow quartz",
+    "metaphor": "one surface ribbon that splits into two rhythms and stops at an empty underground socket"
   },
-  "palette": "Marine indigo phosphor chartreuse warm sunrise coral pearl",
-  "divergence_note": "September 3rd stayed inside a sunlit sage human-care room and moved paper beside people. September 1st used aubergine cosmic signal machinery. This film begins in a dark underwater macro, expands into a chartreuse radial field, switches to a mechanical proof bench, and finally lets a hard white federal sheet physically collapse the imagined infrastructure into a study ticket.",
+  "palette": "volcanic charcoal alpenglow amber radar magenta glacial cyan snow quartz",
+  "divergence_note": "The September 6th Dispatch was a dark marine proposal world built from hexagonal pods, chartreuse cables and federal paper. September 3rd stayed inside a sunlit sage clinical room. This piece travels from an amber mountain diorama into a mechanical signal bench and then dives below the ground, using a solid cyan surface map against a translucent magenta subsurface hypothesis.",
   "angle": {
-    "thesis": "Bring compute to hard-to-export Cook Inlet energy, then require proof that the physical fit becomes durable Alaska value.",
+    "thesis": "Radar measured the movement. Photogrammetry checked the map. Unsupervised signal separation exposed a seasonal rhythm. Modeling proposed why.",
     "supporting_facts": [
-      "66 proposed hives with 330 to 350 turbines",
-      "100 MW estimate primarily for compute, spare power only conditional",
-      "Preliminary permit is study priority, not construction"
+      "Seven rock glaciers near McCarthy",
+      "Sourdough validation across more than sixteen thousand pixels",
+      "Two seasonal pulses associated with melt and later rain"
     ],
-    "fair_counterpoint": "A self-supplied industrial load could create investment and technical capacity without consuming existing Railbelt generation.",
+    "fair_counterpoint": "The component count was fixed at two. No borehole temperatures were recorded. Two smaller glaciers weakened the simple sunlight pattern.",
     "runner_up_angles": [
-      "public bargain first",
-      "permit procedure first"
+      "The algorithm found a cause, rejected because the cause is modeled",
+      "Radar noise became two patterns, rejected because the input was a validated displacement field"
     ]
   },
   "treatment": {
-    "winner": "The Extension Cord",
-    "why": "The cable is mechanism, character, proof path and final unanswered condition.",
+    "winner": "explainer",
+    "reasoning": "The evidence order becomes the drama. Each tool earns only the next claim, and the empty borehole gives Act 3 a real test.",
     "grafts": [
-      "Five-Socket Stress Rig",
-      "four proof locks",
-      "genuine enthusiasm for the colocated-energy idea"
+      "two alarm clocks",
+      "empty borehole at maximum pressure",
+      "remote sensing aims the next field instrument"
     ]
   },
   "hook": {
     "pattern": "anomaly-question",
-    "frame1": "An armored cable plug strains toward a shore socket while its nearly empty reel begins to lift.",
-    "headline": "MOVE THE COMPUTER INSTEAD?",
-    "motion_by_s": 0.2,
-    "loopback": "The same plug stops one inch from an Alaska-value socket and waits for proof."
+    "frame1": "A massive charcoal rock glacier fills the square safe box while two amber alarm bells hover above its central trunk.",
+    "headline": "THIS GLACIER SPED UP TWICE",
+    "motion_by_s": 0.4,
+    "loopback": "The two alarm bells return as two measured pulse marks around the empty borehole."
   },
   "open_loop": {
-    "plant_t": 1.1,
-    "pay_t": 118.1,
-    "what": "Can moving compute beside proposed generation become an Alaska win?"
+    "plant_t": 15.2,
+    "pay_t": 94.2,
+    "what": "What can a validated surface map still not prove underground?"
   },
   "open_loop_2": {
-    "plant_t": 59.9,
-    "pay_t": 95.5,
-    "what": "What did FERC actually accept?"
+    "plant_t": 43.8,
+    "pay_t": 77.0,
+    "what": "What could make one slow crawl pulse twice?"
   },
   "throughline": {
-    "object": "armored hybrid power and fiber cable",
+    "object": "one cyan displacement ribbon",
     "states": [
       {
-        "at_s": 0,
-        "state": "dashed proposal plug stopped before shore"
+        "at_s": 2,
+        "state": "tangled over the moving central trunk"
       },
       {
-        "at_s": 35.4,
-        "state": "armored power and fiber route on the Nikiski map"
+        "at_s": 30,
+        "state": "registered against an independent quartz map"
       },
       {
-        "at_s": 47.3,
-        "state": "sequenced primary-use gate and dotted conditional Railbelt branch"
+        "at_s": 60,
+        "state": "split into amber crawl and magenta seasonal pulse"
       },
       {
-        "at_s": 70.8,
-        "state": "trace stopped at open evidence couplings on a steel test bench"
+        "at_s": 90,
+        "state": "solid above ground while the modeled branch turns dotted"
       },
       {
-        "at_s": 90.5,
-        "state": "contained on a study-priority sheet behind a no-construction rope"
-      },
-      {
-        "at_s": 107.3,
-        "state": "stopped by four closed proof locks one inch from the Alaska socket"
+        "at_s": 116.5,
+        "state": "curled into a question above an empty borehole"
       }
     ],
-    "lands_in_button": "The cable stays unconnected while the viewer names the evidence that could unlock it."
+    "lands_in_button": "The surviving ribbon points the next sensor underground."
   },
   "reveals": [
     {
-      "t": 4.2,
-      "type": "build-on",
-      "what": "One hive and turbine expand into the proposed 66-hive, 330-to-350-turbine field.",
+      "t": 31.0,
+      "type": "scale-pullback",
+      "what": "Seven glaciers become one Sourdough comparison",
       "hold_s": 0.6
     },
     {
-      "t": 70.8,
-      "type": "scale-pullback",
-      "what": "The proposed route becomes one trace on a five-coupling proof bench.",
+      "t": 60.8,
+      "type": "morph-to-chart",
+      "what": "One displacement trace splits into crawl and pulse",
       "hold_s": 0.7
     },
     {
-      "t": 90.5,
-      "type": "morph-to-chart",
-      "what": "The infrastructure drawing folds into a study-priority ticket behind a no-construction rope.",
-      "hold_s": 0.6
+      "t": 99.0,
+      "type": "build-on",
+      "what": "Measured surface locks while the modeled underground path fades",
+      "hold_s": 0.7
     }
   ],
   "audio_arc": {
     "build_steps": 4,
-    "dip_at": 74.6,
-    "riser_at": 95.4,
-    "silence_at": 111.5,
-    "payoff_at": 119.2,
+    "dip_at": 82,
+    "riser_at": 99,
+    "silence_at": 113,
+    "payoff_at": 118,
     "button_pattern": "question"
   },
-  "shots": [
-    {
-      "id": 1,
-      "title": "The short cord",
-      "t": "0.0-7.4",
-      "vo_line": 0,
-      "framing": "macro-closeup",
-      "scale": "insert",
-      "height": "eye",
-      "stage": "shoreless-cable",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "static:the cable snap supplies the motion",
-      "stage3d": "planes",
-      "transition_in": "",
-      "thread": "match",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Move the customer toward energy and reveal proposed scale.",
-      "hero": {
-        "name": "Armored cable",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes."
-    },
-    {
-      "id": 2,
-      "title": "The hive descends",
-      "t": "7.4-17.8",
-      "vo_line": 1,
-      "framing": "wide-establish",
-      "scale": "extreme-wide",
-      "height": "high",
-      "stage": "inlet-cutaway",
-      "pov": "cross-section-cutaway",
-      "layout": "stacked-layers",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "structure-as-subject",
-      "camera": "craneDown+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Move the customer toward energy and reveal proposed scale.",
-      "hero": {
-        "name": "Subsea hive",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes."
-    },
-    {
-      "id": 3,
-      "title": "Inside the direct coupling",
-      "t": "17.8-26.0",
-      "vo_line": 2,
-      "framing": "push-detail",
-      "scale": "close",
-      "height": "low",
-      "stage": "hive-cutaway",
-      "pov": "exploded-diagram",
-      "layout": "grid-modular",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "multiplicity-swarm",
-      "camera": "orbitReveal",
-      "stage3d": "planes",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Move the customer toward energy and reveal proposed scale.",
-      "hero": {
-        "name": "Direct coupling",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes."
-    },
-    {
-      "id": 4,
-      "title": "The proposed array",
-      "t": "26.0-34.1",
-      "vo_line": 4,
-      "framing": "map-territory",
-      "scale": "wide",
-      "height": "overhead",
-      "stage": "nikiski-chart",
-      "pov": "top-down-map",
-      "layout": "map-territory",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "landscape-as-subject",
-      "camera": "truckAcross",
-      "stage3d": "flat:the authoritative map geometry must stay registered",
-      "transition_in": "morph",
-      "thread": "match",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Move the customer toward energy and reveal proposed scale.",
-      "hero": {
-        "name": "Proposed array",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes.",
-      "square_safe": "Keep all 66 hive marks and both counter labels within x170 to 910, y500 to 1210."
-    },
-    {
-      "id": 5,
-      "title": "The hybrid cable",
-      "t": "34.1-42.4",
-      "vo_line": 5,
-      "framing": "data-panel",
-      "scale": "medium",
-      "height": "eye",
-      "stage": "routing-bench",
-      "pov": "instrument-screen",
-      "layout": "hud-instrument-frame",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "data-as-subject",
-      "camera": "static:the split routing needs fixed comparison",
-      "stage3d": "flat:fixed routing proportions are the evidence",
-      "transition_in": "map-travel",
-      "thread": "travel",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Reveal the cable and the primary-load fork.",
-      "hero": {
-        "name": "Hybrid cable",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes."
-    },
-    {
-      "id": 6,
-      "title": "The 100 MW fork",
-      "t": "42.4-50.3",
-      "vo_line": 7,
-      "framing": "alt-vantage",
-      "scale": "wide",
-      "height": "low",
-      "stage": "array-field",
-      "pov": "orbital-aerial",
-      "layout": "fullbleed-split",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "multiplicity-swarm",
-      "camera": "static:the primary-versus-spare branch diagram must stay registered for comparison",
-      "stage3d": "planes",
-      "transition_in": "hard-cut",
-      "thread": "build",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Reveal the cable and the primary-load fork.",
-      "hero": {
-        "name": "Routing dial",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes.",
-      "square_safe": "Keep the full 100 MW dial and cable fork within x180 to 900, y540 to 1200."
-    },
-    {
-      "id": 7,
-      "title": "Primary versus spare",
-      "t": "50.3-58.5",
-      "vo_line": 8,
-      "framing": "subject-portrait",
-      "scale": "close",
-      "height": "eye",
-      "stage": "test-bench",
-      "pov": "eye-level-immersive",
-      "layout": "centered-hero-lowerthird",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "assemble",
-      "thread": "build",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Reveal the cable and the primary-load fork.",
-      "hero": {
-        "name": "Conditional grid branch",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes."
-    },
-    {
-      "id": 8,
-      "title": "The test bench",
-      "t": "58.5-66.4",
-      "vo_line": 10,
-      "framing": "macro-closeup",
-      "scale": "insert",
-      "height": "eye",
-      "stage": "mechanical-stress-bench",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "static:the cable snap supplies the motion",
-      "stage3d": "planes",
-      "transition_in": "match-action",
-      "thread": "match",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Give the missing proof a full test scene.",
-      "hero": {
-        "name": "Test bench",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes."
-    },
-    {
-      "id": 9,
-      "title": "Empty counterparts",
-      "t": "66.4-74.6",
-      "vo_line": 11,
-      "framing": "wide-establish",
-      "scale": "extreme-wide",
-      "height": "high",
-      "stage": "counterpart-chamber",
-      "pov": "cross-section-cutaway",
-      "layout": "stacked-layers",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "structure-as-subject",
-      "camera": "craneDown+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Give the missing proof a full test scene.",
-      "hero": {
-        "name": "Evidence seats",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes.",
-      "square_safe": "Arrange the empty customer and capital positions vertically within x210 to 870, y520 to 1210."
-    },
-    {
-      "id": 10,
-      "title": "Four proof locks",
-      "t": "74.6-82.5",
-      "vo_line": 12,
-      "framing": "push-detail",
-      "scale": "close",
-      "height": "low",
-      "stage": "proof-lock-vault",
-      "pov": "exploded-diagram",
-      "layout": "grid-modular",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "multiplicity-swarm",
-      "camera": "orbitReveal",
-      "stage3d": "planes",
-      "transition_in": "mask-wipe",
-      "thread": "build",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Give the missing proof a full test scene.",
-      "hero": {
-        "name": "Proof locks",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes."
-    },
-    {
-      "id": 11,
-      "title": "The FERC sheet",
-      "t": "82.5-90.7",
-      "vo_line": 14,
-      "framing": "map-territory",
-      "scale": "wide",
-      "height": "overhead",
-      "stage": "federal-paper-chamber",
-      "pov": "top-down-map",
-      "layout": "map-territory",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "landscape-as-subject",
-      "camera": "static:the federal study-priority sheet must stay locked for legibility",
-      "stage3d": "flat:the authoritative map geometry must stay registered",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Collapse spectacle into legal status and a conditional Alaska-value button.",
-      "hero": {
-        "name": "FERC sheet",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes.",
-      "square_safe": "Scale the FERC sheet to x145 to 935, y500 to 1230 with the stamp at x540."
-    },
-    {
-      "id": 12,
-      "title": "Study not construction",
-      "t": "90.7-98.6",
-      "vo_line": 15,
-      "framing": "data-panel",
-      "scale": "medium",
-      "height": "eye",
-      "stage": "permit-ticket-desk",
-      "pov": "instrument-screen",
-      "layout": "hud-instrument-frame",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "data-as-subject",
-      "camera": "static:the split routing needs fixed comparison",
-      "stage3d": "flat:fixed routing proportions are the evidence",
-      "transition_in": "hard-cut",
-      "thread": "build",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Collapse spectacle into legal status and a conditional Alaska-value button.",
-      "hero": {
-        "name": "Permit ticket",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes."
-    },
-    {
-      "id": 13,
-      "title": "The public clock",
-      "t": "98.6-106.8",
-      "vo_line": 17,
-      "framing": "alt-vantage",
-      "scale": "wide",
-      "height": "low",
-      "stage": "public-comment-calendar",
-      "pov": "orbital-aerial",
-      "layout": "fullbleed-split",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "multiplicity-swarm",
-      "camera": "riseWith+orbitReveal",
-      "stage3d": "planes",
-      "transition_in": "morph",
-      "thread": "match",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Collapse spectacle into legal status and a conditional Alaska-value button.",
-      "hero": {
-        "name": "Comment clock",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes.",
-      "square_safe": "Center the November 2nd tab and 1 PM Alaska label inside x190 to 890, y560 to 1180."
-    },
-    {
-      "id": 14,
-      "title": "One inch from Alaska",
-      "t": "106.8-121.0",
-      "vo_line": 18,
-      "framing": "subject-portrait",
-      "scale": "close",
-      "height": "eye",
-      "stage": "alaska-value-threshold",
-      "pov": "eye-level-immersive",
-      "layout": "centered-hero-lowerthird",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "centered": "The named hero performs its single load-bearing action at x540 y900.",
-      "means": "Collapse spectacle into legal status and a conditional Alaska-value button.",
-      "hero": {
-        "name": "Alaska value socket",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "Primary body 70%, articulated connection or action 20%, fasteners, labels and contact shadow 10%; proposal lines remain visibly dashed."
-      },
-      "world_arc": "Enter from the prior carried shape, perform one irreversible information change, and exit on the next match point.",
-      "transition_anchor": "The cable coil, hexagonal hive, circular rotor or white paper edge persists at center while the surrounding world changes.",
-      "square_safe": "Keep plug, gap, four closed locks and Alaska socket inside x150 to 930, y560 to 1220."
-    }
-  ],
   "beats": [
     {
       "id": 1,
-      "t": "0.0-1.1",
-      "vo": "What if moving Cook Inlet power means moving the computer instead?",
-      "shows": "proposal plug reaches toward a distant shore socket and stops",
-      "sfx": "tick",
-      "means": "Explain the proposal and its physical logic.",
+      "title": "First pulse",
+      "t": "0.0-1.2",
+      "vo": "A mountain of rock",
+      "shows": "The RockGlacierCore rises, the first bell strikes and one cyan ribbon emerges from its central trunk",
+      "sfx": "boom",
+      "means": "The landform is moving",
       "rehook": "",
       "draw": {
-        "subject": "proposal plug",
-        "action": "reaches toward a distant shore socket and stops",
-        "emotion": "curious",
-        "annotation": "APPLICANT CONCEPT"
+        "subject": "RockGlacierCore and cyan displacement ribbon",
+        "action": "rise and push one ribbon from the central trunk",
+        "emotion": "startled",
+        "annotation": "MOUNTAIN OF ROCK"
       },
       "choreo": {
-        "primary": "proposal plug reaches toward a distant shore socket and stops",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 0
+        "primary": "the core rises and the ribbon emerges",
+        "reaction": "the first bell shakes",
+        "ambient": "snow motes drift"
+      }
     },
     {
       "id": 2,
-      "t": "1.1-4.2",
-      "vo": "What if moving Cook Inlet power means moving the computer instead?",
-      "shows": "compute hive blueprint descends beside the proposed plug",
-      "sfx": "bubble-swish",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Second pulse",
+      "t": "1.2-3.4",
+      "vo": "sped up twice",
+      "shows": "A second bell drops, the glacier jolts again and the same cyan ribbon gains a second knot",
+      "sfx": "hit",
+      "means": "The anomaly is two pulses",
       "draw": {
-        "subject": "compute hive blueprint",
-        "action": "descends beside the proposed plug",
-        "emotion": "helpful",
-        "annotation": "MOVE THE COMPUTER?"
+        "subject": "RockGlacierCore and cyan displacement ribbon",
+        "action": "jolt and catch a second knot",
+        "emotion": "surprised",
+        "annotation": "TWICE"
       },
       "choreo": {
-        "primary": "compute hive blueprint descends beside the proposed plug",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 1.1
+        "primary": "the second bell drops and the ribbon knots",
+        "reaction": "the rock layers shake",
+        "ambient": "radar dots flicker"
+      }
     },
     {
       "id": 3,
-      "t": "4.2-9.0",
-      "vo": "Deep Green proposes sixty-six compute hives near Nikiski.",
-      "shows": "one hive outline multiplies into a hexagonal field",
-      "sfx": "reel-click",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Annual return",
+      "t": "3.4-7.1",
+      "vo": "twice each year",
+      "shows": "Two pulse marks circle one calendar",
+      "sfx": "tick",
+      "means": "The pulses recur annually",
       "draw": {
-        "subject": "one hive outline",
-        "action": "multiplies into a hexagonal field",
-        "emotion": "astonished",
-        "annotation": "PROPOSED · 66"
+        "subject": "pulse calendar",
+        "action": "spins and stops on two marks",
+        "emotion": "alert",
+        "annotation": "2 PULSES EACH YEAR"
       },
       "choreo": {
-        "primary": "one hive outline multiplies into a hexagonal field",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 4.2
+        "primary": "the calendar spins",
+        "reaction": "both marks brighten",
+        "ambient": "terrain creeps"
+      }
     },
     {
       "id": 4,
-      "t": "9.0-11.9",
-      "vo": "Deep Green proposes sixty-six compute hives near Nikiski.",
-      "shows": "Nikiski map pin lands beside the dashed field",
-      "sfx": "lock",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Seven rise",
+      "t": "7.1-10.9",
+      "vo": "seven rock glaciers",
+      "shows": "Seven ice rich ridges rise from the McCarthy map while the same cyan ribbon traces Sourdough",
+      "sfx": "riser",
+      "means": "Establish the study set",
       "draw": {
-        "subject": "Nikiski map pin",
-        "action": "lands beside the dashed field",
-        "emotion": "focused",
-        "annotation": "UPPER COOK INLET · EAST FORELAND · NIKISKI"
+        "subject": "seven rock glaciers and cyan ribbon",
+        "action": "rise while the ribbon traces Sourdough",
+        "emotion": "curious",
+        "annotation": "7 ROCK GLACIERS NEAR McCARTHY"
       },
       "choreo": {
-        "primary": "Nikiski map pin lands beside the dashed field",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 9
+        "primary": "seven ridges rise and the ribbon travels",
+        "reaction": "the map pin pulses",
+        "ambient": "clouds travel"
+      }
     },
     {
       "id": 5,
-      "t": "11.9-16.4",
-      "vo": "Around them, three hundred thirty to three hundred fifty marine hydrokinetic turbines.",
-      "shows": "one turbine outline rotates once in dashed blueprint ink",
-      "sfx": "riser",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Radar sweep",
+      "t": "10.9-15.2",
+      "vo": "Sentinel One radar",
+      "shows": "SatelliteEye sweeps the cyan ribbon diagonally across the terrain",
+      "sfx": "whoosh",
+      "means": "Name the measuring instrument and period",
       "draw": {
-        "subject": "one turbine outline",
-        "action": "rotates once in dashed blueprint ink",
-        "emotion": "eager",
-        "annotation": "PROPOSED · MARINE HYDROKINETIC"
+        "subject": "SatelliteEye and cyan displacement ribbon",
+        "action": "sweep across the terrain together",
+        "emotion": "focused",
+        "annotation": "SENTINEL-1 INSAR · 2018 TO 2022 REPORTED PERIOD"
       },
       "choreo": {
-        "primary": "one turbine outline rotates once in dashed blueprint ink",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 11.9
+        "primary": "the radar beam sweeps and the ribbon travels",
+        "reaction": "terrain cells brighten",
+        "ambient": "the satellite glides"
+      }
     },
     {
       "id": 6,
-      "t": "16.4-19.7",
-      "vo": "Around them, three hundred thirty to three hundred fifty marine hydrokinetic turbines.",
-      "shows": "counter reel ticks from 330 toward 350",
-      "sfx": "snap",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Rock and ice",
+      "t": "15.2-19.7",
+      "vo": "rivers of rock and ice",
+      "shows": "The landform opens, the cyan ribbon stays on the surface and stops at an empty underground question",
+      "sfx": "crack",
+      "means": "Define the landform and plant what surface evidence cannot answer",
       "draw": {
-        "subject": "counter reel",
-        "action": "ticks from 330 toward 350",
-        "emotion": "wide-eyed",
-        "annotation": "PROPOSED · 330 TO 350"
+        "subject": "RockGlacierCore and cyan displacement ribbon",
+        "action": "open while the ribbon stops at the underground boundary",
+        "emotion": "revealing",
+        "annotation": "ROCK AND ICE · WHAT IS UNDERGROUND?"
       },
       "choreo": {
-        "primary": "counter reel ticks from 330 toward 350",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 16.4
+        "primary": "the cutaway opens and the ribbon stops",
+        "reaction": "ice veins swell",
+        "ambient": "pebbles fall"
+      }
     },
     {
       "id": 7,
-      "t": "19.7-24.7",
-      "vo": "The turbines would power them directly while seawater provides passive cooling.",
-      "shows": "dashed power pulse travels from turbine toward hive bus",
-      "sfx": "whoosh",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Sourdough runs",
+      "t": "19.7-23.1",
+      "vo": "more than one hundred sixty",
+      "shows": "The central trunk advances past a physical ruler",
+      "sfx": "tick",
+      "means": "Make the high rate physical",
       "draw": {
-        "subject": "dashed power pulse",
-        "action": "travels from turbine toward hive bus",
-        "emotion": "focused",
-        "annotation": "PROPOSED · DIRECT POWER"
+        "subject": "Sourdough central trunk",
+        "action": "advances past the ruler",
+        "emotion": "determined",
+        "annotation": ">160 CM PER YEAR · PARTS OF CORE"
       },
       "choreo": {
-        "primary": "dashed power pulse travels from turbine toward hive bus",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 19.7
+        "primary": "the trunk advances",
+        "reaction": "the ruler tips",
+        "ambient": "scree rolls"
+      }
     },
     {
       "id": 8,
-      "t": "24.7-27.5",
-      "vo": "The turbines would power them directly while seawater provides passive cooling.",
-      "shows": "dashed cooling arrows circle the hive without resolving a result",
-      "sfx": "pulse",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Neighbor contrast",
+      "t": "23.1-27.8",
+      "vo": "less than half as fast",
+      "shows": "McCarthy Creek advances less than half the distance and waves from behind",
+      "sfx": "pop",
+      "means": "Show local variation",
       "draw": {
-        "subject": "dashed cooling arrows",
-        "action": "circle the hive without resolving a result",
-        "emotion": "patient",
-        "annotation": "PROPOSED · PASSIVE COOLING"
+        "subject": "paired glacier lanes",
+        "action": "advance at visibly different distances",
+        "emotion": "wry",
+        "annotation": "SMU SUMMARY · NEARBY LESS THAN HALF"
       },
       "choreo": {
-        "primary": "dashed cooling arrows circle the hive without resolving a result",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 24.7
+        "primary": "both lanes advance",
+        "reaction": "the shorter lane waves",
+        "ambient": "finish tape trembles"
+      }
     },
     {
       "id": 9,
-      "t": "27.5-31.8",
-      "vo": "Clever. Put the primary load beside its proposed power source.",
-      "shows": "proposed turbine and hive slide beside each other and shorten the route",
-      "sfx": "bubble-swish",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "The precise cable route re-grabs the physical story.",
+      "title": "Independent setup",
+      "t": "27.8-31.0",
+      "vo": "First, check the map",
+      "shows": "The cyan radar map slides onto an empty registration table and waits for a second map",
+      "sfx": "lock",
+      "means": "Rehook on independent validation",
+      "rehook": "A second map must test the cyan surface result",
       "draw": {
-        "subject": "proposed turbine and hive",
-        "action": "slide beside each other and shorten the route",
-        "emotion": "delighted",
-        "annotation": "PRIMARY LOAD BESIDE SOURCE"
+        "subject": "cyan radar map",
+        "action": "slides and locks onto the registration table",
+        "emotion": "expectant",
+        "annotation": "FIRST CHECK THE MAP"
       },
       "choreo": {
-        "primary": "proposed turbine and hive slide beside each other and shorten the route",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 27.5
+        "primary": "the map slides",
+        "reaction": "registration pins snap",
+        "ambient": "contours pulse"
+      }
     },
     {
       "id": 10,
-      "t": "31.8-35.4",
-      "vo": "Clever. Put the primary load beside its proposed power source.",
-      "shows": "long route line folds into a shorter local connection plus shore cable",
+      "title": "Pixels arrive",
+      "t": "31.0-35.6",
+      "vo": "Photogrammetry checked",
+      "shows": "Quartz photo pixels pour onto the cyan radar map",
       "sfx": "paper-rustle",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "means": "Introduce the independent check",
       "draw": {
-        "subject": "long route line",
-        "action": "folds into a shorter local connection plus shore cable",
-        "emotion": "wry",
-        "annotation": "COLOCATION · NOT ZERO CABLE"
+        "subject": "photogrammetry pixels",
+        "action": "pour across the radar map",
+        "emotion": "skeptical",
+        "annotation": ">16,000 SOURDOUGH PIXELS"
       },
       "choreo": {
-        "primary": "long route line folds into a shorter local connection plus shore cable",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 31.8
+        "primary": "pixels pour",
+        "reaction": "the cyan map holds",
+        "ambient": "corner pins flicker"
+      }
     },
     {
       "id": 11,
-      "t": "35.4-36.5",
-      "vo": "A three point five mile cable would carry power and fiber ashore.",
-      "shows": "armored cable reel unspools across the map and stops at Nikiski",
+      "title": "Maps register",
+      "t": "35.6-39.1",
+      "vo": "The maps correlated",
+      "shows": "Two maps slide from opposite sides and lock over Sourdough",
       "sfx": "lock",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "means": "Pay validation visually",
       "draw": {
-        "subject": "armored cable reel",
-        "action": "unspools across the map and stops at Nikiski",
-        "emotion": "determined",
-        "annotation": "PROPOSED · ABOUT 3.5 MILES"
+        "subject": "radar and photo maps",
+        "action": "slide together and lock",
+        "emotion": "satisfied",
+        "annotation": "r 0.842"
       },
       "choreo": {
-        "primary": "armored cable reel unspools across the map and stops at Nikiski",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 35.4
+        "primary": "the maps slide",
+        "reaction": "a steel frame latches",
+        "ambient": "pixel checks blink"
+      }
     },
     {
       "id": 12,
-      "t": "36.5-39.6",
-      "vo": "A three point five mile cable would carry power and fiber ashore.",
-      "shows": "power and fiber cores separate in cutaway and rejoin one jacket",
-      "sfx": "soft-hit",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Error lands",
+      "t": "39.1-43.8",
+      "vo": "mean error",
+      "shows": "A 10.72 centimeter caliper closes on the remaining gap",
+      "sfx": "click",
+      "means": "Quantify the map difference",
       "draw": {
-        "subject": "power and fiber cores",
-        "action": "separate in cutaway and rejoin one jacket",
-        "emotion": "cooperative",
-        "annotation": "PROPOSED · 115 kV + FIBER"
+        "subject": "DistanceCalipers",
+        "action": "close on the map gap",
+        "emotion": "precise",
+        "annotation": "MAE 10.72 CM PER YEAR"
       },
       "choreo": {
-        "primary": "power and fiber cores separate in cutaway and rejoin one jacket",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 36.5
+        "primary": "the calipers close",
+        "reaction": "the gap contracts",
+        "ambient": "measurement ticks drift"
+      }
     },
     {
       "id": 13,
-      "t": "39.6-44.4",
-      "vo": "The notice estimates one hundred megawatts. Where would it go?",
-      "shows": "100 MW dial rises as a source-paper estimate",
-      "sfx": "snap",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Researchers choose two",
+      "t": "43.8-47.0",
+      "vo": "Then the clever part",
+      "shows": "A researcher hand clicks the component dial to two before the validated ribbon enters the evidence bench",
+      "sfx": "riser",
+      "means": "Make the method choice explicit",
       "draw": {
-        "subject": "100 MW dial",
-        "action": "rises as a source-paper estimate",
-        "emotion": "curious",
-        "annotation": "NOTICE ESTIMATE · 100 MW"
+        "subject": "researcher hand and component dial",
+        "action": "click the dial to two and release the ribbon",
+        "emotion": "deliberate",
+        "annotation": "2 COMPONENTS · FIXED BY RESEARCHERS"
       },
       "choreo": {
-        "primary": "100 MW dial rises as a source-paper estimate",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 39.6
+        "primary": "the hand turns the dial and the ribbon enters",
+        "reaction": "two output reels wake",
+        "ambient": "gears rotate"
+      }
     },
     {
       "id": 14,
-      "t": "44.4-47.3",
-      "vo": "The notice estimates one hundred megawatts. Where would it go?",
-      "shows": "equal-width route options wait behind closed sequence gates",
-      "sfx": "tick",
-      "means": "Explain the proposal and its physical logic.",
-      "rehook": "",
+      "title": "Two interpreted outputs",
+      "t": "47.0-51.9",
+      "vo": "split the record",
+      "shows": "Existing EvidenceTrace forks into amber crawl and magenta pulse beneath persistent INTERPRETED source chips",
+      "sfx": "snap",
+      "means": "Explain ICA as separation, not autonomous discovery",
       "draw": {
-        "subject": "equal-width route options",
-        "action": "wait behind closed sequence gates",
-        "emotion": "impatient",
-        "annotation": "WHERE WOULD POWER GO?"
+        "subject": "EvidenceTrace and interpreted source chips",
+        "action": "split one trace into two sourced ribbons",
+        "emotion": "precise",
+        "annotation": "ICA · INTERPRETED OUTPUTS"
       },
       "choreo": {
-        "primary": "equal-width route options wait behind closed sequence gates",
-        "reaction": "the nearest dashed cable eye follows the action and settles",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 44.4
+        "primary": "the trace splits",
+        "reaction": "both source chips latch",
+        "ambient": "status lamps flicker"
+      }
     },
     {
       "id": 15,
-      "t": "47.3-51.8",
-      "vo": "The data center would be the primary use.",
-      "shows": "compute gate opens first and accepts the route",
+      "title": "Long crawl",
+      "t": "51.9-56.1",
+      "vo": "a long crawl",
+      "shows": "The amber ribbon advances steadily under the glacier",
       "sfx": "pulse",
-      "means": "Separate primary use, conditional grid benefit and missing proof.",
-      "rehook": "",
+      "means": "Name the long term component",
       "draw": {
-        "subject": "compute gate",
-        "action": "opens first and accepts the route",
-        "emotion": "matter-of-fact",
-        "annotation": "PRIMARY USE · DATA CENTER"
+        "subject": "amber crawl ribbon",
+        "action": "advances in a steady line",
+        "emotion": "patient",
+        "annotation": "LONG CRAWL"
       },
       "choreo": {
-        "primary": "compute gate opens first and accepts the route",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 47.3
+        "primary": "the ribbon advances",
+        "reaction": "rock layers lean",
+        "ambient": "dust drifts"
+      }
     },
     {
       "id": 16,
-      "t": "51.8-55.1",
-      "vo": "Only spare power could reach the Railbelt. Could, not will.",
-      "shows": "Railbelt gate appears as a dotted conditional branch",
-      "sfx": "reel-click",
-      "means": "Separate primary use, conditional grid benefit and missing proof.",
-      "rehook": "",
+      "title": "Two interpreted peaks",
+      "t": "56.1-60.8",
+      "vo": "seasonal pulse",
+      "shows": "The interpreted magenta ribbon grows two peaks and rings two bells beneath its source chip",
+      "sfx": "boom",
+      "means": "Reveal the interpreted seasonal component",
+      "rehook": "One trace becomes two interpreted rhythms and the second asks why",
       "draw": {
-        "subject": "Railbelt gate",
-        "action": "appears as a dotted conditional branch",
-        "emotion": "cautious",
-        "annotation": "SPARE POWER COULD FLOW"
+        "subject": "interpreted seasonal ribbon",
+        "action": "grows two peaks and strikes two bells",
+        "emotion": "animated",
+        "annotation": "INTERPRETED · SEASONAL PULSE"
       },
       "choreo": {
-        "primary": "Railbelt gate appears as a dotted conditional branch",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 51.8
+        "primary": "two peaks grow",
+        "reaction": "bells strike",
+        "ambient": "the crawl ribbon continues"
+      }
     },
     {
       "id": 17,
-      "t": "55.1-60.1",
-      "vo": "Only spare power could reach the Railbelt. Could, not will.",
-      "shows": "word COULD locks onto the branch and blocks WILL",
-      "sfx": "lock",
-      "means": "Separate primary use, conditional grid benefit and missing proof.",
-      "rehook": "",
+      "title": "Melt alignment",
+      "t": "60.8-64.0",
+      "vo": "after snowmelt",
+      "shows": "A quartz snow marker slides beside the first peak on a shared timeline without touching it",
+      "sfx": "drip",
+      "means": "Show association without depicting cause",
       "draw": {
-        "subject": "word COULD",
-        "action": "locks onto the branch and blocks WILL",
-        "emotion": "firm",
-        "annotation": "COULD · NOT WILL"
+        "subject": "snowmelt marker and interpreted peak",
+        "action": "slide into temporal alignment without contact",
+        "emotion": "curious",
+        "annotation": "ASSOCIATED · AFTER SNOWMELT"
       },
       "choreo": {
-        "primary": "word COULD locks onto the branch and blocks WILL",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 55.1
+        "primary": "the marker slides",
+        "reaction": "a timing bracket opens",
+        "ambient": "sun rays sweep"
+      }
     },
     {
       "id": 18,
-      "t": "60.1-62.9",
-      "vo": "Now put that diagram on a test bench.",
-      "shows": "blueprint array slides onto a steel test bench",
-      "sfx": "riser",
-      "means": "Separate primary use, conditional grid benefit and missing proof.",
-      "rehook": "",
+      "title": "Rain alignment",
+      "t": "64.0-68.7",
+      "vo": "later rain",
+      "shows": "A rain marker drops beside the second peak on the timeline without touching it",
+      "sfx": "light rain patter",
+      "means": "Show association without depicting cause",
       "draw": {
-        "subject": "blueprint array",
-        "action": "slides onto a steel test bench",
-        "emotion": "ready",
-        "annotation": "WHAT DID FERC ACCEPT?"
+        "subject": "rain marker and interpreted peak",
+        "action": "drop into temporal alignment without contact",
+        "emotion": "lively",
+        "annotation": "ASSOCIATED · LATER RAIN"
       },
       "choreo": {
-        "primary": "blueprint array slides onto a steel test bench",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 60.1
+        "primary": "the marker drops",
+        "reaction": "a timing bracket opens",
+        "ambient": "clouds travel"
+      }
     },
     {
       "id": 19,
-      "t": "62.9-67.2",
-      "vo": "The filing names no customer or committed financing.",
-      "shows": "empty customer chair rolls to the bench and stays empty",
-      "sfx": "snap",
-      "means": "Separate primary use, conditional grid benefit and missing proof.",
-      "rehook": "The evidence couplings turn the diagram into a real test.",
+      "title": "Lag calendar",
+      "t": "68.7-73.2",
+      "vo": "seventy two to eighty four days",
+      "shows": "Four calendars flip between melt and first pulse",
+      "sfx": "tick",
+      "means": "Make the observed lag physical",
       "draw": {
-        "subject": "empty customer chair",
-        "action": "rolls to the bench and stays empty",
-        "emotion": "awkward",
-        "annotation": "NO CUSTOMER NAMED"
+        "subject": "four measured year calendars",
+        "action": "flip and stop between 72 and 84 days",
+        "emotion": "attentive",
+        "annotation": "72 TO 84 DAYS · FOUR YEARS"
       },
       "choreo": {
-        "primary": "empty customer chair rolls to the bench and stays empty",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 62.9
+        "primary": "calendars flip",
+        "reaction": "lag hands stop",
+        "ambient": "the ribbon pulses"
+      }
     },
     {
       "id": 20,
-      "t": "67.2-70.8",
-      "vo": "The filing names no customer or committed financing.",
-      "shows": "capital card flips from blank to NO COMMITTED FINANCING",
-      "sfx": "tick",
-      "means": "Separate primary use, conditional grid benefit and missing proof.",
-      "rehook": "",
+      "title": "Proxy year",
+      "t": "73.2-77.0",
+      "vo": "Twenty nineteen used an estimated temperature proxy",
+      "shows": "A fifth 2019 calendar arrives as a dashed estimate card and stays separate from the four measured years",
+      "sfx": "paper",
+      "means": "Keep estimated and observed lags distinct",
       "draw": {
-        "subject": "capital card",
-        "action": "flips from blank to NO COMMITTED FINANCING",
-        "emotion": "exact",
-        "annotation": "NO COMMITTED FINANCING"
+        "subject": "2019 proxy calendar",
+        "action": "slides beside but never joins the four solid calendars",
+        "emotion": "qualified",
+        "annotation": "2019 · ESTIMATED 84 TO 96 DAYS · TEMPERATURE PROXY"
       },
       "choreo": {
-        "primary": "capital card flips from blank to NO COMMITTED FINANCING",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 67.2
+        "primary": "the dashed card slides in",
+        "reaction": "four solid cards hold position",
+        "ambient": "proxy line flickers"
+      }
     },
     {
       "id": 21,
-      "t": "70.8-71.9",
-      "vo": "No completed proof covers output, cooling, economics, grid connection, or environmental effects.",
-      "shows": "five open couplings label output, cooling, economics, grid, environment",
-      "sfx": "pulse",
-      "means": "Separate primary use, conditional grid benefit and missing proof.",
-      "rehook": "",
+      "title": "Model assembles",
+      "t": "77.0-81.8",
+      "vo": "The authors modeled a path",
+      "shows": "A dotted shadowless sunlight to water to slide chain assembles below ground",
+      "sfx": "whoosh",
+      "means": "Present the strongest modeled explanation",
       "draw": {
-        "subject": "five open couplings",
-        "action": "label output, cooling, economics, grid, environment",
-        "emotion": "serious",
-        "annotation": "NO COMPLETED PROOF"
+        "subject": "modeled water path",
+        "action": "assembles from sunlight to water to sliding layer",
+        "emotion": "hopeful",
+        "annotation": "MODELED · MAY"
       },
       "choreo": {
-        "primary": "five open couplings label output, cooling, economics, grid, environment",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 70.8
+        "primary": "the path assembles",
+        "reaction": "water beads descend",
+        "ambient": "dotted arrows travel"
+      }
     },
     {
       "id": 22,
-      "t": "71.9-75.0",
-      "vo": "No completed proof covers output, cooling, economics, grid connection, or environmental effects.",
-      "shows": "cable trace touches each open coupling and stops",
-      "sfx": "reel-click",
-      "means": "Separate primary use, conditional grid benefit and missing proof.",
-      "rehook": "",
+      "title": "Empty borehole",
+      "t": "81.8-86.0",
+      "vo": "No borehole temperatures",
+      "shows": "The path reaches a dashed CoringTube outline and finds empty space",
+      "sfx": "drop",
+      "means": "Test the modeled cause",
       "draw": {
-        "subject": "cable trace",
-        "action": "touches each open coupling and stops",
-        "emotion": "patient",
-        "annotation": "STILL TO PROVE"
+        "subject": "unmeasured CoringTube outline",
+        "action": "opens and reveals empty space",
+        "emotion": "uncertain",
+        "annotation": "NO BOREHOLE TEMPERATURES"
       },
       "choreo": {
-        "primary": "cable trace touches each open coupling and stops",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 71.9
+        "primary": "the outline opens",
+        "reaction": "the modeled path stops",
+        "ambient": "the measured surface remains bright"
+      }
     },
     {
       "id": 23,
-      "t": "75.0-79.8",
-      "vo": "That doesn't make it bad. It makes the next step a study.",
-      "shows": "failed stamp tries to mark BAD and is rejected",
-      "sfx": "paper-rustle",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "",
+      "title": "Six kilometer gap",
+      "t": "86.0-90.7",
+      "vo": "six kilometers away",
+      "shows": "A measuring tape rolls from the glacier to a distant weather station",
+      "sfx": "roll",
+      "means": "Show the proxy distance",
       "draw": {
-        "subject": "failed stamp",
-        "action": "tries to mark BAD and is rejected",
-        "emotion": "relieved",
-        "annotation": "NOT BAD"
+        "subject": "weather station and measuring tape",
+        "action": "roll apart across six kilometers",
+        "emotion": "strained",
+        "annotation": "WEATHER STATION · 6 KM AWAY"
       },
       "choreo": {
-        "primary": "failed stamp tries to mark BAD and is rejected",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 75
+        "primary": "the tape rolls",
+        "reaction": "the station waves",
+        "ambient": "radio lines flicker"
+      }
     },
     {
       "id": 24,
-      "t": "79.8-82.7",
-      "vo": "That doesn't make it bad. It makes the next step a study.",
-      "shows": "test-plan folder opens and receives the blueprint",
-      "sfx": "riser",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "",
+      "title": "Pattern breaks",
+      "t": "90.7-94.2",
+      "vo": "Two smaller glaciers",
+      "shows": "RG5 and RG6 step outside a sunlight stencil while RG5 atmospheric artifact haze interrupts its trace",
+      "sfx": "snap",
+      "means": "Challenge generalization without overstating the exceptions",
+      "rehook": "Two glaciers complicate the neat pattern",
       "draw": {
-        "subject": "test-plan folder",
-        "action": "opens and receives the blueprint",
-        "emotion": "hopeful",
-        "annotation": "NEXT STEP · STUDY"
+        "subject": "RG5 and RG6 traces",
+        "action": "slide outside the simple trend while artifact haze crosses RG5",
+        "emotion": "defiant",
+        "annotation": "RG5 ARTIFACTS · RG6 EXCEPTION · LARGER SAMPLE NEEDED"
       },
       "choreo": {
-        "primary": "test-plan folder opens and receives the blueprint",
-        "reaction": "the bench pointer or route gate reacts once and returns",
-        "ambient": "two slow bubble columns drift at different depths while a caustic band crosses independently"
-      },
-      "at_s": 79.8
+        "primary": "two traces slide",
+        "reaction": "the trend line bends",
+        "ambient": "labeled atmospheric artifact haze drifts"
+      }
     },
     {
       "id": 25,
-      "t": "82.7-87.2",
-      "vo": "On September fourth, F E R C opened public comment on the application.",
-      "shows": "white FERC sheet drops over the test bench and stops every fantasy shadow",
-      "sfx": "soft-hit",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "",
+      "title": "Evidence sorts",
+      "t": "94.2-99.0",
+      "vo": "does not erase the measurement",
+      "shows": "The solid surface map stays locked while the model drains to dotted magenta",
+      "sfx": "lock",
+      "means": "Separate what survives from what narrows",
       "draw": {
-        "subject": "white FERC sheet",
-        "action": "drops over the test bench and stops every fantasy shadow",
-        "emotion": "authoritative",
-        "annotation": "FERC · SEPTEMBER 4TH"
+        "subject": "surface map and model",
+        "action": "separate into solid and dotted layers",
+        "emotion": "resolved",
+        "annotation": "MEASURED ABOVE · MODELED BELOW"
       },
       "choreo": {
-        "primary": "white FERC sheet drops over the test bench and stops every fantasy shadow",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 82.7
+        "primary": "the model drains",
+        "reaction": "the map stays locked",
+        "ambient": "cyan contours pulse"
+      }
     },
     {
       "id": 26,
-      "t": "87.2-90.5",
-      "vo": "On September fourth, F E R C opened public comment on the application.",
-      "shows": "PUBLIC COMMENT tab springs open on the sheet",
-      "sfx": "whoosh",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "",
+      "title": "Validation payoff",
+      "t": "99.0-103.3",
+      "vo": "sharper field test",
+      "shows": "The photo and radar maps rise together over the empty borehole",
+      "sfx": "riser",
+      "means": "Pay the long trust loop",
       "draw": {
-        "subject": "PUBLIC COMMENT tab",
-        "action": "springs open on the sheet",
-        "emotion": "inviting",
-        "annotation": "APPLICATION NOTICE"
+        "subject": "registered surface maps",
+        "action": "rise intact above the borehole",
+        "emotion": "earned confidence",
+        "annotation": "SURFACE MOTION CHECKED"
       },
       "choreo": {
-        "primary": "PUBLIC COMMENT tab springs open on the sheet",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 87.2
+        "primary": "both maps rise",
+        "reaction": "the empty socket pings",
+        "ambient": "the crawl ribbon advances"
+      }
     },
     {
       "id": 27,
-      "t": "90.5-95.5",
-      "vo": "If issued, the permit gives study priority.",
-      "shows": "study-priority ticket slides from the FERC sheet",
-      "sfx": "tick",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "",
+      "title": "Proposed sensor test",
+      "t": "103.3-108.0",
+      "vo": "Put sensors underground",
+      "shows": "A dashed editorial sensor outline descends toward the empty CoringTube outline but stops above it",
+      "sfx": "whoosh",
+      "means": "Turn uncertainty into a proposed next test",
       "draw": {
-        "subject": "study-priority ticket",
-        "action": "slides from the FERC sheet",
-        "emotion": "precise",
-        "annotation": "IF ISSUED · STUDY PRIORITY"
+        "subject": "editorial proposed sensor outline",
+        "action": "descends toward the hypothetical borehole target",
+        "emotion": "purposeful",
+        "annotation": "EDITORIAL PROPOSED TEST · NOT DEPLOYED"
       },
       "choreo": {
-        "primary": "study-priority ticket slides from the FERC sheet",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 90.5
+        "primary": "the dashed sensor descends",
+        "reaction": "the empty outline brightens",
+        "ambient": "survey flags flutter"
+      }
     },
     {
       "id": 28,
-      "t": "95.5-98.3",
-      "vo": "It wouldn't authorize construction or prove that one turbine works there.",
-      "shows": "toy excavator brakes behind a striped paper rope",
-      "sfx": "bubble-swish",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "The FERC sheet resolves into study priority and no construction.",
+      "title": "Next melt",
+      "t": "108.0-112.1",
+      "vo": "Watch the next melt",
+      "shows": "Snow melts and the first pulse clock starts",
+      "sfx": "drip",
+      "means": "State the future test",
       "draw": {
-        "subject": "toy excavator",
-        "action": "brakes behind a striped paper rope",
-        "emotion": "obedient",
-        "annotation": "NO CONSTRUCTION"
+        "subject": "pulse clock",
+        "action": "starts when snow melts",
+        "emotion": "watchful",
+        "annotation": "WATCH THE NEXT MELT"
       },
       "choreo": {
-        "primary": "toy excavator brakes behind a striped paper rope",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 95.5
+        "primary": "snow melts",
+        "reaction": "the clock starts",
+        "ambient": "sun rays sweep"
+      }
     },
     {
       "id": 29,
-      "t": "98.3-102.6",
-      "vo": "It wouldn't authorize construction or prove that one turbine works there.",
-      "shows": "one turbine icon remains dashed and untested",
-      "sfx": "paper-rustle",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "",
+      "title": "Next rain",
+      "t": "112.1-116.5",
+      "vo": "and rain",
+      "shows": "Rain falls and a second clock wakes beside the first",
+      "sfx": "rain on rock texture",
+      "means": "Complete the two event test",
       "draw": {
-        "subject": "one turbine icon",
-        "action": "remains dashed and untested",
-        "emotion": "humble",
-        "annotation": "NO PROVEN OUTPUT"
+        "subject": "second pulse clock",
+        "action": "wakes as rain falls",
+        "emotion": "watchful",
+        "annotation": "WATCH THE NEXT RAIN"
       },
       "choreo": {
-        "primary": "one turbine icon remains dashed and untested",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 98.3
+        "primary": "rain falls",
+        "reaction": "the second clock wakes",
+        "ambient": "both ribbons breathe"
+      }
     },
     {
       "id": 30,
-      "t": "102.6-106.2",
-      "vo": "Comments and competing applications are due November second at one P M Alaska time. Brief comments need no prior registration.",
-      "shows": "November calendar snaps to the second and holds",
-      "sfx": "lock",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "",
+      "title": "Both appointments",
+      "t": "116.5-120.0",
+      "vo": "keeps both appointments",
+      "shows": "The cyan ribbon curls into a question above the empty borehole while both bells strike",
+      "sfx": "boom",
+      "means": "Land the measured rhythm and open cause",
       "draw": {
-        "subject": "November calendar",
-        "action": "snaps to the second and holds",
-        "emotion": "alert",
-        "annotation": "NOVEMBER 2ND · 1 PM ALASKA"
+        "subject": "cyan displacement ribbon",
+        "action": "curls into a question and points underground",
+        "emotion": "curious",
+        "annotation": "DOES IT KEEP BOTH APPOINTMENTS?"
       },
       "choreo": {
-        "primary": "November calendar snaps to the second and holds",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 102.6
+        "primary": "the ribbon curls",
+        "reaction": "both bells strike",
+        "ambient": "the mountain creeps"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "title": "Two alarms",
+      "t": "0.0-9.5",
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "low",
+      "stage": "rock-glacier-face",
+      "pov": "ground-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landform-as-character",
+      "camera": "riseWith+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "",
+      "thread": "match",
+      "centered": "Two pulse bells strike above the central trunk.",
+      "means": "Plant the anomaly.",
+      "hero": {
+        "name": "RockGlacierCore",
+        "parts": 8,
+        "zones": 4,
+        "detail_note": "Rock shell, ice veins, central trunk, two bells, face, contact shadow and rim light perform the hook."
+      }
     },
     {
-      "id": 31,
-      "t": "106.2-107.3",
-      "vo": "Comments and competing applications are due November second at one P M Alaska time. Brief comments need no prior registration.",
-      "shows": "brief-comment card opens without a registration key",
-      "sfx": "soft-hit",
-      "means": "Define the actual FERC process and public window.",
-      "rehook": "",
-      "draw": {
-        "subject": "brief-comment card",
-        "action": "opens without a registration key",
-        "emotion": "welcoming",
-        "annotation": "BRIEF COMMENTS · NO PRIOR REGISTRATION"
-      },
-      "choreo": {
-        "primary": "brief-comment card opens without a registration key",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 106.2
+      "id": 2,
+      "title": "Seven from orbit",
+      "t": "9.5-19.0",
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "mccarthy-relief-map",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "graphic-match",
+      "thread": "travel",
+      "centered": "Sentinel One sweeps seven raised forms.",
+      "means": "Name place and instrument.",
+      "hero": {
+        "name": "SatelliteEye and relief map",
+        "parts": 9,
+        "zones": 4,
+        "detail_note": "Satellite body, wings, eye, radar cone, seven terrain forms, pin and moving contour cells."
+      }
     },
     {
-      "id": 32,
-      "t": "107.3-110.4",
-      "vo": "So stop the cable one inch short of victory.",
-      "shows": "armored cable returns to the four closed proof locks and stops",
-      "sfx": "snap",
-      "means": "Narrow the claim to the proof required for an Alaska win.",
-      "rehook": "",
-      "draw": {
-        "subject": "armored cable",
-        "action": "returns to the four closed proof locks and stops",
-        "emotion": "restrained",
-        "annotation": "ONE INCH SHORT"
-      },
-      "choreo": {
-        "primary": "armored cable returns to the four closed proof locks and stops",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 107.3
+      "id": 3,
+      "title": "Slow race",
+      "t": "19.0-29.0",
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "paired-glacier-lanes",
+      "pov": "eye-level-immersive",
+      "layout": "split-comparison",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "paired-subjects",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "transition_in": "match-action",
+      "thread": "match",
+      "centered": "Two central trunks advance different distances.",
+      "means": "Make velocity variation physical.",
+      "hero": {
+        "name": "Sourdough and McCarthy lanes",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "Two distinct debris bodies, rulers, finish tape, moving cores and reaction markers."
+      }
     },
     {
-      "id": 33,
-      "t": "110.4-115.2",
-      "vo": "Bringing compute to Cook Inlet's energy is the clever part.",
-      "shows": "proposed direct link glows softly without becoming solid infrastructure",
-      "sfx": "tick",
-      "means": "Narrow the claim to the proof required for an Alaska win.",
-      "rehook": "",
-      "draw": {
-        "subject": "proposed direct link",
-        "action": "glows softly without becoming solid infrastructure",
-        "emotion": "hopeful",
-        "annotation": "THE CLEVER PART"
-      },
-      "choreo": {
-        "primary": "proposed direct link glows softly without becoming solid infrastructure",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 110.4
+      "id": 4,
+      "title": "Independent check",
+      "t": "29.0-39.0",
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "high",
+      "stage": "map-registration-table",
+      "pov": "overhead-workbench",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "orbitReveal",
+      "stage3d": "flat:map registration must stay geometrically aligned",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "centered": "Radar and photo maps lock over the same Sourdough core.",
+      "means": "Prove the surface map is independently checked.",
+      "hero": {
+        "name": "Registered map pair",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "Two contour sheets, pixel field, steel frame, latches and error gap create a physical validation rig."
+      }
     },
     {
-      "id": 34,
-      "t": "115.2-118.1",
-      "vo": "It becomes an Alaska win when studies prove engineering, grid, economics, and environmental effects. What would you require?",
-      "shows": "four closed proof locks name engineering, grid, economics, environment",
-      "sfx": "bubble-swish",
-      "means": "Narrow the claim to the proof required for an Alaska win.",
-      "rehook": "",
-      "draw": {
-        "subject": "four closed proof locks",
-        "action": "name engineering, grid, economics, environment",
-        "emotion": "demanding",
-        "annotation": "PROVE IT"
-      },
-      "choreo": {
-        "primary": "four closed proof locks name engineering, grid, economics, environment",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 115.2
+      "id": 5,
+      "title": "Caliper proof",
+      "t": "39.0-49.0",
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "precision-bench",
+      "pov": "exploded-diagram",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "Calipers close as the ribbon enters the separator.",
+      "means": "Bridge validation to separation.",
+      "hero": {
+        "name": "DistanceCalipers and SignalSeparator",
+        "parts": 10,
+        "zones": 4,
+        "detail_note": "Machined beam, jaws, thumb wheel, input reel, paired outputs, lamps and contact shadows."
+      }
     },
     {
-      "id": 35,
-      "t": "118.1-121.0",
-      "vo": "It becomes an Alaska win when studies prove engineering, grid, economics, and environmental effects. What would you require?",
-      "shows": "Alaska-shaped socket waits beyond the locked cable",
-      "sfx": "paper-rustle",
-      "means": "Narrow the claim to the proof required for an Alaska win.",
-      "rehook": "",
-      "draw": {
-        "subject": "Alaska-shaped socket",
-        "action": "waits beyond the locked cable",
-        "emotion": "expectant",
-        "annotation": "WHAT WOULD YOU REQUIRE?"
-      },
-      "choreo": {
-        "primary": "Alaska-shaped socket waits beyond the locked cable",
-        "reaction": "the white paper edge, rope, calendar tab or closed lock reacts to the exact action",
-        "ambient": "paper fibers drift under a steady pearl top light while a separate stamp shadow or clock hand moves"
-      },
-      "at_s": 118.1
+      "id": 6,
+      "title": "Signal split",
+      "t": "49.0-59.0",
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "signal-machine-room",
+      "pov": "machine-side",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "characterized-machine",
+      "camera": "orbitReveal",
+      "stage3d": "planes",
+      "transition_in": "assemble",
+      "thread": "build",
+      "centered": "One trace mechanically snaps into two colored ribbons.",
+      "means": "Explain ICA without magic.",
+      "hero": {
+        "name": "SignalSeparator",
+        "parts": 12,
+        "zones": 4,
+        "detail_note": "Intake spool, two output reels, gears, rollers, preset dial, status lamps, shadow and reactive face."
+      }
+    },
+    {
+      "id": 7,
+      "title": "Pulse calendar",
+      "t": "59.0-69.0",
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "high",
+      "stage": "seasonal-calendar-sky",
+      "pov": "calendar-overhead",
+      "layout": "radial-clock",
+      "motion_vector": "circular-orbit",
+      "hero_treatment": "data-as-character",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "transition_in": "morph",
+      "thread": "match",
+      "centered": "Melt and rain markers align beside two peaks across four calendars without touching the interpreted signal.",
+      "means": "Show the two seasonal associations.",
+      "hero": {
+        "name": "Seasonal ribbon clock",
+        "parts": 8,
+        "zones": 3,
+        "detail_note": "Four calendars, two pulse peaks, snow cap, rain cloud, bells and radial shadow layers."
+      }
+    },
+    {
+      "id": 8,
+      "title": "Observed and estimated lags",
+      "t": "65.0-77.0",
+      "framing": "data-panel",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "calendar-wall",
+      "pov": "evidence-table",
+      "layout": "four-solid-one-dashed",
+      "motion_vector": "horizontal-arrival",
+      "hero_treatment": "time-as-object",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "centered": "Four solid measured-year markers hold while a dashed 2019 proxy card arrives beside them.",
+      "means": "Keep observed and estimated lags distinct.",
+      "hero": {
+        "name": "Lag calendar wall",
+        "parts": 9,
+        "zones": 4,
+        "detail_note": "Four cyan observed markers, one separate magenta dashed proxy, explicit ranges and a restrained tracking move."
+      }
+    },
+    {
+      "id": 9,
+      "title": "Modeled path",
+      "t": "77.0-86.0",
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "sunlight-water-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough+craneDown",
+      "stage3d": "planes",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "centered": "A dotted shadowless path travels from sun through water to the shear layer.",
+      "means": "Give the model its strongest fair showing.",
+      "hero": {
+        "name": "RockGlacierCore cutaway",
+        "parts": 11,
+        "zones": 5,
+        "detail_note": "Sun, debris mantle, ice veins, water path, shear plane and modeled labels remain shadowless."
+      }
+    },
+    {
+      "id": 10,
+      "title": "Missing instrument",
+      "t": "86.0-96.0",
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "ground",
+      "stage": "empty-borehole-bay",
+      "pov": "subsurface-macro",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "absence-as-subject",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "centered": "The modeled path stops at a dashed empty borehole beside the six kilometer weather proxy.",
+      "means": "Expose the exact missing observation.",
+      "hero": {
+        "name": "Unmeasured CoringTube outline",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "Dashed barrel, depth ticks, distant station, unmeasured label and camera push make absence legible."
+      }
+    },
+    {
+      "id": 11,
+      "title": "Pattern breakers",
+      "t": "96.0-108.0",
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "exception-field",
+      "pov": "eye-level-immersive",
+      "layout": "split-comparison",
+      "motion_vector": "diagonal-shear",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "centered": "RG5 and RG6 slide out of the sunlight stencil while the measured ribbon continues.",
+      "means": "Test generalization without erasing measurement.",
+      "hero": {
+        "name": "RG5 and RG6 traces",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "Two traces, bent trend, RG5 haze, exception labels and the continuous cyan measurement ribbon."
+      }
+    },
+    {
+      "id": 12,
+      "title": "Field test button",
+      "t": "108.0-120.0",
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "ground",
+      "stage": "borehole-field",
+      "pov": "participant-eye",
+      "layout": "centered-test",
+      "motion_vector": "vertical-drive",
+      "hero_treatment": "landform-as-character",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "A clearly proposed underground sensor descends into RockGlacierCore while both seasonal bells wait.",
+      "means": "Turn the model limit into a practical Alaska field test.",
+      "hero": {
+        "name": "RockGlacierCore and proposed CoringTube",
+        "parts": 12,
+        "zones": 5,
+        "detail_note": "Cutaway glacier, cyan veins, two bells, descending tube, proposal label and the persistent measured ribbon."
+      }
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "run_date": "2026-09-06",
+  "run_date": "2026-09-10",
   "window_reported_by_gate": 10,
   "search_budget": {
-    "researchers": 3,
+    "researchers": 4,
     "capped": true,
     "exhausted": false
   },
@@ -10,32 +10,32 @@
     {
       "rung": "in_window_sweep",
       "attempted": true,
-      "note": "Three bounded researchers covered government, science, business, defense, rural and wildcard Alaska beats for August 28 through September 6."
+      "note": "Three bounded researchers and the orchestrator covered science, rural technology, public sector, education, energy, aviation, defense, business and breaking Alaska stories from August 30th through September 8th."
     },
     {
       "rung": "outlet_index_sweep",
       "attempted": true,
-      "note": "Researchers checked NOAA, University of Alaska, FERC, municipal, state and local outlet surfaces."
+      "note": "The sweep included Alaska Public Media and Alaska Beacon indexes plus UAF, FAA, NASA, NOAA, Alaska agencies, and university research releases."
     },
     {
       "rung": "widened_window",
       "attempted": false,
-      "note": "Not needed because a September 4 primary federal notice supplied a live in-window hook."
+      "note": "Not needed because an official September 3rd research release supplied an in-window hook."
     },
     {
       "rung": "carried_leads",
-      "attempted": true,
-      "note": "The August 21 DeepGreen reporting was revisited only after FERC published the new acceptance and comment notice."
+      "attempted": false,
+      "note": "Not needed."
     },
     {
       "rung": "primary_source_mining",
       "attempted": true,
-      "note": "Federal Register document 2026-18151 and FERC project P-15423-000 supplied the locked facts."
+      "note": "The open-access Journal of Geophysical Research paper supplied the methods, results, validation and limitations behind the locked story."
     },
     {
       "rung": "follow_up",
-      "attempted": true,
-      "note": "This is a real new development: FERC has now accepted the application for filing and opened a public record after the earlier reporting found no notice."
+      "attempted": false,
+      "note": "Not needed."
     },
     {
       "rung": "pegged_explainer",
@@ -44,51 +44,51 @@
     }
   ],
   "locked_story": {
-    "id": "deepgreen-cook-inlet-ferc-window",
+    "id": "two-rock-glaciers-two-signals",
     "found_at_rung": "in_window_sweep",
-    "headline": "Sixty-Six Hives Under Cook Inlet",
+    "headline": "The Glacier That Sped Up Twice",
     "primary_sources": [
-      "https://public-inspection.federalregister.gov/2026-18151.pdf",
-      "https://www.govinfo.gov/content/pkg/FR-2026-09-04/pdf/2026-18151.pdf"
+      "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "https://www.smu.edu/news/research/alaskan-rock-glaciers"
     ],
-    "dedupe": "FRESH on the distinctive subject set. An initial generic-place collision on Cook Inlet was rejected after reading the matched Shinkei salmon story; the subjects, actors, mechanism and decision are unrelated."
+    "dedupe": "FRESH on the distinctive subject set and RockGlacierCore hero. The last two heroes were SignalRibbon and SubseaHive, and no dispatch in the 30-day window covered this study or its rock-glacier mechanism."
   },
   "candidates": [
     {
-      "headline": "FERC opens the DeepGreen subsea-compute permit record",
+      "headline": "The glacier that sped up twice",
       "status": "SELECTED",
-      "date": "2026-09-04",
-      "reason": "A new primary federal notice turns a visually exceptional AI-infrastructure proposal into a live Alaska decision with a November 2 comment deadline."
-    },
-    {
-      "headline": "NOAA charts a calibrated path for autonomous fisheries surveys",
-      "status": "RUNNER-UP",
       "date": "2026-09-03",
-      "reason": "Strong primary science and a constructive Alaska angle, but the DeepGreen filing has a sharper live decision and stronger visual stakes."
+      "reason": "A new university release opens a vivid Alaska science story with a genuine statistical-learning mechanism, independently validated radar measurements, a falsifiable two-pulse result, and a strong visual contrast between two nearby rock glaciers."
     },
     {
-      "headline": "Anchorage funds the crime-center display before surveillance rules",
+      "headline": "FAA builds Alaska's machine-readable aviation layer",
       "status": "RUNNER-UP",
       "date": "2026-09-01",
-      "reason": "Direct automation stakes, but Alaska.AI covered the same RTCC decision surface eleven days ago and the purchase itself is audiovisual equipment rather than an AI system."
+      "reason": "A strong rural-safety infrastructure story, but the current milestone concerns ADS-B, weather sensors and connectivity rather than a deployed AI system."
     },
     {
-      "headline": "T3 Alaska Drone Club builds a student-to-DOT pathway",
+      "headline": "ARCTIC phase four funds automated microgrid resilience",
       "status": "RUNNER-UP",
       "date": "2026-09-01",
-      "reason": "A genuine rural workforce win, but the announcement establishes human-operated drone training rather than an AI or autonomous system."
+      "reason": "The award has useful controls and data infrastructure, but the primary announcement does not establish a specific AI or machine-learning result."
     },
     {
-      "headline": "UAF ARCTIC phase four funds community microgrid test beds",
+      "headline": "Sitka asks for statewide school AI policy guidance",
+      "status": "RUNNER-UP",
+      "date": "2026-09-04",
+      "reason": "The unanimous local resolution is timely and consequential, but it is an early policy request with fewer concrete facts and less visual mechanism than the selected study."
+    },
+    {
+      "headline": "T3 Alaska launches a statewide high-school drone credential path",
       "status": "REJECTED",
       "date": "2026-09-01",
-      "reason": "The primary release names resilience, cybersecurity and controls but no specific AI or machine-learning mechanism."
+      "reason": "A real workforce win, but the announcement establishes human-operated drone training rather than autonomy or AI."
     },
     {
-      "headline": "Katmai's windblown ash is not a new eruption",
+      "headline": "Anchorage buys its crime-center buildout while rules remain pending",
       "status": "REJECTED",
-      "date": "2026-08-31",
-      "reason": "Excellent sensor-versus-diagnosis story, but the current notice does not establish an AI mechanism."
+      "date": "2026-09-03",
+      "reason": "The same surveillance decision surface was covered inside the 30-day dedupe window."
     }
   ]
 }

@@ -763,3 +763,6 @@ without swapping identity.
 - `HydrokineticTurbine` (`subsea.tsx`) — articulated three-blade marine-hydrokinetic rotor with proposed-state line treatment.
 - `ArmoredCable` (`subsea.tsx`) — progressive hybrid cable path with distinct solid-primary and dotted-conditional routing states.
 - `ProposedArray` (`subsea.tsx`) — staggered turbine-and-hive field for scale reveals; always illustrative and shadowless.
+# Cryosphere evidence family
+
+- `RockGlacierCore` — `cryosphere.tsx` — ACTIVE. Form-shaded rock-and-ice landform with a persistent measured surface trace plus explicit interpreted, modeled, and unmeasured state hooks. Added for the 2026-09-10 Dispatch; reuse for rock-glacier and buried-ice evidence stories.

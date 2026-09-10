@@ -1,72 +1,11 @@
 {
-  "run_date": "2026-09-06",
-  "story_id": "deepgreen-cook-inlet-ferc-window",
-  "palette": {
-    "roles": {
-      "sky": "#0B1230",
-      "ground": "#111D38",
-      "hero": "#D7FF45",
-      "accent": "#FF7548",
-      "shadow": "#050815",
-      "paper": "#F5F0DF",
-      "ink": "#12213A",
-      "water": "#1E4E70"
-    },
-    "mood": "Deep marine indigo with phosphor chartreuse energy, pearl paper and warm sunrise coral process marks. Curious and hopeful without pretending the proposal is built.",
-    "divergence": "Unlike September 3rd's sunlit sage care room and September 1st's aubergine cosmic machinery, this film lives in a dark cutaway sea with bright chartreuse current paths, hexagonal pods and a hard white federal-paper reveal."
-  },
-  "light": {
-    "time": "Subsea blue hour under a bright paper-world top light",
-    "direction": "Upper-right pearl shaft, low blue fill, chartreuse rim on energized proposal lines and coral rim on gates",
-    "depth": "Three water strata frame shadowless proposed turbines, hives, cable routes and energy pulses. Only the physical reel, steel test bench, FERC paper, stamp, rope and calendar receive contact shadows. Foreground paper and silt live at z 170 for parallax."
-  },
-  "shape_language": {
-    "grammar": "Rounded turbine circles and cable coils express physical flow. Hexagonal hives express compact compute. Rectangular federal paper and square locks express institutional proof. Dashed, unfilled proposal geometry is a fourth grammar and never gains physical contact.",
-    "why": "The story moves from a compatible circle-and-hex machine into the harder rectilinear evidence gates."
-  },
-  "casting": {
-    "hero": "ArmoredCable and SubseaHive proposal actors",
-    "inventory": [
-      {
-        "beats": "1 to 10",
-        "subject": "Armored hybrid power and fiber cable",
-        "source": "net-new subsea.tsx reusable throughline"
-      },
-      {
-        "beats": "3 to 12",
-        "subject": "Marine-hydrokinetic turbines and 66 compute hives",
-        "source": "net-new subsea.tsx array primitives"
-      },
-      {
-        "beats": "12 to 31",
-        "subject": "PermitState ticket and EvidenceCoupling locks",
-        "source": "net-new civics.tsx-compatible evidence status primitives"
-      }
-    ],
-    "net_new": "SubseaHive, HydrokineticTurbine and ArmoredCable silhouettes in video-engine/src/lib/subsea.tsx. Existing EvidenceState, Simulated, PendingMark and Sheet carry proposal and permit status.",
-    "continuity": "Use existing Sheet, EvidenceState, Simulated, PendingMark, Character hands, lighting and Stage3D primitives. Build no second evidence-status system. All infrastructure is shadowless and explicitly PROPOSED from frame one."
-  },
-  "motion_language": {
-    "grammar": "Current lines coil and settle like underwater cable. Proposal objects assemble with elastic overshoot. The federal notice lands with weight, then the build fantasy drains to dashed outlines.",
-    "hero_moves": [
-      "An exhausted export cable snaps short before a hive descends",
-      "One cable splits visibly toward primary compute and conditional spare-grid branches",
-      "The entire underwater array folds into a paper permit ticket",
-      "Four proof locks stop the plug one inch from the Alaska-value socket and remain closed through the button"
-    ],
-    "blur": "Directional blur only on the opening snap, array multiplication and paper drop. Proof locks use crisp anticipation and damped impact. The final cable emits a suspended hum and never clicks through."
-  },
-  "composition": {
-    "staging": "Four authored worlds: macro plug, vertical seafloor cutaway, split routing bench and federal-paper test chamber. Alternate macro, wide, overhead and extreme-wide across 14 shots.",
-    "safe_area": "Critical mechanisms and labels stay within x120 to 960 and y450 to 1260. Wide array, routing, test, paper, clock and button shots each carry explicit square_safe bounds in storyboard.json. Caption band begins at y1336.",
-    "signature_shot": "Pull back from one glowing hive to 66 dashed pods among hundreds of rotor marks. A white FERC sheet then folds the entire array into a tiny STUDY PRIORITY ticket while an excavator brakes behind NO CONSTRUCTION.",
-    "focal_hierarchy": "One acting object per beat. Chartreuse is proposed physical flow, coral is unresolved condition, white is source status. No full-frame UI dashboards.",
-    "attribution": "PROPOSED persists across all hardware. FERC source/date appears on the paper reveal. Environmental questions remain labeled QUESTIONS, never impacts."
-  },
-  "craft_advance": {
-    "system": "Reusable articulated subsea infrastructure silhouettes in video-engine/src/lib/subsea.tsx",
-    "api": "SubseaHive, HydrokineticTurbine and ArmoredCable accept progress, energy and expression props",
-    "how": "Build the genuinely missing underwater hardware and cable performance. Compose every silhouette through the existing EvidenceState and Simulated grammar so proposal status remains authoritative.",
-    "asset_note": "Register silhouettes in ASSET_MANIFEST.md. Do not duplicate the repository's evidence-status system."
-  }
+  "run_date":"2026-09-10",
+  "story_id":"sourdough-rock-glacier-pulses",
+  "palette":{"roles":{"sky":"#2B1B17","ground":"#3F332B","hero":"#F2A65A","accent":"#FF4F8B","shadow":"#120D0B","paper":"#EAF4F4","ink":"#1B1F24","ice":"#69D2E7"},"mood":"Warm alpenglow over charcoal rock, with glacial cyan reserved for measurement and radar magenta reserved for the seasonal pulse.","divergence":"The September 6th film used marine indigo and chartreuse proposal geometry. September 3rd used a sunlit sage care room. This film is a warm terrestrial cutaway of ochre rock, quartz snow, cyan measurement and magenta seasonal motion."},
+  "light":{"time":"Low autumn sunrise","direction":"Amber key from upper right, cool cyan fill from shaded ice and a thin quartz rim on every rock edge","depth":"Five parallax terrain planes and a cutaway core use twelve percent value steps. Solid measured objects cast contact shadows. Modeled underground paths remain translucent and shadowless."},
+  "shape_language":{"grammar":"Jagged torn rock layers carry the observed landform. The existing solid cyan EvidenceTrace carries measured displacement. Amber and magenta paired ribbons carry researcher interpreted statistical components with persistent source chips. Existing dotted shadowless Simulated geometry carries the modeled path. A dashed CoringTube outline carries the missing borehole.","why":"The film contrasts irregular terrain with the method's clean signal grammar while three distinct evidence materials prevent interpretation or modeling from inheriting measurement status."},
+  "casting":{"hero":"RockGlacierCore","inventory":[{"beats":"1 to 8","subject":"LayeredLand and SatelliteEye","source":"existing bench and sensor shelf"},{"beats":"9 to 22","subject":"EvidenceTrace, SignalRibbon and EvidenceState","source":"existing evidence shelf"},{"beats":"23 to 30","subject":"CoringTube outline and RockGlacierCore","source":"existing bench shelf plus one net new landform"}],"net_new":"RockGlacierCore in video-engine/src/lib/cryosphere.tsx fills the demonstrated shelf gap for an ice rich debris landform with a central moving trunk and evidence aware cutaway.","continuity":"Reuse LayeredLand, SatelliteEye, EvidenceTrace, SignalRibbon, EvidenceState, Simulated, CoringTube, Sheet geometry, lighting helpers and EndCredits. No duplicate signal system, no ServerMachine and no generic AI face."},
+  "motion_language":{"grammar":"Terrain creeps with eased shear. Radar sweeps travel diagonally. The existing EvidenceTrace forks with anticipation and overshoot after a researcher set dial clicks to two. Modeled water beads descend but stop at the dashed CoringTube outline.","hero_moves":["Two pulse bells kick the landform in the opening second","The radar map and photo map register with a hard lock","A researcher set dial clicks to two before the trace forks into interpreted crawl and seasonal ribbons","The measured surface remains solid while the model drains to dotted lines"],"blur":"Directional blur only on radar sweeps, the ribbon fork and the empty borehole reveal. Slow terrain motion keeps crisp form."},
+  "composition":{"staging":"Four authored worlds alternate between mountain diorama, orbital radar map, evidence workbench and subsurface cutaway.","safe_area":"All headline, hero actions and scientific labels stay within x120 to 960 and y450 to 1280. The square safe story box remains y420 to 1500.","signature_shot":"The camera dives through a validated cyan surface map. A dotted magenta modeled water path reaches a dashed empty CoringTube outline while the solid displacement ribbon stays locked above.","focal_hierarchy":"One hero action stays centered. Cyan means measured. Amber and magenta ribbons always carry an INTERPRETED source chip. Dotted translucent magenta means modeled. Dashed empty geometry means unmeasured. Quartz means source status.","attribution":"Sourdough specific validation is labeled. The nearby speed comparison is attributed to SMU. ICA outputs stay marked INTERPRETED. MODELED and MAY persist on subsurface mechanisms. Any future sensor is a dashed editorial proposed test and never an announced installation."},
+  "craft_advance":{"system":"Reusable RockGlacierCore evidence cutaway","api":"RockGlacierCore exposes creep, pulse, cutaway and evidenceState while composing with existing EvidenceTrace, EvidenceState and Simulated grammar.","how":"The one new landform keeps observed surface motion, interpreted components, modeled paths and unmeasured underground space as distinct materials within the asset itself.","asset_note":"Register RockGlacierCore in ASSET_MANIFEST.md in the same commit. Reuse CoringTube and the existing evidence family for every other role."}
 }

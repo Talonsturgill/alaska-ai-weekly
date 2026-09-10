@@ -1793,3 +1793,40 @@ dispatch_history:
     camera_strategy: cable-follow-to-paper-collapse
     light_story: hopeful-warm-caustic-to-paper-toplight
     metaphor: Armored cable stopped one inch from an Alaska value socket
+- date: '2026-09-10'
+  topic: McCarthy rock glacier seasonal acceleration and remote sensing
+  slug: 2026-09-10-glacier-sped-up-twice
+  key_entities:
+  - Sourdough Peak
+  - rock glacier
+  - Sentinel-1
+  - InSAR
+  - photogrammetry
+  - independent component analysis
+  - CryoGrid
+  - McCarthy
+  archetype: scientific-mystery-to-field-test
+  palette: volcanic charcoal alpenglow amber radar magenta glacial cyan snow quartz
+  voice: Gemini Sulafat
+  stance: curious
+  angle: Radar measured the movement. Photogrammetry checked the map. Signal separation
+    exposed a seasonal rhythm. Modeling proposed why. The order turns a hard-to-reach
+    landscape into a testable question without pretending the model is proof.
+  hero: RockGlacierCore
+  cast:
+  - RockGlacierCore
+  - SatelliteEye
+  - SignalSeparator
+  - CoringTube
+  - DistanceCalipers
+  composition:
+    pov: terrain-to-core-descent
+    motion_vector: diagonal-shear
+    hero_treatment: landform-as-character
+    layout: vertical-evidence-cutaway
+    register: tactile-science-diorama
+    camera_strategy: orbital-drop-to-borehole
+    light_story: warm-alpenglow-to-cool-subsurface-test
+    palette: volcanic charcoal alpenglow amber radar magenta glacial cyan snow quartz
+    metaphor: one surface ribbon that splits into two rhythms and stops at an empty
+      underground socket

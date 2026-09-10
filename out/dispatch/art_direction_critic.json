@@ -1,9 +1,1 @@
-{
-  "stage": "gate_0_art_direction_critic_final",
-  "ship": true,
-  "palette": "marine indigo, chartreuse proposal energy, coral warnings, pearl federal paper",
-  "evidence_material": "proposed infrastructure is dashed and shadowless; paper, test bench, calendar, and locks are physical",
-  "stage_variety": ["inlet blueprint", "routing map", "mechanical proof bench", "federal paper chamber", "Alaska value lock"],
-  "craft_advance": "reusable articulated hydrokinetic turbine, subsea hive, armored cable, and proposed array family",
-  "blocking_findings": []
-}
+{"stage":"gate_0d_art_direction","ship":true,"resolved":["Reused EvidenceTrace, SignalRibbon, EvidenceState and CoringTube","Limited net new casting to RockGlacierCore","Separated measured, interpreted, modeled and unmeasured materials","Marked the final sensor as an editorial proposed test"],"blocking_findings":[]}

@@ -1,14 +1,25 @@
 {
-  "run_date":"2026-09-06",
-  "title":"The Hive Is Still Paper",
-  "story_id":"deepgreen-cook-inlet-ferc-window",
-  "thesis":"DeepGreen's interesting idea is to bring compute to hard-to-export Cook Inlet energy, but it becomes an Alaska win only if the study proves the engineering and durable local value.",
-  "falsifier":"This thesis fails if marine output, subsea cooling and maintenance, environmental constraints or the grid path erase the physical advantage, or if the project proves no durable Alaska value beyond its own load.",
-  "supporting_facts":[{"claims":["c2","c3","c4"],"fact":"The proposal directly couples 66 compute hives to 330 to 350 marine-hydrokinetic turbines with passive cooling."},{"claims":["c6","c7","c8"],"fact":"The notice estimates 100 MW, primarily for the data center; only spare power could reach the Railbelt."},{"claims":["c9","c11","c12"],"fact":"No customer or committed financing is named, and the proceeding concerns study priority rather than construction."}],
-  "fair_counterpoint":"A self-supplied industrial load could create investment and technical capacity without consuming scarce existing generation. The architecture deserves serious study even though no outcome is proven.",
-  "valence":"hopeful",
-  "stance":"Conditionally optimistic about an Alaska-native energy and compute architecture, exact about the burden of proof.",
-  "second_movement":{"recontextualizing_fact":"The visual spectacle is still a paper proposal, and its primary power beneficiary would be the compute load rather than the Railbelt.","test":"Show the proposal's strongest case, then ask it to produce output, cooling, maintenance, grid, financing, customer and environmental evidence before calling it an Alaska win."},
-  "runner_up_angles":[{"angle":"The public bargain is the story","why_it_lost":"It assumes a concession fight not established by the notice."},{"angle":"The permit is only paper","why_it_lost":"Accurate but too generic to explain why this particular architecture is worth attention."}],
-  "room_result":"Three independent analysts converged after cross-challenge: lead with physical ingenuity, then use the live FERC study process to define the proof that would turn fit into durable Alaska value."
+  "run_date": "2026-09-10",
+  "title": "The Glacier That Sped Up Twice",
+  "thesis": "Radar measured the movement. Photogrammetry checked the map. An unsupervised signal-separation method exposed a seasonal rhythm. Modeling proposed why. In remote Alaska science, that order turns a hard-to-reach landscape into a testable question without pretending the model is proof.",
+  "falsifier": "The angle fails if independent reanalysis or future seasons do not reproduce Sourdough Peak's two annual pulses. The proposed mechanism fails separately if direct underground measurements do not show meltwater reaching the sliding layer after the observed lag, or if shaded sites prove equally seasonal.",
+  "supporting_facts": [
+    "Seven active rock glaciers were mapped near McCarthy from Sentinel-1 InSAR observations reported across 2018 to 2022.",
+    "Parts of Sourdough Peak exceeded 160 centimeters per year, and its radar velocity map matched independent photogrammetry across more than 16,000 pixels at r 0.842 and 10.72 centimeters per year mean absolute error.",
+    "ICA separated a long-term component from a seasonal component with two annual pulses associated with snowmelt and later rain. Four measured years showed a 72 to 84 day lag after snowmelt."
+  ],
+  "fair_counterpoint": "Researchers fixed ICA at two components and interpreted the output. The sunlight-to-water-to-sliding explanation depends on preliminary CryoGrid modeling without borehole temperatures, a weather station six kilometers away, and simplified subsurface assumptions. RG5 and RG6 also weaken the simple sunlight pattern.",
+  "who_it_serves": "Researchers, park managers and hazard teams deciding where scarce field instruments can answer the next useful question in remote Alaska terrain.",
+  "valence": "Earnedly positive about measurement and signal separation, curious rather than certain about the physical mechanism.",
+  "second_movement": "The first movement reveals the hidden seasonal rhythm. The second turns the algorithm's clean result back into a sharper uncertainty, showing that the missing underground measurements and pattern-breaking glaciers are the next test rather than an embarrassment.",
+  "runner_up_angles": [
+    {
+      "angle": "The algorithm turned radar noise into two patterns.",
+      "why_it_lost": "The input was a validated displacement field, not mere noise, and photogrammetry did not independently validate ICA's interpretation."
+    },
+    {
+      "angle": "Sunlight makes one glacier race.",
+      "why_it_lost": "That causal chain is a preliminary modeled explanation without direct borehole measurements."
+    }
+  ]
 }

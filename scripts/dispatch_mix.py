@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-06"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-10"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -87,11 +87,10 @@ _board = json.load(open(os.path.join(OUT, "storyboard.json")))
 # The board names the dramatic sound role. This per-run performance map chooses an
 # available foley-bank design for every beat while preserving spectral variety.
 _PERFORMANCE_KINDS = [
-    "tick", "whoosh", "clank", "stamp", "riser", "snap", "whoosh",
-    "pop", "paper", "chime", "chain", "thud", "ding", "tick", "pop",
-    "clank", "stamp", "creak", "snap", "paper", "pop", "clank", "paper",
-    "boom", "chime", "whoosh", "tick", "clank", "paper", "stamp", "ding",
-    "snap", "pop", "creak", "caw",
+    "boom", "tick", "whoosh", "clank", "paper", "snap", "chime", "pop",
+    "stamp", "paper", "ding", "tick", "riser", "snap", "thud", "chime",
+    "pop", "creak", "tick", "whoosh", "clank", "paper", "boom", "snap",
+    "ding", "whoosh", "tick", "clank", "paper", "stamp",
 ]
 if len(_PERFORMANCE_KINDS) != len(_board["beats"]):
     raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
@@ -127,11 +126,11 @@ EVENT_LABELS = [b["shows"] for b in _board["beats"]]
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (0.0, 0.72), (L[1], 0.80), (L[2], 1.05), (L[3], 0.84),
-    (L[4], 0.95), (L[6], 0.65), (L[7], 0.78), (L[8], 0.68),
-    (L[10], 1.10), (L[11], 0.92), (L[12], 0.30), (L[13], 0.42),
-    (L[14], 0.70), (L[15], 0.45), (L[16], 1.08), (L[17], 0.92),
-    (L[18] - 0.70, 0.25), (L[18] + 0.20, 1.02), (L[19], 0.86),
+    (0.0, 0.72), (L[1], 0.86), (L[2], 1.05), (L[3], 0.80),
+    (L[4], 0.95), (L[5], 0.80), (L[6], 0.95), (L[7], 0.78),
+    (L[8], 0.70), (L[9], 1.08), (L[10], 0.85), (L[11], 0.32),
+    (L[12], 0.55), (L[13], 0.28), (L[14], 0.52), (L[15], 0.62),
+    (L[16], 1.08), (L[17], 0.95),
     (VIDEO_SECS - 0.25, 0.70), (VIDEO_SECS, 0.05),
 ]
 
