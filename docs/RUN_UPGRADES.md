@@ -3071,3 +3071,32 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
 - Final objective Gate A scores 10.0: 14 shots, 13 real transitions, 41 distinct visual beats,
   58 of 64 graded living-screen windows, 35 motivated SFX events, and all caption, claim,
   source, typography, geometry, crop, and delivery-provenance checks pass.
+
+## 2026-09-10 — The Glacier That Sped Up Twice
+
+- The episode follows one evidence ribbon from Sentinel-1 surface motion through independent
+  photogrammetry, researcher-selected signal components, seasonal associations, a modeled
+  subsurface path, and the missing borehole measurement that would test it. The new reusable
+  `RockGlacierCore` asset carries the landform as the hero, while `EvidenceTrace` now accepts an
+  explicit semantic color so measured, interpreted, estimated, modeled, and unmeasured states
+  remain visually distinct without duplicating trace code.
+- Timed storyboard beats no longer require the legacy `at_s` field. Both scene construction and
+  panel-evidence construction accept the documented `t` range start, while preserving an
+  explicit `at_s` when present. Two new evidence-clock tests cover both paths. This closes the
+  September 6 evidence-clock migration instead of leaving a second stale adapter behind.
+- Text-fit coverage now recognizes compact episode components named either `Shot` or `Scene`.
+  A regression test proves the `Scene` form receives the same per-branch label measurement as
+  `Shot`; the final episode measures ten plated strings with zero unresolved or failing cases.
+- The independent panel blocked two complete cuts that had passed the mechanical gates. The
+  first exposed a 2023-for-2018 year substitution in the observed-year calendar. The second
+  exposed narration that shortened the paper's mean absolute error to mean error. Both defects
+  were corrected, rerendered, re-encoded, and re-evidenced; the VO repair changed only its
+  existing slot, with every later timestamp and 4,808,664 out-of-slot samples preserved exactly.
+- The final objective gate scores 10.0: 12 shots, 11 real transitions, 45 distinct visual beats,
+  51 of 63 graded living-screen windows, 30 motivated sound events with 25 verified audible,
+  210 aligned word cues, and all required claim, caption, geometry, credit, mix, and provenance
+  checks passing. The delivered mix measures -14.57 LUFS and -2.91 dBTP.
+- Final exact-byte panel scores are 8.47, 8.512, and 8.47; median 8.47 against the 7.0 ship bar.
+  All three judges ship with zero hard blockers. The ship lock binds three deliverable cuts and
+  56 review-evidence files to the graded bytes. `config/panel_anchors.md` remains absent and was
+  disclosed to every judge without inventing calibration examples or lowering the standard.

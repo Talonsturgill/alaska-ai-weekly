@@ -1,10 +1,10 @@
 {
-  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Inspired.mp3",
-  "title": "Inspired",
+  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Frost%20Waltz.mp3",
+  "title": "Frost Waltz",
   "composer": "Kevin MacLeod",
   "license": "CC BY 4.0",
   "source": "incompetech.com",
-  "credit": "\"Inspired\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "credit": "\"Frost Waltz\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
   "wav": "out/dispatch/music_bed.wav",
-  "duration": 180.0
+  "duration": 135.5
 }

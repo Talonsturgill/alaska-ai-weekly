@@ -1,127 +1,115 @@
 {
-  "total": 117.26,
-  "voice": "Sulafat",
-  "model": "gemini-3.1-flash-tts-preview",
-  "lines": [
-    {
-      "idx": 0,
-      "text": "What if moving Cook Inlet power means moving the computer instead?",
-      "start": 0.0,
-      "end": 5.32
-    },
-    {
-      "idx": 1,
-      "text": "Deep Green proposes sixty-six compute hives near Nikiski.",
-      "start": 6.42,
-      "end": 11.46
-    },
-    {
-      "idx": 2,
-      "text": "Around them, three hundred thirty to three hundred fifty marine hydrokinetic turbines.",
-      "start": 12.3,
-      "end": 18.72
-    },
-    {
-      "idx": 3,
-      "text": "The turbines would power them directly while seawater provides passive cooling.",
-      "start": 19.88,
-      "end": 24.84
-    },
-    {
-      "idx": 4,
-      "text": "Clever. Put the primary load beside its proposed power source.",
-      "start": 25.68,
-      "end": 30.52
-    },
-    {
-      "idx": 5,
-      "text": "A three point five mile cable would carry power and fiber ashore.",
-      "start": 31.6,
-      "end": 36.72
-    },
-    {
-      "idx": 6,
-      "text": "The notice estimates one hundred megawatts. Where would it go?",
-      "start": 38.06,
-      "end": 42.74
-    },
-    {
-      "idx": 7,
-      "text": "The data center would be the primary use.",
-      "start": 44.08,
-      "end": 46.56
-    },
-    {
-      "idx": 8,
-      "text": "Only spare power could reach the Railbelt. Could, not will.",
-      "start": 47.62,
-      "end": 53.14
-    },
-    {
-      "idx": 9,
-      "text": "Now put that diagram on a test bench.",
-      "start": 54.12,
-      "end": 57.2
-    },
-    {
-      "idx": 10,
-      "text": "The filing names no customer or committed financing.",
-      "start": 58.3,
-      "end": 61.82
-    },
-    {
-      "idx": 11,
-      "text": "No completed proof covers output, cooling, economics, grid connection, or environmental effects.",
-      "start": 62.9,
-      "end": 70.06
-    },
-    {
-      "idx": 12,
-      "text": "That doesn't make it bad. It makes the next step a study.",
-      "start": 70.9,
-      "end": 74.7
-    },
-    {
-      "idx": 13,
-      "text": "On September fourth, F E R C opened public comment on the application.",
-      "start": 75.9,
-      "end": 79.94
-    },
-    {
-      "idx": 14,
-      "text": "If issued, the permit gives study priority.",
-      "start": 79.94,
-      "end": 84.0
-    },
-    {
-      "idx": 15,
-      "text": "It wouldn't authorize construction or prove that one turbine works there.",
-      "start": 85.02,
-      "end": 89.16
-    },
-    {
-      "idx": 16,
-      "text": "Comments and competing applications are due November second at one P M Alaska time. Brief comments need no prior registration.",
-      "start": 90.28,
-      "end": 98.74
-    },
-    {
-      "idx": 17,
-      "text": "So stop the cable one inch short of victory.",
-      "start": 99.96,
-      "end": 102.96
-    },
-    {
-      "idx": 18,
-      "text": "Bringing compute to Cook Inlet's energy is the clever part.",
-      "start": 103.9,
-      "end": 107.54
-    },
-    {
-      "idx": 19,
-      "text": "It becomes an Alaska win when studies prove engineering, grid, economics, and environmental effects. What would you require?",
-      "start": 107.54,
-      "end": 117.26
-    }
-  ]
+ "total": 116.62,
+ "voice": "Sulafat",
+ "model": "gemini-3.1-flash-tts-preview",
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A mountain of rock near McCarthy sped up twice.",
+   "start": 0.0,
+   "end": 4.44
+  },
+  {
+   "idx": 1,
+   "text": "Not once in the study, but twice each year.",
+   "start": 5.52,
+   "end": 9.52
+  },
+  {
+   "idx": 2,
+   "text": "Sentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.",
+   "start": 11.0,
+   "end": 18.66
+  },
+  {
+   "idx": 3,
+   "text": "They are rivers of rock and ice.",
+   "start": 19.76,
+   "end": 22.26
+  },
+  {
+   "idx": 4,
+   "text": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
+   "start": 23.52,
+   "end": 28.44
+  },
+  {
+   "idx": 5,
+   "text": "A nearby glacier moved less than half as fast in the university summary.",
+   "start": 28.44,
+   "end": 34.38
+  },
+  {
+   "idx": 6,
+   "text": "Photogrammetry checked more than sixteen thousand Sourdough Peak pixels.",
+   "start": 35.8,
+   "end": 40.32
+  },
+  {
+   "idx": 7,
+   "text": "R, 0.842. Mean absolute error, 10.72 centimeters per year.",
+   "start": 41.64,
+   "end": 48.84
+  },
+  {
+   "idx": 8,
+   "text": "Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.",
+   "start": 49.84,
+   "end": 58.32
+  },
+  {
+   "idx": 9,
+   "text": "That pulse peaked after snowmelt and again with later rain.",
+   "start": 59.76,
+   "end": 63.94
+  },
+  {
+   "idx": 10,
+   "text": "Four measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.",
+   "start": 65.26,
+   "end": 76.66
+  },
+  {
+   "idx": 11,
+   "text": "The measured surface signal is real. Is the explanation?",
+   "start": 77.9,
+   "end": 82.6
+  },
+  {
+   "idx": 12,
+   "text": "The authors modeled a path from sunlight to meltwater to a buried sliding layer.",
+   "start": 84.28,
+   "end": 89.94
+  },
+  {
+   "idx": 13,
+   "text": "No borehole temperatures were recorded. The weather station sat six kilometers away.",
+   "start": 91.16,
+   "end": 96.8
+  },
+  {
+   "idx": 14,
+   "text": "Two smaller glaciers broke the simple sunlight pattern.",
+   "start": 97.82,
+   "end": 101.54
+  },
+  {
+   "idx": 15,
+   "text": "That does not erase the measurement.",
+   "start": 102.34,
+   "end": 104.64
+  },
+  {
+   "idx": 16,
+   "text": "It turns the result into a sharper field test.",
+   "start": 105.62,
+   "end": 108.62
+  },
+  {
+   "idx": 17,
+   "text": "Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
+   "start": 109.38,
+   "end": 116.62
+  }
+ ]
 }

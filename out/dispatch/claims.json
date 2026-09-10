@@ -1,20 +1,132 @@
 {
-  "run_date": "2026-09-06",
-  "fact_check_verdict": "Publish only as a proposed study and a live public-process story. FERC accepted the preliminary-permit application for filing and opened comment. It has not issued the permit, approved construction, validated engineering, found feasibility, or completed environmental review.",
+  "run_date": "2026-09-10",
+  "fact_check_verdict": "The satellite-measured surface motion and photogrammetry comparison are strong. Independent Component Analysis separated two statistical signals that the authors interpret as long-term and seasonal motion. The sunlight, meltwater and deep sliding mechanism remains a model-dependent explanation rather than direct underground proof.",
   "claims": [
-    {"id":"c1","status":"verified-primary-notice","spoken":"On September fourth, F E R C published notice of Deep Green's preliminary-permit application.","on_screen":"FERC NOTICE · SEPTEMBER 4TH","source":"https://www.federalregister.gov/documents/2026/09/04/2026-18151/","requires":["Acceptance for filing is not permit issuance or construction approval."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c2","status":"verified-primary-proposal","spoken":"Deep Green proposes sixty-six subsea compute hives.","on_screen":"PROPOSED · 66 COMPUTE HIVES","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Call them compute or data-center pods. AI is only the applicant's characterization."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c3","status":"verified-primary-proposal","spoken":"The same concept proposes about three hundred thirty to three hundred fifty marine hydrokinetic turbines.","on_screen":"PROPOSED · 330 TO 350 TURBINES","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Do not depict installed hardware."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c4","status":"verified-primary-proposal","spoken":"The hives would take power directly and use passive subsea cooling.","on_screen":"DIRECT POWER · PASSIVE COOLING","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Design feature only. No performance, efficiency, cost, freshwater or reliability claim."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c5","status":"verified-primary-proposal","spoken":"A roughly three point five mile hybrid cable would carry power and fiber to Nikiski.","on_screen":"ABOUT 3.5 MILES · 115 kV + FIBER","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Proposed 115 kV cable and landing, not built infrastructure."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c6","status":"verified-primary-proposal","spoken":"The notice gives a one hundred megawatt estimate.","on_screen":"NOTICE ESTIMATE · 100 MW","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Never call this annual generation or convert to MWh. It is a proposal estimate, not demonstrated output."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c7","status":"verified-primary-purpose","spoken":"The data center would be the primary use of that power.","on_screen":"PRIMARY USE · SUBSEA DATA CENTER","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Do not imply 100 MW is promised to the Railbelt."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c8","status":"verified-primary-conditional","spoken":"The notice says spare electricity could be diverted to the Railbelt through a proposed substation.","on_screen":"SPARE POWER · COULD REACH RAILBELT","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Could, not will. No interconnection agreement or utility commitment is established."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c9","status":"verified-primary-absence","spoken":"The filing names no customer or committed financing.","on_screen":"NO CUSTOMER OR COMMITTED FINANCING NAMED","source":"https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260211-5060","requires":["Absence is limited to the filing materials reviewed."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c10","status":"verified-primary-process","spoken":"Comments and competing applications are due November second at one P M Alaska time.","on_screen":"PUBLIC RECORD CLOSES · NOVEMBER 2ND · 1 PM AK","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Source deadline is 5 PM Eastern, converted to 1 PM Alaska Standard Time."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c11","status":"verified-primary-process","spoken":"A preliminary permit, if issued, gives priority to study feasibility.","on_screen":"IF ISSUED · STUDY PRIORITY","source":"https://www.ferc.gov/industries-data/hydropower/general-information/licensing/preliminary-permits","requires":["No land-disturbing work or entry without permission. No construction or operating authority."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c12","status":"verified-primary-absence","spoken":"The record contains no completed study of output, cooling, economics, grid connection, or environmental effects.","on_screen":"STILL TO PROVE","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["No claim that the concept fails. No claim that environmental harm is established."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c13","status":"verified-primary-location","spoken":"The proposed site is the East Foreland Corridor in Upper Cook Inlet near Nikiski.","on_screen":"UPPER COOK INLET · NEAR NIKISKI","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Do not imply land or water access has been granted."],"contract":{"must_ship":true,"on_screen_verbatim":false}},
-    {"id":"c14","status":"verified-primary-process","spoken":"Brief comments can be filed without prior registration.","on_screen":"BRIEF COMMENTS · NO PRIOR REGISTRATION","source":"https://public-inspection.federalregister.gov/2026-18151.pdf","requires":["Brief comments are limited to 10,000 characters and remain subject to the notice instructions."],"contract":{"must_ship":true,"on_screen_verbatim":false}}
+    {
+      "id": "c1",
+      "status": "verified-primary-paper",
+      "spoken": "Near McCarthy, researchers mapped seven active rock glaciers in Wrangell Saint Elias.",
+      "on_screen": "7 ACTIVE ROCK GLACIERS · NEAR McCARTHY",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Do not call them ordinary glaciers. They are ice-rich mixtures of rock debris and ice."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c2",
+      "status": "verified-primary-paper",
+      "spoken": "The study analyzed Sentinel One radar observations across a period reported as twenty eighteen through twenty twenty-two.",
+      "on_screen": "SENTINEL-1 INSAR · 2018 TO 2022",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Do not imply every ascending and descending input covers the identical date span."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c3",
+      "status": "verified-primary-paper",
+      "spoken": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
+      "on_screen": ">160 CM PER YEAR · SOURDOUGH PEAK CORE",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Limit the rate to the high-velocity central trunk, not the entire landform."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c4",
+      "status": "verified-primary-paper",
+      "spoken": "A nearby McCarthy Creek glacier moved at less than half that pace in the university's summary.",
+      "on_screen": "NEARBY · LESS THAN HALF AS FAST",
+      "source": "https://www.smu.edu/news/research/alaskan-rock-glaciers",
+      "requires": ["Attribute the shorthand comparison to the SMU release. The paper reports spatially variable fields and maxima of 61 and 41 centimeters per year for McCarthy lobes."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c5",
+      "status": "verified-primary-paper",
+      "spoken": "The radar result was checked against independent photogrammetry across more than sixteen thousand pixels.",
+      "on_screen": ">16,000 PIXELS · INDEPENDENT CHECK",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["The comparison is specific to Sourdough Peak."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c6",
+      "status": "verified-primary-paper",
+      "spoken": "The two maps correlated at point eight four two, with a mean absolute error of ten point seven two centimeters a year.",
+      "on_screen": "r 0.842 · MAE 10.72 CM PER YEAR",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Label this as the Sourdough InSAR versus photogrammetry comparison."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c7",
+      "status": "verified-primary-method",
+      "spoken": "Then an unsupervised signal-separation method split the motion into a long crawl and a seasonal pulse.",
+      "on_screen": "ICA · LONG CRAWL + SEASONAL PULSE",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Call ICA statistical or unsupervised signal separation. Do not call it generative AI or a predictive model. Researchers fixed the component count at two and interpreted the outputs."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c8",
+      "status": "verified-primary-paper",
+      "spoken": "The seasonal signal peaked twice each year, once after snowmelt and again with later rain.",
+      "on_screen": "2 SEASONAL PULSES · MELT + LATER RAIN",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Say associated with or corresponded with. Do not claim experimental causal proof."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c9",
+      "status": "verified-primary-paper",
+      "spoken": "In four measured years, the first pulse followed snowmelt by seventy-two to eighty-four days.",
+      "on_screen": "72 TO 84 DAYS · FOUR YEARS",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["For 2019, snow-water-equivalent data were missing and the authors estimated 84 to 96 days from a temperature proxy. Do not fold 2019 into the four-year observed range."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c10",
+      "status": "verified-primary-model",
+      "spoken": "The authors modeled a reason. Sunlight may open a path for water to reach a buried sliding layer.",
+      "on_screen": "MODELED · SUNLIGHT → WATER PATH → SLIDE",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Keep may and modeled. The radiation and CryoGrid results are not direct subsurface measurements."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c11",
+      "status": "verified-primary-limit",
+      "spoken": "There were no borehole temperatures and the weather station sat six kilometers away.",
+      "on_screen": "NO BOREHOLE TEMPERATURES · SNOTEL 6 KM AWAY",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Do not imply the surface-motion measurements are therefore untrustworthy. This limits the modeled mechanism."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c12",
+      "status": "verified-primary-limit",
+      "spoken": "Two of the smaller glaciers did not follow the simple sunlight pattern.",
+      "on_screen": "RG5 + RG6 · SIMPLE PATTERN BREAKS",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["RG5 includes atmospheric artifacts. The paper says a larger sample is needed before broad conclusions."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c13",
+      "status": "verified-primary-method",
+      "spoken": "The researchers fixed the separation at two components, then interpreted the outputs.",
+      "on_screen": "2 COMPONENTS · FIXED BY RESEARCHERS · OUTPUTS INTERPRETED",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Make the researcher choice explicit. Do not imply the method discovered the number of components or named their physical meaning on its own."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    },
+    {
+      "id": "c14",
+      "status": "verified-primary-limit",
+      "spoken": "For twenty nineteen, missing snow data required an estimated lag of eighty-four to ninety-six days from a temperature proxy.",
+      "on_screen": "2019 · ESTIMATED 84 TO 96 DAYS · TEMPERATURE PROXY",
+      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "requires": ["Keep 2019 separate from the four measured years and label its lag estimated rather than observed."],
+      "contract": {"must_ship": true, "on_screen_verbatim": false}
+    }
   ]
 }

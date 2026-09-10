@@ -29,6 +29,7 @@ export const EvidenceTrace: React.FC<{
   width?: number;
   opacity?: number;
   phase?: number;
+  color?: string;
 }> = ({
   d = 'M 70 520 C 270 390 430 650 610 500 C 760 390 860 460 1010 300',
   f,
@@ -37,6 +38,7 @@ export const EvidenceTrace: React.FC<{
   width = 24,
   opacity = 1,
   phase = 0,
+  color,
 }) => {
   const p = ease(progress);
   const length = 1650;
@@ -46,7 +48,7 @@ export const EvidenceTrace: React.FC<{
   const extrapolated = state === 'extrapolated';
   const wobble = uncertain ? 8 + 5 * Math.sin(f / 13 + phase) : 0;
   const baseWidth = extrapolated ? Math.max(5, width * 0.28) : width;
-  const stroke = extrapolated ? SPACE.signal : SPACE.signal;
+  const stroke = color ?? SPACE.signal;
   return <g opacity={opacity}>
     {physical && <path d={d} fill="none" stroke={SPACE.ink} strokeWidth={baseWidth + 15}
       strokeLinecap="round" strokeLinejoin="round" pathLength={length}

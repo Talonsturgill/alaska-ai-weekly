@@ -2,15 +2,15 @@
   "backend": "gemini-tts",
   "model": "gemini-3.1-flash-tts-preview",
   "voice": "Sulafat",
-  "take": 0,
+  "take": 1,
   "takes": 3,
   "soundcheck": {
     "pass": true,
-    "score": 0.976,
-    "heard": "What if moving cook inlet power means moving the computer instead? Deep Green proposes 66 compute hives near Nikiski. Around them, 330 to 350 marine hydrokinetic turbines. The turbines would power them directly while seawater provides passive cooling. Clever, put the primary load beside its proposed power source. A 3.5 mile cable would carry power and fiber ashore. The notice estimates 100 megawatts. Where would it go? The data center would be the primary use. Only spare power could reach the rail belt. Could, not will. Now put that diagram on a test bench. The filing names no customer or committed financing. No completed proof covers output, cooling, economics, grid connection or environmental effects. That doesn't make it bad. It makes the next step a study. On September 4th, FERC opened public comment on the application. If issued, the permit gives study priority. It wouldn't authorize construction or prove that one turbine works there. Comments and competing applications are due November 2nd at 1pm Alaska time. Brief comments need no prior registration. So stop the cable one inch short of victory. Bringing compute to cook inlet energy is the clever part. It becomes an Alaska win when studies prove engineering, grid, economics and environmental effects. What would you require?",
+    "score": 0.941,
+    "heard": "A mountain of rock near McCarthy, sped up twice, not once in the study, but twice each year. Sentinel-1 radar mapped seven rock glaciers near McCarthy from 2018 through 2022. They are rivers of rock and ice. Parts of sourdough peak moved more than 160 centimeters a year. A nearby glacier moved less than half as fast in the university summary. Photogrammetry checked more than 16,000 sourdough peak pixels. The maps correlated at .842, with mean error of 10.72 centimeters a year. Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted. That pulse peaked after snow melt and again with later rain. Four measured years lagged snow melt by 72 to 84 days. 2019 used an estimated 84 to 96 day temperature proxy instead. The measured surface signal is real. Is the explanation? The authors modeled a path from sunlight to melt water to a buried sliding layer. No borehole temperatures were recorded. The weather station sat six kilometers away. Two smaller glaciers broke the simple sunlight pattern. That does not erase the measurement. It turns the result into a sharper field test. Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
     "checks": {
       "word_accuracy": {
-        "wer": 0.023,
+        "wer": 0.041,
         "pass": true
       },
       "no_leak": {
@@ -18,12 +18,12 @@
         "pass": true
       },
       "expressive": {
-        "pitch_std_semitones": 3.88,
-        "voiced_frac": 0.4,
+        "pitch_std_semitones": 3.62,
+        "voiced_frac": 0.46,
         "pass": true
       },
       "duration": {
-        "seconds": 117.88,
+        "seconds": 117.24,
         "pass": true
       },
       "loudness": {
@@ -32,7 +32,7 @@
       }
     },
     "diagnosis": "clean",
-    "seconds": 117.88,
+    "seconds": 117.24,
     "in_target_band": true,
     "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
   },
@@ -43,17 +43,17 @@
   "all_reports": [
     {
       "pass": true,
-      "score": 0.976,
+      "score": 0.98,
       "diagnosis": "clean"
     },
     {
       "pass": true,
-      "score": 0.988,
+      "score": 0.941,
       "diagnosis": "clean"
     },
     {
       "pass": true,
-      "score": 0.986,
+      "score": 0.98,
       "diagnosis": "clean"
     }
   ],

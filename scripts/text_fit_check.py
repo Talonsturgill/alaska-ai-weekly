@@ -285,7 +285,7 @@ const fm=font&&compact(val(font)).match(/^Math\.min\(size,width\/\(text\.length\
 const pad=inner&&inner.width&&compact(val(inner.width)).match(/^width-(\d+(?:\.\d+)?)$/);
 if(!fm||!pad||!rect||!rect.y||compact(val(rect.y))!=='y-35'||!rect.width||compact(val(rect.width))!=='width'||numeric(rect.height)!==54||!Number.isFinite(ld.x)||!Number.isFinite(ld.width)||numeric(inner&&inner.size)===null){issues.push({line:1,why:'Unrecognized Label/Type fit or rectangle arithmetic; update adapter, do not assume geometry'});}
 const adapter={x:ld.x,width:ld.width,size:numeric(inner&&inner.size),padding:pad?Number(pad[1]):null,advance:fm?Number(fm[1]):null,top:-35,bottom:19};
-const shot=vars.get('Shot');
+const shot=vars.get('Shot')||vars.get('Scene');
 if(shot)walk(shot.initializer,n=>{if(ts.isIfStatement(n)){const m=compact(n.expression).match(/^n===(\d+)$/);if(m)branches.push({id:Number(m[1]),node:n});}});
 const ids=[...new Set(branches.map(b=>b.id))].sort((a,b)=>a-b);let sceneIds=[...ids];
 if(ids.some((id,i)=>id!==i+1))issues.push({line:1,why:'Shot n=== branches are not contiguous from 1; scene coverage unresolved'});
@@ -308,10 +308,10 @@ for(const node of labelCalls){
  const geometry={};for(const key of ['x','y','width'])geometry[key]=a[key]?numeric(a[key]):key==='y'?null:adapter[key];
  if(!texts)issues.push({line,why:'Unresolved Label text: '+(a.text?compact(val(a.text)):'missing')});
  if(Object.values(geometry).some(v=>v===null||!Number.isFinite(v))||geometry.width<=0)issues.push({line,why:'Unresolved or nonpositive Label x/y/width'});
- if(scope!=='Shot')issues.push({line,why:'Label call outside supported Shot component: '+scope});
+ if(scope!=='Shot'&&scope!=='Scene')issues.push({line,why:'Label call outside supported Shot or Scene component: '+scope});
  calls.push({line,texts:texts||[],...geometry,scene,excluded_scenes:excluded,transforms,scope,inside_art:insideArt,ancestors,dynamic});
 }
-if(!sceneIds.length)issues.push({line:1,why:'Label calls present but ZERO Shot n=== branches resolved'});
+if(!sceneIds.length)issues.push({line:1,why:'Label calls present but ZERO Shot or Scene n=== branches resolved'});
 if(props&&Array.isArray(props.scenes)&&props.scenes.length!==sceneIds.length)issues.push({line:1,why:'Shot branch count does not match actual episode props scenes'});
 process.stdout.write(JSON.stringify({adapter,calls,scene_ids:sceneIds,issues,copy_literals,copy_issues}));
 """

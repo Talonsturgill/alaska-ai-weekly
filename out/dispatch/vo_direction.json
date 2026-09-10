@@ -1,6 +1,6 @@
 {
-  "run_date": "2026-09-06",
-  "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
+  "run_date": "2026-09-10",
+  "narrator": "Nora, an Alaska public radio host who is warm, grounded and quietly witty",
   "voice": "Sulafat",
   "target_seconds": 120,
   "band_seconds": [
@@ -10,234 +10,158 @@
   "predicted_runtime_s": 120,
   "word_count": 220,
   "pronunciations": {
-    "Deep Green": "DEEP green",
-    "Nikiski": "nih-KISS-key",
-    "Railbelt": "RAIL-belt",
-    "F E R C": "eff ee are see"
+    "McCarthy": "muh CAR thee",
+    "Sourdough": "SOUR dough",
+    "Sentinel One": "SEN tuh nul one",
+    "photogrammetry": "foh toh GRAM uh tree"
   },
-  "notes": "Conditional optimism. Physical ingenuity first, then a clean routing reveal, then the study-status and proof burden. No hype and no prosecutorial tone.",
-  "style_prompt": "Style: warm, grounded, curious and quietly witty. Let the physical idea feel genuinely clever. Turn exact and calm at the power-routing contrast. Give the missing proof full weight without suspicion or doom. Make study sound like useful work, not a consolation prize. Land the last question directly to one Alaskan listener. Neutral American accent, natural and not announcer-y.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one load-bearing word per line; let every proposed number and conditional verb land.",
+  "notes": "Begin with delighted surprise. Let the validation statistics sound like earned confidence. Make the signal split playful and precise. Turn quiet at the empty borehole, then finish with practical curiosity rather than doubt.",
+  "style_prompt": "Style: warm, grounded, curious and quietly witty. Make the remote measurement feel genuinely impressive. Let the map check land with confidence. Give the empty borehole a clean breath of silence. Finish as an invitation to the next field test, never as a warning. Neutral American accent, natural and not announcer-y.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one load-bearing word per line. Let twice, checked, split, real, modeled, no and underground land.",
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above Transcript are direction. Never speak them.\n# AUDIO PROFILE: the house narrator is warm, grounded and quietly witty. Neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, grounded, curious and quietly witty. Make the remote measurement feel genuinely impressive. Let the map check land with confidence. Give the empty borehole a clean breath of silence. Finish as an invitation to the next field test, never as a warning.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one load-bearing word per line. Let twice, checked, split, real, modeled, no and underground land.\nTranscript:\nA mountain of rock near McCarthy sped up twice.\nNot once in the study, but twice each year.\nSentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.\nThey are rivers of rock and ice.\nParts of Sourdough Peak moved more than one hundred sixty centimeters a year.\nA nearby glacier moved less than half as fast in the university summary.\nPhotogrammetry checked more than sixteen thousand Sourdough Peak pixels.\nThe maps correlated at point eight four two, with mean error of ten point seven two centimeters a year.\nResearchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.\nThat pulse peaked after snowmelt and again with later rain.\nFour measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.\nThe measured surface signal is real. Is the explanation?\nThe authors modeled a path from sunlight to meltwater to a buried sliding layer.\nNo borehole temperatures were recorded. The weather station sat six kilometers away.\nTwo smaller glaciers broke the simple sunlight pattern.\nThat does not erase the measurement.\nIt turns the result into a sharper field test.\nPut sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
   "lines": [
     {
       "idx": 0,
-      "text": "What if moving Cook Inlet power means moving the computer instead?",
+      "text": "A mountain of rock near McCarthy sped up twice.",
       "intent": "hook",
-      "emphasis": "moving",
+      "emphasis": "twice",
       "energy": 5,
-      "pace": "curious forward lean",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     },
     {
       "idx": 1,
-      "text": "Deep Green proposes sixty-six compute hives near Nikiski.",
-      "intent": "setup",
-      "emphasis": "sixty-six",
+      "text": "Not once in the study, but twice each year.",
+      "intent": "hook",
+      "emphasis": "twice",
       "energy": 3,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     },
     {
       "idx": 2,
-      "text": "Around them, three hundred thirty to three hundred fifty marine hydrokinetic turbines.",
-      "intent": "stat",
-      "emphasis": "three hundred fifty",
+      "text": "Sentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.",
+      "intent": "setup",
+      "emphasis": "seven",
       "energy": 4,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     },
     {
       "idx": 3,
-      "text": "The turbines would power them directly while seawater provides passive cooling.",
-      "intent": "setup",
-      "emphasis": "directly",
+      "text": "They are rivers of rock and ice.",
+      "intent": "explain",
+      "emphasis": "ice",
       "energy": 2,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     },
     {
       "idx": 4,
-      "text": "Clever. Put the primary load beside its proposed power source.",
-      "intent": "reveal",
-      "emphasis": "clever",
+      "text": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
+      "intent": "stat",
+      "emphasis": "sixty",
       "energy": 5,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": true,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     },
     {
       "idx": 5,
-      "text": "A three point five mile cable would carry power and fiber ashore.",
-      "intent": "stat",
-      "emphasis": "cable",
+      "text": "A nearby glacier moved less than half as fast in the university summary.",
+      "intent": "contrast",
+      "emphasis": "half",
       "energy": 3,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     },
     {
       "idx": 6,
-      "text": "The notice estimates one hundred megawatts. Where would it go?",
-      "intent": "hook",
-      "emphasis": "where",
-      "energy": 4,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "text": "Photogrammetry checked more than sixteen thousand Sourdough Peak pixels.",
+      "intent": "validation",
+      "emphasis": "checked",
+      "energy": 3,
+      "tags": []
     },
     {
       "idx": 7,
-      "text": "The data center would be the primary use.",
-      "intent": "reveal",
-      "emphasis": "primary",
-      "energy": 2,
-      "pace": "slow the routing contrast",
-      "tags": [],
-      "pause_before": true,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "text": "The maps correlated at point eight four two, with mean error of ten point seven two centimeters a year.",
+      "intent": "validation",
+      "emphasis": "correlated",
+      "energy": 4,
+      "tags": []
     },
     {
       "idx": 8,
-      "text": "Only spare power could reach the Railbelt. Could, not will.",
-      "intent": "contrast",
-      "emphasis": "could",
-      "energy": 5,
-      "pace": "slow the routing contrast",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "text": "Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.",
+      "intent": "method",
+      "emphasis": "fixed",
+      "energy": 3,
+      "tags": []
     },
     {
       "idx": 9,
-      "text": "Now put that diagram on a test bench.",
+      "text": "That pulse peaked after snowmelt and again with later rain.",
       "intent": "reveal",
-      "emphasis": "test",
-      "energy": 3,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": true,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "emphasis": "again",
+      "energy": 4,
+      "tags": []
     },
     {
       "idx": 10,
-      "text": "The filing names no customer or committed financing.",
-      "intent": "stakes",
-      "emphasis": "no",
-      "energy": 4,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "text": "Four measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.",
+      "intent": "limit",
+      "emphasis": "estimated",
+      "energy": 2,
+      "tags": []
     },
     {
       "idx": 11,
-      "text": "No completed proof covers output, cooling, economics, grid connection, or environmental effects.",
-      "intent": "stakes",
-      "emphasis": "proof",
-      "energy": 2,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "text": "The measured surface signal is real. Is the explanation?",
+      "intent": "turn",
+      "emphasis": "real",
+      "energy": 5,
+      "tags": []
     },
     {
       "idx": 12,
-      "text": "That doesn't make it bad. It makes the next step a study.",
-      "intent": "reveal",
-      "emphasis": "study",
-      "energy": 5,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": true,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "text": "The authors modeled a path from sunlight to meltwater to a buried sliding layer.",
+      "intent": "model",
+      "emphasis": "modeled",
+      "energy": 3,
+      "tags": []
     },
     {
       "idx": 13,
-      "text": "On September fourth, F E R C opened public comment on the application.",
-      "intent": "setup",
-      "emphasis": "comment",
-      "energy": 3,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "text": "No borehole temperatures were recorded. The weather station sat six kilometers away.",
+      "intent": "test",
+      "emphasis": "No",
+      "energy": 1,
+      "tags": []
     },
     {
       "idx": 14,
-      "text": "If issued, the permit gives study priority.",
-      "intent": "reveal",
-      "emphasis": "priority",
+      "text": "Two smaller glaciers broke the simple sunlight pattern.",
+      "intent": "test",
+      "emphasis": "broke",
       "energy": 4,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     },
     {
       "idx": 15,
-      "text": "It wouldn't authorize construction or prove that one turbine works there.",
-      "intent": "stakes",
-      "emphasis": "wouldn't",
+      "text": "That does not erase the measurement.",
+      "intent": "resolution",
+      "emphasis": "measurement",
       "energy": 2,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     },
     {
       "idx": 16,
-      "text": "Comments and competing applications are due November second at one P M Alaska time. Brief comments need no prior registration.",
-      "intent": "stat",
-      "emphasis": "due",
-      "energy": 5,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "text": "It turns the result into a sharper field test.",
+      "intent": "resolution",
+      "emphasis": "test",
+      "energy": 4,
+      "tags": []
     },
     {
       "idx": 17,
-      "text": "So stop the cable one inch short of victory.",
+      "text": "Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
       "intent": "button",
-      "emphasis": "short",
-      "energy": 3,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": true,
-      "why": "Delivery serves the earned conditional-optimism arc."
-    },
-    {
-      "idx": 18,
-      "text": "Bringing compute to Cook Inlet's energy is the clever part.",
-      "intent": "button",
-      "emphasis": "clever",
-      "energy": 4,
-      "pace": "measured and conversational",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
-    },
-    {
-      "idx": 19,
-      "text": "It becomes an Alaska win when studies prove engineering, grid, economics, and environmental effects. What would you require?",
-      "intent": "cta",
-      "emphasis": "prove",
+      "emphasis": "underground",
       "energy": 2,
-      "pace": "direct and warm",
-      "tags": [],
-      "pause_before": false,
-      "why": "Delivery serves the earned conditional-optimism arc."
+      "tags": []
     }
-  ],
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: warm, grounded, curious and quietly witty. Let the physical idea feel genuinely clever. Turn exact and calm at the power-routing contrast. Give the missing proof full weight without suspicion or doom. Make study sound like useful work, not a consolation prize. Land the last question directly to one Alaskan listener. Neutral American accent, natural and not announcer-y.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one load-bearing word per line; let every proposed number and conditional verb land.\nTranscript:\nWhat if moving Cook Inlet power means moving the computer instead?\nDeep Green proposes sixty-six compute hives near Nikiski.\nAround them, three hundred thirty to three hundred fifty marine hydrokinetic turbines.\nThe turbines would power them directly while seawater provides passive cooling.\nClever. Put the primary load beside its proposed power source.\nA three point five mile cable would carry power and fiber ashore.\nThe notice estimates one hundred megawatts. Where would it go?\nThe data center would be the primary use.\nOnly spare power could reach the Railbelt. Could, not will.\nNow put that diagram on a test bench.\nThe filing names no customer or committed financing.\nNo completed proof covers output, cooling, economics, grid connection, or environmental effects.\nThat doesn't make it bad. It makes the next step a study.\nOn September fourth, F E R C opened public comment on the application.\nIf issued, the permit gives study priority.\nIt wouldn't authorize construction or prove that one turbine works there.\nComments and competing applications are due November second at one P M Alaska time. Brief comments need no prior registration.\nSo stop the cable one inch short of victory.\nBringing compute to Cook Inlet's energy is the clever part.\nIt becomes an Alaska win when studies prove engineering, grid, economics, and environmental effects. What would you require?"
+  ]
 }

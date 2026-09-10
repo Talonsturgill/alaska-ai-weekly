@@ -1,17 +1,16 @@
 {
-  "source": "out/dispatch/post.txt",
-  "objective_gate": "PASS",
-  "scores": {
-    "hook_scroll_stop": 9.0,
-    "point_of_view_take": 9.3,
-    "substance_specificity": 9.5,
-    "readability_restraint": 9.1,
-    "engagement_design": 9.4,
-    "brand_voice_accuracy": 9.5,
-    "hashtag_craft": 8.5
-  },
-  "weighted_total": 9.2,
-  "ship_threshold": 8.5,
+  "ship": true,
+  "score": 9.29,
   "hard_fails": [],
-  "ship": true
+  "axes": {
+    "Hook / scroll-stop": 9.2,
+    "Point of view / take": 9.6,
+    "Substance & specificity": 9.8,
+    "Readability & restraint": 9.2,
+    "Engagement design": 9.5,
+    "Brand voice & accuracy": 8.8,
+    "Hashtag craft": 8.5
+  },
+  "blocking_fixes": [],
+  "review_note": "Independent scorer verified the caption against the fact-check-safe claim set and the 8.5 rubric threshold."
 }

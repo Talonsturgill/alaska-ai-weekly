@@ -1,19 +1,17 @@
-The DeepGreen Cook Inlet idea is clever. It is also still paper.
+A mountain of rock near McCarthy sped up twice each year. Satellites caught both appointments.
 
-The company proposes 330 to 350 marine turbines and 66 subsea compute hives near Nikiski. The turbines would primarily serve the underwater data center. Spare electricity could reach the Railbelt through a proposed shore connection.
+The strange part is how much the map can prove before the story reaches underground.
 
-That physical fit deserves a serious look. Put the primary load beside its proposed power source. Use passive seawater cooling. Carry power and fiber ashore through one cable. The federal notice places the estimate at 100 megawatts.
+Researchers used Sentinel-1 radar to map seven active rock glaciers near McCarthy. Parts of Sourdough Peak moved more than 160 centimeters per year. Photogrammetry checked more than 16,000 Sourdough Peak pixels. The two maps correlated at r 0.842 with mean absolute error of 10.72 centimeters per year.
 
-Now comes the part that matters for Alaska.
+Then researchers used unsupervised signal separation. They fixed the analysis at two components and interpreted one as long term motion and one as a seasonal pulse. That pulse appeared twice each year in association with snowmelt and later rain.
 
-The filing names no customer or committed financing. It does not prove output from the turbines. It does not settle the grid path or the economics. It does not establish the environmental effects.
+The surface measurement is the victory. The mechanism is the open question.
 
-FERC has opened the application to public comment. It has not approved construction. A preliminary permit would provide study priority and nothing more.
+The authors modeled a path from sunlight to meltwater and a buried sliding layer. No borehole temperatures were recorded. The weather station sat six kilometers away. Two smaller glaciers complicated the simple sunlight pattern.
 
-Comments and competing applications are due November 2nd at 1 PM Alaska time. Brief comments can be filed without prior registration.
+That is not a reason to distrust the map. It is a reason to put the next sensor underground.
 
-The best response is neither hype nor dismissal. Test the engineering. Test the grid connection. Test the economics. Test the environmental case. Then ask whether the value really stays here.
+If you had one field season near McCarthy, where would you drill first?
 
-What proof would you require before calling this an Alaska win?
-
-#Alaska #Energy #DataCenters #Infrastructure
+#Alaska #AI #Science #RemoteSensing #ClimateResearch

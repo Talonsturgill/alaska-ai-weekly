@@ -1,320 +1,314 @@
 [
-  {
-    "text": "What if moving Cook Inlet power",
-    "start": 0.0,
-    "end": 2.49,
-    "seg": 0
-  },
-  {
-    "text": "means moving the computer instead?",
-    "start": 2.52,
-    "end": 5.32,
-    "seg": 0
-  },
-  {
-    "text": "Deep Green proposes sixty-six compute",
-    "start": 6.42,
-    "end": 9.81,
-    "seg": 1
-  },
-  {
-    "text": "hives near Nikiski.",
-    "start": 9.84,
-    "end": 11.46,
-    "seg": 1
-  },
-  {
-    "text": "Around them, three hundred thirty",
-    "start": 12.3,
-    "end": 14.290000000000001,
-    "seg": 2
-  },
-  {
-    "text": "to three hundred fifty marine hydrokinetic",
-    "start": 14.32,
-    "end": 18.29,
-    "seg": 2
-  },
-  {
-    "text": "turbines.",
-    "start": 18.32,
-    "end": 19.02,
-    "seg": 2
-  },
-  {
-    "text": "The turbines would power them directly",
-    "start": 19.88,
-    "end": 22.15,
-    "seg": 3
-  },
-  {
-    "text": "while seawater provides passive",
-    "start": 22.18,
-    "end": 24.41,
-    "seg": 3
-  },
-  {
-    "text": "cooling.",
-    "start": 24.44,
-    "end": 25.14,
-    "seg": 3
-  },
-  {
-    "text": "Clever.",
-    "start": 25.68,
-    "end": 26.209999999999997,
-    "seg": 4
-  },
-  {
-    "text": "Put the primary load beside its",
-    "start": 26.24,
-    "end": 29.41,
-    "seg": 4
-  },
-  {
-    "text": "proposed power source.",
-    "start": 29.44,
-    "end": 30.52,
-    "seg": 4
-  },
-  {
-    "text": "A three point five mile cable",
-    "start": 31.6,
-    "end": 34.129999999999995,
-    "seg": 5
-  },
-  {
-    "text": "would carry power and fiber ashore.",
-    "start": 34.16,
-    "end": 36.72,
-    "seg": 5
-  },
-  {
-    "text": "The notice estimates one hundred",
-    "start": 38.06,
-    "end": 40.269999999999996,
-    "seg": 6
-  },
-  {
-    "text": "megawatts.",
-    "start": 40.3,
-    "end": 41.24,
-    "seg": 6
-  },
-  {
-    "text": "Where would it go?",
-    "start": 42.1,
-    "end": 42.800000000000004,
-    "seg": 6
-  },
-  {
-    "text": "The data center would be the",
-    "start": 44.08,
-    "end": 45.65,
-    "seg": 7
-  },
-  {
-    "text": "primary use.",
-    "start": 45.68,
-    "end": 46.56,
-    "seg": 7
-  },
-  {
-    "text": "Only spare power could reach the",
-    "start": 47.62,
-    "end": 49.65,
-    "seg": 8
-  },
-  {
-    "text": "Railbelt.",
-    "start": 49.68,
-    "end": 50.38,
-    "seg": 8
-  },
-  {
-    "text": "Could, not will.",
-    "start": 50.92,
-    "end": 53.14,
-    "seg": 8
-  },
-  {
-    "text": "Now put that diagram on a",
-    "start": 54.12,
-    "end": 56.67,
-    "seg": 9
-  },
-  {
-    "text": "test bench.",
-    "start": 56.7,
-    "end": 57.400000000000006,
-    "seg": 9
-  },
-  {
-    "text": "The filing names no customer or",
-    "start": 58.3,
-    "end": 60.83,
-    "seg": 10
-  },
-  {
-    "text": "committed financing.",
-    "start": 60.86,
-    "end": 61.82,
-    "seg": 10
-  },
-  {
-    "text": "No completed proof covers output,",
-    "start": 62.9,
-    "end": 65.5,
-    "seg": 11
-  },
-  {
-    "text": "cooling, economics, grid connection,",
-    "start": 66.04,
-    "end": 68.52,
-    "seg": 11
-  },
-  {
-    "text": "or environmental effects.",
-    "start": 68.94,
-    "end": 70.06,
-    "seg": 11
-  },
-  {
-    "text": "That doesn't make it bad.",
-    "start": 70.9,
-    "end": 72.2,
-    "seg": 12
-  },
-  {
-    "text": "It makes the next step a",
-    "start": 72.74,
-    "end": 74.31,
-    "seg": 12
-  },
-  {
-    "text": "study.",
-    "start": 74.34,
-    "end": 75.04,
-    "seg": 12
-  },
-  {
-    "text": "On September fourth, F E R",
-    "start": 75.9,
-    "end": 77.905,
-    "seg": 13
-  },
-  {
-    "text": "C opened public comment on the",
-    "start": 77.935,
-    "end": 79.47,
-    "seg": 13
-  },
-  {
-    "text": "application.",
-    "start": 79.5,
-    "end": 79.91,
-    "seg": 13
-  },
-  {
-    "text": "If issued, the permit gives study",
-    "start": 79.94,
-    "end": 83.35,
-    "seg": 14
-  },
-  {
-    "text": "priority.",
-    "start": 83.38,
-    "end": 84.08,
-    "seg": 14
-  },
-  {
-    "text": "It wouldn't authorize construction",
-    "start": 85.02,
-    "end": 86.49,
-    "seg": 15
-  },
-  {
-    "text": "or prove that one turbine works",
-    "start": 86.52,
-    "end": 88.91,
-    "seg": 15
-  },
-  {
-    "text": "there.",
-    "start": 88.94,
-    "end": 89.64,
-    "seg": 15
-  },
-  {
-    "text": "Comments and competing applications",
-    "start": 90.28,
-    "end": 92.35,
-    "seg": 16
-  },
-  {
-    "text": "are due November second at one",
-    "start": 92.38,
-    "end": 94.343,
-    "seg": 16
-  },
-  {
-    "text": "P M Alaska time.",
-    "start": 94.373,
-    "end": 95.64,
-    "seg": 16
-  },
-  {
-    "text": "Brief comments need no prior registration.",
-    "start": 96.44,
-    "end": 98.74,
-    "seg": 16
-  },
-  {
-    "text": "So stop the cable one inch",
-    "start": 99.96,
-    "end": 102.19,
-    "seg": 17
-  },
-  {
-    "text": "short of victory.",
-    "start": 102.22,
-    "end": 102.96,
-    "seg": 17
-  },
-  {
-    "text": "Bringing compute to Cook Inlet's",
-    "start": 103.9,
-    "end": 105.95,
-    "seg": 18
-  },
-  {
-    "text": "energy is the clever part.",
-    "start": 105.98,
-    "end": 107.51,
-    "seg": 18
-  },
-  {
-    "text": "It becomes an Alaska win when",
-    "start": 107.54,
-    "end": 110.69,
-    "seg": 19
-  },
-  {
-    "text": "studies prove engineering, grid,",
-    "start": 110.72,
-    "end": 112.8,
-    "seg": 19
-  },
-  {
-    "text": "economics, and environmental effects.",
-    "start": 113.28,
-    "end": 115.22,
-    "seg": 19
-  },
-  {
-    "text": "What would you require?",
-    "start": 116.04,
-    "end": 117.26,
-    "seg": 19
-  }
+ {
+  "text": "A mountain of rock near McCarthy",
+  "start": 0.0,
+  "end": 2.5700000000000003,
+  "seg": 0
+ },
+ {
+  "text": "sped up twice.",
+  "start": 2.6,
+  "end": 4.44,
+  "seg": 0
+ },
+ {
+  "text": "Not once in the study, but",
+  "start": 5.52,
+  "end": 7.77,
+  "seg": 1
+ },
+ {
+  "text": "twice each year.",
+  "start": 7.8,
+  "end": 9.52,
+  "seg": 1
+ },
+ {
+  "text": "Sentinel One radar mapped seven",
+  "start": 11.0,
+  "end": 13.99,
+  "seg": 2
+ },
+ {
+  "text": "rock glaciers near McCarthy from",
+  "start": 14.02,
+  "end": 16.39,
+  "seg": 2
+ },
+ {
+  "text": "twenty eighteen through twenty",
+  "start": 16.42,
+  "end": 17.77,
+  "seg": 2
+ },
+ {
+  "text": "twenty two.",
+  "start": 17.8,
+  "end": 18.66,
+  "seg": 2
+ },
+ {
+  "text": "They are rivers of rock and",
+  "start": 19.76,
+  "end": 21.93,
+  "seg": 3
+ },
+ {
+  "text": "ice.",
+  "start": 21.96,
+  "end": 22.66,
+  "seg": 3
+ },
+ {
+  "text": "Parts of Sourdough Peak moved more",
+  "start": 23.52,
+  "end": 25.61,
+  "seg": 4
+ },
+ {
+  "text": "than one hundred sixty centimeters",
+  "start": 25.64,
+  "end": 27.59,
+  "seg": 4
+ },
+ {
+  "text": "a year.",
+  "start": 27.62,
+  "end": 28.41,
+  "seg": 4
+ },
+ {
+  "text": "A nearby glacier moved less than",
+  "start": 28.44,
+  "end": 32.03,
+  "seg": 5
+ },
+ {
+  "text": "half as fast in the university",
+  "start": 32.06,
+  "end": 33.89,
+  "seg": 5
+ },
+ {
+  "text": "summary.",
+  "start": 33.92,
+  "end": 34.620000000000005,
+  "seg": 5
+ },
+ {
+  "text": "Photogrammetry checked more than",
+  "start": 35.8,
+  "end": 37.55,
+  "seg": 6
+ },
+ {
+  "text": "sixteen thousand Sourdough Peak",
+  "start": 37.58,
+  "end": 39.87,
+  "seg": 6
+ },
+ {
+  "text": "pixels.",
+  "start": 39.9,
+  "end": 40.6,
+  "seg": 6
+ },
+ {
+  "text": "R, 0.842.",
+  "start": 41.64,
+  "end": 43.44,
+  "seg": 7
+ },
+ {
+  "text": "Mean absolute error, 10.72 centimeters",
+  "start": 44.18,
+  "end": 47.95,
+  "seg": 7
+ },
+ {
+  "text": "per year.",
+  "start": 47.98,
+  "end": 48.7,
+  "seg": 7
+ },
+ {
+  "text": "Researchers fixed two components.",
+  "start": 49.84,
+  "end": 51.9,
+  "seg": 8
+ },
+ {
+  "text": "Unsupervised separation yielded",
+  "start": 52.96,
+  "end": 55.19,
+  "seg": 8
+ },
+ {
+  "text": "a long crawl and seasonal pulse",
+  "start": 55.22,
+  "end": 57.55,
+  "seg": 8
+ },
+ {
+  "text": "they interpreted.",
+  "start": 57.58,
+  "end": 58.32,
+  "seg": 8
+ },
+ {
+  "text": "That pulse peaked after snowmelt",
+  "start": 59.76,
+  "end": 61.949999999999996,
+  "seg": 9
+ },
+ {
+  "text": "and again with later rain.",
+  "start": 61.98,
+  "end": 63.94,
+  "seg": 9
+ },
+ {
+  "text": "Four measured years lagged snowmelt",
+  "start": 65.26,
+  "end": 67.97,
+  "seg": 10
+ },
+ {
+  "text": "by seventy two to eighty four",
+  "start": 68.0,
+  "end": 69.75,
+  "seg": 10
+ },
+ {
+  "text": "days.",
+  "start": 69.78,
+  "end": 70.48,
+  "seg": 10
+ },
+ {
+  "text": "Twenty nineteen used an estimated",
+  "start": 71.12,
+  "end": 73.39,
+  "seg": 10
+ },
+ {
+  "text": "eighty four to ninety six day",
+  "start": 73.42,
+  "end": 75.47,
+  "seg": 10
+ },
+ {
+  "text": "temperature proxy instead.",
+  "start": 75.5,
+  "end": 76.66,
+  "seg": 10
+ },
+ {
+  "text": "The measured surface signal is",
+  "start": 77.9,
+  "end": 80.31,
+  "seg": 11
+ },
+ {
+  "text": "real.",
+  "start": 80.34,
+  "end": 81.04,
+  "seg": 11
+ },
+ {
+  "text": "Is the explanation?",
+  "start": 81.48,
+  "end": 82.6,
+  "seg": 11
+ },
+ {
+  "text": "The authors modeled a path from",
+  "start": 84.28,
+  "end": 86.47,
+  "seg": 12
+ },
+ {
+  "text": "sunlight to meltwater to a buried",
+  "start": 86.5,
+  "end": 89.11,
+  "seg": 12
+ },
+ {
+  "text": "sliding layer.",
+  "start": 89.14,
+  "end": 89.94,
+  "seg": 12
+ },
+ {
+  "text": "No borehole temperatures were recorded.",
+  "start": 91.16,
+  "end": 93.42,
+  "seg": 13
+ },
+ {
+  "text": "The weather station sat six kilometers",
+  "start": 94.22,
+  "end": 96.35,
+  "seg": 13
+ },
+ {
+  "text": "away.",
+  "start": 96.38,
+  "end": 97.08,
+  "seg": 13
+ },
+ {
+  "text": "Two smaller glaciers broke the",
+  "start": 97.82,
+  "end": 100.39,
+  "seg": 14
+ },
+ {
+  "text": "simple sunlight pattern.",
+  "start": 100.42,
+  "end": 101.54,
+  "seg": 14
+ },
+ {
+  "text": "That does not erase the measurement.",
+  "start": 102.34,
+  "end": 104.64,
+  "seg": 15
+ },
+ {
+  "text": "It turns the result into a",
+  "start": 105.62,
+  "end": 107.37,
+  "seg": 16
+ },
+ {
+  "text": "sharper field test.",
+  "start": 107.4,
+  "end": 108.62,
+  "seg": 16
+ },
+ {
+  "text": "Put sensors underground.",
+  "start": 109.38,
+  "end": 110.9,
+  "seg": 17
+ },
+ {
+  "text": "Watch the next melt and rain.",
+  "start": 111.6,
+  "end": 113.46,
+  "seg": 17
+ },
+ {
+  "text": "See whether the mountain keeps",
+  "start": 114.2,
+  "end": 115.73,
+  "seg": 17
+ },
+ {
+  "text": "both appointments.",
+  "start": 115.76,
+  "end": 116.62,
+  "seg": 17
+ }
 ]

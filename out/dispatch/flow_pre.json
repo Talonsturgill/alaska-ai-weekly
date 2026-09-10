@@ -1,10 +1,1 @@
-{
-  "stage": "pre_render_flow_final",
-  "ship": true,
-  "acts": ["proposal mechanism", "power routing", "proof test", "public process", "conditional Alaska value"],
-  "loops": [
-    {"plant": "Where does the cable create Alaska value?", "payoff": "The cable stops one inch short of Alaska value behind four proof locks."},
-    {"plant": "What did FERC actually accept?", "payoff": "Study priority and public comment, not construction authority."}
-  ],
-  "blocking_findings": []
-}
+{"stage":"pre_render_flow","ship":true,"confirmed":{"cadence":"30 beats with every gap at or below five seconds","say_it_show_it":"Claims appear in spoken order","sound":"Every beat names a concrete motivated sound","rehooks":"All three drift windows carry rehooks","open_loops":"Primary 15.2 to 94.2 and secondary 43.8 to 77.0","throughline":"The cyan ribbon appears in the opening and changes at every act boundary","truth_controls":"Researchers set two components, outputs are interpreted, associations stay noncausal and the model stays distinct"},"blocking_findings":[]}

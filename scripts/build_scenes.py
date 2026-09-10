@@ -157,7 +157,9 @@ TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band
 # projection/counterpoint shot held 17.9 seconds, beyond the 16-second oner ceiling,
 # so the unresolved physical-saturation counterpoint opens its own shot at L12.
 # September 6: proposed subsea compute, power routing, proof bench, FERC status and Alaska-value button.
-SCENE_START_LINE = [0, 1, 3, 4, 5, 6, 7, 9, 10, 11, 13, 14, 16, 18]
+# 12 scenes: hook, map, speed, photo check, stats, separation, pulse,
+# measured-vs-estimated lag, model, missing evidence, resolution, field test.
+SCENE_START_LINE = [0, 2, 4, 6, 7, 8, 9, 10, 11, 13, 14, 17]
 
 
 def _apply_caption_fixups(caps):
@@ -577,7 +579,17 @@ def main():
                          f"{len(scenes)} scenes; refusing to write a misleading shots.json")
     # Picture, sound and evidence all consume the conformed beat clock, not
     # duplicated offsets typed into the episode. The board is already voice-bound.
-    props["beats"] = [{"id": b["id"], "at": b["at_s"],
+    def _beat_start(b):
+        """Accept the documented timed-beat `t` range when legacy `at_s` is absent."""
+        if b.get("at_s") is not None:
+            return float(b["at_s"])
+        raw = str(b.get("t", "0")).lower().replace(" to ", "-")
+        match = re.search(r"\d+(?:\.\d+)?", raw)
+        if not match:
+            raise SystemExit(f"build_scenes: beat {b.get('id')} has no usable at_s or t")
+        return float(match.group(0))
+
+    props["beats"] = [{"id": b["id"], "at": _beat_start(b),
                        "label": b["draw"]["annotation"]} for b in board["beats"]]
     json.dump(props, open(os.path.join(OUT, "episode_props.json"), "w"))
     gate_shots = []

@@ -104,6 +104,12 @@ const Shot:React.FC<any>=({n,active})=>{let art;
         self.assertEqual([c["scene"] for c in self.labels()["calls"]], [1, 2])
         self.assertEqual(self.overlaps(), ([], [], 2))
 
+    def test_scene_named_component_is_covered_like_shot(self):
+        self.fixture('<Label text="FIRST" y={700}/>', '<Label text="SECOND" y={700}/>')
+        self.source.write_text(self.source.read_text().replace("const Shot:", "const Scene:"))
+        self.assertEqual([c["scene"] for c in self.labels()["calls"]], [1, 2])
+        self.assertEqual(self.fit(), ([], 2))
+
     def test_static_nested_transforms_apply_inner_to_outer(self):
         self.fixture('<g><g transform="translate(0 100)"><g transform="scale(2)">'
                      '<Label text="FIRST" y={100} width={100}/></g></g>'

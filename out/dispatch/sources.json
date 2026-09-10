@@ -1,9 +1,24 @@
 {
-  "run_date":"2026-09-06",
-  "title":"The Hive Is Still Paper",
-  "sources":[
-    {"id":"s1","title":"DeepGreen Cook Inlet preliminary-permit notice, September 4th, 2026","outlet":"Federal Energy Regulatory Commission","url":"https://www.federalregister.gov/documents/2026/09/04/2026-18151/","claims":["c1","c2","c3","c4","c5","c6","c7","c8","c10","c12","c13","c14"],"used_in_film":true,"note":"Official notice. Every project specification remains proposed; acceptance for filing is not project approval."},
-    {"id":"s2","title":"DeepGreen Cook Inlet preliminary-permit application","outlet":"FERC eLibrary","url":"https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260211-5060","claims":["c9"],"used_in_film":true,"note":"Applicant filing used only for the bounded absence of a named customer or committed financing."},
-    {"id":"s3","title":"Preliminary Permits","outlet":"Federal Energy Regulatory Commission","url":"https://www.ferc.gov/industries-data/hydropower/general-information/licensing/preliminary-permits","claims":["c11"],"used_in_film":true,"note":"Official explanation of study priority and the absence of construction authority."}
+  "run_date": "2026-09-10",
+  "title": "The Glacier That Sped Up Twice",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Hydrometeorological and Topographic Controls on Rock Glacier Kinematics",
+      "outlet": "Journal of Geophysical Research Earth Surface",
+      "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
+      "claims": ["c1", "c2", "c3", "c5", "c6", "c7", "c8", "c9", "c10", "c11", "c12", "c13", "c14"],
+      "used_in_film": true,
+      "note": "Open-access primary paper. Surface motion is independently validated. The subsurface mechanism is preliminary and interpretive."
+    },
+    {
+      "id": "s2",
+      "title": "Why some Alaskan rock glaciers race downhill while their neighbors barely move",
+      "outlet": "Southern Methodist University",
+      "url": "https://www.smu.edu/news/research/alaskan-rock-glaciers",
+      "claims": ["c4"],
+      "used_in_film": true,
+      "note": "Official September 3rd, 2026 release used for the plain-language nearby-speed comparison and current hook."
+    }
   ]
 }

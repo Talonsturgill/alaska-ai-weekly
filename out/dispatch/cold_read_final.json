@@ -1,13 +1,1 @@
-{
-  "stage": "final_script_cold_read",
-  "ship": true,
-  "first_misunderstanding_risk": null,
-  "factual_overclaim": null,
-  "causal_chain_weakness": null,
-  "resolved": [
-    "Replaced an unsupported majority claim with the source wording that the data center would be the primary use.",
-    "Removed the false implication that the proposal eliminates transmission and described co-location instead.",
-    "Made the closing standard concrete by naming engineering, grid, economics, and environmental effects."
-  ],
-  "cold_read_comprehension": "A cold viewer can follow proposal, physical mechanism, power routing, proof gaps, FERC study status, public deadline, and the conditional Alaska-value conclusion."
-}
+{"stage":"final_script_cold_read","ship":true,"retelling":"Radar mapped seven rock glaciers and photogrammetry independently checked the Sourdough surface map. Signal separation exposed a long crawl and a seasonal pulse. A modeled sunlight and water explanation remains unproved because underground temperatures were not recorded and two glaciers broke the simple pattern. The result therefore becomes a specific field test.","actors":{"researchers":"the people mapping and analyzing the glaciers","Sentinel One":"the radar instrument","Sourdough Peak":"the fast moving study site","McCarthy Creek":"the nearby slower comparison","photogrammetry":"the independent map check","authors":"the people who modeled the physical explanation"},"single_question":"Can the twice yearly speedup be trusted and explained? The surface motion is supported, while the cause still needs underground testing.","first_misunderstanding_risk":null,"factual_overclaim":null,"causal_chain_weakness":null}

@@ -1,26 +1,169 @@
 {
-  "run_date":"2026-09-06","title":"THE HIVE IS STILL PAPER","note":"All project hardware is an editorial illustration of a proposal, not built infrastructure.",
-  "caption_fixups":{"F E R C":"FERC","Deep Green":"DeepGreen","one hundred fifteen kilo volt":"115 kV","one hundred megawatts":"100 MW","one hundred megawatt":"100 MW","three point five":"3.5","P M":"PM"},
-  "lines":[
-    {"idx":0,"text":"What if moving Cook Inlet power means moving the computer instead?","t":"What if moving Cook Inlet power means moving the computer instead?","claims":["c13"]},
-    {"idx":1,"text":"Deep Green proposes sixty-six compute hives near Nikiski.","t":"Deep Green proposes sixty-six compute hives near Nikiski.","claims":["c2","c13"]},
-    {"idx":2,"text":"Around them, three hundred thirty to three hundred fifty marine hydrokinetic turbines.","t":"Around them, three hundred thirty to three hundred fifty marine hydrokinetic turbines.","claims":["c3"]},
-    {"idx":3,"text":"The turbines would power them directly while seawater provides passive cooling.","t":"The turbines would power them directly while seawater provides passive cooling.","claims":["c4"]},
-    {"idx":4,"text":"Clever. Put the primary load beside its proposed power source.","t":"Clever. Put the primary load beside its proposed power source.","claims":["c2","c3","c4"]},
-    {"idx":5,"text":"A three point five mile cable would carry power and fiber ashore.","t":"A three point five mile cable would carry power and fiber ashore.","claims":["c5"]},
-    {"idx":6,"text":"The notice estimates one hundred megawatts. Where would it go?","t":"The notice estimates one hundred megawatts. Where would it go?","claims":["c6"]},
-    {"idx":7,"text":"The data center would be the primary use.","t":"The data center would be the primary use.","claims":["c7"]},
-    {"idx":8,"text":"Only spare power could reach the Railbelt. Could, not will.","t":"Only spare power could reach the Railbelt. Could, not will.","claims":["c8"]},
-    {"idx":9,"text":"Now put that diagram on a test bench.","t":"Now put that diagram on a test bench.","claims":["c12"]},
-    {"idx":10,"text":"The filing names no customer or committed financing.","t":"The filing names no customer or committed financing.","claims":["c9"]},
-    {"idx":11,"text":"No completed proof covers output, cooling, economics, grid connection, or environmental effects.","t":"No completed proof covers output, cooling, economics, grid connection, or environmental effects.","claims":["c12"]},
-    {"idx":12,"text":"That doesn't make it bad. It makes the next step a study.","t":"That doesn't make it bad. It makes the next step a study.","claims":["c11","c12"]},
-    {"idx":13,"text":"On September fourth, F E R C opened public comment on the application.","t":"On September fourth, F E R C opened public comment on the application.","claims":["c1"]},
-    {"idx":14,"text":"If issued, the permit gives study priority.","t":"If issued, the permit gives study priority.","claims":["c11"]},
-    {"idx":15,"text":"It wouldn't authorize construction or prove that one turbine works there.","t":"It wouldn't authorize construction or prove that one turbine works there.","claims":["c11","c12"]},
-    {"idx":16,"text":"Comments and competing applications are due November second at one P M Alaska time. Brief comments need no prior registration.","t":"Comments and competing applications are due November second at one P M Alaska time. Brief comments need no prior registration.","claims":["c10","c14"]},
-    {"idx":17,"text":"So stop the cable one inch short of victory.","t":"So stop the cable one inch short of victory.","claims":["c12"]},
-    {"idx":18,"text":"Bringing compute to Cook Inlet's energy is the clever part.","t":"Bringing compute to Cook Inlet's energy is the clever part.","claims":["c2","c3","c4"]},
-    {"idx":19,"text":"It becomes an Alaska win when studies prove engineering, grid, economics, and environmental effects. What would you require?","t":"It becomes an Alaska win when studies prove engineering, grid, economics, and environmental effects. What would you require?","claims":["c8","c9","c12"]}
-  ]
+ "run_date": "2026-09-10",
+ "title": "THE GLACIER THAT SPED UP TWICE",
+ "note": "Rock glaciers are mixtures of rock debris and ice. Surface motion is measured. The proposed subsurface mechanism is modeled and not directly observed.",
+ "caption_fixups": {
+  "Sentinel One": "Sentinel-1",
+  "point eight four two": "r 0.842",
+  "ten point seven two centimeters": "10.72 centimeters",
+  "seventy two to eighty four days": "72 to 84 days",
+  "eighty four to ninety six day": "84 to 96 day"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A mountain of rock near McCarthy sped up twice.",
+   "t": "A mountain of rock near McCarthy sped up twice.",
+   "claims": [
+    "c3",
+    "c8"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "Not once in the study, but twice each year.",
+   "t": "Not once in the study, but twice each year.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "Sentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.",
+   "t": "Sentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "They are rivers of rock and ice.",
+   "t": "They are rivers of rock and ice.",
+   "claims": [
+    "c1"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
+   "t": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "A nearby glacier moved less than half as fast in the university summary.",
+   "t": "A nearby glacier moved less than half as fast in the university summary.",
+   "claims": [
+    "c4"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "Photogrammetry checked more than sixteen thousand Sourdough Peak pixels.",
+   "t": "Photogrammetry checked more than sixteen thousand Sourdough Peak pixels.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "R, 0.842. Mean absolute error, 10.72 centimeters per year.",
+   "t": "R, 0.842. Mean absolute error, 10.72 centimeters per year.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.",
+   "t": "Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.",
+   "claims": [
+    "c7",
+    "c13"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "That pulse peaked after snowmelt and again with later rain.",
+   "t": "That pulse peaked after snowmelt and again with later rain.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "Four measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.",
+   "t": "Four measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.",
+   "claims": [
+    "c9",
+    "c14"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "The measured surface signal is real. Is the explanation?",
+   "t": "The measured surface signal is real. Is the explanation?",
+   "claims": [
+    "c5",
+    "c6",
+    "c10"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "The authors modeled a path from sunlight to meltwater to a buried sliding layer.",
+   "t": "The authors modeled a path from sunlight to meltwater to a buried sliding layer.",
+   "claims": [
+    "c10"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "No borehole temperatures were recorded. The weather station sat six kilometers away.",
+   "t": "No borehole temperatures were recorded. The weather station sat six kilometers away.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "Two smaller glaciers broke the simple sunlight pattern.",
+   "t": "Two smaller glaciers broke the simple sunlight pattern.",
+   "claims": [
+    "c12"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "That does not erase the measurement.",
+   "t": "That does not erase the measurement.",
+   "claims": [
+    "c5",
+    "c6"
+   ]
+  },
+  {
+   "idx": 16,
+   "text": "It turns the result into a sharper field test.",
+   "t": "It turns the result into a sharper field test.",
+   "claims": [
+    "c10",
+    "c11",
+    "c12"
+   ]
+  },
+  {
+   "idx": 17,
+   "text": "Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
+   "t": "Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
+   "claims": [
+    "c8",
+    "c10",
+    "c11"
+   ]
+  }
+ ]
 }
