@@ -1,25 +1,19 @@
 {
-  "run_date": "2026-09-10",
-  "title": "The Glacier That Sped Up Twice",
-  "thesis": "Radar measured the movement. Photogrammetry checked the map. An unsupervised signal-separation method exposed a seasonal rhythm. Modeling proposed why. In remote Alaska science, that order turns a hard-to-reach landscape into a testable question without pretending the model is proof.",
-  "falsifier": "The angle fails if independent reanalysis or future seasons do not reproduce Sourdough Peak's two annual pulses. The proposed mechanism fails separately if direct underground measurements do not show meltwater reaching the sliding layer after the observed lag, or if shaded sites prove equally seasonal.",
-  "supporting_facts": [
-    "Seven active rock glaciers were mapped near McCarthy from Sentinel-1 InSAR observations reported across 2018 to 2022.",
-    "Parts of Sourdough Peak exceeded 160 centimeters per year, and its radar velocity map matched independent photogrammetry across more than 16,000 pixels at r 0.842 and 10.72 centimeters per year mean absolute error.",
-    "ICA separated a long-term component from a seasonal component with two annual pulses associated with snowmelt and later rain. Four measured years showed a 72 to 84 day lag after snowmelt."
+  "run_date": "2026-09-11",
+  "thesis": "One preliminary award contains two tests, and Alaska should not confuse autonomous pharmaceutical cargo with a separate passenger and provider eVTOL proposal.",
+  "falsifier": "If the funded period produces no named FAA-authorized route demonstrating reliable pharmaceutical delivery, the near-term deployment thesis fails and this remains a proposal.",
+  "support": [
+    "The state lists a projected preliminary award of $4,171,115.",
+    "The source attaches autonomous only to cargo drones and describes passenger and provider eVTOL separately.",
+    "The public record names no aircraft, route, approval, community agreement or completed flight."
   ],
-  "fair_counterpoint": "Researchers fixed ICA at two components and interpreted the output. The sunlight-to-water-to-sliding explanation depends on preliminary CryoGrid modeling without borehole temperatures, a weather station six kilometers away, and simplified subsurface assumptions. RG5 and RG6 also weaken the simple sunlight pattern.",
-  "who_it_serves": "Researchers, park managers and hazard teams deciding where scarce field instruments can answer the next useful question in remote Alaska terrain.",
-  "valence": "Earnedly positive about measurement and signal separation, curious rather than certain about the physical mechanism.",
-  "second_movement": "The first movement reveals the hidden seasonal rhythm. The second turns the algorithm's clean result back into a sharper uncertainty, showing that the missing underground measurements and pattern-breaking glaciers are the next test rather than an embarrassment.",
+  "counterpoint": "Existing Alaska aviation already moves medicine and people. A new layer must show that it adds reliable capability inside that network rather than merely looking futuristic.",
+  "who_it_serves": "Patients, clinics, health aides, providers, aviation workers, regulators and taxpayers who need an observable success condition.",
+  "valence": "cautiously hopeful",
+  "second_movement": "Split one award into cargo and passenger proof ladders, then define the first observable cargo test without treating it as a completed route.",
   "runner_up_angles": [
-    {
-      "angle": "The algorithm turned radar noise into two patterns.",
-      "why_it_lost": "The input was a validated displacement field, not mere noise, and photogrammetry did not independently validate ICA's interpretation."
-    },
-    {
-      "angle": "Sunlight makes one glacier race.",
-      "why_it_lost": "That causal chain is a preliminary modeled explanation without direct borehole measurements."
-    }
+    "A geography-mismatch investigation lost because the mismatch is a useful caveat, not the whole story.",
+    "A pure rural-aviation celebration lost because the public record does not establish deployment or community agreement.",
+    "An air-taxi future story lost because autonomy is source-supported only for cargo drones."
   ]
 }

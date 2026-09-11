@@ -1,16 +1,8 @@
 {
+  "score": 9.3,
+  "threshold": 8.5,
   "ship": true,
-  "score": 9.29,
+  "objective_gate": "PASS",
   "hard_fails": [],
-  "axes": {
-    "Hook / scroll-stop": 9.2,
-    "Point of view / take": 9.6,
-    "Substance & specificity": 9.8,
-    "Readability & restraint": 9.2,
-    "Engagement design": 9.5,
-    "Brand voice & accuracy": 8.8,
-    "Hashtag craft": 8.5
-  },
-  "blocking_fixes": [],
-  "review_note": "Independent scorer verified the caption against the fact-check-safe claim set and the 8.5 rubric threshold."
+  "rationale": "Clear position inside the mobile fold, source-safe specifics, correctly qualified award and proposal language, verified FAA and geography boundaries, substantive closing question, and four relevant hashtags."
 }

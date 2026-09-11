@@ -8,7 +8,8 @@ script + the inline tags used. Then:
   1. Renders N takes of the WHOLE passage in ONE call each (natural sentence-to-
      sentence flow), model gemini-3.1-flash-tts-preview, voice Sulafat. Retries on
      the random 500 "text-instead-of-audio" error; fails over to
-     gemini-2.5-pro-preview-tts after repeated 500s.
+     gemini-2.5-pro-preview-tts and gemini-2.5-flash-preview-tts after repeated
+     provider failures.
   2. Runs scripts/vo_soundcheck.py on every take and keeps the BEST passing one
      (word accuracy, no spoken tags, pitch-variance/expressiveness, duration,
      loudness). Writes the QC report for the Gmail draft.
@@ -20,6 +21,7 @@ Config (env, with sane defaults):
   DISPATCH_GEMINI_VOICE   default Sulafat
   DISPATCH_GEMINI_MODEL   default gemini-3.1-flash-tts-preview
   DISPATCH_GEMINI_FALLBACK default gemini-2.5-pro-preview-tts
+  DISPATCH_GEMINI_SECOND_FALLBACK default gemini-2.5-flash-preview-tts
   VO_TAKES                default 3
 Requires GEMINI_API_KEY (or GOOGLE_API_KEY). On macOS, a missing environment
 variable falls back to the login Keychain entry used by the local Codex
@@ -40,6 +42,7 @@ SR = 44100
 VOICE = os.environ.get("DISPATCH_GEMINI_VOICE", "Sulafat")
 MODEL = os.environ.get("DISPATCH_GEMINI_MODEL", "gemini-3.1-flash-tts-preview")
 FALLBACK = os.environ.get("DISPATCH_GEMINI_FALLBACK", "gemini-2.5-pro-preview-tts")
+SECOND_FALLBACK = os.environ.get("DISPATCH_GEMINI_SECOND_FALLBACK", "gemini-2.5-flash-preview-tts")
 TAKES = int(os.environ.get("VO_TAKES", "3"))
 CA = os.environ.get("SSL_CERT_FILE") or "/root/.ccr/ca-bundle.crt"
 CTX = ssl.create_default_context(cafile=CA) if os.path.exists(CA) else ssl.create_default_context()
@@ -92,8 +95,9 @@ def _synth_once(prompt, model, voice):
 
 
 def _synth_retry(prompt):
-    """One good 24k int16 take, with 500-retry and pro fallback."""
-    for model in (MODEL, FALLBACK):
+    """One good 24k int16 take, with retries across the supported TTS models."""
+    models = list(dict.fromkeys((MODEL, FALLBACK, SECOND_FALLBACK)))
+    for model in models:
         for d in (0, 4, 10, 20):
             if d:
                 time.sleep(d)
@@ -107,8 +111,9 @@ def _synth_retry(prompt):
                 raise
             except Exception:
                 continue
-        print(f"  {model} exhausted; failing over" if model == MODEL else f"  {FALLBACK} exhausted")
-    raise RuntimeError("Gemini TTS failed on both models after retries.")
+        suffix = "; failing over" if model != models[-1] else ""
+        print(f"  {model} exhausted{suffix}")
+    raise RuntimeError("Gemini TTS failed on every configured model after retries.")
 
 
 def _save_24k(pcm_i16, path):
@@ -536,12 +541,38 @@ def main():
                   f"Re-rolling {TAKES} more take(s) on the repaired prompt.")
             for n in range(TAKES):
                 q = os.path.join(AUD, f"vo_take_r{extra}{n}.wav")
+                if REUSE and os.path.exists(q):
+                    takes.append((q, MODEL))
+                    print(f"re-roll take {n}: reused {os.path.getsize(q)} bytes (VO_REUSE_TAKES=1)")
+                    continue
                 pcm, used = _synth_retry(prompt)
                 _save_24k(pcm, q)
                 takes.append((q, used))
                 print(f"re-roll take {n}: {len(pcm)/24000:.1f}s ({used})")
             best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
         secs = reports[best_i]["checks"]["duration"]["seconds"]
+        # Gemini's pace direction can still land a clean take a few seconds short or long.
+        # When the closest re-roll is within a modest 15% of the two-minute target, conform
+        # tempo without changing pitch, then run the full soundcheck again. This closes the
+        # old path that knowingly shipped a 102-second read against a 112-second floor while
+        # preserving the fact-checked script and its density.
+        tempo = secs / target if target else 1.0
+        if not (lo <= secs <= hi) and 0.84 <= tempo <= 1.15:
+            conformed = os.path.join(AUD, "vo_take_conformed.wav")
+            subprocess.run([
+                "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+                "-i", takes[best_i][0], "-filter:a", f"atempo={tempo:.6f}",
+                "-ar", "24000", "-ac", "1", conformed,
+            ], check=True)
+            source_model = takes[best_i][1]
+            takes.append((conformed, source_model + "+tempo-conform"))
+            best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
+            secs = reports[best_i]["checks"]["duration"]["seconds"]
+            if lo <= secs <= hi:
+                _fixes = list(_fixes) + [
+                    f"tempo-conformed closest clean take to {secs:.1f}s after Gemini pace miss"
+                ]
+                print(f"  runtime conformed to {secs:.1f}s and re-passed soundcheck")
         if not (lo <= secs <= hi):
             n_words = len(spoken.split())
             rate = n_words / secs * 60 if secs else 0

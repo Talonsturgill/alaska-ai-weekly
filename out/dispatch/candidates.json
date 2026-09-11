@@ -1,94 +1,29 @@
 {
-  "run_date": "2026-09-10",
+  "run_date": "2026-09-11",
   "window_reported_by_gate": 10,
-  "search_budget": {
-    "researchers": 4,
-    "capped": true,
-    "exhausted": false
-  },
+  "search_budget": {"researchers": 3, "capped": true, "exhausted": false},
   "rungs": [
-    {
-      "rung": "in_window_sweep",
-      "attempted": true,
-      "note": "Three bounded researchers and the orchestrator covered science, rural technology, public sector, education, energy, aviation, defense, business and breaking Alaska stories from August 30th through September 8th."
-    },
-    {
-      "rung": "outlet_index_sweep",
-      "attempted": true,
-      "note": "The sweep included Alaska Public Media and Alaska Beacon indexes plus UAF, FAA, NASA, NOAA, Alaska agencies, and university research releases."
-    },
-    {
-      "rung": "widened_window",
-      "attempted": false,
-      "note": "Not needed because an official September 3rd research release supplied an in-window hook."
-    },
-    {
-      "rung": "carried_leads",
-      "attempted": false,
-      "note": "Not needed."
-    },
-    {
-      "rung": "primary_source_mining",
-      "attempted": true,
-      "note": "The open-access Journal of Geophysical Research paper supplied the methods, results, validation and limitations behind the locked story."
-    },
-    {
-      "rung": "follow_up",
-      "attempted": false,
-      "note": "Not needed."
-    },
-    {
-      "rung": "pegged_explainer",
-      "attempted": false,
-      "note": "Not needed."
-    }
+    {"rung": "in_window_sweep", "attempted": true, "note": "Three bounded researchers and the orchestrator covered Alaska health, aviation, science, workforce, fisheries, public safety and education stories from September 2nd through September 11th."},
+    {"rung": "outlet_index_sweep", "attempted": true, "note": "The sweep included Alaska Department of Health, UAF T3, NOAA Fisheries, UAA and FAA primary pages and current indexes."},
+    {"rung": "widened_window", "attempted": false, "note": "Not needed because an official September 4th award notice supplied an in-window story."},
+    {"rung": "carried_leads", "attempted": false, "note": "Not needed."},
+    {"rung": "primary_source_mining", "attempted": true, "note": "The Alaska Department of Health award workbook supplied the project amount, proposal language, applicant, date and service-area fields."},
+    {"rung": "follow_up", "attempted": false, "note": "Not needed."},
+    {"rung": "pegged_explainer", "attempted": false, "note": "Not needed."}
   ],
   "locked_story": {
-    "id": "two-rock-glaciers-two-signals",
+    "id": "over-the-missing-road",
     "found_at_rung": "in_window_sweep",
-    "headline": "The Glacier That Sped Up Twice",
-    "primary_sources": [
-      "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "https://www.smu.edu/news/research/alaskan-rock-glaciers"
-    ],
-    "dedupe": "FRESH on the distinctive subject set and RockGlacierCore hero. The last two heroes were SignalRibbon and SubseaHive, and no dispatch in the 30-day window covered this study or its rock-glacier mechanism."
+    "headline": "Over the Missing Road",
+    "primary_sources": ["https://health.alaska.gov/en/education/rural-health-transformation-program/", "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx"],
+    "dedupe": "FRESH on the distinctive Ryan Air rural-health award subject and FlightCrate hero. The last two shipped heroes were SubseaHive and RockGlacierCore. No Dispatch in the 30-day window covered this proposal or its preliminary funding gate."
   },
   "candidates": [
-    {
-      "headline": "The glacier that sped up twice",
-      "status": "SELECTED",
-      "date": "2026-09-03",
-      "reason": "A new university release opens a vivid Alaska science story with a genuine statistical-learning mechanism, independently validated radar measurements, a falsifiable two-pulse result, and a strong visual contrast between two nearby rock glaciers."
-    },
-    {
-      "headline": "FAA builds Alaska's machine-readable aviation layer",
-      "status": "RUNNER-UP",
-      "date": "2026-09-01",
-      "reason": "A strong rural-safety infrastructure story, but the current milestone concerns ADS-B, weather sensors and connectivity rather than a deployed AI system."
-    },
-    {
-      "headline": "ARCTIC phase four funds automated microgrid resilience",
-      "status": "RUNNER-UP",
-      "date": "2026-09-01",
-      "reason": "The award has useful controls and data infrastructure, but the primary announcement does not establish a specific AI or machine-learning result."
-    },
-    {
-      "headline": "Sitka asks for statewide school AI policy guidance",
-      "status": "RUNNER-UP",
-      "date": "2026-09-04",
-      "reason": "The unanimous local resolution is timely and consequential, but it is an early policy request with fewer concrete facts and less visual mechanism than the selected study."
-    },
-    {
-      "headline": "T3 Alaska launches a statewide high-school drone credential path",
-      "status": "REJECTED",
-      "date": "2026-09-01",
-      "reason": "A real workforce win, but the announcement establishes human-operated drone training rather than autonomy or AI."
-    },
-    {
-      "headline": "Anchorage buys its crime-center buildout while rules remain pending",
-      "status": "REJECTED",
-      "date": "2026-09-03",
-      "reason": "The same surveillance decision surface was covered inside the 30-day dedupe window."
-    }
+    {"headline": "Ryan Air wins preliminary funding for autonomous medical aviation", "status": "SELECTED", "date": "2026-09-04", "reason": "An official state award workbook supplies a consequential Alaska autonomy proposal, a precise projected award, roadless-community stakes, a visible funding-to-flight gap and an unusually honest test for a hopeful film."},
+    {"headline": "UAA adds a dry EEG system for AI and brain-computer-interface research", "status": "RUNNER-UP", "date": "2026-09-09", "reason": "Explicit AI research and a strong Alaska workforce angle, but the current milestone is equipment acquisition with no study result yet."},
+    {"headline": "T3 Alaska launches a drone credential path", "status": "RUNNER-UP", "date": "2026-09-01", "reason": "Concrete student support and a guaranteed interview make a real workforce win, but the program trains human-operated drones rather than autonomy or AI."},
+    {"headline": "NOAA charts a path to modernized fisheries surveys", "status": "RUNNER-UP", "date": "2026-09-03", "reason": "A careful automation framework with autonomous vehicles and advanced models, but less locally specific and less immediate than the Alaska health award."},
+    {"headline": "ANTHC receives preliminary funding for pharmacy automation", "status": "RUNNER-UP", "date": "2026-09-04", "reason": "A substantial Alaska Native-led health-system proposal, but public materials do not yet establish an implementation mechanism or result."},
+    {"headline": "Wearable monitoring proposed for Alaska commercial vessels", "status": "REJECTED", "date": "2026-09-04", "reason": "Concrete medevac stakes, but unresolved biometric surveillance and employment-screening issues require worker voices absent from the funding notice."}
   ]
 }

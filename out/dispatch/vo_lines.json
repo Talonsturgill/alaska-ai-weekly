@@ -1,115 +1,127 @@
 {
- "total": 116.62,
+ "total": 119.62,
  "voice": "Sulafat",
- "model": "gemini-3.1-flash-tts-preview",
+ "model": "gemini-2.5-flash-preview-tts+tempo-conform",
  "lines": [
   {
    "idx": 0,
-   "text": "A mountain of rock near McCarthy sped up twice.",
+   "text": "Four million meets the place where the road disappears.",
    "start": 0.0,
    "end": 4.44
   },
   {
    "idx": 1,
-   "text": "Not once in the study, but twice each year.",
-   "start": 5.52,
-   "end": 9.52
+   "text": "Alaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.",
+   "start": 5.48,
+   "end": 17.287
   },
   {
    "idx": 2,
-   "text": "Sentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.",
-   "start": 11.0,
-   "end": 18.66
+   "text": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.",
+   "start": 17.287,
+   "end": 24.02
   },
   {
    "idx": 3,
-   "text": "They are rivers of rock and ice.",
-   "start": 19.76,
-   "end": 22.26
+   "text": "Cargo could carry medicine. Electric aircraft are proposed for patients and providers.",
+   "start": 24.98,
+   "end": 30.74
   },
   {
    "idx": 4,
-   "text": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
-   "start": 23.52,
-   "end": 28.44
+   "text": "Those are not the same test.",
+   "start": 31.7,
+   "end": 33.98
   },
   {
    "idx": 5,
-   "text": "A nearby glacier moved less than half as fast in the university summary.",
-   "start": 28.44,
-   "end": 34.38
+   "text": "Ryan Air says it serves more than seventy villages, so the test would extend an aviation network.",
+   "start": 35.04,
+   "end": 41.6
   },
   {
    "idx": 6,
-   "text": "Photogrammetry checked more than sixteen thousand Sourdough Peak pixels.",
-   "start": 35.8,
-   "end": 40.32
+   "text": "First comes one medicine box.",
+   "start": 42.64,
+   "end": 44.66
   },
   {
    "idx": 7,
-   "text": "R, 0.842. Mean absolute error, 10.72 centimeters per year.",
-   "start": 41.64,
-   "end": 48.84
+   "text": "Can an authorized route deliver it on time inside Alaska weather?",
+   "start": 46.76,
+   "end": 50.83
   },
   {
    "idx": 8,
-   "text": "Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.",
-   "start": 49.84,
-   "end": 58.32
+   "text": "The notice documents no aircraft purchase, F A A approval, route or completed flight.",
+   "start": 51.78,
+   "end": 59.82
   },
   {
    "idx": 9,
-   "text": "That pulse peaked after snowmelt and again with later rain.",
-   "start": 59.76,
-   "end": 63.94
+   "text": "The map is unsettled.",
+   "start": 60.94,
+   "end": 62.62
   },
   {
    "idx": 10,
-   "text": "Four measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.",
-   "start": 65.26,
-   "end": 76.66
+   "text": "The summary names Bethel and Dillingham.",
+   "start": 63.54,
+   "end": 66.08
   },
   {
    "idx": 11,
-   "text": "The measured surface signal is real. Is the explanation?",
-   "start": 77.9,
-   "end": 82.6
+   "text": "A separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.",
+   "start": 67.04,
+   "end": 72.9
   },
   {
    "idx": 12,
-   "text": "The authors modeled a path from sunlight to meltwater to a buried sliding layer.",
-   "start": 84.28,
-   "end": 89.94
+   "text": "Then the second ladder gets steeper.",
+   "start": 73.66,
+   "end": 76.1
   },
   {
    "idx": 13,
-   "text": "No borehole temperatures were recorded. The weather station sat six kilometers away.",
-   "start": 91.16,
-   "end": 96.8
+   "text": "The official source calls only the cargo drones autonomous.",
+   "start": 76.94,
+   "end": 80.68
   },
   {
    "idx": 14,
-   "text": "Two smaller glaciers broke the simple sunlight pattern.",
-   "start": 97.82,
-   "end": 101.54
+   "text": "Passenger electric aircraft need their own aircraft, pilot and operating approvals.",
+   "start": 80.68,
+   "end": 87.24
   },
   {
    "idx": 15,
-   "text": "That does not erase the measurement.",
-   "start": 102.34,
-   "end": 104.64
+   "text": "Budget finalization is in progress, and projected amounts may change.",
+   "start": 88.12,
+   "end": 92.76
   },
   {
    "idx": 16,
-   "text": "It turns the result into a sharper field test.",
-   "start": 105.62,
-   "end": 108.62
+   "text": "Still, this award matters because the proposal describes gaps in medicine access and transport.",
+   "start": 93.72,
+   "end": 100.28
   },
   {
    "idx": 17,
-   "text": "Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
-   "start": 109.38,
-   "end": 116.62
+   "text": "A first test needs a named route, F A A certification and operating authorization.",
+   "start": 101.32,
+   "end": 106.89
+  },
+  {
+   "idx": 18,
+   "text": "The proposal matters when medicine moves on that authorized route.",
+   "start": 111.38,
+   "end": 114.8
+  },
+  {
+   "idx": 19,
+   "text": "Until that box lands, the future is still in the crate.",
+   "start": 115.9,
+   "end": 119.62
   }
  ]
 }

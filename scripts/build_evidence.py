@@ -29,43 +29,43 @@ OUT = os.path.join(REPO, "out", "dispatch")
 EV = os.path.join(REPO, "out", "evidence")
 
 # (name, current storyboard beat id, seconds INTO that beat's action).
-# September 10: all 30 rock-glacier beats. Resolve the VO line/offset from the
+# September 11: all 30 missing-road beats. Resolve the VO line/offset from the
 # CONFORMED board at runtime, so later timing surgery cannot leave a second,
 # stale clock in the evidence list. Each named sample sits 0.35 seconds into its
 # beat, after the first eased travel is visible and safely away from shot cuts.
-MOVE_RUN_DATE = "2026-09-10"
+MOVE_RUN_DATE = "2026-09-11"
 LINE_START_ACTIONS = {}
 MOVES = [
-    ("first_pulse_strikes", 1, 0.35),
-    ("second_pulse_strikes", 2, 0.35),
-    ("annual_calendar_turns", 3, 0.35),
-    ("seven_glaciers_rise", 4, 0.35),
-    ("radar_sweeps", 5, 0.35),
-    ("rock_and_ice_split", 6, 0.35),
-    ("sourdough_advances", 7, 0.35),
-    ("neighbor_contrasts", 8, 0.35),
-    ("independent_check_appears", 9, 0.35),
-    ("pixels_arrive", 10, 0.35),
-    ("maps_register", 11, 0.35),
-    ("error_lands", 12, 0.35),
-    ("two_components_selected", 13, 0.35),
-    ("interpreted_outputs_split", 14, 0.35),
-    ("long_crawl_advances", 15, 0.35),
-    ("two_peaks_appear", 16, 0.35),
-    ("melt_alignment_lands", 17, 0.35),
-    ("rain_alignment_lands", 18, 0.35),
-    ("lag_calendar_opens", 19, 0.35),
-    ("proxy_year_arrives", 20, 0.35),
-    ("model_assembles", 21, 0.35),
-    ("empty_borehole_descends", 22, 0.35),
-    ("six_kilometer_gap_opens", 23, 0.35),
-    ("pattern_breaks", 24, 0.35),
-    ("evidence_sorts", 25, 0.35),
-    ("validation_payoff_lands", 26, 0.35),
-    ("proposed_sensor_descends", 27, 0.35),
-    ("next_melt_appointment", 28, 0.35),
-    ("next_rain_appointment", 29, 0.35),
-    ("both_appointments_lock", 30, 0.35),
+    ("medicine_crate_drops", 1, 0.35),
+    ("road_rolls_away", 2, 0.35),
+    ("award_sheet_rises", 3, 0.35),
+    ("projected_stamps_land", 4, 0.35),
+    ("award_amount_counts", 5, 0.35),
+    ("cargo_shadow_lifts", 6, 0.35),
+    ("passenger_card_rises", 7, 0.35),
+    ("proof_lanes_divide", 8, 0.35),
+    ("working_network_crosses", 9, 0.35),
+    ("fleet_scale_reveals", 10, 0.35),
+    ("tamper_seal_holds", 11, 0.35),
+    ("proof_lights_stay_empty", 12, 0.35),
+    ("weather_pushes_route", 13, 0.35),
+    ("purchase_fields_stay_blank", 14, 0.35),
+    ("evidence_fields_stack", 15, 0.35),
+    ("destination_board_flips", 16, 0.35),
+    ("summary_geography_appears", 17, 0.35),
+    ("service_field_appears", 18, 0.35),
+    ("passenger_ladder_unfolds", 19, 0.35),
+    ("autonomous_locks_to_cargo", 20, 0.35),
+    ("passenger_gates_rise", 21, 0.35),
+    ("wrong_test_mark_lands", 22, 0.35),
+    ("budget_strip_rolls", 23, 0.35),
+    ("award_amount_unlocks", 24, 0.35),
+    ("cargo_and_seat_recede", 25, 0.35),
+    ("evidence_lights_mount", 26, 0.35),
+    ("gate_arms_stop_open", 27, 0.35),
+    ("blank_route_tag_forms", 28, 0.35),
+    ("crate_returns_to_road", 29, 0.35),
+    ("blank_tag_holds", 30, 0.35),
 ]
 
 

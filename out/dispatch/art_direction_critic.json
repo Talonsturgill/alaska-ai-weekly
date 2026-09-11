@@ -1,1 +1,6 @@
-{"stage":"gate_0d_art_direction","ship":true,"resolved":["Reused EvidenceTrace, SignalRibbon, EvidenceState and CoringTube","Limited net new casting to RockGlacierCore","Separated measured, interpreted, modeled and unmeasured materials","Marked the final sensor as an editorial proposed test"],"blocking_findings":[]}
+{
+  "gate": "0D",
+  "ship": true,
+  "hard_blockers": [],
+  "review": "Independent regrade confirmed reserved color semantics, manifest-first Gate casting, crate contrast, square-safe signature shot, five unfilled proof lights, and look-development verification."
+}

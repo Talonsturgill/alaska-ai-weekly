@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-10"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-11"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -96,7 +96,7 @@ if len(_PERFORMANCE_KINDS) != len(_board["beats"]):
     raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
 EVENTS = [
     (float(str(b["t"]).split("-")[0]), _PERFORMANCE_KINDS[n],
-     "hero" if b["id"] in (8, 10, 24, 30, 32, 35) else
+     "hero" if b["id"] in (8, 10, 20, 24, 30, 32, 35) else
      "texture" if _PERFORMANCE_KINDS[n] in ("paper", "creak", "riser") else "standard",
      0.0 if b["id"] in (24, 30, 32, 35) else (-0.22 if n % 2 else 0.22))
     for n, b in enumerate(_board["beats"])

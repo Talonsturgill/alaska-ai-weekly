@@ -1,0 +1,6 @@
+import React from 'react';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {FlightCrate} from './lib/clinic';
+
+const labels=['PROPOSED','SPLIT TEST','FIVE UNFILLED','BLANK TAG'];
+export const FlightCrateLook:React.FC=()=>{const f=useCurrentFrame();return <AbsoluteFill style={{background:'#F6E7C8'}}><svg width="1080" height="1920" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#F6E7C8"/><rect x="80" y="120" width="920" height="940" rx="30" fill="#FFF8EC" stroke="#182322" strokeWidth="7"/><rect x="80" y="1120" width="920" height="600" rx="30" fill="#DCE8E4" stroke="#182322" strokeWidth="7"/>{[0,1,2,3].map((i)=><g key={i}><FlightCrate x={285+(i%2)*510} y={480+Math.floor(i/2)*480} f={f+i*11} scale={i<2?.82:.28} proposed lights={0} latchProgress={i===2?1:.25+i*.2} tag="" groundY={650+Math.floor(i/2)*480}/><text x={285+(i%2)*510} y={760+Math.floor(i/2)*480} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="24" fontWeight="800" fill="#182322">{labels[i]}</text></g>)}<rect x="0" y="420" width="1080" height="1080" fill="none" stroke="#8B2F58" strokeWidth="4" strokeDasharray="18 14" opacity=".7"/><text x="540" y="1790" textAnchor="middle" fontFamily="Archivo, Arial" fontSize="36" fontWeight="900" fill="#3B1837">FULL · 0.28 · CENTERED SQUARE</text></svg></AbsoluteFill>};

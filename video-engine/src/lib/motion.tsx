@@ -110,6 +110,20 @@ export function accentKick(frame: number, fps: number, atFrame: number, dur = 0.
   return Math.max(0, Math.min(up, down));
 }
 
+/**
+ * A physical 0..1 evidence-state arrival. The latch anticipates backward, snaps
+ * past its target, then settles. Use it for proof lamps, approval stamps and
+ * other epistemic changes that should feel earned rather than faded in.
+ */
+export function evidenceLatch(progress: number): number {
+  const p = Math.max(0, Math.min(1, progress));
+  if (p < 0.12) return -0.08 * Math.sin((p / 0.12) * Math.PI);
+  const u = (p - 0.12) / 0.88;
+  const settled = 1 - Math.pow(1 - u, 3);
+  const overshoot = 0.16 * Math.sin(u * Math.PI * 2.4) * Math.pow(1 - u, 2);
+  return settled + overshoot;
+}
+
 /** Continuous idle sway (breeze/breath) with per-instance phase, cheap + organic. */
 export function idleSway(frame: number, phase = 0, amp = 2.5, period = 46): number {
   return amp * Math.sin((frame + phase * 13.7) / period * 2 * Math.PI)

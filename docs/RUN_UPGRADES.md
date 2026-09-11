@@ -3100,3 +3100,36 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
   All three judges ship with zero hard blockers. The ship lock binds three deliverable cuts and
   56 review-evidence files to the graded bytes. `config/panel_anchors.md` remains absent and was
   disclosed to every judge without inventing calibration examples or lowering the standard.
+
+## 2026-09-11 — Over the Missing Road
+
+- The reusable `FlightCrate` turns an insulated medicine case into a characterized proof
+  instrument with a proposed-state tag, readable gauge, and five evidence lights. The new
+  `evidenceLatch` motion primitive makes those lights settle with anticipation and overshoot
+  instead of appearing as flat state changes.
+- Gemini voice synthesis now tries the supported 2.5 Flash TTS model after the 3.1 Flash and
+  2.5 Pro routes are exhausted. Clean near-target takes can be pitch-preservingly tempo-conformed
+  and must re-pass the complete sound check, closing the path that knowingly carried a 102-second
+  read into a 112-to-130-second format.
+- The Ryan Air fact ledger now separates roadless-community scope, cargo pharmaceuticals,
+  passenger and provider transport, and the missing route into distinct verified evidence units.
+  Exact claim strips bind those obligations to the film while preserving the crate-led visual
+  story and the separate cargo and passenger proof paths.
+- Unsupported cold-chain language was removed from the narration, storyboard, caption and crate
+  label. Four corrected lines were synthesized into their existing slots with zero word errors,
+  then realigned and remixed without moving later scene boundaries.
+- The plate-overlap and zoom-clip gates now recognize compact `Shot` components whose props are
+  declared inline, preventing a routine episode refactor from silently reducing geometry coverage
+  to zero. The final run measures all seven plated strings and parses all twelve shots cleanly.
+- The panel-evidence builder now carries the September 11 run date and names all thirty current
+  beat actions. This replaces the stale September 10 glacier anchors that correctly refused to
+  package a different film. The final review pack was rebuilt from the exact shipping frames with
+  explicit strips for the road-roll hook, sequential missing-evidence marks and WRONG TEST slam.
+- Full-frame Gate A scores 10.0. All twelve camera moves clear the whole-frame displacement floor,
+  the film carries 43 distinct visual beats with no dead window above five seconds, every shot is
+  sonified, 59 of 65 living-screen windows pass, and the delivered audio measures -14.35 LUFS and
+  -2.91 dBTP. Preflight, caption, claims, typography, geometry, crop review and delivery-provenance
+  checks all pass.
+- Final exact-byte panel scores are 8.11, 7.57 and 8.08. Median 8.08 clears the 7.0 ship bar,
+  all three judges ship with zero hard blockers, and the ship lock binds three deliverables plus
+  56 review-evidence files to the graded bytes.

@@ -766,3 +766,8 @@ without swapping identity.
 # Cryosphere evidence family
 
 - `RockGlacierCore` — `cryosphere.tsx` — ACTIVE. Form-shaded rock-and-ice landform with a persistent measured surface trace plus explicit interpreted, modeled, and unmeasured state hooks. Added for the 2026-09-10 Dispatch; reuse for rock-glacier and buried-ice evidence stories.
+
+# Cold-chain proof family
+
+- `FlightCrate` — `clinic.tsx` — ACTIVE. Reusable insulated medicine crate with a cooler gauge, tamper latches, unresolved destination tag, persistent plum lower-right edge, spruce contact shadow and five separately staged proof lamps. `proposed`, `lights`, `latchProgress`, `tag`, `accent` and `groundY` keep proposal state distinct from earned evidence.
+- `evidenceLatch` — `motion.tsx` — ACTIVE CRAFT ADVANCE. Pure anticipation, overshoot and settle curve for proof lamps, gates and approval marks that must arrive with physical weight instead of opacity alone.

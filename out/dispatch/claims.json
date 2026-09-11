@@ -1,132 +1,20 @@
 {
-  "run_date": "2026-09-10",
-  "fact_check_verdict": "The satellite-measured surface motion and photogrammetry comparison are strong. Independent Component Analysis separated two statistical signals that the authors interpret as long-term and seasonal motion. The sunlight, meltwater and deep sliding mechanism remains a model-dependent explanation rather than direct underground proof.",
+  "run_date": "2026-09-11",
+  "fact_check_verdict": "The official Alaska Department of Health workbook verifies Ryan Air as a selected implementation proposal with a projected preliminary award of $4,171,115. It proposes autonomous cargo drones and electric vertical-takeoff-and-landing aircraft for medicines and medical transport. Nothing in the official materials establishes that aircraft were purchased, FAA approvals were obtained, communities consented, or flights began.",
   "claims": [
-    {
-      "id": "c1",
-      "status": "verified-primary-paper",
-      "spoken": "Near McCarthy, researchers mapped seven active rock glaciers in Wrangell Saint Elias.",
-      "on_screen": "7 ACTIVE ROCK GLACIERS · NEAR McCARTHY",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Do not call them ordinary glaciers. They are ice-rich mixtures of rock debris and ice."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c2",
-      "status": "verified-primary-paper",
-      "spoken": "The study analyzed Sentinel One radar observations across a period reported as twenty eighteen through twenty twenty-two.",
-      "on_screen": "SENTINEL-1 INSAR · 2018 TO 2022",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Do not imply every ascending and descending input covers the identical date span."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c3",
-      "status": "verified-primary-paper",
-      "spoken": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
-      "on_screen": ">160 CM PER YEAR · SOURDOUGH PEAK CORE",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Limit the rate to the high-velocity central trunk, not the entire landform."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c4",
-      "status": "verified-primary-paper",
-      "spoken": "A nearby McCarthy Creek glacier moved at less than half that pace in the university's summary.",
-      "on_screen": "NEARBY · LESS THAN HALF AS FAST",
-      "source": "https://www.smu.edu/news/research/alaskan-rock-glaciers",
-      "requires": ["Attribute the shorthand comparison to the SMU release. The paper reports spatially variable fields and maxima of 61 and 41 centimeters per year for McCarthy lobes."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c5",
-      "status": "verified-primary-paper",
-      "spoken": "The radar result was checked against independent photogrammetry across more than sixteen thousand pixels.",
-      "on_screen": ">16,000 PIXELS · INDEPENDENT CHECK",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["The comparison is specific to Sourdough Peak."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c6",
-      "status": "verified-primary-paper",
-      "spoken": "The two maps correlated at point eight four two, with a mean absolute error of ten point seven two centimeters a year.",
-      "on_screen": "r 0.842 · MAE 10.72 CM PER YEAR",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Label this as the Sourdough InSAR versus photogrammetry comparison."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c7",
-      "status": "verified-primary-method",
-      "spoken": "Then an unsupervised signal-separation method split the motion into a long crawl and a seasonal pulse.",
-      "on_screen": "ICA · LONG CRAWL + SEASONAL PULSE",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Call ICA statistical or unsupervised signal separation. Do not call it generative AI or a predictive model. Researchers fixed the component count at two and interpreted the outputs."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c8",
-      "status": "verified-primary-paper",
-      "spoken": "The seasonal signal peaked twice each year, once after snowmelt and again with later rain.",
-      "on_screen": "2 SEASONAL PULSES · MELT + LATER RAIN",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Say associated with or corresponded with. Do not claim experimental causal proof."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c9",
-      "status": "verified-primary-paper",
-      "spoken": "In four measured years, the first pulse followed snowmelt by seventy-two to eighty-four days.",
-      "on_screen": "72 TO 84 DAYS · FOUR YEARS",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["For 2019, snow-water-equivalent data were missing and the authors estimated 84 to 96 days from a temperature proxy. Do not fold 2019 into the four-year observed range."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c10",
-      "status": "verified-primary-model",
-      "spoken": "The authors modeled a reason. Sunlight may open a path for water to reach a buried sliding layer.",
-      "on_screen": "MODELED · SUNLIGHT → WATER PATH → SLIDE",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Keep may and modeled. The radiation and CryoGrid results are not direct subsurface measurements."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c11",
-      "status": "verified-primary-limit",
-      "spoken": "There were no borehole temperatures and the weather station sat six kilometers away.",
-      "on_screen": "NO BOREHOLE TEMPERATURES · SNOTEL 6 KM AWAY",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Do not imply the surface-motion measurements are therefore untrustworthy. This limits the modeled mechanism."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c12",
-      "status": "verified-primary-limit",
-      "spoken": "Two of the smaller glaciers did not follow the simple sunlight pattern.",
-      "on_screen": "RG5 + RG6 · SIMPLE PATTERN BREAKS",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["RG5 includes atmospheric artifacts. The paper says a larger sample is needed before broad conclusions."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c13",
-      "status": "verified-primary-method",
-      "spoken": "The researchers fixed the separation at two components, then interpreted the outputs.",
-      "on_screen": "2 COMPONENTS · FIXED BY RESEARCHERS · OUTPUTS INTERPRETED",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Make the researcher choice explicit. Do not imply the method discovered the number of components or named their physical meaning on its own."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    },
-    {
-      "id": "c14",
-      "status": "verified-primary-limit",
-      "spoken": "For twenty nineteen, missing snow data required an estimated lag of eighty-four to ninety-six days from a temperature proxy.",
-      "on_screen": "2019 · ESTIMATED 84 TO 96 DAYS · TEMPERATURE PROXY",
-      "source": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "requires": ["Keep 2019 separate from the four measured years and label its lag estimated rather than observed."],
-      "contract": {"must_ship": true, "on_screen_verbatim": false}
-    }
+    {"id": "c1", "status": "verified-official-preliminary", "spoken": "Alaska lists a projected preliminary award of four million one hundred seventy-one thousand one hundred fifteen dollars.", "on_screen": "$4,171,115 · PROJECTED PRELIMINARY AWARD", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Always pair the amount with projected and preliminary. The program page says budget finalization is still in progress and amounts may change."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c2", "status": "verified-official-proposal", "spoken": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.", "on_screen": "RYAN AIR PROPOSAL · AUTONOMOUS CARGO DRONES + EVTOL", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Autonomous modifies cargo drones in the workbook. Do not imply the passenger-carrying EVTOL aircraft are autonomous."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c3", "status": "verified-official-proposal", "spoken": "The proposal addresses roadless communities.", "on_screen": "ROADLESS COMMUNITIES", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Keep proposal framing. Do not say the new service exists today."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c4", "status": "verified-official-description", "spoken": "The project summary names the Bethel and Dillingham regions.", "on_screen": "SUMMARY · BETHEL + DILLINGHAM REGIONS", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Do not describe the structured service-area field as identical. It differs."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c5", "status": "verified-official-metadata", "spoken": "A separate service area field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.", "on_screen": "SERVICE FIELD · ANCHORAGE · BRISTOL BAY · DILLINGHAM · YUKON-KOYUKUK", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["State that this is a separate workbook field. Do not resolve the mismatch on the state's behalf."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c6", "status": "verified-absence", "spoken": "The official notice does not document an aircraft purchase, an F A A approval or a completed flight.", "on_screen": "NO PURCHASE · NO FAA APPROVAL · NO COMPLETED FLIGHT DOCUMENTED", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["This is an absence in the cited official materials, not proof those milestones will never occur."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c7", "status": "verified-official-description", "spoken": "Ryan Air's proposal describes severe gaps in pharmaceutical access and medical transport.", "on_screen": "APPLICANT DESCRIPTION · ACCESS + TRANSPORT GAPS", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Attribute this problem statement to the proposal. Do not present near-total lack as an independently measured state finding."], "contract": {"must_ship": false, "on_screen_verbatim": false}},
+    {"id": "c8", "status": "verified-official-program", "spoken": "The state says budget finalization is still in progress and projected amounts may change.", "on_screen": "BUDGET FINALIZATION IN PROGRESS · AMOUNTS MAY CHANGE", "source": "https://health.alaska.gov/en/education/rural-health-transformation-program/", "requires": ["Do not call the preliminary amount a final grant payment."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c9", "status": "verified-faa-boundary", "spoken": "Commercial package delivery by drone needs F A A certification and operating authorization.", "on_screen": "CARGO TEST · FAA PART 135 + OPERATING AUTHORIZATION", "source": "https://www.faa.gov/uas/advanced_operations/package_delivery_drone", "requires": ["Do not imply Ryan Air already holds approvals for the proposed cargo drone operation."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c10", "status": "verified-faa-boundary", "spoken": "Passenger electric aircraft face a different test for the aircraft, pilot and operation.", "on_screen": "PASSENGER TEST · AIRCRAFT + PILOT + OPERATION", "source": "https://www.faa.gov/air-taxis", "requires": ["Do not call the proposed passenger aircraft autonomous. Do not imply certification is complete."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c11", "status": "verified-company-attributed", "spoken": "Ryan Air says it serves more than seventy villages with conventional aircraft.", "on_screen": "RYAN AIR SAYS · 24 AIRCRAFT · 8 HUBS · 70+ VILLAGES", "source": "https://ryanalaska.com/about/", "requires": ["Attribute to Ryan Air. Existing rural aviation experience does not prove autonomous-drone or eVTOL readiness."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c12", "status": "verified-official-proposal", "spoken": "The proposal would use cargo drones to carry pharmaceuticals.", "on_screen": "CARGO DRONES · PHARMACEUTICALS", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Keep would, could or proposes. Do not say deliveries have begun."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c13", "status": "verified-official-proposal", "spoken": "The proposal would use electric aircraft to transport patients and healthcare providers.", "on_screen": "ELECTRIC AIRCRAFT · PATIENTS + PROVIDERS", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Keep proposed framing. Do not call the passenger aircraft autonomous or operational."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
+    {"id": "c14", "status": "verified-absence", "spoken": "The official notice does not document a route.", "on_screen": "NO ROUTE DOCUMENTED", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["This is an absence in the cited official materials, not proof a route will never be chosen."], "contract": {"must_ship": true, "on_screen_verbatim": false}}
   ]
 }

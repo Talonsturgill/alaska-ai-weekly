@@ -271,7 +271,9 @@ def scenes(src: str, default_zoom: float):
 
     # Single-router episodes keep all art in one Scene/Shot component. Split its
     # n=== branches so source geometry still has scene-level coverage.
-    owner = re.search(r"^const (?:Scene|Shot)\s*:\s*React\.FC<SceneProps\b[^>]*>", src, re.M)
+    owner = re.search(
+        r"^const (?:Scene|Shot)\s*:\s*React\.FC<(?:SceneProps\b[^>]*|\{[^>]*\bn\s*:\s*number\b[^>]*\})>",
+        src, re.M)
     if not owner:
         return out
     tail = src[owner.start():]
@@ -406,7 +408,8 @@ def check(path: str):
             label = tm.group(1) if tm else (expr.group(1) if expr else '<dynamic>')
             # Ep0906's Plate is a centered fixed-width component with no x prop.
             # For that explicit contract, absent x resolves exactly to 540.
-            centered_contract = kind == 'Plate' and re.search(r"const Plate\s*:\s*React\.FC<\{text:string;y:number;width\?:number", src)
+            centered_contract = kind == 'Plate' and re.search(
+                r"const Plate\s*:\s*React\.FC<\{text:string;y:number;[^>]*width\?:number", src)
             if not xm and not centered_contract:
                 skip(m.start(), kind, f"x is not a plain number: {label[:28]}")
                 continue
