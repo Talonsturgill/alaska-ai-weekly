@@ -1,11 +1,45 @@
 {
-  "run_date":"2026-09-10",
-  "story_id":"sourdough-rock-glacier-pulses",
-  "palette":{"roles":{"sky":"#2B1B17","ground":"#3F332B","hero":"#F2A65A","accent":"#FF4F8B","shadow":"#120D0B","paper":"#EAF4F4","ink":"#1B1F24","ice":"#69D2E7"},"mood":"Warm alpenglow over charcoal rock, with glacial cyan reserved for measurement and radar magenta reserved for the seasonal pulse.","divergence":"The September 6th film used marine indigo and chartreuse proposal geometry. September 3rd used a sunlit sage care room. This film is a warm terrestrial cutaway of ochre rock, quartz snow, cyan measurement and magenta seasonal motion."},
-  "light":{"time":"Low autumn sunrise","direction":"Amber key from upper right, cool cyan fill from shaded ice and a thin quartz rim on every rock edge","depth":"Five parallax terrain planes and a cutaway core use twelve percent value steps. Solid measured objects cast contact shadows. Modeled underground paths remain translucent and shadowless."},
-  "shape_language":{"grammar":"Jagged torn rock layers carry the observed landform. The existing solid cyan EvidenceTrace carries measured displacement. Amber and magenta paired ribbons carry researcher interpreted statistical components with persistent source chips. Existing dotted shadowless Simulated geometry carries the modeled path. A dashed CoringTube outline carries the missing borehole.","why":"The film contrasts irregular terrain with the method's clean signal grammar while three distinct evidence materials prevent interpretation or modeling from inheriting measurement status."},
-  "casting":{"hero":"RockGlacierCore","inventory":[{"beats":"1 to 8","subject":"LayeredLand and SatelliteEye","source":"existing bench and sensor shelf"},{"beats":"9 to 22","subject":"EvidenceTrace, SignalRibbon and EvidenceState","source":"existing evidence shelf"},{"beats":"23 to 30","subject":"CoringTube outline and RockGlacierCore","source":"existing bench shelf plus one net new landform"}],"net_new":"RockGlacierCore in video-engine/src/lib/cryosphere.tsx fills the demonstrated shelf gap for an ice rich debris landform with a central moving trunk and evidence aware cutaway.","continuity":"Reuse LayeredLand, SatelliteEye, EvidenceTrace, SignalRibbon, EvidenceState, Simulated, CoringTube, Sheet geometry, lighting helpers and EndCredits. No duplicate signal system, no ServerMachine and no generic AI face."},
-  "motion_language":{"grammar":"Terrain creeps with eased shear. Radar sweeps travel diagonally. The existing EvidenceTrace forks with anticipation and overshoot after a researcher set dial clicks to two. Modeled water beads descend but stop at the dashed CoringTube outline.","hero_moves":["Two pulse bells kick the landform in the opening second","The radar map and photo map register with a hard lock","A researcher set dial clicks to two before the trace forks into interpreted crawl and seasonal ribbons","The measured surface remains solid while the model drains to dotted lines"],"blur":"Directional blur only on radar sweeps, the ribbon fork and the empty borehole reveal. Slow terrain motion keeps crisp form."},
-  "composition":{"staging":"Four authored worlds alternate between mountain diorama, orbital radar map, evidence workbench and subsurface cutaway.","safe_area":"All headline, hero actions and scientific labels stay within x120 to 960 and y450 to 1280. The square safe story box remains y420 to 1500.","signature_shot":"The camera dives through a validated cyan surface map. A dotted magenta modeled water path reaches a dashed empty CoringTube outline while the solid displacement ribbon stays locked above.","focal_hierarchy":"One hero action stays centered. Cyan means measured. Amber and magenta ribbons always carry an INTERPRETED source chip. Dotted translucent magenta means modeled. Dashed empty geometry means unmeasured. Quartz means source status.","attribution":"Sourdough specific validation is labeled. The nearby speed comparison is attributed to SMU. ICA outputs stay marked INTERPRETED. MODELED and MAY persist on subsurface mechanisms. Any future sensor is a dashed editorial proposed test and never an announced installation."},
-  "craft_advance":{"system":"Reusable RockGlacierCore evidence cutaway","api":"RockGlacierCore exposes creep, pulse, cutaway and evidenceState while composing with existing EvidenceTrace, EvidenceState and Simulated grammar.","how":"The one new landform keeps observed surface motion, interpreted components, modeled paths and unmeasured underground space as distinct materials within the asset itself.","asset_note":"Register RockGlacierCore in ASSET_MANIFEST.md in the same commit. Reuse CoringTube and the existing evidence family for every other role."}
+  "run_date": "2026-09-11",
+  "title": "Over the Missing Road",
+  "palette": {
+    "roles": {"sky":"#F6E7C8","ground":"#2C493E","hero":"#EAF0E8","accent":"#C7434E","signal":"#F4C95D","shadow":"#22182F"},
+    "why": "Warm clinic cream and spruce ground make the film cautiously hopeful. Berry red belongs only to projected, preliminary and wrong-test states. Gold appears only on facts already established by a source. All unearned criteria stay neutral graphite and unfilled. This avoids the prior glacier's charcoal, alpenglow amber, radar magenta and glacial cyan as well as the subsea film's dark marine chartreuse world."
+  },
+  "light": {
+    "time": "bright overcast morning",
+    "direction": "soft upper left key with a low warm bounce from the ground",
+    "key_fill_rim": "broad cream key, restrained spruce fill, persistent plum lower-right edge on the cooler and gold rim only for established facts",
+    "depth": "three paper and terrain planes separate through cast shadows, parallax and darker plum occlusion rather than blue haze",
+    "why": "The story is a practical test, so readable daylight and grounded shadows beat science-noir or futuristic neon."
+  },
+  "shape_language": {
+    "grammar": "The rounded insulated FlightCrate represents the human-scale goal. Hard rectangular award sheets, split lanes and approval gates represent the proof burden. Curved route ribbons become straight only when a criterion is named.",
+    "why": "Soft care object versus hard evidence geometry keeps hope and accountability visible at once."
+  },
+  "casting": {
+    "hero": "FlightCrate, a net-new reusable cold-chain throughline asset with a tamper seal, thermometer, destination tag and five proof lights",
+    "supporting": ["BushPlane from vehicles.tsx for the existing conventional network", "StatCard and Nameplate from props.tsx for the preliminary award", "AlaskaMini from kit.tsx for the route field", "Gate from civics.tsx for AIRCRAFT, PILOT and OPERATION proof states"],
+    "net_new_asset": "FlightCrate in lib/clinic.tsx",
+    "why": "The crate is the one physical object every proposed system exists to move. Existing shelf assets cover people, conventional aviation, maps and paperwork."
+  },
+  "motion_language": {
+    "world": "A route ribbon travels horizontally until hard gates stop it. Paper tears vertically when one award splits into two tests. The crate carries across every act boundary with spring anticipation and a weighted settle.",
+    "hero_moves": ["road rolls away by three seconds", "crate pivots between conflicting geography cards at sixty seconds", "five proof lights chase but remain graphite outlines near one hundred seconds", "cargo ticket punches WRONG TEST before the final route payoff"],
+    "blur": "180-degree blur only on the road roll, the award split and the rejected ticket. The crate itself moves with readable mass.",
+    "why": "The film should feel like forward progress repeatedly checked by evidence, not a drone glamour reel."
+  },
+  "composition": {
+    "staging": "Track left to right with the crate fixed near the center third while the world changes behind it. Use macro inserts for the cold gauge and document fields, an extreme-wide route map, then a two-up split for cargo and passenger proof. Keep all load-bearing action inside the central 1080 by 1080 crop.",
+    "focal_hierarchy": "FlightCrate first, one large claim plate second, route or aircraft silhouette third. Never stack more than one checklist behind captions.",
+    "negative_space": "At the turn, both aircraft shadows drop away and the crate waits in cream space with five outlined, unfilled proof lights.",
+    "square_safe": "The crate, award amount, route blank and wrong-test punch remain between y 470 and 1260 so the centered square preserves the argument.",
+    "signature_shot": "One pale medicine crate centers a single vertical tear. A short left rail reads CARGO TEST and a three-gate right stack reads PEOPLE TEST. All nuance stays in the voice so the square image remains immediate.",
+    "why": "The stable crate lets radical stage changes remain coherent and makes the two tests readable on phone and square."
+  },
+  "craft_advance": {
+    "system": "evidenceLatch in lib/motion.tsx",
+    "change": "A reusable anticipation, overshoot and settle primitive will drive proof lights and approval stamps so evidence states arrive with physical weight instead of linear opacity.",
+    "verification": "TypeScript compile plus a FlightCrate look-development strip will verify PROPOSED, split-test, five-unearned-lights and blank-tag states at full size, 0.28 scale and centered-square crop. The strip must show the seal, gauge, tag, lights, shadows and cooler contrast against both paper and sky.",
+    "why": "Approval and evidence stories recur, and their most important state changes should never look like flat HUD toggles."
+  }
 }

@@ -65,7 +65,9 @@ def scenes(src):
     # select its art with `if (n===1) art=...; else if ...`. Treat each branch as
     # a real scene. Otherwise a perfectly ordinary component refactor makes this
     # relationship gate grade zero pixels and fail closed forever.
-    owner = re.search(r"^const (?:Scene|Shot)\s*:\s*React\.FC<SceneProps\b[^>]*>", src, re.M)
+    owner = re.search(
+        r"^const (?:Scene|Shot)\s*:\s*React\.FC<(?:SceneProps\b[^>]*|\{[^>]*\bn\s*:\s*number\b[^>]*\})>",
+        src, re.M)
     if not owner:
         return
     tail = src[owner.start():]

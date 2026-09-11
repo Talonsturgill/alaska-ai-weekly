@@ -1,314 +1,278 @@
 [
  {
-  "text": "A mountain of rock near McCarthy",
+  "text": "Four million meets the place where",
   "start": 0.0,
-  "end": 2.5700000000000003,
+  "end": 3.1900000000000004,
   "seg": 0
  },
  {
-  "text": "sped up twice.",
-  "start": 2.6,
+  "text": "the road disappears.",
+  "start": 3.22,
   "end": 4.44,
   "seg": 0
  },
  {
-  "text": "Not once in the study, but",
-  "start": 5.52,
-  "end": 7.77,
+  "text": "Alaska lists Ryan Air for a",
+  "start": 5.48,
+  "end": 8.49,
   "seg": 1
  },
  {
-  "text": "twice each year.",
-  "start": 7.8,
-  "end": 9.52,
+  "text": "projected preliminary award of",
+  "start": 8.52,
+  "end": 10.97,
   "seg": 1
  },
  {
-  "text": "Sentinel One radar mapped seven",
+  "text": "four million one hundred seventy",
   "start": 11.0,
-  "end": 13.99,
+  "end": 11.450000000000001,
+  "seg": 1
+ },
+ {
+  "text": "one thousand one hundred fifteen",
+  "start": 11.48,
+  "end": 15.68,
+  "seg": 1
+ },
+ {
+  "text": "dollars.",
+  "start": 16.9,
+  "end": 17.256999999999998,
+  "seg": 1
+ },
+ {
+  "text": "Ryan Air proposes autonomous cargo",
+  "start": 17.287,
+  "end": 19.97,
   "seg": 2
  },
  {
-  "text": "rock glaciers near McCarthy from",
-  "start": 14.02,
-  "end": 16.39,
+  "text": "drones and electric vertical takeoff",
+  "start": 20.0,
+  "end": 22.77,
   "seg": 2
  },
  {
-  "text": "twenty eighteen through twenty",
-  "start": 16.42,
-  "end": 17.77,
+  "text": "and landing aircraft.",
+  "start": 22.8,
+  "end": 24.02,
   "seg": 2
  },
  {
-  "text": "twenty two.",
-  "start": 17.8,
-  "end": 18.66,
-  "seg": 2
- },
- {
-  "text": "They are rivers of rock and",
-  "start": 19.76,
-  "end": 21.93,
+  "text": "Cargo could carry medicine.",
+  "start": 24.98,
+  "end": 26.61,
   "seg": 3
  },
  {
-  "text": "ice.",
-  "start": 21.96,
-  "end": 22.66,
+  "text": "Electric aircraft are proposed",
+  "start": 26.64,
+  "end": 29.049999999999997,
   "seg": 3
  },
  {
-  "text": "Parts of Sourdough Peak moved more",
-  "start": 23.52,
-  "end": 25.61,
+  "text": "for patients and providers.",
+  "start": 29.08,
+  "end": 30.74,
+  "seg": 3
+ },
+ {
+  "text": "Those are not the same test.",
+  "start": 31.7,
+  "end": 33.98,
   "seg": 4
  },
  {
-  "text": "than one hundred sixty centimeters",
-  "start": 25.64,
-  "end": 27.59,
-  "seg": 4
- },
- {
-  "text": "a year.",
-  "start": 27.62,
-  "end": 28.41,
-  "seg": 4
- },
- {
-  "text": "A nearby glacier moved less than",
-  "start": 28.44,
-  "end": 32.03,
+  "text": "Ryan Air says it serves more",
+  "start": 35.04,
+  "end": 37.05,
   "seg": 5
  },
  {
-  "text": "half as fast in the university",
-  "start": 32.06,
-  "end": 33.89,
+  "text": "than seventy villages, so the test",
+  "start": 37.08,
+  "end": 39.57,
   "seg": 5
  },
  {
-  "text": "summary.",
-  "start": 33.92,
-  "end": 34.620000000000005,
+  "text": "would extend an aviation network.",
+  "start": 39.6,
+  "end": 41.6,
   "seg": 5
  },
  {
-  "text": "Photogrammetry checked more than",
-  "start": 35.8,
-  "end": 37.55,
+  "text": "First comes one medicine box.",
+  "start": 42.64,
+  "end": 44.34,
   "seg": 6
  },
  {
-  "text": "sixteen thousand Sourdough Peak",
-  "start": 37.58,
-  "end": 39.87,
-  "seg": 6
- },
- {
-  "text": "pixels.",
-  "start": 39.9,
-  "end": 40.6,
-  "seg": 6
- },
- {
-  "text": "R, 0.842.",
-  "start": 41.64,
-  "end": 43.44,
+  "text": "Can an authorized route deliver",
+  "start": 46.76,
+  "end": 48.41,
   "seg": 7
  },
  {
-  "text": "Mean absolute error, 10.72 centimeters",
-  "start": 44.18,
-  "end": 47.95,
+  "text": "it on time inside Alaska weather?",
+  "start": 48.44,
+  "end": 50.58,
   "seg": 7
  },
  {
-  "text": "per year.",
-  "start": 47.98,
-  "end": 48.7,
-  "seg": 7
- },
- {
-  "text": "Researchers fixed two components.",
-  "start": 49.84,
-  "end": 51.9,
+  "text": "The notice documents no aircraft",
+  "start": 51.78,
+  "end": 55.43,
   "seg": 8
  },
  {
-  "text": "Unsupervised separation yielded",
-  "start": 52.96,
-  "end": 55.19,
+  "text": "purchase, F A A approval, route",
+  "start": 55.46,
+  "end": 58.38,
   "seg": 8
  },
  {
-  "text": "a long crawl and seasonal pulse",
-  "start": 55.22,
-  "end": 57.55,
+  "text": "or completed flight.",
+  "start": 58.86,
+  "end": 59.82,
   "seg": 8
  },
  {
-  "text": "they interpreted.",
-  "start": 57.58,
-  "end": 58.32,
-  "seg": 8
- },
- {
-  "text": "That pulse peaked after snowmelt",
-  "start": 59.76,
-  "end": 61.949999999999996,
+  "text": "The map is unsettled.",
+  "start": 60.94,
+  "end": 62.62,
   "seg": 9
  },
  {
-  "text": "and again with later rain.",
-  "start": 61.98,
-  "end": 63.94,
-  "seg": 9
- },
- {
-  "text": "Four measured years lagged snowmelt",
-  "start": 65.26,
-  "end": 67.97,
+  "text": "The summary names Bethel and Dillingham.",
+  "start": 63.54,
+  "end": 66.08,
   "seg": 10
  },
  {
-  "text": "by seventy two to eighty four",
-  "start": 68.0,
-  "end": 69.75,
-  "seg": 10
- },
- {
-  "text": "days.",
-  "start": 69.78,
-  "end": 70.48,
-  "seg": 10
- },
- {
-  "text": "Twenty nineteen used an estimated",
-  "start": 71.12,
-  "end": 73.39,
-  "seg": 10
- },
- {
-  "text": "eighty four to ninety six day",
-  "start": 73.42,
-  "end": 75.47,
-  "seg": 10
- },
- {
-  "text": "temperature proxy instead.",
-  "start": 75.5,
-  "end": 76.66,
-  "seg": 10
- },
- {
-  "text": "The measured surface signal is",
-  "start": 77.9,
-  "end": 80.31,
+  "text": "A separate field lists Anchorage,",
+  "start": 67.04,
+  "end": 69.16,
   "seg": 11
  },
  {
-  "text": "real.",
-  "start": 80.34,
-  "end": 81.04,
+  "text": "Bristol Bay, Dillingham and Yukon",
+  "start": 69.6,
+  "end": 72.25,
   "seg": 11
  },
  {
-  "text": "Is the explanation?",
-  "start": 81.48,
-  "end": 82.6,
+  "text": "Koyukuk.",
+  "start": 72.28,
+  "end": 72.98,
   "seg": 11
  },
  {
-  "text": "The authors modeled a path from",
-  "start": 84.28,
-  "end": 86.47,
+  "text": "Then the second ladder gets steeper.",
+  "start": 73.66,
+  "end": 76.1,
   "seg": 12
  },
  {
-  "text": "sunlight to meltwater to a buried",
-  "start": 86.5,
-  "end": 89.11,
-  "seg": 12
- },
- {
-  "text": "sliding layer.",
-  "start": 89.14,
-  "end": 89.94,
-  "seg": 12
- },
- {
-  "text": "No borehole temperatures were recorded.",
-  "start": 91.16,
-  "end": 93.42,
+  "text": "The official source calls only",
+  "start": 76.94,
+  "end": 79.09,
   "seg": 13
  },
  {
-  "text": "The weather station sat six kilometers",
-  "start": 94.22,
-  "end": 96.35,
+  "text": "the cargo drones autonomous.",
+  "start": 79.12,
+  "end": 80.65,
   "seg": 13
  },
  {
-  "text": "away.",
-  "start": 96.38,
-  "end": 97.08,
-  "seg": 13
- },
- {
-  "text": "Two smaller glaciers broke the",
-  "start": 97.82,
-  "end": 100.39,
+  "text": "Passenger electric aircraft need",
+  "start": 80.68,
+  "end": 83.75,
   "seg": 14
  },
  {
-  "text": "simple sunlight pattern.",
-  "start": 100.42,
-  "end": 101.54,
+  "text": "their own aircraft, pilot and operating",
+  "start": 83.78,
+  "end": 86.51,
   "seg": 14
  },
  {
-  "text": "That does not erase the measurement.",
-  "start": 102.34,
-  "end": 104.64,
+  "text": "approvals.",
+  "start": 86.54,
+  "end": 87.24000000000001,
+  "seg": 14
+ },
+ {
+  "text": "Budget finalization is in progress,",
+  "start": 88.12,
+  "end": 90.34,
   "seg": 15
  },
  {
-  "text": "It turns the result into a",
-  "start": 105.62,
-  "end": 107.37,
+  "text": "and projected amounts may change.",
+  "start": 90.82,
+  "end": 92.76,
+  "seg": 15
+ },
+ {
+  "text": "Still, this award matters because",
+  "start": 93.72,
+  "end": 96.23,
   "seg": 16
  },
  {
-  "text": "sharper field test.",
-  "start": 107.4,
-  "end": 108.62,
+  "text": "the proposal describes gaps in",
+  "start": 96.26,
+  "end": 98.45,
   "seg": 16
  },
  {
-  "text": "Put sensors underground.",
-  "start": 109.38,
-  "end": 110.9,
+  "text": "medicine access and transport.",
+  "start": 98.48,
+  "end": 100.28,
+  "seg": 16
+ },
+ {
+  "text": "A first test needs a named",
+  "start": 101.32,
+  "end": 103.07,
   "seg": 17
  },
  {
-  "text": "Watch the next melt and rain.",
-  "start": 111.6,
-  "end": 113.46,
+  "text": "route, F A A certification and",
+  "start": 103.1,
+  "end": 105.41,
   "seg": 17
  },
  {
-  "text": "See whether the mountain keeps",
-  "start": 114.2,
-  "end": 115.73,
+  "text": "operating authorization.",
+  "start": 105.44,
+  "end": 106.4,
   "seg": 17
  },
  {
-  "text": "both appointments.",
-  "start": 115.76,
-  "end": 116.62,
-  "seg": 17
+  "text": "The proposal matters when medicine",
+  "start": 111.38,
+  "end": 113.11,
+  "seg": 18
+ },
+ {
+  "text": "moves on that authorized route.",
+  "start": 113.14,
+  "end": 114.56,
+  "seg": 18
+ },
+ {
+  "text": "Until that box lands, the future",
+  "start": 115.9,
+  "end": 118.31,
+  "seg": 19
+ },
+ {
+  "text": "is still in the crate.",
+  "start": 118.34,
+  "end": 119.62,
+  "seg": 19
  }
 ]

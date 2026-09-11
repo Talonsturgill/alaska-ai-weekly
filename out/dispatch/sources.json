@@ -1,24 +1,11 @@
 {
-  "run_date": "2026-09-10",
-  "title": "The Glacier That Sped Up Twice",
+  "run_date": "2026-09-11",
+  "title": "Over the Missing Road",
   "sources": [
-    {
-      "id": "s1",
-      "title": "Hydrometeorological and Topographic Controls on Rock Glacier Kinematics",
-      "outlet": "Journal of Geophysical Research Earth Surface",
-      "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JF008895",
-      "claims": ["c1", "c2", "c3", "c5", "c6", "c7", "c8", "c9", "c10", "c11", "c12", "c13", "c14"],
-      "used_in_film": true,
-      "note": "Open-access primary paper. Surface motion is independently validated. The subsurface mechanism is preliminary and interpretive."
-    },
-    {
-      "id": "s2",
-      "title": "Why some Alaskan rock glaciers race downhill while their neighbors barely move",
-      "outlet": "Southern Methodist University",
-      "url": "https://www.smu.edu/news/research/alaskan-rock-glaciers",
-      "claims": ["c4"],
-      "used_in_film": true,
-      "note": "Official September 3rd, 2026 release used for the plain-language nearby-speed comparison and current hook."
-    }
+    {"id": "s1", "title": "Alaska Rural Health Transformation Program 2026 Award Notice", "outlet": "Alaska Department of Health", "url": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "claims": ["c1", "c2", "c3", "c4", "c5", "c6", "c7"], "used_in_film": true, "note": "Official award workbook. It records a proposal and preliminary projected funding, not an operating service or an FAA approval."},
+    {"id": "s2", "title": "Rural Health Transformation Program", "outlet": "Alaska Department of Health", "url": "https://health.alaska.gov/en/education/rural-health-transformation-program/", "claims": ["c1", "c8"], "used_in_film": true, "note": "Official program page. It says subaward budget finalization remains in progress and displayed amounts are projected."},
+    {"id": "s3", "title": "Package Delivery by Drone", "outlet": "Federal Aviation Administration", "url": "https://www.faa.gov/uas/advanced_operations/package_delivery_drone", "claims": ["c9"], "used_in_film": true, "note": "Official FAA page used only to establish that commercial package-delivery drone operations require Part 135 certification and authorizations."},
+    {"id": "s4", "title": "Advanced Air Mobility", "outlet": "Federal Aviation Administration", "url": "https://www.faa.gov/air-taxis", "claims": ["c10"], "used_in_film": true, "note": "Official FAA overview used only to establish that passenger eVTOL service requires aircraft, pilot and operational approvals."},
+    {"id": "s5", "title": "About Ryan Air", "outlet": "Ryan Air", "url": "https://ryanalaska.com/about/", "claims": ["c11"], "used_in_film": true, "note": "Company source used only for the attributed current-network claim. It says Ryan Air operates 24 aircraft from eight hubs and serves over 70 villages."}
   ]
 }

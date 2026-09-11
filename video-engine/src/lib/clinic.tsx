@@ -1,6 +1,6 @@
 import React from 'react';
 import {tones, FormGradient, RimLight, ContactShadow, INK} from './lighting';
-import {vitals} from './motion';
+import {evidenceLatch, vitals} from './motion';
 
 // ============================================================================
 // CLINIC — the library's FIRST CLINICAL FAMILY (net-new 2026-08-08)
@@ -406,4 +406,47 @@ export const AllowanceBoard: React.FC<{
       <RimLight d={`M${-width / 2},14 q0,-14 14,-14 l${width - 28},0 q14,0 14,14`} w={4} opacity={0.4} />
     </g>
   );
+};
+
+export interface FlightCrateProps {
+  x: number;
+  y: number;
+  f: number;
+  scale?: number;
+  proposed?: boolean;
+  lights?: number;
+  latchProgress?: number;
+  tag?: string;
+  accent?: number;
+  groundY?: number;
+}
+
+/** A reusable cold-chain proof object. Empty lamps are questions, never wins. */
+export const FlightCrate: React.FC<FlightCrateProps> = ({
+  x, y, f, scale = 1, proposed = true, lights = 0, latchProgress = 1,
+  tag = '', accent = 0, groundY,
+}) => {
+  const v = vitals(f, 9, 0.35);
+  const T = tones('#EAF0E8');
+  const M = tones('#697777');
+  const id = `flightcrate-${Math.round(x)}-${Math.round(y)}`;
+  const lp = evidenceLatch(latchProgress);
+  return <g transform={`translate(${x + v.swayX},${y + v.bob}) scale(${scale * (1 + accent * .025)},${scale * v.breath}) rotate(${v.tilt * .18})`}>
+    <defs><FormGradient id={`${id}-body`} t={T}/><FormGradient id={`${id}-metal`} t={M}/></defs>
+    {groundY !== undefined && <ContactShadow cx={0} cy={(groundY-y)/scale} rx={180} ry={25} opacity={.36}/>} 
+    <rect x={-184} y={-156} width={368} height={250} rx={28} fill={`url(#${id}-body)`} stroke={INK} strokeWidth={8}/>
+    <path d="M-176 64Q0 94 176 64V94H-176Z" fill="#3B1837" opacity={.82}/>
+    <path d="M-170-132H170" stroke="#FFFFFF" strokeWidth={6} opacity={.66}/>
+    <rect x={-154} y={-182} width={308} height={48} rx={16} fill={M.base} stroke={INK} strokeWidth={7}/>
+    <path d="M-118-181Q-118-238-58-238H58Q118-238 118-181" fill="none" stroke={INK} strokeWidth={18}/>
+    <path d="M-118-181Q-118-232-58-232H58Q118-232 118-181" fill="none" stroke={M.key} strokeWidth={8}/>
+    {[-128,128].map((lx,i)=><g key={i} transform={`translate(${lx},-132)`}><rect x={-20} y={-18} width={40} height={48} rx={7} fill={`url(#${id}-metal)`} stroke={INK} strokeWidth={5}/><path d="M-10-8H10V17H-10Z" fill={proposed?'#8B2F58':M.core} stroke={INK} strokeWidth={3}/></g>)}
+    <g transform="translate(-92,-35)"><circle r={49} fill="#F8FBF8" stroke={INK} strokeWidth={7}/><path d="M0 0L22-25" stroke="#315F59" strokeWidth={7} strokeLinecap="round"/><circle r={8} fill="#315F59"/><text y={78} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize={20} fontWeight={800} fill={INK}>MEDS</text></g>
+    <g transform="translate(70,-45)"><rect x={-54} y={-40} width={108} height={80} rx={8} fill="#F6E7C8" stroke={INK} strokeWidth={5}/><path d="M-38-15H35M-38 4H22" stroke={INK} strokeWidth={4} opacity={.55}/><circle cx={38} cy={22} r={6} fill="#8B2F58"/>{tag&&<text y={66} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize={16} fontWeight={800} fill={INK}>{tag}</text>}</g>
+    <g transform="translate(0,52)">{[0,1,2,3,4].map(i=>{const on=i<lights;const a=Math.max(0,Math.min(1,lp-i*.06));return <g key={i} transform={`translate(${-104+i*52},0) scale(${.76+.24*a})`} opacity={.25+.75*a}><circle r={16} fill={on?'#D7A83E':'#EAF0E8'} stroke={on?'#6F5420':'#596363'} strokeWidth={5}/>{!on&&<circle r={7} fill="none" stroke="#596363" strokeWidth={3}/>}</g>})}</g>
+    {Array.from({length:12},(_,i)=><circle key={i} cx={-166+(i%6)*66} cy={i<6?-112:75} r={4} fill={M.shade} stroke={INK} strokeWidth={2}/>) }
+    <path d="M-184-120Q-184-156-148-156H150" fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={.55}/>
+    <RimLight d="M-184,-120 Q-184,-156 -148,-156 H150" w={4} opacity={.5}/>
+    {proposed&&<g transform="translate(0,-112) rotate(-4)"><rect x={-74} y={-21} width={148} height={42} rx={5} fill="#8B2F58" stroke={INK} strokeWidth={4}/><text y={8} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={900} fontSize={21} fill="#FFF8EC">PROPOSED</text></g>}
+  </g>;
 };

@@ -1,168 +1,183 @@
 {
- "run_date": "2026-09-10",
- "title": "THE GLACIER THAT SPED UP TWICE",
- "note": "Rock glaciers are mixtures of rock debris and ice. Surface motion is measured. The proposed subsurface mechanism is modeled and not directly observed.",
+ "run_date": "2026-09-11",
+ "title": "Over the Missing Road",
+ "note": "Fact-checked against Alaska DOH, FAA and attributed Ryan Air sources. Future proof conditions are editorial tests, not completed results.",
  "caption_fixups": {
-  "Sentinel One": "Sentinel-1",
-  "point eight four two": "r 0.842",
-  "ten point seven two centimeters": "10.72 centimeters",
-  "seventy two to eighty four days": "72 to 84 days",
-  "eighty four to ninety six day": "84 to 96 day"
+  "F A A": "FAA",
+  "four million one hundred seventy one thousand one hundred fifteen dollars": "$4,171,115",
+  "seventy villages": "70 villages",
+  "Yukon Koyukuk": "Yukon-Koyukuk",
+  "electric vertical takeoff and landing": "electric vertical-takeoff-and-landing"
  },
  "lines": [
   {
    "idx": 0,
-   "text": "A mountain of rock near McCarthy sped up twice.",
-   "t": "A mountain of rock near McCarthy sped up twice.",
+   "text": "Four million meets the place where the road disappears.",
+   "t": "Four million meets the place where the road disappears.",
    "claims": [
-    "c3",
-    "c8"
+    "c1",
+    "c3"
    ]
   },
   {
    "idx": 1,
-   "text": "Not once in the study, but twice each year.",
-   "t": "Not once in the study, but twice each year.",
-   "claims": [
-    "c8"
-   ]
-  },
-  {
-   "idx": 2,
-   "text": "Sentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.",
-   "t": "Sentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.",
-   "claims": [
-    "c1",
-    "c2"
-   ]
-  },
-  {
-   "idx": 3,
-   "text": "They are rivers of rock and ice.",
-   "t": "They are rivers of rock and ice.",
+   "text": "Alaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.",
+   "t": "Alaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.",
    "claims": [
     "c1"
    ]
   },
   {
-   "idx": 4,
-   "text": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
-   "t": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
+   "idx": 2,
+   "text": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.",
+   "t": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.",
    "claims": [
-    "c3"
+    "c2"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "Cargo could carry medicine. Electric aircraft are proposed for patients and providers.",
+   "t": "Cargo could carry medicine. Electric aircraft are proposed for patients and providers.",
+   "claims": [
+    "c12",
+    "c13"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Those are not the same test.",
+   "t": "Those are not the same test.",
+   "claims": [
+    "c2",
+    "c10"
    ]
   },
   {
    "idx": 5,
-   "text": "A nearby glacier moved less than half as fast in the university summary.",
-   "t": "A nearby glacier moved less than half as fast in the university summary.",
+   "text": "Ryan Air says it serves more than seventy villages, so the test would extend an aviation network.",
+   "t": "Ryan Air says it serves more than seventy villages, so the test would extend an aviation network.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "First comes one medicine box.",
+   "t": "First comes one medicine box.",
+   "claims": [
+    "c12",
+    "c9"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "Can an authorized route deliver it on time inside Alaska weather?",
+   "t": "Can an authorized route deliver it on time inside Alaska weather?",
+   "claims": [
+    "c9",
+    "c12"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "The notice documents no aircraft purchase, F A A approval, route or completed flight.",
+   "t": "The notice documents no aircraft purchase, F A A approval, route or completed flight.",
+   "claims": [
+    "c6",
+    "c14"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "The map is unsettled.",
+   "t": "The map is unsettled.",
+   "claims": [
+    "c4",
+    "c5"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "The summary names Bethel and Dillingham.",
+   "t": "The summary names Bethel and Dillingham.",
    "claims": [
     "c4"
    ]
   },
   {
-   "idx": 6,
-   "text": "Photogrammetry checked more than sixteen thousand Sourdough Peak pixels.",
-   "t": "Photogrammetry checked more than sixteen thousand Sourdough Peak pixels.",
+   "idx": 11,
+   "text": "A separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.",
+   "t": "A separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.",
    "claims": [
     "c5"
    ]
   },
   {
-   "idx": 7,
-   "text": "R, 0.842. Mean absolute error, 10.72 centimeters per year.",
-   "t": "R, 0.842. Mean absolute error, 10.72 centimeters per year.",
-   "claims": [
-    "c6"
-   ]
-  },
-  {
-   "idx": 8,
-   "text": "Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.",
-   "t": "Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.",
-   "claims": [
-    "c7",
-    "c13"
-   ]
-  },
-  {
-   "idx": 9,
-   "text": "That pulse peaked after snowmelt and again with later rain.",
-   "t": "That pulse peaked after snowmelt and again with later rain.",
-   "claims": [
-    "c8"
-   ]
-  },
-  {
-   "idx": 10,
-   "text": "Four measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.",
-   "t": "Four measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.",
-   "claims": [
-    "c9",
-    "c14"
-   ]
-  },
-  {
-   "idx": 11,
-   "text": "The measured surface signal is real. Is the explanation?",
-   "t": "The measured surface signal is real. Is the explanation?",
-   "claims": [
-    "c5",
-    "c6",
-    "c10"
-   ]
-  },
-  {
    "idx": 12,
-   "text": "The authors modeled a path from sunlight to meltwater to a buried sliding layer.",
-   "t": "The authors modeled a path from sunlight to meltwater to a buried sliding layer.",
+   "text": "Then the second ladder gets steeper.",
+   "t": "Then the second ladder gets steeper.",
    "claims": [
     "c10"
    ]
   },
   {
    "idx": 13,
-   "text": "No borehole temperatures were recorded. The weather station sat six kilometers away.",
-   "t": "No borehole temperatures were recorded. The weather station sat six kilometers away.",
+   "text": "The official source calls only the cargo drones autonomous.",
+   "t": "The official source calls only the cargo drones autonomous.",
    "claims": [
-    "c11"
+    "c2"
    ]
   },
   {
    "idx": 14,
-   "text": "Two smaller glaciers broke the simple sunlight pattern.",
-   "t": "Two smaller glaciers broke the simple sunlight pattern.",
+   "text": "Passenger electric aircraft need their own aircraft, pilot and operating approvals.",
+   "t": "Passenger electric aircraft need their own aircraft, pilot and operating approvals.",
    "claims": [
-    "c12"
+    "c10"
    ]
   },
   {
    "idx": 15,
-   "text": "That does not erase the measurement.",
-   "t": "That does not erase the measurement.",
+   "text": "Budget finalization is in progress, and projected amounts may change.",
+   "t": "Budget finalization is in progress, and projected amounts may change.",
    "claims": [
-    "c5",
-    "c6"
+    "c8"
    ]
   },
   {
    "idx": 16,
-   "text": "It turns the result into a sharper field test.",
-   "t": "It turns the result into a sharper field test.",
+   "text": "Still, this award matters because the proposal describes gaps in medicine access and transport.",
+   "t": "Still, this award matters because the proposal describes gaps in medicine access and transport.",
    "claims": [
-    "c10",
-    "c11",
-    "c12"
+    "c1",
+    "c7"
    ]
   },
   {
    "idx": 17,
-   "text": "Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
-   "t": "Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
+   "text": "A first test needs a named route, F A A certification and operating authorization.",
+   "t": "A first test needs a named route, F A A certification and operating authorization.",
    "claims": [
-    "c8",
-    "c10",
-    "c11"
+    "c9",
+    "c14"
+   ]
+  },
+  {
+   "idx": 18,
+   "text": "The proposal matters when medicine moves on that authorized route.",
+   "t": "The proposal matters when medicine moves on that authorized route.",
+   "claims": [
+    "c12",
+    "c9"
+   ]
+  },
+  {
+   "idx": 19,
+   "text": "Until that box lands, the future is still in the crate.",
+   "t": "Until that box lands, the future is still in the crate.",
+   "claims": [
+    "c6"
    ]
   }
  ]

@@ -1830,3 +1830,39 @@ dispatch_history:
     palette: volcanic charcoal alpenglow amber radar magenta glacial cyan snow quartz
     metaphor: one surface ribbon that splits into two rhythms and stops at an empty
       underground socket
+- date: '2026-09-11'
+  topic: Ryan Air projected preliminary rural health aviation award and separate cargo
+    and passenger proof requirements
+  slug: dispatch-2026-09-11-over-the-missing-road
+  key_entities:
+  - Ryan Air
+  - Alaska Department of Health
+  - projected preliminary award
+  - autonomous cargo drones
+  - eVTOL
+  - pharmaceutical cargo
+  - rural health aviation
+  - FAA Part 135
+  archetype: proof-test explainer
+  palette: warm clinic cream,spruce green,berry red,proof gold
+  voice: Gemini Sulafat
+  stance: mixed
+  angle: One preliminary award contains two tests, and Alaska should not confuse autonomous
+    pharmaceutical cargo with a separate passenger and provider eVTOL proposal.
+  hero: FlightCrate
+  cast:
+  - FlightCrate
+  - BushPlane
+  - Gate
+  - AlaskaMini
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: instrument-as-subject
+    layout: stacked-layers
+    register: tactile-collage
+    camera_strategy: track-follow
+    light_story: overcast-diffuse
+    palette: warm clinic cream spruce green berry red proof gold hopeful morning
+    metaphor: one medicine crate carrying two separate proof tickets over the missing
+      road

@@ -1,167 +1,193 @@
 {
-  "run_date": "2026-09-10",
-  "narrator": "Nora, an Alaska public radio host who is warm, grounded and quietly witty",
-  "voice": "Sulafat",
-  "target_seconds": 120,
-  "band_seconds": [
-    112,
-    130
-  ],
-  "predicted_runtime_s": 120,
-  "word_count": 220,
+  "narrator": "Sulafat",
+  "notes": "Cautiously hopeful Alaska explainer. The crate is the emotional center. Qualifiers land cleanly. The final line is warm but unresolved.",
+  "style_prompt": "Style: warm, grounded and conversational with quiet wonder. Build energy through the two-aircraft split, then slow down for the evidence test. Dry wit only on victory lap and air taxi.",
   "pronunciations": {
-    "McCarthy": "muh CAR thee",
-    "Sourdough": "SOUR dough",
-    "Sentinel One": "SEN tuh nul one",
-    "photogrammetry": "foh toh GRAM uh tree"
+    "Ryan Air": "RYE-an Air",
+    "Yukon-Koyukuk": "YOU-kon KAI-you-kuk",
+    "eVTOL": "ee vee toll"
   },
-  "notes": "Begin with delighted surprise. Let the validation statistics sound like earned confidence. Make the signal split playful and precise. Turn quiet at the empty borehole, then finish with practical curiosity rather than doubt.",
-  "style_prompt": "Style: warm, grounded, curious and quietly witty. Make the remote measurement feel genuinely impressive. Let the map check land with confidence. Give the empty borehole a clean breath of silence. Finish as an invitation to the next field test, never as a warning. Neutral American accent, natural and not announcer-y.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one load-bearing word per line. Let twice, checked, split, real, modeled, no and underground land.",
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above Transcript are direction. Never speak them.\n# AUDIO PROFILE: the house narrator is warm, grounded and quietly witty. Neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, grounded, curious and quietly witty. Make the remote measurement feel genuinely impressive. Let the map check land with confidence. Give the empty borehole a clean breath of silence. Finish as an invitation to the next field test, never as a warning.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one load-bearing word per line. Let twice, checked, split, real, modeled, no and underground land.\nTranscript:\nA mountain of rock near McCarthy sped up twice.\nNot once in the study, but twice each year.\nSentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.\nThey are rivers of rock and ice.\nParts of Sourdough Peak moved more than one hundred sixty centimeters a year.\nA nearby glacier moved less than half as fast in the university summary.\nPhotogrammetry checked more than sixteen thousand Sourdough Peak pixels.\nThe maps correlated at point eight four two, with mean error of ten point seven two centimeters a year.\nResearchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.\nThat pulse peaked after snowmelt and again with later rain.\nFour measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.\nThe measured surface signal is real. Is the explanation?\nThe authors modeled a path from sunlight to meltwater to a buried sliding layer.\nNo borehole temperatures were recorded. The weather station sat six kilometers away.\nTwo smaller glaciers broke the simple sunlight pattern.\nThat does not erase the measurement.\nIt turns the result into a sharper field test.\nPut sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
   "lines": [
     {
       "idx": 0,
-      "text": "A mountain of rock near McCarthy sped up twice.",
-      "intent": "hook",
-      "emphasis": "twice",
-      "energy": 5,
-      "tags": []
+      "text": "Four million meets the place where the road disappears.",
+      "intent": "Open with scale meeting geography",
+      "emphasis": "disappears",
+      "energy": 4,
+      "tags": [],
+      "pause_before": 0
     },
     {
       "idx": 1,
-      "text": "Not once in the study, but twice each year.",
-      "intent": "hook",
-      "emphasis": "twice",
+      "text": "Alaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.",
+      "intent": "State the source and exact qualified amount",
+      "emphasis": "preliminary",
       "energy": 3,
-      "tags": []
+      "tags": [],
+      "pause_before": 0.3
     },
     {
       "idx": 2,
-      "text": "Sentinel One radar mapped seven rock glaciers near McCarthy from twenty eighteen through twenty twenty two.",
-      "intent": "setup",
-      "emphasis": "seven",
+      "text": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.",
+      "intent": "Name the two systems without hype",
+      "emphasis": "proposes",
       "energy": 4,
-      "tags": []
+      "tags": [],
+      "pause_before": 0.35
     },
     {
       "idx": 3,
-      "text": "They are rivers of rock and ice.",
-      "intent": "explain",
-      "emphasis": "ice",
-      "energy": 2,
-      "tags": []
+      "text": "Cargo could carry medicine. Electric aircraft are proposed for patients and providers.",
+      "intent": "Separate the jobs",
+      "emphasis": "patients",
+      "energy": 3,
+      "tags": [],
+      "pause_before": 0.2
     },
     {
       "idx": 4,
-      "text": "Parts of Sourdough Peak moved more than one hundred sixty centimeters a year.",
-      "intent": "stat",
-      "emphasis": "sixty",
+      "text": "Those are not the same test.",
+      "intent": "Land the thesis",
+      "emphasis": "not",
       "energy": 5,
-      "tags": []
+      "tags": [],
+      "pause_before": 0.45
     },
     {
       "idx": 5,
-      "text": "A nearby glacier moved less than half as fast in the university summary.",
-      "intent": "contrast",
-      "emphasis": "half",
+      "text": "Ryan Air says it serves more than seventy villages, so the test would extend an aviation network.",
+      "intent": "Avoid rescue framing",
+      "emphasis": "extend",
       "energy": 3,
-      "tags": []
+      "tags": [],
+      "pause_before": 0.4
     },
     {
       "idx": 6,
-      "text": "Photogrammetry checked more than sixteen thousand Sourdough Peak pixels.",
-      "intent": "validation",
-      "emphasis": "checked",
-      "energy": 3,
-      "tags": []
+      "text": "First comes one medicine box.",
+      "intent": "Shrink the experiment to one object",
+      "emphasis": "one",
+      "energy": 4,
+      "tags": [],
+      "pause_before": 0.45
     },
     {
       "idx": 7,
-      "text": "The maps correlated at point eight four two, with mean error of ten point seven two centimeters a year.",
-      "intent": "validation",
-      "emphasis": "correlated",
+      "text": "Can an authorized route deliver it on time inside Alaska weather?",
+      "intent": "Plant the primary test",
+      "emphasis": "authorized",
       "energy": 4,
-      "tags": []
+      "tags": [],
+      "pause_before": 0.25
     },
     {
       "idx": 8,
-      "text": "Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted.",
-      "intent": "method",
-      "emphasis": "fixed",
-      "energy": 3,
-      "tags": []
+      "text": "The notice documents no aircraft purchase, F A A approval, route or completed flight.",
+      "intent": "State the absence without cynicism",
+      "emphasis": "no",
+      "energy": 2,
+      "tags": [],
+      "pause_before": 0.4
     },
     {
       "idx": 9,
-      "text": "That pulse peaked after snowmelt and again with later rain.",
-      "intent": "reveal",
-      "emphasis": "again",
+      "text": "The map is unsettled.",
+      "intent": "Rehook with a concrete record problem",
+      "emphasis": "map",
       "energy": 4,
-      "tags": []
+      "tags": [],
+      "pause_before": 0.5
     },
     {
       "idx": 10,
-      "text": "Four measured years lagged snowmelt by seventy two to eighty four days. Twenty nineteen used an estimated eighty four to ninety six day temperature proxy instead.",
-      "intent": "limit",
-      "emphasis": "estimated",
+      "text": "The summary names Bethel and Dillingham.",
+      "intent": "Read the first field plainly",
+      "emphasis": "summary",
       "energy": 2,
-      "tags": []
+      "tags": [],
+      "pause_before": 0.2
     },
     {
       "idx": 11,
-      "text": "The measured surface signal is real. Is the explanation?",
-      "intent": "turn",
-      "emphasis": "real",
-      "energy": 5,
-      "tags": []
+      "text": "A separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.",
+      "intent": "Contrast the second field",
+      "emphasis": "separate",
+      "energy": 3,
+      "tags": [],
+      "pause_before": 0.25
     },
     {
       "idx": 12,
-      "text": "The authors modeled a path from sunlight to meltwater to a buried sliding layer.",
-      "intent": "model",
-      "emphasis": "modeled",
-      "energy": 3,
-      "tags": []
+      "text": "Then the second ladder gets steeper.",
+      "intent": "Pivot to passenger proof",
+      "emphasis": "steeper",
+      "energy": 4,
+      "tags": [],
+      "pause_before": 0.45
     },
     {
       "idx": 13,
-      "text": "No borehole temperatures were recorded. The weather station sat six kilometers away.",
-      "intent": "test",
-      "emphasis": "No",
-      "energy": 1,
-      "tags": []
+      "text": "The official source calls only the cargo drones autonomous.",
+      "intent": "Correct the grammar cleanly",
+      "emphasis": "only",
+      "energy": 4,
+      "tags": [],
+      "pause_before": 0.3
     },
     {
       "idx": 14,
-      "text": "Two smaller glaciers broke the simple sunlight pattern.",
-      "intent": "test",
-      "emphasis": "broke",
-      "energy": 4,
-      "tags": []
+      "text": "Passenger electric aircraft need their own aircraft, pilot and operating approvals.",
+      "intent": "Name the higher burden",
+      "emphasis": "own",
+      "energy": 3,
+      "tags": [],
+      "pause_before": 0.25
     },
     {
       "idx": 15,
-      "text": "That does not erase the measurement.",
-      "intent": "resolution",
-      "emphasis": "measurement",
-      "energy": 2,
-      "tags": []
+      "text": "Budget finalization is in progress, and projected amounts may change.",
+      "intent": "State the official program caveat",
+      "emphasis": "may change",
+      "energy": 5,
+      "tags": [],
+      "pause_before": 0.55
     },
     {
       "idx": 16,
-      "text": "It turns the result into a sharper field test.",
-      "intent": "resolution",
-      "emphasis": "test",
-      "energy": 4,
-      "tags": []
+      "text": "Still, this award matters because the proposal describes gaps in medicine access and transport.",
+      "intent": "Name the applicant's problem statement",
+      "emphasis": "gaps",
+      "energy": 3,
+      "tags": [],
+      "pause_before": 0.25
     },
     {
       "idx": 17,
-      "text": "Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
-      "intent": "button",
-      "emphasis": "underground",
+      "text": "A first test needs a named route, F A A certification and operating authorization.",
+      "intent": "Name the proof criteria",
+      "emphasis": "authority",
+      "energy": 4,
+      "tags": [],
+      "pause_before": 0.35
+    },
+    {
+      "idx": 18,
+      "text": "The proposal matters when medicine moves on that authorized route.",
+      "intent": "Name the conditional first win",
+      "emphasis": "promised",
+      "energy": 3,
+      "tags": [],
+      "pause_before": 0.4
+    },
+    {
+      "idx": 19,
+      "text": "Until that box lands, the future is still in the crate.",
+      "intent": "Button on unresolved hope",
+      "emphasis": "crate",
       "energy": 2,
-      "tags": []
+      "tags": [],
+      "pause_before": 0.65
     }
-  ]
+  ],
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Sulafat, a warm Alaska explainer with grounded authority and quiet wit.\n### DIRECTOR'S NOTES\nStyle: warm, grounded and conversational with quiet wonder. Build energy through the two-aircraft split, then slow down for the evidence test. Dry wit only on victory lap and air taxi.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nTranscript:\nFour million meets the place where the road disappears.\nAlaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.\nRyan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.\nCargo could carry medicine. Electric aircraft are proposed for patients and providers.\nThose are not the same test.\nRyan Air says it serves more than seventy villages, so the test would extend an aviation network.\nFirst comes one medicine box.\nCan an authorized route deliver it on time inside Alaska weather?\nThe notice documents no aircraft purchase, F A A approval, route or completed flight.\nThe map is unsettled.\nThe summary names Bethel and Dillingham.\nA separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.\nThen the second ladder gets steeper.\nThe official source calls only the cargo drones autonomous.\nPassenger electric aircraft need their own aircraft, pilot and operating approvals.\nBudget finalization is in progress, and projected amounts may change.\nStill, this award matters because the proposal describes gaps in medicine access and transport.\nA first test needs a named route, F A A certification and operating authorization.\nThe proposal matters when medicine moves on that authorized route.\nUntil that box lands, the future is still in the crate."
 }

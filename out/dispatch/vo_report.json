@@ -1,16 +1,16 @@
 {
   "backend": "gemini-tts",
-  "model": "gemini-3.1-flash-tts-preview",
+  "model": "gemini-2.5-flash-preview-tts+tempo-conform",
   "voice": "Sulafat",
-  "take": 1,
-  "takes": 3,
+  "take": 2,
+  "takes": 1,
   "soundcheck": {
     "pass": true,
-    "score": 0.941,
-    "heard": "A mountain of rock near McCarthy, sped up twice, not once in the study, but twice each year. Sentinel-1 radar mapped seven rock glaciers near McCarthy from 2018 through 2022. They are rivers of rock and ice. Parts of sourdough peak moved more than 160 centimeters a year. A nearby glacier moved less than half as fast in the university summary. Photogrammetry checked more than 16,000 sourdough peak pixels. The maps correlated at .842, with mean error of 10.72 centimeters a year. Researchers fixed two components. Unsupervised separation yielded a long crawl and seasonal pulse they interpreted. That pulse peaked after snow melt and again with later rain. Four measured years lagged snow melt by 72 to 84 days. 2019 used an estimated 84 to 96 day temperature proxy instead. The measured surface signal is real. Is the explanation? The authors modeled a path from sunlight to melt water to a buried sliding layer. No borehole temperatures were recorded. The weather station sat six kilometers away. Two smaller glaciers broke the simple sunlight pattern. That does not erase the measurement. It turns the result into a sharper field test. Put sensors underground. Watch the next melt and rain. See whether the mountain keeps both appointments.",
+    "score": 0.97,
+    "heard": "Four million meets the place where the road disappears. Alaska lists Ryanair for a projected preliminary award of 4,171,115 dollars. Ryanair proposes autonomous cargo drones and electric vertical takeoff and landing aircraft. Cargo could carry medicine. Electric aircraft are proposed for patients and providers. Those are not the same test. Ryanair size it serves more than 70 villages, so the test would extend an aviation network. First comes one cold medicine box. Can a route keep it cold on time and inside Alaska weather? The notice documents no aircraft purchase, FAA approval, route, or completed flight. The map is unsettled. The summary names Bethel and Dillingham. A separate field lists Anchorage, Bristol Bay, Dillingham, and Yukon Kaiukuk. Then the second ladder gets steeper. The official source calls only the cargo drone's autonomous. Passage your electric aircraft need their own aircraft, pilot, and operating approvals. Budget finalization is in progress and projected amounts may change. Still, this award matters because the proposal describes gaps in medicine access and transport. A win needs one route, FAA certification and operating authorization. Repeat cold chain performance and participating clinic. A win means medicine arriving cold and when promised. Until that box lands, the future is still in the crate.",
     "checks": {
       "word_accuracy": {
-        "wer": 0.041,
+        "wer": 0.06,
         "pass": true
       },
       "no_leak": {
@@ -18,12 +18,12 @@
         "pass": true
       },
       "expressive": {
-        "pitch_std_semitones": 3.62,
-        "voiced_frac": 0.46,
+        "pitch_std_semitones": 4.45,
+        "voiced_frac": 0.61,
         "pass": true
       },
       "duration": {
-        "seconds": 117.24,
+        "seconds": 119.99,
         "pass": true
       },
       "loudness": {
@@ -32,28 +32,29 @@
       }
     },
     "diagnosis": "clean",
-    "seconds": 117.24,
+    "seconds": 119.99,
     "in_target_band": true,
     "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
   },
   "prompt_repairs": [
-    "pronunciation guide injected into the notes (4 entries)"
+    "pronunciation guide injected into the notes (3 entries)",
+    "tempo-conformed closest clean take to 120.0s after Gemini pace miss"
   ],
   "runtime_warning": null,
   "all_reports": [
     {
       "pass": true,
-      "score": 0.98,
+      "score": 0.979,
       "diagnosis": "clean"
     },
     {
       "pass": true,
-      "score": 0.941,
+      "score": 0.97,
       "diagnosis": "clean"
     },
     {
       "pass": true,
-      "score": 0.98,
+      "score": 0.97,
       "diagnosis": "clean"
     }
   ],

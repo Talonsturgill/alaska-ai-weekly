@@ -1,1 +1,9 @@
-{"stage":"final_script_cold_read","ship":true,"retelling":"Radar mapped seven rock glaciers and photogrammetry independently checked the Sourdough surface map. Signal separation exposed a long crawl and a seasonal pulse. A modeled sunlight and water explanation remains unproved because underground temperatures were not recorded and two glaciers broke the simple pattern. The result therefore becomes a specific field test.","actors":{"researchers":"the people mapping and analyzing the glaciers","Sentinel One":"the radar instrument","Sourdough Peak":"the fast moving study site","McCarthy Creek":"the nearby slower comparison","photogrammetry":"the independent map check","authors":"the people who modeled the physical explanation"},"single_question":"Can the twice yearly speedup be trusted and explained? The surface motion is supported, while the cause still needs underground testing.","first_misunderstanding_risk":null,"factual_overclaim":null,"causal_chain_weakness":null}
+{
+  "gate": "0E",
+  "ship": true,
+  "one_sentence_summary": "A projected preliminary $4.17 million Ryan Air award contains separate cargo-drone and passenger-aircraft proposals, and Alaska should judge progress by whether an authorized route repeatedly delivers medicine cold and on time.",
+  "confusing_lines": [],
+  "contradictions": [],
+  "stakes_clear": true,
+  "ending_lands": true
+}

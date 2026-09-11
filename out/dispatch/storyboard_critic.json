@@ -1,1 +1,6 @@
-{"stage":"gate_0b_storyboard","ship":true,"resolved":["Replaced the early trust loop with the underground proof boundary","Introduced the cyan ribbon in the opening","Separated melt and rain markers from interpreted peaks","Made the researcher set two component choice perform","Changed the empty borehole scene to a moving camera"]}
+{
+  "gate": "0B-0C",
+  "ship": true,
+  "hard_blockers": [],
+  "review": "Independent regrade confirmed aligned reveals and throughline states, separate loop payoffs, complete must-ship claims, bounded proposal language, measurable Act 3 criteria, and physical events in every beat."
+}
