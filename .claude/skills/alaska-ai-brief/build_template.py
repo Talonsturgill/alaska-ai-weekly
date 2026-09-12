@@ -272,14 +272,12 @@ def render(volume, topic, date, byline, kicker, out_path,
     draw_tracked(draw, motto, font_motto, (*FLAG_GOLD, 210),
                  (W - mw) // 2, motto_y, tracking_em=0.10)
 
-    # Footer
+    # Footer — coordinates centered along the bottom band
     footer_y = H - 110
     font_footer = ImageFont.truetype(fonts["mono"], 16)
-    draw_tracked(draw, byline, font_footer, (255, 255, 255, 170),
-                 64, footer_y, tracking_em=0.22)
     cw = measure_tracked(coords, font_footer, tracking_em=0.22)
     draw_tracked(draw, coords, font_footer, (255, 255, 255, 170),
-                 W - 64 - cw, footer_y, tracking_em=0.22)
+                 (W - cw) // 2, footer_y, tracking_em=0.22)
 
     # Hairline above footer
     draw.line([(64, footer_y - 24), (W - 64, footer_y - 24)],
