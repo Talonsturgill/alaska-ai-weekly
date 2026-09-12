@@ -3198,3 +3198,32 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
 - The first full-resolution render exceeded its seven-minute chunk deadline while another
   local publishing job was active. Smaller chunks and two workers keep the original picture
   and resolution while allowing healthy rendering to complete under shared host load.
+
+- Final encoded-byte QA rejected candidate 1 before any panel or upload. Camera displacement
+  fell below the existing floor in eleven shots and independent animation was visible in
+  only 59.1 percent of graded windows. The failed candidate and its measured reports are
+  preserved while targeted repair proceeds. Text clarity, caption presence and sync,
+  audio, first-frame contrast, crop safety and dead-space ceilings passed.
+- Audio review-card creation exposed missing matplotlib. It is now in requirements and
+  the routine setup import/install check, using the active Python interpreter for install.
+  The production interpreter imports matplotlib 3.11.2 and the setup script passes syntax QA.
+  The actual audio-evidence command now completes with exit0 and its waveform/SFX card
+  has been visually inspected; its PCM measurement and the encoded AAC measurement are
+  reported separately.
+- Camera repair replaces front-loaded entrance progress with sustained easing and adjusts
+  the actual orbit, dolly and truck distances. All fourteen full-resolution board-derived
+  sample pairs clear the unchanged 30 percent displacement floor, ranging from 32.4 to 57.9 percent.
+  Portrait and square probe sheets were inspected; final encoded-byte QA remains required.
+- Living-screen repair adds independently flexing page corners, tabs and room props,
+  clears notebook/label collisions and enables paper-desk credit motion only for this
+  episode. All 306 probe frames are 1080 by 1920. Exact gate sampling clears 56 of 66
+  windows, 84.85 percent against the unchanged 80 percent floor, with reveal holds intact.
+- Claims validation now follows the live imported EEG demonstration text route using the
+  TypeScript AST. All 16 original mandatory claims, sources and prose obligations remain.
+  Independent display-wording approvals add required institution, planned-study and methods
+  context. All 42 machine obligations and 21 regression cases pass, including dead imports,
+  hidden text, unsupported clocks and missing visibility intervals. The actual demonstration
+  heading is explicit and the schematic label clears the notebook. Caption parity was
+  reaffirmed at 9.046 against the revised metadata; the post and narration are unchanged.
+- Before the repaired full render, typecheck, text fit, copy, caption-band/spelling, plate
+  overlap, zoom, claims, credits, narration and storyboard checks all pass.

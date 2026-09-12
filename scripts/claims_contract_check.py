@@ -40,6 +40,10 @@ are data rather than prose:
       "must_ship": true                    # this claim has to appear somewhere at all
     }
 
+`contract.on_screen_all` additionally requires every approved context string
+(for example PLANNED and GENERAL METHODS EXAMPLE), even when display wording is
+independently amended. These checks resolve source routes, not rendered visibility.
+
 The prose note stays: it is what a human reads. The `requires` block is what the machine
 reads. Whoever writes claims.json writes both, and they must agree.
 
@@ -268,6 +272,143 @@ def dynamic_labels(engine, props, root):
         return [], f"dynamic labels NOT RESOLVED (no props credit): {exc}"
 
 
+# Imported source is not evidence merely because an import exists. This bounded
+# adapter follows the live Ep0912 -> Shot 4 -> EEGDemo0912 -> SVG text path. It
+# accepts only literal text at the two verified text sinks, never comments,
+# arbitrary helper strings, props metadata, or conditionally dead JSX.
+_EP0912_HELPER_ROUTE = r"""
+const fs=require('fs'), ts=require(process.argv[1]);
+const input=JSON.parse(fs.readFileSync(0,'utf8'));
+const parse=s=>ts.createSourceFile('scene.tsx',s,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
+const printer=ts.createPrinter({removeComments:true});
+const canon=n=>printer.printNode(ts.EmitHint.Unspecified,n,n.getSourceFile()).replace(/\s+/g,'');
+const expr=s=>parse('const probe='+s+';').statements[0].declarationList.declarations[0].initializer;
+const same=(n,s)=>n&&canon(n)===canon(expr(s));
+const need=(ok,why)=>{if(!ok)throw Error(why);};
+const walk=(n,fn)=>{fn(n);ts.forEachChild(n,c=>walk(c,fn));};
+const unwrap=n=>ts.isParenthesizedExpression(n)?unwrap(n.expression):n;
+function variable(file,name){
+ const found=file.statements.filter(ts.isVariableStatement).flatMap(s=>[...s.declarationList.declarations]).filter(d=>d.name.getText(file)===name);
+ need(found.length===1,'unresolved '+name); return found[0].initializer;
+}
+function returned(fn){
+ need(ts.isArrowFunction(fn)&&ts.isBlock(fn.body),'unresolved component function');
+ const ret=[]; function visit(n){if(n!==fn.body&&ts.isFunctionLike(n))return;if(ts.isReturnStatement(n))ret.push(n);ts.forEachChild(n,visit);}
+ visit(fn.body);need(ret.length===1&&fn.body.statements.at(-1)===ret[0],'conditional/early return');return unwrap(ret[0].expression);
+}
+const opening=n=>ts.isJsxElement(n)?n.openingElement:ts.isJsxSelfClosingElement(n)?n:null;
+const tag=n=>opening(n)?.tagName.getText(n.getSourceFile());
+const attrs=n=>Object.fromEntries([...opening(n).attributes.properties].filter(ts.isJsxAttribute).map(a=>[a.name.getText(),a.initializer]));
+function imported(file,module,name){return file.statements.filter(ts.isImportDeclaration).some(s=>s.moduleSpecifier.text===module&&s.importClause?.namedBindings&&ts.isNamedImports(s.importClause.namedBindings)&&s.importClause.namedBindings.elements.some(e=>e.name.text===name&&(!e.propertyName||e.propertyName.text===name)));}
+try{
+ const file=parse(input.engine),helper=parse(input.helper),root=parse(input.root);
+ need(![file,helper,root].some(f=>f.parseDiagnostics.length),'invalid TSX');
+ need(imported(file,'./EEGDemo0912','EEGDemo0912'),'missing live helper import');
+ need(imported(root,'./Ep0912','Ep0912'),'missing episode import');
+ const rootTree=returned(variable(root,'RemotionRoot'));need(ts.isJsxFragment(rootTree),'unresolved composition wrapper');
+ const compositions=rootTree.children.filter(n=>tag(n)==='Composition'&&same(attrs(n).component?.expression,'Ep0912')).map(attrs);
+ need(compositions.length===1&&same(compositions[0].fps?.expression,'30'),'missing 30fps episode composition');
+ const episode=variable(file,'Ep0912');
+ const episodeTree=returned(episode);
+ need(tag(episodeTree)==='VoiceProvider'&&same(attrs(episodeTree).data?.expression,'{fps:30,mouth,accents}'),'unresolved episode provider');
+ const fills=episodeTree.children.filter(n=>tag(n)==='AbsoluteFill');
+ need(fills.length===1&&same(attrs(fills[0]).style?.expression,'{backgroundColor:SKY}'),'unresolved episode wrapper');
+ const sceneMaps=fills[0].children.filter(n=>ts.isJsxExpression(n)&&same(n.expression,'scenes.map((s,i)=><Sequence key={i} from={s.from} durationInFrames={s.dur} name={`S${i+1}`}><Shot n={i+1} from={s.from} dur={s.dur} beats={beats}/></Sequence>)'));
+ need(sceneMaps.length===1,'unresolved episode-to-Shot routing');
+ const shot=variable(file,'Shot'),shotTree=returned(shot);
+ const shotBindings=shot.body.statements.filter(ts.isVariableStatement).flatMap(s=>[...s.declarationList.declarations]);
+ for(const [name,value]of Object.entries({f:'useCurrentFrame()',g:'f+from'})){
+  const ds=shotBindings.filter(d=>d.name.getText(file)===name);need(ds.length===1&&same(ds[0].initializer,value),'unresolved helper frame clock');
+ }
+ need(same(variable(file,'e'),`(f:number,a=0,d=24)=>interpolate(f,[a,a+d],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(.18,.8,.25,1)})`),'unresolved helper easing clock');
+ const bpBindings=shotBindings.filter(d=>d.name.getText(file)==='bp');
+ need(bpBindings.length===1&&same(bpBindings[0].initializer,'(id:number,d=25,lag=0)=>e(g-lag,(beats.find(b=>b.id===id)?.at??999)*30,d)'),'unresolved helper beat function');
+ const starts=shot.body.statements.filter(s=>ts.isIfStatement(s)&&same(s.expression,'n===1'));
+ need(starts.length===1,'unresolved numbered shot chain');let branch=starts[0];
+ for(let i=1;i<=4;i++){need(ts.isIfStatement(branch)&&same(branch.expression,'n==='+i),'unresolved shot condition');if(i<4)branch=branch.elseStatement;}
+ need(same(branch.thenStatement.expression,'art=<EEGDemo0912 f={g} observationAt={(beats.find(b=>b.id===11)?.at??999)*30} bp={bp}/>'),'helper not directly assigned to Shot 4');
+ const artHosts=[];walk(shotTree,n=>{if(tag(n)==='Plane'&&same(attrs(n).z?.expression,'0'))artHosts.push(n);});
+ need(artHosts.length===1&&same(artHosts[0],'<Plane z={0}><SVG><PaperFiber id="fiber0912" ruleColor={GROUND}/>{art}</SVG></Plane>'),'missing live art plane');
+ need(same(variable(file,'SVG'),`({children})=><svg width={W} height={H} viewBox="0 0 1080 1920" style={{position:'absolute',inset:0,overflow:'visible'}}>{children}</svg>`),'unresolved SVG children sink');
+ // Reject hiding/conditional wrappers on the helper's art route.
+ for(let n=artHosts[0];n&&n!==shotTree.parent;n=n.parent){
+  if(ts.isJsxExpression(n)||ts.isBinaryExpression(n)||ts.isConditionalExpression(n))throw Error('conditional art route');
+  if(opening(n)){const a=attrs(n);need(!a.opacity&&!a.display&&!a.visibility&&!a.style,'hidden/unsupported art wrapper');}
+ }
+ const demo=variable(helper,'EEGDemo0912'),tree=returned(demo);
+ need(helper.statements.some(s=>ts.isVariableStatement(s)&&s.modifiers?.some(m=>m.kind===ts.SyntaxKind.ExportKeyword)&&s.declarationList.declarations.some(d=>d.name.getText(helper)==='EEGDemo0912')),'helper is not exported');
+ const ds=demo.body.statements.filter(ts.isVariableStatement).flatMap(s=>[...s.declarationList.declarations]);
+ const local=name=>{const d=ds.filter(d=>d.name.getText(helper)===name);need(d.length===1,'unresolved helper '+name);return d[0].initializer;};
+ const expected={observe:'clamp(bp(11,32))',isolate:'clamp(bp(12,26))',signal:'clamp(bp(10,56))',contactDetail:'clamp(bp(40,42))'};
+ for(const [name,value]of Object.entries(expected))need(same(local(name),value),'unresolved visibility binding '+name);
+ need(same(variable(helper,'clamp'),'(n:number)=>Math.max(0,Math.min(1,n))'),'unresolved visibility clamp');
+ const label=local('label');need(ts.isArrowFunction(label),'unresolved label function');
+ const sink=unwrap(label.body);
+ need(tag(sink)==='text'&&same(sink,'<text x={x} y={y} textAnchor="middle" fill={fill} fontFamily={MONO} fontSize={size} fontWeight={800}>{text}</text>'),'unresolved label text sink');
+ const protectedNames=new Set(Object.keys(expected));
+ walk(demo.body,n=>{if(ts.isBinaryExpression(n)&&n.operatorToken.kind>=ts.SyntaxKind.FirstAssignment&&n.operatorToken.kind<=ts.SyntaxKind.LastAssignment)need(!protectedNames.has(n.left.getText(helper)),'mutated helper visibility');});
+ const allowedOpacity=new Set(['1-isolate','signal','isolate','observe*(1-isolate)','(1-isolate)*Math.sin(contactDetail*Math.PI)']);
+ const labels=[];
+ function scan(n){
+  if(ts.isJsxExpression(n)){
+   const e=n.expression;if(!e)return;
+   if(ts.isCallExpression(e)&&e.expression.getText(helper)==='label'&&ts.isStringLiteral(e.arguments[0])){
+    need(e.arguments.length>=3&&e.arguments.slice(1).every(a=>ts.isNumericLiteral(a)||ts.isIdentifier(a)||ts.isBinaryExpression(a)),'unresolved label arguments');
+    if(e.arguments[3])need(ts.isNumericLiteral(e.arguments[3])&&Number(e.arguments[3].text)>0,'hidden label size');
+    labels.push(e.arguments[0].text);
+   }else if(ts.isJsxElement(e)||ts.isJsxSelfClosingElement(e))scan(e);
+   return; // No credit for conditional expressions or unrelated calls.
+  }
+  if(!opening(n))return;
+  const a=attrs(n);if(a.display||a.visibility||a.style)return;
+  if(a.transform&&ts.isStringLiteral(a.transform)&&/scale\(\s*0(?:\s|,|\))/.test(a.transform.text))return;
+  if(a.opacity){if(!ts.isJsxExpression(a.opacity)||!allowedOpacity.has(canon(a.opacity.expression)))return;}
+  if(tag(n)==='text'){
+   if(a.fill&&ts.isStringLiteral(a.fill)&&a.fill.text==='none')return;
+   if(a.fontSize&&(!ts.isJsxExpression(a.fontSize)||!ts.isNumericLiteral(a.fontSize.expression)||Number(a.fontSize.expression.text)<=0))return;
+   if(n.children?.every(c=>ts.isJsxText(c)))labels.push(n.children.map(c=>c.text).join(' ').trim());
+   return;
+  }
+  if(!['g'].includes(tag(n)))return;
+  for(const c of n.children||[])scan(c);
+ }
+ scan(tree);console.log(JSON.stringify({labels:[...new Set(labels.filter(Boolean))]}));
+}catch(e){console.log(JSON.stringify({error:e.message}));}
+"""
+
+
+def imported_labels(engine_path, engine, props, root):
+    """Resolve the one supported imported SVG-text route, never a source glob."""
+    if os.path.basename(engine_path) != "Ep0912.tsx":
+        return [], "no supported imported-label adapter for this episode"
+    try:
+        scenes, beats = props["scenes"], props["beats"]
+        if (not isinstance(scenes, list) or not isinstance(beats, list)
+                or len({b["id"] for b in beats}) != len(beats)
+                or any(type(b["at"]) not in (int, float) or not math.isfinite(b["at"]) for b in beats)):
+            raise ValueError("invalid helper scene/beat data")
+        scene = scenes[3]
+        start, end = scene["from"] / 30, (scene["from"] + scene["dur"]) / 30
+        at = {b["id"]: b["at"] for b in beats}
+        content_end = (props["total"] - (props.get("credits") or {}).get("frames", 0)) / 30
+        if not (0 <= start < at[10] < at[11] < at[12] < end <= content_end
+                and at[11] + 1 < at[12] and start <= at[40] < at[12]):
+            raise ValueError("no resolved recording/credit visibility interval in Shot 4")
+        helper_path = os.path.join(os.path.dirname(os.path.abspath(engine_path)), "EEGDemo0912.tsx")
+        result = subprocess.run(
+            ["node", "-e", _EP0912_HELPER_ROUTE,
+             os.path.join(REPO, "video-engine", "node_modules", "typescript")],
+            input=json.dumps({"engine": engine, "helper": engine_text(helper_path), "root": root}),
+            capture_output=True, text=True, timeout=20, check=True)
+        route = json.loads(result.stdout)
+        if route.get("error"):
+            raise ValueError(route["error"])
+        return [{"label": s, "source": helper_path, "scene": 4} for s in route["labels"]], \
+            "Ep0912 -> Shot 4 -> EEGDemo0912 -> literal SVG text; source route resolved"
+    except (OSError, ValueError, KeyError, IndexError, TypeError, subprocess.SubprocessError) as exc:
+        return [], f"imported labels NOT RESOLVED (no helper credit): {exc}"
+
+
 def _report_prose(prose_only, total):
     """Never let a clean line imply coverage this gate did not provide."""
     if not prose_only:
@@ -307,14 +448,18 @@ def main():
         props = json.loads(engine_text(a.props))
         root = engine_text(os.path.join(os.path.dirname(os.path.abspath(eng_path)), "Root.tsx"))
         label_evidence, route_note = dynamic_labels(engine, props, root)
+        helper_evidence, helper_note = imported_labels(eng_path, engine, props, root)
     except (OSError, ValueError) as exc:
         label_evidence, route_note = [], f"dynamic labels NOT RESOLVED (no props credit): {exc}"
+        helper_evidence, helper_note = [], "imported labels NOT RESOLVED (no helper credit)"
     print(f"Dynamic label evidence: {len(label_evidence)} scene/beat interval(s); {route_note}.")
+    print(f"Imported label evidence: {len(helper_evidence)} label(s); {helper_note}.")
     print("  Source-route evidence only; rendered legibility and occlusion require visual QA.")
 
     def appears(text):
         # Keep each label separate: adjacent metadata strings must not invent a card.
-        return drawn(engine, text) or any(drawn(item["label"], text) for item in label_evidence)
+        return drawn(engine, text) or any(drawn(item["label"], text)
+                                         for item in label_evidence + helper_evidence)
 
     vo = engine_text(a.vo)
     by_id = {c["id"]: c for c in claims}
@@ -389,6 +534,18 @@ def main():
             if tok.lower() not in vo.lower():
                 problems.append(f"{cid}: note requires the narration to carry {tok!r} "
                                 f"(its `note` says so); vo_script.txt does not contain it.")
+
+        # Equivalent display wording may be independently approved in claims.json,
+        # but its attribution/status/limit context must remain an obligation too.
+        context = req.get("on_screen_all", [])
+        if not isinstance(context, list) or any(not isinstance(t, str) or not _norm(t) for t in context):
+            checked += 1
+            problems.append(f"{cid}: invalid on_screen_all context contract; use a list of nonempty display strings.")
+            context = []
+        for text in context:
+            checked += 1
+            if not appears(text):
+                problems.append(f"{cid}: requires on-screen context {text!r}; it is missing.")
 
         att = req.get("attribution_on_screen")
         if att:

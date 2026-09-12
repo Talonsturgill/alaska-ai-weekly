@@ -89,7 +89,7 @@ export const EEGDemo0912: React.FC<{
       <g opacity={signal}>
         {label('RECORDS', 514, 752, 23)}
       </g>
-      {label('TOP VIEW · SCHEMATIC', 309, 1110, 23)}
+      {label('TOP VIEW · SCHEMATIC', 309, 1085, 23)}
     </g>
 
     {/* A large display, with body/shade/rim and a responding recording bracket. */}

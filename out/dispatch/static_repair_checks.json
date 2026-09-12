@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-09-12T16:54:04.242488+00:00",
+  "checks": [
+    {
+      "check": "typecheck",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "check": "text_fit_check.py",
+      "exit_code": 0,
+      "output": "text-fit: 18 plated strings/variants measured (mono, Plate, actual Label), 0 not measured, 0 failing\n"
+    },
+    {
+      "check": "visible_copy_check.py",
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"PASS\",\n  \"checked\": {\n    \"source\": 14,\n    \"captions\": 37,\n    \"beats\": 40,\n    \"credits\": 5\n  },\n  \"failures\": [],\n  \"issues\": [],\n  \"scope\": \"Source/props copy adapter only. Not OCR, imported artwork text, or Gmail.\"\n}\n"
+    },
+    {
+      "check": "caption_band_check.py",
+      "exit_code": 0,
+      "output": "caption_band_check: clean across 1 file(s)\n"
+    },
+    {
+      "check": "caption_spelling_check.py",
+      "exit_code": 0,
+      "output": "caption_spelling_check: clean, 37 cues carry none of the 5 declared respellings\n"
+    },
+    {
+      "check": "plate_overlap_check.py",
+      "exit_code": 0,
+      "output": "plate_overlap_check: clean across 1 file(s), 14 scene(s) parsed\n"
+    },
+    {
+      "check": "zoom_clip_check.py",
+      "exit_code": 0,
+      "output": "zoom_clip_check: video-engine/src/Ep0912.tsx\n  S1   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S2   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S3   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S4   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S5   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S6   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S7   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S8   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S9   scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S10  scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S11  scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S12  scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S13  scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  S14  scale 1.000  (zoom 1.0 x push 1.00)   safe authored span 54..1026\n  not measured (stated so coverage is never assumed):\n    video-engine/src/Ep0912.tsx:60  [S3] Plate: inside a computed transform: AI AND ROBOTICS LAB\n    video-engine/src/Ep0912.tsx:61  [S3] rect: 760px box inside a computed transform\n    video-engine/src/Ep0912.tsx:82  [S5] rect: 260px box inside a computed transform\n    video-engine/src/Ep0912.tsx:90  [S8] rect: 760px box inside a computed transform\n    video-engine/src/Ep0912.tsx:90  [S8] rect: 718px box inside a computed transform\n    video-engine/src/Ep0912.tsx:90  [S8] rect: 300px box inside a computed transform\n    video-engine/src/Ep0912.tsx:91  [S9] rect: 830px box inside a computed transform\n    video-engine/src/Ep0912.tsx:94  [S10] rect: 300px box inside a computed transform\n    video-engine/src/Ep0912.tsx:96  [S10] rect: 250px box inside a computed transform\n    video-engine/src/Ep0912.tsx:98  [S11] rect: 195px box inside a computed transform\n    video-engine/src/Ep0912.tsx:98  [S11] rect: 298px box inside a computed transform\n    video-engine/src/Ep0912.tsx:99  [S12] Plate: inside a computed transform: IF A MODEL CLAIMS NEW PEOPLE\n    video-engine/src/Ep0912.tsx:128  [S14] rect: 116px box inside a computed transform\nzoom_clip_check: clean, 16 string(s) measured against the frame edge\n"
+    },
+    {
+      "check": "claims_contract_check.py",
+      "exit_code": 0,
+      "output": "Dynamic label evidence: 0 scene/beat interval(s); no supported dynamic-label adapter for this episode.\nImported label evidence: 9 label(s); Ep0912 -> Shot 4 -> EEGDemo0912 -> literal SVG text; source route resolved.\n  Source-route evidence only; rendered legibility and occlusion require visual QA.\nclaims_contract_check: 42 machine obligation(s) met, none outstanding\n"
+    },
+    {
+      "check": "credits_check.py",
+      "exit_code": 0,
+      "output": "credits_check: clean. 3 source line(s), licence string matches music_credit.json verbatim, 12.3s sign-off rendered by the engine and verified on screen for the full 10s floor.\n    UAA.ALASKA.EDU\n    WEARABLESENSING.COM\n    FRONTIERSIN.ORG\n    VISIT US AT ALASKAAIHQ.COM\n    \"Life of Riley\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0\n"
+    },
+    {
+      "check": "vo_claims_check.py",
+      "exit_code": 0,
+      "output": "PASS [vo_claims_check] 20 narration lines checked against 16 claims; no obligation violated, no unsourced quantity and no unsourced cadence.\n"
+    },
+    {
+      "check": "storyboard_check.py",
+      "exit_code": 0,
+      "output": "  [beat-events] 40/40 beats name a physical event\nPASS [storyboard_check] composition is distinct: One stitched notebook expands to hold a new own-task EEG recording option beside useful public data. Its concealed NEXT STEP wing reveals collection and test space, not an invented research result.\n  fingerprint: pov=exploded-diagram  motion_vector=assemble-build  hero_treatment=data-as-subject  layout=fullbleed-split  register=editorial-schematic  camera_strategy=orbit-reveal  light_story=noon-hard  palette=warm lilac daylight ivory paper citron tasks coral tabs deep violet ink  metaphor=a research notebook gains an extra collection-and-test wing without closing its public-data pages\n  diverges from last 2: 2026-09-10\u21929/9 axes differ; 2026-09-11\u21929/9 axes differ\n  beats: 40   signature: {'pov': 'exploded-diagram', 'layout': 'fullbleed-split', 'motion_vector': 'assemble-build'}\n  shots: 14 across 14 distinct compositions (each cut moves to a different world, not a zoom)\n"
+    }
+  ],
+  "pass": true
+}

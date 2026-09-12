@@ -20,21 +20,36 @@
       "id": "c2",
       "status": "verified-primary",
       "spoken": "The University of Alaska Anchorage AI and Robotics Lab acquired it.",
-      "on_screen": "UAA AI + ROBOTICS LAB",
+      "on_screen": "AI AND ROBOTICS LAB",
       "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
       "requires": [
         "Expand UAA before relying on abbreviation in narration."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "UNIVERSITY OF ALASKA ANCHORAGE"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "UAA AI + ROBOTICS LAB",
+        "approved_on_screen": "AI AND ROBOTICS LAB",
+        "reason": "The film spells out the institution on Shot 2 and names its lab on Shot 3. AND is the spoken equivalent of the approved plus sign; the institution attribution is now a separate required display string.",
+        "visual_evidence": [
+          "out/evidence/f013.2.jpg",
+          "out/evidence/f014.5.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
       "id": "c3",
       "status": "verified-primary",
       "spoken": "The device is a Wearable Sensing DSI-24 dry EEG.",
-      "on_screen": "DRY EEG \u00b7 DSI-24",
+      "on_screen": "DRY EEG · DSI-24",
       "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
       "requires": [
         "An EEG records signals. No thought symbols or clinical result."
@@ -83,7 +98,22 @@
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "GRADUATE STUDENT",
+          "RECORDING DEMONSTRATION"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "VADIM EGOROV",
+        "approved_on_screen": "VADIM EGOROV",
+        "reason": "The original approved name is visibly present in the imported demonstration helper with his graduate-student role. No wording amendment; fix the live import source route.",
+        "visual_evidence": [
+          "out/evidence/filmstrip_student_observes.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
@@ -97,21 +127,54 @@
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "VADIM EGOROV",
+          "SCHEMATIC",
+          "ELECTRICAL ACTIVITY"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "RECORDING DEMONSTRATION",
+        "approved_on_screen": "RECORDING DEMONSTRATION",
+        "reason": "Retain the original approved phrase. The engine owner is making the Shot 4 heading explicit; the name, role and schematic electrical trace already establish the reported observation.",
+        "visual_evidence": [
+          "out/evidence/filmstrip_student_observes.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
       "id": "c8",
       "status": "verified-background",
       "spoken": "The device has 19 scalp electrodes.",
-      "on_screen": "19 SCALP ELECTRODES",
+      "on_screen": "19 SCALP CONTACTS",
       "source": "https://wearablesensing.com/dsi-24/",
       "requires": [
         "Cross-checked against UAA. Literal sensors must number exactly19."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "SCALP ELECTRODES",
+          "TOP VIEW · SCHEMATIC"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "19 SCALP ELECTRODES",
+        "approved_on_screen": "19 SCALP CONTACTS",
+        "reason": "The helper labels the 19 dry scalp electrode contacts. The opening separately shows a large 19 beside SCALP ELECTRODES. Contacts names the physical electrode interfaces, not 19 channels or all headset inputs; the literal array and two distinct earclips agree with the verified manufacturer count.",
+        "visual_evidence": [
+          "out/evidence/f004.8.jpg",
+          "out/evidence/f033.9.jpg",
+          "out/evidence/filmstrip_student_observes.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
@@ -132,100 +195,212 @@
       "id": "c10",
       "status": "verified-primary",
       "spoken": "Egorov anticipates collecting recordings for his own tasks.",
-      "on_screen": "OWN TASKS",
+      "on_screen": "PUBLIC DATA + OWN-TASK PLANS",
       "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
       "requires": [
         "Added collection capability, not a newly granted right to choose research."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "COLLECTION STILL AHEAD",
+          "PUBLIC EEG DATA"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "OWN TASKS",
+        "approved_on_screen": "PUBLIC DATA + OWN-TASK PLANS",
+        "reason": "This wording makes the added own-task option explicit while retaining public data and future collection status. It does not claim collection has finished or that students previously lacked research agency.",
+        "visual_evidence": [
+          "out/evidence/f052.3.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
       "id": "c11",
       "status": "verified-primary",
       "spoken": "UAA plans cognitive-state research during reading.",
-      "on_screen": "READING \u00b7 PLANNED",
+      "on_screen": "PLANNED · READING",
       "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
       "requires": [
         "Use planned in narration and large planned label on this scene."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "COGNITIVE STATES",
+          "STUDY TARGET · ANSWERS AHEAD"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "READING · PLANNED",
+        "approved_on_screen": "PLANNED · READING",
+        "reason": "Only the order of the already approved words changes; PLANNED is prominent. The cognitive-state target and absent answers remain explicit.",
+        "visual_evidence": [
+          "out/evidence/f061.3.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
       "id": "c12",
       "status": "verified-primary",
       "spoken": "Another planned project studies brain activity during programming.",
-      "on_screen": "PROGRAMMING \u00b7 PLANNED",
+      "on_screen": "PLANNED · PROGRAMMING",
       "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
       "requires": [
         "Programming, not AI-assisted coding. Use planned framing."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "PLANNED BRAIN ACTIVITY",
+          "SCHEMATIC"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "PROGRAMMING · PLANNED",
+        "approved_on_screen": "PLANNED · PROGRAMMING",
+        "reason": "Only the order of the already approved words changes. Both the programming status and proposed brain measurement remain visibly planned, with no AI-assisted coding or completed result.",
+        "visual_evidence": [
+          "out/evidence/f062.9.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
       "id": "c13",
       "status": "verified-primary",
       "spoken": "The programming project also plans to track eye movements.",
-      "on_screen": "EYE MOVEMENTS \u00b7 PLANNED",
+      "on_screen": "PLANNED EYE MOVEMENTS",
       "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
       "requires": [
         "Separate proposed eye tracking, not EEG alone reading eyes."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "PLANNED · PROGRAMMING",
+          "PLANNED BRAIN ACTIVITY"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "EYE MOVEMENTS · PLANNED",
+        "approved_on_screen": "PLANNED EYE MOVEMENTS",
+        "reason": "The same planned qualifier precedes the eye-movement measurement. The display keeps proposed eye and brain measurements separate within the programming project.",
+        "visual_evidence": [
+          "out/evidence/f062.9.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
       "id": "c14",
       "status": "verified-primary",
       "spoken": "The announcement describes planned studies rather than completed findings.",
-      "on_screen": "RESULTS STILL AHEAD",
+      "on_screen": "ANSWERS AHEAD",
       "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
       "requires": [
         "No model output, accuracy, sample count or completed dataset."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "UAA STUDIES",
+          "RESEARCH PRINCIPLE · NO UAA RESULT"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "RESULTS STILL AHEAD",
+        "approved_on_screen": "ANSWERS AHEAD",
+        "reason": "The empty answer field explicitly says answers are ahead, while the later UAA STUDIES / PLANNED sheet and NO UAA RESULT distinction preserve the no-completed-findings obligation. This is a semantic equivalent of results still ahead.",
+        "visual_evidence": [
+          "out/evidence/f072.6.jpg",
+          "out/evidence/f118.4.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
       "id": "c15",
       "status": "verified-background",
       "spoken": "A claim about new people requires evaluation on people absent from training.",
-      "on_screen": "NEW PEOPLE \u00b7 SEPARATE TEST",
+      "on_screen": "IF A MODEL CLAIMS NEW PEOPLE",
       "source": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1373515/full",
       "requires": [
         "Editorial conditional methods principle. No allegation of UAA leakage and no invented UAA protocol."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "GENERAL METHODS EXAMPLE",
+          "TRAINING",
+          "TEST",
+          "EVALUATE",
+          "OUTSIDE TRAINING"
+        ]
+      },
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "NEW PEOPLE · SEPARATE TEST",
+        "approved_on_screen": "IF A MODEL CLAIMS NEW PEOPLE",
+        "reason": "The full conditional claim sits above distinct training and test boxes. The person enters only the test side and EVALUATE remains an action, without an accuracy or success result. General-methods and outside-training labels retain the original separate-test meaning and avoid an invented UAA protocol.",
+        "visual_evidence": [
+          "out/evidence/f056.3.jpg",
+          "out/evidence/f112.6.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
       }
     },
     {
       "id": "c16",
       "status": "verified-background",
       "spoken": "The device records electrical activity using sensors that rest directly against the scalp.",
-      "on_screen": "ELECTRICAL SIGNALS",
+      "on_screen": "ELECTRICAL ACTIVITY",
       "source": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
       "requires": [
         "Research equipment, not medical diagnosis. Traces labeled SCHEMATIC and not actual UAA recordings."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "19 SCALP CONTACTS",
+          "SCHEMATIC",
+          "INTERPRETATION"
+        ]
       },
-      "additional_source_locator": "DSI-24 User Manual section2.4, printed page11, dry electrode-tip contact with the scalp; verified2026-09-12."
+      "additional_source_locator": "DSI-24 User Manual section2.4, printed page11, dry electrode-tip contact with the scalp; verified2026-09-12.",
+      "display_wording_review": {
+        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
+        "reviewer_role": "Independent dispatch-fixer / claims validator",
+        "previous_on_screen": "ELECTRICAL SIGNALS",
+        "approved_on_screen": "ELECTRICAL ACTIVITY",
+        "reason": "Electrical activity is the verified scalp measurement described in the final narration. The helper labels the trace schematic and leaves the interpretation field empty; changing signals to activity preserves the physical mechanism and research-only limits.",
+        "visual_evidence": [
+          "out/evidence/f033.9.jpg",
+          "out/evidence/f042.4.jpg"
+        ],
+        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
+      }
     }
   ],
   "obligation_source": "fact_check.json O1-O12",

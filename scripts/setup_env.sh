@@ -8,8 +8,8 @@ set -uo pipefail
 command -v ffmpeg >/dev/null 2>&1 || { apt-get update -qq && apt-get install -y -qq ffmpeg; }
 
 # python deps (only install if missing)
-python3 -c "import PIL,numpy,scipy,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
-  || pip install --break-system-packages -q pillow numpy scipy edge-tts soundfile pyyaml
+python3 -c "import PIL,numpy,scipy,matplotlib,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
+  || python3 -m pip install --break-system-packages -q pillow numpy scipy matplotlib edge-tts soundfile pyyaml
 # librosa + faster_whisper: the Gemini VO pipeline's soundcheck (scripts/vo_soundcheck.py
 # pitch-variance gate) imports librosa, and scripts/vo_synth_gemini.py's whole-file forced
 # alignment imports faster_whisper, both under the SYSTEM python3 (not the voice venv). They

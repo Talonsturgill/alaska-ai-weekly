@@ -1,8 +1,20 @@
 {
   "run_date": "2026-09-12",
-  "updated_at": "2026-09-12T15:08:54.669408+00:00",
-  "accepted_delivery_take": null,
-  "rule": "Natural audio only;112\u2013130seconds, exactscript, no leaked tags and passing soundcheck. Duration warnings are working artifacts.",
+  "updated_at": "2026-09-12T15:33:38.638666+00:00",
+  "accepted_delivery_take": {
+    "direction": 5,
+    "take": 1,
+    "raw_seconds": 122.88,
+    "speech_seconds": 122.28,
+    "soundcheck_score": 0.991,
+    "wer": 0.019,
+    "no_leaked_tags": true,
+    "pitch_std_semitones": 6.42,
+    "script_sha256": "9adddbadffb1a6da75e8407499ccb76e110c0ccec379e949719e32eceb9085f1",
+    "vo_sha256": "a844a3c4105a17b12fdf0448b97b994d43564f8946081c3aa95561e82142430c",
+    "processing": "Sample-rate conversion only; no time-stretch and no added silence."
+  },
+  "rule": "Natural audio only; 112 to 130 seconds, exact script, no leaked tags and passing soundcheck. Short takes are rough-cut working artifacts only.",
   "attempts": [
     {
       "direction": 0,
@@ -44,8 +56,30 @@
     {
       "direction": 3,
       "words": 220,
-      "result": "running",
-      "repair": "Explicit slow documentary delivery and ten vetted short clause pauses; unchanged220spokenwords."
+      "result": "Runtime failed; primary and fallback unary transports then failed.",
+      "repair": "Explicit slow documentary delivery and ten vetted short clause pauses; unchanged220spokenwords.",
+      "durations_s": [
+        106.0
+      ],
+      "transport": "RemoteDisconnected"
+    },
+    {
+      "direction": 4,
+      "words": 220,
+      "durations_s": [
+        109.36,
+        105.1
+      ],
+      "result": "Streaming completed both takes; runtime failed."
+    },
+    {
+      "direction": 5,
+      "words": 220,
+      "durations_s": [
+        103.3,
+        122.88
+      ],
+      "result": "Take 1 accepted after soundcheck and whole-file alignment."
     }
   ]
 }

@@ -1,0 +1,69 @@
+{
+  "check": "LIVING_SCREEN",
+  "run": "2026-09-12",
+  "completed_at": "2026-09-12T16:53:43.428295+00:00",
+  "root_cause": "After their entrances, the room tag, cable, ribbon and loose notebook paper became nearly still; the credits had only a broad bloom. Ep0912.tsx Notebook/room branches and EndCredits.tsx.",
+  "patch": [
+    "Added independent, low-amplitude flex to the existing notebook corners and NEXT STEP tab; extended the existing hanging tag, cable and desk-ribbon motion, with corresponding paper slips in archive rooms. All use the hold-aware g clock.",
+    "Added an optional paperDesk notebook to credits with independently moving loose corners and bookmark below fixed attribution glyphs. paperDesk defaults false; only Ep0912 opts in, preserving all other episode output.",
+    "Moved the Shot2 notebook cameo clear of TRAINING DEMONSTRATION, moved Shot4 TOP VIEW label clear of its notebook, and moved its background tag clear of the19 SCALP CONTACTS label. Applied fact checker request RECORDING DEMONSTRATION as Shot4 heading."
+  ],
+  "source_files": [
+    "video-engine/src/Ep0912.tsx",
+    "video-engine/src/EEGDemo0912.tsx",
+    "video-engine/src/lib/EndCredits.tsx"
+  ],
+  "verify": {
+    "source_gate_functions": "Unmodified quality_gate _regions/_sluma, source hash bound in probe receipt. Spatial cluster counts, not whole-frame gross motion.",
+    "resolution": "1080x1920",
+    "cadence": "6-frame delta at30fps",
+    "passed_windows": 56,
+    "graded_windows": 66,
+    "fraction": 0.8484848484848485,
+    "threshold": 0.8,
+    "margin_percentage_points": 4.848484848484846,
+    "all_weak_windows_fully_sampled": true,
+    "weak_windows_s": [
+      6,
+      14,
+      18,
+      42,
+      58,
+      74,
+      92,
+      94,
+      104,
+      128
+    ],
+    "checks": [
+      "video-engine tsc --noEmit PASS",
+      "staging_check explicit Ep0912+EEGDemo PASS (shared-site render caveat retained)",
+      "caption_band_check explicit Ep0912+EEGDemo PASS",
+      "plate_overlap_check Ep0912 PASS",
+      "claims_contract_check42/42 obligations PASS"
+    ],
+    "evidence": "out/dispatch/probe/living_v2_full/all_windows.json"
+  },
+  "visual_review": {
+    "viewed": "Modified notebook, diagram, programming/methods frames, credits at126/130s; full-resolution square crops of both repaired labels and credits.",
+    "result": "Labels and credit glyphs readable, no added caption or square-crop text collision. Recording remains schematic and interpretation field empty; no new numbers, protocol or outcome.",
+    "contact_sheet": "out/dispatch/probe/living_v2/interior_contact.png",
+    "credit_square": "out/dispatch/probe/living_v2_full/square_03942.png"
+  },
+  "preserved": [
+    "voice, captions, facts, audio, scene and beat clocks",
+    "all reveal freezes and negative-space isolation",
+    "researcher_energy camera v2 block; no changes by this agent",
+    "other EndCredits callers default to unchanged output"
+  ],
+  "limitations": "Preview-scale sweep was59/66; full-resolution56/66 is controlling. Source-render sparse result is a lower bound, not a final encoded-film verdict. Final full-frame quality and POST taste review remain parent-owned.",
+  "needs_full_rerender": true,
+  "ready_for_parent_rerender": true,
+  "committed": false,
+  "source_sha256": {
+    "video-engine/src/Ep0912.tsx": "f01237cba56c2a3c02cf1e58973cd0aa1beb4cffb570c34caed0676d9637f8c2",
+    "video-engine/src/EEGDemo0912.tsx": "6ce30a0ae9b89ec1001a4606319db7959f02028d0fd5441c15532cc6bf1a7563",
+    "video-engine/src/lib/EndCredits.tsx": "8e4d29fb3d2e9fb599afc8bfff2f565bab7f2ab1ee82afa7ddd3c74b4fd8b14a",
+    "out/dispatch/episode_props.json": "95963f3f85da2e7a098b4c65beb2613af5a39ed45db06ae347567f76a9bf778b"
+  }
+}

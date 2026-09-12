@@ -1,127 +1,127 @@
 {
- "total": 119.62,
- "voice": "Sulafat",
- "model": "gemini-2.5-flash-preview-tts+tempo-conform",
- "lines": [
-  {
-   "idx": 0,
-   "text": "Four million meets the place where the road disappears.",
-   "start": 0.0,
-   "end": 4.44
-  },
-  {
-   "idx": 1,
-   "text": "Alaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.",
-   "start": 5.48,
-   "end": 17.287
-  },
-  {
-   "idx": 2,
-   "text": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.",
-   "start": 17.287,
-   "end": 24.02
-  },
-  {
-   "idx": 3,
-   "text": "Cargo could carry medicine. Electric aircraft are proposed for patients and providers.",
-   "start": 24.98,
-   "end": 30.74
-  },
-  {
-   "idx": 4,
-   "text": "Those are not the same test.",
-   "start": 31.7,
-   "end": 33.98
-  },
-  {
-   "idx": 5,
-   "text": "Ryan Air says it serves more than seventy villages, so the test would extend an aviation network.",
-   "start": 35.04,
-   "end": 41.6
-  },
-  {
-   "idx": 6,
-   "text": "First comes one medicine box.",
-   "start": 42.64,
-   "end": 44.66
-  },
-  {
-   "idx": 7,
-   "text": "Can an authorized route deliver it on time inside Alaska weather?",
-   "start": 46.76,
-   "end": 50.83
-  },
-  {
-   "idx": 8,
-   "text": "The notice documents no aircraft purchase, F A A approval, route or completed flight.",
-   "start": 51.78,
-   "end": 59.82
-  },
-  {
-   "idx": 9,
-   "text": "The map is unsettled.",
-   "start": 60.94,
-   "end": 62.62
-  },
-  {
-   "idx": 10,
-   "text": "The summary names Bethel and Dillingham.",
-   "start": 63.54,
-   "end": 66.08
-  },
-  {
-   "idx": 11,
-   "text": "A separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.",
-   "start": 67.04,
-   "end": 72.9
-  },
-  {
-   "idx": 12,
-   "text": "Then the second ladder gets steeper.",
-   "start": 73.66,
-   "end": 76.1
-  },
-  {
-   "idx": 13,
-   "text": "The official source calls only the cargo drones autonomous.",
-   "start": 76.94,
-   "end": 80.68
-  },
-  {
-   "idx": 14,
-   "text": "Passenger electric aircraft need their own aircraft, pilot and operating approvals.",
-   "start": 80.68,
-   "end": 87.24
-  },
-  {
-   "idx": 15,
-   "text": "Budget finalization is in progress, and projected amounts may change.",
-   "start": 88.12,
-   "end": 92.76
-  },
-  {
-   "idx": 16,
-   "text": "Still, this award matters because the proposal describes gaps in medicine access and transport.",
-   "start": 93.72,
-   "end": 100.28
-  },
-  {
-   "idx": 17,
-   "text": "A first test needs a named route, F A A certification and operating authorization.",
-   "start": 101.32,
-   "end": 106.89
-  },
-  {
-   "idx": 18,
-   "text": "The proposal matters when medicine moves on that authorized route.",
-   "start": 111.38,
-   "end": 114.8
-  },
-  {
-   "idx": 19,
-   "text": "Until that box lands, the future is still in the crate.",
-   "start": 115.9,
-   "end": 119.62
-  }
- ]
+  "total": 122.28,
+  "voice": "Sulafat",
+  "model": "gemini-3.1-flash-tts-preview",
+  "lines": [
+    {
+      "idx": 0,
+      "text": "Nineteen scalp electrodes. What's on the next page?",
+      "start": 0.0,
+      "end": 5.06
+    },
+    {
+      "idx": 1,
+      "text": "The University of Alaska Anchorage has a new dry E E G.",
+      "start": 7.08,
+      "end": 12.48
+    },
+    {
+      "idx": 2,
+      "text": "The university announced it for its A I and Robotics Lab on September ninth.",
+      "start": 13.72,
+      "end": 20.4
+    },
+    {
+      "idx": 3,
+      "text": "The Educational Legacy Fund funded it. Students and faculty have trained.",
+      "start": 21.4,
+      "end": 27.52
+    },
+    {
+      "idx": 4,
+      "text": "The device records electrical activity using sensors that rest directly against the scalp.",
+      "start": 28.68,
+      "end": 35.54
+    },
+    {
+      "idx": 5,
+      "text": "Graduate student Vadim Egorov has watched his own signals appear.",
+      "start": 36.64,
+      "end": 41.76
+    },
+    {
+      "idx": 6,
+      "text": "He usually works with public E E G datasets.",
+      "start": 42.88,
+      "end": 46.2
+    },
+    {
+      "idx": 7,
+      "text": "Now he's looking forward to collecting recordings for his own tasks.",
+      "start": 47.08,
+      "end": 51.76
+    },
+    {
+      "idx": 8,
+      "text": "Who might a future answer work for?",
+      "start": 52.8,
+      "end": 55.42
+    },
+    {
+      "idx": 9,
+      "text": "U A A plans to study cognitive states during reading.",
+      "start": 56.78,
+      "end": 60.9
+    },
+    {
+      "idx": 10,
+      "text": "Another planned project pairs brain activity with eye movements during programming.",
+      "start": 61.84,
+      "end": 67.74
+    },
+    {
+      "idx": 11,
+      "text": "Those are plans, with the answers still ahead.",
+      "start": 69.26,
+      "end": 72.76
+    },
+    {
+      "idx": 12,
+      "text": "And the public recordings? They keep their place.",
+      "start": 73.8,
+      "end": 77.12
+    },
+    {
+      "idx": 13,
+      "text": "Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there.",
+      "start": 78.46,
+      "end": 86.58
+    },
+    {
+      "idx": 14,
+      "text": "They can also plan a new recording around another task.",
+      "start": 88.1,
+      "end": 91.72
+    },
+    {
+      "idx": 15,
+      "text": "The extra page holds a plan that students can help design. The old pages stay open beside it.",
+      "start": 93.14,
+      "end": 100.0
+    },
+    {
+      "idx": 16,
+      "text": "A recording alone doesn't supply an interpretation.",
+      "start": 101.66,
+      "end": 104.78
+    },
+    {
+      "idx": 17,
+      "text": "If a future model claims to work for new people, test it on people absent from training.",
+      "start": 106.1,
+      "end": 112.14
+    },
+    {
+      "idx": 18,
+      "text": "That's a research principle, not a reported U A A result.",
+      "start": 113.1,
+      "end": 117.44
+    },
+    {
+      "idx": 19,
+      "text": "Which question about learning should they investigate first?",
+      "start": 118.94,
+      "end": 122.28
+    }
+  ]
 }

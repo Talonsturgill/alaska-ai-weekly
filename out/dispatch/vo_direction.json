@@ -2,7 +2,7 @@
   "run_date": "2026-09-12",
   "title": "The Question Comes First",
   "role": "vo-director",
-  "planned_at": "2026-09-12T15:18:54.565166+00:00",
+  "planned_at": "2026-09-12T15:24:39.321309+00:00",
   "target_seconds": 120,
   "word_count": 220,
   "input_sha256": {
@@ -42,12 +42,14 @@
     },
     {
       "idx": 2,
-      "text": "The university announced it for its A I and Robotics Lab on September ninth.",
+      "text": "The university [slow] announced it for its A I and Robotics Lab on September ninth.",
       "intent": "stat",
       "emphasis": "ninth",
       "energy": 2,
-      "pace": "Settle briefly so the lab name and human date are easy to hear.",
-      "tags": [],
+      "pace": "Give the lab name and date a deliberately slow, clear cadence after The university; keep the factual delivery calm.",
+      "tags": [
+        "[slow]"
+      ],
       "pause_before": false,
       "why": "The acquisition peg needs clarity rather than promotional emphasis."
     },
@@ -66,13 +68,13 @@
     },
     {
       "idx": 4,
-      "text": "The device records electrical activity [short pause] using sensors that rest directly against the scalp.",
+      "text": "The device [slow] records electrical activity using sensors that rest directly against the scalp.",
       "intent": "stat",
       "emphasis": "scalp",
       "energy": 2,
-      "pace": "Complete electrical activity, take a small explanatory breath, then make the sensors resting against the scalp easy to picture.",
+      "pace": "Slow the measurement explanation after The device so the electrical activity and scalp sensors are easy to picture; keep ordinary articulation.",
       "tags": [
-        "[short pause]"
+        "[slow]"
       ],
       "pause_before": false,
       "why": "Give the listener a plain-language physical mechanism while keeping the signal distinct from thoughts or clinical results."
@@ -173,13 +175,13 @@
     },
     {
       "idx": 13,
-      "text": "Researchers can check whether existing recordings fit the question. [short pause] If they do, useful analysis can start there.",
+      "text": "Researchers [slow] can check whether existing recordings fit the question. If they do, useful analysis can start there.",
       "intent": "setup",
       "emphasis": "fit",
       "energy": 3,
-      "pace": "A clear practical explanation, with a small lift into useful analysis after the period.",
+      "pace": "Slow the practical fit test after Researchers, let the complete thought land, then lift gently into useful analysis at the sentence turn.",
       "tags": [
-        "[short pause]"
+        "[slow]"
       ],
       "pause_before": false,
       "why": "Let the countercase do real work and preserve its conditional fit test."
@@ -292,23 +294,27 @@
     }
   ],
   "priority_line_idx": 15,
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.\nTranscript:\nNineteen scalp electrodes. [short pause] What's on the next page?\nThe University of Alaska Anchorage has a new dry E E G.\nThe university announced it for its A I and Robotics Lab on September ninth.\nThe Educational Legacy Fund funded it. [short pause] Students and faculty have trained.\nThe device records electrical activity [short pause] using sensors that rest directly against the scalp.\nGraduate student Vadim Egorov has watched his own signals appear.\nHe usually works with public E E G datasets.\nNow [slow] he's looking forward to collecting recordings for his own tasks.\nWho might a future answer work for?\nU A A plans to study cognitive states during reading.\nAnother planned project pairs brain activity [short pause] with eye movements during programming.\nThose are plans, with the answers still ahead.\nAnd the public recordings? [short pause] They keep their place.\nResearchers can check whether existing recordings fit the question. [short pause] If they do, useful analysis can start there.\nThey can also plan a new recording around another task.\nThe extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.\nA recording alone doesn't supply an interpretation.\nIf a future model claims to work for new people, [short pause] test it on people absent from training.\nThat's a research principle, [short pause] not a reported U A A result.\nWhich question about learning should they investigate first?",
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.\nTranscript:\nNineteen scalp electrodes. [short pause] What's on the next page?\nThe University of Alaska Anchorage has a new dry E E G.\nThe university [slow] announced it for its A I and Robotics Lab on September ninth.\nThe Educational Legacy Fund funded it. [short pause] Students and faculty have trained.\nThe device [slow] records electrical activity using sensors that rest directly against the scalp.\nGraduate student Vadim Egorov has watched his own signals appear.\nHe usually works with public E E G datasets.\nNow [slow] he's looking forward to collecting recordings for his own tasks.\nWho might a future answer work for?\nU A A plans to study cognitive states during reading.\nAnother planned project pairs brain activity [short pause] with eye movements during programming.\nThose are plans, with the answers still ahead.\nAnd the public recordings? [short pause] They keep their place.\nResearchers [slow] can check whether existing recordings fit the question. If they do, useful analysis can start there.\nThey can also plan a new recording around another task.\nThe extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.\nA recording alone doesn't supply an interpretation.\nIf a future model claims to work for new people, [short pause] test it on people absent from training.\nThat's a research principle, [short pause] not a reported U A A result.\nWhich question about learning should they investigate first?",
   "planning_checks": {
     "exact_spoken_lines": true,
     "adjacent_energy_contrast": true,
     "all_lines_have_intent_emphasis_pace": true,
-    "inline_tags_total": 10,
+    "inline_tags_total": 11,
     "only_vetted_midline_tags": true,
     "target_anchored_pace_verbatim": true,
     "no_synthesis_performed": true,
     "previous_job_runtime_failed": true,
-    "this_revision_not_synthesized": true
+    "this_revision_not_synthesized": true,
+    "inline_tags_by_type": {
+      "[short pause]": 7,
+      "[slow]": 4
+    }
   },
-  "revision": 4,
-  "revision_reason": "Unary3.1 and2.5Pro repeated RemoteDisconnected. Use supported3.1 streaming. A locally validated mid-line slow cue now shifts the research-options portion into a slower natural cadence; original220spokenwords remain exact.",
-  "revision_scope": "One short-pause cue replaced by one validated slow cue, no adjacent or line-initial tags. Streaming only changes transport, never wave speed or word content.",
-  "previous_plan_sha256": "6ae9030f733f3cdb9be672570cbbd9619280282e17377581256673210bd70e7e",
-  "previous_report_sha256": "f9ca9a4ad93efce81006b690f37df630749d17cbdb0b397681b54313ca1b9e05",
+  "revision": 5,
+  "revision_reason": "Streaming completed both revision 4 takes without transport errors, but 109.36 seconds remained below the 112-130 second band. One slow cue at line 7 did not establish a persistent full-read tempo. Repeat the locally vetted cue at meaningful names, measurement and analysis spans before the page payoff.",
+  "revision_scope": "Add slow after The university on line 2; replace line 4 and line 13 short-pause cues with slow after The device and Researchers. Preserve the existing line 7 slow cue, all 220 spoken words, Sulafat, the canonical 120-second pace paragraph and contrasting line energies. No synthesis or audio processing.",
+  "previous_plan_sha256": "106dc4b44fcfa7b109f72590ec759439a4b5aa0d025fd0d00874f878c4f7e2a8",
+  "previous_report_sha256": "ff8ea726c91b294c4b14cd4e43b475b2bd8bdd7efc4bb3079872921731750d84",
   "performed_target_seconds": [
     118,
     120
@@ -320,6 +326,7 @@
     "wer": 0,
     "leaked": [],
     "duration_s": 35.16,
-    "scope": "56-word isolated probe, not format approval"
+    "scope": "56-word isolated probe, not format approval",
+    "source": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud"
   }
 }

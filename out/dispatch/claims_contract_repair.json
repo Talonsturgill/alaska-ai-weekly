@@ -1,0 +1,236 @@
+{
+  "checked_at_utc": "2026-09-12T16:48:46.793695+00:00",
+  "role": "Independent dispatch-fixer and claims display validator",
+  "check": "claims_contract_check",
+  "root_cause": "The static checker searched only the episode source and exact normalized proposed labels. Several equivalent labels changed word order or used the measurement synonym activity, and the rendered student credit and measurement labels live in a directly imported component.",
+  "source_gate_pass": true,
+  "machine_obligations_met": 42,
+  "must_ship_claims_retained": 16,
+  "spoken_claims_sources_and_prose_obligations_changed": false,
+  "input_sha256": {
+    "scripts/claims_contract_check.py": "ef9581da646fced99223d630c4578124fd37e18340b8c7e0f8bf9369199b2c57",
+    "tests/test_claims_contract_imported.py": "57bae2163abe733b93b41bcf3c0c05aba2eff41a4a9031ef83af5580c051f964",
+    "out/dispatch/claims.json": "353e5ff516df6fdd393d5673d9ba5a580b428e66ca7be34a7774fbf86f0dcbed",
+    "video-engine/src/Ep0912.tsx": "f01237cba56c2a3c02cf1e58973cd0aa1beb4cffb570c34caed0676d9637f8c2",
+    "video-engine/src/EEGDemo0912.tsx": "6ce30a0ae9b89ec1001a4606319db7959f02028d0fd5441c15532cc6bf1a7563",
+    "video-engine/src/Root.tsx": "591bd72feadb25b9b258f4350c73d47bc5255de86f62a7ed834dd798063a62e7",
+    "out/dispatch/episode_props.json": "95963f3f85da2e7a098b4c65beb2613af5a39ed45db06ae347567f76a9bf778b",
+    "out/dispatch/vo_script.txt": "9adddbadffb1a6da75e8407499ccb76e110c0ccec379e949719e32eceb9085f1",
+    "out/dispatch/fact_check.json": "ca2765e6549ec7796dd3ecb371ac6c3abeec52b460617a35773ac4ec8327d9a8",
+    "out/dispatch/sources.json": "40c360b95ffda8a2ac1cc7a16e9ef0f4cdc28d2b58e10e48ee6552cfeb285b36"
+  },
+  "visual_evidence_read": [
+    {
+      "file": "out/evidence/contact_square.jpg",
+      "sha256": "80dfed63a69438c90eb803ff6bd09dafed54bdabd13af0a658076c97536b7af0"
+    },
+    {
+      "file": "out/evidence/filmstrip_student_observes.jpg",
+      "sha256": "88ef032f7341e1129f516163a471dae47f8bd7bbe8db113357b45f2f6f3e222c"
+    },
+    {
+      "file": "out/evidence/f033.9.jpg",
+      "sha256": "d59a79b5a30700d09731417180ce6697f9e1d1086196ef4416a43d1f5c0b3edd"
+    },
+    {
+      "file": "out/evidence/f062.9.jpg",
+      "sha256": "8858400b83c5dff0127f124e67d98a20d0495b64671d9b835634e674c8ae761f"
+    },
+    {
+      "file": "out/evidence/f112.6.jpg",
+      "sha256": "7346096054e1a5a3e1c420ff4154e93afbd03f032d8bb074af9958b7ed3023da"
+    },
+    {
+      "file": "out/evidence/f118.4.jpg",
+      "sha256": "dbe1aba7622f6c4f38c8ad43b9902c0cb07fad4462cb27ca122eaca2eb4615ef"
+    }
+  ],
+  "visual_evidence_scope": "Existing full-film contact sheet plus targeted full-resolution frames and the student-observation filmstrip. These show the approved semantics but predate the latest engine repairs; they are not approval of an unrendered change.",
+  "per_claim": [
+    {
+      "id": "c2",
+      "previous_on_screen": "UAA AI + ROBOTICS LAB",
+      "approved_on_screen": "AI AND ROBOTICS LAB",
+      "must_ship": true,
+      "required_context": [
+        "UNIVERSITY OF ALASKA ANCHORAGE"
+      ],
+      "reason": "The film spells out the institution on Shot 2 and names its lab on Shot 3. AND is the spoken equivalent of the approved plus sign; the institution attribution is now a separate required display string.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c6",
+      "previous_on_screen": "VADIM EGOROV",
+      "approved_on_screen": "VADIM EGOROV",
+      "must_ship": true,
+      "required_context": [
+        "GRADUATE STUDENT",
+        "RECORDING DEMONSTRATION"
+      ],
+      "reason": "The original approved name is visibly present in the imported demonstration helper with his graduate-student role. No wording amendment; fix the live import source route.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c7",
+      "previous_on_screen": "RECORDING DEMONSTRATION",
+      "approved_on_screen": "RECORDING DEMONSTRATION",
+      "must_ship": true,
+      "required_context": [
+        "VADIM EGOROV",
+        "SCHEMATIC",
+        "ELECTRICAL ACTIVITY"
+      ],
+      "reason": "Retain the original approved phrase. The engine owner is making the Shot 4 heading explicit; the name, role and schematic electrical trace already establish the reported observation.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c8",
+      "previous_on_screen": "19 SCALP ELECTRODES",
+      "approved_on_screen": "19 SCALP CONTACTS",
+      "must_ship": true,
+      "required_context": [
+        "SCALP ELECTRODES",
+        "TOP VIEW · SCHEMATIC"
+      ],
+      "reason": "The helper labels the 19 dry scalp electrode contacts. The opening separately shows a large 19 beside SCALP ELECTRODES. Contacts names the physical electrode interfaces, not 19 channels or all headset inputs; the literal array and two distinct earclips agree with the verified manufacturer count.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c10",
+      "previous_on_screen": "OWN TASKS",
+      "approved_on_screen": "PUBLIC DATA + OWN-TASK PLANS",
+      "must_ship": true,
+      "required_context": [
+        "COLLECTION STILL AHEAD",
+        "PUBLIC EEG DATA"
+      ],
+      "reason": "This wording makes the added own-task option explicit while retaining public data and future collection status. It does not claim collection has finished or that students previously lacked research agency.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c11",
+      "previous_on_screen": "READING · PLANNED",
+      "approved_on_screen": "PLANNED · READING",
+      "must_ship": true,
+      "required_context": [
+        "COGNITIVE STATES",
+        "STUDY TARGET · ANSWERS AHEAD"
+      ],
+      "reason": "Only the order of the already approved words changes; PLANNED is prominent. The cognitive-state target and absent answers remain explicit.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c12",
+      "previous_on_screen": "PROGRAMMING · PLANNED",
+      "approved_on_screen": "PLANNED · PROGRAMMING",
+      "must_ship": true,
+      "required_context": [
+        "PLANNED BRAIN ACTIVITY",
+        "SCHEMATIC"
+      ],
+      "reason": "Only the order of the already approved words changes. Both the programming status and proposed brain measurement remain visibly planned, with no AI-assisted coding or completed result.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c13",
+      "previous_on_screen": "EYE MOVEMENTS · PLANNED",
+      "approved_on_screen": "PLANNED EYE MOVEMENTS",
+      "must_ship": true,
+      "required_context": [
+        "PLANNED · PROGRAMMING",
+        "PLANNED BRAIN ACTIVITY"
+      ],
+      "reason": "The same planned qualifier precedes the eye-movement measurement. The display keeps proposed eye and brain measurements separate within the programming project.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c14",
+      "previous_on_screen": "RESULTS STILL AHEAD",
+      "approved_on_screen": "ANSWERS AHEAD",
+      "must_ship": true,
+      "required_context": [
+        "UAA STUDIES",
+        "RESEARCH PRINCIPLE · NO UAA RESULT"
+      ],
+      "reason": "The empty answer field explicitly says answers are ahead, while the later UAA STUDIES / PLANNED sheet and NO UAA RESULT distinction preserve the no-completed-findings obligation. This is a semantic equivalent of results still ahead.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c15",
+      "previous_on_screen": "NEW PEOPLE · SEPARATE TEST",
+      "approved_on_screen": "IF A MODEL CLAIMS NEW PEOPLE",
+      "must_ship": true,
+      "required_context": [
+        "GENERAL METHODS EXAMPLE",
+        "TRAINING",
+        "TEST",
+        "EVALUATE",
+        "OUTSIDE TRAINING"
+      ],
+      "reason": "The full conditional claim sits above distinct training and test boxes. The person enters only the test side and EVALUATE remains an action, without an accuracy or success result. General-methods and outside-training labels retain the original separate-test meaning and avoid an invented UAA protocol.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    },
+    {
+      "id": "c16",
+      "previous_on_screen": "ELECTRICAL SIGNALS",
+      "approved_on_screen": "ELECTRICAL ACTIVITY",
+      "must_ship": true,
+      "required_context": [
+        "19 SCALP CONTACTS",
+        "SCHEMATIC",
+        "INTERPRETATION"
+      ],
+      "reason": "Electrical activity is the verified scalp measurement described in the final narration. The helper labels the trace schematic and leaves the interpretation field empty; changing signals to activity preserves the physical mechanism and research-only limits.",
+      "source_route_check": "pass",
+      "visual_followup": "Check the repaired final render after all scene/camera edits; existing evidence supports the approved meaning."
+    }
+  ],
+  "checker_changes": [
+    "Bounded TypeScript AST adapter follows the registered Ep0912 composition, direct Shot 4 call, imported EEGDemo0912 component and literal SVG text sinks.",
+    "No blind import/source concatenation and no props-label credit for this episode. Comments, unused literals, hidden or conditional helper JSX, missing routes, unsupported clocks and absent credit intervals do not supply helper evidence.",
+    "on_screen_all requires every approved attribution, status or limit string and rejects malformed context lists. Existing must_ship and verbatim checks remain enforced."
+  ],
+  "engine_coordination": {
+    "owner": "researcher_science",
+    "requested_change": "Change Shot 4 headline from MEASUREMENT BEGINS HERE to RECORDING DEMONSTRATION and retain all measurement/attribution labels.",
+    "owner_additional_fix": "Move TOP VIEW · SCHEMATIC upward to remove its observed notebook overlap.",
+    "this_agent_edited_engine": false
+  },
+  "tests": {
+    "command": "python3 -m unittest tests.test_claims_contract_imported tests.test_claims_contract_dynamic",
+    "tests": 21,
+    "exit_code": 0,
+    "coverage": [
+      "live helper route",
+      "removed/dead/hidden text and comments",
+      "unconnected import/scene/plane",
+      "unregistered composition",
+      "changed renderer/visibility clock",
+      "missing timing/parser",
+      "required context missing or invalid",
+      "legacy Ep0903 dynamic adapter"
+    ]
+  },
+  "gate_command": "python3 scripts/claims_contract_check.py --engine video-engine/src/Ep0912.tsx",
+  "gate_exit_code": 0,
+  "diff_check": "pass",
+  "needs_full_rerender": true,
+  "unresolved_visual_requirements": [
+    "Verify RECORDING DEMONSTRATION appears with the diagram and Vadim credit after the fresh render.",
+    "Verify TOP VIEW · SCHEMATIC clears the notebook and all approved context strings remain legible through the revised camera and motion.",
+    "Confirm the final literal scalp array still has 19 contacts; keep its two earclips and three empty auxiliary inputs distinct."
+  ],
+  "provenance_followup": "claims.json now has display-review metadata and required context. The prior caption_parity_final.json correctly records an older claims input hash; refresh that binding against the unchanged spoken/source facts before final delivery if an exact current-artifact binding is required.",
+  "commit_created": false,
+  "final_render_approved": false
+}
