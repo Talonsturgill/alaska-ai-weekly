@@ -3256,3 +3256,20 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
   for unknown or obsolete visibility paths. All 196 repository tests and all ten source
   checks pass. Combined full-resolution motion probes pass; an encoded contact probe has
   1.904 measured change against the unchanged 1.549 full-film cadence threshold.
+
+Commit trail for these upgrades: `623c95f` updates setup and natural narration;
+`4c757ea` restores historical anchors; `3f24892` stages the film and reusable assets;
+`a053f4d` verifies the final script and direction; `6763ac2` repairs streaming synthesis;
+`a675bda` extends scene geometry coverage; `b46b2ba` protects run initialization;
+`d6d6d8f` repairs camera, layered motion and visible claim context; `41e9fe6` enacts
+the remaining research gestures and verifies rendered credit text.
+
+- Candidate three exposed an insufficient probe margin. The announcement label moved by
+  1.575 in raw samples but only 1.527 after production H.264 encoding, below the full-film
+  cadence median. Full-frame QA correctly rejected the six-second interval before publication.
+  The follow-up now validates the gesture after encoding against the current full-film baseline,
+  preserving the unchanged cadence floor and the spoken lab-name timing.
+- The final mounting gesture carries an opaque label by its actual edge, then releases
+  after seating. Its encoded event change is 1.787 against a recomputed 1.562 median;
+  the combined probe has no gap above 3.2 seconds, with 56 of 66 living windows.
+  Actual 16.4 and 17.0 second frames confirm readable wording and physical grip.

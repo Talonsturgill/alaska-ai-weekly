@@ -59,8 +59,11 @@ const Shot:React.FC<{n:number;from:number;dur:number;beats:Beat[]}>=({n,from,dur
   const trainingX=580*(1-present),trainingY=45*(1-present),pageLift=18*Math.sin(share*Math.PI);
   art=<g>
    <g transform={`translate(0 ${60*(1-bp(6))}) rotate(${-3*(1-bp(6))} 540 760)`}><Sheet x={120} y={595} w={840} h={340} fill={PAPER} fiber="fiber0912" curl={1}/><path d="M120 640h840" stroke={CORAL} strokeWidth={11}/><Fit text="SEPTEMBER 9TH" y={739} size={56} mono/>
-    <g opacity={mountLab} transform={`translate(${760*(1-mountLab)} 0)`}><Plate x={540} text="AI AND ROBOTICS LAB" y={654} width={700} color={CITRON}/></g>
-    <g opacity={mountLab*(1-releaseLab)}><GripHand x={905+760*(1-mountLab)+300*releaseLab} y={654} reach={mountLab*(1-releaseLab)} scale={.48} cuffColor={GROUND}/></g>
+    {/* Carry the opaque label by its actual right edge; release after it seats. */}
+    <g transform={`translate(${1000*(1-mountLab)} 0)`}>
+     <Plate x={540} text="AI AND ROBOTICS LAB" y={654} width={700} color={CITRON}/>
+     <GripHand x={905} y={654} reach={1-releaseLab} scale={.88} cuffColor={INK}/>
+    </g>
     <g transform={`translate(0 ${40*(1-bp(8))}) scale(1 ${.12+.88*bp(8)})`} opacity={bp(8)} style={{transformOrigin:'540px 860px'}}><rect x={160} y={780} width={760} height={125} rx={8} fill={CORAL} stroke={INK} strokeWidth={4}/><Fit text="EDUCATIONAL LEGACY FUND" y={855} size={36} width={700}/></g>
    </g>
    <g opacity={present} transform={`translate(${trainingX} ${trainingY})`}>

@@ -1,0 +1,28 @@
+{
+  "candidate": "final_v3",
+  "master_sha256": "791c2bba19f75af1d17811eae8c552a803aeb7180983c9abe852adcdabd61bb7",
+  "reviewed_at": "2026-09-12T18:15:32.374391+00:00",
+  "whole_film_sheets": [
+    "out/dispatch/final_taste/sheet_0.jpg",
+    "out/dispatch/final_taste/sheet_1.jpg",
+    "out/dispatch/final_taste/sheet_2.jpg",
+    "out/dispatch/final_taste/sheet_3.jpg"
+  ],
+  "action_grids": [
+    "out/evidence/action_closing_question.jpg",
+    "out/evidence/action_extra_page_unfolds.jpg",
+    "out/evidence/action_fixed_scalp_contact.jpg",
+    "out/evidence/action_heldout_person_test.jpg",
+    "out/evidence/action_inventory_comparison.jpg",
+    "out/evidence/action_lab_designation_mounts.jpg",
+    "out/evidence/action_methods_and_plans_separate.jpg"
+  ],
+  "poster": "out/dispatch/poster.png",
+  "findings": [
+    "Opening and planned-study distinctions read clearly",
+    "Scalp contact, inventory comparison, extra wing, held-out test and final question progress visibly",
+    "S3 label mount is readable but encoded amplitude fails objective cadence and grip is detached during part of its entrance"
+  ],
+  "ship": false,
+  "reason": "EVENT_CADENCE14.2-20.4 fails; targeted physical mount repair underway"
+}
