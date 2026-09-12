@@ -1,0 +1,37 @@
+{
+  "pass": true,
+  "score": 1.0,
+  "heard": "19-scalp electrodes, what's on the next page? The device records electrical activity using sensors that rest directly against the scalp. A recording alone doesn't supply an interpretation. If a future model claims to work for new people, test it on people absent from training. That's a research principle, not a reported UAA result.",
+  "checks": {
+    "word_accuracy": {
+      "wer": 0.0,
+      "pass": true
+    },
+    "no_leak": {
+      "leaked": [],
+      "pass": true
+    },
+    "expressive": {
+      "pitch_std_semitones": 9.35,
+      "voiced_frac": 0.59,
+      "pass": true
+    },
+    "duration": {
+      "seconds": 35.16,
+      "pass": true
+    },
+    "loudness": {
+      "lufs": null,
+      "pass": true
+    }
+  },
+  "diagnosis": "clean",
+  "test_scope": "Isolated56-word tag validation, not a delivery-format pass.",
+  "tag": "[slow]",
+  "placement": "mid-line after Nineteen, never line-initial or adjacent to another tag",
+  "source": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud",
+  "script": "Nineteen scalp electrodes. What's on the next page?\nThe device records electrical activity using sensors that rest directly against the scalp.\nA recording alone doesn't supply an interpretation.\nIf a future model claims to work for new people, test it on people absent from training.\nThat's a research principle, not a reported U A A result.",
+  "tagged_transcript": "Nineteen [slow] scalp electrodes. What's on the next page?\nThe device records electrical activity using sensors that rest directly against the scalp.\nA recording alone doesn't supply an interpretation.\nIf a future model claims to work for new people, test it on people absent from training.\nThat's a research principle, not a reported U A A result.",
+  "wav_sha256": "7ee831698f1711663177ee3237336be34a4676b20a83a1990cd04b7f9f752e4d",
+  "created_at": "2026-09-12T15:11:52.829200+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "axis_scores": {
+    "Hook & retention": 8.4,
+    "Illustration craft & detail": 8.0,
+    "Motion & animation craft": 7.8,
+    "Composition & staging": 8.3,
+    "Color & grade": 8.4,
+    "Typography & captions": 8.2,
+    "Sound design & mix": 7.0,
+    "VO-illustration sync & entertainment": 7.9,
+    "Accuracy & sourcing": 8.7,
+    "Alaska authenticity & cultural respect": 8.4,
+    "Writing & post quality": 8.8
+  },
+  "weighted_total": 8.11,
+  "hard_blockers": [],
+  "ship": true,
+  "rationale": "The road-roll hook, medicine-crate throughline, geography comparison, proof ladder and WRONG TEST payoff form a clear visual argument. The cream, spruce and plum world feels fresh. Focal hierarchy and phone-scale captions are strong. The motion strips show purposeful changes with readable anticipation and impact.",
+  "score_movement": {
+    "prior_weighted_total": 7.8,
+    "current_weighted_total": 8.11,
+    "axes_over_1_point": []
+  }
+}

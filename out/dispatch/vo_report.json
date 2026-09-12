@@ -1,16 +1,16 @@
 {
   "backend": "gemini-tts",
-  "model": "gemini-2.5-flash-preview-tts+tempo-conform",
+  "model": "gemini-3.1-flash-tts-preview",
   "voice": "Sulafat",
-  "take": 2,
-  "takes": 1,
+  "take": 1,
+  "takes": 2,
   "soundcheck": {
     "pass": true,
-    "score": 0.97,
-    "heard": "Four million meets the place where the road disappears. Alaska lists Ryanair for a projected preliminary award of 4,171,115 dollars. Ryanair proposes autonomous cargo drones and electric vertical takeoff and landing aircraft. Cargo could carry medicine. Electric aircraft are proposed for patients and providers. Those are not the same test. Ryanair size it serves more than 70 villages, so the test would extend an aviation network. First comes one cold medicine box. Can a route keep it cold on time and inside Alaska weather? The notice documents no aircraft purchase, FAA approval, route, or completed flight. The map is unsettled. The summary names Bethel and Dillingham. A separate field lists Anchorage, Bristol Bay, Dillingham, and Yukon Kaiukuk. Then the second ladder gets steeper. The official source calls only the cargo drone's autonomous. Passage your electric aircraft need their own aircraft, pilot, and operating approvals. Budget finalization is in progress and projected amounts may change. Still, this award matters because the proposal describes gaps in medicine access and transport. A win needs one route, FAA certification and operating authorization. Repeat cold chain performance and participating clinic. A win means medicine arriving cold and when promised. Until that box lands, the future is still in the crate.",
+    "score": 0.991,
+    "heard": "19 Scalp Electrodes. What's on the next page? The University of Alaska Anchorage has a new dry EEG. The university announced it for its AI and robotics lab on September 9. The Educational Legacy Fund funded it. Students and faculty have trained. The device records electrical activity using sensors that rest directly against the Scalp. Graduate student Vadim Yagorov has watched his own signals appear. He usually works with public EEG data sets. Now, he's looking forward to collecting recordings for his own tasks. Who might a future answer work for? UAA plans to study cognitive states during reading. Another planned project pairs brain activity with eye movements during programming. Those are plans with the answers still ahead. And the public recordings, they keep their place. Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there. They can also plan a new recording around another task. The extra page holds a plan that students can help design. The old pages stay open beside it. A recording alone doesn't supply an interpretation. If a future model claims to work for new people, test it on people absent from training. That's a research principle, not a reported UAA result. Which question about learning should they investigate first?",
     "checks": {
       "word_accuracy": {
-        "wer": 0.06,
+        "wer": 0.019,
         "pass": true
       },
       "no_leak": {
@@ -18,12 +18,12 @@
         "pass": true
       },
       "expressive": {
-        "pitch_std_semitones": 4.45,
-        "voiced_frac": 0.61,
+        "pitch_std_semitones": 6.42,
+        "voiced_frac": 0.55,
         "pass": true
       },
       "duration": {
-        "seconds": 119.99,
+        "seconds": 122.88,
         "pass": true
       },
       "loudness": {
@@ -32,29 +32,23 @@
       }
     },
     "diagnosis": "clean",
-    "seconds": 119.99,
+    "seconds": 122.88,
     "in_target_band": true,
     "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
   },
   "prompt_repairs": [
-    "pronunciation guide injected into the notes (3 entries)",
-    "tempo-conformed closest clean take to 120.0s after Gemini pace miss"
+    "pronunciation guide injected into the notes (1 entries)"
   ],
   "runtime_warning": null,
   "all_reports": [
     {
       "pass": true,
-      "score": 0.979,
+      "score": 1.0,
       "diagnosis": "clean"
     },
     {
       "pass": true,
-      "score": 0.97,
-      "diagnosis": "clean"
-    },
-    {
-      "pass": true,
-      "score": 0.97,
+      "score": 0.991,
       "diagnosis": "clean"
     }
   ],

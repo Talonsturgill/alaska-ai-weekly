@@ -1,0 +1,5 @@
+import React from 'react';
+import {AbsoluteFill,useCurrentFrame} from 'remotion';
+import {EEGHeadset,SCALP_CONTACTS} from './lib/research';
+import {QuestionToken} from './lib/credentials';
+export const ResearchAssetLook0912:React.FC=()=>{const f=useCurrentFrame();return <AbsoluteFill style={{background:'#E8E1FA'}}><svg width={1080} height={1920} viewBox="0 0 1080 1920"><text x={540} y={90} fontSize={40} textAnchor="middle" fontFamily="Arial" fontWeight={800}>RESEARCH ASSET VERIFICATION</text><EEGHeadset x={540} y={450} f={f} scale={1.15}/><text x={540} y={880} fontSize={31} textAnchor="middle" fontFamily="Arial">{SCALP_CONTACTS.length} scalp contacts · 2 distinct earclips · 3 empty inputs</text>{['WHO EARNED THIS?','EARNED','NEXT STEP','TEST?','WHAT COMES NEXT?'].map((text,i)=><g key={text}><QuestionToken x={180+(i%3)*350} y={i<3?1120:1510} scale={1.3} text={text} {...(i>1?{color:'#ED9575',faceColor:'#FFF9E8',inkColor:'#25213D',rimColor:'#E4EC65'}:{})}/><text x={180+(i%3)*350} y={(i<3?1120:1510)+155} fontSize={24} textAnchor="middle" fontFamily="Arial">{text}</text></g>)}</svg></AbsoluteFill>};

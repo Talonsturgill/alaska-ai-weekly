@@ -3133,3 +3133,174 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
 - Final exact-byte panel scores are 8.11, 7.57 and 8.08. Median 8.08 clears the 7.0 ship bar,
   all three judges ship with zero hard blockers, and the ship lock binds three deliverables plus
   56 review-evidence files to the graded bytes.
+
+
+## 2026-09-12 — The Question Comes First
+
+- Core setup now installs the current Gemini and Remotion toolchain independently of the
+  retired GPU stack. Taichi, Blender and old neural voice packages are optional through
+  `DISPATCH_INSTALL_LEGACY_STACK=1`, avoiding their unsupported Python/macOS installs.
+- Natural narration is preserved. The September 11 automatic tempo-conform path was removed
+  to comply with the current no-time-stretch contract. Short takes remain available for
+  rough-cut work and now explicitly require repair and re-synthesis before delivery. Gemini
+  retry diagnostics name only a safe HTTP code or exception class, without response bodies,
+  request headers, URLs or credential data.
+- Missing panel calibration references were a repeat offender across earlier runs. Five
+  September 11 reference images are now preserved alongside their original three judge cards
+  and hash-verified manifest. The reference notes distinguish historical whole-film scores
+  from scores of individual images and do not invent an owner-approved taste standard.
+- The reusable EEGHeadset supplies the documented nineteen scalp contacts with ear clips and
+  auxiliary sockets kept separate. QuestionToken now fits short custom labels while preserving
+  its original default rendering. A rendered asset proof checks both the instrument and the
+  old/new label variants; the asset manifest is updated in the same source change.
+- The whole-film rough cut preceded polish. A reusable taste-sheet script samples entry,
+  middle and late moments for every shot and records the actual source-video hash. This run's
+  review repaired the graduate-student attribution, empty interpretation field, archive
+  participant reminder and the final page movement, with affected stills inspected afterward.
+- Storyboard conforming now preserves an immutable planning clock and derives picture,
+  evidence and sound timing from the selected natural voice. Reveal holds remain physical
+  frame durations. The evidence builder names every current shot action instead of retaining
+  a previous episode's story-specific filmstrip schedule.
+- Initial voice direction produced six short takes, best 107.2 seconds. More concrete natural
+  phrase direction improved the next primary take to 110.2 seconds but remained below format.
+  A verified plain-language explanation of scalp contact brought the script from 213 to 220 words;
+  a fresh script-only cold read passed before the targeted next synthesis. No short take was
+  treated as delivery-approved.
+
+- Long unary voice requests repeatedly ended with RemoteDisconnected. The documented
+  Gemini 3.1 Developer API streaming route now joins complete PCM chunks and requires
+  successful completion plus a clean stream end; truncation and encoded errors return to
+  the existing retries. Other models retain their supported unary route. Fourteen new
+  transport tests and fifteen existing voice-precheck tests pass.
+- A short isolated Sulafat test vetted the documented slow pacing cue with zero word
+  errors and no spoken markup. The cue's evidence and model scope are recorded in the
+  voice-direction guide; it does not replace full-take runtime approval.
+- Draft motion analysis isolated a 5.5-second lull in the funding-and-training shot.
+  The notice now stays still for reading while two hands present, open and share a
+  training folio. Its targeted render has no five-second motion lull and its label
+  frames were inspected. A fixed scalp-contact highlight adds a fortieth picture beat
+  with matching editorial sound and evidence coverage.
+
+- The final natural take lasts 122.88 seconds with 122.28 seconds of aligned speech,
+  soundcheck 0.991, word error rate 0.019 and no spoken markup. Direction 5 returned
+  one short and one in-band complete stream; no time-stretch or added silence was used.
+- A brace-bodied shot with local motion variables exposed another scene-parser gap.
+  Overlap and zoom checks now recognize that supported branch form, restoring all
+  fourteen scenes and correct label ownership. Five regression tests cover true overlap,
+  clipping ownership, cross-scene separation, original syntax and honest unmeasured
+  transforms. Together with the existing label and zoom cases, 38 focused tests pass.
+
+- A completed prior release lock blocked this run's first final render. Run initialization
+  now preserves same-run stamp bytes, timestamps and composition. A dated rollover archives
+  a prior lock only when a passing verdict, verified unsent draft readback and all three
+  matching deliverable hashes prove completion. Fifteen regression cases cover valid rollover,
+  ambiguous or pending cuts, changed bytes, archive collisions and rollback on a failed write.
+- The first full-resolution render exceeded its seven-minute chunk deadline while another
+  local publishing job was active. Smaller chunks and two workers keep the original picture
+  and resolution while allowing healthy rendering to complete under shared host load.
+
+- Final encoded-byte QA rejected candidate 1 before any panel or upload. Camera displacement
+  fell below the existing floor in eleven shots and independent animation was visible in
+  only 59.1 percent of graded windows. The failed candidate and its measured reports are
+  preserved while targeted repair proceeds. Text clarity, caption presence and sync,
+  audio, first-frame contrast, crop safety and dead-space ceilings passed.
+- Audio review-card creation exposed missing matplotlib. It is now in requirements and
+  the routine setup import/install check, using the active Python interpreter for install.
+  The production interpreter imports matplotlib 3.11.2 and the setup script passes syntax QA.
+  The actual audio-evidence command now completes with exit0 and its waveform/SFX card
+  has been visually inspected; its PCM measurement and the encoded AAC measurement are
+  reported separately.
+- Camera repair replaces front-loaded entrance progress with sustained easing and adjusts
+  the actual orbit, dolly and truck distances. All fourteen full-resolution board-derived
+  sample pairs clear the unchanged 30 percent displacement floor, ranging from 32.4 to 57.9 percent.
+  Portrait and square probe sheets were inspected; final encoded-byte QA remains required.
+- Living-screen repair adds independently flexing page corners, tabs and room props,
+  clears notebook/label collisions and enables paper-desk credit motion only for this
+  episode. All 306 probe frames are 1080 by 1920. Exact gate sampling clears 56 of 66
+  windows, 84.85 percent against the unchanged 80 percent floor, with reveal holds intact.
+- Claims validation now follows the live imported EEG demonstration text route using the
+  TypeScript AST. All 16 original mandatory claims, sources and prose obligations remain.
+  Independent display-wording approvals add required institution, planned-study and methods
+  context. All 42 machine obligations and 21 regression cases pass, including dead imports,
+  hidden text, unsupported clocks and missing visibility intervals. The actual demonstration
+  heading is explicit and the schematic label clears the notebook. Caption parity was
+  reaffirmed at 9.046 against the revised metadata; the post and narration are unchanged.
+- Before the repaired full render, typecheck, text fit, copy, caption-band/spelling, plate
+  overlap, zoom, claims, credits, narration and storyboard checks all pass.
+
+- The next encoded candidate passed camera travel in all fourteen shots and living-screen
+  choreography in 56 of 66 windows. Full-frame scanning still found a six-second early
+  announcement hold. The lab designation now arrives in a hand and mounts on the notice,
+  readable at 16.40 seconds against the spoken AI anchor at 16.38 seconds. A full-resolution
+  replacement-sample probe recomputes the unchanged whole-film cadence threshold and passes,
+  with a longest 3.6-second gap in that shot. Final encoded-byte verification remains required.
+- The independent motion diagnosis identified one further under-enacted storyboard action,
+  the inventory comparison in shot ten. Other quarter-shot warnings miss short actions or
+  include caption changes; their gross deltas are not evidence of character articulation.
+  The diagnostic retains these limits and names the concrete comparison for repair.
+- The decorative notebook exposed a credit-check false failure: whole-frame brightness
+  rose while every attribution stayed readable. The gate now resolves the actual ten-second
+  full-opacity interval, checks every text row in 21 frames, and recognizes all source,
+  site, composer and licence strings from pixels at three points. Thirteen focused cases
+  cover missing, faded, transient and truncated credits, failed frame decoding and invalid
+  OCR output. Actual candidate-two credits pass. Setup now prepares the local OCR backend;
+  macOS Vision is verified here, while the Linux Tesseract installation path is syntax-checked.
+- The inventory decision now uses a hand to compare the B question with two available
+  context tabs while the A recording stays visible. The hand retracts geometrically and
+  the schematic label clears its paper border. The scalp-contact beat now uses a hand
+  to demonstrate one existing fixed pad, preserving all nineteen contacts and the original
+  explanatory trace. These replace weak gestures without adding facts or changing the voice.
+- The complete regression run caught a stale dependency in the imported-label adapter after
+  contact choreography changed. It now validates the clocks governing claimed text while
+  excluding unrelated decorative branches. Three new cases preserve fail-closed behavior
+  for unknown or obsolete visibility paths. All 196 repository tests and all ten source
+  checks pass. Combined full-resolution motion probes pass; an encoded contact probe has
+  1.904 measured change against the unchanged 1.549 full-film cadence threshold.
+
+Commit trail for these upgrades: `623c95f` updates setup and natural narration;
+`4c757ea` restores historical anchors; `3f24892` stages the film and reusable assets;
+`a053f4d` verifies the final script and direction; `6763ac2` repairs streaming synthesis;
+`a675bda` extends scene geometry coverage; `b46b2ba` protects run initialization;
+`d6d6d8f` repairs camera, layered motion and visible claim context; `41e9fe6` enacts
+the remaining research gestures and verifies rendered credit text.
+
+- Candidate three exposed an insufficient probe margin. The announcement label moved by
+  1.575 in raw samples but only 1.527 after production H.264 encoding, below the full-film
+  cadence median. Full-frame QA correctly rejected the six-second interval before publication.
+  The follow-up now validates the gesture after encoding against the current full-film baseline,
+  preserving the unchanged cadence floor and the spoken lab-name timing.
+- The final mounting gesture carries an opaque label by its actual edge, then releases
+  after seating. Its encoded event change is 1.787 against a recomputed 1.562 median;
+  the combined probe has no gap above 3.2 seconds, with 56 of 66 living windows.
+  Actual 16.4 and 17.0 second frames confirm readable wording and physical grip.
+  Commit `85c7b2b` records this encoded-gesture correction and its source checks.
+
+- The final production encode from `85c7b2b` passes all fifteen objective checks at 10.0.
+  All fourteen camera moves pass, 55 of 66 living-screen windows pass, 45 distinct visual
+  events are detected, and no cadence interval exceeds five seconds. The final 4,067-frame
+  render took 671.487 seconds. Required preflight passes, including all 42 claim obligations,
+  actual captions, ten-second rendered credit verification and the square crop.
+- The remaining quarter-shot motion diagnostic is advisory. Its 42 camera fits resolve
+  to identity, so its output does not prove camera removal. It also misses brief authored
+  actions and can include caption changes. Actual full-film sheets, forty single-shot strips
+  and seven sequential action grids are the visual review evidence. No diagnostic threshold
+  was relaxed. This limitation is disclosed rather than presented as a character-motion score.
+
+- All three independent final judges pass at 8.01, 8.108 and 8.09, median 8.09 against
+  the unchanged 7.0 threshold, with zero hard blockers. EDITOR and POST FLOW pass. Their
+  remaining craft notes concern repeated desk staging and the range of short hand placements,
+  not a failed requirement. Audio assessment used current measured evidence, without a
+  listening claim. The ship gate binds the reviewed delivery bytes before publication.
+
+- Gmail readback exposed two required template outputs that had been dropped: the supplied
+  poster and the automated voice scorecard. Commit `49d1fc6` restores both without changing
+  the film. The CLI reads fresh voice evidence and rejects missing, stale, malformed or
+  failed reports. It excludes the ASR transcript and labels null voice loudness unmeasured;
+  the independently measured final video mix remains reported separately. All 46 focused
+  email, visible-copy and run-guard checks pass. The existing unsent draft is updated in place.
+
+- Five permanent assets match local SHA256 bytes. The September 12 feed commit
+  `fa883d8` deployed successfully in Pages run `34712909418`; actual desktop and phone
+  playback, sound controls, rendition selection and phone captions are verified. The
+  existing Gmail draft was updated and read back with the poster, voice QC, exact post,
+  both cuts, all five sources, credits and sixteen upgrades. It remains DRAFT only.

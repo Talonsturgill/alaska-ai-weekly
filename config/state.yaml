@@ -1866,3 +1866,38 @@ dispatch_history:
     palette: warm clinic cream spruce green berry red proof gold hopeful morning
     metaphor: one medicine crate carrying two separate proof tickets over the missing
       road
+- date: '2026-09-12'
+  topic: UAA dry EEG adds own-task recording alongside public datasets
+  slug: dispatch-2026-09-12-the-question-comes-first
+  key_entities:
+  - University of Alaska Anchorage
+  - DSI-24
+  - Wearable Sensing
+  - Vadim Egorov
+  - Educational Legacy Fund
+  - AI and Robotics Lab
+  archetype: character-led research notebook
+  palette: warm lilac daylight ivory paper citron tasks coral tabs deep violet ink
+  voice: Sulafat
+  stance: celebratory
+  angle: UAA’s new EEG adds the ability to collect brain signals around tasks its
+    researchers choose, alongside the public datasets they already use.
+  hero: Sheet
+  cast:
+  - Sheet
+  - GripHand
+  - EEGHeadset
+  - QuestionToken
+  - EvidenceTrace
+  - Character
+  composition:
+    pov: exploded-diagram
+    motion_vector: assemble-build
+    hero_treatment: data-as-subject
+    layout: fullbleed-split
+    register: editorial-schematic
+    camera_strategy: orbit-reveal
+    light_story: noon-hard
+    palette: warm lilac daylight ivory paper citron tasks coral tabs deep violet ink
+    metaphor: a research notebook gains an extra collection-and-test wing without
+      closing its public-data pages

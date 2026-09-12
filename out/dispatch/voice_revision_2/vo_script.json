@@ -1,0 +1,157 @@
+{
+  "run_date": "2026-09-12",
+  "title": "The Question Comes First",
+  "target_seconds": 120,
+  "word_count": 213,
+  "caption_fixups": {
+    "E E G": "EEG",
+    "A I": "AI",
+    "U A A": "UAA",
+    "September ninth": "September 9th",
+    "Nineteen": "19"
+  },
+  "lines": [
+    {
+      "idx": 0,
+      "text": "Nineteen scalp electrodes. What's on the next page?",
+      "claims": [
+        "c8"
+      ]
+    },
+    {
+      "idx": 1,
+      "text": "The University of Alaska Anchorage has a new dry E E G.",
+      "claims": [
+        "c2",
+        "c3"
+      ]
+    },
+    {
+      "idx": 2,
+      "text": "The university announced it for its A I and Robotics Lab on September ninth.",
+      "claims": [
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "idx": 3,
+      "text": "The Educational Legacy Fund funded it. Students and faculty have trained.",
+      "claims": [
+        "c4",
+        "c5"
+      ]
+    },
+    {
+      "idx": 4,
+      "text": "Its scalp contacts record electrical activity.",
+      "claims": [
+        "c16"
+      ]
+    },
+    {
+      "idx": 5,
+      "text": "Graduate student Vadim Egorov has watched his own signals appear.",
+      "claims": [
+        "c6",
+        "c7"
+      ]
+    },
+    {
+      "idx": 6,
+      "text": "He usually works with public E E G datasets.",
+      "claims": [
+        "c9"
+      ]
+    },
+    {
+      "idx": 7,
+      "text": "Now he's looking forward to collecting recordings for his own tasks.",
+      "claims": [
+        "c10"
+      ]
+    },
+    {
+      "idx": 8,
+      "text": "Who might a future answer work for?",
+      "claims": []
+    },
+    {
+      "idx": 9,
+      "text": "U A A plans to study cognitive states during reading.",
+      "claims": [
+        "c11"
+      ]
+    },
+    {
+      "idx": 10,
+      "text": "Another planned project pairs brain activity with eye movements during programming.",
+      "claims": [
+        "c12",
+        "c13"
+      ]
+    },
+    {
+      "idx": 11,
+      "text": "Those are plans, with the answers still ahead.",
+      "claims": [
+        "c14"
+      ]
+    },
+    {
+      "idx": 12,
+      "text": "And the public recordings? They keep their place.",
+      "claims": [
+        "c9"
+      ]
+    },
+    {
+      "idx": 13,
+      "text": "Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there.",
+      "claims": [
+        "c9"
+      ]
+    },
+    {
+      "idx": 14,
+      "text": "They can also plan a new recording around another task.",
+      "claims": [
+        "c10"
+      ]
+    },
+    {
+      "idx": 15,
+      "text": "The extra page holds a plan that students can help design. The old pages stay open beside it.",
+      "claims": [
+        "c10"
+      ]
+    },
+    {
+      "idx": 16,
+      "text": "A recording alone doesn't supply an interpretation.",
+      "claims": [
+        "c16"
+      ]
+    },
+    {
+      "idx": 17,
+      "text": "If a future model claims to work for new people, test it on people absent from training.",
+      "claims": [
+        "c15"
+      ]
+    },
+    {
+      "idx": 18,
+      "text": "That's a research principle, not a reported U A A result.",
+      "claims": [
+        "c14",
+        "c15"
+      ]
+    },
+    {
+      "idx": 19,
+      "text": "Which question about learning should they investigate first?",
+      "claims": []
+    }
+  ]
+}

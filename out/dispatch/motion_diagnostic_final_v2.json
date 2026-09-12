@@ -1,0 +1,104 @@
+{
+  "role": "dispatch-fixer read-only diagnosis; not Gate B, panel score, exemption or ship verdict",
+  "candidate_master_sha256": "cd99f62b85c89b72e8114bfdfca0d64de7bff8bb14e4b43f2c1e04a1f546c995",
+  "completed_at": "2026-09-12T17:28:14.243851+00:00",
+  "conclusion": "Repair S3 notice progression (already energy-owned) and the specifically under-enacted S10 inventory assessment. Do not add generic amplitude to every warned shot. The seven below-floor and three thin labels do not prove ten motionless shots.",
+  "calibration_limits": [
+    "Sampler takes only three four-frame pairs per shot at25/50/75 percent. Default25-frame eased entrances often finish between these sample instants; several named strips show the missed actions.",
+    "All42 reported camera fits are identity and every registered mean equals gross mean. This run therefore does not demonstrate that actual Stage3D parallax was numerically removed; do not quote either column as independent proof of acting.",
+    "The sampled luma includes captions and branding. S8 pair67.82\u201367.95 crosses caption end67.90; S11 pair96.38\u201396.51 crosses caption end96.44; S14 pair122.18\u2013122.31 crosses caption end122.28. Their large whole-frame scores cannot be assigned solely to subject motion.",
+    "No gate/config/test changes recommended. Filmstrip percentage captions are also gross deltas, used here only to locate the visually inspected action, not as articulation proof."
+  ],
+  "repair_needs": [
+    {
+      "shot": "S3",
+      "at_s": [
+        14.4,
+        20.4
+      ],
+      "severity": "required",
+      "owner": "researcher_energy",
+      "observation": "The notice lands with the lab name already visible; the later lab-name beat shifts that same heading40px without advancing the notice. Actual announcement_files and lab_name_seats strips show the same date/name composition through the long hold.",
+      "minimal_repair": "Make the lab identification physically arrive as new notice content at its spoken cue, keeping the date readable; retain subsequent fund/training actions. Existing EVENT_CADENCE failure independently agrees.",
+      "source": "video-engine/src/Ep0912.tsx Shot3 beat7 heading group",
+      "evidence": [
+        "out/evidence/filmstrip_announcement_files.jpg",
+        "out/evidence/filmstrip_lab_name_seats.jpg",
+        "out/evidence/filmstrip_fund_credit_turns.jpg"
+      ]
+    },
+    {
+      "shot": "S10",
+      "at_s": [
+        88.1,
+        91.224
+      ],
+      "severity": "required to realize the existing beat27 comparison",
+      "observation": "The inventory_assessment strip shows ASSESS FIT only nudging sideways. Source implements translate(-18*sin(bp27*pi)); it supplies no assessing hand or B-versus-inventory relation. This is an actual weak action, not merely an unlucky quarter-shot sample.",
+      "minimal_repair": "Have a hand grip the existing QUESTION B tab, bring it alongside two visible inventory context tabs and compare them in sequence; the context tabs hinge toward B and remain available. Keep fit undecided and existing TaskA recording visible; retain all exact labels and the following optional pencil choice.",
+      "constraints": "No pass/fail stamp, missing-data assertion, invented UAA protocol/result, extra beat/SFX, clock change or early main payoff.",
+      "source": "video-engine/src/Ep0912.tsx Shot10 bp27 ASSESS FIT group; storyboard beat27",
+      "evidence": [
+        "out/evidence/filmstrip_inventory_assessment.jpg",
+        "out/evidence/filmstrip_task_a_matches.jpg",
+        "out/evidence/filmstrip_task_a_analysis_runs.jpg",
+        "out/evidence/filmstrip_optional_collection_choice.jpg"
+      ]
+    }
+  ],
+  "other_warned_shots": [
+    {
+      "shot": "S2",
+      "verdict": "warning overstates absence of acting; no additional required repair",
+      "evidence": "dry_sensor_seats strip11.15s onward shows the hand closing toward the headset. bp5 reaches10.93\u201311.763s; samples8.73/10.40 precede it and12.07 follows it. The settled contact afterward is meaningful handling, not a held idle human."
+    },
+    {
+      "shot": "S4",
+      "verdict": "no additional required motion repair",
+      "evidence": "student_observes strip36.86s onward shows student arrival/turn/reach; gesture spans36.64\u201338.24s, while report samples32.22/35.77/39.32. Earlier signal draw, contact emphasis and later trace/interpretation isolation change the scene. Retain fixed19 contacts and the blank interpretation field; do not animate either into an invented result."
+    },
+    {
+      "shot": "S5",
+      "verdict": "no additional required motion repair",
+      "evidence": "public_recording_selects strip44.88s onward visibly carries the recording across the book with a following hand; own-task plan and folded-wing beats follow47.08 and50.684. Sample45.35 is late in the heavily eased travel;47.83 is near its next settlement and50.32 is before the wing beat."
+    },
+    {
+      "shot": "S7",
+      "verdict": "no additional required motion repair",
+      "evidence": "Reading book settles56.78\u201357.61s; cognitive_target_attaches strip59.88s onward shows the bookmark flex, target label arrival and reaching hand. Samples58.03/59.30 miss that second action and60.57 follows it. Five-second explanatory shot has two distinct actions; the book is a prop, not an unacted person."
+    },
+    {
+      "shot": "S13",
+      "verdict": "no additional required motion repair",
+      "evidence": "methods_pocket_folds strip113.32s onward compresses/retires the methods leaf; uaa_plans_return strip116.65s onward shows the planned-study sheet repositioning and hand arrival. Samples114.56/116.02 fall between these actions and117.47 follows them. Hold preserves the distinction between principle and planned UAA work."
+    },
+    {
+      "shot": "S6",
+      "verdict": "thin warning is compatible with its short question/setup function; no additional required repair",
+      "evidence": "participant_waiting_arrival strip53.02s onward shows the notched paper marker arriving outside training. The marker is a diagram token, not a human expected to breathe or walk. Preserve its separate position; scene lasts3.97s."
+    },
+    {
+      "shot": "S9",
+      "verdict": "no additional required motion repair; keep reveal stillness",
+      "evidence": "archive_reveals strip74.02s onward visibly brings in the shelves and open public-data book. The74.97 sample is inside the mandated74.533\u201375.133 reveal hold. Later sample76.13 still measures local motion. Static marker here intentionally waits outside training."
+    },
+    {
+      "shot": "S12",
+      "verdict": "no additional required motion repair",
+      "evidence": "heldout_person_enters_test strip108.00s onward shows the marker entering the separate TEST box; evaluation_page_opens adds its page at111.288. Sample107.85 catches the first action andblock_max3.39 clears; the lower whole-frame mean does not imply an unmoving person. Training/test diagram should remain spatially legible."
+    }
+  ],
+  "files_read": [
+    "out/evidence/motion_registered.json",
+    "out/dispatch/bg/evidence_0912_final_v2.log",
+    "out/dispatch/episode_props.json",
+    "out/dispatch/storyboard.json",
+    "scripts/motion_check.py",
+    "video-engine/src/Ep0912.tsx",
+    "video-engine/src/EEGDemo0912.tsx",
+    "video-engine/src/lib/props.tsx",
+    "video-engine/src/lib/spaceweather.tsx"
+  ],
+  "actions": "Read existing rendered strips and source; wrote this receipt only. No source edits, render, probe or evidence mutation.",
+  "next_step": "Parent can authorize the narrowly scoped S10 comparison after energy finishes its Shot3 probe. Re-render changed source and run objective QA plus normal post-render visual review."
+}

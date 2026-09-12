@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-09-12T19:09:54.730080+00:00",
+  "commit": "49d1fc6affc0e505e2ad96bee2ff9d16c1f2484b",
+  "committed_files": [
+    "scripts/dispatch_email.py",
+    "tests/test_dispatch_email.py"
+  ],
+  "changes": [
+    "Render the supplied hosted or inline poster below square-primary download controls.",
+    "Load the fresh current voice report by default and show compact automated QC in Run notes.",
+    "Refuse missing, stale, malformed, failed or runtime-unapproved voice reports without changing QC thresholds.",
+    "Preserve copy-ready caption, first-comment sources and credits, delivery score, upgrades and illustrative note.",
+    "Show null voice loudness as unmeasured and omit ASR transcript and listening claims."
+  ],
+  "validation": [
+    {
+      "command": "python3 -m unittest tests.test_dispatch_email tests.test_visible_copy_check tests.test_run_guard_init -v",
+      "exit_code": 0,
+      "tests": 46,
+      "duration_seconds": 2.277
+    },
+    {
+      "command": "python3 -m py_compile scripts/dispatch_email.py tests/test_dispatch_email.py",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "check": "Current vo_report.json read through real run freshness guard",
+      "status": "PASS"
+    },
+    {
+      "check": "Complete HTML visible-copy check exercised for null and measured voice loudness",
+      "status": "PASS"
+    }
+  ],
+  "current_voice_report": {
+    "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/vo_report.json",
+    "sha256": "d5be5e4ed7371f0d656d80f0219bdfae2120c78ae45b90e881a3d3a7297f2f4c",
+    "scorecard": "Automated voice sound check \u00b7 PASS \u00b7 score 0.991\nWord error rate 1.9% \u00b7 no spoken-tag leaks \u00b7 pitch spread 6.42 semitones \u00b7 voiced frames 55%\nVoice take 122.88 seconds \u00b7 Voice loudness unmeasured"
+  },
+  "deliverables": {
+    "dispatch_master.mp4": {
+      "sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+      "matches_panel_verdict": true
+    },
+    "dispatch_square.mp4": {
+      "sha256": "2e87198ec7b3cc0e7b84355ed80cb3b5b35a0cdfc7822adcd12e236491d17e6f",
+      "matches_panel_verdict": true
+    },
+    "dispatch_master_720.mp4": {
+      "sha256": "2178a5421fe4cf02f0e8b47236fb08f001d17d8c1a26d5e3d0d35be49040fc1e",
+      "matches_panel_verdict": true
+    }
+  },
+  "delivery_actions": {
+    "gmail_created": false,
+    "gmail_updated": false,
+    "gmail_sent": false,
+    "published": false,
+    "rendered": false
+  },
+  "handoff": "Root rebuilds the real email and updates the existing unsent DRAFT. No new draft or rerender is needed."
+}

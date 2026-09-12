@@ -1,0 +1,325 @@
+{
+  "note": "frame 1 vs frame 8 of each filmstrip window, measured on the delivered cut. changed_pct is the share of pixels differing by more than 12/255. A judge who cannot SEE motion in a strip should read this before recording that the beat is frozen. EVERY WINDOW HERE IS WITHIN A SINGLE SHOT: any window that straddled a cut has been slid clear of it and is marked straddled_cut, because a strip spanning a cut measures the cut and reports it as animation. Before 2026-08-13 it did not do this, and the large figures in older packs are shot changes, not motion. Cross-check against motion_registered.json, which solves the camera out per shot.",
+  "strips": {
+    "notebook_opens": {
+      "centre_s": 0.35,
+      "changed_pct": 2.0,
+      "peak_delta": 213,
+      "window_start_s": 0.22,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "public_page_yields": {
+      "centre_s": 2.12,
+      "changed_pct": 2.4,
+      "peak_delta": 215,
+      "window_start_s": 1.99,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "next_step_catches": {
+      "centre_s": 4.32,
+      "changed_pct": 2.7,
+      "peak_delta": 209,
+      "window_start_s": 4.19,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "lab_bench_assembles": {
+      "centre_s": 7.43,
+      "changed_pct": 2.9,
+      "peak_delta": 205,
+      "window_start_s": 7.3,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "dry_sensor_seats": {
+      "centre_s": 11.28,
+      "changed_pct": 5.2,
+      "peak_delta": 226,
+      "window_start_s": 11.15,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "announcement_files": {
+      "centre_s": 14.07,
+      "changed_pct": 2.7,
+      "peak_delta": 240,
+      "window_start_s": 13.94,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "lab_name_seats": {
+      "centre_s": 17.37,
+      "changed_pct": 2.0,
+      "peak_delta": 219,
+      "window_start_s": 17.24,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "fund_credit_turns": {
+      "centre_s": 21.75,
+      "changed_pct": 6.0,
+      "peak_delta": 226,
+      "window_start_s": 21.62,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "training_leaf_opens": {
+      "centre_s": 26.19,
+      "changed_pct": 3.2,
+      "peak_delta": 242,
+      "window_start_s": 26.06,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "scalp_recording_reveals": {
+      "centre_s": 29.03,
+      "changed_pct": 0.5,
+      "peak_delta": 251,
+      "window_start_s": 28.9,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "fixed_scalp_contact_emphasized": {
+      "centre_s": 32.56,
+      "changed_pct": 1.9,
+      "peak_delta": 238,
+      "window_start_s": 32.43,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "student_observes": {
+      "centre_s": 36.99,
+      "changed_pct": 5.1,
+      "peak_delta": 199,
+      "window_start_s": 36.86,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "trace_stops_before_interpretation": {
+      "centre_s": 40.36,
+      "changed_pct": 6.1,
+      "peak_delta": 235,
+      "window_start_s": 40.23,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "archive_book_opens": {
+      "centre_s": 43.23,
+      "changed_pct": 5.5,
+      "peak_delta": 234,
+      "window_start_s": 43.1,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "public_recording_selects": {
+      "centre_s": 45.01,
+      "changed_pct": 4.3,
+      "peak_delta": 233,
+      "window_start_s": 44.88,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "own_task_plan_arrives": {
+      "centre_s": 47.43,
+      "changed_pct": 4.2,
+      "peak_delta": 234,
+      "window_start_s": 47.3,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "concealed_wing_hints": {
+      "centre_s": 51.03,
+      "changed_pct": 2.5,
+      "peak_delta": 213,
+      "window_start_s": 50.9,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "participant_waiting_arrival": {
+      "centre_s": 53.15,
+      "changed_pct": 2.7,
+      "peak_delta": 213,
+      "window_start_s": 53.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "reading_plan_unfolds": {
+      "centre_s": 57.13,
+      "changed_pct": 4.6,
+      "peak_delta": 225,
+      "window_start_s": 57.0,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "cognitive_target_attaches": {
+      "centre_s": 60.02,
+      "changed_pct": 6.4,
+      "peak_delta": 223,
+      "window_start_s": 59.88,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "programming_plan_unfolds": {
+      "centre_s": 62.19,
+      "changed_pct": 3.1,
+      "peak_delta": 223,
+      "window_start_s": 62.06,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "eye_movement_separates": {
+      "centre_s": 65.6,
+      "changed_pct": 2.7,
+      "peak_delta": 230,
+      "window_start_s": 65.47,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "planned_answers_stay_open": {
+      "centre_s": 69.61,
+      "changed_pct": 3.2,
+      "peak_delta": 227,
+      "window_start_s": 69.48,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "archive_reveals": {
+      "centre_s": 74.15,
+      "changed_pct": 9.7,
+      "peak_delta": 226,
+      "window_start_s": 74.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "task_a_matches": {
+      "centre_s": 78.81,
+      "changed_pct": 1.0,
+      "peak_delta": 224,
+      "window_start_s": 78.68,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "task_a_analysis_runs": {
+      "centre_s": 82.18,
+      "changed_pct": 3.0,
+      "peak_delta": 229,
+      "window_start_s": 82.05,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "task_b_question_arrives": {
+      "centre_s": 85.65,
+      "changed_pct": 5.7,
+      "peak_delta": 241,
+      "window_start_s": 85.52,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "inventory_assessment": {
+      "centre_s": 88.45,
+      "changed_pct": 3.5,
+      "peak_delta": 239,
+      "window_start_s": 88.32,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "optional_collection_choice": {
+      "centre_s": 91.57,
+      "changed_pct": 2.8,
+      "peak_delta": 242,
+      "window_start_s": 91.44,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "extra_wing_reveals": {
+      "centre_s": 93.49,
+      "changed_pct": 1.4,
+      "peak_delta": 225,
+      "window_start_s": 93.36,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "courtesy_callback": {
+      "centre_s": 96.72,
+      "changed_pct": 2.0,
+      "peak_delta": 229,
+      "window_start_s": 96.59,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "task_plan_attaches": {
+      "centre_s": 99.97,
+      "changed_pct": 2.9,
+      "peak_delta": 235,
+      "window_start_s": 99.84,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "interpretation_separates": {
+      "centre_s": 102.01,
+      "changed_pct": 5.5,
+      "peak_delta": 227,
+      "window_start_s": 101.88,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "conditional_claim_opens": {
+      "centre_s": 106.45,
+      "changed_pct": 2.6,
+      "peak_delta": 205,
+      "window_start_s": 106.32,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "heldout_person_enters_test": {
+      "centre_s": 108.13,
+      "changed_pct": 3.9,
+      "peak_delta": 227,
+      "window_start_s": 108.0,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "evaluation_page_opens": {
+      "centre_s": 111.64,
+      "changed_pct": 3.0,
+      "peak_delta": 228,
+      "window_start_s": 111.51,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "methods_pocket_folds": {
+      "centre_s": 113.45,
+      "changed_pct": 2.3,
+      "peak_delta": 218,
+      "window_start_s": 113.32,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "uaa_plans_return": {
+      "centre_s": 116.78,
+      "changed_pct": 4.7,
+      "peak_delta": 242,
+      "window_start_s": 116.65,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "pencil_poises": {
+      "centre_s": 119.29,
+      "changed_pct": 3.1,
+      "peak_delta": 233,
+      "window_start_s": 119.16,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "notebook_loops": {
+      "centre_s": 121.26,
+      "changed_pct": 5.8,
+      "peak_delta": 234,
+      "window_start_s": 121.13,
+      "straddled_cut": false,
+      "within_shot": true
+    }
+  }
+}

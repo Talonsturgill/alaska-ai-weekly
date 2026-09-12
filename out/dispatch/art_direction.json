@@ -1,45 +1,95 @@
 {
-  "run_date": "2026-09-11",
-  "title": "Over the Missing Road",
+  "run_date": "2026-09-12",
+  "title": "The Question Comes First",
   "palette": {
-    "roles": {"sky":"#F6E7C8","ground":"#2C493E","hero":"#EAF0E8","accent":"#C7434E","signal":"#F4C95D","shadow":"#22182F"},
-    "why": "Warm clinic cream and spruce ground make the film cautiously hopeful. Berry red belongs only to projected, preliminary and wrong-test states. Gold appears only on facts already established by a source. All unearned criteria stay neutral graphite and unfilled. This avoids the prior glacier's charcoal, alpenglow amber, radar magenta and glacial cyan as well as the subsea film's dark marine chartreuse world."
+    "sky": "#E8E1FA",
+    "ground": "#776CB6",
+    "hero": "#FFF9E8",
+    "accent": "#E4EC65",
+    "shadow": "#25213D",
+    "secondary": "#ED9575",
+    "why": "A bright lilac studio with warm paper and citron planning tabs puts curious student work in daylight. Deep violet shelves give the archive equal visual authority. It diverges from September11 spruce/cream/berry and September10 charcoal/cyan/magenta; no landscape palette or default blue."
   },
   "light": {
-    "time": "bright overcast morning",
-    "direction": "soft upper left key with a low warm bounce from the ground",
-    "key_fill_rim": "broad cream key, restrained spruce fill, persistent plum lower-right edge on the cooler and gold rim only for established facts",
-    "depth": "three paper and terrain planes separate through cast shadows, parallax and darker plum occlusion rather than blue haze",
-    "why": "The story is a practical test, so readable daylight and grounded shadows beat science-noir or futuristic neon."
+    "time": "Clear early afternoon",
+    "direction": "Upper left key, diagonal shadows toward lower right",
+    "key": "Warm ivory key on paper and skin, firm enough to show folds and layered stock",
+    "fill": "Cool violet fill one value step below each base",
+    "rim": "Narrow pale citron rim on the headset crown and exposed page edges",
+    "depth": "Three true Stage3D planes at z=480,160,0; contact shadows anchor every notebook/headset; background fixtures sit behind subject planes, never texture pasted on top."
   },
   "shape_language": {
-    "grammar": "The rounded insulated FlightCrate represents the human-scale goal. Hard rectangular award sheets, split lanes and approval gates represent the proof burden. Curved route ribbons become straight only when a criterion is named.",
-    "why": "Soft care object versus hard evidence geometry keeps hope and accountability visible at once."
+    "grammar": "Rounded headset ribs and supple paper curves contrast with precise archive slots and rectangular test spaces.",
+    "why": "The instrument supplies structured measurements while a foldable notebook holds open research choices. Dotted outlines belong only to planned task/output areas; solid pages show available public data."
   },
   "casting": {
-    "hero": "FlightCrate, a net-new reusable cold-chain throughline asset with a tamper seal, thermometer, destination tag and five proof lights",
-    "supporting": ["BushPlane from vehicles.tsx for the existing conventional network", "StatCard and Nameplate from props.tsx for the preliminary award", "AlaskaMini from kit.tsx for the route field", "Gate from civics.tsx for AIRCRAFT, PILOT and OPERATION proof states"],
-    "net_new_asset": "FlightCrate in lib/clinic.tsx",
-    "why": "The crate is the one physical object every proposed system exists to move. Existing shelf assets cover people, conventional aviation, maps and paperwork."
+    "hero": "Sheet composed as one stitched research notebook",
+    "support": [
+      "Character",
+      "PaperFiber",
+      "EvidenceTrace",
+      "GripHand",
+      "QuestionToken",
+      "Stage3D",
+      "Plane",
+      "CameraMoves",
+      "ContactShadow",
+      "RimLight"
+    ],
+    "new_asset": "EEGHeadset, a neutral reusable research sensor with exactly19 scalp contacts in its explanatory array, two distinct earclips and three empty auxiliary sockets",
+    "why": "Paper, human rig, hand, trace and token are already on the shelf. No existing sensor is worn on a scalp, so the EEG silhouette is the one real subject gap. Generic illustrated students carry no named likeness claim."
   },
   "motion_language": {
-    "world": "A route ribbon travels horizontally until hard gates stop it. Paper tears vertically when one award splits into two tests. The crate carries across every act boundary with spring anticipation and a weighted settle.",
-    "hero_moves": ["road rolls away by three seconds", "crate pivots between conflicting geography cards at sixty seconds", "five proof lights chase but remain graphite outlines near one hundred seconds", "cargo ticket punches WRONG TEST before the final route payoff"],
-    "blur": "180-degree blur only on the road roll, the award split and the rejected ticket. The crate itself moves with readable mass.",
-    "why": "The film should feel like forward progress repeatedly checked by evidence, not a drone glamour reel."
+    "hero_moves": [
+      "Notebook springs open and stops against its concealed NEXT STEP wing",
+      "Nineteen contacts expand into a counted schematic then settle into one recording device",
+      "Public page slides through selection and comparison work areas while the new device rests",
+      "A hand assesses a new task and unfolds an extra collection-and-test workspace",
+      "A distinct hypothetical participant enters TEST without ever entering TRAINING"
+    ],
+    "timing": "Anticipation, overshoot and settle for page hinges and hand gestures; light cable follow-through on the headset, book-page recoil and breathing/blinking on human rigs. One snap-in on the revealed NEXT STEP, no frantic continuous zoom.",
+    "blur": "180-degree motion smear only during page wipes and a quick paper shuffle. Hold the identity tab crisp above the wipe."
   },
   "composition": {
-    "staging": "Track left to right with the crate fixed near the center third while the world changes behind it. Use macro inserts for the cold gauge and document fields, an extreme-wide route map, then a two-up split for cargo and passenger proof. Keep all load-bearing action inside the central 1080 by 1080 crop.",
-    "focal_hierarchy": "FlightCrate first, one large claim plate second, route or aircraft silhouette third. Never stack more than one checklist behind captions.",
-    "negative_space": "At the turn, both aircraft shadows drop away and the crate waits in cream space with five outlined, unfilled proof lights.",
-    "square_safe": "The crate, award amount, route blank and wrong-test punch remain between y 470 and 1260 so the centered square preserves the argument.",
-    "signature_shot": "One pale medicine crate centers a single vertical tear. A short left rail reads CARGO TEST and a three-gate right stack reads PEOPLE TEST. All nuance stays in the voice so the square image remains immediate.",
-    "why": "The stable crate lets radical stage changes remain coherent and makes the two tests readable on phone and square."
+    "safe_area": "Story essentials within x90..990 and y490..1270; captions stay y1336..1468. Square crop y420..1500 retains every claim and action. Portrait-only brand above420 is nonessential.",
+    "sets": [
+      "Lab bench with window and instrument stand",
+      "Overhead scalp schematic",
+      "Public-data archive shelves and comparison desk",
+      "Reading desk",
+      "Programming desktop with separate planned eye-movement marker",
+      "General methods diagram"
+    ],
+    "hierarchy": "One central action in each shot, then a large short annotation, then provenance/plan label. At least four scales and three camera heights. No side-by-side tiny dashboard.",
+    "signature_shot": "The same small stitched notebook expands sideways into a broad two-route workbench: a public-data page still actively in use and a new TO COLLECT / TO TEST wing, with no answer manufactured.",
+    "paper_identity": "A coral NEXT STEP tab, stitched spine and dog-ear persist in every view. The new wing remains concealed until the late payoff; earlier pages change pose without revealing it.",
+    "negative_space_beats": [
+      {
+        "at_s": 31.78,
+        "until_s": 34.37,
+        "staging": "Archive fixtures recede behind the isolated schematic scalp trace and an empty interpretation area on ivory. Keep the SCHEMATIC label and notebook identity tab. The trace stops before the empty field.",
+        "purpose": "Give measurement and interpretation visibly different spaces."
+      },
+      {
+        "at_s": 83.49,
+        "until_s": 89.48,
+        "staging": "Clear loose stationery and secondary fixtures out of the central square-safe field while the same notebook wing opens. Keep the active public page at left and the new TO COLLECT / TO TEST spaces empty at right.",
+        "purpose": "Make added workspace the reveal while both research routes remain readable."
+      }
+    ]
   },
   "craft_advance": {
-    "system": "evidenceLatch in lib/motion.tsx",
-    "change": "A reusable anticipation, overshoot and settle primitive will drive proof lights and approval stamps so evidence states arrive with physical weight instead of linear opacity.",
-    "verification": "TypeScript compile plus a FlightCrate look-development strip will verify PROPOSED, split-test, five-unearned-lights and blank-tag states at full size, 0.28 scale and centered-square crop. The strip must show the seal, gauge, tag, lights, shadows and cooler contrast against both paper and sky.",
-    "why": "Approval and evidence stories recur, and their most important state changes should never look like flat HUD toggles."
-  }
+    "system": "QuestionToken typography and palette parameters",
+    "change": "Honor arbitrary text instead of silently rendering WHO EARNED THIS, with measured two-line fit and explicit colors while preserving legacy defaults.",
+    "proof": "Use NEXT STEP and TEST? tokens in this film and render long and short copy at phone size; preserve legacy default in a comparison still.",
+    "why": "The shelf advertises custom copy but the current component ignores it. A real generic question prop keeps story language in the asset parameter rather than one-off substitutes."
+  },
+  "binding_corrections": [
+    "RESULT? is never used",
+    "Planned reading and programming remain labeled in every shot",
+    "Waiting participant carries GENERAL METHODS EXAMPLE / IF NEW PEOPLE from its plant",
+    "The public route performs selection and analysis without a fabricated result",
+    "One complete rough cut precedes polished hero work"
+  ],
+  "treatment_deviation": "The scoring room's suggested ink-blue/green/copper palette is replaced deliberately with lilac/ivory/citron/coral because it is more distinct from the two recent films; the material notebook and warm celebratory intent are preserved."
 }

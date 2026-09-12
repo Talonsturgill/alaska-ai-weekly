@@ -1,29 +1,38 @@
 {
-  "run_date": "2026-09-11",
-  "window_reported_by_gate": 10,
-  "search_budget": {"researchers": 3, "capped": true, "exhausted": false},
+  "run_date": "2026-09-12",
+  "window": [
+    "2026-09-02",
+    "2026-09-12"
+  ],
   "rungs": [
-    {"rung": "in_window_sweep", "attempted": true, "note": "Three bounded researchers and the orchestrator covered Alaska health, aviation, science, workforce, fisheries, public safety and education stories from September 2nd through September 11th."},
-    {"rung": "outlet_index_sweep", "attempted": true, "note": "The sweep included Alaska Department of Health, UAF T3, NOAA Fisheries, UAA and FAA primary pages and current indexes."},
-    {"rung": "widened_window", "attempted": false, "note": "Not needed because an official September 4th award notice supplied an in-window story."},
-    {"rung": "carried_leads", "attempted": false, "note": "Not needed."},
-    {"rung": "primary_source_mining", "attempted": true, "note": "The Alaska Department of Health award workbook supplied the project amount, proposal language, applicant, date and service-area fields."},
-    {"rung": "follow_up", "attempted": false, "note": "Not needed."},
-    {"rung": "pegged_explainer", "attempted": false, "note": "Not needed."}
+    {
+      "rung": "in_window_sweep",
+      "attempted": true,
+      "evidence": [
+        "research_science.json",
+        "research_rural.json",
+        "research_energy.json"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "research": "research_energy.json",
+      "findings": "Energy/grid, defense/aviation/UAS, breaking industry; adjacent maritime logistics research"
+    },
+    {
+      "research": "research_rural.json",
+      "findings": "rural, Native-led, workforce and public capability"
+    },
+    {
+      "research": "research_science.json",
+      "findings": "UAA EEG research moves from public datasets to locally collected signals"
+    }
   ],
   "locked_story": {
-    "id": "over-the-missing-road",
+    "headline": "UAA gains the ability to collect brain signals for its own research questions",
     "found_at_rung": "in_window_sweep",
-    "headline": "Over the Missing Road",
-    "primary_sources": ["https://health.alaska.gov/en/education/rural-health-transformation-program/", "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx"],
-    "dedupe": "FRESH on the distinctive Ryan Air rural-health award subject and FlightCrate hero. The last two shipped heroes were SubseaHive and RockGlacierCore. No Dispatch in the 30-day window covered this proposal or its preliminary funding gate."
-  },
-  "candidates": [
-    {"headline": "Ryan Air wins preliminary funding for autonomous medical aviation", "status": "SELECTED", "date": "2026-09-04", "reason": "An official state award workbook supplies a consequential Alaska autonomy proposal, a precise projected award, roadless-community stakes, a visible funding-to-flight gap and an unusually honest test for a hopeful film."},
-    {"headline": "UAA adds a dry EEG system for AI and brain-computer-interface research", "status": "RUNNER-UP", "date": "2026-09-09", "reason": "Explicit AI research and a strong Alaska workforce angle, but the current milestone is equipment acquisition with no study result yet."},
-    {"headline": "T3 Alaska launches a drone credential path", "status": "RUNNER-UP", "date": "2026-09-01", "reason": "Concrete student support and a guaranteed interview make a real workforce win, but the program trains human-operated drones rather than autonomy or AI."},
-    {"headline": "NOAA charts a path to modernized fisheries surveys", "status": "RUNNER-UP", "date": "2026-09-03", "reason": "A careful automation framework with autonomous vehicles and advanced models, but less locally specific and less immediate than the Alaska health award."},
-    {"headline": "ANTHC receives preliminary funding for pharmacy automation", "status": "RUNNER-UP", "date": "2026-09-04", "reason": "A substantial Alaska Native-led health-system proposal, but public materials do not yet establish an implementation mechanism or result."},
-    {"headline": "Wearable monitoring proposed for Alaska commercial vessels", "status": "REJECTED", "date": "2026-09-04", "reason": "Concrete medevac stakes, but unresolved biometric surveillance and employment-screening issues require worker voices absent from the funding notice."}
-  ]
+    "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+    "validation": "Independent validator confirmed acquired equipment and training, planned studies only, and manufacturer electrode count."
+  }
 }

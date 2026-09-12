@@ -58,8 +58,8 @@ const monoW = (s: string, size: number, track = 0) =>
 const fitSize = (s: string, maxW: number, ideal: number, floor = 13) =>
   Math.max(floor, Math.min(ideal, maxW / (s.length * 0.602 + 0.001)));
 
-export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number}> = ({
-  data, durationInFrames,
+export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; paperDesk?: boolean}> = ({
+  data, durationInFrames, paperDesk = false,
 }) => {
   const f = useCurrentFrame();
   // TWO FADES, because the mark is a SIGN-OFF and not a header (owner, 2026-08-09).
@@ -124,6 +124,20 @@ export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number}>
         <ellipse cx={W / 2 + Math.sin(f / 74) * 300} cy={640 + Math.cos(f / 96) * 260}
                  rx={640} ry={430} fill="#3A2F22"
                  opacity={0.16 + 0.06 * Math.sin(f / 41)} />
+
+        {/* September 12 keeps its opened notebook on the desk through the credits.
+            Only the loose paper corners and bookmark move; every attribution stays
+            fixed and unobstructed. The notebook retires with the source body. */}
+        {paperDesk && <g opacity={body}>
+          <ellipse cx={540} cy={1757} rx={365} ry={23} fill="black" opacity={.45}/>
+          <path d="M189 1418Q363 1395 540 1420Q719 1395 891 1418V1729Q718 1704 540 1731Q365 1704 189 1729Z" fill="#ED9575" stroke="#25213D" strokeWidth={7}/>
+          <path d="M201 1410Q365 1390 540 1417Q715 1390 878 1410V1717Q715 1698 540 1720Q365 1698 201 1717Z" fill="#E8E2D4" stroke="#776CB6" strokeWidth={4}/>
+          <path d="M540 1417V1720" stroke="#776CB6" strokeWidth={9}/>
+          <path d={`M201 1410L${289+32*Math.sin(f/27)+9*Math.sin(f/61)} ${1404+24*Math.sin(f/27)+7*Math.sin(f/61)}Q${269+24*Math.sin(f/27)+7*Math.sin(f/61)} ${1461+12*Math.sin(f/43)} 201 1507Z`} fill="#B6A9D3" stroke="#776CB6" strokeWidth={5}/>
+          <path d={`M878 1717L${790+32*Math.sin(f/34+1)+9*Math.sin(f/71)} ${1709+26*Math.sin(f/34+1)+8*Math.sin(f/71)}Q${816+22*Math.sin(f/34+1)+8*Math.sin(f/71)} ${1659+13*Math.sin(f/47)} 878 1622Z`} fill="#B6A9D3" stroke="#776CB6" strokeWidth={5}/>
+          <path d={`M508 1470H550Q${568+17*Math.sin(f/31)+6*Math.sin(f/79)} 1552 ${545+23*Math.sin(f/39)} 1636L${522+23*Math.sin(f/39)} 1619L${500+23*Math.sin(f/39)} 1636Q${525+17*Math.sin(f/31)} 1549 508 1470Z`} fill="#ED9575" stroke="#776CB6" strokeWidth={4}/>
+          <path d="M234 1555H428M234 1591H404M638 1498H832M638 1534H805" fill="none" stroke="#776CB6" strokeWidth={5} opacity={.35}/>
+        </g>}
 
         {/* THE SIGN-OFF. Drawn last in the file so it is on top, and it outlives the body. */}
         <g transform={`translate(${W / 2},${markY})`} opacity={mark}>

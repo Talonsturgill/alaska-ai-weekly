@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-09-12T16:36:18.595266+00:00",
+  "candidate": "final_v1",
+  "ship": false,
+  "quality_failures": [
+    "CAMERA_MOTION",
+    "LIVING_SCREEN"
+  ],
+  "preflight_failures": [
+    "claims_contract_check"
+  ],
+  "evidence_failure": "matplotlib missing in audio_evidence",
+  "render_wall_seconds": 1746.8,
+  "delivery_sha256": {
+    "dispatch_master.mp4": "fbbc02ee0f326372d53c45540b2f51658d5463834ff0c760dcb6d6cbe7cb6628",
+    "dispatch_square.mp4": "f7802f1d5affd438d828d6679e1a807ba24f60851042ff62abd82ba2e4468a79",
+    "dispatch_master_720.mp4": "3186b7b149a3a3988caa3abb4c58b411ac8bbb61205ca3523436a600fed16985"
+  }
+}

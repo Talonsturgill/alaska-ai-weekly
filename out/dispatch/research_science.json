@@ -1,0 +1,182 @@
+{
+  "dedupe_list": [
+    {
+      "date": "2026-08-30",
+      "exclude": "Rainmaker Kenai cloud-seeding drones and modeled precipitation"
+    },
+    {
+      "date": "2026-09-01",
+      "exclude": "Sivadas and Ozturk solar-storm measurement ceiling"
+    },
+    {
+      "date": "2026-09-02",
+      "exclude": "University of Alaska AI Engaged draft"
+    },
+    {
+      "date": "2026-09-03",
+      "exclude": "Tanana Chiefs Conference Sully.ai"
+    },
+    {
+      "date": "2026-09-06",
+      "exclude": "DeepGreen Upper Cook Inlet tidal data-center proposal"
+    },
+    {
+      "date": "2026-09-10",
+      "exclude": "Sourdough Peak rock glacier near McCarthy"
+    },
+    {
+      "date": "2026-09-11",
+      "exclude": "Ryan Air rural-health autonomous cargo and eVTOL award"
+    }
+  ],
+  "beat": "Science, fisheries, wildlife, AI/ML and robotics",
+  "window": [
+    "2026-09-02",
+    "2026-09-12"
+  ],
+  "research_date": "2026-09-12",
+  "search_queries_used": 19,
+  "recommended_story": "UAA EEG research moves from public datasets to locally collected signals",
+  "stories": [
+    {
+      "story_title": "UAA EEG research moves from public datasets to locally collected signals",
+      "summary_2_sentences": "UAA announced acquisition of a Wearable Sensing DSI-24 dry EEG for its AI and Robotics Lab. Reading-related cognitive-state estimation and analysis of brain activity and eye movements during programming are planned research applications.",
+      "why_it_matters_to_alaskans": "Anchorage students gain equipment to collect task-specific data, with interdisciplinary collaboration envisioned.",
+      "sources": [
+        {
+          "url": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+          "outlet": "University of Alaska Anchorage",
+          "pub_date": "2026-09-09",
+          "author": "Matt Jardin",
+          "fetched": true,
+          "primary": true
+        },
+        {
+          "url": "https://wearablesensing.com/dsi-24/",
+          "outlet": "Wearable Sensing",
+          "pub_date": null,
+          "background_context": true,
+          "fetched": true,
+          "primary": true
+        },
+        {
+          "url": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
+          "outlet": "Wearable Sensing",
+          "pub_date": null,
+          "document_version": "V1.2023",
+          "background_context": true,
+          "fetched": true,
+          "primary": true
+        }
+      ],
+      "exact_figures": [
+        "19 scalp electrodes",
+        "2 earclips",
+        "3 auxiliary sensor inputs"
+      ],
+      "short_quote": {
+        "text": "so I’m excited to be able to collect my own data for my own tasks",
+        "speaker": "Vadim Egorov, UAA graduate student",
+        "source": "UAA September 9 story",
+        "word_count": 15
+      },
+      "verified_status": "Equipment acquired; students and faculty trained; photograph documents Egorov viewing his EEG signals. Funding came from the Educational Legacy Fund.",
+      "evidence_boundaries": [
+        "Both named studies are planned. No completed programming experiment or reading-study findings reported.",
+        "No accuracy, classification performance, sample size, patient outcome, model architecture, cost or recruitment date reported.",
+        "The source measures scalp electrical activity; it does not establish direct measurement of thoughts, comprehension or intention.",
+        "Manufacturer manual PDF page 64 explicitly limits the device to research rather than medical diagnosis or clinical use. Do not depict a treatment or diagnostic deployment.",
+        "Manufacturer lists QStates cognitive classification as compatible software; UAA does not say it acquired or uses QStates. Do not attribute this algorithm or vendor performance claims to UAA."
+      ],
+      "story_fuel": "A person creates the signal; a headset makes it observable; a research question determines what a model must learn. The causal change is access to locally collected data. Show planned experiments as unanswered questions.",
+      "local_sentiment": "Documented enthusiasm from Egorov and faculty; institutional accounts only. No independently reported community or participant reaction located.",
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "recommendation": "Lead. Clear date and explicit AI research connection; visually distinct from recent natural-environment films."
+    },
+    {
+      "story_title": "Lost Lakes platform follows disappearing Arctic water, including Northwest Alaska",
+      "summary_2_sentences": "AWI announced its Lost Lakes platform on September 10. Satellite-derived water-area records can help distinguish persistent drainage from temporary fluctuations across Arctic permafrost regions.",
+      "sources": [
+        {
+          "url": "https://www.awi.de/en/about-us/service/press/single-view/verschwindende-seen-neue-datenplattform-zu-permafrost-seen-in-der-arktis.html",
+          "outlet": "Alfred Wegener Institute",
+          "pub_date": "2026-09-10",
+          "author": "Institutional press release",
+          "fetched": true,
+          "primary": true
+        },
+        {
+          "url": "https://phys.org/news/2026-08-lakes-photos-ai-scientists-arctic.html",
+          "outlet": "The Conversation, republished by Phys.org",
+          "pub_date": "2026-08-26",
+          "author": "Anna Liljedahl and Ingmar Nitze",
+          "fetched": true,
+          "primary": true,
+          "background_context": true
+        }
+      ],
+      "exact_figures": [
+        "Around 4 million Arctic lakes in platform",
+        "Just under 10,000 lakes lost sizeable area or disappeared since 2016 (Arctic-wide)",
+        "Researchers' August 26 account identified around 30 lakes affected by drainage in Northwest Alaska during June and July 2026"
+      ],
+      "short_quote": {
+        "text": "Local people, who spend a lot of time in this landscape, are usually the first to notice its constant ongoing change",
+        "speaker": "Ingmar Nitze",
+        "source": "AWI September 10 release",
+        "word_count": 21
+      },
+      "ai_boundary": "AWI describes a numerical satellite index for Lost Lakes, and separately the broader Permafrost Discovery Gateway AI initiative. Researcher-authored August account explicitly discusses AI image analysis. Do not invent a Lost Lakes neural-network architecture or accuracy statistic.",
+      "story_fuel": "A lake can survive centuries and empty within hours; the information can arrive before a journal paper.",
+      "local_sentiment": "Researcher emphasizes local observers' existing knowledge. No direct Alaska resident reaction found.",
+      "confidence": "high for platform; medium for precise AI mechanism",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "recommendation": "Backup; resembles September 10 remote-sensing/permafrost imagery. Live dashboard could not be fetched by web tool."
+    }
+  ],
+  "other_verified_leads": [
+    {
+      "title": "Charting the Future of Fisheries-Independent Surveys",
+      "url": "https://www.fisheries.noaa.gov/feature-story/charting-future-fisheries-independent-surveys",
+      "pub_date": "2026-09-03",
+      "fetched": true,
+      "primary_source": true,
+      "finding": "Alaska Fisheries Science Center-led framework urges calibration and parallel testing of autonomous vehicles, cameras, acoustics and eDNA alongside legacy surveys. Physical fish samples still supply age, diet and condition information.",
+      "hold_reason": "Alaska.AI already discussed this source in the September 6 site article Run Both Instruments, or Lose the Record. Robotics is real; new AI model or performance result is not established."
+    }
+  ],
+  "rejected": [
+    {
+      "title": "Ancient cheetah adapted to fish-based diet",
+      "url": "https://www.uaf.edu/news/ancient-cheetah-adapted-to-fish-based-diet-to-survive.php",
+      "pub_date": "2026-09-04",
+      "reason": "Fresh Alaska science but no verified AI/robotics connection."
+    },
+    {
+      "title": "Nine Species of Deep-Sea Sponges Discovered in Alaska",
+      "url": "https://www.fisheries.noaa.gov/feature-story/nine-species-deep-sea-sponges-discovered-alaska",
+      "pub_date": "2026-09-10",
+      "reason": "Fresh Alaska science; no AI/machine-learning method established."
+    },
+    {
+      "title": "Northeast NOAA autonomous vehicle science roundup",
+      "url": "https://content.govdelivery.com/accounts/USNOAAFISHERIES/bulletins/427c2f5",
+      "pub_date": "2026-09-09",
+      "reason": "Fresh robotics but Northeast U.S. deployments, no concrete Alaska event."
+    },
+    {
+      "title": "Wood River drone salmon counting",
+      "reason": "July reporting, outside window and already covered July 10."
+    },
+    {
+      "title": "UAA NSF AI critical-mineral research assistant recruitment",
+      "reason": "LinkedIn-only current lead and recruitment deadline September 10; core project covered August 9. Do not use social post as primary."
+    }
+  ],
+  "notes": "Thin fresh science window. UAA EEG is sufficiently sourced by its primary announcement, with manufacturer manual providing a useful research-only boundary. No publication claims or statewide sentiment should be inferred from equipment acquisition."
+}

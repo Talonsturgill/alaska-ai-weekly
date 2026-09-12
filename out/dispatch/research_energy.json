@@ -1,0 +1,150 @@
+{
+  "dedupe_exclusions": [
+    "2026-08-30 Rainmaker Kenai cloud-seeding drones",
+    "2026-09-01 Sivadas solar-wind measurement",
+    "2026-09-02 University of Alaska AI Engaged",
+    "2026-09-03 Tanana Chiefs Conference Sully.ai",
+    "2026-09-06 DeepGreen tidal data center",
+    "2026-09-10 Sourdough Peak rock glacier",
+    "2026-09-11 Ryan Air rural-health aviation"
+  ],
+  "beat": "Energy/grid, defense/aviation/UAS, breaking industry; adjacent maritime logistics research",
+  "window": [
+    "2026-09-02",
+    "2026-09-12"
+  ],
+  "searched_at_utc": "2026-09-12T13:04:50.974536+00:00",
+  "web_search_queries_used": 20,
+  "stories": [
+    {
+      "story_title": "Nome-to-Kotzebue GeoAI prototype makes humans choose route trade-offs",
+      "summary_2_sentences": "A September 8 preprint tests an Arctic route-planning system on Nome–Kotzebue. It combines conversational AI, deterministic routing and separate human-selected equity judgments.",
+      "why_it_matters_to_alaskans": "The actual experiment concerns a Western Alaska supply corridor, with habitat and community exposure included in the decision.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2609.09374",
+          "outlet": "arXiv author preprint",
+          "pub_date": "2026-09-08",
+          "date_kind": "v1 submission at 19:15:36 UTC",
+          "author": "Samira Alkaee Taleghan; Younghyun Koo; Farnoush Banaei-Kashani",
+          "fetched": true
+        },
+        {
+          "url": "https://arxiv.org/html/2609.09374v1",
+          "outlet": "Full primary paper",
+          "pub_date": "2026-09-08",
+          "fetched": true
+        },
+        {
+          "url": "https://github.com/samiraat/Arctic-Eco-Navigation-Agent",
+          "outlet": "Authors public source repository",
+          "pub_date": null,
+          "background_context": true,
+          "fetched": true
+        },
+        {
+          "url": "https://samiraat.github.io/Arctic-Eco-Navigation-Agent/",
+          "outlet": "Authors project page",
+          "pub_date": null,
+          "background_context": true,
+          "fetched": true
+        }
+      ],
+      "primary_source": true,
+      "confidence": "high for what authors report; research validity not independently replicated",
+      "is_in_window": true,
+      "background_context": false,
+      "status": "Research prototype and author preprint; no verified operational vessel deployment",
+      "paper_facts": [
+        "Colorado Denver/Colorado Boulder team; NSF grant 2531101.",
+        "Scenario: 6 m draft + 2 m margin; 12 knots; 3 km grid; 250 km corridor buffer.",
+        "May 20 and September 3, 2026 departures compare archived ice and forecast conditions.",
+        "At epsilon 0.35, reported searches completed in 371 and 715 seconds; spatial deduplication yielded nine and eight corridors.",
+        "No support for time-dependent multi-criteria routing.",
+        "User supplies criterion weights and equity assumptions; deterministic critic checks outputs."
+      ],
+      "exact_short_quote": {
+        "text": "Missing evidence is not treated as zero",
+        "words": 8,
+        "url": "https://arxiv.org/html/2609.09374v1",
+        "locator": "Section 3, Results"
+      },
+      "repository_facts": [
+        "The language model is optional; routing analysis does not use it and returns unchanged results without one.",
+        "Default local conversational model is llama3.1:8b through Ollama; rule-based fallback is supported.",
+        "Community indicators are not shipped. A separate public-data snapshot must be built before the equity lens works; otherwise it reports unavailable.",
+        "README explicitly identifies the tool as research decision support, unsuitable as navigational advice."
+      ],
+      "project_page_facts": [
+        "Names Nome and Kotzebue; its 160 nautical-mile direct line is explicitly endpoint distance, not a navigable route.",
+        "Uses public sea-ice, bathymetry, weather, habitat and community/subsistence data.",
+        "Screenshot caption marks the community data tile unavailable, despite nearby static source cards showing full coverage; avoid claiming complete community coverage."
+      ],
+      "story_fuel": {
+        "angle_inference": "The most interesting design decision is where AI stops: it can ask what matters, while people choose the values and algorithms show consequences.",
+        "visual_opportunity": "One supply boat splits into several map corridors; a human selector changes the preferred path, while unknown data remains a visible hole.",
+        "honest_tension": "A mathematically consistent route comparison still depends on chosen values and incomplete evidence.",
+        "avoid": "Do not call this an autonomous ship, real voyage, proven safety improvement, or local deployment. Do not conflate the language model with the routing algorithm."
+      },
+      "local_sentiment": {
+        "found": false,
+        "note": "Targeted paper/author/Nome–Kotzebue searches found no independent Alaska community reaction. Public datasets do not demonstrate community consent or consultation."
+      }
+    }
+  ],
+  "rejected_or_background": [
+    {
+      "title": "Navy Kodiak multi-mission support building",
+      "date": "2026-09-03",
+      "url": "https://www.kmxt.org/news/2026-09-03/navy-says-new-facility-being-built-in-kodiak-is-not-a-data-center",
+      "fetched": true,
+      "reason": "Navy explicitly denies data-center claim; no established AI angle. Do not present rumor as AI deployment."
+    },
+    {
+      "title": "354th Fighter Wing Alaska Defense Forum recap",
+      "date": "2026-09-03",
+      "url": "https://www.eielson.af.mil/News/Display/Article/4590711/354th-fighter-wing-highlights-arctic-partnerships-at-2026-alaska-defense-forum/",
+      "fetched": true,
+      "reason": "Primary publication in window, event Aug 24–26; no concrete AI system or outcome named."
+    },
+    {
+      "title": "ACEP receives $3 million for energy resilience",
+      "date": "2026-09-01",
+      "url": "https://www.uaf.edu/acep/news/2026/acep-receives-3-million-to-advance-energy-resilience.php",
+      "fetched": true,
+      "reason": "Outside assigned window; no explicit AI novelty."
+    },
+    {
+      "title": "AURORA-AI rural-grid project",
+      "date": "2026-08-11",
+      "url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
+      "fetched": true,
+      "reason": "Excellent $725,000 primary AI project, but outside window; no fresh update found."
+    },
+    {
+      "title": "Gubernatorial candidates discuss data centers",
+      "date": "2026-09-09",
+      "url": "https://alaskabeacon.com/2026/09/09/alaska-gubernatorial-candidates-participate-in-first-forum-since-a-post-primary-ballot-shuffle/",
+      "fetched": false,
+      "reason": "Discovery search excerpt credible, but full open repeatedly failed with 402; no verified second source/primary recording. Hold."
+    },
+    {
+      "title": "AIDEA Houston land-transfer comment deadline",
+      "date": "2026-09-14",
+      "url": "https://www.aidea.org/",
+      "fetched": true,
+      "reason": "Fresh public-service relevance but source notice dates precede window; DNR notice failed fetch here. Other research beat may hold stronger evidence."
+    }
+  ],
+  "new_sources_to_consider": [
+    {
+      "url": "https://arxiv.org/",
+      "rationale": "Primary preprints can surface specific Alaska route experiments before local coverage; always label evidence maturity."
+    },
+    {
+      "url": "https://www.eielson.af.mil/News/",
+      "rationale": "Official dated Alaska defense index distinguishes infrastructure announcements from actual AI deployments."
+    }
+  ],
+  "notes": "Sparse fresh energy/defense AI news after deduplication. Maritime GeoAI is the strongest eligible discovery. No code edits, artifact only."
+}

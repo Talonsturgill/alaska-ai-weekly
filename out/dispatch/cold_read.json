@@ -1,0 +1,27 @@
+{
+  "run_date": "2026-09-12",
+  "reviewed_at": "2026-09-12T14:54:30.125990+00:00",
+  "reviewer": "cold_reader_final",
+  "context": "Only final220-word narration; no files, research, headline or storyboard.",
+  "ship": true,
+  "first_line_where_lost": null,
+  "causal_chain": [
+    "The Educational Legacy Fund funded a new dry EEG for UAA\u2019s AI and Robotics Lab; students and faculty have trained.",
+    "Its scalp sensors record electrical activity, allowing graduate student Vadim Egorov to observe his own signals and anticipate collecting recordings tailored to his research tasks.",
+    "UAA plans reading and programming studies; results are still ahead.",
+    "Researchers can use suitable existing public recordings or design new recordings around a different task.",
+    "Recordings require interpretation. Future models claiming to work for new people should be tested on people excluded from training; this is a general principle, not a reported UAA result."
+  ],
+  "named_actors": {
+    "University of Alaska Anchorage": "University announcing EEG and planning studies",
+    "AI and Robotics Lab": "UAA laboratory receiving EEG",
+    "Educational Legacy Fund": "Fund financing EEG",
+    "Vadim Egorov": "Graduate student using public EEG datasets, observing own signals and anticipating own-task collection"
+  },
+  "single_question": "What research possibilities does UAA\u2019s new dry EEG open, and what would make future findings credible?",
+  "input_sha256": {
+    "vo_script.txt": "9adddbadffb1a6da75e8407499ccb76e110c0ccec379e949719e32eceb9085f1",
+    "vo_script.json": "1331d93933a981b3632e516a4d662cbe6a653f03fee6261d23398423bbfe5e26"
+  },
+  "primary_source_check": "researcher_science verified revised line4 against manufacturer manual section2.4 page11 and UAA announcement. No new efficacy or study-result claim."
+}

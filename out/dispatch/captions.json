@@ -1,278 +1,302 @@
 [
- {
-  "text": "Four million meets the place where",
-  "start": 0.0,
-  "end": 3.1900000000000004,
-  "seg": 0
- },
- {
-  "text": "the road disappears.",
-  "start": 3.22,
-  "end": 4.44,
-  "seg": 0
- },
- {
-  "text": "Alaska lists Ryan Air for a",
-  "start": 5.48,
-  "end": 8.49,
-  "seg": 1
- },
- {
-  "text": "projected preliminary award of",
-  "start": 8.52,
-  "end": 10.97,
-  "seg": 1
- },
- {
-  "text": "four million one hundred seventy",
-  "start": 11.0,
-  "end": 11.450000000000001,
-  "seg": 1
- },
- {
-  "text": "one thousand one hundred fifteen",
-  "start": 11.48,
-  "end": 15.68,
-  "seg": 1
- },
- {
-  "text": "dollars.",
-  "start": 16.9,
-  "end": 17.256999999999998,
-  "seg": 1
- },
- {
-  "text": "Ryan Air proposes autonomous cargo",
-  "start": 17.287,
-  "end": 19.97,
-  "seg": 2
- },
- {
-  "text": "drones and electric vertical takeoff",
-  "start": 20.0,
-  "end": 22.77,
-  "seg": 2
- },
- {
-  "text": "and landing aircraft.",
-  "start": 22.8,
-  "end": 24.02,
-  "seg": 2
- },
- {
-  "text": "Cargo could carry medicine.",
-  "start": 24.98,
-  "end": 26.61,
-  "seg": 3
- },
- {
-  "text": "Electric aircraft are proposed",
-  "start": 26.64,
-  "end": 29.049999999999997,
-  "seg": 3
- },
- {
-  "text": "for patients and providers.",
-  "start": 29.08,
-  "end": 30.74,
-  "seg": 3
- },
- {
-  "text": "Those are not the same test.",
-  "start": 31.7,
-  "end": 33.98,
-  "seg": 4
- },
- {
-  "text": "Ryan Air says it serves more",
-  "start": 35.04,
-  "end": 37.05,
-  "seg": 5
- },
- {
-  "text": "than seventy villages, so the test",
-  "start": 37.08,
-  "end": 39.57,
-  "seg": 5
- },
- {
-  "text": "would extend an aviation network.",
-  "start": 39.6,
-  "end": 41.6,
-  "seg": 5
- },
- {
-  "text": "First comes one medicine box.",
-  "start": 42.64,
-  "end": 44.34,
-  "seg": 6
- },
- {
-  "text": "Can an authorized route deliver",
-  "start": 46.76,
-  "end": 48.41,
-  "seg": 7
- },
- {
-  "text": "it on time inside Alaska weather?",
-  "start": 48.44,
-  "end": 50.58,
-  "seg": 7
- },
- {
-  "text": "The notice documents no aircraft",
-  "start": 51.78,
-  "end": 55.43,
-  "seg": 8
- },
- {
-  "text": "purchase, F A A approval, route",
-  "start": 55.46,
-  "end": 58.38,
-  "seg": 8
- },
- {
-  "text": "or completed flight.",
-  "start": 58.86,
-  "end": 59.82,
-  "seg": 8
- },
- {
-  "text": "The map is unsettled.",
-  "start": 60.94,
-  "end": 62.62,
-  "seg": 9
- },
- {
-  "text": "The summary names Bethel and Dillingham.",
-  "start": 63.54,
-  "end": 66.08,
-  "seg": 10
- },
- {
-  "text": "A separate field lists Anchorage,",
-  "start": 67.04,
-  "end": 69.16,
-  "seg": 11
- },
- {
-  "text": "Bristol Bay, Dillingham and Yukon",
-  "start": 69.6,
-  "end": 72.25,
-  "seg": 11
- },
- {
-  "text": "Koyukuk.",
-  "start": 72.28,
-  "end": 72.98,
-  "seg": 11
- },
- {
-  "text": "Then the second ladder gets steeper.",
-  "start": 73.66,
-  "end": 76.1,
-  "seg": 12
- },
- {
-  "text": "The official source calls only",
-  "start": 76.94,
-  "end": 79.09,
-  "seg": 13
- },
- {
-  "text": "the cargo drones autonomous.",
-  "start": 79.12,
-  "end": 80.65,
-  "seg": 13
- },
- {
-  "text": "Passenger electric aircraft need",
-  "start": 80.68,
-  "end": 83.75,
-  "seg": 14
- },
- {
-  "text": "their own aircraft, pilot and operating",
-  "start": 83.78,
-  "end": 86.51,
-  "seg": 14
- },
- {
-  "text": "approvals.",
-  "start": 86.54,
-  "end": 87.24000000000001,
-  "seg": 14
- },
- {
-  "text": "Budget finalization is in progress,",
-  "start": 88.12,
-  "end": 90.34,
-  "seg": 15
- },
- {
-  "text": "and projected amounts may change.",
-  "start": 90.82,
-  "end": 92.76,
-  "seg": 15
- },
- {
-  "text": "Still, this award matters because",
-  "start": 93.72,
-  "end": 96.23,
-  "seg": 16
- },
- {
-  "text": "the proposal describes gaps in",
-  "start": 96.26,
-  "end": 98.45,
-  "seg": 16
- },
- {
-  "text": "medicine access and transport.",
-  "start": 98.48,
-  "end": 100.28,
-  "seg": 16
- },
- {
-  "text": "A first test needs a named",
-  "start": 101.32,
-  "end": 103.07,
-  "seg": 17
- },
- {
-  "text": "route, F A A certification and",
-  "start": 103.1,
-  "end": 105.41,
-  "seg": 17
- },
- {
-  "text": "operating authorization.",
-  "start": 105.44,
-  "end": 106.4,
-  "seg": 17
- },
- {
-  "text": "The proposal matters when medicine",
-  "start": 111.38,
-  "end": 113.11,
-  "seg": 18
- },
- {
-  "text": "moves on that authorized route.",
-  "start": 113.14,
-  "end": 114.56,
-  "seg": 18
- },
- {
-  "text": "Until that box lands, the future",
-  "start": 115.9,
-  "end": 118.31,
-  "seg": 19
- },
- {
-  "text": "is still in the crate.",
-  "start": 118.34,
-  "end": 119.62,
-  "seg": 19
- }
+  {
+    "text": "Nineteen scalp electrodes.",
+    "start": 0.0,
+    "end": 2.4,
+    "seg": 0
+  },
+  {
+    "text": "What's on the next page?",
+    "start": 3.68,
+    "end": 5.06,
+    "seg": 0
+  },
+  {
+    "text": "The University of Alaska Anchorage",
+    "start": 7.08,
+    "end": 9.65,
+    "seg": 1
+  },
+  {
+    "text": "has a new dry E E",
+    "start": 9.68,
+    "end": 12.143,
+    "seg": 1
+  },
+  {
+    "text": "G.",
+    "start": 12.173,
+    "end": 12.873,
+    "seg": 1
+  },
+  {
+    "text": "The university announced it for",
+    "start": 13.72,
+    "end": 16.169999999999998,
+    "seg": 2
+  },
+  {
+    "text": "its A I and Robotics Lab",
+    "start": 16.2,
+    "end": 18.369999999999997,
+    "seg": 2
+  },
+  {
+    "text": "on September ninth.",
+    "start": 18.4,
+    "end": 20.4,
+    "seg": 2
+  },
+  {
+    "text": "The Educational Legacy Fund funded",
+    "start": 21.4,
+    "end": 24.009999999999998,
+    "seg": 3
+  },
+  {
+    "text": "it.",
+    "start": 24.04,
+    "end": 24.74,
+    "seg": 3
+  },
+  {
+    "text": "Students and faculty have trained.",
+    "start": 25.26,
+    "end": 27.52,
+    "seg": 3
+  },
+  {
+    "text": "The device records electrical activity",
+    "start": 28.68,
+    "end": 31.95,
+    "seg": 4
+  },
+  {
+    "text": "using sensors that rest directly",
+    "start": 31.98,
+    "end": 34.23,
+    "seg": 4
+  },
+  {
+    "text": "against the scalp.",
+    "start": 34.26,
+    "end": 35.54,
+    "seg": 4
+  },
+  {
+    "text": "Graduate student Vadim Egorov has",
+    "start": 36.64,
+    "end": 39.83,
+    "seg": 5
+  },
+  {
+    "text": "watched his own signals appear.",
+    "start": 39.86,
+    "end": 41.76,
+    "seg": 5
+  },
+  {
+    "text": "He usually works with public E",
+    "start": 42.88,
+    "end": 45.18,
+    "seg": 6
+  },
+  {
+    "text": "E G datasets.",
+    "start": 45.21,
+    "end": 46.2,
+    "seg": 6
+  },
+  {
+    "text": "Now he's looking forward to collecting",
+    "start": 47.08,
+    "end": 49.629999999999995,
+    "seg": 7
+  },
+  {
+    "text": "recordings for his own tasks.",
+    "start": 49.66,
+    "end": 51.76,
+    "seg": 7
+  },
+  {
+    "text": "Who might a future answer work",
+    "start": 52.8,
+    "end": 55.07,
+    "seg": 8
+  },
+  {
+    "text": "for?",
+    "start": 55.1,
+    "end": 55.800000000000004,
+    "seg": 8
+  },
+  {
+    "text": "U A A plans to study",
+    "start": 56.78,
+    "end": 58.91,
+    "seg": 9
+  },
+  {
+    "text": "cognitive states during reading.",
+    "start": 58.94,
+    "end": 60.9,
+    "seg": 9
+  },
+  {
+    "text": "Another planned project pairs brain",
+    "start": 61.84,
+    "end": 64.55,
+    "seg": 10
+  },
+  {
+    "text": "activity with eye movements during",
+    "start": 64.58,
+    "end": 67.17,
+    "seg": 10
+  },
+  {
+    "text": "programming.",
+    "start": 67.2,
+    "end": 67.9,
+    "seg": 10
+  },
+  {
+    "text": "Those are plans, with the answers",
+    "start": 69.26,
+    "end": 71.81,
+    "seg": 11
+  },
+  {
+    "text": "still ahead.",
+    "start": 71.84,
+    "end": 72.76,
+    "seg": 11
+  },
+  {
+    "text": "And the public recordings?",
+    "start": 73.8,
+    "end": 75.26,
+    "seg": 12
+  },
+  {
+    "text": "They keep their place.",
+    "start": 75.74,
+    "end": 77.12,
+    "seg": 12
+  },
+  {
+    "text": "Researchers can check whether existing",
+    "start": 78.46,
+    "end": 80.78999999999999,
+    "seg": 13
+  },
+  {
+    "text": "recordings fit the question.",
+    "start": 80.82,
+    "end": 82.39,
+    "seg": 13
+  },
+  {
+    "text": "If they do, useful analysis can",
+    "start": 82.42,
+    "end": 85.97,
+    "seg": 13
+  },
+  {
+    "text": "start there.",
+    "start": 86.0,
+    "end": 86.7,
+    "seg": 13
+  },
+  {
+    "text": "They can also plan a new",
+    "start": 88.1,
+    "end": 89.63,
+    "seg": 14
+  },
+  {
+    "text": "recording around another task.",
+    "start": 89.66,
+    "end": 91.72,
+    "seg": 14
+  },
+  {
+    "text": "The extra page holds a plan",
+    "start": 93.14,
+    "end": 94.87,
+    "seg": 15
+  },
+  {
+    "text": "that students can help design.",
+    "start": 94.9,
+    "end": 96.44,
+    "seg": 15
+  },
+  {
+    "text": "The old pages stay open beside",
+    "start": 97.46,
+    "end": 99.69,
+    "seg": 15
+  },
+  {
+    "text": "it.",
+    "start": 99.72,
+    "end": 100.42,
+    "seg": 15
+  },
+  {
+    "text": "A recording alone doesn't supply",
+    "start": 101.66,
+    "end": 103.99,
+    "seg": 16
+  },
+  {
+    "text": "an interpretation.",
+    "start": 104.02,
+    "end": 104.78,
+    "seg": 16
+  },
+  {
+    "text": "If a future model claims to",
+    "start": 106.1,
+    "end": 108.05,
+    "seg": 17
+  },
+  {
+    "text": "work for new people, test it",
+    "start": 108.08,
+    "end": 110.49,
+    "seg": 17
+  },
+  {
+    "text": "on people absent from training.",
+    "start": 110.52,
+    "end": 112.14,
+    "seg": 17
+  },
+  {
+    "text": "That's a research principle, not",
+    "start": 113.1,
+    "end": 115.83,
+    "seg": 18
+  },
+  {
+    "text": "a reported U A A result.",
+    "start": 115.86,
+    "end": 117.44,
+    "seg": 18
+  },
+  {
+    "text": "Which question about learning should",
+    "start": 118.94,
+    "end": 121.19,
+    "seg": 19
+  },
+  {
+    "text": "they investigate first?",
+    "start": 121.22,
+    "end": 122.28,
+    "seg": 19
+  }
 ]

@@ -277,8 +277,10 @@ def scenes(src: str, default_zoom: float):
     if not owner:
         return out
     tail = src[owner.start():]
+    # Match the same direct-art and brace-body branch forms as plate_overlap_check.
+    # Local motion declarations must not move this scene's findings into its neighbor.
     branches = [(int(m.group(1)), owner.start() + m.start()) for m in
-                re.finditer(r"(?:if|else\s+if)\s*\(n\s*===\s*(\d+)\)\s*art\s*=", tail)]
+                re.finditer(r"(?:if|else\s+if)\s*\(n\s*===\s*(\d+)\)\s*(?=\{|art\s*=)", tail)]
     for i, (number, pos) in enumerate(branches):
         end = branches[i + 1][1] if i + 1 < len(branches) else len(src)
         if i == len(branches) - 1:

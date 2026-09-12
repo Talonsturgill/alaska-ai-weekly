@@ -1,0 +1,62 @@
+{
+  "check": "natural narration runtime, 112 to 130 seconds",
+  "status": "recommendation only, not applied",
+  "created_at": "2026-09-12T14:54:28.366810+00:00",
+  "current_plan_sha256": "6ae9030f733f3cdb9be672570cbbd9619280282e17377581256673210bd70e7e",
+  "root_cause": "The 213-word script remains slightly short at the measured natural delivery. Revision 1 improved the best primary take to 110.2 seconds, but its request for 110 words per minute was realized at 115.9. This is a pacing and script-length miss, not a monotone failure. Mixed-model fallbacks compound latency and yield much faster takes.",
+  "evidence": {
+    "selected_revision1_take": 3,
+    "selected_model": "gemini-3.1-flash-tts-preview",
+    "seconds": 110.2,
+    "log_diagnosis": "clean",
+    "score": 0.993,
+    "initial_primary_seconds": [
+      109.1,
+      104.9,
+      107.0
+    ],
+    "primary_retry_seconds": 110.2,
+    "fallback_retry_seconds": 75.0,
+    "final_report_still_pending_when_read": true
+  },
+  "exact_script_edit": {
+    "idx": 4,
+    "old": "Its scalp contacts record electrical activity.",
+    "new": "The device records electrical activity using sensors that rest directly against the scalp.",
+    "old_words": 6,
+    "new_words": 13,
+    "new_script_words": 220,
+    "why": "Adds a useful plain-language account of physical scalp contact. It clarifies measurement without implying thought reading, invasive sensing or clinical proof. Parent reports fresh primary-source factcheck and script-only cold-reader approval."
+  },
+  "exact_direction_edits": {
+    "style": "Style: Warm, natural and conversational. Nora gives one interested listener an unhurried explanation. Take a real thought-breath after each completed sentence. Aim for about one hundred and ten words per minute including natural breaths. On the scalp-sensor sentence, complete electrical activity, breathe, then explain where the sensors rest. Keep phrase starts crisp and vowels ordinary. Carry the energy changes through intonation and warmth. Give public recordings confident respect, brighten at students helping design the extra page, and end with a welcoming question.",
+    "canonical_pace_paragraph": "Keep current pace_paragraph byte-identical, target_seconds 120.",
+    "line4_annotated": "The device records electrical activity [short pause] using sensors that rest directly against the scalp.",
+    "line4_emphasis": "scalp",
+    "line4_energy": 2,
+    "pause_migration": "Remove the mid-line [short pause] from line 3 after funded it. Move it to line 4 after electrical activity. Keep the other four pauses at indices 0, 12, 15 and 17. Total remains five.",
+    "preserve": "All other spoken words, twenty line boundaries, adjacent energy contrast, pronunciation data, narrator identity and exact runtime paragraph.",
+    "mirror_updates": "Sync line 4 and word count in canonical script mirrors and direction transcript, then rerun the affected script/claims gates before synthesis."
+  },
+  "expected_effect": "A same-rate estimate from the selected 110.2-second primary take gives 113.82 seconds at 220 words. Across the four measured primary takes it spans 108.35 to 113.82 seconds. This is a testable estimate, not a duration guarantee; fresh measured runtime and accuracy must pass.",
+  "voice_judgment": "Keep Sulafat. It is the owner-picked current default. No alternate preset has evidence of a slower, equally suitable read here. Gemini 2.5 Pro with Sulafat is a documented same-identity model fallback, but this job already exhausted it and supplies no passing pacing evidence. The 2.5 Flash fallback at 75 seconds is evidence against treating a fallback as a pacing fix. Kokoro or another preset is not the efficient repair for this near miss.",
+  "safest_efficient_invocation": {
+    "workdir": "/Users/t/Developer/alaska-ai-weekly",
+    "command": "bash scripts/run_bg.sh out/dispatch/bg vo_0912_revision2 -- env PYTHONUNBUFFERED=1 VO_TAKES=1 VO_REUSE_TAKES=0 DISPATCH_GEMINI_VOICE=Sulafat DISPATCH_GEMINI_MODEL=gemini-3.1-flash-tts-preview DISPATCH_GEMINI_FALLBACK=gemini-3.1-flash-tts-preview DISPATCH_GEMINI_SECOND_FALLBACK=gemini-3.1-flash-tts-preview python3 scripts/vo_synth_gemini.py",
+    "preconditions": [
+      "Wait for revision1 .done and its fresh final report, then archive its plan/report.",
+      "Apply the authorized 220-word script and exact direction changes; pass the affected claims/script gates.",
+      "Use a new marker name and disable reuse so old 213-word takes cannot enter selection."
+    ],
+    "bounded_behavior": "VO_TAKES=1 means one initial complete take and, only on a runtime miss, one automatic complete retry. Setting both fallback model names equal to the primary lets the existing deduplication use one model endpoint; it avoids another mixed-model six-take run. The existing four-attempt service retry still applies. No unsupported no-reroll switch is assumed.",
+    "code_evidence": [
+      "scripts/vo_synth_gemini.py:42",
+      "scripts/vo_synth_gemini.py:99",
+      "scripts/vo_synth_gemini.py:499",
+      "scripts/vo_synth_gemini.py:530"
+    ]
+  },
+  "verify_next": "Require the fresh take to be within 112 to 130 seconds with all accuracy/leak/expression checks passing. Re-measure actual loudness if the checker returns null. Do not accept the warning path as a pass.",
+  "needs_full_rerender": true,
+  "modifications_performed": "Only this recommendation artifact. No canonical script/plan/audio changes and no synthesis launched."
+}

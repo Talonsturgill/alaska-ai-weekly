@@ -1,0 +1,71 @@
+{
+  "check": "EVENT_CADENCE",
+  "status": "PATCH FROZEN; encoded probe passes; full render required",
+  "root_cause": "At 16.4s the prior small blended label entrance measured 1.57486 in the still probe but only 1.52715 in the full encoded candidate3, below that film median 1.552482. The hand also lagged behind the label edge. Global zero-based frame clocks were correct; the still-derived margin did not survive H264.",
+  "patch": "Only Ep0912.tsx Shot3: an opaque lab label enters from fully offscreen in the hand, with fingers attached to its right edge. The same hand visibly releases after seating. Label text, dimensions, word anchors, mount timing, funding/training choreography and all other scenes are unchanged.",
+  "source_sha256": "2c3f82ea4d80f437de5abc7796a044392f8874edc68c94536ee8085a2bef9331",
+  "source_frozen": true,
+  "baseline_master_sha256": "791c2bba19f75af1d17811eae8c552a803aeb7180983c9abe852adcdabd61bb7",
+  "probe_sha256": "52071f8946aee578c9b0dbf3981666433b28ddf4a52c78d27cb4b9555cbad3ab",
+  "scope_assertion": "All source before S3 and after S3 is byte-identical to candidate3 snapshot. Probe receipt hashes still match current source, props, EEG helper and gate.",
+  "encoded_probe": {
+    "frame_range": [
+      444,
+      570
+    ],
+    "fps": 30,
+    "resolution": [
+      1080,
+      1920
+    ],
+    "codec": "h264",
+    "crf": 19,
+    "file": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/probe/s3_encoded_repair/v2/mount_label.mp4"
+  },
+  "verification": {
+    "event_cadence": "PASS",
+    "fullfilm_median": 1.5617634654045105,
+    "strongest_repair_delta": 1.7874723672866821,
+    "margin": 0.22570890188217163,
+    "longest_fullfilm_gap_s": 3.2,
+    "living_screen_pass": true,
+    "living_windows": [
+      56,
+      66
+    ],
+    "camera_shot3": {
+      "pass": true,
+      "frames": [
+        523,
+        747
+      ],
+      "fraction": 0.5295138888888888,
+      "required": 0.3
+    },
+    "typecheck": "PASS"
+  },
+  "word_and_physical_evidence": {
+    "AI_spoken_s": 16.38,
+    "full_label_readable_frame": 492,
+    "full_label_readable_s": 16.4,
+    "full_label_and_grip_frame": 510,
+    "full_label_and_grip_s": 17.0,
+    "board_lab_name_seats_s": 17.024,
+    "label_fully_seated_s": 16.957333,
+    "release_starts_s": 17.224,
+    "release_complete_s": 17.890667,
+    "Robotics_spoken_s": 17.46,
+    "Lab_spoken_s": 17.94,
+    "inspected_files": [
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/probe/s3_encoded_repair/v2/encoded/frame_000492.png",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/probe/s3_encoded_repair/v2/encoded/frame_000510.png"
+    ],
+    "root_also_inspected_release_frame": 522
+  },
+  "method": "Recomputed every production six-frame delta from actual candidate3 delivery frames. Replaced only pairs wholly within the newly encoded global frame interval, then ran the unchanged production gate AST against the entire film. No PNG probe replacement or threshold change.",
+  "limitation": "Short-probe GOP boundaries differ from full render chunks; the final full render and its gates remain authoritative.",
+  "needs_full_rerender": true,
+  "commit_created": false,
+  "baseline_frames_current_location": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/final_v3/frames",
+  "parent_release_state": "Parent committed 85c7b2b and started render_0912_final_v5 from the frozen source; no further engine edits."
+}

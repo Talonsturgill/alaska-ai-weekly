@@ -28,7 +28,7 @@ variable falls back to the login Keychain entry used by the local Codex
 automation without printing or persisting the secret.
 """
 import os, sys, json, base64, urllib.request, urllib.error, ssl, time, re, difflib
-import getpass, platform, subprocess
+import getpass, platform, subprocess, io
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -81,14 +81,125 @@ def _key():
     return k
 
 
+def _sse_events(response):
+    """Read framed SSE data, including multiline data and CR/LF line endings."""
+    data, event = [], ""
+    with io.TextIOWrapper(response, encoding="utf-8-sig", newline=None) as stream:
+        for raw_line in stream:
+            line = raw_line.rstrip("\n")
+            if not line:
+                if data or event == "error":
+                    yield event, "\n".join(data)
+                data, event = [], ""
+                continue
+            if line.startswith(":"):
+                continue
+            field, _, value = line.partition(":")
+            if value.startswith(" "):
+                value = value[1:]
+            if field == "data":
+                data.append(value)
+            elif field == "event":
+                event = value
+        if data or event == "error":
+            raise RuntimeError("Incomplete TTS stream event")
+
+
+def _stream_pcm(response):
+    """Accept only complete, successful 24kHz PCM from one candidate.
+
+    Never expose payloads in errors, and never return early on STOP: an error or
+    interrupted HTTP body after it must still invalidate the entire attempt.
+    """
+    audio = bytearray()
+    finished, done = False, False
+    for event, payload in _sse_events(response):
+        if event == "error":
+            raise RuntimeError("TTS stream returned an error event")
+        if payload.strip() == "[DONE]":
+            if not finished:
+                raise RuntimeError("TTS stream ended without successful completion")
+            done = True
+            continue
+        if done:
+            raise RuntimeError("TTS stream continued after its end marker")
+        try:
+            chunk = json.loads(payload)
+        except (ValueError, TypeError):
+            raise RuntimeError("Invalid TTS stream JSON") from None
+        if not isinstance(chunk, dict):
+            raise RuntimeError("Invalid TTS stream response")
+        if "error" in chunk:
+            raise RuntimeError("TTS stream returned an encoded error")
+        feedback = chunk.get("promptFeedback") or {}
+        if not isinstance(feedback, dict) or feedback.get("blockReason"):
+            raise RuntimeError("TTS stream prompt was blocked")
+        candidates = chunk.get("candidates", [])
+        if not isinstance(candidates, list):
+            raise RuntimeError("Invalid TTS stream candidates")
+        for candidate in candidates:
+            if not isinstance(candidate, dict) or candidate.get("index", 0) != 0:
+                raise RuntimeError("Unexpected TTS stream candidate")
+            reason = candidate.get("finishReason")
+            if reason not in (None, "", "FINISH_REASON_UNSPECIFIED", "STOP"):
+                raise RuntimeError("TTS stream did not finish successfully")
+            content = candidate.get("content") or {}
+            if not isinstance(content, dict):
+                raise RuntimeError("Invalid TTS stream content")
+            parts = content.get("parts", [])
+            if not isinstance(parts, list):
+                raise RuntimeError("Invalid TTS stream parts")
+            for part in parts:
+                if not isinstance(part, dict):
+                    continue
+                inline = part.get("inlineData")
+                if not isinstance(inline, dict):
+                    continue
+                mime = inline.get("mimeType", "")
+                if not isinstance(mime, str) or not mime.lower().startswith("audio/"):
+                    continue
+                fields = [field.strip().lower() for field in mime.split(";")]
+                params = dict(field.split("=", 1) for field in fields[1:] if "=" in field)
+                if (fields[0] not in ("audio/l16", "audio/pcm")
+                        or params.get("rate", "24000") != "24000"
+                        or params.get("channels", "1") != "1"
+                        or params.get("codec", "pcm") != "pcm"):
+                    raise RuntimeError("Unsupported TTS stream audio format")
+                if finished:
+                    raise RuntimeError("TTS stream audio followed completion")
+                try:
+                    audio.extend(base64.b64decode(inline.get("data"), validate=True))
+                except (ValueError, TypeError):
+                    raise RuntimeError("Invalid TTS stream audio data") from None
+            if reason == "STOP":
+                finished = True
+    # HTTPResponse.read1 can reach EOF with an unfulfilled Content-Length.
+    remaining = getattr(response, "length", None)
+    if remaining not in (None, 0):
+        raise RuntimeError("Incomplete TTS HTTP response")
+    if not finished or not audio or len(audio) % 2:
+        raise RuntimeError("Incomplete TTS stream audio")
+    return np.frombuffer(bytes(audio), dtype="<i2")
+
+
 def _synth_once(prompt, model, voice):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    # Developer API streaming is documented for 3.1 TTS, not the 2.5 fallback.
+    # https://ai.google.dev/gemini-api/docs/generate-content/speech-generation
+    streaming = model == "gemini-3.1-flash-tts-preview"
+    method = "streamGenerateContent?alt=sse" if streaming else "generateContent"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:{method}"
     body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
-    req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST",
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": _key()})
+    headers = {"Content-Type": "application/json", "x-goog-api-key": _key()}
+    if streaming:
+        headers["Accept"] = "text/event-stream"
+    req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST", headers=headers)
     with urllib.request.urlopen(req, timeout=180, context=CTX) as r:
+        if streaming:
+            if r.status != 200 or r.headers.get("Content-Type", "").split(";", 1)[0].lower() != "text/event-stream":
+                raise RuntimeError("Invalid TTS streaming HTTP response")
+            return _stream_pcm(r)
         resp = json.loads(r.read().decode())
     b64 = resp["candidates"][0]["content"]["parts"][0]["inlineData"]["data"]
     return np.frombuffer(base64.b64decode(b64), dtype="<i2")  # int16 @ 24k
@@ -98,6 +209,7 @@ def _synth_retry(prompt):
     """One good 24k int16 take, with retries across the supported TTS models."""
     models = list(dict.fromkeys((MODEL, FALLBACK, SECOND_FALLBACK)))
     for model in models:
+        last_exception = None
         for d in (0, 4, 10, 20):
             if d:
                 time.sleep(d)
@@ -106,13 +218,18 @@ def _synth_retry(prompt):
                 if len(pcm) > 24000 * 2:  # at least ~2s of audio
                     return pcm, model
             except urllib.error.HTTPError as e:
+                # Never log exception text, URLs, response bodies or request headers.
+                last_exception = (f"HTTP {e.code}" if type(e.code) is int
+                                  and 100 <= e.code <= 599 else "HTTPError")
                 if e.code in (429, 500, 503):
                     continue
                 raise
-            except Exception:
+            except Exception as e:
+                last_exception = type(e).__name__
                 continue
         suffix = "; failing over" if model != models[-1] else ""
-        print(f"  {model} exhausted{suffix}")
+        diagnosis = f"; last exception: {last_exception}" if last_exception else ""
+        print(f"  {model} exhausted{diagnosis}{suffix}")
     raise RuntimeError("Gemini TTS failed on every configured model after retries.")
 
 
@@ -509,27 +626,17 @@ def main():
 
     best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
 
-    # ---- RUNTIME: RE-ROLL, THEN ACCEPT. NEVER STOP. -------------------------------
-    # The format's target runtime was enforced nowhere in code: the soundcheck's window
-    # is deliberately wide (~62-176s) because its job is catching a grossly broken synth
-    # rather than policing pace. So a 105-second take passed everything and the run would
-    # have shipped it believing it had made a two-minute film.
-    #
-    # The first version of this fix raised SystemExit, which was wrong for a reason the
-    # repo already had written down: THE ONE OUTCOME LAW (scripts/no_exit.py) says the
-    # only terminal state is a delivered video, and I had put a brand new stop directly in
-    # the delivery path. A wrong-length take is not a reason to have no video.
-    #
-    # So it re-rolls instead. repair_prompt has already forced the runtime-naming pace
-    # paragraph, which is the lever that is actually worth 15 percent of pace, so the
-    # common case is fixed before any of this runs. If takes still land outside the band,
-    # spend one more round rather than none, then take the best available and CARRY THE
-    # MISS FORWARD LOUDLY in vo_report.json, where the panel and the dated email both read
-    # it. A visible miss on a delivered film beats a clean stop.
+    # ---- RUNTIME: RE-ROLL, THEN RETAIN A WORKING TAKE. ----------------------------
+    # Soundcheck's broad duration window does not grant format approval. If the extra
+    # round still misses the format band, retain the natural take for rough-cut work
+    # while direction or the locked script is repaired and re-synthesized. Work can
+    # continue, but delivery requires a take that passes the runtime checks.
+    # vo_report.json carries an internal repair diagnostic, not permission to ship or
+    # an audience-facing disclosure. Never time-stretch narration to hide a runtime miss.
     lo, hi, target = sc._target_band()
     runtime_note = None
     if lo is not None:
-        for extra in range(1):                       # one re-roll, then accept
+        for extra in range(1):                       # one re-roll, then retain for work
             secs = reports[best_i]["checks"]["duration"]["seconds"]
             if lo <= secs <= hi:
                 break
@@ -551,40 +658,19 @@ def main():
                 print(f"re-roll take {n}: {len(pcm)/24000:.1f}s ({used})")
             best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
         secs = reports[best_i]["checks"]["duration"]["seconds"]
-        # Gemini's pace direction can still land a clean take a few seconds short or long.
-        # When the closest re-roll is within a modest 15% of the two-minute target, conform
-        # tempo without changing pitch, then run the full soundcheck again. This closes the
-        # old path that knowingly shipped a 102-second read against a 112-second floor while
-        # preserving the fact-checked script and its density.
-        tempo = secs / target if target else 1.0
-        if not (lo <= secs <= hi) and 0.84 <= tempo <= 1.15:
-            conformed = os.path.join(AUD, "vo_take_conformed.wav")
-            subprocess.run([
-                "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
-                "-i", takes[best_i][0], "-filter:a", f"atempo={tempo:.6f}",
-                "-ar", "24000", "-ac", "1", conformed,
-            ], check=True)
-            source_model = takes[best_i][1]
-            takes.append((conformed, source_model + "+tempo-conform"))
-            best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
-            secs = reports[best_i]["checks"]["duration"]["seconds"]
-            if lo <= secs <= hi:
-                _fixes = list(_fixes) + [
-                    f"tempo-conformed closest clean take to {secs:.1f}s after Gemini pace miss"
-                ]
-                print(f"  runtime conformed to {secs:.1f}s and re-passed soundcheck")
+        # Keep the original performance. The Dispatch routine forbids time-stretching
+        # narration; a runtime miss must be corrected in direction or the locked script
+        # and re-synthesized before delivery; the retained take can support rough cuts.
         if not (lo <= secs <= hi):
             n_words = len(spoken.split())
             rate = n_words / secs * 60 if secs else 0
-            want = int(round(target * rate / 60))
-            delta = want - n_words
             runtime_note = (
                 f"RUNTIME {secs:.1f}s is outside the {lo:.0f}-{hi:.0f}s band (target {target:.0f}s) "
-                f"after a re-roll. Delivered {rate:.1f} wpm over {n_words} words; at that rate "
-                f"{target:.0f}s wants about {want} words ({'add' if delta > 0 else 'cut'} roughly "
-                f"{abs(delta)}). The pace paragraph was already repaired to name the runtime, so "
-                f"the remaining gap is script length. SHIPPING THE BEST TAKE ANYWAY: a delivered "
-                f"film with a stated miss beats a stopped run.")
+                f"after a re-roll. The selected take reads at {rate:.1f} wpm over {n_words} words. "
+                f"RETAINED FOR ROUGH-CUT WORK, NOT DELIVERY-APPROVED. Continue production work, "
+                f"repair direction or the locked script within the current format constraints, "
+                f"and re-synthesize. Delivery requires passing runtime checks; do not time-stretch "
+                f"or deliver an out-of-band take.")
             print(f"  !! {runtime_note}")
         else:
             print(f"  runtime {secs:.1f}s is inside the {lo:.0f}-{hi:.0f}s band")
@@ -592,7 +678,7 @@ def main():
     best_wav, best_model = takes[best_i]
     print(f"BEST take {best_i} ({best_model}): {reports[best_i]['diagnosis']}  score={reports[best_i]['score']}")
 
-    # write the winning VO at 44.1k for the pipeline
+    # write the selected VO at 44.1k for continued work; runtime approval is separate
     from scipy.io import wavfile
     _, pcm24 = wavfile.read(best_wav)
     wavfile.write(os.path.join(AUD, "vo.wav"), SR, _to_44k_int16(pcm24))
@@ -620,7 +706,7 @@ def main():
               open(os.path.join(OUT, "vo_report.json"), "w"), indent=2)
     print(f"wrote vo.wav ({total:.1f}s), vo_lines.json ({len(line_spans)} lines), captions.json ({len(cues)} cues), vo_report.json")
 
-    # acting data (mouth envelope + emphasis accents) always tracks the shipped take
+    # acting data (mouth envelope + emphasis accents) always tracks the selected take
     import vo_envelope
     vo_envelope.main()
 

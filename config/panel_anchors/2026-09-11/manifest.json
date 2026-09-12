@@ -1,0 +1,32 @@
+{
+  "created_for_run": "2026-09-12",
+  "source_release_commit": "4598e95bf0f13a0a561ce4a519c2299fb4a928d7",
+  "source_episode": "Over the Missing Road",
+  "source_recorded_at": "2026-09-11T14:18:57Z",
+  "scope": "Historical whole-film panel scores. The selected frames were not individually scored. No owner calibration or new approval is claimed.",
+  "historical_axis_medians": {
+    "Hook & retention": 8.2,
+    "Illustration craft & detail": 8.0,
+    "Motion & animation craft": 7.5,
+    "Composition & staging": 8.0,
+    "Color & grade": 8.2,
+    "Typography & captions": 8.2,
+    "Sound design & mix": 7.0,
+    "VO-illustration sync & entertainment": 7.9,
+    "Accuracy & sourcing": 8.7,
+    "Alaska authenticity & cultural respect": 8.4,
+    "Writing & post quality": 8.7
+  },
+  "evidence_sha256": {
+    "f004.8.jpg": "2a35edcdc6edf78bc1b777547dc7ed45c5d99ae4324602f8b93667183f450539",
+    "f073.2.jpg": "7b0b951fd63fe2d7bfd413644c9aee050453ec47cd4bdaadefeb315fc14ae786",
+    "f130.9.jpg": "840a763c6d9df7c6991d5517acaf17ba3223f23c4502de963b389d6893529330",
+    "filmstrip_road_rolls_away.jpg": "36f0ed5ee73146855f05cf2a28b277fce28743a8673e88b4771fe07da3043350",
+    "filmstrip_wrong_test_mark_lands.jpg": "b64f30e1efc8320686bbcb7f188acbae2d439c30cf59e941208315a83e2ceb65"
+  },
+  "judge_sha256": {
+    "judge1.json": "88fc71cc4fc728ba4990c59ebb51d3904d9793407b6c2094564ba7167ff1a361",
+    "judge2.json": "0c3aa727af287f578a1dfd145cb8dd5c7e32a45cb88b270b193915fc32d63e5e",
+    "judge3.json": "373c5850b51b14c41b5849644a670c7c388f1a1d8053c51c6380a1d75e2d6419"
+  }
+}

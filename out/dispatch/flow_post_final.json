@@ -1,0 +1,204 @@
+{
+  "mode": "post",
+  "flows": true,
+  "orphan_sentences": [],
+  "resting_or_meaningless_beats": [],
+  "silent_or_generic_sfx_beats": [],
+  "notes": [
+    "SHIP. Current encoded picture advances through 14 shots and 40 authored beats. The current objective gate reports 45 detected visual beats, no dead window above the cadence ceiling, and 55/66 living-screen windows (83.3%). These measured results support, rather than replace, the visual review.",
+    "First third (0.00-45.19s): the contact and concealed notebook wing establish a concrete question; the device, announcement, funding and training arrive separately; the 28.68s contact-array reveal and 32.23-34.37s fixed-contact demonstration explain the measurement. The 36.64s student observation changes the stake from hardware to a person using it. The existing-data book then makes the next act visible.",
+    "The middle third (45.19-90.38s) is weakest. The shared lavender desk and repeated horizontal label placements make reading and programming less visually surprising than the contact array or the expanded notebook. It nevertheless introduces distinct information: own-task planning at 47.08s, the person outside training at 52.80s, reading at 56.78s, separately labeled eye and brain observations at 65.251s, blank planned answers at 69.26s, then a useful archive and the actual fit-check at 73.80-90.38s. The moving B question is compared against two inventory sheets while A analysis continues. This is new work and a fair alternative, not a longer restatement of the acquisition.",
+    "Final third (90.38-135.57s, including credits): optional collection leads into the actual notebook expansion at 93.14s. The interpretation field stays blank at 101.66s; the separate-person test at 107.781s adds a second, different payoff. General methods are physically separated from planned UAA work at 113.10s. The pencil is brought to an unwritten question at 118.94s. The source/music end card is a separate designed reading interval after the spoken ending, not additional unexplained narration.",
+    "Primary payoff: the closed NEXT STEP wing planted by 3.14s becomes visibly additional TO COLLECT and TO TEST space at 93.14s. The action grid shows the wing extending from the right notebook edge through 93.933s; the PUBLIC EEG DATA page stays visible. This pays the extra-page promise without implying the old data became obsolete.",
+    "Secondary payoff: the same notched hypothetical person planted outside EXAMPLE TRAINING at 52.80s travels into TEST at 107.781s. The 107.8-108.6s action grid keeps the marker on the test side and leaves TRAINING untouched. The 14.641s separation from the first payoff preserves a second reason to continue watching.",
+    "Throughline passes: the stitched notebook and coral tab are recognizable at the opening, as small recording-page support near 30-41s, as an open source/own-task spread around 44-52s, as the archive working book at 74-78s, and as a physically expanded collection-and-test workspace from 93.14s to the closing pencil. Its changing state provides approximate progress through the argument.",
+    "The three required rehooks escalate in meaning and differ in action: the human observation at 36.64s, paired planned observations at 65.251s, and the concealed-wing payoff at 93.14s. The archive opening at 73.80s further reverses attention toward the existing research route. The sequence does not use the same surprise three times on a fixed interval.",
+    "Arrival and reaction evidence: the 16.03-17.10s lab-label grid shows a long hand-led approach that decelerates and settles; the 32.23-34.37s contact grid couples the pointing hand with the expanding emphasis ring; the 88.1-90.77s inventory grid makes the question travel between two source tabs; the 93.14s wing changes the notebook silhouette; the held-out marker settles inside its destination. The strips show text and secondary components becoming crisp after their primary movement, without multiple competing large overshoots. Small window/flag, ribbon and page-edge motions remain subordinate. No reviewed story interval reduces to a relabeled held image with no new explanatory action.",
+    "Reading holds are real in the current encoded master. Independently decoded story-region frames at 29.44-29.98s, 74.56-75.10s and 93.90-94.53s are effectively still (mean consecutive luma deltas 0.00151, 0.00444 and 0.00270 on 0-255 scale). This verifies the sampled interiors of the declared 0.6s, 0.6s and 0.7s recognition holds; it does not infer stillness from a lone frame. The corresponding reveal strips and action grid show the disclosed state before these intervals.",
+    "Sound assessment is based on the current event map and encoded-audio gate, not a claim that I listened to the film. All 40 beats have a concrete sound tied to their action, and all 14 shots contain events. The map motivates paper slides, holder contacts, the contact/trace sweep, inventory flicks, a restrained wing reveal accent and a returning page sound. The objective check verifies 23 local event lifts and every shot sonified; it does not separately prove perceptual audibility of all 40 sounds. The encoded report is -14.67 LUFS, -3.04 dBTP, LRA 6.9; the audio card is the pre-encode WAV (-14.63/-3.41) and is not substituted for those delivered values.",
+    "Nonblocking craft note: the 56.78-73.80s reading/programming section would benefit in a future edition from a more distinct camera or physical staging change between the two tasks. The current separate book, monitor, gaze runner, brain trace and empty answer area are sufficiently legible and story-specific to ship."
+  ],
+  "ship": true,
+  "one_fix": "No blocking repair. For a future cut, vary the physical staging of the 56.78-73.80s reading/programming section to reduce the repeated label-and-desk rhythm while preserving the separate planned observations.",
+  "master_sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+  "reviewed_at": "2026-09-12T18:48:43.123617+00:00",
+  "weakest_third": {
+    "range_s": [
+      45.19,
+      90.38
+    ],
+    "name": "middle",
+    "blocking": false
+  },
+  "payoff_separation_s": 14.641,
+  "sound_events_per_shot": [
+    {
+      "shot": 1,
+      "range_s": [
+        0.0,
+        7.08
+      ],
+      "count": 3
+    },
+    {
+      "shot": 2,
+      "range_s": [
+        7.08,
+        13.72
+      ],
+      "count": 2
+    },
+    {
+      "shot": 3,
+      "range_s": [
+        13.72,
+        28.68
+      ],
+      "count": 4
+    },
+    {
+      "shot": 4,
+      "range_s": [
+        28.68,
+        42.88
+      ],
+      "count": 4
+    },
+    {
+      "shot": 5,
+      "range_s": [
+        42.88,
+        52.8
+      ],
+      "count": 4
+    },
+    {
+      "shot": 6,
+      "range_s": [
+        52.8,
+        56.78
+      ],
+      "count": 1
+    },
+    {
+      "shot": 7,
+      "range_s": [
+        56.78,
+        61.84
+      ],
+      "count": 2
+    },
+    {
+      "shot": 8,
+      "range_s": [
+        61.84,
+        73.8
+      ],
+      "count": 3
+    },
+    {
+      "shot": 9,
+      "range_s": [
+        73.8,
+        78.46
+      ],
+      "count": 1
+    },
+    {
+      "shot": 10,
+      "range_s": [
+        78.46,
+        93.14
+      ],
+      "count": 5
+    },
+    {
+      "shot": 11,
+      "range_s": [
+        93.14,
+        106.1
+      ],
+      "count": 4
+    },
+    {
+      "shot": 12,
+      "range_s": [
+        106.1,
+        113.1
+      ],
+      "count": 3
+    },
+    {
+      "shot": 13,
+      "range_s": [
+        113.1,
+        118.94
+      ],
+      "count": 2
+    },
+    {
+      "shot": 14,
+      "range_s": [
+        118.94,
+        123.28
+      ],
+      "count": 2
+    }
+  ],
+  "audio_listened": false,
+  "evidence_inspected": [
+    "out/dispatch/dispatch_master.mp4 (independent SHA-256 and read-only decoded recognition-hold samples)",
+    "out/dispatch/storyboard.json",
+    "out/dispatch/storyboard.md",
+    "out/dispatch/vo_script.txt",
+    "out/dispatch/vo_lines.json",
+    "out/dispatch/post.txt",
+    "out/dispatch/quality_report.json",
+    "out/dispatch/audio/sfx_events.json",
+    "out/evidence/audio_report.json",
+    "out/dispatch/review/audio_card.png",
+    "out/evidence/actions_receipt.json",
+    "out/dispatch/final_taste/receipt.json",
+    "out/dispatch/final_taste/sheet_0.jpg",
+    "out/dispatch/final_taste/sheet_1.jpg",
+    "out/dispatch/final_taste/sheet_2.jpg",
+    "out/dispatch/final_taste/sheet_3.jpg",
+    "out/evidence/action_lab_designation_mounts.jpg",
+    "out/evidence/action_fixed_scalp_contact.jpg",
+    "out/evidence/action_inventory_comparison.jpg",
+    "out/evidence/action_extra_page_unfolds.jpg",
+    "out/evidence/action_heldout_person_test.jpg",
+    "out/evidence/action_methods_and_plans_separate.jpg",
+    "out/evidence/action_closing_question.jpg",
+    "out/evidence/filmstrip_notebook_opens.jpg",
+    "out/evidence/filmstrip_next_step_catches.jpg",
+    "out/evidence/filmstrip_lab_bench_assembles.jpg",
+    "out/evidence/filmstrip_scalp_recording_reveals.jpg",
+    "out/evidence/filmstrip_archive_reveals.jpg",
+    "out/evidence/filmstrip_extra_wing_reveals.jpg",
+    "out/evidence/filmstrip_archive_book_opens.jpg",
+    "out/evidence/filmstrip_public_recording_selects.jpg",
+    "out/evidence/filmstrip_own_task_plan_arrives.jpg",
+    "out/evidence/filmstrip_participant_waiting_arrival.jpg",
+    "out/evidence/filmstrip_reading_plan_unfolds.jpg",
+    "out/evidence/filmstrip_cognitive_target_attaches.jpg",
+    "out/evidence/filmstrip_programming_plan_unfolds.jpg",
+    "out/evidence/filmstrip_eye_movement_separates.jpg",
+    "out/evidence/filmstrip_planned_answers_stay_open.jpg",
+    "out/evidence/filmstrip_task_a_matches.jpg",
+    "out/evidence/filmstrip_task_a_analysis_runs.jpg",
+    "out/evidence/filmstrip_task_b_question_arrives.jpg",
+    "out/evidence/filmstrip_student_observes.jpg",
+    "out/evidence/filmstrip_optional_collection_choice.jpg",
+    "out/evidence/filmstrip_courtesy_callback.jpg",
+    "out/evidence/filmstrip_interpretation_separates.jpg",
+    "out/evidence/filmstrip_conditional_claim_opens.jpg",
+    "out/evidence/filmstrip_evaluation_page_opens.jpg",
+    "out/evidence/filmstrip_notebook_loops.jpg",
+    "out/evidence/f033.9.jpg",
+    "out/evidence/f052.3.jpg",
+    "out/evidence/f092.0.jpg",
+    "out/evidence/f111.4.jpg",
+    "out/evidence/f130.7.jpg"
+  ]
+}

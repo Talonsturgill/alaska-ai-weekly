@@ -1,193 +1,332 @@
 {
-  "narrator": "Sulafat",
-  "notes": "Cautiously hopeful Alaska explainer. The crate is the emotional center. Qualifiers land cleanly. The final line is warm but unresolved.",
-  "style_prompt": "Style: warm, grounded and conversational with quiet wonder. Build energy through the two-aircraft split, then slow down for the evidence test. Dry wit only on victory lap and air taxi.",
-  "pronunciations": {
-    "Ryan Air": "RYE-an Air",
-    "Yukon-Koyukuk": "YOU-kon KAI-you-kuk",
-    "eVTOL": "ee vee toll"
+  "run_date": "2026-09-12",
+  "title": "The Question Comes First",
+  "role": "vo-director",
+  "planned_at": "2026-09-12T15:24:39.321309+00:00",
+  "target_seconds": 120,
+  "word_count": 220,
+  "input_sha256": {
+    "vo_script.txt": "9adddbadffb1a6da75e8407499ccb76e110c0ccec379e949719e32eceb9085f1",
+    "angle.json": "89154fee7d58ee4395753ab90c5fc20dd1c5787c72398e9f39572a9c2dc92bdc"
   },
+  "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
+  "voice": "Sulafat",
+  "accent": "neutral American, light and natural",
+  "notes": "Style: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.",
+  "style_prompt": "Style: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.",
+  "pace_paragraph": "Pace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.",
   "lines": [
     {
       "idx": 0,
-      "text": "Four million meets the place where the road disappears.",
-      "intent": "Open with scale meeting geography",
-      "emphasis": "disappears",
+      "text": "Nineteen scalp electrodes. [short pause] What's on the next page?",
+      "intent": "hook",
+      "emphasis": "page",
       "energy": 4,
-      "tags": [],
-      "pause_before": 0
+      "pace": "Land Nineteen clearly, then open the page question with a curious lift.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": false,
+      "why": "A concrete count buys attention and the unanswered page question pulls forward."
     },
     {
       "idx": 1,
-      "text": "Alaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.",
-      "intent": "State the source and exact qualified amount",
-      "emphasis": "preliminary",
+      "text": "The University of Alaska Anchorage has a new dry E E G.",
+      "intent": "setup",
+      "emphasis": "new",
       "energy": 3,
+      "pace": "Measured conversational context, clean spacing between E E G letters.",
       "tags": [],
-      "pause_before": 0.3
+      "pause_before": false,
+      "why": "Ground the hook in a real new research instrument."
     },
     {
       "idx": 2,
-      "text": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.",
-      "intent": "Name the two systems without hype",
-      "emphasis": "proposes",
-      "energy": 4,
-      "tags": [],
-      "pause_before": 0.35
+      "text": "The university [slow] announced it for its A I and Robotics Lab on September ninth.",
+      "intent": "stat",
+      "emphasis": "ninth",
+      "energy": 2,
+      "pace": "Give the lab name and date a deliberately slow, clear cadence after The university; keep the factual delivery calm.",
+      "tags": [
+        "[slow]"
+      ],
+      "pause_before": false,
+      "why": "The acquisition peg needs clarity rather than promotional emphasis."
     },
     {
       "idx": 3,
-      "text": "Cargo could carry medicine. Electric aircraft are proposed for patients and providers.",
-      "intent": "Separate the jobs",
-      "emphasis": "patients",
+      "text": "The Educational Legacy Fund funded it. [short pause] Students and faculty have trained.",
+      "intent": "setup",
+      "emphasis": "trained",
       "energy": 3,
-      "tags": [],
-      "pause_before": 0.2
+      "pace": "Credit the fund plainly, take the ordinary sentence breath, then lift warmly into people who have trained.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": false,
+      "why": "Move from support to people already learning to use the equipment."
     },
     {
       "idx": 4,
-      "text": "Those are not the same test.",
-      "intent": "Land the thesis",
-      "emphasis": "not",
-      "energy": 5,
-      "tags": [],
-      "pause_before": 0.45
+      "text": "The device [slow] records electrical activity using sensors that rest directly against the scalp.",
+      "intent": "stat",
+      "emphasis": "scalp",
+      "energy": 2,
+      "pace": "Slow the measurement explanation after The device so the electrical activity and scalp sensors are easy to picture; keep ordinary articulation.",
+      "tags": [
+        "[slow]"
+      ],
+      "pause_before": false,
+      "why": "Give the listener a plain-language physical mechanism while keeping the signal distinct from thoughts or clinical results."
     },
     {
       "idx": 5,
-      "text": "Ryan Air says it serves more than seventy villages, so the test would extend an aviation network.",
-      "intent": "Avoid rescue framing",
-      "emphasis": "extend",
-      "energy": 3,
+      "text": "Graduate student Vadim Egorov has watched his own signals appear.",
+      "intent": "reveal",
+      "emphasis": "own",
+      "energy": 4,
+      "pace": "Let the name flow naturally and brighten at his own signals.",
       "tags": [],
-      "pause_before": 0.4
+      "pause_before": false,
+      "why": "The documented demonstration supplies a small human discovery."
     },
     {
       "idx": 6,
-      "text": "First comes one medicine box.",
-      "intent": "Shrink the experiment to one object",
-      "emphasis": "one",
-      "energy": 4,
+      "text": "He usually works with public E E G datasets.",
+      "intent": "setup",
+      "emphasis": "public",
+      "energy": 2,
+      "pace": "Calm professional respect for the existing research practice.",
       "tags": [],
-      "pause_before": 0.45
+      "pause_before": false,
+      "why": "The archive enters as useful work already happening."
     },
     {
       "idx": 7,
-      "text": "Can an authorized route deliver it on time inside Alaska weather?",
-      "intent": "Plant the primary test",
-      "emphasis": "authorized",
+      "text": "Now [slow] he's looking forward to collecting recordings for his own tasks.",
+      "intent": "reveal",
+      "emphasis": "tasks",
       "energy": 4,
-      "tags": [],
-      "pause_before": 0.25
+      "pace": "Settle into a slower reflective cadence as the story opens the new research option; keep ordinary articulation and warmth.",
+      "tags": [
+        "[slow]"
+      ],
+      "pause_before": false,
+      "why": "Celebrate the added choice without performing a completed collection."
     },
     {
       "idx": 8,
-      "text": "The notice documents no aircraft purchase, F A A approval, route or completed flight.",
-      "intent": "State the absence without cynicism",
-      "emphasis": "no",
-      "energy": 2,
+      "text": "Who might a future answer work for?",
+      "intent": "stakes",
+      "emphasis": "Who",
+      "energy": 3,
+      "pace": "Lean toward one listener, with a small questioning rise.",
       "tags": [],
-      "pause_before": 0.4
+      "pause_before": true,
+      "why": "Plant the later new-person test as curiosity about scope."
     },
     {
       "idx": 9,
-      "text": "The map is unsettled.",
-      "intent": "Rehook with a concrete record problem",
-      "emphasis": "map",
-      "energy": 4,
+      "text": "U A A plans to study cognitive states during reading.",
+      "intent": "setup",
+      "emphasis": "plans",
+      "energy": 2,
+      "pace": "Measured and clear, keeping plans audible before cognitive states.",
       "tags": [],
-      "pause_before": 0.5
+      "pause_before": false,
+      "why": "The reading study is future work rather than a result."
     },
     {
       "idx": 10,
-      "text": "The summary names Bethel and Dillingham.",
-      "intent": "Read the first field plainly",
-      "emphasis": "summary",
-      "energy": 2,
-      "tags": [],
-      "pause_before": 0.2
+      "text": "Another planned project pairs brain activity [short pause] with eye movements during programming.",
+      "intent": "setup",
+      "emphasis": "pairs",
+      "energy": 3,
+      "pace": "Gentle lift, keeping brain activity and eye movements as distinct phrases.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": false,
+      "why": "Make the planned pairing understandable without merging the measurements."
     },
     {
       "idx": 11,
-      "text": "A separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.",
-      "intent": "Contrast the second field",
-      "emphasis": "separate",
-      "energy": 3,
+      "text": "Those are plans, with the answers still ahead.",
+      "intent": "stakes",
+      "emphasis": "ahead",
+      "energy": 2,
+      "pace": "Warm and matter-of-fact, with a light sense of possibility at ahead.",
       "tags": [],
-      "pause_before": 0.25
+      "pause_before": false,
+      "why": "Locate the work in time without a deflating catch."
     },
     {
       "idx": 12,
-      "text": "Then the second ladder gets steeper.",
-      "intent": "Pivot to passenger proof",
-      "emphasis": "steeper",
+      "text": "And the public recordings? [short pause] They keep their place.",
+      "intent": "reveal",
+      "emphasis": "keep",
       "energy": 4,
-      "tags": [],
-      "pause_before": 0.45
+      "pace": "Ask with a half-smile, give the question one natural beat, then answer with calm confidence.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": false,
+      "why": "Give the public-data countercase full positive weight."
     },
     {
       "idx": 13,
-      "text": "The official source calls only the cargo drones autonomous.",
-      "intent": "Correct the grammar cleanly",
-      "emphasis": "only",
-      "energy": 4,
-      "tags": [],
-      "pause_before": 0.3
+      "text": "Researchers [slow] can check whether existing recordings fit the question. If they do, useful analysis can start there.",
+      "intent": "setup",
+      "emphasis": "fit",
+      "energy": 3,
+      "pace": "Slow the practical fit test after Researchers, let the complete thought land, then lift gently into useful analysis at the sentence turn.",
+      "tags": [
+        "[slow]"
+      ],
+      "pause_before": false,
+      "why": "Let the countercase do real work and preserve its conditional fit test."
     },
     {
       "idx": 14,
-      "text": "Passenger electric aircraft need their own aircraft, pilot and operating approvals.",
-      "intent": "Name the higher burden",
-      "emphasis": "own",
-      "energy": 3,
+      "text": "They can also plan a new recording around another task.",
+      "intent": "reveal",
+      "emphasis": "also",
+      "energy": 2,
+      "pace": "Brief warm settle before the larger reveal.",
       "tags": [],
-      "pause_before": 0.25
+      "pause_before": false,
+      "why": "Also connects the two routes as compatible research choices."
     },
     {
       "idx": 15,
-      "text": "Budget finalization is in progress, and projected amounts may change.",
-      "intent": "State the official program caveat",
-      "emphasis": "may change",
-      "energy": 5,
-      "tags": [],
-      "pause_before": 0.55
+      "text": "The extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.",
+      "intent": "reveal",
+      "emphasis": "design",
+      "energy": 4,
+      "pace": "Brighten on design, breathe at the period, then soften warmly into the still-open old pages.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": true,
+      "why": "Pay the concealed-page promise with student participation and a useful archive beside it."
     },
     {
       "idx": 16,
-      "text": "Still, this award matters because the proposal describes gaps in medicine access and transport.",
-      "intent": "Name the applicant's problem statement",
-      "emphasis": "gaps",
-      "energy": 3,
+      "text": "A recording alone doesn't supply an interpretation.",
+      "intent": "stakes",
+      "emphasis": "interpretation",
+      "energy": 2,
+      "pace": "Quiet precision, never a warning voice.",
       "tags": [],
-      "pause_before": 0.25
+      "pause_before": false,
+      "why": "Separate recording from inference without implying a UAA error."
     },
     {
       "idx": 17,
-      "text": "A first test needs a named route, F A A certification and operating authorization.",
-      "intent": "Name the proof criteria",
-      "emphasis": "authority",
-      "energy": 4,
-      "tags": [],
-      "pause_before": 0.35
+      "text": "If a future model claims to work for new people, [short pause] test it on people absent from training.",
+      "intent": "stakes",
+      "emphasis": "absent",
+      "energy": 3,
+      "pace": "Finish the conditional phrase about new people, take a natural thought-breath, then make absent from training easy to follow.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": false,
+      "why": "State the general new-person test as a practical method, not an accusation."
     },
     {
       "idx": 18,
-      "text": "The proposal matters when medicine moves on that authorized route.",
-      "intent": "Name the conditional first win",
-      "emphasis": "promised",
-      "energy": 3,
-      "tags": [],
-      "pause_before": 0.4
+      "text": "That's a research principle, [short pause] not a reported U A A result.",
+      "intent": "setup",
+      "emphasis": "principle",
+      "energy": 2,
+      "pace": "A short clean clarification, maintaining warmth.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": false,
+      "why": "Keep editorial methods context separate from a reported institutional result."
     },
     {
       "idx": 19,
-      "text": "Until that box lands, the future is still in the crate.",
-      "intent": "Button on unresolved hope",
-      "emphasis": "crate",
-      "energy": 2,
+      "text": "Which question about learning should they investigate first?",
+      "intent": "button",
+      "emphasis": "first",
+      "energy": 4,
+      "pace": "Turn toward the listener, invite an answer, and finish with a natural curious lift.",
       "tags": [],
-      "pause_before": 0.65
+      "pause_before": true,
+      "why": "Return the story to choosing worthwhile learning questions."
     }
   ],
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Sulafat, a warm Alaska explainer with grounded authority and quiet wit.\n### DIRECTOR'S NOTES\nStyle: warm, grounded and conversational with quiet wonder. Build energy through the two-aircraft split, then slow down for the evidence test. Dry wit only on victory lap and air taxi.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nTranscript:\nFour million meets the place where the road disappears.\nAlaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.\nRyan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.\nCargo could carry medicine. Electric aircraft are proposed for patients and providers.\nThose are not the same test.\nRyan Air says it serves more than seventy villages, so the test would extend an aviation network.\nFirst comes one medicine box.\nCan an authorized route deliver it on time inside Alaska weather?\nThe notice documents no aircraft purchase, F A A approval, route or completed flight.\nThe map is unsettled.\nThe summary names Bethel and Dillingham.\nA separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.\nThen the second ladder gets steeper.\nThe official source calls only the cargo drones autonomous.\nPassenger electric aircraft need their own aircraft, pilot and operating approvals.\nBudget finalization is in progress, and projected amounts may change.\nStill, this award matters because the proposal describes gaps in medicine access and transport.\nA first test needs a named route, F A A certification and operating authorization.\nThe proposal matters when medicine moves on that authorized route.\nUntil that box lands, the future is still in the crate."
+  "pronunciations": {
+    "Vadim Egorov": "vuh-DEEM yih-GOR-uhv"
+  },
+  "pronunciation_note": "Conventional pronunciation guide only; the individual preferred reading has not been confirmed. It is direction data and never a transcript replacement. Audition the name in soundcheck.",
+  "arc": [
+    {
+      "lines": [
+        0,
+        5
+      ],
+      "movement": "Curious concrete opening into a small human discovery. Energies 4,3,2,3,2,4."
+    },
+    {
+      "lines": [
+        6,
+        11
+      ],
+      "movement": "Respect existing work, lift into chosen tasks, and keep all study plans future-facing. Energies 2,4,3,2,3,2."
+    },
+    {
+      "lines": [
+        12,
+        15
+      ],
+      "movement": "A confident public-data countercase earns the warmer additive-page reveal. Energies 4,3,2,4."
+    },
+    {
+      "lines": [
+        16,
+        19
+      ],
+      "movement": "Calm interpretation and conditional methods, then a bright direct invitation. Energies 2,3,2,4."
+    }
+  ],
+  "priority_line_idx": 15,
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.\nTranscript:\nNineteen scalp electrodes. [short pause] What's on the next page?\nThe University of Alaska Anchorage has a new dry E E G.\nThe university [slow] announced it for its A I and Robotics Lab on September ninth.\nThe Educational Legacy Fund funded it. [short pause] Students and faculty have trained.\nThe device [slow] records electrical activity using sensors that rest directly against the scalp.\nGraduate student Vadim Egorov has watched his own signals appear.\nHe usually works with public E E G datasets.\nNow [slow] he's looking forward to collecting recordings for his own tasks.\nWho might a future answer work for?\nU A A plans to study cognitive states during reading.\nAnother planned project pairs brain activity [short pause] with eye movements during programming.\nThose are plans, with the answers still ahead.\nAnd the public recordings? [short pause] They keep their place.\nResearchers [slow] can check whether existing recordings fit the question. If they do, useful analysis can start there.\nThey can also plan a new recording around another task.\nThe extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.\nA recording alone doesn't supply an interpretation.\nIf a future model claims to work for new people, [short pause] test it on people absent from training.\nThat's a research principle, [short pause] not a reported U A A result.\nWhich question about learning should they investigate first?",
+  "planning_checks": {
+    "exact_spoken_lines": true,
+    "adjacent_energy_contrast": true,
+    "all_lines_have_intent_emphasis_pace": true,
+    "inline_tags_total": 11,
+    "only_vetted_midline_tags": true,
+    "target_anchored_pace_verbatim": true,
+    "no_synthesis_performed": true,
+    "previous_job_runtime_failed": true,
+    "this_revision_not_synthesized": true,
+    "inline_tags_by_type": {
+      "[short pause]": 7,
+      "[slow]": 4
+    }
+  },
+  "revision": 5,
+  "revision_reason": "Streaming completed both revision 4 takes without transport errors, but 109.36 seconds remained below the 112-130 second band. One slow cue at line 7 did not establish a persistent full-read tempo. Repeat the locally vetted cue at meaningful names, measurement and analysis spans before the page payoff.",
+  "revision_scope": "Add slow after The university on line 2; replace line 4 and line 13 short-pause cues with slow after The device and Researchers. Preserve the existing line 7 slow cue, all 220 spoken words, Sulafat, the canonical 120-second pace paragraph and contrasting line energies. No synthesis or audio processing.",
+  "previous_plan_sha256": "106dc4b44fcfa7b109f72590ec759439a4b5aa0d025fd0d00874f878c4f7e2a8",
+  "previous_report_sha256": "ff8ea726c91b294c4b14cd4e43b475b2bd8bdd7efc4bb3079872921731750d84",
+  "performed_target_seconds": [
+    118,
+    120
+  ],
+  "vetted_tag_evidence": {
+    "tag": "[slow]",
+    "path": "out/dispatch/probe/slow_tag_probe.json",
+    "wav_sha256": "7ee831698f1711663177ee3237336be34a4676b20a83a1990cd04b7f9f752e4d",
+    "wer": 0,
+    "leaked": [],
+    "duration_s": 35.16,
+    "scope": "56-word isolated probe, not format approval",
+    "source": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud"
+  }
 }

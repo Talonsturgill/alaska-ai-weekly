@@ -1,0 +1,267 @@
+{
+  "reviewed_at_utc": "2026-09-12T16:50:48.506807+00:00",
+  "role": "Phase 6B late caption editor and caption-to-narration parity reviewer",
+  "verdict": "ship",
+  "ship": true,
+  "revise": false,
+  "scope": "Approval of current LinkedIn post copy against locked narration, timed text and verified claims only. Not final rendered-byte, visual, audio-listening, publication or delivery QA.",
+  "authority": "prompts/dispatch_routine.md Phase 6B and config/linkedin_caption_rubric.yaml. Dispatch length and tail hashtags override weekly Facebook template rules.",
+  "input_sha256": {
+    "out/dispatch/post.txt": "a7dc4b491eae03ebf64cf9bb807e94e0c438e08685eac36ff60cf90693ba0f16",
+    "out/dispatch/vo_script.txt": "9adddbadffb1a6da75e8407499ccb76e110c0ccec379e949719e32eceb9085f1",
+    "out/dispatch/vo_script.json": "1331d93933a981b3632e516a4d662cbe6a653f03fee6261d23398423bbfe5e26",
+    "out/dispatch/vo_lines.json": "81090a03044671132d3d5ace0a0bd47f4e0af504e6cdebdb53a89ad304e1f14f",
+    "out/dispatch/captions.json": "a94f5cc875d6a4598950425c54fb9bc18f9d35230df9525ac0259e922b47bed1",
+    "out/dispatch/claims.json": "353e5ff516df6fdd393d5673d9ba5a580b428e66ca7be34a7774fbf86f0dcbed",
+    "out/dispatch/fact_check.json": "ca2765e6549ec7796dd3ecb371ac6c3abeec52b460617a35773ac4ec8327d9a8",
+    "out/dispatch/sources.json": "40c360b95ffda8a2ac1cc7a16e9ef0f4cdc28d2b58e10e48ee6552cfeb285b36",
+    "out/dispatch/sources_verified.json": "95c4b8771995385f59002fd80d966bb0d9c9a55f6ffa1e03ea3235c25374ada2",
+    "out/dispatch/vo_report.json": "d5be5e4ed7371f0d656d80f0219bdfae2120c78ae45b90e881a3d3a7297f2f4c",
+    "out/dispatch/caption_report.json": "01df4c38a6c6deee273f361db65fd3947e0efd5d6a1f8b2e10a2e84aefc85daf",
+    "out/dispatch/caption_editor.json": "786858e6406025c0730940810fff238c6821949e56967513d946cf74aa06eedb",
+    "config/linkedin_caption_rubric.yaml": "ea4251b577a40bed2fffd5bea83f3b7813c2ed3f15f46438ae4282a53c465e9f",
+    "config/brand.yaml": "8621b7cc4a6ca492f472fe1e74f1bc99628e392c0519c7dfc322e1a663de9cab",
+    "prompts/dispatch_routine.md": "e8731d3547c46d2d61b5e614b5057e62fa2dccaebc5d84ca9d9e849dab5a394b"
+  },
+  "objective_gate": {
+    "command": "python3 scripts/caption_check.py out/dispatch/post.txt",
+    "exit_code": 0,
+    "report_refreshed": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/caption_report.json",
+    "pass": true,
+    "fails": [],
+    "warns": [],
+    "metrics": {
+      "chars": 1485,
+      "hook": "UAA's new brain sensor is a research win before it produces a new finding.",
+      "hook_len": 74,
+      "hashtags": [
+        "#AlaskaAI",
+        "#UAA",
+        "#EEG",
+        "#ArtificialIntelligence"
+      ],
+      "n_hashtags": 4,
+      "emoji": 0,
+      "unicode_bold": 0,
+      "bullet_lines": 0,
+      "sentence_initial_but": 0,
+      "commas_per_100w": 1.79,
+      "passes": true
+    }
+  },
+  "copy_parity": {
+    "post_unchanged_since_previous_editor_approval": true,
+    "locked_spoken_words": 220,
+    "locked_lines": 20,
+    "timed_lines_exact_match": true,
+    "caption_cues": 50,
+    "captions_grouped_by_segment_exact_match": true,
+    "scalp_contact_revision": {
+      "line_idx": 4,
+      "timed_start_s": 28.68,
+      "timed_end_s": 35.54,
+      "claim_id": "c16",
+      "source": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
+      "source_locator": "Section 2.4, printed page 11, as recorded in current claims.json",
+      "assessment": "The final film source explains sensors resting directly against the scalp. The existing post already describes 19 scalp electrodes recording electrical signals. These claims agree; the post need not repeat every explanatory phrase."
+    },
+    "thesis": "The acquisition and training are an earned research-capability win because students can help shape a new recording around a chosen task. Existing public data remains useful when it fits the question; findings remain ahead.",
+    "numeric_and_date_parity": [
+      {
+        "post": "19 scalp electrodes",
+        "vo_line_idx": 0,
+        "claim_id": "c8",
+        "match": true
+      },
+      {
+        "post": "September 9th",
+        "vo_line_idx": 2,
+        "claim_id": "c1",
+        "match": true
+      }
+    ],
+    "claim_mapping": [
+      {
+        "post_scope": "Egorov is a graduate student, uses public EEG data and anticipates own-task collection",
+        "claim_ids": [
+          "c6",
+          "c9",
+          "c10"
+        ],
+        "vo_line_indices": [
+          5,
+          6,
+          7
+        ],
+        "match": true
+      },
+      {
+        "post_scope": "UAA AI and Robotics Lab acquisition, Educational Legacy Fund funding, faculty/student training",
+        "claim_ids": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "vo_line_indices": [
+          1,
+          2,
+          3
+        ],
+        "match": true
+      },
+      {
+        "post_scope": "Scalp electrodes record electrical signals",
+        "claim_ids": [
+          "c8",
+          "c16"
+        ],
+        "vo_line_indices": [
+          0,
+          4
+        ],
+        "match": true
+      },
+      {
+        "post_scope": "Planned reading cognitive-state and programming brain/eye measurements",
+        "claim_ids": [
+          "c11",
+          "c12",
+          "c13",
+          "c14"
+        ],
+        "vo_line_indices": [
+          9,
+          10,
+          11
+        ],
+        "match": true
+      },
+      {
+        "post_scope": "Public recordings remain useful; an additional task can shape a new recording",
+        "claim_ids": [
+          "c9",
+          "c10"
+        ],
+        "vo_line_indices": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "match": true
+      },
+      {
+        "post_scope": "Conditional evaluation on people absent from training, explicitly a general principle rather than a UAA finding",
+        "claim_ids": [
+          "c14",
+          "c15",
+          "c16"
+        ],
+        "vo_line_indices": [
+          16,
+          17,
+          18
+        ],
+        "match": true
+      }
+    ],
+    "boundaries_preserved": [
+      "Acquisition and training are observed; the reading/programming studies remain planned.",
+      "Electrical recording is distinct from interpretation; no thoughts, diagnosis or clinical proof claimed.",
+      "New-person testing is conditional editorial methods context, with no allegation about UAA.",
+      "No sample size, price, accuracy, completed dataset or completed study result is asserted.",
+      "Research choice is an additional collection capability, not a claim that public datasets were useless or students previously lacked research agency."
+    ]
+  },
+  "existing_voice_evidence": {
+    "report": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/vo_report.json",
+    "selected_take": 1,
+    "soundcheck_pass": true,
+    "raw_duration_s": 122.88,
+    "aligned_total_s": 122.28,
+    "wer": 0.019,
+    "leaked_markup": [],
+    "runtime_warning": null,
+    "use_limit": "Current report read as evidence; no new listening or rendered-video assessment in this review."
+  },
+  "criteria": [
+    {
+      "name": "Hook / scroll-stop",
+      "weight": 0.2,
+      "score": 9.0,
+      "reason": "The 74-character hook makes an earned capability-before-findings judgment that both post and film support."
+    },
+    {
+      "name": "Point of view / take",
+      "weight": 0.18,
+      "score": 9.1,
+      "reason": "Students gain an additional way to collect evidence for chosen tasks; public recordings retain their place."
+    },
+    {
+      "name": "Substance & specificity",
+      "weight": 0.16,
+      "score": 9.2,
+      "reason": "Names, funding, 19 scalp electrodes and the reading/programming plans remain traceable to the approved claims and final narration."
+    },
+    {
+      "name": "Readability & restraint",
+      "weight": 0.12,
+      "score": 9.0,
+      "reason": "Short paragraphs, 1,485 characters, no decorative formatting, and a clear progression from milestone to research choices."
+    },
+    {
+      "name": "Engagement design (CTA + comment-bait)",
+      "weight": 0.12,
+      "score": 9.0,
+      "reason": "The question asks for a research task within the two reported planned directions."
+    },
+    {
+      "name": "Brand voice & accuracy",
+      "weight": 0.12,
+      "score": 9.3,
+      "reason": "Celebrates a documented Alaska research capability while keeping collection, interpretation and future findings distinct."
+    },
+    {
+      "name": "Hashtag craft",
+      "weight": 0.1,
+      "score": 8.6,
+      "reason": "Four relevant tags end the post. Audience-size bands were not independently verified."
+    }
+  ],
+  "weighted_score": 9.046,
+  "ship_threshold": 8.5,
+  "hard_fails": [],
+  "required_edits": [],
+  "post_modified": false,
+  "script_or_source_modified": false,
+  "remaining_checks": "Parent is completing repaired rendering and final preflight. This copy-only verdict does not certify final encoded visuals, audio pronunciation, render provenance, publication or delivery.",
+  "previous_parity_report_sha256": "035a59c081032dc327d2a9dff78da1d23125f9e02eba046e0a3d13688dcc6c82",
+  "binding_refresh": {
+    "reason": "Metadata-only display-wording amendment: claims.json now records independently approved equivalent on-screen wording and additional mandatory context strings. No spoken fact, source, research-status limit or original requires obligation changed.",
+    "previous_claims_sha256": "e88faac62116539a2eff67223d418ea63ebdace81ae6ef152672c6b23cbd04ba",
+    "current_claims_sha256": "353e5ff516df6fdd393d5673d9ba5a580b428e66ca7be34a7774fbf86f0dcbed",
+    "fact_field_baseline": {
+      "git_commit": "b46b2bad5262c6d78d490e5420d96445e3dc246a",
+      "path": "out/dispatch/claims.json",
+      "fields_compared": [
+        "spoken",
+        "status",
+        "source",
+        "requires",
+        "additional_source_locator"
+      ],
+      "unchanged_for_all_claims": 16
+    },
+    "all_must_ship_retained": 16,
+    "post_script_timed_lines_and_caption_bytes_unchanged": true,
+    "current_counts": {
+      "spoken_words": 220,
+      "vo_lines": 20,
+      "caption_cues": 50
+    },
+    "editor_reassessment": "Reread the complete unchanged post and narration. The hook remains earned by acquisition and training. Both retain useful public data, planned reading/programming studies and the conditional general test for new people. The display amendments preserve those meanings and add no post claim. The 9.046 score remains supported.",
+    "no_final_render_or_listening_claim": true
+  }
+}

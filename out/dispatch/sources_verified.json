@@ -1,0 +1,85 @@
+{
+  "validated_at_utc": "2026-09-12T13:07:42.627264+00:00",
+  "window": [
+    "2026-09-02",
+    "2026-09-12"
+  ],
+  "all_urls_refetched": true,
+  "sourcing_rule": "At least one primary source; hardware count additionally confirmed by manufacturer.",
+  "sources": [
+    {
+      "id": "uaa_announcement",
+      "url": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "title": "New brain activity monitoring system to support interdisciplinary research at UAA",
+      "publisher": "University of Alaska Anchorage",
+      "author": "Matt Jardin",
+      "pub_date": "2026-09-09",
+      "is_in_window": true,
+      "background_context": false,
+      "primary": true,
+      "independently_refetched": true,
+      "status": "verified",
+      "locator": "Article body and photograph caption; web extracted lines 478–496"
+    },
+    {
+      "id": "manufacturer_specs",
+      "url": "https://wearablesensing.com/dsi-24/",
+      "title": "DSI-24",
+      "publisher": "Wearable Sensing",
+      "pub_date": null,
+      "is_in_window": false,
+      "background_context": true,
+      "primary": true,
+      "independently_refetched": true,
+      "status": "verified",
+      "locator": "Introduction and hardware specifications; lines 77–80, 160–197",
+      "use_limit": "Hardware specifications only; vendor marketing is not independently verified performance."
+    },
+    {
+      "id": "manufacturer_manual",
+      "url": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
+      "title": "DSI-24 User Manual V1.2023",
+      "publisher": "Wearable Sensing",
+      "pub_date": null,
+      "document_version": "V1.2023",
+      "is_in_window": false,
+      "background_context": true,
+      "primary": true,
+      "independently_refetched": true,
+      "status": "verified",
+      "locator": "Page 64 research-use warning; text lines 1459–1469; screenshot requested for page 64"
+    },
+    {
+      "id": "uaa_workshop",
+      "url": "https://coeng.uaa.alaska.edu/AI/raise-ai-solutions-consortium-workshop-2026/",
+      "title": "2026 Alaska AI Solutions Consortium Workshop",
+      "publisher": "UAA College of Engineering",
+      "pub_date": null,
+      "event_date": "2026-08-07",
+      "is_in_window": false,
+      "background_context": true,
+      "primary": true,
+      "independently_refetched": true,
+      "status": "verified",
+      "locator": "Executive summary; student presentation list, lines 42–58"
+    },
+    {
+      "id": "eeg_validation_methods",
+      "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1373515/full",
+      "title": "Data leakage in deep learning studies of translational EEG",
+      "publisher": "Frontiers in Neuroscience",
+      "author": "Geoffrey Brookshire et al.",
+      "pub_date": "2024-05-03",
+      "doi": "10.3389/fnins.2024.1373515",
+      "is_in_window": false,
+      "background_context": true,
+      "primary": true,
+      "peer_reviewed": true,
+      "independently_refetched": true,
+      "status": "verified",
+      "locator": "Introduction; methods 2.4; results 3.1; conclusion",
+      "use_limit": "General EEG validation evidence, not evaluation of UAA or this acquisition."
+    }
+  ],
+  "dropped_sources": []
+}

@@ -1,0 +1,112 @@
+{
+  "status": "S10 source frozen; full rerender required after remaining S4 cadence repair",
+  "created_utc": "2026-09-12T17:42:49.267999+00:00",
+  "scope": "Only Shot 10 branch in video-engine/src/Ep0912.tsx; no source changes outside that branch by this repair.",
+  "source_sha256": "4aedaf72c45d5f33bb20495c5d2a2047f606d09c8ef9fa1e2a1660ec5476af90",
+  "input_source_sha256": "02d1ccebada75c22250805b2c488decd8e6347df9042eb8f860ac23d1c92a2f8",
+  "props_sha256": "95963f3f85da2e7a098b4c65beb2613af5a39ed45db06ae347567f76a9bf778b",
+  "gate_source_sha256": "a8764bb0d5281d0c434ba6f601b3fd13d0a58f597e81666bd9b7c24107bfc90d",
+  "changes": [
+    "Beat 27 now visibly compares the existing QUESTION B paper against two inventory context tabs: grip, left comparison, pause, right comparison, pause, return. ASSESS FIT remains stationary and no fit result is shown.",
+    "The comparison hand retracts geometrically during beat 28; it no longer fades as a ghost across the paper.",
+    "SCHEMATIC is raised 14 local units (approximately 13 screen units) inside the A-sheet border. The waveform remains at its original location, preserving separation from RECORDING A."
+  ],
+  "preserved": [
+    "220-word approved voice and all timing",
+    "40 physical beats and existing sound cues",
+    "All exact claim labels and planned-study context",
+    "Camera configuration",
+    "Reveal holds",
+    "Quality thresholds"
+  ],
+  "visual_qa": {
+    "resolution": [
+      1080,
+      1920
+    ],
+    "inspected_final_frames": [
+      2704,
+      2742
+    ],
+    "findings": [
+      "SCHEMATIC clears the sheet bottom rule at frame 2704.",
+      "Hand exits without a transparent ghost at frame 2742."
+    ],
+    "earlier_comparison_action_frames": [
+      2643,
+      2688
+    ]
+  },
+  "verification": {
+    "typescript": "pass",
+    "staging_check": "pass; standard shared/unmapped-site caveat requires rendered review",
+    "caption_band_check": "pass",
+    "plate_overlap_check": "pass, 14 scenes",
+    "claims_contract_check": "pass, 42/42 machine obligations; render legibility reviewed separately"
+  },
+  "probe": {
+    "measurement": "out/dispatch/probe/s10_compare_v1/measurement.json",
+    "method": "Unmodified production gate AST functions and EVENT_CADENCE statements; candidate2 baseline with energy cadence_v2 Shot3 pixels and new full-resolution Shot10 pixels. Unchanged original neighbors used at shot boundaries.",
+    "sample_resolution": [
+      1080,
+      1920
+    ],
+    "shot10_replaced_pairs": 74,
+    "living_screen": {
+      "pass": true,
+      "passed_windows": 56,
+      "graded_windows": 66,
+      "fraction": 0.8484848484848485,
+      "required": 0.8,
+      "weak_windows_s": [
+        14,
+        18,
+        42,
+        74,
+        92,
+        94,
+        102,
+        104,
+        124,
+        128
+      ]
+    },
+    "camera_shot10": {
+      "pass": true,
+      "frames": [
+        2463,
+        2683
+      ],
+      "fraction": 0.37905092592592593,
+      "required": 0.3
+    },
+    "event_cadence": {
+      "pass": false,
+      "baseline_floor_after_shot3": 1.5229049324989319,
+      "combined_floor": 1.5418535470962524,
+      "checks": [
+        {
+          "name": "EVENT_CADENCE",
+          "pass": false,
+          "detail": "biggest dead gap=5.4s (max 5.0s), dead windows=[[29.0, 34.4]] \u2014 guards 'boring/too slow'"
+        }
+      ],
+      "metrics": {
+        "event_spikes": 332,
+        "biggest_gap_s": 5.4,
+        "dead_windows": [
+          [
+            29.0,
+            34.4
+          ]
+        ]
+      },
+      "replaced_pairs": 74
+    }
+  },
+  "remaining_work": "Energy owns S4 existing fixed-contact emphasis repair for 29.0\u201334.4 second cadence gap. Use this measurement all_deltas as combined baseline, then rerender entire film and rerun actual full-frame gates.",
+  "patch": "out/dispatch/s10_assessment_patch.diff",
+  "no_commit": true,
+  "full_rerender_required": true,
+  "ship_verdict": "Not yet a final encoded-film pass."
+}

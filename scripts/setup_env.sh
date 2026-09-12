@@ -7,9 +7,22 @@ set -uo pipefail
 # ffmpeg
 command -v ffmpeg >/dev/null 2>&1 || { apt-get update -qq && apt-get install -y -qq ffmpeg; }
 
+# The delivered-credit gate reads actual text pixels. Use the native macOS
+# recognizer, or install the Linux OCR backend before spending a render.
+if [ "$(uname -s)" = Darwin ] && command -v swift >/dev/null 2>&1; then
+  echo "setup_env: credit OCR uses macOS Vision"
+elif ! command -v tesseract >/dev/null 2>&1; then
+  if command -v apt-get >/dev/null 2>&1; then
+    apt-get update -qq && apt-get install -y -qq tesseract-ocr || exit 1
+  else
+    echo "setup_env: credit OCR requires macOS Swift/Vision or tesseract" >&2
+    exit 1
+  fi
+fi
+
 # python deps (only install if missing)
-python3 -c "import PIL,numpy,scipy,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
-  || pip install --break-system-packages -q pillow numpy scipy edge-tts soundfile pyyaml
+python3 -c "import PIL,numpy,scipy,matplotlib,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
+  || python3 -m pip install --break-system-packages -q pillow numpy scipy matplotlib edge-tts soundfile pyyaml
 # librosa + faster_whisper: the Gemini VO pipeline's soundcheck (scripts/vo_soundcheck.py
 # pitch-variance gate) imports librosa, and scripts/vo_synth_gemini.py's whole-file forced
 # alignment imports faster_whisper, both under the SYSTEM python3 (not the voice venv). They
@@ -34,6 +47,13 @@ python3 -c "import librosa, faster_whisper" >/dev/null 2>&1 \
 python3 -c "import num2words" >/dev/null 2>&1 \
   || pip install --break-system-packages -q --no-deps num2words \
   || echo "setup_env: WARN num2words install failed (WER canonicalizer will under-count digit tokens, inflating WER on number-heavy scripts)"
+# Gemini and Remotion are the current production path. Retired renderers and
+# local voice fallbacks are opt-in; installing them on every Mac run repeatedly
+# fails on unsupported wheels even when every production dependency is ready.
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+VENV_DIR="$REPO_DIR/.venv-voice"
+VOICE_PY="$VENV_DIR/bin/python"
+if [ "${DISPATCH_INSTALL_LEGACY_STACK:-0}" = "1" ]; then
 # DIMENSIONAL ENGINE (3D): taichi is the primary renderer (CPU JIT, ~0.45s/frame @1080x1920)
 python3 -c "import taichi" >/dev/null 2>&1 \
   || pip install --break-system-packages -q taichi
@@ -78,6 +98,10 @@ fi
 
 # rclone (token-safe video upload -> one-click download link)
 command -v rclone >/dev/null 2>&1 || { curl -fsSL https://rclone.org/install.sh | bash || true; }
+
+else
+  echo "setup_env: using Gemini/Remotion; legacy stack skipped (opt in with DISPATCH_INSTALL_LEGACY_STACK=1)"
+fi
 
 # edge-tts TLS: append the system + agent-proxy CA bundles to certifi (idempotent)
 # — for BOTH pythons (system + voice venv); aiohttp/hf_hub read certifi, not SSL_CERT_FILE.

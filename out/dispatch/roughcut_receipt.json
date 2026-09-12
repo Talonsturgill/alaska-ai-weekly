@@ -1,0 +1,29 @@
+{
+  "run_date": "2026-09-12",
+  "stage": "Complete breadth-first roughcut, first natural take only; not final approved delivery audio",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 540,
+        "height": 960,
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_type": "audio"
+      }
+    ],
+    "format": {
+      "duration": "115.100000"
+    }
+  },
+  "video_sha256": "feb249388e20e6284b9913152618c9c2c0e8c7a648461f8109b61402d8604ff6",
+  "contact_sheet": "out/dispatch/roughcut_review/contact_sheet.jpg",
+  "created_at": 1789222077.6003442,
+  "reviewed_at": "2026-09-12T14:10:18.968193+00:00",
+  "review": "Root viewed all14 shot midpoints and credits in the generated contact sheet before beginning any illustration polish. Full script and captions covered. Remaining weaknesses: placeholder sensor, thin scenery and acting, duplicated note hierarchy, unfinished39beat choreography. First-take timing is provisional and below finalspokenband."
+}

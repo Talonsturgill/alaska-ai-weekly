@@ -1,0 +1,1551 @@
+{
+  "pass": true,
+  "problems": [],
+  "scope": "Rendered credit rows sampled every half second over the full 10-second window; pixel OCR at its start, middle and end. Not a full-film visual review.",
+  "input_sha256": {
+    "video": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+    "renderer": "8e4d29fb3d2e9fb599afc8bfff2f565bab7f2ab1ee82afa7ddd3c74b4fd8b14a",
+    "credit_timeline_and_data": "99941c9a1853717d9c6db7e9a559adc02e752b0839c22b5f1b14de90cece7da7"
+  },
+  "window": [
+    123.6,
+    133.6
+  ],
+  "readable_seconds": 10.0,
+  "full_opacity_seconds": 10.066666666666663,
+  "samples": [
+    {
+      "seconds": 123.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1168
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0352
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0536
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0416
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1615
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0817
+        }
+      ]
+    },
+    {
+      "seconds": 124.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1168
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0354
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0537
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0416
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1622
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0819
+        }
+      ]
+    },
+    {
+      "seconds": 124.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1168
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0353
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0537
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0416
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1621
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0819
+        }
+      ]
+    },
+    {
+      "seconds": 125.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1167
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0352
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0537
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1616
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0814
+        }
+      ]
+    },
+    {
+      "seconds": 125.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1167
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0352
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0536
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1616
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0814
+        }
+      ]
+    },
+    {
+      "seconds": 126.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1167
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0351
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0537
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1616
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0814
+        }
+      ]
+    },
+    {
+      "seconds": 126.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1165
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0351
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0537
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0414
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1617
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0811
+        }
+      ]
+    },
+    {
+      "seconds": 127.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1165
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0351
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0537
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0414
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1612
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0812
+        }
+      ]
+    },
+    {
+      "seconds": 127.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.1164
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.035
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0536
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0413
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.1613
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0812
+        }
+      ]
+    },
+    {
+      "seconds": 128.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1164
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0349
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0537
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0412
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1611
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0812
+        }
+      ]
+    },
+    {
+      "seconds": 128.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.1164
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0349
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0536
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0413
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1612
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0812
+        }
+      ]
+    },
+    {
+      "seconds": 129.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.1163
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0348
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1612
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0812
+        }
+      ]
+    },
+    {
+      "seconds": 129.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.1163
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0348
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0414
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1612
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0812
+        }
+      ]
+    },
+    {
+      "seconds": 130.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.1163
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0348
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0534
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0414
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1612
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0812
+        }
+      ]
+    },
+    {
+      "seconds": 130.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.1163
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.035
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1613
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0813
+        }
+      ]
+    },
+    {
+      "seconds": 131.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.1165
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0349
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1613
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0813
+        }
+      ]
+    },
+    {
+      "seconds": 131.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1165
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0349
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1613
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0813
+        }
+      ]
+    },
+    {
+      "seconds": 132.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1165
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0349
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1613
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0813
+        }
+      ]
+    },
+    {
+      "seconds": 132.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1166
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0349
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1613
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0813
+        }
+      ]
+    },
+    {
+      "seconds": 133.1,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1166
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0349
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1613
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0813
+        }
+      ]
+    },
+    {
+      "seconds": 133.6,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1166
+        },
+        {
+          "text": "UAA.ALASKA.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0349
+        },
+        {
+          "text": "WEARABLESENSING.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0535
+        },
+        {
+          "text": "FRONTIERSIN.ORG",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0415
+        },
+        {
+          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1054,
+            1044,
+            1105
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1613
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1102,
+            1044,
+            1153
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0813
+        }
+      ]
+    }
+  ],
+  "ocr": [
+    {
+      "seconds": 123.6,
+      "recognized": [
+        "VISIT US AT ALASKAAIHQ.COM",
+        "SOURCES",
+        "UAA. ALASKA. EDU",
+        "WEARABLESENSING.COM",
+        "FRONTIERSIN.ORG",
+        "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED UNDER CC BY 4.0"
+      ],
+      "missing": []
+    },
+    {
+      "seconds": 128.6,
+      "recognized": [
+        "VISIT US AT ALASKAAIHQ.COM",
+        "SOURCES",
+        "UAA. ALASKA. EDU",
+        "WEARABLESENSING.COM",
+        "FRONTIERSIN.ORG",
+        "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED UNDER CC BY 4.0"
+      ],
+      "missing": []
+    },
+    {
+      "seconds": 133.6,
+      "recognized": [
+        "VISIT US AT ALASKAAIHQ-COM",
+        "SOURCES",
+        "UAA. ALASKA. EDU",
+        "WEARABLESENSING.COM",
+        "FRONTIERSIN.ORG",
+        "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED UNDER CC BY 4.0"
+      ],
+      "missing": []
+    }
+  ],
+  "ocr_backend": "macOS Vision accurate, language correction off"
+}

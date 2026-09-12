@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-09-12T18:38:02.286619+00:00",
+  "master_sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+  "scope": "Supplemental sequential action grids from current full-resolution decoded master frames. Each sequence stays inside one shot. Original pixels cropped to the square-safe story and caption region; no scene content altered or invented.",
+  "actions": [
+    {
+      "name": "lab_designation_mounts",
+      "shot": 3,
+      "frame_indices": [
+        481,
+        485,
+        489,
+        493,
+        497,
+        501,
+        505,
+        509,
+        513
+      ],
+      "path": "out/evidence/action_lab_designation_mounts.jpg",
+      "sha256": "46d42d37da1a77158d42e02cea0c5e12612b7ad1bc45d1bc1206aed2fdf38ff6"
+    },
+    {
+      "name": "fixed_scalp_contact",
+      "shot": 4,
+      "frame_indices": [
+        967,
+        975,
+        983,
+        991,
+        999,
+        1007,
+        1015,
+        1023,
+        1031
+      ],
+      "path": "out/evidence/action_fixed_scalp_contact.jpg",
+      "sha256": "7fd159e6ea9b608ebccfe424d85fc413ac49125524e5a96c91aef4ed1910b62f"
+    },
+    {
+      "name": "inventory_comparison",
+      "shot": 10,
+      "frame_indices": [
+        2643,
+        2653,
+        2663,
+        2673,
+        2683,
+        2693,
+        2703,
+        2713,
+        2723
+      ],
+      "path": "out/evidence/action_inventory_comparison.jpg",
+      "sha256": "68d7959779ead64c25ae7f487edd17f2fd47367ad6f87301ce7aa015dc8ebac4"
+    },
+    {
+      "name": "extra_page_unfolds",
+      "shot": 11,
+      "frame_indices": [
+        2794,
+        2797,
+        2800,
+        2803,
+        2806,
+        2809,
+        2812,
+        2815,
+        2818
+      ],
+      "path": "out/evidence/action_extra_page_unfolds.jpg",
+      "sha256": "0ae71a0c2f0178e165ef8f11c0a5801d469709d7d3b9098c51d136ca14a07988"
+    },
+    {
+      "name": "heldout_person_test",
+      "shot": 12,
+      "frame_indices": [
+        3234,
+        3237,
+        3240,
+        3243,
+        3246,
+        3249,
+        3252,
+        3255,
+        3258
+      ],
+      "path": "out/evidence/action_heldout_person_test.jpg",
+      "sha256": "a851381508b107854d7bc8d9f341009c1724b9bc49ed924cd5f0a57c6a7bc9e6"
+    },
+    {
+      "name": "methods_and_plans_separate",
+      "shot": 13,
+      "frame_indices": [
+        3393,
+        3397,
+        3401,
+        3405,
+        3409,
+        3413,
+        3417,
+        3421,
+        3425
+      ],
+      "path": "out/evidence/action_methods_and_plans_separate.jpg",
+      "sha256": "4d25092fca0656916b9bbc1f16042300e59a0c099014cec2de461989ed3a42f4"
+    },
+    {
+      "name": "closing_question",
+      "shot": 14,
+      "frame_indices": [
+        3568,
+        3572,
+        3576,
+        3580,
+        3584,
+        3588,
+        3592,
+        3596,
+        3600
+      ],
+      "path": "out/evidence/action_closing_question.jpg",
+      "sha256": "0222d858c99ffad465a409a58d5a150f074cf0a2f53ff2eadbe4f8473d358ccb"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "status": "Prosody recommendation only. Canonical plan and active job unchanged.",
+  "created_at": "2026-09-12T15:03:52.266284+00:00",
+  "source_script_sha256": "9adddbadffb1a6da75e8407499ccb76e110c0ccec379e949719e32eceb9085f1",
+  "source_plan_sha256": "23d95e31f450d79e2bd6b9549557c1baf772854e4b815cc126f71da1e6c78d49",
+  "diagnosis": [
+    "Observed: the 220-word revision2 initial take is 99.1 seconds, or about 133.2 words per minute, despite a 105-word-per-minute Style request. This falsifies treating the numeric prompt as a calibrated speed control.",
+    "Code: scripts/vo_synth_gemini.py sends the direction as prompt text plus Sulafat voice configuration. The numeric WPM field is not a deterministic API rate setting. Keeping the required runtime paragraph does not guarantee the runtime.",
+    "Inference: the news-like short facts/questions, public-radio identity and crisp/bright cues can bias a fluent explanatory read toward speed. The current style says unhurried but never makes slow documentary cadence the dominant instruction. This is a plausible prompt repair, not a proven account of the model internals.",
+    "Inference: repeated WPM adjustments and numerous small instructions have not established a stable monotonic response. A coherent genre-level performance direction is a better next test than another numeric adjustment.",
+    "Pause math: adding five approximately quarter-second cues adds only about 1.25 seconds in expectation. The voice itself must adopt a slower natural tempo; do not try to fill the deficit with pauses."
+  ],
+  "sources": [
+    {
+      "url": "https://ai.google.dev/gemini-api/docs/speech-generation#prompting-guide",
+      "finding": "Natural-language direction, persona, scene and transcript should align. Google recommends prioritizing important directions and avoiding too many strict rules. This documentation does not promise exact words-per-minute or elapsed-time compliance."
+    },
+    {
+      "url": "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts#prompting_tips",
+      "finding": "Style is the overall delivery driver; text and local markup should agree with it. Short pause is documented as an approximately 250ms clause pause. New tag behavior needs testing and may be vocalized."
+    },
+    {
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud",
+      "finding": "Google documents slow/fast pacing tags and short/long pause tags for 3.1. Documentation establishes availability, not local Sulafat soundcheck evidence."
+    }
+  ],
+  "exact_next_plan": {
+    "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
+    "voice": "Sulafat",
+    "target_seconds": 120,
+    "word_count": 220,
+    "line_count": 20,
+    "style": "Style: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.",
+    "pace_paragraph": "Pace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.",
+    "emphasis_notes": "Emphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.",
+    "remove_from_notes": "Remove the numeric 105 words-per-minute and 118-to-120-second Style sentences and the long twenty-item emphasis list. Keep target_seconds metadata 120 and the canonical Pace paragraph byte-identical.",
+    "lines": [
+      {
+        "idx": 0,
+        "text": "Nineteen scalp electrodes. [short pause] What's on the next page?",
+        "energy": 4,
+        "emphasis": "page",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 1,
+        "text": "The University of Alaska Anchorage has a new dry E E G.",
+        "energy": 3,
+        "emphasis": "new",
+        "tags": []
+      },
+      {
+        "idx": 2,
+        "text": "The university announced it for its A I and Robotics Lab on September ninth.",
+        "energy": 2,
+        "emphasis": "ninth",
+        "tags": []
+      },
+      {
+        "idx": 3,
+        "text": "The Educational Legacy Fund funded it. [short pause] Students and faculty have trained.",
+        "energy": 3,
+        "emphasis": "trained",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 4,
+        "text": "The device records electrical activity [short pause] using sensors that rest directly against the scalp.",
+        "energy": 2,
+        "emphasis": "scalp",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 5,
+        "text": "Graduate student Vadim Egorov has watched his own signals appear.",
+        "energy": 4,
+        "emphasis": "own",
+        "tags": []
+      },
+      {
+        "idx": 6,
+        "text": "He usually works with public E E G datasets.",
+        "energy": 2,
+        "emphasis": "public",
+        "tags": []
+      },
+      {
+        "idx": 7,
+        "text": "Now he's looking forward to collecting recordings [short pause] for his own tasks.",
+        "energy": 4,
+        "emphasis": "tasks",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 8,
+        "text": "Who might a future answer work for?",
+        "energy": 3,
+        "emphasis": "Who",
+        "tags": []
+      },
+      {
+        "idx": 9,
+        "text": "U A A plans to study cognitive states during reading.",
+        "energy": 2,
+        "emphasis": "plans",
+        "tags": []
+      },
+      {
+        "idx": 10,
+        "text": "Another planned project pairs brain activity [short pause] with eye movements during programming.",
+        "energy": 3,
+        "emphasis": "pairs",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 11,
+        "text": "Those are plans, with the answers still ahead.",
+        "energy": 2,
+        "emphasis": "ahead",
+        "tags": []
+      },
+      {
+        "idx": 12,
+        "text": "And the public recordings? [short pause] They keep their place.",
+        "energy": 4,
+        "emphasis": "keep",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 13,
+        "text": "Researchers can check whether existing recordings fit the question. [short pause] If they do, useful analysis can start there.",
+        "energy": 3,
+        "emphasis": "fit",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 14,
+        "text": "They can also plan a new recording around another task.",
+        "energy": 2,
+        "emphasis": "also",
+        "tags": []
+      },
+      {
+        "idx": 15,
+        "text": "The extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.",
+        "energy": 4,
+        "emphasis": "design",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 16,
+        "text": "A recording alone doesn't supply an interpretation.",
+        "energy": 2,
+        "emphasis": "interpretation",
+        "tags": []
+      },
+      {
+        "idx": 17,
+        "text": "If a future model claims to work for new people, [short pause] test it on people absent from training.",
+        "energy": 3,
+        "emphasis": "absent",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 18,
+        "text": "That's a research principle, [short pause] not a reported U A A result.",
+        "energy": 2,
+        "emphasis": "principle",
+        "tags": [
+          "[short pause]"
+        ]
+      },
+      {
+        "idx": 19,
+        "text": "Which question about learning should they investigate first?",
+        "energy": 4,
+        "emphasis": "first",
+        "tags": []
+      }
+    ],
+    "tags_total": 10,
+    "sentences_total": 25,
+    "density": "One local pause at most per sentence, ten cues across twenty-five sentences. No tag starts a line. No new tag type.",
+    "new_pause_jobs": {
+      "3": "Separate funding from completed training.",
+      "7": "Separate collection from the purpose, his own tasks.",
+      "10": "Separate the two measurements being paired.",
+      "13": "Separate testing data fit from the conditional analysis path.",
+      "18": "Separate general principle from a reported UAA result."
+    },
+    "preserve": "All twenty spoken lines and 220 words, existing per-line intent/energy contrast, pronunciation map, Sulafat, required prompt preamble/profile/notes/transcript structure and canonical runtime paragraph."
+  },
+  "new_tags_policy": "Do not use slow, very slow, medium pause or long pause in the production plan yet. Official support is documented, but local Sulafat soundcheck evidence for those tags is missing. Current short pause cues already have repeated no-leak results. A later new-tag promotion would need an isolated source-backed soundcheck before use.",
+  "execution_after_current_done": "If the current automatic retry also fails, wait for .done and a fresh report, archive the old artifacts, apply only the approved prosody changes, and use VO_TAKES=1 with reuse disabled and the same bounded single-model invocation. No synthesis was launched here.",
+  "acceptance": "Fresh measured 112-to-130-second natural take, exact-word/claim review, no leaked tags and passing expression. Check silence distribution and listen for deliberate speech rather than dead-air padding. Failure remains a failure even if the broad soundcheck says clean.",
+  "api_boundary": "Cloud Media Studio has a speed control, but that is not evidence of a supported deterministic rate field in this repository's GenerateContent request. No API migration, SSML, time-stretch or waveform padding is proposed."
+}

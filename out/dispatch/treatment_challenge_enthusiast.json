@@ -1,0 +1,69 @@
+{
+  "reviewer": "ENTHUSIAST",
+  "round": "Required two-minute retention cross-challenge",
+  "scope": "The other three complete treatments; no scene code or storyboard",
+  "reviews": [
+    {
+      "role": "COMEDIAN",
+      "title": "A Seat for the Question",
+      "overall": "Warmest object comedy and an immediately readable additive metaphor. Retention needs the promised table extension to remain a real withheld event.",
+      "sag_at_80s": "The archive's case ends at 78 and the extension opens at 87. If those nine seconds only show objects waiting for more desk space, the audience already knows the mechanical answer. Use the archive's continued usefulness to make the unresolved issue what the new recording route adds, not how a foldout table works.",
+      "act3_test": "Mostly a real test: the public book gets eighteen seconds of competent work while new hardware waits. Strengthen it by showing a suitable existing recording enter a conceptual research comparison. Catching a notebook is friendly comedy but is not evidence of the archive's research usefulness.",
+      "throughline_audit": "Table is introduced at0 and lands in the button. Boundary states are declared at35,60,96 rather than30,60,95. More seriously, the cold open says the hidden extension remains locked until Act3, but beat4 raises it halfway at35. Clarify that an already-visible support changes at30/60 while the promised full additional work surface stays physically unavailable until87.",
+      "loops_audit": "Numeric timing passes: primary1.4 to87; secondary44 to105; payoffs eighteen seconds apart. The first payoff is partly spoiled by the35-second extension action. Secondary stool has a distinct and useful methods payoff, provided it remains an explicitly conditional editorial example.",
+      "precision_fix": "Replace 'what the student gets to choose' and 'gained room to ask their own questions' with added ability to collect recordings during chosen tasks. Research-question choice predates the equipment.",
+      "minimum_revision": "Repair the early extension contradiction and give public data a visible research verb. Keep the courteous book shuffle and its return at87."
+    },
+    {
+      "role": "DRAMATIST",
+      "title": "The Blank Beside the Signal",
+      "overall": "Best grounded countercase and clearest respect for prior student research, but the central clip promise currently contradicts its own action list.",
+      "sag_at_80s": "The archive occupies66-85, and the pitch promises a workbench expansion at82 in its sag note but places the equal-work-area action at89 in beat7. Specify a new argumentative development during79-85 rather than relying on movement around an already-open folio. Otherwise the19-second archive scene becomes a reverent hold.",
+      "act3_test": "A real test with a potentially valuable August workshop artifact. Keep the earlier EEG presentation separate from the new device. The verified safe set says Egorov uses public datasets and separately presented EEG work; do not state that the particular August presentation used a particular public dataset unless its source actually confirms that connection.",
+      "throughline_audit": "Identity markers are strong. ActIII's state is merely 'held alongside' until89, which is placement rather than a changed state at60. ActIV declares the TEST tab open from95, while the action opens it at107. Add a distinct visible state at each boundary without releasing the107-second tab early.",
+      "loops_audit": "Numeric timing passes:12 to89,46 to107, eighteen-second separation. Hard continuity error: beat5 at52-66 already calls its trace 'attached', yet the primary promise is an empty clip filled only at89. Keep the strip visibly separate until89. The original cold-open question and later empty-clip promise should refer to the same outstanding action.",
+      "precision_fix": "The button's claim that the final blank is a place a student can 'now fill through experiment design' can imply newly granted agency. Make it a space for future own-task recordings. Replace PROPOSED TEST with GENERAL METHODS EXAMPLE so the graphic cannot be mistaken for a UAA proposal.",
+      "minimum_revision": "Repair clip chronology and both boundary-state timings. Keep the sourced earlier-work moment, avoiding an unsupported source-to-presentation link."
+    },
+    {
+      "role": "EXPLAINER",
+      "title": "The Question Comes First",
+      "overall": "Strongest foundation: the instrument, chosen task and interpretation are distinct visual jobs, and its physical mechanism supports a celebratory science film with substantial facts.",
+      "sag_at_80s": "The73-90 interpretation desk risks becoming a long hold on the unchanged blank answer. Introduce a clearly conditional new-person claim, then make person identity visibly determine the separation of training and test material. Do not let the proposed-test inset become a small text card. At107-120 the hovering reading card and blank result mostly repeat what was resolved at95; a delayed second payoff would give this tail new work.",
+      "act3_test": "The58-73 public-data route is a real useful workflow, not a token sentence. It is the shortest countercase of the three, and part of it also pays the second loop at68. Give the archive an uninterrupted competent scene before moving to measurement versus interpretation; do not blur the strongest counterargument into the second promise's task-context explanation.",
+      "throughline_audit": "The strip has excellent recognizable material features and a valid final state. Its declared changes occur20,36,73,95, leaving no actual60-second boundary change. Define a distinct change at60 tied to the archive comparison. Also, the strip already receives its proposed-task clip at36, earlier than the43-second promise asking what changes between tasks.",
+      "loops_audit": "Numbers pass: primary14 to95, secondary43 to68, twenty-seven-second payoff separation and exactly twenty-five-second secondary span. Information does not fully pass: the task context that supposedly pays at68 is already attached at36, and TASK/SIGNAL/TEST relationships appear in the73-90 methods scene before the stated95 reveal. Withholding a wider view is not necessarily withholding an answer. Strengthen the primary to an unresolved specific relationship and delay a genuinely distinct secondary payoff to about105.",
+      "precision_fix": "Use 'collect signals during a task they choose' wherever choosing or shaping questions could imply newly acquired authority. Keep eye movements clearly separate from what the EEG headset itself records. The counted19+2+3 cutaway is valuable factual substance if all parts remain legible.",
+      "minimum_revision": "Repair the information-level loop reveals, supply a60-second strip change, and give the last fifteen seconds a new payoff rather than a held planning card."
+    }
+  ],
+  "strongest_treatment": {
+    "role": "EXPLAINER",
+    "title": "The Question Comes First",
+    "reason": "Its hardware cutaway and continuous task/signal strip explain the acquired capability through a visible mechanism. That gives the film more substance than a generic expanding table and more immediate warmth than two minutes centered on blank answers. The retention defects are fixable within the existing treatment.",
+    "condition": "Win is conditional on resolving the early task-context payoff, the missing60-second object state, and the post95-second vacuum. Numeric loop spacing alone is insufficient."
+  },
+  "recommended_grafts": [
+    {
+      "from": "DRAMATIST",
+      "graft": "Give the verified August EEG presentation a short dated place in the public-data scene as evidence of pre-existing research activity, without assigning it an unverified dataset or the new hardware.",
+      "why": "Makes the countercase about a real student research history rather than generic archive symbolism."
+    },
+    {
+      "from": "COMEDIAN",
+      "graft": "Use the public-data book's courteous opening shuffle and a later generous return gesture, but do not import a second competing throughline table.",
+      "why": "Adds affectionate charm and makes coexistence easy to feel."
+    },
+    {
+      "from": "ENTHUSIAST",
+      "graft": "Show an available public recording directly serving a suitable conceptual research question while the new instrument waits. Let the chosen-task collection route join that still-working surface.",
+      "why": "This is the strongest affirmative version of the countercase; added capacity survives without an invented public-data failure."
+    },
+    {
+      "from": "ENTHUSIAST and COMEDIAN",
+      "graft": "Reserve the separately identified new-person methods reveal for about105 seconds, with its promise planted before60 and clear separation from the primary payoff.",
+      "why": "Gives the final act a new conceptual event and protects the last twenty-five seconds from an early-payoff vacuum."
+    }
+  ],
+  "global_note": "All four pitches converged more than ideal on paper, an expanded work surface and blank results. Keep exactly one throughline object in the winner. The late enthusiasm should land on students gaining own-task EEG collection capability alongside useful public data, not on generic freedom to ask questions."
+}

@@ -1,0 +1,44 @@
+{
+  "reviewer_role":"comedian",
+  "locked_angle":"New equipment adds chosen-task collection alongside useful public datasets.",
+  "pitches_reviewed":["dramatist","explainer","enthusiast"],
+  "reviews":[
+    {
+      "pitch":"dramatist",
+      "eighty_second_sag":"The archive scene has a concrete earlier-research artifact and therefore a stronger countercase than an anonymous book. It can hold until the workbench starts widening. Keep that widening active by 82 seconds as promised; another static folio hold would stall.",
+      "act3_real_test_or_restatement":"Real test. Earlier research establishes that capability predates this purchase. Give the dated presentation a readable moment, then resolve coexistence rather than merely repeating 'public data is useful'.",
+      "throughline_at_boundaries":"The card is explicitly present throughout, but its state contract contradicts itself. Beat 5 already describes its attached signal strip at 52 to 66 seconds, while the primary loop claims that attachment is withheld until 89 seconds. Also the empty clip catches a pencil at 14 seconds, partially answering 'what belongs in it' long before the promised reveal.",
+      "payoff_spacing":"89 and 107 seconds are well separated on paper. Fix the early clip/strip disclosures or the first payoff won't actually be delayed.",
+      "precise_fix":"Keep a clearly visible recording bay empty through 88 seconds and move the pencil gag to a separate paper curl. The question card may carry task tabs beforehand, but no attached recording.",
+      "useful_graft":"The source-backed earlier-research presentation is the strongest Act 3 evidence among the pitches. The clip releasing a pencil at the final open question is a compact, warm button."
+    },
+    {
+      "pitch":"explainer",
+      "eighty_second_sag":"The strip spends 73 to 90 seconds at an interpretation desk with a blank answer field. The conditional new-person example can carry this interval if a new actor physically enters; otherwise this risks being seventeen seconds of the same unanswered field.",
+      "act3_real_test_or_restatement":"The full useful public-data route is a real fair test. The later measurement/interpretation distinction advances the topic, but repeats the already-blank interpretation field from the opening unless the intended claim changes what evaluation is required.",
+      "throughline_at_boundaries":"Six strip states are specified clearly. Preserve its clipped corner visibly at the edge during the full-frame public-data pass, so the 58-second change of act doesn't briefly replace it with a different ribbon.",
+      "payoff_spacing":"68 and 95 seconds are separated well. However, the secondary answer is visible when reading/programming labels first arrive, and the primary's TASK/SIGNAL/TEST relationship is already visible before the 95-second unfold. The scheduled reveal may only rearrange information the viewer has learned.",
+      "precise_fix":"Make the 95-second event change the strip's use, such as a hand returning the now-contextualized plan to the student beside public evidence. Don't sell a three-label recap as withheld information. Count the nineteen contacts once; the repeat traversal at 20 to 36 seconds shouldn't postpone the human point.",
+      "useful_graft":"The single counted scalp plan and explicit separation of two earclips from three empty auxiliary sockets provide the strongest mechanism clarity. Use only as much hardware detail as the story needs."
+    },
+    {
+      "pitch":"enthusiast",
+      "eighty_second_sag":"This is the clearest proposed action at 80 seconds. A new task joins a public-data page that has just functioned, and the notebook must physically add room. Avoid letting the task tab sit for eight seconds while narrating the same coexistence idea; begin the foldout transformation as it arrives.",
+      "act3_real_test_or_restatement":"Strongest fair test. A suitable existing dataset can already serve a useful question. The new chosen task doesn't bounce off the archive or manufacture a failure. That keeps the capability gain additive and earned.",
+      "throughline_at_boundaries":"Strongest continuity. The notebook transforms at 0, 30, 60, 95 and 117 seconds, with its spine, dog-ear and copper tab always identifiable. At the full archive scene, make the working public-data page visibly part of this same notebook.",
+      "payoff_spacing":"90 and 105 seconds are adequately staggered. The copper RESULT? label promises an answer that the pitch already knows does not exist. Opening it onto TO COLLECT and TO TEST could feel like a bait-and-switch despite accurate narration.",
+      "precise_fix":"Change RESULT? to NEXT PAGE or OUR NEXT QUESTION and plant the promised reveal as what new research space becomes possible. Reveal the added collection-and-test workspace at 90 seconds. Keep the 105-second person example conditional and separate.",
+      "useful_graft":"The notebook shifting the glamorous instrument out of the center makes inquiry the protagonist within a second. The archive's practiced paper motion gives the fair countercase charm and competence."
+    }
+  ],
+  "strongest_pitch":"enthusiast",
+  "why":"Its expanding notebook makes added experimental choice visible, carries the throughline at each act boundary and lets the public-data countercase genuinely work. The reveal-label correction is specific and small.",
+  "recommended_grafts":[
+    "Enthusiast base with NEXT PAGE replacing RESULT?.",
+    "Dramatist's verified earlier-research artifact for the public-data scene, keeping the named prior work separate from the new device's planned studies.",
+    "Explainer's single accurately counted scalp-contact reveal.",
+    "Comedian's tiny courtesy shuffle repaid as a generous sweep when the workspace expands, performed by paper objects only."
+  ],
+  "nonnegotiable_execution_note":"Both source-data routes remain useful in the final composition. No completed UAA result, automatic interpretation, announced participant protocol or diagnostic action appears.",
+  "scope":"Retention cross-challenge only. No scene code or storyboard."
+}

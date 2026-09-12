@@ -1,0 +1,148 @@
+{
+  "gate_source_sha256": "a8764bb0d5281d0c434ba6f601b3fd13d0a58f597e81666bd9b7c24107bfc90d",
+  "measurement": "Unmodified quality_gate lum, _lumf, _cellfrac AST functions on full-resolution rendered PNGs",
+  "floor": 0.3,
+  "cell_delta": 2.4,
+  "all_pass": true,
+  "shots": [
+    {
+      "shot": 1,
+      "frames": [
+        53,
+        159
+      ],
+      "fraction": 0.360918,
+      "pass": true
+    },
+    {
+      "shot": 2,
+      "frames": [
+        261,
+        361
+      ],
+      "fraction": 0.452546,
+      "pass": true
+    },
+    {
+      "shot": 3,
+      "frames": [
+        523,
+        747
+      ],
+      "fraction": 0.519483,
+      "pass": true
+    },
+    {
+      "shot": 4,
+      "frames": [
+        966,
+        1179
+      ],
+      "fraction": 0.391011,
+      "pass": true
+    },
+    {
+      "shot": 5,
+      "frames": [
+        1360,
+        1509
+      ],
+      "fraction": 0.323881,
+      "pass": true
+    },
+    {
+      "shot": 6,
+      "frames": [
+        1613,
+        1673
+      ],
+      "fraction": 0.428048,
+      "pass": true
+    },
+    {
+      "shot": 7,
+      "frames": [
+        1741,
+        1817
+      ],
+      "fraction": 0.441937,
+      "pass": true
+    },
+    {
+      "shot": 8,
+      "frames": [
+        1944,
+        2124
+      ],
+      "fraction": 0.336227,
+      "pass": true
+    },
+    {
+      "shot": 9,
+      "frames": [
+        2248,
+        2318
+      ],
+      "fraction": 0.57909,
+      "pass": true
+    },
+    {
+      "shot": 10,
+      "frames": [
+        2463,
+        2683
+      ],
+      "fraction": 0.374228,
+      "pass": true
+    },
+    {
+      "shot": 11,
+      "frames": [
+        2891,
+        3085
+      ],
+      "fraction": 0.551698,
+      "pass": true
+    },
+    {
+      "shot": 12,
+      "frames": [
+        3235,
+        3340
+      ],
+      "fraction": 0.326582,
+      "pass": true
+    },
+    {
+      "shot": 13,
+      "frames": [
+        3436,
+        3524
+      ],
+      "fraction": 0.401813,
+      "pass": true
+    },
+    {
+      "shot": 14,
+      "frames": [
+        3600,
+        3665
+      ],
+      "fraction": 0.407407,
+      "pass": true
+    }
+  ],
+  "visual_review": {
+    "viewed": "All 14 quarter/three-quarter 9:16 pairs and late square crops; start and last-frame square crops for shots 1,4,6,8,12,14",
+    "result": "No frame-edge or caption-band clipping introduced by the sampled camera poses; attribution and planned/methods labels remain visible where present in the source",
+    "sheets": [
+      "shots_1_7.png",
+      "shots_8_14.png",
+      "endpoints_1.png",
+      "endpoints_2.png"
+    ]
+  },
+  "needs_full_rerender": true,
+  "limitations": "Probe measures camera only. The full repaired film still needs rerender and complete objective/panel QA; other agents are changing interior choreography.",
+  "camera_block_sha256": "4650977308743573466b51bb11ff70b53f021e37d764e3bf9428201ed2c8a600"
+}

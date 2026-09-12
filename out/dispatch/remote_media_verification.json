@@ -1,0 +1,83 @@
+{
+  "verified_at": "2026-09-12T18:58:36.318768+00:00",
+  "assets": [
+    {
+      "file": "dispatch_master.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master.mp4",
+      "bytes": 37595782,
+      "sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+      "exact_remote_bytes": true,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "side_data_list": [
+          {}
+        ]
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "duration_s": 135.566678
+    },
+    {
+      "file": "dispatch_square.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_square.mp4",
+      "bytes": 26280114,
+      "sha256": "2e87198ec7b3cc0e7b84355ed80cb3b5b35a0cdfc7822adcd12e236491d17e6f",
+      "exact_remote_bytes": true,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1080,
+        "side_data_list": [
+          {}
+        ]
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "duration_s": 135.566667
+    },
+    {
+      "file": "poster.png",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster.png",
+      "bytes": 333119,
+      "sha256": "1bb06b73817eb4e5121e07cd69020073354da4582070739ad4a59190e7a6f60d",
+      "exact_remote_bytes": true
+    },
+    {
+      "file": "dispatch_master_720.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master_720.mp4",
+      "bytes": 8711061,
+      "sha256": "2178a5421fe4cf02f0e8b47236fb08f001d17d8c1a26d5e3d0d35be49040fc1e",
+      "exact_remote_bytes": true,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 720,
+        "height": 1280,
+        "side_data_list": [
+          {}
+        ]
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "duration_s": 135.566667
+    },
+    {
+      "file": "poster_thumb.jpg",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster_thumb.jpg",
+      "bytes": 33794,
+      "sha256": "e8dea8fec3761c235b523982e85b78954eaa38a665e178e61e85495507251356",
+      "exact_remote_bytes": true
+    }
+  ],
+  "all_exact_remote_bytes": true
+}

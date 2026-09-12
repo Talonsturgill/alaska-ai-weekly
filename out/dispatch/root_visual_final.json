@@ -1,0 +1,33 @@
+{
+  "candidate": "final_v4",
+  "master_sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+  "reviewed_by": "root",
+  "recorded_at": "2026-09-12T18:44:27.921990+00:00",
+  "ship": true,
+  "scope": "Visual inspection of current final candidate in preceding context; all four timeline sheets, seven sequential action grids, poster, audio evidence card, credits and actual release frame. This is not a claim of listening. Independent editorial, flow and scoring reviews remain required.",
+  "evidence_inspected": [
+    "out/dispatch/final_taste/sheet_0.jpg",
+    "out/dispatch/final_taste/sheet_1.jpg",
+    "out/dispatch/final_taste/sheet_2.jpg",
+    "out/dispatch/final_taste/sheet_3.jpg",
+    "out/evidence/action_closing_question.jpg",
+    "out/evidence/action_extra_page_unfolds.jpg",
+    "out/evidence/action_fixed_scalp_contact.jpg",
+    "out/evidence/action_heldout_person_test.jpg",
+    "out/evidence/action_inventory_comparison.jpg",
+    "out/evidence/action_lab_designation_mounts.jpg",
+    "out/evidence/action_methods_and_plans_separate.jpg",
+    "out/dispatch/poster.png",
+    "out/dispatch/review/audio_card.png",
+    "out/evidence/f133.6.jpg",
+    "out/dispatch/frames/frame_000522.png"
+  ],
+  "findings": [
+    "Opaque lab designation has actual edge grip and clean release",
+    "Reading and programming remain visibly planned",
+    "Public recordings stay present alongside the new question page",
+    "New-person testing is visibly a conditional research principle",
+    "All source and composer licence credits remain readable"
+  ],
+  "remaining_named_visual_failures": []
+}

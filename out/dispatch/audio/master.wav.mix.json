@@ -1,0 +1,185 @@
+{
+  "schema": 2,
+  "kind": "mix",
+  "state": "complete",
+  "sources": {
+    "out/dispatch/episode_props.json": "95963f3f85da2e7a098b4c65beb2613af5a39ed45db06ae347567f76a9bf778b",
+    "out/dispatch/music_credit.json": "d25d8c8ee1e9f1aafdc5552c4439307685d909459734e29b8331f988d2a75e2f",
+    "out/dispatch/storyboard.json": "abbbf5bf0a1a76c8c16a2254d4471a450b109eda2de94e85cd2a2f0e32c13f9a",
+    "out/dispatch/vo_lines.json": "81090a03044671132d3d5ace0a0bd47f4e0af504e6cdebdb53a89ad304e1f14f",
+    "scripts/dispatch_mix.py": "9f85f65affab68dce07f693b3799a03518a5131529a50b90078af139c204db4f",
+    "scripts/mix_aac_check.py": "c1b524ac1b38d77001754a162b9791ec9f9a91c387c50b3d00517cc71b5fdbe9",
+    "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860",
+    "scripts/sfx_bank.py": "4b90431cf8401b9482a76853af7edf864111a8f8b6aaa0ef5716c15abbd2d226"
+  },
+  "vo": {
+    "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/vo.wav",
+    "sha256": "a844a3c4105a17b12fdf0448b97b994d43564f8946081c3aa95561e82142430c"
+  },
+  "inputs": [
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v1.wav",
+      "sha256": "cc967b80855e549ae3a9970201501a1ca61e189056db68ac6abc92e043b1c64f"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v2.wav",
+      "sha256": "dcd75088686c679f060c24cdf9e18f65663af268fb88d5ebb41b0d00f4564bcb"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v3.wav",
+      "sha256": "a3193287a0b6e8513a1083ff1b23a00379eae6d697c2985ced77424d34e037fa"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v4.wav",
+      "sha256": "1efb2a29c5d8c98030bdb246b15d912f92fe2ac7609efbee7cacc99200319da3"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v5.wav",
+      "sha256": "984db4cdd74d61370eb991e3cbc645b7527f893e621c33d4fb5b9ce3782ae344"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/paper_v1.wav",
+      "sha256": "4a0874f179da3adb09208de30df4e0631fbc45769f6468ff2b7f6870099d3360"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/paper_v2.wav",
+      "sha256": "be9496d9746d0aaa211bfbea82d2c2f4ecff9237bec82ecbd0e2f91156e91463"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/paper_v3.wav",
+      "sha256": "76f7f26a6b5db818f9cf65cb65b4cb4eca7493d76a21760869ee75a453c6500d"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/paper_v4.wav",
+      "sha256": "4094b8dcf77e711e3a43ebf6787260fca21c5516f28780c9782f2bdc0b118e47"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/paper_v5.wav",
+      "sha256": "746999675c3b444be876f96928c9e94a4867cecc571d4fd061e9b522e55776ec"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/paper_v6.wav",
+      "sha256": "c5dc948ebe9c6e45bc56c267abe3697f2244a24c2411b8d7465b89cda2f83c04"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/chime_kenney_confirmation_002.wav",
+      "sha256": "4c94af1d712c070221a772e69b161f3b5a2a8c8b3fb49e6086ea0fa0b982dcbb"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_001.wav",
+      "sha256": "7c1ed58e342a8ec0cf36e2d49a6a40b2387bb58ba414098fc9b8ecbc4076cb23"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_000.wav",
+      "sha256": "44cbdfadc257a3227dd5231b3ddcc86b759708fc8905aeed857489220e7f6468"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_001.wav",
+      "sha256": "1b31e1a20e42fd0e2df0ab67a93590f4af296fb963c5a272e5e97a52f4637302"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_002.wav",
+      "sha256": "05c36e23a568d5ac1eb453ae38c0d285aba7c5070646b588af95f6b3bb50c519"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_004.wav",
+      "sha256": "27e0a2db0ab7711866884940823cc33cfa6b287e267f22e0416c95d2003aadd4"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_002.wav",
+      "sha256": "15e82aed7aa290cc4fd6bf9011b4ed9fc5ef2cb562f63d687f8c06ae36c83ed9"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_003.wav",
+      "sha256": "2ee716de8eb9a1aa2ede29a683200a920e55f8739a0b5bcd3147d8729b6046dd"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_004.wav",
+      "sha256": "5bc4c804adb9fdeabf203b8cafa404746ed4b1c9d40d922d96511297030a85d0"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_003.wav",
+      "sha256": "1fc17f95012cf8090a5647546a63f984491e561cc8182235ba061222ad12a899"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_004.wav",
+      "sha256": "29cc03d6f0b8bd5d4d619c610e0e4992e23b829b55438dfbd408c774f0eb0709"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_medium_000.wav",
+      "sha256": "8bba4fff9a36bcabf27c4bdcb41548e9aeb4b0cf08b72c0b1cc42a68c0c3ae27"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/riser_v3.wav",
+      "sha256": "c2abb58e5bdee7003b2ede0a478e8714790e503cbfc31c96b569dd728c9742f4"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/snap_v2.wav",
+      "sha256": "a3c08805214f6ab857bd5705497d27f68fdafa05d264ae367effdba2716276d5"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/snap_v3.wav",
+      "sha256": "524733147cd45fcdf1b6f89897c1f1b8eed5335c2b4197bb9719bee38daeb8a7"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/snap_v4.wav",
+      "sha256": "b48cebf672596c6ef26454d180e0a41f10ca3563078986397e3e84583b10c6d5"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/snap_v6.wav",
+      "sha256": "94246297e210a7e2f08a9f78827fcdd37faf331b7cf8540a06dfdd8b671824df"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/stamp_v1.wav",
+      "sha256": "f2d454a483f2ebd1c8942638352cfbc33f1ca77189fde96ff7408b6166bbd9b9"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/stamp_v2.wav",
+      "sha256": "20951a9d2545a66008b570acb8bbedad55f8b58df66e56425076a9ece4308564"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v1.wav",
+      "sha256": "8bf23a892cfca917749629c29dde957e8b2ddb40bbae00619c1115f1ea3bc474"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v2.wav",
+      "sha256": "8c2c9adab149949aeb7ca068cb61b4e82802cec526b2ebc9ca1728e4cd3a05d1"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v3.wav",
+      "sha256": "da251b2134f3fb67f2f1bddd71b1f5423ca6230d83ce74dbd0f4c8cfc9d8d821"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v5.wav",
+      "sha256": "a359ddce666b7f696cc5b2a5f7d6f57ba6a895863ff9375ac91ed33db62d20f7"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v6.wav",
+      "sha256": "1a3668de7f0a96d2c75946e3b87d3069b844795670748f192c6e832382d5aa25"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/whoosh_v2.wav",
+      "sha256": "23624949413b12ec3408600fe352be2adcd1ca5999bc0f33e0b87c22a06ec281"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/whoosh_v3.wav",
+      "sha256": "c530e83b5f572474c97fa06a4a9a169266ba72b2f512d37d5001913cbc2abe6b"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/whoosh_v5.wav",
+      "sha256": "8253eb58e637756677adde28af4e59c360300dba1c1539401c5148fb5971d917"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/whoosh_v6.wav",
+      "sha256": "f3916484994fa1dfd89b4eab4c16ea2ca63631d33b75addc7f5367872680d64a"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/music_bed.wav",
+      "sha256": "359f0839b139978f62def025228b8d209661ab68bdae267e21bbf12ea8813686"
+    }
+  ],
+  "output": {
+    "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/master.wav",
+    "sha256": "edcb4130ac51aadd9c4cb59de575487a06c6ca9a0c80cd2e77817eb2a35c9eaa"
+  }
+}

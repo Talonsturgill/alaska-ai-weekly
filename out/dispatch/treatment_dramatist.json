@@ -1,0 +1,243 @@
+{
+  "role": "dramatist",
+  "pitch_count": 1,
+  "title": "The Blank Beside the Signal",
+  "logline": "A student carries one unfinished question card through a lab that gains the ability to record its own task data, then gives the public archive its strongest case before choosing a useful next experiment.",
+  "locked_angle_acknowledged": true,
+  "opposing_force": "An unanswered research question, and the temptation to confuse seeing a signal with knowing what it means. No villain.",
+  "cold_open_first_3s": {
+    "picture": "Extreme oblique close-up: a live illustrative EEG line moves on a monitor. A cream card with one large blank question field glides into its light. A pencil stops precisely at the edge of the blank. The waveform keeps moving; no answer writes itself.",
+    "audio": "A soft pencil skid, then a single warm electronic tick.",
+    "promise": "What can the researcher add to a line that is already visible?"
+  },
+  "escalation_beats_2_to_8": [
+    {
+      "beat": 2,
+      "seconds": [
+        3,
+        18
+      ],
+      "scene": "The first recording",
+      "action": "Pull back into a bright Anchorage lab. A generic student at a schematic DSI-24 observes the line. The same card remains held in the near hand. Count 19 scalp contacts once, then return visual attention to the person.",
+      "stakes": "The acquired hardware and documented training are tangible."
+    },
+    {
+      "beat": 3,
+      "seconds": [
+        18,
+        35
+      ],
+      "scene": "The task before the trace",
+      "action": "An existing-data folio opens beside the student. The card changes from blank to a chosen TASK field while a blank attachment clip stays waiting. Pencil moves first; the recorder transport starts second. Label this order illustrative.",
+      "stakes": "The added power is shaping collection around a question."
+    },
+    {
+      "beat": 4,
+      "seconds": [
+        35,
+        52
+      ],
+      "scene": "One measurement, two questions",
+      "action": "Card folds to reveal two planned-study leaves: reading at left and programming with eye-movement tracking at right. Both retain dotted unanswered result spaces. A folded TEST tab appears on the back but stays closed.",
+      "stakes": "Task design changes what the measurements could support; no study result is shown."
+    },
+    {
+      "beat": 5,
+      "seconds": [
+        52,
+        66
+      ],
+      "scene": "The plans stay open",
+      "action": "Close toward the card. Its attached signal strip is labeled ILLUSTRATIVE; planned-study leaves retain PLANNED stamps. Turn the physical card over to find a mature public-data folio beneath it.",
+      "stakes": "The acquired capacity now faces the best reason not to overstate its novelty."
+    },
+    {
+      "beat": 6,
+      "seconds": [
+        66,
+        85
+      ],
+      "scene": "The archive takes the room",
+      "action": "Public-data folio receives a full-height warm shot. Student opens an earlier EEG research presentation beside it, dated August 2026. Public records remain dimensional, legible and useful. The new question card waits respectfully at the edge, with equal lighting.",
+      "stakes": "The strongest countercase has its own scene: meaningful work already existed."
+    },
+    {
+      "beat": 7,
+      "seconds": [
+        85,
+        102
+      ],
+      "scene": "A larger workbench",
+      "action": "At 89 seconds the student slides both the public-data folio and the new question card into equal adjacent work areas. The blank attachment clip finally takes an illustrative task-linked trace without covering the public records. Then rotate the card to bring the folded TEST tab forward.",
+      "stakes": "First loop resolves as an added research option, not a replacement or an invented result."
+    },
+    {
+      "beat": 8,
+      "seconds": [
+        102,
+        115
+      ],
+      "scene": "The question can be tested",
+      "action": "At 107 seconds open the TEST tab: a new participant silhouette appears outside the illustrative model-training area. No score is shown. The card has space for an eventual result. Label IF CLAIMING NEW-PEOPLE PERFORMANCE and PROPOSED TEST.",
+      "stakes": "Second loop reveals what a stronger claim would require without inventing UAA protocol."
+    }
+  ],
+  "earned_turn": {
+    "seconds": [
+      66,
+      95
+    ],
+    "image": "The public-data folio takes the center while the new equipment stays at the edge. At the resolution the workbench expands to hold both.",
+    "meaning": "Research was already happening. The win is an additional experimental choice, supported by the card gaining a place rather than another object losing one."
+  },
+  "button": {
+    "seconds": [
+      115,
+      120
+    ],
+    "last_line": "Which learning question should go there first?",
+    "last_image": "The same dog-eared cream card returns to the opening close-up. Its test tab is now open and its task field is ready. A pencil lowers into the blank as the screen line continues beyond the cut.",
+    "loopback": "Opening blank implied a missing question. Final blank is a place a student can now fill through experiment design."
+  },
+  "sight_gags": [
+    {
+      "seconds": 14,
+      "gag": "The little pencil rolls toward the desk edge; the waiting attachment clip catches it like a tiny goalkeeper.",
+      "purpose": "Plant the recognizable clip and give the inanimate desk warmth; no joke targets a participant."
+    },
+    {
+      "seconds": 43,
+      "gag": "The same pencil nearly settles on the programming leaf, then gets gently nudged to the reading leaf. Both leaves make room instead of fighting.",
+      "purpose": "Task choice is visible and playful without implying either study has run."
+    },
+    {
+      "seconds": 74,
+      "gag": "A stack of well-used public-data pages opens in a practiced fan and politely slides the shiny new blank card a few inches aside.",
+      "purpose": "The old evidence wins a moment of comic authority, strengthening the fair countercase."
+    },
+    {
+      "seconds": 116,
+      "gag": "The clip releases its rescued pencil exactly when the final blank opens. The pencil lands point-first ready to write, not as an answer stamp.",
+      "purpose": "Small physical callback independent of the argument payoffs."
+    }
+  ],
+  "retention_plan": {
+    "act3_test": {
+      "seconds": [
+        60,
+        95
+      ],
+      "scene": "The archive takes the room",
+      "strongest_fair_case": "Public datasets already supported Egorov's real research. A new instrument does not automatically improve that evidence.",
+      "drawn_at_full_strength": "Give public records the largest frame and most fluent motion for 19 seconds; new hardware stays in support. Both receive equal space when the turn resolves."
+    },
+    "throughline_object": {
+      "object": "One cream question card, recognizable by a torn upper-right corner and a plum attachment clip",
+      "introduced_seconds": 1,
+      "states": [
+        {
+          "act": "I, 0 to 25s",
+          "state": "Blank task field; clip holding nothing."
+        },
+        {
+          "act": "II, 25 to 60s",
+          "state": "Task field written; two PLANNED leaves unfold; TEST tab still folded."
+        },
+        {
+          "act": "III, 60 to 95s",
+          "state": "Held alongside public-data folio; task-linked illustrative trace clips on only at 89s."
+        },
+        {
+          "act": "IV, 95 to 115s",
+          "state": "TEST tab unfolds; outcome space remains open."
+        },
+        {
+          "act": "Button, 115 to 120s",
+          "state": "Original front view returns, with new test tab visibly extending the same object."
+        }
+      ]
+    },
+    "two_loops": [
+      {
+        "plant_seconds": 12,
+        "promise": "What belongs in the empty attachment clip?",
+        "withheld_until_seconds": 89,
+        "payoff": "A task-linked recording attaches beside useful public data; the extra experimental option becomes physically legible."
+      },
+      {
+        "plant_seconds": 46,
+        "promise": "What is under the folded TEST tab?",
+        "withheld_until_seconds": 107,
+        "payoff": "An unfamiliar participant and an unfilled result field: a conditional way to test reach, not a discovered score."
+      }
+    ],
+    "act3_padding_test": [
+      {
+        "seconds": [
+          60,
+          70
+        ],
+        "why_90s_cut_worse": "Removing the archive reveal would erase the strongest fair countercase and suggest the student began research with this purchase."
+      },
+      {
+        "seconds": [
+          70,
+          79
+        ],
+        "why_90s_cut_worse": "The earlier presentation supplies evidence that public data already mattered. Its own legible scene prevents a token caveat."
+      },
+      {
+        "seconds": [
+          79,
+          89
+        ],
+        "why_90s_cut_worse": "Equal work areas show the actual resolution, addition rather than replacement; without it the promise clip is only recurring decoration."
+      },
+      {
+        "seconds": [
+          89,
+          95
+        ],
+        "why_90s_cut_worse": "The clip attaches only after the countercase has been honored, resolving the first loop and giving the object a new state before the later test."
+      }
+    ],
+    "eighty_second_sag_prevention": "The archive is in command at 74 seconds, then the workbench physically widens at 82. An unresolved attachment and folded TEST tab remain in view. No explanatory tableau is held motionless."
+  },
+  "library_cast": {
+    "reuse": [
+      "Character",
+      "Sheet",
+      "DocumentFlip",
+      "GripHand",
+      "EvidenceTrace",
+      "MeasurementField",
+      "BrassPlate",
+      "ScreenLit",
+      "ScreenKey",
+      "PendingMark",
+      "vitals",
+      "evidenceLatch"
+    ],
+    "new_asset_gap": "One schematic EEG headband with scalp-contact arms. Shelf has many sensors but none worn on a human head. It must remain neutral recording hardware, without eyes, facial expression or thought-reading graphics.",
+    "adaptations": "Question card is a Sheet with an attached clip and DocumentFlip leaves, not a new paper asset. Screen traces reuse EvidenceTrace and carry illustration labels.",
+    "avoid": [
+      "ServerMachine antagonist",
+      "AshReader outputting a thought",
+      "Clinical imagery",
+      "Real-person caricature",
+      "Neuron-level activation maps"
+    ]
+  },
+  "vo_draft": "A line is moving across the screen. The question beside it is still blank.\n\nOn September 9th, UAA announced a new dry EEG system for its AI and Robotics Lab. Nineteen scalp electrodes record electrical signals researchers can study with machine learning.\n\nGraduate student Vadim Egorov already works with public EEG datasets. Now he's excited about collecting data for his own tasks. A student can help decide what happens before the recording begins.\n\nUAA plans to study cognitive states during reading. Another planned project pairs brain activity with eye movements during programming. Different tasks. Different questions for the evidence.\n\nThe university has documented equipment training. Those studies still lie ahead.\n\nAnd the old recordings deserve to stay on the desk. Egorov was already presenting EEG research before this announcement. Public data helped make that work possible.\n\nThe new headset adds a choice. Keep learning from existing records, and collect another when the question calls for it. That's a useful expansion of Alaska's research capacity.\n\nA signal still needs a tested interpretation. If a future model claims to work for new people, test it on people absent from training. That is a proposed standard, not a result from UAA.\n\nThe blank space now belongs to an experiment students can help design.\n\nWhich learning question should go there first?",
+  "vo_word_count": 217,
+  "duration_seconds": 120,
+  "duration_status": "Target only; final audio must be measured.",
+  "evidence_obligations": [
+    "Acquisition and training are observed; studies remain planned.",
+    "No published model accuracy or study participant result.",
+    "The holding-out illustration is our conditional method example.",
+    "No diagnosis, mind reading, AI-assisted coding, or UAA leakage allegation.",
+    "Public-data research precedent references the verified earlier workshop."
+  ],
+  "storyboard_authored": false
+}

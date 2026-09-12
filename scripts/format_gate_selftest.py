@@ -34,7 +34,10 @@ BASE = os.path.join(REPO, "archive", "dispatch-2026-08-05-net-comes-first", "sto
 
 # problems that are NOT about runtime and are expected on a synthetic board
 IGNORE = ("differs on only", "spatial signature", "camera_strategy", "palette",
-          "repeats the previous", "too close to")
+          "repeats the previous", "too close to",
+          # The archived fixture predates the independent set-variety gate.
+          # That gate is production-required, but is not a runtime-format rule.
+          "shot(s) declare no `stage`")
 
 
 def _pad(sb, end, target=120.0):

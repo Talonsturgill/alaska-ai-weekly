@@ -1,0 +1,266 @@
+{
+  "run_date": "2026-09-12",
+  "role": "independent_writers_room_scorer",
+  "scope": "Treatment selection only; no storyboard or scene code.",
+  "winner": "enthusiast",
+  "winner_title": "The Extra Page",
+  "verdict": "SELECTED_WITH_MANDATORY_CORRECTIONS",
+  "locked_angle": "UAA's acquired EEG adds the ability to collect signals during tasks its researchers choose, alongside useful public EEG datasets.",
+  "stance": "celebratory",
+  "rationale": "The Enthusiast makes one notebook do the argument: established public-data work stays useful, a new planned collection route gains space, and an eventual interpretation still needs testing. Its 0/30/60/95/117-second states are the most coherent and its late payoffs give the final twenty seconds a separate job. It wins on designed retention and an earned warm emotional arc, not on the number of supporters in the cross-challenge. Its RESULT? tab is an unacceptable promise for an acquisition story and must become NEXT STEP before drafting.",
+  "scoring": {
+    "scale": "1-10; scores judge submitted treatments, including their uncorrected defects. Weighted total is editorial judgment, not measured viewer retention.",
+    "weights": {
+      "scroll_stop": 0.15,
+      "emotional_arc": 0.15,
+      "retention_120s": 0.3,
+      "fairness": 0.15,
+      "shelf_feasibility": 0.1,
+      "freshness": 0.1,
+      "stance_rotation": 0.05
+    },
+    "comparative_scores": [
+      {
+        "role": "enthusiast",
+        "scores": {
+          "scroll_stop": 8.8,
+          "emotional_arc": 9,
+          "retention_120s": 8.6,
+          "fairness": 8.1,
+          "shelf_feasibility": 8.6,
+          "freshness": 8.2,
+          "stance_rotation": 9.5
+        },
+        "strength": "Best continuous object evolution; strongest concrete public-data countercase; distinct 90/105-second payoffs.",
+        "deductions": "RESULT? falsely teases a result, the two archive padding defenses overlap, and the slogan button lacks a genuine audience invitation. Correct before production.",
+        "weighted_total": 8.62
+      },
+      {
+        "role": "comedian",
+        "scores": {
+          "scroll_stop": 8.9,
+          "emotional_arc": 8.4,
+          "retention_120s": 7.5,
+          "fairness": 8.3,
+          "shelf_feasibility": 8.1,
+          "freshness": 8,
+          "stance_rotation": 9
+        },
+        "strength": "Best immediate physical joke, readable goal and generous coexistence metaphor.",
+        "deductions": "Extension is promised locked until Act3 but partly raised at35; its final unfolding is mechanically predictable. Archive catching a notebook needs an actual research verb. Research-choice wording overstates the milestone.",
+        "weighted_total": 8.15
+      },
+      {
+        "role": "explainer",
+        "scores": {
+          "scroll_stop": 8.2,
+          "emotional_arc": 7.7,
+          "retention_120s": 7,
+          "fairness": 8.8,
+          "shelf_feasibility": 9,
+          "freshness": 7.6,
+          "stance_rotation": 8.9
+        },
+        "strength": "Strongest mechanism and factual clarity; cleanest reuse of a continuous trace.",
+        "deductions": "Task context appears before its purported68-second payoff; task/signal/test is already taught before95. Missing60-second object change and little new action after95. Repairs would redesign more of its retention than the Enthusiast needs.",
+        "weighted_total": 7.91
+      },
+      {
+        "role": "dramatist",
+        "scores": {
+          "scroll_stop": 7.6,
+          "emotional_arc": 8,
+          "retention_120s": 7.2,
+          "fairness": 8.2,
+          "shelf_feasibility": 9,
+          "freshness": 7.4,
+          "stance_rotation": 8.2
+        },
+        "strength": "Most grounded existing-research counterweight and honest tension between a trace and its meaning.",
+        "deductions": "Trace attaches at52-66 before the89 payoff; clip catches a pencil before its promised filling. Archive scene risks a reverent hold. Earlier presentation/public-data connection is unproven, and blank-result framing resembles recent proof stories.",
+        "weighted_total": 7.78
+      }
+    ]
+  },
+  "mandatory_corrections": [
+    {
+      "id": "promise",
+      "instruction": "Replace every RESULT? tab and reference with NEXT STEP. Plant by10 seconds: What extra work can this instrument add to a notebook that already supports research? At90 reveal an additional planned chosen-task collection workspace, with TO COLLECT and TO TEST areas; never promise a study answer."
+    },
+    {
+      "id": "agency",
+      "instruction": "Use 'collect signals during tasks researchers choose' or 'add an own-task recording option'. Never say the device lets students finally choose questions, grants research authority, or first makes experiment design possible."
+    },
+    {
+      "id": "act3_action",
+      "instruction": "Rename The Library Has a Good Answer to The Existing Route Works. At60-67 select an existing recording suitable for a conceptual question. At67-75 use that recording in an illustrative comparison/analysis workspace; no result or score. At75-84 a human positions an additional chosen-task collection plan while public data keeps working. Start the physical foldout by80; no delayed static hinge or second speech about coexistence. During75-84 visibly compare the chosen-task tab with available recordings as an assessment, then position the optional collection plan; do not assert missing data or force a failed match."
+    },
+    {
+      "id": "conditional_example",
+      "instruction": "The secondary participant is a GENERAL METHODS EXAMPLE from the48-second plant onward, with the IF: NEW PEOPLE condition attached. Around98 introduce the conditional claim clearly; at105 a previously excluded person's distinct example material enters TEST, never TRAINING. No announced UAA protocol, person count, leakage allegation, or score. Keep that distinct waiting marker visible at the60 or95 boundary so the105-second appearance is a remembered payoff."
+    },
+    {
+      "id": "plans",
+      "instruction": "Both READING and PROGRAMMING stay visibly PLANNED in every depiction. Eye movements are a separately planned measure, never an EEG-alone output. The training demonstration is explicitly separate from planned studies."
+    },
+    {
+      "id": "countercase_source",
+      "instruction": "If grafting the August presentation, state only the verified earlier-work fact from fact_check.json C9. Keep 'Egorov uses public EEG datasets' as a separate verified fact. Do not claim that the particular presentation used public data, this new headset, or either newly planned study."
+    },
+    {
+      "id": "button",
+      "instruction": "Replace the closing slogan with 'Which question about learning should they investigate first?' Keep the expanded notebook, useful archive page, planned local collection page and poised pencil in the final image."
+    },
+    {
+      "id": "voice",
+      "instruction": "Write and count a complete200-220-word VO before treating the selected treatment as production-ready. There is no winner VO yet. Plan for120 seconds, then fit scene boundaries to measured natural narration; no time-stretch to hit duration."
+    }
+  ],
+  "grafts": [
+    {
+      "from": "comedian",
+      "beat": "A public-data page makes a tiny courteous move near the open, then a generous sweep when the notebook gains space around90.",
+      "purpose": "Adds charm and a physical callback while preserving one notebook as the throughline.",
+      "limit": "Do not import the competing foldout table hero or an early extension reveal."
+    },
+    {
+      "from": "dramatist",
+      "beat": "One short, sourced Earlier work · Aug. 2026 insert inside the existing-research scene.",
+      "purpose": "Makes pre-existing student research concrete.",
+      "limit": "No inferred dataset, architecture transfer or association with the new device. Omit if its source/context cannot be kept legible without crowding."
+    },
+    {
+      "from": "explainer",
+      "beat": "One concise counted hardware cutaway:19 scalp contacts; two earclips and three empty auxiliary inputs remain distinct.",
+      "purpose": "Gives the film actual mechanism and prevents a generic gadget purchase story.",
+      "limit": "Do not repeat the19-contact traversal or crowd the phone frame with all labels at once. All signals schematic; no thought, diagnosis or interpretation emerges automatically."
+    }
+  ],
+  "accepted_retention_plan": {
+    "act3": {
+      "scene": "The Existing Route Works",
+      "window_seconds": [
+        60,
+        95
+      ],
+      "fair_test": "A suitable existing public recording can already support a useful research question; new acquisition need not improve or replace it.",
+      "visible_progression": [
+        "Select suitable existing evidence.",
+        "Use it in a conceptual analysis while the headset rests.",
+        "Position an additional chosen-task collection plan without making the archive fail.",
+        "Reveal new collection-and-test space beside the still-useful archive."
+      ],
+      "padding_judgment": "Two archive motions alone do not justify thirty-five seconds. Each of selection, actual conceptual use, choice of an additional route and physical expansion must change the argument. If the rough cut repeats coexistence at80 seconds, restructure it."
+    },
+    "throughline_object": {
+      "name": "One copper-tabbed research notebook",
+      "identity": "Copper NEXT STEP tab, stitched spine and dog-eared lower corner; visible during every scale change and archive takeover.",
+      "states": [
+        {
+          "at_seconds": 0,
+          "state": "Compact spring-open notebook containing useful public-data pages; final NEXT STEP leaf concealed."
+        },
+        {
+          "at_seconds": 30,
+          "state": "Upright planning page with reading/programming task tabs; concealed leaf remains closed."
+        },
+        {
+          "at_seconds": 60,
+          "state": "Two-wing working notebook, with public-data page actively supplying an analysis and planned local page waiting."
+        },
+        {
+          "at_seconds": 95,
+          "state": "Expanded collection-and-test spread; NEXT STEP leaf open, local recording still TO COLLECT and interpretation TO TEST."
+        },
+        {
+          "at_seconds": 117,
+          "state": "Open student-scale notebook with both routes preserved and pencil ready for a next question."
+        }
+      ]
+    },
+    "loops": [
+      {
+        "id": "primary",
+        "plant_seconds": 10,
+        "promise": "What extra work can this new tool add beside useful public data?",
+        "payoff_seconds": 90,
+        "payoff": "Concealed NEXT STEP wing reveals an additional planned collection route with an honest open test space.",
+        "not_withheld": "Acquisition, planned studies and their lack of reported results are stated early."
+      },
+      {
+        "id": "secondary",
+        "plant_seconds": 48,
+        "promise": "For a future new-person claim, who belongs outside the practice pile?",
+        "payoff_seconds": 105,
+        "payoff": "The distinct participant's example material enters a separate test space, never training.",
+        "condition": "General methods example, not a UAA procedure."
+      }
+    ],
+    "payoff_spacing_seconds": 15,
+    "late_action": "First reveal settles by93. Methods claim becomes the new question around98, participant pays at105, return to student inquiry and question CTA follows116."
+  },
+  "freshness_and_rotation": {
+    "verified_recent_history": [
+      "2026-09-02 DiplomaPress / mixed",
+      "2026-09-03 GearLever / mixed",
+      "2026-09-06 SubseaHive / mixed",
+      "2026-09-10 RockGlacierCore / curious",
+      "2026-09-11 FlightCrate / mixed"
+    ],
+    "judgment": "Celebratory stance is a useful factual rotation after mixed and curious entries. A human-scale warm notebook is distinct from the recent glacier and aviation heroes. Paper collage itself is not new: avoid September2's authority/press logic and recent empty sockets, gates and proof tickets.",
+    "craft_direction": "Bright warm paper, ink-blue depth and copper hinge glints, with a restrained green accent. Body, stitched spine, curled pages and three meaningful scale changes supply craft; no generic aurora or triumphant result lamp."
+  },
+  "shelf_feasibility": {
+    "verified_exports": [
+      "Sheet",
+      "PaperFiber",
+      "DocumentFlip",
+      "GripHand",
+      "Character",
+      "BrassPlate",
+      "EvidenceTrace",
+      "MeasurementField",
+      "EvidenceState"
+    ],
+    "judgment": "High feasibility using present paper, hand, character, trace and evidence-state components. Notebook folds are scenic composition; the real new subject gap is a recognizable neutral dry EEG headset.",
+    "remaining_gap": "A schematic headset/stand with the correct recording verb and literal19-contact count when shown. No remote sensor or clinical scanner substitute.",
+    "not_a_gate_pass": "Treatment plausibility is not a rendered motion, legibility or final-film check."
+  },
+  "storyboard_written": false,
+  "scene_code_written": false,
+  "episode_title": "The Question Comes First",
+  "reviewed_at_utc": "2026-09-12T13:30:24.670Z",
+  "input_files": [
+    "CLAUDE.md",
+    ".claude/WORKLOG.md",
+    "prompts/dispatch_routine.md#phase-41",
+    "out/dispatch/angle.json",
+    "config/state.yaml",
+    "out/dispatch/fact_check.json",
+    "out/dispatch/claims.json",
+    "out/dispatch/treatment_comedian.json",
+    "out/dispatch/treatment_challenge_comedian.json",
+    "out/dispatch/treatment_dramatist.json",
+    "out/dispatch/treatment_challenge_dramatist.json",
+    "out/dispatch/treatment_explainer.json",
+    "out/dispatch/treatment_challenge_explainer.json",
+    "out/dispatch/treatment_enthusiast.json",
+    "out/dispatch/treatment_challenge_enthusiast.json"
+  ],
+  "cross_challenge_round_complete": true,
+  "cross_challenge_synthesis": {
+    "all_four_read": true,
+    "preferences": {
+      "comedian": "enthusiast",
+      "explainer": "enthusiast",
+      "enthusiast": "explainer",
+      "dramatist": "comedian"
+    },
+    "independent_verdict": "The Dramatist correctly identifies the Comedian's table/stool as the strongest pure physical engine. I still prefer the Enthusiast: its single-object boundary continuity is already coherent, and repairing an honest NEXT STEP promise is less disruptive than reconciling a partly opened table or rebuilding the Explainer's information withholding. Preserve the Comedian's charm as a graft.",
+    "last_review_actions": [
+      "At76-84 visibly assess the chosen task alongside the available page, then place an optional collection plan without making the archive fail.",
+      "Keep the48-second participant marker visible at the60 or95 boundary so its105 payoff is remembered.",
+      "Keep any methods inset distinct and compact; the real story remains acquired recording capability and planned studies."
+    ]
+  }
+}

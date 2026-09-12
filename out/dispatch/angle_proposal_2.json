@@ -1,0 +1,47 @@
+{
+  "analyst": 2,
+  "angle_name": "Let the question choose the data",
+  "safe_set_status": "Independent validator confirmation supplied by orchestrator; fact_check.json was not yet present when read. Primary UAA article and manufacturer documentation were independently fetched in this research pass.",
+  "falsifying_observation": "The central claim fails if this lab cannot collect usable EEG recordings during tasks its researchers choose, and therefore must still restrict this work to existing recordings. An unusable or inaccessible instrument would fail that claim even though a purchase occurred.",
+  "thesis": "UAA’s new EEG expands students’ control over data collection, letting an AI research question shape the recording they make.",
+  "why_it_is_a_claim": "It asserts an actual change in experimental capability, not improved model accuracy or a completed study. The named student’s previous reliance on public recordings and his documented training support the change.",
+  "strongest_facts": [
+    {
+      "fact": "Egorov says his EEG work usually uses public data and expresses excitement about collecting data for his own tasks.",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml"
+    },
+    {
+      "fact": "UAA reports acquiring the DSI-24 for its AI and Robotics Lab; photographs document student and faculty training.",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml"
+    },
+    {
+      "fact": "UAA names planned reading-task and programming-task research. The two different questions show why task-specific collection is useful without establishing results.",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml"
+    }
+  ],
+  "strongest_fair_counterpoint": "Public datasets remain valuable, and ownership of a headset does not make the resulting data useful. Signal collection and a correct interpretation are separate achievements. UAA reports plans, not accuracy, completed findings, or demonstrated benefits for people with disabilities.",
+  "who_it_serves": "Alaskan students, faculty and research supporters deciding what practical AI capability means: access to measurement, the freedom to design a task, and the responsibility to test the interpretation.",
+  "valence": "celebratory",
+  "valence_defense": "The evidence documents a real addition to local capability and participant enthusiasm. It warrants celebrating the ability to conduct research while leaving answers open. A mandatory failure ending would misstate this stage.",
+  "second_movement": {
+    "recontextualizing_fact": "The same headset is proposed for reading-related cognitive-state work and for programming/eye-movement work. The important variable becomes the designed task and the question, not the object’s novelty.",
+    "act3_test": "Give the strongest fair alternative its own movement: public recordings already support real research, so why collect another dataset? Set an existing recording beside a newly chosen task, without claiming the public recording is defective. Egorov’s stated desire to collect for his own tasks identifies the added choice. Then distinguish acquiring that recording from proving an interpretation. The win is an expanded experimental option, not a finding.",
+    "do_not_draw": "Do not depict actual trial results, disability diagnosis, thought-reading, a brain-controlled robot, different participant scores, or a deployed classifier. Any experimental comparison must be labeled illustrative and proposed.",
+    "earned_resolution": "Return to the student’s choice of research task. End with a concrete open question about which learning task should be studied first, rather than a verdict on an unrun study."
+  },
+  "format_fit": {
+    "narration_words": [
+      200,
+      220
+    ],
+    "duration_seconds": [
+      112,
+      130
+    ],
+    "movement_1": "From public recordings to a measurement tool in the lab.",
+    "movement_2": "Different human questions require deliberately designed tasks.",
+    "movement_3": "A recorded signal still needs a tested interpretation; capability can be worth celebrating before findings exist."
+  },
+  "cross_challenge_pending": true,
+  "storyboard_written": false
+}
