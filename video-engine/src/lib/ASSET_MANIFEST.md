@@ -771,3 +771,9 @@ without swapping identity.
 
 - `FlightCrate` — `clinic.tsx` — ACTIVE. Reusable insulated medicine crate with a cooler gauge, tamper latches, unresolved destination tag, persistent plum lower-right edge, spruce contact shadow and five separately staged proof lamps. `proposed`, `lights`, `latchProgress`, `tag`, `accent` and `groundY` keep proposal state distinct from earned evidence.
 - `evidenceLatch` — `motion.tsx` — ACTIVE CRAFT ADVANCE. Pure anticipation, overshoot and settle curve for proof lamps, gates and approval marks that must arrive with physical weight instead of opacity alone.
+
+
+### September 12th research instruments and question typography
+
+- `EEGHeadset` in `research.tsx` is a reusable schematic sensor. `mode` selects one contact, an instrument on a side-view stand, or a counted array. `SCALP_CONTACTS` contains exactly19 pads; two separately shaped earclips and three empty auxiliary sockets never contribute to that count. Expose no results or clinical inference. Palette, contact highlight, spread and placement are parameters. Form gradients, rim light, rubber-pad depth and contact shadow establish material depth.
+- `QuestionToken` in `credentials.tsx` now honors arbitrary `text`, fits one or two lines, and accepts `color`, `faceColor`, `inkColor`, `rimColor`. Default WHO EARNED THIS? and EARNED keep their prior appearance. A question token expresses a question, never an award or completed evaluation.

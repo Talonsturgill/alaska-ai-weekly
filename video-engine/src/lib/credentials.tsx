@@ -16,20 +16,34 @@ const ease = (v: number) => 1 - Math.pow(1 - clamp(v), 3);
 
 export const QuestionToken: React.FC<{
   x?: number; y?: number; scale?: number; rot?: number; text?: string; glow?: number;
-}> = ({x = 0, y = 0, scale = 1, rot = 0, text = 'WHO EARNED THIS?', glow = 0}) => (
-  <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${scale})`}>
+  color?: string; faceColor?: string; inkColor?: string; rimColor?: string;
+}> = ({x = 0, y = 0, scale = 1, rot = 0, text = 'WHO EARNED THIS?', glow = 0,
+        color = BRASS, faceColor = '#f0be52', inkColor = INK, rimColor = BRASS_L}) => {
+  const legacy = text === 'WHO EARNED THIS?';
+  const words = text.trim().split(/\s+/);
+  let rows = [text.trim()];
+  if (legacy) rows = ['WHO EARNED', 'THIS?'];
+  else if (text.length > 8 && words.length > 1) {
+    let best = Infinity;
+    for (let split = 1; split < words.length; split++) {
+      const pair = [words.slice(0, split).join(' '), words.slice(split).join(' ')];
+      const longest = Math.max(...pair.map(row => row.length));
+      if (longest < best) { best = longest; rows = pair; }
+    }
+  }
+  const size = legacy ? 10 : Math.min(20, 80 / (Math.max(1, ...rows.map(row => row.length)) * 0.63));
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${scale})`}>
     <circle cx={0} cy={7} r={68} fill={OXBLOOD_D} opacity={0.34}/>
     <path d="M0,-72 L18,-62 L39,-60 L51,-42 L68,-28 L65,-7 L73,12 L60,31 L55,51 L34,58 L17,72 L-4,65 L-25,72 L-42,56 L-63,48 L-65,26 L-77,8 L-65,-11 L-67,-33 L-47,-44 L-34,-64 L-12,-63 Z"
-      fill={BRASS} stroke={INK} strokeWidth={8}/>
-    <circle r={52} fill="#f0be52" stroke={OXBLOOD_D} strokeWidth={5}/>
-    <circle r={43} fill="none" stroke={BRASS_L} strokeWidth={5} opacity={0.8}/>
-    <text x={0} y={-7} textAnchor="middle" fontFamily={MONO} fontSize={text === 'EARNED' ? 20 : 10}
-      fontWeight={900} fill={INK}>{text === 'EARNED' ? 'EARNED' : 'WHO EARNED'}</text>
-    {text !== 'EARNED' && <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontSize={11}
-      fontWeight={900} fill={INK}>THIS?</text>}
+      fill={color} stroke={inkColor} strokeWidth={8}/>
+    <circle r={52} fill={faceColor} stroke={OXBLOOD_D} strokeWidth={5}/>
+    <circle r={43} fill="none" stroke={rimColor} strokeWidth={5} opacity={0.8}/>
+    {rows.map((row, i) => <text key={i} x={0} y={rows.length === 1 ? (text === 'EARNED' ? -7 : 6) : -7 + i * 17}
+      textAnchor="middle" fontFamily={MONO} fontSize={legacy && i === 1 ? 11 : size}
+      fontWeight={900} fill={inkColor}>{row}</text>)}
     <circle r={76 + glow * 8} fill="none" stroke={MINT} strokeWidth={4} opacity={glow * 0.65}/>
-  </g>
-);
+  </g>;
+};
 
 export const documentFlip = (progress: number) => {
   const p = clamp(progress);

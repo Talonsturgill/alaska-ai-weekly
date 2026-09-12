@@ -2,7 +2,7 @@
   "run_date": "2026-09-12",
   "title": "The Question Comes First",
   "role": "vo-director",
-  "planned_at": "2026-09-12T14:23:05.408065+00:00",
+  "planned_at": "2026-09-12T13:49:47.772201+00:00",
   "target_seconds": 120,
   "word_count": 213,
   "input_sha256": {
@@ -12,8 +12,8 @@
   "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
   "voice": "Sulafat",
   "accent": "neutral American, light and natural",
-  "notes": "Style: Warm, natural and conversational. Nora is a neutral American Alaska public-radio host, grounded and quietly witty. Explain this as a relaxed live conversation with one interested listener. Complete each phrase clearly. After every completed sentence, take a real, unhurried thought-breath. Aim for about one hundred and ten words per minute including those natural breaths. Keep vowels and consonants ordinary and crisp, with short phrases and varied intonation. Let questions hang for one ordinary conversational beat. Give the reading plan and the programming plan their own complete thought. Keep the energy lifts in pitch and warmth rather than faster articulation. Start curious, enjoy the student seeing his signal, give public recordings confident respect, and brighten at students helping design the extra page. Settle into the conditional research principle without sounding suspicious. End with a welcoming question. Let complete thoughts and natural breaths carry the two-minute read.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one key word per line; let numbers land. In transcript-line order: page, new, ninth, trained, electrical, own, public, tasks, Who, plans, pairs, ahead, keep, fit, also, design, interpretation, absent, principle, first.",
-  "style_prompt": "Style: Warm, natural and conversational. Nora is a neutral American Alaska public-radio host, grounded and quietly witty. Explain this as a relaxed live conversation with one interested listener. Complete each phrase clearly. After every completed sentence, take a real, unhurried thought-breath. Aim for about one hundred and ten words per minute including those natural breaths. Keep vowels and consonants ordinary and crisp, with short phrases and varied intonation. Let questions hang for one ordinary conversational beat. Give the reading plan and the programming plan their own complete thought. Keep the energy lifts in pitch and warmth rather than faster articulation. Start curious, enjoy the student seeing his signal, give public recordings confident respect, and brighten at students helping design the extra page. Settle into the conditional research principle without sounding suspicious. End with a welcoming question. Let complete thoughts and natural breaths carry the two-minute read.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one key word per line; let numbers land. In transcript-line order: page, new, ninth, trained, electrical, own, public, tasks, Who, plans, pairs, ahead, keep, fit, also, design, interpretation, absent, principle, first.",
+  "notes": "Style: Warm, natural and conversational. Nora is a neutral American Alaska public-radio host, grounded and quietly witty. Start with bright curiosity. Enjoy the student seeing his own signal. Give public recordings confident respect. Lift into the extra page and the students helping design a plan, then settle into a clear general research principle. Keep the final question welcoming. Planned work should sound anticipatory. The conditional new-person test should sound practical, never accusatory. Let the multi-sentence lines change color after their periods. Let real breaths and complete thoughts carry the runtime while the voice stays conversational.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one key word per line; let numbers land. In transcript-line order: page, new, ninth, trained, electrical, own, public, tasks, Who, plans, pairs, ahead, keep, fit, also, design, interpretation, absent, principle, first.",
+  "style_prompt": "Style: Warm, natural and conversational. Nora is a neutral American Alaska public-radio host, grounded and quietly witty. Start with bright curiosity. Enjoy the student seeing his own signal. Give public recordings confident respect. Lift into the extra page and the students helping design a plan, then settle into a clear general research principle. Keep the final question welcoming. Planned work should sound anticipatory. The conditional new-person test should sound practical, never accusatory. Let the multi-sentence lines change color after their periods. Let real breaths and complete thoughts carry the runtime while the voice stays conversational.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one key word per line; let numbers land. In transcript-line order: page, new, ninth, trained, electrical, own, public, tasks, Who, plans, pairs, ahead, keep, fit, also, design, interpretation, absent, principle, first.",
   "pace_paragraph": "Pace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.",
   "lines": [
     {
@@ -53,14 +53,12 @@
     },
     {
       "idx": 3,
-      "text": "The Educational Legacy Fund funded it. [short pause] Students and faculty have trained.",
+      "text": "The Educational Legacy Fund funded it. Students and faculty have trained.",
       "intent": "setup",
       "emphasis": "trained",
       "energy": 3,
-      "pace": "Credit the fund, complete the phrase, take an easy thought-breath, then lift warmly into the people who have trained.",
-      "tags": [
-        "[short pause]"
-      ],
+      "pace": "Credit the fund plainly, breathe at the period, then warm and lift into trained.",
+      "tags": [],
       "pause_before": false,
       "why": "Move from support to people already learning to use the equipment."
     },
@@ -154,14 +152,12 @@
     },
     {
       "idx": 12,
-      "text": "And the public recordings? [short pause] They keep their place.",
+      "text": "And the public recordings? They keep their place.",
       "intent": "reveal",
       "emphasis": "keep",
       "energy": 4,
-      "pace": "Ask with a half-smile, give the question one natural beat, then answer with calm confidence.",
-      "tags": [
-        "[short pause]"
-      ],
+      "pace": "Ask with a half-smile, then land the second sentence confidently.",
+      "tags": [],
       "pause_before": false,
       "why": "Give the public-data countercase full positive weight."
     },
@@ -213,14 +209,12 @@
     },
     {
       "idx": 17,
-      "text": "If a future model claims to work for new people, [short pause] test it on people absent from training.",
+      "text": "If a future model claims to work for new people, test it on people absent from training.",
       "intent": "stakes",
       "emphasis": "absent",
       "energy": 3,
-      "pace": "Finish the conditional phrase about new people, take a natural thought-breath, then make absent from training easy to follow.",
-      "tags": [
-        "[short pause]"
-      ],
+      "pace": "Give the opening If a clear conditional shape, then make absent from training easy to follow.",
+      "tags": [],
       "pause_before": false,
       "why": "State the general new-person test as a practical method, not an accusation."
     },
@@ -282,22 +276,14 @@
     }
   ],
   "priority_line_idx": 15,
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Warm, natural and conversational. Nora is a neutral American Alaska public-radio host, grounded and quietly witty. Explain this as a relaxed live conversation with one interested listener. Complete each phrase clearly. After every completed sentence, take a real, unhurried thought-breath. Aim for about one hundred and ten words per minute including those natural breaths. Keep vowels and consonants ordinary and crisp, with short phrases and varied intonation. Let questions hang for one ordinary conversational beat. Give the reading plan and the programming plan their own complete thought. Keep the energy lifts in pitch and warmth rather than faster articulation. Start curious, enjoy the student seeing his signal, give public recordings confident respect, and brighten at students helping design the extra page. Settle into the conditional research principle without sounding suspicious. End with a welcoming question. Let complete thoughts and natural breaths carry the two-minute read.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one key word per line; let numbers land. In transcript-line order: page, new, ninth, trained, electrical, own, public, tasks, Who, plans, pairs, ahead, keep, fit, also, design, interpretation, absent, principle, first.\nTranscript:\nNineteen scalp electrodes. [short pause] What's on the next page?\nThe University of Alaska Anchorage has a new dry E E G.\nThe university announced it for its A I and Robotics Lab on September ninth.\nThe Educational Legacy Fund funded it. [short pause] Students and faculty have trained.\nIts scalp contacts record electrical activity.\nGraduate student Vadim Egorov has watched his own signals appear.\nHe usually works with public E E G datasets.\nNow he's looking forward to collecting recordings for his own tasks.\nWho might a future answer work for?\nU A A plans to study cognitive states during reading.\nAnother planned project pairs brain activity with eye movements during programming.\nThose are plans, with the answers still ahead.\nAnd the public recordings? [short pause] They keep their place.\nResearchers can check whether existing recordings fit the question. If they do, useful analysis can start there.\nThey can also plan a new recording around another task.\nThe extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.\nA recording alone doesn't supply an interpretation.\nIf a future model claims to work for new people, [short pause] test it on people absent from training.\nThat's a research principle, not a reported U A A result.\nWhich question about learning should they investigate first?",
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Warm, natural and conversational. Nora is a neutral American Alaska public-radio host, grounded and quietly witty. Start with bright curiosity. Enjoy the student seeing his own signal. Give public recordings confident respect. Lift into the extra page and the students helping design a plan, then settle into a clear general research principle. Keep the final question welcoming. Planned work should sound anticipatory. The conditional new-person test should sound practical, never accusatory. Let the multi-sentence lines change color after their periods. Let real breaths and complete thoughts carry the runtime while the voice stays conversational.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on one key word per line; let numbers land. In transcript-line order: page, new, ninth, trained, electrical, own, public, tasks, Who, plans, pairs, ahead, keep, fit, also, design, interpretation, absent, principle, first.\nTranscript:\nNineteen scalp electrodes. [short pause] What's on the next page?\nThe University of Alaska Anchorage has a new dry E E G.\nThe university announced it for its A I and Robotics Lab on September ninth.\nThe Educational Legacy Fund funded it. Students and faculty have trained.\nIts scalp contacts record electrical activity.\nGraduate student Vadim Egorov has watched his own signals appear.\nHe usually works with public E E G datasets.\nNow he's looking forward to collecting recordings for his own tasks.\nWho might a future answer work for?\nU A A plans to study cognitive states during reading.\nAnother planned project pairs brain activity with eye movements during programming.\nThose are plans, with the answers still ahead.\nAnd the public recordings? They keep their place.\nResearchers can check whether existing recordings fit the question. If they do, useful analysis can start there.\nThey can also plan a new recording around another task.\nThe extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.\nA recording alone doesn't supply an interpretation.\nIf a future model claims to work for new people, test it on people absent from training.\nThat's a research principle, not a reported U A A result.\nWhich question about learning should they investigate first?",
   "planning_checks": {
     "exact_spoken_lines": true,
     "adjacent_energy_contrast": true,
     "all_lines_have_intent_emphasis_pace": true,
-    "inline_tags_total": 5,
+    "inline_tags_total": 2,
     "only_vetted_midline_tags": true,
     "target_anchored_pace_verbatim": true,
-    "no_synthesis_performed": true,
-    "previous_job_runtime_failed": true,
-    "this_revision_not_synthesized": true
-  },
-  "revision": 1,
-  "revision_reason": "All six natural takes missed the 112 to 130-second band. Selected take was accurate and expressive at 107.2 seconds. Ask concretely for a real thought-breath after each completed sentence and about 110 words per minute including breaths, while preserving the exact script, canonical runtime paragraph and energy contrast.",
-  "revision_scope": "Planning only. Five vetted mid-line pause cues and a more focused natural-breath Style note. No resynthesis, waveform change, silence insertion or time-stretch performed by this revision.",
-  "previous_plan_sha256": "e1becda492fa193580f610f2aa0ac6f76f3367591f21fb0659843b0c4b704d75",
-  "previous_report_sha256": "b91584b7b8f211f17726ebd85dea94f256e60cdd4a286f4d1f84ff0c03299b5e",
-  "delivery_target_wpm_including_breaths": 110
+    "no_synthesis_performed": true
+  }
 }

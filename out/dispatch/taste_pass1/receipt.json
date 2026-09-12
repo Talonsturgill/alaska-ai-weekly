@@ -1,0 +1,278 @@
+{
+  "video": "out/dispatch/craft_draft_mute.mp4",
+  "sha256": "4ab65b424dfc19ee65ed87587fca529a1f97a72f2c38f8faa8712255a939cac6",
+  "props": "out/dispatch/roughcut_data/episode_props.json",
+  "samples": [
+    {
+      "scene": 1,
+      "frame": 23,
+      "time": 0.7759999999999999,
+      "path": "out/dispatch/taste_pass1/S01_0.png"
+    },
+    {
+      "scene": 1,
+      "frame": 107,
+      "time": 3.5566666666666666,
+      "path": "out/dispatch/taste_pass1/S01_1.png"
+    },
+    {
+      "scene": 1,
+      "frame": 175,
+      "time": 5.819999999999999,
+      "path": "out/dispatch/taste_pass1/S01_2.png"
+    },
+    {
+      "scene": 2,
+      "frame": 214,
+      "time": 7.134666666666666,
+      "path": "out/dispatch/taste_pass1/S02_0.png"
+    },
+    {
+      "scene": 2,
+      "frame": 286,
+      "time": 9.528333333333334,
+      "path": "out/dispatch/taste_pass1/S02_1.png"
+    },
+    {
+      "scene": 2,
+      "frame": 344,
+      "time": 11.476666666666667,
+      "path": "out/dispatch/taste_pass1/S02_2.png"
+    },
+    {
+      "scene": 3,
+      "frame": 407,
+      "time": 13.557333333333334,
+      "path": "out/dispatch/taste_pass1/S03_0.png"
+    },
+    {
+      "scene": 3,
+      "frame": 571,
+      "time": 19.01833333333333,
+      "path": "out/dispatch/taste_pass1/S03_1.png"
+    },
+    {
+      "scene": 3,
+      "frame": 704,
+      "time": 23.463333333333335,
+      "path": "out/dispatch/taste_pass1/S03_2.png"
+    },
+    {
+      "scene": 4,
+      "frame": 776,
+      "time": 25.865333333333336,
+      "path": "out/dispatch/taste_pass1/S04_0.png"
+    },
+    {
+      "scene": 4,
+      "frame": 898,
+      "time": 29.921666666666667,
+      "path": "out/dispatch/taste_pass1/S04_1.png"
+    },
+    {
+      "scene": 4,
+      "frame": 997,
+      "time": 33.223333333333336,
+      "path": "out/dispatch/taste_pass1/S04_2.png"
+    },
+    {
+      "scene": 5,
+      "frame": 1060,
+      "time": 35.318666666666665,
+      "path": "out/dispatch/taste_pass1/S05_0.png"
+    },
+    {
+      "scene": 5,
+      "frame": 1183,
+      "time": 39.44666666666667,
+      "path": "out/dispatch/taste_pass1/S05_1.png"
+    },
+    {
+      "scene": 5,
+      "frame": 1284,
+      "time": 42.806666666666665,
+      "path": "out/dispatch/taste_pass1/S05_2.png"
+    },
+    {
+      "scene": 6,
+      "frame": 1325,
+      "time": 44.162666666666674,
+      "path": "out/dispatch/taste_pass1/S06_0.png"
+    },
+    {
+      "scene": 6,
+      "frame": 1367,
+      "time": 45.58166666666667,
+      "path": "out/dispatch/taste_pass1/S06_1.png"
+    },
+    {
+      "scene": 6,
+      "frame": 1402,
+      "time": 46.736666666666665,
+      "path": "out/dispatch/taste_pass1/S06_2.png"
+    },
+    {
+      "scene": 7,
+      "frame": 1428,
+      "time": 47.59466666666666,
+      "path": "out/dispatch/taste_pass1/S07_0.png"
+    },
+    {
+      "scene": 7,
+      "frame": 1485,
+      "time": 49.486666666666665,
+      "path": "out/dispatch/taste_pass1/S07_1.png"
+    },
+    {
+      "scene": 7,
+      "frame": 1531,
+      "time": 51.026666666666664,
+      "path": "out/dispatch/taste_pass1/S07_2.png"
+    },
+    {
+      "scene": 8,
+      "frame": 1577,
+      "time": 52.574666666666666,
+      "path": "out/dispatch/taste_pass1/S08_0.png"
+    },
+    {
+      "scene": 8,
+      "frame": 1696,
+      "time": 56.544999999999995,
+      "path": "out/dispatch/taste_pass1/S08_1.png"
+    },
+    {
+      "scene": 8,
+      "frame": 1793,
+      "time": 59.776666666666664,
+      "path": "out/dispatch/taste_pass1/S08_2.png"
+    },
+    {
+      "scene": 9,
+      "frame": 1835,
+      "time": 61.172000000000004,
+      "path": "out/dispatch/taste_pass1/S09_0.png"
+    },
+    {
+      "scene": 9,
+      "frame": 1886,
+      "time": 62.86333333333334,
+      "path": "out/dispatch/taste_pass1/S09_1.png"
+    },
+    {
+      "scene": 9,
+      "frame": 1927,
+      "time": 64.24,
+      "path": "out/dispatch/taste_pass1/S09_2.png"
+    },
+    {
+      "scene": 10,
+      "frame": 1984,
+      "time": 66.12133333333334,
+      "path": "out/dispatch/taste_pass1/S10_0.png"
+    },
+    {
+      "scene": 10,
+      "frame": 2144,
+      "time": 71.45333333333333,
+      "path": "out/dispatch/taste_pass1/S10_1.png"
+    },
+    {
+      "scene": 10,
+      "frame": 2274,
+      "time": 75.79333333333334,
+      "path": "out/dispatch/taste_pass1/S10_2.png"
+    },
+    {
+      "scene": 11,
+      "frame": 2352,
+      "time": 78.38933333333333,
+      "path": "out/dispatch/taste_pass1/S11_0.png"
+    },
+    {
+      "scene": 11,
+      "frame": 2497,
+      "time": 83.24833333333332,
+      "path": "out/dispatch/taste_pass1/S11_1.png"
+    },
+    {
+      "scene": 11,
+      "frame": 2616,
+      "time": 87.20333333333333,
+      "path": "out/dispatch/taste_pass1/S11_2.png"
+    },
+    {
+      "scene": 12,
+      "frame": 2672,
+      "time": 89.08133333333333,
+      "path": "out/dispatch/taste_pass1/S12_0.png"
+    },
+    {
+      "scene": 12,
+      "frame": 2753,
+      "time": 91.76166666666667,
+      "path": "out/dispatch/taste_pass1/S12_1.png"
+    },
+    {
+      "scene": 12,
+      "frame": 2818,
+      "time": 93.94333333333334,
+      "path": "out/dispatch/taste_pass1/S12_2.png"
+    },
+    {
+      "scene": 13,
+      "frame": 2854,
+      "time": 95.12266666666666,
+      "path": "out/dispatch/taste_pass1/S13_0.png"
+    },
+    {
+      "scene": 13,
+      "frame": 2913,
+      "time": 97.115,
+      "path": "out/dispatch/taste_pass1/S13_1.png"
+    },
+    {
+      "scene": 13,
+      "frame": 2962,
+      "time": 98.73666666666666,
+      "path": "out/dispatch/taste_pass1/S13_2.png"
+    },
+    {
+      "scene": 14,
+      "frame": 2989,
+      "time": 99.632,
+      "path": "out/dispatch/taste_pass1/S14_0.png"
+    },
+    {
+      "scene": 14,
+      "frame": 3035,
+      "time": 101.18,
+      "path": "out/dispatch/taste_pass1/S14_1.png"
+    },
+    {
+      "scene": 14,
+      "frame": 3073,
+      "time": 102.44,
+      "path": "out/dispatch/taste_pass1/S14_2.png"
+    }
+  ],
+  "reviewed_at": "2026-09-12T14:32:33.646995+00:00",
+  "six_question_review": {
+    "coverage": "Root viewed42renderedframes,3per14scenes",
+    "strengths": [
+      "A fresh lilac paper world and exact19contact sensor",
+      "A real recording-to-interpretation contrast",
+      "Separate planned studies and methods example",
+      "Active public-data selection and extra notebook wing"
+    ],
+    "fixes_applied_in_source": [
+      "Ivory backing for student credit",
+      "Complete fade of isolated actor and sensor",
+      "Literal interpretation flap late in scene11",
+      "Participant persistence at archive turn",
+      "Answer-space fold during planned-study sentence",
+      "Actual closing question-page lift"
+    ],
+    "remaining": "Affected-frame rerender, full current-voice conform, motion-filmstrip and final objective/panel review."
+  }
+}

@@ -35,7 +35,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-11"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-12"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -69,9 +69,9 @@ def jit(idx, salt, lo, hi):
     return lo + (hi - lo) * h
 
 
-# SFX events cut to the picture, derived from vo_lines.json (out/dispatch/vo_lines.json,
-# idx 0-18, this run's 19 spoken lines) plus fixed offsets into the retimed scenes
-# (out/dispatch/episode_props.json > scenes[], scripts/build_scenes.py). Each event:
+# September 12 has 20 spoken lines (idx 0-19). Music follows their measured starts;
+# each SFX follows the approved storyboard's at_s after natural-VO conformity.
+# Each event:
 # (time, kind, class, pan) — pan is the prop's approximate storyboard x mapped to
 # [-1,1], scaled by 0.35 in the graph.
 _lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
@@ -84,24 +84,67 @@ VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props)
 # The approved board is the single episode-local source of beat times and sound roles.
 # Times are conformed from actual VO line anchors before mixing.
 _board = json.load(open(os.path.join(OUT, "storyboard.json")))
-# The board names the dramatic sound role. This per-run performance map chooses an
-# available foley-bank design for every beat while preserving spectral variety.
-_PERFORMANCE_KINDS = [
-    "boom", "tick", "whoosh", "clank", "paper", "snap", "chime", "pop",
-    "stamp", "paper", "ding", "tick", "riser", "snap", "thud", "chime",
-    "pop", "creak", "tick", "whoosh", "clank", "paper", "boom", "snap",
-    "ding", "whoosh", "tick", "clank", "paper", "stamp",
+# One authored bank performance per approved beat: kind, class, prop pan, role.
+# `paw` resolves to Kenney soft impacts, used for hand/support contacts, not animals.
+# `stamp` supplies compressed-paper body, not a rubber-stamp verdict. `pop` is a
+# small elastic seating accent. The sole chime celebrates the extra workspace,
+# never a research result. Metal, sub and UI designs stay at texture level.
+# Left is the public-data page; right is the optional plan/test holder. These pans
+# describe the staged prop, not an alternating stereo pattern.
+_PERFORMANCE = [
+    ("thud",   "texture",   0.00, "notebook cover settles on the desk"),             # 1
+    ("paper",  "standard", -0.35, "short public-page courtesy scrape"),             # 2
+    ("snap",   "texture",   0.20, "stiff NEXT STEP tab catches its folded leaf"),    # 3
+    ("thud",   "texture",   0.00, "bench and rubber-footed stand seat together"),   # 4
+    ("pop",    "texture",   0.00, "small elastic device-support seating contact"), # 5
+    ("paper",  "texture",  -0.20, "announcement sheet slips into its pocket"),     # 6
+    ("clank",  "texture",   0.05, "metal lab nameplate meets its stand holder"),   # 7
+    ("paper",  "texture",  -0.15, "funding slip turns onto the acquisition sheet"),# 8
+    ("paw",    "texture",   0.10, "student hand turns the padded training stand"), # 9
+    ("whoosh", "standard",  0.00, "schematic array and trace connection disclose"),# 10
+    ("paw",    "texture",   0.25, "fingertip touches the observation-display ledge"),# 11
+    ("tick",   "texture",   0.30, "SCHEMATIC tab seats at the growing trace edge"), # 12
+    ("creak",  "texture",  -0.40, "public-data book spine flexes open"),             # 13
+    ("tick",   "texture",  -0.25, "selected recording strip meets its pocket stop"),# 14
+    ("stamp",  "texture",   0.25, "hand gently presses the own-task paper tab flat"),# 15
+    ("snap",   "texture",   0.35, "folded NEXT STEP tab tensions its ribbon"),      # 16
+    ("pop",    "texture",   0.45, "outer person holder opens its conditional flag"),# 17
+    ("creak",  "texture",  -0.15, "planned reading-book spine and holder unfold"),  # 18
+    ("snap",   "standard",  0.10, "springy bookmark clips the empty planned target"),# 19
+    ("paw",    "texture",   0.10, "paper programming-panel support foot touches down"),# 20
+    ("whoosh", "texture",   0.40, "separate illustrative gaze runner traverses its strip"),# 21
+    ("creak",  "texture",   0.00, "joined study-page fold lifts the archive divider"),# 22
+    ("whoosh", "standard", -0.25, "public page opens into the full working archive"),# 23
+    ("tick",   "standard", -0.40, "matching TASK A tabs seat in the analysis holder"),# 24
+    ("paper",  "texture",  -0.35, "TASK A strip runs through its comparison guide"),# 25
+    ("stamp",  "texture",   0.35, "TASK B tab presses its paper inventory divider"),# 26
+    ("paper",  "texture",   0.30, "inventory tabs flick during undecided B assessment"),# 27
+    ("riser",  "texture",   0.00, "single restrained build as the closed wing lifts"),# 28
+    ("chime",  "hero",      0.00, "warm editorial accent for added workspace, no finding"),# 29
+    ("paper",  "standard", -0.40, "longer courtesy scrape recalls beat 2 on the enlarged page"),# 30
+    ("tick",   "texture",   0.40, "chosen-task plan seats in the TO COLLECT holder"),# 31
+    ("creak",  "texture",   0.25, "empty interpretation flap unfolds beside the trace"),# 32
+    ("snap",   "texture",   0.25, "conditional methods flap raises the separate test holder"),# 33
+    ("whoosh", "texture",   0.40, "same notched person follows the separate TEST path"),# 34
+    ("paw",    "texture",   0.45, "blank evaluation page lands softly in TEST"),     # 35
+    ("creak",  "texture",   0.10, "general-principle page folds into its own pocket"),# 36
+    ("thud",   "texture",   0.25, "returning UAA spread nudges the pencil to its wood stop"),# 37
+    ("tick",   "texture",   0.20, "pencil releases from the stop before the question"),# 38
+    ("paper",  "standard",  0.00, "last question-page fan recalls the opening paper lift"),# 39
 ]
-if len(_PERFORMANCE_KINDS) != len(_board["beats"]):
+_PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
+if (_board.get("run_date") != DATE or
+        [b["id"] for b in _board["beats"]] != list(range(1, 40)) or
+        len(_PERFORMANCE_KINDS) != len(_board["beats"])):
     raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
 EVENTS = [
-    (float(str(b["t"]).split("-")[0]), _PERFORMANCE_KINDS[n],
-     "hero" if b["id"] in (8, 10, 20, 24, 30, 32, 35) else
-     "texture" if _PERFORMANCE_KINDS[n] in ("paper", "creak", "riser") else "standard",
-     0.0 if b["id"] in (24, 30, 32, 35) else (-0.22 if n % 2 else 0.22))
-    for n, b in enumerate(_board["beats"])
+    (float(b["at_s"]), kind, cls, pan)
+    for b, (kind, cls, pan, _) in zip(_board["beats"], _PERFORMANCE)
 ]
-EVENT_LABELS = [b["shows"] for b in _board["beats"]]
+EVENT_LABELS = [
+    f"{b['shows']} | Bank performance: {role}. Approved sound: {b['sfx']}"
+    for b, (_, _, _, role) in zip(_board["beats"], _PERFORMANCE)
+]
 
 # THE MIX HAS AN ARC NOW (2026-07-31, round 6 panel note: "the mix is flat -- LRA 3.10").
 #
@@ -126,12 +169,27 @@ EVENT_LABELS = [b["shows"] for b in _board["beats"]]
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (0.0, 0.72), (L[1], 0.86), (L[2], 1.05), (L[3], 0.80),
-    (L[4], 0.95), (L[5], 0.80), (L[6], 0.95), (L[7], 0.78),
-    (L[8], 0.70), (L[9], 1.08), (L[10], 0.85), (L[11], 0.32),
-    (L[12], 0.55), (L[13], 0.28), (L[14], 0.52), (L[15], 0.62),
-    (L[16], 1.08), (L[17], 0.95),
-    (VIDEO_SECS - 0.25, 0.70), (VIDEO_SECS, 0.05),
+    (L[0], 0.62),   # contact and unopened page: curious, with room for paper
+    (L[1], 0.72),   # Anchorage lab opens
+    (L[2], 0.82),   # concrete acquisition and date
+    (L[3], 0.78),   # funding and training stay warm and matter-of-fact
+    (L[4], 0.95),   # contact-to-signal mechanism
+    (L[5], 1.00),   # student observation, the human gain
+    (L[6], 0.78),   # existing public recordings retain competence
+    (L[7], 0.96),   # own-task collection possibility
+    (L[8], 0.58),   # quiet new-person question, not ominous uncertainty
+    (L[9], 0.82),   # planned reading context
+    (L[10], 0.94),  # the separate programming/eye-movement plan
+    (L[11], 0.56),  # answers still ahead: leave room to hear the boundary
+    (L[12], 0.88),  # public archive takes the stage with confidence
+    (L[13], 0.92),  # suitable TASK A data supports useful analysis
+    (L[14], 1.06),  # TASK B assessment and optional collection choice
+    (L[15], 1.18),  # extra wing opens; the only large musical crest
+    (L[16], 0.62),  # interpretation remains open
+    (L[17], 0.66),  # calm, precise conditional methods example
+    (L[18], 0.46),  # return to actual plans; prepare the real final gap
+    (L[19], 0.88),  # final learning question returns to the student
+    (VIDEO_SECS - 0.25, 0.58), (VIDEO_SECS, 0.05),
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
@@ -148,8 +206,10 @@ BED_ARC = [
 # hundred and ten bare. A room that is visibly a working plant should hum for its whole runtime,
 # so the bed now runs the full film at a lower level, where it reads as air rather than as an
 # event. Still synthesised, still deterministic, still no attribution owed.
-AMB_IN, AMB_OUT = 0.0, VIDEO_SECS
-AMB_LEVEL = 0.018
+# September 12 is an intimate lab and paper world. Keep the existing filtered-noise
+# machinery as restrained room air, with its fade completed before the final frame.
+AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
+AMB_LEVEL = 0.010
 
 
 def _assert_per_run_data_covers_the_film():
@@ -280,7 +340,12 @@ def _fit_silence_dip(lines, after_frac=0.5):
     return round(start, 3), round(dip, 3)
 
 
-SILENCE_DIP_AT, DIP_LEN = _fit_silence_dip(_lines)
+# Episode-local: fit the breath ONLY in the real gap before line19's final question.
+# The shared helper and its minimum/margins remain unchanged. If the natural take
+# has no usable final gap, warn rather than invent a pause or attenuate spoken words.
+_BUTTON_LINE = 19
+SILENCE_DIP_AT, DIP_LEN = _fit_silence_dip(
+    _lines, after_frac=(L[_BUTTON_LINE] - 0.000001) / max(x["end"] for x in _lines))
 if SILENCE_DIP_AT is None:
     # No gap in the back half is wide enough to hold an audible breath. Say so loudly rather
     # than silently placing one on top of speech.

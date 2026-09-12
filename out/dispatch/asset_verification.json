@@ -1,0 +1,17 @@
+{
+  "run_date": "2026-09-12",
+  "viewed_at": "2026-09-12T14:35:45.308175+00:00",
+  "image": "out/dispatch/probe/research_assets_0912.png",
+  "asset": "EEGHeadset",
+  "scalp_contacts_counted": 19,
+  "earclips": 2,
+  "auxiliary_inputs": 3,
+  "question_token_cases": [
+    "WHO EARNED THIS?",
+    "EARNED",
+    "NEXT STEP",
+    "TEST?",
+    "WHAT COMES NEXT?"
+  ],
+  "result": "Root visually counted2+5+5+5+2scalp contacts, checked separateclips/sockets and readable arbitrary token copy. Legacy default appearance retained. Episode frame review remains distinct."
+}

@@ -1,0 +1,77 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.995,
+    "heard": "19 Scalp Electrodes. What's on the next page? The University of Alaska Anchorage has a new, dry EEG. The University announced it for its AI and Robotics Lab on September 9. The Educational Legacy Fund funded it. Students and faculty have trained. Its Scalp contacts record electrical activity. Graduate student Vadim Igorov has watched his own signals appear. He usually works with public EEG datasets. Now he's looking forward to collecting recordings for his own tasks. Who might a future answer work for? UAA plans to study cognitive states during reading. Another planned project pairs brain activity with eye movements during programming. Those are plans with the answers still ahead. And the public recordings? They keep their place. Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there. They can also plan a new recording around another task. The extra page holds a plan that students can help design. The old pages stay open beside it. A recording alone doesn't supply an interpretation. If a future model claims to work for new people, test it on people absent from training. That's a research principle, not a reported UAA result. Which question about learning should they investigate first?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.01,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.36,
+        "voiced_frac": 0.5,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 107.2,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 107.2,
+    "in_target_band": false,
+    "selection": "NO take landed in 112-130s; chose the one closest to 120s"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": "RUNTIME 107.2s is outside the 112-130s band (target 120s) after a re-roll. Delivered 119.2 wpm over 213 words; at that rate 120s wants about 238 words (add roughly 25). The pace paragraph was already repaired to name the runtime, so the remaining gap is script length. SHIPPING THE BEST TAKE ANYWAY: a delivered film with a stated miss beats a stopped run.",
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.965,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.995,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.995,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.995,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.998,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}
