@@ -3133,3 +3133,36 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
 - Final exact-byte panel scores are 8.11, 7.57 and 8.08. Median 8.08 clears the 7.0 ship bar,
   all three judges ship with zero hard blockers, and the ship lock binds three deliverables plus
   56 review-evidence files to the graded bytes.
+
+
+## 2026-09-12 — The Question Comes First
+
+- Core setup now installs the current Gemini and Remotion toolchain independently of the
+  retired GPU stack. Taichi, Blender and old neural voice packages are optional through
+  `DISPATCH_INSTALL_LEGACY_STACK=1`, avoiding their unsupported Python/macOS installs.
+- Natural narration is preserved. The September 11 automatic tempo-conform path was removed
+  to comply with the current no-time-stretch contract. Short takes remain available for
+  rough-cut work and now explicitly require repair and re-synthesis before delivery. Gemini
+  retry diagnostics name only a safe HTTP code or exception class, without response bodies,
+  request headers, URLs or credential data.
+- Missing panel calibration references were a repeat offender across earlier runs. Five
+  September 11 reference images are now preserved alongside their original three judge cards
+  and hash-verified manifest. The reference notes distinguish historical whole-film scores
+  from scores of individual images and do not invent an owner-approved taste standard.
+- The reusable EEGHeadset supplies the documented nineteen scalp contacts with ear clips and
+  auxiliary sockets kept separate. QuestionToken now fits short custom labels while preserving
+  its original default rendering. A rendered asset proof checks both the instrument and the
+  old/new label variants; the asset manifest is updated in the same source change.
+- The whole-film rough cut preceded polish. A reusable taste-sheet script samples entry,
+  middle and late moments for every shot and records the actual source-video hash. This run's
+  review repaired the graduate-student attribution, empty interpretation field, archive
+  participant reminder and the final page movement, with affected stills inspected afterward.
+- Storyboard conforming now preserves an immutable planning clock and derives picture,
+  evidence and sound timing from the selected natural voice. Reveal holds remain physical
+  frame durations. The evidence builder names every current shot action instead of retaining
+  a previous episode's story-specific filmstrip schedule.
+- Initial voice direction produced six short takes, best 107.2 seconds. More concrete natural
+  phrase direction improved the next primary take to 110.2 seconds but remained below format.
+  A verified plain-language explanation of scalp contact brought the script from213to220words;
+  a fresh script-only cold read passed before the targeted next synthesis. No short take was
+  treated as delivery-approved.

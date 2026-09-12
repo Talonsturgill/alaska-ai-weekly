@@ -98,6 +98,7 @@ def _synth_retry(prompt):
     """One good 24k int16 take, with retries across the supported TTS models."""
     models = list(dict.fromkeys((MODEL, FALLBACK, SECOND_FALLBACK)))
     for model in models:
+        last_exception = None
         for d in (0, 4, 10, 20):
             if d:
                 time.sleep(d)
@@ -106,13 +107,18 @@ def _synth_retry(prompt):
                 if len(pcm) > 24000 * 2:  # at least ~2s of audio
                     return pcm, model
             except urllib.error.HTTPError as e:
+                # Never log exception text, URLs, response bodies or request headers.
+                last_exception = (f"HTTP {e.code}" if type(e.code) is int
+                                  and 100 <= e.code <= 599 else "HTTPError")
                 if e.code in (429, 500, 503):
                     continue
                 raise
-            except Exception:
+            except Exception as e:
+                last_exception = type(e).__name__
                 continue
         suffix = "; failing over" if model != models[-1] else ""
-        print(f"  {model} exhausted{suffix}")
+        diagnosis = f"; last exception: {last_exception}" if last_exception else ""
+        print(f"  {model} exhausted{diagnosis}{suffix}")
     raise RuntimeError("Gemini TTS failed on every configured model after retries.")
 
 
@@ -509,27 +515,17 @@ def main():
 
     best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
 
-    # ---- RUNTIME: RE-ROLL, THEN ACCEPT. NEVER STOP. -------------------------------
-    # The format's target runtime was enforced nowhere in code: the soundcheck's window
-    # is deliberately wide (~62-176s) because its job is catching a grossly broken synth
-    # rather than policing pace. So a 105-second take passed everything and the run would
-    # have shipped it believing it had made a two-minute film.
-    #
-    # The first version of this fix raised SystemExit, which was wrong for a reason the
-    # repo already had written down: THE ONE OUTCOME LAW (scripts/no_exit.py) says the
-    # only terminal state is a delivered video, and I had put a brand new stop directly in
-    # the delivery path. A wrong-length take is not a reason to have no video.
-    #
-    # So it re-rolls instead. repair_prompt has already forced the runtime-naming pace
-    # paragraph, which is the lever that is actually worth 15 percent of pace, so the
-    # common case is fixed before any of this runs. If takes still land outside the band,
-    # spend one more round rather than none, then take the best available and CARRY THE
-    # MISS FORWARD LOUDLY in vo_report.json, where the panel and the dated email both read
-    # it. A visible miss on a delivered film beats a clean stop.
+    # ---- RUNTIME: RE-ROLL, THEN RETAIN A WORKING TAKE. ----------------------------
+    # Soundcheck's broad duration window does not grant format approval. If the extra
+    # round still misses the format band, retain the natural take for rough-cut work
+    # while direction or the locked script is repaired and re-synthesized. Work can
+    # continue, but delivery requires a take that passes the runtime checks.
+    # vo_report.json carries an internal repair diagnostic, not permission to ship or
+    # an audience-facing disclosure. Never time-stretch narration to hide a runtime miss.
     lo, hi, target = sc._target_band()
     runtime_note = None
     if lo is not None:
-        for extra in range(1):                       # one re-roll, then accept
+        for extra in range(1):                       # one re-roll, then retain for work
             secs = reports[best_i]["checks"]["duration"]["seconds"]
             if lo <= secs <= hi:
                 break
@@ -553,19 +549,17 @@ def main():
         secs = reports[best_i]["checks"]["duration"]["seconds"]
         # Keep the original performance. The Dispatch routine forbids time-stretching
         # narration; a runtime miss must be corrected in direction or the locked script
-        # and re-synthesized, with the miss visible to the downstream quality panel.
+        # and re-synthesized before delivery; the retained take can support rough cuts.
         if not (lo <= secs <= hi):
             n_words = len(spoken.split())
             rate = n_words / secs * 60 if secs else 0
-            want = int(round(target * rate / 60))
-            delta = want - n_words
             runtime_note = (
                 f"RUNTIME {secs:.1f}s is outside the {lo:.0f}-{hi:.0f}s band (target {target:.0f}s) "
-                f"after a re-roll. Delivered {rate:.1f} wpm over {n_words} words; at that rate "
-                f"{target:.0f}s wants about {want} words ({'add' if delta > 0 else 'cut'} roughly "
-                f"{abs(delta)}). The pace paragraph was already repaired to name the runtime, so "
-                f"the remaining gap is script length. SHIPPING THE BEST TAKE ANYWAY: a delivered "
-                f"film with a stated miss beats a stopped run.")
+                f"after a re-roll. The selected take reads at {rate:.1f} wpm over {n_words} words. "
+                f"RETAINED FOR ROUGH-CUT WORK, NOT DELIVERY-APPROVED. Continue production work, "
+                f"repair direction or the locked script within the current format constraints, "
+                f"and re-synthesize. Delivery requires passing runtime checks; do not time-stretch "
+                f"or deliver an out-of-band take.")
             print(f"  !! {runtime_note}")
         else:
             print(f"  runtime {secs:.1f}s is inside the {lo:.0f}-{hi:.0f}s band")
@@ -573,7 +567,7 @@ def main():
     best_wav, best_model = takes[best_i]
     print(f"BEST take {best_i} ({best_model}): {reports[best_i]['diagnosis']}  score={reports[best_i]['score']}")
 
-    # write the winning VO at 44.1k for the pipeline
+    # write the selected VO at 44.1k for continued work; runtime approval is separate
     from scipy.io import wavfile
     _, pcm24 = wavfile.read(best_wav)
     wavfile.write(os.path.join(AUD, "vo.wav"), SR, _to_44k_int16(pcm24))
@@ -601,7 +595,7 @@ def main():
               open(os.path.join(OUT, "vo_report.json"), "w"), indent=2)
     print(f"wrote vo.wav ({total:.1f}s), vo_lines.json ({len(line_spans)} lines), captions.json ({len(cues)} cues), vo_report.json")
 
-    # acting data (mouth envelope + emphasis accents) always tracks the shipped take
+    # acting data (mouth envelope + emphasis accents) always tracks the selected take
     import vo_envelope
     vo_envelope.main()
 

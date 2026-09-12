@@ -27,7 +27,8 @@ def main():
             'shots':{x['id']:x['t'] for x in b['shots']},
             'open_loop':dict(b['open_loop']), 'open_loop_2':dict(b['open_loop_2']),
             'states':[dict(x) for x in b['throughline']['states']],
-            'reveals':[dict(x) for x in b['reveals']]}
+            'reveals':[dict(x) for x in b['reveals']],
+            'audio_arc':dict(b['audio_arc'])}
     old = b['planning_clock']
     starts = {int(k):float(v) for k,v in old['starts'].items()}
     end = max(x['end'] for x in spans.values())
@@ -58,6 +59,20 @@ def main():
             dst[key]=mapped(src[key])
         dst['hold_s']=round(dst['hold_until_s']-dst['landing_at_s'],3)
         dst['planning_telegraph']=src['telegraph']
+    # Match the episode's fixed frame holds after each reveal lands. These are
+    # physical staging durations, not speaking-rate percentages.
+    for reveal,beat_id,hold_frames in zip(b['reveals'],[10,23,29],[18,18,21]):
+        onset=next(x['at_s'] for x in b['beats'] if x['id']==beat_id)
+        reveal['t']=onset
+        reveal['landing_at_s']=round(onset+22/30,3)
+        reveal['hold_s']=hold_frames/30
+        reveal['hold_until_s']=round(reveal['landing_at_s']+hold_frames/30,3)
+        reveal['secondary_at_s']=round(reveal['hold_until_s']+.3,3)
+    for key in ['dip_at','riser_at','silence_at','payoff_at']:
+        b['audio_arc'][key]=mapped(old.get('audio_arc',b['audio_arc'])[key])
+    b['reveals'][0]['telegraph']='At shot entry, the mask exposes one fixed central contact before expanding over the full nineteen-contact array.'
+    b['reveals'][1]['telegraph']='At shot entry, the notebook rises while shelf rows assemble behind it; the whole archive then holds for reading.'
+    b['reveals'][2]['telegraph']='The coral NEXT STEP tab hints at a concealed wing earlier; at the reveal the wing unfolds as surrounding props clear.'
     b['total_seconds']=round(end,3)
     b['voice_conform']={'script_sha256':hashlib.sha256((OUT/'vo_script.txt').read_bytes()).hexdigest(),
                        'vo_wav_sha256':hashlib.sha256((OUT/'audio/vo.wav').read_bytes()).hexdigest(),

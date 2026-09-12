@@ -274,5 +274,22 @@
       "Actual closing question-page lift"
     ],
     "remaining": "Affected-frame rerender, full current-voice conform, motion-filmstrip and final objective/panel review."
+  },
+  "followup_review": {
+    "at": "2026-09-12T14:53:23.574186+00:00",
+    "stills_reviewed": [
+      "eeg_credit_fixed.png",
+      "closing_page_fixed.png",
+      "planned_answers_fixed.png",
+      "waiting_participant_backed.png",
+      "interpretation_flap_fixed.png"
+    ],
+    "motion_strips_reviewed": [
+      "notebook_open",
+      "public_selection",
+      "extra_wing",
+      "separate_test"
+    ],
+    "finding": "Scalp demonstration and graduate-student name read clearly; empty interpretation is visually separate; archive participant reminder now has an ivory backing clear of shelf edges. Closing page and four named motions have visible eased travel and settling. These are provisional first-take clock probes, not delivery evidence."
   }
 }

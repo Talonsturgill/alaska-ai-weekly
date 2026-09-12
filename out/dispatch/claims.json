@@ -215,7 +215,7 @@
     {
       "id": "c16",
       "status": "verified-background",
-      "spoken": "The instrument records scalp electrical activity for research.",
+      "spoken": "The device records electrical activity using sensors that rest directly against the scalp.",
       "on_screen": "ELECTRICAL SIGNALS",
       "source": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
       "requires": [
@@ -224,7 +224,8 @@
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false
-      }
+      },
+      "additional_source_locator": "DSI-24 User Manual section2.4, printed page11, dry electrode-tip contact with the scalp; verified2026-09-12."
     }
   ],
   "obligation_source": "fact_check.json O1-O12",

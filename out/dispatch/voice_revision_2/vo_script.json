@@ -2,7 +2,7 @@
   "run_date": "2026-09-12",
   "title": "The Question Comes First",
   "target_seconds": 120,
-  "word_count": 220,
+  "word_count": 213,
   "caption_fixups": {
     "E E G": "EEG",
     "A I": "AI",
@@ -44,7 +44,7 @@
     },
     {
       "idx": 4,
-      "text": "The device records electrical activity using sensors that rest directly against the scalp.",
+      "text": "Its scalp contacts record electrical activity.",
       "claims": [
         "c16"
       ]

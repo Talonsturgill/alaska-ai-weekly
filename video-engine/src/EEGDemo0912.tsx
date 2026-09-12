@@ -132,7 +132,7 @@ export const EEGDemo0912: React.FC<{
           idleGain={0.6} />
       </g>
     </g>
-    <g opacity={observe}>
+    <g opacity={observe * (1 - isolate)}>
       <rect x={460} y={1187} width={500} height={88} rx={10} fill={INK} opacity={0.2} />
       <rect x={456} y={1182} width={500} height={88} rx={10} fill={PAPER}
         stroke={INK} strokeWidth={3} />

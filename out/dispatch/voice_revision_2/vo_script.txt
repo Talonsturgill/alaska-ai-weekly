@@ -2,7 +2,7 @@ Nineteen scalp electrodes. What's on the next page?
 The University of Alaska Anchorage has a new dry E E G.
 The university announced it for its A I and Robotics Lab on September ninth.
 The Educational Legacy Fund funded it. Students and faculty have trained.
-The device records electrical activity using sensors that rest directly against the scalp.
+Its scalp contacts record electrical activity.
 Graduate student Vadim Egorov has watched his own signals appear.
 He usually works with public E E G datasets.
 Now he's looking forward to collecting recordings for his own tasks.
