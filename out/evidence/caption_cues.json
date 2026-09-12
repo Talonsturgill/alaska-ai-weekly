@@ -1,0 +1,191 @@
+{
+ "note": "every open-caption cue in the delivered cut, in order, as built into episode_props.json and rendered by the episode. Times are seconds from the first frame. Grade caption text against THIS, not against the 14 contact stills, which sample only a fraction of the runtime.",
+ "count": 37,
+ "cues": [
+  {
+   "start": 0.0,
+   "end": 2.4,
+   "text": "19 scalp electrodes."
+  },
+  {
+   "start": 3.68,
+   "end": 5.06,
+   "text": "What's on the next page?"
+  },
+  {
+   "start": 7.08,
+   "end": 9.65,
+   "text": "The University of Alaska Anchorage"
+  },
+  {
+   "start": 9.68,
+   "end": 12.87,
+   "text": "has a new dry EEG."
+  },
+  {
+   "start": 13.72,
+   "end": 20.4,
+   "text": "The university announced it for its AI and Robotics Lab on September 9th."
+  },
+  {
+   "start": 21.4,
+   "end": 27.52,
+   "text": "The Educational Legacy Fund funded it. Students and faculty have trained."
+  },
+  {
+   "start": 28.68,
+   "end": 31.95,
+   "text": "The device records electrical activity"
+  },
+  {
+   "start": 31.98,
+   "end": 34.23,
+   "text": "using sensors that rest directly"
+  },
+  {
+   "start": 34.26,
+   "end": 35.54,
+   "text": "against the scalp."
+  },
+  {
+   "start": 36.64,
+   "end": 41.76,
+   "text": "Graduate student Vadim Egorov has watched his own signals appear."
+  },
+  {
+   "start": 42.88,
+   "end": 46.2,
+   "text": "He usually works with public EEG datasets."
+  },
+  {
+   "start": 47.08,
+   "end": 49.63,
+   "text": "Now he's looking forward to collecting"
+  },
+  {
+   "start": 49.66,
+   "end": 51.76,
+   "text": "recordings for his own tasks."
+  },
+  {
+   "start": 52.8,
+   "end": 55.8,
+   "text": "Who might a future answer work for?"
+  },
+  {
+   "start": 56.78,
+   "end": 58.91,
+   "text": "UAA plans to study"
+  },
+  {
+   "start": 58.94,
+   "end": 60.9,
+   "text": "cognitive states during reading."
+  },
+  {
+   "start": 61.84,
+   "end": 64.55,
+   "text": "Another planned project pairs brain"
+  },
+  {
+   "start": 64.58,
+   "end": 67.9,
+   "text": "activity with eye movements during programming."
+  },
+  {
+   "start": 69.26,
+   "end": 72.76,
+   "text": "Those are plans, with the answers still ahead."
+  },
+  {
+   "start": 73.8,
+   "end": 75.26,
+   "text": "And the public recordings?"
+  },
+  {
+   "start": 75.74,
+   "end": 77.12,
+   "text": "They keep their place."
+  },
+  {
+   "start": 78.46,
+   "end": 80.79,
+   "text": "Researchers can check whether existing"
+  },
+  {
+   "start": 80.82,
+   "end": 82.39,
+   "text": "recordings fit the question."
+  },
+  {
+   "start": 82.42,
+   "end": 86.7,
+   "text": "If they do, useful analysis can start there."
+  },
+  {
+   "start": 88.1,
+   "end": 89.63,
+   "text": "They can also plan a new"
+  },
+  {
+   "start": 89.66,
+   "end": 91.72,
+   "text": "recording around another task."
+  },
+  {
+   "start": 93.14,
+   "end": 94.87,
+   "text": "The extra page holds a plan"
+  },
+  {
+   "start": 94.9,
+   "end": 96.44,
+   "text": "that students can help design."
+  },
+  {
+   "start": 97.46,
+   "end": 100.42,
+   "text": "The old pages stay open beside it."
+  },
+  {
+   "start": 101.66,
+   "end": 103.99,
+   "text": "A recording alone doesn't supply"
+  },
+  {
+   "start": 104.02,
+   "end": 104.78,
+   "text": "an interpretation."
+  },
+  {
+   "start": 106.1,
+   "end": 110.68,
+   "text": "If a future model claims to work for new people, test it on people"
+  },
+  {
+   "start": 110.68,
+   "end": 112.14,
+   "text": "absent from training."
+  },
+  {
+   "start": 113.1,
+   "end": 115.83,
+   "text": "That's a research principle, not"
+  },
+  {
+   "start": 115.86,
+   "end": 117.44,
+   "text": "a reported UAA result."
+  },
+  {
+   "start": 118.94,
+   "end": 121.19,
+   "text": "Which question about learning should"
+  },
+  {
+   "start": 121.22,
+   "end": 122.28,
+   "text": "they investigate first?"
+  }
+ ]
+}

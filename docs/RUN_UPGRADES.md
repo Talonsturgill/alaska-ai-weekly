@@ -3273,3 +3273,34 @@ the remaining research gestures and verifies rendered credit text.
   after seating. Its encoded event change is 1.787 against a recomputed 1.562 median;
   the combined probe has no gap above 3.2 seconds, with 56 of 66 living windows.
   Actual 16.4 and 17.0 second frames confirm readable wording and physical grip.
+  Commit `85c7b2b` records this encoded-gesture correction and its source checks.
+
+- The final production encode from `85c7b2b` passes all fifteen objective checks at 10.0.
+  All fourteen camera moves pass, 55 of 66 living-screen windows pass, 45 distinct visual
+  events are detected, and no cadence interval exceeds five seconds. The final 4,067-frame
+  render took 671.487 seconds. Required preflight passes, including all 42 claim obligations,
+  actual captions, ten-second rendered credit verification and the square crop.
+- The remaining quarter-shot motion diagnostic is advisory. Its 42 camera fits resolve
+  to identity, so its output does not prove camera removal. It also misses brief authored
+  actions and can include caption changes. Actual full-film sheets, forty single-shot strips
+  and seven sequential action grids are the visual review evidence. No diagnostic threshold
+  was relaxed. This limitation is disclosed rather than presented as a character-motion score.
+
+- All three independent final judges pass at 8.01, 8.108 and 8.09, median 8.09 against
+  the unchanged 7.0 threshold, with zero hard blockers. EDITOR and POST FLOW pass. Their
+  remaining craft notes concern repeated desk staging and the range of short hand placements,
+  not a failed requirement. Audio assessment used current measured evidence, without a
+  listening claim. The ship gate binds the reviewed delivery bytes before publication.
+
+- Gmail readback exposed two required template outputs that had been dropped: the supplied
+  poster and the automated voice scorecard. Commit `49d1fc6` restores both without changing
+  the film. The CLI reads fresh voice evidence and rejects missing, stale, malformed or
+  failed reports. It excludes the ASR transcript and labels null voice loudness unmeasured;
+  the independently measured final video mix remains reported separately. All 46 focused
+  email, visible-copy and run-guard checks pass. The existing unsent draft is updated in place.
+
+- Five permanent assets match local SHA256 bytes. The September 12 feed commit
+  `fa883d8` deployed successfully in Pages run `34712909418`; actual desktop and phone
+  playback, sound controls, rendition selection and phone captions are verified. The
+  existing Gmail draft was updated and read back with the poster, voice QC, exact post,
+  both cuts, all five sources, credits and sixteen upgrades. It remains DRAFT only.

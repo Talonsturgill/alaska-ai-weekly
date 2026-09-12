@@ -1,0 +1,26 @@
+{
+  "candidate": "final_v4",
+  "recorded_at": "2026-09-12T18:55:30.104646+00:00",
+  "source_commit": "85c7b2b081431b517d0b2b805def03510e6a9e44",
+  "state": "All objective checks, required preflight, independent editor, POST flow and three panel judges pass. Ship gate recorded and checked before delivery.",
+  "frames": 4067,
+  "hashes": {
+    "video-engine/src/Ep0912.tsx": "2c3f82ea4d80f437de5abc7796a044392f8874edc68c94536ee8085a2bef9331",
+    "video-engine/src/EEGDemo0912.tsx": "c8a5ea0b159fc5e81da328c596ef41d1be15719b9b3b741c984dc1f364bff945",
+    "video-engine/src/lib/EndCredits.tsx": "8e4d29fb3d2e9fb599afc8bfff2f565bab7f2ab1ee82afa7ddd3c74b4fd8b14a",
+    "video-engine/src/Root.tsx": "591bd72feadb25b9b258f4350c73d47bc5255de86f62a7ed834dd798063a62e7",
+    "out/dispatch/episode_props.json": "95963f3f85da2e7a098b4c65beb2613af5a39ed45db06ae347567f76a9bf778b",
+    "out/dispatch/storyboard.json": "abbbf5bf0a1a76c8c16a2254d4471a450b109eda2de94e85cd2a2f0e32c13f9a",
+    "out/dispatch/vo_script.txt": "9adddbadffb1a6da75e8407499ccb76e110c0ccec379e949719e32eceb9085f1",
+    "out/dispatch/audio/vo.wav": "a844a3c4105a17b12fdf0448b97b994d43564f8946081c3aa95561e82142430c",
+    "out/dispatch/audio/master.wav": "edcb4130ac51aadd9c4cb59de575487a06c6ca9a0c80cd2e77817eb2a35c9eaa"
+  },
+  "render_wall_seconds": 671.487,
+  "render_job": "render_0912_final_v5",
+  "encode_job": "encode_0912_final_v4",
+  "delivery_sha256": {
+    "dispatch_master.mp4": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+    "dispatch_square.mp4": "2e87198ec7b3cc0e7b84355ed80cb3b5b35a0cdfc7822adcd12e236491d17e6f",
+    "dispatch_master_720.mp4": "2178a5421fe4cf02f0e8b47236fb08f001d17d8c1a26d5e3d0d35be49040fc1e"
+  }
+}

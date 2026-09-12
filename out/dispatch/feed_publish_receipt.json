@@ -1,0 +1,29 @@
+{
+  "attempted_at": "2026-09-12T19:01:04.552462+00:00",
+  "exit_code": 0,
+  "id": "dispatch-2026-09-12-the-question-comes-first",
+  "master_sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+  "state": "Exact feed commit deployed successfully; live manifest and desktop/mobile playback verified",
+  "feed_commit": "fa883d804327f21b583a76d05c18ec774f9d0651",
+  "feed_manifest_blob": "9c69629de78f2475b25293f8e28cbc5b1a37fba6",
+  "entry": {
+    "id": "dispatch-2026-09-12-the-question-comes-first",
+    "date": "2026-09-12",
+    "title": "The Question Comes First",
+    "caption": "UAA has a new dry EEG system for its AI and Robotics Lab. Students and faculty have trained, with reading and programming studies planned.",
+    "video": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master.mp4",
+    "poster": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster.png",
+    "video_mobile": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master_720.mp4",
+    "poster_thumb": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster_thumb.jpg"
+  },
+  "pages_run": {
+    "id": 34712909418,
+    "head_sha": "fa883d804327f21b583a76d05c18ec774f9d0651",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/Talonsturgill/alaskaaicarousels/actions/runs/34712909418"
+  },
+  "live_manifest_exact_match": true,
+  "verified_at": "2026-09-12T19:04:53.008008+00:00",
+  "live_ui_verified": true
+}

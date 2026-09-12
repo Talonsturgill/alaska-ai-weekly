@@ -1,0 +1,192 @@
+{
+  "role": "EDITOR",
+  "title": "The Question Comes First",
+  "reviewed_at_utc": "2026-09-12T18:49:20.135750+00:00",
+  "verdict": "ship",
+  "ship": true,
+  "master_sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+  "post_sha256": "a7dc4b491eae03ebf64cf9bb807e94e0c438e08685eac36ff60cf90693ba0f16",
+  "summary": "The current rendered master and post make a coherent, source-supported argument about added research capacity. They distinguish equipment acquisition and training from planned studies, keep existing recordings useful, and explicitly separate the conditional methods illustration from UAA findings. No factual, attribution, readable-copy or post-parity repair is required.",
+  "risk_flags": [],
+  "line_edits": [],
+  "ai_tells": [],
+  "voice_match_score_qualitative": "tight",
+  "format_review": {
+    "authority": "Dispatch master prompt and Gate B brief supersede the generic weekly editor length and hashtag template.",
+    "vo_script_word_count": 220,
+    "word_count_basis": "Whitespace-delimited words in vo_script.txt, retaining the deliberate spelled-letter pronunciation tokens.",
+    "vo_last_word_end_s": 122.28,
+    "post_characters_trimmed": 1485,
+    "post_hook_characters": 74,
+    "post_hashtag_count": 4,
+    "result": "The post uses a concrete position, a source-attributed date, a real closing question and a separate hashtag tail. It contains no source list, music credit or URL. Narration, visible prose and post use the required plain voice and date forms."
+  },
+  "timestamp_findings": [
+    {
+      "range_s": [
+        0.0,
+        13.72
+      ],
+      "result": "pass",
+      "finding": "The large 19 and scalp-electrode wording establish a concrete hook. The notebook introduces the coming research question. The institution is spelled out before UAA becomes the shorthand, and the equipment plate identifies dry EEG and DSI-24."
+    },
+    {
+      "range_s": [
+        13.72,
+        28.68
+      ],
+      "result": "pass",
+      "finding": "The headline identifies an announcement date, avoiding an invented purchase date. The lab name, fund credit and completed training leaf become separately legible. The 16.033 to 17.100 second action grid shows the lab plate arriving and settling without obscuring its final wording."
+    },
+    {
+      "range_s": [
+        28.68,
+        42.88
+      ],
+      "result": "pass",
+      "finding": "At 33.9 seconds the top-view schematic contains 19 scalp contacts, with the two earclips represented differently. Its electrical-activity trace is visibly schematic. The student-observation strip around 36.99 seconds presents Vadim Egorov and his graduate-student role with a generic illustration. The later empty interpretation field avoids converting a recording into a finding."
+    },
+    {
+      "range_s": [
+        42.88,
+        56.78
+      ],
+      "result": "pass",
+      "finding": "The public-data page remains open while the own-task plan is added. COLLECTION STILL AHEAD at 52.3 seconds keeps collection prospective. The hypothetical person is then introduced outside example training under a general-methods label, so the new-person question has a visible referent."
+    },
+    {
+      "range_s": [
+        56.78,
+        73.8
+      ],
+      "result": "pass",
+      "finding": "Reading and programming carry prominent planned status. The eye-movement marker occupies a separate display from the schematic brain-activity trace at about 65.6 seconds. The empty answer space at 69.26 to 73.8 seconds reinforces that the studies have no reported outcome."
+    },
+    {
+      "range_s": [
+        73.8,
+        93.14
+      ],
+      "result": "pass",
+      "finding": "The archive opens before the general suitability example. Question A and Recording A form a visible pairing and schematic analysis remains present while Question B is assessed against inventory at 88.1 to 90.767 seconds. The optional collection label and empty B space make an additional route clear without claiming that public data failed."
+    },
+    {
+      "range_s": [
+        93.14,
+        106.1
+      ],
+      "result": "pass",
+      "finding": "The concealed notebook wing opens into TO COLLECT and TO TEST spaces beside the retained public-data page. The 93.133 to 93.933 second action grid shows this as added workspace; the plan attaches later. The 101.66 second interpretation beat leaves the output blank and matches the narration's caution."
+    },
+    {
+      "range_s": [
+        106.1,
+        118.94
+      ],
+      "result": "pass",
+      "finding": "Conditional wording and GENERAL METHODS EXAMPLE remain visible while the notched participant marker enters only TEST at 107.8 to 108.6 seconds. EVALUATE appears without a score. At 113.1 to 114.167 seconds the methods page and UAA planned-study sheet visibly separate, with NO UAA RESULT retained. There is no allegation of an actual UAA validation defect."
+    },
+    {
+      "range_s": [
+        118.94,
+        122.28
+      ],
+      "result": "pass",
+      "finding": "The hand moves the pencil toward an unwritten question while both research routes remain visible. The closing question follows the film's learning-research subject and matches the post's invitation to choose a reading or programming task."
+    },
+    {
+      "range_s": [
+        123.28,
+        133.6
+      ],
+      "result": "pass",
+      "finding": "The inspected full-resolution credit frame at 130.7 seconds clearly displays the site, UAA, Wearable Sensing and Frontiers source domains, plus Life of Riley, Kevin MacLeod and the CC BY 4.0 license. No foreground notebook or caption obscures those lines."
+    }
+  ],
+  "source_review": [
+    {
+      "url": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "independently_opened": true,
+      "finding": "The announcement body and photo caption support the acquisition, fund, training, student observation, public-data context and future research projects. The film's narrower reading description does not invent a population or clinical finding."
+    },
+    {
+      "url": "https://wearablesensing.com/dsi-24/",
+      "independently_opened": true,
+      "finding": "The 19 head electrodes are independently corroborated. Earclips and auxiliary inputs are not conflated with that number. Vendor performance claims are absent from the film and post."
+    },
+    {
+      "url": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
+      "independently_opened": true,
+      "finding": "The dry-sensor description supports scalp contact and the manual limits the instrument to research. The film shows signal measurement and never diagnosis or treatment."
+    },
+    {
+      "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1373515/full",
+      "independently_opened": true,
+      "finding": "The subject-based holdout discussion supports the conditional methods principle. The film does not transfer the paper's numerical results or clinical conclusions to UAA."
+    }
+  ],
+  "objective_evidence_review": {
+    "quality_report_pass": true,
+    "quality_checks_passing": 15,
+    "quality_score": 10.0,
+    "current_master_receipts_match": true,
+    "all_action_grid_file_hashes_match_receipt": true,
+    "audio_report_master_lufs": -14.67,
+    "audio_report_master_true_peak_dbtp": -3.04,
+    "audio_report_master_lra": 6.9,
+    "audio_scope": "Inspected the audio card, encoded-audio report, aligned narration timings and all 40 scheduled sound events. These are numerical and timing evidence; this editor verdict does not claim direct listening or replace the sound/flow review."
+  },
+  "evidence_inspected": [
+    "out/dispatch/gate_b_brief.md",
+    "CLAUDE.md",
+    ".claude/WORKLOG.md",
+    "prompts/dispatch_routine.md",
+    "config/brand.yaml",
+    ".claude/agents/editor.md",
+    "out/dispatch/dispatch_master.mp4 (independent SHA-256 computation)",
+    "out/dispatch/vo_script.txt",
+    "out/dispatch/vo_lines.json",
+    "out/dispatch/post.txt",
+    "out/dispatch/claims.json",
+    "out/dispatch/sources.json",
+    "out/dispatch/storyboard.json",
+    "out/dispatch/storyboard.md",
+    "out/dispatch/quality_report.json",
+    "out/dispatch/audio/sfx_events.json",
+    "out/evidence/audio_report.json",
+    "out/evidence/actions_receipt.json",
+    "out/dispatch/final_taste/receipt.json",
+    "out/dispatch/final_taste/sheet_0.jpg",
+    "out/dispatch/final_taste/sheet_1.jpg",
+    "out/dispatch/final_taste/sheet_2.jpg",
+    "out/dispatch/final_taste/sheet_3.jpg",
+    "out/dispatch/review/audio_card.png",
+    "out/evidence/f024.2.jpg",
+    "out/evidence/f033.9.jpg",
+    "out/evidence/f052.3.jpg",
+    "out/evidence/f092.6.jpg",
+    "out/evidence/f112.6.jpg",
+    "out/evidence/f130.7.jpg",
+    "out/evidence/filmstrip_notebook_opens.jpg",
+    "out/evidence/filmstrip_lab_bench_assembles.jpg",
+    "out/evidence/filmstrip_fund_credit_turns.jpg",
+    "out/evidence/filmstrip_training_leaf_opens.jpg",
+    "out/evidence/filmstrip_student_observes.jpg",
+    "out/evidence/filmstrip_public_recording_selects.jpg",
+    "out/evidence/filmstrip_own_task_plan_arrives.jpg",
+    "out/evidence/filmstrip_reading_plan_unfolds.jpg",
+    "out/evidence/filmstrip_eye_movement_separates.jpg",
+    "out/evidence/filmstrip_planned_answers_stay_open.jpg",
+    "out/evidence/filmstrip_archive_reveals.jpg",
+    "out/evidence/filmstrip_task_a_matches.jpg",
+    "out/evidence/filmstrip_task_a_analysis_runs.jpg",
+    "out/evidence/filmstrip_interpretation_separates.jpg",
+    "out/evidence/action_lab_designation_mounts.jpg",
+    "out/evidence/action_inventory_comparison.jpg",
+    "out/evidence/action_extra_page_unfolds.jpg",
+    "out/evidence/action_heldout_person_test.jpg",
+    "out/evidence/action_methods_and_plans_separate.jpg",
+    "out/evidence/action_closing_question.jpg"
+  ],
+  "scope_limit": "Independent final-film editorial review of the 9:16 master and matching LinkedIn post. This is not a deployment, publication, Gmail-draft, merge or complete delivery claim. No source, film, narration, post or evidence was modified."
+}

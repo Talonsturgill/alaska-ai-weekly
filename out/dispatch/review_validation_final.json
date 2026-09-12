@@ -1,0 +1,33 @@
+{
+  "validated_at": "2026-09-12T18:54:56.239586+00:00",
+  "master_sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+  "criteria_count": 11,
+  "judges": [
+    {
+      "judge": 1,
+      "score": 8.01,
+      "card_sha256": "48e72e8b8eac053f39867a4b6809671c9d8882d2c64814852a242cfcd6048b8b",
+      "hard_blockers": []
+    },
+    {
+      "judge": 2,
+      "score": 8.108,
+      "card_sha256": "828ab8910fe5c96973a3c54f783d2eeb5ce0d4a649fdb86f856692b744a51b64",
+      "hard_blockers": []
+    },
+    {
+      "judge": 3,
+      "score": 8.09,
+      "card_sha256": "25168e4c448617fae20017f336978dd581b29399d4abfb0927f26bb531f23934",
+      "hard_blockers": []
+    }
+  ],
+  "median": 8.09,
+  "threshold": 7.0,
+  "hard_blockers": [],
+  "gate_b_editor_ship": true,
+  "gate_b_flow_post_ship": true,
+  "all15_objective_checks_pass": true,
+  "required_preflight_exit": 0,
+  "ship": true
+}

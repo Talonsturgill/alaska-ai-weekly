@@ -1,0 +1,60 @@
+{
+  "verified_at": "2026-09-12T19:06:50.405254+00:00",
+  "url": "https://alaskaaihq.com/videos/#dispatch-2026-09-12-the-question-comes-first",
+  "title": "The Question Comes First",
+  "caption": "UAA has a new dry EEG system for its AI and Robotics Lab. Students and faculty have trained, with reading and programming studies planned.",
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "video_dimensions": [
+      1080,
+      1920
+    ],
+    "source_file": "dispatch_master.mp4",
+    "poster_file": "poster.png",
+    "playback_time_samples_s": [
+      12.692714,
+      20.483122
+    ],
+    "readyState": 4,
+    "paused_during_playback": false,
+    "unmute_control_verified": true,
+    "muted_after_control": false,
+    "error": null,
+    "horizontal_overflow": false,
+    "screenshot_inspected": true
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "video_dimensions": [
+      720,
+      1280
+    ],
+    "source_file": "dispatch_master_720.mp4",
+    "poster_file": "poster_thumb.jpg",
+    "playback_time_samples_s": [
+      8.432966,
+      19.484291
+    ],
+    "readyState": 4,
+    "paused_during_playback": false,
+    "unmute_control_verified": true,
+    "muted_after_control": false,
+    "error": null,
+    "horizontal_overflow": false,
+    "object_fit": "cover",
+    "caption_visually_readable": true,
+    "screenshot_inspected": true
+  },
+  "cleanup": {
+    "video_paused_at_s": 26.421077,
+    "viewport_override_reset": true,
+    "live_tab_marked_deliverable": true
+  },
+  "scope": "Actual deployed September 12 entry only. Numeric media state and rendered UI verification, not a claim of listening to the complete film."
+}

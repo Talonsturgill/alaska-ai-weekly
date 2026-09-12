@@ -1,0 +1,259 @@
+{
+  "video": "out/dispatch/dispatch_master.mp4",
+  "sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+  "props": "out/dispatch/episode_props.json",
+  "samples": [
+    {
+      "scene": 1,
+      "frame": 25,
+      "time": 0.848,
+      "path": "out/dispatch/final_taste/S01_0.png"
+    },
+    {
+      "scene": 1,
+      "frame": 117,
+      "time": 3.886666666666667,
+      "path": "out/dispatch/final_taste/S01_1.png"
+    },
+    {
+      "scene": 1,
+      "frame": 191,
+      "time": 6.36,
+      "path": "out/dispatch/final_taste/S01_2.png"
+    },
+    {
+      "scene": 2,
+      "frame": 236,
+      "time": 7.866666666666666,
+      "path": "out/dispatch/final_taste/S02_0.png"
+    },
+    {
+      "scene": 2,
+      "frame": 322,
+      "time": 10.733333333333333,
+      "path": "out/dispatch/final_taste/S02_1.png"
+    },
+    {
+      "scene": 2,
+      "frame": 392,
+      "time": 13.066666666666666,
+      "path": "out/dispatch/final_taste/S02_2.png"
+    },
+    {
+      "scene": 3,
+      "frame": 466,
+      "time": 15.525333333333332,
+      "path": "out/dispatch/final_taste/S03_0.png"
+    },
+    {
+      "scene": 3,
+      "frame": 658,
+      "time": 21.94666666666667,
+      "path": "out/dispatch/final_taste/S03_1.png"
+    },
+    {
+      "scene": 3,
+      "frame": 815,
+      "time": 27.173333333333336,
+      "path": "out/dispatch/final_taste/S03_2.png"
+    },
+    {
+      "scene": 4,
+      "frame": 911,
+      "time": 30.37066666666667,
+      "path": "out/dispatch/final_taste/S04_0.png"
+    },
+    {
+      "scene": 4,
+      "frame": 1094,
+      "time": 36.47666666666667,
+      "path": "out/dispatch/final_taste/S04_1.png"
+    },
+    {
+      "scene": 4,
+      "frame": 1243,
+      "time": 41.44666666666667,
+      "path": "out/dispatch/final_taste/S04_2.png"
+    },
+    {
+      "scene": 5,
+      "frame": 1322,
+      "time": 44.05866666666667,
+      "path": "out/dispatch/final_taste/S05_0.png"
+    },
+    {
+      "scene": 5,
+      "frame": 1450,
+      "time": 48.330000000000005,
+      "path": "out/dispatch/final_taste/S05_1.png"
+    },
+    {
+      "scene": 5,
+      "frame": 1554,
+      "time": 51.806666666666665,
+      "path": "out/dispatch/final_taste/S05_2.png"
+    },
+    {
+      "scene": 6,
+      "frame": 1598,
+      "time": 53.275999999999996,
+      "path": "out/dispatch/final_taste/S06_0.png"
+    },
+    {
+      "scene": 6,
+      "frame": 1649,
+      "time": 54.98166666666667,
+      "path": "out/dispatch/final_taste/S06_1.png"
+    },
+    {
+      "scene": 6,
+      "frame": 1691,
+      "time": 56.37,
+      "path": "out/dispatch/final_taste/S06_2.png"
+    },
+    {
+      "scene": 7,
+      "frame": 1721,
+      "time": 57.37466666666667,
+      "path": "out/dispatch/final_taste/S07_0.png"
+    },
+    {
+      "scene": 7,
+      "frame": 1787,
+      "time": 59.55333333333333,
+      "path": "out/dispatch/final_taste/S07_1.png"
+    },
+    {
+      "scene": 7,
+      "frame": 1840,
+      "time": 61.32666666666667,
+      "path": "out/dispatch/final_taste/S07_2.png"
+    },
+    {
+      "scene": 8,
+      "frame": 1898,
+      "time": 63.26933333333333,
+      "path": "out/dispatch/final_taste/S08_0.png"
+    },
+    {
+      "scene": 8,
+      "frame": 2052,
+      "time": 68.41499999999999,
+      "path": "out/dispatch/final_taste/S08_1.png"
+    },
+    {
+      "scene": 8,
+      "frame": 2178,
+      "time": 72.60333333333332,
+      "path": "out/dispatch/final_taste/S08_2.png"
+    },
+    {
+      "scene": 9,
+      "frame": 2231,
+      "time": 74.36,
+      "path": "out/dispatch/final_taste/S09_0.png"
+    },
+    {
+      "scene": 9,
+      "frame": 2291,
+      "time": 76.36666666666666,
+      "path": "out/dispatch/final_taste/S09_1.png"
+    },
+    {
+      "scene": 9,
+      "frame": 2340,
+      "time": 78.0,
+      "path": "out/dispatch/final_taste/S09_2.png"
+    },
+    {
+      "scene": 10,
+      "frame": 2407,
+      "time": 80.22666666666667,
+      "path": "out/dispatch/final_taste/S10_0.png"
+    },
+    {
+      "scene": 10,
+      "frame": 2596,
+      "time": 86.53333333333333,
+      "path": "out/dispatch/final_taste/S10_1.png"
+    },
+    {
+      "scene": 10,
+      "frame": 2750,
+      "time": 91.66666666666667,
+      "path": "out/dispatch/final_taste/S10_2.png"
+    },
+    {
+      "scene": 11,
+      "frame": 2841,
+      "time": 94.68933333333332,
+      "path": "out/dispatch/final_taste/S11_0.png"
+    },
+    {
+      "scene": 11,
+      "frame": 3008,
+      "time": 100.265,
+      "path": "out/dispatch/final_taste/S11_1.png"
+    },
+    {
+      "scene": 11,
+      "frame": 3144,
+      "time": 104.80333333333333,
+      "path": "out/dispatch/final_taste/S11_2.png"
+    },
+    {
+      "scene": 12,
+      "frame": 3208,
+      "time": 106.94,
+      "path": "out/dispatch/final_taste/S12_0.png"
+    },
+    {
+      "scene": 12,
+      "frame": 3298,
+      "time": 109.95,
+      "path": "out/dispatch/final_taste/S12_1.png"
+    },
+    {
+      "scene": 12,
+      "frame": 3372,
+      "time": 112.4,
+      "path": "out/dispatch/final_taste/S12_2.png"
+    },
+    {
+      "scene": 13,
+      "frame": 3414,
+      "time": 113.8,
+      "path": "out/dispatch/final_taste/S13_0.png"
+    },
+    {
+      "scene": 13,
+      "frame": 3489,
+      "time": 116.30833333333334,
+      "path": "out/dispatch/final_taste/S13_1.png"
+    },
+    {
+      "scene": 13,
+      "frame": 3550,
+      "time": 118.35,
+      "path": "out/dispatch/final_taste/S13_2.png"
+    },
+    {
+      "scene": 14,
+      "frame": 3584,
+      "time": 119.45333333333333,
+      "path": "out/dispatch/final_taste/S14_0.png"
+    },
+    {
+      "scene": 14,
+      "frame": 3640,
+      "time": 121.31666666666666,
+      "path": "out/dispatch/final_taste/S14_1.png"
+    },
+    {
+      "scene": 14,
+      "frame": 3685,
+      "time": 122.83333333333333,
+      "path": "out/dispatch/final_taste/S14_2.png"
+    }
+  ]
+}

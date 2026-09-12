@@ -1,0 +1,161 @@
+{
+  "run_date": "2026-09-12",
+  "title": "The Question Comes First",
+  "watch_url": "https://alaskaaihq.com/videos/#dispatch-2026-09-12-the-question-comes-first",
+  "verified_at": "2026-09-12T19:13:04.998841+00:00",
+  "render_source_commit": "85c7b2b081431b517d0b2b805def03510e6a9e44",
+  "email_repair_commit": "49d1fc6affc0e505e2ad96bee2ff9d16c1f2484b",
+  "master_sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+  "render_wall_seconds": 671.487,
+  "objective_checks": {
+    "passed": 15,
+    "total": 15,
+    "score": 10.0
+  },
+  "panel": {
+    "scores": [
+      8.01,
+      8.108,
+      8.09
+    ],
+    "median": 8.09,
+    "threshold": 7.0,
+    "hard_blockers": []
+  },
+  "editor_and_flow_pass": true,
+  "permanent_assets": [
+    {
+      "file": "dispatch_master.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master.mp4",
+      "bytes": 37595782,
+      "sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+      "exact_remote_bytes": true,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "side_data_list": [
+          {}
+        ]
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "duration_s": 135.566678
+    },
+    {
+      "file": "dispatch_square.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_square.mp4",
+      "bytes": 26280114,
+      "sha256": "2e87198ec7b3cc0e7b84355ed80cb3b5b35a0cdfc7822adcd12e236491d17e6f",
+      "exact_remote_bytes": true,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1080,
+        "side_data_list": [
+          {}
+        ]
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "duration_s": 135.566667
+    },
+    {
+      "file": "poster.png",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster.png",
+      "bytes": 333119,
+      "sha256": "1bb06b73817eb4e5121e07cd69020073354da4582070739ad4a59190e7a6f60d",
+      "exact_remote_bytes": true
+    },
+    {
+      "file": "dispatch_master_720.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master_720.mp4",
+      "bytes": 8711061,
+      "sha256": "2178a5421fe4cf02f0e8b47236fb08f001d17d8c1a26d5e3d0d35be49040fc1e",
+      "exact_remote_bytes": true,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 720,
+        "height": 1280,
+        "side_data_list": [
+          {}
+        ]
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "duration_s": 135.566667
+    },
+    {
+      "file": "poster_thumb.jpg",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster_thumb.jpg",
+      "bytes": 33794,
+      "sha256": "e8dea8fec3761c235b523982e85b78954eaa38a665e178e61e85495507251356",
+      "exact_remote_bytes": true
+    }
+  ],
+  "feed_commit": "fa883d804327f21b583a76d05c18ec774f9d0651",
+  "pages_run": {
+    "id": 34712909418,
+    "head_sha": "fa883d804327f21b583a76d05c18ec774f9d0651",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/Talonsturgill/alaskaaicarousels/actions/runs/34712909418"
+  },
+  "live_desktop_and_mobile_verified": true,
+  "gmail_draft": {
+    "verified_unsent": true,
+    "labels": [
+      "DRAFT"
+    ],
+    "updated_existing_draft": true,
+    "exact_html_sha256": "97f9ea5897bc37fc88b4c29380322adf0e710d64ca24319077bf80b078235253",
+    "readback": {
+      "exact_html": true,
+      "exact_caption": true,
+      "square_link": true,
+      "vertical_link": true,
+      "poster": true,
+      "all_sources": true,
+      "source_count": 5,
+      "credits": true,
+      "voice_quality_scorecard": true,
+      "final_mix_separate": true,
+      "all_upgrades": true,
+      "upgrade_count": 16,
+      "DRAFT_only": true
+    }
+  },
+  "validation": {
+    "repository_tests_before_email_only_change": 196,
+    "focused_email_visible_copy_run_guard_tests_after_email_change": 46,
+    "required_preflight_exit": 0
+  },
+  "upgrades": [
+    "Current Gemini and Remotion setup runs without the retired GPU stack.",
+    "Natural narration replaces automatic time-stretch, with safe runtime and transport diagnostics.",
+    "Gemini 3.1 streaming joins complete audio chunks and rejects incomplete output.",
+    "Hash-verified historical panel references restore grounded calibration.",
+    "Reusable EEGHeadset illustrates nineteen scalp contacts, with separate ear clips and auxiliary sockets.",
+    "QuestionToken supports fitted custom labels while preserving existing variants.",
+    "Whole-film taste sheets and voiced storyboard conforming keep reviews tied to real frames and speech.",
+    "Training-page choreography and a fixed scalp-contact highlight give all forty beats physical actions.",
+    "Geometry checks now include every brace-bodied scene and preserve honest measurement limits.",
+    "Run startup preserves the active stamp and only retires a prior lock after matching delivery proof.",
+    "Sustained camera moves and independent paper animation pass the final encoded film motion checks.",
+    "Claims checks follow imported scene text and retain required attribution and planned-study context.",
+    "Audio review dependencies are installed by the routine setup.",
+    "Credit verification reads the actual rendered text across ten seconds and setup prepares its local OCR backend.",
+    "Spoken lab-name timing and physical inventory comparison replace weak label motion, verified after encoding.",
+    "Email delivery includes the supplied poster and a validated voice quality scorecard."
+  ],
+  "evidence_limits": "Audio taste scores use measurements and event evidence, without a listening claim. The advisory quarter-shot motion diagnostic does not establish camera removal."
+}

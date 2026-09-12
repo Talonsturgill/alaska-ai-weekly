@@ -1,0 +1,26 @@
+{
+  "title": "The Question Comes First",
+  "slug": "dispatch-2026-09-12-the-question-comes-first",
+  "date": "2026-09-12",
+  "caption": "UAA has a new dry EEG system for its AI and Robotics Lab. Students and faculty have trained, with reading and programming studies planned.",
+  "voice": "Gemini native TTS, voice Sulafat, model gemini-3.1-flash-tts-preview. Preset voice with a SynthID watermark, not a clone. Natural 122.88-second take with no time-stretch.",
+  "music": "\"Life of Riley\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "upgrades": [
+    "Current Gemini and Remotion setup runs without the retired GPU stack.",
+    "Natural narration replaces automatic time-stretch, with safe runtime and transport diagnostics.",
+    "Gemini 3.1 streaming joins complete audio chunks and rejects incomplete output.",
+    "Hash-verified historical panel references restore grounded calibration.",
+    "Reusable EEGHeadset illustrates nineteen scalp contacts, with separate ear clips and auxiliary sockets.",
+    "QuestionToken supports fitted custom labels while preserving existing variants.",
+    "Whole-film taste sheets and voiced storyboard conforming keep reviews tied to real frames and speech.",
+    "Training-page choreography and a fixed scalp-contact highlight give all forty beats physical actions.",
+    "Geometry checks now include every brace-bodied scene and preserve honest measurement limits.",
+    "Run startup preserves the active stamp and only retires a prior lock after matching delivery proof.",
+    "Sustained camera moves and independent paper animation pass the final encoded film motion checks.",
+    "Claims checks follow imported scene text and retain required attribution and planned-study context.",
+    "Audio review dependencies are installed by the routine setup.",
+    "Credit verification reads the actual rendered text across ten seconds and setup prepares its local OCR backend.",
+    "Spoken lab-name timing and physical inventory comparison replace weak label motion, verified after encoding.",
+    "Email delivery includes the supplied poster and a validated voice quality scorecard."
+  ]
+}

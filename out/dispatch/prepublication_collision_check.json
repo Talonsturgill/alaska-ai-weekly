@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-09-12T18:45:07.955836+00:00",
+  "feed_blob": "0411c1cd53c486fb2c48588a6687a7a41b46e4aa",
+  "date_entries": [],
+  "media_paths": [
+    {
+      "name": "dispatch_master.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master.mp4",
+      "status": 404
+    },
+    {
+      "name": "dispatch_square.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_square.mp4",
+      "status": 404
+    },
+    {
+      "name": "poster.png",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster.png",
+      "status": 404
+    },
+    {
+      "name": "dispatch_master_720.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master_720.mp4",
+      "status": 404
+    },
+    {
+      "name": "poster_thumb.jpg",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster_thumb.jpg",
+      "status": 404
+    }
+  ],
+  "media_path_absent": true
+}

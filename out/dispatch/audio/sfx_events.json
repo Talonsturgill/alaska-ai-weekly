@@ -1,0 +1,366 @@
+{
+  "events": [
+    {
+      "t": 0.0,
+      "kind": "thud",
+      "class": "texture",
+      "pan": 0.0,
+      "take": "thud_kenney_impactWood_heavy_003.wav",
+      "family": "sub",
+      "label": "Stitched notebook springs open beside a macro schematic of one fixed EEG scalp contact, keeping the complete contact array outside the opening view | Bank performance: notebook cover settles on the desk. Approved sound: Dry paper fan as the notebook leaf opens, followed by one soft cover-on-desk tap when it lands; the contact schematic itself makes no recording beep."
+    },
+    {
+      "t": 1.774,
+      "kind": "paper",
+      "class": "standard",
+      "pan": -0.35,
+      "take": "paper_v6.wav",
+      "family": "texture",
+      "label": "Public-data page slides a short distance to give the notebook opening room while remaining visibly attached to its source tab | Bank performance: short public-page courtesy scrape. Approved sound: Short paper-on-paper scrape ending in a light page-edge tap; retain this exact material motif for the enlarged callback at beat30."
+    },
+    {
+      "t": 3.972,
+      "kind": "snap",
+      "class": "texture",
+      "pan": 0.2,
+      "take": "snap_v3.wav",
+      "family": "pluck",
+      "label": "Coral NEXT STEP tab catches the still-folded wing and draws its closed edge slightly upward, revealing that another page remains tucked underneath | Bank performance: stiff NEXT STEP tab catches its folded leaf. Approved sound: Small stiff-paper flex and a short elastic paper flick as the caught tab settles against the fold."
+    },
+    {
+      "t": 7.08,
+      "kind": "thud",
+      "class": "texture",
+      "pan": 0.0,
+      "take": "thud_kenney_impactWood_heavy_004.wav",
+      "family": "sub",
+      "label": "Laboratory workbench assembles around the same notebook as the instrument stand descends into its fitted position on the bench | Bank performance: bench and rubber-footed stand seat together. Approved sound: Muted wood seating knock under the bench assembly, then one soft rubber-pad thud when the stand lands."
+    },
+    {
+      "t": 10.93,
+      "kind": "pop",
+      "class": "texture",
+      "pan": 0.0,
+      "take": "pop_kenney_drop_004.wav",
+      "family": "blip",
+      "label": "Student hand seats the dry EEG schematic securely on its stand and opens a small attached TRAINING DEMONSTRATION leaf beside it | Bank performance: small elastic device-support seating contact. Approved sound: Soft plastic-on-rubber contact as the device seats, followed by the small training leaf unfolding with a paper flick."
+    },
+    {
+      "t": 13.72,
+      "kind": "paper",
+      "class": "texture",
+      "pan": -0.2,
+      "take": "paper_v3.wav",
+      "family": "texture",
+      "label": "Announcement sheet slides into the notebook source pocket with September 9th visible on its leading edge | Bank performance: announcement sheet slips into its pocket. Approved sound: Paper slip and pocket friction, ending in a quiet paper-edge stop at the seam."
+    },
+    {
+      "t": 17.024,
+      "kind": "clank",
+      "class": "texture",
+      "pan": 0.05,
+      "take": "clank_kenney_impactMetal_heavy_001.wav",
+      "family": "metal",
+      "label": "AI and Robotics Lab nameplate seats in the instrument stand label holder | Bank performance: metal lab nameplate meets its stand holder. Approved sound: One small fastening click as the plate seats in the visible holder, with a muted contact tap underneath."
+    },
+    {
+      "t": 21.4,
+      "kind": "paper",
+      "class": "texture",
+      "pan": -0.15,
+      "take": "paper_v2.wav",
+      "family": "texture",
+      "label": "Educational Legacy Fund slip turns from the notebook source pocket toward the viewer and lays flat beside the acquisition sheet | Bank performance: funding slip turns onto the acquisition sheet. Approved sound: A brief paper turn followed by a light sheet-on-sheet landing; no cash-register or financial-transfer effect."
+    },
+    {
+      "t": 25.838,
+      "kind": "paw",
+      "class": "texture",
+      "pan": 0.1,
+      "take": "paw_kenney_impactSoft_heavy_002.wav",
+      "family": "sub",
+      "label": "Instructor and student hands open the training demonstration leaf together, with the instructor indicating the fitted headset and the student rotating its schematic toward the display | Bank performance: student hand turns the padded training stand. Approved sound: Paper-fold flex as the demonstration leaf opens and a quiet rubber-foot scrape during the stand turn."
+    },
+    {
+      "t": 28.68,
+      "kind": "whoosh",
+      "class": "standard",
+      "pan": 0.0,
+      "take": "whoosh_v5.wav",
+      "family": "air",
+      "label": "Nineteen-contact EEG schematic widens from one fixed scalp contact to the complete counted scalp array as a labeled illustrative electrical trace begins extending in the adjacent display | Bank performance: schematic array and trace connection disclose. Approved sound: A restrained nonliteral diagram sweep accompanies the widening view; a soft pencil-like tracing sound follows the line as it is drawn. Both are editorial illustration sounds, not emitted EEG hardware noise."
+    },
+    {
+      "t": 32.213,
+      "kind": "pop",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "pop_kenney_drop_003.wav",
+      "family": "blip",
+      "label": "A coral explanatory ring and its ivory inner rim expand around the fixed central scalp contact, then fade; the already-drawn labeled schematic trace remains in its separate display | Bank performance: soft editorial accent follows the fixed scalp-contact ring. Approved sound: A quiet soft elastic pop marks the illustrative ring expanding around the fixed contact; it is an editorial accent, not a sound made by the EEG instrument."
+    },
+    {
+      "t": 36.64,
+      "kind": "paw",
+      "class": "texture",
+      "pan": 0.25,
+      "take": "paw_kenney_impactSoft_heavy_001.wav",
+      "family": "sub",
+      "label": "Anonymous student illustration labeled Vadim Egorov turns from the fitted scalp schematic toward the adjacent newly appearing signal display and places a hand on the display ledge | Bank performance: fingertip touches the observation-display ledge. Approved sound: Light fingertip-on-display-ledge tap after the hand contact, under the continuing quiet illustrative trace sound."
+    },
+    {
+      "t": 40.014,
+      "kind": "tick",
+      "class": "texture",
+      "pan": 0.3,
+      "take": "tick_v2.wav",
+      "family": "click",
+      "label": "Illustrative EEG trace extends across the display, carrying its SCHEMATIC tab to the end of the recording lane while the separate interpretation field remains unfilled | Bank performance: SCHEMATIC tab seats at the growing trace edge. Approved sound: Soft continuous drawing sweep, resolving into a paper-tab flick when the SCHEMATIC tab unfolds; no heartbeat or diagnostic-success tone."
+    },
+    {
+      "t": 42.88,
+      "kind": "creak",
+      "class": "texture",
+      "pan": -0.4,
+      "take": "creak_v2.wav",
+      "family": "texture",
+      "label": "Public-data book opens its worn source pages into the same research notebook | Bank performance: public-data book spine flexes open. Approved sound: Page fan with a low spine-flex sound and a light page-on-divider touch."
+    },
+    {
+      "t": 44.661,
+      "kind": "tick",
+      "class": "texture",
+      "pan": -0.25,
+      "take": "tick_v3.wav",
+      "family": "click",
+      "label": "Student hand selects a visibly labeled existing-recording strip from the opened public-data page and slides it into the notebook working pocket | Bank performance: selected recording strip meets its pocket stop. Approved sound: Paper strip sliding through a paper pocket, with a short edge rub at the final seated position."
+    },
+    {
+      "t": 47.08,
+      "kind": "stamp",
+      "class": "texture",
+      "pan": 0.25,
+      "take": "stamp_v1.wav",
+      "family": "sub",
+      "label": "Student hand places an empty own-task planning tab beside the selected existing-recording strip | Bank performance: hand gently presses the own-task paper tab flat. Approved sound: Light paper tab landing, followed by a small fingertip contact on the notebook surface."
+    },
+    {
+      "t": 50.684,
+      "kind": "snap",
+      "class": "texture",
+      "pan": 0.35,
+      "take": "snap_v2.wav",
+      "family": "pluck",
+      "label": "NEXT STEP tab turns upright as its folded wing edge moves into view without exposing the wing contents | Bank performance: folded NEXT STEP tab tensions its ribbon. Approved sound: Stiff paper fold creak ending in a small tab flick."
+    },
+    {
+      "t": 52.8,
+      "kind": "pop",
+      "class": "texture",
+      "pan": 0.45,
+      "take": "pop_kenney_drop_002.wav",
+      "family": "blip",
+      "label": "Notched hypothetical participant marker arrives along the outer notebook margin and seats in a separate holder visibly outside the page marked EXAMPLE TRAINING | Bank performance: outer person holder opens its conditional flag. Approved sound: Short paper-marker slide followed by a quiet holder contact and flag flick; no exclusion alarm or failure sound."
+    },
+    {
+      "t": 56.78,
+      "kind": "creak",
+      "class": "texture",
+      "pan": -0.15,
+      "take": "creak_v4.wav",
+      "family": "texture",
+      "label": "Planned reading-task page opens into a small reading-book and blank comparison-space spread under its permanent PLANNED tab | Bank performance: planned reading-book spine and holder unfold. Approved sound: Book page fan and soft spine flex, followed by the attached holder opening with a paper tick."
+    },
+    {
+      "t": 59.665,
+      "kind": "snap",
+      "class": "standard",
+      "pan": 0.1,
+      "take": "snap_v6.wav",
+      "family": "pluck",
+      "label": "Student hand and springy bookmark attach the empty COGNITIVE STATES study-target tab beside the reading task; the bookmark overshoots the tab edge and springs back into its holder | Bank performance: springy bookmark clips the empty planned target. Approved sound: Light paper clip-contact followed by one elastic paper pluck on the bookmark overshoot and a quieter return tick."
+    },
+    {
+      "t": 61.84,
+      "kind": "paw",
+      "class": "texture",
+      "pan": 0.1,
+      "take": "paw_kenney_impactSoft_heavy_000.wav",
+      "family": "sub",
+      "label": "Programming-task illustration unfolds from the notebook into a monitor-shaped paper frame containing code-shaped lines and a persistent PLANNED tab | Bank performance: paper programming-panel support foot touches down. Approved sound: Paper panel unfolding and one quiet support-foot tap as the physical illustration seats."
+    },
+    {
+      "t": 65.251,
+      "kind": "whoosh",
+      "class": "texture",
+      "pan": 0.4,
+      "take": "whoosh_v6.wav",
+      "family": "air",
+      "label": "While the separately labeled planned brain-activity trace remains visible below, the illustrative eye-movement marker traverses the programming-task illustration on its own labeled planning strip, making the proposed pairing of two distinct observations visible | Bank performance: separate illustrative gaze runner traverses its strip. Approved sound: A quiet paper-runner scrape follows the physical marker strip; a tiny paper-tab flick lands when its label unfolds. These are illustration sounds, not biological eye sounds."
+    },
+    {
+      "t": 69.26,
+      "kind": "creak",
+      "class": "texture",
+      "pan": 0.0,
+      "take": "creak_v3.wav",
+      "family": "texture",
+      "label": "Reading and programming study pages turn together to expose their blank answer spaces while the public-data divider begins opening behind them | Bank performance: joined study-page fold lifts the archive divider. Approved sound: Two staggered page turns and a short divider-edge scrape, with no failure sting for the blank answers."
+    },
+    {
+      "t": 73.8,
+      "kind": "whoosh",
+      "class": "standard",
+      "pan": -0.25,
+      "take": "whoosh_v3.wav",
+      "family": "air",
+      "label": "Public-data page pulls forward from the notebook into the larger archive working spread while the headset stays on its ordinary stand at the edge | Bank performance: public page opens into the full working archive. Approved sound: A broad page-and-divider sweep followed by sequential soft index-leaf contacts; the final archive spread lands with a muted paper-cover tap."
+    },
+    {
+      "t": 78.46,
+      "kind": "tick",
+      "class": "standard",
+      "pan": -0.4,
+      "take": "tick_v1.wav",
+      "family": "click",
+      "label": "Researcher hand aligns an existing TASK A recording strip with the TASK A question symbol in a clearly labeled GENERAL EXAMPLE, then seats their matching tabs in the analysis holder | Bank performance: matching TASK A tabs seat in the analysis holder. Approved sound: Two light paper alignment scrapes followed by a small holder seating click as the matching A tabs meet."
+    },
+    {
+      "t": 81.831,
+      "kind": "paper",
+      "class": "texture",
+      "pan": -0.35,
+      "take": "paper_v5.wav",
+      "family": "texture",
+      "label": "Selected TASK A public-recording strip travels through the conceptual comparison workspace while two explicitly illustrative traces draw in adjacent lanes and its matching A question tab remains attached | Bank performance: TASK A strip runs through its comparison guide. Approved sound: Quiet strip-through-paper-guide friction with a restrained drawing sweep for the two schematic trace lanes; no result or accuracy chime."
+    },
+    {
+      "t": 85.303,
+      "kind": "stamp",
+      "class": "texture",
+      "pan": 0.35,
+      "take": "stamp_v2.wav",
+      "family": "sub",
+      "label": "New TASK B question tab enters the opposite notebook margin while the TASK A recording continues through its active comparison guide | Bank performance: TASK B tab presses its paper inventory divider. Approved sound: Small paper-tab landing and a divider-edge scrape over the continuing low paper-guide friction of the A route."
+    },
+    {
+      "t": 88.1,
+      "kind": "paper",
+      "class": "texture",
+      "pan": 0.3,
+      "take": "paper_v1.wav",
+      "family": "texture",
+      "label": "Researcher hand brings the TASK B tab alongside the inventory context tabs and moves between them to assess suitability, leaving their fit undecided while the TASK A analysis stays in motion | Bank performance: inventory tabs flick during undecided B assessment. Approved sound: Quiet alternating paper-tab flicks during the inventory assessment, then a soft page slide as the optional collection leaf enters."
+    },
+    {
+      "t": 91.224,
+      "kind": "riser",
+      "class": "texture",
+      "pan": 0.0,
+      "take": "riser_v3.wav",
+      "family": "air",
+      "label": "Researcher uses a pencil to bracket the optional TASK B collection plan, then lifts the still-concealed NEXT STEP wing edge with the other hand while TASK A analysis keeps working | Bank performance: single restrained build as the closed wing lifts. Approved sound: Brief graphite-on-paper planning stroke followed by restrained paper-hinge flex and ribbon friction into the reveal."
+    },
+    {
+      "t": 93.14,
+      "kind": "chime",
+      "class": "hero",
+      "pan": 0.0,
+      "take": "chime_kenney_confirmation_002.wav",
+      "family": "bell",
+      "label": "Concealed NEXT STEP wing unfolds into the additional TO COLLECT and TO TEST working spaces beside the active public-data page | Bank performance: warm editorial accent for added workspace, no finding. Approved sound: Broad notebook page fan with a low stitched-hinge flex, ending in two softly staggered paper-support contacts and one restrained reveal accent after landing."
+    },
+    {
+      "t": 96.375,
+      "kind": "paper",
+      "class": "standard",
+      "pan": -0.4,
+      "take": "paper_v4.wav",
+      "family": "texture",
+      "label": "Public-data page repeats its opening courtesy shuffle as a longer sweep into its full working area while its source strip remains in the analysis holder | Bank performance: longer courtesy scrape recalls beat 2 on the enlarged page. Approved sound: The same paper-on-paper scrape from beat2, longer and fuller here, ending in the same small page-edge tap. This sound callback pays the opening joke."
+    },
+    {
+      "t": 99.618,
+      "kind": "tick",
+      "class": "texture",
+      "pan": 0.4,
+      "take": "tick_v5.wav",
+      "family": "click",
+      "label": "Student hand attaches the chosen-task plan to the empty TO COLLECT space using its existing paper holder | Bank performance: chosen-task plan seats in the TO COLLECT holder. Approved sound: A short plan-sheet slide followed by a crisp but quiet paper-holder seating click."
+    },
+    {
+      "t": 101.66,
+      "kind": "creak",
+      "class": "texture",
+      "pan": 0.25,
+      "take": "creak_v1.wav",
+      "family": "texture",
+      "label": "Illustrative recording strip slides to the edge of its measurement lane and unfolds a separate, still-empty interpretation flap beside it | Bank performance: empty interpretation flap unfolds beside the trace. Approved sound: Paper strip scrape followed by a low flap-unfold sound, ending without a success tone."
+    },
+    {
+      "t": 106.1,
+      "kind": "snap",
+      "class": "texture",
+      "pan": 0.25,
+      "take": "snap_v4.wav",
+      "family": "pluck",
+      "label": "Conditional methods flap unfolds to expose IF A MODEL CLAIMS NEW PEOPLE and opens a separate empty test holder alongside the untouched example training pocket | Bank performance: conditional methods flap raises the separate test holder. Approved sound: Stiff paper flap opening followed by two small holder-side contacts as the separate test destination forms."
+    },
+    {
+      "t": 107.781,
+      "kind": "whoosh",
+      "class": "texture",
+      "pan": 0.4,
+      "take": "whoosh_v2.wav",
+      "family": "air",
+      "label": "Same notched hypothetical participant marker leaves its outer-margin holder and travels directly into the separate TEST holder without crossing or touching the TRAINING pocket | Bank performance: same notched person follows the separate TEST path. Approved sound: Paper-marker release flick, a short paper-runner scrape along the separate path, then a quiet test-holder seating tap."
+    },
+    {
+      "t": 111.288,
+      "kind": "paw",
+      "class": "texture",
+      "pan": 0.45,
+      "take": "paw_kenney_impactSoft_heavy_004.wav",
+      "family": "sub",
+      "label": "Separate TEST holder receives the marker's attached blank evaluation page and opens it beside the unchanged training pocket | Bank performance: blank evaluation page lands softly in TEST. Approved sound: A soft page insertion scrape followed by a small side-flap paper flick; no score, victory or failure sound."
+    },
+    {
+      "t": 113.1,
+      "kind": "creak",
+      "class": "texture",
+      "pan": 0.1,
+      "take": "creak_v5.wav",
+      "family": "texture",
+      "label": "General research-principle page folds back into its own labeled methods pocket beside the separate planned UAA pages | Bank performance: general-principle page folds into its own pocket. Approved sound: Paper fold flex, pocket friction and a gentle edge contact at the seated position."
+    },
+    {
+      "t": 116.43,
+      "kind": "thud",
+      "class": "texture",
+      "pan": 0.25,
+      "take": "thud_kenney_impactWood_medium_000.wav",
+      "family": "sub",
+      "label": "Student hand returns the UAA planned-study spread to the front working position while the methods pocket remains visibly separate at the rear | Bank performance: returning UAA spread nudges the pencil to its wood stop. Approved sound: Broad paper-spread slide followed by a small pencil-on-stop tick, with no electronic or diagnostic tone."
+    },
+    {
+      "t": 118.94,
+      "kind": "tick",
+      "class": "texture",
+      "pan": 0.2,
+      "take": "tick_v6.wav",
+      "family": "click",
+      "label": "Student hand lifts the pencil from its stop and places its tip just above the next question line without writing an answer | Bank performance: pencil releases from the stop before the question. Approved sound: Light pencil release from the desk stop followed by a soft page-corner lift; leave the poised tip silent rather than invent writing."
+    },
+    {
+      "t": 120.91,
+      "kind": "paper",
+      "class": "standard",
+      "pan": 0.0,
+      "take": "paper_v5.wav",
+      "family": "texture",
+      "label": "Notebook question-page edge rises toward the opening angle while the public-data route and empty planned collection space remain visible beneath it | Bank performance: last question-page fan recalls the opening paper lift. Approved sound: The dry paper fan from beat1 returns more softly as the question page lifts; let the sound resolve into the opening page motion on replay."
+    }
+  ],
+  "silence_dip_at": 118.19,
+  "count": 40
+}
