@@ -15,7 +15,8 @@ Usage:
     --note "On-screen numbers are illustrative unless drawn from a live feed." \
     --temporary --date 2026-06-27 --title "Cook Inlet belugas" --out-html out/dispatch/email.html
 """
-import argparse, base64, json, datetime as dt, re, subprocess, sys
+import argparse, base64, json, datetime as dt, math, re, subprocess, sys
+from html import escape
 from pathlib import Path
 
 # THE MAILBOX IS docket@alaskaaihq.com AND IT IS THE SAME ONE EVERY TIME (owner, 2026-07-31).
@@ -31,6 +32,60 @@ DRAFT_TO = "docket@alaskaaihq.com"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from run_guard import fresh, StaleArtifactError  # noqa: E402
 from caption_check import lint as caption_lint  # noqa: E402
+
+VO_REPORT_PATH = Path(__file__).resolve().parent.parent / "out" / "dispatch" / "vo_report.json"
+
+
+def load_voice_scorecard(path, *, check=True):
+    """Read this run's automated measurements without copying its ASR transcript.
+
+    Use the sound check's own verdicts, not a second set of delivery thresholds.
+    A null loudness measurement is permitted by its producer but must stay visibly
+    unmeasured here. Missing, invalid or failed evidence cannot become a PASS card.
+    """
+    try:
+        report = json.loads(Path(fresh(str(path), check=check)).read_text())
+        soundcheck = report["soundcheck"]
+        checks = soundcheck["checks"]
+        names = ("word_accuracy", "no_leak", "expressive", "duration", "loudness")
+        verdicts = [soundcheck["pass"], *(checks[name]["pass"] for name in names)]
+        if any(type(value) is not bool for value in verdicts):
+            raise ValueError("sound-check verdicts must be booleans")
+        if not all(verdicts):
+            raise ValueError("the selected voice take failed its sound check")
+        if "in_target_band" in soundcheck and soundcheck["in_target_band"] is not True:
+            raise ValueError("the selected voice take is not in its target band")
+        if report.get("runtime_warning") not in (None, ""):
+            raise ValueError("the selected voice take has an unresolved runtime warning")
+
+        def number(value, label, minimum=None, maximum=None):
+            if (type(value) not in (int, float) or not math.isfinite(value)
+                    or (minimum is not None and value < minimum)
+                    or (maximum is not None and value > maximum)):
+                raise ValueError(f"invalid {label} measurement")
+            return value
+
+        score = number(soundcheck["score"], "score")
+        wer = number(checks["word_accuracy"]["wer"], "word error rate", 0)
+        pitch = number(checks["expressive"]["pitch_std_semitones"], "pitch spread", 0)
+        voiced = number(checks["expressive"]["voiced_frac"], "voiced fraction", 0, 1)
+        seconds = number(checks["duration"]["seconds"], "duration", 0)
+        if seconds == 0:
+            raise ValueError("voice duration must be positive")
+        if checks["no_leak"]["leaked"] != []:
+            raise ValueError("the passing tag-leak check must have an empty leak list")
+        lufs = checks["loudness"]["lufs"]
+        loudness = ("Voice loudness unmeasured" if lufs is None else
+                    f"Voice loudness {number(lufs, 'loudness'):.1f} LUFS")
+        return (f"Automated voice sound check · PASS · score {score:.3f}\n"
+                f"Word error rate {wer:.1%} · no spoken-tag leaks · "
+                f"pitch spread {pitch:.2f} semitones · voiced frames {voiced:.0%}\n"
+                f"Voice take {seconds:.2f} seconds · {loudness}")
+    except StaleArtifactError as exc:
+        sys.exit(f"REFUSING TO BUILD DRAFT: --vo-report is not from this run.\n  {exc}")
+    except (OSError, ValueError, KeyError, TypeError, OverflowError) as exc:
+        sys.exit(f"REFUSING TO BUILD DRAFT: --vo-report needs a valid passing sound-check "
+                 f"report.\n  {exc}")
 
 
 def refuse_unless_links_are_live(urls, allow_temporary=False):
@@ -241,7 +296,7 @@ ALASKAIHQ_LI = ('<li><b>Every Alaska + AI decision and update we track, in one p
 
 
 def render(post, poster_html, vids, voice, music, sources, score, note, temporary, date_str, title, upgrades,
-           sourcing_note=""):
+           sourcing_note="", voice_scorecard=""):
     def esc(x):
         return (x or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     src = "\n".join(
@@ -328,10 +383,16 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
             f'<div style="font-size:13px;line-height:1.5;color:#24543a;"><b>Delivery check</b> '
             f'&middot; {esc(score)}</div>'
         )
+    if voice_scorecard:
+        run_notes_parts.append(
+            f'<div style="font-size:12.5px;line-height:1.5;color:#344957;'
+            f'margin-top:{"8px" if score else "0"};">'
+            f'{esc(voice_scorecard).replace(chr(10), "<br>")}</div>'
+        )
     if up_items:
         run_notes_parts.append(
             f'<div style="font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;'
-            f'color:#65757f;margin-top:{"10px" if score else "0"};">Upgrades shipped this run</div>'
+            f'color:#65757f;margin-top:{"10px" if run_notes_parts else "0"};">Upgrades shipped this run</div>'
             f'<ul style="margin:5px 0 0;padding-left:19px;font-size:12.5px;line-height:1.45;">'
             f'{up_items}</ul>'
         )
@@ -353,6 +414,7 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
   {buttons}
   {feed_guide}
   {warn}
+  {poster_html}
   <h2 style="{S['h2']}">LinkedIn caption</h2>
   <div class="post" style="{S['copy']}">{post_html}</div>
 
@@ -389,6 +451,8 @@ def main():
             return ""
 
     ap.add_argument("--voice", default="")
+    ap.add_argument("--vo-report", default=str(VO_REPORT_PATH),
+                    help="this run's passing vo_report.json, required for the automated voice scorecard")
     ap.add_argument("--music", default=_music_default())
     ap.add_argument("--sources", default=""); ap.add_argument("--score", default="")
     ap.add_argument("--note", default="On-screen counters/charts are illustrative unless drawn from a live data feed.")
@@ -411,6 +475,7 @@ def main():
     # Lint the string, not a path. See refuse_unless_copy_is_clean for why that distinction
     # is the whole point: on 2026-08-06 the run linted caption.txt and emailed post.txt.
     refuse_unless_copy_is_clean(post, a.post)
+    voice_scorecard = load_voice_scorecard(a.vo_report, check=chk)
     # THE LINKS ARE THE DELIVERABLE. See refuse_unless_links_are_live for the 2026-08-12
     # incident this exists to make impossible. The square cut is optional as an argument
     # but is checked whenever it is passed, because a broken link is worse than none.
@@ -419,7 +484,7 @@ def main():
         ([("1:1 square cut", a.video_url_square)] if a.video_url_square else []),
         allow_temporary=a.temporary)
     if a.poster_url:
-        poster_html = f'<div class="poster" style="{S["poster"]}"><img width="240" style="{S["poster_img"]}" src="{a.poster_url}" alt="poster"/></div>'
+        poster_html = f'<div class="poster" style="{S["poster"]}"><img width="240" style="{S["poster_img"]}" src="{escape(a.poster_url, quote=True)}" alt="poster"/></div>'
     elif a.poster and Path(a.poster).exists():
         b64 = base64.b64encode(Path(a.poster).read_bytes()).decode()
         poster_html = f'<div class="poster" style="{S["poster"]}"><img width="240" style="{S["poster_img"]}" src="data:image/png;base64,{b64}" alt="poster"/></div>'
@@ -441,7 +506,7 @@ def main():
                  "must list every source inline (no 'see the repo' pointers). Fix sources.json.")
     html = render(post, poster_html, {"vertical": a.video_url_vertical, "square": a.video_url_square},
                   a.voice or "(unset)", a.music or "(unset)", sources, a.score, a.note, a.temporary, a.date, a.title,
-                  a.upgrades, sourcing_note)
+                  a.upgrades, sourcing_note, voice_scorecard)
     # Gate the complete decoded draft copy too, not only post.txt. Template labels
     # and caller-supplied notes are reader-visible prose under the same house rules.
     from visible_copy_check import check_email_copy
