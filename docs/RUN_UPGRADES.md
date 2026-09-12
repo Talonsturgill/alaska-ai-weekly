@@ -3189,3 +3189,12 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
   fourteen scenes and correct label ownership. Five regression tests cover true overlap,
   clipping ownership, cross-scene separation, original syntax and honest unmeasured
   transforms. Together with the existing label and zoom cases, 38 focused tests pass.
+
+- A completed prior release lock blocked this run's first final render. Run initialization
+  now preserves same-run stamp bytes, timestamps and composition. A dated rollover archives
+  a prior lock only when a passing verdict, verified unsent draft readback and all three
+  matching deliverable hashes prove completion. Fifteen regression cases cover valid rollover,
+  ambiguous or pending cuts, changed bytes, archive collisions and rollback on a failed write.
+- The first full-resolution render exceeded its seven-minute chunk deadline while another
+  local publishing job was active. Smaller chunks and two workers keep the original picture
+  and resolution while allowing healthy rendering to complete under shared host load.

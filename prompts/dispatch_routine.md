@@ -561,9 +561,12 @@ number restated in a second place is a number that will be wrong in one of them.
    `run_guard.fresh()` (dispatch_email.py already does, for --post and --sources) HARD-FAIL on any
    `out/dispatch/*` file older than this run — a stale artifact fails the run loudly instead of
    shipping. This is the enforcing mechanism; it does NOT depend on you remembering to clean up.
-   Optionally `rm -rf out/dispatch` too, to clear orphaned files — but do NOT blanket-wipe if you
-   are resuming a crashed run and want to keep already-paid-for outputs (Gemini TTS takes, the
-   music download); the stamp already protects correctness without destroying those.
+   Repeating init for the same run preserves its original timestamp, composition and metadata.
+   A prior-date `SHIP_NOW` and panel verdict are archived only when the prior stamp, passing
+   verdict, matching three deliverable hashes, matching lock scores and verified unsent Gmail
+   draft readback after that verdict prove delivery. Missing or ambiguous proof makes init refuse; investigate and
+   preserve that passing cut. Never delete the lock or blanket-wipe scratch to bypass this.
+   Keep already-paid-for outputs when resuming; the stamp protects freshness without erasing them.
    Rule of thumb: never trust an `out/dispatch/*` file you did not see this run write or regenerate.
 
 ## PHASE 0.5: THE STORY QUEUE (check this BEFORE spending a single search)
