@@ -159,10 +159,10 @@ TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band
 # September 6: proposed subsea compute, power routing, proof bench, FERC status and Alaska-value button.
 # 12 scenes: hook, map, speed, photo check, stats, separation, pulse,
 # measured-vs-estimated lag, model, missing evidence, resolution, field test.
-# 2026-09-11 "Over the Missing Road": twelve shots onto twenty VO lines.
-# Road edge, award sheet, two tests, existing network, cold box, blank evidence,
-# geography split, passenger ladder, wrong-test gate, provisional budget,
-# measurable cargo test, unresolved road-edge return.
+# 2026-09-12 "The Question Comes First": fourteen shots onto twenty VO lines.
+# Notebook hook, new sensor, announcement and training, scalp recording, public
+# archive, scope question, reading plan, programming plan, archive callback,
+# question fit, extra page, independent test, methods boundary and learning question.
 SCENE_START_LINE = [0, 1, 2, 4, 6, 8, 9, 10, 12, 13, 15, 17, 18, 19]
 
 

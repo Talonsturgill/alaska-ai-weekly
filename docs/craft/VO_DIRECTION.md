@@ -71,7 +71,7 @@ VETTED INLINE PALETTE (start here; promote a new tag only after the sound check 
 spoken for Sulafat across a few takes):
 - Pacing/breath: `[short pause]`, `[sighs]` (rare), a genuine `[laughs]` only if the line truly earns it.
 - `[slow]` is locally vetted for Sulafat on `gemini-3.1-flash-tts-preview` as of
-  September 12th, 2026. A56-word isolated probe returned35.16seconds, zero word errors
+  September 12th, 2026. A 56-word isolated probe returned 35.16 seconds, zero word errors
   and no spoken-tag leak (`out/dispatch/probe/slow_tag_probe.json`). Place it mid-line
   at a motivated change in cadence, never line-initial or adjacent to another tag.
   This validates the cue, not a full-film duration guarantee or another model.

@@ -71,8 +71,10 @@ def scenes(src):
     if not owner:
         return
     tail = src[owner.start():]
+    # A branch may declare motion values before assigning art inside a brace body.
+    # Split at its condition, or its plates get attributed to the previous scene.
     branches = [(int(m.group(1)), owner.start() + m.start()) for m in
-                re.finditer(r"(?:if|else\s+if)\s*\(n\s*===\s*(\d+)\)\s*art\s*=", tail)]
+                re.finditer(r"(?:if|else\s+if)\s*\(n\s*===\s*(\d+)\)\s*(?=\{|art\s*=)", tail)]
     for i, (number, a) in enumerate(branches):
         b = branches[i + 1][1] if i + 1 < len(branches) else len(src)
         # The final bare `else art=` is the next contiguous scene.
