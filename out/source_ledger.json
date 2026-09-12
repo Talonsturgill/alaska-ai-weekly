@@ -1,0 +1,96 @@
+{
+  "run_date": "2026-06-06",
+  "volume": "VOL. 04",
+  "window": ["2026-05-30", "2026-06-06"],
+  "cited_sources": [
+    {
+      "story_id": "story_1",
+      "story_title": "DOE $89M Coal Grant for AI Data Center Power",
+      "sources": [
+        {
+          "url": "https://www.adn.com/business-economy/energy/2026/06/04/trump-administration-selects-proposed-coal-project-for-89-million-grant-in-susitna-river-watershed/",
+          "outlet": "Anchorage Daily News",
+          "pub_date": "2026-06-04",
+          "author": "Alex DeMarban"
+        },
+        {
+          "url": "https://www.latitudemedia.com/news/trump-is-using-taxpayer-money-for-coal-to-power-ai/",
+          "outlet": "Latitude Media",
+          "pub_date": "2026-06-04",
+          "author": "Maeve Allsup"
+        },
+        {
+          "url": "https://www.energy.gov/articles/fact-sheet-energy-department-unleashing-beautiful-clean-coal",
+          "outlet": "U.S. Department of Energy",
+          "pub_date": "2026-06-04",
+          "author": null,
+          "primary_source": true
+        }
+      ]
+    },
+    {
+      "story_id": "story_2",
+      "story_title": "NSF Decommissioning Ocean Station Papa, Gulf of Alaska",
+      "sources": [
+        {
+          "url": "https://alaskapublic.org/news/environment/2026-06-04/deep-sea-observation-station-that-tracks-climate-change-set-to-be-pulled-from-gulf-of-alaska",
+          "outlet": "Alaska Public Media / KTOO",
+          "pub_date": "2026-06-04",
+          "author": "Alix Soliman"
+        },
+        {
+          "url": "https://eos.org/research-and-developments/trump-administration-to-remove-hundreds-of-deep-ocean-observation-instruments-dismantling-368-million-program",
+          "outlet": "Eos (American Geophysical Union)",
+          "pub_date": "2026-06-03",
+          "author": "Grace van Deelen"
+        }
+      ]
+    },
+    {
+      "story_id": "story_4",
+      "story_title": "Federal AI Preemption Bill; Alaska Regulatory Vacuum",
+      "sources": [
+        {
+          "url": "https://www.adn.com/opinions/2026/05/31/opinion-dont-let-washington-ground-alaskas-ability-to-protect-workers-from-ai/",
+          "outlet": "Anchorage Daily News",
+          "pub_date": "2026-06-01",
+          "author": "LeiLauni Scheideman"
+        },
+        {
+          "url": "https://www.adn.com/opinions/letters/2026/06/03/letter-ai-technology-isnt-waiting-and-neither-should-the-alaska-legislature/",
+          "outlet": "Anchorage Daily News",
+          "pub_date": "2026-06-03",
+          "author": "Roger Kaye"
+        },
+        {
+          "url": "https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/",
+          "outlet": "Roll Call",
+          "pub_date": "2026-06-04"
+        }
+      ]
+    }
+  ],
+  "new_sources_to_consider": [
+    {"url": "https://www.latitudemedia.com", "rationale": "Energy-sector newsletter; covered DOE coal-for-AI announcement June 4 with specific Alaska content. Strong infrastructure beat source."},
+    {"url": "https://www.miningnewsnorth.com", "rationale": "North of 60 Mining News; covers Alaska energy and AI-in-mining intersections; June 5 piece on AI mineral exploration tools returned 403 on fetch — recommend manual review."},
+    {"url": "https://www.datacenterdynamics.com", "rationale": "Data Center Dynamics; consistent depth on Alaska data center proposals (Stak, Air Force, GCI-Quintillion)."},
+    {"url": "https://www.juneauempire.com", "rationale": "Closest local outlet to Sealaska Heritage Institute and UAS; published Sealaska/Tlingit AI translator story May 21."},
+    {"url": "https://eos.org", "rationale": "American Geophysical Union; published Ocean Observatories Initiative dismantlement story with Alaska Station Papa named."},
+    {"url": "https://www.nationalfisherman.com", "rationale": "National Fisherman; Alaska-specific AI and fisheries technology coverage with author bylines."},
+    {"url": "https://arctictoday.com", "rationale": "ArcticToday; independent Arctic-focused outlet covering Alaska tech, drone trials, and military activity."},
+    {"url": "https://www.newsminer.com", "rationale": "Fairbanks Daily News-Miner; covered Air Force data center RFP power-supply hurdles with original reporting; Interior Alaska perspective not in seed list."}
+  ],
+  "beat_b_note": "No in-window Beat B (Research & Indigenous AI) stories found for this window. Nearest miss: Sealaska Heritage/Tlingit AI translator partnership (Juneau Empire, May 21) — 9 days pre-window, source page 404'd. Monitor for follow-up coverage.",
+  "beat_c_supplemental": [
+    {
+      "story_title": "XPRIZE Wildfire AI Drone Finals Headed to Alaska NANA Region (Mid-June)",
+      "background_context": true,
+      "note": "Pub date May 18 (outside window). Watch for in-window coverage when competition runs mid-June."
+    },
+    {
+      "story_title": "Alaska DFFP Thermal Drone Deployment, Sawmill Creek Fire",
+      "background_context": true,
+      "note": "Pub date May 27 (just outside window). Operational drone deployment confirmed."
+    }
+  ]
+}
