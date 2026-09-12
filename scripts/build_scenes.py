@@ -163,7 +163,7 @@ TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band
 # Road edge, award sheet, two tests, existing network, cold box, blank evidence,
 # geography split, passenger ladder, wrong-test gate, provisional budget,
 # measurable cargo test, unresolved road-edge return.
-SCENE_START_LINE = [0, 1, 2, 4, 6, 8, 9, 12, 13, 15, 17, 19]
+SCENE_START_LINE = [0, 1, 2, 4, 6, 8, 9, 10, 12, 13, 15, 17, 18, 19]
 
 
 def _apply_caption_fixups(caps):

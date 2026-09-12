@@ -1,0 +1,65 @@
+{
+  "gate": "0D",
+  "role": "art_director_critic",
+  "reviewed_at": "2026-09-12T13:47:53.350525+00:00",
+  "ship": true,
+  "input_sha256": {
+    "art_direction.json": "92fc9b0aa3406859e0818ba7dce5f4c294cc359340cb4135bed8421b44f93d46",
+    "storyboard.json": "fb83b92a4263b44cf0c05d91b21cad97c5e635e3826afaf35dbe1e4e3d7545e7",
+    "treatment_winner.json": "3c1137b053b8948db487fdb636966350f1b3d08f22685fddd5dbb8f9676eedd6"
+  },
+  "verdict": "The amended plan covers every Phase 4.1a lever with story-specific staging. Two timed negative-space beats resolve the sole prior omission. Gate 0D passes for scene construction.",
+  "checks": {
+    "palette": {
+      "pass": true,
+      "finding": "Lilac daylight, ivory paper, citron markers and coral identity tabs support warm curiosity. The September 10 charcoal/cyan/magenta rock-glacier world and September 11 spruce/cream/berry flight world are materially different. Sharing a warm light neutral is not a repeat. The optional treatment palette is not binding."
+    },
+    "light_depth": {
+      "pass": true,
+      "finding": "Upper-left warm key, lower-right shadows, cooler fill, narrow rim, three actual Stage3D depths and object contact shadows are concrete. Fold and layer edges supply form cues. Build must show parallax and motivated shadows, not merely declare z values."
+    },
+    "shape_language": {
+      "pass": true,
+      "finding": "Supple paper and rounded wearable ribs contrast with ordered archive slots and test spaces. Solid existing pages versus dotted planned areas express the evidence distinction without disparaging the archive."
+    },
+    "casting": {
+      "pass": true,
+      "finding": "Sheet/PaperFiber, Character, GripHand, EvidenceTrace and existing spatial/lighting systems match their verbs. The notebook is a fresh composition, not a renamed flight crate. Anonymous illustrated students avoid a named likeness claim."
+    },
+    "new_asset_gap": {
+      "pass": true,
+      "finding": "A wearable scalp sensor is absent from the manifest sensor shelf. EEGHeadset is a legitimate single reusable addition. Exactly 19 scalp contacts, two separate earclips and three empty auxiliary sockets keep the measured configuration clear."
+    },
+    "motion": {
+      "pass": true,
+      "finding": "Concealed notebook hinge, counted electrode expansion, useful public-data selection, optional workspace unfolding and a distinct held-out person all advance this story. Page anticipation/overshoot, cable follow-through and selective 180-degree smear are specified."
+    },
+    "signature_shot": {
+      "pass": true,
+      "finding": "The same notebook unfolds into an active public-data route plus an empty TO COLLECT / TO TEST wing. This pays the late promise in one image and preserves the additive thesis."
+    },
+    "square_safe": {
+      "pass": true,
+      "finding": "Essential bounds x90..990/y490..1270 and captions y1336..1468 fit the centered y420..1500 square crop. This is a sound plan, not rendered proof. The sideways signature expansion and nineteen-contact fan must stay inside those bounds."
+    },
+    "craft_advance": {
+      "pass": true,
+      "finding": "Confirmed in credentials.tsx: QuestionToken currently ignores arbitrary text and renders WHO EARNED THIS? unless the value is EARNED. Actual text fitting and palette parameters with legacy-default preservation are a real reusable improvement. Long/short phone-size examples and a legacy comparison make the advance verifiable."
+    },
+    "negative_space_beats": {
+      "pass": true,
+      "finding": "31.78-34.37s clears fixtures around the schematic trace and an empty interpretation area. 83.49-89.48s clears stationery for the expanding notebook while keeping the useful public route visible. Both specify timing, removed clutter and the meaning gained."
+    }
+  },
+  "required_fixes": [],
+  "render_watchpoints": [
+    "Use deep-violet text on ivory/citron; citron against ivory is an accent, not a legible text pair. Check the longest plan/method labels in the square phone preview.",
+    "QuestionToken inherits an award-seal silhouette. Keep it a small movable question marker with neutral scene colors; no approval stamp, triumphal glow or evidence of a passed test.",
+    "Show public-data selection and analysis at full visual competence. No dimming, red rejection, crossed-out book or fabricated comparative result.",
+    "Keep the hypothetical participant visibly distinct and labeled as a general methods example from its first appearance. Scalp signal, gaze marker and interpretation field must remain different objects."
+  ],
+  "scope": "Planning critique only. Exact current plan approved for scene construction. Render execution, crop legibility and lighting remain subject to later gates.",
+  "resolved_fixes": [
+    "Added two structured composition.negative_space_beats with times, staging and story-specific purposes."
+  ]
+}

@@ -1,20 +1,232 @@
 {
-  "run_date": "2026-09-11",
-  "fact_check_verdict": "The official Alaska Department of Health workbook verifies Ryan Air as a selected implementation proposal with a projected preliminary award of $4,171,115. It proposes autonomous cargo drones and electric vertical-takeoff-and-landing aircraft for medicines and medical transport. Nothing in the official materials establishes that aircraft were purchased, FAA approvals were obtained, communities consented, or flights began.",
+  "run_date": "2026-09-12",
+  "fact_check_verdict": "Independently verified acquisition, training, hardware and planned studies. Methods example is explicitly editorial and conditional.",
   "claims": [
-    {"id": "c1", "status": "verified-official-preliminary", "spoken": "Alaska lists a projected preliminary award of four million one hundred seventy-one thousand one hundred fifteen dollars.", "on_screen": "$4,171,115 · PROJECTED PRELIMINARY AWARD", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Always pair the amount with projected and preliminary. The program page says budget finalization is still in progress and amounts may change."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c2", "status": "verified-official-proposal", "spoken": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.", "on_screen": "RYAN AIR PROPOSAL · AUTONOMOUS CARGO DRONES + EVTOL", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Autonomous modifies cargo drones in the workbook. Do not imply the passenger-carrying EVTOL aircraft are autonomous."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c3", "status": "verified-official-proposal", "spoken": "The proposal addresses roadless communities.", "on_screen": "ROADLESS COMMUNITIES", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Keep proposal framing. Do not say the new service exists today."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c4", "status": "verified-official-description", "spoken": "The project summary names the Bethel and Dillingham regions.", "on_screen": "SUMMARY · BETHEL + DILLINGHAM REGIONS", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Do not describe the structured service-area field as identical. It differs."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c5", "status": "verified-official-metadata", "spoken": "A separate service area field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.", "on_screen": "SERVICE FIELD · ANCHORAGE · BRISTOL BAY · DILLINGHAM · YUKON-KOYUKUK", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["State that this is a separate workbook field. Do not resolve the mismatch on the state's behalf."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c6", "status": "verified-absence", "spoken": "The official notice does not document an aircraft purchase, an F A A approval or a completed flight.", "on_screen": "NO PURCHASE · NO FAA APPROVAL · NO COMPLETED FLIGHT DOCUMENTED", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["This is an absence in the cited official materials, not proof those milestones will never occur."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c7", "status": "verified-official-description", "spoken": "Ryan Air's proposal describes severe gaps in pharmaceutical access and medical transport.", "on_screen": "APPLICANT DESCRIPTION · ACCESS + TRANSPORT GAPS", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Attribute this problem statement to the proposal. Do not present near-total lack as an independently measured state finding."], "contract": {"must_ship": false, "on_screen_verbatim": false}},
-    {"id": "c8", "status": "verified-official-program", "spoken": "The state says budget finalization is still in progress and projected amounts may change.", "on_screen": "BUDGET FINALIZATION IN PROGRESS · AMOUNTS MAY CHANGE", "source": "https://health.alaska.gov/en/education/rural-health-transformation-program/", "requires": ["Do not call the preliminary amount a final grant payment."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c9", "status": "verified-faa-boundary", "spoken": "Commercial package delivery by drone needs F A A certification and operating authorization.", "on_screen": "CARGO TEST · FAA PART 135 + OPERATING AUTHORIZATION", "source": "https://www.faa.gov/uas/advanced_operations/package_delivery_drone", "requires": ["Do not imply Ryan Air already holds approvals for the proposed cargo drone operation."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c10", "status": "verified-faa-boundary", "spoken": "Passenger electric aircraft face a different test for the aircraft, pilot and operation.", "on_screen": "PASSENGER TEST · AIRCRAFT + PILOT + OPERATION", "source": "https://www.faa.gov/air-taxis", "requires": ["Do not call the proposed passenger aircraft autonomous. Do not imply certification is complete."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c11", "status": "verified-company-attributed", "spoken": "Ryan Air says it serves more than seventy villages with conventional aircraft.", "on_screen": "RYAN AIR SAYS · 24 AIRCRAFT · 8 HUBS · 70+ VILLAGES", "source": "https://ryanalaska.com/about/", "requires": ["Attribute to Ryan Air. Existing rural aviation experience does not prove autonomous-drone or eVTOL readiness."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c12", "status": "verified-official-proposal", "spoken": "The proposal would use cargo drones to carry pharmaceuticals.", "on_screen": "CARGO DRONES · PHARMACEUTICALS", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Keep would, could or proposes. Do not say deliveries have begun."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c13", "status": "verified-official-proposal", "spoken": "The proposal would use electric aircraft to transport patients and healthcare providers.", "on_screen": "ELECTRIC AIRCRAFT · PATIENTS + PROVIDERS", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["Keep proposed framing. Do not call the passenger aircraft autonomous or operational."], "contract": {"must_ship": true, "on_screen_verbatim": false}},
-    {"id": "c14", "status": "verified-absence", "spoken": "The official notice does not document a route.", "on_screen": "NO ROUTE DOCUMENTED", "source": "https://health.alaska.gov/media/tcvker5a/ak_rhtp_awardsnotice_2026.xlsx", "requires": ["This is an absence in the cited official materials, not proof a route will never be chosen."], "contract": {"must_ship": true, "on_screen_verbatim": false}}
-  ]
+    {
+      "id": "c1",
+      "status": "verified-primary",
+      "spoken": "UAA announced the equipment acquisition on September 9th.",
+      "on_screen": "SEPTEMBER 9TH",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Announcement date, not purchase date."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c2",
+      "status": "verified-primary",
+      "spoken": "The University of Alaska Anchorage AI and Robotics Lab acquired it.",
+      "on_screen": "UAA AI + ROBOTICS LAB",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Expand UAA before relying on abbreviation in narration."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c3",
+      "status": "verified-primary",
+      "spoken": "The device is a Wearable Sensing DSI-24 dry EEG.",
+      "on_screen": "DRY EEG \u00b7 DSI-24",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "An EEG records signals. No thought symbols or clinical result."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c4",
+      "status": "verified-primary",
+      "spoken": "The Educational Legacy Fund funded the equipment.",
+      "on_screen": "EDUCATIONAL LEGACY FUND",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Credit funding only. No price is reported."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c5",
+      "status": "verified-primary",
+      "spoken": "Faculty and students received equipment training.",
+      "on_screen": "TRAINING",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Observed milestone. The research studies remain planned."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c6",
+      "status": "verified-primary",
+      "spoken": "Vadim Egorov is a graduate student.",
+      "on_screen": "VADIM EGOROV",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Use a generic student illustration, not an invented portrait."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c7",
+      "status": "verified-primary",
+      "spoken": "Egorov viewed his recorded electrical signals.",
+      "on_screen": "RECORDING DEMONSTRATION",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Demonstration is observed. Any trace drawn here is schematic."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c8",
+      "status": "verified-background",
+      "spoken": "The device has 19 scalp electrodes.",
+      "on_screen": "19 SCALP ELECTRODES",
+      "source": "https://wearablesensing.com/dsi-24/",
+      "requires": [
+        "Cross-checked against UAA. Literal sensors must number exactly19."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c9",
+      "status": "verified-primary",
+      "spoken": "Egorov usually works with public EEG datasets.",
+      "on_screen": "PUBLIC EEG DATA",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Public datasets remain valuable, not displaced."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c10",
+      "status": "verified-primary",
+      "spoken": "Egorov anticipates collecting recordings for his own tasks.",
+      "on_screen": "OWN TASKS",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Added collection capability, not a newly granted right to choose research."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c11",
+      "status": "verified-primary",
+      "spoken": "UAA plans cognitive-state research during reading.",
+      "on_screen": "READING \u00b7 PLANNED",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Use planned in narration and large planned label on this scene."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c12",
+      "status": "verified-primary",
+      "spoken": "Another planned project studies brain activity during programming.",
+      "on_screen": "PROGRAMMING \u00b7 PLANNED",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Programming, not AI-assisted coding. Use planned framing."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c13",
+      "status": "verified-primary",
+      "spoken": "The programming project also plans to track eye movements.",
+      "on_screen": "EYE MOVEMENTS \u00b7 PLANNED",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "Separate proposed eye tracking, not EEG alone reading eyes."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c14",
+      "status": "verified-primary",
+      "spoken": "The announcement describes planned studies rather than completed findings.",
+      "on_screen": "RESULTS STILL AHEAD",
+      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "requires": [
+        "No model output, accuracy, sample count or completed dataset."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c15",
+      "status": "verified-background",
+      "spoken": "A claim about new people requires evaluation on people absent from training.",
+      "on_screen": "NEW PEOPLE \u00b7 SEPARATE TEST",
+      "source": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1373515/full",
+      "requires": [
+        "Editorial conditional methods principle. No allegation of UAA leakage and no invented UAA protocol."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    },
+    {
+      "id": "c16",
+      "status": "verified-background",
+      "spoken": "The instrument records scalp electrical activity for research.",
+      "on_screen": "ELECTRICAL SIGNALS",
+      "source": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
+      "requires": [
+        "Research equipment, not medical diagnosis. Traces labeled SCHEMATIC and not actual UAA recordings."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false
+      }
+    }
+  ],
+  "obligation_source": "fact_check.json O1-O12",
+  "pre_storyboard_status": "Final narration cites all16 approved distinct facts. No completed-study result is claimed."
 }

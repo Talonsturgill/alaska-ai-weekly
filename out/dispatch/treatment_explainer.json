@@ -1,0 +1,250 @@
+{
+  "role": "explainer",
+  "title": "The Question Comes First",
+  "angle_locked": true,
+  "logline": "One continuous recording strip gains a chosen task and a proposed test as UAA’s new EEG turns student curiosity into an expanded experimental option.",
+  "cold_open_first_3s": {
+    "picture": "Extreme three-quarter macro: a dry EEG headset rests above a scalp schematic. Its 19 contact pads fan outward into a precisely counted comb of fine trace lines. The lines lift a small cream strip off the bench. Warm daylight catches the paper curl. No brain interior, thought symbols or actual research trace.",
+    "immediate_read": "A real instrument makes invisible electrical measurements legible.",
+    "label": "EEG · SCHEMATIC",
+    "no_false_action": "The fan-out is an explanatory cutaway, not moving hardware in a real DSI-24."
+  },
+  "escalation_beats_2_to_8": [
+    {
+      "beat": 2,
+      "seconds": [
+        3,
+        20
+      ],
+      "action": "Camera draws back to an Anchorage laboratory bench with a student silhouette in training. An acquisition tag seats on the headset base. The throughline strip has a deliberately blank interpretation field. Plant: what has to accompany the signal before it can support an answer?",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "beat": 3,
+      "seconds": [
+        20,
+        36
+      ],
+      "action": "Make nineteen felt: camera traverses one contact, then the complete 19-pad scalp plan. Two earclips and three empty auxiliary sockets remain visually distinct. The signal lanes travel to the same strip; no numerical waveform scale or fabricated readings.",
+      "claim_ids": [
+        "C5"
+      ]
+    },
+    {
+      "beat": 4,
+      "seconds": [
+        36,
+        58
+      ],
+      "action": "An open public-data drawer supplies a substantial existing ribbon at left. The student’s new strip stays available at right. A hand chooses between two proposed task inserts, reading and programming. Both carry large PLANNED tabs. Plant the second promise: same headset, what changes between these questions?",
+      "claim_ids": [
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "beat": 5,
+      "seconds": [
+        58,
+        73
+      ],
+      "action": "Give the public-data option the whole frame for a working research pass: source folder to analysis desk, fully intact, no rejected symbol. Camera then reveals both routes feeding the researcher’s workspace. At 68 seconds the proposed task insert physically travels with its matching recording strip, paying the second loop through context rather than a changed signal.",
+      "claim_ids": [
+        "C8"
+      ],
+      "illustration_boundary": "General research workflow, not a completed UAA model."
+    },
+    {
+      "beat": 6,
+      "seconds": [
+        73,
+        90
+      ],
+      "action": "The strip reaches an interpretation desk. Its task label and illustrated trace are visible, but its answer field remains open. A distinct book-shaped methods inset proposes MODEL TRAINING and NEW-PERSON TEST trays only under an IF: NEW PEOPLE banner. No prediction is filled, no score appears, nobody fails.",
+      "claim_ids": [
+        "C6",
+        "C7",
+        "C10",
+        "C11"
+      ],
+      "caption": "Illustrated research principle"
+    },
+    {
+      "beat": 7,
+      "seconds": [
+        90,
+        107
+      ],
+      "action": "Primary payoff: the continuous strip now unfolds into three readable sections, TASK, SIGNAL and TEST, with a still-blank result field. Each section retains a different job. The camera returns the strip to the student’s bench, alongside the public-data drawer, making expanded choice the visible win.",
+      "claim_ids": [
+        "C2",
+        "C4",
+        "C8"
+      ],
+      "plan_boundary": "TASK and TEST sections are planned; no actual dataset or announced protocol is implied."
+    },
+    {
+      "beat": 8,
+      "seconds": [
+        107,
+        120
+      ],
+      "action": "The hand selects the reading task card but holds it above its planning slot rather than starting an unreported experiment. The headset and public-data drawer remain available. The blank result field curls into the opening composition.",
+      "claim_ids": [
+        "C6",
+        "C7",
+        "C8"
+      ]
+    }
+  ],
+  "earned_turn": "At 58 seconds, public datasets get a fully working route of their own. The new headset is useful because it adds a route for chosen tasks. At 73 seconds, the film advances from collecting measurements to testing an interpretation without turning the purchase into a promised outcome.",
+  "button": {
+    "last_line": "Which question about learning should they put to this tool first?",
+    "last_image": "The same cream strip lies ready beside the headset and the open public-data drawer. A proposed reading-task card hovers over its slot. The answer space is visibly blank, inviting research rather than announcing failure.",
+    "loop_to_open": "The paper curl and nineteen-pad contact silhouette restore the opening geometry."
+  },
+  "sight_gags": [
+    {
+      "seconds": 22,
+      "gag": "The two earclip leads gently tug the headset’s side straps like suspenders before settling. A tiny slack loop bounces once.",
+      "function": "Makes earclips distinct from the nineteen scalp contacts; no face or gag on a real person."
+    },
+    {
+      "seconds": 45,
+      "gag": "An oversized binder clip tries to grip the whole proposed reading book, opens too wide, then sensibly clips only the task tab.",
+      "function": "The question must travel with the data; comedy belongs to office objects, not cognitive difficulty."
+    },
+    {
+      "seconds": 64,
+      "gag": "A springy public-data folder rebounds into its own useful place when the new strip nudges past it. Both receive equal desk space.",
+      "function": "Affectionate persistence: public data remains in the picture without becoming a villain."
+    },
+    {
+      "seconds": 112,
+      "gag": "The pencil nearly rolls into the blank answer field; the returning paper curl gently parks it beside the question instead.",
+      "function": "Leaves the answer open without a bureaucratic rejected stamp."
+    }
+  ],
+  "retention_plan": {
+    "fair_act3_countercase": "Public recordings already enable useful AI research. Put that functioning route on screen for 15 seconds. New hardware alone does not establish a correct interpretation; the next step is a chosen task and an evaluation matched to the claim.",
+    "act3_named_scene": "Two useful routes, one unanswered question",
+    "act3_seconds": [
+      58,
+      95
+    ],
+    "throughline_object": {
+      "name": "TaskSignalStrip",
+      "basis": "Reuse Sheet/PaperFiber for body and EvidenceTrace for the same continuous illustrated signal path. Coral clipped corner and one punched circular hole preserve identity.",
+      "states": [
+        {
+          "seconds": 0,
+          "state": "Curled strip with illustrated recording lanes and blank interpretation field."
+        },
+        {
+          "seconds": 20,
+          "state": "Unfurled; nineteen electrode inputs are visibly separate from the strip’s eventual interpretation."
+        },
+        {
+          "seconds": 36,
+          "state": "Receives a large proposed-task clip; unfinished planning sections use outline grammar."
+        },
+        {
+          "seconds": 73,
+          "state": "Carries task and signal into a proposed testing context; answer remains open."
+        },
+        {
+          "seconds": 95,
+          "state": "Three sections readable together; returned to student workspace beside public data."
+        },
+        {
+          "seconds": 117,
+          "state": "Curled ready for the next chosen question, preserving open result field."
+        }
+      ]
+    },
+    "two_loops": [
+      {
+        "plant_seconds": 14,
+        "promise": "What has to accompany this signal before it can support an answer?",
+        "withheld": "The full signal-task-test relationship, not the existence of the headset.",
+        "payoff_seconds": 95,
+        "payoff": "The single strip unfolds into task, signal and test sections while the result field remains honestly unanswered."
+      },
+      {
+        "plant_seconds": 43,
+        "promise": "The same headset is proposed for reading and programming. What changes?",
+        "payoff_seconds": 68,
+        "payoff": "Task context travels with the recording. The proposed programming branch includes eye-movement context; the reading branch carries its own task label. Both remain planned."
+      }
+    ],
+    "beatwise_act3_padding_test": [
+      {
+        "seconds": [
+          58,
+          73
+        ],
+        "if_removed": "The film would imply replacement or inferiority of public data. The full useful route earns the additive thesis."
+      },
+      {
+        "seconds": [
+          73,
+          82
+        ],
+        "if_removed": "The viewer could mistake a lively waveform for an established interpretation. The open answer field preserves the measurement boundary."
+      },
+      {
+        "seconds": [
+          82,
+          95
+        ],
+        "if_removed": "The film would state that results are pending without showing what a future claim about new people would need. Keep the conditional methods example compact and label it editorial."
+      }
+    ],
+    "why_90_seconds_would_be_worse": "It would compress either the fair public-data route or the distinction between recording and interpretation into a disclaimer. Those are changes in the argument, not repeated exposition."
+  },
+  "visual_system": {
+    "palette": "Warm ivory bench, petrol-blue hardware, coral task tab, soft lilac proposed-study outlines, warm graphite typography. No red failure language.",
+    "camera": "Macro contact array to broad bench, lateral travel following paper, then an overhead unfold for the test.",
+    "reuse": [
+      "Sheet and PaperFiber from paper.tsx",
+      "EvidenceTrace from spaceweather.tsx",
+      "Character from Character.tsx, anonymous schematic only",
+      "GripHand from props.tsx",
+      "PendingMark from vision.tsx",
+      "EvidenceState from evidence_state.tsx",
+      "ScreenLit from screenlight.tsx",
+      "CameraMoves from stage3d.tsx"
+    ],
+    "net_new_story_gap": "DSI-24-inspired dry EEG headset schematic with counted 19-pad scalp plan, two earclip sensors and three visibly empty auxiliary sockets. No library device has this silhouette or sensing verb.",
+    "craft_advance_candidate": "A reusable task/trace registration clip that carries source and planned-state labels on a continuous paper path; avoids losing context during cutaways.",
+    "freshness": "Human-scale laboratory mechanism rather than the last two landform and aviation proof stories. The strip is the throughline; there is no gate, flight crate or glacier hero."
+  },
+  "narration": "At UAA, a student watches his own brain signals appear on a screen. The exciting part is what he can choose next.\n\nOn September 9th, the university announced a new dry EEG for its AI and Robotics Lab, funded by the Educational Legacy Fund.\n\nNineteen scalp electrodes record electrical activity. They supply measurements that researchers can analyze with machine learning.\n\nGraduate student Vadim Egorov usually works with public EEG datasets. He's looking forward to collecting data for his own tasks.\n\nThe task gives a recording its context.\n\nUAA plans to study cognitive states during reading. Another planned project pairs brain activity with eye movements during computer programming. Different questions. The same new tool.\n\nPublic datasets already support useful research. They keep their place. The headset adds a way for students to shape an experiment around a question they choose.\n\nAnd a recording still needs interpretation. The announced studies haven't reported results.\n\nIf a future model claims to work for new people, test it on people absent from its training. That's a research principle, not a finding about UAA.\n\nThe signal, the task and the test each have a job.\n\nAlaska's gain is a new option for students to investigate, with the answers still to be earned.\n\nWhich question about learning should they put to this tool first?",
+  "vo_word_count": 217,
+  "target_seconds": 120,
+  "allowed_seconds": [
+    112,
+    130
+  ],
+  "allowed_vo_words": [
+    200,
+    220
+  ],
+  "accuracy_contract": [
+    "All waveforms illustrated and non-numeric.",
+    "Literal scalp plan contains exactly 19 contact pads; count them in frame review.",
+    "Two earclips are not additional scalp electrodes. Three auxiliary inputs are empty sockets, not reported attached sensors.",
+    "Reading and programming scenes carry PLANNED.",
+    "No mind-reading, diagnostic result, treatment, classification accuracy or completed dataset.",
+    "Eye movements remain planned context, not claimed headset-alone output.",
+    "Conditional new-person test is editorial methods context, not an allegation or UAA protocol."
+  ],
+  "cross_challenge_pending": true,
+  "storyboard_written": false
+}

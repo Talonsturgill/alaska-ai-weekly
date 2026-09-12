@@ -1,8 +1,104 @@
 {
-  "score": 9.3,
-  "threshold": 8.5,
-  "ship": true,
-  "objective_gate": "PASS",
+  "reviewed_at_utc": "2026-09-12T13:29:42.350405+00:00",
+  "role": "Independent caption scorer",
+  "input_path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/post.txt",
+  "input_sha256": "a7dc4b491eae03ebf64cf9bb807e94e0c438e08685eac36ff60cf90693ba0f16",
+  "input_hash": "a7dc4b491eae03ebf64cf9bb807e94e0c438e08685eac36ff60cf90693ba0f16",
+  "input_hash_algorithm": "sha256 of exact UTF-8 file bytes, including trailing newline",
+  "rubric_path": "/Users/t/Developer/alaska-ai-weekly/config/linkedin_caption_rubric.yaml",
+  "ship_threshold": 8.5,
+  "previous_review": {
+    "input_sha256": "3d7280550c1f345e964365522930e593eb94f7aa97bc2b34576b7a0b5d188124",
+    "weighted_score": 8.256,
+    "verdict": "REVISE"
+  },
+  "objective_gate": {
+    "command": "python3 scripts/caption_check.py out/dispatch/post.txt",
+    "exit_code": 0,
+    "result": "PASS",
+    "characters_linter": 1485,
+    "characters_file": 1486,
+    "hook_characters": 74,
+    "hashtags": 4
+  },
+  "criteria": [
+    {
+      "name": "Hook / scroll-stop",
+      "weight": 0.2,
+      "score": 8.5,
+      "weighted_contribution": 1.7,
+      "reason": "Takes a clear position inside the fold: acquisition can be a research win before findings. Egorov makes the continuation human and specific. Brain sensor is accessible but less distinctive than the underlying experiment choice."
+    },
+    {
+      "name": "Point of view / take",
+      "weight": 0.18,
+      "score": 8.8,
+      "weighted_contribution": 1.584,
+      "reason": "The claim of an earned local research gain survives a useful public-data counterpoint and separates capability from results. The final milestone paragraph still repeats some established meaning."
+    },
+    {
+      "name": "Substance & specificity",
+      "weight": 0.16,
+      "score": 9.0,
+      "weighted_contribution": 1.44,
+      "reason": "Adds the named fund, cognitive-state reading plan, programming with eye movements, and a concrete new-person evaluation condition. These additions materially improve information density without inventing results."
+    },
+    {
+      "name": "Readability & restraint",
+      "weight": 0.12,
+      "score": 8.6,
+      "weighted_contribution": 1.032,
+      "reason": "Clean short paragraphs, generous whitespace, no decorative formatting. The appositive about the activity producing the recording is slightly awkward; the task-context and final milestone lines could still be tighter."
+    },
+    {
+      "name": "Engagement design (CTA + comment-bait)",
+      "weight": 0.12,
+      "score": 8.8,
+      "weighted_contribution": 1.056,
+      "reason": "The final question invites a chosen task tied to the two verified study areas. A reader can answer with an actual research idea rather than generic agreement."
+    },
+    {
+      "name": "Brand voice & accuracy",
+      "weight": 0.12,
+      "score": 9.0,
+      "weighted_contribution": 1.08,
+      "reason": "Alaska-first, warm and analytical. Acquisition and training are actual; both studies remain planned. The held-out-person standard is concrete and explicitly general. Final rendered-video parity is pending, so this is not release clearance."
+    },
+    {
+      "name": "Hashtag craft",
+      "weight": 0.1,
+      "score": 8.5,
+      "weighted_contribution": 0.85,
+      "reason": "Four relevant tail tags connect a broad AI topic, local institution and brand, and the specific EEG subject. Audience-size tiers were not independently verified, so no perfect mix claim is made."
+    }
+  ],
+  "weight_sum": 1.0,
+  "weighted_arithmetic": "8.5*0.20 + 8.8*0.18 + 9.0*0.16 + 8.6*0.12 + 8.8*0.12 + 9.0*0.12 + 8.5*0.10 = 8.742",
+  "weighted_score": 8.742,
+  "score": 8.74,
   "hard_fails": [],
-  "rationale": "Clear position inside the mobile fold, source-safe specifics, correctly qualified award and proposal language, verified FAA and geography boundaries, substantive closing question, and four relevant hashtags."
+  "hard_fail_assessment": {
+    "objective_linter": "PASS",
+    "source_traceability": "PASS: acquisition C1,C2; funding C3; training C4; 19 electrodes C5; planned reading and programming C6,C7; Egorov C8; conditional new-person evaluation C11.",
+    "discernible_point_of_view": "PASS: local collection capacity merits celebration before a reported finding.",
+    "ai_tells_or_generic_thought_leader_filler": "PASS: no disqualifying language. Residual repetition is reflected in the quality scores.",
+    "savior_or_disrespectful_framing": "PASS",
+    "hook_overpromise": "PASS against caption and verified angle. Final video delivery remains pending.",
+    "number_video_parity": "NOT YET ASSESSABLE: current VO and storyboard are September11 Ryan Air artifacts, not this episode. September9 and19 scalp electrodes must appear in the eventual current-run video. No parity violation is established from unrelated prior-run files."
+  },
+  "video_alignment_verified": false,
+  "pending_ship_checks": [
+    "Verify September9 and19 electrodes against the current-run final VO/on-screen video.",
+    "Confirm the final video delivers the hook and the same planned-versus-completed boundary."
+  ],
+  "passes_score_threshold": true,
+  "pass": true,
+  "verdict": "PASS_EDITORIAL_PENDING_VIDEO_PARITY",
+  "release_ready": false,
+  "required_revisions": [],
+  "optional_tightening": [
+    "The final milestone paragraph repeats the capability thesis; it is acceptable but could be leaner."
+  ],
+  "caption_edited": false,
+  "scope_note": "Exact-caption editorial review passes 8.5. This card does not certify absent current-run video parity or authorize publication."
 }

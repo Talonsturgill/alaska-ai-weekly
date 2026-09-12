@@ -1,0 +1,324 @@
+{
+  "role": "ENTHUSIAST",
+  "run_date": "2026-09-12",
+  "title": "The Extra Page",
+  "runtime_s": 120,
+  "stance": "Warm, curious celebration of student research capability",
+  "logline": "A student research notebook grows a recording foldout when UAA acquires an EEG: useful public recordings remain on the desk, while the extra page represents collecting signals during tasks researchers already choose and an answer they still have to earn.",
+  "distinctive_approach": "An expanding paper world, carried by one research notebook, rather than a machine contest or a tour through a headset. The emotional reward is the capacity to make recordings around a chosen task. Students already choose research questions; the equipment adds a collection option. The physical spectacle is a modest desk becoming a spacious research workbench while its existing public-data pages keep working.",
+  "cold_open": {
+    "window_s": [
+      0,
+      3
+    ],
+    "pattern": "in-medias-res",
+    "headline": "UAA CAN RECORD ITS OWN TASKS",
+    "picture": "Frame one is already bright and loaded: a small, thick, copper-tabbed notebook springs open so vigorously that its accordion page gently shoves a shiny schematic EEG headset off the center of the desk. The headset catches against its own curved stand. The notebook, not the gadget, occupies the hero position. The page continues opening by 0.5 seconds; its last folded leaf remains tucked under a visible copper tab marked RESULT?",
+    "meaning": "The acquisition adds capacity to collect EEG signals during researcher-chosen tasks. It does not confer a new right or ability to choose questions. This is an editorial metaphor, not an image of a completed UAA study."
+  },
+  "escalation": [
+    {
+      "beat": 2,
+      "window_s": [
+        3,
+        16
+      ],
+      "development": "The notebook's old pages are substantial and inhabited: public EEG recordings appear as reusable paper strips. Establish that UAA graduate student Vadim Egorov already works with public data. The copper RESULT? leaf stays closed. Plant the primary question: which part of this notebook can a new headset actually fill?"
+    },
+    {
+      "beat": 3,
+      "window_s": [
+        16,
+        30
+      ],
+      "development": "Reveal the real milestone on a solid brass plate: UAA announced its AI and Robotics Lab acquisition September 9th. Name the Wearable Sensing DSI-24 dry EEG and Educational Legacy Fund support. Show a separate TRAINING DEMONSTRATION insert: faculty and students were trained, and Egorov viewed his recorded signals. Pull from the oversized paper world back to a student-scale bench. The notebook gains a recording sheet, not permission to ask a question. Acquisition and training are observed; subsequent study illustrations have PLANNED or ILLUSTRATION labeling."
+    },
+    {
+      "beat": 4,
+      "window_s": [
+        30,
+        44
+      ],
+      "development": "The new recording sheet receives READING and PROGRAMMING task tabs. These are planned studies, with eye-movement research accompanying the programming work; no AI coding assistant appears. A human hand sets an already-chosen task tab beside the headset. Use Egorov's verified quote: “so I’m excited to be able to collect my own data for my own tasks”. The gain is task-specific recording capacity."
+    },
+    {
+      "beat": 5,
+      "window_s": [
+        44,
+        60
+      ],
+      "development": "A brief hardware cutaway distinguishes 19 scalp electrodes, two earclips, and three auxiliary inputs; do not imply all auxiliary inputs have attached sensors. Magnify an illustrative scalp-voltage trace until it becomes a paper ribbon beside the task tab. Research equipment measures electrical activity; a visible gap remains before interpretation. A different-colored participant silhouette is tucked behind the notebook's rear flap, facing away from the main workbench; plant the secondary question, “And who stays outside the practice pile?” The notebook opens its second wing at 60 seconds, becoming a two-sided work surface."
+    },
+    {
+      "beat": 6,
+      "window_s": [
+        60,
+        76
+      ],
+      "development": "Give the public archive the whole stage. In the named scene 'The Library Has a Good Answer', a clearly labeled conceptual research question fits a public-data page; its existing recordings slide directly into a comparison workspace while the new headset rests quietly at the far side. The archive's page opens smoothly and offers reusable material. The narration explicitly concedes that a suitable existing dataset can already support useful research. There is no numeric superiority claim and no fictional UAA result."
+    },
+    {
+      "beat": 7,
+      "window_s": [
+        76,
+        95
+      ],
+      "development": "The public page stays open and useful. A different, researcher-chosen task tab arrives. Do not make it bounce off or fail the archive: the task's fit with available recordings is a question to assess. The notebook gains a second possible recording route from UAA's equipment. At 90 seconds the long-promised RESULT? flap opens: the chosen-task PLAN has a place, the future recording area is explicitly TO COLLECT, and the answer area is still blank, labeled TO TEST. This is the earned answer to what the acquisition actually adds. The notebook has expanded without pretending a finding exists."
+    },
+    {
+      "beat": 8,
+      "window_s": [
+        95,
+        116
+      ],
+      "development": "The notebook rotates into a test spread, carrying both public and planned local pages. At 105 seconds the different-colored participant steps out from behind the flap into a separate TEST position. State the conditional methods principle: if a future model is meant for new people, test it on people absent from training. This is editorial methods context, clearly labeled, never a representation of UAA's announced protocol. The answer space remains honestly open. Return to student-scale hands and the expanded bench."
+    }
+  ],
+  "earned_turn": {
+    "at_s": 90,
+    "description": "The hidden leaf contains room for a test, not a ready-made answer. The archive has already demonstrated its value, so the new page earns admiration through added experimental choice. UAA can prepare collection around tasks its researchers choose alongside public recordings. The film celebrates the beginning of inquiry without making the acquisition sound disappointing or accomplished science sound obsolete.",
+    "drawn_change": "The same notebook becomes broad enough to hold public-data work, a planned chosen-task collection page, and a still-open answer space. Neither input is crowned the winner."
+  },
+  "button": {
+    "window_s": [
+      116,
+      120
+    ],
+    "last_line": "Their own tasks. Their own recordings to make.",
+    "last_image": "The expanded notebook holds the public-data page on one side and the planned local collection page on the other. The student lifts a pencil over the empty next line. A page edge rises toward camera, matching the springing page from frame one. The headset remains within reach, with no triumph lamp or fabricated result.",
+    "loopback": "The final page-lift continues as the opening notebook spring: the end of one question becomes the beginning of another."
+  },
+  "sight_gags": [
+    {
+      "at_s": 0.7,
+      "gag": "The notebook's springy page politely nudges the glamorous headset out of the spotlight; its stand rocks once and settles.",
+      "purpose": "Makes student inquiry the star before narration explains it; the instrument itself performs no impossible action."
+    },
+    {
+      "at_s": 34,
+      "gag": "A READING bookmark attempts to sit decorously in the notebook, then unfolds into an absurdly long page that needs a second little paper support.",
+      "purpose": "Turns an ordinary task choice into expanding visual possibility; length is comic and not a quantified task protocol."
+    },
+    {
+      "at_s": 65,
+      "gag": "The public-data drawer opens with such practiced efficiency that the waiting pencil is already halfway to the desk before the headset finishes one gentle stand wobble.",
+      "purpose": "Gives the countercase warmth and competence. It suggests existing material is ready to examine, without asserting measured time or cost savings."
+    },
+    {
+      "at_s": 105,
+      "gag": "The participant silhouette hidden behind the rear flap finally steps into the test position with a pristine page; the overflowing practice pile cannot hitch a ride.",
+      "purpose": "Pays the second loop through a clear identity split. It represents a conditional validation principle, not a known UAA procedure."
+    }
+  ],
+  "retention_plan": {
+    "act3_test": {
+      "scene_name": "The Library Has a Good Answer",
+      "window_s": [
+        60,
+        95
+      ],
+      "strongest_fair_case_against_angle": "A researcher may already have suitable public EEG recordings for a useful question. Owning another instrument does not make the existing archive inadequate, establish a finding, or guarantee a more credible interpretation. Why celebrate new collection capacity if the needed material is already available?",
+      "full_strength_visual": "For 60-76 seconds the public-data page drives the work by itself and fills the main stage; the new device stays physically idle. Give that route the same rich paper body, lighting and purposeful action as the new equipment. From 76-84 seconds leave its page open while the chosen task enters, so the film must establish added choice without discarding a working alternative. No broken archive, failed fit, empty shelf, loser color, or implication that locally collected data are inherently better.",
+      "how_angle_survives": "At 84-95 seconds the desk gains a complementary path for planned collection around a chosen task. The achievement is an expanded research option; interpretation remains an open task for either data source."
+    },
+    "throughline_object": {
+      "object": "One thick research notebook with a copper RESULT? tab, dog-eared lower corner, and visible stitched spine",
+      "introduced_at_s": 0,
+      "states": [
+        {
+          "at_s": 0,
+          "state": "Compact notebook springs open; public-data pages are present, last leaf remains tucked."
+        },
+        {
+          "at_s": 30,
+          "state": "One upright drafting page with planned-task tabs; same copper tab and dog-ear stay visible."
+        },
+        {
+          "at_s": 60,
+          "state": "Two-wing comparison workbench, public-data page actively in use and planned collection wing waiting."
+        },
+        {
+          "at_s": 95,
+          "state": "Fully opened test spread: public page, chosen-task collection plan and visibly unanswered question; copper tab is now folded back."
+        },
+        {
+          "at_s": 117,
+          "state": "Workbench settles into an open notebook within the student's reach; pencil poised over the next empty line."
+        }
+      ],
+      "lands_in_button": true
+    },
+    "two_loops": [
+      {
+        "id": "primary",
+        "planted_at_s": 10,
+        "promise": "Which part of the notebook can the new headset actually fill? The closed RESULT? leaf makes the question physical.",
+        "withheld_information": "The final leaf's contents and the exact boundary between acquired capability and a future answer.",
+        "paid_at_s": 90,
+        "payoff": "The leaf opens to a chosen-task collection plan with TO COLLECT and TO TEST spaces. The room gained is real; a completed result has not been claimed.",
+        "span_s": 80
+      },
+      {
+        "id": "secondary",
+        "planted_at_s": 48,
+        "promise": "Who stays outside the practice pile? A distinctly colored participant silhouette waits behind the rear flap.",
+        "paid_at_s": 105,
+        "payoff": "The person moves into a separate test position: for a future new-person claim, evaluation needs people absent from training. Label this general methods context.",
+        "span_s": 57,
+        "separation_from_primary_s": 15
+      }
+    ],
+    "act3_padding_test": [
+      {
+        "window_s": [
+          60,
+          68
+        ],
+        "beat": "An existing public-data page is available and useful for a matching conceptual question.",
+        "ninety_second_cut_would_be_worse_because": "Without seeing the archive work, the audience only gets a token concession and could infer that public EEG research is a lesser substitute."
+      },
+      {
+        "window_s": [
+          68,
+          76
+        ],
+        "beat": "Public recordings feed an actual comparison workspace while the new device stays idle; the archive carries the scene.",
+        "ninety_second_cut_would_be_worse_because": "This is the hardest countercase: useful analysis need not wait for new hardware or collection. Cutting it reduces the counterargument to a library label. No result is generated."
+      },
+      {
+        "window_s": [
+          76,
+          84
+        ],
+        "beat": "A chosen-task tab joins the still-open public page; whether available recordings fit that task remains an assessment.",
+        "ninety_second_cut_would_be_worse_because": "Without this coexistence the transition from archive to headset silently claims displacement or superiority. It narrows the thesis to the supported claim of added choice."
+      },
+      {
+        "window_s": [
+          84,
+          90
+        ],
+        "beat": "The notebook opens a planned collection route while the copper RESULT? tab lifts.",
+        "ninety_second_cut_would_be_worse_because": "This resolves the tension between two useful data routes through a physical addition, making the celebration earned after the countercase rather than merely repeated."
+      },
+      {
+        "window_s": [
+          90,
+          95
+        ],
+        "beat": "The hidden leaf reveals TO COLLECT and TO TEST spaces rather than a completed answer.",
+        "ninety_second_cut_would_be_worse_because": "Removing the primary payoff would leave the opening promise unpaid and blur acquired equipment with completed research. The blank answer also motivates the final evaluation scene."
+      }
+    ],
+    "sag_at_80s_defense": "At 80 seconds the film is still deciding how the chosen task joins a public-data route that has just proved useful. The copper flap is lifting and its contents have never been shown. The question is resolving, not being summarized; the second participant loop remains owed until 105 seconds.",
+    "scale_reveals": [
+      {
+        "at_s": 20,
+        "reveal": "Oversized paper world contracts to the real scale of a student's workbench."
+      },
+      {
+        "at_s": 50,
+        "reveal": "An illustrative voltage line expands into a paper ribbon beside the task that generated it, with no inferred answer."
+      },
+      {
+        "at_s": 92,
+        "reveal": "The formerly compact notebook unfolds into the full research workbench, holding both data routes and the unanswered test."
+      }
+    ]
+  },
+  "feasibility": {
+    "existing_assets": [
+      "Sheet and PaperFiber for notebook pages with material body",
+      "DocumentFlip and documentFlip for weighted page reveals",
+      "GripHand and Character for human choices and conditional participant markers",
+      "BrassPlate for sourced acquisition/training facts",
+      "EvidenceTrace for clearly illustrative voltage recordings",
+      "EvidenceState and Unnamed for planned collection and unanswered research targets",
+      "MeasurementField for the compact bench setting"
+    ],
+    "one_real_asset_gap": "A recognizable faceless dry EEG headset on a stand. Build only the schematic hardware needed to identify the acquisition; do not reuse a satellite eye or clinical diagnostic device. If nineteen scalp electrodes are drawn literally, count all nineteen.",
+    "craft_direction": "Warm paper white, deep ink-blue shadows, copper hinges and a restrained UAA-adjacent green accent on chosen-task tabs; no generic aurora scenery. Paper thickness, curled corners, stitched spine and hinged tabs carry the three shape tiers. Scale changes and material transitions carry wonder; no confetti implies a scientific result.",
+    "delivery_scope": "Treatment only; no scene code or storyboard written."
+  },
+  "fact_boundaries": [
+    "Students already choose questions and tasks. Never imply that the acquisition grants research authority or first makes question selection possible; it adds own-task EEG collection capacity.",
+    "Source C1/C2/C4: September 9 announcement, DSI-24 acquisition and documented training are the actual milestone.",
+    "Source C8/Q1: Egorov uses public EEG datasets and anticipates data collection for his own tasks. Use only the verified 15-word quote.",
+    "Source C6/C7: Reading and programming remain planned studies in narration and picture; no AI-assisted coding condition is invented.",
+    "A schematic EEG records scalp voltages; it does not reveal thoughts, comprehension, diagnoses or intentions.",
+    "No completed UAA dataset, accuracy rate, participant count, or successful model appears.",
+    "Source C11 and O8: Held-out-person testing is conditional editorial methods context, never an allegation about UAA's protocol.",
+    "Public-data efficiency and notebook scenes are conceptual illustrations, not a claimed UAA experiment or measured performance comparison."
+  ],
+  "vo_note": "No full VO supplied. If developed, keep the current 200-220-word band. The sourced fact payload provides seventeen supported information units, with technical details consolidated in one legible cutaway. Preserve visual breathing room and avoid counting paraphrases as new facts in the downstream gate.",
+  "sourced_fact_payload": [
+    {
+      "point": "Announcement dated September 9, 2026",
+      "claim_id": "C1"
+    },
+    {
+      "point": "AI and Robotics Lab at UAA owns the acquisition",
+      "claim_id": "C2"
+    },
+    {
+      "point": "Wearable Sensing is the manufacturer",
+      "claim_id": "C2"
+    },
+    {
+      "point": "The acquired model is DSI-24",
+      "claim_id": "C2"
+    },
+    {
+      "point": "The instrument is dry EEG",
+      "claim_id": "C2"
+    },
+    {
+      "point": "Educational Legacy Fund funded the instrument",
+      "claim_id": "C3"
+    },
+    {
+      "point": "Faculty and students received equipment training",
+      "claim_id": "C4"
+    },
+    {
+      "point": "Egorov viewed his recorded signals in the demonstration",
+      "claim_id": "C4"
+    },
+    {
+      "point": "Nineteen scalp electrodes record electrical activity",
+      "claim_id": "C5"
+    },
+    {
+      "point": "Two earclips are provided",
+      "claim_id": "C5"
+    },
+    {
+      "point": "Three auxiliary inputs are distinct from attached sensors",
+      "claim_id": "C5"
+    },
+    {
+      "point": "Reading-task research is planned",
+      "claim_id": "C6"
+    },
+    {
+      "point": "Programming-task and eye-movement research is planned",
+      "claim_id": "C7"
+    },
+    {
+      "point": "Egorov already uses public EEG datasets",
+      "claim_id": "C8"
+    },
+    {
+      "point": "Egorov anticipates collection for his own tasks",
+      "claim_id": "C8"
+    },
+    {
+      "point": "The manufacturer classifies it as research, not diagnostic, equipment",
+      "claim_id": "C10"
+    },
+    {
+      "point": "New-person model claims require evaluation that excludes test people from training",
+      "claim_id": "C11"
+    }
+  ]
+}

@@ -1,6 +1,37 @@
 {
-  "gate": "0B-0C",
+  "divergence": {
+    "score": 8,
+    "verdict_vs_last_2": "Compared with shipped beat maps at e3dce2a (September 11) and e3dce2a^ (September 10): this is a paper research workspace that opens laterally into two useful routes. The prior film holds a medicine crate at a rolled-up road and rejects the wrong proof ticket; the glacier film descends from a moving landform into an empty borehole. Notebook hinges, contact cutaway, archive shelves and task desks change the camera-subject relationship, location of evidence and dominant action. Lilac daylight also differs materially from cream/spruce aviation and charcoal/alpenglow terrain.",
+    "muted_back_to_back": "Different films in concept and scene vocabulary, despite the shared device of an object carrying evidence toward a future test. Current film celebrates added experimental capacity; it does not replay the stationary crate awaiting authorization.",
+    "relabel_risk": "none"
+  },
+  "silent_first": {
+    "score": 8,
+    "carries_muted": true,
+    "weakest_beat": "Beat 27, 80.00–83.49, remains the most demanding stretch because assessing Task B has no fit verdict. It now advances visibly: inventory tabs pivot toward B, the optional leaf enters, and beat 28 makes a pencil selection while Task A analysis continues. That is a new choice rather than a repeat of Task A selection. The notebook spine, coral corner and waiting marker now have explicit positions through the intervening scenes."
+  },
+  "shot_structure": {
+    "score": 8,
+    "n_shots": 14,
+    "is_oner": false,
+    "zoom_fakes": [],
+    "worlds_change": "The macro contact becomes an occupied laboratory; its announcement page becomes an overhead source desk; the stand rim matches into a scalp/contact cutaway; the stitched paper edge matches into an archive; reading, programming, archive wall, analysis desk and methods inset each replace the working space. The expanded notebook adds physical width and displaces surrounding objects for the remaining scenes. These are new compositions connected by a persistent object, not crops of a single canvas.",
+    "transitions_meaningful": "All fourteen shots now specify concrete entry/exit states, focus handoffs and transition anchors. The former ambiguous 2–3 cut carries a physical announcement page from the room into an overhead document surface; 12–13 folds the general diagram into a separate labeled notebook pocket and brings UAA plans forward. Camera travel now follows the active contact, hand, recording or hinge instead of merely naming two camera presets. Final merge corrections are verified: shot 4 uses the actual stand rim, shot 5 carries notebook paper identity rather than turning the demonstration trace into public data, and the programming-paper support uses ribbons rather than an implied live cable.",
+    "notes": "The prior blocking choreography findings are resolved. Each beat has a named physical response: pocket lips bow around entering sheets, a stand pad compresses, holders receive tabs, a page pulls its hinge, and pencil removal releases a corner. Ambient motion has named peripheral locations. People now perform equipment handling, a joint training demonstration, observation, source selection, task assessment, plan attachment and the final pencil lift. No person is assigned only an idle presence. Hero detail notes now identify distinct contact, paper, stand, holder and hand tiers rather than repeating one generic list. Revised scene directions are sufficient to author; this is storyboard approval, not rendered continuity proof."
+  },
+  "retention": {
+    "score": 8,
+    "notes": "The three required repairs land. The opening now shows one contact beside the already-open notebook; the complete nineteen-contact array first appears at 25.35 with a recording connection, providing an actual mechanism rehook. Reveal landings and quiet holds are specified before secondary movement. The notebook evolves from compact public page to upright recording support, useful archive workspace, expanded dual-route spread and final student-scale question. Primary NEXT STEP loop is planted at 2.53 and paid at 85.63; the distinct notched person is planted at 45.63 and paid at 102.02, 16.39 seconds later. Act 3 tests the additive thesis by letting matching Task A public data perform analysis before Task B optional collection is selected. At 80 seconds the inventory assessment is still the weakest stretch, but the moving A analysis, B assessment and visible pencil choice now provide three consecutive state changes. The 85.63-second expansion permanently changes the world. Late beat 37 now rearranges the plans and places the pencil for the ending instead of holding a disclaimer. The final lifted page and softened opening paper sound rhyme with frame one. No named world-class touchstones are claimed; approval rests on the specific staging, not an asserted reference. The final atmosphere_and_holds directive explicitly freezes camera, ambient loops and secondary actors through each recognition hold, then resumes secondary motion at the scheduled time."
+  },
+  "fit_honesty": {
+    "score": 9,
+    "notes": "The celebratory additive-choice angle remains earned. Task A and B are clearly GENERAL EXAMPLE, and B does not receive a fabricated failed-fit or missing-public-data verdict. Optional collection adds capacity while public analysis stays active. The reading/programming pages remain PLANNED and unfilled, signals remain schematic, and separate eye-movement planning does not imply headset-alone eye tracking. The same held-out-person example remains conditional and distinct from UAA protocols or results. Anonymous illustrated people represent reported training and observation without claiming exact likeness. Lilac daylight and warm paper fit the open research opportunity."
+  },
+  "top_3_fixes": [
+    "No further blocking paper revision. In implementation, preserve the revised Task A/B choreography exactly: A stays visibly active, B inventory assessment receives no invented failure verdict, and the pencil selects OPTIONAL COLLECTION before the wing opens.",
+    "Preserve the planned reveal holds and visual priority: peripheral tabs, straps and ribbons stay subordinate while the full contact array, archive wall and new wing land. Avoid letting the newly detailed ambient directions become competing focal actions.",
+    "Preserve continuity in the authored scenes: the full counted contact array first becomes legible at 25.35; the same stitched spine/coral tab remains visible through cutaways; the notched participant stays outside TRAINING until its separate TEST arrival; the expanded width and displaced fixtures survive the ending."
+  ],
   "ship": true,
-  "hard_blockers": [],
-  "review": "Independent regrade confirmed aligned reveals and throughline states, separate loop payoffs, complete must-ship claims, bounded proposal language, measurable Act 3 criteria, and physical events in every beat."
+  "one_sentence_fix": "The required paper revisions are resolved; author the concrete causal staging while preserving the active public-data route and the two separated payoffs."
 }

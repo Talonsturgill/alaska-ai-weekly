@@ -1,105 +1,1463 @@
 {
-  "run_date": "2026-09-11",
-  "slug": "dispatch-2026-09-11-over-the-missing-road",
-  "title": "Over the Missing Road",
+  "run_date": "2026-09-12",
+  "slug": "dispatch-2026-09-12-the-question-comes-first",
+  "title": "The Question Comes First",
   "total_seconds": 120,
-  "concept": "One insulated medicine crate rides a projected award through a working Alaska aviation network, then splits the proposal into cargo and passenger proof tracks before stopping at the first route the public record has not yet named.",
+  "concept": "One stitched notebook expands to hold a new own-task EEG recording option beside useful public data. Its concealed NEXT STEP wing reveals collection and test space, not an invented research result.",
   "derived_from": "scratch",
   "engine": "infographic-2.5d",
-  "palette": "warm clinic cream spruce green berry red proof gold hopeful morning",
+  "palette": "warm lilac daylight ivory paper citron tasks coral tabs deep violet ink",
   "fingerprint": {
-    "pov": "eye-level-immersive",
-    "motion_vector": "horizontal-traverse",
-    "hero_treatment": "instrument-as-subject",
-    "layout": "stacked-layers",
-    "register": "tactile-collage",
-    "camera_strategy": "track-follow",
-    "light_story": "overcast-diffuse",
-    "palette": "warm clinic cream spruce green berry red proof gold hopeful morning",
-    "metaphor": "one medicine crate carrying two separate proof tickets over the missing road"
-  },
-  "angle": {
-    "thesis": "One preliminary award contains two tests, and Alaska should not confuse autonomous pharmaceutical cargo with a separate passenger and provider eVTOL proposal.",
-    "supporting_facts": ["Projected preliminary award of $4,171,115", "Autonomous modifies cargo drones only", "No aircraft, route, approval, community agreement or completed flight is named"],
-    "fair_counterpoint": "Existing Alaska aviation already moves medicine and people, so new aircraft must earn a useful place inside that network.",
-    "runner_up_angles": ["A geography mismatch investigation was too thin", "A pure celebration outran the record", "An air-taxi future story misused the autonomy claim"]
+    "pov": "exploded-diagram",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "data-as-subject",
+    "layout": "fullbleed-split",
+    "register": "editorial-schematic",
+    "camera_strategy": "orbit-reveal",
+    "light_story": "noon-hard",
+    "palette": "warm lilac daylight ivory paper citron tasks coral tabs deep violet ink",
+    "metaphor": "a research notebook gains an extra collection-and-test wing without closing its public-data pages"
   },
   "treatment": {
-    "winner": "dramatist",
-    "reasoning": "The medicine cooler creates the strongest human-scale throughline and a cautiously hopeful emotional arc while keeping the proof burden visible.",
-    "grafts": ["road rolls off the map", "five evidence lights mount on the crate", "cargo ticket receives a WRONG TEST punch at the passenger gate"]
+    "winner": "enthusiast",
+    "reasoning": "Independent four-pitch scorer chose The Extra Page at8.62 after all four retention challenges. The notebook transforms coherently at every act boundary and gives public data a working countercase.",
+    "grafts": [
+      "Courteous public-data page shuffle, with generous late callback",
+      "Exactly nineteen contact hardware cutaway"
+    ],
+    "omitted_graft": "August workshop insert omitted to avoid implying its dataset and to keep current planned applications legible",
+    "mandatory_corrections_implemented": [
+      "NEXT STEP, not a promised result",
+      "Own-task collection capability, not granted research authority",
+      "Public-data selection and conceptual analysis precede optional collection",
+      "Conditional example label is present at participant plant",
+      "PLANNED always stays on both study pages",
+      "Question CTA"
+    ]
+  },
+  "angle": {
+    "thesis": "UAA adds own-task EEG recording capacity alongside useful public datasets",
+    "fair_counterpoint": "Existing recordings can already support the question. Acquiring hardware doesn't establish an interpretation."
   },
   "hook": {
     "pattern": "in-medias-res",
-    "frame1": "A bright white medicine crate sits on the last plank of a spruce road as the roadway begins rolling away beneath it.",
-    "headline": "OVER THE MISSING ROAD",
-    "motion_by_s": 0.6,
-    "loopback": "The same crate and rolled road return, but the blank destination tag remains unresolved."
+    "frame1": "One large scalp contact beside a fully drawn stitched notebook. A public-data page is already open and its coral NEXT STEP leaf remains concealed. The large label says19 SCALP ELECTRODES; the full hardware array is withheld for the later mechanism cutaway.",
+    "headline": "THE QUESTION COMES FIRST",
+    "motion_by_s": 0.4,
+    "loopback": "The final lifted question-page edge continues into the opening spring."
   },
-  "audio_arc": {"build_steps": 4, "dip_at": 95, "riser_at": 103, "silence_at": 115, "payoff_at": 119, "button_pattern": "callback"},
-  "divergence_note": "The September 10th film descended through a charcoal mountain cutaway with radar magenta and glacial cyan. September 6th lived in a dark marine blueprint around a hexagonal compute pod. This piece travels horizontally with a warm white medicine crate through cream paper, spruce terrain and plum proof gates, changing stages from road edge to award table to route map to a two-lane approval hall.",
-  "open_loop": {"plant_t": 9, "pay_t": 108.5, "what": "What does one medicine crate have to prove before the missing road becomes a dependable route?"},
-  "open_loop_2": {"plant_t": 42.5, "pay_t": 82.5, "what": "Would a successful cargo test also prove passenger eVTOL?"},
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 114.78999999999999,
+    "riser_at": 84.83,
+    "silence_at": 115.08999999999999,
+    "payoff_at": 115.89,
+    "button_pattern": "question"
+  },
+  "divergence_note": "September11 traveled horizontally with a medicine crate over a spruce road and through proof gates. September10 descended through a dark glacier cutaway. This episode moves between an intimate lab, an overhead contact array, reading and programming desks, archive shelves and an expanding notebook. Lilac daylight, coral tabs and citron planning marks replace both recent palettes. The warm argument adds usable workspace instead of accumulating blank approval gates.",
+  "open_loop": {
+    "plant_t": 2,
+    "pay_t": 85.63,
+    "what": "What extra work belongs on the notebook's concealed NEXT STEP wing? It reveals an additional planned collection-and-test workspace beside active public data."
+  },
+  "open_loop_2": {
+    "plant_t": 45.63,
+    "pay_t": 102.02,
+    "what": "Who could a future answer work for? A distinct hypothetical participant remains outside training until their page enters a separate new-person test."
+  },
   "throughline": {
-    "object": "one white FlightCrate",
+    "object": "one Sheet research notebook with coral NEXT STEP tab, stitched spine and dog-ear",
     "states": [
-      {"at_s": 2.5, "state": "sealed at the rolled road edge with no destination"},
-      {"at_s": 31, "state": "stands beside the working-network map while a conventional plane crosses behind it"},
-      {"at_s": 62, "state": "stands between the two conflicting official geography cards"},
-      {"at_s": 95, "state": "carries five outlined evidence lights with none presented as complete"},
-      {"at_s": 112.5, "state": "returns to the road edge with its destination tag still blank"}
+      {
+        "at_s": 0,
+        "state": "Compact notebook with existing public page and hidden next wing"
+      },
+      {
+        "at_s": 30,
+        "state": "Upright recording page supports the contact-to-trace demonstration; stitched spine and coral tab remain visible at x180/y1160, NEXT STEP concealed"
+      },
+      {
+        "at_s": 65.2,
+        "state": "PUBLIC DATA wing opens into useful source selection; notebook lower-center retains its coral corner and the distinct waiting participant remains in a labeled rear tab"
+      },
+      {
+        "at_s": 85.63,
+        "state": "NEXT STEP opens into TO COLLECT and TO TEST space alongside the working public page"
+      },
+      {
+        "at_s": 115.49,
+        "state": "Expanded notebook returns to student scale with pencil ready for the next question"
+      }
     ],
-    "lands_in_button": "The future remains physically inside the unopened crate until one route is named and proved."
+    "lands_in_button": "Both routes remain open while the next question line waits for the student's pencil."
   },
   "reveals": [
-    {"t": 30, "type": "scale-pullback", "what": "One company claim pulls back into 24 aircraft, eight hubs and more than 70 villages", "hold_s": 0.6},
-    {"t": 69, "type": "morph-to-chart", "what": "The geography cards fold into separate cargo and passenger proof structures", "hold_s": 0.7},
-    {"t": 109, "type": "build-on", "what": "Five outlined proof lights collapse into one blank route tag", "hold_s": 0.7}
+    {
+      "t": 25.35,
+      "type": "scale-pullback",
+      "what": "One contact separates into the complete nineteen-contact array and its schematic recording connection, new information beyond the opening count",
+      "hold_s": 0.6,
+      "telegraph": "At24.7 camera tightens to one contact; the other ribs remain occluded behind it.",
+      "landing_at_s": 26.05,
+      "hold_until_s": 26.65,
+      "secondary_at_s": 27.0
+    },
+    {
+      "t": 65.92,
+      "type": "build-on",
+      "what": "A single page pulls away to expose the full useful archive and its available-recording tray",
+      "hold_s": 0.6,
+      "telegraph": "At65.4 the planned page lifts like a shutter before the shelf wall is visible.",
+      "landing_at_s": 66.55,
+      "hold_until_s": 67.15,
+      "secondary_at_s": 67.5
+    },
+    {
+      "t": 85.63,
+      "type": "build-on",
+      "what": "A notebook gains a collection-and-test wing beside its still-active public page, displacing surrounding props for the remaining scenes",
+      "hold_s": 0.7,
+      "telegraph": "Hinge rises at83.49 while stationery clears the target space.",
+      "landing_at_s": 86.35,
+      "hold_until_s": 87.05,
+      "secondary_at_s": 87.5
+    }
   ],
   "beats": [
-    {"id":1,"t":"0.0-1.0","vo":"Four million","shows":"A white FlightCrate drops onto the final road plank","sfx":"heavy crate thump","means":"The human-scale object arrives before the technology","rehook":"","draw":{"subject":"FlightCrate","action":"drops and compresses its shadow","emotion":"steady","annotation":"$4 MILLION AIMED HERE"},"choreo":{"primary":"crate lands with spring settle","reaction":"road plank bows","ambient":"paper fibers drift"}},
-    {"id":2,"t":"1.0-2.5","vo":"where the road disappears","shows":"The road rolls itself away like a carpet","sfx":"timber roll rattle","means":"Roadless is visible","rehook":"","draw":{"subject":"road","action":"rolls away from the crate","emotion":"matter-of-fact","annotation":"ROAD ENDS"},"choreo":{"primary":"road curls off frame","reaction":"crate leans then rights itself","ambient":"spruce silhouettes sway"}},
-    {"id":3,"t":"2.5-5.5","vo":"Alaska lists Ryan Air","shows":"An award sheet rises behind the crate with Ryan Air in one row","sfx":"paper rise flap","means":"Name the actor and source","rehook":"","draw":{"subject":"award sheet","action":"slides under the crate","emotion":"official","annotation":"ALASKA DOH · RYAN AIR"},"choreo":{"primary":"sheet lifts into frame","reaction":"crate destination tag flips","ambient":"ink registration ticks"}},
-    {"id":4,"t":"5.5-9.0","vo":"projected preliminary award","shows":"PROJECTED and PRELIMINARY stamps land separately","sfx":"double rubber stamp","means":"Funding is not final","rehook":"","draw":{"subject":"award card","action":"takes two berry-red stamps","emotion":"qualified","annotation":"PROJECTED · PRELIMINARY"},"choreo":{"primary":"stamps anticipate and strike","reaction":"paper flexes","ambient":"small dust stars pop"}},
-    {"id":5,"t":"9.0-13.0","vo":"four million one hundred seventy one thousand one hundred fifteen dollars","shows":"The exact amount counts up on the sheet while the crate remains foreground","sfx":"mechanical counter clicks","means":"State the verified scale","rehook":"What does this amount have to prove?","draw":{"subject":"award amount","action":"counts to $4,171,115","emotion":"impressive but provisional","annotation":"$4,171,115"},"choreo":{"primary":"digits roll and lock","reaction":"PRELIMINARY stamp holds as wheel chock","ambient":"neutral tally ticks settle"}},
-    {"id":6,"t":"13.0-17.0","vo":"autonomous cargo drones","shows":"A compact cargo drone shadow lifts the crate only one inch","sfx":"rotor spool","means":"Autonomy belongs to cargo","rehook":"","draw":{"subject":"cargo drone and crate","action":"attempt a measured lift","emotion":"focused","annotation":"AUTONOMOUS · CARGO"},"choreo":{"primary":"rotors spool with anticipation","reaction":"crate seal trembles","ambient":"route dots wake"}},
-    {"id":7,"t":"17.0-22.0","vo":"electric vertical takeoff and landing aircraft","shows":"A separate passenger aircraft card rises in another lane","sfx":"card rail clack","means":"eVTOL is distinct","rehook":"","draw":{"subject":"passenger aircraft card","action":"slides onto its own track","emotion":"waiting","annotation":"EVTOL · PATIENTS + PROVIDERS PROPOSED"},"choreo":{"primary":"card lifts and settles","reaction":"cargo lane shifts left","ambient":"divider line grows"}},
-    {"id":8,"t":"22.0-25.0","vo":"Those are not the same test","shows":"A hard divider slams between the two lanes","sfx":"gate slam","means":"One award contains two proof burdens","rehook":"","draw":{"subject":"proof divider","action":"splits cargo from people","emotion":"decisive","annotation":"SAME AWARD · DIFFERENT PROOF"},"choreo":{"primary":"divider drops with overshoot","reaction":"both cards recoil","ambient":"plum divider bolts settle"}},
-    {"id":9,"t":"25.0-30.0","vo":"Ryan Air says it serves more than seventy villages","shows":"A BushPlane crosses behind the stationary proposed crate and a sparse network of village pins","sfx":"propeller pass","means":"This extends an existing network without depicting an unproved medicine flight","rehook":"The future is joining a working system, not inventing one","draw":{"subject":"BushPlane and stationary FlightCrate","action":"plane crosses behind the crate and village pins","emotion":"experienced","annotation":"RYAN AIR SAYS · 70+ VILLAGES"},"choreo":{"primary":"plane traverses behind the stationary crate","reaction":"pins light in sequence","ambient":"overcast layers parallax"}},
-    {"id":10,"t":"30.0-34.0","vo":"so the test would extend an aviation network","shows":"The camera reveals 24 aircraft tokens orbiting eight hub rings","sfx":"map pin cascade","means":"Company-attributed operating scale","rehook":"","draw":{"subject":"network map","action":"builds 24 aircraft around eight hubs","emotion":"busy","annotation":"24 AIRCRAFT · 8 HUBS · COMPANY FIGURES"},"choreo":{"primary":"tokens assemble from center","reaction":"hub rings pulse","ambient":"route ribbon keeps moving"}},
-    {"id":11,"t":"34.0-38.5","vo":"First comes one medicine box","shows":"Macro closeup on the medicine crate and untouched tamper seal","sfx":"crate latch click","means":"Reduce the experiment to one observable object","rehook":"","draw":{"subject":"FlightCrate gauge","action":"holds its proposed-state tag while the seal stays shut","emotion":"watchful","annotation":"FIRST · ONE MEDICINE BOX"},"choreo":{"primary":"gauge needle wakes","reaction":"seal tab flutters","ambient":"paper fibers drift"}},
-    {"id":12,"t":"38.5-42.5","vo":"Can an authorized route deliver it on time","shows":"ROUTE and AUTHORIZATION proof lights appear as empty outlines","sfx":"two lamp ticks","means":"Plant measurable cargo conditions","rehook":"","draw":{"subject":"FlightCrate proof rail","action":"presents two unlit evidence lamps","emotion":"questioning","annotation":"ROUTE · AUTHORIZATION · NOT YET PROVED"},"choreo":{"primary":"outlined lamps spring into place","reaction":"gauge needle steadies","ambient":"clock hand advances"}},
-    {"id":13,"t":"42.5-47.5","vo":"inside Alaska weather","shows":"A snow squall pushes the dotted route sideways while the crate stays at origin and a passenger ticket appears behind it","sfx":"wind gust","means":"Weather is part of the cargo test and plants the separate passenger question","rehook":"Would cargo evidence also prove a passenger flight?","draw":{"subject":"route ribbon and passenger ticket","action":"bend under snow while remaining on separate tracks","emotion":"strained","annotation":"WEATHER PERFORMANCE · PEOPLE NEED SEPARATE PROOF"},"choreo":{"primary":"route bows against gust","reaction":"passenger ticket lifts behind the crate","ambient":"snow grains streak"}},
-    {"id":14,"t":"47.5-51.5","vo":"The notice documents no aircraft purchase or F A A approval","shows":"PURCHASE and FAA APPROVAL fields remain blank","sfx":"two empty form taps","means":"No acquisition or approval milestone is documented in the cited notice","rehook":"","draw":{"subject":"award form","action":"opens empty PURCHASE and FAA APPROVAL fields","emotion":"incomplete","annotation":"NO PURCHASE · NO FAA APPROVAL DOCUMENTED"},"choreo":{"primary":"fields unfold","reaction":"pencil hovers then stops","ambient":"paper corner lifts"}},
-    {"id":15,"t":"51.5-56.0","vo":"route or completed flight","shows":"Two more blank fields stack behind the crate","sfx":"two paper knocks","means":"Proposal is not deployment","rehook":"","draw":{"subject":"blank evidence cards","action":"stack without receiving marks","emotion":"unresolved","annotation":"NO ROUTE · NO COMPLETED FLIGHT DOCUMENTED"},"choreo":{"primary":"cards land one by one","reaction":"crate remains labeled PROPOSED","ambient":"shadows deepen"}},
-    {"id":16,"t":"56.0-60.0","vo":"the map itself is unsettled","shows":"A destination board flips between two official field groupings","sfx":"departure board flip","means":"Route details remain preliminary","rehook":"The destination changes before the aircraft moves","draw":{"subject":"destination board","action":"flips and cannot settle","emotion":"dizzy","annotation":"ROUTE DETAILS UNSETTLED"},"choreo":{"primary":"tiles flip at staggered speed","reaction":"crate destination tag stays blank","ambient":"route dots fade"}},
-    {"id":17,"t":"60.0-65.0","vo":"summary names Bethel and Dillingham","shows":"One cream card presents the narrative geography","sfx":"card deal","means":"State the first official field","rehook":"","draw":{"subject":"summary card","action":"slides left of the crate","emotion":"plain","annotation":"SUMMARY · BETHEL + DILLINGHAM"},"choreo":{"primary":"card deals into place","reaction":"crate turns slightly toward it","ambient":"small map pins pulse"}},
-    {"id":18,"t":"65.0-69.0","vo":"a separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk","shows":"A second card rises with the different service-area list","sfx":"long paper ratchet","means":"Do not reconcile the source inconsistency","rehook":"","draw":{"subject":"service-area card","action":"extends taller than the summary card","emotion":"formal","annotation":"SEPARATE FIELD · DIFFERENT LIST"},"choreo":{"primary":"card telescopes upward","reaction":"first card tilts to compare","ambient":"Dillingham pin links both"}},
-    {"id":19,"t":"69.0-73.5","vo":"Then the second ladder gets steeper","shows":"The map cards fold into a tall passenger approval ladder","sfx":"paper ladder unfold","means":"Shift from route ambiguity to the people-moving burden","rehook":"","draw":{"subject":"passenger proof ladder","action":"unfolds above the cargo lane","emotion":"serious","annotation":"PEOPLE · SEPARATE HIGHER BAR"},"choreo":{"primary":"ladder builds with weighted steps","reaction":"cargo drone remains lower","ambient":"cream world darkens toward plum"}},
-    {"id":20,"t":"73.8-77.5","vo":"only the cargo drones autonomous","shows":"The word AUTONOMOUS locks magnetically to the cargo lane","sfx":"magnetic lock snap","means":"Keep the grammar exact","rehook":"","draw":{"subject":"AUTONOMOUS word tile","action":"snaps to CARGO and refuses the passenger lane","emotion":"precise","annotation":"AUTONOMOUS → CARGO DRONES"},"choreo":{"primary":"word tile arcs left and locks","reaction":"passenger card stays unmarked","ambient":"divider glows plum"}},
-    {"id":21,"t":"77.5-82.5","vo":"Passenger electric aircraft need their own aircraft and pilot approvals","shows":"AIRCRAFT and PILOT gates rise under an empty passenger seat","sfx":"two gate lifts","means":"Begin the passenger proof test","rehook":"","draw":{"subject":"empty passenger seat","action":"waits behind two approval gates","emotion":"patient","annotation":"AIRCRAFT · PILOT"},"choreo":{"primary":"gates rise at different speeds","reaction":"seatbelt clicks around the checklist","ambient":"gold rim stays off"}},
-    {"id":22,"t":"82.5-86.5","vo":"and operating approvals","shows":"The cargo ticket reaches the shelf Gate in the passenger lane and receives a berry WRONG TEST mark","sfx":"ticket punch clack","means":"Cargo evidence cannot certify a people-moving claim","rehook":"","draw":{"subject":"Gate and cargo evidence ticket","action":"inspect the ticket and return it","emotion":"precise","annotation":"WRONG TEST · OPERATION"},"choreo":{"primary":"Gate arm drops as the ticket is punched","reaction":"ticket springs back to cargo","ambient":"passenger seat remains still"}},
-    {"id":23,"t":"86.5-91.0","vo":"Budget finalization is in progress","shows":"A BUDGET FINALIZATION strip rolls across the preliminary award sheet","sfx":"paper strip ratchet","means":"State the official program caveat","rehook":"The amount itself is still moving","draw":{"subject":"award sheet and FlightCrate","action":"budget strip rolls across the sheet while the crate stays still","emotion":"qualified","annotation":"BUDGET FINALIZATION IN PROGRESS"},"choreo":{"primary":"strip rolls and stops short of the total","reaction":"crate destination tag stays blank","ambient":"warm key returns"}},
-    {"id":24,"t":"91.0-95.0","vo":"projected amounts may change","shows":"The amount rollers unlock and shift by one neutral tick","sfx":"counter unlock click","means":"Keep the award amount explicitly provisional","rehook":"","draw":{"subject":"award amount","action":"rollers unlock without settling on a new number","emotion":"provisional","annotation":"PROJECTED AMOUNTS MAY CHANGE"},"choreo":{"primary":"digits loosen then hold","reaction":"PRELIMINARY stamp remains visible","ambient":"graphite outlines breathe"}},
-    {"id":25,"t":"95.0-100.0","vo":"this award matters because the proposal describes gaps","shows":"A medicine shelf and an empty transport seat recede on opposite sides of the missing road","sfx":"shelf rail retreat","means":"Attribute the access problem to the applicant without inventing a measured statewide finding","rehook":"A useful result needs named proof","draw":{"subject":"medicine shelf and empty transport seat","action":"recede from the road edge on separate rails","emotion":"underserved","annotation":"APPLICANT DESCRIPTION · ACCESS + TRANSPORT GAPS"},"choreo":{"primary":"shelf and seat slide apart","reaction":"FlightCrate holds at center","ambient":"plum distance line stretches"}},
-    {"id":26,"t":"100.0-104.0","vo":"in medicine access and transport","shows":"Five neutral outlined evidence lights mount directly on the crate","sfx":"five relay ticks","means":"Turn the stated gap toward an accountable test","rehook":"Five proof lights appear and the film finally names the test","draw":{"subject":"FlightCrate evidence rail","action":"builds five unfilled lamps","emotion":"ready","annotation":"ROUTE · AUTHORITY · REPEAT · CLINIC · ARRIVAL"},"choreo":{"primary":"lamps spring in with evidenceLatch","reaction":"none fill solid","ambient":"graphite outlines breathe"}},
-    {"id":27,"t":"104.0-108.5","vo":"a first test needs a named route, F A A certification and operating authorization","shows":"Three gate arms descend beside the crate and each stops open before one blank route","sfx":"three gate arm drops","means":"Pay the primary loop with an observable future test","rehook":"","draw":{"subject":"FlightCrate and three proof gates","action":"gate arms descend but stop open beside one blank route","emotion":"accountable hope","annotation":"FAA CERTIFICATION + OPERATING AUTHORIZATION · NO RESULT YET"},"choreo":{"primary":"three gate arms drop with evidenceLatch then stop open","reaction":"all lamps remain unfilled","ambient":"clock waits at zero"}},
-    {"id":28,"t":"108.5-112.5","vo":"the proposal matters when medicine moves on that authorized route","shows":"The outlined criteria collapse into one blank destination tag and an unchecked route","sfx":"proof lights fold","means":"Name the cargo finish line conditionally","rehook":"","draw":{"subject":"FlightCrate destination tag","action":"absorbs the criteria but stays blank","emotion":"waiting","annotation":"NAME THE FIRST ROUTE"},"choreo":{"primary":"neutral lights fold into tag tabs","reaction":"route remains unchecked","ambient":"music dips"}},
-    {"id":29,"t":"112.5-117.5","vo":"Until that box lands","shows":"The world falls silent as the still-unmoved crate returns to the rolled road edge","sfx":"wind drops out","means":"No completed flight is shown","rehook":"","draw":{"subject":"FlightCrate","action":"remains on its starting plank through a match cut","emotion":"patient","annotation":"UNTIL THE BOX LANDS"},"choreo":{"primary":"background matches back to the opening road","reaction":"blank tag swings once","ambient":"wind drops to silence"}},
-    {"id":30,"t":"117.5-120.0","vo":"the future is still in the crate","shows":"The lid remains closed while the blank route tag rests against its cool pale face","sfx":"cooler latch hold","means":"Loop to frame one with the proof unresolved","rehook":"","draw":{"subject":"FlightCrate","action":"holds the future unopened","emotion":"hopeful restraint","annotation":"FUTURE · STILL IN THE CRATE"},"choreo":{"primary":"cream rim rises then holds","reaction":"road roll stops","ambient":"one paper fiber crosses frame"}}
+    {
+      "id": 1,
+      "at_s": 0,
+      "t": "0.00-1.13",
+      "vo_line": 0,
+      "offset": 0,
+      "vo": "Nineteen scalp electrodes. What's on the next page?",
+      "shows": "Stitched notebook springs open beside a macro schematic of one fixed EEG scalp contact, keeping the complete contact array outside the opening view",
+      "sfx": "Dry paper fan as the notebook leaf opens, followed by one soft cover-on-desk tap when it lands; the contact schematic itself makes no recording beep.",
+      "means": "19 SCALP ELECTRODES",
+      "draw": {
+        "subject": "Stitched notebook",
+        "action": "springs open beside a macro schematic of one fixed EEG scalp contact, keeping the complete contact array outside the opening view",
+        "emotion": "curious",
+        "annotation": "19 SCALP ELECTRODES"
+      },
+      "choreo": {
+        "primary": "Stitched notebook springs open beside a macro schematic of one fixed EEG scalp contact, keeping the complete contact array outside the opening view",
+        "reaction": "The opening leaf brushes the public-data page, moving that page a small distance toward the notebook edge; the attached coral NEXT STEP tab trails the leaf and settles.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      },
+      "continuity": "Show only one contact in the opening composition. The full nineteen-contact array and illustrative recording connection are first revealed at beat10,25.35 seconds. Root controls the opening label and camera."
+    },
+    {
+      "id": 2,
+      "at_s": 1.13,
+      "t": "1.13-2.53",
+      "vo_line": 0,
+      "offset": 1.13,
+      "vo": "Nineteen scalp electrodes. What's on the next page?",
+      "shows": "Public-data page slides a short distance to give the notebook opening room while remaining visibly attached to its source tab",
+      "sfx": "Short paper-on-paper scrape ending in a light page-edge tap; retain this exact material motif for the enlarged callback at beat30.",
+      "means": "PUBLIC EEG DATA",
+      "draw": {
+        "subject": "Public-data page",
+        "action": "slides a short distance to give the notebook opening room while remaining visibly attached to its source tab",
+        "emotion": "wry",
+        "annotation": "PUBLIC EEG DATA"
+      },
+      "choreo": {
+        "primary": "Public-data page slides a short distance to give the notebook opening room while remaining visibly attached to its source tab",
+        "reaction": "The page edge nudges the thin paper divider beside it; the divider bows, then returns against the notebook spine.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      }
+    },
+    {
+      "id": 3,
+      "at_s": 2.53,
+      "t": "2.53-4.51",
+      "vo_line": 0,
+      "offset": 2.53,
+      "vo": "Nineteen scalp electrodes. What's on the next page?",
+      "shows": "Coral NEXT STEP tab catches the still-folded wing and draws its closed edge slightly upward, revealing that another page remains tucked underneath",
+      "sfx": "Small stiff-paper flex and a short elastic paper flick as the caught tab settles against the fold.",
+      "means": "NEXT STEP",
+      "draw": {
+        "subject": "Coral NEXT STEP tab",
+        "action": "catches the still-folded wing and draws its closed edge slightly upward, revealing that another page remains tucked underneath",
+        "emotion": "expectant",
+        "annotation": "NEXT STEP"
+      },
+      "choreo": {
+        "primary": "Coral NEXT STEP tab catches the still-folded wing and draws its closed edge slightly upward, revealing that another page remains tucked underneath",
+        "reaction": "The caught wing tensions its stitched fold; the nearby ribbon straightens a little under that pull and relaxes when the tab settles.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      },
+      "continuity": "The actual extra wing remains fully concealed until beat29; this move exposes only its folded edge."
+    },
+    {
+      "id": 4,
+      "at_s": 4.51,
+      "t": "4.51-8.43",
+      "vo_line": 1,
+      "offset": 0,
+      "vo": "The University of Alaska Anchorage has a new dry E E G.",
+      "shows": "Laboratory workbench assembles around the same notebook as the instrument stand descends into its fitted position on the bench",
+      "sfx": "Muted wood seating knock under the bench assembly, then one soft rubber-pad thud when the stand lands.",
+      "means": "UNIVERSITY OF ALASKA ANCHORAGE",
+      "draw": {
+        "subject": "Laboratory workbench",
+        "action": "assembles around the same notebook as the instrument stand descends into its fitted position on the bench",
+        "emotion": "welcoming",
+        "annotation": "UNIVERSITY OF ALASKA ANCHORAGE"
+      },
+      "choreo": {
+        "primary": "Laboratory workbench assembles around the same notebook as the instrument stand descends into its fitted position on the bench",
+        "reaction": "The stand foot compresses its visible rubber pad; the loose strap hanging from the stand swings once from the landing impulse.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      }
+    },
+    {
+      "id": 5,
+      "at_s": 8.43,
+      "t": "8.43-11.27",
+      "vo_line": 1,
+      "offset": 3.92,
+      "vo": "The University of Alaska Anchorage has a new dry E E G.",
+      "shows": "Student hand seats the dry EEG schematic securely on its stand and opens a small attached TRAINING DEMONSTRATION leaf beside it",
+      "sfx": "Soft plastic-on-rubber contact as the device seats, followed by the small training leaf unfolding with a paper flick.",
+      "means": "DRY EEG",
+      "draw": {
+        "subject": "Student hand",
+        "action": "seats the dry EEG schematic securely on its stand and opens a small attached TRAINING DEMONSTRATION leaf beside it",
+        "emotion": "curious",
+        "annotation": "DRY EEG"
+      },
+      "choreo": {
+        "primary": "Student hand seats the dry EEG schematic securely on its stand and opens a small attached TRAINING DEMONSTRATION leaf beside it",
+        "reaction": "The instrument support flexes a little under the placed device; its loose strap follows the settling motion and rests below the rim.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      },
+      "continuity": "This is an editorial equipment-handling illustration, not a new claim about a particular UAA training procedure. Keep the nineteen scalp positions fixed on the schematic."
+    },
+    {
+      "id": 6,
+      "at_s": 11.27,
+      "t": "11.27-14.66",
+      "vo_line": 2,
+      "offset": 0,
+      "vo": "The university announced it for its A I and Robotics Lab on September ninth.",
+      "shows": "Announcement sheet slides into the notebook source pocket with September 9th visible on its leading edge",
+      "sfx": "Paper slip and pocket friction, ending in a quiet paper-edge stop at the seam.",
+      "means": "SEPTEMBER 9TH",
+      "draw": {
+        "subject": "Announcement sheet",
+        "action": "slides into the notebook source pocket with September 9th visible on its leading edge",
+        "emotion": "matter-of-fact",
+        "annotation": "SEPTEMBER 9TH"
+      },
+      "choreo": {
+        "primary": "Announcement sheet slides into the notebook source pocket with September 9th visible on its leading edge",
+        "reaction": "The pocket lip bows outward around the arriving sheet and closes against it; the sheet corner stops at the pocket seam.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      }
+    },
+    {
+      "id": 7,
+      "at_s": 14.66,
+      "t": "14.66-19.15",
+      "vo_line": 2,
+      "offset": 3.39,
+      "vo": "The university announced it for its A I and Robotics Lab on September ninth.",
+      "shows": "AI and Robotics Lab nameplate seats in the instrument stand label holder",
+      "sfx": "One small fastening click as the plate seats in the visible holder, with a muted contact tap underneath.",
+      "means": "AI + ROBOTICS LAB",
+      "draw": {
+        "subject": "AI and Robotics Lab nameplate",
+        "action": "seats in the instrument stand label holder",
+        "emotion": "steady",
+        "annotation": "AI + ROBOTICS LAB"
+      },
+      "choreo": {
+        "primary": "AI and Robotics Lab nameplate seats in the instrument stand label holder",
+        "reaction": "The label holder flexes open to receive the plate, then closes against its lower edge; the stand strap responds with a tiny delayed swing.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      }
+    },
+    {
+      "id": 8,
+      "at_s": 19.15,
+      "t": "19.15-22.93",
+      "vo_line": 3,
+      "offset": 0,
+      "vo": "The Educational Legacy Fund funded it. Students and faculty have trained.",
+      "shows": "Educational Legacy Fund slip turns from the notebook source pocket toward the viewer and lays flat beside the acquisition sheet",
+      "sfx": "A brief paper turn followed by a light sheet-on-sheet landing; no cash-register or financial-transfer effect.",
+      "means": "EDUCATIONAL LEGACY FUND",
+      "draw": {
+        "subject": "Educational Legacy Fund slip",
+        "action": "turns from the notebook source pocket toward the viewer and lays flat beside the acquisition sheet",
+        "emotion": "appreciative",
+        "annotation": "EDUCATIONAL LEGACY FUND"
+      },
+      "choreo": {
+        "primary": "Educational Legacy Fund slip turns from the notebook source pocket toward the viewer and lays flat beside the acquisition sheet",
+        "reaction": "Its folded corner pulls the pocket lip outward briefly, then presses the underlying acquisition-sheet corner flat as it lands.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      }
+    },
+    {
+      "id": 9,
+      "at_s": 22.93,
+      "t": "22.93-25.35",
+      "vo_line": 3,
+      "offset": 3.78,
+      "vo": "The Educational Legacy Fund funded it. Students and faculty have trained.",
+      "shows": "Instructor and student hands open the training demonstration leaf together, with the instructor indicating the fitted headset and the student rotating its schematic toward the display",
+      "sfx": "Paper-fold flex as the demonstration leaf opens and a quiet rubber-foot scrape during the stand turn.",
+      "means": "TRAINING",
+      "draw": {
+        "subject": "Instructor and student hands",
+        "action": "open the training demonstration leaf together, with the instructor indicating the fitted headset and the student rotating its schematic toward the display",
+        "emotion": "attentive",
+        "annotation": "TRAINING"
+      },
+      "choreo": {
+        "primary": "Instructor and student hands open the training demonstration leaf together, with the instructor indicating the fitted headset and the student rotating its schematic toward the display",
+        "reaction": "The shared leaflet bends at its fold under the two hands; the instrument stand strap swings slightly when the schematic stand is turned.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      },
+      "continuity": "Anonymous schematic instructor and student represent the verified faculty/student equipment training. Do not invent a button, diagnostic protocol or test result."
+    },
+    {
+      "id": 10,
+      "at_s": 25.35,
+      "t": "25.35-28.73",
+      "vo_line": 4,
+      "offset": 0,
+      "vo": "Its scalp contacts record electrical activity.",
+      "shows": "Nineteen-contact EEG schematic widens from one fixed scalp contact to the complete counted scalp array as a labeled illustrative electrical trace begins extending in the adjacent display",
+      "sfx": "A restrained nonliteral diagram sweep accompanies the widening view; a soft pencil-like tracing sound follows the line as it is drawn. Both are editorial illustration sounds, not emitted EEG hardware noise.",
+      "means": "ELECTRICAL SIGNALS",
+      "draw": {
+        "subject": "Nineteen-contact EEG schematic",
+        "action": "widens from one fixed scalp contact to the complete counted scalp array as a labeled illustrative electrical trace begins extending in the adjacent display",
+        "emotion": "clear",
+        "annotation": "ELECTRICAL SIGNALS"
+      },
+      "choreo": {
+        "primary": "Nineteen-contact EEG schematic widens from one fixed scalp contact to the complete counted scalp array as a labeled illustrative electrical trace begins extending in the adjacent display",
+        "reaction": "A bracket on the adjacent display expands with the newly drawn trace, while the loose label tab attached to that display follows the bracket edge and settles.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      },
+      "continuity": "Begin the trace during Its scalp contacts record electrical activity. No moving sensor hardware, fabricated reading, numerical voltage or physical cable path is implied; the separate display remains SCHEMATIC."
+    },
+    {
+      "id": 11,
+      "at_s": 28.73,
+      "t": "28.73-31.78",
+      "vo_line": 5,
+      "offset": 0,
+      "vo": "Graduate student Vadim Egorov has watched his own signals appear.",
+      "shows": "Anonymous student illustration labeled Vadim Egorov turns from the fitted scalp schematic toward the adjacent newly appearing signal display and places a hand on the display ledge",
+      "sfx": "Light fingertip-on-display-ledge tap after the hand contact, under the continuing quiet illustrative trace sound.",
+      "means": "VADIM EGOROV \u00b7 GRADUATE STUDENT",
+      "draw": {
+        "subject": "Anonymous student illustration labeled Vadim Egorov",
+        "action": "turns from the fitted scalp schematic toward the adjacent newly appearing signal display and places a hand on the display ledge",
+        "emotion": "interested",
+        "annotation": "VADIM EGOROV \u00b7 GRADUATE STUDENT"
+      },
+      "choreo": {
+        "primary": "Anonymous student illustration labeled Vadim Egorov turns from the fitted scalp schematic toward the adjacent newly appearing signal display and places a hand on the display ledge",
+        "reaction": "The touched ledge flexes slightly and tilts its attached caption flap toward the viewer, making the training-demonstration label readable.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      },
+      "rehook": "The head-and-trace demonstration becomes a human observation, with no interpretation printed",
+      "continuity": "Use a schematic person, not a caricature or invented exact likeness. This represents the reported observation of his own recorded signals, without interpreting them."
+    },
+    {
+      "id": 12,
+      "at_s": 31.78,
+      "t": "31.78-34.37",
+      "vo_line": 5,
+      "offset": 3.05,
+      "vo": "Graduate student Vadim Egorov has watched his own signals appear.",
+      "shows": "Illustrative EEG trace extends across the display, carrying its SCHEMATIC tab to the end of the recording lane while the separate interpretation field remains unfilled",
+      "sfx": "Soft continuous drawing sweep, resolving into a paper-tab flick when the SCHEMATIC tab unfolds; no heartbeat or diagnostic-success tone.",
+      "means": "RECORDING DEMONSTRATION \u00b7 SCHEMATIC",
+      "draw": {
+        "subject": "Illustrative EEG trace",
+        "action": "extends across the display, carrying its SCHEMATIC tab to the end of the recording lane while the separate interpretation field remains unfilled",
+        "emotion": "curious",
+        "annotation": "RECORDING DEMONSTRATION \u00b7 SCHEMATIC"
+      },
+      "choreo": {
+        "primary": "Illustrative EEG trace extends across the display, carrying its SCHEMATIC tab to the end of the recording lane while the separate interpretation field remains unfilled",
+        "reaction": "The recording-lane bracket follows the growing line and gently unfolds the attached SCHEMATIC tab; the interpretation-field border stays separate and unchanged.",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      }
+    },
+    {
+      "id": 13,
+      "at_s": 34.37,
+      "t": "34.37-36.52",
+      "vo_line": 6,
+      "offset": 0,
+      "vo": "He usually works with public E E G datasets.",
+      "shows": "Public-data book opens its worn source pages into the same research notebook",
+      "sfx": "Page fan with a low spine-flex sound and a light page-on-divider touch.",
+      "means": "PUBLIC EEG DATA",
+      "draw": {
+        "subject": "Public-data book",
+        "action": "opens its worn source pages into the same research notebook",
+        "emotion": "competent",
+        "annotation": "PUBLIC EEG DATA"
+      },
+      "choreo": {
+        "primary": "Public-data book opens its worn source pages into the same research notebook",
+        "reaction": "The arriving book page presses the notebook divider downward; the adjacent paper source tab rises as its hinge is exposed.",
+        "ambient": "Rear-left archive ribbon sways below its shelf; far-right spare pencil rolls a fraction against its fixed stop and returns; lower-left loose page corner slowly curls in the desk draft. No motion changes a finding or number."
+      }
+    },
+    {
+      "id": 14,
+      "at_s": 36.519999999999996,
+      "t": "36.52-39.44",
+      "vo_line": 6,
+      "offset": 2.15,
+      "vo": "He usually works with public E E G datasets.",
+      "shows": "Student hand selects a visibly labeled existing-recording strip from the opened public-data page and slides it into the notebook working pocket",
+      "sfx": "Paper strip sliding through a paper pocket, with a short edge rub at the final seated position.",
+      "means": "PUBLIC EEG DATA",
+      "draw": {
+        "subject": "Student hand",
+        "action": "selects a visibly labeled existing-recording strip from the opened public-data page and slides it into the notebook working pocket",
+        "emotion": "competent",
+        "annotation": "EXISTING RECORDINGS"
+      },
+      "choreo": {
+        "primary": "Student hand selects a visibly labeled existing-recording strip from the opened public-data page and slides it into the notebook working pocket",
+        "reaction": "The strip bends the pocket lip outward on entry; the source page is pulled a little toward the pocket before its binding stops it.",
+        "ambient": "Rear-left archive ribbon sways below its shelf; far-right spare pencil rolls a fraction against its fixed stop and returns; lower-left loose page corner slowly curls in the desk draft. No motion changes a finding or number."
+      },
+      "continuity": "The selected strip is an editorial representation of available public recordings, not a claim to identify Egorov's actual dataset or results."
+    },
+    {
+      "id": 15,
+      "at_s": 39.44,
+      "t": "39.44-43.34",
+      "vo_line": 7,
+      "offset": 0,
+      "vo": "Now he's looking forward to collecting recordings for his own tasks.",
+      "shows": "Student hand places an empty own-task planning tab beside the selected existing-recording strip",
+      "sfx": "Light paper tab landing, followed by a small fingertip contact on the notebook surface.",
+      "means": "OWN TASKS",
+      "draw": {
+        "subject": "Student hand",
+        "action": "places an empty own-task planning tab beside the selected existing-recording strip",
+        "emotion": "hopeful",
+        "annotation": "OWN TASKS"
+      },
+      "choreo": {
+        "primary": "Student hand places an empty own-task planning tab beside the selected existing-recording strip",
+        "reaction": "The tab landing presses the notebook divider flat; a nearby short bookmark tail lifts from the displaced edge, then settles.",
+        "ambient": "Rear-left archive ribbon sways below its shelf; far-right spare pencil rolls a fraction against its fixed stop and returns; lower-left loose page corner slowly curls in the desk draft. No motion changes a finding or number."
+      },
+      "continuity": "The planning tab is still empty. Existing research choice is not newly granted; the future own-task collection route remains to be added."
+    },
+    {
+      "id": 16,
+      "at_s": 43.34,
+      "t": "43.34-45.63",
+      "vo_line": 7,
+      "offset": 3.9,
+      "vo": "Now he's looking forward to collecting recordings for his own tasks.",
+      "shows": "NEXT STEP tab turns upright as its folded wing edge moves into view without exposing the wing contents",
+      "sfx": "Stiff paper fold creak ending in a small tab flick.",
+      "means": "TO PLAN",
+      "draw": {
+        "subject": "NEXT STEP tab",
+        "action": "turns upright as its folded wing edge moves into view without exposing the wing contents",
+        "emotion": "expectant",
+        "annotation": "TO PLAN"
+      },
+      "choreo": {
+        "primary": "NEXT STEP tab turns upright as its folded wing edge moves into view without exposing the wing contents",
+        "reaction": "The attached fold straightens and lifts its ribbon tie; the tie hangs in a new raised position after the tab settles.",
+        "ambient": "Rear-left archive ribbon sways below its shelf; far-right spare pencil rolls a fraction against its fixed stop and returns; lower-left loose page corner slowly curls in the desk draft. No motion changes a finding or number."
+      },
+      "continuity": "Keep the full additional collection-and-test spread concealed; no early preview of its final working surface."
+    },
+    {
+      "id": 17,
+      "at_s": 45.63,
+      "t": "45.63-49.58",
+      "vo_line": 8,
+      "offset": 0,
+      "vo": "Who might a future answer work for?",
+      "shows": "Notched hypothetical participant marker arrives along the outer notebook margin and seats in a separate holder visibly outside the page marked EXAMPLE TRAINING",
+      "sfx": "Short paper-marker slide followed by a quiet holder contact and flag flick; no exclusion alarm or failure sound.",
+      "means": "IF NEW PEOPLE \u00b7 GENERAL METHODS EXAMPLE",
+      "draw": {
+        "subject": "Notched hypothetical participant marker",
+        "action": "arrives along the outer notebook margin and seats in a separate holder visibly outside the page marked EXAMPLE TRAINING",
+        "emotion": "questioning",
+        "annotation": "IF NEW PEOPLE \u00b7 GENERAL METHODS EXAMPLE"
+      },
+      "choreo": {
+        "primary": "Notched hypothetical participant marker arrives along the outer notebook margin and seats in a separate holder visibly outside the page marked EXAMPLE TRAINING",
+        "reaction": "The outer holder bends around the marker base and its attached GENERAL METHODS EXAMPLE flag rises as the marker seats; the training pocket remains closed and untouched.",
+        "ambient": "Upper-left outer folder ribbon drifts gently; lower-right pencil tassel sways against its stand; rear notebook cover strap flexes slightly. These three locations remain outside both TRAINING and TEST contents."
+      },
+      "continuity": "Keep IF NEW PEOPLE and GENERAL METHODS EXAMPLE visible from this arrival. The same notched marker stays in this outer holder through beats18-33, including visible returns at beats22,23,26 and29. It must never enter or overlap the training pocket."
+    },
+    {
+      "id": 18,
+      "at_s": 49.58,
+      "t": "49.58-52.79",
+      "vo_line": 9,
+      "offset": 0,
+      "vo": "U A A plans to study cognitive states during reading.",
+      "shows": "Planned reading-task page opens into a small reading-book and blank comparison-space spread under its permanent PLANNED tab",
+      "sfx": "Book page fan and soft spine flex, followed by the attached holder opening with a paper tick.",
+      "means": "READING \u00b7 PLANNED",
+      "draw": {
+        "subject": "Planned reading-task page",
+        "action": "opens into a small reading-book and blank comparison-space spread under its permanent PLANNED tab",
+        "emotion": "curious",
+        "annotation": "READING \u00b7 PLANNED"
+      },
+      "choreo": {
+        "primary": "Planned reading-task page opens into a small reading-book and blank comparison-space spread under its permanent PLANNED tab",
+        "reaction": "The opening book edge unfolds the attached task holder, which turns toward the empty research-target space without filling it.",
+        "ambient": "Far-left spare bookmark tail flexes; rear-right desk ribbon sways; low foreground loose paper corner curls in the desk draft. None marks a reading score or cognitive state."
+      },
+      "continuity": "The empty comparison target depicts intended research only, never a measured cognitive state, comprehension score or diagnosis. Keep the participant's external holder in the notebook margin."
+    },
+    {
+      "id": 19,
+      "at_s": 52.79,
+      "t": "52.79-55.21",
+      "vo_line": 9,
+      "offset": 3.21,
+      "vo": "U A A plans to study cognitive states during reading.",
+      "shows": "Student hand and springy bookmark attach the empty COGNITIVE STATES study-target tab beside the reading task; the bookmark overshoots the tab edge and springs back into its holder",
+      "sfx": "Light paper clip-contact followed by one elastic paper pluck on the bookmark overshoot and a quieter return tick.",
+      "means": "COGNITIVE STATES \u00b7 PLANNED",
+      "draw": {
+        "subject": "Student hand and springy bookmark",
+        "action": "attach the empty COGNITIVE STATES study-target tab beside the reading task; the bookmark overshoots the tab edge and springs back into its holder",
+        "emotion": "wry",
+        "annotation": "COGNITIVE STATES \u00b7 PLANNED"
+      },
+      "choreo": {
+        "primary": "Student hand and springy bookmark attach the empty COGNITIVE STATES study-target tab beside the reading task; the bookmark overshoots the tab edge and springs back into its holder",
+        "reaction": "The target tab bends as the bookmark clips it, then flattens against the reading-task margin while the bookmark tail follows through.",
+        "ambient": "Far-left spare bookmark tail flexes; rear-right desk ribbon sways; low foreground loose paper corner curls in the desk draft. None marks a reading score or cognitive state."
+      },
+      "continuity": "The comparison remains explicitly PLANNED and unfilled. The joke acts on the bookmark, never on a person's reading or a supposed cognitive deficit."
+    },
+    {
+      "id": 20,
+      "at_s": 55.21,
+      "t": "55.21-58.06",
+      "vo_line": 10,
+      "offset": 0,
+      "vo": "Another planned project pairs brain activity with eye movements during programming.",
+      "shows": "Programming-task illustration unfolds from the notebook into a monitor-shaped paper frame containing code-shaped lines and a persistent PLANNED tab",
+      "sfx": "Paper panel unfolding and one quiet support-foot tap as the physical illustration seats.",
+      "means": "PROGRAMMING \u00b7 PLANNED",
+      "draw": {
+        "subject": "Programming-task illustration",
+        "action": "unfolds from the notebook into a monitor-shaped paper frame containing code-shaped lines and a persistent PLANNED tab",
+        "emotion": "focused",
+        "annotation": "PROGRAMMING \u00b7 PLANNED"
+      },
+      "choreo": {
+        "primary": "Programming-task illustration unfolds from the notebook into a monitor-shaped paper frame containing code-shaped lines and a persistent PLANNED tab",
+        "reaction": "The unfolding paper monitor pulls its attached task support upright; the support props the illustration at a readable angle.",
+        "ambient": "Left monitor support ribbon slack rocks slightly beneath the desk; far-right spare pencil tassel sways; rear notebook ribbon flexes. The EEG and eye-movement examples remain nonnumeric and labeled as plans."
+      },
+      "continuity": "This is a drawn planned programming task, not an AI assistant writing code. Showing the monitor as a physical paper illustration makes the paper sound explicit."
+    },
+    {
+      "id": 21,
+      "at_s": 58.06,
+      "t": "58.06-61.41",
+      "vo_line": 10,
+      "offset": 2.85,
+      "vo": "Another planned project pairs brain activity with eye movements during programming.",
+      "shows": "Separate illustrative eye-movement marker travels across the programming-task illustration on its own labeled planning strip, visibly separate from the EEG signal strip",
+      "sfx": "A quiet paper-runner scrape follows the physical marker strip; a tiny paper-tab flick lands when its label unfolds. These are illustration sounds, not biological eye sounds.",
+      "means": "EYE MOVEMENTS \u00b7 PLANNED",
+      "draw": {
+        "subject": "Separate illustrative eye-movement marker",
+        "action": "travels across the programming-task illustration on its own labeled planning strip, visibly separate from the EEG signal strip",
+        "emotion": "attentive",
+        "annotation": "EYE MOVEMENTS \u00b7 PLANNED"
+      },
+      "choreo": {
+        "primary": "Separate illustrative eye-movement marker travels across the programming-task illustration on its own labeled planning strip, visibly separate from the EEG signal strip",
+        "reaction": "A bracket attached to the eye-movement strip follows the marker position and unfolds the EYE MOVEMENTS planning tab at the strip end; the EEG strip does not react or absorb it.",
+        "ambient": "Left monitor support ribbon slack rocks slightly beneath the desk; far-right spare pencil tassel sways; rear notebook ribbon flexes. The EEG and eye-movement examples remain nonnumeric and labeled as plans."
+      },
+      "continuity": "No actual gaze data, completed tracking or headset-alone eye-measurement capability is implied. Both strips remain planned examples."
+    },
+    {
+      "id": 22,
+      "at_s": 61.41,
+      "t": "61.41-65.92",
+      "vo_line": 11,
+      "offset": 0,
+      "vo": "Those are plans, with the answers still ahead.",
+      "shows": "Reading and programming study pages turn together to expose their blank answer spaces while the public-data divider begins opening behind them",
+      "sfx": "Two staggered page turns and a short divider-edge scrape, with no failure sting for the blank answers.",
+      "means": "RESULTS STILL AHEAD",
+      "draw": {
+        "subject": "Reading and programming study pages",
+        "action": "turn together to expose their blank answer spaces while the public-data divider begins opening behind them",
+        "emotion": "open",
+        "annotation": "RESULTS STILL AHEAD"
+      },
+      "choreo": {
+        "primary": "Reading and programming study pages turn together to expose their blank answer spaces while the public-data divider begins opening behind them",
+        "reaction": "Their joined fold lifts the public-data divider enough to expose its source tab; the separate participant-holder flag remains fixed outside the example training pocket.",
+        "ambient": "Left monitor support ribbon slack rocks slightly beneath the desk; far-right spare pencil tassel sways; rear notebook ribbon flexes. The EEG and eye-movement examples remain nonnumeric and labeled as plans."
+      },
+      "continuity": "This is a physical bridge into the useful archive. Both PLANNED tabs travel with their pages. The participant marker remains in its outer margin holder."
+    },
+    {
+      "id": 23,
+      "at_s": 65.92,
+      "t": "65.92-70.42",
+      "vo_line": 12,
+      "offset": 0,
+      "vo": "And the public recordings? They keep their place.",
+      "shows": "Public-data page pulls forward from the notebook into the larger archive working spread while the headset stays on its ordinary stand at the edge",
+      "sfx": "A broad page-and-divider sweep followed by sequential soft index-leaf contacts; the final archive spread lands with a muted paper-cover tap.",
+      "means": "THE EXISTING ROUTE",
+      "draw": {
+        "subject": "Public-data page",
+        "action": "pulls forward from the notebook into the larger archive working spread while the headset stays on its ordinary stand at the edge",
+        "emotion": "confident",
+        "annotation": "THE EXISTING ROUTE"
+      },
+      "choreo": {
+        "primary": "Public-data page pulls forward from the notebook into the larger archive working spread while the headset stays on its ordinary stand at the edge",
+        "reaction": "The extending page opens its attached archive index leaves in sequence; the stand strap lifts slightly in the page's passing draft, then settles without the headset operating.",
+        "ambient": "High-left shelf ribbon sways; lower-right separate pencil tassel swings against its stand; foreground unused page corner curls gently. The hypothetical participant stays outside the example training pocket and is never moved by these loops."
+      },
+      "rehook": "The planned page lifts to reveal a full useful archive, reversing attention from the shiny new hardware to an existing research route",
+      "continuity": "This expands the archive rather than merely sliding a single labeled page. The notebook spine, closed NEXT STEP fold and external hypothetical-person holder remain identifiable. Root will place the reveal hold."
+    },
+    {
+      "id": 24,
+      "at_s": 70.42,
+      "t": "70.42-73.77",
+      "vo_line": 13,
+      "offset": 0,
+      "vo": "Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there.",
+      "shows": "Researcher hand aligns an existing TASK A recording strip with the TASK A question symbol in a clearly labeled GENERAL EXAMPLE, then seats their matching tabs in the analysis holder",
+      "sfx": "Two light paper alignment scrapes followed by a small holder seating click as the matching A tabs meet.",
+      "means": "CHECK THE FIT",
+      "draw": {
+        "subject": "Researcher hand",
+        "action": "aligns an existing TASK A recording strip with the TASK A question symbol in a clearly labeled GENERAL EXAMPLE, then seats their matching tabs in the analysis holder",
+        "emotion": "attentive",
+        "annotation": "TASK A FITS \u00b7 GENERAL EXAMPLE"
+      },
+      "choreo": {
+        "primary": "Researcher hand aligns an existing TASK A recording strip with the TASK A question symbol in a clearly labeled GENERAL EXAMPLE, then seats their matching tabs in the analysis holder",
+        "reaction": "The two matching A tabs meet in the holder; its side walls flex open and then hold them together, drawing the recording strip into the visible comparison path.",
+        "ambient": "High-left shelf ribbon sways; lower-right separate pencil tassel swings against its stand; foreground unused page corner curls gently. The hypothetical participant stays outside the example training pocket and is never moved by these loops."
+      },
+      "continuity": "The letter match is a conceptual suitability example, not a UAA dataset or validation result. No numeric performance or success stamp appears; show the fit that permits this illustrative analysis route."
+    },
+    {
+      "id": 25,
+      "at_s": 73.77,
+      "t": "73.77-77.22",
+      "vo_line": 13,
+      "offset": 3.35,
+      "vo": "Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there.",
+      "shows": "Selected TASK A public-recording strip travels through the conceptual comparison workspace while two explicitly illustrative traces draw in adjacent lanes and its matching A question tab remains attached",
+      "sfx": "Quiet strip-through-paper-guide friction with a restrained drawing sweep for the two schematic trace lanes; no result or accuracy chime.",
+      "means": "ANALYSIS \u00b7 ILLUSTRATION",
+      "draw": {
+        "subject": "Selected TASK A public-recording strip",
+        "action": "travels through the conceptual comparison workspace while two explicitly illustrative traces draw in adjacent lanes and its matching A question tab remains attached",
+        "emotion": "competent",
+        "annotation": "TASK A ANALYSIS \u00b7 GENERAL EXAMPLE"
+      },
+      "choreo": {
+        "primary": "Selected TASK A public-recording strip travels through the conceptual comparison workspace while two explicitly illustrative traces draw in adjacent lanes and its matching A question tab remains attached",
+        "reaction": "The shared comparison bracket widens as the two trace lanes arrive, carrying the attached GENERAL EXAMPLE tab into a readable position; the joined A tabs stay seated in their guide.",
+        "ambient": "High-left shelf ribbon sways; lower-right separate pencil tassel swings against its stand; foreground unused page corner curls gently. The hypothetical participant stays outside the example training pocket and is never moved by these loops."
+      },
+      "continuity": "Task A analysis remains visibly active during the later Task B decision. It is a general illustration with no reported UAA result."
+    },
+    {
+      "id": 26,
+      "at_s": 77.22,
+      "t": "77.22-80.00",
+      "vo_line": 13,
+      "offset": 6.8,
+      "vo": "Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there.",
+      "shows": "New TASK B question tab enters the opposite notebook margin while the TASK A recording continues through its active comparison guide",
+      "sfx": "Small paper-tab landing and a divider-edge scrape over the continuing low paper-guide friction of the A route.",
+      "means": "PUBLIC DATA STAYS USEFUL",
+      "draw": {
+        "subject": "New TASK B question tab",
+        "action": "enters the opposite notebook margin while the TASK A recording continues through its active comparison guide",
+        "emotion": "balanced",
+        "annotation": "TASK B \u00b7 GENERAL EXAMPLE"
+      },
+      "choreo": {
+        "primary": "New TASK B question tab enters the opposite notebook margin while the TASK A recording continues through its active comparison guide",
+        "reaction": "The arriving B tab pushes an unused inventory divider upright, exposing the available-recording context tabs for assessment without disturbing the working A guide.",
+        "ambient": "High-left shelf ribbon sways; lower-right separate pencil tassel swings against its stand; foreground unused page corner curls gently. The hypothetical participant stays outside the example training pocket and is never moved by these loops."
+      },
+      "continuity": "B is another conceptual task, not a declaration that public recordings cannot fit it. The same hypothetical person remains visible in the external holder outside training."
+    },
+    {
+      "id": 27,
+      "at_s": 80,
+      "t": "80.00-83.49",
+      "vo_line": 14,
+      "offset": 0,
+      "vo": "They can also plan a new recording around another task.",
+      "shows": "Researcher hand brings the TASK B tab alongside the inventory context tabs and moves between them to assess suitability, leaving their fit undecided while the TASK A analysis stays in motion",
+      "sfx": "Quiet alternating paper-tab flicks during the inventory assessment, then a soft page slide as the optional collection leaf enters.",
+      "means": "ANOTHER TASK",
+      "draw": {
+        "subject": "Researcher hand",
+        "action": "brings the TASK B tab alongside the inventory context tabs and moves between them to assess suitability, leaving their fit undecided while the TASK A analysis stays in motion",
+        "emotion": "considering",
+        "annotation": "ASSESS TASK B \u00b7 GENERAL EXAMPLE"
+      },
+      "choreo": {
+        "primary": "Researcher hand brings the TASK B tab alongside the inventory context tabs and moves between them to assess suitability, leaving their fit undecided while the TASK A analysis stays in motion",
+        "reaction": "The assessed inventory tabs pivot on their paper hinges toward B in sequence, then remain open; a blank optional collection leaf slides into the newly exposed margin without replacing any inventory tab.",
+        "ambient": "High-left shelf ribbon sways; lower-right separate pencil tassel swings against its stand; foreground unused page corner curls gently. The hypothetical participant stays outside the example training pocket and is never moved by these loops."
+      },
+      "continuity": "No X, empty archive, failed match, missing-data claim or red/green verdict. The available-recording inventory is still useful; the B fit is an open assessment."
+    },
+    {
+      "id": 28,
+      "at_s": 83.49,
+      "t": "83.49-85.63",
+      "vo_line": 14,
+      "offset": 3.49,
+      "vo": "They can also plan a new recording around another task.",
+      "shows": "Researcher uses a pencil to bracket the optional TASK B collection plan, then lifts the still-concealed NEXT STEP wing edge with the other hand while TASK A analysis keeps working",
+      "sfx": "Brief graphite-on-paper planning stroke followed by restrained paper-hinge flex and ribbon friction into the reveal.",
+      "means": "OPTIONAL COLLECTION",
+      "draw": {
+        "subject": "Researcher",
+        "action": "uses a pencil to bracket the optional TASK B collection plan, then lifts the still-concealed NEXT STEP wing edge with the other hand while TASK A analysis keeps working",
+        "emotion": "hopeful",
+        "annotation": "OPTIONAL TASK B COLLECTION \u00b7 GENERAL EXAMPLE"
+      },
+      "choreo": {
+        "primary": "Researcher uses a pencil to bracket the optional TASK B collection plan, then lifts the still-concealed NEXT STEP wing edge with the other hand while TASK A analysis keeps working",
+        "reaction": "The pencil tip briefly depresses the plan leaf as it marks; lifting the closed wing pulls its attached ribbon taut, raises the coral tab and pushes the loose divider clear of the coming extension.",
+        "ambient": "High-left shelf ribbon sways; lower-right separate pencil tassel swings against its stand; foreground unused page corner curls gently. The hypothetical participant stays outside the example training pocket and is never moved by these loops."
+      },
+      "continuity": "The pencil selects an additional collection option, not an answer or a failed public-data route. Task A analysis remains active. Only the folded wing outer face is visible until beat29; root supplies reveal timing."
+    },
+    {
+      "id": 29,
+      "at_s": 85.63,
+      "t": "85.63-89.48",
+      "vo_line": 15,
+      "offset": 0,
+      "vo": "The extra page holds a plan that students can help design. The old pages stay open beside it.",
+      "shows": "Concealed NEXT STEP wing unfolds into the additional TO COLLECT and TO TEST working spaces beside the active public-data page",
+      "sfx": "Broad notebook page fan with a low stitched-hinge flex, ending in two softly staggered paper-support contacts and one restrained reveal accent after landing.",
+      "means": "TO COLLECT \u00b7 TO TEST",
+      "draw": {
+        "subject": "Concealed NEXT STEP wing",
+        "action": "unfolds into the additional TO COLLECT and TO TEST working spaces beside the active public-data page",
+        "emotion": "delighted",
+        "annotation": "TO COLLECT \u00b7 TO TEST"
+      },
+      "choreo": {
+        "primary": "Concealed NEXT STEP wing unfolds into the additional TO COLLECT and TO TEST working spaces beside the active public-data page",
+        "reaction": "The wing pushes its prepared divider outward and unfolds two attached supports in sequence; the public-data guide stays intact as its page shifts to accommodate the larger spread.",
+        "ambient": "Rear-left archive ribbon sways; far-right instrument stand strap flexes; lower foreground unused page corner curls gently. The active public-data page and the new collection plan keep their separate positions."
+      },
+      "rehook": "The concealed NEXT STEP wing opens into actual extra workspace beside an active public page",
+      "continuity": "Preserve the literal new capacity as planned collection space, not a completed dataset or answer. The expanded geometry persists through the ending. The distinct hypothetical person remains outside training until beat34."
+    },
+    {
+      "id": 30,
+      "at_s": 89.48,
+      "t": "89.48-93.34",
+      "vo_line": 15,
+      "offset": 3.85,
+      "vo": "The extra page holds a plan that students can help design. The old pages stay open beside it.",
+      "shows": "Public-data page repeats its opening courtesy shuffle as a longer sweep into its full working area while its source strip remains in the analysis holder",
+      "sfx": "The same paper-on-paper scrape from beat2, longer and fuller here, ending in the same small page-edge tap. This sound callback pays the opening joke.",
+      "means": "BOTH ROUTES",
+      "draw": {
+        "subject": "Public-data page",
+        "action": "repeats its opening courtesy shuffle as a longer sweep into its full working area while its source strip remains in the analysis holder",
+        "emotion": "wry",
+        "annotation": "BOTH ROUTES"
+      },
+      "choreo": {
+        "primary": "Public-data page repeats its opening courtesy shuffle as a longer sweep into its full working area while its source strip remains in the analysis holder",
+        "reaction": "The page's leading edge pushes its loose divider into the newly available gap; the divider settles flush without covering the new collection plan.",
+        "ambient": "Rear-left archive ribbon sways; far-right instrument stand strap flexes; lower foreground unused page corner curls gently. The active public-data page and the new collection plan keep their separate positions."
+      },
+      "rehook": "The public page sweeps into the expanded workspace and keeps working as the new route appears"
+    },
+    {
+      "id": 31,
+      "at_s": 93.34,
+      "t": "93.34-95.77",
+      "vo_line": 15,
+      "offset": 7.71,
+      "vo": "The extra page holds a plan that students can help design. The old pages stay open beside it.",
+      "shows": "Student hand attaches the chosen-task plan to the empty TO COLLECT space using its existing paper holder",
+      "sfx": "A short plan-sheet slide followed by a crisp but quiet paper-holder seating click.",
+      "means": "A PLAN TO DESIGN",
+      "draw": {
+        "subject": "Student hand",
+        "action": "attaches the chosen-task plan to the empty TO COLLECT space using its existing paper holder",
+        "emotion": "pleased",
+        "annotation": "A PLAN TO DESIGN"
+      },
+      "choreo": {
+        "primary": "Student hand attaches the chosen-task plan to the empty TO COLLECT space using its existing paper holder",
+        "reaction": "The holder bends to receive the plan and draws the attached task-context tab flat against the collection leaf; the adjoining TO TEST field remains empty.",
+        "ambient": "Rear-left archive ribbon sways; far-right instrument stand strap flexes; lower foreground unused page corner curls gently. The active public-data page and the new collection plan keep their separate positions."
+      },
+      "continuity": "This is a designed future collection plan, not data being collected or a new permission to choose research questions."
+    },
+    {
+      "id": 32,
+      "at_s": 95.77,
+      "t": "95.77-99.72",
+      "vo_line": 16,
+      "offset": 0,
+      "vo": "A recording alone doesn't supply an interpretation.",
+      "shows": "Illustrative recording strip slides to the edge of its measurement lane and unfolds a separate, still-empty interpretation flap beside it",
+      "sfx": "Paper strip scrape followed by a low flap-unfold sound, ending without a success tone.",
+      "means": "INTERPRETATION",
+      "draw": {
+        "subject": "Illustrative recording strip",
+        "action": "slides to the edge of its measurement lane and unfolds a separate, still-empty interpretation flap beside it",
+        "emotion": "thoughtful",
+        "annotation": "INTERPRETATION"
+      },
+      "choreo": {
+        "primary": "Illustrative recording strip slides to the edge of its measurement lane and unfolds a separate, still-empty interpretation flap beside it",
+        "reaction": "The interpretation flap pulls its connecting paper hinge taut but leaves a visible gap after the signal lane, so the recording cannot fill the answer space by itself.",
+        "ambient": "Rear-left archive ribbon sways; far-right instrument stand strap flexes; lower foreground unused page corner curls gently. The active public-data page and the new collection plan keep their separate positions."
+      },
+      "continuity": "The empty field stands for interpretation still to be earned. Do not animate a thought, diagnosis or cognitive-state classification emerging from the waveform."
+    },
+    {
+      "id": 33,
+      "at_s": 99.72,
+      "t": "99.72-102.02",
+      "vo_line": 17,
+      "offset": 0,
+      "vo": "If a future model claims to work for new people, test it on people absent from training.",
+      "shows": "Conditional methods flap unfolds to expose IF A MODEL CLAIMS NEW PEOPLE and opens a separate empty test holder alongside the untouched example training pocket",
+      "sfx": "Stiff paper flap opening followed by two small holder-side contacts as the separate test destination forms.",
+      "means": "IF CLAIMING NEW PEOPLE",
+      "draw": {
+        "subject": "Conditional methods flap",
+        "action": "unfolds to expose IF A MODEL CLAIMS NEW PEOPLE and opens a separate empty test holder alongside the untouched example training pocket",
+        "emotion": "precise",
+        "annotation": "IF CLAIMING NEW PEOPLE"
+      },
+      "choreo": {
+        "primary": "Conditional methods flap unfolds to expose IF A MODEL CLAIMS NEW PEOPLE and opens a separate empty test holder alongside the untouched example training pocket",
+        "reaction": "Its attached hinge pulls the test-holder side walls upright, creating a visible destination for the person still waiting outside training.",
+        "ambient": "Upper-left outer folder ribbon drifts gently; lower-right pencil tassel sways against its stand; rear notebook cover strap flexes slightly. These three locations remain outside both TRAINING and TEST contents."
+      },
+      "continuity": "The methods example remains explicitly general and conditional. The UAA study pages stay labeled PLANNED in a separate portion of the notebook."
+    },
+    {
+      "id": 34,
+      "at_s": 102.02,
+      "t": "102.02-106.82",
+      "vo_line": 17,
+      "offset": 2.3,
+      "vo": "If a future model claims to work for new people, test it on people absent from training.",
+      "shows": "Same notched hypothetical participant marker leaves its outer-margin holder and travels directly into the separate TEST holder without crossing or touching the TRAINING pocket",
+      "sfx": "Paper-marker release flick, a short paper-runner scrape along the separate path, then a quiet test-holder seating tap.",
+      "means": "NEW PEOPLE \u00b7 SEPARATE TEST",
+      "draw": {
+        "subject": "Same notched hypothetical participant marker",
+        "action": "leaves its outer-margin holder and travels directly into the separate TEST holder without crossing or touching the TRAINING pocket",
+        "emotion": "clear",
+        "annotation": "NEW PEOPLE \u00b7 SEPARATE TEST"
+      },
+      "choreo": {
+        "primary": "Same notched hypothetical participant marker leaves its outer-margin holder and travels directly into the separate TEST holder without crossing or touching the TRAINING pocket",
+        "reaction": "The empty outer holder relaxes after release; the TEST holder bends around the arriving marker base and its attached label lifts toward the viewer.",
+        "ambient": "Upper-left outer folder ribbon drifts gently; lower-right pencil tassel sways against its stand; rear notebook cover strap flexes slightly. These three locations remain outside both TRAINING and TEST contents."
+      },
+      "continuity": "This pays the marker planted at beat17. Preserve the same notch and backing shape. No new participant is substituted and no training-area crossing is shown."
+    },
+    {
+      "id": 35,
+      "at_s": 106.82,
+      "t": "106.82-109.30",
+      "vo_line": 17,
+      "offset": 7.1,
+      "vo": "If a future model claims to work for new people, test it on people absent from training.",
+      "shows": "Separate TEST holder receives the marker's attached blank evaluation page and opens it beside the unchanged training pocket",
+      "sfx": "A soft page insertion scrape followed by a small side-flap paper flick; no score, victory or failure sound.",
+      "means": "GENERAL METHODS EXAMPLE",
+      "draw": {
+        "subject": "Separate TEST holder",
+        "action": "receives the marker's attached blank evaluation page and opens it beside the unchanged training pocket",
+        "emotion": "open",
+        "annotation": "GENERAL METHODS EXAMPLE"
+      },
+      "choreo": {
+        "primary": "Separate TEST holder receives the marker's attached blank evaluation page and opens it beside the unchanged training pocket",
+        "reaction": "The arriving page unfolds the holder's side flap, leaving a visible gap between TEST and TRAINING; the participant marker remains anchored on the test side.",
+        "ambient": "Upper-left outer folder ribbon drifts gently; lower-right pencil tassel sways against its stand; rear notebook cover strap flexes slightly. These three locations remain outside both TRAINING and TEST contents."
+      },
+      "continuity": "The hypothetical held-out person is visibly present, while the evaluation result stays blank. This is not a reported UAA test protocol."
+    },
+    {
+      "id": 36,
+      "at_s": 109.3,
+      "t": "109.30-112.83",
+      "vo_line": 18,
+      "offset": 0,
+      "vo": "That's a research principle, not a reported U A A result.",
+      "shows": "General research-principle page folds back into its own labeled methods pocket beside the separate planned UAA pages",
+      "sfx": "Paper fold flex, pocket friction and a gentle edge contact at the seated position.",
+      "means": "RESEARCH PRINCIPLE",
+      "draw": {
+        "subject": "General research-principle page",
+        "action": "folds back into its own labeled methods pocket beside the separate planned UAA pages",
+        "emotion": "grounded",
+        "annotation": "RESEARCH PRINCIPLE"
+      },
+      "choreo": {
+        "primary": "General research-principle page folds back into its own labeled methods pocket beside the separate planned UAA pages",
+        "reaction": "The methods pocket lip bows around the folding page and its attached GENERAL PRINCIPLE label turns outward as the page seats.",
+        "ambient": "Upper-left outer folder ribbon drifts gently; lower-right pencil tassel sways against its stand; rear notebook cover strap flexes slightly. These three locations remain outside both TRAINING and TEST contents."
+      },
+      "continuity": "The two research routes remain visible outside the methods pocket. The example is filed as context rather than turned into a UAA result."
+    },
+    {
+      "id": 37,
+      "at_s": 112.83,
+      "t": "112.83-115.49",
+      "vo_line": 18,
+      "offset": 3.53,
+      "vo": "That's a research principle, not a reported U A A result.",
+      "shows": "Student hand returns the UAA planned-study spread to the front working position while the methods pocket remains visibly separate at the rear",
+      "sfx": "Broad paper-spread slide followed by a small pencil-on-stop tick, with no electronic or diagnostic tone.",
+      "means": "NO UAA RESULT CLAIMED",
+      "draw": {
+        "subject": "Student hand",
+        "action": "returns the UAA planned-study spread to the front working position while the methods pocket remains visibly separate at the rear",
+        "emotion": "honest",
+        "annotation": "NO UAA RESULT CLAIMED"
+      },
+      "choreo": {
+        "primary": "Student hand returns the UAA planned-study spread to the front working position while the methods pocket remains visibly separate at the rear",
+        "reaction": "The returning study spread draws both attached PLANNED tabs upright; its leading edge nudges the loose pencil to its fixed stop beside the empty answer line.",
+        "ambient": "Rear-left archive ribbon sways; far-right instrument stand strap flexes; lower foreground unused page corner curls gently. The active public-data page and the new collection plan keep their separate positions."
+      },
+      "continuity": "Both UAA answer fields remain blank and both study tabs stay PLANNED. This is a new working position, not a held label over the previous composition."
+    },
+    {
+      "id": 38,
+      "at_s": 115.49,
+      "t": "115.49-118.15",
+      "vo_line": 19,
+      "offset": 0,
+      "vo": "Which question about learning should they investigate first?",
+      "shows": "Student hand lifts the pencil from its stop and places its tip just above the next question line without writing an answer",
+      "sfx": "Light pencil release from the desk stop followed by a soft page-corner lift; leave the poised tip silent rather than invent writing.",
+      "means": "WHICH QUESTION FIRST?",
+      "draw": {
+        "subject": "Student hand",
+        "action": "lifts the pencil from its stop and places its tip just above the next question line without writing an answer",
+        "emotion": "inviting",
+        "annotation": "WHICH QUESTION FIRST?"
+      },
+      "choreo": {
+        "primary": "Student hand lifts the pencil from its stop and places its tip just above the next question line without writing an answer",
+        "reaction": "The pencil's removal releases the loose page corner it rested on; that corner rises slightly and tensions the notebook's attached ribbon.",
+        "ambient": "Rear-left archive ribbon sways; far-right instrument stand strap flexes; lower foreground unused page corner curls gently. The active public-data page and the new collection plan keep their separate positions."
+      }
+    },
+    {
+      "id": 39,
+      "at_s": 118.15,
+      "t": "118.15-120.00",
+      "vo_line": 19,
+      "offset": 2.66,
+      "vo": "Which question about learning should they investigate first?",
+      "shows": "Notebook question-page edge rises toward the opening angle while the public-data route and empty planned collection space remain visible beneath it",
+      "sfx": "The dry paper fan from beat1 returns more softly as the question page lifts; let the sound resolve into the opening page motion on replay.",
+      "means": "THE QUESTION COMES FIRST",
+      "draw": {
+        "subject": "Notebook question-page edge",
+        "action": "rises toward the opening angle while the public-data route and empty planned collection space remain visible beneath it",
+        "emotion": "hopeful",
+        "annotation": "THE QUESTION COMES FIRST"
+      },
+      "choreo": {
+        "primary": "Notebook question-page edge rises toward the opening angle while the public-data route and empty planned collection space remain visible beneath it",
+        "reaction": "The lifting page pulls its attached coral tab and ribbon upward with delayed follow-through, returning the same shapes to the first-frame geometry.",
+        "ambient": "Rear-left archive ribbon sways; far-right instrument stand strap flexes; lower foreground unused page corner curls gently. The active public-data page and the new collection plan keep their separate positions."
+      },
+      "continuity": "Keep motion within the current ending and root's existing timing. Do not add a new answer, close either useful data route, or introduce a different notebook."
+    }
   ],
   "shots": [
-    {"id":1,"title":"The road rolls away","t":"0.0-9.0","framing":"macro-closeup","scale":"close","height":"ground","stage":"road-edge","pov":"macro-closeup","layout":"single-object-void","motion_vector":"push-in-only","hero_treatment":"instrument-as-subject","camera":"orbitReveal+dollyThrough","stage3d":"planes","transition_in":"","thread":"match","centered":"FlightCrate on the last road plank","means":"Open on the problem, not the aircraft","hero":{"name":"FlightCrate","parts":24,"zones":5,"detail_note":"Insulated body, latch, seal, gauge, destination tag, rivets, handles, proof rail and cast shadow."}},
-    {"id":2,"title":"The preliminary sheet","t":"9.0-22.0","framing":"data-panel","scale":"wide","height":"eye","stage":"award-table","pov":"exploded-diagram","layout":"grid-modular","motion_vector":"assemble-build","hero_treatment":"data-as-subject","camera":"craneDown+orbitReveal","stage3d":"planes","transition_in":"mask-wipe","thread":"carry","centered":"Award sheet and exact amount","means":"Qualify the money and split the systems","hero":{"name":"AwardSheet","parts":18,"zones":4,"detail_note":"Paper grain, stamps, amount rollers, two vehicle cards and shadows."}},
-    {"id":3,"title":"Two tests","t":"22.0-25.0","framing":"two-up","scale":"medium","height":"low","stage":"split-hangar","pov":"eye-level-immersive","layout":"fullbleed-split","motion_vector":"horizontal-traverse","hero_treatment":"structure-as-subject","camera":"truckAcross+riseWith","stage3d":"planes","transition_in":"morph","thread":"match","centered":"Cargo lane and passenger lane split","means":"Make the grammar physical","hero":{"name":"ProofDivider","parts":16,"zones":4,"detail_note":"Two rails, shelf Gate, cargo silhouette, passenger seat, labels and floor shadows."}},
-    {"id":4,"title":"Existing network","t":"25.0-34.0","framing":"map-territory","scale":"extreme-wide","height":"high","stage":"network-map","pov":"top-down-map","layout":"map-territory","motion_vector":"scroll-data","hero_treatment":"multiplicity-swarm","camera":"craneDown+truckAcross","stage3d":"planes","transition_in":"map-travel","thread":"travel","centered":"BushPlane crosses behind a stationary proposed crate, eight hubs and village pins","means":"Avoid rescue framing and do not depict an unproved medicine flight","hero":{"name":"BushPlane","parts":20,"zones":5,"detail_note":"Shelf aircraft behind a stationary proposed crate, route ribbon, hubs, pins, tundra paper layers and parallax."}},
-    {"id":5,"title":"The medicine box","t":"34.0-47.5","framing":"push-detail","scale":"insert","height":"eye","stage":"cargo-proof-bench","pov":"macro-closeup","layout":"single-object-void","motion_vector":"radial-emanate","hero_treatment":"instrument-as-subject","camera":"dollyThrough+orbitReveal","stage3d":"planes","transition_in":"graphic-match","thread":"match","centered":"Gauge and first two proof lights","means":"Plant the observable cargo test","hero":{"name":"FlightCrateGauge","parts":14,"zones":4,"detail_note":"Gauge, proposed-state tag, tamper seal, route lamp, authorization lamp and clock."}},
-    {"id":6,"title":"Blank evidence","t":"47.5-60.0","framing":"data-panel","scale":"medium","height":"low","stage":"notice-fields","pov":"instrument-screen","layout":"hud-instrument-frame","motion_vector":"vertical-rise","hero_treatment":"data-as-subject","camera":"craneDown+dollyThrough","stage3d":"planes","transition_in":"assemble","thread":"build","centered":"Four empty source fields and destination board","means":"Proposal is not deployment","hero":{"name":"EvidenceFields","parts":20,"zones":5,"detail_note":"Paper fields, empty aircraft recess, route card, agreement card, flight card and board flaps."}},
-    {"id":7,"title":"Two geographies","t":"60.0-69.0","framing":"two-up","scale":"wide","height":"eye","stage":"map-ledger","pov":"top-down-map","layout":"fullbleed-split","motion_vector":"horizontal-traverse","hero_treatment":"structure-as-subject","camera":"truckAcross+orbitReveal","stage3d":"planes","transition_in":"hard-cut","thread":"carry","centered":"Summary card and service-area card compare","means":"Keep the official mismatch brief and exact","hero":{"name":"MapCards","parts":18,"zones":4,"detail_note":"Two dimensional paper cards, shared Dillingham pin, separate label stacks and cast shadows."}},
-    {"id":8,"title":"The taller ladder","t":"69.0-77.5","framing":"wide-establish","scale":"extreme-wide","height":"low","stage":"approval-hall","pov":"exploded-diagram","layout":"stacked-layers","motion_vector":"assemble-build","hero_treatment":"structure-as-subject","camera":"craneDown+riseWith","stage3d":"planes","transition_in":"mask-wipe","thread":"build","centered":"Cargo track low, passenger ladder tall","means":"Reframe one award as unequal proof burdens","hero":{"name":"PassengerLadder","parts":22,"zones":5,"detail_note":"Cargo rail, passenger steps, autonomy word tile, empty seat, shelf Gate, plum divider and deep shadows."}},
-    {"id":9,"title":"Passenger approvals","t":"77.5-86.5","framing":"subject-portrait","scale":"close","height":"eye","stage":"passenger-gate","pov":"eye-level-immersive","layout":"centered-hero-lowerthird","motion_vector":"vertical-rise","hero_treatment":"structure-as-subject","camera":"orbitReveal+dollyThrough","stage3d":"planes","transition_in":"graphic-match","thread":"match","centered":"Empty seat behind shelf Gate as a cargo ticket is returned","means":"Cargo proof cannot certify passenger operation","hero":{"name":"Gate","parts":19,"zones":5,"detail_note":"Shelf Gate, empty seat, aircraft, pilot and operation labels, cargo ticket, WRONG TEST mark, track and shadows."}},
-    {"id":10,"title":"Fund the test","t":"86.5-100.0","framing":"subject-portrait","scale":"medium","height":"high","stage":"proof-bench","pov":"macro-closeup","layout":"single-object-void","motion_vector":"radial-emanate","hero_treatment":"instrument-as-subject","camera":"orbitReveal+dollyThrough","stage3d":"planes","transition_in":"carried-element","thread":"carry","centered":"FlightCrate mounts five outlined lights","means":"Turn to accountable hope","hero":{"name":"FlightCrate","parts":29,"zones":6,"detail_note":"Hero body plus five dimensional neutral proof lights, paper test bench, proposed seal and cream rim."}},
-    {"id":11,"title":"Name the test","t":"100.0-112.5","framing":"two-up","scale":"wide","height":"low","stage":"proof-route","pov":"exploded-diagram","layout":"fullbleed-split","motion_vector":"horizontal-traverse","hero_treatment":"instrument-as-subject","camera":"truckAcross+orbitReveal","stage3d":"planes","transition_in":"whip-pan","thread":"travel","centered":"FlightCrate beside one blank route and five unfilled criteria","means":"Pay the primary loop with measurable future proof","hero":{"name":"FlightCrate","parts":24,"zones":5,"detail_note":"Crate, one blank route card, certification, operating authorization and route criteria, all unfilled."}},
-    {"id":12,"title":"Still in the crate","t":"112.5-120.0","framing":"macro-closeup","scale":"insert","height":"ground","stage":"road-edge-return","pov":"macro-closeup","layout":"single-object-void","motion_vector":"push-in-only","hero_treatment":"instrument-as-subject","camera":"dollyThrough+static:button-held","stage3d":"planes","transition_in":"match-cut","thread":"match","centered":"Blank route tag on the unopened FlightCrate","means":"Resolve the argument without fabricating a flight","hero":{"name":"FlightCrate","parts":24,"zones":5,"detail_note":"Same frame-one asset, closed latch, swinging blank destination tag, held cream line and rolled road."}}
-  ]
+    {
+      "id": 1,
+      "title": "The unopened page",
+      "t": "0.00-4.51",
+      "vo_line": 0,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "low",
+      "stage": "notebook-macro",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "orbitReveal+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "",
+      "thread": "match",
+      "centered": "The unopened page",
+      "means": "The unopened page",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Notebook stitched spine, stacked paper edge, dog-ear and one coral tab; isolated contact carries socket/rim/contact-pad tiers."
+      },
+      "entry_state": "One scalp contact looms beside a compact notebook; the existing page is visible, NEXT STEP wing closed.",
+      "exit_state": "The public page shifts courteously; the final tab arrests a half-lift before contents are exposed.",
+      "camera_intent": "Orbit8deg around the contact rim while dollying only25px toward the tab, handing focus from sensing hardware to the unopened page.",
+      "transition_anchor": "Opening shot. The contact circle will match the circular instrument stand in the next set.",
+      "focus_target": "Orbit8deg around the contact rim while dollying only25px toward the tab, handing focus from sensing hardware to the unopened page."
+    },
+    {
+      "id": 2,
+      "title": "A new tool in Anchorage",
+      "t": "4.51-11.27",
+      "vo_line": 1,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "laboratory",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown+orbitReveal",
+      "stage3d": "planes",
+      "transition_in": "graphic-match",
+      "thread": "carry",
+      "centered": "A new tool in Anchorage",
+      "means": "A new tool in Anchorage",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Full Character rig, instrument body/stand/retaining clip, bench top and supports; notebook rests front-left."
+      },
+      "entry_state": "The contact circle matches a full instrument stand at center; a student and lab bench assemble around it.",
+      "exit_state": "The student seats the sensor stand, which settles and leaves the newly acquired device ready beside the notebook.",
+      "camera_intent": "Crane down60px from the window-led bench reveal to the seated stand; orbit4deg exposes its shaded side wall.",
+      "transition_anchor": "MATCH the round contact base to the stand at x540/y880. The new wide lab adds window, bench and acting student instead of extending the macro canvas.",
+      "focus_target": "Crane down60px from the window-led bench reveal to the seated stand; orbit4deg exposes its shaded side wall."
+    },
+    {
+      "id": 3,
+      "title": "An acquired and funded instrument",
+      "t": "11.27-25.35",
+      "vo_line": 2,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "announcement-desk",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "centered": "An acquired and funded instrument",
+      "means": "An acquired and funded instrument",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Announcement sheet with date, lab tab and pocket; separate funding slip with backing edge; training card held by a visible clip."
+      },
+      "entry_state": "The wide lab remains behind a physical announcement page sweeping toward camera.",
+      "exit_state": "Top-down notebook pocket contains the announcement, separate funding slip and training demonstration card; NEXT STEP remains closed.",
+      "camera_intent": "Truck70px along the top-down paper edge to funding then training; a30px dolly gives stacked paper actual depth.",
+      "transition_anchor": "The announcement page from the bench covers frame and becomes the overhead document surface. Change from an occupied room to paper filling the center.",
+      "focus_target": "Truck70px along the top-down paper edge to funding then training; a30px dolly gives stacked paper actual depth."
+    },
+    {
+      "id": 4,
+      "title": "A measurement reaches the screen",
+      "t": "25.35-34.37",
+      "vo_line": 4,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "high",
+      "stage": "sensor-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "orbitReveal+riseWith",
+      "stage3d": "planes",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "A measurement reaches the screen",
+      "means": "A measurement reaches the screen",
+      "hero": {
+        "name": "EEGHeadset",
+        "parts": 42,
+        "zones": 5,
+        "detail_note": "Exactly19 scalp pads, two earclips and three empty sockets; rib body, pad shading and small fasteners give three detail tiers. Notebook upright page and coral tab occupy x180/y1160 throughout."
+      },
+      "entry_state": "A single scalp contact fills center, with the notebook spine visible along lower-left as a recording-page support.",
+      "exit_state": "Nineteen contact pads are exposed together; a schematic trace leads to the student observation display and stops before an empty interpretation area.",
+      "camera_intent": "Orbit10deg to separate front/back contact ribs, then rise35px as the recording connection is revealed. Hold on contact-to-trace relation after expansion.",
+      "transition_anchor": "MATCH the instrument stand rim to a single contact pad. Its surrounding system is disclosed, not the announcement page zoomed.",
+      "focus_target": "Orbit10deg to separate front/back contact ribs, then rise35px as the recording connection is revealed. Hold on contact-to-trace relation after expansion."
+    },
+    {
+      "id": 5,
+      "title": "Existing data and own tasks",
+      "t": "34.37-45.63",
+      "vo_line": 6,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "archive-alcove",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross+orbitReveal",
+      "stage3d": "planes",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "Existing data and own tasks",
+      "means": "Existing data and own tasks",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Book spine, index tabs, paper stacks, selected strip and articulated student hand; no idle background person."
+      },
+      "entry_state": "A public-data book arrives in an archive alcove, open to an existing recording page beside the student.",
+      "exit_state": "The student selects a source tab and places an own-task planning tab alongside; concealed NEXT STEP wing remains pinned.",
+      "camera_intent": "Truck80px from book spine to the hand placing the task; orbit5deg brings the notebook tab into the same near plane.",
+      "transition_anchor": "Match the notebook stitched paper edge from the demonstration alcove into the public-data book. The demonstration trace does not enter the archive or become a public dataset.",
+      "focus_target": "Truck80px from book spine to the hand placing the task; orbit5deg brings the notebook tab into the same near plane."
+    },
+    {
+      "id": 6,
+      "title": "A person outside the example",
+      "t": "45.63-49.58",
+      "vo_line": 8,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "overhead",
+      "stage": "methods-inset",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "match-action",
+      "thread": "build",
+      "centered": "A person outside the example",
+      "means": "A person outside the example",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Two separated page territories, one distinct participant marker, waiting rail and conditional label; no invented sample count."
+      },
+      "entry_state": "The own-task tab flips to an explicitly labeled GENERAL METHODS EXAMPLE, with a hypothetical participant marker outside TRAINING.",
+      "exit_state": "The marker arrives on a separate waiting rail, with its distinct double-notch and color; it does not enter training.",
+      "camera_intent": "Crane35px to an overhead view that makes the gap between training page and waiting rail visible; dolly15px toward the distinctive notched marker.",
+      "transition_anchor": "MATCH ACTION the turned task tab into the methods inset frame. Keep the notebook coral corner as a continuity anchor.",
+      "focus_target": "Crane35px to an overhead view that makes the gap between training page and waiting rail visible; dolly15px toward the distinctive notched marker."
+    },
+    {
+      "id": 7,
+      "title": "Reading is planned",
+      "t": "49.58-55.21",
+      "vo_line": 9,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "high",
+      "stage": "reading-desk",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "orbitReveal+truckAcross",
+      "stage3d": "planes",
+      "transition_in": "mask-wipe",
+      "thread": "match",
+      "centered": "Reading is planned",
+      "means": "Reading is planned",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Reading page spread, binding, bookmark, lamp base and outlined planned target; empty output area stays distinct from printed task."
+      },
+      "entry_state": "The methods marker stays in a small labeled rear tab while a reading book opens on a lamp-lit desk.",
+      "exit_state": "The READING / PLANNED tab connects to an outlined cognitive-state comparison target; bookmark overshoot lands without producing a result.",
+      "camera_intent": "Orbit6deg across book thickness; truck35px along the link from task to proposed target.",
+      "transition_anchor": "The opening book page wipes in a new reading desk. CARRY the notebook spine at lower-left and the labeled waiting tab in its rear pocket.",
+      "focus_target": "Orbit6deg across book thickness; truck35px along the link from task to proposed target."
+    },
+    {
+      "id": 8,
+      "title": "Programming is planned",
+      "t": "55.21-65.92",
+      "vo_line": 10,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "programming-desk",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough+craneDown",
+      "stage3d": "planes",
+      "transition_in": "graphic-match",
+      "thread": "carry",
+      "centered": "Programming is planned",
+      "means": "Programming is planned",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Monitor bezel/stand/keys, code blocks, independent gaze marker and two paper plans; coral notebook corner stays lower-left."
+      },
+      "entry_state": "A rectangular reading target matches a programming monitor on a different desk, notebook open below.",
+      "exit_state": "Code-shaped blocks and a separate planned gaze marker occupy separate panels; the student turns both planned-study pages to empty answer spaces.",
+      "camera_intent": "Dolly30px through monitor bezel then crane20px toward the separate gaze-panel edge so the two measurement types never merge.",
+      "transition_anchor": "MATCH the planned target rectangle to a monitor bezel. The tabletop gains keyboard, cable-free display and separate gaze marker, replacing the reading book and lamp.",
+      "focus_target": "Dolly30px through monitor bezel then crane20px toward the separate gaze-panel edge so the two measurement types never merge."
+    },
+    {
+      "id": 9,
+      "title": "The archive takes the room",
+      "t": "65.92-70.42",
+      "vo_line": 12,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "low",
+      "stage": "archive-shelves",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith+orbitReveal",
+      "stage3d": "planes",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "centered": "The archive takes the room",
+      "means": "The archive takes the room",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Shelves with slots, dimensional book spines and source tabs; selected page has prominent identity while other pages stay low contrast."
+      },
+      "entry_state": "A planned study page lifts like a shutter, revealing a much wider public-data shelf wall.",
+      "exit_state": "A source page slides out toward a central work tray; the headset rests to the far side and the notebook opens its PUBLIC DATA wing.",
+      "camera_intent": "Rise80px from one drawer into the archive wall, then orbit4deg to show drawer depth. Settle on the selected page at center.",
+      "transition_anchor": "The raised plan page becomes a mask revealing shelves, rather than a flat dissolve. Notebook public wing at lower-center and the conditional waiting marker remain visible.",
+      "focus_target": "Rise80px from one drawer into the archive wall, then orbit4deg to show drawer depth. Settle on the selected page at center."
+    },
+    {
+      "id": 10,
+      "title": "The existing route works",
+      "t": "70.42-85.63",
+      "vo_line": 13,
+      "framing": "data-panel",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "analysis-desk",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross+craneDown",
+      "stage3d": "planes",
+      "transition_in": "carried-element",
+      "thread": "match",
+      "centered": "The existing route works",
+      "means": "Public data performs useful analysis before the additional collection plan enters",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Question/recording symbols match visibly; comparison traces are schematic and produce no score. Inventory and optional plan are separate physical props. Distinct waiting marker remains outside training in a rear tab."
+      },
+      "entry_state": "GENERAL EXAMPLE taskA question and matching taskA recording are unselected on the analysis desk.",
+      "exit_state": "TaskA recording feeds a useful comparison. TaskB is assessed against inventory; a pencil chooses optional collection while taskA analysis continues. The notebook hinge begins to lift.",
+      "camera_intent": "Truck90px from taskA fit-check across the comparison workspace to taskB plan; crane25px lets the viewer see both routes without one obscuring the other.",
+      "transition_anchor": "CARRY the selected source page into a full overhead analysis desk. The shelf wall exits; two clearly labeled work regions and active comparisons replace it.",
+      "focus_target": "Truck90px from taskA fit-check across the comparison workspace to taskB plan; crane25px lets the viewer see both routes without one obscuring the other."
+    },
+    {
+      "id": 11,
+      "title": "The extra page",
+      "t": "85.63-99.72",
+      "vo_line": 15,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "expanded-notebook",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "orbitReveal+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "match-action",
+      "thread": "carry",
+      "centered": "The extra page",
+      "means": "The extra workspace adds a route while preserving the active public page",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Stitched hinge, newly exposed paper layers, clear empty collection/test areas and active public trace; the supporting hand visibly catches the wing weight."
+      },
+      "entry_state": "Concealed NEXT STEP wing begins its reveal beside an actively used public page; nearby stationery clears the new space.",
+      "exit_state": "Expanded notebook holds PUBLIC DATA at left and TO COLLECT / TO TEST at right. A hand attaches a planned task; surrounding stand/pencil holders remain displaced for the rest of the film.",
+      "camera_intent": "Orbit7deg around the hinge during opening, then dolly35px to the expanded spread. The camera stops short of clipping either research route from the square crop.",
+      "transition_anchor": "MATCH ACTION the lifting hinge from the previous shot into a lower, wider two-route view. The same coral tab and stitched spine remain fixed while the set gains actual width.",
+      "focus_target": "Orbit7deg around the hinge during opening, then dolly35px to the expanded spread. The camera stops short of clipping either research route from the square crop."
+    },
+    {
+      "id": 12,
+      "title": "A test for new people",
+      "t": "99.72-109.30",
+      "vo_line": 17,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "high",
+      "stage": "methods-inset",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross+riseWith",
+      "stage3d": "planes",
+      "transition_in": "graphic-match",
+      "thread": "build",
+      "centered": "A test for new people",
+      "means": "A test for new people",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Training page, distinct test tray, separated entry path, notched participant page and an opened conditional header; use one identity rather than an apparent cohort."
+      },
+      "entry_state": "A flap attached to the expanded notebook opens into a GENERAL METHODS EXAMPLE with a conditional new-person claim.",
+      "exit_state": "The same double-notched participant page travels only into TEST; TRAINING remains separate, and no score is printed.",
+      "camera_intent": "Truck80px along the waiting-to-test path, then rise25px so the non-overlap with TRAINING is apparent from above.",
+      "transition_anchor": "MATCH the empty TO TEST area to the separate hypothetical test tray. Keep the double-notch marker and conditional label; this is a conceptual diagram, not the lab room.",
+      "focus_target": "Truck80px along the waiting-to-test path, then rise25px so the non-overlap with TRAINING is apparent from above."
+    },
+    {
+      "id": 13,
+      "title": "Keep the principle separate",
+      "t": "109.30-115.49",
+      "vo_line": 18,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "notebook-spread",
+      "pov": "macro-closeup",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown+orbitReveal",
+      "stage3d": "planes",
+      "transition_in": "carried-element",
+      "thread": "match",
+      "centered": "Keep the principle separate",
+      "means": "Keep the principle separate",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Labeled pocket, retained planned tabs, folded diagram edge and hand contact; notebook stitching provides fixed identity."
+      },
+      "entry_state": "The separate methods example occupies center; UAA planned pages are still behind it.",
+      "exit_state": "A hand closes the methods flap into its labeled pocket and brings the UAA plans forward, keeping PLANNED visibly attached and their answers empty.",
+      "camera_intent": "Crane45px down onto the pocket closure and orbit4deg to expose the still-dotted planned pages. Focus moves from the general rule to the actual institution's plans.",
+      "transition_anchor": "CARRY the methods flap intact into the notebook pocket. Change from a wide diagram to a close physical paper fold; no diagram becomes an alleged UAA protocol.",
+      "focus_target": "Crane45px down onto the pocket closure and orbit4deg to expose the still-dotted planned pages. Focus moves from the general rule to the actual institution's plans."
+    },
+    {
+      "id": 14,
+      "title": "The next question",
+      "t": "115.49-120.00",
+      "vo_line": 19,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "laboratory",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "orbitReveal+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "centered": "The next question",
+      "means": "The next question",
+      "hero": {
+        "name": "Sheet research notebook",
+        "parts": 26,
+        "zones": 5,
+        "detail_note": "Articulated student rig, pencil, open notebook, task tab and instrument stand; the pencil and page carry the button, no idle cast."
+      },
+      "entry_state": "The notebook returns to student scale with both routes open and a pencil resting beside the question line.",
+      "exit_state": "The student lifts the pencil above the next question; the page edge lifts into the same geometry as the opening, without filling an answer.",
+      "camera_intent": "Orbit6deg around the hand and page edge with a20px dolly; center the empty next line, then let the page lift carry the cut into credits.",
+      "transition_anchor": "MATCH CUT the notebook corner from the close fold to a medium student/bench portrait. Keep both public and planned routes visible; final edge matches the opening page.",
+      "focus_target": "Orbit6deg around the hand and page edge with a20px dolly; center the empty next line, then let the page lift carry the cut into credits."
+    }
+  ],
+  "act3_visible_choice": {
+    "label": "GENERAL EXAMPLE",
+    "first_step": "TASK A question and TASK A recording share a matching symbol; the selected recording feeds comparison without a score.",
+    "second_step": "TASK B is compared with inventory, with no rejected match or assertion of missing public data.",
+    "decision": "A pencil marks the OPTIONAL COLLECTION plan for TASK B while TASK A analysis stays active. This is one possible route, not a report of a UAA protocol."
+  },
+  "atmosphere_and_holds": "One restrained room-air bed runs below voice and motivated foley with no electronic or clinical diagnostic beeps. Ambient loops are small and spatially distinct. At each stated reveal hold, freeze the camera, ambient loops and secondary actors until hold_until_s; only the central disclosed state remains for recognition. Resume secondary motion at secondary_at_s, with no invented data result. Visual atmosphere is a faint rear-window dust field with a very slow warm-light gradient, also frozen during reveal holds and absent from the signal/interpretation negative-space beat."
 }

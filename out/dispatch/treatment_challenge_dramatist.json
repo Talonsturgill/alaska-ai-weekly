@@ -1,0 +1,62 @@
+{
+  "role": "DRAMATIST",
+  "reviewed_at_utc": "2026-09-12T13:29:42.348638+00:00",
+  "scope": "One independent retention cross-challenge of the other three complete treatments. No storyboard or pitch edits.",
+  "reviews": [
+    {
+      "pitch": "treatment_comedian.json",
+      "title": "A Seat for the Question",
+      "verdict": "Strongest physical dramatic engine, conditional on resolving one continuity contradiction.",
+      "sag_near_80s": "78-87 currently waits nine seconds for an announced extension. Give that interval an active student adjustment, hinge load and release; do not hold a static wide shot while repeating added choice.",
+      "act3_countercase": "A full 18-second public-data scene is credible and generous. Strengthen the book supporting another notebook into public recordings actively entering a conceptual analysis workspace while the headset waits. Helpful furniture alone does not demonstrate why the archive can already be sufficient.",
+      "throughline_boundaries": "The cobalt edge, citron hinge and chipped corner identify the table at 0/35/60/96/120. But the cold open says the extension stays locked until Act3, while beat4 makes it a work surface at35 and beat6 calls it folded again. Reserve the actual horizontal extension until87. A distinct upright hinged planning board may rise at35; the extension remains visibly latched beneath it.",
+      "staggered_payoffs": "1.4->87 and44->105 are distinct, eighteen seconds apart. Preserve the stool silhouette at the frame edge during the public-data scene. The late appearance must pay a remembered object, not introduce a new methods lesson.",
+      "padding_test": "60-68 public recordings reach the desk;68-78 they supply an illustrated analysis route without new collection;78-83 the chosen-task board joins the intact archive;83-87 a student opens the unused extension;87-96 both routes gain ordinary working space. Each interval changes the argument or geometry. The existing generic per-beat padding claims need this granularity.",
+      "precise_refinement": "Use one table extension, one opening, one callback. At87 the opening courtesy shuffle becomes a large useful movement. Also replace VO wording about gaining room to ask questions with gaining capacity to record signals during tasks researchers already choose."
+    },
+    {
+      "pitch": "treatment_explainer.json",
+      "title": "The Question Comes First",
+      "verdict": "Best explanatory registration of task and signal, but weakest late dramatic withholding.",
+      "sag_near_80s": "73-90 moves into trays and labels after task context has already paid at68. The film risks becoming a methods diagram at exactly the late attention dip. Keep a human hand and the same physical strip active; show a consequential move to a separate test position, not successive title labels.",
+      "act3_countercase": "58-73 gives public data a full working route and the device no privileged answer. This passes the fair-case test. Keep the route materially useful through95 rather than letting it vanish when the methods inset arrives.",
+      "throughline_boundaries": "The coral corner and punched hole are good identifiers. The strip has meaningful states at0/20/36/73/95/117, but at the60 boundary the archive takes over. Leave the same strip visibly parked in the shared workspace throughout that countercase.",
+      "staggered_payoffs": "Secondary43->68 is well separated from primary14->95. However, beat7 calls the primary payoff90 while retention specifies95. More seriously, task at68 and test before90 disclose the whole answer before the final TASK/SIGNAL/TEST unfold. The late three-part label is a recap unless the physical relationship itself has truly been withheld.",
+      "padding_test": "The 73-82 blank-answer interval and82-95 methods inset can be compressed without losing their claims. They need a distinct physical complication to justify the extra duration. Sixteen seconds on the hardware count earlier also competes with the stronger student-choice story.",
+      "precise_refinement": "Graft the task clip that travels with its recording into the chosen treatment. Keep the hardware cutaway brief. Do not use a final list of labels as the principal promised reveal."
+    },
+    {
+      "pitch": "treatment_enthusiast.json",
+      "title": "The Extra Page",
+      "verdict": "Strongest explicit Act3 countercase and most complete boundary continuity; close second overall.",
+      "sag_near_80s": "The arrival of a different chosen task at76 can produce a fresh decision while the archive stays useful. It becomes a sag if76-84 is merely coexistence held on screen. Have the student compare the task tab with the available page, then unfold an optional collection page without depicting an archive failure.",
+      "act3_countercase": "Best of the three: the existing recording fits a conceptual question and runs the scene while the new headset is idle. Preserve this as an illustration of a suitable dataset, with no invented UAA result or guaranteed time advantage.",
+      "throughline_boundaries": "One stitched notebook with dog-ear and copper tab changes scale at0/30/60/95/117 and returns in the button. This is the clearest written continuity. Avoid adding a separate giant desk that obscures whether the notebook itself transformed.",
+      "staggered_payoffs": "10->90 and48->105 are properly staggered. RESULT? promises a result-shaped reward that the reveal intentionally cannot provide. Replace it with NEXT STEP or ROOM FOR THE TASK from the opening; the mystery should concern what the acquisition adds. Keep the participant visible enough at48 and an intermediate boundary to be remembered at105.",
+      "padding_test": "The five intervals are unusually specific. But60-68 and68-76 both show public data working, so give the first the suitability decision and the second the analysis action.76-84 must visibly assess fit;84-90 opens the extra collection option;90-95 resolves the capability promise. No nine-second empty-flap linger.",
+      "precise_refinement": "Keep the notebook and full-strength public-data scene. Relabel the tease before production and make the late turn a new working surface rather than a blank answer. The final pencil poised over a planned collection page earns the warm button."
+    }
+  ],
+  "strongest_choice": {
+    "pitch": "treatment_comedian.json",
+    "title": "A Seat for the Question",
+    "why": "The opening cramped table, delayed extension, repeated courtesy gag and spare stool give two concrete causes to keep watching. Added recording capacity can become changed space under a student hand, with a visual joke paying the thesis. This is a conditional choice, not a clean pass as written.",
+    "runner_up": "The Extra Page is the safer fully specified plan if the table geometry cannot be made unambiguous."
+  },
+  "useful_grafts": [
+    {
+      "from": "enthusiast",
+      "take": "The suitable public-data page drives its own analysis route with the new headset idle. Use its active suitability->analysis->additional option structure around60-90."
+    },
+    {
+      "from": "explainer",
+      "take": "The proposed task clip stays physically attached to its illustrative recording, retaining context across camera moves."
+    },
+    {
+      "from": "dramatist",
+      "take": "Keep the conditional test on a distinct small methods inset; the instrument and study plans remain the actual news, and the return to student hands supplies the button."
+    }
+  ],
+  "nonnegotiable_accuracy": "Plans stay labeled. Students already choose questions. New equipment adds task-specific collection capacity, not new intellectual permission. No diagnosis, completed model result, archive inferiority, or allegation about UAA protocols. The new-person example remains conditional editorial context.",
+  "no_storyboard_written": true
+}

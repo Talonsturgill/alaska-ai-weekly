@@ -1,0 +1,137 @@
+{
+  "role": "comedian",
+  "title": "A Seat for the Question",
+  "angle_file": "out/dispatch/angle.json",
+  "logline": "A friendly stack of public EEG data makes room on an expanding lab bench for a new headset, a student's chosen question and eventually a test the model hasn't already met.",
+  "comic_rule": "The objects fuss over seating arrangements. Students and prospective participants remain competent people. The humor celebrates an expanding research table and never makes a diagnosis or a thought-reading joke.",
+  "cold_open": {
+    "seconds": [0,3],
+    "picture": "A thick public-data book settles happily at an absurdly short workbench. A compact EEG headset descends toward the bench's remaining postage-stamp space. The book courteously slides over exactly one inch. Beneath them, an unopened table extension twitches. Warm physical comedy, no rejection or discarded evidence.",
+    "readable_labels": ["PUBLIC EEG DATA", "NEW TOOL"],
+    "promise": "Can this tiny research table make room for both? The hidden extension remains locked until Act 3."
+  },
+  "escalation_beats_2_to_8": [
+    {
+      "beat": 2,
+      "seconds": [3,20],
+      "action": "An illustrated overhead headset opens its nineteen electrode positions like a tidy mechanical flower. Camera widens to the observed milestone, UAA acquisition and equipment training. The table's folded hinge remains conspicuous below the desk edge.",
+      "new_information": "This is acquired research equipment in Anchorage, announced on September 9th.",
+      "source_claims": ["C1","C2","C4","C5"],
+      "padding_test": "Removing this loses the concrete Alaska event, the sensor count and the distinction between an acquired tool and an abstract AI story."
+    },
+    {
+      "beat": 3,
+      "seconds": [20,35],
+      "action": "A student hand turns a public-data volume toward a workstation. A smaller blank task notebook arrives in the other hand. The book gives the notebook an encouraging nudge rather than a suspicious glare. On an illustrated screen, a clearly labeled schematic signal unspools without a prediction.",
+      "new_information": "Egorov already uses public datasets and anticipates gathering recordings for tasks he chooses.",
+      "source_claims": ["C8"],
+      "padding_test": "This establishes the human change. Without it, the film is merely an equipment purchase."
+    },
+    {
+      "beat": 4,
+      "seconds": [35,48],
+      "action": "The table's blank leaf swings halfway up and becomes a work surface for a large reading-task sketch. A springy bookmark leaps into position, overshoots and politely backs up. PLANNED RESEARCH stays attached to the sketch. A spare stool is revealed at the far edge, still outside a translucent area marked EXAMPLE TRAINING DATA.",
+      "new_information": "Reading-related cognitive-state research is planned. The spare stool plants the second promise before the first is resolved.",
+      "source_claims": ["C6"],
+      "padding_test": "A chosen task becomes concrete. The unused stool introduces a distinct future question rather than extending the purchase reveal."
+    },
+    {
+      "beat": 5,
+      "seconds": [48,60],
+      "action": "A programming-task sketch opens alongside the reading sketch. The bookmark slips off the page, lands on a keyboard key and is returned to its book by the student. Both sketches are visibly plans with no completed charts. The headset remains a recording instrument, not a worker doing the programming.",
+      "new_information": "The separate programming project plans to examine brain activity and eye movements. Different tasks can organize different recordings.",
+      "source_claims": ["C7","O5"],
+      "padding_test": "The second application demonstrates experimental choice rather than assuming one universal meaning for a signal."
+    },
+    {
+      "beat": 6,
+      "seconds": [60,78],
+      "action": "THE EXISTING WORK TABLE. The public-data book takes the center of the image at full scale. Its well-used pages open to an abstract research workspace while the new headset waits supportively beside it. The public-data book catches the tilting task notebook and puts it on a proper stand. Nobody is evicted. The folded table leaf is still unresolved.",
+      "new_information": "The strongest fair countercase gets its own scene. Existing public datasets already support useful research, and owning hardware doesn't establish an interpretation.",
+      "source_claims": ["C8","O2","O3","O9"],
+      "padding_test": "Essential Act 3 argument. Without it, a 90-second version would imply that acquisition replaces existing capability instead of adding an option."
+    },
+    {
+      "beat": 7,
+      "seconds": [78,96],
+      "action": "At 87 seconds the hidden extension finally unfolds under the student's hand. The public-data book and chosen-task notebook settle on equal, full-sized work surfaces. The headset gets an ordinary instrument stand. The book's tiny courtesy shuffle from the opening becomes a generous sweep across the new space. Neither notebook contains a claimed study result.",
+      "new_information": "The gain is more room to design and test an experiment alongside existing evidence. This pays the first loop through changed geometry.",
+      "source_claims": ["C2","C4","C8","O9"],
+      "padding_test": "The thesis survives its countercase in action. Remove this and the counterpoint has no earned resolution; the extra duration is performing the argument, not repeating it."
+    },
+    {
+      "beat": 8,
+      "seconds": [96,120],
+      "action": "A clearly separated EDITORIAL TEST EXAMPLE occupies the expanded table. If the label says WORKS FOR NEW PEOPLE, the spare stool at 105 seconds is pulled forward for a generic new-person silhouette that was absent from the training area. No verdict or score appears. At 115 seconds the scene returns to the open task notebook, public-data book and headset together. The notebook's bookmark cheerfully erects itself as a question mark.",
+      "new_information": "An eventual claim about new people needs a test on people absent from training. This is a conditional evaluation principle, not UAA's announced protocol or result. The next research question remains the invitation.",
+      "source_claims": ["C11","O8","O9"],
+      "padding_test": "Pays the second promise 18 seconds after the first, adds a concrete standard for interpretation, and resolves the throughline with a choice the audience can understand."
+    }
+  ],
+  "earned_turn": "The big public-data book gets the whole stage and proves it still belongs. The student opens the table instead of clearing it. The new instrument earns its place by adding experimental choice.",
+  "button": {
+    "last_line": "Which question about learning should they investigate first?",
+    "last_image": "The same expanded table holds useful public data, the recording instrument and an open notebook. A springy bookmark becomes a question mark. The opening's one-inch courtesy shuffle has become a complete extra workspace.",
+    "loop_to_open": "Replay starts with that table folded shut and the same public-data book making its tiny attempt to help."
+  },
+  "timed_sight_gags": [
+    {"at_seconds":1.4,"gag":"The substantial public-data book courteously shuffles one inch on the tiny table, proud of its wholly inadequate contribution to seating logistics.","target":"Object-scale absurdity"},
+    {"at_seconds":39,"gag":"The bookmark leaps onto the planned reading sketch, overshoots the line and backs up with a small embarrassed spring wobble.","target":"A physical bookmark, never a person's reading ability"},
+    {"at_seconds":52,"gag":"The same bookmark briefly lands on a keyboard key. A calm student hand returns it to the book.","target":"An object trying to help on the wrong surface; no AI-assisted coding claim"},
+    {"at_seconds":87,"gag":"When the extension opens, the book repeats its one-inch shuffle as an extravagantly generous sweep, finally with enough room to mean it.","target":"Payoff to opening courtesy gag"},
+    {"at_seconds":116,"gag":"The bookmark stands upright as a question mark, delighted that a blank page can be the point.","target":"Positive recurring-object button"}
+  ],
+  "retention_plan": {
+    "act3_test": {
+      "scene":"The Existing Work Table",
+      "seconds":[60,96],
+      "fair_case":"Public datasets already support useful work. A new headset alone supplies neither obsolescence nor an interpretation.",
+      "drawn_at_full_strength":"Give the archive its own large, well-lit workspace and useful activity while the headset waits. Let the public-data book support the task notebook physically. Equal useful surfaces survive the final extension.",
+      "surviving_thesis":"The acquired instrument adds control over recording a chosen task. It doesn't require existing evidence to lose."
+    },
+    "throughline_object": {
+      "name":"The foldout research table",
+      "introduced_by_seconds":0,
+      "boundary_states":[
+        {"at_seconds":0,"state":"Short table with public-data book and a visible folded extension hinge"},
+        {"at_seconds":35,"state":"Extension half raised as the student introduces a task notebook"},
+        {"at_seconds":60,"state":"Folded leaf bears planned task sketches while established public-data workspace remains intact"},
+        {"at_seconds":96,"state":"Fully extended table gives public data and chosen-task collection equal room"},
+        {"at_seconds":120,"state":"Expanded table supports both resources and the open next-question notebook"}
+      ],
+      "continuity_tell":"A cobalt edge, one citron hinge and a chipped near-left corner persist across every camera view."
+    },
+    "two_staggered_loops":[
+      {"plant_seconds":1.4,"promise":"How will the tiny table fit the useful old data and the new research option?","withheld_object":"The folded extension","payoff_seconds":87,"payoff":"The student opens a full additional workspace; neither resource is displaced."},
+      {"plant_seconds":44,"promise":"Why is there a spare stool outside the example training area?","withheld_object":"An unused stool without a participant count or score","payoff_seconds":105,"payoff":"A generic new person fills it for the conditional new-person test, clearly labeled editorial methods context."}
+    ],
+    "padding_verdict":"The 60 to 96 second section adds the strongest fair countercase and an actual spatial resolution. The 96 to 110 second section pays a separate question about the reach of evidence. Neither is a slower repeat of acquisition or planned tasks."
+  },
+  "cast_and_library": {
+    "reuse":[
+      {"asset":"Character","file":"video-engine/src/lib/Character.tsx","use":"Calm student gestures and the generic illustrative new person; no named likeness caricature."},
+      {"asset":"Sheet and PaperFiber","file":"video-engine/src/lib/paper.tsx","use":"The public-data volume, task notebook and physical planned sketches."},
+      {"asset":"DocumentFlip","file":"video-engine/src/lib/credentials.tsx","use":"Task pages and a consistent notebook hinge, avoiding slide transitions."},
+      {"asset":"EvidenceTrace","file":"video-engine/src/lib/spaceweather.tsx","use":"Clearly labeled schematic recording only, no fabricated UAA results."},
+      {"asset":"BrassPlate","file":"video-engine/src/lib/bench.tsx","use":"Brief actor/source labels in a new cobalt and citron setting."},
+      {"asset":"Stage3D and CameraMoves","file":"video-engine/src/lib/stage3d.tsx","use":"Low table-level hook, overhead sensor reveal, trucking expansion and return to the opening angle."},
+      {"asset":"vitals and followThrough","file":"video-engine/src/lib/motion.tsx","use":"Book courtesy shuffles, bookmark follow-through and table settling."}
+    ],
+    "genuine_new_gap":"A neutral dry-EEG headset silhouette with exactly nineteen scalp contact points. The existing shelf's remote sensors and clinic X-ray instrument have different verbs and shouldn't be substituted.",
+    "scenic_construction":"The expanding table is a simple depth-aware scenic assembly, not a claim about UAA's actual furniture. Book personification is an editorial metaphor.",
+    "palette":"Cobalt ink, citron hinge, pale lilac shadow, clean chalk daylight and warm skin tones.",
+    "no_unrelated_fauna":"All gags act on the research objects and carry the episode's argument."
+  },
+  "vo_draft":"The newest tool in an Anchorage AI lab comes with nineteen scalp electrodes. The interesting part is what the student gets to choose.\n\nOn September 9th, UAA announced a dry EEG system for its AI and Robotics Lab. Students and faculty have trained with it. Graduate student Vadim Egorov has already watched his own electrical signals appear on screen.\n\nHe usually works with public EEG datasets. Now he's looking forward to collecting recordings for tasks he chooses.\n\nThat gives a research question a new place to begin.\n\nUAA plans to study cognitive states during reading. Another planned project will examine brain activity and eye movements during programming. Those are research plans, with answers still to come.\n\nAnd the public datasets? Keep their seat at the table.\n\nThey already support useful work. Buying a headset doesn't retire that evidence or turn a moving signal into a reliable interpretation.\n\nThe gain is another way to build an experiment.\n\nThen ask how far a future finding reaches. If a model claims to work for new people, test people it hasn't trained on. That's an evaluation principle, not an announced UAA result.\n\nAlaska's students have gained room to ask their own questions and collect evidence around them.\n\nWhich question about learning should they investigate first?",
+  "vo_word_count":211,
+  "target_seconds":120,
+  "allowed_duration_seconds":[112,130],
+  "timing_note":"Pitch timings are planning marks. Final voice length, caption alignment and scene boundaries must follow the measured final audio.",
+  "safe_set_notes":[
+    "Schematic traces remain labeled and contain no axes or scores that could be mistaken for UAA study results.",
+    "PLANNED RESEARCH labels remain on both named task sketches.",
+    "The new-person stool is an editorial methods example conditional on an eventual claim about new people, never a reported UAA protocol.",
+    "No medical or clinical setting, diagnosis, treatment, thoughts, AI-assisted programming, classifier architecture, purchase price or invented participant count.",
+    "No physical cable from the headset to the screen unless manufacturer documentation supports that depiction; use a clearly abstract recording transition."
+  ]
+}

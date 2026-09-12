@@ -1,0 +1,22 @@
+{
+  "gate": "0E",
+  "role": "naive cold reader",
+  "run_date": "2026-09-12",
+  "reviewed_script_sha256": {
+    "vo_script.txt": "48831633c540915c3f8bb8be0a645165c096974d3481632b40d1796dd4139bac",
+    "vo_script.json": "2991605a19e683a0e3e513f4a3721b1437e366f378c6bdfaccdf46089d1ab463"
+  },
+  "review_mode": "Fresh-context editor received only exact final 213-word narration; this record preserves the returned result.",
+  "causal_chain": "The Educational Legacy Fund funded a new EEG for UAA, and students and faculty have trained on it. It records electrical activity at the scalp. Graduate student Vadim Egorov has seen his own signals and anticipates collecting recordings for his own tasks alongside the public datasets he already uses. UAA plans reading and programming studies, whose answers are still ahead. Researchers can use existing recordings when those fit their questions, or plan another recording. Students can help design that plan, while public data stays useful. Recording still needs interpretation, and a future claim about new people needs testing on people absent from training. That is a research principle, not a UAA result.",
+  "actors": {
+    "University of Alaska Anchorage / UAA": "The university announcing the new EEG for its lab and planning research.",
+    "AI and Robotics Lab": "The university laboratory receiving the new EEG.",
+    "Educational Legacy Fund": "The fund that funded the device; no other role established.",
+    "Vadim Egorov": "A graduate student who has watched his own signals and usually works with public EEG datasets.",
+    "Students and faculty": "People who trained on the device; students can help design an additional research plan.",
+    "Researchers": "People assessing whether public recordings fit questions or planning new recordings."
+  },
+  "single_question": "What research possibilities does UAA\u2019s new EEG add alongside existing public recordings?",
+  "first_line_lost": null,
+  "ship": true
+}

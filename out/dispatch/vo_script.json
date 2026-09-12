@@ -1,184 +1,157 @@
 {
- "run_date": "2026-09-11",
- "title": "Over the Missing Road",
- "note": "Fact-checked against Alaska DOH, FAA and attributed Ryan Air sources. Future proof conditions are editorial tests, not completed results.",
- "caption_fixups": {
-  "F A A": "FAA",
-  "four million one hundred seventy one thousand one hundred fifteen dollars": "$4,171,115",
-  "seventy villages": "70 villages",
-  "Yukon Koyukuk": "Yukon-Koyukuk",
-  "electric vertical takeoff and landing": "electric vertical-takeoff-and-landing"
- },
- "lines": [
-  {
-   "idx": 0,
-   "text": "Four million meets the place where the road disappears.",
-   "t": "Four million meets the place where the road disappears.",
-   "claims": [
-    "c1",
-    "c3"
-   ]
+  "run_date": "2026-09-12",
+  "title": "The Question Comes First",
+  "target_seconds": 120,
+  "word_count": 213,
+  "caption_fixups": {
+    "E E G": "EEG",
+    "A I": "AI",
+    "U A A": "UAA",
+    "September ninth": "September 9th",
+    "Nineteen": "19"
   },
-  {
-   "idx": 1,
-   "text": "Alaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.",
-   "t": "Alaska lists Ryan Air for a projected preliminary award of four million one hundred seventy one thousand one hundred fifteen dollars.",
-   "claims": [
-    "c1"
-   ]
-  },
-  {
-   "idx": 2,
-   "text": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.",
-   "t": "Ryan Air proposes autonomous cargo drones and electric vertical takeoff and landing aircraft.",
-   "claims": [
-    "c2"
-   ]
-  },
-  {
-   "idx": 3,
-   "text": "Cargo could carry medicine. Electric aircraft are proposed for patients and providers.",
-   "t": "Cargo could carry medicine. Electric aircraft are proposed for patients and providers.",
-   "claims": [
-    "c12",
-    "c13"
-   ]
-  },
-  {
-   "idx": 4,
-   "text": "Those are not the same test.",
-   "t": "Those are not the same test.",
-   "claims": [
-    "c2",
-    "c10"
-   ]
-  },
-  {
-   "idx": 5,
-   "text": "Ryan Air says it serves more than seventy villages, so the test would extend an aviation network.",
-   "t": "Ryan Air says it serves more than seventy villages, so the test would extend an aviation network.",
-   "claims": [
-    "c11"
-   ]
-  },
-  {
-   "idx": 6,
-   "text": "First comes one medicine box.",
-   "t": "First comes one medicine box.",
-   "claims": [
-    "c12",
-    "c9"
-   ]
-  },
-  {
-   "idx": 7,
-   "text": "Can an authorized route deliver it on time inside Alaska weather?",
-   "t": "Can an authorized route deliver it on time inside Alaska weather?",
-   "claims": [
-    "c9",
-    "c12"
-   ]
-  },
-  {
-   "idx": 8,
-   "text": "The notice documents no aircraft purchase, F A A approval, route or completed flight.",
-   "t": "The notice documents no aircraft purchase, F A A approval, route or completed flight.",
-   "claims": [
-    "c6",
-    "c14"
-   ]
-  },
-  {
-   "idx": 9,
-   "text": "The map is unsettled.",
-   "t": "The map is unsettled.",
-   "claims": [
-    "c4",
-    "c5"
-   ]
-  },
-  {
-   "idx": 10,
-   "text": "The summary names Bethel and Dillingham.",
-   "t": "The summary names Bethel and Dillingham.",
-   "claims": [
-    "c4"
-   ]
-  },
-  {
-   "idx": 11,
-   "text": "A separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.",
-   "t": "A separate field lists Anchorage, Bristol Bay, Dillingham and Yukon Koyukuk.",
-   "claims": [
-    "c5"
-   ]
-  },
-  {
-   "idx": 12,
-   "text": "Then the second ladder gets steeper.",
-   "t": "Then the second ladder gets steeper.",
-   "claims": [
-    "c10"
-   ]
-  },
-  {
-   "idx": 13,
-   "text": "The official source calls only the cargo drones autonomous.",
-   "t": "The official source calls only the cargo drones autonomous.",
-   "claims": [
-    "c2"
-   ]
-  },
-  {
-   "idx": 14,
-   "text": "Passenger electric aircraft need their own aircraft, pilot and operating approvals.",
-   "t": "Passenger electric aircraft need their own aircraft, pilot and operating approvals.",
-   "claims": [
-    "c10"
-   ]
-  },
-  {
-   "idx": 15,
-   "text": "Budget finalization is in progress, and projected amounts may change.",
-   "t": "Budget finalization is in progress, and projected amounts may change.",
-   "claims": [
-    "c8"
-   ]
-  },
-  {
-   "idx": 16,
-   "text": "Still, this award matters because the proposal describes gaps in medicine access and transport.",
-   "t": "Still, this award matters because the proposal describes gaps in medicine access and transport.",
-   "claims": [
-    "c1",
-    "c7"
-   ]
-  },
-  {
-   "idx": 17,
-   "text": "A first test needs a named route, F A A certification and operating authorization.",
-   "t": "A first test needs a named route, F A A certification and operating authorization.",
-   "claims": [
-    "c9",
-    "c14"
-   ]
-  },
-  {
-   "idx": 18,
-   "text": "The proposal matters when medicine moves on that authorized route.",
-   "t": "The proposal matters when medicine moves on that authorized route.",
-   "claims": [
-    "c12",
-    "c9"
-   ]
-  },
-  {
-   "idx": 19,
-   "text": "Until that box lands, the future is still in the crate.",
-   "t": "Until that box lands, the future is still in the crate.",
-   "claims": [
-    "c6"
-   ]
-  }
- ]
+  "lines": [
+    {
+      "idx": 0,
+      "text": "Nineteen scalp electrodes. What's on the next page?",
+      "claims": [
+        "c8"
+      ]
+    },
+    {
+      "idx": 1,
+      "text": "The University of Alaska Anchorage has a new dry E E G.",
+      "claims": [
+        "c2",
+        "c3"
+      ]
+    },
+    {
+      "idx": 2,
+      "text": "The university announced it for its A I and Robotics Lab on September ninth.",
+      "claims": [
+        "c1",
+        "c2"
+      ]
+    },
+    {
+      "idx": 3,
+      "text": "The Educational Legacy Fund funded it. Students and faculty have trained.",
+      "claims": [
+        "c4",
+        "c5"
+      ]
+    },
+    {
+      "idx": 4,
+      "text": "Its scalp contacts record electrical activity.",
+      "claims": [
+        "c16"
+      ]
+    },
+    {
+      "idx": 5,
+      "text": "Graduate student Vadim Egorov has watched his own signals appear.",
+      "claims": [
+        "c6",
+        "c7"
+      ]
+    },
+    {
+      "idx": 6,
+      "text": "He usually works with public E E G datasets.",
+      "claims": [
+        "c9"
+      ]
+    },
+    {
+      "idx": 7,
+      "text": "Now he's looking forward to collecting recordings for his own tasks.",
+      "claims": [
+        "c10"
+      ]
+    },
+    {
+      "idx": 8,
+      "text": "Who might a future answer work for?",
+      "claims": []
+    },
+    {
+      "idx": 9,
+      "text": "U A A plans to study cognitive states during reading.",
+      "claims": [
+        "c11"
+      ]
+    },
+    {
+      "idx": 10,
+      "text": "Another planned project pairs brain activity with eye movements during programming.",
+      "claims": [
+        "c12",
+        "c13"
+      ]
+    },
+    {
+      "idx": 11,
+      "text": "Those are plans, with the answers still ahead.",
+      "claims": [
+        "c14"
+      ]
+    },
+    {
+      "idx": 12,
+      "text": "And the public recordings? They keep their place.",
+      "claims": [
+        "c9"
+      ]
+    },
+    {
+      "idx": 13,
+      "text": "Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there.",
+      "claims": [
+        "c9"
+      ]
+    },
+    {
+      "idx": 14,
+      "text": "They can also plan a new recording around another task.",
+      "claims": [
+        "c10"
+      ]
+    },
+    {
+      "idx": 15,
+      "text": "The extra page holds a plan that students can help design. The old pages stay open beside it.",
+      "claims": [
+        "c10"
+      ]
+    },
+    {
+      "idx": 16,
+      "text": "A recording alone doesn't supply an interpretation.",
+      "claims": [
+        "c16"
+      ]
+    },
+    {
+      "idx": 17,
+      "text": "If a future model claims to work for new people, test it on people absent from training.",
+      "claims": [
+        "c15"
+      ]
+    },
+    {
+      "idx": 18,
+      "text": "That's a research principle, not a reported U A A result.",
+      "claims": [
+        "c14",
+        "c15"
+      ]
+    },
+    {
+      "idx": 19,
+      "text": "Which question about learning should they investigate first?",
+      "claims": []
+    }
+  ]
 }

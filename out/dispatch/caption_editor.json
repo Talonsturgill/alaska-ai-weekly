@@ -1,0 +1,71 @@
+{
+  "editor_role": "LinkedIn Dispatch caption editor",
+  "reviewed_at_utc": "2026-09-12T13:24:52.394695+00:00",
+  "input_file": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/post.txt",
+  "input_sha256": "a7dc4b491eae03ebf64cf9bb807e94e0c438e08685eac36ff60cf90693ba0f16",
+  "objective_gate": {
+    "pass": true,
+    "evidence_file": "out/dispatch/caption_report.json",
+    "observed_hook_matches": true,
+    "chars": 1485
+  },
+  "criteria": [
+    {
+      "name": "Hook / scroll-stop",
+      "weight": 0.2,
+      "score": 9.0,
+      "reason": "A clear position within the fold: acquired research capability deserves attention before results. The body earns that positive judgment without guaranteeing an outcome."
+    },
+    {
+      "name": "Point of view / take",
+      "weight": 0.18,
+      "score": 9.1,
+      "reason": "The thesis now directly links the milestone to students shaping the evidence they investigate."
+    },
+    {
+      "name": "Substance & specificity",
+      "weight": 0.16,
+      "score": 9.2,
+      "reason": "Egorov, the Educational Legacy Fund, 19 electrodes, reading-related cognitive states and programming eye movements provide concrete verified substance."
+    },
+    {
+      "name": "Readability & restraint",
+      "weight": 0.12,
+      "score": 9.0,
+      "reason": "A focused 1,485-character caption with short paragraphs, restrained punctuation and less repetition."
+    },
+    {
+      "name": "Engagement design (CTA + comment-bait)",
+      "weight": 0.12,
+      "score": 9.0,
+      "reason": "The final question now asks for a task tied to the two actual planned research directions."
+    },
+    {
+      "name": "Brand voice & accuracy",
+      "weight": 0.12,
+      "score": 9.3,
+      "reason": "Warm and Alaska-focused. Funding and research plans trace to C1-C8; the conditional new-person test follows C11 and remains distinct from UAA protocol or findings."
+    },
+    {
+      "name": "Hashtag craft",
+      "weight": 0.1,
+      "score": 8.6,
+      "reason": "Four relevant tags remain grouped in the tail; EEG is more specific to the story than Research. Audience-size bands are not independently verified."
+    }
+  ],
+  "overall_score": 9.046,
+  "ship_threshold": 8.5,
+  "ship": true,
+  "verdict": "ship",
+  "hard_fails": [],
+  "line_edits": [],
+  "risk_flags": [],
+  "ai_tells": [],
+  "voice_match_score_qualitative": "tight",
+  "copy_accuracy_summary": "Current caption accurately reports acquisition, funding, training, 19 scalp electrodes and planned reading/programming work. No diagnosis, clinical benefit, accuracy, completed dataset or study result is asserted. The future-model test is conditional general methods context.",
+  "scope_limit": "Copy reviewed only. Consistency of the 19-electrode figure with final encoded video is a later required film check, not certified here.",
+  "authority_note": "Used LinkedIn caption rubric; did not apply the weekly editor template’s 280-420-word, no-hashtag or quotable-headline requirements.",
+  "post_file_modified": false,
+  "previous_review_sha256": "3d7280550c1f345e964365522930e593eb94f7aa97bc2b34576b7a0b5d188124",
+  "revision_verification": "Reread the full newly revised post. New funding, cognitive-state, eye-movement and testing specifics match C3/C6/C7/C11; the headline is an earned editorial position."
+}
