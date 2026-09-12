@@ -551,28 +551,9 @@ def main():
                 print(f"re-roll take {n}: {len(pcm)/24000:.1f}s ({used})")
             best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
         secs = reports[best_i]["checks"]["duration"]["seconds"]
-        # Gemini's pace direction can still land a clean take a few seconds short or long.
-        # When the closest re-roll is within a modest 15% of the two-minute target, conform
-        # tempo without changing pitch, then run the full soundcheck again. This closes the
-        # old path that knowingly shipped a 102-second read against a 112-second floor while
-        # preserving the fact-checked script and its density.
-        tempo = secs / target if target else 1.0
-        if not (lo <= secs <= hi) and 0.84 <= tempo <= 1.15:
-            conformed = os.path.join(AUD, "vo_take_conformed.wav")
-            subprocess.run([
-                "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
-                "-i", takes[best_i][0], "-filter:a", f"atempo={tempo:.6f}",
-                "-ar", "24000", "-ac", "1", conformed,
-            ], check=True)
-            source_model = takes[best_i][1]
-            takes.append((conformed, source_model + "+tempo-conform"))
-            best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
-            secs = reports[best_i]["checks"]["duration"]["seconds"]
-            if lo <= secs <= hi:
-                _fixes = list(_fixes) + [
-                    f"tempo-conformed closest clean take to {secs:.1f}s after Gemini pace miss"
-                ]
-                print(f"  runtime conformed to {secs:.1f}s and re-passed soundcheck")
+        # Keep the original performance. The Dispatch routine forbids time-stretching
+        # narration; a runtime miss must be corrected in direction or the locked script
+        # and re-synthesized, with the miss visible to the downstream quality panel.
         if not (lo <= secs <= hi):
             n_words = len(spoken.split())
             rate = n_words / secs * 60 if secs else 0

@@ -34,6 +34,13 @@ python3 -c "import librosa, faster_whisper" >/dev/null 2>&1 \
 python3 -c "import num2words" >/dev/null 2>&1 \
   || pip install --break-system-packages -q --no-deps num2words \
   || echo "setup_env: WARN num2words install failed (WER canonicalizer will under-count digit tokens, inflating WER on number-heavy scripts)"
+# Gemini and Remotion are the current production path. Retired renderers and
+# local voice fallbacks are opt-in; installing them on every Mac run repeatedly
+# fails on unsupported wheels even when every production dependency is ready.
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+VENV_DIR="$REPO_DIR/.venv-voice"
+VOICE_PY="$VENV_DIR/bin/python"
+if [ "${DISPATCH_INSTALL_LEGACY_STACK:-0}" = "1" ]; then
 # DIMENSIONAL ENGINE (3D): taichi is the primary renderer (CPU JIT, ~0.45s/frame @1080x1920)
 python3 -c "import taichi" >/dev/null 2>&1 \
   || pip install --break-system-packages -q taichi
@@ -78,6 +85,10 @@ fi
 
 # rclone (token-safe video upload -> one-click download link)
 command -v rclone >/dev/null 2>&1 || { curl -fsSL https://rclone.org/install.sh | bash || true; }
+
+else
+  echo "setup_env: using Gemini/Remotion; legacy stack skipped (opt in with DISPATCH_INSTALL_LEGACY_STACK=1)"
+fi
 
 # edge-tts TLS: append the system + agent-proxy CA bundles to certifi (idempotent)
 # — for BOTH pythons (system + voice venv); aiohttp/hf_hub read certifi, not SSL_CERT_FILE.
