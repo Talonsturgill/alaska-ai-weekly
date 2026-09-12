@@ -1,0 +1,242 @@
+{
+  "dedupe_exclusions": [
+    {
+      "date": "2026-08-30",
+      "topic": "Rainmaker Kenai cloud-seeding drones and modeled precipitation estimate",
+      "slug": "dispatch-2026-08-30-model-made-the-number"
+    },
+    {
+      "date": "2026-09-01",
+      "topic": "The Ceiling Was in the Measurement",
+      "slug": "2026-09-01-ceiling-in-the-measurement"
+    },
+    {
+      "date": "2026-09-02",
+      "topic": "University of Alaska AI Engaged draft",
+      "slug": "ua-ai-engaged-draft"
+    },
+    {
+      "date": "2026-09-03",
+      "topic": "Tanana Chiefs Conference introduces Sully.ai with patient permission, provider-owned note approval, disclosed recording terms and care unchanged by refusal",
+      "slug": "the-care-has-to-stay"
+    },
+    {
+      "date": "2026-09-06",
+      "topic": "DeepGreen Upper Cook Inlet preliminary permit proposal and the proof required for durable Alaska value",
+      "slug": "the-hive-is-still-paper"
+    },
+    {
+      "date": "2026-09-10",
+      "topic": "McCarthy rock glacier seasonal acceleration and remote sensing",
+      "slug": "2026-09-10-glacier-sped-up-twice"
+    },
+    {
+      "date": "2026-09-11",
+      "topic": "Ryan Air projected preliminary rural health aviation award and separate cargo and passenger proof requirements",
+      "slug": "dispatch-2026-09-11-over-the-missing-road"
+    }
+  ],
+  "beat": "rural, Native-led, workforce and public capability",
+  "window": [
+    "2026-09-02",
+    "2026-09-12"
+  ],
+  "researched_at_utc": "2026-09-12T13:04:58.682820+00:00",
+  "web_search_calls": 4,
+  "web_search_queries": 14,
+  "stories": [
+    {
+      "story_title": "UAA students gain a local source of brain-signal data",
+      "summary_2_sentences": "UAA announced September 9 that its AI and Robotics Lab acquired a DSI-24 EEG through the Educational Legacy Fund. It supports AI/ML research and training; described reading and programming studies remain planned.",
+      "why_it_matters_to_alaskans": "Builds Alaska research capability and student experience collecting original data.",
+      "sources": [
+        {
+          "url": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+          "outlet": "UAA Green and Gold News",
+          "pub_date": "2026-09-09",
+          "author": "Matt Jardin",
+          "fetched": true,
+          "primary": true
+        },
+        {
+          "url": "https://wearablesensing.com/dsi-24/",
+          "outlet": "Wearable Sensing manufacturer",
+          "pub_date": null,
+          "author": "Wearable Sensing",
+          "fetched": true,
+          "primary": true,
+          "background_only": true
+        },
+        {
+          "url": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
+          "outlet": "Wearable Sensing user manual V1.2023",
+          "pub_date": null,
+          "author": "Wearable Sensing",
+          "fetched": true,
+          "primary": true,
+          "background_only": true
+        }
+      ],
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "verified_facts": [
+        {
+          "fact": "19 scalp electrodes, two earclips and three auxiliary inputs.",
+          "sources": [
+            "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+            "https://wearablesensing.com/dsi-24/"
+          ],
+          "cross_checked": true
+        },
+        {
+          "fact": "Vadim Egorov is photographed watching his own electrical brain signals during training.",
+          "sources": [
+            "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml"
+          ]
+        },
+        {
+          "fact": "Planned studies concern cognitive states during reading and brain activity plus eye movements during programming.",
+          "sources": [
+            "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml"
+          ]
+        },
+        {
+          "fact": "Manufacturer documentation identifies a scientific/engineering research instrument, not an FDA-approved diagnostic or therapeutic medical device.",
+          "sources": [
+            "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf"
+          ],
+          "location": "PDF page 5 (zero-based pageno 4) and page 64."
+        }
+      ],
+      "quotation": {
+        "text": "I’m excited to be able to collect my own data for my own tasks",
+        "speaker": "Vadim Egorov, graduate student",
+        "url": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+        "word_count": 14
+      },
+      "story_fuel": [
+        "A student moves from downloading datasets to recording data for his own research questions.",
+        "Illustrative visual: headset pickups become traces, then data for analysis."
+      ],
+      "local_sentiment": "Egorov expresses excitement. Faculty welcome interdisciplinary collaboration. These are named participants, not a survey of Alaska opinion; no tribal or disability-community response was found.",
+      "status_boundary": "Acquisition and training are reported. Successful brain-computer control, diagnostic accuracy, clinical benefit, finalized studies, participant counts and study results are not reported.",
+      "manufacturer_context": {
+        "sampling_rate": "300 Hz, with a 600 Hz upgrade available; UAA installed configuration is unreported.",
+        "data_output": "Manufacturer lists raw CSV and EDF recording via DSI-Streamer.",
+        "avoid": "Do not convert vendor claims of >90% correlation with wet EEG into decoding accuracy or UAA validation."
+      },
+      "recommendation": "Strongest candidate here. Earned celebratory angle: students gain the means to ask and measure their own questions, with honest future tense for studies."
+    },
+    {
+      "story_title": "Alaska robotics season opens with hardship grants and a way to keep older kits in play",
+      "summary_2_sentences": "FIRST in Alaska’s September 4 update announces BIOBUZZ kickoff events in Anchorage, Fairbanks and Juneau on September 12. It also offers hardship support, including for veteran teams, and explains continued use of existing LEGO hardware for its local Founders Edition season.",
+      "why_it_matters_to_alaskans": "A concrete path for school teams to start robotics this fall and seek help with equipment access.",
+      "sources": [
+        {
+          "url": "https://www.jedc.org/firstinalaska/9-4-2026-season-updates/",
+          "outlet": "FIRST in Alaska / Juneau Economic Development Council",
+          "pub_date": "2026-09-04",
+          "author": null,
+          "fetched": true,
+          "primary": true
+        }
+      ],
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "verified_facts": [
+        {
+          "fact": "September 12 kickoff listed at 8 a.m. AKDT; local events listed for Anchorage, Fairbanks and Juneau.",
+          "sources": [
+            "https://www.jedc.org/firstinalaska/9-4-2026-season-updates/"
+          ],
+          "cross_checked": false
+        },
+        {
+          "fact": "Hardship grants explicitly include veteran teams this year.",
+          "sources": [
+            "https://www.jedc.org/firstinalaska/9-4-2026-season-updates/"
+          ]
+        },
+        {
+          "fact": "Alaska Founders Edition permits older EV3, NXT and RCX hardware as well as Spike Prime for Challenge.",
+          "sources": [
+            "https://www.jedc.org/firstinalaska/9-4-2026-season-updates/"
+          ]
+        }
+      ],
+      "quotation": {
+        "text": "we will help you find a way to play this season",
+        "speaker": "FIRST in Alaska organizer update, addressing teams without a robot",
+        "url": "https://www.jedc.org/firstinalaska/9-4-2026-season-updates/",
+        "word_count": 11
+      },
+      "story_fuel": [
+        "An old kit comes out of a school cupboard and gets another season.",
+        "A same-day kickoff with practical access support."
+      ],
+      "local_sentiment": "Organizer commitment to participation is explicit. No independent team or parent reaction was verified.",
+      "status_boundary": "Do not call these AI deployments or assert rural participation totals. Dates are announced events, not proof each event occurred. Verify local calendar before promoting a specific venue/time.",
+      "recommendation": "Viable workforce/robotics alternative, weaker than EEG for a science explainer. Quantitative outcomes and attendance unreported."
+    }
+  ],
+  "adjacent_or_rejected_leads": [
+    {
+      "title": "TCC Awarded $2.5 Million to Advance Broadband",
+      "url": "https://www.tananachiefs.org/tcc-awarded-2-5-million-to-advance-broadband/",
+      "pub_date": "2026-09-08",
+      "fetched": true,
+      "disposition": "Current Native-led digital-capacity story, but no AI/ML/robotics claim. Separate project from excluded Sully.ai.",
+      "facts": "TCC reports planning/design for Ruby, Galena, Nulato and Koyukuk, plus Holy Cross digital workforce training, equipment and completion stipends. Award does not fund construction.",
+      "sentiment": "Institutional TCC statement only; no claim of uniform Native opinion."
+    },
+    {
+      "title": "RAISE 2026-27 community mini-grant call",
+      "url": "https://coeng.uaa.alaska.edu/AI/raise-mini-grants-community/",
+      "pub_date": null,
+      "fetched": true,
+      "disposition": "Strong current opportunity with September 21 statement-of-need deadline, but no explicit publication date; exclude as fresh September news under researcher rule."
+    },
+    {
+      "title": "UArctic fund joins Alaska Entrepreneurship Week",
+      "url": "https://new.uarctic.org/news/2026/9/uarctic-foundation-us-brings-the-uarctic-entrepreneurship-fund-to-akew/",
+      "pub_date": "2026-09-11",
+      "fetched": true,
+      "disposition": "New Alaska outreach announcement, but cited AAVEQ Robotics success is older and not evidence of a newly funded Alaska robotics firm."
+    },
+    {
+      "title": "AI in Alaska leadership summit",
+      "url": "https://aiinalaska.com/",
+      "pub_date": null,
+      "fetched": false,
+      "disposition": "Discovery only, forthcoming September 28 event; undated promotional page. Do not use as a fresh dated primary story."
+    }
+  ],
+  "primary_indexes_swept": [
+    "https://www.uaf.edu/news/",
+    "https://www.uaa.alaska.edu/news",
+    "https://coeng.uaa.alaska.edu/AI/",
+    "https://sealaskaheritage.org/news/",
+    "https://www.tananachiefs.org/news/",
+    "https://www.nana.com/news/",
+    "https://www.alaska.edu/research/initiative/"
+  ],
+  "fetch_limits": [
+    "ANSEP homepage/news could not be opened; no inference about absence of stories.",
+    "ADN robots block observed."
+  ],
+  "new_sources_to_consider": [
+    {
+      "url": "https://www.jedc.org/firstinalaska/season-updates/",
+      "rationale": "Dated primary Alaska robotics participation, access, training and season updates."
+    },
+    {
+      "url": "https://www.tananachiefs.org/news/",
+      "rationale": "Named tribal consortium primary announcements on digital workforce and broadband readiness."
+    }
+  ],
+  "notes": "Research completed within budget; no native consensus invented. Final publication should independently validate selected story claims."
+}

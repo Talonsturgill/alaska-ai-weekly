@@ -1,10 +1,10 @@
 {
-  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Inspired.mp3",
-  "title": "Inspired",
+  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Life%20of%20Riley.mp3",
+  "title": "Life of Riley",
   "composer": "Kevin MacLeod",
   "license": "CC BY 4.0",
   "source": "incompetech.com",
-  "credit": "\"Inspired\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "credit": "\"Life of Riley\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
   "wav": "out/dispatch/music_bed.wav",
   "duration": 180.0
 }

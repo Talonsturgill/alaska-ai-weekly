@@ -1,0 +1,39 @@
+{
+  "analyst": 2,
+  "inputs": [
+    "fact_check.json",
+    "angle_proposal_1.json",
+    "angle_proposal_2.json",
+    "angle_proposal_3.json"
+  ],
+  "challenges": [
+    {
+      "proposal": 1,
+      "judgment": "Strongest lead angle; keep the warm experimental-choice frame.",
+      "earned": "C2, C4 and C8 establish equipment, training and the named student’s interest in task-specific collection. C6 and C7 provide two concrete unanswered research directions.",
+      "challenge": "The counterpoint requires findings that existing data could not supply. No source establishes such an inadequacy, and local work need not outperform public data to be useful. Expense is unquantified and should not become an implied controversy.",
+      "precise_fix": "Replace the comparative standard with whether the lab can document useful recordings and experiments for its chosen tasks. Describe the new option alongside public datasets. Keep unseen-person validation conditional on a future claim about new people.",
+      "valence_check": "Warm curiosity is earned. Do not treat a research instrument as a promised clinical product."
+    },
+    {
+      "proposal": 3,
+      "judgment": "Useful supporting methods principle; too prescriptive as the main story.",
+      "earned": "C11 supports participant separation when evaluating performance on unseen people. It creates a clear distinction between measuring a signal and establishing how far an interpretation applies.",
+      "challenge": "The strongest use of this equipment has not been established. UAA has not specified whether the intended application is across people or personalized. A participant-specific study can ask a valid different question. The proposed falsifier is also misaligned: equal mixed-person and separated estimates would not make properly separated evaluation unnecessary.",
+      "precise_fix": "Use one conditional future test: if a model claims to work for people absent from training, evaluate on people absent from training. Label it an editorial methods principle. Avoid a full suspicion narrative or presenting the test as UAA’s protocol.",
+      "valence_check": "The secondary methods turn can support curiosity, but making it the thesis risks converting a local student capability story into criticism nobody earned."
+    }
+  ],
+  "reconcile_own": {
+    "keep": "Task choice and data collection are the strongest reported change.",
+    "revise": "My phrase actual change in experimental capability must not imply that a usable task-specific research dataset is already completed. Training signals are observed; task-specific collection is an enabled next step.",
+    "correct_falsifier": "A future failure to use the device would not retroactively erase its acquisition. Test the capability claim through demonstrated collection for a chosen task; treat future useful findings as an open outcome rather than proof the purchase happened."
+  },
+  "selected_proposal": 1,
+  "refined_thesis": "UAA’s new EEG gives students a practical way to shape the data they collect around their own research questions, adding an experimental option alongside public datasets.",
+  "evidence_status": "Observed acquisition and training; intended task-specific collection; unanswered planned studies.",
+  "fair_counterpoint_to_keep": "Public datasets already support valuable work. New recording capacity is an opportunity to investigate, not evidence of an accurate interpretation.",
+  "act3_refinement": "Ask what a recorded trace establishes by itself. It establishes measurement. A task and a carefully scoped evaluation are needed to test an interpretation. If the eventual claim concerns new people, introduce participant-separated evaluation as one conditional example. Finish at an open reading or learning question with confidence in students’ opportunity to investigate.",
+  "preserve_2_minute_scope": "Stay with the named student, instrument and two planned tasks. Avoid a detached statistics lesson, dataset villain, claimed disability benefit, or invented UAA defect.",
+  "full_cross_challenge_complete": true
+}

@@ -1,0 +1,53 @@
+{
+  "analyst": 3,
+  "proposal_title": "The Person the Model Hasn't Met",
+  "falsifying_observation": "For these cognitive tasks, properly separated new-participant tests consistently match mixed-person test estimates. That would defeat the proposed application-specific concern that a familiar person's patterns inflate the apparent gain; UAA hasn't reported either result.",
+  "thesis": "The strongest use of UAA's new EEG capacity is to make AI face a person it hasn't learned from, because collecting a relevant dataset and establishing generalization are different achievements.",
+  "thesis_kind": "Evidence-backed editorial position on what to test next, not a claim about a completed UAA study",
+  "why_true": [
+    {
+      "evidence": "New instrument and training enable local task-specific recording.",
+      "claim_ids": [
+        "C2",
+        "C4",
+        "C8"
+      ]
+    },
+    {
+      "evidence": "The applications remain planned, leaving the experimental test open.",
+      "claim_ids": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "evidence": "Published EEG methods experiments found that familiar identities crossing the training/test boundary inflated new-person performance estimates.",
+      "claim_ids": [
+        "C11"
+      ]
+    }
+  ],
+  "strongest_fair_counterpoint": "Public datasets already support valuable work, including Egorov's earlier transfer-learning research. A new local collection may be small or narrowly targeted. Equipment acquisition is worth celebrating before a generalization result exists; it should not be judged as if the university promised one.",
+  "who_it_serves": "Students, educators and research readers who need to distinguish an authentic new capability from what an AI model has actually demonstrated.",
+  "valence": "Constructive curiosity with an earned celebration of student experimental capacity",
+  "why_this_valence": "A funded tool and observed training are real gains. The methods question gives that gain a purpose without manufacturing a scandal.",
+  "second_movement": "The first participant supplies evidence; a participant excluded from training can challenge its reach. The new fact is that test design can change the apparent performance even when the model and recordings are unchanged.",
+  "act3_test": "For any eventual claim about unseen people, disclose a participant-separated evaluation against the claimed task. Success supports that limited claim; failure is useful evidence to improve the model. This is our proposed standard, not UAA's announced protocol.",
+  "guardrails": [
+    "No accusation that UAA used a flawed split.",
+    "No diagnosis or mind-reading depiction.",
+    "Reading and programming research stays planned.",
+    "No claim the programming task uses an AI coding assistant.",
+    "Avoid importing medical-study statistics into this story."
+  ],
+  "vo_draft": "An Anchorage graduate student watches his own electrical signals appear on a screen. That small moment opens a much bigger experiment.\n\nOn September 9th, UAA announced a new dry EEG system for its AI and Robotics Lab. Nineteen scalp electrodes record signals researchers can analyze with machine learning.\n\nVadim Egorov already works with public EEG datasets. Now he's looking forward to collecting data for tasks he chooses. That's a real gain for Alaska's students: they can help shape the experiment that produces the evidence.\n\nUAA plans research on cognitive states during reading, and a separate study combining brain activity with eye movements during programming. Those are plans. The training demonstration is what has happened.\n\nThen comes another person.\n\nIn EEG research, a model can recognize patterns specific to somebody it has already encountered. A separate methods study found that mixing one person's recordings across training and testing could exaggerate performance on new people.\n\nPublic datasets remain valuable. New equipment doesn't make old evidence obsolete. It gives students another way to challenge what a model has learned.\n\nFor a claim about new people, reserve people the model hasn't trained on. That test could succeed or fail. Either result would teach something the headset alone can't.\n\nWhich reading or learning question should Anchorage researchers put to that test first?",
+  "vo_word_count": 217,
+  "target_seconds": 120,
+  "duration_band_seconds": [
+    112,
+    130
+  ],
+  "estimated_words_per_minute_at_target": 108.5,
+  "timing_status": "Planning target only; actual synthesized audio must be measured.",
+  "cross_challenge_status": "Awaiting peer proposals"
+}

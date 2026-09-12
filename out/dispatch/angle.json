@@ -1,19 +1,31 @@
 {
-  "run_date": "2026-09-11",
-  "thesis": "One preliminary award contains two tests, and Alaska should not confuse autonomous pharmaceutical cargo with a separate passenger and provider eVTOL proposal.",
-  "falsifier": "If the funded period produces no named FAA-authorized route demonstrating reliable pharmaceutical delivery, the near-term deployment thesis fails and this remains a proposal.",
-  "support": [
-    "The state lists a projected preliminary award of $4,171,115.",
-    "The source attaches autonomous only to cargo drones and describes passenger and provider eVTOL separately.",
-    "The public record names no aircraft, route, approval, community agreement or completed flight."
+  "run_date": "2026-09-12",
+  "title": "The Question Comes First",
+  "thesis": "UAA’s new EEG adds the ability to collect brain signals around tasks its researchers choose, alongside the public datasets they already use.",
+  "valence": "Celebratory, curious and warm about acquired student research capability",
+  "stance": "celebratory",
+  "supporting_facts": [
+    "UAA announced a DSI-24 acquisition for its AI and Robotics Lab on September 9th and documented training.",
+    "Egorov describes using public EEG datasets and anticipating collection for his own tasks.",
+    "Reading and programming studies are planned, so the instrument creates a research option rather than a reported result."
   ],
-  "counterpoint": "Existing Alaska aviation already moves medicine and people. A new layer must show that it adds reliable capability inside that network rather than merely looking futuristic.",
-  "who_it_serves": "Patients, clinics, health aides, providers, aviation workers, regulators and taxpayers who need an observable success condition.",
-  "valence": "cautiously hopeful",
-  "second_movement": "Split one award into cargo and passenger proof ladders, then define the first observable cargo test without treating it as a completed route.",
+  "counterpoint": "Public datasets already enable useful research. Owning hardware neither makes existing data obsolete nor establishes a correct interpretation.",
+  "falsifying_observation": "If the lab could not collect usable signals around its chosen tasks, the claimed addition to experimental choice would not hold.",
+  "second_movement": "Move from choosing a task to testing what the resulting signal can support. If an eventual model claims to work for new people, its test needs people absent from training. This is editorial methods context, never an allegation about UAA.",
   "runner_up_angles": [
-    "A geography-mismatch investigation lost because the mismatch is a useful caveat, not the whole story.",
-    "A pure rural-aviation celebration lost because the public record does not establish deployment or community agreement.",
-    "An air-taxi future story lost because autonomy is source-supported only for cargo drones."
-  ]
+    {
+      "angle": "New-person performance as the central thesis",
+      "reason_lost": "The source announces equipment and planned studies, not a cross-person model claim. Conditional methods test belongs in Act3."
+    },
+    {
+      "angle": "New local findings must be impossible with public data",
+      "reason_lost": "Unsupported comparative requirement. Existing public data remains valuable."
+    }
+  ],
+  "cross_challenge_files": [
+    "angle_challenge_1.json",
+    "angle_challenge_2.json",
+    "angle_challenge_3.json"
+  ],
+  "synthesis": "Use experimental choice as the main claim, honest source boundaries from angle1, conditional held-out-person test from angle3."
 }

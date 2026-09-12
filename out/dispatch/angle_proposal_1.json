@@ -1,0 +1,47 @@
+{
+  "analyst": "writer_editor_1",
+  "proposed_title": "The Question Comes First",
+  "angle": "UAA's new EEG gives students a way to collect signals around research questions they choose. That's a concrete addition to Alaska's ability to make AI research, with the value resting on the experiments it enables.",
+  "falsifiable_thesis": "The new headset can expand UAA students' control over their research by letting them collect task-specific EEG alongside their existing use of public datasets. The next evidence of that gain will be completed, documented experiments built around the lab's own questions.",
+  "strongest_facts": [
+    "UAA's September 9th announcement reports acquisition of a Wearable Sensing DSI-24 for its AI and Robotics Lab; the university photograph documents training and a student viewing signals.",
+    "The system records scalp electrical activity using 19 head electrodes; manufacturer documentation supports the count.",
+    "Graduate student Vadim Egorov describes currently using public EEG data and excitement about collecting data for his own tasks.",
+    "The university names two planned applications: cognitive-state estimation during reading and joint analysis of EEG and eye movement during programming.",
+    "No completed study, accuracy estimate or participant outcome is reported. Manufacturer documentation identifies research use."
+  ],
+  "earned_distinction": "The story's subject is experimental agency: deciding which task produced the data. It gives the student a meaningful role and celebrates an acquired capability without treating planned results as achievements.",
+  "strongest_fair_counterpoint": "Public datasets already let Egorov do useful work. New hardware adds expense and effort, and possession alone doesn't establish better research. A fair standard is whether the lab adds well-designed experiments and useful findings that its existing data couldn't supply. This is an editorial test, not an allegation of shortcomings.",
+  "who_it_serves": "Alaska students and research collaborators first; educators and disability specialists could benefit from future findings, but no participant benefit has yet been demonstrated.",
+  "valence": "Warm, curious optimism about capability and local talent. The open questions create forward motion rather than a deflating ending.",
+  "falsifying_observation": "If the planned work remains entirely dependent on imported EEG data, or local collection doesn't support the chosen tasks, the proposed gain in experimental control hasn't materialized. A device purchase alone wouldn't satisfy the thesis's forward-looking part.",
+  "second_movement_act3_test": "Turn from obtaining a signal to earning an interpretation. Reading and programming ask different questions of the same kind of measurement. Proposed editorial test: can researchers document the task and connect signals to an independently recorded outcome? If the intended claim extends to new people, test people absent from model training. The validator's C11 supports that methods principle. Treat this as a future standard, not a UAA protocol, error or result. End with the question the new instrument makes possible.",
+  "possible_engagement_question": "Which question about learning should UAA investigate with these new signals?",
+  "narration_constraints": {
+    "words": [
+      200,
+      220
+    ],
+    "seconds": [
+      112,
+      130
+    ],
+    "no_storyboard_yet": true
+  },
+  "guardrails": [
+    "No read-your-mind frame or inferred thoughts, comprehension, intent, diagnosis or treatment.",
+    "No invented classifier, accuracy, enrollment, pricing or recruitment claims.",
+    "No implication that UAA's planned experiments are completed or that all of its research previously used imported data.",
+    "No claim of legal data ownership, tribal data governance or statewide participant representativeness.",
+    "Don't borrow the manufacturer's QStates capability and attribute it to UAA.",
+    "Programming is a human task here; no AI-assistant programming condition has been announced. Match any proposed evaluation to the intended use and population."
+  ],
+  "inputs_read": [
+    "out/dispatch/research_science.json",
+    "config/brand.yaml",
+    "out/dispatch/fact_check.json",
+    "out/dispatch/sources_verified.json"
+  ],
+  "validation_status": "Reconciled with out/dispatch/fact_check.json and out/dispatch/sources_verified.json. C1 to C8 support the acquired-capability thesis; C10 bounds research use. No unsupported new-study result imported.",
+  "primary_url": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml"
+}

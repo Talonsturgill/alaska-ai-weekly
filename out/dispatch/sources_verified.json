@@ -1,5 +1,11 @@
 {
-  "run_date": "2026-09-12",
+  "validated_at_utc": "2026-09-12T13:07:42.627264+00:00",
+  "window": [
+    "2026-09-02",
+    "2026-09-12"
+  ],
+  "all_urls_refetched": true,
+  "sourcing_rule": "At least one primary source; hardware count additionally confirmed by manufacturer.",
   "sources": [
     {
       "id": "uaa_announcement",
@@ -13,10 +19,7 @@
       "primary": true,
       "independently_refetched": true,
       "status": "verified",
-      "locator": "Article body and photograph caption; web extracted lines 478\u2013496",
-      "outlet": "University of Alaska Anchorage",
-      "used_in_film": true,
-      "note": "Primary announcement"
+      "locator": "Article body and photograph caption; web extracted lines 478–496"
     },
     {
       "id": "manufacturer_specs",
@@ -29,11 +32,8 @@
       "primary": true,
       "independently_refetched": true,
       "status": "verified",
-      "locator": "Introduction and hardware specifications; lines 77\u201380, 160\u2013197",
-      "use_limit": "Hardware specifications only; vendor marketing is not independently verified performance.",
-      "outlet": "Wearable Sensing",
-      "used_in_film": true,
-      "note": "Hardware specifications only; vendor marketing is not independently verified performance."
+      "locator": "Introduction and hardware specifications; lines 77–80, 160–197",
+      "use_limit": "Hardware specifications only; vendor marketing is not independently verified performance."
     },
     {
       "id": "manufacturer_manual",
@@ -47,10 +47,7 @@
       "primary": true,
       "independently_refetched": true,
       "status": "verified",
-      "locator": "Page 64 research-use warning; text lines 1459\u20131469; screenshot requested for page 64",
-      "outlet": "Wearable Sensing",
-      "used_in_film": true,
-      "note": "Background hardware documentation"
+      "locator": "Page 64 research-use warning; text lines 1459–1469; screenshot requested for page 64"
     },
     {
       "id": "uaa_workshop",
@@ -64,10 +61,7 @@
       "primary": true,
       "independently_refetched": true,
       "status": "verified",
-      "locator": "Executive summary; student presentation list, lines 42\u201358",
-      "outlet": "UAA College of Engineering",
-      "used_in_film": false,
-      "note": "Background hardware documentation"
+      "locator": "Executive summary; student presentation list, lines 42–58"
     },
     {
       "id": "eeg_validation_methods",
@@ -84,10 +78,8 @@
       "independently_refetched": true,
       "status": "verified",
       "locator": "Introduction; methods 2.4; results 3.1; conclusion",
-      "use_limit": "General EEG validation evidence, not evaluation of UAA or this acquisition.",
-      "outlet": "Frontiers in Neuroscience",
-      "used_in_film": true,
-      "note": "General EEG validation evidence, not evaluation of UAA or this acquisition."
+      "use_limit": "General EEG validation evidence, not evaluation of UAA or this acquisition."
     }
-  ]
+  ],
+  "dropped_sources": []
 }
