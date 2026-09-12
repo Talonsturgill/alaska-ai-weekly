@@ -6,7 +6,7 @@ Owner directive is to execute `prompts/dispatch_routine.md` from current main, d
 | --- | --- |
 | Refresh and authoritative reads | Done. No queued story. Run stamped. |
 | Environment and research | Done. Setup passes with retired GPU stack optional. Three researchers returned fresh primary sources. |
-| Fact check, angle, directors room, Gate 0 | Independent fact check and dedupe pass. The Question Comes First angle locked. Four-pitch writers room active. |
+| Fact check, angle, directors room, Gate 0 | Independent fact check and dedupe pass. The Question Comes First angle locked. Four-pitch writers room and all cross-challenges done; Enthusiast selected at8.62. Gate0A passes after cadence/warmth plan correction. Gates0B/C/D reviewing. |
 | Voice and complete rough cut | Next |
 | Craft passes, objective gates and panel | Next |
 | Retrospective fixes and delivery | Next |
@@ -15,3 +15,5 @@ Owner directive is to execute `prompts/dispatch_routine.md` from current main, d
 The existing `tmp/` is unrelated and remains untouched. Prior scratch under `out/dispatch` is stale unless regenerated after the run stamp. Do not edit rendered source after final evidence without rerendering.
 
 Upgrade commit `623c95f` skips retired GPU setup by default, removes automatic narration time-stretch and isolates the runtime self-test from a later stage-variety rule. Setup, byte compilation and format self-test pass.
+
+Research and verified angle saved in `539c090`. Caption editor9.046 and independent scorer8.742 pass current post SHA `a7dc4b491eae03ebf64cf9bb807e94e0c438e08685eac36ff60cf90693ba0f16`; final video parity pending. Natural213-word narration is locked pending final cold-read confirmation after actor attribution clarification.

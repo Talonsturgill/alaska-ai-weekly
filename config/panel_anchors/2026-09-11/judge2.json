@@ -1,0 +1,24 @@
+{
+  "axis_scores": {
+    "Hook & retention": 8.0,
+    "Illustration craft & detail": 7.0,
+    "Motion & animation craft": 6.7,
+    "Composition & staging": 7.5,
+    "Color & grade": 8.0,
+    "Typography & captions": 7.6,
+    "Sound design & mix": 7.0,
+    "VO-illustration sync & entertainment": 7.5,
+    "Accuracy & sourcing": 8.8,
+    "Alaska authenticity & cultural respect": 8.0,
+    "Writing & post quality": 8.2
+  },
+  "weighted_total": 7.57,
+  "hard_blockers": [],
+  "ship": true,
+  "rationale": "The refreshed 9:16 evidence clears the bar. Its strongest qualities are disciplined proposal-versus-proof framing, coherent document-inspired art direction and three motivated visual payoffs.",
+  "score_movement": {
+    "prior_weighted_total": 7.8,
+    "current_weighted_total": 7.57,
+    "axes_over_1_point": ["Composition & staging", "Accuracy & sourcing"]
+  }
+}

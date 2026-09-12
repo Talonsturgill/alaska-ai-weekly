@@ -1,0 +1,24 @@
+{
+  "axis_scores": {
+    "Hook & retention": 8.2,
+    "Illustration craft & detail": 8.1,
+    "Motion & animation craft": 7.5,
+    "Composition & staging": 8.0,
+    "Color & grade": 8.2,
+    "Typography & captions": 8.4,
+    "Sound design & mix": 7.2,
+    "VO-illustration sync & entertainment": 8.3,
+    "Accuracy & sourcing": 8.6,
+    "Alaska authenticity & cultural respect": 8.4,
+    "Writing & post quality": 8.7
+  },
+  "weighted_total": 8.08,
+  "hard_blockers": [],
+  "ship": true,
+  "rationale": "The current 9:16 evidence pack is coherent, legible, factually disciplined and creatively above the ship threshold. Its strongest advances are the literal proof grammar and three captured physical actions.",
+  "score_movement": {
+    "prior_weighted_total": 8.02,
+    "current_weighted_total": 8.08,
+    "axes_over_1_point": []
+  }
+}
