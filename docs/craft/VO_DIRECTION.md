@@ -70,6 +70,13 @@ model. Rule of thumb: at most one inline tag per 1-2 sentences; many lines need 
 VETTED INLINE PALETTE (start here; promote a new tag only after the sound check proves it is not
 spoken for Sulafat across a few takes):
 - Pacing/breath: `[short pause]`, `[sighs]` (rare), a genuine `[laughs]` only if the line truly earns it.
+- `[slow]` is locally vetted for Sulafat on `gemini-3.1-flash-tts-preview` as of
+  September 12th, 2026. A56-word isolated probe returned35.16seconds, zero word errors
+  and no spoken-tag leak (`out/dispatch/probe/slow_tag_probe.json`). Place it mid-line
+  at a motivated change in cadence, never line-initial or adjacent to another tag.
+  This validates the cue, not a full-film duration guarantee or another model.
+  Recheck the complete take against the normal format and sound gates.
+
 - Light performance cues that tested clean on Sulafat: `[curious]` (hook), `[wry]` (aside). Use once
   or twice, not every line.
 - BANNED as inline (put these in the notes instead, they risk being read aloud): [excited], [serious],

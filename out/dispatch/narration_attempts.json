@@ -1,0 +1,51 @@
+{
+  "run_date": "2026-09-12",
+  "updated_at": "2026-09-12T15:08:54.669408+00:00",
+  "accepted_delivery_take": null,
+  "rule": "Natural audio only;112\u2013130seconds, exactscript, no leaked tags and passing soundcheck. Duration warnings are working artifacts.",
+  "attempts": [
+    {
+      "direction": 0,
+      "words": 213,
+      "durations_s": [
+        102.4,
+        107.2,
+        98.6,
+        101.3,
+        103.8,
+        95.5
+      ],
+      "best_raw_s": 107.2,
+      "result": "runtimefailed"
+    },
+    {
+      "direction": 1,
+      "words": 213,
+      "durations_s": [
+        109.1,
+        104.9,
+        107.0,
+        110.2,
+        75.0
+      ],
+      "best_raw_s": 110.2,
+      "result": "runtimefailed",
+      "note": "Finalfallbacktake alsooutsideband;exactlogpreservedinbg."
+    },
+    {
+      "direction": 2,
+      "words": 220,
+      "durations_s": [
+        99.1
+      ],
+      "result": "initialruntimefailed;retrytransportfailed",
+      "transport": "RemoteDisconnected after configured primary retries"
+    },
+    {
+      "direction": 3,
+      "words": 220,
+      "result": "running",
+      "repair": "Explicit slow documentary delivery and ten vetted short clause pauses; unchanged220spokenwords."
+    }
+  ]
+}

@@ -46,12 +46,33 @@ const Shot:React.FC<{n:number;from:number;dur:number;beats:Beat[]}>=({n,from,dur
  const p=e(g-from),travel=e(g-from,0,dur),bp=(id:number,d=25,lag=0)=>e(g-lag,(beats.find(b=>b.id===id)?.at??999)*30,d);let art:React.ReactNode;
  if(n===1) art=<g><EEGHeadset x={228} y={890} scale={1.05} mode="contact" f={g}/><Notebook x={665} y={956} s={.67} open={.48+.52*entrance(g-from,30,5).t} shuffle={bp(2)} f={g}/><QuestionToken x={830} y={1125} scale={.64} text="NEXT STEP" color={CORAL} faceColor={PAPER} inkColor={INK} rimColor={CITRON} rot={-6+6*bp(3)}/><Fit text="19" x={230} y={729} size={166} width={280}/><Fit text="SCALP ELECTRODES" x={687} y={674} size={40} width={590}/><Fit text="WHAT IS ON THE NEXT PAGE?" x={687} y={733} size={29} width={580} mono/></g>;
  else if(n===2) art=<g><rect x={140} y={1050} width={800} height={80} fill={GROUND} stroke={INK} strokeWidth={7}/><EEGHeadset x={545} y={830-55*(1-p)} scale={.96} mode="side" f={g}/><GripHand x={705} y={850} reach={bp(5)} scale={.45} cuffColor={GROUND}/><g opacity={bp(5)}><Plate x={540} text="TRAINING DEMONSTRATION" y={1203} width={610}/></g><Notebook x={280} y={1190} s={.32} f={g}/><Plate x={540} text="UNIVERSITY OF ALASKA ANCHORAGE" y={600}/><Plate x={540} text="DRY EEG · DSI-24" y={1140} width={590}/></g>;
- else if(n===3) art=<g>
- <g transform={`translate(0 ${60*(1-bp(6))}) rotate(${-3*(1-bp(6))} 540 860)`}><Sheet x={120} y={595} w={840} h={505} fill={PAPER} fiber="fiber0912" curl={1}/><path d="M120 640h840" stroke={CORAL} strokeWidth={11}/><Fit text="SEPTEMBER 9TH" y={739} size={56} mono/>
- <g transform={`translate(${40*(1-bp(7))} 0)`}><Plate x={540} text="AI AND ROBOTICS LAB" y={654} width={700} color={CITRON}/></g>
- <g transform={`translate(0 ${40*(1-bp(8))}) scale(1 ${.12+.88*bp(8)})`} opacity={bp(8)} style={{transformOrigin:'540px 860px'}}><rect x={160} y={780} width={760} height={125} rx={8} fill={CORAL} stroke={INK} strokeWidth={4}/><Fit text="EDUCATIONAL LEGACY FUND" y={855} size={36} width={700}/></g>
- <g opacity={bp(9)}><Fit text="STUDENTS + FACULTY TRAINED" y={1000} size={36} width={700}/><path d="M220 1030q320 35 640 0" fill="none" stroke={GROUND} strokeWidth={4}/></g></g>
- <Notebook x={300} y={1194} s={.3} f={g}/><GripHand x={800} y={1070} reach={bp(9)} scale={.5} cuffColor={GROUND}/><g transform="translate(1050 0) scale(-1 1)"><GripHand x={805} y={1085} reach={bp(9,37)} scale={.4} skin="#b97960" cuffColor={CORAL}/></g></g>;
+ else if(n===3) {
+  // Funding leads into a sheet that two people actually handle. Keep the notice
+  // fixed for reading; each motion changes the training leaflet or its grip.
+  const present=bp(8,42,18),openTraining=bp(8,45,62),share=bp(9,40);
+  const trainingX=580*(1-present),trainingY=45*(1-present),pageLift=18*Math.sin(share*Math.PI);
+  art=<g>
+   <g transform={`translate(0 ${60*(1-bp(6))}) rotate(${-3*(1-bp(6))} 540 760)`}><Sheet x={120} y={595} w={840} h={340} fill={PAPER} fiber="fiber0912" curl={1}/><path d="M120 640h840" stroke={CORAL} strokeWidth={11}/><Fit text="SEPTEMBER 9TH" y={739} size={56} mono/>
+    <g transform={`translate(${40*(1-bp(7))} 0)`}><Plate x={540} text="AI AND ROBOTICS LAB" y={654} width={700} color={CITRON}/></g>
+    <g transform={`translate(0 ${40*(1-bp(8))}) scale(1 ${.12+.88*bp(8)})`} opacity={bp(8)} style={{transformOrigin:'540px 860px'}}><rect x={160} y={780} width={760} height={125} rx={8} fill={CORAL} stroke={INK} strokeWidth={4}/><Fit text="EDUCATIONAL LEGACY FUND" y={855} size={36} width={700}/></g>
+   </g>
+   <g opacity={present} transform={`translate(${trainingX} ${trainingY})`}>
+    <ContactShadow cx={546} cy={1247} rx={365} ry={16} opacity={.22}/>
+    <Sheet x={160} y={951} w={760} h={281} fill={GROUND} curl={1}/>
+    <path d="M182 966H895" stroke={CITRON} strokeWidth={5}/>
+    <g transform={`translate(160 951) scale(1 ${.07+.93*openTraining})`}>
+     <Sheet x={0} y={0} w={760} h={281} fill={PAPER} fiber="fiber0912" curl={1}/>
+     <path d={`M25 253Q370 ${253-pageLift} 735 253`} fill="none" stroke={GROUND} strokeWidth={4}/>
+     <Fit text="TRAINING DEMONSTRATION" x={380} y={69} size={28} width={690} mono/>
+     <g opacity={share}><Fit text="STUDENTS + FACULTY TRAINED" x={380} y={143} size={34} width={690}/></g>
+     <path d={`M698 279Q${697-12*share} ${230-pageLift} 757 ${236-pageLift}`} fill={CITRON} stroke={INK} strokeWidth={3}/>
+    </g>
+   </g>
+   <Notebook x={220} y={1290} s={.17} f={g}/>
+   <g transform={`rotate(${-4*openTraining+4*share} 900 1190)`}><GripHand x={900+trainingX} y={1190+trainingY-18*openTraining-pageLift} reach={present} scale={.48} cuffColor={GROUND}/></g>
+   <g transform={`translate(1080 0) scale(-1 1) rotate(${-3*share} 899 1190)`}><GripHand x={899} y={1190-18*openTraining+10*share} reach={openTraining*(1-.06*Math.sin(share*Math.PI))} scale={.43} skin="#b97960" cuffColor={CORAL}/></g>
+  </g>;
+ }
  else if(n===4) art=<EEGDemo0912 f={g} observationAt={(beats.find(b=>b.id===11)?.at??999)*30} bp={bp}/>;
  else if(n===5) art=<g><g transform={`translate(0 ${44*(1-bp(13))})`}><Notebook x={480} y={930} s={1} f={g} task={bp(15)} open={.6+.4*bp(13)}/></g>
  <MotionBlur vx={185*(bp(14)-bp(14,25,1))} vy={190*(bp(14)-bp(14,25,1))} gain={.5} max={10}><g transform={`translate(${240+185*bp(14)} ${850+190*bp(14)}) rotate(${-6+6*bp(14)})`}><rect x={-130} y={-42} width={260} height={84} rx={5} fill={CITRON} stroke={INK} strokeWidth={4}/><Fit text="EXISTING RECORDING" x={0} y={-3} size={20} width={235} mono/><path d="M-105 20q30-17 58 0t62 0t68 0" fill="none" stroke={INK} strokeWidth={3}/></g></MotionBlur>

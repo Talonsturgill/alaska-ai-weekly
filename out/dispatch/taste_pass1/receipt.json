@@ -290,6 +290,13 @@
       "extra_wing",
       "separate_test"
     ],
-    "finding": "Scalp demonstration and graduate-student name read clearly; empty interpretation is visually separate; archive participant reminder now has an ivory backing clear of shelf edges. Closing page and four named motions have visible eased travel and settling. These are provisional first-take clock probes, not delivery evidence."
+    "finding": "Scalp demonstration and graduate-student name read clearly; empty interpretation is visually separate; archive participant reminder now has an ivory backing clear of shelf edges. Closing page and four named motions have visible eased travel and settling. These are provisional first-take clock probes, not delivery evidence.",
+    "additional_stills_reviewed": [
+      "scalp_contact_final_fix.png",
+      "archive_assembly_final_fix.png",
+      "shot3_motion_fix_19_3s.png",
+      "shot3_motion_fix_22_5s.png"
+    ],
+    "motion_repair": "Shot3 hands now present, open and share the training folio while the notice stays readable. Targeted16.00\u201324.73s render passed story-region content_sag_check. The earlier whole-draft103\u2013114s warning covered required credits."
   }
 }

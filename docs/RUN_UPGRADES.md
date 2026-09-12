@@ -3166,3 +3166,17 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
   A verified plain-language explanation of scalp contact brought the script from213to220words;
   a fresh script-only cold read passed before the targeted next synthesis. No short take was
   treated as delivery-approved.
+
+- Long unary voice requests repeatedly ended with RemoteDisconnected. The documented
+  Gemini3.1 Developer API streaming route now joins complete PCM chunks and requires
+  successful completion plus a clean stream end; truncation and encoded errors return to
+  the existing retries. Other models retain their supported unary route. Fourteen new
+  transport tests and fifteen existing voice-precheck tests pass.
+- A short isolated Sulafat test vetted the documented slow pacing cue with zero word
+  errors and no spoken markup. The cue's evidence and model scope are recorded in the
+  voice-direction guide; it does not replace full-take runtime approval.
+- Draft motion analysis isolated a5.5-second lull in the funding-and-training shot.
+  The notice now stays still for reading while two hands present, open and share a
+  training folio. Its targeted render has no five-second motion lull and its label
+  frames were inspected. A fixed scalp-contact highlight adds a fortieth picture beat
+  with matching editorial sound and evidence coverage.

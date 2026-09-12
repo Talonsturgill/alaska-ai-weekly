@@ -30,6 +30,7 @@ export const EEGDemo0912: React.FC<{
   const uid = `demo0912-${React.useId().replace(/:/g, '')}`;
   const reveal = clamp(bp(10, 21));
   const signal = clamp(bp(10, 56));
+  const contactDetail = clamp(bp(40, 42));
   const observe = clamp(bp(11, 32));
   const gesture = interpolate(f, [observationAt, observationAt + 48], [0, 1], {
     extrapolateLeft: 'clamp',
@@ -71,6 +72,12 @@ export const EEGDemo0912: React.FC<{
           <EEGHeadset f={f} mode="array" spread={1} body={VIOLET}
             contact={CITRON} ink={INK} highlight={9} />
         </g>
+      </g>
+      <g opacity={(1 - isolate) * Math.sin(contactDetail * Math.PI)}>
+        <circle cx={307} cy={810} r={23 + 15 * contactDetail} fill="none"
+          stroke={PAPER} strokeWidth={7} />
+        <circle cx={307} cy={810} r={32 + 18 * contactDetail} fill="none"
+          stroke={CORAL} strokeWidth={4} />
       </g>
       {/* The source of the recording is a scalp pad, not an auxiliary socket.
           A dashed arrow makes the link explicitly explanatory, not a cable. */}

@@ -102,6 +102,7 @@ _PERFORMANCE = [
     ("paper",  "texture",  -0.15, "funding slip turns onto the acquisition sheet"),# 8
     ("paw",    "texture",   0.10, "student hand turns the padded training stand"), # 9
     ("whoosh", "standard",  0.00, "schematic array and trace connection disclose"),# 10
+    ("pop",    "texture",  -0.18, "soft editorial accent follows the fixed scalp-contact ring"),# 40
     ("paw",    "texture",   0.25, "fingertip touches the observation-display ledge"),# 11
     ("tick",   "texture",   0.30, "SCHEMATIC tab seats at the growing trace edge"), # 12
     ("creak",  "texture",  -0.40, "public-data book spine flexes open"),             # 13
@@ -134,7 +135,7 @@ _PERFORMANCE = [
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
 if (_board.get("run_date") != DATE or
-        [b["id"] for b in _board["beats"]] != list(range(1, 40)) or
+        [b["id"] for b in _board["beats"]] != list(range(1, 11)) + [40] + list(range(11, 40)) or
         len(_PERFORMANCE_KINDS) != len(_board["beats"])):
     raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
 EVENTS = [

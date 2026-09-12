@@ -28,7 +28,7 @@ variable falls back to the login Keychain entry used by the local Codex
 automation without printing or persisting the secret.
 """
 import os, sys, json, base64, urllib.request, urllib.error, ssl, time, re, difflib
-import getpass, platform, subprocess
+import getpass, platform, subprocess, io
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -81,14 +81,125 @@ def _key():
     return k
 
 
+def _sse_events(response):
+    """Read framed SSE data, including multiline data and CR/LF line endings."""
+    data, event = [], ""
+    with io.TextIOWrapper(response, encoding="utf-8-sig", newline=None) as stream:
+        for raw_line in stream:
+            line = raw_line.rstrip("\n")
+            if not line:
+                if data or event == "error":
+                    yield event, "\n".join(data)
+                data, event = [], ""
+                continue
+            if line.startswith(":"):
+                continue
+            field, _, value = line.partition(":")
+            if value.startswith(" "):
+                value = value[1:]
+            if field == "data":
+                data.append(value)
+            elif field == "event":
+                event = value
+        if data or event == "error":
+            raise RuntimeError("Incomplete TTS stream event")
+
+
+def _stream_pcm(response):
+    """Accept only complete, successful 24kHz PCM from one candidate.
+
+    Never expose payloads in errors, and never return early on STOP: an error or
+    interrupted HTTP body after it must still invalidate the entire attempt.
+    """
+    audio = bytearray()
+    finished, done = False, False
+    for event, payload in _sse_events(response):
+        if event == "error":
+            raise RuntimeError("TTS stream returned an error event")
+        if payload.strip() == "[DONE]":
+            if not finished:
+                raise RuntimeError("TTS stream ended without successful completion")
+            done = True
+            continue
+        if done:
+            raise RuntimeError("TTS stream continued after its end marker")
+        try:
+            chunk = json.loads(payload)
+        except (ValueError, TypeError):
+            raise RuntimeError("Invalid TTS stream JSON") from None
+        if not isinstance(chunk, dict):
+            raise RuntimeError("Invalid TTS stream response")
+        if "error" in chunk:
+            raise RuntimeError("TTS stream returned an encoded error")
+        feedback = chunk.get("promptFeedback") or {}
+        if not isinstance(feedback, dict) or feedback.get("blockReason"):
+            raise RuntimeError("TTS stream prompt was blocked")
+        candidates = chunk.get("candidates", [])
+        if not isinstance(candidates, list):
+            raise RuntimeError("Invalid TTS stream candidates")
+        for candidate in candidates:
+            if not isinstance(candidate, dict) or candidate.get("index", 0) != 0:
+                raise RuntimeError("Unexpected TTS stream candidate")
+            reason = candidate.get("finishReason")
+            if reason not in (None, "", "FINISH_REASON_UNSPECIFIED", "STOP"):
+                raise RuntimeError("TTS stream did not finish successfully")
+            content = candidate.get("content") or {}
+            if not isinstance(content, dict):
+                raise RuntimeError("Invalid TTS stream content")
+            parts = content.get("parts", [])
+            if not isinstance(parts, list):
+                raise RuntimeError("Invalid TTS stream parts")
+            for part in parts:
+                if not isinstance(part, dict):
+                    continue
+                inline = part.get("inlineData")
+                if not isinstance(inline, dict):
+                    continue
+                mime = inline.get("mimeType", "")
+                if not isinstance(mime, str) or not mime.lower().startswith("audio/"):
+                    continue
+                fields = [field.strip().lower() for field in mime.split(";")]
+                params = dict(field.split("=", 1) for field in fields[1:] if "=" in field)
+                if (fields[0] not in ("audio/l16", "audio/pcm")
+                        or params.get("rate", "24000") != "24000"
+                        or params.get("channels", "1") != "1"
+                        or params.get("codec", "pcm") != "pcm"):
+                    raise RuntimeError("Unsupported TTS stream audio format")
+                if finished:
+                    raise RuntimeError("TTS stream audio followed completion")
+                try:
+                    audio.extend(base64.b64decode(inline.get("data"), validate=True))
+                except (ValueError, TypeError):
+                    raise RuntimeError("Invalid TTS stream audio data") from None
+            if reason == "STOP":
+                finished = True
+    # HTTPResponse.read1 can reach EOF with an unfulfilled Content-Length.
+    remaining = getattr(response, "length", None)
+    if remaining not in (None, 0):
+        raise RuntimeError("Incomplete TTS HTTP response")
+    if not finished or not audio or len(audio) % 2:
+        raise RuntimeError("Incomplete TTS stream audio")
+    return np.frombuffer(bytes(audio), dtype="<i2")
+
+
 def _synth_once(prompt, model, voice):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    # Developer API streaming is documented for 3.1 TTS, not the 2.5 fallback.
+    # https://ai.google.dev/gemini-api/docs/generate-content/speech-generation
+    streaming = model == "gemini-3.1-flash-tts-preview"
+    method = "streamGenerateContent?alt=sse" if streaming else "generateContent"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:{method}"
     body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
-    req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST",
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": _key()})
+    headers = {"Content-Type": "application/json", "x-goog-api-key": _key()}
+    if streaming:
+        headers["Accept"] = "text/event-stream"
+    req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST", headers=headers)
     with urllib.request.urlopen(req, timeout=180, context=CTX) as r:
+        if streaming:
+            if r.status != 200 or r.headers.get("Content-Type", "").split(";", 1)[0].lower() != "text/event-stream":
+                raise RuntimeError("Invalid TTS streaming HTTP response")
+            return _stream_pcm(r)
         resp = json.loads(r.read().decode())
     b64 = resp["candidates"][0]["content"]["parts"][0]["inlineData"]["data"]
     return np.frombuffer(base64.b64decode(b64), dtype="<i2")  # int16 @ 24k

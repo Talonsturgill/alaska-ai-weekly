@@ -329,10 +329,10 @@
     {
       "id": 10,
       "at_s": 25.35,
-      "t": "25.35-28.73",
+      "t": "25.35-26.85",
       "vo_line": 4,
       "offset": 0,
-      "vo": "Its scalp contacts record electrical activity.",
+      "vo": "The device records electrical activity using sensors that rest directly against the scalp.",
       "shows": "Nineteen-contact EEG schematic widens from one fixed scalp contact to the complete counted scalp array as a labeled illustrative electrical trace begins extending in the adjacent display",
       "sfx": "A restrained nonliteral diagram sweep accompanies the widening view; a soft pencil-like tracing sound follows the line as it is drawn. Both are editorial illustration sounds, not emitted EEG hardware noise.",
       "means": "ELECTRICAL SIGNALS",
@@ -347,7 +347,30 @@
         "reaction": "A bracket on the adjacent display expands with the newly drawn trace, while the loose label tab attached to that display follows the bracket edge and settles.",
         "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
       },
-      "continuity": "Begin the trace during Its scalp contacts record electrical activity. No moving sensor hardware, fabricated reading, numerical voltage or physical cable path is implied; the separate display remains SCHEMATIC."
+      "continuity": "Begin the schematic trace as electrical activity is named. The fixed sensors measure at the scalp surface. No moving hardware, invented voltage or physical cable path is implied."
+    },
+    {
+      "id": 40,
+      "at_s": 26.85,
+      "t": "26.85-28.73",
+      "vo_line": 4,
+      "offset": 1.5,
+      "vo": "The device records electrical activity using sensors that rest directly against the scalp.",
+      "shows": "A coral explanatory ring expands and settles around the fixed central scalp contact, while the already-labeled schematic trace continues in its separate display",
+      "sfx": "A quiet soft elastic pop marks the illustrative ring expanding around the fixed contact; it is an editorial accent, not a sound made by the EEG instrument.",
+      "means": "Contact at the scalp surface",
+      "draw": {
+        "subject": "Fixed central scalp contact",
+        "action": "receives a gently expanding explanatory ring that settles without moving any electrode",
+        "emotion": "clear",
+        "annotation": "19 SCALP CONTACTS"
+      },
+      "choreo": {
+        "primary": "Explanatory ring expands around the fixed central pad and settles",
+        "reaction": "The separate recording bracket and schematic trace continue drawing while attention moves back to the contact",
+        "ambient": "Back-left hanging lab identification tag sways slightly; far-right loose stand strap flexes in the desk draft; rear notebook ribbon tip slowly curls and uncurls. All remain spatially separate and below one tenth of primary amplitude."
+      },
+      "continuity": "Pure editorial emphasis on the already visible scalp contact; no hardware motion, numerical output, thought content or clinical result."
     },
     {
       "id": 11,

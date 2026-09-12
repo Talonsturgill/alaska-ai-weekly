@@ -29,7 +29,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 EV = os.path.join(REPO, "out", "evidence")
 
 # (name, current storyboard beat id, seconds INTO that beat's action).
-# September 12: all 39 notebook and EEG beats. Resolve the VO line/offset from the
+# September 12: all 40 notebook and EEG beats. Resolve the VO line/offset from the
 # CONFORMED board at runtime, so later timing surgery cannot leave a second,
 # stale clock in the evidence list. Each named sample sits 0.35 seconds into its
 # beat, after the first eased travel is visible and safely away from shot cuts.
@@ -46,6 +46,7 @@ MOVES = [
     ("fund_credit_turns", 8, 0.35),
     ("training_leaf_opens", 9, 0.35),
     ("scalp_recording_reveals", 10, 0.35),
+    ("fixed_scalp_contact_emphasized", 40, 0.35),
     ("student_observes", 11, 0.35),
     ("trace_stops_before_interpretation", 12, 0.35),
     ("archive_book_opens", 13, 0.35),
