@@ -339,7 +339,11 @@ try{
  need(helper.statements.some(s=>ts.isVariableStatement(s)&&s.modifiers?.some(m=>m.kind===ts.SyntaxKind.ExportKeyword)&&s.declarationList.declarations.some(d=>d.name.getText(helper)==='EEGDemo0912')),'helper is not exported');
  const ds=demo.body.statements.filter(ts.isVariableStatement).flatMap(s=>[...s.declarationList.declarations]);
  const local=name=>{const d=ds.filter(d=>d.name.getText(helper)===name);need(d.length===1,'unresolved helper '+name);return d[0].initializer;};
- const expected={observe:'clamp(bp(11,32))',isolate:'clamp(bp(12,26))',signal:'clamp(bp(10,56))',contactDetail:'clamp(bp(40,42))'};
+ // Only these clocks control the verified text routes. The contact hand's
+ // reach/release/touch animation contains no claim text, and its unsupported
+ // opacity subtrees remain opaque to scan() below. A decorative clock rename
+ // must not invalidate unrelated text or grant labels in a new route credit.
+ const expected={observe:'clamp(bp(11,32))',isolate:'clamp(bp(12,26))',signal:'clamp(bp(10,56))'};
  for(const [name,value]of Object.entries(expected))need(same(local(name),value),'unresolved visibility binding '+name);
  need(same(variable(helper,'clamp'),'(n:number)=>Math.max(0,Math.min(1,n))'),'unresolved visibility clamp');
  const label=local('label');need(ts.isArrowFunction(label),'unresolved label function');
@@ -347,7 +351,7 @@ try{
  need(tag(sink)==='text'&&same(sink,'<text x={x} y={y} textAnchor="middle" fill={fill} fontFamily={MONO} fontSize={size} fontWeight={800}>{text}</text>'),'unresolved label text sink');
  const protectedNames=new Set(Object.keys(expected));
  walk(demo.body,n=>{if(ts.isBinaryExpression(n)&&n.operatorToken.kind>=ts.SyntaxKind.FirstAssignment&&n.operatorToken.kind<=ts.SyntaxKind.LastAssignment)need(!protectedNames.has(n.left.getText(helper)),'mutated helper visibility');});
- const allowedOpacity=new Set(['1-isolate','signal','isolate','observe*(1-isolate)','(1-isolate)*Math.sin(contactDetail*Math.PI)']);
+ const allowedOpacity=new Set(['1-isolate','signal','isolate','observe*(1-isolate)']);
  const labels=[];
  function scan(n){
   if(ts.isJsxExpression(n)){

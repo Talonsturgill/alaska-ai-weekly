@@ -1,0 +1,147 @@
+{
+  "check": "EVENT_CADENCE",
+  "root_cause": "The prior small contact rings supplied no salient physical action in the 29.0\u201334.4s window.",
+  "patch": "Only EEGDemo0912.tsx: existing GripHand demonstrates one fixed central scalp contact, briefly holds, then physically withdraws; contact rings react to the fingertip. Nineteen imported pads, trace, labels, narration, timing, camera and reveal hold remain unchanged.",
+  "source_sha256": "c8a5ea0b159fc5e81da328c596ef41d1be15719b9b3b741c984dc1f364bff945",
+  "source_frozen": true,
+  "full_resolution_stills": 74,
+  "reveal_hold_samples_pixel_identical": [
+    888,
+    894,
+    900
+  ],
+  "typecheck": "PASS: video-engine/node_modules/.bin/tsc --noEmit",
+  "event_cadence": {
+    "pass": true,
+    "baseline_floor": 1.5418535470962524,
+    "combined_floor": 1.5490997433662415,
+    "checks": [
+      {
+        "name": "EVENT_CADENCE",
+        "pass": true,
+        "detail": "biggest dead gap=0.0s (max 5.0s), dead windows=[] \u2014 guards 'boring/too slow'"
+      }
+    ],
+    "metrics": {
+      "event_spikes": 332,
+      "biggest_gap_s": 0.0,
+      "dead_windows": []
+    },
+    "longest_actual_interval": [
+      16.4,
+      20.4,
+      4.0
+    ],
+    "shot4_intervals": [
+      [
+        27.6,
+        28.8,
+        1.2
+      ],
+      [
+        28.8,
+        32.0,
+        3.2
+      ],
+      [
+        32.0,
+        33.8,
+        1.8
+      ],
+      [
+        33.8,
+        34.4,
+        0.6
+      ],
+      [
+        34.4,
+        35.6,
+        1.2
+      ],
+      [
+        35.6,
+        36.8,
+        1.2
+      ],
+      [
+        36.8,
+        37.0,
+        0.2
+      ],
+      [
+        37.0,
+        37.2,
+        0.2
+      ],
+      [
+        37.2,
+        40.2,
+        3.0
+      ],
+      [
+        40.2,
+        40.4,
+        0.2
+      ],
+      [
+        40.4,
+        40.6,
+        0.2
+      ],
+      [
+        40.6,
+        41.8,
+        1.2
+      ]
+    ],
+    "replaced_pairs": 72
+  },
+  "living_screen": {
+    "pass": true,
+    "passed_windows": 56,
+    "graded_windows": 66,
+    "fraction": 0.8484848484848485,
+    "required": 0.8,
+    "changed_windows_s": [
+      28,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42
+    ],
+    "weak_windows_s": [
+      14,
+      18,
+      42,
+      74,
+      92,
+      94,
+      102,
+      104,
+      124,
+      128
+    ]
+  },
+  "camera_shot4": {
+    "pass": true,
+    "frames": [
+      966,
+      1179
+    ],
+    "fraction": 0.39467592592592593,
+    "required": 0.3
+  },
+  "encoded_contact_delta": 1.9044691324234009,
+  "encoded_floor": 1.5490997433662415,
+  "encoded_pass": true,
+  "visually_inspected": [
+    "frame_00996.png",
+    "encoded/frame_00008.png",
+    "encoded/frame_00016.png"
+  ],
+  "needs_full_rerender": true,
+  "commit_created": false
+}

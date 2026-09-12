@@ -7,6 +7,19 @@ set -uo pipefail
 # ffmpeg
 command -v ffmpeg >/dev/null 2>&1 || { apt-get update -qq && apt-get install -y -qq ffmpeg; }
 
+# The delivered-credit gate reads actual text pixels. Use the native macOS
+# recognizer, or install the Linux OCR backend before spending a render.
+if [ "$(uname -s)" = Darwin ] && command -v swift >/dev/null 2>&1; then
+  echo "setup_env: credit OCR uses macOS Vision"
+elif ! command -v tesseract >/dev/null 2>&1; then
+  if command -v apt-get >/dev/null 2>&1; then
+    apt-get update -qq && apt-get install -y -qq tesseract-ocr || exit 1
+  else
+    echo "setup_env: credit OCR requires macOS Swift/Vision or tesseract" >&2
+    exit 1
+  fi
+fi
+
 # python deps (only install if missing)
 python3 -c "import PIL,numpy,scipy,matplotlib,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
   || python3 -m pip install --break-system-packages -q pillow numpy scipy matplotlib edge-tts soundfile pyyaml

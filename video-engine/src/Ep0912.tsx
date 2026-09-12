@@ -53,11 +53,14 @@ const Shot:React.FC<{n:number;from:number;dur:number;beats:Beat[]}>=({n,from,dur
  else if(n===3) {
   // Funding leads into a sheet that two people actually handle. Keep the notice
   // fixed for reading; each motion changes the training leaflet or its grip.
+  // Anticipate the aligned "A I" at 16.38s; beat 7's 17.024s marker is mid-phrase.
+  const mountLab=bp(7,28,-30),releaseLab=bp(7,20,6);
   const present=bp(8,42,18),openTraining=bp(8,45,62),share=bp(9,40);
   const trainingX=580*(1-present),trainingY=45*(1-present),pageLift=18*Math.sin(share*Math.PI);
   art=<g>
    <g transform={`translate(0 ${60*(1-bp(6))}) rotate(${-3*(1-bp(6))} 540 760)`}><Sheet x={120} y={595} w={840} h={340} fill={PAPER} fiber="fiber0912" curl={1}/><path d="M120 640h840" stroke={CORAL} strokeWidth={11}/><Fit text="SEPTEMBER 9TH" y={739} size={56} mono/>
-    <g transform={`translate(${40*(1-bp(7))} 0)`}><Plate x={540} text="AI AND ROBOTICS LAB" y={654} width={700} color={CITRON}/></g>
+    <g opacity={mountLab} transform={`translate(${760*(1-mountLab)} 0)`}><Plate x={540} text="AI AND ROBOTICS LAB" y={654} width={700} color={CITRON}/></g>
+    <g opacity={mountLab*(1-releaseLab)}><GripHand x={905+760*(1-mountLab)+300*releaseLab} y={654} reach={mountLab*(1-releaseLab)} scale={.48} cuffColor={GROUND}/></g>
     <g transform={`translate(0 ${40*(1-bp(8))}) scale(1 ${.12+.88*bp(8)})`} opacity={bp(8)} style={{transformOrigin:'540px 860px'}}><rect x={160} y={780} width={760} height={125} rx={8} fill={CORAL} stroke={INK} strokeWidth={4}/><Fit text="EDUCATIONAL LEGACY FUND" y={855} size={36} width={700}/></g>
    </g>
    <g opacity={present} transform={`translate(${trainingX} ${trainingY})`}>
@@ -89,12 +92,33 @@ const Shot:React.FC<{n:number;from:number;dur:number;beats:Beat[]}>=({n,from,dur
  <Plate x={540} text="PLANNED · READING" y={580}/><g opacity={bp(19)}><Plate x={540} text="COGNITIVE STATES" y={1128} width={540} color={CITRON}/></g><GripHand x={778} y={1090} reach={bp(19)} scale={.43} cuffColor={GROUND}/><Fit text="STUDY TARGET · ANSWERS AHEAD" y={1230} size={27} width={800} mono/></g>;
  else if(n===8) art=<g><g transform={`translate(0 ${50*(1-p)})`}><rect x={160} y={625} width={760} height={465} rx={26} fill={INK}/><rect x={181} y={650} width={718} height={360} rx={12} fill={PAPER}/><path d="M230 725h200m-160 65h320m-360 65h280" stroke={GROUND} strokeWidth={10}/><circle cx={290+400*bp(21)} cy={925} r={30} fill={CORAL} stroke={INK} strokeWidth={6}/><Fit text="PLANNED EYE MOVEMENTS" y={1065} size={27} color={PAPER}/><g opacity={bp(22)} transform={`translate(0 ${28*(1-bp(22))})`}><rect x={555} y={717} width={300} height={255} rx={8} fill={PAPER} stroke={GROUND} strokeWidth={4} strokeDasharray="12 10"/><Fit text="ANSWERS AHEAD" x={705} y={774} size={27} width={270} mono/></g></g><Plate x={540} text="PLANNED · PROGRAMMING" y={560}/><Notebook x={350} y={1200} s={.32} f={g}/><Trace x={615} y={1160} f={g} s={.62}/><Fit text="PLANNED BRAIN ACTIVITY" x={715} y={1281} size={24} width={440} mono/></g>;
  else if(n===9) art=<g><g opacity={bp(23)} transform={`translate(0 ${45*(1-bp(23))})`}>{[0,1,2].map(i=><g key={i}><rect x={125} y={650+i*145} width={830} height={118} fill={GROUND} stroke={INK} strokeWidth={5}/>{[0,1,2,3,4].map(k=><Sheet key={k} x={155+k*155} y={662+i*145} w={130} h={95} fill={PAPER}/>)}</g>)}</g><Notebook x={540} y={1100-80*p} s={1.05} f={g}/><Plate x={540} text="EXISTING RECORDINGS" y={585}/><g><rect x={612} y={642} width={340} height={121} rx={8} fill={PAPER} stroke={INK} strokeWidth={4}/><Marker x={915} y={699} s={.48}/><Fit text="IF NEW PEOPLE" x={747} y={686} size={24} width={252} mono/><Fit text="METHODS EXAMPLE" x={747} y={726} size={22} width={252} mono/></g></g>;
- else if(n===10) art=<g><Plate x={540} text="GENERAL EXAMPLE" y={565}/><Notebook x={390} y={1070} s={.57} f={g}/>
+ else if(n===10) {
+  const assessAt=(beats.find(b=>b.id===27)?.at??999)*30;
+  const compareGrip=bp(27,20),putBack=bp(28,18);
+  // Beat27: grip B, inspect the first existing context, then the second.
+  // The two pauses are inspection; no result, rejection or new recording is shown.
+  const compareX=interpolate(g,[assessAt+20,assessAt+35,assessAt+45,assessAt+62,assessAt+72,assessAt+84],[0,-85,-85,75,75,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.inOut(Easing.cubic)})*(1-putBack);
+  const compareY=-65*e(g,assessAt+20,15)*(1-putBack);
+  const contextOpen=[e(g,assessAt+27,12),e(g,assessAt+55,12)];
+  art=<g><Plate x={540} text="GENERAL EXAMPLE" y={565}/><Notebook x={390} y={1070} s={.57} f={g}/>
  <Sheet x={125} y={675} w={435} h={330} fill={PAPER} fiber="fiber0912"/><Fit text="QUESTION A" x={340} y={731} size={34} width={385} mono/>
  <g transform={`translate(${160+64*bp(24)} ${805+55*bp(24)})`}><rect x={-18} y={-36} width={300} height={66} rx={8} fill={CITRON} stroke={INK} strokeWidth={4}/><Fit text="RECORDING A" x={132} y={6} size={28} width={270} mono/></g>
- <g opacity={bp(25)}><Trace x={162} y={947} s={.93} f={g} p={bp(25)}/><path d={`M180 ${907+3*Math.sin(g/12)}q55-22 90 0t95 0t92 0`} fill="none" stroke={GROUND} strokeWidth={5}/></g>
- <g opacity={bp(26)} transform={`translate(${45*(1-bp(26))} 0)`}><Sheet x={625} y={738} w={310} h={316} fill={PAPER}/><Fit text="QUESTION B" x={780} y={791} size={28} width={280} mono/><g transform={`translate(${-18*Math.sin(bp(27)*Math.PI)} 0)`}><rect x={655} y={825} width={250} height={62} fill={CORAL} stroke={INK} strokeWidth={4}/><Fit text="ASSESS FIT" x={780} y={865} size={26} width={230} mono/></g><path d="M650 930h260v99H650Z" fill="none" stroke={GROUND} strokeWidth={4} strokeDasharray="12 10"/></g>
+ <g opacity={bp(25)}><g transform="translate(162 947) scale(.93)"><EvidenceTrace f={g} width={8} progress={bp(25)} color={CORAL} d="M0 0Q35 -20 70 4L90 24 116 -44 141 16Q160 32 185 0T265 5L290 -25 317 18 350 0"/><Fit text="SCHEMATIC" x={175} y={55} size={25} width={300} mono/></g><path d={`M180 ${907+3*Math.sin(g/12)}q55-22 90 0t95 0t92 0`} fill="none" stroke={GROUND} strokeWidth={5}/></g>
+ <g opacity={bp(26)} transform={`translate(${45*(1-bp(26))} 0)`}><Sheet x={625} y={738} w={310} h={316} fill={PAPER}/><g><rect x={655} y={825} width={250} height={62} fill={CORAL} stroke={INK} strokeWidth={4}/><Fit text="ASSESS FIT" x={780} y={865} size={26} width={230} mono/></g><path d="M650 930h260v99H650Z" fill="none" stroke={GROUND} strokeWidth={4} strokeDasharray="12 10"/></g>
+ <g opacity={compareGrip}>
+  {[638,804].map((x,i)=><g key={x} transform={`translate(${x} 680) scale(1 ${.18+.82*contextOpen[i]})`}>
+   <Sheet x={0} y={-72} w={114} h={72} fill={PAPER}/>
+   <path d="M15-50h72M15-32h58M15-14h72" fill="none" stroke={GROUND} strokeWidth={4}/>
+   <path d="M95-72v20h19" fill={CORAL} stroke={INK} strokeWidth={3}/>
+  </g>)}
+ </g>
+ <g opacity={bp(26)} transform={`translate(${780+45*(1-bp(26))+compareX} ${791+compareY})`}>
+  <rect x={-122} y={-44} width={244} height={64} rx={6} fill={PAPER} stroke={INK} strokeWidth={4}/>
+  <Fit text="QUESTION B" x={0} y={0} size={28} width={225} mono/>
+ </g>
+ <g opacity={compareGrip}><GripHand x={903+compareX} y={784+compareY} reach={compareGrip*(1-putBack)} scale={.30} cuffColor={GROUND}/></g>
  <g opacity={bp(28)}><path d={`M${885-40*bp(28)} 900l-46 155`} stroke={INK} strokeWidth={16} strokeLinecap="round"/><path d={`M${885-40*bp(28)} 900l-46 155`} stroke={CITRON} strokeWidth={9}/><path d="M666 963h221v58" fill="none" stroke={CORAL} strokeWidth={5}/></g><GripHand x={877} y={990} reach={bp(28)} scale={.43} cuffColor={GROUND}/><Plate x={540} text="OPTIONAL COLLECTION" y={1210} width={660}/></g>;
+ }
  else if(n===11) art=<g><Notebook x={365} y={925} s={.81} wing={p} f={g} shuffle={2.8*bp(30)}/><g opacity={bp(31)} transform={`translate(${785+28*(1-bp(31))} ${875+35*(1-bp(31))})`}><rect x={-97} y={-28} width={195} height={58} rx={6} fill={CITRON} stroke={INK} strokeWidth={4}/><Fit text="TASK PLAN" x={0} y={9} size={26} width={178} mono/></g><Plate x={540} text="STUDENTS CAN HELP DESIGN THE PLAN" y={590} color={CITRON}/><GripHand x={810} y={1020} reach={bp(31)} scale={.55} cuffColor={GROUND}/><g opacity={bp(32)} transform={`translate(0 ${35*(1-bp(32))})`}><Sheet x={140} y={751} w={820} h={345} fill={PAPER} fiber="fiber0912"/><Fit text="RECORDING" x={370} y={820} size={34} width={360}/><Trace x={205} y={920} s={.78} f={g}/><Fit text="INTERPRETATION" x={781} y={820} size={30} width={310}/><rect x={620} y={856} width={298} height={190} rx={6} fill="none" stroke={GROUND} strokeWidth={4} strokeDasharray="12 10"/></g></g>;
  else if(n===12) art=<g><Plate x={540} text="GENERAL METHODS EXAMPLE" y={565}/><g transform={`translate(0 ${35*(1-bp(33))})`}><Plate x={540} text="IF A MODEL CLAIMS NEW PEOPLE" y={650} color={CITRON}/></g><rect x={140} y={765} width={330} height={320} rx={15} fill={PAPER} stroke={INK} strokeWidth={7}/><rect x={620} y={765} width={330} height={320} rx={15} fill={PAPER} stroke={INK} strokeWidth={7}/><Fit text="TRAINING" x={305} y={835} size={33} width={300}/><Fit text="TEST" x={785} y={835} size={33} width={300}/><QuestionToken x={545} y={917} scale={.58} text="TEST?" color={CORAL} faceColor={PAPER} inkColor={INK} rimColor={CITRON}/><path d="M575 1000V845" stroke={CORAL} strokeWidth={6} strokeDasharray="9 8"/><Marker x={975-190*bp(34)} y={944} s={1.06}/><g opacity={bp(35)}><path d="M650 1100h270v94H650Z" fill={PAPER} stroke={INK} strokeWidth={4}/><Fit text="EVALUATE" x={785} y={1160} size={26} width={230} mono/></g><Notebook x={440} y={1210} s={.28} wing={1} f={g}/></g>;
  else if(n===13) art=<g><Notebook x={382} y={1035} s={.78} wing={1} f={g}/><g transform={`translate(0 ${-95*bp(36)}) scale(1 ${1-.46*bp(36)})`} style={{transformOrigin:'540px 820px'}}><Sheet x={240} y={635} w={650} h={280} fill={GROUND}/><Fit text="METHODS" y={734} size={44} color={PAPER}/><Fit text="GENERAL PRINCIPLE" y={812} size={30} color={PAPER} mono/></g>

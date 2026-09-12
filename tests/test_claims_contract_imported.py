@@ -47,6 +47,42 @@ class ImportedLabelTests(unittest.TestCase):
         self.assertIn("source route resolved", note)
         self.assertTrue(all(row["scene"] == 4 for row in rows))
 
+    def test_reach_release_contact_animation_preserves_verified_text_routes(self):
+        # Regression: the old adapter demanded contactDetail even though the
+        # replacement hand/contact clocks do not control any claimed text.
+        for binding in ('const contactReach = clamp(bp(40, 26));',
+                        'const contactRelease = clamp(bp(40, 24, 44));',
+                        'const contactHand = contactReach * (1 - contactRelease);',
+                        'const contactTouch = between(contactReach, 0.97, 1) * (1 - contactRelease);'):
+            self.assertIn(binding, self.helper)
+        self.assertNotIn('const contactDetail', self.helper)
+        self.assertIn('Vadim Egorov', self.labels())
+        self.assertIn('19 SCALP CONTACTS', self.labels())
+
+    def test_unsupported_contact_clock_routes_cannot_supply_labels(self):
+        # A clock is not accepted just because it now exists in the helper.
+        old = '<g opacity={contactTouch}>'
+        self.assertIn(old, self.helper)
+        for opacity in ('contactTouch', 'unknownClock',
+                        '(1-isolate)*Math.sin(contactDetail*Math.PI)'):
+            with self.subTest(opacity=opacity):
+                helper = self.helper.replace(old, '<g opacity={' + opacity + '}>'
+                                           "{label('UNPROVEN CONTACT LABEL', 309, 579, 29)}")
+                labels = self.labels(helper=helper)
+                self.assertIn('Vadim Egorov', labels)
+                self.assertNotIn('UNPROVEN CONTACT LABEL', labels)
+
+    def test_unresolved_text_clock_still_fails_closed(self):
+        for old, new in [('const signal = clamp(bp(10, 56));',
+                          'const signal = unknownClock;'),
+                         ('const isolate = clamp(bp(12, 26));',
+                          'const isolate = 1;')]:
+            with self.subTest(clock=old):
+                self.assertIn(old, self.helper)
+                rows, note = self.resolve(helper=self.helper.replace(old, new))
+                self.assertEqual(rows, [])
+                self.assertIn('unresolved visibility binding', note)
+
     def test_unconnected_import_scene_or_plane_cannot_supply_evidence(self):
         changes = [("from './EEGDemo0912'", "from './OldDemo'"),
                    ('else if(n===4) art=<EEGDemo0912', 'else if(n===40) art=<EEGDemo0912'),

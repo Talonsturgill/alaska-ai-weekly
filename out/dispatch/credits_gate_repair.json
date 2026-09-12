@@ -1,0 +1,131 @@
+{
+  "created_utc": "2026-09-12T17:36:50.944874+00:00",
+  "status": "repaired_and_verified_on_candidate_2",
+  "ship": true,
+  "scope": "The named credits_check failure only. No claim of final rerender, whole-film visual or audio QA, or release approval.",
+  "root_cause": "The old two-frame whole-frame YAVG threshold treated the bright decorative notebook below the credit text as a missing card. The text remained complete and high contrast. A whole-frame brightness average did not measure whether the credit body was visible.",
+  "visual_review": {
+    "frames": [
+      {
+        "seconds": 124.1,
+        "path": "out/dispatch/probe/credits_gate/frame_124.1.png",
+        "whole_frame_grayscale_mean": 41.77561246
+      },
+      {
+        "seconds": 132.9,
+        "path": "out/dispatch/probe/credits_gate/frame_132.9.png",
+        "whole_frame_grayscale_mean": 41.65149354
+      }
+    ],
+    "observations": "Both actual decoded full-resolution frames visibly contain the site, SOURCES heading, all three source domains, full Life of Riley / Kevin MacLeod / incompetech.com attribution and CC BY 4.0 licence. Text is complete, clear and unobscured. The notebook begins below about y=1390, well beneath the last licence line.",
+    "remaining_credit_design_issue": null
+  },
+  "repair": [
+    "Keep source derivation, verbatim music-credit equality, CC BY attribution, safe-width and phone-size floors, engine presence, configured 12.3-second sign-off and ten-second readable minimum.",
+    "Resolve the actual EndCredits full-opacity interval and reject short, unresolved or truncated timelines; require a delivered master.",
+    "Decode 21 frames spaced half a second across the full ten-second interval. Measure every site/source/music body row independently of logo and notebook. Each must retain background median below 30 and at least 0.5 percent pixels brighter than 200.",
+    "Recognize rendered credit pixels at the start, midpoint and end using local OCR without expected strings supplied to the recognizer. Require all actual source, site and full music/licence strings, plus SOURCES. Normalize typography only; no fuzzy matching.",
+    "Fail on absent master, failed frame decode, missing OCR backend, malformed OCR output, missing text or a changing master. Bind evidence to actual video, renderer and credit/timeline hashes.",
+    "Correct static fit measurement to use the actual split music lines, rendered font sizes and letter spacing."
+  ],
+  "actual_result": {
+    "command": "python3 scripts/credits_check.py",
+    "exit_code": 0,
+    "pass": true,
+    "configured_credit_seconds": 12.3,
+    "full_opacity_seconds": 10.066666666666663,
+    "verified_window_seconds": [
+      123.6,
+      133.6
+    ],
+    "sample_count": 21,
+    "ocr_count": 3,
+    "maximum_row_background_median": 21.0,
+    "minimum_row_bright_fraction": 0.0348,
+    "ocr_backend": "macOS Vision accurate, language correction off",
+    "ocr_missing_strings": [],
+    "input_sha256": {
+      "video": "cd99f62b85c89b72e8114bfdfca0d64de7bff8bb14e4b43f2c1e04a1f546c995",
+      "renderer": "8e4d29fb3d2e9fb599afc8bfff2f565bab7f2ab1ee82afa7ddd3c74b4fd8b14a",
+      "credit_timeline_and_data": "99941c9a1853717d9c6db7e9a559adc02e752b0839c22b5f1b14de90cece7da7"
+    },
+    "static_row_widths_with_letter_spacing": [
+      {
+        "text": "VISIT US AT ALASKAAIHQ.COM",
+        "font_size": 40,
+        "width": 661.08,
+        "safe_width": 936
+      },
+      {
+        "text": "UAA.ALASKA.EDU",
+        "font_size": 22,
+        "width": 195.82,
+        "safe_width": 936
+      },
+      {
+        "text": "WEARABLESENSING.COM",
+        "font_size": 22,
+        "width": 266.04,
+        "safe_width": 936
+      },
+      {
+        "text": "FRONTIERSIN.ORG",
+        "font_size": 22,
+        "width": 209.86,
+        "safe_width": 936
+      },
+      {
+        "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+        "font_size": 32,
+        "width": 933.01,
+        "safe_width": 936
+      },
+      {
+        "text": "LICENSED UNDER CC BY 4.0",
+        "font_size": 32,
+        "width": 476.14,
+        "safe_width": 936
+      }
+    ]
+  },
+  "tests": {
+    "command": "python3 -m unittest discover -s tests -p test_credits_rendered.py",
+    "passed": 13,
+    "failed": 0,
+    "coverage": [
+      "full ten-second interval",
+      "truncated duration and short/unsupported opacity timeline",
+      "bright notebook invariance",
+      "missing source or licence row despite bright props",
+      "faded and absent body",
+      "truncated composer/licence OCR",
+      "missing master",
+      "missing OCR backend",
+      "21-frame/3-OCR positive and missing end text",
+      "one intermediate missing body",
+      "malformed and incomplete OCR data",
+      "missing decoded frame",
+      "transient-only credit body"
+    ],
+    "diff_check": "git diff --check -- scripts/credits_check.py tests/test_credits_rendered.py passed"
+  },
+  "limitations": [
+    "This bounded check samples contrast every half second and OCR at three points; it does not exhaustively inspect every video frame or independently guarantee human readability on every display.",
+    "OCR must be available locally: macOS Vision through Swift or Tesseract. Missing or unrecognizable output fails closed and may require investigation.",
+    "The credit row adapter and timeline parser deliberately match the current 1080x1920 EndCredits design. A layout or timeline change requires adapter review; unsupported timelines fail.",
+    "Current evidence binds candidate 2 only. Run the checker again against the next rendered master; root retains responsibility for complete preflight and visual QA."
+  ],
+  "changed_source_files": [
+    "scripts/credits_check.py",
+    "tests/test_credits_rendered.py"
+  ],
+  "renderer_or_credit_data_changed": false,
+  "committed": false,
+  "artifact_sha256": {
+    "scripts/credits_check.py": "4a767c05cb6bf662ca9507ff1de324af4070e4a74fcd4d1c9fca8980212a21fc",
+    "tests/test_credits_rendered.py": "6cac114d2a7cf7b4722ade155d1eaf586322553942eb92704f05f880a1bcfdc4",
+    "out/dispatch/credits_render_report.json": "9d174ff33ad6268132237feda9aa6f87b0e4cb09633e478866021fd50bce17f8",
+    "out/dispatch/probe/credits_gate/frame_124.1.png": "1cfb84a4d3da5fc56d5b0f9b20b2b3a3a9a94d8c4093d5ee8d5bfcb67cf93d76",
+    "out/dispatch/probe/credits_gate/frame_132.9.png": "ac855e904d06e9880ebfacd069f04bb97b7918a1d738ca475398815db5ff18c2"
+  }
+}

@@ -5,6 +5,7 @@ import {EEGHeadset} from './lib/research';
 import {EvidenceTrace} from './lib/spaceweather';
 import {ContactShadow, FormGradient, RimLight, paleTones, tones} from './lib/lighting';
 import {Sheet} from './lib/paper';
+import {GripHand} from './lib/props';
 
 const PAPER = '#FFF9E8';
 const LILAC = '#E8E1FA';
@@ -25,12 +26,17 @@ const TRACE = 'M0 0 C22 -5 31 17 48 8 S71 -19 91 -7 Q107 20 120 5 T153 -10 C169 
 export const EEGDemo0912: React.FC<{
   f: number;
   observationAt: number;
-  bp: (id: number, d?: number) => number;
+  bp: (id: number, d?: number, lag?: number) => number;
 }> = ({f, observationAt, bp}) => {
   const uid = `demo0912-${React.useId().replace(/:/g, '')}`;
   const reveal = clamp(bp(10, 21));
   const signal = clamp(bp(10, 56));
-  const contactDetail = clamp(bp(40, 42));
+  // The schematic hand meets the existing central scalp pad, then withdraws.
+  // Nineteen fixed pads and the recording stay unchanged throughout the touch.
+  const contactReach = clamp(bp(40, 26));
+  const contactRelease = clamp(bp(40, 24, 44));
+  const contactHand = contactReach * (1 - contactRelease);
+  const contactTouch = between(contactReach, 0.97, 1) * (1 - contactRelease);
   const observe = clamp(bp(11, 32));
   const gesture = interpolate(f, [observationAt, observationAt + 48], [0, 1], {
     extrapolateLeft: 'clamp',
@@ -73,11 +79,17 @@ export const EEGDemo0912: React.FC<{
             contact={CITRON} ink={INK} highlight={9} />
         </g>
       </g>
-      <g opacity={(1 - isolate) * Math.sin(contactDetail * Math.PI)}>
-        <circle cx={307} cy={810} r={23 + 15 * contactDetail} fill="none"
-          stroke={PAPER} strokeWidth={7} />
-        <circle cx={307} cy={810} r={32 + 18 * contactDetail} fill="none"
-          stroke={CORAL} strokeWidth={4} />
+      <g data-action="demonstrate-existing-scalp-contact" opacity={1 - isolate}>
+        <g opacity={contactTouch}>
+          <circle cx={307} cy={810} r={29} fill="none"
+            stroke={PAPER} strokeWidth={7} />
+          <circle cx={307} cy={810} r={39 - 6 * contactTouch} fill="none"
+            stroke={CORAL} strokeWidth={4} />
+        </g>
+        <g transform="translate(1080 0) scale(-1 1)" opacity={clamp(bp(40, 8))}>
+          <GripHand x={795} y={810} reach={contactHand} scale={0.68}
+            skin="#DDAF91" cuffColor={INK} />
+        </g>
       </g>
       {/* The source of the recording is a scalp pad, not an auxiliary socket.
           A dashed arrow makes the link explicitly explanatory, not a cable. */}

@@ -3227,3 +3227,32 @@ Independent final review, ship lock, publication and Gmail delivery remain pendi
   reaffirmed at 9.046 against the revised metadata; the post and narration are unchanged.
 - Before the repaired full render, typecheck, text fit, copy, caption-band/spelling, plate
   overlap, zoom, claims, credits, narration and storyboard checks all pass.
+
+- The next encoded candidate passed camera travel in all fourteen shots and living-screen
+  choreography in 56 of 66 windows. Full-frame scanning still found a six-second early
+  announcement hold. The lab designation now arrives in a hand and mounts on the notice,
+  readable at 16.40 seconds against the spoken AI anchor at 16.38 seconds. A full-resolution
+  replacement-sample probe recomputes the unchanged whole-film cadence threshold and passes,
+  with a longest 3.6-second gap in that shot. Final encoded-byte verification remains required.
+- The independent motion diagnosis identified one further under-enacted storyboard action,
+  the inventory comparison in shot ten. Other quarter-shot warnings miss short actions or
+  include caption changes; their gross deltas are not evidence of character articulation.
+  The diagnostic retains these limits and names the concrete comparison for repair.
+- The decorative notebook exposed a credit-check false failure: whole-frame brightness
+  rose while every attribution stayed readable. The gate now resolves the actual ten-second
+  full-opacity interval, checks every text row in 21 frames, and recognizes all source,
+  site, composer and licence strings from pixels at three points. Thirteen focused cases
+  cover missing, faded, transient and truncated credits, failed frame decoding and invalid
+  OCR output. Actual candidate-two credits pass. Setup now prepares the local OCR backend;
+  macOS Vision is verified here, while the Linux Tesseract installation path is syntax-checked.
+- The inventory decision now uses a hand to compare the B question with two available
+  context tabs while the A recording stays visible. The hand retracts geometrically and
+  the schematic label clears its paper border. The scalp-contact beat now uses a hand
+  to demonstrate one existing fixed pad, preserving all nineteen contacts and the original
+  explanatory trace. These replace weak gestures without adding facts or changing the voice.
+- The complete regression run caught a stale dependency in the imported-label adapter after
+  contact choreography changed. It now validates the clocks governing claimed text while
+  excluding unrelated decorative branches. Three new cases preserve fail-closed behavior
+  for unknown or obsolete visibility paths. All 196 repository tests and all ten source
+  checks pass. Combined full-resolution motion probes pass; an encoded contact probe has
+  1.904 measured change against the unchanged 1.549 full-film cadence threshold.
