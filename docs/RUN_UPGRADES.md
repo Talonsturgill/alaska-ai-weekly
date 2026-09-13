@@ -3359,15 +3359,14 @@ assert an independently audited performance result or a quantified Alaska return
   preserved the locked 204 words, and a separate opening ASR probe recognized the complete
   name in the selected new take. The voice guide now records this targeted review rule.
 
-The complete repository regression suite passes 225 tests after the credit repair. Current source gates pass,
+The complete repository regression suite passes 230 tests after the contact-sound repair. Current source gates pass,
 including 81 claim obligations, actual visible copy and all 35 built caption cues.
 
 Repeat offenders addressed this run are stale episode-specific timing tables, visible-copy
 adapters silently skipping wrappers, front-loaded camera travel and trusting aggregate
 voice scores for a load-bearing organization name. No gate threshold was relaxed.
 
-Final encoded QA, panel, delivery and exact release evidence will be recorded here after
-those stages finish.
+Final candidate and delivery results follow below; each stage has a separate receipt.
 
 The first 3,955-frame native render passes all fifteen objective checks at 10.0,
 including thirteen camera moves, forty-seven detected visual beats and sixty-one of
@@ -3401,3 +3400,28 @@ movement textures retain their entry timing. Both event ledgers also record the 
 jittered, millisecond-quantized onset used by ffmpeg. Five timing regressions, twenty-one
 provenance tests and two conformity tests pass. The native picture receipt remains valid:
 only already-bound mix inputs changed. Fresh mix, encode, evidence and review are required.
+
+
+Final candidate four passes all fifteen encoded objective checks at 10.0, required
+preflight, the independent editor and flow review. The three current-master judges score
+7.788, 7.804, 7.850, median 7.804 against 7.0, with zero hard blockers.
+Candidate four remixes and re-encodes the valid third native render; all 3,955 decoded
+picture frames are identical. That native render took 836.748 seconds. The independent
+contact review puts all eight isolated performed cue peaks within one frame, and the
+encoded cap residual at 81.985329 seconds against the 82.000-second seated frame. Four
+weaker residual matches remain explicitly limited evidence, not recovered isolated cues.
+
+The final film has thirteen camera moves, forty-seven detected visual beats, sixty of
+sixty-four living-screen windows and twenty-nine audible effect lifts. The encoded mix
+measures -14.33 LUFS, -2.74 dBTP and 7.4 LU range. Caption review is 8.80 with zero hard
+fails; 204 narration words, 81 claim obligations and 35 built caption cues are checked.
+All 230 repository tests pass; no thresholds were relaxed. Square-crop frames and
+complete ten-second credits were inspected from the final encoded bytes.
+
+The panel's remaining style notes concern the long company-introduction segment, dense
+stacked labels, repeated office arrangements and limited hand articulation. They are
+nonblocking craft observations, not outstanding required repairs. Audio taste uses
+measurements and event evidence without a subjective listening claim. Eighteen actual
+contract, timing, asset, rendering, copy and audio upgrades are included in the email.
+Permanent media, feed deployment, unsent draft and merged release remain separately
+recorded in the final release evidence.

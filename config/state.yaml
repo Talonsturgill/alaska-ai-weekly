@@ -1901,3 +1901,45 @@ dispatch_history:
     palette: warm lilac daylight ivory paper citron tasks coral tabs deep violet ink
     metaphor: a research notebook gains an extra collection-and-test wing without
       closing its public-data pages
+- date: '2026-09-13'
+  topic: KGS Wingman office automation and the professional work after DORA reports
+    and Jumpstarter drafts
+  slug: dispatch-2026-09-13-the-pen-still-has-work
+  key_entities:
+  - Koniag Government Services
+  - Koniag
+  - Wingman
+  - DORA
+  - Jumpstarter
+  - US Army
+  - Amazon Bedrock
+  - Kodiak
+  archetype: instrument-led office workflow cutaway
+  palette: oxblood porcelain petrol copper nickel
+  voice: Sulafat
+  stance: curious
+  angle: In the KGS workflows described by AWS, the machine's finished output is still
+    unfinished professional work.
+  hero: PenAndDocument
+  cast:
+  - ReviewPen
+  - ReviewStroke
+  - GripHand
+  - Sheet
+  - PaperOfficeBG
+  - Nameplate
+  - BrassPlate
+  - Stage3D
+  - CameraMoves
+  - EndCredits
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: horizontal-traverse
+    hero_treatment: instrument-as-subject
+    layout: grid-modular
+    register: tactile-collage
+    camera_strategy: rack-focus-macro
+    light_story: afternoon-raking-window
+    palette: oxblood porcelain petrol copper nickel
+    metaphor: a capped pen becomes a held writing instrument after two different office
+      tools deliver their work
