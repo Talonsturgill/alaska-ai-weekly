@@ -3359,7 +3359,7 @@ assert an independently audited performance result or a quantified Alaska return
   preserved the locked 204 words, and a separate opening ASR probe recognized the complete
   name in the selected new take. The voice guide now records this targeted review rule.
 
-The complete repository regression suite passes 222 tests. Current source gates pass,
+The complete repository regression suite passes 225 tests after the credit repair. Current source gates pass,
 including 81 claim obligations, actual visible copy and all 35 built caption cues.
 
 Repeat offenders addressed this run are stale episode-specific timing tables, visible-copy
@@ -3378,4 +3378,26 @@ Four new native square-crop probes confirm readable labels through the pen move 
 collision with later projected claim plates. The first candidate was preserved and its
 follow-on encode cancelled after the native gate; a new source-bound render is required.
 
-Candidate2 also passed all fifteen objective checks after encoding. Required preflight then caught a real music-credit overflow before any panel: font fitting ignored letter spacing, producing968pixels inside a936pixel safe width. Both the shared renderer and its checker now subtract tracking before fitting. The complete attribution is preserved; native pixel inspection measures ink x75..1001 inside x72..1008. Sixteen credit regressions pass, including the actual long title, separately tracked source/site labels and an early-failure stale-report check. The gate now invalidates an older passing credit receipt before any early exit. A third complete render is required by source provenance. This is a permanent fit repair, not a threshold change.
+The second candidate also passed all fifteen objective checks after encoding. Required
+preflight then caught a music-credit overflow before any panel. Font fitting ignored
+letter spacing, producing 968 pixels inside a 936 pixel safe width. Commit `92c143e`
+repairs both the shared renderer and its checker by subtracting tracking before fitting.
+The complete attribution is preserved. Native pixel inspection measures ink at x75..1001
+inside the x72..1008 safe area. Sixteen credit regressions pass, including the actual long
+title, separately tracked source/site labels and early-failure receipt invalidation. The
+gate replaces an older passing receipt before any early exit. The complete 225-test suite
+and TypeScript check pass. A third complete render preserves source provenance; the
+threshold remains unchanged.
+
+The third candidate passed all fifteen encoded checks, required preflight and ten seconds
+of rendered-credit readability. Judge 1 scored 7.778 and Judge 3 scored 7.840, but the
+required flow review rejected an early cap snap before a third judge or ship gate. The
+snap preceded visible cap seating by about 1.33 seconds. The failed cut, mix, evidence
+and completed cards are preserved for comparison; no bytes were published.
+
+The mixer now distinguishes movement entry from a declared contact using validated
+physical frame offsets. Eight verified arrival cues follow the rendered contact, while
+movement textures retain their entry timing. Both event ledgers also record the actual
+jittered, millisecond-quantized onset used by ffmpeg. Five timing regressions, twenty-one
+provenance tests and two conformity tests pass. The native picture receipt remains valid:
+only already-bound mix inputs changed. Fresh mix, encode, evidence and review are required.

@@ -1,0 +1,296 @@
+{
+  "run_date": "2026-09-13",
+  "diagnosed_at_utc": "2026-09-13T16:55:54.566400+00:00",
+  "role": "Required Dispatch fixer diagnosis only",
+  "status": "confirmed_audio_timing_failure",
+  "production_changes_made": false,
+  "candidate_master_sha256": "2bc286a87121ec5a02753f484f50dcd8132488acc9260a49fcbdbd49b8c820eb",
+  "preserved_judge3_sha256": "9ad6a2bafda7c42ac24c6ae1852f412640a73862f91df0daab78aff4a535dab9",
+  "failure": {
+    "beat_id": 26,
+    "nominal_ledger_onset_s": 80.65,
+    "visual_animation_duration_frames": 40,
+    "visual_analytic_completion_s": 81.98333333333333,
+    "first_fully_clamped_frame": 2460,
+    "first_fully_clamped_frame_s": 82.0,
+    "actual_delay_after_jitter_and_ms_quantization_s": 80.642,
+    "source_sample_peak_after_pitch_s": 0.00510204081632653,
+    "source_performance_peak_s": 80.64710204081632,
+    "lead_to_analytic_completion_s": 1.336231292517012,
+    "source_performed_duration_s": 0.5666213151927437,
+    "judgment": "The snap finishes well before cap seating. The 15ms performance jitter cannot explain or repair a forty-frame semantic timing error."
+  },
+  "root_cause": [
+    {
+      "path": "scripts/dispatch_mix.py",
+      "lines": [
+        138,
+        140
+      ],
+      "finding": "EVENTS unconditionally schedules float(beat.at_s). This is visual action entry, although some approved SFX descriptions explicitly mean end contact or seating."
+    },
+    {
+      "path": "video-engine/src/Ep0913.tsx",
+      "lines": [
+        58,
+        60,
+        84
+      ],
+      "finding": "The cap uses post=q(26,40), so its destination comes forty frames after beat 26 entry. The shared ReviewPen cap geometry uses that progress for x/y/rotation."
+    },
+    {
+      "path": "scripts/dispatch_mix.py",
+      "lines": [
+        565,
+        578,
+        653,
+        662
+      ],
+      "finding": "The filtergraph performs timing jitter and millisecond quantization, but both emitted event ledgers retain the nominal event t. They are not exact onset receipts. The error is small here but conceals what was actually performed."
+    }
+  ],
+  "existing_supported_conventions": {
+    "sfx_specific_offset_field_found": false,
+    "existing_beat_offset": "storyboard beat.offset is the beat offset from its VO line. It is not an audio-contact offset and must not be repurposed.",
+    "reveal_contract": "storyboard.reveals already distinguishes t from landing_at_s via landing_frames; conform_storyboard.py:69-76 preserves the physical landing/hold durations. The mixer does not consult that distinction.",
+    "sound_doctrine": "docs/craft/VISUAL_FLOW.md:129-142 distinguishes whoosh/transition entry, riser peak at reveal, and one-frame sound pairing. It does not require all sounds to be at visual entry."
+  },
+  "affected_cues": [
+    {
+      "beat_id": 26,
+      "beat_at_s": 80.65,
+      "cue": "snap_v2.wav",
+      "semantic_target": "Cap posts on rear barrel",
+      "current_source_performance_peak_s": 80.647102,
+      "proposed_sfx_offset_frames": 40,
+      "proposed_target_at_s": 81.98333333333333,
+      "first_complete_or_spring_crossing_frame_s": 82.0,
+      "source": "video-engine/src/Ep0913.tsx:84",
+      "finding": "Required correction. Post is q(26,40); cap is still separate at 80.6667 and travelling at 81.3, seated by 81.9 and fully clamped at 82.0."
+    },
+    {
+      "beat_id": 4,
+      "beat_at_s": 6.54,
+      "cue": "clank_kenney_impactMetal_medium_000.wav",
+      "semantic_target": "Metal plate seats",
+      "current_source_performance_peak_s": 6.558646,
+      "proposed_sfx_offset_frames": 8,
+      "proposed_target_at_s": 6.806666666666667,
+      "first_complete_or_spring_crossing_frame_s": 6.8,
+      "source": "video-engine/src/Ep0913.tsx:69",
+      "finding": "Same entry-versus-seat convention. Spring-controlled plate arrival first crosses its target on rendered frame 204 at 6.8s; the current impact peaks before that arrival."
+    },
+    {
+      "beat_id": 8,
+      "beat_at_s": 22.64,
+      "cue": "thud_kenney_impactWood_heavy_001.wav",
+      "semantic_target": "Crossbar drops into bracket",
+      "current_source_performance_peak_s": 22.64081,
+      "proposed_sfx_offset_frames": 30,
+      "proposed_target_at_s": 23.64,
+      "first_complete_or_spring_crossing_frame_s": 23.666666666666668,
+      "source": "video-engine/src/Ep0913.tsx:74",
+      "finding": "Same convention. Ownership assembly translates for q(8,30); current impact starts at the beginning of its drop, not its completed arrival."
+    },
+    {
+      "beat_id": 17,
+      "beat_at_s": 53.88,
+      "cue": "clank_kenney_impactMetal_heavy_000.wav",
+      "semantic_target": "Rule assembly settles into report",
+      "current_source_performance_peak_s": 53.895313,
+      "proposed_sfx_offset_frames": 26,
+      "proposed_target_at_s": 54.74666666666667,
+      "first_complete_or_spring_crossing_frame_s": 54.766666666666666,
+      "source": "video-engine/src/Ep0913.tsx:81",
+      "finding": "Same convention. The report rises and its record fan opens during q(17,26), while the seat-labeled clank peaks at entry. Target the completed assembly pose; do not claim an additional literal guide collision absent from the picture."
+    },
+    {
+      "beat_id": 18,
+      "beat_at_s": 56.185,
+      "cue": "ding_kenney_impactBell_heavy_000.wav",
+      "semantic_target": "Cap rings against cup",
+      "current_source_performance_peak_s": 56.180719,
+      "proposed_sfx_offset_frames": 18,
+      "proposed_target_at_s": 56.785,
+      "first_complete_or_spring_crossing_frame_s": 56.8,
+      "source": "video-engine/src/Ep0913.tsx:81",
+      "finding": "Same convention. The material ring currently starts at cap-detachment onset; the cap is still travelling in the inspected 56.54-second strip. q(18,18) reaches its resting pose at 56.785."
+    },
+    {
+      "beat_id": 21,
+      "beat_at_s": 66.963,
+      "cue": "tick_v2.wav",
+      "semantic_target": "Pen cradle touches down",
+      "current_source_performance_peak_s": 66.952857,
+      "proposed_sfx_offset_frames": 26,
+      "proposed_target_at_s": 67.82966666666667,
+      "first_complete_or_spring_crossing_frame_s": 67.83333333333333,
+      "source": "video-engine/src/Ep0913.tsx:82",
+      "finding": "Same convention. The pen/cup assembly translates down during q(21,26); the touchdown-labeled tick peaks before the visible arrival."
+    },
+    {
+      "beat_id": 25,
+      "beat_at_s": 78.9,
+      "cue": "paw_kenney_impactSoft_heavy_000.wav",
+      "semantic_target": "Tool surface settles",
+      "current_source_performance_peak_s": 78.905646,
+      "proposed_sfx_offset_frames": 7,
+      "proposed_target_at_s": 79.13333333333334,
+      "first_complete_or_spring_crossing_frame_s": 79.13333333333334,
+      "source": "video-engine/src/Ep0913.tsx:84",
+      "finding": "Same convention for the low settling contact. The actual spring first crosses its target on global frame 2374; current peak occurs at launch."
+    },
+    {
+      "beat_id": 38,
+      "beat_at_s": 113.58,
+      "cue": "thud_kenney_impactWood_heavy_004.wav",
+      "semantic_target": "Returning desk settles",
+      "current_source_performance_peak_s": 113.587424,
+      "proposed_sfx_offset_frames": 8,
+      "proposed_target_at_s": 113.84666666666666,
+      "first_complete_or_spring_crossing_frame_s": 113.83333333333333,
+      "source": "video-engine/src/Ep0913.tsx:89",
+      "finding": "Same convention for the low desk-settling tap. Spring first crosses its target on global frame 3415, after the current transient. The visible cue target is the desk assembly arrival; the written lamp reference is not grounds to invent a separate lamp contact."
+    }
+  ],
+  "checked_not_to_shift_blindly": [
+    {
+      "beat_ids": [
+        12,
+        22,
+        34
+      ],
+      "finding": "The three authored reveals have entry and landing anchors, but their approved sounds describe a sweep, broad wood/paper movement and shelf-guide movement. Entry is semantically legitimate. Do not move all reveal sounds wholesale to landing_at_s."
+    },
+    {
+      "beat_ids": [
+        7,
+        13,
+        14,
+        15,
+        24,
+        28,
+        29,
+        31,
+        32,
+        33
+      ],
+      "finding": "These include motion, material handling or mixed entry-and-stop descriptions. They need no blanket offset from this diagnosis; no extra collision time is inferred from an event name alone. The ink stroke is already tied to nib contact and the later cue to lift onset."
+    },
+    {
+      "beat_ids": [
+        3,
+        11,
+        40
+      ],
+      "finding": "Clip/collar cues accompany flex, disengagement or return business. The ending picture does not show a new fixed cradle collision that would justify arbitrarily moving snap_v3 to q(40) completion. Preserve these pending a separate concrete mismatch, rather than expanding this repair into an invented contact."
+    }
+  ],
+  "smallest_permanent_correction": [
+    "Add explicit optional sfx_offset_frames to approved beat data, default zero. Resolve cue time as beat.at_s plus sfx_offset_frames divided by the fixed episode fps. Author the eight evidenced contact offsets listed above; do not alter beat.at_s, beat.offset, shot bounds, captions, VO, cap animation or episode_props.",
+    "Implement one pure timing resolver inside the existing scripts/dispatch_mix.py and validate finite offsets and bounds. A frame offset remains a physical duration when the VO conformer remaps beat entry; an absolute hand-written cue time would become stale. Avoid editing render_provenance.py or introducing an unbound external helper.",
+    "Compute jittered, quantized performed onset once and use the same resolved record in the ffmpeg adelay chain and both sfx_events ledgers. Preserve nominal target and beat entry as separate named fields for audit. Retain the existing deterministic take selection, pitch, gain and pan. The short sample peak offsets plus existing jitter are within one frame; verify the delivered result rather than assuming this.",
+    "Before mixing, freeze the corrected timing data and source. Preserve candidate3, its receipts/evidence and the committed judge3 card in the parent-owned archive. This diagnosis itself has not renamed or copied any artifact."
+  ],
+  "provenance_and_rebuild": {
+    "current_check": "python3 scripts/render_provenance.py check exits 0",
+    "mute_path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/render/video_mute.mp4",
+    "mute_sha256": "322f9ddb6d05fc92c7add8d79bb8a88545c99781be08c73dbee835f2ee5514cb",
+    "current_mix_sha256": "6b8fc36e5741d190a681241a34716b00077df1246c84584c4fb09a30d2d63b2c",
+    "verified_actual_receipt": "delivery_sources.json render.manifest.sources excludes storyboard.json and dispatch_mix.py; mix.sources includes both. The render explicitly binds episode_props.json and all render source bytes.",
+    "needs_full_native_rerender": false,
+    "condition": "Only mixer source and audio-only storyboard timing metadata change; episode_props and picture sources must remain byte-identical. A change to scripts/render_provenance.py, render inputs or props would invalidate this conclusion and require the corresponding new render.",
+    "required_path": "Run dispatch_mix.py to create fresh begin/finish mix receipts, then scripts/encode_deliverables.sh out/dispatch/render/video_mute.mp4 out/dispatch/audio/master.wav with the current poster time preserved. The encoder validates the existing native render receipt, writes new encode receipts, stream-copies native video into master, and regenerates delivery renditions. Never copy old receipts onto new files.",
+    "new_bytes_need_new_checks": "New master SHA requires refreshed encoded audio/quality/flow evidence, delivery and preflight hashes, and the appropriate new-byte panel/review record. Do not present the old judge card as a judgment of changed audio."
+  },
+  "tests": [
+    {
+      "kind": "regression",
+      "plan": "Pure timing resolver test: beat 26 entry 80.650 plus 40/30 gives 81.983333; a zero-offset whoosh retains entry; changing VO beat entry moves the target by the same amount without stretching the frame offset."
+    },
+    {
+      "kind": "regression",
+      "plan": "Check all eight contact mappings and ensure their performed peak is within 1/30 second of the first complete/crossing rendered frame. In particular, sound energy must not appear around the obsolete 80.650 target."
+    },
+    {
+      "kind": "regression",
+      "plan": "Assert emitted event performed onset exactly matches integer-millisecond adelay, and reject NaN or out-of-runtime offsets. Keep event order, take selection, counts and family schedule checks intact."
+    },
+    {
+      "kind": "picture invariance",
+      "plan": "Hash-check native mute, props, captions, VO and render sources before and after. Verify master video packet/decoded-frame identity after remux, not full MP4 equality because its audio changes."
+    },
+    {
+      "kind": "rendered verification",
+      "plan": "Inspect native frames and a consecutive strip at each selected contact, then measure the remixed isolated transient and the encoded master transient against that frame. Re-run FLOW POST on the new master; the old visual-only score does not waive sound pairing."
+    },
+    {
+      "kind": "delivery checks",
+      "plan": "Run AAC preview, encoded LUFS/TP/LRA, motivated sound audibility coverage, quality gate, credits preservation and render_provenance check. Regenerate the actual current evidence and preflight with the new master SHA."
+    }
+  ],
+  "evidence": {
+    "native_frames_actually_viewed": [
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v3/frame_002421.png",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v3/frame_002440.png",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v3/frame_002458.png",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v3/frame_002461.png"
+    ],
+    "current_strips_actually_viewed": [
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_kgs_plate_seats.jpg",
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_ownership_wall_builds.jpg",
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_rules_align.jpg",
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_cap_detaches.jpg",
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_nib_exposes.jpg",
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_cradles_settle.jpg",
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_desk_returns.jpg",
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_pen_returns.jpg"
+    ],
+    "posting_strip_also_viewed_in_independent_panel": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/review_20260913_final/strip_post_cap.png",
+    "measurements": "Read exact bound bank files, replayed only pitch/asetrate/aresample in memory, and independently computed the deterministic jitter and delay. No source or media written. Native spring crossing calculated with the installed Remotion spring and exact episode preset.",
+    "audio_limit": "No subjective listening claim. A low-correlation template match in the combined AAC mixture was inconclusive and was not used as timing proof. Reported precise peaks are reconstructed isolated source-performance timing; the current complete mix receipt binds that scheduler and bank to the delivered mix."
+  },
+  "preserved_candidate_verification": {
+    "master_matches_original": true,
+    "mixer_matches_bound_old_mix_receipt": true,
+    "board_matches_bound_old_mix_receipt": true,
+    "current_Ep0913_source_matches_old_render_receipt": true,
+    "retired_and_original_judge3_match": true,
+    "candidate_directory": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/final_candidate3",
+    "all_eight_audited_cues_are_at_beat_entry_in_retired_schedule": true
+  },
+  "correction_implementation_note": "Parent selected a reusable validated sfx_offset_frames/reason helper in existing MIX-tracked scripts/sfx_bank.py. This is compatible with the diagnosed permanent correction and requires no render-provenance pattern edit. The narrow first repair can target beat 26; the other seven are evidenced arrival-timing siblings, not a claim of seven separately heard hard blockers.",
+  "confirmed_siblings_separate": {
+    "required_blocker": [
+      26
+    ],
+    "same_entry_vs_arrival_scheduler_mismatch": [
+      4,
+      8,
+      17,
+      18,
+      21,
+      25,
+      38
+    ],
+    "ambiguity_limit": "These seven are proven early relative to their authored q/spring arrival pose and impact-labeled approved sound, with actual travel strips inspected. Some have no distinct physical collision surface, so their arrival pose is the target, not an invented collision. They should not acquire extra impacts or new sound events.",
+    "do_not_blanket_shift": [
+      3,
+      7,
+      11,
+      12,
+      13,
+      14,
+      15,
+      22,
+      24,
+      28,
+      29,
+      31,
+      32,
+      33,
+      34,
+      40
+    ]
+  }
+}

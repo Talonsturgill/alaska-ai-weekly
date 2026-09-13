@@ -1,0 +1,19 @@
+Use the current Gmail connector profile for the daily Dispatch, with draft-only delivery and no fixed mailbox.
+Require the actual recipient address in both the email builder and the draft receipt tool.
+Enforce forbidden on-screen claim wording for optional claims as well as required claims.
+Derive scene cuts from the approved storyboard narration anchors instead of a previous episode table.
+Conform the complete storyboard to the selected voice while preserving physical reveal holds and an immutable planning clock.
+Allow only explained picture cut offsets within half a second, leaving narration timing unchanged.
+Report the real word timeline duration instead of the retired sixty-second total.
+Audit visible text forwarded through Plate and Scope components and one-dimensional heading arrays.
+Add reusable cap separation, cap posting, hand grips and a nib-bound persistent ink stroke to the pen library.
+Bundle licensed Fraunces and JetBrains Mono fonts and load them explicitly for this film.
+Bind forty distinct sound and evidence events to this episode and its conformed voice clock.
+Sustain camera travel through each shot independently of the quick easing used for prop entrances.
+Keep the first-draft badge and shot headings clear of the pen throughout its actual rendered movement.
+Add a voice-direction check for full organization names that have later acronym forms.
+Place the complete brand mark inside the square crop and keep the opening draft header clear of the large pen.
+
+Credit fitting now accounts for letter spacing and keeps complete attribution inside its safe width.
+The credits gate now replaces stale passing reports when a new check fails early.
+Schedule contact sounds at verified physical landings and record their actual performed onsets in both sound ledgers.

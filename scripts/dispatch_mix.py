@@ -28,6 +28,10 @@ EVENTS matched to THIS story's beats/storyboard; the doctrine above and the
 machinery below CARRY OVER unchanged.
 """
 import json, os, re, subprocess, sys, math, zlib, shutil
+try:
+    from .sfx_bank import scheduled_time
+except ImportError:
+    from sfx_bank import scheduled_time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
@@ -70,7 +74,7 @@ def jit(idx, salt, lo, hi):
 
 
 # September 13 has 16 spoken lines (idx 0-15). Music follows their measured starts;
-# each SFX follows the approved storyboard's at_s after natural-VO conformity.
+# Each SFX follows the approved beat start plus any declared physical contact offset.
 # Each event:
 # (time, kind, class, pan) — pan is the prop's approximate storyboard x mapped to
 # [-1,1], scaled by 0.35 in the graph.
@@ -136,13 +140,26 @@ if (_board.get("run_date") != DATE or
         len(_PERFORMANCE_KINDS) != len(_board["beats"])):
     raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
 EVENTS = [
-    (float(b["at_s"]), kind, cls, pan)
-    for b, (kind, cls, pan, _) in zip(_board["beats"], _PERFORMANCE)
+    (scheduled_time(b, _board['beats'][i + 1]['at_s']
+                    if i + 1 < len(_board['beats']) else VIDEO_SECS), kind, cls, pan)
+    for i, (b, (kind, cls, pan, _)) in enumerate(zip(_board["beats"], _PERFORMANCE))
 ]
 EVENT_LABELS = [
     f"{b['shows']} | Bank performance: {role}. Approved sound: {b['sfx']}"
     for b, (_, _, _, role) in zip(_board["beats"], _PERFORMANCE)
 ]
+
+
+def event_delay_ms(t, index):
+    return int(max(0.0, t + jit(index, 'time', -0.015, 0.015)) * 1000)
+
+
+def event_timing(index, t):
+    beat = _board['beats'][index]
+    return {'beat_id': beat['id'], 'visual_at_s': beat['at_s'],
+            'sfx_offset_frames': beat.get('sfx_offset_frames', 0),
+            'sfx_offset_reason': beat.get('sfx_offset_reason', ''),
+            'rendered_start_s': event_delay_ms(t, index) / 1000}
 
 # THE MIX HAS AN ARC NOW (2026-07-31, round 6 panel note: "the mix is flat -- LRA 3.10").
 #
@@ -432,7 +449,8 @@ def main():
             "kinds": sorted({k for _, k, _, _ in EVENTS}),
             "note": ("written by dispatch_mix.py at mix time from the schedule it performed. "
                      "One entry per motivated hit: t seconds, kind, loudness class, stereo pan."),
-            "events": [{"t": t, "kind": k, "class": c, "pan": p, "label": EVENT_LABELS[i]}
+            "events": [{"t": t, "kind": k, "class": c, "pan": p, "label": EVENT_LABELS[i],
+                        **event_timing(i, t)}
                        for i, (t, k, c, p) in enumerate(EVENTS)],
         }, open(_sfx_out, "w"), indent=1)
         print(f"sfx_events.json written: {len(EVENTS)} events, {len(set(k for _, k, _, _ in EVENTS))} kinds")
@@ -563,8 +581,7 @@ def main():
         cents = jit(i, "pitch", -PITCH_CENTS[fam], PITCH_CENTS[fam])
         rate = 2 ** (cents / 1200)
         gain_db = CLASS_DB[cls] + 6.0 + jit(i, "vol", -1.5, 1.5)   # bank peaks -6
-        t_actual = max(0.0, t + jit(i, "time", -0.015, 0.015))
-        ms = int(t_actual * 1000)
+        ms = event_delay_ms(t, i)
         p = max(-1.0, min(1.0, pan)) * 0.35
         gl, gr = math.cos((p + 1) * math.pi / 4), math.sin((p + 1) * math.pi / 4)
         chain = [f"[{idx}:a]aformat=sample_rates={SR}:channel_layouts=stereo",
@@ -654,7 +671,7 @@ def main():
     json.dump({"events": [
                    {"t": t, "kind": k, "class": c, "pan": p,
                     "take": os.path.basename(takes[i]), "family": FAMILY[k],
-                    "label": EVENT_LABELS[i]}
+                    "label": EVENT_LABELS[i], **event_timing(i, t)}
                    for i, (t, k, c, p) in enumerate(EVENTS)],
                # quality_gate measures a centered analysis window, so record the center of the
                # performed dip rather than its filtergraph start time.

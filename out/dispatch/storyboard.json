@@ -26,7 +26,7 @@
     "winner": "dramatist",
     "winner_title": "The Pen Still Has Work",
     "verdict": "LOCK REVISED TREATMENT; BUILD AND RENDER PROOF STILL REQUIRED",
-    "locked_angle": "In the KGS workflows described by AWS, the machine\u2019s finished output is still unfinished professional work.",
+    "locked_angle": "In the KGS workflows described by AWS, the machine’s finished output is still unfinished professional work.",
     "stance": "Curious and appreciative of concrete preparation. The pen title names its pictured activity, never employment or preserved jobs.",
     "rationale": "The Dramatist changes both material and professional verb near 80 seconds, has the clearest physical workrooms and a shelf pen that can gain real cap/contact states. Its draft does not pass unchanged. This replacement abandons delayed knowledge of the human role, ends the promised pair with the second action, and uses an independent ordinary prop action rather than an unchanged status label for the other loop.",
     "scoring": {
@@ -190,7 +190,7 @@
       "turn": "The strongest objection is that the machines really have completed useful preparation. Let both outputs be solid, organized and present while their machinery recedes. Then show refinement of a generated section and examination of a separate report. Neither contribution disappears; no bad result is needed.",
       "button": {
         "line": "When the output is ready, which job is finished?",
-        "image": "Match the opening pen silhouette, now posted and visibly used in the ordinary professional\u2019s hand. Keep the report and still-labeled FIRST DRAFT as separate supporting materials. The earlier neutral ink mark survives; no signature or award."
+        "image": "Match the opening pen silhouette, now posted and visibly used in the ordinary professional’s hand. Keep the report and still-labeled FIRST DRAFT as separate supporting materials. The earlier neutral ink mark survives; no signature or award."
       },
       "sight_gags": [
         {
@@ -210,7 +210,7 @@
         },
         {
           "at_s": 76,
-          "action": "The loose cap posts onto the rear of the pen with a small cushioned click under the hand\u2019s pressure.",
+          "action": "The loose cap posts onto the rear of the pen with a small cushioned click under the hand’s pressure.",
           "source_limit": "Ordinary cap handling, not a jam, repair or productivity event."
         }
       ]
@@ -239,9 +239,9 @@
       "secondary_loop": {
         "plant_s": 49,
         "promise": "A clearly detached cap and its matching rear posting socket form a small physical pairing: the cap will rejoin the pen when the hand prepares to use it.",
-        "plant_picture": "For one brief beat the hand turns the loose cap above the pen\u2019s open rear socket, exposing matching shapes, then places it beside the pen and the film cuts onward. The cap is intact and moves freely.",
+        "plant_picture": "For one brief beat the hand turns the loose cap above the pen’s open rear socket, exposing matching shapes, then places it beside the pen and the film cuts onward. The cap is intact and moves freely.",
         "payoff_s": 76,
-        "payoff": "The hand retrieves the cap and seats it on the pen\u2019s rear in an ordinary deliberate action before the refinement gesture.",
+        "payoff": "The hand retrieves the cap and seats it on the pen’s rear in an ordinary deliberate action before the refinement gesture.",
         "independence": "This answers where an ordinary prop component fits; it does not answer what the two professional jobs are. It is a physical comedy callback, not a new fact or claimed malfunction.",
         "anti_wait_rule": "Never hold a cap or hand frozen between49and76seconds. Intervening shots cover other explanation. Montage does not represent literal elapsed review time; the cap never blocks output, review or a person. If this ordinary action is not unmistakably planted, the loop fails and must be revised before voice."
       },
@@ -285,7 +285,7 @@
         },
         {
           "beat": "66-82 generated section refinement",
-          "why_needed": "The editable material changes under a person\u2019s hand. This is a different operation from generating it."
+          "why_needed": "The editable material changes under a person’s hand. This is a different operation from generating it."
         },
         {
           "beat": "83-95 report examination",
@@ -599,7 +599,9 @@
         "primary": "KGS nameplate slides into a copper announcement stand at the wall",
         "reaction": "The stand feet compress as the nameplate seats",
         "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
-      }
+      },
+      "sfx_offset_frames": 8,
+      "sfx_offset_reason": "Metal plate seats at the rendered arrival or contact, after the visual move begins."
     },
     {
       "id": 5,
@@ -687,7 +689,9 @@
         "primary": "Corporate ownership wall builds the named Koniag parent above the KGS subsidiary rail",
         "reaction": "The lower KGS rail shifts into its supported position",
         "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
-      }
+      },
+      "sfx_offset_frames": 30,
+      "sfx_offset_reason": "Crossbar drops into bracket at the rendered arrival or contact, after the visual move begins."
     },
     {
       "id": 9,
@@ -887,7 +891,9 @@
         "primary": "Prebuilt rule rails align the retrieved records into a standard report outline",
         "reaction": "The report spine closes around the arriving tabs while its source tags remain visible",
         "ambient": "Separate unused record-tab corners flex at left and right, the receiving-guide spring moves below. The connected active record path supplies the main motion; fine motes stay behind it. All channels freeze together during specified reveal holds."
-      }
+      },
+      "sfx_offset_frames": 26,
+      "sfx_offset_reason": "Rule assembly settles into report at the rendered arrival or contact, after the visual move begins."
     },
     {
       "id": 18,
@@ -910,7 +916,9 @@
         "reaction": "The socket remains visible and the cap makes a small landing wobble in its cup",
         "ambient": "Separate unused record-tab corners flex at left and right, the receiving-guide spring moves below. The connected active record path supplies the main motion; fine motes stay behind it. All channels freeze together during specified reveal holds."
       },
-      "framing_proof": "Pen/cap occupy520px width across center x280..800/y940. Cap opening and matching rear socket are both at least70px across, separated by180px. Complete cap detachment happens visibly in the hand before the brief paired turn, then cap sits freely in cup."
+      "framing_proof": "Pen/cap occupy520px width across center x280..800/y940. Cap opening and matching rear socket are both at least70px across, separated by180px. Complete cap detachment happens visibly in the hand before the brief paired turn, then cap sits freely in cup.",
+      "sfx_offset_frames": 18,
+      "sfx_offset_reason": "Cap rings against cup at the rendered arrival or contact, after the visual move begins."
     },
     {
       "id": 19,
@@ -977,7 +985,9 @@
         "reaction": "The draft holder tips toward the visible human tool, retaining the FIRST DRAFT flag",
         "ambient": "Upper-left input-slip corner flexes, upper-right task-light suspension sways, lower FIRST DRAFT tail curls. Warm translucent table-light drift and fine motes stay behind type. All channels freeze together during specified reveal holds."
       },
-      "framing_proof": "The exposed nib is120px long with detached cap beside it in the foreground atx540/y1120. The language-model path and FIRST DRAFT remain legible above; this is a reinspection of the detachment at56.785, not another state."
+      "framing_proof": "The exposed nib is120px long with detached cap beside it in the foreground atx540/y1120. The language-model path and FIRST DRAFT remain legible above; this is a reinspection of the detachment at56.785, not another state.",
+      "sfx_offset_frames": 26,
+      "sfx_offset_reason": "Pen cradle touches down at the rendered arrival or contact, after the visual move begins."
     },
     {
       "id": 22,
@@ -1066,7 +1076,9 @@
         "primary": "Completed output cradles settle side by side with enough space for professional use",
         "reaction": "The desk edge moves toward the tool cup and both output shadows become grounded",
         "ambient": "Left cup liner corner flexes, right cradle spring moves quietly, a rear lamp cord sways. Cap and nib are the only foreground focal motion; fine motes remain behind. All channels freeze together during specified reveal holds."
-      }
+      },
+      "sfx_offset_frames": 7,
+      "sfx_offset_reason": "Tool surface settles at the rendered arrival or contact, after the visual move begins."
     },
     {
       "id": 26,
@@ -1088,7 +1100,9 @@
         "primary": "Professional hand and loose cap retrieve the cap normally from its cup and post it on the rear of the pen",
         "reaction": "The sprung clip settles against the barrel; the nib remains exposed for the next task",
         "ambient": "Left cup liner corner flexes, right cradle spring moves quietly, a rear lamp cord sways. Cap and nib are the only foreground focal motion; fine motes remain behind. All channels freeze together during specified reveal holds."
-      }
+      },
+      "sfx_offset_frames": 40,
+      "sfx_offset_reason": "Cap posts on rear barrel at the rendered arrival or contact, after the visual move begins."
     },
     {
       "id": 27,
@@ -1353,7 +1367,9 @@
         "primary": "Working desk returns at full useful scale with the report, marked draft and posted-cap pen",
         "reaction": "The warm task light settles over the intact preparation and the human tool",
         "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
-      }
+      },
+      "sfx_offset_frames": 8,
+      "sfx_offset_reason": "Returning desk settles at the rendered arrival or contact, after the visual move begins."
     },
     {
       "id": 39,
