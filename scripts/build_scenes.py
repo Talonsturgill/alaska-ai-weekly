@@ -163,7 +163,15 @@ TAIL = 1.0  # hold after the last word (1.5 -> 1.0 on 2026-08-12 to land in band
 # Notebook hook, new sensor, announcement and training, scalp recording, public
 # archive, scope question, reading plan, programming plan, archive callback,
 # question fit, extra page, independent test, methods boundary and learning question.
-SCENE_START_LINE = [0, 1, 2, 4, 6, 8, 9, 10, 12, 13, 15, 17, 18, 19]
+def scene_line_indices(board, starts):
+    """Read current shot anchors, refusing a leftover episode's private cut list."""
+    shots = board.get("shots") or []
+    indices = [shot.get("vo_line") for shot in shots]
+    if not indices or any(type(index) is not int or index not in starts for index in indices):
+        raise ValueError("every storyboard shot needs a valid integer vo_line in the aligned narration")
+    if indices[0] != 0 or any(right <= left for left, right in zip(indices, indices[1:])):
+        raise ValueError("shot vo_line anchors must start at zero and increase strictly")
+    return indices
 
 
 def _apply_caption_fixups(caps):
@@ -506,7 +514,11 @@ def main():
     total_s = last_end + TAIL
     total_f = round(total_s * FPS)
 
-    bounds = [round(start[si] * FPS) for si in SCENE_START_LINE]
+    board = json.load(open(os.path.join(OUT, "storyboard.json")))
+    try:
+        bounds = [round(start[si] * FPS) for si in scene_line_indices(board, start)]
+    except ValueError as exc:
+        raise SystemExit(f"build_scenes: {exc}")
     scenes = []
     for i, b in enumerate(bounds):
         end = bounds[i + 1] if i + 1 < len(bounds) else total_f
