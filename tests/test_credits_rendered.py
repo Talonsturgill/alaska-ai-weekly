@@ -1,5 +1,7 @@
 """Credit presence depends on rendered text, not decoration or configured props."""
 import copy
+import contextlib
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -39,6 +41,34 @@ def credit_image(omit=None, body_level=225, notebook=True):
 
 
 class RenderedCreditTests(unittest.TestCase):
+    def test_complete_long_music_credit_fits_with_its_letter_spacing(self):
+        credit = copy.deepcopy(PROPS['credits'])
+        credit['music'] = 'Mining by Moonlight by Kevin MacLeod (incompetech.com), licensed CC BY 4.0'
+        rows = check.credit_rows(credit)
+        for row in rows:
+            self.assertLessEqual(check.mono_w(row['text'], row['size'], row['track']), check.MAXW)
+            self.assertGreaterEqual(row['size'], 13.5)
+        self.assertIn('MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)', [r['text'] for r in rows])
+
+    def test_long_source_and_site_account_for_their_different_tracking(self):
+        credit = copy.deepcopy(PROPS['credits'])
+        credit['sources'] = ['RESEARCH.' + 'A' * 60 + '.ORG']
+        credit['site'] = 'PROJECT.' + 'A' * 40 + '.ORG'
+        for row in check.credit_rows(credit):
+            self.assertLessEqual(check.mono_w(row['text'], row['size'], row['track']), check.MAXW)
+        self.assertEqual(check.fit_size('SHORT', check.MAXW, 32, track=.6), 32)
+
+    def test_early_failure_replaces_a_previous_passing_render_report(self):
+        with tempfile.TemporaryDirectory() as directory:
+            report = Path(directory) / 'credits_render_report.json'
+            report.write_text(json.dumps({'pass': True, 'old': 'previous run'}))
+            (Path(directory) / 'episode_props.json').write_text('{}')
+            with patch.object(check, 'OUT', directory), contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(check.main(), 1)
+            saved = json.loads(report.read_text())
+            self.assertFalse(saved['pass'])
+            self.assertNotIn('old', saved)
+
     def test_resolves_full_ten_seconds_inside_the_actual_opacity_plateau(self):
         start, end, plateau = check.readable_window(PROPS, PROPS['total'] / 30, RENDERER)
         self.assertAlmostEqual(start, 123.6)

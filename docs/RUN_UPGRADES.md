@@ -3377,3 +3377,5 @@ occluded draft label. The brand/title spacing and opening document position are 
 Four new native square-crop probes confirm readable labels through the pen move and no
 collision with later projected claim plates. The first candidate was preserved and its
 follow-on encode cancelled after the native gate; a new source-bound render is required.
+
+Candidate2 also passed all fifteen objective checks after encoding. Required preflight then caught a real music-credit overflow before any panel: font fitting ignored letter spacing, producing968pixels inside a936pixel safe width. Both the shared renderer and its checker now subtract tracking before fitting. The complete attribution is preserved; native pixel inspection measures ink x75..1001 inside x72..1008. Sixteen credit regressions pass, including the actual long title, separately tracked source/site labels and an early-failure stale-report check. The gate now invalidates an older passing credit receipt before any early exit. A third complete render is required by source provenance. This is a permanent fit repair, not a threshold change.
