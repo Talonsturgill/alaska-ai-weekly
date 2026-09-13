@@ -3368,3 +3368,12 @@ voice scores for a load-bearing organization name. No gate threshold was relaxed
 
 Final encoded QA, panel, delivery and exact release evidence will be recorded here after
 those stages finish.
+
+The first 3,955-frame native render passes all fifteen objective checks at 10.0,
+including thirteen camera moves, forty-seven detected visual beats and sixty-one of
+sixty-four living-screen windows. Twenty-six sound events show a measured lift. A native
+opening review then confirmed cropped branding in the square cut and one partially
+occluded draft label. The brand/title spacing and opening document position are repaired.
+Four new native square-crop probes confirm readable labels through the pen move and no
+collision with later projected claim plates. The first candidate was preserved and its
+follow-on encode cancelled after the native gate; a new source-bound render is required.

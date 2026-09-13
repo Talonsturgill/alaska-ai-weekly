@@ -63,7 +63,7 @@ const Shot:React.FC<{n:number;from:number;dur:number;beats:Beat[]}>=({n,from,dur
  const travel=interpolate(f,[from,from+Math.max(40,dur)],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.inOut(Easing.sin)});
  const entry=ease(f,from,18);
  let picture:React.ReactNode;
- if(n===1){const roll=sp(1),spread=q(2),clip=q(3);picture=<g><Desk f={f}/><Report x={325-65*spread} y={1095} scale={.7} f={f}/><Draft x={755+55*spread} y={1050} scale={.59} f={f}/><ReviewPen x={505+55*roll} y={1100-20*Math.sin(roll*Math.PI)} f={f} scale={1.62} angle={80-44*roll} clipFlex={Math.sin(clip*Math.PI)}/><Type text="TWO OUTPUTS" y={669} size={64}/><Type text="WATCH THE PEN" y={745} size={36} mono/></g>;}
+ if(n===1){const roll=sp(1),spread=q(2),clip=q(3);picture=<g><Desk f={f}/><Report x={325-65*spread} y={1095} scale={.7} f={f}/><Draft x={815+55*spread} y={1030} scale={.59} f={f}/><ReviewPen x={505+55*roll} y={1100-20*Math.sin(roll*Math.PI)} f={f} scale={1.62} angle={80-44*roll} clipFlex={Math.sin(clip*Math.PI)}/><Type text="TWO OUTPUTS" y={669} size={64}/><Type text="WATCH THE PEN" y={745} size={36} mono/></g>;}
  else if(n===2){const rails=q(5,36),leaf=q(6,30),drawers=q(7,45);picture=<g>
  <Cabinet x={140} y={755} w={800} f={f} open={drawers}/>
  <g transform={`translate(0 ${-70*(1-sp(4))})`}><Plate x={540} text="KONIAG GOVERNMENT SERVICES" y={607} width={940}/></g>
@@ -110,7 +110,7 @@ const Shot:React.FC<{n:number;from:number;dur:number;beats:Beat[]}>=({n,from,dur
   <Plane z={160}><SVG><Ambience f={f} n={n}/></SVG></Plane>
   <Plane z={0}><SVG>{picture}</SVG></Plane>
   <Plane z={-90}><SVG><path d={`M-160 ${1610+3*Math.sin(f/41)}Q260 1550 500 1640T1200 1600V2120H-160Z`} fill={COLOR.petrol}/><path d="M-120 1660Q450 1580 1180 1690" fill="none" stroke={COLOR.metal} strokeWidth={11} opacity={.24}/></SVG></Plane>
- </Stage3D><SVG><Type text="ALASKA.AI DISPATCH" y={426} size={31} width={900} mono color={COLOR.petrol}/><Type text={HEAD[n-1]} y={480} size={39} width={940}/>{n===2?<Scope text="KGS ANNOUNCEMENT"/>:n===3?<Scope text="KONIAG SUBSIDIARY · KGS ANNOUNCEMENT"/>:n===1?<Type text="ILLUSTRATIVE WORKFLOW" y={1311} size={27} mono/>:n===12?<Type text="ILLUSTRATIVE WORKFLOW" y={1311} size={27} mono/>:<Scope/>}</SVG><GradeLayer f={f} bloom={.03} vignette={.08} grain={.018} warmth={.06}/></AbsoluteFill>;
+ </Stage3D><SVG><Type text="ALASKA.AI DISPATCH" y={450} size={31} width={900} mono color={COLOR.petrol}/><Type text={HEAD[n-1]} y={494} size={39} width={940}/>{n===2?<Scope text="KGS ANNOUNCEMENT"/>:n===3?<Scope text="KONIAG SUBSIDIARY · KGS ANNOUNCEMENT"/>:n===1?<Type text="ILLUSTRATIVE WORKFLOW" y={1311} size={27} mono/>:n===12?<Type text="ILLUSTRATIVE WORKFLOW" y={1311} size={27} mono/>:<Scope/>}</SVG><GradeLayer f={f} bloom={.03} vignette={.08} grain={.018} warmth={.06}/></AbsoluteFill>;
 };
 
 const captions=z.array(z.object({t:z.number(),d:z.number(),text:z.string()}));
