@@ -1,0 +1,209 @@
+{
+  "run_date": "2026-09-13",
+  "title": "The Pen Still Has Work",
+  "role": "final-editor",
+  "reviewed_at_utc": "2026-09-13T15:21:17.778541+00:00",
+  "verdict": "ship",
+  "ship": true,
+  "scope": "Editorial approval of revised post copy after the independent 8.34 caption score. Same-scorer regrade is required on this new SHA; this editor does not substitute a numerical pass.",
+  "authority": {
+    "read_fully": ".claude/agents/editor.md",
+    "governing_copy_contract": "prompts/dispatch_routine.md Phase 6B",
+    "governing_delivery_contract": "prompts/dispatch_routine.md Phase 7 email section",
+    "override": "Dispatch uses 900 to 2200 characters and 3 to 5 ending hashtags. The legacy weekly word band, no-hashtag rule, weekly structure and separate quotable-headline block do not apply to post.txt."
+  },
+  "inputs": [
+    "out/dispatch/post.txt",
+    "out/dispatch/claims.json",
+    "out/dispatch/sources.json",
+    "out/dispatch/vo_script.txt",
+    "out/dispatch/angle.json",
+    "out/dispatch/verified_findings_20260913.json",
+    "config/brand.yaml",
+    "config/linkedin_caption_rubric.yaml",
+    "examples/post_001.md"
+  ],
+  "line_edits": [
+    {
+      "original": "A gathered report and an editable first draft are concrete preparation outputs. Give that work its credit. Then follow what happens to it. Looking through a report to make a determination is a different action from refining generated prose. Neither disappears just because a page has arrived.",
+      "suggested": "A gathered report and an editable draft deserve credit as real preparation. Judge a finished workflow by the professional decision that follows, not by the arrival of a page.",
+      "reason": "Condense the preparation-credit position into two evaluative sentences and move it immediately below the hook, before KGS background."
+    },
+    {
+      "original": "in the subject line. It retrieves compliance records",
+      "suggested": "in the subject line.\n\nIt retrieves compliance records",
+      "reason": "Split the DORA mechanism at the input-to-retrieval boundary so source/tool/input and retrieval/logic/decision scan separately."
+    },
+    {
+      "original": "Follow the report. Follow the draft. After the output arrives, which part of the work is still yours?",
+      "suggested": "What would you check in an assembled report, or change in a generated draft, before putting it to work?",
+      "reason": "Ask for a concrete report check or draft change, giving readers a specific professional action to describe."
+    }
+  ],
+  "risk_flags": [],
+  "ai_tells": [],
+  "voice_match_score_qualitative": "tight",
+  "claim_review": [
+    {
+      "subject": "September 11th announcement",
+      "judgment": "PASS",
+      "claims": [
+        "c1",
+        "c2",
+        "c5",
+        "c6"
+      ],
+      "sources": [
+        "s1"
+      ],
+      "reason": "Support remains attributed to KGS. The date is the announcement date; no new award, launch, contract value or deployment is asserted."
+    },
+    {
+      "subject": "Alaska corporate connection",
+      "judgment": "PASS",
+      "claims": [
+        "c3",
+        "c4"
+      ],
+      "sources": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "reason": "KGS is identified as Koniag subsidiary and Koniag as the regional Alaska Native corporation associated with Kodiak. No conflation with tribal governments, shareholders or cultural representation."
+    },
+    {
+      "subject": "Earlier Army source boundary",
+      "judgment": "PASS",
+      "claims": [
+        "c7"
+      ],
+      "sources": [
+        "s5"
+      ],
+      "reason": "AWS is named in full and the case study is explicitly earlier Army procurement work. Its examples are not presented as newly measured Wingman results."
+    },
+    {
+      "subject": "DORA mechanism and professional decision",
+      "judgment": "PASS",
+      "claims": [
+        "c8",
+        "c9",
+        "c10",
+        "c11"
+      ],
+      "sources": [
+        "s5"
+      ],
+      "reason": "Vendor identifier in the email subject triggers API retrieval and prebuilt logic assembling a report. The professional reviews and makes the determination. The expanded registry name is the verified System for Award Management."
+    },
+    {
+      "subject": "Separate Jumpstarter drafting",
+      "judgment": "PASS",
+      "claims": [
+        "c12",
+        "c13",
+        "c14"
+      ],
+      "sources": [
+        "s5"
+      ],
+      "reason": "A separate paragraph names LLMs and Amazon Bedrock, initial document sections, and people refining and approving. No first draft is presented as a final contract or award."
+    },
+    {
+      "subject": "Earned preparation credit and limits",
+      "judgment": "PASS",
+      "claims": [
+        "c9",
+        "c10",
+        "c11",
+        "c13",
+        "c14",
+        "c18"
+      ],
+      "sources": [
+        "s1",
+        "s5"
+      ],
+      "reason": "The argument credits the gathered report and editable draft, then distinguishes review from refinement. It explicitly declines independent Wingman productivity proof and scopes unquantified Alaska return to the announcement. It makes no claim of no benefit."
+    },
+    {
+      "subject": "Optional numeric claims",
+      "judgment": "PASS",
+      "claims_excluded": [
+        "c15",
+        "c16",
+        "c17"
+      ],
+      "reason": "No task-duration, cost-avoidance or portfolio-hours figure appears. The only numeric date is the approved September 11th announcement."
+    }
+  ],
+  "copy_checks": {
+    "characters": 1506,
+    "hook_characters": 57,
+    "hashtags": [
+      "#Alaska",
+      "#ArtificialIntelligence",
+      "#Koniag",
+      "#GovernmentTechnology"
+    ],
+    "commas_per_100_body_words": 4.35,
+    "ending_question": true,
+    "straight_quotes_only": true,
+    "forbidden_punctuation_absent": true,
+    "cannot_absent": true,
+    "ordinal_date": "September 11th",
+    "sources_urls_music_voice_credits_absent": true
+  },
+  "objective_gate": {
+    "command": "python3 scripts/caption_check.py out/dispatch/post.txt",
+    "exit_code": 0,
+    "output": "=== LinkedIn caption linter ===\n  chars=1506 (band 900-2200) | hook=57c (fold 140) | hashtags=4 | emoji=0 bold=0\nRESULT: PASS \u2713 \u2014 clears the objective rules; now score config/linkedin_caption_rubric.yaml"
+  },
+  "resolved_blockers": [
+    "The initial caption linter failed on SAM.gov as a domain in the post body. Replacing it with its verified full registry name removes the domain while preserving the mechanism."
+  ],
+  "required_fixes": [],
+  "file_changes": [
+    "out/dispatch/post.txt",
+    "out/dispatch/editor_review_20260913.json"
+  ],
+  "post_sha256_before": "d0ae37e9d47df048f181343b672aade34f5672026f225ab9618adb1f5c46ddc8",
+  "post_sha256_after": "375b88f38d357e70bbb38aa7f6e8e54b570dd862d350c3e223fb2de8e29b60cd",
+  "locked_vo_sha256": "5ae7ddb9b7890df4f1d39fb246eb6e62fd91613f20d2791920a2be265de5526f",
+  "protected_scope": "No locked VO, film, claims, sources or angle edits. No synthesis, draft creation, sending, uploading or publishing.",
+  "handoff": "Ready for the same independent caption scorer to regrade this exact post SHA. Source and claim boundaries remain unchanged. No VO or film edit and no delivery action was performed.",
+  "revision": 2,
+  "previous_review_sha256": "afae43f5732a8537a2abf5a3ca657b3273add621630d821736ebe9b6afb8d64b",
+  "prior_line_edits": [
+    {
+      "original": "The machine has an output. What work comes next?",
+      "suggested": "A finished report isn't a finished professional decision.",
+      "reason": "Replace a generic opening question with the concrete, defensible output-versus-determination thesis."
+    },
+    {
+      "original": "The useful detail is in an AWS case study about earlier Army procurement work. DORA starts with a contracting professional emailing a vendor identifier in the subject line.",
+      "suggested": "Amazon Web Services (AWS) describes earlier Army procurement work in a case study. DORA, the Determination of Responsibility Assistant, starts with a contracting professional emailing a vendor identifier in the subject line.",
+      "reason": "Identify the source and tool on first mention while retaining the earlier-work boundary."
+    },
+    {
+      "original": "It retrieves compliance records through APIs, including SAM.gov data.",
+      "suggested": "It retrieves compliance records through APIs, including data from the System for Award Management.",
+      "reason": "Use the verified full registry name so the post complies with the no-domain rule; source links belong in the separate comment block."
+    },
+    {
+      "original": " The corporate connection is real, while that local measure remains unstated.",
+      "suggested": "",
+      "reason": "Remove a restatement of the named ownership and announcement-scope limit."
+    }
+  ],
+  "caption_score_response": {
+    "previous_score": 8.34,
+    "required_score": 8.5,
+    "previous_hard_fails": 0,
+    "scored_post_sha256": "d0ae37e9d47df048f181343b672aade34f5672026f225ab9618adb1f5c46ddc8",
+    "revision_focus": "Preparation credit and an evaluative standard now precede company background. Supporting changes improve DORA scanning and ask a specific review/refinement question.",
+    "same_scorer_regrade_required": true,
+    "new_score_claimed": false
+  }
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "at": "2026-09-11T14:29:59Z",
+    "attempt": 1,
+    "median": null,
+    "reasons": [
+      "RENDER PROVENANCE FAILED: source contents changed: video-engine/src/lib/clinic.tsx",
+      "Render and encode from the current source before grading or delivering."
+    ]
+  }
+]

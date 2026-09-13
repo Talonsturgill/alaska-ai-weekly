@@ -7,7 +7,12 @@
       "pan": 0.0,
       "take": "thud_kenney_impactWood_heavy_003.wav",
       "family": "sub",
-      "label": "Capped oxblood pen rolls diagonally between a report tray and a draft holder | Bank performance: A pen barrel rolls over wood with one soft clack. Approved sound: A pen barrel rolls over wood with one soft clack"
+      "label": "Capped oxblood pen rolls diagonally between a report tray and a draft holder | Bank performance: A pen barrel rolls over wood with one soft clack. Approved sound: A pen barrel rolls over wood with one soft clack",
+      "beat_id": 1,
+      "visual_at_s": 0.0,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 0.0
     },
     {
       "t": 1.887,
@@ -16,7 +21,12 @@
       "pan": -0.2,
       "take": "paper_v1.wav",
       "family": "texture",
-      "label": "Two output holders separate around the pen to expose their distinct tabbed report and editable draft silhouettes | Bank performance: Paper edges brush their moving tray guides. Approved sound: Paper edges brush their moving tray guides"
+      "label": "Two output holders separate around the pen to expose their distinct tabbed report and editable draft silhouettes | Bank performance: Paper edges brush their moving tray guides. Approved sound: Paper edges brush their moving tray guides",
+      "beat_id": 2,
+      "visual_at_s": 1.887,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 1.894
     },
     {
       "t": 4.528,
@@ -25,16 +35,26 @@
       "pan": 0.1,
       "take": "snap_v4.wav",
       "family": "pluck",
-      "label": "Pen clip springs against its cradle and arrests the last roll | Bank performance: A small sprung-clip snap. Approved sound: A small sprung-clip snap"
+      "label": "Pen clip springs against its cradle and arrests the last roll | Bank performance: A small sprung-clip snap. Approved sound: A small sprung-clip snap",
+      "beat_id": 3,
+      "visual_at_s": 4.528,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 4.519
     },
     {
-      "t": 6.54,
+      "t": 6.806666666666667,
       "kind": "clank",
       "class": "texture",
       "pan": 0.0,
       "take": "clank_kenney_impactMetal_medium_000.wav",
       "family": "metal",
-      "label": "KGS nameplate slides into a copper announcement stand at the wall | Bank performance: Metal plate seats in wood with a restrained clank. Approved sound: Metal plate seats in wood with a restrained clank"
+      "label": "KGS nameplate slides into a copper announcement stand at the wall | Bank performance: Metal plate seats in wood with a restrained clank. Approved sound: Metal plate seats in wood with a restrained clank",
+      "beat_id": 4,
+      "visual_at_s": 6.54,
+      "sfx_offset_frames": 8,
+      "sfx_offset_reason": "Metal plate seats at the rendered arrival or contact, after the visual move begins.",
+      "rendered_start_s": 6.82
     },
     {
       "t": 11.385,
@@ -43,7 +63,12 @@
       "pan": 0.0,
       "take": "whoosh_v3.wav",
       "family": "air",
-      "label": "Wingman office-assistant rails open beneath the KGS plate | Bank performance: Wood runners slide with a short scrape. Approved sound: Wood runners slide with a short scrape"
+      "label": "Wingman office-assistant rails open beneath the KGS plate | Bank performance: Wood runners slide with a short scrape. Approved sound: Wood runners slide with a short scrape",
+      "beat_id": 5,
+      "visual_at_s": 11.385,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 11.398
     },
     {
       "t": 15.14,
@@ -52,7 +77,12 @@
       "pan": 0.0,
       "take": "creak_v5.wav",
       "family": "texture",
-      "label": "Announcement date leaf turns over the stand to reveal the company date | Bank performance: The announcement leaf flexes at its paper hinge. Approved sound: One paper page turn"
+      "label": "Announcement date leaf turns over the stand to reveal the company date | Bank performance: The announcement leaf flexes at its paper hinge. Approved sound: One paper page turn",
+      "beat_id": 6,
+      "visual_at_s": 15.14,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 15.129
     },
     {
       "t": 19.197,
@@ -61,16 +91,26 @@
       "pan": 0.2,
       "take": "tick_v1.wav",
       "family": "click",
-      "label": "Workflow drawers open in a staggered cascade for contracting, logistics and financial management | Bank performance: Three staggered drawer-stop ticks. Approved sound: Three staggered drawer-stop ticks"
+      "label": "Workflow drawers open in a staggered cascade for contracting, logistics and financial management | Bank performance: Three staggered drawer-stop ticks. Approved sound: Three staggered drawer-stop ticks",
+      "beat_id": 7,
+      "visual_at_s": 19.197,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 19.201
     },
     {
-      "t": 22.64,
+      "t": 23.64,
       "kind": "thud",
       "class": "texture",
       "pan": 0.0,
       "take": "thud_kenney_impactWood_heavy_001.wav",
       "family": "sub",
-      "label": "Corporate ownership wall builds the named Koniag parent above the KGS subsidiary rail | Bank performance: A wooden crossbar drops into its bracket. Approved sound: A wooden crossbar drops into its bracket"
+      "label": "Corporate ownership wall builds the named Koniag parent above the KGS subsidiary rail | Bank performance: A wooden crossbar drops into its bracket. Approved sound: A wooden crossbar drops into its bracket",
+      "beat_id": 8,
+      "visual_at_s": 22.64,
+      "sfx_offset_frames": 30,
+      "sfx_offset_reason": "Crossbar drops into bracket at the rendered arrival or contact, after the visual move begins.",
+      "rendered_start_s": 23.637
     },
     {
       "t": 27.02,
@@ -79,7 +119,12 @@
       "pan": -0.3,
       "take": "creak_v4.wav",
       "family": "texture",
-      "label": "Kodiak-region nameplate hinges outward beside the parent corporation name | Bank performance: The nameplate hinge makes a soft creak. Approved sound: The nameplate hinge makes a soft creak"
+      "label": "Kodiak-region nameplate hinges outward beside the parent corporation name | Bank performance: The nameplate hinge makes a soft creak. Approved sound: The nameplate hinge makes a soft creak",
+      "beat_id": 9,
+      "visual_at_s": 27.02,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 27.022
     },
     {
       "t": 29.94,
@@ -88,7 +133,12 @@
       "pan": -0.2,
       "take": "whoosh_v4.wav",
       "family": "air",
-      "label": "AWS case-study volume opens in the foreground of the identity wall | Bank performance: A case-study spine opens with a papery flex. Approved sound: A case-study spine opens with a papery flex"
+      "label": "AWS case-study volume opens in the foreground of the identity wall | Bank performance: A case-study spine opens with a papery flex. Approved sound: A case-study spine opens with a papery flex",
+      "beat_id": 10,
+      "visual_at_s": 29.94,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 29.934
     },
     {
       "t": 34.116,
@@ -97,7 +147,12 @@
       "pan": 0.2,
       "take": "snap_v5.wav",
       "family": "pluck",
-      "label": "Pen cap collar unseats one notch as an ordinary hand grips the barrel from its storage clip | Bank performance: A cap collar disengages with a light snap. Approved sound: A cap collar disengages with a light snap"
+      "label": "Pen cap collar unseats one notch as an ordinary hand grips the barrel from its storage clip | Bank performance: A cap collar disengages with a light snap. Approved sound: A cap collar disengages with a light snap",
+      "beat_id": 11,
+      "visual_at_s": 34.116,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 34.105
     },
     {
       "t": 37.8,
@@ -106,7 +161,12 @@
       "pan": 0.0,
       "take": "whoosh_v2.wav",
       "family": "air",
-      "label": "Email subject slot expands to fill the intake aisle around a generic vendor-identifier token | Bank performance: A broad paper-slot sweep with a soft receiving tap. Approved sound: A broad paper-slot sweep with a soft receiving tap"
+      "label": "Email subject slot expands to fill the intake aisle around a generic vendor-identifier token | Bank performance: A broad paper-slot sweep with a soft receiving tap. Approved sound: A broad paper-slot sweep with a soft receiving tap",
+      "beat_id": 12,
+      "visual_at_s": 37.8,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 37.812
     },
     {
       "t": 40.8,
@@ -115,7 +175,12 @@
       "pan": -0.3,
       "take": "paw_kenney_impactSoft_heavy_001.wav",
       "family": "sub",
-      "label": "Professional hand pushes the generic labeled vendor identifier into the subject slot | Bank performance: A fingertip places a thick paper token. Approved sound: A fingertip places a thick paper token"
+      "label": "Professional hand pushes the generic labeled vendor identifier into the subject slot | Bank performance: A fingertip places a thick paper token. Approved sound: A fingertip places a thick paper token",
+      "beat_id": 13,
+      "visual_at_s": 40.8,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 40.798
     },
     {
       "t": 44.565,
@@ -124,7 +189,12 @@
       "pan": 0.1,
       "take": "tick_v6.wav",
       "family": "click",
-      "label": "DORA intake rail carries the subject token toward the compliance lookup junction | Bank performance: A short runner tick at the junction. Approved sound: A short runner tick at the junction"
+      "label": "DORA intake rail carries the subject token toward the compliance lookup junction | Bank performance: A short runner tick at the junction. Approved sound: A short runner tick at the junction",
+      "beat_id": 14,
+      "visual_at_s": 44.565,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 44.569
     },
     {
       "t": 46.64,
@@ -133,7 +203,12 @@
       "pan": 0.1,
       "take": "pop_kenney_drop_001.wav",
       "family": "blip",
-      "label": "API connections extend from the token junction to named compliance records | Bank performance: A small connector click then a paper lift. Approved sound: A small connector click then a paper lift"
+      "label": "API connections extend from the token junction to named compliance records | Bank performance: A small connector click then a paper lift. Approved sound: A small connector click then a paper lift",
+      "beat_id": 15,
+      "visual_at_s": 46.64,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 46.646
     },
     {
       "t": 50.939,
@@ -142,25 +217,40 @@
       "pan": -0.2,
       "take": "paper_v2.wav",
       "family": "texture",
-      "label": "Retrieved record tabs travel toward the report channel in a staggered procession | Bank performance: A brief layered paper shuffle. Approved sound: A brief layered paper shuffle"
+      "label": "Retrieved record tabs travel toward the report channel in a staggered procession | Bank performance: A brief layered paper shuffle. Approved sound: A brief layered paper shuffle",
+      "beat_id": 16,
+      "visual_at_s": 50.939,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 50.937
     },
     {
-      "t": 53.88,
+      "t": 54.74666666666667,
       "kind": "clank",
       "class": "texture",
       "pan": 0.0,
       "take": "clank_kenney_impactMetal_heavy_000.wav",
       "family": "metal",
-      "label": "Prebuilt rule rails align the retrieved records into a standard report outline | Bank performance: A restrained clank as the alignment guide seats. Approved sound: A restrained clank as the alignment guide seats"
+      "label": "Prebuilt rule rails align the retrieved records into a standard report outline | Bank performance: A restrained clank as the alignment guide seats. Approved sound: A restrained clank as the alignment guide seats",
+      "beat_id": 17,
+      "visual_at_s": 53.88,
+      "sfx_offset_frames": 26,
+      "sfx_offset_reason": "Rule assembly settles into report at the rendered arrival or contact, after the visual move begins.",
+      "rendered_start_s": 54.76
     },
     {
-      "t": 56.185,
+      "t": 56.785000000000004,
       "kind": "ding",
       "class": "texture",
       "pan": -0.15,
       "take": "ding_kenney_impactBell_heavy_000.wav",
       "family": "bell",
-      "label": "Loose pen cap turns for one brief hand gesture above the matching rear barrel socket, then rests beside the pen | Bank performance: The cap rings softly against its cup. Approved sound: The cap rings softly against its cup"
+      "label": "Loose pen cap turns for one brief hand gesture above the matching rear barrel socket, then rests beside the pen | Bank performance: The cap rings softly against its cup. Approved sound: The cap rings softly against its cup",
+      "beat_id": 18,
+      "visual_at_s": 56.185,
+      "sfx_offset_frames": 18,
+      "sfx_offset_reason": "Cap rings against cup at the rendered arrival or contact, after the visual move begins.",
+      "rendered_start_s": 56.777
     },
     {
       "t": 58.26,
@@ -169,7 +259,12 @@
       "pan": 0.0,
       "take": "whoosh_v1.wav",
       "family": "air",
-      "label": "Separate Jumpstarter light table opens in a new room as user-input slips feed a labeled language-model path | Bank performance: A different table drawer rolls open. Approved sound: A different table drawer rolls open"
+      "label": "Separate Jumpstarter light table opens in a new room as user-input slips feed a labeled language-model path | Bank performance: A different table drawer rolls open. Approved sound: A different table drawer rolls open",
+      "beat_id": 19,
+      "visual_at_s": 58.26,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 58.269
     },
     {
       "t": 63.082,
@@ -178,16 +273,26 @@
       "pan": 0.2,
       "take": "paper_v4.wav",
       "family": "texture",
-      "label": "Initial document sections grow line by line from the model path inside the draft outline | Bank performance: A light paper-spool roll. Approved sound: A light paper-spool roll"
+      "label": "Initial document sections grow line by line from the model path inside the draft outline | Bank performance: A light paper-spool roll. Approved sound: A light paper-spool roll",
+      "beat_id": 20,
+      "visual_at_s": 63.082,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 63.067
     },
     {
-      "t": 66.963,
+      "t": 67.82966666666665,
       "kind": "tick",
       "class": "texture",
       "pan": -0.3,
       "take": "tick_v2.wav",
       "family": "click",
-      "label": "Uncapped pen nib appears beside the editable first draft while the loose cap rests in its cup | Bank performance: A pen cradle touches down with a small tick. Approved sound: A pen cradle touches down with a small tick"
+      "label": "Uncapped pen nib appears beside the editable first draft while the loose cap rests in its cup | Bank performance: A pen cradle touches down with a small tick. Approved sound: A pen cradle touches down with a small tick",
+      "beat_id": 21,
+      "visual_at_s": 66.963,
+      "sfx_offset_frames": 26,
+      "sfx_offset_reason": "Pen cradle touches down at the rendered arrival or contact, after the visual move begins.",
+      "rendered_start_s": 67.816
     },
     {
       "t": 69.08,
@@ -196,7 +301,12 @@
       "pan": 0.0,
       "take": "thud_kenney_impactWood_heavy_000.wav",
       "family": "sub",
-      "label": "Both intact outputs advance into a wide foreground gallery while their machine housings withdraw into far depth | Bank performance: A broad warm wood-and-paper movement. Approved sound: A broad warm wood-and-paper movement"
+      "label": "Both intact outputs advance into a wide foreground gallery while their machine housings withdraw into far depth | Bank performance: A broad warm wood-and-paper movement. Approved sound: A broad warm wood-and-paper movement",
+      "beat_id": 22,
+      "visual_at_s": 69.08,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 69.09
     },
     {
       "t": 72.435,
@@ -205,7 +315,12 @@
       "pan": -0.4,
       "take": "paper_v3.wav",
       "family": "texture",
-      "label": "Report source tabs fan open to show gathered records still attached to the report | Bank performance: A satisfying ordered paper fan. Approved sound: A satisfying ordered paper fan"
+      "label": "Report source tabs fan open to show gathered records still attached to the report | Bank performance: A satisfying ordered paper fan. Approved sound: A satisfying ordered paper fan",
+      "beat_id": 23,
+      "visual_at_s": 72.435,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 72.431
     },
     {
       "t": 76.445,
@@ -214,25 +329,40 @@
       "pan": 0.4,
       "take": "pop_kenney_drop_003.wav",
       "family": "blip",
-      "label": "Draft paragraph section extends across the light table as a complete block of editable text | Bank performance: A short paper extension with a soft stop. Approved sound: A short paper extension with a soft stop"
+      "label": "Draft paragraph section extends across the light table as a complete block of editable text | Bank performance: A short paper extension with a soft stop. Approved sound: A short paper extension with a soft stop",
+      "beat_id": 24,
+      "visual_at_s": 76.445,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 76.447
     },
     {
-      "t": 78.9,
+      "t": 79.13333333333334,
       "kind": "paw",
       "class": "texture",
       "pan": 0.0,
       "take": "paw_kenney_impactSoft_heavy_000.wav",
       "family": "sub",
-      "label": "Completed output cradles settle side by side with enough space for professional use | Bank performance: A low wood-foot settling contact. Approved sound: A low wood-foot settling contact"
+      "label": "Completed output cradles settle side by side with enough space for professional use | Bank performance: A low wood-foot settling contact. Approved sound: A low wood-foot settling contact",
+      "beat_id": 25,
+      "visual_at_s": 78.9,
+      "sfx_offset_frames": 7,
+      "sfx_offset_reason": "Tool surface settles at the rendered arrival or contact, after the visual move begins.",
+      "rendered_start_s": 79.134
     },
     {
-      "t": 80.65,
+      "t": 81.98333333333333,
       "kind": "snap",
       "class": "texture",
       "pan": 0.0,
       "take": "snap_v2.wav",
       "family": "pluck",
-      "label": "Professional hand and loose cap retrieve the cap normally from its cup and post it on the rear of the pen | Bank performance: The cap clicks onto the pen rear. Approved sound: The cap clicks onto the pen rear"
+      "label": "Professional hand and loose cap retrieve the cap normally from its cup and post it on the rear of the pen | Bank performance: The cap clicks onto the pen rear. Approved sound: The cap clicks onto the pen rear",
+      "beat_id": 26,
+      "visual_at_s": 80.65,
+      "sfx_offset_frames": 40,
+      "sfx_offset_reason": "Cap posts on rear barrel at the rendered arrival or contact, after the visual move begins.",
+      "rendered_start_s": 81.976
     },
     {
       "t": 83.96,
@@ -241,7 +371,12 @@
       "pan": 0.15,
       "take": "creak_v2.wav",
       "family": "texture",
-      "label": "Professional hand and DORA report slide together onto the desk while the finger begins inspecting the gathered report and its attached record material | Bank performance: The stiff report cover flexes as the hand slides it across the desk. Approved sound: A sheet slides across the desk"
+      "label": "Professional hand and DORA report slide together onto the desk while the finger begins inspecting the gathered report and its attached record material | Bank performance: The stiff report cover flexes as the hand slides it across the desk. Approved sound: A sheet slides across the desk",
+      "beat_id": 27,
+      "visual_at_s": 83.96,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 83.968
     },
     {
       "t": 87.8,
@@ -250,7 +385,12 @@
       "pan": -0.15,
       "take": "tick_v4.wav",
       "family": "click",
-      "label": "Professional hand compares the report page with its gathered record tabs for a sustained foreground examination | Bank performance: Sustained paper examination with a subordinate desk hinge and wood-stop contact. Approved sound: Sustained paper examination with a subordinate desk hinge and wood-stop contact"
+      "label": "Professional hand compares the report page with its gathered record tabs for a sustained foreground examination | Bank performance: Sustained paper examination with a subordinate desk hinge and wood-stop contact. Approved sound: Sustained paper examination with a subordinate desk hinge and wood-stop contact",
+      "beat_id": 28,
+      "visual_at_s": 87.8,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 87.786
     },
     {
       "t": 90.276,
@@ -259,7 +399,12 @@
       "pan": 0.2,
       "take": "stamp_v6.wav",
       "family": "sub",
-      "label": "Professional hand turns the report after sustained examination as the source-described determination responsibility is named | Bank performance: Compressed paper body under a page-turn fingertip, never a verdict stamp. Approved sound: A deliberate page turn and fingertip tap"
+      "label": "Professional hand turns the report after sustained examination as the source-described determination responsibility is named | Bank performance: Compressed paper body under a page-turn fingertip, never a verdict stamp. Approved sound: A deliberate page turn and fingertip tap",
+      "beat_id": 29,
+      "visual_at_s": 90.276,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 90.29
     },
     {
       "t": 91.3,
@@ -268,7 +413,12 @@
       "pan": 0.0,
       "take": "riser_v4.wav",
       "family": "air",
-      "label": "Jumpstarter draft arrives on a separate editing surface with the capped-back pen already in the hand | Bank performance: An editable page settles under a guide. Approved sound: An editable page settles under a guide"
+      "label": "Jumpstarter draft arrives on a separate editing surface with the capped-back pen already in the hand | Bank performance: An editable page settles under a guide. Approved sound: An editable page settles under a guide",
+      "beat_id": 30,
+      "visual_at_s": 91.3,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 91.291
     },
     {
       "t": 94.274,
@@ -277,7 +427,12 @@
       "pan": 0.0,
       "take": "paper_v5.wav",
       "family": "texture",
-      "label": "Hand-held pen nib contacts the page and draws a neutral editorial selection mark through the current paragraph | Bank performance: One quiet pen-on-paper stroke. Approved sound: One quiet pen-on-paper stroke"
+      "label": "Hand-held pen nib contacts the page and draws a neutral editorial selection mark through the current paragraph | Bank performance: One quiet pen-on-paper stroke. Approved sound: One quiet pen-on-paper stroke",
+      "beat_id": 31,
+      "visual_at_s": 94.274,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 94.28
     },
     {
       "t": 97.249,
@@ -286,7 +441,12 @@
       "pan": 0.1,
       "take": "tick_v3.wav",
       "family": "click",
-      "label": "Pen and edited section complete the neutral mark and lift together at the end of refinement | Bank performance: The pen stroke ends with a soft lift. Approved sound: The pen stroke ends with a soft lift"
+      "label": "Pen and edited section complete the neutral mark and lift together at the end of refinement | Bank performance: The pen stroke ends with a soft lift. Approved sound: The pen stroke ends with a soft lift",
+      "beat_id": 32,
+      "visual_at_s": 97.249,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 97.248
     },
     {
       "t": 98.24,
@@ -295,7 +455,12 @@
       "pan": 0.2,
       "take": "paw_kenney_impactSoft_heavy_002.wav",
       "family": "sub",
-      "label": "Persistent refinement mark fills the close foreground on the spoken words about the pen mark, with the same nib lifted directly above its endpoint | Bank performance: A quiet pen lift and fingertip release from paper. Approved sound: A quiet pen lift and fingertip release from paper"
+      "label": "Persistent refinement mark fills the close foreground on the spoken words about the pen mark, with the same nib lifted directly above its endpoint | Bank performance: A quiet pen lift and fingertip release from paper. Approved sound: A quiet pen lift and fingertip release from paper",
+      "beat_id": 33,
+      "visual_at_s": 98.24,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 98.254
     },
     {
       "t": 101.268,
@@ -304,7 +469,12 @@
       "pan": 0.0,
       "take": "whoosh_v6.wav",
       "family": "air",
-      "label": "Output receiving shelf and professional surfaces separate once into a compact 2.7-second comparison, placing the original arrival shelf behind the reviewed report and marked draft | Bank performance: One restrained shelf-guide movement into depth. Approved sound: One restrained shelf-guide movement into depth"
+      "label": "Output receiving shelf and professional surfaces separate once into a compact 2.7-second comparison, placing the original arrival shelf behind the reviewed report and marked draft | Bank performance: One restrained shelf-guide movement into depth. Approved sound: One restrained shelf-guide movement into depth",
+      "beat_id": 34,
+      "visual_at_s": 101.268,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 101.259
     },
     {
       "t": 105.42,
@@ -313,7 +483,12 @@
       "pan": -0.2,
       "take": "paper_v6.wav",
       "family": "texture",
-      "label": "AWS provenance volume turns its case-study page beside the finished illustrative workflow | Bank performance: A source volume page turn. Approved sound: A source volume page turn"
+      "label": "AWS provenance volume turns its case-study page beside the finished illustrative workflow | Bank performance: A source volume page turn. Approved sound: A source volume page turn",
+      "beat_id": 35,
+      "visual_at_s": 105.42,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 105.41
     },
     {
       "t": 109.29,
@@ -322,7 +497,12 @@
       "pan": 0.2,
       "take": "pop_kenney_drop_002.wav",
       "family": "blip",
-      "label": "KGS announcement leaf opens in a separate current-announcement frame beside the Koniag ownership rail | Bank performance: A short paper leaf opens against a frame. Approved sound: A short paper leaf opens against a frame"
+      "label": "KGS announcement leaf opens in a separate current-announcement frame beside the Koniag ownership rail | Bank performance: A short paper leaf opens against a frame. Approved sound: A short paper leaf opens against a frame",
+      "beat_id": 36,
+      "visual_at_s": 109.29,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 109.301
     },
     {
       "t": 112.15,
@@ -331,16 +511,26 @@
       "pan": 0.0,
       "take": "creak_v1.wav",
       "family": "texture",
-      "label": "Alaska-return annotation rail unfolds from the announcement border and holds an unquantified label without a zero or money icon | Bank performance: A quiet folding-rail creak. Approved sound: A quiet folding-rail creak"
+      "label": "Alaska-return annotation rail unfolds from the announcement border and holds an unquantified label without a zero or money icon | Bank performance: A quiet folding-rail creak. Approved sound: A quiet folding-rail creak",
+      "beat_id": 37,
+      "visual_at_s": 112.15,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 112.146
     },
     {
-      "t": 113.58,
+      "t": 113.84666666666666,
       "kind": "thud",
       "class": "texture",
       "pan": 0.0,
       "take": "thud_kenney_impactWood_heavy_004.wav",
       "family": "sub",
-      "label": "Working desk returns at full useful scale with the report, marked draft and posted-cap pen | Bank performance: The desk and lamp settle with a low tap. Approved sound: The desk and lamp settle with a low tap"
+      "label": "Working desk returns at full useful scale with the report, marked draft and posted-cap pen | Bank performance: The desk and lamp settle with a low tap. Approved sound: The desk and lamp settle with a low tap",
+      "beat_id": 38,
+      "visual_at_s": 113.58,
+      "sfx_offset_frames": 8,
+      "sfx_offset_reason": "Returning desk settles at the rendered arrival or contact, after the visual move begins.",
+      "rendered_start_s": 113.851
     },
     {
       "t": 116.424,
@@ -349,7 +539,12 @@
       "pan": 0.1,
       "take": "paper_v4.wav",
       "family": "texture",
-      "label": "Professional hand lifts the pen over the marked draft for the closing question | Bank performance: A soft pen-grip contact. Approved sound: A soft pen-grip contact"
+      "label": "Professional hand lifts the pen over the marked draft for the closing question | Bank performance: A soft pen-grip contact. Approved sound: A soft pen-grip contact",
+      "beat_id": 39,
+      "visual_at_s": 116.424,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 116.419
     },
     {
       "t": 117.879,
@@ -358,7 +553,12 @@
       "pan": 0.0,
       "take": "snap_v3.wav",
       "family": "pluck",
-      "label": "Pen barrel finishes its diagonal return toward the opening cradle | Bank performance: A small returning clip snap. Approved sound: A small returning clip snap"
+      "label": "Pen barrel finishes its diagonal return toward the opening cradle | Bank performance: A small returning clip snap. Approved sound: A small returning clip snap",
+      "beat_id": 40,
+      "visual_at_s": 117.879,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 117.881
     }
   ],
   "silence_dip_at": 112.92,

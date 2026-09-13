@@ -1,0 +1,670 @@
+{
+  "run_date": "2026-09-13",
+  "verified_at_utc": "2026-09-13T17:13:21.641000+00:00",
+  "role": "Independent Dispatch contact-sound repair verification; not a panel regrade",
+  "candidate": "final_candidate4",
+  "verdict": "PASS",
+  "hard_blockers": [],
+  "master": {
+    "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/dispatch_master.mp4",
+    "sha256": "fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2",
+    "previous_candidate3_sha256": "2bc286a87121ec5a02753f484f50dcd8132488acc9260a49fcbdbd49b8c820eb",
+    "new_bytes": true,
+    "source_commit": "b74e5950e2869ea305e57b038828f97ae3a66cd1"
+  },
+  "summary": "The eight corrected contact/arrival cues use the approved offsets and exact performed millisecond delays. All eight reconstructed isolated performance peaks are within one 30fps frame of their source-authored arrival frame. Decoded AAC provides strong corroboration for the cap and three other cues. All3955 decoded picture frames are identical to candidate3 and native mute. No production input or prior judge card was changed by this verification.",
+  "acceptance_criteria": {
+    "fps": 30,
+    "maximum_isolated_peak_error_ms": 33.333333333333336,
+    "measured_maximum_absolute_isolated_peak_error_ms": 25.85714285714502,
+    "corrected_beat_ids": [
+      4,
+      8,
+      17,
+      18,
+      21,
+      25,
+      26,
+      38
+    ],
+    "required_blocker_beat_id": 26,
+    "performed_ledger_events_checked": 40,
+    "strict_checks": {
+      "provenance_check": true,
+      "identical_render_receipt": true,
+      "identical_vo_binding": true,
+      "identical_explicit_audio_inputs": true,
+      "unchanged_picture_inputs": true,
+      "props_identical": true,
+      "captions_identical": true,
+      "judge3_preserved": true,
+      "all_input_files_match_receipts": true,
+      "all40_bank_selections_match": true,
+      "all40_takes_kinds_classes_pans_unchanged": true,
+      "performance_and_gain_pitch_maps_unchanged": true,
+      "both_ledgers_share_all40_resolved_timing": true,
+      "ledger_delay_matches_formula": true,
+      "cap_stem_absent_at_old_slot": true,
+      "all8_stem_peaks_within_frame": true,
+      "new_master_bound_to_completed_preflight_and_review_manifest": true,
+      "all3955_decoded_frames_identical": true,
+      "all9_inspected_pngs_equal_fresh_master_rgb_decode": true,
+      "review_manifest_all14_review_hashes_match": true,
+      "review_manifest_all_evidence_hashes_match": true
+    }
+  },
+  "cue_measurements": [
+    {
+      "beat_id": 26,
+      "take": "snap_v2.wav",
+      "take_sha256": "a3c08805214f6ab857bd5705497d27f68fdafa05d264ae367effdba2716276d5",
+      "visual_at_s": 80.65,
+      "offset_frames": 40,
+      "authored_sound_target_s": 81.98333333333333,
+      "rendered_contact_frame_s": 82.0,
+      "performed_onset_s": 81.976,
+      "pitch_cents": 40.50121513672667,
+      "asetrate_hz": 45143,
+      "class_gain_plus_jitter_db": -12.671105861470826,
+      "rounded_gain_linear": 0.2325,
+      "rounded_pan_gains": [
+        0.707,
+        0.707
+      ],
+      "time_jitter_s": -0.007049427188944402,
+      "isolated_transient_peak_offset_s": 0.0043310657596371885,
+      "isolated_transient_peak_s": 81.98033106575964,
+      "peak_error_to_contact_ms": -19.668934240357316,
+      "within_one_frame": true,
+      "stem_duration_s": 0.5666213151927437,
+      "contact_global_frame": 2460,
+      "contact_png": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_002461.png",
+      "visual_observation": "Cap is visibly posted over the rear barrel. At80.6667s it remains separate; frame2460 at82.000s is the first fully clamped authored pose.",
+      "ffmpeg_delay_ms": 81976,
+      "encoded_master_support": {
+        "matched_onset_s": 81.98097505668935,
+        "template_correlation": 0.8644583225250244,
+        "template_peak_s": 81.98607709750567,
+        "local_peak_s": 81.98532879818595,
+        "peak_error_ms": -14.671201814053347,
+        "support": "strong template match in decoded AAC residual",
+        "local_peak_is_isolated_stem_measurement": false
+      },
+      "verdict": "PASS"
+    },
+    {
+      "beat_id": 4,
+      "take": "clank_kenney_impactMetal_medium_000.wav",
+      "take_sha256": "d7c6874b1498dea963b9708b86c28760fb923483b7459ee5020b224a8c4506b4",
+      "visual_at_s": 6.54,
+      "offset_frames": 8,
+      "authored_sound_target_s": 6.806666666666667,
+      "rendered_contact_frame_s": 6.8,
+      "performed_onset_s": 6.82,
+      "pitch_cents": -11.245088661379434,
+      "asetrate_hz": 43814,
+      "class_gain_plus_jitter_db": -14.40427134696028,
+      "rounded_gain_linear": 0.1905,
+      "rounded_pan_gains": [
+        0.707,
+        0.707
+      ],
+      "time_jitter_s": 0.013392148499468376,
+      "isolated_transient_peak_offset_s": 0.005646258503401361,
+      "isolated_transient_peak_s": 6.825646258503402,
+      "peak_error_to_contact_ms": 25.646258503401853,
+      "within_one_frame": true,
+      "stem_duration_s": 0.2706349206349206,
+      "contact_global_frame": 204,
+      "contact_png": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_000205.png",
+      "visual_observation": "Metal nameplate has reached its bracket pose. Spring first target crossing is the timing reference.",
+      "ffmpeg_delay_ms": 6820,
+      "encoded_master_support": {
+        "matched_onset_s": 6.824965986394558,
+        "template_correlation": 0.9975305795669556,
+        "template_peak_s": 6.8330158730158725,
+        "local_peak_s": 6.8330385487528345,
+        "peak_error_ms": 33.03854875283463,
+        "support": "strong template match in decoded AAC residual",
+        "local_peak_is_isolated_stem_measurement": false
+      },
+      "verdict": "PASS"
+    },
+    {
+      "beat_id": 8,
+      "take": "thud_kenney_impactWood_heavy_001.wav",
+      "take_sha256": "c596cda57b80b8c8a55cad762bf3ab7d2ce14ae09e4a93f56c9b48baa868f58b",
+      "visual_at_s": 22.64,
+      "offset_frames": 30,
+      "authored_sound_target_s": 23.64,
+      "rendered_contact_frame_s": 23.666666666666668,
+      "performed_onset_s": 23.637,
+      "pitch_cents": 21.264207618372566,
+      "asetrate_hz": 44645,
+      "class_gain_plus_jitter_db": -11.527299937565648,
+      "rounded_gain_linear": 0.2652,
+      "rounded_pan_gains": [
+        0.707,
+        0.707
+      ],
+      "time_jitter_s": -0.0025969606841907272,
+      "isolated_transient_peak_offset_s": 0.0038095238095238095,
+      "isolated_transient_peak_s": 23.640809523809523,
+      "peak_error_to_contact_ms": -25.85714285714502,
+      "within_one_frame": true,
+      "stem_duration_s": 0.3063718820861678,
+      "contact_global_frame": 710,
+      "contact_png": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_000711.png",
+      "visual_observation": "Ownership assembly has arrived at its final hanging pose. No extra collision surface is inferred.",
+      "ffmpeg_delay_ms": 23637,
+      "encoded_master_support": {
+        "matched_onset_s": 23.64199546485261,
+        "template_correlation": 0.2937968373298645,
+        "template_peak_s": 23.64605442176871,
+        "local_peak_s": 23.663650793650795,
+        "peak_error_ms": -3.0158730158724723,
+        "support": "limited template match; residual local maximum is not uniquely attributable to this cue",
+        "local_peak_is_isolated_stem_measurement": false
+      },
+      "verdict": "PASS"
+    },
+    {
+      "beat_id": 17,
+      "take": "clank_kenney_impactMetal_heavy_000.wav",
+      "take_sha256": "d92027463778212cdaf984ee6b6deebf11f2eb9e596ea4a1a7137f6d8b0b1120",
+      "visual_at_s": 53.88,
+      "offset_frames": 26,
+      "authored_sound_target_s": 54.74666666666667,
+      "rendered_contact_frame_s": 54.766666666666666,
+      "performed_onset_s": 54.76,
+      "pitch_cents": -5.390577734306124,
+      "asetrate_hz": 43962,
+      "class_gain_plus_jitter_db": -13.408473044146893,
+      "rounded_gain_linear": 0.2136,
+      "rounded_pan_gains": [
+        0.707,
+        0.707
+      ],
+      "time_jitter_s": 0.013668885212081688,
+      "isolated_transient_peak_offset_s": 0.0023129251700680273,
+      "isolated_transient_peak_s": 54.762312925170065,
+      "peak_error_to_contact_ms": -4.35374149660106,
+      "within_one_frame": true,
+      "stem_duration_s": 0.16528344671201814,
+      "contact_global_frame": 1643,
+      "contact_png": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_001644.png",
+      "visual_observation": "Record fan and report have reached the completed assembly pose. This is not proof of an unseen guide collision.",
+      "ffmpeg_delay_ms": 54760,
+      "encoded_master_support": {
+        "matched_onset_s": 54.76498866213152,
+        "template_correlation": 0.9939259886741638,
+        "template_peak_s": 54.77095238095238,
+        "local_peak_s": 54.77095238095238,
+        "peak_error_ms": 4.285714285714448,
+        "support": "strong template match in decoded AAC residual",
+        "local_peak_is_isolated_stem_measurement": false
+      },
+      "verdict": "PASS"
+    },
+    {
+      "beat_id": 18,
+      "take": "ding_kenney_impactBell_heavy_000.wav",
+      "take_sha256": "1318e9193e44b4ebd4d3c8ced04b9de8502582cf6fe010a095c7111cdd4d850f",
+      "visual_at_s": 56.185,
+      "offset_frames": 18,
+      "authored_sound_target_s": 56.785000000000004,
+      "rendered_contact_frame_s": 56.8,
+      "performed_onset_s": 56.777,
+      "pitch_cents": 15.52049671079044,
+      "asetrate_hz": 44497,
+      "class_gain_plus_jitter_db": -13.37184489841383,
+      "rounded_gain_linear": 0.2145,
+      "rounded_pan_gains": [
+        0.736,
+        0.677
+      ],
+      "time_jitter_s": -0.007503231152077957,
+      "isolated_transient_peak_offset_s": 0.0037188208616780044,
+      "isolated_transient_peak_s": 56.78071882086168,
+      "peak_error_to_contact_ms": -19.28117913831784,
+      "within_one_frame": true,
+      "stem_duration_s": 1.4551473922902494,
+      "contact_global_frame": 1704,
+      "contact_png": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_001705.png",
+      "visual_observation": "Detached cap is in its resting cup-side pose. The ring is paired to completed detachment travel.",
+      "ffmpeg_delay_ms": 56777,
+      "encoded_master_support": {
+        "matched_onset_s": 56.78197278911565,
+        "template_correlation": 0.9883450269699097,
+        "template_peak_s": 56.785986394557824,
+        "local_peak_s": 56.785986394557824,
+        "peak_error_ms": -14.013605442173116,
+        "support": "strong template match in decoded AAC residual",
+        "local_peak_is_isolated_stem_measurement": false
+      },
+      "verdict": "PASS"
+    },
+    {
+      "beat_id": 21,
+      "take": "tick_v2.wav",
+      "take_sha256": "8c2c9adab149949aeb7ca068cb61b4e82802cec526b2ebc9ca1728e4cd3a05d1",
+      "visual_at_s": 66.963,
+      "offset_frames": 26,
+      "authored_sound_target_s": 67.82966666666665,
+      "rendered_contact_frame_s": 67.83333333333333,
+      "performed_onset_s": 67.816,
+      "pitch_cents": 1.3662716470114589,
+      "asetrate_hz": 44134,
+      "class_gain_plus_jitter_db": -13.504626844079379,
+      "rounded_gain_linear": 0.2112,
+      "rounded_pan_gains": [
+        0.763,
+        0.646
+      ],
+      "time_jitter_s": -0.012763432587441855,
+      "isolated_transient_peak_offset_s": 0.002857142857142857,
+      "isolated_transient_peak_s": 67.81885714285714,
+      "peak_error_to_contact_ms": -14.476190476187867,
+      "within_one_frame": true,
+      "stem_duration_s": 0.23680272108843536,
+      "contact_global_frame": 2035,
+      "contact_png": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_002036.png",
+      "visual_observation": "Pen/cup assembly is at its lower desk pose. The target is arrival, not an invented contact with a separate cradle.",
+      "ffmpeg_delay_ms": 67816,
+      "encoded_master_support": {
+        "matched_onset_s": 67.82097505668935,
+        "template_correlation": 0.537278950214386,
+        "template_peak_s": 67.82380952380953,
+        "local_peak_s": 67.82383219954649,
+        "peak_error_ms": -9.501133786841365,
+        "support": "limited template match; residual local maximum is not uniquely attributable to this cue",
+        "local_peak_is_isolated_stem_measurement": false
+      },
+      "verdict": "PASS"
+    },
+    {
+      "beat_id": 25,
+      "take": "paw_kenney_impactSoft_heavy_000.wav",
+      "take_sha256": "44cbdfadc257a3227dd5231b3ddcc86b759708fc8905aeed857489220e7f6468",
+      "visual_at_s": 78.9,
+      "offset_frames": 7,
+      "authored_sound_target_s": 79.13333333333334,
+      "rendered_contact_frame_s": 79.13333333333334,
+      "performed_onset_s": 79.134,
+      "pitch_cents": -9.338128656227639,
+      "asetrate_hz": 43862,
+      "class_gain_plus_jitter_db": -12.608113366902831,
+      "rounded_gain_linear": 0.2342,
+      "rounded_pan_gains": [
+        0.707,
+        0.707
+      ],
+      "time_jitter_s": 0.0009981987359929355,
+      "isolated_transient_peak_offset_s": 0.005646258503401361,
+      "isolated_transient_peak_s": 79.1396462585034,
+      "peak_error_to_contact_ms": 6.312925170064432,
+      "within_one_frame": true,
+      "stem_duration_s": 0.5296825396825396,
+      "contact_global_frame": 2374,
+      "contact_png": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_002375.png",
+      "visual_observation": "Pen/cup tool surface is at its first spring target crossing.",
+      "ffmpeg_delay_ms": 79134,
+      "encoded_master_support": {
+        "matched_onset_s": 79.13900226757369,
+        "template_correlation": 0.4962940812110901,
+        "template_peak_s": 79.14496598639455,
+        "local_peak_s": 79.11947845804988,
+        "peak_error_ms": -13.854875283456636,
+        "support": "limited template match; residual local maximum is not uniquely attributable to this cue",
+        "local_peak_is_isolated_stem_measurement": false
+      },
+      "verdict": "PASS"
+    },
+    {
+      "beat_id": 38,
+      "take": "thud_kenney_impactWood_heavy_004.wav",
+      "take_sha256": "29cc03d6f0b8bd5d4d619c610e0e4992e23b829b55438dfbd408c774f0eb0709",
+      "visual_at_s": 113.58,
+      "offset_frames": 8,
+      "authored_sound_target_s": 113.84666666666666,
+      "rendered_contact_frame_s": 113.83333333333333,
+      "performed_onset_s": 113.851,
+      "pitch_cents": 7.804888436292501,
+      "asetrate_hz": 44299,
+      "class_gain_plus_jitter_db": -13.966233689213691,
+      "rounded_gain_linear": 0.2003,
+      "rounded_pan_gains": [
+        0.707,
+        0.707
+      ],
+      "time_jitter_s": 0.00473505050636247,
+      "isolated_transient_peak_offset_s": 0.0034240362811791382,
+      "isolated_transient_peak_s": 113.85442403628117,
+      "peak_error_to_contact_ms": 21.090702947844875,
+      "within_one_frame": true,
+      "stem_duration_s": 0.3087528344671202,
+      "contact_global_frame": 3415,
+      "contact_png": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_003416.png",
+      "visual_observation": "Returning desk assembly has reached its first spring target crossing. No separate lamp collision is claimed.",
+      "ffmpeg_delay_ms": 113851,
+      "encoded_master_support": {
+        "matched_onset_s": 113.85600907029477,
+        "template_correlation": 0.6546354293823242,
+        "template_peak_s": 113.86009070294783,
+        "local_peak_s": 113.82832199546485,
+        "peak_error_ms": -5.0113378684812915,
+        "support": "limited template match; residual local maximum is not uniquely attributable to this cue",
+        "local_peak_is_isolated_stem_measurement": false
+      },
+      "verdict": "PASS"
+    }
+  ],
+  "cap_old_slot_probe": {
+    "window_s": [
+      80.6,
+      81.25
+    ],
+    "isolated_stem_max_amplitude": 0.0,
+    "reason": "Only the cap stem is considered; its first scheduled sample is at81.976. This does not claim silence in the complete narration/music mix."
+  },
+  "picture_identity": {
+    "native": {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/render/video_mute.mp4",
+      "decoded_frames": 3955,
+      "framemd5_data_sha256": "07933678f49c0969aeff90acda4b076192fbe98576242c2872911b4db7d479e8",
+      "first": "0,          0,          0,        1,  3110400, b31faf0c854e6373fa82fc3d5b5da59f",
+      "last": "0,       3954,       3954,        1,  3110400, 2fc7eb2ceefc6ed01b1cabe9f101b418"
+    },
+    "candidate3": {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/final_candidate3/dispatch_master.mp4",
+      "decoded_frames": 3955,
+      "framemd5_data_sha256": "07933678f49c0969aeff90acda4b076192fbe98576242c2872911b4db7d479e8",
+      "first": "0,          0,          0,        1,  3110400, b31faf0c854e6373fa82fc3d5b5da59f",
+      "last": "0,       3954,       3954,        1,  3110400, 2fc7eb2ceefc6ed01b1cabe9f101b418"
+    },
+    "candidate4": {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/dispatch_master.mp4",
+      "decoded_frames": 3955,
+      "framemd5_data_sha256": "07933678f49c0969aeff90acda4b076192fbe98576242c2872911b4db7d479e8",
+      "first": "0,          0,          0,        1,  3110400, b31faf0c854e6373fa82fc3d5b5da59f",
+      "last": "0,       3954,       3954,        1,  3110400, 2fc7eb2ceefc6ed01b1cabe9f101b418"
+    },
+    "all_decoded_frames_identical": true
+  },
+  "actual_current_pixels": {
+    "all_match": true,
+    "frames": [
+      {
+        "global_frame": 204,
+        "time_s": 6.8,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_000205.png",
+        "sha256": "fae65cbdeba7980946c50281cde98a26127623076c2f0a6ff4247c1baa71daa2",
+        "rgb_matches_fresh_master_decode": true
+      },
+      {
+        "global_frame": 710,
+        "time_s": 23.666666666666668,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_000711.png",
+        "sha256": "a5359b17cec515094ac852d3e37cfdc0de5890183d7d78b48a6bcd83a079100d",
+        "rgb_matches_fresh_master_decode": true
+      },
+      {
+        "global_frame": 1643,
+        "time_s": 54.766666666666666,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_001644.png",
+        "sha256": "f818d399209e36e55362d83f717e15e746158301b85a34b103c54c075ab35974",
+        "rgb_matches_fresh_master_decode": true
+      },
+      {
+        "global_frame": 1704,
+        "time_s": 56.8,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_001705.png",
+        "sha256": "cbcddd6de657233483da117765161504461eb0600ab007f326a292ea9456cad9",
+        "rgb_matches_fresh_master_decode": true
+      },
+      {
+        "global_frame": 2035,
+        "time_s": 67.83333333333333,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_002036.png",
+        "sha256": "57f114952af9f6558088cc5b6d0b842c0c64da0644b6f42228870c6c0575188a",
+        "rgb_matches_fresh_master_decode": true
+      },
+      {
+        "global_frame": 2374,
+        "time_s": 79.13333333333334,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_002375.png",
+        "sha256": "3fa12637f45f47cebee110d30f03a5dbcad604cb0eb75761f60c1914b5d517f9",
+        "rgb_matches_fresh_master_decode": true
+      },
+      {
+        "global_frame": 2420,
+        "time_s": 80.66666666666667,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_002421.png",
+        "sha256": "4e3c455f6b64a3493f1e8cb296accf3c00de0e087ce3e29f8204acdff231061e",
+        "rgb_matches_fresh_master_decode": true
+      },
+      {
+        "global_frame": 2460,
+        "time_s": 82.0,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_002461.png",
+        "sha256": "8bc8192a0c23b97b6d5f5e7ab7e3fe555913962eb6af3f033bbe2409b0cad0c7",
+        "rgb_matches_fresh_master_decode": true
+      },
+      {
+        "global_frame": 3415,
+        "time_s": 113.83333333333333,
+        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0913_final_v4/frame_003416.png",
+        "sha256": "4d7a741b3c65765cb61513675738262d575acf1032b75e6eeea434fc1094b76a",
+        "rgb_matches_fresh_master_decode": true
+      }
+    ]
+  },
+  "inspected_strips": [
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/review_20260913_final/strip_cap_contact.png",
+      "sha256": "74a8269b5c240ba2a43d8906baacf248b5d1568e3e178b56fedc85562d7a61af"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_kgs_plate_seats.jpg",
+      "sha256": "258c9a6d6cabaff2725241f483cf40bed744af29c95e83b7286173cb1490bf68"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_ownership_wall_builds.jpg",
+      "sha256": "5d59e724d69e9c73d04bba4628e4a2322ccb2d26804b2be951b835640d586e6f"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_rules_align.jpg",
+      "sha256": "4438e8709338d27af9832f163b8da185aa27b97387fc659183aa542e662fc12e"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_cap_detaches.jpg",
+      "sha256": "662437bc1ce0148f8cbba900c01df59d9d59f96601711eab9f278c9c296b6bc8"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_nib_exposes.jpg",
+      "sha256": "7af3a022a4422ab909057ef43b21ee869ae34bee7bc5928820f1bccbc51fb35c"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_cradles_settle.jpg",
+      "sha256": "8a473fe44fcbc4df61fdba9d0d4dd209a8a622ff0b60da6b031c202b40013183"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_desk_returns.jpg",
+      "sha256": "fccf881712cb6b7a70670422f297795996fb4de835c0440729ee2803b7655f3d"
+    },
+    {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/evidence/filmstrip_pen_returns.jpg",
+      "sha256": "c0e9dcd503670f5f5255721235735d4bdc8781b258e5eb1dd180b597c2b61e28"
+    }
+  ],
+  "provenance": {
+    "check_delivery_result": [
+      true,
+      "render, mix, explicit inputs and all delivery hashes match"
+    ],
+    "native_render_binding": {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/render/video_mute.mp4",
+      "sha256": "322f9ddb6d05fc92c7add8d79bb8a88545c99781be08c73dbee835f2ee5514cb"
+    },
+    "new_mix_binding": {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/master.wav",
+      "sha256": "7d0f9a76750ae4a45c40fd9b12ffb7585d4e19ad7038b8036c67e5d6f3980885"
+    },
+    "unchanged_vo_binding": {
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/vo.wav",
+      "sha256": "6ffa33275036e66bded627c82823cf0dd8ec0b4a5df7508d1ed034c8136beca0"
+    },
+    "delivery_outputs": {
+      "dispatch_master.mp4": "fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2",
+      "dispatch_square.mp4": "de4c1fa62a28f29c43f80074274cc2e2ac4066b6fff8393e60b91132941e87fc",
+      "dispatch_master_720.mp4": "9f544979ac9b7e8be427912ec540903d11371eb9fabd5f0843d9e7b4409c01d9",
+      "dispatch_master_hosted.mp4": "f213e27fb63a0a86e7771764a11df956cc40e31c449962a12e326061f613ba9c",
+      "poster.png": "838ac00d26d462c708b2e353c37c65326be9a0dd2e2cb6a383cfe40a54248c25",
+      "poster_thumb.jpg": "8451a604d308aab43a85a66d7c6267f47c1e81cecfaec5e6c937fab0e26903bf"
+    },
+    "receipt_and_input_hashes": {
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/delivery_sources.json": "a6ff3d80cd20686799d333fb202c05f44becc4a6ae981c6c9ee0852ba5c41088",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/render/video_mute.mp4.sources.json": "f62e483a28d509a38dae6adaedbc8181e701b6ca85da21869a440cfe6db8c4fd",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/master.wav.mix.json": "b9839ad76778d694cc6d2d98e6cfcf6c2e4aec38e56e0fe8e76b4508f26f7969",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/sfx_events.json": "9b0832e3356c85ce99d61d75d610b2e5e893e75105749406024b38327fce6afc",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/sfx_events.json": "c49f3ae7cfd767fbddf4714f7883334fb3da351b3791eb9e18a75f8688505999",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/review_manifest_20260913.json": "9ed24d356fea8657bf2fca28cdd472b6f723efa851746206470d6e7bda8af27a",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/preflight_20260913_final.json": "e407d4f13512e3c2ccca69a47a8b4cca77df61ad8a35cc1ac028684f4a017fcd",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/aac_check.json": "31b5fbda50f6f2bc2c9388abfa8674b469695b0f3fac558aa4b866f6d45ffe7f",
+      "/Users/t/Developer/alaska-ai-weekly/out/evidence/audio_report.json": "cef54b8dba0360cf19e7bd78b37e957058fc9914b4622462405621cda8d810ad",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/vo_script.txt": "5ae7ddb9b7890df4f1d39fb246eb6e62fd91613f20d2791920a2be265de5526f",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/vo_script.json": "7f3f63c19ceeebb4239fac83e6fe42ebe6aa8376a64f7ceb3136fcc9501c03e7",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/episode_props.json": "ac2fe991be05695f7cac117f8ba90d23df2cd3f98b74cfc3a15b0690ab319a41",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/storyboard.json": "232778e8ba70e121b8f515748f640ad62299c4ae2bdec177acbbd9c542ade228",
+      "/Users/t/Developer/alaska-ai-weekly/out/dispatch/judge3_20260913.json": "9ad6a2bafda7c42ac24c6ae1852f412640a73862f91df0daab78aff4a535dab9",
+      "/Users/t/Developer/alaska-ai-weekly/scripts/dispatch_mix.py": "94a43f4a66f6c3163fb3c5d457097a9f08adaff79f5c109241580bcef70a6892",
+      "/Users/t/Developer/alaska-ai-weekly/scripts/sfx_bank.py": "2fb66a30970e6f948b5c62c388af4e1eaa2051d1582796f093a811f08e783ea1",
+      "/Users/t/Developer/alaska-ai-weekly/scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860"
+    },
+    "judgment": "Only the already MIX-tracked scheduler helpers and storyboard sound offsets changed. The original render receipt remains complete and unchanged; new mix and encode receipts bind the repaired delivery. Full native rerender was unnecessary and no legacy timestamp or ship-gate glob shortcut was used.",
+    "excluded_stale_receipts": [
+      "out/dispatch/final_source_receipt.json",
+      "out/dispatch/final_repair_receipt.json"
+    ]
+  },
+  "method": [
+    "Read the preserved candidate3 diagnosis and current actual scheduler, event ledgers, deterministic bank, render/mix/encode receipts. Independently resolved all40 bank choices and compared unchanged take, kind, class, pan and family. Compared literal performance/gain/pitch maps with preserved candidate3.",
+    "Recomputed CRC32 timing jitter and integer millisecond quantization for every event, then checked that both ledgers share the exact rendered_start_s used by the filter delay. Each corrected event retains its old take, pitch, gain and pan; only its approved target offset moves.",
+    "Replayed each bound bank in memory with the actual stereo format, pitch/asetrate, resample, rounded volume and pan parameters. Isolated peak means the largest absolute sample over the performed stereo stem, added to the exact scheduled delay. It is not the largest amplitude in the full narration/music mix.",
+    "Decoded candidate3 and candidate4 AAC to stereo44.1kHz with the same1000Hz highpass. Estimated the old-to-new gain ratio in unchanged10..11s, then formed new minus scaled old. Cross-correlated a50ms bank template around the new event, and also recorded the nearby residual maximum. The ratio was0.9952645714. This is corroborating evidence, not a perfect unmix.",
+    "Computed ffmpeg framemd5 for every decoded native/candidate3/candidate4 video frame. All3955 frame records and their timestamps match. Separately decoded the9 inspected native-resolution PNG locations from the actual new master and compared RGB pixels exactly.",
+    "Actually viewed all8 target native-resolution frames, the earlier cap-travel frame, the fresh8-panel cap-contact strip, and8 current evidence travel strips. Exact contact timing comes from the unchanged source q/spring completion and the first corresponding native frame, with pixels used to verify the physical arrival pose."
+  ],
+  "encoded_master_support": {
+    "strong_template_match_beat_ids": [
+      26,
+      4,
+      17,
+      18
+    ],
+    "limited_template_match_beat_ids": [
+      8,
+      21,
+      25,
+      38
+    ],
+    "cap_residual_peak_s": 81.98532879818595,
+    "cap_residual_peak_error_to82s_ms": -14.671201814053347,
+    "cap_template_correlation": 0.8644583225250244,
+    "highest_strong_match_local_peak_error_ms": 33.03854875283463,
+    "current_encoded_audio_report": {
+      "measured_on": "dispatch_square.mp4",
+      "also_covers_master": true,
+      "master_measured": {
+        "i": -14.33,
+        "tp": -2.74,
+        "lra": 7.4
+      },
+      "master_identity": "the 9:16 master measures I=-14.33 TP=-2.74 LRA=7.4 against the delivered square's I=-14.33 TP=-2.74 LRA=7.4. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
+      "tool": "ffmpeg loudnorm + forced-alignment word timings",
+      "delivered_i": -14.33,
+      "delivered_tp": -2.74,
+      "delivered_lra": 7.4,
+      "targets": {
+        "i": -14.0,
+        "tp_max": -1.0,
+        "lra": [
+          6.0,
+          9.0
+        ]
+      },
+      "pass": {
+        "loudness": true,
+        "true_peak": true,
+        "lra": true
+      },
+      "vo_gaps_ge_0_35s": 30,
+      "vo_gaps_ge_0_50s": 25,
+      "vo_silence_in_gaps_s": 28.82,
+      "last_word_ends_s": 118.54,
+      "longest_gaps": [
+        {
+          "at": 82.28,
+          "len": 1.68
+        },
+        {
+          "at": 28.3,
+          "len": 1.64
+        },
+        {
+          "at": 89.7,
+          "len": 1.6
+        },
+        {
+          "at": 67.58,
+          "len": 1.5
+        },
+        {
+          "at": 21.2,
+          "len": 1.44
+        },
+        {
+          "at": 36.36,
+          "len": 1.44
+        },
+        {
+          "at": 112.26,
+          "len": 1.32
+        },
+        {
+          "at": 5.26,
+          "len": 1.28
+        }
+      ],
+      "diagnosis": "LRA is inside the 6 to 9 LU target."
+    },
+    "aac_check": {
+      "wav": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/master.wav",
+      "pcm_sha256": "7d0f9a76750ae4a45c40fd9b12ffb7585d4e19ad7038b8036c67e5d6f3980885",
+      "codec_params": {
+        "codec": "aac",
+        "bitrate": "192k",
+        "sample_rate_hz": 48000,
+        "channels": 2
+      },
+      "metrics": {
+        "input_i": -14.33,
+        "input_tp": -2.74,
+        "input_lra": 7.4
+      },
+      "pass": true,
+      "errors": []
+    }
+  },
+  "limitations": [
+    "No subjective listening or whole-film panel score is claimed.",
+    "Precise eight-cue peak times are reconstructed isolated performed stems backed by verified source and delivery receipts. They are not eight independently isolated tracks recovered from the final AAC.",
+    "The old/new AAC residual contains differences from randomized ambience, codec behavior and nonlinear/global mix processing. Correlations below0.8 for beats8,21,25,38 are reported as limited support; their local maxima must not be described as unambiguous cue peaks.",
+    "The one-frame criterion refers to the source-authored completed arrival or spring target-crossing pose. Several stylized assemblies have no separately drawn collision plane; this report does not invent one.",
+    "Zero cap-stem amplitude over80.60..81.25s establishes removal of the old cap event only. Narration, music and other effects continue in that complete-mix interval.",
+    "This PASS clears the bounded audio repair verification. It does not replace the required new-byte Flow POST or independent panel disposition."
+  ],
+  "production_changes_made": false,
+  "judge3_regraded": false,
+  "old_archives_preserved": true
+}

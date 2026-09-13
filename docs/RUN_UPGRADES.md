@@ -3425,3 +3425,14 @@ measurements and event evidence without a subjective listening claim. Eighteen a
 contract, timing, asset, rendering, copy and audio upgrades are included in the email.
 Permanent media, feed deployment, unsent draft and merged release remain separately
 recorded in the final release evidence.
+
+The first delivery-email build rejected a semicolon in the voice-credit wording. A
+punctuation-only correction preserved the complete attribution and passed the visible-copy
+gate. One draft was then created and read back exactly, with all seven sources and eighteen
+upgrades, DRAFT only and never SENT. This did not alter any graded media input.
+
+Delivery is verified independently: five permanent assets match exact local bytes; feed
+commit c18cda4efbd3c8f8a6c559d02342ded7aa65534e deployed successfully in Pages run
+34771954900; the ordinary public watch URL passes desktop and phone playback, sound,
+pause and caption checks. Both final ship_gate and no_exit checks pass. The canonical
+release index and sanitized receipts are in out/dispatch/RELEASE.md.

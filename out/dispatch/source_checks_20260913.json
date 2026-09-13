@@ -1,0 +1,97 @@
+{
+  "checked_at": "2026-09-13T15:29:31.614848+00:00",
+  "checks": [
+    {
+      "command": [
+        "video-engine/node_modules/.bin/tsc",
+        "--noEmit",
+        "-p",
+        "video-engine/tsconfig.json"
+      ],
+      "exit": 0,
+      "detail": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/storyboard_check.py"
+      ],
+      "exit": 0,
+      "detail": "  shots: 13 across 13 distinct compositions (each cut moves to a different world, not a zoom)"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/text_fit_check.py"
+      ],
+      "exit": 0,
+      "detail": "text-fit: 29 plated strings/variants measured (mono, Plate, actual Label), 0 not measured, 0 failing"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/visible_copy_check.py"
+      ],
+      "exit": 0,
+      "detail": "}"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/caption_band_check.py"
+      ],
+      "exit": 0,
+      "detail": "caption_band_check: clean across 1 file(s)"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/caption_spelling_check.py"
+      ],
+      "exit": 0,
+      "detail": "caption_spelling_check: clean, 35 cues carry none of the 2 declared respellings"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/plate_overlap_check.py"
+      ],
+      "exit": 0,
+      "detail": "plate_overlap_check: clean across 1 file(s), 12 scene(s) parsed"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/zoom_clip_check.py"
+      ],
+      "exit": 0,
+      "detail": "zoom_clip_check: clean, 15 string(s) measured against the frame edge"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/claims_contract_check.py"
+      ],
+      "exit": 0,
+      "detail": "claims_contract_check: 81 machine obligation(s) met, none outstanding"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/vo_claims_check.py"
+      ],
+      "exit": 0,
+      "detail": "PASS [vo_claims_check] 16 narration lines checked against 18 claims; no obligation violated, no unsourced quantity and no unsourced cadence."
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/caption_check.py",
+        "out/dispatch/post.txt"
+      ],
+      "exit": 0,
+      "detail": "RESULT: PASS \u2713 \u2014 clears the objective rules; now score config/linkedin_caption_rubric.yaml"
+    }
+  ],
+  "pass": true
+}

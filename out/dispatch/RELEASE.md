@@ -1,25 +1,15 @@
-# The Question Comes First
+# The Pen Still Has Work — September 13th, 2026
 
-Watch the September 12 Dispatch at https://alaskaaihq.com/videos/#dispatch-2026-09-12-the-question-comes-first
+[Watch the film](https://alaskaaihq.com/videos/#dispatch-2026-09-13-the-pen-still-has-work). The live desktop and phone feed both play the current release, with sound controls, readable captions and the correct rendition. One Gmail draft was created in the connected account, addressed to that actual profile address; its exact HTML was read back with DRAFT and without SENT. No email or social post was sent.
 
-UAA has acquired a dry EEG system for its AI and Robotics Lab. This film follows a research notebook gaining an additional collection-and-test page while useful public-data pages stay open. Reading and programming studies remain planned. The separate-person test is explicitly a conditional research principle, not a UAA result.
+- [Square download](https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_square.mp4) · [Vertical download](https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_master.mp4) · [Mobile rendition](https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_master_720.mp4). All five permanent media assets return HTTP 200 and match local SHA-256 bytes.
+- Native picture source `92c143e4cd6d60348c1fa350ee49bf5b73bb8398`; mix source `b74e5950e2869ea305e57b038828f97ae3a66cd1`. Graded master SHA-256 `fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2`. The 3,955-frame native render took 836.748 seconds; candidate four repairs only audio, with all decoded picture frames unchanged.
+- Fifteen objective checks pass at 10.0. Current-master judges score 7.788, 7.804, 7.850, median 7.804 against 7.0, zero hard blockers. Final editor, flow, credit, claim, crop, voice and caption checks pass; caption score 8.80. All 230 repository tests pass.
+- Encoded audio is -14.33 LUFS, -2.74 dBTP and 7.4 LU range. Audio judgments use measurements and event evidence, without a listening claim. Contact-sound verification records limitations for four weaker residual waveform matches.
+- Site feed commit `c18cda4efbd3c8f8a6c559d02342ded7aa65534e` has a successful [Pages deployment](https://github.com/Talonsturgill/alaskaaicarousels/actions/runs/34771954900). Weekly PR checks and merge remain separate evidence recorded after this delivery-artifact commit.
 
-The Enthusiast treatment won because one changing notebook carries both the research gain and its limits. Fourteen scenes use Sheet, GripHand, Character, EvidenceTrace, QuestionToken and the new reusable EEGHeadset. QuestionToken also gains fitted custom labels. Lilac daylight, ivory paper, citron tasks, coral tabs and deep violet ink keep the research workspace distinct from recent episodes.
+The September 11th KGS announcement is attributed to the company. The earlier AWS Army case illustrates DORA API/rule-based record assembly and separate Jumpstarter LLM drafting, followed by professional review and refinement. Workflows are illustrative; no independent productivity audit, completed rollout or quantified Alaska return is asserted.
 
-Natural Sulafat narration uses gemini-3.1-flash-tts-preview with SynthID. The 220-word take lasts 122.88 seconds; automated soundcheck is 0.991 with 1.9 percent word error rate and no spoken tags. No time-stretch or added silence was used. Final video duration is 135.567 seconds including credits. The final render took 671.487 seconds. The delivered mix measures -14.67 LUFS and -3.04 dBTP.
+The film uses a Gemini Sulafat preset voice with SynthID, not a clone. Music is “Mining by Moonlight” by Kevin MacLeod, CC BY 4.0. The email contains exact post copy, seven sources, both full cuts, poster, music and voice credits, voice QC, final-mix figures and all eighteen implemented upgrades.
 
-All 15 objective checks and required preflight pass. Final independent scores are 8.01, 8.108 and 8.09, median 8.09 against 7.0, with zero hard blockers. Editorial and final flow reviews pass. The reviewers note limited variety in some desk and hand staging; this is a nonblocking craft assessment. Their audio assessment used current measurements and event evidence, not a listening claim.
-
-All five permanent assets match local SHA256 bytes. The exact feed commit fa883d804327f21b583a76d05c18ec774f9d0651 deployed successfully in Pages run 34712909418. Actual desktop and mobile playback, sound controls, selected renditions, poster paths and readable phone captions were verified. The existing Gmail draft was updated and read back as DRAFT only, with matching post, both cuts, poster, five sources, credits, voice scorecard and sixteen upgrades. No email or social post was sent.
-
-Validation includes 196 repository tests before the email-only repair and 46 focused email, visible-copy and run-guard tests afterward. The final production render is bound to source 85c7b2b; the later email-only repair is 49d1fc6. Heavy film, WAV and full-frame files are hosted or retained locally rather than committed to the source branch.
-
-The complete upgrade history and commit trail are recorded in docs/RUN_UPGRADES.md. Machine-readable delivery and review evidence are in release_delivery.json, review_validation_final.json, panel_verdict.json, the three judge cards, editor_final.json, flow_post_final.json and the current out/evidence pack. Gmail IDs and private delivery payloads remain local.
-
-## Permanent downloads
-
-- dispatch_master.mp4 — https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master.mp4
-- dispatch_square.mp4 — https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_square.mp4
-- poster.png — https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster.png
-- dispatch_master_720.mp4 — https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-dispatch_master_720.mp4
-- poster_thumb.jpg — https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-12-poster_thumb.jpg
+Release evidence: `release_delivery.json`, `remote_media_verification.json`, `feed_publication_20260913.json`, `live_browser_verification_20260913.json`, `gmail_draft_verification_20260913.json`, `panel_summary_20260913.json`, `review_manifest_20260913.json`, `contact_sound_verification_20260913.json`, `preflight_20260913_final.json`, `regression_20260913.json` and `final_delivery_gates.json`. Full local media and private Gmail IDs are excluded from git. Still frames and consecutive motion strips are included.

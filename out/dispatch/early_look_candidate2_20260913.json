@@ -1,0 +1,27 @@
+{
+  "run_date": "2026-09-13",
+  "candidate": 2,
+  "role": "early-look critic",
+  "reviewed_at_utc": "2026-09-13T16:01:28.416512+00:00",
+  "inspected_paths": [
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/candidate2_early/review/sheet_0.png",
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/candidate2_early/review/sheet_3.png",
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/candidate2_early/review/sheet_5.png",
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/candidate2_early/review/strip_pen_roll.png",
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/candidate2_early/frames/frame_000031.png",
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/candidate2_early/frames/frame_000121.png"
+  ],
+  "scope": "The supplied contact sheets, pen-roll strip and two native frames from the first 165 rendered frames only. Pixels were inspected directly. No later-film, audio or final-panel assessment.",
+  "verdict": "no_blocking_defect_observed",
+  "blocking_defects": [],
+  "observations": [
+    "The main title, TWO OUTPUTS, WATCH THE PEN and sampled captions are legible with separate text zones. No text-to-text collision is visible.",
+    "Both native frames show the complete REPORT and FIRST DRAFT labels, clear of the pen. The brand eyebrow also remains complete above the episode title.",
+    "The pen retains its cap, clip, collar and barrel assembly across the sheets and strip. No sampled part swap, broken joint, tearing or abrupt geometry discontinuity is visible.",
+    "The central story objects and caption band fit the square-safe region in the native frames. Cropped table edges do not remove story information."
+  ],
+  "motion_limit": "The supplied strip supports a continuity check, not a claim that the whole opening has been watched in real time.",
+  "edits_made": false,
+  "panel_score_assigned": false,
+  "output": "out/dispatch/early_look_candidate2_20260913.json"
+}

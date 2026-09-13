@@ -1,0 +1,137 @@
+{
+  "beat": "science_wildlife_fisheries_ocean",
+  "window": [
+    "2026-09-03",
+    "2026-09-13"
+  ],
+  "researched_at": "2026-09-13T13:45:37.447451+00:00",
+  "search_queries_used": 12,
+  "search_calls_used": 4,
+  "notes": "Slow window. One fresh AI-assistance candidate; one strong robotics framework candidate already used by the sibling carousel publication. No clean second un-repeated science story was verified. All accepted source bodies fetched.",
+  "stories": [
+    {
+      "story_title": "AI assistance enters the Bering Sea pollock assessment review record",
+      "summary_2_sentences": "A NOAA Alaska Fisheries Science Center working paper dated September 3rd recommends Model 26.0 for the November and December assessment review. It explicitly discloses AI assistance in document development and model implementation, with authors retaining scientific responsibility.",
+      "why_it_matters_to_alaskans": "The eastern Bering Sea pollock assessment informs catch-limit advice; reproducible model changes have direct fishery relevance.",
+      "sources": [
+        {
+          "url": "https://noaa-afsc.github.io/EBS_pollock/doc/EBSpollock_Sept_2026.html",
+          "outlet": "NOAA Alaska Fisheries Science Center",
+          "pub_date": "2026-09-03",
+          "publication_timestamp": "2026-09-03 20:59 (timezone unspecified)",
+          "author": "James Ianelli; Sophia Wassermann; Carey McGilliard; Grant Adams; Matt Cheng; Cody Szuwalski; Cole Monnahan",
+          "body_fetched": true,
+          "fetch_method": "Python urllib HTTPS; web search discovered source, direct web open errored"
+        }
+      ],
+      "exact_facts": [
+        "Comparison data cover 1964 to 2024; new 2025 and 2026 observations await quality checks.",
+        "47 of 50 dispersed-start fits reached the best solution; all 50 simulated-data self-tests converged.",
+        "Separate FT-NIRS age-data comparisons flag lower cohort consistency than traditional microscope ages; consequence remains unresolved."
+      ],
+      "quote": "Artificial intelligence (AI) tools were used to aid document development and model implementation.",
+      "visual_story_fuel": [
+        "Bering Sea pollock silhouette to otolith rings to scientific review table.",
+        "Fifty fit markers: 47 at best solution, three at alternative objective.",
+        "Model-comparison plots are embedded in the working paper."
+      ],
+      "caveats": [
+        "Recommendation, not adoption or a new catch limit.",
+        "AI is documented as authoring/code assistance; Rceattle itself is not established here as an AI predictor.",
+        "FT-NIRS is a separate measurement-method issue, not proof of a newly deployed AI system."
+      ],
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "dedupe_status": "Not among supplied excluded subjects; confirm run ledger.",
+      "editorial_strength": "moderate: strongest clean science lead, but AI role is assisted scientific work rather than autonomous decision-making"
+    },
+    {
+      "story_title": "NOAA sets a calibration-first path for autonomous fisheries surveys",
+      "summary_2_sentences": "A September 3rd NOAA feature presents an Alaska Fisheries Science Center-led framework for integrating autonomous vehicles, optics, acoustics, and eDNA with conventional surveys. Parallel tests preserve comparability with historical stock-assessment data.",
+      "why_it_matters_to_alaskans": "Alaska pollock surveys and North Pacific rockfish sampling are concrete examples; new platforms could expand coverage.",
+      "sources": [
+        {
+          "url": "https://www.fisheries.noaa.gov/feature-story/charting-future-fisheries-independent-surveys",
+          "outlet": "NOAA Fisheries",
+          "pub_date": "2026-09-03",
+          "last_updated": "2026-09-11",
+          "author": "NOAA Fisheries; Stan Kotwicki quoted as framework lead author",
+          "body_fetched": true
+        },
+        {
+          "url": "https://academic.oup.com/icesjms/article/83/7/fsag134/8735857",
+          "outlet": "ICES Journal of Marine Science",
+          "pub_date": "2026-07-16",
+          "author": "Stan Kotwicki et al.",
+          "body_fetched": true,
+          "background_context": true
+        }
+      ],
+      "exact_facts": [
+        "NOAA documents an earlier acoustic-only Saildrone pollock survey when COVID curtailed conventional surveys.",
+        "The article says AFSC is exploring uncrewed vehicles working alongside research vessels."
+      ],
+      "quote": "And one of the biggest challenges is maintaining data consistency and continuity.",
+      "visual_story_fuel": [
+        "DriX H-8 alongside NOAA Ship Oscar Dyson.",
+        "Dutch Harbor Saildrone and stereo-camera frame.",
+        "Paired conventional and autonomous survey paths."
+      ],
+      "caveats": [
+        "Framework report, not a new Alaska deployment announcement.",
+        "CROSS-SURFACE REPEAT: Alaska AI carousel published this same framework on September 6th. Do not treat it as a clean fresh lead without editorial clearance."
+      ],
+      "prior_publication": {
+        "url": "https://alaskaaihq.com/archive/2026-09-06/",
+        "title": "Run Both Instruments, or Lose the Record",
+        "body_fetched": true
+      },
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "dedupe_status": "Not listed in supplied Dispatch exclusions, but sibling carousel repeat verified.",
+      "editorial_strength": "strong visual robotics material, weak freshness because already published"
+    }
+  ],
+  "rejected_or_unqualified_leads": [
+    {
+      "title": "Nine Species of Deep-Sea Sponges Discovered in Alaska",
+      "url": "https://www.fisheries.noaa.gov/feature-story/nine-species-deep-sea-sponges-discovered-alaska",
+      "pub_date": "2026-09-10",
+      "body_fetched": true,
+      "reason": "Fresh and visual, but no documented AI/ML/robotics component."
+    },
+    {
+      "title": "Ancient cheetah adapted to fish-based diet",
+      "url": "https://www.uaf.edu/news/ancient-cheetah-adapted-to-fish-based-diet-to-survive.php",
+      "pub_date": "2026-09-04",
+      "body_fetched": true,
+      "reason": "UAF isotope research with no documented AI/ML/robotics component."
+    },
+    {
+      "title": "RAISE mini-grants community call",
+      "url": "https://coeng.uaa.alaska.edu/AI/raise-mini-grants-community/",
+      "body_fetched": true,
+      "reason": "Relevant AI call, September 21st deadline; no clear publication date verified."
+    },
+    {
+      "title": "UAA AIR Lab NSF 2614749 assistantship",
+      "url": "https://www.linkedin.com/posts/uaa-air-lab_fully-funded-ms-research-assistant-position-activity-7497754818770374656-Zjiq",
+      "reason": "LinkedIn discovery only; NSF primary source failed, exact publication date unverified. Not usable as sole source."
+    },
+    {
+      "title": "Alaska Earthquake Center landslide postdoctoral opening",
+      "url": "https://earthquake.alaska.edu/seismic-waves-nepals-landslide-flood-reached-alaska-and-so-should-lessons",
+      "reason": "Hiring discovery dates were aggregators; related primary news dated September 2nd outside window. Not accepted."
+    }
+  ],
+  "new_sources_to_consider": [
+    {
+      "url": "https://noaa-afsc.github.io/EBS_pollock/",
+      "rationale": "Primary NOAA assessment working papers expose implementation, diagnostic, and AI-assistance disclosures before council reviews."
+    }
+  ]
+}

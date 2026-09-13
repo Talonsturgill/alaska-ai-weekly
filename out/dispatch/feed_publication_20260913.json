@@ -1,0 +1,28 @@
+{
+  "run_date": "2026-09-13",
+  "published_at": "2026-09-13T17:33:35.210983+00:00",
+  "feed_commit": "c18cda4efbd3c8f8a6c559d02342ded7aa65534e",
+  "commit_url": "https://github.com/Talonsturgill/alaskaaicarousels/commit/c18cda4efbd3c8f8a6c559d02342ded7aa65534e",
+  "entry": {
+    "id": "dispatch-2026-09-13-the-pen-still-has-work",
+    "date": "2026-09-13",
+    "title": "The Pen Still Has Work",
+    "caption": "Koniag Government Services says it supports Wingman digital office assistants. An earlier AWS Army case study describes DORA assembling records and separate Jumpstarter tools drafting sections, followed by human review and refinement.",
+    "video": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_master.mp4",
+    "poster": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-poster.png",
+    "video_mobile": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_master_720.mp4",
+    "poster_thumb": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-poster_thumb.jpg"
+  },
+  "exact_committed_entry_verified": true,
+  "pages_deployment_verified": true,
+  "pages_run": {
+    "id": 34771954900,
+    "head_sha": "c18cda4efbd3c8f8a6c559d02342ded7aa65534e",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/Talonsturgill/alaskaaicarousels/actions/runs/34771954900"
+  },
+  "deployment_verified_at": "2026-09-13T17:34:56.806017+00:00",
+  "live_manifest_exact_entry_verified": true,
+  "live_manifest_http_status": 200
+}

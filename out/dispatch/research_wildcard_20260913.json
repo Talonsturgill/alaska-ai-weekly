@@ -1,0 +1,226 @@
+{
+  "beat": "wildcard, energy, businesses and Alaska impacts",
+  "window": [
+    "2026-09-03",
+    "2026-09-13"
+  ],
+  "researched_at": "2026-09-13",
+  "search_budget_used": {
+    "web_search_calls": 4,
+    "individual_queries": 12
+  },
+  "dedupe_checked": true,
+  "stories": [
+    {
+      "rank": 1,
+      "story_title": "Koniag's subsidiary is building the automation behind Wingman",
+      "summary_2_sentences": "Koniag Government Services said on September 11th that it supports CDAO's Wingman digital-assistant expansion. Its work applies generative AI and robotic process automation to federal workflows including procurement, logistics and financial management.",
+      "why_it_matters_to_alaskans": "KGS is a subsidiary of Koniag, the Alaska Native regional corporation with Kodiak Alutiiq roots. This is a named Alaska-owned business building federal AI capabilities; the announcement doesn't quantify Alaska jobs, revenue or shareholder distributions from Wingman.",
+      "sources": [
+        {
+          "url": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+          "outlet": "Koniag Government Services",
+          "pub_date": "2026-09-11",
+          "author": "Koniag Government Services",
+          "fetched": true,
+          "primary_source": true,
+          "brief_quote": "more than $37M in annual cost avoidance",
+          "facts": [
+            "KGS describes support for CDAO Research and Engineering and other defense organizations.",
+            "Wingman combines AI, machine learning, LLMs, generative AI, RPA and low-code tools.",
+            "The cited cost avoidance belongs to earlier Army procurement automation by a KGS team, not measured Wingman savings."
+          ],
+          "date_note": "Use September 11th, the date on the company-hosted release. The syndicated release is dated September 10th."
+        },
+        {
+          "url": "https://www.koniag-gs.com/the-kgs-story/",
+          "outlet": "Koniag Government Services",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "KGS identifies itself as Koniag's subsidiary and describes the corporation's Kodiak Alutiiq origins."
+          ]
+        },
+        {
+          "url": "https://www.koniag.com/our-investments/portfolio/",
+          "outlet": "Koniag",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "The parent corporation lists Koniag Government Services in its own investment portfolio under Government Contracting."
+          ]
+        },
+        {
+          "url": "https://www.koniag.com/our-investments/",
+          "outlet": "Koniag",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "Koniag describes its portfolio as subsidiary companies and its mission as growing earnings and assets to support Alutiiq shareholders and future generations."
+          ]
+        },
+        {
+          "url": "https://www.koniag.com/about-us/history-culture/",
+          "outlet": "Koniag",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "Koniag describes its Alutiiq ancestors settling Kodiak Island."
+          ]
+        },
+        {
+          "url": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+          "outlet": "Amazon Web Services",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "brief_quote": "It gives them back nearly an hour each time",
+          "quote_speaker": "Carin Chapman, KGS VP of AI Strategy and Enablement, quoted by AWS",
+          "facts": [
+            "AWS reports DORA reduced a roughly one-hour contractor-responsibility task to two minutes.",
+            "A contracting professional sends a vendor UEI in the email subject; DORA retrieves compliance information through APIs and generates a report for human review and determination.",
+            "AWS distinguishes DORA automation from Bedrock-powered Jumpstarter tools that draft contracting documents using LLMs.",
+            "AWS reports 687,000 annual labor hours saved and about $37 million annual cost avoidance across Army procurement automation tools. These are portfolio results, not DORA alone or Wingman performance.",
+            "AWS connects the prior procurement work to later Wingman work."
+          ],
+          "limitation": "This is a vendor partner case study, not an independent government audit. It has no clear publication date and serves only as background, with AWS attribution on every performance claim."
+        }
+      ],
+      "visual_story_fuel": [
+        "A UEI enters an email subject, API lookups feed a standardized responsibility report, and a human reviews it. A 60-minute ring contracts to two, explicitly marked AWS case study and earlier Army procurement work.",
+        "A physical stack of procurement forms moves through a transparent automation mechanism, with contracting, logistics and finance taking separate paths.",
+        "Map Kodiak ownership to federal customer workflows, keeping ownership distinct from local deployment.",
+        "Show the earlier Army result as a separately dated evidence card; avoid presenting it as Wingman's measured effect."
+      ],
+      "editorial_caution": "A fresh company disclosure of support, not a newly awarded contract. No award value, launch date, deployment count or independent performance audit is supplied. AWS is a corroborating vendor primary source, not independent outcome validation. Distinguish non-AI/RPA DORA from LLM-based Jumpstarters. Do not say AI alone produced the entire reported saving.",
+      "suggested_stance": "curious",
+      "confidence": "high on attributed company claims; no independent performance verification",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true
+    },
+    {
+      "rank": 2,
+      "story_title": "Alaska's robotics season keeps existing classroom robots in play",
+      "summary_2_sentences": "FIRST in Alaska's September 4th update set September 12th Tech Challenge kickoffs in Anchorage, Fairbanks and Juneau. The same update tells LEGO League teams that Alaska tournaments will use Founders Edition while the global program prepares for its final LEGO partnership season.",
+      "why_it_matters_to_alaskans": "Alaska coaches have a concrete equipment decision: existing supported robots remain usable, and hardship assistance extends to veteran FTC teams. The news supports a robotics story; it doesn't establish a new Alaska machine-learning deployment.",
+      "sources": [
+        {
+          "url": "https://www.jedc.org/firstinalaska/9-4-2026-season-updates/",
+          "outlet": "FIRST in Alaska / Juneau Economic Development Council",
+          "pub_date": "2026-09-04",
+          "author": "FIRST in Alaska",
+          "fetched": true,
+          "primary_source": true,
+          "brief_quote": "Alaska tournaments will play using FOUNDERS EDITION.",
+          "facts": [
+            "FTC hardship grants are available to veteran teams this year.",
+            "The update says Alaska's FLL tournaments use Founders Edition.",
+            "SPIKE Prime and Essential remain usable through the 2028 to 2029 FIRST season."
+          ]
+        },
+        {
+          "url": "https://www.jedc.org/firstinalaska/calendar/",
+          "outlet": "FIRST in Alaska / Juneau Economic Development Council",
+          "pub_date": null,
+          "event_date": "2026-09-12",
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "Listed kickoff venues are Fairbanks Cyberlynx, UAA College of Engineering and Juneau's Jordan Creek Center, plus a statewide remote session."
+          ],
+          "limitation": "The calendar verifies scheduling, not attendance or completion."
+        },
+        {
+          "url": "https://community.firstinspires.org/first-lego-education-partnership-update",
+          "outlet": "FIRST",
+          "pub_date": "2026-03-19",
+          "author": "Chris Rake, EVP and COO",
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "FIRST says LEGO Education chose not to renew their partnership, making 2026 to 2027 its final partnered season."
+          ]
+        },
+        {
+          "url": "https://ftc-resources.firstinspires.org/ftc/game",
+          "outlet": "FIRST Tech Challenge",
+          "pub_date": "2026-09-12",
+          "fetched": true,
+          "primary_source": true,
+          "facts": [
+            "The official season page dates BIOBUZZ Competition Manual V1 to September 12th, 2026."
+          ]
+        },
+        {
+          "url": "https://ftc-resources.firstinspires.org/ftc/game/cm-html/BIOBUZZ%20Competition%20Manual%20-%20V1.htm",
+          "outlet": "FIRST Tech Challenge",
+          "pub_date": "2026-09-12",
+          "fetched": true,
+          "primary_source": true,
+          "brief_quote": "During AUTO, ROBOTS operate without any DRIVER control or input.",
+          "facts": [
+            "Section 8: robots operate autonomously for the first 30 seconds and can use sensors to collect pollen, navigate and launch it into hive cells.",
+            "Sections 10.4 and 11.4.1: the autonomous period lasts 30 seconds and uses preprogrammed instructions without driver input.",
+            "Autonomy is verified; this rule does not establish that a specific Alaska team uses machine learning."
+          ]
+        }
+      ],
+      "visual_story_fuel": [
+        "A used classroom robot crosses a season calendar to the 2028 to 2029 compatibility endpoint.",
+        "Three Alaska kickoff locations illuminate on a map before connecting to the statewide remote session.",
+        "Keep FTC kickoff and FLL equipment rules in visibly separate lanes because these are different programs."
+      ],
+      "editorial_caution": "The hardware transition was announced globally in March. Freshness rests on the dated Alaska implementation update and September 12th event schedule; don't frame the partnership ending as breaking news. The September 12th manual directly verifies autonomous operation and sensor navigation for this season; no specific Alaska-team ML implementation is verified.",
+      "suggested_stance": "curious",
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "autonomy_verified": true
+    }
+  ],
+  "rejected_leads": [
+    {
+      "subject": "AURORA-AI rural microgrids",
+      "reason": "Delta Discovery's September 10th article republishes an August 11th UAF announcement. The award isn't fresh in this window.",
+      "fetched_sources": [
+        "https://deltadiscovery.com/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids/",
+        "https://www.uaf.edu/news/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php"
+      ]
+    },
+    {
+      "subject": "ACEP September energy interviews",
+      "reason": "September 9th primary article is fresh but doesn't establish AI or robotics work in the described cybersecurity, turbine and solar topics.",
+      "fetched_sources": [
+        "https://www.uaf.edu/acep/news/2026/energy-in-the-north-on-cybersecurity-marine-energy-internship-and-solar-energy.php"
+      ]
+    },
+    {
+      "subject": "Small-business AI workshops and summit",
+      "reason": "Search results showed future events outside the September 3rd to 13th window or pages with no clear publication date. No sufficiently fresh business deployment verified through the SBDC news index."
+    }
+  ],
+  "new_sources_to_consider": [
+    {
+      "url": "https://www.koniag-gs.com/",
+      "rationale": "Dated first-party announcements on Alaska Native-owned federal AI and automation business."
+    },
+    {
+      "url": "https://www.jedc.org/firstinalaska/",
+      "rationale": "Dated statewide robotics implementation updates and named Alaska events."
+    }
+  ],
+  "notes": "Koniag is the strongest fresh wildcard with an attributed AWS background mechanism and parent-owned Alaska connection verified. FIRST is a verified fallback with a September 12th autonomous-robotics rulebook, not proof of ML use. No subagents spawned and no code or public-state mutations made."
+}

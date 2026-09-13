@@ -1,0 +1,77 @@
+{
+  "run_date": "2026-09-13",
+  "role": "early visual taste reviewer",
+  "reviewed_at_utc": "2026-09-13T15:39:33.081869+00:00",
+  "scope": "Five supplied opening stills only, frames 0 through 160 at 30 fps, ending at 5.333 seconds. No audio or later-film judgment. This is not a panel score or a release approval.",
+  "inspected_images": [
+    {
+      "frame": 0,
+      "time_seconds": 0.0,
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/final_candidate1/early_0.png",
+      "sha256": "3bd2b157d9a200837a6bc9a47c7f290f8cd9ebc94fc37a407a4a526ea2a3873a"
+    },
+    {
+      "frame": 30,
+      "time_seconds": 1.0,
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/final_candidate1/early_30.png",
+      "sha256": "ae5ea27a336e4c0b50b387f6003e1a991047bf55daa4d271c6765d9ff6a509b7"
+    },
+    {
+      "frame": 75,
+      "time_seconds": 2.5,
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/final_candidate1/early_75.png",
+      "sha256": "9fdfd072928a1ead1432463ae6851d4cc8558a7cd927dcafee1ac6aa3f363efc"
+    },
+    {
+      "frame": 120,
+      "time_seconds": 4.0,
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/final_candidate1/early_120.png",
+      "sha256": "30b9bc329b6d8a6161cc5ac42f1f706742de5ac65a8b967b8d36b12862a7856a"
+    },
+    {
+      "frame": 160,
+      "time_seconds": 5.333,
+      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/final_candidate1/early_160.png",
+      "sha256": "6f1470285cacc98f9c1126a4b4dfce874a6efebe912a64cbd90687c25cf9ad29"
+    }
+  ],
+  "inspection_method": "Viewed each actual 1080 by 1920 still. Also inspected a 360-pixel-wide contact sheet of the exact central square crops, x0..1080 and y420..1500. That derivative is a crop/readability check, not a separately rendered square deliverable.",
+  "no_blocking_defect_observed": true,
+  "blocking_defects": [],
+  "visible_minor_defects": [
+    {
+      "id": "opening-square-eyebrow",
+      "frames": [
+        0,
+        30,
+        75,
+        120,
+        160
+      ],
+      "severity": "minor",
+      "observation": "The top branded eyebrow ALASKA.AI DISPATCH straddles y420. The square crop retains only its bottom sliver at the top edge. The complete episode title below it stays readable.",
+      "affected_surface": "Central square crop only",
+      "scope_of_impact": "Nonessential branding is clipped; the sampled opening story information and captions remain inside the crop."
+    },
+    {
+      "id": "opening-draft-label-occlusion",
+      "frames": [
+        30
+      ],
+      "severity": "minor",
+      "observation": "The diagonal pen crosses the left edge of the FIRST DRAFT header, covering its opening letters. The header is unobscured in frame 0 and again in frames 75, 120 and 160.",
+      "affected_surface": "Master and central square crop",
+      "scope_of_impact": "A transient sampled overlap; the post-move frames recover the full label. No continuous-frame duration is claimed."
+    }
+  ],
+  "checked_without_blocking_finding": [
+    "The capped oxblood pen silhouette remains identifiable in the native stills and phone-size crop.",
+    "No sampled cap detachment, swapped end, broken joint or color/shape discontinuity is visible. The samples are too sparse to certify the intervening motion.",
+    "The title, TWO OUTPUTS, WATCH THE PEN and sampled captions remain readable and do not overlap one another.",
+    "Frame 0 contains the pen and both distinct document forms with readable REPORT and FIRST DRAFT labels."
+  ],
+  "changes_made": [
+    "out/dispatch/early_taste_20260913.json"
+  ],
+  "protected_scope": "No source, props, storyboard, scene, audio or render changes. No panel score assigned."
+}

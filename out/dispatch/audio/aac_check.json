@@ -1,6 +1,6 @@
 {
   "wav": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/master.wav",
-  "pcm_sha256": "6b8fc36e5741d190a681241a34716b00077df1246c84584c4fb09a30d2d63b2c",
+  "pcm_sha256": "7d0f9a76750ae4a45c40fd9b12ffb7585d4e19ad7038b8036c67e5d6f3980885",
   "codec_params": {
     "codec": "aac",
     "bitrate": "192k",
@@ -9,7 +9,7 @@
   },
   "metrics": {
     "input_i": -14.33,
-    "input_tp": -3.27,
+    "input_tp": -2.74,
     "input_lra": 7.4
   },
   "pass": true,

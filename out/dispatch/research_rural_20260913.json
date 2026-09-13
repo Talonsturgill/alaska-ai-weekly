@@ -1,0 +1,195 @@
+{
+  "beat": "C/E rural, Native-led technology, workforce, robotics and aviation",
+  "window": [
+    "2026-09-03",
+    "2026-09-13"
+  ],
+  "researched_at": "2026-09-13T13:45:27.728487+00:00",
+  "search_usage": {
+    "web_search_calls": 3,
+    "search_queries": 12,
+    "limit": 12,
+    "note": "No further search queries; followed primary indexes and links."
+  },
+  "stories": [
+    {
+      "story_title": "ASRC Federal brings AI training into its fifth Tech Summit",
+      "summary_2_sentences": "ASRC Federal reported on September 10th that its fifth annual Tech Summit included artificial intelligence sessions and a Battlesnake coding competition. Technical Fellows and STRIDE interns participated alongside its wider technical workforce.",
+      "why_it_matters_to_alaskans": "ASRC Federal is owned by Arctic Slope Regional Corporation, whose Iñupiaq shareholders connect federal technology work to Alaska Native ownership. This is a workforce development story, with no measured training outcomes or new deployed AI system disclosed.",
+      "sources": [
+        {
+          "url": "https://www.asrcfederal.com/building-skills-solutions-and-community-at-asrc-federals-2026-tech-summit/",
+          "outlet": "ASRC Federal",
+          "pub_date": "2026-09-10",
+          "author": "Eric Minor",
+          "fetched": true
+        },
+        {
+          "url": "https://www.asrcfederal.com/about-us/",
+          "outlet": "ASRC Federal",
+          "pub_date": null,
+          "role": "background ownership only",
+          "fetched": true
+        }
+      ],
+      "confidence": "high for occurrence and stated program; company account only",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "event_date": "Not stated; September 10th is publication date.",
+      "verified_facts": [
+        "Fifth annual Tech Summit.",
+        "Sessions covered AI, digital engineering and cybersecurity.",
+        "Participants included Technical Fellows and STRIDE interns.",
+        "Background company page says ASRC has over 14,000 Iñupiaq shareholders."
+      ],
+      "brief_quote": {
+        "text": "I can jump between sessions on risk and governance, AI, software development, cybersecurity and systems engineering.",
+        "speaker": "Matt Altman, ASRC Federal Tech Fellow",
+        "words": 20
+      },
+      "visual_story_fuel": [
+        "Battlesnake gameboard as an explicitly illustrative coding challenge.",
+        "First-party summit photograph, subject to license review.",
+        "A clear ownership diagram connecting ASRC shareholders to federal technical work."
+      ],
+      "limitations": [
+        "No attendance total, event dates, Alaska-based participant count, AI project results or skills assessment disclosed.",
+        "Do not describe the summit as an Alaska deployment or claim its economic impact was measured."
+      ],
+      "editorial_fit": "Verified fresh workforce brief. Thin for a standalone showstopper."
+    },
+    {
+      "story_title": "Alaska channel partner orders a RIO Mini AI security tower",
+      "summary_2_sentences": "AITX said on September 9th that an established Alaska channel partner ordered one RIO Mini for deployment in Alaska. RAD describes the model as a solar-powered mobile security tower with two ROSA Lite units and automated visual detection.",
+      "why_it_matters_to_alaskans": "A small, concrete AI purchase links remote-site monitoring to Alaska conditions. The partner and site are unnamed, and the release confirms an order rather than installation or winter performance.",
+      "sources": [
+        {
+          "url": "https://aitx.ai/press-releases/rad-opens-q3-with-expanding-orders-across-rio-rosa-and-sara",
+          "outlet": "AITX",
+          "pub_date": "2026-09-09",
+          "author": "Company press release",
+          "fetched": true
+        },
+        {
+          "url": "https://radsecurity.com/rio",
+          "outlet": "Robotic Assistance Devices",
+          "pub_date": null,
+          "role": "background manufacturer product specifications",
+          "fetched": true
+        }
+      ],
+      "confidence": "medium; primary company order disclosure with unnamed Alaska buyer and site",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "verified_facts": [
+        "One Alaska RIO Mini order, not all units in the nationwide release.",
+        "Company says order came through an existing Alaska channel partner.",
+        "Product page specifies core AI human, vehicle, perimeter-intrusion and loitering detection.",
+        "RIO Mini product page gives two 540 W solar panels, 5.12 kWh battery storage and 360-degree coverage; these are manufacturer specifications, not Alaska field measurements."
+      ],
+      "brief_quote": {
+        "text": "The RIO Mini order was placed by an established RAD channel partner in Alaska",
+        "speaker": "AITX press release",
+        "words": 15
+      },
+      "visual_story_fuel": [
+        "A mast and solar array with the camera detection zone drawn as an explanatory diagram.",
+        "One order marker on a state silhouette, with no invented town or customer.",
+        "Visible order-to-delivery sequence that leaves deployment unverified."
+      ],
+      "limitations": [
+        "No named customer, municipality, installation date, price or performance results.",
+        "Alaska suitability and daylight adaptation are company assertions.",
+        "Order can be delayed, modified or cancelled; release expressly says deployment is not assured.",
+        "May fail a stricter gate requiring a named Alaska organization."
+      ],
+      "editorial_fit": "Fresh AI application purchase brief, but insufficient named-place proof for a strong lead."
+    }
+  ],
+  "reserve_or_rejected": [
+    {
+      "story_title": "UIC Science helps MIT test magnetic communication through Arctic ice",
+      "status": "Verified primary research, but republished older work. Use only if date rule accepts republication.",
+      "sources": [
+        {
+          "url": "https://news.mit.edu/2026/researchers-tune-into-arctic-under-ice-sounds-test-through-ice-communication-0904",
+          "outlet": "MIT News",
+          "pub_date": "2026-09-04",
+          "author": "Ariana Gaines",
+          "fetched": true
+        },
+        {
+          "url": "https://www.ll.mit.edu/news/researchers-tune-arctic-under-ice-sounds-and-test-through-ice-communication",
+          "outlet": "MIT Lincoln Laboratory",
+          "pub_date": "2026-08-26",
+          "author": "Ariana Gaines",
+          "fetched": true
+        }
+      ],
+      "is_in_window": true,
+      "underlying_new_development_in_window": false,
+      "facts": [
+        "UIC Science, a unit of Ukpeaġvik Iñupiat Corporation, provided Utqiaġvik logistics for the experiment.",
+        "Team drilled a 2 by 3 foot opening through 3.6 feet of ice and deployed an ROV carrying a Havguard modem.",
+        "Alpha prototype transferred about 1.2 kilobytes per second through ice.",
+        "The Utqiaġvik visit was in mid-April, not September.",
+        "Future planned ML would distinguish icequakes from marine mammals; the article does not say this ML was deployed."
+      ],
+      "brief_quote": {
+        "text": "The through-line in all this work is minimizing boots on the ice",
+        "speaker": "David Whelihan",
+        "words": 13
+      },
+      "visual_story_fuel": [
+        "First-party ROV-under-ice video and credited field photographs.",
+        "Cutaway with transmitter below ice and receiver above.",
+        "Sonar motion tracking plus aerial drone imagery."
+      ],
+      "warning": "RobotToday September 8th aggregation incorrectly says the field test occurred in September. Do not use that date. This candidate is robotics demonstrated, ML proposed."
+    },
+    {
+      "story_title": "DEC RFQ 18-904-27 for Halong response drones",
+      "status": "Hold, full original/PDF fetch incomplete; autonomous/AI capability not verified.",
+      "source_url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225070",
+      "indexed_pub_date": "2026-09-09",
+      "discovery_only_facts": [
+        "Indexed primary notice says SPAR seeks U.S.-made Blue List drones for ongoing ex-Typhoon Halong response.",
+        "Indexed budget is $70,000 to $80,000; above $90,000 may be non-responsive.",
+        "Quotes due September 30th at 1 p.m. AKDT."
+      ],
+      "verification_gap": "Web open timed out twice and direct HTTPS returned Request Rejected. No RFQ attachment fetched. Do not claim an autonomous flight task, AI system, award or purchase completion."
+    },
+    {
+      "story_title": "UAA critical-mineral AI award 2614749",
+      "status": "Drop as fresh lead: discovered September performance start, but underlying award is older; LinkedIn recruitment is not sufficient sole source."
+    },
+    {
+      "story_title": "T3 Alaska Drone Club",
+      "status": "Drop from current window: index publication September 1st."
+    },
+    {
+      "story_title": "UAA RAISE mini-grants call",
+      "status": "Drop from dated lead list: official page has deadlines but no clear publication date."
+    },
+    {
+      "story_title": "Merlin shifts certification focus to large aircraft",
+      "source_url": "https://investors.merlinlabs.com/news-releases/news-release-details/merlin-announces-plans-pursue-civil-certification-strategy-large",
+      "pub_date": "2026-09-09",
+      "fetched": true,
+      "status": "Hold: fresh first-party announcement, but fetched release has no concrete named Alaska impact."
+    }
+  ],
+  "new_sources_to_consider": [
+    {
+      "url": "https://www.asrcfederal.com/news/",
+      "rationale": "Primary Alaska Native-owned federal technology and workforce announcements."
+    },
+    {
+      "url": "https://www.ll.mit.edu/news",
+      "rationale": "Primary Arctic robotics fieldwork; compare original dates with MIT News republications."
+    }
+  ],
+  "notes": "No excluded subject reused. Fresh research yield on this beat is thin and access-limited, not proof of a slow Alaska news week. Best two fully fetched in-window candidates are both qualified briefs; neither warrants an unqualified deployed-system claim."
+}
