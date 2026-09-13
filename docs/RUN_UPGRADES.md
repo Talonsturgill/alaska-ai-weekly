@@ -3304,3 +3304,67 @@ the remaining research gestures and verifies rendered credit text.
   playback, sound controls, rendition selection and phone captions are verified. The
   existing Gmail draft was updated and read back with the poster, voice QC, exact post,
   both cuts, all five sources, credits and sixteen upgrades. It remains DRAFT only.
+
+
+## 2026-09-13 — The Pen Still Has Work
+
+The current September 11th KGS announcement motivates an illustrative office workflow.
+The earlier AWS Army case study supplies two distinct mechanisms, DORA record retrieval
+and rule-based assembly, and separate Jumpstarter language-model drafting. Prepared
+outputs earn explicit credit before professional review and refinement. The film does not
+assert an independently audited performance result or a quantified Alaska return.
+
+- `47b8685` changes the Dispatch mailbox contract to the actual currently connected Gmail
+  profile, as the owner requested. The automation was updated and read back. Email and
+  receipt CLIs require an explicit actual address, never the alias `me` or a From override.
+  Fourteen email tests pass. The separate weekly and carousel routines were not invoked.
+- The same commit enforces `on_screen_none` for optional and mandatory claims, closing the
+  path through which omitted optional figures could still appear on screen. Twenty-eight
+  claim tests pass, including malformed forbidden-text contracts.
+- `72d06b5` derives scene anchors from the current board and adds a reusable, idempotent
+  voice conformer. The planning clock stays immutable, all sixteen narration anchors map
+  the current picture/sound/evidence clock, and reveal landing/hold times remain physical
+  frames. Four initial timing tests pass.
+- `78f9b72` permits a declared, explained picture cut within half a second of its narration
+  anchor. This episode cuts 0.14 seconds into the breath before the corporate relationship
+  line to keep the prior shot below sixteen seconds without changing the voice. Two more
+  timing regressions pass. Invalid or unexplained offsets are rejected.
+- The word-timeline helper records the actual speech end in `total`, replacing the stale
+  sixty-second value in both current Gemini output and the older caption path. Four tests
+  reject empty, invalid and contradictory duration records and cover short/long narration.
+- The visible-copy AST adapter follows Plate and Scope text, including defaults, and the
+  episode's one-dimensional heading array. Unknown or missing caller copy fails closed.
+  Nineteen visible-copy tests pass; source review checks actual forwarded strings.
+- The reusable ReviewPen and ReviewStroke library assets add separate cap/nib states,
+  hand-bound movement and ink whose endpoint is the pen's actual contact point. The cap
+  visibly detaches, posts on the rear barrel and persists through later human work. Native
+  stills and eight-frame grids verify cap attachment, writing contact and clear labels.
+- Licensed Fraunces and JetBrains Mono fonts are bundled and explicitly loaded. This
+  removes reliance on host font availability. The source manifest registers both the
+  type assets and the pen extension while preserving legacy pen rendering.
+- The episode's forty sound events use twelve kinds and no consecutive family repeat.
+  The sound and evidence lists use current conformed beat IDs, replacing dated anchors.
+  Before the final render, twenty-five of forty events show a measurable lift and the
+  real pre-button gap provides the required dip; final encoded audio remains separately gated.
+- A repeated camera defect was found in the preview before the final render. Quick prop
+  entrance easing had consumed camera travel early. Independent in/out sine progress now
+  carries the camera through each shot. Preview four passes all thirteen camera pairs and
+  sixty-one of sixty-four living-screen windows. This is preview evidence, not final QA.
+- Pixel inspection clears heading/claim plate collisions, a pen crossing the first-draft
+  badge, the cap crossing the human-work line, the small cap rear socket and the long
+  music credit. Current native frames show the corrected staging; the final encode is
+  still subject to objective checks and independent review.
+- The first voice batch passed an aggregate sound score but replaced the opening full
+  company name with an abbreviation. It was rejected. Shorter, non-conflicting direction
+  preserved the locked 204 words, and a separate opening ASR probe recognized the complete
+  name in the selected new take. The voice guide now records this targeted review rule.
+
+The complete repository regression suite passes 222 tests. Current source gates pass,
+including 81 claim obligations, actual visible copy and all 35 built caption cues.
+
+Repeat offenders addressed this run are stale episode-specific timing tables, visible-copy
+adapters silently skipping wrappers, front-loaded camera travel and trusting aggregate
+voice scores for a load-bearing organization name. No gate threshold was relaxed.
+
+Final encoded QA, panel, delivery and exact release evidence will be recorded here after
+those stages finish.
