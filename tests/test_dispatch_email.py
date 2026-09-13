@@ -123,7 +123,7 @@ class DispatchEmailVoiceScorecardTest(unittest.TestCase):
         self.report_path.write_text(json.dumps(self.report if report is None else report))
 
     def cli(self, *extra):
-        args = ["dispatch_email.py", "--post", str(self.root / "post.txt"),
+        args = ["dispatch_email.py", "--to", "connected-profile@example.com", "--post", str(self.root / "post.txt"),
                 "--sources", str(self.root / "sources.json"),
                 "--video-url-vertical", "https://example.com/vertical.mp4",
                 "--video-url-square", "https://example.com/square.mp4",
@@ -146,6 +146,7 @@ class DispatchEmailVoiceScorecardTest(unittest.TestCase):
 
     def test_cli_restores_hosted_poster_and_compact_factual_scorecard(self):
         payload = self.cli("--poster-url", 'https://example.com/poster.png?x=1&name="page"')
+        self.assertEqual(payload['to'], 'connected-profile@example.com')
         html = payload["html_body"]
         text = visible_html_text(html)
         self.assertIn('src="https://example.com/poster.png?x=1&amp;name=&quot;page&quot;"', html)
