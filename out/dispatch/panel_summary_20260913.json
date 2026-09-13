@@ -1,0 +1,39 @@
+{
+  "run_date": "2026-09-13",
+  "recorded_at": "2026-09-13T17:23:10.525847+00:00",
+  "master_sha256": "fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2",
+  "scores": [
+    7.788,
+    7.804,
+    7.85
+  ],
+  "median": 7.804,
+  "threshold": 7.0,
+  "hard_blockers": [],
+  "judge_cards": [
+    {
+      "file": "judge1_20260913.json",
+      "sha256": "988f5b10257e6a0823b59c1a9fdcf9230193bb563bc0a6e8529d834c293367ce",
+      "score": 7.788
+    },
+    {
+      "file": "judge2_20260913.json",
+      "sha256": "3b5818e14218569b87a4abde3c05668bd4cc4e96e35fcb2661469826e6965223",
+      "score": 7.804
+    },
+    {
+      "file": "judge3_20260913.json",
+      "sha256": "0679108f4df7859634d8f787b1379dd822e43349d700422c75a3d63dad4e22fc",
+      "score": 7.85
+    }
+  ],
+  "editor_ship": true,
+  "flow_ship": true,
+  "contact_sound_verification_pass": true,
+  "objective_checks": {
+    "passed": 15,
+    "total": 15,
+    "score": 10.0
+  },
+  "prior_round": "Candidate3 received two cards and a failed flow review; no complete three-judge median or ship approval was recorded."
+}

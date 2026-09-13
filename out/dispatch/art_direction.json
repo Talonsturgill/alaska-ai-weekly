@@ -1,95 +1,59 @@
 {
-  "run_date": "2026-09-12",
-  "title": "The Question Comes First",
+  "run_date": "2026-09-13",
+  "title": "The Work After the Output",
+  "treatment": "Repaired DRAMATIST, independent scorer selection received before this plan. Enthusiast output-credit scene and Explainer mechanism distinction grafted.",
   "palette": {
-    "sky": "#E8E1FA",
-    "ground": "#776CB6",
-    "hero": "#FFF9E8",
-    "accent": "#E4EC65",
-    "shadow": "#25213D",
-    "secondary": "#ED9575",
-    "why": "A bright lilac studio with warm paper and citron planning tabs puts curious student work in daylight. Deep violet shelves give the archive equal visual authority. It diverges from September11 spruce/cream/berry and September10 charcoal/cyan/magenta; no landscape palette or default blue."
+    "name": "oxblood porcelain petrol copper nickel",
+    "roles": {"sky":"#F4EADF","ground":"#C7805D","hero":"#842F45","accent":"#27615B","shadow":"#211F23","metal":"#B9C9C3"},
+    "why": "Porcelain document stock and copper work surfaces give useful preparation a warm, tactile setting. The oxblood pen is the repeated human tool. Petrol belongs to the retrieval cabinets, not to a default blue technology world. Nickel distinguishes durable mechanisms from editable paper.",
+    "divergence": "September12 used lilac, ivory, citron, coral and violet around an EEG notebook. September11 used cream, spruce, berry and proof gold around a flight crate. This film is dominated by copper work surfaces, porcelain stock and a long oxblood writing instrument; green is restricted to cabinet hardware."
   },
   "light": {
-    "time": "Clear early afternoon",
-    "direction": "Upper left key, diagonal shadows toward lower right",
-    "key": "Warm ivory key on paper and skin, firm enough to show folds and layered stock",
-    "fill": "Cool violet fill one value step below each base",
-    "rim": "Narrow pale citron rim on the headset crown and exposed page edges",
-    "depth": "Three true Stage3D planes at z=480,160,0; contact shadows anchor every notebook/headset; background fixtures sit behind subject planes, never texture pasted on top."
+    "time_of_day":"Late afternoon office light",
+    "direction":"Upper left key rakes down and right across desks; object shadows fall toward the lower right.",
+    "key":"Warm broad window light. Tops are porcelain-bright, front faces retain their material color.",
+    "fill":"Muted neutral fill from the right keeps dark pen and cabinet side walls legible.",
+    "rim":"Thin nickel-white edge on the nib, cap collar, paper corners and report tabs.",
+    "depth":"Four to six real Stage3D planes at each set: rear architecture, task furniture, mechanism, carried documents, professional tool and foreground occluder. Contact shadows attach every object to its receiving surface. Far layers reduce contrast and chroma; the foreground remains crisp.",
+    "why":"The light follows completed outputs from machinery into a welcoming working desk, so the human handoff feels like the next useful action. It does not imply a failed machine or a threat."
   },
   "shape_language": {
-    "grammar": "Rounded headset ribs and supple paper curves contrast with precise archive slots and rectangular test spaces.",
-    "why": "The instrument supplies structured measurements while a foldable notebook holds open research choices. Dotted outlines belong only to planned task/output areas; solid pages show available public data."
+    "mechanisms":"Rectangular slotted trays, notched record tabs, repeated cabinet rails and round API connectors. Their right angles express gathering and organizing.",
+    "human_tool":"One long tapered pen with cap, sprung clip, collar and split nib. Its diagonal cuts across the document's parallel lines when refinement begins.",
+    "documents":"Straight ruled report with source tabs versus an explicitly labeled FIRST DRAFT whose neutral paragraph lines can reflow. They never become generic identical pages.",
+    "why":"The two machine mechanisms and their different outputs remain distinguishable in silhouette before any explanation."
   },
   "casting": {
-    "hero": "Sheet composed as one stitched research notebook",
-    "support": [
-      "Character",
-      "PaperFiber",
-      "EvidenceTrace",
-      "GripHand",
-      "QuestionToken",
-      "Stage3D",
-      "Plane",
-      "CameraMoves",
-      "ContactShadow",
-      "RimLight"
+    "hero":{"asset":"PenAndDocument pen extended as reusable ReviewPen","reason":"An ordinary faceless professional tool supplies a concrete promised action and actual cap, nib and ink states. No employment or cultural claim."},
+    "supporting":[
+      {"asset":"GripHand","reason":"A generic hand must physically carry, inspect, uncap and guide each intended action, with continuous contact rather than a floating pen."},
+      {"asset":"Sheet","reason":"Supporting source records and output stock, never the hero or yesterday's notebook."},
+      {"asset":"PaperOfficeBG","reason":"Shelf office detail restricted to the retrieval room; other worlds have independent furniture and compositions."},
+      {"asset":"Nameplate and BrassPlate","reason":"Material identity labels for KGS and provenance, with mobile-size typography."},
+      {"asset":"Stage3D and CameraMoves","reason":"Real depth reveals which tool made which output and where that output goes next."},
+      {"asset":"EndCredits","reason":"Source and licensed music attribution remains legible for at least ten seconds after narration."}
     ],
-    "new_asset": "EEGHeadset, a neutral reusable research sensor with exactly19 scalp contacts in its explanatory array, two distinct earclips and three empty auxiliary sockets",
-    "why": "Paper, human rig, hand, trace and token are already on the shelf. No existing sensor is worn on a scalp, so the EEG silhouette is the one real subject gap. Generic illustrated students carry no named likeness claim."
+    "new_asset_gap":"The shelf's PenAndDocument pen only hovers and never writes. Extend that existing object family with a reusable cap/clip/nib/contact/ink performance API. No invented character, culturally coded scenery or personified Koniag institution."
   },
   "motion_language": {
-    "hero_moves": [
-      "Notebook springs open and stops against its concealed NEXT STEP wing",
-      "Nineteen contacts expand into a counted schematic then settle into one recording device",
-      "Public page slides through selection and comparison work areas while the new device rests",
-      "A hand assesses a new task and unfolds an extra collection-and-test workspace",
-      "A distinct hypothetical participant enters TEST without ever entering TRAINING"
-    ],
-    "timing": "Anticipation, overshoot and settle for page hinges and hand gestures; light cable follow-through on the headset, book-page recoil and breathing/blinking on human rigs. One snap-in on the revealed NEXT STEP, no frantic continuous zoom.",
-    "blur": "180-degree motion smear only during page wipes and a quick paper shuffle. Hold the identity tab crisp above the wipe."
+    "primary":"Every narrated action has a beat-driven spring with anticipation and a single overshoot. API tabs travel through connected channels; rule rails physically align retrieved records; generated lines grow only in the separately named Jumpstarter bay.",
+    "reaction":"Tabs displace their tray stops, report arrival nudges the pen cradle, an uncapped pen releases its sprung clip, a held pen's nib shares the hand's path and reveals ink only at contact. Reactions lag primary impact by two to four frames.",
+    "ambient":"Separated cabinet tags, task-light suspension, loose paper edges and pen-cup spring each have quiet phase-offset life. Motes and a slow window-shadow sweep supply atmosphere. All motion freezes together for the three reveal reading holds.",
+    "camera":"Compose truckAcross and dollyThrough on record travel, craneDown plus orbitReveal on the review desk, and riseWith plus orbitReveal on the whole-output reveal. Keep the readout copy outside perspective transforms.",
+    "blur":"Short directional blur only on drawer pulls, cap flips and scene wipes. Nib-to-paper contact and small type remain sharp.",
+    "why":"Physical cause and consequence makes office automation visible. No fake errors, queues, approval stamps or timing effects are needed."
   },
   "composition": {
-    "safe_area": "Story essentials within x90..990 and y490..1270; captions stay y1336..1468. Square crop y420..1500 retains every claim and action. Portrait-only brand above420 is nonessential.",
-    "sets": [
-      "Lab bench with window and instrument stand",
-      "Overhead scalp schematic",
-      "Public-data archive shelves and comparison desk",
-      "Reading desk",
-      "Programming desktop with separate planned eye-movement marker",
-      "General methods diagram"
-    ],
-    "hierarchy": "One central action in each shot, then a large short annotation, then provenance/plan label. At least four scales and three camera heights. No side-by-side tiny dashboard.",
-    "signature_shot": "The same small stitched notebook expands sideways into a broad two-route workbench: a public-data page still actively in use and a new TO COLLECT / TO TEST wing, with no answer manufactured.",
-    "paper_identity": "A coral NEXT STEP tab, stitched spine and dog-ear persist in every view. The new wing remains concealed until the late payoff; earlier pages change pose without revealing it.",
-    "negative_space_beats": [
-      {
-        "at_s": 31.78,
-        "until_s": 34.37,
-        "staging": "Archive fixtures recede behind the isolated schematic scalp trace and an empty interpretation area on ivory. Keep the SCHEMATIC label and notebook identity tab. The trace stops before the empty field.",
-        "purpose": "Give measurement and interpretation visibly different spaces."
-      },
-      {
-        "at_s": 83.49,
-        "until_s": 89.48,
-        "staging": "Clear loose stationery and secondary fixtures out of the central square-safe field while the same notebook wing opens. Keep the active public page at left and the new TO COLLECT / TO TEST spaces empty at right.",
-        "purpose": "Make added workspace the reveal while both research routes remain readable."
-      }
-    ]
+    "worlds":["corporate announcement wall","retrieval cabinet aisle and API cutaway","separate generative drafting light table","professional review and editing desk"],
+    "hierarchy":"One primary action at center. The pen reads at70percent of the hook frame; tool/output labels are secondary and provenance is a steady tertiary layer. The mechanism room uses landscape rails, the drafting room uses vertical expansion, and the human desk uses a diagonal working gesture.",
+    "safe_area":"Load-bearing objects and all story labels stay x70..1010 and y480..1320, safe inside the central square crop. Open captions exclusively occupy y1336..1468. Eyebrow and material decoration may extend beyond the square but never carry an essential fact.",
+    "scales":"Insert, close, medium, wide and extreme-wide. At least low, eye, high and overhead camera heights. Adjacent shots change world composition, not just zoom.",
+    "signature_shot":"At the Act3 reset, machine housings withdraw to two far depth planes while their intact outputs move into a generous foreground workbench. The gathered report and editable first draft command the picture, then the pen's diagonal action cuts through their previously parallel paper lines.",
+    "why":"The film grants completed preparation real scale and beauty before following each documented professional action. The last image contains both useful outputs and a visible human refinement mark."
   },
   "craft_advance": {
-    "system": "QuestionToken typography and palette parameters",
-    "change": "Honor arbitrary text instead of silently rendering WHO EARNED THIS, with measured two-line fit and explicit colors while preserving legacy defaults.",
-    "proof": "Use NEXT STEP and TEST? tokens in this film and render long and short copy at phone size; preserve legacy default in a comparison still.",
-    "why": "The shelf advertises custom copy but the current component ignores it. A real generic question prop keeps story language in the asset parameter rather than one-off substitutes."
-  },
-  "binding_corrections": [
-    "RESULT? is never used",
-    "Planned reading and programming remain labeled in every shot",
-    "Waiting participant carries GENERAL METHODS EXAMPLE / IF NEW PEOPLE from its plant",
-    "The public route performs selection and analysis without a fabricated result",
-    "One complete rough cut precedes polished hero work"
-  ],
-  "treatment_deviation": "The scoring room's suggested ink-blue/green/copper palette is replaced deliberately with lilac/ivory/citron/coral because it is more distinct from the two recent films; the material notebook and warm celebratory intent are preserved."
+    "system":"Reusable professional pen articulation and contact-bound editing",
+    "change":"Add cap separation/posting, clip flex, hand-controlled nib position and a progressive neutral annotation stroke to the shelf pen family. Ink must end exactly at the current nib tip and remain after the pen lifts. Preserve legacy PenAndDocument defaults for shipped episodes.",
+    "verification":"At roughcut stage inspect consecutive frames of uncapping, cap seating, contact and lift. At final QA verify ink ends at nib, hand remains attached, cap has a consistent path and the last state differs physically from the capped opening."
+  }
 }

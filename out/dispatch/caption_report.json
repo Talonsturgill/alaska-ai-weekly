@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "fails": [],
+  "warns": [],
+  "metrics": {
+    "chars": 1506,
+    "hook": "A finished report isn't a finished professional decision.",
+    "hook_len": 57,
+    "hashtags": [
+      "#Alaska",
+      "#ArtificialIntelligence",
+      "#Koniag",
+      "#GovernmentTechnology"
+    ],
+    "n_hashtags": 4,
+    "emoji": 0,
+    "unicode_bold": 0,
+    "bullet_lines": 0,
+    "sentence_initial_but": 0,
+    "commas_per_100w": 4.35,
+    "passes": true
+  }
+}

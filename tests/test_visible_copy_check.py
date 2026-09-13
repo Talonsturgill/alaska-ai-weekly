@@ -100,6 +100,27 @@ return <g><Type text={head[0]}/><Type text={head[1]}/><Label text={active.label}
         self.assertEqual(result["status"], "PASS")
         self.assertEqual(result["checked"]["source"], 3)
 
+    def test_plate_scope_and_one_dimensional_head_are_checked(self):
+        self.source.write_text("""
+const HEAD=['FIRST','CANNOT ASSUME'];
+const Plate=({text})=><Type text={text}/>;
+const Scope=({text='DEFAULT: SOURCE'})=><Plate text={text}/>;
+const Shot=({n})=><g><Plate text="BAD; PLATE"/><Scope/><Type text={HEAD[n-1]}/></g>;
+""")
+        result = self.result()
+        self.assertEqual(result["issues"], [])
+        self.assertEqual(len(result["failures"]), 3)
+        self.assertEqual(result["checked"]["source"], 4)
+
+    def test_facade_does_not_hide_unknown_or_missing_caller_copy(self):
+        for call in ('<Plate text={runtimeCopy}/>', '<Plate/>', '<Scope text={runtimeCopy}/>'):
+            with self.subTest(call=call):
+                self.source.write_text('const Plate=({text})=><Type text={text}/>;'
+                    + 'const Scope=({text})=><Plate text={text}/>;const Shot=()=>'+call+';')
+                result = self.result()
+                self.assertEqual(result["status"], "FAIL")
+                self.assertTrue(result["issues"])
+
     def test_code_style_and_comments_not_display_copy(self):
         self.source.write_text('''
 // cannot: a comment;

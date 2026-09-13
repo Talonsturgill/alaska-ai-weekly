@@ -1,0 +1,110 @@
+{
+  "run_date": "2026-09-13",
+  "reviewed_at_utc": "2026-09-13 16:16:50 UTC",
+  "role": "dispatch-fixer read-only diagnosis",
+  "check": "credits_check",
+  "status": "confirmed_source_render_defect",
+  "gate_reproduction": {
+    "command": "python3 scripts/credits_check.py",
+    "exit_code": 1,
+    "exact_failure": "'MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMP' renders 968px wide at size 28.8, over the 936px safe width.",
+    "problem_count": 1
+  },
+  "root_cause": {
+    "summary": "EndCredits fits font size using glyph advance only, then renders 0.6px letter spacing; the long music row therefore exceeds the unchanged936px safe width. The checker includes tracking when measuring, so its failure is correct.",
+    "renderer_locations": [
+      "video-engine/src/lib/EndCredits.tsx:58",
+      "video-engine/src/lib/EndCredits.tsx:95",
+      "video-engine/src/lib/EndCredits.tsx:168"
+    ],
+    "checker_locations": [
+      "scripts/credits_check.py:62 (fit_size, pre-repair arithmetic)",
+      "scripts/credits_check.py:114 (credit_rows, function anchor)",
+      "scripts/credits_check.py:362 (pre-repair tracking-aware width measurement)"
+    ],
+    "classification": "Renderer layout defect; the checker's mirrored size calculation must change with the renderer, but its width threshold is not wrong.",
+    "inspected_renderer_sha256": "8e4d29fb3d2e9fb599afc8bfff2f565bab7f2ab1ee82afa7ddd3c74b4fd8b14a"
+  },
+  "exact_case": {
+    "credit": "Mining by Moonlight by Kevin MacLeod (incompetech.com), licensed CC BY 4.0",
+    "first_rendered_row": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+    "characters": 54,
+    "font_size_px": 28.792026823341235,
+    "letter_spacing_px": 0.6,
+    "glyph_advance_factor": 0.602,
+    "computed_width_px": 967.7712079731768,
+    "safe_width_px": 936,
+    "overflow_px": 31.7712079731768,
+    "tracking_aware_size_px": 27.81383616844567,
+    "tracking_aware_width_px": 935.9721861638315
+  },
+  "actual_encoded_frame_review": {
+    "video": "out/dispatch/dispatch_master.mp4",
+    "sha256": "23e880648ce5ab16f797ee70bd740c5b43ee2834576e13ad242e8648da70786c",
+    "encoded_duration_seconds": 131.833333,
+    "viewed_frame_seconds": [
+      120,
+      125,
+      129.8
+    ],
+    "temporary_frame_paths": [
+      "/tmp/credits_fixer_20260913_120.png",
+      "/tmp/credits_fixer_20260913_125.png",
+      "/tmp/credits_fixer_20260913_129_8.png"
+    ],
+    "visual_finding": "Actually opened all three1080x1920 frames. The current Koniag-GS/Koniag/AWS source labels and complete Mining by Moonlight attribution/licence are visible and high contrast. The long music line extends too close to both frame edges; it is not truncated by the1080px canvas, but it violates the72px inset.",
+    "pixel_measurement": {
+      "method": "Threshold grayscale pixels above170 in the first music-row band y1055..1105, measured identically at all three times.",
+      "ink_bounds_x_half_open": [
+        59,
+        1017
+      ],
+      "safe_bounds_x_half_open": [
+        72,
+        1008
+      ],
+      "ink_width_px": 958,
+      "left_safe_overrun_px": 13,
+      "right_safe_overrun_px": 9,
+      "qualification": "Ink bounds exclude glyph side bearings, so they are narrower than typographic advance. Both measures independently show safe-margin overflow."
+    },
+    "timing": {
+      "credits_frames": 369,
+      "credits_seconds": 12.3,
+      "total_frames": 3955,
+      "calculated_full_opacity_seconds": 10.066666666666677,
+      "calculated_centered_ten_second_window": [
+        119.86666666666667,
+        129.86666666666667
+      ],
+      "scope": "Timeline resolved from current props and renderer; only the three named frames were visually inspected here. A fresh full21-sample/3-OCR gate remains required after repair."
+    }
+  },
+  "stale_report": {
+    "path": "out/dispatch/credits_render_report.json",
+    "current_file_says_pass": true,
+    "its_video_sha256": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
+    "its_content": "Life of Riley music with UAA.ALASKA.EDU, WEARABLESENSING.COM and FRONTIERSIN.ORG; ten-second window123.6\u2013133.6.",
+    "finding": "This is previous-run evidence and cannot validate the current131.833333-second Mining by Moonlight master. Its final133.6-second sample is beyond the current video's end.",
+    "cause": "scripts/credits_check.py returns on static/data/layout problems at374\u2013379 before reaching rendered-report creation at411\u2013413.",
+    "smallest_evidence_fix": "Preserve the old report in the private run archive, then have every early gate failure replace the active report with pass:false, explicit failure stage/reasons, current available input identity, and no claim of pixel/OCR examination. This hardens evidence integrity without changing a threshold."
+  },
+  "smallest_honest_repair": [
+    "Add tracking to the renderer's fitSize calculation: subtract track*max(0,n-1) from available width before solving the existing glyph-advance formula. Keep the same ideal sizes, floor, font,936px safe width and72px margins.",
+    "Pass the actual rendered tracking to site1.4, source0.8 and music0.6 fit calls. Preserve the source and licence strings verbatim.",
+    "Mirror the same layout arithmetic in credits_check.py's fit_size/credit_rows so its predicted size and row y positions match the renderer. Retain mono_w's tracking-aware width validation and all existing thresholds.",
+    "Add a regression for the exact54-character Mining by Moonlight row: original width967.771px fails; corrected size27.813836px gives935.972px and remains well above the13.5px phone-legibility gate.",
+    "Perform a native credits probe, then render and encode the final master from the repaired source and rerun credits_check plus required provenance/preflight checks. Re-evaluate the newly produced OCR/contrast report against the new master hash."
+  ],
+  "needs_new_render": true,
+  "needs_full_rerender": true,
+  "rerender_scope_note": "The visual root is isolated to EndCredits. A native credits-only probe can cheaply verify the fix, but the final delivered master and its source-bound evidence must be replaced; the parent's planned full render/re-encode is appropriate.",
+  "prohibited_workarounds": [
+    "Do not widen MAXW or reduce the72px inset.",
+    "Do not shorten or hand-edit the required music attribution.",
+    "Do not change the legibility floor, readable-time floor or OCR expectations.",
+    "Do not accept the stale passing report as current proof."
+  ],
+  "changes_made": "Only this requested diagnosis JSON was saved. Existing source, gates, props, evidence reports and media were not edited. Three temporary decoded review images were created under /tmp and inspected; no repair was implemented.",
+  "concurrency_note": "The parent began implementing the tracking-aware fix while this diagnosis was being finalized. Findings describe the reproduced failing candidate and inspected renderer hash above. This agent did not edit or verify the repaired source, rerun a repaired gate, or inspect a new master."
+}

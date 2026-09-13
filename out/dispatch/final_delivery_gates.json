@@ -1,0 +1,17 @@
+{
+  "run_date": "2026-09-13",
+  "verified_at": "2026-09-13T17:38:14.288357+00:00",
+  "checks": [
+    {
+      "check": "ship_gate.py",
+      "exit_code": 0,
+      "output": "  beat delivery (ADVISORY): 40/40 beats draw a visible event (100%), caption band from y=1420\nship_gate: owner release is for 2026-08-13, this run is 2026-09-13; it does not apply.\n========================================================================\nSHIP GATE: PASS  ->  SHIP NOW, DO NOT KEEP EDITING\n========================================================================\n  panel median 7.804 >= 7.0   judges=[7.788, 7.804, 7.85]\n  3 deliverables hash-match the graded cut\n  69 pieces of review evidence hash-match\n  cleared after 1 blocked round(s) in the editing loop\n  you may upload, email and merge.\n"
+    },
+    {
+      "check": "no_exit.py",
+      "exit_code": 0,
+      "output": "ONE OUTCOME GATE: a delivered video exists. This run may end.\n  panel: median 7.804 against a 7.0 bar, released by the owner to 6.7 for 2026-08-13\n  OK       9:16 master [dispatch_master.mp4] (131.8s, 37.9 MB, video+audio)\n  OK       1:1 square LinkedIn cut [dispatch_square.mp4] (131.8s, 26.2 MB, video+audio)\n  OK       Gmail draft [private receipt id] to [redacted address] at 2026-09-13T13:32:57\n"
+    }
+  ],
+  "all_pass": true
+}

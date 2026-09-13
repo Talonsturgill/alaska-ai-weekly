@@ -1,0 +1,53 @@
+{
+  "scope": "One native frame probe, not full-film credit dwell proof",
+  "rows": [
+    {
+      "text": "VISIT US AT ALASKAAIHQ.COM",
+      "size": 40,
+      "measured_width": 661.0799999999999,
+      "ink_min_x": 211,
+      "ink_max_x": 866,
+      "safe": true
+    },
+    {
+      "text": "KONIAG-GS.COM",
+      "size": 22,
+      "measured_width": 181.772,
+      "ink_min_x": 451,
+      "ink_max_x": 628,
+      "safe": true
+    },
+    {
+      "text": "KONIAG.COM",
+      "size": 22,
+      "measured_width": 139.64,
+      "ink_min_x": 472,
+      "ink_max_x": 607,
+      "safe": true
+    },
+    {
+      "text": "AWS.AMAZON.COM",
+      "size": 22,
+      "measured_width": 195.816,
+      "ink_min_x": 443,
+      "ink_max_x": 635,
+      "safe": true
+    },
+    {
+      "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+      "size": 27.81383616844567,
+      "measured_width": 935.9721861638317,
+      "ink_min_x": 75,
+      "ink_max_x": 1001,
+      "safe": true
+    },
+    {
+      "text": "LICENSED CC BY 4.0",
+      "size": 27.81383616844567,
+      "measured_width": 311.59072872127723,
+      "ink_min_x": 388,
+      "ink_max_x": 692,
+      "safe": true
+    }
+  ]
+}

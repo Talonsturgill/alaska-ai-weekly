@@ -1,0 +1,118 @@
+{
+  "run_date": "2026-09-13",
+  "validated_at_utc": "2026-09-13T13:51:01.151427+00:00",
+  "verdict": "go_with_attribution",
+  "scope": "KGS Wingman candidate only; the FIRST fallback was not assigned to this validator.",
+  "verified_findings": [
+    {
+      "story_title": "Koniag subsidiary supports Wingman office automation",
+      "pub_date": "2026-09-11",
+      "is_in_window": true,
+      "primary_source": true,
+      "confidence": "medium",
+      "needs_softening": true,
+      "sourcing_rule": "At least one refetched primary source; vendor performance claims attributed, not independently audited.",
+      "claim_ids": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "source_ids": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7"
+      ],
+      "approved_numbers": [
+        "September 11th announcement date",
+        "Optional c15 DORA task duration with AWS attribution",
+        "Optional c16 annual Army portfolio cost avoidance with AWS attribution",
+        "Optional c17 annual Army portfolio hours with AWS attribution"
+      ]
+    }
+  ],
+  "dropped": [
+    {
+      "story_title": "The KGS Story source URL",
+      "url": "https://www.koniag-gs.com/the-kgs-story/",
+      "reason": "Three independent web-open attempts timed out. Drop this URL; parent investments, portfolio and about pages resolve."
+    }
+  ],
+  "stats": {
+    "input_count": 1,
+    "verified_count": 1,
+    "drop_rate": "0%",
+    "source_urls_refetched": 8,
+    "source_urls_resolved": 7
+  },
+  "recommend_broaden_window": true,
+  "recommend_broaden_window_note": "Validator template flag follows verified_count below three. This was a bounded single-candidate validation, so it is not itself a rejection of the chosen story.",
+  "limitations": [
+    "GO only for the fresh attributed company announcement and separately labeled earlier Army clerical-workflow example.",
+    "The KGS-hosted AWS case study reproduces the AWS account. Cross-host agreement is not independent performance validation.",
+    "No independent government performance audit or second independent primary source for DORA timing was located. Optional performance figures must remain vendor-attributed or be cut.",
+    "AWS body supports 687,000, while its headline has 687,00. Do not infer precision, jobs, cash recovered, or Wingman-specific savings.",
+    "No Wingman contract value, local deployment, Alaska jobs, shareholder distribution, independent accuracy rate, or new launch date is established by the announcement.",
+    "The first-person source framing of corporate identity must not become tribal-government, pan-Native, cultural or community sentiment claims.",
+    "No military operational capability, targeting, weapons, battlefield outcome or protected-data claim is approved.",
+    "DORA is described through APIs and prebuilt decision logic; only the separate Jumpstarter tools have an explicit LLM/generative drafting mechanism.",
+    "Current claims_contract_check.py does not enforce on_screen_none or conditional_display_contract. It also checks on_screen_all unconditionally even when must_ship is false. Final source-route, narration and rendered visual review must enforce negative and conditional obligations.",
+    "The AWS account labels CDAO imprecisely as an Army office. Use Chief Digital and Artificial Intelligence Office without the Army qualifier, following the fresh KGS release."
+  ],
+  "numeric_crosscheck": {
+    "DORA_duration": {
+      "sources": [
+        "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "independent_outcome_sources": 0,
+      "approval": "optional attributed vendor report only"
+    },
+    "Army_annual_cost_avoidance": {
+      "sources": [
+        "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+        "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "independent_outcome_sources": 0,
+      "approval": "optional attributed broader-portfolio report only"
+    },
+    "Army_annual_hours": {
+      "sources": [
+        "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "independent_outcome_sources": 0,
+      "approval": "optional attributed broader-portfolio report only"
+    }
+  },
+  "names_checked": {
+    "Koniag Government Services": "KGS, company named in announcement and parent portfolio",
+    "Koniag": "Regional Alaska Native corporation connected to Kodiak; corporate parent, not a tribal government",
+    "CDAO": "Chief Digital and Artificial Intelligence Office, per fresh release",
+    "DORA": "Determination of Responsibility Assistant",
+    "UEI": "Unique Entity Identifier",
+    "SAM.gov": "System for Award Management",
+    "Jumpstarter": "Amazon Bedrock and LLM document draft applications",
+    "Carin Chapman": "Vice President of AI Strategy and Enablement, KGS, per AWS; no direct quote selected",
+    "Matt Carle": "Chief Operating Officer, Defense & Intelligence Line of Business at KGS, per release; no direct quote selected"
+  }
+}

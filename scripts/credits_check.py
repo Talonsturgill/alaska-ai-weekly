@@ -59,8 +59,9 @@ def mono_w(s, size, track=0.0):
     return len(s) * size * 0.602 + track * max(0, len(s) - 1)
 
 
-def fit_size(s, maxw, ideal, floor=13.0):
-    return max(floor, min(ideal, maxw / (len(s) * 0.602 + 0.001)))
+def fit_size(s, maxw, ideal, floor=13.0, track=0.0):
+    return max(floor, min(ideal,
+        (maxw - track * max(0, len(s) - 1)) / (len(s) * 0.602 + 0.001)))
 
 
 def newest_episode():
@@ -117,9 +118,9 @@ def credit_rows(cred):
     raw = cred['music'].upper()
     split = raw.rfind(', LICENSED')
     music = [raw[:split], raw[split + 2:]] if split > 0 else [raw]
-    source_size = min(fit_size(s, MAXW, 22) for s in sources)
-    music_size = min(fit_size(s, MAXW, 32) for s in music)
-    return ([{'text': site, 'y': 740, 'size': fit_size(site, MAXW, 40), 'track': 1.4}]
+    source_size = min(fit_size(s, MAXW, 22, track=.8) for s in sources)
+    music_size = min(fit_size(s, MAXW, 32, track=.6) for s in music)
+    return ([{'text': site, 'y': 740, 'size': fit_size(site, MAXW, 40, track=1.4), 'track': 1.4}]
             + [{'text': s, 'y': 914 + i * source_size * 1.9, 'size': source_size, 'track': .8}
                for i, s in enumerate(sources)]
             + [{'text': s, 'y': 966 + len(sources) * source_size * 1.9 + i * music_size * 1.5,
@@ -283,6 +284,14 @@ def check_rendered_credits(video, props, renderer_source):
 def main() -> int:
     problems = []
 
+    # A source/layout failure must never leave yesterday's passing pixel report
+    # beside today's rejected film. Only a completed current audit replaces this.
+    os.makedirs(OUT, exist_ok=True)
+    report_path = os.path.join(OUT, 'credits_render_report.json')
+    with open(report_path, 'w') as handle:
+        json.dump({'pass': False, 'problems': ['Current credit check has not completed'],
+                   'scope': 'No rendered credit pass is available for this invocation.'}, handle, indent=2)
+
     props_p = os.path.join(OUT, "episode_props.json")
     if not os.path.exists(props_p):
         print("credits_check: no episode_props.json. Run scripts/build_scenes.py first.")
@@ -372,6 +381,9 @@ def main() -> int:
         problems.append(f"the credits ({frames}f) are as long as the whole film ({total}f).")
 
     if problems:
+        with open(report_path, 'w') as handle:
+            json.dump({'pass': False, 'problems': problems,
+                       'scope': 'Credit source/layout failed before rendered pixel inspection.'}, handle, indent=2)
         for p in problems:
             print(f"FAIL credits_check: {p}")
         print(f"\ncredits_check: {len(problems)} problem(s). A Dispatch that cannot credit its "

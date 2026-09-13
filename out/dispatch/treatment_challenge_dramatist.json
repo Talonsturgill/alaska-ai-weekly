@@ -1,62 +1,204 @@
 {
+  "run_date": "2026-09-13",
   "role": "DRAMATIST",
-  "reviewed_at_utc": "2026-09-12T13:29:42.348638+00:00",
-  "scope": "One independent retention cross-challenge of the other three complete treatments. No storyboard or pitch edits.",
-  "reviews": [
-    {
-      "pitch": "treatment_comedian.json",
-      "title": "A Seat for the Question",
-      "verdict": "Strongest physical dramatic engine, conditional on resolving one continuity contradiction.",
-      "sag_near_80s": "78-87 currently waits nine seconds for an announced extension. Give that interval an active student adjustment, hinge load and release; do not hold a static wide shot while repeating added choice.",
-      "act3_countercase": "A full 18-second public-data scene is credible and generous. Strengthen the book supporting another notebook into public recordings actively entering a conceptual analysis workspace while the headset waits. Helpful furniture alone does not demonstrate why the archive can already be sufficient.",
-      "throughline_boundaries": "The cobalt edge, citron hinge and chipped corner identify the table at 0/35/60/96/120. But the cold open says the extension stays locked until Act3, while beat4 makes it a work surface at35 and beat6 calls it folded again. Reserve the actual horizontal extension until87. A distinct upright hinged planning board may rise at35; the extension remains visibly latched beneath it.",
-      "staggered_payoffs": "1.4->87 and44->105 are distinct, eighteen seconds apart. Preserve the stool silhouette at the frame edge during the public-data scene. The late appearance must pay a remembered object, not introduce a new methods lesson.",
-      "padding_test": "60-68 public recordings reach the desk;68-78 they supply an illustrated analysis route without new collection;78-83 the chosen-task board joins the intact archive;83-87 a student opens the unused extension;87-96 both routes gain ordinary working space. Each interval changes the argument or geometry. The existing generic per-beat padding claims need this granularity.",
-      "precise_refinement": "Use one table extension, one opening, one callback. At87 the opening courtesy shuffle becomes a large useful movement. Also replace VO wording about gaining room to ask questions with gaining capacity to record signals during tasks researchers already choose."
-    },
-    {
-      "pitch": "treatment_explainer.json",
-      "title": "The Question Comes First",
-      "verdict": "Best explanatory registration of task and signal, but weakest late dramatic withholding.",
-      "sag_near_80s": "73-90 moves into trays and labels after task context has already paid at68. The film risks becoming a methods diagram at exactly the late attention dip. Keep a human hand and the same physical strip active; show a consequential move to a separate test position, not successive title labels.",
-      "act3_countercase": "58-73 gives public data a full working route and the device no privileged answer. This passes the fair-case test. Keep the route materially useful through95 rather than letting it vanish when the methods inset arrives.",
-      "throughline_boundaries": "The coral corner and punched hole are good identifiers. The strip has meaningful states at0/20/36/73/95/117, but at the60 boundary the archive takes over. Leave the same strip visibly parked in the shared workspace throughout that countercase.",
-      "staggered_payoffs": "Secondary43->68 is well separated from primary14->95. However, beat7 calls the primary payoff90 while retention specifies95. More seriously, task at68 and test before90 disclose the whole answer before the final TASK/SIGNAL/TEST unfold. The late three-part label is a recap unless the physical relationship itself has truly been withheld.",
-      "padding_test": "The 73-82 blank-answer interval and82-95 methods inset can be compressed without losing their claims. They need a distinct physical complication to justify the extra duration. Sixteen seconds on the hardware count earlier also competes with the stronger student-choice story.",
-      "precise_refinement": "Graft the task clip that travels with its recording into the chosen treatment. Keep the hardware cutaway brief. Do not use a final list of labels as the principal promised reveal."
-    },
-    {
-      "pitch": "treatment_enthusiast.json",
-      "title": "The Extra Page",
-      "verdict": "Strongest explicit Act3 countercase and most complete boundary continuity; close second overall.",
-      "sag_near_80s": "The arrival of a different chosen task at76 can produce a fresh decision while the archive stays useful. It becomes a sag if76-84 is merely coexistence held on screen. Have the student compare the task tab with the available page, then unfold an optional collection page without depicting an archive failure.",
-      "act3_countercase": "Best of the three: the existing recording fits a conceptual question and runs the scene while the new headset is idle. Preserve this as an illustration of a suitable dataset, with no invented UAA result or guaranteed time advantage.",
-      "throughline_boundaries": "One stitched notebook with dog-ear and copper tab changes scale at0/30/60/95/117 and returns in the button. This is the clearest written continuity. Avoid adding a separate giant desk that obscures whether the notebook itself transformed.",
-      "staggered_payoffs": "10->90 and48->105 are properly staggered. RESULT? promises a result-shaped reward that the reveal intentionally cannot provide. Replace it with NEXT STEP or ROOM FOR THE TASK from the opening; the mystery should concern what the acquisition adds. Keep the participant visible enough at48 and an intermediate boundary to be remembered at105.",
-      "padding_test": "The five intervals are unusually specific. But60-68 and68-76 both show public data working, so give the first the suitability decision and the second the analysis action.76-84 must visibly assess fit;84-90 opens the extra collection option;90-95 resolves the capability promise. No nine-second empty-flap linger.",
-      "precise_refinement": "Keep the notebook and full-strength public-data scene. Relabel the tease before production and make the late turn a new working surface rather than a blank answer. The final pencil poised over a planned collection page earns the warm button."
-    }
+  "phase": "4.1 full two-minute cross-challenge",
+  "reviewed": [
+    "out/dispatch/treatment_comedian.json",
+    "out/dispatch/treatment_dramatist.json",
+    "out/dispatch/treatment_explainer.json",
+    "out/dispatch/treatment_enthusiast.json"
   ],
-  "strongest_choice": {
-    "pitch": "treatment_comedian.json",
-    "title": "A Seat for the Question",
-    "why": "The opening cramped table, delayed extension, repeated courtesy gag and spare stool give two concrete causes to keep watching. Added recording capacity can become changed space under a student hand, with a visual joke paying the thesis. This is a conditional choice, not a clean pass as written.",
-    "runner_up": "The Extra Page is the safer fully specified plan if the table geometry cannot be made unambiguous."
+  "verdict": "No treatment passes retention unchanged. Prefer the dramatist's ordering of draft refinement followed by the separate DORA examination, with an honest promise of two professional actions. Its claimed delayed revelation and several pen states must be rewritten before lock.",
+  "parent_challenges_answered": {
+    "delayed_ready_suffix": "Agreed. READY FOR REVIEW at 94 seconds merely spells out what the first human review already demonstrates. A delayed text reveal is not a new fact or an Act 3 test.",
+    "pen_employed": "Reject The Pen Is Still Employed. Employment is an unsupported outcome and the phrase invites a jobs-preservation inference.",
+    "pose_only_states": "Agreed. Riding a rail, bridging outputs, facing a report and being held elsewhere are mostly placement changes. A repeatable silhouette is continuity, not transformation.",
+    "honest_primary_promise": "Replace what-secretly-remains with an explicit early promise: follow two useful outputs into two different professional actions. Paying the promise means completing the illustrated pair around 90 seconds, not hiding that people review work.",
+    "test_scope": "Act 3 can compare the accomplished preparation with the next documented professional work. It cannot prove net productivity, actual error rates, compliance or human time saved.",
+    "narration_and_credits": "Narration must occupy 112–130 seconds, targeting 120, with 200–220 future VO words. Append 12.3 seconds of credits afterward. A 120-second narration yields 132.3 seconds total."
   },
-  "useful_grafts": [
+  "peer_challenges": [
     {
-      "from": "enthusiast",
-      "take": "The suitable public-data page drives its own analysis route with the new headset idle. Use its active suitability->analysis->additional option structure around60-90."
+      "peer": "COMEDIAN",
+      "strengths": [
+        "The paper-slot pen launch is the clearest immediate physical cold open.",
+        "Distinct mailroom, records aisle, drafting bay and review table are plausible real sets.",
+        "The two mechanisms are separate before 59 seconds, with no timing statistic conflation.",
+        "The table at 59–69 seconds gives the machines credit for substantial preparation."
+      ],
+      "problems": [
+        "The pen's professional purpose is apparent at the 69-second review scene. Keeping it parked until 90 does not preserve the primary question.",
+        "The secondary question asks whether FIRST DRAFT will disappear merely because the page looks neat. Its continued presence at 103 seconds supplies no new fact or action. It is required status continuity.",
+        "The 93–105-second section shuffle and persistent tag risk twelve seconds of padding after the actual edit has already landed.",
+        "Most five pen states are positions. One late edit cannot retroactively make riding and bridging into transformations.",
+        "The title makes an unsupported employment implication."
+      ],
+      "sag_at_80": "Moderate. The unused pen seems artificially withheld while report review already occurs. Let a visible professional action proceed instead of saving the obvious hand pickup.",
+      "act3": "The report examination and draft refinement are substantive; the tag-survival reveal is a restatement.",
+      "loops": {
+        "listed_payoffs": [
+          90,
+          103
+        ],
+        "nominal_separation_s": 13,
+        "semantic_pass": false
+      },
+      "source_honesty": "Generally careful. Keep first-draft status continuously legible; do not imply a real document remains unapproved after an actual completed approval. Show no actual approval outcome.",
+      "three_real_sets": "Pass in treatment if the named rooms have distinct physical layouts; the company foyer alone cannot substitute for a full third work set.",
+      "recommended_graft": "Keep one economical desk-physics gag and the successful-output beat. Drop the employed title and the 103-second label payoff."
     },
     {
-      "from": "explainer",
-      "take": "The proposed task clip stays physically attached to its illustrative recording, retaining context across camera moves."
+      "peer": "EXPLAINER",
+      "strengths": [
+        "Strongest succinct mechanism comparison: existing record tabs through APIs and prebuilt logic versus separate generated sections through LLM/Bedrock.",
+        "The 62–86-second sequence contains two distinct professional verbs.",
+        "Four described sets and five scales are feasible with shelf assets.",
+        "No new hero drawing is necessary."
+      ],
+      "problems": [
+        "The primary answer is visible by 62–74 seconds. Seating READY FOR REVIEW at 94 is typographic completion, not factual discovery.",
+        "Every proposed TypeSlug state changes placement or orientation. The word-object never materially changes.",
+        "The secondary payoff at 78 is useful, but it also resolves the broad primary question, making the nominal sixteen-second separation misleading.",
+        "The 86–98-second seating scene delays a label after the meaningful work is shown.",
+        "The credits are explicitly put in the tail of the 120 seconds, violating the narration-plus-credits timing."
+      ],
+      "sag_at_80": "The refinement can hold attention at 78. Sag begins immediately after it if the next twelve seconds only install a phrase already understood.",
+      "act3": "Keep the source-described actions. Cut the claim that the larger desk legend creates an earned reveal.",
+      "loops": {
+        "listed_payoffs": [
+          78,
+          94
+        ],
+        "nominal_separation_s": 16,
+        "semantic_pass": false
+      },
+      "source_honesty": "Source tracing should be marked schematic: AWS supports professional review, but not the exact imagined citation-tab procedure or a particular UI. Avoid treating an illustrated trace as an independently observed review protocol.",
+      "three_real_sets": "Pass: intake room, mechanism workshop, review desk and corporate map wall have distinguishable physical purposes. Do not turn all four into the same tabletop with different labels.",
+      "recommended_graft": "Use the clear retrieval-versus-generation cutaway and explicit task verbs. Retire READY as hero and remove the delayed suffix."
     },
     {
-      "from": "dramatist",
-      "take": "Keep the conditional test on a distinct small methods inset; the instrument and study plans remain the actual news, and the return to student hands supplies the button."
+      "peer": "ENTHUSIAST",
+      "strengths": [
+        "Best fair counterpoint: the gathered report and editable draft get visible credit for real preparation.",
+        "The machine housings receding while useful outputs stay large is a strong attention reset at 61 seconds.",
+        "Report examination followed by generated-section refinement gives Act 3 actual work.",
+        "The source boundary explicitly avoids a Wingman productivity verdict."
+      ],
+      "problems": [
+        "The treatment acknowledges its own primary-loop inference problem, then still counts spatial placement at 98 as the payoff. A camera depth change does not add a new source fact.",
+        "The TypeSlug is only held, mounted, carried, held again and seated. These are continuity poses.",
+        "The primary answer is demonstrated as soon as professional work begins at 73 seconds. The secondary edit at 85 completes the same conceptual answer.",
+        "The 95–106-second depth separation and 114–120-second inscription repeat the boundary twice after the actions have established it.",
+        "The secondary FIRST DRAFT wording could imply the tag can disappear when approval is merely named. Keep the draft status for every illustrated generated document; narration about the general workflow is not evidence of this example's approval.",
+        "The submitted future VO is beyond the no-VO request for this phase and should not be treated as locked copy."
+      ],
+      "sag_at_80": "Lowest risk while the report-to-draft action changes at 84, but the 95–120 tail becomes three versions of the same conclusion.",
+      "act3": "Strong base. Shorten the output-gallery contemplation to one clear success beat, then let the two professional actions provide the duration.",
+      "loops": {
+        "listed_payoffs": [
+          85,
+          98
+        ],
+        "nominal_separation_s": 13,
+        "semantic_pass": false
+      },
+      "source_honesty": "Good vendor attribution and separation of current announcement from earlier case study. Name that people refine and approve in the described process, while depicting only refinement and examination with no final outcome.",
+      "three_real_sets": "Pass with consolidation. Handoff bench, output gallery and review/editing desk are not automatically four separate sets; use at least three genuinely different rooms or spatial layouts.",
+      "recommended_graft": "Keep appreciative stance and housings-recede reset. Replace the late spatial slogan with completion of the second promised action."
     }
   ],
-  "nonnegotiable_accuracy": "Plans stay labeled. Students already choose questions. New equipment adds task-specific collection capacity, not new intellectual permission. No diagnosis, completed model result, archive inferiority, or allegation about UAA protocols. The new-person example remains conditional editorial context.",
-  "no_storyboard_written": true
+  "own_pitch_concessions": [
+    "My primary question is also answered at the first human refinement at 69–79 seconds. Calling the DORA examination at 90 a revelation is overstated.",
+    "My pen parked over a cutaway and later turned toward a report are poses, not new physical states.",
+    "My first-scene reaching hand makes the secret pen-role premise even less credible.",
+    "My 91–102-second synthesis is too long if it only preserves both jobs in a wide frame.",
+    "My final scene incorrectly shares narration time with credits.",
+    "My best structural choice is the order: generated section visibly changes first, then a distinct record-review action completes the pair at about 90 seconds."
+  ],
+  "winner_plus_graft": {
+    "winner": "DRAMATIST, conditional on the revisions below",
+    "reason": "The two actual professional actions finish at 78 and 90 seconds, already giving the film a useful change of material and verb near 80. This is the least disruptive route to an honest late completion rather than an artificial late discovery.",
+    "grafts": [
+      {
+        "from": "EXPLAINER",
+        "keep": "The clean API/prebuilt-logic versus separate LLM/Bedrock mechanism comparison, complete before 60 seconds."
+      },
+      {
+        "from": "ENTHUSIAST",
+        "keep": "A brief 61–67-second reset where housings recede and both useful outputs retain substance and scale."
+      },
+      {
+        "from": "COMEDIAN",
+        "keep": "One early pen/cap desk-physics gag. Keep humor in ordinary objects, not corporate identity or employment."
+      }
+    ],
+    "title_direction": "Two Jobs After Ready, or retain The Pen Still Has Work only if copy clearly refers to the pen's depicted use and avoids employment claims.",
+    "primary_loop_revision": {
+      "plant_s": 10,
+      "promise": "Two prepared outputs. Follow what the professional does with each.",
+      "progress": "One action is visibly completed around 77 seconds; the second is explicitly still to be shown, not an undisclosed caveat.",
+      "payoff_s": 90,
+      "payoff": "The second illustrated professional action completes the promised pair: generated sections are refined; the separate report is examined for a determination.",
+      "distinction": "This is a demonstration promise, not a mystery about whether humans exist or proof that a final determination was made."
+    },
+    "secondary_loop_revision": {
+      "plant_s": 49,
+      "promise": "A small physical cap puzzle: the removed cap catches briefly on the pen's spring clip as the separate draft appears. The pen and cap will have to fit together to write.",
+      "payoff_s": 77,
+      "payoff": "The clip releases and the cap seats on the pen's rear; the nib contacts the draft and leaves a neutral editorial mark as a section is refined.",
+      "delay_s": 28,
+      "separation_from_primary_s": 13,
+      "honesty": "This is openly cartoon prop mechanics in an illustrative office, not a claim about a KGS product defect, a stuck workflow or elapsed waiting time. It is distinct from the primary factual promise.",
+      "caution": "Use one brief plant and one brief release. Do not hold a motion for twenty-eight seconds or make cap trouble delay the professional."
+    },
+    "physical_pen_states": [
+      {
+        "at_s": 0,
+        "state": "Closed: cap encloses the nib; spring clip lies flush against the cap."
+      },
+      {
+        "at_s": 29,
+        "state": "Clipped: the spring clip flexes around a thin generic record-divider lip, visibly changing its gap; cap still encloses nib."
+      },
+      {
+        "at_s": 49,
+        "state": "Opened: cap separates, exposing the nib; cap edge momentarily catches the spring clip, planting the physical loop."
+      },
+      {
+        "at_s": 77,
+        "state": "Working assembly: clip releases, cap posts onto the rear, making the pen visibly longer; nib contacts the draft and lays one neutral annotation stroke."
+      },
+      {
+        "at_s": 90,
+        "state": "Used and open: the same posted cap and exposed nib remain, with the prior stroke visible in the adjacent refined draft; the hand uses the pen as a pointer while examining the separate report. This last use is functional continuity, not counted as a fifth material transformation."
+      }
+    ],
+    "object_state_count": "Four defensible physical configurations, followed by a fifth functional use. Do not advertise five transformations. The four-state minimum is met through cap enclosure, clip flex, cap separation and posted-cap writing configuration.",
+    "act3_revision": {
+      "range_s": [
+        61,
+        93
+      ],
+      "beats": [
+        "61–67: both machine preparation tasks visibly succeed; no failure, timer or empty output.",
+        "67–78: generated section is selected and neutrally refined; no false factual defect, final status or signature.",
+        "78–90: cut to the separate DORA report; professional opens and examines it for a determination, with no invented specific vendor verdict.",
+        "90–93: one compact comparison preserves both accomplishments. This is the pair's completion, not another revelation."
+      ],
+      "source_scope": "AWS-described process only. Human examination and refinement are illustrated; the exact paper gesture is explanatory staging.",
+      "no_sag_rule": "At about 78 seconds change material, professional verb and camera scale. Do not reserve an obvious pen pickup or label suffix for a false climax."
+    },
+    "tail_revision": "Use the remaining narration for the specific current-announcement/earlier-example distinction and the named KGS–Koniag Alaska connection, expressed once. State the announcement's unquantified Alaska return briefly if retained. Button within the full 112–130-second narration; then 12.3 seconds of credits.",
+    "padding_test": "A shorter cut must still show the report and the generated section receiving different professional actions. The essential late material is those two actions. A twelve-second READY placement, prolonged paired-output hold, or repeated final phrase does not earn extra duration."
+  },
+  "lock_conditions": [
+    "Lock a fresh treatment with run_date 2026-09-13, 200–220 words planned, and 112–130 seconds of narration plus 12.3 seconds of credits.",
+    "Do not conceal API/rules versus LLM distinction; establish both before 60 seconds.",
+    "Use at least three physically distinct sets and four scales, not relabeled copies of one tabletop.",
+    "Replace all claims of surprise at human review with the openly promised pair of actions.",
+    "Make actual cap/clip/nib geometry changes visible at phone scale; no approval stamp, signed contract or invented error.",
+    "No stopwatch, portfolio arithmetic, employment implication, local financial-return inference or cultural characterization."
+  ],
+  "changed_peer_treatments": false,
+  "storyboard_or_scene_code_written": false
 }

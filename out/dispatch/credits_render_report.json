@@ -3,19 +3,19 @@
   "problems": [],
   "scope": "Rendered credit rows sampled every half second over the full 10-second window; pixel OCR at its start, middle and end. Not a full-film visual review.",
   "input_sha256": {
-    "video": "c283c0ff48ae9bdfdfdeecd43c5db6b87c4997adb6e6187f75a0e97866108cb3",
-    "renderer": "8e4d29fb3d2e9fb599afc8bfff2f565bab7f2ab1ee82afa7ddd3c74b4fd8b14a",
-    "credit_timeline_and_data": "99941c9a1853717d9c6db7e9a559adc02e752b0839c22b5f1b14de90cece7da7"
+    "video": "fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2",
+    "renderer": "b7690e55711c92528a7598d61c1a6b36f2a18b3a7d84393b504df4209bca5c73",
+    "credit_timeline_and_data": "56368502a017729e7f171ea14d7d5461f6e4ab42504a2dd8e64de32fdf6ac0fa"
   },
   "window": [
-    123.6,
-    133.6
+    119.86666666666667,
+    129.86666666666667
   ],
   "readable_seconds": 10.0,
-  "full_opacity_seconds": 10.066666666666663,
+  "full_opacity_seconds": 10.066666666666677,
   "samples": [
     {
-      "seconds": 123.6,
+      "seconds": 119.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -26,10 +26,10 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1168
+          "bright_fraction": 0.1057
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -37,10 +37,10 @@
             923
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0352
+          "bright_fraction": 0.0294
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -48,10 +48,10 @@
             965
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0536
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -59,34 +59,34 @@
             1007
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0416
+          "bright_fraction": 0.033
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1615
+          "bright_fraction": 0.1514
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0817
+          "bright_fraction": 0.0438
         }
       ]
     },
     {
-      "seconds": 124.1,
+      "seconds": 120.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -97,10 +97,10 @@
             756
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.1168
+          "bright_fraction": 0.1058
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -108,10 +108,10 @@
             923
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0354
+          "bright_fraction": 0.0293
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -119,10 +119,10 @@
             965
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0537
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -130,34 +130,34 @@
             1007
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0416
+          "bright_fraction": 0.033
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
-          "background_median": 20.0,
-          "bright_fraction": 0.1622
+          "background_median": 21.0,
+          "bright_fraction": 0.1517
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0819
+          "bright_fraction": 0.0437
         }
       ]
     },
     {
-      "seconds": 124.6,
+      "seconds": 120.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -168,10 +168,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1168
+          "bright_fraction": 0.1059
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -179,10 +179,10 @@
             923
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0353
+          "bright_fraction": 0.0292
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -190,10 +190,10 @@
             965
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0537
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -201,34 +201,34 @@
             1007
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0416
+          "bright_fraction": 0.033
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1621
+          "bright_fraction": 0.1517
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0819
+          "bright_fraction": 0.0437
         }
       ]
     },
     {
-      "seconds": 125.1,
+      "seconds": 121.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -239,10 +239,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1167
+          "bright_fraction": 0.1054
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -250,10 +250,10 @@
             923
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0352
+          "bright_fraction": 0.0293
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -261,10 +261,10 @@
             965
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0537
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -272,34 +272,34 @@
             1007
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1616
+          "bright_fraction": 0.151
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0814
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 125.6,
+      "seconds": 121.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -310,10 +310,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1167
+          "bright_fraction": 0.1054
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -321,10 +321,10 @@
             923
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0352
+          "bright_fraction": 0.0293
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -332,10 +332,10 @@
             965
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0536
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -343,34 +343,34 @@
             1007
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1616
+          "bright_fraction": 0.151
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0814
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 126.1,
+      "seconds": 122.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -381,10 +381,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1167
+          "bright_fraction": 0.1054
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -392,10 +392,10 @@
             923
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0351
+          "bright_fraction": 0.0294
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -403,10 +403,10 @@
             965
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0537
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -414,34 +414,34 @@
             1007
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1616
+          "bright_fraction": 0.151
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0814
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 126.6,
+      "seconds": 122.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -452,10 +452,10 @@
             756
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.1165
+          "bright_fraction": 0.1052
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -463,10 +463,10 @@
             923
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0351
+          "bright_fraction": 0.0293
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -474,10 +474,10 @@
             965
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0537
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -485,34 +485,34 @@
             1007
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0414
+          "bright_fraction": 0.033
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.1617
+          "bright_fraction": 0.151
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0811
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 127.1,
+      "seconds": 123.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -523,10 +523,10 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1165
+          "bright_fraction": 0.1052
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -534,10 +534,10 @@
             923
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0351
+          "bright_fraction": 0.0292
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -545,10 +545,10 @@
             965
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0537
+          "bright_fraction": 0.0235
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -556,34 +556,34 @@
             1007
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0414
+          "bright_fraction": 0.0329
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1612
+          "bright_fraction": 0.1509
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0812
+          "bright_fraction": 0.0435
         }
       ]
     },
     {
-      "seconds": 127.6,
+      "seconds": 123.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -594,10 +594,10 @@
             756
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.1164
+          "bright_fraction": 0.105
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -605,10 +605,10 @@
             923
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.035
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -616,10 +616,10 @@
             965
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0536
+          "bright_fraction": 0.0235
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -627,34 +627,34 @@
             1007
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0413
+          "bright_fraction": 0.0329
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.1613
+          "bright_fraction": 0.1508
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0812
+          "bright_fraction": 0.0435
         }
       ]
     },
     {
-      "seconds": 128.1,
+      "seconds": 124.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -665,10 +665,10 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1164
+          "bright_fraction": 0.105
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -676,10 +676,10 @@
             923
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0349
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -687,10 +687,10 @@
             965
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0537
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -698,34 +698,34 @@
             1007
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0412
+          "bright_fraction": 0.0329
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1611
+          "bright_fraction": 0.1507
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0812
+          "bright_fraction": 0.0435
         }
       ]
     },
     {
-      "seconds": 128.6,
+      "seconds": 124.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -736,10 +736,10 @@
             756
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.1164
+          "bright_fraction": 0.1051
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -747,10 +747,10 @@
             923
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0349
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -758,10 +758,10 @@
             965
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0536
+          "bright_fraction": 0.0235
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -769,34 +769,34 @@
             1007
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0413
+          "bright_fraction": 0.0329
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1612
+          "bright_fraction": 0.1505
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0812
+          "bright_fraction": 0.0435
         }
       ]
     },
     {
-      "seconds": 129.1,
+      "seconds": 125.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -807,10 +807,10 @@
             756
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.1163
+          "bright_fraction": 0.105
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -818,10 +818,10 @@
             923
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0348
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -829,10 +829,10 @@
             965
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -840,34 +840,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0329
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1612
+          "bright_fraction": 0.1505
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0812
+          "bright_fraction": 0.0435
         }
       ]
     },
     {
-      "seconds": 129.6,
+      "seconds": 125.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -878,10 +878,10 @@
             756
           ],
           "background_median": 17.0,
-          "bright_fraction": 0.1163
+          "bright_fraction": 0.105
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -889,10 +889,10 @@
             923
           ],
           "background_median": 17.0,
-          "bright_fraction": 0.0348
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -900,10 +900,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0236
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -911,34 +911,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0414
+          "bright_fraction": 0.0329
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1612
+          "bright_fraction": 0.1505
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0812
+          "bright_fraction": 0.0435
         }
       ]
     },
     {
-      "seconds": 130.1,
+      "seconds": 126.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -949,10 +949,10 @@
             756
           ],
           "background_median": 17.0,
-          "bright_fraction": 0.1163
+          "bright_fraction": 0.105
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -960,10 +960,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0348
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -971,10 +971,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0534
+          "bright_fraction": 0.0234
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -982,34 +982,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0414
+          "bright_fraction": 0.0329
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1612
+          "bright_fraction": 0.1505
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0812
+          "bright_fraction": 0.0435
         }
       ]
     },
     {
-      "seconds": 130.6,
+      "seconds": 126.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1020,10 +1020,10 @@
             756
           ],
           "background_median": 17.0,
-          "bright_fraction": 0.1163
+          "bright_fraction": 0.1051
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -1031,10 +1031,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.035
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -1042,10 +1042,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0234
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -1053,34 +1053,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1613
+          "bright_fraction": 0.1507
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0813
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 131.1,
+      "seconds": 127.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1091,10 +1091,10 @@
             756
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.1165
+          "bright_fraction": 0.1053
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -1102,10 +1102,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0349
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -1113,10 +1113,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0234
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -1124,34 +1124,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1613
+          "bright_fraction": 0.1507
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0813
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 131.6,
+      "seconds": 127.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1162,10 +1162,10 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1165
+          "bright_fraction": 0.1053
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -1173,10 +1173,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0349
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -1184,10 +1184,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0234
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -1195,34 +1195,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1613
+          "bright_fraction": 0.1507
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0813
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 132.1,
+      "seconds": 128.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1233,10 +1233,10 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1165
+          "bright_fraction": 0.1054
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -1244,10 +1244,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0349
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -1255,10 +1255,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0234
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -1266,34 +1266,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1613
+          "bright_fraction": 0.1507
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0813
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 132.6,
+      "seconds": 128.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1304,10 +1304,10 @@
             756
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.1166
+          "bright_fraction": 0.1053
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -1315,10 +1315,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0349
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -1326,10 +1326,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0234
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -1337,34 +1337,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1613
+          "bright_fraction": 0.1507
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0813
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 133.1,
+      "seconds": 129.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1375,10 +1375,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1166
+          "bright_fraction": 0.1054
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -1386,10 +1386,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0349
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -1397,10 +1397,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0234
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -1408,34 +1408,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1613
+          "bright_fraction": 0.1507
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0813
+          "bright_fraction": 0.0436
         }
       ]
     },
     {
-      "seconds": 133.6,
+      "seconds": 129.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1446,10 +1446,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1166
+          "bright_fraction": 0.1054
         },
         {
-          "text": "UAA.ALASKA.EDU",
+          "text": "KONIAG-GS.COM",
           "box": [
             36,
             888,
@@ -1457,10 +1457,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0349
+          "bright_fraction": 0.0291
         },
         {
-          "text": "WEARABLESENSING.COM",
+          "text": "KONIAG.COM",
           "box": [
             36,
             930,
@@ -1468,10 +1468,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0535
+          "bright_fraction": 0.0234
         },
         {
-          "text": "FRONTIERSIN.ORG",
+          "text": "AWS.AMAZON.COM",
           "box": [
             36,
             972,
@@ -1479,70 +1479,70 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0415
+          "bright_fraction": 0.0331
         },
         {
-          "text": "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            1054,
+            1059,
             1044,
-            1105
+            1103
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1613
+          "bright_fraction": 0.1507
         },
         {
-          "text": "LICENSED UNDER CC BY 4.0",
+          "text": "LICENSED CC BY 4.0",
           "box": [
             36,
-            1102,
+            1101,
             1044,
-            1153
+            1145
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0813
+          "bright_fraction": 0.0436
         }
       ]
     }
   ],
   "ocr": [
     {
-      "seconds": 123.6,
+      "seconds": 119.866667,
       "recognized": [
         "VISIT US AT ALASKAAIHQ.COM",
         "SOURCES",
-        "UAA. ALASKA. EDU",
-        "WEARABLESENSING.COM",
-        "FRONTIERSIN.ORG",
-        "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED UNDER CC BY 4.0"
+        "KONIAG-GS. COM",
+        "KONIAG.COM",
+        "AWS.AMAZON.COM",
+        "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED CC BY 4.0"
       ],
       "missing": []
     },
     {
-      "seconds": 128.6,
+      "seconds": 124.866667,
       "recognized": [
         "VISIT US AT ALASKAAIHQ.COM",
         "SOURCES",
-        "UAA. ALASKA. EDU",
-        "WEARABLESENSING.COM",
-        "FRONTIERSIN.ORG",
-        "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED UNDER CC BY 4.0"
+        "KONIAG-GS. COM",
+        "KONIAG.COM",
+        "AWS.AMAZON.COM",
+        "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED CC BY 4.0"
       ],
       "missing": []
     },
     {
-      "seconds": 133.6,
+      "seconds": 129.866667,
       "recognized": [
-        "VISIT US AT ALASKAAIHQ-COM",
+        "VISIT US AT ALASKAAIHQ.COM",
         "SOURCES",
-        "UAA. ALASKA. EDU",
-        "WEARABLESENSING.COM",
-        "FRONTIERSIN.ORG",
-        "\"LIFE OF RILEY\" KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED UNDER CC BY 4.0"
+        "KONIAG-GS. COM",
+        "KONIAG.COM",
+        "AWS.AMAZON.COM",
+        "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED CC BY 4.0"
       ],
       "missing": []
     }

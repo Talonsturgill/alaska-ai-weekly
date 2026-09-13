@@ -43,6 +43,8 @@ are data rather than prose:
 `contract.on_screen_all` additionally requires every approved context string
 (for example PLANNED and GENERAL METHODS EXAMPLE), even when display wording is
 independently amended. These checks resolve source routes, not rendered visibility.
+`contract.on_screen_none` rejects forbidden display phrases in the same source evidence.
+It is an unconditional tripwire, including for an optional claim, not a semantic audit.
 
 The prose note stays: it is what a human reads. The `requires` block is what the machine
 reads. Whoever writes claims.json writes both, and they must agree.
@@ -550,6 +552,17 @@ def main():
             checked += 1
             if not appears(text):
                 problems.append(f"{cid}: requires on-screen context {text!r}; it is missing.")
+
+        forbidden = req.get("on_screen_none", [])
+        if (not isinstance(forbidden, list)
+                or any(not isinstance(t, str) or not _norm(t) for t in forbidden)):
+            checked += 1
+            problems.append(f"{cid}: invalid on_screen_none contract; use a list of nonempty display strings.")
+            forbidden = []
+        for text in forbidden:
+            checked += 1
+            if appears(text):
+                problems.append(f"{cid}: forbidden on-screen phrase {text!r} appears in source evidence.")
 
         att = req.get("attribution_on_screen")
         if att:

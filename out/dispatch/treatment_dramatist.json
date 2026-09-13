@@ -1,243 +1,338 @@
 {
-  "role": "dramatist",
-  "pitch_count": 1,
-  "title": "The Blank Beside the Signal",
-  "logline": "A student carries one unfinished question card through a lab that gains the ability to record its own task data, then gives the public archive its strongest case before choosing a useful next experiment.",
-  "locked_angle_acknowledged": true,
-  "opposing_force": "An unanswered research question, and the temptation to confuse seeing a signal with knowing what it means. No villain.",
-  "cold_open_first_3s": {
-    "picture": "Extreme oblique close-up: a live illustrative EEG line moves on a monitor. A cream card with one large blank question field glides into its light. A pencil stops precisely at the edge of the blank. The waveform keeps moving; no answer writes itself.",
-    "audio": "A soft pencil skid, then a single warm electronic tick.",
-    "promise": "What can the researcher add to a line that is already visible?"
+  "role": "DRAMATIST",
+  "created_at_utc": "2026-09-13T14:03:45.745204+00:00",
+  "title": "The Pen Still Has Work",
+  "logline": "A pen travels through two successful office automations and reveals, at the review desk, why a finished output still leaves a professional job to do.",
+  "angle_executed": "In the KGS workflows described by AWS, the machine's finished output is still unfinished professional work.",
+  "duration_seconds": 120,
+  "planned_future_vo_words": 214,
+  "vo_scope": "Word budget only; no VO or storyboard written.",
+  "cold_open_first_3_seconds": "Extreme macro: a cool steel output roller feeds a crisp REPORT into frame. A large oxblood pen slides alongside it, its cap skittering one inch farther than its barrel. The page says OUTPUT READY; the pen has made no mark. A swift pullback reveals a human hand reaching for the output. This is an illustrative office, not a claimed KGS interface.",
+  "dramatic_engine": "The opposing force is an ambiguous finish line. The software can finish the job it was given while the person still has a different job. The film gives both jobs visible substance and lets neither erase the other.",
+  "hero": {
+    "name": "ReviewPen",
+    "kind": "Ordinary faceless pen, extracted from the shelf PenAndDocument, not a corporation or personified Native subject.",
+    "identity_tells": [
+      "Long oxblood barrel",
+      "One broad silver collar",
+      "Single off-center barrel clip"
+    ],
+    "introduced_seconds": 0,
+    "states": [
+      {
+        "time_seconds": 0,
+        "state": "Capped and lying beside newly produced output; no mark made."
+      },
+      {
+        "time_seconds": 28,
+        "state": "Parked horizontally above the DORA cutaway, acting as a fixed scale reference while records move."
+      },
+      {
+        "time_seconds": 58,
+        "state": "Uncapped and resting diagonally beside separate first-draft sections."
+      },
+      {
+        "time_seconds": 78,
+        "state": "Held for a small, neutral refinement mark in the draft. The mark is an edit, not a correction of a fabricated error."
+      },
+      {
+        "time_seconds": 94,
+        "state": "Turned toward the DORA report for professional examination, then resting across the two separate task labels in the button."
+      }
+    ],
+    "continuity_rule": "Same silhouette and collar in every act, including a visible pen at each act boundary. Match cuts carry the pen between explanatory sets; they do not claim one actual procurement file passes through both tools.",
+    "button_state": "The pen rests above two separate finished outputs and points into the professional work area, still uncapped."
   },
-  "escalation_beats_2_to_8": [
+  "sets": [
     {
-      "beat": 2,
-      "seconds": [
-        3,
-        18
-      ],
-      "scene": "The first recording",
-      "action": "Pull back into a bright Anchorage lab. A generic student at a schematic DSI-24 observes the line. The same card remains held in the near hand. Count 19 scalp contacts once, then return visual attention to the person.",
-      "stakes": "The acquired hardware and documented training are tangible."
+      "name": "Briefing wall",
+      "physical_identity": "Freestanding corporate nameplates, Alaska map with Kodiak marker, room-depth rails and the pen on a foreground ledge.",
+      "shelf": [
+        "AlaskaMini",
+        "BrassPlate",
+        "Nameplate",
+        "MeasurementField"
+      ]
     },
     {
-      "beat": 3,
-      "seconds": [
-        18,
-        35
-      ],
-      "scene": "The task before the trace",
-      "action": "An existing-data folio opens beside the student. The card changes from blank to a chosen TASK field while a blank attachment clip stays waiting. Pencil moves first; the recorder transport starts second. Label this order illustrative.",
-      "stakes": "The added power is shaping collection around a question."
+      "name": "DORA records room",
+      "physical_identity": "Tall receding filing cabinets, an email-input chute and a transparent records assembly table. Dark steel cabinets separate far/mid/near planes.",
+      "shelf": [
+        "PaperOfficeBG",
+        "StateLetter",
+        "Sheet",
+        "ClaimChip",
+        "MeasurementField"
+      ]
     },
     {
-      "beat": 4,
-      "seconds": [
-        35,
-        52
-      ],
-      "scene": "One measurement, two questions",
-      "action": "Card folds to reveal two planned-study leaves: reading at left and programming with eye-movement tracking at right. Both retain dotted unanswered result spaces. A folded TEST tab appears on the back but stays closed.",
-      "stakes": "Task design changes what the measurements could support; no study result is shown."
+      "name": "Jumpstarter drafting studio",
+      "physical_identity": "Low wide document table, suspended input cards, separate page-section rails, warm angled task light and visible draft assembly space. No filing-cabinet backdrop.",
+      "shelf": [
+        "MeasurementField",
+        "Sheet",
+        "DocumentFlip",
+        "Nameplate",
+        "BrassPlate"
+      ]
     },
     {
-      "beat": 5,
-      "seconds": [
-        52,
-        66
-      ],
-      "scene": "The plans stay open",
-      "action": "Close toward the card. Its attached signal strip is labeled ILLUSTRATIVE; planned-study leaves retain PLANNED stamps. Turn the physical card over to find a mature public-data folio beneath it.",
-      "stakes": "The acquired capacity now faces the best reason not to overstate its novelty."
-    },
-    {
-      "beat": 6,
-      "seconds": [
-        66,
-        85
-      ],
-      "scene": "The archive takes the room",
-      "action": "Public-data folio receives a full-height warm shot. Student opens an earlier EEG research presentation beside it, dated August 2026. Public records remain dimensional, legible and useful. The new question card waits respectfully at the edge, with equal lighting.",
-      "stakes": "The strongest countercase has its own scene: meaningful work already existed."
-    },
-    {
-      "beat": 7,
-      "seconds": [
-        85,
-        102
-      ],
-      "scene": "A larger workbench",
-      "action": "At 89 seconds the student slides both the public-data folio and the new question card into equal adjacent work areas. The blank attachment clip finally takes an illustrative task-linked trace without covering the public records. Then rotate the card to bring the folded TEST tab forward.",
-      "stakes": "First loop resolves as an added research option, not a replacement or an invented result."
-    },
-    {
-      "beat": 8,
-      "seconds": [
-        102,
-        115
-      ],
-      "scene": "The question can be tested",
-      "action": "At 107 seconds open the TEST tab: a new participant silhouette appears outside the illustrative model-training area. No score is shown. The card has space for an eventual result. Label IF CLAIMING NEW-PEOPLE PERFORMANCE and PROPOSED TEST.",
-      "stakes": "Second loop reveals what a stronger claim would require without inventing UAA protocol."
+      "name": "Professional review office",
+      "physical_identity": "A broad desk seen over the shoulder, document stand, task lamp and side return holding the alternate example. It is an office work surface, never a notebook.",
+      "shelf": [
+        "Character",
+        "GripHand",
+        "PenAndDocument",
+        "PaperOfficeBG",
+        "Sheet"
+      ]
     }
   ],
-  "earned_turn": {
-    "seconds": [
-      66,
-      95
-    ],
-    "image": "The public-data folio takes the center while the new equipment stays at the edge. At the resolution the workbench expands to hold both.",
-    "meaning": "Research was already happening. The win is an additional experimental choice, supported by the card gaining a place rather than another object losing one."
-  },
+  "scales": [
+    "extreme macro",
+    "close-up",
+    "medium human-and-desk",
+    "wide room",
+    "overhead full worktable",
+    "three-quarter cutaway"
+  ],
+  "treatment_scene_plan": [
+    {
+      "scene": 1,
+      "seconds": [
+        0,
+        8
+      ],
+      "set": "Professional review office",
+      "scale": "extreme macro to medium",
+      "action": "Output arrives and the unmarked pen enters the same frame. Plant which finished job the page represents.",
+      "future_vo_word_budget": 14
+    },
+    {
+      "scene": 2,
+      "seconds": [
+        8,
+        18
+      ],
+      "set": "Briefing wall",
+      "scale": "wide room",
+      "action": "The camera passes Koniag's Kodiak connection to the KGS nameplate and September 11th announcement. The pen remains on the foreground ledge. No money arrows.",
+      "future_vo_word_budget": 18
+    },
+    {
+      "scene": 3,
+      "seconds": [
+        18,
+        28
+      ],
+      "set": "Briefing wall",
+      "scale": "medium to close",
+      "action": "The Wingman announcement opens three physical labeled drawers: contracting, logistics and financial management. Then transition explicitly into earlier Army work.",
+      "future_vo_word_budget": 20
+    },
+    {
+      "scene": 4,
+      "seconds": [
+        28,
+        38
+      ],
+      "set": "DORA records room",
+      "scale": "three-quarter cutaway",
+      "action": "An email-subject token labeled VENDOR IDENTIFIER enters. API routes retrieve SAM.gov records; only documented source names appear. The pen stays above the apparatus.",
+      "future_vo_word_budget": 19
+    },
+    {
+      "scene": 5,
+      "seconds": [
+        38,
+        47
+      ],
+      "set": "DORA records room",
+      "scale": "close-up",
+      "action": "Prebuilt logic assembles records into a standardized report. It lands beside, rather than inside, the professional determination position. No LLM imagery or stopwatch.",
+      "future_vo_word_budget": 19
+    },
+    {
+      "scene": 6,
+      "seconds": [
+        47,
+        58
+      ],
+      "set": "Jumpstarter drafting studio",
+      "scale": "overhead full worktable",
+      "action": "A clearly separate Jumpstarter mechanism receives inputs; Bedrock/LLM section blocks become a FIRST DRAFT. Plant what the movable sections still need.",
+      "future_vo_word_budget": 20
+    },
+    {
+      "scene": 7,
+      "seconds": [
+        58,
+        69
+      ],
+      "set": "Jumpstarter drafting studio",
+      "scale": "wide room to medium",
+      "action": "Give the automation its strongest fair case: inputs have become substantial, usable-looking output. Machine work visibly completes at REPORT ASSEMBLED and DRAFT GENERATED labels. The two examples are separate.",
+      "future_vo_word_budget": 18
+    },
+    {
+      "scene": 8,
+      "seconds": [
+        69,
+        79
+      ],
+      "set": "Professional review office",
+      "scale": "over-shoulder close-up",
+      "action": "The professional reads and refines a draft section. The pen makes a neutral annotation; FIRST DRAFT remains visible. No wrong number, missing clause, rejection or measured delay. Secondary loop pays at 78 seconds.",
+      "future_vo_word_budget": 20
+    },
+    {
+      "scene": 9,
+      "seconds": [
+        79,
+        91
+      ],
+      "set": "Professional review office",
+      "scale": "medium to report close-up",
+      "action": "Turn to the separate DORA example. The professional examines the assembled report for determination. Machine completion and professional action occupy different parts of the physical desk. Primary loop pays at 90 seconds.",
+      "future_vo_word_budget": 21
+    },
+    {
+      "scene": 10,
+      "seconds": [
+        91,
+        102
+      ],
+      "set": "Professional review office",
+      "scale": "overhead full worktable",
+      "action": "Pull back to preserve both completed machine tasks and both remaining professional tasks. The pen bridges the spaces without issuing an award or signing a final contract. The angle resolves as a division of work.",
+      "future_vo_word_budget": 21
+    },
+    {
+      "scene": 11,
+      "seconds": [
+        102,
+        113
+      ],
+      "set": "Briefing wall",
+      "scale": "wide to nameplate close-up",
+      "action": "Return to the fresh KGS announcement with the now-legible task boundaries. Reconfirm the corporate Alaska connection and briefly state that this announcement gives no contract value or quantified Alaska return.",
+      "future_vo_word_budget": 16
+    },
+    {
+      "scene": 12,
+      "seconds": [
+        113,
+        120
+      ],
+      "set": "Professional review office",
+      "scale": "macro button then credits hold",
+      "action": "Return to the opening roller and the same uncapped pen, now resting across the margins of the two illustrative output types. End on the question, then readable source and music credit treatment.",
+      "future_vo_word_budget": 8
+    }
+  ],
+  "escalation": "A page appears finished. The announced work expands from one office to three categories. A records mechanism proves it can assemble a report. A different mechanism generates a draft. The page becomes more sophisticated, and the professional's remaining job becomes more specific. The last act credits the prepared work before testing whether its status equals a completed decision.",
+  "earned_turn": "At the review desk, the machine has succeeded at preparation. The person still examines a report and refines draft sections. The turn changes the meaning of finished without revealing a defect or withdrawing credit from the automation.",
   "button": {
-    "seconds": [
-      115,
-      120
-    ],
-    "last_line": "Which learning question should go there first?",
-    "last_image": "The same dog-eared cream card returns to the opening close-up. Its test tab is now open and its task field is ready. A pencil lowers into the blank as the screen line continues beyond the cut.",
-    "loopback": "Opening blank implied a missing question. Final blank is a place a student can now fill through experiment design."
+    "line": "When the output is ready, which job is finished?",
+    "image": "The opening roller remains behind two separate outputs labeled REPORT and FIRST DRAFT. The same oxblood pen rests in the professional work area, uncapped, with its silver collar catching the task light.",
+    "loop_back": "The opening unmarked pen now has an intelligible role; the question tests task boundaries, not machine failure."
   },
   "sight_gags": [
     {
-      "seconds": 14,
-      "gag": "The little pencil rolls toward the desk edge; the waiting attachment clip catches it like a tiny goalkeeper.",
-      "purpose": "Plant the recognizable clip and give the inanimate desk warmth; no joke targets a participant."
+      "time_seconds": 2,
+      "gag": "The pen cap rolls a fraction farther than the heavy barrel and rocks to a stop. Pure desk physics; no delayed paperwork claim."
     },
     {
-      "seconds": 43,
-      "gag": "The same pencil nearly settles on the programming leaf, then gets gently nudged to the reading leaf. Both leaves make room instead of fighting.",
-      "purpose": "Task choice is visible and playful without implying either study has run."
+      "time_seconds": 22,
+      "gag": "The financial-management drawer opens with such exact alignment that its loose generic divider tabs keep wiggling after the drawer stops. No institution or person is the joke."
     },
     {
-      "seconds": 74,
-      "gag": "A stack of well-used public-data pages opens in a practiced fan and politely slides the shiny new blank card a few inches aside.",
-      "purpose": "The old evidence wins a moment of comic authority, strengthening the fair countercase."
+      "time_seconds": 41,
+      "gag": "A source-tab stack lands squarely, while one blank corner of the stack flutters a beat longer before settling. The report content is not wrong."
     },
     {
-      "seconds": 116,
-      "gag": "The clip releases its rescued pencil exactly when the final blank opens. The pencil lands point-first ready to write, not as an answer stamp.",
-      "purpose": "Small physical callback independent of the argument payoffs."
+      "time_seconds": 54,
+      "gag": "The FIRST DRAFT tag is oversized enough that a tiny generic binder jaw opens wide to hold it, then settles. The status is funny in scale, never mocked as a failure."
     }
   ],
   "retention_plan": {
     "act3_test": {
+      "name": "The Completed Job",
       "seconds": [
         60,
         95
       ],
-      "scene": "The archive takes the room",
-      "strongest_fair_case": "Public datasets already supported Egorov's real research. A new instrument does not automatically improve that evidence.",
-      "drawn_at_full_strength": "Give public records the largest frame and most fluent motion for 19 seconds; new hardware stays in support. Both receive equal space when the turn resolves."
+      "strongest_fair_case_against_angle": "The machine has produced exactly the preparation output requested. Calling it unfinished can unfairly make useful automation sound like a failed system.",
+      "draw_at_full_strength": "Show complete records assembled and a substantial draft generated. Nothing breaks, vanishes or receives a failure mark. Then change the inspection scale to the documented professional actions, reading for determination and refining sections. Both contributions survive in the final wide frame.",
+      "resolution": "The claim concerns whose job is complete. It does not deny the machine's completed preparation task or certify net productivity.",
+      "nature_of_test": "An explicit check of output status against the documented workflow, not a fabricated empirical performance trial."
     },
-    "throughline_object": {
-      "object": "One cream question card, recognizable by a torn upper-right corner and a plum attachment clip",
-      "introduced_seconds": 1,
-      "states": [
-        {
-          "act": "I, 0 to 25s",
-          "state": "Blank task field; clip holding nothing."
-        },
-        {
-          "act": "II, 25 to 60s",
-          "state": "Task field written; two PLANNED leaves unfold; TEST tab still folded."
-        },
-        {
-          "act": "III, 60 to 95s",
-          "state": "Held alongside public-data folio; task-linked illustrative trace clips on only at 89s."
-        },
-        {
-          "act": "IV, 95 to 115s",
-          "state": "TEST tab unfolds; outcome space remains open."
-        },
-        {
-          "act": "Button, 115 to 120s",
-          "state": "Original front view returns, with new test tab visibly extending the same object."
-        }
-      ]
+    "primary_loop": {
+      "plant_seconds": 4,
+      "promise": "What is still unfinished when this output is ready? The pen is present but its professional role is not yet explained.",
+      "payoff_seconds": 90,
+      "payoff": "The separate DORA report is physically examined for determination; the finished machine output occupies a different stage from the person's job."
     },
-    "two_loops": [
+    "secondary_loop": {
+      "plant_seconds": 50,
+      "promise": "The generated first draft appears in independent sections. What happens to those sections after the machine stops?",
+      "payoff_seconds": 78,
+      "payoff": "The professional refines a section, retaining FIRST DRAFT status. No invented error is necessary."
+    },
+    "loop_checks": {
+      "primary_plant_by20": true,
+      "primary_payoff_at_least85": true,
+      "secondary_plant35_to60": true,
+      "secondary_delay_seconds": 28,
+      "payoff_separation_seconds": 12
+    },
+    "padding_test": [
       {
-        "plant_seconds": 12,
-        "promise": "What belongs in the empty attachment clip?",
-        "withheld_until_seconds": 89,
-        "payoff": "A task-linked recording attaches beside useful public data; the extra experimental option becomes physically legible."
+        "beat": "60 to 69, completed preparation",
+        "why_90second_cut_worse": "Without giving the machine a completed job, the film implies that human review proves automation did not work."
       },
       {
-        "plant_seconds": 46,
-        "promise": "What is under the folded TEST tab?",
-        "withheld_until_seconds": 107,
-        "payoff": "An unfamiliar participant and an unfilled result field: a conditional way to test reach, not a discovered score."
+        "beat": "69 to 79, draft refinement",
+        "why_90second_cut_worse": "Without the specific edit, human review becomes a slogan and Jumpstarter's first-draft status has no visible consequence."
+      },
+      {
+        "beat": "79 to 91, determination",
+        "why_90second_cut_worse": "Without this separate task, the film merges DORA and Jumpstarter into one pipeline and makes two different outputs look interchangeable."
+      },
+      {
+        "beat": "91 to 102, both jobs remain visible",
+        "why_90second_cut_worse": "Without the synthesis view, the last action may overwrite the first in memory and the film loses its fair credit for useful preparation."
       }
     ],
-    "act3_padding_test": [
-      {
-        "seconds": [
-          60,
-          70
-        ],
-        "why_90s_cut_worse": "Removing the archive reveal would erase the strongest fair countercase and suggest the student began research with this purchase."
-      },
-      {
-        "seconds": [
-          70,
-          79
-        ],
-        "why_90s_cut_worse": "The earlier presentation supplies evidence that public data already mattered. Its own legible scene prevents a token caveat."
-      },
-      {
-        "seconds": [
-          79,
-          89
-        ],
-        "why_90s_cut_worse": "Equal work areas show the actual resolution, addition rather than replacement; without it the promise clip is only recurring decoration."
-      },
-      {
-        "seconds": [
-          89,
-          95
-        ],
-        "why_90s_cut_worse": "The clip attaches only after the countercase has been honored, resolving the first loop and giving the object a new state before the later test."
-      }
-    ],
-    "eighty_second_sag_prevention": "The archive is in command at 74 seconds, then the workbench physically widens at 82. An unresolved attachment and folded TEST tab remain in view. No explanatory tableau is held motionless."
+    "sag_prevention": "At 69 seconds move from the entire drafting studio to over-shoulder work. At 79 seconds change both output type and professional verb. At 91 seconds reveal the whole division of work. No extended waiting or generic disclaimer cards."
   },
-  "library_cast": {
-    "reuse": [
-      "Character",
-      "Sheet",
-      "DocumentFlip",
-      "GripHand",
-      "EvidenceTrace",
-      "MeasurementField",
-      "BrassPlate",
-      "ScreenLit",
-      "ScreenKey",
-      "PendingMark",
-      "vitals",
-      "evidenceLatch"
-    ],
-    "new_asset_gap": "One schematic EEG headband with scalp-contact arms. Shelf has many sensors but none worn on a human head. It must remain neutral recording hardware, without eyes, facial expression or thought-reading graphics.",
-    "adaptations": "Question card is a Sheet with an attached clip and DocumentFlip leaves, not a new paper asset. Screen traces reuse EvidenceTrace and carry illustration labels.",
-    "avoid": [
-      "ServerMachine antagonist",
-      "AshReader outputting a thought",
-      "Clinical imagery",
-      "Real-person caricature",
-      "Neuron-level activation maps"
-    ]
-  },
-  "vo_draft": "A line is moving across the screen. The question beside it is still blank.\n\nOn September 9th, UAA announced a new dry EEG system for its AI and Robotics Lab. Nineteen scalp electrodes record electrical signals researchers can study with machine learning.\n\nGraduate student Vadim Egorov already works with public EEG datasets. Now he's excited about collecting data for his own tasks. A student can help decide what happens before the recording begins.\n\nUAA plans to study cognitive states during reading. Another planned project pairs brain activity with eye movements during programming. Different tasks. Different questions for the evidence.\n\nThe university has documented equipment training. Those studies still lie ahead.\n\nAnd the old recordings deserve to stay on the desk. Egorov was already presenting EEG research before this announcement. Public data helped make that work possible.\n\nThe new headset adds a choice. Keep learning from existing records, and collect another when the question calls for it. That's a useful expansion of Alaska's research capacity.\n\nA signal still needs a tested interpretation. If a future model claims to work for new people, test it on people absent from training. That is a proposed standard, not a result from UAA.\n\nThe blank space now belongs to an experiment students can help design.\n\nWhich learning question should go there first?",
-  "vo_word_count": 217,
-  "duration_seconds": 120,
-  "duration_status": "Target only; final audio must be measured.",
-  "evidence_obligations": [
-    "Acquisition and training are observed; studies remain planned.",
-    "No published model accuracy or study participant result.",
-    "The holding-out illustration is our conditional method example.",
-    "No diagnosis, mind reading, AI-assisted coding, or UAA leakage allegation.",
-    "Public-data research precedent references the verified earlier workshop."
+  "shelf_first_cast": [
+    "PenAndDocument",
+    "GripHand",
+    "Character",
+    "PaperOfficeBG",
+    "Sheet as supporting stock only",
+    "StateLetter",
+    "MeasurementField",
+    "Nameplate",
+    "BrassPlate",
+    "ClaimChip",
+    "AlaskaMini",
+    "DocumentFlip",
+    "EndCredits"
   ],
-  "storyboard_authored": false
+  "small_story_driven_extension": "Extract and generalize PenAndDocument's existing pen as a reusable ReviewPen with cap, held angle and neutral annotation-contact state. Reuse its shading and silhouette. This is a pen-work gap; the existing asset only hovers and trembles. No signature or approval behavior.",
+  "freshness_vs_last_two": "September 11th followed FlightCrate over a missing road; September 12th centered a research notebook/Sheet with lilac, ivory and citron. This treatment uses an oxblood pen, steel-blue interiors, multiple workrooms, repeated scale changes and an office-output boundary. No notebook, crate, road or research task instrument is restaged.",
+  "palette": "Oxford blue cabinets, cool steel, paper white, one oxblood pen, restrained warm desk light. Status ink remains neutral; no success-green or failure-red coding.",
+  "fact_and_visual_limits": [
+    "Mechanisms are distinct by 58 seconds.",
+    "Every earlier-work scene carries AWS CASE STUDY and EARLIER ARMY PROCUREMENT.",
+    "DORA retrieves through APIs and applies prebuilt logic; Jumpstarter generates first drafts.",
+    "Use only VENDOR IDENTIFIER, never a real or invented valid UEI.",
+    "All office sets are explanatory illustrations, not actual product UIs or physical hardware.",
+    "No stopwatch, portfolio totals, approval stamp, automatic award, failure incident or measured review wait.",
+    "No local return, hiring or benefit extrapolation.",
+    "Koniag and KGS remain named corporations; no cultural props, Native characterization or generic Tribal narrative.",
+    "Generic professional is not portrayed as a named source or an Alaska Native person."
+  ]
 }

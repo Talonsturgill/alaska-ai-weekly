@@ -1,250 +1,87 @@
 {
-  "role": "explainer",
-  "title": "The Question Comes First",
-  "angle_locked": true,
-  "logline": "One continuous recording strip gains a chosen task and a proposed test as UAA’s new EEG turns student curiosity into an expanded experimental option.",
-  "cold_open_first_3s": {
-    "picture": "Extreme three-quarter macro: a dry EEG headset rests above a scalp schematic. Its 19 contact pads fan outward into a precisely counted comb of fine trace lines. The lines lift a small cream strip off the bench. Warm daylight catches the paper curl. No brain interior, thought symbols or actual research trace.",
-    "immediate_read": "A real instrument makes invisible electrical measurements legible.",
-    "label": "EEG · SCHEMATIC",
-    "no_false_action": "The fan-out is an explanatory cutaway, not moving hardware in a real DSI-24."
+  "role": "EXPLAINER",
+  "working_title": "Ready for What?",
+  "duration_seconds": 120,
+  "future_vo_target_words": 211,
+  "future_vo_allocation_by_scene": [11, 27, 19, 17, 21, 19, 22, 22, 18, 21, 14],
+  "logline": "A heavy metal word, READY, travels from a humming office machine to a professional's desk, where two different prepared outputs reveal which work is still unfinished.",
+  "committed_angle_executed": "In the KGS workflows described by AWS, the machine's finished output is still unfinished professional work.",
+  "cold_open_first_three_seconds": "Extreme macro: a small office output slot ejects a finished report, then a ludicrously heavy metal READY label descends toward it. The label almost fills the frame. Before it lands, the camera slides sideways to show its empty trailing recess: READY... for what? The machine is faceless and schematic. No seal, approval mark or final-contract text appears.",
+  "explainer_spectacle": "Make the distinction a comparison of visible operations rather than a statistical claim. DORA gathers and arranges existing record tabs; the separate Jumpstarter apparatus assembles draft prose sections from inputs. In Act 3 the professional performs different actions on those two kinds of material. The big reveal changes the destination of READY, not the reported duration of a task.",
+  "shelf_first_cast": {
+    "hero": {"asset": "TypeSlug", "file": "lib/clinic.tsx", "use": "One persistent bevelled READY type slug, clearly an editorial word-object. It is never a real software control or an approval stamp."},
+    "supporting": [
+      {"asset": "RecordsMachine", "use": "Neutral schematic DORA machine, restaged to show retrieval and prebuilt logic with labels. Do not reuse its previous missing-pipe claim or pressure/strain story."},
+      {"asset": "MeasurementField", "use": "Workshop rail/port environment for the two clearly independent workflow demonstrations."},
+      {"asset": "PaperOfficeBG", "use": "Distinct records-intake and professional-review interiors, staged with different camera orientation, depth and work surfaces."},
+      {"asset": "PenAndDocument", "use": "Supporting review prop. Its pen never signs; a parameterized edit gesture may underline or move schematic text, with draft status retained."},
+      {"asset": "GripHand", "use": "Generic faceless professional hand checks source tabs and refines a draft. No cultural or corporate identity is assigned to the hand."},
+      {"asset": "BrassPlate", "use": "Physical identity and source plates; company names arrive before abbreviations."},
+      {"asset": "AlaskaMini", "use": "Kodiak-region corporate connection on a wall map. No cash arrows or cultural imagery."},
+      {"asset": "ClaimChip", "use": "Persistent KGS ANNOUNCEMENT or AWS CASE STUDY attribution, with earlier Army scope on mechanism scenes."},
+      {"asset": "Sheet", "use": "Supporting document material only, never the hero or notebook. Clearly distinct report and FIRST DRAFT outputs."},
+      {"asset": "DocumentFlip", "use": "Source-tab and draft-section reveals, avoiding a whole-film notebook format."},
+      {"asset": "EndCredits", "use": "Final source and music credits after the button."}
+    ],
+    "net_new_hero_assets": 0,
+    "small_reusable_extensions_if_needed": "Expose a generic labeled document-section arrangement and a pen edit gesture while preserving PenAndDocument's no-signature behavior. Grow existing props, don't add a humanoid AI or a generic server mascot.",
+    "freshness": "Last heroes were FlightCrate and Sheet. This hero is machined typography. Copper, petrol green, warm stone and ink replace both the clinic cream/spruce/berry palette and the lilac/citron notebook world."
   },
-  "escalation_beats_2_to_8": [
-    {
-      "beat": 2,
-      "seconds": [
-        3,
-        20
-      ],
-      "action": "Camera draws back to an Anchorage laboratory bench with a student silhouette in training. An acquisition tag seats on the headset base. The throughline strip has a deliberately blank interpretation field. Plant: what has to accompany the signal before it can support an answer?",
-      "claim_ids": [
-        "C1",
-        "C2",
-        "C3",
-        "C4"
-      ]
-    },
-    {
-      "beat": 3,
-      "seconds": [
-        20,
-        36
-      ],
-      "action": "Make nineteen felt: camera traverses one contact, then the complete 19-pad scalp plan. Two earclips and three empty auxiliary sockets remain visually distinct. The signal lanes travel to the same strip; no numerical waveform scale or fabricated readings.",
-      "claim_ids": [
-        "C5"
-      ]
-    },
-    {
-      "beat": 4,
-      "seconds": [
-        36,
-        58
-      ],
-      "action": "An open public-data drawer supplies a substantial existing ribbon at left. The student’s new strip stays available at right. A hand chooses between two proposed task inserts, reading and programming. Both carry large PLANNED tabs. Plant the second promise: same headset, what changes between these questions?",
-      "claim_ids": [
-        "C6",
-        "C7",
-        "C8"
-      ]
-    },
-    {
-      "beat": 5,
-      "seconds": [
-        58,
-        73
-      ],
-      "action": "Give the public-data option the whole frame for a working research pass: source folder to analysis desk, fully intact, no rejected symbol. Camera then reveals both routes feeding the researcher’s workspace. At 68 seconds the proposed task insert physically travels with its matching recording strip, paying the second loop through context rather than a changed signal.",
-      "claim_ids": [
-        "C8"
-      ],
-      "illustration_boundary": "General research workflow, not a completed UAA model."
-    },
-    {
-      "beat": 6,
-      "seconds": [
-        73,
-        90
-      ],
-      "action": "The strip reaches an interpretation desk. Its task label and illustrated trace are visible, but its answer field remains open. A distinct book-shaped methods inset proposes MODEL TRAINING and NEW-PERSON TEST trays only under an IF: NEW PEOPLE banner. No prediction is filled, no score appears, nobody fails.",
-      "claim_ids": [
-        "C6",
-        "C7",
-        "C10",
-        "C11"
-      ],
-      "caption": "Illustrated research principle"
-    },
-    {
-      "beat": 7,
-      "seconds": [
-        90,
-        107
-      ],
-      "action": "Primary payoff: the continuous strip now unfolds into three readable sections, TASK, SIGNAL and TEST, with a still-blank result field. Each section retains a different job. The camera returns the strip to the student’s bench, alongside the public-data drawer, making expanded choice the visible win.",
-      "claim_ids": [
-        "C2",
-        "C4",
-        "C8"
-      ],
-      "plan_boundary": "TASK and TEST sections are planned; no actual dataset or announced protocol is implied."
-    },
-    {
-      "beat": 8,
-      "seconds": [
-        107,
-        120
-      ],
-      "action": "The hand selects the reading task card but holds it above its planning slot rather than starting an unreported experiment. The headset and public-data drawer remain available. The blank result field curls into the opening composition.",
-      "claim_ids": [
-        "C6",
-        "C7",
-        "C8"
-      ]
-    }
+  "sets": [
+    {"id": "records_intake", "description": "Low-angle office output bay with deep receding cabinets and a warm illuminated desktop; generic office, not a claimed federal room."},
+    {"id": "mechanism_workshop", "description": "A cutaway workshop with independent retrieval and drafting stations, clear space between them and source plates. Uses MeasurementField ports and rails as schematic staging."},
+    {"id": "review_desk", "description": "Wide oblique professional desk with source tabs to one side and draft sections to the other; physically separate from the mechanism workshop."},
+    {"id": "corporate_map_wall", "description": "A wall-mounted Alaska map and two corporate nameplates establish Koniag ownership of KGS and the Kodiak-region connection."}
   ],
-  "earned_turn": "At 58 seconds, public datasets get a fully working route of their own. The new headset is useful because it adds a route for chosen tasks. At 73 seconds, the film advances from collecting measurements to testing an interpretation without turning the purchase into a promised outcome.",
+  "scales": ["extreme macro", "close object", "medium tabletop", "wide room", "overhead comparison"],
+  "scene_treatment": [
+    {"scene": 1, "time": [0, 8], "set": "records_intake", "scale": "extreme macro", "dramatic_job": "The READY slug descends toward a newly produced report. Its too-heavy landing is anticipated and withheld. Plant what READY actually completes.", "object_state": "READY suspended over the machine's output", "claims": []},
+    {"scene": 2, "time": [8, 19], "set": "corporate_map_wall", "scale": "wide room", "dramatic_job": "A camera pullback ties the READY slug to the story's fresh source: Koniag Government Services' September 11th Wingman announcement, then the Koniag parent nameplate and Kodiak map pin. The slug becomes a leaning question marker beside the announcement.", "object_state": "READY leaning beside current announcement", "claims": ["c1", "c2", "c3", "c4"]},
+    {"scene": 3, "time": [19, 29], "set": "records_intake", "scale": "medium tabletop", "dramatic_job": "Three labeled office drawers fan open for contracting, logistics and financial management. Match-cut the contracting drawer into the explicitly earlier AWS Army example. Current Wingman and earlier DORA don't share a false deployment timeline.", "object_state": "READY rides the camera-facing drawer lip", "claims": ["c5", "c6", "c7"]},
+    {"scene": 4, "time": [29, 40], "set": "mechanism_workshop", "scale": "close object", "dramatic_job": "A generic UEI token enters an email subject. DORA's visible API paths retrieve labeled SAM.gov record tabs. A deliberately small input makes several organized record tabs arrive, with no implied database count or invented private records.", "object_state": "READY seated beside DORA's output bay", "claims": ["c8", "c9"]},
+    {"scene": 5, "time": [40, 52], "set": "mechanism_workshop", "scale": "overhead comparison", "dramatic_job": "Prebuilt-logic guides line up the tabs into a report. The camera reveals a separate station beside it: Jumpstarter's inputs produce FIRST DRAFT sections through a clearly labeled LLM/Bedrock drafting mechanism. Plant the second question: why will these two finished-looking outputs need different attention?", "object_state": "READY bridging the space between two separate outputs", "claims": ["c10", "c12", "c13"]},
+    {"scene": 6, "time": [52, 62], "set": "mechanism_workshop", "scale": "wide room", "dramatic_job": "Give the useful accomplishment full weight: an assembled report and an editable draft both exist. Faceless guides straighten the materials without strain or error. The two outputs move independently toward the same generic professional desk; there is no DORA-to-Jumpstarter pipeline.", "object_state": "READY carried with the two-output comparison into the desk set", "claims": ["c10", "c13"]},
+    {"scene": 7, "time": [62, 74], "set": "review_desk", "scale": "close object", "dramatic_job": "A professional hand fans the DORA report's attached source tabs, then visually traces a cited tab back to the assembled report. The report is already useful material, yet a review operation remains visible. Show no verdict, error, timer or fatigue.", "object_state": "READY rests sideways at the professional's work edge", "claims": ["c11"]},
+    {"scene": 8, "time": [74, 86], "set": "review_desk", "scale": "extreme macro", "dramatic_job": "The same generic professional brings the pen to Jumpstarter's persistent FIRST DRAFT page. A schematic paragraph block moves or is refined, not corrected for an invented factual defect. Pay the secondary loop at 78 seconds: one output has source records to check; the other has generated language to refine.", "object_state": "READY rotates so its empty trailing recess faces the viewer", "claims": ["c14"]},
+    {"scene": 9, "time": [86, 98], "set": "review_desk", "scale": "overhead comparison", "dramatic_job": "At 94 seconds the word-object finally seats in a larger desk legend: READY FOR REVIEW. This pays the primary loop. Both source-backed report and editable draft retain their visible material states; the professional is still engaged. The reveal identifies a real handoff without depicting a final award.", "object_state": "READY seated within READY FOR REVIEW", "claims": ["c11", "c14"]},
+    {"scene": 10, "time": [98, 110], "set": "corporate_map_wall", "scale": "wide room", "dramatic_job": "Return to KGS's current Wingman announcement and the Koniag/Kodiak corporate connection. A modest sourced annotation states that this announcement doesn't quantify Alaska returns. Leave the capable office mechanism visible in a neighboring inset; no missing-money gag or accusation.", "object_state": "READY FOR REVIEW legend sits beside the corporate source plates", "claims": ["c2", "c18"]},
+    {"scene": 11, "time": [110, 120], "set": "review_desk", "scale": "close object", "dramatic_job": "Loop back to the output bay composition, now widened enough to include the active professional desk beyond it. The READY slug is correctly seated in its review legend. Button at roughly 113 seconds; final credits occupy the remaining tail.", "object_state": "READY remains correctly qualified while the next prepared output arrives", "claims": []}
+  ],
+  "escalation": "The first three scenes make READY a concrete question, locate the named Alaska company and move from current announcement to prior evidence. Scenes four to six open the machinery and clearly separate record retrieval from generative drafting. Scenes seven and eight make the professional's different review actions visible. Scene nine resolves what the machine has finished; scenes ten and eleven return that understanding to the current Alaska business story.",
+  "earned_turn": "The machine successfully produced the material. The professional then works on it in the ways the source describes. READY was an output state all along; the delayed phrase FOR REVIEW names the next job without manufacturing an AI failure.",
   "button": {
-    "last_line": "Which question about learning should they put to this tool first?",
-    "last_image": "The same cream strip lies ready beside the headset and the open public-data drawer. A proposed reading-task card hovers over its slot. The answer space is visibly blank, inviting research rather than announcing failure.",
-    "loop_to_open": "The paper curl and nineteen-pad contact silhouette restore the opening geometry."
+    "line": "When the output's ready, which job is finished?",
+    "image": "The READY slug rests within READY FOR REVIEW as the camera holds both a working output slot and a professional's active desk. No approval stamp lands."
   },
-  "sight_gags": [
-    {
-      "seconds": 22,
-      "gag": "The two earclip leads gently tug the headset’s side straps like suspenders before settling. A tiny slack loop bounces once.",
-      "function": "Makes earclips distinct from the nineteen scalp contacts; no face or gag on a real person."
-    },
-    {
-      "seconds": 45,
-      "gag": "An oversized binder clip tries to grip the whole proposed reading book, opens too wide, then sensibly clips only the task tab.",
-      "function": "The question must travel with the data; comedy belongs to office objects, not cognitive difficulty."
-    },
-    {
-      "seconds": 64,
-      "gag": "A springy public-data folder rebounds into its own useful place when the new strip nudges past it. Both receive equal desk space.",
-      "function": "Affectionate persistence: public data remains in the picture without becoming a villain."
-    },
-    {
-      "seconds": 112,
-      "gag": "The pencil nearly rolls into the blank answer field; the returning paper curl gently parks it beside the question instead.",
-      "function": "Leaves the answer open without a bureaucratic rejected stamp."
-    }
+  "timed_sight_gags": [
+    {"time": [1, 3], "gag": "The tiny machine output is followed by a comically overbuilt metal READY label, as though one little report requires industrial lettering. The object is editorial metaphor, not a literal product feature."},
+    {"time": [22, 25], "gag": "Three office drawers open in a stately fan, then the last one gives a tiny extra shimmy to line its label up. Generic furniture choreography supplies the joke; no worker or community is mocked."},
+    {"time": [36, 39], "gag": "A source tab arrives slightly overenthusiastically, springs past its guide, then settles into alignment. This is physical cartoon overshoot, not a false retrieval or data error."},
+    {"time": [78, 81], "gag": "The heavy READY slug tries to look complete by sitting squarely on the desk, then a routine page turn leaves it at a harmless comic tilt. The professional's work continues unaffected."}
   ],
   "retention_plan": {
-    "fair_act3_countercase": "Public recordings already enable useful AI research. Put that functioning route on screen for 15 seconds. New hardware alone does not establish a correct interpretation; the next step is a chosen task and an evaluation matched to the claim.",
-    "act3_named_scene": "Two useful routes, one unanswered question",
-    "act3_seconds": [
-      58,
-      95
-    ],
-    "throughline_object": {
-      "name": "TaskSignalStrip",
-      "basis": "Reuse Sheet/PaperFiber for body and EvidenceTrace for the same continuous illustrated signal path. Coral clipped corner and one punched circular hole preserve identity.",
-      "states": [
-        {
-          "seconds": 0,
-          "state": "Curled strip with illustrated recording lanes and blank interpretation field."
-        },
-        {
-          "seconds": 20,
-          "state": "Unfurled; nineteen electrode inputs are visibly separate from the strip’s eventual interpretation."
-        },
-        {
-          "seconds": 36,
-          "state": "Receives a large proposed-task clip; unfinished planning sections use outline grammar."
-        },
-        {
-          "seconds": 73,
-          "state": "Carries task and signal into a proposed testing context; answer remains open."
-        },
-        {
-          "seconds": 95,
-          "state": "Three sections readable together; returned to student workspace beside public data."
-        },
-        {
-          "seconds": 117,
-          "state": "Curled ready for the next chosen question, preserving open result field."
-        }
-      ]
+    "act3_test": {
+      "time": [62, 98],
+      "name": "The desk after the output slot",
+      "strongest_fair_case_against_angle": "These are already concrete, useful preparation outputs; saying they are unfinished could dismiss work that the machines actually completed.",
+      "drawn_at_full_strength": "First show each output successfully assembled and ready to handle. Then draw source-tab checking and draft refinement as affirmative professional actions. The machines haven't failed; they finished a smaller job than the whole professional process.",
+      "not_a_repeat": "Act 2 answers how the material is made. Act 3 answers what kind of work can now be done with it, with two different visible actions."
     },
-    "two_loops": [
-      {
-        "plant_seconds": 14,
-        "promise": "What has to accompany this signal before it can support an answer?",
-        "withheld": "The full signal-task-test relationship, not the existence of the headset.",
-        "payoff_seconds": 95,
-        "payoff": "The single strip unfolds into task, signal and test sections while the result field remains honestly unanswered."
-      },
-      {
-        "plant_seconds": 43,
-        "promise": "The same headset is proposed for reading and programming. What changes?",
-        "payoff_seconds": 68,
-        "payoff": "Task context travels with the recording. The proposed programming branch includes eye-movement context; the reading branch carries its own task label. Both remain planned."
-      }
+    "throughline_object": {
+      "asset": "TypeSlug",
+      "introduced_at": 0,
+      "identity": "Single heavy READY word-object with one bevelled nick preserved across views; not a document and not a software button.",
+      "five_states": ["suspended question above output", "seated at retrieval output", "bridging the two-output comparison", "turned sideways during professional review", "seated within READY FOR REVIEW at payoff and button"],
+      "act_boundary_visibility": ["0 to 8 seconds", "29 seconds", "60 to 62 seconds", "94 to 98 seconds", "110 to 114 seconds"]
+    },
+    "loops": [
+      {"id": "primary", "plant_second": 3, "promise": "What does this machine's READY actually finish?", "payoff_second": 94, "payoff": "The slug seats in READY FOR REVIEW while the professional works, revealing a completed preparation task and an unfinished professional task."},
+      {"id": "secondary", "plant_second": 45, "promise": "Why can't these two prepared outputs be treated as the same kind of material?", "payoff_second": 78, "payoff": "One invites source-record checking; the other requires refinement of generated language. The distinct tools were already named before the midpoint."}
     ],
-    "beatwise_act3_padding_test": [
-      {
-        "seconds": [
-          58,
-          73
-        ],
-        "if_removed": "The film would imply replacement or inferiority of public data. The full useful route earns the additive thesis."
-      },
-      {
-        "seconds": [
-          73,
-          82
-        ],
-        "if_removed": "The viewer could mistake a lively waveform for an established interpretation. The open answer field preserves the measurement boundary."
-      },
-      {
-        "seconds": [
-          82,
-          95
-        ],
-        "if_removed": "The film would state that results are pending without showing what a future claim about new people would need. Keep the conditional methods example compact and label it editorial."
-      }
-    ],
-    "why_90_seconds_would_be_worse": "It would compress either the fair public-data route or the distinction between recording and interpretation into a disclaimer. Those are changes in the argument, not repeated exposition."
+    "loop_delay_seconds": {"primary": 91, "secondary": 33, "payoff_separation": 16},
+    "padding_test": "A 90-second cut would lose the space needed to credit successful preparation and then show actual source-described review, leaving the film to equate a produced page with completed professional work. Keep only the source tracing, draft refinement and READY FOR REVIEW resolution; none needs an invented error, waiting queue or second explanation of the API machinery."
   },
-  "visual_system": {
-    "palette": "Warm ivory bench, petrol-blue hardware, coral task tab, soft lilac proposed-study outlines, warm graphite typography. No red failure language.",
-    "camera": "Macro contact array to broad bench, lateral travel following paper, then an overhead unfold for the test.",
-    "reuse": [
-      "Sheet and PaperFiber from paper.tsx",
-      "EvidenceTrace from spaceweather.tsx",
-      "Character from Character.tsx, anonymous schematic only",
-      "GripHand from props.tsx",
-      "PendingMark from vision.tsx",
-      "EvidenceState from evidence_state.tsx",
-      "ScreenLit from screenlight.tsx",
-      "CameraMoves from stage3d.tsx"
-    ],
-    "net_new_story_gap": "DSI-24-inspired dry EEG headset schematic with counted 19-pad scalp plan, two earclip sensors and three visibly empty auxiliary sockets. No library device has this silhouette or sensing verb.",
-    "craft_advance_candidate": "A reusable task/trace registration clip that carries source and planned-state labels on a continuous paper path; avoids losing context during cutaways.",
-    "freshness": "Human-scale laboratory mechanism rather than the last two landform and aviation proof stories. The strip is the throughline; there is no gate, flight crate or glacier hero."
-  },
-  "narration": "At UAA, a student watches his own brain signals appear on a screen. The exciting part is what he can choose next.\n\nOn September 9th, the university announced a new dry EEG for its AI and Robotics Lab, funded by the Educational Legacy Fund.\n\nNineteen scalp electrodes record electrical activity. They supply measurements that researchers can analyze with machine learning.\n\nGraduate student Vadim Egorov usually works with public EEG datasets. He's looking forward to collecting data for his own tasks.\n\nThe task gives a recording its context.\n\nUAA plans to study cognitive states during reading. Another planned project pairs brain activity with eye movements during computer programming. Different questions. The same new tool.\n\nPublic datasets already support useful research. They keep their place. The headset adds a way for students to shape an experiment around a question they choose.\n\nAnd a recording still needs interpretation. The announced studies haven't reported results.\n\nIf a future model claims to work for new people, test it on people absent from its training. That's a research principle, not a finding about UAA.\n\nThe signal, the task and the test each have a job.\n\nAlaska's gain is a new option for students to investigate, with the answers still to be earned.\n\nWhich question about learning should they put to this tool first?",
-  "vo_word_count": 217,
-  "target_seconds": 120,
-  "allowed_seconds": [
-    112,
-    130
-  ],
-  "allowed_vo_words": [
-    200,
-    220
-  ],
-  "accuracy_contract": [
-    "All waveforms illustrated and non-numeric.",
-    "Literal scalp plan contains exactly 19 contact pads; count them in frame review.",
-    "Two earclips are not additional scalp electrodes. Three auxiliary inputs are empty sockets, not reported attached sensors.",
-    "Reading and programming scenes carry PLANNED.",
-    "No mind-reading, diagnostic result, treatment, classification accuracy or completed dataset.",
-    "Eye movements remain planned context, not claimed headset-alone output.",
-    "Conditional new-person test is editorial methods context, not an allegation or UAA protocol."
-  ],
-  "cross_challenge_pending": true,
-  "storyboard_written": false
+  "feasibility": "The pitch uses shelf typography, records machinery, a rail environment, paper interiors and hand/pen props. No new hero drawing is needed. Custom copy and compositing are essential; label density must be tested at phone scale. The only potential library extension is an editing gesture that never signs or approves. All mechanism imagery is marked schematic and tied to the correct source state.",
+  "not_a_storyboard_or_vo": true,
+  "readback": {"angle": "out/dispatch/angle.json", "facts": ["verified_findings_20260913.json", "claims.json", "sources.json"], "craft": ["config/state.yaml last two releases", "full video-engine/src/lib/ASSET_MANIFEST.md", "docs/craft/DIRECTORS_ROOM.md", "prompts/dispatch_routine.md Phase 4.1"]}
 }

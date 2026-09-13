@@ -19,13 +19,8 @@ import argparse, base64, json, datetime as dt, math, re, subprocess, sys
 from html import escape
 from pathlib import Path
 
-# THE MAILBOX IS docket@alaskaaihq.com AND IT IS THE SAME ONE EVERY TIME (owner, 2026-07-31).
-# It used to say "me", an account-relative alias, on the theory that a repoint should be a
-# connector change and not a code change. In practice the Gmail connector rejects "me" outright
-# ("Invalid email address. Please provide a raw email address"), so every run hit the error,
-# went and looked the address up, and typed it into the tool call by hand. A constant that every
-# caller has to rediscover is not a constant, it is a gap. It lives here now.
-DRAFT_TO = "docket@alaskaaihq.com"
+# Owner, 2026-09-13: use the connected Gmail profile's actual address via --to.
+# The literal alias "me" is rejected by Gmail. No fixed mailbox or From override.
 # Run-freshness guard: refuse to email a PREVIOUS run's scratch (see run_guard.py
 # for the 07-18/07-19 stale-artifact incidents this prevents). Import from the
 # sibling scripts/ dir regardless of the caller's cwd.
@@ -462,7 +457,8 @@ def main():
                          "shipped this run' section so the owner sees what self-improved.")
     ap.add_argument("--temporary", action="store_true", help="flag download links as temporary (~1h)")
     ap.add_argument("--date", default=dt.date.today().isoformat()); ap.add_argument("--title", default="")
-    ap.add_argument("--to", default=DRAFT_TO); ap.add_argument("--out-html", default="")
+    ap.add_argument("--to", required=True, help="Actual email address from the connected Gmail profile")
+    ap.add_argument("--out-html", default="")
     ap.add_argument("--no-freshness-check", action="store_true",
                     help="bypass the run-freshness guard (deliberate manual/standalone use only; "
                          "the routine must NEVER pass this -- it is how a previous run's scratch ships)")

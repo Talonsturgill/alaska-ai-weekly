@@ -1,65 +1,59 @@
 {
+  "run_date": "2026-09-13",
   "gate": "0D",
-  "role": "art_director_critic",
-  "reviewed_at": "2026-09-12T13:47:53.350525+00:00",
-  "ship": true,
-  "input_sha256": {
-    "art_direction.json": "92fc9b0aa3406859e0818ba7dce5f4c294cc359340cb4135bed8421b44f93d46",
-    "storyboard.json": "fb83b92a4263b44cf0c05d91b21cad97c5e635e3826afaf35dbe1e4e3d7545e7",
-    "treatment_winner.json": "3c1137b053b8948db487fdb636966350f1b3d08f22685fddd5dbb8f9676eedd6"
-  },
-  "verdict": "The amended plan covers every Phase 4.1a lever with story-specific staging. Two timed negative-space beats resolve the sole prior omission. Gate 0D passes for scene construction.",
-  "checks": {
+  "reviewer": "ART DIRECTOR CRITIC",
+  "scope": "Independent review of the pre-build art plan and its current storyboard execution intent. This approves the plan, not an unrendered film.",
+  "inputs": [
+    "out/dispatch/art_direction.json",
+    "out/dispatch/storyboard.json",
+    "config/state.yaml, September 11 and 12 entries",
+    "prompts/dispatch_routine.md, Phase 4.1a and Gate 0D",
+    "docs/craft/ENGAGEMENT.md, reveal grammar",
+    "video-engine/src/lib/ASSET_MANIFEST.md",
+    "video-engine/src/lib/props.tsx, existing PenAndDocument"
+  ],
+  "lever_judgments": {
     "palette": {
-      "pass": true,
-      "finding": "Lilac daylight, ivory paper, citron markers and coral identity tabs support warm curiosity. The September 10 charcoal/cyan/magenta rock-glacier world and September 11 spruce/cream/berry flight world are materially different. Sharing a warm light neutral is not a repeat. The optional treatment palette is not binding."
-    },
-    "light_depth": {
-      "pass": true,
-      "finding": "Upper-left warm key, lower-right shadows, cooler fill, narrow rim, three actual Stage3D depths and object contact shadows are concrete. Fold and layer edges supply form cues. Build must show parallax and motivated shadows, not merely declare z values."
+      "judgment": "PASS",
+      "reason": "All required hex roles are explicit. Copper work surfaces dominate porcelain stock; the oxblood instrument is the focal accent and nickel describes durable mechanisms. Some hues are related to September 11 berry and spruce, but their proportions and material assignments change: green is restricted to retrieval hardware instead of defining the whole world. This is distinct from both the flight-crate film and September 12 lilac/citron EEG notebook, with a story-specific warm handoff rationale."
     },
     "shape_language": {
-      "pass": true,
-      "finding": "Supple paper and rounded wearable ribs contrast with ordered archive slots and test spaces. Solid existing pages versus dotted planned areas express the evidence distinction without disparaging the archive."
+      "judgment": "PASS",
+      "reason": "Slotted retrieval rails and notched source tabs express gathering and rules. The separate light table expands editable paragraph sections vertically. The long tapered pen introduces a diagonal refinement stroke against their ordered lines. Report tabs and FIRST DRAFT typography prevent the two outputs from collapsing into interchangeable paper."
     },
-    "casting": {
-      "pass": true,
-      "finding": "Sheet/PaperFiber, Character, GripHand, EvidenceTrace and existing spatial/lighting systems match their verbs. The notebook is a fresh composition, not a renamed flight crate. Anonymous illustrated students avoid a named likeness claim."
+    "light_and_depth": {
+      "judgment": "PASS",
+      "reason": "Late-afternoon upper-left window key, lower-right cast shadows, neutral right fill and nickel-white rim are concrete and mutually coherent. Four to six actual depth planes, receiving-surface contact shadows and reduced distant contrast/chroma specify dimensional execution. The warm professional desk follows the preparation tools without implying machine failure."
     },
-    "new_asset_gap": {
-      "pass": true,
-      "finding": "A wearable scalp sensor is absent from the manifest sensor shelf. EEGHeadset is a legitimate single reusable addition. Exactly 19 scalp contacts, two separate earclips and three empty auxiliary sockets keep the measured configuration clear."
+    "manifest_casting": {
+      "judgment": "PASS",
+      "reason": "PenAndDocument, GripHand, Sheet, PaperOfficeBG, Nameplate, BrassPlate, Stage3D, CameraMoves and EndCredits are real shelf assets. Sheet is supporting stock, preserving divergence from yesterday's hero. The shelf pen currently only hovers; cap, clip, nib and contact-bound writing fill an actual performance gap. KGS and Koniag remain named corporations with ordinary faceless office tools and no cultural personification."
     },
-    "motion": {
-      "pass": true,
-      "finding": "Concealed notebook hinge, counted electrode expansion, useful public-data selection, optional workspace unfolding and a distinct held-out person all advance this story. Page anticipation/overshoot, cable follow-through and selective 180-degree smear are specified."
+    "motion_language": {
+      "judgment": "PASS",
+      "reason": "Named primary actions, two-to-four-frame reactions, phase-offset ambient motion and selective blur serve visible cause and consequence. Ink is tied to nib contact rather than independently animating into existence. The three 0.6-second total reveal freezes are deliberate punctuation required by ENGAGEMENT.md section 3; they are not an ambient-motion defect."
+    },
+    "composition_and_real_sets": {
+      "judgment": "PASS",
+      "reason": "The announcement wall, horizontal retrieval aisle, separate drafting light table and professional desk provide at least three physically different environments. PaperOfficeBG is restricted to retrieval. Inserts through extreme wides and multiple camera heights are assigned in the board. Essential content at x70..1010/y480..1320 fits the central square; captions at y1336..1468 have a reserved, nonoverlapping band. Readouts stay outside perspective transforms."
     },
     "signature_shot": {
-      "pass": true,
-      "finding": "The same notebook unfolds into an active public-data route plus an empty TO COLLECT / TO TEST wing. This pays the late promise in one image and preserves the additive thesis."
+      "judgment": "PASS",
+      "reason": "At 60 seconds the two machine housings retreat into separate far planes while intact outputs advance onto a generous foreground workbench. The depth reveal gives useful preparation visual credit; the later diagonal pen action changes how the viewer reads those outputs. This is one identifiable signature composition, not an unspecified spectacle promise."
     },
-    "square_safe": {
-      "pass": true,
-      "finding": "Essential bounds x90..990/y490..1270 and captions y1336..1468 fit the centered y420..1500 square crop. This is a sound plan, not rendered proof. The sideways signature expansion and nineteen-contact fan must stay inside those bounds."
-    },
-    "craft_advance": {
-      "pass": true,
-      "finding": "Confirmed in credentials.tsx: QuestionToken currently ignores arbitrary text and renders WHO EARNED THIS? unless the value is EARNED. Actual text fitting and palette parameters with legacy-default preservation are a real reusable improvement. Long/short phone-size examples and a legacy comparison make the advance verifiable."
-    },
-    "negative_space_beats": {
-      "pass": true,
-      "finding": "31.78-34.37s clears fixtures around the schematic trace and an empty interpretation area. 83.49-89.48s clears stationery for the expanding notebook while keeping the useful public route visible. Both specify timing, removed clutter and the meaning gained."
+    "reusable_craft_advance": {
+      "judgment": "PASS",
+      "reason": "The shared pen family gains cap separation/posting, clip flex, exposed split nib, hand-bound movement and progressive contact-bound ink. These are inspectable physical changes, not a pen merely visiting different positions. Preserving existing PenAndDocument defaults protects shipped episodes. The proposed consecutive-frame cap/contact/lift inspection directly tests the actual advance."
     }
   },
   "required_fixes": [],
-  "render_watchpoints": [
-    "Use deep-violet text on ivory/citron; citron against ivory is an accent, not a legible text pair. Check the longest plan/method labels in the square phone preview.",
-    "QuestionToken inherits an award-seal silhouette. Keep it a small movable question marker with neutral scene colors; no approval stamp, triumphal glow or evidence of a passed test.",
-    "Show public-data selection and analysis at full visual competence. No dimming, red rejection, crossed-out book or fabricated comparative result.",
-    "Keep the hypothetical participant visibly distinct and labeled as a general methods example from its first appearance. Scalp signal, gaze marker and interpretation field must remain different objects."
+  "binding_build_checks": [
+    "Keep retrieval and generative drafting in their separately composed environments; do not turn the office shelf background into every set.",
+    "Carry cap separation continuously into the loose-cap gesture, post it visibly, attach grip and nib to the same transform, and leave the neutral ink mark after lift. Treat the storyboard's physical states as persistent.",
+    "At rendered square/mobile scale, verify the full corporation names, API/rules versus LLM labels, FIRST DRAFT and source scope remain readable above the caption band.",
+    "Implement and register the reusable shared pen extension while preserving legacy defaults; render proof remains a later gate.",
+    "Follow the storyboard runtime contract: 112-130 seconds of narration, planned at 120 seconds, followed by 12.3 seconds of credits. The plan's at-least-ten-second wording does not shorten that contract."
   ],
-  "scope": "Planning critique only. Exact current plan approved for scene construction. Render execution, crop legibility and lighting remain subject to later gates.",
-  "resolved_fixes": [
-    "Added two structured composition.negative_space_beats with times, staging and story-specific purposes."
-  ]
+  "ship": true,
+  "verdict": "The art plan is complete, fresh in material balance and composition, and specific enough to bind the build. Gate 0D ships; no scene code or plan changes were authored by this critic."
 }

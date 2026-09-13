@@ -55,8 +55,9 @@ const monoW = (s: string, size: number, track = 0) =>
   s.length * size * 0.602 + track * Math.max(0, s.length - 1);
 
 /** Largest size at which `s` fits `maxW`, so a long source line shrinks instead of clipping. */
-const fitSize = (s: string, maxW: number, ideal: number, floor = 13) =>
-  Math.max(floor, Math.min(ideal, maxW / (s.length * 0.602 + 0.001)));
+const fitSize = (s: string, maxW: number, ideal: number, floor = 13, track = 0) =>
+  Math.max(floor, Math.min(ideal,
+    (maxW - track * Math.max(0, s.length - 1)) / (s.length * 0.602 + 0.001)));
 
 export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; paperDesk?: boolean}> = ({
   data, durationInFrames, paperDesk = false,
@@ -81,7 +82,7 @@ export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; 
   const MAXW = W - SAFE * 2;
 
   const siteLine = `VISIT US AT ${data.site.toUpperCase()}`;
-  const siteSize = fitSize(siteLine, MAXW, 40);
+  const siteSize = fitSize(siteLine, MAXW, 40, 13, 1.4);
   // A LICENCE CONDITION SET IN 19px IS NOT "UNMISSABLE" (2026-08-13, round 7). The comment
   // below this block says the credit is drawn last and unmissable, and then it fit a 74
   // character string to one line, which caps it at 19px in DIM -- the smallest, faintest type
@@ -92,12 +93,12 @@ export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; 
   const musicLines = mSplit > 0
     ? [musicRaw.slice(0, mSplit), musicRaw.slice(mSplit + 2)]
     : [musicRaw];
-  const musicSize = musicLines.reduce((acc, l) => Math.min(acc, fitSize(l, MAXW, 32)), 32);
+  const musicSize = musicLines.reduce((acc, l) => Math.min(acc, fitSize(l, MAXW, 32, 13, 0.6)), 32);
 
   // sources are laid one per line, each shrunk to fit rather than truncated: a source you
   // cannot read is the same as a source you did not cite
   const srcSize = data.sources.reduce(
-    (acc, s) => Math.min(acc, fitSize(s.toUpperCase(), MAXW, 22)), 22);
+    (acc, s) => Math.min(acc, fitSize(s.toUpperCase(), MAXW, 22, 13, 0.8)), 22);
 
   // 620, not 470: at 470 the block sat in the upper half and left a third of a 1920 frame
   // empty under it, which is the single most repeated composition note this film has had.

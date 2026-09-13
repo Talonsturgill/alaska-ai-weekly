@@ -1,332 +1,308 @@
 {
-  "run_date": "2026-09-12",
-  "title": "The Question Comes First",
+  "run_date": "2026-09-13",
+  "title": "The Pen Still Has Work",
   "role": "vo-director",
-  "planned_at": "2026-09-12T15:24:39.321309+00:00",
-  "target_seconds": 120,
-  "word_count": 220,
-  "input_sha256": {
-    "vo_script.txt": "9adddbadffb1a6da75e8407499ccb76e110c0ccec379e949719e32eceb9085f1",
-    "angle.json": "89154fee7d58ee4395753ab90c5fc20dd1c5787c72398e9f39572a9c2dc92bdc"
-  },
-  "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
+  "planned_at": "2026-09-13T14:57:35.701436+00:00",
+  "revision": 2,
+  "model": "gemini-3.1-flash-tts-preview",
   "voice": "Sulafat",
+  "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
   "accent": "neutral American, light and natural",
-  "notes": "Style: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.",
-  "style_prompt": "Style: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.",
+  "target_seconds": 120,
+  "word_count": 204,
+  "performed_target_seconds": [
+    118,
+    122
+  ],
+  "runtime_acceptance": {
+    "format_band_seconds": [
+      112,
+      130
+    ],
+    "used_claims": 15,
+    "maximum_seconds_for_claim_density": 128.57,
+    "effective_band_seconds": [
+      112,
+      128.57
+    ],
+    "status": "Revision 2 has not been synthesized. Prior batch duration does not establish this revision duration.",
+    "method": "Natural complete-passage delivery and sentence breaths. No inserted audio silence, time stretching or post-synthesis padding."
+  },
+  "input_sha256": {
+    "vo_script.txt": "5ae7ddb9b7890df4f1d39fb246eb6e62fd91613f20d2791920a2be265de5526f",
+    "vo_script.json": "7f3f63c19ceeebb4239fac83e6fe42ebe6aa8376a64f7ceb3136fcc9501c03e7",
+    "angle.json": "70d735b49044f8b1e09d5b113e85b68e264cd69cd3145e0f5081531e5bcbeff7"
+  },
+  "authority": "docs/craft/VO_DIRECTION.md, runtime-anchored Step 7 and September 12 vetted slow cue, overrides older brisk baseline and transcript respelling guidance.",
+  "notes": "Style: Nora speaks to one interested listener with a relaxed, patient public-radio cadence. Keep a gently slow tempo even when the tone brightens. Use connected phrases, ordinary vowels and easy natural sentence breaths. Start curious, give useful preparation warm credit, make the two professional handoffs clear, then end with a personal invitation. Energy changes come from pitch and warmth while the tempo stays unhurried.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nDiction: The second transcript line begins with a complete three-word company name. Speak all three words once, clearly, as one phrase before says. Do not shorten, replace or repeat that name. Only the fourth transcript line begins with the written initialism; read that occurrence as individual letters.\nEmphasis: In transcript-line order, next; Services; eleventh; Koniag; earlier; subject; retrieves; Prebuilt; Separate; credit; preparation; reviews; refines; different; quantify; yours.\nContrast: Relative energy by transcript line is 4, 3, 2, 3, 2, 3, 2, 3, 4, 3, 2, 3, 4, 3, 2, 3. Keep these differences audible through vocal color, with the same patient tempo.",
+  "style_prompt": "Style: Nora speaks to one interested listener with a relaxed, patient public-radio cadence. Keep a gently slow tempo even when the tone brightens. Use connected phrases, ordinary vowels and easy natural sentence breaths. Start curious, give useful preparation warm credit, make the two professional handoffs clear, then end with a personal invitation. Energy changes come from pitch and warmth while the tempo stays unhurried.",
   "pace_paragraph": "Pace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.",
   "lines": [
     {
       "idx": 0,
-      "text": "Nineteen scalp electrodes. [short pause] What's on the next page?",
-      "intent": "hook",
-      "emphasis": "page",
+      "text": "Two machine outputs. [short pause] Watch what this pen does next.",
+      "locked_text": "Two machine outputs. Watch what this pen does next.",
+      "intent": "HOOK",
+      "emphasis": "next",
       "energy": 4,
-      "pace": "Land Nineteen clearly, then open the page question with a curious lift.",
+      "pace": "A bright invitation. Let the opening statement land before looking ahead with the listener.",
       "tags": [
         "[short pause]"
       ],
-      "pause_before": false,
-      "why": "A concrete count buys attention and the unanswered page question pulls forward."
+      "pause_before": false
     },
     {
       "idx": 1,
-      "text": "The University of Alaska Anchorage has a new dry E E G.",
-      "intent": "setup",
-      "emphasis": "new",
+      "text": "Koniag [slow] Government Services says it supports Wingman, a platform for digital office assistants.",
+      "locked_text": "Koniag Government Services says it supports Wingman, a platform for digital office assistants.",
+      "intent": "SETUP",
+      "emphasis": "Services",
       "energy": 3,
-      "pace": "Measured conversational context, clean spacing between E E G letters.",
-      "tags": [],
-      "pause_before": false,
-      "why": "Ground the hook in a real new research instrument."
+      "pace": "Say all three words of the company name once, as one complete phrase, before says. Articulate Government Services clearly. Keep the written full name; do not substitute initials or repeat the name.",
+      "tags": [
+        "[slow]"
+      ],
+      "pause_before": false
     },
     {
       "idx": 2,
-      "text": "The university [slow] announced it for its A I and Robotics Lab on September ninth.",
-      "intent": "stat",
-      "emphasis": "ninth",
+      "text": "Its September eleventh announcement names contracting, logistics and financial management.",
+      "locked_text": "Its September eleventh announcement names contracting, logistics and financial management.",
+      "intent": "STAT",
+      "emphasis": "eleventh",
       "energy": 2,
-      "pace": "Give the lab name and date a deliberately slow, clear cadence after The university; keep the factual delivery calm.",
-      "tags": [
-        "[slow]"
-      ],
-      "pause_before": false,
-      "why": "The acquisition peg needs clarity rather than promotional emphasis."
+      "pace": "Give the date ordinary clear articulation and let the three functions flow evenly; inherit the measured sentence-breath baseline.",
+      "tags": [],
+      "pause_before": false
     },
     {
       "idx": 3,
-      "text": "The Educational Legacy Fund funded it. [short pause] Students and faculty have trained.",
-      "intent": "setup",
-      "emphasis": "trained",
+      "text": "KGS belongs to Koniag, the Kodiak region's Alaska Native corporation.",
+      "locked_text": "KGS belongs to Koniag, the Kodiak region's Alaska Native corporation.",
+      "intent": "SETUP",
+      "emphasis": "Koniag",
       "energy": 3,
-      "pace": "Credit the fund plainly, take the ordinary sentence breath, then lift warmly into people who have trained.",
-      "tags": [
-        "[short pause]"
-      ],
-      "pause_before": false,
-      "why": "Move from support to people already learning to use the equipment."
+      "pace": "Read the initialism at the start of this fourth line as individual letters, then continue the named ownership relationship in one natural sentence.",
+      "tags": [],
+      "pause_before": false
     },
     {
       "idx": 4,
-      "text": "The device [slow] records electrical activity using sensors that rest directly against the scalp.",
-      "intent": "stat",
-      "emphasis": "scalp",
+      "text": "Amazon's cloud business, AWS, describes earlier Army tools behind this approach.",
+      "locked_text": "Amazon's cloud business, AWS, describes earlier Army tools behind this approach.",
+      "intent": "SETUP",
+      "emphasis": "earlier",
       "energy": 2,
-      "pace": "Slow the measurement explanation after The device so the electrical activity and scalp sensors are easy to picture; keep ordinary articulation.",
-      "tags": [
-        "[slow]"
-      ],
-      "pause_before": false,
-      "why": "Give the listener a plain-language physical mechanism while keeping the signal distinct from thoughts or clinical results."
+      "pace": "Quiet precision. Give AWS clear letter spacing and earlier a small stress, locating the examples in the earlier case study.",
+      "tags": [],
+      "pause_before": false
     },
     {
       "idx": 5,
-      "text": "Graduate student Vadim Egorov has watched his own signals appear.",
-      "intent": "reveal",
-      "emphasis": "own",
-      "energy": 4,
-      "pace": "Let the name flow naturally and brighten at his own signals.",
-      "tags": [],
-      "pause_before": false,
-      "why": "The documented demonstration supplies a small human discovery."
+      "text": "DORA, [slow] the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.",
+      "locked_text": "DORA, the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.",
+      "intent": "SETUP",
+      "emphasis": "subject",
+      "energy": 3,
+      "pace": "Slowly unfold the tool name, then connect emailing a vendor identifier to the subject line as one clear action. Breathe at the appositive boundary if needed.",
+      "tags": [
+        "[slow]"
+      ],
+      "pause_before": false
     },
     {
       "idx": 6,
-      "text": "He usually works with public E E G datasets.",
-      "intent": "setup",
-      "emphasis": "public",
+      "text": "It retrieves compliance records through software connections, including SAM dot gov.",
+      "locked_text": "It retrieves compliance records through software connections, including SAM dot gov.",
+      "intent": "SETUP",
+      "emphasis": "retrieves",
       "energy": 2,
-      "pace": "Calm professional respect for the existing research practice.",
+      "pace": "Calmly describe gathering existing records; let software connections and SAM dot gov resolve cleanly. This is retrieval.",
       "tags": [],
-      "pause_before": false,
-      "why": "The archive enters as useful work already happening."
+      "pause_before": false
     },
     {
       "idx": 7,
-      "text": "Now [slow] he's looking forward to collecting recordings for his own tasks.",
-      "intent": "reveal",
-      "emphasis": "tasks",
-      "energy": 4,
-      "pace": "Settle into a slower reflective cadence as the story opens the new research option; keep ordinary articulation and warmth.",
-      "tags": [
-        "[slow]"
-      ],
-      "pause_before": false,
-      "why": "Celebrate the added choice without performing a completed collection."
+      "text": "Prebuilt logic assembles a standardized report.",
+      "locked_text": "Prebuilt logic assembles a standardized report.",
+      "intent": "SETUP",
+      "emphasis": "Prebuilt",
+      "energy": 3,
+      "pace": "Quiet confidence, with a full natural finish on report. The logic is fixed; no language-model inference is implied.",
+      "tags": [],
+      "pause_before": false
     },
     {
       "idx": 8,
-      "text": "Who might a future answer work for?",
-      "intent": "stakes",
-      "emphasis": "Who",
-      "energy": 3,
-      "pace": "Lean toward one listener, with a small questioning rise.",
-      "tags": [],
-      "pause_before": true,
-      "why": "Plant the later new-person test as curiosity about scope."
-    },
-    {
-      "idx": 9,
-      "text": "U A A plans to study cognitive states during reading.",
-      "intent": "setup",
-      "emphasis": "plans",
-      "energy": 2,
-      "pace": "Measured and clear, keeping plans audible before cognitive states.",
-      "tags": [],
-      "pause_before": false,
-      "why": "The reading study is future work rather than a result."
-    },
-    {
-      "idx": 10,
-      "text": "Another planned project pairs brain activity [short pause] with eye movements during programming.",
-      "intent": "setup",
-      "emphasis": "pairs",
-      "energy": 3,
-      "pace": "Gentle lift, keeping brain activity and eye movements as distinct phrases.",
-      "tags": [
-        "[short pause]"
-      ],
-      "pause_before": false,
-      "why": "Make the planned pairing understandable without merging the measurements."
-    },
-    {
-      "idx": 11,
-      "text": "Those are plans, with the answers still ahead.",
-      "intent": "stakes",
-      "emphasis": "ahead",
-      "energy": 2,
-      "pace": "Warm and matter-of-fact, with a light sense of possibility at ahead.",
-      "tags": [],
-      "pause_before": false,
-      "why": "Locate the work in time without a deflating catch."
-    },
-    {
-      "idx": 12,
-      "text": "And the public recordings? [short pause] They keep their place.",
-      "intent": "reveal",
-      "emphasis": "keep",
+      "text": "Separate Jumpstarter tools [slow] use large language models through Amazon Bedrock to turn user inputs into initial document sections.",
+      "locked_text": "Separate Jumpstarter tools use large language models through Amazon Bedrock to turn user inputs into initial document sections.",
+      "intent": "REVEAL/CONTRAST",
+      "emphasis": "Separate",
       "energy": 4,
-      "pace": "Ask with a half-smile, give the question one natural beat, then answer with calm confidence.",
-      "tags": [
-        "[short pause]"
-      ],
-      "pause_before": false,
-      "why": "Give the public-data countercase full positive weight."
-    },
-    {
-      "idx": 13,
-      "text": "Researchers [slow] can check whether existing recordings fit the question. If they do, useful analysis can start there.",
-      "intent": "setup",
-      "emphasis": "fit",
-      "energy": 3,
-      "pace": "Slow the practical fit test after Researchers, let the complete thought land, then lift gently into useful analysis at the sentence turn.",
+      "pace": "Brighten the start, then retain the patient tempo through this distinct generative mechanism. Shape a natural phrase boundary after Amazon Bedrock.",
       "tags": [
         "[slow]"
       ],
-      "pause_before": false,
-      "why": "Let the countercase do real work and preserve its conditional fit test."
+      "pause_before": false
+    },
+    {
+      "idx": 9,
+      "text": "First, give the outputs their credit. [short pause] The records are gathered. A blank section now contains text someone can work with.",
+      "locked_text": "First, give the outputs their credit. The records are gathered. A blank section now contains text someone can work with.",
+      "intent": "REVEAL/CONTRAST",
+      "emphasis": "credit",
+      "energy": 3,
+      "pace": "Warm recognition. Let credit land, settle for gathered records, then lift gently into text someone can work with. Breathe naturally at both periods.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": false
+    },
+    {
+      "idx": 10,
+      "text": "These tools have completed real preparation for professionals.",
+      "locked_text": "These tools have completed real preparation for professionals.",
+      "intent": "STAKES",
+      "emphasis": "preparation",
+      "energy": 2,
+      "pace": "A grounded warm settle. Credit a real preparation job without implying all professional work is complete.",
+      "tags": [],
+      "pause_before": false
+    },
+    {
+      "idx": 11,
+      "text": "Now follow the report. The contracting professional reviews it and makes the determination.",
+      "locked_text": "Now follow the report. The contracting professional reviews it and makes the determination.",
+      "intent": "SETUP",
+      "emphasis": "reviews",
+      "energy": 3,
+      "pace": "Invite attention on Now follow the report, breathe, then describe review and determination with calm purpose. No implication of error or delay.",
+      "tags": [],
+      "pause_before": false
+    },
+    {
+      "idx": 12,
+      "text": "The draft has a different handoff. [slow] Its user refines and approves the generated sections.",
+      "locked_text": "The draft has a different handoff. Its user refines and approves the generated sections.",
+      "intent": "REVEAL/CONTRAST",
+      "emphasis": "refines",
+      "energy": 4,
+      "pace": "Lift into the different handoff. After the sentence breath, take time over refines and let approves complete the phrase.",
+      "tags": [
+        "[slow]"
+      ],
+      "pause_before": false
+    },
+    {
+      "idx": 13,
+      "text": "There's the pen's mark. The page arriving and the professional finishing are different events.",
+      "locked_text": "There's the pen's mark. The page arriving and the professional finishing are different events.",
+      "intent": "REVEAL/CONTRAST",
+      "emphasis": "different",
+      "energy": 3,
+      "pace": "A small satisfied smile at the pen mark, then reflective clarity about the two events. This pays the observable action, not a productivity verdict.",
+      "tags": [],
+      "pause_before": false
     },
     {
       "idx": 14,
-      "text": "They can also plan a new recording around another task.",
-      "intent": "reveal",
-      "emphasis": "also",
+      "text": "These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.",
+      "locked_text": "These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.",
+      "intent": "STAKES",
+      "emphasis": "quantify",
       "energy": 2,
-      "pace": "Brief warm settle before the larger reveal.",
+      "pace": "Calm, exact source attribution. Breathe between sentences. Give the Alaska-return boundary the same warmth as useful work; unquantified does not mean no benefit.",
       "tags": [],
-      "pause_before": false,
-      "why": "Also connects the two routes as compatible research choices."
+      "pause_before": false
     },
     {
       "idx": 15,
-      "text": "The extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.",
-      "intent": "reveal",
-      "emphasis": "design",
-      "energy": 4,
-      "pace": "Brighten on design, breathe at the period, then soften warmly into the still-open old pages.",
-      "tags": [
-        "[short pause]"
-      ],
-      "pause_before": true,
-      "why": "Pay the concealed-page promise with student participation and a useful archive beside it."
-    },
-    {
-      "idx": 16,
-      "text": "A recording alone doesn't supply an interpretation.",
-      "intent": "stakes",
-      "emphasis": "interpretation",
-      "energy": 2,
-      "pace": "Quiet precision, never a warning voice.",
-      "tags": [],
-      "pause_before": false,
-      "why": "Separate recording from inference without implying a UAA error."
-    },
-    {
-      "idx": 17,
-      "text": "If a future model claims to work for new people, [short pause] test it on people absent from training.",
-      "intent": "stakes",
-      "emphasis": "absent",
+      "text": "Useful preparation has reached the desk. Which part of the work is still yours?",
+      "locked_text": "Useful preparation has reached the desk. Which part of the work is still yours?",
+      "intent": "BUTTON/CTA",
+      "emphasis": "yours",
       "energy": 3,
-      "pace": "Finish the conditional phrase about new people, take a natural thought-breath, then make absent from training easy to follow.",
-      "tags": [
-        "[short pause]"
-      ],
-      "pause_before": false,
-      "why": "State the general new-person test as a practical method, not an accusation."
-    },
-    {
-      "idx": 18,
-      "text": "That's a research principle, [short pause] not a reported U A A result.",
-      "intent": "setup",
-      "emphasis": "principle",
-      "energy": 2,
-      "pace": "A short clean clarification, maintaining warmth.",
-      "tags": [
-        "[short pause]"
-      ],
-      "pause_before": false,
-      "why": "Keep editorial methods context separate from a reported institutional result."
-    },
-    {
-      "idx": 19,
-      "text": "Which question about learning should they investigate first?",
-      "intent": "button",
-      "emphasis": "first",
-      "energy": 4,
-      "pace": "Turn toward the listener, invite an answer, and finish with a natural curious lift.",
+      "pace": "Warm direct address. Let the desk sentence settle on a natural breath, then ask with a modest curious rise and clean ending.",
       "tags": [],
-      "pause_before": true,
-      "why": "Return the story to choosing worthwhile learning questions."
+      "pause_before": false
     }
   ],
   "pronunciations": {
-    "Vadim Egorov": "vuh-DEEM yih-GOR-uhv"
+    "Koniag": "KOH-nee-ag",
+    "Kodiak": "KOH-dee-ak"
   },
-  "pronunciation_note": "Conventional pronunciation guide only; the individual preferred reading has not been confirmed. It is direction data and never a transcript replacement. Audition the name in soundcheck.",
+  "pronunciation_note": "Only these two name hints are retained as data. The synth injects them once above Transcript. The hand-authored notes contain no pronunciation guide. The fourth transcript line keeps its written initialism and reads it as individual letters. No respelling changes the transcript.",
   "arc": [
     {
       "lines": [
         0,
-        5
+        4
       ],
-      "movement": "Curious concrete opening into a small human discovery. Energies 4,3,2,3,2,4."
+      "movement": "Curious hook into attributed current news, corporate ownership and earlier source scope."
     },
     {
       "lines": [
-        6,
-        11
+        5,
+        8
       ],
-      "movement": "Respect existing work, lift into chosen tasks, and keep all study plans future-facing. Energies 2,4,3,2,3,2."
+      "movement": "Patient retrieval and rules explanation, then a brighter but equally unhurried distinct generative tool."
     },
     {
       "lines": [
-        12,
+        9,
+        13
+      ],
+      "movement": "Warm credit for preparation, two distinct professional actions and the pen payoff."
+    },
+    {
+      "lines": [
+        14,
         15
       ],
-      "movement": "A confident public-data countercase earns the warmer additive-page reveal. Energies 4,3,2,4."
-    },
-    {
-      "lines": [
-        16,
-        19
-      ],
-      "movement": "Calm interpretation and conditional methods, then a bright direct invitation. Energies 2,3,2,4."
+      "movement": "Calm announcement scope followed by a warm direct invitation."
     }
   ],
-  "priority_line_idx": 15,
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Speak slowly and calmly, with the patient cadence of a reflective science documentary. Nora is seated in a quiet studio, guiding one interested listener through unfamiliar measurements. Give each complete thought room to settle before the next. Keep a clearly slow, steady speaking tempo through the whole passage, including the questions and brighter discoveries. Use small pitch changes and a gentle smile for curiosity. Articulate whole phrases naturally, with ordinary vowels and easy breaths at meaning boundaries.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. Keep plans, design and absent especially clear.\nTranscript:\nNineteen scalp electrodes. [short pause] What's on the next page?\nThe University of Alaska Anchorage has a new dry E E G.\nThe university [slow] announced it for its A I and Robotics Lab on September ninth.\nThe Educational Legacy Fund funded it. [short pause] Students and faculty have trained.\nThe device [slow] records electrical activity using sensors that rest directly against the scalp.\nGraduate student Vadim Egorov has watched his own signals appear.\nHe usually works with public E E G datasets.\nNow [slow] he's looking forward to collecting recordings for his own tasks.\nWho might a future answer work for?\nU A A plans to study cognitive states during reading.\nAnother planned project pairs brain activity [short pause] with eye movements during programming.\nThose are plans, with the answers still ahead.\nAnd the public recordings? [short pause] They keep their place.\nResearchers [slow] can check whether existing recordings fit the question. If they do, useful analysis can start there.\nThey can also plan a new recording around another task.\nThe extra page holds a plan that students can help design. [short pause] The old pages stay open beside it.\nA recording alone doesn't supply an interpretation.\nIf a future model claims to work for new people, [short pause] test it on people absent from training.\nThat's a research principle, [short pause] not a reported U A A result.\nWhich question about learning should they investigate first?",
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty. Neutral American accent, light and natural.\n### DIRECTOR'S NOTES\nStyle: Nora speaks to one interested listener with a relaxed, patient public-radio cadence. Keep a gently slow tempo even when the tone brightens. Use connected phrases, ordinary vowels and easy natural sentence breaths. Start curious, give useful preparation warm credit, make the two professional handoffs clear, then end with a personal invitation. Energy changes come from pitch and warmth while the tempo stays unhurried.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nDiction: The second transcript line begins with a complete three-word company name. Speak all three words once, clearly, as one phrase before says. Do not shorten, replace or repeat that name. Only the fourth transcript line begins with the written initialism; read that occurrence as individual letters.\nEmphasis: In transcript-line order, next; Services; eleventh; Koniag; earlier; subject; retrieves; Prebuilt; Separate; credit; preparation; reviews; refines; different; quantify; yours.\nContrast: Relative energy by transcript line is 4, 3, 2, 3, 2, 3, 2, 3, 4, 3, 2, 3, 4, 3, 2, 3. Keep these differences audible through vocal color, with the same patient tempo.\nTranscript:\nTwo machine outputs. [short pause] Watch what this pen does next.\nKoniag [slow] Government Services says it supports Wingman, a platform for digital office assistants.\nIts September eleventh announcement names contracting, logistics and financial management.\nKGS belongs to Koniag, the Kodiak region's Alaska Native corporation.\nAmazon's cloud business, AWS, describes earlier Army tools behind this approach.\nDORA, [slow] the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.\nIt retrieves compliance records through software connections, including SAM dot gov.\nPrebuilt logic assembles a standardized report.\nSeparate Jumpstarter tools [slow] use large language models through Amazon Bedrock to turn user inputs into initial document sections.\nFirst, give the outputs their credit. [short pause] The records are gathered. A blank section now contains text someone can work with.\nThese tools have completed real preparation for professionals.\nNow follow the report. The contracting professional reviews it and makes the determination.\nThe draft has a different handoff. [slow] Its user refines and approves the generated sections.\nThere's the pen's mark. The page arriving and the professional finishing are different events.\nThese are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.\nUseful preparation has reached the desk. Which part of the work is still yours?",
   "planning_checks": {
     "exact_spoken_lines": true,
+    "line_count": 16,
     "adjacent_energy_contrast": true,
     "all_lines_have_intent_emphasis_pace": true,
-    "inline_tags_total": 11,
+    "inline_tags_total": 6,
+    "inline_tags_by_type": {
+      "[slow]": 4,
+      "[short pause]": 2
+    },
     "only_vetted_midline_tags": true,
     "target_anchored_pace_verbatim": true,
+    "prompt_repairs_needed": [],
+    "checked_transcript_guard_passed": true,
     "no_synthesis_performed": true,
-    "previous_job_runtime_failed": true,
-    "this_revision_not_synthesized": true,
-    "inline_tags_by_type": {
-      "[short pause]": 7,
-      "[slow]": 4
-    }
+    "pronunciation_injections_after_simulation": 1,
+    "notes_words_before": 716,
+    "notes_words_after": 221,
+    "current_revision_not_synthesized": true
   },
-  "revision": 5,
-  "revision_reason": "Streaming completed both revision 4 takes without transport errors, but 109.36 seconds remained below the 112-130 second band. One slow cue at line 7 did not establish a persistent full-read tempo. Repeat the locally vetted cue at meaningful names, measurement and analysis spans before the page payoff.",
-  "revision_scope": "Add slow after The university on line 2; replace line 4 and line 13 short-pause cues with slow after The device and Researchers. Preserve the existing line 7 slow cue, all 220 spoken words, Sulafat, the canonical 120-second pace paragraph and contrasting line energies. No synthesis or audio processing.",
-  "previous_plan_sha256": "106dc4b44fcfa7b109f72590ec759439a4b5aa0d025fd0d00874f878c4f7e2a8",
-  "previous_report_sha256": "ff8ea726c91b294c4b14cd4e43b475b2bd8bdd7efc4bb3079872921731750d84",
-  "performed_target_seconds": [
-    118,
-    120
+  "soundcheck_focus": [
+    "Hard content check: the opening must audibly say Koniag Government Services exactly once before says. Repeated initials or a shortened company name rejects a take even when aggregate WER passes.",
+    "Check the fourth transcript line separately: its written KGS initialism is spoken as letters, once, followed by belongs to Koniag.",
+    "Confirm the exact complete transcript, no spoken notes or tags, natural sentence breaths and the normal expressiveness and loudness gates.",
+    "Measure the complete new take in 112 to 128.57 seconds. Do not pad, stretch or splice the previous take."
   ],
-  "vetted_tag_evidence": {
-    "tag": "[slow]",
-    "path": "out/dispatch/probe/slow_tag_probe.json",
-    "wav_sha256": "7ee831698f1711663177ee3237336be34a4676b20a83a1990cd04b7f9f752e4d",
-    "wer": 0,
-    "leaked": [],
-    "duration_s": 35.16,
-    "scope": "56-word isolated probe, not format approval",
-    "source": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud"
-  }
+  "previous_plan_sha256": "3f1d71452997d52f830a99667e08854db0f00635480176660f46fbdfa9427b56",
+  "previous_report_sha256": "89b255b797abf8f5f47742e8814bd335e1dd4fb821e79af8ea505d289ac5cd3d",
+  "previous_revision_directory": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/vo_direction_20260913_r1_before_name_repair_20260913T145735701436Z",
+  "revision_reason": "The only in-band first-batch take omits the full company name. The report hears repeated initials; two independent opening ASR checks reported by the producer agree. Global word accuracy and score do not make this actor-identification omission acceptable.",
+  "diagnosis": {
+    "observed": "Take 1 raw duration 115.76 seconds, score 0.966 and WER 0.069, but the report hears KGS, KGS instead of Koniag Government Services at the first company mention.",
+    "producer_evidence": "Independent base and small ASR of the opening both heard the same company-name omission; aligned duration 115.18 seconds.",
+    "prompt_risk": "The old assembled prompt included 716 words of notes and a six-entry pronunciation guide, including a spelled-initials cue; the synth then injected that guide a second time. This creates plausible abbreviation and repetition priming. It is a repair hypothesis, not a proven single cause."
+  },
+  "revision_scope": [
+    "Condense transmitted notes while preserving per-line intent, emphasis and energy data.",
+    "Remove the hand-authored pronunciation paragraph and retain only two proper-name hints for one synth-owned injection. Remove the abbreviation pronunciation map entries.",
+    "Require the complete first company name once and reserve letter reading for the fourth transcript line.",
+    "Move the date-line slow cue to the middle of the full company name. Keep six vetted midline cues total and the canonical pace paragraph unchanged.",
+    "Preserve all 204 words, 16 locked lines, current script hashes, Sulafat, model and the 112 to 128.57-second effective band."
+  ]
 }

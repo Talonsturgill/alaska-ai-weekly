@@ -24,7 +24,7 @@ Usage in a mix script:
     path = resolve("clank", episode_seed="2026-07-21")   # a different take each call
     path = resolve("clank")                              # same, process-global bag
 """
-import os, re, sys, glob, zlib, subprocess
+import os, re, sys, glob, zlib, subprocess, math
 import random as _random
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -36,6 +36,31 @@ REAL = os.path.join(BANK, "real")
 ALIASES = {"bell": "ding", "impact": "thud", "swish": "whoosh", "alarm": "klaxon"}
 
 _bags = {}  # (kind, episode_seed) -> {"order": [paths], "pos": int, "last": [paths]}
+
+
+def scheduled_time(beat, next_at, fps=30):
+    """Place a motivated sound at entry or at a declared physical contact.
+
+    A beat begins when movement starts; a click may belong to its later landing.
+    Frame offsets stay physical when narration conforms the beat's start time.
+    Require an explanation and keep the cue inside its own visual beat.
+    """
+    start = beat.get('at_s')
+    offset = beat.get('sfx_offset_frames', 0)
+    if (type(start) not in (int, float) or not math.isfinite(start) or start < 0
+            or type(next_at) not in (int, float) or not math.isfinite(next_at)
+            or next_at <= start or type(fps) not in (int, float)
+            or not math.isfinite(fps) or fps <= 0):
+        raise ValueError('sound timing needs a finite visual beat interval and frame rate')
+    if type(offset) is not int or offset < 0:
+        raise ValueError('sfx_offset_frames must be a nonnegative integer')
+    reason = beat.get('sfx_offset_reason', '')
+    if offset and (not isinstance(reason, str) or not reason.strip()):
+        raise ValueError('a sound contact offset needs sfx_offset_reason')
+    at = float(start) + offset / fps
+    if at >= next_at:
+        raise ValueError('sound contact offset leaves its visual beat')
+    return at
 
 
 def takes(kind):

@@ -1,0 +1,23 @@
+{
+  "run_date": "2026-09-13",
+  "verified_at": "2026-09-13T17:33:11.627986+00:00",
+  "verified_draft_only": true,
+  "labels": [
+    "DRAFT"
+  ],
+  "sent": false,
+  "recipient_matches_current_connected_profile": true,
+  "no_from_override_requested": true,
+  "exact_html_readback": true,
+  "html_sha256": "f89e4de82c1f5cc049f46e7f8a79006a2b006d37ef8286196e2cad604a4da7cd",
+  "exact_post_copy": true,
+  "primary_sources": 7,
+  "both_full_video_links": true,
+  "poster_included": true,
+  "music_and_voice_credits": true,
+  "voice_quality_scorecard_included": true,
+  "final_mix_figures_included": true,
+  "implemented_upgrades": 18,
+  "subject": "Ready to post \u00b7 The Pen Still Has Work",
+  "private_ids_omitted": true
+}

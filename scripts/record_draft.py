@@ -9,7 +9,7 @@ than a file exists.
 
 Call this IMMEDIATELY after the Gmail connector returns a draft id.
 
-  python3 scripts/record_draft.py --draft-id <id> --to docket@alaskaaihq.com \\
+  python3 scripts/record_draft.py --draft-id <id> --to <connected-profile-address> \\
       --subject "<subject>" [--square-url URL] [--vertical-url URL]
 """
 import argparse, datetime as dt, json, os, sys
@@ -21,7 +21,7 @@ OUT = os.path.join(ROOT, "out", "dispatch")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--draft-id", required=True)
-    ap.add_argument("--to", default="docket@alaskaaihq.com")
+    ap.add_argument("--to", required=True, help="Actual email address from the connected Gmail profile")
     ap.add_argument("--subject", default="")
     ap.add_argument("--square-url", default="")
     ap.add_argument("--vertical-url", default="")
@@ -45,7 +45,7 @@ def main():
     path = os.path.join(OUT, "gmail_draft_receipt.json")
     with open(path, "w") as fh:
         json.dump(receipt, fh, indent=2)
-    print(f"wrote {path}  draft={a.draft_id} to={a.to}")
+    print(f"wrote {path}  draft={a.draft_id}")
     return 0
 
 

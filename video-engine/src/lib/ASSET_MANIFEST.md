@@ -777,3 +777,10 @@ without swapping identity.
 
 - `EEGHeadset` in `research.tsx` is a reusable schematic sensor. `mode` selects one contact, an instrument on a side-view stand, or a counted array. `SCALP_CONTACTS` contains exactly19 pads; two separately shaped earclips and three empty auxiliary sockets never contribute to that count. Expose no results or clinical inference. Palette, contact highlight, spread and placement are parameters. Form gradients, rim light, rubber-pad depth and contact shadow establish material depth.
 - `QuestionToken` in `credentials.tsx` now honors arbitrary `text`, fits one or two lines, and accepts `color`, `faceColor`, `inkColor`, `rimColor`. Default WHO EARNED THIS? and EARNED keep their prior appearance. A question token expresses a question, never an award or completed evaluation.
+
+
+### September 13th pen contact and cap assembly
+
+- `ReviewPen` in `props.tsx` extends the shelf pen family for an ordinary professional workflow. Nib tip is the local origin, so rotation and scale preserve a declared writing contact. `uncap`, `seam`, `post`, `clipFlex`, `grip` and `capGrip` control separately visible cap, clip and hand states. The cap can leave the collar, rest independently, and post on the rear while the nib remains exposed. Gradients, metal rims, split nib, collar grooves and a sprung clip describe the material. This is an illustrative pen, never an approval stamp or evidence of a real error.
+- `ReviewStroke` and `reviewStrokePoint` in `props.tsx` share one progress curve. The stroke ends at the exact current nib point and persists after the pen lifts. Reuse the same external translation for the pen tip and trace. A neutral editorial selection mark indicates refinement, not a measured outcome.
+- `Ep0913` explicitly loads the existing Fraunces variable and JetBrains Mono bold brand fonts from `public/fonts/`; their OFL notices travel with the font files. Earlier episode font behavior remains isolated.

@@ -188,3 +188,18 @@ transcript would burn text the voice never said.
 `vo_synth_gemini.py` now injects the map as a `Pronunciation:` direction line ABOVE the
 `Transcript:` delimiter, where the model reads it as instruction and never speaks it, and
 the transcript below stays exactly the locked copy.
+
+## Full names and later acronyms
+
+Keep pronunciation direction short and unambiguous when a full organization name is
+followed later by its initials. Do not repeat both forms throughout the notes or give
+conflicting pronunciation cues. The first full name must remain the full name in the
+audio; a later acronym is not an acceptable substitution at that introduction.
+
+September 13th exposed this on a take that passed the aggregate sound check. Two ASR
+passes heard an abbreviation where the locked script introduced Koniag Government
+Services. Shorter direction preserved the same 204 spoken words, and a fresh independent
+ASR pass of the opening recognized the complete name. Inspect important names in the
+actual transcript, and use a targeted independent probe when the first read is ambiguous.
+Record the evidence and its limits in the voice report. An aggregate score is not proof
+that each important name was spoken correctly, and ASR review is not a claim of listening.

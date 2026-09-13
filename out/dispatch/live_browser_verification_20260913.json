@@ -1,0 +1,56 @@
+{
+  "run_date": "2026-09-13",
+  "verified_at": "2026-09-13T17:38:14.235665+00:00",
+  "watch_url": "https://alaskaaihq.com/videos/#dispatch-2026-09-13-the-pen-still-has-work",
+  "method": "Actual Codex in-app browser navigation, DOM metadata, real control clicks and emitted screenshots. No simulated video playback or DOM mutation.",
+  "desktop_pass": true,
+  "mobile_pass": true,
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "heading": "The Pen Still Has Work",
+    "video_url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_master.mp4",
+    "video_dimensions": [
+      1080,
+      1920
+    ],
+    "duration_seconds": 131.833333,
+    "ready_state": 4,
+    "error": null,
+    "time_advanced_from": 14.71131,
+    "time_advanced_to": 40.970283,
+    "playback_verified": true,
+    "sound_enabled_verified": true,
+    "pause_verified_at": 41.084935,
+    "horizontal_overflow": false,
+    "caption_screenshot_review": "At41.08s, DORA narration and both caption lines are readable above the lower feed metadata. Full brand and primary labels remain visible."
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "heading": "The Pen Still Has Work",
+    "video_url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_master_720.mp4",
+    "video_dimensions": [
+      720,
+      1280
+    ],
+    "duration_seconds": 131.833333,
+    "ready_state": 4,
+    "error": null,
+    "time_advanced_from": 0.232664,
+    "time_advanced_to": 27.414389,
+    "playback_verified": true,
+    "sound_enabled_verified": true,
+    "pause_verified_at": 48.689561,
+    "resume_verified_at": 49.243706,
+    "mute_verified": true,
+    "horizontal_overflow": false,
+    "caption_screenshot_review": "Opening two-output caption, Kodiak corporation caption at27.4s and compliance-records caption at49.2s are complete and readable. Primary labels and brand fit; phone controls are above the caption band."
+  },
+  "live_feed_entry_matches_committed_manifest": true,
+  "initial_refresh_note": "An initial navigation briefly showed the previously cached feed. A normal reload fetched the newly deployed September13 entry; desktop and phone checks then used the ordinary watch URL."
+}

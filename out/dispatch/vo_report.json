@@ -3,14 +3,14 @@
   "model": "gemini-3.1-flash-tts-preview",
   "voice": "Sulafat",
   "take": 1,
-  "takes": 2,
+  "takes": 3,
   "soundcheck": {
     "pass": true,
-    "score": 0.991,
-    "heard": "19 Scalp Electrodes. What's on the next page? The University of Alaska Anchorage has a new dry EEG. The university announced it for its AI and robotics lab on September 9. The Educational Legacy Fund funded it. Students and faculty have trained. The device records electrical activity using sensors that rest directly against the Scalp. Graduate student Vadim Yagorov has watched his own signals appear. He usually works with public EEG data sets. Now, he's looking forward to collecting recordings for his own tasks. Who might a future answer work for? UAA plans to study cognitive states during reading. Another planned project pairs brain activity with eye movements during programming. Those are plans with the answers still ahead. And the public recordings, they keep their place. Researchers can check whether existing recordings fit the question. If they do, useful analysis can start there. They can also plan a new recording around another task. The extra page holds a plan that students can help design. The old pages stay open beside it. A recording alone doesn't supply an interpretation. If a future model claims to work for new people, test it on people absent from training. That's a research principle, not a reported UAA result. Which question about learning should they investigate first?",
+    "score": 0.968,
+    "heard": "Two machine outputs. Watch what this pen does next. Konyag government services says it supports Wingman, a platform for digital office assistance. It's September 11th announcement, names contracting, logistics, and financial management. KGS belongs to Konyag, the Konyag Regions Alaskan Native Corporation. Amazon's cloud business, AWS, describes earlier army tools behind this approach. Dora, the determination of responsibility assistant, starts with a professional emailing a vendor identifier in the subject line. It retrieves compliance records through software connections, including SAM.gov. Pre-built logic assembles a standardized report. Separate jump starter tools use large language models through Amazon bedrock to turn user inputs into initial document sections. First, give the outputs their credit. The records are gathered. A blank section now contains text someone can work with. These tools have completed real preparation for professionals. Now follow the report. The contracting professional reviews it and makes the determination. The draft has a different handoff. Its user refines and approves the generated sections. There's the pens mark. The page arriving and the professional finishing are different events. These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return. Useful preparation has reached the desk. Which part of the work is still yours?",
     "checks": {
       "word_accuracy": {
-        "wer": 0.019,
+        "wer": 0.064,
         "pass": true
       },
       "no_leak": {
@@ -18,12 +18,12 @@
         "pass": true
       },
       "expressive": {
-        "pitch_std_semitones": 6.42,
-        "voiced_frac": 0.55,
+        "pitch_std_semitones": 4.37,
+        "voiced_frac": 0.49,
         "pass": true
       },
       "duration": {
-        "seconds": 122.88,
+        "seconds": 119.12,
         "pass": true
       },
       "loudness": {
@@ -32,26 +32,37 @@
       }
     },
     "diagnosis": "clean",
-    "seconds": 122.88,
+    "seconds": 119.12,
     "in_target_band": true,
-    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
   },
   "prompt_repairs": [
-    "pronunciation guide injected into the notes (1 entries)"
+    "pronunciation guide injected into the notes (2 entries)"
   ],
   "runtime_warning": null,
   "all_reports": [
     {
       "pass": true,
-      "score": 1.0,
+      "score": 0.966,
       "diagnosis": "clean"
     },
     {
       "pass": true,
-      "score": 0.991,
+      "score": 0.968,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.975,
       "diagnosis": "clean"
     }
   ],
   "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
-  "license": "Google Gemini API preset voice (per-use billing)"
+  "license": "Google Gemini API preset voice (per-use billing)",
+  "content_review": {
+    "status": "PASS",
+    "evidence": "revisions/voice_name_check_r2.json",
+    "scope": "Independent small-model ASR of opening33seconds recognizes full Koniag Government Services and Kodiak; phonetic spellings retained in raw probe. No human-listening claim.",
+    "prior_take_rejected": "First direction omitted/abbreviated company name despite aggregate score."
+  }
 }

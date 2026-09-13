@@ -67,6 +67,21 @@ claude.ai/code/routines (not in this repo).
 
 ## Gmail account (AUTHORITATIVE)
 
+### Daily Dispatch (owner instruction, 2026-09-13)
+
+Use whichever Gmail connector account is currently connected. Read the connector profile,
+resolve its actual email address, and create the draft in that account addressed to that
+same actual address. Pass the resolved address to `dispatch_email.py --to` and
+`record_draft.py --to`. Do not store the profile address in source or printed logs.
+Do not require a particular mailbox, switch accounts, or ask for reconnection because the
+connected address differs from an older repository rule. Do not use the literal recipient
+alias `me`, set From, or select a send-as alias. Verify this run's new draft is DRAFT and
+not SENT. Do not inspect past drafts. Draft only, never send.
+
+### Weekly recap legacy default
+
+The fixed-mailbox instructions below apply to the weekly recap, not the daily Dispatch.
+
 The Gmail connector authenticates as **docket@alaskaaihq.com**, a Google Workspace mailbox on
 our own domain. It is NOT the personal Talon.sturgill@gmail.com account this repo used before.
 
@@ -74,9 +89,9 @@ our own domain. It is NOT the personal Talon.sturgill@gmail.com account this rep
 - Drafts already come from the right address, with DKIM signed by alaskaaihq.com. There is
   NO send-as step, no From-address to set, and no alias to select. If you find such an
   instruction anywhere, it is stale and following it would be wrong.
-- Scripts set `"to": DRAFT_TO`, a module constant equal to `docket@alaskaaihq.com`, in both
-  `scripts/dispatch_email.py` and `scripts/gmail_draft.py`. **It is the same mailbox every
-  time. Do not go looking it up per run.**
+- The weekly `scripts/gmail_draft.py` sets `"to": DRAFT_TO`, a module constant equal to
+  `docket@alaskaaihq.com`. Daily `dispatch_email.py` requires the connected profile address
+  through `--to` as described above.
 - This reverses the earlier `"to": "me"` rule, on the owner's instruction (2026-07-31). The
   old reasoning was that an account-relative alias makes a repoint a connector change rather
   than a code change. That was wrong in practice: the Gmail connector rejects `me` outright
@@ -84,7 +99,7 @@ our own domain. It is NOT the personal Talon.sturgill@gmail.com account this rep
   looked the address up, and typed it into the tool call by hand. A constant each run has to
   rediscover is not a constant, it is a gap.
 - When calling the Gmail connector directly rather than through the scripts, pass
-  `docket@alaskaaihq.com`. If the mailbox ever moves, change `DRAFT_TO` in those two files
+  `docket@alaskaaihq.com`. If the weekly mailbox ever moves, change `DRAFT_TO` in `gmail_draft.py`
   and this bullet, and nothing else.
 - The mailbox was repointed, so it does NOT contain drafts from before the switch. Nothing
   in this repo reads or lists past drafts, and nothing should start.

@@ -1,0 +1,149 @@
+{
+  "run_date": "2026-09-13",
+  "scored_at_utc": "2026-09-13T15:26:35.773067+00:00",
+  "role": "independent LinkedIn caption scorer",
+  "scope": "Exact current post.txt only. No caption, scene, VO, source or other editorial edits. Film, voice, delivery and Gmail draft gates are outside this score.",
+  "post_path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/post.txt",
+  "post_sha256": "375b88f38d357e70bbb38aa7f6e8e54b570dd862d350c3e223fb2de8e29b60cd",
+  "governing_rubric": "config/linkedin_caption_rubric.yaml",
+  "governing_gate": "prompts/dispatch_routine.md Gate B LinkedIn caption scoring",
+  "legacy_weekly_rubric_applied": false,
+  "inputs_read": [
+    "config/linkedin_caption_rubric.yaml",
+    "config/brand.yaml",
+    "out/dispatch/post.txt",
+    "out/dispatch/claims.json",
+    "out/dispatch/sources.json",
+    "out/dispatch/verified_findings_20260913.json",
+    "out/dispatch/editor_review_20260913.json",
+    "out/dispatch/vo_script.txt"
+  ],
+  "objective_gate": {
+    "command": "python3 scripts/caption_check.py out/dispatch/post.txt",
+    "exit_code": 0,
+    "result": "PASS",
+    "characters": 1506,
+    "hook_characters": 57,
+    "hashtag_count": 4,
+    "emoji_count": 0,
+    "unicode_bold_count": 0,
+    "ran_independently": true
+  },
+  "hard_fails": [],
+  "hard_fail_count": 0,
+  "hard_fail_review": [
+    {
+      "rule": "Objective caption gate",
+      "result": "PASS",
+      "reason": "Independent current-file linter run exits 0."
+    },
+    {
+      "rule": "Traceable claims and video numbers",
+      "result": "PASS",
+      "reason": "Factual material remains within c1-c14 and c18 with sources s1-s5: company-attributed KGS support/current announcement; Koniag regional corporate connection; explicitly earlier AWS Army mechanisms; and the absence of quantified Alaska return in the announcement. DORA API/rules and separate Jumpstarter LLM drafting remain distinct. No new factual or numerical claim was introduced by the evaluative opening or CTA. September 11th remains the only numeric claim and is also in the film script."
+    },
+    {
+      "rule": "Discernible point of view",
+      "result": "PASS",
+      "reason": "The hook and immediate next paragraph establish the preparation-credit and professional-completion standard before background. This is an editorial judgment, not a newly asserted performance result."
+    },
+    {
+      "rule": "AI-tells or generic filler",
+      "result": "PASS",
+      "reason": "No banned phrases or generic thought-leader filler. The revised CTA names specific report checking and draft refinement, and the redundant follow instructions are gone."
+    },
+    {
+      "rule": "Alaska respect and savior framing",
+      "result": "PASS",
+      "reason": "Koniag is the named regional corporation associated with Kodiak. No cultural characterization, tribal-government conflation, savior framing or invented local return."
+    },
+    {
+      "rule": "Hook promise",
+      "result": "PASS",
+      "reason": "The post and approved film plan deliver the distinction between prepared outputs and professional action. The hook promises no measured savings or surprising undisclosed result."
+    }
+  ],
+  "criteria": [
+    {
+      "name": "Hook / scroll-stop",
+      "weight": 0.2,
+      "score": 8.5,
+      "weighted_points": 1.7,
+      "reason": "The unchanged 57-character hook still states a concrete position. Its immediate follow-up now credits real preparation and explains the evaluative standard before company background, fixing the prior context-first loss of momentum. It is a strong professional opener, though less surprising than a top-scoring factual hook."
+    },
+    {
+      "name": "Point of view / take",
+      "weight": 0.18,
+      "score": 9.0,
+      "weighted_points": 1.62,
+      "reason": "The first two paragraphs now state the standard plainly: credit prepared records and editable text, then judge the professional decision that follows. This is a defensible editorial position grounded in the two described handoffs, not a claim that an outcome has been measured. The named Alaska corporate connection follows without invented local benefit."
+    },
+    {
+      "name": "Substance & specificity",
+      "weight": 0.16,
+      "score": 9.0,
+      "weighted_points": 1.44,
+      "reason": "Specific KGS/Koniag/Kodiak identity, September 11th provenance, DORA expansion, email subject identifier, APIs, the System for Award Management, prebuilt logic, and separate Jumpstarter/Bedrock drafting give the post substance. The retrieval/rules versus generated-language distinction is useful and non-generic. No deduction for excluding unneeded optional performance figures."
+    },
+    {
+      "name": "Readability & restraint",
+      "weight": 0.12,
+      "score": 8.5,
+      "weighted_points": 1.02,
+      "reason": "The post is shorter at 1506 characters, keeps generous whitespace and separates DORA source/input context from retrieval/logic/responsibility. Removing the later repetition improves its progression. The company-identification paragraph remains relatively dense, so this is not a perfect mobile scan."
+    },
+    {
+      "name": "Engagement design (CTA + comment-bait)",
+      "weight": 0.12,
+      "score": 9.0,
+      "weighted_points": 1.08,
+      "reason": "The closing question now asks what readers would check in an assembled report or change in a generated draft before use. Those are concrete, distinct actions tied to the argument and can invite examples of professional judgment. It addresses a broad professional audience without demanding confidential details."
+    },
+    {
+      "name": "Brand voice & accuracy",
+      "weight": 0.12,
+      "score": 9.5,
+      "weighted_points": 1.14,
+      "reason": "Analytical and fair, with concrete preparation credited before limits. KGS support is company-attributed, earlier Army work remains an AWS vendor case study, and the Koniag corporate relationship never becomes a claim about tribal government or local returns. The announcement limit is not a claim of no Alaska benefit. Writing rules pass; the only number is the approved announcement date also in the film script."
+    },
+    {
+      "name": "Hashtag craft",
+      "weight": 0.1,
+      "score": 8.0,
+      "weighted_points": 0.8,
+      "reason": "Four topically true tail tags span broad AI, Alaska, the named corporation and government technology. This is deliberate and restrained. Live follower/reach tiers were not verified, so the exact broad/mid/niche audience-size mix required for a 10 is not established."
+    }
+  ],
+  "arithmetic": {
+    "weight_sum": 1.0,
+    "formula": "(8.5 x 0.20) + (9.0 x 0.18) + (9.0 x 0.16) + (8.5 x 0.12) + (9.0 x 0.12) + (9.5 x 0.12) + (8.0 x 0.10)",
+    "weighted_terms": [
+      1.7,
+      1.62,
+      1.44,
+      1.02,
+      1.08,
+      1.14,
+      0.8
+    ],
+    "sum": "1.70 + 1.62 + 1.44 + 1.02 + 1.08 + 1.14 + 0.80 = 8.80"
+  },
+  "weighted_score": 8.8,
+  "ship_threshold": 8.5,
+  "meets_score_threshold": true,
+  "verdict": "ship",
+  "ship": true,
+  "one_concrete_fix": null,
+  "editor_verdict_handling": "Independently rescored the exact revised post using the same LinkedIn rubric. The score gain comes from the earlier position, separated DORA paragraphs and specific CTA. Substance, accuracy and hashtag scores are unchanged. Editorial and film approvals remain separate.",
+  "edits_made": false,
+  "revision": 2,
+  "previous_assessment": {
+    "post_sha256": "d0ae37e9d47df048f181343b672aade34f5672026f225ab9618adb1f5c46ddc8",
+    "weighted_score": 8.34,
+    "verdict": "revise",
+    "scored_at_utc": "2026-09-13T15:18:23.361873+00:00"
+  },
+  "result": "PASS",
+  "required_fixes": [],
+  "revision_assessment": "The prior required opening repair is implemented, the dense DORA block is split, and the broad CTA is replaced by two material-specific actions. Current score clears 8.5 without rounding or altering unchanged criteria."
+}

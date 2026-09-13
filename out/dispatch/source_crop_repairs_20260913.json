@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-09-13T15:52:30.358884+00:00",
+  "checks": [
+    {
+      "command": [
+        "video-engine/node_modules/.bin/tsc",
+        "--noEmit",
+        "-p",
+        "video-engine/tsconfig.json"
+      ],
+      "exit": 0,
+      "detail": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/text_fit_check.py"
+      ],
+      "exit": 0,
+      "detail": "text-fit: 29 plated strings/variants measured (mono, Plate, actual Label), 0 not measured, 0 failing"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/visible_copy_check.py"
+      ],
+      "exit": 0,
+      "detail": "}"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/caption_band_check.py"
+      ],
+      "exit": 0,
+      "detail": "caption_band_check: clean across 1 file(s)"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/plate_overlap_check.py"
+      ],
+      "exit": 0,
+      "detail": "plate_overlap_check: clean across 1 file(s), 12 scene(s) parsed"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/zoom_clip_check.py"
+      ],
+      "exit": 0,
+      "detail": "zoom_clip_check: clean, 15 string(s) measured against the frame edge"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/claims_contract_check.py"
+      ],
+      "exit": 0,
+      "detail": "claims_contract_check: 81 machine obligation(s) met, none outstanding"
+    }
+  ],
+  "pass": true
+}

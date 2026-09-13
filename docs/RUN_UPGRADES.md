@@ -3304,3 +3304,135 @@ the remaining research gestures and verifies rendered credit text.
   playback, sound controls, rendition selection and phone captions are verified. The
   existing Gmail draft was updated and read back with the poster, voice QC, exact post,
   both cuts, all five sources, credits and sixteen upgrades. It remains DRAFT only.
+
+
+## 2026-09-13 — The Pen Still Has Work
+
+The current September 11th KGS announcement motivates an illustrative office workflow.
+The earlier AWS Army case study supplies two distinct mechanisms, DORA record retrieval
+and rule-based assembly, and separate Jumpstarter language-model drafting. Prepared
+outputs earn explicit credit before professional review and refinement. The film does not
+assert an independently audited performance result or a quantified Alaska return.
+
+- `47b8685` changes the Dispatch mailbox contract to the actual currently connected Gmail
+  profile, as the owner requested. The automation was updated and read back. Email and
+  receipt CLIs require an explicit actual address, never the alias `me` or a From override.
+  Fourteen email tests pass. The separate weekly and carousel routines were not invoked.
+- The same commit enforces `on_screen_none` for optional and mandatory claims, closing the
+  path through which omitted optional figures could still appear on screen. Twenty-eight
+  claim tests pass, including malformed forbidden-text contracts.
+- `72d06b5` derives scene anchors from the current board and adds a reusable, idempotent
+  voice conformer. The planning clock stays immutable, all sixteen narration anchors map
+  the current picture/sound/evidence clock, and reveal landing/hold times remain physical
+  frames. Four initial timing tests pass.
+- `78f9b72` permits a declared, explained picture cut within half a second of its narration
+  anchor. This episode cuts 0.14 seconds into the breath before the corporate relationship
+  line to keep the prior shot below sixteen seconds without changing the voice. Two more
+  timing regressions pass. Invalid or unexplained offsets are rejected.
+- The word-timeline helper records the actual speech end in `total`, replacing the stale
+  sixty-second value in both current Gemini output and the older caption path. Four tests
+  reject empty, invalid and contradictory duration records and cover short/long narration.
+- The visible-copy AST adapter follows Plate and Scope text, including defaults, and the
+  episode's one-dimensional heading array. Unknown or missing caller copy fails closed.
+  Nineteen visible-copy tests pass; source review checks actual forwarded strings.
+- The reusable ReviewPen and ReviewStroke library assets add separate cap/nib states,
+  hand-bound movement and ink whose endpoint is the pen's actual contact point. The cap
+  visibly detaches, posts on the rear barrel and persists through later human work. Native
+  stills and eight-frame grids verify cap attachment, writing contact and clear labels.
+- Licensed Fraunces and JetBrains Mono fonts are bundled and explicitly loaded. This
+  removes reliance on host font availability. The source manifest registers both the
+  type assets and the pen extension while preserving legacy pen rendering.
+- The episode's forty sound events use twelve kinds and no consecutive family repeat.
+  The sound and evidence lists use current conformed beat IDs, replacing dated anchors.
+  Before the final render, twenty-five of forty events show a measurable lift and the
+  real pre-button gap provides the required dip; final encoded audio remains separately gated.
+- A repeated camera defect was found in the preview before the final render. Quick prop
+  entrance easing had consumed camera travel early. Independent in/out sine progress now
+  carries the camera through each shot. Preview four passes all thirteen camera pairs and
+  sixty-one of sixty-four living-screen windows. This is preview evidence, not final QA.
+- Pixel inspection clears heading/claim plate collisions, a pen crossing the first-draft
+  badge, the cap crossing the human-work line, the small cap rear socket and the long
+  music credit. Current native frames show the corrected staging; the final encode is
+  still subject to objective checks and independent review.
+- The first voice batch passed an aggregate sound score but replaced the opening full
+  company name with an abbreviation. It was rejected. Shorter, non-conflicting direction
+  preserved the locked 204 words, and a separate opening ASR probe recognized the complete
+  name in the selected new take. The voice guide now records this targeted review rule.
+
+The complete repository regression suite passes 230 tests after the contact-sound repair. Current source gates pass,
+including 81 claim obligations, actual visible copy and all 35 built caption cues.
+
+Repeat offenders addressed this run are stale episode-specific timing tables, visible-copy
+adapters silently skipping wrappers, front-loaded camera travel and trusting aggregate
+voice scores for a load-bearing organization name. No gate threshold was relaxed.
+
+Final candidate and delivery results follow below; each stage has a separate receipt.
+
+The first 3,955-frame native render passes all fifteen objective checks at 10.0,
+including thirteen camera moves, forty-seven detected visual beats and sixty-one of
+sixty-four living-screen windows. Twenty-six sound events show a measured lift. A native
+opening review then confirmed cropped branding in the square cut and one partially
+occluded draft label. The brand/title spacing and opening document position are repaired.
+Four new native square-crop probes confirm readable labels through the pen move and no
+collision with later projected claim plates. The first candidate was preserved and its
+follow-on encode cancelled after the native gate; a new source-bound render is required.
+
+The second candidate also passed all fifteen objective checks after encoding. Required
+preflight then caught a music-credit overflow before any panel. Font fitting ignored
+letter spacing, producing 968 pixels inside a 936 pixel safe width. Commit `92c143e`
+repairs both the shared renderer and its checker by subtracting tracking before fitting.
+The complete attribution is preserved. Native pixel inspection measures ink at x75..1001
+inside the x72..1008 safe area. Sixteen credit regressions pass, including the actual long
+title, separately tracked source/site labels and early-failure receipt invalidation. The
+gate replaces an older passing receipt before any early exit. The complete 225-test suite
+and TypeScript check pass. A third complete render preserves source provenance; the
+threshold remains unchanged.
+
+The third candidate passed all fifteen encoded checks, required preflight and ten seconds
+of rendered-credit readability. Judge 1 scored 7.778 and Judge 3 scored 7.840, but the
+required flow review rejected an early cap snap before a third judge or ship gate. The
+snap preceded visible cap seating by about 1.33 seconds. The failed cut, mix, evidence
+and completed cards are preserved for comparison; no bytes were published.
+
+The mixer now distinguishes movement entry from a declared contact using validated
+physical frame offsets. Eight verified arrival cues follow the rendered contact, while
+movement textures retain their entry timing. Both event ledgers also record the actual
+jittered, millisecond-quantized onset used by ffmpeg. Five timing regressions, twenty-one
+provenance tests and two conformity tests pass. The native picture receipt remains valid:
+only already-bound mix inputs changed. Fresh mix, encode, evidence and review are required.
+
+
+Final candidate four passes all fifteen encoded objective checks at 10.0, required
+preflight, the independent editor and flow review. The three current-master judges score
+7.788, 7.804, 7.850, median 7.804 against 7.0, with zero hard blockers.
+Candidate four remixes and re-encodes the valid third native render; all 3,955 decoded
+picture frames are identical. That native render took 836.748 seconds. The independent
+contact review puts all eight isolated performed cue peaks within one frame, and the
+encoded cap residual at 81.985329 seconds against the 82.000-second seated frame. Four
+weaker residual matches remain explicitly limited evidence, not recovered isolated cues.
+
+The final film has thirteen camera moves, forty-seven detected visual beats, sixty of
+sixty-four living-screen windows and twenty-nine audible effect lifts. The encoded mix
+measures -14.33 LUFS, -2.74 dBTP and 7.4 LU range. Caption review is 8.80 with zero hard
+fails; 204 narration words, 81 claim obligations and 35 built caption cues are checked.
+All 230 repository tests pass; no thresholds were relaxed. Square-crop frames and
+complete ten-second credits were inspected from the final encoded bytes.
+
+The panel's remaining style notes concern the long company-introduction segment, dense
+stacked labels, repeated office arrangements and limited hand articulation. They are
+nonblocking craft observations, not outstanding required repairs. Audio taste uses
+measurements and event evidence without a subjective listening claim. Eighteen actual
+contract, timing, asset, rendering, copy and audio upgrades are included in the email.
+Permanent media, feed deployment, unsent draft and merged release remain separately
+recorded in the final release evidence.
+
+The first delivery-email build rejected a semicolon in the voice-credit wording. A
+punctuation-only correction preserved the complete attribution and passed the visible-copy
+gate. One draft was then created and read back exactly, with all seven sources and eighteen
+upgrades, DRAFT only and never SENT. This did not alter any graded media input.
+
+Delivery is verified independently: five permanent assets match exact local bytes; feed
+commit c18cda4efbd3c8f8a6c559d02342ded7aa65534e deployed successfully in Pages run
+34771954900; the ordinary public watch URL passes desktop and phone playback, sound,
+pause and caption checks. Both final ship_gate and no_exit checks pass. The canonical
+release index and sanitized receipts are in out/dispatch/RELEASE.md.
