@@ -9,6 +9,11 @@ import json
 from copy import deepcopy
 from pathlib import Path
 
+if __package__:
+    from .build_scenes import scene_start_times
+else:
+    from build_scenes import scene_start_times
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'out/dispatch'
 
@@ -49,9 +54,10 @@ def conform(board, voice):
     for i, beat in enumerate(b['beats']):
         hi = b['beats'][i + 1]['at_s'] if i + 1 < len(b['beats']) else end
         beat['t'] = f"{beat['at_s']:.3f}-{hi:.3f}"
+    cuts = scene_start_times(b, {i: span['start'] for i, span in spans.items()})
     for i, shot in enumerate(b['shots']):
-        lo = spans[shot['vo_line']]['start']
-        hi = spans[b['shots'][i + 1]['vo_line']]['start'] if i + 1 < len(b['shots']) else end + 1
+        lo = cuts[i]
+        hi = cuts[i + 1] if i + 1 < len(cuts) else end + 1
         shot['t'] = f'{lo:.3f}-{hi:.3f}'
     for key in ['open_loop', 'open_loop_2']:
         for t in ['plant_t', 'pay_t']:

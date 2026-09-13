@@ -246,13 +246,14 @@ const copy_literals=[],copy_issues=[];
 const copyLine=n=>sf.getLineAndCharacterOfPosition(n.getStart(sf)).line+1;
 const addCopy=(n,kind,texts)=>{for(const text of texts)copy_literals.push({line:copyLine(n),kind,text});};
 for(const d of sf.parseDiagnostics)copy_issues.push({line:sf.getLineAndCharacterOfPosition(d.start||0).line+1,why:'TSX parse failed: '+ts.flattenDiagnosticMessageText(d.messageText,' ')});
-const heads=vars.get('HEADS');let headsResolved=false;
+const headName=vars.has('HEADS')?'HEADS':'HEAD';
+const heads=vars.get(headName);let headsResolved=false;
 if(heads&&heads.initializer){
  const before=copy_issues.length;
  const visitHead=n=>{if(ts.isArrayLiteralExpression(n)){for(const e of n.elements)visitHead(e);}else{const texts=strings(n);if(texts)addCopy(n,'HEADS',texts);else copy_issues.push({line:copyLine(n),why:'Unresolved HEADS display text'});}};
  visitHead(heads.initializer);headsResolved=copy_issues.length===before&&copy_literals.length>0;
 }
-const copyAttrs={Type:'text',Label:'text',Note:'title',Lever:'label'};
+const copyAttrs={Type:'text',Label:'text',Plate:'text',Scope:'text',Note:'title',Lever:'label'};
 walk(sf,node=>{
  if(!(ts.isJsxSelfClosingElement(node)||ts.isJsxOpeningElement(node)))return;
  const tag=node.tagName.getText(sf),key=copyAttrs[tag];if(!key)return;
@@ -262,14 +263,15 @@ walk(sf,node=>{
    const binding=init&&ts.isArrowFunction(init)&&init.parameters[0]&&init.parameters[0].name;
    const param=binding&&ts.isObjectBindingPattern(binding)&&binding.elements.find(e=>e.name.getText(sf)===key);
    value=param&&param.initializer;
-   if(!value){if(tag==='Type'||tag==='Label')copy_issues.push({line:copyLine(node),why:'Missing '+tag+'.'+key});return;}
+   if(!value){if(['Type','Label','Plate','Scope'].includes(tag))copy_issues.push({line:copyLine(node),why:'Missing '+tag+'.'+key});return;}
  }
  const texts=strings(value);if(texts){addCopy(node,tag+'.'+key,texts);return;}
  const expr=compact(val(value));let owner=null;
  for(let p=node.parent;p;p=p.parent){if(ts.isVariableDeclaration(p)&&p.initializer&&ts.isArrowFunction(p.initializer)){owner=p.name.getText(sf);break;}}
  // These facade values are checked at their actual caller attributes above.
- if(tag==='Type'&&({Label:'text',Note:'title',Lever:'label'})[owner]===expr)return;
+ if(['Type','Plate'].includes(tag)&&({Label:'text',Plate:'text',Scope:'text',Note:'title',Lever:'label'})[owner]===expr)return;
  if(tag==='Label'&&expr==='active.label'&&props&&Array.isArray(props.beats)&&props.beats.length&&props.beats.every(b=>typeof b.label==='string')){addCopy(node,'Label.text from props.beats',props.beats.map(b=>b.label));return;}
+ if(tag==='Type'&&expr===headName+'[n-1]'&&headsResolved)return;
  const head=vars.get('head');
  if(tag==='Type'&&/^head\[[01]\]$/.test(expr)&&head&&compact(head.initializer)==='HEADS[n-1]'&&headsResolved)return;
  copy_issues.push({line:copyLine(node),why:'Unresolved visible '+tag+'.'+key+': '+expr});
@@ -328,7 +330,7 @@ def collect_labels(path, props_path=None):
         # Legacy episodes without these components keep their existing Plate/mono
         # checks without Node. Copy extraction also recognizes non-Label display text.
         with open(path) as source:
-            if not re.search(r"<(?:Label|Type|Note|Lever)\b|\bHEADS\s*=", source.read()):
+            if not re.search(r"<(?:Label|Type|Plate|Scope|Note|Lever)\b|\bHEADS?\s*=", source.read()):
                 return {"calls": [], "scene_ids": [], "issues": [], "adapter": None,
                         "copy_literals": [], "copy_issues": []}
         result = subprocess.run(

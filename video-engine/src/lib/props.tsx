@@ -239,6 +239,71 @@ export const PenAndDocument: React.FC<{x: number; y: number; hover: number; f: n
   );
 };
 
+// The shelf pen can now perform a neutral editorial mark. Legacy
+// PenAndDocument stays unchanged; contact and cap assembly are opt-in.
+export const reviewStrokePoint = (progress: number) => {
+  const p = Math.max(0, Math.min(1, progress));
+  return {x: 190 * p, y: -16 * Math.sin(p * Math.PI) + 5 * p};
+};
+
+export const ReviewStroke: React.FC<{x: number; y: number; progress: number; color?: string; width?: number}> =
+({x, y, progress, color = '#842F45', width = 5}) => {
+  const p = Math.max(0, Math.min(1, progress));
+  if (p <= 0) return null;
+  const samples = Array.from({length: Math.floor(p * 32) + 1}, (_, i) => reviewStrokePoint(i / 32));
+  samples.push(reviewStrokePoint(p));
+  return <polyline data-review-ink="true" transform={`translate(${x} ${y})`}
+    points={samples.map(q => `${q.x},${q.y}`).join(' ')} fill="none" stroke={color}
+    strokeWidth={width} strokeLinecap="round" strokeLinejoin="round"/>;
+};
+
+export const ReviewPen: React.FC<{
+  x: number; y: number; f: number; scale?: number; angle?: number;
+  uncap?: number; post?: number; seam?: number; clipFlex?: number;
+  grip?: number; capGrip?: number; color?: string; cuffColor?: string;
+}> = ({x, y, f, scale = 1, angle = 22, uncap = 0, post = 0, seam = 0,
+  clipFlex = 0, grip = 0, capGrip = 0, color = '#842F45', cuffColor = '#27615B'}) => {
+  const u = Math.max(0, Math.min(1, uncap));
+  const p = Math.max(0, Math.min(1, post));
+  const id = `review-pen-${React.useId().replace(/:/g, '')}`;
+  const t = tones(color), metal = tones('#B9C9C3');
+  const capX = 170 * u * (1 - p);
+  const capY = (-160 * u - 12 * seam) * (1 - p) - 380 * p;
+  const capAngle = 22 * u * (1 - p) + 180 * p;
+  const clip = clipFlex * 8 + Math.sin(f / 43) * .55;
+  return <g data-review-pen="true" transform={`translate(${x} ${y}) scale(${scale}) rotate(${angle})`}>
+    <FormGradient id={`${id}-body`} t={t}/><FormGradient id={`${id}-metal`} t={metal}/>
+    <path d="M-15-254Q0-270 15-254L19-91Q18-77 12-66H-12Q-18-77-19-91Z"
+      fill={`url(#${id}-body)`} stroke={INK} strokeWidth={4}/>
+    <path d="M-11-250L-10-92" stroke={t.key} strokeWidth={4} strokeLinecap="round" opacity={.85}/>
+    <path d="M12-246L14-96" stroke={t.shade} strokeWidth={6} opacity={.7}/>
+    {[0,1,2,3,4,5,6].map(i=><path key={i} d={`M-15 ${-228+i*19}h3`} stroke={t.key} strokeWidth={2}/>) }
+    <ellipse cy={-257} rx={25} ry={7} fill={metal.shade} stroke={INK} strokeWidth={2}/>
+    <ellipse cy={-258} rx={15} ry={3.5} fill={INK}/>
+    <rect x={-20} y={-96} width={40} height={16} rx={4} fill={`url(#${id}-metal)`} stroke={INK} strokeWidth={3}/>
+    <path d="M-14-80L-13-52H13L14-80Z" fill={t.shade} stroke={INK} strokeWidth={3}/>
+    {[-73,-66,-59].map(yy=><path key={yy} d={`M-12 ${yy}h24`} stroke={metal.shade} strokeWidth={2}/>) }
+    <path data-part="nib" d="M-12-52Q-18-31 0 0Q18-31 12-52Z" fill={`url(#${id}-metal)`} stroke={INK} strokeWidth={3}/>
+    <path d="M0-45V0M-7-34L0-41 7-34" fill="none" stroke={INK} strokeWidth={1.8}/>
+    <circle cy={-43} r={3.2} fill={INK}/>
+    <path d="M-9-48Q-12-29-3-12" fill="none" stroke="#FFF7E7" strokeWidth={2.4}/>
+    {grip>0&&<g opacity={Math.min(1,grip)}><GripHand x={0} y={-75} scale={.56} reach={1} cuffColor={cuffColor}/></g>}
+    <g data-part="cap" transform={`translate(${capX} ${capY}) rotate(${capAngle})`}>
+      <path d="M-25 12V-115Q-25-141 0-144Q25-141 25-115V12Z"
+        fill={`url(#${id}-body)`} stroke={INK} strokeWidth={4}/>
+      <path d="M-18-111V4" stroke={t.key} strokeWidth={5} strokeLinecap="round"/>
+      <path d="M17-109V3" stroke={t.shade} strokeWidth={6}/>
+      <rect x={-26} y={0} width={52} height={13} rx={3} fill={`url(#${id}-metal)`} stroke={INK} strokeWidth={2.5}/>
+      <ellipse cy={13} rx={22} ry={4} fill={metal.shade} stroke={INK} strokeWidth={2}/>
+      <path d={`M10-127Q${35+clip}-124 ${31+clip}-99L${28+clip}-31Q23-20 18-31L20-108`}
+        fill={`url(#${id}-metal)`} stroke={INK} strokeWidth={3}/>
+      <path d={`M20-117Q${28+clip}-118 ${26+clip}-101L${24+clip}-35`} fill="none" stroke="#FFF7E7" strokeWidth={2}/>
+      <circle cx={9} cy={-128} r={5} fill={metal.key} stroke={INK} strokeWidth={2}/>
+      {capGrip>0&&<g opacity={Math.min(1,capGrip)}><GripHand x={0} y={-58} scale={.53} reach={1} cuffColor={cuffColor}/></g>}
+    </g>
+  </g>;
+};
+
 // A trail marker post with a two-line sign (e.g. a date: "AUG" / "19").
 export const TrailPost: React.FC<{x: number; y: number; s?: number; top?: string; bottom?: string}> = ({x, y, s = 1, top, bottom}) => {
   // sign board auto-widens for longer top/bottom words (2026-07-22 fix: the

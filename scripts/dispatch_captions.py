@@ -12,7 +12,7 @@ Outputs:
   out/dispatch/audio/words.json  {"words":[{w,s,e,seg}], "speech_end","total","fps"}
   out/dispatch/captions.json     [{"text","start","end","seg"}] readable cues
 """
-import json, os, re, difflib
+import json, os, re, difflib, math
 from pathlib import Path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -22,6 +22,17 @@ AUD = os.path.join(OUT, "audio")
 FPS = 30
 MAX_CHARS = 30   # per caption cue
 MAX_WORDS = 6
+
+
+def word_document(words, speech_end, fps=FPS):
+    """Describe this narration clock, without the retired sixty-second cap."""
+    if not words or not math.isfinite(speech_end) or speech_end <= 0:
+        raise ValueError('Word timeline needs words and a positive speech end.')
+    last = max(float(word['e']) for word in words)
+    if not math.isfinite(last) or last > speech_end + .001:
+        raise ValueError('Word timeline ends after its declared speech end.')
+    return {'words': words, 'speech_end': round(speech_end, 3),
+            'total': round(speech_end, 3), 'fps': fps}
 
 
 def norm(w):
@@ -109,8 +120,7 @@ def main():
                               "e": round(seg_start + e, 3), "seg": i})
 
     speech_end = max(w["e"] for w in all_words)
-    words_doc = {"words": all_words, "speech_end": round(speech_end, 3),
-                 "total": 60.0, "fps": FPS}
+    words_doc = word_document(all_words, speech_end)
     json.dump(words_doc, open(os.path.join(AUD, "words.json"), "w"), indent=2)
 
     # build readable caption cues (anti-orphan, break on sentence punctuation)

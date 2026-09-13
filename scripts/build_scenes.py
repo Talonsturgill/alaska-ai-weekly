@@ -5,6 +5,7 @@ VO line; S1 covers lines 0-1. Writes episode_props.json {captions, scenes, total
 and the quality gate's shots.json from those same authoritative bounds.
 """
 import json
+import math
 import os
 import re
 from urllib.parse import urlparse
@@ -172,6 +173,23 @@ def scene_line_indices(board, starts):
     if indices[0] != 0 or any(right <= left for left, right in zip(indices, indices[1:])):
         raise ValueError("shot vo_line anchors must start at zero and increase strictly")
     return indices
+
+
+def scene_start_times(board, starts):
+    """Allow a declared subsecond edit in a breath without retiming narration."""
+    anchors = scene_line_indices(board, starts)
+    result = []
+    for shot, anchor in zip(board['shots'], anchors):
+        offset = shot.get('cut_offset_s', 0)
+        if (type(offset) not in (int, float) or not math.isfinite(offset)
+                or abs(offset) > .5):
+            raise ValueError('cut_offset_s must be a finite number within half a second')
+        if offset and not str(shot.get('cut_reason', '')).strip():
+            raise ValueError('a shifted cut must explain its visible or spoken anchor')
+        result.append(starts[anchor] + offset)
+    if abs(result[0]) > .00001 or any(b <= a for a, b in zip(result, result[1:])):
+        raise ValueError('scene starts must begin at zero and increase strictly')
+    return result
 
 
 def _apply_caption_fixups(caps):
@@ -516,7 +534,7 @@ def main():
 
     board = json.load(open(os.path.join(OUT, "storyboard.json")))
     try:
-        bounds = [round(start[si] * FPS) for si in scene_line_indices(board, start)]
+        bounds = [round(t * FPS) for t in scene_start_times(board, start)]
     except ValueError as exc:
         raise SystemExit(f"build_scenes: {exc}")
     scenes = []

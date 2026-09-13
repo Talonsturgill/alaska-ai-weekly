@@ -34,6 +34,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import vo_soundcheck as sc
+from dispatch_captions import word_document
 
 REPO = os.path.abspath(os.path.join(HERE, ".."))
 OUT = os.path.join(REPO, "out", "dispatch")
@@ -692,7 +693,7 @@ def main():
     # alignment every time. The word text is identical; only the timestamps differ, so this
     # is purely a timing-stability fix.
     words, line_spans, total, cues = _align_wholefile(os.path.join(AUD, "vo.wav"), lines)
-    json.dump({"words": words, "speech_end": round(total, 3), "total": 60.0, "fps": 30},
+    json.dump(word_document(words, total),
               open(os.path.join(AUD, "words.json"), "w"), indent=2)
     json.dump({"total": round(total, 3), "voice": VOICE, "model": best_model, "lines": line_spans},
               open(os.path.join(OUT, "vo_lines.json"), "w"), indent=2)
