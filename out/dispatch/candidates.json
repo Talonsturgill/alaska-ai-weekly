@@ -1,38 +1,567 @@
 {
-  "run_date": "2026-09-12",
-  "window": [
-    "2026-09-02",
-    "2026-09-12"
-  ],
+  "run_date": "2026-09-13",
+  "window_days": 10,
   "rungs": [
     {
       "rung": "in_window_sweep",
       "attempted": true,
       "evidence": [
-        "research_science.json",
-        "research_rural.json",
-        "research_energy.json"
-      ]
+        "out/dispatch/research_rural_20260913.json",
+        "out/dispatch/research_science_20260913.json",
+        "out/dispatch/research_wildcard_20260913.json"
+      ],
+      "candidate_evaluations": 20
     }
   ],
   "candidates": [
     {
-      "research": "research_energy.json",
-      "findings": "Energy/grid, defense/aviation/UAS, breaking industry; adjacent maritime logistics research"
+      "story_title": "ASRC Federal brings AI training into its fifth Tech Summit",
+      "summary_2_sentences": "ASRC Federal reported on September 10th that its fifth annual Tech Summit included artificial intelligence sessions and a Battlesnake coding competition. Technical Fellows and STRIDE interns participated alongside its wider technical workforce.",
+      "why_it_matters_to_alaskans": "ASRC Federal is owned by Arctic Slope Regional Corporation, whose I\u00f1upiaq shareholders connect federal technology work to Alaska Native ownership. This is a workforce development story, with no measured training outcomes or new deployed AI system disclosed.",
+      "sources": [
+        {
+          "url": "https://www.asrcfederal.com/building-skills-solutions-and-community-at-asrc-federals-2026-tech-summit/",
+          "outlet": "ASRC Federal",
+          "pub_date": "2026-09-10",
+          "author": "Eric Minor",
+          "fetched": true
+        },
+        {
+          "url": "https://www.asrcfederal.com/about-us/",
+          "outlet": "ASRC Federal",
+          "pub_date": null,
+          "role": "background ownership only",
+          "fetched": true
+        }
+      ],
+      "confidence": "high for occurrence and stated program; company account only",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "event_date": "Not stated; September 10th is publication date.",
+      "verified_facts": [
+        "Fifth annual Tech Summit.",
+        "Sessions covered AI, digital engineering and cybersecurity.",
+        "Participants included Technical Fellows and STRIDE interns.",
+        "Background company page says ASRC has over 14,000 I\u00f1upiaq shareholders."
+      ],
+      "brief_quote": {
+        "text": "I can jump between sessions on risk and governance, AI, software development, cybersecurity and systems engineering.",
+        "speaker": "Matt Altman, ASRC Federal Tech Fellow",
+        "words": 20
+      },
+      "visual_story_fuel": [
+        "Battlesnake gameboard as an explicitly illustrative coding challenge.",
+        "First-party summit photograph, subject to license review.",
+        "A clear ownership diagram connecting ASRC shareholders to federal technical work."
+      ],
+      "limitations": [
+        "No attendance total, event dates, Alaska-based participant count, AI project results or skills assessment disclosed.",
+        "Do not describe the summit as an Alaska deployment or claim its economic impact was measured."
+      ],
+      "editorial_fit": "Verified fresh workforce brief. Thin for a standalone showstopper.",
+      "research_file": "out/dispatch/research_rural_20260913.json",
+      "bucket": "stories",
+      "rung": "in_window_sweep"
     },
     {
-      "research": "research_rural.json",
-      "findings": "rural, Native-led, workforce and public capability"
+      "story_title": "Alaska channel partner orders a RIO Mini AI security tower",
+      "summary_2_sentences": "AITX said on September 9th that an established Alaska channel partner ordered one RIO Mini for deployment in Alaska. RAD describes the model as a solar-powered mobile security tower with two ROSA Lite units and automated visual detection.",
+      "why_it_matters_to_alaskans": "A small, concrete AI purchase links remote-site monitoring to Alaska conditions. The partner and site are unnamed, and the release confirms an order rather than installation or winter performance.",
+      "sources": [
+        {
+          "url": "https://aitx.ai/press-releases/rad-opens-q3-with-expanding-orders-across-rio-rosa-and-sara",
+          "outlet": "AITX",
+          "pub_date": "2026-09-09",
+          "author": "Company press release",
+          "fetched": true
+        },
+        {
+          "url": "https://radsecurity.com/rio",
+          "outlet": "Robotic Assistance Devices",
+          "pub_date": null,
+          "role": "background manufacturer product specifications",
+          "fetched": true
+        }
+      ],
+      "confidence": "medium; primary company order disclosure with unnamed Alaska buyer and site",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "verified_facts": [
+        "One Alaska RIO Mini order, not all units in the nationwide release.",
+        "Company says order came through an existing Alaska channel partner.",
+        "Product page specifies core AI human, vehicle, perimeter-intrusion and loitering detection.",
+        "RIO Mini product page gives two 540 W solar panels, 5.12 kWh battery storage and 360-degree coverage; these are manufacturer specifications, not Alaska field measurements."
+      ],
+      "brief_quote": {
+        "text": "The RIO Mini order was placed by an established RAD channel partner in Alaska",
+        "speaker": "AITX press release",
+        "words": 15
+      },
+      "visual_story_fuel": [
+        "A mast and solar array with the camera detection zone drawn as an explanatory diagram.",
+        "One order marker on a state silhouette, with no invented town or customer.",
+        "Visible order-to-delivery sequence that leaves deployment unverified."
+      ],
+      "limitations": [
+        "No named customer, municipality, installation date, price or performance results.",
+        "Alaska suitability and daylight adaptation are company assertions.",
+        "Order can be delayed, modified or cancelled; release expressly says deployment is not assured.",
+        "May fail a stricter gate requiring a named Alaska organization."
+      ],
+      "editorial_fit": "Fresh AI application purchase brief, but insufficient named-place proof for a strong lead.",
+      "research_file": "out/dispatch/research_rural_20260913.json",
+      "bucket": "stories",
+      "rung": "in_window_sweep"
     },
     {
-      "research": "research_science.json",
-      "findings": "UAA EEG research moves from public datasets to locally collected signals"
+      "story_title": "UIC Science helps MIT test magnetic communication through Arctic ice",
+      "status": "Verified primary research, but republished older work. Use only if date rule accepts republication.",
+      "sources": [
+        {
+          "url": "https://news.mit.edu/2026/researchers-tune-into-arctic-under-ice-sounds-test-through-ice-communication-0904",
+          "outlet": "MIT News",
+          "pub_date": "2026-09-04",
+          "author": "Ariana Gaines",
+          "fetched": true
+        },
+        {
+          "url": "https://www.ll.mit.edu/news/researchers-tune-arctic-under-ice-sounds-and-test-through-ice-communication",
+          "outlet": "MIT Lincoln Laboratory",
+          "pub_date": "2026-08-26",
+          "author": "Ariana Gaines",
+          "fetched": true
+        }
+      ],
+      "is_in_window": true,
+      "underlying_new_development_in_window": false,
+      "facts": [
+        "UIC Science, a unit of Ukpea\u0121vik I\u00f1upiat Corporation, provided Utqia\u0121vik logistics for the experiment.",
+        "Team drilled a 2 by 3 foot opening through 3.6 feet of ice and deployed an ROV carrying a Havguard modem.",
+        "Alpha prototype transferred about 1.2 kilobytes per second through ice.",
+        "The Utqia\u0121vik visit was in mid-April, not September.",
+        "Future planned ML would distinguish icequakes from marine mammals; the article does not say this ML was deployed."
+      ],
+      "brief_quote": {
+        "text": "The through-line in all this work is minimizing boots on the ice",
+        "speaker": "David Whelihan",
+        "words": 13
+      },
+      "visual_story_fuel": [
+        "First-party ROV-under-ice video and credited field photographs.",
+        "Cutaway with transmitter below ice and receiver above.",
+        "Sonar motion tracking plus aerial drone imagery."
+      ],
+      "warning": "RobotToday September 8th aggregation incorrectly says the field test occurred in September. Do not use that date. This candidate is robotics demonstrated, ML proposed.",
+      "research_file": "out/dispatch/research_rural_20260913.json",
+      "bucket": "reserve_or_rejected",
+      "rung": "in_window_sweep"
+    },
+    {
+      "story_title": "DEC RFQ 18-904-27 for Halong response drones",
+      "status": "Hold, full original/PDF fetch incomplete; autonomous/AI capability not verified.",
+      "source_url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225070",
+      "indexed_pub_date": "2026-09-09",
+      "discovery_only_facts": [
+        "Indexed primary notice says SPAR seeks U.S.-made Blue List drones for ongoing ex-Typhoon Halong response.",
+        "Indexed budget is $70,000 to $80,000; above $90,000 may be non-responsive.",
+        "Quotes due September 30th at 1 p.m. AKDT."
+      ],
+      "verification_gap": "Web open timed out twice and direct HTTPS returned Request Rejected. No RFQ attachment fetched. Do not claim an autonomous flight task, AI system, award or purchase completion.",
+      "research_file": "out/dispatch/research_rural_20260913.json",
+      "bucket": "reserve_or_rejected",
+      "rung": "in_window_sweep"
+    },
+    {
+      "story_title": "UAA critical-mineral AI award 2614749",
+      "status": "Drop as fresh lead: discovered September performance start, but underlying award is older; LinkedIn recruitment is not sufficient sole source.",
+      "research_file": "out/dispatch/research_rural_20260913.json",
+      "bucket": "reserve_or_rejected",
+      "rung": "in_window_sweep"
+    },
+    {
+      "story_title": "T3 Alaska Drone Club",
+      "status": "Drop from current window: index publication September 1st.",
+      "research_file": "out/dispatch/research_rural_20260913.json",
+      "bucket": "reserve_or_rejected",
+      "rung": "in_window_sweep"
+    },
+    {
+      "story_title": "UAA RAISE mini-grants call",
+      "status": "Drop from dated lead list: official page has deadlines but no clear publication date.",
+      "research_file": "out/dispatch/research_rural_20260913.json",
+      "bucket": "reserve_or_rejected",
+      "rung": "in_window_sweep"
+    },
+    {
+      "story_title": "Merlin shifts certification focus to large aircraft",
+      "source_url": "https://investors.merlinlabs.com/news-releases/news-release-details/merlin-announces-plans-pursue-civil-certification-strategy-large",
+      "pub_date": "2026-09-09",
+      "fetched": true,
+      "status": "Hold: fresh first-party announcement, but fetched release has no concrete named Alaska impact.",
+      "research_file": "out/dispatch/research_rural_20260913.json",
+      "bucket": "reserve_or_rejected",
+      "rung": "in_window_sweep"
+    },
+    {
+      "story_title": "AI assistance enters the Bering Sea pollock assessment review record",
+      "summary_2_sentences": "A NOAA Alaska Fisheries Science Center working paper dated September 3rd recommends Model 26.0 for the November and December assessment review. It explicitly discloses AI assistance in document development and model implementation, with authors retaining scientific responsibility.",
+      "why_it_matters_to_alaskans": "The eastern Bering Sea pollock assessment informs catch-limit advice; reproducible model changes have direct fishery relevance.",
+      "sources": [
+        {
+          "url": "https://noaa-afsc.github.io/EBS_pollock/doc/EBSpollock_Sept_2026.html",
+          "outlet": "NOAA Alaska Fisheries Science Center",
+          "pub_date": "2026-09-03",
+          "publication_timestamp": "2026-09-03 20:59 (timezone unspecified)",
+          "author": "James Ianelli; Sophia Wassermann; Carey McGilliard; Grant Adams; Matt Cheng; Cody Szuwalski; Cole Monnahan",
+          "body_fetched": true,
+          "fetch_method": "Python urllib HTTPS; web search discovered source, direct web open errored"
+        }
+      ],
+      "exact_facts": [
+        "Comparison data cover 1964 to 2024; new 2025 and 2026 observations await quality checks.",
+        "47 of 50 dispersed-start fits reached the best solution; all 50 simulated-data self-tests converged.",
+        "Separate FT-NIRS age-data comparisons flag lower cohort consistency than traditional microscope ages; consequence remains unresolved."
+      ],
+      "quote": "Artificial intelligence (AI) tools were used to aid document development and model implementation.",
+      "visual_story_fuel": [
+        "Bering Sea pollock silhouette to otolith rings to scientific review table.",
+        "Fifty fit markers: 47 at best solution, three at alternative objective.",
+        "Model-comparison plots are embedded in the working paper."
+      ],
+      "caveats": [
+        "Recommendation, not adoption or a new catch limit.",
+        "AI is documented as authoring/code assistance; Rceattle itself is not established here as an AI predictor.",
+        "FT-NIRS is a separate measurement-method issue, not proof of a newly deployed AI system."
+      ],
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "dedupe_status": "Not among supplied excluded subjects; confirm run ledger.",
+      "editorial_strength": "moderate: strongest clean science lead, but AI role is assisted scientific work rather than autonomous decision-making",
+      "research_file": "out/dispatch/research_science_20260913.json",
+      "bucket": "stories",
+      "rung": "in_window_sweep"
+    },
+    {
+      "story_title": "NOAA sets a calibration-first path for autonomous fisheries surveys",
+      "summary_2_sentences": "A September 3rd NOAA feature presents an Alaska Fisheries Science Center-led framework for integrating autonomous vehicles, optics, acoustics, and eDNA with conventional surveys. Parallel tests preserve comparability with historical stock-assessment data.",
+      "why_it_matters_to_alaskans": "Alaska pollock surveys and North Pacific rockfish sampling are concrete examples; new platforms could expand coverage.",
+      "sources": [
+        {
+          "url": "https://www.fisheries.noaa.gov/feature-story/charting-future-fisheries-independent-surveys",
+          "outlet": "NOAA Fisheries",
+          "pub_date": "2026-09-03",
+          "last_updated": "2026-09-11",
+          "author": "NOAA Fisheries; Stan Kotwicki quoted as framework lead author",
+          "body_fetched": true
+        },
+        {
+          "url": "https://academic.oup.com/icesjms/article/83/7/fsag134/8735857",
+          "outlet": "ICES Journal of Marine Science",
+          "pub_date": "2026-07-16",
+          "author": "Stan Kotwicki et al.",
+          "body_fetched": true,
+          "background_context": true
+        }
+      ],
+      "exact_facts": [
+        "NOAA documents an earlier acoustic-only Saildrone pollock survey when COVID curtailed conventional surveys.",
+        "The article says AFSC is exploring uncrewed vehicles working alongside research vessels."
+      ],
+      "quote": "And one of the biggest challenges is maintaining data consistency and continuity.",
+      "visual_story_fuel": [
+        "DriX H-8 alongside NOAA Ship Oscar Dyson.",
+        "Dutch Harbor Saildrone and stereo-camera frame.",
+        "Paired conventional and autonomous survey paths."
+      ],
+      "caveats": [
+        "Framework report, not a new Alaska deployment announcement.",
+        "CROSS-SURFACE REPEAT: Alaska AI carousel published this same framework on September 6th. Do not treat it as a clean fresh lead without editorial clearance."
+      ],
+      "prior_publication": {
+        "url": "https://alaskaaihq.com/archive/2026-09-06/",
+        "title": "Run Both Instruments, or Lose the Record",
+        "body_fetched": true
+      },
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "dedupe_status": "Not listed in supplied Dispatch exclusions, but sibling carousel repeat verified.",
+      "editorial_strength": "strong visual robotics material, weak freshness because already published",
+      "research_file": "out/dispatch/research_science_20260913.json",
+      "bucket": "stories",
+      "rung": "in_window_sweep"
+    },
+    {
+      "title": "Nine Species of Deep-Sea Sponges Discovered in Alaska",
+      "url": "https://www.fisheries.noaa.gov/feature-story/nine-species-deep-sea-sponges-discovered-alaska",
+      "pub_date": "2026-09-10",
+      "body_fetched": true,
+      "reason": "Fresh and visual, but no documented AI/ML/robotics component.",
+      "research_file": "out/dispatch/research_science_20260913.json",
+      "bucket": "rejected_or_unqualified_leads",
+      "rung": "in_window_sweep"
+    },
+    {
+      "title": "Ancient cheetah adapted to fish-based diet",
+      "url": "https://www.uaf.edu/news/ancient-cheetah-adapted-to-fish-based-diet-to-survive.php",
+      "pub_date": "2026-09-04",
+      "body_fetched": true,
+      "reason": "UAF isotope research with no documented AI/ML/robotics component.",
+      "research_file": "out/dispatch/research_science_20260913.json",
+      "bucket": "rejected_or_unqualified_leads",
+      "rung": "in_window_sweep"
+    },
+    {
+      "title": "RAISE mini-grants community call",
+      "url": "https://coeng.uaa.alaska.edu/AI/raise-mini-grants-community/",
+      "body_fetched": true,
+      "reason": "Relevant AI call, September 21st deadline; no clear publication date verified.",
+      "research_file": "out/dispatch/research_science_20260913.json",
+      "bucket": "rejected_or_unqualified_leads",
+      "rung": "in_window_sweep"
+    },
+    {
+      "title": "UAA AIR Lab NSF 2614749 assistantship",
+      "url": "https://www.linkedin.com/posts/uaa-air-lab_fully-funded-ms-research-assistant-position-activity-7497754818770374656-Zjiq",
+      "reason": "LinkedIn discovery only; NSF primary source failed, exact publication date unverified. Not usable as sole source.",
+      "research_file": "out/dispatch/research_science_20260913.json",
+      "bucket": "rejected_or_unqualified_leads",
+      "rung": "in_window_sweep"
+    },
+    {
+      "title": "Alaska Earthquake Center landslide postdoctoral opening",
+      "url": "https://earthquake.alaska.edu/seismic-waves-nepals-landslide-flood-reached-alaska-and-so-should-lessons",
+      "reason": "Hiring discovery dates were aggregators; related primary news dated September 2nd outside window. Not accepted.",
+      "research_file": "out/dispatch/research_science_20260913.json",
+      "bucket": "rejected_or_unqualified_leads",
+      "rung": "in_window_sweep"
+    },
+    {
+      "rank": 1,
+      "story_title": "Koniag's subsidiary is building the automation behind Wingman",
+      "summary_2_sentences": "Koniag Government Services said on September 11th that it supports CDAO's Wingman digital-assistant expansion. Its work applies generative AI and robotic process automation to federal workflows including procurement, logistics and financial management.",
+      "why_it_matters_to_alaskans": "KGS is a subsidiary of Koniag, the Alaska Native regional corporation with Kodiak Alutiiq roots. This is a named Alaska-owned business building federal AI capabilities; the announcement doesn't quantify Alaska jobs, revenue or shareholder distributions from Wingman.",
+      "sources": [
+        {
+          "url": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+          "outlet": "Koniag Government Services",
+          "pub_date": "2026-09-11",
+          "author": "Koniag Government Services",
+          "fetched": true,
+          "primary_source": true,
+          "brief_quote": "more than $37M in annual cost avoidance",
+          "facts": [
+            "KGS describes support for CDAO Research and Engineering and other defense organizations.",
+            "Wingman combines AI, machine learning, LLMs, generative AI, RPA and low-code tools.",
+            "The cited cost avoidance belongs to earlier Army procurement automation by a KGS team, not measured Wingman savings."
+          ],
+          "date_note": "Use September 11th, the date on the company-hosted release. The syndicated release is dated September 10th."
+        },
+        {
+          "url": "https://www.koniag-gs.com/the-kgs-story/",
+          "outlet": "Koniag Government Services",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "KGS identifies itself as Koniag's subsidiary and describes the corporation's Kodiak Alutiiq origins."
+          ]
+        },
+        {
+          "url": "https://www.koniag.com/our-investments/portfolio/",
+          "outlet": "Koniag",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "The parent corporation lists Koniag Government Services in its own investment portfolio under Government Contracting."
+          ]
+        },
+        {
+          "url": "https://www.koniag.com/our-investments/",
+          "outlet": "Koniag",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "Koniag describes its portfolio as subsidiary companies and its mission as growing earnings and assets to support Alutiiq shareholders and future generations."
+          ]
+        },
+        {
+          "url": "https://www.koniag.com/about-us/history-culture/",
+          "outlet": "Koniag",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "Koniag describes its Alutiiq ancestors settling Kodiak Island."
+          ]
+        },
+        {
+          "url": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+          "outlet": "Amazon Web Services",
+          "pub_date": null,
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "brief_quote": "It gives them back nearly an hour each time",
+          "quote_speaker": "Carin Chapman, KGS VP of AI Strategy and Enablement, quoted by AWS",
+          "facts": [
+            "AWS reports DORA reduced a roughly one-hour contractor-responsibility task to two minutes.",
+            "A contracting professional sends a vendor UEI in the email subject; DORA retrieves compliance information through APIs and generates a report for human review and determination.",
+            "AWS distinguishes DORA automation from Bedrock-powered Jumpstarter tools that draft contracting documents using LLMs.",
+            "AWS reports 687,000 annual labor hours saved and about $37 million annual cost avoidance across Army procurement automation tools. These are portfolio results, not DORA alone or Wingman performance.",
+            "AWS connects the prior procurement work to later Wingman work."
+          ],
+          "limitation": "This is a vendor partner case study, not an independent government audit. It has no clear publication date and serves only as background, with AWS attribution on every performance claim."
+        }
+      ],
+      "visual_story_fuel": [
+        "A UEI enters an email subject, API lookups feed a standardized responsibility report, and a human reviews it. A 60-minute ring contracts to two, explicitly marked AWS case study and earlier Army procurement work.",
+        "A physical stack of procurement forms moves through a transparent automation mechanism, with contracting, logistics and finance taking separate paths.",
+        "Map Kodiak ownership to federal customer workflows, keeping ownership distinct from local deployment.",
+        "Show the earlier Army result as a separately dated evidence card; avoid presenting it as Wingman's measured effect."
+      ],
+      "editorial_caution": "A fresh company disclosure of support, not a newly awarded contract. No award value, launch date, deployment count or independent performance audit is supplied. AWS is a corroborating vendor primary source, not independent outcome validation. Distinguish non-AI/RPA DORA from LLM-based Jumpstarters. Do not say AI alone produced the entire reported saving.",
+      "suggested_stance": "curious",
+      "confidence": "high on attributed company claims; no independent performance verification",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "research_file": "out/dispatch/research_wildcard_20260913.json",
+      "bucket": "stories",
+      "rung": "in_window_sweep"
+    },
+    {
+      "rank": 2,
+      "story_title": "Alaska's robotics season keeps existing classroom robots in play",
+      "summary_2_sentences": "FIRST in Alaska's September 4th update set September 12th Tech Challenge kickoffs in Anchorage, Fairbanks and Juneau. The same update tells LEGO League teams that Alaska tournaments will use Founders Edition while the global program prepares for its final LEGO partnership season.",
+      "why_it_matters_to_alaskans": "Alaska coaches have a concrete equipment decision: existing supported robots remain usable, and hardship assistance extends to veteran FTC teams. The news supports a robotics story; it doesn't establish a new Alaska machine-learning deployment.",
+      "sources": [
+        {
+          "url": "https://www.jedc.org/firstinalaska/9-4-2026-season-updates/",
+          "outlet": "FIRST in Alaska / Juneau Economic Development Council",
+          "pub_date": "2026-09-04",
+          "author": "FIRST in Alaska",
+          "fetched": true,
+          "primary_source": true,
+          "brief_quote": "Alaska tournaments will play using FOUNDERS EDITION.",
+          "facts": [
+            "FTC hardship grants are available to veteran teams this year.",
+            "The update says Alaska's FLL tournaments use Founders Edition.",
+            "SPIKE Prime and Essential remain usable through the 2028 to 2029 FIRST season."
+          ]
+        },
+        {
+          "url": "https://www.jedc.org/firstinalaska/calendar/",
+          "outlet": "FIRST in Alaska / Juneau Economic Development Council",
+          "pub_date": null,
+          "event_date": "2026-09-12",
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "Listed kickoff venues are Fairbanks Cyberlynx, UAA College of Engineering and Juneau's Jordan Creek Center, plus a statewide remote session."
+          ],
+          "limitation": "The calendar verifies scheduling, not attendance or completion."
+        },
+        {
+          "url": "https://community.firstinspires.org/first-lego-education-partnership-update",
+          "outlet": "FIRST",
+          "pub_date": "2026-03-19",
+          "author": "Chris Rake, EVP and COO",
+          "fetched": true,
+          "primary_source": true,
+          "background_context": true,
+          "facts": [
+            "FIRST says LEGO Education chose not to renew their partnership, making 2026 to 2027 its final partnered season."
+          ]
+        },
+        {
+          "url": "https://ftc-resources.firstinspires.org/ftc/game",
+          "outlet": "FIRST Tech Challenge",
+          "pub_date": "2026-09-12",
+          "fetched": true,
+          "primary_source": true,
+          "facts": [
+            "The official season page dates BIOBUZZ Competition Manual V1 to September 12th, 2026."
+          ]
+        },
+        {
+          "url": "https://ftc-resources.firstinspires.org/ftc/game/cm-html/BIOBUZZ%20Competition%20Manual%20-%20V1.htm",
+          "outlet": "FIRST Tech Challenge",
+          "pub_date": "2026-09-12",
+          "fetched": true,
+          "primary_source": true,
+          "brief_quote": "During AUTO, ROBOTS operate without any DRIVER control or input.",
+          "facts": [
+            "Section 8: robots operate autonomously for the first 30 seconds and can use sensors to collect pollen, navigate and launch it into hive cells.",
+            "Sections 10.4 and 11.4.1: the autonomous period lasts 30 seconds and uses preprogrammed instructions without driver input.",
+            "Autonomy is verified; this rule does not establish that a specific Alaska team uses machine learning."
+          ]
+        }
+      ],
+      "visual_story_fuel": [
+        "A used classroom robot crosses a season calendar to the 2028 to 2029 compatibility endpoint.",
+        "Three Alaska kickoff locations illuminate on a map before connecting to the statewide remote session.",
+        "Keep FTC kickoff and FLL equipment rules in visibly separate lanes because these are different programs."
+      ],
+      "editorial_caution": "The hardware transition was announced globally in March. Freshness rests on the dated Alaska implementation update and September 12th event schedule; don't frame the partnership ending as breaking news. The September 12th manual directly verifies autonomous operation and sensor navigation for this season; no specific Alaska-team ML implementation is verified.",
+      "suggested_stance": "curious",
+      "confidence": "high",
+      "is_in_window": true,
+      "background_context": false,
+      "primary_source": true,
+      "autonomy_verified": true,
+      "research_file": "out/dispatch/research_wildcard_20260913.json",
+      "bucket": "stories",
+      "rung": "in_window_sweep"
+    },
+    {
+      "subject": "AURORA-AI rural microgrids",
+      "reason": "Delta Discovery's September 10th article republishes an August 11th UAF announcement. The award isn't fresh in this window.",
+      "fetched_sources": [
+        "https://deltadiscovery.com/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids/",
+        "https://www.uaf.edu/news/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php"
+      ],
+      "research_file": "out/dispatch/research_wildcard_20260913.json",
+      "bucket": "rejected_leads",
+      "rung": "in_window_sweep"
+    },
+    {
+      "subject": "ACEP September energy interviews",
+      "reason": "September 9th primary article is fresh but doesn't establish AI or robotics work in the described cybersecurity, turbine and solar topics.",
+      "fetched_sources": [
+        "https://www.uaf.edu/acep/news/2026/energy-in-the-north-on-cybersecurity-marine-energy-internship-and-solar-energy.php"
+      ],
+      "research_file": "out/dispatch/research_wildcard_20260913.json",
+      "bucket": "rejected_leads",
+      "rung": "in_window_sweep"
+    },
+    {
+      "subject": "Small-business AI workshops and summit",
+      "reason": "Search results showed future events outside the September 3rd to 13th window or pages with no clear publication date. No sufficiently fresh business deployment verified through the SBDC news index.",
+      "research_file": "out/dispatch/research_wildcard_20260913.json",
+      "bucket": "rejected_leads",
+      "rung": "in_window_sweep"
     }
   ],
   "locked_story": {
-    "headline": "UAA gains the ability to collect brain signals for its own research questions",
+    "headline": "Koniag subsidiary supports Wingman office automation",
     "found_at_rung": "in_window_sweep",
-    "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
-    "validation": "Independent validator confirmed acquired equipment and training, planned studies only, and manufacturer electrode count."
+    "published": "2026-09-11",
+    "primary_url": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+    "verified_findings": "verified_findings_20260913.json",
+    "dedupe": "FRESH for Koniag Government Services,Wingman,DORA,Army procurement automation",
+    "basis": "Fresh company announcement, earlier Army workflow explains distinct rules-based automation and generative drafting. Vendor timing stays explicitly attributed. No quantified Alaska return claimed."
   }
 }

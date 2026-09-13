@@ -1,408 +1,554 @@
 {
-  "run_date": "2026-09-12",
-  "fact_check_verdict": "Independently verified acquisition, training, hardware and planned studies. Methods example is explicitly editorial and conditional.",
+  "run_date": "2026-09-13",
+  "validated_at_utc": "2026-09-13T13:51:01.151427+00:00",
+  "validator_role": "Independent adversarial validator",
+  "fact_check_verdict": "GO WITH ATTRIBUTION AND SCOPE LIMITS",
   "claims": [
     {
       "id": "c1",
-      "status": "verified-primary",
-      "spoken": "UAA announced the equipment acquisition on September 9th.",
-      "on_screen": "SEPTEMBER 9TH",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "Koniag Government Services posted its announcement on September 11th.",
+      "on_screen": "SEPTEMBER 11TH",
+      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
       "requires": [
-        "Announcement date, not purchase date."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false
-      }
-    },
-    {
-      "id": "c2",
-      "status": "verified-primary",
-      "spoken": "The University of Alaska Anchorage AI and Robotics Lab acquired it.",
-      "on_screen": "AI AND ROBOTICS LAB",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
-      "requires": [
-        "Expand UAA before relying on abbreviation in narration."
+        "This is the company page announcement date, not a launch date, award date or new contract."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "UNIVERSITY OF ALASKA ANCHORAGE"
+          "KGS ANNOUNCEMENT"
+        ],
+        "on_screen_none": [
+          "LAUNCHED SEPTEMBER 11TH",
+          "NEW CONTRACT AWARD"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "UAA AI + ROBOTICS LAB",
-        "approved_on_screen": "AI AND ROBOTICS LAB",
-        "reason": "The film spells out the institution on Shot 2 and names its lab on Shot 3. AND is the spoken equivalent of the approved plus sign; the institution attribution is now a separate required display string.",
-        "visual_evidence": [
-          "out/evidence/f013.2.jpg",
-          "out/evidence/f014.5.jpg"
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "background_context": false
+    },
+    {
+      "id": "c2",
+      "status": "verified-attributed-primary",
+      "spoken": "KGS says it supports the Chief Digital and Artificial Intelligence Office on Wingman.",
+      "on_screen": "WINGMAN",
+      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+      "requires": [
+        "Attribute support to KGS. Name CDAO as Chief Digital and Artificial Intelligence Office; do not call it the Army CDAO."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "KONIAG GOVERNMENT SERVICES",
+          "KGS ANNOUNCEMENT"
         ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+        "on_screen_none": [
+          "ARMY CDAO"
+        ]
+      },
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "label": "Koniag Government Services",
+      "background_context": false
     },
     {
       "id": "c3",
       "status": "verified-primary",
-      "spoken": "The device is a Wearable Sensing DSI-24 dry EEG.",
-      "on_screen": "DRY EEG · DSI-24",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "spoken": "KGS is a subsidiary of Koniag.",
+      "on_screen": "KONIAG SUBSIDIARY",
+      "source": "https://www.koniag.com/our-investments/portfolio/",
       "requires": [
-        "An EEG records signals. No thought symbols or clinical result."
+        "Parent investments page describes the portfolio as subsidiary companies; the portfolio names KGS under government contracting. Corporate ownership, not tribal-government operation."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
-      }
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "KONIAG",
+          "KONIAG GOVERNMENT SERVICES"
+        ],
+        "on_screen_none": [
+          "TRIBAL GOVERNMENT",
+          "TRIBAL AI"
+        ]
+      },
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag.com/our-investments/"
+      ],
+      "background_context": true
     },
     {
       "id": "c4",
       "status": "verified-primary",
-      "spoken": "The Educational Legacy Fund funded the equipment.",
-      "on_screen": "EDUCATIONAL LEGACY FUND",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "spoken": "Koniag is the regional Alaska Native corporation associated with the Kodiak region.",
+      "on_screen": "KODIAK REGION",
+      "source": "https://www.koniag.com/about-us/",
       "requires": [
-        "Credit funding only. No price is reported."
+        "Name Koniag as the regional corporation. Do not conflate KGS, Koniag, individual shareholders, or tribal governments. No Native culture imagery or characterization."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
-      }
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "KONIAG",
+          "ALASKA NATIVE CORPORATION"
+        ],
+        "on_screen_none": [
+          "TRIBAL GOVERNMENT",
+          "NATIVE TRIBES BUILD AI"
+        ]
+      },
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "background_context": true
     },
     {
       "id": "c5",
-      "status": "verified-primary",
-      "spoken": "Faculty and students received equipment training.",
-      "on_screen": "TRAINING",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "Wingman supports custom digital assistants for repetitive office work.",
+      "on_screen": "DIGITAL ASSISTANTS",
+      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
       "requires": [
-        "Observed milestone. The research studies remain planned."
+        "This is the announced platform purpose, not audited output quality or a new deployment count. Restrict visualization to documents and clerical office workflows."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
-      }
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "KGS ANNOUNCEMENT"
+        ],
+        "on_screen_none": [
+          "AUTONOMOUS WEAPONS",
+          "TARGETING SYSTEM"
+        ]
+      },
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "background_context": false
     },
     {
       "id": "c6",
-      "status": "verified-primary",
-      "spoken": "Vadim Egorov is a graduate student.",
-      "on_screen": "VADIM EGOROV",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "KGS names contracting, logistics and financial management among the workflows.",
+      "on_screen": "CONTRACTING",
+      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
       "requires": [
-        "Use a generic student illustration, not an invented portrait."
+        "Named workflow categories only. Do not imply every process is deployed, succeeds or runs without review."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "GRADUATE STUDENT",
-          "RECORDING DEMONSTRATION"
-        ]
-      },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "VADIM EGOROV",
-        "approved_on_screen": "VADIM EGOROV",
-        "reason": "The original approved name is visibly present in the imported demonstration helper with his graduate-student role. No wording amendment; fix the live import source route.",
-        "visual_evidence": [
-          "out/evidence/filmstrip_student_observes.jpg"
+          "LOGISTICS",
+          "FINANCIAL MANAGEMENT",
+          "KGS ANNOUNCEMENT"
         ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+        "on_screen_none": []
+      },
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "background_context": false
     },
     {
       "id": "c7",
-      "status": "verified-primary",
-      "spoken": "Egorov viewed his recorded electrical signals.",
-      "on_screen": "RECORDING DEMONSTRATION",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "Earlier Army procurement work included DORA, the Determination of Responsibility Assistant.",
+      "on_screen": "DORA",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Demonstration is observed. Any trace drawn here is schematic."
+        "Introduce this as earlier Army procurement work described in the AWS vendor case study; do not frame it as a new September 11th launch."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "VADIM EGOROV",
-          "SCHEMATIC",
-          "ELECTRICAL ACTIVITY"
+          "EARLIER ARMY PROCUREMENT",
+          "AWS CASE STUDY"
+        ],
+        "on_screen_none": [
+          "DORA LAUNCHED SEPTEMBER 11TH"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "RECORDING DEMONSTRATION",
-        "approved_on_screen": "RECORDING DEMONSTRATION",
-        "reason": "Retain the original approved phrase. The engine owner is making the Shot 4 heading explicit; the name, role and schematic electrical trace already establish the reported observation.",
-        "visual_evidence": [
-          "out/evidence/filmstrip_student_observes.jpg"
-        ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "background_context": true
     },
     {
       "id": "c8",
-      "status": "verified-background",
-      "spoken": "The device has 19 scalp electrodes.",
-      "on_screen": "19 SCALP CONTACTS",
-      "source": "https://wearablesensing.com/dsi-24/",
+      "status": "verified-attributed-primary",
+      "spoken": "A contracting professional emails a vendor identifier in the subject line.",
+      "on_screen": "VENDOR IDENTIFIER",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Cross-checked against UAA. Literal sensors must number exactly19."
+        "The identifier is a Unique Entity Identifier, or UEI. Use a generic labeled token; no real vendor record, contact or invented valid identifier."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "SCALP ELECTRODES",
-          "TOP VIEW · SCHEMATIC"
+          "EMAIL SUBJECT",
+          "AWS CASE STUDY"
+        ],
+        "on_screen_none": [
+          "ENTER A PERSON’S ID"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "19 SCALP ELECTRODES",
-        "approved_on_screen": "19 SCALP CONTACTS",
-        "reason": "The helper labels the 19 dry scalp electrode contacts. The opening separately shows a large 19 beside SCALP ELECTRODES. Contacts names the physical electrode interfaces, not 19 channels or all headset inputs; the literal array and two distinct earclips agree with the verified manufacturer count.",
-        "visual_evidence": [
-          "out/evidence/f004.8.jpg",
-          "out/evidence/f033.9.jpg",
-          "out/evidence/filmstrip_student_observes.jpg"
-        ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "background_context": true
     },
     {
       "id": "c9",
-      "status": "verified-primary",
-      "spoken": "Egorov usually works with public EEG datasets.",
-      "on_screen": "PUBLIC EEG DATA",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "DORA retrieves compliance data through APIs, including SAM.gov data.",
+      "on_screen": "API LOOKUPS",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Public datasets remain valuable, not displaced."
+        "Show documented data retrieval. Do not invent which additional databases are queried or imply direct access to private tax returns."
       ],
       "contract": {
         "must_ship": true,
-        "on_screen_verbatim": false
-      }
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "SAM.GOV",
+          "AWS CASE STUDY"
+        ],
+        "on_screen_none": [
+          "PRIVATE TAX RETURNS"
+        ]
+      },
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "background_context": true
     },
     {
       "id": "c10",
-      "status": "verified-primary",
-      "spoken": "Egorov anticipates collecting recordings for his own tasks.",
-      "on_screen": "PUBLIC DATA + OWN-TASK PLANS",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "Prebuilt decision logic helps assemble a standardized report.",
+      "on_screen": "STANDARDIZED REPORT",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Added collection capability, not a newly granted right to choose research."
+        "DORA uses prebuilt decisioning algorithms. This is distinct from the separately described generative drafting tools. Do not visualize a language model inventing compliance evidence."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "COLLECTION STILL AHEAD",
-          "PUBLIC EEG DATA"
+          "PREBUILT LOGIC",
+          "AWS CASE STUDY"
+        ],
+        "on_screen_none": [
+          "DORA WRITES CONTRACTS",
+          "DORA LANGUAGE MODEL"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "OWN TASKS",
-        "approved_on_screen": "PUBLIC DATA + OWN-TASK PLANS",
-        "reason": "This wording makes the added own-task option explicit while retaining public data and future collection status. It does not claim collection has finished or that students previously lacked research agency.",
-        "visual_evidence": [
-          "out/evidence/f052.3.jpg"
-        ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "background_context": true
     },
     {
       "id": "c11",
-      "status": "verified-primary",
-      "spoken": "UAA plans cognitive-state research during reading.",
-      "on_screen": "PLANNED · READING",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "The report goes to a professional for review and determination.",
+      "on_screen": "HUMAN REVIEW",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Use planned in narration and large planned label on this scene."
+        "A human contracting professional remains responsible for review and determination. No automatic award or guaranteed legal-compliance claim."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "COGNITIVE STATES",
-          "STUDY TARGET · ANSWERS AHEAD"
+          "AWS CASE STUDY"
+        ],
+        "on_screen_none": [
+          "AUTOMATIC AWARD",
+          "NO HUMAN REVIEW",
+          "GUARANTEED COMPLIANCE"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "READING · PLANNED",
-        "approved_on_screen": "PLANNED · READING",
-        "reason": "Only the order of the already approved words changes; PLANNED is prominent. The cognitive-state target and absent answers remain explicit.",
-        "visual_evidence": [
-          "out/evidence/f061.3.jpg"
-        ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "background_context": true
     },
     {
       "id": "c12",
-      "status": "verified-primary",
-      "spoken": "Another planned project studies brain activity during programming.",
-      "on_screen": "PLANNED · PROGRAMMING",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "Separate Jumpstarter tools use large language models through Amazon Bedrock.",
+      "on_screen": "JUMPSTARTER",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Programming, not AI-assisted coding. Use planned framing."
+        "Keep generative drafting distinct from DORA data and rules automation. Identify the tools as earlier Army work, not newly measured Wingman results."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "PLANNED BRAIN ACTIVITY",
-          "SCHEMATIC"
+          "GENERATIVE DRAFTING",
+          "AWS CASE STUDY",
+          "EARLIER ARMY PROCUREMENT"
+        ],
+        "on_screen_none": [
+          "DORA GENERATES DRAFTS"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "PROGRAMMING · PLANNED",
-        "approved_on_screen": "PLANNED · PROGRAMMING",
-        "reason": "Only the order of the already approved words changes. Both the programming status and proposed brain measurement remain visibly planned, with no AI-assisted coding or completed result.",
-        "visual_evidence": [
-          "out/evidence/f062.9.jpg"
-        ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "background_context": true
     },
     {
       "id": "c13",
-      "status": "verified-primary",
-      "spoken": "The programming project also plans to track eye movements.",
-      "on_screen": "PLANNED EYE MOVEMENTS",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "Users provide inputs to produce first drafts of contracting documents.",
+      "on_screen": "FIRST DRAFT",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Separate proposed eye tracking, not EEG alone reading eyes."
+        "A first draft is not a final contract, approval or award. Depict draft status persistently on every generated document."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "PLANNED · PROGRAMMING",
-          "PLANNED BRAIN ACTIVITY"
+          "JUMPSTARTER",
+          "AWS CASE STUDY"
+        ],
+        "on_screen_none": [
+          "FINAL CONTRACT",
+          "CONTRACT AWARDED"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "EYE MOVEMENTS · PLANNED",
-        "approved_on_screen": "PLANNED EYE MOVEMENTS",
-        "reason": "The same planned qualifier precedes the eye-movement measurement. The display keeps proposed eye and brain measurements separate within the programming project.",
-        "visual_evidence": [
-          "out/evidence/f062.9.jpg"
-        ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "background_context": true
     },
     {
       "id": "c14",
-      "status": "verified-primary",
-      "spoken": "The announcement describes planned studies rather than completed findings.",
-      "on_screen": "ANSWERS AHEAD",
-      "source": "https://www.uaa.alaska.edu/news/archive/2026/09/new-brain-activity-monitoring-system.cshtml",
+      "status": "verified-attributed-primary",
+      "spoken": "People refine and approve the generated sections.",
+      "on_screen": "REFINE AND APPROVE",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "No model output, accuracy, sample count or completed dataset."
+        "This is the KGS-described workflow in the AWS case study, not independently audited accuracy. Keep the professional visible after drafting."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "UAA STUDIES",
-          "RESEARCH PRINCIPLE · NO UAA RESULT"
+          "HUMAN REVIEW",
+          "AWS CASE STUDY"
+        ],
+        "on_screen_none": [
+          "NO REVIEW NEEDED"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "RESULTS STILL AHEAD",
-        "approved_on_screen": "ANSWERS AHEAD",
-        "reason": "The empty answer field explicitly says answers are ahead, while the later UAA STUDIES / PLANNED sheet and NO UAA RESULT distinction preserve the no-completed-findings obligation. This is a semantic equivalent of results still ahead.",
-        "visual_evidence": [
-          "out/evidence/f072.6.jpg",
-          "out/evidence/f118.4.jpg"
-        ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "background_context": true
     },
     {
       "id": "c15",
-      "status": "verified-background",
-      "spoken": "A claim about new people requires evaluation on people absent from training.",
-      "on_screen": "IF A MODEL CLAIMS NEW PEOPLE",
-      "source": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1373515/full",
+      "status": "verified-attributed-primary",
+      "spoken": "AWS reports that the DORA task fell from roughly an hour to two minutes.",
+      "on_screen": "ROUGHLY 1 HOUR TO 2 MINUTES",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Editorial conditional methods principle. No allegation of UAA leakage and no invented UAA protocol."
+        "OPTIONAL. If used, attribute in the same spoken span to AWS and visibly to AWS CASE STUDY. Limit to the DORA responsibility-check task in earlier Army procurement work. The duration of human review is not separately established. Never expand it to the whole procurement or award."
       ],
       "contract": {
-        "must_ship": true,
+        "must_ship": false,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "GENERAL METHODS EXAMPLE",
-          "TRAINING",
-          "TEST",
-          "EVALUATE",
-          "OUTSIDE TRAINING"
+          "AWS CASE STUDY",
+          "EARLIER ARMY PROCUREMENT"
+        ],
+        "on_screen_none": [
+          "CONTRACT AWARDED IN 2 MINUTES",
+          "WINGMAN SAVES 58 MINUTES",
+          "30 TIMES FASTER"
         ]
       },
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "NEW PEOPLE · SEPARATE TEST",
-        "approved_on_screen": "IF A MODEL CLAIMS NEW PEOPLE",
-        "reason": "The full conditional claim sits above distinct training and test boxes. The person enters only the test side and EVALUATE remains an action, without an accuracy or success result. General-methods and outside-training labels retain the original separate-test meaning and avoid an invented UAA protocol.",
-        "visual_evidence": [
-          "out/evidence/f056.3.jpg",
-          "out/evidence/f112.6.jpg"
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "label": "AWS vendor case study",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "independent_performance_validation": false,
+      "numeric_scope": "DORA responsibility-check task only",
+      "verbatim_source": "By reducing a one-hour task to just 2 minutes",
+      "conditional_display_contract": {
+        "when_used": true,
+        "on_screen_all": [
+          "DORA",
+          "RESPONSIBILITY CHECK",
+          "AWS CASE STUDY",
+          "EARLIER ARMY PROCUREMENT"
         ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+        "spoken_contains": [
+          "AWS",
+          "roughly"
+        ],
+        "on_screen_none": [
+          "ENTIRE PROCUREMENT",
+          "AUTOMATIC AWARD"
+        ]
+      },
+      "background_context": true
     },
     {
       "id": "c16",
-      "status": "verified-background",
-      "spoken": "The device records electrical activity using sensors that rest directly against the scalp.",
-      "on_screen": "ELECTRICAL ACTIVITY",
-      "source": "https://wearablesensing.com/wp-content/uploads/2023/07/DSI-24-Manual-V1.2023.pdf",
+      "status": "verified-attributed-primary",
+      "spoken": "AWS reports about 37 million dollars in annual cost avoidance across the earlier Army automation portfolio.",
+      "on_screen": "ABOUT $37M A YEAR",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
       "requires": [
-        "Research equipment, not medical diagnosis. Traces labeled SCHEMATIC and not actual UAA recordings."
+        "OPTIONAL. If used, say ABOUT and ANNUAL COST AVOIDANCE, visibly name the Army portfolio, and attribute to AWS. KGS release says more than $37M for earlier Army work. These are related vendor reports, not independent audits. Never Wingman-only, DORA-only, profit, cash savings, Alaska revenue or shareholder distributions."
+      ],
+      "contract": {
+        "must_ship": false,
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "AWS CASE STUDY",
+          "EARLIER ARMY PROCUREMENT"
+        ],
+        "on_screen_none": [
+          "WINGMAN SAVINGS",
+          "DORA SAVED $37M",
+          "$37M FOR ALASKA"
+        ]
+      },
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "label": "AWS vendor case study",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "independent_performance_validation": false,
+      "numeric_scope": "Broader earlier Army automation portfolio",
+      "conditional_display_contract": {
+        "when_used": true,
+        "on_screen_all": [
+          "ANNUAL COST AVOIDANCE",
+          "ARMY AUTOMATION PORTFOLIO",
+          "AWS CASE STUDY"
+        ],
+        "spoken_contains": [
+          "AWS",
+          "about",
+          "cost avoidance"
+        ],
+        "on_screen_none": [
+          "CASH SAVINGS",
+          "ALASKA REVENUE",
+          "SHAREHOLDER DISTRIBUTIONS"
+        ]
+      },
+      "background_context": true
+    },
+    {
+      "id": "c17",
+      "status": "verified-attributed-primary",
+      "spoken": "AWS reports 687,000 labor hours saved annually across the Army automation portfolio.",
+      "on_screen": "687,000 HOURS A YEAR",
+      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "requires": [
+        "OPTIONAL. If used, attribute to AWS and visibly scope to the broader Army automation portfolio. Body states 687,000 in two locations; headline contains typo 687,00. Do not reproduce the typo, extrapolate jobs, or assign all hours to DORA or Wingman."
+      ],
+      "contract": {
+        "must_ship": false,
+        "on_screen_verbatim": false,
+        "on_screen_all": [
+          "AWS CASE STUDY",
+          "EARLIER ARMY PROCUREMENT"
+        ],
+        "on_screen_none": [
+          "DORA SAVED 687,000 HOURS",
+          "WINGMAN SAVED 687,000 HOURS"
+        ]
+      },
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "label": "AWS vendor case study",
+      "corroborating_sources": [
+        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
+      ],
+      "independent_performance_validation": false,
+      "numeric_scope": "Broader Army automation portfolio",
+      "conditional_display_contract": {
+        "when_used": true,
+        "on_screen_all": [
+          "ARMY AUTOMATION PORTFOLIO",
+          "AWS CASE STUDY"
+        ],
+        "spoken_contains": [
+          "AWS",
+          "annually"
+        ],
+        "on_screen_none": [
+          "JOBS ELIMINATED",
+          "ALASKA HOURS SAVED"
+        ]
+      },
+      "background_context": true
+    },
+    {
+      "id": "c18",
+      "status": "verified-attributed-primary",
+      "spoken": "The announcement gives no Wingman contract value or quantified Alaska return.",
+      "on_screen": "ALASKA RETURN UNQUANTIFIED",
+      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+      "requires": [
+        "Scope absence to this announcement. No inference of no benefit, no jobs or no contract. Do not turn Army cost avoidance into money flowing to Alaska."
       ],
       "contract": {
         "must_ship": true,
         "on_screen_verbatim": false,
         "on_screen_all": [
-          "19 SCALP CONTACTS",
-          "SCHEMATIC",
-          "INTERPRETATION"
+          "IN THIS ANNOUNCEMENT"
+        ],
+        "on_screen_none": [
+          "NO ALASKA BENEFIT",
+          "NO ALASKA JOBS",
+          "CASH TO KODIAK"
         ]
       },
-      "additional_source_locator": "DSI-24 User Manual section2.4, printed page11, dry electrode-tip contact with the scalp; verified2026-09-12.",
-      "display_wording_review": {
-        "reviewed_at_utc": "2026-09-12T16:45:40.965082+00:00",
-        "reviewer_role": "Independent dispatch-fixer / claims validator",
-        "previous_on_screen": "ELECTRICAL SIGNALS",
-        "approved_on_screen": "ELECTRICAL ACTIVITY",
-        "reason": "Electrical activity is the verified scalp measurement described in the final narration. The helper labels the trace schematic and leaves the interpretation field empty; changing signals to activity preserves the physical mechanism and research-only limits.",
-        "visual_evidence": [
-          "out/evidence/f033.9.jpg",
-          "out/evidence/f042.4.jpg"
-        ],
-        "scope": "Display wording and source-route approval. Keep every original requires obligation; final repaired render still needs visual QA."
-      }
+      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
+      "background_context": false
     }
   ],
-  "obligation_source": "fact_check.json O1-O12",
-  "pre_storyboard_status": "Final narration cites all16 approved distinct facts. No completed-study result is claimed."
+  "kill_list": [
+    "New September 11th Wingman launch or contract award",
+    "Any quantified Alaska jobs, cash return or shareholder distribution",
+    "DORA or Wingman alone saved the broader Army portfolio totals",
+    "An entire procurement or contract award takes two minutes",
+    "AI alone produced every reported saving",
+    "DORA is the generative Jumpstarter model",
+    "Tribal-government operation or Native culture imagery",
+    "Audited or guaranteed performance"
+  ],
+  "limitations": [
+    "GO only for the fresh attributed company announcement and separately labeled earlier Army clerical-workflow example.",
+    "The KGS-hosted AWS case study reproduces the AWS account. Cross-host agreement is not independent performance validation.",
+    "No independent government performance audit or second independent primary source for DORA timing was located. Optional performance figures must remain vendor-attributed or be cut.",
+    "AWS body supports 687,000, while its headline has 687,00. Do not infer precision, jobs, cash recovered, or Wingman-specific savings.",
+    "No Wingman contract value, local deployment, Alaska jobs, shareholder distribution, independent accuracy rate, or new launch date is established by the announcement.",
+    "The first-person source framing of corporate identity must not become tribal-government, pan-Native, cultural or community sentiment claims.",
+    "No military operational capability, targeting, weapons, battlefield outcome or protected-data claim is approved.",
+    "DORA is described through APIs and prebuilt decision logic; only the separate Jumpstarter tools have an explicit LLM/generative drafting mechanism.",
+    "Current claims_contract_check.py does not enforce on_screen_none or conditional_display_contract. It also checks on_screen_all unconditionally even when must_ship is false. Final source-route, narration and rendered visual review must enforce negative and conditional obligations.",
+    "The AWS account labels CDAO imprecisely as an Army office. Use Chief Digital and Artificial Intelligence Office without the Army qualifier, following the fresh KGS release."
+  ],
+  "quote_policy": "No quotation selected for narration. The short verbatim_source timing fragment exists only to verify optional c15. Paraphrase all approved spoken copy."
 }

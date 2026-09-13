@@ -1,302 +1,296 @@
 [
   {
-    "text": "Nineteen scalp electrodes.",
+    "text": "Two machine outputs.",
     "start": 0.0,
-    "end": 2.4,
+    "end": 1.8,
     "seg": 0
   },
   {
-    "text": "What's on the next page?",
-    "start": 3.68,
-    "end": 5.06,
+    "text": "Watch what this pen does next.",
+    "start": 2.92,
+    "end": 5.26,
     "seg": 0
   },
   {
-    "text": "The University of Alaska Anchorage",
-    "start": 7.08,
-    "end": 9.65,
+    "text": "Koniag Government Services says",
+    "start": 6.54,
+    "end": 9.350000000000001,
     "seg": 1
   },
   {
-    "text": "has a new dry E E",
-    "start": 9.68,
-    "end": 12.143,
+    "text": "it supports Wingman, a platform",
+    "start": 9.38,
+    "end": 12.07,
     "seg": 1
   },
   {
-    "text": "G.",
-    "start": 12.173,
-    "end": 12.873,
+    "text": "for digital office assistants.",
+    "start": 12.1,
+    "end": 13.98,
     "seg": 1
   },
   {
-    "text": "The university announced it for",
-    "start": 13.72,
-    "end": 16.169999999999998,
+    "text": "Its September eleventh announcement",
+    "start": 15.14,
+    "end": 17.009999999999998,
     "seg": 2
   },
   {
-    "text": "its A I and Robotics Lab",
-    "start": 16.2,
-    "end": 18.369999999999997,
+    "text": "names contracting, logistics and",
+    "start": 17.04,
+    "end": 20.13,
     "seg": 2
   },
   {
-    "text": "on September ninth.",
-    "start": 18.4,
-    "end": 20.4,
+    "text": "financial management.",
+    "start": 20.16,
+    "end": 21.2,
     "seg": 2
   },
   {
-    "text": "The Educational Legacy Fund funded",
-    "start": 21.4,
-    "end": 24.009999999999998,
+    "text": "KGS belongs to Koniag, the Kodiak",
+    "start": 22.64,
+    "end": 26.33,
     "seg": 3
   },
   {
-    "text": "it.",
-    "start": 24.04,
-    "end": 24.74,
+    "text": "region's Alaska Native corporation.",
+    "start": 26.36,
+    "end": 28.3,
     "seg": 3
   },
   {
-    "text": "Students and faculty have trained.",
-    "start": 25.26,
-    "end": 27.52,
-    "seg": 3
-  },
-  {
-    "text": "The device records electrical activity",
-    "start": 28.68,
-    "end": 31.95,
+    "text": "Amazon's cloud business, AWS, describes",
+    "start": 29.94,
+    "end": 33.73,
     "seg": 4
   },
   {
-    "text": "using sensors that rest directly",
-    "start": 31.98,
-    "end": 34.23,
+    "text": "earlier Army tools behind this",
+    "start": 33.76,
+    "end": 35.99,
     "seg": 4
   },
   {
-    "text": "against the scalp.",
-    "start": 34.26,
-    "end": 35.54,
+    "text": "approach.",
+    "start": 36.02,
+    "end": 36.720000000000006,
     "seg": 4
   },
   {
-    "text": "Graduate student Vadim Egorov has",
-    "start": 36.64,
-    "end": 39.83,
+    "text": "DORA, the Determination of Responsibility",
+    "start": 37.8,
+    "end": 41.07,
     "seg": 5
   },
   {
-    "text": "watched his own signals appear.",
-    "start": 39.86,
-    "end": 41.76,
+    "text": "Assistant, starts with a professional",
+    "start": 41.1,
+    "end": 43.39,
     "seg": 5
   },
   {
-    "text": "He usually works with public E",
-    "start": 42.88,
-    "end": 45.18,
+    "text": "emailing a vendor identifier in",
+    "start": 43.42,
+    "end": 45.79,
+    "seg": 5
+  },
+  {
+    "text": "the subject line.",
+    "start": 45.82,
+    "end": 46.61,
+    "seg": 5
+  },
+  {
+    "text": "It retrieves compliance records",
+    "start": 46.64,
+    "end": 49.53,
     "seg": 6
   },
   {
-    "text": "E G datasets.",
-    "start": 45.21,
-    "end": 46.2,
+    "text": "through software connections, including",
+    "start": 49.56,
+    "end": 51.93,
     "seg": 6
   },
   {
-    "text": "Now he's looking forward to collecting",
-    "start": 47.08,
-    "end": 49.629999999999995,
+    "text": "SAM dot gov.",
+    "start": 51.96,
+    "end": 53.02,
+    "seg": 6
+  },
+  {
+    "text": "Prebuilt logic assembles a standardized",
+    "start": 53.88,
+    "end": 56.51,
     "seg": 7
   },
   {
-    "text": "recordings for his own tasks.",
-    "start": 49.66,
-    "end": 51.76,
+    "text": "report.",
+    "start": 56.54,
+    "end": 57.24,
     "seg": 7
   },
   {
-    "text": "Who might a future answer work",
-    "start": 52.8,
-    "end": 55.07,
+    "text": "Separate Jumpstarter tools use",
+    "start": 58.26,
+    "end": 61.05,
     "seg": 8
   },
   {
-    "text": "for?",
-    "start": 55.1,
-    "end": 55.800000000000004,
+    "text": "large language models through Amazon",
+    "start": 61.08,
+    "end": 63.21,
     "seg": 8
   },
   {
-    "text": "U A A plans to study",
-    "start": 56.78,
-    "end": 58.91,
+    "text": "Bedrock to turn user inputs into",
+    "start": 63.24,
+    "end": 66.11,
+    "seg": 8
+  },
+  {
+    "text": "initial document sections.",
+    "start": 66.14,
+    "end": 67.58,
+    "seg": 8
+  },
+  {
+    "text": "First, give the outputs their credit.",
+    "start": 69.08,
+    "end": 71.69,
     "seg": 9
   },
   {
-    "text": "cognitive states during reading.",
-    "start": 58.94,
-    "end": 60.9,
+    "text": "The records are gathered.",
+    "start": 71.72,
+    "end": 73.9,
     "seg": 9
   },
   {
-    "text": "Another planned project pairs brain",
-    "start": 61.84,
-    "end": 64.55,
+    "text": "A blank section now contains text",
+    "start": 74.46,
+    "end": 76.61,
+    "seg": 9
+  },
+  {
+    "text": "someone can work with.",
+    "start": 76.64,
+    "end": 78.0,
+    "seg": 9
+  },
+  {
+    "text": "These tools have completed real",
+    "start": 78.9,
+    "end": 80.81,
     "seg": 10
   },
   {
-    "text": "activity with eye movements during",
-    "start": 64.58,
-    "end": 67.17,
+    "text": "preparation for professionals.",
+    "start": 80.84,
+    "end": 82.28,
     "seg": 10
   },
   {
-    "text": "programming.",
-    "start": 67.2,
-    "end": 67.9,
-    "seg": 10
-  },
-  {
-    "text": "Those are plans, with the answers",
-    "start": 69.26,
-    "end": 71.81,
+    "text": "Now follow the report.",
+    "start": 83.96,
+    "end": 85.42,
     "seg": 11
   },
   {
-    "text": "still ahead.",
-    "start": 71.84,
-    "end": 72.76,
+    "text": "The contracting professional reviews",
+    "start": 86.3,
+    "end": 88.03,
     "seg": 11
   },
   {
-    "text": "And the public recordings?",
-    "start": 73.8,
-    "end": 75.26,
+    "text": "it and makes the determination.",
+    "start": 88.06,
+    "end": 89.7,
+    "seg": 11
+  },
+  {
+    "text": "The draft has a different handoff.",
+    "start": 91.3,
+    "end": 93.42,
     "seg": 12
   },
   {
-    "text": "They keep their place.",
-    "start": 75.74,
-    "end": 77.12,
+    "text": "Its user refines and approves the",
+    "start": 94.16,
+    "end": 96.37,
     "seg": 12
   },
   {
-    "text": "Researchers can check whether existing",
-    "start": 78.46,
-    "end": 80.78999999999999,
+    "text": "generated sections.",
+    "start": 96.4,
+    "end": 97.22,
+    "seg": 12
+  },
+  {
+    "text": "There's the pen's mark.",
+    "start": 98.24,
+    "end": 99.64,
     "seg": 13
   },
   {
-    "text": "recordings fit the question.",
-    "start": 80.82,
-    "end": 82.39,
+    "text": "The page arriving and the professional",
+    "start": 100.42,
+    "end": 102.35,
     "seg": 13
   },
   {
-    "text": "If they do, useful analysis can",
-    "start": 82.42,
-    "end": 85.97,
+    "text": "finishing are different events.",
+    "start": 102.38,
+    "end": 104.3,
     "seg": 13
   },
   {
-    "text": "start there.",
-    "start": 86.0,
-    "end": 86.7,
-    "seg": 13
-  },
-  {
-    "text": "They can also plan a new",
-    "start": 88.1,
-    "end": 89.63,
+    "text": "These are the workflows described",
+    "start": 105.42,
+    "end": 107.41,
     "seg": 14
   },
   {
-    "text": "recording around another task.",
-    "start": 89.66,
-    "end": 91.72,
+    "text": "by AWS.",
+    "start": 107.44,
+    "end": 108.2,
     "seg": 14
   },
   {
-    "text": "The extra page holds a plan",
-    "start": 93.14,
-    "end": 94.87,
+    "text": "The new announcement doesn't quantify",
+    "start": 109.28,
+    "end": 111.17,
+    "seg": 14
+  },
+  {
+    "text": "an Alaska return.",
+    "start": 111.2,
+    "end": 112.26,
+    "seg": 14
+  },
+  {
+    "text": "Useful preparation has reached",
+    "start": 113.58,
+    "end": 115.39,
     "seg": 15
   },
   {
-    "text": "that students can help design.",
-    "start": 94.9,
-    "end": 96.44,
+    "text": "the desk.",
+    "start": 115.42,
+    "end": 116.12,
     "seg": 15
   },
   {
-    "text": "The old pages stay open beside",
-    "start": 97.46,
-    "end": 99.69,
+    "text": "Which part of the work is",
+    "start": 116.7,
+    "end": 117.87,
     "seg": 15
   },
   {
-    "text": "it.",
-    "start": 99.72,
-    "end": 100.42,
+    "text": "still yours?",
+    "start": 117.9,
+    "end": 118.60000000000001,
     "seg": 15
-  },
-  {
-    "text": "A recording alone doesn't supply",
-    "start": 101.66,
-    "end": 103.99,
-    "seg": 16
-  },
-  {
-    "text": "an interpretation.",
-    "start": 104.02,
-    "end": 104.78,
-    "seg": 16
-  },
-  {
-    "text": "If a future model claims to",
-    "start": 106.1,
-    "end": 108.05,
-    "seg": 17
-  },
-  {
-    "text": "work for new people, test it",
-    "start": 108.08,
-    "end": 110.49,
-    "seg": 17
-  },
-  {
-    "text": "on people absent from training.",
-    "start": 110.52,
-    "end": 112.14,
-    "seg": 17
-  },
-  {
-    "text": "That's a research principle, not",
-    "start": 113.1,
-    "end": 115.83,
-    "seg": 18
-  },
-  {
-    "text": "a reported U A A result.",
-    "start": 115.86,
-    "end": 117.44,
-    "seg": 18
-  },
-  {
-    "text": "Which question about learning should",
-    "start": 118.94,
-    "end": 121.19,
-    "seg": 19
-  },
-  {
-    "text": "they investigate first?",
-    "start": 121.22,
-    "end": 122.28,
-    "seg": 19
   }
 ]

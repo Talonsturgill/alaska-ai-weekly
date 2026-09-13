@@ -1,10 +1,21 @@
 {
-  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Life%20of%20Riley.mp3",
-  "title": "Life of Riley",
+  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Mining%20by%20Moonlight.mp3",
+  "title": "Mining by Moonlight",
   "composer": "Kevin MacLeod",
   "license": "CC BY 4.0",
   "source": "incompetech.com",
-  "credit": "\"Life of Riley\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "credit": "Mining by Moonlight by Kevin MacLeod (incompetech.com), licensed CC BY 4.0",
   "wav": "out/dispatch/music_bed.wav",
-  "duration": 180.0
+  "duration": 180.0,
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "track_page": "https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1200089",
+  "isrc": "USUAN1200089",
+  "license_verified": "2026-09-13 through live rendered publisher track page",
+  "mood": [
+    "curious",
+    "bright",
+    "grooving",
+    "relaxed"
+  ],
+  "reason": "Light electric-piano motion supports concrete office problem solving; restrained groove leaves room for the spoken mechanism. Fresh against the committed ledger and archive."
 }
