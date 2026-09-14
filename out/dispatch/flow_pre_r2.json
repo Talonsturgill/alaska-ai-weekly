@@ -1,0 +1,56 @@
+{
+  "mode": "pre",
+  "flows": false,
+  "ship": false,
+  "orphan_sentences": [],
+  "resting_or_meaningless_beats": [
+    {
+      "t": "35.500-39.640 / S4 / beats14-15",
+      "why": "Ep0914.tsx:79 renders neither researcher/sleeve nor sealed hatch. Both beats only fade Boxes over the existing apparatus. Restore the pointing/cuff action and physical turning port from the approved plan; sleeve-brush and hinge-creak then have pictured causes."
+    },
+    {
+      "t": "73.880-76.368 / S9 / beat27",
+      "why": "Ep0914.tsx:84 places one LEARNED token beneath CONSTANT CASE and one PREDEFINED token beneath STOCK-LINKED CASE. That incorrectly assigns candidate types to different biological cases while the VO discusses their comparison. Archive two scenario-result assemblies, or show both candidate identities within each case; do not pair one case with each candidate type."
+    },
+    {
+      "t": "27.040-27.640;56.560-57.160;88.720-89.320 / reveal holds",
+      "why": "Ep0914.tsx:68 clamps f to landing during18frames, then resumes unadjusted raw f. Every time-driven channel jumps forward18frames when the hold ends. Preserve continuous pose at hold exit while keeping conformed beat onsets fixed. The promised8-frame physical anticipation is also absent from q/ease reveals; implement before each onset without revealing its answer early."
+    }
+  ],
+  "silent_or_generic_sfx_beats": [
+    {
+      "t": "5.400;8.234 / S1 / beats4-5",
+      "why": "Ep0914.tsx:76 uses opacity for the date tab and pollock label. No rotating paper tab or opening observation window exists for paper-flick and glass-slide. Animate those named physical objects or revise the plan/SFX to match actual supported actions."
+    },
+    {
+      "t": "35.500;37.984 / S4 / beats14-15",
+      "why": "Sleeve brush and hinge creak lack their objects; see the S4 finding."
+    },
+    {
+      "t": "49.593 / S6 / beat19",
+      "why": "Ep0914.tsx:81 fades the breeding-fish label and fixed emblem together. No emblem travel, socket depression or retaining tab produces the socket-seat event. Add the approved physical seating action."
+    },
+    {
+      "t": "98.860 / S12 / beat35",
+      "why": "Ep0914.tsx:87 translates a dashed bracket. It does not unlatch a collar, so collar-click lacks its named visible cause. Add a moving collar latch without implying the simulation opens into harbor water."
+    }
+  ],
+  "notes": [
+    "Current September14 R2 implementation follow-through only. This is not final FLOW POST, and no current render quality or prior September13 verdict is inferred. Source hashes are included below to identify the reviewed draft.",
+    "212-word voice alignment ends112.64 seconds. All18 narration lines have topical pictures. Public code is present in both line16 and the S12 label. The two result statements preserve catch-versus-biomass distinctions and do not introduce annual-stability claims.",
+    "S3 visually returns outcome feedback and changes the lever after the initiating hand releases. S4 predefined stop stays fixed. S7 changes architecture and introduces fresh learned/predefined candidates before the stock-linked result. These core mechanisms are represented, subject to the S9 archival-label correction above.",
+    "Goals renders two equal candidate lanes beneath the same two shared goal shutters, then opens an unresolved gate. No winner or approval is drawn. The strongest objection remains explicit at73.88, with shared test setup at76.368 and full goal pair at92.94.",
+    "Conformed secondary plant35.50 and earliest result66.82 remain separated by31.32 seconds. The primary answer begins partially at90.731 and completes at92.94; the103.839 research plaque is a callback. Preserve those first actual disclosures in the render.",
+    "The final third remains weakest because the harbor attribution sequence has less inherent action than the experiments, but its explicit fair-test purpose earns the sequence. The identified corrections are implementation-to-plan repairs, not a request to rewrite narration or add another caveat.",
+    "Render-only checks remain open: effective typography after camera projection, actual readability of the small first-goal reveal, grip contact, overshoot, sound synchronization and whether physical stages register at viewing size.",
+    "Implementation SHA256: 550d6f4fc0fd974437c715c0c3972346db019d8090c0cf728ddd2855c9ce5a1e"
+  ],
+  "one_fix": "Restore literal physical causes where the current code substitutes label fades, then repair the reveal clock and S9 case/candidate association before final FLOW POST.",
+  "input_sha256": {
+    "out/dispatch/storyboard.json": "6bb135757f326724c4eb7bf7ebbf4695f59168b8e9fac4ea10f03b2cc1eb537a",
+    "out/dispatch/art_direction.json": "2a0285b86804918a2aa662e69515453aab6c1a054ac51a1589a43ffd092b6f09",
+    "out/dispatch/vo_lines.json": "aeccf19570bc9cc6ab88fc40d011896dcf70e152ab435fa49e962e7398ec5636",
+    "out/dispatch/audio/words.json": "21ae82ea65828c21e206c4213f981c33fe9aa8fd913995fe1cf463d89a00a742",
+    "video-engine/src/Ep0914.tsx": "550d6f4fc0fd974437c715c0c3972346db019d8090c0cf728ddd2855c9ce5a1e"
+  }
+}

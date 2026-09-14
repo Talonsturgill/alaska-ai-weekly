@@ -1,0 +1,159 @@
+{
+  "role": "independent_draft_visual_critic",
+  "run_date": "2026-09-14",
+  "round": 1,
+  "reviewed_at": "2026-09-14T11:43:56.104336+00:00",
+  "ship": false,
+  "final_panel": false,
+  "evidence_scope": "Viewed both supplied actual half-resolution R1 contact sheets, covering all12shots, and read current art_direction.json, storyboard.json and Ep0914.tsx. These support composition, occlusion and implementation findings; they do not constitute uninterrupted playback or an audio/cadence verdict. No September13 report was used.",
+  "inputs": [
+    {
+      "path": "/tmp/alaska-dispatch-20260914/roughcut_r1_review/sheet1.jpg",
+      "sha256": "ccef23e04ded0d10e72eca37b6b8ce2db3955f3e838cbef144c72fa0bc3f3fbe"
+    },
+    {
+      "path": "/tmp/alaska-dispatch-20260914/roughcut_r1_review/sheet2.jpg",
+      "sha256": "c860b2006b2a557c445d53b4b53b0859ce23508075d1b3cb2cd9b5fbb0bb3734"
+    },
+    {
+      "path": "out/dispatch/art_direction.json",
+      "sha256": "2a0285b86804918a2aa662e69515453aab6c1a054ac51a1589a43ffd092b6f09"
+    },
+    {
+      "path": "out/dispatch/storyboard.json",
+      "sha256": "ea68f1f0c48604ab26ffef6332e70f43df68bf2aee405d41796ac325568d1246"
+    },
+    {
+      "path": "video-engine/src/Ep0914.tsx",
+      "sha256": "9e8e713189f467ffdc3d79ccd3beb466c559aefaf47381e68d90d4ce5e289328"
+    }
+  ],
+  "verdict": "Not ready for a final render. The palette has promise and the result words remain scoped, but the actual film is a series of similar tabletop views dominated by stacked labels. The promised camera scale, physical research performance and harbor signature have not arrived.",
+  "corrections": [
+    {
+      "priority": 1,
+      "id": "R1_01",
+      "title": "Clear the silhouettes and give every label a reserved support",
+      "shots": [
+        "S1",
+        "S6",
+        "S8",
+        "S10",
+        "S12"
+      ],
+      "sample_seconds": [
+        8.2,
+        55.4,
+        76.6,
+        95.7,
+        117.2
+      ],
+      "observed": "S1 date/headline crosses the lever shaft and the pollock label overlays its lower housing. S6 swinging catch label cuts across the researcher. S8 LOWER SPAWNING BIOMASS covers the researcher face. S10 SEASON PLANNING hides much of the small operator/apparatus. S12 the question box and TEST AGAIN region compete with the returning lever.",
+      "fix": "Separate the operator/lever silhouette envelope from text lanes. Physically move result sign mounts or enlarge the view instead of covering the action with a full-width box. Keep a shared stage-space envelope for the complete lever throw and all head/hand poses, then project it against fixed screen-space scope/captions.",
+      "verification": "Render worst-overlap frames plus swing extrema in portrait and actual square crop; no plate intersects head, hand, grip or pivot. Confirm every case/versus qualifier survives."
+    },
+    {
+      "priority": 2,
+      "id": "R1_02",
+      "title": "Deliver four visibly different shot scales and a real signature reveal",
+      "shots": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S9",
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "sample_seconds": [
+        8.2,
+        18.2,
+        28.9,
+        38.5,
+        83.9,
+        95.7,
+        104.5,
+        117.2
+      ],
+      "observed": "Across both sheets the bench edge, center object and horizon hold nearly the same picture relationship. Board S4/S9 inserts and S10 extreme-wide are not visually distinct scales. Code sends all action into one z0 plane and varies only small orbit/crane moves plus z10to55. S10 uses a .8scaled table; giant flat houses fill the background instead of establishing an expansive harbor.",
+      "fix": "Author shot-specific world transforms and focus targets. Make S3/S4 a true mechanism/token insert, S7 a high doorway-wide reveal, S10 a genuinely low harbor-wide with small research bench and separate near piling/mid quay/distant warehouse planes, and S12 a close tactile grip return. Ensure the paired goals remain legible in the wide.",
+      "verification": "A new12shot sheet should show at least four unmistakable scales without reading shot labels; inspect S10 motion strip for differential parallax and expanding harbor scale."
+    },
+    {
+      "priority": 3,
+      "id": "R1_03",
+      "title": "Replace the repeating wall-and-table layout with separate research spaces",
+      "shots": [
+        "S2",
+        "S5",
+        "S7",
+        "S9"
+      ],
+      "sample_seconds": [
+        18.2,
+        45.3,
+        67.5,
+        83.9
+      ],
+      "observed": "The constant and stock-linked cases share the same upright grid, central box, floor seam and bench geometry. At67.5seconds the change reads mainly as tint and rounded window. The designed architecture and old case receding through the doorway are absent from sampled staging.",
+      "fix": "Keep the first room rectilinear, but put the second bay on a different floor axis with its overhead inlet, curved observation glazing and a visible doorway that retains the first bay at depth. Seat each case's own learned/predefined candidates in the newly revealed architecture. Do not alter the existing scientific claims or introduce measured fish counts.",
+      "verification": "Compare last S6, doorway transition and first settled S7 frames; the second room must read as a different place before its title is read."
+    },
+    {
+      "priority": 4,
+      "id": "R1_04",
+      "title": "Make the researcher operate the physical mechanism",
+      "shots": [
+        "S2",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S10"
+      ],
+      "sample_seconds": [
+        18.2,
+        45.3,
+        55.4,
+        67.5,
+        76.6,
+        95.7
+      ],
+      "observed": "The person repeatedly appears as a small pointing figurine beside the box; their boots appear supported by the tabletop. The source helper always requests pose point, while only Control's separate GripHand covers selected close-ups. This does not fulfill the board's bracing, carrying, release and matched-goal actions.",
+      "fix": "Give each visible operator a specific supported action at a believable scale: body beside bench with boots on floor, hand at documented grip anchor, brace a latch, carry/reseat the control during transition, and physically present equal candidates at the harbor. Omit a figure from a shot that has no action for them. Preserve the shared contact-geometry advance.",
+      "verification": "View continuous contact strips through catch, release, carry and reseat; hand stays attached to the grip, boots remain planted when appropriate and held poses do not replace gestures."
+    },
+    {
+      "priority": 5,
+      "id": "R1_05",
+      "title": "Reduce label stacking so the mechanisms carry the explanation",
+      "shots": [
+        "S3",
+        "S5",
+        "S7",
+        "S9",
+        "S11",
+        "S12"
+      ],
+      "sample_seconds": [
+        28.9,
+        45.3,
+        67.5,
+        83.9,
+        104.5,
+        117.2
+      ],
+      "observed": "Multiple full-width white boxes become the dominant repeated motif. S7 duplicates STOCK-LINKED in header and scope plus SEPARATE SIMULATED CASE; S12 retains prior goal labels behind three new banners. Token identity and comparison qualifiers shrink while redundant headline copy stays huge. Several coded outcome labels use43px or39px despite the48px plan minimum.",
+      "fix": "Retire completed headlines as the next physical action takes focus. Keep one primary result at a time, its attached comparison qualifier and one fixed case/simulation scope. Use meaningful mechanical return/candidate motion instead of adding another description box. Size token identity and outcome qualifiers for square-phone reading; maintain equal styling for gains and costs.",
+      "verification": "Silent-review S3/S7/S11/S12 frames at phone-square size: identify the active mechanism, case and comparison without narration. Re-run text-fit coverage for every revised painted string."
+    }
+  ],
+  "preserve": [
+    "Fresh ultramarine/mango/alabaster palette and contrasting outcome label treatment.",
+    "Correct distinct qualitative findings and explicit simulation/comparison scope.",
+    "Existing lever hero, tokens and shared contact transform; no new fish or competing hero.",
+    "Act3 equal-goal comparison and optimistic continuation of research."
+  ],
+  "next_review": "Review fresh revised contact sheets and the affected action strips before spending the final full-resolution render. Recheck the full film for repeated framing after local fixes; do not treat a single improved shot as full-film repair."
+}

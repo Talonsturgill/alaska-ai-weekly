@@ -218,5 +218,11 @@
     "drop_rate": "50% scoped selection"
   },
   "recommend_broaden_window": true,
-  "broadening_note": "Validator template flag because fewer than3stories; not a requirement to broaden this single-story film."
+  "broadening_note": "Validator template flag because fewer than3stories; not a requirement to broaden this single-story film.",
+  "public_code_supplement": {
+    "verified_at_utc": "2026-09-14T11:36:11.068320+00:00",
+    "claim": "c17",
+    "fact": "The authors provide public code for the illustrative case studies, including the Eastern Bering Sea pollock reinforcement-learning experiment.",
+    "validation_artifact": "public_code_validation.json"
+  }
 }

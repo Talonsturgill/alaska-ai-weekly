@@ -1,19 +1,39 @@
 {
-  "gate": "0E",
   "ship": true,
-  "run_date": "2026-09-14",
-  "script_sha256": "8fd660a1bbd082061c02ecd831a4e96ab3b72eefbf630e6fda25f87cba5679ec",
-  "causal_retelling": "Researchers compared learned and predefined rules in simulations. Different cases changed the catch and breeding-biomass tradeoff, so the alternatives justify further investigation. But simulated gains may not meet management goals, so both rule types need the same catch-pattern and breeding-stock evaluation.",
-  "actors": {
-    "Researchers": "Affiliated with the Alaska Fisheries Science Center and built simulations informed by historical observations.",
-    "Agent": "Learning system practicing simulated harvest choices using feedback.",
-    "Eastern Bering Sea pollock": "Fish population examined in the simulations.",
-    "NOAA Fisheries": "Organization managing Alaska pollock.",
-    "North Pacific Fishery Management Council": "Organization managing Alaska pollock.",
-    "Fishing businesses": "Businesses needing sound management to plan seasons."
-  },
-  "single_question_answered": "What would make an AI fishing rule worth testing? Simulated alternatives justify further investigation against common catch-pattern and breeding-stock goals.",
+  "script_sha256": "2bbc75e32042528fe5b49c676ebe55598a2684e3faa25f400421123857284716",
+  "revision": 3,
+  "causal_retelling": "Researchers tested an AI harvest rule against predefined rules in simulations, so they could examine possible catch and breeding-stock tradeoffs. One simulated case left more breeding biomass with large annual catch swings; another caught more while leaving less breeding biomass than its own comparison. But those results do not establish a management advantage, which means candidate rules should be tested against common catch-pattern and breeding-stock goals before claiming a real-world winner.",
+  "actors_established": [
+    {
+      "actor": "Researchers",
+      "identity": "People affiliated with the Alaska Fisheries Science Center who built simulations informed by historical observations."
+    },
+    {
+      "actor": "Agent",
+      "identity": "A learning system that practices harvest choices in simulated seasons and changes its rule using feedback."
+    },
+    {
+      "actor": "Eastern Bering Sea pollock",
+      "identity": "The fish population examined in the paper and simulations."
+    },
+    {
+      "actor": "NOAA Fisheries and the North Pacific Fishery Management Council",
+      "identity": "Organizations that manage Alaska pollock in real fisheries."
+    },
+    {
+      "actor": "Fishing businesses",
+      "identity": "Businesses that need sound management to plan their seasons."
+    }
+  ],
+  "agency": "Researchers build and compare simulated rules; the agent learns within simulations; the named fisheries organizations manage the actual fishery. The text does not imply that the agent currently sets real fishing rules. The instruction to test both rules reads as the narrator's recommendation.",
+  "single_question_answered": "What makes an AI fishing rule worth further testing? It supplies simulated alternatives whose catch and breeding-stock tradeoffs still need evaluation against shared management goals.",
   "first_line_lost": null,
-  "reviewer": "cold_reader independent text-only agent",
-  "revision": 2
+  "ending_follows": true,
+  "ending_assessment": "The closing question follows from the tradeoffs and shared-goals recommendation. It invites a choice about management priorities rather than pretending the simulations determine the right balance.",
+  "candid_notes": [
+    "The phrase simulated gains briefly compresses mixed outcomes into a positive label, but the immediate caveat prevents a claim of overall superiority.",
+    "The biology-change question is answered qualitatively through two separate cases; the narration appropriately says each has its own comparison.",
+    "Public code is presented as availability information, not as evidence that the rule works in the real world."
+  ],
+  "review_scope": "Cold read of vo_script.txt only; no research, source verification, planning material, or visual assessment."
 }

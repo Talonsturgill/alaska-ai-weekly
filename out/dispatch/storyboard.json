@@ -2,7 +2,7 @@
   "run_date": "2026-09-14",
   "slug": "rehearsal-before-the-season",
   "title": "Rehearsal Before the Season",
-  "total_seconds": 120,
+  "total_seconds": 112.64,
   "concept": "One portable research control rehearses two separate pollock simulations, then puts learned and predefined candidates through the same explicit next-test goals.",
   "derived_from": "scratch",
   "engine": "infographic-2.5d",
@@ -379,45 +379,45 @@
   },
   "audio_arc": {
     "build_steps": 4,
-    "dip_at": 102.6,
-    "riser_at": 93.4,
-    "silence_at": 106.5,
-    "payoff_at": 111.1,
+    "dip_at": 95.604,
+    "riser_at": 87.334,
+    "silence_at": 98.49,
+    "payoff_at": 103.839,
     "button_pattern": "question",
     "evidence": "Bright electric-piano bed; literal control and glass sounds build the mechanism, brief dip grants the test space, final tactile detent closes the question."
   },
   "divergence_note": "September13 used oxblood pen, office paperwork and modular desk layouts; September12 used the lilac EEG notebook. This film uses a mango mechanical control, two physically different marine experimental rooms, a broad harbor apron, overhead comparisons, low grip inserts and vertical room reveals. No office or paper hero is copied.",
   "open_loop": {
-    "plant_t": 0,
-    "pay_t": 99,
+    "plant_t": 0.0,
+    "pay_t": 92.94,
     "what": "What makes the rule worth testing? First complete identical catch-pattern and breeding-stock requirements are revealed across both candidates at99. The111.1plaque is a callback, not the payoff."
   },
   "open_loop_2": {
-    "plant_t": 36,
-    "pay_t": 71,
+    "plant_t": 35.5,
+    "pay_t": 66.82,
     "what": "Will an advantage survive changed biology? First revealing stock-linked result begins71, full lower-biomass finding74.5; protect the earlier payoff when conforming."
   },
   "throughline": {
     "object": "One mango-gripped portable GearLever with serial notch",
     "states": [
       {
-        "at_s": 0,
+        "at_s": 0.0,
         "state": "Caught over bounded research mount"
       },
       {
-        "at_s": 26,
+        "at_s": 26.24,
         "state": "Connected to complete outcome-feedback path"
       },
       {
-        "at_s": 59,
+        "at_s": 55.76,
         "state": "Lifted free into separately labeled experimental room"
       },
       {
-        "at_s": 86,
+        "at_s": 80.1,
         "state": "Carried to harbor bench, model cable still attached"
       },
       {
-        "at_s": 114,
+        "at_s": 107.36,
         "state": "Hand settles TEST AGAIN beside both open next-test lanes"
       }
     ],
@@ -425,28 +425,37 @@
   },
   "reveals": [
     {
-      "t": 26,
+      "t": 26.24,
       "beat_id": 10,
       "type": "build-on",
       "what": "Outcome path completes the feedback circuit around the control",
       "hold_s": 0.6,
-      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle."
+      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
+      "landing_at_s": 27.04,
+      "hold_until_s": 27.64,
+      "secondary_at_s": 27.94
     },
     {
-      "t": 59,
+      "t": 55.76,
       "beat_id": 21,
       "type": "scale-pullback",
       "what": "Doorway reveals distinct stock-linked experimental room",
       "hold_s": 0.6,
-      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle."
+      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
+      "landing_at_s": 56.56,
+      "hold_until_s": 57.16,
+      "secondary_at_s": 57.46
     },
     {
-      "t": 94,
+      "t": 87.92,
       "beat_id": 31,
       "type": "build-on",
       "what": "Harbor-scale reveal unfolds testing bench beneath the real season",
       "hold_s": 0.6,
-      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle."
+      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
+      "landing_at_s": 88.72,
+      "hold_until_s": 89.32,
+      "secondary_at_s": 89.62
     }
   ],
   "world_event": {
@@ -458,10 +467,10 @@
   "beats": [
     {
       "id": 1,
-      "at_s": 0,
-      "t": "0-1.1",
+      "at_s": 0.0,
+      "t": "0.000-1.188",
       "vo_line": 0,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "What would make an AI fishing rule worth testing?",
       "shows": "Researcher catches the mango grip before it reaches the research-bench detent",
       "means": "The physical action makes what makes a rule worth testing? legible at the moment the narration needs it.",
@@ -476,14 +485,16 @@
         "primary": "Researcher catches the mango grip before it reaches the research-bench detent",
         "reaction": "The grip impulse briefly bends the support foot, which returns under the hand\u2019s weight.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 14,
+      "sfx_offset_reason": "The approaching hand closes onto the moving grip at14frames. The control continues to the detent atbeat2+24frames, with a separate clank there."
     },
     {
       "id": 2,
-      "at_s": 1.1,
-      "t": "1.1-3.2",
+      "at_s": 1.188,
+      "t": "1.188-3.456",
       "vo_line": 0,
-      "offset": 1.1,
+      "offset": 1.188,
       "vo": "What would make an AI fishing rule worth testing?",
       "shows": "Grip settles into a visibly bounded model mount and the cable catches up",
       "means": "The physical action makes simulated legible at the moment the narration needs it.",
@@ -498,14 +509,16 @@
         "primary": "Grip settles into a visibly bounded model mount and the cable catches up",
         "reaction": "The collar compresses against its stop and the attached cable overshoots behind it.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 3,
-      "at_s": 3.2,
-      "t": "3.2-5",
+      "at_s": 3.456,
+      "t": "3.456-5.400",
       "vo_line": 0,
-      "offset": 3.2,
+      "offset": 3.456,
       "vo": "What would make an AI fishing rule worth testing?",
       "shows": "Camera lifts enough to expose the tiny support under the outsized grip",
       "means": "The physical action makes editorial schematic legible at the moment the narration needs it.",
@@ -520,14 +533,16 @@
         "primary": "Camera lifts enough to expose the tiny support under the outsized grip",
         "reaction": "The small support gives one compliant flex as the oversized grip settles.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 4,
-      "at_s": 5,
-      "t": "5-8.2",
+      "at_s": 5.4,
+      "t": "5.400-8.234",
       "vo_line": 1,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
       "shows": "Researcher rotates the publication date tab into the model rim",
       "means": "The physical action makes september 11th legible at the moment the narration needs it.",
@@ -542,14 +557,16 @@
         "primary": "Researcher rotates the publication date tab into the model rim",
         "reaction": "Date-tab hinge rebounds against the rim, then rests flush.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 5,
-      "at_s": 8.2,
-      "t": "8.2-12",
+      "at_s": 8.234,
+      "t": "8.234-11.600",
       "vo_line": 1,
-      "offset": 3.2,
+      "offset": 2.834,
       "vo": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
       "shows": "Observation window opens onto a clearly labeled schematic population",
       "means": "The physical action makes eastern bering sea pollock legible at the moment the narration needs it.",
@@ -564,14 +581,16 @@
         "primary": "Observation window opens onto a clearly labeled schematic population",
         "reaction": "Window latch rises as its glass panel slides clear; water reflection stays clipped inside.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel."
     },
     {
       "id": 6,
-      "at_s": 12,
-      "t": "12-16.3",
+      "at_s": 11.6,
+      "t": "11.600-16.459",
       "vo_line": 2,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
       "shows": "Wide laboratory unfolds around researcher and the source name lands on its rail",
       "means": "The physical action makes alaska fisheries science center legible at the moment the narration needs it.",
@@ -586,14 +605,16 @@
         "primary": "Wide laboratory unfolds around researcher and the source name lands on its rail",
         "reaction": "Researcher turns from the model to the observation intake and raises the pointing hand.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 7,
-      "at_s": 16.3,
-      "t": "16.3-20",
+      "at_s": 16.459,
+      "t": "16.459-20.640",
       "vo_line": 2,
-      "offset": 4.3,
+      "offset": 4.859,
       "vo": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
       "shows": "Spring-loaded intake jaws open while observation tiles enter the simulator",
       "means": "The physical action makes historical observations legible at the moment the narration needs it.",
@@ -608,14 +629,16 @@
         "primary": "Spring-loaded intake jaws open while observation tiles enter the simulator",
         "reaction": "Intake jaws close behind each observation tile and their return spring compresses.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 22,
+      "sfx_offset_reason": "Actual authored physical arrival at frame22 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 8,
-      "at_s": 20,
-      "t": "20-22.4",
+      "at_s": 20.64,
+      "t": "20.640-22.880",
       "vo_line": 3,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "Their agent practices harvest choices through repeated simulated seasons.",
       "shows": "Researcher turns control through a test cycle while season shutters change",
       "means": "The physical action makes simulated seasons legible at the moment the narration needs it.",
@@ -630,14 +653,16 @@
         "primary": "Researcher turns control through a test cycle while season shutters change",
         "reaction": "After initiating the cycle the researcher releases the handle, leaving the mechanism to run.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 12,
+      "sfx_offset_reason": "Actual authored physical arrival at frame12 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 9,
-      "at_s": 22.4,
-      "t": "22.4-26",
+      "at_s": 22.88,
+      "t": "22.880-26.240",
       "vo_line": 3,
-      "offset": 2.4,
+      "offset": 2.24,
       "vo": "Their agent practices harvest choices through repeated simulated seasons.",
       "shows": "A learned-rule token traverses the outcome path and returns to the input",
       "means": "The physical action makes harvest choices legible at the moment the narration needs it.",
@@ -652,14 +677,16 @@
         "primary": "A learned-rule token traverses the outcome path and returns to the input",
         "reaction": "Outcome token contacts the bend guide and turns into the return route.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 10,
-      "at_s": 26,
-      "t": "26-28.8",
+      "at_s": 26.24,
+      "t": "26.240-29.130",
       "vo_line": 4,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "Feedback rewards outcomes and changes the learned rule.",
       "shows": "Cutaway spreads the return path around the lever and holds the completed connection",
       "means": "The physical action makes outcome feedback legible at the moment the narration needs it.",
@@ -675,14 +702,16 @@
         "reaction": "The final coupling closes; nearby cable slack straightens before the held reveal.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       },
-      "rehook": "Feedback path opens into a complete learning mechanism"
+      "rehook": "Feedback path opens into a complete learning mechanism",
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 11,
-      "at_s": 28.8,
-      "t": "28.8-31",
+      "at_s": 29.13,
+      "t": "29.130-31.400",
       "vo_line": 4,
-      "offset": 2.8,
+      "offset": 2.89,
       "vo": "Feedback rewards outcomes and changes the learned rule.",
       "shows": "Feedback reaches the candidate and its adjustable detent changes position",
       "means": "The physical action makes rule updates legible at the moment the narration needs it.",
@@ -697,14 +726,16 @@
         "primary": "Feedback reaches the candidate and its adjustable detent changes position",
         "reaction": "Linked cable tugs the learned detent; the fixed stop does not respond.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 12,
-      "at_s": 31,
-      "t": "31-34.0",
+      "at_s": 31.4,
+      "t": "31.400-33.860",
       "vo_line": 5,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "They compare it with a predefined harvest rule.",
       "shows": "Fixed comparison token seats beside the learned candidate on its own rail",
       "means": "The physical action makes predefined harvest rule legible at the moment the narration needs it.",
@@ -719,14 +750,16 @@
         "primary": "Fixed comparison token seats beside the learned candidate on its own rail",
         "reaction": "The predefined token depresses its own stop, with no learned adjustment.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
     },
     {
       "id": 13,
-      "at_s": 34.0,
-      "t": "34.0-36",
+      "at_s": 33.86,
+      "t": "33.860-35.500",
       "vo_line": 5,
-      "offset": 3.0,
+      "offset": 2.46,
       "vo": "They compare it with a predefined harvest rule.",
       "shows": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed",
       "means": "The physical action makes learning changes the rule legible at the moment the narration needs it.",
@@ -741,14 +774,16 @@
         "primary": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed",
         "reaction": "The released hand withdraws toward frame edge while feedback alone shifts the candidate.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 14,
-      "at_s": 36,
-      "t": "36-39",
+      "at_s": 35.5,
+      "t": "35.500-37.984",
       "vo_line": 6,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "Will an advantage hold when the biology changes?",
       "shows": "Researcher points toward the unopened stock-linked room beyond the first experiment",
       "means": "The physical action makes will the advantage hold? legible at the moment the narration needs it.",
@@ -763,14 +798,16 @@
         "primary": "Researcher points toward the unopened stock-linked room beyond the first experiment",
         "reaction": "Researcher\u2019s raised wrist pulls the attached sleeve fold taut; cloth brushes along the cuff as gaze reaches the sealed hatch.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 15,
-      "at_s": 39,
-      "t": "39-41",
+      "at_s": 37.984,
+      "t": "37.984-39.640",
       "vo_line": 6,
-      "offset": 3,
+      "offset": 2.484,
       "vo": "Will an advantage hold when the biology changes?",
       "shows": "A second-room port turns toward camera but remains closed",
       "means": "The physical action makes change the biology legible at the moment the narration needs it.",
@@ -785,14 +822,16 @@
         "primary": "A second-room port turns toward camera but remains closed",
         "reaction": "Hatch spring catches the rotating port; its seal stays visibly closed.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 16,
-      "at_s": 41,
-      "t": "41-43.6",
+      "at_s": 39.64,
+      "t": "39.640-41.690",
       "vo_line": 7,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "Start with a model where young fish enter at a constant rate.",
       "shows": "First bay opens around its own two candidate identities",
       "means": "The physical action makes constant recruitment legible at the moment the narration needs it.",
@@ -807,14 +846,16 @@
         "primary": "First bay opens around its own two candidate identities",
         "reaction": "First-room researcher braces the opened bay cover on its physical support.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel."
     },
     {
       "id": 17,
-      "at_s": 43.6,
-      "t": "43.6-48",
+      "at_s": 41.69,
+      "t": "41.690-45.160",
       "vo_line": 7,
-      "offset": 2.6,
+      "offset": 2.05,
       "vo": "Start with a model where young fish enter at a constant rate.",
       "shows": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle",
       "means": "The physical action makes young fish enter at a constant rate legible at the moment the narration needs it.",
@@ -829,14 +870,16 @@
         "primary": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle",
         "reaction": "Inlet paddle returns to the same unnumbered starting stop after its pulse.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 18,
-      "at_s": 48,
-      "t": "48-52.6",
+      "at_s": 45.16,
+      "t": "45.160-49.593",
       "vo_line": 8,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
       "shows": "First result flap rises beside the constant-case learned rule",
       "means": "The physical action makes higher spawning biomass legible at the moment the narration needs it.",
@@ -851,14 +894,16 @@
         "primary": "First result flap rises beside the constant-case learned rule",
         "reaction": "Researcher leans in toward the raised result flap, eyebrows lifting.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
     },
     {
       "id": 19,
-      "at_s": 52.6,
-      "t": "52.6-55.2",
+      "at_s": 49.593,
+      "t": "49.593-52.098",
       "vo_line": 8,
-      "offset": 4.6,
+      "offset": 4.433,
       "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
       "shows": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket",
       "means": "The physical action makes weight of breeding fish legible at the moment the narration needs it.",
@@ -873,14 +918,16 @@
         "primary": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket",
         "reaction": "The weight emblem depresses its socket and its retaining tab closes.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 20,
-      "at_s": 55.2,
-      "t": "55.2-59",
+      "at_s": 52.098,
+      "t": "52.098-55.760",
       "vo_line": 8,
-      "offset": 7.2,
+      "offset": 6.938,
       "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
       "shows": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck",
       "means": "The physical action makes large annual catch swings legible at the moment the narration needs it.",
@@ -895,14 +942,16 @@
         "primary": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck",
         "reaction": "Researcher ducks once under the tag\u2019s physical arc, then rises as it settles.",
         "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      }
+      },
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
     },
     {
       "id": 21,
-      "at_s": 59,
-      "t": "59-62.3",
+      "at_s": 55.76,
+      "t": "55.760-59.214",
       "vo_line": 9,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "The next experiment links young fish entering the stock to the breeding population.",
       "shows": "Doorway wipes into a different experimental room while first case stays behind",
       "means": "The physical action makes stock-linked recruitment legible at the moment the narration needs it.",
@@ -918,14 +967,16 @@
         "reaction": "Control cable follows the carried grip through the doorway; the first case remains in its room.",
         "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
       },
-      "rehook": "Doorway reveals a wholly separate biological experiment"
+      "rehook": "Doorway reveals a wholly separate biological experiment",
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel."
     },
     {
       "id": 22,
-      "at_s": 62.3,
-      "t": "62.3-65",
+      "at_s": 59.214,
+      "t": "59.214-62.040",
       "vo_line": 9,
-      "offset": 3.3,
+      "offset": 3.454,
       "vo": "The next experiment links young fish entering the stock to the breeding population.",
       "shows": "Stock-linked inlet connects two named biological components without quantities",
       "means": "The physical action makes young fish and breeding stock legible at the moment the narration needs it.",
@@ -940,14 +991,16 @@
         "primary": "Stock-linked inlet connects two named biological components without quantities",
         "reaction": "The coupler tugs its attached biological-component label before the line straightens.",
         "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 23,
-      "at_s": 65,
-      "t": "65-68.6",
+      "at_s": 62.04,
+      "t": "62.040-64.908",
       "vo_line": 10,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "This is a separate simulated case with its own comparison.",
       "shows": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails",
       "means": "The physical action makes separate simulated case legible at the moment the narration needs it.",
@@ -962,14 +1015,16 @@
         "primary": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails",
         "reaction": "First new token seats, then its own predefined comparison seats with a separate response.",
         "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 24,
-      "at_s": 68.6,
-      "t": "68.6-71",
+      "at_s": 64.908,
+      "t": "64.908-66.820",
       "vo_line": 10,
-      "offset": 3.6,
+      "offset": 2.868,
       "vo": "This is a separate simulated case with its own comparison.",
       "shows": "Researcher aligns the comparison under the second case label",
       "means": "The physical action makes its own comparison legible at the moment the narration needs it.",
@@ -984,14 +1039,16 @@
         "primary": "Researcher aligns the comparison under the second case label",
         "reaction": "Researcher checks the new comparison alignment with a small driven pointing gesture.",
         "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 25,
-      "at_s": 71,
-      "t": "71-74.5",
+      "at_s": 66.82,
+      "t": "66.820-69.909",
       "vo_line": 11,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
       "shows": "Stock-linked result opens beside the new learned candidate",
       "means": "The physical action makes higher catch legible at the moment the narration needs it.",
@@ -1006,14 +1063,16 @@
         "primary": "Stock-linked result opens beside the new learned candidate",
         "reaction": "Researcher glances from the higher-catch flap toward the still-closed second flap.",
         "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
-      }
+      },
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
     },
     {
       "id": 26,
-      "at_s": 74.5,
-      "t": "74.5-79",
+      "at_s": 69.909,
+      "t": "69.909-73.880",
       "vo_line": 11,
-      "offset": 3.5,
+      "offset": 3.089,
       "vo": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
       "shows": "Second stock-linked flap opens equally large beside the first result",
       "means": "The physical action makes lower spawning biomass legible at the moment the narration needs it.",
@@ -1028,14 +1087,16 @@
         "primary": "Second stock-linked flap opens equally large beside the first result",
         "reaction": "The lower-biomass flap stops beside the first; researcher\u2019s head turns between equal labels.",
         "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
-      }
+      },
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
     },
     {
       "id": 27,
-      "at_s": 79,
-      "t": "79-81.8",
+      "at_s": 73.88,
+      "t": "73.880-76.368",
       "vo_line": 12,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "These simulated gains may offer no management advantage over a predefined rule.",
       "shows": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
       "means": "The physical action makes management advantage unproven legible at the moment the narration needs it.",
@@ -1050,14 +1111,16 @@
         "primary": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
         "reaction": "The two recess catches engage independently; neither produces a winning badge.",
         "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
-      }
+      },
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel."
     },
     {
       "id": 28,
-      "at_s": 81.8,
-      "t": "81.8-86",
+      "at_s": 76.368,
+      "t": "76.368-80.100",
       "vo_line": 12,
-      "offset": 2.8,
+      "offset": 2.488,
       "vo": "These simulated gains may offer no management advantage over a predefined rule.",
       "shows": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed",
       "means": "The physical action makes what must both rules demonstrate? legible at the moment the narration needs it.",
@@ -1072,14 +1135,16 @@
         "primary": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed",
         "reaction": "The empty frame\u2019s two closed goal shutters stop symmetrically in front of both lanes.",
         "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 29,
-      "at_s": 86,
-      "t": "86-89.2",
+      "at_s": 80.1,
+      "t": "80.100-83.228",
       "vo_line": 13,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
       "shows": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
       "means": "The physical action makes noaa fisheries legible at the moment the narration needs it.",
@@ -1094,14 +1159,16 @@
         "primary": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
         "reaction": "Both bench feet meet the quay; cable weight settles onto the bench edge.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 30,
-      "at_s": 89.2,
-      "t": "89.2-94",
+      "at_s": 83.228,
+      "t": "83.228-87.920",
       "vo_line": 13,
-      "offset": 3.2,
+      "offset": 3.128,
       "vo": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
       "shows": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above",
       "means": "The physical action makes north pacific fishery management council legible at the moment the narration needs it.",
@@ -1116,14 +1183,16 @@
         "primary": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above",
         "reaction": "The same requirement shutters click onto matching supports over both candidate rails.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 31,
-      "at_s": 94,
-      "t": "94-96.8",
+      "at_s": 87.92,
+      "t": "87.920-90.731",
       "vo_line": 14,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "Fishing businesses need sound management to plan their seasons.",
       "shows": "Testing leaf unfolds beneath both rails as camera rises to the full-size working quay",
       "means": "The physical action makes season planning legible at the moment the narration needs it.",
@@ -1139,14 +1208,16 @@
         "reaction": "The leaf\u2019s hinged support locks below it before the camera holds the broader harbor.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       },
-      "rehook": "Harbor scale exposes the real season beyond the model"
+      "rehook": "Harbor scale exposes the real season beyond the model",
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 32,
-      "at_s": 96.8,
-      "t": "96.8-99",
+      "at_s": 90.731,
+      "t": "90.731-92.940",
       "vo_line": 14,
-      "offset": 2.8,
+      "offset": 2.811,
       "vo": "Fishing businesses need sound management to plan their seasons.",
       "shows": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule",
       "means": "The physical action makes catch pattern legible at the moment the narration needs it.",
@@ -1161,14 +1232,16 @@
         "primary": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule",
         "reaction": "The first goal shutter reaches its rubber stop; the shared support flexes and the researcher\u2019s hand follows through a few pixels before settling.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 33,
-      "at_s": 99,
-      "t": "99-102.6",
+      "at_s": 92.94,
+      "t": "92.940-95.604",
       "vo_line": 15,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "So test both rules against the same catch-pattern and breeding-stock goals.",
       "shows": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
       "means": "The physical action makes the same goals for both rules legible at the moment the narration needs it.",
@@ -1183,14 +1256,16 @@
         "primary": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
         "reaction": "The second shutter hits its matching stop; the adjacent shared support compresses and returns without moving either candidate.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 34,
-      "at_s": 102.6,
-      "t": "102.6-107",
+      "at_s": 95.604,
+      "t": "95.604-98.860",
       "vo_line": 15,
-      "offset": 3.6,
+      "offset": 2.664,
       "vo": "So test both rules against the same catch-pattern and breeding-stock goals.",
       "shows": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space",
       "means": "The physical action makes further testing legible at the moment the narration needs it.",
@@ -1205,14 +1280,16 @@
         "primary": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space",
         "reaction": "Released latch springs back against its housing while the gate rolls into its side pocket; both candidates remain unevaluated.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 40,
+      "sfx_offset_reason": "Actual authored physical arrival at frame40 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 35,
-      "at_s": 107,
-      "t": "107-111.1",
+      "at_s": 98.86,
+      "t": "98.860-103.839",
       "vo_line": 16,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "These are illustrative simulations. They establish alternatives to investigate, not a winning real-world policy.",
       "shows": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
       "means": "The physical action makes illustrative simulations legible at the moment the narration needs it.",
@@ -1227,14 +1304,16 @@
         "primary": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
         "reaction": "Collar latch swings down; model window remains bounded rather than opening to harbor water.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 32,
+      "sfx_offset_reason": "Actual authored physical arrival at frame32 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 36,
-      "at_s": 111.1,
-      "t": "111.1-114",
+      "at_s": 103.839,
+      "t": "103.839-107.360",
       "vo_line": 16,
-      "offset": 4.1,
+      "offset": 4.979,
       "vo": "These are illustrative simulations. They establish alternatives to investigate, not a winning real-world policy.",
       "shows": "Research-value plaque unfolds while both candidates stay equally prominent",
       "means": "The physical action makes alternatives to investigate legible at the moment the narration needs it.",
@@ -1249,14 +1328,16 @@
         "primary": "Research-value plaque unfolds while both candidates stay equally prominent",
         "reaction": "Research-value plaque settles against its hinge, and both candidate lanes remain in view.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 37,
-      "at_s": 114,
-      "t": "114-117.8",
+      "at_s": 107.36,
+      "t": "107.360-110.704",
       "vo_line": 17,
-      "offset": 0,
+      "offset": 0.0,
       "vo": "Which balance should a rule demonstrate between catches and breeding fish?",
       "shows": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view",
       "means": "The physical action makes which balance should a rule demonstrate? legible at the moment the narration needs it.",
@@ -1271,14 +1352,16 @@
         "primary": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view",
         "reaction": "Grip spring nudges the hand back slightly as it approaches the final detent.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 32,
+      "sfx_offset_reason": "Actual authored physical arrival at frame32 after the beat. Final picture contact and performed audio peak require verification."
     },
     {
       "id": 38,
-      "at_s": 117.8,
-      "t": "117.8-120",
+      "at_s": 110.704,
+      "t": "110.704-112.640",
       "vo_line": 17,
-      "offset": 3.8,
+      "offset": 3.344,
       "vo": "Which balance should a rule demonstrate between catches and breeding fish?",
       "shows": "Grip rebounds slightly and the patient hand guides it into its final research detent",
       "means": "The physical action makes test again legible at the moment the narration needs it.",
@@ -1293,14 +1376,16 @@
         "primary": "Grip rebounds slightly and the patient hand guides it into its final research detent",
         "reaction": "Patient hand applies one small correction, then rests on the settled grip.",
         "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
-      }
+      },
+      "sfx_offset_frames": 28,
+      "sfx_offset_reason": "Actual authored physical arrival at frame28 after the beat. Final picture contact and performed audio peak require verification."
     }
   ],
   "shots": [
     {
       "id": "S1",
       "title": "The research grip",
-      "t": "0-12",
+      "t": "0.000-11.600",
       "vo_line": 0,
       "framing": "macro-closeup",
       "scale": "close",
@@ -1331,7 +1416,7 @@
     {
       "id": "S2",
       "title": "The modeled fishery",
-      "t": "12-20",
+      "t": "11.600-20.640",
       "vo_line": 2,
       "framing": "wide-establish",
       "scale": "wide",
@@ -1362,7 +1447,7 @@
     {
       "id": "S3",
       "title": "Learning from outcomes",
-      "t": "20-31",
+      "t": "20.640-31.400",
       "vo_line": 3,
       "framing": "push-detail",
       "scale": "close",
@@ -1393,7 +1478,7 @@
     {
       "id": "S4",
       "title": "The comparison stays fixed",
-      "t": "31-41",
+      "t": "31.400-39.640",
       "vo_line": 5,
       "framing": "macro-closeup",
       "scale": "insert",
@@ -1424,7 +1509,7 @@
     {
       "id": "S5",
       "title": "Constant recruitment",
-      "t": "41-48",
+      "t": "39.640-45.160",
       "vo_line": 7,
       "framing": "wide-establish",
       "scale": "wide",
@@ -1455,7 +1540,7 @@
     {
       "id": "S6",
       "title": "One result carries two outcomes",
-      "t": "48-59",
+      "t": "45.160-55.760",
       "vo_line": 8,
       "framing": "two-up",
       "scale": "medium",
@@ -1486,7 +1571,7 @@
     {
       "id": "S7",
       "title": "A different experimental room",
-      "t": "59-71",
+      "t": "55.760-66.820",
       "vo_line": 9,
       "framing": "wide-establish",
       "scale": "wide",
@@ -1517,7 +1602,7 @@
     {
       "id": "S8",
       "title": "The biomass comparison reverses",
-      "t": "71-79",
+      "t": "66.820-73.880",
       "vo_line": 11,
       "framing": "two-up",
       "scale": "close",
@@ -1548,7 +1633,7 @@
     {
       "id": "S9",
       "title": "Same question for each case",
-      "t": "79-86",
+      "t": "73.880-80.100",
       "vo_line": 12,
       "framing": "alt-vantage",
       "scale": "insert",
@@ -1579,7 +1664,7 @@
     {
       "id": "S10",
       "title": "The real season",
-      "t": "86-99",
+      "t": "80.100-92.940",
       "vo_line": 13,
       "framing": "wide-establish",
       "scale": "extreme-wide",
@@ -1610,7 +1695,7 @@
     {
       "id": "S11",
       "title": "Equal next-test goals",
-      "t": "99-107",
+      "t": "92.940-98.860",
       "vo_line": 15,
       "framing": "two-up",
       "scale": "medium",
@@ -1641,7 +1726,7 @@
     {
       "id": "S12",
       "title": "The rehearsal keeps working",
-      "t": "107-120",
+      "t": "98.860-113.640",
       "vo_line": 16,
       "framing": "subject-portrait",
       "scale": "close",
@@ -1681,5 +1766,144 @@
       "Literal52.6socket and107collar sounds",
       "36sleevebrush,96.8and99stopreactions,102.6actualgatelatchretraction"
     ]
-  }
+  },
+  "planning_clock": {
+    "starts": {
+      "0": 0.0,
+      "1": 5.0,
+      "2": 12.0,
+      "3": 20.0,
+      "4": 26.0,
+      "5": 31.0,
+      "6": 36,
+      "7": 41.0,
+      "8": 48.0,
+      "9": 59.0,
+      "10": 65.0,
+      "11": 71.0,
+      "12": 79.0,
+      "13": 86.0,
+      "14": 94.0,
+      "15": 99.0,
+      "16": 107.0,
+      "17": 114.0
+    },
+    "end": 120,
+    "beats": {
+      "1": 0,
+      "2": 1.1,
+      "3": 3.2,
+      "4": 5,
+      "5": 8.2,
+      "6": 12,
+      "7": 16.3,
+      "8": 20,
+      "9": 22.4,
+      "10": 26,
+      "11": 28.8,
+      "12": 31,
+      "13": 34.0,
+      "14": 36,
+      "15": 39,
+      "16": 41,
+      "17": 43.6,
+      "18": 48,
+      "19": 52.6,
+      "20": 55.2,
+      "21": 59,
+      "22": 62.3,
+      "23": 65,
+      "24": 68.6,
+      "25": 71,
+      "26": 74.5,
+      "27": 79,
+      "28": 81.8,
+      "29": 86,
+      "30": 89.2,
+      "31": 94,
+      "32": 96.8,
+      "33": 99,
+      "34": 102.6,
+      "35": 107,
+      "36": 111.1,
+      "37": 114,
+      "38": 117.8
+    },
+    "open_loop": {
+      "plant_t": 0,
+      "pay_t": 99,
+      "what": "What makes the rule worth testing? First complete identical catch-pattern and breeding-stock requirements are revealed across both candidates at99. The111.1plaque is a callback, not the payoff."
+    },
+    "open_loop_2": {
+      "plant_t": 36,
+      "pay_t": 71,
+      "what": "Will an advantage survive changed biology? First revealing stock-linked result begins71, full lower-biomass finding74.5; protect the earlier payoff when conforming."
+    },
+    "states": [
+      {
+        "at_s": 0,
+        "state": "Caught over bounded research mount"
+      },
+      {
+        "at_s": 26,
+        "state": "Connected to complete outcome-feedback path"
+      },
+      {
+        "at_s": 59,
+        "state": "Lifted free into separately labeled experimental room"
+      },
+      {
+        "at_s": 86,
+        "state": "Carried to harbor bench, model cable still attached"
+      },
+      {
+        "at_s": 114,
+        "state": "Hand settles TEST AGAIN beside both open next-test lanes"
+      }
+    ],
+    "reveals": [
+      {
+        "t": 26,
+        "beat_id": 10,
+        "type": "build-on",
+        "what": "Outcome path completes the feedback circuit around the control",
+        "hold_s": 0.6,
+        "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
+        "landing_frames": 24
+      },
+      {
+        "t": 59,
+        "beat_id": 21,
+        "type": "scale-pullback",
+        "what": "Doorway reveals distinct stock-linked experimental room",
+        "hold_s": 0.6,
+        "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
+        "landing_frames": 24
+      },
+      {
+        "t": 94,
+        "beat_id": 31,
+        "type": "build-on",
+        "what": "Harbor-scale reveal unfolds testing bench beneath the real season",
+        "hold_s": 0.6,
+        "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
+        "landing_frames": 24
+      }
+    ],
+    "audio_arc": {
+      "build_steps": 4,
+      "dip_at": 102.6,
+      "riser_at": 93.4,
+      "silence_at": 106.5,
+      "payoff_at": 111.1,
+      "button_pattern": "question",
+      "evidence": "Bright electric-piano bed; literal control and glass sounds build the mechanism, brief dip grants the test space, final tactile detent closes the question."
+    }
+  },
+  "voice_conform": {
+    "script_sha256": "2bbc75e32042528fe5b49c676ebe55598a2684e3faa25f400421123857284716",
+    "vo_wav_sha256": "8951e54355e3820efc4de167ac729b8268a30a545e802083b917a718abcc53ab",
+    "method": "Piecewise interpolation within actual whole-file aligned narration lines; original audio untouched."
+  },
+  "actual_voice_seconds": 113.1
 }

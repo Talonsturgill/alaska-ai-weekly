@@ -122,9 +122,10 @@
     },
     {
       "idx": 16,
-      "text": "These are illustrative simulations. They establish alternatives to investigate, not a winning real-world policy.",
+      "text": "These are illustrative simulations with public code. They establish alternatives to investigate, not a winning real-world policy.",
       "claims": [
-        "c4"
+        "c4",
+        "c17"
       ]
     },
     {
@@ -133,5 +134,5 @@
       "claims": []
     }
   ],
-  "word_count": 209
+  "word_count": 212
 }

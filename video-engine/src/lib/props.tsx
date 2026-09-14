@@ -93,14 +93,31 @@ export const SwingSign: React.FC<{x: number; y: number; f: number; lines: string
 // badge (X + label) fades in as it lands. Opt-in longThrow attaches a 119px
 // upward shaft and its grip to the same pivot, with an 80-degree readable arc.
 // Default geometry/throw remain unchanged for shipped films.
+/** Grip center in the lever's local space. Hands and contact probes use the
+ * same pivot/throw as the drawn control, including the original short throw. */
+export function gearLeverGrip(pulled: number, longThrow = false) {
+  const angle = -40 + (longThrow ? 80 : 40) * pulled;
+  const radius = longThrow ? 119 : 20;
+  const a = angle * Math.PI / 180;
+  return {x: -46 + radius * Math.sin(a), y: 14 - radius * Math.cos(a), angle};
+}
+
 export const GearLever: React.FC<{
   x: number; y: number; pulled: number; deniedLabel?: string;
-  longThrow?: boolean; accentColor?: string;
-}> = ({x, y, pulled, deniedLabel, longThrow = false, accentColor}) => (
+  longThrow?: boolean; accentColor?: string; serviceDetail?: boolean;
+}> = ({x, y, pulled, deniedLabel, longThrow = false, accentColor, serviceDetail = false}) => (
   <g transform={`translate(${x},${y})`}>
     <rect x={-80} y={-12} width={160} height={50} rx={12} fill="#8b93a0" stroke={INK} strokeWidth={6} />
+    {serviceDetail && <g data-part="service-mount">
+      <path d="M-76 12H76V29Q76 34 69 34H-69Q-76 34-76 29Z" fill="#52617B"/>
+      <path d="M-66-7H65Q74-7 74 0H-74Q-74-7-66-7Z" fill="#EFF5E9" opacity={.75}/>
+      {[-65,65].map(cx=><g key={cx}><circle cx={cx} cy={24} r={5} fill="#EFF5E9" stroke={INK} strokeWidth={2}/><path d={`M${cx-2} 22l4 4`} stroke={INK} strokeWidth={1.5}/></g>)}
+      {[0,1,2,3,4].map(i=><g key={i}><path d={`M${-18+i*17} 3v8`} stroke={INK} strokeWidth={3}/><path d={`M${-16+i*17} 3v8`} stroke="#EFF5E9" strokeWidth={1}/></g>)}
+      <path d="M-8 26H44" stroke="#93DFC6" strokeWidth={4}/>
+      <path d="M54 22v10" stroke={accentColor??RED} strokeWidth={4}/>
+    </g>}
     <circle cx={-46} cy={14} r={11} fill={GRAPHITE_D} stroke={INK} strokeWidth={4} />
-    <g transform={`rotate(${-40 + (longThrow ? 80 : 40) * pulled} -46 14)`}>
+    <g transform={`rotate(${gearLeverGrip(pulled,longThrow).angle} -46 14)`}>
       {longThrow ? <>
         <rect x={-53} y={-105} width={14} height={119} rx={7} fill="#c9cfd8" stroke={INK} strokeWidth={5} />
         <line x1={-49} y1={-93} x2={-49} y2={4} stroke="#f4f6f8" strokeWidth={3} strokeLinecap="round" />

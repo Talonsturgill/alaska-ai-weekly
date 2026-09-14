@@ -6,7 +6,7 @@ Feedback rewards outcomes and changes the learned rule.
 They compare it with a predefined harvest rule.
 Will an advantage hold when the biology changes?
 Start with a model where young fish enter at a constant rate.
-The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.
+The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside [short pause] large annual catch swings.
 The next experiment links young fish entering the stock to the breeding population.
 This is a separate simulated case with its own comparison.
 Here the learned rule catches more and leaves less breeding biomass than that comparison.
@@ -14,5 +14,5 @@ These simulated gains may offer no management advantage over a predefined rule.
 In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.
 Fishing businesses need sound management to plan their seasons.
 So test both rules against the same catch-pattern and breeding-stock goals.
-These are illustrative simulations with public code. They establish alternatives to investigate, not a winning real-world policy.
+These are illustrative simulations with public code. [short pause] They establish alternatives to investigate, not a winning real-world policy.
 Which balance should a rule demonstrate between catches and breeding fish?

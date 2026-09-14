@@ -1,0 +1,143 @@
+{
+  "run_date": "2026-09-14",
+  "scored_at_utc": "2026-09-14T11:50:09.096207+00:00",
+  "role": "independent_caption_scorer",
+  "post_path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/post.txt",
+  "post_sha256": "9ad59739285ffbf89f9e5d628f0132b796ccb3b4e960c1577c7d4226a196c236",
+  "rubric": "config/linkedin_caption_rubric.yaml",
+  "ship_threshold": 8.5,
+  "objective_gate": {
+    "command": "python3 scripts/caption_check.py out/dispatch/post.txt",
+    "exit_code": 0,
+    "pass": true,
+    "metrics": {
+      "chars": 1497,
+      "hook": "A pollock model can change what an AI's apparent advantage means.",
+      "hook_len": 65,
+      "hashtags": [
+        "#Alaska",
+        "#ArtificialIntelligence",
+        "#Fisheries",
+        "#Pollock"
+      ],
+      "n_hashtags": 4,
+      "emoji": 0,
+      "unicode_bold": 0,
+      "bullet_lines": 0,
+      "sentence_initial_but": 0,
+      "commas_per_100w": 0.98,
+      "passes": true
+    },
+    "fails": [],
+    "warns": []
+  },
+  "criteria": [
+    {
+      "name": "Hook / scroll-stop",
+      "weight": 0.2,
+      "score": 7.8,
+      "weighted_contribution": 1.56,
+      "reason": "Inside the fold and substantively true, but apparent advantage is abstract. The following publication-date sentence adds context rather than immediately sharpening the catch-versus-breeding-stock tension."
+    },
+    {
+      "name": "Point of view / take",
+      "weight": 0.18,
+      "score": 9.0,
+      "weighted_contribution": 1.62,
+      "reason": "Clear earned position: scenario-specific gains create alternatives worth testing, and learned and predefined rules deserve evaluation against the same explicit goals. This is a defensible judgment rather than only a paper summary."
+    },
+    {
+      "name": "Substance & specificity",
+      "weight": 0.16,
+      "score": 9.3,
+      "weighted_contribution": 1.488,
+      "reason": "Names the publication date, eastern Bering Sea pollock, affiliated center, learning feedback, predefined comparison, both biological cases and management institutions. Explains spawning biomass and makes its reversal concrete."
+    },
+    {
+      "name": "Readability & restraint",
+      "weight": 0.12,
+      "score": 9.2,
+      "weighted_contribution": 1.104,
+      "reason": "1497 characters lies in the preferred band; short paragraphs and a separate definition support scanning. No decorative formatting. Recruitment remains mildly technical but its second-case relationship is stated plainly."
+    },
+    {
+      "name": "Engagement design (CTA + comment-bait)",
+      "weight": 0.12,
+      "score": 8.8,
+      "weighted_contribution": 1.056,
+      "reason": "The closing balance question invites substantive discussion and follows directly from the two simulated outcomes. It could elicit more concrete criteria but is neither generic nor manipulative."
+    },
+    {
+      "name": "Brand voice & accuracy",
+      "weight": 0.12,
+      "score": 9.4,
+      "weighted_contribution": 1.128,
+      "reason": "Alaska and AI relevance are integral. Credits demonstrated policy discovery while clearly limiting operational inference. Separate comparisons are preserved; no profit, deployment, bycatch improvement or proven catch-stability claim."
+    },
+    {
+      "name": "Hashtag craft",
+      "weight": 0.1,
+      "score": 8.5,
+      "weighted_contribution": 0.85,
+      "reason": "Four true-to-topic end tags cover technology, place, industry and species. Logical broad-to-niche mix; exact follower-count bands were not independently measured, so no popularity or reach claim earns extra credit."
+    }
+  ],
+  "weighted_score": 8.806,
+  "overall_score": 8.806,
+  "hard_fails": [],
+  "hard_fail_count": 0,
+  "ship": true,
+  "decision": "PASS for this exact post; the hook has room to sharpen but no substantive correction is required.",
+  "source_precision": {
+    "publication_and_affiliation": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "learning_and_predefined_comparison": [
+      "c5",
+      "c6",
+      "c7"
+    ],
+    "constant_case_catch_swings_and_higher_spawning_biomass": [
+      "c9",
+      "c10",
+      "c11"
+    ],
+    "separate_stock_linked_case_higher_catch_lower_spawning_biomass": [
+      "c9",
+      "c13"
+    ],
+    "management_and_season_planning": [
+      "c14",
+      "c16"
+    ],
+    "operational_limits": [
+      "c4"
+    ],
+    "editorial_inference": "The first-case stock advantage does not automatically generalize, and equal explicit goals are the appropriate further comparison. These are reasoned interpretations of the verified separate outcomes, not additional measured benefits.",
+    "source_placement": "Sources properly remain outside post.txt under the Phase6B comment-block contract. Exact paper/date and claims remain traceable in sources.json.",
+    "c17": "Public-code availability is not claimed in this post and need not be added solely because the narration includes it.",
+    "precision_limits": "Scoring checks the post against the existing independently verified claim set; no numerical results were reproduced and no LinkedIn hashtag follower totals were verified."
+  },
+  "overreach_checks": {
+    "separate_scenarios_preserved": true,
+    "respective_comparisons_explicit": true,
+    "no_smoother_catch_inference": true,
+    "no_profit_or_household_outcome_claim": true,
+    "no_operational_adoption_or_quota_claim": true,
+    "no_stakeholder_approval_claim": true,
+    "no_invented_numbers": true
+  },
+  "optional_improvements": [
+    {
+      "priority": "nonblocking",
+      "detail": "The opening could name the changed biological assumption or the catch-versus-breeding-stock reversal more directly. Any revision requires a new lint and score tied to the new hash."
+    }
+  ],
+  "files_changed": [
+    "out/dispatch/caption_score_20260914.json",
+    "out/dispatch/caption_report.json"
+  ],
+  "post_edited": false
+}

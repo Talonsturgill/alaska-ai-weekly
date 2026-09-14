@@ -41,8 +41,10 @@
       "title": "Authors reproducibility repository",
       "publisher": "Authors reproducibility repository",
       "outlet": "Authors reproducibility repository",
-      "claims": [],
-      "used_in_film": false,
+      "claims": [
+        "c17"
+      ],
+      "used_in_film": true,
       "status": "verified",
       "verified_at_utc": "2026-09-14T10:58:48.259257+00:00"
     },

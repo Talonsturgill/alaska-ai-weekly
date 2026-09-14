@@ -1,6 +1,6 @@
 {
   "run_date": "2026-09-14",
-  "validated_at_utc": "2026-09-14T10:58:48.259257+00:00",
+  "validated_at_utc": "2026-09-14T11:36:11.068320+00:00",
   "claims": [
     {
       "id": "c1",
@@ -328,6 +328,26 @@
         "on_screen_verbatim": true
       },
       "source_fact_id": "F16"
+    },
+    {
+      "id": "c17",
+      "status": "verified-primary",
+      "spoken": "The authors provide public code for the illustrative case studies, including the Eastern Bering Sea pollock reinforcement-learning experiment.",
+      "on_screen": "PUBLIC CODE",
+      "source": "https://github.com/mkapur/deep-fish",
+      "sources": [
+        "https://github.com/mkapur/deep-fish",
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
+      "requires": [
+        "Source availability only. Do not claim successful reproduction, completeness, an open-source license or an operational policy."
+      ],
+      "contract": {
+        "must_ship": true,
+        "on_screen_verbatim": true
+      },
+      "source_fact_id": "F17",
+      "validation_artifact": "public_code_validation.json"
     }
   ],
   "kill_list": [
