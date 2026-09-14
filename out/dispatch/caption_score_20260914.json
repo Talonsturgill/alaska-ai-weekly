@@ -139,5 +139,16 @@
     "out/dispatch/caption_score_20260914.json",
     "out/dispatch/caption_report.json"
   ],
-  "post_edited": false
+  "post_edited": false,
+  "editor_pass_audit": {
+    "reviewed_at_utc": "2026-09-14T12:19:56.727416+00:00",
+    "editor_report": "out/dispatch/editor_final_20260914.json",
+    "editor_ship": true,
+    "post_sha256": "9ad59739285ffbf89f9e5d628f0132b796ccb3b4e960c1577c7d4226a196c236",
+    "script_sha256": "2bbc75e32042528fe5b49c676ebe55598a2684e3faa25f400421123857284716",
+    "post_unchanged": true,
+    "weighted_score_reaffirmed": 8.806,
+    "axis_numbers_unchanged": true,
+    "required_edits": []
+  }
 }

@@ -1,0 +1,17 @@
+{
+  "run_date": "2026-09-14",
+  "checked_at": "2026-09-14T13:28:18.009324+00:00",
+  "master_sha256": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
+  "judges": [
+    7.848,
+    7.712,
+    7.716
+  ],
+  "median": 7.716,
+  "threshold": 7.0,
+  "hard_blockers": [],
+  "editor_ship": true,
+  "flow_ship": true,
+  "weights_totals_hashes_verified": true,
+  "audio_assessment_basis": "Measurements and event evidence; no human listening claim."
+}

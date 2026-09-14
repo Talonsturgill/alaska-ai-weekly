@@ -1,0 +1,13 @@
+{
+  "run_date": "2026-09-14",
+  "candidate": 3,
+  "composition": "Dispatch0914",
+  "frames": 3778,
+  "workers": 3,
+  "chunks": 24,
+  "start_utc": "2026-09-14T12:58:09.011695+00:00",
+  "picture_completed_utc": "2026-09-14T13:10:27.621605+00:00",
+  "wall_seconds": 738.61,
+  "measurement": "background ready marker to completed native picture mtime",
+  "receipt_state": "complete"
+}

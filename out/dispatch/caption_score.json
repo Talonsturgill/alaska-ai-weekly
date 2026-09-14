@@ -1,104 +1,154 @@
 {
-  "reviewed_at_utc": "2026-09-12T13:29:42.350405+00:00",
-  "role": "Independent caption scorer",
-  "input_path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/post.txt",
-  "input_sha256": "a7dc4b491eae03ebf64cf9bb807e94e0c438e08685eac36ff60cf90693ba0f16",
-  "input_hash": "a7dc4b491eae03ebf64cf9bb807e94e0c438e08685eac36ff60cf90693ba0f16",
-  "input_hash_algorithm": "sha256 of exact UTF-8 file bytes, including trailing newline",
-  "rubric_path": "/Users/t/Developer/alaska-ai-weekly/config/linkedin_caption_rubric.yaml",
+  "run_date": "2026-09-14",
+  "scored_at_utc": "2026-09-14T11:50:09.096207+00:00",
+  "role": "independent_caption_scorer",
+  "post_path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/post.txt",
+  "post_sha256": "9ad59739285ffbf89f9e5d628f0132b796ccb3b4e960c1577c7d4226a196c236",
+  "rubric": "config/linkedin_caption_rubric.yaml",
   "ship_threshold": 8.5,
-  "previous_review": {
-    "input_sha256": "3d7280550c1f345e964365522930e593eb94f7aa97bc2b34576b7a0b5d188124",
-    "weighted_score": 8.256,
-    "verdict": "REVISE"
-  },
   "objective_gate": {
     "command": "python3 scripts/caption_check.py out/dispatch/post.txt",
     "exit_code": 0,
-    "result": "PASS",
-    "characters_linter": 1485,
-    "characters_file": 1486,
-    "hook_characters": 74,
-    "hashtags": 4
+    "pass": true,
+    "metrics": {
+      "chars": 1497,
+      "hook": "A pollock model can change what an AI's apparent advantage means.",
+      "hook_len": 65,
+      "hashtags": [
+        "#Alaska",
+        "#ArtificialIntelligence",
+        "#Fisheries",
+        "#Pollock"
+      ],
+      "n_hashtags": 4,
+      "emoji": 0,
+      "unicode_bold": 0,
+      "bullet_lines": 0,
+      "sentence_initial_but": 0,
+      "commas_per_100w": 0.98,
+      "passes": true
+    },
+    "fails": [],
+    "warns": []
   },
   "criteria": [
     {
       "name": "Hook / scroll-stop",
       "weight": 0.2,
-      "score": 8.5,
-      "weighted_contribution": 1.7,
-      "reason": "Takes a clear position inside the fold: acquisition can be a research win before findings. Egorov makes the continuation human and specific. Brain sensor is accessible but less distinctive than the underlying experiment choice."
+      "score": 7.8,
+      "weighted_contribution": 1.56,
+      "reason": "Inside the fold and substantively true, but apparent advantage is abstract. The following publication-date sentence adds context rather than immediately sharpening the catch-versus-breeding-stock tension."
     },
     {
       "name": "Point of view / take",
       "weight": 0.18,
-      "score": 8.8,
-      "weighted_contribution": 1.584,
-      "reason": "The claim of an earned local research gain survives a useful public-data counterpoint and separates capability from results. The final milestone paragraph still repeats some established meaning."
+      "score": 9.0,
+      "weighted_contribution": 1.62,
+      "reason": "Clear earned position: scenario-specific gains create alternatives worth testing, and learned and predefined rules deserve evaluation against the same explicit goals. This is a defensible judgment rather than only a paper summary."
     },
     {
       "name": "Substance & specificity",
       "weight": 0.16,
-      "score": 9.0,
-      "weighted_contribution": 1.44,
-      "reason": "Adds the named fund, cognitive-state reading plan, programming with eye movements, and a concrete new-person evaluation condition. These additions materially improve information density without inventing results."
+      "score": 9.3,
+      "weighted_contribution": 1.488,
+      "reason": "Names the publication date, eastern Bering Sea pollock, affiliated center, learning feedback, predefined comparison, both biological cases and management institutions. Explains spawning biomass and makes its reversal concrete."
     },
     {
       "name": "Readability & restraint",
       "weight": 0.12,
-      "score": 8.6,
-      "weighted_contribution": 1.032,
-      "reason": "Clean short paragraphs, generous whitespace, no decorative formatting. The appositive about the activity producing the recording is slightly awkward; the task-context and final milestone lines could still be tighter."
+      "score": 9.2,
+      "weighted_contribution": 1.104,
+      "reason": "1497 characters lies in the preferred band; short paragraphs and a separate definition support scanning. No decorative formatting. Recruitment remains mildly technical but its second-case relationship is stated plainly."
     },
     {
       "name": "Engagement design (CTA + comment-bait)",
       "weight": 0.12,
       "score": 8.8,
       "weighted_contribution": 1.056,
-      "reason": "The final question invites a chosen task tied to the two verified study areas. A reader can answer with an actual research idea rather than generic agreement."
+      "reason": "The closing balance question invites substantive discussion and follows directly from the two simulated outcomes. It could elicit more concrete criteria but is neither generic nor manipulative."
     },
     {
       "name": "Brand voice & accuracy",
       "weight": 0.12,
-      "score": 9.0,
-      "weighted_contribution": 1.08,
-      "reason": "Alaska-first, warm and analytical. Acquisition and training are actual; both studies remain planned. The held-out-person standard is concrete and explicitly general. Final rendered-video parity is pending, so this is not release clearance."
+      "score": 9.4,
+      "weighted_contribution": 1.128,
+      "reason": "Alaska and AI relevance are integral. Credits demonstrated policy discovery while clearly limiting operational inference. Separate comparisons are preserved; no profit, deployment, bycatch improvement or proven catch-stability claim."
     },
     {
       "name": "Hashtag craft",
       "weight": 0.1,
       "score": 8.5,
       "weighted_contribution": 0.85,
-      "reason": "Four relevant tail tags connect a broad AI topic, local institution and brand, and the specific EEG subject. Audience-size tiers were not independently verified, so no perfect mix claim is made."
+      "reason": "Four true-to-topic end tags cover technology, place, industry and species. Logical broad-to-niche mix; exact follower-count bands were not independently measured, so no popularity or reach claim earns extra credit."
     }
   ],
-  "weight_sum": 1.0,
-  "weighted_arithmetic": "8.5*0.20 + 8.8*0.18 + 9.0*0.16 + 8.6*0.12 + 8.8*0.12 + 9.0*0.12 + 8.5*0.10 = 8.742",
-  "weighted_score": 8.742,
-  "score": 8.74,
+  "weighted_score": 8.806,
+  "overall_score": 8.806,
   "hard_fails": [],
-  "hard_fail_assessment": {
-    "objective_linter": "PASS",
-    "source_traceability": "PASS: acquisition C1,C2; funding C3; training C4; 19 electrodes C5; planned reading and programming C6,C7; Egorov C8; conditional new-person evaluation C11.",
-    "discernible_point_of_view": "PASS: local collection capacity merits celebration before a reported finding.",
-    "ai_tells_or_generic_thought_leader_filler": "PASS: no disqualifying language. Residual repetition is reflected in the quality scores.",
-    "savior_or_disrespectful_framing": "PASS",
-    "hook_overpromise": "PASS against caption and verified angle. Final video delivery remains pending.",
-    "number_video_parity": "NOT YET ASSESSABLE: current VO and storyboard are September11 Ryan Air artifacts, not this episode. September9 and19 scalp electrodes must appear in the eventual current-run video. No parity violation is established from unrelated prior-run files."
+  "hard_fail_count": 0,
+  "ship": true,
+  "decision": "PASS for this exact post; the hook has room to sharpen but no substantive correction is required.",
+  "source_precision": {
+    "publication_and_affiliation": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "learning_and_predefined_comparison": [
+      "c5",
+      "c6",
+      "c7"
+    ],
+    "constant_case_catch_swings_and_higher_spawning_biomass": [
+      "c9",
+      "c10",
+      "c11"
+    ],
+    "separate_stock_linked_case_higher_catch_lower_spawning_biomass": [
+      "c9",
+      "c13"
+    ],
+    "management_and_season_planning": [
+      "c14",
+      "c16"
+    ],
+    "operational_limits": [
+      "c4"
+    ],
+    "editorial_inference": "The first-case stock advantage does not automatically generalize, and equal explicit goals are the appropriate further comparison. These are reasoned interpretations of the verified separate outcomes, not additional measured benefits.",
+    "source_placement": "Sources properly remain outside post.txt under the Phase6B comment-block contract. Exact paper/date and claims remain traceable in sources.json.",
+    "c17": "Public-code availability is not claimed in this post and need not be added solely because the narration includes it.",
+    "precision_limits": "Scoring checks the post against the existing independently verified claim set; no numerical results were reproduced and no LinkedIn hashtag follower totals were verified."
   },
-  "video_alignment_verified": false,
-  "pending_ship_checks": [
-    "Verify September9 and19 electrodes against the current-run final VO/on-screen video.",
-    "Confirm the final video delivers the hook and the same planned-versus-completed boundary."
+  "overreach_checks": {
+    "separate_scenarios_preserved": true,
+    "respective_comparisons_explicit": true,
+    "no_smoother_catch_inference": true,
+    "no_profit_or_household_outcome_claim": true,
+    "no_operational_adoption_or_quota_claim": true,
+    "no_stakeholder_approval_claim": true,
+    "no_invented_numbers": true
+  },
+  "optional_improvements": [
+    {
+      "priority": "nonblocking",
+      "detail": "The opening could name the changed biological assumption or the catch-versus-breeding-stock reversal more directly. Any revision requires a new lint and score tied to the new hash."
+    }
   ],
-  "passes_score_threshold": true,
-  "pass": true,
-  "verdict": "PASS_EDITORIAL_PENDING_VIDEO_PARITY",
-  "release_ready": false,
-  "required_revisions": [],
-  "optional_tightening": [
-    "The final milestone paragraph repeats the capability thesis; it is acceptable but could be leaner."
+  "files_changed": [
+    "out/dispatch/caption_score_20260914.json",
+    "out/dispatch/caption_report.json"
   ],
-  "caption_edited": false,
-  "scope_note": "Exact-caption editorial review passes 8.5. This card does not certify absent current-run video parity or authorize publication."
+  "post_edited": false,
+  "editor_pass_audit": {
+    "reviewed_at_utc": "2026-09-14T12:19:56.727416+00:00",
+    "editor_report": "out/dispatch/editor_final_20260914.json",
+    "editor_ship": true,
+    "post_sha256": "9ad59739285ffbf89f9e5d628f0132b796ccb3b4e960c1577c7d4226a196c236",
+    "script_sha256": "2bbc75e32042528fe5b49c676ebe55598a2684e3faa25f400421123857284716",
+    "post_unchanged": true,
+    "weighted_score_reaffirmed": 8.806,
+    "axis_numbers_unchanged": true,
+    "required_edits": []
+  }
 }

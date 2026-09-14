@@ -1,0 +1,47 @@
+{
+  "reviewed_at_utc": "2026-09-14T12:58:31.700717+00:00",
+  "mode": "bounded rendered repair review",
+  "verdict": "PASS",
+  "ship": false,
+  "source_sha256": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
+  "native_clip_sha256": "8b178b1681f64f9f8dab78d0b9ef3107fe04be0e536e6464ae7d3a5cea833fed",
+  "clip_frame_range": [
+    2403,
+    2965
+  ],
+  "fps": 30,
+  "ffprobe_frames": 563,
+  "viewed_full_frames": [
+    2403,
+    2496,
+    2508,
+    2521,
+    2680,
+    2920,
+    2965
+  ],
+  "viewed_consecutive_frame_ranges": [
+    [
+      2703,
+      2746
+    ],
+    [
+      2788,
+      2816
+    ]
+  ],
+  "findings": [
+    "Both goal labels remain occluded in viewed entry and placement frames.",
+    "SEASON PLANNING retracts before the catch cover opens; no residual plaque blocks the revealed text.",
+    "CATCH PATTERN becomes fully readable by frame2727 at90.900s; BREEDING STOCK remains covered.",
+    "BREEDING STOCK becomes fully readable by frame2793 at93.100s, completing both visible goals.",
+    "Later full frames2920/2965 retain both goals and both candidate lanes without council/header/character overlap."
+  ],
+  "blockers": [],
+  "limits": [
+    "Approval is limited to the bounded visual repair and permits proceeding to a new full render.",
+    "No audio listening or revised final encoded-media verification performed here.",
+    "Formal full-film FLOW POST still requires the new master hash, current evidence pack and preflight exit0."
+  ],
+  "candidate1_verdict": "REVISE remains bound to master54f37015d3fa550cd5749ac255183f22140118ac865a92e383c70ad6040cb1fc; no retroactive SHIP."
+}

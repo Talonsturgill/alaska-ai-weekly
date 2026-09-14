@@ -1,0 +1,82 @@
+{
+  "mode": "post",
+  "candidate": "candidate1",
+  "reviewed_at_utc": "2026-09-14T12:49:25.358037+00:00",
+  "master_sha256": "54f37015d3fa550cd5749ac255183f22140118ac865a92e383c70ad6040cb1fc",
+  "source_sha256": "38976a129c9bf6becef2f2f1039125623c41099391fe4672bc72e45065fce890",
+  "preflight_exit_code": 0,
+  "preflight_checked_at": "2026-09-14T12:43:52.375200+00:00",
+  "flows": false,
+  "orphan_sentences": [],
+  "resting_or_meaningless_beats": [
+    {
+      "t": "80.100-84.028 / S10",
+      "why": "CATCH PATTERN and BREEDING STOCK are visible before the blue shutters are placed. They are covered again and reopened at90.731/92.94. The primary answer is therefore disclosed before85s, turning its intended late payoff into repetition."
+    }
+  ],
+  "silent_or_generic_sfx_beats": [],
+  "notes": [
+    "REVISE for one required information-timing repair. Both native and encoded frame_002404.png (one-based filename, zero-based frame2403,80.100s) show the goal names. Encoded frame_002410.png at80.300s confirms persistence. Sheet3 bottom-right exposed the defect.",
+    "Cause: Goals draws goal labels unconditionally while placement shifts their covers upward. Keep each goal fully occluded through placement and reveal it only with its intended opening action. Preserve equal candidate lanes, narration and later sound/animation timings; regenerate affected rendered evidence.",
+    "Viewed all six fresh whole-film sheets and all eight motion strips, the current-candidate contact evidence, and full-resolution early-disclosure frames. Candidate1 has since been preserved under /tmp/alaska-dispatch-20260914/final_candidate1; this verdict belongs only to its exact master hash.",
+    "The final third is weakest. Its explicit management-advantage objection and shared unresolved test deserve the duration, but the accidental early answer removes the later reveal. The middle third introduces a separately identified biological case and reversed biomass comparison; it is substantive.",
+    "The control has recognizable caught, initiated, feedback-adjusted, separate-room, harbor-test and TEST AGAIN states. Motion strips show attached-hand initiation followed by release, feedback travel, flap opening, held reveal, gate retraction, collar opening and final correction.",
+    "Constant recruitment retains higher spawning biomass with large annual catch swings. The separately labeled stock-linked case shows higher catch and lower spawning biomass versus its own comparison. Public code and illustrative-simulation limits remain explicit. No real-world winner or catch-stability claim is introduced.",
+    "The secondary loop remains35.50 to66.82 with biomass completion69.909. Primary timing must use the first actual disclosure, not92.94 metadata or103.839 callback. Candidate1 first exposes its goals at80.10.",
+    "Encoded quality reports42 detected beats,12 moving shots,11 transitions, no>5s dead interval and85% living-screen windows. Restrained6-10s,36-40s and110-112s intervals are nonblocking relative weaknesses; credits account for subsequent intentional quiet.",
+    "Ending and credits are present: TEST AGAIN, Alaska.AI site, source domains and Kevin MacLeod attribution. The control remains a research instrument without an operational launch.",
+    "Audio findings are measurement-based, not human listening:38 scheduled events,21 objective level lifts, and no definite contact-sync defect in ten current native/encoded windows. Ten AAC/WAV windows show no added offset. Subjective cue prominence under speech is not established."
+  ],
+  "ship": false,
+  "one_fix": "Keep both goal labels hidden during S10 placement; expose them only at the later independent opening beats, then rerender and verify the full affected interval.",
+  "blockers": [
+    {
+      "id": "FLOW-C1-01",
+      "required_repair": true,
+      "time_s": 80.1,
+      "zero_based_frame": 2403,
+      "requirement": "Primary first payoff at85s or later; later restatements cannot move it.",
+      "evidence": [
+        "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0914_native_v1/frame_002404.png",
+        "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0914_final_v1/frame_002404.png",
+        "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0914_final_v1/frame_002410.png"
+      ]
+    }
+  ],
+  "nonblocking_notes": [
+    "The equal-goal argument is earned; fix disclosure ordering without adding narration.",
+    "Some review strips are thin crops; native30fps contact strips and full-resolution frames supplement them.",
+    "No other required repair established in the viewed candidate1 evidence."
+  ],
+  "evidence_hashes": {
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/sheet_0.png": "bb0ae3b1fe3b015a16aabe41fb23d183f942696073136218f0dbe552e313b1d1",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/sheet_1.png": "50fd9d18e7ec79002c797d64c2c13a1bcd2e58d6ad172aa700886996ba6c6259",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/sheet_2.png": "9de35565a23f5dede3c3c2921769e5fc8e52dc26f22418da8051d0b239a27c19",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/sheet_3.png": "e1ab95b0c6ad18172f92ac432ccf69a6bea30fe70833a61e961c90d0139cec9e",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/sheet_4.png": "5f01b93086d75f1c43845f16b3dadc1eda63afea604e7d34b5face9ba99ba639",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/sheet_5.png": "7c62e64f3276311a3103075d7fc6ae7d6592134a8633bccb92f0321889c82f98",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/strip_catch.png": "46577e6dd52a55fe23d55abbc5f6758a4319e3defee365dea1923ed3747ffcf8",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/strip_initiate.png": "3a981a953a383164da71d233d88b1cb3229bca615e1e8e1b735446648751ff89",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/strip_feedback.png": "49c8b0718a28e6ea9f520cdfb1dd7f990d4b880e03c4d3275a9a379c7230ffc9",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/strip_flap.png": "31748b210a342b69d609de960f25c564b848a1cfd3af01c9eb5055c506455f03",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/strip_hold.png": "e2c148718af519b097562472b8899d0875a4a263ccc59422b5497c7a11089ef9",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/strip_gate.png": "59703533890bae55e7172a6d5b6138c2b2be227e960721ced799fa63bdb63628",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/strip_collar.png": "fe18b5e83f17a90f84959aa868bfd563e1527f2bc19ab13831c184609cbccbee",
+    "/tmp/alaska-dispatch-20260914/final_candidate1/review_20260914_final/strip_ending.png": "571be1cd3ebd8b87eeb2859760bcd99ff4cdd63ceacd82a974629ec4fe98a6e7",
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0914_native_v1/frame_002404.png": "ffdec3bf4398823eaf22079f452a125f61accbed1d507cb35fd871e50a13d804",
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0914_final_v1/frame_002404.png": "ffdec3bf4398823eaf22079f452a125f61accbed1d507cb35fd871e50a13d804",
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0914_final_v1/frame_002410.png": "e631a9a34047593d75bcf5722041f210a10255c01becb9f05ba5eb5d493559f9"
+  },
+  "limits": [
+    "No uninterrupted real-time playback or human listening claim.",
+    "Preflight0 is verified but cannot override a visible retention defect.",
+    "This REVISE does not approve later candidate sources or media."
+  ],
+  "content_sag_advisory_review": {
+    "required_repair": false,
+    "assessment": "Restrained opening and ending, not an established greater-than-five-second dead interval. Whole-frame changed-pixel proportion is not a test of meaningful localized action.",
+    "opening": "Previously reviewed opening contact strip and whole-film sheet, supplemented with encoded frames000170 (5.633s, date hinge arriving) and000261 (8.667s, eastern Bering Sea pollock shutter opened). Date action begins5.4s, shutter8.234s, next scene11.6s; these are distinct information changes within the flagged3.0\u201310.5s interval.",
+    "ending": "Reviewed ending strip and encoded frames003230 (107.633s, closing question arriving with hand on control) and003330 (110.967s, TEST AGAIN arriving with control correction). Final correction contact111.637s. Localized motion advances the question into another test; quiet credits after113.64s are intentional.",
+    "limit": "No claim that these are the most visually energetic shots. No new ROI numerical result or uninterrupted real-time viewing claimed."
+  }
+}

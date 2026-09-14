@@ -3,19 +3,19 @@
   "problems": [],
   "scope": "Rendered credit rows sampled every half second over the full 10-second window; pixel OCR at its start, middle and end. Not a full-film visual review.",
   "input_sha256": {
-    "video": "fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2",
+    "video": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
     "renderer": "b7690e55711c92528a7598d61c1a6b36f2a18b3a7d84393b504df4209bca5c73",
-    "credit_timeline_and_data": "56368502a017729e7f171ea14d7d5461f6e4ab42504a2dd8e64de32fdf6ac0fa"
+    "credit_timeline_and_data": "ee0071db321759c71866be27ed818f226bd0cb5551940b9fa84208de4f28f9c8"
   },
   "window": [
-    119.86666666666667,
-    129.86666666666667
+    113.96666666666667,
+    123.96666666666667
   ],
   "readable_seconds": 10.0,
-  "full_opacity_seconds": 10.066666666666677,
+  "full_opacity_seconds": 10.066666666666663,
   "samples": [
     {
-      "seconds": 119.866667,
+      "seconds": 113.966667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -26,10 +26,10 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1057
+          "bright_fraction": 0.106
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -37,10 +37,10 @@
             923
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0294
+          "bright_fraction": 0.0358
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -48,10 +48,10 @@
             965
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0236
+          "bright_fraction": 0.0223
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -59,34 +59,34 @@
             1007
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.033
+          "bright_fraction": 0.0586
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1514
+          "bright_fraction": 0.0402
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0438
+          "bright_fraction": 0.1283
         }
       ]
     },
     {
-      "seconds": 120.366667,
+      "seconds": 114.466667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -97,10 +97,10 @@
             756
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.1058
+          "bright_fraction": 0.1062
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -108,10 +108,10 @@
             923
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0293
+          "bright_fraction": 0.036
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -119,10 +119,10 @@
             965
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0236
+          "bright_fraction": 0.0224
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -130,34 +130,34 @@
             1007
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.033
+          "bright_fraction": 0.0586
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1517
-        },
-        {
-          "text": "LICENSED CC BY 4.0",
-          "box": [
-            36,
-            1101,
-            1044,
-            1145
+            1049
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0437
+          "bright_fraction": 0.0403
+        },
+        {
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1111,
+            1044,
+            1141
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1293
         }
       ]
     },
     {
-      "seconds": 120.866667,
+      "seconds": 114.966667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -168,10 +168,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1059
+          "bright_fraction": 0.1062
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -179,10 +179,10 @@
             923
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0292
+          "bright_fraction": 0.036
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -190,10 +190,10 @@
             965
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0236
+          "bright_fraction": 0.0224
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -201,34 +201,34 @@
             1007
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.033
+          "bright_fraction": 0.0587
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1517
+          "bright_fraction": 0.0403
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0437
+          "bright_fraction": 0.129
         }
       ]
     },
     {
-      "seconds": 121.366667,
+      "seconds": 115.466667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -239,10 +239,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1054
+          "bright_fraction": 0.1062
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -250,10 +250,10 @@
             923
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0293
+          "bright_fraction": 0.0359
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -261,10 +261,10 @@
             965
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0236
+          "bright_fraction": 0.0224
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -272,105 +272,34 @@
             1007
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.0587
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.151
+          "bright_fraction": 0.0403
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1286
         }
       ]
     },
     {
-      "seconds": 121.866667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1054
-        },
-        {
-          "text": "KONIAG-GS.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0293
-        },
-        {
-          "text": "KONIAG.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0236
-        },
-        {
-          "text": "AWS.AMAZON.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0331
-        },
-        {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1059,
-            1044,
-            1103
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.151
-        },
-        {
-          "text": "LICENSED CC BY 4.0",
-          "box": [
-            36,
-            1101,
-            1044,
-            1145
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0436
-        }
-      ]
-    },
-    {
-      "seconds": 122.366667,
+      "seconds": 115.966667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -384,7 +313,7 @@
           "bright_fraction": 0.1054
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -392,10 +321,10 @@
             923
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0294
+          "bright_fraction": 0.0357
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -403,10 +332,10 @@
             965
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0236
+          "bright_fraction": 0.0223
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -414,34 +343,105 @@
             1007
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.0582
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.151
+          "bright_fraction": 0.0403
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1281
         }
       ]
     },
     {
-      "seconds": 122.866667,
+      "seconds": 116.466667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1054
+        },
+        {
+          "text": "ACADEMIC.OUP.COM",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0358
+        },
+        {
+          "text": "GITHUB.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0223
+        },
+        {
+          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0582
+        },
+        {
+          "text": "FISHERIES.NOAA.GOV",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.0402
+        },
+        {
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1111,
+            1044,
+            1141
+          ],
+          "background_median": 21.0,
+          "bright_fraction": 0.1281
+        }
+      ]
+    },
+    {
+      "seconds": 116.966667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -452,10 +452,10 @@
             756
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.1052
+          "bright_fraction": 0.1054
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -463,10 +463,10 @@
             923
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0293
+          "bright_fraction": 0.0355
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -474,10 +474,10 @@
             965
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0236
+          "bright_fraction": 0.0223
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -485,34 +485,34 @@
             1007
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.033
+          "bright_fraction": 0.0581
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.151
+          "bright_fraction": 0.0401
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1274
         }
       ]
     },
     {
-      "seconds": 123.366667,
+      "seconds": 117.466667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -523,10 +523,10 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1052
+          "bright_fraction": 0.1054
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -534,10 +534,10 @@
             923
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0292
+          "bright_fraction": 0.0354
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -545,10 +545,10 @@
             965
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0235
+          "bright_fraction": 0.0222
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -556,176 +556,34 @@
             1007
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0329
+          "bright_fraction": 0.0581
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1509
+          "bright_fraction": 0.0401
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0435
+          "bright_fraction": 0.1274
         }
       ]
     },
     {
-      "seconds": 123.866667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.105
-        },
-        {
-          "text": "KONIAG-GS.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0291
-        },
-        {
-          "text": "KONIAG.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0235
-        },
-        {
-          "text": "AWS.AMAZON.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0329
-        },
-        {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1059,
-            1044,
-            1103
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.1508
-        },
-        {
-          "text": "LICENSED CC BY 4.0",
-          "box": [
-            36,
-            1101,
-            1044,
-            1145
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0435
-        }
-      ]
-    },
-    {
-      "seconds": 124.366667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.105
-        },
-        {
-          "text": "KONIAG-GS.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0291
-        },
-        {
-          "text": "KONIAG.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0236
-        },
-        {
-          "text": "AWS.AMAZON.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0329
-        },
-        {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1059,
-            1044,
-            1103
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1507
-        },
-        {
-          "text": "LICENSED CC BY 4.0",
-          "box": [
-            36,
-            1101,
-            1044,
-            1145
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0435
-        }
-      ]
-    },
-    {
-      "seconds": 124.866667,
+      "seconds": 117.966667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -739,7 +597,7 @@
           "bright_fraction": 0.1051
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -747,10 +605,10 @@
             923
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0291
+          "bright_fraction": 0.0354
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -758,10 +616,10 @@
             965
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0235
+          "bright_fraction": 0.0223
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -769,34 +627,34 @@
             1007
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0329
+          "bright_fraction": 0.0581
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1505
+          "background_median": 18.0,
+          "bright_fraction": 0.0401
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0435
+          "bright_fraction": 0.1267
         }
       ]
     },
     {
-      "seconds": 125.366667,
+      "seconds": 118.466667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -806,246 +664,175 @@
             1044,
             756
           ],
-          "background_median": 18.0,
-          "bright_fraction": 0.105
-        },
-        {
-          "text": "KONIAG-GS.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0291
-        },
-        {
-          "text": "KONIAG.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0236
-        },
-        {
-          "text": "AWS.AMAZON.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0329
-        },
-        {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1059,
-            1044,
-            1103
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1505
-        },
-        {
-          "text": "LICENSED CC BY 4.0",
-          "box": [
-            36,
-            1101,
-            1044,
-            1145
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0435
-        }
-      ]
-    },
-    {
-      "seconds": 125.866667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.105
-        },
-        {
-          "text": "KONIAG-GS.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0291
-        },
-        {
-          "text": "KONIAG.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0236
-        },
-        {
-          "text": "AWS.AMAZON.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0329
-        },
-        {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1059,
-            1044,
-            1103
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1505
-        },
-        {
-          "text": "LICENSED CC BY 4.0",
-          "box": [
-            36,
-            1101,
-            1044,
-            1145
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0435
-        }
-      ]
-    },
-    {
-      "seconds": 126.366667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.105
-        },
-        {
-          "text": "KONIAG-GS.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0291
-        },
-        {
-          "text": "KONIAG.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0234
-        },
-        {
-          "text": "AWS.AMAZON.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0329
-        },
-        {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1059,
-            1044,
-            1103
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1505
-        },
-        {
-          "text": "LICENSED CC BY 4.0",
-          "box": [
-            36,
-            1101,
-            1044,
-            1145
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0435
-        }
-      ]
-    },
-    {
-      "seconds": 126.866667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 17.0,
+          "background_median": 19.0,
           "bright_fraction": 0.1051
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0291
+          "background_median": 19.0,
+          "bright_fraction": 0.0354
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0234
+          "background_median": 19.0,
+          "bright_fraction": 0.0222
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0579
+        },
+        {
+          "text": "FISHERIES.NOAA.GOV",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0399
+        },
+        {
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1111,
+            1044,
+            1141
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1266
+        }
+      ]
+    },
+    {
+      "seconds": 118.966667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.1051
+        },
+        {
+          "text": "ACADEMIC.OUP.COM",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0354
+        },
+        {
+          "text": "GITHUB.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0222
+        },
+        {
+          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.058
+        },
+        {
+          "text": "FISHERIES.NOAA.GOV",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0399
+        },
+        {
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1111,
+            1044,
+            1141
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1266
+        }
+      ]
+    },
+    {
+      "seconds": 119.466667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.105
+        },
+        {
+          "text": "ACADEMIC.OUP.COM",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0354
+        },
+        {
+          "text": "GITHUB.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0221
+        },
+        {
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -1053,34 +840,247 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.058
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1507
+          "bright_fraction": 0.0399
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1266
         }
       ]
     },
     {
-      "seconds": 127.366667,
+      "seconds": 119.966667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.105
+        },
+        {
+          "text": "ACADEMIC.OUP.COM",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0355
+        },
+        {
+          "text": "GITHUB.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0221
+        },
+        {
+          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.058
+        },
+        {
+          "text": "FISHERIES.NOAA.GOV",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0399
+        },
+        {
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1111,
+            1044,
+            1141
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1266
+        }
+      ]
+    },
+    {
+      "seconds": 120.466667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.105
+        },
+        {
+          "text": "ACADEMIC.OUP.COM",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0355
+        },
+        {
+          "text": "GITHUB.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.022
+        },
+        {
+          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.058
+        },
+        {
+          "text": "FISHERIES.NOAA.GOV",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0399
+        },
+        {
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1111,
+            1044,
+            1141
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1266
+        }
+      ]
+    },
+    {
+      "seconds": 120.966667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.105
+        },
+        {
+          "text": "ACADEMIC.OUP.COM",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0354
+        },
+        {
+          "text": "GITHUB.COM",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.022
+        },
+        {
+          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.058
+        },
+        {
+          "text": "FISHERIES.NOAA.GOV",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.0399
+        },
+        {
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1111,
+            1044,
+            1141
+          ],
+          "background_median": 15.0,
+          "bright_fraction": 0.1266
+        }
+      ]
+    },
+    {
+      "seconds": 121.466667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1094,7 +1094,7 @@
           "bright_fraction": 0.1053
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -1102,10 +1102,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0291
+          "bright_fraction": 0.0356
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -1113,10 +1113,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0234
+          "bright_fraction": 0.0221
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -1124,34 +1124,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.0583
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1507
+          "bright_fraction": 0.04
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1267
         }
       ]
     },
     {
-      "seconds": 127.866667,
+      "seconds": 121.966667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1165,7 +1165,7 @@
           "bright_fraction": 0.1053
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -1173,10 +1173,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0291
+          "bright_fraction": 0.0356
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -1184,10 +1184,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0234
+          "bright_fraction": 0.0221
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -1195,34 +1195,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.0583
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1507
+          "bright_fraction": 0.04
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1267
         }
       ]
     },
     {
-      "seconds": 128.366667,
+      "seconds": 122.466667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1236,7 +1236,7 @@
           "bright_fraction": 0.1054
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -1244,10 +1244,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0291
+          "bright_fraction": 0.0356
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -1255,10 +1255,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0234
+          "bright_fraction": 0.0221
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -1266,34 +1266,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.0583
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1507
+          "bright_fraction": 0.04
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1267
         }
       ]
     },
     {
-      "seconds": 128.866667,
+      "seconds": 122.966667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1304,10 +1304,10 @@
             756
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.1053
+          "bright_fraction": 0.1055
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -1315,10 +1315,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0291
+          "bright_fraction": 0.0356
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -1326,10 +1326,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0234
+          "bright_fraction": 0.0221
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -1337,34 +1337,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.0583
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1507
+          "bright_fraction": 0.04
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1267
         }
       ]
     },
     {
-      "seconds": 129.366667,
+      "seconds": 123.466667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1375,10 +1375,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1054
+          "bright_fraction": 0.1055
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -1386,10 +1386,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0291
+          "bright_fraction": 0.0356
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -1397,10 +1397,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0234
+          "bright_fraction": 0.0221
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -1408,34 +1408,34 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.0583
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1507
+          "bright_fraction": 0.04
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1267
         }
       ]
     },
     {
-      "seconds": 129.866667,
+      "seconds": 123.966667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1446,10 +1446,10 @@
             756
           ],
           "background_median": 21.0,
-          "bright_fraction": 0.1054
+          "bright_fraction": 0.1055
         },
         {
-          "text": "KONIAG-GS.COM",
+          "text": "ACADEMIC.OUP.COM",
           "box": [
             36,
             888,
@@ -1457,10 +1457,10 @@
             923
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0291
+          "bright_fraction": 0.0356
         },
         {
-          "text": "KONIAG.COM",
+          "text": "GITHUB.COM",
           "box": [
             36,
             930,
@@ -1468,10 +1468,10 @@
             965
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0234
+          "bright_fraction": 0.0221
         },
         {
-          "text": "AWS.AMAZON.COM",
+          "text": "RAW.GITHUBUSERCONTENT.COM",
           "box": [
             36,
             972,
@@ -1479,70 +1479,70 @@
             1007
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0331
+          "bright_fraction": 0.0583
         },
         {
-          "text": "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
+          "text": "FISHERIES.NOAA.GOV",
           "box": [
             36,
-            1059,
+            1014,
             1044,
-            1103
+            1049
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.1507
+          "bright_fraction": 0.04
         },
         {
-          "text": "LICENSED CC BY 4.0",
+          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            1101,
+            1111,
             1044,
-            1145
+            1141
           ],
           "background_median": 15.0,
-          "bright_fraction": 0.0436
+          "bright_fraction": 0.1267
         }
       ]
     }
   ],
   "ocr": [
     {
-      "seconds": 119.866667,
+      "seconds": 113.966667,
       "recognized": [
         "VISIT US AT ALASKAAIHQ.COM",
         "SOURCES",
-        "KONIAG-GS. COM",
-        "KONIAG.COM",
-        "AWS.AMAZON.COM",
-        "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED CC BY 4.0"
+        "ACADEMIC.OUP.COM",
+        "GITHUB.COM",
+        "RAW.GITHUBUSERCONTENT.COM",
+        "FISHERIES.NOAA. GOV",
+        "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0"
       ],
       "missing": []
     },
     {
-      "seconds": 124.866667,
+      "seconds": 118.966667,
       "recognized": [
         "VISIT US AT ALASKAAIHQ.COM",
         "SOURCES",
-        "KONIAG-GS. COM",
-        "KONIAG.COM",
-        "AWS.AMAZON.COM",
-        "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED CC BY 4.0"
+        "ACADEMIC.OUP.COM",
+        "GITHUB.COM",
+        "RAW.GITHUBUSERCONTENT.COM",
+        "FISHERIES. NOAA. GOV",
+        "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0"
       ],
       "missing": []
     },
     {
-      "seconds": 129.866667,
+      "seconds": 123.966667,
       "recognized": [
         "VISIT US AT ALASKAAIHQ.COM",
         "SOURCES",
-        "KONIAG-GS. COM",
-        "KONIAG.COM",
-        "AWS.AMAZON.COM",
-        "MINING BY MOONLIGHT BY KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED CC BY 4.0"
+        "ACADEMIC.OUP.COM",
+        "GITHUB.COM",
+        "RAW.GITHUBUSERCONTENT.COM",
+        "FISHERIES. NOAA. GOV",
+        "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0"
       ],
       "missing": []
     }

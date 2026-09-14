@@ -1,0 +1,101 @@
+{
+  "run_date": "2026-09-14",
+  "reviewed_at_utc": "2026-09-14T12:14:03.962700+00:00",
+  "role": "independent early native look critic",
+  "review_scope": "Only current native sheet and frames164,240,300 at1080x1920; approximately5.47,8.00,10.00seconds. Not a complete-film or final-panel judgment.",
+  "composition": "Dispatch0914",
+  "total_frames_reported": 3778,
+  "source_head": "aeeab7fa03f62bda2e20b668afab2b68ba3f223e",
+  "episode_last_commit": "404b8a2",
+  "art_plan_sha256": "2a0285b86804918a2aa662e69515453aab6c1a054ac51a1589a43ffd092b6f09",
+  "evidence": [
+    {
+      "path": "/tmp/alaska-dispatch-20260914/early_native/sheet.jpg",
+      "sha256": "5b892ff8a216ae8113e0f22d5bbeaaecf5ad1664ec71132b8ed52f776da1e07b"
+    },
+    {
+      "path": "/tmp/alaska-dispatch-20260914/early_native/frame_164.png",
+      "sha256": "7da67b8504c9ac94449349e8cacbe9727b1b88f1c083646831c518002c6d9e66"
+    },
+    {
+      "path": "/tmp/alaska-dispatch-20260914/early_native/frame_240.png",
+      "sha256": "68eece740c456f61a852aec107cb5ec855624c1194437655dedd51ab1d5dcea2"
+    },
+    {
+      "path": "/tmp/alaska-dispatch-20260914/early_native/frame_300.png",
+      "sha256": "cd06bfcd300042c3f690528af027802e486d6c01661d48873c4a10edf8cf0f27"
+    }
+  ],
+  "decision": "CONTINUE_NATIVE_RENDER",
+  "scoped_ship": true,
+  "continue": true,
+  "whole_film_ship": false,
+  "blocking_defects": [],
+  "six_question_taste": [
+    {
+      "question": 0,
+      "criterion": "Would a stranger stop scrolling on this frame?",
+      "verdict": "pass for sampled established opening view",
+      "evidence": "The large open testing question and oversized hand gripping a tangible control create a clear visual proposition. The high-contrast control reads at contact-sheet scale. This does not grade unseen frame0 or establish the complete opening motion."
+    },
+    {
+      "question": 1,
+      "criterion": "Character or characterized object present and feeling something?",
+      "verdict": "qualified pass",
+      "evidence": "A human hand actively grips the control in all three frames; the contact communicates deliberate handling. No face or strong facial emotion is visible in these close shots. This follows the art plan GripHand staging; later researcher performance remains unreviewed."
+    },
+    {
+      "question": 2,
+      "criterion": "Nameable visible action?",
+      "verdict": "pass",
+      "evidence": "Hold the lever; unfold the publication-date plate; uncover the pollock scope plate. The date is midway through its arrival at164 and settled by240; the lower place/species plate is exposed by300."
+    },
+    {
+      "question": 3,
+      "criterion": "Outlined, shaded and materially detailed?",
+      "verdict": "pass",
+      "evidence": "Control housing has metallic highlights, screws, detents and inset indicators; hand has finger contours, shading and cuff depth. Bench enamel gradients, floor seams, legs and contact shadows establish support. Navy outlines remain crisp in native frames."
+    },
+    {
+      "question": 4,
+      "criterion": "Spoken name or number drawn and honestly labeled?",
+      "verdict": "pass within sampled visibility",
+      "evidence": "September11th appears in the caption at164 while its date plate unfolds, and the plate is fully legible at240. Eastern Bering Sea pollock appears in the caption at240 and on the apparatus at300. SIMULATED / EDITORIAL SCHEMATIC remains clear. These stills do not measure the complete name-onset synchronization."
+    },
+    {
+      "question": 5,
+      "criterion": "Holds up beside the intended illustrated explainer reference?",
+      "verdict": "pass for sampled frames",
+      "evidence": "Coherent ink outlines, dimensional hand/control detail, restrained marine palette, architectural depth and readable type provide the intended illustrated-explainer finish. The window is sparse but supplies architectural depth rather than an empty output panel."
+    }
+  ],
+  "legibility": {
+    "pass": true,
+    "observations": [
+      "Question, settled date, place/species, simulation scope and captions are readable at full resolution and the supplied contact-sheet scale.",
+      "Captions remain inside their dark card without truncation, collision or competing overprinted labels.",
+      "The small date text at164 is an in-progress vertical unfold, not the settled typography;240 shows its fully legible state."
+    ]
+  },
+  "occlusion": {
+    "blocking": false,
+    "observations": [
+      "The settled date plate slightly covers the upper edge of the hand/control-grip silhouette at240and300, but the fingers, palm, lever and visible grip contact remain identifiable.",
+      "No apparatus plate enters the caption card; bench structure remains visually supported."
+    ],
+    "watch_item": "Check the actual lever motion strip for hand contact and larger transient plate occlusion; these three separated stills cannot establish every intervening frame."
+  },
+  "render_regressions": {
+    "observed": [],
+    "limits": "No blank output, missing glyphs, displaced captions, visibly detached hand, or obvious clipped essential label appears. No older-candidate comparison is claimed or used."
+  },
+  "art_plan_alignment": [
+    "Marine blue, alabaster, mint glass and warm grip accents match the recorded palette.",
+    "GripHand contact, metallic detents and the simulation scope support the intended schematic-only reading.",
+    "Tall window and floor planes extend the portrait architecture beyond the square-safe central argument."
+  ],
+  "next_step": "Let the native render continue. Review the complete fresh evidence pack and fastest-move strip before a final panel decision. No source fix is requested from these early frames.",
+  "files_changed": [
+    "out/dispatch/early_look_native_v1.json"
+  ]
+}

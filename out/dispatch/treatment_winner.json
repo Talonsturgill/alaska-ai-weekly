@@ -1,363 +1,288 @@
 {
-  "run_date": "2026-09-13",
-  "reviewed_at_utc": "2026-09-13T14:26:04.480194+00:00",
+  "run_date": "2026-09-14",
+  "judged_at_utc": "2026-09-14T11:12:23.260296+00:00",
   "role": "independent_directors_room_scorer",
-  "scope": "Phase 4.1 selection and concrete treatment repair only. No storyboard, VO lock or scene code.",
-  "winner": "dramatist",
-  "winner_title": "The Pen Still Has Work",
-  "verdict": "LOCK REVISED TREATMENT; BUILD AND RENDER PROOF STILL REQUIRED",
-  "locked_angle": "In the KGS workflows described by AWS, the machine’s finished output is still unfinished professional work.",
-  "stance": "Curious and appreciative of concrete preparation. The pen title names its pictured activity, never employment or preserved jobs.",
-  "rationale": "The Dramatist changes both material and professional verb near 80 seconds, has the clearest physical workrooms and a shelf pen that can gain real cap/contact states. Its draft does not pass unchanged. This replacement abandons delayed knowledge of the human role, ends the promised pair with the second action, and uses an independent ordinary prop action rather than an unchanged status label for the other loop.",
-  "scoring": {
-    "scale": "1-10 editorial assessments of submitted treatments, including defects; not measured retention or a film gate.",
-    "weights": {
-      "scroll_stop": 0.15,
-      "emotional_arc": 0.15,
-      "retention_120s": 0.3,
-      "fairness": 0.15,
-      "shelf_feasibility": 0.1,
-      "freshness": 0.1,
-      "stance_rotation": 0.05
-    },
-    "comparative_scores": [
-      {
-        "role": "dramatist",
-        "scores": {
-          "scroll_stop": 8.0,
-          "emotional_arc": 8.0,
-          "retention_120s": 6.0,
-          "fairness": 9.0,
-          "shelf_feasibility": 7.8,
-          "freshness": 8.2,
-          "stance_rotation": 9.0
-        },
-        "weighted_total": 7.6,
-        "strength": "Best two professional verbs near 80 seconds and three genuinely different workrooms.",
-        "deductions": "Human-role mystery paid early; several states only poses; long synthesis and credits inside story.",
-        "passes_unchanged": false
-      },
-      {
-        "role": "enthusiast",
-        "scores": {
-          "scroll_stop": 8.3,
-          "emotional_arc": 8.1,
-          "retention_120s": 5.3,
-          "fairness": 9.2,
-          "shelf_feasibility": 8.6,
-          "freshness": 7.6,
-          "stance_rotation": 8.5
-        },
-        "weighted_total": 7.475,
-        "strength": "Strongest fair credit for completed preparation and useful foreground reveal.",
-        "deductions": "Late READY placement repeats known information; mostly transformed slug; tail repeats boundary; submitted VO is not locked.",
-        "passes_unchanged": false
-      },
-      {
-        "role": "explainer",
-        "scores": {
-          "scroll_stop": 8.4,
-          "emotional_arc": 7.3,
-          "retention_120s": 4.8,
-          "fairness": 8.8,
-          "shelf_feasibility": 8.4,
-          "freshness": 7.4,
-          "stance_rotation": 8.5
-        },
-        "weighted_total": 7.12,
-        "strength": "Clearest separate retrieval/rules and generative drafting mechanisms.",
-        "deductions": "READY suffix arrives after its meaning; TypeSlug moves without changing; late label and disclaimer padding.",
-        "passes_unchanged": false
-      },
-      {
-        "role": "comedian",
-        "scores": {
-          "scroll_stop": 8.6,
-          "emotional_arc": 7.1,
-          "retention_120s": 4.8,
-          "fairness": 7.8,
-          "shelf_feasibility": 7.0,
-          "freshness": 8.0,
-          "stance_rotation": 8.0
-        },
-        "weighted_total": 6.865,
-        "strength": "Best immediate object comedy and economical drawer choreography.",
-        "deductions": "Employment implication; tag persistence is no payoff; mostly posed pen states; repeated late edit.",
-        "passes_unchanged": false
-      }
-    ]
-  },
+  "status": "binding_for_storyboard",
   "inputs": [
     {
-      "file": "out/dispatch/treatment_comedian.json",
-      "date_basis": "2026-09-13",
-      "sha256": "8e6ea683eeaffa5b6aa7a721fa1bf797b740826bc819cf973b8a12c676d9421a",
-      "read_in_full": true
+      "path": "out/dispatch/angle.json",
+      "sha256": "09dbeb5a9094aadc8eab48c9d950e5f4f3111adc460b39dc496348f5b426723f"
     },
     {
-      "file": "out/dispatch/treatment_dramatist.json",
-      "date_basis": "2026-09-13",
-      "sha256": "8ce5fdc70785dc872da429698e4051179d208f515e2404806c73806ab5cf5fc5",
-      "read_in_full": true
+      "path": "out/dispatch/verified_findings.json",
+      "sha256": "c22456d26204cf1e6f5e0588efd646d1d9982f495689c41a9bbf61ce4b6c819d"
     },
     {
-      "file": "out/dispatch/treatment_explainer.json",
-      "date_basis": "September 13 modification and current KGS content",
-      "sha256": "b1daa19ac7d8070476308f944cfc2e90b5686ec1865319edad62549ccd2fd000",
-      "read_in_full": true
+      "path": "out/dispatch/treatment_comedian.json",
+      "sha256": "bed421a66ec48d8c07f365eaa697e425998b5a3e42fe6c92b4a7efd99d2c2d64"
     },
     {
-      "file": "out/dispatch/treatment_enthusiast.json",
-      "date_basis": "2026-09-13",
-      "sha256": "005a885a1af420d1dcb47e86aa9922a17bcdcd5b9730e36ff6ed6d33bdd32d92",
-      "read_in_full": true
+      "path": "out/dispatch/treatment_dramatist.json",
+      "sha256": "27e983c59e5536b071604b6db7b7d5cd9981072f31bf74e63ff9a5d128a57736"
     },
     {
-      "file": "out/dispatch/treatment_challenge_comedian.json",
-      "date_basis": "2026-09-13",
-      "sha256": "8de46e16c904943cbe9212edd99cf68655816fea275c4225e3abaff7f20c38f7",
-      "read_in_full": true
+      "path": "out/dispatch/treatment_explainer.json",
+      "sha256": "350b165caf2e5e47d481ed129483dd130082bfc99866bdfabdccd144e7f6d9a9"
     },
     {
-      "file": "out/dispatch/treatment_challenge_dramatist.json",
-      "date_basis": "2026-09-13",
-      "sha256": "7b88561b5c0a988ba941843c539b0bccd432d15c5417c28e67a79ab4f51d43ad",
-      "read_in_full": true
+      "path": "out/dispatch/treatment_enthusiast.json",
+      "sha256": "4f625eaeedff9b4cb86fe6459af47b7fc62dc3cc9edd91dcda6f7b6addba75d9"
     },
     {
-      "file": "out/dispatch/treatment_challenge_explainer.json",
-      "date_basis": "2026-09-13",
-      "sha256": "11fbda5481774390a134a43f959487115c125131003632c34db04955f16a30b7",
-      "read_in_full": true
+      "path": "out/dispatch/treatment_challenge_comedian.json",
+      "sha256": "502f77d7afa3771a7ecb2a331d9653bfbf57f2c0448797840eaac9365145b3eb"
     },
     {
-      "file": "out/dispatch/treatment_challenge_enthusiast.json",
-      "date_basis": "2026-09-13",
-      "sha256": "776bcdd1b323be0931eb3395758999e07ea95c1557180db828134b3de6d6f02b",
-      "read_in_full": true
+      "path": "out/dispatch/treatment_challenge_dramatist.json",
+      "sha256": "e1ea04c33c75c6b64bed0ac84608a75ac6236809f3b2736e2eece503948fa58a"
+    },
+    {
+      "path": "out/dispatch/treatment_challenge_explainer.json",
+      "sha256": "159be2d8e8cbd1c11cfc73b037186843377d4d195700c7875cc66829d804b184"
+    },
+    {
+      "path": "out/dispatch/treatment_challenge_enthusiast.json",
+      "sha256": "6dc2d0cde385192903150ac65db3f2d8e6eeaee693b15f158c21f4f2e6fdd8b1"
     }
   ],
-  "mandatory_repairs_resolved": [
-    {
-      "blocker": "Human role was hidden or falsely treated as a late revelation.",
-      "resolution": "Show an ordinary professional hand in the first eight seconds and explicitly promise two different professional actions by 15 seconds. Human participation is never withheld."
-    },
-    {
-      "blocker": "READY suffix and persistent FIRST DRAFT counted as late discoveries.",
-      "resolution": "Retire READY as hero and all suffix installation scenes. FIRST DRAFT remains a continuous status obligation. The primary payoff is completion of a promised demonstration, not discovery of a hidden caveat."
-    },
-    {
-      "blocker": "Both loops answered the same broad question.",
-      "resolution": "The primary promises the pair of report examination and generated-section refinement. The separate secondary is only a physical cap reattachment: an ordinary object callback, with no claim about workflow outcomes. Its payoff does not supply either workflow answer."
-    },
-    {
-      "blocker": "Pen state list was mostly positions.",
-      "resolution": "Use five inspectable cap/nib/grip/contact configurations below. Travel, rotation, ownership language and a persistent collar do not count as state change."
-    },
-    {
-      "blocker": "Late synthesis consumed eleven seconds without new work.",
-      "resolution": "After the second action, allow at most a compact three-second moving comparison before returning to current-announcement scope. No long four-label tableau or second READY conclusion."
-    },
-    {
-      "blocker": "Credits occupied story time.",
-      "resolution": "Story remains 112-130 seconds, target120 with 200-220 future VO words. Append a separate12.3-second credit sequence."
-    }
-  ],
-  "revised_treatment": {
-    "logline": "One ordinary pen follows two useful office outputs into two different professional actions, making the boundary between preparation and completion visible.",
-    "cold_open_first_3_seconds": "A neat report rises from an illustrative output slot and gives one fully capped oxblood pen a short, elegant pivot. The cap stays attached. A rapid pullback finds the professional hand and a separate work surface by eight seconds. No failure cue or implied final award.",
-    "escalation": "The named KGS September11 announcement and Koniag/Kodiak connection locate the story. The film then enters an explicitly earlier AWS Army example. DORA retrieves records through APIs and prebuilt logic; a separate Jumpstarter uses LLM drafting. Both mechanisms are clear before58seconds. Their useful report and editable draft are granted full foreground space. The final act follows different professional work on each material, completing the pair near94seconds.",
-    "turn": "The strongest objection is that the machines really have completed useful preparation. Let both outputs be solid, organized and present while their machinery recedes. Then show refinement of a generated section and examination of a separate report. Neither contribution disappears; no bad result is needed.",
-    "button": {
-      "line": "When the output is ready, which job is finished?",
-      "image": "Match the opening pen silhouette, now posted and visibly used in the ordinary professional’s hand. Keep the report and still-labeled FIRST DRAFT as separate supporting materials. The earlier neutral ink mark survives; no signature or award."
-    },
-    "sight_gags": [
-      {
-        "at_s": 1,
-        "action": "The orderly report stack tips the fully capped pen through a tiny over-elegant pivot; the hand catches it normally.",
-        "source_limit": "Generic office-object physics only."
-      },
-      {
-        "at_s": 34,
-        "action": "Cabinet dividers perform one courteous accordion ripple while the documented retrieval explanation proceeds.",
-        "source_limit": "No extra database count, retrieval error or delay."
-      },
-      {
-        "at_s": 53,
-        "action": "An oversized FIRST DRAFT flag unfurls beyond a small binder jaw, then its blank tail curls neatly underneath.",
-        "source_limit": "Status stays readable throughout; nothing suggests a final document."
-      },
-      {
-        "at_s": 76,
-        "action": "The loose cap posts onto the rear of the pen with a small cushioned click under the hand’s pressure.",
-        "source_limit": "Ordinary cap handling, not a jam, repair or productivity event."
-      }
+  "winner": {
+    "role": "enthusiast",
+    "treatment": "Rehearsal Before the Season",
+    "title": "Rehearsal Before the Season",
+    "logline": "One portable research control lets a researcher explore two separate simulated pollock scenarios, then places the discovered policies and their predefined comparisons before the same next-test goals.",
+    "valence": "Earned curiosity and optimism about policy discovery as research.",
+    "why": "The enthusiast supplies the most usable central performance: a researcher handles one existing control through changing research states. It leads with the real accomplishment, has a physically continuous hero and a hopeful earned return, and is feasible with the current shelf. Its original smoothness detour fails the padding test and is removed in full. The winning film is the revised lever-led research rehearsal; the grafts improve its mechanism and argument without replacing its identity.",
+    "binding_changes": [
+      "Start inside the laboratory, with the apparatus explicitly labeled SIMULATED / EDITORIAL SCHEMATIC before the first harbor view.",
+      "Remove the entire smoother-policy-response animation, narration, calendar correction and corresponding gag. The Ricker catch/biomass reversal supplies the second movement.",
+      "Use two spatially separate experiment stations. Moving the same control changes the editorial research viewpoint; it does not transplant one trained policy. Each station introduces its own learned candidate and predefined comparison.",
+      "After the distinct reversal, give learned and predefined candidates the same visible next-test requirements. No scores, pass/fail lamps, approval marks, or operational launch.",
+      "Retain the affirmative research payoff: explicit alternatives worth comparing, with operational work ahead."
     ]
   },
-  "retention_plan": {
-    "act3_test": {
-      "name": "Two Outputs, Two Professional Actions",
-      "window_s": [
-        60,
-        96
-      ],
-      "strongest_fair_case": "An assembled report and editable generated section are completed preparation, so calling all work unfinished would unfairly erase what the tools did.",
-      "drawn_test": "At60-66seconds machinery recedes and the two prepared materials take the foreground. At66-82seconds the professional selects and neutrally refines generated language. At83-95seconds a different close view shows examination of the separate DORA report for determination. No error, delay, specific vendor decision or final approval is depicted.",
-      "what_changes_at80": "Switch from editing generated prose to examining gathered information, with a new material, gesture and camera scale.",
-      "nature": "Source-described workflow comparison illustrated editorially; not an empirical performance trial."
+  "judgment_by_pitch": {
+    "comedian": "Strongest original scroll-stop, gags and changing prop; equal-candidate test is valuable. A new trophy adds construction/readability cost and risks imputing researcher boosterism or repeating award/credential framing. Runner-up.",
+    "dramatist": "Best scale tension and separate basins. Toy-boat launch suspense is predictable, and learning routes risk an autonomous-navigation claim. Borrow spatial separation, not boat hero.",
+    "explainer": "Best mechanism and two-loop separation. Single inlet swap obscures separate experiments; tank-as-set weakens the throughline and the aquarium rim can become a long disclaimer. Borrow feedback cutaway.",
+    "enthusiast": "Best affirmative emotional arc, human continuity, manifest feasibility and fresh staging. Original retention fails at the smoothness correction; corrected equal-goal test earns Act3. Winner only with the binding revisions."
+  },
+  "casting": {
+    "hero_asset": "GearLever",
+    "hero_source": "video-engine/src/lib/props.tsx",
+    "manifest_basis": "ASSET_MANIFEST.md documents GearLever longThrow and accentColor, plus GripHand contact semantics. It is a schematic research control, never literal study hardware or autonomous fleet equipment.",
+    "supporting_assets": [
+      "GripHand",
+      "Character",
+      "QuestionToken",
+      "Simulated/EvidenceState",
+      "Stage3D/materials/FX",
+      "SwingSign/Nameplate"
+    ],
+    "dedupe_check": {
+      "command": "python3 scripts/dedupe.py check --entities \"Eastern Bering Sea pollock, Maia Kapur, Grant Adams, Marcus Lapeyrolerie, James Thorson, reinforcement learning, harvest policy\" --hero GearLever",
+      "result": "FRESH",
+      "last_two_heroes": [
+        "Sheet",
+        "PenAndDocument"
+      ]
     },
-    "primary_loop": {
-      "plant_s": 12,
-      "promise": "Follow these two useful outputs into the two different actions the professional performs.",
-      "partial_fulfillment_s": 82,
-      "partial_fulfillment": "The generated section receives a visible neutral refinement; the report action remains to be demonstrated.",
-      "payoff_s": 94,
-      "payoff": "The professional opens and examines the separate DORA report for determination, completing the promised pair. This is completion of the illustration, not completion of a procurement or an actual determination.",
-      "honesty": "Name the human role early. Both mechanisms and output types are explained before the midpoint. No secret source fact or late qualification is needed."
-    },
-    "secondary_loop": {
-      "plant_s": 49,
-      "promise": "A clearly detached cap and its matching rear posting socket form a small physical pairing: the cap will rejoin the pen when the hand prepares to use it.",
-      "plant_picture": "For one brief beat the hand turns the loose cap above the pen’s open rear socket, exposing matching shapes, then places it beside the pen and the film cuts onward. The cap is intact and moves freely.",
-      "payoff_s": 76,
-      "payoff": "The hand retrieves the cap and seats it on the pen’s rear in an ordinary deliberate action before the refinement gesture.",
-      "independence": "This answers where an ordinary prop component fits; it does not answer what the two professional jobs are. It is a physical comedy callback, not a new fact or claimed malfunction.",
-      "anti_wait_rule": "Never hold a cap or hand frozen between49and76seconds. Intervening shots cover other explanation. Montage does not represent literal elapsed review time; the cap never blocks output, review or a person. If this ordinary action is not unmistakably planted, the loop fails and must be revised before voice."
-    },
-    "payoff_separation_s": 18,
-    "throughline_object": {
-      "object": "One reusable pen generalized from PenAndDocument",
-      "identity": [
-        "Oxblood barrel",
-        "Broad silver collar",
-        "One asymmetric clip"
-      ],
-      "states": [
-        {
-          "at_s": 0,
-          "state": "Cap fully attached; nib concealed; no ink contact."
-        },
-        {
-          "at_s": 29,
-          "state": "Hand visibly unseats the cap axially, opening the attachment gap and beginning nib exposure."
-        },
-        {
-          "at_s": 58,
-          "state": "Cap fully detached beside the same pen; exposed nib visible and no mark. This changed assembly is present at the midpoint."
-        },
-        {
-          "at_s": 76,
-          "state": "Cap posted on the rear; wrapped grip contacts the barrel; nib above the surface. Length and attachment visibly change."
-        },
-        {
-          "at_s": 81,
-          "state": "Nib makes actual contact and deposits one neutral refinement stroke. Posted cap and the accumulating ink trace remain visible at94seconds and in the button."
-        }
-      ],
-      "state_proof": "Prove silhouette, cap gap, exposed nib, rear attachment, grip contact, nib contact and visible ink at phone scale. A camera transform or a relocated prop supplies no additional state.",
-      "cause": "Every cap and writing transition is visibly hand-driven. No hovering pen writes by itself."
-    },
-    "padding_test": [
+    "net_new_scope": "At most one reusable portable mounting frame. No new trophy, boat hero or fish portrait. Register any reusable asset change."
+  },
+  "staging": {
+    "physical_stages": [
       {
-        "beat": "60-66 complete preparation",
-        "why_needed": "Gives the strongest fair objection a concrete image; prevents unfinished from meaning failed."
+        "name": "Research wet laboratory",
+        "time_s": [
+          0,
+          50
+        ],
+        "purpose": "Laboratory-first hook and constant-recruitment station."
       },
       {
-        "beat": "66-82 generated section refinement",
-        "why_needed": "The editable material changes under a person’s hand. This is a different operation from generating it."
+        "name": "Separate experimental basin bay",
+        "time_s": [
+          50,
+          74
+        ],
+        "purpose": "Distinct doorway, geometry and newly introduced learned/predefined comparison."
       },
       {
-        "beat": "83-95 report examination",
-        "why_needed": "Completes the promised pair using a distinct material and verb; prevents DORA from being mistaken for a generative drafting tool."
-      },
-      {
-        "beat": "After95",
-        "rule": "One compact comparison, current-announcement scope once, then the physical button. No prolonged label installation, repeated disclaimer, status-survival reveal or static admiration."
+        "name": "Harbor-side testing apron",
+        "time_s": [
+          74,
+          118
+        ],
+        "purpose": "Dock plane, warehouse and open water surround matched next-test lanes."
       }
     ],
-    "retention_claim_limit": "This is a designed procedural demonstration with a separate object callback. It does not promise a surprising factual revelation or certify that viewers will watch two minutes."
-  },
-  "grafts": [
-    {
-      "from": "enthusiast",
-      "keep": "At60-66seconds the successful housings recede while report and draft remain large, solid and useful.",
-      "cut": "Late READY placement and repeated inscription."
-    },
-    {
-      "from": "explainer",
-      "keep": "Separate API/prebuilt logic and LLM/Bedrock operations before58seconds; later distinct material-specific professional actions.",
-      "cut": "READY hero and delayed FOR REVIEW suffix."
-    },
-    {
-      "from": "comedian",
-      "keep": "One restrained capped-pen pivot, courteous dividers and oversized FIRST DRAFT gag.",
-      "cut": "Employment title, unchanged-label payoff and prolonged idle-pen suspense."
+    "four_shot_scales": [
+      "Extreme close-up of hand meeting brass grip",
+      "Close-up of researcher reaction with control still in frame",
+      "Medium two-rule mechanism or basin relationship",
+      "Extreme wide full harbor beside the small research station"
+    ],
+    "camera_heights": [
+      "Low bench or dock waterline view",
+      "High overhead experiment view"
+    ],
+    "palette": {
+      "sky": "#B8D9DE",
+      "ground": "#354B56",
+      "hero": "#D6A64D",
+      "accent": "#EF8659",
+      "shadow": "#142D3B",
+      "water": "#226B78"
     }
-  ],
-  "feasibility_and_freshness": {
-    "verified_shelf": "PenAndDocument exists but currently only hovers and trembles; it has no detached-cap, grip-contact or writing states. GripHand, paper-office background, records machinery, sheets, identity plates and Alaska map exist.",
-    "one_bounded_gap": "Generalize the existing pen silhouette into a reusable cap/nib/grip/contact/ink rig. Add dimensional treatment and neutral annotation support; preserve old unsigned-deal behavior for prior episodes. The cap assembly is new reusable capability, not an already available shelf feature.",
-    "sets": [
-      "Tall receding cabinet records room with intake chute",
-      "Low open drafting studio with section rails and no cabinets",
-      "Angled professional review office with document stand, lamp and broad desk"
-    ],
-    "supporting_set": "Corporate briefing wall is supplemental; it is not counted as one of the three real work sets.",
-    "scales": [
-      "Macro object/contact",
-      "Close hand and material",
-      "Medium professional and desk",
-      "Wide room",
-      "Overhead comparison"
-    ],
-    "last_two_verified_from_state": [
-      {
-        "date": "2026-09-11",
-        "hero": "FlightCrate",
-        "stance": "mixed",
-        "look": "Clinic cream, spruce, berry; cargo traversal over a missing road."
-      },
-      {
-        "date": "2026-09-12",
-        "hero": "Sheet",
-        "stance": "celebratory",
-        "look": "Lilac, ivory, citron research notebook and assemble-build staging."
-      }
-    ],
-    "freshness_decision": "A long pen with physical cap and ink states, steel-blue/oxblood office rooms, lateral contact actions and a curious stance changes hero, geometry, setting, mechanism and valence. Supporting paper must not become another notebook hero.",
-    "art_direction_handoff": "Root owns the full art plan. Favor raking practical desk light and dimensional dark cabinets around bright material; no status traffic-light moral coding."
   },
-  "runtime_contract": {
-    "story_target_s": 120,
-    "story_allowed_s": [
+  "retention_and_timing": {
+    "spoken_target_seconds": 118,
+    "spoken_allowed_seconds": [
       112,
       130
     ],
-    "future_vo_words": [
+    "vo_target_words": 210,
+    "vo_allowed_words": [
       200,
       220
     ],
-    "future_vo_target_words": 212,
-    "credits_s": 12.3,
-    "target_total_s": 132.3,
-    "retiming": "Actual natural voice alignment determines final times. Preserve primary payoff at85seconds or later and at least8seconds between distinct payoffs. No timing or dollar claim enters narration."
+    "tail_seconds": 1,
+    "credits_seconds": 12.3,
+    "total_target_seconds": 131.3,
+    "correction": "The 112–130-second requirement applies to the spoken read. Credits are appended after speech and a one-second tail; they are not counted toward spoken duration.",
+    "acts": [
+      {
+        "time_s": [
+          0,
+          26
+        ],
+        "words": 46,
+        "name": "The rehearsal can discover policies",
+        "new_argument": "Learning harvest choices is the accomplishment, beyond predicting a fish count."
+      },
+      {
+        "time_s": [
+          26,
+          50
+        ],
+        "words": 43,
+        "name": "First scenario earns two outcomes",
+        "new_argument": "A breeding-stock advantage does not remove the timing question."
+      },
+      {
+        "time_s": [
+          50,
+          74
+        ],
+        "words": 43,
+        "name": "A separate biological assumption reverses the stock result",
+        "new_argument": "Different biological assumptions change the tradeoff; this is not a repair or continuation of the first policy."
+      },
+      {
+        "time_s": [
+          74,
+          101
+        ],
+        "words": 49,
+        "name": "The same test for both rules",
+        "new_argument": "Discovering a candidate does not yet show it improves a management choice. A conventional alternative deserves the same comparison, under explicit goals and assumptions. Model outcomes do not establish real income or bycatch performance. Neither candidate is approved or rejected."
+      },
+      {
+        "time_s": [
+          101,
+          118
+        ],
+        "words": 29,
+        "name": "What the rehearsal earned",
+        "new_argument": "Useful research creates testable choices before real seasons; the next comparison is the payoff."
+      }
+    ],
+    "act3_fair_test": {
+      "scene": "The Same Test for Both Rules",
+      "span_s": [
+        74,
+        101
+      ],
+      "objection_at_full_strength": "The model may favor choices because of its own assumptions; a learned alternative may offer no management advantage over a predefined rule.",
+      "drawn_answer": "Both candidate types face the same explicit goals with equally prominent unresolved next-test space. The camera does not reward one token. The control remains useful because it brings a candidate and scenario-specific evidence into a fair comparison.",
+      "prohibition": "No generic row of unlit failure sockets and no 20-second recital that models are not reality."
+    },
+    "throughline_object": {
+      "object": "One portable brass GearLever",
+      "states": [
+        "0s: caught on explicitly labeled simulation bench",
+        "26s: engaged with constant-case feedback apparatus",
+        "50s: lifted clear; first case remains behind; carried to separate new experiment",
+        "74s: held at harbor apron as both candidate types face identical goals",
+        "103s: docked at TEST AGAIN, research plaque open; state holds through button"
+      ]
+    },
+    "two_loops": [
+      {
+        "name": "What has the rehearsal earned?",
+        "plant_s": 16,
+        "payoff_s": 103,
+        "span_s": 87,
+        "payoff": "The next fair comparison is possible: alternatives to investigate, not an operational winner."
+      },
+      {
+        "name": "Does the first breeding-stock advantage survive a different recruitment assumption?",
+        "plant_s": 43,
+        "payoff_s": 70,
+        "span_s": 27,
+        "payoff": "The separately labeled stock-linked experiment has higher catches and lower spawning biomass versus its own comparison."
+      }
+    ],
+    "payoff_separation_seconds": 33,
+    "alignment_rule": "Measure actual spoken plant and the first visible/spoken revealing fact after voice alignment. Protect the secondary loop minimum 25-second span; a later restatement cannot move its payoff.",
+    "padding_test": "The reversal changes the evidence; the matched-goal test changes what follows from it. Removing either makes a 90-second film worse. Cut travel and repeated limitations first. Do not add words to explain policy smoothness."
   },
-  "source_and_cultural_contract": [
-    "KGS announcement September11 is current; earlier Army examples visibly carry AWS CASE STUDY and EARLIER ARMY PROCUREMENT.",
-    "DORA does API/prebuilt-logic reporting; separate Jumpstarter tools do LLM first drafts. No serial combined procurement pipeline.",
-    "Professional review and refinement appear early and concretely. Narration may name general human approval; illustration never fabricates an actual approval or vendor finding.",
-    "All document actions and office hardware are schematic. No real UEI, private record, fabricated error, performance result, elapsed delay, employment claim or cost arithmetic.",
-    "Koniag and KGS are named corporations. Corporate Kodiak connection only; no tribal-government, cultural imagery or character identity inference.",
-    "The announcement gives no quantified Alaska return. Say this once with IN THIS ANNOUNCEMENT scope; never infer no benefit."
+  "grafts": [
+    {
+      "from": "explainer",
+      "beat": "Visible feedback to learned candidate beside fixed predefined rule; 10–26s."
+    },
+    {
+      "from": "dramatist",
+      "beat": "Separate experiment spaces with fresh candidate identities; brief harbor scale reveal; 50–78s."
+    },
+    {
+      "from": "comedian",
+      "beat": "Learned and predefined rules receive identical goal frames and unresolved next-test space; 78–101s."
+    }
   ],
-  "remaining_build_proof": [
-    "Phone-visible cap/nib/contact states",
-    "Independent physical cap plant/payoff without an invented wait",
-    "Two professional actions clear and separate",
-    "Three physically different sets and at least four scales",
-    "Natural voice timing and separate credits",
-    "Current claim contracts and full rendered source/visual gates"
+  "sight_gags": [
+    {
+      "time_s": 2,
+      "gag": "Two-handed catch of oversized brass grip; tiny bench support squeaks. Laboratory context visible."
+    },
+    {
+      "time_s": 39,
+      "gag": "Physical catch-swings label swings into eyeline; researcher ducks. Label motion is not a plotted catch series."
+    },
+    {
+      "time_s": 109,
+      "gag": "TEST AGAIN handle rebounds gently; researcher patiently corrects it. No approval lamp."
+    }
   ],
-  "no_storyboard_or_scene_code_written": true
+  "rejected_ideas": [
+    "Entire smooth-policy/calendar correction detour.",
+    "New trophy/crown or attributed researcher boosterism.",
+    "Toy-boat learning routes, launch suspense or fleet implications.",
+    "Single-tank inlet morph that hides separate experiments.",
+    "Dark income/bycatch sockets implying failure.",
+    "Invented curves, counts, biomass volumes or numerical catch levels.",
+    "Generic operational-limit sermon after the distinct scenario reversal."
+  ],
+  "claim_guards": [
+    "Keep SIMULATED and each recruitment case legible during its findings; apparatus is disclosed editorial schematic.",
+    "Constant recruitment: large annual catch swings and higher spawning biomass than its comparison.",
+    "Stock-linked/Ricker recruitment: higher catches and lower spawning biomass than its own comparison.",
+    "Do not imply scenario two fixes scenario one or that one learned policy was deployed/retrained between scenes.",
+    "No exact reward formulation claim; repository settings were not tied conclusively to published plots.",
+    "No quota change, commercial outcome, autonomous fleet, household-income improvement, bycatch result or overall sustainability claim.",
+    "People are illustrative, not documented stakeholder approval or opposition.",
+    "Closing policy priorities are an engagement question, not evidence of local consultation."
+  ],
+  "next_step": "Write the single storyboard around this binding treatment, then validate word counts, measured VO timing, retention alignment, staging and evidence status before rendering. This verdict writes no storyboard or code and authorizes no publication.",
+  "inputs_freshness": "All 10 angle/findings/treatment/challenge inputs passed run_guard checks; original SHA256 values preserved below."
 }
