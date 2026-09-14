@@ -1,36 +1,64 @@
 {
-  "run_date": "2026-09-13",
-  "thesis": "In the KGS workflows described by AWS, the machine's finished output is still unfinished professional work.",
-  "valence": "Curious with earned credit for concrete preparation tools. The film examines useful work and a real human handoff without a claimed productivity verdict.",
-  "falsifiability": "A workflow trace showing DORA reports or Jumpstarter sections used as final determinations or approvals without the documented professional action would contradict the claimed boundary. Attribute the workflow to AWS rather than certifying compliance in all production uses.",
-  "supporting_facts": [
-    "The September 11th KGS announcement describes Wingman support and links its foundations to earlier Army automation.",
-    "AWS describes DORA retrieving compliance records via APIs and applying prebuilt logic, then returning a report for professional review and determination.",
-    "Separate Jumpstarter tools generate initial sections through LLMs, and people refine and approve those sections."
-  ],
-  "fair_counterpoint": "An assembled record and an editable draft are concrete preparation outputs worth crediting. Their arrival doesn't independently establish net productivity or a completed procurement. Do not invent an error, review delay or failure to dramatize the boundary.",
-  "alaska_connection": "KGS is a subsidiary of Koniag, the regional Alaska Native corporation associated with Kodiak. This announcement does not quantify Alaska returns. No tribal-government or cultural characterization.",
-  "second_movement": "Establish retrieval/rules and generative drafting before the midpoint. Act 3 follows what the professional actually does with each output, then the ending changes the viewer's test from whether a page exists to which job is finished.",
-  "story_question": "What's still unfinished when the machine's output is ready?",
-  "numbers_decision": "Cut c15 stopwatch and c16/c17 portfolio totals. They distract from the output-versus-decision boundary and invite unproved timing arithmetic. Dates remain provenance.",
-  "runner_up_angles": [
+  "role": "analyst_a",
+  "run_date": "2026-09-14",
+  "working_title": "The Catch Between Years",
+  "thesis": "This pollock study demonstrates a way to explore harvest choices before real seasons. Under two recruitment assumptions, learned policies produce different combinations of catch and breeding-stock outcomes. That earns further comparison against explicit management goals without establishing a winning real-world rule.",
+  "thesis_status": "An interpretation of demonstrated simulation results, not a claim of operational readiness or better real-world management.",
+  "evidence": [
     {
-      "angle": "A strongest-case workflow engineering",
-      "why_lost": "Editorial ranking is not falsifiable; shared speeding claim overextended task evidence. Retain concrete professional boundary."
+      "claims": [
+        "F03",
+        "F05",
+        "F06",
+        "F07"
+      ],
+      "point": "The researchers let an agent learn harvest policies through repeated simulated seasons and compare them with a predefined rule. The useful new capability is policy discovery, beyond predicting a fish count."
     },
     {
-      "angle": "B better starting point",
-      "why_lost": "Better lacks a measured quality axis. Retain assembled report and editable draft as tangible outputs."
+      "claims": [
+        "F09",
+        "F10",
+        "F11"
+      ],
+      "point": "When recruitment is constant, the learned policy leaves more spawning biomass than the comparison while producing large annual catch swings. This creates a concrete question about the timing of fishing opportunity."
     },
     {
-      "angle": "C measured speed and head start",
-      "why_lost": "No independent net-productivity test; DORA timing cannot measure generative drafting. Retain early technical distinction."
+      "claims": [
+        "F12",
+        "F13"
+      ],
+      "point": "When recruitment instead depends on the stock through a Ricker relationship, the policy is smoother and catches more while retaining less spawning biomass. The biological assumption changes the tradeoff."
     }
   ],
-  "cross_challenge_evidence": [
-    "angle_a_challenge.json",
-    "angle_b_challenge.json",
-    "angle_c_challenge.json"
+  "strongest_counterpoint": "A simulation can reveal the behavior of its own assumptions without showing how a real fishery would respond. Reward implementation isn't verified as identical to the settings behind the published plots. These comparisons don't establish household income, bycatch performance or overall sustainability.",
+  "who_is_served": "Alaska fishing businesses and communities benefit if researchers can examine candidate rules before they reach operational decisions. Researchers and managers gain alternatives to investigate. No particular policy is shown to serve all those groups, and no stakeholder approval is established.",
+  "valence": "Earned curiosity and optimism about policy discovery as research.",
+  "falsifying_observation": "Reproduction or a corrected analysis removes the reported scenario-specific differences in catch and spawning biomass. Conventional alternatives performing equally well would limit superiority claims, which this film does not make.",
+  "second_movement": "The constant-recruitment case shows higher spawning biomass with large annual catch swings. The separate stock-linked case reverses the biomass outcome: higher catches and lower spawning biomass relative to its comparison. These distinct simulated experiments expose how biological assumptions change the tradeoff. A smoother policy response is not evidence of steadier annual catches.",
+  "narration_allocation": {
+    "target_words": "200 to 220",
+    "opening_capability": 35,
+    "constant_recruitment_case": 55,
+    "ricker_reversal": 55,
+    "people_and_operational_status": 45,
+    "closing_question": 20
+  },
+  "proposed_engagement_question": "Which should a pollock policy have to demonstrate first: steadier catches, more breeding fish, or a better balance across both?",
+  "execution_constraints": [
+    "Keep each recruitment case labeled and describe all outcomes as simulated.",
+    "Show separate catch and spawning-biomass schematic measures without invented data curves.",
+    "Don't suggest historical observations make the future experiment an observed fishery outcome.",
+    "Don't turn the final question into a claim that local people were consulted."
   ],
-  "synthesized_by": "Orchestrator after all three independent proposals and full cross-challenge round"
+  "status": "locked",
+  "decision_reason": "All three challenges favored A narrowed to demonstrated research use. Graft B\u2019s affirmative policy-discovery opening. Reject C\u2019s smoother-catch framing and any suggestion that the second experiment fixes the first.",
+  "alternatives_considered": [
+    "B sharpened the affirmative case but used a superiority-based falsifier and an unsupported catch-stability comparison.",
+    "C made the tradeoff concrete but conflated policy-response smoothness with steadier annual catches."
+  ],
+  "cross_challenges": [
+    "angle_challenge_a.json",
+    "angle_challenge_b.json",
+    "angle_challenge_c.json"
+  ]
 }

@@ -1,554 +1,298 @@
 {
-  "run_date": "2026-09-13",
-  "validated_at_utc": "2026-09-13T13:51:01.151427+00:00",
-  "validator_role": "Independent adversarial validator",
-  "fact_check_verdict": "GO WITH ATTRIBUTION AND SCOPE LIMITS",
+  "run_date": "2026-09-14",
+  "validated_at_utc": "2026-09-14T10:58:48.259257+00:00",
   "claims": [
     {
       "id": "c1",
-      "status": "verified-attributed-primary",
-      "spoken": "Koniag Government Services posted its announcement on September 11th.",
-      "on_screen": "SEPTEMBER 11TH",
-      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+      "status": "verified-primary",
+      "spoken": "The paper was published September 11, 2026.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "This is the company page announcement date, not a launch date, award date or new contract."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "KGS ANNOUNCEMENT"
-        ],
-        "on_screen_none": [
-          "LAUNCHED SEPTEMBER 11TH",
-          "NEW CONTRACT AWARD"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "background_context": false
+      "source_fact_id": "F01"
     },
     {
       "id": "c2",
-      "status": "verified-attributed-primary",
-      "spoken": "KGS says it supports the Chief Digital and Artificial Intelligence Office on Wingman.",
-      "on_screen": "WINGMAN",
-      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+      "status": "verified-primary",
+      "spoken": "Kapur, Adams and Thorson list Alaska Fisheries Science Center affiliations.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "Attribute support to KGS. Name CDAO as Chief Digital and Artificial Intelligence Office; do not call it the Army CDAO."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "KONIAG GOVERNMENT SERVICES",
-          "KGS ANNOUNCEMENT"
-        ],
-        "on_screen_none": [
-          "ARMY CDAO"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "label": "Koniag Government Services",
-      "background_context": false
+      "source_fact_id": "F02"
     },
     {
       "id": "c3",
       "status": "verified-primary",
-      "spoken": "KGS is a subsidiary of Koniag.",
-      "on_screen": "KONIAG SUBSIDIARY",
-      "source": "https://www.koniag.com/our-investments/portfolio/",
+      "spoken": "The policy experiment models Eastern Bering Sea pollock.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "Parent investments page describes the portfolio as subsidiary companies; the portfolio names KGS under government contracting. Corporate ownership, not tribal-government operation."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "KONIAG",
-          "KONIAG GOVERNMENT SERVICES"
-        ],
-        "on_screen_none": [
-          "TRIBAL GOVERNMENT",
-          "TRIBAL AI"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag.com/our-investments/"
-      ],
-      "background_context": true
+      "source_fact_id": "F03"
     },
     {
       "id": "c4",
       "status": "verified-primary",
-      "spoken": "Koniag is the regional Alaska Native corporation associated with the Kodiak region.",
-      "on_screen": "KODIAK REGION",
-      "source": "https://www.koniag.com/about-us/",
+      "spoken": "Its cases are illustrative simulations awaiting further operational development.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "Name Koniag as the regional corporation. Do not conflate KGS, Koniag, individual shareholders, or tribal governments. No Native culture imagery or characterization."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "KONIAG",
-          "ALASKA NATIVE CORPORATION"
-        ],
-        "on_screen_none": [
-          "TRIBAL GOVERNMENT",
-          "NATIVE TRIBES BUILD AI"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "background_context": true
+      "source_fact_id": "F04"
     },
     {
       "id": "c5",
-      "status": "verified-attributed-primary",
-      "spoken": "Wingman supports custom digital assistants for repetitive office work.",
-      "on_screen": "DIGITAL ASSISTANTS",
-      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+      "status": "verified-primary",
+      "spoken": "The reinforcement-learning agent learns a harvest policy from repeated simulated interactions.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+        "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/train_agent.py"
+      ],
       "requires": [
-        "This is the announced platform purpose, not audited output quality or a new deployment count. Restrict visualization to documents and clerical office workflows."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "KGS ANNOUNCEMENT"
-        ],
-        "on_screen_none": [
-          "AUTONOMOUS WEAPONS",
-          "TARGETING SYSTEM"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "background_context": false
+      "source_fact_id": "F05"
     },
     {
       "id": "c6",
-      "status": "verified-attributed-primary",
-      "spoken": "KGS names contracting, logistics and financial management among the workflows.",
-      "on_screen": "CONTRACTING",
-      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
+      "status": "verified-primary",
+      "spoken": "Training feedback rewards outcomes and guides policy updates.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+        "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/r_utils.R"
+      ],
       "requires": [
-        "Named workflow categories only. Do not imply every process is deployed, succeeds or runs without review."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "LOGISTICS",
-          "FINANCIAL MANAGEMENT",
-          "KGS ANNOUNCEMENT"
-        ],
-        "on_screen_none": []
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "background_context": false
+      "source_fact_id": "F06"
     },
     {
       "id": "c7",
-      "status": "verified-attributed-primary",
-      "spoken": "Earlier Army procurement work included DORA, the Determination of Responsibility Assistant.",
-      "on_screen": "DORA",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "The comparison evaluates a predefined harvest rule through management strategy evaluation.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "Introduce this as earlier Army procurement work described in the AWS vendor case study; do not frame it as a new September 11th launch."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "EARLIER ARMY PROCUREMENT",
-          "AWS CASE STUDY"
-        ],
-        "on_screen_none": [
-          "DORA LAUNCHED SEPTEMBER 11TH"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "background_context": true
+      "source_fact_id": "F07"
     },
     {
       "id": "c8",
-      "status": "verified-attributed-primary",
-      "spoken": "A contracting professional emails a vendor identifier in the subject line.",
-      "on_screen": "VENDOR IDENTIFIER",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "The operating model uses historical observations to condition simulated population dynamics.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+        "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/r_utils.R"
+      ],
       "requires": [
-        "The identifier is a Unique Entity Identifier, or UEI. Use a generic labeled token; no real vendor record, contact or invented valid identifier."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "EMAIL SUBJECT",
-          "AWS CASE STUDY"
-        ],
-        "on_screen_none": [
-          "ENTER A PERSON’S ID"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "background_context": true
+      "source_fact_id": "F08"
     },
     {
       "id": "c9",
-      "status": "verified-attributed-primary",
-      "spoken": "DORA retrieves compliance data through APIs, including SAM.gov data.",
-      "on_screen": "API LOOKUPS",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "The experiment compares constant recruitment with Ricker stock-linked recruitment.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+        "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/r_utils.R"
+      ],
       "requires": [
-        "Show documented data retrieval. Do not invent which additional databases are queried or imply direct access to private tax returns."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "SAM.GOV",
-          "AWS CASE STUDY"
-        ],
-        "on_screen_none": [
-          "PRIVATE TAX RETURNS"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "background_context": true
+      "source_fact_id": "F09"
     },
     {
       "id": "c10",
-      "status": "verified-attributed-primary",
-      "spoken": "Prebuilt decision logic helps assemble a standardized report.",
-      "on_screen": "STANDARDIZED REPORT",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "Under constant recruitment, the learned policy produces large annual catch swings.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "DORA uses prebuilt decisioning algorithms. This is distinct from the separately described generative drafting tools. Do not visualize a language model inventing compliance evidence."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "PREBUILT LOGIC",
-          "AWS CASE STUDY"
-        ],
-        "on_screen_none": [
-          "DORA WRITES CONTRACTS",
-          "DORA LANGUAGE MODEL"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "background_context": true
+      "source_fact_id": "F10"
     },
     {
       "id": "c11",
-      "status": "verified-attributed-primary",
-      "spoken": "The report goes to a professional for review and determination.",
-      "on_screen": "HUMAN REVIEW",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "That constant-recruitment policy maintains higher spawning biomass than the comparison.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "A human contracting professional remains responsible for review and determination. No automatic award or guaranteed legal-compliance claim."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "AWS CASE STUDY"
-        ],
-        "on_screen_none": [
-          "AUTOMATIC AWARD",
-          "NO HUMAN REVIEW",
-          "GUARANTEED COMPLIANCE"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "background_context": true
+      "source_fact_id": "F11"
     },
     {
       "id": "c12",
-      "status": "verified-attributed-primary",
-      "spoken": "Separate Jumpstarter tools use large language models through Amazon Bedrock.",
-      "on_screen": "JUMPSTARTER",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "Under Ricker recruitment, the learned harvest policy is smoother.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "Keep generative drafting distinct from DORA data and rules automation. Identify the tools as earlier Army work, not newly measured Wingman results."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "GENERATIVE DRAFTING",
-          "AWS CASE STUDY",
-          "EARLIER ARMY PROCUREMENT"
-        ],
-        "on_screen_none": [
-          "DORA GENERATES DRAFTS"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "background_context": true
+      "source_fact_id": "F12"
     },
     {
       "id": "c13",
-      "status": "verified-attributed-primary",
-      "spoken": "Users provide inputs to produce first drafts of contracting documents.",
-      "on_screen": "FIRST DRAFT",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "The Ricker result sustains higher catches while retaining less spawning biomass than the comparison.",
+      "on_screen": "",
+      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "sources": [
+        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
+      ],
       "requires": [
-        "A first draft is not a final contract, approval or award. Depict draft status persistently on every generated document."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "JUMPSTARTER",
-          "AWS CASE STUDY"
-        ],
-        "on_screen_none": [
-          "FINAL CONTRACT",
-          "CONTRACT AWARDED"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "background_context": true
+      "source_fact_id": "F13"
     },
     {
       "id": "c14",
-      "status": "verified-attributed-primary",
-      "spoken": "People refine and approve the generated sections.",
-      "on_screen": "REFINE AND APPROVE",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
+      "on_screen": "",
+      "source": "https://www.fisheries.noaa.gov/species/alaska-pollock",
+      "sources": [
+        "https://www.fisheries.noaa.gov/species/alaska-pollock"
+      ],
       "requires": [
-        "This is the KGS-described workflow in the AWS case study, not independently audited accuracy. Keep the professional visible after drafting."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "HUMAN REVIEW",
-          "AWS CASE STUDY"
-        ],
-        "on_screen_none": [
-          "NO REVIEW NEEDED"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "background_context": true
+      "source_fact_id": "F14"
     },
     {
       "id": "c15",
-      "status": "verified-attributed-primary",
-      "spoken": "AWS reports that the DORA task fell from roughly an hour to two minutes.",
-      "on_screen": "ROUGHLY 1 HOUR TO 2 MINUTES",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "Pollock management also addresses salmon bycatch, important to commercial and subsistence fisheries.",
+      "on_screen": "",
+      "source": "https://www.fisheries.noaa.gov/species/alaska-pollock",
+      "sources": [
+        "https://www.fisheries.noaa.gov/species/alaska-pollock"
+      ],
       "requires": [
-        "OPTIONAL. If used, attribute in the same spoken span to AWS and visibly to AWS CASE STUDY. Limit to the DORA responsibility-check task in earlier Army procurement work. The duration of human review is not separately established. Never expand it to the whole procurement or award."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": false,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "AWS CASE STUDY",
-          "EARLIER ARMY PROCUREMENT"
-        ],
-        "on_screen_none": [
-          "CONTRACT AWARDED IN 2 MINUTES",
-          "WINGMAN SAVES 58 MINUTES",
-          "30 TIMES FASTER"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "label": "AWS vendor case study",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "independent_performance_validation": false,
-      "numeric_scope": "DORA responsibility-check task only",
-      "verbatim_source": "By reducing a one-hour task to just 2 minutes",
-      "conditional_display_contract": {
-        "when_used": true,
-        "on_screen_all": [
-          "DORA",
-          "RESPONSIBILITY CHECK",
-          "AWS CASE STUDY",
-          "EARLIER ARMY PROCUREMENT"
-        ],
-        "spoken_contains": [
-          "AWS",
-          "roughly"
-        ],
-        "on_screen_none": [
-          "ENTIRE PROCUREMENT",
-          "AUTOMATIC AWARD"
-        ]
-      },
-      "background_context": true
+      "source_fact_id": "F15"
     },
     {
       "id": "c16",
-      "status": "verified-attributed-primary",
-      "spoken": "AWS reports about 37 million dollars in annual cost avoidance across the earlier Army automation portfolio.",
-      "on_screen": "ABOUT $37M A YEAR",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
+      "status": "verified-primary",
+      "spoken": "Fishing businesses rely on stable science-based management to plan their seasons.",
+      "on_screen": "",
+      "source": "https://www.fisheries.noaa.gov/feature-story/charting-future-fisheries-independent-surveys",
+      "sources": [
+        "https://www.fisheries.noaa.gov/feature-story/charting-future-fisheries-independent-surveys"
+      ],
       "requires": [
-        "OPTIONAL. If used, say ABOUT and ANNUAL COST AVOIDANCE, visibly name the Army portfolio, and attribute to AWS. KGS release says more than $37M for earlier Army work. These are related vendor reports, not independent audits. Never Wingman-only, DORA-only, profit, cash savings, Alaska revenue or shareholder distributions."
+        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
       ],
       "contract": {
-        "must_ship": false,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "AWS CASE STUDY",
-          "EARLIER ARMY PROCUREMENT"
-        ],
-        "on_screen_none": [
-          "WINGMAN SAVINGS",
-          "DORA SAVED $37M",
-          "$37M FOR ALASKA"
-        ]
+        "must_ship": false
       },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "label": "AWS vendor case study",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "independent_performance_validation": false,
-      "numeric_scope": "Broader earlier Army automation portfolio",
-      "conditional_display_contract": {
-        "when_used": true,
-        "on_screen_all": [
-          "ANNUAL COST AVOIDANCE",
-          "ARMY AUTOMATION PORTFOLIO",
-          "AWS CASE STUDY"
-        ],
-        "spoken_contains": [
-          "AWS",
-          "about",
-          "cost avoidance"
-        ],
-        "on_screen_none": [
-          "CASH SAVINGS",
-          "ALASKA REVENUE",
-          "SHAREHOLDER DISTRIBUTIONS"
-        ]
-      },
-      "background_context": true
-    },
-    {
-      "id": "c17",
-      "status": "verified-attributed-primary",
-      "spoken": "AWS reports 687,000 labor hours saved annually across the Army automation portfolio.",
-      "on_screen": "687,000 HOURS A YEAR",
-      "source": "https://aws.amazon.com/solutions/case-studies/us-army-koniag-gov-services/",
-      "requires": [
-        "OPTIONAL. If used, attribute to AWS and visibly scope to the broader Army automation portfolio. Body states 687,000 in two locations; headline contains typo 687,00. Do not reproduce the typo, extrapolate jobs, or assign all hours to DORA or Wingman."
-      ],
-      "contract": {
-        "must_ship": false,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "AWS CASE STUDY",
-          "EARLIER ARMY PROCUREMENT"
-        ],
-        "on_screen_none": [
-          "DORA SAVED 687,000 HOURS",
-          "WINGMAN SAVED 687,000 HOURS"
-        ]
-      },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "label": "AWS vendor case study",
-      "corroborating_sources": [
-        "https://www.koniag-gs.com/case-studies/koniag-government-services-and-aws-transform-u-s-army-procurement-through-intelligent-automation/"
-      ],
-      "independent_performance_validation": false,
-      "numeric_scope": "Broader Army automation portfolio",
-      "conditional_display_contract": {
-        "when_used": true,
-        "on_screen_all": [
-          "ARMY AUTOMATION PORTFOLIO",
-          "AWS CASE STUDY"
-        ],
-        "spoken_contains": [
-          "AWS",
-          "annually"
-        ],
-        "on_screen_none": [
-          "JOBS ELIMINATED",
-          "ALASKA HOURS SAVED"
-        ]
-      },
-      "background_context": true
-    },
-    {
-      "id": "c18",
-      "status": "verified-attributed-primary",
-      "spoken": "The announcement gives no Wingman contract value or quantified Alaska return.",
-      "on_screen": "ALASKA RETURN UNQUANTIFIED",
-      "source": "https://www.koniag-gs.com/koniag-government-services-supports-dow-wingman-ai-expansion-to-advance-enterprise-automation/",
-      "requires": [
-        "Scope absence to this announcement. No inference of no benefit, no jobs or no contract. Do not turn Army cost avoidance into money flowing to Alaska."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": false,
-        "on_screen_all": [
-          "IN THIS ANNOUNCEMENT"
-        ],
-        "on_screen_none": [
-          "NO ALASKA BENEFIT",
-          "NO ALASKA JOBS",
-          "CASH TO KODIAK"
-        ]
-      },
-      "reviewed_at_utc": "2026-09-13T13:51:01.151427+00:00",
-      "background_context": false
+      "source_fact_id": "F16"
     }
   ],
   "kill_list": [
-    "New September 11th Wingman launch or contract award",
-    "Any quantified Alaska jobs, cash return or shareholder distribution",
-    "DORA or Wingman alone saved the broader Army portfolio totals",
-    "An entire procurement or contract award takes two minutes",
-    "AI alone produced every reported saving",
-    "DORA is the generative Jumpstarter model",
-    "Tribal-government operation or Native culture imagery",
-    "Audited or guaranteed performance"
+    "No operational adoption, quota change, autonomous fleet deployment or observed improvement in commercial catches established.",
+    "Do not generalize constant-recruitment biomass gains to Ricker outcomes.",
+    "Do not call higher catches profit, revenue, sustainability or proof of ecological benefit.",
+    "Do not confuse survey biomass, spawning biomass, catch and quota.",
+    "Do not state this fixes salmon bycatch: bycatch is background context, absent from verified modeled outcomes.",
+    "Do not state all authors are Alaska-based: AFSC affiliations are Seattle and Kapur lists present address PNNL.",
+    "Do not label arbitrary animated curves as published data; use unscaled schematic comparisons.",
+    "Do not describe MSE as automatically learning its harvest rule.",
+    "Do not infer fisher enthusiasm, opposition or stakeholder approval; none independently located.",
+    "Do not conflate the separate forecasting and spatial cases with RL catch-policy performance."
   ],
   "limitations": [
-    "GO only for the fresh attributed company announcement and separately labeled earlier Army clerical-workflow example.",
-    "The KGS-hosted AWS case study reproduces the AWS account. Cross-host agreement is not independent performance validation.",
-    "No independent government performance audit or second independent primary source for DORA timing was located. Optional performance figures must remain vendor-attributed or be cut.",
-    "AWS body supports 687,000, while its headline has 687,00. Do not infer precision, jobs, cash recovered, or Wingman-specific savings.",
-    "No Wingman contract value, local deployment, Alaska jobs, shareholder distribution, independent accuracy rate, or new launch date is established by the announcement.",
-    "The first-person source framing of corporate identity must not become tribal-government, pan-Native, cultural or community sentiment claims.",
-    "No military operational capability, targeting, weapons, battlefield outcome or protected-data claim is approved.",
-    "DORA is described through APIs and prebuilt decision logic; only the separate Jumpstarter tools have an explicit LLM/generative drafting mechanism.",
-    "Current claims_contract_check.py does not enforce on_screen_none or conditional_display_contract. It also checks on_screen_all unconditionally even when must_ship is false. Final source-route, narration and rendered visual review must enforce negative and conditional obligations.",
-    "The AWS account labels CDAO imprecisely as an Army office. Use Chief Digital and Artificial Intelligence Office without the Army qualifier, following the fresh KGS release."
-  ],
-  "quote_policy": "No quotation selected for narration. The short verbatim_source timing fragment exists only to verify optional c15. Paraphrase all approved spoken copy."
+    "Current public r_utils.R computes realized catch minus a spawning-biomass shortfall penalty. The plotting source labels imported historical result datasets catch only. Treat code as corroboration of simulation mechanism, not exact proof of reward settings that produced Figure4. No code was run; no numerical results independently reproduced.",
+    "Publisher canonical normal open currently fails, but web search returned lengthy complete source sections including dated masthead, Case3, results and limitations. Reproducibility repository and raw implementation files fetched separately."
+  ]
 }

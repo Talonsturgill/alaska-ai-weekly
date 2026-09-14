@@ -1,0 +1,56 @@
+{
+  "analyst": "C",
+  "run_date": "2026-09-14",
+  "working_title": "A Smoother Catch Has a Cost",
+  "one_thesis": "This pollock experiment earns AI a place in comparing harvest choices: it exposes that steadier catches and more breeding fish can point in different directions, so Alaska should judge a learned policy on both outcomes before calling it better.",
+  "claim_type": "Editorial inference grounded in two distinct simulated recruitment assumptions; no claim of operational adoption or observed fleet benefit.",
+  "evidence": [
+    {
+      "facts": [
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "point": "Researchers trained a harvest policy through simulated interactions and compared it with a predefined rule. This is a concrete capacity to explore choices before a real season."
+    },
+    {
+      "facts": [
+        "F09",
+        "F10",
+        "F11"
+      ],
+      "point": "With constant recruitment, the learned policy generated large annual catch swings while maintaining higher spawning biomass than the comparison."
+    },
+    {
+      "facts": [
+        "F09",
+        "F12",
+        "F13"
+      ],
+      "point": "With stock-linked Ricker recruitment, the learned policy was smoother and sustained higher catches while retaining less spawning biomass than the comparison. The benefit and its accompanying cost change together."
+    },
+    {
+      "facts": [
+        "F16"
+      ],
+      "point": "NOAA says fishing businesses need stable science-based management to plan seasons. Catch variation therefore deserves attention, without pretending the study measured income or business outcomes."
+    }
+  ],
+  "strongest_fair_counterpoint": "These are illustrative cases awaiting operational development. The model has not demonstrated an improvement in the real fishery, and less spawning biomass relative to the comparison does not by itself establish depletion or an unsafe stock. A useful simulation result can justify further testing without settling an acceptable harvest policy.",
+  "who_is_served": "Fishery managers and scientists get explicit outcomes to compare. Fishing businesses and coastal residents get a clearer question about season-to-season stability and the breeding stock. No stakeholder endorsement is asserted. Salmon bycatch matters in actual management but this study does not supply its answer.",
+  "valence": "Curious with earned optimism: a concrete advance in policy experimentation, with a substantive choice about what success means.",
+  "falsifying_observation": "A matched comparison across both stated recruitment assumptions showing the learned policy simultaneously reduced annual catch variation and increased spawning biomass relative to the predefined rule would refute the proposed tension. Evidence that the reported constant-recruitment case did not combine catch swings with higher spawning biomass, or that the Ricker case did not combine smoother policy with less spawning biomass, would also break this account.",
+  "second_movement": {
+    "initial_reveal": "Begin with the constant-recruitment case: the breeding stock looks better while annual catches swing. Let the viewer register why one favorable measure is incomplete.",
+    "earned_turn": "Then change the recruitment assumption, explicitly labelled as a separate experiment. The catch pattern smooths and catches rise, but the breeding stock is lower than the comparison. The apparent problem solved in the first half creates a new judgment in the second.",
+    "resolution": "Show catch consistency and spawning biomass as separate outcomes that a management choice must weigh. End on which combination should count as an acceptable policy, with the simulation status clear throughout.",
+    "why_120_seconds": "The viewer must understand learning from repeated simulated seasons, see the first tradeoff, then revise that understanding when recruitment changes. The second comparison advances the argument rather than repeating a generic caution.",
+    "eventual_narration_target_words": [
+      200,
+      220
+    ]
+  },
+  "visual_guardrail": "Any animated catch or biomass comparisons must remain unscaled schematics. Keep recruitment assumptions and each comparison baseline explicit; never imply that the two experiments form one observed time series.",
+  "research_used": "Fresh verified_findings.json and brand worldview only; no new research."
+}

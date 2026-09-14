@@ -1,0 +1,45 @@
+{
+  "analyst": "B",
+  "proposed_thesis": "Alaska should treat reinforcement learning as a way to discover more harvest choices, then test those choices against the season stability and breeding stock its fishery needs. This paper earns that next research step because the learned rules reveal materially different tradeoffs under two stock assumptions.",
+  "thesis_type": "Qualified affirmative, research opportunity with a specific test",
+  "evidence": [
+    {
+      "claim_ids": [
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "point": "A learned rule can be searched through repeated simulated seasons rather than specified once for the comparison."
+    },
+    {
+      "claim_ids": [
+        "F09",
+        "F10",
+        "F11"
+      ],
+      "point": "With constant recruitment, the learned policy retains more spawning biomass but swings catch sharply between years. The comparison gives up some biomass while delivering steadier catches."
+    },
+    {
+      "claim_ids": [
+        "F12",
+        "F13"
+      ],
+      "point": "With stock-linked Ricker recruitment, the learned policy is smoother and harvests more, but leaves less spawning biomass than the comparison. A different stock assumption changes what looks attractive."
+    }
+  ],
+  "strongest_counterpoint": "These examples compare specific rules inside simplified simulated populations. They do not show that RL beats a sufficiently improved conventional rule, and catch or spawning-biomass advantages alone do not establish a policy people could live with. The new method may simply locate costs that a narrower objective does not price.",
+  "who_is_served": "Alaska fishery managers choosing research priorities, industry participants whose season plans depend on annual stability, and Alaskans who need a clear distinction between a useful scientific tool and a management decision.",
+  "valence": "Optimistic about discovering alternatives before real seasons bear the consequences. Skepticism is earned by the opposite tradeoffs in the two cases, not by the AI label.",
+  "falsifier": "The thesis would fail if conventional harvest rules, given comparable design effort, meet the same explicit catch-stability and spawning-biomass requirements as well as every learned alternative across plausible stock dynamics. Evidence that the apparent gains disappear when those requirements are added would also remove the case for this research priority.",
+  "second_movement": "Move from how the agent learns to what changes when the virtual ocean changes. First make catch stability and spawning biomass visibly different outcomes. Then switch from constant recruitment to stock-linked recruitment and show that even the direction of the biomass tradeoff changes. This second movement earns two minutes because it turns a generic AI victory claim into an informed choice about which future to test.",
+  "narration_budget": "200 to 220 words: roughly45 for publication, fishery and learning mechanism;65 for constant-recruitment contrast;45 for Ricker reversal;45 to60 for stakes, operational status and question.",
+  "earned_ending_question": "What annual catch swings should a promising new harvest rule have to avoid before Alaska tests it further?",
+  "guardrails": [
+    "No numerical chart or invented simulated trajectories. Use labeled schematic direction comparisons.",
+    "Do not claim the comparison represents every conventional rule.",
+    "Do not imply this research addresses salmon bycatch. Adding that separate issue may overload the limited narration.",
+    "No measured commercial benefits or policy adoption. The result is an illustrative research demonstration.",
+    "Do not assert a particular reward formula generated the plotted results; repository reward and dataset labels differ."
+  ]
+}

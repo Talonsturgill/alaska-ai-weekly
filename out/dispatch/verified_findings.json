@@ -1,0 +1,222 @@
+{
+  "run_time_utc": "2026-09-14T10:58:48.259257+00:00",
+  "verified_findings": [
+    {
+      "story_title": "Pollock simulations expose the choices inside an AI harvest policy",
+      "paper_title": "Neural network AI models address foundational topics in fisheries science, including forecasting and harvest optimization",
+      "authors": [
+        "Maia S Kapur",
+        "Grant Adams",
+        "Marcus Lapeyrolerie",
+        "James T Thorson"
+      ],
+      "confidence": "high for scoped qualitative statements",
+      "primary_source": true,
+      "is_in_window": true,
+      "sources": [
+        {
+          "id": "S1",
+          "url": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+          "label": "Kapur et al., ICES Journal of Marine Science",
+          "pub_date": "2026-09-11",
+          "primary": true,
+          "fetched": true,
+          "access": "Full publisher text obtained through exact fsag176 Results search; normal open redirects to inaccessible CDN."
+        },
+        {
+          "id": "S2",
+          "url": "https://github.com/mkapur/deep-fish",
+          "label": "Authors reproducibility repository",
+          "primary": true,
+          "fetched": true,
+          "background_context": true
+        },
+        {
+          "id": "S3",
+          "url": "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/r_utils.R",
+          "label": "Published repository simulation and reward source",
+          "primary": true,
+          "fetched": true,
+          "background_context": true
+        },
+        {
+          "id": "S4",
+          "url": "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/train_agent.py",
+          "label": "Published repository PPO training source",
+          "primary": true,
+          "fetched": true,
+          "background_context": true
+        },
+        {
+          "id": "S5",
+          "url": "https://www.fisheries.noaa.gov/species/alaska-pollock",
+          "label": "NOAA Alaska pollock background",
+          "primary": true,
+          "fetched": true,
+          "background_context": true
+        },
+        {
+          "id": "S6",
+          "url": "https://www.fisheries.noaa.gov/feature-story/charting-future-fisheries-independent-surveys",
+          "label": "NOAA survey framework background",
+          "pub_date": "2026-09-03",
+          "primary": true,
+          "fetched": true,
+          "background_context": true
+        }
+      ],
+      "safe_claims": [
+        {
+          "id": "F01",
+          "fact": "The paper was published September 11, 2026.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F02",
+          "fact": "Kapur, Adams and Thorson list Alaska Fisheries Science Center affiliations.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F03",
+          "fact": "The policy experiment models Eastern Bering Sea pollock.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F04",
+          "fact": "Its cases are illustrative simulations awaiting further operational development.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F05",
+          "fact": "The reinforcement-learning agent learns a harvest policy from repeated simulated interactions.",
+          "sources": [
+            "S1",
+            "S4"
+          ]
+        },
+        {
+          "id": "F06",
+          "fact": "Training feedback rewards outcomes and guides policy updates.",
+          "sources": [
+            "S1",
+            "S3"
+          ]
+        },
+        {
+          "id": "F07",
+          "fact": "The comparison evaluates a predefined harvest rule through management strategy evaluation.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F08",
+          "fact": "The operating model uses historical observations to condition simulated population dynamics.",
+          "sources": [
+            "S1",
+            "S3"
+          ]
+        },
+        {
+          "id": "F09",
+          "fact": "The experiment compares constant recruitment with Ricker stock-linked recruitment.",
+          "sources": [
+            "S1",
+            "S3"
+          ]
+        },
+        {
+          "id": "F10",
+          "fact": "Under constant recruitment, the learned policy produces large annual catch swings.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F11",
+          "fact": "That constant-recruitment policy maintains higher spawning biomass than the comparison.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F12",
+          "fact": "Under Ricker recruitment, the learned harvest policy is smoother.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F13",
+          "fact": "The Ricker result sustains higher catches while retaining less spawning biomass than the comparison.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "F14",
+          "fact": "NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
+          "sources": [
+            "S5"
+          ]
+        },
+        {
+          "id": "F15",
+          "fact": "Pollock management also addresses salmon bycatch, important to commercial and subsistence fisheries.",
+          "sources": [
+            "S5"
+          ]
+        },
+        {
+          "id": "F16",
+          "fact": "Fishing businesses rely on stable science-based management to plan their seasons.",
+          "sources": [
+            "S6"
+          ]
+        }
+      ],
+      "quote": {
+        "text": "the case study methods are examples and are not final",
+        "source": "S1",
+        "verified_verbatim": true
+      },
+      "strongest_fair_counterpoint": "Editorial inference: a simulated policy can improve an objective while shifting costs to annual catch stability or the breeding stock. A higher catch is not the same as a healthier stock, and neither measures salmon bycatch or a household income outcome.",
+      "forbidden_inferences": [
+        "No operational adoption, quota change, autonomous fleet deployment or observed improvement in commercial catches established.",
+        "Do not generalize constant-recruitment biomass gains to Ricker outcomes.",
+        "Do not call higher catches profit, revenue, sustainability or proof of ecological benefit.",
+        "Do not confuse survey biomass, spawning biomass, catch and quota.",
+        "Do not state this fixes salmon bycatch: bycatch is background context, absent from verified modeled outcomes.",
+        "Do not state all authors are Alaska-based: AFSC affiliations are Seattle and Kapur lists present address PNNL.",
+        "Do not label arbitrary animated curves as published data; use unscaled schematic comparisons.",
+        "Do not describe MSE as automatically learning its harvest rule.",
+        "Do not infer fisher enthusiasm, opposition or stakeholder approval; none independently located.",
+        "Do not conflate the separate forecasting and spatial cases with RL catch-policy performance."
+      ],
+      "code_caveat": "Current public r_utils.R computes realized catch minus a spawning-biomass shortfall penalty. The plotting source labels imported historical result datasets catch only. Treat code as corroboration of simulation mechanism, not exact proof of reward settings that produced Figure4. No code was run; no numerical results independently reproduced.",
+      "editorial_recommendation": "Use constant recruitment example as the central tension, then distinctly label Ricker as evidence that stock assumptions change the tradeoff. End with operational limits and the people who must judge acceptable annual stability.",
+      "publication_fetch_caveat": "Publisher canonical normal open currently fails, but web search returned lengthy complete source sections including dated masthead, Case3, results and limitations. Reproducibility repository and raw implementation files fetched separately."
+    }
+  ],
+  "dropped": [
+    {
+      "story_title": "Under-ice modem fieldwork",
+      "reason": "Not selected for this scoped validator task; no further validation undertaken."
+    }
+  ],
+  "stats": {
+    "input_count": 2,
+    "verified_count": 1,
+    "drop_rate": "50% scoped selection"
+  },
+  "recommend_broaden_window": true,
+  "broadening_note": "Validator template flag because fewer than3stories; not a requirement to broaden this single-story film."
+}

@@ -1,0 +1,25 @@
+{
+  "role": "analyst_a",
+  "run_date": "2026-09-14",
+  "working_title": "The Catch Between Years",
+  "thesis": "This pollock experiment makes reinforcement learning useful to Alaska as a way to discover and examine harvest tradeoffs: changing the assumed arrival of young fish changes which benefit the learned policy buys and what it gives up.",
+  "thesis_status": "An interpretation of demonstrated simulation results, not a claim of operational readiness or better real-world management.",
+  "evidence": [
+    {"claims": ["F03", "F05", "F06", "F07"], "point": "The researchers let an agent learn harvest policies through repeated simulated seasons and compare them with a predefined rule. The useful new capability is policy discovery, beyond predicting a fish count."},
+    {"claims": ["F09", "F10", "F11"], "point": "When recruitment is constant, the learned policy leaves more spawning biomass than the comparison while producing large annual catch swings. This creates a concrete question about the timing of fishing opportunity."},
+    {"claims": ["F12", "F13"], "point": "When recruitment instead depends on the stock through a Ricker relationship, the policy is smoother and catches more while retaining less spawning biomass. The biological assumption changes the tradeoff."}
+  ],
+  "strongest_counterpoint": "A simulation can reveal the behavior of its own assumptions without showing how a real fishery would respond. Reward implementation isn't verified as identical to the settings behind the published plots. These comparisons don't establish household income, bycatch performance or overall sustainability.",
+  "who_is_served": "Alaska fishing businesses and communities benefit if researchers can examine candidate rules before they reach operational decisions. Researchers and managers gain alternatives to investigate. No particular policy is shown to serve all those groups, and no stakeholder approval is established.",
+  "valence": "Earned optimism about the research capability. The paper makes a difficult management question experimentally inspectable. Its value survives the absence of a single winning policy.",
+  "falsifying_observation": "If reproduction or a corrected analysis showed that the learned policies didn't differ meaningfully from the predefined rule, or that the described change in catch-versus-spawning-biomass tradeoffs vanished under the stated recruitment cases, this thesis would fail. Operational superiority is deliberately outside the thesis.",
+  "second_movement": "Begin with the attractive constant-recruitment result: a learned rule retains more breeding fish, yet catches swing between years. The second movement changes the biological assumption and removes the easy conclusion that AI necessarily trades stability for stock protection. Now harvest is smoother and larger, but less breeding biomass remains. That reversal earns the full two minutes: the decision isn't simply whether to accept AI. It's which tradeoffs deserve further testing under a fishery's objectives.",
+  "narration_allocation": {"target_words": "200 to 220", "opening_capability": 35, "constant_recruitment_case": 55, "ricker_reversal": 55, "people_and_operational_status": 45, "closing_question": 20},
+  "proposed_engagement_question": "Which should a pollock policy have to demonstrate first: steadier catches, more breeding fish, or a better balance across both?",
+  "execution_constraints": [
+    "Keep each recruitment case labeled and describe all outcomes as simulated.",
+    "Show separate catch and spawning-biomass schematic measures without invented data curves.",
+    "Don't suggest historical observations make the future experiment an observed fishery outcome.",
+    "Don't turn the final question into a claim that local people were consulted."
+  ]
+}
