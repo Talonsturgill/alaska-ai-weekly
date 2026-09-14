@@ -4,14 +4,14 @@
     {
       "id": "s1",
       "url": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "label": "Kapur et al., ICES Journal of Marine Science",
+      "label": "ICES Journal of Marine Science",
       "pub_date": "2026-09-11",
       "primary": true,
       "fetched": true,
       "access": "Full publisher text obtained through exact fsag176 Results search; normal open redirects to inaccessible CDN.",
-      "title": "Kapur et al., ICES Journal of Marine Science",
-      "publisher": "Kapur et al., ICES Journal of Marine Science",
-      "outlet": "Kapur et al., ICES Journal of Marine Science",
+      "title": "ICES Journal of Marine Science",
+      "publisher": "ICES Journal of Marine Science",
+      "outlet": "ICES Journal of Marine Science",
       "claims": [
         "c1",
         "c2",
@@ -27,7 +27,7 @@
         "c12",
         "c13"
       ],
-      "used_in_film": false,
+      "used_in_film": true,
       "status": "verified",
       "verified_at_utc": "2026-09-14T10:58:48.259257+00:00"
     },
@@ -61,7 +61,7 @@
         "c8",
         "c9"
       ],
-      "used_in_film": false,
+      "used_in_film": true,
       "status": "verified",
       "verified_at_utc": "2026-09-14T10:58:48.259257+00:00"
     },
@@ -78,7 +78,7 @@
       "claims": [
         "c5"
       ],
-      "used_in_film": false,
+      "used_in_film": true,
       "status": "verified",
       "verified_at_utc": "2026-09-14T10:58:48.259257+00:00"
     },
@@ -96,7 +96,7 @@
         "c14",
         "c15"
       ],
-      "used_in_film": false,
+      "used_in_film": true,
       "status": "verified",
       "verified_at_utc": "2026-09-14T10:58:48.259257+00:00"
     },
@@ -114,7 +114,7 @@
       "claims": [
         "c16"
       ],
-      "used_in_film": false,
+      "used_in_film": true,
       "status": "verified",
       "verified_at_utc": "2026-09-14T10:58:48.259257+00:00"
     }

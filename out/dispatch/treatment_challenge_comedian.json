@@ -1,78 +1,9 @@
 {
-  "reviewer": "COMEDIAN",
-  "created_at_utc": "2026-09-13T14:16:06.952269+00:00",
-  "read_all_four": [
-    "treatment_comedian.json",
-    "treatment_dramatist.json",
-    "treatment_explainer.json",
-    "treatment_enthusiast.json"
-  ],
-  "verdict": "No treatment passes the retention contract unchanged. Recommend DRAMATIST as the base, with ENTHUSIAST's strongest full-credit output beat. Its separate professional actions and explicit Alaska-return limit need fewer factual repairs than the other pitches. The loop and hero-state issues still require revision before selection is final.",
-  "shared_failure": {
-    "ready_reveal": "READY FOR REVIEW is legible as soon as the first professional reviews anything. A later inscription, desk pullback, or placement of READY can summarize the argument but cannot count as a new factual payoff.",
-    "real_act3": "The usable Act 3 is a sourced workflow comparison: show successful preparation, then the different professional actions on the two outputs. It is an illustrative test of the task boundary, not an observed production trial or proof of net productivity.",
-    "object_states": "Moving an unchanged pen or slug among stations does not provide four or five visible physical states. Each pitch needs an explicit construction/contact/mark change, or must admit that it has fewer states.",
-    "runtime": "Reserve 112-130 seconds for narration, then append 12.3 seconds of credits. A 120-second narration plan therefore runs 132.3 seconds in total. Credits cannot occupy the final seven seconds of the nominal 120."
-  },
-  "peer_challenges": [
-    {
-      "role": "DRAMATIST",
-      "sag_at80": "The 79-second switch from draft refinement to examining a DORA report is a useful change of material and professional verb. The likely sag is 91-102: the overhead synthesis repeats what the two actions have established unless it adds a concrete comparison. Shorten or give this span a new evidentiary job.",
-      "act3_test": "Best existing backbone: preparation succeeds at 58-69, draft refinement follows at 69-79, then report examination at 79-91. This preserves useful machine work while identifying professional work. Label both gestures as illustrative; source-described review does not establish this exact desk choreography.",
-      "object_change": "Capped to uncapped and pen contact making a neutral annotation are substantive. Parked horizontally and turned toward another report are positions. The cold open also separates a cap while state zero calls the pen capped. Resolve the assembly state and demonstrate at least four genuinely distinguishable states; the current five-state count is inflated.",
-      "primary_loop": "The 4-second question is already answered by the 69-79 refinement scene. Paying the same broad question again at 90 with DORA is a second example, not an unanswered primary loop.",
-      "secondary_loop": "Sections awaiting refinement is concrete, but it is nested inside the same human-work answer as the primary. It is not sufficiently independent as written.",
-      "payoff_separation": "Declared 78 and 90 gives 12 seconds, formally enough. Semantically the broad primary is paid by 78, so the declared separation does not rescue the loop.",
-      "source_honesty": "Strong: current announcement versus earlier AWS example is clear, mechanisms are separate by 58, no timed savings, and the 102-113 return to the announcement includes the absence of quantified Alaska return. Keep report examination distinct from an automatic determination; do not visually sign or award.",
-      "three_real_sets": "Pass on paper: tall records room, low section-based drafting studio, and broad professional review office have different architecture and working surfaces. Do not count the nameplate/map wall alone as the third room.",
-      "required_repair": "Keep the distinct actions; replace the late generic finish-line reveal with an explicitly two-part comparison whose second answer lands at about 90. Remove the credits hold from scene 12 and append a separate 12.3-second credits sequence."
-    },
-    {
-      "role": "EXPLAINER",
-      "sag_at80": "The 74-86 draft edit supplies the last substantive workflow fact. From 86-98, waiting for READY to seat is a twelve-second label reveal after viewers have already watched review. The danger is especially acute after the 78-second secondary payoff.",
-      "act3_test": "62-86 has real new operations: examining assembled records versus refining generated sections. 86-98 restates those operations through typography; it is not an additional test.",
-      "object_change": "Suspended, seated, bridging, sideways and seated again describe one intact slug in different poses. The trailing recess is a useful assembly affordance, but its final occupation supplies only one substantial connected-state change.",
-      "primary_loop": "READY FOR REVIEW at 94 is answered visually at 62. Withholding the words does not withhold the answer.",
-      "secondary_loop": "The different attention required by source records and generated prose is the strongest question in this pitch. It overlaps the primary finish-line question, however, and should become the explicit central two-part comparison rather than masquerade as an independent second mystery.",
-      "payoff_separation": "The declared 78 and 94 are 16 seconds apart. The effective primary answer arrives near 62, making the claimed order and late retention benefit untrue.",
-      "source_honesty": "Good attribution and c18 coverage. The source-tab tracing must remain schematic, because the evidence supports review and determination, not an audited production UI with these particular tabs. The generated paragraph edit cannot display a fabricated factual defect.",
-      "three_real_sets": "Conditional pass: cabinet intake, open mechanism workshop and broad review desk can be three distinct environments. Different camera orientations on PaperOfficeBG alone are insufficient; make architecture, work surface and depth arrangement visibly different.",
-      "required_repair": "Remove the twelve-second wait for qualification text. Keep the successful two-operation explanation and move the Alaska-source limit into the reclaimed late space. The explicitly proposed credits inside 110-120 violate the required separate 12.3-second tail."
-    },
-    {
-      "role": "ENTHUSIAST",
-      "sag_at80": "73-84 report examination and 84-95 draft refinement give the viewer actual changing work at 80. The risk begins at 95-106, where separating output and professional work in depth repeats the distinction rather than adding evidence.",
-      "act3_test": "The strongest fair treatment of useful automation: give both completed preparation outputs a clean full-screen beat at 61-73 before professional actions. This is the graft worth preserving. Avoid spending twelve seconds on motionless admiration; reveal the two different materials during the credit beat.",
-      "object_change": "Held over a gap, mounted, foregrounded, held beside work, then seated are chiefly placements. The final flush seating is an assembly change, but does not validate all five claimed states. The nick preserves identity, not transformation.",
-      "primary_loop": "What did the machine finish is answered when the completed report and first draft receive credit at 61-73, and certainly by the first review at 73. A 98-second depth-plane reveal cannot be counted as the first payoff.",
-      "secondary_loop": "The capped pen and FIRST DRAFT section create an observable future action, paid by refinement at 85. It is still part of the same professional-work question, rather than an independent loop.",
-      "payoff_separation": "The declared 85 and 98 are 13 seconds apart, but the primary was already answered. The plan needs semantic revision, not different timestamps.",
-      "source_honesty": "Mechanisms are clearly separated before 60 and vendor evidence is attributed. The final limitation about independent Wingman productivity does not replace the required fact that the announcement quantifies no Alaska return. Add that precise bounded source limit. Keep the Kodiak connection corporate; no implication of local implementation or financial benefit.",
-      "three_real_sets": "Conditional pass: cabinet records aisle, low drafting bay and professional review desk can carry three real environments. Output gallery, editing desk and handoff bench should not be counted separately if they are merely re-dressed planes within one desk set.",
-      "required_repair": "Keep the 61-95 sequence. Replace the semantic READY reveal with a concise comparison, explicitly include the Alaska-return limit, and specify 120 seconds of narration plus 12.3 seconds of credits."
-    }
-  ],
-  "self_challenge": {
-    "title": "Withdraw The Pen Is Still Employed. It suggests an employment outcome that the sources do not establish.",
-    "hero": "The same positional inflation affects my pen: carried, bridging and held are not three substantive physical states. Do not accept my five-state count.",
-    "loops": "My FIRST DRAFT flag still being attached at 103 is an unchanged status, not a new payoff. The broad primary is answered at the first professional examination before the claimed 90-second payoff.",
-    "padding": "The 90-second edit and 103-second section shuffle repeat one refinement action. A second sight gag cannot substitute for a second movement.",
-    "graft_only": "My drawer accordion is a safe short generic furniture gag during the API/rules explanation. It must not suggest extra source systems, a retrieval delay, or a bad record."
-  },
-  "recommended_revision_direction": {
-    "winner": "DRAMATIST, conditional on the following repairs rather than a pass as submitted.",
-    "graft": "Use ENTHUSIAST's full-credit beat for the successful report and first draft; retain DRAMATIST's draft-refinement then DORA-examination sequence and its final precise Alaska-return source limit. One brief furniture gag can keep office mechanics playful.",
-    "primary_loop_repair": "Plant an explicitly two-part question by 20: which different professional job follows each kind of output? The first professional action is a declared partial answer; the second completes the comparison around 90. Do not pretend human involvement is a secret. DORA APIs/rules and Jumpstarter LLM drafting must still be legible before 60.",
-    "secondary_loop_repair": "Use a truly separate evidentiary question only if it can be planted naturally at 35-60: what does the new KGS announcement actually quantify for Alaska? Pay it after about 103 with the sourced absence of quantified Alaska return, after ownership has already been clearly established. This is a limit of the announcement, not a claim of no benefit. If that seed crowds the mechanism explanation, revise the treatment instead of claiming the FIRST DRAFT tag is an independent loop.",
-    "loop_spacing": "A completed two-part professional comparison at 90 and announcement-scope answer at 104 are 14 seconds apart. The secondary plant at 55 has 49 seconds of delay. These numbers count only if the questions themselves are explicit and distinct.",
-    "physical_object_repair": "For a pen hero, require a visibly capped assembly, detached cap/exposed nib, posted-cap assembly, and nib contact that produces a neutral refinement mark. These are inspectable physical changes; room-to-room relocation is not an extra state. Keep the cap and barrel as one recognizable throughline assembly and ensure each required act boundary visibly carries its current state. Verify that the shelf extension can depict those states before calling the requirement met.",
-    "do_not_add": [
-      "A fabricated bad draft or wrong compliance record",
-      "A review queue or invented elapsed time",
-      "An approval stamp or completed procurement",
-      "A job-preservation, local-return or net-productivity outcome",
-      "A new DORA or Jumpstarter capability merely to supply a twist"
-    ],
-    "runtime_contract": "Narration: 112-130 seconds with 200-220 words; target 120. Credits: a separate 12.3 seconds afterward. Target full artifact: 132.3 seconds."
-  }
+  "role": "comedian",
+  "run_date": "2026-09-14",
+  "explainer": "Strongest mechanism and immediate image. Its 80-second miniature-boat collision risks becoming a familiar simulation disclaimer unless the camera reveals specific untested management requirements. Replacing an inlet in one tank visually suggests one trained rule adapting; use two unmistakably separate experiments with their own comparison labels. The tank changes state, but it is also the set: keep its copper rim visible in the mechanism insert and harbor reveal. Loops at70 and103 are properly staggered.",
+  "dramatist": "Best physical throughline: sling, tags, threshold, return. The harbor launch expectation can hold80seconds, but a model boat risks suggesting an autonomous-vessel study. Make its status as a symbolic harvest-rule carrier explicit. Act3 currently establishes operational unreadiness rather than testing why policy discovery remains useful; retain both candidate and predefined comparison at the threshold. Returning to research then earns a position, not merely a stop. Loop payoffs68 and92 are separated. Avoid spending added time on sling travel.",
+  "enthusiast": "Best library feasibility and affirmative payoff, with credible hand contact and three actual stages. The68.7to85.6 smooth-lever/calendar correction risks sagging at80: it spends seventeen seconds repairing a confusion the film could avoid by omitting policy smoothness. Give those seconds to the fair comparison against explicit management goals. Its lever states are visible and causal. The second loop is factually resolved when the Ricker labels appear by68.7, not77.1; acknowledge that actual payoff and reserve97 for research value. Unlit sockets mean unmeasured, never failed outcomes.",
+  "two_minute_verdict": "Choose explainer mechanism plus dramatist separate-basin transfer and enthusiast continued-research payoff. Act3 must confront the possibility that informative simulated alternatives still do not improve a management choice. A harbor size reveal alone cannot carry the extra time.",
+  "runtime_correction": "All earlier story-under112 plans, including mine, need retiming. Target118to120seconds spoken plus12.3seconds credits and any short tail. Preserve200to220words; add meaningful testing actions and breathing space, not repeated disclaimers."
 }

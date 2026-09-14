@@ -1,29 +1,19 @@
 {
-  "run_date": "2026-09-13",
-  "reviewer": "cold_reader fresh fork with only narration text",
+  "gate": "0E",
   "ship": true,
-  "causal_chain": [
-    "KGS announces Wingman support for office tasks.",
-    "AWS describes earlier Army DORA record gathering and a standardized report.",
-    "Separate Jumpstarter LLMs produce initial document sections.",
-    "Both perform useful preparation.",
-    "A professional reviews the report and makes the determination; a user refines and approves generated sections.",
-    "Preparation is complete while professional work remains; the new announcement does not quantify an Alaska return."
-  ],
+  "run_date": "2026-09-14",
+  "script_sha256": "8fd660a1bbd082061c02ecd831a4e96ab3b72eefbf630e6fda25f87cba5679ec",
+  "causal_retelling": "Researchers compared learned and predefined rules in simulations. Different cases changed the catch and breeding-biomass tradeoff, so the alternatives justify further investigation. But simulated gains may not meet management goals, so both rule types need the same catch-pattern and breeding-stock evaluation.",
   "actors": {
-    "Koniag Government Services / KGS": "Organization belonging to Koniag that supports Wingman.",
-    "Koniag": "Kodiak region's Alaska Native corporation.",
-    "Wingman": "Digital office assistant platform.",
-    "Amazon / AWS": "Amazon's cloud business and source of the earlier-work account.",
-    "Army": "Organization associated with earlier tools.",
-    "DORA": "Determination of Responsibility Assistant retrieving records and assembling a report.",
-    "SAM.gov": "Named source in compliance retrieval.",
-    "Jumpstarter": "Tools using LLMs to generate initial sections.",
-    "Amazon Bedrock": "Named system through which Jumpstarter uses LLMs.",
-    "Contracting professional": "Human reviewing report and making determination.",
-    "Draft user": "Human refining and approving generated sections."
+    "Researchers": "Affiliated with the Alaska Fisheries Science Center and built simulations informed by historical observations.",
+    "Agent": "Learning system practicing simulated harvest choices using feedback.",
+    "Eastern Bering Sea pollock": "Fish population examined in the simulations.",
+    "NOAA Fisheries": "Organization managing Alaska pollock.",
+    "North Pacific Fishery Management Council": "Organization managing Alaska pollock.",
+    "Fishing businesses": "Businesses needing sound management to plan seasons."
   },
-  "single_question": "After these tools prepare reports and draft sections, which work remains the human professional's responsibility?",
-  "script_sha256": "5ae7ddb9b7890df4f1d39fb246eb6e62fd91613f20d2791920a2be265de5526f",
-  "recording_note": "Faithful structured transcription of the independently returned cold-reader verdict; no context was supplied to the reader."
+  "single_question_answered": "What would make an AI fishing rule worth testing? Simulated alternatives justify further investigation against common catch-pattern and breeding-stock goals.",
+  "first_line_lost": null,
+  "reviewer": "cold_reader independent text-only agent",
+  "revision": 2
 }

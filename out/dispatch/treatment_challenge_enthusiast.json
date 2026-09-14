@@ -1,137 +1,17 @@
 {
-  "run_date": "2026-09-13",
-  "reviewer": "ENTHUSIAST",
-  "phase": "4.1 two-minute cross-challenge",
-  "read_all_four_treatments": true,
-  "subagents_launched": false,
-  "overall_verdict": "None of the four retention plans should pass unchanged. All have an honest Act 3 foundation, but their claimed primary payoff arrives intellectually before its scheduled physical reveal. Choose the Dramatist structure conditionally and replace the loop and object-state design before storyboarding.",
-  "shared_findings": [
-    {
-      "issue": "The delayed READY qualification is not a delayed fact",
-      "reason": "Once a professional is shown reviewing or editing, READY FOR REVIEW is inferable. Moving or extending that word at 94 to 98 seconds is a graphic callback, not new information that holds the primary loop open.",
-      "applies_to": ["EXPLAINER", "ENTHUSIAST", "DRAMATIST primary wording"],
-      "fix": "Promise a concrete physical action instead of hiding the human-role caveat. Establish the human role and both mechanisms promptly. Let the pen's first actual editing mark be the later action payoff."
-    },
-    {
-      "issue": "A prop moved between locations has not necessarily changed state",
-      "reason": "Parked, carried, bridging and rotated are mostly transforms. They do not supply four or five visible physical states on their own.",
-      "fix": "For the pen, specify cap attachment, exposed nib, grip contact, ink contact and the visible mark. Preserve its identifying collar and silhouette. State changes must be legible at phone size."
-    },
-    {
-      "issue": "A stable FIRST DRAFT label is an obligation, not a second reveal",
-      "reason": "Its presence from the first generated page is required source honesty. Keeping it on screen at 103 seconds cannot be sold as a newly resolved factual question.",
-      "fix": "Keep FIRST DRAFT continuously. Base the second loop on a different documented action, the professional making use of the report's assembled information."
-    },
-    {
-      "issue": "Credits need their own measured tail",
-      "reason": "The narration and film must last 112 to 130 seconds before 12.3 seconds of credits. A 120-second narration target produces a roughly 132.3-second master before any separately required non-narrated tail.",
-      "fix": "Remove credits from the Dramatist and Explainer 113 to 120 second scenes. Keep the final button within narration, then append the full 12.3-second credit sequence."
-    }
-  ],
-  "peer_reviews": [
-    {
-      "treatment": "COMEDIAN",
-      "retention_verdict": "REVISE",
-      "sag_at_80": "Scene 8 already shows the professional examining the report. Scene 9 adds the actual pen edit, which is useful new action. Scene 10 then spends another twelve seconds on a label remaining present, so the risk is principally 93 to 105 seconds rather than 80.",
-      "act3_test": "Substantive if the complete report and editable draft receive enough screen space to feel useful. Distinct reading and editing actions genuinely extend Act 2. The extra scene about FIRST DRAFT remaining attached is a restatement.",
-      "object_states": "Unclaimed, carried, bridging and owned are mostly changes of position or ownership language. Only the writing state changes function. Add a visible cap and nib progression and actual paper contact.",
-      "primary_loop": "The literal question about the pen's first mark can survive to 90 seconds if no earlier pen mark is shown. Its surrounding language about which work requires a human is answered earlier. Use the concrete action promise only.",
-      "secondary_loop": "FAIL as written. FIRST DRAFT is visible throughout and its retention is required; a static label at 103 seconds is not an independent payoff.",
-      "nominal_payoffs_s": [90, 103],
-      "nominal_separation_s": 13,
-      "timing_pass_but_semantics_fail": true,
-      "source_honesty": "Good mechanism separation and good prohibition on invented mistakes. The Pen Is Still Employed risks implying an employment outcome absent from the sources. Remove employed, job-retention and labor-displacement implications. Do not describe the same physical pen as proof of actual procurement staffing.",
-      "sets": "Five named sets have distinguishable geometry. Pass if the record aisle, drafting bay and review table remain visibly different builds rather than recolored PaperOfficeBG.",
-      "keep": ["Report-stack pen pirouette", "Polite cabinet accordion", "Distinct report and first-draft outputs", "Pen making a neutral refinement rather than signing"],
-      "cut_or_rewrite": ["Employed title", "FIRST DRAFT staying present as a payoff", "Owned as an object state", "The redundant 93 to 105 second status hold"]
-    },
-    {
-      "treatment": "DRAMATIST",
-      "retention_verdict": "BEST BACKBONE AFTER REQUIRED REPAIR",
-      "sag_at_80": "The change from draft refinement to separate DORA examination is a real change of output and professional verb, so this has the best specific answer to the 80-second test. The 91 to 102 second overview must actively compare the two completed preparation tasks rather than hold a four-label diagram.",
-      "act3_test": "A genuine sourced workflow test, not an empirical productivity experiment. It grants successful machine preparation, then follows two distinct human actions. The final synthesis preserves that fair credit.",
-      "object_states": "Capped to uncapped to marking is a viable start. Parked horizontally and turned toward the report are only poses. The proposed reusable cap, held-angle and annotation-contact extension is the right repair direction.",
-      "primary_loop": "FAIL as written. The 78-second draft refinement already answers what remains unfinished. Calling the later DORA examination at 90 seconds the first answer does not keep the loop open.",
-      "secondary_loop": "The generated-section refinement is a concrete action and can be a payoff. However it also answers the original primary question, so the two promises are not independent enough.",
-      "nominal_payoffs_s": [78, 90],
-      "nominal_separation_s": 12,
-      "timing_pass_but_semantics_fail": true,
-      "source_honesty": "Strong. The pitch separates current Wingman from the earlier Army workflows, avoids performance figures and does not manufacture a failure or final vendor determination. Keep the generic professional faceless and unrelated to any named source. The Pen Still Has Work describes an implement's action and is safer than employed.",
-      "sets": "Best concrete set descriptions. Briefing wall, filing-cabinet DORA room, low drafting studio without cabinets, and a broad review office have genuinely different spatial identities. Pass with execution verification.",
-      "keep": ["Specific two-human-verb Act 3", "Useful outputs preserved in final wide view", "Three physical telling details for pen continuity", "Cap and neutral-annotation library extension", "Four clearly described sets"],
-      "cut_or_rewrite": ["Primary semantic reveal at 90", "Pose-only intermediate object states", "Credits inside 113 to 120 seconds", "Any static eleven-second synthesis tableau"]
-    },
-    {
-      "treatment": "EXPLAINER",
-      "retention_verdict": "REVISE PRIMARY LOOP AND HERO STATES",
-      "sag_at_80": "The draft refinement at 74 to 86 seconds is a new professional action. The following 86 to 98 second READY FOR REVIEW seating mainly repeats the answer already seen at 62 seconds. The 98 to 110 second return to unquantified Alaska returns risks a second slow epilogue.",
-      "act3_test": "Good distinction between how material is produced and how it is used. Source-record inspection and generative-section refinement are distinct. The final typography resolution is not a third test.",
-      "object_states": "Suspended, seated, bridging, sideways and reseated describe transforms of an unchanged word. The TypeSlug's held and seated channels provide physical depth, but not five meaningful state changes as proposed.",
-      "primary_loop": "FAIL. READY FOR REVIEW is evident when report review starts at 62 seconds. The 94-second qualification is a callback.",
-      "secondary_loop": "The different material types are established by 52 seconds. The later contrast between professional actions is useful but should be promised specifically as what the person does with each material, not why the material differs.",
-      "nominal_payoffs_s": [78, 94],
-      "nominal_separation_s": 16,
-      "timing_pass_but_semantics_fail": true,
-      "source_honesty": "Good explicit distinction between DORA retrieval and Jumpstarter LLM drafting. Attached tabs and tracing should be labeled schematic and must not pretend the AWS source proves a particular clickable report interface. Do not describe a source-tab overshoot as wrong data.",
-      "sets": "Four declared sets include three physically plausible identities. Mechanism workshop retrieval and drafting stations are one set unless the camera enters different room geometry. Enough real sets remain if records intake, workshop and review desk are genuinely built.",
-      "keep": ["Readable side-by-side mechanism comparison before midpoint", "Source-time transition before earlier Army example", "Concrete separate professional actions", "Large typography only as supporting label"],
-      "cut_or_rewrite": ["Delayed FOR REVIEW as primary fact", "All five TypeSlug states as transforms", "Credits inside the final 120-second shot", "Long late disclaimer scene"]
-    }
-  ],
-  "self_audit": {
-    "treatment": "ENTHUSIAST",
-    "verdict": "Do not exempt my pitch from the same failures",
-    "primary_failure": "The 98-second placement of READY does not preserve an intellectual loop after review appears at 73 seconds. My self-critique correctly flagged the risk but did not solve it.",
-    "object_failure": "The word is held, mounted, carried, held again and seated. These are not five different functional states. It is a strong supporting graphic and a weaker hero for this story.",
-    "act3_strength": "Give the Outputs the Whole Screen provides the strongest fair upside without a metric, error or imagined delay. Graft that camera move into the winning structure.",
-    "set_caution": "Output gallery, review desk and editing desk are labels rather than sufficiently specified separate architectures. Do not count them as three sets until drawn distinctly.",
-    "timing": "My 214-word draft is a narration-only 120-second target. Append credits afterward. Actual TTS and forced alignment must determine the final times."
+  "role": "enthusiast",
+  "round": "independent retention crosschallenge",
+  "explainer": {
+    "verdict": "Strong mechanism, repair staging and model identity.",
+    "challenge": "At 80s, the tank-wall gag advances operational limits, but 74\u201396s risks a long disclaimer panorama. Give each camera move a new inference: model dependence, then unmeasured outcomes. The copper rim preserves identity; its changing recruitment state must visibly reset the learned candidate, not imply one policy is transplanted unchanged. Loops15\u2192103 and44\u219270 meet timing. Three named stages include a mechanism cutaway, not necessarily a third environment. Source labels must call the tank an editorial analogy; no actual physical aquarium experiment is established."
   },
-  "winner_and_grafts": {
-    "conditional_winner": "DRAMATIST",
-    "reason": "It has the strongest real 80-second change, the clearest distinct sets and a physically extendable shelf hero. Its core organization needs less repair than a final READY typography reveal.",
-    "grafts": [
-      {"from": "COMEDIAN", "take": "The report-stack pen pirouette and courteous cabinet accordion. Keep both as harmless illustrative physics."},
-      {"from": "ENTHUSIAST", "take": "At 60 to 70 seconds let the machinery recede while the assembled report and editable draft remain large, solid and useful. That is the counterargument granted full strength."},
-      {"from": "EXPLAINER", "take": "The early separate mechanisms and the later distinct actions on the report and generated section. Keep source and time scope visibly attached."}
-    ],
-    "working_title_recommendation": "The Pen Still Has Work",
-    "required_loop_repair": {
-      "primary": {
-        "plant_s": 3,
-        "promise": "Watch what the pen does when the page arrives.",
-        "payoff_s": 91,
-        "concrete_action": "The pen's first actual mark is a human refinement of a schematic generated section. Show no pen mark earlier, including during DORA review. State the human role normally; do not withhold it for this action payoff."
-      },
-      "secondary": {
-        "plant_s": 38,
-        "promise": "DORA has assembled records into a report. What does the professional do with that prepared information?",
-        "payoff_s": 74,
-        "concrete_action": "The professional fans or traces the report's schematic information sections while the narration names review for determination. It is an action with assembled information, not new retrieval or a fabricated finding."
-      },
-      "payoff_separation_s": 17,
-      "secondary_delay_s": 36,
-      "warning": "These are action promises. Do not pretend the viewer was unaware that professionals participate. If the storyboard claims they are withheld factual revelations, the repair has failed."
-    },
-    "required_hero_repair": {
-      "object": "Reusable pen extracted from PenAndDocument",
-      "real_states": [
-        {"at_s": 0, "state": "Cap fully attached, nib concealed and no ink mark"},
-        {"at_s": 30, "state": "Cap visibly unseated with its attachment gap open, while the same barrel collar stays visible"},
-        {"at_s": 60, "state": "Cap removed and posted on the rear, nib exposed"},
-        {"at_s": 74, "state": "Gripped with visible hand contact and nib held above the surface, still no ink contact"},
-        {"at_s": 91, "state": "Nib contacts the editable section and leaves a visible neutral refinement mark carried into the button"}
-      ],
-      "caution": "The cap transition must have a credible physical cause, such as the generic hand or a clearly editorial match action. No claim that thirty seconds of literal review waiting occurred. If a state is not large enough to see at phone scale, it does not count."
-    },
-    "revised_act3_order": [
-      {"time_s": [60, 70], "action": "Credit both complete preparation outputs with a new wide reveal"},
-      {"time_s": [70, 82], "action": "Professional use of DORA report information, paying the secondary loop at 74"},
-      {"time_s": [82, 95], "action": "Distinct generated-section refinement, paying the pen's first mark at 91"},
-      {"time_s": [95, 107], "action": "An active camera move retains both completed preparation tasks and the two professional actions in one view"},
-      {"time_s": [107, 120], "action": "Concise return to current KGS scope and a physical pen callback that ends the narration"}
-    ],
-    "credits": "Append 12.3 seconds after the 112 to 130 second narration. At the 120 second target the credits run from approximately 120 to 132.3 seconds."
+  "dramatist": {
+    "verdict": "Best scale contrast, greatest autonomy risk.",
+    "challenge": "The 80s harbor threshold is a real test if the season-planning requirement becomes visible; simply withholding launch repeats the word simulation. Boat states are continuous and15\u219292 versus40\u219268 payoffs are separated. Repeated boat routes and fixed guide rails could imply AI navigation or autonomous fishing. Replace travel-as-learning with clearly labeled harvest-rule choices and feedback. The boat represents stakes, never an AI-controlled vessel. Two similar basins need genuinely different staging. A promising policy-discovery method deserves an affirmative return, not merely denied permission to launch."
   },
-  "no_peer_or_storyboard_edits": true
+  "comedian": {
+    "verdict": "Clearest allegory disclosure and strongest gag continuity.",
+    "challenge": "At80s, three testing stations could become a list; have candidate and comparison undergo the same visible question, without invented pass/fail outcomes. Trophy states change at every boundary. Primary2\u2192106 works; secondary43\u219268 is exactly the25-second minimum, so protect the actual spoken plant and reveal after voice alignment. Research-flag reveal94 and primary106 remain distinct. The trophy must parody premature interpretation, never imply the researchers claimed a winner. Modular moving tabs add build and readability cost."
+  },
+  "global_required_fixes": "All three drafts budget credits inside the spoken-duration band. Reconcile to112\u2013130seconds spoken, then append tail and12.3seconds credits. Physical tanks, levers, trophies and boats are editorial schematics, not documented study apparatus. Preserve separate comparisons and never animate policy smoothness as annual catch stability."
 }

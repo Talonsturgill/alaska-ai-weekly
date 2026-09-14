@@ -1,17 +1,17 @@
-A finished report isn't a finished professional decision.
+A pollock model can change what an AI's apparent advantage means.
 
-A gathered report and an editable draft deserve credit as real preparation. Judge a finished workflow by the professional decision that follows, not by the arrival of a page.
+A paper published September 11th explores learned harvest rules for eastern Bering Sea pollock. Authors affiliated with the Alaska Fisheries Science Center helped build the research.
 
-Koniag Government Services says it supports Wingman, a platform for custom digital assistants. Its September 11th announcement names contracting, logistics and financial management. KGS is a subsidiary of Koniag, the regional Alaska Native corporation associated with the Kodiak region.
+The agent practices harvest choices through simulated seasons. Feedback rewards outcomes and guides changes to its rule. Researchers then compare that learned policy with a predefined harvest rule.
 
-Amazon Web Services (AWS) describes earlier Army procurement work in a case study. DORA, the Determination of Responsibility Assistant, starts with a contracting professional emailing a vendor identifier in the subject line.
+The biological assumptions matter. In the constant-recruitment case, the learned policy leaves higher spawning biomass than the comparison. That's the weight of breeding fish. It also produces large annual catch swings.
 
-It retrieves compliance records through APIs, including data from the System for Award Management. Prebuilt logic helps assemble a standardized report. The professional reviews that report and makes the determination.
+A separate experiment links recruitment to the breeding stock. There the learned policy produces higher catches and lower spawning biomass than its own comparison. The first case's stock advantage doesn't carry across automatically.
 
-Separate Jumpstarter tools use large language models through Amazon Bedrock. User inputs become initial sections of contracting documents. People refine and approve those sections.
+That gives the research a useful job. It creates specific alternatives to examine against explicit goals. Both learned and predefined rules deserve that comparison.
 
-These are the workflows described by AWS. They don't establish an independently measured productivity result for Wingman. The September announcement also doesn't quantify an Alaska return.
+NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock. Fishing businesses depend on sound management to plan their seasons. These illustrative simulations leave operational development ahead, with no demonstrated winning rule for the real fishery.
 
-What would you check in an assembled report, or change in a generated draft, before putting it to work?
+Which balance should a candidate have to demonstrate between catches and the breeding stock?
 
-#Alaska #ArtificialIntelligence #Koniag #GovernmentTechnology
+#Alaska #ArtificialIntelligence #Fisheries #Pollock

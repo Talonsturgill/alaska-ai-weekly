@@ -1,59 +1,125 @@
 {
-  "run_date": "2026-09-13",
-  "title": "The Work After the Output",
-  "treatment": "Repaired DRAMATIST, independent scorer selection received before this plan. Enthusiast output-credit scene and Explainer mechanism distinction grafted.",
+  "run_date": "2026-09-14",
+  "title": "Rehearsal Before the Season",
+  "designed_before_scene_code": true,
   "palette": {
-    "name": "oxblood porcelain petrol copper nickel",
-    "roles": {"sky":"#F4EADF","ground":"#C7805D","hero":"#842F45","accent":"#27615B","shadow":"#211F23","metal":"#B9C9C3"},
-    "why": "Porcelain document stock and copper work surfaces give useful preparation a warm, tactile setting. The oxblood pen is the repeated human tool. Petrol belongs to the retrieval cabinets, not to a default blue technology world. Nickel distinguishes durable mechanisms from editable paper.",
-    "divergence": "September12 used lilac, ivory, citron, coral and violet around an EEG notebook. September11 used cream, spruce, berry and proof gold around a flight crate. This film is dominated by copper work surfaces, porcelain stock and a long oxblood writing instrument; green is restricted to cabinet hardware."
+    "sky": "#EFF5E9 alabaster daylight",
+    "ground": "#254D98 ultramarine laboratory enamel and sea",
+    "hero": "#F7AE38 mango control grip",
+    "accent": "#93DFC6 sea glass observation windows",
+    "shadow": "#152342 ink navy",
+    "why": "The marine world earns blue as water and laboratory enamel, while mango and bright daylight carry research curiosity. Mint denotes the model boundary, never success. Both favorable and unfavorable outcomes receive identical high-contrast lettering. This differs from September 13 oxblood porcelain petrol copper nickel and September 12 lilac ivory citron coral violet."
   },
   "light": {
-    "time_of_day":"Late afternoon office light",
-    "direction":"Upper left key rakes down and right across desks; object shadows fall toward the lower right.",
-    "key":"Warm broad window light. Tops are porcelain-bright, front faces retain their material color.",
-    "fill":"Muted neutral fill from the right keeps dark pen and cabinet side walls legible.",
-    "rim":"Thin nickel-white edge on the nib, cap collar, paper corners and report tabs.",
-    "depth":"Four to six real Stage3D planes at each set: rear architecture, task furniture, mechanism, carried documents, professional tool and foreground occluder. Contact shadows attach every object to its receiving surface. Far layers reduce contrast and chroma; the foreground remains crisp.",
-    "why":"The light follows completed outputs from machinery into a welcoming working desk, so the human handoff feels like the next useful action. It does not imply a failed machine or a threat."
+    "time": "Clear late morning",
+    "direction": "Hard key from upper left, cool water fill from below, thin alabaster rim on the right edge",
+    "depth": "Three or more Stage3D planes per shot. Rim and form gradients separate the mango grip from enamel; contact shadows pin controls and researchers to their supports. Harbor piles in foreground pass faster than distant buildings. Window reflections are clipped to their glass.",
+    "why": "Transparent model boundaries must remain tangible, and a visible full-size harbor must dwarf the bounded research apparatus without turning into a gloomy warning."
   },
   "shape_language": {
-    "mechanisms":"Rectangular slotted trays, notched record tabs, repeated cabinet rails and round API connectors. Their right angles express gathering and organizing.",
-    "human_tool":"One long tapered pen with cap, sprung clip, collar and split nib. Its diagonal cuts across the document's parallel lines when refinement begins.",
-    "documents":"Straight ruled report with source tabs versus an explicitly labeled FIRST DRAFT whose neutral paragraph lines can reflow. They never become generic identical pages.",
-    "why":"The two machine mechanisms and their different outputs remain distinguishable in silhouette before any explanation."
+    "grammar": "Rounded articulated hands and control grips meet rectilinear experiment bays. Identical comparison windows and labels prevent higher catch from being declared the winner. Biological content uses labeled unscaled model outlines, never a relabeled species.",
+    "why": "The learned rule explores an explicitly constructed system; biological assumptions are separate hardware in the illustration, not a magical ocean transformation."
   },
   "casting": {
-    "hero":{"asset":"PenAndDocument pen extended as reusable ReviewPen","reason":"An ordinary faceless professional tool supplies a concrete promised action and actual cap, nib and ink states. No employment or cultural claim."},
-    "supporting":[
-      {"asset":"GripHand","reason":"A generic hand must physically carry, inspect, uncap and guide each intended action, with continuous contact rather than a floating pen."},
-      {"asset":"Sheet","reason":"Supporting source records and output stock, never the hero or yesterday's notebook."},
-      {"asset":"PaperOfficeBG","reason":"Shelf office detail restricted to the retrieval room; other worlds have independent furniture and compositions."},
-      {"asset":"Nameplate and BrassPlate","reason":"Material identity labels for KGS and provenance, with mobile-size typography."},
-      {"asset":"Stage3D and CameraMoves","reason":"Real depth reveals which tool made which output and where that output goes next."},
-      {"asset":"EndCredits","reason":"Source and licensed music attribution remains legible for at least ten seconds after narration."}
+    "hero": {
+      "asset": "GearLever",
+      "source": "video-engine/src/lib/props.tsx",
+      "why": "Existing longThrow control makes candidate adjustment visible. A mango grip and serial notch keep the same research control recognizable through all acts. It controls only illustrated simulations."
+    },
+    "support": [
+      {
+        "asset": "Character",
+        "why": "One fictional researcher operates the control, resets distinct experiments and sets both rules onto the next test. Driven gestures only; no idle spectator."
+      },
+      {
+        "asset": "GripHand",
+        "why": "Close shots show continuous hand-to-grip contact using a shared pivot-derived anchor, not independently tuned coordinates."
+      },
+      {
+        "asset": "Stage3D, Plane, CameraMoves, ContactShadow, RimLight, MotionBlur",
+        "why": "Use shared depth, shade and motion machinery for coherent physical contact and scale change."
+      },
+      {
+        "asset": "QuestionToken and Simulated/EvidenceState",
+        "why": "Give each experiment its own distinct learned and predefined candidates. Keep unresolved next-test space visibly separate from reported findings."
+      }
     ],
-    "new_asset_gap":"The shelf's PenAndDocument pen only hovers and never writes. Extend that existing object family with a reusable cap/clip/nib/contact/ink performance API. No invented character, culturally coded scenery or personified Koniag institution."
+    "net_new": [],
+    "net_new_reason": "The selected verdict uses the existing GearLever and tokens. No new fish or competing hero is needed; spend craft effort on contact and material finish."
   },
   "motion_language": {
-    "primary":"Every narrated action has a beat-driven spring with anticipation and a single overshoot. API tabs travel through connected channels; rule rails physically align retrieved records; generated lines grow only in the separately named Jumpstarter bay.",
-    "reaction":"Tabs displace their tray stops, report arrival nudges the pen cradle, an uncapped pen releases its sprung clip, a held pen's nib shares the hand's path and reveals ink only at contact. Reactions lag primary impact by two to four frames.",
-    "ambient":"Separated cabinet tags, task-light suspension, loose paper edges and pen-cup spring each have quiet phase-offset life. Motes and a slow window-shadow sweep supply atmosphere. All motion freezes together for the three reveal reading holds.",
-    "camera":"Compose truckAcross and dollyThrough on record travel, craneDown plus orbitReveal on the review desk, and riseWith plus orbitReveal on the whole-output reveal. Keep the readout copy outside perspective transforms.",
-    "blur":"Short directional blur only on drawer pulls, cap flips and scene wipes. Nib-to-paper contact and small type remain sharp.",
-    "why":"Physical cause and consequence makes office automation visible. No fake errors, queues, approval stamps or timing effects are needed."
+    "primary": "Lever anticipates, sweeps an 80-degree arc and settles at a physical detent. A connected schematic path carries outcomes back into candidate adjustment. The predefined control stays fixed during learning. Distinct bays reset and reconnect before the second result.",
+    "secondary": "Lever collar and cable lag the sweep, research sleeves follow the hand, window waterlines ripple, harbor lines sway from attached cleats.",
+    "events": "At least one literal physical verb every 3 to 5 seconds. Moving parts illustrate the current line. No particle motion used to impersonate content. Freeze all scene clocks during three 0.6-second reveal holds.",
+    "why": "The story is a sequence of controlled experiments. Motion must make the feedback and reset legible before it provides ornament.",
+    "blur": "Use shared MotionBlur at180-degree shutter-equivalent on the fast lever throw and59s doorway wipe. Blur only physical movers; labels, source scope and captions remain sharp. Reveal holds pause primary, camera, reactions, ambient and reflections together."
   },
   "composition": {
-    "worlds":["corporate announcement wall","retrieval cabinet aisle and API cutaway","separate generative drafting light table","professional review and editing desk"],
-    "hierarchy":"One primary action at center. The pen reads at70percent of the hook frame; tool/output labels are secondary and provenance is a steady tertiary layer. The mechanism room uses landscape rails, the drafting room uses vertical expansion, and the human desk uses a diagonal working gesture.",
-    "safe_area":"Load-bearing objects and all story labels stay x70..1010 and y480..1320, safe inside the central square crop. Open captions exclusively occupy y1336..1468. Eyebrow and material decoration may extend beyond the square but never carry an essential fact.",
-    "scales":"Insert, close, medium, wide and extreme-wide. At least low, eye, high and overhead camera heights. Adjacent shots change world composition, not just zoom.",
-    "signature_shot":"At the Act3 reset, machine housings withdraw to two far depth planes while their intact outputs move into a generous foreground workbench. The gathered report and editable first draft command the picture, then the pen's diagonal action cuts through their previously parallel paper lines.",
-    "why":"The film grants completed preparation real scale and beauty before following each documented professional action. The last image contains both useful outputs and a visible human refinement mark."
+    "stages": [
+      "Bright wet laboratory with glazed observation bays and steel ribs",
+      "Separate stock-linked experimental room with tiled floor, curved glazing and overhead feed pipe",
+      "Open harbor comparison bench with full-size quay, buildings and water"
+    ],
+    "scales": [
+      "insert grip and engraved detent",
+      "close researcher and mechanism",
+      "medium independent experiment bay",
+      "wide harbor and model apparatus"
+    ],
+    "heights": [
+      "low at control pivot and quay edge",
+      "eye level",
+      "overhead experiment cutaway"
+    ],
+    "safe_area": "Keep all essential illustrated results in x90 to990 and y530 to1240 of1080x1920. Reserve y1336 to1468 for captions. Both the1080-square crop from y420 and portrait retain the argument. Sparse fixed study attribution above the caption band.",
+    "signature_shot": "A low-angle pullback reveals both candidate rules on the same next-test bench, with the whole harbor extending beyond the model boundary. The discovery survives while its claim narrows.",
+    "hierarchy": "One controlling action at center per shot. Labels arrive attached to the result they name. Never stack competing full-size information panels.",
+    "stage_rule": "The mechanism cutaway is a framing of the first laboratory, not a third stage. Each of the three rooms/exterior has a genuinely different architecture and physical layout.",
+    "label_treatment": {
+      "colors": "Ink navy #152342 text on alabaster #EFF5E9 for every outcome, reverse pairing for scope only. Mango belongs to grip/accent material, never text on alabaster.",
+      "sizes": "Outcome text48px minimum, case headers40px, versus-its-comparison qualifiers32px, source scope28px, captions39px. Long labels wrap to at most two lines; no compressed type.",
+      "segregation": "Study and case scope at1250, captions1336to1468, source proper names get their own narrated full-size scene rather than micro print.",
+      "minimum_contrast": "12 to1 for outcome text/substrate, measured in code before probes."
+    },
+    "reveal_holds": [
+      {
+        "at_s": 26,
+        "hold_s": 0.6,
+        "subject": "completed outcome-feedback circuit",
+        "negative_space": "Outer apparatus retracts from the upper right so one returning feedback path owns the gap."
+      },
+      {
+        "at_s": 59,
+        "hold_s": 0.6,
+        "subject": "the newly separate stock-linked room",
+        "negative_space": "Door leaves clear center around new control station; old case remains in a narrow distant doorway."
+      },
+      {
+        "at_s": 94,
+        "hold_s": 0.6,
+        "subject": "supported equal-test bench beneath the harbor",
+        "negative_space": "Sky and water open around the small research bench while full-size quay piles establish scale."
+      }
+    ],
+    "portrait_depth": "Above420 show real room rafters, windows, pipes or harbor sky and cranes. Below1500 show attached bench legs, room floor seams or near quay edge and mooring shadows. These planes give portrait scale and occlusion, not duplicated information or blank bands."
   },
   "craft_advance": {
-    "system":"Reusable professional pen articulation and contact-bound editing",
-    "change":"Add cap separation/posting, clip flex, hand-controlled nib position and a progressive neutral annotation stroke to the shelf pen family. Ink must end exactly at the current nib tip and remain after the pen lifts. Preserve legacy PenAndDocument defaults for shipped episodes.",
-    "verification":"At roughcut stage inspect consecutive frames of uncapping, cap seating, contact and lift. At final QA verify ink ends at nib, hand remains attached, cap has a consistent path and the last state differs physically from the capped opening."
+    "system": "GearLever contact geometry and material articulation",
+    "change": "Expose one shared grip-center transform derived from the exact pivot and throw used to draw the lever; use it for GripHand and contact timing. Add opt-in service detail with a shaded base, detents, bolts and a restrained collar reaction to give close shots dimensional material information. Existing defaults preserve old films.",
+    "proof": "Numerically check endpoint and midpoint contact geometry, then inspect consecutive-frame grip-contact strips across the actual throw."
+  },
+  "source_reference": "https://www.fisheries.noaa.gov/species/alaska-pollock",
+  "guardrails": [
+    "Illustrated physical apparatus is a schematic of software experiments, not equipment claimed by the paper.",
+    "No plotted values or counts. Qualitative outcome arrows and words only.",
+    "No smoothness detour and no claim of steadier catches.",
+    "Separate constant and stock-linked simulated experiments, each relative to its comparison."
+  ],
+  "review_revision": {
+    "round": 2,
+    "addressed": [
+      "AD1 explicitcontrastandtype",
+      "AD2 namedholdsnegativespaceportraitplanesblur"
+    ]
   }
 }

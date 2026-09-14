@@ -1,2012 +1,1685 @@
 {
-  "run_date": "2026-09-13",
-  "slug": "the-pen-still-has-work",
-  "title": "The Pen Still Has Work",
-  "total_seconds": 118.54,
-  "concept": "Two distinct preparation tools deliver useful outputs to two distinct professional actions. One articulated pen carries an ordinary physical callback and finally marks an editable draft.",
+  "run_date": "2026-09-14",
+  "slug": "rehearsal-before-the-season",
+  "title": "Rehearsal Before the Season",
+  "total_seconds": 120,
+  "concept": "One portable research control rehearses two separate pollock simulations, then puts learned and predefined candidates through the same explicit next-test goals.",
   "derived_from": "scratch",
   "engine": "infographic-2.5d",
-  "palette": "oxblood porcelain petrol copper nickel",
+  "palette": "bright ultramarine mango alabaster sea-glass ink navy",
   "fingerprint": {
-    "pov": "cross-section-cutaway",
-    "motion_vector": "horizontal-traverse",
+    "pov": "orbital-aerial",
+    "motion_vector": "vertical-descent",
     "hero_treatment": "instrument-as-subject",
-    "layout": "grid-modular",
-    "register": "tactile-collage",
-    "camera_strategy": "rack-focus-macro",
-    "light_story": "afternoon-raking-window",
-    "palette": "oxblood porcelain petrol copper nickel",
-    "metaphor": "a capped pen becomes a held writing instrument after two different office tools deliver their work"
+    "layout": "stacked-layers",
+    "register": "naturalistic-scene",
+    "camera_strategy": "aerial-descent",
+    "light_story": "noon-hard",
+    "palette": "bright ultramarine mango alabaster sea-glass ink navy",
+    "metaphor": "portable rehearsal control opens separate biological experiments"
   },
   "treatment": {
-    "run_date": "2026-09-13",
-    "reviewed_at_utc": "2026-09-13T14:26:04.480194+00:00",
+    "run_date": "2026-09-14",
+    "judged_at_utc": "2026-09-14T11:12:23.260296+00:00",
     "role": "independent_directors_room_scorer",
-    "scope": "Phase 4.1 selection and concrete treatment repair only. No storyboard, VO lock or scene code.",
-    "winner": "dramatist",
-    "winner_title": "The Pen Still Has Work",
-    "verdict": "LOCK REVISED TREATMENT; BUILD AND RENDER PROOF STILL REQUIRED",
-    "locked_angle": "In the KGS workflows described by AWS, the machine’s finished output is still unfinished professional work.",
-    "stance": "Curious and appreciative of concrete preparation. The pen title names its pictured activity, never employment or preserved jobs.",
-    "rationale": "The Dramatist changes both material and professional verb near 80 seconds, has the clearest physical workrooms and a shelf pen that can gain real cap/contact states. Its draft does not pass unchanged. This replacement abandons delayed knowledge of the human role, ends the promised pair with the second action, and uses an independent ordinary prop action rather than an unchanged status label for the other loop.",
-    "scoring": {
-      "scale": "1-10 editorial assessments of submitted treatments, including defects; not measured retention or a film gate.",
-      "weights": {
-        "scroll_stop": 0.15,
-        "emotional_arc": 0.15,
-        "retention_120s": 0.3,
-        "fairness": 0.15,
-        "shelf_feasibility": 0.1,
-        "freshness": 0.1,
-        "stance_rotation": 0.05
-      },
-      "comparative_scores": [
-        {
-          "role": "dramatist",
-          "scores": {
-            "scroll_stop": 8.0,
-            "emotional_arc": 8.0,
-            "retention_120s": 6.0,
-            "fairness": 9.0,
-            "shelf_feasibility": 7.8,
-            "freshness": 8.2,
-            "stance_rotation": 9.0
-          },
-          "weighted_total": 7.6,
-          "strength": "Best two professional verbs near 80 seconds and three genuinely different workrooms.",
-          "deductions": "Human-role mystery paid early; several states only poses; long synthesis and credits inside story.",
-          "passes_unchanged": false
-        },
-        {
-          "role": "enthusiast",
-          "scores": {
-            "scroll_stop": 8.3,
-            "emotional_arc": 8.1,
-            "retention_120s": 5.3,
-            "fairness": 9.2,
-            "shelf_feasibility": 8.6,
-            "freshness": 7.6,
-            "stance_rotation": 8.5
-          },
-          "weighted_total": 7.475,
-          "strength": "Strongest fair credit for completed preparation and useful foreground reveal.",
-          "deductions": "Late READY placement repeats known information; mostly transformed slug; tail repeats boundary; submitted VO is not locked.",
-          "passes_unchanged": false
-        },
-        {
-          "role": "explainer",
-          "scores": {
-            "scroll_stop": 8.4,
-            "emotional_arc": 7.3,
-            "retention_120s": 4.8,
-            "fairness": 8.8,
-            "shelf_feasibility": 8.4,
-            "freshness": 7.4,
-            "stance_rotation": 8.5
-          },
-          "weighted_total": 7.12,
-          "strength": "Clearest separate retrieval/rules and generative drafting mechanisms.",
-          "deductions": "READY suffix arrives after its meaning; TypeSlug moves without changing; late label and disclaimer padding.",
-          "passes_unchanged": false
-        },
-        {
-          "role": "comedian",
-          "scores": {
-            "scroll_stop": 8.6,
-            "emotional_arc": 7.1,
-            "retention_120s": 4.8,
-            "fairness": 7.8,
-            "shelf_feasibility": 7.0,
-            "freshness": 8.0,
-            "stance_rotation": 8.0
-          },
-          "weighted_total": 6.865,
-          "strength": "Best immediate object comedy and economical drawer choreography.",
-          "deductions": "Employment implication; tag persistence is no payoff; mostly posed pen states; repeated late edit.",
-          "passes_unchanged": false
-        }
-      ]
-    },
+    "status": "binding_for_storyboard",
     "inputs": [
       {
-        "file": "out/dispatch/treatment_comedian.json",
-        "date_basis": "2026-09-13",
-        "sha256": "8e6ea683eeaffa5b6aa7a721fa1bf797b740826bc819cf973b8a12c676d9421a",
-        "read_in_full": true
+        "path": "out/dispatch/angle.json",
+        "sha256": "09dbeb5a9094aadc8eab48c9d950e5f4f3111adc460b39dc496348f5b426723f"
       },
       {
-        "file": "out/dispatch/treatment_dramatist.json",
-        "date_basis": "2026-09-13",
-        "sha256": "8ce5fdc70785dc872da429698e4051179d208f515e2404806c73806ab5cf5fc5",
-        "read_in_full": true
+        "path": "out/dispatch/verified_findings.json",
+        "sha256": "c22456d26204cf1e6f5e0588efd646d1d9982f495689c41a9bbf61ce4b6c819d"
       },
       {
-        "file": "out/dispatch/treatment_explainer.json",
-        "date_basis": "September 13 modification and current KGS content",
-        "sha256": "b1daa19ac7d8070476308f944cfc2e90b5686ec1865319edad62549ccd2fd000",
-        "read_in_full": true
+        "path": "out/dispatch/treatment_comedian.json",
+        "sha256": "bed421a66ec48d8c07f365eaa697e425998b5a3e42fe6c92b4a7efd99d2c2d64"
       },
       {
-        "file": "out/dispatch/treatment_enthusiast.json",
-        "date_basis": "2026-09-13",
-        "sha256": "005a885a1af420d1dcb47e86aa9922a17bcdcd5b9730e36ff6ed6d33bdd32d92",
-        "read_in_full": true
+        "path": "out/dispatch/treatment_dramatist.json",
+        "sha256": "27e983c59e5536b071604b6db7b7d5cd9981072f31bf74e63ff9a5d128a57736"
       },
       {
-        "file": "out/dispatch/treatment_challenge_comedian.json",
-        "date_basis": "2026-09-13",
-        "sha256": "8de46e16c904943cbe9212edd99cf68655816fea275c4225e3abaff7f20c38f7",
-        "read_in_full": true
+        "path": "out/dispatch/treatment_explainer.json",
+        "sha256": "350b165caf2e5e47d481ed129483dd130082bfc99866bdfabdccd144e7f6d9a9"
       },
       {
-        "file": "out/dispatch/treatment_challenge_dramatist.json",
-        "date_basis": "2026-09-13",
-        "sha256": "7b88561b5c0a988ba941843c539b0bccd432d15c5417c28e67a79ab4f51d43ad",
-        "read_in_full": true
+        "path": "out/dispatch/treatment_enthusiast.json",
+        "sha256": "4f625eaeedff9b4cb86fe6459af47b7fc62dc3cc9edd91dcda6f7b6addba75d9"
       },
       {
-        "file": "out/dispatch/treatment_challenge_explainer.json",
-        "date_basis": "2026-09-13",
-        "sha256": "11fbda5481774390a134a43f959487115c125131003632c34db04955f16a30b7",
-        "read_in_full": true
+        "path": "out/dispatch/treatment_challenge_comedian.json",
+        "sha256": "502f77d7afa3771a7ecb2a331d9653bfbf57f2c0448797840eaac9365145b3eb"
       },
       {
-        "file": "out/dispatch/treatment_challenge_enthusiast.json",
-        "date_basis": "2026-09-13",
-        "sha256": "776bcdd1b323be0931eb3395758999e07ea95c1557180db828134b3de6d6f02b",
-        "read_in_full": true
+        "path": "out/dispatch/treatment_challenge_dramatist.json",
+        "sha256": "e1ea04c33c75c6b64bed0ac84608a75ac6236809f3b2736e2eece503948fa58a"
+      },
+      {
+        "path": "out/dispatch/treatment_challenge_explainer.json",
+        "sha256": "159be2d8e8cbd1c11cfc73b037186843377d4d195700c7875cc66829d804b184"
+      },
+      {
+        "path": "out/dispatch/treatment_challenge_enthusiast.json",
+        "sha256": "6dc2d0cde385192903150ac65db3f2d8e6eeaee693b15f158c21f4f2e6fdd8b1"
       }
     ],
-    "mandatory_repairs_resolved": [
-      {
-        "blocker": "Human role was hidden or falsely treated as a late revelation.",
-        "resolution": "Show an ordinary professional hand in the first eight seconds and explicitly promise two different professional actions by 15 seconds. Human participation is never withheld."
-      },
-      {
-        "blocker": "READY suffix and persistent FIRST DRAFT counted as late discoveries.",
-        "resolution": "Retire READY as hero and all suffix installation scenes. FIRST DRAFT remains a continuous status obligation. The primary payoff is completion of a promised demonstration, not discovery of a hidden caveat."
-      },
-      {
-        "blocker": "Both loops answered the same broad question.",
-        "resolution": "The primary promises the pair of report examination and generated-section refinement. The separate secondary is only a physical cap reattachment: an ordinary object callback, with no claim about workflow outcomes. Its payoff does not supply either workflow answer."
-      },
-      {
-        "blocker": "Pen state list was mostly positions.",
-        "resolution": "Use five inspectable cap/nib/grip/contact configurations below. Travel, rotation, ownership language and a persistent collar do not count as state change."
-      },
-      {
-        "blocker": "Late synthesis consumed eleven seconds without new work.",
-        "resolution": "After the second action, allow at most a compact three-second moving comparison before returning to current-announcement scope. No long four-label tableau or second READY conclusion."
-      },
-      {
-        "blocker": "Credits occupied story time.",
-        "resolution": "Story remains 112-130 seconds, target120 with 200-220 future VO words. Append a separate12.3-second credit sequence."
-      }
-    ],
-    "revised_treatment": {
-      "logline": "One ordinary pen follows two useful office outputs into two different professional actions, making the boundary between preparation and completion visible.",
-      "cold_open_first_3_seconds": "A neat report rises from an illustrative output slot and gives one fully capped oxblood pen a short, elegant pivot. The cap stays attached. A rapid pullback finds the professional hand and a separate work surface by eight seconds. No failure cue or implied final award.",
-      "escalation": "The named KGS September11 announcement and Koniag/Kodiak connection locate the story. The film then enters an explicitly earlier AWS Army example. DORA retrieves records through APIs and prebuilt logic; a separate Jumpstarter uses LLM drafting. Both mechanisms are clear before58seconds. Their useful report and editable draft are granted full foreground space. The final act follows different professional work on each material, completing the pair near94seconds.",
-      "turn": "The strongest objection is that the machines really have completed useful preparation. Let both outputs be solid, organized and present while their machinery recedes. Then show refinement of a generated section and examination of a separate report. Neither contribution disappears; no bad result is needed.",
-      "button": {
-        "line": "When the output is ready, which job is finished?",
-        "image": "Match the opening pen silhouette, now posted and visibly used in the ordinary professional’s hand. Keep the report and still-labeled FIRST DRAFT as separate supporting materials. The earlier neutral ink mark survives; no signature or award."
-      },
-      "sight_gags": [
-        {
-          "at_s": 1,
-          "action": "The orderly report stack tips the fully capped pen through a tiny over-elegant pivot; the hand catches it normally.",
-          "source_limit": "Generic office-object physics only."
-        },
-        {
-          "at_s": 34,
-          "action": "Cabinet dividers perform one courteous accordion ripple while the documented retrieval explanation proceeds.",
-          "source_limit": "No extra database count, retrieval error or delay."
-        },
-        {
-          "at_s": 53,
-          "action": "An oversized FIRST DRAFT flag unfurls beyond a small binder jaw, then its blank tail curls neatly underneath.",
-          "source_limit": "Status stays readable throughout; nothing suggests a final document."
-        },
-        {
-          "at_s": 76,
-          "action": "The loose cap posts onto the rear of the pen with a small cushioned click under the hand’s pressure.",
-          "source_limit": "Ordinary cap handling, not a jam, repair or productivity event."
-        }
+    "winner": {
+      "role": "enthusiast",
+      "treatment": "Rehearsal Before the Season",
+      "title": "Rehearsal Before the Season",
+      "logline": "One portable research control lets a researcher explore two separate simulated pollock scenarios, then places the discovered policies and their predefined comparisons before the same next-test goals.",
+      "valence": "Earned curiosity and optimism about policy discovery as research.",
+      "why": "The enthusiast supplies the most usable central performance: a researcher handles one existing control through changing research states. It leads with the real accomplishment, has a physically continuous hero and a hopeful earned return, and is feasible with the current shelf. Its original smoothness detour fails the padding test and is removed in full. The winning film is the revised lever-led research rehearsal; the grafts improve its mechanism and argument without replacing its identity.",
+      "binding_changes": [
+        "Start inside the laboratory, with the apparatus explicitly labeled SIMULATED / EDITORIAL SCHEMATIC before the first harbor view.",
+        "Remove the entire smoother-policy-response animation, narration, calendar correction and corresponding gag. The Ricker catch/biomass reversal supplies the second movement.",
+        "Use two spatially separate experiment stations. Moving the same control changes the editorial research viewpoint; it does not transplant one trained policy. Each station introduces its own learned candidate and predefined comparison.",
+        "After the distinct reversal, give learned and predefined candidates the same visible next-test requirements. No scores, pass/fail lamps, approval marks, or operational launch.",
+        "Retain the affirmative research payoff: explicit alternatives worth comparing, with operational work ahead."
       ]
     },
-    "retention_plan": {
-      "act3_test": {
-        "name": "Two Outputs, Two Professional Actions",
-        "window_s": [
-          60,
-          96
-        ],
-        "strongest_fair_case": "An assembled report and editable generated section are completed preparation, so calling all work unfinished would unfairly erase what the tools did.",
-        "drawn_test": "At60-66seconds machinery recedes and the two prepared materials take the foreground. At66-82seconds the professional selects and neutrally refines generated language. At83-95seconds a different close view shows examination of the separate DORA report for determination. No error, delay, specific vendor decision or final approval is depicted.",
-        "what_changes_at80": "Switch from editing generated prose to examining gathered information, with a new material, gesture and camera scale.",
-        "nature": "Source-described workflow comparison illustrated editorially; not an empirical performance trial."
+    "judgment_by_pitch": {
+      "comedian": "Strongest original scroll-stop, gags and changing prop; equal-candidate test is valuable. A new trophy adds construction/readability cost and risks imputing researcher boosterism or repeating award/credential framing. Runner-up.",
+      "dramatist": "Best scale tension and separate basins. Toy-boat launch suspense is predictable, and learning routes risk an autonomous-navigation claim. Borrow spatial separation, not boat hero.",
+      "explainer": "Best mechanism and two-loop separation. Single inlet swap obscures separate experiments; tank-as-set weakens the throughline and the aquarium rim can become a long disclaimer. Borrow feedback cutaway.",
+      "enthusiast": "Best affirmative emotional arc, human continuity, manifest feasibility and fresh staging. Original retention fails at the smoothness correction; corrected equal-goal test earns Act3. Winner only with the binding revisions."
+    },
+    "casting": {
+      "hero_asset": "GearLever",
+      "hero_source": "video-engine/src/lib/props.tsx",
+      "manifest_basis": "ASSET_MANIFEST.md documents GearLever longThrow and accentColor, plus GripHand contact semantics. It is a schematic research control, never literal study hardware or autonomous fleet equipment.",
+      "supporting_assets": [
+        "GripHand",
+        "Character",
+        "QuestionToken",
+        "Simulated/EvidenceState",
+        "Stage3D/materials/FX",
+        "SwingSign/Nameplate"
+      ],
+      "dedupe_check": {
+        "command": "python3 scripts/dedupe.py check --entities \"Eastern Bering Sea pollock, Maia Kapur, Grant Adams, Marcus Lapeyrolerie, James Thorson, reinforcement learning, harvest policy\" --hero GearLever",
+        "result": "FRESH",
+        "last_two_heroes": [
+          "Sheet",
+          "PenAndDocument"
+        ]
       },
-      "primary_loop": {
-        "plant_s": 12,
-        "promise": "Follow these two useful outputs into the two different actions the professional performs.",
-        "partial_fulfillment_s": 82,
-        "partial_fulfillment": "The generated section receives a visible neutral refinement; the report action remains to be demonstrated.",
-        "payoff_s": 94,
-        "payoff": "The professional opens and examines the separate DORA report for determination, completing the promised pair. This is completion of the illustration, not completion of a procurement or an actual determination.",
-        "honesty": "Name the human role early. Both mechanisms and output types are explained before the midpoint. No secret source fact or late qualification is needed."
-      },
-      "secondary_loop": {
-        "plant_s": 49,
-        "promise": "A clearly detached cap and its matching rear posting socket form a small physical pairing: the cap will rejoin the pen when the hand prepares to use it.",
-        "plant_picture": "For one brief beat the hand turns the loose cap above the pen’s open rear socket, exposing matching shapes, then places it beside the pen and the film cuts onward. The cap is intact and moves freely.",
-        "payoff_s": 76,
-        "payoff": "The hand retrieves the cap and seats it on the pen’s rear in an ordinary deliberate action before the refinement gesture.",
-        "independence": "This answers where an ordinary prop component fits; it does not answer what the two professional jobs are. It is a physical comedy callback, not a new fact or claimed malfunction.",
-        "anti_wait_rule": "Never hold a cap or hand frozen between49and76seconds. Intervening shots cover other explanation. Montage does not represent literal elapsed review time; the cap never blocks output, review or a person. If this ordinary action is not unmistakably planted, the loop fails and must be revised before voice."
-      },
-      "payoff_separation_s": 18,
-      "throughline_object": {
-        "object": "One reusable pen generalized from PenAndDocument",
-        "identity": [
-          "Oxblood barrel",
-          "Broad silver collar",
-          "One asymmetric clip"
-        ],
-        "states": [
-          {
-            "at_s": 0,
-            "state": "Cap fully attached; nib concealed; no ink contact."
-          },
-          {
-            "at_s": 29,
-            "state": "Hand visibly unseats the cap axially, opening the attachment gap and beginning nib exposure."
-          },
-          {
-            "at_s": 58,
-            "state": "Cap fully detached beside the same pen; exposed nib visible and no mark. This changed assembly is present at the midpoint."
-          },
-          {
-            "at_s": 76,
-            "state": "Cap posted on the rear; wrapped grip contacts the barrel; nib above the surface. Length and attachment visibly change."
-          },
-          {
-            "at_s": 81,
-            "state": "Nib makes actual contact and deposits one neutral refinement stroke. Posted cap and the accumulating ink trace remain visible at94seconds and in the button."
-          }
-        ],
-        "state_proof": "Prove silhouette, cap gap, exposed nib, rear attachment, grip contact, nib contact and visible ink at phone scale. A camera transform or a relocated prop supplies no additional state.",
-        "cause": "Every cap and writing transition is visibly hand-driven. No hovering pen writes by itself."
-      },
-      "padding_test": [
+      "net_new_scope": "At most one reusable portable mounting frame. No new trophy, boat hero or fish portrait. Register any reusable asset change."
+    },
+    "staging": {
+      "physical_stages": [
         {
-          "beat": "60-66 complete preparation",
-          "why_needed": "Gives the strongest fair objection a concrete image; prevents unfinished from meaning failed."
+          "name": "Research wet laboratory",
+          "time_s": [
+            0,
+            50
+          ],
+          "purpose": "Laboratory-first hook and constant-recruitment station."
         },
         {
-          "beat": "66-82 generated section refinement",
-          "why_needed": "The editable material changes under a person’s hand. This is a different operation from generating it."
+          "name": "Separate experimental basin bay",
+          "time_s": [
+            50,
+            74
+          ],
+          "purpose": "Distinct doorway, geometry and newly introduced learned/predefined comparison."
         },
         {
-          "beat": "83-95 report examination",
-          "why_needed": "Completes the promised pair using a distinct material and verb; prevents DORA from being mistaken for a generative drafting tool."
-        },
-        {
-          "beat": "After95",
-          "rule": "One compact comparison, current-announcement scope once, then the physical button. No prolonged label installation, repeated disclaimer, status-survival reveal or static admiration."
+          "name": "Harbor-side testing apron",
+          "time_s": [
+            74,
+            118
+          ],
+          "purpose": "Dock plane, warehouse and open water surround matched next-test lanes."
         }
       ],
-      "retention_claim_limit": "This is a designed procedural demonstration with a separate object callback. It does not promise a surprising factual revelation or certify that viewers will watch two minutes."
-    },
-    "grafts": [
-      {
-        "from": "enthusiast",
-        "keep": "At60-66seconds the successful housings recede while report and draft remain large, solid and useful.",
-        "cut": "Late READY placement and repeated inscription."
-      },
-      {
-        "from": "explainer",
-        "keep": "Separate API/prebuilt logic and LLM/Bedrock operations before58seconds; later distinct material-specific professional actions.",
-        "cut": "READY hero and delayed FOR REVIEW suffix."
-      },
-      {
-        "from": "comedian",
-        "keep": "One restrained capped-pen pivot, courteous dividers and oversized FIRST DRAFT gag.",
-        "cut": "Employment title, unchanged-label payoff and prolonged idle-pen suspense."
+      "four_shot_scales": [
+        "Extreme close-up of hand meeting brass grip",
+        "Close-up of researcher reaction with control still in frame",
+        "Medium two-rule mechanism or basin relationship",
+        "Extreme wide full harbor beside the small research station"
+      ],
+      "camera_heights": [
+        "Low bench or dock waterline view",
+        "High overhead experiment view"
+      ],
+      "palette": {
+        "sky": "#B8D9DE",
+        "ground": "#354B56",
+        "hero": "#D6A64D",
+        "accent": "#EF8659",
+        "shadow": "#142D3B",
+        "water": "#226B78"
       }
-    ],
-    "feasibility_and_freshness": {
-      "verified_shelf": "PenAndDocument exists but currently only hovers and trembles; it has no detached-cap, grip-contact or writing states. GripHand, paper-office background, records machinery, sheets, identity plates and Alaska map exist.",
-      "one_bounded_gap": "Generalize the existing pen silhouette into a reusable cap/nib/grip/contact/ink rig. Add dimensional treatment and neutral annotation support; preserve old unsigned-deal behavior for prior episodes. The cap assembly is new reusable capability, not an already available shelf feature.",
-      "sets": [
-        "Tall receding cabinet records room with intake chute",
-        "Low open drafting studio with section rails and no cabinets",
-        "Angled professional review office with document stand, lamp and broad desk"
-      ],
-      "supporting_set": "Corporate briefing wall is supplemental; it is not counted as one of the three real work sets.",
-      "scales": [
-        "Macro object/contact",
-        "Close hand and material",
-        "Medium professional and desk",
-        "Wide room",
-        "Overhead comparison"
-      ],
-      "last_two_verified_from_state": [
-        {
-          "date": "2026-09-11",
-          "hero": "FlightCrate",
-          "stance": "mixed",
-          "look": "Clinic cream, spruce, berry; cargo traversal over a missing road."
-        },
-        {
-          "date": "2026-09-12",
-          "hero": "Sheet",
-          "stance": "celebratory",
-          "look": "Lilac, ivory, citron research notebook and assemble-build staging."
-        }
-      ],
-      "freshness_decision": "A long pen with physical cap and ink states, steel-blue/oxblood office rooms, lateral contact actions and a curious stance changes hero, geometry, setting, mechanism and valence. Supporting paper must not become another notebook hero.",
-      "art_direction_handoff": "Root owns the full art plan. Favor raking practical desk light and dimensional dark cabinets around bright material; no status traffic-light moral coding."
     },
-    "runtime_contract": {
-      "story_target_s": 120,
-      "story_allowed_s": [
+    "retention_and_timing": {
+      "spoken_target_seconds": 118,
+      "spoken_allowed_seconds": [
         112,
         130
       ],
-      "future_vo_words": [
+      "vo_target_words": 210,
+      "vo_allowed_words": [
         200,
         220
       ],
-      "future_vo_target_words": 212,
-      "credits_s": 12.3,
-      "target_total_s": 132.3,
-      "retiming": "Actual natural voice alignment determines final times. Preserve primary payoff at85seconds or later and at least8seconds between distinct payoffs. No timing or dollar claim enters narration."
+      "tail_seconds": 1,
+      "credits_seconds": 12.3,
+      "total_target_seconds": 131.3,
+      "correction": "The 112\u2013130-second requirement applies to the spoken read. Credits are appended after speech and a one-second tail; they are not counted toward spoken duration.",
+      "acts": [
+        {
+          "time_s": [
+            0,
+            26
+          ],
+          "words": 46,
+          "name": "The rehearsal can discover policies",
+          "new_argument": "Learning harvest choices is the accomplishment, beyond predicting a fish count."
+        },
+        {
+          "time_s": [
+            26,
+            50
+          ],
+          "words": 43,
+          "name": "First scenario earns two outcomes",
+          "new_argument": "A breeding-stock advantage does not remove the timing question."
+        },
+        {
+          "time_s": [
+            50,
+            74
+          ],
+          "words": 43,
+          "name": "A separate biological assumption reverses the stock result",
+          "new_argument": "Different biological assumptions change the tradeoff; this is not a repair or continuation of the first policy."
+        },
+        {
+          "time_s": [
+            74,
+            101
+          ],
+          "words": 49,
+          "name": "The same test for both rules",
+          "new_argument": "Discovering a candidate does not yet show it improves a management choice. A conventional alternative deserves the same comparison, under explicit goals and assumptions. Model outcomes do not establish real income or bycatch performance. Neither candidate is approved or rejected."
+        },
+        {
+          "time_s": [
+            101,
+            118
+          ],
+          "words": 29,
+          "name": "What the rehearsal earned",
+          "new_argument": "Useful research creates testable choices before real seasons; the next comparison is the payoff."
+        }
+      ],
+      "act3_fair_test": {
+        "scene": "The Same Test for Both Rules",
+        "span_s": [
+          74,
+          101
+        ],
+        "objection_at_full_strength": "The model may favor choices because of its own assumptions; a learned alternative may offer no management advantage over a predefined rule.",
+        "drawn_answer": "Both candidate types face the same explicit goals with equally prominent unresolved next-test space. The camera does not reward one token. The control remains useful because it brings a candidate and scenario-specific evidence into a fair comparison.",
+        "prohibition": "No generic row of unlit failure sockets and no 20-second recital that models are not reality."
+      },
+      "throughline_object": {
+        "object": "One portable brass GearLever",
+        "states": [
+          "0s: caught on explicitly labeled simulation bench",
+          "26s: engaged with constant-case feedback apparatus",
+          "50s: lifted clear; first case remains behind; carried to separate new experiment",
+          "74s: held at harbor apron as both candidate types face identical goals",
+          "103s: docked at TEST AGAIN, research plaque open; state holds through button"
+        ]
+      },
+      "two_loops": [
+        {
+          "name": "What has the rehearsal earned?",
+          "plant_s": 16,
+          "payoff_s": 103,
+          "span_s": 87,
+          "payoff": "The next fair comparison is possible: alternatives to investigate, not an operational winner."
+        },
+        {
+          "name": "Does the first breeding-stock advantage survive a different recruitment assumption?",
+          "plant_s": 43,
+          "payoff_s": 70,
+          "span_s": 27,
+          "payoff": "The separately labeled stock-linked experiment has higher catches and lower spawning biomass versus its own comparison."
+        }
+      ],
+      "payoff_separation_seconds": 33,
+      "alignment_rule": "Measure actual spoken plant and the first visible/spoken revealing fact after voice alignment. Protect the secondary loop minimum 25-second span; a later restatement cannot move its payoff.",
+      "padding_test": "The reversal changes the evidence; the matched-goal test changes what follows from it. Removing either makes a 90-second film worse. Cut travel and repeated limitations first. Do not add words to explain policy smoothness."
     },
-    "source_and_cultural_contract": [
-      "KGS announcement September11 is current; earlier Army examples visibly carry AWS CASE STUDY and EARLIER ARMY PROCUREMENT.",
-      "DORA does API/prebuilt-logic reporting; separate Jumpstarter tools do LLM first drafts. No serial combined procurement pipeline.",
-      "Professional review and refinement appear early and concretely. Narration may name general human approval; illustration never fabricates an actual approval or vendor finding.",
-      "All document actions and office hardware are schematic. No real UEI, private record, fabricated error, performance result, elapsed delay, employment claim or cost arithmetic.",
-      "Koniag and KGS are named corporations. Corporate Kodiak connection only; no tribal-government, cultural imagery or character identity inference.",
-      "The announcement gives no quantified Alaska return. Say this once with IN THIS ANNOUNCEMENT scope; never infer no benefit."
-    ],
-    "remaining_build_proof": [
-      "Phone-visible cap/nib/contact states",
-      "Independent physical cap plant/payoff without an invented wait",
-      "Two professional actions clear and separate",
-      "Three physically different sets and at least four scales",
-      "Natural voice timing and separate credits",
-      "Current claim contracts and full rendered source/visual gates"
-    ],
-    "no_storyboard_or_scene_code_written": true
-  },
-  "angle": {
-    "run_date": "2026-09-13",
-    "thesis": "In the KGS workflows described by AWS, the machine's finished output is still unfinished professional work.",
-    "valence": "Curious with earned credit for concrete preparation tools. The film examines useful work and a real human handoff without a claimed productivity verdict.",
-    "falsifiability": "A workflow trace showing DORA reports or Jumpstarter sections used as final determinations or approvals without the documented professional action would contradict the claimed boundary. Attribute the workflow to AWS rather than certifying compliance in all production uses.",
-    "supporting_facts": [
-      "The September 11th KGS announcement describes Wingman support and links its foundations to earlier Army automation.",
-      "AWS describes DORA retrieving compliance records via APIs and applying prebuilt logic, then returning a report for professional review and determination.",
-      "Separate Jumpstarter tools generate initial sections through LLMs, and people refine and approve those sections."
-    ],
-    "fair_counterpoint": "An assembled record and an editable draft are concrete preparation outputs worth crediting. Their arrival doesn't independently establish net productivity or a completed procurement. Do not invent an error, review delay or failure to dramatize the boundary.",
-    "alaska_connection": "KGS is a subsidiary of Koniag, the regional Alaska Native corporation associated with Kodiak. This announcement does not quantify Alaska returns. No tribal-government or cultural characterization.",
-    "second_movement": "Establish retrieval/rules and generative drafting before the midpoint. Act 3 follows what the professional actually does with each output, then the ending changes the viewer's test from whether a page exists to which job is finished.",
-    "story_question": "What's still unfinished when the machine's output is ready?",
-    "numbers_decision": "Cut c15 stopwatch and c16/c17 portfolio totals. They distract from the output-versus-decision boundary and invite unproved timing arithmetic. Dates remain provenance.",
-    "runner_up_angles": [
+    "grafts": [
       {
-        "angle": "A strongest-case workflow engineering",
-        "why_lost": "Editorial ranking is not falsifiable; shared speeding claim overextended task evidence. Retain concrete professional boundary."
+        "from": "explainer",
+        "beat": "Visible feedback to learned candidate beside fixed predefined rule; 10\u201326s."
       },
       {
-        "angle": "B better starting point",
-        "why_lost": "Better lacks a measured quality axis. Retain assembled report and editable draft as tangible outputs."
+        "from": "dramatist",
+        "beat": "Separate experiment spaces with fresh candidate identities; brief harbor scale reveal; 50\u201378s."
       },
       {
-        "angle": "C measured speed and head start",
-        "why_lost": "No independent net-productivity test; DORA timing cannot measure generative drafting. Retain early technical distinction."
+        "from": "comedian",
+        "beat": "Learned and predefined rules receive identical goal frames and unresolved next-test space; 78\u2013101s."
       }
     ],
-    "cross_challenge_evidence": [
-      "angle_a_challenge.json",
-      "angle_b_challenge.json",
-      "angle_c_challenge.json"
+    "sight_gags": [
+      {
+        "time_s": 2,
+        "gag": "Two-handed catch of oversized brass grip; tiny bench support squeaks. Laboratory context visible."
+      },
+      {
+        "time_s": 39,
+        "gag": "Physical catch-swings label swings into eyeline; researcher ducks. Label motion is not a plotted catch series."
+      },
+      {
+        "time_s": 109,
+        "gag": "TEST AGAIN handle rebounds gently; researcher patiently corrects it. No approval lamp."
+      }
     ],
-    "synthesized_by": "Orchestrator after all three independent proposals and full cross-challenge round"
+    "rejected_ideas": [
+      "Entire smooth-policy/calendar correction detour.",
+      "New trophy/crown or attributed researcher boosterism.",
+      "Toy-boat learning routes, launch suspense or fleet implications.",
+      "Single-tank inlet morph that hides separate experiments.",
+      "Dark income/bycatch sockets implying failure.",
+      "Invented curves, counts, biomass volumes or numerical catch levels.",
+      "Generic operational-limit sermon after the distinct scenario reversal."
+    ],
+    "claim_guards": [
+      "Keep SIMULATED and each recruitment case legible during its findings; apparatus is disclosed editorial schematic.",
+      "Constant recruitment: large annual catch swings and higher spawning biomass than its comparison.",
+      "Stock-linked/Ricker recruitment: higher catches and lower spawning biomass than its own comparison.",
+      "Do not imply scenario two fixes scenario one or that one learned policy was deployed/retrained between scenes.",
+      "No exact reward formulation claim; repository settings were not tied conclusively to published plots.",
+      "No quota change, commercial outcome, autonomous fleet, household-income improvement, bycatch result or overall sustainability claim.",
+      "People are illustrative, not documented stakeholder approval or opposition.",
+      "Closing policy priorities are an engagement question, not evidence of local consultation."
+    ],
+    "next_step": "Write the single storyboard around this binding treatment, then validate word counts, measured VO timing, retention alignment, staging and evidence status before rendering. This verdict writes no storyboard or code and authorizes no publication.",
+    "inputs_freshness": "All 10 angle/findings/treatment/challenge inputs passed run_guard checks; original SHA256 values preserved below."
+  },
+  "angle": {
+    "role": "analyst_a",
+    "run_date": "2026-09-14",
+    "working_title": "The Catch Between Years",
+    "thesis": "This pollock study demonstrates a way to explore harvest choices before real seasons. Under two recruitment assumptions, learned policies produce different combinations of catch and breeding-stock outcomes. That earns further comparison against explicit management goals without establishing a winning real-world rule.",
+    "thesis_status": "An interpretation of demonstrated simulation results, not a claim of operational readiness or better real-world management.",
+    "evidence": [
+      {
+        "claims": [
+          "F03",
+          "F05",
+          "F06",
+          "F07"
+        ],
+        "point": "The researchers let an agent learn harvest policies through repeated simulated seasons and compare them with a predefined rule. The useful new capability is policy discovery, beyond predicting a fish count."
+      },
+      {
+        "claims": [
+          "F09",
+          "F10",
+          "F11"
+        ],
+        "point": "When recruitment is constant, the learned policy leaves more spawning biomass than the comparison while producing large annual catch swings. This creates a concrete question about the timing of fishing opportunity."
+      },
+      {
+        "claims": [
+          "F12",
+          "F13"
+        ],
+        "point": "When recruitment instead depends on the stock through a Ricker relationship, the policy is smoother and catches more while retaining less spawning biomass. The biological assumption changes the tradeoff."
+      }
+    ],
+    "strongest_counterpoint": "A simulation can reveal the behavior of its own assumptions without showing how a real fishery would respond. Reward implementation isn't verified as identical to the settings behind the published plots. These comparisons don't establish household income, bycatch performance or overall sustainability.",
+    "who_is_served": "Alaska fishing businesses and communities benefit if researchers can examine candidate rules before they reach operational decisions. Researchers and managers gain alternatives to investigate. No particular policy is shown to serve all those groups, and no stakeholder approval is established.",
+    "valence": "Earned curiosity and optimism about policy discovery as research.",
+    "falsifying_observation": "Reproduction or a corrected analysis removes the reported scenario-specific differences in catch and spawning biomass. Conventional alternatives performing equally well would limit superiority claims, which this film does not make.",
+    "second_movement": "The constant-recruitment case shows higher spawning biomass with large annual catch swings. The separate stock-linked case reverses the biomass outcome: higher catches and lower spawning biomass relative to its comparison. These distinct simulated experiments expose how biological assumptions change the tradeoff. A smoother policy response is not evidence of steadier annual catches.",
+    "narration_allocation": {
+      "target_words": "200 to 220",
+      "opening_capability": 35,
+      "constant_recruitment_case": 55,
+      "ricker_reversal": 55,
+      "people_and_operational_status": 45,
+      "closing_question": 20
+    },
+    "proposed_engagement_question": "Which should a pollock policy have to demonstrate first: steadier catches, more breeding fish, or a better balance across both?",
+    "execution_constraints": [
+      "Keep each recruitment case labeled and describe all outcomes as simulated.",
+      "Show separate catch and spawning-biomass schematic measures without invented data curves.",
+      "Don't suggest historical observations make the future experiment an observed fishery outcome.",
+      "Don't turn the final question into a claim that local people were consulted."
+    ],
+    "status": "locked",
+    "decision_reason": "All three challenges favored A narrowed to demonstrated research use. Graft B\u2019s affirmative policy-discovery opening. Reject C\u2019s smoother-catch framing and any suggestion that the second experiment fixes the first.",
+    "alternatives_considered": [
+      "B sharpened the affirmative case but used a superiority-based falsifier and an unsupported catch-stability comparison.",
+      "C made the tradeoff concrete but conflated policy-response smoothness with steadier annual catches."
+    ],
+    "cross_challenges": [
+      "angle_challenge_a.json",
+      "angle_challenge_b.json",
+      "angle_challenge_c.json"
+    ]
   },
   "hook": {
-    "pattern": "in-medias-res",
-    "frame1": "Capped oxblood pen rolls diagonally between two distinct output holders before either fills.",
-    "headline": "THE PEN STILL HAS WORK",
-    "motion_by_s": 0.3,
-    "loopback": "The working pen returns to the opening diagonal with its cap posted and its ink left on the draft."
+    "pattern": "anomaly-question",
+    "frame1": "A mango grip is caught mid-throw above a tiny supported model mount; a large hand and research boundary establish scale immediately.",
+    "headline": "WHAT MAKES A RULE WORTH TESTING?",
+    "motion_by_s": 0.25,
+    "loopback": "The same hand patiently settles the same grip at TEST AGAIN, with equal next-test lanes visible."
   },
   "audio_arc": {
     "build_steps": 4,
-    "dip_at": 112.47,
-    "riser_at": 91.3,
-    "silence_at": 112.92,
-    "payoff_at": 116.424,
+    "dip_at": 102.6,
+    "riser_at": 93.4,
+    "silence_at": 106.5,
+    "payoff_at": 111.1,
     "button_pattern": "question",
-    "evidence": "Measured real inter-line gap before final line; single riser on draft-arrival beat30."
+    "evidence": "Bright electric-piano bed; literal control and glass sounds build the mechanism, brief dip grants the test space, final tactile detent closes the question."
   },
-  "divergence_note": "The last two films follow a medicine flight crate and a student EEG notebook. This film uses a long articulated pen, corporate identity wall, horizontal retrieval cutaway and a separate vertical drafting table. The precise physical distinction between a gathered report and generative paragraphs drives new compositions; the copper and porcelain office receives outputs warmly, with an oxblood diagonal tool in front. It is authored from scratch, with shelf components cast into different worlds.",
+  "divergence_note": "September13 used oxblood pen, office paperwork and modular desk layouts; September12 used the lilac EEG notebook. This film uses a mango mechanical control, two physically different marine experimental rooms, a broad harbor apron, overhead comparisons, low grip inserts and vertical room reveals. No office or paper hero is copied.",
   "open_loop": {
-    "plant_t": 2.264,
-    "pay_t": 97.249,
-    "what": "Watch what the pen does after two machine outputs arrive. The completed comparison includes report review and the distinct refinement mark, with no concealed human-role revelation."
+    "plant_t": 0,
+    "pay_t": 99,
+    "what": "What makes the rule worth testing? First complete identical catch-pattern and breeding-stock requirements are revealed across both candidates at99. The111.1plaque is a callback, not the payoff."
   },
   "open_loop_2": {
-    "plant_t": 56.785,
-    "pay_t": 81.983,
-    "what": "The loose cap is briefly turned beside its matching rear socket, then set aside. A later ordinary hand retrieves and posts it. No long frozen gesture, jam or workflow delay."
+    "plant_t": 36,
+    "pay_t": 71,
+    "what": "Will an advantage survive changed biology? First revealing stock-linked result begins71, full lower-biomass finding74.5; protect the earlier payoff when conforming."
   },
   "throughline": {
-    "object": "one oxblood PenAndDocument pen with nickel collar, sprung clip and split nib",
+    "object": "One mango-gripped portable GearLever with serial notch",
     "states": [
       {
-        "at_s": 0.0,
-        "state": "Full-length capped pen resting on its clip."
+        "at_s": 0,
+        "state": "Caught over bounded research mount"
       },
       {
-        "at_s": 34.116,
-        "state": "Cap unseated, sprung clip released from storage; seam visibly open."
+        "at_s": 26,
+        "state": "Connected to complete outcome-feedback path"
       },
       {
-        "at_s": 56.785,
-        "state": "Cap fully detached by the hand, bright split nib exposed, matching rear socket briefly shown before cap rests freely in its cup."
+        "at_s": 59,
+        "state": "Lifted free into separately labeled experimental room"
       },
       {
-        "at_s": 81.983,
-        "state": "Cap posted on rear barrel; grip takes the pen as a complete writing tool."
+        "at_s": 86,
+        "state": "Carried to harbor bench, model cable still attached"
       },
       {
-        "at_s": 97.249,
-        "state": "Nib has contacted paper and left a permanent neutral edit mark."
-      },
-      {
-        "at_s": 116.424,
-        "state": "Posted-cap pen lifts in the hand above its persistent ink and useful outputs."
+        "at_s": 114,
+        "state": "Hand settles TEST AGAIN beside both open next-test lanes"
       }
     ],
-    "lands_in_button": "The pen is physically ready for work, with an actual refinement trace remaining on the draft."
+    "lands_in_button": "The same research control remains useful for further testing; no operational connection or winner light."
   },
   "reveals": [
     {
-      "t": 37.8,
-      "beat_id": 12,
-      "type": "scale-pullback",
-      "what": "Email subject opens into the DORA intake route, turning a token into a whole connected mechanism.",
-      "hold_s": 0.6,
-      "landing_frames": 22,
-      "telegraph": "The incoming subject slot narrows around one token before exposing the larger intake aisle.",
-      "landing_at_s": 38.533,
-      "hold_until_s": 39.133,
-      "secondary_at_s": 39.433
-    },
-    {
-      "t": 69.08,
-      "beat_id": 22,
+      "t": 26,
+      "beat_id": 10,
       "type": "build-on",
-      "what": "Both useful preparation outputs fill the foreground as machine housings retreat into depth.",
+      "what": "Outcome path completes the feedback circuit around the control",
       "hold_s": 0.6,
-      "landing_frames": 22,
-      "telegraph": "The machine housings part and the front workbench begins opening.",
-      "landing_at_s": 69.813,
-      "hold_until_s": 70.413,
-      "secondary_at_s": 70.713
+      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle."
     },
     {
-      "t": 101.268,
-      "beat_id": 34,
+      "t": 59,
+      "beat_id": 21,
       "type": "scale-pullback",
-      "what": "One compact comparison places the earlier receiving shelf behind the two already-shown professional actions.",
+      "what": "Doorway reveals distinct stock-linked experimental room",
       "hold_s": 0.6,
-      "landing_frames": 22,
-      "telegraph": "The persistent ink remains in the close foreground first; the camera then withdraws to reveal the arrival shelf behind it.",
-      "landing_at_s": 102.001,
-      "hold_until_s": 102.601,
-      "secondary_at_s": 102.901
+      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle."
+    },
+    {
+      "t": 94,
+      "beat_id": 31,
+      "type": "build-on",
+      "what": "Harbor-scale reveal unfolds testing bench beneath the real season",
+      "hold_s": 0.6,
+      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle."
     }
   ],
+  "world_event": {
+    "at_s": 94,
+    "what": "Supported testing leaf unfolds under both candidate rails while harbor piles occlude the new bench."
+  },
+  "act3_visible_choice": "At79 the simulated advantage is explicitly challenged. Reported cases slide away and an unresolved equal-goals frame opens. The same test is carried onto the harbor bench at86; shared goal shutters open at96.8and99. Both remain unevaluated in further testing through107.",
+  "runtime_contract": "Planning120s narration. Actual acceptable read112to130s;1s story tail and12.3s credits append. Conform every shot and beat to actual aligned lines before rendering.",
   "beats": [
     {
       "id": 1,
-      "at_s": 0.0,
-      "t": "0.000-1.887",
+      "at_s": 0,
+      "t": "0-1.1",
       "vo_line": 0,
-      "offset": 0.0,
-      "vo": "Two machine outputs. Watch what this pen does next.",
-      "shows": "Capped oxblood pen rolls diagonally between a report tray and a draft holder",
-      "means": "THE PEN STILL HAS WORK",
-      "sfx": "A pen barrel rolls over wood with one soft clack",
+      "offset": 0,
+      "vo": "What would make an AI fishing rule worth testing?",
+      "shows": "Researcher catches the mango grip before it reaches the research-bench detent",
+      "means": "The physical action makes what makes a rule worth testing? legible at the moment the narration needs it.",
+      "sfx": "grip tap",
       "draw": {
-        "subject": "Capped oxblood pen",
-        "action": "rolls diagonally between a report tray and a draft holder",
-        "emotion": "appreciative curiosity",
-        "annotation": "THE PEN STILL HAS WORK"
+        "subject": "GearLever and fictional researcher",
+        "action": "Researcher catches the mango grip before it reaches the research-bench detent",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "WHAT MAKES A RULE WORTH TESTING?"
       },
       "choreo": {
-        "primary": "Capped oxblood pen rolls diagonally between a report tray and a draft holder",
-        "reaction": "The two tray stops flex under the pen and return to alignment",
-        "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
+        "primary": "Researcher catches the mango grip before it reaches the research-bench detent",
+        "reaction": "The grip impulse briefly bends the support foot, which returns under the hand\u2019s weight.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 2,
-      "at_s": 1.887,
-      "t": "1.887-4.528",
+      "at_s": 1.1,
+      "t": "1.1-3.2",
       "vo_line": 0,
-      "offset": 1.887,
-      "vo": "Two machine outputs. Watch what this pen does next.",
-      "shows": "Two output holders separate around the pen to expose their distinct tabbed report and editable draft silhouettes",
-      "means": "TWO OUTPUTS",
-      "sfx": "Paper edges brush their moving tray guides",
+      "offset": 1.1,
+      "vo": "What would make an AI fishing rule worth testing?",
+      "shows": "Grip settles into a visibly bounded model mount and the cable catches up",
+      "means": "The physical action makes simulated legible at the moment the narration needs it.",
+      "sfx": "metal settle",
       "draw": {
-        "subject": "Two output holders",
-        "action": "separate around the pen to expose their distinct tabbed report and editable draft silhouettes",
-        "emotion": "appreciative curiosity",
-        "annotation": "TWO OUTPUTS"
+        "subject": "GearLever and fictional researcher",
+        "action": "Grip settles into a visibly bounded model mount and the cable catches up",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "SIMULATED"
       },
       "choreo": {
-        "primary": "Two output holders separate around the pen to expose their distinct tabbed report and editable draft silhouettes",
-        "reaction": "The pen settles into the space their outward motion opens",
-        "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
+        "primary": "Grip settles into a visibly bounded model mount and the cable catches up",
+        "reaction": "The collar compresses against its stop and the attached cable overshoots behind it.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 3,
-      "at_s": 4.528,
-      "t": "4.528-6.540",
+      "at_s": 3.2,
+      "t": "3.2-5",
       "vo_line": 0,
-      "offset": 4.528,
-      "vo": "Two machine outputs. Watch what this pen does next.",
-      "shows": "Pen clip springs against its cradle and arrests the last roll",
-      "means": "WATCH THE PEN",
-      "sfx": "A small sprung-clip snap",
+      "offset": 3.2,
+      "vo": "What would make an AI fishing rule worth testing?",
+      "shows": "Camera lifts enough to expose the tiny support under the outsized grip",
+      "means": "The physical action makes editorial schematic legible at the moment the narration needs it.",
+      "sfx": "wood squeak",
       "draw": {
-        "subject": "Pen clip",
-        "action": "springs against its cradle and arrests the last roll",
-        "emotion": "appreciative curiosity",
-        "annotation": "WATCH THE PEN"
+        "subject": "GearLever and fictional researcher",
+        "action": "Camera lifts enough to expose the tiny support under the outsized grip",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "EDITORIAL SCHEMATIC"
       },
       "choreo": {
-        "primary": "Pen clip springs against its cradle and arrests the last roll",
-        "reaction": "The cradle rocks once and its shadow lands under the stopped barrel",
-        "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
+        "primary": "Camera lifts enough to expose the tiny support under the outsized grip",
+        "reaction": "The small support gives one compliant flex as the oversized grip settles.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 4,
-      "at_s": 6.54,
-      "t": "6.540-11.385",
+      "at_s": 5,
+      "t": "5-8.2",
       "vo_line": 1,
-      "offset": 0.0,
-      "vo": "Koniag Government Services says it supports Wingman, a platform for digital office assistants.",
-      "shows": "KGS nameplate slides into a copper announcement stand at the wall",
-      "means": "KONIAG GOVERNMENT SERVICES",
-      "sfx": "Metal plate seats in wood with a restrained clank",
+      "offset": 0,
+      "vo": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
+      "shows": "Researcher rotates the publication date tab into the model rim",
+      "means": "The physical action makes september 11th legible at the moment the narration needs it.",
+      "sfx": "paper flick",
       "draw": {
-        "subject": "KGS nameplate",
-        "action": "slides into a copper announcement stand at the wall",
-        "emotion": "appreciative curiosity",
-        "annotation": "KONIAG GOVERNMENT SERVICES"
+        "subject": "GearLever and fictional researcher",
+        "action": "Researcher rotates the publication date tab into the model rim",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "SEPTEMBER 11TH"
       },
       "choreo": {
-        "primary": "KGS nameplate slides into a copper announcement stand at the wall",
-        "reaction": "The stand feet compress as the nameplate seats",
-        "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
-      },
-      "sfx_offset_frames": 8,
-      "sfx_offset_reason": "Metal plate seats at the rendered arrival or contact, after the visual move begins."
+        "primary": "Researcher rotates the publication date tab into the model rim",
+        "reaction": "Date-tab hinge rebounds against the rim, then rests flush.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+      }
     },
     {
       "id": 5,
-      "at_s": 11.385,
-      "t": "11.385-15.140",
+      "at_s": 8.2,
+      "t": "8.2-12",
       "vo_line": 1,
-      "offset": 4.845,
-      "vo": "Koniag Government Services says it supports Wingman, a platform for digital office assistants.",
-      "shows": "Wingman office-assistant rails open beneath the KGS plate",
-      "means": "WINGMAN / DIGITAL ASSISTANTS",
-      "sfx": "Wood runners slide with a short scrape",
+      "offset": 3.2,
+      "vo": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
+      "shows": "Observation window opens onto a clearly labeled schematic population",
+      "means": "The physical action makes eastern bering sea pollock legible at the moment the narration needs it.",
+      "sfx": "glass slide",
       "draw": {
-        "subject": "Wingman office-assistant rails",
-        "action": "open beneath the KGS plate",
-        "emotion": "appreciative curiosity",
-        "annotation": "WINGMAN / DIGITAL ASSISTANTS"
+        "subject": "GearLever and fictional researcher",
+        "action": "Observation window opens onto a clearly labeled schematic population",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "EASTERN BERING SEA POLLOCK"
       },
       "choreo": {
-        "primary": "Wingman office-assistant rails open beneath the KGS plate",
-        "reaction": "Three still-closed workflow drawers separate slightly along their rails",
-        "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
+        "primary": "Observation window opens onto a clearly labeled schematic population",
+        "reaction": "Window latch rises as its glass panel slides clear; water reflection stays clipped inside.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 6,
-      "at_s": 15.14,
-      "t": "15.140-19.197",
+      "at_s": 12,
+      "t": "12-16.3",
       "vo_line": 2,
-      "offset": 0.0,
-      "vo": "Its September eleventh announcement names contracting, logistics and financial management.",
-      "shows": "Announcement date leaf turns over the stand to reveal the company date",
-      "means": "SEPTEMBER 11TH / KGS ANNOUNCEMENT",
-      "sfx": "One paper page turn",
+      "offset": 0,
+      "vo": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
+      "shows": "Wide laboratory unfolds around researcher and the source name lands on its rail",
+      "means": "The physical action makes alaska fisheries science center legible at the moment the narration needs it.",
+      "sfx": "whoosh",
       "draw": {
-        "subject": "Announcement date leaf",
-        "action": "turns over the stand to reveal the company date",
-        "emotion": "appreciative curiosity",
-        "annotation": "SEPTEMBER 11TH / KGS ANNOUNCEMENT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Wide laboratory unfolds around researcher and the source name lands on its rail",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "ALASKA FISHERIES SCIENCE CENTER"
       },
       "choreo": {
-        "primary": "Announcement date leaf turns over the stand to reveal the company date",
-        "reaction": "Its corner nudges the hanging source tag",
-        "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
+        "primary": "Wide laboratory unfolds around researcher and the source name lands on its rail",
+        "reaction": "Researcher turns from the model to the observation intake and raises the pointing hand.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 7,
-      "at_s": 19.197,
-      "t": "19.197-22.640",
+      "at_s": 16.3,
+      "t": "16.3-20",
       "vo_line": 2,
-      "offset": 4.057,
-      "vo": "Its September eleventh announcement names contracting, logistics and financial management.",
-      "shows": "Workflow drawers open in a staggered cascade for contracting, logistics and financial management",
-      "means": "CONTRACTING / LOGISTICS / FINANCIAL MANAGEMENT",
-      "sfx": "Three staggered drawer-stop ticks",
+      "offset": 4.3,
+      "vo": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
+      "shows": "Spring-loaded intake jaws open while observation tiles enter the simulator",
+      "means": "The physical action makes historical observations legible at the moment the narration needs it.",
+      "sfx": "tile clack",
       "draw": {
-        "subject": "Workflow drawers",
-        "action": "open in a staggered cascade for contracting, logistics and financial management",
-        "emotion": "appreciative curiosity",
-        "annotation": "CONTRACTING / LOGISTICS / FINANCIAL MANAGEMENT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Spring-loaded intake jaws open while observation tiles enter the simulator",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "HISTORICAL OBSERVATIONS"
       },
       "choreo": {
-        "primary": "Workflow drawers open in a staggered cascade for contracting, logistics and financial management",
-        "reaction": "The last drawer shimmy nudges its neighbor back into a neat line",
-        "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
+        "primary": "Spring-loaded intake jaws open while observation tiles enter the simulator",
+        "reaction": "Intake jaws close behind each observation tile and their return spring compresses.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 8,
-      "at_s": 22.64,
-      "t": "22.640-27.020",
+      "at_s": 20,
+      "t": "20-22.4",
       "vo_line": 3,
-      "offset": 0.0,
-      "vo": "KGS belongs to Koniag, the Kodiak region's Alaska Native corporation.",
-      "shows": "Corporate ownership wall builds the named Koniag parent above the KGS subsidiary rail",
-      "means": "KONIAG / KONIAG SUBSIDIARY",
-      "sfx": "A wooden crossbar drops into its bracket",
+      "offset": 0,
+      "vo": "Their agent practices harvest choices through repeated simulated seasons.",
+      "shows": "Researcher turns control through a test cycle while season shutters change",
+      "means": "The physical action makes simulated seasons legible at the moment the narration needs it.",
+      "sfx": "ratchet",
       "draw": {
-        "subject": "Corporate ownership wall",
-        "action": "builds the named Koniag parent above the KGS subsidiary rail",
-        "emotion": "appreciative curiosity",
-        "annotation": "KONIAG / KONIAG SUBSIDIARY"
+        "subject": "GearLever and fictional researcher",
+        "action": "Researcher turns control through a test cycle while season shutters change",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "SIMULATED SEASONS"
       },
       "choreo": {
-        "primary": "Corporate ownership wall builds the named Koniag parent above the KGS subsidiary rail",
-        "reaction": "The lower KGS rail shifts into its supported position",
-        "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
-      },
-      "sfx_offset_frames": 30,
-      "sfx_offset_reason": "Crossbar drops into bracket at the rendered arrival or contact, after the visual move begins."
+        "primary": "Researcher turns control through a test cycle while season shutters change",
+        "reaction": "After initiating the cycle the researcher releases the handle, leaving the mechanism to run.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+      }
     },
     {
       "id": 9,
-      "at_s": 27.02,
-      "t": "27.020-29.940",
+      "at_s": 22.4,
+      "t": "22.4-26",
       "vo_line": 3,
-      "offset": 4.38,
-      "vo": "KGS belongs to Koniag, the Kodiak region's Alaska Native corporation.",
-      "shows": "Kodiak-region nameplate hinges outward beside the parent corporation name",
-      "means": "KODIAK REGION / ALASKA NATIVE CORPORATION",
-      "sfx": "The nameplate hinge makes a soft creak",
+      "offset": 2.4,
+      "vo": "Their agent practices harvest choices through repeated simulated seasons.",
+      "shows": "A learned-rule token traverses the outcome path and returns to the input",
+      "means": "The physical action makes harvest choices legible at the moment the narration needs it.",
+      "sfx": "soft roll",
       "draw": {
-        "subject": "Kodiak-region nameplate",
-        "action": "hinges outward beside the parent corporation name",
-        "emotion": "appreciative curiosity",
-        "annotation": "KODIAK REGION / ALASKA NATIVE CORPORATION"
+        "subject": "GearLever and fictional researcher",
+        "action": "A learned-rule token traverses the outcome path and returns to the input",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "HARVEST CHOICES"
       },
       "choreo": {
-        "primary": "Kodiak-region nameplate hinges outward beside the parent corporation name",
-        "reaction": "A neutral Alaska outline settles behind the region label without a quantitative map scale",
-        "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
+        "primary": "A learned-rule token traverses the outcome path and returns to the input",
+        "reaction": "Outcome token contacts the bend guide and turns into the return route.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 10,
-      "at_s": 29.94,
-      "t": "29.940-34.116",
+      "at_s": 26,
+      "t": "26-28.8",
       "vo_line": 4,
-      "offset": 0.0,
-      "vo": "Amazon's cloud business, AWS, describes earlier Army tools behind this approach.",
-      "shows": "AWS case-study volume opens in the foreground of the identity wall",
-      "means": "AWS CASE STUDY / EARLIER ARMY PROCUREMENT",
-      "sfx": "A case-study spine opens with a papery flex",
+      "offset": 0,
+      "vo": "Feedback rewards outcomes and changes the learned rule.",
+      "shows": "Cutaway spreads the return path around the lever and holds the completed connection",
+      "means": "The physical action makes outcome feedback legible at the moment the narration needs it.",
+      "sfx": "snap build",
       "draw": {
-        "subject": "AWS case-study volume",
-        "action": "opens in the foreground of the identity wall",
-        "emotion": "appreciative curiosity",
-        "annotation": "AWS CASE STUDY / EARLIER ARMY PROCUREMENT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Cutaway spreads the return path around the lever and holds the completed connection",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "OUTCOME FEEDBACK"
       },
       "choreo": {
-        "primary": "AWS case-study volume opens in the foreground of the identity wall",
-        "reaction": "The announcement remains behind it while the earlier-work divider moves toward camera",
-        "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
-      }
+        "primary": "Cutaway spreads the return path around the lever and holds the completed connection",
+        "reaction": "The final coupling closes; nearby cable slack straightens before the held reveal.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+      },
+      "rehook": "Feedback path opens into a complete learning mechanism"
     },
     {
       "id": 11,
-      "at_s": 34.116,
-      "t": "34.116-37.800",
+      "at_s": 28.8,
+      "t": "28.8-31",
       "vo_line": 4,
-      "offset": 4.176,
-      "vo": "Amazon's cloud business, AWS, describes earlier Army tools behind this approach.",
-      "shows": "Pen cap collar unseats one notch as an ordinary hand grips the barrel from its storage clip",
-      "means": "EARLIER ARMY TOOLS",
-      "sfx": "A cap collar disengages with a light snap",
+      "offset": 2.8,
+      "vo": "Feedback rewards outcomes and changes the learned rule.",
+      "shows": "Feedback reaches the candidate and its adjustable detent changes position",
+      "means": "The physical action makes rule updates legible at the moment the narration needs it.",
+      "sfx": "detent click",
       "draw": {
-        "subject": "Pen cap collar",
-        "action": "unseats one notch as an ordinary hand grips the barrel from its storage clip",
-        "emotion": "appreciative curiosity",
-        "annotation": "EARLIER ARMY TOOLS"
+        "subject": "GearLever and fictional researcher",
+        "action": "Feedback reaches the candidate and its adjustable detent changes position",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "RULE UPDATES"
       },
       "choreo": {
-        "primary": "Pen cap collar unseats one notch as an ordinary hand grips the barrel from its storage clip",
-        "reaction": "The released clip flexes visibly and the pen rests in the new intake cradle",
-        "ambient": "Left source-tag suspension sways, right announcement corner flexes, lower copper stand ribbon curls. A broad window-shadow sweep and fine office motes move behind the rails. All channels freeze together during specified reveal holds."
-      },
-      "framing_proof": "For the last3seconds of this wide ownership shot, foreground pen length360px, open cap seam32px, hand attached at x540/y1100; source identity remains large above. The map is background context during this insert."
+        "primary": "Feedback reaches the candidate and its adjustable detent changes position",
+        "reaction": "Linked cable tugs the learned detent; the fixed stop does not respond.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+      }
     },
     {
       "id": 12,
-      "at_s": 37.8,
-      "t": "37.800-40.800",
+      "at_s": 31,
+      "t": "31-34.0",
       "vo_line": 5,
-      "offset": 0.0,
-      "vo": "DORA, the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.",
-      "shows": "Email subject slot expands to fill the intake aisle around a generic vendor-identifier token",
-      "means": "DORA / EMAIL SUBJECT",
-      "sfx": "A broad paper-slot sweep with a soft receiving tap",
+      "offset": 0,
+      "vo": "They compare it with a predefined harvest rule.",
+      "shows": "Fixed comparison token seats beside the learned candidate on its own rail",
+      "means": "The physical action makes predefined harvest rule legible at the moment the narration needs it.",
+      "sfx": "block tap",
       "draw": {
-        "subject": "Email subject slot",
-        "action": "expands to fill the intake aisle around a generic vendor-identifier token",
-        "emotion": "appreciative curiosity",
-        "annotation": "DORA / EMAIL SUBJECT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Fixed comparison token seats beside the learned candidate on its own rail",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "PREDEFINED HARVEST RULE"
       },
       "choreo": {
-        "primary": "Email subject slot expands to fill the intake aisle around a generic vendor-identifier token",
-        "reaction": "The receiving guide tips toward the token as the view opens into DORA",
-        "ambient": "Back-left cabinet tag swings, back-right hanging cable flexes, low subject-slot spring oscillates quietly. Fine motes and slow window light lie behind the retrieval architecture. All channels freeze together during specified reveal holds."
-      },
-      "rehook": "Enter the email subject as a physical route into the first named tool."
+        "primary": "Fixed comparison token seats beside the learned candidate on its own rail",
+        "reaction": "The predefined token depresses its own stop, with no learned adjustment.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+      }
     },
     {
       "id": 13,
-      "at_s": 40.8,
-      "t": "40.800-44.565",
+      "at_s": 34.0,
+      "t": "34.0-36",
       "vo_line": 5,
       "offset": 3.0,
-      "vo": "DORA, the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.",
-      "shows": "Professional hand pushes the generic labeled vendor identifier into the subject slot",
-      "means": "VENDOR IDENTIFIER",
-      "sfx": "A fingertip places a thick paper token",
+      "vo": "They compare it with a predefined harvest rule.",
+      "shows": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed",
+      "means": "The physical action makes learning changes the rule legible at the moment the narration needs it.",
+      "sfx": "detent tick",
       "draw": {
-        "subject": "Professional hand",
-        "action": "pushes the generic labeled vendor identifier into the subject slot",
-        "emotion": "appreciative curiosity",
-        "annotation": "VENDOR IDENTIFIER"
+        "subject": "GearLever and fictional researcher",
+        "action": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "LEARNING CHANGES THE RULE"
       },
       "choreo": {
-        "primary": "Professional hand pushes the generic labeled vendor identifier into the subject slot",
-        "reaction": "The subject guide closes on the token and the input rail moves forward",
-        "ambient": "Back-left cabinet tag swings, back-right hanging cable flexes, low subject-slot spring oscillates quietly. Fine motes and slow window light lie behind the retrieval architecture. All channels freeze together during specified reveal holds."
+        "primary": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed",
+        "reaction": "The released hand withdraws toward frame edge while feedback alone shifts the candidate.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 14,
-      "at_s": 44.565,
-      "t": "44.565-46.640",
-      "vo_line": 5,
-      "offset": 6.765,
-      "vo": "DORA, the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.",
-      "shows": "DORA intake rail carries the subject token toward the compliance lookup junction",
-      "means": "DETERMINATION OF RESPONSIBILITY ASSISTANT",
-      "sfx": "A short runner tick at the junction",
+      "at_s": 36,
+      "t": "36-39",
+      "vo_line": 6,
+      "offset": 0,
+      "vo": "Will an advantage hold when the biology changes?",
+      "shows": "Researcher points toward the unopened stock-linked room beyond the first experiment",
+      "means": "The physical action makes will the advantage hold? legible at the moment the narration needs it.",
+      "sfx": "sleeve brush",
       "draw": {
-        "subject": "DORA intake rail",
-        "action": "carries the subject token toward the compliance lookup junction",
-        "emotion": "appreciative curiosity",
-        "annotation": "DETERMINATION OF RESPONSIBILITY ASSISTANT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Researcher points toward the unopened stock-linked room beyond the first experiment",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "WILL THE ADVANTAGE HOLD?"
       },
       "choreo": {
-        "primary": "DORA intake rail carries the subject token toward the compliance lookup junction",
-        "reaction": "A connected fork opens downstream in direct response to token arrival",
-        "ambient": "Back-left cabinet tag swings, back-right hanging cable flexes, low subject-slot spring oscillates quietly. Fine motes and slow window light lie behind the retrieval architecture. All channels freeze together during specified reveal holds."
+        "primary": "Researcher points toward the unopened stock-linked room beyond the first experiment",
+        "reaction": "Researcher\u2019s raised wrist pulls the attached sleeve fold taut; cloth brushes along the cuff as gaze reaches the sealed hatch.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 15,
-      "at_s": 46.64,
-      "t": "46.640-50.939",
+      "at_s": 39,
+      "t": "39-41",
       "vo_line": 6,
-      "offset": 0.0,
-      "vo": "It retrieves compliance records through software connections, including SAM dot gov.",
-      "shows": "API connections extend from the token junction to named compliance records",
-      "means": "API LOOKUPS / SAM.GOV",
-      "sfx": "A small connector click then a paper lift",
+      "offset": 3,
+      "vo": "Will an advantage hold when the biology changes?",
+      "shows": "A second-room port turns toward camera but remains closed",
+      "means": "The physical action makes change the biology legible at the moment the narration needs it.",
+      "sfx": "hinge creak",
       "draw": {
-        "subject": "API connections",
-        "action": "extend from the token junction to named compliance records",
-        "emotion": "appreciative curiosity",
-        "annotation": "API LOOKUPS / SAM.GOV"
+        "subject": "GearLever and fictional researcher",
+        "action": "A second-room port turns toward camera but remains closed",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "CHANGE THE BIOLOGY"
       },
       "choreo": {
-        "primary": "API connections extend from the token junction to named compliance records",
-        "reaction": "The connected record tabs lift out of their file pockets along the same paths",
-        "ambient": "Separate unused record-tab corners flex at left and right, the receiving-guide spring moves below. The connected active record path supplies the main motion; fine motes stay behind it. All channels freeze together during specified reveal holds."
+        "primary": "A second-room port turns toward camera but remains closed",
+        "reaction": "Hatch spring catches the rotating port; its seal stays visibly closed.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 16,
-      "at_s": 50.939,
-      "t": "50.939-53.880",
-      "vo_line": 6,
-      "offset": 4.299,
-      "vo": "It retrieves compliance records through software connections, including SAM dot gov.",
-      "shows": "Retrieved record tabs travel toward the report channel in a staggered procession",
-      "means": "COMPLIANCE RECORDS",
-      "sfx": "A brief layered paper shuffle",
+      "at_s": 41,
+      "t": "41-43.6",
+      "vo_line": 7,
+      "offset": 0,
+      "vo": "Start with a model where young fish enter at a constant rate.",
+      "shows": "First bay opens around its own two candidate identities",
+      "means": "The physical action makes constant recruitment legible at the moment the narration needs it.",
+      "sfx": "door slide",
       "draw": {
-        "subject": "Retrieved record tabs",
-        "action": "travel toward the report channel in a staggered procession",
-        "emotion": "appreciative curiosity",
-        "annotation": "COMPLIANCE RECORDS"
+        "subject": "GearLever and fictional researcher",
+        "action": "First bay opens around its own two candidate identities",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "CONSTANT RECRUITMENT"
       },
       "choreo": {
-        "primary": "Retrieved record tabs travel toward the report channel in a staggered procession",
-        "reaction": "Each passing tab depresses a receiving spring; the final spring bobs once",
-        "ambient": "Separate unused record-tab corners flex at left and right, the receiving-guide spring moves below. The connected active record path supplies the main motion; fine motes stay behind it. All channels freeze together during specified reveal holds."
+        "primary": "First bay opens around its own two candidate identities",
+        "reaction": "First-room researcher braces the opened bay cover on its physical support.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 17,
-      "at_s": 53.88,
-      "t": "53.880-56.185",
+      "at_s": 43.6,
+      "t": "43.6-48",
       "vo_line": 7,
-      "offset": 0.0,
-      "vo": "Prebuilt logic assembles a standardized report.",
-      "shows": "Prebuilt rule rails align the retrieved records into a standard report outline",
-      "means": "PREBUILT LOGIC / STANDARDIZED REPORT",
-      "sfx": "A restrained clank as the alignment guide seats",
+      "offset": 2.6,
+      "vo": "Start with a model where young fish enter at a constant rate.",
+      "shows": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle",
+      "means": "The physical action makes young fish enter at a constant rate legible at the moment the narration needs it.",
+      "sfx": "water pulse",
       "draw": {
-        "subject": "Prebuilt rule rails",
-        "action": "align the retrieved records into a standard report outline",
-        "emotion": "appreciative curiosity",
-        "annotation": "PREBUILT LOGIC / STANDARDIZED REPORT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "YOUNG FISH ENTER AT A CONSTANT RATE"
       },
       "choreo": {
-        "primary": "Prebuilt rule rails align the retrieved records into a standard report outline",
-        "reaction": "The report spine closes around the arriving tabs while its source tags remain visible",
-        "ambient": "Separate unused record-tab corners flex at left and right, the receiving-guide spring moves below. The connected active record path supplies the main motion; fine motes stay behind it. All channels freeze together during specified reveal holds."
-      },
-      "sfx_offset_frames": 26,
-      "sfx_offset_reason": "Rule assembly settles into report at the rendered arrival or contact, after the visual move begins."
+        "primary": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle",
+        "reaction": "Inlet paddle returns to the same unnumbered starting stop after its pulse.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+      }
     },
     {
       "id": 18,
-      "at_s": 56.185,
-      "t": "56.185-58.260",
-      "vo_line": 7,
-      "offset": 2.305,
-      "vo": "Prebuilt logic assembles a standardized report.",
-      "shows": "Loose pen cap turns for one brief hand gesture above the matching rear barrel socket, then rests beside the pen",
-      "means": "STANDARDIZED REPORT",
-      "sfx": "The cap rings softly against its cup",
+      "at_s": 48,
+      "t": "48-52.6",
+      "vo_line": 8,
+      "offset": 0,
+      "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
+      "shows": "First result flap rises beside the constant-case learned rule",
+      "means": "The physical action makes higher spawning biomass legible at the moment the narration needs it.",
+      "sfx": "flap open",
       "draw": {
-        "subject": "Loose pen cap",
-        "action": "turns for one brief hand gesture above the matching rear barrel socket, then rests beside the pen",
-        "emotion": "appreciative curiosity",
-        "annotation": "STANDARDIZED REPORT"
+        "subject": "GearLever and fictional researcher",
+        "action": "First result flap rises beside the constant-case learned rule",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "HIGHER SPAWNING BIOMASS"
       },
       "choreo": {
-        "primary": "Loose pen cap turns for one brief hand gesture above the matching rear barrel socket, then rests beside the pen",
-        "reaction": "The socket remains visible and the cap makes a small landing wobble in its cup",
-        "ambient": "Separate unused record-tab corners flex at left and right, the receiving-guide spring moves below. The connected active record path supplies the main motion; fine motes stay behind it. All channels freeze together during specified reveal holds."
-      },
-      "framing_proof": "Pen/cap occupy520px width across center x280..800/y940. Cap opening and matching rear socket are both at least70px across, separated by180px. Complete cap detachment happens visibly in the hand before the brief paired turn, then cap sits freely in cup.",
-      "sfx_offset_frames": 18,
-      "sfx_offset_reason": "Cap rings against cup at the rendered arrival or contact, after the visual move begins."
+        "primary": "First result flap rises beside the constant-case learned rule",
+        "reaction": "Researcher leans in toward the raised result flap, eyebrows lifting.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+      }
     },
     {
       "id": 19,
-      "at_s": 58.26,
-      "t": "58.260-63.082",
+      "at_s": 52.6,
+      "t": "52.6-55.2",
       "vo_line": 8,
-      "offset": 0.0,
-      "vo": "Separate Jumpstarter tools use large language models through Amazon Bedrock to turn user inputs into initial document sections.",
-      "shows": "Separate Jumpstarter light table opens in a new room as user-input slips feed a labeled language-model path",
-      "means": "JUMPSTARTER / GENERATIVE DRAFTING",
-      "sfx": "A different table drawer rolls open",
+      "offset": 4.6,
+      "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
+      "shows": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket",
+      "means": "The physical action makes weight of breeding fish legible at the moment the narration needs it.",
+      "sfx": "socket seat",
       "draw": {
-        "subject": "Separate Jumpstarter light table",
-        "action": "opens in a new room as user-input slips feed a labeled language-model path",
-        "emotion": "appreciative curiosity",
-        "annotation": "JUMPSTARTER / GENERATIVE DRAFTING"
+        "subject": "GearLever and fictional researcher",
+        "action": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "WEIGHT OF BREEDING FISH"
       },
       "choreo": {
-        "primary": "Separate Jumpstarter light table opens in a new room as user-input slips feed a labeled language-model path",
-        "reaction": "An empty draft frame expands outward from the arriving inputs",
-        "ambient": "Upper-left input-slip corner flexes, upper-right task-light suspension sways, lower FIRST DRAFT tail curls. Warm translucent table-light drift and fine motes stay behind type. All channels freeze together during specified reveal holds."
+        "primary": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket",
+        "reaction": "The weight emblem depresses its socket and its retaining tab closes.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 20,
-      "at_s": 63.082,
-      "t": "63.082-66.963",
+      "at_s": 55.2,
+      "t": "55.2-59",
       "vo_line": 8,
-      "offset": 4.822,
-      "vo": "Separate Jumpstarter tools use large language models through Amazon Bedrock to turn user inputs into initial document sections.",
-      "shows": "Initial document sections grow line by line from the model path inside the draft outline",
-      "means": "AMAZON BEDROCK / FIRST DRAFT",
-      "sfx": "A light paper-spool roll",
+      "offset": 7.2,
+      "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
+      "shows": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck",
+      "means": "The physical action makes large annual catch swings legible at the moment the narration needs it.",
+      "sfx": "wood swing",
       "draw": {
-        "subject": "Initial document sections",
-        "action": "grow line by line from the model path inside the draft outline",
-        "emotion": "appreciative curiosity",
-        "annotation": "AMAZON BEDROCK / FIRST DRAFT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "LARGE ANNUAL CATCH SWINGS"
       },
       "choreo": {
-        "primary": "Initial document sections grow line by line from the model path inside the draft outline",
-        "reaction": "The FIRST DRAFT flag unrolls beyond its little spool then curls its blank tail under",
-        "ambient": "Upper-left input-slip corner flexes, upper-right task-light suspension sways, lower FIRST DRAFT tail curls. Warm translucent table-light drift and fine motes stay behind type. All channels freeze together during specified reveal holds."
+        "primary": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck",
+        "reaction": "Researcher ducks once under the tag\u2019s physical arc, then rises as it settles.",
+        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
       }
     },
     {
       "id": 21,
-      "at_s": 66.963,
-      "t": "66.963-69.080",
-      "vo_line": 8,
-      "offset": 8.703,
-      "vo": "Separate Jumpstarter tools use large language models through Amazon Bedrock to turn user inputs into initial document sections.",
-      "shows": "Uncapped pen nib appears beside the editable first draft while the loose cap rests in its cup",
-      "means": "FIRST DRAFT",
-      "sfx": "A pen cradle touches down with a small tick",
+      "at_s": 59,
+      "t": "59-62.3",
+      "vo_line": 9,
+      "offset": 0,
+      "vo": "The next experiment links young fish entering the stock to the breeding population.",
+      "shows": "Doorway wipes into a different experimental room while first case stays behind",
+      "means": "The physical action makes stock-linked recruitment legible at the moment the narration needs it.",
+      "sfx": "door whoosh",
       "draw": {
-        "subject": "Uncapped pen nib",
-        "action": "appears beside the editable first draft while the loose cap rests in its cup",
-        "emotion": "appreciative curiosity",
-        "annotation": "FIRST DRAFT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Doorway wipes into a different experimental room while first case stays behind",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "STOCK-LINKED RECRUITMENT"
       },
       "choreo": {
-        "primary": "Uncapped pen nib appears beside the editable first draft while the loose cap rests in its cup",
-        "reaction": "The draft holder tips toward the visible human tool, retaining the FIRST DRAFT flag",
-        "ambient": "Upper-left input-slip corner flexes, upper-right task-light suspension sways, lower FIRST DRAFT tail curls. Warm translucent table-light drift and fine motes stay behind type. All channels freeze together during specified reveal holds."
+        "primary": "Doorway wipes into a different experimental room while first case stays behind",
+        "reaction": "Control cable follows the carried grip through the doorway; the first case remains in its room.",
+        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
       },
-      "framing_proof": "The exposed nib is120px long with detached cap beside it in the foreground atx540/y1120. The language-model path and FIRST DRAFT remain legible above; this is a reinspection of the detachment at56.785, not another state.",
-      "sfx_offset_frames": 26,
-      "sfx_offset_reason": "Pen cradle touches down at the rendered arrival or contact, after the visual move begins."
+      "rehook": "Doorway reveals a wholly separate biological experiment"
     },
     {
       "id": 22,
-      "at_s": 69.08,
-      "t": "69.080-72.435",
+      "at_s": 62.3,
+      "t": "62.3-65",
       "vo_line": 9,
-      "offset": 0.0,
-      "vo": "First, give the outputs their credit. The records are gathered. A blank section now contains text someone can work with.",
-      "shows": "Both intact outputs advance into a wide foreground gallery while their machine housings withdraw into far depth",
-      "means": "REPORT AND FIRST DRAFT",
-      "sfx": "A broad warm wood-and-paper movement",
+      "offset": 3.3,
+      "vo": "The next experiment links young fish entering the stock to the breeding population.",
+      "shows": "Stock-linked inlet connects two named biological components without quantities",
+      "means": "The physical action makes young fish and breeding stock legible at the moment the narration needs it.",
+      "sfx": "coupler click",
       "draw": {
-        "subject": "Both intact outputs",
-        "action": "advance into a wide foreground gallery while their machine housings withdraw into far depth",
-        "emotion": "appreciative curiosity",
-        "annotation": "REPORT AND FIRST DRAFT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Stock-linked inlet connects two named biological components without quantities",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "YOUNG FISH AND BREEDING STOCK"
       },
       "choreo": {
-        "primary": "Both intact outputs advance into a wide foreground gallery while their machine housings withdraw into far depth",
-        "reaction": "The front workbench expands under the gathered report and editable draft",
-        "ambient": "Left report tabs flex, right FIRST DRAFT flag curls, low workbench spring settles between events. The rear housings have slight independent suspension motion under a window-shadow sweep. All channels freeze together during specified reveal holds."
-      },
-      "rehook": "Grant both completed outputs the foreground while the machines recede."
+        "primary": "Stock-linked inlet connects two named biological components without quantities",
+        "reaction": "The coupler tugs its attached biological-component label before the line straightens.",
+        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+      }
     },
     {
       "id": 23,
-      "at_s": 72.435,
-      "t": "72.435-76.445",
-      "vo_line": 9,
-      "offset": 3.355,
-      "vo": "First, give the outputs their credit. The records are gathered. A blank section now contains text someone can work with.",
-      "shows": "Report source tabs fan open to show gathered records still attached to the report",
-      "means": "RECORDS GATHERED",
-      "sfx": "A satisfying ordered paper fan",
+      "at_s": 65,
+      "t": "65-68.6",
+      "vo_line": 10,
+      "offset": 0,
+      "vo": "This is a separate simulated case with its own comparison.",
+      "shows": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails",
+      "means": "The physical action makes separate simulated case legible at the moment the narration needs it.",
+      "sfx": "dual tap",
       "draw": {
-        "subject": "Report source tabs",
-        "action": "fan open to show gathered records still attached to the report",
-        "emotion": "appreciative curiosity",
-        "annotation": "RECORDS GATHERED"
+        "subject": "GearLever and fictional researcher",
+        "action": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "SEPARATE SIMULATED CASE"
       },
       "choreo": {
-        "primary": "Report source tabs fan open to show gathered records still attached to the report",
-        "reaction": "The report stand leans back under the opened tabs, then settles",
-        "ambient": "Left report tabs flex, right FIRST DRAFT flag curls, low workbench spring settles between events. The rear housings have slight independent suspension motion under a window-shadow sweep. All channels freeze together during specified reveal holds."
+        "primary": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails",
+        "reaction": "First new token seats, then its own predefined comparison seats with a separate response.",
+        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
       }
     },
     {
       "id": 24,
-      "at_s": 76.445,
-      "t": "76.445-78.900",
-      "vo_line": 9,
-      "offset": 7.365,
-      "vo": "First, give the outputs their credit. The records are gathered. A blank section now contains text someone can work with.",
-      "shows": "Draft paragraph section extends across the light table as a complete block of editable text",
-      "means": "EDITABLE TEXT",
-      "sfx": "A short paper extension with a soft stop",
+      "at_s": 68.6,
+      "t": "68.6-71",
+      "vo_line": 10,
+      "offset": 3.6,
+      "vo": "This is a separate simulated case with its own comparison.",
+      "shows": "Researcher aligns the comparison under the second case label",
+      "means": "The physical action makes its own comparison legible at the moment the narration needs it.",
+      "sfx": "rail scrape",
       "draw": {
-        "subject": "Draft paragraph section",
-        "action": "extends across the light table as a complete block of editable text",
-        "emotion": "appreciative curiosity",
-        "annotation": "EDITABLE TEXT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Researcher aligns the comparison under the second case label",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "ITS OWN COMPARISON"
       },
       "choreo": {
-        "primary": "Draft paragraph section extends across the light table as a complete block of editable text",
-        "reaction": "Its page corner flexes and the FIRST DRAFT flag shifts with the growing paper",
-        "ambient": "Left report tabs flex, right FIRST DRAFT flag curls, low workbench spring settles between events. The rear housings have slight independent suspension motion under a window-shadow sweep. All channels freeze together during specified reveal holds."
+        "primary": "Researcher aligns the comparison under the second case label",
+        "reaction": "Researcher checks the new comparison alignment with a small driven pointing gesture.",
+        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
       }
     },
     {
       "id": 25,
-      "at_s": 78.9,
-      "t": "78.900-80.650",
-      "vo_line": 10,
-      "offset": 0.0,
-      "vo": "These tools have completed real preparation for professionals.",
-      "shows": "Completed output cradles settle side by side with enough space for professional use",
-      "means": "PREPARATION COMPLETE",
-      "sfx": "A low wood-foot settling contact",
+      "at_s": 71,
+      "t": "71-74.5",
+      "vo_line": 11,
+      "offset": 0,
+      "vo": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
+      "shows": "Stock-linked result opens beside the new learned candidate",
+      "means": "The physical action makes higher catch legible at the moment the narration needs it.",
+      "sfx": "flap snap",
       "draw": {
-        "subject": "Completed output cradles",
-        "action": "settle side by side with enough space for professional use",
-        "emotion": "appreciative curiosity",
-        "annotation": "PREPARATION COMPLETE"
+        "subject": "GearLever and fictional researcher",
+        "action": "Stock-linked result opens beside the new learned candidate",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "HIGHER CATCH"
       },
       "choreo": {
-        "primary": "Completed output cradles settle side by side with enough space for professional use",
-        "reaction": "The desk edge moves toward the tool cup and both output shadows become grounded",
-        "ambient": "Left cup liner corner flexes, right cradle spring moves quietly, a rear lamp cord sways. Cap and nib are the only foreground focal motion; fine motes remain behind. All channels freeze together during specified reveal holds."
-      },
-      "sfx_offset_frames": 7,
-      "sfx_offset_reason": "Tool surface settles at the rendered arrival or contact, after the visual move begins."
+        "primary": "Stock-linked result opens beside the new learned candidate",
+        "reaction": "Researcher glances from the higher-catch flap toward the still-closed second flap.",
+        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+      }
     },
     {
       "id": 26,
-      "at_s": 80.65,
-      "t": "80.650-83.960",
-      "vo_line": 10,
-      "offset": 1.75,
-      "vo": "These tools have completed real preparation for professionals.",
-      "shows": "Professional hand and loose cap retrieve the cap normally from its cup and post it on the rear of the pen",
-      "means": "HUMAN WORK FOLLOWS",
-      "sfx": "The cap clicks onto the pen rear",
+      "at_s": 74.5,
+      "t": "74.5-79",
+      "vo_line": 11,
+      "offset": 3.5,
+      "vo": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
+      "shows": "Second stock-linked flap opens equally large beside the first result",
+      "means": "The physical action makes lower spawning biomass legible at the moment the narration needs it.",
+      "sfx": "muted knock",
       "draw": {
-        "subject": "Professional hand and loose cap",
-        "action": "retrieve the cap normally from its cup and post it on the rear of the pen",
-        "emotion": "appreciative curiosity",
-        "annotation": "HUMAN WORK FOLLOWS"
+        "subject": "GearLever and fictional researcher",
+        "action": "Second stock-linked flap opens equally large beside the first result",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "LOWER SPAWNING BIOMASS"
       },
       "choreo": {
-        "primary": "Professional hand and loose cap retrieve the cap normally from its cup and post it on the rear of the pen",
-        "reaction": "The sprung clip settles against the barrel; the nib remains exposed for the next task",
-        "ambient": "Left cup liner corner flexes, right cradle spring moves quietly, a rear lamp cord sways. Cap and nib are the only foreground focal motion; fine motes remain behind. All channels freeze together during specified reveal holds."
-      },
-      "sfx_offset_frames": 40,
-      "sfx_offset_reason": "Cap posts on rear barrel at the rendered arrival or contact, after the visual move begins."
+        "primary": "Second stock-linked flap opens equally large beside the first result",
+        "reaction": "The lower-biomass flap stops beside the first; researcher\u2019s head turns between equal labels.",
+        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+      }
     },
     {
       "id": 27,
-      "at_s": 83.96,
-      "t": "83.960-87.800",
-      "vo_line": 11,
-      "offset": 0.0,
-      "vo": "Now follow the report. The contracting professional reviews it and makes the determination.",
-      "shows": "Professional hand and DORA report slide together onto the desk while the finger begins inspecting the gathered report and its attached record material",
-      "means": "HUMAN REVIEW",
-      "sfx": "A sheet slides across the desk",
+      "at_s": 79,
+      "t": "79-81.8",
+      "vo_line": 12,
+      "offset": 0,
+      "vo": "These simulated gains may offer no management advantage over a predefined rule.",
+      "shows": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
+      "means": "The physical action makes management advantage unproven legible at the moment the narration needs it.",
+      "sfx": "tray slide",
       "draw": {
-        "subject": "Professional hand and DORA report",
-        "action": "slide together onto the desk while the finger begins inspecting the gathered report and its attached record material",
-        "emotion": "appreciative curiosity",
-        "annotation": "HUMAN REVIEW"
+        "subject": "GearLever and fictional researcher",
+        "action": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "MANAGEMENT ADVANTAGE UNPROVEN"
       },
       "choreo": {
-        "primary": "Professional hand and DORA report slide together onto the desk while the finger begins inspecting the gathered report and its attached record material",
-        "reaction": "The guided report edge pushes the source-tab fan open, and the connected lamp shade tips toward the examination",
-        "ambient": "Left report-tab corner flexes, right lamp-cord suspension sways, lower unused binder clip breathes. The examining hand and record fan drive the foreground under low-opacity window-shadow movement. All channels freeze together during specified reveal holds."
+        "primary": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
+        "reaction": "The two recess catches engage independently; neither produces a winning badge.",
+        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
       }
     },
     {
       "id": 28,
-      "at_s": 87.8,
-      "t": "87.800-90.276",
-      "vo_line": 11,
-      "offset": 3.84,
-      "vo": "Now follow the report. The contracting professional reviews it and makes the determination.",
-      "shows": "Professional hand compares the report page with its gathered record tabs for a sustained foreground examination",
-      "means": "REVIEW THE REPORT",
-      "sfx": "Sustained paper examination with a subordinate desk hinge and wood-stop contact",
+      "at_s": 81.8,
+      "t": "81.8-86",
+      "vo_line": 12,
+      "offset": 2.8,
+      "vo": "These simulated gains may offer no management advantage over a predefined rule.",
+      "shows": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed",
+      "means": "The physical action makes what must both rules demonstrate? legible at the moment the narration needs it.",
+      "sfx": "frame hinge",
       "draw": {
-        "subject": "Professional hand",
-        "action": "compares the report page with its gathered record tabs for a sustained foreground examination",
-        "emotion": "appreciative curiosity",
-        "annotation": "REVIEW THE REPORT"
+        "subject": "GearLever and fictional researcher",
+        "action": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "WHAT MUST BOTH RULES DEMONSTRATE?"
       },
       "choreo": {
-        "primary": "Professional hand compares the report page with its gathered record tabs for a sustained foreground examination",
-        "reaction": "The pulled record fan unfolds the small desk leaf beneath it; the linked lamp arm follows as a subordinate response",
-        "ambient": "Left report-tab corner flexes, right lamp-cord suspension sways, lower unused binder clip breathes. The examining hand and record fan drive the foreground under low-opacity window-shadow movement. All channels freeze together during specified reveal holds."
+        "primary": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed",
+        "reaction": "The empty frame\u2019s two closed goal shutters stop symmetrically in front of both lanes.",
+        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
       }
     },
     {
       "id": 29,
-      "at_s": 90.276,
-      "t": "90.276-91.300",
-      "vo_line": 11,
-      "offset": 6.316,
-      "vo": "Now follow the report. The contracting professional reviews it and makes the determination.",
-      "shows": "Professional hand turns the report after sustained examination as the source-described determination responsibility is named",
-      "means": "REVIEW AND DETERMINATION",
-      "sfx": "A deliberate page turn and fingertip tap",
+      "at_s": 86,
+      "t": "86-89.2",
+      "vo_line": 13,
+      "offset": 0,
+      "vo": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
+      "shows": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
+      "means": "The physical action makes noaa fisheries legible at the moment the narration needs it.",
+      "sfx": "bench thud",
       "draw": {
-        "subject": "Professional hand",
-        "action": "turns the report after sustained examination as the source-described determination responsibility is named",
-        "emotion": "appreciative curiosity",
-        "annotation": "REVIEW AND DETERMINATION"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "NOAA FISHERIES"
       },
       "choreo": {
-        "primary": "Professional hand turns the report after sustained examination as the source-described determination responsibility is named",
-        "reaction": "The attached record tabs follow the page turn, without a depicted vendor outcome or verdict stamp",
-        "ambient": "Left report-tab corner flexes, right lamp-cord suspension sways, lower unused binder clip breathes. The examining hand and record fan drive the foreground under low-opacity window-shadow movement. All channels freeze together during specified reveal holds."
+        "primary": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
+        "reaction": "Both bench feet meet the quay; cable weight settles onto the bench edge.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       }
     },
     {
       "id": 30,
-      "at_s": 91.3,
-      "t": "91.300-94.274",
-      "vo_line": 12,
-      "offset": 0.0,
-      "vo": "The draft has a different handoff. Its user refines and approves the generated sections.",
-      "shows": "Jumpstarter draft arrives on a separate editing surface with the capped-back pen already in the hand",
-      "means": "REFINE AND APPROVE",
-      "sfx": "An editable page settles under a guide",
+      "at_s": 89.2,
+      "t": "89.2-94",
+      "vo_line": 13,
+      "offset": 3.2,
+      "vo": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
+      "shows": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above",
+      "means": "The physical action makes north pacific fishery management council legible at the moment the narration needs it.",
+      "sfx": "shutter slide",
       "draw": {
-        "subject": "Jumpstarter draft",
-        "action": "arrives on a separate editing surface with the capped-back pen already in the hand",
-        "emotion": "appreciative curiosity",
-        "annotation": "REFINE AND APPROVE"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "NORTH PACIFIC FISHERY MANAGEMENT COUNCIL"
       },
       "choreo": {
-        "primary": "Jumpstarter draft arrives on a separate editing surface with the capped-back pen already in the hand",
-        "reaction": "The section guide widens to hold the text being refined",
-        "ambient": "Upper-left input-slip corner curls, upper-right FIRST DRAFT flag flexes, lower pen-cup spring breathes. The hand-controlled nib and text reflow remain foreground; motes stay behind paper. All channels freeze together during specified reveal holds."
+        "primary": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above",
+        "reaction": "The same requirement shutters click onto matching supports over both candidate rails.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       }
     },
     {
       "id": 31,
-      "at_s": 94.274,
-      "t": "94.274-97.249",
-      "vo_line": 12,
-      "offset": 2.974,
-      "vo": "The draft has a different handoff. Its user refines and approves the generated sections.",
-      "shows": "Hand-held pen nib contacts the page and draws a neutral editorial selection mark through the current paragraph",
-      "means": "REFINE THE SECTIONS",
-      "sfx": "One quiet pen-on-paper stroke",
+      "at_s": 94,
+      "t": "94-96.8",
+      "vo_line": 14,
+      "offset": 0,
+      "vo": "Fishing businesses need sound management to plan their seasons.",
+      "shows": "Testing leaf unfolds beneath both rails as camera rises to the full-size working quay",
+      "means": "The physical action makes season planning legible at the moment the narration needs it.",
+      "sfx": "leaf clunk",
       "draw": {
-        "subject": "Hand-held pen nib",
-        "action": "contacts the page and draws a neutral editorial selection mark through the current paragraph",
-        "emotion": "appreciative curiosity",
-        "annotation": "REFINE THE SECTIONS"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Testing leaf unfolds beneath both rails as camera rises to the full-size working quay",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "SEASON PLANNING"
       },
       "choreo": {
-        "primary": "Hand-held pen nib contacts the page and draws a neutral editorial selection mark through the current paragraph",
-        "reaction": "The selected lines gently reflow within the same FIRST DRAFT page; ink ends exactly at the nib",
-        "ambient": "Upper-left input-slip corner curls, upper-right FIRST DRAFT flag flexes, lower pen-cup spring breathes. The hand-controlled nib and text reflow remain foreground; motes stay behind paper. All channels freeze together during specified reveal holds."
-      }
+        "primary": "Testing leaf unfolds beneath both rails as camera rises to the full-size working quay",
+        "reaction": "The leaf\u2019s hinged support locks below it before the camera holds the broader harbor.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+      },
+      "rehook": "Harbor scale exposes the real season beyond the model"
     },
     {
       "id": 32,
-      "at_s": 97.249,
-      "t": "97.249-98.240",
-      "vo_line": 12,
-      "offset": 5.949,
-      "vo": "The draft has a different handoff. Its user refines and approves the generated sections.",
-      "shows": "Pen and edited section complete the neutral mark and lift together at the end of refinement",
-      "means": "REFINE AND APPROVE",
-      "sfx": "The pen stroke ends with a soft lift",
+      "at_s": 96.8,
+      "t": "96.8-99",
+      "vo_line": 14,
+      "offset": 2.8,
+      "vo": "Fishing businesses need sound management to plan their seasons.",
+      "shows": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule",
+      "means": "The physical action makes catch pattern legible at the moment the narration needs it.",
+      "sfx": "shutter tap",
       "draw": {
-        "subject": "Pen and edited section",
-        "action": "complete the neutral mark and lift together at the end of refinement",
-        "emotion": "appreciative curiosity",
-        "annotation": "REFINE AND APPROVE"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "CATCH PATTERN"
       },
       "choreo": {
-        "primary": "Pen and edited section complete the neutral mark and lift together at the end of refinement",
-        "reaction": "The new ink remains on paper while the nib separates cleanly; the user approval responsibility is labeled without depicting an outcome",
-        "ambient": "Upper-left input-slip corner curls, upper-right FIRST DRAFT flag flexes, lower pen-cup spring breathes. The hand-controlled nib and text reflow remain foreground; motes stay behind paper. All channels freeze together during specified reveal holds."
+        "primary": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule",
+        "reaction": "The first goal shutter reaches its rubber stop; the shared support flexes and the researcher\u2019s hand follows through a few pixels before settling.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       }
     },
     {
       "id": 33,
-      "at_s": 98.24,
-      "t": "98.240-101.268",
-      "vo_line": 13,
-      "offset": 0.0,
-      "vo": "There's the pen's mark. The page arriving and the professional finishing are different events.",
-      "shows": "Persistent refinement mark fills the close foreground on the spoken words about the pen mark, with the same nib lifted directly above its endpoint",
-      "means": "OUTPUT ARRIVAL / PROFESSIONAL WORK",
-      "sfx": "A quiet pen lift and fingertip release from paper",
+      "at_s": 99,
+      "t": "99-102.6",
+      "vo_line": 15,
+      "offset": 0,
+      "vo": "So test both rules against the same catch-pattern and breeding-stock goals.",
+      "shows": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
+      "means": "The physical action makes the same goals for both rules legible at the moment the narration needs it.",
+      "sfx": "shutter click",
       "draw": {
-        "subject": "Persistent refinement mark",
-        "action": "fills the close foreground on the spoken words about the pen mark, with the same nib lifted directly above its endpoint",
-        "emotion": "appreciative curiosity",
-        "annotation": "OUTPUT ARRIVAL / PROFESSIONAL WORK"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "THE SAME GOALS FOR BOTH RULES"
       },
       "choreo": {
-        "primary": "Persistent refinement mark fills the close foreground on the spoken words about the pen mark, with the same nib lifted directly above its endpoint",
-        "reaction": "The hand lifts the attached pen, pulling its contact shadow away while the ink remains fixed to the draft",
-        "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
-      },
-      "rehook": "The pen leaves permanent ink that the opening pen lacked. Inspect the exact hand/nib/mark consequence before widening to both distinct jobs."
+        "primary": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
+        "reaction": "The second shutter hits its matching stop; the adjacent shared support compresses and returns without moving either candidate.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+      }
     },
     {
       "id": 34,
-      "at_s": 101.268,
-      "t": "101.268-105.420",
-      "vo_line": 13,
-      "offset": 3.028,
-      "vo": "There's the pen's mark. The page arriving and the professional finishing are different events.",
-      "shows": "Output receiving shelf and professional surfaces separate once into a compact 2.7-second comparison, placing the original arrival shelf behind the reviewed report and marked draft",
-      "means": "DIFFERENT NEXT ACTIONS",
-      "sfx": "One restrained shelf-guide movement into depth",
+      "at_s": 102.6,
+      "t": "102.6-107",
+      "vo_line": 15,
+      "offset": 3.6,
+      "vo": "So test both rules against the same catch-pattern and breeding-stock goals.",
+      "shows": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space",
+      "means": "The physical action makes further testing legible at the moment the narration needs it.",
+      "sfx": "latch release",
       "draw": {
-        "subject": "Output receiving shelf and professional surfaces",
-        "action": "separate once into a compact 2.7-second comparison, placing the original arrival shelf behind the reviewed report and marked draft",
-        "emotion": "appreciative curiosity",
-        "annotation": "DIFFERENT NEXT ACTIONS"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "FURTHER TESTING"
       },
       "choreo": {
-        "primary": "Output receiving shelf and professional surfaces separate once into a compact 2.7-second comparison, placing the original arrival shelf behind the reviewed report and marked draft",
-        "reaction": "The connected shelf guides flex outward as their attached work surfaces spread, then settle under the two distinct outputs",
-        "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
+        "primary": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space",
+        "reaction": "Released latch springs back against its housing while the gate rolls into its side pocket; both candidates remain unevaluated.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       }
     },
     {
       "id": 35,
-      "at_s": 105.42,
-      "t": "105.420-109.290",
-      "vo_line": 14,
-      "offset": 0.0,
-      "vo": "These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.",
-      "shows": "AWS provenance volume turns its case-study page beside the finished illustrative workflow",
-      "means": "AWS CASE STUDY",
-      "sfx": "A source volume page turn",
+      "at_s": 107,
+      "t": "107-111.1",
+      "vo_line": 16,
+      "offset": 0,
+      "vo": "These are illustrative simulations. They establish alternatives to investigate, not a winning real-world policy.",
+      "shows": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
+      "means": "The physical action makes illustrative simulations legible at the moment the narration needs it.",
+      "sfx": "collar click",
       "draw": {
-        "subject": "AWS provenance volume",
-        "action": "turns its case-study page beside the finished illustrative workflow",
-        "emotion": "appreciative curiosity",
-        "annotation": "AWS CASE STUDY"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "ILLUSTRATIVE SIMULATIONS"
       },
       "choreo": {
-        "primary": "AWS provenance volume turns its case-study page beside the finished illustrative workflow",
-        "reaction": "The demonstration recedes behind the named source and keeps both outputs visible",
-        "ambient": "Left case-study bookmark sways, right announcement paper corner flexes, lower current-source bracket ribbon curls. Quiet motes and a window-shadow sweep stay behind source text. All channels freeze together during specified reveal holds."
+        "primary": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
+        "reaction": "Collar latch swings down; model window remains bounded rather than opening to harbor water.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       }
     },
     {
       "id": 36,
-      "at_s": 109.29,
-      "t": "109.290-112.150",
-      "vo_line": 14,
-      "offset": 3.87,
-      "vo": "These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.",
-      "shows": "KGS announcement leaf opens in a separate current-announcement frame beside the Koniag ownership rail",
-      "means": "IN THIS ANNOUNCEMENT",
-      "sfx": "A short paper leaf opens against a frame",
+      "at_s": 111.1,
+      "t": "111.1-114",
+      "vo_line": 16,
+      "offset": 4.1,
+      "vo": "These are illustrative simulations. They establish alternatives to investigate, not a winning real-world policy.",
+      "shows": "Research-value plaque unfolds while both candidates stay equally prominent",
+      "means": "The physical action makes alternatives to investigate legible at the moment the narration needs it.",
+      "sfx": "paper unfold",
       "draw": {
-        "subject": "KGS announcement leaf",
-        "action": "opens in a separate current-announcement frame beside the Koniag ownership rail",
-        "emotion": "appreciative curiosity",
-        "annotation": "IN THIS ANNOUNCEMENT"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Research-value plaque unfolds while both candidates stay equally prominent",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "ALTERNATIVES TO INVESTIGATE"
       },
       "choreo": {
-        "primary": "KGS announcement leaf opens in a separate current-announcement frame beside the Koniag ownership rail",
-        "reaction": "The earlier-work case study shifts backward while the announcement frame advances",
-        "ambient": "Left case-study bookmark sways, right announcement paper corner flexes, lower current-source bracket ribbon curls. Quiet motes and a window-shadow sweep stay behind source text. All channels freeze together during specified reveal holds."
+        "primary": "Research-value plaque unfolds while both candidates stay equally prominent",
+        "reaction": "Research-value plaque settles against its hinge, and both candidate lanes remain in view.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       }
     },
     {
       "id": 37,
-      "at_s": 112.15,
-      "t": "112.150-113.580",
-      "vo_line": 14,
-      "offset": 6.73,
-      "vo": "These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.",
-      "shows": "Alaska-return annotation rail unfolds from the announcement border and holds an unquantified label without a zero or money icon",
-      "means": "ALASKA RETURN UNQUANTIFIED",
-      "sfx": "A quiet folding-rail creak",
+      "at_s": 114,
+      "t": "114-117.8",
+      "vo_line": 17,
+      "offset": 0,
+      "vo": "Which balance should a rule demonstrate between catches and breeding fish?",
+      "shows": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view",
+      "means": "The physical action makes which balance should a rule demonstrate? legible at the moment the narration needs it.",
+      "sfx": "grip brush",
       "draw": {
-        "subject": "Alaska-return annotation rail",
-        "action": "unfolds from the announcement border and holds an unquantified label without a zero or money icon",
-        "emotion": "appreciative curiosity",
-        "annotation": "ALASKA RETURN UNQUANTIFIED"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "WHICH BALANCE SHOULD A RULE DEMONSTRATE?"
       },
       "choreo": {
-        "primary": "Alaska-return annotation rail unfolds from the announcement border and holds an unquantified label without a zero or money icon",
-        "reaction": "The annotation hinge physically tugs the current-source frame bracket; the Koniag parent rail remains unaffected above",
-        "ambient": "Left case-study bookmark sways, right announcement paper corner flexes, lower current-source bracket ribbon curls. Quiet motes and a window-shadow sweep stay behind source text. All channels freeze together during specified reveal holds."
+        "primary": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view",
+        "reaction": "Grip spring nudges the hand back slightly as it approaches the final detent.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       }
     },
     {
       "id": 38,
-      "at_s": 113.58,
-      "t": "113.580-116.424",
-      "vo_line": 15,
-      "offset": 0.0,
-      "vo": "Useful preparation has reached the desk. Which part of the work is still yours?",
-      "shows": "Working desk returns at full useful scale with the report, marked draft and posted-cap pen",
-      "means": "USEFUL PREPARATION",
-      "sfx": "The desk and lamp settle with a low tap",
+      "at_s": 117.8,
+      "t": "117.8-120",
+      "vo_line": 17,
+      "offset": 3.8,
+      "vo": "Which balance should a rule demonstrate between catches and breeding fish?",
+      "shows": "Grip rebounds slightly and the patient hand guides it into its final research detent",
+      "means": "The physical action makes test again legible at the moment the narration needs it.",
+      "sfx": "detent settle",
       "draw": {
-        "subject": "Working desk",
-        "action": "returns at full useful scale with the report, marked draft and posted-cap pen",
-        "emotion": "appreciative curiosity",
-        "annotation": "USEFUL PREPARATION"
+        "subject": "Researcher and portable GearLever on harbor bench",
+        "action": "Grip rebounds slightly and the patient hand guides it into its final research detent",
+        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
+        "annotation": "TEST AGAIN"
       },
       "choreo": {
-        "primary": "Working desk returns at full useful scale with the report, marked draft and posted-cap pen",
-        "reaction": "The warm task light settles over the intact preparation and the human tool",
-        "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
-      },
-      "sfx_offset_frames": 8,
-      "sfx_offset_reason": "Returning desk settles at the rendered arrival or contact, after the visual move begins."
-    },
-    {
-      "id": 39,
-      "at_s": 116.424,
-      "t": "116.424-117.879",
-      "vo_line": 15,
-      "offset": 2.844,
-      "vo": "Useful preparation has reached the desk. Which part of the work is still yours?",
-      "shows": "Professional hand lifts the pen over the marked draft for the closing question",
-      "means": "WHICH WORK IS STILL YOURS?",
-      "sfx": "A soft pen-grip contact",
-      "draw": {
-        "subject": "Professional hand",
-        "action": "lifts the pen over the marked draft for the closing question",
-        "emotion": "appreciative curiosity",
-        "annotation": "WHICH WORK IS STILL YOURS?"
-      },
-      "choreo": {
-        "primary": "Professional hand lifts the pen over the marked draft for the closing question",
-        "reaction": "The permanent ink remains while the pen shadow shifts across the receiving edge",
-        "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
-      }
-    },
-    {
-      "id": 40,
-      "at_s": 117.879,
-      "t": "117.879-118.540",
-      "vo_line": 15,
-      "offset": 4.299,
-      "vo": "Useful preparation has reached the desk. Which part of the work is still yours?",
-      "shows": "Pen barrel finishes its diagonal return toward the opening cradle",
-      "means": "THE PEN STILL HAS WORK",
-      "sfx": "A small returning clip snap",
-      "draw": {
-        "subject": "Pen barrel",
-        "action": "finishes its diagonal return toward the opening cradle",
-        "emotion": "appreciative curiosity",
-        "annotation": "THE PEN STILL HAS WORK"
-      },
-      "choreo": {
-        "primary": "Pen barrel finishes its diagonal return toward the opening cradle",
-        "reaction": "The same sprung clip gives one small callback flex over the still-useful documents",
-        "ambient": "Left report corner flexes, right draft flag curls, low pen-cradle spring breathes in different phases. Fine motes cross the window-shadow bed behind the working surface. All channels freeze together during specified reveal holds."
+        "primary": "Grip rebounds slightly and the patient hand guides it into its final research detent",
+        "reaction": "Patient hand applies one small correction, then rests on the settled grip.",
+        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
       }
     }
   ],
   "shots": [
     {
-      "id": 1,
-      "title": "Watch the pen",
-      "t": "0.000-6.540",
+      "id": "S1",
+      "title": "The research grip",
+      "t": "0-12",
       "vo_line": 0,
       "framing": "macro-closeup",
-      "scale": "insert",
+      "scale": "close",
       "height": "low",
-      "stage": "handoff-bench",
+      "stage": "wet laboratory",
       "pov": "macro-closeup",
       "layout": "single-object-void",
-      "motion_vector": "horizontal-traverse",
+      "motion_vector": "vertical-descent",
       "hero_treatment": "instrument-as-subject",
       "camera": "orbitReveal+dollyThrough",
       "stage3d": "planes",
-      "transition_in": "",
-      "thread": "match",
-      "centered": "Capped oxblood pen rolls diagonally between a report tray and a draft holder",
-      "means": "Watch the pen",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "centered": "Researcher catches the mango grip before it reaches the research-bench detent",
+      "means": "Move to the research grip so the comparison advances rather than repeating a label.",
       "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
       },
-      "entry_state": "Capped oxblood pen rolls diagonally between a report tray and a draft holder",
-      "exit_state": "Pen clip springs against its cradle and arrests the last roll; consequences persist.",
-      "camera_intent": "Orbit8degrees around the capped barrel while dollying35px to reveal its sprung clip and the two different output holders.",
-      "transition_anchor": "Opening composition, pen atx540/y960 diagonally across two visible holders.",
-      "focus_target": "Orbit8degrees around the capped barrel while dollying35px to reveal its sprung clip and the two different output holders."
+      "entry_state": "Mango grip begins off its detent; continuous sleeve enters from right.",
+      "exit_state": "Grip is caught and a date tab opens on the bounded model.",
+      "camera_intent": "Low insert pulls just far enough to reveal the tiny support, then holds the grip large.",
+      "transition_anchor": "Grip pivot at540,950",
+      "focus_target": "Caught grip"
     },
     {
-      "id": 2,
-      "title": "The office announcement",
-      "t": "6.540-22.500",
-      "vo_line": 1,
+      "id": "S2",
+      "title": "The modeled fishery",
+      "t": "12-20",
+      "vo_line": 2,
       "framing": "wide-establish",
       "scale": "wide",
-      "height": "eye",
-      "stage": "announcement-wall",
-      "pov": "eye-level-immersive",
-      "layout": "grid-modular",
+      "height": "high",
+      "stage": "wet laboratory",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
       "motion_vector": "assemble-build",
       "hero_treatment": "structure-as-subject",
       "camera": "craneDown+dollyThrough",
       "stage3d": "planes",
+      "transition_in": "assemble",
+      "thread": "build",
+      "centered": "Wide laboratory unfolds around researcher and the source name lands on its rail",
+      "means": "Move to the modeled fishery so the comparison advances rather than repeating a label.",
+      "hero": {
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
+      },
+      "entry_state": "Hard BUILD lands in a separately composed overhead lab with observation intake centered.",
+      "exit_state": "Observation tiles finish seating before learning begins.",
+      "camera_intent": "High overhead crane descends along steel ribs into the model intake; no reframe of shot1.",
+      "transition_anchor": "Rectangular model rim becomes overhead intake",
+      "focus_target": "Observation tiles"
+    },
+    {
+      "id": "S3",
+      "title": "Learning from outcomes",
+      "t": "20-31",
+      "vo_line": 3,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "wet laboratory",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "orbitReveal+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "Researcher turns control through a test cycle while season shutters change",
+      "means": "Move to learning from outcomes so the comparison advances rather than repeating a label.",
+      "hero": {
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
+      },
+      "entry_state": "Released hand exits; candidate path runs forward through simulated seasons.",
+      "exit_state": "Outcome-feedback return completes and changes the learned detent.",
+      "camera_intent": "Close cutaway pulls outward as return path assembles; freeze0.6s only after the coupling settles.",
+      "transition_anchor": "Intake edge matches forward-route guide",
+      "focus_target": "Closed feedback circuit"
+    },
+    {
+      "id": "S4",
+      "title": "The comparison stays fixed",
+      "t": "31-41",
+      "vo_line": 5,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "overhead",
+      "stage": "wet laboratory",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
       "transition_in": "graphic-match",
       "thread": "match",
-      "centered": "KGS nameplate slides into a copper announcement stand at the wall",
-      "means": "The office announcement",
+      "centered": "Fixed comparison token seats beside the learned candidate on its own rail",
+      "means": "Move to the comparison stays fixed so the comparison advances rather than repeating a label.",
       "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
       },
-      "entry_state": "KGS nameplate slides into a copper announcement stand at the wall",
-      "exit_state": "Workflow drawers open in a staggered cascade for contracting, logistics and financial management; consequences persist.",
-      "camera_intent": "Crane from the nameplate top to the three drawer fronts while dollying45px, arriving as the third named workflow opens.",
-      "transition_anchor": "Opening pen clip glints atx540/y880; the new KGS stand bracket arrives at that exact point while the pen exits below. A complete announcement wall replaces the isolated bench.",
-      "focus_target": "Crane from the nameplate top to the three drawer fronts while dollying45px, arriving as the third named workflow opens."
+      "entry_state": "Predefined candidate arrives against an immutable stop beside the learned detent.",
+      "exit_state": "Researcher\u2019s pointing hand and gaze raise the unopened second-room question.",
+      "camera_intent": "Overhead insert tracks from fixed stop to moving learned detent, then toward sealed port.",
+      "transition_anchor": "Two rails share the previous return-path geometry",
+      "focus_target": "Fixed comparison and learned detent"
     },
     {
-      "id": 3,
-      "title": "Koniag and the earlier work",
-      "t": "22.500-37.800",
-      "vo_line": 3,
-      "framing": "map-territory",
-      "scale": "extreme-wide",
-      "height": "high",
-      "stage": "announcement-wall",
-      "pov": "top-down-map",
-      "layout": "map-territory",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "data-as-subject",
-      "camera": "riseWith+orbitReveal",
-      "stage3d": "planes",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "centered": "Corporate ownership wall builds the named Koniag parent above the KGS subsidiary rail",
-      "means": "Koniag and the earlier work",
-      "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
-      },
-      "entry_state": "Corporate ownership wall builds the named Koniag parent above the KGS subsidiary rail",
-      "exit_state": "Pen cap collar unseats one notch as an ordinary hand grips the barrel from its storage clip; consequences persist.",
-      "camera_intent": "Rise80px to reveal the Koniag parent rail, then an8degree orbit opens the AWS volume in front. End on a360px foreground pen seam beneath the still-readable source labels.",
-      "transition_anchor": "Carry the KGS nameplate atx540/y800 into the lower subsidiary rail. The surrounding drawer wall rebuilds into the ownership rail and a large case-study volume.",
-      "focus_target": "Rise80px to reveal the Koniag parent rail, then an8degree orbit opens the AWS volume in front. End on a360px foreground pen seam beneath the still-readable source labels.",
-      "cut_offset_s": -0.14,
-      "cut_reason": "Cut to the parent ownership wall during the natural breath,140ms before the unchanged KGS narration anchor; announcement shot stays below16seconds."
-    },
-    {
-      "id": 4,
-      "title": "Enter DORA",
-      "t": "37.800-46.640",
-      "vo_line": 5,
-      "framing": "subject-portrait",
-      "scale": "medium",
+      "id": "S5",
+      "title": "Constant recruitment",
+      "t": "41-48",
+      "vo_line": 7,
+      "framing": "wide-establish",
+      "scale": "wide",
       "height": "low",
-      "stage": "email-intake-aisle",
+      "stage": "wet laboratory",
       "pov": "eye-level-immersive",
       "layout": "stacked-layers",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "truckAcross+dollyThrough",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "orbitReveal+dollyThrough",
       "stage3d": "planes",
       "transition_in": "mask-wipe",
       "thread": "build",
-      "centered": "Email subject slot expands to fill the intake aisle around a generic vendor-identifier token",
-      "means": "Enter DORA",
+      "centered": "First bay opens around its own two candidate identities",
+      "means": "Move to constant recruitment so the comparison advances rather than repeating a label.",
       "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
       },
-      "entry_state": "Email subject slot expands to fill the intake aisle around a generic vendor-identifier token",
-      "exit_state": "DORA intake rail carries the subject token toward the compliance lookup junction; consequences persist.",
-      "camera_intent": "Truck90px with the vendor token and dolly55px toward the next connector, stopping when the connected lookup fork opens.",
-      "transition_anchor": "The cap opening atx540/y1010 matches the round DORA input socket at the same point. The corporate rails leave; a deep email intake aisle surrounds a large subject slot.",
-      "focus_target": "Truck90px with the vendor token and dolly55px toward the next connector, stopping when the connected lookup fork opens."
+      "entry_state": "The first bay cover wipes open around its constant-recruitment inlet.",
+      "exit_state": "Equal-step inlet cycles without quantities or outcomes yet.",
+      "camera_intent": "Low wide camera travels below the open cover to expose separate input and candidate rails.",
+      "transition_anchor": "Sealed port matches first bay cover",
+      "focus_target": "Constant inlet"
     },
     {
-      "id": 5,
-      "title": "Records and rules",
-      "t": "46.640-58.260",
-      "vo_line": 6,
-      "framing": "alt-vantage",
-      "scale": "close",
-      "height": "overhead",
-      "stage": "api-records-cutaway",
-      "pov": "cross-section-cutaway",
-      "layout": "grid-modular",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "multiplicity-swarm",
-      "camera": "craneDown+truckAcross",
-      "stage3d": "planes",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "centered": "API connections extend from the token junction to named compliance records",
-      "means": "Records and rules",
-      "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
-      },
-      "entry_state": "API connections extend from the token junction to named compliance records",
-      "exit_state": "Loose pen cap turns for one brief hand gesture above the matching rear barrel socket, then rests beside the pen; consequences persist.",
-      "camera_intent": "Crane down into the actual record paths while tracking75px with the traveling tabs. End on the assembled report and the520px cap/socket pairing in front.",
-      "transition_anchor": "The same vendor token exits right atx700/y920 and enters the left API fork atx700/y920. A sliced horizontal record cabinet replaces the deep intake aisle.",
-      "focus_target": "Crane down into the actual record paths while tracking75px with the traveling tabs. End on the assembled report and the520px cap/socket pairing in front."
-    },
-    {
-      "id": 6,
-      "title": "A different machine job",
-      "t": "58.260-69.080",
+      "id": "S6",
+      "title": "One result carries two outcomes",
+      "t": "48-59",
       "vo_line": 8,
-      "framing": "wide-establish",
-      "scale": "wide",
-      "height": "eye",
-      "stage": "drafting-light-table",
-      "pov": "eye-level-immersive",
-      "layout": "stacked-layers",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "structure-as-subject",
-      "camera": "riseWith+orbitReveal",
-      "stage3d": "planes",
-      "transition_in": "hard-cut",
-      "thread": "build",
-      "centered": "Separate Jumpstarter light table opens in a new room as user-input slips feed a labeled language-model path",
-      "means": "A different machine job",
-      "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
-      },
-      "entry_state": "Separate Jumpstarter light table opens in a new room as user-input slips feed a labeled language-model path",
-      "exit_state": "Uncapped pen nib appears beside the editable first draft while the loose cap rests in its cup; consequences persist.",
-      "camera_intent": "Rise80px with the growing document sections and orbit8degrees around the light-table edge. End with a120px nib in the foreground while the model path remains above it.",
-      "transition_anchor": "Hard cut on Separate. The prior report edge atx300/y1120 becomes the left edge of a blank draft under a different light table. Labels name JUMPSTARTER before any generated line appears.",
-      "focus_target": "Rise80px with the growing document sections and orbit8degrees around the light-table edge. End with a120px nib in the foreground while the model path remains above it."
-    },
-    {
-      "id": 7,
-      "title": "Give the outputs their credit",
-      "t": "69.080-78.900",
-      "vo_line": 9,
       "framing": "two-up",
-      "scale": "extreme-wide",
-      "height": "low",
-      "stage": "output-gallery",
-      "pov": "exploded-diagram",
-      "layout": "fullbleed-split",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "data-as-subject",
-      "camera": "riseWith+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "centered": "Both intact outputs advance into a wide foreground gallery while their machine housings withdraw into far depth",
-      "means": "Give the outputs their credit",
-      "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
-      },
-      "entry_state": "Both intact outputs advance into a wide foreground gallery while their machine housings withdraw into far depth",
-      "exit_state": "Draft paragraph section extends across the light table as a complete block of editable text; consequences persist.",
-      "camera_intent": "Rise100px from the two cradles and dolly outward55px to disclose the generous whole workbench. Settle on the useful outputs, then let the record fan and editable section do the moving.",
-      "transition_anchor": "Carry DORA report atx320/y1030 and FIRST DRAFT atx760/y1030 into their wide gallery cradles. Both machine housings retreat while these same outputs remain fixed eye anchors.",
-      "focus_target": "Rise100px from the two cradles and dolly outward55px to disclose the generous whole workbench. Settle on the useful outputs, then let the record fan and editable section do the moving."
-    },
-    {
-      "id": 8,
-      "title": "A tool ready to use",
-      "t": "78.900-83.960",
-      "vo_line": 10,
-      "framing": "macro-closeup",
-      "scale": "insert",
+      "scale": "medium",
       "height": "eye",
-      "stage": "pen-tool-cup",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "instrument-as-subject",
+      "stage": "wet laboratory",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
       "camera": "orbitReveal+dollyThrough",
       "stage3d": "planes",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "centered": "Completed output cradles settle side by side with enough space for professional use",
-      "means": "A tool ready to use",
-      "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
-      },
-      "entry_state": "Completed output cradles settle side by side with enough space for professional use",
-      "exit_state": "Professional hand and loose cap retrieve the cap normally from its cup and post it on the rear of the pen; consequences persist.",
-      "camera_intent": "Orbit10degrees around the exposed rear socket and dolly30px as the hand retrieves the cap. Land exactly on cap seating at81.983.",
-      "transition_anchor": "The report cradle round foot atx540/y1040 matches the open cap cup rim at the same position. The broad gallery gives way to a tight pen assembly insert.",
-      "focus_target": "Orbit10degrees around the exposed rear socket and dolly30px as the hand retrieves the cap. Land exactly on cap seating at75.1."
-    },
-    {
-      "id": 9,
-      "title": "Read the report",
-      "t": "83.960-91.300",
-      "vo_line": 11,
-      "framing": "alt-vantage",
-      "scale": "close",
-      "height": "overhead",
-      "stage": "professional-review-desk",
-      "pov": "top-down-map",
-      "layout": "grid-modular",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "data-as-subject",
-      "camera": "craneDown+orbitReveal",
-      "stage3d": "planes",
       "transition_in": "match-action",
-      "thread": "match",
-      "centered": "Professional hand and DORA report slide together onto the desk while the finger begins inspecting the gathered report and its attached record material",
-      "means": "Read the report",
+      "thread": "carry",
+      "centered": "First result flap rises beside the constant-case learned rule",
+      "means": "Move to one result carries two outcomes so the comparison advances rather than repeating a label.",
       "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
       },
-      "entry_state": "Professional hand and DORA report slide together onto the desk while the finger begins inspecting the gathered report and its attached record material",
-      "exit_state": "Professional hand turns the report after sustained examination as the source-described determination responsibility is named; consequences persist.",
-      "camera_intent": "Crane from oblique to overhead and orbit5degrees to show the relation between report and record fan. Settle by87.8 so examination, not the camera or furniture, commands the frame.",
-      "transition_anchor": "Carry the same posted pen atx790/y1050 to the side of the review desk while a report-tab corner matchesx460/y1000. The pen rests while the OTHER hand guides report examination.",
-      "focus_target": "Crane from oblique to overhead and orbit5degrees to show the relation between report and record fan. Settle by80.5 so examination, not the camera or furniture, commands the frame."
+      "entry_state": "Higher spawning-biomass flap rises over the first case.",
+      "exit_state": "Catch-swings tag settles beside biomass after a single duck reaction.",
+      "camera_intent": "Medium two-up view keeps both equal-sized outcomes in frame; short snap toward the duck then settle.",
+      "transition_anchor": "Bay rim becomes split outcome support",
+      "focus_target": "Two constant-case outcomes"
     },
     {
-      "id": 10,
-      "title": "Refine the draft",
-      "t": "91.300-98.240",
-      "vo_line": 12,
-      "framing": "push-detail",
-      "scale": "medium",
-      "height": "low",
-      "stage": "professional-editing-surface",
-      "pov": "eye-level-immersive",
+      "id": "S7",
+      "title": "A different experimental room",
+      "t": "59-71",
+      "vo_line": 9,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "stage": "stock-linked room",
+      "pov": "orbital-aerial",
       "layout": "stacked-layers",
       "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "mask-wipe",
+      "thread": "travel",
+      "centered": "Doorway wipes into a different experimental room while first case stays behind",
+      "means": "Move to a different experimental room so the comparison advances rather than repeating a label.",
+      "hero": {
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
+      },
+      "entry_state": "Control is visibly lifted; a doorway wipes to fresh architecture and new candidate identities.",
+      "exit_state": "Stock-linked relationship and its own comparison are connected before results.",
+      "camera_intent": "High wide descent begins behind doorway, passes overhead pipe, lands on new rails;0.6s room reveal hold.",
+      "transition_anchor": "Carried mango grip crosses rooms",
+      "focus_target": "Fresh stock-linked case"
+    },
+    {
+      "id": "S8",
+      "title": "The biomass comparison reverses",
+      "t": "71-79",
+      "vo_line": 11,
+      "framing": "two-up",
+      "scale": "close",
+      "height": "eye",
+      "stage": "stock-linked room",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "orbitReveal+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "Stock-linked result opens beside the new learned candidate",
+      "means": "Move to the biomass comparison reverses so the comparison advances rather than repeating a label.",
+      "hero": {
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
+      },
+      "entry_state": "Higher-catch flap opens; lower-biomass flap remains closed for one beat.",
+      "exit_state": "Both stock-linked outcomes sit equally large with their own comparison qualifier.",
+      "camera_intent": "Close eye-level move follows researcher\u2019s glance from catch to biomass without changing label hierarchy.",
+      "transition_anchor": "Second-room rim matches outcome-frame seam",
+      "focus_target": "Biomass reversal"
+    },
+    {
+      "id": "S9",
+      "title": "Same question for each case",
+      "t": "79-86",
+      "vo_line": 12,
+      "framing": "alt-vantage",
+      "scale": "insert",
+      "height": "overhead",
+      "stage": "stock-linked room",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "radial-emanate",
       "hero_treatment": "instrument-as-subject",
-      "camera": "truckAcross+dollyThrough",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "graphic-match",
+      "thread": "build",
+      "centered": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
+      "means": "Move to same question for each case so the comparison advances rather than repeating a label.",
+      "hero": {
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
+      },
+      "entry_state": "Reported case assemblies slide into separate archival recesses.",
+      "exit_state": "An unresolved common next-test frame stands in front of both candidate types.",
+      "camera_intent": "Overhead insert follows trays away from center and exposes the blank management-advantage field.",
+      "transition_anchor": "Equal outcome rectangles become two result recesses",
+      "focus_target": "Unresolved advantage"
+    },
+    {
+      "id": "S10",
+      "title": "The real season",
+      "t": "86-99",
+      "vo_line": 13,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "low",
+      "stage": "harbor apron",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "orbitReveal+dollyThrough",
       "stage3d": "planes",
       "transition_in": "carried-element",
       "thread": "carry",
-      "centered": "Jumpstarter draft arrives on a separate editing surface with the capped-back pen already in the hand",
-      "means": "Refine the draft",
+      "centered": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
+      "means": "Move to the real season so the comparison advances rather than repeating a label.",
       "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
       },
-      "entry_state": "Jumpstarter draft arrives on a separate editing surface with the capped-back pen already in the hand",
-      "exit_state": "Pen and edited section complete the neutral mark and lift together at the end of refinement; consequences persist.",
-      "camera_intent": "Truck65px following the held nib and dolly30px into paper contact. The nib endpoint and revealed ink remain registered for the whole neutral refinement stroke.",
-      "transition_anchor": "Carry the hand and posted pen from the review-desk side atx790/y1050 into the low editing view atx720/y1030. The report leaves and a clearly different FIRST DRAFT surface fills center.",
-      "focus_target": "Truck65px following the held nib and dolly30px into paper contact. The nib endpoint and revealed ink remain registered for the whole neutral refinement stroke."
+      "entry_state": "Researcher carries control and candidates onto a supported harbor bench.",
+      "exit_state": "Harbor scale opens and first shared catch-pattern goal is visible across both lanes.",
+      "camera_intent": "Low extreme-wide rise travels past foreground quay piling as supported testing leaf unfolds;0.6s hold after support locks.",
+      "transition_anchor": "Carried control lands at same screen point on bench",
+      "focus_target": "Real season and shared testing bench"
     },
     {
-      "id": 11,
-      "title": "Two kinds of finishing",
-      "t": "98.240-105.420",
-      "vo_line": 13,
-      "framing": "macro-closeup",
-      "scale": "close",
-      "height": "high",
-      "stage": "handoff-bench",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "data-as-subject",
-      "camera": "riseWith+orbitReveal",
-      "stage3d": "planes",
-      "transition_in": "assemble",
-      "thread": "build",
-      "centered": "Persistent refinement mark fills the close foreground on the spoken words about the pen mark, with the same nib lifted directly above its endpoint",
-      "means": "Two kinds of finishing",
-      "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
-      },
-      "entry_state": "Persistent refinement mark fills the close foreground on the spoken words about the pen mark, with the same nib lifted directly above its endpoint",
-      "exit_state": "Output receiving shelf and professional surfaces separate once into a compact 2.7-second comparison, placing the original arrival shelf behind the reviewed report and marked draft; consequences persist.",
-      "camera_intent": "First hold a close rack of attention from lifted nib to permanent mark. At101.268 rise80px and orbit7degrees to reveal the arrival shelf behind both professional surfaces; this single comparison lasts2.7seconds.",
-      "transition_anchor": "Match the final ink endpoint atx570/y1000 across the cut. A macro view now holds the lifted nib directly over the persistent mark, with both work surfaces hidden behind its near edge.",
-      "focus_target": "First hold a close rack of attention from lifted nib to permanent mark. At98 rise80px and orbit7degrees to reveal the arrival shelf behind both professional surfaces; this single comparison lasts2.7seconds."
-    },
-    {
-      "id": 12,
-      "title": "The announcement boundary",
-      "t": "105.420-113.580",
-      "vo_line": 14,
-      "framing": "data-panel",
-      "scale": "medium",
-      "height": "eye",
-      "stage": "source-reference-wall",
-      "pov": "instrument-screen",
-      "layout": "grid-modular",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "data-as-subject",
-      "camera": "craneDown+truckAcross",
-      "stage3d": "planes",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "centered": "AWS provenance volume turns its case-study page beside the finished illustrative workflow",
-      "means": "The announcement boundary",
-      "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
-      },
-      "entry_state": "AWS provenance volume turns its case-study page beside the finished illustrative workflow",
-      "exit_state": "Alaska-return annotation rail unfolds from the announcement border and holds an unquantified label without a zero or money icon; consequences persist.",
-      "camera_intent": "Crane60px down the AWS spine, then truck70px toward the current announcement. Stop on its attached local-return annotation while Koniag ownership remains separate above.",
-      "transition_anchor": "The receiving shelf back edge atx540/y1080 matches the open AWS book gutter. Work surfaces recede; an independent current-announcement frame opens at right beside the case-study volume.",
-      "focus_target": "Crane60px down the AWS spine, then truck70px toward the current announcement. Stop on its attached local-return annotation while Koniag ownership remains separate above."
-    },
-    {
-      "id": 13,
-      "title": "The pen still has work",
-      "t": "113.580-119.540",
+      "id": "S11",
+      "title": "Equal next-test goals",
+      "t": "99-107",
       "vo_line": 15,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "harbor apron",
+      "pov": "exploded-diagram",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "match-action",
+      "thread": "carry",
+      "centered": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
+      "means": "Move to equal next-test goals so the comparison advances rather than repeating a label.",
+      "hero": {
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
+      },
+      "entry_state": "Catch-pattern goal already spans both lanes; second shutter is still closed.",
+      "exit_state": "Breeding-stock goal opens equally across both rules; further-test area stays unresolved.",
+      "camera_intent": "Overhead medium push aligns both candidate rails and identical goal frames; no camera preference.",
+      "transition_anchor": "Two closed goal shutters match preceding bench supports",
+      "focus_target": "Identical next-test requirements"
+    },
+    {
+      "id": "S12",
+      "title": "The rehearsal keeps working",
+      "t": "107-120",
+      "vo_line": 16,
       "framing": "subject-portrait",
       "scale": "close",
       "height": "low",
-      "stage": "handoff-bench",
+      "stage": "harbor apron",
       "pov": "macro-closeup",
       "layout": "centered-hero-lowerthird",
-      "motion_vector": "horizontal-traverse",
+      "motion_vector": "vertical-descent",
       "hero_treatment": "instrument-as-subject",
       "camera": "orbitReveal+dollyThrough",
       "stage3d": "planes",
-      "transition_in": "match-action",
+      "transition_in": "graphic-match",
       "thread": "match",
-      "centered": "Working desk returns at full useful scale with the report, marked draft and posted-cap pen",
-      "means": "The pen still has work",
+      "centered": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
+      "means": "Move to the rehearsal keeps working so the comparison advances rather than repeating a label.",
       "hero": {
-        "name": "PenAndDocument extended ReviewPen with supporting office tools",
-        "parts": 26,
-        "zones": 5,
-        "detail_note": "Pen barrel, sprung clip, cap seam, rear socket, collar and split nib have key/fill/rim, contact shadow and hand-bound movement. Documents retain distinct report and draft profiles."
+        "name": "GearLever and research apparatus",
+        "parts": 24,
+        "zones": 4,
+        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
       },
-      "entry_state": "Working desk returns at full useful scale with the report, marked draft and posted-cap pen",
-      "exit_state": "Pen barrel finishes its diagonal return toward the opening cradle; consequences persist.",
-      "camera_intent": "Orbit8degrees along the posted cap toward the nib while dollying25px to the hand lift. End on the returning diagonal, preserving the permanent mark below it.",
-      "transition_anchor": "Carry the pen diagonal and marked-draft corner atx540/y1010 from the source-frame inset into the full working desk. The source wall yields to warm desk space.",
-      "focus_target": "Orbit8degrees along the posted cap toward the nib while dollying25px to the hand lift. End on the returning diagonal, preserving the permanent mark below it."
+      "entry_state": "Close grip collar exposes the bounded simulation mount.",
+      "exit_state": "Same hand settles TEST AGAIN while both equal candidate lanes remain visible behind.",
+      "camera_intent": "Low close orbit around grip reveals research plaque then repeats opening silhouette for final correction.",
+      "transition_anchor": "Mango grip fills opening composition",
+      "focus_target": "Research control remains useful"
     }
   ],
-  "world_event": {
-    "at_s": 87.8,
-    "what": "Professional examination opens the source-tab fan; its linked supporting desk leaf and task light unfold underneath the already-active review."
-  },
-  "act3_visible_choice": "The report and draft are both granted completed-preparation credit. Report examination begins at76.8 and stays primary through84.2. Refinement makes an actual persistent mark89.3-93.2. A close view recognizes that mark94.5-98, then ONE2.7-second comparison98-100.7 places work in front of arrival. No separation-and-return repeat.",
-  "atmosphere_and_holds": "All camera, primary, reaction, ambient and atmosphere clocks stop during each reveal hold. Outside holds, meaningful mechanisms and separate ambient beds run together.",
-  "runtime_contract": "118.54s aligned narration, followed by a1.0s post-speech story tail to119.54s and12.3s appended credits; nominal full plan131.84s, subject to30fps frame quantization. The historical planning clock was120s; actual narration remains inside112-130s.",
   "review_revision": {
-    "round": 2,
-    "script_unchanged": true,
+    "round": 3,
     "fixes": [
-      "Sustained report examination, furniture subordinate",
-      "Literal permanent-mark recognition then one2.7second comparison",
-      "Large cap/seam/nib configurations and actual49detachment",
-      "Exact outgoing and incoming anchors/camera purposes",
-      "Set-specific ambient beds and caused reactions"
-    ],
-    "aligned_clock_cleanup": {
-      "at_utc": "2026-09-13 15:09:28 UTC",
-      "scope": "Descriptive clock corrections only; narration, beat starts, shot bounds and scene code unchanged. world_event now matches beat28 at87.8; camera timestamps match cap completion81.983, report examination87.8 and final comparison101.268; detached-state reference56.785.",
-      "early_mechanism_bound": "Two labeled distinct routes introduced by58.26; generated sections begin63.082 and completed-output credit begins69.08. Do not claim the complete generative explanation finishes before60."
-    }
-  },
-  "planning_clock": {
-    "starts": {
-      "0": 0.0,
-      "1": 5.2,
-      "2": 12.3,
-      "3": 18.4,
-      "4": 24.4,
-      "5": 30.8,
-      "6": 40.6,
-      "7": 47,
-      "8": 50.8,
-      "9": 60.0,
-      "10": 72.0,
-      "11": 76.8,
-      "12": 85.4,
-      "13": 94.5,
-      "14": 102.8,
-      "15": 112.5
-    },
-    "end": 120,
-    "beats": {
-      "1": 0,
-      "2": 1.5,
-      "3": 3.6,
-      "4": 5.2,
-      "5": 9.2,
-      "6": 12.3,
-      "7": 15.6,
-      "8": 18.4,
-      "9": 22,
-      "10": 24.4,
-      "11": 27.8,
-      "12": 30.8,
-      "13": 34.125792,
-      "14": 38.3,
-      "15": 40.6,
-      "16": 44.4,
-      "17": 47,
-      "18": 49,
-      "19": 50.8,
-      "20": 54.9,
-      "21": 58.2,
-      "22": 60,
-      "23": 64.1,
-      "24": 69.0,
-      "25": 72,
-      "26": 73.660079,
-      "27": 76.8,
-      "28": 81.299183,
-      "29": 84.2,
-      "30": 85.4,
-      "31": 89.3,
-      "32": 93.2,
-      "33": 94.5,
-      "34": 98,
-      "35": 102.8,
-      "36": 107.4,
-      "37": 110.8,
-      "38": 112.5,
-      "39": 116.8,
-      "40": 119
-    },
-    "open_loop": {
-      "plant_t": 1.8,
-      "pay_t": 93.2,
-      "what": "Watch what the pen does after two machine outputs arrive. The completed comparison includes report review and the distinct refinement mark, with no concealed human-role revelation."
-    },
-    "open_loop_2": {
-      "plant_t": 49.52032,
-      "pay_t": 74.924901,
-      "what": "The loose cap is briefly turned beside its matching rear socket, then set aside. A later ordinary hand retrieves and posts it. No long frozen gesture, jam or workflow delay."
-    },
-    "states": [
-      {
-        "at_s": 0,
-        "state": "Full-length capped pen resting on its clip."
-      },
-      {
-        "at_s": 27.8,
-        "state": "Cap unseated, sprung clip released from storage; seam visibly open."
-      },
-      {
-        "at_s": 49.52032,
-        "state": "Cap fully detached by the hand, bright split nib exposed, matching rear socket briefly shown before cap rests freely in its cup."
-      },
-      {
-        "at_s": 74.924901,
-        "state": "Cap posted on rear barrel; grip takes the pen as a complete writing tool."
-      },
-      {
-        "at_s": 93.2,
-        "state": "Nib has contacted paper and left a permanent neutral edit mark."
-      },
-      {
-        "at_s": 116.8,
-        "state": "Posted-cap pen lifts in the hand above its persistent ink and useful outputs."
-      }
-    ],
-    "reveals": [
-      {
-        "t": 30.8,
-        "beat_id": 12,
-        "type": "scale-pullback",
-        "what": "Email subject opens into the DORA intake route, turning a token into a whole connected mechanism.",
-        "hold_s": 0.6,
-        "landing_frames": 22,
-        "telegraph": "The incoming subject slot narrows around one token before exposing the larger intake aisle.",
-        "landing_at_s": 31.533333333333335,
-        "hold_until_s": 32.13333333333333,
-        "secondary_at_s": 32.43333333333333
-      },
-      {
-        "t": 60,
-        "beat_id": 22,
-        "type": "build-on",
-        "what": "Both useful preparation outputs fill the foreground as machine housings retreat into depth.",
-        "hold_s": 0.6,
-        "landing_frames": 22,
-        "telegraph": "The machine housings part and the front workbench begins opening.",
-        "landing_at_s": 60.733333333333334,
-        "hold_until_s": 61.333333333333336,
-        "secondary_at_s": 61.63333333333333
-      },
-      {
-        "t": 98,
-        "beat_id": 34,
-        "type": "scale-pullback",
-        "what": "One compact comparison places the earlier receiving shelf behind the two already-shown professional actions.",
-        "hold_s": 0.6,
-        "landing_frames": 22,
-        "telegraph": "The persistent ink remains in the close foreground first; the camera then withdraws to reveal the arrival shelf behind it.",
-        "landing_at_s": 98.73333333333333,
-        "hold_until_s": 99.33333333333333,
-        "secondary_at_s": 99.63333333333333
-      }
-    ],
-    "audio_arc": {
-      "build_steps": 4,
-      "dip_at": 111.180515,
-      "riser_at": 85.4,
-      "silence_at": 111.715441,
-      "payoff_at": 116.8,
-      "button_pattern": "question"
-    }
-  },
-  "voice_conform": {
-    "script_sha256": "5ae7ddb9b7890df4f1d39fb246eb6e62fd91613f20d2791920a2be265de5526f",
-    "vo_wav_sha256": "6ffa33275036e66bded627c82823cf0dd8ec0b4a5df7508d1ed034c8136beca0",
-    "method": "Piecewise interpolation within actual whole-file aligned narration lines; original audio untouched."
-  },
-  "timing_revision": {
-    "revision": 3,
-    "basis": "Locked whole-file voice revision2",
-    "changes": [
-      "Jitter editable-text extension later within its own narration line.",
-      "Cap callback begins earlier in its own shot; detachment and posting loop timestamps name completed physical states.",
-      "Intake token and record comparison enter at unequal intervals within their existing narration lines."
-    ],
-    "physical_cap_frames": {
-      "detach": 18,
-      "post": 40
-    }
+      "Feedback alone changes learned detent after initiation",
+      "38specific physical reactions and stage-specific ambient",
+      "12concrete entry exit camera anchor plans",
+      "Equal-goals test occupies79to107 with explicit fair objection",
+      "First primary payoff99",
+      "Literal52.6socket and107collar sounds",
+      "36sleevebrush,96.8and99stopreactions,102.6actualgatelatchretraction"
+    ]
   }
 }

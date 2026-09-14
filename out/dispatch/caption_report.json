@@ -3,21 +3,21 @@
   "fails": [],
   "warns": [],
   "metrics": {
-    "chars": 1506,
-    "hook": "A finished report isn't a finished professional decision.",
-    "hook_len": 57,
+    "chars": 1497,
+    "hook": "A pollock model can change what an AI's apparent advantage means.",
+    "hook_len": 65,
     "hashtags": [
       "#Alaska",
       "#ArtificialIntelligence",
-      "#Koniag",
-      "#GovernmentTechnology"
+      "#Fisheries",
+      "#Pollock"
     ],
     "n_hashtags": 4,
     "emoji": 0,
     "unicode_bold": 0,
     "bullet_lines": 0,
     "sentence_initial_but": 0,
-    "commas_per_100w": 4.35,
+    "commas_per_100w": 0.98,
     "passes": true
   }
 }
