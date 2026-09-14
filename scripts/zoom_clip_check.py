@@ -367,6 +367,13 @@ def w_lit(attrs):
 def check(path: str):
     with open(path) as source:
         src = source.read()
+    try:
+        from .rendered_text_check import uses_runtime_boxes, collect_rendered, projection_results
+    except ImportError:
+        from rendered_text_check import uses_runtime_boxes, collect_rendered, projection_results
+    if uses_runtime_boxes(path):
+        return projection_results(collect_rendered(path), margin=MARGIN,
+                                  frame_width=FRAME_W, caption_limit=CAPTION_TOP-CAP_MARGIN)
     dz = content_zoom(src)
     bad, unmeasured, n = [], [], 0
     cap_bad = []
