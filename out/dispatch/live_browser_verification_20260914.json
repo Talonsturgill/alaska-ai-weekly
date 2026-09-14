@@ -1,0 +1,63 @@
+{
+  "run_date": "2026-09-14",
+  "verified_at": "2026-09-14T13:39:59.648643+00:00",
+  "pass": true,
+  "watch_url": "https://alaskaaihq.com/videos/#dispatch-2026-09-14-rehearsal-before-the-season",
+  "browser": "Codex in-app browser; actual UI controls and read-only media DOM",
+  "title": "Rehearsal Before the Season",
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "video_dimensions": [
+      1080,
+      1920
+    ],
+    "current_src": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master.mp4",
+    "playback_times": [
+      30.422757,
+      40.679545
+    ],
+    "pause_time": 40.722358,
+    "resumed_time": 52.182579,
+    "sound_unmuted_verified": true,
+    "mute_restored": true,
+    "ready_state": 4,
+    "media_error": null,
+    "horizontal_overflow": false,
+    "caption_screenshot_viewed": true
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "video_dimensions": [
+      720,
+      1280
+    ],
+    "current_src": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master_720.mp4",
+    "poster": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-poster_thumb.jpg",
+    "playback_times": [
+      10.682476,
+      32.478755
+    ],
+    "pause_time": 32.528049,
+    "resumed_time": 43.326623,
+    "sound_unmuted_verified": true,
+    "mute_restored": true,
+    "ready_state": 4,
+    "media_error": null,
+    "horizontal_overflow": false,
+    "caption_screenshot_viewed": true
+  },
+  "viewport_reset": true,
+  "video_left_paused": true,
+  "limits": [
+    "Screenshots were displayed and inspected through the browser tool, not saved as standalone files.",
+    "Playback and sound state verified through actual controls and DOM; no human listening claim.",
+    "Existing floating player controls overlap a small part of upper scene lettering on phone; tested narration captions remain readable.",
+    "Initial hash-only navigation retained the prior episode in the already-open tab. A full page navigation loaded the new manifest; the clean watch URL then loaded correctly at phone width."
+  ]
+}

@@ -1,90 +1,18 @@
 {
   "reviewer": "EXPLAINER",
-  "run_date": "2026-09-13",
-  "all_four_read": true,
-  "overall_verdict": "None of the four pitches yet earns its stated late primary payoff. The professional boundary is disclosed or plainly inferable before the claimed resolution. Recommend the Dramatist as the structural base, conditional on repairing the loops and throughline, with Enthusiast's full credit for successful preparation and Comedian's restrained office choreography.",
-  "peer_reviews": [
-    {
-      "treatment": "COMEDIAN",
-      "sag_at_80": "The film has shown a parked pen in multiple places and already shown professional review. Waiting until 90 seconds to pick up the pen prolongs a predictable action. Scene 10 then devotes another 12 seconds to a FIRST DRAFT tag that was required to remain visible all along.",
-      "act3_test": "Scenes 7 to 9 have real substance: completed preparation, report examination, and draft refinement. Scene 10 mostly restates draft status. It doesn't become a new test merely because sections shuffle around the pen.",
-      "object_state": "Unclaimed, carried and bridging are poses or locations. Working is the first consequential change. The title also implies an employment result the sources never establish. Rename it and don't use the pen's supposed continued employment as a thesis or joke.",
-      "primary_paid_early": "Its broad premise, a professional still has work, is answered by the DORA review at 69 to 81 seconds. The narrower pen-use question is answerable as soon as FIRST DRAFT and a pen appear. A withheld hand pickup is choreography, not withheld knowledge.",
-      "secondary_loop": "Whether FIRST DRAFT disappears is a false suspense choice. The source and contract require persistent draft status, and the viewer sees that status throughout. Paying it at 103 seconds supplies no new fact.",
-      "payoff_separation": "13 seconds on paper, but neither claimed payoff is distinct enough to count as written.",
-      "source_honesty": "Good separation of mechanisms and provenance. Remove the employment title and any insinuation that an ordinary pen represents preserved headcount. Keep the source tab and paragraph movement schematic rather than fabricating an actual report layout.",
-      "sets": "Mailroom, tall records aisle, broad drafting bay and review table can be real distinct sets. They need different physical silhouettes and foreground/midground architecture, not four tints of PaperOfficeBG.",
-      "best_graft": "The courteous drawer accordion and section chorus-line gags add motion without invented failure. Use one in each mechanism, not a gag that requires keeping the pen idle for 90 seconds."
-    },
-    {
-      "treatment": "DRAMATIST",
-      "sag_at_80": "This is the least weak plan at 80 seconds because it changes from refining prose to examining the separate DORA report. The 91 to 102 second synthesis still risks spending 11 seconds restating two jobs already shown.",
-      "act3_test": "The completed-output view and two different professional verbs execute the angle honestly. Calling the later DORA review the primary payoff doesn't work if the primary question was only whether professional work remains; Jumpstarter's edit has already answered it.",
-      "object_state": "Capped to uncapped to writing is real physical change. Parked, turned and resting aren't additional state changes. The existing five-item list is closer to three states. Don't claim a five-state object solely from camera-relative position.",
-      "primary_paid_early": "The primary question is resolved by the first handoff at 69 to 79 seconds. A second example deepens it but doesn't preserve the exact original mystery. Revise the planted question to explicitly require both outputs' remaining jobs, so the first answer is visibly incomplete.",
-      "secondary_loop": "The section-refinement question can work if its early plant shows movable initial sections and its payoff is the user's specific refinement action. It mustn't just ask whether humans exist. Keep the two outputs visually distinct before 58 seconds.",
-      "payoff_separation": "12 seconds numerically. Can count after the primary question is rewritten as a two-part comparison and the final answer genuinely completes that comparison.",
-      "source_honesty": "Strong. No invented error or time claim. The professional determination action shouldn't be represented as a named vendor outcome or final approval. The cap and editing strokes are illustration, not evidence of a specific production UI.",
-      "sets": "Best concrete set distinction: tall records room, low drafting studio without cabinets, broad review desk, briefing wall. Retain this architecture.",
-      "best_graft": "Use this treatment's ordered early distinction and changing Act 3 work verbs as the spine. Replace the unresolved object and artificial late mystery rather than polishing those weaknesses."
-    },
-    {
-      "treatment": "ENTHUSIAST",
-      "sag_at_80": "The 73 to 84 second review scene and 84 to 95 second editing scene are legitimate new actions. The 95 to 106 second spatial separation is mostly a diagrammatic restatement of the same division of work.",
-      "act3_test": "Its best contribution is letting the completed outputs occupy the foreground before discussing limits. This credits the actual preparation and makes the counterpoint visible. Give that accomplishment one decisive scene; don't turn admiration into a prolonged beauty shot.",
-      "object_state": "Mounted, carried and held are placement changes. TypeSlug's proud-to-seated channel gives two real configurations, not five. The exact same weakness exists in my Explainer pitch.",
-      "primary_paid_early": "READY's exact function is understood by the first professional action. The pitch acknowledges this but then substitutes a late spatial placement for a discovery. Self-awareness doesn't solve the retention defect.",
-      "secondary_loop": "The generated-section refinement can work. The FIRST DRAFT status must remain after any depicted refinement; wording suggesting it could disappear once narration mentions approval should be tightened. No actual final approval has been illustrated or validated.",
-      "payoff_separation": "13 seconds on paper, but the primary payoff is only a relabeling of knowledge already supplied.",
-      "source_honesty": "Good mechanism and attribution boundaries. Its draft prose includes no approved spoken c18 Alaska-return absence even though c18 is must_ship; include the narrowly scoped current-announcement limit without converting it into a negative outcome. The submitted future VO goes beyond the no-VO request and shouldn't be treated as locked copy.",
-      "sets": "The list names many places, but output gallery, handoff bench, review desk and editing desk could easily become one flat tabletop. Consolidate them into three unmistakable architectures and preserve one review desk for both professional actions.",
-      "best_graft": "The housings recede while the completed outputs remain solid in front. This is the clearest visual credit for useful work and deserves to survive the synthesis."
-    }
-  ],
-  "own_pitch_corrections": {
-    "primary_loop_failure": "I concede the READY FOR REVIEW suffix was already inferable when the professional began reviewing the report at 62 seconds. Delaying the phrase until 94 seconds was not a factual payoff. Delete it as a scored retention loop.",
-    "throughline_failure": "My TypeSlug changed position several times, but its material content and configuration barely changed. A notched edge provides identity, not progress. Don't claim five real states from five locations.",
-    "act3_to_keep": "Tracing a report to its attached source tabs and refining separate draft sections are different source-described categories of work. Keep those actions with schematic content and persistent attribution.",
-    "credits_error": "I incorrectly placed credits inside the final ten seconds. Correct contract: 112 to 130 seconds of narrated story, then a separate 12.3-second credits sequence. At a 120-second story target, total delivery is 132.3 seconds.",
-    "revision_authority": "Corrections are recommendations to synthesis only. No treatment, peer file, storyboard or scene code was edited."
+  "freshness": "Reviewed September 14th pollock pitches from comedian, dramatist and enthusiast. Excluded the stale KGS enthusiast file.",
+  "runtime_correction": "All pitches underbudget speech. The 112 to 130 second band governs VO; credits add 12.3 seconds. Target 118 to 120 spoken seconds, approximately 130.3 to 132.3 total. Earn added time through mechanism and comparison comprehension, not longer travel.",
+  "comedian": {
+    "strength": "Strongest changing object and genuinely staggered payoffs at 68 and 106 seconds. The physical qualification tabs carry argument, not decoration.",
+    "challenge": "At 80 seconds, three testing stations risk becoming an abstract label gallery. Give both learned and predefined candidates the same visible next-test path. A trophy can imply researchers prematurely claimed victory; keep it unmistakably the narrator's question, never their award. The harbor test adds a valid operational objection."
   },
-  "concrete_synthesis_recommendation": {
-    "base_winner": "DRAMATIST, conditional rather than gate-passed",
-    "title": "The Work After the Output",
-    "grafts": [
-      "ENTHUSIAST: completed report and editable draft come to the foreground while successful machinery recedes.",
-      "COMEDIAN: one drawer accordion and one oversized FIRST DRAFT tag gag, both generic office physics.",
-      "EXPLAINER: keep source-record inspection visibly different from generated-section refinement, and keep all provenance attached to the relevant output."
-    ],
-    "replace_primary_promise": "Plant a bounded comparison by 15 seconds: what separate professional job follows each of these two kinds of prepared output? Show a physical two-place comparison with both remaining-job positions visibly unresolved. The viewer can infer that humans have work without already knowing both specific answers.",
-    "primary_payoff": "At 95 seconds the second distinct professional action completes the two-place comparison: DORA report review for determination, Jumpstarter section refinement and approval by a user. Keep the action underway and name its role without portraying a final vendor award. The first revealed action must leave the second position visibly open until its documented action is shown.",
-    "secondary_promise": "At 46 seconds isolate the visibly separate draft's movable section blocks: what can the professional do with this generated language? Do not hide the LLM mechanism or the fact that it is a draft.",
-    "secondary_payoff": "At 76 seconds the user refines the section, a specific action that pays the secondary loop. The primary comparison isn't complete until the separate report's review-for-determination role is enacted and named at 95 seconds.",
-    "loop_timing": {"primary_plant_s": 12, "primary_pay_s": 95, "secondary_plant_s": 46, "secondary_pay_s": 76, "secondary_delay_s": 30, "payoff_separation_s": 19},
-    "honesty_about_retention": "This is a procedural two-part reveal, not a shocking secret. It earns the longer form through two different operations and a completed comparison. If the early narration explicitly gives both next actions, this primary loop is paid early again and must not receive a passing score.",
-    "throughline_repair": {
-      "recommendation": "Replace the posed pen or READY word with one unmistakably schematic, two-bay comparison carrier. Build it from existing BrassPlate/Nameplate/material primitives and supporting paper assets; if a reusable shell is necessary, declare it as the single story-driven gap. It isn't a real KGS device or a single procurement file flowing through both tools.",
-      "identity": "One narrow metal spine with two differently shaped open clamps, not a closed crate, notebook, proof lamp board or approval gate.",
-      "five_observable_states": [
-        "Two visibly empty output positions at the opening, establishing the promised comparison.",
-        "First position gains the assembled report with attached source tabs after DORA's mechanism.",
-        "Second position gains the distinct FIRST DRAFT sections after Jumpstarter's mechanism; both outputs remain independently labeled.",
-        "The draft section physically opens and bears an illustrative refinement while the report stays assembled, making the first professional operation visible.",
-        "The report's source tabs fan open under professional examination, completing the comparison while the edited draft remains visible beside it."
-      ],
-      "why_this_is_state_change": "Contents, articulation and visible work traces accumulate within the same carrier. Movement is not being counted as progress. The carrier is an editorial comparison model, so these changes don't imply a real combined pipeline.",
-      "button": "Return to the original two positions, now holding two prepared materials visibly engaged by professional work. The final question asks which job the viewer considers complete. No stamp or sign-off is shown."
-    },
-    "set_floor": "Retain the Dramatist's cabinet records room, low open drafting studio and angled professional review office as three real spaces. Briefing wall is a fourth supporting space, not a substitute for any of the three.",
-    "runtime": {"story_target_s": 120, "allowed_narration_band_s": [112, 130], "credits_s": 12.3, "total_target_s": 132.3, "vo_words": [200, 220]},
-    "final_source_checks": [
-      "No stopwatch or portfolio totals reintroduced.",
-      "DORA API/prebuilt logic and Jumpstarter LLM drafting clearly distinct before 60 seconds.",
-      "No real UEI, fabricated bad result, delay, accuracy rate or employment inference.",
-      "Human actions illustrate the AWS account, not an independent performance audit.",
-      "Current announcement and earlier Army examples remain separate.",
-      "Koniag/KGS ownership is literal; current announcement's Alaska return remains unquantified."
-    ]
+  "dramatist": {
+    "strength": "Distinct basins and accurate stock-linked outcomes. Simple layered props are feasible; the model's accumulated result tags are meaningful state changes.",
+    "challenge": "The 73 to 96 second launch suspense risks sag: an obvious toy never plausibly qualifies for real launch. Shorten the threshold hold and make the fair test a side-by-side comparison against explicit goals. The 68 and 92 second payoffs are staggered, but the primary answer is predictable."
   },
-  "no_storyboard_or_peer_edits": true
+  "enthusiast": {
+    "strength": "Best affirmative opening and reusable control rig. Three real stages and two separate outcome labels are feasible.",
+    "challenge": "At 80 seconds, the film spends 16 seconds correcting an unnecessary smoother-policy animation. Remove that animation and correction. Ricker's catch/biomass reversal already earns the second movement. The wet-deck opening risks implying a field deployment despite a tiny label. Establish the laboratory first. Moving one lever between scenarios must visibly introduce separately learned policies. Unfilled income/bycatch sockets add scope limits but need no long recital."
+  },
+  "recommendation": "Graft enthusiast's earned curiosity onto comedian's changing object, with explainer's explicit feedback mechanism. Preserve separate scenarios, matched next-test treatment and an affirmative research payoff."
 }

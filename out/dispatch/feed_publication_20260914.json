@@ -1,0 +1,23 @@
+{
+  "run_date": "2026-09-14",
+  "published_at": "2026-09-14T13:34:13.176003+00:00",
+  "feed_commit": "9359f6bdfa20ad882a3c8128d5108f4ea2f5c084",
+  "commit_url": "https://github.com/Talonsturgill/alaskaaicarousels/commit/9359f6bdfa20ad882a3c8128d5108f4ea2f5c084",
+  "entry": {
+    "id": "dispatch-2026-09-14-rehearsal-before-the-season",
+    "date": "2026-09-14",
+    "title": "Rehearsal Before the Season",
+    "caption": "A September 11th paper explores AI harvest rules in eastern Bering Sea pollock simulations. Different biological assumptions change the catch and breeding-biomass tradeoffs, leaving alternatives for further testing rather than an established real-world winner.",
+    "video": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master.mp4",
+    "poster": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-poster.png",
+    "video_mobile": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master_720.mp4",
+    "poster_thumb": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-poster_thumb.jpg"
+  },
+  "exact_committed_entry_verified": true,
+  "pages_deployment_verified": true,
+  "pages_run_id": 34850049925,
+  "pages_run_url": "https://github.com/Talonsturgill/alaskaaicarousels/actions/runs/34850049925",
+  "pages_head_sha": "9359f6bdfa20ad882a3c8128d5108f4ea2f5c084",
+  "live_manifest_exact_match": true,
+  "deployment_verified_at": "2026-09-14T13:36:54.893654+00:00"
+}

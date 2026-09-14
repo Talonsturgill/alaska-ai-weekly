@@ -1,0 +1,2104 @@
+{
+  "version": 1,
+  "source": "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0914.tsx",
+  "props": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/episode_props.json",
+  "complete": true,
+  "frames_measured": 3409,
+  "story_frames": 3409,
+  "scene_frames": {
+    "1": 348,
+    "2": 271,
+    "3": 323,
+    "4": 247,
+    "5": 166,
+    "6": 318,
+    "7": 332,
+    "8": 211,
+    "9": 187,
+    "10": 385,
+    "11": 178,
+    "12": 443
+  },
+  "sites_expected": 47,
+  "sites_measured": 47,
+  "fit": [
+    {
+      "site": "Box:81:14018",
+      "text": "WHAT MAKES A RULE WORTH",
+      "size": 47,
+      "text_w": 745.5341186523438,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 55.232879638671875,
+      "margin_r": 55.233001708984375,
+      "top": 7.42095947265625,
+      "bottom": 66.8455696105957,
+      "frame": 0,
+      "scene": 1
+    },
+    {
+      "site": "Box:81:14018",
+      "text": "TESTING?",
+      "size": 47,
+      "text_w": 248.0576934814453,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 303.9711608886719,
+      "margin_r": 303.9711456298828,
+      "top": 62.42095947265625,
+      "bottom": 11.845569610595703,
+      "frame": 0,
+      "scene": 1
+    },
+    {
+      "site": "Box:81:14235",
+      "text": "SEPTEMBER 11TH",
+      "size": 40,
+      "text_w": 374.9418029785156,
+      "plate": [
+        240,
+        840
+      ],
+      "margin_l": 110.52911376953125,
+      "margin_r": 110.52908325195312,
+      "top": 6.31976318359375,
+      "bottom": 13.759994506835938,
+      "frame": 165,
+      "scene": 1
+    },
+    {
+      "site": "Box:81:14416",
+      "text": "EASTERN BERING SEA POLLOCK",
+      "size": 34,
+      "text_w": 580.294189453125,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 137.8528289794922,
+      "margin_r": 137.8529815673828,
+      "top": 6.5753173828125,
+      "bottom": 14.884231567382812,
+      "frame": 0,
+      "scene": 1
+    },
+    {
+      "site": "Box:35:3548",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "size": 28,
+      "text_w": 557.5,
+      "plate": [
+        68,
+        1012
+      ],
+      "margin_l": 191.25,
+      "margin_r": 191.25,
+      "top": 7,
+      "bottom": 17,
+      "frame": 0,
+      "scene": 1
+    },
+    {
+      "site": "Box:82:14889",
+      "text": "ALASKA FISHERIES SCIENCE",
+      "size": 44,
+      "text_w": 664.9122314453125,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 95.54391479492188,
+      "margin_r": 95.54385375976562,
+      "top": 7.25018310546875,
+      "bottom": 64.80362701416016,
+      "frame": 348,
+      "scene": 2
+    },
+    {
+      "site": "Box:82:14889",
+      "text": "CENTER",
+      "size": 44,
+      "text_w": 190.25892639160156,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 332.8705139160156,
+      "margin_r": 332.8705596923828,
+      "top": 59.25018310546875,
+      "bottom": 12.803627014160156,
+      "frame": 348,
+      "scene": 2
+    },
+    {
+      "site": "Box:82:14972",
+      "text": "HISTORICAL OBSERVATIONS",
+      "size": 34,
+      "text_w": 524.4644775390625,
+      "plate": [
+        170,
+        910
+      ],
+      "margin_l": 105.76779174804688,
+      "margin_r": 105.76773071289062,
+      "top": 6.41082763671875,
+      "bottom": 14.839359283447266,
+      "frame": 348,
+      "scene": 2
+    },
+    {
+      "site": "Box:83:15523",
+      "text": "SIMULATED SEASONS",
+      "size": 45,
+      "text_w": 512.134033203125,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 171.93304443359375,
+      "margin_r": 171.93292236328125,
+      "top": 7.40875244140625,
+      "bottom": 12.848724365234375,
+      "frame": 619,
+      "scene": 3
+    },
+    {
+      "site": "Box:83:16166",
+      "text": "HARVEST CHOICES",
+      "size": 35,
+      "text_w": 357.537109375,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 249.23150634765625,
+      "margin_r": 249.23138427734375,
+      "top": 6.53253173828125,
+      "bottom": 14.876197814941406,
+      "frame": 619,
+      "scene": 3
+    },
+    {
+      "site": "Box:83:16235",
+      "text": "OUTCOME FEEDBACK",
+      "size": 38,
+      "text_w": 434.7088623046875,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 210.6456298828125,
+      "margin_r": 210.6455078125,
+      "top": 6.4912109375,
+      "bottom": 13.862518310546875,
+      "frame": 619,
+      "scene": 3
+    },
+    {
+      "site": "Box:83:16308",
+      "text": "RULE UPDATES",
+      "size": 33,
+      "text_w": 268.8339538574219,
+      "plate": [
+        325,
+        755
+      ],
+      "margin_l": 78.58309936523438,
+      "margin_r": 78.58294677734375,
+      "top": 6.55999755859375,
+      "bottom": 15.889984130859375,
+      "frame": 619,
+      "scene": 3
+    },
+    {
+      "site": "Box:84:16425",
+      "text": "PREDEFINED HARVEST RULE",
+      "size": 40,
+      "text_w": 617.5734252929688,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 119.21319580078125,
+      "margin_r": 119.21337890625,
+      "top": 7.013916015625,
+      "bottom": 13.740516662597656,
+      "frame": 942,
+      "scene": 4
+    },
+    {
+      "site": "Box:84:16700",
+      "text": "LEARNED HARVEST RULE",
+      "size": 36,
+      "text_w": 488.9610595703125,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 183.51943969726562,
+      "margin_r": 183.51950073242188,
+      "top": 7.11761474609375,
+      "bottom": 14.766563415527344,
+      "frame": 942,
+      "scene": 4
+    },
+    {
+      "site": "Box:84:16869",
+      "text": "WILL THE ADVANTAGE HOLD?",
+      "size": 39,
+      "text_w": 626.6146240234375,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 114.69259643554688,
+      "margin_r": 114.69277954101562,
+      "top": 7.03985595703125,
+      "bottom": 13.740524291992188,
+      "frame": 942,
+      "scene": 4
+    },
+    {
+      "site": "Box:84:16948",
+      "text": "CHANGE THE BIOLOGY",
+      "size": 33,
+      "text_w": 400.6011657714844,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 227.69937133789062,
+      "margin_r": 227.699462890625,
+      "top": 7.195556640625,
+      "bottom": 15.79241943359375,
+      "frame": 942,
+      "scene": 4
+    },
+    {
+      "site": "Box:85:17701",
+      "text": "CONSTANT RECRUITMENT",
+      "size": 43,
+      "text_w": 600.8594970703125,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 127.57034301757812,
+      "margin_r": 127.57015991210938,
+      "top": 7.3590087890625,
+      "bottom": 12.827945709228516,
+      "frame": 1189,
+      "scene": 5
+    },
+    {
+      "site": "Box:85:17772",
+      "text": "YOUNG FISH ENTER AT A CONSTANT",
+      "size": 35,
+      "text_w": 665.8601684570312,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 95.07000732421875,
+      "margin_r": 95.06982421875,
+      "top": 6.46844482421875,
+      "bottom": 57.859230041503906,
+      "frame": 1189,
+      "scene": 5
+    },
+    {
+      "site": "Box:85:17772",
+      "text": "RATE",
+      "size": 35,
+      "text_w": 102.26179504394531,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 376.8691101074219,
+      "margin_r": 376.8690948486328,
+      "top": 49.4683837890625,
+      "bottom": 14.859291076660156,
+      "frame": 1189,
+      "scene": 5
+    },
+    {
+      "site": "Box:35:3548",
+      "text": "CONSTANT RECRUITMENT",
+      "size": 28,
+      "text_w": 394.84375,
+      "plate": [
+        68,
+        1012
+      ],
+      "margin_l": 272.578125,
+      "margin_r": 272.578125,
+      "top": 7,
+      "bottom": 17,
+      "frame": 1189,
+      "scene": 5
+    },
+    {
+      "site": "Box:54:10580",
+      "text": "HIGHER SPAWNING BIOMASS",
+      "size": 42,
+      "text_w": 655.12744140625,
+      "plate": [
+        190,
+        890
+      ],
+      "margin_l": 20.436264038085938,
+      "margin_r": 20.436294555664062,
+      "top": 6.44970703125,
+      "bottom": 13.370800018310547,
+      "frame": 1362,
+      "scene": 6
+    },
+    {
+      "site": "Box:86:18409",
+      "text": "WEIGHT OF BREEDING FISH",
+      "size": 34,
+      "text_w": 505.9877624511719,
+      "plate": [
+        105,
+        765
+      ],
+      "margin_l": 75.006103515625,
+      "margin_r": 75.00613403320312,
+      "top": 6.8668212890625,
+      "bottom": 14.963607788085938,
+      "frame": 1355,
+      "scene": 6
+    },
+    {
+      "site": "Box:54:10580",
+      "text": "LARGE ANNUAL CATCH",
+      "size": 38,
+      "text_w": 463.8260498046875,
+      "plate": [
+        215,
+        865
+      ],
+      "margin_l": 91.0869140625,
+      "margin_r": 91.0870361328125,
+      "top": 6.36541748046875,
+      "bottom": 59.964168548583984,
+      "frame": 1566,
+      "scene": 6
+    },
+    {
+      "site": "Box:54:10580",
+      "text": "SWINGS",
+      "size": 38,
+      "text_w": 163.87574768066406,
+      "plate": [
+        215,
+        865
+      ],
+      "margin_l": 241.06210327148438,
+      "margin_r": 241.06214904785156,
+      "top": 52.80474853515625,
+      "bottom": 13.947265625,
+      "frame": 1580,
+      "scene": 6
+    },
+    {
+      "site": "Box:87:19092",
+      "text": "STOCK-LINKED RECRUITMENT",
+      "size": 41,
+      "text_w": 672.5753173828125,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 91.71229553222656,
+      "margin_r": 91.71238708496094,
+      "top": 6.84912109375,
+      "bottom": 13.704917907714844,
+      "frame": 1673,
+      "scene": 7
+    },
+    {
+      "site": "Box:87:19169",
+      "text": "YOUNG FISH AND BREEDING STOCK",
+      "size": 34,
+      "text_w": 641.9635009765625,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 107.01820373535156,
+      "margin_r": 107.01829528808594,
+      "top": 7.0556640625,
+      "bottom": 15.763957977294922,
+      "frame": 1673,
+      "scene": 7
+    },
+    {
+      "site": "Box:87:19606",
+      "text": "SEPARATE SIMULATED CASE",
+      "size": 35,
+      "text_w": 532.7228393554688,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 161.63848876953125,
+      "margin_r": 161.638671875,
+      "top": 7.0262451171875,
+      "bottom": 14.734359741210938,
+      "frame": 1673,
+      "scene": 7
+    },
+    {
+      "site": "Box:87:19685",
+      "text": "ITS OWN COMPARISON",
+      "size": 32,
+      "text_w": 390.4092712402344,
+      "plate": [
+        195,
+        885
+      ],
+      "margin_l": 147.79534912109375,
+      "margin_r": 147.79537963867188,
+      "top": 7.11474609375,
+      "bottom": 15.763896942138672,
+      "frame": 1673,
+      "scene": 7
+    },
+    {
+      "site": "Box:35:3548",
+      "text": "STOCK-LINKED RECRUITMENT",
+      "size": 28,
+      "text_w": 463.125,
+      "plate": [
+        68,
+        1012
+      ],
+      "margin_l": 238.4375,
+      "margin_r": 238.4375,
+      "top": 7,
+      "bottom": 17,
+      "frame": 1673,
+      "scene": 7
+    },
+    {
+      "site": "Box:54:10580",
+      "text": "HIGHER CATCH",
+      "size": 42,
+      "text_w": 350.4002685546875,
+      "plate": [
+        215,
+        865
+      ],
+      "margin_l": 147.79986572265625,
+      "margin_r": 147.79986572265625,
+      "top": 6.34625244140625,
+      "bottom": 12.974067687988281,
+      "frame": 2008,
+      "scene": 8
+    },
+    {
+      "site": "Box:54:10580",
+      "text": "LOWER SPAWNING",
+      "size": 42,
+      "text_w": 421.22235107421875,
+      "plate": [
+        215,
+        865
+      ],
+      "margin_l": 112.3887939453125,
+      "margin_r": 112.38885498046875,
+      "top": 6.4832763671875,
+      "bottom": 63.12649917602539,
+      "frame": 2110,
+      "scene": 8
+    },
+    {
+      "site": "Box:54:10580",
+      "text": "BIOMASS",
+      "size": 42,
+      "text_w": 207.53660583496094,
+      "plate": [
+        215,
+        865
+      ],
+      "margin_l": 219.23178100585938,
+      "margin_r": 219.2316131591797,
+      "top": 57.03570556640625,
+      "bottom": 12.699413299560547,
+      "frame": 2098,
+      "scene": 8
+    },
+    {
+      "site": "Box:88:20035",
+      "text": "STOCK-LINKED RECRUITMENT",
+      "size": 34,
+      "text_w": 560.12646484375,
+      "plate": [
+        80,
+        840
+      ],
+      "margin_l": 97.936767578125,
+      "margin_r": 97.936767578125,
+      "top": 6.77392578125,
+      "bottom": 14.938129425048828,
+      "frame": 2005,
+      "scene": 8
+    },
+    {
+      "site": "Box:89:20236",
+      "text": "CONSTANT CASE",
+      "size": 28,
+      "text_w": 247.42552185058594,
+      "plate": [
+        115,
+        495
+      ],
+      "margin_l": 64.28720092773438,
+      "margin_r": 64.28727722167969,
+      "top": 6.3536376953125,
+      "bottom": 16.8323974609375,
+      "frame": 2216,
+      "scene": 9
+    },
+    {
+      "site": "Box:89:20297",
+      "text": "STOCK-LINKED CASE",
+      "size": 28,
+      "text_w": 315.69354248046875,
+      "plate": [
+        555,
+        995
+      ],
+      "margin_l": 60.15325927734375,
+      "margin_r": 60.1531982421875,
+      "top": 6.3536376953125,
+      "bottom": 16.8323974609375,
+      "frame": 2216,
+      "scene": 9
+    },
+    {
+      "site": "Box:89:20546",
+      "text": "MANAGEMENT ADVANTAGE UNPROVEN",
+      "size": 36,
+      "text_w": 751.6520385742188,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 52.17401123046875,
+      "margin_r": 52.1739501953125,
+      "top": 7.18609619140625,
+      "bottom": 14.784481048583984,
+      "frame": 2216,
+      "scene": 9
+    },
+    {
+      "site": "Box:58:11427",
+      "text": "CATCH PATTERN",
+      "size": 35,
+      "text_w": 316.2735900878906,
+      "plate": [
+        130,
+        950
+      ],
+      "margin_l": 249.86322021484375,
+      "margin_r": 249.86318969726562,
+      "top": 6.215087890625,
+      "bottom": 15.71786880493164,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:58:11480",
+      "text": "BREEDING STOCK",
+      "size": 35,
+      "text_w": 335.1930847167969,
+      "plate": [
+        130,
+        950
+      ],
+      "margin_l": 240.40350341796875,
+      "margin_r": 240.40341186523438,
+      "top": 6.21502685546875,
+      "bottom": 15.71792984008789,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:89:20720",
+      "text": "WHAT MUST BOTH RULES DEMONSTRATE?",
+      "size": 30,
+      "text_w": 685.671875,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 85.16409301757812,
+      "margin_r": 85.16403198242188,
+      "top": 6.3057861328125,
+      "bottom": 16.83237075805664,
+      "frame": 2216,
+      "scene": 9
+    },
+    {
+      "site": "Box:90:21179",
+      "text": "NOAA FISHERIES",
+      "size": 44,
+      "text_w": 397.192138671875,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 229.40396118164062,
+      "margin_r": 229.40390014648438,
+      "top": 7.25628662109375,
+      "bottom": 12.805217742919922,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:90:21244",
+      "text": "NORTH PACIFIC FISHERY MANAGEMENT",
+      "size": 36,
+      "text_w": 772.201416015625,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 41.89930725097656,
+      "margin_r": 41.89927673339844,
+      "top": 6.3802490234375,
+      "bottom": 58.84062194824219,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:90:21244",
+      "text": "COUNCIL",
+      "size": 36,
+      "text_w": 173.2169952392578,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 341.39154052734375,
+      "margin_r": 341.39146423339844,
+      "top": 50.3802490234375,
+      "bottom": 14.840621948242188,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:90:21446",
+      "text": "SEASON PLANNING",
+      "size": 42,
+      "text_w": 421.9956970214844,
+      "plate": [
+        180,
+        900
+      ],
+      "margin_l": 147.00210571289062,
+      "margin_r": 147.002197265625,
+      "top": 6.37066650390625,
+      "bottom": 12.898841857910156,
+      "frame": 2709,
+      "scene": 10
+    },
+    {
+      "site": "Box:91:21745",
+      "text": "THE SAME GOALS FOR BOTH RULES",
+      "size": 41,
+      "text_w": 767.493408203125,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 44.25328063964844,
+      "margin_r": 44.25331115722656,
+      "top": 7.3914794921875,
+      "bottom": 13.844036102294922,
+      "frame": 2788,
+      "scene": 11
+    },
+    {
+      "site": "Box:91:21825",
+      "text": "FURTHER TESTING",
+      "size": 40,
+      "text_w": 406.2248229980469,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 224.8875732421875,
+      "margin_r": 224.88760375976562,
+      "top": 6.39154052734375,
+      "bottom": 13.843975067138672,
+      "frame": 2788,
+      "scene": 11
+    },
+    {
+      "site": "Box:92:22727",
+      "text": "ILLUSTRATIVE SIMULATIONS \u00b7",
+      "size": 39,
+      "text_w": 628.22119140625,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 113.88945007324219,
+      "margin_r": 113.88935852050781,
+      "top": 6.68438720703125,
+      "bottom": 60.9169807434082,
+      "frame": 2966,
+      "scene": 12
+    },
+    {
+      "site": "Box:92:22727",
+      "text": "PUBLIC CODE",
+      "size": 39,
+      "text_w": 281.5218505859375,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 287.2390441894531,
+      "margin_r": 287.2391052246094,
+      "top": 53.68438720703125,
+      "bottom": 13.916980743408203,
+      "frame": 2966,
+      "scene": 12
+    },
+    {
+      "site": "Box:92:22952",
+      "text": "ALTERNATIVES TO INVESTIGATE",
+      "size": 34,
+      "text_w": 594.5296630859375,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 130.73519897460938,
+      "margin_r": 130.73513793945312,
+      "top": 6.1766357421875,
+      "bottom": 15.882427215576172,
+      "frame": 3117,
+      "scene": 12
+    },
+    {
+      "site": "Box:92:23034",
+      "text": "WHICH BALANCE SHOULD A RULE",
+      "size": 34,
+      "text_w": 612.6869506835938,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 121.65655517578125,
+      "margin_r": 121.656494140625,
+      "top": 6.72589111328125,
+      "bottom": 56.9253044128418,
+      "frame": 2966,
+      "scene": 12
+    },
+    {
+      "site": "Box:92:23034",
+      "text": "DEMONSTRATE?",
+      "size": 34,
+      "text_w": 301.483154296875,
+      "plate": [
+        110,
+        970
+      ],
+      "margin_l": 277.2584228515625,
+      "margin_r": 277.2584228515625,
+      "top": 48.72589111328125,
+      "bottom": 14.925304412841797,
+      "frame": 2966,
+      "scene": 12
+    },
+    {
+      "site": "Box:92:23129",
+      "text": "TEST AGAIN",
+      "size": 35,
+      "text_w": 225.56094360351562,
+      "plate": [
+        325,
+        755
+      ],
+      "margin_l": 100.21951293945312,
+      "margin_r": 100.21954345703125,
+      "top": 6.717529296875,
+      "bottom": 14.925361633300781,
+      "frame": 2966,
+      "scene": 12
+    }
+  ],
+  "bounds": [
+    {
+      "site": "Box:81:14018",
+      "kind": "Box",
+      "text": "WHAT MAKES A RULE WORTH TESTING?",
+      "left": 75.11604309082031,
+      "right": 958.0255355834961,
+      "top": 481.3050842285156,
+      "bottom": 682.7800903320312,
+      "frame": 0,
+      "scene": 1
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "left": 68,
+      "right": 1012,
+      "top": 1219,
+      "bottom": 1281,
+      "frame": 0,
+      "scene": 1
+    },
+    {
+      "site": "Box:81:14235",
+      "kind": "Box",
+      "text": "SEPTEMBER 11TH",
+      "left": 237.70111083984375,
+      "right": 834.4489288330078,
+      "top": 667.98291015625,
+      "bottom": 749.9751586914062,
+      "frame": 176,
+      "scene": 1
+    },
+    {
+      "site": "Box:81:14416",
+      "kind": "Box",
+      "text": "EASTERN BERING SEA POLLOCK",
+      "left": 93.40412139892578,
+      "right": 971.7899398803711,
+      "top": 1124.55126953125,
+      "bottom": 1197.2435302734375,
+      "frame": 261,
+      "scene": 1
+    },
+    {
+      "site": "Box:82:14889",
+      "kind": "Box",
+      "text": "ALASKA FISHERIES SCIENCE CENTER",
+      "left": 109.59352111816406,
+      "right": 984.6272735595703,
+      "top": 536.3369140625,
+      "bottom": 712.4491577148438,
+      "frame": 348,
+      "scene": 2
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "left": 68,
+      "right": 1012,
+      "top": 1219,
+      "bottom": 1281,
+      "frame": 348,
+      "scene": 2
+    },
+    {
+      "site": "Box:82:14972",
+      "kind": "Box",
+      "text": "HISTORICAL OBSERVATIONS",
+      "left": 173.46951293945312,
+      "right": 916.7932434082031,
+      "top": 689.1243896484375,
+      "bottom": 761.036865234375,
+      "frame": 507,
+      "scene": 2
+    },
+    {
+      "site": "Box:83:15523",
+      "kind": "Box",
+      "text": "SIMULATED SEASONS",
+      "left": 78.18636322021484,
+      "right": 1017.6561050415039,
+      "top": 509.71929931640625,
+      "bottom": 619.8974609375,
+      "frame": 619,
+      "scene": 3
+    },
+    {
+      "site": "Box:83:16166",
+      "kind": "Box",
+      "text": "HARVEST CHOICES",
+      "left": 81.11967468261719,
+      "right": 1010.5978240966797,
+      "top": 645.417236328125,
+      "bottom": 732.1119384765625,
+      "frame": 619,
+      "scene": 3
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "left": 68,
+      "right": 1012,
+      "top": 1219,
+      "bottom": 1281,
+      "frame": 619,
+      "scene": 3
+    },
+    {
+      "site": "Box:83:16235",
+      "kind": "Box",
+      "text": "OUTCOME FEEDBACK",
+      "left": 91.92974853515625,
+      "right": 965.6191177368164,
+      "top": 1110.588623046875,
+      "bottom": 1198.703369140625,
+      "frame": 801,
+      "scene": 3
+    },
+    {
+      "site": "Box:83:16308",
+      "kind": "Box",
+      "text": "RULE UPDATES",
+      "left": 314.64910888671875,
+      "right": 759.2693481445312,
+      "top": 725.2188110351562,
+      "bottom": 797.9137573242188,
+      "frame": 888,
+      "scene": 3
+    },
+    {
+      "site": "Box:84:16425",
+      "kind": "Box",
+      "text": "PREDEFINED HARVEST RULE",
+      "left": 59.486976623535156,
+      "right": 999.5344619750977,
+      "top": 523.443603515625,
+      "bottom": 618.6629028320312,
+      "frame": 942,
+      "scene": 4
+    },
+    {
+      "site": "Box:84:16700",
+      "kind": "Box",
+      "text": "LEARNED HARVEST RULE",
+      "left": 99.20455932617188,
+      "right": 962.5317077636719,
+      "top": 1007.89404296875,
+      "bottom": 1097.6837158203125,
+      "frame": 942,
+      "scene": 4
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "left": 68,
+      "right": 1012,
+      "top": 1219,
+      "bottom": 1281,
+      "frame": 942,
+      "scene": 4
+    },
+    {
+      "site": "Box:84:16869",
+      "kind": "Box",
+      "text": "WILL THE ADVANTAGE HOLD?",
+      "left": 76.4037094116211,
+      "right": 983.4596176147461,
+      "top": 661.8004760742188,
+      "bottom": 742.010498046875,
+      "frame": 1079,
+      "scene": 4
+    },
+    {
+      "site": "Box:84:16948",
+      "kind": "Box",
+      "text": "CHANGE THE BIOLOGY",
+      "left": 106.25141143798828,
+      "right": 956.0524368286133,
+      "top": 1123.880126953125,
+      "bottom": 1206.697021484375,
+      "frame": 1153,
+      "scene": 4
+    },
+    {
+      "site": "Box:85:17701",
+      "kind": "Box",
+      "text": "CONSTANT RECRUITMENT",
+      "left": 116.42859649658203,
+      "right": 942.3026809692383,
+      "top": 533.2277221679688,
+      "bottom": 662.9906616210938,
+      "frame": 1189,
+      "scene": 5
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "CONSTANT RECRUITMENT",
+      "left": 68,
+      "right": 1012,
+      "top": 1207,
+      "bottom": 1269,
+      "frame": 1189,
+      "scene": 5
+    },
+    {
+      "site": "Type:35:3657",
+      "kind": "Type",
+      "text": "SIMULATED \u00b7 VERSUS ITS COMPARISON",
+      "left": 272.6953125,
+      "right": 807.3046875,
+      "top": 1266,
+      "bottom": 1302,
+      "frame": 1189,
+      "scene": 5
+    },
+    {
+      "site": "Box:85:17772",
+      "kind": "Box",
+      "text": "YOUNG FISH ENTER AT A CONSTANT RATE",
+      "left": 114.05110168457031,
+      "right": 944.4467926025391,
+      "top": 651.0695190429688,
+      "bottom": 776.8010864257812,
+      "frame": 1264,
+      "scene": 5
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "CONSTANT RECRUITMENT",
+      "left": 68,
+      "right": 1012,
+      "top": 1207,
+      "bottom": 1269,
+      "frame": 1355,
+      "scene": 6
+    },
+    {
+      "site": "Type:35:3657",
+      "kind": "Type",
+      "text": "SIMULATED \u00b7 VERSUS ITS COMPARISON",
+      "left": 272.6953125,
+      "right": 807.3046875,
+      "top": 1266,
+      "bottom": 1302,
+      "frame": 1355,
+      "scene": 6
+    },
+    {
+      "site": "Box:54:10580",
+      "kind": "Box",
+      "text": "HIGHER SPAWNING BIOMASS",
+      "left": 93.33098602294922,
+      "right": 798.2456512451172,
+      "top": 626.5234375,
+      "bottom": 726.5263671875,
+      "frame": 1358,
+      "scene": 6
+    },
+    {
+      "site": "Box:86:18409",
+      "kind": "Box",
+      "text": "WEIGHT OF BREEDING FISH",
+      "left": 101.54708099365234,
+      "right": 768.6816101074219,
+      "top": 798.527099609375,
+      "bottom": 869.0844116210938,
+      "frame": 1501,
+      "scene": 6
+    },
+    {
+      "site": "Box:54:10580",
+      "kind": "Box",
+      "text": "LARGE ANNUAL CATCH SWINGS",
+      "left": 95.78497314453125,
+      "right": 759.5863265991211,
+      "top": 936.90625,
+      "bottom": 1090.309326171875,
+      "frame": 1566,
+      "scene": 6
+    },
+    {
+      "site": "Box:87:19092",
+      "kind": "Box",
+      "text": "STOCK-LINKED RECRUITMENT",
+      "left": 96.31991577148438,
+      "right": 960.4533386230469,
+      "top": 537.243896484375,
+      "bottom": 651.822021484375,
+      "frame": 1673,
+      "scene": 7
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "STOCK-LINKED RECRUITMENT",
+      "left": 68,
+      "right": 1012,
+      "top": 1207,
+      "bottom": 1269,
+      "frame": 1673,
+      "scene": 7
+    },
+    {
+      "site": "Type:35:3657",
+      "kind": "Type",
+      "text": "SIMULATED \u00b7 VERSUS ITS COMPARISON",
+      "left": 272.6953125,
+      "right": 807.3046875,
+      "top": 1266,
+      "bottom": 1302,
+      "frame": 1673,
+      "scene": 7
+    },
+    {
+      "site": "Box:87:19169",
+      "kind": "Box",
+      "text": "YOUNG FISH AND BREEDING STOCK",
+      "left": 99.95182800292969,
+      "right": 957.1903533935547,
+      "top": 671.6956176757812,
+      "bottom": 750.0809326171875,
+      "frame": 1790,
+      "scene": 7
+    },
+    {
+      "site": "Box:87:19606",
+      "kind": "Box",
+      "text": "SEPARATE SIMULATED CASE",
+      "left": 111.96881866455078,
+      "right": 946.3740310668945,
+      "top": 1101.2713623046875,
+      "bottom": 1184.5908203125,
+      "frame": 1875,
+      "scene": 7
+    },
+    {
+      "site": "Box:87:19685",
+      "kind": "Box",
+      "text": "ITS OWN COMPARISON",
+      "left": 196.4017333984375,
+      "right": 869.5018310546875,
+      "top": 1015.7000732421875,
+      "bottom": 1088.5933837890625,
+      "frame": 1961,
+      "scene": 7
+    },
+    {
+      "site": "Box:88:20035",
+      "kind": "Box",
+      "text": "STOCK-LINKED RECRUITMENT",
+      "left": 63.127437591552734,
+      "right": 852.0665969848633,
+      "top": 1113.8704833984375,
+      "bottom": 1192.984130859375,
+      "frame": 2005,
+      "scene": 8
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "STOCK-LINKED RECRUITMENT",
+      "left": 68,
+      "right": 1012,
+      "top": 1207,
+      "bottom": 1269,
+      "frame": 2005,
+      "scene": 8
+    },
+    {
+      "site": "Type:35:3657",
+      "kind": "Type",
+      "text": "SIMULATED \u00b7 VERSUS ITS COMPARISON",
+      "left": 272.6953125,
+      "right": 807.3046875,
+      "top": 1266,
+      "bottom": 1302,
+      "frame": 2005,
+      "scene": 8
+    },
+    {
+      "site": "Box:54:10580",
+      "kind": "Box",
+      "text": "HIGHER CATCH",
+      "left": 97.21918487548828,
+      "right": 758.1043853759766,
+      "top": 632.3115234375,
+      "bottom": 735.3406372070312,
+      "frame": 2008,
+      "scene": 8
+    },
+    {
+      "site": "Box:54:10580",
+      "kind": "Box",
+      "text": "LOWER SPAWNING BIOMASS",
+      "left": 92.81131744384766,
+      "right": 759.5662307739258,
+      "top": 846.1715698242188,
+      "bottom": 987.9892578125,
+      "frame": 2101,
+      "scene": 8
+    },
+    {
+      "site": "Box:89:20236",
+      "kind": "Box",
+      "text": "CONSTANT CASE",
+      "left": 84.27264404296875,
+      "right": 493.52593994140625,
+      "top": 689.8840942382812,
+      "bottom": 760.3325805664062,
+      "frame": 2216,
+      "scene": 9
+    },
+    {
+      "site": "Box:89:20297",
+      "kind": "Box",
+      "text": "STOCK-LINKED CASE",
+      "left": 555.4342041015625,
+      "right": 1001.8515014648438,
+      "top": 685.0946655273438,
+      "bottom": 754.1541748046875,
+      "frame": 2216,
+      "scene": 9
+    },
+    {
+      "site": "Box:89:20546",
+      "kind": "Box",
+      "text": "MANAGEMENT ADVANTAGE UNPROVEN",
+      "left": 62.66303634643555,
+      "right": 991.573558807373,
+      "top": 519.5364990234375,
+      "bottom": 605.02001953125,
+      "frame": 2216,
+      "scene": 9
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "left": 68,
+      "right": 1012,
+      "top": 1219,
+      "bottom": 1281,
+      "frame": 2216,
+      "scene": 9
+    },
+    {
+      "site": "Box:58:11427",
+      "kind": "Box",
+      "text": "CATCH PATTERN",
+      "left": 110.0693588256836,
+      "right": 948.4837265014648,
+      "top": 765.7498168945312,
+      "bottom": 847.2384033203125,
+      "frame": 2305,
+      "scene": 9
+    },
+    {
+      "site": "Box:58:11480",
+      "kind": "Box",
+      "text": "BREEDING STOCK",
+      "left": 114.49275970458984,
+      "right": 944.4878768920898,
+      "top": 830.5480346679688,
+      "bottom": 913.7835083007812,
+      "frame": 2305,
+      "scene": 9
+    },
+    {
+      "site": "Box:89:20720",
+      "kind": "Box",
+      "text": "WHAT MUST BOTH RULES DEMONSTRATE?",
+      "left": 81.23909759521484,
+      "right": 974.4241561889648,
+      "top": 664.5498046875,
+      "bottom": 737.9609985351562,
+      "frame": 2305,
+      "scene": 9
+    },
+    {
+      "site": "Type:62:12209",
+      "kind": "Type",
+      "text": "LEARNED",
+      "left": 259.13299560546875,
+      "right": 383.2113952636719,
+      "top": 1027.444091796875,
+      "bottom": 1069.7794189453125,
+      "frame": 2305,
+      "scene": 9
+    },
+    {
+      "site": "Type:62:12263",
+      "kind": "Type",
+      "text": "PREDEFINED",
+      "left": 668.8098754882812,
+      "right": 836.3114013671875,
+      "top": 1017.2283325195312,
+      "bottom": 1059.5767822265625,
+      "frame": 2305,
+      "scene": 9
+    },
+    {
+      "site": "Box:58:11427",
+      "kind": "Box",
+      "text": "CATCH PATTERN",
+      "left": 330.2185974121094,
+      "right": 799.3546142578125,
+      "top": 701.8731079101562,
+      "bottom": 806.3682861328125,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:58:11480",
+      "kind": "Box",
+      "text": "BREEDING STOCK",
+      "left": 329.83392333984375,
+      "right": 799.8442993164062,
+      "top": 738.2232666015625,
+      "bottom": 842.0374145507812,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:90:21179",
+      "kind": "Box",
+      "text": "NOAA FISHERIES",
+      "left": 153.90426635742188,
+      "right": 945.6216735839844,
+      "top": 534.9620361328125,
+      "bottom": 678.0536499023438,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "left": 68,
+      "right": 1012,
+      "top": 1219,
+      "bottom": 1281,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Type:62:12209",
+      "kind": "Type",
+      "text": "LEARNED",
+      "left": 401.4073486328125,
+      "right": 477.5858154296875,
+      "top": 907.1329345703125,
+      "bottom": 935.503662109375,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Type:62:12263",
+      "kind": "Type",
+      "text": "PREDEFINED",
+      "left": 629.5767211914062,
+      "right": 740.19189453125,
+      "top": 903.56396484375,
+      "bottom": 929.2627563476562,
+      "frame": 2403,
+      "scene": 10
+    },
+    {
+      "site": "Box:90:21244",
+      "kind": "Box",
+      "text": "NORTH PACIFIC FISHERY MANAGEMENT COUNCIL",
+      "left": 151.40870666503906,
+      "right": 948.3769073486328,
+      "top": 634.0243530273438,
+      "bottom": 762.7928466796875,
+      "frame": 2510,
+      "scene": 10
+    },
+    {
+      "site": "Box:90:21446",
+      "kind": "Box",
+      "text": "SEASON PLANNING",
+      "left": 212.11434936523438,
+      "right": 882.0846862792969,
+      "top": 775.8212890625,
+      "bottom": 856.452392578125,
+      "frame": 2651,
+      "scene": 10
+    },
+    {
+      "site": "Box:58:11427",
+      "kind": "Box",
+      "text": "CATCH PATTERN",
+      "left": 119.13948059082031,
+      "right": 950.766975402832,
+      "top": 772.8704223632812,
+      "bottom": 855.5613403320312,
+      "frame": 2788,
+      "scene": 11
+    },
+    {
+      "site": "Box:58:11480",
+      "kind": "Box",
+      "text": "BREEDING STOCK",
+      "left": 123.00568389892578,
+      "right": 948.4501495361328,
+      "top": 837.2427978515625,
+      "bottom": 920.6632690429688,
+      "frame": 2788,
+      "scene": 11
+    },
+    {
+      "site": "Box:91:21745",
+      "kind": "Box",
+      "text": "THE SAME GOALS FOR BOTH RULES",
+      "left": 81.57544708251953,
+      "right": 978.819938659668,
+      "top": 546.4528198242188,
+      "bottom": 634.6753540039062,
+      "frame": 2788,
+      "scene": 11
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "left": 68,
+      "right": 1012,
+      "top": 1219,
+      "bottom": 1281,
+      "frame": 2788,
+      "scene": 11
+    },
+    {
+      "site": "Type:62:12209",
+      "kind": "Type",
+      "text": "LEARNED",
+      "left": 260.0723876953125,
+      "right": 387.07366943359375,
+      "top": 1031.15966796875,
+      "bottom": 1073.6536865234375,
+      "frame": 2788,
+      "scene": 11
+    },
+    {
+      "site": "Type:62:12263",
+      "kind": "Type",
+      "text": "PREDEFINED",
+      "left": 665.2705078125,
+      "right": 841.5598754882812,
+      "top": 1018.8245239257812,
+      "bottom": 1066.99365234375,
+      "frame": 2788,
+      "scene": 11
+    },
+    {
+      "site": "Box:91:21825",
+      "kind": "Box",
+      "text": "FURTHER TESTING",
+      "left": 95.65042114257812,
+      "right": 974.4177932739258,
+      "top": 667.5963134765625,
+      "bottom": 746.0484008789062,
+      "frame": 2882,
+      "scene": 11
+    },
+    {
+      "site": "Box:92:22727",
+      "kind": "Box",
+      "text": "ILLUSTRATIVE SIMULATIONS \u00b7 PUBLIC CODE",
+      "left": 96.4999008178711,
+      "right": 969.3347854614258,
+      "top": 506.22283935546875,
+      "bottom": 670.12060546875,
+      "frame": 2966,
+      "scene": 12
+    },
+    {
+      "site": "Box:35:3548",
+      "kind": "Box",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC",
+      "left": 68,
+      "right": 1012,
+      "top": 1219,
+      "bottom": 1281,
+      "frame": 2966,
+      "scene": 12
+    },
+    {
+      "site": "Box:92:22952",
+      "kind": "Box",
+      "text": "ALTERNATIVES TO INVESTIGATE",
+      "left": 98.45469665527344,
+      "right": 970.9765548706055,
+      "top": 673.9840087890625,
+      "bottom": 752.3670043945312,
+      "frame": 3129,
+      "scene": 12
+    },
+    {
+      "site": "Box:92:23034",
+      "kind": "Box",
+      "text": "WHICH BALANCE SHOULD A RULE DEMONSTRATE?",
+      "left": 97.03125,
+      "right": 973.1036148071289,
+      "top": 765.3165283203125,
+      "bottom": 881.5575561523438,
+      "frame": 3234,
+      "scene": 12
+    },
+    {
+      "site": "Box:92:23129",
+      "kind": "Box",
+      "text": "TEST AGAIN",
+      "left": 317.1726379394531,
+      "right": 760.3809204101562,
+      "top": 1134.0394287109375,
+      "bottom": 1207.105224609375,
+      "frame": 3335,
+      "scene": 12
+    }
+  ],
+  "copy_literals": [
+    {
+      "site": "Type:26:2548",
+      "text": "WHAT MAKES A RULE WORTH"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "TESTING?"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "SEPTEMBER 11TH"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "EASTERN BERING SEA POLLOCK"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "SIMULATED \u00b7 EDITORIAL SCHEMATIC"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "What would make an AI fishing"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "rule worth testing?"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "A September 11th paper explores"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "that question with eastern Bering"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Sea pollock."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "ALASKA FISHERIES SCIENCE"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "CENTER"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "HISTORICAL OBSERVATIONS"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Researchers affiliated with the"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Alaska Fisheries Science Center"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "built simulations informed by"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "historical observations."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "SIMULATED SEASONS"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "LEARNED"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "HARVEST CHOICES"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "OUTCOME FEEDBACK"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "RULE UPDATES"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Their agent practices harvest"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "choices"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "through repeated simulated seasons."
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Feedback rewards outcomes and"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "changes"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "the learned rule."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "PREDEFINED HARVEST RULE"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "PREDEFINED"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "LEARNED HARVEST RULE"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "WILL THE ADVANTAGE HOLD?"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "CHANGE THE BIOLOGY"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "They compare it with a predefined"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "harvest rule."
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Will an advantage hold when the"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "biology changes?"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "CONSTANT RECRUITMENT"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "YOUNG FISH ENTER AT A CONSTANT"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "RATE"
+    },
+    {
+      "site": "Type:35:3657",
+      "text": "SIMULATED \u00b7 VERSUS ITS COMPARISON"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Start with a model where young"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "fish enter at a constant rate."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "HIGHER SPAWNING BIOMASS"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "WEIGHT OF BREEDING FISH"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "LARGE ANNUAL CATCH"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "SWINGS"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "The learned policy leaves more"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "spawning biomass, the weight"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "of breeding fish, than its"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "comparison, alongside large annual"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "catch swings."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "STOCK-LINKED RECRUITMENT"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "YOUNG FISH AND BREEDING STOCK"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "SEPARATE SIMULATED CASE"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "ITS OWN COMPARISON"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "The next experiment links young"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "fish entering the stock"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "to the breeding population."
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "This is a separate simulated case"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "with its own comparison."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "HIGHER CATCH"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "LOWER SPAWNING"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "BIOMASS"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Here the learned rule catches more"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "and leaves less breeding biomass"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "than that comparison."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "CONSTANT CASE"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "STOCK-LINKED CASE"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "MANAGEMENT ADVANTAGE UNPROVEN"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "CATCH PATTERN"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "BREEDING STOCK"
+    },
+    {
+      "site": "Type:62:12209",
+      "text": "LEARNED"
+    },
+    {
+      "site": "Type:62:12263",
+      "text": "PREDEFINED"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "WHAT MUST BOTH RULES DEMONSTRATE?"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "These simulated gains may offer no"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "management advantage over"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "a predefined rule."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "NOAA FISHERIES"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "NORTH PACIFIC FISHERY MANAGEMENT"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "COUNCIL"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "SEASON PLANNING"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "In real fisheries, NOAA Fisheries"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "and the North Pacific Fishery"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Management"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Council manage Alaska pollock."
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Fishing businesses need sound"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "management"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "to plan their seasons."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "THE SAME GOALS FOR BOTH RULES"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "FURTHER TESTING"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "So test both rules against the same"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "catch-pattern and breeding-stock"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "goals."
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "ILLUSTRATIVE SIMULATIONS \u00b7"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "PUBLIC CODE"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "ALTERNATIVES TO INVESTIGATE"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "WHICH BALANCE SHOULD A RULE"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "DEMONSTRATE?"
+    },
+    {
+      "site": "Type:26:2548",
+      "text": "TEST AGAIN"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "These are illustrative simulations"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "with public code. They establish"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "alternatives to investigate, not a"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "winning real-world policy."
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "Which balance should a rule"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "demonstrate"
+    },
+    {
+      "site": "rendered-library-text",
+      "text": "between catches and breeding fish?"
+    }
+  ],
+  "issues": [],
+  "limits": "Every story frame measured using actual Chrome SVG fonts and CSS3D projection. Plate fit is local glyph-to-rect; frame bounds cover local Box/Type at cumulative opacity>=0.95. Does not detect character occlusion, clipping by unrelated shapes, or imported artwork plate geometry. Credits excluded from geometry and checked separately through actual props.",
+  "provenance": {
+    "/Users/t/Developer/alaska-ai-weekly/out/dispatch/episode_props.json": "518a39e802ad2e790af47fb45deaf77b4b5b4a766f6af2f048d0ed7cb54c643f",
+    "/Users/t/Developer/alaska-ai-weekly/scripts/rendered_text_check.py": "ca61cd8fe7a166a2444854f0d9e30d06b3c1a02dc50c2a81d0e2f8c654aac214",
+    "/Users/t/Developer/alaska-ai-weekly/scripts/rendered_text_loader.cjs": "ddd430dab9125653c424b175910d4ebc87c72b4d7949a98570bcd5634ba4f6fe",
+    "/Users/t/Developer/alaska-ai-weekly/scripts/rendered_text_probe.cjs": "ec6e443b6ea2b6e54b0b569c4768dd6c60785bccd36208a8cbbd1d785bbaf116",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/package-lock.json": "46757040a4ae17fafa45357af20a7ffe6b41862b2dcf8ce7beabefc04186e67f",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/package.json": "4d4b9daf0791719f5c638a0bde733aae2e66aac4029924a88677e39ca284aa68",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/public/fonts/Fraunces-OFL.txt": "6732d6cc72c5d09292ff754dc1f39d9ea14918f74e87a17afa3f00a5120c3d48",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/public/fonts/Fraunces-Var.ttf": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/public/fonts/JetBrainsMono-Bold.ttf": "d22c4f3821d725eb01210d278d95dfcfcaadc34699a06658d47c8a5cc5830ada",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/public/fonts/JetBrainsMono-OFL.txt": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/BenchLook.tsx": "fa6eda15cd2e25b0f9ed118d92a89d6e7b8e04288f1495de5ae8d4fd6eea1320",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/BiomeShowcase.tsx": "a4cbc1a6be1cbcff3e505c5151889d932719348cf5a12e679be521fdcc3b96a4",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/BiomeShowcase2.tsx": "35b383e5c9ace4a9dde0993689d21ef9de52c5c723c6e537e4784b417ef4b9bb",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/BiomeShowcase3.tsx": "c5937992c5250aa2e21f26a0a6787e8dd3f8398b3902939f2d874b9fea23a03d",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/CityShowcase.tsx": "eccf6303556389ab004263a0c03221dcd0e389d6671094dd58718ab09d65e952",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/CraftShowcase.tsx": "bd69bf7e7ec93aae477299182a18ae724c4174ea87cbd07273e8a5b605d9f31c",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Dispatch.tsx": "e56560bc0d2cd9b47ec588f17a7a55816602c61b2378ff36da61e9a2f759127a",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/EEGDemo0912.tsx": "c8a5ea0b159fc5e81da328c596ef41d1be15719b9b3b741c984dc1f364bff945",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0729.tsx": "3a50650e050b4e6de01e791b36c1400b3387bae32a23c7b3bc61323490a50d06",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0730.tsx": "204f6732e4ff330fb015429ae951b11c9baf924af6bc47617e7311ce9b35f2d5",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0731.tsx": "4ce52711763d23c79c8e1be8befa7b0249eda0f51c272f5c352a368acee58e5e",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0802.tsx": "584146ac24efd8b0ce0cf46aaebf04ea3328895b7084cffba7d42f2d9a1b5858",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0803.tsx": "01c545e6edc07470728681c7029966dfa4c3c1a4edc940ea892b6679c033471b",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0805.tsx": "0ffef3b756e2146c187bc34a9e0425512d223a87c27a6c3398e973e3880c01ce",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0806.tsx": "6818ffac34419da05f02bb63f4f952d12ae1c42ed1dfc95d9a6546473e02c100",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0807.tsx": "5d3a1e40ae77a32a77cabc66f345dc49dd97d874644c2fa273806a5216720bbc",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0808.tsx": "1747f25f8a6f18e40f33394c7bfd2eea051a2f57d23f207c96c9688d37113240",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0809.tsx": "0a997fd61b1b7b16874247aefa78ac06fd6d03b84675a967ae9fda3c978a3818",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0812.tsx": "f384c7f406e76b5e3b3f2f434ada90f3f7e629a96499fb58409c7c5a5eb2d112",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0813.tsx": "9a08278ecd02222ec215e3d19e833ef0be76d38827791d50615d3f53856beb9b",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0830.tsx": "1d2e9cbe6d5581731ced19224d02916e2be1575bf188d16734faea09d3098176",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0901.tsx": "fb9de1b38cb2bb8111376d0afeef8cdfedce10a617ab567bfbafcfecc2eede9f",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0902.tsx": "650442af46fdebd24f7202d6566ab39938244642b601f6cde451babbb047bf99",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0903.tsx": "b15510f15190b8079d633b32986241eb62efecbd91e13333329c5eec37c4a036",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0906.tsx": "f4ca1b8ca08bb34bcd1332d0057e4ce791001b172ae2c4e058ec3f46b83c6b41",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0910.tsx": "21dfbfd778e88e02b0c8743f85e52c72a88120cf3edaa8f6f04fb5d02f43d7ec",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0911.tsx": "7d24695c736a8e555cb1561ae7a47e95d4f86354c3e91479cc00781ce25bc608",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0912.tsx": "2c3f82ea4d80f437de5abc7796a044392f8874edc68c94536ee8085a2bef9331",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/FaunaShowcase2.tsx": "082b6464626906b52a293a2b84df7ddde4c4bc82e54423bbd466e33a6e747377",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/FaunaShowcase3.tsx": "b9a771432f530ebf0b08738a7c69be00cf75804e18601a70ef7f375c5c11bac6",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/FaunaShowcase4.tsx": "2ea7b7c536c64880e889635a737dd89a626262c8d5d3644d8bcc350ee2fc32b5",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/FaunaShowcase5.tsx": "5bdd588e87fc245b1d7f287039bb88171a603887b84d050d65c856e20b66b980",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/FishShowcase.tsx": "e42287bf589074b9ad2adc1972e854aad0af70ef1b2ef5234269f7b3b8e0386c",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/FlightCrateLook.tsx": "02b50821bd414584daff2a695a8a92b8d5d249c407c6974128717b5c3ab7bf8a",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/GateLook.tsx": "403c719b1981a15c739795a0364f5a6575635a5ca797828c9578c2e856d8fc09",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/IGSHook.tsx": "e4fe5c44944f066e4a001193b4fb663e765051a57a8f4292778ad2494252f9ba",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/MaterialShowcase.tsx": "e19217f0dda325268264c0091ff9b6ff7ca59ddabd3e73375a2ccedddef426c3",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Nenana3D.tsx": "b82940a198f8b66835571772885182b3a47abb8ede57490adc4ad54bd66f6b39",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/PropsShowcase.tsx": "5018af91bd0034ea2a5d86a52d739a33a5cf30a9a3fe6293c7f262e80d36f908",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/ResearchAssetLook0912.tsx": "b694b86a50b8bfeb13d4fb8d55e9cd173835e0381fc39cb7b4f327f88b655ddf",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Root.tsx": "79dd4059343229c478a46c9e2778daccea81e73fb27d642ce95dd71b6a960124",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/Standoff.tsx": "e3ec30fb309eccc2571ec3f2c419de0e611c88dea04dad47c4987dd7f78dee2d",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/StationLook.tsx": "1e35c67692671aec8bab76709b3902510f66dfccf752678d0e33dc046950b68e",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/TwentyFiveD.tsx": "b0b2efb063fb2274fab25d21bfa5a0c40c8e7fd476912349063e1a6fcc3a250e",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/UnderIceLook.tsx": "308446f44f4d0f1d78f9a598e1fbcd1c6dc30171f8c882696f8596c8604e6520",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/index.ts": "8ad7cfb50e32546485a1a2ef5e468e5b6bdee2bc5c9b92d08882f96e3750b4a3",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/ASSET_MANIFEST.md": "a1504f53b3d48022c75d7c318c5ddbc508684207362bb3fe94c0a4ebb1d1095f",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/Character.tsx": "789d6372cdea6e9bd6e0bfbc84626fe57a78ad271b7af91d12321287924b4b8d",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/EndCredits.tsx": "b7690e55711c92528a7598d61c1a6b36f2a18b3a7d84393b504df4209bca5c73",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/FX.tsx": "e49a6656dda36cd59104226a1fd4a79d0ba531dd04bf61fcbfbc022eaa9b10c4",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/absence.tsx": "124571d8ba670b5b293731f3f9adf8d5318bfc527ede1a39ba39162a6d3727d5",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/bench.tsx": "91056755e2871adb96a60dc106dbfd982e5fbffbc22813a03fb7ee720bc19e96",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/biomes.tsx": "558e75bb27caf80a0108a2f0f96e47646a6ed32ee299e6e83afcf9c55e33e62f",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/bioprocess.tsx": "3d5f1eb8ce6be3e728f433d2f68b5a7a4dcf0c20c52534ffa937a44550c31364",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/bugs.tsx": "99fd4b2303fd1338196eb31105d31c63ce49597017af62aef534da01e3ec2746",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/civics.tsx": "f5c13c7fb097da738b6750be06d37e5ff6ef90c6d2ba047589266c658c3d7656",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/clinic.tsx": "080d0bc809870d8169282b1160bd002e1f36d291b9a53f2f265496a47cd2c835",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/credentials.tsx": "abee5322e3e527e3ea54ed06bafa866bb829230e84a6e9589ec5552e51b9d9b8",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/cryosphere.tsx": "154d006dc9e1cba9ee82b7128026bab90f9ee16be2263efffb5c4da8868d0204",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/evidence.tsx": "8df7516bf145a5c2220ee4dc4d41d5fe1c05fa28e09a5292c9bbb64e3c550808",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/evidence_state.tsx": "f72bf9e66f1bc8b1f2b266fd6c939a20d124f68ecad1610ea02a58f819c7b247",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/fauna.tsx": "212aabe9f8ee34f4e8ec050b836c111f801cfe351c99570f8152db6f2e8f5018",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/firecraft.tsx": "48c1e30aa2d78982cd06d6dd66001c0f22a9616be38f03455489fc159f35bc94",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/fishcraft.tsx": "19b36ef7a5f7ae10c455b641fdb48e2af00026f7b788f4a52942f5bb280c006c",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/identify.tsx": "85132ac1eecc032763defc5f4e5fb66da367ddd5797154a5a10698019298b6cb",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/kit.tsx": "93908695b798e6eaf6482249a159c4b4f349a4f314e4504f1a0c97eabf07df15",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/lighting.tsx": "bed24c3ad8bb49bb0ce583bb59ac99e8e2c91cb3fb278ced4a64cbdd540a2c2c",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/materials.tsx": "747cc9bf557470038bc3614fdccc8143c42a026eda0eb9b79d63ca9aedefdf44",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/motion.tsx": "3e043c34fe714c246d68f6d4b2d4c60195d87603663f35848d0a56d9b0d4a0ae",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/nameengine.tsx": "2e8c1f111bb06fa3a152a61fc019afc494fb414f0e39a1e53783571c159a1561",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/paper.tsx": "95b74d849e5a9a82b2d908d7e5aa79232ff0c7dc14a6d401bb051e8cc11e1d46",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/props.tsx": "061920bf80ce28910d7c8bb4db6009863df44adb4b9292f73873696113ad98d8",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/records.tsx": "525bb3e367ea2dfdbba0070e211699a175b89a5d779b25c127c114eaa1e8556c",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/research.tsx": "c39159c5431b697b32d38fbda4c7f132637ac0f5da31b478b03d10dae17fe7c3",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/screenlight.tsx": "8ee18edbc3e0b4c2495353afa7ad19c339a4b70bacffbfe3922f13ed82ee5b26",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/sensors.tsx": "9c424f8de230f7f2dfae60f932949e575120f8ad3c3d847b6e7172e69873b67e",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/simulation.tsx": "877d44f85b638b9612f927bb887afba41989dd180731e3aab7b063200997c351",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/spaceweather.tsx": "f7169e943906cc27b8de43e063d63a3388302029704c4297330055dd64849727",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/stage3d.tsx": "84541e923e398dcd8e4518dad8703aa68d60e6a3ad526d9dcbbeec5307ca351e",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/subsea.tsx": "cde5add1f04c0461d51ea1910d5ec2e62df67d52a340c436ccf79adb347c6c48",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/threshold.tsx": "99858ca9a37e0474e52b079c645fe41eee95dbca8f7d20eb7f3a9f9fbdcb74d2",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/underice.tsx": "1a7784825ec9053dfeada706d598ab30db5339e55e4fb51c623329bc523b491b",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/vehicles.tsx": "54e53e41857348cb33769e226a8be42b2ac3f56989e947ede897ee82a449f8c3",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/vision.tsx": "bf7d2569ceffb4aee5ad7a6911c8906234c1f28508dde11ba19485ac1a426a04",
+    "/Users/t/Developer/alaska-ai-weekly/video-engine/src/lib/voice.tsx": "a1258ae84549ace9a592cb3afe7795f8d2610ef310217c5484bf38cd29617cc7"
+  }
+}

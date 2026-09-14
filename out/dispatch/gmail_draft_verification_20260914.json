@@ -1,0 +1,22 @@
+{
+  "run_date": "2026-09-14",
+  "verified_at": "2026-09-14T13:36:12.851374+00:00",
+  "labels": [
+    "DRAFT"
+  ],
+  "sent": false,
+  "verified_draft_only": true,
+  "recipient_matches_current_connected_profile": true,
+  "no_from_override_requested": true,
+  "exact_html_readback": true,
+  "exact_post_copy": true,
+  "both_full_video_links": true,
+  "poster_included": true,
+  "music_and_voice_credits": true,
+  "primary_sources": 6,
+  "upgrades": 15,
+  "html_sha256": "99ef7496e2afd8c4a1a5ddfd4ceac1650c50498f77c852b138887d90a6cba2b1",
+  "scorecard_included": true,
+  "voice_qc_included": true,
+  "private_ids_committed": false
+}

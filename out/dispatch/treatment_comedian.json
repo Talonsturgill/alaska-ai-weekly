@@ -1,352 +1,162 @@
 {
-  "role": "COMEDIAN",
-  "run_date": "2026-09-13",
-  "created_at_utc": "2026-09-13T14:05:36.343162+00:00",
-  "working_title": "The Pen Is Still Employed",
-  "logline": "A pen rides through an absurdly tidy office where machines keep producing complete-looking documents, until the hand that picks it up reveals which work is still unfinished.",
-  "angle_executed": "In the KGS workflows described by AWS, the machine's finished output is still unfinished professional work.",
-  "runtime_seconds": 120,
-  "future_vo_word_target": 212,
-  "future_vo_not_written": true,
-  "cold_open_first_3_seconds": "Extreme close-up: a fountain pen is resting across a report slot. A neatly assembled stack rises underneath and gently catapults the pen into an extravagant end-over-end pirouette. Everything lands perfectly square except the pen, which remains suspended diagonally on the stack edge. A physical OUTPUT READY sign is already steady. No face, approval stamp, stopwatch, or error alarm.",
-  "casting_shelf_first": {
-    "hero": "The single pen from PenAndDocument, lib/props.tsx. Promote its existing pen geometry into a reusable independently placeable pen pose if needed; do not redraw a new character.",
-    "support": [
-      "GripHand for the same neutral professional across the handoff",
-      "PaperOfficeBG restaged into spatially different office areas",
-      "RecordsMachine at calm load for an explicitly illustrative DORA mechanism",
-      "Sheet only as supporting output stock, never hero or notebook",
-      "Nameplate and SwingSign for physical identity and output labels",
-      "DocumentFlip for the disclosed source/time change",
-      "ClaimChip for AWS CASE STUDY and KGS ANNOUNCEMENT provenance",
-      "AlaskaMini for the brief Kodiak corporate connection"
-    ],
-    "do_not_cast": [
-      "FlightCrate",
-      "EEGHeadset",
-      "StampBot",
-      "DiplomaPress",
-      "ServerMachine antagonist",
-      "any wildlife or culturally coded character"
-    ],
-    "new_asset_budget": "Zero new hero silhouettes. One bounded shelf refinement may allow the existing pen to be picked up and make a neutral editing stroke, without signature or approval animation.",
-    "why_pen": "Its unused physical tip makes the difference between produced material and remaining professional action legible without another document-as-hero film."
+  "role": "comedian",
+  "run_date": "2026-09-14",
+  "title": "The Trophy Needs Fine Print",
+  "logline": "A tiny harvest-policy trophy keeps trying to crown a winner, but two separate pollock simulations make its own pedestal list the choices that still need testing.",
+  "cold_open": {
+    "time": "0 to 3s",
+    "picture": "Extreme close-up: a ridiculously grand brass trophy marked BETTER drops onto a tiny wheeled model-basin cart. Its weight tips the cart nose-down. A compact PLEASE SPECIFY flap snaps out beneath BETTER. We crane back to reveal a research basin, not a working fishery.",
+    "promise": "Better at what? The trophy will not acquire a winner through the film."
   },
-  "freshness_vs_last_two": {
-    "September_12": "Moves away from lilac daylight, Sheet hero and research-notebook assembly. This is a deep office stage, lateral physical comedy and one elongated pen.",
-    "September_11": "No medicine crate, vehicle crossing, proof lamps or rural landscape. The scene changes happen between a mailroom, a record aisle, a drafting bay and a review table.",
-    "tentative_palette": "Inky steel blue room, clean white stock, warm copper pen and muted aqua functional hardware. Warm desk pools within cooler office depth. Avoid the previous lilac/citron and spruce/berry combinations."
-  },
-  "physical_sets": [
+  "escalation": [
     {
-      "name": "Mailroom",
-      "shape": "Tall intake slot, low receiving counter, receding cabinet wall; the hook and email request have a real location."
+      "time": "3 to 15s",
+      "beat": "At the dry dock research basin, repeated model seasons turn a brass ratchet beside a candidate-rule token. A second token labelled PREDEFINED RULE remains distinct. Reuse the QuestionToken silhouette. The trophy rides with the candidate. SIMULATION stays visible. No boat type stands in for an actual pollock fleet."
     },
     {
-      "name": "Record aisle",
-      "shape": "Cabinet canyon opened into a calm mechanical lookup cutaway; labeled API connections and PREBUILT LOGIC, not an LLM brain."
+      "time": "15 to 28s",
+      "beat": "Dolly down to the waterline of the constant-recruitment basin. Physical tags identify the two rules and an underwater cutaway names SPAWNING BIOMASS. The candidate trophy proudly hoists HIGHER THAN COMPARISON. There is no countable quantitative school or scaled bar."
     },
     {
-      "name": "Drafting bay",
-      "shape": "Broad shallow work surface with movable section blocks under JUMPSTARTER and LLM labels; persists FIRST DRAFT."
+      "time": "28 to 43s",
+      "beat": "Crane to the deck above: a mechanical annual-season sign changes position with a comic overshoot, and LARGE CATCH SWINGS unfolds on the trophy base. The mechanism is explicitly a qualitative schematic, with no numeric years, plotted heights or invented catch levels. Its success banner is now too tall to fit under the basin gantry."
     },
     {
-      "name": "Review table",
-      "shape": "Side-lit desk seen from the professional's position, with separate DORA report and Jumpstarter draft areas."
+      "time": "43 to 57s",
+      "beat": "A complete scene transition parks the first basin behind its CONSTANT RECRUITMENT sign and opens a separately lit STOCK-LINKED RECRUITMENT basin. A separate copy of the candidate setup arrives; no live ocean or same trained rule is transformed. The shared trophy is a narrator prop comparing cases, not literal study apparatus."
     },
     {
-      "name": "Corporate announcement foyer",
-      "shape": "A deep wall of physical company nameplates and a small Alaska map; geography expresses ownership, not local deployment."
+      "time": "57 to 68s",
+      "beat": "The second basin reveals HIGHER CATCHES followed by LOWER SPAWNING BIOMASS, each explicitly relative to its comparison. A small label says SMOOTHER POLICY RESPONSE, with no animation that purports to show steadier annual catches. The trophy tries to rotate its favorable label forward; the lower-biomass label rotates with it and refuses to disappear."
     }
   ],
-  "shot_scales": [
-    "extreme close-up",
-    "close-up",
-    "medium",
-    "wide"
-  ],
-  "scenes": [
-    {
-      "n": 1,
-      "seconds": [
-        0,
-        8
-      ],
-      "set": "Mailroom",
-      "scale": "extreme close-up",
-      "action": "The rising report stack flips the pen into a poised balancing act; its nib still has no job. Plant the question of what will finally require it.",
-      "future_vo_words": 10
-    },
-    {
-      "n": 2,
-      "seconds": [
-        8,
-        18
-      ],
-      "set": "Corporate announcement foyer",
-      "scale": "wide",
-      "action": "The pen becomes a diagonal pointer beside the September 11th KGS announcement and Wingman nameplate; contracting, logistics and financial management each get a distinct little office doorway. Corporate identity remains literal.",
-      "claim_ids": [
-        "c1",
-        "c2",
-        "c5",
-        "c6"
-      ],
-      "future_vo_words": 29
-    },
-    {
-      "n": 3,
-      "seconds": [
-        18,
-        28
-      ],
-      "set": "Mailroom",
-      "scale": "medium",
-      "action": "A neutral email-subject token marked VENDOR IDENTIFIER enters a physical slot. EARLIER ARMY PROCUREMENT and AWS CASE STUDY identify the change of time and source.",
-      "claim_ids": [
-        "c7",
-        "c8"
-      ],
-      "future_vo_words": 19
-    },
-    {
-      "n": 4,
-      "seconds": [
-        28,
-        38
-      ],
-      "set": "Record aisle",
-      "scale": "wide",
-      "action": "Named SAM.GOV/API connections deliver records into PREBUILT LOGIC. Cabinet drawers perform a courteous accordion motion, aligning their contents without disorder. The pen rides along a stable report rail.",
-      "claim_ids": [
-        "c9",
-        "c10"
-      ],
-      "future_vo_words": 20
-    },
-    {
-      "n": 5,
-      "seconds": [
-        38,
-        47
-      ],
-      "set": "Record aisle",
-      "scale": "close-up",
-      "action": "DORA's material lands as a standardized report. The pen balances above the ready report without writing. The format looks genuinely useful and orderly.",
-      "claim_ids": [
-        "c10"
-      ],
-      "future_vo_words": 13
-    },
-    {
-      "n": 6,
-      "seconds": [
-        47,
-        59
-      ],
-      "set": "Drafting bay",
-      "scale": "medium",
-      "action": "A separate Jumpstarter mechanism receives user inputs and composes section blocks through Bedrock/LLM drafting. FIRST DRAFT is permanently attached. Plant whether that tag disappears when the page looks complete.",
-      "claim_ids": [
-        "c12",
-        "c13"
-      ],
-      "future_vo_words": 23
-    },
-    {
-      "n": 7,
-      "seconds": [
-        59,
-        69
-      ],
-      "set": "Review table",
-      "scale": "wide",
-      "action": "Give the opposing case its strongest picture: both useful machine outputs are present, tidy and readable as distinct object types. DORA has a record report; Jumpstarter has an editable draft. The pen bridges the two without merging their workflows.",
-      "future_vo_words": 15
-    },
-    {
-      "n": 8,
-      "seconds": [
-        69,
-        81
-      ],
-      "set": "Review table",
-      "scale": "close-up",
-      "action": "The professional examines the DORA report and follows its organized source tabs. This is review for determination, not an award or a fabricated compliance finding. The pen is still parked.",
-      "claim_ids": [
-        "c11"
-      ],
-      "future_vo_words": 18
-    },
-    {
-      "n": 9,
-      "seconds": [
-        81,
-        93
-      ],
-      "set": "Drafting bay",
-      "scale": "extreme close-up",
-      "action": "At 90 seconds the same professional hand picks up the pen and refines a neutral draft section. The pen's long-promised job is an edit. No content is labeled false, no signature is drawn, and no decision is represented as completed.",
-      "claim_ids": [
-        "c14"
-      ],
-      "future_vo_words": 17
-    },
-    {
-      "n": 10,
-      "seconds": [
-        93,
-        105
-      ],
-      "set": "Review table",
-      "scale": "medium",
-      "action": "Section blocks politely shuffle to make room for a human refinement. At 103 seconds the FIRST DRAFT tag remains visibly attached to the now-refined page. A completed-looking layout did not itself confer approval.",
-      "claim_ids": [
-        "c13",
-        "c14"
-      ],
-      "future_vo_words": 17
-    },
-    {
-      "n": 11,
-      "seconds": [
-        105,
-        113
-      ],
-      "set": "Corporate announcement foyer",
-      "scale": "wide",
-      "action": "The pen settles as a pointer connecting KONIAG GOVERNMENT SERVICES to KONIAG and the Kodiak region. The brief scoped absence names what the current announcement does not quantify.",
-      "claim_ids": [
-        "c3",
-        "c4",
-        "c18"
-      ],
-      "future_vo_words": 22
-    },
-    {
-      "n": 12,
-      "seconds": [
-        113,
-        120
-      ],
-      "set": "Review table",
-      "scale": "close-up",
-      "action": "Match the hook's diagonal pen silhouette, now held deliberately over the work. OUTPUT READY remains true behind it. The foreground action is the professional continuing the task.",
-      "future_vo_words": 9
-    }
-  ],
-  "escalation": "The opening has a finished machine output and a conspicuously unused pen. The fresh KGS announcement gives that office mechanism a real owner and scope. DORA turns one identifier into assembled evidence. The separate Jumpstarter mechanism changes the output into generated language before the first minute ends. Both appear complete, which makes the remaining professional work the live question.",
-  "earned_turn": "A professional's work depends on what arrived. The DORA report is examined for determination; generated sections are refined and approved by people in the described workflow. The pen is not waiting for an invented failure. It has an ordinary documented task left to do.",
+  "earned_turn": {
+    "time": "68 to 94s",
+    "scene": "The Test Tank Exit",
+    "strongest_fair_case": "The simulation may reveal its own assumptions without establishing a good real management rule. It does not demonstrate real income, bycatch outcomes or operational readiness. Conventional alternatives may perform well too.",
+    "draw_at_full_strength": "Pull out to show both basins are miniature models on a research platform. A full-size harbor beyond is physically enormous beside them. The candidate token and predefined-rule token stand side by side before three equally sized testing stations: CATCH PATTERN, BREEDING STOCK, OTHER MANAGEMENT GOALS. Nobody awards green ticks or declares either one victorious. An unfilled space labelled FURTHER TESTING remains ahead of both. The trophy tips forward to peek at the harbor, then settles back beside both tokens.",
+    "surviving_claim": "The method has created candidates and exposed different outcomes worth comparing before real seasons. It has not picked a management winner."
+  },
   "button": {
-    "line": "The machine finished. Which job is still on your desk?",
-    "image": "The opening's diagonal pen returns in the professional's grip, poised over a draft; the machine's OUTPUT READY sign stays calmly true in the distance.",
-    "why_it_loops": "The same object and shape now have a purpose the hook withheld. Finishing the machine task remains worth crediting."
+    "time": "101 to 109.7s",
+    "last_line_intent": "Ask which combination a harvest policy should have to demonstrate before calling it better.",
+    "last_image": "The enormous BETTER topper tilts into a question mark orientation above the two candidate tokens. Its pedestal now reads FOR WHICH GOALS? The first shot's tipping cart finally sits level because the trophy has stopped pretending to name one winner. Do not imply that balance quantitatively measures equal ecological and economic outcomes."
   },
   "sight_gags": [
     {
-      "seconds": 0.6,
-      "gag": "A tidy report stack gives the pen a ludicrously elegant pirouette, then catches it by sheer office neatness.",
-      "target": "Generic office physics; no company or person is mocked."
+      "time_s": 1,
+      "gag": "Overqualified trophy, underqualified cart: the grand award nearly faceplants before its PLEASE SPECIFY flap catches it.",
+      "meaning": "The word better needs an outcome."
     },
     {
-      "seconds": 32,
-      "gag": "Cabinet drawers open as a perfectly polite accordion; the last one tucks itself in to give the report room.",
-      "target": "The choreography of clerical preparation, with no broken machinery."
+      "time_s": 36,
+      "gag": "The biomass success banner rises triumphantly, then its newly unfolded catch-swings footnote physically jams under the gantry.",
+      "meaning": "One favorable result does not fit the whole management question."
     },
     {
-      "seconds": 54,
-      "gag": "Generated section blocks arrive like an over-rehearsed chorus line; the FIRST DRAFT tab is the one stubbornly oversized accessory.",
-      "target": "The visual neatness of draft output, not its accuracy."
+      "time_s": 64,
+      "gag": "The trophy tries to show only HIGHER CATCHES; LOWER SPAWNING BIOMASS is bolted to the same rotating base and follows it into view.",
+      "meaning": "The separate stock-linked result carries both findings."
     },
     {
-      "seconds": 99,
-      "gag": "Draft section blocks shuffle sideways like people letting someone into a theater row, making room for the pen's small refinement.",
-      "target": "Neutral section organization; not a fabricated correction of a model error."
+      "time_s": 91,
+      "gag": "The tiny trophy peers toward a towering real harbor piling and retracts its victory pennant into a modest research flag.",
+      "meaning": "A model result is still a model result."
     }
   ],
   "retention_plan": {
-    "act3_test": {
-      "window_seconds": [
-        59,
-        105
-      ],
-      "core_test_seconds": [
-        69,
-        93
-      ],
-      "scene_name": "Two Finished Outputs, Two Unfinished Jobs",
-      "strongest_fair_case_against": "The machines have really performed useful preparation. Calling the work unfinished must not make that contribution disappear or invent trouble to justify the human.",
-      "drawn_at_full_strength": "Scene 7 presents both outputs as complete, orderly and useful. Scenes 8 and 9 show the sourced next actions: examining an assembled record and refining generated sections. No error cue, review timer, bureaucratic barrier or final-award stamp supplies false tension.",
-      "answer": "The output can be ready and the professional action can still be incomplete. Different outputs call for different human work."
-    },
-    "throughline_object": {
-      "object": "One copper pen from the PenAndDocument shelf rig",
-      "introduced_seconds": 0,
-      "states": [
-        {
-          "at_seconds": 0,
-          "state": "Unclaimed: balanced diagonally above a machine output."
-        },
-        {
-          "at_seconds": 28,
-          "state": "Carried: rides the record rail while DORA prepares its report."
-        },
-        {
-          "at_seconds": 59,
-          "state": "Bridging: rests between two separately labeled outputs at the Act 3 boundary."
-        },
-        {
-          "at_seconds": 90,
-          "state": "Working: picked up for a neutral refinement of generated sections."
-        },
-        {
-          "at_seconds": 105,
-          "state": "Owned: held deliberately through the corporate return and the button, never pretending to sign an award."
-        }
-      ],
-      "continuity_rule": "Copper body, dark grip and one small pale barrel band remain visible at each act boundary; paper is supporting material, not the throughline hero."
-    },
-    "loops": [
+    "throughline_object": "One brass BETTER trophy, introduced at frame zero. Symbolic narrator prop only.",
+    "states": [
       {
-        "id": "primary",
-        "plant_seconds": 4,
-        "promise": "What work will finally require the conspicuously idle pen?",
-        "payoff_seconds": 90,
-        "payoff": "The professional picks it up to refine a generated section. The answer is an edit, not an automatic completion mark."
+        "at_s": 0,
+        "state": "Top-heavy BETTER with PLEASE SPECIFY flap"
       },
       {
-        "id": "secondary",
-        "plant_seconds": 52,
-        "promise": "Will FIRST DRAFT disappear merely because all the generated sections look neatly finished?",
-        "payoff_seconds": 103,
-        "payoff": "It remains visibly attached while the professional is working. Physical completeness and approval are separate."
+        "at_s": 28,
+        "state": "Higher-biomass claim mounted"
+      },
+      {
+        "at_s": 43,
+        "state": "Catch-swings qualification physically unfolded"
+      },
+      {
+        "at_s": 68,
+        "state": "Two separate scenario findings attached to opposite sides"
+      },
+      {
+        "at_s": 94,
+        "state": "Research flag replaces victory pennant"
+      },
+      {
+        "at_s": 107,
+        "state": "FOR WHICH GOALS? pedestal lands the opening promise"
       }
     ],
-    "payoff_separation_seconds": 13,
-    "padding_test": [
-      "Cutting Scene 7 would make the back half sound dismissive of real preparation; its strong opposing picture is essential.",
-      "Cutting Scene 8 would replace the actual DORA review with a generic hand icon and lose the difference between evidence and drafting.",
-      "Cutting Scene 9 would leave the pen promise unanswered and human refinement merely asserted.",
-      "Cutting Scene 10 would allow a neat, human-touched page to read as approved; keeping FIRST DRAFT while work continues closes the second question.",
-      "A 90-second cut loses the first payoff or collapses refinement, draft status, ownership scope and button into an unreadable rush. The added time goes to distinct actions, not a review wait."
-    ]
+    "loops": [
+      {
+        "plant_s": 2,
+        "promise": "What can this trophy actually crown?",
+        "payoff_s": 106,
+        "payoff": "No winner yet; explicit goals and further comparison are the earned result."
+      },
+      {
+        "plant_s": 43,
+        "promise": "Will the separate stock-linked experiment preserve the first apparent stock benefit?",
+        "payoff_s": 68,
+        "payoff": "No: higher catches accompany lower spawning biomass relative to its comparison. Distinct from the trophy loop."
+      }
+    ],
+    "padding_test": "The 68 to 94 second test adds the strongest limit on inference, draws two candidates on equal terms, and changes the award into a research object. Without it, a 90 second version would imply tradeoff discovery proves a usable rule. The 94 to 101 second recovery briefly credits policy exploration and connects it to season planning; do not repeat both case results here."
   },
-  "guardrails": [
-    "No DORA stopwatch or portfolio dollar/hour totals.",
-    "DORA API and prebuilt-logic identity and Jumpstarter LLM identity both legible before 59 seconds.",
-    "The earlier examples are distinct, not depicted as one required serial procurement pipeline or literal Wingman architecture.",
-    "Neutral pen edits may organize an abstract section; no specific invented error, vendor outcome, legal conclusion, real UEI or private record.",
-    "FIRST DRAFT remains on every Jumpstarter document; no approval stamp, signature or final contract.",
-    "KGS and Koniag are named corporations. No Native personification, costume, cultural prop or generic Tribal framing.",
-    "Alaska return remains unquantified in this announcement; the absence does not claim no benefit.",
-    "Illustrative mechanisms are visibly sourced to AWS, and the fresh announcement remains distinct."
-  ],
-  "readback": {
-    "asset_manifest": "Read all 779 lines in bounded chunks.",
-    "recent_history": "Read September 11th FlightCrate and September 12th Sheet entries from config/state.yaml.",
-    "angle": "Read committed angle.json and execute it unchanged.",
-    "facts": "Read verified findings and all 18 claims in this research/angle session; reread claim list for this pitch.",
-    "directors_room": "Read docs/craft/DIRECTORS_ROOM.md and full master Phase 4.1."
+  "voice_and_runtime": {
+    "eventual_vo_words": 210,
+    "vo_allocation": {
+      "hook_and_capability": 39,
+      "constant_case": 49,
+      "separate_stock_linked_case": 43,
+      "real_test": 51,
+      "upside_and_question": 28
+    },
+    "story_seconds": 109.7,
+    "endcredits_seconds": 12.3,
+    "total_seconds": 122,
+    "instruction": "Pitch only. No narration script or board yet. Leave breathing room around the 68 second and 94 second reveals."
   },
-  "storyboard_or_scene_code_written": false
+  "staging": {
+    "real_stages": [
+      "Dry dock model-basin workshop with gantry and floor depth",
+      "Constant-recruitment basin with deck and submerged cutaway",
+      "Separate stock-linked basin in a distinct bay",
+      "Research-platform exit facing a full-scale harbor"
+    ],
+    "shot_scales": [
+      "Extreme close-up trophy feet",
+      "Medium cart and token pairing",
+      "Wide basin and gantry",
+      "Extreme wide miniature research platform against harbor"
+    ],
+    "camera_heights": [
+      "At token/cart wheel level",
+      "Above gantry looking down through basin",
+      "Below waterline looking across spawning-biomass stage"
+    ],
+    "palette": "Salt-dark teal water, warm brass trophy, coral-orange testing machinery; directional cool daylight, wet reflections and substantial foreground occlusion."
+  },
+  "library_and_growth": {
+    "reuse": [
+      "QuestionToken as rule tokens, with distinct copy",
+      "Character as working researcher who pushes cart and opens basin cover",
+      "GearLever for repeated simulated interaction",
+      "Stage3D and existing water/material helpers"
+    ],
+    "net_new": "Characterized modular trophy with folding physical qualification tabs, expressive tilt and research-flag substitution. Pollock may be represented by clearly labelled species-neutral schematic fish silhouettes if no new correct pollock asset is available; never substitute salmon as pollock.",
+    "freshness": "No office, paper-sheet hero, pen, approval stamp or document carousel. Comedy comes from physical scale and a prematurely grand research trophy."
+  },
+  "claim_guards": [
+    "Unscaled conceptual devices only; no fabricated counts, data curves or biomass volumes.",
+    "Keep SIMULATION and case labels legible.",
+    "Smoother policy response is not annual catch stability.",
+    "Never describe the second experiment as a repair to the first.",
+    "No household income, bycatch success, deployed quota or real-world winner claim."
+  ]
 }

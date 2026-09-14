@@ -1,17 +1,18 @@
 {
-  "run_date": "2026-09-13",
-  "verified_at": "2026-09-13T17:38:14.288357+00:00",
+  "run_date": "2026-09-14",
+  "checked_at": "2026-09-14T13:40:37.841187+00:00",
+  "all_pass": true,
   "checks": [
     {
-      "check": "ship_gate.py",
+      "name": "ship_gate",
       "exit_code": 0,
-      "output": "  beat delivery (ADVISORY): 40/40 beats draw a visible event (100%), caption band from y=1420\nship_gate: owner release is for 2026-08-13, this run is 2026-09-13; it does not apply.\n========================================================================\nSHIP GATE: PASS  ->  SHIP NOW, DO NOT KEEP EDITING\n========================================================================\n  panel median 7.804 >= 7.0   judges=[7.788, 7.804, 7.85]\n  3 deliverables hash-match the graded cut\n  69 pieces of review evidence hash-match\n  cleared after 1 blocked round(s) in the editing loop\n  you may upload, email and merge.\n"
+      "output": "  beat delivery (ADVISORY): 37/38 beats draw a visible event (97%), caption band from y=1420\n    advisory: beat 10 at t=29.13 \"\" is DELIVERED STATIC: only 0.99% of the picture above the caption band changes across its whole window (floor 1.2%). The board promised: \"Feedback reaches the candidate and its adjustable detent changes position\". Build the event or re-board the beat.\nship_gate: owner release is for 2026-08-13, this run is 2026-09-14; it does not apply.\n========================================================================\nSHIP GATE: PASS  ->  SHIP NOW, DO NOT KEEP EDITING\n========================================================================\n  panel median 7.716 >= 7.0   judges=[7.848, 7.712, 7.716]\n  3 deliverables hash-match the graded cut\n  65 pieces of review evidence hash-match\n  cleared after 1 blocked round(s) in the editing loop\n  you may upload, email and merge.\n"
     },
     {
-      "check": "no_exit.py",
+      "name": "no_exit",
       "exit_code": 0,
-      "output": "ONE OUTCOME GATE: a delivered video exists. This run may end.\n  panel: median 7.804 against a 7.0 bar, released by the owner to 6.7 for 2026-08-13\n  OK       9:16 master [dispatch_master.mp4] (131.8s, 37.9 MB, video+audio)\n  OK       1:1 square LinkedIn cut [dispatch_square.mp4] (131.8s, 26.2 MB, video+audio)\n  OK       Gmail draft [private receipt id] to [redacted address] at 2026-09-13T13:32:57\n"
+      "output": "ONE OUTCOME GATE: a delivered video exists. This run may end.\n  panel: median 7.716 against a 7.0 bar, released by the owner to 6.7 for 2026-08-13\n  OK       9:16 master [dispatch_master.mp4] (125.9s, 46.9 MB, video+audio)\n  OK       1:1 square LinkedIn cut [dispatch_square.mp4] (125.9s, 26.4 MB, video+audio)\n  OK       Gmail draft [redacted id] to [redacted email] at 2026-09-14T09:35:57\n"
     }
   ],
-  "all_pass": true
+  "threshold_note": "Current ship gate uses7.0; the legacy no_exit status mentions a dated August13release that does not apply."
 }

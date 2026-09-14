@@ -1,31 +1,18 @@
-Two machine outputs. Watch what this pen does next.
-
-Koniag Government Services says it supports Wingman, a platform for digital office assistants.
-
-Its September eleventh announcement names contracting, logistics and financial management.
-
-KGS belongs to Koniag, the Kodiak region's Alaska Native corporation.
-
-Amazon's cloud business, AWS, describes earlier Army tools behind this approach.
-
-DORA, the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.
-
-It retrieves compliance records through software connections, including SAM dot gov.
-
-Prebuilt logic assembles a standardized report.
-
-Separate Jumpstarter tools use large language models through Amazon Bedrock to turn user inputs into initial document sections.
-
-First, give the outputs their credit. The records are gathered. A blank section now contains text someone can work with.
-
-These tools have completed real preparation for professionals.
-
-Now follow the report. The contracting professional reviews it and makes the determination.
-
-The draft has a different handoff. Its user refines and approves the generated sections.
-
-There's the pen's mark. The page arriving and the professional finishing are different events.
-
-These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.
-
-Useful preparation has reached the desk. Which part of the work is still yours?
+What would make an AI fishing rule worth testing?
+A September eleventh paper explores that question with eastern Bering Sea pollock.
+Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.
+Their agent practices harvest choices through repeated simulated seasons.
+Feedback rewards outcomes and changes the learned rule.
+They compare it with a predefined harvest rule.
+Will an advantage hold when the biology changes?
+Start with a model where young fish enter at a constant rate.
+The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.
+The next experiment links young fish entering the stock to the breeding population.
+This is a separate simulated case with its own comparison.
+Here the learned rule catches more and leaves less breeding biomass than that comparison.
+These simulated gains may offer no management advantage over a predefined rule.
+In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.
+Fishing businesses need sound management to plan their seasons.
+So test both rules against the same catch-pattern and breeding-stock goals.
+These are illustrative simulations with public code. They establish alternatives to investigate, not a winning real-world policy.
+Which balance should a rule demonstrate between catches and breeding fish?

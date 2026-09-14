@@ -1,0 +1,22 @@
+{
+  "run_date": "2026-09-14",
+  "candidate": 3,
+  "checked_at": "2026-09-14T13:16:44.074350+00:00",
+  "square_sha256": "6abf83580372d1121934d697ac1e308903c8bf26363ec455fed8319e161f7c39",
+  "samples_seconds": [
+    4.8,
+    39,
+    70.5,
+    80.1,
+    91.267,
+    93.1,
+    101,
+    110,
+    117
+  ],
+  "evidence": "out/dispatch/square_review_20260914_candidate3/montage.jpg",
+  "viewed_by": "root",
+  "pass": true,
+  "findings": "Encoded square retains complete headline, comparison qualifiers, captions and credits at these samples. Both goals concealed at80.1s; Catch Pattern readable at91.267s without season-plaque occlusion, both goals readable at93.1s.",
+  "limits": "Nine sampled encoded square frames; separate all-frame renderer and pixel-caption/credit gates provide additional coverage."
+}

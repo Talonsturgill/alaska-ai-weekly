@@ -1,0 +1,11 @@
+{
+  "run_date": "2026-09-14",
+  "checked_at": "2026-09-14T13:03:58.414739+00:00",
+  "command": "python3 -m unittest discover -s tests",
+  "tests": 252,
+  "duration_seconds": 96.091,
+  "exit_code": 0,
+  "pass": true,
+  "includes": "Current renderer guards, evidence-builder date/voice-anchor repair, and complete existing regression suite",
+  "raw_log": "/tmp/alaska-dispatch-20260914/jobs/tests-all2.log"
+}

@@ -3436,3 +3436,37 @@ commit c18cda4efbd3c8f8a6c559d02342ded7aa65534e deployed successfully in Pages r
 34771954900; the ordinary public watch URL passes desktop and phone playback, sound,
 pause and caption checks. Both final ship_gate and no_exit checks pass. The canonical
 release index and sanitized receipts are in out/dispatch/RELEASE.md.
+
+
+## September 14th, 2026 — Rehearsal Before the Season
+
+The Dispatch examines a September 11th primary paper on neural-network fisheries models. It keeps the constant and stock-linked pollock simulations separate, gives each its own comparison, and shows catch and breeding-biomass tradeoffs as research alternatives. Public code availability is verified; operational superiority and reproduction are not claimed.
+
+### Verified system changes
+
+- `641519b` accepts the current connected-account Gmail receipt schema only when its required verification predicates and timezone-aware verification timestamp pass. Nineteen focused rollover tests pass; the actual prior release receipt passed without editing it. This prevents a completed connected-account delivery from becoming an unrecognized old run.
+- `404b8a2` exposes `gearLeverGrip()` from the same pivot and throw used by the drawn lever. Ten rendered geometry probes match its knob, and ten default React markups are byte-identical to the prior release. The new service-mount material details are opt-in, preserving older films.
+- `aeeab7f` replaces dead coverage for the episode's wrapped Box typography with actual Chrome SVG glyph measurements and CSS3D camera projection. It loads the real font and runs the real component. Unresolved/nonstring text, unvisited display sites, incomplete frame coverage and stale source/props/library/font evidence fail closed. Advisory sample runs cannot satisfy a gate. Forty-three relevant regression tests pass, including adversarial browser fixtures.
+- The complete renderer check measured all 3,409 story frames, all 47 display sites, 51 plated text rows and 66 projected labels. It found a four-pixel caption-clearance intrusion; the case label and qualifier were raised together. The final scan passes text fit, edge clipping, caption clearance and visible copy. It does not claim to detect character occlusion or unrelated shape clipping; those retain visual review.
+
+### Film changes and repeat offenders
+
+The first whole rough cut exposed repeated framing, labels crossing the apparatus and faces, a weak harbor reveal, and promised physical actions implemented only as fading labels. Full-film passes changed the camera distances and heights, exposed distinct room architecture, moved operators to the floor, reserved type space, and added the actual date hinge, observation shutter, manual initiation, feedback update, case docking, weight socket, shared goal shutters, gate and model collar.
+
+The conformed first voice take was clean but fell just below seven distinct facts per minute. The fix added the independently verified public-code availability fact, then synthesized the complete passage again. The selected second take is 113.1 seconds, with 112.64 seconds of aligned speech; fifteen distinct claims are voiced. No time stretching or pieced-together replacement read was used. The new alignment also closes both long beat gaps. The exact post passes its editor, objective linter and 8.806 caption score.
+
+**Repeated text-measurement failures are addressed with an enforced renderer check**, extending the prior runs' plate/credit repairs to the current wrapping and camera system. The final full repository suite passes 252 tests in 96.091 seconds. The earlier 242-test run also passed before the evidence-builder regressions were added.
+
+**Repeated contact-sound timing failures are addressed in the authored events**, using the existing validated offset resolver rather than treating a movement onset as an impact. The hand catches the grip at frame 14; a distinct later event marks the detent. Spring contacts, delayed gate travel and the split collar have separately declared arrival frames. Eleven sound kinds cover 38 events without adjacent family repetition. Final encoded contact verification passes: 166 decoded frames match the native render and all 5,904 AAC packets and timestamps match the independently audited mix. Twenty-five discrete performed cue estimates lie within one frame of their physical contacts. Sustained textures are assessed against movement, not their absolute peak. No human listening claim is made.
+
+Three reveal holds now use a monotone paused clock. Both event anchors and ambient time use that clock, and voice-accent reactions freeze during each hold. This removes the prior freeze-then-jump behavior while preserving later narration onsets. The full primary payoff is at 92.94 seconds; the secondary loop withholds its first payoff for 31.32 seconds.
+
+The first final candidate passed native and encoded objective gates and required preflight, then failed the independent flow review because the goal labels showed during initial harbor shutter placement at 80.1 seconds. Exact candidate media, audio, source and evidence were preserved before repair. `26bbc7d` makes the labels travel with their opaque shutters. A native follow-up exposed the season-planning plaque covering the intended first goal opening; the newly started second render was cancelled before completion. `54f2f60` folds that plaque away during the 18 frames before the catch shutter opens. The affected 563-frame native sequence and 82 detailed samples passed an independent review. Catch becomes fully readable at 90.900 seconds and both goals at 93.100 seconds. A fresh complete browser scan again passes all 3,409 frames. Final encoded confirmation passes the independent flow review on the exact candidate-three master. The full first reveal remains unobstructed and neither goal leaks during placement.
+
+`a4c9bae` fixes the evidence builder's stale September 13th move table, binds all 38 current action samples to the voice clock, and validates flat voice-line offsets. Twelve focused tests pass, including stale dates, missing or misplaced beats and drifted voice anchors. The original failure remains recorded; the corrected evidence build exits zero without changing picture or audio.
+
+The content-sag advisory's opening and ending windows were inspected against actual actions. The publication hinge, observation shutter, closing question and TEST AGAIN moves advance those intervals; the final quiet interval is the separate credits. The advisory measures a share of changed pixels, so low novelty is not described as zero motion. No additional required repair was established by that review.
+
+### Release evidence
+
+Candidate three passes all fifteen native/encoded checks and required preflight. Judges 7.848, 7.712 and 7.716 give a 7.716 median against 7.0 with zero hard blockers. The native render took 738.610 seconds. Five permanent assets match exact local bytes; feed commit 9359f6bdfa20ad882a3c8128d5108f4ea2f5c084 is deployed through successful Pages. Desktop and phone playback, sound and captions pass live verification. One connected-account Gmail draft has exact HTML readback, DRAFT only and never SENT, including all fifteen upgrades. Weekly PR checks and merge remain distinct evidence recorded after this artifact commit in out/dispatch/RELEASE.md and release_delivery.json.

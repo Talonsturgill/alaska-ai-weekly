@@ -1943,3 +1943,38 @@ dispatch_history:
     palette: oxblood porcelain petrol copper nickel
     metaphor: a capped pen becomes a held writing instrument after two different office
       tools deliver their work
+- date: '2026-09-14'
+  topic: ICES September 11 neural-network pollock harvest-policy simulations
+  slug: rehearsal-before-the-season
+  key_entities:
+  - eastern Bering Sea pollock
+  - ICES fsag176
+  - deep-fish
+  - Kapur
+  - harvest optimization
+  - reinforcement learning
+  archetype: instrument rehearsal through separate biological cases
+  palette: bright ultramarine mango alabaster sea-glass ink navy
+  voice: Sulafat
+  stance: curious
+  angle: This pollock study demonstrates a way to explore harvest choices before real
+    seasons. Under two recruitment assumptions, learned policies produce different
+    combinations of catch and breeding-stock outcomes. That earns further comparison
+    against explicit management goals without establishing a winning real-world rule.
+  hero: GearLever
+  cast:
+  - GearLever
+  - GripHand
+  - Character
+  - QuestionToken
+  - Simulated
+  composition:
+    pov: orbital-aerial
+    motion_vector: vertical-descent
+    hero_treatment: instrument-as-subject
+    layout: stacked-layers
+    register: naturalistic-scene
+    camera_strategy: aerial-descent
+    light_story: noon-hard
+    palette: bright ultramarine mango alabaster sea-glass ink navy
+    metaphor: portable rehearsal control opens separate biological experiments

@@ -1,0 +1,56 @@
+{
+  "run_date": "2026-09-14",
+  "verified_at_utc": "2026-09-14T11:36:11.068320+00:00",
+  "claim_valid": true,
+  "public_access_verified": true,
+  "includes_pollock_reinforcement_learning": true,
+  "claim": "The authors provide public code for the illustrative case studies, including the Eastern Bering Sea pollock reinforcement-learning experiment.",
+  "safe_phrase": "These are illustrative simulations with public code.",
+  "proposed_full_line_safe": true,
+  "proposed_full_line": "These are illustrative simulations with public code. They establish alternatives to investigate, not a winning real-world policy.",
+  "sources": [
+    {
+      "url": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
+      "publication_date": "2026-09-11",
+      "type": "primary published paper",
+      "section": "Data availability",
+      "access": "Publisher text returned by exact site-restricted search on current verification.",
+      "evidence": "The authors link mkapur/deep-fish for obtaining or re-simulating data and reproducing their case studies.",
+      "short_exact_excerpt": "reproduce the case studies"
+    },
+    {
+      "url": "https://github.com/mkapur/deep-fish",
+      "publication_date": null,
+      "verified_date": "2026-09-14",
+      "type": "primary authors repository",
+      "access": "Live GitHub page fetched without login and explicitly marked Public.",
+      "evidence": "Repository names the same authors and describes forecasting, spatial standardization and policy optimization; case studies directory is visible. README retains an older title and in-review wording, so do not use README for publication date."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/train_agent.py",
+      "publication_date": null,
+      "verified_date": "2026-09-14",
+      "type": "primary public source file",
+      "access": "Full raw code fetched without authentication.",
+      "evidence": "Imports EBSPollockGym, creates EBSPollock-v0, accepts a recruitment option and trains a PPO policy. This directly establishes pollock RL scope."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/r_utils.R",
+      "publication_date": null,
+      "verified_date": "2026-09-14",
+      "type": "primary public source file",
+      "access": "Full raw code fetched without authentication.",
+      "evidence": "Contains constant and ricker initialization branches and pollock operating-model transition functions."
+    }
+  ],
+  "scope_limits": [
+    "Verified source availability and case-study association only. No code was executed, dependencies installed, results reproduced or reproducibility completeness audited.",
+    "Publicly readable is not a verified open-source license claim.",
+    "Current repository settings are not proven identical to the settings behind every published plot. Existing reward-versus-historical-results caveat remains.",
+    "No repository release date was established; the September 11th date belongs to the paper."
+  ],
+  "why_substantive": "Source availability adds inspectability to the proposed further comparison. It is distinct from simulation status and reported outcome differences.",
+  "files_changed": [
+    "out/dispatch/public_code_validation.json"
+  ]
+}

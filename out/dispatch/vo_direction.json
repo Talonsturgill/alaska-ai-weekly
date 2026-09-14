@@ -1,308 +1,227 @@
 {
-  "run_date": "2026-09-13",
-  "title": "The Pen Still Has Work",
-  "role": "vo-director",
-  "planned_at": "2026-09-13T14:57:35.701436+00:00",
-  "revision": 2,
-  "model": "gemini-3.1-flash-tts-preview",
-  "voice": "Sulafat",
+  "run_date": "2026-09-14",
   "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
-  "accent": "neutral American, light and natural",
-  "target_seconds": 120,
-  "word_count": 204,
-  "performed_target_seconds": [
-    118,
-    122
-  ],
-  "runtime_acceptance": {
-    "format_band_seconds": [
-      112,
-      130
-    ],
-    "used_claims": 15,
-    "maximum_seconds_for_claim_density": 128.57,
-    "effective_band_seconds": [
-      112,
-      128.57
-    ],
-    "status": "Revision 2 has not been synthesized. Prior batch duration does not establish this revision duration.",
-    "method": "Natural complete-passage delivery and sentence breaths. No inserted audio silence, time stretching or post-synthesis padding."
-  },
-  "input_sha256": {
-    "vo_script.txt": "5ae7ddb9b7890df4f1d39fb246eb6e62fd91613f20d2791920a2be265de5526f",
-    "vo_script.json": "7f3f63c19ceeebb4239fac83e6fe42ebe6aa8376a64f7ceb3136fcc9501c03e7",
-    "angle.json": "70d735b49044f8b1e09d5b113e85b68e264cd69cd3145e0f5081531e5bcbeff7"
-  },
-  "authority": "docs/craft/VO_DIRECTION.md, runtime-anchored Step 7 and September 12 vetted slow cue, overrides older brisk baseline and transcript respelling guidance.",
-  "notes": "Style: Nora speaks to one interested listener with a relaxed, patient public-radio cadence. Keep a gently slow tempo even when the tone brightens. Use connected phrases, ordinary vowels and easy natural sentence breaths. Start curious, give useful preparation warm credit, make the two professional handoffs clear, then end with a personal invitation. Energy changes come from pitch and warmth while the tempo stays unhurried.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nDiction: The second transcript line begins with a complete three-word company name. Speak all three words once, clearly, as one phrase before says. Do not shorten, replace or repeat that name. Only the fourth transcript line begins with the written initialism; read that occurrence as individual letters.\nEmphasis: In transcript-line order, next; Services; eleventh; Koniag; earlier; subject; retrieves; Prebuilt; Separate; credit; preparation; reviews; refines; different; quantify; yours.\nContrast: Relative energy by transcript line is 4, 3, 2, 3, 2, 3, 2, 3, 4, 3, 2, 3, 4, 3, 2, 3. Keep these differences audible through vocal color, with the same patient tempo.",
-  "style_prompt": "Style: Nora speaks to one interested listener with a relaxed, patient public-radio cadence. Keep a gently slow tempo even when the tone brightens. Use connected phrases, ordinary vowels and easy natural sentence breaths. Start curious, give useful preparation warm credit, make the two professional handoffs clear, then end with a personal invitation. Energy changes come from pitch and warmth while the tempo stays unhurried.",
-  "pace_paragraph": "Pace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.",
+  "notes": "Style: Warm, natural and conversational, with expressive curiosity about a useful research method. Neutral American accent, light and natural. Let the separate biological result bring thoughtful surprise, give the fair test grounded seriousness, and finish with earned optimism and a warm open question. No doom, hype, scolding, or announcing. Performance: Keep the read varied without making each sentence a separate performance. Open bright, settle through the source, lift for learning and the biological question, then give the two experiments distinct contours. At the management-advantage objection, around seventy-nine seconds, lean in and grant its full force without claiming the research failed. Recover useful momentum on the common testing goals. Treat the final question as addressed to one thoughtful listener. Preserve complete organization names and every spoken word.",
+  "style_prompt": "Style: Warm, natural and conversational, with expressive curiosity about a useful research method. Neutral American accent, light and natural. Let the separate biological result bring thoughtful surprise, give the fair test grounded seriousness, and finish with earned optimism and a warm open question. No doom, hype, scolding, or announcing.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean gently on one word in each successive line: testing, explores, informed, practices, changes, predefined, hold, constant, swings, links, separate, less, may, manage, plan, same, alternatives, balance. Never shout or add words. Give the biomass definition a light parenthetical contour and keep both outcomes audible.\nPerformance: Keep the read varied without making each sentence a separate performance. Open bright, settle through the source, lift for learning and the biological question, then give the two experiments distinct contours. At the management-advantage objection, around seventy-nine seconds, lean in and grant its full force without claiming the research failed. Recover useful momentum on the common testing goals. Treat the final question as addressed to one thoughtful listener. Preserve complete organization names and every spoken word.\nEnergy: Successive line levels on a scale from one to five are 4, 3, 2, 4, 3, 2, 4, 3, 2, 3, 2, 4, 2, 3, 2, 4, 2, 3. These are relative changes of intention and pitch, not abrupt volume jumps. Keep natural breaths at sentence ends; leave breathing room for the explanatory images without stretching syllables.",
   "lines": [
     {
       "idx": 0,
-      "text": "Two machine outputs. [short pause] Watch what this pen does next.",
-      "locked_text": "Two machine outputs. Watch what this pen does next.",
-      "intent": "HOOK",
-      "emphasis": "next",
+      "text": "What would make an AI fishing rule worth testing?",
+      "intent": "hook",
+      "emphasis": "testing",
       "energy": 4,
-      "pace": "A bright invitation. Let the opening statement land before looking ahead with the listener.",
-      "tags": [
-        "[short pause]"
-      ],
-      "pause_before": false
+      "pace": "Measured baseline with buoyant conversational movement.",
+      "tags": [],
+      "pause_before": false,
+      "why": "Open an actual question with a bright forward lean; worth testing is an invitation, not a verdict."
     },
     {
       "idx": 1,
-      "text": "Koniag [slow] Government Services says it supports Wingman, a platform for digital office assistants.",
-      "locked_text": "Koniag Government Services says it supports Wingman, a platform for digital office assistants.",
-      "intent": "SETUP",
-      "emphasis": "Services",
+      "text": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
+      "intent": "setup",
+      "emphasis": "explores",
       "energy": 3,
-      "pace": "Say all three words of the company name once, as one complete phrase, before says. Articulate Government Services clearly. Keep the written full name; do not substitute initials or repeat the name.",
-      "tags": [
-        "[slow]"
-      ],
-      "pause_before": false
+      "pace": "Measured baseline with buoyant conversational movement.",
+      "tags": [],
+      "pause_before": false,
+      "why": "Let the date land clearly, then settle into the scope without a news-announcer cadence."
     },
     {
       "idx": 2,
-      "text": "Its September eleventh announcement names contracting, logistics and financial management.",
-      "locked_text": "Its September eleventh announcement names contracting, logistics and financial management.",
-      "intent": "STAT",
-      "emphasis": "eleventh",
+      "text": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
+      "intent": "setup",
+      "emphasis": "informed",
       "energy": 2,
-      "pace": "Give the date ordinary clear articulation and let the three functions flow evenly; inherit the measured sentence-breath baseline.",
+      "pace": "Measured baseline; give the full names distinct natural phrasing.",
       "tags": [],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Give the full affiliation natural room and let informed carry the relationship between observations and simulations."
     },
     {
       "idx": 3,
-      "text": "KGS belongs to Koniag, the Kodiak region's Alaska Native corporation.",
-      "locked_text": "KGS belongs to Koniag, the Kodiak region's Alaska Native corporation.",
-      "intent": "SETUP",
-      "emphasis": "Koniag",
-      "energy": 3,
-      "pace": "Read the initialism at the start of this fourth line as individual letters, then continue the named ownership relationship in one natural sentence.",
+      "text": "Their agent practices harvest choices through repeated simulated seasons.",
+      "intent": "reveal",
+      "emphasis": "practices",
+      "energy": 4,
+      "pace": "Measured baseline with buoyant conversational movement.",
       "tags": [],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Lift into the demonstrated capability, with attentive admiration for repeated practice."
     },
     {
       "idx": 4,
-      "text": "Amazon's cloud business, AWS, describes earlier Army tools behind this approach.",
-      "locked_text": "Amazon's cloud business, AWS, describes earlier Army tools behind this approach.",
-      "intent": "SETUP",
-      "emphasis": "earlier",
-      "energy": 2,
-      "pace": "Quiet precision. Give AWS clear letter spacing and earlier a small stress, locating the examples in the earlier case study.",
+      "text": "Feedback rewards outcomes and changes the learned rule.",
+      "intent": "reveal",
+      "emphasis": "changes",
+      "energy": 3,
+      "pace": "Measured baseline with buoyant conversational movement.",
       "tags": [],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Let the change in the learned rule complete the mechanism; clear causal emphasis, no triumph."
     },
     {
       "idx": 5,
-      "text": "DORA, [slow] the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.",
-      "locked_text": "DORA, the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.",
-      "intent": "SETUP",
-      "emphasis": "subject",
-      "energy": 3,
-      "pace": "Slowly unfold the tool name, then connect emailing a vendor identifier to the subject line as one clear action. Breathe at the appositive boundary if needed.",
-      "tags": [
-        "[slow]"
-      ],
-      "pause_before": false
+      "text": "They compare it with a predefined harvest rule.",
+      "intent": "setup",
+      "emphasis": "predefined",
+      "energy": 2,
+      "pace": "Measured baseline with buoyant conversational movement.",
+      "tags": [],
+      "pause_before": false,
+      "why": "Give the predefined alternative equal dignity through a grounded, evenly paced sentence."
     },
     {
       "idx": 6,
-      "text": "It retrieves compliance records through software connections, including SAM dot gov.",
-      "locked_text": "It retrieves compliance records through software connections, including SAM dot gov.",
-      "intent": "SETUP",
-      "emphasis": "retrieves",
-      "energy": 2,
-      "pace": "Calmly describe gathering existing records; let software connections and SAM dot gov resolve cleanly. This is retrieval.",
+      "text": "Will an advantage hold when the biology changes?",
+      "intent": "hook",
+      "emphasis": "hold",
+      "energy": 4,
+      "pace": "Measured baseline with buoyant conversational movement.",
       "tags": [],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Reopen curiosity about whether the advantage survives; leave the answer withheld."
     },
     {
       "idx": 7,
-      "text": "Prebuilt logic assembles a standardized report.",
-      "locked_text": "Prebuilt logic assembles a standardized report.",
-      "intent": "SETUP",
-      "emphasis": "Prebuilt",
+      "text": "Start with a model where young fish enter at a constant rate.",
+      "intent": "setup",
+      "emphasis": "constant",
       "energy": 3,
-      "pace": "Quiet confidence, with a full natural finish on report. The logic is fixed; no language-model inference is implied.",
+      "pace": "Measured baseline with buoyant conversational movement.",
       "tags": [],
-      "pause_before": false
+      "pause_before": true,
+      "why": "Establish the first assumption plainly so the listener can compare the later experiment."
     },
     {
       "idx": 8,
-      "text": "Separate Jumpstarter tools [slow] use large language models through Amazon Bedrock to turn user inputs into initial document sections.",
-      "locked_text": "Separate Jumpstarter tools use large language models through Amazon Bedrock to turn user inputs into initial document sections.",
-      "intent": "REVEAL/CONTRAST",
-      "emphasis": "Separate",
-      "energy": 4,
-      "pace": "Brighten the start, then retain the patient tempo through this distinct generative mechanism. Shape a natural phrase boundary after Amazon Bedrock.",
-      "tags": [
-        "[slow]"
-      ],
-      "pause_before": false
-    },
-    {
-      "idx": 9,
-      "text": "First, give the outputs their credit. [short pause] The records are gathered. A blank section now contains text someone can work with.",
-      "locked_text": "First, give the outputs their credit. The records are gathered. A blank section now contains text someone can work with.",
-      "intent": "REVEAL/CONTRAST",
-      "emphasis": "credit",
-      "energy": 3,
-      "pace": "Warm recognition. Let credit land, settle for gathered records, then lift gently into text someone can work with. Breathe naturally at both periods.",
+      "text": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside [short pause] large annual catch swings.",
+      "intent": "reveal",
+      "emphasis": "swings",
+      "energy": 2,
+      "pace": "Measured baseline, with a slight settling on the load-bearing word.",
       "tags": [
         "[short pause]"
       ],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Keep the biomass definition gently parenthetical, then land the annual catch swings as the equally real second outcome."
+    },
+    {
+      "idx": 9,
+      "text": "The next experiment links young fish entering the stock to the breeding population.",
+      "intent": "setup",
+      "emphasis": "links",
+      "energy": 3,
+      "pace": "Measured baseline with buoyant conversational movement.",
+      "tags": [],
+      "pause_before": true,
+      "why": "Begin a new biological experiment with renewed interest and a small change of melodic contour."
     },
     {
       "idx": 10,
-      "text": "These tools have completed real preparation for professionals.",
-      "locked_text": "These tools have completed real preparation for professionals.",
-      "intent": "STAKES",
-      "emphasis": "preparation",
+      "text": "This is a separate simulated case with its own comparison.",
+      "intent": "reveal",
+      "emphasis": "separate",
       "energy": 2,
-      "pace": "A grounded warm settle. Credit a real preparation job without implying all professional work is complete.",
+      "pace": "Measured baseline with buoyant conversational movement.",
       "tags": [],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Make separate unmistakable so this never sounds like a repair to the preceding policy."
     },
     {
       "idx": 11,
-      "text": "Now follow the report. The contracting professional reviews it and makes the determination.",
-      "locked_text": "Now follow the report. The contracting professional reviews it and makes the determination.",
-      "intent": "SETUP",
-      "emphasis": "reviews",
-      "energy": 3,
-      "pace": "Invite attention on Now follow the report, breathe, then describe review and determination with calm purpose. No implication of error or delay.",
+      "text": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
+      "intent": "reveal",
+      "emphasis": "less",
+      "energy": 4,
+      "pace": "Measured baseline with buoyant conversational movement.",
       "tags": [],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Let less carry the reversal without alarm or a celebratory higher-catch flourish."
     },
     {
       "idx": 12,
-      "text": "The draft has a different handoff. [slow] Its user refines and approves the generated sections.",
-      "locked_text": "The draft has a different handoff. Its user refines and approves the generated sections.",
-      "intent": "REVEAL/CONTRAST",
-      "emphasis": "refines",
-      "energy": 4,
-      "pace": "Lift into the different handoff. After the sentence breath, take time over refines and let approves complete the phrase.",
-      "tags": [
-        "[slow]"
-      ],
-      "pause_before": false
+      "text": "These simulated gains may offer no management advantage over a predefined rule.",
+      "intent": "stakes",
+      "emphasis": "may",
+      "energy": 2,
+      "pace": "Measured baseline, with a slight settling on the load-bearing word.",
+      "tags": [],
+      "pause_before": true,
+      "why": "Give the strongest fair objection full weight while preserving may as uncertainty, not demonstrated failure."
     },
     {
       "idx": 13,
-      "text": "There's the pen's mark. The page arriving and the professional finishing are different events.",
-      "locked_text": "There's the pen's mark. The page arriving and the professional finishing are different events.",
-      "intent": "REVEAL/CONTRAST",
-      "emphasis": "different",
+      "text": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
+      "intent": "setup",
+      "emphasis": "manage",
       "energy": 3,
-      "pace": "A small satisfied smile at the pen mark, then reflective clarity about the two events. This pays the observable action, not a productivity verdict.",
+      "pace": "Measured baseline; give the full names distinct natural phrasing.",
       "tags": [],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Open the harbor scale with a neutral, complete statement of who manages the fishery."
     },
     {
       "idx": 14,
-      "text": "These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.",
-      "locked_text": "These are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.",
-      "intent": "STAKES",
-      "emphasis": "quantify",
+      "text": "Fishing businesses need sound management to plan their seasons.",
+      "intent": "stakes",
+      "emphasis": "plan",
       "energy": 2,
-      "pace": "Calm, exact source attribution. Breathe between sentences. Give the Alaska-return boundary the same warmth as useful work; unquantified does not mean no benefit.",
+      "pace": "Measured baseline, with a slight settling on the load-bearing word.",
       "tags": [],
-      "pause_before": false
+      "pause_before": false,
+      "why": "Settle toward the people who need to plan, with warmth and no invented distress."
     },
     {
       "idx": 15,
-      "text": "Useful preparation has reached the desk. Which part of the work is still yours?",
-      "locked_text": "Useful preparation has reached the desk. Which part of the work is still yours?",
-      "intent": "BUTTON/CTA",
-      "emphasis": "yours",
-      "energy": 3,
-      "pace": "Warm direct address. Let the desk sentence settle on a natural breath, then ask with a modest curious rise and clean ending.",
+      "text": "So test both rules against the same catch-pattern and breeding-stock goals.",
+      "intent": "reveal",
+      "emphasis": "same",
+      "energy": 4,
+      "pace": "Measured baseline with buoyant conversational movement.",
       "tags": [],
-      "pause_before": false
+      "pause_before": true,
+      "why": "Return useful momentum: identical goals are the constructive next research step."
+    },
+    {
+      "idx": 16,
+      "text": "These are illustrative simulations with public code. [short pause] They establish alternatives to investigate, not a winning real-world policy.",
+      "intent": "reveal",
+      "emphasis": "alternatives",
+      "energy": 2,
+      "pace": "Measured baseline, with a slight settling on the load-bearing word.",
+      "tags": [
+        "[short pause]"
+      ],
+      "pause_before": false,
+      "why": "Let the first sentence establish simulation status and public source availability without implying successful reproduction, breathe, then warmly credit alternatives as the actual accomplishment."
+    },
+    {
+      "idx": 17,
+      "text": "Which balance should a rule demonstrate between catches and breeding fish?",
+      "intent": "button",
+      "emphasis": "balance",
+      "energy": 3,
+      "pace": "Measured baseline with buoyant conversational movement.",
+      "tags": [],
+      "pause_before": true,
+      "why": "Address one thoughtful listener directly and leave genuine space for an answer rather than a rhetorical flourish."
     }
   ],
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Warm, natural and conversational, with expressive curiosity about a useful research method. Neutral American accent, light and natural. Let the separate biological result bring thoughtful surprise, give the fair test grounded seriousness, and finish with earned optimism and a warm open question. No doom, hype, scolding, or announcing.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean gently on one word in each successive line: testing, explores, informed, practices, changes, predefined, hold, constant, swings, links, separate, less, may, manage, plan, same, alternatives, balance. Never shout or add words. Give the biomass definition a light parenthetical contour and keep both outcomes audible.\nPerformance: Keep the read varied without making each sentence a separate performance. Open bright, settle through the source, lift for learning and the biological question, then give the two experiments distinct contours. At the management-advantage objection, around seventy-nine seconds, lean in and grant its full force without claiming the research failed. Recover useful momentum on the common testing goals. Treat the final question as addressed to one thoughtful listener. Preserve complete organization names and every spoken word.\nEnergy: Successive line levels on a scale from one to five are 4, 3, 2, 4, 3, 2, 4, 3, 2, 3, 2, 4, 2, 3, 2, 4, 2, 3. These are relative changes of intention and pitch, not abrupt volume jumps. Keep natural breaths at sentence ends; leave breathing room for the explanatory images without stretching syllables.\nTranscript:\nWhat would make an AI fishing rule worth testing?\nA September eleventh paper explores that question with eastern Bering Sea pollock.\nResearchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.\nTheir agent practices harvest choices through repeated simulated seasons.\nFeedback rewards outcomes and changes the learned rule.\nThey compare it with a predefined harvest rule.\nWill an advantage hold when the biology changes?\nStart with a model where young fish enter at a constant rate.\nThe learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside [short pause] large annual catch swings.\nThe next experiment links young fish entering the stock to the breeding population.\nThis is a separate simulated case with its own comparison.\nHere the learned rule catches more and leaves less breeding biomass than that comparison.\nThese simulated gains may offer no management advantage over a predefined rule.\nIn real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.\nFishing businesses need sound management to plan their seasons.\nSo test both rules against the same catch-pattern and breeding-stock goals.\nThese are illustrative simulations with public code. [short pause] They establish alternatives to investigate, not a winning real-world policy.\nWhich balance should a rule demonstrate between catches and breeding fish?",
   "pronunciations": {
-    "Koniag": "KOH-nee-ag",
-    "Kodiak": "KOH-dee-ak"
+    "NOAA": "NOH-uh",
+    "AI": "A eye"
   },
-  "pronunciation_note": "Only these two name hints are retained as data. The synth injects them once above Transcript. The hand-authored notes contain no pronunciation guide. The fourth transcript line keeps its written initialism and reads it as individual letters. No respelling changes the transcript.",
-  "arc": [
-    {
-      "lines": [
-        0,
-        4
-      ],
-      "movement": "Curious hook into attributed current news, corporate ownership and earlier source scope."
-    },
-    {
-      "lines": [
-        5,
-        8
-      ],
-      "movement": "Patient retrieval and rules explanation, then a brighter but equally unhurried distinct generative tool."
-    },
-    {
-      "lines": [
-        9,
-        13
-      ],
-      "movement": "Warm credit for preparation, two distinct professional actions and the pen payoff."
-    },
-    {
-      "lines": [
-        14,
-        15
-      ],
-      "movement": "Calm announcement scope followed by a warm direct invitation."
-    }
+  "target_spoken_seconds": 120,
+  "acceptable_spoken_seconds": [
+    112,
+    130
   ],
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty. Neutral American accent, light and natural.\n### DIRECTOR'S NOTES\nStyle: Nora speaks to one interested listener with a relaxed, patient public-radio cadence. Keep a gently slow tempo even when the tone brightens. Use connected phrases, ordinary vowels and easy natural sentence breaths. Start curious, give useful preparation warm credit, make the two professional handoffs clear, then end with a personal invitation. Energy changes come from pitch and warmth while the tempo stays unhurried.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nDiction: The second transcript line begins with a complete three-word company name. Speak all three words once, clearly, as one phrase before says. Do not shorten, replace or repeat that name. Only the fourth transcript line begins with the written initialism; read that occurrence as individual letters.\nEmphasis: In transcript-line order, next; Services; eleventh; Koniag; earlier; subject; retrieves; Prebuilt; Separate; credit; preparation; reviews; refines; different; quantify; yours.\nContrast: Relative energy by transcript line is 4, 3, 2, 3, 2, 3, 2, 3, 4, 3, 2, 3, 4, 3, 2, 3. Keep these differences audible through vocal color, with the same patient tempo.\nTranscript:\nTwo machine outputs. [short pause] Watch what this pen does next.\nKoniag [slow] Government Services says it supports Wingman, a platform for digital office assistants.\nIts September eleventh announcement names contracting, logistics and financial management.\nKGS belongs to Koniag, the Kodiak region's Alaska Native corporation.\nAmazon's cloud business, AWS, describes earlier Army tools behind this approach.\nDORA, [slow] the Determination of Responsibility Assistant, starts with a professional emailing a vendor identifier in the subject line.\nIt retrieves compliance records through software connections, including SAM dot gov.\nPrebuilt logic assembles a standardized report.\nSeparate Jumpstarter tools [slow] use large language models through Amazon Bedrock to turn user inputs into initial document sections.\nFirst, give the outputs their credit. [short pause] The records are gathered. A blank section now contains text someone can work with.\nThese tools have completed real preparation for professionals.\nNow follow the report. The contracting professional reviews it and makes the determination.\nThe draft has a different handoff. [slow] Its user refines and approves the generated sections.\nThere's the pen's mark. The page arriving and the professional finishing are different events.\nThese are the workflows described by AWS. The new announcement doesn't quantify an Alaska return.\nUseful preparation has reached the desk. Which part of the work is still yours?",
-  "planning_checks": {
-    "exact_spoken_lines": true,
-    "line_count": 16,
-    "adjacent_energy_contrast": true,
-    "all_lines_have_intent_emphasis_pace": true,
-    "inline_tags_total": 6,
-    "inline_tags_by_type": {
-      "[slow]": 4,
-      "[short pause]": 2
-    },
-    "only_vetted_midline_tags": true,
-    "target_anchored_pace_verbatim": true,
-    "prompt_repairs_needed": [],
-    "checked_transcript_guard_passed": true,
-    "no_synthesis_performed": true,
-    "pronunciation_injections_after_simulation": 1,
-    "notes_words_before": 716,
-    "notes_words_after": 221,
-    "current_revision_not_synthesized": true
-  },
-  "soundcheck_focus": [
-    "Hard content check: the opening must audibly say Koniag Government Services exactly once before says. Repeated initials or a shortened company name rejects a take even when aggregate WER passes.",
-    "Check the fourth transcript line separately: its written KGS initialism is spoken as letters, once, followed by belongs to Koniag.",
-    "Confirm the exact complete transcript, no spoken notes or tags, natural sentence breaths and the normal expressiveness and loudness gates.",
-    "Measure the complete new take in 112 to 128.57 seconds. Do not pad, stretch or splice the previous take."
-  ],
-  "previous_plan_sha256": "3f1d71452997d52f830a99667e08854db0f00635480176660f46fbdfa9427b56",
-  "previous_report_sha256": "89b255b797abf8f5f47742e8814bd335e1dd4fb821e79af8ea505d289ac5cd3d",
-  "previous_revision_directory": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/revisions/vo_direction_20260913_r1_before_name_repair_20260913T145735701436Z",
-  "revision_reason": "The only in-band first-batch take omits the full company name. The report hears repeated initials; two independent opening ASR checks reported by the producer agree. Global word accuracy and score do not make this actor-identification omission acceptable.",
-  "diagnosis": {
-    "observed": "Take 1 raw duration 115.76 seconds, score 0.966 and WER 0.069, but the report hears KGS, KGS instead of Koniag Government Services at the first company mention.",
-    "producer_evidence": "Independent base and small ASR of the opening both heard the same company-name omission; aligned duration 115.18 seconds.",
-    "prompt_risk": "The old assembled prompt included 716 words of notes and a six-entry pronunciation guide, including a spelled-initials cue; the synth then injected that guide a second time. This creates plausible abbreviation and repetition priming. It is a repair hypothesis, not a proven single cause."
-  },
-  "revision_scope": [
-    "Condense transmitted notes while preserving per-line intent, emphasis and energy data.",
-    "Remove the hand-authored pronunciation paragraph and retain only two proper-name hints for one synth-owned injection. Remove the abbreviation pronunciation map entries.",
-    "Require the complete first company name once and reserve letter reading for the fourth transcript line.",
-    "Move the date-line slow cue to the middle of the full company name. Keep six vetted midline cues total and the canonical pace paragraph unchanged.",
-    "Preserve all 204 words, 16 locked lines, current script hashes, Sulafat, model and the 112 to 128.57-second effective band."
-  ]
+  "credits_seconds_excluded": 12.3,
+  "locked_word_count": 212,
+  "locked_script_sha256": "2bbc75e32042528fe5b49c676ebe55598a2684e3faa25f400421123857284716",
+  "pace_source": "scripts/vo_synth_gemini.py::_pace_line(120)",
+  "performance_arc": "Bright curiosity to precise mechanism, thoughtful biological reversal, grounded fair test, constructive research payoff, warm unresolved question.",
+  "tagged_transcript": "What would make an AI fishing rule worth testing?\nA September eleventh paper explores that question with eastern Bering Sea pollock.\nResearchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.\nTheir agent practices harvest choices through repeated simulated seasons.\nFeedback rewards outcomes and changes the learned rule.\nThey compare it with a predefined harvest rule.\nWill an advantage hold when the biology changes?\nStart with a model where young fish enter at a constant rate.\nThe learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside [short pause] large annual catch swings.\nThe next experiment links young fish entering the stock to the breeding population.\nThis is a separate simulated case with its own comparison.\nHere the learned rule catches more and leaves less breeding biomass than that comparison.\nThese simulated gains may offer no management advantage over a predefined rule.\nIn real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.\nFishing businesses need sound management to plan their seasons.\nSo test both rules against the same catch-pattern and breeding-stock goals.\nThese are illustrative simulations with public code. [short pause] They establish alternatives to investigate, not a winning real-world policy.\nWhich balance should a rule demonstrate between catches and breeding fish?",
+  "preferred_max_spoken_seconds": 128.5
 }

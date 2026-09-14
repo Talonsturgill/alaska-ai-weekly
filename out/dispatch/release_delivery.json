@@ -1,41 +1,48 @@
 {
-  "run_date": "2026-09-13",
-  "title": "The Pen Still Has Work",
-  "watch_url": "https://alaskaaihq.com/videos/#dispatch-2026-09-13-the-pen-still-has-work",
-  "verified_at": "2026-09-13T17:38:14.288357+00:00",
-  "native_picture_source_commit": "92c143e4cd6d60348c1fa350ee49bf5b73bb8398",
-  "mix_source_commit": "b74e5950e2869ea305e57b038828f97ae3a66cd1",
-  "master_sha256": "fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2",
-  "native_render_wall_seconds": 836.748,
-  "final_candidate": "4 (audio remix and encode; candidate3 native picture reused with complete frame identity proof)",
+  "run_date": "2026-09-14",
+  "title": "Rehearsal Before the Season",
+  "watch_url": "https://alaskaaihq.com/videos/#dispatch-2026-09-14-rehearsal-before-the-season",
+  "verified_at": "2026-09-14T13:39:59.673091+00:00",
+  "render_source_commit": "54f2f60",
+  "scene_sha256": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
+  "master_sha256": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
+  "native_render_wall_seconds": 738.61,
+  "final_candidate": 3,
   "objective_checks": {
     "passed": 15,
     "total": 15,
     "score": 10.0
   },
   "panel": {
-    "scores": [
-      7.788,
-      7.804,
-      7.85
+    "run_date": "2026-09-14",
+    "checked_at": "2026-09-14T13:28:18.009324+00:00",
+    "master_sha256": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
+    "judges": [
+      7.848,
+      7.712,
+      7.716
     ],
-    "median": 7.804,
+    "median": 7.716,
     "threshold": 7.0,
-    "hard_blockers": []
+    "hard_blockers": [],
+    "editor_ship": true,
+    "flow_ship": true,
+    "weights_totals_hashes_verified": true,
+    "audio_assessment_basis": "Measurements and event evidence; no human listening claim."
   },
   "editor_and_flow_pass": true,
   "contact_sound_verification_pass": true,
   "permanent_assets": [
     {
       "file": "dispatch_master.mp4",
-      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_master.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master.mp4",
       "host": "permanent",
       "status": 200,
       "content_type": "application/octet-stream",
-      "content_length": "37878504",
-      "bytes": 37878504,
-      "sha256": "fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2",
-      "remote_sha256": "fb5077db5db941f46a3f5bd8e7d048629647900def99fd5cdc76370852b8a2f2",
+      "content_length": "46864370",
+      "bytes": 46864370,
+      "sha256": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
+      "remote_sha256": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
       "remote_matches_local": true,
       "ffprobe": {
         "programs": [],
@@ -54,20 +61,20 @@
           }
         ],
         "format": {
-          "duration": "131.833333"
+          "duration": "125.933344"
         }
       }
     },
     {
       "file": "dispatch_square.mp4",
-      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_square.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_square.mp4",
       "host": "permanent",
       "status": 200,
       "content_type": "application/octet-stream",
-      "content_length": "26229277",
-      "bytes": 26229277,
-      "sha256": "de4c1fa62a28f29c43f80074274cc2e2ac4066b6fff8393e60b91132941e87fc",
-      "remote_sha256": "de4c1fa62a28f29c43f80074274cc2e2ac4066b6fff8393e60b91132941e87fc",
+      "content_length": "26413908",
+      "bytes": 26413908,
+      "sha256": "6abf83580372d1121934d697ac1e308903c8bf26363ec455fed8319e161f7c39",
+      "remote_sha256": "6abf83580372d1121934d697ac1e308903c8bf26363ec455fed8319e161f7c39",
       "remote_matches_local": true,
       "ffprobe": {
         "programs": [],
@@ -86,20 +93,20 @@
           }
         ],
         "format": {
-          "duration": "131.833333"
+          "duration": "125.933333"
         }
       }
     },
     {
       "file": "dispatch_master_720.mp4",
-      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-dispatch_master_720.mp4",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master_720.mp4",
       "host": "permanent",
       "status": 200,
       "content_type": "application/octet-stream",
-      "content_length": "8582424",
-      "bytes": 8582424,
-      "sha256": "9f544979ac9b7e8be427912ec540903d11371eb9fabd5f0843d9e7b4409c01d9",
-      "remote_sha256": "9f544979ac9b7e8be427912ec540903d11371eb9fabd5f0843d9e7b4409c01d9",
+      "content_length": "9266528",
+      "bytes": 9266528,
+      "sha256": "ca240f96ed9392b816de8a752406dd1fe8d74919200183208f7a11229dc26ea7",
+      "remote_sha256": "ca240f96ed9392b816de8a752406dd1fe8d74919200183208f7a11229dc26ea7",
       "remote_matches_local": true,
       "ffprobe": {
         "programs": [],
@@ -118,93 +125,145 @@
           }
         ],
         "format": {
-          "duration": "131.833333"
+          "duration": "125.933333"
         }
       }
     },
     {
       "file": "poster.png",
-      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-poster.png",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-poster.png",
       "host": "permanent",
       "status": 200,
       "content_type": "image/png",
-      "content_length": "425537",
-      "bytes": 425537,
-      "sha256": "838ac00d26d462c708b2e353c37c65326be9a0dd2e2cb6a383cfe40a54248c25",
-      "remote_sha256": "838ac00d26d462c708b2e353c37c65326be9a0dd2e2cb6a383cfe40a54248c25",
+      "content_length": "441995",
+      "bytes": 441995,
+      "sha256": "47fd90bd940ae1760c2a3ce51291f97a5ee1f69ab3e081a723a75bb9f2eec863",
+      "remote_sha256": "47fd90bd940ae1760c2a3ce51291f97a5ee1f69ab3e081a723a75bb9f2eec863",
       "remote_matches_local": true
     },
     {
       "file": "poster_thumb.jpg",
-      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-13-poster_thumb.jpg",
+      "url": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-poster_thumb.jpg",
       "host": "permanent",
       "status": 200,
       "content_type": "image/jpeg",
-      "content_length": "34645",
-      "bytes": 34645,
-      "sha256": "8451a604d308aab43a85a66d7c6267f47c1e81cecfaec5e6c937fab0e26903bf",
-      "remote_sha256": "8451a604d308aab43a85a66d7c6267f47c1e81cecfaec5e6c937fab0e26903bf",
+      "content_length": "48083",
+      "bytes": 48083,
+      "sha256": "51829240b940435d41700b32ee2160343fbae2ef90827848307717f73cfc3a44",
+      "remote_sha256": "51829240b940435d41700b32ee2160343fbae2ef90827848307717f73cfc3a44",
       "remote_matches_local": true
     }
   ],
-  "feed_commit": "c18cda4efbd3c8f8a6c559d02342ded7aa65534e",
-  "pages_run": {
-    "id": 34771954900,
-    "head_sha": "c18cda4efbd3c8f8a6c559d02342ded7aa65534e",
-    "status": "completed",
-    "conclusion": "success",
-    "html_url": "https://github.com/Talonsturgill/alaskaaicarousels/actions/runs/34771954900"
+  "feed_publication": {
+    "run_date": "2026-09-14",
+    "published_at": "2026-09-14T13:34:13.176003+00:00",
+    "feed_commit": "9359f6bdfa20ad882a3c8128d5108f4ea2f5c084",
+    "commit_url": "https://github.com/Talonsturgill/alaskaaicarousels/commit/9359f6bdfa20ad882a3c8128d5108f4ea2f5c084",
+    "entry": {
+      "id": "dispatch-2026-09-14-rehearsal-before-the-season",
+      "date": "2026-09-14",
+      "title": "Rehearsal Before the Season",
+      "caption": "A September 11th paper explores AI harvest rules in eastern Bering Sea pollock simulations. Different biological assumptions change the catch and breeding-biomass tradeoffs, leaving alternatives for further testing rather than an established real-world winner.",
+      "video": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master.mp4",
+      "poster": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-poster.png",
+      "video_mobile": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master_720.mp4",
+      "poster_thumb": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-poster_thumb.jpg"
+    },
+    "exact_committed_entry_verified": true,
+    "pages_deployment_verified": true,
+    "pages_run_id": 34850049925,
+    "pages_run_url": "https://github.com/Talonsturgill/alaskaaicarousels/actions/runs/34850049925",
+    "pages_head_sha": "9359f6bdfa20ad882a3c8128d5108f4ea2f5c084",
+    "live_manifest_exact_match": true,
+    "deployment_verified_at": "2026-09-14T13:36:54.893654+00:00"
   },
-  "live_desktop_and_mobile_verified": true,
-  "gmail_draft": {
-    "run_date": "2026-09-13",
-    "verified_at": "2026-09-13T17:33:11.627986+00:00",
-    "verified_draft_only": true,
+  "gmail_draft_verification": {
+    "run_date": "2026-09-14",
+    "verified_at": "2026-09-14T13:36:12.851374+00:00",
     "labels": [
       "DRAFT"
     ],
     "sent": false,
+    "verified_draft_only": true,
     "recipient_matches_current_connected_profile": true,
     "no_from_override_requested": true,
     "exact_html_readback": true,
-    "html_sha256": "f89e4de82c1f5cc049f46e7f8a79006a2b006d37ef8286196e2cad604a4da7cd",
     "exact_post_copy": true,
-    "primary_sources": 7,
     "both_full_video_links": true,
     "poster_included": true,
     "music_and_voice_credits": true,
-    "voice_quality_scorecard_included": true,
-    "final_mix_figures_included": true,
-    "implemented_upgrades": 18,
-    "subject": "Ready to post \u00b7 The Pen Still Has Work",
-    "private_ids_omitted": true
+    "primary_sources": 6,
+    "upgrades": 15,
+    "html_sha256": "99ef7496e2afd8c4a1a5ddfd4ceac1650c50498f77c852b138887d90a6cba2b1",
+    "scorecard_included": true,
+    "voice_qc_included": true,
+    "private_ids_committed": false
   },
-  "validation": {
-    "repository_tests": 230,
-    "required_preflight_exit": 0,
-    "ship_gate_exit": 0,
-    "no_exit_exit": 0
+  "live_browser_verification": {
+    "run_date": "2026-09-14",
+    "verified_at": "2026-09-14T13:39:59.648643+00:00",
+    "pass": true,
+    "watch_url": "https://alaskaaihq.com/videos/#dispatch-2026-09-14-rehearsal-before-the-season",
+    "browser": "Codex in-app browser; actual UI controls and read-only media DOM",
+    "title": "Rehearsal Before the Season",
+    "desktop": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "video_dimensions": [
+        1080,
+        1920
+      ],
+      "current_src": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master.mp4",
+      "playback_times": [
+        30.422757,
+        40.679545
+      ],
+      "pause_time": 40.722358,
+      "resumed_time": 52.182579,
+      "sound_unmuted_verified": true,
+      "mute_restored": true,
+      "ready_state": 4,
+      "media_error": null,
+      "horizontal_overflow": false,
+      "caption_screenshot_viewed": true
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "video_dimensions": [
+        720,
+        1280
+      ],
+      "current_src": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-dispatch_master_720.mp4",
+      "poster": "https://raw.githubusercontent.com/Talonsturgill/alaska-ai-weekly/dispatch-media/media/dispatch-2026-09-14-poster_thumb.jpg",
+      "playback_times": [
+        10.682476,
+        32.478755
+      ],
+      "pause_time": 32.528049,
+      "resumed_time": 43.326623,
+      "sound_unmuted_verified": true,
+      "mute_restored": true,
+      "ready_state": 4,
+      "media_error": null,
+      "horizontal_overflow": false,
+      "caption_screenshot_viewed": true
+    },
+    "viewport_reset": true,
+    "video_left_paused": true,
+    "limits": [
+      "Screenshots were displayed and inspected through the browser tool, not saved as standalone files.",
+      "Playback and sound state verified through actual controls and DOM; no human listening claim.",
+      "Existing floating player controls overlap a small part of upper scene lettering on phone; tested narration captions remain readable.",
+      "Initial hash-only navigation retained the prior episode in the already-open tab. A full page navigation loaded the new manifest; the clean watch URL then loaded correctly at phone width."
+    ]
   },
-  "upgrades": [
-    "Use the current Gmail connector profile for the daily Dispatch, with draft-only delivery and no fixed mailbox.",
-    "Require the actual recipient address in both the email builder and the draft receipt tool.",
-    "Enforce forbidden on-screen claim wording for optional claims as well as required claims.",
-    "Derive scene cuts from the approved storyboard narration anchors instead of a previous episode table.",
-    "Conform the complete storyboard to the selected voice while preserving physical reveal holds and an immutable planning clock.",
-    "Allow only explained picture cut offsets within half a second, leaving narration timing unchanged.",
-    "Report the real word timeline duration instead of the retired sixty-second total.",
-    "Audit visible text forwarded through Plate and Scope components and one-dimensional heading arrays.",
-    "Add reusable cap separation, cap posting, hand grips and a nib-bound persistent ink stroke to the pen library.",
-    "Bundle licensed Fraunces and JetBrains Mono fonts and load them explicitly for this film.",
-    "Bind forty distinct sound and evidence events to this episode and its conformed voice clock.",
-    "Sustain camera travel through each shot independently of the quick easing used for prop entrances.",
-    "Keep the first-draft badge and shot headings clear of the pen throughout its actual rendered movement.",
-    "Add a voice-direction check for full organization names that have later acronym forms.",
-    "Place the complete brand mark inside the square crop and keep the opening draft header clear of the large pen.",
-    "Credit fitting now accounts for letter spacing and keeps complete attribution inside its safe width.",
-    "The credits gate now replaces stale passing reports when a new check fails early.",
-    "Schedule contact sounds at verified physical landings and record their actual performed onsets in both sound ledgers."
-  ],
-  "evidence_limits": "Audio taste uses measurements and event evidence without a listening claim. Four weaker old/new AAC residual matches are limited corroboration; isolated performed stems plus bound provenance establish their cue timing.",
-  "source_release_state": "Delivery verified; PR merge is separately recorded after this artifact commit."
+  "tests": 252,
+  "email_sent": false,
+  "social_posted": false,
+  "weekly_release": "Ready for branch push, exact-head check inspection and authorized merge"
 }

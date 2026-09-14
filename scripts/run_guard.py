@@ -103,6 +103,54 @@ def _instant(value, field: str) -> dt.datetime:
         raise RunInitError(f"{field} needs an unambiguous timezone-aware timestamp") from None
 
 
+def _draft_delivery(receipt: dict, prior_id: str) -> dt.datetime:
+    """Read either verified receipt schema without interpreting local wall time.
+
+    record_draft.py writes a timezone-naive creation time. The connected-account
+    verifier records a separate UTC readback instant and complete attestations
+    under verification; that instant proves delivery, not the ambiguous creation
+    time. A bare record_draft receipt still cannot unlock a passing cut.
+    """
+    failure = "Gmail receipt lacks verified unsent draft delivery and complete readback"
+    if not all(isinstance(receipt.get(key), str) and receipt[key].strip()
+               for key in ('draft_id', 'message_id')):
+        raise RunInitError(failure)
+
+    # If legacy claims are present, require all of them even when a nested
+    # verification exists. Conflicting or partial evidence must fail closed.
+    legacy = 'verification' not in receipt or any(
+        key in receipt for key in ('unsent', 'labels', 'readback'))
+    if legacy:
+        readback = receipt.get('readback')
+        if (receipt.get('unsent') is not True or receipt.get('labels') != ['DRAFT']
+                or not isinstance(readback, dict)
+                or any(readback.get(key) is not True for key in
+                       ('exact_caption', 'square_link', 'vertical_link', 'all_sources', 'credits'))):
+            raise RunInitError(failure)
+        created = _instant(receipt.get('created_at'), 'draft created_at')
+    if 'verification' not in receipt:
+        return created
+
+    verification = receipt['verification']
+    if (not isinstance(verification, dict)
+            or verification.get('run_date') != prior_id
+            or verification.get('labels') != ['DRAFT']
+            or verification.get('sent') is not False
+            or any(verification.get(key) is not True for key in
+                   ('verified_draft_only', 'recipient_matches_current_connected_profile',
+                    'no_from_override_requested', 'exact_html_readback', 'exact_post_copy',
+                    'both_full_video_links', 'music_and_voice_credits'))
+            or type(verification.get('primary_sources')) is not int
+            or verification['primary_sources'] <= 0
+            or not isinstance(verification.get('html_sha256'), str)
+            or not re.fullmatch(r'[0-9a-f]{64}', verification['html_sha256'])):
+        raise RunInitError(failure)
+    verified = _instant(verification.get('verified_at'), 'draft verified_at')
+    if legacy and (created.date() != verified.date() or created > verified):
+        raise RunInitError("draft creation and verification metadata disagree")
+    return verified
+
+
 def _completed_prior_run(out: Path, previous: dict | None, run_id: str) -> Path:
     """Prove a dated passing cut was delivered before permitting lock rollover.
 
@@ -132,7 +180,7 @@ def _completed_prior_run(out: Path, previous: dict | None, run_id: str) -> Path:
             raise RunInitError("delivery composition disagrees with the prior run stamp")
 
     graded = _instant(verdict.get('recorded_at'), 'panel recorded_at')
-    delivered = _instant(receipt.get('created_at'), 'draft created_at')
+    delivered = _draft_delivery(receipt, prior_id)
     started = dt.datetime.fromtimestamp(previous['started_at'], dt.timezone.utc)
     locked = dt.datetime.fromtimestamp(lock.stat().st_mtime, dt.timezone.utc)
     verdict_written = dt.datetime.fromtimestamp(verdict_path.stat().st_mtime, dt.timezone.utc)
@@ -172,13 +220,6 @@ def _completed_prior_run(out: Path, previous: dict | None, run_id: str) -> Path:
                 raise ValueError
         except (OSError, ValueError):
             raise RunInitError(f"{name} is unavailable or does not match the prior verdict") from None
-    readback = receipt.get('readback')
-    if (not all(isinstance(receipt.get(key), str) and receipt[key].strip() for key in ('draft_id', 'message_id'))
-            or receipt.get('unsent') is not True or receipt.get('labels') != ['DRAFT']
-            or not isinstance(readback, dict)
-            or any(readback.get(key) is not True for key in
-                   ('exact_caption', 'square_link', 'vertical_link', 'all_sources', 'credits'))):
-        raise RunInitError("Gmail receipt lacks verified unsent draft delivery and complete readback")
     archive = out / ('previous_run_gate_' + prior_id.replace('-', '_'))
     if archive.exists() or archive.is_symlink():
         raise RunInitError("prior gate archive already exists; refusing to overwrite evidence")

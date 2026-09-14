@@ -1,338 +1,106 @@
 {
-  "role": "DRAMATIST",
-  "created_at_utc": "2026-09-13T14:03:45.745204+00:00",
-  "title": "The Pen Still Has Work",
-  "logline": "A pen travels through two successful office automations and reveals, at the review desk, why a finished output still leaves a professional job to do.",
-  "angle_executed": "In the KGS workflows described by AWS, the machine's finished output is still unfinished professional work.",
-  "duration_seconds": 120,
-  "planned_future_vo_words": 214,
-  "vo_scope": "Word budget only; no VO or storyboard written.",
-  "cold_open_first_3_seconds": "Extreme macro: a cool steel output roller feeds a crisp REPORT into frame. A large oxblood pen slides alongside it, its cap skittering one inch farther than its barrel. The page says OUTPUT READY; the pen has made no mark. A swift pullback reveals a human hand reaching for the output. This is an illustrative office, not a claimed KGS interface.",
-  "dramatic_engine": "The opposing force is an ambiguous finish line. The software can finish the job it was given while the person still has a different job. The film gives both jobs visible substance and lets neither erase the other.",
-  "hero": {
-    "name": "ReviewPen",
-    "kind": "Ordinary faceless pen, extracted from the shelf PenAndDocument, not a corporation or personified Native subject.",
-    "identity_tells": [
-      "Long oxblood barrel",
-      "One broad silver collar",
-      "Single off-center barrel clip"
-    ],
-    "introduced_seconds": 0,
-    "states": [
-      {
-        "time_seconds": 0,
-        "state": "Capped and lying beside newly produced output; no mark made."
-      },
-      {
-        "time_seconds": 28,
-        "state": "Parked horizontally above the DORA cutaway, acting as a fixed scale reference while records move."
-      },
-      {
-        "time_seconds": 58,
-        "state": "Uncapped and resting diagonally beside separate first-draft sections."
-      },
-      {
-        "time_seconds": 78,
-        "state": "Held for a small, neutral refinement mark in the draft. The mark is an edit, not a correction of a fabricated error."
-      },
-      {
-        "time_seconds": 94,
-        "state": "Turned toward the DORA report for professional examination, then resting across the two separate task labels in the button."
-      }
-    ],
-    "continuity_rule": "Same silhouette and collar in every act, including a visible pen at each act boundary. Match cuts carry the pen between explanatory sets; they do not claim one actual procurement file passes through both tools.",
-    "button_state": "The pen rests above two separate finished outputs and points into the professional work area, still uncapped."
+  "role": "dramatist",
+  "working_title": "Before the Boat Leaves",
+  "logline": "A little fishing-boat model survives two simulated oceans, then faces the distance between an interesting harvest rule and a season people can actually plan.",
+  "cold_open": {
+    "time": "0 to3s",
+    "picture": "Extreme close-up of a small boat hanging from a lifting sling. A deckhand-sized shadow falls across it. Pull back: it is a scale model suspended over a glass research basin, not a real boat leaving port. A visible SIMULATION plaque makes the reveal literal."
   },
-  "sets": [
+  "escalation": [
     {
-      "name": "Briefing wall",
-      "physical_identity": "Freestanding corporate nameplates, Alaska map with Kodiak marker, room-depth rails and the pen on a foreground ledge.",
-      "shelf": [
-        "AlaskaMini",
-        "BrassPlate",
-        "Nameplate",
-        "MeasurementField"
-      ]
+      "time": "3 to18s",
+      "beat": "The model settles into the basin. The September11th paper appears as a source plate on the basin wall. Introduce policy discovery: simulated seasons let a learned rule encounter consequences and change."
     },
     {
-      "name": "DORA records room",
-      "physical_identity": "Tall receding filing cabinets, an email-input chute and a transparent records assembly table. Dark steel cabinets separate far/mid/near planes.",
-      "shelf": [
-        "PaperOfficeBG",
-        "StateLetter",
-        "Sheet",
-        "ClaimChip",
-        "MeasurementField"
-      ]
+      "time": "18 to35s",
+      "beat": "Below the waterline, repeated routes through the basin reveal a physical return path to the learning mechanism. A neighboring fixed guide rail identifies the predefined comparison. Everything remains a schematic, not a data plot."
     },
     {
-      "name": "Jumpstarter drafting studio",
-      "physical_identity": "Low wide document table, suspended input cards, separate page-section rails, warm angled task light and visible draft assembly space. No filing-cabinet backdrop.",
-      "shelf": [
-        "MeasurementField",
-        "Sheet",
-        "DocumentFlip",
-        "Nameplate",
-        "BrassPlate"
-      ]
+      "time": "35 to56s",
+      "beat": "First basin: CONSTANT RECRUITMENT. Separate labels and outcome placards report higher spawning biomass and large annual catch swings. A season-planning board stands outside the glass. It remains blank because no business outcome was measured."
     },
     {
-      "name": "Professional review office",
-      "physical_identity": "A broad desk seen over the shoulder, document stand, task lamp and side return holding the alternate example. It is an office work surface, never a notebook.",
-      "shelf": [
-        "Character",
-        "GripHand",
-        "PenAndDocument",
-        "PaperOfficeBG",
-        "Sheet"
-      ]
+      "time": "56 to73s",
+      "beat": "A full stage change lifts the same model into a second basin marked STOCK-LINKED RECRUITMENT. This is a different experiment. Higher catch and lower spawning biomass appear relative to its comparison. No smooth-curve animation and no claim that catches became steadier."
+    },
+    {
+      "time": "73 to96s",
+      "beat": "The model reaches a real harbor slipway and stops at the lip while the camera descends to water level. The paper has demonstrated modeled differences. It has not demonstrated a workable season. A full-size boat and shore equipment establish the change in stakes."
     }
   ],
-  "scales": [
-    "extreme macro",
-    "close-up",
-    "medium human-and-desk",
-    "wide room",
-    "overhead full worktable",
-    "three-quarter cutaway"
-  ],
-  "treatment_scene_plan": [
-    {
-      "scene": 1,
-      "seconds": [
-        0,
-        8
-      ],
-      "set": "Professional review office",
-      "scale": "extreme macro to medium",
-      "action": "Output arrives and the unmarked pen enters the same frame. Plant which finished job the page represents.",
-      "future_vo_word_budget": 14
-    },
-    {
-      "scene": 2,
-      "seconds": [
-        8,
-        18
-      ],
-      "set": "Briefing wall",
-      "scale": "wide room",
-      "action": "The camera passes Koniag's Kodiak connection to the KGS nameplate and September 11th announcement. The pen remains on the foreground ledge. No money arrows.",
-      "future_vo_word_budget": 18
-    },
-    {
-      "scene": 3,
-      "seconds": [
-        18,
-        28
-      ],
-      "set": "Briefing wall",
-      "scale": "medium to close",
-      "action": "The Wingman announcement opens three physical labeled drawers: contracting, logistics and financial management. Then transition explicitly into earlier Army work.",
-      "future_vo_word_budget": 20
-    },
-    {
-      "scene": 4,
-      "seconds": [
-        28,
-        38
-      ],
-      "set": "DORA records room",
-      "scale": "three-quarter cutaway",
-      "action": "An email-subject token labeled VENDOR IDENTIFIER enters. API routes retrieve SAM.gov records; only documented source names appear. The pen stays above the apparatus.",
-      "future_vo_word_budget": 19
-    },
-    {
-      "scene": 5,
-      "seconds": [
-        38,
-        47
-      ],
-      "set": "DORA records room",
-      "scale": "close-up",
-      "action": "Prebuilt logic assembles records into a standardized report. It lands beside, rather than inside, the professional determination position. No LLM imagery or stopwatch.",
-      "future_vo_word_budget": 19
-    },
-    {
-      "scene": 6,
-      "seconds": [
-        47,
-        58
-      ],
-      "set": "Jumpstarter drafting studio",
-      "scale": "overhead full worktable",
-      "action": "A clearly separate Jumpstarter mechanism receives inputs; Bedrock/LLM section blocks become a FIRST DRAFT. Plant what the movable sections still need.",
-      "future_vo_word_budget": 20
-    },
-    {
-      "scene": 7,
-      "seconds": [
-        58,
-        69
-      ],
-      "set": "Jumpstarter drafting studio",
-      "scale": "wide room to medium",
-      "action": "Give the automation its strongest fair case: inputs have become substantial, usable-looking output. Machine work visibly completes at REPORT ASSEMBLED and DRAFT GENERATED labels. The two examples are separate.",
-      "future_vo_word_budget": 18
-    },
-    {
-      "scene": 8,
-      "seconds": [
-        69,
-        79
-      ],
-      "set": "Professional review office",
-      "scale": "over-shoulder close-up",
-      "action": "The professional reads and refines a draft section. The pen makes a neutral annotation; FIRST DRAFT remains visible. No wrong number, missing clause, rejection or measured delay. Secondary loop pays at 78 seconds.",
-      "future_vo_word_budget": 20
-    },
-    {
-      "scene": 9,
-      "seconds": [
-        79,
-        91
-      ],
-      "set": "Professional review office",
-      "scale": "medium to report close-up",
-      "action": "Turn to the separate DORA example. The professional examines the assembled report for determination. Machine completion and professional action occupy different parts of the physical desk. Primary loop pays at 90 seconds.",
-      "future_vo_word_budget": 21
-    },
-    {
-      "scene": 10,
-      "seconds": [
-        91,
-        102
-      ],
-      "set": "Professional review office",
-      "scale": "overhead full worktable",
-      "action": "Pull back to preserve both completed machine tasks and both remaining professional tasks. The pen bridges the spaces without issuing an award or signing a final contract. The angle resolves as a division of work.",
-      "future_vo_word_budget": 21
-    },
-    {
-      "scene": 11,
-      "seconds": [
-        102,
-        113
-      ],
-      "set": "Briefing wall",
-      "scale": "wide to nameplate close-up",
-      "action": "Return to the fresh KGS announcement with the now-legible task boundaries. Reconfirm the corporate Alaska connection and briefly state that this announcement gives no contract value or quantified Alaska return.",
-      "future_vo_word_budget": 16
-    },
-    {
-      "scene": 12,
-      "seconds": [
-        113,
-        120
-      ],
-      "set": "Professional review office",
-      "scale": "macro button then credits hold",
-      "action": "Return to the opening roller and the same uncapped pen, now resting across the margins of the two illustrative output types. End on the question, then readable source and music credit treatment.",
-      "future_vo_word_budget": 8
-    }
-  ],
-  "escalation": "A page appears finished. The announced work expands from one office to three categories. A records mechanism proves it can assemble a report. A different mechanism generates a draft. The page becomes more sophisticated, and the professional's remaining job becomes more specific. The last act credits the prepared work before testing whether its status equals a completed decision.",
-  "earned_turn": "At the review desk, the machine has succeeded at preparation. The person still examines a report and refines draft sections. The turn changes the meaning of finished without revealing a defect or withdrawing credit from the automation.",
+  "turn": {
+    "time": "86 to96s",
+    "drawn": "The sling lowers the model toward open harbor water, then rotates it back into its clearly labeled research basin. This is an earned continuation of testing, not a defeat. A model should stay a model until its results answer the real management questions."
+  },
   "button": {
-    "line": "When the output is ready, which job is finished?",
-    "image": "The opening roller remains behind two separate outputs labeled REPORT and FIRST DRAFT. The same oxblood pen rests in the professional work area, uncapped, with its silver collar catching the task light.",
-    "loop_back": "The opening unmarked pen now has an intelligible role; the question tests task boundaries, not machine failure."
+    "time": "103 to111.7s",
+    "last_line": "What should a new pollock rule have to prove before it leaves the basin?",
+    "last_image": "Match the opening macro: same model in its sling. Now a small NEXT TEST plate faces the viewer. The final motion is toward the basin, not an unsupported real launch. Cut to12.3s credits."
   },
   "sight_gags": [
     {
-      "time_seconds": 2,
-      "gag": "The pen cap rolls a fraction farther than the heavy barrel and rocks to a stop. Pure desk physics; no delayed paperwork claim."
+      "time_s": 8,
+      "gag": "A wave splashes the model, then the camera reveals a research-basin paddle scarcely larger than a spoon. The scale joke establishes simulation."
     },
     {
-      "time_seconds": 22,
-      "gag": "The financial-management drawer opens with such exact alignment that its loose generic divider tabs keep wiggling after the drawer stops. No institution or person is the joke."
+      "time_s": 43,
+      "gag": "A tiny captain figurine reaches for a celebratory flag at the higher-biomass placard; the adjacent catch-swings placard unfolds and gently blocks the flag."
     },
     {
-      "time_seconds": 41,
-      "gag": "A source-tab stack lands squarely, while one blank corner of the stack flutters a beat longer before settling. The report content is not wrong."
-    },
-    {
-      "time_seconds": 54,
-      "gag": "The FIRST DRAFT tag is oversized enough that a tiny generic binder jaw opens wide to hold it, then settles. The status is funny in scale, never mocked as a failure."
+      "time_s": 91,
+      "gag": "At the real quay, the model\u2019s absurdly tiny life ring slips down a full-size mooring post. The scale mismatch carries the operational limit without a lecturing stop sign."
     }
   ],
   "retention_plan": {
-    "act3_test": {
-      "name": "The Completed Job",
-      "seconds": [
-        60,
-        95
-      ],
-      "strongest_fair_case_against_angle": "The machine has produced exactly the preparation output requested. Calling it unfinished can unfairly make useful automation sound like a failed system.",
-      "draw_at_full_strength": "Show complete records assembled and a substantial draft generated. Nothing breaks, vanishes or receives a failure mark. Then change the inspection scale to the documented professional actions, reading for determination and refining sections. Both contributions survive in the final wide frame.",
-      "resolution": "The claim concerns whose job is complete. It does not deny the machine's completed preparation task or certify net productivity.",
-      "nature_of_test": "An explicit check of output status against the documented workflow, not a fabricated empirical performance trial."
+    "the_test": {
+      "scene": "The Harbor Lip,73 to96s",
+      "strongest_fair_case_against": "Interesting differences between policies in simplified oceans may not help actual managers or fishing businesses. A model result cannot establish acceptable catch stability or practical superiority.",
+      "drawn_at_full_strength": "Bring the model directly beside full-size season equipment. Hold the threshold long enough that viewers expect a launch. Present RESEARCH RESULT beside SEASON REQUIREMENTS with no green checkmark joining them. The model returns for comparison instead of receiving approval."
     },
-    "primary_loop": {
-      "plant_seconds": 4,
-      "promise": "What is still unfinished when this output is ready? The pen is present but its professional role is not yet explained.",
-      "payoff_seconds": 90,
-      "payoff": "The separate DORA report is physically examined for determination; the finished machine output occupies a different stage from the person's job."
+    "throughline_object": {
+      "object": "One red-hulled scale fishing boat",
+      "states": [
+        "Hanging dry over basin by3s",
+        "Floating inside learning loop at18s",
+        "Carrying first-experiment result tag at35s",
+        "Lifted into second basin with separate result tag at56s",
+        "At real-water threshold at80s",
+        "Returned to basin with NEXT TEST tag in button"
+      ]
     },
-    "secondary_loop": {
-      "plant_seconds": 50,
-      "promise": "The generated first draft appears in independent sections. What happens to those sections after the machine stops?",
-      "payoff_seconds": 78,
-      "payoff": "The professional refines a section, retaining FIRST DRAFT status. No invented error is necessary."
-    },
-    "loop_checks": {
-      "primary_plant_by20": true,
-      "primary_payoff_at_least85": true,
-      "secondary_plant35_to60": true,
-      "secondary_delay_seconds": 28,
-      "payoff_separation_seconds": 12
-    },
-    "padding_test": [
+    "two_loops": [
       {
-        "beat": "60 to 69, completed preparation",
-        "why_90second_cut_worse": "Without giving the machine a completed job, the film implies that human review proves automation did not work."
+        "plant": "By15s, will this boat reach the real harbor?",
+        "payoff": "At92s the model returns to research, demonstrating what the paper has and has not earned."
       },
       {
-        "beat": "69 to 79, draft refinement",
-        "why_90second_cut_worse": "Without the specific edit, human review becomes a slogan and Jumpstarter's first-draft status has no visible consequence."
-      },
-      {
-        "beat": "79 to 91, determination",
-        "why_90second_cut_worse": "Without this separate task, the film merges DORA and Jumpstarter into one pipeline and makes two different outputs look interchangeable."
-      },
-      {
-        "beat": "91 to 102, both jobs remain visible",
-        "why_90second_cut_worse": "Without the synthesis view, the last action may overwrite the first in memory and the film loses its fair credit for useful preparation."
+        "plant": "At40s, can a larger breeding stock settle the judgment?",
+        "payoff": "At68s the separate stock-linked experiment reverses the biomass outcome. The first result is not a universal AI advantage."
       }
     ],
-    "sag_prevention": "At 69 seconds move from the entire drafting studio to over-shoulder work. At 79 seconds change both output type and professional verb. At 91 seconds reveal the whole division of work. No extended waiting or generic disclaimer cards."
+    "padding_test": "A90-second cut loses the distinct second experiment or the fully drawn real-world test. The second basin changes the conclusion; the harbor threshold tests practical usefulness instead of repeating simulation terminology. If time runs long, cut decorative travel and the third gag before cutting either argument."
   },
-  "shelf_first_cast": [
-    "PenAndDocument",
-    "GripHand",
-    "Character",
-    "PaperOfficeBG",
-    "Sheet as supporting stock only",
-    "StateLetter",
-    "MeasurementField",
-    "Nameplate",
-    "BrassPlate",
-    "ClaimChip",
-    "AlaskaMini",
-    "DocumentFlip",
-    "EndCredits"
-  ],
-  "small_story_driven_extension": "Extract and generalize PenAndDocument's existing pen as a reusable ReviewPen with cap, held angle and neutral annotation-contact state. Reuse its shading and silhouette. This is a pen-work gap; the existing asset only hovers and trembles. No signature or approval behavior.",
-  "freshness_vs_last_two": "September 11th followed FlightCrate over a missing road; September 12th centered a research notebook/Sheet with lilac, ivory and citron. This treatment uses an oxblood pen, steel-blue interiors, multiple workrooms, repeated scale changes and an office-output boundary. No notebook, crate, road or research task instrument is restaged.",
-  "palette": "Oxford blue cabinets, cool steel, paper white, one oxblood pen, restrained warm desk light. Status ink remains neutral; no success-green or failure-red coding.",
-  "fact_and_visual_limits": [
-    "Mechanisms are distinct by 58 seconds.",
-    "Every earlier-work scene carries AWS CASE STUDY and EARLIER ARMY PROCUREMENT.",
-    "DORA retrieves through APIs and applies prebuilt logic; Jumpstarter generates first drafts.",
-    "Use only VENDOR IDENTIFIER, never a real or invented valid UEI.",
-    "All office sets are explanatory illustrations, not actual product UIs or physical hardware.",
-    "No stopwatch, portfolio totals, approval stamp, automatic award, failure incident or measured review wait.",
-    "No local return, hiring or benefit extrapolation.",
-    "Koniag and KGS remain named corporations; no cultural props, Native characterization or generic Tribal narrative.",
-    "Generic professional is not portrayed as a named source or an Alaska Native person."
-  ]
+  "production_constraints": {
+    "narration_words": "200 to220",
+    "film_seconds": 124,
+    "credits_seconds": 12.3,
+    "stages": [
+      "Glass simulation basin with visible drive and waterline",
+      "Separate second research basin with different geometry and explicit scenario label",
+      "Working harbor slipway with full-size vessel and shore equipment"
+    ],
+    "scales": [
+      "Macro sling and hull",
+      "Boat close-up",
+      "Medium basin and rig",
+      "Wide harbor"
+    ],
+    "camera_heights": [
+      "Overhead basin view",
+      "Below basin waterline",
+      "Low quay waterline"
+    ],
+    "representation": "Schematic only. No numerical scales, fish-count masses, unlabeled curves or changing outcome heights. Use directional words beside separately named outcomes. No claim of actual autonomous boat use.",
+    "asset_feasibility": "Boat, glass basin, sling, quay and mooring post can be built as simple layered vector props; requires motion/sound timing more than new illustrated panels."
+  }
 }

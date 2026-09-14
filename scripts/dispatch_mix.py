@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-13"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-14"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -73,7 +73,7 @@ def jit(idx, salt, lo, hi):
     return lo + (hi - lo) * h
 
 
-# September 13 has 16 spoken lines (idx 0-15). Music follows their measured starts;
+# September14 has18spoken lines. Music follows their measured starts;
 # Each SFX follows the approved beat start plus any declared physical contact offset.
 # Each event:
 # (time, kind, class, pan) — pan is the prop's approximate storyboard x mapped to
@@ -89,54 +89,51 @@ VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props)
 # Times are conformed from actual VO line anchors before mixing.
 _board = json.load(open(os.path.join(OUT, "storyboard.json")))
 # One authored bank performance per approved beat: kind, class, prop pan, role.
-# Quiet office materials support visible preparation and professional work.
-# No sound implies an approval, error, delay, measured outcome or productivity verdict.
-# The single low riser anticipates the nib contact; the cap's small bell is material.
+# Research controls, glazed bays and a harbor test bench carry the physical sounds.
+# No sound implies an approval, measured result or operational winner.
 _PERFORMANCE = [
-    ('thud', 'texture', 0.00, 'A pen barrel rolls over wood with one soft clack'), # 1
-    ('paper', 'standard', -0.20, 'Paper edges brush their moving tray guides'), # 2
-    ('snap', 'texture', 0.10, 'A small sprung-clip snap'), # 3
-    ('clank', 'texture', 0.00, 'Metal plate seats in wood with a restrained clank'), # 4
-    ('whoosh', 'texture', 0.00, 'Wood runners slide with a short scrape'), # 5
-    ('creak', 'texture', 0.00, 'The announcement leaf flexes at its paper hinge'), # 6
-    ('tick', 'texture', 0.20, 'Three staggered drawer-stop ticks'), # 7
-    ('thud', 'texture', 0.00, 'A wooden crossbar drops into its bracket'), # 8
-    ('creak', 'texture', -0.30, 'The nameplate hinge makes a soft creak'), # 9
-    ('whoosh', 'texture', -0.20, 'A case-study spine opens with a papery flex'), # 10
-    ('snap', 'texture', 0.20, 'A cap collar disengages with a light snap'), # 11
-    ('whoosh', 'standard', 0.00, 'A broad paper-slot sweep with a soft receiving tap'), # 12
-    ('paw', 'texture', -0.30, 'A fingertip places a thick paper token'), # 13
-    ('tick', 'texture', 0.10, 'A short runner tick at the junction'), # 14
-    ('pop', 'texture', 0.10, 'A small connector click then a paper lift'), # 15
-    ('paper', 'standard', -0.20, 'A brief layered paper shuffle'), # 16
-    ('clank', 'texture', 0.00, 'A restrained clank as the alignment guide seats'), # 17
-    ('ding', 'texture', -0.15, 'The cap rings softly against its cup'), # 18
-    ('whoosh', 'texture', 0.00, 'A different table drawer rolls open'), # 19
-    ('paper', 'texture', 0.20, 'A light paper-spool roll'), # 20
-    ('tick', 'texture', -0.30, 'A pen cradle touches down with a small tick'), # 21
-    ('thud', 'hero', 0.00, 'A broad warm wood-and-paper movement'), # 22
-    ('paper', 'standard', -0.40, 'A satisfying ordered paper fan'), # 23
-    ('pop', 'texture', 0.40, 'A short paper extension with a soft stop'), # 24
-    ('paw', 'texture', 0.00, 'A low wood-foot settling contact'), # 25
-    ('snap', 'texture', 0.00, 'The cap clicks onto the pen rear'), # 26
-    ('creak', 'texture', 0.15, 'The stiff report cover flexes as the hand slides it across the desk'), # 27
-    ('tick', 'texture', -0.15, 'Sustained paper examination with a subordinate desk hinge and wood-stop contact'), # 28
-    ('stamp', 'texture', 0.20, 'Compressed paper body under a page-turn fingertip, never a verdict stamp'), # 29
-    ('riser', 'texture', 0.00, 'An editable page settles under a guide'), # 30
-    ('paper', 'standard', 0.00, 'One quiet pen-on-paper stroke'), # 31
-    ('tick', 'texture', 0.10, 'The pen stroke ends with a soft lift'), # 32
-    ('paw', 'texture', 0.20, 'A quiet pen lift and fingertip release from paper'), # 33
-    ('whoosh', 'standard', 0.00, 'One restrained shelf-guide movement into depth'), # 34
-    ('paper', 'texture', -0.20, 'A source volume page turn'), # 35
-    ('pop', 'texture', 0.20, 'A short paper leaf opens against a frame'), # 36
-    ('creak', 'texture', 0.00, 'A quiet folding-rail creak'), # 37
-    ('thud', 'texture', 0.00, 'The desk and lamp settle with a low tap'), # 38
-    ('paper', 'texture', 0.10, 'A soft pen-grip contact'), # 39
-    ('snap', 'texture', 0.00, 'A small returning clip snap'), # 40
+    ('thud', 'standard', 0, 'grip tap'),
+    ('clank', 'texture', 0.12, 'metal settle'),
+    ('creak', 'texture', 0, 'wood squeak'),
+    ('snap', 'texture', -0.18, 'paper flick'),
+    ('whoosh', 'texture', 0.12, 'glass slide'),
+    ('clank', 'texture', 0, 'whoosh'),
+    ('tick', 'texture', -0.18, 'tile clack'),
+    ('chain', 'texture', 0.12, 'ratchet'),
+    ('pop', 'texture', 0, 'soft roll'),
+    ('snap', 'standard', 0, 'snap build'),
+    ('tick', 'texture', 0.12, 'detent click'),
+    ('stamp', 'texture', 0, 'comparison block seats on its rail'),
+    ('clank', 'texture', -0.18, 'detent tick'),
+    ('paper', 'texture', 0.12, 'sleeve brush'),
+    ('chain', 'texture', 0, 'hinge ratchet'),
+    ('whoosh', 'texture', -0.18, 'door slide'),
+    ('pop', 'texture', 0.12, 'water pulse'),
+    ('creak', 'texture', 0, 'flap open'),
+    ('tick', 'texture', -0.18, 'socket seat'),
+    ('creak', 'texture', 0.12, 'wood swing'),
+    ('whoosh', 'standard', 0, 'door whoosh'),
+    ('clank', 'texture', -0.18, 'coupler click'),
+    ('thud', 'texture', 0.12, 'dual tap'),
+    ('chain', 'texture', 0, 'rail scrape'),
+    ('snap', 'standard', 0, 'flap snap'),
+    ('paw', 'standard', 0, 'muted knock'),
+    ('whoosh', 'texture', 0, 'tray slide'),
+    ('creak', 'texture', -0.18, 'frame hinge'),
+    ('thud', 'texture', 0.12, 'bench thud'),
+    ('tick', 'texture', 0, 'shutter slide'),
+    ('clank', 'standard', 0, 'leaf clunk'),
+    ('snap', 'texture', 0.12, 'shutter tap'),
+    ('tick', 'standard', 0, 'shutter click'),
+    ('pop', 'texture', -0.18, 'latch release'),
+    ('clank', 'texture', 0.12, 'collar click'),
+    ('paper', 'texture', 0, 'paper unfold'),
+    ('paw', 'texture', -0.18, 'grip brush'),
+    ('tick', 'texture', 0.12, 'detent settle'),
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
 if (_board.get("run_date") != DATE or
-        [b["id"] for b in _board["beats"]] != list(range(1, 41)) or
+        [b["id"] for b in _board["beats"]] != list(range(1, 39)) or
         len(_PERFORMANCE_KINDS) != len(_board["beats"])):
     raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
 EVENTS = [
@@ -184,22 +181,24 @@ def event_timing(index, t):
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (L[0], 0.66),   # inviting pen hook
-    (L[1], 0.76),   # company announcement
-    (L[2], 0.83),   # named date and office functions
-    (L[3], 0.73),   # parent identity
-    (L[4], 0.58),   # careful earlier-case-study provenance
-    (L[5], 0.77),   # intake mechanism opens
-    (L[6], 0.86),   # records flow
-    (L[7], 0.92),   # prebuilt report assembly
-    (L[8], 0.82),   # distinct generative drafting path
-    (L[9], 1.12),   # full warm credit for useful outputs
-    (L[10], 0.86),  # completed preparation and ordinary cap callback
-    (L[11], 0.57),  # sustained report examination
-    (L[12], 0.81),  # distinct refinement and real pen contact
-    (L[13], 0.96),  # persistent mark and compact comparison
-    (L[14], 0.47),  # announcement scope, calm and exact
-    (L[15], 0.88),  # personal closing question
+    (L[0], 0.72),
+    (L[1], 0.82),
+    (L[2], 0.76),
+    (L[3], 0.91),
+    (L[4], 1.04),
+    (L[5], 0.79),
+    (L[6], 0.67),
+    (L[7], 0.84),
+    (L[8], 0.87),
+    (L[9], 0.74),
+    (L[10], 0.62),
+    (L[11], 0.89),
+    (L[12], 0.46),
+    (L[13], 0.65),
+    (L[14], 0.78),
+    (L[15], 0.85),
+    (L[16], 1.01),
+    (L[17], 0.77),
     (VIDEO_SECS - 0.25, 0.58), (VIDEO_SECS, 0.05),
 ]
 
@@ -217,8 +216,8 @@ BED_ARC = [
 # hundred and ten bare. A room that is visibly a working plant should hum for its whole runtime,
 # so the bed now runs the full film at a lower level, where it reads as air rather than as an
 # event. Still synthesised, still deterministic, still no attribution owed.
-# September 13 is an intimate office and paper world. Keep the existing filtered-noise
-# machinery as restrained room air, with its fade completed before the final frame.
+# September14 uses restrained ventilation and harbor air. The filtered noise stays
+# subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
 AMB_LEVEL = 0.010
 

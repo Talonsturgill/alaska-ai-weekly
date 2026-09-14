@@ -1,0 +1,70 @@
+{
+  "mode": "post",
+  "candidate": "candidate3",
+  "reviewed_at_utc": "2026-09-14T13:23:21.423564+00:00",
+  "verdict": "SHIP",
+  "flows": true,
+  "ship": true,
+  "master_sha256": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
+  "source_sha256": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
+  "preflight_exit_code": 0,
+  "preflight_checked_at": "2026-09-14T13:18:43.349008+00:00",
+  "review_manifest_sha256": "4b85cf3fc4e9352bb9107fa63625ba5957556e1ca412c6f2f7c1225a51eff0ba",
+  "orphan_sentences": [],
+  "resting_or_meaningless_beats": [],
+  "silent_or_generic_sfx_beats": [],
+  "blockers": [],
+  "one_fix": "None required in this exact candidate. Preserve the verified source and master through the remaining release gates.",
+  "notes": [
+    "Viewed all six fresh whole-film sheets, all eight fresh review motion strips, all38 current canonical beat strips, and full-resolution candidate3 entry/placement/reveal/late-test frames. All14 review-file and68 canonical-evidence hashes match the same-master review manifest.",
+    "Both named reveal repairs are verified in actual encoding: the two goals stay covered in S10 entry and placement; the SEASON PLANNING plaque is gone before the first goal opens. CATCH PATTERN is fully readable by zero-based frame2727 (90.900s); BREEDING STOCK by frame2793 (93.100s). Neither goal is obstructed by the council header or character in the inspected full frames.166 decoded RGB frames exactly match current native PNGs, including the consecutive opening sequences.",
+    "The final third is the weakest, because management attribution and limits rely more heavily on labels. It nevertheless earns its duration: case results retract under MANAGEMENT ADVANTAGE UNPROVEN; an unresolved common test enters; the setting changes to the harbor; two shared goals open; further testing stays unresolved. It does not replay a winner or invent a real fishery trial.",
+    "The middle third introduces a different biological assumption and a separately labeled comparison. Constant recruitment yields higher spawning biomass alongside large annual catch swings. The stock-linked case yields higher catch and lower spawning biomass versus its own comparison. This changes the question rather than padding the first result.",
+    "The secondary question is planted35.50s and answered by the changed-case result beginning66.82s, completed by lower biomass69.909s. The primary first partial answer is now90.8\u201390.9s, complete93.1s. These payoffs are well separated; the103.839s research-value plaque is a callback, not a newly claimed first payoff.",
+    "The same control passes through caught, initiated, feedback-adjusted, distinct-case, equal-goal and TEST AGAIN states. Attached-hand initiation precedes release; subsequent feedback changes the detent with no hand on it. The case doorway and harbor transfer change the setting and stakes. The final hand guides a rebound into another research detent, without implying operational deployment.",
+    "Current strips show flap rotations, token travel and docking, socket motion, shutter placement and opening, gate retraction, collar separation and final grip correction. The sampled hold strip stays composed during its intended pause. Easing and follow-through are visible; no remaining jump, false contact or all-at-once reveal is established in these samples.",
+    "Actual date-tab rotation5.4s and eastern Bering Sea shutter8.234s advance the quiet opening. The closing question/control107.36s and TEST AGAIN110.704\u2013111.637s advance the restrained ending. Whole-frame content-change advisories do not establish a greater-than-five-second dead interval. Credits after113.64s intentionally resolve more quietly.",
+    "Encoded objective checks pass all15 categories:43 detected visual beats,12 shots,11 cuts,6 framings, no detected greater-than-five-second dead window,85.2% living-screen windows. Weak6\u201310s,36\u201340s and110\u2013112s windows remain relative craft limitations, not additional required repairs given the actual local actions and information changes.",
+    "Every narrated sentence has a matching case, mechanism, result, attribution, test or limit beat. The public-code addition is explicit. Source-safe distinctions remain intact: illustrative simulations, historical conditioning, separate comparisons, and no operational winner. No invented chart scale, catch figure, income result, bycatch benefit or policy-smoothness/annual-catch-stability conflation is shown.",
+    "All38 events carry performed start times and a motivated gesture; all12 shots have at least two events.21 objective level lifts are detected. The entire5904-packet AAC payload-hash and timestamp listing is identical to the prior audited mix, and WAV/event hashes are unchanged. Prior isolated-cue timing measurements therefore remain applicable; twelve current native/encoded contact windows introduce no definite sync defect.",
+    "The discrete cue estimate remains within one30fps frame: approximately-27.37 to+23.41ms from the first authored contact frame after measured processing delay. Sustained creaks, paper and whooshes are evaluated as textures during motion, not as impact peaks at motion onset. Audio metrics are-14.36LUFS,-3.26dBTP,LRA6.9.",
+    "Ending credits show Alaska.AI, ALASKAAIHQ.COM, primary source domains and Light Thought var1 by Kevin MacLeod with CC BY4.0 attribution. The final research question receives its TEST AGAIN button before the credit resolve."
+  ],
+  "nonblocking_notes": [
+    "The final third is more explanatory and visually restrained than the changed-biology middle.",
+    "Some overview motion strips are thin crops; full canonical strips and exact native/encoded contact frames supplement them.",
+    "Sound prominence under narration is not established by human listening. No subjective listening claim is made."
+  ],
+  "evidence": {
+    "review_directory": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/review_20260914_candidate3",
+    "viewed_review_sheets": 6,
+    "viewed_review_motion_strips": 8,
+    "viewed_canonical_beat_strips": 38,
+    "native_encoded_exact_rgb_frames": 166,
+    "aac_packet_payload_and_timestamps_identical_to_audited_mix": true,
+    "contact_report": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/contact_sound_verification_20260914.json",
+    "full_native_frames": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/frames_0914_native_v3",
+    "review_file_hashes": {
+      "out/dispatch/review_20260914_candidate3/sheet_0.png": "686d8fcdf29f850ab4b9476a6944f7937d73c620ec3509ad62411fd7ad0b5471",
+      "out/dispatch/review_20260914_candidate3/sheet_1.png": "8cfb34829698a3822d87d5e7191318d96cfca2c9eb9daf1b4a37259dfeb2e43d",
+      "out/dispatch/review_20260914_candidate3/sheet_2.png": "db09403d1b37fdec056b4c92896aaf77d20dc7e324b7dfe24b87cbf423bb40be",
+      "out/dispatch/review_20260914_candidate3/sheet_3.png": "c7cadf02f7ab9b5db4aa75d61df0804e3a0fac815da48e1f1a2ff817df53e969",
+      "out/dispatch/review_20260914_candidate3/sheet_4.png": "1a756352bd97eef6123177d00ca62b6619ffc101225f7172d23e5ec97a7e322a",
+      "out/dispatch/review_20260914_candidate3/sheet_5.png": "1f5b7db3af15a8ae81dafe108c7ecf8e4c8d66f7244db1ea2b337036a1a9cc26",
+      "out/dispatch/review_20260914_candidate3/strip_catch.png": "519e012ba64b0b079e0e22045ca621d638047b0321933c2cbd0fb5cc507d7acc",
+      "out/dispatch/review_20260914_candidate3/strip_collar.png": "ea2adb8a2c8559550148e64404f919ce368b208154c71d5ff0d95c27e1f1d949",
+      "out/dispatch/review_20260914_candidate3/strip_ending.png": "4a5ead9df7a66160a36ba251e9e3dea2a44b29570d791071735707515e3f8f4f",
+      "out/dispatch/review_20260914_candidate3/strip_feedback.png": "6344877b51b1c167e3f77e979958ea9aa280550f0c86e9e099ab84f8a7770783",
+      "out/dispatch/review_20260914_candidate3/strip_flap.png": "05898cef23fb672d9bdbcf5097e5f3b33d4009d356c1dd2428c349e766a0226d",
+      "out/dispatch/review_20260914_candidate3/strip_gate.png": "59703533890bae55e7172a6d5b6138c2b2be227e960721ced799fa63bdb63628",
+      "out/dispatch/review_20260914_candidate3/strip_hold.png": "7037a388d26c89a6850a9b79aebe305778ea0a8d87164e9d273c45b554ab04e8",
+      "out/dispatch/review_20260914_candidate3/strip_initiate.png": "e16941b881f77d9abb5d84391c5264f7351ec1298eb9ef22cdcbafec914b74c7"
+    }
+  },
+  "limits": [
+    "Review is based on current whole-film sheets, consecutive-frame strips, selected full-resolution frames, objective reports and direct encoded comparisons; no uninterrupted real-time playback claimed.",
+    "No human listening or guarantee of subjective all38-event audibility.",
+    "SHIP is this flow gate verdict for the exact hashed local master, not publication, deployment or completion of parent-owned release gates.",
+    "Candidate1 REVISE remains preserved for its former54f37015 master; this verdict does not rewrite it."
+  ]
+}

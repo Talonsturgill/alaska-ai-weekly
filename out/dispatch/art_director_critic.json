@@ -1,59 +1,92 @@
 {
-  "run_date": "2026-09-13",
+  "role": "independent_art_director_critic",
+  "run_date": "2026-09-14",
+  "reviewed_at": "2026-09-14T11:19:01.991205+00:00",
   "gate": "0D",
-  "reviewer": "ART DIRECTOR CRITIC",
-  "scope": "Independent review of the pre-build art plan and its current storyboard execution intent. This approves the plan, not an unrendered film.",
+  "ship": true,
+  "scope": "Plan review before scene code, not approval of rendered frames.",
   "inputs": [
-    "out/dispatch/art_direction.json",
-    "out/dispatch/storyboard.json",
-    "config/state.yaml, September 11 and 12 entries",
-    "prompts/dispatch_routine.md, Phase 4.1a and Gate 0D",
-    "docs/craft/ENGAGEMENT.md, reveal grammar",
-    "video-engine/src/lib/ASSET_MANIFEST.md",
-    "video-engine/src/lib/props.tsx, existing PenAndDocument"
+    {
+      "path": "out/dispatch/art_direction.json",
+      "sha256": "2a0285b86804918a2aa662e69515453aab6c1a054ac51a1589a43ffd092b6f09"
+    },
+    {
+      "path": "out/dispatch/directors_room_verdict.json",
+      "sha256": "670b6a0cac177d464da5fdfc97497d92e2b6fcd0ecca5ca09b724cbab22b88c5"
+    },
+    {
+      "path": "out/dispatch/angle.json",
+      "sha256": "09dbeb5a9094aadc8eab48c9d950e5f4f3111adc460b39dc496348f5b426723f"
+    },
+    {
+      "path": "docs/craft/DISPATCH_STANDARD.md",
+      "sha256": "319faa80b30a5507e33f60f117104ebcf144d9c308a1b79a15fb89868a98d1db"
+    },
+    {
+      "path": "config/state.yaml",
+      "sha256": "267bb8ab9d7a6b265033813199fdf003217da4864a60d4eac50747a89ba89863"
+    }
   ],
-  "lever_judgments": {
-    "palette": {
-      "judgment": "PASS",
-      "reason": "All required hex roles are explicit. Copper work surfaces dominate porcelain stock; the oxblood instrument is the focal accent and nickel describes durable mechanisms. Some hues are related to September 11 berry and spruce, but their proportions and material assignments change: green is restricted to retrieval hardware instead of defining the whole world. This is distinct from both the flight-crate film and September 12 lilac/citron EEG notebook, with a story-specific warm handoff rationale."
+  "overall": "Revised plan resolves both concrete findings. All mandatory art-direction levers are sufficiently specific to bind the build. This passes pre-code plan review only; actual contact, typography, crop safety and continuous motion remain render-verification obligations.",
+  "fixes": [],
+  "checks": {
+    "palette_freshness": {
+      "pass": true,
+      "evidence": "Compared current config history directly: Sept12 lilac/ivory/citron/coral/violet; Sept13 oxblood/porcelain/petrol/copper/nickel. Ultramarine/mango/sea-glass/alabaster differs, and blue is motivated by sea and enamel."
+    },
+    "light_depth": {
+      "pass": true,
+      "evidence": "Late-morning upper-left key, low cool fill, right rim, form gradients, AO, clipped reflections and three real depth planes are concrete."
     },
     "shape_language": {
-      "judgment": "PASS",
-      "reason": "Slotted retrieval rails and notched source tabs express gathering and rules. The separate light table expands editable paragraph sections vertically. The long tapered pen introduces a diagonal refinement stroke against their ordered lines. Report tabs and FIRST DRAFT typography prevent the two outputs from collapsing into interchangeable paper."
+      "pass": true,
+      "evidence": "Rounded hand/control versus rectangular experiment bays expresses adjustment within constructed assumptions; equal windows avoid an invented winner."
     },
-    "light_and_depth": {
-      "judgment": "PASS",
-      "reason": "Late-afternoon upper-left window key, lower-right cast shadows, neutral right fill and nickel-white rim are concrete and mutually coherent. Four to six actual depth planes, receiving-surface contact shadows and reduced distant contrast/chroma specify dimensional execution. The warm professional desk follows the preparation tools without implying machine failure."
+    "casting": {
+      "pass": true,
+      "evidence": "GearLever, GripHand, Character, QuestionToken and evidence/depth systems come from shelf. No new fish, trophy, boat hero or competing new asset. Character has operating verbs."
     },
-    "manifest_casting": {
-      "judgment": "PASS",
-      "reason": "PenAndDocument, GripHand, Sheet, PaperOfficeBG, Nameplate, BrassPlate, Stage3D, CameraMoves and EndCredits are real shelf assets. Sheet is supporting stock, preserving divergence from yesterday's hero. The shelf pen currently only hovers; cap, clip, nib and contact-bound writing fill an actual performance gap. KGS and Koniag remain named corporations with ordinary faceless office tools and no cultural personification."
+    "physical_stages": {
+      "pass": true,
+      "evidence": "Wet laboratory, architecturally separate stock-linked room, exterior harbor apron. Cutaway correctly does not count as another stage."
     },
-    "motion_language": {
-      "judgment": "PASS",
-      "reason": "Named primary actions, two-to-four-frame reactions, phase-offset ambient motion and selective blur serve visible cause and consequence. Ink is tied to nib contact rather than independently animating into existence. The three 0.6-second total reveal freezes are deliberate punctuation required by ENGAGEMENT.md section 3; they are not an ambient-motion defect."
+    "camera_and_signature": {
+      "pass": true,
+      "evidence": "Four scales, three heights and one signature low-angle equal-candidate harbor reveal. Keep labels inside the square crop; do not add a generic rows-of-failure-sockets ending."
     },
-    "composition_and_real_sets": {
-      "judgment": "PASS",
-      "reason": "The announcement wall, horizontal retrieval aisle, separate drafting light table and professional desk provide at least three physically different environments. PaperOfficeBG is restricted to retrieval. Inserts through extreme wides and multiple camera heights are assigned in the board. Essential content at x70..1010/y480..1320 fits the central square; captions at y1336..1468 have a reserved, nonoverlapping band. Readouts stay outside perspective transforms."
+    "craft_advance": {
+      "pass": true,
+      "evidence": "Shared exact lever-grip transform addresses real held-prop contact; opt-in detents/base detail finish the hero. Endpoint/midpoint checks plus actual moving contact strips are appropriate."
     },
-    "signature_shot": {
-      "judgment": "PASS",
-      "reason": "At 60 seconds the two machine housings retreat into separate far planes while intact outputs advance onto a generous foreground workbench. The depth reveal gives useful preparation visual credit; the later diagonal pen action changes how the viewer reads those outputs. This is one identifiable signature composition, not an unspecified spectacle promise."
+    "angle_and_winner": {
+      "pass": true,
+      "evidence": "Separate case-specific candidates/comparisons, no smoother-catch detour, no modeled quantities, no fish hero, equal next-test space and continued research match the revised verdict."
     },
-    "reusable_craft_advance": {
-      "judgment": "PASS",
-      "reason": "The shared pen family gains cap separation/posting, clip flex, exposed split nib, hand-bound movement and progressive contact-bound ink. These are inspectable physical changes, not a pen merely visiting different positions. Preserving existing PenAndDocument defaults protects shipped episodes. The proposed consecutive-frame cap/contact/lift inspection directly tests the actual advance."
+    "readability_plan": {
+      "pass": true,
+      "evidence": "Ink/alabaster contrast measured from specified hex colors: 14.00:1; equal visual status maintained across opposing outcomes."
+    },
+    "negative_space_and_portrait": {
+      "pass": true,
+      "evidence": "Each hold has a named subject and cleared area; portrait extensions provide depth and physical support rather than blank crop-padding bands."
+    },
+    "motion_intent": {
+      "pass": true,
+      "evidence": "Hero anticipation, physical detent settling, cable/sleeve lag, visible event cadence, brief all-clock holds and selected blurred actions are explicit."
     }
   },
-  "required_fixes": [],
-  "binding_build_checks": [
-    "Keep retrieval and generative drafting in their separately composed environments; do not turn the office shelf background into every set.",
-    "Carry cap separation continuously into the loose-cap gesture, post it visibly, attach grip and nib to the same transform, and leave the neutral ink mark after lift. Treat the storyboard's physical states as persistent.",
-    "At rendered square/mobile scale, verify the full corporation names, API/rules versus LLM labels, FIRST DRAFT and source scope remain readable above the caption band.",
-    "Implement and register the reusable shared pen extension while preserving legacy defaults; render proof remains a later gate.",
-    "Follow the storyboard runtime contract: 112-130 seconds of narration, planned at 120 seconds, followed by 12.3 seconds of credits. The plan's at-least-ten-second wording does not shorten that contract."
+  "review_round": 2,
+  "resolved_findings": [
+    {
+      "id": "AD1",
+      "status": "resolved",
+      "evidence": "All outcomes now share ink navy on alabaster, measured contrast 14.00:1. Outcome48px/case40px/qualifier32px/source28px/caption39px minima and separated source/caption bands are explicit. Mango is restricted to physical accent material."
+    },
+    {
+      "id": "AD2",
+      "status": "resolved",
+      "evidence": "Named0.6second reveal holds at26/59/94seconds identify focal subjects and intentionally cleared space. Upper portrait architecture and lower supporting planes are assigned. Fast lever throw and doorway wipe receive180degree motion blur while all text stays sharp."
+    }
   ],
-  "ship": true,
-  "verdict": "The art plan is complete, fresh in material balance and composition, and specific enough to bind the build. Gate 0D ships; no scene code or plan changes were authored by this critic."
+  "re_review_note": "No fish hero or net-new competing asset introduced; revised winning lever-led treatment and its separate case-specific comparisons remain intact."
 }

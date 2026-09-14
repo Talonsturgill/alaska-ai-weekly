@@ -29,53 +29,54 @@ OUT = os.path.join(REPO, "out", "dispatch")
 EV = os.path.join(REPO, "out", "evidence")
 
 # (name, current storyboard beat id, seconds INTO that beat's action).
-# September 13: all 40 pen and professional-workflow beats. Resolve the VO line/offset from the
+# September 14: all 38 pollock-simulation and shared-test beats. Resolve the VO line/offset from the
 # CONFORMED board at runtime, so later timing surgery cannot leave a second,
-# stale clock in the evidence list. Each named sample sits 0.35 seconds into its
-# beat, after the first eased travel is visible and safely away from shot cuts.
-MOVE_RUN_DATE = "2026-09-13"
+# stale clock in the evidence list. Samples witness travel, not merely the later
+# SFX contact: most 24-frame eases at +0.35s, six-frame spring crossings at +0.20s,
+# and the delayed gate/collar and slower final grip during their actual travel.
+# Ep0914's three 18-frame reveal holds start at +0.80s, after their samples.
+# Retain the date guard: a future film must author its own action selection.
+MOVE_RUN_DATE = "2026-09-14"
 LINE_START_ACTIONS = {}
 MOVES = [
-    ('pen_roll', 1, 0.35),
-    ('holders_part', 2, 0.35),
-    ('clip_arrests', 3, 0.35),
-    ('kgs_plate_seats', 4, 0.35),
-    ('wingman_rails_open', 5, 0.35),
-    ('date_leaf_turns', 6, 0.35),
-    ('workflow_drawers_open', 7, 0.35),
-    ('ownership_wall_builds', 8, 0.35),
-    ('kodiak_hinge', 9, 0.35),
-    ('aws_volume_opens', 10, 0.35),
-    ('cap_unseats', 11, 0.35),
-    ('subject_slot_expands', 12, 0.35),
-    ('vendor_token_placed', 13, 0.35),
-    ('intake_rail_carries', 14, 0.35),
-    ('api_routes_extend', 15, 0.35),
-    ('records_travel', 16, 0.35),
-    ('rules_align', 17, 0.35),
-    ('cap_detaches', 18, 0.35),
-    ('jumpstarter_table_opens', 19, 0.35),
-    ('draft_sections_grow', 20, 0.35),
-    ('nib_exposes', 21, 0.35),
-    ('useful_outputs_advance', 22, 0.35),
-    ('report_tabs_fan', 23, 0.35),
-    ('editable_text_extends', 24, 0.35),
-    ('cradles_settle', 25, 0.35),
-    ('cap_posts', 26, 0.35),
-    ('report_examination_begins', 27, 0.35),
-    ('compare_attached_records', 28, 0.35),
-    ('report_turns', 29, 0.35),
-    ('draft_arrives', 30, 0.35),
-    ('nib_writes', 31, 0.35),
-    ('ink_lift', 32, 0.35),
-    ('persistent_mark', 33, 0.35),
-    ('comparison_recedes', 34, 0.35),
-    ('aws_provenance_turns', 35, 0.35),
-    ('announcement_opens', 36, 0.35),
-    ('boundary_rail_unfolds', 37, 0.35),
-    ('desk_returns', 38, 0.35),
-    ('hand_lifts', 39, 0.35),
-    ('pen_returns', 40, 0.35),
+    ('research_grip_caught', 1, 0.35),
+    ('model_grip_settles', 2, 0.35),
+    ('tiny_support_revealed', 3, 0.35),
+    ('publication_tab_rotates', 4, 0.35),
+    ('observation_shutter_opens', 5, 0.35),
+    ('laboratory_revealed', 6, 0.35),
+    ('observation_intake_opens', 7, 0.35),
+    ('manual_test_throw', 8, 0.20),
+    ('learned_token_travels', 9, 0.35),
+    ('feedback_path_spreads', 10, 0.35),
+    ('feedback_changes_detent', 11, 0.35),
+    ('predefined_token_seats', 12, 0.20),
+    ('learned_detent_adjusts', 13, 0.35),
+    ('researcher_points_to_port', 14, 0.35),
+    ('closed_port_turns', 15, 0.35),
+    ('constant_case_shutter_opens', 16, 0.35),
+    ('constant_inlet_cycles', 17, 0.35),
+    ('higher_biomass_flap_rises', 18, 0.20),
+    ('breeding_weight_emblem_seats', 19, 0.35),
+    ('catch_swings_flap_duck', 20, 0.20),
+    ('stock_linked_doorway_wipes', 21, 0.35),
+    ('stock_linked_inlet_connects', 22, 0.35),
+    ('separate_candidates_dock', 23, 0.35),
+    ('own_comparison_aligns', 24, 0.35),
+    ('higher_catch_flap_opens', 25, 0.20),
+    ('lower_biomass_flap_opens', 26, 0.20),
+    ('both_case_results_retract', 27, 0.35),
+    ('shared_test_frame_opens', 28, 0.35),
+    ('model_carried_to_harbor', 29, 0.35),
+    ('shared_shutters_placed', 30, 0.35),
+    ('harbor_test_leaf_unfolds', 31, 0.35),
+    ('catch_goal_shutter_opens', 32, 0.35),
+    ('stock_goal_shutter_opens', 33, 0.35),
+    ('next_test_gate_retracts', 34, 0.80),
+    ('simulation_collar_unlatches', 35, 0.60),
+    ('research_value_plaque_unfolds', 36, 0.35),
+    ('grip_moves_to_test_again', 37, 0.45),
+    ('patient_hand_guides_rebound', 38, 0.45),
 ]
 
 
@@ -92,10 +93,22 @@ def conformed_moves(board, start):
     covered, result = set(), []
     for name, beat_id, peak_after in MOVES:
         beat = beats[beat_id]
-        if "anchor" in beat:
-            line, off = beat["anchor"]["vo_line"], float(beat["anchor"]["offset"])
+        # Both board schemas declare a VO clock. Do not silently disregard the
+        # flat form and infer a plausible line from a stale absolute timestamp.
+        anchor = beat.get("anchor")
+        if anchor is None and ("vo_line" in beat or "offset" in beat):
+            anchor = beat
+        if anchor is not None:
+            if "vo_line" not in anchor or "offset" not in anchor:
+                raise ValueError(f"beat {beat_id} has an incomplete VO anchor")
+            line, off = anchor["vo_line"], float(anchor["offset"])
+            if line not in start:
+                raise ValueError(f"beat {beat_id} references a missing aligned VO line")
             at = start[line] + off
-            if abs(at - float(beat["at_s"])) > 1 / 30.0:
+            declared_at = float(beat.get("at_s", beat["t"].split("-", 1)[0]))
+            range_start = float(beat["t"].split("-", 1)[0])
+            if (abs(at - declared_at) > 1 / 30.0
+                    or abs(at - range_start) > 1 / 30.0):
                 raise ValueError(f"beat {beat_id} is not conformed to the current VO line clock")
         else:
             # Newer boards may persist either an explicit conformed `at_s` or the

@@ -1,0 +1,23 @@
+{
+  "run_date": "2026-09-14",
+  "reviewed_at": "2026-09-14T12:01:29.268453+00:00",
+  "passes": [
+    {
+      "round": 1,
+      "evidence": "roughcut_r1_review/sheet1.jpg and sheet2.jpg",
+      "result": "All12shots inspected. Label/face collisions, repeatedcamera, weakharbor. Independentcritic confirmed."
+    },
+    {
+      "round": 2,
+      "evidence": "pass1 selectedprobes plusroughcut_r2_review/sheet1.jpg and sheet2.jpg",
+      "result": "All12shots inspected. Camera/background/labelhierarchy clearer, flooroperator fixed. Found S9headingoverlap and S12heading/handcollision, fixedinpass3."
+    },
+    {
+      "round": 3,
+      "evidence": "pass3_sheet1.jpg andpass3_sheet2.jpg",
+      "result": "All12shots inspected. No static label/faceoverlaps seen inselectedframes. Realdatehinge,glazedlabelslit,hatch,weightsocket,splitcollar,casepairs rendered. Independentflowrequired twoholdfixes, nowappliedpass4."
+    }
+  ],
+  "not_final_panel": true,
+  "limits": "Draftcompositionevidence only. Finalfull-resolutionall-frame bounds, renderedcaptions/credits, contactmotion,audio,andindependentpanel stillrequired."
+}

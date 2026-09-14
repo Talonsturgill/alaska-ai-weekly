@@ -327,6 +327,20 @@ def collect_labels(path, props_path=None):
     """
     props_path = props_path or os.path.join(REPO, "out/dispatch/episode_props.json")
     try:
+        try:
+            from .rendered_text_check import uses_runtime_boxes, collect_rendered, site_line
+        except ImportError:
+            from rendered_text_check import uses_runtime_boxes, collect_rendered, site_line
+        if uses_runtime_boxes(path):
+            runtime = collect_rendered(path, props_path)
+            issues = [{'line': site_line(i.get('site', '')), 'why': i['why']}
+                      for i in runtime['issues']]
+            return {'calls': [], 'scene_ids': list(runtime['scene_frames']),
+                    'adapter': None, 'runtime': runtime, 'issues': issues,
+                    'copy_issues': issues,
+                    'copy_literals': [{'line': site_line(i['site']),
+                                       'kind': 'actual rendered SVG text', 'text': i['text']}
+                                      for i in runtime['copy_literals']]}
         # Legacy episodes without these components keep their existing Plate/mono
         # checks without Node. Copy extraction also recognizes non-Label display text.
         with open(path) as source:
@@ -344,8 +358,14 @@ def collect_labels(path, props_path=None):
                 "issues": [issue], "copy_literals": [], "copy_issues": [issue]}
 
 
-def check_label_call_sites(path, min_px=MIN_PLATE_PX, props_path=None):
+def check_label_call_sites(path, min_px=MIN_PLATE_PX, props_path=None, min_margin=MIN_MARGIN):
     data = collect_labels(path, props_path)
+    if data.get('runtime'):
+        try:
+            from .rendered_text_check import fit_results
+        except ImportError:
+            from rendered_text_check import fit_results
+        return fit_results(data['runtime'], min_px=min_px, min_margin=min_margin)
     failures, checked = [], 0
     for issue in data["issues"]:
         failures.append({"line": issue["line"], "text": "<Label>", "size": 0,
@@ -494,7 +514,7 @@ def main():
         for x in pf:
             x["file"] = path
         bad += pf
-        lf, lc = check_label_call_sites(path, props_path=a.props)
+        lf, lc = check_label_call_sites(path, props_path=a.props, min_margin=a.min_margin)
         total_checked += lc
         for x in lf:
             x["file"] = path
@@ -516,7 +536,7 @@ def main():
         if x.get("why"):
             print(f"     {x['why']}")
 
-    print(f"text-fit: {total_checked} plated strings/variants measured (mono, Plate, actual Label), "
+    print(f"text-fit: {total_checked} plated strings/variants measured (mono, Plate, actual Label or browser Box), "
           f"{len(all_skipped)} not measured, {len(bad)} failing")
 
     if total_checked == 0:

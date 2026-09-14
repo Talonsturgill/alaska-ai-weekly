@@ -1,29 +1,39 @@
 {
-  "run_date": "2026-09-13",
-  "reviewer": "cold_reader fresh fork with only narration text",
   "ship": true,
-  "causal_chain": [
-    "KGS announces Wingman support for office tasks.",
-    "AWS describes earlier Army DORA record gathering and a standardized report.",
-    "Separate Jumpstarter LLMs produce initial document sections.",
-    "Both perform useful preparation.",
-    "A professional reviews the report and makes the determination; a user refines and approves generated sections.",
-    "Preparation is complete while professional work remains; the new announcement does not quantify an Alaska return."
+  "script_sha256": "2bbc75e32042528fe5b49c676ebe55598a2684e3faa25f400421123857284716",
+  "revision": 3,
+  "causal_retelling": "Researchers tested an AI harvest rule against predefined rules in simulations, so they could examine possible catch and breeding-stock tradeoffs. One simulated case left more breeding biomass with large annual catch swings; another caught more while leaving less breeding biomass than its own comparison. But those results do not establish a management advantage, which means candidate rules should be tested against common catch-pattern and breeding-stock goals before claiming a real-world winner.",
+  "actors_established": [
+    {
+      "actor": "Researchers",
+      "identity": "People affiliated with the Alaska Fisheries Science Center who built simulations informed by historical observations."
+    },
+    {
+      "actor": "Agent",
+      "identity": "A learning system that practices harvest choices in simulated seasons and changes its rule using feedback."
+    },
+    {
+      "actor": "Eastern Bering Sea pollock",
+      "identity": "The fish population examined in the paper and simulations."
+    },
+    {
+      "actor": "NOAA Fisheries and the North Pacific Fishery Management Council",
+      "identity": "Organizations that manage Alaska pollock in real fisheries."
+    },
+    {
+      "actor": "Fishing businesses",
+      "identity": "Businesses that need sound management to plan their seasons."
+    }
   ],
-  "actors": {
-    "Koniag Government Services / KGS": "Organization belonging to Koniag that supports Wingman.",
-    "Koniag": "Kodiak region's Alaska Native corporation.",
-    "Wingman": "Digital office assistant platform.",
-    "Amazon / AWS": "Amazon's cloud business and source of the earlier-work account.",
-    "Army": "Organization associated with earlier tools.",
-    "DORA": "Determination of Responsibility Assistant retrieving records and assembling a report.",
-    "SAM.gov": "Named source in compliance retrieval.",
-    "Jumpstarter": "Tools using LLMs to generate initial sections.",
-    "Amazon Bedrock": "Named system through which Jumpstarter uses LLMs.",
-    "Contracting professional": "Human reviewing report and making determination.",
-    "Draft user": "Human refining and approving generated sections."
-  },
-  "single_question": "After these tools prepare reports and draft sections, which work remains the human professional's responsibility?",
-  "script_sha256": "5ae7ddb9b7890df4f1d39fb246eb6e62fd91613f20d2791920a2be265de5526f",
-  "recording_note": "Faithful structured transcription of the independently returned cold-reader verdict; no context was supplied to the reader."
+  "agency": "Researchers build and compare simulated rules; the agent learns within simulations; the named fisheries organizations manage the actual fishery. The text does not imply that the agent currently sets real fishing rules. The instruction to test both rules reads as the narrator's recommendation.",
+  "single_question_answered": "What makes an AI fishing rule worth further testing? It supplies simulated alternatives whose catch and breeding-stock tradeoffs still need evaluation against shared management goals.",
+  "first_line_lost": null,
+  "ending_follows": true,
+  "ending_assessment": "The closing question follows from the tradeoffs and shared-goals recommendation. It invites a choice about management priorities rather than pretending the simulations determine the right balance.",
+  "candid_notes": [
+    "The phrase simulated gains briefly compresses mixed outcomes into a positive label, but the immediate caveat prevents a claim of overall superiority.",
+    "The biology-change question is answered qualitatively through two separate cases; the narration appropriately says each has its own comparison.",
+    "Public code is presented as availability information, not as evidence that the rule works in the real world."
+  ],
+  "review_scope": "Cold read of vo_script.txt only; no research, source verification, planning material, or visual assessment."
 }

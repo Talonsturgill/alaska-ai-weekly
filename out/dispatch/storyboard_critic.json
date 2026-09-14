@@ -1,33 +1,50 @@
 {
+  "run_date": "2026-09-14",
+  "review_round": 2,
+  "role": "independent_storyboard_critic",
+  "reviewed_at_utc": "2026-09-14T11:23:41.711396+00:00",
+  "inputs": {
+    "storyboard.json": "074dd713cdf335897cc3925f358068f39f0d4082fe2bda60d5563d5e152227ed",
+    "vo_script.json": "8fe4fe0da5b7b3eb9889377f023ceb5c4071ebf78322644b30ce2c520db98c69",
+    "art_direction.json": "2a0285b86804918a2aa662e69515453aab6c1a054ac51a1589a43ffd092b6f09",
+    "verified_findings.json": "c22456d26204cf1e6f5e0588efd646d1d9982f495689c41a9bbf61ce4b6c819d",
+    "directors_room_verdict.json": "670b6a0cac177d464da5fdfc97497d92e2b6fcd0ecca5ca09b724cbab22b88c5"
+  },
   "divergence": {
     "score": 8,
-    "verdict_vs_last_2": "Genuinely different from September 11 FlightCrate cargo/proof staging and September 12 Sheet research-notebook staging. The camera follows an articulated pen assembly, traverses record connections, observes vertically generated sections, and settles on hand-to-material contact. Copper/porcelain/oxblood with raking office light is a new color and material world. Paper remains supporting material.",
-    "muted_back_to_back": "A viewer would call this a different film: the main visual operations are cap separation/posting, record retrieval, report examination and ink deposition, rather than cargo transport or a notebook acquiring a research capability.",
+    "verdict_vs_last_2": "September 12 used an EEG notebook and September 13 office pen/document planes. The revised film uses wet laboratory architecture, a separate stock-linked room and a full-size harbor, with overhead mechanisms, low control inserts and outcome-feedback motion. Those are distinct staged relationships, not renamed paper props.",
+    "muted_back_to_back": "A viewer should see a different marine research film. The single portable instrument links genuinely different spaces and registers.",
     "relabel_risk": "none"
   },
   "silent_first": {
     "score": 8,
     "carries_muted": true,
-    "weakest_beat": "Beat 34, 98-102.8, remains the least information-dense span: a 2.7-second comparison movement followed by settling into the next transition. It is now one bounded synthesis, not the former separate-and-reunite repeat. The prior material actions supply its meaning, so this is acceptable after the close recognition of persistent ink."
+    "weakest_beat": "Beat 34 at 102.6s is the quietest stretch: the hand withdraws from unresolved next-test space. It is now chosen stillness after shared requirements open, rather than a repeated claim. Keep both candidates and the open destination visible."
   },
   "shot_structure": {
     "score": 8,
-    "n_shots": 13,
+    "n_shots": 12,
     "is_oner": false,
     "zoom_fakes": [],
-    "worlds_change": "The corporate wall, deep intake aisle, sliced record cabinet, open drafting light table and professional review/editing surfaces are genuinely different compositions. S2 and S3 now honestly share announcement-wall as a set while the KGS nameplate carries into the newly built ownership/source composition. At least three physically different working worlds remain without counting this wall twice. S6 makes the separate generative tool a hard turn; S7 changes from mechanism to useful outputs; S9 and S10 change material, gesture, camera height and visual organization.",
-    "transitions_meaningful": "The revised anchors are exact: pen-clip glint to KGS bracket; KGS plate to subsidiary rail; cap opening to input socket; vendor token to the API fork; cradle foot to cap-cup rim; posted pen into report review; and ink endpoint into the aftermath view. These links carry eye position or an actual object while the surrounding composition changes. S11 is a high close view of persistent ink after the low contact action, then a motivated withdrawal to the arrival shelf; it is not being counted as several separate shots.",
-    "notes": "All earlier camera-menu objections are resolved. Record tracking follows a named token or tab path; the review camera settles by 80.5 so the hand commands the frame; the editing camera registers nib and ink; the final comparison reveals the earlier arrival shelf behind professional work. Each second movement now has a named visual job. Per-set ambient objects replace the repeated universal cabinet block. Four-plus scales, varying heights, macro object business and a real wide output reveal provide a credible journey."
+    "worlds_change": "S2 now BUILDs a separately composed overhead intake view, not a pull-out. S3 is a feedback cutaway; S4 an overhead fixed/learned comparison; S5 a low architectural bay; S7 a distinct room with fresh candidates; S10 a harbor exterior. These satisfy different worlds and three actual physical stages.",
+    "transitions_meaningful": "Exact anchors now connect rim to intake, intake to feedback route, rails to comparison, sealed port to bay cover, carried grip across the doorway, and control to harbor bench. S9 explicitly archives reported case assemblies before opening an unresolved test.",
+    "notes": "Shot-specific starts, reveals and end states replace the template. Camera macro names remain reusable, but the authored actions now determine different movement purposes and stopping points."
   },
   "retention": {
-    "score": 7,
-    "notes": "The first-second pen/output premise and final posted, visibly used pen are a designed callback. The primary openly promises what the pen does after the two outputs; it starts paying through the visible stroke at 89.3 and completes at 93.2. Human participation is never concealed or sold as a late surprise. The independent secondary is a modest physical pairing: at 49 the 520px centered pen/cap assembly exposes two 70px matching openings, then the cap rests freely; the ordinary retrieval/posting at 75.1 answers it. Its 26.1-second delay and 18.1-second separation from primary completion are sufficient, with neither a held gesture nor a jam. The throughline now has five inspectably different physical configurations: capped, a 32px opened seam, detached cap/exposed nib, rear-posted cap, and contact leaving persistent ink. The 360px foreground pen, 520px pairing and 120px nib resolve the previous wide-shot legibility problem. Detachment is correctly first counted at 49; the 58.2 view is explicitly a reinspection, not an invented extra state. At 80 seconds the film no longer sags into furniture: examination begins at 76.8, stays primary through 84.2, and moves from the gathered report to its record material; the leaf and light are attributable subordinate reactions. Act 3 therefore adds source-described professional work after giving the machine outputs full credit, then changes to a different material and action at 85.4. The first third adds corporate/current-source context and entry into DORA; the second establishes retrieval/rules versus generative drafting and tangible prepared outputs; the third adds examination, refinement, persistent physical consequence and the bounded announcement limit. The weakest remaining stretch is the 98-102.8 synthesis/settle, acceptable now that it is one compact comparison. This is a procedural demonstration with an object callback, not a claimed surprising factual revelation. No named world-class touchstones are claimed, so none are certified. The question button and moving pen carry into a separate 12.3-second credits tail after the planned 120-second narration."
+    "score": 8,
+    "notes": "At 80 seconds the film now advances: reported results retract and a blank management-advantage field opens while VO grants that modeled gains may offer no advantage over a predefined rule. Act3 then tests both candidates against the same unresolved goals. The secondary loop reveals its answer at 71 to 74.5s; the first complete primary answer lands at 99s, correctly separated from the later callback. The serial-notched control changes from bounded mount to feedback instrument to carried research tool to TEST AGAIN. Keep 102.6 to 107s restrained, not padded. No specific world-class touchstone was claimed; the board earns approval through its designed causal actions."
   },
   "fit_honesty": {
-    "score": 9,
-    "notes": "The current board preserves the committed angle and the 204-word narration. It grants concrete preparation credit and does not infer net productivity. DORA APIs and prebuilt logic are distinct from separate Jumpstarter LLM/Bedrock drafting before 60 seconds. AWS earlier-work evidence and the fresh KGS announcement stay separate. All human appearances do an identifiable job: handling the pen/cap, supplying the identifier, examining the gathered report, refining a generated section, or lifting the used pen. No idle figure remains. The workflow gestures and office apparatus are explicitly illustrative, with no fabricated compliance outcome, error, elapsed wait, automatic approval or final procurement. KGS and Koniag are named corporations with a corporate Kodiak connection; there are no cultural props or employment claims. The Alaska-return limit belongs to this announcement and has no zero or money-outcome icon. Warm practical lighting supports the useful handoff. These are storyboard findings; visible cap continuity, exact ink contact and readable sources still require the normal rendered checks."
+    "score": 8,
+    "notes": "Feedback alone changes the learned detent after the initiating hand releases. Separate candidates and comparisons preserve the two recruitment cases. No smooth-policy detour, invented numerical curves, adoption claim, stakeholder sentiment or operational outcome is shown. The physical apparatus remains disclosed as an editorial software schematic. The common-goal instruction is an editorial next-step proposal, not a reported completed validation."
+  },
+  "resolved_fixes": {
+    "SF1": "Beats 8, 11 and 13 now release the hand and make feedback the update cause. All 38 reactions are specifically attributable; ambient beds belong to the current stage.",
+    "SS1": "All 12 shots now have concrete entry/exit states, camera intent and geometric transition anchors; S2 is an independent BUILD composition.",
+    "RT1": "Beats 27 and 28 begin the no-management-advantage challenge at 79s, then shared unresolved requirements continue through the harbor and first complete payoff at 99s."
   },
   "top_3_fixes": [],
   "ship": true,
-  "one_sentence_fix": "No further storyboard revision is required; build this revised plan with examination primary at 80 seconds, the specified cap framing, and the single late comparison intact."
+  "one_sentence_fix": "No further paper revision is required; preserve the released-hand learning causality, distinct scenario identities and first complete common-goal payoff when conforming to actual voice timing.",
+  "scope": "Gate 0B storyboard approval only. Rendered contact, caption legibility, stage differences and spoken timing still require the downstream gates."
 }

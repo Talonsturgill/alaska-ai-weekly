@@ -1,0 +1,79 @@
+{
+  "run_date": "2026-09-14",
+  "verified_at": "2026-09-14T11:53:41.430Z",
+  "baseline": "6d4b7342c5fe653616cf4b52262899fc929df877",
+  "checks": [
+    {
+      "long_throw": false,
+      "pulled": 0,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": false,
+      "pulled": 0.125,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": false,
+      "pulled": 0.5,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": false,
+      "pulled": 0.875,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": false,
+      "pulled": 1,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": true,
+      "pulled": 0,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": true,
+      "pulled": 0.125,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": true,
+      "pulled": 0.5,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": true,
+      "pulled": 0.875,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    },
+    {
+      "long_throw": true,
+      "pulled": 1,
+      "anchor_matches_drawn_knob": true,
+      "default_markup_unchanged": true,
+      "service_mount_present": true
+    }
+  ],
+  "pass": true,
+  "scope": "Actual React static markup and SVG rotation at ten throw positions. Film-frame contact checked separately."
+}

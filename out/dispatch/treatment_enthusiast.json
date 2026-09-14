@@ -1,138 +1,278 @@
 {
-  "run_date": "2026-09-13",
-  "writer": "ENTHUSIAST",
-  "title": "Ready for the Work",
-  "angle_source": "out/dispatch/angle.json",
-  "independence": "Read the committed angle, verified findings, claims, the last two state entries, the full asset manifest, Directors Room and master Phase 4.1. No peer pitch was read before writing this treatment. No subagents launched.",
-  "logline": "One solid word, READY, follows two useful preparation tools to the professional work their outputs make possible.",
-  "stance": "Appreciative curiosity. The tangible usefulness earns full screen time while the film stays inside the described workflow and makes no measured productivity claim.",
-  "duration_target_s": 120,
-  "duration_band_s": [112, 130],
-  "future_vo_words": 214,
+  "role": "enthusiast",
+  "run_date": "2026-09-14",
+  "title": "Rehearsal Before the Season",
+  "independent_pitch": true,
+  "logline": "A research lever opens two honestly labeled simulated pollock worlds, earning admiration for the ability to discover choices before those choices face a real fishing season.",
   "cold_open": {
-    "time_s": [0, 3],
-    "picture": "An enormous machined TypeSlug reading READY lands with a deep clack across the gap between a little output shelf and a much larger desk. Its long shadow falls over a pen. A truck of the camera reveals that READY is a movable object, and the viewer still does not know which job it labels.",
-    "opening_line": "The machine has finished something. What, exactly?",
-    "scope": "A visibly schematic office metaphor, never a claimed KGS interface. No approval mark, face or named-person caricature."
+    "time_s": [
+      0.0,
+      3.2
+    ],
+    "picture": "Extreme close-up at rail height on a fictional researcher catching a chunky brass GearLever as a wet deck rolls; behind it the Eastern Bering Sea opens deep and wide. A tiny SIMULATION ONLY plate swings toward camera. The researcher is about to move a rule, not haul a fish.",
+    "scroll_stop": "The oversized small control against an immense ocean makes the opening question physically immediate."
   },
   "escalation": [
-    "The giant READY slug becomes ordinary desk size as the camera reveals KGS, its September 11th announcement, Wingman and its named office-work categories.",
-    "A sober corporate identity plate connects KGS to Koniag and the Kodiak region. The relationship is corporate ownership, with no cultural props or implied local returns.",
-    "Enter the earlier Army workflow explicitly attributed to AWS. A generic vendor-identifier token enters an email subject slot. DORA is named before its mechanism runs.",
-    "The camera travels physically along API retrieval channels. SAM.GOV records come to the mechanism rather than invented prose appearing out of it. Prebuilt logic arranges them into a standardized report.",
-    "A match cut enters a visibly separate writing bay. Jumpstarter is named. User inputs feed an LLM and an editable FIRST DRAFT grows outward. Retrieval and generative drafting are established before 60 seconds.",
-    "Both tools have made something substantial. Their housings move to the back plane so the report and draft occupy the foreground, intact and useful. The READY slug travels with those outputs.",
-    "The professional performs two different next actions. DORA's report is reviewed for a determination. Jumpstarter sections are refined and approved. Show inspection and editing without fabricated mistakes or a literal approval stamp.",
-    "The final move places READY at the output handoff rather than at a completed procurement. Useful preparation reaches the professional without magically completing the professional's job."
+    {
+      "time_s": [
+        3.2,
+        21.1
+      ],
+      "act": 1,
+      "stage": "Research vessel deck, editorial illustration",
+      "draw": "Researcher in Character worker outfit points the portable simulation control toward an inset wireframe sea; repeated season shutters open and close, explicitly illustrative, with no count. GearLever goes from parked to linked to model. The research capability gets the first full scene, with the question WHAT DID THE REHEARSAL EARN? planted at 16s."
+    },
+    {
+      "time_s": [
+        21.1,
+        37.0
+      ],
+      "act": 2,
+      "stage": "Wet laboratory with tank rims, plumbing, window and moving water reflections",
+      "draw": "Same lever docks at CONSTANT RECRUITMENT detent. A top-down view shows independent unscaled CATCH and SPAWNING BIOMASS outcomes, their labels mounted to different tank rails. Constant inflow is a labeled schematic; do not animate exact numbers of fish as observed measurements."
+    },
+    {
+      "time_s": [
+        37.0,
+        50.7
+      ],
+      "act": 2,
+      "stage": "Wet laboratory, eye-level opposite side of tank",
+      "draw": "Catch indicator pivots broadly between LOW and HIGH with SCHEMATIC / LARGE ANNUAL SWINGS fixed beside it. Separate biomass label reads HIGHER THAN COMPARISON with no bar lengths. A fresh unopened scenario port labeled STOCK-LINKED enters at 42s: will changing biology preserve the result?"
+    },
+    {
+      "time_s": [
+        50.7,
+        68.7
+      ],
+      "act": 3,
+      "stage": "Wet laboratory doorway opening toward working harbor",
+      "draw": "Lever fully lifts out of CONSTANT detent before docking at separate RICKER / STOCK-LINKED station. Comparison resets visibly. Two equal-size text windows state HIGHER CATCH and LOWER SPAWNING BIOMASS vs respective comparison. Camera travels through the door, carrying the actual lever in the researcher's hand."
+    },
+    {
+      "time_s": [
+        68.7,
+        85.6
+      ],
+      "act": 3,
+      "stage": "Harbor dock beside mooring posts, warehouse and actual water plane",
+      "draw": "The lever makes one graceful schematic motion, then camera tilts to a season-calendar reel that stays unresolved: smoother policy response does not fill annual catch results. This pays secondary question at 73s by holding both experiments together: changing the assumption changes the tradeoff, and smooth control motion is not steady catch."
+    },
+    {
+      "time_s": [
+        85.6,
+        101.4
+      ],
+      "act": 3,
+      "stage": "Harbor dock, low waterline reverse toward researcher",
+      "draw": "Real harbor extends beyond the little portable simulator. Three large empty sockets marked INCOME, BYCATCH and REAL SEASON refuse to light; researcher presents them plainly without grimace or invented victim. Lever remains connected only to the model. At 92s the primary reveal opens its previously folded plaque: ALTERNATIVES TO INVESTIGATE."
+    },
+    {
+      "time_s": [
+        101.4,
+        118.0
+      ],
+      "act": 4,
+      "stage": "Research vessel deck in matching opening composition",
+      "draw": "Researcher returns the lever to TEST AGAIN while the entire real sea remains visible. The lever is useful and the ocean remains larger. Three goal labels appear one at a time in response to the closing question, never as an endorsement."
+    }
   ],
   "turn": {
-    "time_s": [61, 95],
-    "name": "Give the Outputs the Whole Screen",
-    "picture": "The DORA and Jumpstarter housings slide backward into a deep office cutaway. Their outputs stay large in the warm foreground. The report retains its source tabs. The generated section retains FIRST DRAFT. A faceless ordinary professional's hand draws the report closer to inspect it, then a separate editing surface shows a section being refined. The assets are allowed to be useful before any limit is stated.",
-    "earned_change": "The viewer can credit the accomplished preparation and distinguish it from the professional action that follows. The ending becomes more affirmative because the useful work survives the boundary.",
-    "strongest_fair_counterpoint": "If a report is assembled and an editable first draft exists, treating everything as unfinished would erase actual completed preparation. The film grants those outputs solidity, scale and uninterrupted attention, then specifies the remaining professional job.",
-    "prohibited_shortcuts": ["No broken result", "No giant waiting queue", "No invented accuracy failure", "No stopwatch", "No money or hours arithmetic", "No automatic approval or contract-award stamp"]
+    "time_s": 85.6,
+    "earned_pivot": "Research admiration survives its strongest limit: the simulator can propose alternatives worth investigating, while its outcomes remain dependent on assumptions and do not establish a winning operational rule.",
+    "draw": "The real harbor exceeds the model at a low-angle reveal; unmeasured income, bycatch and real-season sockets remain openly unfilled as the research plaque opens."
   },
   "button": {
-    "time_s": [114, 120],
-    "line": "Ready for the work that follows.",
-    "image": "The original READY TypeSlug settles flush at the edge of the output shelf. Beneath it the now-legible desk inscription reads FOR THE WORK THAT FOLLOWS. The report and still-labeled draft are within the professional's reach. The pen lifts into the foreground and the shadow from the opening now has a visible owner.",
-    "return_to_open": "The same material object and pen shadow return with a precise meaning. READY was accurate at the preparation boundary, and never meant the whole procurement was complete."
+    "time_s": [
+      112.0,
+      118.0
+    ],
+    "last_line": "Which should a policy demonstrate first: steadier catches, more breeding fish, or a better balance across both?",
+    "last_image": "Same brass lever from the opening rests at TEST AGAIN. The researcher turns toward the large real ocean, leaving all three goal labels equally legible.",
+    "loop_to_open": "The opening asks what rehearsal can earn; the button keeps the research tool in use and makes the next test explicit."
   },
   "sight_gags": [
     {
-      "at_s": 1.3,
-      "description": "The heavy READY word lands and gives a tiny desk pencil a restrained hop. The huge verbal claim turns out to be a movable physical label.",
-      "target": "Generic office-object physics, not KGS or a Native subject"
+      "time_s": 7.4,
+      "gag": "The wet-deck researcher cradles the small simulation control with both arms as if it were a huge catch, then discovers its dangling SIMULATION ONLY plate; affectionate joke about the outsized question, never a fake fishing result."
     },
     {
-      "at_s": 36.5,
-      "description": "An API lookup plug makes a neat quarter turn to align its notch, then a procession of record tabs seats with the rhythm of a tiny precision parade. A miniature spring bounces once after everything else has stopped.",
-      "target": "Satisfying schematic machinery, no failed lookup or invented data"
+      "time_s": 38.0,
+      "gag": "The unscaled annual-catch indicator swings far enough that a researcher must duck its rubber pointer; the independent biomass marker stays calmly labeled HIGHER, making the tension memorable without quantities."
     },
     {
-      "at_s": 53.0,
-      "description": "The FIRST DRAFT flag unrolls much farther than its compact roller suggested, then neatly curls its blank tail under. The status is unmistakable and never briefly reads FINAL.",
-      "target": "Generic document-status prop"
-    },
-    {
-      "at_s": 85.0,
-      "description": "A pen cap spins once into its cup as the pen gets to work. The machine has made an output but the smallest office prop supplies the next decisive motion.",
-      "target": "Ordinary professional tools, with no characterized people or machines"
+      "time_s": 71.8,
+      "gag": "The elegantly easing policy lever bows at the end of its move; an adjacent unresolved season reel declines to join the bow. Narration immediately separates smooth policy response from annual catch stability."
     }
   ],
   "retention_plan": {
-    "test": {
-      "scene": "Give the Outputs the Whole Screen",
-      "time_s": [61, 95],
-      "against_angle": "An audience could fairly object that the machine has indeed finished useful work. Demonstrate that at full strength with a gathered report and an editable draft occupying the scene after the machinery recedes.",
-      "surviving_angle": "The completed preparation survives the challenge. Reviewing the report and determining responsibility remain the professional's work. Refining and approving generated sections remain the user's work. The title means something more exact after the test.",
-      "source_boundary": "These actions illustrate the AWS-described workflow. They are not an independent production audit or a demonstration of a specific actual contract."
+    "act3_test": {
+      "name": "The Harbor Is Bigger Than the Tank",
+      "time_s": [
+        63.4,
+        100.4
+      ],
+      "strongest_fair_case": "Policy discovery might only reveal what the model rewards under its own assumptions. Neither scenario demonstrates a better real fishery outcome, stable income or bycatch performance.",
+      "full_strength_drawing": "Dedicate the whole harbor depth reveal to this objection. Display the Ricker biomass reversal at equal visual strength to the constant-case gain, distinguish smooth response from unproven catch stability, then show three unresolved outcome sockets against a real harbor. Never hide the test in a disclaimer."
     },
     "throughline_object": {
-      "asset": "TypeSlug from lib/clinic.tsx, parameterized READY",
-      "introduced_at_s": 0.4,
+      "object": "One portable brass GearLever, adapted through existing color and longThrow parameters",
+      "introduced_s": 1.1,
       "states": [
-        {"at_s": 0.4, "state": "Held proud across a gap, apparently too broad a label, with its pen shadow visible"},
-        {"at_s": 31, "state": "Mounted at the output mouth while retrieval and rules do their actual job"},
-        {"at_s": 61, "state": "Travels into the foreground with the report and draft as the completed preparation is credited"},
-        {"at_s": 95, "state": "Held beside the human work surface while output arrival and professional completion are separated"},
-        {"at_s": 116, "state": "Seated flush at the handoff with the full final meaning visible and the original pen active"}
-      ],
-      "continuity": "Keep the same notched left edge and a small copper side face across every appearance. It is a movable word, not a badge or approval token."
+        {
+          "act": 1,
+          "time_s": 6.3,
+          "state": "Parked then connected solely to simulated sea"
+        },
+        {
+          "act": 2,
+          "time_s": 24.3,
+          "state": "Seated in CONSTANT RECRUITMENT detent"
+        },
+        {
+          "act": 3,
+          "time_s": 53.9,
+          "state": "Lifted and reseated in separate STOCK-LINKED detent"
+        },
+        {
+          "act": 3,
+          "time_s": 85.6,
+          "state": "Held beside unfilled real-outcome sockets, model cable visibly still attached"
+        },
+        {
+          "act": 4,
+          "time_s": 103.5,
+          "state": "Returned to TEST AGAIN, plaque open as ALTERNATIVES TO INVESTIGATE"
+        }
+      ]
     },
-    "loops": [
+    "two_loops": [
       {
-        "id": "primary",
-        "plant_at_s": 1,
-        "promise": "The machine has finished something. What, exactly? The READY label has no final resting place yet.",
-        "pay_at_s": 98,
-        "payoff": "The arrived page and the finished professional task are placed on different depth planes. READY seats beside the preparation output, while REVIEW AND DETERMINATION and REFINE AND APPROVE remain at the professional desk.",
-        "honesty": "The human role is introduced as soon as the workflow reaches it. The final spatial placement supplies the payoff without concealing a source caveat."
+        "name": "What has the rehearsal earned?",
+        "plant_s": 16.9,
+        "payoff_s": 97.2,
+        "span_s": 80.3,
+        "payoff": "The withheld plaque opens to ALTERNATIVES TO INVESTIGATE after the full operational objection."
       },
       {
-        "id": "secondary",
-        "plant_at_s": 52,
-        "promise": "The FIRST DRAFT flag appears with a capped pen waiting in the foreground. What action changes the generated section next?",
-        "pay_at_s": 85,
-        "payoff": "The pen is uncapped and the professional visibly refines the editable section. FIRST DRAFT stays visible until the narration explicitly names the user's refinement and approval.",
-        "gap_to_primary_pay_s": 13
+        "name": "Will changing biology preserve the result?",
+        "plant_s": 44.4,
+        "payoff_s": 77.1,
+        "span_s": 32.7,
+        "payoff": "Both labeled experiments are held together; stock-linked recruitment has higher catch and lower spawning biomass, and smoother response supplies no annual-stability result."
       }
     ],
-    "rehooks": [
-      {"at_s": 29, "action": "A giant email subject slot becomes a physical passage into the earlier Army workflow"},
-      {"at_s": 62, "action": "Machine housings retreat while both useful outputs take the whole foreground"},
-      {"at_s": 94, "action": "The output shelf and professional desk separate in depth, revealing the two different jobs"}
+    "payoff_separation_s": 20.1,
+    "padding_test": {
+      "verdict": "A 90-second cut omitting the Act 3 test would be worse.",
+      "beat_tests": [
+        {
+          "time_s": [
+            63.4,
+            68.7
+          ],
+          "why_indispensable": "The distinct Ricker result prevents generalizing the first scenario's biomass gain."
+        },
+        {
+          "time_s": [
+            68.7,
+            85.6
+          ],
+          "why_indispensable": "The smoother-response visual must be actively separated from annual catch steadiness, or a pleasing animation would assert unsupported benefit."
+        },
+        {
+          "time_s": [
+            85.6,
+            97.2
+          ],
+          "why_indispensable": "Unmeasured human and ecological outcomes bound what the discovered policy has established."
+        },
+        {
+          "time_s": [
+            97.2,
+            101.4
+          ],
+          "why_indispensable": "The delayed research payoff earns optimism after the objection; without it, the piece implies that non-operational research has no value."
+        }
+      ]
+    }
+  },
+  "production": {
+    "target_duration_s": 131.3,
+    "story_duration_s": 119,
+    "credits_duration_s": 12.3,
+    "vo_word_count": 202,
+    "vo_segments": [
+      {
+        "start_s": 0.0,
+        "end_s": 15.8,
+        "text": "What if you could rehearse a fishing rule before a real season? A new pollock study lets an AI learn through simulated seasons, then compares its choices with a predefined harvest rule."
+      },
+      {
+        "start_s": 15.8,
+        "end_s": 32.7,
+        "text": "The useful trick is discovering policies, not just predicting fish. But what, exactly, has the rehearsal earned? First, the model assumes constant recruitment: young fish entering the stock."
+      },
+      {
+        "start_s": 32.7,
+        "end_s": 50.7,
+        "text": "The learned policy leaves more spawning biomass than the comparison, alongside large annual catch swings. More breeding stock does not make those swings disappear. Now change the biological assumption."
+      },
+      {
+        "start_s": 50.7,
+        "end_s": 68.7,
+        "text": "In a separate experiment, recruitment depends on the stock. Here, the learned policy catches more and leaves less spawning biomass than its comparison. The tradeoff changes with the model."
+      },
+      {
+        "start_s": 68.7,
+        "end_s": 85.6,
+        "text": "Its policy response is smoother. That does not demonstrate steadier annual catches. And neither experiment establishes household income, salmon bycatch performance, or a winning rule for real fishing seasons."
+      },
+      {
+        "start_s": 85.6,
+        "end_s": 101.4,
+        "text": "That is the strongest test: a model can reward choices its own assumptions favor. These are illustrative simulations, with operational development still ahead. The rehearsal earns alternatives to investigate."
+      },
+      {
+        "start_s": 101.4,
+        "end_s": 118.0,
+        "text": "For Alaska, that is a useful place to start. Which should a policy demonstrate first: steadier catches, more breeding fish, or a better balance across both?"
+      }
     ],
-    "padding_test": [
-      {"span_s": [61, 73], "why_90s_cut_worse": "Removing the full-scale outputs would make the film sound as if unfinished professional work cancels actual useful preparation. This is the strongest fair challenge to the thesis."},
-      {"span_s": [73, 84], "why_90s_cut_worse": "Removing the DORA professional action would leave a gathered report falsely equivalent to a determination. This adds the next documented verb rather than replaying retrieval."},
-      {"span_s": [84, 95], "why_90s_cut_worse": "Removing the Jumpstarter editing action would collapse two different workflows into generic human-in-the-loop reassurance. The pen and editable section pay the second loop."}
-    ]
+    "distinct_real_stages": [
+      "Research vessel deck",
+      "Wet laboratory",
+      "Harbor dock"
+    ],
+    "scales": [
+      "Extreme close-up brass grip",
+      "Close-up researcher face and contact",
+      "Medium tank-side comparison",
+      "Extreme wide sea and harbor"
+    ],
+    "camera_heights": [
+      "Low deck/waterline",
+      "Human eye level",
+      "Top-down tank insert"
+    ],
+    "casting": [
+      "Character worker rig; fictional illustrative researcher, no claim of stakeholder approval",
+      "GearLever and GripHand in props.tsx",
+      "Simulated/EvidenceState for model geometry and unresolved outcomes",
+      "Existing FX, biomes and stage3d materials where semantically correct"
+    ],
+    "new_assets": "At most a reusable portable scenario-control mounting frame; no salmon or trout rig relabeled as pollock. Use explicit unscaled schematic pollock paths if no vetted pollock asset exists.",
+    "freshness": "Wet deck, tank parallax and harbor scale replace the last two office episodes; no Sheet, ReviewPen or credential hero.",
+    "evidence_rules": [
+      "All experiment views visibly labeled SIMULATED.",
+      "Two recruitment scenarios reset and label their respective comparisons.",
+      "Qualitative labels and unscaled illustrative motion only; no invented quantitative graphs.",
+      "No policy smoothness claim becomes catch stability.",
+      "No income, bycatch, operational adoption or stakeholder sentiment is depicted as measured."
+    ],
+    "vo_spoken_duration_s": 118,
+    "tail_duration_s": 1,
+    "duration_rule": "Executable build_scenes.py band112-130seconds applies to spoken read; credits append afterward. Target118seconds spoken,1secondtail,12.3secondscredits."
   },
-  "scene_plan": [
-    {"id": "E01", "time_s": [0, 8], "set": "Handoff bench", "scale": "extreme close", "height": "low tabletop", "action": "READY lands and a pen shadow extends across an unseen desk"},
-    {"id": "E02", "time_s": [8, 22], "set": "Corporate identity wall", "scale": "wide", "height": "eye level", "action": "KGS announcement and corporate relationship to Koniag and Kodiak are named on physical plates"},
-    {"id": "E03", "time_s": [22, 31], "set": "Email intake aisle", "scale": "medium", "height": "overhead", "action": "AWS case study and earlier Army work are established before the subject-line identifier enters DORA"},
-    {"id": "E04", "time_s": [31, 43], "set": "Retrieval channel cutaway", "scale": "close", "height": "low tabletop", "action": "API record tabs arrive and prebuilt logic seats them into a report"},
-    {"id": "E05", "time_s": [43, 52], "set": "Separate drafting bay", "scale": "wide", "height": "eye level", "action": "Jumpstarter and the LLM mechanism enter with user inputs"},
-    {"id": "E06", "time_s": [52, 61], "set": "Separate drafting bay", "scale": "extreme close", "height": "overhead", "action": "Initial sections grow under the explicit FIRST DRAFT flag and capped pen"},
-    {"id": "E07", "time_s": [61, 73], "set": "Output gallery", "scale": "wide", "height": "low tabletop", "action": "Machinery recedes and both useful outputs take the foreground with the carried READY slug"},
-    {"id": "E08", "time_s": [73, 84], "set": "Professional review desk", "scale": "close", "height": "overhead", "action": "A generic faceless professional's hand inspects the report in the described review and determination workflow"},
-    {"id": "E09", "time_s": [84, 95], "set": "Professional editing desk", "scale": "medium", "height": "eye level", "action": "The pen uncaps and editable sections are refined as the narration names human refinement and approval"},
-    {"id": "E10", "time_s": [95, 106], "set": "Handoff bench", "scale": "wide", "height": "high oblique", "action": "Output arrival and professional completion separate in depth and READY finds its precise placement"},
-    {"id": "E11", "time_s": [106, 114], "set": "Corporate identity wall", "scale": "medium", "height": "eye level", "action": "Source attribution remains visible and no independent Wingman productivity verdict is claimed"},
-    {"id": "E12", "time_s": [114, 120], "set": "Handoff bench", "scale": "extreme close", "height": "low tabletop", "action": "The same READY slug seats and the opening pen lifts into work"}
-  ],
-  "asset_plan": {
-    "hero": "TypeSlug",
-    "shelf_cast": ["TypeSlug", "GripHand", "PenAndDocument", "BrassPlate", "Nameplate", "PaperOfficeBG", "Sheet as supporting report only", "ClaimChip", "Stage3D", "CameraMoves"],
-    "freshness": "No Sheet or FlightCrate hero and no research notebook. The movie follows a movable cast-metal word across a schematic office workflow. Stage depth separates preparation from professional completion. No Character face, StampBot or culturally coded prop.",
-    "new_asset_request": "None required. Reuse TypeSlug's held and seated state channels; use existing supporting paper and hand assets. Generic API channels and editing surfaces are set geometry, not bespoke hero rigs.",
-    "look_suggestion": "Deep marine office shadows, copper side faces, warm white output stock and crisp raking light. Avoid yesterday's lilac and citron notebook palette. Keep practical depth and mobile-readable status words.",
-    "feasibility_warning": "The pen should demonstrate refinement through an explicitly schematic selection and text reflow. Do not animate a fake factual error or an approval stamp. A report's human determination can be named without portraying a specific vendor outcome."
-  },
-  "future_vo_draft": "The machine has finished something. What, exactly?\n\nKoniag Government Services says it supports Wingman, a platform for office assistants. Its September eleventh announcement names contracting, logistics and financial management.\n\nKGS belongs to Koniag, the regional Alaska Native corporation associated with Kodiak.\n\nAn AWS case study shows earlier Army work behind this approach.\n\nFirst comes DORA, the Determination of Responsibility Assistant. A professional emails a vendor identifier. DORA retrieves compliance records through APIs, including SAM dot gov. Prebuilt logic assembles a standardized report.\n\nSeparate Jumpstarter tools use large language models through Amazon Bedrock. User inputs become initial sections of contracting documents.\n\nA report and a first draft. Those are tangible outputs.\n\nGive them the whole screen for a moment. Records have been gathered. A blank section now contains text someone can work with. That's useful preparation.\n\nNow follow the handoff.\n\nThe contracting professional reviews DORA's report and makes the determination. The Jumpstarter user refines the generated sections and approves them.\n\nThe page arriving and the professional finishing are different events.\n\nThese are the workflows described by AWS. They don't establish an independently measured productivity result for Wingman.\n\nStill, the useful part doesn't disappear at that boundary. It arrives there.\n\nWhen the machine says ready, ask what it's ready for.\n\nReady for the work that follows.",
-  "copy_notes": "The 214-word draft is a treatment timing proof, not a locked narration. TTS can speak September eleventh and SAM dot gov while captions normalize to September 11th and SAM.gov. The two mechanisms finish their introduction by word 100, leaving room before 60 seconds at the target read. No prohibited performance numbers are used. Source attribution and all final claim contracts remain mandatory.",
-  "self_critique": "Primary-loop risk is that the audience infers the answer as soon as human review appears. Keep the final placement of READY a spatial discovery rather than claiming the professional boundary itself is secret. Act 3 must give the completed preparation a beautiful uninterrupted look before following each documented human action. The wide output-gallery shot and distinct editing action are essential to earn 120 seconds."
+  "enthusiast_contribution": "The affirmative accomplishment leads and gets a physical verb: researchers can discover candidate harvest rules through repeated simulated seasons. The final optimism is earned by keeping the tool useful after the strongest model-limit test."
 }

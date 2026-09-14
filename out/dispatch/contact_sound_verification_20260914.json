@@ -1,0 +1,2642 @@
+{
+  "run_date": "2026-09-14",
+  "candidate": "candidate3",
+  "reviewed_at_utc": "2026-09-14T13:18:01.368111+00:00",
+  "status": "contact_audit_complete_no_definite_sync_defect_in_sampled_contacts",
+  "formal_flow_post_ship": true,
+  "identity": {
+    "source_sha256": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
+    "master_mp4_sha256": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
+    "master_wav_sha256": "334f44b5822a721a1036e40742917bc25ea5d26eb4b91d81e9516400d22e7037",
+    "native_video_sha256": null,
+    "events_sha256": "03889dbd78f42089a9218f3cef57e808ab1f0662c5f607a04a2a5befd766e40d",
+    "mix_script_sha256": "e00daf5f36cde27408ac63287c9465ed3f5023dfe959fa4bb6c7834e2b304848",
+    "composition": "Dispatch0914",
+    "video_frames": 3778,
+    "fps": 30,
+    "duration_s": 125.933344,
+    "render_receipt_state": "complete",
+    "encode_receipt_state_at_review": "complete; final-candidate3 and post-candidate3 jobs exit0, same master preflight0",
+    "provenance_basis": "Current exact source/master/WAV/events SHA256; ffprobe3778frames30fps125.933344s; direct RGB comparison to candidate3 native frames; packet-by-packet AAC payload hashes and PTS/DTS/duration identical to prior audited master."
+  },
+  "method": [
+    "Read the actual38-event bank selection and rendered_start_s. Reproduced each exact deterministic pitch, resampling, sustained-cue EQ, gain and pan filter in ffmpeg, in memory, without modifying source or media. Measured first minus20dB onset, absolute sample peak and5ms RMS peak separately.",
+    "Correlated each performed cue template against the finalized master WAV within a200ms search region. Ten templates with correlation>=0.3 independently recover4.943-5.057ms processing delay, consistent with the final limiter. Lower-correlation cases were not treated as individual cue verification or sync failures.",
+    "Decoded ten300ms windows from the current muxed AAC master and the finalized WAV. Correlation recovered zero additional offset at every window; correlations range0.999070-0.999970. Thus mux/AAC does not add a measured shift in these samples.",
+    "Checked ffprobe158frames for each inspected current native chunk and inspected actual consecutive30fps contact strips. Then decoded the same eight-frame ranges from the current encoded master. All ten encoded strips are byte-identical to their native counterparts; the collar comparison used full native video to cross its chunk boundary.",
+    "Native and encoded strips show hand closure, the long opening throw reaching its detent, four spring flaps, weight/socket seating, gate retraction, collar separation and final lever settle. No human listening or full-film perceptual judgment is claimed.",
+    "Candidate3: entire AAC packet payload-hash/PTS/DTS/duration/size listing matches candidate1 exactly. Prior AAC/WAV correlation and isolated cue measurements therefore apply unchanged. Decoded new master RGB for current contact and repair frames and compared directly with candidate3 native PNG RGB. This is actual encoded verification, not source math."
+  ],
+  "measured_limits": {
+    "performed_events": 38,
+    "discrete_transient_events": 25,
+    "discrete_isolated_sample_peak_minus_authored_contact_ms": [
+      -11.709750566886612,
+      18.421768707483466
+    ],
+    "master_common_processing_delay_ms": [
+      4.9433106575963714,
+      5.056689342403628
+    ],
+    "estimated_discrete_peak_minus_first_authored_video_frame_ms": [
+      -27.366009070291852,
+      23.411768707483738
+    ],
+    "video_frame_duration_ms": 33.333333333333336,
+    "visual_precision": "Frame-level contact windows only; not subframe pixel-motion metrology. The estimated discrete range stays within one30fps frame.",
+    "aac_additional_offset_ms": 0,
+    "aac_alignment_windows": 10,
+    "actual_native_encoded_contact_windows": 10,
+    "native_encoded_strip_matches": 10,
+    "candidate3_native_encoded_contact_windows": 12,
+    "candidate3_native_encoded_exact_rgb_frames": 166
+  },
+  "sustained_cue_interpretation": [
+    "Whoosh peaks occur roughly177-296ms after authored movement onset while their air movement is still underway. They are not contact clicks and their maxima must not be compared with movement start as if they were impacts.",
+    "Beat20 creak has a global sample maximum140.9ms after the authored flap crossing but its5ms RMS maximum is only3.3ms later. Beat3 creak likewise has a late340.2ms individual sample maximum but its RMS maximum is0.6ms from the authored contact. An onset/absolute-maximum distinction matters here.",
+    "Paper and chain cues can peak44-211ms after their scheduled gestures. Those are sustained friction cues; this numeric audit does not establish their subjective prominence under speech."
+  ],
+  "findings": [],
+  "remaining_checks": [
+    "No human listening or claim of subjective cue prominence under narration. Publication and other release gates remain parent-owned."
+  ],
+  "aac_wav_alignment": [
+    {
+      "window_start_s": 0.3,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9999316151569119
+    },
+    {
+      "window_start_s": 1.8,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9999698978602907
+    },
+    {
+      "window_start_s": 31.4,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.99988896335857
+    },
+    {
+      "window_start_s": 45.2,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9999664438293373
+    },
+    {
+      "window_start_s": 50.3,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9999482640328846
+    },
+    {
+      "window_start_s": 67,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9990700575526829
+    },
+    {
+      "window_start_s": 70,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9995704924990267
+    },
+    {
+      "window_start_s": 96.7,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9998863282245618
+    },
+    {
+      "window_start_s": 99.7,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9999635967641084
+    },
+    {
+      "window_start_s": 111.4,
+      "duration_s": 0.3,
+      "aac_minus_wav_ms": 0.0,
+      "correlation": 0.9997808506026012
+    }
+  ],
+  "cue_measurements": [
+    {
+      "t": 0.4666666666666667,
+      "kind": "thud",
+      "class": "standard",
+      "pan": 0,
+      "take": "thud_kenney_impactWood_medium_000.wav",
+      "family": "sub",
+      "label": "Researcher catches the mango grip before it reaches the research-bench detent | Bank performance: grip tap. Approved sound: grip tap",
+      "beat_id": 1,
+      "visual_at_s": 0.0,
+      "sfx_offset_frames": 14,
+      "sfx_offset_reason": "The approaching hand closes onto the moving grip at14frames. The control continues to the detent atbeat2+24frames, with a separate clank there.",
+      "rendered_start_s": 0.466,
+      "cue_sha256": "8bba4fff9a36bcabf27c4bdcb41548e9aeb4b0cf08b72c0b1cc42a68c0c3ae27",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=42309,aresample=44100,volume=0.3597,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.00836734693877551,
+      "five_ms_rms_peak_offset_s": 0.008117913832199546,
+      "minus20dB_onset_offset_s": 0.00045351473922902497,
+      "cue_sample_peak_s": 0.4743673469387755,
+      "cue_rms_peak_s": 0.4741179138321996,
+      "peak_minus_authored_contact_ms": 7.700680272108851,
+      "rms_minus_authored_contact_ms": 7.451247165532915,
+      "master_template_lag_ms": -84.21768707482993,
+      "master_template_correlation": 0.23725425335462014,
+      "master_template_peak_s": 0.39015873015873015,
+      "first_authored_contact_frame": 14,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 12.690680272108846
+    },
+    {
+      "t": 1.988,
+      "kind": "clank",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "clank_kenney_impactMetal_heavy_002.wav",
+      "family": "metal",
+      "label": "Grip settles into a visibly bounded model mount and the cable catches up | Bank performance: metal settle. Approved sound: metal settle",
+      "beat_id": 2,
+      "visual_at_s": 1.188,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 1.994,
+      "cue_sha256": "f01aee653bba7807abc28a675e9390a6e6d695f42294e45578ca71bf07613290",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44315,aresample=44100,volume=0.2412,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.003287981859410431,
+      "five_ms_rms_peak_offset_s": 0.0033333333333333335,
+      "minus20dB_onset_offset_s": 0.0004761904761904762,
+      "cue_sample_peak_s": 1.9972879818594105,
+      "cue_rms_peak_s": 1.9973333333333334,
+      "peak_minus_authored_contact_ms": 9.287981859410488,
+      "rms_minus_authored_contact_ms": 9.333333333333416,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.20571364612460946,
+      "master_template_peak_s": 2.002267573696145,
+      "first_authored_contact_frame": 60,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 2.277981859410527
+    },
+    {
+      "t": 4.256,
+      "kind": "creak",
+      "class": "texture",
+      "pan": 0,
+      "take": "creak_v5.wav",
+      "family": "texture",
+      "label": "Camera lifts enough to expose the tiny support under the outsized grip | Bank performance: wood squeak. Approved sound: wood squeak",
+      "beat_id": 3,
+      "visual_at_s": 3.456,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 4.247,
+      "cue_sha256": "984db4cdd74d61370eb991e3cbc645b7527f893e621c33d4fb5b9ce3782ae344",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44642,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2607,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.34922902494331065,
+      "five_ms_rms_peak_offset_s": 0.009591836734693878,
+      "minus20dB_onset_offset_s": 0.0010884353741496598,
+      "cue_sample_peak_s": 4.596229024943311,
+      "cue_rms_peak_s": 4.256591836734693,
+      "peak_minus_authored_contact_ms": 340.22902494331043,
+      "rms_minus_authored_contact_ms": 0.5918367346930964,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.1972227537297605,
+      "master_template_peak_s": 4.601201814058957,
+      "first_authored_contact_frame": 128,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 334.5523582766443
+    },
+    {
+      "t": 6.2,
+      "kind": "snap",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "snap_v5.wav",
+      "family": "pluck",
+      "label": "Researcher rotates the publication date tab into the model rim | Bank performance: paper flick. Approved sound: paper flick",
+      "beat_id": 4,
+      "visual_at_s": 5.4,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 6.214,
+      "cue_sha256": "7284aeac1de6d5b7e561590c6fe88eeb51189f822a0e61608a5210477150f0a5",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43206,aresample=44100,volume=0.2486,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.004421768707482994,
+      "five_ms_rms_peak_offset_s": 0.005873015873015873,
+      "minus20dB_onset_offset_s": 0.0005442176870748299,
+      "cue_sample_peak_s": 6.218421768707484,
+      "cue_rms_peak_s": 6.219873015873016,
+      "peak_minus_authored_contact_ms": 18.421768707483466,
+      "rms_minus_authored_contact_ms": 19.873015873016264,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.08631300522158644,
+      "master_template_peak_s": 6.2234013605442176,
+      "first_authored_contact_frame": 186,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 23.411768707483738
+    },
+    {
+      "t": 8.234,
+      "kind": "whoosh",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "whoosh_v6.wav",
+      "family": "air",
+      "label": "Observation window opens onto a clearly labeled schematic population | Bank performance: glass slide. Approved sound: glass slide",
+      "beat_id": 5,
+      "visual_at_s": 8.234,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel.",
+      "rendered_start_s": 8.245,
+      "cue_sha256": "f3916484994fa1dfd89b4eab4c16ea2ca63631d33b75addc7f5367872680d64a",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=45246,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2238,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.28489795918367344,
+      "five_ms_rms_peak_offset_s": 0.2833333333333333,
+      "minus20dB_onset_offset_s": 0.021519274376417232,
+      "cue_sample_peak_s": 8.529897959183673,
+      "cue_rms_peak_s": 8.528333333333332,
+      "peak_minus_authored_contact_ms": 295.89795918367304,
+      "rms_minus_authored_contact_ms": 294.33333333333246,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.39404958886990354,
+      "master_template_peak_s": 8.534875283446713,
+      "first_authored_contact_frame": 248,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 268.2212925170049
+    },
+    {
+      "t": 12.4,
+      "kind": "clank",
+      "class": "texture",
+      "pan": 0,
+      "take": "clank_kenney_impactMetal_heavy_003.wav",
+      "family": "metal",
+      "label": "Wide laboratory unfolds around researcher and the source name lands on its rail | Bank performance: whoosh. Approved sound: whoosh",
+      "beat_id": 6,
+      "visual_at_s": 11.6,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 12.39,
+      "cue_sha256": "80c9b141e1839da11211a3754ca3fe1ab801e3daaeafdfb4526451ac5aabf5f1",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43860,aresample=44100,volume=0.2061,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.0023356009070294786,
+      "five_ms_rms_peak_offset_s": 0.0038095238095238095,
+      "minus20dB_onset_offset_s": 0.0004988662131519275,
+      "cue_sample_peak_s": 12.39233560090703,
+      "cue_rms_peak_s": 12.393809523809525,
+      "peak_minus_authored_contact_ms": -7.664399092970342,
+      "rms_minus_authored_contact_ms": -6.190476190475636,
+      "master_template_lag_ms": 5.056689342403628,
+      "master_template_correlation": 0.06869439566192177,
+      "master_template_peak_s": 12.397392290249433,
+      "first_authored_contact_frame": 372,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -2.6743990929709582
+    },
+    {
+      "t": 17.192333333333334,
+      "kind": "tick",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "tick_v1.wav",
+      "family": "click",
+      "label": "Spring-loaded intake jaws open while observation tiles enter the simulator | Bank performance: tile clack. Approved sound: tile clack",
+      "beat_id": 7,
+      "visual_at_s": 16.459,
+      "sfx_offset_frames": 22,
+      "sfx_offset_reason": "Actual authored physical arrival at frame22 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 17.197,
+      "cue_sha256": "8bf23a892cfca917749629c29dde957e8b2ddb40bbae00619c1115f1ea3bc474",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43896,aresample=44100,volume=0.1897,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.002199546485260771,
+      "five_ms_rms_peak_offset_s": 0.003673469387755102,
+      "minus20dB_onset_offset_s": 0.00031746031746031746,
+      "cue_sample_peak_s": 17.19919954648526,
+      "cue_rms_peak_s": 17.200673469387755,
+      "peak_minus_authored_contact_ms": 6.866213151926814,
+      "rms_minus_authored_contact_ms": 8.34013605442152,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.028739705996733273,
+      "master_template_peak_s": 17.20417233560091,
+      "first_authored_contact_frame": 516,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 4.18954648526082
+    },
+    {
+      "t": 21.04,
+      "kind": "chain",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "chain_v5.wav",
+      "family": "metal",
+      "label": "Researcher turns control through a test cycle while season shutters change | Bank performance: ratchet. Approved sound: ratchet",
+      "beat_id": 8,
+      "visual_at_s": 20.64,
+      "sfx_offset_frames": 12,
+      "sfx_offset_reason": "Actual authored physical arrival at frame12 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 21.036,
+      "cue_sha256": "8204cc9d6ef0bf5b964da8e28e8e37c8c07725d0a5a627ead777c9a1fc2f1e1d",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44484,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2032,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.10147392290249434,
+      "five_ms_rms_peak_offset_s": 0.10666666666666667,
+      "minus20dB_onset_offset_s": 0.0007936507936507937,
+      "cue_sample_peak_s": 21.137473922902494,
+      "cue_rms_peak_s": 21.142666666666667,
+      "peak_minus_authored_contact_ms": 97.47392290249479,
+      "rms_minus_authored_contact_ms": 102.6666666666678,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.10441690463366618,
+      "master_template_peak_s": 21.142448979591833,
+      "first_authored_contact_frame": 632,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 75.7972562358269
+    },
+    {
+      "t": 23.68,
+      "kind": "pop",
+      "class": "texture",
+      "pan": 0,
+      "take": "pop_kenney_drop_001.wav",
+      "family": "blip",
+      "label": "A learned-rule token traverses the outcome path and returns to the input | Bank performance: soft roll. Approved sound: soft roll",
+      "beat_id": 9,
+      "visual_at_s": 22.88,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 23.682,
+      "cue_sha256": "895d8da98bd25dd5a13e9f6a477467d58bb8a16856513e8a2edebc990c412b72",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43517,aresample=44100,volume=0.2422,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.0038095238095238095,
+      "five_ms_rms_peak_offset_s": 0.004308390022675737,
+      "minus20dB_onset_offset_s": 0.00022675736961451248,
+      "cue_sample_peak_s": 23.68580952380952,
+      "cue_rms_peak_s": 23.686308390022674,
+      "peak_minus_authored_contact_ms": 5.8095238095212665,
+      "rms_minus_authored_contact_ms": 6.308390022674359,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.07586940815537134,
+      "master_template_peak_s": 23.690793650793648,
+      "first_authored_contact_frame": 711,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -9.200476190478923
+    },
+    {
+      "t": 27.04,
+      "kind": "snap",
+      "class": "standard",
+      "pan": 0,
+      "take": "snap_v6.wav",
+      "family": "pluck",
+      "label": "Cutaway spreads the return path around the lever and holds the completed connection | Bank performance: snap build. Approved sound: snap build",
+      "beat_id": 10,
+      "visual_at_s": 26.24,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 27.035,
+      "cue_sha256": "94246297e210a7e2f08a9f78827fcdd37faf331b7cf8540a06dfdd8b671824df",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44292,aresample=44100,volume=0.3583,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.004852607709750567,
+      "five_ms_rms_peak_offset_s": 0.005850340136054422,
+      "minus20dB_onset_offset_s": 0.00045351473922902497,
+      "cue_sample_peak_s": 27.03985260770975,
+      "cue_rms_peak_s": 27.040850340136053,
+      "peak_minus_authored_contact_ms": -0.14739229024840483,
+      "rms_minus_authored_contact_ms": 0.8503401360542284,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.6427733855349227,
+      "master_template_peak_s": 27.04482993197279,
+      "first_authored_contact_frame": 812,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -21.824058956916303
+    },
+    {
+      "t": 29.93,
+      "kind": "tick",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "tick_v5.wav",
+      "family": "click",
+      "label": "Feedback reaches the candidate and its adjustable detent changes position | Bank performance: detent click. Approved sound: detent click",
+      "beat_id": 11,
+      "visual_at_s": 29.13,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 29.923,
+      "cue_sha256": "a359ddce666b7f696cc5b2a5f7d6f57ba6a895863ff9375ac91ed33db62d20f7",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44936,aresample=44100,volume=0.2523,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.0037868480725623582,
+      "five_ms_rms_peak_offset_s": 0.003287981859410431,
+      "minus20dB_onset_offset_s": 0.00024943310657596373,
+      "cue_sample_peak_s": 29.92678684807256,
+      "cue_rms_peak_s": 29.92628798185941,
+      "peak_minus_authored_contact_ms": -3.2131519274400944,
+      "rms_minus_authored_contact_ms": -3.7120181405896346,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.025528183214373838,
+      "master_template_peak_s": 29.93176870748299,
+      "first_authored_contact_frame": 898,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -1.556485260774565
+    },
+    {
+      "t": 31.599999999999998,
+      "kind": "stamp",
+      "class": "texture",
+      "pan": 0,
+      "take": "stamp_v1.wav",
+      "family": "sub",
+      "label": "Fixed comparison token seats beside the learned candidate on its own rail | Bank performance: comparison block seats on its rail. Approved sound: block tap",
+      "beat_id": 12,
+      "visual_at_s": 31.4,
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip.",
+      "rendered_start_s": 31.601,
+      "cue_sha256": "f2d454a483f2ebd1c8942638352cfbc33f1ca77189fde96ff7408b6166bbd9b9",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43367,aresample=44100,volume=0.2568,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.006916099773242631,
+      "five_ms_rms_peak_offset_s": 0.007414965986394558,
+      "minus20dB_onset_offset_s": 0.0008616780045351474,
+      "cue_sample_peak_s": 31.60791609977324,
+      "cue_rms_peak_s": 31.608414965986395,
+      "peak_minus_authored_contact_ms": 7.916099773243701,
+      "rms_minus_authored_contact_ms": 8.414965986396794,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.9078688508555197,
+      "master_template_peak_s": 31.612902494331067,
+      "first_authored_contact_frame": 948,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 12.906099773239532
+    },
+    {
+      "t": 34.66,
+      "kind": "clank",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "clank_kenney_impactMetal_heavy_001.wav",
+      "family": "metal",
+      "label": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed | Bank performance: detent tick. Approved sound: detent tick",
+      "beat_id": 13,
+      "visual_at_s": 33.86,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 34.646,
+      "cue_sha256": "7c1ed58e342a8ec0cf36e2d49a6a40b2387bb58ba414098fc9b8ecbc4076cb23",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44097,aresample=44100,volume=0.2345,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.002290249433106576,
+      "five_ms_rms_peak_offset_s": 0.0036054421768707485,
+      "minus20dB_onset_offset_s": 0.00045351473922902497,
+      "cue_sample_peak_s": 34.64829024943311,
+      "cue_rms_peak_s": 34.64960544217687,
+      "peak_minus_authored_contact_ms": -11.709750566886612,
+      "rms_minus_authored_contact_ms": -10.39455782312615,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.5386492061641288,
+      "master_template_peak_s": 34.65326530612245,
+      "first_authored_contact_frame": 1040,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -13.386417233554937
+    },
+    {
+      "t": 36.3,
+      "kind": "paper",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "paper_v3.wav",
+      "family": "texture",
+      "label": "Researcher points toward the unopened stock-linked room beyond the first experiment | Bank performance: sleeve brush. Approved sound: sleeve brush",
+      "beat_id": 14,
+      "visual_at_s": 35.5,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 36.307,
+      "cue_sha256": "76f7f26a6b5db818f9cf65cb65b4cb4eca7493d76a21760869ee75a453c6500d",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=46866,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2334,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.15492063492063493,
+      "five_ms_rms_peak_offset_s": 0.15741496598639457,
+      "minus20dB_onset_offset_s": 0.009365079365079364,
+      "cue_sample_peak_s": 36.46192063492064,
+      "cue_rms_peak_s": 36.4644149659864,
+      "peak_minus_authored_contact_ms": 161.9206349206408,
+      "rms_minus_authored_contact_ms": 164.4149659864027,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.10347787240543609,
+      "master_template_peak_s": 36.46689342403628,
+      "first_authored_contact_frame": 1089,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 166.91063492064018
+    },
+    {
+      "t": 38.784,
+      "kind": "chain",
+      "class": "texture",
+      "pan": 0,
+      "take": "chain_v1.wav",
+      "family": "metal",
+      "label": "A second-room port turns toward camera but remains closed | Bank performance: hinge ratchet. Approved sound: hinge creak",
+      "beat_id": 15,
+      "visual_at_s": 37.984,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 38.794,
+      "cue_sha256": "33c26d28a910a3df41c220ce549d69a4e753b49194c5d74b0749eafd78f2a827",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43508,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2002,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.059365079365079364,
+      "five_ms_rms_peak_offset_s": 0.200702947845805,
+      "minus20dB_onset_offset_s": 0.0011111111111111111,
+      "cue_sample_peak_s": 38.853365079365076,
+      "cue_rms_peak_s": 38.9947029478458,
+      "peak_minus_authored_contact_ms": 69.36507936507752,
+      "rms_minus_authored_contact_ms": 210.70294784580312,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.18762737278730995,
+      "master_template_peak_s": 38.85834467120181,
+      "first_authored_contact_frame": 1164,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 58.355079365078666
+    },
+    {
+      "t": 39.64,
+      "kind": "whoosh",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "whoosh_v3.wav",
+      "family": "air",
+      "label": "First bay opens around its own two candidate identities | Bank performance: door slide. Approved sound: door slide",
+      "beat_id": 16,
+      "visual_at_s": 39.64,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel.",
+      "rendered_start_s": 39.627,
+      "cue_sha256": "c530e83b5f572474c97fa06a4a9a169266ba72b2f512d37d5001913cbc2abe6b",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44682,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.1925,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.18956916099773244,
+      "five_ms_rms_peak_offset_s": 0.18975056689342404,
+      "minus20dB_onset_offset_s": 0.022585034013605444,
+      "cue_sample_peak_s": 39.81656916099774,
+      "cue_rms_peak_s": 39.816750566893425,
+      "peak_minus_authored_contact_ms": 176.56916099773667,
+      "rms_minus_authored_contact_ms": 176.75056689342483,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.5188554405125558,
+      "master_template_peak_s": 39.82154195011338,
+      "first_authored_contact_frame": 1190,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 154.89249433107233
+    },
+    {
+      "t": 42.489999999999995,
+      "kind": "pop",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "pop_kenney_drop_003.wav",
+      "family": "blip",
+      "label": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle | Bank performance: water pulse. Approved sound: water pulse",
+      "beat_id": 17,
+      "visual_at_s": 41.69,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 42.491,
+      "cue_sha256": "2ee716de8eb9a1aa2ede29a683200a920e55f8739a0b5bcd3147d8729b6046dd",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44194,aresample=44100,volume=0.2121,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.004580498866213152,
+      "five_ms_rms_peak_offset_s": 0.005578231292517007,
+      "minus20dB_onset_offset_s": 0.00031746031746031746,
+      "cue_sample_peak_s": 42.49558049886621,
+      "cue_rms_peak_s": 42.49657823129252,
+      "peak_minus_authored_contact_ms": 5.580498866216033,
+      "rms_minus_authored_contact_ms": 6.578231292522219,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.1451563869581192,
+      "master_template_peak_s": 42.500566893424036,
+      "first_authored_contact_frame": 1275,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 0.5704988662103005
+    },
+    {
+      "t": 45.36,
+      "kind": "creak",
+      "class": "texture",
+      "pan": 0,
+      "take": "creak_v2.wav",
+      "family": "texture",
+      "label": "First result flap rises beside the constant-case learned rule | Bank performance: flap open. Approved sound: flap open",
+      "beat_id": 18,
+      "visual_at_s": 45.16,
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip.",
+      "rendered_start_s": 45.355,
+      "cue_sha256": "dcd75088686c679f060c24cdf9e18f65663af268fb88d5ebb41b0d00f4564bcb",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=41709,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2175,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.009229024943310658,
+      "five_ms_rms_peak_offset_s": 0.008231292517006803,
+      "minus20dB_onset_offset_s": 0.0008616780045351474,
+      "cue_sample_peak_s": 45.364229024943306,
+      "cue_rms_peak_s": 45.36323129251701,
+      "peak_minus_authored_contact_ms": 4.22902494330657,
+      "rms_minus_authored_contact_ms": 3.231292517007489,
+      "master_template_lag_ms": 5.011337868480726,
+      "master_template_correlation": 0.07605613965781055,
+      "master_template_peak_s": 45.36922902494331,
+      "first_authored_contact_frame": 1361,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 2.5523582766382447
+    },
+    {
+      "t": 50.393,
+      "kind": "tick",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "tick_v6.wav",
+      "family": "click",
+      "label": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket | Bank performance: socket seat. Approved sound: socket seat",
+      "beat_id": 19,
+      "visual_at_s": 49.593,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 50.398,
+      "cue_sha256": "1a3668de7f0a96d2c75946e3b87d3069b844795670748f192c6e832382d5aa25",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44837,aresample=44100,volume=0.2579,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.004172335600907029,
+      "five_ms_rms_peak_offset_s": 0.0031746031746031746,
+      "minus20dB_onset_offset_s": 0.00024943310657596373,
+      "cue_sample_peak_s": 50.40217233560091,
+      "cue_rms_peak_s": 50.40117460317461,
+      "peak_minus_authored_contact_ms": 9.172335600908355,
+      "rms_minus_authored_contact_ms": 8.174603174609274,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.056205118284467497,
+      "master_template_peak_s": 50.40714285714286,
+      "first_authored_contact_frame": 1512,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 7.162335600909842
+    },
+    {
+      "t": 52.298,
+      "kind": "creak",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "creak_v3.wav",
+      "family": "texture",
+      "label": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck | Bank performance: wood swing. Approved sound: wood swing",
+      "beat_id": 20,
+      "visual_at_s": 52.098,
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip.",
+      "rendered_start_s": 52.294,
+      "cue_sha256": "a3193287a0b6e8513a1083ff1b23a00379eae6d697c2985ced77424d34e037fa",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44027,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2513,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.14494331065759636,
+      "five_ms_rms_peak_offset_s": 0.0072562358276643995,
+      "minus20dB_onset_offset_s": 0.0007482993197278912,
+      "cue_sample_peak_s": 52.43894331065759,
+      "cue_rms_peak_s": 52.30125623582766,
+      "peak_minus_authored_contact_ms": 140.94331065759036,
+      "rms_minus_authored_contact_ms": 3.2562358276564396,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.1305689704585585,
+      "master_template_peak_s": 52.44392290249433,
+      "first_authored_contact_frame": 1569,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 143.9333106575944
+    },
+    {
+      "t": 55.76,
+      "kind": "whoosh",
+      "class": "standard",
+      "pan": 0,
+      "take": "whoosh_v1.wav",
+      "family": "air",
+      "label": "Doorway wipes into a different experimental room while first case stays behind | Bank performance: door whoosh. Approved sound: door whoosh",
+      "beat_id": 21,
+      "visual_at_s": 55.76,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel.",
+      "rendered_start_s": 55.758,
+      "cue_sha256": "5fb5852d43f7d2cc690cfbfa7ef71e3618b0500e29300ce44b8d2d218d1ed46e",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43847,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.3390,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.20188208616780046,
+      "five_ms_rms_peak_offset_s": 0.1444671201814059,
+      "minus20dB_onset_offset_s": 0.01804988662131519,
+      "cue_sample_peak_s": 55.9598820861678,
+      "cue_rms_peak_s": 55.902467120181406,
+      "peak_minus_authored_contact_ms": 199.88208616780412,
+      "rms_minus_authored_contact_ms": 142.46712018140784,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.9031025304049447,
+      "master_template_peak_s": 55.96485260770975,
+      "first_authored_contact_frame": 1673,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 198.2054195011358
+    },
+    {
+      "t": 60.013999999999996,
+      "kind": "clank",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "clank_kenney_impactMetal_heavy_004.wav",
+      "family": "metal",
+      "label": "Stock-linked inlet connects two named biological components without quantities | Bank performance: coupler click. Approved sound: coupler click",
+      "beat_id": 22,
+      "visual_at_s": 59.214,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 60.021,
+      "cue_sha256": "a517963cf7843dc53256a58185d7332265ce5d5e40f22e403d214be26442a96c",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44489,aresample=44100,volume=0.2154,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.002290249433106576,
+      "five_ms_rms_peak_offset_s": 0.0031519274376417233,
+      "minus20dB_onset_offset_s": 0.0004761904761904762,
+      "cue_sample_peak_s": 60.02329024943311,
+      "cue_rms_peak_s": 60.02415192743764,
+      "peak_minus_authored_contact_ms": 9.290249433114184,
+      "rms_minus_authored_contact_ms": 10.151927437647146,
+      "master_template_lag_ms": 3.310657596371882,
+      "master_template_correlation": 0.2867596879105076,
+      "master_template_peak_s": 60.026598639455784,
+      "first_authored_contact_frame": 1801,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -5.053083900222077
+    },
+    {
+      "t": 62.839999999999996,
+      "kind": "thud",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "thud_kenney_impactWood_heavy_004.wav",
+      "family": "sub",
+      "label": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails | Bank performance: dual tap. Approved sound: dual tap",
+      "beat_id": 23,
+      "visual_at_s": 62.04,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 62.831,
+      "cue_sha256": "29cc03d6f0b8bd5d4d619c610e0e4992e23b829b55438dfbd408c774f0eb0709",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=45820,aresample=44100,volume=0.1980,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.0033106575963718823,
+      "five_ms_rms_peak_offset_s": 0.004399092970521542,
+      "minus20dB_onset_offset_s": 0.0006802721088435374,
+      "cue_sample_peak_s": 62.834310657596376,
+      "cue_rms_peak_s": 62.835399092970526,
+      "peak_minus_authored_contact_ms": -5.689342403620401,
+      "rms_minus_authored_contact_ms": -4.600907029470136,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.13981180868504758,
+      "master_template_peak_s": 62.839297052154194,
+      "first_authored_contact_frame": 1886,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -27.366009070291852
+    },
+    {
+      "t": 65.708,
+      "kind": "chain",
+      "class": "texture",
+      "pan": 0,
+      "take": "chain_v3.wav",
+      "family": "metal",
+      "label": "Researcher aligns the comparison under the second case label | Bank performance: rail scrape. Approved sound: rail scrape",
+      "beat_id": 24,
+      "visual_at_s": 64.908,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 65.721,
+      "cue_sha256": "4f83640687bee60df5e8bcaffd1b0ff18d11dab7f47968e6d120c7266ce06d9d",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43858,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.1950,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.16385487528344672,
+      "five_ms_rms_peak_offset_s": 0.16242630385487528,
+      "minus20dB_onset_offset_s": 0.0012244897959183673,
+      "cue_sample_peak_s": 65.88485487528345,
+      "cue_rms_peak_s": 65.88342630385488,
+      "peak_minus_authored_contact_ms": 176.85487528345334,
+      "rms_minus_authored_contact_ms": 175.42630385487712,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.21720757519207057,
+      "master_template_peak_s": 65.88984126984127,
+      "first_authored_contact_frame": 1972,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 156.51154195012396
+    },
+    {
+      "t": 67.02,
+      "kind": "snap",
+      "class": "standard",
+      "pan": 0,
+      "take": "snap_v4.wav",
+      "family": "pluck",
+      "label": "Stock-linked result opens beside the new learned candidate | Bank performance: flap snap. Approved sound: flap snap",
+      "beat_id": 25,
+      "visual_at_s": 66.82,
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip.",
+      "rendered_start_s": 67.032,
+      "cue_sha256": "b48cebf672596c6ef26454d180e0a41f10ca3563078986397e3e84583b10c6d5",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44325,aresample=44100,volume=0.3764,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.00526077097505669,
+      "five_ms_rms_peak_offset_s": 0.005464852607709751,
+      "minus20dB_onset_offset_s": 0.0005215419501133786,
+      "cue_sample_peak_s": 67.03726077097505,
+      "cue_rms_peak_s": 67.03746485260771,
+      "peak_minus_authored_contact_ms": 17.260770975056516,
+      "rms_minus_authored_contact_ms": 17.464852607716352,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.21323647620871897,
+      "master_template_peak_s": 67.04224489795918,
+      "first_authored_contact_frame": 2011,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 8.917437641727588
+    },
+    {
+      "t": 70.10900000000001,
+      "kind": "paw",
+      "class": "standard",
+      "pan": 0,
+      "take": "paw_kenney_impactSoft_heavy_001.wav",
+      "family": "sub",
+      "label": "Second stock-linked flap opens equally large beside the first result | Bank performance: muted knock. Approved sound: muted knock",
+      "beat_id": 26,
+      "visual_at_s": 69.909,
+      "sfx_offset_frames": 6,
+      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip.",
+      "rendered_start_s": 70.098,
+      "cue_sha256": "1b31e1a20e42fd0e2df0ab67a93590f4af296fb963c5a272e5e97a52f4637302",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=42990,aresample=44100,volume=0.3659,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.006054421768707483,
+      "five_ms_rms_peak_offset_s": 0.004920634920634921,
+      "minus20dB_onset_offset_s": 0.0009523809523809524,
+      "cue_sample_peak_s": 70.10405442176871,
+      "cue_rms_peak_s": 70.10292063492064,
+      "peak_minus_authored_contact_ms": -4.945578231300374,
+      "rms_minus_authored_contact_ms": -6.079365079372678,
+      "master_template_lag_ms": 5.056689342403628,
+      "master_template_correlation": 0.49740180014170027,
+      "master_template_peak_s": 70.1091156462585,
+      "first_authored_contact_frame": 2104,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -24.288911564624982
+    },
+    {
+      "t": 73.88,
+      "kind": "whoosh",
+      "class": "texture",
+      "pan": 0,
+      "take": "whoosh_v2.wav",
+      "family": "air",
+      "label": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field | Bank performance: tray slide. Approved sound: tray slide",
+      "beat_id": 27,
+      "visual_at_s": 73.88,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel.",
+      "rendered_start_s": 73.883,
+      "cue_sha256": "23624949413b12ec3408600fe352be2adcd1ca5999bc0f33e0b87c22a06ec281",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=42896,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2499,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.26727891156462585,
+      "five_ms_rms_peak_offset_s": 0.18784580498866213,
+      "minus20dB_onset_offset_s": 0.025170068027210883,
+      "cue_sample_peak_s": 74.15027891156463,
+      "cue_rms_peak_s": 74.07084580498866,
+      "peak_minus_authored_contact_ms": 270.27891156463113,
+      "rms_minus_authored_contact_ms": 190.845804988669,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.6820821151133563,
+      "master_template_peak_s": 74.15526077097506,
+      "first_authored_contact_frame": 2217,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 255.2689115646274
+    },
+    {
+      "t": 77.16799999999999,
+      "kind": "creak",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "creak_v6.wav",
+      "family": "texture",
+      "label": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed | Bank performance: frame hinge. Approved sound: frame hinge",
+      "beat_id": 28,
+      "visual_at_s": 76.368,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 77.165,
+      "cue_sha256": "1e6a710f5eaa9bdd1bb8335a8d74d07bd1cc9df5900fa9a67b5ad18d64cb1927",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=45161,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2590,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.026530612244897958,
+      "five_ms_rms_peak_offset_s": 0.007165532879818594,
+      "minus20dB_onset_offset_s": 0.0008163265306122449,
+      "cue_sample_peak_s": 77.1915306122449,
+      "cue_rms_peak_s": 77.17216553287983,
+      "peak_minus_authored_contact_ms": 23.53061224491171,
+      "rms_minus_authored_contact_ms": 4.165532879838452,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.4397457282319455,
+      "master_template_peak_s": 77.19650793650794,
+      "first_authored_contact_frame": 2316,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -3.479387755092489
+    },
+    {
+      "t": 80.89999999999999,
+      "kind": "thud",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "thud_kenney_impactWood_heavy_000.wav",
+      "family": "sub",
+      "label": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame | Bank performance: bench thud. Approved sound: bench thud",
+      "beat_id": 29,
+      "visual_at_s": 80.1,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 80.903,
+      "cue_sha256": "c27a33a4e5dd32d6e9f7e28788df46776f4bb38ce834ab760abf2c65c3e110bd",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43469,aresample=44100,volume=0.2186,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.004013605442176871,
+      "five_ms_rms_peak_offset_s": 0.004920634920634921,
+      "minus20dB_onset_offset_s": 0.0007936507936507937,
+      "cue_sample_peak_s": 80.90701360544219,
+      "cue_rms_peak_s": 80.90792063492064,
+      "peak_minus_authored_contact_ms": 7.0136054421965355,
+      "rms_minus_authored_contact_ms": 7.920634920651537,
+      "master_template_lag_ms": 4.9433106575963714,
+      "master_template_correlation": 0.1417772944965439,
+      "master_template_peak_s": 80.9119501133787,
+      "first_authored_contact_frame": 2427,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 12.003605442188814
+    },
+    {
+      "t": 84.02799999999999,
+      "kind": "tick",
+      "class": "texture",
+      "pan": 0,
+      "take": "tick_v2.wav",
+      "family": "click",
+      "label": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above | Bank performance: shutter slide. Approved sound: shutter slide",
+      "beat_id": 30,
+      "visual_at_s": 83.228,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 84.022,
+      "cue_sha256": "8c2c9adab149949aeb7ca068cb61b4e82802cec526b2ebc9ca1728e4cd3a05d1",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=45025,aresample=44100,volume=0.2107,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.0028117913832199546,
+      "five_ms_rms_peak_offset_s": 0.0032653061224489797,
+      "minus20dB_onset_offset_s": 0.00031746031746031746,
+      "cue_sample_peak_s": 84.02481179138323,
+      "cue_rms_peak_s": 84.02526530612245,
+      "peak_minus_authored_contact_ms": -3.188208616762722,
+      "rms_minus_authored_contact_ms": -2.734693877542327,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.030826913069793703,
+      "master_template_peak_s": 84.02979591836736,
+      "first_authored_contact_frame": 2521,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -3.5315419500960843
+    },
+    {
+      "t": 88.72,
+      "kind": "clank",
+      "class": "standard",
+      "pan": 0,
+      "take": "clank_kenney_impactMetal_medium_000.wav",
+      "family": "metal",
+      "label": "Testing leaf unfolds beneath both rails as camera rises to the full-size working quay | Bank performance: leaf clunk. Approved sound: leaf clunk",
+      "beat_id": 31,
+      "visual_at_s": 87.92,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 88.729,
+      "cue_sha256": "d7c6874b1498dea963b9708b86c28760fb923483b7459ee5020b224a8c4506b4",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44352,aresample=44100,volume=0.3652,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.005578231292517007,
+      "five_ms_rms_peak_offset_s": 0.006417233560090703,
+      "minus20dB_onset_offset_s": 0.0003401360544217687,
+      "cue_sample_peak_s": 88.73457823129252,
+      "cue_rms_peak_s": 88.73541723356009,
+      "peak_minus_authored_contact_ms": 14.578231292517785,
+      "rms_minus_authored_contact_ms": 15.417233560086174,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.08857141479434495,
+      "master_template_peak_s": 88.73956916099773,
+      "first_authored_contact_frame": 2662,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 6.2348979591888565
+    },
+    {
+      "t": 91.53099999999999,
+      "kind": "snap",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "snap_v3.wav",
+      "family": "pluck",
+      "label": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule | Bank performance: shutter tap. Approved sound: shutter tap",
+      "beat_id": 32,
+      "visual_at_s": 90.731,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 91.519,
+      "cue_sha256": "524733147cd45fcdf1b6f89897c1f1b8eed5335c2b4197bb9719bee38daeb8a7",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=42740,aresample=44100,volume=0.2363,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.0035374149659863946,
+      "five_ms_rms_peak_offset_s": 0.00655328798185941,
+      "minus20dB_onset_offset_s": 0.0005895691609977325,
+      "cue_sample_peak_s": 91.522537414966,
+      "cue_rms_peak_s": 91.52555328798186,
+      "peak_minus_authored_contact_ms": -8.462585033996106,
+      "rms_minus_authored_contact_ms": -5.446712018127187,
+      "master_template_lag_ms": 89.70521541950113,
+      "master_template_correlation": 0.16147290479003407,
+      "master_template_peak_s": 91.61224489795919,
+      "first_authored_contact_frame": 2746,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -5.805918367329355
+    },
+    {
+      "t": 93.74,
+      "kind": "tick",
+      "class": "standard",
+      "pan": 0,
+      "take": "tick_v4.wav",
+      "family": "click",
+      "label": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements | Bank performance: shutter click. Approved sound: shutter click",
+      "beat_id": 33,
+      "visual_at_s": 92.94,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 93.743,
+      "cue_sha256": "8df14d736325d7f901b9c07d34975f1be3c222f2ee4232f07ddd148d848d6d2a",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43575,aresample=44100,volume=0.4125,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.003061224489795918,
+      "five_ms_rms_peak_offset_s": 0.004240362811791383,
+      "minus20dB_onset_offset_s": 0.00031746031746031746,
+      "cue_sample_peak_s": 93.7460612244898,
+      "cue_rms_peak_s": 93.74724036281178,
+      "peak_minus_authored_contact_ms": 6.061224489798178,
+      "rms_minus_authored_contact_ms": 7.240362811785417,
+      "master_template_lag_ms": 4.988662131519274,
+      "master_template_correlation": 0.06913412503859494,
+      "master_template_peak_s": 93.75104308390023,
+      "first_authored_contact_frame": 2813,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -15.615442176866168
+    },
+    {
+      "t": 96.93733333333333,
+      "kind": "pop",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "pop_kenney_drop_002.wav",
+      "family": "blip",
+      "label": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space | Bank performance: latch release. Approved sound: latch release",
+      "beat_id": 34,
+      "visual_at_s": 95.604,
+      "sfx_offset_frames": 40,
+      "sfx_offset_reason": "Actual authored physical arrival at frame40 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 96.932,
+      "cue_sha256": "15e82aed7aa290cc4fd6bf9011b4ed9fc5ef2cb562f63d687f8c06ae36c83ed9",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=44321,aresample=44100,volume=0.2503,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.004512471655328798,
+      "five_ms_rms_peak_offset_s": 0.0054875283446712015,
+      "minus20dB_onset_offset_s": 0.00029478458049886624,
+      "cue_sample_peak_s": 96.93651247165533,
+      "cue_rms_peak_s": 96.93748752834468,
+      "peak_minus_authored_contact_ms": -0.8208616779938893,
+      "rms_minus_authored_contact_ms": 0.15419501134772418,
+      "master_template_lag_ms": 6.303854875283447,
+      "master_template_correlation": 0.04177297995726835,
+      "master_template_peak_s": 96.94281179138322,
+      "first_authored_contact_frame": 2909,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -25.16419501132816
+    },
+    {
+      "t": 99.92666666666666,
+      "kind": "clank",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "clank_kenney_impactMetal_heavy_000.wav",
+      "family": "metal",
+      "label": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research | Bank performance: collar click. Approved sound: collar click",
+      "beat_id": 35,
+      "visual_at_s": 98.86,
+      "sfx_offset_frames": 32,
+      "sfx_offset_reason": "Actual authored physical arrival at frame32 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 99.92,
+      "cue_sha256": "d92027463778212cdaf984ee6b6deebf11f2eb9e596ea4a1a7137f6d8b0b1120",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43899,aresample=44100,volume=0.2147,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.0023129251700680273,
+      "five_ms_rms_peak_offset_s": 0.0037868480725623582,
+      "minus20dB_onset_offset_s": 0.0004988662131519275,
+      "cue_sample_peak_s": 99.92231292517008,
+      "cue_rms_peak_s": 99.92378684807257,
+      "peak_minus_authored_contact_ms": -4.353741496586849,
+      "rms_minus_authored_contact_ms": -2.8798185940956955,
+      "master_template_lag_ms": 74.96598639455782,
+      "master_template_correlation": 0.14644607333478815,
+      "master_template_peak_s": 99.99727891156463,
+      "first_authored_contact_frame": 2998,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -6.030408163255174
+    },
+    {
+      "t": 104.639,
+      "kind": "paper",
+      "class": "texture",
+      "pan": 0,
+      "take": "paper_v1.wav",
+      "family": "texture",
+      "label": "Research-value plaque unfolds while both candidates stay equally prominent | Bank performance: paper unfold. Approved sound: paper unfold",
+      "beat_id": 36,
+      "visual_at_s": 103.839,
+      "sfx_offset_frames": 24,
+      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 104.639,
+      "cue_sha256": "4a0874f179da3adb09208de30df4e0631fbc45769f6468ff2b7f6870099d3360",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=47833,aresample=44100,highpass=f=100,equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.2137,pan=stereo|c0=0.707*c0|c1=0.707*c1",
+      "sample_peak_offset_s": 0.1100453514739229,
+      "five_ms_rms_peak_offset_s": 0.04439909297052154,
+      "minus20dB_onset_offset_s": 0.013061224489795919,
+      "cue_sample_peak_s": 104.74904535147392,
+      "cue_rms_peak_s": 104.68339909297052,
+      "peak_minus_authored_contact_ms": 110.04535147392858,
+      "rms_minus_authored_contact_ms": 44.39909297052225,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.21201509903778076,
+      "master_template_peak_s": 104.75401360544218,
+      "first_authored_contact_frame": 3140,
+      "estimated_processed_peak_minus_first_contact_frame_ms": 87.36868480725946
+    },
+    {
+      "t": 108.42666666666666,
+      "kind": "paw",
+      "class": "texture",
+      "pan": -0.18,
+      "take": "paw_kenney_impactSoft_heavy_002.wav",
+      "family": "sub",
+      "label": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view | Bank performance: grip brush. Approved sound: grip brush",
+      "beat_id": 37,
+      "visual_at_s": 107.36,
+      "sfx_offset_frames": 32,
+      "sfx_offset_reason": "Actual authored physical arrival at frame32 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 108.412,
+      "cue_sha256": "05c36e23a568d5ac1eb453ae38c0d285aba7c5070646b588af95f6b3bb50c519",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=45218,aresample=44100,volume=0.1951,pan=stereo|c0=0.741*c0|c1=0.671*c1",
+      "sample_peak_offset_s": 0.005850340136054422,
+      "five_ms_rms_peak_offset_s": 0.004739229024943311,
+      "minus20dB_onset_offset_s": 0.0009070294784580499,
+      "cue_sample_peak_s": 108.41785034013606,
+      "cue_rms_peak_s": 108.41673922902496,
+      "peak_minus_authored_contact_ms": -8.816326530606489,
+      "rms_minus_authored_contact_ms": -9.927437641707115,
+      "master_template_lag_ms": 4.9433106575963714,
+      "master_template_correlation": 0.6466584769149347,
+      "master_template_peak_s": 108.42278911564625,
+      "first_authored_contact_frame": 3253,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -10.492993197274814
+    },
+    {
+      "t": 111.63733333333333,
+      "kind": "tick",
+      "class": "texture",
+      "pan": 0.12,
+      "take": "tick_v3.wav",
+      "family": "click",
+      "label": "Grip rebounds slightly and the patient hand guides it into its final research detent | Bank performance: detent settle. Approved sound: detent settle",
+      "beat_id": 38,
+      "visual_at_s": 110.704,
+      "sfx_offset_frames": 28,
+      "sfx_offset_reason": "Actual authored physical arrival at frame28 after the beat. Final picture contact and performed audio peak require verification.",
+      "rendered_start_s": 111.646,
+      "cue_sha256": "da251b2134f3fb67f2f1bddd71b1f5423ca6230d83ce74dbd0f4c8cfc9d8d821",
+      "performed_filter": "aformat=sample_rates=44100:channel_layouts=stereo,asetrate=43969,aresample=44100,volume=0.1986,pan=stereo|c0=0.683*c0|c1=0.730*c1",
+      "sample_peak_offset_s": 0.0029024943310657597,
+      "five_ms_rms_peak_offset_s": 0.0032426303854875284,
+      "minus20dB_onset_offset_s": 0.0003401360544217687,
+      "cue_sample_peak_s": 111.64890249433107,
+      "cue_rms_peak_s": 111.64924263038549,
+      "peak_minus_authored_contact_ms": 11.569160997737526,
+      "rms_minus_authored_contact_ms": 11.909297052156376,
+      "master_template_lag_ms": 4.965986394557823,
+      "master_template_correlation": 0.04343350030048681,
+      "master_template_peak_s": 111.65387755102041,
+      "first_authored_contact_frame": 3350,
+      "estimated_processed_peak_minus_first_contact_frame_ms": -12.774172335596745
+    }
+  ],
+  "prior_candidate_reference": {
+    "master_sha256": "54f37015d3fa550cd5749ac255183f22140118ac865a92e383c70ad6040cb1fc",
+    "report": "/tmp/alaska-dispatch-20260914/final_candidate1/contact_sound_verification_20260914.json"
+  },
+  "current_encoded_confirmation": {
+    "aac_packet_payload_and_timestamp_identical": true,
+    "aac_packet_listing_sha256": "8a2067164904f683507ce678387f6ded6420b5916ac13484792b81a938e118b7",
+    "aac_packet_count": 5904,
+    "wav_exact_previous": true,
+    "events_exact_previous": true,
+    "contact_windows": {
+      "hand": [
+        11,
+        18
+      ],
+      "opening_detent": [
+        57,
+        64
+      ],
+      "biomass_flap": [
+        1358,
+        1365
+      ],
+      "weight_socket": [
+        1509,
+        1516
+      ],
+      "catch_swings_flap": [
+        1566,
+        1573
+      ],
+      "catch_flap": [
+        2008,
+        2015
+      ],
+      "lower_biomass_flap": [
+        2101,
+        2108
+      ],
+      "gate": [
+        2905,
+        2912
+      ],
+      "collar": [
+        2995,
+        3002
+      ],
+      "ending": [
+        3346,
+        3353
+      ],
+      "goal_catch_contact": [
+        2743,
+        2750
+      ],
+      "goal_stock_contact": [
+        2810,
+        2817
+      ]
+    },
+    "frames": [
+      {
+        "frame": 11,
+        "t_s": 0.36666666666666664,
+        "encoded_pixel_sha256": "dc55c41a905aa29695e031fc92a8931e93aafe24b40c1cb0a53df8afecaa1eca",
+        "native_pixel_sha256": "dc55c41a905aa29695e031fc92a8931e93aafe24b40c1cb0a53df8afecaa1eca",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 12,
+        "t_s": 0.4,
+        "encoded_pixel_sha256": "61a5cea7ea2465d140e39dc980d4642caa29a2c4f7c35499a43f3d9ab7d67486",
+        "native_pixel_sha256": "61a5cea7ea2465d140e39dc980d4642caa29a2c4f7c35499a43f3d9ab7d67486",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 13,
+        "t_s": 0.43333333333333335,
+        "encoded_pixel_sha256": "9c113b9a398b3aea1ca864894f0ac7afe071b6d0e05b5c1bd35fb408abb6446b",
+        "native_pixel_sha256": "9c113b9a398b3aea1ca864894f0ac7afe071b6d0e05b5c1bd35fb408abb6446b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 14,
+        "t_s": 0.4666666666666667,
+        "encoded_pixel_sha256": "0cd360a09da23f89c59c041f7d1926e8ee644de8fe08c986ec560387c15404a4",
+        "native_pixel_sha256": "0cd360a09da23f89c59c041f7d1926e8ee644de8fe08c986ec560387c15404a4",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 15,
+        "t_s": 0.5,
+        "encoded_pixel_sha256": "a554bdda79b11208a98ebd4354062211edda9bbc03629b3fdd44f0e2198115d9",
+        "native_pixel_sha256": "a554bdda79b11208a98ebd4354062211edda9bbc03629b3fdd44f0e2198115d9",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 16,
+        "t_s": 0.5333333333333333,
+        "encoded_pixel_sha256": "e24112cc72edd9f47bfac285bdc3263ca7c8467b1216157b15b1c9a415b2ff5f",
+        "native_pixel_sha256": "e24112cc72edd9f47bfac285bdc3263ca7c8467b1216157b15b1c9a415b2ff5f",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 17,
+        "t_s": 0.5666666666666667,
+        "encoded_pixel_sha256": "22988d506e9a4df2a4eeaadcfeda6bc97b047d26c38a17d3a7b2aaaeca23f047",
+        "native_pixel_sha256": "22988d506e9a4df2a4eeaadcfeda6bc97b047d26c38a17d3a7b2aaaeca23f047",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 18,
+        "t_s": 0.6,
+        "encoded_pixel_sha256": "b4086eabb3e951f1d8767c9e6128c90ffa19d27dd0de727c4d37b4d91a3bbbec",
+        "native_pixel_sha256": "b4086eabb3e951f1d8767c9e6128c90ffa19d27dd0de727c4d37b4d91a3bbbec",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 57,
+        "t_s": 1.9,
+        "encoded_pixel_sha256": "de7daa4fc7119574e1dd265ded0de392fe47d80bf0187cc9e07986b9f5e4c128",
+        "native_pixel_sha256": "de7daa4fc7119574e1dd265ded0de392fe47d80bf0187cc9e07986b9f5e4c128",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 58,
+        "t_s": 1.9333333333333333,
+        "encoded_pixel_sha256": "e852614501a341e1e162219c852f55312088e4b0a1e8537313996d2aeb5f447c",
+        "native_pixel_sha256": "e852614501a341e1e162219c852f55312088e4b0a1e8537313996d2aeb5f447c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 59,
+        "t_s": 1.9666666666666666,
+        "encoded_pixel_sha256": "f871d5831322fce7fe28bfdd88be45c5af13172dba70f7b1c47590cbf6f427c3",
+        "native_pixel_sha256": "f871d5831322fce7fe28bfdd88be45c5af13172dba70f7b1c47590cbf6f427c3",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 60,
+        "t_s": 2.0,
+        "encoded_pixel_sha256": "9dc83a0b768f01159935e1f262a204b3f2e30893ab4b2852a9f37b99ea809c58",
+        "native_pixel_sha256": "9dc83a0b768f01159935e1f262a204b3f2e30893ab4b2852a9f37b99ea809c58",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 61,
+        "t_s": 2.033333333333333,
+        "encoded_pixel_sha256": "6a35893e3a8ee6e669e79d60b4a88b784c72e7641349e20e4001ae8419ebf9b7",
+        "native_pixel_sha256": "6a35893e3a8ee6e669e79d60b4a88b784c72e7641349e20e4001ae8419ebf9b7",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 62,
+        "t_s": 2.066666666666667,
+        "encoded_pixel_sha256": "8c01a32c2786cdcd73f43313fd7c38d7b1675b9ff8ee765987de05946d0bd4fe",
+        "native_pixel_sha256": "8c01a32c2786cdcd73f43313fd7c38d7b1675b9ff8ee765987de05946d0bd4fe",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 63,
+        "t_s": 2.1,
+        "encoded_pixel_sha256": "723be491ec45ea6f0a0df80a024c80a0524e671b1ce5bf11c1fc1deb4e41327c",
+        "native_pixel_sha256": "723be491ec45ea6f0a0df80a024c80a0524e671b1ce5bf11c1fc1deb4e41327c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 64,
+        "t_s": 2.1333333333333333,
+        "encoded_pixel_sha256": "6e1ddbced621a422068f6fa772c7fc98f1492cd5fc9b027d3fca227d8e845b71",
+        "native_pixel_sha256": "6e1ddbced621a422068f6fa772c7fc98f1492cd5fc9b027d3fca227d8e845b71",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1358,
+        "t_s": 45.266666666666666,
+        "encoded_pixel_sha256": "6eb723bc3d172894e7f51f9698489c4b789b449d918d80038321862185b167e5",
+        "native_pixel_sha256": "6eb723bc3d172894e7f51f9698489c4b789b449d918d80038321862185b167e5",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1359,
+        "t_s": 45.3,
+        "encoded_pixel_sha256": "6d9d78d5b79f70a70619116823e44f4de25beab066851a9f81ef5dc60a2b8396",
+        "native_pixel_sha256": "6d9d78d5b79f70a70619116823e44f4de25beab066851a9f81ef5dc60a2b8396",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1360,
+        "t_s": 45.333333333333336,
+        "encoded_pixel_sha256": "c47717f8294075864520b406ef8082b4ab627202434357a5d8a30c224aa7013c",
+        "native_pixel_sha256": "c47717f8294075864520b406ef8082b4ab627202434357a5d8a30c224aa7013c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1361,
+        "t_s": 45.36666666666667,
+        "encoded_pixel_sha256": "823303ae1df286bb0569a1f4149c83f1857432280967cd7c6e33b7a92282ab00",
+        "native_pixel_sha256": "823303ae1df286bb0569a1f4149c83f1857432280967cd7c6e33b7a92282ab00",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1362,
+        "t_s": 45.4,
+        "encoded_pixel_sha256": "faf18545d97772db3424f7591db25f95c69d032c16e96a3fe4c53ea1da6e830b",
+        "native_pixel_sha256": "faf18545d97772db3424f7591db25f95c69d032c16e96a3fe4c53ea1da6e830b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1363,
+        "t_s": 45.43333333333333,
+        "encoded_pixel_sha256": "335d8912d9f4681562df0cc95ca88ebf60232d09b380dd7aa8665e20751b5bc1",
+        "native_pixel_sha256": "335d8912d9f4681562df0cc95ca88ebf60232d09b380dd7aa8665e20751b5bc1",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1364,
+        "t_s": 45.46666666666667,
+        "encoded_pixel_sha256": "c7d23722ea7741ed3930200d185eb58b0e223076f67b0b1b74b9053fb2b015f9",
+        "native_pixel_sha256": "c7d23722ea7741ed3930200d185eb58b0e223076f67b0b1b74b9053fb2b015f9",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1365,
+        "t_s": 45.5,
+        "encoded_pixel_sha256": "51641c742648aa591edff1b3efa6739f833997151b88b12fb8f694bae48aae01",
+        "native_pixel_sha256": "51641c742648aa591edff1b3efa6739f833997151b88b12fb8f694bae48aae01",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1509,
+        "t_s": 50.3,
+        "encoded_pixel_sha256": "b5e8fe027dc19c8d501c002e3f32cddd714509a2e443e14828aac271474d301b",
+        "native_pixel_sha256": "b5e8fe027dc19c8d501c002e3f32cddd714509a2e443e14828aac271474d301b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1510,
+        "t_s": 50.333333333333336,
+        "encoded_pixel_sha256": "fc9134a0022304f399388e231569aa25d6cd9597ddbe52a14e998c092b946baa",
+        "native_pixel_sha256": "fc9134a0022304f399388e231569aa25d6cd9597ddbe52a14e998c092b946baa",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1511,
+        "t_s": 50.36666666666667,
+        "encoded_pixel_sha256": "1640e5cb79d6c7a736edf0c9009f93085579b6ee9f12e635f99c8242caea3efe",
+        "native_pixel_sha256": "1640e5cb79d6c7a736edf0c9009f93085579b6ee9f12e635f99c8242caea3efe",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1512,
+        "t_s": 50.4,
+        "encoded_pixel_sha256": "d7e3d6e057f2f7f2ef64b739fed78c2b6220598962897d1a06550443eba6d057",
+        "native_pixel_sha256": "d7e3d6e057f2f7f2ef64b739fed78c2b6220598962897d1a06550443eba6d057",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1513,
+        "t_s": 50.43333333333333,
+        "encoded_pixel_sha256": "530ab4e24e52177aad1982ca30b957ff581b96aaf7b4ced51987820f2c33b8b5",
+        "native_pixel_sha256": "530ab4e24e52177aad1982ca30b957ff581b96aaf7b4ced51987820f2c33b8b5",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1514,
+        "t_s": 50.46666666666667,
+        "encoded_pixel_sha256": "d5a856ef01d9281e033cbb3b6d4264f195d30ee55a35d3146c91dc39e10032b8",
+        "native_pixel_sha256": "d5a856ef01d9281e033cbb3b6d4264f195d30ee55a35d3146c91dc39e10032b8",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1515,
+        "t_s": 50.5,
+        "encoded_pixel_sha256": "45fc836a544a40cde8acf409118c40a1c308de749b2d5072a0b96c5b7cfa91ad",
+        "native_pixel_sha256": "45fc836a544a40cde8acf409118c40a1c308de749b2d5072a0b96c5b7cfa91ad",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1516,
+        "t_s": 50.53333333333333,
+        "encoded_pixel_sha256": "238647d4775cfc000455ea82587f1f38c6e2d4dbeaa537fa4c4b562b661ac030",
+        "native_pixel_sha256": "238647d4775cfc000455ea82587f1f38c6e2d4dbeaa537fa4c4b562b661ac030",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1566,
+        "t_s": 52.2,
+        "encoded_pixel_sha256": "5d440926613780c36513f49e489e7dbd67dbcab2835cff601070d2eeb1a02852",
+        "native_pixel_sha256": "5d440926613780c36513f49e489e7dbd67dbcab2835cff601070d2eeb1a02852",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1567,
+        "t_s": 52.233333333333334,
+        "encoded_pixel_sha256": "a5b47de092854d0592b79a791fa0325611d375868df67b4edcf9f969e216a71c",
+        "native_pixel_sha256": "a5b47de092854d0592b79a791fa0325611d375868df67b4edcf9f969e216a71c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1568,
+        "t_s": 52.266666666666666,
+        "encoded_pixel_sha256": "183717e4db3517e5e4734c4d8df9ae42c344ed65db76215c8f6ac12f8fc8f1f1",
+        "native_pixel_sha256": "183717e4db3517e5e4734c4d8df9ae42c344ed65db76215c8f6ac12f8fc8f1f1",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1569,
+        "t_s": 52.3,
+        "encoded_pixel_sha256": "b0444a1de29bc4de837f476c1c5c6ef915d0bd45621cd421f6d2cd54cb71b74b",
+        "native_pixel_sha256": "b0444a1de29bc4de837f476c1c5c6ef915d0bd45621cd421f6d2cd54cb71b74b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1570,
+        "t_s": 52.333333333333336,
+        "encoded_pixel_sha256": "b8ce742c6a0e9d5307ac9bd9eb9912429ec12f7362051a006f8cecb9d5dbaa6b",
+        "native_pixel_sha256": "b8ce742c6a0e9d5307ac9bd9eb9912429ec12f7362051a006f8cecb9d5dbaa6b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1571,
+        "t_s": 52.36666666666667,
+        "encoded_pixel_sha256": "e7afde7e3840775fe3d14ad6d063d0e48616c0f233e03f126f461cf7c973daff",
+        "native_pixel_sha256": "e7afde7e3840775fe3d14ad6d063d0e48616c0f233e03f126f461cf7c973daff",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1572,
+        "t_s": 52.4,
+        "encoded_pixel_sha256": "27bdfab94075874f5894718d0257deece7dfb851ac258f20fb43ad90ff86db82",
+        "native_pixel_sha256": "27bdfab94075874f5894718d0257deece7dfb851ac258f20fb43ad90ff86db82",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 1573,
+        "t_s": 52.43333333333333,
+        "encoded_pixel_sha256": "faec97adb23e6efaf6a227c8b1bf41e7bffc50d149453982ac9321656611f1aa",
+        "native_pixel_sha256": "faec97adb23e6efaf6a227c8b1bf41e7bffc50d149453982ac9321656611f1aa",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2008,
+        "t_s": 66.93333333333334,
+        "encoded_pixel_sha256": "fa447b4c2ede954bfd7b3586801a663aecdcff7620ac1f72fa005bee2d57b11b",
+        "native_pixel_sha256": "fa447b4c2ede954bfd7b3586801a663aecdcff7620ac1f72fa005bee2d57b11b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2009,
+        "t_s": 66.96666666666667,
+        "encoded_pixel_sha256": "cdaa3e6aaf0e5c414787c26536f5e22257f94003502ce1bfda0deffb74513546",
+        "native_pixel_sha256": "cdaa3e6aaf0e5c414787c26536f5e22257f94003502ce1bfda0deffb74513546",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2010,
+        "t_s": 67.0,
+        "encoded_pixel_sha256": "fd2661c598e7133ecfccae582ae05c3a96e1cf43b4d961b6a513145a05137a4a",
+        "native_pixel_sha256": "fd2661c598e7133ecfccae582ae05c3a96e1cf43b4d961b6a513145a05137a4a",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2011,
+        "t_s": 67.03333333333333,
+        "encoded_pixel_sha256": "3a8ee6e813637dd84e58c56721476c749d05fd0482a1379feeb1c10cdd77c221",
+        "native_pixel_sha256": "3a8ee6e813637dd84e58c56721476c749d05fd0482a1379feeb1c10cdd77c221",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2012,
+        "t_s": 67.06666666666666,
+        "encoded_pixel_sha256": "de97ca12e35873855393c83e77526737d7a46dae2176305e61844bb1d48a32c5",
+        "native_pixel_sha256": "de97ca12e35873855393c83e77526737d7a46dae2176305e61844bb1d48a32c5",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2013,
+        "t_s": 67.1,
+        "encoded_pixel_sha256": "71b89e5dc17afa90767d9575ab6e2df9aecfac95d0745bff4586bca8ecdaf94c",
+        "native_pixel_sha256": "71b89e5dc17afa90767d9575ab6e2df9aecfac95d0745bff4586bca8ecdaf94c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2014,
+        "t_s": 67.13333333333334,
+        "encoded_pixel_sha256": "f88a76b612c9758a07a0e4c072694686de765924fac5be5412e60c79d8a22e50",
+        "native_pixel_sha256": "f88a76b612c9758a07a0e4c072694686de765924fac5be5412e60c79d8a22e50",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2015,
+        "t_s": 67.16666666666667,
+        "encoded_pixel_sha256": "1ea34dbc54098f93f53c16043ec1fa92061de057b55363de75345517152c0f01",
+        "native_pixel_sha256": "1ea34dbc54098f93f53c16043ec1fa92061de057b55363de75345517152c0f01",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2101,
+        "t_s": 70.03333333333333,
+        "encoded_pixel_sha256": "72a3c05121f7464632db0bd7d446ac00666f555a2663fee75e34e9ee9c647d4e",
+        "native_pixel_sha256": "72a3c05121f7464632db0bd7d446ac00666f555a2663fee75e34e9ee9c647d4e",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2102,
+        "t_s": 70.06666666666666,
+        "encoded_pixel_sha256": "5a124f11ce8ff7e65583bc0a7386ad39a95bb057a6cd56cd97adc36a1aedb1c1",
+        "native_pixel_sha256": "5a124f11ce8ff7e65583bc0a7386ad39a95bb057a6cd56cd97adc36a1aedb1c1",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2103,
+        "t_s": 70.1,
+        "encoded_pixel_sha256": "0ac6794be182695e9881d375d6623cb4fa882a19169989eaa4a9892931d61fab",
+        "native_pixel_sha256": "0ac6794be182695e9881d375d6623cb4fa882a19169989eaa4a9892931d61fab",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2104,
+        "t_s": 70.13333333333334,
+        "encoded_pixel_sha256": "1d24df120f69c62328d35eff5bd1e29ee2e3373a140431c58e4a9e8f52eec72a",
+        "native_pixel_sha256": "1d24df120f69c62328d35eff5bd1e29ee2e3373a140431c58e4a9e8f52eec72a",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2105,
+        "t_s": 70.16666666666667,
+        "encoded_pixel_sha256": "db9f01e568356446f3b50c643338b26d230b1a9adf576259eddb55596ec4b79b",
+        "native_pixel_sha256": "db9f01e568356446f3b50c643338b26d230b1a9adf576259eddb55596ec4b79b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2106,
+        "t_s": 70.2,
+        "encoded_pixel_sha256": "689183a85ddf67f17716de24a57bb099a4695e493087752b02e6145e39b34016",
+        "native_pixel_sha256": "689183a85ddf67f17716de24a57bb099a4695e493087752b02e6145e39b34016",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2107,
+        "t_s": 70.23333333333333,
+        "encoded_pixel_sha256": "335934c230a54f49541dee01f9e37bf04c4a828ccedbd5780bda5aaaa710c684",
+        "native_pixel_sha256": "335934c230a54f49541dee01f9e37bf04c4a828ccedbd5780bda5aaaa710c684",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2108,
+        "t_s": 70.26666666666667,
+        "encoded_pixel_sha256": "00d77a1fdefc8019af2351e3c2d806761bcdcb7795c3df9272a2d905a2f2f296",
+        "native_pixel_sha256": "00d77a1fdefc8019af2351e3c2d806761bcdcb7795c3df9272a2d905a2f2f296",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2403,
+        "t_s": 80.1,
+        "encoded_pixel_sha256": "0bc173c6c5ba0411cff6a3d1460e6f12fba1626b362e3ae644c37fa7094512f8",
+        "native_pixel_sha256": "0bc173c6c5ba0411cff6a3d1460e6f12fba1626b362e3ae644c37fa7094512f8",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2420,
+        "t_s": 80.66666666666667,
+        "encoded_pixel_sha256": "65b12ee5c90c953abaeeeff96108553714dddcea3b572a8eed108fcc23b815a6",
+        "native_pixel_sha256": "65b12ee5c90c953abaeeeff96108553714dddcea3b572a8eed108fcc23b815a6",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2496,
+        "t_s": 83.2,
+        "encoded_pixel_sha256": "fdd2831a6b789cd02f14c4e7f3ba6e8321549bbcf476a725e79de345d57eb54f",
+        "native_pixel_sha256": "fdd2831a6b789cd02f14c4e7f3ba6e8321549bbcf476a725e79de345d57eb54f",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2508,
+        "t_s": 83.6,
+        "encoded_pixel_sha256": "75264892978a6195c9fab6f444a8104ee94fcced04c2a6003134bb686ce6b985",
+        "native_pixel_sha256": "75264892978a6195c9fab6f444a8104ee94fcced04c2a6003134bb686ce6b985",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2521,
+        "t_s": 84.03333333333333,
+        "encoded_pixel_sha256": "1a4f206f6c834a598038a488669c14181ade35f890df5bbc8ed134dcc4b61b3d",
+        "native_pixel_sha256": "1a4f206f6c834a598038a488669c14181ade35f890df5bbc8ed134dcc4b61b3d",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2680,
+        "t_s": 89.33333333333333,
+        "encoded_pixel_sha256": "a18b2af5bad7ca5926b178774fc90780a50e5c5a09b861040588964752aba7bc",
+        "native_pixel_sha256": "a18b2af5bad7ca5926b178774fc90780a50e5c5a09b861040588964752aba7bc",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2703,
+        "t_s": 90.1,
+        "encoded_pixel_sha256": "1cddbd0e79407dd910dff27c557cde1c555b2dccb03bedbfbb344e36b6f4304b",
+        "native_pixel_sha256": "1cddbd0e79407dd910dff27c557cde1c555b2dccb03bedbfbb344e36b6f4304b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2704,
+        "t_s": 90.13333333333334,
+        "encoded_pixel_sha256": "7a70779ff5a893a64397dba0b5aeac4e9b46b223dde149bd1ede59f16e9bfda8",
+        "native_pixel_sha256": "7a70779ff5a893a64397dba0b5aeac4e9b46b223dde149bd1ede59f16e9bfda8",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2705,
+        "t_s": 90.16666666666667,
+        "encoded_pixel_sha256": "eed0ad32d88a197ea7d348f1052238b8b69b317149b4e499307fda9b055371cf",
+        "native_pixel_sha256": "eed0ad32d88a197ea7d348f1052238b8b69b317149b4e499307fda9b055371cf",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2706,
+        "t_s": 90.2,
+        "encoded_pixel_sha256": "fb66fa1838252f3abd40c7802fe14c4fdf2168df45062ad6523fbf5a6606f508",
+        "native_pixel_sha256": "fb66fa1838252f3abd40c7802fe14c4fdf2168df45062ad6523fbf5a6606f508",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2707,
+        "t_s": 90.23333333333333,
+        "encoded_pixel_sha256": "e38f04816925ce0691222df50c26f34aa55b2735ec91eb3f2896647ed2ef37c8",
+        "native_pixel_sha256": "e38f04816925ce0691222df50c26f34aa55b2735ec91eb3f2896647ed2ef37c8",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2708,
+        "t_s": 90.26666666666667,
+        "encoded_pixel_sha256": "cd77030e57295be21cb417cae57ed3ffc4d54076a672d2c593ef151c925cbe98",
+        "native_pixel_sha256": "cd77030e57295be21cb417cae57ed3ffc4d54076a672d2c593ef151c925cbe98",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2709,
+        "t_s": 90.3,
+        "encoded_pixel_sha256": "85a6e951a0a48390b2d49ef1187975b49f5c13fb2701f36aca99d23798dc3760",
+        "native_pixel_sha256": "85a6e951a0a48390b2d49ef1187975b49f5c13fb2701f36aca99d23798dc3760",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2710,
+        "t_s": 90.33333333333333,
+        "encoded_pixel_sha256": "1e45231dbe3ab48b0043e8c83dfe424df6de3386a6adf996a6988bdae4457d69",
+        "native_pixel_sha256": "1e45231dbe3ab48b0043e8c83dfe424df6de3386a6adf996a6988bdae4457d69",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2711,
+        "t_s": 90.36666666666666,
+        "encoded_pixel_sha256": "d6178550d927941ae5297f574c2571a318d23385ae145ca0ffd780316c71dcd1",
+        "native_pixel_sha256": "d6178550d927941ae5297f574c2571a318d23385ae145ca0ffd780316c71dcd1",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2712,
+        "t_s": 90.4,
+        "encoded_pixel_sha256": "f2b2a28eca000e609bc8d9d5287d92813f43a1aa5eed2ff0e205a0ac0ac33b47",
+        "native_pixel_sha256": "f2b2a28eca000e609bc8d9d5287d92813f43a1aa5eed2ff0e205a0ac0ac33b47",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2713,
+        "t_s": 90.43333333333334,
+        "encoded_pixel_sha256": "731f65464f1efa5c10d527ccdfe292527c58c0b1d01b16a14f1bf9a4b4007a3f",
+        "native_pixel_sha256": "731f65464f1efa5c10d527ccdfe292527c58c0b1d01b16a14f1bf9a4b4007a3f",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2714,
+        "t_s": 90.46666666666667,
+        "encoded_pixel_sha256": "72241c3561a15242b034446e927e8198bd8ef64d4f2b79a518637840b880a748",
+        "native_pixel_sha256": "72241c3561a15242b034446e927e8198bd8ef64d4f2b79a518637840b880a748",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2715,
+        "t_s": 90.5,
+        "encoded_pixel_sha256": "5b6b0eb60acb0b65f127471ce2a4642df5758fbe17d04e9fa4ee7b4ba1fb16ab",
+        "native_pixel_sha256": "5b6b0eb60acb0b65f127471ce2a4642df5758fbe17d04e9fa4ee7b4ba1fb16ab",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2716,
+        "t_s": 90.53333333333333,
+        "encoded_pixel_sha256": "98936894d564363b7039f0f859029f87dd0664ff96f60a5b0d7b5fc3b96686f7",
+        "native_pixel_sha256": "98936894d564363b7039f0f859029f87dd0664ff96f60a5b0d7b5fc3b96686f7",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2717,
+        "t_s": 90.56666666666666,
+        "encoded_pixel_sha256": "ed5adf83a3c27b8d8dcca00d54bdc0ab1e682e0ffd68b69aa9baa14c8b05424b",
+        "native_pixel_sha256": "ed5adf83a3c27b8d8dcca00d54bdc0ab1e682e0ffd68b69aa9baa14c8b05424b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2718,
+        "t_s": 90.6,
+        "encoded_pixel_sha256": "b43093ef5e954137f357fc304d231c59ba7d433314571b36daeae85cd90801c9",
+        "native_pixel_sha256": "b43093ef5e954137f357fc304d231c59ba7d433314571b36daeae85cd90801c9",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2719,
+        "t_s": 90.63333333333334,
+        "encoded_pixel_sha256": "d80063da669b3de030e015349654534d247f220acb8e17093d4d293be50c9125",
+        "native_pixel_sha256": "d80063da669b3de030e015349654534d247f220acb8e17093d4d293be50c9125",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2720,
+        "t_s": 90.66666666666667,
+        "encoded_pixel_sha256": "dae170005801c5a54bf9be4e3512b06b4f2842be8ee0a8a6019a9e7d6fa2833f",
+        "native_pixel_sha256": "dae170005801c5a54bf9be4e3512b06b4f2842be8ee0a8a6019a9e7d6fa2833f",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2721,
+        "t_s": 90.7,
+        "encoded_pixel_sha256": "58cafc67a10ba087725d11ad58d991d26726fb55d18756801ed1588f3f02a38d",
+        "native_pixel_sha256": "58cafc67a10ba087725d11ad58d991d26726fb55d18756801ed1588f3f02a38d",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2722,
+        "t_s": 90.73333333333333,
+        "encoded_pixel_sha256": "979ac4cf8e18487b0c96b8aad5f492976f6c17f5f534c1b7b9560a40fcc61f00",
+        "native_pixel_sha256": "979ac4cf8e18487b0c96b8aad5f492976f6c17f5f534c1b7b9560a40fcc61f00",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2723,
+        "t_s": 90.76666666666667,
+        "encoded_pixel_sha256": "c0c14bd5917a7abba29f4381b9aa942f9879f966f3fde1122ee8e9490d0ef753",
+        "native_pixel_sha256": "c0c14bd5917a7abba29f4381b9aa942f9879f966f3fde1122ee8e9490d0ef753",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2724,
+        "t_s": 90.8,
+        "encoded_pixel_sha256": "2067ac3c035928270c2416aeaab214dc2b3ef721966443a46695009222e3ba72",
+        "native_pixel_sha256": "2067ac3c035928270c2416aeaab214dc2b3ef721966443a46695009222e3ba72",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2725,
+        "t_s": 90.83333333333333,
+        "encoded_pixel_sha256": "11d5840f0aec3eb9d4add3d8f29f189c9fe34250e65cfef151291717c27eeafd",
+        "native_pixel_sha256": "11d5840f0aec3eb9d4add3d8f29f189c9fe34250e65cfef151291717c27eeafd",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2726,
+        "t_s": 90.86666666666666,
+        "encoded_pixel_sha256": "f116ab5589aba3c5e47ff4ffd1cdd771f2847e998a19c1bf93bbc0958a35ac57",
+        "native_pixel_sha256": "f116ab5589aba3c5e47ff4ffd1cdd771f2847e998a19c1bf93bbc0958a35ac57",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2727,
+        "t_s": 90.9,
+        "encoded_pixel_sha256": "0ce60b65d618dae7030730326c3202b7f8b6952efb5861b1e982439b9b8b7e41",
+        "native_pixel_sha256": "0ce60b65d618dae7030730326c3202b7f8b6952efb5861b1e982439b9b8b7e41",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2728,
+        "t_s": 90.93333333333334,
+        "encoded_pixel_sha256": "eec26d037edf6973493fee3dc8f2f7d457875b13ea76127655d47c497981540c",
+        "native_pixel_sha256": "eec26d037edf6973493fee3dc8f2f7d457875b13ea76127655d47c497981540c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2729,
+        "t_s": 90.96666666666667,
+        "encoded_pixel_sha256": "7e06c4484bab366a23a10e34242dd184224d07391817b0b46f6d29d36a79c32d",
+        "native_pixel_sha256": "7e06c4484bab366a23a10e34242dd184224d07391817b0b46f6d29d36a79c32d",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2730,
+        "t_s": 91.0,
+        "encoded_pixel_sha256": "70b87f1f7df501d5bab7805c97f5aeb2d9c2e5a4cfb7a3ae34ee4be8a8f99049",
+        "native_pixel_sha256": "70b87f1f7df501d5bab7805c97f5aeb2d9c2e5a4cfb7a3ae34ee4be8a8f99049",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2731,
+        "t_s": 91.03333333333333,
+        "encoded_pixel_sha256": "000fb854c7eb2c01dd9ed1d620f284717ce324000f29613e1540f4e7db4c27d1",
+        "native_pixel_sha256": "000fb854c7eb2c01dd9ed1d620f284717ce324000f29613e1540f4e7db4c27d1",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2732,
+        "t_s": 91.06666666666666,
+        "encoded_pixel_sha256": "4a2d39d01b6ef4bd82d45aa16b4fe9244dd57bfd68bd6bc8b3b1a8360a3f28fd",
+        "native_pixel_sha256": "4a2d39d01b6ef4bd82d45aa16b4fe9244dd57bfd68bd6bc8b3b1a8360a3f28fd",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2733,
+        "t_s": 91.1,
+        "encoded_pixel_sha256": "a8380510be6d59f2788ea4fb21b094dace756d4783480a14d3a4bbed400cffec",
+        "native_pixel_sha256": "a8380510be6d59f2788ea4fb21b094dace756d4783480a14d3a4bbed400cffec",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2734,
+        "t_s": 91.13333333333334,
+        "encoded_pixel_sha256": "e05c90c704a2e05d381c9df8ba371ef2193a1586271ac7ebbc3fc22c13ebc2a5",
+        "native_pixel_sha256": "e05c90c704a2e05d381c9df8ba371ef2193a1586271ac7ebbc3fc22c13ebc2a5",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2735,
+        "t_s": 91.16666666666667,
+        "encoded_pixel_sha256": "3cb72afd958777d9ae6f1d597162fa3bf3bae117d72ae6757e45a44afd74b7a8",
+        "native_pixel_sha256": "3cb72afd958777d9ae6f1d597162fa3bf3bae117d72ae6757e45a44afd74b7a8",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2736,
+        "t_s": 91.2,
+        "encoded_pixel_sha256": "5668adf4334b22b00e9ff1840690d36b960c419f9d1f61cc7171a65dfd947b89",
+        "native_pixel_sha256": "5668adf4334b22b00e9ff1840690d36b960c419f9d1f61cc7171a65dfd947b89",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2737,
+        "t_s": 91.23333333333333,
+        "encoded_pixel_sha256": "c9f9bd1069507bc361370f9db11cd69170ad23f769efac2473a8c9cbb9ddaad8",
+        "native_pixel_sha256": "c9f9bd1069507bc361370f9db11cd69170ad23f769efac2473a8c9cbb9ddaad8",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2738,
+        "t_s": 91.26666666666667,
+        "encoded_pixel_sha256": "022f13e1113ed3ffa21fa7d3bf2e958c90845685ffa0cde4968570dc982ba958",
+        "native_pixel_sha256": "022f13e1113ed3ffa21fa7d3bf2e958c90845685ffa0cde4968570dc982ba958",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2739,
+        "t_s": 91.3,
+        "encoded_pixel_sha256": "290f629499d9c711b6ca5137c704e564851578029fc9f0929120ee69c197d395",
+        "native_pixel_sha256": "290f629499d9c711b6ca5137c704e564851578029fc9f0929120ee69c197d395",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2740,
+        "t_s": 91.33333333333333,
+        "encoded_pixel_sha256": "e893c339d15db814c278b192cc2c1cc591faeead8c64b55c199d2abbaa30027e",
+        "native_pixel_sha256": "e893c339d15db814c278b192cc2c1cc591faeead8c64b55c199d2abbaa30027e",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2741,
+        "t_s": 91.36666666666666,
+        "encoded_pixel_sha256": "1175aeb313611e2200feb2368c5f3d06e8e13f355539a2ccaf2bae6470a51f44",
+        "native_pixel_sha256": "1175aeb313611e2200feb2368c5f3d06e8e13f355539a2ccaf2bae6470a51f44",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2742,
+        "t_s": 91.4,
+        "encoded_pixel_sha256": "241840d322e960ccdc3f55d808ac88af7860d8a10ccad587740c6930118fcc81",
+        "native_pixel_sha256": "241840d322e960ccdc3f55d808ac88af7860d8a10ccad587740c6930118fcc81",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2743,
+        "t_s": 91.43333333333334,
+        "encoded_pixel_sha256": "d45bcbb8ffe5507530aa082fb6ced22bca471724f460b60ee07fe209ab1a21ac",
+        "native_pixel_sha256": "d45bcbb8ffe5507530aa082fb6ced22bca471724f460b60ee07fe209ab1a21ac",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2744,
+        "t_s": 91.46666666666667,
+        "encoded_pixel_sha256": "ac0aab313ceeee0f048529fbad2c885ae485e4b12ecd14d99ae1a0436eabaca7",
+        "native_pixel_sha256": "ac0aab313ceeee0f048529fbad2c885ae485e4b12ecd14d99ae1a0436eabaca7",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2745,
+        "t_s": 91.5,
+        "encoded_pixel_sha256": "6b4280d97d48c190de9471c883f5b9302321c03f895cf8ccfa636408e062a025",
+        "native_pixel_sha256": "6b4280d97d48c190de9471c883f5b9302321c03f895cf8ccfa636408e062a025",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2746,
+        "t_s": 91.53333333333333,
+        "encoded_pixel_sha256": "a9d017ead832d1af1f7c17365b0fdaa19656e494c5cb4e0761ec870179a82fda",
+        "native_pixel_sha256": "a9d017ead832d1af1f7c17365b0fdaa19656e494c5cb4e0761ec870179a82fda",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2747,
+        "t_s": 91.56666666666666,
+        "encoded_pixel_sha256": "63966701c7874e0c1c7a287051bd97fba125e91438abd5d4afdfb53fd4c6a802",
+        "native_pixel_sha256": "63966701c7874e0c1c7a287051bd97fba125e91438abd5d4afdfb53fd4c6a802",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2748,
+        "t_s": 91.6,
+        "encoded_pixel_sha256": "84edcf79e958dddbc1e71238b2f293bb1193d71801a0577eb5ae0910ad4ee167",
+        "native_pixel_sha256": "84edcf79e958dddbc1e71238b2f293bb1193d71801a0577eb5ae0910ad4ee167",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2749,
+        "t_s": 91.63333333333334,
+        "encoded_pixel_sha256": "84e96b2273c7e353ae9c5d9b6fa117c1d40327b90986d65ed3eff623587e93b4",
+        "native_pixel_sha256": "84e96b2273c7e353ae9c5d9b6fa117c1d40327b90986d65ed3eff623587e93b4",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2750,
+        "t_s": 91.66666666666667,
+        "encoded_pixel_sha256": "82b2ab23f54ff884ea9bd4e98ec9c3cbda4695fe5694869e1fe428277bb6e155",
+        "native_pixel_sha256": "82b2ab23f54ff884ea9bd4e98ec9c3cbda4695fe5694869e1fe428277bb6e155",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2788,
+        "t_s": 92.93333333333334,
+        "encoded_pixel_sha256": "9d80c37789366e0077fc0784834d3fb9ad39eba60f5499c4b30747dbcd82241e",
+        "native_pixel_sha256": "9d80c37789366e0077fc0784834d3fb9ad39eba60f5499c4b30747dbcd82241e",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2789,
+        "t_s": 92.96666666666667,
+        "encoded_pixel_sha256": "ce0ffee6b93b0a9045d42aa9ec4a4bd8f06729def7d96326c60572410f19cfe2",
+        "native_pixel_sha256": "ce0ffee6b93b0a9045d42aa9ec4a4bd8f06729def7d96326c60572410f19cfe2",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2790,
+        "t_s": 93.0,
+        "encoded_pixel_sha256": "e11677782bf52e641276427e3fecbeb40628be31ffd71b3ba7c57c1572d6a4ed",
+        "native_pixel_sha256": "e11677782bf52e641276427e3fecbeb40628be31ffd71b3ba7c57c1572d6a4ed",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2791,
+        "t_s": 93.03333333333333,
+        "encoded_pixel_sha256": "304664ae460fc3d5e95fa8c9c8ac11955c619f05de7028152572f7765fa1f6db",
+        "native_pixel_sha256": "304664ae460fc3d5e95fa8c9c8ac11955c619f05de7028152572f7765fa1f6db",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2792,
+        "t_s": 93.06666666666666,
+        "encoded_pixel_sha256": "d6394c04bc95995da331ab30fed1dc73e5f85b7cfa314d6994d7755daf1f719c",
+        "native_pixel_sha256": "d6394c04bc95995da331ab30fed1dc73e5f85b7cfa314d6994d7755daf1f719c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2793,
+        "t_s": 93.1,
+        "encoded_pixel_sha256": "a5b192d488bb4793786b94b85e58ef5ec5f8dfde9e78413511f347e643329fe0",
+        "native_pixel_sha256": "a5b192d488bb4793786b94b85e58ef5ec5f8dfde9e78413511f347e643329fe0",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2794,
+        "t_s": 93.13333333333334,
+        "encoded_pixel_sha256": "cd5f738a5a476417e7faf78a3a773be0e187847896486ac79f2c05166acc0a75",
+        "native_pixel_sha256": "cd5f738a5a476417e7faf78a3a773be0e187847896486ac79f2c05166acc0a75",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2795,
+        "t_s": 93.16666666666667,
+        "encoded_pixel_sha256": "5fef0f525ca0cc8d56c46f5d2f531c08cf01ce43895fea42a14acc436ceac42d",
+        "native_pixel_sha256": "5fef0f525ca0cc8d56c46f5d2f531c08cf01ce43895fea42a14acc436ceac42d",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2796,
+        "t_s": 93.2,
+        "encoded_pixel_sha256": "c44383065647b8943bf2a2e5636acbb932074ad0d9277f2b910fb4aa6ae7b0fd",
+        "native_pixel_sha256": "c44383065647b8943bf2a2e5636acbb932074ad0d9277f2b910fb4aa6ae7b0fd",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2797,
+        "t_s": 93.23333333333333,
+        "encoded_pixel_sha256": "13d39f0e126df56161949d917e1fc518f5dabf7c338ef1d7836c43c9646c0a8d",
+        "native_pixel_sha256": "13d39f0e126df56161949d917e1fc518f5dabf7c338ef1d7836c43c9646c0a8d",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2798,
+        "t_s": 93.26666666666667,
+        "encoded_pixel_sha256": "33c6dc2a5d918167cd9b4b53ace44e92ec5044d12270ab5308fbd1f8265fc7be",
+        "native_pixel_sha256": "33c6dc2a5d918167cd9b4b53ace44e92ec5044d12270ab5308fbd1f8265fc7be",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2799,
+        "t_s": 93.3,
+        "encoded_pixel_sha256": "eb5a9e842f21ca446334b7c2a3d5aafe3933ddb825002d5887ef0aea329c4b05",
+        "native_pixel_sha256": "eb5a9e842f21ca446334b7c2a3d5aafe3933ddb825002d5887ef0aea329c4b05",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2800,
+        "t_s": 93.33333333333333,
+        "encoded_pixel_sha256": "51a7b285a672b121c94ba80790f22ceeadaec8bb75f353449330260788f81212",
+        "native_pixel_sha256": "51a7b285a672b121c94ba80790f22ceeadaec8bb75f353449330260788f81212",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2801,
+        "t_s": 93.36666666666666,
+        "encoded_pixel_sha256": "dcc7ea4bf6bb7112615a25eb6b928976035c05a006210884bfbe4aa3ab9ede8b",
+        "native_pixel_sha256": "dcc7ea4bf6bb7112615a25eb6b928976035c05a006210884bfbe4aa3ab9ede8b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2802,
+        "t_s": 93.4,
+        "encoded_pixel_sha256": "fd348c44b8669ce01137568ebb7e3816d046f4ecc2bf9edafce13aff1876affc",
+        "native_pixel_sha256": "fd348c44b8669ce01137568ebb7e3816d046f4ecc2bf9edafce13aff1876affc",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2803,
+        "t_s": 93.43333333333334,
+        "encoded_pixel_sha256": "d049fa7bfd0cd5e04db77ccaeb394155610028d0f7b339cd6b95ff3b51edffd5",
+        "native_pixel_sha256": "d049fa7bfd0cd5e04db77ccaeb394155610028d0f7b339cd6b95ff3b51edffd5",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2804,
+        "t_s": 93.46666666666667,
+        "encoded_pixel_sha256": "4595b281586ecaaf165768c6df515950493b65d5bace040b8b97a31af8ab1238",
+        "native_pixel_sha256": "4595b281586ecaaf165768c6df515950493b65d5bace040b8b97a31af8ab1238",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2805,
+        "t_s": 93.5,
+        "encoded_pixel_sha256": "1703a842c029254f47956f370a1cd2a08bb2eaa28a1ce49cd5b853586df59c66",
+        "native_pixel_sha256": "1703a842c029254f47956f370a1cd2a08bb2eaa28a1ce49cd5b853586df59c66",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2806,
+        "t_s": 93.53333333333333,
+        "encoded_pixel_sha256": "3c35298b3cecf37e6e06e270e0c01959abd32482e5fadb45997f6054527980ae",
+        "native_pixel_sha256": "3c35298b3cecf37e6e06e270e0c01959abd32482e5fadb45997f6054527980ae",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2807,
+        "t_s": 93.56666666666666,
+        "encoded_pixel_sha256": "c6bc9011ec6cc92bf2d51af0163d368c173289213bb580f072a1f081a4a16bc1",
+        "native_pixel_sha256": "c6bc9011ec6cc92bf2d51af0163d368c173289213bb580f072a1f081a4a16bc1",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2808,
+        "t_s": 93.6,
+        "encoded_pixel_sha256": "df3db92dbb932ce6fe8a6556face2d47090156ede971a2ac275485fbc397b561",
+        "native_pixel_sha256": "df3db92dbb932ce6fe8a6556face2d47090156ede971a2ac275485fbc397b561",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2809,
+        "t_s": 93.63333333333334,
+        "encoded_pixel_sha256": "0a237cfccc6b1a18d561002e39d0f8a33b28e7384440a62ff4835464caef7675",
+        "native_pixel_sha256": "0a237cfccc6b1a18d561002e39d0f8a33b28e7384440a62ff4835464caef7675",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2810,
+        "t_s": 93.66666666666667,
+        "encoded_pixel_sha256": "ec03892203076ff30c773694fb6862820565536220a1928183c206f7285fbb71",
+        "native_pixel_sha256": "ec03892203076ff30c773694fb6862820565536220a1928183c206f7285fbb71",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2811,
+        "t_s": 93.7,
+        "encoded_pixel_sha256": "6285777edbb3d1d0c623fc965c75ef487cae0df8657d99f8e2a50731cf51fe9c",
+        "native_pixel_sha256": "6285777edbb3d1d0c623fc965c75ef487cae0df8657d99f8e2a50731cf51fe9c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2812,
+        "t_s": 93.73333333333333,
+        "encoded_pixel_sha256": "3e440b40f517f74a79e54a5f956f07a9b1e89baed9db70b700dbd3cb03498f18",
+        "native_pixel_sha256": "3e440b40f517f74a79e54a5f956f07a9b1e89baed9db70b700dbd3cb03498f18",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2813,
+        "t_s": 93.76666666666667,
+        "encoded_pixel_sha256": "2495213c941de5c4df660335db280905f9764cc0cd57703d6a7428ebe91aa874",
+        "native_pixel_sha256": "2495213c941de5c4df660335db280905f9764cc0cd57703d6a7428ebe91aa874",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2814,
+        "t_s": 93.8,
+        "encoded_pixel_sha256": "9c69b83e049ee96de4c2a1d51f7e3752a42f44fac992f96966e4e93fe23a2149",
+        "native_pixel_sha256": "9c69b83e049ee96de4c2a1d51f7e3752a42f44fac992f96966e4e93fe23a2149",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2815,
+        "t_s": 93.83333333333333,
+        "encoded_pixel_sha256": "4f05cf159285aa5b17075442a0ab5a7b9cc7d560b50eaff828bbd371fd1b8b22",
+        "native_pixel_sha256": "4f05cf159285aa5b17075442a0ab5a7b9cc7d560b50eaff828bbd371fd1b8b22",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2816,
+        "t_s": 93.86666666666666,
+        "encoded_pixel_sha256": "86a0331d8e74a0a0cb537a6f5d25dccc983629d1757b3d8937704363b5c7d8e7",
+        "native_pixel_sha256": "86a0331d8e74a0a0cb537a6f5d25dccc983629d1757b3d8937704363b5c7d8e7",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2817,
+        "t_s": 93.9,
+        "encoded_pixel_sha256": "47ef40f74b2ca1abb24573586e8178d6beba773f0ddaff681bf79d13dc0d22d9",
+        "native_pixel_sha256": "47ef40f74b2ca1abb24573586e8178d6beba773f0ddaff681bf79d13dc0d22d9",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2905,
+        "t_s": 96.83333333333333,
+        "encoded_pixel_sha256": "1fd298ce487df62ac688f0f008aae306563ef8b0a000cda604b1da7b61af8dea",
+        "native_pixel_sha256": "1fd298ce487df62ac688f0f008aae306563ef8b0a000cda604b1da7b61af8dea",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2906,
+        "t_s": 96.86666666666666,
+        "encoded_pixel_sha256": "bba5422612219e71720c40a3634312757b87d91598066a7c72cd3791c42623ec",
+        "native_pixel_sha256": "bba5422612219e71720c40a3634312757b87d91598066a7c72cd3791c42623ec",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2907,
+        "t_s": 96.9,
+        "encoded_pixel_sha256": "219c8dda0913f77a961bec3a51462e2bb122d8d7c406804d4116cb3b22566f03",
+        "native_pixel_sha256": "219c8dda0913f77a961bec3a51462e2bb122d8d7c406804d4116cb3b22566f03",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2908,
+        "t_s": 96.93333333333334,
+        "encoded_pixel_sha256": "b0e139ca7bfa879ed0f8fb98a2a0becf3ba05cf9252fd311419857ca0bd33ff7",
+        "native_pixel_sha256": "b0e139ca7bfa879ed0f8fb98a2a0becf3ba05cf9252fd311419857ca0bd33ff7",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2909,
+        "t_s": 96.96666666666667,
+        "encoded_pixel_sha256": "7894f17bc936ff531234446a8774517c78d79a30f246417974dd08b35f4fad20",
+        "native_pixel_sha256": "7894f17bc936ff531234446a8774517c78d79a30f246417974dd08b35f4fad20",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2910,
+        "t_s": 97.0,
+        "encoded_pixel_sha256": "853bea8278ebfb720beeeb8dc3451f0f2d9dd74ad24252b96133da3a6d2842a6",
+        "native_pixel_sha256": "853bea8278ebfb720beeeb8dc3451f0f2d9dd74ad24252b96133da3a6d2842a6",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2911,
+        "t_s": 97.03333333333333,
+        "encoded_pixel_sha256": "3181fa00172df4dbed2c1dd901d25c2fc05a0d4a8302a637e0db85f17f9f5847",
+        "native_pixel_sha256": "3181fa00172df4dbed2c1dd901d25c2fc05a0d4a8302a637e0db85f17f9f5847",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2912,
+        "t_s": 97.06666666666666,
+        "encoded_pixel_sha256": "7f575fe69794877abb43174015b225340518bbc85aaf0440df7adb65f1aff562",
+        "native_pixel_sha256": "7f575fe69794877abb43174015b225340518bbc85aaf0440df7adb65f1aff562",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2920,
+        "t_s": 97.33333333333333,
+        "encoded_pixel_sha256": "b2d00d9c3fcf824ae0a597374142d488fa6a55a9ffca2508b79cc95a6dc3b5e7",
+        "native_pixel_sha256": "b2d00d9c3fcf824ae0a597374142d488fa6a55a9ffca2508b79cc95a6dc3b5e7",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2965,
+        "t_s": 98.83333333333333,
+        "encoded_pixel_sha256": "e49a85106575a6525a08b56789d595e2a9fbfc3256bedb234974115a4196930d",
+        "native_pixel_sha256": "e49a85106575a6525a08b56789d595e2a9fbfc3256bedb234974115a4196930d",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2995,
+        "t_s": 99.83333333333333,
+        "encoded_pixel_sha256": "3f68853227ce0d65bcdd38e9e9b8387db470c93cafbac5f55f1a76285bf4afa6",
+        "native_pixel_sha256": "3f68853227ce0d65bcdd38e9e9b8387db470c93cafbac5f55f1a76285bf4afa6",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2996,
+        "t_s": 99.86666666666666,
+        "encoded_pixel_sha256": "e8e9516104303b8b1acfdf185d0bcc5d3ea5c08c4823ad1a4018f10bb5d0be05",
+        "native_pixel_sha256": "e8e9516104303b8b1acfdf185d0bcc5d3ea5c08c4823ad1a4018f10bb5d0be05",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2997,
+        "t_s": 99.9,
+        "encoded_pixel_sha256": "4fb285e3b2a2d417277427c4da4cd96b31bdc120be4b39588f2473a5f54ae25b",
+        "native_pixel_sha256": "4fb285e3b2a2d417277427c4da4cd96b31bdc120be4b39588f2473a5f54ae25b",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2998,
+        "t_s": 99.93333333333334,
+        "encoded_pixel_sha256": "ec6c00bdc5afbb80cfbb909e62aa8ddef4c9363b542979c175aad7da86215985",
+        "native_pixel_sha256": "ec6c00bdc5afbb80cfbb909e62aa8ddef4c9363b542979c175aad7da86215985",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 2999,
+        "t_s": 99.96666666666667,
+        "encoded_pixel_sha256": "f0c097059871029c1822bb81123cb2d0da74df23c15adee6fee45d7573a0f9ca",
+        "native_pixel_sha256": "f0c097059871029c1822bb81123cb2d0da74df23c15adee6fee45d7573a0f9ca",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3000,
+        "t_s": 100.0,
+        "encoded_pixel_sha256": "f2334703e5e9cff547ea02a9f15648685d9fa261534ff51a63a4464e350c3674",
+        "native_pixel_sha256": "f2334703e5e9cff547ea02a9f15648685d9fa261534ff51a63a4464e350c3674",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3001,
+        "t_s": 100.03333333333333,
+        "encoded_pixel_sha256": "bf1a6d5fedd6764447bb40d43be4e920089cdf8cea9a0f21c2687913afd287b5",
+        "native_pixel_sha256": "bf1a6d5fedd6764447bb40d43be4e920089cdf8cea9a0f21c2687913afd287b5",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3002,
+        "t_s": 100.06666666666666,
+        "encoded_pixel_sha256": "5569e5892cde70fcaf70bd6fcc02d6d8bf0630b13991eee5b9826ee15d29f5d3",
+        "native_pixel_sha256": "5569e5892cde70fcaf70bd6fcc02d6d8bf0630b13991eee5b9826ee15d29f5d3",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3346,
+        "t_s": 111.53333333333333,
+        "encoded_pixel_sha256": "06c14e9397d16dd02074ccd955b1dd1c5625f7f547332097a126336d1aa6ba86",
+        "native_pixel_sha256": "06c14e9397d16dd02074ccd955b1dd1c5625f7f547332097a126336d1aa6ba86",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3347,
+        "t_s": 111.56666666666666,
+        "encoded_pixel_sha256": "24b17fc3c77c6fa7618d7d1be5205d162f81aa05eedcc138f48188168a66866c",
+        "native_pixel_sha256": "24b17fc3c77c6fa7618d7d1be5205d162f81aa05eedcc138f48188168a66866c",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3348,
+        "t_s": 111.6,
+        "encoded_pixel_sha256": "055599aa3c96fe90ea71ed428a62cccbbe7eef3f04802fb3655ce0aa1d4bf472",
+        "native_pixel_sha256": "055599aa3c96fe90ea71ed428a62cccbbe7eef3f04802fb3655ce0aa1d4bf472",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3349,
+        "t_s": 111.63333333333334,
+        "encoded_pixel_sha256": "e42ad17bf56befc8e0548da0e864b590f04d8251642d22443b8b7648f1fc9d79",
+        "native_pixel_sha256": "e42ad17bf56befc8e0548da0e864b590f04d8251642d22443b8b7648f1fc9d79",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3350,
+        "t_s": 111.66666666666667,
+        "encoded_pixel_sha256": "0b8ae52f04d651b23fdca66a37fa34eafa9080a46afd1819c49dd762e0c14db6",
+        "native_pixel_sha256": "0b8ae52f04d651b23fdca66a37fa34eafa9080a46afd1819c49dd762e0c14db6",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3351,
+        "t_s": 111.7,
+        "encoded_pixel_sha256": "5869b0b23fdd51869baf6f5f944a20b0e937bafa0a29a95c374eefe397ac5223",
+        "native_pixel_sha256": "5869b0b23fdd51869baf6f5f944a20b0e937bafa0a29a95c374eefe397ac5223",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3352,
+        "t_s": 111.73333333333333,
+        "encoded_pixel_sha256": "aa6122ee5a504b41353043e503ecd68e6a7e07010e3831cfee66d19d42528827",
+        "native_pixel_sha256": "aa6122ee5a504b41353043e503ecd68e6a7e07010e3831cfee66d19d42528827",
+        "exact_rgb_match": true
+      },
+      {
+        "frame": 3353,
+        "t_s": 111.76666666666667,
+        "encoded_pixel_sha256": "874d5c43df2691056422059926f0b921f420574432b4196a6472646990050ef0",
+        "native_pixel_sha256": "874d5c43df2691056422059926f0b921f420574432b4196a6472646990050ef0",
+        "exact_rgb_match": true
+      }
+    ],
+    "visually_reviewed_current_frames_and_strips": "Viewed five current full-resolution native goal frames, all38 current canonical beat strips and all8 current review motion strips. Direct current-master RGB comparison binds listed contact/reveal frames to actual encoding."
+  },
+  "native_evidence_candidate1_reference": [
+    {
+      "name": "hand",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c0.mp4",
+      "chunk_sha256": "ec3372349ac6cb0db4d9815ed0a4295f7391d9c37d34231211b53a8304fb0590",
+      "verified_frames": 158,
+      "global_frames": [
+        11,
+        18
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_hand.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c0.mp4"
+    },
+    {
+      "name": "opening_detent",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c0.mp4",
+      "chunk_sha256": "ec3372349ac6cb0db4d9815ed0a4295f7391d9c37d34231211b53a8304fb0590",
+      "verified_frames": 158,
+      "global_frames": [
+        57,
+        64
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_opening_detent.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c0.mp4"
+    },
+    {
+      "name": "biomass_flap",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c8.mp4",
+      "chunk_sha256": "ec4806726916ff325fb068e7de34f1844f5fb5861c70c436388f2f2212658a28",
+      "verified_frames": 158,
+      "global_frames": [
+        1358,
+        1365
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_biomass_flap.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c8.mp4"
+    },
+    {
+      "name": "weight_socket",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c9.mp4",
+      "chunk_sha256": "4baa52504fa8b8ec01236b2e48ea2a6387ca393600701085841b26a868e5deed",
+      "verified_frames": 158,
+      "global_frames": [
+        1509,
+        1516
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_weight_socket.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c9.mp4"
+    },
+    {
+      "name": "catch_swings_flap",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c9.mp4",
+      "chunk_sha256": "4baa52504fa8b8ec01236b2e48ea2a6387ca393600701085841b26a868e5deed",
+      "verified_frames": 158,
+      "global_frames": [
+        1566,
+        1573
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_catch_swings_flap.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c9.mp4"
+    },
+    {
+      "name": "catch_flap",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c12.mp4",
+      "chunk_sha256": "a9bbbe4ada36a8ccd6cef87c848adab08b093dc35de5135c4024b459dc5d80b3",
+      "verified_frames": 158,
+      "global_frames": [
+        2008,
+        2015
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_catch_flap.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c12.mp4"
+    },
+    {
+      "name": "lower_biomass_flap",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c13.mp4",
+      "chunk_sha256": "ffd440eb16f5d7af9eb61b1ce06fd49dd8698fe172d09f9ea0f7e89fd2227d42",
+      "verified_frames": 158,
+      "global_frames": [
+        2101,
+        2108
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_lower_biomass_flap.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c13.mp4"
+    },
+    {
+      "name": "gate",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c18.mp4",
+      "chunk_sha256": "5a9642c6009752c64e9631e479f281f30648aefb60bc8a6b5a188fcf3466fde5",
+      "verified_frames": 158,
+      "global_frames": [
+        2905,
+        2912
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_gate.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c18.mp4"
+    },
+    {
+      "name": "collar",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c18.mp4",
+      "chunk_sha256": "5a9642c6009752c64e9631e479f281f30648aefb60bc8a6b5a188fcf3466fde5",
+      "verified_frames": 158,
+      "global_frames": [
+        2995,
+        3001
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_collar.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c18.mp4"
+    },
+    {
+      "name": "ending",
+      "native_chunk": "/var/folders/tz/bf6jsfl57957p82qtvdz89l80000gn/T/tmp.Bhv0D1LP4z/c21.mp4",
+      "chunk_sha256": "58d28e5e7815f301d36a138eb73c426846e34efd79eb5b2e416cab1f9ecee66c",
+      "verified_frames": 158,
+      "global_frames": [
+        3346,
+        3353
+      ],
+      "strip": "/tmp/alaska-dispatch-20260914/contact_review/native_ending.png",
+      "persistent_native_chunk": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/chunkcache/92750e57f3da7bfa89fb8b981c294c4ee1059881df81ca2cffa8064c5eed4333/c21.mp4"
+    }
+  ],
+  "encoded_evidence_candidate1_reference": [
+    {
+      "name": "hand",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_hand.png",
+      "encoded_strip_sha256": "a53b67cb8da3774a1019cda45189468a9514be94af4d0ce3e70860497193d097",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        11,
+        18
+      ]
+    },
+    {
+      "name": "opening_detent",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_opening_detent.png",
+      "encoded_strip_sha256": "d0ff43f5795be79c6ba69eed66685686a71a657b7d6212154a4718cdbfe74548",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        57,
+        64
+      ]
+    },
+    {
+      "name": "biomass_flap",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_biomass_flap.png",
+      "encoded_strip_sha256": "a4f63cecd0e6b3e4e9827bf25f0cc3861a0afa61f75674b870d3ee367e77897e",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        1358,
+        1365
+      ]
+    },
+    {
+      "name": "weight_socket",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_weight_socket.png",
+      "encoded_strip_sha256": "e80c6d7c3596e9ef04c6859a7438e69af52b570e957f652cb1131c18344201f1",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        1509,
+        1516
+      ]
+    },
+    {
+      "name": "catch_swings_flap",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_catch_swings_flap.png",
+      "encoded_strip_sha256": "71da749c570dc60a710b8bf4e09613f8cf4dd7462835a1cf80775af0e49f0a58",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        1566,
+        1573
+      ]
+    },
+    {
+      "name": "catch_flap",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_catch_flap.png",
+      "encoded_strip_sha256": "9282dcf2fc3cc89d42a422d1682cd6d70813802d333b61712f4c73335b2fa51e",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        2008,
+        2015
+      ]
+    },
+    {
+      "name": "lower_biomass_flap",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_lower_biomass_flap.png",
+      "encoded_strip_sha256": "f2a3dcb40a36a734706f4bf268ccaddcf78f53c50d22f3692c1afa2bac696dfd",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        2101,
+        2108
+      ]
+    },
+    {
+      "name": "gate",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_gate.png",
+      "encoded_strip_sha256": "ad3fb3bb224095b40b69fd0a3860251b3f8500bba8e331d3e2bba93d50702025",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        2905,
+        2912
+      ]
+    },
+    {
+      "name": "collar",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_collar.png",
+      "encoded_strip_sha256": "c7bdc267b505e086e7a48d24f100499f07a5c8df4dadaaa9a6421d8cc1fb5900",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        2995,
+        3002
+      ],
+      "native_full_strip": "/tmp/alaska-dispatch-20260914/contact_review/native_collar_full.png"
+    },
+    {
+      "name": "ending",
+      "encoded_strip": "/tmp/alaska-dispatch-20260914/contact_review/encoded_ending.png",
+      "encoded_strip_sha256": "862cb01043b265b869b086a380bbde514c15eaa37de298c5ff5dd61be96e5ed1",
+      "identical_native_strip_bytes": true,
+      "global_frames": [
+        3346,
+        3353
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+  OK    git identity is the owner's: git identity is [redacted email], so the permanent media host will accept a push
+  OK    deliverables are fresh: render, mix, explicit inputs and all delivery hashes match
+  OK    typecheck the engine: (no output)
+  OK    plated strings fit their plates: text-fit: 51 plated strings/variants measured (mono, Plate, actual Label or browser Box), 0 not measured, 0 failing
+  OK    visible source and built props obey the copy rules: }
+  OK    nothing informational sits in the caption band: caption_band_check: clean across 1 file(s)
+  OK    no phonetic respelling survived into the built props: caption_spelling_check: clean, 35 cues carry none of the 1 declared respellings
+  OK    the captions are actually on screen in the delivered cut: PASS [caption_render_check] 8 sampled cues all render visible captions in the delivered cut.
+  OK    no two text plates share pixels: plate_overlap_check: clean across 1 file(s), 23 scene(s) parsed
+  OK    no plate leaves the frame under the content zoom: zoom_clip_check: clean, 66 string(s) measured against the frame edge
+  OK    every claim obligation the fact-checker wrote is honoured: claims_contract_check: 53 machine obligation(s) met, none outstanding
+  OK    the film credits its music and shows its sources:     Light Thought var 1 by Kevin MacLeod at incompetech.com licensed under CC BY 4.0
+  OK    the narration obeys the fact-check-safe set: PASS [vo_claims_check] 18 narration lines checked against 17 claims; no obligation violated, no unsourced quantity and no unsourced cadence.
+  OK    the delivered mix obeys the fact-check-safe set: PASS [vo_audio_check] the delivered mix contains no banned phrase.
+  OK    every figure on screen is doing something: NOTE 1 shared/unmapped site(s) have no resolved call-site scene. Frame-parameter gestures are checked, but instance coverage and rendered performance still require visual QA.
+  OK    the evidence pack actually shows the film: evidence_coverage_check: 12 shots and 38 beats all covered by 64 samples; 7 anchor(s) worth re-checking
+  NOTE  the square crop cuts nothing built:   which elements were authored and this does not.
+  NOTE  the story region never stops moving:   bobs continuously, so every frame contains motion whatever the story is doing.
+  OK    dead space within ceilings:   OK  mean 21.4% (ceiling 42%), every shot under the 55% per-shot ceiling
+
+preflight: 2 advisory check(s) reported something. They do not block, but read them before spending a panel:
+  - the square crop cuts nothing built:   which elements were authored and this does not.
+  - the story region never stops moving:   bobs continuously, so every frame contains motion whatever the story is doing.
+preflight: clear. The mechanical checks have nothing left to say; what remains is taste, which is what the panel is for.
