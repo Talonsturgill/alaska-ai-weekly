@@ -58,6 +58,21 @@ class RunInitTests(unittest.TestCase):
         return {path: (path.read_bytes(), path.stat().st_mtime_ns)
                 for path in (self.stamp, self.lock, self.verdict, self.receipt) if path.exists()}
 
+    def connected_account_receipt(self):
+        self.passing_cut()
+        receipt = json.loads(self.receipt.read_text())
+        for key in ('unsent', 'labels', 'readback'):
+            del receipt[key]
+        receipt.update(created_at='2026-09-11T10:28:40', verification={
+            'run_date': '2026-09-11', 'verified_at': '2026-09-11T14:28:51+00:00',
+            'verified_draft_only': True, 'labels': ['DRAFT'], 'sent': False,
+            'recipient_matches_current_connected_profile': True,
+            'no_from_override_requested': True, 'exact_html_readback': True,
+            'html_sha256': 'a' * 64, 'exact_post_copy': True, 'primary_sources': 7,
+            'both_full_video_links': True, 'music_and_voice_credits': True})
+        self.write(self.receipt, receipt)
+        return receipt
+
     def refused_unchanged(self):
         before = self.snapshot()
         with self.assertRaises(guard.RunInitError):
@@ -162,6 +177,55 @@ class RunInitTests(unittest.TestCase):
                 self.passing_cut()
                 self.write(self.receipt, {**json.loads(self.receipt.read_text()), **change})
                 self.refused_unchanged()
+
+    def test_connected_account_schema_uses_aware_readback_and_preserves_receipt(self):
+        self.connected_account_receipt()
+        before = self.snapshot()
+        self.assertEqual(guard.init('2026-09-12', str(self.root))['run_id'], '2026-09-12')
+        for path, (content, mtime) in before.items():
+            archived = self.archive / path.name
+            self.assertEqual(archived.read_bytes(), content)
+            self.assertEqual(archived.stat().st_mtime_ns, mtime)
+        self.assertEqual(self.receipt.read_bytes(), before[self.receipt][0])
+
+    def test_connected_account_readback_must_be_complete_dated_and_unsent(self):
+        changes = [{'verified_at': value} for value in
+                   ('2026-09-11T14:00:00Z', '2026-09-12T14:28:51Z',
+                    '2026-09-11T14:28:51', None)]
+        changes += [{'run_date': '2026-09-10'}, {'labels': ['DRAFT', 'SENT']},
+                    {'sent': True}, {'primary_sources': 0}, {'primary_sources': True},
+                    {'html_sha256': 'not-a-hash'}]
+        changes += [{key: False} for key in
+                    ('verified_draft_only', 'recipient_matches_current_connected_profile',
+                     'no_from_override_requested', 'exact_html_readback', 'exact_post_copy',
+                     'both_full_video_links', 'music_and_voice_credits')]
+        for change in changes:
+            with self.subTest(change=change):
+                receipt = self.connected_account_receipt()
+                receipt['verification'].update(change)
+                self.write(self.receipt, receipt)
+                self.refused_unchanged()
+        for missing in self.connected_account_receipt()['verification']:
+            with self.subTest(missing=missing):
+                receipt = self.connected_account_receipt()
+                del receipt['verification'][missing]
+                self.write(self.receipt, receipt)
+                self.refused_unchanged()
+
+    def test_nested_verification_cannot_hide_conflicting_or_partial_legacy_claims(self):
+        for change in ({'unsent': False}, {'labels': ['SENT']},
+                       {'readback': {'exact_caption': True}}, {'verification': None},
+                       {'draft_id': ''}, {'message_id': ''}):
+            with self.subTest(change=change):
+                receipt = self.connected_account_receipt()
+                self.write(self.receipt, {**receipt, **change})
+                self.refused_unchanged()
+
+    def test_bare_record_draft_receipt_is_not_delivery_proof(self):
+        receipt = self.connected_account_receipt()
+        del receipt['verification']
+        self.write(self.receipt, receipt)
+        self.refused_unchanged()
 
     def test_verdict_must_match_stamp_and_bind_passing_deliverables(self):
         changes = [{'recorded_at': '2026-09-12T14:18:57Z'}, {'run_date': '2026-09-10'},
