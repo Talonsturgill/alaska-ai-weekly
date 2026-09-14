@@ -55,7 +55,7 @@ const Flap:React.FC<{text:string;y:number;p:number;w?:number;size?:number;tilt?:
 const Goals:React.FC<{f:number;catchOpen:number;stockOpen:number;gate:number;small?:boolean;placement?:number}>=({f,catchOpen,stockOpen,gate,small=false,placement=1})=><g transform={small?'translate(130 230) scale(.76)':undefined}>
  <g transform={`translate(0 ${Math.sin(catchOpen*Math.PI)*3+Math.sin(stockOpen*Math.PI)*3})`}><path d="M120 740H960V1150H120Z" fill="url(#steel0914)" stroke={C.ink} strokeWidth={8}/><path d="M540 750V1140" stroke={C.ink} strokeWidth={7}/>
  <Rail x={160} y={1070} w={325}/><Rail x={600} y={1070} w={325}/><Token x={320} y={967} learned f={f} scale={.8}/><Token x={760} y={967} f={f} scale={.8}/>
- <Box text="CATCH PATTERN" y={759} w={820} size={35}/><Box text="BREEDING STOCK" y={824} w={820} size={35}/>
+ <g transform={`translate(0 ${-100*(1-placement)})`}><Box text="CATCH PATTERN" y={759} w={820} size={35}/><Box text="BREEDING STOCK" y={824} w={820} size={35}/></g>
  <g transform={`translate(${-905*catchOpen} ${-100*(1-placement)})`}><rect x={130} y={752} width={820} height={65} rx={6} fill="url(#enamel0914)" stroke={C.ink} strokeWidth={5}/><path d="M510 783H570" stroke={C.mango} strokeWidth={10}/></g>
  <g transform={`translate(${905*stockOpen} ${-100*(1-placement)})`}><rect x={130} y={820} width={820} height={65} rx={6} fill="url(#enamel0914)" stroke={C.ink} strokeWidth={5}/><path d="M510 852H570" stroke={C.mango} strokeWidth={10}/></g>
  <g transform={`translate(${800*gate} 0)`}><path d="M135 1110H945" stroke={C.mango} strokeWidth={18}/><path d={`M160 1097l${22-19*gate} ${-24*gate}`} stroke={C.ink} strokeWidth={12}/></g>
