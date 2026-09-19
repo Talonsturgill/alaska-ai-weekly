@@ -51,7 +51,7 @@
         "video-engine/src/Ep0912.tsx": "2c3f82ea4d80f437de5abc7796a044392f8874edc68c94536ee8085a2bef9331",
         "video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
         "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
-        "video-engine/src/Ep0919.tsx": "e9c995e905cbfb88466f5786951df6c731dc52f15e4b8b9ea7870c5d18ab9520",
+        "video-engine/src/Ep0919.tsx": "fdca5da3601b401a889bb959f0da61b46800c59c240a3721d643edd9c5e25267",
         "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
         "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
         "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
@@ -125,10 +125,10 @@
       "chunks": 1,
       "browser_override": null
     },
-    "cache_key": "2202547e81ae6be203d59ca6571972e9f46bbe5aa4d7030884d81b866c3f3af9",
+    "cache_key": "a32f4fe09f8392fdeec8e6b5f2c059505c1fb8475f91631bda36ea1040c18c74",
     "output": {
       "path": "/home/user/alaska-ai-weekly/out/dispatch/render/video_mute.mp4",
-      "sha256": "2bbca362ce6f12c69a4f9910149d998c3ef00729ded62d2c704e563c7fa5d47a"
+      "sha256": "5c2f4e8666f009cce0792f749cb32c1bf48f142de3160841b0ce29aaa7ff9662"
     }
   },
   "mix": {
@@ -326,11 +326,11 @@
     "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860"
   },
   "outputs": {
-    "dispatch_master.mp4": "6aa82d922ff3498233c90dd09d437ea72b599789f337e929b3445e47428567ba",
-    "dispatch_square.mp4": "cbcc12604c6011922d5d272b23c62a36a77a687b2ed94fe33b58ac80a3a1dfe9",
-    "dispatch_master_720.mp4": "995caa3502041e91632b8fd71b8b51c8dcb5a6f0cc98c55eeca926f0d30e5f84",
-    "dispatch_master_hosted.mp4": "fa25382125e8b43c264e6d5a20e6473c74c936f5b8873d112fbea3a741ebec40",
-    "poster.png": "db007d77dd973bc1838a20b1a0d0a41bcdef33708c3f68858b10465550caa545",
-    "poster_thumb.jpg": "39f2c5fad553d7a69616043ff4fd2e1a754f6071c574f065f0bc70c05c6f7d12"
+    "dispatch_master.mp4": "62f8cde95311416e6689e18ee6f7347316463d283e5652737405a6281393710d",
+    "dispatch_square.mp4": "c49d413cd4cfcab1c5e72497a845efe16679caa76d656aa96cce016036934ab1",
+    "dispatch_master_720.mp4": "789eadb517afe8968251afef347ae4837a1df74891e24d0d0f661cc475dacb47",
+    "dispatch_master_hosted.mp4": "30ec601615e2fd1b4f0ca23ee065d0f426cc95cbfd9309739cbc922b8edc1eea",
+    "poster.png": "875e804469d865a5a359f9e003027df40862586a107deca973f497fda45557d0",
+    "poster_thumb.jpg": "9f5ae7fef91da586723848d95044ed3147676708de9178075fa737742ce3e025"
   }
 }
