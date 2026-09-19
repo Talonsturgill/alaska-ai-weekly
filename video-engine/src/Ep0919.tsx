@@ -10,6 +10,7 @@ import {ContactShadow, RimLight, MotionBlur, GradeLayer, tones} from './lib/ligh
 import {VoiceProvider, useVoice} from './lib/voice';
 import {entrance, followThrough} from './lib/motion';
 import {EndCredits} from './lib/EndCredits';
+import {assertCropSafe} from './lib/cropsafe';
 
 const C = {
   ink: '#08100F',
@@ -43,6 +44,9 @@ const plateW = (text: string, size: number, ls = 1.5) => text.length * size * 0.
 const Plate: React.FC<{text: string; x?: number; y: number; size?: number; tone?: 'dark' | 'amber' | 'cyan'; p?: number}> =
 ({text, x = 540, y, size = 30, tone = 'dark', p = 1}) => {
   const w = plateW(text, size), h = size + 30;
+  // Authored geometry, checked against the LinkedIn crop BEFORE a frame is encoded.
+  // A plate that straddles y=420 or y=1500 ships cut in half; this throws instead.
+  assertCropSafe(text, y - h / 2, y + h / 2);
   const fill = tone === 'amber' ? C.amberD : tone === 'cyan' ? '#0C2B3C' : '#0B1B1A';
   const edge = tone === 'amber' ? C.amber : tone === 'cyan' ? C.cyan : C.light;
   const k = clamp(p);
@@ -57,9 +61,13 @@ const Plate: React.FC<{text: string; x?: number; y: number; size?: number; tone?
   );
 };
 
-const Head: React.FC<{text: string; y: number; size?: number; p?: number}> = ({text, y, size = 58, p = 1}) => (
-  <text x={540} y={y} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={size} fill={C.light} opacity={clamp(p)}>{text}</text>
-);
+const Head: React.FC<{text: string; y: number; size?: number; p?: number}> = ({text, y, size = 58, p = 1}) => {
+  // y is the BASELINE, so the cap rises about 0.78em above it and the descender falls
+  // about 0.22em below. Same invariant as Plate: a headline cut by the crop line is
+  // never the intent, and the square cut is where the audience is.
+  assertCropSafe(text, y - size * 0.78, y + size * 0.22);
+  return <text x={540} y={y} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={size} fill={C.light} opacity={clamp(p)}>{text}</text>;
+};
 
 const Defs = () => {
   const st = tones(C.steel), gr = tones(C.ground);
@@ -566,12 +574,18 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d={`M700 -120q-40 420 40 700`} fill="none" stroke={C.ink} strokeWidth={96} />
         <path d={`M700 -120q-40 420 40 700`} fill="none" stroke="url(#steel19)" strokeWidth={78} />
         <ellipse cx={330} cy={1340} rx={430} ry={560} fill="url(#lamp19)" opacity={0.55} />
-        <Rack x={520} y={1110} scale={1.72} f={f} lit={1} />
+        {/* The rack carried its own nameplate below the chassis, which put the label at
+         *  master y 1481: inside the 9:16 master, straight through the square crop's
+         *  bottom edge at 1500. The LinkedIn cut showed half the word GREENSPARC and the
+         *  170 kW plate not at all. Both labels now sit in the band between the headline
+         *  and the rack, where BOTH cuts read them. */}
+        <Rack x={520} y={1035} scale={1.32} f={f} lit={1} plate={false} />
         <Drip x={742} y0={600} y1={1246} f={f} at={at(2)} />
         <Head text="SERVERS INSIDE" y={585} p={q(1, 20)} />
         <Head text="THE POWERHOUSE" y={654} p={q(1, 20, 6)} />
+        <Plate text="GREENSPARC" x={250} y={725} size={26} p={q(1, 18, 10)} />
         <g transform={`translate(${-420 + 420 * q(3, 22)} 0)`} opacity={q(3, 18)}>
-          <Plate text="170 kW  ·  PER CLEANTECHNICA" y={1500} size={29} tone="amber" />
+          <Plate text="170 kW  ·  PER CLEANTECHNICA" x={700} y={725} size={26} tone="amber" />
         </g>
       </g>
     );
@@ -701,14 +715,18 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       <g>
         <Backdrop f={f} warm={0.55} />
         <Rain f={f} density={0.5} />
+        {/* An acronym and its expansion have to stack in reading order. The second
+         *  expansion line was sitting ABOVE the acronym and the money row was cutting
+         *  through it, so the square cut showed AURORA-AI sandwiched illegible between
+         *  two plates. Four rows, top to bottom, with air between them. */}
         <g opacity={build}>
-          <Plate text="AURORA-AI" y={585} size={46} tone="cyan" />
-          <Plate text="ALASKA UTILITY RESILIENCE AND" y={652} size={24} tone="cyan" />
-          <Plate text="OPTIMIZATION USING REAL-TIME AI" y={548} size={24} tone="cyan" />
+          <Plate text="AURORA-AI" y={540} size={46} tone="cyan" />
+          <Plate text="ALASKA UTILITY RESILIENCE AND" y={607} size={24} tone="cyan" />
+          <Plate text="OPTIMIZATION USING REAL-TIME AI" y={659} size={24} tone="cyan" />
         </g>
         <g opacity={q(15, 22)}>
-          <Plate text="$725,000  ·  PER UAF" x={330} y={640} size={26} />
-          <Plate text="GENESIS MISSION  ·  EO 14363" x={770} y={640} size={26} />
+          <Plate text="$725,000  ·  PER UAF" x={330} y={735} size={26} />
+          <Plate text="GENESIS MISSION  ·  EO 14363" x={770} y={735} size={26} />
         </g>
         <g>
           <Sourdough frame={f} x={296} y={1268} scale={0.78} emotion="confident" glow={0.72} accent={acc} />
@@ -722,11 +740,15 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
         </g>
         <Bar x={720} y={1330} h={300} grow={twin} block={q(16, 26, 20)} f={f} />
+        {/* This list was at 1560 to 1756, entirely below the square crop, so the cut that
+         *  actually ships on LinkedIn held a still frame for four seconds while the 9:16
+         *  built a four-line list. INTENDED, NOT MEASURED is the honesty beat of the
+         *  film; it does not get to be a TikTok-only element. */}
         <g opacity={q(17, 18)}>
-          <Plate text="FORECAST DEMAND" x={540} y={1560} size={26} tone="cyan" p={pop(17)} />
-          <Plate text="DETECT ABNORMAL CONDITIONS" x={540} y={1622} size={26} tone="cyan" p={q(17, 16, 6)} />
-          <Plate text="OPTIMIZE HYDRO AND DIESEL" x={540} y={1684} size={26} tone="cyan" p={q(17, 16, 12)} />
-          <Plate text="INTENDED, NOT MEASURED" x={540} y={1756} size={26} tone="amber" p={q(17, 16, 20)} />
+          <Plate text="FORECAST DEMAND" x={540} y={806} size={24} tone="cyan" p={pop(17)} />
+          <Plate text="DETECT ABNORMAL CONDITIONS" x={540} y={864} size={24} tone="cyan" p={q(17, 16, 6)} />
+          <Plate text="OPTIMIZE HYDRO AND DIESEL" x={540} y={922} size={24} tone="cyan" p={q(17, 16, 12)} />
+          <Plate text="INTENDED, NOT MEASURED" x={540} y={980} size={24} tone="amber" p={q(17, 16, 20)} />
         </g>
       </g>
     );
@@ -746,9 +768,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
         </g>
         <Head text="IT HASN'T STARTED" y={612} p={q(18, 18)} />
+        {/* 1500 is exactly the square crop's bottom edge, so PHASE 1 was sliced in half
+         *  and 9 MONTHS sat below the world. They are the two facts of the shot. */}
         <g transform={`translate(0 ${-30 + 30 * pop(19)})`} opacity={q(19, 12)}>
-          <Plate text="PHASE 1  ·  STARTS OCT 1" y={1500} size={31} tone="amber" />
-          <Plate text="9 MONTHS  ·  RESEARCH" y={1566} size={31} tone="amber" />
+          <Plate text="PHASE 1  ·  STARTS OCT 1" y={700} size={28} tone="amber" />
+          <Plate text="9 MONTHS  ·  RESEARCH" y={768} size={28} tone="amber" />
         </g>
       </g>
     );
@@ -783,7 +807,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Plate text="GREENSPARC, 2024" x={430} y={764} size={28} />
         </g>
         <g opacity={toTrace}>
-          <g transform="translate(300 1240)">
+          {/* Raised 80px: the 170 kW chip that slides in under the trace was landing at
+           *  1336, behind the caption bar, and the axis labels were at 1700, below the
+           *  square entirely. An unlabelled forecast chart is not a forecast chart. */}
+          <g transform="translate(300 1160)">
             {[0, 1, 2, 3].map((i) => <path key={i} d={`M0 ${-40 + i * 40}H600`} stroke={C.light} strokeWidth={2} opacity={0.12} />)}
             <ForecastTrace observed={obs} predicted={pred} spread={92} f={f} drawn={draw} observedDrawn={q(24, 20)}
               nowLabel="NOW" strokeWidth={6} />
@@ -792,8 +819,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
               <text x={20} y={124} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={20} fill={C.ink}>170 kW</text>
             </g>
           </g>
-          <Plate text="OBSERVED" x={330} y={1700} size={26} tone="amber" p={q(24, 16)} />
-          <Plate text="CLAIMED" x={760} y={1700} size={26} tone="cyan" p={q(24, 16, 10)} />
+          <Plate text="OBSERVED" x={330} y={1040} size={26} tone="amber" p={q(24, 16)} />
+          <Plate text="CLAIMED" x={760} y={1040} size={26} tone="cyan" p={q(24, 16, 10)} />
         </g>
         <Head text="NOW, THOSE SERVERS" y={592} p={q(20, 16) * (1 - toTrace)} />
         <Head text="IT PREDICTS THEM TOO" y={592} p={q(25, 18) * toTrace} />
@@ -887,9 +914,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <Drip x={800} y0={700} y1={922} f={f} at={at(36)} dur={22} />
         <Rain f={f} density={0.8} />
         <Plate text="WATCH FOR GALLONS" y={585} size={36} tone="amber" p={q(35, 20)} />
+        {/* The closing question is the whole point of the last shot and it was living at
+         *  1730, below the square crop, in the sparsest frame of the film. */}
         <g opacity={q(37, 20)}>
-          <Plate text="WHAT WOULD CONVINCE YOU" y={1730} size={30} />
-          <Plate text="IT WORKED?" y={1796} size={30} />
+          <Plate text="WHAT WOULD CONVINCE YOU" y={950} size={30} />
+          <Plate text="IT WORKED?" y={1016} size={30} />
         </g>
       </g>
     );
