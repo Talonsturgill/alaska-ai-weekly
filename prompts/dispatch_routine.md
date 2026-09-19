@@ -41,6 +41,26 @@ The test at every stage is question zero of the taste loop: WOULD A STRANGER STO
 THIS FRAME? If you are unsure, the answer is no, and the frame gets redone. "Fine" is a fail.
 The bar is the best frame this channel has ever shipped, plus one.
 
+## A PERMISSION PROMPT IS A STOP, AND A STOP IS A FAILED RUN (owner, 2026-09-19)
+
+This run stopped mid-Phase-0 on a harness permission prompt for an ordinary file write, to
+`.claude/WORKLOG.md`. The owner's ruling: that is the banned behavior, and the fix is to change
+the automation so the write can never be asked about again.
+
+It does not matter that the HARNESS raised the prompt rather than this file asking a question.
+From the owner's side a run that is sitting there waiting is a run that did not happen, and there
+is nobody at the desk to click yes. So the rule is TWO rules, not one: never hand control back,
+and never do the thing that invites the harness to hand control back for you.
+
+The concrete case, and the pattern to copy: **the worklog goes in `out/`, never in `.claude/`.**
+`out/` is this routine's gitignored scratch and writing there can never raise a prompt. `.claude/`
+is configuration, tools treat it as sensitive, and `.claude/settings.json` already allows `Write`
+broadly, which did NOT help — a path the harness protects is protected whatever the allowlist
+says. So the fix for that class is to MOVE THE WRITE, not to widen a rule. Where a rule genuinely
+would help, add it to `.claude/settings.json` in the same run and COMMIT it, because this routine
+wakes in a fresh container cloned from the repo and an uncommitted rule does not exist on the run
+that needs it.
+
 ## THE ONE OUTCOME LAW (added 2026-08-01 by owner directive; READ IT BEFORE PHASE 0 AND AGAIN AT EVERY DECISION POINT)
 
 **THIS RUN HAS EXACTLY ONE TERMINAL STATE: A DELIVERED VIDEO.** There is no second one. Not a

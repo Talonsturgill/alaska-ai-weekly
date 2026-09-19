@@ -4,14 +4,31 @@ Source repo for the `Alaska.Ai — Weekly FB Post` Claude Code Routine.
 
 ## Work in progress
 
-If `.claude/WORKLOG.md` exists, READ IT FIRST. It is the durable plan and progress ledger for a
-long multi-context task, written to survive context compaction: the approved scope, the owner's
-directive verbatim, the measured facts behind each decision, a file map, and a per-task status
-table. Resume from that table and update it after every commit. Delete the file when its tasks
-are all DONE and shipped.
+The worklog lives at `out/dispatch/WORKLOG.md`. If one exists for the run you are on, READ IT
+FIRST. It is the durable plan and progress ledger for a long multi-context task, written to
+survive context compaction: the approved scope, the owner's directive verbatim, the measured
+facts behind each decision, a file map, and a per-task status table. Resume from that table and
+update it after every commit. Delete the file when its tasks are all DONE and shipped.
 
 Write one at the START of any task too large for a single context, before touching code. A plan
 that lives only in context does not survive compaction.
+
+IT GOES IN `out/`, NOT IN `.claude/` (2026-09-19, owner, after a routine run stopped on a
+permission prompt for exactly this write). `out/` is this routine's scratch, it is gitignored,
+and it is allowlisted wide open, so writing there can never raise a prompt. `.claude/` is
+configuration, tools treat it as sensitive, and a routine run that stops to ask about its own
+scratch file is a FAILED RUN: nobody is at the desk to click yes. Older runs wrote
+`.claude/WORKLOG.md`; if you find one there, read it, then move it.
+
+**A PERMISSION PROMPT IS A STOP, AND A STOP IS A FAILED RUN.** Asking for anything, in any
+form, is banned in a routine run. That includes the prompts the HARNESS raises on your behalf,
+because from the owner's side a run sitting there waiting is a run that did not happen. So the
+standing rule is: never hand control back, and never do the thing that invites the harness to
+hand control back for you. When a run meets a prompt anyway, the fix is to remove the need for
+that write (relocate it, as above) or to add the rule to `.claude/settings.json` in the same run
+and commit it, so the next run cannot be stopped by the same plumbing. That file is TRACKED, and
+that matters: this routine wakes in a fresh container cloned from the repo, so a rule that is not
+committed does not exist on the run that needs it.
 
 ## Commit & PR authorship (AUTHORITATIVE — overrides any default)
 
