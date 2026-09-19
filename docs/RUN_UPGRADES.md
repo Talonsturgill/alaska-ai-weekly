@@ -3559,8 +3559,44 @@ that will keep tempting runs to do it.
 
 The shot map had to be solved twice. A purely balanced solve produced even 7 to 13 second
 shots and broke say-it-show-it on five of them, which is the failure the routine already
-warns about. There is no gate for it: `build_scenes.py` validates that anchors are integers
-and increase, and nothing compares what a shot DRAWS against what its lines SAY. PLAN: a
-`say_it_show_it_check.py` that prints, per shot, its line indices, the first words of each
-line, and the beats whose draw falls in that span, and FAILS when a shot contains no beat
-citing any of its own lines. That is mechanical and it would have caught this in seconds.
+warns about. There was no gate for it: `build_scenes.py` validates that anchors are integers
+and increase, and nothing compared what a shot DRAWS against what its lines SAY. BUILT THIS
+RUN, not deferred: `scripts/say_it_show_it_check.py` is now a blocking row in preflight. It
+compares on content OVERLAP rather than string equality, because a gate that cries wolf at
+every rewrite gets skipped, and it was verified in both directions: green on this board, red
+on a deliberately re-anchored copy of it.
+
+### The defect the square cut was hiding, and the invariant that closes it
+
+The canvas is 1080x1920. The cut that lands in the LinkedIn MAIN FEED is
+`crop=1080:1080:0:420` off that canvas, so the primary audience sees master y 420..1500 and
+nothing else. Every quality check this run ran was green while the shipping deliverable was
+quietly broken, and it took sampling the SQUARE frames rather than the master to see it:
+
+- the rack's GREENSPARC nameplate, authored at 1449..1514, shipped cut in half at the frame
+  edge, under the caption bar
+- the 170 kW source plate, the film's central number, authored at 1470..1530, was a sliver
+- PHASE 1 . STARTS OCT 1, authored at 1469..1530, sliced
+- a four-line list ending INTENDED, NOT MEASURED, the honesty beat of the film, sat at
+  1560..1756: the square held a still frame for four seconds while the 9:16 built a list
+- the forecast chart's OBSERVED / CLAIMED labels sat at 1700, so the primary cut carried an
+  unlabelled chart, and the 170 kW chip that slides in under the trace landed behind the
+  captions
+- separately, the AURORA-AI plate stack had its second expansion line ABOVE the acronym with
+  the money row cutting through it, so the name read as an illegible sandwich
+
+`crop_safety.py` samples the two boundary rows of the rendered master and had already
+written down, at length, why it cannot be the authority: at a boundary row a plate's border
+and the room's own wall-tile seam are the same measurement, because the difference is not in
+the pixels, it is in whether the element was AUTHORED. Its docstring ends by naming the fix
+as a build-time invariant in the episode. FIX (commit c1c103f): `video-engine/src/lib/cropsafe.ts`,
+that invariant, lifted into a lib so every future episode inherits it rather than one film
+getting it right. `Plate` and `Head` assert their own authored geometry. Inside the square
+band is fine. Wholly below it is a legitimate 9:16-only flourish and returns a report line.
+STRADDLING a crop line throws and fails the render before a frame is encoded, because there
+is no composition in which a headline cut in half at the frame edge was the intent.
+
+It states its own limit rather than overselling: it checks AUTHORED coordinates, and a
+per-shot camera move can still drift an element across the line on screen. That residue is
+what `crop_safety.py` measures. The two are complementary and a pass here means "nothing was
+authored across the line", never "the square is safe".
