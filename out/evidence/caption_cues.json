@@ -1,181 +1,171 @@
 {
  "note": "every open-caption cue in the delivered cut, in order, as built into episode_props.json and rendered by the episode. Times are seconds from the first frame. Grade caption text against THIS, not against the 14 contact stills, which sample only a fraction of the runtime.",
- "count": 35,
+ "count": 33,
  "cues": [
   {
    "start": 0.0,
-   "end": 2.33,
-   "text": "What would make an AI fishing"
+   "end": 3.27,
+   "text": "In Cordova, Alaska, servers run"
   },
   {
-   "start": 2.36,
-   "end": 3.9,
-   "text": "rule worth testing?"
+   "start": 3.3,
+   "end": 6.04,
+   "text": "inside a hydroelectric powerhouse."
   },
   {
-   "start": 5.4,
-   "end": 7.49,
-   "text": "A September 11th paper explores"
+   "start": 6.84,
+   "end": 10.13,
+   "text": "Greensparc put a hundred seventy kilowatts there"
   },
   {
-   "start": 7.52,
-   "end": 10.62,
-   "text": "that question with eastern Bering Sea pollock."
+   "start": 10.13,
+   "end": 13.36,
+   "text": "in twenty twenty four, cooled by turbine water."
   },
   {
-   "start": 11.6,
-   "end": 15.73,
-   "text": "Researchers affiliated with the Alaska Fisheries Science Center"
+   "start": 14.38,
+   "end": 15.18,
+   "text": "Remember them."
   },
   {
-   "start": 15.73,
-   "end": 19.28,
-   "text": "built simulations informed by historical observations."
+   "start": 16.82,
+   "end": 22.64,
+   "text": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen"
   },
   {
-   "start": 20.64,
-   "end": 23.01,
-   "text": "Their agent practices harvest choices"
+   "start": 22.64,
+   "end": 25.6,
+   "text": "sixty six customers, no wire out."
   },
   {
-   "start": 23.04,
-   "end": 25.28,
-   "text": "through repeated simulated seasons."
+   "start": 26.58,
+   "end": 30.4,
+   "text": "About eighty percent hydro, from two creeks. Ten point"
   },
   {
-   "start": 26.24,
-   "end": 29.35,
-   "text": "Feedback rewards outcomes and changes"
+   "start": 30.4,
+   "end": 32.94,
+   "text": "eight megawatts of diesel behind it."
   },
   {
-   "start": 29.38,
-   "end": 30.28,
-   "text": "the learned rule."
+   "start": 33.8,
+   "end": 36.17,
+   "text": "Guess demand wrong and the co-op"
   },
   {
-   "start": 31.4,
-   "end": 34.72,
-   "text": "They compare it with a predefined harvest rule."
+   "start": 36.2,
+   "end": 37.48,
+   "text": "can't buy from a neighbor."
   },
   {
-   "start": 35.5,
-   "end": 38.64,
-   "text": "Will an advantage hold when the biology changes?"
+   "start": 38.14,
+   "end": 39.02,
+   "text": "It burns fuel."
   },
   {
-   "start": 39.64,
-   "end": 41.67,
-   "text": "Start with a model where young"
+   "start": 40.14,
+   "end": 44.26,
+   "text": "So here, a bad forecast costs gallons."
   },
   {
-   "start": 41.7,
-   "end": 43.8,
-   "text": "fish enter at a constant rate."
+   "start": 45.5,
+   "end": 47.32,
+   "text": "In August, UAF said it won"
   },
   {
-   "start": 45.16,
-   "end": 49.33,
-   "text": "The learned policy leaves more spawning biomass, the weight"
+   "start": 47.32,
+   "end": 51.52,
+   "text": "seven hundred twenty five thousand from the Genesis Mission."
   },
   {
-   "start": 49.33,
-   "end": 54.64,
-   "text": "of breeding fish, than its comparison, alongside large annual catch swings."
+   "start": 52.34,
+   "end": 57.13,
+   "text": "AURORA-AI is a digital twin of Cordova, built from the co-op's"
   },
   {
-   "start": 55.76,
-   "end": 59.3,
-   "text": "The next experiment links young fish entering the stock"
+   "start": 57.13,
+   "end": 59.52,
+   "text": "records, with machine learning."
   },
   {
-   "start": 59.3,
-   "end": 61.04,
-   "text": "to the breeding population."
+   "start": 60.62,
+   "end": 62.99,
+   "text": "A Phase One award, beginning October 1st"
   },
   {
-   "start": 62.04,
-   "end": 64.15,
-   "text": "This is a separate simulated case"
+   "start": 63.02,
+   "end": 65.0,
+   "text": ", nine months."
   },
   {
-   "start": 64.18,
-   "end": 65.56,
-   "text": "with its own comparison."
+   "start": 66.0,
+   "end": 70.7,
+   "text": "Four partners. UAF's share, three hundred twenty five thousand."
   },
   {
-   "start": 66.82,
-   "end": 69.15,
-   "text": "Here the learned rule catches more"
+   "start": 71.94,
+   "end": 73.84,
+   "text": "Now, those servers."
   },
   {
-   "start": 69.18,
-   "end": 71.13,
-   "text": "and leaves less breeding biomass"
+   "start": 74.8,
+   "end": 75.66,
+   "text": "Not the project's."
   },
   {
-   "start": 71.16,
-   "end": 72.3,
-   "text": "than that comparison."
+   "start": 76.26,
+   "end": 78.2,
+   "text": "Just a load on the same grid."
   },
   {
-   "start": 73.88,
-   "end": 77.88,
-   "text": "These simulated gains may offer no management advantage over"
+   "start": 78.75,
+   "end": 81.7,
+   "text": "Whatever it predicts, it predicts them too."
   },
   {
-   "start": 77.88,
-   "end": 79.08,
-   "text": "a predefined rule."
+   "start": 82.38,
+   "end": 88.52,
+   "text": "So the test is narrow. By June, gallons saved, or a demonstration?"
   },
   {
-   "start": 80.1,
-   "end": 83.05,
-   "text": "In real fisheries, NOAA Fisheries"
+   "start": 89.5,
+   "end": 94.66,
+   "text": "Richard Wies, who leads it, calls that a really short period of performance."
   },
   {
-   "start": 83.08,
-   "end": 84.79,
-   "text": "and the North Pacific Fishery Management"
+   "start": 95.76,
+   "end": 97.78,
+   "text": "And Cordova is the easy case."
   },
   {
-   "start": 84.82,
-   "end": 87.0,
-   "text": "Council manage Alaska pollock."
+   "start": 98.94,
+   "end": 101.29,
+   "text": "Alaska's power cost program covers"
   },
   {
-   "start": 87.92,
-   "end": 90.49,
-   "text": "Fishing businesses need sound management"
+   "start": 101.32,
+   "end": 103.54,
+   "text": "a hundred ninety three diesel communities,"
   },
   {
-   "start": 90.52,
-   "end": 91.84,
-   "text": "to plan their seasons."
+   "start": 104.22,
+   "end": 105.51,
+   "text": "eighty two thousand people."
   },
   {
-   "start": 92.94,
-   "end": 98.1,
-   "text": "So test both rules against the same catch-pattern and breeding-stock goals."
+   "start": 105.54,
+   "end": 108.94,
+   "text": "They need it most, with the least data."
   },
   {
-   "start": 98.86,
-   "end": 103.29,
-   "text": "These are illustrative simulations with public code. They establish"
+   "start": 109.74,
+   "end": 111.22,
+   "text": "So watch for gallons."
   },
   {
-   "start": 103.29,
-   "end": 107.33,
-   "text": "alternatives to investigate, not a winning real-world policy."
-  },
-  {
-   "start": 107.36,
-   "end": 110.23,
-   "text": "Which balance should a rule demonstrate"
-  },
-  {
-   "start": 110.26,
-   "end": 112.64,
-   "text": "between catches and breeding fish?"
+   "start": 112.22,
+   "end": 113.8,
+   "text": "What would convince you it worked?"
   }
  ]
 }

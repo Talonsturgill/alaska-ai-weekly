@@ -47,7 +47,7 @@
       "video-engine/src/Ep0912.tsx": "2c3f82ea4d80f437de5abc7796a044392f8874edc68c94536ee8085a2bef9331",
       "video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
       "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
-      "video-engine/src/Ep0919.tsx": "fdca5da3601b401a889bb959f0da61b46800c59c240a3721d643edd9c5e25267",
+      "video-engine/src/Ep0919.tsx": "9c375b32931edd63c99bf154a23ea77bd5e9e2017114545374dc21a805b27fba",
       "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
       "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
       "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
@@ -81,6 +81,7 @@
       "video-engine/src/lib/civics.tsx": "f5c13c7fb097da738b6750be06d37e5ff6ef90c6d2ba047589266c658c3d7656",
       "video-engine/src/lib/clinic.tsx": "080d0bc809870d8169282b1160bd002e1f36d291b9a53f2f265496a47cd2c835",
       "video-engine/src/lib/credentials.tsx": "abee5322e3e527e3ea54ed06bafa866bb829230e84a6e9589ec5552e51b9d9b8",
+      "video-engine/src/lib/cropsafe.ts": "a373145ab7f23bf5c5513deb160c8faf27b0f3ae59178641f804307ebda66059",
       "video-engine/src/lib/cryosphere.tsx": "154d006dc9e1cba9ee82b7128026bab90f9ee16be2263efffb5c4da8868d0204",
       "video-engine/src/lib/evidence.tsx": "8df7516bf145a5c2220ee4dc4d41d5fe1c05fa28e09a5292c9bbb64e3c550808",
       "video-engine/src/lib/evidence_state.tsx": "f72bf9e66f1bc8b1f2b266fd6c939a20d124f68ecad1610ea02a58f819c7b247",
@@ -121,9 +122,9 @@
     "chunks": 1,
     "browser_override": null
   },
-  "cache_key": "a32f4fe09f8392fdeec8e6b5f2c059505c1fb8475f91631bda36ea1040c18c74",
+  "cache_key": "3e0951e2f4a7b4a8ffec0ff27a4f4c6600a97a1ab02c2921ea71c1d4a24a5d2f",
   "output": {
     "path": "/home/user/alaska-ai-weekly/out/dispatch/render/video_mute.mp4",
-    "sha256": "5c2f4e8666f009cce0792f749cb32c1bf48f142de3160841b0ce29aaa7ff9662"
+    "sha256": "5c735e3efbaedf6a600702785e0a1d0bd28f9fb47365484eca6131850287487f"
   }
 }
