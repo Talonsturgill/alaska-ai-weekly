@@ -1,19 +1,21 @@
 In Cordova, Alaska, servers run inside a hydroelectric powerhouse.
-Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.
+Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.
 Remember them.
-Cordova Electric runs an island grid with no wire out.
-Most of its power is hydro. The rest is diesel.
-Guess wrong about demand and the co op can't buy from a neighbor. It burns fuel.
+Cordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.
+About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.
+Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.
 So here, a bad forecast costs gallons.
-In August, the University of Alaska Fairbanks won an Energy Department award to forecast that grid.
-The plan is a digital twin, a working copy of Cordova built from the co op's records, with machine learning on it.
-It hasn't started. It begins October first and runs nine months.
+In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.
+AURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.
+A Phase One award, beginning October first, nine months.
+Four partners. U A F's share, three hundred twenty five thousand.
 Now, those servers.
-They are not part of the project. They are a load on the same grid.
-Whatever the model predicts, it has to predict them too.
-So the test is narrow. By next June, gallons saved, or a demonstration?
-Richard Wies, who leads it, calls nine months a really short period of performance.
+Not the project's. Just a load on the same grid.
+Whatever it predicts, it predicts them too.
+So the test is narrow. By June, gallons saved, or a demonstration?
+Richard Wies, who leads it, calls that a really short period of performance.
 And Cordova is the easy case.
-The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.
+Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.
+They need it most, with the least data.
 So watch for gallons.
 What would convince you it worked?

@@ -5,6 +5,7 @@
   "caption_fixups": {
     "U A F": "UAF",
     "co op": "co-op",
+    "AURORA A I": "AURORA-AI",
     "October first": "October 1st"
   },
   "lines": [
@@ -17,7 +18,7 @@
     },
     {
       "idx": 1,
-      "text": "Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.",
+      "text": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
       "claims": [
         "c15"
       ]
@@ -25,27 +26,28 @@
     {
       "idx": 2,
       "text": "Remember them.",
-      "claims": [
-        "c15"
-      ]
+      "claims": []
     },
     {
       "idx": 3,
-      "text": "Cordova Electric runs an island grid with no wire out.",
+      "text": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.",
       "claims": [
-        "c12b"
+        "c12b",
+        "c12c"
       ]
     },
     {
       "idx": 4,
-      "text": "Most of its power is hydro. The rest is diesel.",
+      "text": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
       "claims": [
-        "c12a"
+        "c12a",
+        "c12c",
+        "c12d"
       ]
     },
     {
       "idx": 5,
-      "text": "Guess wrong about demand and the co op can't buy from a neighbor. It burns fuel.",
+      "text": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
       "claims": [
         "c12a"
       ]
@@ -57,85 +59,100 @@
     },
     {
       "idx": 7,
-      "text": "In August, the University of Alaska Fairbanks won an Energy Department award to forecast that grid.",
+      "text": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
       "claims": [
-        "c1"
+        "c1",
+        "c7"
       ]
     },
     {
       "idx": 8,
-      "text": "The plan is a digital twin, a working copy of Cordova built from the co op's records, with machine learning on it.",
+      "text": "AURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.",
       "claims": [
-        "c11",
-        "c6"
+        "c6",
+        "c11"
       ]
     },
     {
       "idx": 9,
-      "text": "It hasn't started. It begins October first and runs nine months.",
+      "text": "A Phase One award, beginning October first, nine months.",
       "claims": [
+        "c14",
         "c3"
       ]
     },
     {
       "idx": 10,
+      "text": "Four partners. U A F's share, three hundred twenty five thousand.",
+      "claims": [
+        "c8",
+        "c2"
+      ]
+    },
+    {
+      "idx": 11,
       "text": "Now, those servers.",
       "claims": [
         "c15"
       ]
     },
     {
-      "idx": 11,
-      "text": "They are not part of the project. They are a load on the same grid.",
+      "idx": 12,
+      "text": "Not the project's. Just a load on the same grid.",
       "claims": [
         "c15"
       ]
     },
     {
-      "idx": 12,
-      "text": "Whatever the model predicts, it has to predict them too.",
+      "idx": 13,
+      "text": "Whatever it predicts, it predicts them too.",
       "claims": [
         "c11"
       ]
     },
     {
-      "idx": 13,
-      "text": "So the test is narrow. By next June, gallons saved, or a demonstration?",
+      "idx": 14,
+      "text": "So the test is narrow. By June, gallons saved, or a demonstration?",
       "claims": [
         "c3"
       ]
     },
     {
-      "idx": 14,
-      "text": "Richard Wies, who leads it, calls nine months a really short period of performance.",
-      "claims": [
-        "c16"
-      ]
-    },
-    {
       "idx": 15,
-      "text": "And Cordova is the easy case.",
+      "text": "Richard Wies, who leads it, calls that a really short period of performance.",
       "claims": [
-        "c12a",
-        "c12b"
+        "c16",
+        "c9"
       ]
     },
     {
       "idx": 16,
-      "text": "The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.",
+      "text": "And Cordova is the easy case.",
+      "claims": [
+        "c12a"
+      ]
+    },
+    {
+      "idx": 17,
+      "text": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
       "claims": [
         "c13"
       ]
     },
     {
-      "idx": 17,
-      "text": "So watch for gallons.",
+      "idx": 18,
+      "text": "They need it most, with the least data.",
       "claims": [
-        "c3"
+        "c13"
       ]
     },
     {
-      "idx": 18,
+      "idx": 19,
+      "text": "So watch for gallons.",
+      "claims": []
+    },
+    {
+      "idx": 20,
       "text": "What would convince you it worked?",
       "claims": []
     }

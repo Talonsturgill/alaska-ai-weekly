@@ -1,1909 +1,1162 @@
 {
-  "run_date": "2026-09-14",
-  "slug": "rehearsal-before-the-season",
-  "title": "Rehearsal Before the Season",
-  "total_seconds": 112.64,
-  "concept": "One portable research control rehearses two separate pollock simulations, then puts learned and predefined candidates through the same explicit next-test goals.",
-  "derived_from": "scratch",
+  "run_date": "2026-09-19",
+  "concept": "Cordova is one of the few grids where you can actually GRADE a forecast, because an islanded run-of-river system settles every wrong guess in gallons of diesel. A federal AI award arrives to build a digital twin of that grid, and the film's job is to name the measurement that would settle whether it worked, while being honest that the clever thing in the powerhouse was already there and somebody else put it there.",
+  "title": "Watch For Gallons",
   "engine": "infographic-2.5d",
-  "palette": "bright ultramarine mango alabaster sea-glass ink navy",
+  "derived_from": "scratch",
+  "palette": "spruce black-green night, sodium amber for what was measured, forecast cyan for what was claimed, wet moss, rain silver",
   "fingerprint": {
-    "pov": "orbital-aerial",
-    "motion_vector": "vertical-descent",
-    "hero_treatment": "instrument-as-subject",
-    "layout": "stacked-layers",
-    "register": "naturalistic-scene",
-    "camera_strategy": "aerial-descent",
-    "light_story": "noon-hard",
-    "palette": "bright ultramarine mango alabaster sea-glass ink navy",
-    "metaphor": "portable rehearsal control opens separate biological experiments"
+    "palette": "spruce black-green night, sodium amber measured, forecast cyan claimed, wet moss, rain silver",
+    "pov": "macro-closeup",
+    "layout": "single-object-void",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "single-organic-hero",
+    "register": "instrument-readout",
+    "camera_strategy": "dolly-through",
+    "light_story": "night-practical",
+    "metaphor": "a claim gets a box before the measurement does, in a town already using its river twice"
   },
-  "treatment": {
-    "run_date": "2026-09-14",
-    "judged_at_utc": "2026-09-14T11:12:23.260296+00:00",
-    "role": "independent_directors_room_scorer",
-    "status": "binding_for_storyboard",
-    "inputs": [
-      {
-        "path": "out/dispatch/angle.json",
-        "sha256": "09dbeb5a9094aadc8eab48c9d950e5f4f3111adc460b39dc496348f5b426723f"
-      },
-      {
-        "path": "out/dispatch/verified_findings.json",
-        "sha256": "c22456d26204cf1e6f5e0588efd646d1d9982f495689c41a9bbf61ce4b6c819d"
-      },
-      {
-        "path": "out/dispatch/treatment_comedian.json",
-        "sha256": "bed421a66ec48d8c07f365eaa697e425998b5a3e42fe6c92b4a7efd99d2c2d64"
-      },
-      {
-        "path": "out/dispatch/treatment_dramatist.json",
-        "sha256": "27e983c59e5536b071604b6db7b7d5cd9981072f31bf74e63ff9a5d128a57736"
-      },
-      {
-        "path": "out/dispatch/treatment_explainer.json",
-        "sha256": "350b165caf2e5e47d481ed129483dd130082bfc99866bdfabdccd144e7f6d9a9"
-      },
-      {
-        "path": "out/dispatch/treatment_enthusiast.json",
-        "sha256": "4f625eaeedff9b4cb86fe6459af47b7fc62dc3cc9edd91dcda6f7b6addba75d9"
-      },
-      {
-        "path": "out/dispatch/treatment_challenge_comedian.json",
-        "sha256": "502f77d7afa3771a7ecb2a331d9653bfbf57f2c0448797840eaac9365145b3eb"
-      },
-      {
-        "path": "out/dispatch/treatment_challenge_dramatist.json",
-        "sha256": "e1ea04c33c75c6b64bed0ac84608a75ac6236809f3b2736e2eece503948fa58a"
-      },
-      {
-        "path": "out/dispatch/treatment_challenge_explainer.json",
-        "sha256": "159be2d8e8cbd1c11cfc73b037186843377d4d195700c7875cc66829d804b184"
-      },
-      {
-        "path": "out/dispatch/treatment_challenge_enthusiast.json",
-        "sha256": "6dc2d0cde385192903150ac65db3f2d8e6eeaee693b15f158c21f4f2e6fdd8b1"
-      }
-    ],
-    "winner": {
-      "role": "enthusiast",
-      "treatment": "Rehearsal Before the Season",
-      "title": "Rehearsal Before the Season",
-      "logline": "One portable research control lets a researcher explore two separate simulated pollock scenarios, then places the discovered policies and their predefined comparisons before the same next-test goals.",
-      "valence": "Earned curiosity and optimism about policy discovery as research.",
-      "why": "The enthusiast supplies the most usable central performance: a researcher handles one existing control through changing research states. It leads with the real accomplishment, has a physically continuous hero and a hopeful earned return, and is feasible with the current shelf. Its original smoothness detour fails the padding test and is removed in full. The winning film is the revised lever-led research rehearsal; the grafts improve its mechanism and argument without replacing its identity.",
-      "binding_changes": [
-        "Start inside the laboratory, with the apparatus explicitly labeled SIMULATED / EDITORIAL SCHEMATIC before the first harbor view.",
-        "Remove the entire smoother-policy-response animation, narration, calendar correction and corresponding gag. The Ricker catch/biomass reversal supplies the second movement.",
-        "Use two spatially separate experiment stations. Moving the same control changes the editorial research viewpoint; it does not transplant one trained policy. Each station introduces its own learned candidate and predefined comparison.",
-        "After the distinct reversal, give learned and predefined candidates the same visible next-test requirements. No scores, pass/fail lamps, approval marks, or operational launch.",
-        "Retain the affirmative research payoff: explicit alternatives worth comparing, with operational work ahead."
-      ]
-    },
-    "judgment_by_pitch": {
-      "comedian": "Strongest original scroll-stop, gags and changing prop; equal-candidate test is valuable. A new trophy adds construction/readability cost and risks imputing researcher boosterism or repeating award/credential framing. Runner-up.",
-      "dramatist": "Best scale tension and separate basins. Toy-boat launch suspense is predictable, and learning routes risk an autonomous-navigation claim. Borrow spatial separation, not boat hero.",
-      "explainer": "Best mechanism and two-loop separation. Single inlet swap obscures separate experiments; tank-as-set weakens the throughline and the aquarium rim can become a long disclaimer. Borrow feedback cutaway.",
-      "enthusiast": "Best affirmative emotional arc, human continuity, manifest feasibility and fresh staging. Original retention fails at the smoothness correction; corrected equal-goal test earns Act3. Winner only with the binding revisions."
-    },
-    "casting": {
-      "hero_asset": "GearLever",
-      "hero_source": "video-engine/src/lib/props.tsx",
-      "manifest_basis": "ASSET_MANIFEST.md documents GearLever longThrow and accentColor, plus GripHand contact semantics. It is a schematic research control, never literal study hardware or autonomous fleet equipment.",
-      "supporting_assets": [
-        "GripHand",
-        "Character",
-        "QuestionToken",
-        "Simulated/EvidenceState",
-        "Stage3D/materials/FX",
-        "SwingSign/Nameplate"
-      ],
-      "dedupe_check": {
-        "command": "python3 scripts/dedupe.py check --entities \"Eastern Bering Sea pollock, Maia Kapur, Grant Adams, Marcus Lapeyrolerie, James Thorson, reinforcement learning, harvest policy\" --hero GearLever",
-        "result": "FRESH",
-        "last_two_heroes": [
-          "Sheet",
-          "PenAndDocument"
-        ]
-      },
-      "net_new_scope": "At most one reusable portable mounting frame. No new trophy, boat hero or fish portrait. Register any reusable asset change."
-    },
-    "staging": {
-      "physical_stages": [
-        {
-          "name": "Research wet laboratory",
-          "time_s": [
-            0,
-            50
-          ],
-          "purpose": "Laboratory-first hook and constant-recruitment station."
-        },
-        {
-          "name": "Separate experimental basin bay",
-          "time_s": [
-            50,
-            74
-          ],
-          "purpose": "Distinct doorway, geometry and newly introduced learned/predefined comparison."
-        },
-        {
-          "name": "Harbor-side testing apron",
-          "time_s": [
-            74,
-            118
-          ],
-          "purpose": "Dock plane, warehouse and open water surround matched next-test lanes."
-        }
-      ],
-      "four_shot_scales": [
-        "Extreme close-up of hand meeting brass grip",
-        "Close-up of researcher reaction with control still in frame",
-        "Medium two-rule mechanism or basin relationship",
-        "Extreme wide full harbor beside the small research station"
-      ],
-      "camera_heights": [
-        "Low bench or dock waterline view",
-        "High overhead experiment view"
-      ],
-      "palette": {
-        "sky": "#B8D9DE",
-        "ground": "#354B56",
-        "hero": "#D6A64D",
-        "accent": "#EF8659",
-        "shadow": "#142D3B",
-        "water": "#226B78"
-      }
-    },
-    "retention_and_timing": {
-      "spoken_target_seconds": 118,
-      "spoken_allowed_seconds": [
-        112,
-        130
-      ],
-      "vo_target_words": 210,
-      "vo_allowed_words": [
-        200,
-        220
-      ],
-      "tail_seconds": 1,
-      "credits_seconds": 12.3,
-      "total_target_seconds": 131.3,
-      "correction": "The 112\u2013130-second requirement applies to the spoken read. Credits are appended after speech and a one-second tail; they are not counted toward spoken duration.",
-      "acts": [
-        {
-          "time_s": [
-            0,
-            26
-          ],
-          "words": 46,
-          "name": "The rehearsal can discover policies",
-          "new_argument": "Learning harvest choices is the accomplishment, beyond predicting a fish count."
-        },
-        {
-          "time_s": [
-            26,
-            50
-          ],
-          "words": 43,
-          "name": "First scenario earns two outcomes",
-          "new_argument": "A breeding-stock advantage does not remove the timing question."
-        },
-        {
-          "time_s": [
-            50,
-            74
-          ],
-          "words": 43,
-          "name": "A separate biological assumption reverses the stock result",
-          "new_argument": "Different biological assumptions change the tradeoff; this is not a repair or continuation of the first policy."
-        },
-        {
-          "time_s": [
-            74,
-            101
-          ],
-          "words": 49,
-          "name": "The same test for both rules",
-          "new_argument": "Discovering a candidate does not yet show it improves a management choice. A conventional alternative deserves the same comparison, under explicit goals and assumptions. Model outcomes do not establish real income or bycatch performance. Neither candidate is approved or rejected."
-        },
-        {
-          "time_s": [
-            101,
-            118
-          ],
-          "words": 29,
-          "name": "What the rehearsal earned",
-          "new_argument": "Useful research creates testable choices before real seasons; the next comparison is the payoff."
-        }
-      ],
-      "act3_fair_test": {
-        "scene": "The Same Test for Both Rules",
-        "span_s": [
-          74,
-          101
-        ],
-        "objection_at_full_strength": "The model may favor choices because of its own assumptions; a learned alternative may offer no management advantage over a predefined rule.",
-        "drawn_answer": "Both candidate types face the same explicit goals with equally prominent unresolved next-test space. The camera does not reward one token. The control remains useful because it brings a candidate and scenario-specific evidence into a fair comparison.",
-        "prohibition": "No generic row of unlit failure sockets and no 20-second recital that models are not reality."
-      },
-      "throughline_object": {
-        "object": "One portable brass GearLever",
-        "states": [
-          "0s: caught on explicitly labeled simulation bench",
-          "26s: engaged with constant-case feedback apparatus",
-          "50s: lifted clear; first case remains behind; carried to separate new experiment",
-          "74s: held at harbor apron as both candidate types face identical goals",
-          "103s: docked at TEST AGAIN, research plaque open; state holds through button"
-        ]
-      },
-      "two_loops": [
-        {
-          "name": "What has the rehearsal earned?",
-          "plant_s": 16,
-          "payoff_s": 103,
-          "span_s": 87,
-          "payoff": "The next fair comparison is possible: alternatives to investigate, not an operational winner."
-        },
-        {
-          "name": "Does the first breeding-stock advantage survive a different recruitment assumption?",
-          "plant_s": 43,
-          "payoff_s": 70,
-          "span_s": 27,
-          "payoff": "The separately labeled stock-linked experiment has higher catches and lower spawning biomass versus its own comparison."
-        }
-      ],
-      "payoff_separation_seconds": 33,
-      "alignment_rule": "Measure actual spoken plant and the first visible/spoken revealing fact after voice alignment. Protect the secondary loop minimum 25-second span; a later restatement cannot move its payoff.",
-      "padding_test": "The reversal changes the evidence; the matched-goal test changes what follows from it. Removing either makes a 90-second film worse. Cut travel and repeated limitations first. Do not add words to explain policy smoothness."
-    },
-    "grafts": [
-      {
-        "from": "explainer",
-        "beat": "Visible feedback to learned candidate beside fixed predefined rule; 10\u201326s."
-      },
-      {
-        "from": "dramatist",
-        "beat": "Separate experiment spaces with fresh candidate identities; brief harbor scale reveal; 50\u201378s."
-      },
-      {
-        "from": "comedian",
-        "beat": "Learned and predefined rules receive identical goal frames and unresolved next-test space; 78\u2013101s."
-      }
-    ],
-    "sight_gags": [
-      {
-        "time_s": 2,
-        "gag": "Two-handed catch of oversized brass grip; tiny bench support squeaks. Laboratory context visible."
-      },
-      {
-        "time_s": 39,
-        "gag": "Physical catch-swings label swings into eyeline; researcher ducks. Label motion is not a plotted catch series."
-      },
-      {
-        "time_s": 109,
-        "gag": "TEST AGAIN handle rebounds gently; researcher patiently corrects it. No approval lamp."
-      }
-    ],
-    "rejected_ideas": [
-      "Entire smooth-policy/calendar correction detour.",
-      "New trophy/crown or attributed researcher boosterism.",
-      "Toy-boat learning routes, launch suspense or fleet implications.",
-      "Single-tank inlet morph that hides separate experiments.",
-      "Dark income/bycatch sockets implying failure.",
-      "Invented curves, counts, biomass volumes or numerical catch levels.",
-      "Generic operational-limit sermon after the distinct scenario reversal."
-    ],
-    "claim_guards": [
-      "Keep SIMULATED and each recruitment case legible during its findings; apparatus is disclosed editorial schematic.",
-      "Constant recruitment: large annual catch swings and higher spawning biomass than its comparison.",
-      "Stock-linked/Ricker recruitment: higher catches and lower spawning biomass than its own comparison.",
-      "Do not imply scenario two fixes scenario one or that one learned policy was deployed/retrained between scenes.",
-      "No exact reward formulation claim; repository settings were not tied conclusively to published plots.",
-      "No quota change, commercial outcome, autonomous fleet, household-income improvement, bycatch result or overall sustainability claim.",
-      "People are illustrative, not documented stakeholder approval or opposition.",
-      "Closing policy priorities are an engagement question, not evidence of local consultation."
-    ],
-    "next_step": "Write the single storyboard around this binding treatment, then validate word counts, measured VO timing, retention alignment, staging and evidence status before rendering. This verdict writes no storyboard or code and authorizes no publication.",
-    "inputs_freshness": "All 10 angle/findings/treatment/challenge inputs passed run_guard checks; original SHA256 values preserved below."
-  },
-  "angle": {
-    "role": "analyst_a",
-    "run_date": "2026-09-14",
-    "working_title": "The Catch Between Years",
-    "thesis": "This pollock study demonstrates a way to explore harvest choices before real seasons. Under two recruitment assumptions, learned policies produce different combinations of catch and breeding-stock outcomes. That earns further comparison against explicit management goals without establishing a winning real-world rule.",
-    "thesis_status": "An interpretation of demonstrated simulation results, not a claim of operational readiness or better real-world management.",
-    "evidence": [
-      {
-        "claims": [
-          "F03",
-          "F05",
-          "F06",
-          "F07"
-        ],
-        "point": "The researchers let an agent learn harvest policies through repeated simulated seasons and compare them with a predefined rule. The useful new capability is policy discovery, beyond predicting a fish count."
-      },
-      {
-        "claims": [
-          "F09",
-          "F10",
-          "F11"
-        ],
-        "point": "When recruitment is constant, the learned policy leaves more spawning biomass than the comparison while producing large annual catch swings. This creates a concrete question about the timing of fishing opportunity."
-      },
-      {
-        "claims": [
-          "F12",
-          "F13"
-        ],
-        "point": "When recruitment instead depends on the stock through a Ricker relationship, the policy is smoother and catches more while retaining less spawning biomass. The biological assumption changes the tradeoff."
-      }
-    ],
-    "strongest_counterpoint": "A simulation can reveal the behavior of its own assumptions without showing how a real fishery would respond. Reward implementation isn't verified as identical to the settings behind the published plots. These comparisons don't establish household income, bycatch performance or overall sustainability.",
-    "who_is_served": "Alaska fishing businesses and communities benefit if researchers can examine candidate rules before they reach operational decisions. Researchers and managers gain alternatives to investigate. No particular policy is shown to serve all those groups, and no stakeholder approval is established.",
-    "valence": "Earned curiosity and optimism about policy discovery as research.",
-    "falsifying_observation": "Reproduction or a corrected analysis removes the reported scenario-specific differences in catch and spawning biomass. Conventional alternatives performing equally well would limit superiority claims, which this film does not make.",
-    "second_movement": "The constant-recruitment case shows higher spawning biomass with large annual catch swings. The separate stock-linked case reverses the biomass outcome: higher catches and lower spawning biomass relative to its comparison. These distinct simulated experiments expose how biological assumptions change the tradeoff. A smoother policy response is not evidence of steadier annual catches.",
-    "narration_allocation": {
-      "target_words": "200 to 220",
-      "opening_capability": 35,
-      "constant_recruitment_case": 55,
-      "ricker_reversal": 55,
-      "people_and_operational_status": 45,
-      "closing_question": 20
-    },
-    "proposed_engagement_question": "Which should a pollock policy have to demonstrate first: steadier catches, more breeding fish, or a better balance across both?",
-    "execution_constraints": [
-      "Keep each recruitment case labeled and describe all outcomes as simulated.",
-      "Show separate catch and spawning-biomass schematic measures without invented data curves.",
-      "Don't suggest historical observations make the future experiment an observed fishery outcome.",
-      "Don't turn the final question into a claim that local people were consulted."
-    ],
-    "status": "locked",
-    "decision_reason": "All three challenges favored A narrowed to demonstrated research use. Graft B\u2019s affirmative policy-discovery opening. Reject C\u2019s smoother-catch framing and any suggestion that the second experiment fixes the first.",
-    "alternatives_considered": [
-      "B sharpened the affirmative case but used a superiority-based falsifier and an unsupported catch-stability comparison.",
-      "C made the tradeoff concrete but conflated policy-response smoothness with steadier annual catches."
-    ],
-    "cross_challenges": [
-      "angle_challenge_a.json",
-      "angle_challenge_b.json",
-      "angle_challenge_c.json"
-    ]
-  },
-  "hook": {
-    "pattern": "anomaly-question",
-    "frame1": "A mango grip is caught mid-throw above a tiny supported model mount; a large hand and research boundary establish scale immediately.",
-    "headline": "WHAT MAKES A RULE WORTH TESTING?",
-    "motion_by_s": 0.25,
-    "loopback": "The same hand patiently settles the same grip at TEST AGAIN, with equal next-test lanes visible."
-  },
-  "audio_arc": {
-    "build_steps": 4,
-    "dip_at": 95.604,
-    "riser_at": 87.334,
-    "silence_at": 98.49,
-    "payoff_at": 103.839,
-    "button_pattern": "question",
-    "evidence": "Bright electric-piano bed; literal control and glass sounds build the mechanism, brief dip grants the test space, final tactile detent closes the question."
-  },
-  "divergence_note": "September13 used oxblood pen, office paperwork and modular desk layouts; September12 used the lilac EEG notebook. This film uses a mango mechanical control, two physically different marine experimental rooms, a broad harbor apron, overhead comparisons, low grip inserts and vertical room reveals. No office or paper hero is copied.",
-  "open_loop": {
-    "plant_t": 0.0,
-    "pay_t": 92.94,
-    "what": "What makes the rule worth testing? First complete identical catch-pattern and breeding-stock requirements are revealed across both candidates at99. The111.1plaque is a callback, not the payoff."
-  },
-  "open_loop_2": {
-    "plant_t": 35.5,
-    "pay_t": 66.82,
-    "what": "Will an advantage survive changed biology? First revealing stock-linked result begins71, full lower-biomass finding74.5; protect the earlier payoff when conforming."
-  },
-  "throughline": {
-    "object": "One mango-gripped portable GearLever with serial notch",
-    "states": [
-      {
-        "at_s": 0.0,
-        "state": "Caught over bounded research mount"
-      },
-      {
-        "at_s": 26.24,
-        "state": "Connected to complete outcome-feedback path"
-      },
-      {
-        "at_s": 55.76,
-        "state": "Lifted free into separately labeled experimental room"
-      },
-      {
-        "at_s": 80.1,
-        "state": "Carried to harbor bench, model cable still attached"
-      },
-      {
-        "at_s": 107.36,
-        "state": "Hand settles TEST AGAIN beside both open next-test lanes"
-      }
-    ],
-    "lands_in_button": "The same research control remains useful for further testing; no operational connection or winner light."
-  },
-  "reveals": [
-    {
-      "t": 26.24,
-      "beat_id": 10,
-      "type": "build-on",
-      "what": "Outcome path completes the feedback circuit around the control",
-      "hold_s": 0.6,
-      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
-      "landing_at_s": 27.04,
-      "hold_until_s": 27.64,
-      "secondary_at_s": 27.94
-    },
-    {
-      "t": 55.76,
-      "beat_id": 21,
-      "type": "scale-pullback",
-      "what": "Doorway reveals distinct stock-linked experimental room",
-      "hold_s": 0.6,
-      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
-      "landing_at_s": 56.56,
-      "hold_until_s": 57.16,
-      "secondary_at_s": 57.46
-    },
-    {
-      "t": 87.92,
-      "beat_id": 31,
-      "type": "build-on",
-      "what": "Harbor-scale reveal unfolds testing bench beneath the real season",
-      "hold_s": 0.6,
-      "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
-      "landing_at_s": 88.72,
-      "hold_until_s": 89.32,
-      "secondary_at_s": 89.62
-    }
-  ],
-  "world_event": {
-    "at_s": 94,
-    "what": "Supported testing leaf unfolds under both candidate rails while harbor piles occlude the new bench."
-  },
-  "act3_visible_choice": "At79 the simulated advantage is explicitly challenged. Reported cases slide away and an unresolved equal-goals frame opens. The same test is carried onto the harbor bench at86; shared goal shutters open at96.8and99. Both remain unevaluated in further testing through107.",
-  "runtime_contract": "Planning120s narration. Actual acceptable read112to130s;1s story tail and12.3s credits append. Conform every shot and beat to actual aligned lines before rendering.",
-  "beats": [
+  "shots": [
     {
       "id": 1,
-      "at_s": 0.0,
-      "t": "0.000-1.188",
       "vo_line": 0,
-      "offset": 0.0,
-      "vo": "What would make an AI fishing rule worth testing?",
-      "shows": "Researcher catches the mango grip before it reaches the research-bench detent",
-      "means": "The physical action makes what makes a rule worth testing? legible at the moment the narration needs it.",
-      "sfx": "grip tap",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Researcher catches the mango grip before it reaches the research-bench detent",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "WHAT MAKES A RULE WORTH TESTING?"
-      },
-      "choreo": {
-        "primary": "Researcher catches the mango grip before it reaches the research-bench detent",
-        "reaction": "The grip impulse briefly bends the support foot, which returns under the hand\u2019s weight.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 14,
-      "sfx_offset_reason": "The approaching hand closes onto the moving grip at14frames. The control continues to the detent atbeat2+24frames, with a separate clank there."
+      "stage": "powerhouse interior",
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "eye",
+      "transition_in": "",
+      "thread": "",
+      "camera": "static:hook holds one turning object",
+      "stage3d": "planes",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "t": 0.0,
+      "dur": 7.0,
+      "hero": {
+        "name": "the server rack in the powerhouse",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "fan cage with individual blades, a vented face with an LED row, a rail frame with bolt heads, a cable bundle falling off the back, a GREENSPARC plate, and the dripping penstock elbow behind it. Zones: the lit amber face, the shadowed rail side, the wet metal above."
+      }
     },
     {
       "id": 2,
-      "at_s": 1.188,
-      "t": "1.188-3.456",
-      "vo_line": 0,
-      "offset": 1.188,
-      "vo": "What would make an AI fishing rule worth testing?",
-      "shows": "Grip settles into a visibly bounded model mount and the cable catches up",
-      "means": "The physical action makes simulated legible at the moment the narration needs it.",
-      "sfx": "metal settle",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Grip settles into a visibly bounded model mount and the cable catches up",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "SIMULATED"
-      },
-      "choreo": {
-        "primary": "Grip settles into a visibly bounded model mount and the cable catches up",
-        "reaction": "The collar compresses against its stop and the attached cable overshoots behind it.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 1,
+      "stage": "powerhouse interior",
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "transition_in": "pull-out",
+      "thread": "CARRY",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "t": 7.0,
+      "dur": 10.5,
+      "hero": {
+        "name": "the turbine and the rack above it",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "turbine housing with inspection ports, shaft and coupling, the water sheet, the rack on the deck above, a handrail, the two stencilled wall boxes, a hanging work lamp. Zones: lamp-lit deck, dark turbine pit, the wet wall behind."
+      }
     },
     {
       "id": 3,
-      "at_s": 3.456,
-      "t": "3.456-5.400",
-      "vo_line": 0,
-      "offset": 3.456,
-      "vo": "What would make an AI fishing rule worth testing?",
-      "shows": "Camera lifts enough to expose the tiny support under the outsized grip",
-      "means": "The physical action makes editorial schematic legible at the moment the narration needs it.",
-      "sfx": "wood squeak",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Camera lifts enough to expose the tiny support under the outsized grip",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "EDITORIAL SCHEMATIC"
-      },
-      "choreo": {
-        "primary": "Camera lifts enough to expose the tiny support under the outsized grip",
-        "reaction": "The small support gives one compliant flex as the oversized grip settles.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 3,
+      "stage": "the valley at night",
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "transition_in": "mask-wipe",
+      "thread": "MATCH",
+      "camera": "dollyThrough+riseWith",
+      "stage3d": "planes",
+      "pov": "eye-level-immersive",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "t": 17.5,
+      "dur": 9.5,
+      "hero": {
+        "name": "the run-of-river assembly",
+        "parts": 8,
+        "zones": 3,
+        "detail_note": "creek, intake with trash rack and sluice gate, the gate handwheel, penstock with expansion bands, anchor block, powerhouse with roof overhang and lit door, tailrace, the town's lights beyond. Zones: the lit door, the moonlit water, the black ridge."
+      }
     },
     {
       "id": 4,
-      "at_s": 5.4,
-      "t": "5.400-8.234",
-      "vo_line": 1,
-      "offset": 0.0,
-      "vo": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
-      "shows": "Researcher rotates the publication date tab into the model rim",
-      "means": "The physical action makes september 11th legible at the moment the narration needs it.",
-      "sfx": "paper flick",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Researcher rotates the publication date tab into the model rim",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "SEPTEMBER 11TH"
-      },
-      "choreo": {
-        "primary": "Researcher rotates the publication date tab into the model rim",
-        "reaction": "Date-tab hinge rebounds against the rim, then rests flush.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 5,
+      "stage": "the island grid",
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "transition_in": "push-in",
+      "thread": "TRAVEL",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "t": 27.0,
+      "dur": 11.0,
+      "hero": {
+        "name": "Sourdough, the island grid",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "the kit.tsx rig: furnace-window chest, knit cap, arms, boots with contact shadow, plus a fuel gauge mounted on his flank. Zones: ember-lit front, cold rim off the water, shadow side."
+      }
     },
     {
       "id": 5,
-      "at_s": 8.234,
-      "t": "8.234-11.600",
-      "vo_line": 1,
-      "offset": 2.834,
-      "vo": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
-      "shows": "Observation window opens onto a clearly labeled schematic population",
-      "means": "The physical action makes eastern bering sea pollock legible at the moment the narration needs it.",
-      "sfx": "glass slide",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Observation window opens onto a clearly labeled schematic population",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "EASTERN BERING SEA POLLOCK"
-      },
-      "choreo": {
-        "primary": "Observation window opens onto a clearly labeled schematic population",
-        "reaction": "Window latch rises as its glass panel slides clear; water reflection stays clipped inside.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 0,
-      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel."
+      "vo_line": 7,
+      "stage": "the ledger wall",
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "transition_in": "assemble",
+      "thread": "BUILD",
+      "camera": "orbitReveal",
+      "stage3d": "planes",
+      "pov": "exploded-diagram",
+      "layout": "fullbleed-split",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "t": 38.0,
+      "dur": 11.0,
+      "hero": {
+        "name": "the ledger wall",
+        "parts": 6,
+        "zones": 2,
+        "detail_note": "the award card, two partner plates, the assembling cyan twin, its demand bar, and the small amber block at the bar's foot. Zones: the self-lit cyan plane and the dark wall it hangs on."
+      }
     },
     {
       "id": 6,
-      "at_s": 11.6,
-      "t": "11.600-16.459",
-      "vo_line": 2,
-      "offset": 0.0,
-      "vo": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
-      "shows": "Wide laboratory unfolds around researcher and the source name lands on its rail",
-      "means": "The physical action makes alaska fisheries science center legible at the moment the narration needs it.",
-      "sfx": "whoosh",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Wide laboratory unfolds around researcher and the source name lands on its rail",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "ALASKA FISHERIES SCIENCE CENTER"
-      },
-      "choreo": {
-        "primary": "Wide laboratory unfolds around researcher and the source name lands on its rail",
-        "reaction": "Researcher turns from the model to the observation intake and raises the pointing hand.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 9,
+      "stage": "the ledger wall",
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "transition_in": "hard-cut",
+      "thread": "CARRY",
+      "camera": "static:the freeze is the beat",
+      "stage3d": "planes",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "t": 49.0,
+      "dur": 7.0,
+      "hero": {
+        "name": "the frozen twin",
+        "parts": 5,
+        "zones": 2,
+        "detail_note": "a half-drawn cyan silhouette, the stalled draw head, the schedule stamp, the drained lower half, the hatched remainder. Zones: the still-lit upper body and the drained lower."
+      }
     },
     {
       "id": 7,
-      "at_s": 16.459,
-      "t": "16.459-20.640",
-      "vo_line": 2,
-      "offset": 4.859,
-      "vo": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
-      "shows": "Spring-loaded intake jaws open while observation tiles enter the simulator",
-      "means": "The physical action makes historical observations legible at the moment the narration needs it.",
-      "sfx": "tile clack",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Spring-loaded intake jaws open while observation tiles enter the simulator",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "HISTORICAL OBSERVATIONS"
-      },
-      "choreo": {
-        "primary": "Spring-loaded intake jaws open while observation tiles enter the simulator",
-        "reaction": "Intake jaws close behind each observation tile and their return spring compresses.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 22,
-      "sfx_offset_reason": "Actual authored physical arrival at frame22 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 10,
+      "stage": "powerhouse interior",
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "ground",
+      "transition_in": "whip-pan",
+      "thread": "TRAVEL",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "pov": "macro-closeup",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "t": 56.0,
+      "dur": 11.0,
+      "hero": {
+        "name": "the rack and the demand bar",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "rack face and fans seen from the floor, the rising demand bar beside it, the amber server block at its base, the NOT PART OF THIS PROJECT plate, floor grating, a cable tray. Zones: the amber block, the cyan bar, the dark floor."
+      }
     },
     {
       "id": 8,
-      "at_s": 20.64,
-      "t": "20.640-22.880",
-      "vo_line": 3,
-      "offset": 0.0,
-      "vo": "Their agent practices harvest choices through repeated simulated seasons.",
-      "shows": "Researcher turns control through a test cycle while season shutters change",
-      "means": "The physical action makes simulated seasons legible at the moment the narration needs it.",
-      "sfx": "ratchet",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Researcher turns control through a test cycle while season shutters change",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "SIMULATED SEASONS"
-      },
-      "choreo": {
-        "primary": "Researcher turns control through a test cycle while season shutters change",
-        "reaction": "After initiating the cycle the researcher releases the handle, leaving the mechanism to run.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 12,
-      "sfx_offset_reason": "Actual authored physical arrival at frame12 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 12,
+      "stage": "the ledger wall",
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "high",
+      "transition_in": "graphic-match",
+      "thread": "MATCH",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "t": 67.0,
+      "dur": 8.0,
+      "hero": {
+        "name": "the forecast trace",
+        "parts": 6,
+        "zones": 2,
+        "detail_note": "the amber observed run, the NOW mark and its label, the cyan predicted run, the widening cone with dashed edges, gridlines, and the server block riding under it. Zones: the measured half and the claimed half."
+      }
     },
     {
       "id": 9,
-      "at_s": 22.88,
-      "t": "22.880-26.240",
-      "vo_line": 3,
-      "offset": 2.24,
-      "vo": "Their agent practices harvest choices through repeated simulated seasons.",
-      "shows": "A learned-rule token traverses the outcome path and returns to the input",
-      "means": "The physical action makes harvest choices legible at the moment the narration needs it.",
-      "sfx": "soft roll",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "A learned-rule token traverses the outcome path and returns to the input",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "HARVEST CHOICES"
-      },
-      "choreo": {
-        "primary": "A learned-rule token traverses the outcome path and returns to the input",
-        "reaction": "Outcome token contacts the bend guide and turns into the return route.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 13,
+      "stage": "the ledger wall",
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "transition_in": "pull-out",
+      "thread": "CARRY",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "t": 75.0,
+      "dur": 14.0,
+      "hero": {
+        "name": "the CLAIMED and MEASURED pair",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "two stencilled boxes on the powerhouse wall, the cyan number in the first, the crawling hatching in the second, the error bracket that does not exist yet, Sourdough between them, the quote plate below. Zones: cyan-lit left, empty hatched right, the warm hero between."
+      }
     },
     {
       "id": 10,
-      "at_s": 26.24,
-      "t": "26.240-29.130",
-      "vo_line": 4,
-      "offset": 0.0,
-      "vo": "Feedback rewards outcomes and changes the learned rule.",
-      "shows": "Cutaway spreads the return path around the lever and holds the completed connection",
-      "means": "The physical action makes outcome feedback legible at the moment the narration needs it.",
-      "sfx": "snap build",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Cutaway spreads the return path around the lever and holds the completed connection",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "OUTCOME FEEDBACK"
-      },
-      "choreo": {
-        "primary": "Cutaway spreads the return path around the lever and holds the completed connection",
-        "reaction": "The final coupling closes; nearby cable slack straightens before the held reveal.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "rehook": "Feedback path opens into a complete learning mechanism",
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 15,
+      "stage": "the valley at night",
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "transition_in": "mask-wipe",
+      "thread": "MATCH",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "pov": "eye-level-immersive",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "t": 89.0,
+      "dur": 7.0,
+      "hero": {
+        "name": "the valley, generously lit",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "the full run-of-river assembly with the penstock running full, a second creek spilling past unused, a lit shop window in the town, a records cabinet glowing through the powerhouse door, the ridge, the water, the rain. Zones: the warm town, the silver spill, the black ridge."
+      }
     },
     {
       "id": 11,
-      "at_s": 29.13,
-      "t": "29.130-31.400",
-      "vo_line": 4,
-      "offset": 2.89,
-      "vo": "Feedback rewards outcomes and changes the learned rule.",
-      "shows": "Feedback reaches the candidate and its adjustable detent changes position",
-      "means": "The physical action makes rule updates legible at the moment the narration needs it.",
-      "sfx": "detent click",
-      "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Feedback reaches the candidate and its adjustable detent changes position",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "RULE UPDATES"
-      },
-      "choreo": {
-        "primary": "Feedback reaches the candidate and its adjustable detent changes position",
-        "reaction": "Linked cable tugs the learned detent; the fixed stop does not respond.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
-      },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "vo_line": 16,
+      "stage": "the map of Alaska",
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "transition_in": "pull-out",
+      "thread": "TRAVEL",
+      "camera": "orbitReveal+truckAcross",
+      "stage3d": "planes",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "multiplicity-swarm",
+      "t": 96.0,
+      "dur": 13.0,
+      "hero": {
+        "name": "the map of Alaska",
+        "parts": 5,
+        "zones": 2,
+        "detail_note": "the coastline, Cordova's single amber dot, 192 more dots blooming with diesel drums under them, a thin cyan thread reaching and falling short, the PER AEA plate. Zones: the lit dots and the unlit ground between them."
+      }
     },
     {
       "id": 12,
-      "at_s": 31.4,
-      "t": "31.400-33.860",
-      "vo_line": 5,
-      "offset": 0.0,
-      "vo": "They compare it with a predefined harvest rule.",
-      "shows": "Fixed comparison token seats beside the learned candidate on its own rail",
-      "means": "The physical action makes predefined harvest rule legible at the moment the narration needs it.",
-      "sfx": "block tap",
+      "vo_line": 17,
+      "stage": "powerhouse interior",
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "transition_in": "match-cut",
+      "thread": "MATCH",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "t": 109.0,
+      "dur": 11.0,
+      "hero": {
+        "name": "the powerhouse door and the empty box",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "the door with its warm slot of light narrowing, the rack still turning inside, the MEASURED box on the wall beside it, the drip arriving, the creek past the threshold, the question plate rising. Zones: the door light, the wet wall, the dark outside."
+      }
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "t": 0.0,
+      "shot": 1,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Fixed comparison token seats beside the learned candidate on its own rail",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "PREDEFINED HARVEST RULE"
+        "subject": "a server rack fan inside the powerhouse, amber-edged in the dark",
+        "action": "spins hard from frame one, a water drop falls off the pipe above and strikes its cage",
+        "emotion": "indifferent, industrious",
+        "annotation": "GREENSPARC"
       },
+      "vo": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
+      "sfx": "fan-hum + water drip tick",
+      "means": "shelf: rack built from props kit + runofriver lamp glow",
       "choreo": {
-        "primary": "Fixed comparison token seats beside the learned candidate on its own rail",
-        "reaction": "The predefined token depresses its own stop, with no learned adjustment.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "the fan blades turning",
+        "reaction": "the water drop striking the cage and scattering",
+        "ambient": "room dust drifting through the door light"
       },
-      "sfx_offset_frames": 6,
-      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
+      "shows": "the rack, lit, already turning"
+    },
+    {
+      "id": 2,
+      "t": 2.6,
+      "shot": 1,
+      "draw": {
+        "subject": "the penstock elbow behind the rack",
+        "action": "sweats until one bead breaks loose and runs the whole length of the weld, then drops",
+        "emotion": "cold",
+        "annotation": "ONE BEAD, THE WHOLE WELD"
+      },
+      "vo": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
+      "sfx": "pipe groan",
+      "means": "runofriver penstock detail",
+      "choreo": {
+        "primary": "the bead running the weld",
+        "reaction": "the puddle below rippling as it lands",
+        "ambient": "condensation creeping across the pipe"
+      },
+      "shows": "the bead"
+    },
+    {
+      "id": 3,
+      "t": 4.3,
+      "shot": 1,
+      "draw": {
+        "subject": "a wall plate beside the rack",
+        "action": "slides into the key light, reading 170 kW, with PER CLEANTECHNICA under it",
+        "emotion": "plain",
+        "annotation": "170 kW"
+      },
+      "vo": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
+      "sfx": "plate clack",
+      "means": "props StatCard",
+      "choreo": {
+        "primary": "the plate sliding into the key light",
+        "reaction": "the LED row flickering as it passes",
+        "ambient": "fan wash rippling the cable bundle"
+      },
+      "shows": "the 170 kW plate"
+    },
+    {
+      "id": 4,
+      "t": 7.0,
+      "shot": 2,
+      "draw": {
+        "subject": "the powerhouse interior",
+        "action": "cranes down and back to reveal the turbine below the rack and the water sheeting past it",
+        "emotion": "revealing",
+        "annotation": "2024"
+      },
+      "vo": "Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.",
+      "sfx": "whoosh + turbine swell",
+      "means": "stage3d craneDown",
+      "choreo": {
+        "primary": "the crane down past the deck edge",
+        "reaction": "the handrail sweeping through frame",
+        "ambient": "the water sheet falling behind everything"
+      },
+      "shows": "the turbine below"
+    },
+    {
+      "id": 5,
+      "t": 9.4,
+      "shot": 2,
+      "draw": {
+        "subject": "TWO EMPTY BOXES stencilled on the powerhouse wall behind the rack",
+        "action": "drift into frame unexplained and unremarked, both empty, one labelled CLAIMED and one MEASURED",
+        "emotion": "waiting",
+        "annotation": "NO NEW NUMBER HERE"
+      },
+      "vo": "Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.",
+      "sfx": "low room tone",
+      "means": "forecast.tsx Reconcile at settled 0, planted silently",
+      "throughline": true,
+      "open_loop_plant": true,
+      "choreo": {
+        "primary": "the two stencilled boxes drifting into frame",
+        "reaction": "nothing reacts, which is the point",
+        "ambient": "the work lamp swinging on its cord"
+      },
+      "shows": "the two empty boxes, CLAIMED and MEASURED"
+    },
+    {
+      "id": 6,
+      "t": 12.3,
+      "shot": 2,
+      "draw": {
+        "subject": "the turbine shaft",
+        "action": "turns, and the same water that turns it runs on into the rack's cooling loop",
+        "emotion": "matter-of-fact",
+        "annotation": "COOLED BY THE SAME WATER"
+      },
+      "vo": "Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.",
+      "sfx": "water rush",
+      "means": "runofriver + rack",
+      "choreo": {
+        "primary": "the turbine shaft turning",
+        "reaction": "the coolant line pulsing as it feeds the rack",
+        "ambient": "the water sheet"
+      },
+      "shows": "the coolant line from turbine to rack"
+    },
+    {
+      "id": 7,
+      "t": 15.5,
+      "shot": 2,
+      "draw": {
+        "subject": "the drip from beat 2",
+        "action": "lands on the MEASURED box and runs down it, leaving it empty",
+        "emotion": "quiet",
+        "annotation": "REMEMBER THEM"
+      },
+      "vo": "Remember them.",
+      "sfx": "single drip, room falls quiet",
+      "means": "a held beat, deliberate stillness",
+      "choreo": {
+        "primary": "the drip falling and landing on the MEASURED box",
+        "reaction": "the hatching flexing where it lands",
+        "ambient": "the lamp swing slows and settles"
+      },
+      "shows": "the drip landing on MEASURED"
+    },
+    {
+      "id": 8,
+      "t": 18.0,
+      "shot": 3,
+      "draw": {
+        "subject": "the whole valley at night",
+        "action": "wipes open, creek to intake to penstock to powerhouse, Cordova's lights on black water beyond",
+        "emotion": "vast, cold",
+        "annotation": "CORDOVA"
+      },
+      "vo": "Cordova Electric runs an island grid with no wire out.",
+      "sfx": "wind + creek bed",
+      "means": "runofriver full assembly + FjordBG",
+      "rehook": null,
+      "choreo": {
+        "primary": "the mask wipe opening the valley",
+        "reaction": "the creek catching the wipe's edge",
+        "ambient": "rain across the whole plane"
+      },
+      "shows": "the whole valley"
+    },
+    {
+      "id": 9,
+      "t": 20.0,
+      "shot": 3,
+      "draw": {
+        "subject": "the shoreline",
+        "action": "pulls back until the island is small and NO line leaves it in any direction",
+        "emotion": "isolated",
+        "annotation": "NO WIRE OUT"
+      },
+      "vo": "Cordova Electric runs an island grid with no wire out.",
+      "sfx": "riser fades to wind",
+      "means": "scale-pullback reveal",
+      "reveal": "scale-pullback",
+      "choreo": {
+        "primary": "the camera pulling back off the island",
+        "reaction": "the shoreline lights condensing to a cluster",
+        "ambient": "cloud shadow crossing the water"
+      },
+      "shows": "an island with no line leaving it"
+    },
+    {
+      "id": 10,
+      "t": 23.9,
+      "shot": 3,
+      "draw": {
+        "subject": "a warm hydro glow and a cold diesel stack, side by side on the shore",
+        "action": "both light up, the hydro broad and steady, the diesel a hard point",
+        "emotion": "tense",
+        "annotation": "MOST HYDRO \u00b7 THE REST DIESEL"
+      },
+      "vo": "Most of its power is hydro. The rest is diesel.",
+      "sfx": "hum + a diesel knock",
+      "means": "two practical sources, the palette's whole argument",
+      "choreo": {
+        "primary": "the diesel stack lighting",
+        "reaction": "the hydro glow stepping back as it does",
+        "ambient": "rain and creek"
+      },
+      "shows": "the diesel stack alight beside the hydro glow"
+    },
+    {
+      "id": 11,
+      "t": 27.7,
+      "shot": 4,
+      "draw": {
+        "subject": "Sourdough, the island grid himself, standing on the shore",
+        "action": "pushes in on him, chest ember steady, holding the town's light",
+        "emotion": "proud",
+        "annotation": "CORDOVA ELECTRIC"
+      },
+      "vo": "Guess wrong about demand and the co op can't buy from a neighbor. It burns fuel.",
+      "sfx": "warm bed lifts",
+      "means": "kit.tsx Sourdough, hero",
+      "choreo": {
+        "primary": "the push in on Sourdough",
+        "reaction": "his chest ember brightening as the camera arrives",
+        "ambient": "his breath and weight shift"
+      },
+      "shows": "Sourdough"
+    },
+    {
+      "id": 12,
+      "t": 30.0,
+      "shot": 4,
+      "draw": {
+        "subject": "Sourdough's chest ember",
+        "action": "dims as demand overshoots, and the diesel stack fires behind him with a SLAM of the fuel needle",
+        "emotion": "caught out",
+        "annotation": "THE NEEDLE SLAMS"
+      },
+      "vo": "Guess wrong about demand and the co op can't buy from a neighbor. It burns fuel.",
+      "sfx": "klaxon tick + needle slam + screen shake",
+      "means": "the throughline gauge, anticipation and overshoot",
+      "rehook": "the needle slams and the town's light flickers",
+      "choreo": {
+        "primary": "the fuel needle slamming over",
+        "reaction": "Sourdough flinching and his ember dimming",
+        "ambient": "rain on his shoulders"
+      },
+      "shows": "the fuel needle at its stop"
     },
     {
       "id": 13,
-      "at_s": 33.86,
-      "t": "33.860-35.500",
-      "vo_line": 5,
-      "offset": 2.46,
-      "vo": "They compare it with a predefined harvest rule.",
-      "shows": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed",
-      "means": "The physical action makes learning changes the rule legible at the moment the narration needs it.",
-      "sfx": "detent tick",
+      "t": 34.6,
+      "shot": 4,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "LEARNING CHANGES THE RULE"
+        "subject": "a fuel gauge on Sourdough's flank",
+        "action": "ticks down in hard steps, each step a gallon graphic falling into a drum",
+        "emotion": "resigned",
+        "annotation": "GALLONS"
       },
+      "vo": "So here, a bad forecast costs gallons.",
+      "sfx": "drum ring per tick",
+      "means": "a number made physical",
       "choreo": {
-        "primary": "Feedback moves the learned detent while the researcher\u2019s initiating hand stays released and the predefined stop stays fixed",
-        "reaction": "The released hand withdraws toward frame edge while feedback alone shifts the candidate.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "gallon graphics dropping into the drum",
+        "reaction": "the drum ringing and rocking on its base",
+        "ambient": "the needle trembling where it stopped"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "gallons becoming a physical count"
     },
     {
       "id": 14,
-      "at_s": 35.5,
-      "t": "35.500-37.984",
-      "vo_line": 6,
-      "offset": 0.0,
-      "vo": "Will an advantage hold when the biology changes?",
-      "shows": "Researcher points toward the unopened stock-linked room beyond the first experiment",
-      "means": "The physical action makes will the advantage hold? legible at the moment the narration needs it.",
-      "sfx": "sleeve brush",
+      "t": 38.2,
+      "shot": 5,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Researcher points toward the unopened stock-linked room beyond the first experiment",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "WILL THE ADVANTAGE HOLD?"
+        "subject": "the ledger wall assembling out of the dark",
+        "action": "builds itself plate by plate, AURORA-AI lettering locking in last",
+        "emotion": "brightening",
+        "annotation": "AURORA-AI"
       },
+      "vo": "In August, the University of Alaska Fairbanks won an Energy Department award to forecast that grid.",
+      "sfx": "assemble ticks + chord",
+      "means": "forecast + simulation grammar, BUILD transition",
       "choreo": {
-        "primary": "Researcher points toward the unopened stock-linked room beyond the first experiment",
-        "reaction": "Researcher\u2019s raised wrist pulls the attached sleeve fold taut; cloth brushes along the cuff as gaze reaches the sealed hatch.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "the ledger wall assembling plate by plate",
+        "reaction": "the dark wall behind it receding as plates land",
+        "ambient": "the cyan plane breathing"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the ledger wall"
     },
     {
       "id": 15,
-      "at_s": 37.984,
-      "t": "37.984-39.640",
-      "vo_line": 6,
-      "offset": 2.484,
-      "vo": "Will an advantage hold when the biology changes?",
-      "shows": "A second-room port turns toward camera but remains closed",
-      "means": "The physical action makes change the biology legible at the moment the narration needs it.",
-      "sfx": "hinge creak",
+      "t": 40.0,
+      "shot": 5,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "A second-room port turns toward camera but remains closed",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "CHANGE THE BIOLOGY"
+        "subject": "UNIVERSITY OF ALASKA FAIRBANKS and ENERGY DEPARTMENT plates",
+        "action": "land either side of the award card",
+        "emotion": "businesslike",
+        "annotation": "$725,000 \u00b7 PER UAF"
       },
+      "vo": "In August, the University of Alaska Fairbanks won an Energy Department award to forecast that grid.",
+      "sfx": "two plate clacks",
+      "means": "claim c1, sourcing label in frame",
       "choreo": {
-        "primary": "A second-room port turns toward camera but remains closed",
-        "reaction": "Hatch spring catches the rotating port; its seal stays visibly closed.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "the two partner plates landing either side",
+        "reaction": "the award card settling between them",
+        "ambient": "cyan flicker"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "$725,000 and its sourcing"
     },
     {
       "id": 16,
-      "at_s": 39.64,
-      "t": "39.640-41.690",
-      "vo_line": 7,
-      "offset": 0.0,
-      "vo": "Start with a model where young fish enter at a constant rate.",
-      "shows": "First bay opens around its own two candidate identities",
-      "means": "The physical action makes constant recruitment legible at the moment the narration needs it.",
-      "sfx": "door slide",
+      "t": 43.0,
+      "shot": 5,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "First bay opens around its own two candidate identities",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "CONSTANT RECRUITMENT"
+        "subject": "a cyan working copy of Sourdough",
+        "action": "draws itself into being beside the real one, hunting before it settles, a small amber block sitting unexplained at the foot of its demand bar",
+        "emotion": "uncanny",
+        "annotation": "DIGITAL TWIN \u00b7 INTENDED"
       },
+      "vo": "The plan is a digital twin, a working copy of Cordova built from the co op's records, with machine learning on it.",
+      "sfx": "data shimmer",
+      "means": "Simulated at rising fidelity",
+      "open_loop_2_plant": true,
       "choreo": {
-        "primary": "First bay opens around its own two candidate identities",
-        "reaction": "First-room researcher braces the opened bay cover on its physical support.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "the cyan twin drawing itself into being",
+        "reaction": "the real Sourdough turning to look at it",
+        "ambient": "the twin's linework re-solving"
       },
-      "sfx_offset_frames": 0,
-      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel."
+      "shows": "the cyan twin"
     },
     {
       "id": 17,
-      "at_s": 41.69,
-      "t": "41.690-45.160",
-      "vo_line": 7,
-      "offset": 2.05,
-      "vo": "Start with a model where young fish enter at a constant rate.",
-      "shows": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle",
-      "means": "The physical action makes young fish enter at a constant rate legible at the moment the narration needs it.",
-      "sfx": "water pulse",
+      "t": 47.2,
+      "shot": 5,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "YOUNG FISH ENTER AT A CONSTANT RATE"
+        "subject": "three function plates",
+        "action": "slam up one after another from below the twin, each one knocking the one above it a little",
+        "emotion": "claiming",
+        "annotation": "INTENDED, NOT MEASURED"
       },
+      "vo": "The plan is a digital twin, a working copy of Cordova built from the co op's records, with machine learning on it.",
+      "sfx": "three flips",
+      "means": "claim c11, tense obligation on screen",
       "choreo": {
-        "primary": "Inlet timing mechanism repeats an unnumbered equal-step schematic cycle",
-        "reaction": "Inlet paddle returns to the same unnumbered starting stop after its pulse.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "the three function plates slamming up",
+        "reaction": "each plate knocking the one above it",
+        "ambient": "cyan flicker"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the three intended functions"
     },
     {
       "id": 18,
-      "at_s": 45.16,
-      "t": "45.160-49.593",
-      "vo_line": 8,
-      "offset": 0.0,
-      "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
-      "shows": "First result flap rises beside the constant-case learned rule",
-      "means": "The physical action makes higher spawning biomass legible at the moment the narration needs it.",
-      "sfx": "flap open",
+      "t": 50.2,
+      "shot": 6,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "First result flap rises beside the constant-case learned rule",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "HIGHER SPAWNING BIOMASS"
+        "subject": "the twin",
+        "action": "FREEZES mid-assembly, half drawn, cyan draining out of it",
+        "emotion": "stopped",
+        "annotation": "IT HASN'T STARTED"
       },
+      "vo": "It hasn't started. It begins October first and runs nine months.",
+      "sfx": "power-down swell, bed drops",
+      "means": "the hardest cut in the film",
       "choreo": {
-        "primary": "First result flap rises beside the constant-case learned rule",
-        "reaction": "Researcher leans in toward the raised result flap, eyebrows lifting.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "the twin freezing mid-draw",
+        "reaction": "the draw head stalling and the cyan draining downward",
+        "ambient": "the wall going quiet"
       },
-      "sfx_offset_frames": 6,
-      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
+      "shows": "the twin stopped half-drawn"
     },
     {
       "id": 19,
-      "at_s": 49.593,
-      "t": "49.593-52.098",
-      "vo_line": 8,
-      "offset": 4.433,
-      "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
-      "shows": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket",
-      "means": "The physical action makes weight of breeding fish legible at the moment the narration needs it.",
-      "sfx": "socket seat",
+      "t": 53.7,
+      "shot": 6,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "WEIGHT OF BREEDING FISH"
+        "subject": "a schedule plate",
+        "action": "stamps down across the frozen twin",
+        "emotion": "flat",
+        "annotation": "PHASE 1 \u00b7 STARTS OCT 1 \u00b7 9 MONTHS \u00b7 RESEARCH"
       },
+      "vo": "It hasn't started. It begins October first and runs nine months.",
+      "sfx": "stamp",
+      "means": "claim c3, the word RESEARCH travels with it",
       "choreo": {
-        "primary": "An engraved weight-of-breeding-fish emblem seats in the spawning-biomass flap\u2019s matching socket",
-        "reaction": "The weight emblem depresses its socket and its retaining tab closes.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "the schedule stamp coming down",
+        "reaction": "the frozen twin shuddering under the impact",
+        "ambient": "dust lifting off the stamp"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "PHASE 1, OCT 1, 9 MONTHS, RESEARCH"
     },
     {
       "id": 20,
-      "at_s": 52.098,
-      "t": "52.098-55.760",
-      "vo_line": 8,
-      "offset": 6.938,
-      "vo": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
-      "shows": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck",
-      "means": "The physical action makes large annual catch swings legible at the moment the narration needs it.",
-      "sfx": "wood swing",
+      "t": 56.8,
+      "shot": 7,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "LARGE ANNUAL CATCH SWINGS"
+        "subject": "the server rack from the hook",
+        "action": "whips back into frame from below, fans still turning, unbothered",
+        "emotion": "steady",
+        "annotation": "NOW, THOSE SERVERS"
       },
+      "vo": "Now, those servers.",
+      "sfx": "whip + fan hum returns",
+      "means": "bookend material, TRAVEL thread",
       "choreo": {
-        "primary": "Second result tag swings once into the researcher\u2019s eyeline and prompts a duck",
-        "reaction": "Researcher ducks once under the tag\u2019s physical arc, then rises as it settles.",
-        "ambient": "Wet-lab inlet paddle idles on its connected shaft; glass reflections drift between steel ribs."
+        "primary": "the whip back to the rack",
+        "reaction": "the fans coming back up to speed",
+        "ambient": "the creek returning under it"
       },
-      "sfx_offset_frames": 6,
-      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
+      "shows": "the rack again"
     },
     {
       "id": 21,
-      "at_s": 55.76,
-      "t": "55.760-59.214",
-      "vo_line": 9,
-      "offset": 0.0,
-      "vo": "The next experiment links young fish entering the stock to the breeding population.",
-      "shows": "Doorway wipes into a different experimental room while first case stays behind",
-      "means": "The physical action makes stock-linked recruitment legible at the moment the narration needs it.",
-      "sfx": "door whoosh",
+      "t": 59.1,
+      "shot": 7,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Doorway wipes into a different experimental room while first case stays behind",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "STOCK-LINKED RECRUITMENT"
+        "subject": "the grid's demand bar rising beside the rack",
+        "action": "builds from the floor up, and the small amber block at its base is revealed to BE the servers",
+        "emotion": "dawning",
+        "annotation": "THE LOAD WAS ALWAYS THERE"
       },
+      "vo": "They are not part of the project. They are a load on the same grid.",
+      "sfx": "riser + a low lock",
+      "means": "build-on reveal",
+      "reveal": "build-on",
+      "rehook": "the unexplained block turns out to be the rack",
       "choreo": {
-        "primary": "Doorway wipes into a different experimental room while first case stays behind",
-        "reaction": "Control cable follows the carried grip through the doorway; the first case remains in its room.",
-        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+        "primary": "the demand bar building from the floor",
+        "reaction": "the amber block at its base lighting as it is named",
+        "ambient": "fan wash"
       },
-      "rehook": "Doorway reveals a wholly separate biological experiment",
-      "sfx_offset_frames": 0,
-      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel."
+      "shows": "the server block inside the demand bar"
     },
     {
       "id": 22,
-      "at_s": 59.214,
-      "t": "59.214-62.040",
-      "vo_line": 9,
-      "offset": 3.454,
-      "vo": "The next experiment links young fish entering the stock to the breeding population.",
-      "shows": "Stock-linked inlet connects two named biological components without quantities",
-      "means": "The physical action makes young fish and breeding stock legible at the moment the narration needs it.",
-      "sfx": "coupler click",
+      "t": 62.1,
+      "shot": 7,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Stock-linked inlet connects two named biological components without quantities",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "YOUNG FISH AND BREEDING STOCK"
+        "subject": "a NOT PART OF THIS PROJECT plate",
+        "action": "snaps across the rack and stays",
+        "emotion": "corrective",
+        "annotation": "GREENSPARC, 2024"
       },
+      "vo": "They are not part of the project. They are a load on the same grid.",
+      "sfx": "hard snap",
+      "means": "claim c15, the honesty obligation drawn",
       "choreo": {
-        "primary": "Stock-linked inlet connects two named biological components without quantities",
-        "reaction": "The coupler tugs its attached biological-component label before the line straightens.",
-        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+        "primary": "the plate snapping across the rack",
+        "reaction": "the bar not pausing for it",
+        "ambient": "fans"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "NOT PART OF THIS PROJECT"
     },
     {
       "id": 23,
-      "at_s": 62.04,
-      "t": "62.040-64.908",
-      "vo_line": 10,
-      "offset": 0.0,
-      "vo": "This is a separate simulated case with its own comparison.",
-      "shows": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails",
-      "means": "The physical action makes separate simulated case legible at the moment the narration needs it.",
-      "sfx": "dual tap",
+      "t": 65.3,
+      "shot": 7,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "SEPARATE SIMULATED CASE"
+        "subject": "the demand bar",
+        "action": "keeps climbing past the plate, because the load does not care whose project it is",
+        "emotion": "wry",
+        "annotation": "A LOAD ON THE SAME GRID"
       },
+      "vo": "They are not part of the project. They are a load on the same grid.",
+      "sfx": "climb tick",
+      "means": "the loop paying",
       "choreo": {
-        "primary": "Fresh learned and predefined candidates dock on the new room\u2019s separate rails",
-        "reaction": "First new token seats, then its own predefined comparison seats with a separate response.",
-        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+        "primary": "the bar climbing past the plate",
+        "reaction": "the plate's corner lifting in the draft",
+        "ambient": "fans"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the bar above the plate"
     },
     {
       "id": 24,
-      "at_s": 64.908,
-      "t": "64.908-66.820",
-      "vo_line": 10,
-      "offset": 2.868,
-      "vo": "This is a separate simulated case with its own comparison.",
-      "shows": "Researcher aligns the comparison under the second case label",
-      "means": "The physical action makes its own comparison legible at the moment the narration needs it.",
-      "sfx": "rail scrape",
+      "t": 67.0,
+      "shot": 8,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Researcher aligns the comparison under the second case label",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "ITS OWN COMPARISON"
+        "subject": "a forecast trace across the ledger wall",
+        "action": "runs amber for what happened, then cyan for what is claimed, the uncertainty cone opening ahead of NOW",
+        "emotion": "analytical",
+        "annotation": "NOW"
       },
+      "vo": "Whatever the model predicts, it has to predict them too.",
+      "sfx": "scope sweep",
+      "means": "forecast.tsx ForecastTrace, the craft advance",
       "choreo": {
-        "primary": "Researcher aligns the comparison under the second case label",
-        "reaction": "Researcher checks the new comparison alignment with a small driven pointing gesture.",
-        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+        "primary": "the forecast trace drawing left to right",
+        "reaction": "the NOW mark snapping in as the amber meets the cyan",
+        "ambient": "the cone edges hunting"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the forecast trace and NOW"
     },
     {
       "id": 25,
-      "at_s": 66.82,
-      "t": "66.820-69.909",
-      "vo_line": 11,
-      "offset": 0.0,
-      "vo": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
-      "shows": "Stock-linked result opens beside the new learned candidate",
-      "means": "The physical action makes higher catch legible at the moment the narration needs it.",
-      "sfx": "flap snap",
+      "t": 71.6,
+      "shot": 8,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Stock-linked result opens beside the new learned candidate",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "HIGHER CATCH"
+        "subject": "the server block",
+        "action": "slides along under the predicted line and pushes the cone upward as it goes",
+        "emotion": "pointed",
+        "annotation": "IT HAS TO PREDICT THEM TOO"
       },
+      "vo": "Whatever the model predicts, it has to predict them too.",
+      "sfx": "lock tick",
+      "means": "open_loop_2 payoff",
+      "open_loop_2_pay": true,
       "choreo": {
-        "primary": "Stock-linked result opens beside the new learned candidate",
-        "reaction": "Researcher glances from the higher-catch flap toward the still-closed second flap.",
-        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+        "primary": "the server block sliding under the predicted line",
+        "reaction": "the cone lifting where it passes",
+        "ambient": "cone edge crawl"
       },
-      "sfx_offset_frames": 6,
-      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
+      "shows": "the block riding inside the cone"
     },
     {
       "id": 26,
-      "at_s": 69.909,
-      "t": "69.909-73.880",
-      "vo_line": 11,
-      "offset": 3.089,
-      "vo": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
-      "shows": "Second stock-linked flap opens equally large beside the first result",
-      "means": "The physical action makes lower spawning biomass legible at the moment the narration needs it.",
-      "sfx": "muted knock",
+      "t": 75.0,
+      "shot": 9,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Second stock-linked flap opens equally large beside the first result",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "LOWER SPAWNING BIOMASS"
+        "subject": "the two stencilled boxes from the hook",
+        "action": "pull out into full frame at last, CLAIMED lit cyan with a number in it",
+        "emotion": "exposed",
+        "annotation": "CLAIMED"
       },
+      "vo": "So the test is narrow. By next June, gallons saved, or a demonstration?",
+      "sfx": "cyan fill tone",
+      "means": "forecast.tsx Reconcile, settled 0",
       "choreo": {
-        "primary": "Second stock-linked flap opens equally large beside the first result",
-        "reaction": "The lower-biomass flap stops beside the first; researcher\u2019s head turns between equal labels.",
-        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+        "primary": "the pull out to the two boxes",
+        "reaction": "the cyan number landing in CLAIMED",
+        "ambient": "rain on the wall"
       },
-      "sfx_offset_frames": 6,
-      "sfx_offset_reason": "First front-stop crossing of the actual damped spring is frame6, computed with the same Remotion spring and to be verified in the final consecutive-frame strip."
+      "shows": "CLAIMED, filled"
     },
     {
       "id": 27,
-      "at_s": 73.88,
-      "t": "73.880-76.368",
-      "vo_line": 12,
-      "offset": 0.0,
-      "vo": "These simulated gains may offer no management advantage over a predefined rule.",
-      "shows": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
-      "means": "The physical action makes management advantage unproven legible at the moment the narration needs it.",
-      "sfx": "tray slide",
+      "t": 79.2,
+      "shot": 9,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "MANAGEMENT ADVANTAGE UNPROVEN"
+        "subject": "the MEASURED box beside it",
+        "action": "stays EMPTY, hatching crawling across it, and does not fill",
+        "emotion": "honest",
+        "annotation": "NOT YET MEASURED"
       },
+      "vo": "So the test is narrow. By next June, gallons saved, or a demonstration?",
+      "sfx": "the room goes quiet, a 6 dB dip",
+      "means": "THE SIGNATURE SHOT",
       "choreo": {
-        "primary": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
-        "reaction": "The two recess catches engage independently; neither produces a winning badge.",
-        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+        "primary": "the hatching crawling across MEASURED",
+        "reaction": "nothing filling it",
+        "ambient": "the room dropping quiet"
       },
-      "sfx_offset_frames": 0,
-      "sfx_offset_reason": "Air movement starts with the visible shutter, doorway or tray travel."
+      "shows": "MEASURED, empty and hatched"
     },
     {
       "id": 28,
-      "at_s": 76.368,
-      "t": "76.368-80.100",
-      "vo_line": 12,
-      "offset": 2.488,
-      "vo": "These simulated gains may offer no management advantage over a predefined rule.",
-      "shows": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed",
-      "means": "The physical action makes what must both rules demonstrate? legible at the moment the narration needs it.",
-      "sfx": "frame hinge",
+      "t": 83.1,
+      "shot": 9,
       "draw": {
-        "subject": "GearLever and fictional researcher",
-        "action": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "WHAT MUST BOTH RULES DEMONSTRATE?"
+        "subject": "the error bracket that should join the two boxes",
+        "action": "reaches out from CLAIMED, finds nothing to attach to on the MEASURED side, and retracts",
+        "emotion": "unresolved",
+        "annotation": "NO ERROR TO REPORT YET"
       },
+      "vo": "So the test is narrow. By next June, gallons saved, or a demonstration?",
+      "sfx": "a short reach, then a soft release",
+      "means": "forecast.tsx Reconcile below settled 0.45, where the bracket does not yet exist",
       "choreo": {
-        "primary": "Researcher opens a shared next-test frame beyond both candidate types but leaves its two goal shutters closed",
-        "reaction": "The empty frame\u2019s two closed goal shutters stop symmetrically in front of both lanes.",
-        "ambient": "Second-room suspended pipe flexes at its brackets; curved glazing catches a slow water reflection."
+        "primary": "the bracket extending and withdrawing",
+        "reaction": "the hatching in MEASURED sliding once as it passes",
+        "ambient": "rain on the wall"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the measurement that would settle it, absent"
     },
     {
       "id": 29,
-      "at_s": 80.1,
-      "t": "80.100-83.228",
-      "vo_line": 13,
-      "offset": 0.0,
-      "vo": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
-      "shows": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
-      "means": "The physical action makes noaa fisheries legible at the moment the narration needs it.",
-      "sfx": "bench thud",
+      "t": 86.0,
+      "shot": 9,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "NOAA FISHERIES"
+        "subject": "Sourdough",
+        "action": "steps between the two boxes and looks at the empty one, not the lit one",
+        "emotion": "level",
+        "annotation": "BY NEXT JUNE"
       },
+      "vo": "So the test is narrow. By next June, gallons saved, or a demonstration?",
+      "sfx": "single low note",
+      "means": "the film's argument in one frame",
+      "throughline": true,
+      "open_loop_pay": true,
       "choreo": {
-        "primary": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
-        "reaction": "Both bench feet meet the quay; cable weight settles onto the bench edge.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "Sourdough stepping between the boxes",
+        "reaction": "his head turning to the empty one",
+        "ambient": "his breath, the only motion left"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the hero choosing which box to look at"
     },
     {
       "id": 30,
-      "at_s": 83.228,
-      "t": "83.228-87.920",
-      "vo_line": 13,
-      "offset": 3.128,
-      "vo": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
-      "shows": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above",
-      "means": "The physical action makes north pacific fishery management council legible at the moment the narration needs it.",
-      "sfx": "shutter slide",
+      "t": 88.5,
+      "shot": 9,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "NORTH PACIFIC FISHERY MANAGEMENT COUNCIL"
+        "subject": "a quote plate",
+        "action": "rises under the boxes",
+        "emotion": "plain",
+        "annotation": "\"A REALLY SHORT PERIOD OF PERFORMANCE\" \u00b7 RICHARD WIES, UAF"
       },
+      "vo": "Richard Wies, who leads it, calls nine months a really short period of performance.",
+      "sfx": "plate rise",
+      "means": "claim c16, attributed on screen",
       "choreo": {
-        "primary": "Researcher places the same closed requirement shutters over both rails while the management-council name lands above",
-        "reaction": "The same requirement shutters click onto matching supports over both candidate rails.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the quote plate rising under the boxes",
+        "reaction": "Sourdough's ember steadying",
+        "ambient": "rain"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the Wies quote"
     },
     {
       "id": 31,
-      "at_s": 87.92,
-      "t": "87.920-90.731",
-      "vo_line": 14,
-      "offset": 0.0,
-      "vo": "Fishing businesses need sound management to plan their seasons.",
-      "shows": "Testing leaf unfolds beneath both rails as camera rises to the full-size working quay",
-      "means": "The physical action makes season planning legible at the moment the narration needs it.",
-      "sfx": "leaf clunk",
+      "t": 91.6,
+      "shot": 10,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Testing leaf unfolds beneath both rails as camera rises to the full-size working quay",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "SEASON PLANNING"
+        "subject": "the valley again, wider",
+        "action": "wipes back in as the powerhouse door swings wide and throws light across the water",
+        "emotion": "fair",
+        "annotation": "THE EASY CASE"
       },
+      "vo": "And Cordova is the easy case.",
+      "sfx": "warm bed returns",
+      "means": "the Act 3 concession, drawn generously",
       "choreo": {
-        "primary": "Testing leaf unfolds beneath both rails as camera rises to the full-size working quay",
-        "reaction": "The leaf\u2019s hinged support locks below it before the camera holds the broader harbor.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the door swinging wide and light crossing the water",
+        "reaction": "each of Cordova's assets lighting in turn",
+        "ambient": "rain and creek"
       },
-      "rehook": "Harbor scale exposes the real season beyond the model",
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "everything Cordova already has"
     },
     {
       "id": 32,
-      "at_s": 90.731,
-      "t": "90.731-92.940",
-      "vo_line": 14,
-      "offset": 2.811,
-      "vo": "Fishing businesses need sound management to plan their seasons.",
-      "shows": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule",
-      "means": "The physical action makes catch pattern legible at the moment the narration needs it.",
-      "sfx": "shutter tap",
+      "t": 93.3,
+      "shot": 10,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "CATCH PATTERN"
+        "subject": "the penstock",
+        "action": "runs full while a second creek beside it runs past unused, spilling",
+        "emotion": "abundant",
+        "annotation": "NO NEW NUMBER HERE"
       },
+      "vo": "And Cordova is the easy case.",
+      "sfx": "spill rush",
+      "means": "runofriver spill param, the surplus",
       "choreo": {
-        "primary": "Researcher opens one goal shutter across both equal lanes, exposing catch pattern without evaluating either rule",
-        "reaction": "The first goal shutter reaches its rubber stop; the shared support flexes and the researcher\u2019s hand follows through a few pixels before settling.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the second creek spilling past the intake",
+        "reaction": "spray kicking up where it lands",
+        "ambient": "the penstock running full"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the spill"
     },
     {
       "id": 33,
-      "at_s": 92.94,
-      "t": "92.940-95.604",
-      "vo_line": 15,
-      "offset": 0.0,
-      "vo": "So test both rules against the same catch-pattern and breeding-stock goals.",
-      "shows": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
-      "means": "The physical action makes the same goals for both rules legible at the moment the narration needs it.",
-      "sfx": "shutter click",
+      "t": 96.0,
+      "shot": 11,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "THE SAME GOALS FOR BOTH RULES"
+        "subject": "Cordova",
+        "action": "shrinks to a single amber dot as the camera climbs off the island",
+        "emotion": "diminishing",
+        "annotation": "1 OF 193"
       },
+      "vo": "The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.",
+      "sfx": "riser + altitude wind",
+      "means": "scale-pullback reveal",
+      "reveal": "scale-pullback",
+      "rehook": "the whole state arrives at once",
       "choreo": {
-        "primary": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
-        "reaction": "The second shutter hits its matching stop; the adjacent shared support compresses and returns without moving either candidate.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the climb off the island",
+        "reaction": "Cordova condensing to one dot",
+        "ambient": "cloud crossing beneath"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "Cordova as one dot"
     },
     {
       "id": 34,
-      "at_s": 95.604,
-      "t": "95.604-98.860",
-      "vo_line": 15,
-      "offset": 2.664,
-      "vo": "So test both rules against the same catch-pattern and breeding-stock goals.",
-      "shows": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space",
-      "means": "The physical action makes further testing legible at the moment the narration needs it.",
-      "sfx": "latch release",
+      "t": 100.0,
+      "shot": 11,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "FURTHER TESTING"
+        "subject": "192 more amber dots",
+        "action": "bloom outward across Alaska, each a diesel drum, none with a records cabinet under it",
+        "emotion": "sobering",
+        "annotation": "193 COMMUNITIES \u00b7 3 TO 5x URBAN COST \u00b7 PER AEA"
       },
+      "vo": "The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.",
+      "sfx": "bloom ticks, staggered",
+      "means": "claim c13, multiplicity-swarm",
       "choreo": {
-        "primary": "Researcher releases the next-test gate latch and retracts the gate, then withdraws the hand from the still-unresolved testing space",
-        "reaction": "Released latch springs back against its housing while the gate rolls into its side pocket; both candidates remain unevaluated.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the dots blooming outward across Alaska",
+        "reaction": "diesel drums settling under each one",
+        "ambient": "the coastline drifting"
       },
-      "sfx_offset_frames": 40,
-      "sfx_offset_reason": "Actual authored physical arrival at frame40 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "192 more dots"
     },
     {
       "id": 35,
-      "at_s": 98.86,
-      "t": "98.860-103.839",
-      "vo_line": 16,
-      "offset": 0.0,
-      "vo": "These are illustrative simulations. They establish alternatives to investigate, not a winning real-world policy.",
-      "shows": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
-      "means": "The physical action makes illustrative simulations legible at the moment the narration needs it.",
-      "sfx": "collar click",
+      "t": 104.6,
+      "shot": 11,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "ILLUSTRATIVE SIMULATIONS"
+        "subject": "a thin cyan thread",
+        "action": "stretches out toward the nearest dot, thins, and snaps back short",
+        "emotion": "unresolved",
+        "annotation": "LEAST DATA TO BUILD ONE"
       },
+      "vo": "The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.",
+      "sfx": "thread strain, no lock",
+      "means": "the transfer question, drawn not said",
       "choreo": {
-        "primary": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
-        "reaction": "Collar latch swings down; model window remains bounded rather than opening to harbor water.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the cyan thread stretching toward the nearest dot",
+        "reaction": "the thread thinning and snapping back",
+        "ambient": "the dots pulsing"
       },
-      "sfx_offset_frames": 32,
-      "sfx_offset_reason": "Actual authored physical arrival at frame32 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the thread falling short"
     },
     {
       "id": 36,
-      "at_s": 103.839,
-      "t": "103.839-107.360",
-      "vo_line": 16,
-      "offset": 4.979,
-      "vo": "These are illustrative simulations. They establish alternatives to investigate, not a winning real-world policy.",
-      "shows": "Research-value plaque unfolds while both candidates stay equally prominent",
-      "means": "The physical action makes alternatives to investigate legible at the moment the narration needs it.",
-      "sfx": "paper unfold",
+      "t": 109.0,
+      "shot": 12,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Research-value plaque unfolds while both candidates stay equally prominent",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "ALTERNATIVES TO INVESTIGATE"
+        "subject": "the powerhouse door at night",
+        "action": "match-cuts back, the rack still turning, the creek still running past outside",
+        "emotion": "unchanged",
+        "annotation": "WATCH FOR GALLONS"
       },
+      "vo": "So watch for gallons.",
+      "sfx": "fan hum + creek, bed returns",
+      "means": "the bookend",
       "choreo": {
-        "primary": "Research-value plaque unfolds while both candidates stay equally prominent",
-        "reaction": "Research-value plaque settles against its hinge, and both candidate lanes remain in view.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the match cut back to the powerhouse door",
+        "reaction": "the rack's fans still turning",
+        "ambient": "the creek past the threshold"
       },
-      "sfx_offset_frames": 24,
-      "sfx_offset_reason": "Actual authored physical arrival at frame24 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the door, unchanged"
     },
     {
       "id": 37,
-      "at_s": 107.36,
-      "t": "107.360-110.704",
-      "vo_line": 17,
-      "offset": 0.0,
-      "vo": "Which balance should a rule demonstrate between catches and breeding fish?",
-      "shows": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view",
-      "means": "The physical action makes which balance should a rule demonstrate? legible at the moment the narration needs it.",
-      "sfx": "grip brush",
+      "t": 112.1,
+      "shot": 12,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "WHICH BALANCE SHOULD A RULE DEMONSTRATE?"
+        "subject": "the MEASURED box on the wall",
+        "action": "is still empty, and the drip from the hook lands on it again",
+        "emotion": "patient",
+        "annotation": "NO NEW NUMBER HERE"
       },
+      "vo": "So watch for gallons.",
+      "sfx": "the same single drip",
+      "means": "throughline lands in the button",
+      "throughline": true,
       "choreo": {
-        "primary": "Researcher nudges the original grip toward TEST AGAIN with both goal lanes in view",
-        "reaction": "Grip spring nudges the hand back slightly as it approaches the final detent.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the drip falling and landing on the empty box",
+        "reaction": "the hatching flexing again",
+        "ambient": "fan hum"
       },
-      "sfx_offset_frames": 32,
-      "sfx_offset_reason": "Actual authored physical arrival at frame32 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the box, still empty"
     },
     {
       "id": 38,
-      "at_s": 110.704,
-      "t": "110.704-112.640",
-      "vo_line": 17,
-      "offset": 3.344,
-      "vo": "Which balance should a rule demonstrate between catches and breeding fish?",
-      "shows": "Grip rebounds slightly and the patient hand guides it into its final research detent",
-      "means": "The physical action makes test again legible at the moment the narration needs it.",
-      "sfx": "detent settle",
+      "t": 115.8,
+      "shot": 12,
       "draw": {
-        "subject": "Researcher and portable GearLever on harbor bench",
-        "action": "Grip rebounds slightly and the patient hand guides it into its final research detent",
-        "emotion": "Curiosity, then thoughtful surprise at the reversal, then patient resolve",
-        "annotation": "TEST AGAIN"
+        "subject": "the question",
+        "action": "rises over the empty box as the door light narrows to a line",
+        "emotion": "direct",
+        "annotation": "WHAT WOULD CONVINCE YOU IT WORKED?"
       },
+      "vo": "What would convince you it worked?",
+      "sfx": "final note, audible tail",
+      "means": "the button",
       "choreo": {
-        "primary": "Grip rebounds slightly and the patient hand guides it into its final research detent",
-        "reaction": "Patient hand applies one small correction, then rests on the settled grip.",
-        "ambient": "Harbor water heaves below the quay; mooring line sways from its cleat and control cable droops from the bench."
+        "primary": "the question plate rising",
+        "reaction": "the door light narrowing to a line behind it",
+        "ambient": "the creek, and then the tail"
       },
-      "sfx_offset_frames": 28,
-      "sfx_offset_reason": "Actual authored physical arrival at frame28 after the beat. Final picture contact and performed audio peak require verification."
+      "shows": "the question"
     }
   ],
-  "shots": [
-    {
-      "id": "S1",
-      "title": "The research grip",
-      "t": "0.000-11.600",
-      "vo_line": 0,
-      "framing": "macro-closeup",
-      "scale": "close",
-      "height": "low",
-      "stage": "wet laboratory",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "orbitReveal+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "hard-cut",
-      "thread": "build",
-      "centered": "Researcher catches the mango grip before it reaches the research-bench detent",
-      "means": "Move to the research grip so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Mango grip begins off its detent; continuous sleeve enters from right.",
-      "exit_state": "Grip is caught and a date tab opens on the bounded model.",
-      "camera_intent": "Low insert pulls just far enough to reveal the tiny support, then holds the grip large.",
-      "transition_anchor": "Grip pivot at540,950",
-      "focus_target": "Caught grip"
-    },
-    {
-      "id": "S2",
-      "title": "The modeled fishery",
-      "t": "11.600-20.640",
-      "vo_line": 2,
-      "framing": "wide-establish",
-      "scale": "wide",
-      "height": "high",
-      "stage": "wet laboratory",
-      "pov": "orbital-aerial",
-      "layout": "stacked-layers",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "structure-as-subject",
-      "camera": "craneDown+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "assemble",
-      "thread": "build",
-      "centered": "Wide laboratory unfolds around researcher and the source name lands on its rail",
-      "means": "Move to the modeled fishery so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Hard BUILD lands in a separately composed overhead lab with observation intake centered.",
-      "exit_state": "Observation tiles finish seating before learning begins.",
-      "camera_intent": "High overhead crane descends along steel ribs into the model intake; no reframe of shot1.",
-      "transition_anchor": "Rectangular model rim becomes overhead intake",
-      "focus_target": "Observation tiles"
-    },
-    {
-      "id": "S3",
-      "title": "Learning from outcomes",
-      "t": "20.640-31.400",
-      "vo_line": 3,
-      "framing": "push-detail",
-      "scale": "close",
-      "height": "eye",
-      "stage": "wet laboratory",
-      "pov": "cross-section-cutaway",
-      "layout": "fullbleed-split",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "orbitReveal+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "match-cut",
-      "thread": "match",
-      "centered": "Researcher turns control through a test cycle while season shutters change",
-      "means": "Move to learning from outcomes so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Released hand exits; candidate path runs forward through simulated seasons.",
-      "exit_state": "Outcome-feedback return completes and changes the learned detent.",
-      "camera_intent": "Close cutaway pulls outward as return path assembles; freeze0.6s only after the coupling settles.",
-      "transition_anchor": "Intake edge matches forward-route guide",
-      "focus_target": "Closed feedback circuit"
-    },
-    {
-      "id": "S4",
-      "title": "The comparison stays fixed",
-      "t": "31.400-39.640",
-      "vo_line": 5,
-      "framing": "macro-closeup",
-      "scale": "insert",
-      "height": "overhead",
-      "stage": "wet laboratory",
-      "pov": "exploded-diagram",
-      "layout": "grid-modular",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "data-as-subject",
-      "camera": "craneDown+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "centered": "Fixed comparison token seats beside the learned candidate on its own rail",
-      "means": "Move to the comparison stays fixed so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Predefined candidate arrives against an immutable stop beside the learned detent.",
-      "exit_state": "Researcher\u2019s pointing hand and gaze raise the unopened second-room question.",
-      "camera_intent": "Overhead insert tracks from fixed stop to moving learned detent, then toward sealed port.",
-      "transition_anchor": "Two rails share the previous return-path geometry",
-      "focus_target": "Fixed comparison and learned detent"
-    },
-    {
-      "id": "S5",
-      "title": "Constant recruitment",
-      "t": "39.640-45.160",
-      "vo_line": 7,
-      "framing": "wide-establish",
-      "scale": "wide",
-      "height": "low",
-      "stage": "wet laboratory",
-      "pov": "eye-level-immersive",
-      "layout": "stacked-layers",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "structure-as-subject",
-      "camera": "orbitReveal+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "mask-wipe",
-      "thread": "build",
-      "centered": "First bay opens around its own two candidate identities",
-      "means": "Move to constant recruitment so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "The first bay cover wipes open around its constant-recruitment inlet.",
-      "exit_state": "Equal-step inlet cycles without quantities or outcomes yet.",
-      "camera_intent": "Low wide camera travels below the open cover to expose separate input and candidate rails.",
-      "transition_anchor": "Sealed port matches first bay cover",
-      "focus_target": "Constant inlet"
-    },
-    {
-      "id": "S6",
-      "title": "One result carries two outcomes",
-      "t": "45.160-55.760",
-      "vo_line": 8,
-      "framing": "two-up",
-      "scale": "medium",
-      "height": "eye",
-      "stage": "wet laboratory",
-      "pov": "cross-section-cutaway",
-      "layout": "fullbleed-split",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "data-as-subject",
-      "camera": "orbitReveal+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "match-action",
-      "thread": "carry",
-      "centered": "First result flap rises beside the constant-case learned rule",
-      "means": "Move to one result carries two outcomes so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Higher spawning-biomass flap rises over the first case.",
-      "exit_state": "Catch-swings tag settles beside biomass after a single duck reaction.",
-      "camera_intent": "Medium two-up view keeps both equal-sized outcomes in frame; short snap toward the duck then settle.",
-      "transition_anchor": "Bay rim becomes split outcome support",
-      "focus_target": "Two constant-case outcomes"
-    },
-    {
-      "id": "S7",
-      "title": "A different experimental room",
-      "t": "55.760-66.820",
-      "vo_line": 9,
-      "framing": "wide-establish",
-      "scale": "wide",
-      "height": "high",
-      "stage": "stock-linked room",
-      "pov": "orbital-aerial",
-      "layout": "stacked-layers",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "structure-as-subject",
-      "camera": "craneDown+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "mask-wipe",
-      "thread": "travel",
-      "centered": "Doorway wipes into a different experimental room while first case stays behind",
-      "means": "Move to a different experimental room so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Control is visibly lifted; a doorway wipes to fresh architecture and new candidate identities.",
-      "exit_state": "Stock-linked relationship and its own comparison are connected before results.",
-      "camera_intent": "High wide descent begins behind doorway, passes overhead pipe, lands on new rails;0.6s room reveal hold.",
-      "transition_anchor": "Carried mango grip crosses rooms",
-      "focus_target": "Fresh stock-linked case"
-    },
-    {
-      "id": "S8",
-      "title": "The biomass comparison reverses",
-      "t": "66.820-73.880",
-      "vo_line": 11,
-      "framing": "two-up",
-      "scale": "close",
-      "height": "eye",
-      "stage": "stock-linked room",
-      "pov": "eye-level-immersive",
-      "layout": "fullbleed-split",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "data-as-subject",
-      "camera": "orbitReveal+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "match-cut",
-      "thread": "match",
-      "centered": "Stock-linked result opens beside the new learned candidate",
-      "means": "Move to the biomass comparison reverses so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Higher-catch flap opens; lower-biomass flap remains closed for one beat.",
-      "exit_state": "Both stock-linked outcomes sit equally large with their own comparison qualifier.",
-      "camera_intent": "Close eye-level move follows researcher\u2019s glance from catch to biomass without changing label hierarchy.",
-      "transition_anchor": "Second-room rim matches outcome-frame seam",
-      "focus_target": "Biomass reversal"
-    },
-    {
-      "id": "S9",
-      "title": "Same question for each case",
-      "t": "73.880-80.100",
-      "vo_line": 12,
-      "framing": "alt-vantage",
-      "scale": "insert",
-      "height": "overhead",
-      "stage": "stock-linked room",
-      "pov": "exploded-diagram",
-      "layout": "grid-modular",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "craneDown+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "graphic-match",
-      "thread": "build",
-      "centered": "Both separate scenario assemblies slide back into their labeled result recesses, exposing a blank management-advantage field",
-      "means": "Move to same question for each case so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Reported case assemblies slide into separate archival recesses.",
-      "exit_state": "An unresolved common next-test frame stands in front of both candidate types.",
-      "camera_intent": "Overhead insert follows trays away from center and exposes the blank management-advantage field.",
-      "transition_anchor": "Equal outcome rectangles become two result recesses",
-      "focus_target": "Unresolved advantage"
-    },
-    {
-      "id": "S10",
-      "title": "The real season",
-      "t": "80.100-92.940",
-      "vo_line": 13,
-      "framing": "wide-establish",
-      "scale": "extreme-wide",
-      "height": "low",
-      "stage": "harbor apron",
-      "pov": "eye-level-immersive",
-      "layout": "stacked-layers",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "landscape-as-subject",
-      "camera": "orbitReveal+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "carried-element",
-      "thread": "carry",
-      "centered": "Researcher carries the model grip onto the harbor bench and seats both candidate rails before the unresolved frame",
-      "means": "Move to the real season so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Researcher carries control and candidates onto a supported harbor bench.",
-      "exit_state": "Harbor scale opens and first shared catch-pattern goal is visible across both lanes.",
-      "camera_intent": "Low extreme-wide rise travels past foreground quay piling as supported testing leaf unfolds;0.6s hold after support locks.",
-      "transition_anchor": "Carried control lands at same screen point on bench",
-      "focus_target": "Real season and shared testing bench"
-    },
-    {
-      "id": "S11",
-      "title": "Equal next-test goals",
-      "t": "92.940-98.860",
-      "vo_line": 15,
-      "framing": "two-up",
-      "scale": "medium",
-      "height": "overhead",
-      "stage": "harbor apron",
-      "pov": "exploded-diagram",
-      "layout": "fullbleed-split",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "data-as-subject",
-      "camera": "craneDown+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "match-action",
-      "thread": "carry",
-      "centered": "Second shared goal shutter opens to breeding stock, completing the identical next-test requirements",
-      "means": "Move to equal next-test goals so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Catch-pattern goal already spans both lanes; second shutter is still closed.",
-      "exit_state": "Breeding-stock goal opens equally across both rules; further-test area stays unresolved.",
-      "camera_intent": "Overhead medium push aligns both candidate rails and identical goal frames; no camera preference.",
-      "transition_anchor": "Two closed goal shutters match preceding bench supports",
-      "focus_target": "Identical next-test requirements"
-    },
-    {
-      "id": "S12",
-      "title": "The rehearsal keeps working",
-      "t": "98.860-113.640",
-      "vo_line": 16,
-      "framing": "subject-portrait",
-      "scale": "close",
-      "height": "low",
-      "stage": "harbor apron",
-      "pov": "macro-closeup",
-      "layout": "centered-hero-lowerthird",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "instrument-as-subject",
-      "camera": "orbitReveal+dollyThrough",
-      "stage3d": "planes",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "centered": "Model collar unlatches to expose the transparent simulation boundary while remaining connected only to research",
-      "means": "Move to the rehearsal keeps working so the comparison advances rather than repeating a label.",
-      "hero": {
-        "name": "GearLever and research apparatus",
-        "parts": 24,
-        "zones": 4,
-        "detail_note": "Shared long throw, grip, pivot, collar, detents, shaded mount and contact hand; rails, glazed observation window, intake and return path in appropriate shots."
-      },
-      "entry_state": "Close grip collar exposes the bounded simulation mount.",
-      "exit_state": "Same hand settles TEST AGAIN while both equal candidate lanes remain visible behind.",
-      "camera_intent": "Low close orbit around grip reveals research plaque then repeats opening silhouette for final correction.",
-      "transition_anchor": "Mango grip fills opening composition",
-      "focus_target": "Research control remains useful"
-    }
-  ],
-  "review_revision": {
-    "round": 3,
-    "fixes": [
-      "Feedback alone changes learned detent after initiation",
-      "38specific physical reactions and stage-specific ambient",
-      "12concrete entry exit camera anchor plans",
-      "Equal-goals test occupies79to107 with explicit fair objection",
-      "First primary payoff99",
-      "Literal52.6socket and107collar sounds",
-      "36sleevebrush,96.8and99stopreactions,102.6actualgatelatchretraction"
-    ]
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "a server rack fan inside a hydroelectric powerhouse, already spinning, one blade edge caught by the amber of an open door, the wet penstock elbow behind it",
+    "headline": "SERVERS INSIDE THE POWERHOUSE",
+    "motion_by_s": 0.4,
+    "loopback": "the button match-cuts to the same rack and the same drip, with the MEASURED box behind it still empty"
   },
-  "planning_clock": {
-    "starts": {
-      "0": 0.0,
-      "1": 5.0,
-      "2": 12.0,
-      "3": 20.0,
-      "4": 26.0,
-      "5": 31.0,
-      "6": 36,
-      "7": 41.0,
-      "8": 48.0,
-      "9": 59.0,
-      "10": 65.0,
-      "11": 71.0,
-      "12": 79.0,
-      "13": 86.0,
-      "14": 94.0,
-      "15": 99.0,
-      "16": 107.0,
-      "17": 114.0
+  "audio_arc": {
+    "build_steps": [
+      0.0,
+      17.5,
+      38.0,
+      58.6
+    ],
+    "dip_at": 79.2,
+    "riser_at": 96.0,
+    "silence_at": 80.4,
+    "payoff_at": 99.0,
+    "button_pattern": "question"
+  },
+  "reveals": [
+    {
+      "t": 20.0,
+      "type": "scale-pullback",
+      "what": "the powerhouse becomes one small building in a whole dark valley with no wire leaving it",
+      "hold_s": 0.7
     },
-    "end": 120,
-    "beats": {
-      "1": 0,
-      "2": 1.1,
-      "3": 3.2,
-      "4": 5,
-      "5": 8.2,
-      "6": 12,
-      "7": 16.3,
-      "8": 20,
-      "9": 22.4,
-      "10": 26,
-      "11": 28.8,
-      "12": 31,
-      "13": 34.0,
-      "14": 36,
-      "15": 39,
-      "16": 41,
-      "17": 43.6,
-      "18": 48,
-      "19": 52.6,
-      "20": 55.2,
-      "21": 59,
-      "22": 62.3,
-      "23": 65,
-      "24": 68.6,
-      "25": 71,
-      "26": 74.5,
-      "27": 79,
-      "28": 81.8,
-      "29": 86,
-      "30": 89.2,
-      "31": 94,
-      "32": 96.8,
-      "33": 99,
-      "34": 102.6,
-      "35": 107,
-      "36": 111.1,
-      "37": 114,
-      "38": 117.8
+    {
+      "t": 58.6,
+      "type": "build-on",
+      "what": "the demand bar builds and the unexplained amber block at its base is revealed to be the server rack",
+      "hold_s": 0.6
     },
-    "open_loop": {
-      "plant_t": 0,
-      "pay_t": 99,
-      "what": "What makes the rule worth testing? First complete identical catch-pattern and breeding-stock requirements are revealed across both candidates at99. The111.1plaque is a callback, not the payoff."
-    },
-    "open_loop_2": {
-      "plant_t": 36,
-      "pay_t": 71,
-      "what": "Will an advantage survive changed biology? First revealing stock-linked result begins71, full lower-biomass finding74.5; protect the earlier payoff when conforming."
-    },
+    {
+      "t": 96.0,
+      "type": "scale-pullback",
+      "what": "Cordova shrinks to one amber dot and 192 more bloom across Alaska",
+      "hold_s": 0.8
+    }
+  ],
+  "open_loop": {
+    "plant_t": 9.4,
+    "pay_t": 86.0,
+    "what": "two empty boxes stencilled on the powerhouse wall, CLAIMED and MEASURED, planted silently and never mentioned until the signature shot"
+  },
+  "open_loop_2": {
+    "plant_t": 44.0,
+    "pay_t": 70.0,
+    "what": "a small amber block sitting unexplained at the foot of the twin's demand bar, revealed later to be the servers from the hook"
+  },
+  "throughline": {
+    "object": "the CLAIMED and MEASURED boxes stencilled on the powerhouse wall",
     "states": [
       {
-        "at_s": 0,
-        "state": "Caught over bounded research mount"
+        "at_s": 9.4,
+        "state": "both boxes visible, both empty, unexplained"
       },
       {
-        "at_s": 26,
-        "state": "Connected to complete outcome-feedback path"
+        "at_s": 44.0,
+        "state": "the claim is being assembled, the boxes are still out of frame but the number that will fill CLAIMED is being made"
       },
       {
-        "at_s": 59,
-        "state": "Lifted free into separately labeled experimental room"
+        "at_s": 75.0,
+        "state": "CLAIMED fills with cyan"
       },
       {
-        "at_s": 86,
-        "state": "Carried to harbor bench, model cable still attached"
+        "at_s": 79.2,
+        "state": "MEASURED stays empty and hatched, NOT YET MEASURED"
       },
       {
-        "at_s": 114,
-        "state": "Hand settles TEST AGAIN beside both open next-test lanes"
+        "at_s": 112.4,
+        "state": "still empty at the button, and the hook's drip lands on it again"
       }
     ],
-    "reveals": [
-      {
-        "t": 26,
-        "beat_id": 10,
-        "type": "build-on",
-        "what": "Outcome path completes the feedback circuit around the control",
-        "hold_s": 0.6,
-        "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
-        "landing_frames": 24
-      },
-      {
-        "t": 59,
-        "beat_id": 21,
-        "type": "scale-pullback",
-        "what": "Doorway reveals distinct stock-linked experimental room",
-        "hold_s": 0.6,
-        "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
-        "landing_frames": 24
-      },
-      {
-        "t": 94,
-        "beat_id": 31,
-        "type": "build-on",
-        "what": "Harbor-scale reveal unfolds testing bench beneath the real season",
-        "hold_s": 0.6,
-        "anticipation": "8frames before reveal, primary mover pulls back on its actual hinge/guide; hold0.6seconds after24frame arrival and settle.",
-        "landing_frames": 24
-      }
-    ],
-    "audio_arc": {
-      "build_steps": 4,
-      "dip_at": 102.6,
-      "riser_at": 93.4,
-      "silence_at": 106.5,
-      "payoff_at": 111.1,
-      "button_pattern": "question",
-      "evidence": "Bright electric-piano bed; literal control and glass sounds build the mechanism, brief dip grants the test space, final tactile detent closes the question."
-    }
+    "lands_in_button": true
   },
-  "voice_conform": {
-    "script_sha256": "2bbc75e32042528fe5b49c676ebe55598a2684e3faa25f400421123857284716",
-    "vo_wav_sha256": "8951e54355e3820efc4de167ac729b8268a30a545e802083b917a718abcc53ab",
-    "method": "Piecewise interpolation within actual whole-file aligned narration lines; original audio untouched."
-  },
-  "actual_voice_seconds": 113.1
+  "divergence_note": "The last four dispatches ran pov cross-section-cutaway, orbital-aerial, exploded-diagram and eye-level-immersive, layout grid-modular, stacked-layers and fullbleed-split, and motion horizontal-traverse, vertical-descent and assemble-build, so all three signature axes here are unused inside the window: macro-closeup, single-object-void and radial-emanate. hero_treatment breaks a three-run run of instrument-as-subject by casting a single organic hero, Sourdough, who has never led this channel. The light story is the sharpest break: the last two films were bright light-field pieces on pale grounds, a warm paper interior on cream and a blue-and-white lab on off-white, and this one is night-practical, a dark wet exterior and a lamplit interior whose ground value is the darkest this channel has shipped in a month. The palette is built as an argument rather than a mood, amber always meaning measured and cyan always meaning claimed, which no previous dispatch has done."
 }

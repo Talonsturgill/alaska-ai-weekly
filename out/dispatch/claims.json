@@ -3,41 +3,54 @@
   "story": "UAF's Alaska Center for Energy and Power won a DOE Genesis Mission Phase I award for AURORA-AI, a nine-month research project pairing physics-based digital twins with machine learning on Cordova Electric Cooperative's islanded microgrid.",
   "claims": [
     {
-      "id": "c1", "status": "VERIFIED",
+      "id": "c1",
+      "status": "VERIFIED",
       "claim": "UAF secured a $725,000 award from the U.S. Department of Energy for AURORA-AI.",
       "spoken": "U A F's energy center said it won seven hundred twenty five thousand federal dollars",
-      "on_screen": "$725,000 · PER UAF",
+      "on_screen": "$725,000 \u00b7 PER UAF",
       "verbatim_source": "\"a $725,000 award from the U.S. Department of Energy\"",
       "url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
       "second_source_url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
       "label": "per UAF",
-      "requires": ["The words PER UAF appear in the same frame as the figure. No DOE document naming AURORA-AI could be found, so the film must never imply a DOE announcement.", "This is the four-way consortium TOTAL, never 'to UAF'."],
+      "requires": [
+        "The words PER UAF appear in the same frame as the figure. No DOE document naming AURORA-AI could be found, so the film must never imply a DOE announcement.",
+        "This is the four-way consortium TOTAL, never 'to UAF'."
+      ],
       "confidence": "high"
     },
     {
-      "id": "c2", "status": "LABELLED",
+      "id": "c2",
+      "status": "LABELLED",
       "claim": "Of the $725,000 total, UAF's own share is $325,000.",
-      "spoken": "NOT SPOKEN",
-      "on_screen": "NOT PAINTED",
+      "spoken": "U A F's share, three hundred twenty five thousand",
+      "on_screen": "$325,000 TO UAF \u00b7 PER ALASKA'S NEWS SOURCE",
       "verbatim_source": "structured field citation, UAF share: \"$325,000\"",
       "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
       "label": "according to Alaska's News Source",
-      "requires": ["CUT FROM THE FILM by the angle room: two similar dollar figures in one breath is confusing and only one matters. Retained here so the ledger records that the $725,000 is a total and not UAF's share."],
+      "requires": [
+        "SINGLE SOURCE. The ACEP release gives only the total. If painted, the outlet name is in the same frame.",
+        "Voiced alongside the four-partner count so the $725,000 can never read as UAF's own."
+      ],
       "confidence": "medium"
     },
     {
-      "id": "c3", "status": "LABELLED",
+      "id": "c3",
+      "status": "LABELLED",
       "claim": "Phase One is reported to start October 1st and run about nine months, and is primarily research.",
       "spoken": "The work starts October first",
-      "on_screen": "PHASE 1 · STARTS OCT 1 · 9 MONTHS · RESEARCH",
+      "on_screen": "PHASE 1 \u00b7 STARTS OCT 1 \u00b7 9 MONTHS \u00b7 RESEARCH",
       "verbatim_source": "labelled non-quotation, not a quotation: the article states an October 1 Phase One start and a nine-month duration, described as primarily research.",
       "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
       "label": "per Alaska's News Source",
-      "requires": ["The source states October 1 with NO YEAR, so the film must not print a year with it.", "The word RESEARCH travels with this claim on screen. It is the reason this is a study and not a result."],
+      "requires": [
+        "The source states October 1 with NO YEAR, so the film must not print a year with it.",
+        "The word RESEARCH travels with this claim on screen. It is the reason this is a study and not a result."
+      ],
       "confidence": "medium"
     },
     {
-      "id": "c6", "status": "VERIFIED",
+      "id": "c6",
+      "status": "VERIFIED",
       "claim": "AURORA-AI stands for Alaska Utility Resilience and Optimization using Real-time AI.",
       "spoken": "NOT SPOKEN",
       "on_screen": "AURORA-AI",
@@ -45,23 +58,124 @@
       "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
       "second_source_url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
       "label": "",
-      "requires": ["Confirmed identically on two institutionally independent primary sites. The expansion may be painted in full."],
+      "requires": [
+        "Confirmed identically on two institutionally independent primary sites. The expansion may be painted in full."
+      ],
       "confidence": "high"
     },
     {
-      "id": "c11", "status": "VERIFIED",
+      "id": "c7",
+      "status": "VERIFIED",
+      "claim": "The Genesis Mission is a Department of Energy artificial intelligence initiative created by Executive Order 14363, signed November 24th, 2025.",
+      "spoken": "from the Energy Department's Genesis Mission",
+      "on_screen": "GENESIS MISSION \u00b7 EO 14363 \u00b7 NOV 24TH, 2025",
+      "verbatim_source": "\"a dedicated, coordinated national effort to unleash a new age of AI-accelerated innovation and discovery\"",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/11/launching-the-genesis-mission/",
+      "second_source_url": "https://www.federalregister.gov/api/v1/documents/2025-21665.json",
+      "label": "",
+      "requires": [
+        "The only fully primary government document in the story. The year 2025 stays on screen because it is a different calendar year."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c8",
+      "status": "VERIFIED",
+      "claim": "The AURORA-AI team is UAF's Alaska Center for Energy and Power, Colorado State University, the National Laboratory of the Rockies and Cordova Electric Cooperative.",
+      "spoken": "Four partners",
+      "on_screen": "UAF ACEP \u00b7 COLORADO STATE \u00b7 NATIONAL LABORATORY OF THE ROCKIES (FORMERLY NREL) \u00b7 CORDOVA ELECTRIC",
+      "verbatim_source": "\"researchers from the UAF Alaska Center for Energy and Power, Colorado State University, the National Laboratory of the Rockies and Cordova Electric Cooperative\"",
+      "url": "https://alaska-native-news.com/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids/85615/",
+      "second_source_url": "https://www.energy.gov/national-laboratories",
+      "label": "",
+      "requires": [
+        "The National Laboratory of the Rockies is NOT a press-release error. DOE renamed NREL in December 2025 and lists the new name on its own national laboratories page. The film glosses it as FORMERLY NREL or a viewer will not know what it is."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c11",
+      "status": "VERIFIED",
       "claim": "The project will combine high-resolution utility data, physics-based digital twins and machine learning to forecast demand and generation, detect abnormal conditions, and optimize the use of hydro, diesel, battery and flexible loads.",
       "spoken": "a digital twin of this grid, built from the co op's records, with machine learning on it",
-      "on_screen": "FORECAST DEMAND · DETECT ABNORMAL CONDITIONS · OPTIMIZE HYDRO AND DIESEL",
+      "on_screen": "FORECAST DEMAND \u00b7 DETECT ABNORMAL CONDITIONS \u00b7 OPTIMIZE HYDRO AND DIESEL",
       "verbatim_source": "\"combine high-resolution utility data, physics-based digital twins and machine learning to forecast demand and generation; detect abnormal conditions; optimize the use of hydro, diesel, battery and flexible loads\"",
       "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
       "second_source_url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
       "label": "",
-      "requires": ["HARD TENSE OBLIGATION. These are INTENDED capabilities of a research project, not measured performance. Every verb about what the AI does is future or conditional. Say WILL or IS DESIGNED TO, never DOES.", "The on-screen card carries the word INTENDED."],
+      "requires": [
+        "HARD TENSE OBLIGATION. These are INTENDED capabilities of a research project, not measured performance. Every verb about what the AI does is future or conditional. Say WILL or IS DESIGNED TO, never DOES.",
+        "The on-screen card carries the word INTENDED."
+      ],
       "confidence": "high"
     },
     {
-      "id": "c12a", "status": "VERIFIED",
+      "id": "c13",
+      "status": "LABELLED",
+      "claim": "The Alaska Energy Authority's Power Cost Equalization program serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation, where the cost of electricity can be three to five times higher than in more urban areas.",
+      "spoken": "A hundred ninety three Alaska communities run mostly on diesel, at three to five times town prices",
+      "on_screen": "193 COMMUNITIES \u00b7 3 TO 5x URBAN COST \u00b7 PER AEA",
+      "verbatim_source": "\"serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation\" and \"the cost of electricity can be three to five times higher than for customers in more urban areas\"",
+      "url": "https://www.akenergyauthority.org/What-We-Do/Power-Cost-Equalization",
+      "label": "per the Alaska Energy Authority",
+      "requires": [
+        "The page is undated and gives no fiscal year, so no year may be attached.",
+        "The three-to-five band is the agency's characterization, not a measurement, so PER AEA appears in frame.",
+        "USED INSTEAD OF the ACEP 'over 200 microgrids' figure, which no agency corroborates."
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "c14",
+      "status": "VERIFIED",
+      "claim": "AURORA-AI is a Phase I Genesis Mission award, announced by Colorado State University on July 22nd, 2026.",
+      "spoken": "A Phase One award",
+      "on_screen": "PHASE 1",
+      "verbatim_source": "\"Colorado State University researchers on two different projects were awarded prestigious Phase I Genesis Mission awards\"",
+      "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
+      "second_source_url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
+      "label": "",
+      "requires": [
+        "This is the load-bearing honesty claim. Phase I is WHY the story is a study and not a result.",
+        "No source states how many Phase I awards DOE made, so no 'one of only N' framing."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c15",
+      "status": "VERIFIED",
+      "claim": "An edge data center was already operating inside Cordova's Humpback Creek hydroelectric facility before the AURORA-AI award, delivered by Greensparc and reported in April 2024, at a reported 170 kilowatts, cooled by the same water that drives the turbine.",
+      "spoken": "Since twenty twenty four, a hundred seventy kilowatts of servers have run inside Humpback Creek, cooled by the creek that spins the turbine",
+      "on_screen": "170 kW \u00b7 INSIDE HUMPBACK CREEK \u00b7 SINCE 2024 \u00b7 GREENSPARC \u00b7 PER CLEANTECHNICA",
+      "verbatim_source": "\"Greensparc delivered a 170-kilowatt computing capacity directly inside Cordova's run-of-river Humpback Creek hydroelectric facility\"",
+      "url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
+      "second_source_url": "https://www.greensparc.com/",
+      "label": "reported by CleanTechnica",
+      "requires": [
+        "HARDEST OBLIGATION IN THE FILM. The film must NEVER show AURORA-AI building, siting or planning this data center. It predates the award by more than two years and a third party installed it. The name GREENSPARC is on screen with it.",
+        "Trade press, not primary, so PER CLEANTECHNICA is in frame with the 170 kW figure.",
+        "Never paint the word DAM or show dam imagery. Both Cordova plants are run-of-river."
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "c16",
+      "status": "VERIFIED",
+      "claim": "Richard Wies, UAF professor and principal investigator, said of Phase One: \"It's a really short period of performance... and then there's also an opportunity to apply for Phase Two funding\".",
+      "spoken": "The lead researcher calls it a really short period of performance",
+      "on_screen": "\"A REALLY SHORT PERIOD OF PERFORMANCE\" \u00b7 RICHARD WIES, UAF",
+      "verbatim_source": "\"It's a really short period of performance... and then there's also an opportunity to apply for Phase Two funding\"",
+      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
+      "label": "",
+      "requires": [
+        "SAFE ON SCREEN as 'Richard Wies, UAF professor and principal investigator'. Do NOT paint a department name: every UAF faculty directory URL returned 404 and the fuller title is single-sourced.",
+        "The ellipsis is as the source rendered it. If the film shows only the first clause it must not add an ellipsis implying more of that sentence."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c12a",
+      "status": "VERIFIED",
       "claim": "Cordova Electric Cooperative runs two hydroelectric plants and one diesel plant, and says hydro produces about 80 percent of Cordova's power.",
       "spoken": "Eighty percent of its power is hydro. The backstop is diesel",
       "on_screen": "~80% HYDRO",
@@ -69,65 +183,117 @@
       "url": "https://www.cordovaelectric.com/",
       "second_source_url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
       "label": "",
-      "requires": ["Use the cooperative's own 80 percent with the word ABOUT. CleanTechnica says more than 83 percent for 2025 and the two disagree.", "This claim forbids framing Cordova as a diesel town that AI will rescue."],
+      "requires": [
+        "Use the cooperative's own 80 percent with the word ABOUT. CleanTechnica says more than 83 percent for 2025 and the two disagree.",
+        "This claim forbids framing Cordova as a diesel town that AI will rescue."
+      ],
       "confidence": "high"
     },
     {
-      "id": "c12b", "status": "VERIFIED",
+      "id": "c12b",
+      "status": "VERIFIED",
       "claim": "Cordova Electric Cooperative has 1,566 customers and 18 megawatts of generating capacity, of which 10.8 MW is the Orca diesel plant, 6 MW is Power Creek hydro and 1.25 MW is Humpback Creek hydro.",
       "spoken": "Cordova has one thousand five hundred sixty six customers, and no wire out",
       "on_screen": "1,566 CUSTOMERS",
       "verbatim_source": "\"1,566 customers\" and \"Generating capacity of 18 megawatts\" and \"Orca Diesel Plant - 10.8 megawatts\"",
       "url": "https://www.cordovaelectric.com/about/",
       "label": "",
-      "requires": ["The cooperative gives no date for the customer count, so no year may be attached."],
+      "requires": [
+        "The cooperative gives no date for the customer count, so no year may be attached."
+      ],
       "confidence": "high"
     },
     {
-      "id": "c13", "status": "LABELLED",
-      "claim": "The Alaska Energy Authority's Power Cost Equalization program serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation, where the cost of electricity can be three to five times higher than in more urban areas.",
-      "spoken": "A hundred ninety three Alaska communities run mostly on diesel, at three to five times town prices",
-      "on_screen": "193 COMMUNITIES · 3 TO 5x URBAN COST · PER AEA",
-      "verbatim_source": "\"serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation\" and \"the cost of electricity can be three to five times higher than for customers in more urban areas\"",
-      "url": "https://www.akenergyauthority.org/What-We-Do/Power-Cost-Equalization",
-      "label": "per the Alaska Energy Authority",
-      "requires": ["The page is undated and gives no fiscal year, so no year may be attached.", "The three-to-five band is the agency's characterization, not a measurement, so PER AEA appears in frame.", "USED INSTEAD OF the ACEP 'over 200 microgrids' figure, which no agency corroborates."],
-      "confidence": "medium"
-    },
-    {
-      "id": "c15", "status": "VERIFIED",
-      "claim": "An edge data center was already operating inside Cordova's Humpback Creek hydroelectric facility before the AURORA-AI award, delivered by Greensparc and reported in April 2024, at a reported 170 kilowatts, cooled by the same water that drives the turbine.",
-      "spoken": "Since twenty twenty four, a hundred seventy kilowatts of servers have run inside Humpback Creek, cooled by the creek that spins the turbine",
-      "on_screen": "170 kW · INSIDE HUMPBACK CREEK · SINCE 2024 · GREENSPARC · PER CLEANTECHNICA",
-      "verbatim_source": "\"Greensparc delivered a 170-kilowatt computing capacity directly inside Cordova's run-of-river Humpback Creek hydroelectric facility\"",
-      "url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
-      "second_source_url": "https://www.greensparc.com/",
-      "label": "reported by CleanTechnica",
-      "requires": ["HARDEST OBLIGATION IN THE FILM. The film must NEVER show AURORA-AI building, siting or planning this data center. It predates the award by more than two years and a third party installed it. The name GREENSPARC is on screen with it.", "Trade press, not primary, so PER CLEANTECHNICA is in frame with the 170 kW figure.", "Never paint the word DAM or show dam imagery. Both Cordova plants are run-of-river."],
-      "confidence": "medium"
-    },
-    {
-      "id": "c16", "status": "VERIFIED",
-      "claim": "Richard Wies, UAF professor and principal investigator, said of Phase One: \"It's a really short period of performance... and then there's also an opportunity to apply for Phase Two funding\".",
-      "spoken": "The lead researcher calls it a really short period of performance",
-      "on_screen": "\"A REALLY SHORT PERIOD OF PERFORMANCE\" · RICHARD WIES, UAF",
-      "verbatim_source": "\"It's a really short period of performance... and then there's also an opportunity to apply for Phase Two funding\"",
-      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
+      "id": "c12c",
+      "status": "VERIFIED",
+      "claim": "Cordova Electric Cooperative has 18 megawatts of generating capacity, of which 10.8 megawatts is the Orca diesel plant.",
+      "spoken": "Eighteen megawatts ... Ten point eight megawatts of diesel behind it",
+      "on_screen": "18 MW TOTAL \u00b7 10.8 MW DIESEL",
+      "verbatim_source": "\"Generating capacity of 18 megawatts\" and \"Orca Diesel Plant - 10.8 megawatts\"",
+      "url": "https://www.cordovaelectric.com/about/",
       "label": "",
-      "requires": ["SAFE ON SCREEN as 'Richard Wies, UAF professor and principal investigator'. Do NOT paint a department name: every UAF faculty directory URL returned 404 and the fuller title is single-sourced.", "The ellipsis is as the source rendered it. If the film shows only the first clause it must not add an ellipsis implying more of that sentence."],
+      "requires": [
+        "Primary, from the cooperative's own about page. No year may be attached."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c9",
+      "status": "VERIFIED",
+      "claim": "Richard Wies is a professor at UAF and the principal investigator for AURORA-AI.",
+      "spoken": "Richard Wies, who leads it",
+      "on_screen": "RICHARD WIES \u00b7 UAF PROFESSOR \u00b7 PRINCIPAL INVESTIGATOR",
+      "verbatim_source": "\"said ACEP's Richard Wies, principal investigator for the project and a professor at UAF\"",
+      "url": "https://alaska-native-news.com/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids/85615/",
+      "second_source_url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
+      "label": "",
+      "requires": [
+        "SAFE ON SCREEN as 'Richard Wies, UAF professor and principal investigator'. Do NOT paint a department name: every UAF faculty directory URL returned 404 and the fuller title is single-sourced."
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "c12d",
+      "status": "VERIFIED",
+      "claim": "Cordova's hydro comes from two run-of-river plants, Power Creek at 6 megawatts and Humpback Creek at 1.25 megawatts.",
+      "spoken": "from two creeks",
+      "on_screen": "POWER CREEK 6 MW \u00b7 HUMPBACK CREEK 1.25 MW",
+      "verbatim_source": "\"Power Creek Hydroelectric - 6 megawatts\" and \"Humpback Creek Hydroelectric - 1.25 megawatts\"",
+      "url": "https://www.cordovaelectric.com/about/",
+      "second_source_url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
+      "label": "",
+      "requires": [
+        "Both are run-of-river. NEVER paint the word DAM or show dam imagery, even though one source quote says 'dam'."
+      ],
       "confidence": "high"
     }
   ],
   "cut": [
-    {"id": "k1", "what": "Any cents-per-kilowatt-hour figure for rural Alaska electricity", "why": "Not reachable on any page. AEA statistical reports serve through opaque file-ticket URLs and eia.gov returned navigation only. c13's three-to-five band is used instead. NO per-kWh number enters the film."},
-    {"id": "k2", "what": "That DOE announced or confirmed the award", "why": "No DOE page naming AURORA-AI exists that could be found. The film says DOE funded it, sourced to UAF, and never shows a DOE announcement."},
-    {"id": "k3", "what": "That AURORA-AI will build, site or plan a data center at Cordova", "why": "The single most likely factual error available in this story. Greensparc installed one in 2024, before the Genesis Mission existed."},
-    {"id": "k4", "what": "Cordova's peak load, annual kWh sold, or annual diesel gallons", "why": "The cooperative publishes customers and capacity but no load or fuel figures. The film explains the mechanism and puts no cost on it."},
-    {"id": "k5", "what": "'One of only N' framing for the Phase I award", "why": "No source states how many Phase I Genesis Mission awards were made."},
-    {"id": "k6", "what": "ACEP's 'over 200 remote microgrids' as a verified count", "why": "Downgraded, not used. No agency corroborates it and the nearest state figure is smaller and counts something else. c13 is used instead."},
-    {"id": "k7", "what": "Wies's department title", "why": "Single-sourced; his institutional bio was unreachable. 'UAF professor' is used."},
-    {"id": "k8", "what": "Wies's 'about 100 kilowatts, two large refrigerators' description", "why": "Kept out of the film. It conflicts with the 170 kW reported for the installed unit and the conflict could not be resolved. The confirmed installed figure is used instead, with its outlet named."},
-    {"id": "k9", "what": "The roughly $7 million Phase Two estimate", "why": "Cut by the angle room as a headline number, since it is an estimate of money that does not exist and putting it on a card makes an unfunded figure the memorable one. The film carries the PI's own 'short period of performance' instead, which makes the same point honestly."}
+    {
+      "id": "k1",
+      "what": "Any cents-per-kilowatt-hour figure for rural Alaska electricity",
+      "why": "Not reachable on any page. AEA statistical reports serve through opaque file-ticket URLs and eia.gov returned navigation only. c13's three-to-five band is used instead. NO per-kWh number enters the film."
+    },
+    {
+      "id": "k2",
+      "what": "That DOE announced or confirmed the award",
+      "why": "No DOE page naming AURORA-AI exists that could be found. The film says DOE funded it, sourced to UAF, and never shows a DOE announcement."
+    },
+    {
+      "id": "k3",
+      "what": "That AURORA-AI will build, site or plan a data center at Cordova",
+      "why": "The single most likely factual error available in this story. Greensparc installed one in 2024, before the Genesis Mission existed."
+    },
+    {
+      "id": "k4",
+      "what": "Cordova's peak load, annual kWh sold, or annual diesel gallons",
+      "why": "The cooperative publishes customers and capacity but no load or fuel figures. The film explains the mechanism and puts no cost on it."
+    },
+    {
+      "id": "k5",
+      "what": "'One of only N' framing for the Phase I award",
+      "why": "No source states how many Phase I Genesis Mission awards were made."
+    },
+    {
+      "id": "k6",
+      "what": "ACEP's 'over 200 remote microgrids' as a verified count",
+      "why": "Downgraded, not used. No agency corroborates it and the nearest state figure is smaller and counts something else. c13 is used instead."
+    },
+    {
+      "id": "k7",
+      "what": "Wies's department title",
+      "why": "Single-sourced; his institutional bio was unreachable. 'UAF professor' is used."
+    },
+    {
+      "id": "k8",
+      "what": "Wies's 'about 100 kilowatts, two large refrigerators' description",
+      "why": "Kept out of the film. It conflicts with the 170 kW reported for the installed unit and the conflict could not be resolved. The confirmed installed figure is used instead, with its outlet named."
+    },
+    {
+      "id": "k9",
+      "what": "The roughly $7 million Phase Two estimate",
+      "why": "Cut by the angle room as a headline number, since it is an estimate of money that does not exist and putting it on a card makes an unfunded figure the memorable one. The film carries the PI's own 'short period of performance' instead, which makes the same point honestly."
+    }
   ],
   "tense_law": "Nothing has been forecast, detected or optimized yet. Phase One had not started as of this run. Every verb about what the AI does is future or conditional, everywhere, including on-screen cards.",
   "notes": "9 verified, 6 labelled, 9 cut. Two independent primary institutions (UAF and Colorado State) describe the same four intended functions in nearly the same words, which is the safest technical sentence available. 'National Laboratory of the Rockies' was checked expecting a press-release error and is correct: DOE renamed NREL in December 2025 and lists the new name on its own national laboratories page."
