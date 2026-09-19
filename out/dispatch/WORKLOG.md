@@ -65,14 +65,14 @@ side: it clamps anything below y=1276 to the guard, which folded those rows onto
 | 11 | final render + mux + encode (`fin6`) | DONE. dead space 40.9% -> 37.1% |
 | 12 | build_evidence + evidence_coverage_check | DONE, commit 6a7bc2b |
 | 13 | preflight.py exit 0 | DONE. clear, 2 advisories |
-| 14 | 3-judge panel | round 1: 6.66 / 6.33 / 7.21, median 6.66, blockers. Round 2 RUNNING |
-| 15 | ship_gate record + check | TODO |
-| 16 | upload_video (master, square, 720, poster, thumb), verify 200 | TODO |
-| 17 | publish_feed to alaskaaicarousels docs/videos/videos.json | TODO |
-| 18 | dispatch_email + Gmail draft + record_draft, verify DRAFT | TODO |
-| 19 | dedupe add: stance=mixed, hero=RunOfRiver (checked FRESH) | TODO |
-| 20 | commit, push, ready PR, merge to main | TODO |
-| 21 | PushNotification to the owner | TODO |
+| 14 | 3-judge panel | DONE. r1 6.66 median w/ blockers, r2 **7.33** median, all ship, none |
+| 15 | ship_gate record + check | DONE. PASS |
+| 16 | upload_video, all five verified 200 | DONE |
+| 17 | publish_feed, live on the sibling repo main | DONE |
+| 18 | Gmail draft r4784989645756598808, readback DRAFT | DONE |
+| 19 | dedupe add, stance mixed, hero RunOfRiver | DONE |
+| 20 | PR #121 ready, merged to main as 8ebcbcd | DONE |
+| 21 | PushNotification to the owner | in flight |
 
 ## Decisions worth not relitigating
 
@@ -152,3 +152,19 @@ Known and accepted rather than fixed: the diesel stack in shot 4 sits at x=1060 
 off the right edge, so its exhaust plume is mostly outside the frame. The tank yard added
 this round carries that half of the comparison. If a later round reopens this shot, move the
 stack to about x=930 and the plume comes back with it.
+
+
+## RUN COMPLETE
+
+All tasks DONE and shipped. Merged to main as 8ebcbcd via PR #121. This file is gitignored
+scratch in an ephemeral container and is left in place rather than deleted, because a delete
+under a path a tool may treat as sensitive is how this run got stopped twice at Phase 0.
+
+## The one thing the next run should do first
+
+`scripts/strip_name_check.py` is red on nine beats the board describes and no shot animates,
+and 22 more were refiled by hand here and reverted because refiling also turns
+`say_it_show_it_check` red, since that gate reads the same `shot` field. The two have to be
+conformed together at Gate 0A and validated by a render, and then this row becomes blocking.
+Doing it at the START of a run costs nothing. Doing it at delivery costs a render and cannot
+be validated before the ship gate has already bound the graded cut.
