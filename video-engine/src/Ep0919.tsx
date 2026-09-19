@@ -245,15 +245,31 @@ const Bar: React.FC<{x: number; y: number; h: number; grow: number; block: numbe
 };
 
 const MapAK: React.FC<{f: number; bloom: number; thread: number}> = ({f, bloom, thread}) => {
-  const dots = Array.from({length: 46}).map((_, i) => {
+  // A recognisable Alaska, drawn as one closed path: the Southeast panhandle, the
+  // Gulf coast, the Alaska Peninsula reaching southwest, the Y-K delta, Seward and
+  // the North Slope. The first rough cut drew a blob and a viewer cannot place a
+  // dot on a blob.
+  const AK =
+    'M232,706 L318,676 L404,700 L470,672 L556,690 L642,660 L742,678 L836,652 ' +
+    'L900,684 L934,742 L906,802 L842,826 L806,882 L836,930 L812,986 L742,1010 ' +
+    'L690,1066 L612,1084 L556,1050 L496,1076 L452,1044 L398,1072 L352,1046 ' +
+    'L300,1074 L262,1036 L286,978 L252,930 L280,872 L240,826 L262,766 Z';
+  const PENINSULA = 'M262,1036 L206,1096 L150,1122 L92,1176 L46,1168 L78,1114 L142,1080 L200,1050 Z';
+  const PANHANDLE = 'M812,986 L866,1036 L912,1104 L946,1178 L906,1188 L862,1120 L812,1058 Z';
+  const ISLANDS = [[112, 1214], [70, 1236], [28, 1252], [176, 1174]];
+  const dots = Array.from({length: 44}).map((_, i) => {
     const a = i * 2.399;
-    const r = 120 + (i % 7) * 52 + (i % 3) * 26;
-    return [540 + Math.cos(a) * r * 1.22, 980 + Math.sin(a) * r * 0.78] as [number, number];
+    const r = 96 + (i % 7) * 44 + (i % 3) * 22;
+    return [568 + Math.cos(a) * r * 1.02, 878 + Math.sin(a) * r * 0.62] as [number, number];
   });
   return (
     <g>
-      <path d="M150 700 Q300 560 520 600 T980 720 Q1010 900 930 1080 T640 1310 Q380 1360 230 1180 T150 700 Z"
-        fill="url(#grd19)" stroke={C.moss} strokeWidth={6} opacity={0.9} />
+      <path d={AK} fill="url(#grd19)" stroke={C.moss} strokeWidth={6} strokeLinejoin="round" />
+      <path d={PENINSULA} fill="url(#grd19)" stroke={C.moss} strokeWidth={5} strokeLinejoin="round" />
+      <path d={PANHANDLE} fill="url(#grd19)" stroke={C.moss} strokeWidth={5} strokeLinejoin="round" />
+      {ISLANDS.map(([ix, iy], i) => (
+        <ellipse key={i} cx={ix} cy={iy} rx={18 - i * 2} ry={8} fill="url(#grd19)" stroke={C.moss} strokeWidth={4} />
+      ))}
       {dots.map(([dx, dy], i) => {
         const on = clamp((bloom - i / dots.length) * 4);
         if (on <= 0.02) return null;
@@ -264,15 +280,51 @@ const MapAK: React.FC<{f: number; bloom: number; thread: number}> = ({f, bloom, 
           </g>
         );
       })}
-      <circle cx={540} cy={980} r={16} fill={C.amber} stroke={C.ink} strokeWidth={4} />
-      <circle cx={540} cy={980} r={16 + 26 * ((f / 40) % 1)} fill="none" stroke={C.amber} strokeWidth={3} opacity={0.5 * (1 - ((f / 40) % 1))} />
+      <circle cx={742} cy={952} r={17} fill={C.amber} stroke={C.ink} strokeWidth={4} />
+      <circle cx={742} cy={952} r={17 + 28 * ((f / 40) % 1)} fill="none" stroke={C.amber} strokeWidth={3}
+        opacity={0.55 * (1 - ((f / 40) % 1))} />
+      <text x={742} y={1010} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={22}
+        letterSpacing={1.5} fill={C.amber}>CORDOVA</text>
       {thread > 0.02 && (
-        <path d={`M556 980 q${90 * thread} ${-40 * thread} ${150 * thread} ${-18 * thread}`}
-          fill="none" stroke={FCAST} strokeWidth={5} opacity={0.8 * (1 - thread * 0.5)} strokeDasharray="10 9" />
+        <path d={`M726 946 q${-80 * thread} ${-34 * thread} ${-132 * thread} ${-14 * thread}`}
+          fill="none" stroke={FCAST} strokeWidth={5} opacity={0.85 * (1 - thread * 0.45)} strokeDasharray="10 9" />
       )}
     </g>
   );
 };
+
+/** THE TWIN'S SILHOUETTE. lib/absence and lib/simulation both stroke a path with
+ *  no fill, so whatever the path omits simply is not there. A rounded dome read as
+ *  an egg in the first rough cut. This carries the whole subject: knit cap, head,
+ *  shoulders, the furnace-window chest, both arms and both boots, so a viewer sees
+ *  a copy of the hero rather than a shape. */
+const TWIN_BODY =
+  'M-64,-206 q-4,-34 22,-44 q42,-14 84,0 q26,10 22,44 ' +
+  'q28,10 30,44 l0,126 q0,26 -22,26 l-6,0 l0,96 l-132,0 l0,-96 l-6,0 ' +
+  'q-22,0 -22,-26 l0,-126 q2,-34 30,-44 Z';
+const TWIN_ARM_L = 'M-94,-150 q-34,10 -38,54 q-4,42 10,72 q10,20 26,14';
+const TWIN_ARM_R = 'M94,-150 q34,10 38,54 q4,42 -10,72 q-10,20 -26,14';
+const TWIN_BOOT_L = 'M-58,36 q-22,4 -24,26 q-2,18 18,18 l34,0 q10,0 10,-18 l0,-26 Z';
+const TWIN_BOOT_R = 'M58,36 q22,4 24,26 q2,18 -18,18 l-34,0 q-10,0 -10,-18 l0,-26 Z';
+const TWIN_WINDOW = 'M-38,-122 l76,0 l0,84 l-76,0 Z';
+
+/** Draws the whole twin as a stated model: every part goes through Simulated, so
+ *  none of it casts, contacts or reads as present. */
+const Twin: React.FC<{x: number; y: number; scale?: number; f: number; fidelity: number; drawn: number; sag?: number}> =
+({x, y, scale = 1, f, fidelity, drawn, sag = 0}) => (
+  <g transform={`translate(${x} ${y}) scale(${scale})`}>
+    <Simulated d={TWIN_BODY} fidelity={fidelity} f={f} drawn={drawn} color={FCAST} strokeWidth={3.6} occupied={0.45 * drawn} />
+    <Simulated d={TWIN_WINDOW} fidelity={fidelity} f={f} drawn={drawn} color={FCAST} strokeWidth={3} occupied={0.8 * drawn} phase={0.31} />
+    <g transform={`translate(0 ${18 * sag})`} opacity={1 - 0.35 * sag}>
+      <Simulated d={TWIN_ARM_L} fidelity={fidelity * (1 - sag)} f={f} drawn={drawn} color={FCAST} strokeWidth={3.2} phase={0.57} />
+      <Simulated d={TWIN_ARM_R} fidelity={fidelity * (1 - sag)} f={f} drawn={drawn} color={FCAST} strokeWidth={3.2} phase={0.73} />
+    </g>
+    <g transform={`translate(0 ${26 * sag})`} opacity={1 - 0.5 * sag}>
+      <Simulated d={TWIN_BOOT_L} fidelity={fidelity * (1 - sag)} f={f} drawn={drawn} color={FCAST} strokeWidth={3} phase={0.11} />
+      <Simulated d={TWIN_BOOT_R} fidelity={fidelity * (1 - sag)} f={f} drawn={drawn} color={FCAST} strokeWidth={3} phase={0.19} />
+    </g>
+  </g>
+);
 
 const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({n, from, dur, beats}) => {
   const local = useCurrentFrame();
@@ -293,7 +345,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d={`M700 -120q-40 420 40 700`} fill="none" stroke={C.ink} strokeWidth={96} />
         <path d={`M700 -120q-40 420 40 700`} fill="none" stroke="url(#steel19)" strokeWidth={78} />
         <ellipse cx={330} cy={1340} rx={430} ry={300} fill="url(#lamp19)" opacity={0.55} />
-        <Rack x={520} y={1080} scale={1.42} f={f} lit={1} />
+        <Rack x={520} y={1110} scale={1.72} f={f} lit={1} />
         <Drip x={742} y0={600} y1={1246} f={f} at={at(2)} />
         <Head text="SERVERS INSIDE" y={430} p={q(1, 20)} />
         <Head text="THE POWERHOUSE" y={498} p={q(1, 20, 6)} />
@@ -328,7 +380,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {[0, 1, 2, 3].map((i) => (
           <path key={i} d={`M-160 ${1260 + i * 120}q300 ${8 + 5 * Math.sin(f / 21 + i)} 640 0t600 0`} fill="none" stroke={C.light} strokeWidth={3} opacity={0.16} />
         ))}
-        <g transform="translate(560 1290) scale(0.72)">
+        <g transform="translate(600 1500) scale(1.18)">
           <RunOfRiver f={f} flow={0.8} gate={0.7} spill={0.18} lamp={1} lampColor={C.amber} water="#2A6B7E" />
         </g>
         {Array.from({length: 11}).map((_, i) => (
@@ -353,7 +405,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <path key={i} d={`M-180 ${960 + i * 150}q160 ${10 + 6 * Math.sin(f / 19 + i)} 340 0t340 0`}
               fill="none" stroke={C.light} strokeWidth={3} opacity={0.2} />
           ))}
-          <g transform="translate(270 1180) scale(0.42)">
+          <g transform="translate(300 1300) scale(0.66)">
             <RunOfRiver f={f} flow={0.9} gate={0.9} spill={0.12} lamp={0.8} lampColor={C.amber} water="#2A6B7E" />
           </g>
         </g>
@@ -420,10 +472,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Plate text="$725,000  ·  PER UAF" x={330} y={640} size={26} />
           <Plate text="GENESIS MISSION  ·  EO 14363" x={770} y={640} size={26} />
         </g>
-        <g transform="translate(400 1240)">
-          <Simulated d="M-96 0 q0 -150 96 -150 q96 0 96 150 q-96 40 -192 0 Z" fidelity={0.35 + 0.5 * twin}
-            f={f} drawn={twin} color={FCAST} strokeWidth={3.4} occupied={0.5 * twin} />
-        </g>
+        <Twin x={380} y={1500} scale={1.18} f={f} fidelity={0.3 + 0.55 * twin} drawn={twin} />
         <Bar x={720} y={1330} h={300} grow={twin} block={q(16, 26, 20)} f={f} />
         <g opacity={q(17, 18)}>
           <Plate text="FORECAST DEMAND" x={540} y={1560} size={26} tone="cyan" p={pop(17)} />
@@ -438,11 +487,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     picture = (
       <g>
         <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
-        <g transform="translate(540 1180) scale(1.5)">
-          <Simulated d="M-96 0 q0 -150 96 -150 q96 0 96 150 q-96 40 -192 0 Z" fidelity={1 - 0.75 * drain}
-            f={f} drawn={1 - 0.45 * drain} color={FCAST} strokeWidth={3.4} occupied={0.5 * (1 - drain)} />
-          <rect x={-104} y={-8} width={208} height={64} fill={C.ink} opacity={0.72 * drain} />
-        </g>
+        <Twin x={540} y={1440} scale={1.46} f={f} fidelity={1 - 0.72 * drain} drawn={1 - 0.42 * drain} sag={drain} />
         <Head text="IT HASN'T STARTED" y={520} p={q(18, 18)} />
         <g transform={`translate(0 ${-30 + 30 * pop(19)})`} opacity={q(19, 12)}>
           <Plate text="PHASE 1  ·  STARTS OCT 1" y={1500} size={31} tone="amber" />
@@ -503,12 +548,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
         <Rain f={f} density={0.6} />
         <g transform="translate(540 940) scale(1.34)">
-          <Reconcile predicted={0} actual={0} settled={settled} f={f} unit="GALLONS" pendingLabel="NOT YET MEASURED" />
+          <Reconcile predicted={0} actual={0} settled={settled} predictedLabel="9 MONTHS" f={f}
+            unit="GALLONS SAVED" pendingLabel="NOT YET MEASURED" />
         </g>
         <g opacity={q(26, 20)}>
           <Plate text="BY NEXT JUNE" y={620} size={34} tone="cyan" />
         </g>
-        <Sourdough frame={f} x={540} y={1560} scale={1.06} emotion="confident" glow={0.62} accent={acc} />
+        <Sourdough frame={f} x={540} y={1480} scale={0.92} emotion="confident" glow={0.62} accent={acc} />
         <g opacity={q(30, 20)} transform={`translate(0 ${18 - 18 * q(30, 20)})`}>
           <Plate text='"A REALLY SHORT PERIOD' y={1700} size={27} />
           <Plate text='OF PERFORMANCE"' y={1758} size={27} />
@@ -522,7 +568,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d="M-200 -200H1300V1180H-200Z" fill="url(#sky19)" />
         <path d="M-200 660 L200 430 L560 620 L900 410 L1300 560V1180H-200Z" fill="#0B1F1C" stroke={C.ink} strokeWidth={5} />
         <path d="M-200 1180H1300V2100H-200Z" fill="url(#water19)" opacity={0.9} />
-        <g transform="translate(600 1330) scale(0.82)">
+        <g transform="translate(620 1520) scale(1.26)">
           <RunOfRiver f={f} flow={0.95} gate={0.95} spill={0.2 + 0.7 * q(31, 26)} lamp={1} lampColor={C.amber} water="#2A6B7E" />
         </g>
         <Rain f={f} density={0.7} />

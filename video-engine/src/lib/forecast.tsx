@@ -217,6 +217,15 @@ export interface ReconcileProps {
    * the future arrives and the error becomes a measured number.
    */
   settled: number;
+  /**
+   * When the claim is NOT a number, state it in words here and `predicted` is
+   * used only for the error arithmetic. Added because a project whose claim is a
+   * schedule rather than a quantity was otherwise forced to paint a fake figure,
+   * and a fake figure in the CLAIMED slot is the exact lie this component exists
+   * to prevent. A non-numeric claim can never settle, so passing this with
+   * settled > 0 is a caller error and the bracket is suppressed.
+   */
+  predictedLabel?: string;
   f: number;
   x?: number;
   y?: number;
@@ -238,10 +247,11 @@ export interface ReconcileProps {
  * went back and looked.
  */
 export const Reconcile: React.FC<ReconcileProps> = ({
-  predicted, actual, settled, f, x = 0, y = 0, scale = 1,
+  predicted, actual, settled, predictedLabel, f, x = 0, y = 0, scale = 1,
   unit, pendingLabel = 'NOT YET MEASURED', decimals = 0,
 }) => {
-  const s = clamp01(settled);
+  // A non-numeric claim can never be reconciled, so it never settles.
+  const s = predictedLabel ? 0 : clamp01(settled);
   const bucket = Math.floor(f / 6.7);
   const fmt = (v: number) => v.toFixed(decimals);
   // the measured value counts in as the check completes, and lands rather than slides
@@ -277,14 +287,14 @@ export const Reconcile: React.FC<ReconcileProps> = ({
         'CLAIMED',
         <text
           x={-(W + GAP) / 2}
-          y={14}
+          y={predictedLabel ? 12 : 14}
           textAnchor="middle"
           fontFamily="JetBrains Mono, monospace"
-          fontSize={52}
+          fontSize={predictedLabel ? Math.min(44, Math.floor((W - 40) / (predictedLabel.length * 0.602))) : 52}
           fontWeight={800}
-          fill={FCAST_DEEP}
+          fill={FCAST}
         >
-          {fmt(predicted)}
+          {predictedLabel ?? fmt(predicted)}
         </text>,
         true,
       )}
