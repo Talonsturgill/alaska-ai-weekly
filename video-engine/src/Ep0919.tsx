@@ -565,11 +565,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <Backdrop f={f} />
         <path d={`M700 -120q-40 420 40 700`} fill="none" stroke={C.ink} strokeWidth={96} />
         <path d={`M700 -120q-40 420 40 700`} fill="none" stroke="url(#steel19)" strokeWidth={78} />
-        <ellipse cx={330} cy={1340} rx={430} ry={300} fill="url(#lamp19)" opacity={0.55} />
+        <ellipse cx={330} cy={1340} rx={430} ry={560} fill="url(#lamp19)" opacity={0.55} />
         <Rack x={520} y={1110} scale={1.72} f={f} lit={1} />
         <Drip x={742} y0={600} y1={1246} f={f} at={at(2)} />
-        <Head text="SERVERS INSIDE" y={430} p={q(1, 20)} />
-        <Head text="THE POWERHOUSE" y={498} p={q(1, 20, 6)} />
+        <Head text="SERVERS INSIDE" y={585} p={q(1, 20)} />
+        <Head text="THE POWERHOUSE" y={654} p={q(1, 20, 6)} />
         <g transform={`translate(${-420 + 420 * q(3, 22)} 0)`} opacity={q(3, 18)}>
           <Plate text="170 kW  ·  PER CLEANTECHNICA" y={1500} size={29} tone="amber" />
         </g>
@@ -603,7 +603,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {Array.from({length: 11}).map((_, i) => (
           <circle key={i} cx={760 + i * 26} cy={1150 - (i % 3) * 14} r={4} fill={C.amber} opacity={0.55 + 0.35 * Math.sin(f / 9 + i)} />
         ))}
-        <Head text="CORDOVA" y={360} p={q(8, 20)} />
+        <Head text="CORDOVA" y={560} p={q(8, 20)} />
         <Plate text="NO WIRE OUT" y={1780} size={34} tone="amber" p={q(9, 22)} />
       </g>
     );
@@ -638,8 +638,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {/* the hard centre seam */}
         <path d={`M540 ${900 - 120 * seam}V2100`} stroke={C.ink} strokeWidth={16} />
         <path d={`M540 ${900 - 120 * seam}V2100`} stroke={C.light} strokeWidth={5} opacity={0.55} />
-        <Head text="TWO CREEKS" y={430} p={q(9, 20)} />
-        <Head text="AND A BACKSTOP" y={498} p={q(9, 20, 6)} />
+        <Head text="TWO CREEKS" y={585} p={q(9, 20)} />
+        <Head text="AND A BACKSTOP" y={654} p={q(9, 20, 6)} />
         {/* the share bar: eighty percent, drawn rather than asserted */}
         <g opacity={share} transform={`translate(0 ${20 - 20 * share})`}>
           <rect x={120} y={700} width={840} height={56} rx={8} fill="none" stroke={C.light} strokeWidth={4} opacity={0.5} />
@@ -684,7 +684,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             glow={1 - 0.55 * fire} accent={acc} />
         </g>
         <Gauge x={620} y={1080} scale={0.92} f={f} v={0.2 + 0.62 * fire} slamAt={at(12)} />
-        <Head text="GUESS WRONG" y={420} p={q(11, 20)} />
+        <Head text="GUESS WRONG" y={585} p={q(11, 20)} />
         <Plate text="IT BURNS FUEL" y={1640} size={34} tone="amber" p={q(12, 16)} />
         <g opacity={q(13, 20)}>
           {[0, 1, 2, 3].map((i) => (
@@ -702,8 +702,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <Backdrop f={f} warm={0.55} />
         <Rain f={f} density={0.5} />
         <g opacity={build}>
-          <Plate text="AURORA-AI" y={420} size={46} tone="cyan" />
-          <Plate text="ALASKA UTILITY RESILIENCE AND" y={496} size={24} tone="cyan" />
+          <Plate text="AURORA-AI" y={585} size={46} tone="cyan" />
+          <Plate text="ALASKA UTILITY RESILIENCE AND" y={652} size={24} tone="cyan" />
           <Plate text="OPTIMIZATION USING REAL-TIME AI" y={548} size={24} tone="cyan" />
         </g>
         <g opacity={q(15, 22)}>
@@ -745,7 +745,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             ))}
           </g>
         </g>
-        <Head text="IT HASN'T STARTED" y={520} p={q(18, 18)} />
+        <Head text="IT HASN'T STARTED" y={612} p={q(18, 18)} />
         <g transform={`translate(0 ${-30 + 30 * pop(19)})`} opacity={q(19, 12)}>
           <Plate text="PHASE 1  ·  STARTS OCT 1" y={1500} size={31} tone="amber" />
           <Plate text="9 MONTHS  ·  RESEARCH" y={1566} size={31} tone="amber" />
@@ -795,8 +795,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Plate text="OBSERVED" x={330} y={1700} size={26} tone="amber" p={q(24, 16)} />
           <Plate text="CLAIMED" x={760} y={1700} size={26} tone="cyan" p={q(24, 16, 10)} />
         </g>
-        <Head text="NOW, THOSE SERVERS" y={440} p={q(20, 16) * (1 - toTrace)} />
-        <Head text="IT PREDICTS THEM TOO" y={440} p={q(25, 18) * toTrace} />
+        <Head text="NOW, THOSE SERVERS" y={592} p={q(20, 16) * (1 - toTrace)} />
+        <Head text="IT PREDICTS THEM TOO" y={592} p={q(25, 18) * toTrace} />
       </g>
     );
   } else if (n === 9) {
@@ -829,7 +829,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <RunOfRiver f={f} flow={0.95} gate={0.95} spill={0.2 + 0.7 * q(31, 26)} lamp={1} lampColor={C.amber} water="#2A6B7E" />
         </g>
         <Rain f={f} density={0.7} />
-        <Head text="THE EASY CASE" y={360} p={q(30, 18)} />
+        <Head text="THE EASY CASE" y={560} p={q(30, 18)} />
         <Plate text="HYDRO  ·  ENGINEERS  ·  GOOD RECORDS" y={1790} size={26} p={q(30, 20, 10)} />
         <Plate text="SPILLING PAST UNUSED" x={300} y={1690} size={25} tone="cyan" p={q(31, 20)} />
       </g>
@@ -855,7 +855,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           })}
         </g>
         <MapAK f={f} bloom={q(33, 40)} thread={q(34, 26)} />
-        <Head text="193 COMMUNITIES" y={430} p={q(33, 18)} />
+        <Head text="193 COMMUNITIES" y={585} p={q(33, 18)} />
         <Plate text="82,000 ALASKANS  ·  PER AEA" y={1640} size={28} tone="amber" p={q(33, 20, 12)} />
         <Plate text="LEAST DATA TO BUILD ONE" y={1712} size={28} tone="cyan" p={q(34, 20)} />
       </g>
@@ -880,13 +880,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           })}
           <path d={`M346 1424H${714 - 330 * narrow}V1522H346Z`} fill={C.ink} opacity={0.38} />
           <path d={`M346 1424H${714 - 330 * narrow}`} stroke={C.light} strokeWidth={4} opacity={0.35} />
-          <ellipse cx={530 - 165 * narrow} cy={1050} rx={340 - 150 * narrow} ry={520} fill="url(#lamp19)" opacity={0.42} />
+          <ellipse cx={530 - 165 * narrow} cy={1050} rx={340 - 150 * narrow} ry={612} fill="url(#lamp19)" opacity={0.42} />
         </g>
         <g opacity={0.9}><Rack x={520} y={1180} scale={0.62} f={f} plate={false} /></g>
         <WallBoxes x={800} y={860} scale={0.82} f={f} op={0.85} />
         <Drip x={800} y0={700} y1={922} f={f} at={at(36)} dur={22} />
         <Rain f={f} density={0.8} />
-        <Plate text="WATCH FOR GALLONS" y={430} size={36} tone="amber" p={q(35, 20)} />
+        <Plate text="WATCH FOR GALLONS" y={585} size={36} tone="amber" p={q(35, 20)} />
         <g opacity={q(37, 20)}>
           <Plate text="WHAT WOULD CONVINCE YOU" y={1730} size={30} />
           <Plate text="IT WORKED?" y={1796} size={30} />
@@ -924,7 +924,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       </Stage3D>
       <SVG>
         <g opacity={0.72}>
-          <text x={72} y={140} fontFamily={MONO} fontWeight={700} fontSize={26} letterSpacing={3} fill={C.light}>ALASKA.AI</text>
+          <text x={72} y={505} fontFamily={MONO} fontWeight={700} fontSize={26} letterSpacing={3} fill={C.light}>ALASKA.AI</text>
         </g>
       </SVG>
       <GradeLayer f={f} bloom={0.03} vignette={0.12} grain={0.02} warmth={0.02} />
