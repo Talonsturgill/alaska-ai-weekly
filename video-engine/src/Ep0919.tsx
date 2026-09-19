@@ -472,7 +472,17 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Plate text="$725,000  ·  PER UAF" x={330} y={640} size={26} />
           <Plate text="GENESIS MISSION  ·  EO 14363" x={770} y={640} size={26} />
         </g>
-        <Twin x={380} y={1500} scale={1.18} f={f} fidelity={0.3 + 0.55 * twin} drawn={twin} />
+        <g>
+          <Sourdough frame={f} x={296} y={1268} scale={0.78} emotion="confident" glow={0.72} accent={acc} />
+          <Twin x={700} y={1268} scale={0.86} f={f} fidelity={0.3 + 0.55 * twin} drawn={twin} />
+          <g opacity={twin * 0.8}>
+            {[0, 1, 2, 3].map((i) => (
+              <path key={i} d={`M${384 + i * 6} ${1040 + i * 58} H${612 - i * 6}`}
+                stroke={FCAST} strokeWidth={3} strokeDasharray="9 8"
+                strokeDashoffset={-(f * 1.4 + i * 17) % 4000} opacity={0.5} />
+            ))}
+          </g>
+        </g>
         <Bar x={720} y={1330} h={300} grow={twin} block={q(16, 26, 20)} f={f} />
         <g opacity={q(17, 18)}>
           <Plate text="FORECAST DEMAND" x={540} y={1560} size={26} tone="cyan" p={pop(17)} />
@@ -487,7 +497,16 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     picture = (
       <g>
         <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
-        <Twin x={540} y={1440} scale={1.46} f={f} fidelity={1 - 0.72 * drain} drawn={1 - 0.42 * drain} sag={drain} />
+        <g>
+          <Twin x={540} y={1246} scale={1.12} f={f} fidelity={1 - 0.72 * drain} drawn={1 - 0.42 * drain} sag={drain} />
+          <g opacity={drain * 0.9}>
+            <path d={`M416 ${1250 + 30 * drain} H664`} stroke={C.ink} strokeWidth={9} opacity={0.5} />
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <path key={i} d={`M${424 + i * 42} ${1258 + 30 * drain} l26 42`} stroke={C.light}
+                strokeWidth={3} opacity={0.18} />
+            ))}
+          </g>
+        </g>
         <Head text="IT HASN'T STARTED" y={520} p={q(18, 18)} />
         <g transform={`translate(0 ${-30 + 30 * pop(19)})`} opacity={q(19, 12)}>
           <Plate text="PHASE 1  ·  STARTS OCT 1" y={1500} size={31} tone="amber" />
@@ -511,7 +530,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d="M-200 1700H1300V2100H-200Z" fill={C.ink} opacity={0.6} />
         {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M${-100 + i * 240} 1700 L${-260 + i * 300} 2100`} stroke={C.steel} strokeWidth={4} opacity={0.22} />)}
         <ellipse cx={300} cy={1520} rx={420} ry={260} fill="url(#lamp19)" opacity={0.42 * (1 - 0.6 * toTrace)} />
-        <g opacity={1 - 0.75 * toTrace} transform={`translate(0 ${240 * toTrace})`}>
+        <g transform={`translate(${-60 * toTrace} ${180 * toTrace}) scale(${1 - 0.52 * toTrace})`}
+           opacity={1 - 0.18 * toTrace}>
           <Rack x={360} y={1180} scale={1.22} f={f} plate={false} />
         </g>
         <g transform={`translate(${-140 * toTrace} ${-120 * toTrace}) scale(${1 - 0.28 * toTrace})`}>
@@ -525,7 +545,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Plate text="GREENSPARC, 2024" x={430} y={764} size={28} />
         </g>
         <g opacity={toTrace}>
-          <g transform="translate(240 1300)">
+          <g transform="translate(300 1240)">
             {[0, 1, 2, 3].map((i) => <path key={i} d={`M0 ${-40 + i * 40}H600`} stroke={C.light} strokeWidth={2} opacity={0.12} />)}
             <ForecastTrace observed={obs} predicted={pred} spread={92} f={f} drawn={draw} observedDrawn={q(24, 20)}
               nowLabel="NOW" strokeWidth={6} />
@@ -594,9 +614,20 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
         <path d="M-200 1720H1300V2100H-200Z" fill="url(#water19)" opacity={0.75} />
         <g>
-          <path d={`M330 560H${730 - 330 * narrow}V1540H330Z`} fill={C.ink} />
-          <path d={`M346 578H${714 - 330 * narrow}V1522H346Z`} fill={C.amber} opacity={0.42 + 0.2 * Math.sin(f / 29)} />
-          <ellipse cx={530 - 165 * narrow} cy={1050} rx={340 - 150 * narrow} ry={520} fill="url(#lamp19)" opacity={0.5} />
+          {/* the door frame, so the light has an edge rather than being a fill */}
+          <path d={`M312 542H${748 - 330 * narrow}V1558H312Z`} fill={C.ink} />
+          <path d={`M330 560H${730 - 330 * narrow}V1540H330Z`} fill={C.amberD} />
+          <path d={`M346 578H${714 - 330 * narrow}V1522H346Z`} fill={C.amber} opacity={0.30 + 0.12 * Math.sin(f / 29)} />
+          {/* mullions and a lit threshold: three tones and a real horizon inside the slot */}
+          {[0, 1, 2].map((i) => {
+            const mx = 400 + i * 108 - 110 * narrow;
+            return mx < 700 - 330 * narrow
+              ? <path key={i} d={`M${mx} 578V1522`} stroke={C.amberD} strokeWidth={9} opacity={0.75} />
+              : null;
+          })}
+          <path d={`M346 1424H${714 - 330 * narrow}V1522H346Z`} fill={C.ink} opacity={0.38} />
+          <path d={`M346 1424H${714 - 330 * narrow}`} stroke={C.light} strokeWidth={4} opacity={0.35} />
+          <ellipse cx={530 - 165 * narrow} cy={1050} rx={340 - 150 * narrow} ry={520} fill="url(#lamp19)" opacity={0.42} />
         </g>
         <g opacity={0.9}><Rack x={520} y={1180} scale={0.62} f={f} plate={false} /></g>
         <WallBoxes x={800} y={860} scale={0.82} f={f} op={0.85} />
