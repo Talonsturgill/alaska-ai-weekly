@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-14"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-19"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -92,48 +92,50 @@ _board = json.load(open(os.path.join(OUT, "storyboard.json")))
 # Research controls, glazed bays and a harbor test bench carry the physical sounds.
 # No sound implies an approval, measured result or operational winner.
 _PERFORMANCE = [
-    ('thud', 'standard', 0, 'grip tap'),
-    ('clank', 'texture', 0.12, 'metal settle'),
-    ('creak', 'texture', 0, 'wood squeak'),
-    ('snap', 'texture', -0.18, 'paper flick'),
-    ('whoosh', 'texture', 0.12, 'glass slide'),
-    ('clank', 'texture', 0, 'whoosh'),
-    ('tick', 'texture', -0.18, 'tile clack'),
-    ('chain', 'texture', 0.12, 'ratchet'),
-    ('pop', 'texture', 0, 'soft roll'),
-    ('snap', 'standard', 0, 'snap build'),
-    ('tick', 'texture', 0.12, 'detent click'),
-    ('stamp', 'texture', 0, 'comparison block seats on its rail'),
-    ('clank', 'texture', -0.18, 'detent tick'),
-    ('paper', 'texture', 0.12, 'sleeve brush'),
-    ('chain', 'texture', 0, 'hinge ratchet'),
-    ('whoosh', 'texture', -0.18, 'door slide'),
-    ('pop', 'texture', 0.12, 'water pulse'),
-    ('creak', 'texture', 0, 'flap open'),
-    ('tick', 'texture', -0.18, 'socket seat'),
-    ('creak', 'texture', 0.12, 'wood swing'),
-    ('whoosh', 'standard', 0, 'door whoosh'),
-    ('clank', 'texture', -0.18, 'coupler click'),
-    ('thud', 'texture', 0.12, 'dual tap'),
-    ('chain', 'texture', 0, 'rail scrape'),
-    ('snap', 'standard', 0, 'flap snap'),
-    ('paw', 'standard', 0, 'muted knock'),
-    ('whoosh', 'texture', 0, 'tray slide'),
-    ('creak', 'texture', -0.18, 'frame hinge'),
-    ('thud', 'texture', 0.12, 'bench thud'),
-    ('tick', 'texture', 0, 'shutter slide'),
-    ('clank', 'standard', 0, 'leaf clunk'),
-    ('snap', 'texture', 0.12, 'shutter tap'),
-    ('tick', 'standard', 0, 'shutter click'),
-    ('pop', 'texture', -0.18, 'latch release'),
-    ('clank', 'texture', 0.12, 'collar click'),
-    ('paper', 'texture', 0, 'paper unfold'),
-    ('paw', 'texture', -0.18, 'grip brush'),
-    ('tick', 'texture', 0.12, 'detent settle'),
+    ('pop', 'hero', 0.0, 'fan-hum + water drip tick'),
+    ('creak', 'texture', 0.0, 'pipe groan'),
+    ('boom', 'standard', 0.18, 'plate clack'),
+    ('ding', 'texture', -0.09, 'whoosh + turbine swell'),
+    ('chain', 'texture', 0.09, 'low room tone'),
+    ('ding', 'standard', -0.18, 'water rush'),
+    ('thud', 'texture', 0.0, 'single drip, room falls quiet'),
+    ('creak', 'texture', 0.18, 'wind + creek bed'),
+    ('whoosh', 'standard', -0.09, 'riser fades to wind'),
+    ('paw', 'texture', 0.09, 'hum + a diesel knock'),
+    ('tick', 'texture', -0.18, 'warm bed lifts'),
+    ('clank', 'hero', 0.0, 'klaxon tick + needle slam + screen shake'),
+    ('tick', 'texture', 0.18, 'drum ring per tick'),
+    ('thud', 'texture', -0.09, 'assemble ticks + chord'),
+    ('tick', 'standard', 0.09, 'two plate clacks'),
+    ('creak', 'texture', -0.18, 'data shimmer'),
+    ('snap', 'hero', 0.0, 'three flips'),
+    ('thud', 'standard', 0.18, 'a short climb and a soft settle'),
+    ('pop', 'texture', -0.09, 'power-down swell, bed drops'),
+    ('stamp', 'texture', 0.09, 'stamp'),
+    ('clank', 'standard', -0.18, 'a low sag, no resolution'),
+    ('whoosh', 'texture', 0.0, 'whip + fan hum returns'),
+    ('thud', 'texture', 0.18, 'riser + a low lock'),
+    ('snap', 'standard', -0.09, 'hard snap'),
+    ('ding', 'texture', 0.09, 'climb tick'),
+    ('paw', 'texture', -0.18, 'scope sweep'),
+    ('tick', 'standard', 0.0, 'lock tick'),
+    ('clank', 'texture', 0.18, 'cyan fill tone'),
+    ('paw', 'hero', 0.0, 'the room goes quiet, a 6 dB dip'),
+    ('pop', 'standard', 0.09, 'a short reach, then a soft release'),
+    ('paw', 'texture', -0.18, 'single low note'),
+    ('tick', 'texture', 0.0, 'plate rise'),
+    ('thud', 'standard', 0.18, 'warm bed returns'),
+    ('riser', 'standard', -0.09, 'spill rush'),
+    ('ding', 'texture', 0.09, 'riser + altitude wind'),
+    ('tick', 'standard', -0.18, 'bloom ticks, staggered'),
+    ('creak', 'texture', 0.0, 'thread strain, no lock'),
+    ('thud', 'texture', 0.18, 'fan hum + creek, bed returns'),
+    ('pop', 'standard', -0.09, 'the same single drip'),
+    ('ding', 'texture', 0.09, 'final note, audible tail'),
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
 if (_board.get("run_date") != DATE or
-        [b["id"] for b in _board["beats"]] != list(range(1, 39)) or
+        [b["id"] for b in _board["beats"]] != list(range(1, len(_PERFORMANCE) + 1)) or
         len(_PERFORMANCE_KINDS) != len(_board["beats"])):
     raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
 EVENTS = [
