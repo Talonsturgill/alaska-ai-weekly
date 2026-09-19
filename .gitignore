@@ -1,4 +1,10 @@
 out/
+# A worklog under .claude/ is doctrine-banned (it belongs in out/), but an OLD run or a
+# stray write can still leave one, and then the stop hook reports an untracked change and
+# the obvious reflex is `rm .claude/WORKLOG.md`. That rm is a prompt, and a prompt is a
+# stop. Ignoring the path means the file can never be committed and never shows as dirty,
+# so nobody ever has to reach for a delete inside .claude/ again.
+.claude/WORKLOG.md
 __pycache__/
 *.pyc
 .DS_Store
