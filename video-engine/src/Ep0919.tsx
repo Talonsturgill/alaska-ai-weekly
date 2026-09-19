@@ -274,6 +274,34 @@ const NightRidge: React.FC<{f: number; town?: boolean}> = ({f, town = true}) => 
         fill={i === 0 ? '#0C2420' : i === 1 ? '#0A1E1B' : '#081815'}
         stroke={C.ink} strokeWidth={4} opacity={0.92} />
     ))}
+    {/* rock faces and snow gullies ON the ridges, inside the square band. Flat
+        silhouettes carry no information; these are large forms with their own light. */}
+    {Array.from({length: 9}).map((_, i) => {
+      const bx = -40 + i * 145, by = 470 + (i % 3) * 86;
+      return (
+        <g key={i}>
+          <path d={`M${bx} ${by + 190} l${44} ${-150} l${40} ${60} l${34} ${-96} l${46} ${186} Z`}
+            fill="#0F2A25" stroke={C.ink} strokeWidth={5} opacity={0.95} />
+          <path d={`M${bx + 44} ${by + 40} l${40} ${60}`} stroke={C.light} strokeWidth={7} opacity={0.14} />
+          <path d={`M${bx + 118} ${by + 4} l${24} ${96}`} stroke={C.light} strokeWidth={5} opacity={0.1} />
+        </g>
+      );
+    })}
+    {/* a transmission line across the sky: this is a grid story and the band was empty */}
+    <g opacity={0.9}>
+      {[0, 1, 2].map((i) => (
+        <g key={i} transform={`translate(${150 + i * 420} 980)`}>
+          <path d="M0 0v-330" stroke={C.ink} strokeWidth={12} />
+          <path d="M-64 -280h128" stroke={C.ink} strokeWidth={9} />
+          <path d="M-46 -214h92" stroke={C.ink} strokeWidth={8} />
+          {[-56, 56].map((k) => <circle key={k} cx={k} cy={-288} r={7} fill="#2C4A44" stroke={C.ink} strokeWidth={3} />)}
+          {i < 2 && [0, 1].map((r) => (
+            <path key={r} d={`M56 ${-288 + r * 68} q210 ${62 + 7 * Math.sin(f / 29 + i + r)} 364 0`}
+              fill="none" stroke={C.ink} strokeWidth={5} opacity={0.85} />
+          ))}
+        </g>
+      ))}
+    </g>
     {/* a spruce treeline: small marks, but they are OBJECTS and the meter knows it */}
     {Array.from({length: 34}).map((_, i) => {
       const x = -60 + i * 35 + (i % 3) * 9;
@@ -569,7 +597,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       <g>
         <NightRidge f={f} />
         <Shore f={f} y={1180} reflectX={620} />
-        <g transform="translate(600 1500) scale(1.18)">
+        <g transform="translate(580 1230) scale(1.46)">
           <RunOfRiver f={f} flow={0.8} gate={0.7} spill={0.18} lamp={1} lampColor={C.amber} water="#2A6B7E" />
         </g>
         {Array.from({length: 11}).map((_, i) => (
@@ -797,7 +825,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       <g>
         <NightRidge f={f} />
         <Shore f={f} y={1180} reflectX={660} boats={false} />
-        <g transform="translate(620 1520) scale(1.26)">
+        <g transform="translate(600 1250) scale(1.52)">
           <RunOfRiver f={f} flow={0.95} gate={0.95} spill={0.2 + 0.7 * q(31, 26)} lamp={1} lampColor={C.amber} water="#2A6B7E" />
         </g>
         <Rain f={f} density={0.7} />
