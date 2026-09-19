@@ -786,3 +786,73 @@ without swapping identity.
 - `Ep0913` explicitly loads the existing Fraunces variable and JetBrains Mono bold brand fonts from `public/fonts/`; their OFL notices travel with the font files. Earlier episode font behavior remains isolated.
 
 - `GearLever` September14 research-control advance — `gearLeverGrip(pulled,longThrow)` shares the exact pivot and throw with hand/contact staging; opt-in `serviceDetail` adds shaded mount, rivets, detents and serial notch. Default geometry stays unchanged. Motion-contact verification accompanies Dispatch0914.
+
+## THE FORECAST GRAMMAR — lib/forecast.tsx (CRAFT ADVANCE 2026-09-19)
+
+Built for "Watch For Gallons", the Cordova islanded-grid dispatch. `simulation.tsx`
+already owns "how do you draw A MODEL OF A THING". This owns "how do you draw A
+CLAIM ABOUT A TIME, and that claim being CHECKED", which is a different claim and
+needs a different grammar. The three now read as a set:
+
+  ABSENCE says:    this should be here and is not.
+  SIMULATION says: this is here, it is exact, and it is made of arithmetic.
+  FORECAST says:   this HAS NOT HAPPENED YET, and here is how wrong it might be.
+
+- `ForecastTrace` — an observed run in amber continuing into a predicted run in
+  cyan, with NOW always marked and a monotonically widening uncertainty cone.
+  `spread` is REQUIRED and there is no prop to switch the cone off, because a
+  prediction drawn as one confident stroke to the horizon is a lie about
+  forecasting itself. Params: observed, predicted, spread, drawn, observedDrawn,
+  nowLabel, strokeWidth, phase.
+- `Reconcile` — THE HONEST HALF, and the reason the file exists. A CLAIMED slot
+  and a MEASURED slot side by side, with `settled` starting at ZERO, where
+  MEASURED renders as an EMPTY HATCHED BOX reading NOT YET MEASURED and the error
+  bracket does not exist. An unreconciled forecast must LOOK unreconciled.
+  `predictedLabel` carries a claim that is not a number (a schedule, a promise);
+  a non-numeric claim can never settle, so the component forces settled to 0
+  rather than trusting the caller. Params: predicted, actual, settled,
+  predictedLabel, unit, pendingLabel, decimals.
+- Palette: `FCAST` #7FD4FF for claimed, `OBSERVED` #FFB531 for measured.
+  Deliberately not simulation's acid green, because the two appear together and a
+  viewer has to be able to tell a model of a thing from a claim about a time.
+- The predicted side never casts and never contacts, same contract as
+  simulation.tsx. There is no shadow prop and adding one would be a regression.
+- WHY IT MATTERS BEYOND ONE RUN: this channel covers forecasts, models and
+  projections constantly and had improvised the prediction-versus-outcome picture
+  every time. Making the empty MEASURED slot a REQUIRED state means no future
+  dispatch can draw a confident forecast without the component asking whether
+  anybody went back and checked.
+
+## RUN-OF-RIVER — lib/runofriver.tsx (NET-NEW 2026-09-19)
+
+The gap: the shelf had OilfieldBG (fossil extraction), FrostYardBG (a utility
+yard) and RiverBG (a river as landscape), and nothing that showed water being
+TAKEN from a creek and turned into electricity. That is the physical mechanism of
+every small hydro story in Alaska and this channel will keep meeting them.
+
+`RunOfRiver` draws the creek, the intake with its trash rack and sluice gate, the
+gate stem and handwheel, the penstock with expansion bands and an anchor block,
+the powerhouse with a roof overhang and a lit open door, and the tailrace. Local
+origin is the POWERHOUSE FLOOR, which is what scenes need to align other objects
+and shadows to.
+
+The params are chosen to say what a run-of-river plant CANNOT do:
+- `flow` is the creek. An INPUT. Nobody dispatches it.
+- `gate` is the intake, the one thing an operator actually moves.
+- `spill` is water going past unused, which on a plant with no reservoir is
+  energy thrown away permanently. It is the most story-bearing number in small
+  hydro and it usually goes undrawn.
+- `lamp` / `lampColor` make the open door a motivated key light for the scene.
+A scene that wants to say "running flat out and still throwing energy away" sets
+flow high, gate open and spill high, and the picture says it without a caption.
+
+### Grown 2026-09-19 ("Watch For Gallons")
+- Episode-local and worth promoting if a second run needs them: `Rack` (a server
+  rack with turning fans, LED rows and a cable bundle), `Turbine`, `WaterSheet`,
+  `DieselStack`, `Gauge`, and a hand-drawn `MapAK` with the panhandle, the Gulf
+  coast, the Aleutian reach and the Y-K delta. The map replaced a generated blob
+  after the first contact sheet, because a viewer cannot place a dot on a blob.
+- LESSON RE-LEARNED, already in this file from 2026-08-05 and paid for again: a
+  silhouette used by the absence or simulation grammar must carry the WHOLE
+  subject. The twin's first pass was a rounded dome and read as an egg. It now
+  carries cap, shoulders, chest window, both arms and both boots.

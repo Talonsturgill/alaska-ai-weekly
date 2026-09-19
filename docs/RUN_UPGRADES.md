@@ -3470,3 +3470,164 @@ The content-sag advisory's opening and ending windows were inspected against act
 ### Release evidence
 
 Candidate three passes all fifteen native/encoded checks and required preflight. Judges 7.848, 7.712 and 7.716 give a 7.716 median against 7.0 with zero hard blockers. The native render took 738.610 seconds. Five permanent assets match exact local bytes; feed commit 9359f6bdfa20ad882a3c8128d5108f4ea2f5c084 is deployed through successful Pages. Desktop and phone playback, sound and captions pass live verification. One connected-account Gmail draft has exact HTML readback, DRAFT only and never SENT, including all fifteen upgrades. Weekly PR checks and merge remain distinct evidence recorded after this artifact commit in out/dispatch/RELEASE.md and release_delivery.json.
+
+## 2026-09-19 — "Watch For Gallons" (AURORA-AI, the Cordova islanded grid)
+
+SHIPPED: a 114.8s 2.5D infographic Dispatch on UAF ACEP's DOE Genesis Mission Phase I
+award to build AURORA-AI, a digital twin of Cordova Electric's islanded microgrid, framed
+around the one thing that makes that grid unusual: it settles every forecasting error in
+gallons of diesel, so a claim there can actually be graded.
+
+### Blockers this run cleared, and the fixes
+
+1. **run_guard.py refused to start, and would have refused on every future run.**
+   The 09-14 run committed its scratch, so a fresh container clone inherits SHIP_NOW and
+   panel_verdict.json WITHOUT the three mp4s, which are heavy and correctly never
+   committed. `init` then demanded three sha256 matches against files that by construction
+   are absent. FIX (commit 9b6540e): a lock with NONE of its deliverables on disk is a
+   fossil of a previous container, not a cut at risk, so it is archived with a written note
+   instead of blocking. The moment ANY deliverable exists the full delivery proof is
+   required exactly as before. Both paths are covered by a test run in the same commit.
+   Also stopped tracking SHIP_NOW and .run_stamp.json so a clone no longer carries a lock.
+
+2. **A harness permission prompt STOPPED the run mid-Phase-0**, on an ordinary write to
+   `.claude/WORKLOG.md`. Owner's ruling: a permission prompt is a stop, a stop is a failed
+   run, and the fix belongs in the automation. `.claude/settings.json` already allows Write
+   broadly and that did not help, because a path the harness treats as sensitive stays
+   protected whatever the allowlist says. FIX (commit 41387e7): the worklog moved to
+   `out/dispatch/WORKLOG.md`, which is gitignored scratch and can never raise a prompt.
+   Written into CLAUDE.md and into the routine prompt, the two files a run reads first.
+
+3. **The sibling channel had already published two of this run's three best stories.**
+   The LinkedIn carousel routine in Talonsturgill/alaskaaicarousels ships DAILY to the same
+   audience off the same beat, and this repo's dedupe.py cannot see its ledger. It had run
+   the ACUASI 1,000 km Nenana flight yesterday and the Hauri Arctic Ocean model paper this
+   morning. Caught by reading its ledger/topics.json directly. Entries 54 to 63 are recorded
+   in this run's candidates.json so the collision is written down rather than rediscovered.
+   DEFERRED WITH A PLAN, and it is the top backlog item: dedupe.py should read the sibling
+   ledger over the GitHub API and fold it into `list` and `check`, because the current state
+   is that both channels can publish the same story on the same day and neither gate objects.
+
+### What the gates caught that a human would have had to catch
+
+- **vo_claims_check STORY DENSITY.** Nine claims across 120 seconds is 4.5 a minute against
+  a 7.0 floor. The gate named it correctly as the signature of a stretched film. The fix was
+  to put six verified facts back into the narration that the angle room had trimmed, at the
+  SAME word count, so the script now carries sixteen claims in 217 words.
+- **Gate 0E took three rounds and earned every one.** Round 1 died on an undecodable
+  metaphor. Round 2 died on a real structural fault: the script opened on the servers, said
+  hold that thought, severed the link, and then closed on them anyway. Round 3 pays the loop
+  honestly, because those servers are a load on the same grid whether or not the project
+  owns them, so the forecast has to predict them.
+- **text_fit_check** caught a 170 kW chip with 6.9px clear against a 14px requirement.
+- **The sfx schedule asserts** caught a genuinely flat sound design twice: tick on nine of
+  forty events, then the top four kinds carrying 57 percent against a 55 percent ceiling.
+
+### The fact-check changed the film, for the better
+
+The most photogenic detail was not the project's. Greensparc installed a 170 kW data center
+inside Cordova's Humpback Creek powerhouse in 2024, more than two years before the award and
+before the Genesis Mission existed. Showing AURORA-AI as building it would have been the
+single most likely factual error available. The film says the opposite out loud, and that
+honesty became the hook and the open loop. Cordova is also not a diesel town AI will rescue:
+about 80 percent hydro, 1,566 customers, a 10.8 MW diesel backstop. Nine claims verified, six
+labelled, nine cut, including every per-kWh figure because not one was reachable on any page.
+
+### Craft advance and net-new asset
+
+- `lib/forecast.tsx`, THE FORECAST GRAMMAR. simulation.tsx owns "a model of a thing"; this
+  owns "a claim about a time, and that claim being checked". Four clauses, and the one that
+  matters is that `Reconcile` starts at settled 0 where MEASURED renders as an EMPTY HATCHED
+  BOX. `predictedLabel` was added mid-run when the film needed to state a claim that is not
+  a number, because painting a figure there would have been the exact lie the component
+  exists to prevent.
+- `lib/runofriver.tsx`, the intake, penstock and powerhouse. A real shelf gap: nothing
+  showed water being TAKEN from a creek and turned into power. Its params are what a
+  run-of-river plant cannot do (flow is an input, gate is the one control, spill is energy
+  thrown away).
+
+### Repeat offender, paid for again
+
+**A silhouette used by the absence or simulation grammar must carry the WHOLE subject.**
+This is already in ASSET_MANIFEST.md from 2026-08-05, where a beetle's unfilled elytra
+outline read as an egg. The twin's first pass here was a rounded dome and read as an egg
+again. Caught on the first contact sheet rather than by a judge, but it should not have been
+authored that way. The manifest entry now states it a second time, next to the new grammar
+that will keep tempting runs to do it.
+
+### Known issue, deferred with a plan
+
+The shot map had to be solved twice. A purely balanced solve produced even 7 to 13 second
+shots and broke say-it-show-it on five of them, which is the failure the routine already
+warns about. There was no gate for it: `build_scenes.py` validates that anchors are integers
+and increase, and nothing compared what a shot DRAWS against what its lines SAY. BUILT THIS
+RUN, not deferred: `scripts/say_it_show_it_check.py` is now a blocking row in preflight. It
+compares on content OVERLAP rather than string equality, because a gate that cries wolf at
+every rewrite gets skipped, and it was verified in both directions: green on this board, red
+on a deliberately re-anchored copy of it.
+
+### The defect the square cut was hiding, and the invariant that closes it
+
+The canvas is 1080x1920. The cut that lands in the LinkedIn MAIN FEED is
+`crop=1080:1080:0:420` off that canvas, so the primary audience sees master y 420..1500 and
+nothing else. Every quality check this run ran was green while the shipping deliverable was
+quietly broken, and it took sampling the SQUARE frames rather than the master to see it:
+
+- the rack's GREENSPARC nameplate, authored at 1449..1514, shipped cut in half at the frame
+  edge, under the caption bar
+- the 170 kW source plate, the film's central number, authored at 1470..1530, was a sliver
+- PHASE 1 . STARTS OCT 1, authored at 1469..1530, sliced
+- a four-line list ending INTENDED, NOT MEASURED, the honesty beat of the film, sat at
+  1560..1756: the square held a still frame for four seconds while the 9:16 built a list
+- the forecast chart's OBSERVED / CLAIMED labels sat at 1700, so the primary cut carried an
+  unlabelled chart, and the 170 kW chip that slides in under the trace landed behind the
+  captions
+- separately, the AURORA-AI plate stack had its second expansion line ABOVE the acronym with
+  the money row cutting through it, so the name read as an illegible sandwich
+
+`crop_safety.py` samples the two boundary rows of the rendered master and had already
+written down, at length, why it cannot be the authority: at a boundary row a plate's border
+and the room's own wall-tile seam are the same measurement, because the difference is not in
+the pixels, it is in whether the element was AUTHORED. Its docstring ends by naming the fix
+as a build-time invariant in the episode. FIX (commit c1c103f): `video-engine/src/lib/cropsafe.ts`,
+that invariant, lifted into a lib so every future episode inherits it rather than one film
+getting it right. `Plate` and `Head` assert their own authored geometry. Inside the square
+band is fine. Wholly below it is a legitimate 9:16-only flourish and returns a report line.
+STRADDLING a crop line throws and fails the render before a frame is encoded, because there
+is no composition in which a headline cut in half at the frame edge was the intent.
+
+It states its own limit rather than overselling: it checks AUTHORED coordinates, and a
+per-shot camera move can still drift an element across the line on screen. That residue is
+what `crop_safety.py` measures. The two are complementary and a pass here means "nothing was
+authored across the line", never "the square is safe".
+
+**Where the art direction plan was not met by the build.** `art_direction.json` wrote the
+rule for this film before a frame existed: "Content above y 420 and below y 1500 stages the
+vertical and never appears in the square: the fjord wall and rain above, the wet foreground
+rail and alder below. The story itself stays inside the centred 1:1 safe box." The build put
+twelve plates between 1640 and 1822, including the Richard Wies quote with its attribution,
+82,000 ALASKANS . PER AEA, NO WIRE OUT, and the four-line list that ends INTENDED, NOT
+MEASURED. The plan was right and nothing checked it. `plate_overlap_check` was saying the
+same thing from the other side the whole time, because it clamps anything below y=1276 to
+the guard and reported the folded rows as 13 collisions; the other four episodes in the
+engine put nothing down there and pass it clean. All twelve are now inside the band, and the
+fuel bars moved with the GALLONS label they belong to.
+
+**A gate that was measuring the recognizer instead of the film.** `credits_check` called the
+sign-off missing on a frame where it is plainly legible. Tesseract cannot read a capital I
+followed by a capital H in JetBrains Mono and returns TH, so ALASKAAIHQ.COM came back as
+ALASKAATHQ.COM twice. Every cheaper explanation was tested and ruled out before the check
+was touched: four sizes, three letter-spacings, a standalone PIL render of the same TTF, all
+six dictionary flags off, and the strings AI, MAIN, RAIL, AIRPORT and AAI, all of which read
+correctly while AAIH does not. The comparison now collapses that one digraph on both sides,
+which cannot pass a missing credit because a line that is not on screen produces no glyphs
+at all. Verified in both directions, including against a truncated licence line. Widening
+that set requires the same bisection, written next to it.
+
+**Continuity, stated so it is not mistaken for a repeat.** The video feed already carries
+`dispatch-2026-07-29-aurora-ai`, which reported the Genesis Mission award list of July 22nd
+where AURORA-AI was a single uncovered line. That is 52 days back, so the 30-day dedupe
+window returns FRESH, and this is the follow-up that record eventually earned: the August
+UAF announcement, the $725,000, the islanded grid, the powerhouse data centre that is not
+part of it, the Phase 1 timeline and the principal investigator's own words about nine
+months being a really short period of performance.

@@ -3,587 +3,19 @@
   "problems": [],
   "scope": "Rendered credit rows sampled every half second over the full 10-second window; pixel OCR at its start, middle and end. Not a full-film visual review.",
   "input_sha256": {
-    "video": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
+    "video": "671cad83c1748928c167f1cb0ab0ba0de33e7f9fd9e8e95b15fc34774ca94885",
     "renderer": "b7690e55711c92528a7598d61c1a6b36f2a18b3a7d84393b504df4209bca5c73",
-    "credit_timeline_and_data": "ee0071db321759c71866be27ed818f226bd0cb5551940b9fa84208de4f28f9c8"
+    "credit_timeline_and_data": "f868448dc1746538c66f9c53200999d3c38422c9b5843b35b0b704cf36af95e1"
   },
   "window": [
-    113.96666666666667,
-    123.96666666666667
+    115.13333333333333,
+    125.13333333333333
   ],
   "readable_seconds": 10.0,
-  "full_opacity_seconds": 10.066666666666663,
+  "full_opacity_seconds": 10.066666666666677,
   "samples": [
     {
-      "seconds": 113.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.106
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0358
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0223
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0586
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0402
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.1283
-        }
-      ]
-    },
-    {
-      "seconds": 114.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.1062
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.036
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0224
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0586
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0403
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.1293
-        }
-      ]
-    },
-    {
-      "seconds": 114.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1062
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.036
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0224
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0587
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0403
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.129
-        }
-      ]
-    },
-    {
-      "seconds": 115.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1062
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0359
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0224
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0587
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0403
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1286
-        }
-      ]
-    },
-    {
-      "seconds": 115.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1054
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0357
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0223
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0582
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0403
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1281
-        }
-      ]
-    },
-    {
-      "seconds": 116.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1054
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0358
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0223
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0582
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.0402
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1281
-        }
-      ]
-    },
-    {
-      "seconds": 116.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.1054
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0355
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0223
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0581
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0401
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.1274
-        }
-      ]
-    },
-    {
-      "seconds": 117.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.1054
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0354
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0222
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0581
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0401
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.1274
-        }
-      ]
-    },
-    {
-      "seconds": 117.966667,
+      "seconds": 115.133333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -594,10 +26,10 @@
             756
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.1051
+          "bright_fraction": 0.0866
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
@@ -605,10 +37,10 @@
             923
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0354
+          "bright_fraction": 0.012
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
@@ -616,10 +48,10 @@
             965
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0223
+          "bright_fraction": 0.0341
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
@@ -627,10 +59,10 @@
             1007
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0581
+          "bright_fraction": 0.0382
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
@@ -638,165 +70,680 @@
             1049
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0401
+          "bright_fraction": 0.0336
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1267
-        }
-      ]
-    },
-    {
-      "seconds": 118.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.1051
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0354
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0222
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0579
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0399
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1266
-        }
-      ]
-    },
-    {
-      "seconds": 118.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
+            1090
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.1051
+          "bright_fraction": 0.0383
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
           "box": [
             36,
-            888,
+            1097,
             1044,
-            923
+            1132
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0354
+          "bright_fraction": 0.0443
         },
         {
-          "text": "GITHUB.COM",
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            930,
+            1180,
             1044,
-            965
+            1230
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0222
+          "bright_fraction": 0.1134
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            972,
+            1228,
             1044,
-            1007
+            1278
           ],
           "background_median": 18.0,
           "bright_fraction": 0.058
+        }
+      ]
+    },
+    {
+      "seconds": 115.633333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0867
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.012
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0341
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0382
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0399
+          "background_median": 19.0,
+          "bright_fraction": 0.0336
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1266
+          "background_median": 19.0,
+          "bright_fraction": 0.0385
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0444
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1135
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.058
         }
       ]
     },
     {
-      "seconds": 119.466667,
+      "seconds": 116.133333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0867
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.012
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0342
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0385
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0336
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0386
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0443
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1135
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.058
+        }
+      ]
+    },
+    {
+      "seconds": 116.633333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0867
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.012
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0342
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0384
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0336
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0387
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0445
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1135
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.058
+        }
+      ]
+    },
+    {
+      "seconds": 117.133333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0867
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.012
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0342
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0384
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0336
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0387
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0445
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.1135
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0578
+        }
+      ]
+    },
+    {
+      "seconds": 117.633333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0867
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.012
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0342
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0385
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0336
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0386
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0444
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.1135
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0577
+        }
+      ]
+    },
+    {
+      "seconds": 118.133333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0867
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.012
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0341
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0384
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0335
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0382
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0442
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.113
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0577
+        }
+      ]
+    },
+    {
+      "seconds": 118.633333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -807,10 +754,10 @@
             756
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.105
+          "bright_fraction": 0.0863
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
@@ -818,10 +765,10 @@
             923
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0354
+          "bright_fraction": 0.0119
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
@@ -829,45 +776,78 @@
             965
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0221
+          "bright_fraction": 0.034
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.058
+          "background_median": 18.0,
+          "bright_fraction": 0.0381
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0399
+          "background_median": 18.0,
+          "bright_fraction": 0.0335
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1266
+          "background_median": 18.0,
+          "bright_fraction": 0.038
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0442
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.113
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0577
         }
       ]
     },
     {
-      "seconds": 119.966667,
+      "seconds": 119.133333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -878,10 +858,10 @@
             756
           ],
           "background_median": 17.0,
-          "bright_fraction": 0.105
+          "bright_fraction": 0.0862
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
@@ -889,56 +869,89 @@
             923
           ],
           "background_median": 17.0,
-          "bright_fraction": 0.0355
+          "bright_fraction": 0.0119
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0221
+          "background_median": 17.0,
+          "bright_fraction": 0.034
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.058
+          "background_median": 17.0,
+          "bright_fraction": 0.038
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0399
+          "background_median": 17.0,
+          "bright_fraction": 0.0333
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1266
+          "background_median": 17.0,
+          "bright_fraction": 0.0381
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0442
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.113
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0577
         }
       ]
     },
     {
-      "seconds": 120.466667,
+      "seconds": 119.633333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -949,67 +962,100 @@
             756
           ],
           "background_median": 17.0,
-          "bright_fraction": 0.105
+          "bright_fraction": 0.0863
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0355
+          "background_median": 17.0,
+          "bright_fraction": 0.0118
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.022
+          "background_median": 17.0,
+          "bright_fraction": 0.0341
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.058
+          "background_median": 17.0,
+          "bright_fraction": 0.0382
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0399
+          "background_median": 17.0,
+          "bright_fraction": 0.0334
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1266
+          "background_median": 13.0,
+          "bright_fraction": 0.038
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0442
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.113
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0577
         }
       ]
     },
     {
-      "seconds": 120.966667,
+      "seconds": 120.133333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1020,67 +1066,620 @@
             756
           ],
           "background_median": 17.0,
-          "bright_fraction": 0.105
+          "bright_fraction": 0.0863
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0354
+          "background_median": 17.0,
+          "bright_fraction": 0.0118
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.022
+          "background_median": 17.0,
+          "bright_fraction": 0.034
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.058
+          "background_median": 17.0,
+          "bright_fraction": 0.0382
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0399
+          "background_median": 13.0,
+          "bright_fraction": 0.0334
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1266
+          "background_median": 13.0,
+          "bright_fraction": 0.0381
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0442
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.113
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0576
         }
       ]
     },
     {
-      "seconds": 121.466667,
+      "seconds": 120.633333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0862
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0119
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0341
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.038
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0334
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0381
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0441
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.113
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0576
+        }
+      ]
+    },
+    {
+      "seconds": 121.133333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0862
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0118
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0341
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0379
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0334
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0381
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0441
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.1129
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0576
+        }
+      ]
+    },
+    {
+      "seconds": 121.633333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0862
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0118
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0339
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0379
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0334
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0381
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0441
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.1129
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0576
+        }
+      ]
+    },
+    {
+      "seconds": 122.133333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0862
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0118
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.034
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0379
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0334
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0381
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0441
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.1129
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0576
+        }
+      ]
+    },
+    {
+      "seconds": 122.633333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0863
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0118
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.034
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0379
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0334
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0381
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0441
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.1129
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0576
+        }
+      ]
+    },
+    {
+      "seconds": 123.133333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1091,67 +1690,204 @@
             756
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.1053
+          "bright_fraction": 0.0863
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0356
+          "background_median": 13.0,
+          "bright_fraction": 0.0118
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0221
+          "background_median": 13.0,
+          "bright_fraction": 0.034
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0583
+          "background_median": 13.0,
+          "bright_fraction": 0.0379
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.04
+          "background_median": 13.0,
+          "bright_fraction": 0.0334
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1267
+          "background_median": 13.0,
+          "bright_fraction": 0.0381
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0441
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.1129
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0576
         }
       ]
     },
     {
-      "seconds": 121.966667,
+      "seconds": 123.633333,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0862
+        },
+        {
+          "text": "UAF.EDU",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0118
+        },
+        {
+          "text": "SOURCE.COLOSTATE.EDU",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0342
+        },
+        {
+          "text": "ALASKASNEWSSOURCE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.038
+        },
+        {
+          "text": "CORDOVAELECTRIC.COM",
+          "box": [
+            36,
+            1014,
+            1044,
+            1049
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0331
+        },
+        {
+          "text": "AKENERGYAUTHORITY.ORG",
+          "box": [
+            36,
+            1055,
+            1044,
+            1090
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.038
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.044
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.1132
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0578
+        }
+      ]
+    },
+    {
+      "seconds": 124.133333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1162,138 +1898,100 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.1053
+          "bright_fraction": 0.0864
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0356
+          "background_median": 13.0,
+          "bright_fraction": 0.0118
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0221
+          "background_median": 13.0,
+          "bright_fraction": 0.0342
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0583
+          "background_median": 13.0,
+          "bright_fraction": 0.038
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.04
+          "background_median": 13.0,
+          "bright_fraction": 0.0331
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1267
+          "background_median": 13.0,
+          "bright_fraction": 0.038
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.044
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.1132
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0578
         }
       ]
     },
     {
-      "seconds": 122.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.1054
-        },
-        {
-          "text": "ACADEMIC.OUP.COM",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0356
-        },
-        {
-          "text": "GITHUB.COM",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0221
-        },
-        {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0583
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.04
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1267
-        }
-      ]
-    },
-    {
-      "seconds": 122.966667,
+      "seconds": 124.633333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1304,67 +2002,100 @@
             756
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.1055
+          "bright_fraction": 0.0863
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0356
+          "background_median": 13.0,
+          "bright_fraction": 0.0118
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0221
+          "background_median": 13.0,
+          "bright_fraction": 0.0342
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0583
+          "background_median": 13.0,
+          "bright_fraction": 0.038
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.04
+          "background_median": 13.0,
+          "bright_fraction": 0.0331
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1267
+          "background_median": 13.0,
+          "bright_fraction": 0.038
+        },
+        {
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            1097,
+            1044,
+            1132
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.044
+        },
+        {
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+          "box": [
+            36,
+            1180,
+            1044,
+            1230
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.1132
+        },
+        {
+          "text": "LICENSED UNDER CC BY 4.0",
+          "box": [
+            36,
+            1228,
+            1044,
+            1278
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0578
         }
       ]
     },
     {
-      "seconds": 123.466667,
+      "seconds": 125.133333,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1374,178 +2105,167 @@
             1044,
             756
           ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1055
+          "background_median": 20.0,
+          "bright_fraction": 0.0862
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "UAF.EDU",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0356
+          "background_median": 13.0,
+          "bright_fraction": 0.0118
         },
         {
-          "text": "GITHUB.COM",
+          "text": "SOURCE.COLOSTATE.EDU",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0221
+          "background_median": 13.0,
+          "bright_fraction": 0.0342
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "ALASKASNEWSSOURCE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0583
+          "background_median": 13.0,
+          "bright_fraction": 0.038
         },
         {
-          "text": "FISHERIES.NOAA.GOV",
+          "text": "CORDOVAELECTRIC.COM",
           "box": [
             36,
             1014,
             1044,
             1049
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.04
+          "background_median": 13.0,
+          "bright_fraction": 0.0331
         },
         {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
+          "text": "AKENERGYAUTHORITY.ORG",
           "box": [
             36,
-            1111,
+            1055,
             1044,
-            1141
+            1090
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1267
-        }
-      ]
-    },
-    {
-      "seconds": 123.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 21.0,
-          "bright_fraction": 0.1055
+          "background_median": 13.0,
+          "bright_fraction": 0.038
         },
         {
-          "text": "ACADEMIC.OUP.COM",
+          "text": "AND 3 MORE AT ALASKAAIHQ.COM",
           "box": [
             36,
-            888,
+            1097,
             1044,
-            923
+            1132
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0356
+          "background_median": 13.0,
+          "bright_fraction": 0.044
         },
         {
-          "text": "GITHUB.COM",
+          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
           "box": [
             36,
-            930,
+            1180,
             1044,
-            965
+            1230
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0221
+          "background_median": 13.0,
+          "bright_fraction": 0.1132
         },
         {
-          "text": "RAW.GITHUBUSERCONTENT.COM",
+          "text": "LICENSED UNDER CC BY 4.0",
           "box": [
             36,
-            972,
+            1228,
             1044,
-            1007
+            1278
           ],
-          "background_median": 15.0,
-          "bright_fraction": 0.0583
-        },
-        {
-          "text": "FISHERIES.NOAA.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.04
-        },
-        {
-          "text": "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1111,
-            1044,
-            1141
-          ],
-          "background_median": 15.0,
-          "bright_fraction": 0.1267
+          "background_median": 13.0,
+          "bright_fraction": 0.0578
         }
       ]
     }
   ],
   "ocr": [
     {
-      "seconds": 113.966667,
+      "seconds": 115.133333,
       "recognized": [
-        "VISIT US AT ALASKAAIHQ.COM",
+        "VISIT US AT ALASKAATHQ.COM",
+        "",
         "SOURCES",
-        "ACADEMIC.OUP.COM",
-        "GITHUB.COM",
-        "RAW.GITHUBUSERCONTENT.COM",
-        "FISHERIES.NOAA. GOV",
-        "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0"
+        "UAF . EDU",
+        "",
+        "SOURCE. COLOSTATE. EDU",
+        "",
+        "ALASKASNEWSSOURCE . COM",
+        "",
+        "CORDOVAELECTRIC. COM",
+        "",
+        "AKENERGYAUTHORITY . ORG",
+        "",
+        "AND 3 MORE AT ALASKAATHQ.COM",
+        "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED UNDER CC BY 4.0"
       ],
       "missing": []
     },
     {
-      "seconds": 118.966667,
+      "seconds": 120.133333,
       "recognized": [
-        "VISIT US AT ALASKAAIHQ.COM",
+        "VISIT US AT ALASKAATHQ.COM",
+        "",
         "SOURCES",
-        "ACADEMIC.OUP.COM",
-        "GITHUB.COM",
-        "RAW.GITHUBUSERCONTENT.COM",
-        "FISHERIES. NOAA. GOV",
-        "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0"
+        "UAF . EDU",
+        "",
+        "SOURCE. COLOSTATE . EDU",
+        "",
+        "ALASKASNEWSSOURCE. COM",
+        "",
+        "CORDOVAELECTRIC. COM",
+        "",
+        "AKENERGYAUTHORITY . ORG",
+        "",
+        "AND 3 MORE AT ALASKAATHQ.COM",
+        "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED UNDER CC BY 4.0"
       ],
       "missing": []
     },
     {
-      "seconds": 123.966667,
+      "seconds": 125.133333,
       "recognized": [
-        "VISIT US AT ALASKAAIHQ.COM",
+        "VISIT US AT ALASKAATHQ.COM",
+        "",
         "SOURCES",
-        "ACADEMIC.OUP.COM",
-        "GITHUB.COM",
-        "RAW.GITHUBUSERCONTENT.COM",
-        "FISHERIES. NOAA. GOV",
-        "LIGHT THOUGHT VAR 1 BY KEVIN MACLEOD AT INCOMPETECH.COM LICENSED UNDER CC BY 4.0"
+        "UAF . EDU",
+        "",
+        "SOURCE. COLOSTATE. EDU",
+        "",
+        "ALASKASNEWSSOURCE. COM",
+        "",
+        "CORDOVAELECTRIC. COM",
+        "",
+        "AKENERGYAUTHORITY . ORG",
+        "",
+        "AND 3 MORE AT ALASKAAIHQ.COM",
+        "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
+        "LICENSED UNDER CC BY 4.0"
       ],
       "missing": []
     }
   ],
-  "ocr_backend": "macOS Vision accurate, language correction off"
+  "ocr_backend": "Tesseract page segmentation 6"
 }

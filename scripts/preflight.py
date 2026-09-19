@@ -33,6 +33,13 @@ CHECKS = [
       "--noEmit", "-p", "video-engine/tsconfig.json"], True),
     ("plated strings fit their plates",
      [sys.executable, "scripts/text_fit_check.py"], True),
+    # The board can be right and the WIRING still move. Re-solving the shot anchors
+    # re-points every scene at different words, and tsc is clean, build_scenes runs and
+    # the render succeeds while the film is about the wrong things. It cost a full render
+    # on 2026-08-06 and happened again inside one run on 2026-09-19. Both times a person
+    # caught it by reading a table, so the table is a program now.
+    ("every shot draws the lines it plays over",
+     [sys.executable, "scripts/say_it_show_it_check.py"], True),
     # The post linter does not see film labels or rebuilt captions. Both carried a
     # banned colon in the September 3 render despite a clean locked VO script.
     ("visible source and built props obey the copy rules",
@@ -108,6 +115,19 @@ CHECKS = [
     # it to required once one run has read it and cleared it.
     ("the evidence pack actually shows the film",
      [sys.executable, "scripts/evidence_coverage_check.py"], False),
+    # The pack's coverage check asks whether every beat got photographed. This asks the
+    # other half of the same question: whether the strip NAME describes what the film draws
+    # there. On 2026-09-19 the board and the engine had drifted a whole shot apart and three
+    # judges across two panel rounds marked the Motion axis down for moves that were never
+    # in the window they were named for. ADVISORY rather than blocking for now, and the
+    # reason is written down so a later run does not quietly promote or delete it: it is red
+    # today on nine beats the board describes and no shot animates, which cannot be fixed
+    # without changing the beat count, the sound map keyed to it and the render. That is a
+    # Gate 0A job at the START of a run, not a delivery-time one, and making a brand new
+    # gate blocking mid-delivery would be using it to stop a film the panel has passed.
+    # PROMOTE IT TO BLOCKING once a run ships with a board whose beats the film all draws.
+    ("every evidence strip is named for what the film draws there",
+     [sys.executable, "scripts/strip_name_check.py"], False),
     ("the square crop cuts nothing built",
      [sys.executable, "scripts/crop_safety.py"], False),
     # THE STORY REGION, WITH THE FURNITURE TAKEN OUT. The whole-frame dead-window gate went

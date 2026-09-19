@@ -1978,3 +1978,44 @@ dispatch_history:
     light_story: noon-hard
     palette: bright ultramarine mango alabaster sea-glass ink navy
     metaphor: portable rehearsal control opens separate biological experiments
+- date: '2026-09-19'
+  topic: UAF-led four-partner team wins a DOE Genesis Mission Phase I award to build
+    AURORA-AI, a digital twin of Cordova Electric's islanded grid, while an unrelated
+    Greensparc data center already runs inside the town's powerhouse
+  slug: watch-for-gallons
+  key_entities:
+  - UAF
+  - ACEP
+  - AURORA-AI
+  - Cordova Electric Cooperative
+  - Genesis Mission
+  - Greensparc
+  - Richard Wies
+  - Humpback Creek
+  - Colorado State
+  - National Laboratory of the Rockies
+  - Power Cost Equalization
+  archetype: the test that can actually be graded
+  palette: powerhouse green, sodium amber, model cyan
+  voice: Sulafat
+  stance: mixed
+  angle: Cordova is the rare Alaska grid where a forecasting error has a price you
+    can count in gallons, which makes it the one place an AI claim can be settled
+    rather than asserted, and it is also the easy case.
+  hero: RunOfRiver
+  cast:
+  - RunOfRiver
+  - Sourdough
+  - ServerMachine
+  - ForecastTrace
+  - Reconcile
+  - Simulated
+  - MapAK
+  composition:
+    pov: macro-closeup
+    layout: single-object-void
+    motion_vector: rack-to-chart whip
+    stage: powerhouse interior and Prince William Sound exterior
+    framing: push-detail into two-up comparison
+    scale: insert to wide
+    height: eye

@@ -326,9 +326,18 @@ def _rebalance_cues(caps):
                 # the VO script spells every number out for the synth, so a panel judge found
                 # "obligated about six" / "million dollars" split across two cards. A spelled
                 # number is exactly as torn from its unit as a numeral is.
+                # THE TEENS WERE MISSING, and "point" with them (2026-09-19). All three panel
+                # judges independently hard-failed the same two frames. The cue stream read
+                # "Eighteen megawatts, fifteen" / "sixty six customers, no wire out." for three
+                # seconds, so a muted viewer saw a co-op with SIXTY SIX customers when it has
+                # 1,566; and "About eighty percent hydro, from two creeks. Ten point" / "eight
+                # megawatts of diesel behind it.", which contradicted the 10.8 MW DIESEL plate in
+                # its own frame. Both are one gap: this list jumps twelve to twenty, so every
+                # teen fell through, and "point" is the decimal joint and was never here at all.
                 "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
-                "eleven", "twelve", "twenty", "thirty", "forty", "fifty", "sixty", "seventy",
-                "eighty", "ninety", "hundred", "thousand", "million", "billion")
+                "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+                "eighteen", "nineteen", "twenty", "thirty", "forty", "fifty", "sixty", "seventy",
+                "eighty", "ninety", "hundred", "thousand", "million", "billion", "point")
     MAXLEN = 68
     # ORPHAN TAILS, added 2026-08-04. The forward-merge above only fires when the CURRENT
     # cue ends badly, so it never caught a cue whose NEXT cue is a stub. This film shipped
@@ -337,8 +346,10 @@ def _rebalance_cues(caps):
     # throws the line away. A tail of one or two short words is never its own caption.
     ORPHAN_WORDS, ORPHAN_CHARS = 2, 15
     NUMBER_WORDS = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-                    "ten", "eleven", "twelve", "twenty", "thirty", "forty", "fifty", "sixty",
-                    "seventy", "eighty", "ninety", "hundred", "thousand", "million", "billion"}
+                    "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+                    "seventeen", "eighteen", "nineteen", "twenty", "thirty", "forty", "fifty",
+                    "sixty", "seventy", "eighty", "ninety", "hundred", "thousand", "million",
+                    "billion", "point"}
     caps = _resplit_bad_breaks(caps, set(DANGLING), NUMBER_WORDS)
     out = []
     i = 0
@@ -363,6 +374,11 @@ def _rebalance_cues(caps):
                 or (last.rstrip(",").istitle() and first.istitle() and not last.endswith("."))
                 # the next cue is an orphan tail, e.g. "can." or "it."
                 or (len(nxt.split()) <= ORPHAN_WORDS and len(nxt) <= ORPHAN_CHARS)
+                # A CARD NEVER OPENS ON PUNCTUATION (2026-09-19). Two judges read a cue that
+                # was literally ", nine months." on screen for 1.98 seconds. Whatever the
+                # width arithmetic wants, a leading comma is a rendering error to anyone
+                # watching, so the fragment always goes back onto the card it broke off.
+                or nxt[:1] in ",;:."
             )
             # an orphan tail gets a longer leash than a normal merge: a stub alone on a
             # card is a worse defect than a cue the renderer has to set on two lines, and

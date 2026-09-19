@@ -1,227 +1,256 @@
 {
-  "run_date": "2026-09-14",
+  "run_date": "2026-09-19",
+  "target_seconds": 120,
+  "script_word_count": 217,
   "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
-  "notes": "Style: Warm, natural and conversational, with expressive curiosity about a useful research method. Neutral American accent, light and natural. Let the separate biological result bring thoughtful surprise, give the fair test grounded seriousness, and finish with earned optimism and a warm open question. No doom, hype, scolding, or announcing. Performance: Keep the read varied without making each sentence a separate performance. Open bright, settle through the source, lift for learning and the biological question, then give the two experiments distinct contours. At the management-advantage objection, around seventy-nine seconds, lean in and grant its full force without claiming the research failed. Recover useful momentum on the common testing goals. Treat the final question as addressed to one thoughtful listener. Preserve complete organization names and every spoken word.",
-  "style_prompt": "Style: Warm, natural and conversational, with expressive curiosity about a useful research method. Neutral American accent, light and natural. Let the separate biological result bring thoughtful surprise, give the fair test grounded seriousness, and finish with earned optimism and a warm open question. No doom, hype, scolding, or announcing.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean gently on one word in each successive line: testing, explores, informed, practices, changes, predefined, hold, constant, swings, links, separate, less, may, manage, plan, same, alternatives, balance. Never shout or add words. Give the biomass definition a light parenthetical contour and keep both outcomes audible.\nPerformance: Keep the read varied without making each sentence a separate performance. Open bright, settle through the source, lift for learning and the biological question, then give the two experiments distinct contours. At the management-advantage objection, around seventy-nine seconds, lean in and grant its full force without claiming the research failed. Recover useful momentum on the common testing goals. Treat the final question as addressed to one thoughtful listener. Preserve complete organization names and every spoken word.\nEnergy: Successive line levels on a scale from one to five are 4, 3, 2, 4, 3, 2, 4, 3, 2, 3, 2, 4, 2, 3, 2, 4, 2, 3. These are relative changes of intention and pitch, not abrupt volume jumps. Keep natural breaths at sentence ends; leave breathing room for the explanatory images without stretching syllables.",
+  "notes": "Style: curiosity with earned optimism. Interested, not impressed. The narrator admires the work and stays completely level about the fact that nothing has been measured yet, so the honesty reads as calm rather than sour and the good news reads as interesting rather than celebratory. Dry, concrete, no gotcha, no hype. Pace: the required runtime-anchored paragraph, verbatim from vo_synth_gemini._pace_line(120), which is the format's only reliable length control; at two hundred seventeen words the read has to FILL the two minutes, so the act boundaries carry real silence and the figures are set down one at a time rather than rattled. Arc: flat and concrete for the hook, then quiet and personal on 'Remember them.', a number-dense mechanism that changes cadence inside each line so it never becomes a list, a settle onto the thesis 'So here, a bad forecast costs gallons.' which takes the piece's first real weight, a genuine lift through the August news to the digital twin, then a two step deflation onto 'Four partners. U A F's share, three hundred twenty five thousand.' offered as a fair correction and never as a catch. A clear pivot on 'Now, those servers.', the payoff on 'Whatever it predicts, it predicts them too.', the Wies line handed over as a quotation rather than asserted, the widest and lowest register on the rest of Alaska, and the last two lines spoken directly to one person: 'So watch for gallons.' is the instruction the film exists to give, and 'What would convince you it worked?' is a real question, not a host teeing up comments.",
+  "style_prompt": "### DIRECTOR'S NOTES\nStyle: warm, grounded and genuinely curious, an Alaska public radio host who finds this interesting rather than impressive. Admire the work and stay level about what has not been measured yet. Dry, concrete honesty, never celebratory, never sour, never a gotcha.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nDelivery: let the short lines sit in silence rather than hurrying into the next one. Quiet and personal on \"Remember them.\" The lines of figures are not a list: change cadence inside each one, state a count, then set the next number down separately. Settle down onto \"a bad forecast costs gallons\" rather than pushing it. Lift through the August award and the digital twin, then let \"Four partners\" arrive smaller and calmer, as a fair correction and not as a catch. Turn the corner audibly on \"Now, those servers.\" Hand the Richard Wies line over as something he said. Widen and quiet down for the rest of Alaska. Speak the last two lines to one person in the room.",
+  "pronunciations": {
+    "Cordova": "kor-DOH-vuh",
+    "Greensparc": "GREEN-spark",
+    "Wies": "WEEZ, rhyming with bees",
+    "co op": "CO-op, two syllables"
+  },
   "lines": [
     {
       "idx": 0,
-      "text": "What would make an AI fishing rule worth testing?",
+      "text": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
       "intent": "hook",
-      "emphasis": "testing",
-      "energy": 4,
-      "pace": "Measured baseline with buoyant conversational movement.",
-      "tags": [],
+      "emphasis": "powerhouse",
+      "energy": 3,
+      "pace": "baseline, concrete, no announcer lift",
+      "tags": [
+        " "
+      ],
       "pause_before": false,
-      "why": "Open an actual question with a bright forward lean; worth testing is an invitation, not a verdict."
+      "why": "The picture is surprising on its own, so the read stays flat and factual and lets the image pull; the single cue sits after the place name, where the surprise actually starts."
     },
     {
       "idx": 1,
-      "text": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
-      "intent": "setup",
-      "emphasis": "explores",
-      "energy": 3,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "text": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
+      "intent": "stat",
+      "emphasis": "turbine",
+      "energy": 4,
+      "pace": "baseline, let the kilowatt figure land, then lift slightly into the last three words",
       "tags": [],
       "pause_before": false,
-      "why": "Let the date land clearly, then settle into the scope without a news-announcer cadence."
+      "why": "The cooling detail is the best image in the opening, so it gets the hook's only real lift, and that lift buys the fall that line two needs."
     },
     {
       "idx": 2,
-      "text": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
-      "intent": "setup",
-      "emphasis": "informed",
-      "energy": 2,
-      "pace": "Measured baseline; give the full names distinct natural phrasing.",
+      "text": "Remember them.",
+      "intent": "hook",
+      "emphasis": "Remember",
+      "energy": 1,
+      "pace": "slow, a full beat before and after",
       "tags": [],
-      "pause_before": false,
-      "why": "Give the full affiliation natural room and let informed carry the relationship between observations and simulations."
+      "pause_before": true,
+      "why": "A direct instruction to one listener, so it drops out of narration into something quieter and more personal than anything around it; the four to one fall is the read's first real contrast."
     },
     {
       "idx": 3,
-      "text": "Their agent practices harvest choices through repeated simulated seasons.",
-      "intent": "reveal",
-      "emphasis": "practices",
-      "energy": 4,
-      "pace": "Measured baseline with buoyant conversational movement.",
-      "tags": [],
-      "pause_before": false,
-      "why": "Lift into the demonstrated capability, with attentive admiration for repeated practice."
+      "text": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.",
+      "intent": "stat",
+      "emphasis": "island",
+      "energy": 3,
+      "pace": "plain on the first sentence, then step DOWN through the three facts, the last one flattest and final",
+      "tags": [
+        " "
+      ],
+      "pause_before": true,
+      "why": "The mechanism starts here and wants no colour, but three figures in a row will flatten if they are read at one pitch, so the pause separates the claim from the evidence and the run descends instead of listing."
     },
     {
       "idx": 4,
-      "text": "Feedback rewards outcomes and changes the learned rule.",
-      "intent": "reveal",
-      "emphasis": "changes",
-      "energy": 3,
-      "pace": "Measured baseline with buoyant conversational movement.",
-      "tags": [],
+      "text": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
+      "intent": "stat",
+      "emphasis": "diesel",
+      "energy": 2,
+      "pace": "warmer and easier on the two creeks, then slower and cooler on the diesel figure",
+      "tags": [
+        " "
+      ],
       "pause_before": false,
-      "why": "Let the change in the learned rule complete the mechanism; clear causal emphasis, no triumph."
+      "why": "Two opposed resources, read below the line before so the split lands as arithmetic rather than drama; sits mid-line at a genuine change of cadence, which keeps the second figure from being swallowed by the first."
     },
     {
       "idx": 5,
-      "text": "They compare it with a predefined harvest rule.",
-      "intent": "setup",
-      "emphasis": "predefined",
-      "energy": 2,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "text": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
+      "intent": "reveal",
+      "emphasis": "burns",
+      "energy": 4,
+      "pace": "baseline through the clause, then a real beat before the short second sentence",
       "tags": [],
       "pause_before": false,
-      "why": "Give the predefined alternative equal dignity through a grounded, evenly paced sentence."
+      "why": "This is where the consequence bites, so it steps up out of the flattest line in the piece; 'burns' is the frame the fuel should hit on."
     },
     {
       "idx": 6,
-      "text": "Will an advantage hold when the biology changes?",
-      "intent": "hook",
-      "emphasis": "hold",
-      "energy": 4,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "text": "So here, a bad forecast costs gallons.",
+      "intent": "reveal",
+      "emphasis": "gallons",
+      "energy": 2,
+      "pace": "slow and deliberate, weight by settling rather than pushing, land it and stop",
       "tags": [],
-      "pause_before": false,
-      "why": "Reopen curiosity about whether the advantage survives; leave the answer withheld."
+      "pause_before": true,
+      "why": "The thesis and the piece's first real weight. It earns that by dropping underneath the line before, which is the dry level honesty the angle asks for, and the low landing gives the August news somewhere to rise from."
     },
     {
       "idx": 7,
-      "text": "Start with a model where young fish enter at a constant rate.",
+      "text": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
       "intent": "setup",
-      "emphasis": "constant",
-      "energy": 3,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "emphasis": "won",
+      "energy": 4,
+      "pace": "warmer colour, letters of U A F spoken separately and unhurried, the figure allowed to land whole",
       "tags": [],
       "pause_before": true,
-      "why": "Establish the first assumption plainly so the listener can compare the later experiment."
+      "why": "Genuinely good news and the start of the only rise in the film; 'won' sits directly before the number and drives the figure without the narrator sounding impressed by it."
     },
     {
       "idx": 8,
-      "text": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside [short pause] large annual catch swings.",
-      "intent": "reveal",
-      "emphasis": "swings",
-      "energy": 2,
-      "pace": "Measured baseline, with a slight settling on the load-bearing word.",
-      "tags": [
-        "[short pause]"
-      ],
+      "text": "AURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.",
+      "intent": "setup",
+      "emphasis": "twin",
+      "energy": 5,
+      "pace": "brightest line in the read but not faster, small breath at each comma, the letters A and I clearly separate",
+      "tags": [],
       "pause_before": false,
-      "why": "Keep the biomass definition gently parenthetical, then land the annual catch swings as the equally real second outcome."
+      "why": "The most interesting information in the film and the crest of the arc, which is exactly what makes the two step deflation that follows work."
     },
     {
       "idx": 9,
-      "text": "The next experiment links young fish entering the stock to the breeding population.",
-      "intent": "setup",
-      "emphasis": "links",
+      "text": "A Phase One award, beginning October first, nine months.",
+      "intent": "stat",
+      "emphasis": "nine",
       "energy": 3,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "pace": "cooling off, each clause set down separately, the last two words plainest",
       "tags": [],
-      "pause_before": true,
-      "why": "Begin a new biological experiment with renewed interest and a small change of melodic contour."
+      "pause_before": false,
+      "why": "The clock. Reading it as three separate deposits rather than one phrase starts the descent from the crest without editorialising about the schedule."
     },
     {
       "idx": 10,
-      "text": "This is a separate simulated case with its own comparison.",
+      "text": "Four partners. U A F's share, three hundred twenty five thousand.",
       "intent": "reveal",
-      "emphasis": "separate",
+      "emphasis": "share",
       "energy": 2,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "pace": "slow, even, a beat after the first sentence, no lean and no irony on the smaller number",
       "tags": [],
       "pause_before": false,
-      "why": "Make separate unmistakable so this never sounds like a repair to the preceding policy."
+      "why": "A smaller number arriving right after a bigger one, and it must sound like a correction offered in good faith. Any lift or edge here turns it into a gotcha, so the level falls and the delivery stays flat."
     },
     {
       "idx": 11,
-      "text": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
-      "intent": "reveal",
-      "emphasis": "less",
+      "text": "Now, those servers.",
+      "intent": "setup",
+      "emphasis": "servers",
       "energy": 4,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "pace": "a clear beat before it, then turn the corner audibly, brighter than anything since the twin",
       "tags": [],
-      "pause_before": false,
-      "why": "Let less carry the reversal without alarm or a celebratory higher-catch flourish."
+      "pause_before": true,
+      "why": "A pivot, and it has to sound like one; the beat comes from silence rather than a tag because a tag can never open a line."
     },
     {
       "idx": 12,
-      "text": "These simulated gains may offer no management advantage over a predefined rule.",
-      "intent": "stakes",
-      "emphasis": "may",
+      "text": "Not the project's. Just a load on the same grid.",
+      "intent": "setup",
+      "emphasis": "load",
       "energy": 2,
-      "pace": "Measured baseline, with a slight settling on the load-bearing word.",
+      "pace": "flat and corrective, both sentences the same weight",
       "tags": [],
-      "pause_before": true,
-      "why": "Give the strongest fair objection full weight while preserving may as uncertainty, not demonstrated failure."
+      "pause_before": false,
+      "why": "The mandatory honesty beat about the two halves not being linked, read as a correction of the record and never as a wink."
     },
     {
       "idx": 13,
-      "text": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
-      "intent": "setup",
-      "emphasis": "manage",
-      "energy": 3,
-      "pace": "Measured baseline; give the full names distinct natural phrasing.",
+      "text": "Whatever it predicts, it predicts them too.",
+      "intent": "reveal",
+      "emphasis": "them",
+      "energy": 4,
+      "pace": "baseline, lean on the last two words, this is the hook's promise being paid",
       "tags": [],
       "pause_before": false,
-      "why": "Open the harbor scale with a neutral, complete statement of who manages the fishery."
+      "why": "The payoff of 'Remember them.' The picture plugs the servers into the grid on 'them', so the emphasis has to be exactly there."
     },
     {
       "idx": 14,
-      "text": "Fishing businesses need sound management to plan their seasons.",
+      "text": "So the test is narrow. By June, gallons saved, or a demonstration?",
       "intent": "stakes",
-      "emphasis": "plan",
-      "energy": 2,
-      "pace": "Measured baseline, with a slight settling on the load-bearing word.",
-      "tags": [],
-      "pause_before": false,
-      "why": "Settle toward the people who need to plan, with warmth and no invented distress."
+      "emphasis": "demonstration",
+      "energy": 3,
+      "pace": "measured, the question genuinely open at the end, no rhetorical dip",
+      "tags": [
+        " "
+      ],
+      "pause_before": true,
+      "why": "The honest heart. The question is asked straight, and the pause holds open the empty measured slot the image shows here."
     },
     {
       "idx": 15,
-      "text": "So test both rules against the same catch-pattern and breeding-stock goals.",
-      "intent": "reveal",
-      "emphasis": "same",
-      "energy": 4,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "text": "Richard Wies, who leads it, calls that a really short period of performance.",
+      "intent": "stakes",
+      "emphasis": "short",
+      "energy": 2,
+      "pace": "slower, handed over rather than asserted, the closing phrase set slightly apart as his words",
       "tags": [],
-      "pause_before": true,
-      "why": "Return useful momentum: identical goals are the constructive next research step."
+      "pause_before": false,
+      "why": "It must sound QUOTED. The level drops and the narrator reports his phrase rather than agreeing with it out loud, which is what keeps the honesty from becoming an opinion."
     },
     {
       "idx": 16,
-      "text": "These are illustrative simulations with public code. [short pause] They establish alternatives to investigate, not a winning real-world policy.",
+      "text": "And Cordova is the easy case.",
       "intent": "reveal",
-      "emphasis": "alternatives",
-      "energy": 2,
-      "pace": "Measured baseline, with a slight settling on the load-bearing word.",
-      "tags": [
-        "[short pause]"
-      ],
+      "emphasis": "easy",
+      "energy": 3,
+      "pace": "level, almost offhand, then stop",
+      "tags": [],
       "pause_before": false,
-      "why": "Let the first sentence establish simulation status and public source availability without implying successful reproduction, breathe, then warmly credit alternatives as the actual accomplishment."
+      "why": "A cold turn delivered without relish; saying it plainly is what makes the widening that follows land."
     },
     {
       "idx": 17,
-      "text": "Which balance should a rule demonstrate between catches and breeding fish?",
-      "intent": "button",
-      "emphasis": "balance",
-      "energy": 3,
-      "pace": "Measured baseline with buoyant conversational movement.",
+      "text": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
+      "intent": "stat",
+      "emphasis": "people",
+      "energy": 2,
+      "pace": "slow on both figures, a breath at the comma, the last two words wider and unhurried",
       "tags": [],
       "pause_before": true,
-      "why": "Address one thoughtful listener directly and leave genuine space for an answer rather than a rhetorical flourish."
+      "why": "Two counts in one line, and the second is the one that means something; widening on 'people' turns a statistic into a place without raising the volume."
+    },
+    {
+      "idx": 18,
+      "text": "They need it most, with the least data.",
+      "intent": "stakes",
+      "emphasis": "least",
+      "energy": 1,
+      "pace": "quietest line in the film, set the second clause down carefully",
+      "tags": [],
+      "pause_before": false,
+      "why": "The emotional low point in stakes rather than in volume; the read gets smaller so the sting is stated instead of sold."
+    },
+    {
+      "idx": 19,
+      "text": "So watch for gallons.",
+      "intent": "button",
+      "emphasis": "gallons",
+      "energy": 4,
+      "pace": "clean and direct, a real beat before it",
+      "tags": [],
+      "pause_before": true,
+      "why": "The instruction the whole film exists to give, and the third time 'gallons' carries the throughline, so it is the one line that steps up out of the low stretch."
+    },
+    {
+      "idx": 20,
+      "text": "What would convince you it worked?",
+      "intent": "button",
+      "emphasis": "convince",
+      "energy": 2,
+      "pace": "slow, warm, to one person, no bright upward host lilt",
+      "tags": [],
+      "pause_before": true,
+      "why": "A real question to a real person, so it settles back down and stays conversational; an engagement-bait lilt here would undo the whole register."
     }
   ],
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Warm, natural and conversational, with expressive curiosity about a useful research method. Neutral American accent, light and natural. Let the separate biological result bring thoughtful surprise, give the fair test grounded seriousness, and finish with earned optimism and a warm open question. No doom, hype, scolding, or announcing.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean gently on one word in each successive line: testing, explores, informed, practices, changes, predefined, hold, constant, swings, links, separate, less, may, manage, plan, same, alternatives, balance. Never shout or add words. Give the biomass definition a light parenthetical contour and keep both outcomes audible.\nPerformance: Keep the read varied without making each sentence a separate performance. Open bright, settle through the source, lift for learning and the biological question, then give the two experiments distinct contours. At the management-advantage objection, around seventy-nine seconds, lean in and grant its full force without claiming the research failed. Recover useful momentum on the common testing goals. Treat the final question as addressed to one thoughtful listener. Preserve complete organization names and every spoken word.\nEnergy: Successive line levels on a scale from one to five are 4, 3, 2, 4, 3, 2, 4, 3, 2, 3, 2, 4, 2, 3, 2, 4, 2, 3. These are relative changes of intention and pitch, not abrupt volume jumps. Keep natural breaths at sentence ends; leave breathing room for the explanatory images without stretching syllables.\nTranscript:\nWhat would make an AI fishing rule worth testing?\nA September eleventh paper explores that question with eastern Bering Sea pollock.\nResearchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.\nTheir agent practices harvest choices through repeated simulated seasons.\nFeedback rewards outcomes and changes the learned rule.\nThey compare it with a predefined harvest rule.\nWill an advantage hold when the biology changes?\nStart with a model where young fish enter at a constant rate.\nThe learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside [short pause] large annual catch swings.\nThe next experiment links young fish entering the stock to the breeding population.\nThis is a separate simulated case with its own comparison.\nHere the learned rule catches more and leaves less breeding biomass than that comparison.\nThese simulated gains may offer no management advantage over a predefined rule.\nIn real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.\nFishing businesses need sound management to plan their seasons.\nSo test both rules against the same catch-pattern and breeding-stock goals.\nThese are illustrative simulations with public code. [short pause] They establish alternatives to investigate, not a winning real-world policy.\nWhich balance should a rule demonstrate between catches and breeding fish?",
-  "pronunciations": {
-    "NOAA": "NOH-uh",
-    "AI": "A eye"
-  },
-  "target_spoken_seconds": 120,
-  "acceptable_spoken_seconds": [
-    112,
-    130
-  ],
-  "credits_seconds_excluded": 12.3,
-  "locked_word_count": 212,
-  "locked_script_sha256": "2bbc75e32042528fe5b49c676ebe55598a2684e3faa25f400421123857284716",
-  "pace_source": "scripts/vo_synth_gemini.py::_pace_line(120)",
-  "performance_arc": "Bright curiosity to precise mechanism, thoughtful biological reversal, grounded fair test, constructive research payoff, warm unresolved question.",
-  "tagged_transcript": "What would make an AI fishing rule worth testing?\nA September eleventh paper explores that question with eastern Bering Sea pollock.\nResearchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.\nTheir agent practices harvest choices through repeated simulated seasons.\nFeedback rewards outcomes and changes the learned rule.\nThey compare it with a predefined harvest rule.\nWill an advantage hold when the biology changes?\nStart with a model where young fish enter at a constant rate.\nThe learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside [short pause] large annual catch swings.\nThe next experiment links young fish entering the stock to the breeding population.\nThis is a separate simulated case with its own comparison.\nHere the learned rule catches more and leaves less breeding biomass than that comparison.\nThese simulated gains may offer no management advantage over a predefined rule.\nIn real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.\nFishing businesses need sound management to plan their seasons.\nSo test both rules against the same catch-pattern and breeding-stock goals.\nThese are illustrative simulations with public code. [short pause] They establish alternatives to investigate, not a winning real-world policy.\nWhich balance should a rule demonstrate between catches and breeding fish?",
-  "preferred_max_spoken_seconds": 128.5
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty. Neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, grounded and genuinely curious, an Alaska public radio host who finds this interesting rather than impressive. Admire the work and stay level about what has not been measured yet. Dry, concrete honesty, never celebratory, never sour, never a gotcha.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nDelivery: let the short lines sit in silence rather than hurrying into the next one. Quiet and personal on \"Remember them.\" The lines of figures are not a list: change cadence inside each one, state a count, then set the next number down separately. Settle down onto \"a bad forecast costs gallons\" rather than pushing it. Lift through the August award and the digital twin, then let \"Four partners\" arrive smaller and calmer, as a fair correction and not as a catch. Turn the corner audibly on \"Now, those servers.\" Hand the Richard Wies line over as something he said. Widen and quiet down for the rest of Alaska. Speak the last two lines to one person in the room.\nTranscript:\nIn Cordova, Alaska, servers run inside a hydroelectric powerhouse.\nGreensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.\nRemember them.\nCordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.\nAbout eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.\nGuess demand wrong and the co op can't buy from a neighbor. It burns fuel.\nSo here, a bad forecast costs gallons.\nIn August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.\nAURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.\nA Phase One award, beginning October first, nine months.\nFour partners. U A F's share, three hundred twenty five thousand.\nNow, those servers.\nNot the project's. Just a load on the same grid.\nWhatever it predicts, it predicts them too.\nSo the test is narrow. By June, gallons saved, or a demonstration?\nRichard Wies, who leads it, calls that a really short period of performance.\nAnd Cordova is the easy case.\nAlaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.\nThey need it most, with the least data.\nSo watch for gallons.\nWhat would convince you it worked?"
 }

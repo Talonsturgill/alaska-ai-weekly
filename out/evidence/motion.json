@@ -1,308 +1,324 @@
 {
   "note": "frame 1 vs frame 8 of each filmstrip window, measured on the delivered cut. changed_pct is the share of pixels differing by more than 12/255. A judge who cannot SEE motion in a strip should read this before recording that the beat is frozen. EVERY WINDOW HERE IS WITHIN A SINGLE SHOT: any window that straddled a cut has been slid clear of it and is marked straddled_cut, because a strip spanning a cut measures the cut and reports it as animation. Before 2026-08-13 it did not do this, and the large figures in older packs are shot changes, not motion. Cross-check against motion_registered.json, which solves the camera out per shot.",
   "strips": {
-    "research_grip_caught": {
-      "centre_s": 0.35,
-      "changed_pct": 8.8,
-      "peak_delta": 233,
-      "window_start_s": 0.22,
+    "fan_blades_turning": {
+      "centre_s": 0.48,
+      "changed_pct": 6.6,
+      "peak_delta": 202,
+      "window_start_s": 0.35,
       "straddled_cut": false,
       "within_shot": true
     },
-    "model_grip_settles": {
-      "centre_s": 1.54,
-      "changed_pct": 5.0,
-      "peak_delta": 231,
-      "window_start_s": 1.41,
+    "weld_bead_runs": {
+      "centre_s": 3.11,
+      "changed_pct": 1.6,
+      "peak_delta": 92,
+      "window_start_s": 2.98,
       "straddled_cut": false,
       "within_shot": true
     },
-    "tiny_support_revealed": {
-      "centre_s": 3.81,
-      "changed_pct": 9.0,
-      "peak_delta": 233,
-      "window_start_s": 3.68,
+    "greensparc_plate_slides_into_key": {
+      "centre_s": 3.89,
+      "changed_pct": 2.9,
+      "peak_delta": 122,
+      "window_start_s": 3.76,
       "straddled_cut": false,
       "within_shot": true
     },
-    "publication_tab_rotates": {
-      "centre_s": 5.75,
-      "changed_pct": 2.4,
-      "peak_delta": 221,
-      "window_start_s": 5.62,
+    "crane_down_past_deck_edge": {
+      "centre_s": 6.78,
+      "changed_pct": 1.1,
+      "peak_delta": 92,
+      "window_start_s": 6.53,
+      "straddled_cut": true,
+      "within_shot": true
+    },
+    "stencilled_boxes_drift_in": {
+      "centre_s": 7.26,
+      "changed_pct": 6.1,
+      "peak_delta": 155,
+      "window_start_s": 7.13,
       "straddled_cut": false,
       "within_shot": true
     },
-    "observation_shutter_opens": {
-      "centre_s": 8.58,
-      "changed_pct": 3.2,
-      "peak_delta": 82,
-      "window_start_s": 8.45,
+    "turbine_shaft_turns": {
+      "centre_s": 10.41,
+      "changed_pct": 4.1,
+      "peak_delta": 195,
+      "window_start_s": 10.28,
       "straddled_cut": false,
       "within_shot": true
     },
-    "laboratory_revealed": {
-      "centre_s": 11.95,
-      "changed_pct": 8.4,
-      "peak_delta": 244,
-      "window_start_s": 11.82,
+    "drip_lands_on_measured_box": {
+      "centre_s": 14.21,
+      "changed_pct": 2.0,
+      "peak_delta": 118,
+      "window_start_s": 14.08,
       "straddled_cut": false,
       "within_shot": true
     },
-    "observation_intake_opens": {
-      "centre_s": 16.81,
-      "changed_pct": 5.3,
+    "mask_wipe_opens_the_valley": {
+      "centre_s": 17.26,
+      "changed_pct": 3.8,
       "peak_delta": 204,
-      "window_start_s": 16.68,
+      "window_start_s": 17.13,
       "straddled_cut": false,
       "within_shot": true
     },
-    "manual_test_throw": {
-      "centre_s": 20.84,
-      "changed_pct": 9.2,
-      "peak_delta": 234,
-      "window_start_s": 20.71,
+    "pull_back_off_the_island": {
+      "centre_s": 23.3,
+      "changed_pct": 1.4,
+      "peak_delta": 126,
+      "window_start_s": 23.17,
       "straddled_cut": false,
       "within_shot": true
     },
-    "learned_token_travels": {
-      "centre_s": 23.23,
-      "changed_pct": 4.4,
-      "peak_delta": 233,
-      "window_start_s": 23.1,
+    "diesel_stack_lights": {
+      "centre_s": 27.85,
+      "changed_pct": 5.2,
+      "peak_delta": 133,
+      "window_start_s": 27.72,
       "straddled_cut": false,
       "within_shot": true
     },
-    "feedback_path_spreads": {
-      "centre_s": 26.59,
-      "changed_pct": 2.3,
-      "peak_delta": 197,
-      "window_start_s": 26.46,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "feedback_changes_detent": {
-      "centre_s": 29.48,
-      "changed_pct": 8.2,
-      "peak_delta": 229,
-      "window_start_s": 29.35,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "predefined_token_seats": {
-      "centre_s": 31.6,
-      "changed_pct": 8.5,
-      "peak_delta": 229,
-      "window_start_s": 31.47,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "learned_detent_adjusts": {
-      "centre_s": 34.21,
-      "changed_pct": 3.2,
-      "peak_delta": 236,
-      "window_start_s": 34.08,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "researcher_points_to_port": {
-      "centre_s": 35.85,
-      "changed_pct": 2.5,
-      "peak_delta": 220,
-      "window_start_s": 35.72,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "closed_port_turns": {
-      "centre_s": 38.33,
-      "changed_pct": 3.0,
-      "peak_delta": 220,
-      "window_start_s": 38.2,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "constant_case_shutter_opens": {
-      "centre_s": 39.99,
-      "changed_pct": 18.5,
-      "peak_delta": 237,
-      "window_start_s": 39.86,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "constant_inlet_cycles": {
-      "centre_s": 42.04,
-      "changed_pct": 7.5,
-      "peak_delta": 245,
-      "window_start_s": 41.91,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "higher_biomass_flap_rises": {
-      "centre_s": 45.36,
-      "changed_pct": 7.4,
-      "peak_delta": 230,
-      "window_start_s": 45.23,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "breeding_weight_emblem_seats": {
-      "centre_s": 49.94,
-      "changed_pct": 3.1,
-      "peak_delta": 199,
-      "window_start_s": 49.81,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "catch_swings_flap_duck": {
-      "centre_s": 52.3,
-      "changed_pct": 6.5,
-      "peak_delta": 240,
-      "window_start_s": 52.17,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "stock_linked_doorway_wipes": {
-      "centre_s": 56.11,
-      "changed_pct": 41.8,
-      "peak_delta": 240,
-      "window_start_s": 55.98,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "stock_linked_inlet_connects": {
-      "centre_s": 59.56,
-      "changed_pct": 8.0,
-      "peak_delta": 246,
-      "window_start_s": 59.43,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "separate_candidates_dock": {
-      "centre_s": 62.39,
-      "changed_pct": 5.6,
-      "peak_delta": 197,
-      "window_start_s": 62.26,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "own_comparison_aligns": {
-      "centre_s": 65.26,
-      "changed_pct": 3.2,
-      "peak_delta": 241,
-      "window_start_s": 65.13,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "higher_catch_flap_opens": {
-      "centre_s": 67.02,
-      "changed_pct": 14.5,
-      "peak_delta": 241,
-      "window_start_s": 66.89,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "lower_biomass_flap_opens": {
-      "centre_s": 70.11,
-      "changed_pct": 7.3,
-      "peak_delta": 239,
-      "window_start_s": 69.98,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "both_case_results_retract": {
-      "centre_s": 74.23,
-      "changed_pct": 9.0,
-      "peak_delta": 212,
-      "window_start_s": 74.1,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "shared_test_frame_opens": {
-      "centre_s": 76.72,
-      "changed_pct": 18.0,
+    "push_in_on_sourdough": {
+      "centre_s": 34.23,
+      "changed_pct": 2.1,
       "peak_delta": 213,
-      "window_start_s": 76.59,
+      "window_start_s": 34.1,
       "straddled_cut": false,
       "within_shot": true
     },
-    "model_carried_to_harbor": {
-      "centre_s": 80.45,
-      "changed_pct": 9.4,
-      "peak_delta": 239,
-      "window_start_s": 80.32,
+    "fuel_needle_slams_over": {
+      "centre_s": 38.23,
+      "changed_pct": 9.8,
+      "peak_delta": 220,
+      "window_start_s": 38.1,
       "straddled_cut": false,
       "within_shot": true
     },
-    "shared_shutters_placed": {
-      "centre_s": 83.58,
-      "changed_pct": 8.3,
-      "peak_delta": 231,
-      "window_start_s": 83.45,
+    "gallons_drop_into_the_drum": {
+      "centre_s": 42.23,
+      "changed_pct": 1.5,
+      "peak_delta": 136,
+      "window_start_s": 42.1,
       "straddled_cut": false,
       "within_shot": true
     },
-    "harbor_test_leaf_unfolds": {
-      "centre_s": 88.27,
-      "changed_pct": 3.3,
-      "peak_delta": 172,
-      "window_start_s": 88.14,
+    "ledger_wall_assembles": {
+      "centre_s": 47.18,
+      "changed_pct": 2.4,
+      "peak_delta": 146,
+      "window_start_s": 47.05,
       "straddled_cut": false,
       "within_shot": true
     },
-    "catch_goal_shutter_opens": {
-      "centre_s": 91.08,
-      "changed_pct": 2.6,
-      "peak_delta": 235,
-      "window_start_s": 90.95,
+    "partner_plates_land": {
+      "centre_s": 49.74,
+      "changed_pct": 3.1,
+      "peak_delta": 180,
+      "window_start_s": 49.61,
       "straddled_cut": false,
       "within_shot": true
     },
-    "stock_goal_shutter_opens": {
-      "centre_s": 93.29,
-      "changed_pct": 14.0,
-      "peak_delta": 234,
-      "window_start_s": 93.16,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "next_test_gate_retracts": {
-      "centre_s": 96.4,
+    "cyan_twin_draws_itself": {
+      "centre_s": 53.55,
       "changed_pct": 2.2,
-      "peak_delta": 216,
-      "window_start_s": 96.27,
+      "peak_delta": 165,
+      "window_start_s": 53.42,
       "straddled_cut": false,
       "within_shot": true
     },
-    "simulation_collar_unlatches": {
-      "centre_s": 99.46,
-      "changed_pct": 5.5,
-      "peak_delta": 237,
-      "window_start_s": 99.33,
+    "function_plates_slam_up": {
+      "centre_s": 57.81,
+      "changed_pct": 2.8,
+      "peak_delta": 243,
+      "window_start_s": 57.68,
       "straddled_cut": false,
       "within_shot": true
     },
-    "research_value_plaque_unfolds": {
-      "centre_s": 104.19,
-      "changed_pct": 5.1,
-      "peak_delta": 211,
-      "window_start_s": 104.06,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "grip_moves_to_test_again": {
-      "centre_s": 107.81,
-      "changed_pct": 2.2,
+    "bar_overshoots_and_settles": {
+      "centre_s": 61.61,
+      "changed_pct": 9.3,
       "peak_delta": 233,
-      "window_start_s": 107.68,
+      "window_start_s": 61.48,
       "straddled_cut": false,
       "within_shot": true
     },
-    "patient_hand_guides_rebound": {
-      "centre_s": 111.15,
-      "changed_pct": 1.7,
-      "peak_delta": 234,
-      "window_start_s": 111.02,
+    "twin_freezes_mid_draw": {
+      "centre_s": 69.41,
+      "changed_pct": 2.1,
+      "peak_delta": 177,
+      "window_start_s": 69.28,
       "straddled_cut": false,
+      "within_shot": true
+    },
+    "schedule_stamp_comes_down": {
+      "centre_s": 72.36,
+      "changed_pct": 5.2,
+      "peak_delta": 217,
+      "window_start_s": 72.23,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "outline_sags_away": {
+      "centre_s": 74.6,
+      "changed_pct": 3.8,
+      "peak_delta": 195,
+      "window_start_s": 74.47,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "whip_back_to_the_rack": {
+      "centre_s": 75.73,
+      "changed_pct": 9.5,
+      "peak_delta": 240,
+      "window_start_s": 75.6,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "demand_bar_builds_from_floor": {
+      "centre_s": 77.12,
+      "changed_pct": 1.4,
+      "peak_delta": 92,
+      "window_start_s": 76.99,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "plate_snaps_across_rack": {
+      "centre_s": 77.41,
+      "changed_pct": 18.2,
+      "peak_delta": 174,
+      "window_start_s": 77.28,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "bar_climbs_past_the_plate": {
+      "centre_s": 79.1,
+      "changed_pct": 2.3,
+      "peak_delta": 173,
+      "window_start_s": 78.97,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "forecast_trace_draws": {
+      "centre_s": 82.8,
+      "changed_pct": 2.6,
+      "peak_delta": 186,
+      "window_start_s": 82.67,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "server_block_slides_under_line": {
+      "centre_s": 87.8,
+      "changed_pct": 0.8,
+      "peak_delta": 167,
+      "window_start_s": 87.67,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "pull_out_to_the_two_boxes": {
+      "centre_s": 88.2,
+      "changed_pct": 0.9,
+      "peak_delta": 188,
+      "window_start_s": 88.07,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "hatching_crawls_across_measured": {
+      "centre_s": 88.6,
+      "changed_pct": 6.9,
+      "peak_delta": 238,
+      "window_start_s": 88.47,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "bracket_extends_and_withdraws": {
+      "centre_s": 92.5,
+      "changed_pct": 3.7,
+      "peak_delta": 217,
+      "window_start_s": 92.37,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "sourdough_steps_between_boxes": {
+      "centre_s": 96.2,
+      "changed_pct": 6.8,
+      "peak_delta": 237,
+      "window_start_s": 96.07,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "quote_plate_rises": {
+      "centre_s": 98.98,
+      "changed_pct": 2.0,
+      "peak_delta": 157,
+      "window_start_s": 98.97,
+      "straddled_cut": true,
+      "within_shot": true
+    },
+    "door_swings_light_crosses_water": {
+      "centre_s": 99.71,
+      "changed_pct": 3.9,
+      "peak_delta": 247,
+      "window_start_s": 99.58,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "second_creek_spills_past_intake": {
+      "centre_s": 106.46,
+      "changed_pct": 0.8,
+      "peak_delta": 154,
+      "window_start_s": 106.33,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "climb_off_the_island": {
+      "centre_s": 111.11,
+      "changed_pct": 8.2,
+      "peak_delta": 237,
+      "window_start_s": 110.98,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "dots_bloom_across_alaska": {
+      "centre_s": 112.31,
+      "changed_pct": 6.7,
+      "peak_delta": 237,
+      "window_start_s": 112.18,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "cyan_thread_stretches_to_dot": {
+      "centre_s": 112.65,
+      "changed_pct": 12.2,
+      "peak_delta": 129,
+      "window_start_s": 112.52,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "match_cut_to_the_powerhouse_door": {
+      "centre_s": 113.79,
+      "changed_pct": 7.0,
+      "peak_delta": 236,
+      "window_start_s": 113.66,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "drip_lands_on_the_empty_box": {
+      "centre_s": 114.24,
+      "changed_pct": 0.6,
+      "peak_delta": 104,
+      "window_start_s": 114.11,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "question_plate_rises": {
+      "centre_s": 114.84,
+      "changed_pct": 3.1,
+      "peak_delta": 193,
+      "window_start_s": 114.81,
+      "straddled_cut": true,
       "within_shot": true
     }
   }

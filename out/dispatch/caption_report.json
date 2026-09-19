@@ -3,21 +3,21 @@
   "fails": [],
   "warns": [],
   "metrics": {
-    "chars": 1497,
-    "hook": "A pollock model can change what an AI's apparent advantage means.",
-    "hook_len": 65,
+    "chars": 2189,
+    "hook": "In Cordova, Alaska, a rack of servers runs inside a hydroelectric powerhouse.",
+    "hook_len": 77,
     "hashtags": [
       "#Alaska",
       "#ArtificialIntelligence",
-      "#Fisheries",
-      "#Pollock"
+      "#Energy",
+      "#Microgrids"
     ],
     "n_hashtags": 4,
     "emoji": 0,
     "unicode_bold": 0,
     "bullet_lines": 0,
     "sentence_initial_but": 0,
-    "commas_per_100w": 0.98,
+    "commas_per_100w": 1.56,
     "passes": true
   }
 }

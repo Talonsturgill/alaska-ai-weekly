@@ -2,15 +2,15 @@
  "measured_on": "dispatch_square.mp4",
  "also_covers_master": true,
  "master_measured": {
-  "i": -14.36,
-  "tp": -3.26,
-  "lra": 6.9
+  "i": -14.29,
+  "tp": -3.22,
+  "lra": 6.4
  },
- "master_identity": "the 9:16 master measures I=-14.36 TP=-3.26 LRA=6.9 against the delivered square's I=-14.36 TP=-3.26 LRA=6.9. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
+ "master_identity": "the 9:16 master measures I=-14.29 TP=-3.22 LRA=6.4 against the delivered square's I=-14.29 TP=-3.22 LRA=6.4. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
  "tool": "ffmpeg loudnorm + forced-alignment word timings",
- "delivered_i": -14.36,
- "delivered_tp": -3.26,
- "delivered_lra": 6.9,
+ "delivered_i": -14.29,
+ "delivered_tp": -3.22,
+ "delivered_lra": 6.4,
  "targets": {
   "i": -14.0,
   "tp_max": -1.0,
@@ -24,42 +24,42 @@
   "true_peak": true,
   "lra": true
  },
- "vo_gaps_ge_0_35s": 19,
- "vo_gaps_ge_0_50s": 19,
- "vo_silence_in_gaps_s": 19.94,
- "last_word_ends_s": 112.64,
+ "vo_gaps_ge_0_35s": 39,
+ "vo_gaps_ge_0_50s": 36,
+ "vo_silence_in_gaps_s": 32.35,
+ "last_word_ends_s": 113.8,
  "longest_gaps": [
   {
-   "at": 72.3,
-   "len": 1.58
+   "at": 15.18,
+   "len": 1.64
   },
   {
-   "at": 3.9,
-   "len": 1.5
+   "at": 94.34,
+   "len": 1.42
   },
   {
-   "at": 19.28,
-   "len": 1.36
+   "at": 44.12,
+   "len": 1.38
   },
   {
-   "at": 43.8,
-   "len": 1.36
+   "at": 70.7,
+   "len": 1.24
   },
   {
-   "at": 65.56,
-   "len": 1.26
+   "at": 88.3,
+   "len": 1.2
   },
   {
-   "at": 30.28,
+   "at": 97.78,
+   "len": 1.16
+  },
+  {
+   "at": 39.02,
    "len": 1.12
   },
   {
-   "at": 54.64,
-   "len": 1.12
-  },
-  {
-   "at": 97.74,
-   "len": 1.12
+   "at": 59.52,
+   "len": 1.1
   }
  ],
  "diagnosis": "LRA is inside the 6 to 9 LU target."

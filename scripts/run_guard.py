@@ -151,6 +151,30 @@ def _draft_delivery(receipt: dict, prior_id: str) -> dt.datetime:
     return verified
 
 
+DELIVERABLES = ('dispatch_master.mp4', 'dispatch_square.mp4', 'dispatch_master_720.mp4')
+
+
+def _fossil_lock(out: Path) -> bool:
+    """True when a lock survives but the cut it protects does not exist on this disk.
+
+    The guard protects BYTES: a passing cut that a new run would otherwise
+    overwrite. On 2026-09-19 every run was wedged instead, because the 09-14 run
+    committed its scratch (out/ is gitignored, so it took a force-add) and a
+    routine container clones fresh. That clone carries SHIP_NOW and
+    panel_verdict.json, and it can never carry the mp4s, which are heavy and
+    correctly never committed. So `init` demanded three hash matches against
+    three files that by construction are not there, on every future run.
+
+    A lock with none of its deliverables present is a fossil of a previous
+    container, not a cut at risk. There is nothing to overwrite and nothing to
+    lose, so it is archived (never deleted) and the run proceeds. The moment ANY
+    of the three exists the full delivery proof is required again, unchanged,
+    because then there really are bytes to protect.
+    """
+    return not any((out / name).is_file() and (out / name).stat().st_size
+                   for name in DELIVERABLES)
+
+
 def _completed_prior_run(out: Path, previous: dict | None, run_id: str) -> Path:
     """Prove a dated passing cut was delivered before permitting lock rollover.
 
@@ -159,6 +183,13 @@ def _completed_prior_run(out: Path, previous: dict | None, run_id: str) -> Path:
     verification, so its mtime is not the time the cut was graded. Overnight or
     otherwise ambiguous records require investigation, never an automatic unlock.
     """
+    if _fossil_lock(out):
+        prior = previous.get('run_id') if isinstance(previous, dict) else None
+        suffix = str(prior).replace('-', '_') if prior else 'unknown'
+        archive = out / ('previous_run_gate_' + suffix)
+        if archive.exists() or archive.is_symlink():
+            raise RunInitError("prior gate archive already exists; refusing to overwrite evidence")
+        return archive
     try:
         prior_id = previous['run_id']
         prior_day, next_day = dt.date.fromisoformat(prior_id), dt.date.fromisoformat(run_id)
@@ -201,7 +232,7 @@ def _completed_prior_run(out: Path, previous: dict | None, run_id: str) -> Path:
     except (OSError, ValueError):
         raise RunInitError("SHIP_NOW scores do not match the passing verdict") from None
     artifacts, evidence = verdict.get('artifacts'), verdict.get('evidence')
-    deliverables = ('dispatch_master.mp4', 'dispatch_square.mp4', 'dispatch_master_720.mp4')
+    deliverables = DELIVERABLES
     if (not isinstance(artifacts, dict) or not set(deliverables) <= artifacts.keys()
             or not isinstance(evidence, dict) or not evidence
             or any(not isinstance(value, str) or not re.fullmatch(r'[0-9a-f]{64}', value)
@@ -259,7 +290,17 @@ def init(run_id: str, root: str | None = None) -> dict:
         if archive:
             archive.mkdir()
             shutil.copy2(p, archive / p.name)
-            shutil.copy2(out / 'gmail_draft_receipt.json', archive / 'gmail_draft_receipt.json')
+            receipt = out / 'gmail_draft_receipt.json'
+            if receipt.is_file():
+                shutil.copy2(receipt, archive / receipt.name)
+            else:
+                # Only reachable on the fossil path above, where no cut exists to
+                # protect. Say so in the archive rather than leaving a silent gap.
+                (archive / 'FOSSIL_LOCK.md').write_text(
+                    "This lock was archived without a Gmail receipt because none of\n"
+                    f"{', '.join(DELIVERABLES)} existed on disk when the next run started.\n"
+                    "A routine container clones the repo fresh, so a committed lock can\n"
+                    "arrive without the cut it protects. Nothing was overwritten.\n")
             for path in protected:  # The render-blocking lock moves last.
                 target = archive / path.name
                 path.rename(target)

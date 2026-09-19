@@ -1,31 +1,170 @@
 {
-  "run_date": "2026-09-14",
+  "run_date": "2026-09-19",
+  "window_days": 10,
+  "window_note": "story_gate window says 10 days, widened in practice because the automation last shipped 2026-09-14 and skipped 5 days. Anything the audience has not seen is unspent inventory.",
   "rungs": [
     {
       "rung": "in_window_sweep",
       "attempted": true,
-      "candidates_found": 4
+      "note": "First fan-out of 4 researchers STALLED: all four output files sat at 110 bytes with no activity and never returned. Relaunched 2 researchers and swept in the foreground in parallel rather than waiting."
+    },
+    {
+      "rung": "outlet_index_sweep",
+      "attempted": true,
+      "note": "WebFetch of alaskapublic.org, ktoo.org, adn.com/alaska-news, uaf.edu/news, alaska.edu/news, uaa.alaska.edu/news, newsminer.com, akbizmag.com, fisheries.noaa.gov/region/alaska, usgs.gov Alaska Science Center. alaskabeacon.com and kyuk.org return 403 to WebFetch."
+    },
+    {
+      "rung": "widened_window",
+      "attempted": true,
+      "note": "Locked story is dated August 11th (ACEP release) and August 27th (broadcast follow-up), inside the 30-day window and never shown to this audience. Its forward hook is live: Phase One starts October 1st."
+    },
+    {
+      "rung": "primary_source_mining",
+      "attempted": true,
+      "note": "Second researcher mined the NSF Award API (awardeeStateCode=AK returned 27 Alaska awards for July through September 2026, six with explicit AI or ML content), DOE OSTI, USAspending, Federal Register, DVIDS, AVO and USGS. Productive vein, several carried leads recorded below."
     }
   ],
+  "sibling_channel_check": {
+    "why": "The LinkedIn carousel routine in Talonsturgill/alaskaaicarousels ships DAILY to the same audience off the same beat. Its ledger is not this repo's ledger, so this repo's dedupe.py cannot see it, and two of this run's three best candidates were already published there within 24 hours.",
+    "source": "ledger/topics.json in Talonsturgill/alaskaaicarousels, entries 54-63",
+    "burned_by_sibling": [
+      {
+        "date": "2026-09-19",
+        "no": 63,
+        "subject": "AAOKH Indigenous observations and the MOM6 COBALT ARC11k Arctic Ocean model (Hauri et al.)"
+      },
+      {
+        "date": "2026-09-18",
+        "no": 62,
+        "subject": "ACUASI Windracers ULTRA 1,000 km blood-sample flight out of Nenana"
+      },
+      {
+        "date": "2026-09-17",
+        "no": 61,
+        "subject": "University of Alaska Generative AI Security Standard"
+      },
+      {
+        "date": "2026-09-14",
+        "no": 59,
+        "subject": "Ryan Air Rural Health Transformation award"
+      },
+      {
+        "date": "2026-09-12",
+        "no": 57,
+        "subject": "NMFS / Office of Naval Research Arctic acoustic incidental harassment authorization"
+      },
+      {
+        "date": "2026-09-11",
+        "no": 56,
+        "subject": "Cook Inlet storage and Section 1200 curtailment order"
+      },
+      {
+        "date": "2026-09-10",
+        "no": 55,
+        "subject": "Anchorage Assembly police surveillance items"
+      },
+      {
+        "date": "2026-09-09",
+        "no": 54,
+        "subject": "Executive Order 14421 and the bulk-power system definition"
+      }
+    ]
+  },
   "candidates": [
     {
-      "headline": "Pollock neural harvest-policy simulations",
-      "verdict": "verified primary September11 paper; selected"
+      "id": "cand_aurora_ai",
+      "headline": "AURORA-AI: a federal AI award aimed at Alaska's islanded grids, starting at Cordova",
+      "status": "LOCKED",
+      "why": "Untouched by BOTH channels. The AI angle is literal rather than stretched: the funder calls it an AI program, the project name contains the words, and the deliverable is forecasting, anomaly detection and real-time dispatch on grids with nothing to fall back on. Alaska-first: over 200 communities run islanded microgrids and every avoided gallon of diesel stays in the village. Register rotates toward a genuine win after ten dispatches that skew mixed and curious, and it still carries an honest counterpoint for Act 3.",
+      "date": "2026-08-11",
+      "second_movement": "Cordova is also siting a roughly 100 kilowatt modular data center by the river for water cooling and hydro power. The same village is getting AI grid management and AI electrical load in the same year, which recontextualises the whole first half."
     },
     {
-      "headline": "DEC spill-response drone procurement",
-      "verdict": "primary notice useful, PDF access/date ambiguities; not selected"
+      "id": "cand_acuasi_1000km",
+      "headline": "ACUASI flies 1,000 km out of Nenana with Olympic blood samples aboard",
+      "status": "REJECTED",
+      "why": "Published as carousel No.62 on September 18th, one day ago, to the same LinkedIn audience. Also collides with this repo's 2026-09-11 Ryan Air rural-health-drone dispatch, eight days ago. Strongest single story of the week on the numbers, and unusable twice over."
     },
     {
-      "headline": "Under-ice communication fieldwork",
-      "verdict": "August26 backup, future AI link weaker"
+      "id": "cand_aaokh_arctic_model",
+      "headline": "Indigenous observations improve an Arctic Ocean model (Hauri et al., Communications Earth and Environment)",
+      "status": "REJECTED",
+      "why": "Published as carousel No.63 TODAY. Independently, the method is a physics-based regional ocean-ice model plus a seasonal calendar framework, not AI or ML, so calling it an AI story would have been the stretch this routine bans."
+    },
+    {
+      "id": "cand_cms_ai_imaging",
+      "headline": "CMS rural health money buys AI stroke imaging across 21 Alaska hospitals",
+      "status": "REJECTED",
+      "why": "The carousel ledger already carries the Alaska Department of Health, PeaceHealth Ketchikan Medical Center and Alaska Stroke Coalition cluster. The in-window September 9th round is mostly non-AI awards, and its largest technology award went to Ryan Air, covered here on September 11th."
+    },
+    {
+      "id": "cand_apd_surveillance",
+      "headline": "Anchorage delays its police AI ordinance to October 20th",
+      "status": "REJECTED",
+      "why": "Carousel No.55 on September 10th covered the same Assembly surveillance fight. The September 16th postponement is a follow-up to a story the audience was shown nine days ago."
+    },
+    {
+      "id": "cand_xprize_wildfire",
+      "headline": "XPRIZE Wildfire ran its autonomous finals in Nenana, and has named no winner",
+      "status": "HELD",
+      "why": "Genuinely untouched and cinematic: Anduril, AURA Foresight and Dryad flying autonomous detection and suppression against controlled ignitions outside Fairbanks. Finals testing was June 2026, outside the 30-day window, and there is no September news hook. Held as a carried lead for a run that needs rung 7, and as the third drone-class subject in four days across the brand it would have been the wrong pick today regardless."
+    },
+    {
+      "id": "cand_noaa_survey_framework",
+      "headline": "NOAA Fisheries proposes rebuilding Alaska surveys around uncrewed vehicles and eDNA",
+      "status": "HELD",
+      "why": "September 3rd, Stan Kotwicki at the Alaska Fisheries Science Center. Real and interesting, but the automated-analysis content is thin in the source and this repo shipped an eastern Bering Sea pollock modelling dispatch on September 14th. Carried lead."
+    },
+    {
+      "id": "cand_delegation_ai_guardrails",
+      "headline": "Alaska's senators want AI guardrails, its House member wants off-grid data center exemptions",
+      "status": "REJECTED",
+      "why": "Statements to a reporter, not bills, votes or hearings. The one concrete Alaska artifact, Begich's DATA Act, is from April."
+    },
+    {
+      "id": "cand_permafrost_gateway",
+      "headline": "AI watches 4 million Arctic lakes, and about 30 drained in June and July",
+      "status": "HELD",
+      "why": "The Permafrost Discovery Gateway runs deep learning over satellite imagery to flag permafrost change in near real time, with training data reaching back to 1940s aerial film. Strongest pictures of anything found today: a lake a thousand years old emptying in hours. Held rather than locked for two reasons. It echoes this repo's 2026-09-10 McCarthy rock glacier remote-sensing dispatch, nine days ago, which is the same shape of story (satellites and models watching Alaska's frozen ground move). And the piece is an explainer the researchers wrote themselves on August 26th, not a new peer-reviewed result. It is the first carried lead.",
+      "sources": [
+        "https://theconversation.com/disappearing-lakes-old-photos-and-ai-are-helping-scientists-map-arctic-permafrost-thaw-in-near-real-time-290238"
+      ]
+    },
+    {
+      "id": "cand_nsf_rare_earths",
+      "headline": "A $3.8M NSF award has UAA pairing microbiology with AI to pull rare earths out of coal mine waste",
+      "status": "HELD",
+      "why": "NSF award 2614749, University of Alaska Anchorage, PI Brandon R Briggs, $3,824,575, running September 1st 2026 to August 31st 2030. Untouched by both channels and genuinely in window. Held only because it is one more award-announcement story and AURORA-AI is the better film. Second carried lead. Sibling leads from the same vein: NSF 2630206 (UAF, Erin Trochim, $50,000 I-Corps, explainable AI for satellite-derived bathymetry), NSF 2608510 (UAF, Carl Tape, $1,772,170, GAIA, a continuously updating digital twin for Alaska landslides and floods), NSF 2536745 (UAF, Christine Waigl, $1,588,147, FIRE-WUI, ML for fire weather), NSF 2532372 ($10,500,000, Alaska Critical Mineral Accelerator Engine, AI-based mineral discovery).",
+      "sources": [
+        "https://api.nsf.gov/services/v1/awards.json?id=2614749"
+      ]
+    },
+    {
+      "id": "cand_air_force_data_centers",
+      "headline": "The Air Force offers 4,700 acres at three Alaska bases for AI data centers, and Fairbanks pushes back",
+      "status": "HELD",
+      "why": "Live, contested and well sourced, with Murkowski on the record against. Held because the brand's data-center beat is crowded: the carousel ran Executive Order 14421 on September 9th and Cook Inlet gas on September 11th, and this repo ran DeepGreen's subsea data center on September 6th. Third carried lead, and the one to watch, because a lease award would make it unavoidable."
     }
   ],
   "locked_story": {
-    "headline": "Pollock simulations expose the choices inside an AI harvest policy",
-    "found_at_rung": "in_window_sweep",
-    "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-    "dedupe": "FRESH",
-    "fact_check": "verified_findings.json"
+    "id": "cand_aurora_ai",
+    "title": "AURORA-AI",
+    "one_line": "UAF's Alaska Center for Energy and Power won a $725,000 Department of Energy award under the Genesis Mission to build AURORA-AI, pairing physics-based digital twins of the grid with real-time AI to forecast demand and catch faults on Alaska's islanded microgrids, starting with Cordova Electric Cooperative.",
+    "found_at_rung": "widened_window",
+    "key_entities": [
+      "Alaska Center for Energy and Power",
+      "University of Alaska Fairbanks",
+      "AURORA-AI",
+      "Genesis Mission",
+      "Department of Energy",
+      "Richard Wies",
+      "Cordova Electric Cooperative",
+      "Colorado State University",
+      "National Laboratory of the Rockies",
+      "islanded microgrid",
+      "physics-based digital twin",
+      "modular data center"
+    ],
+    "headline": "AURORA-AI: a $725,000 federal AI award aimed at Alaska's islanded grids, starting at Cordova"
   }
 }
