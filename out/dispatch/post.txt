@@ -1,17 +1,19 @@
-A pollock model can change what an AI's apparent advantage means.
+In Cordova, Alaska, a rack of servers runs inside a hydroelectric powerhouse.
 
-A paper published September 11th explores learned harvest rules for eastern Bering Sea pollock. Authors affiliated with the Alaska Fisheries Science Center helped build the research.
+Greensparc put it there in 2024, cooled by the same water that spins the turbine. Cordova is now getting an AI project too. The two have nothing to do with each other, and that turns out to be the interesting part.
 
-The agent practices harvest choices through simulated seasons. Feedback rewards outcomes and guides changes to its rule. Researchers then compare that learned policy with a predefined harvest rule.
+In August the University of Alaska Fairbanks said it won $725,000 from the Energy Department's Genesis Mission to build AURORA-AI. A digital twin of Cordova's grid, made from the co-op's own records, with machine learning on it. Forecast demand. Spot abnormal conditions. Choose water over fuel. It is a Phase One award. Work begins October 1st and runs nine months.
 
-The biological assumptions matter. In the constant-recruitment case, the learned policy leaves higher spawning biomass than the comparison. That's the weight of breeding fish. It also produces large annual catch swings.
+Here is why Cordova is the right place to try this. The grid is an island. Eighteen megawatts, 1,566 customers, no wire to anywhere else. About eighty percent of the power is hydro from two creeks and the backstop is a 10.8 megawatt diesel plant. Guess demand wrong and the co-op can't buy from a neighbor. It burns fuel. A forecasting error there has a price you can count in gallons. Almost no other grid in the country offers a scoreboard that clean.
 
-A separate experiment links recruitment to the breeding stock. There the learned policy produces higher catches and lower spawning biomass than its own comparison. The first case's stock advantage doesn't carry across automatically.
+So the test is narrow and it is fair. By next June, is there a measured fuel number, or a demonstration? Richard Wies, who leads the project, calls nine months a really short period of performance. He is right about that.
 
-That gives the research a useful job. It creates specific alternatives to examine against explicit goals. Both learned and predefined rules deserve that comparison.
+And those servers matter after all. They are not part of the project. They are a load on the same grid, so whatever the model learns to predict, it has to predict them too.
 
-NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock. Fishing businesses depend on sound management to plan their seasons. These illustrative simulations leave operational development ahead, with no demonstrated winning rule for the real fishery.
+One more thing worth saying plainly. Cordova is the easy case. It has hydro, engineers and records a model can actually use. Alaska's power cost program covers 193 communities running mostly on diesel at three to five times what power costs on the road system. Those are the grids that need a forecast most and they have the least data to build one with.
 
-Which balance should a candidate have to demonstrate between catches and the breeding stock?
+I want this to work. I also think the word AI has to be earned here rather than assumed, and the cheapest way to earn it is to name the method it beats and then beat it in gallons.
 
-#Alaska #ArtificialIntelligence #Fisheries #Pollock
+What would convince you that a grid forecast actually worked?
+
+#Alaska #ArtificialIntelligence #Energy #Microgrids

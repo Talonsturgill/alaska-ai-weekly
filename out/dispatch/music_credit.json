@@ -1,10 +1,10 @@
 {
-  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Light%20Thought%20var%201.mp3",
-  "title": "Light Thought var 1",
+  "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Frost%20Waltz.mp3",
+  "title": "Frost Waltz",
   "composer": "Kevin MacLeod",
   "license": "CC BY 4.0",
   "source": "incompetech.com",
-  "credit": "Light Thought var 1 by Kevin MacLeod at incompetech.com licensed under CC BY 4.0",
+  "credit": "\"Frost Waltz\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
   "wav": "out/dispatch/music_bed.wav",
-  "duration": 162.5
+  "duration": 135.5
 }

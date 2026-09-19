@@ -14,14 +14,16 @@
   "lines": [
     {
       "idx": 0,
-      "text": "In Cordova, Alaska, [curious] servers run inside a hydroelectric powerhouse.",
+      "text": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
       "intent": "hook",
       "emphasis": "powerhouse",
       "energy": 3,
       "pace": "baseline, concrete, no announcer lift",
-      "tags": ["[curious]"],
+      "tags": [
+        " "
+      ],
       "pause_before": false,
-      "why": "The picture is surprising on its own, so the read stays flat and factual and lets the image pull; the single [curious] cue sits after the place name, where the surprise actually starts."
+      "why": "The picture is surprising on its own, so the read stays flat and factual and lets the image pull; the single cue sits after the place name, where the surprise actually starts."
     },
     {
       "idx": 1,
@@ -47,25 +49,29 @@
     },
     {
       "idx": 3,
-      "text": "Cordova Electric runs an island grid. [short pause] Eighteen megawatts, fifteen sixty six customers, no wire out.",
+      "text": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.",
       "intent": "stat",
       "emphasis": "island",
       "energy": 3,
       "pace": "plain on the first sentence, then step DOWN through the three facts, the last one flattest and final",
-      "tags": ["[short pause]"],
+      "tags": [
+        " "
+      ],
       "pause_before": true,
       "why": "The mechanism starts here and wants no colour, but three figures in a row will flatten if they are read at one pitch, so the pause separates the claim from the evidence and the run descends instead of listing."
     },
     {
       "idx": 4,
-      "text": "About eighty percent hydro, from two creeks. [slow] Ten point eight megawatts of diesel behind it.",
+      "text": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
       "intent": "stat",
       "emphasis": "diesel",
       "energy": 2,
       "pace": "warmer and easier on the two creeks, then slower and cooler on the diesel figure",
-      "tags": ["[slow]"],
+      "tags": [
+        " "
+      ],
       "pause_before": false,
-      "why": "Two opposed resources, read below the line before so the split lands as arithmetic rather than drama; [slow] sits mid-line at a genuine change of cadence, which keeps the second figure from being swallowed by the first."
+      "why": "Two opposed resources, read below the line before so the split lands as arithmetic rather than drama; sits mid-line at a genuine change of cadence, which keeps the second figure from being swallowed by the first."
     },
     {
       "idx": 5,
@@ -168,12 +174,14 @@
     },
     {
       "idx": 14,
-      "text": "So the test is narrow. [short pause] By June, gallons saved, or a demonstration?",
+      "text": "So the test is narrow. By June, gallons saved, or a demonstration?",
       "intent": "stakes",
       "emphasis": "demonstration",
       "energy": 3,
       "pace": "measured, the question genuinely open at the end, no rhetorical dip",
-      "tags": ["[short pause]"],
+      "tags": [
+        " "
+      ],
       "pause_before": true,
       "why": "The honest heart. The question is asked straight, and the pause holds open the empty measured slot the image shows here."
     },
@@ -244,5 +252,5 @@
       "why": "A real question to a real person, so it settles back down and stays conversational; an engagement-bait lilt here would undo the whole register."
     }
   ],
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty. Neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, grounded and genuinely curious, an Alaska public radio host who finds this interesting rather than impressive. Admire the work and stay level about what has not been measured yet. Dry, concrete honesty, never celebratory, never sour, never a gotcha.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nDelivery: let the short lines sit in silence rather than hurrying into the next one. Quiet and personal on \"Remember them.\" The lines of figures are not a list: change cadence inside each one, state a count, then set the next number down separately. Settle down onto \"a bad forecast costs gallons\" rather than pushing it. Lift through the August award and the digital twin, then let \"Four partners\" arrive smaller and calmer, as a fair correction and not as a catch. Turn the corner audibly on \"Now, those servers.\" Hand the Richard Wies line over as something he said. Widen and quiet down for the rest of Alaska. Speak the last two lines to one person in the room.\nTranscript:\nIn Cordova, Alaska, [curious] servers run inside a hydroelectric powerhouse.\nGreensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.\nRemember them.\nCordova Electric runs an island grid. [short pause] Eighteen megawatts, fifteen sixty six customers, no wire out.\nAbout eighty percent hydro, from two creeks. [slow] Ten point eight megawatts of diesel behind it.\nGuess demand wrong and the co op can't buy from a neighbor. It burns fuel.\nSo here, a bad forecast costs gallons.\nIn August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.\nAURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.\nA Phase One award, beginning October first, nine months.\nFour partners. U A F's share, three hundred twenty five thousand.\nNow, those servers.\nNot the project's. Just a load on the same grid.\nWhatever it predicts, it predicts them too.\nSo the test is narrow. [short pause] By June, gallons saved, or a demonstration?\nRichard Wies, who leads it, calls that a really short period of performance.\nAnd Cordova is the easy case.\nAlaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.\nThey need it most, with the least data.\nSo watch for gallons.\nWhat would convince you it worked?"
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty. Neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, grounded and genuinely curious, an Alaska public radio host who finds this interesting rather than impressive. Admire the work and stay level about what has not been measured yet. Dry, concrete honesty, never celebratory, never sour, never a gotcha.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nDelivery: let the short lines sit in silence rather than hurrying into the next one. Quiet and personal on \"Remember them.\" The lines of figures are not a list: change cadence inside each one, state a count, then set the next number down separately. Settle down onto \"a bad forecast costs gallons\" rather than pushing it. Lift through the August award and the digital twin, then let \"Four partners\" arrive smaller and calmer, as a fair correction and not as a catch. Turn the corner audibly on \"Now, those servers.\" Hand the Richard Wies line over as something he said. Widen and quiet down for the rest of Alaska. Speak the last two lines to one person in the room.\nTranscript:\nIn Cordova, Alaska, servers run inside a hydroelectric powerhouse.\nGreensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.\nRemember them.\nCordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.\nAbout eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.\nGuess demand wrong and the co op can't buy from a neighbor. It burns fuel.\nSo here, a bad forecast costs gallons.\nIn August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.\nAURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.\nA Phase One award, beginning October first, nine months.\nFour partners. U A F's share, three hundred twenty five thousand.\nNow, those servers.\nNot the project's. Just a load on the same grid.\nWhatever it predicts, it predicts them too.\nSo the test is narrow. By June, gallons saved, or a demonstration?\nRichard Wies, who leads it, calls that a really short period of performance.\nAnd Cordova is the easy case.\nAlaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.\nThey need it most, with the least data.\nSo watch for gallons.\nWhat would convince you it worked?"
 }
