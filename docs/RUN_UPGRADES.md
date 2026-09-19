@@ -3600,3 +3600,34 @@ It states its own limit rather than overselling: it checks AUTHORED coordinates,
 per-shot camera move can still drift an element across the line on screen. That residue is
 what `crop_safety.py` measures. The two are complementary and a pass here means "nothing was
 authored across the line", never "the square is safe".
+
+**Where the art direction plan was not met by the build.** `art_direction.json` wrote the
+rule for this film before a frame existed: "Content above y 420 and below y 1500 stages the
+vertical and never appears in the square: the fjord wall and rain above, the wet foreground
+rail and alder below. The story itself stays inside the centred 1:1 safe box." The build put
+twelve plates between 1640 and 1822, including the Richard Wies quote with its attribution,
+82,000 ALASKANS . PER AEA, NO WIRE OUT, and the four-line list that ends INTENDED, NOT
+MEASURED. The plan was right and nothing checked it. `plate_overlap_check` was saying the
+same thing from the other side the whole time, because it clamps anything below y=1276 to
+the guard and reported the folded rows as 13 collisions; the other four episodes in the
+engine put nothing down there and pass it clean. All twelve are now inside the band, and the
+fuel bars moved with the GALLONS label they belong to.
+
+**A gate that was measuring the recognizer instead of the film.** `credits_check` called the
+sign-off missing on a frame where it is plainly legible. Tesseract cannot read a capital I
+followed by a capital H in JetBrains Mono and returns TH, so ALASKAAIHQ.COM came back as
+ALASKAATHQ.COM twice. Every cheaper explanation was tested and ruled out before the check
+was touched: four sizes, three letter-spacings, a standalone PIL render of the same TTF, all
+six dictionary flags off, and the strings AI, MAIN, RAIL, AIRPORT and AAI, all of which read
+correctly while AAIH does not. The comparison now collapses that one digraph on both sides,
+which cannot pass a missing credit because a line that is not on screen produces no glyphs
+at all. Verified in both directions, including against a truncated licence line. Widening
+that set requires the same bisection, written next to it.
+
+**Continuity, stated so it is not mistaken for a repeat.** The video feed already carries
+`dispatch-2026-07-29-aurora-ai`, which reported the Genesis Mission award list of July 22nd
+where AURORA-AI was a single uncovered line. That is 52 days back, so the 30-day dedupe
+window returns FRESH, and this is the follow-up that record eventually earned: the August
+UAF announcement, the $725,000, the islanded grid, the powerhouse data centre that is not
+part of it, the Phase 1 timeline and the principal investigator's own words about nine
+months being a really short period of performance.
