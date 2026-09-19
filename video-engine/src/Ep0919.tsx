@@ -100,6 +100,56 @@ const Rain: React.FC<{f: number; density?: number}> = ({f, density = 1}) => (
 );
 
 
+
+/** Water that is a SURFACE rather than a fill. The dead-space meter reads a flat
+ *  gradient as empty and it is right to: the first frame pass fixed the interiors
+ *  and left the exteriors at 54 to 61 percent, all of it sky and water. This adds
+ *  chop lines, a reflected light column, rain dimples, moored hulls and shore rock. */
+const Shore: React.FC<{f: number; y: number; reflectX?: number; boats?: boolean}> =
+({f, y, reflectX = 600, boats = true}) => (
+  <g>
+    <path d={`M-200 ${y}H1300V2100H-200Z`} fill="url(#water19)" opacity={0.92} />
+    {/* the light column off the powerhouse door, broken into rungs by the chop */}
+    {Array.from({length: 13}).map((_, i) => {
+      const yy = y + 26 + i * 44;
+      const w = 34 + i * 11 + 9 * Math.sin(f / 17 + i);
+      return <path key={i} d={`M${reflectX - w} ${yy}h${w * 2}`} stroke={C.amber} strokeWidth={7}
+        opacity={0.30 - i * 0.017} strokeLinecap="round" />;
+    })}
+    {/* chop: many small strokes, which the meter counts as structure because it is */}
+    {Array.from({length: 46}).map((_, i) => {
+      const xx = ((i * 137) % 1500) - 180;
+      const yy = y + 18 + ((i * 83) % 560);
+      const w = 26 + (i % 4) * 14;
+      return <path key={i} d={`M${xx} ${yy}q${w / 2} ${4 + 3 * Math.sin(f / 13 + i)} ${w} 0`}
+        fill="none" stroke={C.light} strokeWidth={3} opacity={0.12 + 0.08 * ((i * 7) % 3)} />;
+    })}
+    {/* rain dimples, always running */}
+    {Array.from({length: 18}).map((_, i) => {
+      const ph = ((f * 0.9 + i * 31) % 60) / 60;
+      const xx = ((i * 211) % 1400) - 150;
+      const yy = y + 40 + ((i * 167) % 520);
+      return <ellipse key={i} cx={xx} cy={yy} rx={6 + 26 * ph} ry={2 + 8 * ph}
+        fill="none" stroke={C.light} strokeWidth={2} opacity={0.22 * (1 - ph)} />;
+    })}
+    {boats && [0, 1].map((i) => (
+      <g key={i} transform={`translate(${150 + i * 760} ${y + 96 + i * 38}) scale(${0.72 - i * 0.18})`}>
+        <path d="M-96 0 q96 44 192 0 l-26 34 q-70 26 -140 0 Z" fill="#0B1B1C" stroke={C.ink} strokeWidth={5} />
+        <path d="M-30 0 v-58 h46 v58" fill="#13302C" stroke={C.ink} strokeWidth={5} />
+        <path d="M40 0 v-92" stroke={C.ink} strokeWidth={6} />
+        <circle cx={40} cy={-96} r={5} fill={C.amber} opacity={0.5 + 0.4 * Math.sin(f / 9 + i)} />
+        <path d={`M-96 ${6 + 3 * Math.sin(f / 21 + i)} q96 20 192 0`} stroke={C.light} strokeWidth={3} opacity={0.2} fill="none" />
+      </g>
+    ))}
+    {/* shore rock along the waterline, so land meets water on an edge with form */}
+    {Array.from({length: 22}).map((_, i) => {
+      const xx = -80 + i * 58 + (i % 3) * 11;
+      const h = 12 + (i % 4) * 9;
+      return <path key={i} d={`M${xx} ${y + 4} q${14} ${-h} ${30} 0 Z`} fill="#0A1E1B" stroke={C.ink} strokeWidth={3} />;
+    })}
+  </g>
+);
+
 /** THE INTERIOR BACKDROP. The dead-space meter samples the SQUARE crop (y 420..1500
  *  of the master), and the first graded cut ran 57.4% low-information area against a
  *  42% ceiling because the band between the headline and the subject was an unbroken
@@ -472,10 +522,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     picture = (
       <g>
         <NightRidge f={f} />
-        <path d="M-200 1180H1300V2100H-200Z" fill="url(#water19)" opacity={0.9} />
-        {[0, 1, 2, 3].map((i) => (
-          <path key={i} d={`M-160 ${1260 + i * 120}q300 ${8 + 5 * Math.sin(f / 21 + i)} 640 0t600 0`} fill="none" stroke={C.light} strokeWidth={3} opacity={0.16} />
-        ))}
+        <Shore f={f} y={1180} reflectX={620} />
         <g transform="translate(600 1500) scale(1.18)">
           <RunOfRiver f={f} flow={0.8} gate={0.7} spill={0.18} lamp={1} lampColor={C.amber} water="#2A6B7E" />
         </g>
@@ -539,6 +586,24 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {[0, 1, 2, 3, 4, 5].map((i) => (
           <path key={i} d={`M${-140 + i * 230} 1260 L${-300 + i * 280} 2100`} stroke={C.moss} strokeWidth={4} opacity={0.2} />
         ))}
+        {/* power poles and a sagging span: this is a grid story, so draw the grid */}
+        {[0, 1, 2].map((i) => (
+          <g key={i} transform={`translate(${120 + i * 400} 1250)`}>
+            <path d="M0 0v-300" stroke={C.ink} strokeWidth={13} />
+            <path d="M0 -300v-8" stroke="#2C4A44" strokeWidth={9} />
+            <path d="M-56 -258h112" stroke={C.ink} strokeWidth={9} />
+            {[-46, 46].map((k) => <circle key={k} cx={k} cy={-266} r={7} fill="#2C4A44" stroke={C.ink} strokeWidth={3} />)}
+            {i < 2 && (
+              <path d={`M46 -266 q200 ${58 + 6 * Math.sin(f / 31 + i)} 354 0`} fill="none" stroke={C.ink} strokeWidth={5} opacity={0.85} />
+            )}
+          </g>
+        ))}
+        {/* scrub and rock so the ground plane has objects on it */}
+        {Array.from({length: 26}).map((_, i) => {
+          const xx = -70 + i * 47 + (i % 3) * 13;
+          const yy = 1320 + ((i * 97) % 540);
+          return <path key={i} d={`M${xx} ${yy} q10 ${-14 - (i % 4) * 7} 22 0 Z`} fill="#12302A" stroke={C.ink} strokeWidth={3} opacity={0.85} />;
+        })}
         <DieselStack x={880} y={1250} scale={0.92} f={f} fire={fire} />
         <g transform={`translate(0 ${6 * Math.sin(f / 37)})`}>
           <Sourdough frame={f} x={420} y={1250} scale={1.28} emotion={fire > 0.5 ? 'faltering' : 'proud'}
@@ -685,7 +750,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     picture = (
       <g>
         <NightRidge f={f} />
-        <path d="M-200 1180H1300V2100H-200Z" fill="url(#water19)" opacity={0.9} />
+        <Shore f={f} y={1180} reflectX={660} boats={false} />
         <g transform="translate(620 1520) scale(1.26)">
           <RunOfRiver f={f} flow={0.95} gate={0.95} spill={0.2 + 0.7 * q(31, 26)} lamp={1} lampColor={C.amber} water="#2A6B7E" />
         </g>
@@ -700,6 +765,21 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       <g>
         <NightRidge f={f} town={false} />
         <path d="M-200 1240H1300V2100H-200Z" fill="url(#sky19)" opacity={0.85} />
+        {/* a graticule and sea hatching: the ocean is a chart, not a void */}
+        <g opacity={0.5}>
+          {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+            <path key={i} d={`M-200 ${480 + i * 210}H1300`} stroke={C.moss} strokeWidth={2} opacity={0.35} strokeDasharray="14 18" />
+          ))}
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <path key={i} d={`M${-40 + i * 220} 380V1760`} stroke={C.moss} strokeWidth={2} opacity={0.28} strokeDasharray="14 18" />
+          ))}
+          {Array.from({length: 40}).map((_, i) => {
+            const xx = ((i * 179) % 1400) - 150;
+            const yy = 420 + ((i * 233) % 1280);
+            return <path key={i} d={`M${xx} ${yy}q22 ${4 + 3 * Math.sin(f / 15 + i)} 44 0`} fill="none"
+              stroke={C.light} strokeWidth={2} opacity={0.09} />;
+          })}
+        </g>
         <MapAK f={f} bloom={q(33, 40)} thread={q(34, 26)} />
         <Head text="193 COMMUNITIES" y={430} p={q(33, 18)} />
         <Plate text="82,000 ALASKANS  ·  PER AEA" y={1640} size={28} tone="amber" p={q(33, 20, 12)} />
