@@ -101,6 +101,52 @@ const Rain: React.FC<{f: number; density?: number}> = ({f, density = 1}) => (
 
 
 
+
+/** A NEAR-PLANE FOREGROUND for the valley wides. The exterior detail pass moved the
+ *  meter by 0.3 of a point, because thin strokes at low opacity carry almost no local
+ *  gradient. What worked indoors was LARGE, HIGH-CONTRAST structure, so this is that:
+ *  a dock deck with heavy pilings, a rail with real posts, a rock mass and a fuel drum
+ *  rank. It also does the staging job the 9:16 master needs, filling the near plane
+ *  below the square band instead of padding it. */
+const DockForeground: React.FC<{f: number; drums?: boolean}> = ({f, drums = true}) => (
+  <g>
+    {/* the rock mass on the left, one big silhouette with a lit crown */}
+    <path d="M-220 1560 q120 -190 300 -120 q130 30 190 150 q40 80 10 180 l-500 0 Z"
+      fill="#081714" stroke={C.ink} strokeWidth={8} />
+    <path d="M-160 1470 q100 -120 240 -70" fill="none" stroke={C.steel} strokeWidth={7} opacity={0.3} />
+    <path d="M-120 1520 q90 -90 210 -50" fill="none" stroke={C.light} strokeWidth={4} opacity={0.12} />
+    {/* the dock deck, heavy and high contrast */}
+    <path d="M-220 1700H1300V1806H-220Z" fill="#14322C" stroke={C.ink} strokeWidth={9} />
+    {Array.from({length: 14}).map((_, i) => (
+      <path key={i} d={`M${-200 + i * 112} 1700V1806`} stroke={C.ink} strokeWidth={6} opacity={0.75} />
+    ))}
+    <path d="M-220 1712H1300" stroke={C.light} strokeWidth={5} opacity={0.16} />
+    {/* pilings below it, big dark columns */}
+    {[0, 1, 2, 3, 4].map((i) => (
+      <g key={i} transform={`translate(${-80 + i * 280} 1806)`}>
+        <path d="M-34 0h68v294h-68Z" fill="#0A201C" stroke={C.ink} strokeWidth={7} />
+        <path d="M14 0h20v294h-20Z" fill={C.ink} opacity={0.45} />
+        <path d={`M-40 ${26 + 6 * Math.sin(f / 23 + i)}h80`} stroke="#2C4A44" strokeWidth={9} opacity={0.8} />
+      </g>
+    ))}
+    {/* the rail: posts and two runs, which reads as built at any size */}
+    {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+      <path key={i} d={`M${-140 + i * 210} 1700v-150`} stroke={C.ink} strokeWidth={11} />
+    ))}
+    <path d="M-220 1580H1300" stroke={C.ink} strokeWidth={10} />
+    <path d="M-220 1636H1300" stroke={C.ink} strokeWidth={8} />
+    <path d="M-220 1574H1300" stroke={C.steel} strokeWidth={4} opacity={0.4} />
+    {drums && [0, 1, 2].map((i) => (
+      <g key={i} transform={`translate(${880 + i * 96} 1690)`}>
+        <path d="M-40 0h80v-150h-80Z" fill={C.amberD} stroke={C.ink} strokeWidth={7} />
+        <path d="M18 -150h22v150h-22Z" fill={C.ink} opacity={0.4} />
+        <path d="M-40 -46h80M-40 -104h80" stroke={C.ink} strokeWidth={6} opacity={0.8} />
+        <ellipse cx={0} cy={-150} rx={40} ry={11} fill="#C1712F" stroke={C.ink} strokeWidth={6} />
+      </g>
+    ))}
+  </g>
+);
+
 /** Water that is a SURFACE rather than a fill. The dead-space meter reads a flat
  *  gradient as empty and it is right to: the first frame pass fixed the interiors
  *  and left the exteriors at 54 to 61 percent, all of it sky and water. This adds
