@@ -2,7 +2,7 @@ In Cordova, Alaska, a rack of servers runs inside a hydroelectric powerhouse.
 
 Greensparc put it there in 2024, cooled by the same water that spins the turbine. Cordova is now getting an AI project too. The two have nothing to do with each other, and that turns out to be the interesting part.
 
-In August the University of Alaska Fairbanks said it won $725,000 from the Energy Department's Genesis Mission to build AURORA-AI. A digital twin of Cordova's grid, made from the co-op's own records, with machine learning on it. Forecast demand. Spot abnormal conditions. Choose water over fuel. It is a Phase One award. Work begins October 1st and runs nine months.
+In August the University of Alaska Fairbanks said a four-partner team won $725,000 from the Energy Department's Genesis Mission to build AURORA-AI. UAF's own share is $325,000, per Alaska's News Source. The other three are Colorado State, the National Laboratory of the Rockies, formerly NREL, and Cordova Electric itself. A digital twin of Cordova's grid, made from the co-op's own records, with machine learning on it. Forecast demand. Spot abnormal conditions. Choose water over fuel. It is a Phase One award. Work begins October 1st and runs nine months.
 
 Here is why Cordova is the right place to try this. The grid is an island. Eighteen megawatts, 1,566 customers, no wire to anywhere else. About eighty percent of the power is hydro from two creeks and the backstop is a 10.8 megawatt diesel plant. Guess demand wrong and the co-op can't buy from a neighbor. It burns fuel. A forecasting error there has a price you can count in gallons. Almost no other grid in the country offers a scoreboard that clean.
 
@@ -10,7 +10,7 @@ So the test is narrow and it is fair. By next June, is there a measured fuel num
 
 And those servers matter after all. They are not part of the project. They are a load on the same grid, so whatever the model learns to predict, it has to predict them too.
 
-One more thing worth saying plainly. Cordova is the easy case. It has hydro, engineers and records a model can actually use. Alaska's power cost program covers 193 communities running mostly on diesel at three to five times what power costs on the road system. Those are the grids that need a forecast most and they have the least data to build one with.
+One more thing worth saying plainly. Cordova is the easy case. It has hydro, engineers and records a model can actually use. Alaska's power cost program covers 193 communities that are largely reliant on diesel, where power can cost three to five times what it does in more urban areas, per the Alaska Energy Authority. Those are the grids that need a forecast most and they have the least data to build one with.
 
 I want this to work. I also think the word AI has to be earned here rather than assumed, and the cheapest way to earn it is to name the method it beats and then beat it in gallons.
 

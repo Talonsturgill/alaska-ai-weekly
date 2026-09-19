@@ -102,3 +102,24 @@ grades the master. `art_direction.json` already says what belongs down there and
 type: "the wet foreground rail and alder below". If the panel names the lower third, the fix
 is foreground STAGING in that band, not putting the plates back. Do not undo the crop work to
 chase a composition note.
+
+## Defects found by eye while the panel ran (fix in the SAME next render)
+
+1. **The function plates cover Sourdough's face.** f060.1.jpg: DETECT ABNORMAL CONDITIONS
+   and OPTIMIZE HYDRO AND DIESEL land across the hero's head, leaving one eye and the hat.
+   Introduced by moving that list up out of the 9:16-only band. FIX: move the list to
+   x=760, over the TWIN's column, which is also better staging because the list is what
+   AURORA-AI will do. Sourdough is at x=296 and clears it entirely. No gate caught this
+   because plate_overlap_check compares plates to plates and staging_check looks for
+   direct Character sites, and neither asks whether type lands on a face.
+2. **The 9:16 lower third is empty** in the five interior shots (1, 2, 6, 7, 9). The
+   Backdrop's grate starts at y=1640 and is a dark fill with faint lines. art_direction.json
+   asked for staging there. FIX: raise the floor, add a cable tray along the wall base,
+   coiled cable, a drain channel with a puddle catching the amber bounce. One component,
+   five shots, and it cannot affect the square because it is all below y=1500.
+3. **Sourdough covers the signature shot's unit label.** f086.2.jpg: his head sits in front
+   of the Reconcile widget and cuts GALLONS SAVED to "GAL...VED". art_direction.json calls
+   this the signature shot and says Sourdough stands BETWEEN the two slots, not in front of
+   them. FIX: lift the Reconcile group from translate(540 940) to about translate(540 840)
+   so the unit label clears his head; moving him instead would push more of him under the
+   caption bar.

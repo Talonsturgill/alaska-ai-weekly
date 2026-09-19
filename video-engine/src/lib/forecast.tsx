@@ -43,6 +43,18 @@
 import React from 'react';
 import {INK} from './lighting';
 
+/**
+ * LABELS NEED A COLOUR THE ROOM CAN CARRY (2026-09-19, panel round 1).
+ *
+ * Every label in this grammar was drawn in INK, which is correct on the paper-light
+ * backgrounds this component was written against and nearly invisible on a dark one. On
+ * the Cordova powerhouse wall two judges independently reported CLAIMED, MEASURED, NOW and
+ * GALLONS SAVED as below comfortable phone legibility, and a third read the unit label as
+ * "faint". Callers now pass the colour their own room can carry. The default stays INK, so
+ * no episode already shipped changes.
+ */
+
+
 /** the cool blue of a stated future. Deliberately NOT simulation's acid green:
  *  the two appear together and a viewer has to be able to tell a model of a thing
  *  from a claim about a time. */
@@ -62,6 +74,8 @@ function wob(i: number, bucket: number, seed: number): number {
 }
 
 export interface ForecastTraceProps {
+  /** colour for nowLabel; default INK, light rooms only */
+  labelFill?: string;
   /** plotted left to right in the caller's own local coordinates */
   observed: Array<[number, number]>;
   /** continues where `observed` ends; the first point should be the last observed point */
@@ -109,6 +123,7 @@ function partial(pts: Array<[number, number]>, t: number): string {
  * marked between them and a widening uncertainty cone around the prediction.
  */
 export const ForecastTrace: React.FC<ForecastTraceProps> = ({
+  labelFill = INK,
   observed, predicted, spread, f, drawn = 1, observedDrawn = 1,
   x = 0, y = 0, scale = 1, phase = 0, strokeWidth = 5, nowLabel,
 }) => {
@@ -195,7 +210,7 @@ export const ForecastTrace: React.FC<ForecastTraceProps> = ({
               fontFamily="JetBrains Mono, monospace"
               fontSize={26}
               fontWeight={700}
-              fill={INK}
+              fill={labelFill}
             >
               {nowLabel}
             </text>
@@ -207,6 +222,8 @@ export const ForecastTrace: React.FC<ForecastTraceProps> = ({
 };
 
 export interface ReconcileProps {
+  /** colour for CLAIMED / MEASURED / the unit line; default INK, light rooms only */
+  labelFill?: string;
   /** the value that was claimed */
   predicted: number;
   /** what actually happened. Ignored entirely while `settled` is 0. */
@@ -247,6 +264,7 @@ export interface ReconcileProps {
  * went back and looked.
  */
 export const Reconcile: React.FC<ReconcileProps> = ({
+  labelFill = INK,
   predicted, actual, settled, predictedLabel, f, x = 0, y = 0, scale = 1,
   unit, pendingLabel = 'NOT YET MEASURED', decimals = 0,
 }) => {
@@ -271,7 +289,7 @@ export const Reconcile: React.FC<ReconcileProps> = ({
       />
       <text
         x={cx} y={-H / 2 - 16} textAnchor="middle"
-        fontFamily="JetBrains Mono, monospace" fontSize={24} fontWeight={700} fill={INK}
+        fontFamily="JetBrains Mono, monospace" fontSize={24} fontWeight={700} fill={labelFill}
       >
         {label}
       </text>
@@ -355,7 +373,7 @@ export const Reconcile: React.FC<ReconcileProps> = ({
           />
           <text
             x={0} y={H / 2 + 76} textAnchor="middle"
-            fontFamily="JetBrains Mono, monospace" fontSize={28} fontWeight={800} fill={INK}
+            fontFamily="JetBrains Mono, monospace" fontSize={28} fontWeight={800} fill={labelFill}
           >
             {`ERROR ${fmt(Math.abs(actual - predicted))}${unit ? ' ' + unit : ''}`}
           </text>
@@ -365,7 +383,7 @@ export const Reconcile: React.FC<ReconcileProps> = ({
       {unit && s < 0.02 && (
         <text
           x={0} y={H / 2 + 44} textAnchor="middle"
-          fontFamily="JetBrains Mono, monospace" fontSize={24} fontWeight={700} fill={INK} opacity={0.7}
+          fontFamily="JetBrains Mono, monospace" fontSize={24} fontWeight={700} fill={labelFill} opacity={0.85}
         >
           {unit}
         </text>
