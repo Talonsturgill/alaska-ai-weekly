@@ -8,12 +8,12 @@
     "state": "complete",
     "manifest": {
       "sources": {
-        "out/dispatch/captions.json": "54c9abda9e79ceba0aeae623566cb2697c917fc4701b42c7183ef4e2350873eb",
+        "out/dispatch/captions.json": "8328972188c788b81dedd6b73f74633f7e1854df7fd798955b434d63bc56214d",
         "scripts/build_scenes.py": "20dcc4b139053c5297a3aec31be0a9d7f221e59cba0ff0410eabeec353675894",
         "scripts/parse_engine.cjs": "a668989b16cbf173a46e200d41a5da830588ea5761b17ac8ae665b1e6d26697d",
         "scripts/render_parallel.sh": "c9919c8fcf3a2766df39de5ff63f1876525af2e9c4ad84179a73d5f0968b8767",
         "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860",
-        "video-engine/node_modules/.package-lock.json": "3df70323e5edbd07d0375b4bc66f12c75639a7e260a7a32c37b8ab2d0b3983c3",
+        "video-engine/node_modules/.package-lock.json": "4e57476d50d63942ce8bf7d5c62f6d3c64d9760b3fe8d34f242a1291ba0c336a",
         "video-engine/package-lock.json": "46757040a4ae17fafa45357af20a7ffe6b41862b2dcf8ce7beabefc04186e67f",
         "video-engine/package.json": "4d4b9daf0791719f5c638a0bde733aae2e66aac4029924a88677e39ca284aa68",
         "video-engine/public/fonts/Fraunces-OFL.txt": "6732d6cc72c5d09292ff754dc1f39d9ea14918f74e87a17afa3f00a5120c3d48",
@@ -51,6 +51,7 @@
         "video-engine/src/Ep0912.tsx": "2c3f82ea4d80f437de5abc7796a044392f8874edc68c94536ee8085a2bef9331",
         "video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
         "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
+        "video-engine/src/Ep0919.tsx": "e9c995e905cbfb88466f5786951df6c731dc52f15e4b8b9ea7870c5d18ab9520",
         "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
         "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
         "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
@@ -66,13 +67,13 @@
         "video-engine/src/Nenana3D.tsx": "b82940a198f8b66835571772885182b3a47abb8ede57490adc4ad54bd66f6b39",
         "video-engine/src/PropsShowcase.tsx": "5018af91bd0034ea2a5d86a52d739a33a5cf30a9a3fe6293c7f262e80d36f908",
         "video-engine/src/ResearchAssetLook0912.tsx": "b694b86a50b8bfeb13d4fb8d55e9cd173835e0381fc39cb7b4f327f88b655ddf",
-        "video-engine/src/Root.tsx": "79dd4059343229c478a46c9e2778daccea81e73fb27d642ce95dd71b6a960124",
+        "video-engine/src/Root.tsx": "10bea7b4c0cd1e587a2dd173dafafb956d22f23a682a863aab5a521bc67d814e",
         "video-engine/src/Standoff.tsx": "e3ec30fb309eccc2571ec3f2c419de0e611c88dea04dad47c4987dd7f78dee2d",
         "video-engine/src/StationLook.tsx": "1e35c67692671aec8bab76709b3902510f66dfccf752678d0e33dc046950b68e",
         "video-engine/src/TwentyFiveD.tsx": "b0b2efb063fb2274fab25d21bfa5a0c40c8e7fd476912349063e1a6fcc3a250e",
         "video-engine/src/UnderIceLook.tsx": "308446f44f4d0f1d78f9a598e1fbcd1c6dc30171f8c882696f8596c8604e6520",
         "video-engine/src/index.ts": "8ad7cfb50e32546485a1a2ef5e468e5b6bdee2bc5c9b92d08882f96e3750b4a3",
-        "video-engine/src/lib/ASSET_MANIFEST.md": "a1504f53b3d48022c75d7c318c5ddbc508684207362bb3fe94c0a4ebb1d1095f",
+        "video-engine/src/lib/ASSET_MANIFEST.md": "b47c30dfd5969fa1406f54f03f5bdfdea4cd4baa4817243b3d06f70b479494b1",
         "video-engine/src/lib/Character.tsx": "789d6372cdea6e9bd6e0bfbc84626fe57a78ad271b7af91d12321287924b4b8d",
         "video-engine/src/lib/EndCredits.tsx": "b7690e55711c92528a7598d61c1a6b36f2a18b3a7d84393b504df4209bca5c73",
         "video-engine/src/lib/FX.tsx": "e49a6656dda36cd59104226a1fd4a79d0ba531dd04bf61fcbfbc022eaa9b10c4",
@@ -90,6 +91,7 @@
         "video-engine/src/lib/fauna.tsx": "212aabe9f8ee34f4e8ec050b836c111f801cfe351c99570f8152db6f2e8f5018",
         "video-engine/src/lib/firecraft.tsx": "48c1e30aa2d78982cd06d6dd66001c0f22a9616be38f03455489fc159f35bc94",
         "video-engine/src/lib/fishcraft.tsx": "19b36ef7a5f7ae10c455b641fdb48e2af00026f7b788f4a52942f5bb280c006c",
+        "video-engine/src/lib/forecast.tsx": "225403811f616f9b54e564566752fcf0beda8e6e124371427fb7c9e19fc5bd20",
         "video-engine/src/lib/identify.tsx": "85132ac1eecc032763defc5f4e5fb66da367ddd5797154a5a10698019298b6cb",
         "video-engine/src/lib/kit.tsx": "93908695b798e6eaf6482249a159c4b4f349a4f314e4504f1a0c97eabf07df15",
         "video-engine/src/lib/lighting.tsx": "bed24c3ad8bb49bb0ce583bb59ac99e8e2c91cb3fb278ced4a64cbdd540a2c2c",
@@ -100,6 +102,7 @@
         "video-engine/src/lib/props.tsx": "061920bf80ce28910d7c8bb4db6009863df44adb4b9292f73873696113ad98d8",
         "video-engine/src/lib/records.tsx": "525bb3e367ea2dfdbba0070e211699a175b89a5d779b25c127c114eaa1e8556c",
         "video-engine/src/lib/research.tsx": "c39159c5431b697b32d38fbda4c7f132637ac0f5da31b478b03d10dae17fe7c3",
+        "video-engine/src/lib/runofriver.tsx": "917474cb6419257d6daff9087bd581facb6677f787dd2b02111c07abeb179c92",
         "video-engine/src/lib/screenlight.tsx": "8ee18edbc3e0b4c2495353afa7ad19c339a4b70bacffbfe3922f13ed82ee5b26",
         "video-engine/src/lib/sensors.tsx": "9c424f8de230f7f2dfae60f932949e575120f8ad3c3d847b6e7172e69873b67e",
         "video-engine/src/lib/simulation.tsx": "877d44f85b638b9612f927bb887afba41989dd180731e3aab7b063200997c351",
@@ -114,18 +117,18 @@
         "video-engine/tsconfig.json": "590eb5b7f16d4ca29d32397a17b3d75c3c1c1e8653c63d5a6d478ad45b5f3678"
       },
       "props": {
-        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/episode_props.json",
-        "sha256": "518a39e802ad2e790af47fb45deaf77b4b5b4a766f6af2f048d0ed7cb54c643f"
+        "path": "/home/user/alaska-ai-weekly/out/dispatch/episode_props.json",
+        "sha256": "b6a303e56379d68d14135bf8cabf1666598cdf71dc6ac0cbd5c4a24d0706c2b0"
       },
-      "composition": "Dispatch0914",
-      "total": 3778,
-      "chunks": 24,
+      "composition": "Dispatch0919",
+      "total": 3813,
+      "chunks": 1,
       "browser_override": null
     },
-    "cache_key": "5386f143c6e161ae6490cf22a4a06736cd11ba4ebc8e60ede9a556c581bc3570",
+    "cache_key": "2202547e81ae6be203d59ca6571972e9f46bbe5aa4d7030884d81b866c3f3af9",
     "output": {
-      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/render/video_mute.mp4",
-      "sha256": "6bdf7a8be222a980e8282665e9098b31a9db0dbbd4d084b2851bbdab0ba4c818"
+      "path": "/home/user/alaska-ai-weekly/out/dispatch/render/video_mute.mp4",
+      "sha256": "2bbca362ce6f12c69a4f9910149d998c3ef00729ded62d2c704e563c7fa5d47a"
     }
   },
   "mix": {
@@ -133,180 +136,188 @@
     "kind": "mix",
     "state": "complete",
     "sources": {
-      "out/dispatch/episode_props.json": "518a39e802ad2e790af47fb45deaf77b4b5b4a766f6af2f048d0ed7cb54c643f",
-      "out/dispatch/music_credit.json": "57f51d7626f3c5956ca767b6a23fa838140ea56345c5e08776dac18ef116ed1a",
-      "out/dispatch/storyboard.json": "46f0bd4f612906d305cee62436e9007045c7f4a51642f472287dbf8841a942b7",
-      "out/dispatch/vo_lines.json": "aeccf19570bc9cc6ab88fc40d011896dcf70e152ab435fa49e962e7398ec5636",
-      "scripts/dispatch_mix.py": "e00daf5f36cde27408ac63287c9465ed3f5023dfe959fa4bb6c7834e2b304848",
+      "out/dispatch/episode_props.json": "b6a303e56379d68d14135bf8cabf1666598cdf71dc6ac0cbd5c4a24d0706c2b0",
+      "out/dispatch/music_credit.json": "262ea331982000e46601ee7f153d790d437071be1ba2081578fec13db12f80a0",
+      "out/dispatch/storyboard.json": "383b1a9d75f8be490306002fc76abe979f04f344b8db32bc8c87f80baf51d949",
+      "out/dispatch/vo_lines.json": "7b51eed388952d02e9dd05e3f1ca16ce00b3ea40596a6aef8fd496981c861926",
+      "scripts/dispatch_mix.py": "3457ee27d89b2ad468cfc3491763192749fbc894eb51a576c779704a384eba8a",
       "scripts/mix_aac_check.py": "c1b524ac1b38d77001754a162b9791ec9f9a91c387c50b3d00517cc71b5fdbe9",
       "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860",
       "scripts/sfx_bank.py": "2fb66a30970e6f948b5c62c388af4e1eaa2051d1582796f093a811f08e783ea1"
     },
     "vo": {
-      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/vo.wav",
-      "sha256": "8951e54355e3820efc4de167ac729b8268a30a545e802083b917a718abcc53ab"
+      "path": "/home/user/alaska-ai-weekly/out/dispatch/audio/vo.wav",
+      "sha256": "2916f0ffe178b5d5d295d07ffcc56a84b60fdbb492bfc9cbc5a1d0dc47939031"
     },
     "inputs": [
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/chain_v1.wav",
-        "sha256": "33c26d28a910a3df41c220ce549d69a4e753b49194c5d74b0749eafd78f2a827"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/boom_v1.wav",
+        "sha256": "4836a1cce1eef549343c313ab0b1a8f91778b5d8fa87cc2b38c7cb234f72e3c3"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/chain_v3.wav",
-        "sha256": "4f83640687bee60df5e8bcaffd1b0ff18d11dab7f47968e6d120c7266ce06d9d"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/chain_v2.wav",
+        "sha256": "74e140e57c910d2451d921d6126d6ee5057ffb30fa910d49195aa62b68db879b"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/chain_v5.wav",
-        "sha256": "8204cc9d6ef0bf5b964da8e28e8e37c8c07725d0a5a627ead777c9a1fc2f1e1d"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/creak_v1.wav",
+        "sha256": "cc967b80855e549ae3a9970201501a1ca61e189056db68ac6abc92e043b1c64f"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v2.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/creak_v2.wav",
         "sha256": "dcd75088686c679f060c24cdf9e18f65663af268fb88d5ebb41b0d00f4564bcb"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v3.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/creak_v3.wav",
         "sha256": "a3193287a0b6e8513a1083ff1b23a00379eae6d697c2985ced77424d34e037fa"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v5.wav",
-        "sha256": "984db4cdd74d61370eb991e3cbc645b7527f893e621c33d4fb5b9ce3782ae344"
-      },
-      {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/creak_v6.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/creak_v6.wav",
         "sha256": "1e6a710f5eaa9bdd1bb8335a8d74d07bd1cc9df5900fa9a67b5ad18d64cb1927"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/paper_v1.wav",
-        "sha256": "4a0874f179da3adb09208de30df4e0631fbc45769f6468ff2b7f6870099d3360"
-      },
-      {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/paper_v3.wav",
-        "sha256": "76f7f26a6b5db818f9cf65cb65b4cb4eca7493d76a21760869ee75a453c6500d"
-      },
-      {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_000.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_000.wav",
         "sha256": "d92027463778212cdaf984ee6b6deebf11f2eb9e596ea4a1a7137f6d8b0b1120"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_001.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_001.wav",
         "sha256": "7c1ed58e342a8ec0cf36e2d49a6a40b2387bb58ba414098fc9b8ecbc4076cb23"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_002.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_002.wav",
         "sha256": "f01aee653bba7807abc28a675e9390a6e6d695f42294e45578ca71bf07613290"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_003.wav",
-        "sha256": "80c9b141e1839da11211a3754ca3fe1ab801e3daaeafdfb4526451ac5aabf5f1"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/ding_kenney_impactBell_heavy_000.wav",
+        "sha256": "1318e9193e44b4ebd4d3c8ced04b9de8502582cf6fe010a095c7111cdd4d850f"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_heavy_004.wav",
-        "sha256": "a517963cf7843dc53256a58185d7332265ce5d5e40f22e403d214be26442a96c"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/ding_kenney_impactBell_heavy_001.wav",
+        "sha256": "7a4f640497918471f746b73e66f322eb01fc96a9f9a85c90d004fdd730d7aacc"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/clank_kenney_impactMetal_medium_000.wav",
-        "sha256": "d7c6874b1498dea963b9708b86c28760fb923483b7459ee5020b224a8c4506b4"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/ding_kenney_impactBell_heavy_002.wav",
+        "sha256": "3a1ce653390bcea2931e5cf8c8a318d8361908b488ca5cbf01192c628981139a"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_001.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/ding_kenney_impactBell_heavy_003.wav",
+        "sha256": "944bb609076e546e82ffbe08821dda55dfe3bd2ad0ea403bb734b7d39209efc1"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/ding_kenney_impactBell_heavy_004.wav",
+        "sha256": "5bbaa1084ccd0b668ae7e0c2e87f252fc52ebf472deb63cecb042e9cf94b9c99"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_000.wav",
+        "sha256": "44cbdfadc257a3227dd5231b3ddcc86b759708fc8905aeed857489220e7f6468"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_001.wav",
         "sha256": "1b31e1a20e42fd0e2df0ab67a93590f4af296fb963c5a272e5e97a52f4637302"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_002.wav",
-        "sha256": "05c36e23a568d5ac1eb453ae38c0d285aba7c5070646b588af95f6b3bb50c519"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_003.wav",
+        "sha256": "57191e1cbce7f76e18165d40f7b535e004dcab854e33178db3197e209a6c1442"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_001.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/paw_kenney_impactSoft_heavy_004.wav",
+        "sha256": "27e0a2db0ab7711866884940823cc33cfa6b287e267f22e0416c95d2003aadd4"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_001.wav",
         "sha256": "895d8da98bd25dd5a13e9f6a477467d58bb8a16856513e8a2edebc990c412b72"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_002.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_002.wav",
         "sha256": "15e82aed7aa290cc4fd6bf9011b4ed9fc5ef2cb562f63d687f8c06ae36c83ed9"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_003.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_003.wav",
         "sha256": "2ee716de8eb9a1aa2ede29a683200a920e55f8739a0b5bcd3147d8729b6046dd"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_000.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/pop_kenney_drop_004.wav",
+        "sha256": "5bc4c804adb9fdeabf203b8cafa404746ed4b1c9d40d922d96511297030a85d0"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_000.wav",
         "sha256": "c27a33a4e5dd32d6e9f7e28788df46776f4bb38ce834ab760abf2c65c3e110bd"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_004.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_001.wav",
+        "sha256": "c596cda57b80b8c8a55cad762bf3ab7d2ce14ae09e4a93f56c9b48baa868f58b"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_002.wav",
+        "sha256": "0edc935dd1d9f8c2104efa68b42e62481be8426a00c53cd53b8c59567c90acfe"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_003.wav",
+        "sha256": "1fc17f95012cf8090a5647546a63f984491e561cc8182235ba061222ad12a899"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_heavy_004.wav",
         "sha256": "29cc03d6f0b8bd5d4d619c610e0e4992e23b829b55438dfbd408c774f0eb0709"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_medium_000.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/real/thud_kenney_impactWood_medium_000.wav",
         "sha256": "8bba4fff9a36bcabf27c4bdcb41548e9aeb4b0cf08b72c0b1cc42a68c0c3ae27"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/snap_v3.wav",
-        "sha256": "524733147cd45fcdf1b6f89897c1f1b8eed5335c2b4197bb9719bee38daeb8a7"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/riser_v5.wav",
+        "sha256": "4ac31c04cb2773a854eb89ff804d9e781f3dd46474a944f359535f76602a64a2"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/snap_v4.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/snap_v1.wav",
+        "sha256": "b6eaed1634346dfb2e68fc228f6d3fb183934a690120d8b45ea82c6b19a050ff"
+      },
+      {
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/snap_v4.wav",
         "sha256": "b48cebf672596c6ef26454d180e0a41f10ca3563078986397e3e84583b10c6d5"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/snap_v5.wav",
-        "sha256": "7284aeac1de6d5b7e561590c6fe88eeb51189f822a0e61608a5210477150f0a5"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/stamp_v2.wav",
+        "sha256": "20951a9d2545a66008b570acb8bbedad55f8b58df66e56425076a9ece4308564"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/snap_v6.wav",
-        "sha256": "94246297e210a7e2f08a9f78827fcdd37faf331b7cf8540a06dfdd8b671824df"
-      },
-      {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/stamp_v1.wav",
-        "sha256": "f2d454a483f2ebd1c8942638352cfbc33f1ca77189fde96ff7408b6166bbd9b9"
-      },
-      {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v1.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/tick_v1.wav",
         "sha256": "8bf23a892cfca917749629c29dde957e8b2ddb40bbae00619c1115f1ea3bc474"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v2.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/tick_v2.wav",
         "sha256": "8c2c9adab149949aeb7ca068cb61b4e82802cec526b2ebc9ca1728e4cd3a05d1"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v3.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/tick_v3.wav",
         "sha256": "da251b2134f3fb67f2f1bddd71b1f5423ca6230d83ce74dbd0f4c8cfc9d8d821"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v4.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/tick_v4.wav",
         "sha256": "8df14d736325d7f901b9c07d34975f1be3c222f2ee4232f07ddd148d848d6d2a"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v5.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/tick_v5.wav",
         "sha256": "a359ddce666b7f696cc5b2a5f7d6f57ba6a895863ff9375ac91ed33db62d20f7"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/tick_v6.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/tick_v6.wav",
         "sha256": "1a3668de7f0a96d2c75946e3b87d3069b844795670748f192c6e832382d5aa25"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/whoosh_v1.wav",
-        "sha256": "5fb5852d43f7d2cc690cfbfa7ef71e3618b0500e29300ce44b8d2d218d1ed46e"
-      },
-      {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/whoosh_v2.wav",
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/whoosh_v2.wav",
         "sha256": "23624949413b12ec3408600fe352be2adcd1ca5999bc0f33e0b87c22a06ec281"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/whoosh_v3.wav",
-        "sha256": "c530e83b5f572474c97fa06a4a9a169266ba72b2f512d37d5001913cbc2abe6b"
+        "path": "/home/user/alaska-ai-weekly/assets/sfx/whoosh_v5.wav",
+        "sha256": "8253eb58e637756677adde28af4e59c360300dba1c1539401c5148fb5971d917"
       },
       {
-        "path": "/Users/t/Developer/alaska-ai-weekly/assets/sfx/whoosh_v6.wav",
-        "sha256": "f3916484994fa1dfd89b4eab4c16ea2ca63631d33b75addc7f5367872680d64a"
-      },
-      {
-        "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/music_bed.wav",
-        "sha256": "677879be24eff32040b104bd75ae3d305b8002a0f04f6d94b3730c391391621d"
+        "path": "/home/user/alaska-ai-weekly/out/dispatch/music_bed.wav",
+        "sha256": "8b0e7c426525b8ed691ca166da9dbc3edd85a6687cf7bacd947f90f0dc9eb4f2"
       }
     ],
     "output": {
-      "path": "/Users/t/Developer/alaska-ai-weekly/out/dispatch/audio/master.wav",
-      "sha256": "334f44b5822a721a1036e40742917bc25ea5d26eb4b91d81e9516400d22e7037"
+      "path": "/home/user/alaska-ai-weekly/out/dispatch/audio/master.wav",
+      "sha256": "b4e0c33a52b942b76d40581dc1a43db385dade21bc77979e8497b4d56fd9869e"
     }
   },
   "sources": {
@@ -315,11 +326,11 @@
     "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860"
   },
   "outputs": {
-    "dispatch_master.mp4": "b42a08c5b87d1e154de9e7c26bf48e7960625afeabcb9c1c6a6fb0ffd7ca0f6e",
-    "dispatch_square.mp4": "6abf83580372d1121934d697ac1e308903c8bf26363ec455fed8319e161f7c39",
-    "dispatch_master_720.mp4": "ca240f96ed9392b816de8a752406dd1fe8d74919200183208f7a11229dc26ea7",
-    "dispatch_master_hosted.mp4": "ba244dd547deabbb541d537be72d6fd3d219d1d77f686de5f51043e7b363eb7d",
-    "poster.png": "47fd90bd940ae1760c2a3ce51291f97a5ee1f69ab3e081a723a75bb9f2eec863",
-    "poster_thumb.jpg": "51829240b940435d41700b32ee2160343fbae2ef90827848307717f73cfc3a44"
+    "dispatch_master.mp4": "6aa82d922ff3498233c90dd09d437ea72b599789f337e929b3445e47428567ba",
+    "dispatch_square.mp4": "cbcc12604c6011922d5d272b23c62a36a77a687b2ed94fe33b58ac80a3a1dfe9",
+    "dispatch_master_720.mp4": "995caa3502041e91632b8fd71b8b51c8dcb5a6f0cc98c55eeca926f0d30e5f84",
+    "dispatch_master_hosted.mp4": "fa25382125e8b43c264e6d5a20e6473c74c936f5b8873d112fbea3a741ebec40",
+    "poster.png": "db007d77dd973bc1838a20b1a0d0a41bcdef33708c3f68858b10465550caa545",
+    "poster_thumb.jpg": "39f2c5fad553d7a69616043ff4fd2e1a754f6071c574f065f0bc70c05c6f7d12"
   }
 }
