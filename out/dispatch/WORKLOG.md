@@ -65,7 +65,7 @@ side: it clamps anything below y=1276 to the guard, which folded those rows onto
 | 11 | final render + mux + encode (`fin6`) | DONE. dead space 40.9% -> 37.1% |
 | 12 | build_evidence + evidence_coverage_check | DONE, commit 6a7bc2b |
 | 13 | preflight.py exit 0 | DONE. clear, 2 advisories |
-| 14 | 3-judge panel per `config/panel_protocol.md` | RUNNING (round 1) |
+| 14 | 3-judge panel | round 1: 6.66 / 6.33 / 7.21, median 6.66, blockers. Round 2 RUNNING |
 | 15 | ship_gate record + check | TODO |
 | 16 | upload_video (master, square, 720, poster, thumb), verify 200 | TODO |
 | 17 | publish_feed to alaskaaicarousels docs/videos/videos.json | TODO |
@@ -123,3 +123,32 @@ chase a composition note.
    them. FIX: lift the Reconcile group from translate(540 940) to about translate(540 840)
    so the unit label clears his head; moving him instead would push more of him under the
    caption bar.
+
+## Panel round 1 and what it cost, in order
+
+Median 6.66 against 7.0, with hard blockers on all three cards. Four renders total.
+
+The two blockers all three judges hit were one bug: `build_scenes._rebalance_cues` already
+guarded against a spoken number being split across cards, and its number-word list jumps
+twelve to twenty, so every TEEN fell through it, and "point" was never in it. The screen
+read "sixty six customers" for a co-op with 1,566, and "eight megawatts of diesel" under a
+plate saying 10.8 MW. A third judge found a card that was literally ", nine months.".
+
+The Motion scores (5.5 / 6.0 / 6.8) had a single root cause worth remembering: from shot 4
+onward, NINE OF TWELVE shots animated beats that fire BEFORE the shot is on screen, by up
+to nine seconds. The film built its cards during the previous shot and cut to a settled
+tableau. The judges were reading the strips correctly; the strips were correct.
+
+Fixing that overcorrected once: a 1.35s tail put every shot's LAST beat 1.35s before its own
+cut, so shot 7's partner board had six tenths of a second. Every shot now reserves 3.4s, or
+45 percent of its own length when it cannot afford that.
+
+Declined, on the record: all three judges wanted the 12.3s credits tail trimmed as
+watch-through loss. `build_scenes.py` carries the owner's 2026-08-12 rule that the number
+may go up and may not go down, because that card holds the source list and the CC BY 4.0
+attribution. The run does not take time back out of the card people are meant to read.
+
+Known and accepted rather than fixed: the diesel stack in shot 4 sits at x=1060 and is half
+off the right edge, so its exhaust plume is mostly outside the frame. The tank yard added
+this round carries that half of the comparison. If a later round reopens this shot, move the
+stack to about x=930 and the plume comes back with it.
