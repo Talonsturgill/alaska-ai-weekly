@@ -565,7 +565,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   const travel = ease(local, 0, Math.max(40, dur));
   const acc = voice.accentAt(f);
 
-  let picture: React.ReactNode;
+  // Every shot is its own `n === k` branch, the last one included. A bare trailing
+  // `else` reads to the source-level geometry gates as a continuation of shot 11, so
+  // the closing shot's plates were being compared against the map shot's headline and
+  // reported as a collision that cannot happen.
+  let picture: React.ReactNode = null;
 
   if (n === 1) {
     picture = (
@@ -581,8 +585,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
          *  and the rack, where BOTH cuts read them. */}
         <Rack x={520} y={1035} scale={1.32} f={f} lit={1} plate={false} />
         <Drip x={742} y0={600} y1={1246} f={f} at={at(2)} />
-        <Head text="SERVERS INSIDE" y={585} p={q(1, 20)} />
-        <Head text="THE POWERHOUSE" y={654} p={q(1, 20, 6)} />
+        <Head text="SERVERS INSIDE" size={58} y={585} p={q(1, 20)} />
+        <Head text="THE POWERHOUSE" size={58} y={654} p={q(1, 20, 6)} />  {/* plate-overlap-ok: line 2 of one headline, 69px below line 1 for a 58px face */}
         <Plate text="GREENSPARC" x={250} y={725} size={26} p={q(1, 18, 10)} />
         <g transform={`translate(${-420 + 420 * q(3, 22)} 0)`} opacity={q(3, 18)}>
           <Plate text="170 kW  ·  PER CLEANTECHNICA" x={700} y={725} size={26} tone="amber" />
@@ -602,8 +606,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d={`M560 1140 q${150 + 10 * Math.sin(f / 23)} -120 250 -40`} fill="none" stroke={C.cyan} strokeWidth={9} opacity={0.35 * q(6)} />
         <ellipse cx={300} cy={1560} rx={360} ry={230} fill="url(#lamp19)" opacity={0.4} />
         <Drip x={742} y0={640} y1={612 + 110} f={f} at={at(7)} dur={20} />
-        <Plate text="COOLED BY THE SAME WATER" y={1660} size={30} p={q(6, 22)} />
-        <Plate text="REMEMBER THEM" y={1730} size={30} tone="amber" p={q(7, 18)} />
+        <Plate text="COOLED BY THE SAME WATER" y={880} size={30} p={q(6, 22)} />
+        <Plate text="REMEMBER THEM" y={950} size={30} tone="amber" p={q(7, 18)} />
       </g>
     );
   } else if (n === 3) {
@@ -617,8 +621,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {Array.from({length: 11}).map((_, i) => (
           <circle key={i} cx={760 + i * 26} cy={1150 - (i % 3) * 14} r={4} fill={C.amber} opacity={0.55 + 0.35 * Math.sin(f / 9 + i)} />
         ))}
-        <Head text="CORDOVA" y={560} p={q(8, 20)} />
-        <Plate text="NO WIRE OUT" y={1780} size={34} tone="amber" p={q(9, 22)} />
+        <Head text="CORDOVA" size={58} y={560} p={q(8, 20)} />
+        <Plate text="NO WIRE OUT" y={690} size={34} tone="amber" p={q(9, 22)} />
       </g>
     );
   } else if (n === 4) {
@@ -652,8 +656,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {/* the hard centre seam */}
         <path d={`M540 ${900 - 120 * seam}V2100`} stroke={C.ink} strokeWidth={16} />
         <path d={`M540 ${900 - 120 * seam}V2100`} stroke={C.light} strokeWidth={5} opacity={0.55} />
-        <Head text="TWO CREEKS" y={585} p={q(9, 20)} />
-        <Head text="AND A BACKSTOP" y={654} p={q(9, 20, 6)} />
+        <Head text="TWO CREEKS" size={58} y={585} p={q(9, 20)} />
+        <Head text="AND A BACKSTOP" size={58} y={654} p={q(9, 20, 6)} />  {/* plate-overlap-ok: line 2 of one headline, 69px below line 1 for a 58px face */}
         {/* the share bar: eighty percent, drawn rather than asserted */}
         <g opacity={share} transform={`translate(0 ${20 - 20 * share})`}>
           <rect x={120} y={700} width={840} height={56} rx={8} fill="none" stroke={C.light} strokeWidth={4} opacity={0.5} />
@@ -698,14 +702,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             glow={1 - 0.55 * fire} accent={acc} />
         </g>
         <Gauge x={620} y={1080} scale={0.92} f={f} v={0.2 + 0.62 * fire} slamAt={at(12)} />
-        <Head text="GUESS WRONG" y={585} p={q(11, 20)} />
-        <Plate text="IT BURNS FUEL" y={1640} size={34} tone="amber" p={q(12, 16)} />
+        <Head text="GUESS WRONG" size={58} y={585} p={q(11, 20)} />
+        <Plate text="IT BURNS FUEL" y={760} size={34} tone="amber" p={q(12, 16)} />
         <g opacity={q(13, 20)}>
           {[0, 1, 2, 3].map((i) => (
-            <rect key={i} x={760 + i * 34} y={1560 - 30 * Math.abs(Math.sin(f / 13 + i))} width={26} height={30} rx={3}
+            <rect key={i} x={760 + i * 34} y={900 - 30 * Math.abs(Math.sin(f / 13 + i))} width={26} height={30} rx={3}
               fill={C.amber} stroke={C.ink} strokeWidth={3} opacity={0.85} />
           ))}
-          <Plate text="GALLONS" x={820} y={1690} size={28} tone="amber" />
+          <Plate text="GALLONS" x={820} y={850} size={28} tone="amber" />
         </g>
       </g>
     );
@@ -725,8 +729,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Plate text="OPTIMIZATION USING REAL-TIME AI" y={659} size={24} tone="cyan" />
         </g>
         <g opacity={q(15, 22)}>
-          <Plate text="$725,000  ·  PER UAF" x={330} y={735} size={26} />
-          <Plate text="GENESIS MISSION  ·  EO 14363" x={770} y={735} size={26} />
+          <Plate text="$725,000  ·  PER UAF" x={250} y={735} size={24} />
+          <Plate text="GENESIS MISSION  ·  EO 14363" x={730} y={735} size={24} />
         </g>
         <g>
           <Sourdough frame={f} x={296} y={1268} scale={0.78} emotion="confident" glow={0.72} accent={acc} />
@@ -767,7 +771,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             ))}
           </g>
         </g>
-        <Head text="IT HASN'T STARTED" y={612} p={q(18, 18)} />
+        <Head text="IT HASN'T STARTED" size={58} y={612} p={q(18, 18)} />
         {/* 1500 is exactly the square crop's bottom edge, so PHASE 1 was sliced in half
          *  and 9 MONTHS sat below the world. They are the two facts of the shot. */}
         <g transform={`translate(0 ${-30 + 30 * pop(19)})`} opacity={q(19, 12)}>
@@ -822,8 +826,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Plate text="OBSERVED" x={330} y={1040} size={26} tone="amber" p={q(24, 16)} />
           <Plate text="CLAIMED" x={760} y={1040} size={26} tone="cyan" p={q(24, 16, 10)} />
         </g>
-        <Head text="NOW, THOSE SERVERS" y={592} p={q(20, 16) * (1 - toTrace)} />
-        <Head text="IT PREDICTS THEM TOO" y={592} p={q(25, 18) * toTrace} />
+        <Head text="NOW, THOSE SERVERS" size={58} y={592} p={q(20, 16) * (1 - toTrace)} />
+        <Head text="IT PREDICTS THEM TOO" size={58} y={592} p={q(25, 18) * toTrace} />  {/* plate-overlap-ok: same y as NOW, THOSE SERVERS on purpose, and the two opacities are complementary in toTrace, so their product is 0 in every frame */}
       </g>
     );
   } else if (n === 9) {
@@ -841,9 +845,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
         <Sourdough frame={f} x={540} y={1480} scale={0.92} emotion="confident" glow={0.62} accent={acc} />
         <g opacity={q(30, 20)} transform={`translate(0 ${18 - 18 * q(30, 20)})`}>
-          <Plate text='"A REALLY SHORT PERIOD' y={1700} size={27} />
-          <Plate text='OF PERFORMANCE"' y={1758} size={27} />
-          <Plate text="RICHARD WIES  ·  UAF" y={1822} size={24} tone="amber" />
+          <Plate text='"A REALLY SHORT PERIOD' y={1128} size={27} />
+          <Plate text='OF PERFORMANCE"' y={1186} size={27} />
+          <Plate text="RICHARD WIES  ·  UAF" y={1244} size={24} tone="amber" />
         </g>
       </g>
     );
@@ -856,9 +860,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <RunOfRiver f={f} flow={0.95} gate={0.95} spill={0.2 + 0.7 * q(31, 26)} lamp={1} lampColor={C.amber} water="#2A6B7E" />
         </g>
         <Rain f={f} density={0.7} />
-        <Head text="THE EASY CASE" y={560} p={q(30, 18)} />
-        <Plate text="HYDRO  ·  ENGINEERS  ·  GOOD RECORDS" y={1790} size={26} p={q(30, 20, 10)} />
-        <Plate text="SPILLING PAST UNUSED" x={300} y={1690} size={25} tone="cyan" p={q(31, 20)} />
+        <Head text="THE EASY CASE" size={58} y={560} p={q(30, 18)} />
+        <Plate text="HYDRO  ·  ENGINEERS  ·  GOOD RECORDS" y={680} size={26} p={q(30, 20, 10)} />
+        <Plate text="SPILLING PAST UNUSED" x={300} y={1180} size={25} tone="cyan" p={q(31, 20)} />
       </g>
     );
   } else if (n === 11) {
@@ -882,12 +886,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           })}
         </g>
         <MapAK f={f} bloom={q(33, 40)} thread={q(34, 26)} />
-        <Head text="193 COMMUNITIES" y={585} p={q(33, 18)} />
-        <Plate text="82,000 ALASKANS  ·  PER AEA" y={1640} size={28} tone="amber" p={q(33, 20, 12)} />
-        <Plate text="LEAST DATA TO BUILD ONE" y={1712} size={28} tone="cyan" p={q(34, 20)} />
+        <Head text="193 COMMUNITIES" size={58} y={585} p={q(33, 18)} />
+        <Plate text="82,000 ALASKANS  ·  PER AEA" y={1180} size={28} tone="amber" p={q(33, 20, 12)} />
+        <Plate text="LEAST DATA TO BUILD ONE" y={1244} size={28} tone="cyan" p={q(34, 20)} />
       </g>
     );
-  } else {
+  } else if (n === 12) {
     const narrow = q(37, 40);
     picture = (
       <g>

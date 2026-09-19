@@ -215,12 +215,45 @@ def _ocr_frames(paths):
     raise ValueError('rendered credit OCR requires macOS Vision (swift) or tesseract; no pixel-presence proof')
 
 
+# A DIGRAPH THIS RECOGNIZER CANNOT READ IN THE FILM'S OWN TYPEFACE (measured 2026-09-19).
+#
+# The run's credits frame renders VISIT US AT ALASKAAIHQ.COM and AND 3 MORE AT
+# ALASKAAIHQ.COM, both plainly legible on screen, and Tesseract returned ALASKAATHQ.COM for
+# both. The obvious readings were all wrong, so each was tested rather than assumed:
+#
+#   - not size:      misread identically at 22, 28, 32 and 40px
+#   - not tracking:  misread identically at 0.8, 3.0 and 6.0 letter-spacing
+#   - not the film:  PIL rendering the same TTF standalone misreads it the same way
+#   - not the dawgs: misread with load_system_dawg, load_freq_dawg, load_punc_dawg,
+#                    load_number_dawg, load_unambig_dawg and load_bigram_dawg all 0
+#   - not the brand: AI, MAIN, RAIL, AIRPORT and AAI all read correctly; AAIH does not
+#
+# Bisecting the string puts it on one digraph: capital I followed by capital H, which this
+# engine returns as TH. So the comparison collapses IH and TH on BOTH sides, and nothing
+# else. It is deliberately a DIGRAPH and not a letter class: collapsing I into T wholesale
+# would blur far more strings than the evidence supports.
+#
+# This cannot let a missing credit pass. A line that is not on screen produces no glyphs at
+# all, and no normalization turns nothing into something. It only stops the gate reporting a
+# credit as absent when the recognizer, not the film, is what failed. Widening this set
+# requires the same bisection, written down here next to the rest.
+_OCR_CONFUSIONS = (('IH', 'TH'),)
+
+
+def _fold(s):
+    for a, b in _OCR_CONFUSIONS:
+        s = s.replace(a, b)
+    return s
+
+
 def missing_ocr_lines(expected, recognized):
     # Ignore only typography/spacing: words, domain letters and licence digits
     # must actually be recognized. No fuzzy match can excuse a truncated credit.
     norm = lambda s: re.sub(r'[^A-Z0-9]', '', s.upper())
     seen = norm(' '.join(recognized))
-    return [text for text in expected if norm(text) not in seen]
+    folded = _fold(seen)
+    return [text for text in expected
+            if norm(text) not in seen and _fold(norm(text)) not in folded]
 
 
 def check_rendered_credits(video, props, renderer_source):
