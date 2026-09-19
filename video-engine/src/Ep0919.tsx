@@ -99,6 +99,103 @@ const Rain: React.FC<{f: number; density?: number}> = ({f, density = 1}) => (
   </g>
 );
 
+
+/** THE INTERIOR BACKDROP. The dead-space meter samples the SQUARE crop (y 420..1500
+ *  of the master), and the first graded cut ran 57.4% low-information area against a
+ *  42% ceiling because the band between the headline and the subject was an unbroken
+ *  gradient. A gradient is not a background, it is an absence with a colour. This puts
+ *  real structure there: panel seams, a conduit run with brackets, a pipe bank, vents
+ *  and a grated floor, all form-shaded so they read as built rather than as texture. */
+const Backdrop: React.FC<{f: number; warm?: number; grate?: boolean}> = ({f, warm = 1, grate = true}) => (
+  <g>
+    <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
+    {/* panel seams: the wall is made of things */}
+    {[0, 1, 2, 3, 4, 5].map((i) => (
+      <g key={i}>
+        <path d={`M${-120 + i * 232} -200V2100`} stroke={C.ink} strokeWidth={5} opacity={0.5} />
+        <path d={`M${-114 + i * 232} -200V2100`} stroke={C.light} strokeWidth={2} opacity={0.07} />
+      </g>
+    ))}
+    {[0, 1, 2, 3].map((i) => (
+      <path key={i} d={`M-200 ${380 + i * 300}H1300`} stroke={C.ink} strokeWidth={4} opacity={0.4} />
+    ))}
+    {/* a conduit run with real brackets, carrying the eye across the empty band */}
+    <path d="M-200 612H1300" stroke={C.ink} strokeWidth={26} />
+    <path d="M-200 612H1300" stroke={C.steel} strokeWidth={16} />
+    <path d="M-200 604H1300" stroke={C.light} strokeWidth={3} opacity={0.22} />
+    {[0, 1, 2, 3, 4, 5].map((i) => (
+      <g key={i} transform={`translate(${-60 + i * 224} 612)`}>
+        <path d="M-16 -22H16V22H-16Z" fill={C.steel} stroke={C.ink} strokeWidth={4} />
+        <circle cx={0} cy={0} r={5} fill={C.ink} />
+      </g>
+    ))}
+    {/* a pipe bank on the shadow side, three tones, never a flat fill */}
+    <g opacity={0.9}>
+      {[0, 1, 2].map((i) => (
+        <g key={i}>
+          <path d={`M${920 + i * 58} -200V2100`} stroke={C.ink} strokeWidth={40} />
+          <path d={`M${920 + i * 58} -200V2100`} stroke={i % 2 ? '#3E5550' : C.steel} strokeWidth={28} />
+          <path d={`M${910 + i * 58} -200V2100`} stroke={C.light} strokeWidth={4} opacity={0.14} />
+          {[0, 1, 2, 3, 4].map((k) => (
+            <path key={k} d={`M${898 + i * 58} ${300 + k * 330}h44`} stroke={C.ink} strokeWidth={9} opacity={0.8} />
+          ))}
+        </g>
+      ))}
+    </g>
+    {/* vents, and a warm bounce off the door so the dark side is never dead black */}
+    {[0, 1].map((i) => (
+      <g key={i} transform={`translate(${96 + i * 150} 800)`}>
+        <rect x={-54} y={-40} width={108} height={80} rx={6} fill="#0B1B1A" stroke={C.ink} strokeWidth={5} />
+        {[0, 1, 2, 3].map((k) => (
+          <path key={k} d={`M-42 ${-26 + k * 17}h84`} stroke={C.steel} strokeWidth={6} opacity={0.75} />
+        ))}
+      </g>
+    ))}
+    <ellipse cx={180} cy={1120} rx={520} ry={680} fill="url(#lamp19)" opacity={0.3 * warm} />
+    {grate && (
+      <g>
+        <path d="M-200 1640H1300V2100H-200Z" fill="#0A1917" />
+        <path d="M-200 1640H1300" stroke={C.ink} strokeWidth={8} />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <path key={i} d={`M${-160 + i * 190} 1640L${-300 + i * 230} 2100`} stroke={C.steel} strokeWidth={5} opacity={0.3} />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M-200 ${1720 + i * 120}H1300`} stroke={C.steel} strokeWidth={4} opacity={0.22} />
+        ))}
+      </g>
+    )}
+  </g>
+);
+
+/** The exterior counterpart: layered ridges, a treeline and town lights, so a night
+ *  sky is a PLACE rather than a gradient. */
+const NightRidge: React.FC<{f: number; town?: boolean}> = ({f, town = true}) => (
+  <g>
+    <path d="M-200 -200H1300V1240H-200Z" fill="url(#sky19)" />
+    {[0, 1, 2].map((i) => (
+      <path key={i}
+        d={`M-200 ${560 + i * 120} L${120 + i * 60} ${380 + i * 110} L${430 + i * 40} ${540 + i * 100} L${720 - i * 50} ${350 + i * 120} L${1010 + i * 30} ${520 + i * 96} L1300 ${420 + i * 110} V1240 H-200 Z`}
+        fill={i === 0 ? '#0C2420' : i === 1 ? '#0A1E1B' : '#081815'}
+        stroke={C.ink} strokeWidth={4} opacity={0.92} />
+    ))}
+    {/* a spruce treeline: small marks, but they are OBJECTS and the meter knows it */}
+    {Array.from({length: 34}).map((_, i) => {
+      const x = -60 + i * 35 + (i % 3) * 9;
+      const h = 54 + (i % 5) * 16;
+      return <path key={i} d={`M${x} 1180 l${-11} 0 l11 ${-h} l11 ${h} Z`} fill="#071512" stroke={C.ink} strokeWidth={2} />;
+    })}
+    {town && Array.from({length: 16}).map((_, i) => (
+      <circle key={i} cx={640 + i * 27} cy={1150 - (i % 3) * 13} r={3.5}
+        fill={C.amber} opacity={0.4 + 0.4 * Math.sin(f / 13 + i)} />
+    ))}
+    {/* low cloud, drifting, on an irrational period */}
+    {[0, 1, 2].map((i) => (
+      <ellipse key={i} cx={((f * (0.5 + i * 0.22) + i * 420) % 1700) - 250} cy={300 + i * 86}
+        rx={260 - i * 40} ry={30 - i * 6} fill={C.light} opacity={0.045} />
+    ))}
+  </g>
+);
+
 /** The server rack. Six parts, three zones, per the board's hero block. */
 const Rack: React.FC<{x: number; y: number; scale?: number; f: number; lit?: number; plate?: boolean}> =
 ({x, y, scale = 1, f, lit = 1, plate = true}) => (
@@ -341,7 +438,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   if (n === 1) {
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
+        <Backdrop f={f} />
         <path d={`M700 -120q-40 420 40 700`} fill="none" stroke={C.ink} strokeWidth={96} />
         <path d={`M700 -120q-40 420 40 700`} fill="none" stroke="url(#steel19)" strokeWidth={78} />
         <ellipse cx={330} cy={1340} rx={430} ry={300} fill="url(#lamp19)" opacity={0.55} />
@@ -357,7 +454,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   } else if (n === 2) {
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
+        <Backdrop f={f} grate={false} />
         <WaterSheet x={-60} y={-100} w={300} h={2100} f={f} />
         <g opacity={q(5, 26)}><WallBoxes x={700} y={560} scale={1.02} f={f} /></g>
         <g transform={`translate(0 ${-140 + 140 * travel})`}>
@@ -374,8 +471,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   } else if (n === 3) {
     picture = (
       <g>
-        <path d="M-200 -200H1300V1180H-200Z" fill="url(#sky19)" />
-        <path d="M-200 700 L140 440 L420 640 L700 400 L1000 620 L1300 470V1180H-200Z" fill="#0B1F1C" stroke={C.ink} strokeWidth={5} />
+        <NightRidge f={f} />
         <path d="M-200 1180H1300V2100H-200Z" fill="url(#water19)" opacity={0.9} />
         {[0, 1, 2, 3].map((i) => (
           <path key={i} d={`M-160 ${1260 + i * 120}q300 ${8 + 5 * Math.sin(f / 21 + i)} 640 0t600 0`} fill="none" stroke={C.light} strokeWidth={3} opacity={0.16} />
@@ -397,7 +493,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const seam = q(10, 26), share = q(10, 30, 10);
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#sky19)" />
+        <NightRidge f={f} town={false} />
         {/* the water side */}
         <g>
           <path d="M-200 900H540V2100H-200Z" fill="url(#water19)" opacity={0.85} />
@@ -437,9 +533,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const fire = q(12, 10);
     picture = (
       <g>
-        <path d="M-200 -200H1300V1240H-200Z" fill="url(#sky19)" />
+        <NightRidge f={f} town={false} />
         <path d="M-200 1240H1300V2100H-200Z" fill="url(#grd19)" />
         <path d="M-200 1240 L1300 1180" stroke={C.moss} strokeWidth={6} opacity={0.6} />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${-140 + i * 230} 1260 L${-300 + i * 280} 2100`} stroke={C.moss} strokeWidth={4} opacity={0.2} />
+        ))}
         <DieselStack x={880} y={1250} scale={0.92} f={f} fire={fire} />
         <g transform={`translate(0 ${6 * Math.sin(f / 37)})`}>
           <Sourdough frame={f} x={420} y={1250} scale={1.28} emotion={fire > 0.5 ? 'faltering' : 'proud'}
@@ -461,7 +560,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const build = q(14, 30), twin = q(16, 34);
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
+        <Backdrop f={f} warm={0.55} />
         <Rain f={f} density={0.5} />
         <g opacity={build}>
           <Plate text="AURORA-AI" y={420} size={46} tone="cyan" />
@@ -496,7 +595,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const drain = q(18, 26);
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
+        <Backdrop f={f} warm={0.45} />
         <g>
           <Twin x={540} y={1246} scale={1.12} f={f} fidelity={1 - 0.72 * drain} drawn={1 - 0.42 * drain} sag={drain} />
           <g opacity={drain * 0.9}>
@@ -526,7 +625,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const toTrace = q(24, 26);
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
+        <Backdrop f={f} />
         <path d="M-200 1700H1300V2100H-200Z" fill={C.ink} opacity={0.6} />
         {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M${-100 + i * 240} 1700 L${-260 + i * 300} 2100`} stroke={C.steel} strokeWidth={4} opacity={0.22} />)}
         <ellipse cx={300} cy={1520} rx={420} ry={260} fill="url(#lamp19)" opacity={0.42 * (1 - 0.6 * toTrace)} />
@@ -565,7 +664,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const settled = 0;
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
+        <Backdrop f={f} warm={0.5} />
         <Rain f={f} density={0.6} />
         <g transform="translate(540 940) scale(1.34)">
           <Reconcile predicted={0} actual={0} settled={settled} predictedLabel="9 MONTHS" f={f}
@@ -585,8 +684,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   } else if (n === 10) {
     picture = (
       <g>
-        <path d="M-200 -200H1300V1180H-200Z" fill="url(#sky19)" />
-        <path d="M-200 660 L200 430 L560 620 L900 410 L1300 560V1180H-200Z" fill="#0B1F1C" stroke={C.ink} strokeWidth={5} />
+        <NightRidge f={f} />
         <path d="M-200 1180H1300V2100H-200Z" fill="url(#water19)" opacity={0.9} />
         <g transform="translate(620 1520) scale(1.26)">
           <RunOfRiver f={f} flow={0.95} gate={0.95} spill={0.2 + 0.7 * q(31, 26)} lamp={1} lampColor={C.amber} water="#2A6B7E" />
@@ -600,7 +698,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   } else if (n === 11) {
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#sky19)" />
+        <NightRidge f={f} town={false} />
+        <path d="M-200 1240H1300V2100H-200Z" fill="url(#sky19)" opacity={0.85} />
         <MapAK f={f} bloom={q(33, 40)} thread={q(34, 26)} />
         <Head text="193 COMMUNITIES" y={430} p={q(33, 18)} />
         <Plate text="82,000 ALASKANS  ·  PER AEA" y={1640} size={28} tone="amber" p={q(33, 20, 12)} />
@@ -611,7 +710,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const narrow = q(37, 40);
     picture = (
       <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
+        <Backdrop f={f} grate={false} />
         <path d="M-200 1720H1300V2100H-200Z" fill="url(#water19)" opacity={0.75} />
         <g>
           {/* the door frame, so the light has an edge rather than being a fill */}
