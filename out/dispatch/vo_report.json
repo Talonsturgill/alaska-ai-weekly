@@ -2,15 +2,15 @@
   "backend": "gemini-tts",
   "model": "gemini-3.1-flash-tts-preview",
   "voice": "Sulafat",
-  "take": 2,
+  "take": 1,
   "takes": 3,
   "soundcheck": {
     "pass": true,
-    "score": 0.998,
-    "heard": "What would make an AI-fishing rule worth testing? A September 11th paper explores that question with Eastern Bering Sea Pollock. Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations. Their agent practices harvest choices through repeated simulated seasons. Feedback rewards outcomes and changes the learned rule. They compare it with a predefined harvest rule. Will an advantage hold when the biology changes? Start with a model where young fish enter at a constant rate. The learned policy leaves more spawning biomass, the weight of breeding fish than its comparison. Alongside large annual catch swings. The next experiment links young fish entering the stock to the breeding population. This is a separate simulated case with its own comparison. Here, the learned rule catches more and leaves less breeding biomass than that comparison. These simulated gains may offer no management advantage over a predefined rule. In real fisheries, no fisheries and the North Pacific Fishery Management Council manage Alaska Pollock. Fishing businesses need sound management to plan their seasons. So test both rules against the same catch pattern and breeding stock goals. These are illustrative simulations with public code. They establish alternatives to investigate, not a winning real world policy. Which balance should a rule demonstrate between catches and breeding fish?",
+    "score": 0.979,
+    "heard": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse. Green Spark put 170 kilowatts there in 2024, cooled by turbine water. Remember them. Cordova Electric runs an island grid, 18 megawatts, 1566 customers. No wire out. About 80% hydro from two creeks, 10.8 megawatts of diesel behind it. Guest demand wrong, and the co-op can't buy from a neighbor. It burns fuel. So here, a bad forecast costs gallons. In August, UAF said it won 725,000 from the Genesis mission. Aurora AI is a digital twin of Cordova, built from the co-op's records with machine learning. A phase one award, beginning October 1st, nine months, four partners, UAF share, 325,000. Now, those servers, not the projects, just a load on the same grid. Whatever it predicts, it predicts them too. So the test is narrow by June, gallons saved, or a demonstration. Richard Weiss, who leads it, calls that a really short period of performance. And Cordova is the easy case. Alaska's power cost program covers 193 diesel communities, 82,000 people. They need it most with the least data. So watch for gallons. What would convince you it worked?",
     "checks": {
       "word_accuracy": {
-        "wer": 0.005,
+        "wer": 0.042,
         "pass": true
       },
       "no_leak": {
@@ -18,12 +18,12 @@
         "pass": true
       },
       "expressive": {
-        "pitch_std_semitones": 5.03,
-        "voiced_frac": 0.45,
+        "pitch_std_semitones": 4.63,
+        "voiced_frac": 0.43,
         "pass": true
       },
       "duration": {
-        "seconds": 113.08,
+        "seconds": 114.28,
         "pass": true
       },
       "loudness": {
@@ -32,28 +32,28 @@
       }
     },
     "diagnosis": "clean",
-    "seconds": 113.08,
+    "seconds": 114.28,
     "in_target_band": true,
-    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
   },
   "prompt_repairs": [
-    "pronunciation guide injected into the notes (2 entries)"
+    "pronunciation guide injected into the notes (4 entries)"
   ],
   "runtime_warning": null,
   "all_reports": [
     {
       "pass": true,
-      "score": 0.998,
+      "score": 0.974,
       "diagnosis": "clean"
     },
     {
       "pass": true,
-      "score": 0.998,
+      "score": 0.979,
       "diagnosis": "clean"
     },
     {
       "pass": true,
-      "score": 0.998,
+      "score": 0.977,
       "diagnosis": "clean"
     }
   ],

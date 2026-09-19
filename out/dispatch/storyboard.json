@@ -91,6 +91,30 @@
     },
     {
       "id": 4,
+      "vo_line": 4,
+      "stage": "the island grid",
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "low",
+      "transition_in": "graphic-match",
+      "thread": "MATCH",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "t": 27.0,
+      "dur": 11.0,
+      "hero": {
+        "name": "the two sources, side by side",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "the penstock and its water on one side, the diesel stack with its louvres and flame on the other, a hard centre seam, the share bar beneath them, and the shoreline they both stand on. Zones: the cool water side, the hot stack side, the dark ground between."
+      }
+    },
+    {
+      "id": 5,
       "vo_line": 5,
       "stage": "the island grid",
       "framing": "subject-portrait",
@@ -104,42 +128,18 @@
       "layout": "centered-hero-lowerthird",
       "motion_vector": "push-in-only",
       "hero_treatment": "single-organic-hero",
-      "t": 27.0,
-      "dur": 11.0,
-      "hero": {
-        "name": "Sourdough, the island grid",
-        "parts": 5,
-        "zones": 3,
-        "detail_note": "the kit.tsx rig: furnace-window chest, knit cap, arms, boots with contact shadow, plus a fuel gauge mounted on his flank. Zones: ember-lit front, cold rim off the water, shadow side."
-      }
-    },
-    {
-      "id": 5,
-      "vo_line": 7,
-      "stage": "the ledger wall",
-      "framing": "two-up",
-      "scale": "medium",
-      "height": "eye",
-      "transition_in": "assemble",
-      "thread": "BUILD",
-      "camera": "orbitReveal",
-      "stage3d": "planes",
-      "pov": "exploded-diagram",
-      "layout": "fullbleed-split",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "data-as-subject",
       "t": 38.0,
       "dur": 11.0,
       "hero": {
-        "name": "the ledger wall",
-        "parts": 6,
-        "zones": 2,
-        "detail_note": "the award card, two partner plates, the assembling cyan twin, its demand bar, and the small amber block at the bar's foot. Zones: the self-lit cyan plane and the dark wall it hangs on."
+        "name": "Sourdough and the fuel gauge",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "the kit.tsx rig with furnace-window chest, knit cap, arms and boots with a contact shadow, plus the fuel gauge on his flank with its needle and tick ring. Zones: ember-lit front, cold rim off the water, shadow side."
       }
     },
     {
       "id": 6,
-      "vo_line": 9,
+      "vo_line": 7,
       "stage": "the ledger wall",
       "framing": "data-panel",
       "scale": "close",
@@ -163,7 +163,7 @@
     },
     {
       "id": 7,
-      "vo_line": 10,
+      "vo_line": 9,
       "stage": "powerhouse interior",
       "framing": "push-detail",
       "scale": "close",
@@ -187,7 +187,7 @@
     },
     {
       "id": 8,
-      "vo_line": 12,
+      "vo_line": 11,
       "stage": "the ledger wall",
       "framing": "data-panel",
       "scale": "medium",
@@ -211,7 +211,7 @@
     },
     {
       "id": 9,
-      "vo_line": 13,
+      "vo_line": 14,
       "stage": "the ledger wall",
       "framing": "two-up",
       "scale": "wide",
@@ -235,7 +235,7 @@
     },
     {
       "id": 10,
-      "vo_line": 15,
+      "vo_line": 16,
       "stage": "the valley at night",
       "framing": "wide-establish",
       "scale": "wide",
@@ -259,7 +259,7 @@
     },
     {
       "id": 11,
-      "vo_line": 16,
+      "vo_line": 17,
       "stage": "the map of Alaska",
       "framing": "map-territory",
       "scale": "extreme-wide",
@@ -283,7 +283,7 @@
     },
     {
       "id": 12,
-      "vo_line": 17,
+      "vo_line": 19,
       "stage": "powerhouse interior",
       "framing": "subject-portrait",
       "scale": "close",

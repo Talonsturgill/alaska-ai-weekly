@@ -1,296 +1,302 @@
 [
   {
-    "text": "What would make an AI fishing",
+    "text": "In Cordova, Alaska, servers run",
     "start": 0.0,
-    "end": 2.33,
+    "end": 3.27,
     "seg": 0
   },
   {
-    "text": "rule worth testing?",
-    "start": 2.36,
-    "end": 3.9,
+    "text": "inside a hydroelectric powerhouse.",
+    "start": 3.3,
+    "end": 6.04,
     "seg": 0
   },
   {
-    "text": "A September eleventh paper explores",
-    "start": 5.4,
-    "end": 7.489999999999999,
+    "text": "Greensparc put a hundred seventy",
+    "start": 6.84,
+    "end": 8.99,
     "seg": 1
   },
   {
-    "text": "that question with eastern Bering",
-    "start": 7.52,
-    "end": 9.67,
+    "text": "kilowatts there in twenty twenty",
+    "start": 9.02,
+    "end": 10.370000000000001,
     "seg": 1
   },
   {
-    "text": "Sea pollock.",
-    "start": 9.7,
-    "end": 10.62,
+    "text": "four, cooled by turbine water.",
+    "start": 10.4,
+    "end": 13.36,
     "seg": 1
   },
   {
-    "text": "Researchers affiliated with the",
-    "start": 11.6,
-    "end": 13.67,
+    "text": "Remember them.",
+    "start": 14.38,
+    "end": 15.18,
     "seg": 2
   },
   {
-    "text": "Alaska Fisheries Science Center",
-    "start": 13.7,
-    "end": 15.450000000000001,
-    "seg": 2
-  },
-  {
-    "text": "built simulations informed by historical",
-    "start": 15.48,
-    "end": 18.47,
-    "seg": 2
-  },
-  {
-    "text": "observations.",
-    "start": 18.5,
-    "end": 19.28,
-    "seg": 2
-  },
-  {
-    "text": "Their agent practices harvest choices",
-    "start": 20.64,
-    "end": 23.009999999999998,
+    "text": "Cordova Electric runs an island",
+    "start": 16.82,
+    "end": 19.07,
     "seg": 3
   },
   {
-    "text": "through repeated simulated seasons.",
-    "start": 23.04,
-    "end": 25.28,
+    "text": "grid.",
+    "start": 19.1,
+    "end": 19.8,
     "seg": 3
   },
   {
-    "text": "Feedback rewards outcomes and changes",
-    "start": 26.24,
-    "end": 29.349999999999998,
+    "text": "Eighteen megawatts, fifteen sixty",
+    "start": 20.34,
+    "end": 22.009999999999998,
+    "seg": 3
+  },
+  {
+    "text": "six customers, no wire out.",
+    "start": 22.04,
+    "end": 25.6,
+    "seg": 3
+  },
+  {
+    "text": "About eighty percent hydro, from",
+    "start": 26.58,
+    "end": 28.83,
     "seg": 4
   },
   {
-    "text": "the learned rule.",
-    "start": 29.38,
-    "end": 30.28,
+    "text": "two creeks.",
+    "start": 28.86,
+    "end": 29.6,
     "seg": 4
   },
   {
-    "text": "They compare it with a predefined",
-    "start": 31.4,
-    "end": 33.79,
+    "text": "Ten point eight megawatts of diesel",
+    "start": 30.18,
+    "end": 32.17,
+    "seg": 4
+  },
+  {
+    "text": "behind it.",
+    "start": 32.2,
+    "end": 32.94,
+    "seg": 4
+  },
+  {
+    "text": "Guess demand wrong and the co",
+    "start": 33.8,
+    "end": 36.17,
     "seg": 5
   },
   {
-    "text": "harvest rule.",
-    "start": 33.82,
-    "end": 34.72,
+    "text": "op can't buy from a neighbor.",
+    "start": 36.2,
+    "end": 37.48,
     "seg": 5
   },
   {
-    "text": "Will an advantage hold when the",
-    "start": 35.5,
-    "end": 37.69,
+    "text": "It burns fuel.",
+    "start": 38.14,
+    "end": 39.02,
+    "seg": 5
+  },
+  {
+    "text": "So here, a bad forecast costs",
+    "start": 40.14,
+    "end": 43.53,
     "seg": 6
   },
   {
-    "text": "biology changes?",
-    "start": 37.72,
-    "end": 38.64,
+    "text": "gallons.",
+    "start": 43.56,
+    "end": 44.260000000000005,
     "seg": 6
   },
   {
-    "text": "Start with a model where young",
-    "start": 39.64,
-    "end": 41.67,
+    "text": "In August, U A F said",
+    "start": 45.5,
+    "end": 47.589999999999996,
     "seg": 7
   },
   {
-    "text": "fish enter at a constant rate.",
-    "start": 41.7,
-    "end": 43.8,
+    "text": "it won seven hundred twenty five",
+    "start": 47.62,
+    "end": 49.21,
     "seg": 7
   },
   {
-    "text": "The learned policy leaves more",
-    "start": 45.16,
-    "end": 47.17,
+    "text": "thousand from the Genesis Mission.",
+    "start": 49.24,
+    "end": 51.52,
+    "seg": 7
+  },
+  {
+    "text": "AURORA A I is a digital",
+    "start": 52.34,
+    "end": 54.83,
     "seg": 8
   },
   {
-    "text": "spawning biomass, the weight of",
-    "start": 47.2,
-    "end": 49.41,
+    "text": "twin of Cordova, built from the",
+    "start": 54.86,
+    "end": 57.33,
     "seg": 8
   },
   {
-    "text": "breeding fish, than its comparison,",
-    "start": 49.44,
-    "end": 51.41,
+    "text": "co op's records, with machine learning.",
+    "start": 57.36,
+    "end": 59.52,
     "seg": 8
   },
   {
-    "text": "alongside large annual catch swings.",
-    "start": 51.44,
-    "end": 54.64,
-    "seg": 8
-  },
-  {
-    "text": "The next experiment links young",
-    "start": 55.76,
-    "end": 58.23,
+    "text": "A Phase One award, beginning October",
+    "start": 60.62,
+    "end": 62.99,
     "seg": 9
   },
   {
-    "text": "fish entering the stock to the",
-    "start": 58.26,
-    "end": 60.03,
+    "text": "first, nine months.",
+    "start": 63.02,
+    "end": 65.0,
     "seg": 9
   },
   {
-    "text": "breeding population.",
-    "start": 60.06,
-    "end": 61.04,
-    "seg": 9
-  },
-  {
-    "text": "This is a separate simulated case",
-    "start": 62.04,
-    "end": 64.15,
+    "text": "Four partners.",
+    "start": 66.0,
+    "end": 66.92,
     "seg": 10
   },
   {
-    "text": "with its own comparison.",
-    "start": 64.18,
-    "end": 65.56,
+    "text": "U A F's share, three hundred",
+    "start": 67.66,
+    "end": 69.13,
     "seg": 10
   },
   {
-    "text": "Here the learned rule catches more",
-    "start": 66.82,
-    "end": 69.15,
+    "text": "twenty five thousand.",
+    "start": 69.16,
+    "end": 70.7,
+    "seg": 10
+  },
+  {
+    "text": "Now, those servers.",
+    "start": 71.94,
+    "end": 73.84,
     "seg": 11
   },
   {
-    "text": "and leaves less breeding biomass",
-    "start": 69.18,
-    "end": 71.13,
-    "seg": 11
-  },
-  {
-    "text": "than that comparison.",
-    "start": 71.16,
-    "end": 72.3,
-    "seg": 11
-  },
-  {
-    "text": "These simulated gains may offer",
-    "start": 73.88,
-    "end": 76.01,
+    "text": "Not the project's.",
+    "start": 74.8,
+    "end": 75.66,
     "seg": 12
   },
   {
-    "text": "no management advantage over a",
-    "start": 76.04,
-    "end": 78.09,
+    "text": "Just a load on the same",
+    "start": 76.26,
+    "end": 77.47,
     "seg": 12
   },
   {
-    "text": "predefined rule.",
-    "start": 78.12,
-    "end": 79.08,
+    "text": "grid.",
+    "start": 77.5,
+    "end": 78.2,
     "seg": 12
   },
   {
-    "text": "In real fisheries, NOAA Fisheries",
-    "start": 80.1,
-    "end": 83.05,
+    "text": "Whatever it predicts, it predicts",
+    "start": 78.75,
+    "end": 80.97,
     "seg": 13
   },
   {
-    "text": "and the North Pacific Fishery Management",
-    "start": 83.08,
-    "end": 84.78999999999999,
+    "text": "them too.",
+    "start": 81.0,
+    "end": 81.7,
     "seg": 13
   },
   {
-    "text": "Council manage Alaska pollock.",
-    "start": 84.82,
-    "end": 87.0,
-    "seg": 13
-  },
-  {
-    "text": "Fishing businesses need sound management",
-    "start": 87.92,
-    "end": 90.49,
+    "text": "So the test is narrow.",
+    "start": 82.38,
+    "end": 84.0,
     "seg": 14
   },
   {
-    "text": "to plan their seasons.",
-    "start": 90.52,
-    "end": 91.84,
+    "text": "By June, gallons saved, or a",
+    "start": 84.76,
+    "end": 87.78999999999999,
     "seg": 14
   },
   {
-    "text": "So test both rules against the",
-    "start": 92.94,
-    "end": 95.35,
+    "text": "demonstration?",
+    "start": 87.82,
+    "end": 88.52,
+    "seg": 14
+  },
+  {
+    "text": "Richard Wies, who leads it, calls",
+    "start": 89.5,
+    "end": 92.13,
     "seg": 15
   },
   {
-    "text": "same catch-pattern and breeding-stock",
-    "start": 95.38,
-    "end": 97.37,
+    "text": "that a really short period of",
+    "start": 92.16,
+    "end": 93.92999999999999,
     "seg": 15
   },
   {
-    "text": "goals.",
-    "start": 97.4,
-    "end": 98.10000000000001,
+    "text": "performance.",
+    "start": 93.96,
+    "end": 94.66,
     "seg": 15
   },
   {
-    "text": "These are illustrative simulations",
-    "start": 98.86,
-    "end": 100.77,
+    "text": "And Cordova is the easy case.",
+    "start": 95.76,
+    "end": 97.78,
     "seg": 16
   },
   {
-    "text": "with public code.",
-    "start": 100.8,
-    "end": 102.02,
-    "seg": 16
-  },
-  {
-    "text": "They establish alternatives to",
-    "start": 102.74,
-    "end": 104.47,
-    "seg": 16
-  },
-  {
-    "text": "investigate, not a winning real-world",
-    "start": 104.5,
-    "end": 106.81,
-    "seg": 16
-  },
-  {
-    "text": "policy.",
-    "start": 106.84,
-    "end": 107.33,
-    "seg": 16
-  },
-  {
-    "text": "Which balance should a rule demonstrate",
-    "start": 107.36,
-    "end": 110.23,
+    "text": "Alaska's power cost program covers",
+    "start": 98.94,
+    "end": 101.28999999999999,
     "seg": 17
   },
   {
-    "text": "between catches and breeding fish?",
-    "start": 110.26,
-    "end": 112.64,
+    "text": "a hundred ninety three diesel communities,",
+    "start": 101.32,
+    "end": 103.54,
     "seg": 17
+  },
+  {
+    "text": "eighty two thousand people.",
+    "start": 104.22,
+    "end": 105.51,
+    "seg": 17
+  },
+  {
+    "text": "They need it most, with the",
+    "start": 105.54,
+    "end": 108.21,
+    "seg": 18
+  },
+  {
+    "text": "least data.",
+    "start": 108.24,
+    "end": 108.94,
+    "seg": 18
+  },
+  {
+    "text": "So watch for gallons.",
+    "start": 109.74,
+    "end": 111.22,
+    "seg": 19
+  },
+  {
+    "text": "What would convince you it worked?",
+    "start": 112.22,
+    "end": 113.8,
+    "seg": 20
   }
 ]

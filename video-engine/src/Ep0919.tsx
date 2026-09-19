@@ -339,6 +339,49 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       </g>
     );
   } else if (n === 4) {
+    // Shot 4 covers L4 alone: "About eighty percent hydro, from two creeks. Ten
+    // point eight megawatts of diesel behind it." A two-up with a hard centre
+    // seam, which is the recipe book's COMPARISON, and the share bar beneath it.
+    const seam = q(10, 26), share = q(10, 30, 10);
+    picture = (
+      <g>
+        <path d="M-200 -200H1300V2100H-200Z" fill="url(#sky19)" />
+        {/* the water side */}
+        <g>
+          <path d="M-200 900H540V2100H-200Z" fill="url(#water19)" opacity={0.85} />
+          {[0, 1, 2, 3, 4].map((i) => (
+            <path key={i} d={`M-180 ${960 + i * 150}q160 ${10 + 6 * Math.sin(f / 19 + i)} 340 0t340 0`}
+              fill="none" stroke={C.light} strokeWidth={3} opacity={0.2} />
+          ))}
+          <g transform="translate(270 1180) scale(0.42)">
+            <RunOfRiver f={f} flow={0.9} gate={0.9} spill={0.12} lamp={0.8} lampColor={C.amber} water="#2A6B7E" />
+          </g>
+        </g>
+        {/* the fuel side */}
+        <g>
+          <path d="M540 900H1300V2100H540Z" fill="url(#grd19)" />
+          <DieselStack x={860} y={1560} scale={1.02} f={f} fire={0.22 + 0.16 * Math.sin(f / 11)} />
+          {[0, 1, 2].map((i) => (
+            <rect key={i} x={640 + i * 56} y={1500 + (i % 2) * 14} width={44} height={58} rx={5}
+              fill={C.amberD} stroke={C.ink} strokeWidth={4} opacity={0.9} />
+          ))}
+        </g>
+        {/* the hard centre seam */}
+        <path d={`M540 ${900 - 120 * seam}V2100`} stroke={C.ink} strokeWidth={16} />
+        <path d={`M540 ${900 - 120 * seam}V2100`} stroke={C.light} strokeWidth={5} opacity={0.55} />
+        <Head text="TWO CREEKS" y={430} p={q(9, 20)} />
+        <Head text="AND A BACKSTOP" y={498} p={q(9, 20, 6)} />
+        {/* the share bar: eighty percent, drawn rather than asserted */}
+        <g opacity={share} transform={`translate(0 ${20 - 20 * share})`}>
+          <rect x={120} y={700} width={840} height={56} rx={8} fill="none" stroke={C.light} strokeWidth={4} opacity={0.5} />
+          <rect x={124} y={704} width={672 * share} height={48} rx={6} fill="#2A6B7E" stroke={C.cyan} strokeWidth={3} />
+          <rect x={124 + 672 * share} y={704} width={168 * share} height={48} rx={6} fill={C.amberD} stroke={C.amber} strokeWidth={3} />
+          <Plate text="ABOUT 80% HYDRO" x={330} y={820} size={26} tone="cyan" />
+          <Plate text="10.8 MW DIESEL" x={800} y={820} size={26} tone="amber" />
+        </g>
+      </g>
+    );
+  } else if (n === 5) {
     const fire = q(12, 10);
     picture = (
       <g>
@@ -362,7 +405,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
       </g>
     );
-  } else if (n === 5) {
+  } else if (n === 6) {
     const build = q(14, 30), twin = q(16, 34);
     picture = (
       <g>
@@ -390,7 +433,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
       </g>
     );
-  } else if (n === 6) {
+  } else if (n === 7) {
     const drain = q(18, 26);
     picture = (
       <g>
@@ -407,46 +450,50 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
       </g>
     );
-  } else if (n === 7) {
+  } else if (n === 8) {
+    // Shot 8 covers L11 to L13: "Now, those servers" / "Just a load on the same
+    // grid" / "Whatever it predicts, it predicts them too". It has to carry the
+    // rack, the reveal that the block in the bar IS the rack, and then the
+    // forecast trace that has to include it. One shot, three moves.
     const grow = q(21, 30), reveal = q(21, 22, 14);
+    const draw = q(24, 30), slide = q(25, 24);
+    const obs: Array<[number, number]> = [[0, 40], [70, 10], [140, 54], [210, 0], [280, 34]];
+    const pred: Array<[number, number]> = [[280, 34], [350, 8], [420, 46], [490, 18], [560, 40]];
+    const toTrace = q(24, 26);
     picture = (
       <g>
         <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
         <path d="M-200 1700H1300V2100H-200Z" fill={C.ink} opacity={0.6} />
         {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M${-100 + i * 240} 1700 L${-260 + i * 300} 2100`} stroke={C.steel} strokeWidth={4} opacity={0.22} />)}
-        <ellipse cx={300} cy={1520} rx={420} ry={260} fill="url(#lamp19)" opacity={0.42} />
-        <Rack x={360} y={1180} scale={1.22} f={f} plate={false} />
-        <Bar x={800} y={1560} h={640} grow={grow} block={reveal} f={f} />
-        <g opacity={reveal}>
+        <ellipse cx={300} cy={1520} rx={420} ry={260} fill="url(#lamp19)" opacity={0.42 * (1 - 0.6 * toTrace)} />
+        <g opacity={1 - 0.75 * toTrace} transform={`translate(0 ${240 * toTrace})`}>
+          <Rack x={360} y={1180} scale={1.22} f={f} plate={false} />
+        </g>
+        <g transform={`translate(${-140 * toTrace} ${-120 * toTrace}) scale(${1 - 0.28 * toTrace})`}>
+          <Bar x={800} y={1560} h={640} grow={grow} block={reveal} f={f} />
+        </g>
+        <g opacity={reveal * (1 - toTrace)}>
           <Plate text="THE LOAD WAS ALWAYS THERE" x={760} y={880} size={27} tone="amber" />
         </g>
-        <g opacity={q(22, 12)} transform={`translate(${-24 + 24 * pop(22)} 0)`}>
+        <g opacity={q(22, 12) * (1 - toTrace)} transform={`translate(${-24 + 24 * pop(22)} 0)`}>
           <Plate text="NOT PART OF THIS PROJECT" x={430} y={700} size={28} />
           <Plate text="GREENSPARC, 2024" x={430} y={764} size={28} />
         </g>
-        <Head text="NOW, THOSE SERVERS" y={440} p={q(20, 16)} />
-      </g>
-    );
-  } else if (n === 8) {
-    const draw = q(24, 34), slide = q(25, 26);
-    const obs: Array<[number, number]> = [[0, 40], [70, 10], [140, 54], [210, 0], [280, 34]];
-    const pred: Array<[number, number]> = [[280, 34], [350, 8], [420, 46], [490, 18], [560, 40]];
-    picture = (
-      <g>
-        <path d="M-200 -200H1300V2100H-200Z" fill="url(#wall19)" />
-        <Rain f={f} density={0.4} />
-        <g transform="translate(240 1140)">
-          {[0, 1, 2, 3].map((i) => <path key={i} d={`M0 ${-40 + i * 40}H600`} stroke={C.light} strokeWidth={2} opacity={0.12} />)}
-          <ForecastTrace observed={obs} predicted={pred} spread={92} f={f} drawn={draw} observedDrawn={q(24, 22)}
-            nowLabel="NOW" strokeWidth={6} />
-          <g opacity={slide} transform={`translate(${290 * slide} 0)`}>
-            <rect x={-40} y={96} width={120} height={40} rx={5} fill={C.amber} stroke={C.ink} strokeWidth={3} opacity={0.9} />
-            <text x={20} y={124} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={20} fill={C.ink}>170 kW</text>
+        <g opacity={toTrace}>
+          <g transform="translate(240 1300)">
+            {[0, 1, 2, 3].map((i) => <path key={i} d={`M0 ${-40 + i * 40}H600`} stroke={C.light} strokeWidth={2} opacity={0.12} />)}
+            <ForecastTrace observed={obs} predicted={pred} spread={92} f={f} drawn={draw} observedDrawn={q(24, 20)}
+              nowLabel="NOW" strokeWidth={6} />
+            <g opacity={slide} transform={`translate(${290 * slide} 0)`}>
+              <rect x={-40} y={96} width={120} height={40} rx={5} fill={C.amber} stroke={C.ink} strokeWidth={3} opacity={0.9} />
+              <text x={20} y={124} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={20} fill={C.ink}>170 kW</text>
+            </g>
           </g>
+          <Plate text="OBSERVED" x={330} y={1700} size={26} tone="amber" p={q(24, 16)} />
+          <Plate text="CLAIMED" x={760} y={1700} size={26} tone="cyan" p={q(24, 16, 10)} />
         </g>
-        <Head text="IT PREDICTS THEM TOO" y={470} p={q(25, 18)} />
-        <Plate text="OBSERVED" x={330} y={1560} size={26} tone="amber" p={q(24, 16)} />
-        <Plate text="CLAIMED" x={760} y={1560} size={26} tone="cyan" p={q(24, 16, 10)} />
+        <Head text="NOW, THOSE SERVERS" y={440} p={q(20, 16) * (1 - toTrace)} />
+        <Head text="IT PREDICTS THEM TOO" y={440} p={q(25, 18) * toTrace} />
       </g>
     );
   } else if (n === 9) {
@@ -542,7 +589,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </Plane>
         <Plane z={0}><SVG><Defs />{picture}</SVG></Plane>
         <Plane z={-170}>
-          <SVG>{n !== 11 && <Rain f={f} density={n === 5 || n === 8 || n === 9 ? 0.35 : 0.8} />}</SVG>
+          <SVG>{n !== 11 && <Rain f={f} density={n === 6 || n === 8 || n === 9 ? 0.35 : 0.8} />}</SVG>
         </Plane>
       </Stage3D>
       <SVG>
