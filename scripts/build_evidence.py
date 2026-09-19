@@ -29,58 +29,87 @@ OUT = os.path.join(REPO, "out", "dispatch")
 EV = os.path.join(REPO, "out", "evidence")
 
 # (name, current storyboard beat id, seconds INTO that beat's action).
-# September 14: all 38 pollock-simulation and shared-test beats. Resolve the VO line/offset from the
-# CONFORMED board at runtime, so later timing surgery cannot leave a second,
-# stale clock in the evidence list. Samples witness travel, not merely the later
-# SFX contact: most 24-frame eases at +0.35s, six-frame spring crossings at +0.20s,
-# and the delayed gate/collar and slower final grip during their actual travel.
-# Ep0914's three 18-frame reveal holds start at +0.80s, after their samples.
+# September 19: all 40 Cordova powerhouse beats. Resolve the VO line/offset from the
+# CONFORMED board at runtime, so later timing surgery cannot leave a second, stale clock
+# in the evidence list. Samples witness TRAVEL rather than the later SFX contact: eases at
+# +0.35s, camera moves and reveals at +0.45s, a settle after an overshoot at +0.60s, and a
+# strike, slam or landing at +0.20s where the contact IS the event. Each value is clamped
+# to its own beat's length, so a short beat samples inside itself rather than past its end.
 # Retain the date guard: a future film must author its own action selection.
-MOVE_RUN_DATE = "2026-09-14"
+MOVE_RUN_DATE = "2026-09-19"
 LINE_START_ACTIONS = {}
 MOVES = [
-    ('research_grip_caught', 1, 0.35),
-    ('model_grip_settles', 2, 0.35),
-    ('tiny_support_revealed', 3, 0.35),
-    ('publication_tab_rotates', 4, 0.35),
-    ('observation_shutter_opens', 5, 0.35),
-    ('laboratory_revealed', 6, 0.35),
-    ('observation_intake_opens', 7, 0.35),
-    ('manual_test_throw', 8, 0.20),
-    ('learned_token_travels', 9, 0.35),
-    ('feedback_path_spreads', 10, 0.35),
-    ('feedback_changes_detent', 11, 0.35),
-    ('predefined_token_seats', 12, 0.20),
-    ('learned_detent_adjusts', 13, 0.35),
-    ('researcher_points_to_port', 14, 0.35),
-    ('closed_port_turns', 15, 0.35),
-    ('constant_case_shutter_opens', 16, 0.35),
-    ('constant_inlet_cycles', 17, 0.35),
-    ('higher_biomass_flap_rises', 18, 0.20),
-    ('breeding_weight_emblem_seats', 19, 0.35),
-    ('catch_swings_flap_duck', 20, 0.20),
-    ('stock_linked_doorway_wipes', 21, 0.35),
-    ('stock_linked_inlet_connects', 22, 0.35),
-    ('separate_candidates_dock', 23, 0.35),
-    ('own_comparison_aligns', 24, 0.35),
-    ('higher_catch_flap_opens', 25, 0.20),
-    ('lower_biomass_flap_opens', 26, 0.20),
-    ('both_case_results_retract', 27, 0.35),
-    ('shared_test_frame_opens', 28, 0.35),
-    ('model_carried_to_harbor', 29, 0.35),
-    ('shared_shutters_placed', 30, 0.35),
-    ('harbor_test_leaf_unfolds', 31, 0.35),
-    ('catch_goal_shutter_opens', 32, 0.35),
-    ('stock_goal_shutter_opens', 33, 0.35),
-    ('next_test_gate_retracts', 34, 0.80),
-    ('simulation_collar_unlatches', 35, 0.60),
-    ('research_value_plaque_unfolds', 36, 0.35),
-    ('grip_moves_to_test_again', 37, 0.45),
-    ('patient_hand_guides_rebound', 38, 0.45),
+    ('fan_blades_turning', 1, 0.13),
+    ('weld_bead_runs', 2, 1.28),
+    ('greensparc_plate_slides_into_key', 3, 1.38),
+    ('crane_down_past_deck_edge', 4, 0.13),
+    ('stencilled_boxes_drift_in', 5, 0.93),
+    ('turbine_shaft_turns', 6, 0.13),
+    ('drip_lands_on_measured_box', 7, 0.88),
+    ('mask_wipe_opens_the_valley', 8, 0.13),
+    ('pull_back_off_the_island', 9, 0.98),
+    ('diesel_stack_lights', 10, 1.33),
+    ('push_in_on_sourdough', 11, 0.13),
+    ('fuel_needle_slams_over', 12, 1.38),
+    ('gallons_drop_into_the_drum', 13, 0.53),
+    ('ledger_wall_assembles', 14, 1.18),
+    ('partner_plates_land', 15, 1.33),
+    ('cyan_twin_draws_itself', 16, 0.43),
+    ('function_plates_slam_up', 17, 0.28),
+    ('bar_overshoots_and_settles', 18, 0.13),
+    ('twin_freezes_mid_draw', 19, 0.68),
+    ('schedule_stamp_comes_down', 20, 1.38),
+    ('outline_sags_away', 21, 1.38),
+    ('whip_back_to_the_rack', 22, 0.18),
+    ('demand_bar_builds_from_floor', 23, 0.13),
+    ('plate_snaps_across_rack', 24, 0.68),
+    ('bar_climbs_past_the_plate', 25, 0.63),
+    ('forecast_trace_draws', 26, 0.38),
+    ('server_block_slides_under_line', 27, 0.78),
+    ('pull_out_to_the_two_boxes', 28, 1.03),
+    ('hatching_crawls_across_measured', 29, 0.58),
+    ('bracket_extends_and_withdraws', 30, 0.68),
+    ('sourdough_steps_between_boxes', 31, 0.53),
+    ('quote_plate_rises', 32, 0.43),
+    ('door_swings_light_crosses_water', 33, 1.13),
+    ('second_creek_spills_past_intake', 34, 0.33),
+    ('climb_off_the_island', 35, 0.73),
+    ('dots_bloom_across_alaska', 36, 0.13),
+    ('cyan_thread_stretches_to_dot', 37, 0.28),
+    ('match_cut_to_the_powerhouse_door', 38, 1.23),
+    ('drip_lands_on_the_empty_box', 39, 0.68),
+    ('question_plate_rises', 40, 0.73),
 ]
 
 
-def conformed_moves(board, start):
+def _spans(rows, film_end):
+    """(id -> (start, end)) for beats or shots, whichever board schema wrote them.
+
+    TWO SCHEMAS, ONE CLOCK (2026-09-19). `build_scenes.py` accepts a board whose `t` is a
+    RANGE STRING ("0.000-1.188") and a board whose `t` is a bare float onset with the end
+    implied by the next row. This file only ever understood the first, and on a float board
+    it died inside a `dict.get` default, because Python evaluates that default eagerly and
+    `0.0.split` is an AttributeError before the fallback can be chosen. A run cannot convene
+    a panel without an evidence pack, so an unreadable board here is a dead run, and the
+    schema the rest of the pipeline rendered from is not the wrong one.
+
+    A float row's end is the next row's onset, and the last row's end is the film's end,
+    which is the same arithmetic the board's own range strings encode.
+    """
+    out, ordered = {}, sorted(rows, key=lambda r: float(r.get("at_s", r["t"]))
+                              if not isinstance(r["t"], str) else float(r["t"].split("-", 1)[0]))
+    for i, row in enumerate(ordered):
+        if isinstance(row["t"], str) and "-" in row["t"]:
+            lo, hi = map(float, row["t"].split("-"))
+        else:
+            lo = float(row.get("at_s", row["t"]))
+            hi = (float(ordered[i + 1].get("at_s", ordered[i + 1]["t"]))
+                  if i + 1 < len(ordered) else film_end)
+        out[row["id"]] = (lo, hi)
+    return out
+
+
+def conformed_moves(board, start, film_end):
     """Resolve named action samples and fail before writing a misleading pack."""
     if board.get("run_date") != MOVE_RUN_DATE:
         raise ValueError("evidence move names belong to " + MOVE_RUN_DATE + "; update them for this board")
@@ -89,7 +118,9 @@ def conformed_moves(board, start):
             or set(beats) != {beat for _, beat, _ in MOVES}
             or len({name for name, _, _ in MOVES}) != len(MOVES)):
         raise ValueError("evidence MOVES must cover every current board beat exactly once")
-    shots = [(shot["id"], *map(float, shot["t"].split("-"))) for shot in board["shots"]]
+    beat_span = _spans(board["beats"], film_end)
+    shot_span = _spans(board["shots"], film_end)
+    shots = [(sid, lo, hi) for sid, (lo, hi) in shot_span.items()]
     covered, result = set(), []
     for name, beat_id, peak_after in MOVES:
         beat = beats[beat_id]
@@ -105,8 +136,8 @@ def conformed_moves(board, start):
             if line not in start:
                 raise ValueError(f"beat {beat_id} references a missing aligned VO line")
             at = start[line] + off
-            declared_at = float(beat.get("at_s", beat["t"].split("-", 1)[0]))
-            range_start = float(beat["t"].split("-", 1)[0])
+            declared_at = beat_span[beat_id][0]
+            range_start = beat_span[beat_id][0]
             if (abs(at - declared_at) > 1 / 30.0
                     or abs(at - range_start) > 1 / 30.0):
                 raise ValueError(f"beat {beat_id} is not conformed to the current VO line clock")
@@ -114,13 +145,13 @@ def conformed_moves(board, start):
             # Newer boards may persist either an explicit conformed `at_s` or the
             # documented `t` range alone. Use the range start as the action onset
             # when `at_s` is absent, matching build_scenes.py's board adapter.
-            at = float(beat.get("at_s", beat["t"].split("-", 1)[0]))
+            at = beat_span[beat_id][0]
             prior = [idx for idx, line_start in start.items() if line_start <= at + 1 / 30.0]
             if not prior:
                 raise ValueError(f"beat {beat_id} precedes the first aligned VO line")
             line = max(prior, key=lambda idx: start[idx])
             off = at - start[line]
-        beat_start, beat_end = map(float, beat["t"].split("-"))
+        beat_start, beat_end = beat_span[beat_id]
         if beat_id in LINE_START_ACTIONS:
             if line != LINE_START_ACTIONS[beat_id]:
                 raise ValueError(f"beat {beat_id} no longer matches its line-driven scene action")
@@ -144,7 +175,10 @@ def main():
 
     lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
     start = {L["idx"]: L["start"] for L in lines}
-    moves = conformed_moves(json.load(open(os.path.join(OUT, "storyboard.json"))), start)
+    _board = json.load(open(os.path.join(OUT, "storyboard.json")))
+    _p0 = json.load(open(os.path.join(OUT, "episode_props.json")))
+    moves = conformed_moves(_board, start,
+                            max(max(L["end"] for L in lines), _p0["total"] / 30.0))
     # THE FILM, NOT THE NARRATION. `end` was the last VO line's end (122.84s), so the
     # contact sheet stopped there and never photographed the final 2.6 seconds — which is
     # exactly where the sign-off plate and the music credit live. Five judges across three
