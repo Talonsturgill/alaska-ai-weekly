@@ -61,6 +61,23 @@ would help, add it to `.claude/settings.json` in the same run and COMMIT it, bec
 wakes in a fresh container cloned from the repo and an uncommitted rule does not exist on the run
 that needs it.
 
+### A COMPOUND COMMAND IS JUDGED BY ITS RISKIEST PART (same run, second stop)
+
+The rule above was already written when this run stopped AGAIN, on a single bash line that
+did `rm -f .claude/WORKLOG.md && git add ... && git commit ...`. Three harmless bookkeeping
+steps and one delete, and the prompt the owner saw named the whole line. An allowlist entry
+for the safe half cannot rescue it.
+
+So a routine run does not chain shell steps when one of them is a DELETE, a MOVE, or a
+REDIRECT OVER AN EXISTING FILE. Anything with a destructive step goes in its own invocation,
+or in a script with the guard written INTO it where it can be tested.
+
+And the better move is usually to remove the NEED for the delete. The stray worklog was
+reported by the stop hook as an untracked change, which is what made deleting it look
+necessary; `.claude/WORKLOG.md` is now in `.gitignore`, so the file can never be committed,
+never shows dirty, and nobody has to reach into `.claude/` with an `rm` again. Close the trap
+rather than stepping around it.
+
 ## THE ONE OUTCOME LAW (added 2026-08-01 by owner directive; READ IT BEFORE PHASE 0 AND AGAIN AT EVERY DECISION POINT)
 
 **THIS RUN HAS EXACTLY ONE TERMINAL STATE: A DELIVERED VIDEO.** There is no second one. Not a
