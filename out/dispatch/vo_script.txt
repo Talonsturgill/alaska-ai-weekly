@@ -1,18 +1,19 @@
-What would make an AI fishing rule worth testing?
-A September eleventh paper explores that question with eastern Bering Sea pollock.
-Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.
-Their agent practices harvest choices through repeated simulated seasons.
-Feedback rewards outcomes and changes the learned rule.
-They compare it with a predefined harvest rule.
-Will an advantage hold when the biology changes?
-Start with a model where young fish enter at a constant rate.
-The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.
-The next experiment links young fish entering the stock to the breeding population.
-This is a separate simulated case with its own comparison.
-Here the learned rule catches more and leaves less breeding biomass than that comparison.
-These simulated gains may offer no management advantage over a predefined rule.
-In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.
-Fishing businesses need sound management to plan their seasons.
-So test both rules against the same catch-pattern and breeding-stock goals.
-These are illustrative simulations with public code. They establish alternatives to investigate, not a winning real-world policy.
-Which balance should a rule demonstrate between catches and breeding fish?
+In Cordova, Alaska, servers run inside a hydroelectric powerhouse.
+Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.
+Remember them.
+Cordova Electric runs an island grid with no wire out.
+Most of its power is hydro. The rest is diesel.
+Guess wrong about demand and the co op can't buy from a neighbor. It burns fuel.
+So here, a bad forecast costs gallons.
+In August, the University of Alaska Fairbanks won an Energy Department award to forecast that grid.
+The plan is a digital twin, a working copy of Cordova built from the co op's records, with machine learning on it.
+It hasn't started. It begins October first and runs nine months.
+Now, those servers.
+They are not part of the project. They are a load on the same grid.
+Whatever the model predicts, it has to predict them too.
+So the test is narrow. By next June, gallons saved, or a demonstration?
+Richard Wies, who leads it, calls nine months a really short period of performance.
+And Cordova is the easy case.
+The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.
+So watch for gallons.
+What would convince you it worked?

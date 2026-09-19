@@ -1,138 +1,144 @@
 {
-  "run_date": "2026-09-14",
-  "title": "Rehearsal Before the Season",
-  "target_seconds": 118,
+  "run_date": "2026-09-19",
+  "title": "Watch For Gallons",
+  "target_seconds": 120,
   "caption_fixups": {
-    "September eleventh": "September 11th"
+    "U A F": "UAF",
+    "co op": "co-op",
+    "October first": "October 1st"
   },
   "lines": [
     {
       "idx": 0,
-      "text": "What would make an AI fishing rule worth testing?",
-      "claims": []
+      "text": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
+      "claims": [
+        "c15"
+      ]
     },
     {
       "idx": 1,
-      "text": "A September eleventh paper explores that question with eastern Bering Sea pollock.",
+      "text": "Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.",
       "claims": [
-        "c1",
-        "c3"
+        "c15"
       ]
     },
     {
       "idx": 2,
-      "text": "Researchers affiliated with the Alaska Fisheries Science Center built simulations informed by historical observations.",
+      "text": "Remember them.",
       "claims": [
-        "c2",
-        "c8"
+        "c15"
       ]
     },
     {
       "idx": 3,
-      "text": "Their agent practices harvest choices through repeated simulated seasons.",
+      "text": "Cordova Electric runs an island grid with no wire out.",
       "claims": [
-        "c5"
+        "c12b"
       ]
     },
     {
       "idx": 4,
-      "text": "Feedback rewards outcomes and changes the learned rule.",
+      "text": "Most of its power is hydro. The rest is diesel.",
       "claims": [
-        "c6"
+        "c12a"
       ]
     },
     {
       "idx": 5,
-      "text": "They compare it with a predefined harvest rule.",
+      "text": "Guess wrong about demand and the co op can't buy from a neighbor. It burns fuel.",
       "claims": [
-        "c7"
+        "c12a"
       ]
     },
     {
       "idx": 6,
-      "text": "Will an advantage hold when the biology changes?",
+      "text": "So here, a bad forecast costs gallons.",
       "claims": []
     },
     {
       "idx": 7,
-      "text": "Start with a model where young fish enter at a constant rate.",
+      "text": "In August, the University of Alaska Fairbanks won an Energy Department award to forecast that grid.",
       "claims": [
-        "c9"
+        "c1"
       ]
     },
     {
       "idx": 8,
-      "text": "The learned policy leaves more spawning biomass, the weight of breeding fish, than its comparison, alongside large annual catch swings.",
+      "text": "The plan is a digital twin, a working copy of Cordova built from the co op's records, with machine learning on it.",
       "claims": [
-        "c10",
-        "c11"
+        "c11",
+        "c6"
       ]
     },
     {
       "idx": 9,
-      "text": "The next experiment links young fish entering the stock to the breeding population.",
+      "text": "It hasn't started. It begins October first and runs nine months.",
       "claims": [
-        "c9"
+        "c3"
       ]
     },
     {
       "idx": 10,
-      "text": "This is a separate simulated case with its own comparison.",
+      "text": "Now, those servers.",
       "claims": [
-        "c9",
-        "c7"
+        "c15"
       ]
     },
     {
       "idx": 11,
-      "text": "Here the learned rule catches more and leaves less breeding biomass than that comparison.",
+      "text": "They are not part of the project. They are a load on the same grid.",
       "claims": [
-        "c13"
+        "c15"
       ]
     },
     {
       "idx": 12,
-      "text": "These simulated gains may offer no management advantage over a predefined rule.",
+      "text": "Whatever the model predicts, it has to predict them too.",
       "claims": [
-        "c4",
-        "c7"
+        "c11"
       ]
     },
     {
       "idx": 13,
-      "text": "In real fisheries, NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
+      "text": "So the test is narrow. By next June, gallons saved, or a demonstration?",
       "claims": [
-        "c14"
+        "c3"
       ]
     },
     {
       "idx": 14,
-      "text": "Fishing businesses need sound management to plan their seasons.",
+      "text": "Richard Wies, who leads it, calls nine months a really short period of performance.",
       "claims": [
         "c16"
       ]
     },
     {
       "idx": 15,
-      "text": "So test both rules against the same catch-pattern and breeding-stock goals.",
+      "text": "And Cordova is the easy case.",
       "claims": [
-        "c4",
-        "c7"
+        "c12a",
+        "c12b"
       ]
     },
     {
       "idx": 16,
-      "text": "These are illustrative simulations with public code. They establish alternatives to investigate, not a winning real-world policy.",
+      "text": "The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.",
       "claims": [
-        "c4",
-        "c17"
+        "c13"
       ]
     },
     {
       "idx": 17,
-      "text": "Which balance should a rule demonstrate between catches and breeding fish?",
+      "text": "So watch for gallons.",
+      "claims": [
+        "c3"
+      ]
+    },
+    {
+      "idx": 18,
+      "text": "What would convince you it worked?",
       "claims": []
     }
   ],
-  "word_count": 212
+  "word_count": 217
 }

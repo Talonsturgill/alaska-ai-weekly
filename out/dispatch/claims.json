@@ -1,373 +1,134 @@
 {
-  "run_date": "2026-09-14",
-  "validated_at_utc": "2026-09-14T11:36:11.068320+00:00",
+  "run_date": "2026-09-19",
+  "story": "UAF's Alaska Center for Energy and Power won a DOE Genesis Mission Phase I award for AURORA-AI, a nine-month research project pairing physics-based digital twins with machine learning on Cordova Electric Cooperative's islanded microgrid.",
   "claims": [
     {
-      "id": "c1",
-      "status": "verified-primary",
-      "spoken": "The paper was published September 11, 2026.",
-      "on_screen": "SEPTEMBER 11TH",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F01"
+      "id": "c1", "status": "VERIFIED",
+      "claim": "UAF secured a $725,000 award from the U.S. Department of Energy for AURORA-AI.",
+      "spoken": "U A F's energy center said it won seven hundred twenty five thousand federal dollars",
+      "on_screen": "$725,000 · PER UAF",
+      "verbatim_source": "\"a $725,000 award from the U.S. Department of Energy\"",
+      "url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
+      "second_source_url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
+      "label": "per UAF",
+      "requires": ["The words PER UAF appear in the same frame as the figure. No DOE document naming AURORA-AI could be found, so the film must never imply a DOE announcement.", "This is the four-way consortium TOTAL, never 'to UAF'."],
+      "confidence": "high"
     },
     {
-      "id": "c2",
-      "status": "verified-primary",
-      "spoken": "Kapur, Adams and Thorson list Alaska Fisheries Science Center affiliations.",
-      "on_screen": "ALASKA FISHERIES SCIENCE CENTER",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F02"
+      "id": "c2", "status": "LABELLED",
+      "claim": "Of the $725,000 total, UAF's own share is $325,000.",
+      "spoken": "NOT SPOKEN",
+      "on_screen": "NOT PAINTED",
+      "verbatim_source": "structured field citation, UAF share: \"$325,000\"",
+      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
+      "label": "according to Alaska's News Source",
+      "requires": ["CUT FROM THE FILM by the angle room: two similar dollar figures in one breath is confusing and only one matters. Retained here so the ledger records that the $725,000 is a total and not UAF's share."],
+      "confidence": "medium"
     },
     {
-      "id": "c3",
-      "status": "verified-primary",
-      "spoken": "The policy experiment models Eastern Bering Sea pollock.",
-      "on_screen": "EASTERN BERING SEA POLLOCK",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F03"
+      "id": "c3", "status": "LABELLED",
+      "claim": "Phase One is reported to start October 1st and run about nine months, and is primarily research.",
+      "spoken": "The work starts October first",
+      "on_screen": "PHASE 1 · STARTS OCT 1 · 9 MONTHS · RESEARCH",
+      "verbatim_source": "labelled non-quotation, not a quotation: the article states an October 1 Phase One start and a nine-month duration, described as primarily research.",
+      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
+      "label": "per Alaska's News Source",
+      "requires": ["The source states October 1 with NO YEAR, so the film must not print a year with it.", "The word RESEARCH travels with this claim on screen. It is the reason this is a study and not a result."],
+      "confidence": "medium"
     },
     {
-      "id": "c4",
-      "status": "verified-primary",
-      "spoken": "Its cases are illustrative simulations awaiting further operational development.",
-      "on_screen": "ILLUSTRATIVE SIMULATIONS",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F04"
+      "id": "c6", "status": "VERIFIED",
+      "claim": "AURORA-AI stands for Alaska Utility Resilience and Optimization using Real-time AI.",
+      "spoken": "NOT SPOKEN",
+      "on_screen": "AURORA-AI",
+      "verbatim_source": "\"AURORA-AI (Alaska Utility Resilience and Optimization using Real-time AI)\"",
+      "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
+      "second_source_url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
+      "label": "",
+      "requires": ["Confirmed identically on two institutionally independent primary sites. The expansion may be painted in full."],
+      "confidence": "high"
     },
     {
-      "id": "c5",
-      "status": "verified-primary",
-      "spoken": "The reinforcement-learning agent learns a harvest policy from repeated simulated interactions.",
-      "on_screen": "LEARNED HARVEST RULE",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-        "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/train_agent.py"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F05"
+      "id": "c11", "status": "VERIFIED",
+      "claim": "The project will combine high-resolution utility data, physics-based digital twins and machine learning to forecast demand and generation, detect abnormal conditions, and optimize the use of hydro, diesel, battery and flexible loads.",
+      "spoken": "a digital twin of this grid, built from the co op's records, with machine learning on it",
+      "on_screen": "FORECAST DEMAND · DETECT ABNORMAL CONDITIONS · OPTIMIZE HYDRO AND DIESEL",
+      "verbatim_source": "\"combine high-resolution utility data, physics-based digital twins and machine learning to forecast demand and generation; detect abnormal conditions; optimize the use of hydro, diesel, battery and flexible loads\"",
+      "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
+      "second_source_url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
+      "label": "",
+      "requires": ["HARD TENSE OBLIGATION. These are INTENDED capabilities of a research project, not measured performance. Every verb about what the AI does is future or conditional. Say WILL or IS DESIGNED TO, never DOES.", "The on-screen card carries the word INTENDED."],
+      "confidence": "high"
     },
     {
-      "id": "c6",
-      "status": "verified-primary",
-      "spoken": "Training feedback rewards outcomes and guides policy updates.",
-      "on_screen": "OUTCOME FEEDBACK",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-        "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/r_utils.R"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F06"
+      "id": "c12a", "status": "VERIFIED",
+      "claim": "Cordova Electric Cooperative runs two hydroelectric plants and one diesel plant, and says hydro produces about 80 percent of Cordova's power.",
+      "spoken": "Eighty percent of its power is hydro. The backstop is diesel",
+      "on_screen": "~80% HYDRO",
+      "verbatim_source": "\"two hydroelectric plants and one diesel plant\" and hydroelectric facilities produce \"80% of Cordova's power\"",
+      "url": "https://www.cordovaelectric.com/",
+      "second_source_url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
+      "label": "",
+      "requires": ["Use the cooperative's own 80 percent with the word ABOUT. CleanTechnica says more than 83 percent for 2025 and the two disagree.", "This claim forbids framing Cordova as a diesel town that AI will rescue."],
+      "confidence": "high"
     },
     {
-      "id": "c7",
-      "status": "verified-primary",
-      "spoken": "The comparison evaluates a predefined harvest rule through management strategy evaluation.",
-      "on_screen": "PREDEFINED HARVEST RULE",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F07"
+      "id": "c12b", "status": "VERIFIED",
+      "claim": "Cordova Electric Cooperative has 1,566 customers and 18 megawatts of generating capacity, of which 10.8 MW is the Orca diesel plant, 6 MW is Power Creek hydro and 1.25 MW is Humpback Creek hydro.",
+      "spoken": "Cordova has one thousand five hundred sixty six customers, and no wire out",
+      "on_screen": "1,566 CUSTOMERS",
+      "verbatim_source": "\"1,566 customers\" and \"Generating capacity of 18 megawatts\" and \"Orca Diesel Plant - 10.8 megawatts\"",
+      "url": "https://www.cordovaelectric.com/about/",
+      "label": "",
+      "requires": ["The cooperative gives no date for the customer count, so no year may be attached."],
+      "confidence": "high"
     },
     {
-      "id": "c8",
-      "status": "verified-primary",
-      "spoken": "The operating model uses historical observations to condition simulated population dynamics.",
-      "on_screen": "HISTORICAL OBSERVATIONS",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-        "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/r_utils.R"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F08"
+      "id": "c13", "status": "LABELLED",
+      "claim": "The Alaska Energy Authority's Power Cost Equalization program serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation, where the cost of electricity can be three to five times higher than in more urban areas.",
+      "spoken": "A hundred ninety three Alaska communities run mostly on diesel, at three to five times town prices",
+      "on_screen": "193 COMMUNITIES · 3 TO 5x URBAN COST · PER AEA",
+      "verbatim_source": "\"serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation\" and \"the cost of electricity can be three to five times higher than for customers in more urban areas\"",
+      "url": "https://www.akenergyauthority.org/What-We-Do/Power-Cost-Equalization",
+      "label": "per the Alaska Energy Authority",
+      "requires": ["The page is undated and gives no fiscal year, so no year may be attached.", "The three-to-five band is the agency's characterization, not a measurement, so PER AEA appears in frame.", "USED INSTEAD OF the ACEP 'over 200 microgrids' figure, which no agency corroborates."],
+      "confidence": "medium"
     },
     {
-      "id": "c9",
-      "status": "verified-primary",
-      "spoken": "The experiment compares constant recruitment with Ricker stock-linked recruitment.",
-      "on_screen": "CONSTANT RECRUITMENT",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-        "https://raw.githubusercontent.com/mkapur/deep-fish/main/case%20studies/case_study_3-reinforcementLearning/RL/r_utils.R"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true,
-        "on_screen_all": [
-          "SIMULATED",
-          "CONSTANT RECRUITMENT",
-          "STOCK-LINKED RECRUITMENT",
-          "VERSUS ITS COMPARISON"
-        ]
-      },
-      "source_fact_id": "F09"
+      "id": "c15", "status": "VERIFIED",
+      "claim": "An edge data center was already operating inside Cordova's Humpback Creek hydroelectric facility before the AURORA-AI award, delivered by Greensparc and reported in April 2024, at a reported 170 kilowatts, cooled by the same water that drives the turbine.",
+      "spoken": "Since twenty twenty four, a hundred seventy kilowatts of servers have run inside Humpback Creek, cooled by the creek that spins the turbine",
+      "on_screen": "170 kW · INSIDE HUMPBACK CREEK · SINCE 2024 · GREENSPARC · PER CLEANTECHNICA",
+      "verbatim_source": "\"Greensparc delivered a 170-kilowatt computing capacity directly inside Cordova's run-of-river Humpback Creek hydroelectric facility\"",
+      "url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
+      "second_source_url": "https://www.greensparc.com/",
+      "label": "reported by CleanTechnica",
+      "requires": ["HARDEST OBLIGATION IN THE FILM. The film must NEVER show AURORA-AI building, siting or planning this data center. It predates the award by more than two years and a third party installed it. The name GREENSPARC is on screen with it.", "Trade press, not primary, so PER CLEANTECHNICA is in frame with the 170 kW figure.", "Never paint the word DAM or show dam imagery. Both Cordova plants are run-of-river."],
+      "confidence": "medium"
     },
     {
-      "id": "c10",
-      "status": "verified-primary",
-      "spoken": "Under constant recruitment, the learned policy produces large annual catch swings.",
-      "on_screen": "LARGE ANNUAL CATCH SWINGS",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true,
-        "on_screen_all": [
-          "SIMULATED",
-          "CONSTANT RECRUITMENT",
-          "STOCK-LINKED RECRUITMENT",
-          "VERSUS ITS COMPARISON"
-        ]
-      },
-      "source_fact_id": "F10"
-    },
-    {
-      "id": "c11",
-      "status": "verified-primary",
-      "spoken": "That constant-recruitment policy maintains higher spawning biomass than the comparison.",
-      "on_screen": "HIGHER SPAWNING BIOMASS",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true,
-        "on_screen_all": [
-          "SIMULATED",
-          "CONSTANT RECRUITMENT",
-          "STOCK-LINKED RECRUITMENT",
-          "VERSUS ITS COMPARISON"
-        ]
-      },
-      "source_fact_id": "F11"
-    },
-    {
-      "id": "c12",
-      "status": "verified-primary",
-      "spoken": "Under Ricker recruitment, the learned harvest policy is smoother.",
-      "on_screen": "",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Omitted from narration and visuals. Smoother policy response does not establish steadier annual catches."
-      ],
-      "contract": {
-        "must_ship": false,
-        "on_screen_none": [
-          "SMOOTHER CATCHES",
-          "STEADIER CATCHES PROVEN"
-        ]
-      },
-      "source_fact_id": "F12"
-    },
-    {
-      "id": "c13",
-      "status": "verified-primary",
-      "spoken": "The Ricker result sustains higher catches while retaining less spawning biomass than the comparison.",
-      "on_screen": "LOWER SPAWNING BIOMASS",
-      "source": "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1",
-      "sources": [
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true,
-        "on_screen_all": [
-          "SIMULATED",
-          "CONSTANT RECRUITMENT",
-          "STOCK-LINKED RECRUITMENT",
-          "VERSUS ITS COMPARISON",
-          "HIGHER CATCH"
-        ],
-        "must_ship_with": [
-          "c9",
-          "c10",
-          "c11"
-        ]
-      },
-      "source_fact_id": "F13"
-    },
-    {
-      "id": "c14",
-      "status": "verified-primary",
-      "spoken": "NOAA Fisheries and the North Pacific Fishery Management Council manage Alaska pollock.",
-      "on_screen": "NOAA FISHERIES",
-      "source": "https://www.fisheries.noaa.gov/species/alaska-pollock",
-      "sources": [
-        "https://www.fisheries.noaa.gov/species/alaska-pollock"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true,
-        "on_screen_all": [
-          "NORTH PACIFIC FISHERY MANAGEMENT COUNCIL"
-        ]
-      },
-      "source_fact_id": "F14"
-    },
-    {
-      "id": "c15",
-      "status": "verified-primary",
-      "spoken": "Pollock management also addresses salmon bycatch, important to commercial and subsistence fisheries.",
-      "on_screen": "",
-      "source": "https://www.fisheries.noaa.gov/species/alaska-pollock",
-      "sources": [
-        "https://www.fisheries.noaa.gov/species/alaska-pollock"
-      ],
-      "requires": [
-        "Background context only. No bycatch outcome is asserted by this film."
-      ],
-      "contract": {
-        "must_ship": false
-      },
-      "source_fact_id": "F15"
-    },
-    {
-      "id": "c16",
-      "status": "verified-primary",
-      "spoken": "Fishing businesses rely on stable science-based management to plan their seasons.",
-      "on_screen": "SEASON PLANNING",
-      "source": "https://www.fisheries.noaa.gov/feature-story/charting-future-fisheries-independent-surveys",
-      "sources": [
-        "https://www.fisheries.noaa.gov/feature-story/charting-future-fisheries-independent-surveys"
-      ],
-      "requires": [
-        "Scope this to the attributed study and its named scenario where applicable. No real-world catch or adoption claim."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F16"
-    },
-    {
-      "id": "c17",
-      "status": "verified-primary",
-      "spoken": "The authors provide public code for the illustrative case studies, including the Eastern Bering Sea pollock reinforcement-learning experiment.",
-      "on_screen": "PUBLIC CODE",
-      "source": "https://github.com/mkapur/deep-fish",
-      "sources": [
-        "https://github.com/mkapur/deep-fish",
-        "https://academic.oup.com/icesjms/article/83/9/fsag176/8790489?searchresult=1"
-      ],
-      "requires": [
-        "Source availability only. Do not claim successful reproduction, completeness, an open-source license or an operational policy."
-      ],
-      "contract": {
-        "must_ship": true,
-        "on_screen_verbatim": true
-      },
-      "source_fact_id": "F17",
-      "validation_artifact": "public_code_validation.json"
+      "id": "c16", "status": "VERIFIED",
+      "claim": "Richard Wies, UAF professor and principal investigator, said of Phase One: \"It's a really short period of performance... and then there's also an opportunity to apply for Phase Two funding\".",
+      "spoken": "The lead researcher calls it a really short period of performance",
+      "on_screen": "\"A REALLY SHORT PERIOD OF PERFORMANCE\" · RICHARD WIES, UAF",
+      "verbatim_source": "\"It's a really short period of performance... and then there's also an opportunity to apply for Phase Two funding\"",
+      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
+      "label": "",
+      "requires": ["SAFE ON SCREEN as 'Richard Wies, UAF professor and principal investigator'. Do NOT paint a department name: every UAF faculty directory URL returned 404 and the fuller title is single-sourced.", "The ellipsis is as the source rendered it. If the film shows only the first clause it must not add an ellipsis implying more of that sentence."],
+      "confidence": "high"
     }
   ],
-  "kill_list": [
-    "No operational adoption, quota change, autonomous fleet deployment or observed improvement in commercial catches established.",
-    "Do not generalize constant-recruitment biomass gains to Ricker outcomes.",
-    "Do not call higher catches profit, revenue, sustainability or proof of ecological benefit.",
-    "Do not confuse survey biomass, spawning biomass, catch and quota.",
-    "Do not state this fixes salmon bycatch: bycatch is background context, absent from verified modeled outcomes.",
-    "Do not state all authors are Alaska-based: AFSC affiliations are Seattle and Kapur lists present address PNNL.",
-    "Do not label arbitrary animated curves as published data; use unscaled schematic comparisons.",
-    "Do not describe MSE as automatically learning its harvest rule.",
-    "Do not infer fisher enthusiasm, opposition or stakeholder approval; none independently located.",
-    "Do not conflate the separate forecasting and spatial cases with RL catch-policy performance."
+  "cut": [
+    {"id": "k1", "what": "Any cents-per-kilowatt-hour figure for rural Alaska electricity", "why": "Not reachable on any page. AEA statistical reports serve through opaque file-ticket URLs and eia.gov returned navigation only. c13's three-to-five band is used instead. NO per-kWh number enters the film."},
+    {"id": "k2", "what": "That DOE announced or confirmed the award", "why": "No DOE page naming AURORA-AI exists that could be found. The film says DOE funded it, sourced to UAF, and never shows a DOE announcement."},
+    {"id": "k3", "what": "That AURORA-AI will build, site or plan a data center at Cordova", "why": "The single most likely factual error available in this story. Greensparc installed one in 2024, before the Genesis Mission existed."},
+    {"id": "k4", "what": "Cordova's peak load, annual kWh sold, or annual diesel gallons", "why": "The cooperative publishes customers and capacity but no load or fuel figures. The film explains the mechanism and puts no cost on it."},
+    {"id": "k5", "what": "'One of only N' framing for the Phase I award", "why": "No source states how many Phase I Genesis Mission awards were made."},
+    {"id": "k6", "what": "ACEP's 'over 200 remote microgrids' as a verified count", "why": "Downgraded, not used. No agency corroborates it and the nearest state figure is smaller and counts something else. c13 is used instead."},
+    {"id": "k7", "what": "Wies's department title", "why": "Single-sourced; his institutional bio was unreachable. 'UAF professor' is used."},
+    {"id": "k8", "what": "Wies's 'about 100 kilowatts, two large refrigerators' description", "why": "Kept out of the film. It conflicts with the 170 kW reported for the installed unit and the conflict could not be resolved. The confirmed installed figure is used instead, with its outlet named."},
+    {"id": "k9", "what": "The roughly $7 million Phase Two estimate", "why": "Cut by the angle room as a headline number, since it is an estimate of money that does not exist and putting it on a card makes an unfunded figure the memorable one. The film carries the PI's own 'short period of performance' instead, which makes the same point honestly."}
   ],
-  "limitations": [
-    "Current public r_utils.R computes realized catch minus a spawning-biomass shortfall penalty. The plotting source labels imported historical result datasets catch only. Treat code as corroboration of simulation mechanism, not exact proof of reward settings that produced Figure4. No code was run; no numerical results independently reproduced.",
-    "Publisher canonical normal open currently fails, but web search returned lengthy complete source sections including dated masthead, Case3, results and limitations. Reproducibility repository and raw implementation files fetched separately."
-  ],
-  "omitted_claims": {
-    "c12": "Smoother-policy-response detour removed by independent directors room to prevent a false annual-stability inference.",
-    "c15": "Background bycatch fact does not serve this film\u2019s single question."
-  }
+  "tense_law": "Nothing has been forecast, detected or optimized yet. Phase One had not started as of this run. Every verb about what the AI does is future or conditional, everywhere, including on-screen cards.",
+  "notes": "9 verified, 6 labelled, 9 cut. Two independent primary institutions (UAF and Colorado State) describe the same four intended functions in nearly the same words, which is the safest technical sentence available. 'National Laboratory of the Rockies' was checked expecting a press-release error and is correct: DOE renamed NREL in December 2025 and lists the new name on its own national laboratories page."
 }

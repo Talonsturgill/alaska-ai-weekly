@@ -1,125 +1,74 @@
 {
-  "run_date": "2026-09-14",
-  "title": "Rehearsal Before the Season",
-  "designed_before_scene_code": true,
+  "run_date": "2026-09-19",
+  "title": "AURORA-AI, the Cordova scoreboard",
+  "one_line_look": "A wet October night on Prince William Sound, lit by two light sources that are arguing: the sodium amber of what actually burned, and the cold cyan of what was claimed.",
+
   "palette": {
-    "sky": "#EFF5E9 alabaster daylight",
-    "ground": "#254D98 ultramarine laboratory enamel and sea",
-    "hero": "#F7AE38 mango control grip",
-    "accent": "#93DFC6 sea glass observation windows",
-    "shadow": "#152342 ink navy",
-    "why": "The marine world earns blue as water and laboratory enamel, while mango and bright daylight carry research curiosity. Mint denotes the model boundary, never success. Both favorable and unfavorable outcomes receive identical high-contrast lettering. This differs from September 13 oxblood porcelain petrol copper nickel and September 12 lilac ivory citron coral violet."
+    "sky": "#0E2622",
+    "ground": "#17332B",
+    "hero": "#E3873A",
+    "accent": "#7FD4FF",
+    "shadow": "#08100F",
+    "light": "#EAF2EC",
+    "mood": "Coastal rainforest dark, saturated and wet rather than gloomy. Amber is warm, local, physical and ALWAYS means measured. Cyan is cold, self-lit, weightless and ALWAYS means claimed. A viewer who never hears a word should still learn that rule by 30 seconds, because the whole film is an argument between those two colours.",
+    "why_this_story": "Cordova sits in coastal temperate rainforest on the Sound, the project starts on October 1st, and the physical stake is a diesel flame against falling water. The colour opposition is not decoration, it is the thesis: amber is the gauge, cyan is the forecast, and the film is about whether anyone ever puts them side by side.",
+    "divergence": "Hard break from both recent dispatches. 2026-09-13 was a warm bright PAPER interior (cream #F4EADF, copper #C7805D, petrol #27615B). 2026-09-14 was a bright blue-and-white LAB (off-white #EFF5E9, blue #254D98, mango #F7AE38, mint #93DFC6). Both were light-field films on pale grounds. This one is a DARK, wet, high-saturation exterior night, which neither of the last two has been, and the ground value is the darkest this channel has shipped in a month."
   },
+
   "light": {
-    "time": "Clear late morning",
-    "direction": "Hard key from upper left, cool water fill from below, thin alabaster rim on the right edge",
-    "depth": "Three or more Stage3D planes per shot. Rim and form gradients separate the mango grip from enamel; contact shadows pin controls and researchers to their supports. Harbor piles in foreground pass faster than distant buildings. Window reflections are clipped to their glass.",
-    "why": "Transparent model boundaries must remain tangible, and a visible full-size harbor must dwarf the bounded research apparatus without turning into a gloomy warning."
+    "time_of_day": "October dusk into night, rain just stopped, everything sheened.",
+    "key": "Low warm sodium key from screen-left, motivated by the powerhouse door standing open. It rakes across wet surfaces so every horizontal reads as reflective, which is how the frame stays modulated without adding props.",
+    "fill": "Cold blue-green ambient bounce from the wet sky, very low, so shadow sides never go to flat black.",
+    "rim": "Rain-sheen rim on every solid form, from the key side. On the hero it is the single strongest read of dimension in a dark frame.",
+    "the_cyan_rule": "The forecast cyan is SELF-LIT and never reaches another object. No cyan bounce, no cyan rim on a real thing, no cyan cast shadow. This is lib/simulation.tsx and lib/forecast.tsx clause 4 enforced in the lighting plan, and it is the mechanism by which a viewer can always tell which half of the frame is real.",
+    "depth": "stage3d planes, three deep in every exterior shot: far fjord wall and ridge at z 650 with aerial haze, the powerhouse and creek at z 0, and rain plus a foreground rail or alder at z -170 catching the key. Depth comes from the plane separation and the haze gradient, never from a drop shadow."
   },
+
   "shape_language": {
-    "grammar": "Rounded articulated hands and control grips meet rectilinear experiment bays. Identical comparison windows and labels prevent higher catch from being declared the winner. Biological content uses labeled unscaled model outlines, never a relabeled species.",
-    "why": "The learned rule explores an explicitly constructed system; biological assumptions are separate hardware in the illustration, not a magical ocean transformation."
+    "grammar": "CURVES YOU CANNOT COMMAND against BOXES YOU CAN.",
+    "soft_organic": "The creek, the penstock's bend, the rain, the ridge line, and Sourdough himself, who is warm and rounded by design. These are the things that do what they do regardless of what anyone decides.",
+    "hard_rectilinear": "The diesel gen-set, the CLAIMED and MEASURED slots, and the data center's two refrigerator boxes. These are things a person chose.",
+    "why_this_story": "The film's question is what a forecast can and cannot buy. A river is a curve nobody dispatches; a generator is a box somebody starts. Every frame puts one against the other, and the Act 4 turn is the moment a NEW box arrives beside the curve and the argument changes shape.",
+    "deliberate_contrast_not_default": "Sourdough's warm roundness is already the shelf's opposite to ServerMachine's cold rectilinearity, and this run uses that pairing at a deliberately absurd scale ratio rather than the usual one."
   },
+
   "casting": {
-    "hero": {
-      "asset": "GearLever",
-      "source": "video-engine/src/lib/props.tsx",
-      "why": "Existing longThrow control makes candidate adjustment visible. A mango grip and serial notch keep the same research control recognizable through all acts. It controls only illustrated simulations."
-    },
-    "support": [
-      {
-        "asset": "Character",
-        "why": "One fictional researcher operates the control, resets distinct experiments and sets both rules onto the next test. Driven gestures only; no idle spectator."
-      },
-      {
-        "asset": "GripHand",
-        "why": "Close shots show continuous hand-to-grip contact using a shared pivot-derived anchor, not independently tuned coordinates."
-      },
-      {
-        "asset": "Stage3D, Plane, CameraMoves, ContactShadow, RimLight, MotionBlur",
-        "why": "Use shared depth, shade and motion machinery for coherent physical contact and scale change."
-      },
-      {
-        "asset": "QuestionToken and Simulated/EvidenceState",
-        "why": "Give each experiment its own distinct learned and predefined candidates. Keep unresolved next-test space visibly separate from reported findings."
-      }
+    "hero": "Sourdough — the personified power plant, cast as the islanded grid itself. Warm, rounded, proud, and GUESSING. His furnace-window chest glow is the film's second gauge: it is the amber, and it dims at the turn. Hero-rerun gate clear: the last two heroes were GearLever (09-14) and PenAndDocument (09-13), and Sourdough has not led.",
+    "ai_presence": "THE FORECAST DOUBLE, drawn with this run's net-new lib/forecast.tsx grammar plus lib/simulation.tsx's Simulated for the twin's silhouette. Not a robot, not a server box, not a brain. The AI in this story is literally a virtual replica of Sourdough that runs slightly ahead of him, and drawing it as anything else would be the stretch the angle room refused.",
+    "supporting": [
+      "Character — the co-op operator, outfit 'worker', the person who has to decide whether to start the diesel. Present in the shots where a DECISION is being made, and absent where nothing is being decided, per Gate 0A''.",
+      "ServerMachine — Act 4 only, tint steel, at roughly one fifth its usual staging scale. The channel has drawn this rig as a looming institutional appetite; here it arrives as a polite little box the size of two refrigerators, and the scale reversal IS the beat.",
+      "Cell — not cast. Cordova's hedge is diesel and water, not batteries, and putting a battery in frame would be a fact the sources do not support."
     ],
-    "net_new": [],
-    "net_new_reason": "The selected verdict uses the existing GearLever and tokens. No new fish or competing hero is needed; spend craft effort on contact and material finish."
+    "net_new": "RunOfRiver — the intake, penstock and powerhouse of a run-of-river hydro plant, as a reusable set piece. This is a real shelf gap: the library has OilfieldBG, FrostYardBG and RiverBG but nothing that shows water being TAKEN from a creek and turned into power, which is the physical mechanism this entire film rests on. Params: flow 0..1 (the creek's water level, which is the thing nobody commands), gate 0..1 (the intake), and spill 0..1 (the energy a run-of-river plant throws away because it cannot store it, which is the Act 4 setup)."
   },
+
   "motion_language": {
-    "primary": "Lever anticipates, sweeps an 80-degree arc and settles at a physical detent. A connected schematic path carries outcomes back into candidate adjustment. The predefined control stays fixed during learning. Distinct bays reset and reconnect before the second result.",
-    "secondary": "Lever collar and cable lag the sweep, research sleeves follow the hand, window waterlines ripple, harbor lines sway from attached cleats.",
-    "events": "At least one literal physical verb every 3 to 5 seconds. Moving parts illustrate the current line. No particle motion used to impersonate content. Freeze all scene clocks during three 0.6-second reveal holds.",
-    "why": "The story is a sequence of controlled experiments. Motion must make the feedback and reset legible before it provides ornament.",
-    "blur": "Use shared MotionBlur at180-degree shutter-equivalent on the fast lever throw and59s doorway wipe. Blur only physical movers; labels, source scope and captions remain sharp. Reveal holds pause primary, camera, reactions, ambient and reflections together."
+    "always_running": "WATER NEVER STOPS. Every shot containing the creek carries a continuous flow animation that spans the entire hold, plus rain on an irrational period, plus Sourdough's breath. This is DISPATCH_STANDARD section 8's 'no scene built only out of interpolate() events' satisfied by the setting itself rather than by a push alone.",
+    "camera": "Every shot also carries the mandatory slow push (1.00 to about 1.08) and a lateral drift on an irrational period. Composed stage3d CameraMoves per shot; no static frames.",
+    "hero_moves_that_earn_blur_and_overshoot": [
+      "THE NEEDLE SLAM. The diesel gauge needle does not drift, it jumps and settles, with anticipation below zero and a visible overshoot. It is the film's heartbeat and it fires on the emphasis words.",
+      "THE TWIN ASSEMBLING. The forecast double builds itself out of the data, drawn (lib/simulation `drawn`) from the ground up, hunting before it settles.",
+      "THE CONE OPENING. The uncertainty cone unfurls forward from NOW, widening, and the widening is the motion rather than a held shape.",
+      "THE EMPTY SLOT. Act 3's key image does not animate IN so much as refuse to fill: the hatching crawls, the slot stays empty, and the stillness is the point. Deliberate stillness is acting.",
+      "THE BOX SETTLING. Act 4's data center lands beside the creek with a small, polite squash and settle, which is funnier and more honest than a slam."
+    ],
+    "no_linear_anything": "Every entrance uses lib/motion entrance() with anticipation, overshoot and settle; everything attached gets followThrough(); MotionBlur is fed from the same velocity that drives the move."
   },
+
   "composition": {
-    "stages": [
-      "Bright wet laboratory with glazed observation bays and steel ribs",
-      "Separate stock-linked experimental room with tiled floor, curved glazing and overhead feed pipe",
-      "Open harbor comparison bench with full-size quay, buildings and water"
-    ],
-    "scales": [
-      "insert grip and engraved detent",
-      "close researcher and mechanism",
-      "medium independent experiment bay",
-      "wide harbor and model apparatus"
-    ],
-    "heights": [
-      "low at control pivot and quay edge",
-      "eye level",
-      "overhead experiment cutaway"
-    ],
-    "safe_area": "Keep all essential illustrated results in x90 to990 and y530 to1240 of1080x1920. Reserve y1336 to1468 for captions. Both the1080-square crop from y420 and portrait retain the argument. Sparse fixed study attribution above the caption band.",
-    "signature_shot": "A low-angle pullback reveals both candidate rules on the same next-test bench, with the whole harbor extending beyond the model boundary. The discovery survives while its claim narrows.",
-    "hierarchy": "One controlling action at center per shot. Labels arrive attached to the result they name. Never stack competing full-size information panels.",
-    "stage_rule": "The mechanism cutaway is a framing of the first laboratory, not a third stage. Each of the three rooms/exterior has a genuinely different architecture and physical layout.",
-    "label_treatment": {
-      "colors": "Ink navy #152342 text on alabaster #EFF5E9 for every outcome, reverse pairing for scope only. Mango belongs to grip/accent material, never text on alabaster.",
-      "sizes": "Outcome text48px minimum, case headers40px, versus-its-comparison qualifiers32px, source scope28px, captions39px. Long labels wrap to at most two lines; no compressed type.",
-      "segregation": "Study and case scope at1250, captions1336to1468, source proper names get their own narrated full-size scene rather than micro print.",
-      "minimum_contrast": "12 to1 for outcome text/substrate, measured in code before probes."
-    },
-    "reveal_holds": [
-      {
-        "at_s": 26,
-        "hold_s": 0.6,
-        "subject": "completed outcome-feedback circuit",
-        "negative_space": "Outer apparatus retracts from the upper right so one returning feedback path owns the gap."
-      },
-      {
-        "at_s": 59,
-        "hold_s": 0.6,
-        "subject": "the newly separate stock-linked room",
-        "negative_space": "Door leaves clear center around new control station; old case remains in a narrow distant doorway."
-      },
-      {
-        "at_s": 94,
-        "hold_s": 0.6,
-        "subject": "supported equal-test bench beneath the harbor",
-        "negative_space": "Sky and water open around the small research bench while full-size quay piles establish scale."
-      }
-    ],
-    "portrait_depth": "Above420 show real room rafters, windows, pipes or harbor sky and cranes. Below1500 show attached bench legs, room floor seams or near quay edge and mooring shadows. These planes give portrait scale and occlusion, not duplicated information or blank bands."
+    "approach": "The 9:16 master is the graded cut and is composed for. Content above y 420 and below y 1500 stages the vertical and never appears in the square: the fjord wall and rain above, the wet foreground rail and alder below. The story itself stays inside the centred 1:1 safe box.",
+    "focal_hierarchy": "In a dark frame the brightest thing is the subject, so amber is rationed. One amber source per shot at full value, everything else stepped down. The cyan is allowed to be bright because it is self-lit, which is how the two can share a frame without competing.",
+    "negative_space_beats": "Act 3 earns its silence with the most empty frame in the film, and it is empty ON PURPOSE around a hatched box. Dead-space meter will read high there and that is the correct reading, not a defect to fix.",
+    "signature_shot": "THE PAIR. The CLAIMED slot lit cyan with a number in it, the MEASURED slot beside it standing empty and hatched, and Sourdough between them looking at the empty one while the creek keeps running behind him. One frame that contains the award, the honest state of it, and the thing that will settle it.",
+    "brand_mark": "One anchor, top-left, off the hero, off the slots, off the creek line. Does not move between shots."
   },
+
   "craft_advance": {
-    "system": "GearLever contact geometry and material articulation",
-    "change": "Expose one shared grip-center transform derived from the exact pivot and throw used to draw the lever; use it for GripHand and contact timing. Add opt-in service detail with a shaded base, detents, bolts and a restrained collar reaction to give close shots dimensional material information. Existing defaults preserve old films.",
-    "proof": "Numerically check endpoint and midpoint contact geometry, then inspect consecutive-frame grip-contact strips across the actual throw."
+    "system": "lib/forecast.tsx — THE FORECAST GRAMMAR (net-new this run, tsc clean).",
+    "what_it_adds": "simulation.tsx owns 'how do you draw a model of a thing'. This owns 'how do you draw a claim about a TIME, and that claim being checked'. ForecastTrace always draws NOW, always widens uncertainty with distance, and never casts a shadow. Reconcile is the honest half: a CLAIMED slot and a MEASURED slot, with settled starting at 0, where MEASURED renders as an EMPTY HATCHED BOX reading NOT YET MEASURED.",
+    "why_it_matters_beyond_this_run": "This channel covers forecasts, models and projections constantly and has improvised the 'prediction versus outcome' picture every time. Making the empty MEASURED slot a required state means no future dispatch can draw a confident forecast without the component asking whether anyone checked it."
   },
-  "source_reference": "https://www.fisheries.noaa.gov/species/alaska-pollock",
-  "guardrails": [
-    "Illustrated physical apparatus is a schematic of software experiments, not equipment claimed by the paper.",
-    "No plotted values or counts. Qualitative outcome arrows and words only.",
-    "No smoothness detour and no claim of steadier catches.",
-    "Separate constant and stock-linked simulated experiments, each relative to its comparison."
-  ],
-  "review_revision": {
-    "round": 2,
-    "addressed": [
-      "AD1 explicitcontrastandtype",
-      "AD2 namedholdsnegativespaceportraitplanesblur"
-    ]
-  }
+
+  "binding_note": "This plan is an INPUT the build executes against, not a description written afterward. If a build decision contradicts it, either fix the build or consciously revise this file and say why in the retrospective."
 }
