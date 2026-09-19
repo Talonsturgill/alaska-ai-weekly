@@ -330,7 +330,7 @@
   },
   {
    "id": 2,
-   "t": 2.89,
+   "t": 2.03,
    "shot": 1,
    "draw": {
     "subject": "the penstock elbow behind the rack",
@@ -347,11 +347,11 @@
     "ambient": "condensation creeping across the pipe"
    },
    "shows": "the bead",
-   "at_s": 2.89
+   "at_s": 2.03
   },
   {
    "id": 3,
-   "t": 5.48,
+   "t": 3.76,
    "shot": 1,
    "draw": {
     "subject": "a wall plate beside the rack",
@@ -368,11 +368,11 @@
     "ambient": "fan wash rippling the cable bundle"
    },
    "shows": "the 170 kW plate",
-   "at_s": 5.48
+   "at_s": 3.76
   },
   {
    "id": 4,
-   "t": 6.3,
+   "t": 5.45,
    "shot": 2,
    "draw": {
     "subject": "the powerhouse interior",
@@ -389,7 +389,7 @@
     "ambient": "the water sheet falling behind everything"
    },
    "shows": "the turbine below",
-   "at_s": 6.3
+   "at_s": 5.45
   },
   {
    "id": 5,
@@ -416,7 +416,7 @@
   },
   {
    "id": 6,
-   "t": 11.31,
+   "t": 10.28,
    "shot": 2,
    "draw": {
     "subject": "the turbine shaft",
@@ -433,11 +433,11 @@
     "ambient": "the water sheet"
    },
    "shows": "the coolant line from turbine to rack",
-   "at_s": 11.31
+   "at_s": 10.28
   },
   {
    "id": 7,
-   "t": 15.48,
+   "t": 13.43,
    "shot": 2,
    "draw": {
     "subject": "the drip from beat 2",
@@ -454,7 +454,7 @@
     "ambient": "the lamp swing slows and settles"
    },
    "shows": "the drip landing on MEASURED",
-   "at_s": 15.48
+   "at_s": 13.43
   },
   {
    "id": 8,
@@ -480,7 +480,7 @@
   },
   {
    "id": 9,
-   "t": 25.22,
+   "t": 23.17,
    "shot": 3,
    "draw": {
     "subject": "the shoreline",
@@ -498,7 +498,7 @@
     "ambient": "cloud shadow crossing the water"
    },
    "shows": "an island with no line leaving it",
-   "at_s": 25.22
+   "at_s": 23.17
   },
   {
    "id": 10,
@@ -544,7 +544,7 @@
   },
   {
    "id": 12,
-   "t": 39.12,
+   "t": 38.1,
    "shot": 4,
    "draw": {
     "subject": "Sourdough's chest ember",
@@ -562,11 +562,11 @@
     "ambient": "rain on his shoulders"
    },
    "shows": "the fuel needle at its stop",
-   "at_s": 39.12
+   "at_s": 38.1
   },
   {
    "id": 13,
-   "t": 44.15,
+   "t": 42.1,
    "shot": 4,
    "draw": {
     "subject": "a fuel gauge on Sourdough's flank",
@@ -583,7 +583,7 @@
     "ambient": "the needle trembling where it stopped"
    },
    "shows": "gallons becoming a physical count",
-   "at_s": 44.15
+   "at_s": 42.1
   },
   {
    "id": 14,
@@ -608,7 +608,7 @@
   },
   {
    "id": 15,
-   "t": 50.29,
+   "t": 49.61,
    "shot": 5,
    "draw": {
     "subject": "UNIVERSITY OF ALASKA FAIRBANKS and ENERGY DEPARTMENT plates",
@@ -625,11 +625,11 @@
     "ambient": "cyan flicker"
    },
    "shows": "$725,000 and its sourcing",
-   "at_s": 50.29
+   "at_s": 49.61
   },
   {
    "id": 16,
-   "t": 54.79,
+   "t": 53.42,
    "shot": 5,
    "draw": {
     "subject": "a cyan working copy of Sourdough",
@@ -647,11 +647,11 @@
     "ambient": "the twin's linework re-solving"
    },
    "shows": "the cyan twin",
-   "at_s": 54.79
+   "at_s": 53.42
   },
   {
    "id": 17,
-   "t": 59.28,
+   "t": 57.23,
    "shot": 5,
    "draw": {
     "subject": "three function plates",
@@ -668,7 +668,7 @@
     "ambient": "cyan flicker"
    },
    "shows": "the three intended functions",
-   "at_s": 59.28
+   "at_s": 57.23
   },
   {
    "id": 18,
@@ -693,7 +693,7 @@
   },
   {
    "id": 19,
-   "t": 70.58,
+   "t": 68.53,
    "shot": 6,
    "draw": {
     "subject": "the twin",
@@ -710,7 +710,7 @@
     "ambient": "the wall going quiet"
    },
    "shows": "the twin stopped half-drawn",
-   "at_s": 70.58
+   "at_s": 68.53
   },
   {
    "id": 20,
@@ -735,8 +735,8 @@
   },
   {
    "id": 21,
-   "t": 74.43,
-   "at_s": 74.43,
+   "t": 73.92,
+   "at_s": 73.92,
    "shot": 6,
    "draw": {
     "subject": "the drained lower half of the twin",
@@ -756,7 +756,7 @@
   },
   {
    "id": 22,
-   "t": 76.62,
+   "t": 75.6,
    "shot": 7,
    "draw": {
     "subject": "the server rack from the hook",
@@ -773,11 +773,11 @@
     "ambient": "the creek returning under it"
    },
    "shows": "the rack again",
-   "at_s": 76.62
+   "at_s": 75.6
   },
   {
    "id": 23,
-   "t": 77.72,
+   "t": 76.44,
    "shot": 7,
    "draw": {
     "subject": "the grid's demand bar rising beside the rack",
@@ -796,11 +796,11 @@
     "ambient": "fan wash"
    },
    "shows": "the server block inside the demand bar",
-   "at_s": 77.72
+   "at_s": 76.44
   },
   {
    "id": 24,
-   "t": 78.82,
+   "t": 77.28,
    "shot": 7,
    "draw": {
     "subject": "a NOT PART OF THIS PROJECT plate",
@@ -817,11 +817,11 @@
     "ambient": "fans"
    },
    "shows": "NOT PART OF THIS PROJECT",
-   "at_s": 78.82
+   "at_s": 77.28
   },
   {
    "id": 25,
-   "t": 81.02,
+   "t": 78.97,
    "shot": 7,
    "draw": {
     "subject": "the demand bar",
@@ -838,7 +838,7 @@
     "ambient": "fans"
    },
    "shows": "the bar above the plate",
-   "at_s": 81.02
+   "at_s": 78.97
   },
   {
    "id": 26,
@@ -863,7 +863,7 @@
   },
   {
    "id": 27,
-   "t": 88.55,
+   "t": 87.52,
    "shot": 8,
    "draw": {
     "subject": "the server block",
@@ -881,11 +881,11 @@
     "ambient": "cone edge crawl"
    },
    "shows": "the block riding inside the cone",
-   "at_s": 88.55
+   "at_s": 87.52
   },
   {
    "id": 28,
-   "t": 89.0,
+   "t": 87.97,
    "shot": 9,
    "draw": {
     "subject": "the two stencilled boxes from the hook",
@@ -902,11 +902,11 @@
     "ambient": "rain on the wall"
    },
    "shows": "CLAIMED, filled",
-   "at_s": 89.0
+   "at_s": 87.97
   },
   {
    "id": 29,
-   "t": 89.45,
+   "t": 88.42,
    "shot": 9,
    "draw": {
     "subject": "the MEASURED box beside it",
@@ -923,11 +923,11 @@
     "ambient": "the room dropping quiet"
    },
    "shows": "MEASURED, empty and hatched",
-   "at_s": 89.45
+   "at_s": 88.42
   },
   {
    "id": 30,
-   "t": 94.42,
+   "t": 92.37,
    "shot": 9,
    "draw": {
     "subject": "the error bracket that should join the two boxes",
@@ -944,7 +944,7 @@
     "ambient": "rain on the wall"
    },
    "shows": "the measurement that would settle it, absent",
-   "at_s": 94.42
+   "at_s": 92.37
   },
   {
    "id": 31,
@@ -1013,7 +1013,7 @@
   },
   {
    "id": 34,
-   "t": 108.38,
+   "t": 106.33,
    "shot": 10,
    "draw": {
     "subject": "the penstock",
@@ -1030,7 +1030,7 @@
     "ambient": "the penstock running full"
    },
    "shows": "the spill",
-   "at_s": 108.38
+   "at_s": 106.33
   },
   {
    "id": 35,
@@ -1057,7 +1057,7 @@
   },
   {
    "id": 36,
-   "t": 111.74,
+   "t": 111.28,
    "shot": 11,
    "draw": {
     "subject": "192 more amber dots",
@@ -1074,11 +1074,11 @@
     "ambient": "the coastline drifting"
    },
    "shows": "192 more dots",
-   "at_s": 111.74
+   "at_s": 111.28
   },
   {
    "id": 37,
-   "t": 113.45,
+   "t": 112.52,
    "shot": 11,
    "draw": {
     "subject": "a thin cyan thread",
@@ -1095,11 +1095,11 @@
     "ambient": "the dots pulsing"
    },
    "shows": "the thread falling short",
-   "at_s": 113.45
+   "at_s": 112.52
   },
   {
    "id": 38,
-   "t": 114.12,
+   "t": 113.66,
    "shot": 12,
    "draw": {
     "subject": "the powerhouse door at night",
@@ -1116,11 +1116,11 @@
     "ambient": "the creek past the threshold"
    },
    "shows": "the door, unchanged",
-   "at_s": 114.12
+   "at_s": 113.66
   },
   {
    "id": 39,
-   "t": 114.57,
+   "t": 114.11,
    "shot": 12,
    "draw": {
     "subject": "the MEASURED box on the wall",
@@ -1138,11 +1138,11 @@
     "ambient": "fan hum"
    },
    "shows": "the box, still empty",
-   "at_s": 114.57
+   "at_s": 114.11
   },
   {
    "id": 40,
-   "t": 115.02,
+   "t": 114.56,
    "shot": 12,
    "draw": {
     "subject": "the question",
@@ -1159,7 +1159,7 @@
     "ambient": "the creek, and then the tail"
    },
    "shows": "the question",
-   "at_s": 115.02
+   "at_s": 114.56
   }
  ],
  "hook": {

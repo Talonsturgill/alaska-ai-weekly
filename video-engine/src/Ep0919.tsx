@@ -865,7 +865,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <Head text="IT HASN'T STARTED" size={58} y={612} p={q(18, 18)} />
         {/* 1500 is exactly the square crop's bottom edge, so PHASE 1 was sliced in half
          *  and 9 MONTHS sat below the world. They are the two facts of the shot. */}
-        <g transform={`translate(0 ${-30 + 30 * pop(19)})`} opacity={q(19, 12)}>
+        <g transform={`translate(0 ${-30 + 30 * pop(18)})`} opacity={q(18, 14, 18)}>
           <Plate text="PHASE 1  ·  STARTS OCTOBER 1ST" y={700} size={26} tone="amber" />
           <Plate text="9 MONTHS  ·  RESEARCH" y={768} size={28} tone="amber" />
         </g>
@@ -879,13 +879,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           {/* Written out rather than mapped: visible_copy_check lints every string that
            *  reaches the screen, and a name arriving through a loop variable is a string it
            *  cannot read. A copy gate that cannot see the copy is not a gate. */}
-          <Plate text="UAF ACEP" x={540} y={864} size={23} tone="cyan" p={q(19, 14, 22)} />
-          <Plate text="COLORADO STATE" x={540} y={924} size={23} tone="cyan" p={q(19, 14, 29)} />
-          <Plate text="NATIONAL LAB OF THE ROCKIES" x={540} y={984} size={23} tone="cyan" p={q(19, 14, 36)} />
-          <Plate text="CORDOVA ELECTRIC" x={540} y={1044} size={23} tone="cyan" p={q(19, 14, 43)} />
-          <Plate text="FORMERLY NREL" x={540} y={1112} size={21} p={q(19, 14, 52)} />
+          <Plate text="UAF ACEP" x={540} y={864} size={23} tone="cyan" p={q(19, 13, 4)} />
+          <Plate text="COLORADO STATE" x={540} y={924} size={23} tone="cyan" p={q(19, 13, 9)} />
+          <Plate text="NATIONAL LAB OF THE ROCKIES" x={540} y={984} size={23} tone="cyan" p={q(19, 13, 14)} />
+          <Plate text="CORDOVA ELECTRIC" x={540} y={1044} size={23} tone="cyan" p={q(19, 13, 19)} />
+          <Plate text="FORMERLY NREL" x={540} y={1112} size={21} p={q(19, 13, 25)} />
           <Plate text="$325,000 TO UAF  ·  PER ALASKA'S NEWS SOURCE" x={540} y={1176} size={21}
-            tone="amber" p={q(19, 16, 62)} />
+            tone="amber" p={q(19, 15, 32)} />
         </g>
       </g>
     );
