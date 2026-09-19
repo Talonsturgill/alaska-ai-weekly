@@ -5,7 +5,7 @@
   "manifest": {
     "sources": {
       "out/dispatch/captions.json": "8328972188c788b81dedd6b73f74633f7e1854df7fd798955b434d63bc56214d",
-      "scripts/build_scenes.py": "20dcc4b139053c5297a3aec31be0a9d7f221e59cba0ff0410eabeec353675894",
+      "scripts/build_scenes.py": "c4c3a9265a810120805f4423025ebff39d5f443116472053916a5008ed017df2",
       "scripts/parse_engine.cjs": "a668989b16cbf173a46e200d41a5da830588ea5761b17ac8ae665b1e6d26697d",
       "scripts/render_parallel.sh": "c9919c8fcf3a2766df39de5ff63f1876525af2e9c4ad84179a73d5f0968b8767",
       "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860",
@@ -47,7 +47,7 @@
       "video-engine/src/Ep0912.tsx": "2c3f82ea4d80f437de5abc7796a044392f8874edc68c94536ee8085a2bef9331",
       "video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
       "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
-      "video-engine/src/Ep0919.tsx": "9c375b32931edd63c99bf154a23ea77bd5e9e2017114545374dc21a805b27fba",
+      "video-engine/src/Ep0919.tsx": "ef9a9007726f37d8a13bc6669fe62ef0beb48c44a0cbbede80e4b4a08edce12b",
       "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
       "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
       "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
@@ -88,7 +88,7 @@
       "video-engine/src/lib/fauna.tsx": "212aabe9f8ee34f4e8ec050b836c111f801cfe351c99570f8152db6f2e8f5018",
       "video-engine/src/lib/firecraft.tsx": "48c1e30aa2d78982cd06d6dd66001c0f22a9616be38f03455489fc159f35bc94",
       "video-engine/src/lib/fishcraft.tsx": "19b36ef7a5f7ae10c455b641fdb48e2af00026f7b788f4a52942f5bb280c006c",
-      "video-engine/src/lib/forecast.tsx": "225403811f616f9b54e564566752fcf0beda8e6e124371427fb7c9e19fc5bd20",
+      "video-engine/src/lib/forecast.tsx": "7e91a88649174ec0117324b664dfec0cf980bf55a2ad3cdf55dbb90d6608dda5",
       "video-engine/src/lib/identify.tsx": "85132ac1eecc032763defc5f4e5fb66da367ddd5797154a5a10698019298b6cb",
       "video-engine/src/lib/kit.tsx": "93908695b798e6eaf6482249a159c4b4f349a4f314e4504f1a0c97eabf07df15",
       "video-engine/src/lib/lighting.tsx": "bed24c3ad8bb49bb0ce583bb59ac99e8e2c91cb3fb278ced4a64cbdd540a2c2c",
@@ -115,16 +115,16 @@
     },
     "props": {
       "path": "/home/user/alaska-ai-weekly/out/dispatch/episode_props.json",
-      "sha256": "b6a303e56379d68d14135bf8cabf1666598cdf71dc6ac0cbd5c4a24d0706c2b0"
+      "sha256": "3f2709fe997e26d83f0f18a1a1f79e161470db26e7fa06d2c6c8dc3a7fd6f768"
     },
     "composition": "Dispatch0919",
     "total": 3813,
     "chunks": 1,
     "browser_override": null
   },
-  "cache_key": "3e0951e2f4a7b4a8ffec0ff27a4f4c6600a97a1ab02c2921ea71c1d4a24a5d2f",
+  "cache_key": "3d76154f9bbb6b41fcd2b8e68877e3111f60ef9a75cf25834a826e6e089aa993",
   "output": {
     "path": "/home/user/alaska-ai-weekly/out/dispatch/render/video_mute.mp4",
-    "sha256": "5c735e3efbaedf6a600702785e0a1d0bd28f9fb47365484eca6131850287487f"
+    "sha256": "56baa17a100f8521278ca987643f0cdd5df01d1a9c8c076e4d06eeacc5218b13"
   }
 }

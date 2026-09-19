@@ -1,6 +1,6 @@
 {
  "note": "every open-caption cue in the delivered cut, in order, as built into episode_props.json and rendered by the episode. Times are seconds from the first frame. Grade caption text against THIS, not against the 14 contact stills, which sample only a fraction of the runtime.",
- "count": 33,
+ "count": 32,
  "cues": [
   {
    "start": 0.0,
@@ -29,23 +29,23 @@
   },
   {
    "start": 16.82,
-   "end": 22.64,
-   "text": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen"
+   "end": 21.93,
+   "text": "Cordova Electric runs an island grid. Eighteen megawatts,"
   },
   {
-   "start": 22.64,
+   "start": 21.93,
    "end": 25.6,
-   "text": "sixty six customers, no wire out."
+   "text": "fifteen sixty six customers, no wire out."
   },
   {
    "start": 26.58,
-   "end": 30.4,
-   "text": "About eighty percent hydro, from two creeks. Ten point"
+   "end": 29.69,
+   "text": "About eighty percent hydro, from two creeks."
   },
   {
-   "start": 30.4,
+   "start": 29.69,
    "end": 32.94,
-   "text": "eight megawatts of diesel behind it."
+   "text": "Ten point eight megawatts of diesel behind it."
   },
   {
    "start": 33.8,
@@ -89,13 +89,8 @@
   },
   {
    "start": 60.62,
-   "end": 62.99,
-   "text": "A Phase One award, beginning October 1st"
-  },
-  {
-   "start": 63.02,
    "end": 65.0,
-   "text": ", nine months."
+   "text": "A Phase One award, beginning October 1st, nine months."
   },
   {
    "start": 66.0,

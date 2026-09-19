@@ -3,7 +3,7 @@
   "problems": [],
   "scope": "Rendered credit rows sampled every half second over the full 10-second window; pixel OCR at its start, middle and end. Not a full-film visual review.",
   "input_sha256": {
-    "video": "e3f099c2da403c19fb0d39b503fb624c7e0b05a82315f264bedad770a1f95d17",
+    "video": "671cad83c1748928c167f1cb0ab0ba0de33e7f9fd9e8e95b15fc34774ca94885",
     "renderer": "b7690e55711c92528a7598d61c1a6b36f2a18b3a7d84393b504df4209bca5c73",
     "credit_timeline_and_data": "f868448dc1746538c66f9c53200999d3c38422c9b5843b35b0b704cf36af95e1"
   },

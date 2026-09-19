@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "t": 0.0,
+      "t": 0.3,
       "kind": "pop",
       "class": "hero",
       "pan": 0.0,
@@ -9,13 +9,13 @@
       "family": "blip",
       "label": "the rack, lit, already turning | Bank performance: fan-hum + water drip tick. Approved sound: fan-hum + water drip tick",
       "beat_id": 1,
-      "visual_at_s": 0.0,
+      "visual_at_s": 0.3,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 0.011
+      "rendered_start_s": 0.311
     },
     {
-      "t": 1.86,
+      "t": 2.03,
       "kind": "creak",
       "class": "texture",
       "pan": 0.0,
@@ -23,13 +23,13 @@
       "family": "texture",
       "label": "the bead | Bank performance: pipe groan. Approved sound: pipe groan",
       "beat_id": 2,
-      "visual_at_s": 1.86,
+      "visual_at_s": 2.03,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 1.85
+      "rendered_start_s": 2.02
     },
     {
-      "t": 4.55,
+      "t": 3.76,
       "kind": "boom",
       "class": "standard",
       "pan": 0.18,
@@ -37,13 +37,13 @@
       "family": "sub",
       "label": "the 170 kW plate | Bank performance: plate clack. Approved sound: plate clack",
       "beat_id": 3,
-      "visual_at_s": 4.55,
+      "visual_at_s": 3.76,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 4.554
+      "rendered_start_s": 3.764
     },
     {
-      "t": 7.13,
+      "t": 5.45,
       "kind": "ding",
       "class": "texture",
       "pan": -0.09,
@@ -51,13 +51,13 @@
       "family": "bell",
       "label": "the turbine below | Bank performance: whoosh + turbine swell. Approved sound: whoosh + turbine swell",
       "beat_id": 4,
-      "visual_at_s": 7.13,
+      "visual_at_s": 5.45,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 7.126
+      "rendered_start_s": 5.446
     },
     {
-      "t": 9.05,
+      "t": 7.13,
       "kind": "chain",
       "class": "texture",
       "pan": 0.09,
@@ -65,13 +65,13 @@
       "family": "metal",
       "label": "the two empty boxes, CLAIMED and MEASURED | Bank performance: low room tone. Approved sound: low room tone",
       "beat_id": 5,
-      "visual_at_s": 9.05,
+      "visual_at_s": 7.13,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 9.049
+      "rendered_start_s": 7.129
     },
     {
-      "t": 11.36,
+      "t": 10.28,
       "kind": "ding",
       "class": "standard",
       "pan": -0.18,
@@ -79,13 +79,13 @@
       "family": "bell",
       "label": "the coolant line from turbine to rack | Bank performance: water rush. Approved sound: water rush",
       "beat_id": 6,
-      "visual_at_s": 11.36,
+      "visual_at_s": 10.28,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 11.366
+      "rendered_start_s": 10.286
     },
     {
-      "t": 15.77,
+      "t": 13.43,
       "kind": "thud",
       "class": "texture",
       "pan": 0.0,
@@ -93,13 +93,13 @@
       "family": "sub",
       "label": "the drip landing on MEASURED | Bank performance: single drip, room falls quiet. Approved sound: single drip, room falls quiet",
       "beat_id": 7,
-      "visual_at_s": 15.77,
+      "visual_at_s": 13.43,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 15.761
+      "rendered_start_s": 13.421
     },
     {
-      "t": 19.77,
+      "t": 17.13,
       "kind": "creak",
       "class": "texture",
       "pan": 0.18,
@@ -107,13 +107,13 @@
       "family": "texture",
       "label": "the whole valley | Bank performance: wind + creek bed. Approved sound: wind + creek bed",
       "beat_id": 8,
-      "visual_at_s": 19.77,
+      "visual_at_s": 17.13,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 19.784
+      "rendered_start_s": 17.144
     },
     {
-      "t": 21.67,
+      "t": 23.17,
       "kind": "whoosh",
       "class": "standard",
       "pan": -0.09,
@@ -121,13 +121,13 @@
       "family": "air",
       "label": "an island with no line leaving it | Bank performance: riser fades to wind. Approved sound: riser fades to wind",
       "beat_id": 9,
-      "visual_at_s": 21.67,
+      "visual_at_s": 23.17,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 21.656
+      "rendered_start_s": 23.156
     },
     {
-      "t": 24.22,
+      "t": 26.87,
       "kind": "paw",
       "class": "texture",
       "pan": 0.09,
@@ -135,13 +135,13 @@
       "family": "sub",
       "label": "the diesel stack alight beside the hydro glow | Bank performance: hum + a diesel knock. Approved sound: hum + a diesel knock",
       "beat_id": 10,
-      "visual_at_s": 24.22,
+      "visual_at_s": 26.87,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 24.227
+      "rendered_start_s": 26.877
     },
     {
-      "t": 26.81,
+      "t": 34.1,
       "kind": "tick",
       "class": "texture",
       "pan": -0.18,
@@ -149,13 +149,13 @@
       "family": "click",
       "label": "Sourdough | Bank performance: warm bed lifts. Approved sound: warm bed lifts",
       "beat_id": 11,
-      "visual_at_s": 26.81,
+      "visual_at_s": 34.1,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 26.816
+      "rendered_start_s": 34.106
     },
     {
-      "t": 28.87,
+      "t": 38.1,
       "kind": "clank",
       "class": "hero",
       "pan": 0.0,
@@ -163,13 +163,13 @@
       "family": "metal",
       "label": "the fuel needle at its stop | Bank performance: klaxon tick + needle slam + screen shake. Approved sound: klaxon tick + needle slam + screen shake",
       "beat_id": 12,
-      "visual_at_s": 28.87,
+      "visual_at_s": 38.1,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 28.869
+      "rendered_start_s": 38.099
     },
     {
-      "t": 33.34,
+      "t": 42.1,
       "kind": "tick",
       "class": "texture",
       "pan": 0.18,
@@ -177,13 +177,13 @@
       "family": "click",
       "label": "gallons becoming a physical count | Bank performance: drum ring per tick. Approved sound: drum ring per tick",
       "beat_id": 13,
-      "visual_at_s": 33.34,
+      "visual_at_s": 42.1,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 33.354
+      "rendered_start_s": 42.114
     },
     {
-      "t": 34.87,
+      "t": 45.8,
       "kind": "thud",
       "class": "texture",
       "pan": -0.09,
@@ -191,13 +191,13 @@
       "family": "sub",
       "label": "the ledger wall | Bank performance: assemble ticks + chord. Approved sound: assemble ticks + chord",
       "beat_id": 14,
-      "visual_at_s": 34.87,
+      "visual_at_s": 45.8,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 34.86
+      "rendered_start_s": 45.79
     },
     {
-      "t": 36.88,
+      "t": 49.61,
       "kind": "tick",
       "class": "standard",
       "pan": 0.09,
@@ -205,13 +205,13 @@
       "family": "click",
       "label": "$725,000 and its sourcing | Bank performance: two plate clacks. Approved sound: two plate clacks",
       "beat_id": 15,
-      "visual_at_s": 36.88,
+      "visual_at_s": 49.61,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 36.87
+      "rendered_start_s": 49.6
     },
     {
-      "t": 41.48,
+      "t": 53.42,
       "kind": "creak",
       "class": "texture",
       "pan": -0.18,
@@ -219,13 +219,13 @@
       "family": "texture",
       "label": "the cyan twin | Bank performance: data shimmer. Approved sound: data shimmer",
       "beat_id": 16,
-      "visual_at_s": 41.48,
+      "visual_at_s": 53.42,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 41.492
+      "rendered_start_s": 53.432
     },
     {
-      "t": 45.31,
+      "t": 57.23,
       "kind": "snap",
       "class": "hero",
       "pan": 0.0,
@@ -233,13 +233,13 @@
       "family": "pluck",
       "label": "the three intended functions | Bank performance: three flips. Approved sound: three flips",
       "beat_id": 17,
-      "visual_at_s": 45.31,
+      "visual_at_s": 57.23,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 45.306
+      "rendered_start_s": 57.226
     },
     {
-      "t": 47.9,
+      "t": 60.93,
       "kind": "thud",
       "class": "standard",
       "pan": 0.18,
@@ -247,13 +247,13 @@
       "family": "sub",
       "label": "the claim reaching past what it can support | Bank performance: a short climb and a soft settle. Approved sound: a short climb and a soft settle",
       "beat_id": 18,
-      "visual_at_s": 47.9,
+      "visual_at_s": 60.93,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 47.905
+      "rendered_start_s": 60.935
     },
     {
-      "t": 50.62,
+      "t": 68.53,
       "kind": "pop",
       "class": "texture",
       "pan": -0.09,
@@ -261,13 +261,13 @@
       "family": "blip",
       "label": "the twin stopped half-drawn | Bank performance: power-down swell, bed drops. Approved sound: power-down swell, bed drops",
       "beat_id": 19,
-      "visual_at_s": 50.62,
+      "visual_at_s": 68.53,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 50.615
+      "rendered_start_s": 68.525
     },
     {
-      "t": 55.47,
+      "t": 72.23,
       "kind": "stamp",
       "class": "texture",
       "pan": 0.09,
@@ -275,13 +275,13 @@
       "family": "sub",
       "label": "PHASE 1, OCT 1, 9 MONTHS, RESEARCH | Bank performance: stamp. Approved sound: stamp",
       "beat_id": 20,
-      "visual_at_s": 55.47,
+      "visual_at_s": 72.23,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 55.471
+      "rendered_start_s": 72.231
     },
     {
-      "t": 58.0,
+      "t": 73.92,
       "kind": "clank",
       "class": "standard",
       "pan": -0.18,
@@ -289,13 +289,13 @@
       "family": "metal",
       "label": "what a stopped model looks like | Bank performance: a low sag, no resolution. Approved sound: a low sag, no resolution",
       "beat_id": 21,
-      "visual_at_s": 58.0,
+      "visual_at_s": 73.92,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 58.0
+      "rendered_start_s": 73.92
     },
     {
-      "t": 60.73,
+      "t": 75.6,
       "kind": "whoosh",
       "class": "texture",
       "pan": 0.0,
@@ -303,13 +303,13 @@
       "family": "air",
       "label": "the rack again | Bank performance: whip + fan hum returns. Approved sound: whip + fan hum returns",
       "beat_id": 22,
-      "visual_at_s": 60.73,
+      "visual_at_s": 75.6,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 60.724
+      "rendered_start_s": 75.594
     },
     {
-      "t": 62.85,
+      "t": 76.44,
       "kind": "thud",
       "class": "texture",
       "pan": 0.18,
@@ -317,13 +317,13 @@
       "family": "sub",
       "label": "the server block inside the demand bar | Bank performance: riser + a low lock. Approved sound: riser + a low lock",
       "beat_id": 23,
-      "visual_at_s": 62.85,
+      "visual_at_s": 76.44,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 62.858
+      "rendered_start_s": 76.448
     },
     {
-      "t": 67.66,
+      "t": 77.28,
       "kind": "snap",
       "class": "standard",
       "pan": -0.09,
@@ -331,13 +331,13 @@
       "family": "pluck",
       "label": "NOT PART OF THIS PROJECT | Bank performance: hard snap. Approved sound: hard snap",
       "beat_id": 24,
-      "visual_at_s": 67.66,
+      "visual_at_s": 77.28,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 67.645
+      "rendered_start_s": 77.265
     },
     {
-      "t": 69.91,
+      "t": 78.97,
       "kind": "ding",
       "class": "texture",
       "pan": 0.09,
@@ -345,13 +345,13 @@
       "family": "bell",
       "label": "the bar above the plate | Bank performance: climb tick. Approved sound: climb tick",
       "beat_id": 25,
-      "visual_at_s": 69.91,
+      "visual_at_s": 78.97,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 69.898
+      "rendered_start_s": 78.958
     },
     {
-      "t": 74.22,
+      "t": 82.67,
       "kind": "paw",
       "class": "texture",
       "pan": -0.18,
@@ -359,13 +359,13 @@
       "family": "sub",
       "label": "the forecast trace and NOW | Bank performance: scope sweep. Approved sound: scope sweep",
       "beat_id": 26,
-      "visual_at_s": 74.22,
+      "visual_at_s": 82.67,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 74.23
+      "rendered_start_s": 82.68
     },
     {
-      "t": 77.97,
+      "t": 87.52,
       "kind": "tick",
       "class": "standard",
       "pan": 0.0,
@@ -373,13 +373,13 @@
       "family": "click",
       "label": "the block riding inside the cone | Bank performance: lock tick. Approved sound: lock tick",
       "beat_id": 27,
-      "visual_at_s": 77.97,
+      "visual_at_s": 87.52,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 77.964
+      "rendered_start_s": 87.514
     },
     {
-      "t": 82.37,
+      "t": 87.97,
       "kind": "clank",
       "class": "texture",
       "pan": 0.18,
@@ -387,13 +387,13 @@
       "family": "metal",
       "label": "CLAIMED, filled | Bank performance: cyan fill tone. Approved sound: cyan fill tone",
       "beat_id": 28,
-      "visual_at_s": 82.37,
+      "visual_at_s": 87.97,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 82.373
+      "rendered_start_s": 87.973
     },
     {
-      "t": 86.39,
+      "t": 88.42,
       "kind": "paw",
       "class": "hero",
       "pan": 0.0,
@@ -401,13 +401,13 @@
       "family": "sub",
       "label": "MEASURED, empty and hatched | Bank performance: the room goes quiet, a 6 dB dip. Approved sound: the room goes quiet, a 6 dB dip",
       "beat_id": 29,
-      "visual_at_s": 86.39,
+      "visual_at_s": 88.42,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 86.387
+      "rendered_start_s": 88.417
     },
     {
-      "t": 88.65,
+      "t": 92.37,
       "kind": "pop",
       "class": "standard",
       "pan": 0.09,
@@ -415,13 +415,13 @@
       "family": "blip",
       "label": "the measurement that would settle it, absent | Bank performance: a short reach, then a soft release. Approved sound: a short reach, then a soft release",
       "beat_id": 30,
-      "visual_at_s": 88.65,
+      "visual_at_s": 92.37,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 88.653
+      "rendered_start_s": 92.373
     },
     {
-      "t": 92.39,
+      "t": 96.07,
       "kind": "paw",
       "class": "texture",
       "pan": -0.18,
@@ -429,13 +429,13 @@
       "family": "sub",
       "label": "the hero choosing which box to look at | Bank performance: single low note. Approved sound: single low note",
       "beat_id": 31,
-      "visual_at_s": 92.39,
+      "visual_at_s": 96.07,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 92.378
+      "rendered_start_s": 96.058
     },
     {
-      "t": 94.05,
+      "t": 97.65,
       "kind": "tick",
       "class": "texture",
       "pan": 0.0,
@@ -443,13 +443,13 @@
       "family": "click",
       "label": "the Wies quote | Bank performance: plate rise. Approved sound: plate rise",
       "beat_id": 32,
-      "visual_at_s": 94.05,
+      "visual_at_s": 97.65,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 94.062
+      "rendered_start_s": 97.662
     },
     {
-      "t": 96.46,
+      "t": 99.23,
       "kind": "thud",
       "class": "standard",
       "pan": 0.18,
@@ -457,13 +457,13 @@
       "family": "sub",
       "label": "everything Cordova already has | Bank performance: warm bed returns. Approved sound: warm bed returns",
       "beat_id": 33,
-      "visual_at_s": 96.46,
+      "visual_at_s": 99.23,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 96.457
+      "rendered_start_s": 99.227
     },
     {
-      "t": 98.66,
+      "t": 106.33,
       "kind": "riser",
       "class": "standard",
       "pan": -0.09,
@@ -471,13 +471,13 @@
       "family": "air",
       "label": "the spill | Bank performance: spill rush. Approved sound: spill rush",
       "beat_id": 34,
-      "visual_at_s": 98.66,
+      "visual_at_s": 106.33,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 98.664
+      "rendered_start_s": 106.334
     },
     {
-      "t": 100.38,
+      "t": 110.03,
       "kind": "ding",
       "class": "texture",
       "pan": 0.09,
@@ -485,13 +485,13 @@
       "family": "bell",
       "label": "Cordova as one dot | Bank performance: riser + altitude wind. Approved sound: riser + altitude wind",
       "beat_id": 35,
-      "visual_at_s": 100.38,
+      "visual_at_s": 110.03,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 100.387
+      "rendered_start_s": 110.037
     },
     {
-      "t": 101.94,
+      "t": 111.28,
       "kind": "tick",
       "class": "standard",
       "pan": -0.18,
@@ -499,13 +499,13 @@
       "family": "click",
       "label": "192 more dots | Bank performance: bloom ticks, staggered. Approved sound: bloom ticks, staggered",
       "beat_id": 36,
-      "visual_at_s": 101.94,
+      "visual_at_s": 111.28,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 101.938
+      "rendered_start_s": 111.278
     },
     {
-      "t": 105.12,
+      "t": 112.52,
       "kind": "creak",
       "class": "texture",
       "pan": 0.0,
@@ -513,13 +513,13 @@
       "family": "texture",
       "label": "the thread falling short | Bank performance: thread strain, no lock. Approved sound: thread strain, no lock",
       "beat_id": 37,
-      "visual_at_s": 105.12,
+      "visual_at_s": 112.52,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 105.133
+      "rendered_start_s": 112.533
     },
     {
-      "t": 109.84,
+      "t": 113.66,
       "kind": "thud",
       "class": "texture",
       "pan": 0.18,
@@ -527,13 +527,13 @@
       "family": "sub",
       "label": "the door, unchanged | Bank performance: fan hum + creek, bed returns. Approved sound: fan hum + creek, bed returns",
       "beat_id": 38,
-      "visual_at_s": 109.84,
+      "visual_at_s": 113.66,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 109.832
+      "rendered_start_s": 113.652
     },
     {
-      "t": 111.37,
+      "t": 114.11,
       "kind": "pop",
       "class": "standard",
       "pan": -0.09,
@@ -541,13 +541,13 @@
       "family": "blip",
       "label": "the box, still empty | Bank performance: the same single drip. Approved sound: the same single drip",
       "beat_id": 39,
-      "visual_at_s": 111.37,
+      "visual_at_s": 114.11,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 111.378
+      "rendered_start_s": 114.118
     },
     {
-      "t": 112.87,
+      "t": 114.56,
       "kind": "ding",
       "class": "texture",
       "pan": 0.09,
@@ -555,10 +555,10 @@
       "family": "bell",
       "label": "the question | Bank performance: final note, audible tail. Approved sound: final note, audible tail",
       "beat_id": 40,
-      "visual_at_s": 112.87,
+      "visual_at_s": 114.56,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 112.855
+      "rendered_start_s": 114.545
     }
   ],
   "silence_dip_at": 95.05,
