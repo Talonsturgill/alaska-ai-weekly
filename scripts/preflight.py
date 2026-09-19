@@ -33,6 +33,13 @@ CHECKS = [
       "--noEmit", "-p", "video-engine/tsconfig.json"], True),
     ("plated strings fit their plates",
      [sys.executable, "scripts/text_fit_check.py"], True),
+    # The board can be right and the WIRING still move. Re-solving the shot anchors
+    # re-points every scene at different words, and tsc is clean, build_scenes runs and
+    # the render succeeds while the film is about the wrong things. It cost a full render
+    # on 2026-08-06 and happened again inside one run on 2026-09-19. Both times a person
+    # caught it by reading a table, so the table is a program now.
+    ("every shot draws the lines it plays over",
+     [sys.executable, "scripts/say_it_show_it_check.py"], True),
     # The post linter does not see film labels or rebuilt captions. Both carried a
     # banned colon in the September 3 render despite a clean locked VO script.
     ("visible source and built props obey the copy rules",

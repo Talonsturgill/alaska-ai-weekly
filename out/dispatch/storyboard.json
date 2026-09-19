@@ -325,11 +325,12 @@
         "reaction": "the water drop striking the cage and scattering",
         "ambient": "room dust drifting through the door light"
       },
-      "shows": "the rack, lit, already turning"
+      "shows": "the rack, lit, already turning",
+      "at_s": 0.0
     },
     {
       "id": 2,
-      "t": 2.6,
+      "t": 1.86,
       "shot": 1,
       "draw": {
         "subject": "the penstock elbow behind the rack",
@@ -345,11 +346,12 @@
         "reaction": "the puddle below rippling as it lands",
         "ambient": "condensation creeping across the pipe"
       },
-      "shows": "the bead"
+      "shows": "the bead",
+      "at_s": 1.86
     },
     {
       "id": 3,
-      "t": 4.3,
+      "t": 4.55,
       "shot": 1,
       "draw": {
         "subject": "a wall plate beside the rack",
@@ -365,11 +367,12 @@
         "reaction": "the LED row flickering as it passes",
         "ambient": "fan wash rippling the cable bundle"
       },
-      "shows": "the 170 kW plate"
+      "shows": "the 170 kW plate",
+      "at_s": 4.55
     },
     {
       "id": 4,
-      "t": 7.0,
+      "t": 7.13,
       "shot": 2,
       "draw": {
         "subject": "the powerhouse interior",
@@ -377,7 +380,7 @@
         "emotion": "revealing",
         "annotation": "2024"
       },
-      "vo": "Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.",
+      "vo": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
       "sfx": "whoosh + turbine swell",
       "means": "stage3d craneDown",
       "choreo": {
@@ -385,11 +388,12 @@
         "reaction": "the handrail sweeping through frame",
         "ambient": "the water sheet falling behind everything"
       },
-      "shows": "the turbine below"
+      "shows": "the turbine below",
+      "at_s": 7.13
     },
     {
       "id": 5,
-      "t": 9.4,
+      "t": 9.05,
       "shot": 2,
       "draw": {
         "subject": "TWO EMPTY BOXES stencilled on the powerhouse wall behind the rack",
@@ -397,7 +401,7 @@
         "emotion": "waiting",
         "annotation": "NO NEW NUMBER HERE"
       },
-      "vo": "Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.",
+      "vo": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
       "sfx": "low room tone",
       "means": "forecast.tsx Reconcile at settled 0, planted silently",
       "throughline": true,
@@ -407,11 +411,12 @@
         "reaction": "nothing reacts, which is the point",
         "ambient": "the work lamp swinging on its cord"
       },
-      "shows": "the two empty boxes, CLAIMED and MEASURED"
+      "shows": "the two empty boxes, CLAIMED and MEASURED",
+      "at_s": 9.05
     },
     {
       "id": 6,
-      "t": 12.3,
+      "t": 11.36,
       "shot": 2,
       "draw": {
         "subject": "the turbine shaft",
@@ -419,7 +424,7 @@
         "emotion": "matter-of-fact",
         "annotation": "COOLED BY THE SAME WATER"
       },
-      "vo": "Greensparc installed them in twenty twenty four, cooled by the water that spins the turbine.",
+      "vo": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
       "sfx": "water rush",
       "means": "runofriver + rack",
       "choreo": {
@@ -427,11 +432,12 @@
         "reaction": "the coolant line pulsing as it feeds the rack",
         "ambient": "the water sheet"
       },
-      "shows": "the coolant line from turbine to rack"
+      "shows": "the coolant line from turbine to rack",
+      "at_s": 11.36
     },
     {
       "id": 7,
-      "t": 15.5,
+      "t": 15.77,
       "shot": 2,
       "draw": {
         "subject": "the drip from beat 2",
@@ -447,11 +453,12 @@
         "reaction": "the hatching flexing where it lands",
         "ambient": "the lamp swing slows and settles"
       },
-      "shows": "the drip landing on MEASURED"
+      "shows": "the drip landing on MEASURED",
+      "at_s": 15.77
     },
     {
       "id": 8,
-      "t": 18.0,
+      "t": 19.77,
       "shot": 3,
       "draw": {
         "subject": "the whole valley at night",
@@ -468,11 +475,12 @@
         "reaction": "the creek catching the wipe's edge",
         "ambient": "rain across the whole plane"
       },
-      "shows": "the whole valley"
+      "shows": "the whole valley",
+      "at_s": 19.77
     },
     {
       "id": 9,
-      "t": 20.0,
+      "t": 21.67,
       "shot": 3,
       "draw": {
         "subject": "the shoreline",
@@ -489,11 +497,12 @@
         "reaction": "the shoreline lights condensing to a cluster",
         "ambient": "cloud shadow crossing the water"
       },
-      "shows": "an island with no line leaving it"
+      "shows": "an island with no line leaving it",
+      "at_s": 21.67
     },
     {
       "id": 10,
-      "t": 23.9,
+      "t": 24.22,
       "shot": 3,
       "draw": {
         "subject": "a warm hydro glow and a cold diesel stack, side by side on the shore",
@@ -501,7 +510,7 @@
         "emotion": "tense",
         "annotation": "MOST HYDRO \u00b7 THE REST DIESEL"
       },
-      "vo": "Most of its power is hydro. The rest is diesel.",
+      "vo": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.",
       "sfx": "hum + a diesel knock",
       "means": "two practical sources, the palette's whole argument",
       "choreo": {
@@ -509,11 +518,12 @@
         "reaction": "the hydro glow stepping back as it does",
         "ambient": "rain and creek"
       },
-      "shows": "the diesel stack alight beside the hydro glow"
+      "shows": "the diesel stack alight beside the hydro glow",
+      "at_s": 24.22
     },
     {
       "id": 11,
-      "t": 27.7,
+      "t": 26.81,
       "shot": 4,
       "draw": {
         "subject": "Sourdough, the island grid himself, standing on the shore",
@@ -521,7 +531,7 @@
         "emotion": "proud",
         "annotation": "CORDOVA ELECTRIC"
       },
-      "vo": "Guess wrong about demand and the co op can't buy from a neighbor. It burns fuel.",
+      "vo": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
       "sfx": "warm bed lifts",
       "means": "kit.tsx Sourdough, hero",
       "choreo": {
@@ -529,11 +539,12 @@
         "reaction": "his chest ember brightening as the camera arrives",
         "ambient": "his breath and weight shift"
       },
-      "shows": "Sourdough"
+      "shows": "Sourdough",
+      "at_s": 26.81
     },
     {
       "id": 12,
-      "t": 30.0,
+      "t": 28.87,
       "shot": 4,
       "draw": {
         "subject": "Sourdough's chest ember",
@@ -541,7 +552,7 @@
         "emotion": "caught out",
         "annotation": "THE NEEDLE SLAMS"
       },
-      "vo": "Guess wrong about demand and the co op can't buy from a neighbor. It burns fuel.",
+      "vo": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
       "sfx": "klaxon tick + needle slam + screen shake",
       "means": "the throughline gauge, anticipation and overshoot",
       "rehook": "the needle slams and the town's light flickers",
@@ -550,11 +561,12 @@
         "reaction": "Sourdough flinching and his ember dimming",
         "ambient": "rain on his shoulders"
       },
-      "shows": "the fuel needle at its stop"
+      "shows": "the fuel needle at its stop",
+      "at_s": 28.87
     },
     {
       "id": 13,
-      "t": 34.6,
+      "t": 33.34,
       "shot": 4,
       "draw": {
         "subject": "a fuel gauge on Sourdough's flank",
@@ -562,7 +574,7 @@
         "emotion": "resigned",
         "annotation": "GALLONS"
       },
-      "vo": "So here, a bad forecast costs gallons.",
+      "vo": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
       "sfx": "drum ring per tick",
       "means": "a number made physical",
       "choreo": {
@@ -570,11 +582,12 @@
         "reaction": "the drum ringing and rocking on its base",
         "ambient": "the needle trembling where it stopped"
       },
-      "shows": "gallons becoming a physical count"
+      "shows": "gallons becoming a physical count",
+      "at_s": 33.34
     },
     {
       "id": 14,
-      "t": 38.2,
+      "t": 34.87,
       "shot": 5,
       "draw": {
         "subject": "the ledger wall assembling out of the dark",
@@ -582,7 +595,7 @@
         "emotion": "brightening",
         "annotation": "AURORA-AI"
       },
-      "vo": "In August, the University of Alaska Fairbanks won an Energy Department award to forecast that grid.",
+      "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
       "sfx": "assemble ticks + chord",
       "means": "forecast + simulation grammar, BUILD transition",
       "choreo": {
@@ -590,11 +603,12 @@
         "reaction": "the dark wall behind it receding as plates land",
         "ambient": "the cyan plane breathing"
       },
-      "shows": "the ledger wall"
+      "shows": "the ledger wall",
+      "at_s": 34.87
     },
     {
       "id": 15,
-      "t": 40.0,
+      "t": 36.88,
       "shot": 5,
       "draw": {
         "subject": "UNIVERSITY OF ALASKA FAIRBANKS and ENERGY DEPARTMENT plates",
@@ -602,7 +616,7 @@
         "emotion": "businesslike",
         "annotation": "$725,000 \u00b7 PER UAF"
       },
-      "vo": "In August, the University of Alaska Fairbanks won an Energy Department award to forecast that grid.",
+      "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
       "sfx": "two plate clacks",
       "means": "claim c1, sourcing label in frame",
       "choreo": {
@@ -610,11 +624,12 @@
         "reaction": "the award card settling between them",
         "ambient": "cyan flicker"
       },
-      "shows": "$725,000 and its sourcing"
+      "shows": "$725,000 and its sourcing",
+      "at_s": 36.88
     },
     {
       "id": 16,
-      "t": 43.0,
+      "t": 41.48,
       "shot": 5,
       "draw": {
         "subject": "a cyan working copy of Sourdough",
@@ -622,7 +637,7 @@
         "emotion": "uncanny",
         "annotation": "DIGITAL TWIN \u00b7 INTENDED"
       },
-      "vo": "The plan is a digital twin, a working copy of Cordova built from the co op's records, with machine learning on it.",
+      "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
       "sfx": "data shimmer",
       "means": "Simulated at rising fidelity",
       "open_loop_2_plant": true,
@@ -631,11 +646,12 @@
         "reaction": "the real Sourdough turning to look at it",
         "ambient": "the twin's linework re-solving"
       },
-      "shows": "the cyan twin"
+      "shows": "the cyan twin",
+      "at_s": 41.48
     },
     {
       "id": 17,
-      "t": 47.2,
+      "t": 45.31,
       "shot": 5,
       "draw": {
         "subject": "three function plates",
@@ -643,7 +659,7 @@
         "emotion": "claiming",
         "annotation": "INTENDED, NOT MEASURED"
       },
-      "vo": "The plan is a digital twin, a working copy of Cordova built from the co op's records, with machine learning on it.",
+      "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
       "sfx": "three flips",
       "means": "claim c11, tense obligation on screen",
       "choreo": {
@@ -651,11 +667,33 @@
         "reaction": "each plate knocking the one above it",
         "ambient": "cyan flicker"
       },
-      "shows": "the three intended functions"
+      "shows": "the three intended functions",
+      "at_s": 45.31
     },
     {
       "id": 18,
-      "t": 50.2,
+      "t": 47.9,
+      "at_s": 47.9,
+      "shot": 5,
+      "draw": {
+        "subject": "the twin's demand bar",
+        "action": "climbs one step and overshoots its own top, then settles back under it",
+        "emotion": "eager",
+        "annotation": "IT HAS NOT RUN YET"
+      },
+      "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
+      "sfx": "a short climb and a soft settle",
+      "means": "forecast grammar: the claim moving before it is allowed to",
+      "shows": "the claim reaching past what it can support",
+      "choreo": {
+        "primary": "the bar overshooting and settling",
+        "reaction": "the amber block at its foot sliding with it",
+        "ambient": "cyan flicker and rain"
+      }
+    },
+    {
+      "id": 19,
+      "t": 50.62,
       "shot": 6,
       "draw": {
         "subject": "the twin",
@@ -663,7 +701,7 @@
         "emotion": "stopped",
         "annotation": "IT HASN'T STARTED"
       },
-      "vo": "It hasn't started. It begins October first and runs nine months.",
+      "vo": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
       "sfx": "power-down swell, bed drops",
       "means": "the hardest cut in the film",
       "choreo": {
@@ -671,11 +709,12 @@
         "reaction": "the draw head stalling and the cyan draining downward",
         "ambient": "the wall going quiet"
       },
-      "shows": "the twin stopped half-drawn"
+      "shows": "the twin stopped half-drawn",
+      "at_s": 50.62
     },
     {
-      "id": 19,
-      "t": 53.7,
+      "id": 20,
+      "t": 55.47,
       "shot": 6,
       "draw": {
         "subject": "a schedule plate",
@@ -683,7 +722,7 @@
         "emotion": "flat",
         "annotation": "PHASE 1 \u00b7 STARTS OCT 1 \u00b7 9 MONTHS \u00b7 RESEARCH"
       },
-      "vo": "It hasn't started. It begins October first and runs nine months.",
+      "vo": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
       "sfx": "stamp",
       "means": "claim c3, the word RESEARCH travels with it",
       "choreo": {
@@ -691,11 +730,33 @@
         "reaction": "the frozen twin shuddering under the impact",
         "ambient": "dust lifting off the stamp"
       },
-      "shows": "PHASE 1, OCT 1, 9 MONTHS, RESEARCH"
+      "shows": "PHASE 1, OCT 1, 9 MONTHS, RESEARCH",
+      "at_s": 55.47
     },
     {
-      "id": 20,
-      "t": 56.8,
+      "id": 21,
+      "t": 58.0,
+      "at_s": 58.0,
+      "shot": 6,
+      "draw": {
+        "subject": "the drained lower half of the twin",
+        "action": "sags off its own outline and hangs, unfinished",
+        "emotion": "stalled",
+        "annotation": "HALF DRAWN"
+      },
+      "vo": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
+      "sfx": "a low sag, no resolution",
+      "means": "simulation.tsx at falling fidelity, the linework loosening",
+      "shows": "what a stopped model looks like",
+      "choreo": {
+        "primary": "the outline sagging away from itself",
+        "reaction": "the stamp above it settling into the surface",
+        "ambient": "the wall going quiet"
+      }
+    },
+    {
+      "id": 22,
+      "t": 60.73,
       "shot": 7,
       "draw": {
         "subject": "the server rack from the hook",
@@ -703,7 +764,7 @@
         "emotion": "steady",
         "annotation": "NOW, THOSE SERVERS"
       },
-      "vo": "Now, those servers.",
+      "vo": "A Phase One award, beginning October first, nine months.",
       "sfx": "whip + fan hum returns",
       "means": "bookend material, TRAVEL thread",
       "choreo": {
@@ -711,11 +772,12 @@
         "reaction": "the fans coming back up to speed",
         "ambient": "the creek returning under it"
       },
-      "shows": "the rack again"
+      "shows": "the rack again",
+      "at_s": 60.73
     },
     {
-      "id": 21,
-      "t": 59.1,
+      "id": 23,
+      "t": 62.85,
       "shot": 7,
       "draw": {
         "subject": "the grid's demand bar rising beside the rack",
@@ -723,7 +785,7 @@
         "emotion": "dawning",
         "annotation": "THE LOAD WAS ALWAYS THERE"
       },
-      "vo": "They are not part of the project. They are a load on the same grid.",
+      "vo": "A Phase One award, beginning October first, nine months.",
       "sfx": "riser + a low lock",
       "means": "build-on reveal",
       "reveal": "build-on",
@@ -733,11 +795,12 @@
         "reaction": "the amber block at its base lighting as it is named",
         "ambient": "fan wash"
       },
-      "shows": "the server block inside the demand bar"
+      "shows": "the server block inside the demand bar",
+      "at_s": 62.85
     },
     {
-      "id": 22,
-      "t": 62.1,
+      "id": 24,
+      "t": 67.66,
       "shot": 7,
       "draw": {
         "subject": "a NOT PART OF THIS PROJECT plate",
@@ -745,7 +808,7 @@
         "emotion": "corrective",
         "annotation": "GREENSPARC, 2024"
       },
-      "vo": "They are not part of the project. They are a load on the same grid.",
+      "vo": "A Phase One award, beginning October first, nine months.",
       "sfx": "hard snap",
       "means": "claim c15, the honesty obligation drawn",
       "choreo": {
@@ -753,11 +816,12 @@
         "reaction": "the bar not pausing for it",
         "ambient": "fans"
       },
-      "shows": "NOT PART OF THIS PROJECT"
+      "shows": "NOT PART OF THIS PROJECT",
+      "at_s": 67.66
     },
     {
-      "id": 23,
-      "t": 65.3,
+      "id": 25,
+      "t": 69.91,
       "shot": 7,
       "draw": {
         "subject": "the demand bar",
@@ -765,7 +829,7 @@
         "emotion": "wry",
         "annotation": "A LOAD ON THE SAME GRID"
       },
-      "vo": "They are not part of the project. They are a load on the same grid.",
+      "vo": "A Phase One award, beginning October first, nine months.",
       "sfx": "climb tick",
       "means": "the loop paying",
       "choreo": {
@@ -773,11 +837,12 @@
         "reaction": "the plate's corner lifting in the draft",
         "ambient": "fans"
       },
-      "shows": "the bar above the plate"
+      "shows": "the bar above the plate",
+      "at_s": 69.91
     },
     {
-      "id": 24,
-      "t": 67.0,
+      "id": 26,
+      "t": 74.22,
       "shot": 8,
       "draw": {
         "subject": "a forecast trace across the ledger wall",
@@ -793,11 +858,12 @@
         "reaction": "the NOW mark snapping in as the amber meets the cyan",
         "ambient": "the cone edges hunting"
       },
-      "shows": "the forecast trace and NOW"
+      "shows": "the forecast trace and NOW",
+      "at_s": 74.22
     },
     {
-      "id": 25,
-      "t": 71.6,
+      "id": 27,
+      "t": 77.97,
       "shot": 8,
       "draw": {
         "subject": "the server block",
@@ -814,11 +880,12 @@
         "reaction": "the cone lifting where it passes",
         "ambient": "cone edge crawl"
       },
-      "shows": "the block riding inside the cone"
+      "shows": "the block riding inside the cone",
+      "at_s": 77.97
     },
     {
-      "id": 26,
-      "t": 75.0,
+      "id": 28,
+      "t": 82.37,
       "shot": 9,
       "draw": {
         "subject": "the two stencilled boxes from the hook",
@@ -834,11 +901,12 @@
         "reaction": "the cyan number landing in CLAIMED",
         "ambient": "rain on the wall"
       },
-      "shows": "CLAIMED, filled"
+      "shows": "CLAIMED, filled",
+      "at_s": 82.37
     },
     {
-      "id": 27,
-      "t": 79.2,
+      "id": 29,
+      "t": 86.39,
       "shot": 9,
       "draw": {
         "subject": "the MEASURED box beside it",
@@ -854,11 +922,12 @@
         "reaction": "nothing filling it",
         "ambient": "the room dropping quiet"
       },
-      "shows": "MEASURED, empty and hatched"
+      "shows": "MEASURED, empty and hatched",
+      "at_s": 86.39
     },
     {
-      "id": 28,
-      "t": 83.1,
+      "id": 30,
+      "t": 88.65,
       "shot": 9,
       "draw": {
         "subject": "the error bracket that should join the two boxes",
@@ -874,11 +943,12 @@
         "reaction": "the hatching in MEASURED sliding once as it passes",
         "ambient": "rain on the wall"
       },
-      "shows": "the measurement that would settle it, absent"
+      "shows": "the measurement that would settle it, absent",
+      "at_s": 88.65
     },
     {
-      "id": 29,
-      "t": 86.0,
+      "id": 31,
+      "t": 92.39,
       "shot": 9,
       "draw": {
         "subject": "Sourdough",
@@ -896,11 +966,12 @@
         "reaction": "his head turning to the empty one",
         "ambient": "his breath, the only motion left"
       },
-      "shows": "the hero choosing which box to look at"
+      "shows": "the hero choosing which box to look at",
+      "at_s": 92.39
     },
     {
-      "id": 30,
-      "t": 88.5,
+      "id": 32,
+      "t": 94.05,
       "shot": 9,
       "draw": {
         "subject": "a quote plate",
@@ -916,11 +987,12 @@
         "reaction": "Sourdough's ember steadying",
         "ambient": "rain"
       },
-      "shows": "the Wies quote"
+      "shows": "the Wies quote",
+      "at_s": 94.05
     },
     {
-      "id": 31,
-      "t": 91.6,
+      "id": 33,
+      "t": 96.46,
       "shot": 10,
       "draw": {
         "subject": "the valley again, wider",
@@ -936,11 +1008,12 @@
         "reaction": "each of Cordova's assets lighting in turn",
         "ambient": "rain and creek"
       },
-      "shows": "everything Cordova already has"
+      "shows": "everything Cordova already has",
+      "at_s": 96.46
     },
     {
-      "id": 32,
-      "t": 93.3,
+      "id": 34,
+      "t": 98.66,
       "shot": 10,
       "draw": {
         "subject": "the penstock",
@@ -956,11 +1029,12 @@
         "reaction": "spray kicking up where it lands",
         "ambient": "the penstock running full"
       },
-      "shows": "the spill"
+      "shows": "the spill",
+      "at_s": 98.66
     },
     {
-      "id": 33,
-      "t": 96.0,
+      "id": 35,
+      "t": 100.38,
       "shot": 11,
       "draw": {
         "subject": "Cordova",
@@ -968,7 +1042,7 @@
         "emotion": "diminishing",
         "annotation": "1 OF 193"
       },
-      "vo": "The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.",
+      "vo": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
       "sfx": "riser + altitude wind",
       "means": "scale-pullback reveal",
       "reveal": "scale-pullback",
@@ -978,11 +1052,12 @@
         "reaction": "Cordova condensing to one dot",
         "ambient": "cloud crossing beneath"
       },
-      "shows": "Cordova as one dot"
+      "shows": "Cordova as one dot",
+      "at_s": 100.38
     },
     {
-      "id": 34,
-      "t": 100.0,
+      "id": 36,
+      "t": 101.94,
       "shot": 11,
       "draw": {
         "subject": "192 more amber dots",
@@ -990,7 +1065,7 @@
         "emotion": "sobering",
         "annotation": "193 COMMUNITIES \u00b7 3 TO 5x URBAN COST \u00b7 PER AEA"
       },
-      "vo": "The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.",
+      "vo": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
       "sfx": "bloom ticks, staggered",
       "means": "claim c13, multiplicity-swarm",
       "choreo": {
@@ -998,11 +1073,12 @@
         "reaction": "diesel drums settling under each one",
         "ambient": "the coastline drifting"
       },
-      "shows": "192 more dots"
+      "shows": "192 more dots",
+      "at_s": 101.94
     },
     {
-      "id": 35,
-      "t": 104.6,
+      "id": 37,
+      "t": 105.12,
       "shot": 11,
       "draw": {
         "subject": "a thin cyan thread",
@@ -1010,7 +1086,7 @@
         "emotion": "unresolved",
         "annotation": "LEAST DATA TO BUILD ONE"
       },
-      "vo": "The state's power cost program covers a hundred ninety three communities running mostly on diesel. They need the forecast most, and have the least data to build one.",
+      "vo": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
       "sfx": "thread strain, no lock",
       "means": "the transfer question, drawn not said",
       "choreo": {
@@ -1018,11 +1094,12 @@
         "reaction": "the thread thinning and snapping back",
         "ambient": "the dots pulsing"
       },
-      "shows": "the thread falling short"
+      "shows": "the thread falling short",
+      "at_s": 105.12
     },
     {
-      "id": 36,
-      "t": 109.0,
+      "id": 38,
+      "t": 109.84,
       "shot": 12,
       "draw": {
         "subject": "the powerhouse door at night",
@@ -1038,11 +1115,12 @@
         "reaction": "the rack's fans still turning",
         "ambient": "the creek past the threshold"
       },
-      "shows": "the door, unchanged"
+      "shows": "the door, unchanged",
+      "at_s": 109.84
     },
     {
-      "id": 37,
-      "t": 112.1,
+      "id": 39,
+      "t": 111.37,
       "shot": 12,
       "draw": {
         "subject": "the MEASURED box on the wall",
@@ -1059,11 +1137,12 @@
         "reaction": "the hatching flexing again",
         "ambient": "fan hum"
       },
-      "shows": "the box, still empty"
+      "shows": "the box, still empty",
+      "at_s": 111.37
     },
     {
-      "id": 38,
-      "t": 115.8,
+      "id": 40,
+      "t": 112.87,
       "shot": 12,
       "draw": {
         "subject": "the question",
@@ -1079,7 +1158,8 @@
         "reaction": "the door light narrowing to a line behind it",
         "ambient": "the creek, and then the tail"
       },
-      "shows": "the question"
+      "shows": "the question",
+      "at_s": 112.87
     }
   ],
   "hook": {
@@ -1092,67 +1172,75 @@
   "audio_arc": {
     "build_steps": [
       0.0,
-      17.5,
-      38.0,
-      58.6
+      19.77,
+      34.87,
+      67.66
     ],
-    "dip_at": 79.2,
-    "riser_at": 96.0,
-    "silence_at": 80.4,
-    "payoff_at": 99.0,
+    "dip_at": 88.65,
+    "riser_at": 100.38,
+    "silence_at": 89.85,
+    "payoff_at": 101.94,
     "button_pattern": "question"
   },
   "reveals": [
     {
-      "t": 20.0,
+      "t": 21.67,
       "type": "scale-pullback",
       "what": "the powerhouse becomes one small building in a whole dark valley with no wire leaving it",
       "hold_s": 0.7
     },
     {
-      "t": 58.6,
+      "t": 62.85,
       "type": "build-on",
       "what": "the demand bar builds and the unexplained amber block at its base is revealed to be the server rack",
       "hold_s": 0.6
     },
     {
-      "t": 96.0,
+      "t": 100.38,
       "type": "scale-pullback",
       "what": "Cordova shrinks to one amber dot and 192 more bloom across Alaska",
       "hold_s": 0.8
     }
   ],
   "open_loop": {
-    "plant_t": 9.4,
-    "pay_t": 86.0,
+    "plant_t": 9.05,
+    "pay_t": 92.39,
     "what": "two empty boxes stencilled on the powerhouse wall, CLAIMED and MEASURED, planted silently and never mentioned until the signature shot"
   },
   "open_loop_2": {
-    "plant_t": 44.0,
-    "pay_t": 70.0,
+    "plant_t": 41.48,
+    "pay_t": 77.97,
     "what": "a small amber block sitting unexplained at the foot of the twin's demand bar, revealed later to be the servers from the hook"
   },
   "throughline": {
     "object": "the CLAIMED and MEASURED boxes stencilled on the powerhouse wall",
     "states": [
       {
-        "at_s": 9.4,
-        "state": "both boxes visible, both empty, unexplained"
+        "at_s": 9.05,
+        "state": "both boxes visible on the powerhouse wall, both empty, unexplained"
       },
       {
-        "at_s": 44.0,
-        "state": "the claim is being assembled, the boxes are still out of frame but the number that will fill CLAIMED is being made"
+        "at_s": 41.48,
+        "state": "the claim is being assembled beside the grid, so the number that will fill CLAIMED is being made"
       },
       {
-        "at_s": 75.0,
+        "at_s": 55.47,
+        "state": "the schedule stamps down, which fixes WHEN the claim is allowed to be checked"
+      },
+      {
+        "at_s": 74.22,
+        "state": "the forecast draws forward past NOW, and the cone is the width of what CLAIMED is worth"
+      },
+      {
+        "at_s": 82.37,
         "state": "CLAIMED fills with cyan"
       },
       {
-        "at_s": 79.2,
+        "at_s": 86.39,
         "state": "MEASURED stays empty and hatched, NOT YET MEASURED"
       },
       {
-        "at_s": 112.4,
+        "at_s": 109.84,
         "state": "still empty at the button, and the hook's drip lands on it again"
       }
     ],
