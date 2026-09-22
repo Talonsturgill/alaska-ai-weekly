@@ -194,3 +194,96 @@ export const FishingBoat: React.FC<{
     </g>
   );
 };
+
+// =============================================================================
+// PICKUP — NET-NEW 2026-09-22 ("Mat-Su banned a camera it never owned").
+//
+// THE GAP, and it is an embarrassing one for an Alaska channel. lib/vehicles.tsx
+// shipped a bush plane, a snowmachine and a fishing boat, which is Alaska's
+// romantic transport, and NO ROAD VEHICLE AT ALL. Every road story this channel
+// has told, and every one it will tell about highways, plate readers, freight,
+// commuting or rural driving, needs the single most common object on an Alaska
+// road and has had to improvise around it. Gate 0D caught it on this run when a
+// hero shot turned out to need a pickup the engine could not draw.
+//
+// Deliberately an ORDINARY work truck, not a lifted showpiece: a plain cab, a
+// bed with a visible floor and stake pockets, a dented rear quarter available
+// through `dent`, and a plate mount that takes lib/evidence.tsx AlaskaPlate so
+// the throughline object has somewhere real to live. Nothing floats.
+//
+// `hazard` runs the four-way flashers, which is what a recovered vehicle does.
+// =============================================================================
+export const Pickup: React.FC<{
+  f: number;
+  x?: number;
+  y?: number;
+  scale?: number;
+  /** left or right */
+  facing?: 1 | -1;
+  /** 0..1 forward speed; drives wheel spin and a little suspension shake */
+  speed?: number;
+  /** 0..1 the four-way flashers */
+  hazard?: number;
+  /** 0..1 a dented rear quarter, for a truck that has had a week */
+  dent?: number;
+  body?: string;
+  /** ground y for the contact shadow */
+  groundY?: number;
+  /** the plate mount is exposed so a scene can hang AlaskaPlate on it */
+  children?: React.ReactNode;
+  id?: string;
+}> = ({f, x = 0, y = 0, scale = 1, facing = 1, speed = 0, hazard = 0, dent = 0,
+       body = '#3E5A6B', groundY, children, id = 'pu'}) => {
+  const t = tones(body);
+  const spin = f * (2 + 26 * speed);
+  const shake = speed > 0.02 ? 0.9 * Math.sin(f / 2.7) * speed : 0.35 * Math.sin(f / 41);
+  const blink = hazard > 0.01 ? (Math.sin(f / 7.5) > 0 ? 1 : 0.15) : 0;
+  const d = Math.max(0, Math.min(1, dent));
+  return (
+    <g transform={`translate(${x} ${y}) scale(${facing * scale} ${scale})`}>
+      <defs><FormGradient id={`${id}-b`} t={t} /></defs>
+      {groundY !== undefined && (
+        <ContactShadow cx={0} cy={(groundY - y) / scale} rx={128} ry={15} opacity={0.5} blur={8} />
+      )}
+      <g transform={`translate(0 ${shake})`}>
+        {/* bed floor and walls, drawn before the cab so the cab overlaps correctly */}
+        <path d={`M-140 -34 L-140 -78 L-24 -78 L-24 -34 Z`} fill={t.shade} stroke={INK} strokeWidth={6} />
+        <path d={`M-140 -78 L-24 -78`} stroke={t.key} strokeWidth={3} opacity={0.35} />
+        {[0, 1, 2].map((i) => (
+          <rect key={i} x={-128 + i * 36} y={-78} width={7} height={10} rx={2} fill={t.shade} stroke={INK} strokeWidth={3} />
+        ))}
+        {/* the dented rear quarter */}
+        <path d={`M-140 -34 q${-4 - 10 * d} ${-14 + 6 * d} ${2 + 6 * d} -26`} fill="none" stroke={INK} strokeWidth={6} />
+        {/* cab */}
+        <path d="M-24 -34 L-24 -92 L36 -112 L86 -112 L104 -78 L104 -34 Z"
+              fill={`url(#${id}-b)`} stroke={INK} strokeWidth={6} />
+        <path d="M-14 -88 L34 -104 L74 -104 L88 -80 Z" fill="#16222B" stroke={INK} strokeWidth={4.5} />
+        <path d="M-14 -88 L34 -104" stroke="#8FA6B4" strokeWidth={3} opacity={0.4} />
+        {/* hood and grille */}
+        <path d="M104 -78 L150 -70 L150 -34 L104 -34 Z" fill={`url(#${id}-b)`} stroke={INK} strokeWidth={6} />
+        <rect x={138} y={-62} width={14} height={20} rx={2} fill={t.shade} stroke={INK} strokeWidth={4} />
+        {/* rocker and bumper */}
+        <path d="M-146 -34 L156 -34 L156 -20 L-146 -20 Z" fill={t.shade} stroke={INK} strokeWidth={5} />
+        {/* the plate mount. A scene hangs AlaskaPlate here, so it never floats. */}
+        <g transform="translate(-142 -32) scale(0.42)">{children}</g>
+        {/* hazard lamps, front and rear */}
+        <rect x={-150} y={-48} width={12} height={11} rx={3} fill="#C8471E" stroke={INK} strokeWidth={3.5} opacity={0.35 + 0.65 * blink} />
+        <rect x={146} y={-52} width={12} height={11} rx={3} fill="#E8C24A" stroke={INK} strokeWidth={3.5} opacity={0.35 + 0.65 * blink} />
+        {/* wheels, with hubs that actually turn */}
+        {[-96, 96].map((wx, i) => (
+          <g key={i} transform={`translate(${wx} -18)`}>
+            <circle r={34} fill="#141A20" stroke={INK} strokeWidth={6} />
+            <circle r={16} fill={t.base} stroke={INK} strokeWidth={4} />
+            <g transform={`rotate(${spin + i * 37})`}>
+              {[0, 1, 2, 3, 4].map((k) => (
+                <rect key={k} x={-2} y={-14} width={4} height={10} rx={1.5}
+                      fill={t.shade} transform={`rotate(${k * 72})`} />
+              ))}
+            </g>
+          </g>
+        ))}
+        <RimLight d="M-24 -34 L-24 -92 L36 -112 L86 -112 L104 -78" w={2.6} opacity={0.3} />
+      </g>
+    </g>
+  );
+};

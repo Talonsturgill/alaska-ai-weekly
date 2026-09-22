@@ -62,6 +62,71 @@ export const plateLock = (x: number, y: number, s: number) => ({
   size: PLATE_BOX.w * s * 1.45,
 });
 
+/**
+ * THE ALASKA PLATE, extracted 2026-09-22 so two films draw ONE geometry.
+ * ---------------------------------------------------------------------------
+ * This was authored inside FrameOfEvidence on 2026-08-06 for "The Same Face,
+ * The Same Plate", and its own comment records that it shipped once as a white
+ * slab with no numerals, no embossed border, no bolt heads and no state band,
+ * in the film that was entirely about it. It was rebuilt then and it is the
+ * finished article.
+ *
+ * On 2026-09-22 a second plate-reader film needed the same object OUT of the
+ * CCTV bezel, standing on a road. Forking the path was the obvious move and it
+ * is the one this shelf has already written down as a mistake: VESSEL_PATH is
+ * shared between SteelVessel and TwinVessel precisely because two copies drift
+ * apart the first time either is edited, and the comparison quietly stops being
+ * true. So the group is lifted here verbatim, FrameOfEvidence now calls it, and
+ * there is exactly one Alaska plate on the shelf.
+ *
+ * The characters are invented on purpose. This is not a real registration and
+ * not a format any lookup could resolve.
+ */
+export const AlaskaPlate: React.FC<{
+  /** plate width; height follows the 156x62 proportion the 08-06 film set */
+  w?: number;
+  h?: number;
+  /** 0..1 dim the whole plate, for a dead or unlit frame */
+  dim?: number;
+  /** the stamped characters. Invented, always. */
+  text?: string;
+  /** an emissive edge the plate did NOT have a moment ago, drawn when a machine
+   *  has read it. Pass the film's perception colour or leave it off. */
+  readEdge?: number;
+  readColor?: string;
+}> = ({w = PLATE_BOX.w, h = PLATE_BOX.h, dim = 1, text = 'AK 4417', readEdge = 0, readColor = '#FF3FA4'}) => {
+  const plate = {w, h};
+  return (
+    <g opacity={dim}>
+      <rect x={-2} y={-2} width={plate.w + 4} height={plate.h + 4} rx={7} fill="#8A96A2" />
+      <rect x={0} y={0} width={plate.w} height={plate.h} rx={6} fill="#D6DFE7" />
+      <rect x={0} y={0} width={plate.w} height={plate.h * 0.22} rx={6} fill="#C2CDD8" />
+      <rect x={4} y={4} width={plate.w - 8} height={plate.h - 8} rx={4} fill="none"
+            stroke="#8A96A2" strokeWidth={3} />
+      <rect x={7} y={7} width={plate.w - 14} height={plate.h - 14} rx={3} fill="none"
+            stroke="#EDF2F6" strokeWidth={1.5} opacity={0.9} />
+      <text x={plate.w / 2} y={plate.h * 0.30} textAnchor="middle" fill="#4A5A6A"
+            style={{font: '700 13px "JetBrains Mono", ui-monospace, monospace', letterSpacing: 3}}>ALASKA</text>
+      <text x={plate.w / 2} y={plate.h * 0.78} textAnchor="middle" fill="#232D37"
+            style={{font: '700 30px "JetBrains Mono", ui-monospace, monospace', letterSpacing: 1.5}}>{text}</text>
+      <text x={plate.w / 2 + 1} y={plate.h * 0.78 + 1.5} textAnchor="middle" fill="#9AA6B2"
+            style={{font: '700 30px "JetBrains Mono", ui-monospace, monospace', letterSpacing: 1.5}}
+            opacity={0.5}>{text}</text>
+      {[[9, 9], [plate.w - 9, 9], [9, plate.h - 9], [plate.w - 9, plate.h - 9]].map(([bx, by], k) => (
+        <g key={k}>
+          <circle cx={bx} cy={by} r={3.2} fill="#8A96A2" />
+          <circle cx={bx} cy={by - 0.7} r={1.9} fill="#5E6B77" />
+        </g>
+      ))}
+      {readEdge > 0.01 && (
+        <rect x={0} y={0} width={plate.w} height={plate.h} rx={6} fill="none"
+              stroke={readColor} strokeWidth={3.4} opacity={0.9 * readEdge} />
+      )}
+    </g>
+  );
+};
+
+
 export const REDACTION = '#6B6560';   // a faintly WARM dead neutral, deliberately OFF the film's blue axis
 const SCREEN_BASE = '#20364A';
 const BEZEL = '#2A3442';
@@ -172,36 +237,10 @@ export const FrameOfEvidence: React.FC<{
           <path d="M18,104 C34,132 96,134 112,102 C100,140 32,142 18,104 Z" fill="#9FD8E8" opacity={0.16} />
         </g>
 
-        {/* THE PLATE FIELD — rectilinear, the grid's own kind of object */}
-        {/* THE PLATE IS A REAL OBJECT. The storyboard calls this frame "the most finished
-            thing this film will draw" and it shipped as a white slab reading AK: no
-            numerals, no embossed border, no bolt heads, no state band. Beat 2 even asks for
-            "the plate's numerals sharpen a notch" and there were no numerals to sharpen. It
-            is the object the whole film is about and it was the least finished asset in it.
-            The characters are invented, so the plate is too — deliberately not a real
-            Alaska registration, and not any format a lookup could resolve. */}
-        <g transform={`translate(${-W / 2 + plate.x},${-H / 2 + plate.y})`} opacity={dead ? 0.5 : 1}>
-          <rect x={-2} y={-2} width={plate.w + 4} height={plate.h + 4} rx={7} fill="#8A96A2" />
-          <rect x={0} y={0} width={plate.w} height={plate.h} rx={6} fill="#D6DFE7" />
-          <rect x={0} y={0} width={plate.w} height={plate.h * 0.22} rx={6} fill="#C2CDD8" />
-          <rect x={4} y={4} width={plate.w - 8} height={plate.h - 8} rx={4} fill="none"
-                stroke="#8A96A2" strokeWidth={3} />
-          <rect x={7} y={7} width={plate.w - 14} height={plate.h - 14} rx={3} fill="none"
-                stroke="#EDF2F6" strokeWidth={1.5} opacity={0.9} />
-          {/* the state band, then the stamped registration under it */}
-          <text x={plate.w / 2} y={plate.h * 0.30} textAnchor="middle" fill="#4A5A6A"
-                style={{font: '700 13px "JetBrains Mono", ui-monospace, monospace', letterSpacing: 3}}>ALASKA</text>
-          <text x={plate.w / 2} y={plate.h * 0.78} textAnchor="middle" fill="#232D37"
-                style={{font: '700 30px "JetBrains Mono", ui-monospace, monospace', letterSpacing: 1.5}}>AK 4417</text>
-          <text x={plate.w / 2 + 1} y={plate.h * 0.78 + 1.5} textAnchor="middle" fill="#9AA6B2"
-                style={{font: '700 30px "JetBrains Mono", ui-monospace, monospace', letterSpacing: 1.5}}
-                opacity={0.5}>AK 4417</text>
-          {[[9, 9], [plate.w - 9, 9], [9, plate.h - 9], [plate.w - 9, plate.h - 9]].map(([bx, by], k) => (
-            <g key={k}>
-              <circle cx={bx} cy={by} r={3.2} fill="#8A96A2" />
-              <circle cx={bx} cy={by - 0.7} r={1.9} fill="#5E6B77" />
-            </g>
-          ))}
+        {/* THE PLATE FIELD — now lib/evidence.tsx's shared AlaskaPlate, so the road
+            film and the CCTV film cannot drift apart (extracted 2026-09-22). */}
+        <g transform={`translate(${-W / 2 + plate.x},${-H / 2 + plate.y})`}>
+          <AlaskaPlate dim={dead ? 0.5 : 1} />
         </g>
 
         {/* THE SCANLINE, always crawling */}
