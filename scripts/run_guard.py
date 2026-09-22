@@ -363,6 +363,42 @@ def fresh(path: str, *, check: bool = True, root: str | None = None) -> str:
     return path
 
 
+def _warn_on_borrowed_git_identity() -> None:
+    """Say it at Phase 0 that the commit identity is not the owner's.
+
+    WHY HERE (2026-09-22). This container came up with `git config user.email` set to
+    `noreply@anthropic.com`, and the run committed under that name before noticing. CLAUDE.md
+    forbids authoring this repo's commits as Claude or Anthropic, in bold, with no exceptions,
+    and `preflight.py` already has a `git_identity_is_the_owners` row that refuses it.
+
+    But preflight runs before the PANEL, which is most of a run after the first commit, and
+    `upload_video.py` hosts the deliverables by PUSHING them, so the same wrong identity turns
+    into no download links in the Gmail draft. Preflight's own docstring makes the argument and
+    then lands one step later than it should: the cheapest moment to catch a `git config` is the
+    first command every run runs, which is this one.
+
+    It WARNS rather than refusing. `init` is the stale-scratch guard and its refusals protect a
+    paid-for cut, so failing it on an unrelated config value would be a new way to lose a film for
+    a thing one command fixes. The hard refusal stays in preflight, where it belongs.
+    """
+    import subprocess
+    try:
+        r = subprocess.run(["git", "config", "user.email"], capture_output=True, text=True)
+    except Exception:
+        return
+    email = (r.stdout or "").strip()
+    if not email:
+        print("run_guard: WARNING git config user.email is UNSET. upload_video.py hosts the "
+              "deliverables by pushing, so the run will reach the Gmail draft with no download "
+              "links. Set it to the owner's address now.", file=sys.stderr)
+        return
+    if "anthropic.com" in email.lower() or "noreply@" in email.lower():
+        print(f"run_guard: WARNING git config user.email is {email!r}. CLAUDE.md forbids "
+              f"authoring this repo's commits as Claude or Anthropic, and preflight will refuse "
+              f"it later. Set it to the owner's address BEFORE the first commit, because a "
+              f"commit made now has to be re-authored.", file=sys.stderr)
+
+
 def _main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -381,6 +417,7 @@ def _main() -> int:
             print(f"run_guard: init refused: {exc}. Preserve the passing cut and investigate its delivery evidence.", file=sys.stderr)
             return 1
         print(f"run ready: run_id={s['run_id']} started_at={_fmt(s['started_at'])} -> {STAMP_REL}")
+        _warn_on_borrowed_git_identity()
         return 0
     if a.cmd == "check":
         ok, reason = check_path(a.path)
