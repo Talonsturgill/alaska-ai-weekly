@@ -40,6 +40,14 @@ CHECKS = [
     # caught it by reading a table, so the table is a program now.
     ("every shot draws the lines it plays over",
      [sys.executable, "scripts/say_it_show_it_check.py"], True),
+    # Its sibling, and the reason the sibling is satisfiable. `beat.shot` is read by
+    # say_it_show_it (does this shot draw its own lines) AND by strip_name_check (does the
+    # engine animate this beat where the board says). On 2026-09-19 they pulled opposite
+    # ways: refiling beats to green strip_name_check turned say_it_show_it red. The field is
+    # not free, so this pins it to the value the shot anchors DERIVE, which leaves the engine
+    # as the only legal place to fix a strip_name_check failure.
+    ("every beat is filed under the shot that owns its line",
+     [sys.executable, "scripts/board_conform_check.py"], True),
     # The post linter does not see film labels or rebuilt captions. Both carried a
     # banned colon in the September 3 render despite a clean locked VO script.
     ("visible source and built props obey the copy rules",
