@@ -1,145 +1,76 @@
 {
-  "run_date": "2026-09-19",
+  "run_date": "2026-09-23",
   "sources": [
     {
       "id": "s1",
-      "url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
-      "label": "UAF Alaska Center for Energy and Power",
-      "pub_date": "2026-08-11",
-      "primary": true,
-      "fetched": true,
-      "title": "UAF Alaska Center for Energy and Power",
-      "publisher": "UAF Alaska Center for Energy and Power",
-      "outlet": "UAF Alaska Center for Energy and Power",
+      "title": "Forget jets and helicopters. Data centers could be Alaska military towns' next noisy neighbors",
+      "outlet": "Alaska Public Media / American Homefront Project",
+      "date": "2026-09-15",
+      "url": "https://alaskapublic.org/news/alaska-desk/2026-09-15/forget-jets-and-helicopters-data-centers-could-be-alaska-military-towns-next-noisy-neighbors",
       "claims": [
         "c1",
+        "c5",
         "c6",
-        "c8",
-        "c9",
-        "c11",
-        "c14"
-      ],
-      "used_in_film": true,
-      "note": "The award announcement. Every dollar figure in this story traces to UAF or a UAF interview; no DOE document naming AURORA-AI was reachable."
+        "c10",
+        "c11"
+      ]
     },
     {
       "id": "s2",
-      "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
-      "label": "Colorado State University",
-      "pub_date": "2026-07-22",
-      "primary": true,
-      "fetched": true,
-      "title": "Colorado State University",
-      "publisher": "Colorado State University",
-      "outlet": "Colorado State University",
+      "title": "Military data centers are sparking opposition, but local leaders may be powerless to stop them",
+      "outlet": "American Homefront Project / WUNC",
+      "date": "2026-09-22",
+      "url": "https://americanhomefront.wunc.org/news/2026-09-22/military-data-centers-are-sparking-opposition-but-local-leaders-may-be-powerless-to-stop-them",
       "claims": [
-        "c6",
-        "c11",
-        "c14"
-      ],
-      "used_in_film": true,
-      "note": "A partner institution, independent of the lead, describing the same four intended functions in nearly the same words. The safest technical sentence available."
+        "c8",
+        "c9",
+        "c12",
+        "c15"
+      ]
     },
     {
       "id": "s3",
-      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
-      "label": "Alaska's News Source",
-      "pub_date": "2026-08-27",
-      "primary": false,
-      "fetched": true,
-      "title": "Alaska's News Source",
-      "publisher": "Alaska's News Source",
-      "outlet": "Alaska's News Source",
+      "title": "Air Force offers land at three Alaska bases for AI data centers",
+      "outlet": "Air and Space Forces Magazine",
+      "date": "2026-04-11",
+      "url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
       "claims": [
+        "c1",
         "c2",
-        "c3",
-        "c16"
-      ],
-      "used_in_film": true,
-      "note": "The only independent reporting, and the source of the UAF share, the Phase One schedule and the Wies interview."
+        "c13",
+        "c14"
+      ]
     },
     {
       "id": "s4",
-      "url": "https://www.cordovaelectric.com/about/",
-      "label": "Cordova Electric Cooperative",
-      "pub_date": "2026-09-19",
-      "primary": true,
-      "fetched": true,
-      "title": "Cordova Electric Cooperative",
-      "publisher": "Cordova Electric Cooperative",
-      "outlet": "Cordova Electric Cooperative",
+      "title": "RFLP Artificial Intelligence (AI) Data Center Development at JBER, Eielson AFB and Clear SFS",
+      "outlet": "Department of the Air Force, SAM.gov",
+      "date": "2026-04-10",
+      "url": "https://sam.gov/opp/e1f00a73b56e493eaa84ba281e9db695/view",
       "claims": [
-        "c12a",
-        "c12b",
-        "c12c",
-        "c12d"
-      ],
-      "used_in_film": true,
-      "note": "The cooperative's own figures: 1,566 customers, 18 MW capacity, 10.8 MW Orca diesel, 6 MW Power Creek, 1.25 MW Humpback Creek, about 80 percent hydro."
+        "c3"
+      ]
     },
     {
       "id": "s5",
-      "url": "https://www.akenergyauthority.org/What-We-Do/Power-Cost-Equalization",
-      "label": "Alaska Energy Authority",
-      "pub_date": "2026-09-19",
-      "primary": true,
-      "fetched": true,
-      "title": "Alaska Energy Authority",
-      "publisher": "Alaska Energy Authority",
-      "outlet": "Alaska Energy Authority",
+      "title": "In legislative priorities, Fairbanks North Star Borough Assembly doubles up on AI data center moratorium request",
+      "outlet": "KUAC",
+      "date": "2026-08-31",
+      "url": "https://fm.kuac.org/2026-08-31/in-legislative-priorities-fairbanks-north-star-borough-assembly-doubles-up-on-ai-data-center-moratorium-request",
       "claims": [
-        "c13"
-      ],
-      "used_in_film": true,
-      "note": "193 communities, 82,000 Alaskans, and the three-to-five-times band. Used instead of ACEP's uncorroborated 'over 200 microgrids'. The page is undated, so no year is attached."
+        "c7"
+      ]
     },
     {
       "id": "s6",
-      "url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
-      "label": "CleanTechnica",
-      "pub_date": "2026-03-09",
-      "primary": false,
-      "fetched": true,
-      "title": "CleanTechnica",
-      "publisher": "CleanTechnica",
-      "outlet": "CleanTechnica",
+      "title": "The military wants to host data centers in Alaska, raising questions about whether there's enough gas to power them",
+      "outlet": "Anchorage Daily News",
+      "date": "2026-05-05",
+      "url": "https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/",
       "claims": [
-        "c15"
-      ],
-      "used_in_film": true,
-      "note": "The 170 kW Greensparc data center inside the Humpback Creek powerhouse. Trade press, so the outlet is named on screen with the figure."
-    },
-    {
-      "id": "s7",
-      "url": "https://www.whitehouse.gov/presidential-actions/2025/11/launching-the-genesis-mission/",
-      "label": "The White House, Executive Order 14363",
-      "pub_date": "2025-11-24",
-      "primary": true,
-      "fetched": true,
-      "title": "The White House, Executive Order 14363",
-      "publisher": "The White House, Executive Order 14363",
-      "outlet": "The White House, Executive Order 14363",
-      "claims": [
-        "c7"
-      ],
-      "used_in_film": true,
-      "note": "The only fully primary government document in the story. Confirmed against the Federal Register API."
-    },
-    {
-      "id": "s8",
-      "url": "https://www.energy.gov/national-laboratories",
-      "label": "U.S. Department of Energy",
-      "pub_date": "2026-09-19",
-      "primary": true,
-      "fetched": true,
-      "title": "U.S. Department of Energy",
-      "publisher": "U.S. Department of Energy",
-      "outlet": "U.S. Department of Energy",
-      "claims": [
-        "c8"
-      ],
-      "used_in_film": true,
-      "note": "Settles that the National Laboratory of the Rockies is real and is the former NREL, renamed in December 2025."
+        "c16",
+        "c17"
+      ]
     }
   ]
 }
