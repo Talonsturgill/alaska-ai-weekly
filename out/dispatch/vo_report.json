@@ -39,5 +39,34 @@
     "risers": 0,
     "consecutive_family_repeats": 0
   },
-  "known_gap": "The pre-button dip is authored in the BED rather than placed in a VO gap. The stem has no back-half gap of 0.5s or more because edge-tts assembled every line with the same 0.42s breath. A dip is a level event, so the bed drops to near nothing for a third of a second before the button. A future run on the Gemini path gets the silence-based dip back."
+  "known_gap": "The pre-button dip is authored in the BED rather than placed in a VO gap. The stem has no back-half gap of 0.5s or more because edge-tts assembled every line with the same 0.42s breath. A dip is a level event, so the bed drops to near nothing for a third of a second before the button. A future run on the Gemini path gets the silence-based dip back.",
+  "soundcheck": {
+    "pass": true,
+    "score": 0.973,
+    "heard": "The Air Force is offering about 4,700 acres of Alaska for AI data centers. Some sits at Isle-San Air Force Base outside Fairbanks, where bills are among the nations highest. Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say. Nothing's awarded. Alaskans took positions anyway. Soucha resident Sarah Hollister told reporters, the jets always meant sacrifice. Swaped that for a data center's home, she said, and we've lost our way. Fairbanks asked for a pause on both its state and federal lists. Senator Lisa Murkowski says Alaska can't support them on an insecure energy base. She didn't say the land. She said the power. The Air Force calls it a partnership supporting its airmen and guardians. Your bill is wires and fuel. The wires split across everyone so that half is tall. A giant customer helps pay for them either way. That half thins. The fuel bites. A big load either brings its own power or competes for what's here. So it turns on how big and how big is what nobody has published. Mayor Greer Hopkins says defense spending void Fairbanks when the F-35s came. But a fighter wing comes with a budget. A data center comes with an appetite. So the ask is a megawatts. Nobody can publish those yet. Ask for the date. Does that number go public before the land is leased? The terms aren't written. That's the opening.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.054,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.29,
+        "voiced_frac": 0.52,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 117.53,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean"
+  }
 }

@@ -33,21 +33,36 @@ rubric:
       / 3D / higher-fidelity than the brand" are out of scope and MUST NOT cap any score.
       Concrete within-style flaws (an unshaded flat fill, a frozen held figure, a character whose
       finish lags the props in the same frame, a missing motion cycle) absolutely still count.
-  # OBJECTIVE pre-gate — the machine checks-and-balances. quality_gate.py MUST exit 0 BEFORE this
-  # rubric is even scored. It catches the regressions a human used to flag (blur, illegible HUD,
-  # dead pacing, caption desync) numerically, so they never reach the inbox. Floors are enforced in
-  # the script; mirrored here for the reviewer.
+  # OBJECTIVE pre-gate — the machine checks-and-balances. It MUST exit 0 BEFORE this rubric is
+  # scored. It catches the regressions a human used to flag (blur, illegible text, dead pacing,
+  # caption desync) numerically, so they never reach the inbox.
+  #
+  # THE SCRIPT NAMED HERE CHANGED ON 2026-09-23, AND THE REASON MATTERS. This said
+  # `.claude/skills/alaska-dispatch/quality_gate.py`, which reads a `frames_v3` PNG directory
+  # and a `textlog` manifest that the 2.5D Remotion pipeline has never produced. Nothing in
+  # scripts/ reads its report either, so it had not run on a real Dispatch in a long time and a
+  # stale quality_report.json describing a DIFFERENT film sat in out/ until a panel judge found
+  # it and correctly refused to treat it as evidence. Fed hand-extracted frames it returns a
+  # confident 3.3/10 on shot counts and cadence it cannot measure from that input, which is
+  # worse than not running: a check with a precondition no run satisfies is the same hole this
+  # repo already closed in dead_space_check and no_exit.
+  #
+  # preflight.py is the gate that actually runs on the delivered bytes, and every floor listed
+  # below has a live owner inside it. quality_gate.py is kept for the old skill pipeline and is
+  # not this routine's pre-gate.
   objective_gate:
-    script: ".claude/skills/alaska-dispatch/quality_gate.py"
+    script: "scripts/preflight.py"
+    legacy_script: ".claude/skills/alaska-dispatch/quality_gate.py   # skill pipeline only; cannot read a Remotion render"
     must_pass_first: true
     checks:
-      sharpness:     "median variance-of-Laplacian >= 14     (guards 'looks blurry')"
-      hud_text:      "chart-card glyph-edge energy p90 >= 3.2 (guards 'chart letters illegible')"
-      caption_text:  "caption glyph-edge energy p90 >= 3.2    (guards 'captions generic / hard to read')"
-      event_cadence: "no on-screen-dead window > 5.0s         (guards 'boring / too slow')"
-      caption_sync:  "captions built from the TTS word-timings (guards 'voice != captions')"
+      plated_text:   "text_fit_check: every plated string measured against its plate (guards 'letters clipped')"
+      caption_render: "caption_render_check: sampled cues are visible IN THE DELIVERED CUT (guards 'captions generic / hard to read')"
+      caption_band:  "caption_band_check + plate_overlap_check (guards 'type on type')"
+      dead_space:    "dead_space_check on the SQUARE CUT, mean < 42% and no shot over 55% (guards 'boring / nothing to look at')"
+      caption_sync:  "captions built from the forced-alignment word timings (guards 'voice != captions')"
+      audio:         "mix_aac_check on the delivered encode: LUFS, true peak, LRA"
   hard_blockers:               # ANY of these = automatic fail regardless of score
-    - "quality_gate.py fails: blurry, illegible HUD/chart text, a >5s on-screen-dead window, or captions not voice-synced"
+    - "preflight.py fails: clipped plated text, a caption that does not render in the delivered cut, type on type, dead space over the ceiling, or captions not voice-synced"
     - "a factual error or an unverifiable load-bearing claim"
     - "a typo or wrong number anywhere on screen"
     - "audio gate fails (LUFS/TP/clipping) or music inaudible/uncredited"

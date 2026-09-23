@@ -52,7 +52,7 @@
         "video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
         "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
         "video-engine/src/Ep0919.tsx": "ef9a9007726f37d8a13bc6669fe62ef0beb48c44a0cbbede80e4b4a08edce12b",
-        "video-engine/src/Ep0923.tsx": "21022952817d153057c69ce04a2f273821bbd0492717c4805332a7ce5fde0a77",
+        "video-engine/src/Ep0923.tsx": "83c6e717c2b8a8c9e02e15891ec7ba8df2ca80cd192accb9a8c18b743219d34f",
         "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
         "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
         "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
@@ -129,10 +129,10 @@
       "chunks": 1,
       "browser_override": null
     },
-    "cache_key": "361acca4e52abf41e7dad14f785b6ec41002656076d66ea29191b215dd022c21",
+    "cache_key": "d6ab0776cbad7aac003a932ca951ecb3ef12a0d2dc9f866878932175307864d0",
     "output": {
       "path": "/home/user/alaska-ai-weekly/out/dispatch/render_mute.mp4",
-      "sha256": "b26d624e8d6f06fb624fb41f080810b1e6ebaa8145723a0e87a24837165e3137"
+      "sha256": "9bc5980d7b2ad0008b94d0f2a4ff26343245edf2af65c3315486e5300fd6331c"
     }
   },
   "mix": {
@@ -318,10 +318,10 @@
     "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860"
   },
   "outputs": {
-    "dispatch_master.mp4": "551ed7968926a3f402ae73a42e0c34d52c904b8e8610f88d65ff18650edeb4c7",
-    "dispatch_square.mp4": "3a874112897bc1eb6e77fdb4002018e118b122d278e5d162270c6a494372c3f6",
-    "dispatch_master_720.mp4": "1abb42eabe9c2c7735c21cc68cece5a5d8fdd11ac3cd877c22bd071679fff088",
-    "dispatch_master_hosted.mp4": "da3cdd7cb54b8e07928fcac22e3cfd4a8a607e607590e66ece5c093751c6bfee",
+    "dispatch_master.mp4": "67b9c6d39ec04b7ba6381b5386deb2d1d146bec59d2506131320cd53177f0b02",
+    "dispatch_square.mp4": "874a34762851364a3337acc09794ef820c423db166a52ef64989f6dfaa6a9b77",
+    "dispatch_master_720.mp4": "2284700585b72efb5f820605fc38b60d25978267f920a483f5b0f31c58ebca88",
+    "dispatch_master_hosted.mp4": "e5aa35443f31dbb90771d2ec6c378ae5ef1278efca983fa16486b3f8d15f29ed",
     "poster.png": "28a53cdefd2154d32c77efd20cb8f0bdcd3be7b7d9b79d750c8b43a4d457d7db",
     "poster_thumb.jpg": "148df50074dfb7af07d21dec5df38af8eafdb80d3789769974bbd28294d2ed62"
   }

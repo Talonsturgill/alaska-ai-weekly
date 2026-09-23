@@ -7,5 +7,13 @@
       "RENDER PROVENANCE FAILED: source contents changed: video-engine/src/lib/clinic.tsx",
       "Render and encode from the current source before grading or delivering."
     ]
+  },
+  {
+    "at": "2026-09-23T11:50:00Z",
+    "attempt": 2,
+    "median": null,
+    "reasons": [
+      "no panel_verdict.json. The 3-judge panel has not graded this cut. A Dispatch may not ship ungraded."
+    ]
   }
 ]

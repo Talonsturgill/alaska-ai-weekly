@@ -75,16 +75,16 @@
     },
     "the_stamp_hanging_unlanded": {
       "centre_s": 25.35,
-      "changed_pct": 6.3,
-      "peak_delta": 221,
+      "changed_pct": 6.4,
+      "peak_delta": 217,
       "window_start_s": 25.22,
       "straddled_cut": false,
       "within_shot": true
     },
     "the_walking_figure": {
       "centre_s": 29.0,
-      "changed_pct": 10.9,
-      "peak_delta": 206,
+      "changed_pct": 11.6,
+      "peak_delta": 208,
       "window_start_s": 28.87,
       "straddled_cut": false,
       "within_shot": true
@@ -92,7 +92,7 @@
     "the_jets_crossing": {
       "centre_s": 31.65,
       "changed_pct": 3.8,
-      "peak_delta": 212,
+      "peak_delta": 210,
       "window_start_s": 31.52,
       "straddled_cut": false,
       "within_shot": true
@@ -100,7 +100,7 @@
     "the_contrail_flattening_to_a_line": {
       "centre_s": 34.83,
       "changed_pct": 2.3,
-      "peak_delta": 233,
+      "peak_delta": 235,
       "window_start_s": 34.7,
       "straddled_cut": false,
       "within_shot": true
@@ -140,15 +140,15 @@
     "her_two_fingers_pushing_the_land": {
       "centre_s": 49.85,
       "changed_pct": 5.5,
-      "peak_delta": 225,
+      "peak_delta": 223,
       "window_start_s": 49.72,
       "straddled_cut": false,
       "within_shot": true
     },
     "the_raking_key_travelling_along_the": {
       "centre_s": 54.05,
-      "changed_pct": 8.7,
-      "peak_delta": 158,
+      "changed_pct": 8.6,
+      "peak_delta": 161,
       "window_start_s": 53.92,
       "straddled_cut": false,
       "within_shot": true
@@ -156,7 +156,7 @@
     "the_figure_walking_into_the_widening": {
       "centre_s": 58.25,
       "changed_pct": 11.5,
-      "peak_delta": 224,
+      "peak_delta": 227,
       "window_start_s": 58.12,
       "straddled_cut": false,
       "within_shot": true
@@ -164,7 +164,7 @@
     "the_plate_rising_under_the_figure": {
       "centre_s": 60.4,
       "changed_pct": 4.0,
-      "peak_delta": 232,
+      "peak_delta": 236,
       "window_start_s": 60.27,
       "straddled_cut": false,
       "within_shot": true
@@ -259,24 +259,24 @@
     },
     "the_empty_plate_tipping": {
       "centre_s": 95.8,
-      "changed_pct": 5.0,
-      "peak_delta": 195,
+      "changed_pct": 4.4,
+      "peak_delta": 235,
       "window_start_s": 95.67,
       "straddled_cut": false,
       "within_shot": true
     },
     "the_plate_rim_grinding_round_as": {
       "centre_s": 99.11,
-      "changed_pct": 3.4,
-      "peak_delta": 176,
+      "changed_pct": 3.6,
+      "peak_delta": 197,
       "window_start_s": 98.98,
       "straddled_cut": false,
       "within_shot": true
     },
     "the_hand_coming_down_and_the": {
       "centre_s": 101.25,
-      "changed_pct": 2.1,
-      "peak_delta": 151,
+      "changed_pct": 2.3,
+      "peak_delta": 239,
       "window_start_s": 101.12,
       "straddled_cut": false,
       "within_shot": true
@@ -284,7 +284,7 @@
     "the_hand_settling_on_the_solid": {
       "centre_s": 105.1,
       "changed_pct": 3.6,
-      "peak_delta": 235,
+      "peak_delta": 234,
       "window_start_s": 104.97,
       "straddled_cut": false,
       "within_shot": true
@@ -292,7 +292,7 @@
     "the_two_tokens_swapping_order": {
       "centre_s": 108.3,
       "changed_pct": 10.1,
-      "peak_delta": 222,
+      "peak_delta": 221,
       "window_start_s": 108.17,
       "straddled_cut": false,
       "within_shot": true
