@@ -18,7 +18,8 @@
       "claims": [
         "c1",
         "c3"
-      ]
+      ],
+      "display": "The Air Force is offering about 4,700 acres of Alaska for AI data centers."
     },
     {
       "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
@@ -120,14 +121,16 @@
       "idx": 14,
       "claims": [
         "c12"
-      ]
+      ],
+      "display": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F-35s came."
     },
     {
       "text": "But a fighter wing comes with a budget. A data center comes with an appetite.",
       "idx": 15,
       "claims": [
         "c12"
-      ]
+      ],
+      "display": "But a fighter wing comes with a budget. A data center comes with an appetite."
     },
     {
       "text": "So the ask isn't megawatts. Nobody can publish those yet.",

@@ -1,19 +1,17 @@
-In Cordova, Alaska, a rack of servers runs inside a hydroelectric powerhouse.
+The Air Force is offering about 4,700 acres of Alaska for AI data centers. Nothing public says what they would draw.
 
-Greensparc put it there in 2024 and the turbine water cools it. Cordova is now getting an AI project too. The two have nothing to do with each other. That turns out to be the interesting part.
+Air and Space Forces Magazine counts twelve parcels across Joint Base Elmendorf-Richardson, Eielson and Clear. The land has a public number on it. The power draw, the water draw and the project size do not, in anything a resident can open. As of mid September no projects had been awarded.
 
-In August the University of Alaska Fairbanks said a four-partner team won $725,000 from the Energy Department's Genesis Mission to build AURORA-AI. UAF's share is $325,000 per Alaska's News Source. The others are Colorado State, the National Laboratory of the Rockies and Cordova Electric itself. It is a digital twin of the grid built from the co-op's own records. Forecast demand. Spot abnormal conditions. Choose water over fuel. Phase One begins October 1st and runs nine months.
+That gap is doing real work. Salcha resident Sarah Hollister told reporters the jets always meant sacrifice, and that a data center's hum would show her we had lost our way. Per KUAC the Fairbanks North Star Borough Assembly put a pause request on both its state and its federal legislative lists. Senator Lisa Murkowski says she is not a proponent at JBER or the Interior installations because Alaska can't support them on an insecure energy base. She didn't name the land. She named the power.
 
-Here is why Cordova is the right place to try it. The grid is an island. Eighteen megawatts and 1,566 customers with no wire to anywhere else. About eighty percent of the power is hydro from two creeks and the backstop is a 10.8 megawatt diesel plant. Guess demand wrong and the co-op can't buy from a neighbor. It burns fuel. A forecasting error there has a price you can count in gallons.
+Start with the bill itself. It is roughly two things, the wires and the fuel. The wires are a fixed cost split across everyone on the line. Fairbanks has few customers to split them over and some of the nation's highest utility costs. A giant new customer that stays on the grid helps pay for those wires, so that half gets thinner. The fuel half is the one that bites. Chugach said as much back in May. It doesn't have the gas to serve a large data center today, it does have generation capacity, and the answer depends on the size of the project and the contract.
 
-So the test is narrow and it is fair. By next June is there a measured fuel number or a demonstration? Richard Wies leads the project and calls nine months a really short period of performance. He is right.
+The variable that decides it is the one number nobody has published.
 
-Those servers matter after all. They are not part of the project. They are a load on the same grid so whatever the model learns to predict it has to predict them too.
+So the useful ask is not megawatts. Nobody can publish those before there is a project, and a lease solicitation comes before a project by design. The useful ask is a date. At what stage does the load figure become public, and is the land leased before or after that stage? That's answerable today, with nothing designed.
 
-One more thing worth saying plainly. Cordova is the easy case. It has hydro and engineers and records a model can use. Alaska's power cost program covers 193 communities that are largely reliant on diesel where power can cost three to five times what it does in more urban areas per the Alaska Energy Authority. Those grids need a forecast most and have the least data.
+As of mid September nothing had been awarded and the terms weren't written. That's not a loss. It's the only moment this is still a question.
 
-I want this to work. I also think the word AI has to be earned here rather than assumed. The cheapest way to earn it is to name the method it beats and then beat it in gallons.
+Should the load figure be public before the land is leased, or is asking for that the same as asking for nothing?
 
-What would convince you that a grid forecast actually worked?
-
-#Alaska #ArtificialIntelligence #Energy #Microgrids
+#Alaska #AI #DataCenters #Energy #Fairbanks

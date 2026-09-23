@@ -1,124 +1,124 @@
 #!/usr/bin/env python3
-"""Rebuild captions.json from forced-aligned word timings AND the intended script.
+"""Turn a forced-alignment WORDS file into the CUE file build_scenes.py reads.
 
-WHY THIS EXISTS (2026-08-04). scripts/dispatch_captions.py does this job but assumes
-vo_script.json["lines"] is a list of plain strings and that every line still has its own
-vo_line_NN.wav on disk. This run's script is a list of {i, act, t} objects and the per
-line wavs are gone after a patch pass, so that tool cannot run and the only other
-alignment tool, align_captions.py, emits the WORDS file rather than the cue list. There
-was no path from "the audio changed" back to "captions.json".
+WHY THIS EXISTS (2026-09-23). The Gemini VO pipeline writes two different things
+into out/dispatch/: words.json, which is word-level alignment, and captions.json,
+which is a list of CUES shaped {start, end, text, seg}. Everything downstream
+reads the cue file.
 
-The rule this file exists to enforce: caption TEXT comes from the script, caption TIMING
-comes from the audio. Whisper's transcript is used for nothing except placing the words
-in time. Reading the text off the transcript is how "A prescribed burn" ships as
-"prescribed burn" and "who pays when a burn escapes" ships as "a fire escapes": the ASR
-drops and substitutes words, and a caption that disagrees with the voice is a hard
-blocker in the rubric.
+The edge-tts fallback does not produce either. scripts/align_captions.py fills the
+gap and writes {"words": [...], "speech_end": ..., "total": ..., "fps": ...}, which
+is the WORDS shape under the CAPTIONS name. Feeding that to build_scenes.py fails
+deep inside the cue rebalancer with `KeyError: 1`, because it indexes a list and
+gets a dict. The error names nothing useful and the failure is three layers from
+the cause.
 
-A cue never spans two VO lines, because build_scenes.py anchors every shot boundary to a
-line start and the rebalancer refuses to merge across one.
+So the fallback path was missing its last link, and this is that link. One cue per
+VO line, which is the unit the rest of the pipeline is anchored to: `seg` is the VO
+line index, and build_scenes' own rebalancer re-chunks anything too long for the
+caption band. Timing comes from the ALIGNED AUDIO, never from the script, per
+DISPATCH_STANDARD section 5: caption text comes from the script, caption timing
+comes from the audio.
+
+    python3 scripts/captions_from_words.py            # words.json -> captions.json
 """
-import argparse, difflib, json, os, re
+import argparse
+import json
+import os
+import sys
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(REPO, "out", "dispatch")
 
-MAX_WORDS = 7
-MAX_CHARS = 62
-
-
-def norm(t):
-    return re.sub(r"[^a-z0-9']", "", t.lower())
-
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--words", default=os.path.join(OUT, "audio", "words.json"))
-    ap.add_argument("--script", default=os.path.join(OUT, "vo_script.json"))
+    ap.add_argument("--words", default=os.path.join(OUT, "captions.json"),
+                    help="the forced-alignment output (the {words:[...]} shape)")
     ap.add_argument("--lines", default=os.path.join(OUT, "vo_lines.json"))
     ap.add_argument("--out", default=os.path.join(OUT, "captions.json"))
+    ap.add_argument("--script", default=os.path.join(OUT, "vo_script.json"),
+                    help="the locked script, which carries the DISPLAY spelling of each line")
     a = ap.parse_args()
 
-    heard = json.load(open(a.words))["words"]
-    script = {l["i"]: l["t"] for l in json.load(open(a.script))["lines"]}
+    doc = json.load(open(a.words))
+    if isinstance(doc, list):
+        print(f"captions_from_words: {a.words} is already a cue list, nothing to do")
+        return 0
+    words = doc.get("words") or []
+    if not words:
+        print("FAIL captions_from_words: no words in the alignment file")
+        return 1
+
     lines = json.load(open(a.lines))["lines"]
 
-    cues = []
-    for L in lines:
-        idx, s0, s1 = L["idx"], L["start"], L["end"]
-        intended = script[idx].split()
-        if not intended:
-            continue
-        hw = [w for w in heard if s0 - 0.02 <= w["s"] < s1 + 0.02]
+    # THE SCRIPT IS PHONETIC FOR THE SYNTH AND NUMERIC ON SCREEN. The locked
+    # script spells numbers and acronyms the way the voice must SAY them ("four
+    # thousand seven hundred", "A I", "F thirty fives") because that is what the
+    # transcript gate scores. A caption is READ, so it takes the numeral form.
+    # Lines carry an optional `display` for exactly this, and without it the
+    # rough cut burned "about four thousand seven hundred acres" on screen.
+    display = {}
+    try:
+        for l in json.load(open(a.script))["lines"]:
+            display[l["idx"]] = l.get("display") or l["text"]
+    except Exception as e:
+        print(f"  NOTE: could not read {a.script} ({e}); falling back to stem text")
 
-        # map intended tokens onto heard timings; anything the ASR dropped or renamed
-        # gets a time interpolated between its nearest matched neighbours, so the text
-        # stays verbatim and the timing stays honest
-        times = [None] * len(intended)
-        if hw:
-            sm = difflib.SequenceMatcher(
-                None, [norm(t) for t in intended], [norm(w["w"]) for w in hw])
-            for i, j, n in sm.get_matching_blocks():
-                for k in range(n):
-                    times[i + k] = (hw[j + k]["s"], hw[j + k]["e"])
-        known = [i for i, t in enumerate(times) if t]
-        if not known:
-            step = (s1 - s0) / len(intended)
-            times = [(s0 + i * step, s0 + (i + 1) * step) for i in range(len(intended))]
+    # CAPTION TEXT COMES FROM THE SCRIPT. CAPTION TIMING COMES FROM THE AUDIO.
+    # DISPATCH_STANDARD section 5, and the first build of this script broke it.
+    # It joined the ASR's own words into the cue text, which burned the
+    # transcriber's mistakes onto the screen: the rough cut rendered "Eielson" as
+    # "Isle -San", "hum" as "home", and split "4,700" across a space. Those are
+    # ASR errors, not script errors, and a viewer reads them as the film being
+    # wrong about a real place. The aligner exists to place words IN TIME and for
+    # nothing else.
+    #
+    # So each cue carries the SCRIPT line verbatim, and takes its start and end
+    # from the aligned words that fall inside that line's measured span.
+    buckets = {l["idx"]: [] for l in lines}
+    for w in words:
+        mid = (float(w["s"]) + float(w["e"])) / 2.0
+        hit = None
+        for l in lines:
+            if l["start"] <= mid <= l["end"]:
+                hit = l["idx"]
+                break
+        if hit is None:
+            hit = min(lines, key=lambda l: min(abs(mid - l["start"]), abs(mid - l["end"])))["idx"]
+        buckets[hit].append(w)
+
+    cues, empty = [], []
+    for l in lines:
+        ws = buckets[l["idx"]]
+        if ws:
+            start = round(min(float(w["s"]) for w in ws), 3)
+            end = round(max(float(w["e"]) for w in ws), 3)
         else:
-            for i in range(len(times)):
-                if times[i]:
-                    continue
-                lo = max([k for k in known if k < i], default=None)
-                hi = min([k for k in known if k > i], default=None)
-                if lo is None:
-                    times[i] = (s0, times[hi][0])
-                elif hi is None:
-                    times[i] = (times[lo][1], s1)
-                else:
-                    span = (times[hi][0] - times[lo][1]) / (hi - lo)
-                    times[i] = (times[lo][1] + (i - lo - 1) * span,
-                                times[lo][1] + (i - lo) * span)
+            # no aligned words landed here, so fall back to the line's own
+            # measured span rather than dropping the caption entirely
+            empty.append(l["idx"])
+            start, end = round(float(l["start"]), 3), round(float(l["end"]), 3)
+        txt = display.get(l["idx"], l["text"])
+        cues.append({"start": start, "end": end, "text": txt.strip(), "seg": l["idx"]})
+    cues.sort(key=lambda c: c["start"])
 
-        # chunk WITHIN the line, breaking after sentence punctuation
-        cur = []
-        for i, tok in enumerate(intended):
-            cur.append(i)
-            txt = " ".join(intended[c] for c in cur)
-            ends_sentence = tok.endswith((".", "!", "?"))
-            nxt = " ".join(intended[c] for c in cur + [i + 1]) if i + 1 < len(intended) else ""
-            # never break between two capitalised words: "the National Science" /
-            # "Foundation obligated" tears a proper noun across cards, and the eye
-            # finishes the first card before the second arrives.
-            nxt_tok = intended[i + 1] if i + 1 < len(intended) else ""
-            in_proper_run = (tok[:1].isupper() and nxt_tok[:1].isupper()
-                             and not ends_sentence and len(nxt) <= MAX_CHARS + 8)
-            if (not in_proper_run
-                    and (ends_sentence or len(cur) >= MAX_WORDS
-                         or (nxt and len(nxt) > MAX_CHARS))) or i == len(intended) - 1:
-                cues.append({"text": txt,
-                             "start": round(times[cur[0]][0], 2),
-                             "end": round(times[cur[-1]][1], 2),
-                             "seg": idx})
-                cur = []
-
-    # a cue must not start before the previous one ends
+    # monotonic, non-overlapping, which the caption renderer assumes
     for i in range(1, len(cues)):
         if cues[i]["start"] < cues[i - 1]["end"]:
             cues[i]["start"] = cues[i - 1]["end"]
         if cues[i]["end"] <= cues[i]["start"]:
-            cues[i]["end"] = cues[i]["start"] + 0.4
-    # NO BLINK-OUTS. Each card holds until the next one starts, so the caption band
-    # never empties between VO segments. A judge counted sixteen 0.2s to 0.7s blackouts
-    # in 84 seconds, which reads as flicker on a muted phone play.
-    for i in range(len(cues) - 1):
-        cues[i]["end"] = round(cues[i + 1]["start"], 2)
+            cues[i]["end"] = cues[i]["start"] + 0.35
 
-    json.dump(cues, open(a.out, "w"), indent=1)
-    print(f"wrote {len(cues)} cues -> {a.out}")
-    for c in cues[:6]:
-        print(f"  {c['start']:6.2f} seg{c['seg']:<3} {c['text']!r}")
+    json.dump(cues, open(a.out, "w"), indent=2)
+    print(f"captions_from_words: {len(words)} aligned words placed {len(cues)} SCRIPT cues over "
+          f"{len(lines)} VO lines, last ends {cues[-1]['end']:.2f}s -> {a.out}")
+    if empty:
+        print(f"  NOTE: {len(empty)} VO line(s) got no aligned words: {empty}. "
+              f"That is a real alignment gap, not a formatting one, and those lines "
+              f"will have no caption on screen. Check the stem before shipping.")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
