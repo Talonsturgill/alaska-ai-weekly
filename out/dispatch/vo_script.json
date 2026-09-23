@@ -13,120 +13,144 @@
   "note": "Numbers and acronyms are written PHONETICALLY here for the synth. On screen they render as numerals and correct spelling. Every factual line carries a claim id.",
   "lines": [
     {
-      "i": 0,
       "text": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
-      "claim_ids": [
-        "c1"
+      "idx": 0,
+      "claims": [
+        "c1",
+        "c3"
       ]
     },
     {
-      "i": 1,
-      "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are already among the nation's highest.",
-      "claim_ids": [
+      "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
+      "idx": 1,
+      "claims": [
         "c2",
         "c15"
       ]
     },
     {
-      "i": 2,
-      "text": "Does that shrink a Fairbanks bill, or grow it? One number decides. The offering doesn't say.",
-      "claim_ids": [
-        "c11"
+      "text": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
+      "idx": 2,
+      "claims": [
+        "c11",
+        "c3"
       ]
     },
     {
-      "i": 3,
       "text": "Nothing's awarded. Alaskans took positions anyway.",
-      "claim_ids": [
+      "idx": 3,
+      "claims": [
         "c10"
       ]
     },
     {
-      "i": 4,
-      "text": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice for freedom.",
-      "claim_ids": [
+      "text": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
+      "idx": 4,
+      "claims": [
         "c5"
       ]
     },
     {
-      "i": 5,
-      "text": "Swap that for a data center's hum, she said, and we've completely lost our way.",
-      "claim_ids": [
+      "text": "Swap that for a data center's hum, she said, and we've lost our way.",
+      "idx": 5,
+      "claims": [
         "c5"
       ]
     },
     {
-      "i": 6,
-      "text": "Alaska Senator Lisa Murkowski says the state can't support them on an insecure energy base.",
-      "claim_ids": [
+      "text": "Fairbanks asked for a pause, on both its state and federal lists.",
+      "idx": 6,
+      "claims": [
+        "c7"
+      ]
+    },
+    {
+      "text": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
+      "idx": 7,
+      "claims": [
         "c6"
       ]
     },
     {
-      "i": 7,
       "text": "She didn't say the land. She said the power.",
-      "claim_ids": [
+      "idx": 8,
+      "claims": [
         "c6"
       ]
     },
     {
-      "i": 8,
-      "text": "Your bill is two things. Wires, and fuel.",
-      "claim_ids": []
+      "text": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
+      "idx": 9,
+      "claims": [
+        "c13"
+      ]
     },
     {
-      "i": 9,
-      "text": "The wires split across everyone on the line. Few customers, so that half is tall.",
-      "claim_ids": [
+      "text": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
+      "idx": 10,
+      "claims": [
         "c15"
       ]
     },
     {
-      "i": 10,
-      "text": "A giant customer helps pay for the wires either way. That half thins.",
-      "claim_ids": []
-    },
-    {
-      "i": 11,
-      "text": "The fuel is the half that bites. A big load either brings its own power, or competes for what's here.",
-      "claim_ids": []
-    },
-    {
-      "i": 12,
-      "text": "So it turns on how big. And how big is the number nobody has published.",
-      "claim_ids": [
-        "c11"
+      "text": "A giant customer helps pay for them either way. That half thins.",
+      "idx": 11,
+      "claims": [
+        "c15"
       ]
     },
     {
-      "i": 13,
-      "text": "Borough Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
-      "claim_ids": [
+      "text": "The fuel bites. A big load either brings its own power, or competes for what's here.",
+      "idx": 12,
+      "claims": [
+        "c16",
+        "c17"
+      ]
+    },
+    {
+      "text": "So it turns on how big. And how big is what nobody has published.",
+      "idx": 13,
+      "claims": [
+        "c11",
+        "c16"
+      ]
+    },
+    {
+      "text": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
+      "idx": 14,
+      "claims": [
         "c12"
       ]
     },
     {
-      "i": 14,
       "text": "But a fighter wing comes with a budget. A data center comes with an appetite.",
-      "claim_ids": []
-    },
-    {
-      "i": 15,
-      "text": "So the ask isn't megawatts. Nobody can publish those yet.",
-      "claim_ids": [
-        "c11"
+      "idx": 15,
+      "claims": [
+        "c12"
       ]
     },
     {
-      "i": 16,
-      "text": "Ask for the date. When does that number go public, and is the land leased by then.",
-      "claim_ids": []
+      "text": "So the ask isn't megawatts. Nobody can publish those yet.",
+      "idx": 16,
+      "claims": [
+        "c11",
+        "c10"
+      ]
     },
     {
-      "i": 17,
+      "text": "Ask for the date. Does that number go public before the land is leased?",
+      "idx": 17,
+      "claims": [
+        "c3",
+        "c14"
+      ]
+    },
+    {
       "text": "The terms aren't written. That's the opening.",
-      "claim_ids": [
-        "c10"
+      "idx": 18,
+      "claims": [
+        "c10",
+        "c14"
       ]
     }
   ]

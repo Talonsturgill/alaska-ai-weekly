@@ -48,13 +48,6 @@
       ]
     },
     {
-      "id": "c4",
-      "status": "CUT",
-      "spoken": null,
-      "on_screen": null,
-      "note": "Any per-base parcel breakdown. Five at Eielson, two across the Richardson Highway, one near southeast North Pole. NOTHING readable supports it. It may not appear as a number, a map label, or a count of pins in the animation."
-    },
-    {
       "id": "c5",
       "status": "LABELED",
       "spoken": "Salcha resident Sarah Hollister told reporters the roar of jet fighters always reminded her of the sacrifices we make for freedom. But the hum of a data center, she said, shows her we have completely lost our way.",
@@ -257,5 +250,11 @@
     "Chugach's quote cut short at 'large data center', or presented as being about Fairbanks",
     "any Enstar 18-day figure. The phrasing handed to research was FABRICATED and Enstar has publicly rejected that reading of its own number.",
     "the whole Mat-Su / AIDEA state-land track, which is verified but deliberately out of this film's scope"
+  ],
+  "cut_records": [
+    {
+      "id": "c4",
+      "note": "Any per-base parcel breakdown. Nothing readable supports it. Moved out of claims[] because a CUT record is not a claim the film can carry, and leaving it there understated the film's coverage of the real record."
+    }
   ]
 }
