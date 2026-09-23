@@ -408,7 +408,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <rect key={i} x={28} y={86 + i * 30} width={300} height={7} rx={3} fill={C.carbon} opacity={0.18} />
           ))}
           <line x1={28} y1={238} x2={300} y2={238} stroke={C.carbon} strokeWidth={3} opacity={0.7} />
-          <text x={28} y={266} fontFamily={MONO} fontWeight={700} fontSize={20}
+          <text x={46} y={266} fontFamily={MONO} fontWeight={700} fontSize={20}
             fill={C.carbon} opacity={0.75} letterSpacing={2}>UNSIGNED</text>
         </g>
         <Plate text="THE ONLY ITEM ON BOTH" y={862} size={30} tone="copper" p={lock} />
@@ -646,7 +646,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
               fontSize={24} fill={C.ink} letterSpacing={1.5}>LAND LEASED</text>
           </g>
         </g>
-        <Plate text="MEGAWATTS" y={1258} size={30} p={clamp((skid - 0.5) * 2) * (1 - clamp(found * 1.6))} />
+        <Plate text="MEGAWATTS" y={1152} size={30} p={clamp((skid - 0.5) * 2) * (1 - clamp(found * 1.6))} />
         <Plate text="ASK FOR THE DATE" y={1262} size={32} tone="copper" p={found} />
       </SVG>
     );
