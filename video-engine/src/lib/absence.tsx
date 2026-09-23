@@ -207,3 +207,124 @@ export const UnnamedField: React.FC<{
   }
   return <g transform={`translate(${x},${y})`} clipPath={undefined}>{items}</g>;
 };
+
+// =============================================================================
+// CRAFT ADVANCE 2026-09-23 ("One Variable") — A MISSING *VALUE*.
+//
+// Everything above draws a missing OBJECT: a silhouette that is not filled in.
+// That is the right grammar for "the seal that was not there" and the wrong one
+// for "the row on the form that was never filled in", which is the image this
+// film is built on.
+//
+// The difference is not cosmetic. A dashed outline drawn AROUND empty space
+// reads as a BOX, and a box is a thing. A viewer sees an empty container and
+// concludes the container is the subject. What an unanswered field actually
+// looks like is a RULE with nothing sitting on it: the baseline is there,
+// waiting, and the value never arrives. So the dash goes on the BASELINE, not
+// around the slot, and the eye reads "this was meant to be written on" instead
+// of "here is an empty rectangle".
+//
+// The four clauses of the Unnamed contract carry over unchanged, and each is
+// still a defect somebody already found:
+//   (1) DASHED and CRAWLING, because a solid rule reads as a design choice.
+//   (2) A TRUE VOID above the rule. No hatch, no fill, no placeholder glyph.
+//       A placeholder ("--", "TBD", "N/A") is an ANSWER and this is not one.
+//   (3) A slow sparse DRIFT in the slot, so it cannot read as unrendered.
+//   (4) A REQUIRED label, because an unlabelled blank is indistinguishable
+//       from an oversight, and a caller who has to name it has to decide what
+//       is missing.
+//
+// `solid` 0..1 resolves the SAME row into a filled one without swapping
+// components mid-shot, which is what lets a film show a value arriving.
+// =============================================================================
+
+export interface UnnamedValueProps {
+  /** REQUIRED. The field name. An unlabelled blank reads as an oversight. */
+  label: string;
+  f: number;
+  x?: number;
+  y?: number;
+  /** total row width, label plus slot */
+  w?: number;
+  /** the value that WOULD go here, revealed as `solid` rises. Omit for never. */
+  value?: string;
+  /** 0 = unanswered (dashed crawling baseline, void slot), 1 = filled */
+  solid?: number;
+  /** fraction of the row width given to the label column */
+  labelFrac?: number;
+  color?: string;
+  paper?: string;
+  size?: number;
+  /** decorrelates the crawl and drift between rows */
+  phase?: number;
+  /** 0..1 how much the void drifts. 0 gives a dead slot, the failure mode. */
+  drift?: number;
+}
+
+/** A ruled data row whose VALUE was never supplied. */
+export const UnnamedValue: React.FC<UnnamedValueProps> = ({
+  label, f, x = 0, y = 0, w = 520, value, solid = 0, labelFrac = 0.52,
+  color = '#1F3A5F', paper = '#EDE7DB', size = 30, phase = 0, drift = 1,
+}) => {
+  const uidv = uid(`uv${label}${x}${y}`);
+  const labW = w * labelFrac;
+  const slotX = labW + 18;
+  const slotW = w - slotX;
+  const base = 0;                       // the baseline sits at local y = 0
+  const crawl = -((f * 0.55 + phase * 37) % 1000);
+  // the slot's clear height above the rule, where a value would sit
+  const clear = size * 1.15;
+
+  // three drifting motes, deterministic, never Math.random
+  const motes = drift > 0 ? [0, 1, 2].map((i) => {
+    const h = hash(`${label}${i}`);
+    const px = (h % 100) / 100;
+    const sp = 0.10 + ((h >>> 5) % 7) / 90;
+    const t = (f * sp + phase * 11 + i * 37) % 100;
+    return {
+      cx: slotX + 10 + px * Math.max(8, slotW - 20),
+      cy: base - 6 - ((t / 100) * (clear - 10)),
+      o: 0.20 * (1 - Math.abs(t / 50 - 1)),
+      r: 1.6 + ((h >>> 9) % 3) * 0.5,
+    };
+  }) : [];
+
+  return (
+    <g transform={`translate(${x},${y})`}>
+      {/* the label column. It is ALWAYS solid: what is missing is the value,
+          not the question, and blurring that would be a different claim. */}
+      <text x={0} y={-size * 0.28} fontFamily="'JetBrains Mono', monospace"
+        fontSize={size} fontWeight={700} fill={color} opacity={0.92}
+        letterSpacing={1.5}>{label}</text>
+
+      {/* THE VOID ABOVE THE RULE IS GENUINELY EMPTY. The first build tinted it
+          with VOID_TINT and the look-dev still showed exactly the failure this
+          file's own docstring warns about: a filled slot reads as a BOX, and a
+          box is a thing, so the eye sees an empty container rather than an
+          unanswered question. There is no rect here on purpose. The page shows
+          through, and the dashed baseline plus the drift carry the whole
+          reading. Do not put a fill back. */}
+      {motes.map((m, i) => (
+        <circle key={i} cx={m.cx} cy={m.cy} r={m.r} fill={color}
+          opacity={Math.max(0, m.o) * (1 - solid)} />
+      ))}
+
+      {/* THE BASELINE. Dashed and crawling while unanswered, solid once filled. */}
+      <line x1={slotX} y1={base} x2={slotX + slotW} y2={base}
+        stroke={color} strokeWidth={solid > 0.5 ? 3 : 5}
+        strokeLinecap="round"
+        strokeDasharray={solid > 0.5 ? undefined : '22 16'}
+        strokeDashoffset={solid > 0.5 ? undefined : crawl}
+        opacity={0.55 + 0.35 * solid} />
+
+      {/* the value, if one ever arrives */}
+      {value ? (
+        <text x={slotX + slotW} y={-size * 0.28} textAnchor="end"
+          fontFamily="'JetBrains Mono', monospace" fontSize={size} fontWeight={800}
+          fill={color} opacity={Math.max(0, (solid - 0.45) / 0.55)}
+          letterSpacing={1.5}>{value}</text>
+      ) : null}
+      <desc>{uidv}</desc>
+    </g>
+  );
+};

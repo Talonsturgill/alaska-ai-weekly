@@ -1,6 +1,7 @@
 import React from 'react';
 import {Ep0729, ep0729Schema} from './Ep0729';
 import { Composition } from 'remotion';
+import {TariffLook} from './TariffLook';
 import { Episode, episodeSchema } from './Episode';
 import { Standoff } from './Standoff';
 import { FaunaShowcase } from './FaunaShowcase';
@@ -63,6 +64,7 @@ const standoffSchema = z.object({
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition id="TariffLook" component={TariffLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="FlightCrateLook" component={FlightCrateLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="ResearchAssetLook0912" component={ResearchAssetLook0912} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="Dispatch0912"
