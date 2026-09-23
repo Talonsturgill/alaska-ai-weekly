@@ -1,16 +1,12 @@
 {
  "measured_on": "dispatch_square.mp4",
- "also_covers_master": true,
- "master_measured": {
-  "i": -14.29,
-  "tp": -3.22,
-  "lra": 6.4
- },
- "master_identity": "the 9:16 master measures I=-14.29 TP=-3.22 LRA=6.4 against the delivered square's I=-14.29 TP=-3.22 LRA=6.4. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
+ "also_covers_master": null,
+ "master_measured": null,
+ "master_identity": "dispatch_master.mp4 not present, cross measurement not performed",
  "tool": "ffmpeg loudnorm + forced-alignment word timings",
- "delivered_i": -14.29,
- "delivered_tp": -3.22,
- "delivered_lra": 6.4,
+ "delivered_i": null,
+ "delivered_tp": null,
+ "delivered_lra": 0.0,
  "targets": {
   "i": -14.0,
   "tp_max": -1.0,
@@ -20,47 +16,47 @@
   ]
  },
  "pass": {
-  "loudness": true,
-  "true_peak": true,
-  "lra": true
+  "loudness": false,
+  "true_peak": false,
+  "lra": false
  },
- "vo_gaps_ge_0_35s": 39,
- "vo_gaps_ge_0_50s": 36,
- "vo_silence_in_gaps_s": 32.35,
- "last_word_ends_s": 113.8,
+ "vo_gaps_ge_0_35s": 33,
+ "vo_gaps_ge_0_50s": 29,
+ "vo_silence_in_gaps_s": 25.46,
+ "last_word_ends_s": 116.98,
  "longest_gaps": [
   {
-   "at": 15.18,
-   "len": 1.64
+   "at": 89.5,
+   "len": 1.26
   },
   {
-   "at": 94.34,
-   "len": 1.42
-  },
-  {
-   "at": 44.12,
-   "len": 1.38
-  },
-  {
-   "at": 70.7,
-   "len": 1.24
-  },
-  {
-   "at": 88.3,
-   "len": 1.2
-  },
-  {
-   "at": 97.78,
+   "at": 34.44,
    "len": 1.16
   },
   {
-   "at": 39.02,
-   "len": 1.12
+   "at": 27.74,
+   "len": 1.1
   },
   {
-   "at": 59.52,
-   "len": 1.1
+   "at": 57.34,
+   "len": 1.08
+  },
+  {
+   "at": 40.3,
+   "len": 1.06
+  },
+  {
+   "at": 62.92,
+   "len": 1.06
+  },
+  {
+   "at": 84.32,
+   "len": 1.06
+  },
+  {
+   "at": 15.66,
+   "len": 1.04
   }
  ],
- "diagnosis": "LRA is inside the 6 to 9 LU target."
+ "diagnosis": "LRA is 0.0 against the 6 to 9 LU target. MEASURED CAUSE, not asserted: the VO track leaves 33 gaps of 0.35s or longer (29 of them 0.50s or longer), totalling 25.46s of silence, and the last word ends at 116.98s. The room for the bed to open therefore EXISTS. If the loudness range is still flat, the bed is not rising into that room, which is a mix problem to be fixed at the faders and the duck release, not a script problem to be fixed by cutting lines. An earlier hand-written version of this field claimed there was only one gap over 0.35s and sent the fix in the wrong direction; these figures are computed from words.json every run."
 }

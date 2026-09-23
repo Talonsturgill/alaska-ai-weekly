@@ -88,8 +88,8 @@ const Head: React.FC<{text: string; y: number; size?: number; p?: number}> = ({t
 /** THE DUSK WORLD. Three declared planes, per art_direction.light.depth_approach:
  *  a far ridge and spruce band lifted toward the sky, a mid plane at full contrast,
  *  and a near foreground at high contrast. The far plane drifts against the push. */
-const Dusk: React.FC<{f: number; push: number; drift: number; groundY?: number; near?: boolean}> =
-({f, push, drift, groundY = GY, near = true}) => {
+const Dusk: React.FC<{f: number; push: number; drift: number; groundY?: number; near?: boolean; grid?: boolean}> =
+({f, push, drift, groundY = GY, near = true, grid = true}) => {
   const ridge = Array.from({length: 26}, (_, i) =>
     `${i * 46},${groundY - 330 - Math.abs(Math.sin(i * 1.7)) * 170 - (i % 3) * 30}`).join(' L');
   const spruce = Array.from({length: 34}, (_, i) => {
@@ -97,6 +97,35 @@ const Dusk: React.FC<{f: number; push: number; drift: number; groundY?: number; 
     const hh = 130 + Math.abs(Math.sin(i * 1.13)) * 100;
     return <path key={i} d={`M${x},${groundY - 110} l${15},${-hh} l${15},${hh} z`} fill={C.spruce} opacity={0.9} />;
   });
+  // THE SECTION GRID. art_direction.shape_language names "a section grid" among the
+  // ruled human-made forms, and it is the one item on that list the first build never
+  // drew. The film's argument is that a rectangle is being drawn over ground that is
+  // not rectangular, so the document's geometry belongs in the air over the town and
+  // not only inside the cards.
+  //
+  // It is also the honest answer to the dead-space meter, which failed the first cut at
+  // 49.2% low-information area against a 42% ceiling. Nearly all of that was bare sky in
+  // the SQUARE crop: the meter's own advice is to put something in the frame rather than
+  // more texture, and a ruled grid is structure the film already promised, not noise
+  // sprayed over a gradient to move a number.
+  const rules = grid ? (
+    <g transform={`translate(${-drift * 7},0)`}>
+      {Array.from({length: 12}, (_, i) => {
+        const x = -60 + i * 116;
+        return <line key={`v${i}`} x1={x} y1={336} x2={x} y2={groundY - 124}
+          stroke={C.paper} strokeWidth={i % 4 === 0 ? 5 : 3}
+          opacity={i % 4 === 0 ? 0.19 : 0.12} />;
+      })}
+      {Array.from({length: 10}, (_, i) => {
+        const y = 344 + i * 116;
+        return y > groundY - 124 ? null : (
+          <line key={`h${i}`} x1={-40} y1={y} x2={1120} y2={y}
+            stroke={C.paper} strokeWidth={i % 4 === 0 ? 5 : 3}
+            opacity={i % 4 === 0 ? 0.19 : 0.12} />
+        );
+      })}
+    </g>
+  ) : null;
   return (
     <g>
       <rect x={0} y={0} width={W} height={H} fill="url(#sky23)" />
@@ -105,6 +134,7 @@ const Dusk: React.FC<{f: number; push: number; drift: number; groundY?: number; 
         <ellipse key={i} cx={(i * 290 + f * 0.18) % 1400 - 160} cy={250 + i * 64}
           rx={230 - i * 22} ry={26 - i * 3} fill={C.duskHi} opacity={0.30} />
       ))}
+      {rules}
       {/* far plane: ridge, lifted and low contrast, drifting against the push */}
       <g transform={`translate(${-drift * 26},0)`} opacity={0.46}>
         <path d={`M-40,${groundY} L${ridge} L1140,${groundY} Z`} fill={C.duskHi} />
@@ -118,6 +148,23 @@ const Dusk: React.FC<{f: number; push: number; drift: number; groundY?: number; 
         const h2 = Math.imul(i + 3, 2654435761) >>> 0;
         const x = (h2 % 1100) - 10, y = groundY - 90 + ((h2 >>> 9) % 620);
         return <ellipse key={i} cx={x} cy={y} rx={16 + (h2 >>> 5) % 14} ry={5} fill={C.goldD} opacity={0.30} />;
+      })}
+      {/* willow and cut grass, in INK. The tussocks above are gold on gold, which is a
+          tone-on-tone scatter: it reads as empty to a viewer and it measures as empty
+          too. These carry the contrast, and they sit in the band of ground the square
+          crop actually shows, between the spruce line and the caption bar. */}
+      {Array.from({length: 26}, (_, i) => {
+        const h3 = Math.imul(i + 11, 2246822519) >>> 0;
+        const x = (h3 % 1120) - 20, y = groundY - 96 + ((h3 >>> 11) % 150);
+        const lean = ((h3 >>> 3) % 40) - 20;
+        return (
+          <g key={`w${i}`} opacity={0.5}>
+            <path d={`M${x},${y} q${lean * 0.4},${-26} ${lean},${-52}`} stroke={C.ink}
+              strokeWidth={5} fill="none" strokeLinecap="round" />
+            <path d={`M${x + 13},${y} q${lean * 0.3},${-18} ${lean * 0.8},${-38}`} stroke={C.ink}
+              strokeWidth={4} fill="none" strokeLinecap="round" />
+          </g>
+        );
       })}
       {near ? (
         <g transform={`translate(${drift * 34},${push * 26})`}>
@@ -422,13 +469,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: EZ});
     picture = (
       <SVG><Defs />
-        <rect x={0} y={0} width={W} height={H} fill="url(#sky23)" />
-        <rect x={0} y={GY} width={W} height={H - GY} fill="#231E31" />
+        <Dusk f={f} push={push} drift={drift} />
         {/* she pushes the LAND rectangle aside with two fingers, then taps the column */}
         <g opacity={1 - alone} transform={`translate(${180 * shove},0)`}>
-          <rect x={120} y={760} width={360} height={240} rx={8} fill={C.goldD}
+          {/* offset RIGHT of her body. Centred at 300 the word sat directly behind her
+              head and torso and read as a cut-off label rather than a card being moved. */}
+          <rect x={196} y={760} width={360} height={240} rx={8} fill={C.goldD}
             opacity={(1 - shove * 0.72) * arrive} stroke={C.ink} strokeWidth={3} />
-          <text x={300} y={906} textAnchor="middle" fontFamily={MONO} fontWeight={800}
+          <text x={412} y={906} textAnchor="middle" fontFamily={MONO} fontWeight={800}
             fontSize={34} fill={C.ink} opacity={(1 - shove * 0.6) * arrive} letterSpacing={3}>LAND</text>
         </g>
         <g transform={`translate(0,${-6 * alone})`}>
@@ -438,7 +486,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Plate text="POWER" x={775} y={506} size={32} tone="copper" p={clamp(shove * 1.4)} />
         </g>
         <g opacity={1 - alone}>
-          <rect x={96} y={GY} width={430} height={130} fill="#2E2740" stroke={C.ink} strokeWidth={3} />
+          {/* the plinth this shot used to carry is gone: it was invisible against the flat
+              apron that used to sit here, and against the dusk world's gold ground it read
+              as an unlabelled dark hole at her feet. She stands on the ground, like everyone
+              else in the film. */}
           <Character frame={f} x={300} y={GY} scale={1.24} outfit="suit" headgear="bare"
             pose="point" emotion="neutral" facing={1} gesture={gesture} idleGain={1.0} />
         </g>
@@ -486,8 +537,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const wiresScale = 1 - 0.42 * thin;
     picture = (
       <SVG><Defs />
-        <rect x={0} y={0} width={W} height={H} fill="url(#sky23)" />
-        <rect x={0} y={GY} width={W} height={H - GY} fill="#2A2438" />
+        <Dusk f={f} push={push} drift={drift} />
         <g opacity={1 - morph} transform={`translate(${540 - 330},${470}) scale(1.1)`}>
           <Statement f={f} x={0} y={0} w={600} masthead="YOUR BILL"
             rows={[{label: 'WIRES', value: '...'}, {label: 'FUEL', value: '...'}]} arrive={1} />
@@ -523,8 +573,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const fuelScale = safe(1 + bite * 0.22 - brA * 0.30 + brB * 0.34 + reach * 0.40);
     picture = (
       <SVG><Defs />
-        <rect x={0} y={0} width={W} height={H} fill="url(#sky23)" />
-        <rect x={0} y={GY} width={W} height={H - GY} fill="#2A2438" />
+        <Dusk f={f} push={push} drift={drift} />
         {/* the houses HOLD the lower third, and one share bar tracks the swing */}
         {[0, 1, 2, 3, 4].map((i) => (
           <House key={i} x={128 + i * 200} y={GY} s={0.80} lit={0.9} />
@@ -615,8 +664,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const ph = Math.sin(swap * Math.PI * 4);
     picture = (
       <SVG><Defs />
-        <rect x={0} y={0} width={W} height={H} fill="url(#sky23)" />
-        <rect x={0} y={GY} width={W} height={H - GY} fill="#2A2438" />
+        <Dusk f={f} push={push} drift={drift} />
         <g transform={`translate(${540 - 396},${470}) scale(${push * 1.2})`}>
           <Statement f={f} x={0} y={0} w={660} masthead="THE ASK"
             rows={[{label: 'MEGAWATTS', value: null},

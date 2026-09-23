@@ -3,21 +3,22 @@
   "fails": [],
   "warns": [],
   "metrics": {
-    "chars": 2189,
-    "hook": "In Cordova, Alaska, a rack of servers runs inside a hydroelectric powerhouse.",
-    "hook_len": 77,
+    "chars": 2063,
+    "hook": "The Air Force is offering about 4,700 acres of Alaska for AI data centers. Nothing public says what they would draw.",
+    "hook_len": 116,
     "hashtags": [
       "#Alaska",
-      "#ArtificialIntelligence",
-      "#Energy",
-      "#Microgrids"
+      "#AI",
+      "#DataCenters",
+      "#Eielson",
+      "#Fairbanks"
     ],
-    "n_hashtags": 4,
+    "n_hashtags": 5,
     "emoji": 0,
     "unicode_bold": 0,
     "bullet_lines": 0,
     "sentence_initial_but": 0,
-    "commas_per_100w": 1.56,
+    "commas_per_100w": 3.68,
     "passes": true
   }
 }

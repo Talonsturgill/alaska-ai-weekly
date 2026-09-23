@@ -75,8 +75,20 @@ case "$MODE" in
     ;;
   final)
     COMP="${2:-${RUN_COMP:-Dispatch}}"; assert_comp "$COMP"; OUT="../out/dispatch/render/video_mute.mp4"; [[ -n "${3:-}" ]] && OUT="$(resolve_out "$3")"
-    exec npx remotion render src/index.ts "$COMP" "$OUT" \
+    # THE RECEIPT IS PART OF THE RENDER (2026-09-23). render_parallel.sh has always written
+    # one; this wrapper never did, and a FINAL render is a ship-grade artifact either way.
+    # So encode_deliverables.sh, whose first act is begin-encode, died on whatever receipt
+    # happened to be lying in out/ from an earlier run: it reported eight source files
+    # "changed" that this run had never touched, which reads as corruption rather than as a
+    # missing step. A render with no provenance cannot be encoded, so the render writes it.
+    case "$OUT" in /*) ABS_OUT="$OUT";; *) ABS_OUT="$PWD/$OUT";; esac
+    case "$PROPS" in /*) ABS_PROPS="$PROPS";; *) ABS_PROPS="$PWD/$PROPS";; esac
+    TOTAL="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["total"])' "$ABS_PROPS")"
+    (cd .. && python3 scripts/render_provenance.py begin-render --video "$ABS_OUT" \
+      --props "$ABS_PROPS" --composition "$COMP" --total "$TOTAL" --chunks 1 >/dev/null)
+    npx remotion render src/index.ts "$COMP" "$OUT" \
       --props="$PROPS" --codec=h264 --muted --concurrency=4 --crf=19
+    (cd .. && python3 scripts/render_provenance.py finish-render --video "$ABS_OUT")
     ;;
   still)
     FRAME="${2:?frame number}"; COMP="${3:-${RUN_COMP:-Dispatch}}"; assert_comp "$COMP"

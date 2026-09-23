@@ -54,12 +54,38 @@ a render and cannot be validated before the ship gate has bound the graded cut.
 | 16 | mix: 14 sfx kinds, bed-authored dip, -14.37 LUFS | DONE |
 | 17 | caption: Gate A + 5 Gate B rounds, ships at 8.60 | DONE |
 | 18 | preflight source gates repointed at the real film | DONE |
-| 19 | FINAL RENDER at 3907 frames | IN FLIGHT |
+| 19 | FINAL RENDER at 3907 frames | DONE (re-rendered after 19b) |
+| 19b | dead-space gate FAILED 49.2% vs 42%: the world layer restored | DONE |
 | 20 | encode, evidence pack, 3-judge panel to >= 7.0 | |
 | 21 | ship_gate record + check | |
 | 22 | upload, publish_feed, Gmail draft | |
 | 23 | dedupe add, PR ready, MERGE to main | |
 | 24 | PushNotification (MUST carry the Gemini billing blocker) | |
+
+## 19b, measured, so a later run does not undo it
+
+The first full render failed `dead_space_check` at 49.2% mean low-information area against a
+42% ceiling, with S9 at 59.4% against a 55% per-shot ceiling. The cause was not taste. Four
+shots (7, 9, 10, 12) drew a bare `sky23` rect plus a flat apron instead of the `Dusk` world,
+so the top half of the SQUARE CUT was an unbroken gradient, and `Dusk` itself had never drawn
+the section grid that `art_direction.shape_language` names among the ruled forms. The ground's
+only texture was gold tussocks on gold ground, which is tone on tone and measures as empty
+because it reads as empty.
+
+Three changes, all of them things the plan already called for:
+- the section grid, ruled across the sky in every Dusk shot, at 116px with a heavier line
+  every fourth. The film's argument is a rectangle drawn over ground that is not
+  rectangular, so the document's geometry belongs in the air over the town.
+- willow and cut grass in INK along the ground band the square actually shows.
+- shots 7, 9, 10 and 12 now stand in the same world as shots 2, 3, 11 and 13.
+
+Measured on a draft render cropped to square: 49.2% -> 23.3%. Measured again on that draft
+upscaled to 1080, which blurs and is therefore the pessimistic bound: 38.2%, every shot under
+55%. The shipped figure sits between the two.
+
+Two defects the new ground exposed and fixed in the same pass: shot 7's plinth (invisible
+against the old flat apron, an unlabelled dark hole against gold) is gone, and the LAND ghost
+card moved right of the senator's body, where the word is legible instead of half behind her.
 
 ## THE THING THE OWNER MUST BE TOLD
 
