@@ -84,6 +84,14 @@ export interface CharacterProps {
   outfit?: Outfit;
   headgear?: Headgear;
   hair?: string;
+  /** THE RIG COULD ONLY DRAW ONE HAIRCUT, and on 2026-09-23 that cost a film a hard
+   *  blocker: a named senator carried her own nameplate above a figure all three panel
+   *  judges read as a man, because the only hair shape in the kit is a short crown and
+   *  the only way to signal anything else was to hide it under a hood. Alaska's news is
+   *  full of named women and the shelf has to be able to draw one. 'long' keeps the same
+   *  crown and adds a mass falling behind the shoulders plus two locks either side of
+   *  the face, so the silhouette reads at thumbnail size, which is where it has to. */
+  hairStyle?: 'short' | 'long';
   skin?: string;
   facing?: 1 | -1; // 1 = faces right
   scale?: number;
@@ -145,6 +153,7 @@ export const Character: React.FC<CharacterProps> = ({
   outfit = 'puffer',
   headgear = 'bare',
   hair = '#3d2c1e',
+  hairStyle = 'short',
   skin = '#e8b48c',
   facing = 1,
   scale = 1,
@@ -519,7 +528,13 @@ export const Character: React.FC<CharacterProps> = ({
   // it. The round line-join at the elbow point is the articulation: one drawn curve
   // through the same three points has no joint in it, which is what "unarticulated
   // sleeve" meant.
-  const sleeve = (ch: ArmChain, col: string, shadow = true) => {
+  // `lit` scales the white edge down the tube. It exists because the OFF arm hangs on the
+  // away side of the body, mostly behind the torso silhouette, so the only part of it a
+  // viewer sees is that white edge running down the outside of the coat. On 2026-09-23 a
+  // judge read exactly that as "a grey or steel tube limb ending in a pale nub", which is
+  // a fair description of a highlight with no form attached to it. A limb in shadow does
+  // not carry the key light, so the off arm now passes 0.
+  const sleeve = (ch: ArmChain, col: string, shadow = true, lit = 1) => {
     // THE SLEEVE STOPS SHORT OF THE WRIST, and it TAPERS. Both matter, and the second
     // one is the actual construction bug behind "the hand floats over the coat". Zoomed
     // in, that hand is not floating, it is SWALLOWED: the sleeve was one 34px-wide
@@ -549,7 +564,7 @@ export const Character: React.FC<CharacterProps> = ({
         <path d={fore} fill="none" stroke={col} strokeWidth={18} strokeLinecap="round" />
         {/* lit edge down the sun-facing side of the tube */}
         <path d={`M${ch.sx - 3},${ch.sy + 5} L${ch.ex - 3},${ch.ey + 2} L${cx - 3},${cy - 4}`}
-              fill="none" stroke="#ffffff" strokeWidth={5} opacity={0.2}
+              fill="none" stroke="#ffffff" strokeWidth={5} opacity={0.2 * lit}
               strokeLinecap="round" strokeLinejoin="round" />
         {/* elbow crease on the inside of the joint — the bend reads as a bend */}
         <path d={`M${ch.ex + 9},${ch.ey - 5} q-4,6 -1,12`} fill="none" stroke={INK}
@@ -655,7 +670,7 @@ export const Character: React.FC<CharacterProps> = ({
             <g>
               {offArm(
                 <g>
-                  {sleeve(oc, c.shade)}
+                  {sleeve(oc, c.shade, true, 0)}
                   {/* hand ON the solved wrist, aimed down the solved forearm, and one
                       step LARGER than the tapered cuff it emerges from */}
                   {hand(oc.wx, oc.wy, -oc.wristDeg, 15.5)}
@@ -709,7 +724,7 @@ export const Character: React.FC<CharacterProps> = ({
               <g>
                 <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
                 <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-                <path d={`M-49,270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.2} />
+                <path d={`M-49,270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.07} />
                 {hand(-52, 358, 0, 14)}
               </g>
             )}
@@ -769,6 +784,11 @@ export const Character: React.FC<CharacterProps> = ({
                 additional drift is inside the tolerance scenes already build against.
                 A full swing here would be ~7px at the hand and would visibly shed the prop. */}
             <g transform={`rotate(${nearArmRot * 0.3} 46 258)`}>
+              {/* A SHOULDER, so the raised arm is attached to something. Its lower end is a
+                  round stroke cap, and on a figure whose garment is a bright colour that cap
+                  reads as a tube laid over the jacket rather than an arm coming out of it.
+                  A judge described exactly that on the mayor. */}
+              <circle cx={46} cy={258} r={19} fill={c.main} stroke={INK} strokeWidth={5} />
               <path d={`M46,258 q26,-70 ${12 + 2 * Math.sin(f / 10)},-140`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
               <path d={`M46,258 q26,-70 ${12 + 2 * Math.sin(f / 10)},-140`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
               {hand(58 + 2 * Math.sin(f / 10), 118, 180)}
@@ -788,7 +808,7 @@ export const Character: React.FC<CharacterProps> = ({
               <g>
                 <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
                 <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-                <path d={`M-49,270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.2} />
+                <path d={`M-49,270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.07} />
                 {hand(-52, 358, 0, 14)}
               </g>
             )}
@@ -1105,7 +1125,7 @@ export const Character: React.FC<CharacterProps> = ({
                 "a light grey slab behind his left shoulder ... an unresolved flat plate" and
                 "a light grey slab rather than a designed backpack", which is exactly what a
                 rim light reads as once it leaves the edge it is supposed to be lighting. */}
-            <RimLight d="M-88,-150 q-2,72 -3,120" w={3} opacity={0.34} />
+            <RimLight d="M-86,-146 q-2,70 -3,116" w={2.5} opacity={0.15} />
             <ellipse cx={0} cy={-146} rx={42} ry={10} fill={INK} opacity={0.14} />
             <path d="M-84,-2 q84,22 168,0" fill="none" stroke={INK} strokeWidth={2.5} strokeDasharray="7 6" opacity={0.3} />
             {/* arms attach at shoulder height inside torso group (pose coords are authored
@@ -1179,6 +1199,21 @@ export const Character: React.FC<CharacterProps> = ({
                 {/* hair (visible under bare/cap/hood) */}
                 {(hg === 'bare' || hg === 'cap' || hg === 'hood') && (
                   <g>
+                    {/* long: two locks falling either side of the face, drawn OUTSIDE the
+                        56px face radius so they frame it instead of covering it, plus the
+                        same crown over the top. Together they change the silhouette at
+                        thumbnail size, which is the only size that matters for reading a
+                        figure as a person rather than as a default. */}
+                    {hairStyle === 'long' && (
+                      <g>
+                        <path d="M-54,-22 q-22,44 -14,98 q4,16 20,18 q12,2 16,-8 q-16,-52 -6,-106 Z"
+                              fill={hair} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+                        <path d="M54,-22 q22,44 14,98 q-4,16 -20,18 q-12,2 -16,-8 q16,-52 6,-106 Z"
+                              fill={hair} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+                        <path d="M-50,10 q-10,42 -6,74" stroke={INK} strokeWidth={2.4} opacity={0.3} fill="none" strokeLinecap="round" />
+                        <path d="M50,10 q10,42 6,74" stroke={INK} strokeWidth={2.4} opacity={0.3} fill="none" strokeLinecap="round" />
+                      </g>
+                    )}
                     <path d="M-56,-4 a56,56 0 0 1 112,0 q-18,-36 -56,-36 q-38,0 -56,36 Z" fill={hair} stroke={INK} strokeWidth={5} />
                     {/* hair shine + part line — hair as a lit material, not a flat cap */}
                     <path d="M-34,-32 q16,-12 40,-9" stroke="#fff" strokeWidth={5} opacity={0.22} fill="none" strokeLinecap="round" />

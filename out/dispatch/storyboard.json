@@ -1,1250 +1,1249 @@
 {
- "run_date": "2026-09-19",
- "concept": "Cordova is one of the few grids where you can actually GRADE a forecast, because an islanded run-of-river system settles every wrong guess in gallons of diesel. A federal AI award arrives to build a digital twin of that grid, and the film's job is to name the measurement that would settle whether it worked, while being honest that the clever thing in the powerhouse was already there and somebody else put it there.",
- "title": "Watch For Gallons",
- "engine": "infographic-2.5d",
- "derived_from": "scratch",
- "palette": "spruce black-green night, sodium amber for what was measured, forecast cyan for what was claimed, wet moss, rain silver",
- "fingerprint": {
-  "palette": "spruce black-green night, sodium amber measured, forecast cyan claimed, wet moss, rain silver",
-  "pov": "macro-closeup",
-  "layout": "single-object-void",
-  "motion_vector": "radial-emanate",
-  "hero_treatment": "single-organic-hero",
-  "register": "instrument-readout",
-  "camera_strategy": "dolly-through",
-  "light_story": "night-practical",
-  "metaphor": "a claim gets a box before the measurement does, in a town already using its river twice"
- },
- "shots": [
-  {
-   "id": 1,
-   "vo_line": 0,
-   "stage": "powerhouse interior",
-   "framing": "push-detail",
-   "scale": "insert",
-   "height": "eye",
-   "transition_in": "",
-   "thread": "",
-   "camera": "static:hook holds one turning object",
-   "stage3d": "planes",
-   "pov": "macro-closeup",
-   "layout": "single-object-void",
-   "motion_vector": "radial-emanate",
-   "hero_treatment": "structure-as-subject",
-   "t": 0.0,
-   "dur": 7.0,
-   "hero": {
-    "name": "the server rack in the powerhouse",
-    "parts": 6,
-    "zones": 3,
-    "detail_note": "fan cage with individual blades, a vented face with an LED row, a rail frame with bolt heads, a cable bundle falling off the back, a GREENSPARC plate, and the dripping penstock elbow behind it. Zones: the lit amber face, the shadowed rail side, the wet metal above."
-   }
+  "run_date": "2026-09-23",
+  "concept": "The land is measured to the acre and the power draw is not measured at all, so the one number that decides whether a Fairbanks bill goes up or down is the one nobody has published. Ask for the date it will be, not for the number.",
+  "title": "One Variable",
+  "engine": "infographic-2.5d",
+  "derived_from": "scratch",
+  "palette": "Interior dusk violet, birch gold, copper wire, carbon blue, statement paper",
+  "fingerprint": {
+    "palette": "Interior dusk violet, birch gold, copper wire, carbon blue",
+    "pov": "frontal-document",
+    "layout": "split-compare",
+    "motion_vector": "divide-and-settle",
+    "hero_treatment": "document-as-subject",
+    "register": "ruled-statement",
+    "camera_strategy": "crane-down-then-hold",
+    "light_story": "dusk-raking-left",
+    "metaphor": "a ruled form filling in row by row, with one row that never does"
   },
-  {
-   "id": 2,
-   "vo_line": 1,
-   "stage": "powerhouse interior",
-   "framing": "alt-vantage",
-   "scale": "medium",
-   "height": "low",
-   "transition_in": "pull-out",
-   "thread": "CARRY",
-   "camera": "craneDown+dollyThrough",
-   "stage3d": "planes",
-   "pov": "cross-section-cutaway",
-   "layout": "stacked-layers",
-   "motion_vector": "vertical-descent",
-   "hero_treatment": "structure-as-subject",
-   "t": 7.0,
-   "dur": 10.5,
-   "hero": {
-    "name": "the turbine and the rack above it",
-    "parts": 7,
-    "zones": 3,
-    "detail_note": "turbine housing with inspection ports, shaft and coupling, the water sheet, the rack on the deck above, a handrail, the two stencilled wall boxes, a hanging work lamp. Zones: lamp-lit deck, dark turbine pit, the wet wall behind."
-   }
-  },
-  {
-   "id": 3,
-   "vo_line": 3,
-   "stage": "the valley at night",
-   "framing": "wide-establish",
-   "scale": "extreme-wide",
-   "height": "high",
-   "transition_in": "mask-wipe",
-   "thread": "MATCH",
-   "camera": "dollyThrough+riseWith",
-   "stage3d": "planes",
-   "pov": "eye-level-immersive",
-   "layout": "map-territory",
-   "motion_vector": "horizontal-traverse",
-   "hero_treatment": "landscape-as-subject",
-   "t": 17.5,
-   "dur": 9.5,
-   "hero": {
-    "name": "the run-of-river assembly",
-    "parts": 8,
-    "zones": 3,
-    "detail_note": "creek, intake with trash rack and sluice gate, the gate handwheel, penstock with expansion bands, anchor block, powerhouse with roof overhang and lit door, tailrace, the town's lights beyond. Zones: the lit door, the moonlit water, the black ridge."
-   }
-  },
-  {
-   "id": 4,
-   "vo_line": 4,
-   "stage": "the island grid",
-   "framing": "two-up",
-   "scale": "medium",
-   "height": "low",
-   "transition_in": "graphic-match",
-   "thread": "MATCH",
-   "camera": "truckAcross",
-   "stage3d": "planes",
-   "pov": "cross-section-cutaway",
-   "layout": "fullbleed-split",
-   "motion_vector": "horizontal-traverse",
-   "hero_treatment": "structure-as-subject",
-   "t": 27.0,
-   "dur": 11.0,
-   "hero": {
-    "name": "the two sources, side by side",
-    "parts": 5,
-    "zones": 3,
-    "detail_note": "the penstock and its water on one side, the diesel stack with its louvres and flame on the other, a hard centre seam, the share bar beneath them, and the shoreline they both stand on. Zones: the cool water side, the hot stack side, the dark ground between."
-   }
-  },
-  {
-   "id": 5,
-   "vo_line": 5,
-   "stage": "the island grid",
-   "framing": "subject-portrait",
-   "scale": "medium",
-   "height": "eye",
-   "transition_in": "push-in",
-   "thread": "TRAVEL",
-   "camera": "dollyThrough",
-   "stage3d": "planes",
-   "pov": "eye-level-immersive",
-   "layout": "centered-hero-lowerthird",
-   "motion_vector": "push-in-only",
-   "hero_treatment": "single-organic-hero",
-   "t": 38.0,
-   "dur": 11.0,
-   "hero": {
-    "name": "Sourdough and the fuel gauge",
-    "parts": 5,
-    "zones": 3,
-    "detail_note": "the kit.tsx rig with furnace-window chest, knit cap, arms and boots with a contact shadow, plus the fuel gauge on his flank with its needle and tick ring. Zones: ember-lit front, cold rim off the water, shadow side."
-   }
-  },
-  {
-   "id": 6,
-   "vo_line": 7,
-   "stage": "the ledger wall",
-   "framing": "data-panel",
-   "scale": "close",
-   "height": "eye",
-   "transition_in": "hard-cut",
-   "thread": "CARRY",
-   "camera": "static:the freeze is the beat",
-   "stage3d": "planes",
-   "pov": "instrument-screen",
-   "layout": "hud-instrument-frame",
-   "motion_vector": "scroll-data",
-   "hero_treatment": "data-as-subject",
-   "t": 49.0,
-   "dur": 7.0,
-   "hero": {
-    "name": "the frozen twin",
-    "parts": 5,
-    "zones": 2,
-    "detail_note": "a half-drawn cyan silhouette, the stalled draw head, the schedule stamp, the drained lower half, the hatched remainder. Zones: the still-lit upper body and the drained lower."
-   }
-  },
-  {
-   "id": 7,
-   "vo_line": 9,
-   "stage": "powerhouse interior",
-   "framing": "push-detail",
-   "scale": "close",
-   "height": "ground",
-   "transition_in": "whip-pan",
-   "thread": "TRAVEL",
-   "camera": "dollyThrough",
-   "stage3d": "planes",
-   "pov": "macro-closeup",
-   "layout": "stacked-layers",
-   "motion_vector": "vertical-rise",
-   "hero_treatment": "structure-as-subject",
-   "t": 56.0,
-   "dur": 11.0,
-   "hero": {
-    "name": "the rack and the demand bar",
-    "parts": 6,
-    "zones": 3,
-    "detail_note": "rack face and fans seen from the floor, the rising demand bar beside it, the amber server block at its base, the NOT PART OF THIS PROJECT plate, floor grating, a cable tray. Zones: the amber block, the cyan bar, the dark floor."
-   }
-  },
-  {
-   "id": 8,
-   "vo_line": 11,
-   "stage": "the ledger wall",
-   "framing": "data-panel",
-   "scale": "medium",
-   "height": "high",
-   "transition_in": "graphic-match",
-   "thread": "MATCH",
-   "camera": "craneDown",
-   "stage3d": "planes",
-   "pov": "instrument-screen",
-   "layout": "hud-instrument-frame",
-   "motion_vector": "scroll-data",
-   "hero_treatment": "data-as-subject",
-   "t": 67.0,
-   "dur": 8.0,
-   "hero": {
-    "name": "the forecast trace",
-    "parts": 6,
-    "zones": 2,
-    "detail_note": "the amber observed run, the NOW mark and its label, the cyan predicted run, the widening cone with dashed edges, gridlines, and the server block riding under it. Zones: the measured half and the claimed half."
-   }
-  },
-  {
-   "id": 9,
-   "vo_line": 14,
-   "stage": "the ledger wall",
-   "framing": "two-up",
-   "scale": "wide",
-   "height": "eye",
-   "transition_in": "pull-out",
-   "thread": "CARRY",
-   "camera": "dollyThrough",
-   "stage3d": "planes",
-   "pov": "eye-level-immersive",
-   "layout": "fullbleed-split",
-   "motion_vector": "push-in-only",
-   "hero_treatment": "single-organic-hero",
-   "t": 75.0,
-   "dur": 14.0,
-   "hero": {
-    "name": "the CLAIMED and MEASURED pair",
-    "parts": 6,
-    "zones": 3,
-    "detail_note": "two stencilled boxes on the powerhouse wall, the cyan number in the first, the crawling hatching in the second, the error bracket that does not exist yet, Sourdough between them, the quote plate below. Zones: cyan-lit left, empty hatched right, the warm hero between."
-   }
-  },
-  {
-   "id": 10,
-   "vo_line": 16,
-   "stage": "the valley at night",
-   "framing": "wide-establish",
-   "scale": "wide",
-   "height": "low",
-   "transition_in": "mask-wipe",
-   "thread": "MATCH",
-   "camera": "dollyThrough",
-   "stage3d": "planes",
-   "pov": "eye-level-immersive",
-   "layout": "map-territory",
-   "motion_vector": "horizontal-traverse",
-   "hero_treatment": "landscape-as-subject",
-   "t": 89.0,
-   "dur": 7.0,
-   "hero": {
-    "name": "the valley, generously lit",
-    "parts": 7,
-    "zones": 3,
-    "detail_note": "the full run-of-river assembly with the penstock running full, a second creek spilling past unused, a lit shop window in the town, a records cabinet glowing through the powerhouse door, the ridge, the water, the rain. Zones: the warm town, the silver spill, the black ridge."
-   }
-  },
-  {
-   "id": 11,
-   "vo_line": 17,
-   "stage": "the map of Alaska",
-   "framing": "map-territory",
-   "scale": "extreme-wide",
-   "height": "overhead",
-   "transition_in": "pull-out",
-   "thread": "TRAVEL",
-   "camera": "orbitReveal+truckAcross",
-   "stage3d": "planes",
-   "pov": "top-down-map",
-   "layout": "map-territory",
-   "motion_vector": "radial-emanate",
-   "hero_treatment": "multiplicity-swarm",
-   "t": 96.0,
-   "dur": 13.0,
-   "hero": {
-    "name": "the map of Alaska",
-    "parts": 5,
-    "zones": 2,
-    "detail_note": "the coastline, Cordova's single amber dot, 192 more dots blooming with diesel drums under them, a thin cyan thread reaching and falling short, the PER AEA plate. Zones: the lit dots and the unlit ground between them."
-   }
-  },
-  {
-   "id": 12,
-   "vo_line": 19,
-   "stage": "powerhouse interior",
-   "framing": "subject-portrait",
-   "scale": "close",
-   "height": "eye",
-   "transition_in": "match-cut",
-   "thread": "MATCH",
-   "camera": "dollyThrough",
-   "stage3d": "planes",
-   "pov": "macro-closeup",
-   "layout": "single-object-void",
-   "motion_vector": "push-in-only",
-   "hero_treatment": "structure-as-subject",
-   "t": 109.0,
-   "dur": 11.0,
-   "hero": {
-    "name": "the powerhouse door and the empty box",
-    "parts": 6,
-    "zones": 3,
-    "detail_note": "the door with its warm slot of light narrowing, the rack still turning inside, the MEASURED box on the wall beside it, the drip arriving, the creek past the threshold, the question plate rising. Zones: the door light, the wet wall, the dark outside."
-   }
-  }
- ],
- "beats": [
-  {
-   "id": 1,
-   "t": 0.3,
-   "shot": 1,
-   "draw": {
-    "subject": "a server rack fan inside the powerhouse, amber-edged in the dark",
-    "action": "spins hard from frame one, a water drop falls off the pipe above and strikes its cage",
-    "emotion": "indifferent, industrious",
-    "annotation": "GREENSPARC"
-   },
-   "vo": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
-   "sfx": "fan-hum + water drip tick",
-   "means": "shelf: rack built from props kit + runofriver lamp glow",
-   "choreo": {
-    "primary": "the fan blades turning",
-    "reaction": "the water drop striking the cage and scattering",
-    "ambient": "room dust drifting through the door light"
-   },
-   "shows": "the rack, lit, already turning",
-   "at_s": 0.3
-  },
-  {
-   "id": 2,
-   "t": 2.03,
-   "shot": 1,
-   "draw": {
-    "subject": "the penstock elbow behind the rack",
-    "action": "sweats until one bead breaks loose and runs the whole length of the weld, then drops",
-    "emotion": "cold",
-    "annotation": "ONE BEAD, THE WHOLE WELD"
-   },
-   "vo": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
-   "sfx": "pipe groan",
-   "means": "runofriver penstock detail",
-   "choreo": {
-    "primary": "the bead running the weld",
-    "reaction": "the puddle below rippling as it lands",
-    "ambient": "condensation creeping across the pipe"
-   },
-   "shows": "the bead",
-   "at_s": 2.03
-  },
-  {
-   "id": 3,
-   "t": 3.76,
-   "shot": 1,
-   "draw": {
-    "subject": "a wall plate beside the rack",
-    "action": "slides into the key light, reading 170 kW, with PER CLEANTECHNICA under it",
-    "emotion": "plain",
-    "annotation": "170 kW"
-   },
-   "vo": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
-   "sfx": "plate clack",
-   "means": "props StatCard",
-   "choreo": {
-    "primary": "the plate sliding into the key light",
-    "reaction": "the LED row flickering as it passes",
-    "ambient": "fan wash rippling the cable bundle"
-   },
-   "shows": "the 170 kW plate",
-   "at_s": 3.76
-  },
-  {
-   "id": 4,
-   "t": 5.45,
-   "shot": 2,
-   "draw": {
-    "subject": "the powerhouse interior",
-    "action": "cranes down and back to reveal the turbine below the rack and the water sheeting past it",
-    "emotion": "revealing",
-    "annotation": "2024"
-   },
-   "vo": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
-   "sfx": "whoosh + turbine swell",
-   "means": "stage3d craneDown",
-   "choreo": {
-    "primary": "the crane down past the deck edge",
-    "reaction": "the handrail sweeping through frame",
-    "ambient": "the water sheet falling behind everything"
-   },
-   "shows": "the turbine below",
-   "at_s": 5.45
-  },
-  {
-   "id": 5,
-   "t": 7.13,
-   "shot": 2,
-   "draw": {
-    "subject": "TWO EMPTY BOXES stencilled on the powerhouse wall behind the rack",
-    "action": "drift into frame unexplained and unremarked, both empty, one labelled CLAIMED and one MEASURED",
-    "emotion": "waiting",
-    "annotation": "NO NEW NUMBER HERE"
-   },
-   "vo": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
-   "sfx": "low room tone",
-   "means": "forecast.tsx Reconcile at settled 0, planted silently",
-   "throughline": true,
-   "open_loop_plant": true,
-   "choreo": {
-    "primary": "the two stencilled boxes drifting into frame",
-    "reaction": "nothing reacts, which is the point",
-    "ambient": "the work lamp swinging on its cord"
-   },
-   "shows": "the two empty boxes, CLAIMED and MEASURED",
-   "at_s": 7.13
-  },
-  {
-   "id": 6,
-   "t": 10.28,
-   "shot": 2,
-   "draw": {
-    "subject": "the turbine shaft",
-    "action": "turns, and the same water that turns it runs on into the rack's cooling loop",
-    "emotion": "matter-of-fact",
-    "annotation": "COOLED BY THE SAME WATER"
-   },
-   "vo": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
-   "sfx": "water rush",
-   "means": "runofriver + rack",
-   "choreo": {
-    "primary": "the turbine shaft turning",
-    "reaction": "the coolant line pulsing as it feeds the rack",
-    "ambient": "the water sheet"
-   },
-   "shows": "the coolant line from turbine to rack",
-   "at_s": 10.28
-  },
-  {
-   "id": 7,
-   "t": 13.43,
-   "shot": 2,
-   "draw": {
-    "subject": "the drip from beat 2",
-    "action": "lands on the MEASURED box and runs down it, leaving it empty",
-    "emotion": "quiet",
-    "annotation": "REMEMBER THEM"
-   },
-   "vo": "Remember them.",
-   "sfx": "single drip, room falls quiet",
-   "means": "a held beat, deliberate stillness",
-   "choreo": {
-    "primary": "the drip falling and landing on the MEASURED box",
-    "reaction": "the hatching flexing where it lands",
-    "ambient": "the lamp swing slows and settles"
-   },
-   "shows": "the drip landing on MEASURED",
-   "at_s": 13.43
-  },
-  {
-   "id": 8,
-   "t": 17.13,
-   "shot": 3,
-   "draw": {
-    "subject": "the whole valley at night",
-    "action": "wipes open, creek to intake to penstock to powerhouse, Cordova's lights on black water beyond",
-    "emotion": "vast, cold",
-    "annotation": "CORDOVA"
-   },
-   "vo": "Cordova Electric runs an island grid with no wire out.",
-   "sfx": "wind + creek bed",
-   "means": "runofriver full assembly + FjordBG",
-   "rehook": null,
-   "choreo": {
-    "primary": "the mask wipe opening the valley",
-    "reaction": "the creek catching the wipe's edge",
-    "ambient": "rain across the whole plane"
-   },
-   "shows": "the whole valley",
-   "at_s": 17.13
-  },
-  {
-   "id": 9,
-   "t": 23.17,
-   "shot": 3,
-   "draw": {
-    "subject": "the shoreline",
-    "action": "pulls back until the island is small and NO line leaves it in any direction",
-    "emotion": "isolated",
-    "annotation": "NO WIRE OUT"
-   },
-   "vo": "Cordova Electric runs an island grid with no wire out.",
-   "sfx": "riser fades to wind",
-   "means": "scale-pullback reveal",
-   "reveal": "scale-pullback",
-   "choreo": {
-    "primary": "the camera pulling back off the island",
-    "reaction": "the shoreline lights condensing to a cluster",
-    "ambient": "cloud shadow crossing the water"
-   },
-   "shows": "an island with no line leaving it",
-   "at_s": 23.17
-  },
-  {
-   "id": 10,
-   "t": 26.87,
-   "shot": 3,
-   "draw": {
-    "subject": "a warm hydro glow and a cold diesel stack, side by side on the shore",
-    "action": "both light up, the hydro broad and steady, the diesel a hard point",
-    "emotion": "tense",
-    "annotation": "MOST HYDRO \u00b7 THE REST DIESEL"
-   },
-   "vo": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.",
-   "sfx": "hum + a diesel knock",
-   "means": "two practical sources, the palette's whole argument",
-   "choreo": {
-    "primary": "the diesel stack lighting",
-    "reaction": "the hydro glow stepping back as it does",
-    "ambient": "rain and creek"
-   },
-   "shows": "the diesel stack alight beside the hydro glow",
-   "at_s": 26.87
-  },
-  {
-   "id": 11,
-   "t": 34.1,
-   "shot": 4,
-   "draw": {
-    "subject": "Sourdough, the island grid himself, standing on the shore",
-    "action": "pushes in on him, chest ember steady, holding the town's light",
-    "emotion": "proud",
-    "annotation": "CORDOVA ELECTRIC"
-   },
-   "vo": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
-   "sfx": "warm bed lifts",
-   "means": "kit.tsx Sourdough, hero",
-   "choreo": {
-    "primary": "the push in on Sourdough",
-    "reaction": "his chest ember brightening as the camera arrives",
-    "ambient": "his breath and weight shift"
-   },
-   "shows": "Sourdough",
-   "at_s": 34.1
-  },
-  {
-   "id": 12,
-   "t": 38.1,
-   "shot": 4,
-   "draw": {
-    "subject": "Sourdough's chest ember",
-    "action": "dims as demand overshoots, and the diesel stack fires behind him with a SLAM of the fuel needle",
-    "emotion": "caught out",
-    "annotation": "THE NEEDLE SLAMS"
-   },
-   "vo": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
-   "sfx": "klaxon tick + needle slam + screen shake",
-   "means": "the throughline gauge, anticipation and overshoot",
-   "rehook": "the needle slams and the town's light flickers",
-   "choreo": {
-    "primary": "the fuel needle slamming over",
-    "reaction": "Sourdough flinching and his ember dimming",
-    "ambient": "rain on his shoulders"
-   },
-   "shows": "the fuel needle at its stop",
-   "at_s": 38.1
-  },
-  {
-   "id": 13,
-   "t": 42.1,
-   "shot": 4,
-   "draw": {
-    "subject": "a fuel gauge on Sourdough's flank",
-    "action": "ticks down in hard steps, each step a gallon graphic falling into a drum",
-    "emotion": "resigned",
-    "annotation": "GALLONS"
-   },
-   "vo": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
-   "sfx": "drum ring per tick",
-   "means": "a number made physical",
-   "choreo": {
-    "primary": "gallon graphics dropping into the drum",
-    "reaction": "the drum ringing and rocking on its base",
-    "ambient": "the needle trembling where it stopped"
-   },
-   "shows": "gallons becoming a physical count",
-   "at_s": 42.1
-  },
-  {
-   "id": 14,
-   "t": 45.8,
-   "shot": 5,
-   "draw": {
-    "subject": "the ledger wall assembling out of the dark",
-    "action": "builds itself plate by plate, AURORA-AI lettering locking in last",
-    "emotion": "brightening",
-    "annotation": "AURORA-AI"
-   },
-   "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
-   "sfx": "assemble ticks + chord",
-   "means": "forecast + simulation grammar, BUILD transition",
-   "choreo": {
-    "primary": "the ledger wall assembling plate by plate",
-    "reaction": "the dark wall behind it receding as plates land",
-    "ambient": "the cyan plane breathing"
-   },
-   "shows": "the ledger wall",
-   "at_s": 45.8
-  },
-  {
-   "id": 15,
-   "t": 49.61,
-   "shot": 5,
-   "draw": {
-    "subject": "UNIVERSITY OF ALASKA FAIRBANKS and ENERGY DEPARTMENT plates",
-    "action": "land either side of the award card",
-    "emotion": "businesslike",
-    "annotation": "$725,000 \u00b7 PER UAF"
-   },
-   "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
-   "sfx": "two plate clacks",
-   "means": "claim c1, sourcing label in frame",
-   "choreo": {
-    "primary": "the two partner plates landing either side",
-    "reaction": "the award card settling between them",
-    "ambient": "cyan flicker"
-   },
-   "shows": "$725,000 and its sourcing",
-   "at_s": 49.61
-  },
-  {
-   "id": 16,
-   "t": 53.42,
-   "shot": 5,
-   "draw": {
-    "subject": "a cyan working copy of Sourdough",
-    "action": "draws itself into being beside the real one, hunting before it settles, a small amber block sitting unexplained at the foot of its demand bar",
-    "emotion": "uncanny",
-    "annotation": "DIGITAL TWIN \u00b7 INTENDED"
-   },
-   "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
-   "sfx": "data shimmer",
-   "means": "Simulated at rising fidelity",
-   "open_loop_2_plant": true,
-   "choreo": {
-    "primary": "the cyan twin drawing itself into being",
-    "reaction": "the real Sourdough turning to look at it",
-    "ambient": "the twin's linework re-solving"
-   },
-   "shows": "the cyan twin",
-   "at_s": 53.42
-  },
-  {
-   "id": 17,
-   "t": 57.23,
-   "shot": 5,
-   "draw": {
-    "subject": "three function plates",
-    "action": "slam up one after another from below the twin, each one knocking the one above it a little",
-    "emotion": "claiming",
-    "annotation": "INTENDED, NOT MEASURED"
-   },
-   "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
-   "sfx": "three flips",
-   "means": "claim c11, tense obligation on screen",
-   "choreo": {
-    "primary": "the three function plates slamming up",
-    "reaction": "each plate knocking the one above it",
-    "ambient": "cyan flicker"
-   },
-   "shows": "the three intended functions",
-   "at_s": 57.23
-  },
-  {
-   "id": 18,
-   "t": 60.93,
-   "at_s": 60.93,
-   "shot": 5,
-   "draw": {
-    "subject": "the twin's demand bar",
-    "action": "climbs one step and overshoots its own top, then settles back under it",
-    "emotion": "eager",
-    "annotation": "IT HAS NOT RUN YET"
-   },
-   "vo": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
-   "sfx": "a short climb and a soft settle",
-   "means": "forecast grammar: the claim moving before it is allowed to",
-   "shows": "the claim reaching past what it can support",
-   "choreo": {
-    "primary": "the bar overshooting and settling",
-    "reaction": "the amber block at its foot sliding with it",
-    "ambient": "cyan flicker and rain"
-   }
-  },
-  {
-   "id": 19,
-   "t": 68.53,
-   "shot": 6,
-   "draw": {
-    "subject": "the twin",
-    "action": "FREEZES mid-assembly, half drawn, cyan draining out of it",
-    "emotion": "stopped",
-    "annotation": "IT HASN'T STARTED"
-   },
-   "vo": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
-   "sfx": "power-down swell, bed drops",
-   "means": "the hardest cut in the film",
-   "choreo": {
-    "primary": "the twin freezing mid-draw",
-    "reaction": "the draw head stalling and the cyan draining downward",
-    "ambient": "the wall going quiet"
-   },
-   "shows": "the twin stopped half-drawn",
-   "at_s": 68.53
-  },
-  {
-   "id": 20,
-   "t": 72.23,
-   "shot": 6,
-   "draw": {
-    "subject": "a schedule plate",
-    "action": "stamps down across the frozen twin",
-    "emotion": "flat",
-    "annotation": "PHASE 1 \u00b7 STARTS OCT 1 \u00b7 9 MONTHS \u00b7 RESEARCH"
-   },
-   "vo": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
-   "sfx": "stamp",
-   "means": "claim c3, the word RESEARCH travels with it",
-   "choreo": {
-    "primary": "the schedule stamp coming down",
-    "reaction": "the frozen twin shuddering under the impact",
-    "ambient": "dust lifting off the stamp"
-   },
-   "shows": "PHASE 1, OCT 1, 9 MONTHS, RESEARCH",
-   "at_s": 72.23
-  },
-  {
-   "id": 21,
-   "t": 73.92,
-   "at_s": 73.92,
-   "shot": 6,
-   "draw": {
-    "subject": "the drained lower half of the twin",
-    "action": "sags off its own outline and hangs, unfinished",
-    "emotion": "stalled",
-    "annotation": "HALF DRAWN"
-   },
-   "vo": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
-   "sfx": "a low sag, no resolution",
-   "means": "simulation.tsx at falling fidelity, the linework loosening",
-   "shows": "what a stopped model looks like",
-   "choreo": {
-    "primary": "the outline sagging away from itself",
-    "reaction": "the stamp above it settling into the surface",
-    "ambient": "the wall going quiet"
-   }
-  },
-  {
-   "id": 22,
-   "t": 75.6,
-   "shot": 7,
-   "draw": {
-    "subject": "the server rack from the hook",
-    "action": "whips back into frame from below, fans still turning, unbothered",
-    "emotion": "steady",
-    "annotation": "NOW, THOSE SERVERS"
-   },
-   "vo": "A Phase One award, beginning October first, nine months.",
-   "sfx": "whip + fan hum returns",
-   "means": "bookend material, TRAVEL thread",
-   "choreo": {
-    "primary": "the whip back to the rack",
-    "reaction": "the fans coming back up to speed",
-    "ambient": "the creek returning under it"
-   },
-   "shows": "the rack again",
-   "at_s": 75.6
-  },
-  {
-   "id": 23,
-   "t": 76.44,
-   "shot": 7,
-   "draw": {
-    "subject": "the grid's demand bar rising beside the rack",
-    "action": "builds from the floor up, and the small amber block at its base is revealed to BE the servers",
-    "emotion": "dawning",
-    "annotation": "THE LOAD WAS ALWAYS THERE"
-   },
-   "vo": "A Phase One award, beginning October first, nine months.",
-   "sfx": "riser + a low lock",
-   "means": "build-on reveal",
-   "reveal": "build-on",
-   "rehook": "the unexplained block turns out to be the rack",
-   "choreo": {
-    "primary": "the demand bar building from the floor",
-    "reaction": "the amber block at its base lighting as it is named",
-    "ambient": "fan wash"
-   },
-   "shows": "the server block inside the demand bar",
-   "at_s": 76.44
-  },
-  {
-   "id": 24,
-   "t": 77.28,
-   "shot": 7,
-   "draw": {
-    "subject": "a NOT PART OF THIS PROJECT plate",
-    "action": "snaps across the rack and stays",
-    "emotion": "corrective",
-    "annotation": "GREENSPARC, 2024"
-   },
-   "vo": "A Phase One award, beginning October first, nine months.",
-   "sfx": "hard snap",
-   "means": "claim c15, the honesty obligation drawn",
-   "choreo": {
-    "primary": "the plate snapping across the rack",
-    "reaction": "the bar not pausing for it",
-    "ambient": "fans"
-   },
-   "shows": "NOT PART OF THIS PROJECT",
-   "at_s": 77.28
-  },
-  {
-   "id": 25,
-   "t": 78.97,
-   "shot": 7,
-   "draw": {
-    "subject": "the demand bar",
-    "action": "keeps climbing past the plate, because the load does not care whose project it is",
-    "emotion": "wry",
-    "annotation": "A LOAD ON THE SAME GRID"
-   },
-   "vo": "A Phase One award, beginning October first, nine months.",
-   "sfx": "climb tick",
-   "means": "the loop paying",
-   "choreo": {
-    "primary": "the bar climbing past the plate",
-    "reaction": "the plate's corner lifting in the draft",
-    "ambient": "fans"
-   },
-   "shows": "the bar above the plate",
-   "at_s": 78.97
-  },
-  {
-   "id": 26,
-   "t": 82.67,
-   "shot": 8,
-   "draw": {
-    "subject": "a forecast trace across the ledger wall",
-    "action": "runs amber for what happened, then cyan for what is claimed, the uncertainty cone opening ahead of NOW",
-    "emotion": "analytical",
-    "annotation": "NOW"
-   },
-   "vo": "Whatever the model predicts, it has to predict them too.",
-   "sfx": "scope sweep",
-   "means": "forecast.tsx ForecastTrace, the craft advance",
-   "choreo": {
-    "primary": "the forecast trace drawing left to right",
-    "reaction": "the NOW mark snapping in as the amber meets the cyan",
-    "ambient": "the cone edges hunting"
-   },
-   "shows": "the forecast trace and NOW",
-   "at_s": 82.67
-  },
-  {
-   "id": 27,
-   "t": 87.52,
-   "shot": 8,
-   "draw": {
-    "subject": "the server block",
-    "action": "slides along under the predicted line and pushes the cone upward as it goes",
-    "emotion": "pointed",
-    "annotation": "IT HAS TO PREDICT THEM TOO"
-   },
-   "vo": "Whatever the model predicts, it has to predict them too.",
-   "sfx": "lock tick",
-   "means": "open_loop_2 payoff",
-   "open_loop_2_pay": true,
-   "choreo": {
-    "primary": "the server block sliding under the predicted line",
-    "reaction": "the cone lifting where it passes",
-    "ambient": "cone edge crawl"
-   },
-   "shows": "the block riding inside the cone",
-   "at_s": 87.52
-  },
-  {
-   "id": 28,
-   "t": 87.97,
-   "shot": 9,
-   "draw": {
-    "subject": "the two stencilled boxes from the hook",
-    "action": "pull out into full frame at last, CLAIMED lit cyan with a number in it",
-    "emotion": "exposed",
-    "annotation": "CLAIMED"
-   },
-   "vo": "So the test is narrow. By next June, gallons saved, or a demonstration?",
-   "sfx": "cyan fill tone",
-   "means": "forecast.tsx Reconcile, settled 0",
-   "choreo": {
-    "primary": "the pull out to the two boxes",
-    "reaction": "the cyan number landing in CLAIMED",
-    "ambient": "rain on the wall"
-   },
-   "shows": "CLAIMED, filled",
-   "at_s": 87.97
-  },
-  {
-   "id": 29,
-   "t": 88.42,
-   "shot": 9,
-   "draw": {
-    "subject": "the MEASURED box beside it",
-    "action": "stays EMPTY, hatching crawling across it, and does not fill",
-    "emotion": "honest",
-    "annotation": "NOT YET MEASURED"
-   },
-   "vo": "So the test is narrow. By next June, gallons saved, or a demonstration?",
-   "sfx": "the room goes quiet, a 6 dB dip",
-   "means": "THE SIGNATURE SHOT",
-   "choreo": {
-    "primary": "the hatching crawling across MEASURED",
-    "reaction": "nothing filling it",
-    "ambient": "the room dropping quiet"
-   },
-   "shows": "MEASURED, empty and hatched",
-   "at_s": 88.42
-  },
-  {
-   "id": 30,
-   "t": 92.37,
-   "shot": 9,
-   "draw": {
-    "subject": "the error bracket that should join the two boxes",
-    "action": "reaches out from CLAIMED, finds nothing to attach to on the MEASURED side, and retracts",
-    "emotion": "unresolved",
-    "annotation": "NO ERROR TO REPORT YET"
-   },
-   "vo": "So the test is narrow. By next June, gallons saved, or a demonstration?",
-   "sfx": "a short reach, then a soft release",
-   "means": "forecast.tsx Reconcile below settled 0.45, where the bracket does not yet exist",
-   "choreo": {
-    "primary": "the bracket extending and withdrawing",
-    "reaction": "the hatching in MEASURED sliding once as it passes",
-    "ambient": "rain on the wall"
-   },
-   "shows": "the measurement that would settle it, absent",
-   "at_s": 92.37
-  },
-  {
-   "id": 31,
-   "t": 96.07,
-   "shot": 9,
-   "draw": {
-    "subject": "Sourdough",
-    "action": "steps between the two boxes and looks at the empty one, not the lit one",
-    "emotion": "level",
-    "annotation": "BY NEXT JUNE"
-   },
-   "vo": "So the test is narrow. By next June, gallons saved, or a demonstration?",
-   "sfx": "single low note",
-   "means": "the film's argument in one frame",
-   "throughline": true,
-   "open_loop_pay": true,
-   "choreo": {
-    "primary": "Sourdough stepping between the boxes",
-    "reaction": "his head turning to the empty one",
-    "ambient": "his breath, the only motion left"
-   },
-   "shows": "the hero choosing which box to look at",
-   "at_s": 96.07
-  },
-  {
-   "id": 32,
-   "t": 97.65,
-   "shot": 9,
-   "draw": {
-    "subject": "a quote plate",
-    "action": "rises under the boxes",
-    "emotion": "plain",
-    "annotation": "\"A REALLY SHORT PERIOD OF PERFORMANCE\" \u00b7 RICHARD WIES, UAF"
-   },
-   "vo": "Richard Wies, who leads it, calls nine months a really short period of performance.",
-   "sfx": "plate rise",
-   "means": "claim c16, attributed on screen",
-   "choreo": {
-    "primary": "the quote plate rising under the boxes",
-    "reaction": "Sourdough's ember steadying",
-    "ambient": "rain"
-   },
-   "shows": "the Wies quote",
-   "at_s": 97.65
-  },
-  {
-   "id": 33,
-   "t": 99.23,
-   "shot": 10,
-   "draw": {
-    "subject": "the valley again, wider",
-    "action": "wipes back in as the powerhouse door swings wide and throws light across the water",
-    "emotion": "fair",
-    "annotation": "THE EASY CASE"
-   },
-   "vo": "And Cordova is the easy case.",
-   "sfx": "warm bed returns",
-   "means": "the Act 3 concession, drawn generously",
-   "choreo": {
-    "primary": "the door swinging wide and light crossing the water",
-    "reaction": "each of Cordova's assets lighting in turn",
-    "ambient": "rain and creek"
-   },
-   "shows": "everything Cordova already has",
-   "at_s": 99.23
-  },
-  {
-   "id": 34,
-   "t": 106.33,
-   "shot": 10,
-   "draw": {
-    "subject": "the penstock",
-    "action": "runs full while a second creek beside it runs past unused, spilling",
-    "emotion": "abundant",
-    "annotation": "NO NEW NUMBER HERE"
-   },
-   "vo": "And Cordova is the easy case.",
-   "sfx": "spill rush",
-   "means": "runofriver spill param, the surplus",
-   "choreo": {
-    "primary": "the second creek spilling past the intake",
-    "reaction": "spray kicking up where it lands",
-    "ambient": "the penstock running full"
-   },
-   "shows": "the spill",
-   "at_s": 106.33
-  },
-  {
-   "id": 35,
-   "t": 110.03,
-   "shot": 11,
-   "draw": {
-    "subject": "Cordova",
-    "action": "shrinks to a single amber dot as the camera climbs off the island",
-    "emotion": "diminishing",
-    "annotation": "1 OF 193"
-   },
-   "vo": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
-   "sfx": "riser + altitude wind",
-   "means": "scale-pullback reveal",
-   "reveal": "scale-pullback",
-   "rehook": "the whole state arrives at once",
-   "choreo": {
-    "primary": "the climb off the island",
-    "reaction": "Cordova condensing to one dot",
-    "ambient": "cloud crossing beneath"
-   },
-   "shows": "Cordova as one dot",
-   "at_s": 110.03
-  },
-  {
-   "id": 36,
-   "t": 111.28,
-   "shot": 11,
-   "draw": {
-    "subject": "192 more amber dots",
-    "action": "bloom outward across Alaska, each a diesel drum, none with a records cabinet under it",
-    "emotion": "sobering",
-    "annotation": "193 COMMUNITIES \u00b7 3 TO 5x URBAN COST \u00b7 PER AEA"
-   },
-   "vo": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
-   "sfx": "bloom ticks, staggered",
-   "means": "claim c13, multiplicity-swarm",
-   "choreo": {
-    "primary": "the dots blooming outward across Alaska",
-    "reaction": "diesel drums settling under each one",
-    "ambient": "the coastline drifting"
-   },
-   "shows": "192 more dots",
-   "at_s": 111.28
-  },
-  {
-   "id": 37,
-   "t": 112.52,
-   "shot": 11,
-   "draw": {
-    "subject": "a thin cyan thread",
-    "action": "stretches out toward the nearest dot, thins, and snaps back short",
-    "emotion": "unresolved",
-    "annotation": "LEAST DATA TO BUILD ONE"
-   },
-   "vo": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
-   "sfx": "thread strain, no lock",
-   "means": "the transfer question, drawn not said",
-   "choreo": {
-    "primary": "the cyan thread stretching toward the nearest dot",
-    "reaction": "the thread thinning and snapping back",
-    "ambient": "the dots pulsing"
-   },
-   "shows": "the thread falling short",
-   "at_s": 112.52
-  },
-  {
-   "id": 38,
-   "t": 113.66,
-   "shot": 12,
-   "draw": {
-    "subject": "the powerhouse door at night",
-    "action": "match-cuts back, the rack still turning, the creek still running past outside",
-    "emotion": "unchanged",
-    "annotation": "WATCH FOR GALLONS"
-   },
-   "vo": "So watch for gallons.",
-   "sfx": "fan hum + creek, bed returns",
-   "means": "the bookend",
-   "choreo": {
-    "primary": "the match cut back to the powerhouse door",
-    "reaction": "the rack's fans still turning",
-    "ambient": "the creek past the threshold"
-   },
-   "shows": "the door, unchanged",
-   "at_s": 113.66
-  },
-  {
-   "id": 39,
-   "t": 114.11,
-   "shot": 12,
-   "draw": {
-    "subject": "the MEASURED box on the wall",
-    "action": "is still empty, and the drip from the hook lands on it again",
-    "emotion": "patient",
-    "annotation": "NO NEW NUMBER HERE"
-   },
-   "vo": "So watch for gallons.",
-   "sfx": "the same single drip",
-   "means": "throughline lands in the button",
-   "throughline": true,
-   "choreo": {
-    "primary": "the drip falling and landing on the empty box",
-    "reaction": "the hatching flexing again",
-    "ambient": "fan hum"
-   },
-   "shows": "the box, still empty",
-   "at_s": 114.11
-  },
-  {
-   "id": 40,
-   "t": 114.56,
-   "shot": 12,
-   "draw": {
-    "subject": "the question",
-    "action": "rises over the empty box as the door light narrows to a line",
-    "emotion": "direct",
-    "annotation": "WHAT WOULD CONVINCE YOU IT WORKED?"
-   },
-   "vo": "What would convince you it worked?",
-   "sfx": "final note, audible tail",
-   "means": "the button",
-   "choreo": {
-    "primary": "the question plate rising",
-    "reaction": "the door light narrowing to a line behind it",
-    "ambient": "the creek, and then the tail"
-   },
-   "shows": "the question",
-   "at_s": 114.56
-  }
- ],
- "hook": {
-  "pattern": "anomaly-question",
-  "frame1": "a server rack fan inside a hydroelectric powerhouse, already spinning, one blade edge caught by the amber of an open door, the wet penstock elbow behind it",
-  "headline": "SERVERS INSIDE THE POWERHOUSE",
-  "motion_by_s": 0.4,
-  "loopback": "the button match-cuts to the same rack and the same drip, with the MEASURED box behind it still empty"
- },
- "audio_arc": {
-  "build_steps": [
-   0.0,
-   19.77,
-   34.87,
-   67.66
+  "shots": [
+    {
+      "id": 1,
+      "vo_line": 0,
+      "t": 0.0,
+      "dur": 9.1,
+      "stage": "birch-gold ground under dusk violet",
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "transition_in": "",
+      "thread": "",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "document-as-subject",
+      "hero": {
+        "name": "the ruled offer card",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "masthead bar, six ruled line-item rows each with a label field and a value field, a rule above the total, a total row, a copper edge rim, a paper-fiber tooth, and a drop shadow with a curled lower corner"
+      }
+    },
+    {
+      "id": 2,
+      "vo_line": 1,
+      "t": 9.1,
+      "dur": 8.1,
+      "stage": "Eielson edge, spruce band, one lit house",
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "camera": "craneDown+dollyThrough",
+      "stage3d": "planes",
+      "pov": "aerial-to-ground",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "hero": {
+        "name": "the copper cost bar over the house",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "a segmented copper column with visible tier seams, a cap plate, a base shoe seated on the porch rail, a value tag on its flank that carries NO NUMERAL, only the word BILL, and an interior gradient from lit left face to shade right face"
+      }
+    },
+    {
+      "id": 3,
+      "vo_line": 2,
+      "t": 17.2,
+      "dur": 8.1,
+      "stage": "the porch rail and the bar above it",
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "pov": "eye-level-street",
+      "layout": "split-compare",
+      "motion_vector": "oscillate",
+      "hero_treatment": "data-as-subject",
+      "hero": {
+        "name": "the bar with a split, ghosted tip",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "the same column plus two ghosted alternate caps above it, a flicker gap between them, a question tag carrying NO NUMERAL, tier seams, and the dashed POWER DEMAND row floating beside it"
+      }
+    },
+    {
+      "id": 4,
+      "vo_line": 3,
+      "t": 25.3,
+      "dur": 8.7,
+      "stage": "a neighbourhood trail toward a pond",
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "transition_in": "mask-wipe",
+      "thread": "travel",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "pov": "over-shoulder",
+      "layout": "figure-in-landscape",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "figure-as-subject",
+      "hero": {
+        "name": "the walking figure with her name label",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "parka with hood band, breath cloud, boots with contact shadow, a boxed two-line name label with its own drop shadow, a trail underfoot, alder in the near plane"
+      }
+    },
+    {
+      "id": 5,
+      "vo_line": 5,
+      "t": 34.0,
+      "dur": 6.0,
+      "stage": "the same trail, sky above",
+      "framing": "alt-vantage",
+      "scale": "close",
+      "height": "low",
+      "transition_in": "push-in",
+      "thread": "carry",
+      "camera": "riseWith",
+      "stage3d": "planes",
+      "pov": "low-hero",
+      "layout": "single-figure-sky",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "figure-as-subject",
+      "hero": {
+        "name": "the contrail flattening to a hum-line",
+        "parts": 4,
+        "zones": 2,
+        "detail_note": "two jet specks, a spreading contrail with soft edges, the flattened grey rule it becomes, and a thin vibration halo along the rule"
+      }
+    },
+    {
+      "id": 6,
+      "vo_line": 6,
+      "t": 40.0,
+      "dur": 6.1,
+      "stage": "a borough chamber wall of ruled lists",
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "transition_in": "whip-pan",
+      "thread": "build",
+      "camera": "static:two ruled lists are being compared face-on and any camera move would fight the comparison the shot exists to make",
+      "stage3d": "flat:two ruled lists compared face-on",
+      "pov": "frontal-document",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "document-as-subject",
+      "hero": {
+        "name": "the two lists and the unsigned lease",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "a STATE column and a FEDERAL column with header plates and ruled scribble items, one legible PAUSE chip, a double-lock bracket, and a second thicker unsigned document lying open beside them with a blank ruled terms page and an empty signature line"
+      }
+    },
+    {
+      "id": 7,
+      "vo_line": 7,
+      "t": 46.1,
+      "dur": 11.2,
+      "stage": "a lectern and a lit copper column",
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "pov": "three-quarter",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "figure-as-subject",
+      "hero": {
+        "name": "the lectern and the copper column",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "a lectern with a front panel and a reading edge, a figure behind it, a boxed name label, a quoted plate, the land rectangle, and the lit copper column stepping forward"
+      }
+    },
+    {
+      "id": 8,
+      "vo_line": 9,
+      "t": 57.3,
+      "dur": 6.1,
+      "stage": "a hangar apron at dusk, rim-lit",
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "pov": "low-hero",
+      "layout": "open-apron",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "institution-as-subject",
+      "hero": {
+        "name": "the Air Force plate on the apron",
+        "parts": 5,
+        "zones": 3,
+        "detail_note": "a wide ruled plate with a seam, its own rim light, an apron ground plane with haze, a rim-lit figure, and hangar lights behind"
+      }
+    },
+    {
+      "id": 9,
+      "vo_line": 10,
+      "t": 63.4,
+      "dur": 14.2,
+      "stage": "the cost stack over a row of houses",
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "transition_in": "morph",
+      "thread": "build",
+      "camera": "truckAcross",
+      "stage3d": "flat:the arithmetic is the subject and depth would fight it",
+      "pov": "frontal-diagram",
+      "layout": "split-compare",
+      "motion_vector": "divide-and-settle",
+      "hero_treatment": "data-as-subject",
+      "hero": {
+        "name": "the cost stack over the row of houses",
+        "parts": 8,
+        "zones": 3,
+        "detail_note": "a tall stack with a hard seam, a copper wires half and a carbon-blue fuel half, a row of small houses beneath with individual roofs and lit windows, per-house share bars, a giant customer block, division ticks, and a base rule"
+      }
+    },
+    {
+      "id": 10,
+      "vo_line": 12,
+      "t": 77.6,
+      "dur": 12.2,
+      "stage": "the same diagram, both halves live",
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "transition_in": "assemble",
+      "thread": "build",
+      "camera": "static:the signature diagram has to hold its own frame while it fails to resolve and a moving camera would let a viewer blame the camera for that instability instead of the missing number",
+      "stage3d": "flat:the signature diagram holds its own frame",
+      "pov": "branch-compare",
+      "layout": "mirrored-branches",
+      "motion_vector": "oscillate",
+      "hero_treatment": "data-as-subject",
+      "hero": {
+        "name": "the diagram that will not resolve",
+        "parts": 8,
+        "zones": 3,
+        "detail_note": "the settled copper wires half, the reaching carbon-blue fuel half, the generation block on the left branch, contention arrows on the right branch, a shared supply pool, the dashed NOT DISCLOSED slot between them, and the row of lit houses held in the lower third with one share bar tracking the swing"
+      }
+    },
+    {
+      "id": 11,
+      "vo_line": 14,
+      "t": 89.8,
+      "dur": 11.2,
+      "stage": "the town, warm, and the apron beyond it",
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "eye",
+      "transition_in": "mask-wipe",
+      "thread": "travel",
+      "camera": "dollyThrough+riseWith",
+      "stage3d": "planes",
+      "pov": "aerial-oblique",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "hero": {
+        "name": "the town and the two arrivals",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "warm-windowed houses with chimney smoke, an apron beyond, a crate marked BUDGET with latches and spill light, a ruled data center block, an empty plate with a catching rim, and the fuel half leaning at the edge of frame"
+      }
+    },
+    {
+      "id": 12,
+      "vo_line": 16,
+      "t": 101.0,
+      "dur": 11.7,
+      "stage": "the statement card, close, on the rail",
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "transition_in": "push-in",
+      "thread": "match",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "document-as-subject",
+      "hero": {
+        "name": "the statement card in macro",
+        "parts": 7,
+        "zones": 3,
+        "detail_note": "the MEGAWATTS row dashing away, the solid DATE PUBLISHED row below it, a hand, a short rail with two sliding tokens, paper tooth, the copper edge rim, and the card's drop shadow"
+      }
+    },
+    {
+      "id": 13,
+      "vo_line": 18,
+      "t": 112.7,
+      "dur": 4.2,
+      "stage": "the same card, pulled back one step",
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "transition_in": "pull-out",
+      "thread": "carry",
+      "camera": "riseWith",
+      "stage3d": "planes",
+      "pov": "pulled-back-object",
+      "layout": "object-in-dusk",
+      "motion_vector": "settle-and-hold",
+      "hero_treatment": "document-as-subject",
+      "hero": {
+        "name": "the card at the button",
+        "parts": 6,
+        "zones": 3,
+        "detail_note": "every row solid but one, the lit blank DATE row, a hovering pen with a highlight along its barrel, the copper rim, drifting birch leaves, and the rail beneath"
+      }
+    }
   ],
-  "dip_at": 88.65,
-  "riser_at": 100.38,
-  "silence_at": 89.85,
-  "payoff_at": 101.94,
-  "button_pattern": "question"
- },
- "reveals": [
-  {
-   "t": 21.67,
-   "type": "scale-pullback",
-   "what": "the powerhouse becomes one small building in a whole dark valley with no wire leaving it",
-   "hold_s": 0.7
-  },
-  {
-   "t": 62.85,
-   "type": "build-on",
-   "what": "the demand bar builds and the unexplained amber block at its base is revealed to be the server rack",
-   "hold_s": 0.6
-  },
-  {
-   "t": 100.38,
-   "type": "scale-pullback",
-   "what": "Cordova shrinks to one amber dot and 192 more bloom across Alaska",
-   "hold_s": 0.8
-  }
- ],
- "open_loop": {
-  "plant_t": 9.05,
-  "pay_t": 92.39,
-  "what": "two empty boxes stencilled on the powerhouse wall, CLAIMED and MEASURED, planted silently and never mentioned until the signature shot"
- },
- "open_loop_2": {
-  "plant_t": 41.48,
-  "pay_t": 77.97,
-  "what": "a small amber block sitting unexplained at the foot of the twin's demand bar, revealed later to be the servers from the hook"
- },
- "throughline": {
-  "object": "the CLAIMED and MEASURED boxes stencilled on the powerhouse wall",
-  "states": [
-   {
-    "at_s": 9.05,
-    "state": "both boxes visible on the powerhouse wall, both empty, unexplained"
-   },
-   {
-    "at_s": 41.48,
-    "state": "the claim is being assembled beside the grid, so the number that will fill CLAIMED is being made"
-   },
-   {
-    "at_s": 55.47,
-    "state": "the schedule stamps down, which fixes WHEN the claim is allowed to be checked"
-   },
-   {
-    "at_s": 74.22,
-    "state": "the forecast draws forward past NOW, and the cone is the width of what CLAIMED is worth"
-   },
-   {
-    "at_s": 82.37,
-    "state": "CLAIMED fills with cyan"
-   },
-   {
-    "at_s": 86.39,
-    "state": "MEASURED stays empty and hatched, NOT YET MEASURED"
-   },
-   {
-    "at_s": 109.84,
-    "state": "still empty at the button, and the hook's drip lands on it again"
-   }
+  "beats": [
+    {
+      "id": 1,
+      "t": 0.3,
+      "shot": 1,
+      "draw": {
+        "subject": "a ruled offer card on paper stock, copper-rimmed",
+        "action": "slams onto birch-gold ground and every row fills in one hard cascade, done inside a second, so the form completing reads as competence",
+        "emotion": "brisk, official",
+        "annotation": "U.S. AIR FORCE"
+      },
+      "vo": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
+      "sfx": "paper-slam then a fast run of typed ticks, ending abruptly",
+      "means": "net-new tariff.Statement, rows filling",
+      "choreo": {
+        "primary": "the whole column of rows cascading in at once",
+        "reaction": "dust kicked from the ground at the slam",
+        "ambient": "birch leaves drifting across the card"
+      },
+      "shows": "the offer, arriving as a document that works",
+      "at_s": 0.3
+    },
+    {
+      "id": 2,
+      "t": 1.4,
+      "shot": 1,
+      "draw": {
+        "subject": "the POWER DEMAND row, alone among solid rows",
+        "action": "does not fill. Its value slot stays a true void with a crawling dashed baseline while every row above and below sits solid, and the light drops half a stop on everything except that row",
+        "emotion": "the first wrong note",
+        "annotation": "ONE ROW IS BLANK"
+      },
+      "vo": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
+      "sfx": "the tick that does not land, and the room going half a stop quieter",
+      "means": "craft advance, absence.tsx UnnamedValue inside net-new tariff.Statement",
+      "choreo": {
+        "primary": "the dashed baseline crawling while the solid rules hold still",
+        "reaction": "the light dropping half a stop everywhere but that row",
+        "ambient": "the card's curled lower corner relaxing flat"
+      },
+      "shows": "the anomaly, at second one and a half",
+      "at_s": 1.4
+    },
+    {
+      "id": 3,
+      "t": 3.0,
+      "shot": 1,
+      "draw": {
+        "subject": "the ACREAGE row and the land under the card",
+        "action": "the acreage counter runs up and locks while a boundary closes around a parcel below, and an unlit ruled block with a server-rack face lowers into the traced ground and sits there",
+        "emotion": "matter-of-fact",
+        "annotation": "ABOUT 4,700 ACRES"
+      },
+      "vo": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
+      "sfx": "boundary-trace whisper + corner lock",
+      "means": "shelf props.BoundaryReveal + a ruled block, unlit and unlabelled",
+      "choreo": {
+        "primary": "the counter hitting its stop and the block settling into the parcel",
+        "reaction": "the boundary locking at its corners",
+        "ambient": "birch leaves drifting across the card"
+      },
+      "shows": "what is offered, and to what",
+      "at_s": 3.0
+    },
+    {
+      "id": 4,
+      "t": 7.1,
+      "shot": 2,
+      "draw": {
+        "subject": "the Interior at dusk, a spruce band and a ridge",
+        "action": "the camera cranes down through the treeline toward one lit house at the edge of the base road",
+        "emotion": "calm, ordinary",
+        "annotation": "EIELSON AIR FORCE BASE"
+      },
+      "vo": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
+      "sfx": "wind-through-spruce swell",
+      "means": "shelf DawnForestBG re-tinted dusk + Nameplate",
+      "choreo": {
+        "primary": "the crane descending past the treeline",
+        "reaction": "the house window brightening as we near it",
+        "ambient": "far ridge drifting against the push"
+      },
+      "shows": "where this actually is",
+      "at_s": 7.1
+    },
+    {
+      "id": 5,
+      "t": 10.6,
+      "shot": 2,
+      "draw": {
+        "subject": "a copper cost bar standing over the lit house",
+        "action": "rises off the porch rail to full height and stops, taller than the house",
+        "emotion": "heavy, matter-of-fact",
+        "annotation": "FAIRBANKS"
+      },
+      "vo": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
+      "sfx": "low copper tone rising",
+      "means": "net-new tariff.CostStack",
+      "choreo": {
+        "primary": "the bar rising to its stop",
+        "reaction": "the house shadow lengthening under it",
+        "ambient": "porch light flickering once"
+      },
+      "shows": "what a bill already looks like here",
+      "at_s": 10.6
+    },
+    {
+      "id": 6,
+      "t": 15.2,
+      "shot": 2,
+      "draw": {
+        "subject": "a figure on the porch, parka, breath visible",
+        "action": "tips their head back to look up the full height of the bar",
+        "emotion": "tired, unsurprised",
+        "annotation": "AMONG THE NATION'S HIGHEST"
+      },
+      "vo": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
+      "sfx": "boot-scuff on the boards",
+      "means": "shelf Character rig, parka, neutral",
+      "choreo": {
+        "primary": "the head tilting up",
+        "reaction": "breath clouding and drifting",
+        "ambient": "snow sifting off the rail"
+      },
+      "shows": "a person under the number",
+      "at_s": 15.2
+    },
+    {
+      "id": 7,
+      "t": 18.0,
+      "shot": 3,
+      "draw": {
+        "subject": "the copper bar",
+        "action": "its tip is SHEARED OFF flat at a dashed rule and holds there, the missing height simply absent above the cut",
+        "emotion": "cut short",
+        "annotation": "HOW TALL?"
+      },
+      "vo": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
+      "sfx": "a single clean shear, then nothing",
+      "means": "net-new tariff.CostStack with a dashed top rule, no oscillation here",
+      "choreo": {
+        "primary": "the shear landing and the tip holding, stopped",
+        "reaction": "the figure's eyes going to the cut and staying there",
+        "ambient": "dusk haze moving slowly behind the bar"
+      },
+      "shows": "the answer is missing, stated once and not yet swung",
+      "at_s": 18.0
+    },
+    {
+      "id": 8,
+      "t": 19.8,
+      "shot": 3,
+      "draw": {
+        "subject": "the offer card POWER DEMAND row",
+        "action": "arrives like every other row and then does NOT fill, its baseline going dashed and crawling",
+        "emotion": "blank",
+        "annotation": "POWER DEMAND"
+      },
+      "vo": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
+      "sfx": "the tick that does not land, a soft miss",
+      "means": "craft advance, absence.tsx extended to a missing VALUE",
+      "choreo": {
+        "primary": "the dashed baseline crawling",
+        "reaction": "every other row sitting solid beside it",
+        "ambient": "a slow sparse drift inside the empty slot"
+      },
+      "shows": "the one row that refuses",
+      "at_s": 19.8
+    },
+    {
+      "id": 9,
+      "t": 23.55,
+      "shot": 3,
+      "draw": {
+        "subject": "the parcel rectangle and the town together",
+        "action": "the camera pulls back until the traced parcel is seen against the whole town, to scale",
+        "emotion": "sobering",
+        "annotation": "THE OFFER, AGAINST THE TOWN"
+      },
+      "vo": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
+      "sfx": "air-rush pullback",
+      "means": "shelf BoundaryReveal + MainStreetBG at distance",
+      "choreo": {
+        "primary": "the pullback revealing relative size",
+        "reaction": "the town lights coming up as we widen",
+        "ambient": "the town lights coming up as we widen"
+      },
+      "shows": "how big the land is, felt",
+      "at_s": 23.55,
+      "reveal": "scale-pullback"
+    },
+    {
+      "id": 10,
+      "t": 25.15,
+      "shot": 4,
+      "draw": {
+        "subject": "a NO AWARD stamp",
+        "action": "swings down toward the card, stops short, and hangs there, its cast shadow creeping across the rows as it refuses to land",
+        "emotion": "suspended",
+        "annotation": "NOTHING AWARDED YET"
+      },
+      "vo": "Nothing's awarded. Alaskans took positions anyway.",
+      "sfx": "stamp-swing that never strikes, room tone drops out",
+      "means": "shelf kit.Stamp onPaper",
+      "choreo": {
+        "primary": "the stamp hanging unlanded",
+        "reaction": "the rows going still beneath it",
+        "ambient": "the stamp's shadow creeping across the rows"
+      },
+      "shows": "nothing is decided",
+      "at_s": 25.15,
+      "rehook": "the rows stop filling and the sound drops out under a stamp that never lands"
+    },
+    {
+      "id": 11,
+      "t": 28.8,
+      "shot": 4,
+      "draw": {
+        "subject": "a figure walking a neighbourhood trail toward a pond",
+        "action": "walks into frame in three-quarter, boots crunching, a boxed name label settling beside her",
+        "emotion": "thoughtful",
+        "annotation": "SARAH HOLLISTER, SALCHA"
+      },
+      "vo": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
+      "sfx": "boot crunch on frozen gravel",
+      "means": "shelf Character rig + props.Nameplate",
+      "choreo": {
+        "primary": "the walking figure",
+        "reaction": "the name label settling with a small overshoot",
+        "ambient": "alder branches passing in the near foreground"
+      },
+      "shows": "who is speaking",
+      "at_s": 28.8
+    },
+    {
+      "id": 12,
+      "t": 31.45,
+      "shot": 4,
+      "draw": {
+        "subject": "two jets high above the trail",
+        "action": "cross the top of frame trailing contrail, and she tips her head to follow them",
+        "emotion": "familiar, almost fond",
+        "annotation": "ALWAYS MEANT SACRIFICE"
+      },
+      "vo": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
+      "sfx": "distant afterburner roll",
+      "means": "shelf high-altitude silhouettes, no airframe detail claimed",
+      "choreo": {
+        "primary": "the jets crossing",
+        "reaction": "her head turning to follow",
+        "ambient": "the contrail spreading and softening"
+      },
+      "shows": "the sound she is used to",
+      "at_s": 31.45
+    },
+    {
+      "id": 13,
+      "t": 34.63,
+      "shot": 5,
+      "draw": {
+        "subject": "the contrail overhead",
+        "action": "flattens and drains of colour into a single flat grey hum-line that holds and does not move",
+        "emotion": "the warmth going out of it",
+        "annotation": "THE HUM"
+      },
+      "vo": "Swap that for a data center's hum, she said, and we've lost our way.",
+      "sfx": "the roll flattening into a dead sixty-cycle hum",
+      "means": "craft, the contrail path morphing to a flat rule",
+      "choreo": {
+        "primary": "the contrail flattening to a line",
+        "reaction": "her shoulders dropping",
+        "ambient": "cold air shimmer along the flattened rule"
+      },
+      "shows": "the swap she is describing",
+      "at_s": 34.63
+    },
+    {
+      "id": 14,
+      "t": 37.0,
+      "shot": 5,
+      "draw": {
+        "subject": "a speech plate beside her",
+        "action": "types her sentence out, word by word, and holds it",
+        "emotion": "plain, resolute",
+        "annotation": "Swap that for a data center's hum and we've lost our way"
+      },
+      "vo": "Swap that for a data center's hum, she said, and we've lost our way.",
+      "sfx": "typewriter reveal, one key per word",
+      "means": "shelf props plate + typewriter reveal",
+      "choreo": {
+        "primary": "the words typing in",
+        "reaction": "her breath clouding between phrases",
+        "ambient": "her breath clouding between phrases"
+      },
+      "shows": "her own words",
+      "at_s": 37.0
+    },
+    {
+      "id": 15,
+      "t": 40.6,
+      "shot": 6,
+      "draw": {
+        "subject": "two ruled lists on a chamber wall, STATE and FEDERAL",
+        "action": "build downward side by side, item by item, every item an illegible ruled scribble except one",
+        "emotion": "procedural",
+        "annotation": "STATE / FEDERAL"
+      },
+      "vo": "Fairbanks asked for a pause, on both its state and federal lists.",
+      "sfx": "paper-rustle per item",
+      "means": "shelf props kit ruled plates",
+      "choreo": {
+        "primary": "the two lists building",
+        "reaction": "one chip among twenty resolving into readable type",
+        "ambient": "dust turning in the chamber light"
+      },
+      "shows": "how a borough asks",
+      "at_s": 40.6
+    },
+    {
+      "id": 16,
+      "t": 42.9,
+      "shot": 6,
+      "draw": {
+        "subject": "the double-locked PAUSE chip and a second, thicker, unsigned document",
+        "action": "the chip slides onto BOTH lists at once and double-locks, then slides toward an unsigned lease lying beside them and STOPS SHORT of its blank signature line",
+        "emotion": "pointed",
+        "annotation": "PAUSE"
+      },
+      "vo": "Fairbanks asked for a pause, on both its state and federal lists.",
+      "sfx": "double lock, two clicks",
+      "means": "shelf ruled plate + lock",
+      "choreo": {
+        "primary": "the chip sliding toward the lease and stopping short",
+        "reaction": "the lease's blank terms page sitting open and unsigned",
+        "ambient": "paper edges lifting in the room draft"
+      },
+      "shows": "a borough plat can't reach a federal lease, and the lease page is blank because nothing has been decided yet",
+      "at_s": 42.9
+    },
+    {
+      "id": 17,
+      "t": 46.9,
+      "shot": 7,
+      "draw": {
+        "subject": "a lectern with a boxed name label",
+        "action": "a figure steps to it and a plate rises beside her carrying her sourced line, set as reported speech with no quotation marks",
+        "emotion": "measured",
+        "annotation": "SEN. LISA MURKOWSKI"
+      },
+      "vo": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
+      "sfx": "room settle, a chair creak",
+      "means": "shelf Character rig + Nameplate",
+      "choreo": {
+        "primary": "the plate rising",
+        "reaction": "the figure settling at the lectern",
+        "ambient": "the room settling behind her"
+      },
+      "shows": "who says the next thing",
+      "at_s": 46.9,
+      "plate_text": "NOT A PROPONENT AT JBER OR THE INTERIOR INSTALLATIONS",
+      "plate_note": "c6. Reported speech, NO quotation marks, because the full sentence does not fit a plate and a trimmed quotation would misrepresent a named senator."
+    },
+    {
+      "id": 18,
+      "t": 49.65,
+      "shot": 7,
+      "draw": {
+        "subject": "the senator at the lectern, the land rectangle and the copper column",
+        "action": "she sets a page down on the reading edge, pushes the LAND rectangle aside with two fingers so it dims and recedes, then taps the copper column once and leaves her hand on it",
+        "emotion": "clarifying",
+        "annotation": "LAND / POWER"
+      },
+      "vo": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
+      "sfx": "a low plate sliding away from the mic, then a copper strike",
+      "means": "net-new tariff.CostStack single column",
+      "choreo": {
+        "primary": "her two fingers pushing the land rectangle away",
+        "reaction": "the column lighting under her hand as she taps it",
+        "ambient": "the page settling on the reading edge"
+      },
+      "shows": "she didn't say the land, she said the power, as a thing a person does",
+      "at_s": 49.65
+    },
+    {
+      "id": 19,
+      "t": 53.85,
+      "shot": 7,
+      "draw": {
+        "subject": "the copper column alone in the frame",
+        "action": "she steps out of frame and the copper column is left alone, standing and breathing, lit from the left",
+        "emotion": "quiet, deliberate",
+        "annotation": "POWER"
+      },
+      "vo": "She didn't say the land. She said the power.",
+      "sfx": "near silence, one low copper breath",
+      "means": "net-new tariff.CostStack",
+      "choreo": {
+        "primary": "the raking key travelling along the column so one tier seam after another catches and releases",
+        "reaction": "her shadow leaving the column as she clears frame",
+        "ambient": "the last plate sliding out of frame, long and late"
+      },
+      "shows": "the hinge of the film",
+      "at_s": 53.85
+    },
+    {
+      "id": 20,
+      "t": 58.05,
+      "shot": 8,
+      "draw": {
+        "subject": "a figure walking out of the dark onto the hangar apron",
+        "action": "walks in from the dark and the widening floodlight finds them as the hangar door rolls back",
+        "emotion": "straight, respectful",
+        "annotation": "A PARTNERSHIP"
+      },
+      "vo": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
+      "sfx": "the plate's rim seating with a low metal set-down, over apron floodlights striking on in banks",
+      "means": "shelf Character rig + ruled plate",
+      "choreo": {
+        "primary": "the figure walking into the widening light",
+        "reaction": "the door rolling back behind them",
+        "ambient": "ground haze drifting across the apron"
+      },
+      "shows": "the other side, at full volume",
+      "at_s": 58.05
+    },
+    {
+      "id": 21,
+      "t": 60.2,
+      "shot": 8,
+      "draw": {
+        "subject": "two ruled plates",
+        "action": "the ruled plate rises UNDER THEIR FEET rather than beside them, so the ground they are standing on is the thing the lease paid for",
+        "emotion": "even-handed",
+        "annotation": "SUPPORTING AIRMEN AND GUARDIANS"
+      },
+      "vo": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
+      "sfx": "a rolling door, then two plates meeting and seating",
+      "means": "shelf props ruled plates",
+      "choreo": {
+        "primary": "the plate rising under the figure's feet and taking their weight",
+        "reaction": "the two plates seating together in the new light",
+        "ambient": "apron lights pulsing slowly behind the seam"
+      },
+      "shows": "a person standing in light the lease paid for, which is the argument",
+      "at_s": 60.2
+    },
+    {
+      "id": 22,
+      "t": 63.95,
+      "shot": 9,
+      "draw": {
+        "subject": "the statement card",
+        "action": "turns edge-on and unfolds into a single tall cost stack standing over a row of small houses",
+        "emotion": "revelatory",
+        "annotation": "YOUR BILL, WIRES AND FUEL"
+      },
+      "vo": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
+      "sfx": "paper unfolding into a low tone",
+      "means": "net-new tariff.Statement morphing to tariff.CostStack",
+      "choreo": {
+        "primary": "the card unfolding into the stack",
+        "reaction": "the row of houses sliding in beneath it",
+        "ambient": "the houses' window lights flickering as they slide in"
+      },
+      "shows": "the bill, made physical",
+      "at_s": 63.95,
+      "rehook": "the document becomes a diagram in one continuous move",
+      "reveal": "morph-to-chart"
+    },
+    {
+      "id": 23,
+      "t": 67.25,
+      "shot": 9,
+      "draw": {
+        "subject": "the stack",
+        "action": "splits along a hard seam into a copper WIRES half and a carbon-blue FUEL half, shoved apart",
+        "emotion": "clear",
+        "annotation": "WIRES / FUEL"
+      },
+      "vo": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
+      "sfx": "a seam tearing, two settled thuds",
+      "means": "net-new tariff.CostStack split",
+      "choreo": {
+        "primary": "the two halves shoving apart",
+        "reaction": "the houses beneath flinching once",
+        "ambient": "dust shaken loose along the seam"
+      },
+      "shows": "the two things you pay for",
+      "at_s": 67.25
+    },
+    {
+      "id": 24,
+      "t": 71.45,
+      "shot": 9,
+      "draw": {
+        "subject": "the WIRES half and the row of houses",
+        "action": "divides itself across the row, and with few houses each share stands tall",
+        "emotion": "explanatory",
+        "annotation": "SPLIT ACROSS EVERYONE"
+      },
+      "vo": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
+      "sfx": "division ticks, one per house",
+      "means": "net-new tariff.CostStack divide",
+      "choreo": {
+        "primary": "the share bars standing up over each house",
+        "reaction": "the houses settling under them",
+        "ambient": "chimney smoke rising from the little roofs"
+      },
+      "shows": "why it is tall here",
+      "at_s": 71.45
+    },
+    {
+      "id": 25,
+      "t": 74.6,
+      "shot": 9,
+      "draw": {
+        "subject": "a giant customer block",
+        "action": "lands at the end of the row and the wires share over every house visibly compresses and settles",
+        "emotion": "relief, once",
+        "annotation": "THAT HALF THINS"
+      },
+      "vo": "A giant customer helps pay for them either way. That half thins.",
+      "sfx": "a heavy seat, then a smooth compress",
+      "means": "net-new tariff.CostStack redivide",
+      "choreo": {
+        "primary": "the shares compressing together",
+        "reaction": "the giant block settling into the row",
+        "ambient": "the row of houses settling under the new weight"
+      },
+      "shows": "the half that is answered",
+      "at_s": 74.6
+    },
+    {
+      "id": 26,
+      "t": 78.12,
+      "shot": 10,
+      "draw": {
+        "subject": "the FUEL half",
+        "action": "lights carbon blue and strains upward, and beneath it the row of lit houses holds frame while ONE share bar lifts off ONE roof as the half strains",
+        "emotion": "tense",
+        "annotation": "THE FUEL"
+      },
+      "vo": "The fuel bites. A big load either brings its own power, or competes for what's here.",
+      "sfx": "a strained rising tone",
+      "means": "net-new tariff.CostStack oscillate",
+      "choreo": {
+        "primary": "the fuel half straining up",
+        "reaction": "a single share bar rising off one roof in the lower third",
+        "ambient": "heat shimmer coming off the straining half"
+      },
+      "shows": "a household's bill moving, not a bar moving",
+      "at_s": 78.12
+    },
+    {
+      "id": 27,
+      "t": 80.61,
+      "shot": 10,
+      "draw": {
+        "subject": "branch A, drawn to the left",
+        "action": "the giant block grows its own generation stack and slots it in, and the fuel half drops",
+        "emotion": "hopeful",
+        "annotation": "BRINGS ITS OWN"
+      },
+      "vo": "The fuel bites. A big load either brings its own power, or competes for what's here.",
+      "sfx": "a solid slot-in, tone falling",
+      "means": "net-new tariff.CostStack supply block",
+      "choreo": {
+        "primary": "the generation block slotting in",
+        "reaction": "the fuel half dropping and easing",
+        "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
+      },
+      "shows": "one way it goes",
+      "at_s": 80.61
+    },
+    {
+      "id": 28,
+      "t": 83.66,
+      "shot": 10,
+      "draw": {
+        "subject": "branch B, drawn to the right",
+        "action": "the same block brings nothing and pulls on the existing supply, and the fuel half climbs",
+        "emotion": "tense",
+        "annotation": "COMPETES FOR WHAT'S HERE"
+      },
+      "vo": "The fuel bites. A big load either brings its own power, or competes for what's here.",
+      "sfx": "a strained pull, tone rising",
+      "means": "net-new tariff.CostStack contend",
+      "choreo": {
+        "primary": "the fuel half climbing",
+        "reaction": "arrows pulling from the shared pool",
+        "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
+      },
+      "shows": "the other way it goes",
+      "at_s": 83.66
+    },
+    {
+      "id": 29,
+      "t": 86.19,
+      "shot": 10,
+      "draw": {
+        "subject": "both branches at once, superimposed",
+        "action": "the fuel half decays toward a stop, and each time it nears rest it reaches down for the dashed slot, finds nothing in it, and is kicked back up",
+        "emotion": "unresolved, honest",
+        "annotation": "NOT DISCLOSED"
+      },
+      "vo": "So it turns on how big. And how big is what nobody has published.",
+      "sfx": "two-tone slam, then a held unresolved chord",
+      "means": "craft advance, absence.tsx missing VALUE in the deciding slot",
+      "choreo": {
+        "primary": "the half reaching for the empty slot and being kicked back each time it nearly settles",
+        "reaction": "the wires half sitting still and settled beside it, answered",
+        "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
+      },
+      "shows": "THE SIGNATURE FRAME. It is trying to settle and the empty slot will not let it",
+      "at_s": 86.19,
+      "rehook": "the diagram refuses to settle in front of you"
+    },
+    {
+      "id": 30,
+      "t": 89.68,
+      "shot": 11,
+      "draw": {
+        "subject": "a figure at the edge of the street at dusk, and the town behind them",
+        "action": "looks toward the apron and turns a porch light on, and the town builds up behind them window by window, street by street, until the apron's light reaches the treeline",
+        "emotion": "warm, genuine credit",
+        "annotation": "MAYOR GRIER HOPKINS"
+      },
+      "vo": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
+      "sfx": "the town coming on window by window, a distant traffic hum rising",
+      "means": "shelf MainStreetBG dusk + Nameplate",
+      "choreo": {
+        "primary": "windows coming on street by street across the whole window",
+        "reaction": "the town lights lifting with it",
+        "ambient": "chimney smoke drifting"
+      },
+      "shows": "the town's yes, given a body, the way the trail gave the doubt a body",
+      "at_s": 89.68
+    },
+    {
+      "id": 31,
+      "t": 92.8,
+      "shot": 11,
+      "draw": {
+        "subject": "two rim-lit airframe silhouettes over the apron",
+        "action": "come in low over the treeline and set down on the apron, and the crate is what they set down",
+        "emotion": "workmanlike, welcome",
+        "annotation": "THE F-35s"
+      },
+      "vo": "But a fighter wing comes with a budget. A data center comes with an appetite.",
+      "sfx": "a turbine spooling down, then gear touching concrete",
+      "means": "shelf high-altitude silhouettes, no airframe detail claimed, same discipline as beat 12",
+      "choreo": {
+        "primary": "the two silhouettes settling onto the apron",
+        "reaction": "the crate lowering out from under them",
+        "ambient": "heat shimmer off the apron behind them"
+      },
+      "shows": "the jets, drawn at the moment they are named",
+      "at_s": 92.8
+    },
+    {
+      "id": 32,
+      "t": 93.45,
+      "shot": 11,
+      "draw": {
+        "subject": "a crate marked BUDGET arriving over the town",
+        "action": "lowers onto the apron, opens, and warm light spills out across the houses",
+        "emotion": "generous",
+        "annotation": "BUDGET"
+      },
+      "vo": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
+      "sfx": "crate latches opening and the lid swinging back",
+      "means": "shelf props crate + light spill",
+      "choreo": {
+        "primary": "the crate opening",
+        "reaction": "light spreading across the roofs",
+        "ambient": "warm light rippling across the roofs"
+      },
+      "shows": "what a fighter wing brought",
+      "at_s": 93.45
+    },
+    {
+      "id": 33,
+      "t": 95.6,
+      "shot": 11,
+      "draw": {
+        "subject": "a data center block arriving the same way",
+        "action": "lowers onto the same apron carrying an empty plate instead of a crate, and the plate tips",
+        "emotion": "hungry, not evil",
+        "annotation": "AN APPETITE"
+      },
+      "vo": "But a fighter wing comes with a budget. A data center comes with an appetite.",
+      "sfx": "a hollow set-down, no latch",
+      "means": "shelf ruled block + props plate",
+      "choreo": {
+        "primary": "the empty plate tipping",
+        "reaction": "the town lights dimming a half stop, not going out",
+        "ambient": "the plate rim catching and losing the light"
+      },
+      "shows": "what this one brings instead",
+      "at_s": 95.6,
+      "rehook": "the second arrival lands carrying an empty plate instead of a crate, and the town dims a half stop"
+    },
+    {
+      "id": 34,
+      "t": 98.91,
+      "shot": 11,
+      "draw": {
+        "subject": "the empty plate and the FUEL half",
+        "action": "the plate tips toward the carbon-blue half and the half leans with it",
+        "emotion": "consequential",
+        "annotation": "FED FROM WHERE?"
+      },
+      "vo": "But a fighter wing comes with a budget. A data center comes with an appetite.",
+      "sfx": "the empty plate's rim grinding as it tips, and the fuel half's edge ticking as it takes the weight",
+      "means": "net-new tariff.CostStack",
+      "choreo": {
+        "primary": "the plate rim grinding round as it tips",
+        "reaction": "the plate rim catching copper light",
+        "ambient": "the fuel half's edge trembling"
+      },
+      "shows": "where the appetite feeds",
+      "at_s": 98.91
+    },
+    {
+      "id": 35,
+      "t": 101.05,
+      "shot": 12,
+      "draw": {
+        "subject": "a hand reaching for the MEGAWATTS row",
+        "action": "a gloved hand comes down over the card and the row dashes away under the fingers, the pen tip skidding off the rule and knocking a chip off the rail",
+        "emotion": "frustrated, then accepting",
+        "annotation": "MEGAWATTS"
+      },
+      "vo": "So the ask isn't megawatts. Nobody can publish those yet.",
+      "sfx": "a pen tip skidding, then a chip spinning down onto wood",
+      "means": "craft advance, absence.tsx missing VALUE",
+      "choreo": {
+        "primary": "the hand coming down and the pen tip skidding off the rule",
+        "reaction": "a chip knocked off the rail and spinning on the boards",
+        "ambient": "paper tooth catching the raking light"
+      },
+      "shows": "the thing that cannot be asked for yet",
+      "at_s": 101.05
+    },
+    {
+      "id": 36,
+      "t": 104.9,
+      "shot": 12,
+      "draw": {
+        "subject": "the hand and a different row",
+        "action": "moves down one row to DATE PUBLISHED, which is blank, ruled, solid and waiting",
+        "emotion": "resolved",
+        "annotation": "DATE PUBLISHED"
+      },
+      "vo": "Ask for the date. Does that number go public before the land is leased?",
+      "sfx": "a clean pen-tap on a solid rule",
+      "means": "net-new tariff.Statement fillable row",
+      "choreo": {
+        "primary": "the hand settling on the solid row",
+        "reaction": "the dashed row above going quiet",
+        "ambient": "the dashed row above still drifting"
+      },
+      "shows": "the thing that CAN",
+      "at_s": 104.9,
+      "reveal": "build-on"
+    },
+    {
+      "id": 37,
+      "t": 108.1,
+      "shot": 12,
+      "draw": {
+        "subject": "two tokens on a short rail",
+        "action": "NUMBER GOES PUBLIC and LAND LEASED slide along the rail and swap places, twice, unresolved",
+        "emotion": "the real question",
+        "annotation": "BEFORE? AFTER?"
+      },
+      "vo": "Ask for the date. Does that number go public before the land is leased?",
+      "sfx": "two slides and a soft unresolved stop",
+      "means": "shelf ruled rail + props tokens",
+      "choreo": {
+        "primary": "the two tokens swapping order",
+        "reaction": "the rail flexing under them",
+        "ambient": "the raking dusk light drifting slowly across the frame"
+      },
+      "shows": "the whole ask, in one picture",
+      "at_s": 108.1
+    },
+    {
+      "id": 38,
+      "t": 112.3,
+      "shot": 13,
+      "draw": {
+        "subject": "the statement card, one step back",
+        "action": "sits on the rail beside the same unsigned lease, every row solid except one, and a pen hovers over the blank DATE row",
+        "emotion": "open, hopeful",
+        "annotation": "ONE ROW STILL BLANK"
+      },
+      "vo": "The terms aren't written. That's the opening.",
+      "sfx": "the card settling a half millimetre on the rail, under a single held copper tone",
+      "means": "net-new tariff.Statement + shelf PenAndDocument",
+      "choreo": {
+        "primary": "the pen hovering, never landing",
+        "reaction": "the lease's empty signature line catching the last of the light",
+        "ambient": "birch leaves crossing the frame on a visible path"
+      },
+      "shows": "the button, and the hook inverted",
+      "at_s": 112.3
+    },
+    {
+      "id": 39,
+      "t": 115.15,
+      "shot": 13,
+      "draw": {
+        "subject": "the blank DATE row",
+        "action": "lifts a half stop and holds, the only lit thing left as the rest of the card falls to dusk",
+        "emotion": "an opening, not a defeat",
+        "annotation": "THE TERMS AREN'T WRITTEN"
+      },
+      "vo": "The terms aren't written. That's the opening.",
+      "sfx": "the tone resolving upward, not down",
+      "means": "net-new tariff.Statement",
+      "choreo": {
+        "primary": "the row lifting and holding",
+        "reaction": "the card falling to dusk around it",
+        "ambient": "the raking dusk light drifting slowly across the frame"
+      },
+      "shows": "what the film is asking for",
+      "at_s": 115.15
+    }
   ],
-  "lands_in_button": true
- },
- "divergence_note": "The last four dispatches ran pov cross-section-cutaway, orbital-aerial, exploded-diagram and eye-level-immersive, layout grid-modular, stacked-layers and fullbleed-split, and motion horizontal-traverse, vertical-descent and assemble-build, so all three signature axes here are unused inside the window: macro-closeup, single-object-void and radial-emanate. hero_treatment breaks a three-run run of instrument-as-subject by casting a single organic hero, Sourdough, who has never led this channel. The light story is the sharpest break: the last two films were bright light-field pieces on pale grounds, a warm paper interior on cream and a blue-and-white lab on off-white, and this one is night-practical, a dark wet exterior and a lamplit interior whose ground value is the darkest this channel has shipped in a month. The palette is built as an argument rather than a mood, amber always meaning measured and cyan always meaning claimed, which no previous dispatch has done."
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "a copper-rimmed ruled offer card slamming onto birch-gold ground, every row cascading in at once, and by 1.4s one row alone left a crawling dashed void",
+    "headline": "ONE ROW IS BLANK",
+    "motion_by_s": 0.3,
+    "loopback": "the button returns to the same card with the same birch leaves drifting past it, every row solid except the one that started the film blank, and the pen hovering over it",
+    "pattern_note": "a ruled form fills in row by row exactly as expected, and then one row does not, which is the anomaly, and the question it raises is what belonged in it. Gate 0B found the board had withheld that row until 19.8s, three or four scroll decisions past the one that mattered, so it now lands at 1.4s."
+  },
+  "audio_arc": {
+    "build_steps": [
+      0.3,
+      25.15,
+      63.35,
+      86.79
+    ],
+    "dip_at": 53.85,
+    "riser_at": 104.9,
+    "silence_at": 25.15,
+    "payoff_at": 112.3,
+    "button_pattern": "question"
+  },
+  "reveals": [
+    {
+      "t": 23.55,
+      "type": "scale-pullback",
+      "what": "the traced parcel seen against the whole town, to scale",
+      "hold_s": 0.7
+    },
+    {
+      "t": 63.35,
+      "type": "morph-to-chart",
+      "what": "the statement card unfolds into the cost stack in one continuous move",
+      "hold_s": 0.6
+    },
+    {
+      "t": 104.9,
+      "type": "build-on",
+      "what": "the fillable DATE PUBLISHED row appears under the unfillable MEGAWATTS row",
+      "hold_s": 0.5
+    }
+  ],
+  "open_loop": {
+    "plant_t": 1.4,
+    "pay_t": 86.79,
+    "what": "the POWER DEMAND row arrives and does not fill, and the film refuses to resolve it until the diagram that needs it slams between two answers"
+  },
+  "open_loop_2": {
+    "plant_t": 49.65,
+    "pay_t": 95.6,
+    "what": "Murkowski names POWER rather than LAND, and the film withholds what power actually costs a town until the data center arrives carrying an empty plate"
+  },
+  "throughline": {
+    "object": "the ruled statement card",
+    "states": [
+      {
+        "at_s": 0.3,
+        "state": "slams down and every row cascades in"
+      },
+      {
+        "at_s": 1.4,
+        "state": "one row alone refuses to fill"
+      },
+      {
+        "at_s": 25.15,
+        "state": "a NO AWARD stamp hangs over it without landing, so not one row on it is final"
+      },
+      {
+        "at_s": 42.9,
+        "state": "an unsigned lease lies open beside it with a blank terms page, and the borough's PAUSE chip stops short of the signature line"
+      },
+      {
+        "at_s": 63.35,
+        "state": "unfolds into the cost stack and splits into wires and fuel"
+      },
+      {
+        "at_s": 86.79,
+        "state": "the fuel half reaches for the deciding slot and is kicked back, and the slot reads NOT DISCLOSED"
+      },
+      {
+        "at_s": 112.3,
+        "state": "back to a card beside that same unsigned lease, every row solid but one, and the blank row now labelled with a DATE a person could actually ask for"
+      }
+    ],
+    "lands_in_button": true
+  },
+  "divergence_note": "Against 2026-09-14 (bright ultramarine and mango, orbital-aerial, vertical-descent, instrument-as-subject) and 2026-09-19 (powerhouse green and sodium amber, macro-closeup, single-object-void, radial-emanate, structure-as-subject) this film is a FRONTAL DOCUMENT in split-compare, its motion vector is DIVIDE-AND-SETTLE which no recent film has used, its hero treatment is DOCUMENT-AS-SUBJECT which is new, and its palette shares no colour role with either. The shape grammar is ruled form against unruled land, which is the argument drawn rather than a style note."
 }

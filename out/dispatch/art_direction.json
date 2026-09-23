@@ -1,74 +1,76 @@
 {
-  "run_date": "2026-09-19",
-  "title": "AURORA-AI, the Cordova scoreboard",
-  "one_line_look": "A wet October night on Prince William Sound, lit by two light sources that are arguing: the sodium amber of what actually burned, and the cold cyan of what was claimed.",
-
+  "run_date": "2026-09-23",
+  "title": "One Variable",
+  "thesis_this_serves": "Whether a data center on offered Air Force land makes a Fairbanks power bill smaller or bigger turns on one number, the load, and nobody has published it. The look has to make an ABSENCE the most visible thing in the film.",
   "palette": {
-    "sky": "#0E2622",
-    "ground": "#17332B",
-    "hero": "#E3873A",
-    "accent": "#7FD4FF",
-    "shadow": "#08100F",
-    "light": "#EAF2EC",
-    "mood": "Coastal rainforest dark, saturated and wet rather than gloomy. Amber is warm, local, physical and ALWAYS means measured. Cyan is cold, self-lit, weightless and ALWAYS means claimed. A viewer who never hears a word should still learn that rule by 30 seconds, because the whole film is an argument between those two colours.",
-    "why_this_story": "Cordova sits in coastal temperate rainforest on the Sound, the project starts on October 1st, and the physical stake is a diesel flame against falling water. The colour opposition is not decoration, it is the thesis: amber is the gauge, cyan is the forecast, and the film is about whether anyone ever puts them side by side.",
-    "divergence": "Hard break from both recent dispatches. 2026-09-13 was a warm bright PAPER interior (cream #F4EADF, copper #C7805D, petrol #27615B). 2026-09-14 was a bright blue-and-white LAB (off-white #EFF5E9, blue #254D98, mango #F7AE38, mint #93DFC6). Both were light-field films on pale grounds. This one is a DARK, wet, high-saturation exterior night, which neither of the last two has been, and the ground value is the darkest this channel has shipped in a month."
+    "roles": {
+      "sky": "#3E3852  Interior dusk violet, late September, the hour after the sun leaves the ridge",
+      "ground": "#C9A227  birch gold, the Tanana valley in the last week of September",
+      "hero": "#C87137  copper, literally the colour of wire, and the film's WIRES half",
+      "accent": "#1F3A5F  carbon blue, the ink of a printed form, and the film's FUEL half",
+      "paper": "#EDE7DB  statement stock, warm off-white, never pure white",
+      "shadow": "#141A22  spruce ink"
+    },
+    "mood": "A cold, clear, ordinary evening in a working town. Not ominous. The film is not about dread, it is about a blank line on a form, so the world is legible and calm and the only unsettled thing in it is the one slot that will not resolve.",
+    "divergence": "2026-09-14 was bright ultramarine, mango, alabaster and sea-glass. 2026-09-19 was powerhouse green, sodium amber and model cyan. This has NO cyan, NO green, NO amber and NO ultramarine. Copper against carbon blue over dusk violet has not been run. The gold is the only warm note carried over from any recent film and it is doing different work here, as autumn ground rather than as a light source."
   },
-
   "light": {
-    "time_of_day": "October dusk into night, rain just stopped, everything sheened.",
-    "key": "Low warm sodium key from screen-left, motivated by the powerhouse door standing open. It rakes across wet surfaces so every horizontal reads as reflective, which is how the frame stays modulated without adding props.",
-    "fill": "Cold blue-green ambient bounce from the wet sky, very low, so shadow sides never go to flat black.",
-    "rim": "Rain-sheen rim on every solid form, from the key side. On the hero it is the single strongest read of dimension in a dark frame.",
-    "the_cyan_rule": "The forecast cyan is SELF-LIT and never reaches another object. No cyan bounce, no cyan rim on a real thing, no cyan cast shadow. This is lib/simulation.tsx and lib/forecast.tsx clause 4 enforced in the lighting plan, and it is the mechanism by which a viewer can always tell which half of the frame is real.",
-    "depth": "stage3d planes, three deep in every exterior shot: far fjord wall and ridge at z 650 with aerial haze, the powerhouse and creek at z 0, and rain plus a foreground rail or alder at z -170 catching the key. Depth comes from the plane separation and the haze gradient, never from a drop shadow."
+    "time_of_day": "19:40, late September, Interior Alaska. Sun already behind the ridge.",
+    "direction": "low and raking from frame LEFT, about 8 degrees above the horizon line",
+    "key": "birch gold, warm, narrow, catching only the top third of standing forms and the upper edge of every ruled card",
+    "fill": "dusk violet, cold and broad, from the open sky above",
+    "rim": "copper rim on the right edge of every hero form, which is the light that says an object is REAL and built, and which the absence grammar deliberately does not get",
+    "depth_approach": "Three declared planes everywhere there is a world: a far ridge and spruce band at 18 percent contrast with atmospheric lift, a mid plane carrying the subject at full contrast, and a near foreground of alder and a cut bank at 130 percent contrast and slight blur. Stage3D planes with a composed camera move on every exterior. Forms read dimensional by a three-tone ladder plus contact shadow, never by a flat fill."
   },
-
   "shape_language": {
-    "grammar": "CURVES YOU CANNOT COMMAND against BOXES YOU CAN.",
-    "soft_organic": "The creek, the penstock's bend, the rain, the ridge line, and Sourdough himself, who is warm and rounded by design. These are the things that do what they do regardless of what anyone decides.",
-    "hard_rectilinear": "The diesel gen-set, the CLAIMED and MEASURED slots, and the data center's two refrigerator boxes. These are things a person chose.",
-    "why_this_story": "The film's question is what a forecast can and cannot buy. A river is a curve nobody dispatches; a generator is a box somebody starts. Every frame puts one against the other, and the Act 4 turn is the moment a NEW box arrives beside the curve and the argument changes shape.",
-    "deliberate_contrast_not_default": "Sourdough's warm roundness is already the shelf's opposite to ServerMachine's cold rectilinearity, and this run uses that pairing at a deliberately absurd scale ratio rather than the usual one."
+    "grammar": "THE RULED FORM AGAINST THE UNRULED LAND.",
+    "why_this_story": "The film's argument is literally that a rectangle is being drawn over ground that is not rectangular, and that one row on the rectangle is blank. So every human-made element is hard rectilinear, ruled, gridded, right-angled and repeating: statement rows, parcel boundaries, the cost stack, nameplates, a section grid. Every natural element is irregular and non-repeating: spruce crowns, a ridge, alder, the cut bank, a river bend. The two never blend. Where they meet, the ruled thing sits ON TOP of the land and casts a shadow onto it, so the viewer sees an imposition rather than a fit.",
+    "the_deliberate_contrast": "Rectilinear institution against organic land is the shelf's established opposition (ServerMachine and MachineShadow against Sourdough). This film uses it but INVERTS the sympathy: the ruled form is not a villain here, it is a DOCUMENT, and the film's complaint is not that it exists but that one of its rows is empty."
   },
-
   "casting": {
-    "hero": "Sourdough — the personified power plant, cast as the islanded grid itself. Warm, rounded, proud, and GUESSING. His furnace-window chest glow is the film's second gauge: it is the amber, and it dims at the turn. Hero-rerun gate clear: the last two heroes were GearLever (09-14) and PenAndDocument (09-13), and Sourdough has not led.",
-    "ai_presence": "THE FORECAST DOUBLE, drawn with this run's net-new lib/forecast.tsx grammar plus lib/simulation.tsx's Simulated for the twin's silhouette. Not a robot, not a server box, not a brain. The AI in this story is literally a virtual replica of Sourdough that runs slightly ahead of him, and drawing it as anything else would be the stretch the angle room refused.",
-    "supporting": [
-      "Character — the co-op operator, outfit 'worker', the person who has to decide whether to start the diesel. Present in the shots where a DECISION is being made, and absent where nothing is being decided, per Gate 0A''.",
-      "ServerMachine — Act 4 only, tint steel, at roughly one fifth its usual staging scale. The channel has drawn this rig as a looming institutional appetite; here it arrives as a polite little box the size of two refrigerators, and the scale reversal IS the beat.",
-      "Cell — not cast. Cordova's hedge is diesel and water, not batteries, and putting a battery in frame would be a fact the sources do not support."
+    "hero": "Statement",
+    "hero_is_net_new": true,
+    "hero_reason": "The throughline object and the hero are the same thing, which is correct for a film about a missing value. It is a ruled utility statement with line items, a total, and one row whose value slot never fills. It must differ from the last two heroes and it does: 2026-09-14 was GearLever and 2026-09-19 was RunOfRiver.",
+    "from_the_shelf": [
+      "Unnamed and UnnamedField (lib/absence.tsx) for every NOT DISCLOSED slot. The shelf already solved drawing a thing that is not there, with a dashed crawling contour, a true void interior, a slow drift so it never reads as unrendered, and a REQUIRED label. It is exactly right and it is not being rebuilt.",
+      "Nameplate and StatCard (lib/props.tsx), form-shaded by default since 2026-07-30, for Hollister, Murkowski and Hopkins and for every figure",
+      "BoundaryReveal (lib/props.tsx) traces the offered parcel as a closed path over the land",
+      "MeasuringChain and SurveyStake (lib/props.tsx) for the land being measured to the acre",
+      "Character rig for the Fairbanks household, the trail walker and the figures at the testimony beats, with boxed name labels per the scene recipe book",
+      "DawnForestBG (boreal birch and spruce) for the land plane, re-tinted to dusk",
+      "MainStreetBG for the town beat, dusk raised",
+      "materials.tsx paper substance under every ruled card so no surface is a flat fill"
     ],
-    "net_new": "RunOfRiver — the intake, penstock and powerhouse of a run-of-river hydro plant, as a reusable set piece. This is a real shelf gap: the library has OilfieldBG, FrostYardBG and RiverBG but nothing that shows water being TAKEN from a creek and turned into power, which is the physical mechanism this entire film rests on. Params: flow 0..1 (the creek's water level, which is the thing nobody commands), gate 0..1 (the intake), and spill 0..1 (the energy a run-of-river plant throws away because it cannot store it, which is the Act 4 setup)."
+    "why_the_shelf_covers_so_much": "Checked against ASSET_MANIFEST.md in full before deciding. The shelf carries thirteen biomes, a props kit whose copy is all parameters, a full absence grammar and an evidence-state grammar. The only genuine gap this story finds is a BILL, which is the one thing it needs most."
   },
-
   "motion_language": {
-    "always_running": "WATER NEVER STOPS. Every shot containing the creek carries a continuous flow animation that spans the entire hold, plus rain on an irrational period, plus Sourdough's breath. This is DISPATCH_STANDARD section 8's 'no scene built only out of interpolate() events' satisfied by the setting itself rather than by a push alone.",
-    "camera": "Every shot also carries the mandatory slow push (1.00 to about 1.08) and a lateral drift on an irrational period. Composed stage3d CameraMoves per shot; no static frames.",
-    "hero_moves_that_earn_blur_and_overshoot": [
-      "THE NEEDLE SLAM. The diesel gauge needle does not drift, it jumps and settles, with anticipation below zero and a visible overshoot. It is the film's heartbeat and it fires on the emphasis words.",
-      "THE TWIN ASSEMBLING. The forecast double builds itself out of the data, drawn (lib/simulation `drawn`) from the ground up, hunting before it settles.",
-      "THE CONE OPENING. The uncertainty cone unfurls forward from NOW, widening, and the widening is the motion rather than a held shape.",
-      "THE EMPTY SLOT. Act 3's key image does not animate IN so much as refuse to fill: the hatching crawls, the slot stays empty, and the stillness is the point. Deliberate stillness is acting.",
-      "THE BOX SETTLING. Act 4's data center lands beside the creek with a small, polite squash and settle, which is funnier and more honest than a slam."
+    "world": "Slow, settled, domestic. The camera pushes about 1.00 to 1.08 across every held shot with a lateral drift on an irrational period, and every exterior has a far plane drifting against the push. Nothing whips except the two act transitions.",
+    "hero_moves_named": [
+      "ROWS FILLING. The statement's rows populate left to right with a typed tick per row, anticipation and a small overshoot on each value as it lands. This is the film's signature motion and it is designed to build an expectation the blank row then breaks.",
+      "THE ROW THAT REFUSES. Every other row lands with a hit. One row's value slot arrives and does not fill. Its dashed rule crawls, its interior drifts, and it never resolves for the rest of the film.",
+      "THE STACK SPLITTING. The single cost bar over the house divides into two named halves, wires and fuel, with a real seam and a physical shove apart.",
+      "THE HALF THAT THINS. The wires half compresses smoothly and settles, once, and stays settled. It is the only thing in the film that gets ANSWERED.",
+      "THE HALF THAT REACHES. The fuel half decays toward a stop, and each time it nears rest it reaches down for the slot that would settle it, finds nothing there, and is kicked back up. REVISED at Gate 0B: the plan first said a spring that never damps, and the critic was right that a constant undamped flutter is indistinguishable from an animation that failed to reach its keyframe. A decaying reach that keeps getting kicked reads as an argument on first viewing and never as a render fault."
     ],
-    "no_linear_anything": "Every entrance uses lib/motion entrance() with anticipation, overshoot and settle; everything attached gets followThrough(); MotionBlur is fed from the same velocity that drives the move."
+    "earns_180_blur": "the two act whips and the stack shove apart. Nothing else."
   },
-
   "composition": {
-    "approach": "The 9:16 master is the graded cut and is composed for. Content above y 420 and below y 1500 stages the vertical and never appears in the square: the fjord wall and rain above, the wet foreground rail and alder below. The story itself stays inside the centred 1:1 safe box.",
-    "focal_hierarchy": "In a dark frame the brightest thing is the subject, so amber is rationed. One amber source per shot at full value, everything else stepped down. The cyan is allowed to be bright because it is self-lit, which is how the two can share a frame without competing.",
-    "negative_space_beats": "Act 3 earns its silence with the most empty frame in the film, and it is empty ON PURPOSE around a hatched box. Dead-space meter will read high there and that is the correct reading, not a defect to fix.",
-    "signature_shot": "THE PAIR. The CLAIMED slot lit cyan with a number in it, the MEASURED slot beside it standing empty and hatched, and Sourdough between them looking at the empty one while the creek keeps running behind him. One frame that contains the award, the honest state of it, and the thing that will settle it.",
-    "brand_mark": "One anchor, top-left, off the hero, off the slots, off the creek line. Does not move between shots."
+    "approach": "Focal hierarchy is absolute: in every shot the best-finished, highest-contrast, most-detailed object is the one the viewer is meant to read, and the statement card is never out-detailed by its own furniture.",
+    "safe_area_intent": "THE 9:16 MASTER IS THE GRADED CUT AND IS COMPOSED FOR. The square is derived at crop=1080:1080:0:420, so the STORY lives inside master y 420 to 1500 and nothing load-bearing crosses those lines. The canvas outside that band is used rather than padded: ridge, sky and drifting cloud above y=420, and a near foreground of alder, cut bank and the corner of a porch rail below y=1500. This is the defect that dominated the back half of 2026-09-19 and it is being designed for up front instead of repaired at delivery.",
+    "signature_shot": "THE DIAGRAM THAT WILL NOT RESOLVE. One tall cost bar standing over a thin row of small houses. It splits into a copper WIRES half and a carbon-blue FUEL half. The wires half thins and settles. The fuel half swings between two heights and will not stop. Between them, where the number that would settle it belongs, sits a dashed void slot labelled NOT DISCLOSED. One frame that contains the whole argument, including the part the film honestly can't answer."
   },
-
   "craft_advance": {
-    "system": "lib/forecast.tsx — THE FORECAST GRAMMAR (net-new this run, tsc clean).",
-    "what_it_adds": "simulation.tsx owns 'how do you draw a model of a thing'. This owns 'how do you draw a claim about a TIME, and that claim being checked'. ForecastTrace always draws NOW, always widens uncertainty with distance, and never casts a shadow. Reconcile is the honest half: a CLAIMED slot and a MEASURED slot, with settled starting at 0, where MEASURED renders as an EMPTY HATCHED BOX reading NOT YET MEASURED.",
-    "why_it_matters_beyond_this_run": "This channel covers forecasts, models and projections constantly and has improvised the 'prediction versus outcome' picture every time. Making the empty MEASURED slot a required state means no future dispatch can draw a confident forecast without the component asking whether anyone checked it."
+    "system": "lib/absence.tsx, the absence grammar",
+    "what": "It draws a missing OBJECT, a silhouette that is not filled. This film needs a missing VALUE, which is type in a ruled slot rather than a shape, and that is a different problem: a dashed outline around empty space reads as a box, not as an unanswered field. Extending it with a ruled data row whose value slot is a true void with a crawling dashed BASELINE and a required label makes every future rate case, budget, permit, docket and disclosure story able to draw what was not filled in.",
+    "why_it_belongs_to_this_film": "The single most important image in this Dispatch is a blank line on a form. If the shelf can only draw missing OBJECTS, that image has to be improvised inline, which is exactly how the 2026-07-26 capped-pipe weakness stayed open for four days and two panels."
   },
-
+  "net_new_asset": {
+    "file": "video-engine/src/lib/tariff.tsx",
+    "components": [
+      "Statement, the ruled utility statement: a card on paper stock with a masthead, N line items each with a label and a value slot, a rule above the total, and a total row. Every string is a parameter. Rows can be filled, filling, or ABSENT, and an absent row composes with the absence grammar rather than reimplementing it.",
+      "CostStack, a single cost bar that can divide into named halves, be re-divided across a row of customers, and animate each half independently, so the two-way arithmetic is one component run twice rather than two hand-built diagrams."
+    ],
+    "why_it_is_a_real_gap": "Checked against ASSET_MANIFEST.md in full. The shelf has StatCard for one stat, Sheet for paper body, PaperOfficeBG for a records room, and the evidence-state grammar for epistemic status. NOTHING draws a BILL, and nothing draws a cost that divides. Alaska's news is rate cases, tariffs, PCE, budgets, dividends and utility filings almost every week, and every one of them has wanted this."
+  },
   "binding_note": "This plan is an INPUT the build executes against, not a description written afterward. If a build decision contradicts it, either fix the build or consciously revise this file and say why in the retrospective."
 }

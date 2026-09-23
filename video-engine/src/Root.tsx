@@ -1,6 +1,7 @@
 import React from 'react';
 import {Ep0729, ep0729Schema} from './Ep0729';
 import { Composition } from 'remotion';
+import {TariffLook} from './TariffLook';
 import { Episode, episodeSchema } from './Episode';
 import { Standoff } from './Standoff';
 import { FaunaShowcase } from './FaunaShowcase';
@@ -45,6 +46,7 @@ import {Ep0912, ep0912Schema} from './Ep0912';
 import {Ep0913, ep0913Schema} from './Ep0913';
 import {Ep0914, ep0914Schema} from './Ep0914';
 import {Ep0919, ep0919Schema} from './Ep0919';
+import {Ep0923, ep0923Schema} from './Ep0923';
 import {ResearchAssetLook0912} from './ResearchAssetLook0912';
 import {FlightCrateLook} from './FlightCrateLook';
 import { EvidenceLook } from './EvidenceLook';
@@ -63,12 +65,17 @@ const standoffSchema = z.object({
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition id="TariffLook" component={TariffLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="FlightCrateLook" component={FlightCrateLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="ResearchAssetLook0912" component={ResearchAssetLook0912} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="Dispatch0912"
         component={Ep0912} durationInFrames={3900}
         fps={30} width={1080} height={1920} schema={ep0912Schema} defaultProps={{captions:[]}}
         calculateMetadata={({props})=>({durationInFrames:(props as {total?:number}).total??3900})}/>
+      <Composition id="Dispatch0923"
+        component={Ep0923} durationInFrames={3907}
+        fps={30} width={1080} height={1920} schema={ep0923Schema}
+        defaultProps={{captions: []}} />
       <Composition id="Dispatch0919"
         component={Ep0919} durationInFrames={3900}
         fps={30} width={1080} height={1920} schema={ep0919Schema} defaultProps={{captions:[]}}

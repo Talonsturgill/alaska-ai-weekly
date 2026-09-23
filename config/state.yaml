@@ -2019,3 +2019,44 @@ dispatch_history:
     framing: push-detail into two-up comparison
     scale: insert to wide
     height: eye
+- date: '2026-09-23'
+  topic: Air Force offers about 4,700 acres at JBER, Eielson and Clear for AI data
+    centers while no public document carries the power draw
+  slug: dispatch-2026-09-23-one-variable
+  key_entities:
+  - U.S. Air Force
+  - Eielson AFB
+  - JBER
+  - Clear SFS
+  - Fairbanks North Star Borough
+  - Sarah Hollister
+  - Lisa Murkowski
+  - Grier Hopkins
+  - Golden Valley Electric
+  - Chugach Electric
+  archetype: the missing number
+  palette: Interior dusk violet, birch gold, copper wire, carbon blue
+  voice: edge-tts en-US-AndrewMultilingualNeural
+  stance: curious
+  angle: The land is measured to the acre and the power draw is not measured at all,
+    so the one number that decides whether a Fairbanks bill goes up or down is the
+    one nobody has published. Ask for the date it will be, not for the number.
+  hero: Statement
+  cast:
+  - Statement
+  - CostStack
+  - UnnamedValue
+  - Character
+  - House
+  - Block
+  - Dusk
+  composition:
+    pov: frontal-document
+    layout: split-compare
+    motion_vector: divide-and-settle
+    hero_treatment: document-as-subject
+    register: ruled-statement
+    camera_strategy: crane-down-then-hold
+    light_story: dusk-raking-left
+    palette: Interior dusk violet, birch gold, copper wire, carbon blue
+    metaphor: a ruled form filling in row by row, with one row that never does

@@ -1,16 +1,52 @@
 {
-  "backend": "gemini-tts",
-  "model": "gemini-3.1-flash-tts-preview",
-  "voice": "Sulafat",
-  "take": 1,
-  "takes": 3,
+  "run_date": "2026-09-23",
+  "pipeline": "edge-tts FALLBACK, not the standard Gemini native TTS path",
+  "why_fallback": "The Gemini API returned HTTP 402 on every call, not only TTS: 'Your prepayment credits are depleted.' The proxy was healthy and the key was valid, and the TTS models were visible in the model list. This is an account billing state and it blocks the default voice path on every run until it is topped up at ai.studio.",
+  "voice": "en-US-AndrewMultilingualNeural (Microsoft neural). NOT Sulafat, and not a clone.",
+  "voice_continuity_note": "Recent dispatches used the Gemini preset voice Sulafat. Today's narrator is a different voice. That is the most audible consequence of the billing failure and it is disclosed here rather than left for the owner to notice.",
+  "synthid_watermark": false,
+  "synthid_note": "No SynthID watermark, because this is not a Gemini synth. Previous runs disclosed one.",
+  "rate": "-15 percent, chosen by measurement: +0 percent came in at 96s of speech against a 112 to 130s band",
+  "lines": 19,
+  "words": 245,
+  "measured_runtime_s": 116.92,
+  "runtime_band_s": [
+    112,
+    130
+  ],
+  "runtime_verdict": "PASS, 116.92s",
+  "alignment": {
+    "method": "scripts/align_captions.py, faster-whisper forced alignment on the assembled stem",
+    "words_aligned": 242,
+    "transcript_match_vs_intended_script": 0.945,
+    "speech_end_s": 116.98,
+    "note": "edge-tts emitted ZERO WordBoundary events in this container, so caption timing comes from forced alignment. Caption TEXT comes from the locked script and never from the ASR, which is DISPATCH_STANDARD section 5 and which the first build of captions_from_words.py got wrong."
+  },
+  "audio_delivered": {
+    "integrated_lufs": -14.37,
+    "true_peak_dbtp": -3.18,
+    "lra_lu": 6.8,
+    "targets": {
+      "lufs": -14,
+      "true_peak_max": -1.0
+    },
+    "verdict": "PASS"
+  },
+  "sfx": {
+    "events": 39,
+    "distinct_kinds": 14,
+    "heaviest_kind_share": "7 of 39",
+    "risers": 0,
+    "consecutive_family_repeats": 0
+  },
+  "known_gap": "The pre-button dip is authored in the BED rather than placed in a VO gap. The stem has no back-half gap of 0.5s or more because edge-tts assembled every line with the same 0.42s breath. A dip is a level event, so the bed drops to near nothing for a third of a second before the button. A future run on the Gemini path gets the silence-based dip back.",
   "soundcheck": {
     "pass": true,
-    "score": 0.979,
-    "heard": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse. Green Spark put 170 kilowatts there in 2024, cooled by turbine water. Remember them. Cordova Electric runs an island grid, 18 megawatts, 1566 customers. No wire out. About 80% hydro from two creeks, 10.8 megawatts of diesel behind it. Guest demand wrong, and the co-op can't buy from a neighbor. It burns fuel. So here, a bad forecast costs gallons. In August, UAF said it won 725,000 from the Genesis mission. Aurora AI is a digital twin of Cordova, built from the co-op's records with machine learning. A phase one award, beginning October 1st, nine months, four partners, UAF share, 325,000. Now, those servers, not the projects, just a load on the same grid. Whatever it predicts, it predicts them too. So the test is narrow by June, gallons saved, or a demonstration. Richard Weiss, who leads it, calls that a really short period of performance. And Cordova is the easy case. Alaska's power cost program covers 193 diesel communities, 82,000 people. They need it most with the least data. So watch for gallons. What would convince you it worked?",
+    "score": 0.973,
+    "heard": "The Air Force is offering about 4,700 acres of Alaska for AI data centers. Some sits at Isle-San Air Force Base outside Fairbanks, where bills are among the nations highest. Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say. Nothing's awarded. Alaskans took positions anyway. Soucha resident Sarah Hollister told reporters, the jets always meant sacrifice. Swaped that for a data center's home, she said, and we've lost our way. Fairbanks asked for a pause on both its state and federal lists. Senator Lisa Murkowski says Alaska can't support them on an insecure energy base. She didn't say the land. She said the power. The Air Force calls it a partnership supporting its airmen and guardians. Your bill is wires and fuel. The wires split across everyone so that half is tall. A giant customer helps pay for them either way. That half thins. The fuel bites. A big load either brings its own power or competes for what's here. So it turns on how big and how big is what nobody has published. Mayor Greer Hopkins says defense spending void Fairbanks when the F-35s came. But a fighter wing comes with a budget. A data center comes with an appetite. So the ask is a megawatts. Nobody can publish those yet. Ask for the date. Does that number go public before the land is leased? The terms aren't written. That's the opening.",
     "checks": {
       "word_accuracy": {
-        "wer": 0.042,
+        "wer": 0.054,
         "pass": true
       },
       "no_leak": {
@@ -18,12 +54,12 @@
         "pass": true
       },
       "expressive": {
-        "pitch_std_semitones": 4.63,
-        "voiced_frac": 0.43,
+        "pitch_std_semitones": 4.29,
+        "voiced_frac": 0.52,
         "pass": true
       },
       "duration": {
-        "seconds": 114.28,
+        "seconds": 117.53,
         "pass": true
       },
       "loudness": {
@@ -31,32 +67,6 @@
         "pass": true
       }
     },
-    "diagnosis": "clean",
-    "seconds": 114.28,
-    "in_target_band": true,
-    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
-  },
-  "prompt_repairs": [
-    "pronunciation guide injected into the notes (4 entries)"
-  ],
-  "runtime_warning": null,
-  "all_reports": [
-    {
-      "pass": true,
-      "score": 0.974,
-      "diagnosis": "clean"
-    },
-    {
-      "pass": true,
-      "score": 0.979,
-      "diagnosis": "clean"
-    },
-    {
-      "pass": true,
-      "score": 0.977,
-      "diagnosis": "clean"
-    }
-  ],
-  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
-  "license": "Google Gemini API preset voice (per-use billing)"
+    "diagnosis": "clean"
+  }
 }

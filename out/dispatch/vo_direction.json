@@ -1,256 +1,241 @@
 {
-  "run_date": "2026-09-19",
-  "target_seconds": 120,
-  "script_word_count": 217,
+  "run_date": "2026-09-23",
   "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
-  "notes": "Style: curiosity with earned optimism. Interested, not impressed. The narrator admires the work and stays completely level about the fact that nothing has been measured yet, so the honesty reads as calm rather than sour and the good news reads as interesting rather than celebratory. Dry, concrete, no gotcha, no hype. Pace: the required runtime-anchored paragraph, verbatim from vo_synth_gemini._pace_line(120), which is the format's only reliable length control; at two hundred seventeen words the read has to FILL the two minutes, so the act boundaries carry real silence and the figures are set down one at a time rather than rattled. Arc: flat and concrete for the hook, then quiet and personal on 'Remember them.', a number-dense mechanism that changes cadence inside each line so it never becomes a list, a settle onto the thesis 'So here, a bad forecast costs gallons.' which takes the piece's first real weight, a genuine lift through the August news to the digital twin, then a two step deflation onto 'Four partners. U A F's share, three hundred twenty five thousand.' offered as a fair correction and never as a catch. A clear pivot on 'Now, those servers.', the payoff on 'Whatever it predicts, it predicts them too.', the Wies line handed over as a quotation rather than asserted, the widest and lowest register on the rest of Alaska, and the last two lines spoken directly to one person: 'So watch for gallons.' is the instruction the film exists to give, and 'What would convince you it worked?' is a real question, not a host teeing up comments.",
-  "style_prompt": "### DIRECTOR'S NOTES\nStyle: warm, grounded and genuinely curious, an Alaska public radio host who finds this interesting rather than impressive. Admire the work and stay level about what has not been measured yet. Dry, concrete honesty, never celebratory, never sour, never a gotcha.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nDelivery: let the short lines sit in silence rather than hurrying into the next one. Quiet and personal on \"Remember them.\" The lines of figures are not a list: change cadence inside each one, state a count, then set the next number down separately. Settle down onto \"a bad forecast costs gallons\" rather than pushing it. Lift through the August award and the digital twin, then let \"Four partners\" arrive smaller and calmer, as a fair correction and not as a catch. Turn the corner audibly on \"Now, those servers.\" Hand the Richard Wies line over as something he said. Widen and quiet down for the rest of Alaska. Speak the last two lines to one person in the room.",
+  "script_words": 245,
+  "script_lines": 19,
+  "target_seconds": 120,
+  "accepted_band_seconds": [112, 130],
+  "planned_seconds": 124,
+  "planned_rate_wps": 1.98,
+  "pace_basis": "2026-09-19 delivered stem: 217 words in 113.8 seconds equals 1.907 words per second with the runtime-anchored pace paragraph verbatim. 245 words at that rate is 128.5 seconds, too near the ceiling, so this plan keeps the paragraph untouched and rations beats harder than the previous draft: only TWO [short pause] tags in the whole film, no [slow] tag at all, one weightless [wry]. Everything else that needs air is directed in the notes, which costs no seconds. Predicted 124 seconds.",
+  "notes": "Style: warm grounded Alaska public radio, curious rather than alarmed, because nothing has been awarded and the film is about a process with a third option in it. Dry half smile on the open, real respect on the quoted Alaskans, a plain dry civic note on the Fairbanks pause line, genuine respect and zero irony on the Air Force partnership line, kitchen-table working-it-out in the arithmetic, warmth on the Fairbanks credit, hope on the button. Emotion lives here in the notes, never in an emotion tag. Energy ladder 3 2 4 3 2 4 2 3 1 3 2 4 3 2 4 3 2 4 3, no two neighbours equal, floor at the hinge on line eight, tops at the hook, Hollister's peak, either way, the Fairbanks credit and the ask.",
   "pronunciations": {
-    "Cordova": "kor-DOH-vuh",
-    "Greensparc": "GREEN-spark",
-    "Wies": "WEEZ, rhyming with bees",
-    "co op": "CO-op, two syllables"
+    "A I": "ay-eye, the two letters",
+    "Eielson": "EEL-son",
+    "Salcha": "SAL-chuh",
+    "Murkowski": "mer-KOW-skee",
+    "Grier": "GREER",
+    "F thirty fives": "eff thirty fives"
   },
+  "arc": [
+    {"act": "OPEN (0 to 3)", "shape": "flat factual wry on an enormous number, settle into the bills line, lift into a real question, cold drop on the offering, wry button on the positions"},
+    {"act": "TESTIMONY (4 to 8)", "shape": "respect and weight on Hollister, peak on lost our way, then the driest and plainest line in the block on the borough's pause, level reporting on Murkowski, then the quietest and most deliberate line in the piece"},
+    {"act": "THE COUNTER (9)", "shape": "the institution's own case, read straight and with genuine respect. If this line sounds sardonic the film reads as a hit piece and the thesis dies"},
+    {"act": "ARITHMETIC (10 to 13)", "shape": "kitchen table with a pencil, never a recitation, either way carries the logic, bites is the turn, the reveal slows"},
+    {"act": "RECONTEXT (14 to 15)", "shape": "warmest moment, genuine credit to a town that bet right once, then the best line in the script with real air between its halves"},
+    {"act": "ASK AND BUTTON (16 to 18)", "shape": "concession not scold, then the most direct level delivery in the film, then hope: an opening, not a defeat"}
+  ],
+  "style_prompt": "Style: Warm, grounded Alaska public radio. Curious rather than alarmed, because nothing has been decided yet and this is an investigation, not a verdict. Plain spoken, a dry half smile on the opening lines, real respect on every person and institution quoted, someone working out a bill at a kitchen table through the middle, and genuine hope on the final sentence. Never sour, never a sales pitch, and never sardonic about anyone.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean on the one key word in each line and let the numbers land. The question near the top is a real question a person is asking, not a setup. The line about Fairbanks asking for a pause is a plain civic note, the driest line in that stretch. The line about a partnership supporting Airmen and Guardians is the other side's honest case and is read straight, with respect and no irony at all. The two sentences about the land and the power are the quietest in the piece, with a real beat between them. The fighter wing line and the data center line are two separate thoughts, not one breath. The last sentence is hopeful, an opening and not a defeat.\nPronunciation: A I is the two letters, ay-eye. Eielson is EEL-son. Salcha is SAL-chuh. Murkowski is mer-KOW-skee. Grier is GREER. F thirty fives is eff thirty fives.",
   "lines": [
     {
       "idx": 0,
-      "text": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
+      "text": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
       "intent": "hook",
-      "emphasis": "powerhouse",
+      "emphasis": "acres",
       "energy": 3,
-      "pace": "baseline, concrete, no announcer lift",
-      "tags": [
-        " "
-      ],
+      "pace": "baseline, a small settle on the number",
+      "tags": [],
       "pause_before": false,
-      "why": "The picture is surprising on its own, so the read stays flat and factual and lets the image pull; the single cue sits after the place name, where the surprise actually starts."
+      "why": "The number is enormous and the read does not sell it. Flat and factual with a half smile is what makes it land, and it leaves the ladder room to move both ways from here."
     },
     {
       "idx": 1,
-      "text": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
-      "intent": "stat",
-      "emphasis": "turbine",
-      "energy": 4,
-      "pace": "baseline, let the kilowatt figure land, then lift slightly into the last three words",
+      "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
+      "intent": "setup",
+      "emphasis": "highest",
+      "energy": 2,
+      "pace": "baseline, slight weight on the last clause",
       "tags": [],
       "pause_before": false,
-      "why": "The cooling detail is the best image in the opening, so it gets the hook's only real lift, and that lift buys the fall that line two needs."
+      "why": "Drop under line zero so the lift into the question has somewhere to come from. The stake for a Fairbanks household arrives quietly, which is how a stake earns belief."
     },
     {
       "idx": 2,
-      "text": "Remember them.",
+      "text": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
       "intent": "hook",
-      "emphasis": "Remember",
-      "energy": 1,
-      "pace": "slow, a full beat before and after",
+      "emphasis": "decides",
+      "energy": 4,
+      "pace": "forward and genuinely asking, then a full stop and a hard, level landing on the last sentence",
       "tags": [],
-      "pause_before": true,
-      "why": "A direct instruction to one listener, so it drops out of narration into something quieter and more personal than anything around it; the four to one fall is the read's first real contrast."
+      "pause_before": false,
+      "why": "This is the film's one question and it has to sound genuinely asked, so the lift is real. The cold drop on the offering doesn't say is directed in the notes rather than tagged, because the period plus a level landing does the job and costs no runtime."
     },
     {
       "idx": 3,
-      "text": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.",
-      "intent": "stat",
-      "emphasis": "island",
+      "text": "Nothing's awarded. [wry] Alaskans took positions anyway.",
+      "intent": "wry",
+      "emphasis": "anyway",
       "energy": 3,
-      "pace": "plain on the first sentence, then step DOWN through the three facts, the last one flattest and final",
-      "tags": [
-        " "
-      ],
-      "pause_before": true,
-      "why": "The mechanism starts here and wants no colour, but three figures in a row will flatten if they are read at one pitch, so the pause separates the claim from the evidence and the run descends instead of listing."
+      "pace": "slightly quicker throwaway",
+      "tags": ["[wry]"],
+      "pause_before": false,
+      "why": "The half smile is earned here and nowhere else in the open. Dropping off the hook's four keeps the contrast and hands the testimony block a clean floor to start from. The tag is mid-line after a period, never line-initial."
     },
     {
       "idx": 4,
-      "text": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
-      "intent": "stat",
-      "emphasis": "diesel",
+      "text": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
+      "intent": "setup",
+      "emphasis": "sacrifice",
       "energy": 2,
-      "pace": "warmer and easier on the two creeks, then slower and cooler on the diesel figure",
-      "tags": [
-        " "
-      ],
+      "pace": "unhurried, warm, no irony",
+      "tags": [],
       "pause_before": false,
-      "why": "Two opposed resources, read below the line before so the split lands as arithmetic rather than drama; sits mid-line at a genuine change of cadence, which keeps the second figure from being swallowed by the first."
+      "why": "A quoted Alaskan gets respect, not a jeer. Sitting low here makes the next line's rise read as her feeling rather than as the narrator's opinion."
     },
     {
       "idx": 5,
-      "text": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
-      "intent": "reveal",
-      "emphasis": "burns",
+      "text": "Swap that for a data center's hum, she said, and we've lost our way.",
+      "intent": "stakes",
+      "emphasis": "lost",
       "energy": 4,
-      "pace": "baseline through the clause, then a real beat before the short second sentence",
+      "pace": "a touch slower on the last clause, weight not volume",
       "tags": [],
       "pause_before": false,
-      "why": "This is where the consequence bites, so it steps up out of the flattest line in the piece; 'burns' is the frame the fuel should hit on."
+      "why": "The emotional peak of the first half. Weight rather than heat, because the film is carrying her conviction, not endorsing or mocking it."
     },
     {
       "idx": 6,
-      "text": "So here, a bad forecast costs gallons.",
-      "intent": "reveal",
-      "emphasis": "gallons",
+      "text": "Fairbanks asked for a pause, on both its state and federal lists.",
+      "intent": "stat",
+      "emphasis": "pause",
       "energy": 2,
-      "pace": "slow and deliberate, weight by settling rather than pushing, land it and stop",
+      "pace": "plain, dry, matter of fact, no colour at all",
       "tags": [],
-      "pause_before": true,
-      "why": "The thesis and the piece's first real weight. It earns that by dropping underneath the line before, which is the dry level honesty the angle asks for, and the low landing gives the August news somewhere to rise from."
+      "pause_before": false,
+      "why": "The third testimony voice is an institution filing paperwork, and the flatness is the point: a town's formal ask sounds nothing like a neighbour on a trail, and the contrast right after the emotional peak is what makes both read as true."
     },
     {
       "idx": 7,
-      "text": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
-      "intent": "setup",
-      "emphasis": "won",
-      "energy": 4,
-      "pace": "warmer colour, letters of U A F spoken separately and unhurried, the figure allowed to land whole",
+      "text": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
+      "intent": "stat",
+      "emphasis": "insecure",
+      "energy": 3,
+      "pace": "even, let the full name land clean",
       "tags": [],
-      "pause_before": true,
-      "why": "Genuinely good news and the start of the only rise in the film; 'won' sits directly before the number and drives the figure without the narrator sounding impressed by it."
+      "pause_before": false,
+      "why": "Level and reportorial, lifting just off the civic note. Insecure is the load-bearing word because it names the input, which is exactly what the hinge is about to point at."
     },
     {
       "idx": 8,
-      "text": "AURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.",
-      "intent": "setup",
-      "emphasis": "twin",
-      "energy": 5,
-      "pace": "brightest line in the read but not faster, small breath at each comma, the letters A and I clearly separate",
-      "tags": [],
-      "pause_before": false,
-      "why": "The most interesting information in the film and the crest of the arc, which is exactly what makes the two step deflation that follows work."
+      "text": "She didn't say the land. [short pause] She said the power.",
+      "intent": "reveal",
+      "emphasis": "power",
+      "energy": 1,
+      "pace": "slow, deliberate, the quietest line in the film",
+      "tags": ["[short pause]"],
+      "pause_before": true,
+      "why": "The hinge of the whole piece. Dropping from three to one is the biggest move on the ladder, and a real beat between the two sentences is what turns a sentence into a realisation. This is one of only two pause tags in the film, because this is where a beat is worth its seconds."
     },
     {
       "idx": 9,
-      "text": "A Phase One award, beginning October first, nine months.",
-      "intent": "stat",
-      "emphasis": "nine",
+      "text": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
+      "intent": "setup",
+      "emphasis": "partnership",
       "energy": 3,
-      "pace": "cooling off, each clause set down separately, the last two words plainest",
+      "pace": "straight, even, generous, absolutely no lift of the eyebrow",
       "tags": [],
       "pause_before": false,
-      "why": "The clock. Reading it as three separate deposits rather than one phrase starts the descent from the crest without editorialising about the schedule."
+      "why": "This is the other side's honest case and the film means it. Read with irony it makes the whole piece a hit and the thesis dies, so the delivery here is the plainest kind of respect: state it as the institution states it, and let the audience weigh it."
     },
     {
       "idx": 10,
-      "text": "Four partners. U A F's share, three hundred twenty five thousand.",
-      "intent": "reveal",
-      "emphasis": "share",
+      "text": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
+      "intent": "setup",
+      "emphasis": "tall",
       "energy": 2,
-      "pace": "slow, even, a beat after the first sentence, no lean and no irony on the smaller number",
+      "pace": "conversational and close, a person explaining at a kitchen table",
       "tags": [],
       "pause_before": false,
-      "why": "A smaller number arriving right after a bigger one, and it must sound like a correction offered in good faith. Any lift or edge here turns it into a gotcha, so the level falls and the delivery stays flat."
+      "why": "Coming down and in changes the room from testimony to arithmetic. Tall is the picture the viewer is watching get drawn, so the voice hands it over rather than announcing it."
     },
     {
       "idx": 11,
-      "text": "Now, those servers.",
-      "intent": "setup",
-      "emphasis": "servers",
+      "text": "A giant customer helps pay for them either way. That half thins.",
+      "intent": "reveal",
+      "emphasis": "either way",
       "energy": 4,
-      "pace": "a clear beat before it, then turn the corner audibly, brighter than anything since the twin",
+      "pace": "lift on either way, then settle onto thins",
       "tags": [],
-      "pause_before": true,
-      "why": "A pivot, and it has to sound like one; the beat comes from silence rather than a tag because a tag can never open a line."
+      "pause_before": false,
+      "why": "Either way carries the entire logical load of the film, because it is the one thing in the bill that does not depend on the missing number. The jump from two to four is what marks it without a tag."
     },
     {
       "idx": 12,
-      "text": "Not the project's. Just a load on the same grid.",
-      "intent": "setup",
-      "emphasis": "load",
-      "energy": 2,
-      "pace": "flat and corrective, both sentences the same weight",
+      "text": "The fuel bites. A big load either brings its own power, or competes for what's here.",
+      "intent": "stakes",
+      "emphasis": "bites",
+      "energy": 3,
+      "pace": "even, hold the fork level in the second sentence, do not favour either branch",
       "tags": [],
       "pause_before": false,
-      "why": "The mandatory honesty beat about the two halves not being linked, read as a correction of the record and never as a wink."
+      "why": "Bites is the turn from settled to unsettled. Dropping back off four keeps the fork neutral, which the angle requires: the film never narrates which branch is likelier."
     },
     {
       "idx": 13,
-      "text": "Whatever it predicts, it predicts them too.",
+      "text": "So it turns on how big. And how big is what nobody has published.",
       "intent": "reveal",
-      "emphasis": "them",
-      "energy": 4,
-      "pace": "baseline, lean on the last two words, this is the hook's promise being paid",
+      "emphasis": "published",
+      "energy": 2,
+      "pace": "noticeably slower through the second sentence, quiet rather than loud",
       "tags": [],
-      "pause_before": false,
-      "why": "The payoff of 'Remember them.' The picture plugs the servers into the grid on 'them', so the emphasis has to be exactly there."
+      "pause_before": true,
+      "why": "The reveal the whole diagram was built for. It is slowed by direction rather than by a tag this time, to keep the runtime off the ceiling, and quiet beats loud here anyway because the subject of the sentence is an absence."
     },
     {
       "idx": 14,
-      "text": "So the test is narrow. By June, gallons saved, or a demonstration?",
-      "intent": "stakes",
-      "emphasis": "demonstration",
-      "energy": 3,
-      "pace": "measured, the question genuinely open at the end, no rhetorical dip",
-      "tags": [
-        " "
-      ],
-      "pause_before": true,
-      "why": "The honest heart. The question is asked straight, and the pause holds open the empty measured slot the image shows here."
+      "text": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
+      "intent": "setup",
+      "emphasis": "buoyed",
+      "energy": 4,
+      "pace": "warmer and more open than anything before it",
+      "tags": [],
+      "pause_before": false,
+      "why": "The warmest moment in the film and genuine credit to a town that made a good bet once. The lift from two is what tells the audience this is not the setup for a dunk."
     },
     {
       "idx": 15,
-      "text": "Richard Wies, who leads it, calls that a really short period of performance.",
-      "intent": "stakes",
-      "emphasis": "short",
-      "energy": 2,
-      "pace": "slower, handed over rather than asserted, the closing phrase set slightly apart as his words",
-      "tags": [],
-      "pause_before": false,
-      "why": "It must sound QUOTED. The level drops and the narrator reports his phrase rather than agreeing with it out loud, which is what keeps the honesty from becoming an opinion."
+      "text": "But a fighter wing comes with a budget. [short pause] A data center comes with an appetite.",
+      "intent": "reveal",
+      "emphasis": "appetite",
+      "energy": 3,
+      "pace": "slow and separated, two thoughts and not one breath",
+      "tags": ["[short pause]"],
+      "pause_before": true,
+      "why": "The best line in the script, and it only works if the halves are not rushed together. Settling under the warmth of fourteen lets the last word do the work. The second and last pause tag in the film."
     },
     {
       "idx": 16,
-      "text": "And Cordova is the easy case.",
-      "intent": "reveal",
-      "emphasis": "easy",
-      "energy": 3,
-      "pace": "level, almost offhand, then stop",
+      "text": "So the ask isn't megawatts. Nobody can publish those yet.",
+      "intent": "stakes",
+      "emphasis": "Nobody",
+      "energy": 2,
+      "pace": "even and fair, no edge",
       "tags": [],
       "pause_before": false,
-      "why": "A cold turn delivered without relish; saying it plainly is what makes the widening that follows land."
+      "why": "This is the concession the angle insists on, so it has to sound like the film conceding rather than the film scolding. Low and generous, which also clears the runway for the ask."
     },
     {
       "idx": 17,
-      "text": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
-      "intent": "stat",
-      "emphasis": "people",
-      "energy": 2,
-      "pace": "slow on both figures, a breath at the comma, the last two words wider and unhurried",
+      "text": "Ask for the date. Does that number go public before the land is leased?",
+      "intent": "button",
+      "emphasis": "date",
+      "energy": 4,
+      "pace": "direct and level, the plainest delivery in the piece, a real question mark at the end without singsong",
       "tags": [],
-      "pause_before": true,
-      "why": "Two counts in one line, and the second is the one that means something; widening on 'people' turns a statistic into a place without raising the volume."
+      "pause_before": false,
+      "why": "The film's actual instruction. Level and direct to camera, because an instruction that sounds performed sounds optional."
     },
     {
       "idx": 18,
-      "text": "They need it most, with the least data.",
-      "intent": "stakes",
-      "emphasis": "least",
-      "energy": 1,
-      "pace": "quietest line in the film, set the second clause down carefully",
-      "tags": [],
-      "pause_before": false,
-      "why": "The emotional low point in stakes rather than in volume; the read gets smaller so the sting is stated instead of sold."
-    },
-    {
-      "idx": 19,
-      "text": "So watch for gallons.",
+      "text": "The terms aren't written. That's the opening.",
       "intent": "button",
-      "emphasis": "gallons",
-      "energy": 4,
-      "pace": "clean and direct, a real beat before it",
+      "emphasis": "opening",
+      "energy": 3,
+      "pace": "settle, warm lift on the final word",
       "tags": [],
       "pause_before": true,
-      "why": "The instruction the whole film exists to give, and the third time 'gallons' carries the throughline, so it is the one line that steps up out of the low stretch."
-    },
-    {
-      "idx": 20,
-      "text": "What would convince you it worked?",
-      "intent": "button",
-      "emphasis": "convince",
-      "energy": 2,
-      "pace": "slow, warm, to one person, no bright upward host lilt",
-      "tags": [],
-      "pause_before": true,
-      "why": "A real question to a real person, so it settles back down and stays conversational; an engagement-bait lilt here would undo the whole register."
+      "why": "The whole film turns on that last word sounding hopeful rather than grim. Unwritten terms are the good news, so the tone rises into opening instead of falling off it."
     }
   ],
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty. Neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, grounded and genuinely curious, an Alaska public radio host who finds this interesting rather than impressive. Admire the work and stay level about what has not been measured yet. Dry, concrete honesty, never celebratory, never sour, never a gotcha.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nDelivery: let the short lines sit in silence rather than hurrying into the next one. Quiet and personal on \"Remember them.\" The lines of figures are not a list: change cadence inside each one, state a count, then set the next number down separately. Settle down onto \"a bad forecast costs gallons\" rather than pushing it. Lift through the August award and the digital twin, then let \"Four partners\" arrive smaller and calmer, as a fair correction and not as a catch. Turn the corner audibly on \"Now, those servers.\" Hand the Richard Wies line over as something he said. Widen and quiet down for the rest of Alaska. Speak the last two lines to one person in the room.\nTranscript:\nIn Cordova, Alaska, servers run inside a hydroelectric powerhouse.\nGreensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.\nRemember them.\nCordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.\nAbout eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.\nGuess demand wrong and the co op can't buy from a neighbor. It burns fuel.\nSo here, a bad forecast costs gallons.\nIn August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.\nAURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.\nA Phase One award, beginning October first, nine months.\nFour partners. U A F's share, three hundred twenty five thousand.\nNow, those servers.\nNot the project's. Just a load on the same grid.\nWhatever it predicts, it predicts them too.\nSo the test is narrow. By June, gallons saved, or a demonstration?\nRichard Wies, who leads it, calls that a really short period of performance.\nAnd Cordova is the easy case.\nAlaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.\nThey need it most, with the least data.\nSo watch for gallons.\nWhat would convince you it worked?"
+  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Warm, grounded Alaska public radio. Curious rather than alarmed, because nothing has been decided yet and this is an investigation, not a verdict. Plain spoken, a dry half smile on the opening lines, real respect on every person and institution quoted, someone working out a bill at a kitchen table through the middle, and genuine hope on the final sentence. Never sour, never a sales pitch, and never sardonic about anyone.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean on the one key word in each line and let the numbers land. The question near the top is a real question a person is asking, not a setup. The line about Fairbanks asking for a pause is a plain civic note, the driest line in that stretch. The line about a partnership supporting Airmen and Guardians is the other side's honest case and is read straight, with respect and no irony at all. The two sentences about the land and the power are the quietest in the piece, with a real beat between them. The fighter wing line and the data center line are two separate thoughts, not one breath. The last sentence is hopeful, an opening and not a defeat.\nPronunciation: A I is the two letters, ay-eye. Eielson is EEL-son. Salcha is SAL-chuh. Murkowski is mer-KOW-skee. Grier is GREER. F thirty fives is eff thirty fives.\nTranscript:\nThe Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.\nSome sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.\nDoes that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.\nNothing's awarded. [wry] Alaskans took positions anyway.\nSalcha resident Sarah Hollister told reporters the jets always meant sacrifice.\nSwap that for a data center's hum, she said, and we've lost our way.\nFairbanks asked for a pause, on both its state and federal lists.\nSenator Lisa Murkowski says Alaska can't support them on an insecure energy base.\nShe didn't say the land. [short pause] She said the power.\nThe Air Force calls it a partnership supporting its Airmen and Guardians.\nYour bill is wires and fuel. The wires split across everyone, so that half is tall.\nA giant customer helps pay for them either way. That half thins.\nThe fuel bites. A big load either brings its own power, or competes for what's here.\nSo it turns on how big. And how big is what nobody has published.\nMayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.\nBut a fighter wing comes with a budget. [short pause] A data center comes with an appetite.\nSo the ask isn't megawatts. Nobody can publish those yet.\nAsk for the date. Does that number go public before the land is leased?\nThe terms aren't written. That's the opening."
 }

@@ -1,161 +1,160 @@
 {
-  "run_date": "2026-09-19",
-  "title": "Watch For Gallons",
-  "target_seconds": 120,
-  "caption_fixups": {
-    "U A F": "UAF",
-    "co op": "co-op",
-    "AURORA A I": "AURORA-AI",
-    "October first": "October 1st"
-  },
+  "run_date": "2026-09-23",
+  "title": "One Variable",
+  "target_seconds": [
+    112,
+    130
+  ],
+  "words_band": [
+    200,
+    220
+  ],
+  "pace_basis": "measured on the 2026-09-19 delivered stem: 217 words ran 113.8 seconds, which is 1.907 words per second with the runtime-anchored pace paragraph in the director's notes. Planning number for this script, not a guess.",
+  "note": "Numbers and acronyms are written PHONETICALLY here for the synth. On screen they render as numerals and correct spelling. Every factual line carries a claim id.",
   "lines": [
     {
+      "text": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
       "idx": 0,
-      "text": "In Cordova, Alaska, servers run inside a hydroelectric powerhouse.",
-      "claims": [
-        "c15"
-      ]
-    },
-    {
-      "idx": 1,
-      "text": "Greensparc put a hundred seventy kilowatts there in twenty twenty four, cooled by turbine water.",
-      "claims": [
-        "c15"
-      ]
-    },
-    {
-      "idx": 2,
-      "text": "Remember them.",
-      "claims": []
-    },
-    {
-      "idx": 3,
-      "text": "Cordova Electric runs an island grid. Eighteen megawatts, fifteen sixty six customers, no wire out.",
-      "claims": [
-        "c12b",
-        "c12c"
-      ]
-    },
-    {
-      "idx": 4,
-      "text": "About eighty percent hydro, from two creeks. Ten point eight megawatts of diesel behind it.",
-      "claims": [
-        "c12a",
-        "c12c",
-        "c12d"
-      ]
-    },
-    {
-      "idx": 5,
-      "text": "Guess demand wrong and the co op can't buy from a neighbor. It burns fuel.",
-      "claims": [
-        "c12a"
-      ]
-    },
-    {
-      "idx": 6,
-      "text": "So here, a bad forecast costs gallons.",
-      "claims": []
-    },
-    {
-      "idx": 7,
-      "text": "In August, U A F said it won seven hundred twenty five thousand from the Genesis Mission.",
       "claims": [
         "c1",
+        "c3"
+      ],
+      "display": "The Air Force is offering about 4,700 acres of Alaska for AI data centers."
+    },
+    {
+      "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
+      "idx": 1,
+      "claims": [
+        "c2",
+        "c15"
+      ]
+    },
+    {
+      "text": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
+      "idx": 2,
+      "claims": [
+        "c11",
+        "c3"
+      ]
+    },
+    {
+      "text": "Nothing's awarded. Alaskans took positions anyway.",
+      "idx": 3,
+      "claims": [
+        "c10"
+      ]
+    },
+    {
+      "text": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
+      "idx": 4,
+      "claims": [
+        "c5"
+      ]
+    },
+    {
+      "text": "Swap that for a data center's hum, she said, and we've lost our way.",
+      "idx": 5,
+      "claims": [
+        "c5"
+      ]
+    },
+    {
+      "text": "Fairbanks asked for a pause, on both its state and federal lists.",
+      "idx": 6,
+      "claims": [
         "c7"
       ]
     },
     {
+      "text": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
+      "idx": 7,
+      "claims": [
+        "c6"
+      ]
+    },
+    {
+      "text": "She didn't say the land. She said the power.",
       "idx": 8,
-      "text": "AURORA A I is a digital twin of Cordova, built from the co op's records, with machine learning.",
       "claims": [
-        "c6",
-        "c11"
+        "c6"
       ]
     },
     {
+      "text": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
       "idx": 9,
-      "text": "A Phase One award, beginning October first, nine months.",
       "claims": [
-        "c14",
-        "c3"
+        "c13"
       ]
     },
     {
+      "text": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
       "idx": 10,
-      "text": "Four partners. U A F's share, three hundred twenty five thousand.",
       "claims": [
-        "c8",
-        "c2"
+        "c15"
       ]
     },
     {
+      "text": "A giant customer helps pay for them either way. That half thins.",
       "idx": 11,
-      "text": "Now, those servers.",
       "claims": [
         "c15"
       ]
     },
     {
+      "text": "The fuel bites. A big load either brings its own power, or competes for what's here.",
       "idx": 12,
-      "text": "Not the project's. Just a load on the same grid.",
-      "claims": [
-        "c15"
-      ]
-    },
-    {
-      "idx": 13,
-      "text": "Whatever it predicts, it predicts them too.",
-      "claims": [
-        "c11"
-      ]
-    },
-    {
-      "idx": 14,
-      "text": "So the test is narrow. By June, gallons saved, or a demonstration?",
-      "claims": [
-        "c3"
-      ]
-    },
-    {
-      "idx": 15,
-      "text": "Richard Wies, who leads it, calls that a really short period of performance.",
       "claims": [
         "c16",
-        "c9"
+        "c17"
       ]
     },
     {
+      "text": "So it turns on how big. And how big is what nobody has published.",
+      "idx": 13,
+      "claims": [
+        "c11",
+        "c16"
+      ]
+    },
+    {
+      "text": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
+      "idx": 14,
+      "claims": [
+        "c12"
+      ],
+      "display": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F-35s came."
+    },
+    {
+      "text": "But a fighter wing comes with a budget. A data center comes with an appetite.",
+      "idx": 15,
+      "claims": [
+        "c12"
+      ],
+      "display": "But a fighter wing comes with a budget. A data center comes with an appetite."
+    },
+    {
+      "text": "So the ask isn't megawatts. Nobody can publish those yet.",
       "idx": 16,
-      "text": "And Cordova is the easy case.",
       "claims": [
-        "c12a"
+        "c11",
+        "c10"
       ]
     },
     {
+      "text": "Ask for the date. Does that number go public before the land is leased?",
       "idx": 17,
-      "text": "Alaska's power cost program covers a hundred ninety three diesel communities, eighty two thousand people.",
       "claims": [
-        "c13"
+        "c3",
+        "c14"
       ]
     },
     {
+      "text": "The terms aren't written. That's the opening.",
       "idx": 18,
-      "text": "They need it most, with the least data.",
       "claims": [
-        "c13"
+        "c10",
+        "c14"
       ]
-    },
-    {
-      "idx": 19,
-      "text": "So watch for gallons.",
-      "claims": []
-    },
-    {
-      "idx": 20,
-      "text": "What would convince you it worked?",
-      "claims": []
     }
-  ],
-  "word_count": 217
+  ]
 }

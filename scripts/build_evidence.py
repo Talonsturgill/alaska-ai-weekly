@@ -36,49 +36,56 @@ EV = os.path.join(REPO, "out", "evidence")
 # strike, slam or landing at +0.20s where the contact IS the event. Each value is clamped
 # to its own beat's length, so a short beat samples inside itself rather than past its end.
 # Retain the date guard: a future film must author its own action selection.
-MOVE_RUN_DATE = "2026-09-19"
+MOVE_RUN_DATE = "2026-09-23"
 LINE_START_ACTIONS = {}
+# PEAK_AFTER IS THE SECONDS FROM A BEAT'S ONSET TO THE MIDDLE OF ITS FILMSTRIP, and it
+# was a flat 0.35 for every move in the film. The engine's eases run 20 to 40 frames on a
+# fast-out curve, so peak velocity lands roughly 0.2 of the way in, and 0.35s put most
+# strips on the settle instead of the move. evidence_coverage_check flagged nineteen
+# anchors under its 3% floor, and on 2026-09-23 a judge read one of them as a defect in
+# the FILM: "the named signature move does not execute", on a shove that executes fine
+# 1.5s before the strip was taken. An anchor that photographs the wrong moment does not
+# produce a softer score, it produces a false finding, which is more expensive.
 MOVES = [
-    ('fan_blades_turning', 1, 0.18),
-    ('weld_bead_runs', 2, 1.08),
-    ('greensparc_plate_slides_into_key', 3, 0.13),
-    ('crane_down_past_deck_edge', 4, 1.33),
-    ('stencilled_boxes_drift_in', 5, 0.13),
-    ('turbine_shaft_turns', 6, 0.13),
-    ('drip_lands_on_measured_box', 7, 0.78),
-    ('mask_wipe_opens_the_valley', 8, 0.13),
-    ('pull_back_off_the_island', 9, 0.13),
-    ('diesel_stack_lights', 10, 0.98),
-    ('push_in_on_sourdough', 11, 0.13),
-    ('fuel_needle_slams_over', 12, 0.13),
-    ('gallons_drop_into_the_drum', 13, 0.13),
-    ('ledger_wall_assembles', 14, 1.38),
-    ('partner_plates_land', 15, 0.13),
-    ('cyan_twin_draws_itself', 16, 0.13),
-    ('function_plates_slam_up', 17, 0.58),
-    ('bar_overshoots_and_settles', 18, 0.68),
-    ('twin_freezes_mid_draw', 19, 0.88),
-    ('schedule_stamp_comes_down', 20, 0.13),
-    ('outline_sags_away', 21, 0.68),
-    ('whip_back_to_the_rack', 22, 0.13),
-    ('demand_bar_builds_from_floor', 23, 0.68),
-    ('plate_snaps_across_rack', 24, 0.13),
-    ('bar_climbs_past_the_plate', 25, 0.13),
-    ('forecast_trace_draws', 26, 0.13),
-    ('server_block_slides_under_line', 27, 0.28),
-    ('pull_out_to_the_two_boxes', 28, 0.23),
-    ('hatching_crawls_across_measured', 29, 0.18),
-    ('bracket_extends_and_withdraws', 30, 0.13),
-    ('sourdough_steps_between_boxes', 31, 0.13),
-    ('quote_plate_rises', 32, 1.33),
-    ('door_swings_light_crosses_water', 33, 0.48),
-    ('second_creek_spills_past_intake', 34, 0.13),
-    ('climb_off_the_island', 35, 1.08),
-    ('dots_bloom_across_alaska', 36, 1.03),
-    ('cyan_thread_stretches_to_dot', 37, 0.13),
-    ('match_cut_to_the_powerhouse_door', 38, 0.13),
-    ('drip_lands_on_the_empty_box', 39, 0.13),
-    ('question_plate_rises', 40, 0.28),
+    ('the_whole_column_of_rows_cascading', 1, 0.20),
+    ('the_dashed_baseline_crawling_while_the', 2, 0.20),
+    ('the_counter_hitting_its_stop_and', 3, 0.20),
+    ('the_crane_descending_past_the_treeline', 4, 0.20),
+    ('the_bar_rising_to_its_stop', 5, 0.20),
+    ('the_head_tilting_up', 6, 0.20),
+    ('the_shear_landing_and_the_tip', 7, 0.20),
+    ('the_dashed_baseline_crawling', 8, 0.20),
+    ('the_pullback_revealing_relative_size', 9, 0.20),
+    ('the_stamp_hanging_unlanded', 10, 0.20),
+    ('the_walking_figure', 11, 0.20),
+    ('the_jets_crossing', 12, 0.20),
+    ('the_contrail_flattening_to_a_line', 13, 0.20),
+    ('the_words_typing_in', 14, 0.20),
+    ('the_two_lists_building', 15, 0.20),
+    ('the_chip_sliding_toward_the_lease', 16, 0.20),
+    ('the_plate_rising', 17, 0.20),
+    ('her_two_fingers_pushing_the_land', 18, 0.20),
+    ('the_raking_key_travelling_along_the', 19, 0.20),
+    ('the_figure_walking_into_the_widening', 20, 0.20),
+    ('the_plate_rising_under_the_figure', 21, 0.20),
+    ('the_card_unfolding_into_the_stack', 22, 0.20),
+    ('the_two_halves_shoving_apart', 23, 0.20),
+    ('the_share_bars_standing_up_over', 24, 0.20),
+    ('the_shares_compressing_together', 25, 0.20),
+    ('the_fuel_half_straining_up', 26, 0.20),
+    ('the_generation_block_slotting_in', 27, 0.20),
+    ('the_fuel_half_climbing', 28, 0.20),
+    ('the_half_reaching_for_the_empty', 29, 0.20),
+    ('windows_coming_on_street_by_street', 30, 0.20),
+    ('the_two_silhouettes_settling_onto_the', 31, 0.20),
+    ('the_crate_opening', 32, 0.20),
+    ('the_empty_plate_tipping', 33, 0.20),
+    ('the_plate_rim_grinding_round_as', 34, 0.20),
+    ('the_hand_coming_down_and_the', 35, 0.20),
+    ('the_hand_settling_on_the_solid', 36, 0.20),
+    ('the_two_tokens_swapping_order', 37, 0.20),
+    ('the_pen_hovering_never_landing', 38, 0.20),
+    ('the_row_lifting_and_holding', 39, 0.20),
 ]
 
 
