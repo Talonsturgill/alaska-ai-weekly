@@ -3631,3 +3631,96 @@ window returns FRESH, and this is the follow-up that record eventually earned: t
 UAF announcement, the $725,000, the islanded grid, the powerhouse data centre that is not
 part of it, the Phase 1 timeline and the principal investigator's own words about nine
 months being a really short period of performance.
+
+---
+
+## 2026-09-23 — "One Variable"
+
+Shipped: the Air Force is offering about 4,700 acres of Alaska federal land at JBER, Eielson
+and Clear for commercial AI data center development, and no power draw, water draw or project
+size for those parcels has been published anywhere a resident can open. The film's argument is
+that a household bill turns on that one unpublished number, so the useful ask is not the
+megawatts, which nobody can publish before there is a project, but the DATE the figure becomes
+public and whether the land is leased before then. Stance curious. Hero `Statement`.
+
+**THE GEMINI ACCOUNT IS OUT OF CREDIT AND IT WILL BLOCK EVERY FUTURE RUN'S DEFAULT VOICE PATH.**
+Not a bug and not fixable from here. `generativelanguage.googleapis.com` returns HTTP 402 on
+every call including plain text generation: "Your prepayment credits are depleted." The proxy is
+healthy, the key is valid, and the TTS models are visible in the model list. It needs a top-up at
+ai.studio. Escalated in the Gmail draft and in the completion notification.
+
+**The sanctioned fallback had never been run in this container and could not have been.** Three
+independent faults in `scripts/dispatch_vo_edge.py`, each of which alone is fatal, all now fixed
+at the root rather than worked around:
+- aiohttp does not read `HTTPS_PROXY` unless a session is constructed with `trust_env=True`, and
+  outbound TLS is re-terminated by the agent proxy so the chain has to verify against
+  `/root/.ccr/ca-bundle.crt`. Either fault produces the identical and badly misleading line,
+  "self-signed certificate in certificate chain", which reads as a broken remote and is not one.
+- it invoked the playwright-bundled ffmpeg, which is a video-only build with no mp3 decoder, on
+  edge-tts output, which is mp3. Exit 183 and "Invalid data found when processing input", which
+  reads as a corrupt download. The file was fine and the decoder was missing. It now prefers a
+  system ffmpeg.
+- it accepted only the original list-of-bare-strings script schema. The canonical
+  `vo_script.json` has been a list of dicts since the claims gate started reading it. A fallback
+  that only accepts a shape nothing writes any more is not a fallback.
+
+**`scripts/captions_from_words.py` (new), and the mistake it made first.** The fallback produced
+no cue file, and feeding `align_captions.py`'s raw output to `build_scenes.py` dies three layers
+deep on a bare `KeyError: 1`. The first build of the adapter joined the ASR's OWN WORDS into the
+cue text, and the rough cut burned "Isle -San" for Eielson and "home" for hum onto the screen.
+DISPATCH_STANDARD section 5 already says caption text comes from the script and only timing comes
+from the audio; the adapter had quietly inverted it. It now takes text from the locked script,
+honours an optional per-line `display` spelling so 4,700 renders as a numeral instead of the
+phonetic form the synth needs, and falls back to a line's measured span rather than dropping a
+caption when alignment leaves a line empty.
+
+**`scripts/shot_conform_check.py` (new). The 2026-09-19 deadlock, closed.** That run handed
+forward a conflict between `strip_name_check` and `say_it_show_it`, which read the same
+`beat["shot"]` field from opposite ends: it refiled 22 beats by hand to quiet the first, turned
+the second red, reverted the lot, and left it. The two gates never contradicted each other. The
+board's shot field is what decides which words play over a beat, so when the engine animates it
+elsewhere the ENGINE is drawing the picture during the wrong narration, and refiling the board
+was fixing the wrong side. Measured on that run's own shipped artifacts: 40 beats, 31
+disagreements, 22 engine drift and 9 beats no shot animates, and ZERO board-vs-script. Advisory
+in preflight with the promotion condition written down; its real home is Gate 0A, where a board
+costs nothing to conform. Green at Gate 0A this run, before any scene code existed.
+
+**`video-engine/src/lib/tariff.tsx` (net-new).** The shelf could draw one stat, a sheet with
+body, a records room, an epistemic status and a thing that is not there. It could not draw a
+BILL, and it could not draw a cost that splits into named parts and divides across people.
+Alaska's news is rate cases, tariffs, Power Cost Equalization and borough budgets nearly every
+week, and every one of those is that second picture. `Statement` composes the absence grammar for
+an unfilled row rather than reimplementing it; `CostStack` is one component run twice, which is
+what lets a film show the same load producing opposite answers without two hand-built diagrams
+disagreeing about their own geometry.
+
+**`lib/absence.tsx` craft advance: a missing VALUE.** The grammar drew a missing OBJECT, an
+unfilled silhouette. A form row that was never filled in is a different problem, because a dashed
+outline AROUND empty space reads as a box and a box is a thing. The dash goes on the baseline and
+the slot stays genuinely empty. The look-dev caught this file's own inconsistency: the first build
+tinted the void with `VOID_TINT` and rendered exactly the grey box the docstring warns about.
+
+**What the taste gates bought, all of it before a frame existed.** Gate 0C found a ship-blocker
+that was arithmetic: the shot map summed to 124.0s against a delivered 116.9s stem, so shot 13,
+the button and the last VO line were all scheduled past the end of the audio. Gate 0B found the
+board spending its climax at second eighteen, a bar flicking between two heights seventy seconds
+before the signature frame does the same thing. It also found an unspecified "quoted plate" beside
+a named US Senator, which would have had the renderer invent a quotation, and a `FED FROM HERE`
+annotation that decided the exact question the signature frame spends fourteen seconds refusing to
+decide. All fixed as JSON edits.
+
+**Known simplification, disclosed rather than hidden.** The film says a giant customer helps pay
+for the wires either way. A fully behind-the-meter load on federal ground might not be a retail
+customer at all and might contribute little to the shared wires. The caption was tightened to "a
+giant new customer that stays on the grid"; the VO was already synthesized and says the looser
+form. Worth fixing in a future run's script rather than a re-synth here.
+
+**`config/brand.yaml` contradicted the routine and the linter.** Line 25 offered a colon as an
+acceptable pause while guardrail 5 bans it outright and `caption_check.py` hard-fails one, so a
+writer who followed the brand file was sent back by the tool. Corrected in place with the reason.
+
+**Deferred, with the plan.** `scripts/text_fit_check.py` reports five failing strings, all of them
+in the historical `Episode.tsx` and none in this run's episode. They are real and they are somebody
+else's film. The fix is to measure those four plates against their strings and widen them, which
+needs the episode opened and re-rendered to verify, and re-rendering a shipped historical episode
+is not this run's business.

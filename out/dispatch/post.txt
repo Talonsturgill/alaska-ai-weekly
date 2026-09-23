@@ -1,16 +1,14 @@
 The Air Force is offering about 4,700 acres of Alaska for AI data centers. Nothing public says what they would draw.
 
-Air and Space Forces Magazine counts twelve parcels across Joint Base Elmendorf-Richardson, Eielson and Clear. The land has a public number on it. The power draw, the water draw and the project size do not, in anything a resident can open. As of mid September no projects had been awarded.
+Air and Space Forces Magazine counts twelve parcels across Joint Base Elmendorf-Richardson, Eielson and Clear. The land has a public number on it. No public document carries the power draw, the water draw or the project size. As of mid September no projects had been awarded.
 
-That gap is doing real work. Salcha resident Sarah Hollister told reporters the jets always meant sacrifice, and that a data center's hum would show her we had lost our way. Per KUAC the Fairbanks North Star Borough Assembly put a pause request on both its state and its federal legislative lists. Senator Lisa Murkowski says she is not a proponent at JBER or the Interior installations because Alaska can't support them on an insecure energy base. She didn't name the land. She named the power.
+That gap is doing real work. Salcha resident Sarah Hollister told reporters the jets always meant sacrifice. She said a data center's hum would show her we had lost our way. Per KUAC the Fairbanks North Star Borough Assembly put a pause request on both its state and its federal legislative lists. Senator Lisa Murkowski says she is not a proponent at JBER or the Interior installations because Alaska can't support them on an insecure energy base. She didn't name the land. She named the power.
 
-Start with the bill itself. It is roughly two things, the wires and the fuel. The wires are a fixed cost split across everyone on the line. Fairbanks has few customers to split them over and some of the nation's highest utility costs. A giant new customer that stays on the grid helps pay for those wires, so that half gets thinner. The fuel half is the one that bites. Chugach said as much back in May. It doesn't have the gas to serve a large data center today, it does have generation capacity, and the answer depends on the size of the project and the contract.
+Start with the bill itself. It is roughly two things, the wires and the fuel. The wires are a fixed cost split across everyone on the line. Fairbanks already carries some of the nation's highest utility costs. A giant new customer that stays on the grid helps pay for those wires. That half gets thinner. The fuel half is the one that bites. Its size is the whole question. Golden Valley, the Fairbanks utility, said in May it can't presently support a large data center. Chugach, down in Anchorage on a different system, put the general rule on the record the same month. It doesn't have the gas for a large one. It does have generation capacity. And the answer depends on the size of the project and the contract.
 
-The variable that decides it is the one number nobody has published.
+So the useful ask is not megawatts. Nobody can publish those before there is a project. A lease solicitation comes before a project by design. The useful ask is a date. At what stage does the load figure become public, and is the land leased before or after that stage? That is answerable today.
 
-So the useful ask is not megawatts. Nobody can publish those before there is a project, and a lease solicitation comes before a project by design. The useful ask is a date. At what stage does the load figure become public, and is the land leased before or after that stage? That's answerable today, with nothing designed.
-
-As of mid September nothing had been awarded and the terms weren't written. That's not a loss. It's the only moment this is still a question.
+As of mid September nothing had been awarded. No lease is signed yet. That's the opening, not the loss.
 
 Should the load figure be public before the land is leased, or is asking for that the same as asking for nothing?
 
