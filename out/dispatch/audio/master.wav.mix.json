@@ -3,18 +3,18 @@
   "kind": "mix",
   "state": "complete",
   "sources": {
-    "out/dispatch/episode_props.json": "007872e450b5d43b2eae42043496ac36d691507031e5ab336f43cef05de2db98",
+    "out/dispatch/episode_props.json": "82951cd942f76698f3bceec24c1bfa13e0e9079c48f88f8b04c3328e65b54529",
     "out/dispatch/music_credit.json": "262ea331982000e46601ee7f153d790d437071be1ba2081578fec13db12f80a0",
-    "out/dispatch/storyboard.json": "cb83bcf4e38ccbd23509a1813996fc97689cf6836da20f534c41e74a2b448481",
-    "out/dispatch/vo_lines.json": "46af85ca65b1e14e9488aff1624177d712a098db123c73e3f1fde82b2e634fd0",
-    "scripts/dispatch_mix.py": "3d539678896e1774c3c34ddc1033c8647663771a96e7b81497b57377a02e51eb",
+    "out/dispatch/storyboard.json": "35ab41d51aaac730c9c87b3543400ebf090861c4085c7bcceba9c16fa4f7573f",
+    "out/dispatch/vo_lines.json": "b59ef9090ddb0e75945f5a02e72edd5189c1bd8993df65a8b57c0e34ebd20be7",
+    "scripts/dispatch_mix.py": "0b2acf2391e374e1fb4a0cffb28d0c2f2901b22a92bff3375b18f55f21711b6b",
     "scripts/mix_aac_check.py": "c1b524ac1b38d77001754a162b9791ec9f9a91c387c50b3d00517cc71b5fdbe9",
     "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860",
     "scripts/sfx_bank.py": "2fb66a30970e6f948b5c62c388af4e1eaa2051d1582796f093a811f08e783ea1"
   },
   "vo": {
     "path": "/home/user/alaska-ai-weekly/out/dispatch/audio/vo.wav",
-    "sha256": "bdf4e5fabec362137e525dcdd51ec9f1b454acb9a00929d46999db6485c3bd9a"
+    "sha256": "aebf868762735283a998eaabad55eaeb65bb0e10ff82b4b675d9413de20e1e9b"
   },
   "inputs": [
     {
@@ -114,6 +114,10 @@
       "sha256": "8bba4fff9a36bcabf27c4bdcb41548e9aeb4b0cf08b72c0b1cc42a68c0c3ae27"
     },
     {
+      "path": "/home/user/alaska-ai-weekly/assets/sfx/snap_v2.wav",
+      "sha256": "a3c08805214f6ab857bd5705497d27f68fdafa05d264ae367effdba2716276d5"
+    },
+    {
       "path": "/home/user/alaska-ai-weekly/assets/sfx/snap_v3.wav",
       "sha256": "524733147cd45fcdf1b6f89897c1f1b8eed5335c2b4197bb9719bee38daeb8a7"
     },
@@ -172,6 +176,6 @@
   ],
   "output": {
     "path": "/home/user/alaska-ai-weekly/out/dispatch/audio/master.wav",
-    "sha256": "f5c20cf5f0ecd31a4a19b7f79f0fb0b572a975745d3b1b93f63449eeeb9285e1"
+    "sha256": "66323426c1f211b4153ed938127a29e85a497c5f37a53605d3f236040e5dfae8"
   }
 }

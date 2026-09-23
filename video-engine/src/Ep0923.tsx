@@ -714,6 +714,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const found = q(36, 26);
     const swap = q(37, 40);
     const ph = Math.sin(swap * Math.PI * 4);
+    // THE SETTLE (beat 38, new 2026-09-23). The pair used to finish its two swaps back in
+    // the comfortable order and simply stop, which left 5.9s of the third act with nothing
+    // declared and nothing moving, on the very sentence that asks the film's question.
+    // They now come to rest the OTHER way round, LAND LEASED ahead of NUMBER GOES PUBLIC,
+    // and hold there. That is the order the question is about.
+    const settle = q(38, 30);
+    const px = 190 * ph * (1 - settle) + 360 * settle;
     picture = (
       <SVG><Defs />
         <Dusk f={f} push={push} drift={drift} />
@@ -735,12 +742,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {/* the two tokens on a rail, swapping order and never settling */}
         <g opacity={swap}>
           <line x1={150} y1={1148} x2={930} y2={1148} stroke={C.paper} strokeWidth={6} opacity={0.8} />
-          <g transform={`translate(${380 + 190 * ph},1148)`}>
+          <g transform={`translate(${380 + px},1148)`}>
             <rect x={-160} y={-34} width={320} height={68} rx={8} fill={C.carbon} stroke={C.paper} strokeWidth={3} />
             <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800}
               fontSize={24} fill={C.paper} letterSpacing={1.5}>NUMBER GOES PUBLIC</text>
           </g>
-          <g transform={`translate(${740 - 190 * ph},1148)`}>
+          <g transform={`translate(${740 - px},1148)`}>
             <rect x={-120} y={-34} width={240} height={68} rx={8} fill={C.copper} stroke={C.ink} strokeWidth={3} />
             <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800}
               fontSize={24} fill={C.ink} letterSpacing={1.5}>LAND LEASED</text>
@@ -755,8 +762,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     // strip_name_check find a beat's shot by the nearest `n === k` marker above
     // it, so an unmarked else silently files shot 13's beats under shot 12 and
     // the gate reports a real drift that is not in the picture at all.
-    const hold = q(38, 40);
-    const lift = q(39, 30);
+    const hold = q(39, 40);
+    const lift = q(40, 30);
     const s = 1.06 - 0.12 * hold;
     picture = (
       <SVG><Defs />

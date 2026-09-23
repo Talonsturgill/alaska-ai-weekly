@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "t": 0.3,
+      "t": 0.252,
       "kind": "tick",
       "class": "standard",
       "pan": -0.18,
@@ -9,13 +9,13 @@
       "family": "click",
       "label": "the offer, arriving as a document that works | Bank performance: paper-slam then a fast run of typed ticks, ending abruptly. Approved sound: paper-slam then a fast run of typed ticks, ending abruptly",
       "beat_id": 1,
-      "visual_at_s": 0.3,
+      "visual_at_s": 0.252,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 0.294
+      "rendered_start_s": 0.246
     },
     {
-      "t": 1.4,
+      "t": 1.177,
       "kind": "creak",
       "class": "hero",
       "pan": 0.0,
@@ -23,13 +23,13 @@
       "family": "texture",
       "label": "the anomaly, at second one and a half | Bank performance: the tick that does not land, and the room going half a stop quie. Approved sound: the tick that does not land, and the room going half a stop quieter",
       "beat_id": 2,
-      "visual_at_s": 1.4,
+      "visual_at_s": 1.177,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 1.4
+      "rendered_start_s": 1.177
     },
     {
-      "t": 3.0,
+      "t": 2.523,
       "kind": "paw",
       "class": "texture",
       "pan": 0.0,
@@ -37,13 +37,13 @@
       "family": "sub",
       "label": "what is offered, and to what | Bank performance: boundary-trace whisper + corner lock. Approved sound: boundary-trace whisper + corner lock",
       "beat_id": 3,
-      "visual_at_s": 3.0,
+      "visual_at_s": 2.523,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 2.985
+      "rendered_start_s": 2.508
     },
     {
-      "t": 7.1,
+      "t": 7.4,
       "kind": "whoosh",
       "class": "standard",
       "pan": 0.09,
@@ -51,13 +51,13 @@
       "family": "air",
       "label": "where this actually is | Bank performance: wind-through-spruce swell. Approved sound: wind-through-spruce swell",
       "beat_id": 4,
-      "visual_at_s": 7.1,
+      "visual_at_s": 7.4,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 7.108
+      "rendered_start_s": 7.408
     },
     {
-      "t": 10.6,
+      "t": 9.018,
       "kind": "ding",
       "class": "standard",
       "pan": 0.18,
@@ -65,13 +65,13 @@
       "family": "bell",
       "label": "what a bill already looks like here | Bank performance: low copper tone rising. Approved sound: low copper tone rising",
       "beat_id": 5,
-      "visual_at_s": 10.6,
+      "visual_at_s": 9.018,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 10.61
+      "rendered_start_s": 9.028
     },
     {
-      "t": 15.2,
+      "t": 13.134,
       "kind": "stamp",
       "class": "texture",
       "pan": -0.18,
@@ -79,13 +79,13 @@
       "family": "sub",
       "label": "a person under the number | Bank performance: boot-scuff on the boards. Approved sound: boot-scuff on the boards",
       "beat_id": 6,
-      "visual_at_s": 15.2,
+      "visual_at_s": 13.134,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 15.188
+      "rendered_start_s": 13.122
     },
     {
-      "t": 18.0,
+      "t": 15.905,
       "kind": "paper",
       "class": "standard",
       "pan": -0.09,
@@ -93,13 +93,13 @@
       "family": "texture",
       "label": "the answer is missing, stated once and not yet swung | Bank performance: a single clean shear, then nothing. Approved sound: a single clean shear, then nothing",
       "beat_id": 7,
-      "visual_at_s": 18.0,
+      "visual_at_s": 15.905,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 18.003
+      "rendered_start_s": 15.908
     },
     {
-      "t": 19.8,
+      "t": 17.85,
       "kind": "tick",
       "class": "standard",
       "pan": 0.0,
@@ -107,13 +107,13 @@
       "family": "click",
       "label": "the one row that refuses | Bank performance: the tick that does not land, a soft miss. Approved sound: the tick that does not land, a soft miss",
       "beat_id": 8,
-      "visual_at_s": 19.8,
+      "visual_at_s": 17.85,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 19.794
+      "rendered_start_s": 17.844
     },
     {
-      "t": 23.55,
+      "t": 21.902,
       "kind": "whoosh",
       "class": "texture",
       "pan": 0.09,
@@ -121,13 +121,13 @@
       "family": "air",
       "label": "how big the land is, felt | Bank performance: air-rush pullback. Approved sound: air-rush pullback",
       "beat_id": 9,
-      "visual_at_s": 23.55,
+      "visual_at_s": 21.902,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 23.553
+      "rendered_start_s": 21.905
     },
     {
-      "t": 25.15,
+      "t": 23.495,
       "kind": "ding",
       "class": "standard",
       "pan": 0.18,
@@ -135,13 +135,13 @@
       "family": "bell",
       "label": "nothing is decided | Bank performance: stamp-swing that never strikes, room tone drops out. Approved sound: stamp-swing that never strikes, room tone drops out",
       "beat_id": 10,
-      "visual_at_s": 25.15,
+      "visual_at_s": 23.495,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 25.147
+      "rendered_start_s": 23.492
     },
     {
-      "t": 28.8,
+      "t": 26.998,
       "kind": "paper",
       "class": "standard",
       "pan": -0.18,
@@ -149,13 +149,13 @@
       "family": "texture",
       "label": "who is speaking | Bank performance: boot crunch on frozen gravel. Approved sound: boot crunch on frozen gravel",
       "beat_id": 11,
-      "visual_at_s": 28.8,
+      "visual_at_s": 26.998,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 28.808
+      "rendered_start_s": 27.006
     },
     {
-      "t": 31.45,
+      "t": 29.207,
       "kind": "whoosh",
       "class": "texture",
       "pan": -0.09,
@@ -163,13 +163,13 @@
       "family": "air",
       "label": "the sound she is used to | Bank performance: distant afterburner roll. Approved sound: distant afterburner roll",
       "beat_id": 12,
-      "visual_at_s": 31.45,
+      "visual_at_s": 29.207,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 31.435
+      "rendered_start_s": 29.192
     },
     {
-      "t": 34.63,
+      "t": 32.64,
       "kind": "pop",
       "class": "standard",
       "pan": 0.0,
@@ -177,13 +177,13 @@
       "family": "blip",
       "label": "the swap she is describing | Bank performance: the roll flattening into a dead sixty-cycle hum. Approved sound: the roll flattening into a dead sixty-cycle hum",
       "beat_id": 13,
-      "visual_at_s": 34.63,
+      "visual_at_s": 32.64,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 34.63
+      "rendered_start_s": 32.64
     },
     {
-      "t": 37.0,
+      "t": 34.215,
       "kind": "tick",
       "class": "standard",
       "pan": 0.09,
@@ -191,13 +191,13 @@
       "family": "click",
       "label": "her own words | Bank performance: typewriter reveal, one key per word. Approved sound: typewriter reveal, one key per word",
       "beat_id": 14,
-      "visual_at_s": 37.0,
+      "visual_at_s": 34.215,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 36.994
+      "rendered_start_s": 34.209
     },
     {
-      "t": 40.6,
+      "t": 38.66,
       "kind": "paper",
       "class": "texture",
       "pan": 0.18,
@@ -205,13 +205,13 @@
       "family": "texture",
       "label": "how a borough asks | Bank performance: paper-rustle per item. Approved sound: paper-rustle per item",
       "beat_id": 15,
-      "visual_at_s": 40.6,
+      "visual_at_s": 38.66,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 40.594
+      "rendered_start_s": 38.654
     },
     {
-      "t": 42.9,
+      "t": 40.355,
       "kind": "clank",
       "class": "standard",
       "pan": -0.18,
@@ -219,13 +219,13 @@
       "family": "metal",
       "label": "a borough plat can't reach a federal lease, and the lease page is blank because nothing has been decided yet | Bank performance: double lock, two clicks. Approved sound: double lock, two clicks",
       "beat_id": 16,
-      "visual_at_s": 42.9,
+      "visual_at_s": 40.355,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 42.902
+      "rendered_start_s": 40.357
     },
     {
-      "t": 46.9,
+      "t": 44.16,
       "kind": "whoosh",
       "class": "standard",
       "pan": -0.09,
@@ -233,13 +233,13 @@
       "family": "air",
       "label": "who says the next thing | Bank performance: room settle, a chair creak. Approved sound: room settle, a chair creak",
       "beat_id": 17,
-      "visual_at_s": 46.9,
+      "visual_at_s": 44.16,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 46.888
+      "rendered_start_s": 44.148
     },
     {
-      "t": 49.65,
+      "t": 46.235,
       "kind": "ding",
       "class": "texture",
       "pan": 0.0,
@@ -247,13 +247,13 @@
       "family": "bell",
       "label": "she didn't say the land, she said the power, as a thing a person does | Bank performance: a low plate sliding away from the mic, then a copper strike. Approved sound: a low plate sliding away from the mic, then a copper strike",
       "beat_id": 18,
-      "visual_at_s": 49.65,
+      "visual_at_s": 46.235,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 49.659
+      "rendered_start_s": 46.244
     },
     {
-      "t": 53.85,
+      "t": 49.419,
       "kind": "tick",
       "class": "standard",
       "pan": 0.09,
@@ -261,13 +261,13 @@
       "family": "click",
       "label": "the hinge of the film | Bank performance: near silence, one low copper breath. Approved sound: near silence, one low copper breath",
       "beat_id": 19,
-      "visual_at_s": 53.85,
+      "visual_at_s": 49.419,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 53.839
+      "rendered_start_s": 49.408
     },
     {
-      "t": 58.05,
+      "t": 53.92,
       "kind": "chain",
       "class": "standard",
       "pan": 0.18,
@@ -275,13 +275,13 @@
       "family": "metal",
       "label": "the other side, at full volume | Bank performance: the plate's rim seating with a low metal set-down, over apron fl. Approved sound: the plate's rim seating with a low metal set-down, over apron floodlights striking on in banks",
       "beat_id": 20,
-      "visual_at_s": 58.05,
+      "visual_at_s": 53.92,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 58.062
+      "rendered_start_s": 53.932
     },
     {
-      "t": 60.2,
+      "t": 55.827,
       "kind": "tick",
       "class": "texture",
       "pan": -0.18,
@@ -289,13 +289,13 @@
       "family": "click",
       "label": "a person standing in light the lease paid for, which is the argument | Bank performance: a rolling door, then two plates meeting and seating. Approved sound: a rolling door, then two plates meeting and seating",
       "beat_id": 21,
-      "visual_at_s": 60.2,
+      "visual_at_s": 55.827,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 60.214
+      "rendered_start_s": 55.841
     },
     {
-      "t": 63.95,
+      "t": 59.22,
       "kind": "ding",
       "class": "hero",
       "pan": 0.0,
@@ -303,13 +303,13 @@
       "family": "bell",
       "label": "the bill, made physical | Bank performance: paper unfolding into a low tone. Approved sound: paper unfolding into a low tone",
       "beat_id": 22,
-      "visual_at_s": 63.95,
+      "visual_at_s": 59.22,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 63.941
+      "rendered_start_s": 59.211
     },
     {
-      "t": 67.25,
+      "t": 62.525,
       "kind": "pop",
       "class": "standard",
       "pan": 0.0,
@@ -317,13 +317,13 @@
       "family": "blip",
       "label": "the two things you pay for | Bank performance: a seam tearing, two settled thuds. Approved sound: a seam tearing, two settled thuds",
       "beat_id": 23,
-      "visual_at_s": 67.25,
+      "visual_at_s": 62.525,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 67.256
+      "rendered_start_s": 62.531
     },
     {
-      "t": 71.45,
+      "t": 66.694,
       "kind": "tick",
       "class": "texture",
       "pan": 0.09,
@@ -331,13 +331,13 @@
       "family": "click",
       "label": "why it is tall here | Bank performance: division ticks, one per house. Approved sound: division ticks, one per house",
       "beat_id": 24,
-      "visual_at_s": 71.45,
+      "visual_at_s": 66.694,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 71.449
+      "rendered_start_s": 66.693
     },
     {
-      "t": 74.6,
+      "t": 69.309,
       "kind": "thud",
       "class": "standard",
       "pan": 0.18,
@@ -345,13 +345,13 @@
       "family": "sub",
       "label": "the half that is answered | Bank performance: a heavy seat, then a smooth compress. Approved sound: a heavy seat, then a smooth compress",
       "beat_id": 25,
-      "visual_at_s": 74.6,
+      "visual_at_s": 69.309,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 74.596
+      "rendered_start_s": 69.305
     },
     {
-      "t": 78.12,
+      "t": 72.292,
       "kind": "ding",
       "class": "standard",
       "pan": -0.18,
@@ -359,13 +359,13 @@
       "family": "bell",
       "label": "a household's bill moving, not a bar moving | Bank performance: a strained rising tone. Approved sound: a strained rising tone",
       "beat_id": 26,
-      "visual_at_s": 78.12,
+      "visual_at_s": 72.292,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 78.124
+      "rendered_start_s": 72.296
     },
     {
-      "t": 80.61,
+      "t": 74.685,
       "kind": "clank",
       "class": "texture",
       "pan": -0.09,
@@ -373,13 +373,13 @@
       "family": "metal",
       "label": "one way it goes | Bank performance: a solid slot-in, tone falling. Approved sound: a solid slot-in, tone falling",
       "beat_id": 27,
-      "visual_at_s": 80.61,
+      "visual_at_s": 74.685,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 80.6
+      "rendered_start_s": 74.675
     },
     {
-      "t": 83.66,
+      "t": 77.616,
       "kind": "tick",
       "class": "standard",
       "pan": 0.0,
@@ -387,13 +387,13 @@
       "family": "click",
       "label": "the other way it goes | Bank performance: a strained pull, tone rising. Approved sound: a strained pull, tone rising",
       "beat_id": 28,
-      "visual_at_s": 83.66,
+      "visual_at_s": 77.616,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 83.671
+      "rendered_start_s": 77.627
     },
     {
-      "t": 86.19,
+      "t": 80.274,
       "kind": "chime",
       "class": "hero",
       "pan": 0.0,
@@ -401,13 +401,13 @@
       "family": "bell",
       "label": "THE SIGNATURE FRAME. It is trying to settle and the empty slot will not let it | Bank performance: two-tone slam, then a held unresolved chord. Approved sound: two-tone slam, then a held unresolved chord",
       "beat_id": 29,
-      "visual_at_s": 86.19,
+      "visual_at_s": 80.274,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 86.177
+      "rendered_start_s": 80.261
     },
     {
-      "t": 89.68,
+      "t": 84.78,
       "kind": "whoosh",
       "class": "texture",
       "pan": 0.18,
@@ -415,13 +415,13 @@
       "family": "air",
       "label": "the town's yes, given a body, the way the trail gave the doubt a body | Bank performance: the town coming on window by window, a distant traffic hum risin. Approved sound: the town coming on window by window, a distant traffic hum rising",
       "beat_id": 30,
-      "visual_at_s": 89.68,
+      "visual_at_s": 84.78,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 89.691
+      "rendered_start_s": 84.791
     },
     {
-      "t": 92.8,
+      "t": 86.769,
       "kind": "thud",
       "class": "hero",
       "pan": 0.0,
@@ -429,13 +429,13 @@
       "family": "sub",
       "label": "the jets, drawn at the moment they are named | Bank performance: a turbine spooling down, then gear touching concrete. Approved sound: a turbine spooling down, then gear touching concrete",
       "beat_id": 31,
-      "visual_at_s": 92.8,
+      "visual_at_s": 86.769,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 92.796
+      "rendered_start_s": 86.765
     },
     {
-      "t": 93.45,
+      "t": 87.419,
       "kind": "clank",
       "class": "standard",
       "pan": -0.09,
@@ -443,13 +443,13 @@
       "family": "metal",
       "label": "what a fighter wing brought | Bank performance: crate latches opening and the lid swinging back. Approved sound: crate latches opening and the lid swinging back",
       "beat_id": 32,
-      "visual_at_s": 93.45,
+      "visual_at_s": 87.419,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 93.452
+      "rendered_start_s": 87.421
     },
     {
-      "t": 95.6,
+      "t": 88.928,
       "kind": "paw",
       "class": "texture",
       "pan": 0.0,
@@ -457,13 +457,13 @@
       "family": "sub",
       "label": "what this one brings instead | Bank performance: a hollow set-down, no latch. Approved sound: a hollow set-down, no latch",
       "beat_id": 33,
-      "visual_at_s": 95.6,
+      "visual_at_s": 88.928,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 95.587
+      "rendered_start_s": 88.915
     },
     {
-      "t": 98.91,
+      "t": 91.7,
       "kind": "chain",
       "class": "standard",
       "pan": 0.09,
@@ -471,13 +471,13 @@
       "family": "metal",
       "label": "where the appetite feeds | Bank performance: the empty plate's rim grinding as it tips, and the fuel half's e. Approved sound: the empty plate's rim grinding as it tips, and the fuel half's edge ticking as it takes the weight",
       "beat_id": 34,
-      "visual_at_s": 98.91,
+      "visual_at_s": 91.7,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 98.92
+      "rendered_start_s": 91.71
     },
     {
-      "t": 101.05,
+      "t": 95.88,
       "kind": "snap",
       "class": "standard",
       "pan": 0.18,
@@ -485,13 +485,13 @@
       "family": "pluck",
       "label": "the thing that cannot be asked for yet | Bank performance: a pen tip skidding, then a chip spinning down onto wood. Approved sound: a pen tip skidding, then a chip spinning down onto wood",
       "beat_id": 35,
-      "visual_at_s": 101.05,
+      "visual_at_s": 95.88,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 101.058
+      "rendered_start_s": 95.888
     },
     {
-      "t": 104.9,
+      "t": 97.215,
       "kind": "creak",
       "class": "texture",
       "pan": -0.18,
@@ -499,13 +499,13 @@
       "family": "texture",
       "label": "the thing that CAN | Bank performance: a clean pen-tap on a solid rule. Approved sound: a clean pen-tap on a solid rule",
       "beat_id": 36,
-      "visual_at_s": 104.9,
+      "visual_at_s": 97.215,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 104.886
+      "rendered_start_s": 97.201
     },
     {
-      "t": 108.1,
+      "t": 100.215,
       "kind": "thud",
       "class": "standard",
       "pan": -0.09,
@@ -513,40 +513,54 @@
       "family": "sub",
       "label": "the whole ask, in one picture | Bank performance: two slides and a soft unresolved stop. Approved sound: two slides and a soft unresolved stop",
       "beat_id": 37,
-      "visual_at_s": 108.1,
+      "visual_at_s": 100.215,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 108.1
+      "rendered_start_s": 100.215
     },
     {
-      "t": 112.3,
+      "t": 103.55,
+      "kind": "snap",
+      "class": "texture",
+      "pan": 0.0,
+      "take": "snap_v2.wav",
+      "family": "pluck",
+      "label": "which order the reader should be asking about | Bank performance: a single soft seat, and nothing after it. Approved sound: a single soft seat, and nothing after it",
+      "beat_id": 38,
+      "visual_at_s": 103.55,
+      "sfx_offset_frames": 0,
+      "sfx_offset_reason": "",
+      "rendered_start_s": 103.542
+    },
+    {
+      "t": 106.12,
       "kind": "ding",
       "class": "hero",
       "pan": 0.0,
       "take": "ding_kenney_impactBell_heavy_001.wav",
       "family": "bell",
       "label": "the button, and the hook inverted | Bank performance: the card settling a half millimetre on the rail, under a single . Approved sound: the card settling a half millimetre on the rail, under a single held copper tone",
-      "beat_id": 38,
-      "visual_at_s": 112.3,
+      "beat_id": 39,
+      "visual_at_s": 106.12,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 112.292
+      "rendered_start_s": 106.125
     },
     {
-      "t": 115.15,
+      "t": 107.364,
       "kind": "boom",
       "class": "hero",
       "pan": 0.0,
       "take": "boom_v5.wav",
       "family": "sub",
       "label": "what the film is asking for | Bank performance: the tone resolving upward, not down. Approved sound: the tone resolving upward, not down",
-      "beat_id": 39,
-      "visual_at_s": 115.15,
+      "beat_id": 40,
+      "visual_at_s": 107.364,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 115.155
+      "rendered_start_s": 107.363
     }
   ],
-  "silence_dip_at": 0.0,
-  "count": 39
+  "silence_dip_at": 95.29,
+  "count": 40
 }

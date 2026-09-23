@@ -129,6 +129,7 @@ _PERFORMANCE = [
     ('snap', 'standard', 0.18, 'a pen tip skidding, then a chip spinning down onto wood'),
     ('creak', 'texture', -0.18, 'a clean pen-tap on a solid rule'),
     ('thud', 'standard', -0.09, 'two slides and a soft unresolved stop'),
+    ('snap', 'texture', 0.0, 'a single soft seat, and nothing after it'),
     ('ding', 'hero', 0.0, 'the card settling a half millimetre on the rail, under a single '),
     ('boom', 'hero', 0.0, 'the tone resolving upward, not down'),
 ]

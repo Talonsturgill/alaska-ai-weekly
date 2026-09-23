@@ -5,79 +5,79 @@
     {
       "id": 1,
       "start": 0,
-      "end": 260,
+      "end": 219,
       "framing": "macro-closeup"
     },
     {
       "id": 2,
-      "start": 260,
-      "end": 497,
+      "start": 219,
+      "end": 431,
       "framing": "wide-establish"
     },
     {
       "id": 3,
-      "start": 497,
-      "end": 717,
+      "start": 431,
+      "end": 668,
       "framing": "two-up"
     },
     {
       "id": 4,
-      "start": 717,
-      "end": 1064,
+      "start": 668,
+      "end": 976,
       "framing": "subject-portrait"
     },
     {
       "id": 5,
-      "start": 1064,
-      "end": 1231,
+      "start": 976,
+      "end": 1157,
       "framing": "alt-vantage"
     },
     {
       "id": 6,
-      "start": 1231,
-      "end": 1403,
+      "start": 1157,
+      "end": 1322,
       "framing": "data-panel"
     },
     {
       "id": 7,
-      "start": 1403,
-      "end": 1739,
+      "start": 1322,
+      "end": 1615,
       "framing": "subject-portrait"
     },
     {
       "id": 8,
-      "start": 1739,
-      "end": 1913,
+      "start": 1615,
+      "end": 1771,
       "framing": "wide-establish"
     },
     {
       "id": 9,
-      "start": 1913,
-      "end": 2330,
+      "start": 1771,
+      "end": 2155,
       "framing": "data-panel"
     },
     {
       "id": 10,
-      "start": 2330,
-      "end": 2703,
+      "start": 2155,
+      "end": 2540,
       "framing": "two-up"
     },
     {
       "id": 11,
-      "start": 2703,
-      "end": 3101,
+      "start": 2540,
+      "end": 2873,
       "framing": "map-territory"
     },
     {
       "id": 12,
-      "start": 3101,
-      "end": 3414,
+      "start": 2873,
+      "end": 3181,
       "framing": "macro-closeup"
     },
     {
       "id": 13,
-      "start": 3414,
-      "end": 3538,
+      "start": 3181,
+      "end": 3304,
       "framing": "push-detail"
     }
   ]
