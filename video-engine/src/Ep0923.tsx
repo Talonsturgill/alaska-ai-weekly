@@ -290,7 +290,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             totalLabel="AWARDED" totalValue="NONE YET" arrive={cascade * 4} />
         </g>
         <Head text="ONE ROW IS BLANK" y={1268} size={66} p={dim} />
-        <Plate text="ABOUT 4,700 ACRES" y={500} size={32} tone="copper" p={q(3, 18)} />
+        {/* THE ACREAGE CHIP IS GONE. It sat on top of the statement's own ACREAGE row,
+            which is the row it was quoting, so the hook's first eight seconds showed a
+            clipped label and the fragment "OUT 4,700" beside it. All three judges filed
+            it. The row already counts the number up in its own value slot, so the chip
+            was never adding a fact, only covering one. */}
       </SVG>
     );
   } else if (n === 2) {
@@ -490,7 +494,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
               apron that used to sit here, and against the dusk world's gold ground it read
               as an unlabelled dark hole at her feet. She stands on the ground, like everyone
               else in the film. */}
+          {/* SHE IS A WOMAN AND THE FILM HAS TO DRAW ONE. The first cut put the house
+              default short crown and the suit outfit's stock RED necktie under a plate
+              reading SEN. LISA MURKOWSKI, and all three judges read the figure as a man;
+              one filed it as a hard blocker, correctly. hairStyle long is new in the rig
+              for exactly this. The trim override also retires the necktie, which that
+              outfit ships red and which this film's palette does not license. */}
           <Character frame={f} x={300} y={GY} scale={1.24} outfit="suit" headgear="bare"
+            hairStyle="long" hair="#8A7358" trim={C.paper}
             pose="point" emotion="neutral" facing={1} gesture={gesture} idleGain={1.0} />
         </g>
         <Plate text="SEN. LISA MURKOWSKI" y={1128} size={30} p={arrive * (1 - alone)} />
@@ -521,9 +532,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             stroke={C.ink} strokeWidth={3} />
           <RimLight d="M200,1240 L880,1240" w={4} color={C.copper} opacity={0.85} />
         </g>
-        <g transform={`translate(${-260 + 560 * walkIn},0)`}>
+        {/* THE SHOT OPENS WITH SOMEBODY IN IT. `walkIn` is anchored to beat 20, which sits
+            just before this shot's first frame, so the figure was still off the left edge
+            when the cut landed and two judges found an empty apron on the film's sharpest
+            turn. `enter` runs from the shot's own frame 0, so they are already walking in
+            as the cut happens and the hangar has a person in it throughout. */}
+        <g transform={`translate(${-110 + 410 * ease(f, 0, 42)},0)`}>
           <Character frame={f} x={300} y={GY} scale={1.24} outfit="worker" headgear="cap"
-            pose="stand" emotion="neutral" facing={1} walking={walkIn < 0.94} idleGain={1.0} />
+            pose="stand" emotion="neutral" facing={1} walking={ease(f, 0, 42) < 0.94} idleGain={1.0} />
         </g>
         <Plate text="A PARTNERSHIP" y={470} size={34} p={walkIn} />
         <Plate text="SUPPORTING AIRMEN AND GUARDIANS" y={558} size={26} tone="paper" p={seat} />
@@ -619,15 +635,23 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: EZ});
     picture = (
       <SVG><Defs />
+        {/* GROUND AT GY, NOT 1360. At 1360 the ground band's top edge fell at 1250 while
+            every figure and house in this shot stands at GY = 1240, so the mayor and his
+            whole town were planted ten pixels above the ground and the seam ran through
+            their feet. A judge measured it on him, which is the worst figure in the film
+            to sever: he is its one fair counter-voice. */}
         <g transform={`translate(${-drift * 16},0)`}>
-          <Dusk f={f} push={push} drift={drift} groundY={1360} near={false} />
+          <Dusk f={f} push={push} drift={drift} near={false} />
         </g>
         {/* the town builds up window by window, street by street */}
         {[0, 1, 2, 3, 4, 5].map((i) => (
           <House key={i} x={104 + i * 178} y={GY} s={0.82} lit={clamp(town * 6 - i)} />
         ))}
+        {/* x 150 -> 272: at 150 the content zoom carried his left half off the frame for
+            his entire twelve-second beat. He now stands clear of the edge, in front of
+            his own town rather than half outside it. */}
         <g opacity={1 - arrive2 * 0.4}>
-          <Character frame={f} x={150} y={GY} scale={1.06} outfit="flannel" headgear="cap"
+          <Character frame={f} x={272} y={GY} scale={1.06} outfit="flannel" headgear="beanie"
             pose="raise" emotion="neutral" facing={1} gesture={reachG} idleGain={1.0} />
         </g>
         {/* the jets, drawn on the words that name them */}
@@ -646,7 +670,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
         <g opacity={arrive2} transform={`translate(0,${-40 * (1 - arrive2)})`}>
           <Block x={420} y={GY} s={0.64} />
-          <g transform={`translate(420,${GY - 172}) rotate(${-16 * tip})`}>
+          {/* ON the block, not 90px above it. The block is 82px tall at this scale and the
+              plate was parked at GY-172, so the empty plate the data center carries read
+              as a white ring floating over the treeline with nothing under it. A judge
+              filed it as an orphan shape, which is exactly what it looked like. */}
+          <g transform={`translate(420,${GY - 88}) rotate(${-16 * tip})`}>
             <ellipse cx={0} cy={0} rx={82} ry={17} fill="none" stroke={C.paper} strokeWidth={5} opacity={0.9} />
             <ellipse cx={0} cy={0} rx={82} ry={17} fill={C.dusk} opacity={0.5} />
           </g>
@@ -770,13 +798,20 @@ const Captions: React.FC<{cues: Props['captions']}> = ({cues}) => {
     if ((row + ' ' + w).trim().length > 34 && row) { rows.push(row); row = w; } else row = (row + ' ' + w).trim();
   }
   if (row) rows.push(row);
-  const fs = rows.length > 2 ? 32 : 39;
+  // NEVER DROP A ROW. This was `rows.slice(0, 3)`, and all three panel judges found the
+  // same casualty independently: the cue running 8.4 to 15.66s wrapped to four rows, so
+  // the word "highest" was discarded for its whole 7.26 seconds. That word carries claim
+  // c15. A caption set a few points smaller is a taste note; a caption that renders most
+  // of a sentence and drops the end of it is a false statement on screen, and nothing
+  // upstream could see it happen. The bar now fits whatever it is handed.
+  const fs = rows.length >= 4 ? 27 : rows.length === 3 ? 32 : 39;
+  const step = rows.length >= 4 ? 30 : rows.length === 3 ? 37 : 49;
+  const y0 = rows.length === 1 ? 1420 : rows.length === 2 ? 1390 : rows.length === 3 ? 1378 : 1366;
   return (
     <SVG>
       <rect x={68} y={1336} width={944} height={136} rx={16} fill="#120E1C" stroke={C.light} strokeWidth={3} opacity={0.96} />
-      {rows.slice(0, 3).map((s, i) => (
-        <text key={i} x={540}
-          y={rows.length === 1 ? 1420 : rows.length === 2 ? 1390 + i * 49 : 1378 + i * 37}
+      {rows.map((s, i) => (
+        <text key={i} x={540} y={y0 + i * step}
           textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={fs} fill={C.light}>{s}</text>
       ))}
     </SVG>

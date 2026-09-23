@@ -7,8 +7,14 @@
   },
   {
     "start": 8.4,
+    "end": 13.26,
+    "text": "Some sits at Eielson Air Force Base, outside Fairbanks,",
+    "seg": 1
+  },
+  {
+    "start": 13.72,
     "end": 15.66,
-    "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
+    "text": "where bills are among the nation's highest.",
     "seg": 1
   },
   {

@@ -56,7 +56,9 @@ a render and cannot be validated before the ship gate has bound the graded cut.
 | 18 | preflight source gates repointed at the real film | DONE |
 | 19 | FINAL RENDER at 3907 frames | DONE (re-rendered after 19b) |
 | 19b | dead-space gate FAILED 49.2% vs 42%: the world layer restored | DONE |
-| 20 | encode, evidence pack, 3-judge panel to >= 7.0 | |
+| 20 | encode, evidence pack, 3-judge panel to >= 7.0 | ROUND 1 DONE |
+| 20b | panel round 1 defects fixed, re-render | IN FLIGHT |
+| 20c | panel round 2 | |
 | 21 | ship_gate record + check | |
 | 22 | upload, publish_feed, Gmail draft | |
 | 23 | dedupe add, PR ready, MERGE to main | |
@@ -86,6 +88,39 @@ upscaled to 1080, which blurs and is therefore the pessimistic bound: 38.2%, eve
 Two defects the new ground exposed and fixed in the same pass: shot 7's plinth (invisible
 against the old flat apron, an unlabelled dark hole against gold) is gone, and the LAND ghost
 card moved right of the senator's body, where the word is legible instead of half behind her.
+
+## PANEL ROUND 1, and what it bought
+
+j1 7.60 ship:false (one hard blocker), j2 7.86 ship:true, j3 7.54 ship:true. Median 7.60
+against a 7.0 bar, so the NUMBER cleared on the first panel. The blocker did not, and three
+judges independently named the same three defects, which is the panel working.
+
+1. THE BLOCKER. A figure under a plate reading SEN. LISA MURKOWSKI was drawn as a man. All
+   three judges read it that way; j1 filed it as a factual error about a named living
+   person held for eleven seconds. Root cause was in the SHELF, not the scene: the
+   character rig has exactly one hair shape, a short crown, and the only way to signal
+   anything else was to hide it under a hood. `hairStyle` is new in Character.tsx for this.
+   The suit's stock RED necktie went with it; this film's palette never licensed it.
+2. The ABOUT 4,700 ACRES chip sat on top of the statement's own ACREAGE row, in the hook,
+   so the first eight seconds showed a clipped label and the fragment OUT 4,700. The row
+   already counts that number up in its own slot. The chip is deleted, not moved.
+3. Caption cue 2 wrapped to four rows and the renderer did `rows.slice(0, 3)`, so the word
+   "highest", which carries claim c15, never appeared for its whole 7.26s. Two fixes: the
+   cue is split at the aligned start of "where" (13.72s), and the renderer no longer
+   truncates, it fits.
+
+Also fixed: the off arm's white lit edge, which read as a steel pipe with a pale nub
+(a limb in shadow does not carry the key light); the mayor cut in half by the frame edge
+and standing 10px above his own ground; the empty plate floating 90px above the block
+carrying it; the mayor's flannel-red cap brim hooking across his face; FUEL set in carbon
+blue directly on dusk violet, unreadable, now on the same ink chip as the rest of the type.
+
+AND ONE FINDING THAT WAS THE EVIDENCE LYING, NOT THE FILM. j1 reported "the named signature
+move does not execute" on the two halves shoving apart. It executes; the filmstrip was
+taken 1.5s after it finished. Every MOVES anchor in build_evidence.py used a flat 0.35s
+offset from the beat onset, and the engine's fast-out eases peak around 0.2 of the way in,
+so nineteen strips sat on the settle. Anchors are 0.20 now. An anchor that photographs the
+wrong moment does not cost a point, it manufactures a defect.
 
 ## THE THING THE OWNER MUST BE TOLD
 

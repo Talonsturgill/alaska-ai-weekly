@@ -297,10 +297,21 @@ export const CostStack: React.FC<CostStackProps> = ({
         const sh = h * s.frac * (s.scale ?? 1);
         const top = y - lcursor - sh - gap * i;
         lcursor += sh;
+        // THE LABEL SITS ON A CHIP. Set in the half's own colour straight onto the
+        // scene, a dark half (carbon blue on dusk violet) is unreadable at 5x, never
+        // mind at phone size, and a judge could not read FUEL at all. The chip is the
+        // same ink card the rest of the film's type stands on, so the label reads at
+        // whatever colour the half happens to be.
+        const cw = (s.name?.length ?? 0) * labelSize * 0.68 + 26;
         return (
-          <text key={i} x={x + w + 20} y={top + sh / 2 + labelSize * 0.35}
-            fontFamily="'JetBrains Mono', monospace" fontSize={labelSize}
-            fontWeight={800} fill={s.color} letterSpacing={2}>{s.name}</text>
+          <g key={i}>
+            <rect x={x + w + 12} y={top + sh / 2 - labelSize * 0.82} width={cw}
+              height={labelSize * 1.64} rx={7} fill="#120E1C" stroke={s.color}
+              strokeWidth={2.5} opacity={0.94} />
+            <text x={x + w + 12 + cw / 2} y={top + sh / 2 + labelSize * 0.35} textAnchor="middle"
+              fontFamily="'JetBrains Mono', monospace" fontSize={labelSize}
+              fontWeight={800} fill="#EDE7DB" letterSpacing={2}>{s.name}</text>
+          </g>
         );
       }) : null}
     </g>
