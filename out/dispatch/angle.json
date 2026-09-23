@@ -1,69 +1,45 @@
 {
-  "run_date": "2026-09-19",
-  "room": "3 analysts, each briefed on the same verified core with a different lens. Analyst C was assigned to attack the existence of the story itself, which is the cross-challenge round: A and B each stated the strongest point against their own thesis, and C attacked all of it. The three converged independently on the same second movement and the same Act 3, which is the reason this synthesis is short.",
-
-  "thesis": "Cordova is one of the few grids on earth where you can actually GRADE a forecast, because an islanded run-of-river system settles every wrong guess in gallons of diesel, and that scoreboard is both why a $725,000 award is worth watching and the standard it has to meet by June 2027.",
-
-  "falsifiability": "Two observations would kill it, and both are checkable. First: if Cordova's diesel hours turn out to be set by water availability at Power Creek and by firm-reserve and unit-commitment rules rather than by forecast error, then a better forecast changes no fuel and there is no scoreboard. Second: if Phase One's scope contains no fuel or cost metric at all and its stated deliverable is a model and a paper, then the project is not gradeable and the thesis was a hope attached to it. The thesis claims a TEST exists and names the date it should read something. That is a claim, not a description.",
-
+  "run_date": "2026-09-23",
+  "synthesized_by": "orchestrator, after three analysts (civics-and-mechanism, energy-and-physical-reality, what-is-known-and-what-is-not) argued and red-teamed each other",
+  "thesis": "Whether an AI data center on those acres makes a Fairbanks power bill smaller or bigger comes down to one variable, whether the load arrives with its own generation attached, and Alaska can still write that into the terms, because nothing has been awarded and the number that would settle it has never been published.",
+  "one_question": "Does an AI data center on those acres make a Fairbanks power bill smaller or bigger?",
+  "valence": "curious",
+  "valence_defense": "All three analysts independently landed on curious and none was told the others' answers. Nothing has been awarded, the senior senator's objection is conditional and time-stamped, the mayor is on record about what the bases have given his town, and the central quantity is unpublished. Facts in that arrangement earn an investigation, not a verdict on a project that does not exist yet. The film still takes a position, and the position is about the PROCESS rather than the project: there is a third option between yes and no.",
+  "falsifiability": "Publish a load figure for these parcels that sits inside existing Railbelt headroom, servable off current capacity with no new generation and no rate impact, and the thesis is dead: this is a real estate story, not a power story. Two further falsifiers, both things a reporter could go get: an RCA interconnection filing showing a selected developer served entirely from existing supply, or solicitation language putting the power obligation on the Air Force rather than the developer. The film names its own falsifier on screen, because a thesis that hides its test has not earned the right to be made.",
   "supporting_facts": [
-    "An islanded microgrid has no import to hide a bad decision behind. Wies, verbatim: 'They don't have a bigger grid that they're actually connected to, so they're completely isolated.' On the Railbelt a forecasting error is absorbed by a neighbour and never becomes a number. In Cordova it becomes a diesel unit running.",
-    "Run-of-river hydro plus diesel is the cleanest possible test bed, because the two resources have opposite cost structures. Water is nearly free and time-limited; diesel is expensive and always available. The gap between them is exactly what a forecast buys, which denominates the benefit in fuel rather than in model accuracy.",
-    "The award's own ordering puts data first and AI third: 'high-resolution utility data, physics-based digital twins (virtual replicas of the power grid), and state-of-the-art AI'. The scarce input is a utility willing to hand over its operating record, and Cordova Electric Cooperative is named as the partner supplying it.",
-    "Nine months and $725,000 is the length of a validation task, not a deployment. You cannot commission grid control in nine months; you can calibrate a twin against a year of logged operations."
+    "c6. Murkowski's objection is conditional and it names the INPUT, not the outcome: not a proponent because Alaska can't support them on an insecure energy base AT THIS TIME. She did not say the land. She said the power.",
+    "c15. Fairbanks already carries some of the nation's highest utility costs. A big fixed cost stack over a thin ratepayer base. That is why a new load is not neutral in either direction.",
+    "c1 and c11 together are the argument in two facts. The land is disclosed to the acre. The consumption is not disclosed at all. The offer is denominated in the abundant input while the scarce one goes unstated.",
+    "c14. The developer carries financing, permitting, construction and long-term operation. FOUR responsibilities are named and GENERATION IS NOT AMONG THEM. The structure PERMITS the good outcome and does not REQUIRE it. That gap is the finding, and it is what the ask is for.",
+    "c10. Nothing awarded as of September 15th. The lease terms and the permits that would carry a generation condition are still unwritten documents. A condition written after an award is a lawsuit. A condition written now is a term sheet."
   ],
-
-  "fair_counterpoint_the_film_must_honor": "The AI label is not yet earned by the release's own words, and the film says so rather than routing around it. Swap 'modelling' for 'AI' in 'forecast demand, detect abnormal operating conditions, optimize energy resources and support real-time operational decisions' and not one of those four verbs changes meaning. They are the textbook function list of an energy management system, and 'physics-based digital twin' names the OLDEST part of the stack. The word 'support' keeps the software out of the loop. Saying this on screen is the Alaska-first AND AI-first position: we want the technology working for Alaskans, which means demanding it be measured, not applauding the adjective.",
-
-  "valence": "curiosity with earned optimism, and an explicit open question in the third act. Celebration is unearned: nothing is built, no diesel has been saved, the start date is still ahead and Phase Two is an estimate rather than an award. Caution is dishonest in the other direction: nobody is bearing a risk here, the money is federal, the utility volunteered and the underlying idea is sound. Curiosity is the only register that can say 'this is good' and 'nothing has been checked yet' in one breath without hedging either. It also rotates the register: the last ten dispatches ran mixed, curious, mixed, mixed, mixed, curious, mixed, celebratory, curious, curious.",
-
-  "one_story_question": "How do you grade a forecast?",
-
-  "second_movement": "The turn from the algorithm to the load. Everything to about 55 seconds is software watching a grid. Then: the same small town is looking at a modular data center of roughly 100 kilowatts, about the size of two large refrigerators, sited by the river so it can take the water for cooling and the hydro for power. The story flips from 'AI helps Alaska's grid' to 'AI arrives from two directions at once and one co-op is standing where they meet'. A run-of-river plant spills energy it cannot store or sell, and a controllable 100 kilowatt load is a buyer for exactly that surplus, which is the Alaska-win read. It is also the first load you genuinely cannot run without a forecast, because you have to know an hour ahead whether the river will carry it or whether you are burning diesel to run a computer.",
-
-  "second_movement_honesty_rule": "MANDATORY AND ON SCREEN. Nothing in the record connects the data center to AURORA-AI. It is a separate Cordova conversation. All three analysts flagged this independently and unprompted. The film states that the two are not linked, and saying so makes the observation stronger rather than weaker, because the observation IS that both showed up in the same small town in the same month.",
-
-  "act3_test": "TRANSFER, drawn at full strength as its own scene around 60 to 95 seconds. Cordova is close to the best case in Alaska: a functioning cooperative, a hydro asset, engineers who can supply high-resolution data, and enough connectivity to move it. The 200-plus microgrids the thesis leans on are mostly not that. Many are diesel-only, with no hydro to optimise against, so the fuel a forecast buys is thinner. Many have no utility engineer on site, no telemetry worth the name, and bandwidth that makes 'real-time' a question rather than an assumption. A physics-based twin is expensive to build per system and Cordova's does not transfer to another village by copying a file. So the honest counter is that a method proven on the most instrumented microgrid in the state may prove only that the most instrumented microgrid in the state can be optimised, and Alaska would have bought a demonstration rather than a template. The scene ends on what would answer it: whether Phase One's scope names even one second site, or a stated cost to stand a twin up somewhere with less data.",
-
-  "throughline_object": {
-    "object": "the diesel gauge at Cordova, and the CLAIMED / MEASURED pair it becomes",
-    "states": [
-      {"at_s": 8, "state": "a needle moving, fuel burning. The physical cost of a guess."},
-      {"at_s": 34, "state": "a forecast double appears beside it and CLAIMS a number. The claim is on the board."},
-      {"at_s": 72, "state": "the MEASURED slot beside the claim is EMPTY and hatched: NOT YET MEASURED. This is the Act 3 image and the honest state of the project."},
-      {"at_s": 104, "state": "a second, small load plugs in beside the gauge and the needle question reopens, bigger than before."}
-    ],
-    "lands_in_button": true
-  },
-
-  "open_loops": {
-    "open_loop": {"plant_t": 15, "pay_t": 92, "what": "there is a number that will say whether this worked, and it does not exist yet"},
-    "open_loop_2": {"plant_t": 44, "pay_t": 104, "what": "something else is moving in beside the creek this year"}
-  },
-
-  "cuts": [
-    "The Genesis Mission program name. It buys nothing for a LinkedIn viewer and costs a line of explanation. All three analysts cut it.",
-    "The full partner list. Cordova Electric Cooperative earns its name because it supplies the data; Colorado State and the National Laboratory of the Rockies are credits, and they live in the source block.",
-    "The $7 million Phase Two as a headline number. It is an estimate, not an award, and putting it on a card makes an unfunded figure the thing people remember.",
-    "The $725,000 versus $325,000 split as a spoken beat. Two similar dollar figures in one breath is confusing and only one of them matters.",
-    "A dictionary explainer of 'digital twin'. It is the oldest technology in the project and the least interesting sentence in the release.",
-    "The phrase 'state-of-the-art AI' quoted approvingly. It is the release's weakest claim.",
-    "'Over 200 remote microgrids' in the HOOK. It is the most quotable fact here and the one that most corrupts the argument, because it invites the film to imply statewide impact from a one-utility nine-month project. It appears ONCE, late, as the reason any of this matters beyond one town, and never as the size of the result.",
-    "Any attempt to make Fairbanks or the Air Force the villain of a Cordova story."
-  ],
-
-  "runners_up": [
+  "fair_counter_it_must_honor": "A Request for Lease Proposal precedes a project by design (c3), no developer had been selected (c10), and the developer carries permitting itself (c14). There may be no megawatt figure for the simple reason that there is no project. Demanding the number in September may be demanding a blank page for its weight, and a state that insists on a number before there is a project is a state that gets no projects. THE FILM CONCEDES THIS FULLY AND OUT LOUD, and the thesis survives because it never asks for the number. It asks for the date the number becomes public, which is answerable today with nothing designed.",
+  "second_movement": "Fairbanks has said yes to a big federal neighbour before and was right to. Mayor Hopkins says the town was buoyed by defense spending and infrastructure when the F-35 squadron arrived (c12), and Hollister concedes the jets inside her own quote (c5). The recontextualising distinction: A FIGHTER WING IS A BUDGET AND A DATA CENTER IS AN APPETITE. The squadron arrived carrying its own appropriation. A load arrives carrying a demand curve, and a demand curve gets satisfied out of whatever supply is standing there.",
+  "act3_test": "THE DIAGRAM THAT RUNS TWICE AND CANNOT RESOLVE. Build the Interior cost stack as one tall bar over a thin row of houses, which is c15. Add one enormous customer and run it both ways. Way one, the customer builds generation sized to its own load: the stack grows, the row grows faster, and the bar over the house SHRINKS. That is the pro-development case at full strength and it is the best energy news Interior Alaska could get, because new Railbelt generation is what Fairbanks has never been able to finance on its own ratepayer base. Way two, the customer draws on supply that already exists: same stack, new bidder, and the bar GROWS. Same land, same customer, opposite answer, one variable. Then put NOT DISCLOSED in the slot where the load figure goes and let the audience watch the diagram fail to resolve. The film does not narrate which is likelier.",
+  "what_an_alaskan_should_ask_for": "Not the megawatts. Nobody can publish those yet, and asking invites a truthful shrug. Ask for the DATE: at what stage does the load figure become public, and is the lease executed before or after that stage. It needs no design decision, it can be answered today, and it is the pro-project ask rather than the hostile one, because a developer who intends to build is currently negotiating against a borrowed number it did not choose and cannot rebut.",
+  "runner_up_angles": [
     {
-      "angle": "Analyst A: the money is an OPTION PURCHASE. $725,000 cannot buy diesel savings; it buys the one thing $7 million cannot buy later, which is a real islanded utility's operating record and a twin calibrated against it, and the only honest success test is whether that twin is built against data a less-instrumented village could also produce.",
-      "why_it_lost": "The sharpest read of the economics in the room and it is folded into the supporting facts and the Act 3 rather than dropped. It lost the lead because 'option purchase' is a finance abstraction and this format has to land as a picture. The scoreboard framing carries the same argument in gallons, which a muted viewer can see."
+      "angle": "CIVICS: the borough's wish list is the smartest move in the story, not a confession of powerlessness, because an energy condition gets written into a lease term or a statute and never into a borough plat.",
+      "why_it_lost": "It is right, and both the civics and the energy analysts converged on it independently, which is why it survives as the film's correction rather than its spine. It lost the spine because its central claim, that there is a next Alaska-controlled venue, could not be grounded in any statute in the safe set. Its own author said so: 'I can't name the statute, the claim set doesn't contain one.' A spine may not rest on a hypothesis dressed as law."
     },
     {
-      "angle": "Analyst B: Cordova is running, cheaply and by accident, the experiment the rest of Alaska is being asked to run expensively and all at once, because the load here is 100 kilowatts instead of 100 megawatts.",
-      "why_it_lost": "The best single sentence produced by the room, and it is the SECOND MOVEMENT rather than the thesis. Leading with it would make the film about data centers, which is the crowded beat this run deliberately stepped around, and it would lean on a connection between the two halves that the record does not support."
+      "angle": "INFORMATION: the missing item is not a quantity, it is a calendar, and a calendar can be published today without a single design decision being made.",
+      "why_it_lost": "Not really lost. It IS the film's turn and its ask, absorbed whole. It did not take the spine because a disclosure-schedule thesis is a claim about paperwork, and the energy framing gives the same ask a stake a Fairbanks household can feel in its own bill."
     },
     {
-      "angle": "Analyst C's opening position: there is no story here yet, only a press release about a small grant.",
-      "why_it_lost": "C withdrew it under its own examination and named why: the thesis claims no result, it claims a test exists and names the date by which it should read something, which is worth saying in the only window where saying it can change the answer. A dispatch claiming 'AI will save Cordova diesel' would deserve the objection. This one does not."
+      "angle": "THE VACUUM: residents are objecting to a project whose size has never been published.",
+      "why_it_lost": "Killed by the civics analyst on two counts and correctly. It is a description of an absence rather than a claim, so its only test is to wait. And it has an innocent explanation that Act 3 delivers cleanly: a lease solicitation precedes a project by design. The absence survives as EVIDENCE with a job to do, never as the thesis."
+    },
+    {
+      "angle": "COLD IS ALASKA'S EDGE: free air cooling makes the Interior one of the best places in America to run compute.",
+      "why_it_lost": "Rejected on physics and on the safe set by the analyst who most wanted it. Cold cuts the COOLING load, and the compute pulls the same watts at forty below as it does in Phoenix, so the advantage lands on the smaller half of the bill. Proving it needs a PUE or a site comparison, and c11 is a verified absence while benchmarking against another named data center is banned. Refusing to do to the pro case what we refused to do to the against case is the whole discipline."
     }
+  ],
+  "hard_constraints_carried_into_the_build": [
+    "NO megawatt, water, acre-foot or project-size figure, ever, and no benchmark against another named data center to imply one.",
+    "The 'bring your own power' proposition attributed to gubernatorial candidates is NOT in claims.json. It may not be spoken, labelled or drawn. The film builds the generation argument on c14 alone.",
+    "SB 250 and the whole state-land / AIDEA track are UNVERIFIED and are OUT of this film. Keeping one story question is worth more than a second map.",
+    "Hollister's quote is a trail interview, never Assembly testimony. Hopkins is never cut as opposition.",
+    "No Alaska Native voice appears in any source, so the film implies neither support nor opposition. The Tanana is a subsistence watershed and carries no number."
   ]
 }

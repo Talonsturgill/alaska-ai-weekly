@@ -12,7 +12,10 @@
       "source_url": "https://alaskapublic.org/news/alaska-desk/2026-09-15/forget-jets-and-helicopters-data-centers-could-be-alaska-military-towns-next-noisy-neighbors",
       "source_label": "Alaska Public Media / American Homefront Project, September 15th",
       "second_source_url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
-      "requires": ["the word ABOUT or ROUGHLY stays attached to the number, on screen and in VO. It is an offer figure, not a survey."]
+      "requires": [
+        "the word ABOUT or ROUGHLY stays attached to the number, on screen and in VO. It is an offer figure, not a survey.",
+        "4,700 acres is the THREE-INSTALLATION TOTAL. ADN reports JBER alone offered five sites of roughly 60 to 200 acres, which cannot reach 4,700. Never attach the figure to one base."
+      ]
     },
     {
       "id": "c2",
@@ -30,16 +33,18 @@
     },
     {
       "id": "c3",
-      "status": "VERIFIED",
-      "spoken": "The solicitation is A F C E C dash twenty six dash R dash zero zero zero six. Proposals closed June twenty ninth.",
-      "on_screen": "AFCEC-26-R-0006",
-      "verbatim_source": "field: \"AFCEC-26-R-0006, Air Force Installation Contracting Agency, posted April 10, 2026, response due June 29, 2026, extended from May 29, 2026\"",
-      "source_url": "https://www.highergov.com/contract-opportunity/rflp-artificial-intelligence-ai-data-center-deve-afcec-26-r-0006-o-db695/",
-      "source_label": "HigherGov mirror of the SAM.gov notice",
+      "status": "LABELED",
+      "spoken": "In April the Air Force offered the land for commercial A I data center development.",
+      "on_screen": "REQUEST FOR LEASE PROPOSAL \u00b7 APRIL 2026",
+      "verbatim_source": "field: \"RFLP Artificial Intelligence (AI) Data Center Development at Joint Base Elmendorf Richardson, Eielson Air Force Base, and Clear Space Force Station\", published April 10, 2026",
+      "source_url": "https://sam.gov/opp/e1f00a73b56e493eaa84ba281e9db695/view",
+      "source_label": "Department of the Air Force posting on SAM.gov",
       "label": "solicitation record",
       "requires": [
-        "this is a REQUEST FOR LEASE PROPOSAL. Never say the Air Force is BUILDING anything. It is offering LAND.",
-        "SAM.gov itself would not render, so this is a near-primary mirror and is labeled as a record rather than quoted as the government's own page."
+        "THE SOLICITATION NUMBER AFCEC-26-R-0006 IS CUT AND MAY NOT APPEAR. Validator 1 took it from HigherGov's mirror. Validator 2 reached the SAM.gov posting itself and found the title above plus a GUID, and reports Air and Space Forces Magazine also gives the GUID rather than an AFCEC number. The validator that reached the primary wins.",
+        "THE DEADLINE IS ALSO CUT. Validator 1 has June 29th extended from May 29th, per HigherGov. Validator 2's SAM.gov read says offers due May 29th. They disagree and neither is confirmed twice, so no deadline goes on screen.",
+        "It is a REQUEST FOR LEASE PROPOSAL. Never say the Air Force is BUILDING anything.",
+        "The three installations and the April 2026 date ARE on the government's own posting and are the primary here."
       ]
     },
     {
@@ -85,7 +90,7 @@
       "status": "LABELED",
       "spoken": "In late August the Fairbanks North Star Borough Assembly asked for a pause on large commercial data centers. K U A C reports it was the only item that appears on both the state and the federal list.",
       "on_screen": "THE ONLY ITEM ON BOTH LISTS",
-      "verbatim_source": "\"But only one item appears as a priority in both state and federal parts of the list – a request to temporarily halt the development of large commercial data centers in Alaska.\"",
+      "verbatim_source": "\"But only one item appears as a priority in both state and federal parts of the list \u2013 a request to temporarily halt the development of large commercial data centers in Alaska.\"",
       "source_url": "https://fm.kuac.org/2026-08-31/in-legislative-priorities-fairbanks-north-star-borough-assembly-doubles-up-on-ai-data-center-moratorium-request",
       "source_label": "KUAC, Patrick Gilchrist, August 31st",
       "label": "per KUAC",
@@ -121,7 +126,8 @@
       "requires": [
         "THIS IS THE WEAKEST LOAD-BEARING ELEMENT AND IT IS REPORTING, NOT LAW. No lawyer, statute, case or borough attorney is quoted anywhere readable.",
         "use MAY BE POWERLESS, matching the outlet's own headline. NEVER 'has no power'.",
-        "the borough's actual ask is a state and federal moratorium, a lobbying route that does not depend on borough zoning power at all, so 'powerless' overstates the borough's own framing."
+        "the borough's actual ask is a state and federal moratorium, a lobbying route that does not depend on borough zoning power at all, so 'powerless' overstates the borough's own framing.",
+        "SHARPENED by validator 2. The nearest on-record statement is Anchorage Assembly chair Anna Brawley (ADN, May 5th) that new municipal rules 'would likely not apply to' JBER, which falls outside the Municipality of Anchorage's jurisdiction. That is a MUNICIPALITY, hedged with 'likely', and about Anchorage. The film may say a local official has said local rules would likely not reach JBER. It may NOT assert in our own voice that a borough has no zoning authority over federal military land."
       ]
     },
     {
@@ -133,7 +139,9 @@
       "source_url": "https://alaskapublic.org/news/alaska-desk/2026-09-15/forget-jets-and-helicopters-data-centers-could-be-alaska-military-towns-next-noisy-neighbors",
       "source_label": "Alaska Public Media, September 15th",
       "label": "as of September 15th",
-      "requires": ["TIME-BOUND IT. Never the bare present tense. SAM.gov could not be checked for a later award notice."]
+      "requires": [
+        "TIME-BOUND IT. Never the bare present tense. SAM.gov could not be checked for a later award notice."
+      ]
     },
     {
       "id": "c11",
@@ -170,17 +178,21 @@
       "verbatim_source": "\"This is a unique opportunity for a true public-private partnership. By making this land available, we are supporting the growing demands of the AI industry while generating value that directly supports our missions and the readiness of our Airmen and Guardians.\"",
       "source_url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
       "source_label": "Robert Moriarty, Deputy Assistant Secretary of the Air Force for Installations, April 11th",
-      "requires": ["this is the strongest fair point FOR the offer and Act 3 owes it a real scene, not a clause."]
+      "requires": [
+        "this is the strongest fair point FOR the offer and Act 3 owes it a real scene, not a clause."
+      ]
     },
     {
       "id": "c14",
       "status": "VERIFIED",
       "spoken": "The developer carries the financing, the permitting, the construction and the long term operation.",
-      "on_screen": "FINANCING · PERMITTING · CONSTRUCTION · OPERATION",
+      "on_screen": "FINANCING \u00b7 PERMITTING \u00b7 CONSTRUCTION \u00b7 OPERATION",
       "verbatim_source": "labelled non-quotation, the magazine's summary of the solicitation: the selected developer \"will be responsible for all aspects of the project, including financing, permitting, construction and long-term operation\"",
       "source_url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
       "source_label": "Air and Space Forces Magazine, April 11th",
-      "requires": ["part of the Act 3 case FOR. The risk sits with the developer, not the taxpayer."]
+      "requires": [
+        "part of the Act 3 case FOR. The risk sits with the developer, not the taxpayer."
+      ]
     },
     {
       "id": "c15",
@@ -190,7 +202,38 @@
       "verbatim_source": "\"Alaska's energy system is strained, and Fairbanks already has some of the nation's highest utility costs.\"",
       "source_url": "https://americanhomefront.wunc.org/news/2026-09-22/military-data-centers-are-sparking-opposition-but-local-leaders-may-be-powerless-to-stop-them",
       "source_label": "American Homefront Project, September 22nd",
-      "requires": ["no dollar figure is published in the source. Do not supply one."]
+      "requires": [
+        "no dollar figure is published in the source. Do not supply one."
+      ]
+    },
+    {
+      "id": "c16",
+      "status": "VERIFIED",
+      "spoken": "Chugach Electric said in May it doesn't have the gas to serve a large data center, and that it depends on the size of the data center.",
+      "on_screen": "We currently do not have gas to serve a large data center",
+      "verbatim_source": "\"We currently do not have gas to serve a large data center, but we do have generation capacity, so it depends on the size of the data center, their economics, project timing, and specific contractual terms of service.\"",
+      "source_url": "https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/",
+      "source_label": "Julie Hasquet, Chugach Electric Association spokesperson, to Anchorage Daily News, May 5th",
+      "requires": [
+        "THE SECOND HALF OF THE SENTENCE IS LOAD-BEARING AND MAY NOT BE DROPPED. Chugach did not say a data center is impossible. It said it lacks the GAS today WHILE HAVING generation capacity, and made the answer conditional on size, economics, timing and contract terms. Cutting at 'large data center' is exactly the one-sided framing the fact-check exists to stop.",
+        "IT IS ANCHORAGE, NOT FAIRBANKS. Chugach serves Southcentral. This film's bill is a Fairbanks bill on a different utility, so the quote supports the SIZE-DEPENDENCE point generally and may never be presented as a statement about Fairbanks or about these parcels.",
+        "Dated May 2026, four months before this. Context, not a statement about the offer.",
+        "THIS IS WHY IT EARNS ITS PLACE: 'it depends on the size of the data center' is an Alaska utility saying on the record what the film's own arithmetic concludes. It carries the film's weakest link, which a cold reader flagged as asserted rather than earned. Use it as an on-screen card under the arithmetic."
+      ]
+    },
+    {
+      "id": "c17",
+      "status": "LABELED",
+      "spoken": "Golden Valley, the Fairbanks utility, has said it can't presently support a large data center.",
+      "on_screen": "GOLDEN VALLEY \u00b7 CANNOT PRESENTLY SUPPORT A LARGE LOAD",
+      "verbatim_source": "labelled non-quotation. ADN attributes to spokesperson Ashley Bradish that the utility cannot presently support a large data center, and that Cook Inlet gas fell from roughly 30 percent of its fuel supply to under 1 percent.",
+      "source_url": "https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/",
+      "source_label": "Golden Valley Electric Association, via Anchorage Daily News, May 5th",
+      "requires": [
+        "NO QUOTATION MARKS. The validator could not recover a clean verbatim from Bradish, so this is reported substance only.",
+        "May 2026 context, not a statement about these parcels.",
+        "Do NOT let this collapse the film into 'it can't happen'. It sharpens the bring-your-own-generation branch rather than closing the question."
+      ]
     }
   ],
   "cultural_rules": [
@@ -207,6 +250,12 @@
     "Hollister's trail quote labelled as Assembly testimony",
     "any flat assertion that the borough has no legal authority",
     "an animated counter on the 100 communities figure",
-    "anything attributed to the Department of the Air Force's own release, which was never readable"
+    "anything attributed to the Department of the Air Force's own release, which was never readable",
+    "the solicitation number AFCEC-26-R-0006, which the validator that reached SAM.gov could not find",
+    "any proposal deadline, because the two validators disagree and neither reading is confirmed twice",
+    "the 4,700 acre figure attached to any single installation",
+    "Chugach's quote cut short at 'large data center', or presented as being about Fairbanks",
+    "any Enstar 18-day figure. The phrasing handed to research was FABRICATED and Enstar has publicly rejected that reading of its own number.",
+    "the whole Mat-Su / AIDEA state-land track, which is verified but deliberately out of this film's scope"
   ]
 }
