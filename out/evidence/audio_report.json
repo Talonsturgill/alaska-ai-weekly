@@ -3,14 +3,14 @@
  "also_covers_master": true,
  "master_measured": {
   "i": -14.37,
-  "tp": -3.21,
-  "lra": 6.8
+  "tp": -2.95,
+  "lra": 6.7
  },
- "master_identity": "the 9:16 master measures I=-14.37 TP=-3.21 LRA=6.8 against the delivered square's I=-14.37 TP=-3.21 LRA=6.8. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
+ "master_identity": "the 9:16 master measures I=-14.37 TP=-2.95 LRA=6.7 against the delivered square's I=-14.37 TP=-2.95 LRA=6.7. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
  "tool": "ffmpeg loudnorm + forced-alignment word timings",
  "delivered_i": -14.37,
- "delivered_tp": -3.21,
- "delivered_lra": 6.8,
+ "delivered_tp": -2.95,
+ "delivered_lra": 6.7,
  "targets": {
   "i": -14.0,
   "tp_max": -1.0,

@@ -1,6 +1,6 @@
 {
  "note": "every open-caption cue in the delivered cut, in order, as built into episode_props.json and rendered by the episode. Times are seconds from the first frame. Grade caption text against THIS, not against the 14 contact stills, which sample only a fraction of the runtime.",
- "count": 19,
+ "count": 20,
  "cues": [
   {
    "start": 0.0,
@@ -9,8 +9,13 @@
   },
   {
    "start": 8.4,
+   "end": 13.26,
+   "text": "Some sits at Eielson Air Force Base, outside Fairbanks,"
+  },
+  {
+   "start": 13.72,
    "end": 15.66,
-   "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest."
+   "text": "where bills are among the nation's highest."
   },
   {
    "start": 16.7,

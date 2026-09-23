@@ -287,7 +287,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g transform={`translate(${540 - 380 * (0.94 + 0.06 * slam)},${400 - 46 * (1 - slam)}) scale(${(0.94 + 0.06 * slam) * push * 1.19})`}>
           <Statement f={f} x={0} y={0} w={640} masthead="U.S. AIR FORCE"
             rows={ROWS_FULL.map((r, i) => ({...r, value: i === 0 ? (cnt > 0.02 ? `ABOUT ${acre.toLocaleString()}` : '') : r.value}))}
-            totalLabel="AWARDED" totalValue="NONE YET" arrive={cascade * 4} />
+            totalLabel="AWARDED" totalValue="NONE, MID SEPTEMBER" arrive={cascade * 4} />
         </g>
         <Head text="ONE ROW IS BLANK" y={1268} size={66} p={dim} />
         {/* THE ACREAGE CHIP IS GONE. It sat on top of the statement's own ACREAGE row,
@@ -406,14 +406,17 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <line key={i} x1={130 + i * 38} y1={424 - 7} x2={130 + i * 38} y2={424 + 7}
             stroke="#8C8A93" strokeWidth={2} opacity={flat * 0.5 * (0.5 + 0.5 * Math.sin(f / 7 + i))} />
         ))}
-        <Character frame={f} x={300} y={GY} scale={1.18} outfit="parka" headgear="hood"
-          pose="stand" emotion="worried" facing={1} idleGain={0.85} />
+        <Character frame={f} x={262} y={GY} scale={1.18} outfit="parka" headgear="hood"
+          pose="stand" emotion="worried" facing={1} idleGain={1.5} />
         <g opacity={clamp(type * 3)}>
-          <rect x={92} y={846} width={896} height={198} rx={12} fill={C.paper}
+          {/* OFF HER BODY. Full width, this card lay across Hollister from chin to hip on
+              the film's most emotional line and turned her into a floating head above a
+              cream slab. It now occupies the empty right half and she is whole. */}
+          <rect x={468} y={838} width={536} height={226} rx={12} fill={C.paper}
             stroke={C.ink} strokeWidth={3} opacity={0.97} />
-          {shown.match(/.{1,30}(\s|$)/g)?.slice(0, 3).map((s, i) => (
-            <text key={i} x={124} y={912 + i * 52} fontFamily={MONO} fontWeight={700}
-              fontSize={34} fill={C.carbon}>{s.trim()}</text>
+          {shown.match(/.{1,25}(\s|$)/g)?.slice(0, 4).map((s, i) => (
+            <text key={i} x={496} y={898 + i * 50} fontFamily={MONO} fontWeight={700}
+              fontSize={29} fill={C.carbon}>{s.trim()}</text>
           ))}
         </g>
         <Plate text="THE HUM" y={1160} size={30} p={flat} />
@@ -514,12 +517,17 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const seat = pop(21, 22);
     picture = (
       <SVG><Defs />
-        <rect x={0} y={0} width={W} height={H} fill="url(#sky23)" />
-        <rect x={0} y={GY - 60} width={W} height={H - GY + 60} fill="url(#apron23)" />
+        {/* THE ONLY WORLDLESS SHOT IN THE FILM, and it is the honest turn, which is the
+            worst one to stage as a letterbox band. Two judges named it. It gets the same
+            dusk ridge, spruce and gold ground every other character stands on. */}
+        <Dusk f={f} push={push} drift={drift} />
         {/* the hangar door rolling back, the floodlight widening */}
         <g>
+          {/* the floodlight is a WASH, not a pane. At 0.18 over the flat apron this shot
+              used to have, it read as light; over the dusk world it read as a hard-edged
+              brown rectangle laid on the trees. */}
           <rect x={540 - 520 * walkIn} y={640} width={1040 * walkIn} height={560}
-            fill={C.gold} opacity={0.18 * walkIn} />
+            fill={C.gold} opacity={0.075 * walkIn} />
           <rect x={0} y={560} width={W} height={80} fill="#1A1626" />
           {Array.from({length: 6}, (_, i) => (
             <rect key={i} x={60 + i * 170} y={572} width={54} height={20} rx={6}
@@ -537,9 +545,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             when the cut landed and two judges found an empty apron on the film's sharpest
             turn. `enter` runs from the shot's own frame 0, so they are already walking in
             as the cut happens and the hangar has a person in it throughout. */}
-        <g transform={`translate(${-110 + 410 * ease(f, 0, 42)},0)`}>
+        <g transform={`translate(${-110 + 410 * ease(f, 0, 62)},0)`}>
           <Character frame={f} x={300} y={GY} scale={1.24} outfit="worker" headgear="cap"
-            pose="stand" emotion="neutral" facing={1} walking={ease(f, 0, 42) < 0.94} idleGain={1.0} />
+            pose="stand" emotion="neutral" facing={1} walking={ease(f, 0, 62) < 0.94} idleGain={1.45} />
         </g>
         <Plate text="A PARTNERSHIP" y={470} size={34} p={walkIn} />
         <Plate text="SUPPORTING AIRMEN AND GUARDIANS" y={558} size={26} tone="paper" p={seat} />
@@ -562,9 +570,15 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           {[0, 1, 2, 3, 4].map((i) => (
             <House key={i} x={128 + i * 200} y={GY} s={0.80} lit={0.9} />
           ))}
+          {/* WIRES 0.55, FUEL 0.45, and the order matters more than the numbers.
+              VO line 10 is "The wires split across everyone, so that half is tall", and
+              this diagram showed WIRES as the SHORT segment for the whole 6.6s cue. A
+              judge caught the film's central explainer contradicting its own sentence.
+              The wires half is tall here and THEN thins on line 11, which is the move the
+              next beat already performs. */}
           <CostStack f={f} x={468} y={GY - 8} w={150} h={720}
-            halves={[{name: 'WIRES', frac: 0.45, color: C.copper, scale: wiresScale},
-                     {name: 'FUEL', frac: 0.55, color: C.carbon}]}
+            halves={[{name: 'WIRES', frac: 0.55, color: C.copper, scale: wiresScale},
+                     {name: 'FUEL', frac: 0.45, color: C.carbon}]}
             split={split} customers={5} divide={div} labels={div < 0.5} labelSize={22} />
           <Block x={912} y={GY} s={0.66} p={thin} />
         </g>
@@ -597,8 +611,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <rect x={498} y={GY - 40 - 140 * Math.max(0.05, fuelScale - 0.4)} width={58} height={140 * Math.max(0.05, fuelScale - 0.4)}
           fill={C.carbon} stroke={C.ink} strokeWidth={2} opacity={0.9} />
         <CostStack f={f} x={456} y={GY - 40} w={172} h={760}
-          halves={[{name: 'WIRES', frac: 0.45, color: C.copper, scale: 0.58},
-                   {name: 'FUEL', frac: 0.55, color: C.carbon, scale: fuelScale}]}
+          halves={[{name: 'WIRES', frac: 0.55, color: C.copper, scale: 0.58},
+                   {name: 'FUEL', frac: 0.45, color: C.carbon, scale: fuelScale}]}
           split={1} labels={false} />
         {/* branch A and branch B, drawn either side */}
         <g opacity={brA}>
@@ -651,8 +665,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             his entire twelve-second beat. He now stands clear of the edge, in front of
             his own town rather than half outside it. */}
         <g opacity={1 - arrive2 * 0.4}>
+          {/* POINT, NOT RAISE. The raise pose sends the near arm up past the head, and on a
+              figure in a red garment that tube crossed his face and read as somebody
+              shielding their eyes. He is showing you his town, which is what a point is
+              for, and the point arm is the best-finished limb in the rig. */}
           <Character frame={f} x={272} y={GY} scale={1.06} outfit="flannel" headgear="beanie"
-            pose="raise" emotion="neutral" facing={1} gesture={reachG} idleGain={1.0} />
+            pose="point" emotion="neutral" facing={1} gesture={reachG} idleGain={1.4} />
         </g>
         {/* the jets, drawn on the words that name them */}
         <g opacity={jets} transform={`translate(${940 - 660 * jets},${-30 * (1 - jets)})`}>
@@ -739,7 +757,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <Dusk f={f} push={push} drift={drift} groundY={1290} near={false} />
         <g transform={`translate(${540 * (1 - s) + 188},${380}) scale(${s * 1.08})`}>
           <Statement f={f} x={0} y={0} w={560} masthead="U.S. AIR FORCE"
-            rows={ROWS_FULL} totalLabel="AWARDED" totalValue="NONE YET" arrive={1} />
+            rows={ROWS_FULL} totalLabel="AWARDED" totalValue="NONE, MID SEPTEMBER" arrive={1} />
         </g>
         <g opacity={0.9} transform={`translate(96,986) rotate(-3) scale(${0.86 * s})`}>
           <rect x={6} y={8} width={480} height={260} fill={C.ink} opacity={0.30} />

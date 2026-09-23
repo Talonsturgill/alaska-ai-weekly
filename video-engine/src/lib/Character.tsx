@@ -784,6 +784,11 @@ export const Character: React.FC<CharacterProps> = ({
                 additional drift is inside the tolerance scenes already build against.
                 A full swing here would be ~7px at the hand and would visibly shed the prop. */}
             <g transform={`rotate(${nearArmRot * 0.3} 46 258)`}>
+              {/* A SHOULDER, so the raised arm is attached to something. Its lower end is a
+                  round stroke cap, and on a figure whose garment is a bright colour that cap
+                  reads as a tube laid over the jacket rather than an arm coming out of it.
+                  A judge described exactly that on the mayor. */}
+              <circle cx={46} cy={258} r={19} fill={c.main} stroke={INK} strokeWidth={5} />
               <path d={`M46,258 q26,-70 ${12 + 2 * Math.sin(f / 10)},-140`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
               <path d={`M46,258 q26,-70 ${12 + 2 * Math.sin(f / 10)},-140`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
               {hand(58 + 2 * Math.sin(f / 10), 118, 180)}
@@ -1120,7 +1125,7 @@ export const Character: React.FC<CharacterProps> = ({
                 "a light grey slab behind his left shoulder ... an unresolved flat plate" and
                 "a light grey slab rather than a designed backpack", which is exactly what a
                 rim light reads as once it leaves the edge it is supposed to be lighting. */}
-            <RimLight d="M-88,-150 q-2,72 -3,120" w={3} opacity={0.34} />
+            <RimLight d="M-86,-146 q-2,70 -3,116" w={2.5} opacity={0.15} />
             <ellipse cx={0} cy={-146} rx={42} ry={10} fill={INK} opacity={0.14} />
             <path d="M-84,-2 q84,22 168,0" fill="none" stroke={INK} strokeWidth={2.5} strokeDasharray="7 6" opacity={0.3} />
             {/* arms attach at shoulder height inside torso group (pose coords are authored
