@@ -40,6 +40,16 @@ CHECKS = [
     # caught it by reading a table, so the table is a program now.
     ("every shot draws the lines it plays over",
      [sys.executable, "scripts/say_it_show_it_check.py"], True),
+    # The reconciliation of the two gates above and below, which read `beat["shot"]` from
+    # opposite ends and deadlocked on it on 2026-09-19. It prints BOARD vs ENGINE vs SCRIPT
+    # for every beat and names which side to move. Measured on that run's own shipped
+    # artifacts: 40 beats, 31 disagreements, ZERO of them board-vs-script and all 31 in the
+    # engine column, which is the proof that refiling the board to quiet strip_name_check
+    # was fixing the wrong side. ADVISORY here on purpose, because its real home is Gate 0A
+    # where a board costs nothing to conform, and arming a new blocker mid-delivery is how a
+    # run dies at 3am. PROMOTE IT TO BLOCKING once a run has shipped with it green.
+    ("board, engine and script agree on which shot a beat belongs to",
+     [sys.executable, "scripts/shot_conform_check.py"], False),
     # The post linter does not see film labels or rebuilt captions. Both carried a
     # banned colon in the September 3 render despite a clean locked VO script.
     ("visible source and built props obey the copy rules",
