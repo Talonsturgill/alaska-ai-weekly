@@ -1,300 +1,212 @@
 {
-  "run_date": "2026-09-19",
-  "story": "UAF's Alaska Center for Energy and Power won a DOE Genesis Mission Phase I award for AURORA-AI, a nine-month research project pairing physics-based digital twins with machine learning on Cordova Electric Cooperative's islanded microgrid.",
+  "run_date": "2026-09-23",
+  "story": "The Air Force is offering about 4,700 acres of Alaska federal land for commercial AI data center development, and no power, water or project-size figure for those parcels has been published anywhere a resident can read.",
+  "fact_check": "two adversarial validators, 2026-09-23. Federal track verified in full. Anything not in this file may not appear on screen or in the VO.",
   "claims": [
     {
       "id": "c1",
       "status": "VERIFIED",
-      "claim": "UAF secured a $725,000 award from the U.S. Department of Energy for AURORA-AI.",
-      "spoken": "U A F's energy center said it won seven hundred twenty five thousand federal dollars",
-      "on_screen": "$725,000 \u00b7 PER UAF",
-      "verbatim_source": "\"a $725,000 award from the U.S. Department of Energy\"",
-      "url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
-      "second_source_url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
-      "label": "per UAF",
-      "requires": [
-        "The words PER UAF appear in the same frame as the figure. No DOE document naming AURORA-AI could be found, so the film must never imply a DOE announcement.",
-        "This is the four-way consortium TOTAL, never 'to UAF'."
-      ],
-      "confidence": "high"
+      "spoken": "The Air Force is offering about four thousand seven hundred acres of federal land in Alaska.",
+      "on_screen": "ABOUT 4,700 ACRES",
+      "verbatim_source": "\"It's offered to lease about 4,700 acres of government land to private companies, though no projects have been awarded yet.\"",
+      "source_url": "https://alaskapublic.org/news/alaska-desk/2026-09-15/forget-jets-and-helicopters-data-centers-could-be-alaska-military-towns-next-noisy-neighbors",
+      "source_label": "Alaska Public Media / American Homefront Project, September 15th",
+      "second_source_url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
+      "requires": ["the word ABOUT or ROUGHLY stays attached to the number, on screen and in VO. It is an offer figure, not a survey."]
     },
     {
       "id": "c2",
-      "status": "LABELLED",
-      "claim": "Of the $725,000 total, UAF's own share is $325,000.",
-      "spoken": "U A F's share, three hundred twenty five thousand",
-      "on_screen": "$325,000 TO UAF \u00b7 PER ALASKA'S NEWS SOURCE",
-      "verbatim_source": "structured field citation, UAF share: \"$325,000\"",
-      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
-      "label": "according to Alaska's News Source",
+      "status": "LABELED",
+      "spoken": "Twelve parcels have been identified.",
+      "on_screen": "12 PARCELS",
+      "verbatim_source": "\"Twelve parcels have been identified for potential development\"",
+      "source_url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
+      "source_label": "Air and Space Forces Magazine, April 11th",
+      "label": "per Air and Space Forces Magazine",
       "requires": [
-        "SINGLE SOURCE. The ACEP release gives only the total. If painted, the outlet name is in the same frame.",
-        "Voiced alongside the four-partner count so the $725,000 can never read as UAF's own."
-      ],
-      "confidence": "medium"
+        "NEVER say twelve data centers. A separate outlet says 'up to a dozen data centers' and that is a different claim about a different thing.",
+        "the map may show the THREE INSTALLATIONS and may NOT show twelve located dots. Their locations are not public (see c4)."
+      ]
     },
     {
       "id": "c3",
-      "status": "LABELLED",
-      "claim": "Phase One is reported to start October 1st and run about nine months, and is primarily research.",
-      "spoken": "The work starts October first",
-      "on_screen": "PHASE 1 \u00b7 STARTS OCT 1 \u00b7 9 MONTHS \u00b7 RESEARCH",
-      "verbatim_source": "labelled non-quotation, not a quotation: the article states an October 1 Phase One start and a nine-month duration, described as primarily research.",
-      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
-      "label": "per Alaska's News Source",
+      "status": "VERIFIED",
+      "spoken": "The solicitation is A F C E C dash twenty six dash R dash zero zero zero six. Proposals closed June twenty ninth.",
+      "on_screen": "AFCEC-26-R-0006",
+      "verbatim_source": "field: \"AFCEC-26-R-0006, Air Force Installation Contracting Agency, posted April 10, 2026, response due June 29, 2026, extended from May 29, 2026\"",
+      "source_url": "https://www.highergov.com/contract-opportunity/rflp-artificial-intelligence-ai-data-center-deve-afcec-26-r-0006-o-db695/",
+      "source_label": "HigherGov mirror of the SAM.gov notice",
+      "label": "solicitation record",
       "requires": [
-        "The source states October 1 with NO YEAR, so the film must not print a year with it.",
-        "The word RESEARCH travels with this claim on screen. It is the reason this is a study and not a result."
-      ],
-      "confidence": "medium"
+        "this is a REQUEST FOR LEASE PROPOSAL. Never say the Air Force is BUILDING anything. It is offering LAND.",
+        "SAM.gov itself would not render, so this is a near-primary mirror and is labeled as a record rather than quoted as the government's own page."
+      ]
+    },
+    {
+      "id": "c4",
+      "status": "CUT",
+      "spoken": null,
+      "on_screen": null,
+      "note": "Any per-base parcel breakdown. Five at Eielson, two across the Richardson Highway, one near southeast North Pole. NOTHING readable supports it. It may not appear as a number, a map label, or a count of pins in the animation."
+    },
+    {
+      "id": "c5",
+      "status": "LABELED",
+      "spoken": "Salcha resident Sarah Hollister told reporters the roar of jet fighters always reminded her of the sacrifices we make for freedom. But the hum of a data center, she said, shows her we have completely lost our way.",
+      "on_screen": "But the sound of a 24/7 hum from a data center shows me that we have completely lost our way.",
+      "verbatim_source": "\"The roar of jet fighters and helicopters overhead has always reminded me of our sacrifices we make for freedom,\" she said. \"But the sound of a 24/7 hum from a data center shows me that we have completely lost our way.\"",
+      "source_url": "https://alaskapublic.org/news/alaska-desk/2026-09-15/forget-jets-and-helicopters-data-centers-could-be-alaska-military-towns-next-noisy-neighbors",
+      "source_label": "Sarah Hollister, Salcha resident, to Alaska Public Media / American Homefront Project",
+      "label": "Sarah Hollister, Salcha resident",
+      "requires": [
+        "SHE SAID THIS TO A REPORTER ON A NEIGHBOURHOOD TRAIL, NOT AS ASSEMBLY TESTIMONY. Labelling it testimony would be a fabricated setting and it nearly shipped.",
+        "it is TWO sentences on the page. On screen use the second sentence ALONE so nothing is stitched.",
+        "this is HER sentiment and the film lets her own it. It is not the house position, and Interior Alaska's relationship with Eielson is genuinely two-sided (see c12)."
+      ]
     },
     {
       "id": "c6",
-      "status": "VERIFIED",
-      "claim": "AURORA-AI stands for Alaska Utility Resilience and Optimization using Real-time AI.",
-      "spoken": "NOT SPOKEN",
-      "on_screen": "AURORA-AI",
-      "verbatim_source": "\"AURORA-AI (Alaska Utility Resilience and Optimization using Real-time AI)\"",
-      "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
-      "second_source_url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
-      "label": "",
+      "status": "LABELED",
+      "spoken": "Senator Lisa Murkowski said she is not a proponent of data centers at J B E R or at the Interior installations, because Alaska can't support them on an insecure energy base.",
+      "on_screen": "I am not a proponent of data centers down at JBER or at our Interior installations",
+      "verbatim_source": "\"I am not a proponent of data centers down at JBER or at our Interior installations because we are not able to support them because of an insecure energy base at this time.\"",
+      "source_url": "https://alaskapublic.org/news/alaska-desk/2026-09-15/forget-jets-and-helicopters-data-centers-could-be-alaska-military-towns-next-noisy-neighbors",
+      "source_label": "Sen. Lisa Murkowski, as quoted by Alaska Public Media",
+      "label": "Sen. Lisa Murkowski, as quoted by Alaska Public Media",
       "requires": [
-        "Confirmed identically on two institutionally independent primary sites. The expansion may be painted in full."
-      ],
-      "confidence": "high"
+        "the fragment beginning 'because we are not able to support them' may NOT stand alone. Without its subject it reads as someone else's 'we'.",
+        "capital I on Interior. It is a region.",
+        "her position is CONDITIONAL, tied to the energy base. Do not render her as an opponent of data centers generally.",
+        "no date or venue for the remark exists in any source. The film may not say when or where she said it."
+      ]
     },
     {
       "id": "c7",
-      "status": "VERIFIED",
-      "claim": "The Genesis Mission is a Department of Energy artificial intelligence initiative created by Executive Order 14363, signed November 24th, 2025.",
-      "spoken": "from the Energy Department's Genesis Mission",
-      "on_screen": "GENESIS MISSION \u00b7 EO 14363 \u00b7 NOV 24TH, 2025",
-      "verbatim_source": "\"a dedicated, coordinated national effort to unleash a new age of AI-accelerated innovation and discovery\"",
-      "url": "https://www.whitehouse.gov/presidential-actions/2025/11/launching-the-genesis-mission/",
-      "second_source_url": "https://www.federalregister.gov/api/v1/documents/2025-21665.json",
-      "label": "",
+      "status": "LABELED",
+      "spoken": "In late August the Fairbanks North Star Borough Assembly asked for a pause on large commercial data centers. K U A C reports it was the only item that appears on both the state and the federal list.",
+      "on_screen": "THE ONLY ITEM ON BOTH LISTS",
+      "verbatim_source": "\"But only one item appears as a priority in both state and federal parts of the list – a request to temporarily halt the development of large commercial data centers in Alaska.\"",
+      "source_url": "https://fm.kuac.org/2026-08-31/in-legislative-priorities-fairbanks-north-star-borough-assembly-doubles-up-on-ai-data-center-moratorium-request",
+      "source_label": "KUAC, Patrick Gilchrist, August 31st",
+      "label": "per KUAC",
       "requires": [
-        "The only fully primary government document in the story. The year 2025 stays on screen because it is a different calendar year."
-      ],
-      "confidence": "high"
+        "say LATE AUGUST. KUAC prints only 'Thursday'. August 27th is arithmetic, not a printed fact, and may not go on screen as a date.",
+        "it is a REQUEST on a legislative wish list aimed at Congress and the Legislature. The borough did NOT impose or pass a moratorium. Never say it did.",
+        "the ask covers large commercial data centers in Alaska generally, which is broader than military land."
+      ]
     },
     {
       "id": "c8",
-      "status": "VERIFIED",
-      "claim": "The AURORA-AI team is UAF's Alaska Center for Energy and Power, Colorado State University, the National Laboratory of the Rockies and Cordova Electric Cooperative.",
-      "spoken": "Four partners",
-      "on_screen": "UAF ACEP \u00b7 COLORADO STATE \u00b7 NATIONAL LABORATORY OF THE ROCKIES (FORMERLY NREL) \u00b7 CORDOVA ELECTRIC",
-      "verbatim_source": "\"researchers from the UAF Alaska Center for Energy and Power, Colorado State University, the National Laboratory of the Rockies and Cordova Electric Cooperative\"",
-      "url": "https://alaska-native-news.com/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids/85615/",
-      "second_source_url": "https://www.energy.gov/national-laboratories",
-      "label": "",
+      "status": "LABELED",
+      "spoken": "At least a hundred communities around the country have already adopted data center moratoriums.",
+      "on_screen": "AT LEAST 100 COMMUNITIES",
+      "verbatim_source": "\"At least 100 communities across the nation have adopted moratoria on building them, as opposition spreads from local jurisdictions to state legislatures.\"",
+      "source_url": "https://americanhomefront.wunc.org/news/2026-09-22/military-data-centers-are-sparking-opposition-but-local-leaders-may-be-powerless-to-stop-them",
+      "source_label": "American Homefront Project, citing a Columbia Law School analysis",
+      "label": "per a Columbia Law School analysis, via the American Homefront Project",
       "requires": [
-        "The National Laboratory of the Rockies is NOT a press-release error. DOE renamed NREL in December 2025 and lists the new name on its own national laboratories page. The film glosses it as FORMERLY NREL or a viewer will not know what it is."
-      ],
-      "confidence": "high"
+        "keep AT LEAST. Never round to 'more than 100'.",
+        "do NOT animate a counter. It is a May figure quoted in September, so it is a stale floor, and the underlying post body was unreachable."
+      ]
+    },
+    {
+      "id": "c9",
+      "status": "LABELED",
+      "spoken": "The Assembly can ask. As the reporting puts it, it can't tell the Pentagon what to do on military land.",
+      "on_screen": "it can't tell the Pentagon what to do on military land",
+      "verbatim_source": "labelled non-quotation, the reporters' own characterization: \"Even though the Borough Assembly is calling for a data center moratorium, it can't tell the Pentagon what to do on military land.\"",
+      "source_url": "https://americanhomefront.wunc.org/news/2026-09-22/military-data-centers-are-sparking-opposition-but-local-leaders-may-be-powerless-to-stop-them",
+      "source_label": "American Homefront Project, reporters' characterization",
+      "label": "as the reporting puts it",
+      "requires": [
+        "THIS IS THE WEAKEST LOAD-BEARING ELEMENT AND IT IS REPORTING, NOT LAW. No lawyer, statute, case or borough attorney is quoted anywhere readable.",
+        "use MAY BE POWERLESS, matching the outlet's own headline. NEVER 'has no power'.",
+        "the borough's actual ask is a state and federal moratorium, a lobbying route that does not depend on borough zoning power at all, so 'powerless' overstates the borough's own framing."
+      ]
+    },
+    {
+      "id": "c10",
+      "status": "VERIFIED",
+      "spoken": "As of the middle of September, no projects had been awarded.",
+      "on_screen": "NO PROJECTS AWARDED",
+      "verbatim_source": "\"though no projects have been awarded yet\"",
+      "source_url": "https://alaskapublic.org/news/alaska-desk/2026-09-15/forget-jets-and-helicopters-data-centers-could-be-alaska-military-towns-next-noisy-neighbors",
+      "source_label": "Alaska Public Media, September 15th",
+      "label": "as of September 15th",
+      "requires": ["TIME-BOUND IT. Never the bare present tense. SAM.gov could not be checked for a later award notice."]
     },
     {
       "id": "c11",
-      "status": "VERIFIED",
-      "claim": "The project will combine high-resolution utility data, physics-based digital twins and machine learning to forecast demand and generation, detect abnormal conditions, and optimize the use of hydro, diesel, battery and flexible loads.",
-      "spoken": "a digital twin of this grid, built from the co op's records, with machine learning on it",
-      "on_screen": "FORECAST DEMAND \u00b7 DETECT ABNORMAL CONDITIONS \u00b7 OPTIMIZE HYDRO AND DIESEL",
-      "verbatim_source": "\"combine high-resolution utility data, physics-based digital twins and machine learning to forecast demand and generation; detect abnormal conditions; optimize the use of hydro, diesel, battery and flexible loads\"",
-      "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
-      "second_source_url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
-      "label": "",
+      "status": "VERIFIED ABSENCE",
+      "spoken": "No megawatt figure. No water figure. No project size. For these parcels, none of it has been published.",
+      "on_screen": "NOT DISCLOSED",
+      "verbatim_source": "labelled non-quotation, an absence confirmed across every readable source. Air and Space Forces Magazine speaks only generically: \"consume large amounts of electricity and water\".",
+      "source_url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
+      "source_label": "absence confirmed across five readable sources by the validator",
+      "label": "not disclosed",
       "requires": [
-        "HARD TENSE OBLIGATION. These are INTENDED capabilities of a research project, not measured performance. Every verb about what the AI does is future or conditional. Say WILL or IS DESIGNED TO, never DOES.",
-        "The on-screen card carries the word INTENDED."
-      ],
-      "confidence": "high"
+        "THE FILM MAY NOT ESTIMATE, MODEL, BENCHMARK AGAINST ANOTHER DATA CENTER, OR ANIMATE A PLAUSIBLE NUMBER. Any on-screen capacity or water slot reads NOT DISCLOSED.",
+        "the honest ceiling is 'not published anywhere a resident can open'. The DAF release and the News-Miner were unreachable, so the absence is not claimed as absolute."
+      ]
+    },
+    {
+      "id": "c12",
+      "status": "VERIFIED",
+      "spoken": "Borough Mayor Grier Hopkins says his community was buoyed by defense spending and infrastructure when the F thirty five squadron arrived.",
+      "on_screen": "Our community was buoyed by defense spending and infrastructure as the F-35 fighter squadron was placed here.",
+      "verbatim_source": "\"Our community was buoyed by defense spending and infrastructure as the F-35 fighter squadron was placed here.\"",
+      "source_url": "https://americanhomefront.wunc.org/news/2026-09-22/military-data-centers-are-sparking-opposition-but-local-leaders-may-be-powerless-to-stop-them",
+      "source_label": "Grier Hopkins, Fairbanks North Star Borough mayor",
+      "requires": [
+        "HOPKINS IS NOT QUOTED OPPOSING THE DATA CENTERS. Cutting him beside Hollister as a second voice of opposition would misrepresent him.",
+        "he is the evidence that this military community's relationship with its bases is two-sided."
+      ]
     },
     {
       "id": "c13",
-      "status": "LABELLED",
-      "claim": "The Alaska Energy Authority's Power Cost Equalization program serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation, where the cost of electricity can be three to five times higher than in more urban areas.",
-      "spoken": "A hundred ninety three Alaska communities run mostly on diesel, at three to five times town prices",
-      "on_screen": "193 COMMUNITIES \u00b7 3 TO 5x URBAN COST \u00b7 PER AEA",
-      "verbatim_source": "\"serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation\" and \"the cost of electricity can be three to five times higher than for customers in more urban areas\"",
-      "url": "https://www.akenergyauthority.org/What-We-Do/Power-Cost-Equalization",
-      "label": "per the Alaska Energy Authority",
-      "requires": [
-        "The page is undated and gives no fiscal year, so no year may be attached.",
-        "The three-to-five band is the agency's characterization, not a measurement, so PER AEA appears in frame.",
-        "USED INSTEAD OF the ACEP 'over 200 microgrids' figure, which no agency corroborates."
-      ],
-      "confidence": "medium"
+      "status": "VERIFIED",
+      "spoken": "The Air Force calls it a public private partnership that supports the readiness of its Airmen and Guardians.",
+      "on_screen": "generating value that directly supports our missions",
+      "verbatim_source": "\"This is a unique opportunity for a true public-private partnership. By making this land available, we are supporting the growing demands of the AI industry while generating value that directly supports our missions and the readiness of our Airmen and Guardians.\"",
+      "source_url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
+      "source_label": "Robert Moriarty, Deputy Assistant Secretary of the Air Force for Installations, April 11th",
+      "requires": ["this is the strongest fair point FOR the offer and Act 3 owes it a real scene, not a clause."]
     },
     {
       "id": "c14",
       "status": "VERIFIED",
-      "claim": "AURORA-AI is a Phase I Genesis Mission award, announced by Colorado State University on July 22nd, 2026.",
-      "spoken": "A Phase One award",
-      "on_screen": "PHASE 1",
-      "verbatim_source": "\"Colorado State University researchers on two different projects were awarded prestigious Phase I Genesis Mission awards\"",
-      "url": "https://source.colostate.edu/csu-researchers-selected-for-two-highly-competitive-department-of-energy-genesis-mission-projects/",
-      "second_source_url": "https://www.uaf.edu/acep/news/2026/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids.php",
-      "label": "",
-      "requires": [
-        "This is the load-bearing honesty claim. Phase I is WHY the story is a study and not a result.",
-        "No source states how many Phase I awards DOE made, so no 'one of only N' framing."
-      ],
-      "confidence": "high"
+      "spoken": "The developer carries the financing, the permitting, the construction and the long term operation.",
+      "on_screen": "FINANCING · PERMITTING · CONSTRUCTION · OPERATION",
+      "verbatim_source": "labelled non-quotation, the magazine's summary of the solicitation: the selected developer \"will be responsible for all aspects of the project, including financing, permitting, construction and long-term operation\"",
+      "source_url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
+      "source_label": "Air and Space Forces Magazine, April 11th",
+      "requires": ["part of the Act 3 case FOR. The risk sits with the developer, not the taxpayer."]
     },
     {
       "id": "c15",
       "status": "VERIFIED",
-      "claim": "An edge data center was already operating inside Cordova's Humpback Creek hydroelectric facility before the AURORA-AI award, delivered by Greensparc and reported in April 2024, at a reported 170 kilowatts, cooled by the same water that drives the turbine.",
-      "spoken": "Since twenty twenty four, a hundred seventy kilowatts of servers have run inside Humpback Creek, cooled by the creek that spins the turbine",
-      "on_screen": "170 kW \u00b7 INSIDE HUMPBACK CREEK \u00b7 SINCE 2024 \u00b7 GREENSPARC \u00b7 PER CLEANTECHNICA",
-      "verbatim_source": "\"Greensparc delivered a 170-kilowatt computing capacity directly inside Cordova's run-of-river Humpback Creek hydroelectric facility\"",
-      "url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
-      "second_source_url": "https://www.greensparc.com/",
-      "label": "reported by CleanTechnica",
-      "requires": [
-        "HARDEST OBLIGATION IN THE FILM. The film must NEVER show AURORA-AI building, siting or planning this data center. It predates the award by more than two years and a third party installed it. The name GREENSPARC is on screen with it.",
-        "Trade press, not primary, so PER CLEANTECHNICA is in frame with the 170 kW figure.",
-        "Never paint the word DAM or show dam imagery. Both Cordova plants are run-of-river."
-      ],
-      "confidence": "medium"
-    },
-    {
-      "id": "c16",
-      "status": "VERIFIED",
-      "claim": "Richard Wies, UAF professor and principal investigator, said of Phase One: \"It's a really short period of performance... and then there's also an opportunity to apply for Phase Two funding\".",
-      "spoken": "The lead researcher calls it a really short period of performance",
-      "on_screen": "\"A REALLY SHORT PERIOD OF PERFORMANCE\" \u00b7 RICHARD WIES, UAF",
-      "verbatim_source": "\"It's a really short period of performance... and then there's also an opportunity to apply for Phase Two funding\"",
-      "url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
-      "label": "",
-      "requires": [
-        "SAFE ON SCREEN as 'Richard Wies, UAF professor and principal investigator'. Do NOT paint a department name: every UAF faculty directory URL returned 404 and the fuller title is single-sourced.",
-        "The ellipsis is as the source rendered it. If the film shows only the first clause it must not add an ellipsis implying more of that sentence."
-      ],
-      "confidence": "high"
-    },
-    {
-      "id": "c12a",
-      "status": "VERIFIED",
-      "claim": "Cordova Electric Cooperative runs two hydroelectric plants and one diesel plant, and says hydro produces about 80 percent of Cordova's power.",
-      "spoken": "Eighty percent of its power is hydro. The backstop is diesel",
-      "on_screen": "~80% HYDRO",
-      "verbatim_source": "\"two hydroelectric plants and one diesel plant\" and hydroelectric facilities produce \"80% of Cordova's power\"",
-      "url": "https://www.cordovaelectric.com/",
-      "second_source_url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
-      "label": "",
-      "requires": [
-        "Use the cooperative's own 80 percent with the word ABOUT. CleanTechnica says more than 83 percent for 2025 and the two disagree.",
-        "This claim forbids framing Cordova as a diesel town that AI will rescue."
-      ],
-      "confidence": "high"
-    },
-    {
-      "id": "c12b",
-      "status": "VERIFIED",
-      "claim": "Cordova Electric Cooperative has 1,566 customers and 18 megawatts of generating capacity, of which 10.8 MW is the Orca diesel plant, 6 MW is Power Creek hydro and 1.25 MW is Humpback Creek hydro.",
-      "spoken": "Cordova has one thousand five hundred sixty six customers, and no wire out",
-      "on_screen": "1,566 CUSTOMERS",
-      "verbatim_source": "\"1,566 customers\" and \"Generating capacity of 18 megawatts\" and \"Orca Diesel Plant - 10.8 megawatts\"",
-      "url": "https://www.cordovaelectric.com/about/",
-      "label": "",
-      "requires": [
-        "The cooperative gives no date for the customer count, so no year may be attached."
-      ],
-      "confidence": "high"
-    },
-    {
-      "id": "c12c",
-      "status": "VERIFIED",
-      "claim": "Cordova Electric Cooperative has 18 megawatts of generating capacity, of which 10.8 megawatts is the Orca diesel plant.",
-      "spoken": "Eighteen megawatts ... Ten point eight megawatts of diesel behind it",
-      "on_screen": "18 MW TOTAL \u00b7 10.8 MW DIESEL",
-      "verbatim_source": "\"Generating capacity of 18 megawatts\" and \"Orca Diesel Plant - 10.8 megawatts\"",
-      "url": "https://www.cordovaelectric.com/about/",
-      "label": "",
-      "requires": [
-        "Primary, from the cooperative's own about page. No year may be attached."
-      ],
-      "confidence": "high"
-    },
-    {
-      "id": "c9",
-      "status": "VERIFIED",
-      "claim": "Richard Wies is a professor at UAF and the principal investigator for AURORA-AI.",
-      "spoken": "Richard Wies, who leads it",
-      "on_screen": "RICHARD WIES \u00b7 UAF PROFESSOR \u00b7 PRINCIPAL INVESTIGATOR",
-      "verbatim_source": "\"said ACEP's Richard Wies, principal investigator for the project and a professor at UAF\"",
-      "url": "https://alaska-native-news.com/uaf-leads-ai-project-to-strengthen-alaskas-rural-power-grids/85615/",
-      "second_source_url": "https://www.alaskasnewssource.com/2026/08/28/uaf-study-ai-use-rural-power-grids/",
-      "label": "",
-      "requires": [
-        "SAFE ON SCREEN as 'Richard Wies, UAF professor and principal investigator'. Do NOT paint a department name: every UAF faculty directory URL returned 404 and the fuller title is single-sourced."
-      ],
-      "confidence": "high"
-    },
-    {
-      "id": "c12d",
-      "status": "VERIFIED",
-      "claim": "Cordova's hydro comes from two run-of-river plants, Power Creek at 6 megawatts and Humpback Creek at 1.25 megawatts.",
-      "spoken": "from two creeks",
-      "on_screen": "POWER CREEK 6 MW \u00b7 HUMPBACK CREEK 1.25 MW",
-      "verbatim_source": "\"Power Creek Hydroelectric - 6 megawatts\" and \"Humpback Creek Hydroelectric - 1.25 megawatts\"",
-      "url": "https://www.cordovaelectric.com/about/",
-      "second_source_url": "https://cleantechnica.com/2026/03/09/in-alaska-a-data-center-inside-a-power-plant-inside-a-microgrid/",
-      "label": "",
-      "requires": [
-        "Both are run-of-river. NEVER paint the word DAM or show dam imagery, even though one source quote says 'dam'."
-      ],
-      "confidence": "high"
+      "spoken": "Fairbanks already has some of the highest utility costs in the country.",
+      "on_screen": "SOME OF THE NATION'S HIGHEST UTILITY COSTS",
+      "verbatim_source": "\"Alaska's energy system is strained, and Fairbanks already has some of the nation's highest utility costs.\"",
+      "source_url": "https://americanhomefront.wunc.org/news/2026-09-22/military-data-centers-are-sparking-opposition-but-local-leaders-may-be-powerless-to-stop-them",
+      "source_label": "American Homefront Project, September 22nd",
+      "requires": ["no dollar figure is published in the source. Do not supply one."]
     }
   ],
-  "cut": [
-    {
-      "id": "k1",
-      "what": "Any cents-per-kilowatt-hour figure for rural Alaska electricity",
-      "why": "Not reachable on any page. AEA statistical reports serve through opaque file-ticket URLs and eia.gov returned navigation only. c13's three-to-five band is used instead. NO per-kWh number enters the film."
-    },
-    {
-      "id": "k2",
-      "what": "That DOE announced or confirmed the award",
-      "why": "No DOE page naming AURORA-AI exists that could be found. The film says DOE funded it, sourced to UAF, and never shows a DOE announcement."
-    },
-    {
-      "id": "k3",
-      "what": "That AURORA-AI will build, site or plan a data center at Cordova",
-      "why": "The single most likely factual error available in this story. Greensparc installed one in 2024, before the Genesis Mission existed."
-    },
-    {
-      "id": "k4",
-      "what": "Cordova's peak load, annual kWh sold, or annual diesel gallons",
-      "why": "The cooperative publishes customers and capacity but no load or fuel figures. The film explains the mechanism and puts no cost on it."
-    },
-    {
-      "id": "k5",
-      "what": "'One of only N' framing for the Phase I award",
-      "why": "No source states how many Phase I Genesis Mission awards were made."
-    },
-    {
-      "id": "k6",
-      "what": "ACEP's 'over 200 remote microgrids' as a verified count",
-      "why": "Downgraded, not used. No agency corroborates it and the nearest state figure is smaller and counts something else. c13 is used instead."
-    },
-    {
-      "id": "k7",
-      "what": "Wies's department title",
-      "why": "Single-sourced; his institutional bio was unreachable. 'UAF professor' is used."
-    },
-    {
-      "id": "k8",
-      "what": "Wies's 'about 100 kilowatts, two large refrigerators' description",
-      "why": "Kept out of the film. It conflicts with the 170 kW reported for the installed unit and the conflict could not be resolved. The confirmed installed figure is used instead, with its outlet named."
-    },
-    {
-      "id": "k9",
-      "what": "The roughly $7 million Phase Two estimate",
-      "why": "Cut by the angle room as a headline number, since it is an estimate of money that does not exist and putting it on a card makes an unfunded figure the memorable one. The film carries the PI's own 'short period of performance' instead, which makes the same point honestly."
-    }
+  "cultural_rules": [
+    "NO ALASKA NATIVE VOICE APPEARS IN ANY SOURCE. The film must not imply Native support, Native opposition, or a unified Interior position. Silence in the sourcing is silence, not consent.",
+    "Eielson sits above Salcha and Clear sits near Nenana and Anderson, in the traditional territory of Lower Tanana Dene peoples, and the water at issue is the Tanana River system. If the film uses water imagery it is depicting a subsistence and fishery watershed, not scenery, and it may put no number on that draw.",
+    "Never the word invasion, and no framing of outside tech arriving on Native land. No source supports it and it would put words in absent mouths.",
+    "Do not render the military-town audience as uniformly angry. Hopkins' F-35 line is the counter-evidence in the same reporting."
   ],
-  "tense_law": "Nothing has been forecast, detected or optimized yet. Phase One had not started as of this run. Every verb about what the AI does is future or conditional, everywhere, including on-screen cards.",
-  "notes": "9 verified, 6 labelled, 9 cut. Two independent primary institutions (UAF and Colorado State) describe the same four intended functions in nearly the same words, which is the safest technical sentence available. 'National Laboratory of the Rockies' was checked expecting a press-release error and is correct: DOE renamed NREL in December 2025 and lists the new name on its own national laboratories page."
+  "banned_from_screen": [
+    "any per-base parcel breakdown or twelve located map dots",
+    "any megawatt, water, acre-foot, gallons-per-day or project-size figure",
+    "the date or venue of Murkowski's remark",
+    "August 27th as a printed date",
+    "Hollister's trail quote labelled as Assembly testimony",
+    "any flat assertion that the borough has no legal authority",
+    "an animated counter on the 100 communities figure",
+    "anything attributed to the Department of the Air Force's own release, which was never readable"
+  ]
 }
