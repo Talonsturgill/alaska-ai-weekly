@@ -52,7 +52,7 @@
         "video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
         "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
         "video-engine/src/Ep0919.tsx": "ef9a9007726f37d8a13bc6669fe62ef0beb48c44a0cbbede80e4b4a08edce12b",
-        "video-engine/src/Ep0923.tsx": "95bc9018b12d6058949dfefb041ec04e7edc96501d12d33e782a2afd4986afc9",
+        "video-engine/src/Ep0923.tsx": "c0c92a80dfd707950a5fb8abe15f6018b641bdfe262e4d23dfa44271a153fe69",
         "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
         "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
         "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
@@ -122,17 +122,17 @@
       },
       "props": {
         "path": "/home/user/alaska-ai-weekly/out/dispatch/episode_props.json",
-        "sha256": "97c5a7a94f0bbabef42abb25b859a88cb21dbbaa10b4532d95201a1e6d89a790"
+        "sha256": "be17e33fe18c997c82db3f6192851c6dc9748b91562433131d6e65f834f07278"
       },
       "composition": "Dispatch0923",
       "total": 3907,
       "chunks": 1,
       "browser_override": null
     },
-    "cache_key": "961eb633318c2a16ec86d4d2d6633ffeac330a1c9a124be5ffff6a00d64031d8",
+    "cache_key": "70ef76e970ae3f41d27cecb74ebe8af25c8f8f61a5da651f6a779041e97fb82b",
     "output": {
       "path": "/home/user/alaska-ai-weekly/out/dispatch/render_mute.mp4",
-      "sha256": "5b215ba827cdcd1f2864c7468b379b9baea4da6e045fdb880ca5ace7ae1c83b3"
+      "sha256": "a50f80303f86785b30f68b68c345cd2ffe65f69bb9338debf0d347537b205cf7"
     }
   },
   "mix": {
@@ -140,9 +140,9 @@
     "kind": "mix",
     "state": "complete",
     "sources": {
-      "out/dispatch/episode_props.json": "97c5a7a94f0bbabef42abb25b859a88cb21dbbaa10b4532d95201a1e6d89a790",
+      "out/dispatch/episode_props.json": "be17e33fe18c997c82db3f6192851c6dc9748b91562433131d6e65f834f07278",
       "out/dispatch/music_credit.json": "262ea331982000e46601ee7f153d790d437071be1ba2081578fec13db12f80a0",
-      "out/dispatch/storyboard.json": "0e2e0289fa1f0a96507b6032b0e6a2842cecaf55afd332f8b609be4efee1e79f",
+      "out/dispatch/storyboard.json": "5cc5b1fb54f66aee2fc26498f56e826724407f21abff3456721a6f3e1d25af8e",
       "out/dispatch/vo_lines.json": "46af85ca65b1e14e9488aff1624177d712a098db123c73e3f1fde82b2e634fd0",
       "scripts/dispatch_mix.py": "3d539678896e1774c3c34ddc1033c8647663771a96e7b81497b57377a02e51eb",
       "scripts/mix_aac_check.py": "c1b524ac1b38d77001754a162b9791ec9f9a91c387c50b3d00517cc71b5fdbe9",
@@ -309,7 +309,7 @@
     ],
     "output": {
       "path": "/home/user/alaska-ai-weekly/out/dispatch/audio/master.wav",
-      "sha256": "c28b777699a88fbf70005cfb8914113f5b03a1662e2836de34aae08ff556ca62"
+      "sha256": "d9e9c74804d4bc45866896199f4940f2515c7e5a11e6d8c64414d3903a16aacd"
     }
   },
   "sources": {
@@ -318,11 +318,11 @@
     "scripts/render_provenance.py": "8c0e32d7abc2c966524f32bbddfb6361257f14784a70962645c202fcfdaf2860"
   },
   "outputs": {
-    "dispatch_master.mp4": "4690edd5502651f98ffff9c6d56ef24e48560b92173a535bcdc6dc38c771d82a",
-    "dispatch_square.mp4": "f8d78488e9d90963756a68b9cf8f41dd0075ca8f7480bb42758e1a9f55d115d0",
-    "dispatch_master_720.mp4": "5632c23f4e7767b0bbd188ac149b541e7667d454a605b090a9c34a03b0bf6850",
-    "dispatch_master_hosted.mp4": "02946bcdb3272a7d02d917f2e11c6bd75806a05b2e7ef2e7fffab980d8eb1752",
-    "poster.png": "e3cb31a7f7866e176d4bbe4a7df36638edb81ad1d04329c2ffcad095c58e523e",
-    "poster_thumb.jpg": "fe4ba74f4381d9b4c8aff2faa099502638f4ef8610c859e5842d06a7e5f2d844"
+    "dispatch_master.mp4": "29ce9eb415e5037762ff6818e27a63b43c961101ebc0ea995b06df143f51217e",
+    "dispatch_square.mp4": "367375fa94453fa5af3889409800ac422c5365a5c5967967b76e8bb97a981bfe",
+    "dispatch_master_720.mp4": "dc97fc379c7f0dd438ca0e7230ef72a2a9963d5464c515e604139dc9638e971c",
+    "dispatch_master_hosted.mp4": "9811a29059efbac217ac824ce62567869b701336c76996e3589bc8aaa80e0e79",
+    "poster.png": "13909f999a02160a6667972817486e962080369ab94c14ca1335df5e22ee5b50",
+    "poster_thumb.jpg": "4cc354b241c1c08a6ef79eac3dd19bd9d2112949688ee7adcbc076b3d9f2df4c"
   }
 }

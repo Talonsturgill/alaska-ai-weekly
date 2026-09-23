@@ -1,324 +1,316 @@
 {
   "note": "frame 1 vs frame 8 of each filmstrip window, measured on the delivered cut. changed_pct is the share of pixels differing by more than 12/255. A judge who cannot SEE motion in a strip should read this before recording that the beat is frozen. EVERY WINDOW HERE IS WITHIN A SINGLE SHOT: any window that straddled a cut has been slid clear of it and is marked straddled_cut, because a strip spanning a cut measures the cut and reports it as animation. Before 2026-08-13 it did not do this, and the large figures in older packs are shot changes, not motion. Cross-check against motion_registered.json, which solves the camera out per shot.",
   "strips": {
-    "fan_blades_turning": {
-      "centre_s": 0.48,
-      "changed_pct": 6.6,
-      "peak_delta": 202,
-      "window_start_s": 0.35,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "weld_bead_runs": {
-      "centre_s": 3.11,
-      "changed_pct": 1.6,
-      "peak_delta": 92,
-      "window_start_s": 2.98,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "greensparc_plate_slides_into_key": {
-      "centre_s": 3.89,
-      "changed_pct": 2.9,
-      "peak_delta": 122,
-      "window_start_s": 3.76,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "crane_down_past_deck_edge": {
-      "centre_s": 6.78,
-      "changed_pct": 1.1,
-      "peak_delta": 92,
-      "window_start_s": 6.53,
-      "straddled_cut": true,
-      "within_shot": true
-    },
-    "stencilled_boxes_drift_in": {
-      "centre_s": 7.26,
-      "changed_pct": 6.1,
-      "peak_delta": 155,
-      "window_start_s": 7.13,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "turbine_shaft_turns": {
-      "centre_s": 10.41,
-      "changed_pct": 4.1,
-      "peak_delta": 195,
-      "window_start_s": 10.28,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "drip_lands_on_measured_box": {
-      "centre_s": 14.21,
-      "changed_pct": 2.0,
-      "peak_delta": 118,
-      "window_start_s": 14.08,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "mask_wipe_opens_the_valley": {
-      "centre_s": 17.26,
-      "changed_pct": 3.8,
-      "peak_delta": 204,
-      "window_start_s": 17.13,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "pull_back_off_the_island": {
-      "centre_s": 23.3,
-      "changed_pct": 1.4,
-      "peak_delta": 126,
-      "window_start_s": 23.17,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "diesel_stack_lights": {
-      "centre_s": 27.85,
-      "changed_pct": 5.2,
-      "peak_delta": 133,
-      "window_start_s": 27.72,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "push_in_on_sourdough": {
-      "centre_s": 34.23,
-      "changed_pct": 2.1,
-      "peak_delta": 213,
-      "window_start_s": 34.1,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "fuel_needle_slams_over": {
-      "centre_s": 38.23,
-      "changed_pct": 9.8,
+    "the_whole_column_of_rows_cascading": {
+      "centre_s": 0.65,
+      "changed_pct": 2.7,
       "peak_delta": 220,
-      "window_start_s": 38.1,
+      "window_start_s": 0.52,
       "straddled_cut": false,
       "within_shot": true
     },
-    "gallons_drop_into_the_drum": {
-      "centre_s": 42.23,
-      "changed_pct": 1.5,
-      "peak_delta": 136,
-      "window_start_s": 42.1,
+    "the_dashed_baseline_crawling_while_the": {
+      "centre_s": 1.75,
+      "changed_pct": 2.8,
+      "peak_delta": 233,
+      "window_start_s": 1.62,
       "straddled_cut": false,
       "within_shot": true
     },
-    "ledger_wall_assembles": {
-      "centre_s": 47.18,
+    "the_counter_hitting_its_stop_and": {
+      "centre_s": 3.35,
+      "changed_pct": 3.9,
+      "peak_delta": 236,
+      "window_start_s": 3.22,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_crane_descending_past_the_treeline": {
+      "centre_s": 7.45,
+      "changed_pct": 3.3,
+      "peak_delta": 243,
+      "window_start_s": 7.32,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_bar_rising_to_its_stop": {
+      "centre_s": 10.95,
+      "changed_pct": 4.9,
+      "peak_delta": 246,
+      "window_start_s": 10.82,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_head_tilting_up": {
+      "centre_s": 15.55,
+      "changed_pct": 11.7,
+      "peak_delta": 228,
+      "window_start_s": 15.42,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_shear_landing_and_the_tip": {
+      "centre_s": 18.35,
       "changed_pct": 2.4,
       "peak_delta": 146,
-      "window_start_s": 47.05,
+      "window_start_s": 18.22,
       "straddled_cut": false,
       "within_shot": true
     },
-    "partner_plates_land": {
-      "centre_s": 49.74,
-      "changed_pct": 3.1,
-      "peak_delta": 180,
-      "window_start_s": 49.61,
+    "the_dashed_baseline_crawling": {
+      "centre_s": 20.15,
+      "changed_pct": 7.3,
+      "peak_delta": 187,
+      "window_start_s": 20.02,
       "straddled_cut": false,
       "within_shot": true
     },
-    "cyan_twin_draws_itself": {
-      "centre_s": 53.55,
-      "changed_pct": 2.2,
-      "peak_delta": 165,
-      "window_start_s": 53.42,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "function_plates_slam_up": {
-      "centre_s": 57.81,
-      "changed_pct": 2.8,
-      "peak_delta": 243,
-      "window_start_s": 57.68,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "bar_overshoots_and_settles": {
-      "centre_s": 61.61,
-      "changed_pct": 9.3,
-      "peak_delta": 233,
-      "window_start_s": 61.48,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "twin_freezes_mid_draw": {
-      "centre_s": 69.41,
-      "changed_pct": 2.1,
-      "peak_delta": 177,
-      "window_start_s": 69.28,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "schedule_stamp_comes_down": {
-      "centre_s": 72.36,
-      "changed_pct": 5.2,
-      "peak_delta": 217,
-      "window_start_s": 72.23,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "outline_sags_away": {
-      "centre_s": 74.6,
-      "changed_pct": 3.8,
-      "peak_delta": 195,
-      "window_start_s": 74.47,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "whip_back_to_the_rack": {
-      "centre_s": 75.73,
-      "changed_pct": 9.5,
-      "peak_delta": 240,
-      "window_start_s": 75.6,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "demand_bar_builds_from_floor": {
-      "centre_s": 77.12,
-      "changed_pct": 1.4,
-      "peak_delta": 92,
-      "window_start_s": 76.99,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "plate_snaps_across_rack": {
-      "centre_s": 77.41,
-      "changed_pct": 18.2,
-      "peak_delta": 174,
-      "window_start_s": 77.28,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "bar_climbs_past_the_plate": {
-      "centre_s": 79.1,
-      "changed_pct": 2.3,
-      "peak_delta": 173,
-      "window_start_s": 78.97,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "forecast_trace_draws": {
-      "centre_s": 82.8,
-      "changed_pct": 2.6,
-      "peak_delta": 186,
-      "window_start_s": 82.67,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "server_block_slides_under_line": {
-      "centre_s": 87.8,
-      "changed_pct": 0.8,
-      "peak_delta": 167,
-      "window_start_s": 87.67,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "pull_out_to_the_two_boxes": {
-      "centre_s": 88.2,
-      "changed_pct": 0.9,
-      "peak_delta": 188,
-      "window_start_s": 88.07,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "hatching_crawls_across_measured": {
-      "centre_s": 88.6,
-      "changed_pct": 6.9,
-      "peak_delta": 238,
-      "window_start_s": 88.47,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "bracket_extends_and_withdraws": {
-      "centre_s": 92.5,
-      "changed_pct": 3.7,
-      "peak_delta": 217,
-      "window_start_s": 92.37,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "sourdough_steps_between_boxes": {
-      "centre_s": 96.2,
-      "changed_pct": 6.8,
-      "peak_delta": 237,
-      "window_start_s": 96.07,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "quote_plate_rises": {
-      "centre_s": 98.98,
-      "changed_pct": 2.0,
-      "peak_delta": 157,
-      "window_start_s": 98.97,
+    "the_pullback_revealing_relative_size": {
+      "centre_s": 23.9,
+      "changed_pct": 4.1,
+      "peak_delta": 236,
+      "window_start_s": 23.93,
       "straddled_cut": true,
       "within_shot": true
     },
-    "door_swings_light_crosses_water": {
-      "centre_s": 99.71,
-      "changed_pct": 3.9,
-      "peak_delta": 247,
-      "window_start_s": 99.58,
+    "the_stamp_hanging_unlanded": {
+      "centre_s": 25.5,
+      "changed_pct": 5.3,
+      "peak_delta": 231,
+      "window_start_s": 25.37,
       "straddled_cut": false,
       "within_shot": true
     },
-    "second_creek_spills_past_intake": {
-      "centre_s": 106.46,
+    "the_walking_figure": {
+      "centre_s": 29.15,
+      "changed_pct": 9.0,
+      "peak_delta": 218,
+      "window_start_s": 29.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_jets_crossing": {
+      "centre_s": 31.8,
+      "changed_pct": 3.7,
+      "peak_delta": 218,
+      "window_start_s": 31.67,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_contrail_flattening_to_a_line": {
+      "centre_s": 34.98,
+      "changed_pct": 1.7,
+      "peak_delta": 216,
+      "window_start_s": 34.85,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_words_typing_in": {
+      "centre_s": 37.35,
+      "changed_pct": 3.4,
+      "peak_delta": 214,
+      "window_start_s": 37.22,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_two_lists_building": {
+      "centre_s": 40.95,
+      "changed_pct": 3.4,
+      "peak_delta": 214,
+      "window_start_s": 40.73,
+      "straddled_cut": true,
+      "within_shot": true
+    },
+    "the_chip_sliding_toward_the_lease": {
+      "centre_s": 43.25,
+      "changed_pct": 2.1,
+      "peak_delta": 215,
+      "window_start_s": 43.12,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_plate_rising": {
+      "centre_s": 47.25,
+      "changed_pct": 4.8,
+      "peak_delta": 220,
+      "window_start_s": 47.12,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "her_two_fingers_pushing_the_land": {
+      "centre_s": 50.0,
+      "changed_pct": 2.6,
+      "peak_delta": 211,
+      "window_start_s": 49.87,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_raking_key_travelling_along_the": {
+      "centre_s": 54.2,
+      "changed_pct": 5.3,
+      "peak_delta": 105,
+      "window_start_s": 54.07,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_figure_walking_into_the_widening": {
+      "centre_s": 57.5,
+      "changed_pct": 0.9,
+      "peak_delta": 94,
+      "window_start_s": 57.37,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_plate_rising_under_the_figure": {
+      "centre_s": 60.55,
+      "changed_pct": 2.3,
+      "peak_delta": 228,
+      "window_start_s": 60.42,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_card_unfolding_into_the_stack": {
+      "centre_s": 64.3,
+      "changed_pct": 9.7,
+      "peak_delta": 87,
+      "window_start_s": 64.17,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_two_halves_shoving_apart": {
+      "centre_s": 67.6,
       "changed_pct": 0.8,
-      "peak_delta": 154,
-      "window_start_s": 106.33,
+      "peak_delta": 78,
+      "window_start_s": 67.47,
       "straddled_cut": false,
       "within_shot": true
     },
-    "climb_off_the_island": {
-      "centre_s": 111.11,
-      "changed_pct": 8.2,
-      "peak_delta": 237,
-      "window_start_s": 110.98,
+    "the_share_bars_standing_up_over": {
+      "centre_s": 71.8,
+      "changed_pct": 6.5,
+      "peak_delta": 207,
+      "window_start_s": 71.67,
       "straddled_cut": false,
       "within_shot": true
     },
-    "dots_bloom_across_alaska": {
-      "centre_s": 112.31,
-      "changed_pct": 6.7,
-      "peak_delta": 237,
-      "window_start_s": 112.18,
+    "the_shares_compressing_together": {
+      "centre_s": 74.95,
+      "changed_pct": 2.3,
+      "peak_delta": 145,
+      "window_start_s": 74.82,
       "straddled_cut": false,
       "within_shot": true
     },
-    "cyan_thread_stretches_to_dot": {
+    "the_fuel_half_straining_up": {
+      "centre_s": 78.47,
+      "changed_pct": 1.5,
+      "peak_delta": 116,
+      "window_start_s": 78.34,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_generation_block_slotting_in": {
+      "centre_s": 80.96,
+      "changed_pct": 2.6,
+      "peak_delta": 208,
+      "window_start_s": 80.83,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_fuel_half_climbing": {
+      "centre_s": 84.01,
+      "changed_pct": 2.5,
+      "peak_delta": 214,
+      "window_start_s": 83.88,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_half_reaching_for_the_empty": {
+      "centre_s": 86.54,
+      "changed_pct": 8.1,
+      "peak_delta": 196,
+      "window_start_s": 86.41,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "windows_coming_on_street_by_street": {
+      "centre_s": 90.03,
+      "changed_pct": 2.0,
+      "peak_delta": 175,
+      "window_start_s": 89.8,
+      "straddled_cut": true,
+      "within_shot": true
+    },
+    "the_two_silhouettes_settling_onto_the": {
+      "centre_s": 93.15,
+      "changed_pct": 1.8,
+      "peak_delta": 180,
+      "window_start_s": 93.02,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_crate_opening": {
+      "centre_s": 93.8,
+      "changed_pct": 4.0,
+      "peak_delta": 250,
+      "window_start_s": 93.67,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_empty_plate_tipping": {
+      "centre_s": 95.95,
+      "changed_pct": 3.3,
+      "peak_delta": 203,
+      "window_start_s": 95.82,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_plate_rim_grinding_round_as": {
+      "centre_s": 99.26,
+      "changed_pct": 2.6,
+      "peak_delta": 186,
+      "window_start_s": 99.13,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_hand_coming_down_and_the": {
+      "centre_s": 101.4,
+      "changed_pct": 1.4,
+      "peak_delta": 228,
+      "window_start_s": 101.27,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_hand_settling_on_the_solid": {
+      "centre_s": 105.25,
+      "changed_pct": 2.9,
+      "peak_delta": 226,
+      "window_start_s": 105.12,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_two_tokens_swapping_order": {
+      "centre_s": 108.45,
+      "changed_pct": 3.9,
+      "peak_delta": 225,
+      "window_start_s": 108.32,
+      "straddled_cut": false,
+      "within_shot": true
+    },
+    "the_pen_hovering_never_landing": {
       "centre_s": 112.65,
-      "changed_pct": 12.2,
-      "peak_delta": 129,
+      "changed_pct": 2.4,
+      "peak_delta": 212,
       "window_start_s": 112.52,
       "straddled_cut": false,
       "within_shot": true
     },
-    "match_cut_to_the_powerhouse_door": {
-      "centre_s": 113.79,
-      "changed_pct": 7.0,
-      "peak_delta": 236,
-      "window_start_s": 113.66,
+    "the_row_lifting_and_holding": {
+      "centre_s": 115.5,
+      "changed_pct": 5.3,
+      "peak_delta": 209,
+      "window_start_s": 115.37,
       "straddled_cut": false,
-      "within_shot": true
-    },
-    "drip_lands_on_the_empty_box": {
-      "centre_s": 114.24,
-      "changed_pct": 0.6,
-      "peak_delta": 104,
-      "window_start_s": 114.11,
-      "straddled_cut": false,
-      "within_shot": true
-    },
-    "question_plate_rises": {
-      "centre_s": 114.84,
-      "changed_pct": 3.1,
-      "peak_delta": 193,
-      "window_start_s": 114.81,
-      "straddled_cut": true,
       "within_shot": true
     }
   }

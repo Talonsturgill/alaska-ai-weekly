@@ -1,7 +1,7 @@
 {
   "schema": 2,
   "kind": "render",
-  "state": "rendering",
+  "state": "complete",
   "manifest": {
     "sources": {
       "out/dispatch/captions.json": "b7c4d0411c54e208d0d9210d1e7995488c1e3c2576b65542a2111624d8b10332",
@@ -118,12 +118,16 @@
     },
     "props": {
       "path": "/home/user/alaska-ai-weekly/out/dispatch/episode_props.json",
-      "sha256": "97c5a7a94f0bbabef42abb25b859a88cb21dbbaa10b4532d95201a1e6d89a790"
+      "sha256": "be17e33fe18c997c82db3f6192851c6dc9748b91562433131d6e65f834f07278"
     },
     "composition": "Dispatch0923",
     "total": 3907,
     "chunks": 1,
     "browser_override": null
   },
-  "cache_key": "60f6d674d93a68264700a69966efb3d2b22c2fcc51cac6a40695f528f9b89540"
+  "cache_key": "70ef76e970ae3f41d27cecb74ebe8af25c8f8f61a5da651f6a779041e97fb82b",
+  "output": {
+    "path": "/home/user/alaska-ai-weekly/out/dispatch/render_mute.mp4",
+    "sha256": "a50f80303f86785b30f68b68c345cd2ffe65f69bb9338debf0d347537b205cf7"
+  }
 }

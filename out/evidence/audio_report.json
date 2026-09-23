@@ -1,12 +1,16 @@
 {
  "measured_on": "dispatch_square.mp4",
- "also_covers_master": null,
- "master_measured": null,
- "master_identity": "dispatch_master.mp4 not present, cross measurement not performed",
+ "also_covers_master": true,
+ "master_measured": {
+  "i": -14.37,
+  "tp": -3.21,
+  "lra": 6.8
+ },
+ "master_identity": "the 9:16 master measures I=-14.37 TP=-3.21 LRA=6.8 against the delivered square's I=-14.37 TP=-3.21 LRA=6.8. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
  "tool": "ffmpeg loudnorm + forced-alignment word timings",
- "delivered_i": null,
- "delivered_tp": null,
- "delivered_lra": 0.0,
+ "delivered_i": -14.37,
+ "delivered_tp": -3.21,
+ "delivered_lra": 6.8,
  "targets": {
   "i": -14.0,
   "tp_max": -1.0,
@@ -16,9 +20,9 @@
   ]
  },
  "pass": {
-  "loudness": false,
-  "true_peak": false,
-  "lra": false
+  "loudness": true,
+  "true_peak": true,
+  "lra": true
  },
  "vo_gaps_ge_0_35s": 33,
  "vo_gaps_ge_0_50s": 29,
@@ -58,5 +62,5 @@
    "len": 1.04
   }
  ],
- "diagnosis": "LRA is 0.0 against the 6 to 9 LU target. MEASURED CAUSE, not asserted: the VO track leaves 33 gaps of 0.35s or longer (29 of them 0.50s or longer), totalling 25.46s of silence, and the last word ends at 116.98s. The room for the bed to open therefore EXISTS. If the loudness range is still flat, the bed is not rising into that room, which is a mix problem to be fixed at the faders and the duck release, not a script problem to be fixed by cutting lines. An earlier hand-written version of this field claimed there was only one gap over 0.35s and sent the fix in the wrong direction; these figures are computed from words.json every run."
+ "diagnosis": "LRA is inside the 6 to 9 LU target."
 }

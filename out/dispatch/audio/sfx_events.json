@@ -435,7 +435,7 @@
       "rendered_start_s": 92.796
     },
     {
-      "t": 92.95,
+      "t": 93.45,
       "kind": "clank",
       "class": "standard",
       "pan": -0.09,
@@ -443,10 +443,10 @@
       "family": "metal",
       "label": "what a fighter wing brought | Bank performance: crate latches opening and the lid swinging back. Approved sound: crate latches opening and the lid swinging back",
       "beat_id": 32,
-      "visual_at_s": 92.95,
+      "visual_at_s": 93.45,
       "sfx_offset_frames": 0,
       "sfx_offset_reason": "",
-      "rendered_start_s": 92.952
+      "rendered_start_s": 93.452
     },
     {
       "t": 95.6,

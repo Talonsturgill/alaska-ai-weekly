@@ -3,9 +3,9 @@
   "kind": "mix",
   "state": "complete",
   "sources": {
-    "out/dispatch/episode_props.json": "97c5a7a94f0bbabef42abb25b859a88cb21dbbaa10b4532d95201a1e6d89a790",
+    "out/dispatch/episode_props.json": "be17e33fe18c997c82db3f6192851c6dc9748b91562433131d6e65f834f07278",
     "out/dispatch/music_credit.json": "262ea331982000e46601ee7f153d790d437071be1ba2081578fec13db12f80a0",
-    "out/dispatch/storyboard.json": "0e2e0289fa1f0a96507b6032b0e6a2842cecaf55afd332f8b609be4efee1e79f",
+    "out/dispatch/storyboard.json": "5cc5b1fb54f66aee2fc26498f56e826724407f21abff3456721a6f3e1d25af8e",
     "out/dispatch/vo_lines.json": "46af85ca65b1e14e9488aff1624177d712a098db123c73e3f1fde82b2e634fd0",
     "scripts/dispatch_mix.py": "3d539678896e1774c3c34ddc1033c8647663771a96e7b81497b57377a02e51eb",
     "scripts/mix_aac_check.py": "c1b524ac1b38d77001754a162b9791ec9f9a91c387c50b3d00517cc71b5fdbe9",
@@ -172,6 +172,6 @@
   ],
   "output": {
     "path": "/home/user/alaska-ai-weekly/out/dispatch/audio/master.wav",
-    "sha256": "c28b777699a88fbf70005cfb8914113f5b03a1662e2836de34aae08ff556ca62"
+    "sha256": "d9e9c74804d4bc45866896199f4940f2515c7e5a11e6d8c64414d3903a16aacd"
   }
 }
