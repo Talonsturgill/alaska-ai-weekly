@@ -1,7 +1,7 @@
 {
   "schema": 2,
   "kind": "render",
-  "state": "rendering",
+  "state": "complete",
   "manifest": {
     "sources": {
       "out/dispatch/captions.json": "f829fc9463f9095e6b53072ae91d04caf318d539627dc2da97407d1818fad081",
@@ -125,5 +125,9 @@
     "chunks": 1,
     "browser_override": null
   },
-  "cache_key": "361acca4e52abf41e7dad14f785b6ec41002656076d66ea29191b215dd022c21"
+  "cache_key": "361acca4e52abf41e7dad14f785b6ec41002656076d66ea29191b215dd022c21",
+  "output": {
+    "path": "/home/user/alaska-ai-weekly/out/dispatch/render_mute.mp4",
+    "sha256": "b26d624e8d6f06fb624fb41f080810b1e6ebaa8145723a0e87a24837165e3137"
+  }
 }

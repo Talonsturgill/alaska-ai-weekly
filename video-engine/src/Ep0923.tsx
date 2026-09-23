@@ -383,7 +383,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             </g>
           ))}
         </g>
-        <Plate text="NOTHING AWARDED YET" y={790} size={30} p={stamp * (1 - walk)} />
+        {/* x 540 -> 782. Centred, this chip settled across Hollister's face as she walked
+            in. The right margin is empty in this shot and the chip belongs there. */}
+        <Plate text="NOTHING AWARDED YET" x={782} y={790} size={30} p={stamp * (1 - walk)} />
         <Plate text="SARAH HOLLISTER, SALCHA" y={1130} size={28} tone="paper" p={walk} />
         <Plate text="ALWAYS MEANT SACRIFICE" y={1216} size={28} p={jets} />
       </SVG>
@@ -504,7 +506,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
               for exactly this. The trim override also retires the necktie, which that
               outfit ships red and which this film's palette does not license. */}
           <Character frame={f} x={300} y={GY} scale={1.24} outfit="suit" headgear="bare"
-            hairStyle="long" hair="#8A7358" trim={C.paper}
+            hairStyle="long" hair="#8A7358" trim="#B4AB9B"
             pose="point" emotion="neutral" facing={1} gesture={gesture} idleGain={1.0} />
         </g>
         <Plate text="SEN. LISA MURKOWSKI" y={1128} size={30} p={arrive * (1 - alone)} />
@@ -664,7 +666,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {/* x 150 -> 272: at 150 the content zoom carried his left half off the frame for
             his entire twelve-second beat. He now stands clear of the edge, in front of
             his own town rather than half outside it. */}
-        <g opacity={1 - arrive2 * 0.4}>
+        {/* FULLY OPAQUE. This group faded to 0.6 as the data center arrived, which was
+            meant to shift focus and instead rendered a named mayor semi-transparent: two
+            judges measured the spruce treeline and a sky grid line reading straight
+            through his coat for twelve seconds. Focus is the block's job, not his alpha. */}
+        <g>
           {/* POINT, NOT RAISE. The raise pose sends the near arm up past the head, and on a
               figure in a red garment that tube crossed his face and read as somebody
               shielding their eyes. He is showing you his town, which is what a point is
