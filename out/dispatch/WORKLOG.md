@@ -129,3 +129,50 @@ a rectangle drawn on ground that is not rectangular. Throughline candidate: a
 surveyor's stake, which the shelf already has as `SurveyStake`. Net-new candidate:
 a real LAND PLAT asset (parcel polygons, section grid, use-class hatching) which the
 shelf lacks entirely and which every future Alaska lease/permit story would reuse.
+
+## STORY LOCKED (story_gate PASS, commit eb655be)
+
+**"Alaska is having its biggest land-and-power argument in a generation about a thing
+whose size nobody has published."**
+
+The Air Force is offering about 4,700 acres at JBER, Eielson and Clear for commercial AI
+data center development, solicitation AFCEC-26-R-0006, a REQUEST FOR LEASE PROPOSAL and
+not a build. The fact-check went looking for a megawatt figure, a water figure or any
+project size across five readable sources and found none. Its own words: "THIS IS A
+FINDING AND IT IS ARGUABLY THE STORY."
+
+Two validators ran. The federal track is verified in full and the state-land track is
+still out. What the first validator caught, and this is why the gate exists:
+- the Hollister quote was submitted as Assembly testimony. She said it to a REPORTER ON A
+  TRAIL. Shipping it as testimony would have been a fabricated setting.
+- the per-base parcel breakdown (five at Eielson, two across the Richardson Highway) is
+  unsourced in everything readable. CUT. The map may show three installations and may NOT
+  show twelve located dots.
+- the Murkowski fragment reads wrong without its subject. Full sentence or nothing.
+- "the borough has no authority" is a REPORTER'S CHARACTERIZATION, not law. Only "may be
+  powerless", matching the outlet's own headline.
+
+## Phase 8 finding, logged while it is fresh
+
+`config/brand.yaml` line 25 tells the writer a colon is an acceptable pause. The routine's
+guardrail 5 bans colons outright and `scripts/caption_check.py` hard-fails one. A writer
+following brand.yaml would be sent back by the linter. Fix brand.yaml in Phase 8.
+
+## Shelf decisions (audited against ASSET_MANIFEST.md, not guessed)
+
+- The absence grammar ALREADY EXISTS and is exactly right for this film: `lib/absence.tsx`
+  `Unnamed` (dashed crawling contour, true void interior, drift, REQUIRED label) and
+  `UnnamedField`, plus `EvidenceState` with its `unmeasured` variant. CAST IT, do not
+  rebuild it.
+- The real gap is LAND AS A DIVIDED, MEASURED, TRANSFERABLE THING. The shelf has
+  `AlaskaMini` (map + pin), `BoundaryReveal` (one closed path), `SurveyStake`,
+  `MeasuringChain`. Nothing draws a PARCEL PLAT: adjoining parcels on a section grid, each
+  with its own acreage and tenure status. Every Alaska lease, permit, conveyance, claim and
+  land-swap story would reuse it. Candidate net-new: `lib/parcel.tsx`.
+- Candidate craft advance: the absence grammar handles a missing OBJECT (an unfilled
+  silhouette). This film needs a missing NUMBER, a form field that is not filled, which is
+  type rather than silhouette. Extending `absence.tsx` to a plated data row whose VALUE slot
+  is a true void with a crawling dashed rule and a required label is a real upgrade to an
+  existing system.
+
+NEITHER IS LOCKED. Art direction is Gate 0D and the angle room is still sitting.
