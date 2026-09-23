@@ -4,12 +4,12 @@ Air and Space Forces Magazine counts twelve parcels across Joint Base Elmendorf-
 
 That gap is doing real work. Salcha resident Sarah Hollister told reporters the jets always meant sacrifice. She said a data center's hum would show her we had lost our way. Per KUAC the Fairbanks North Star Borough Assembly put a pause request on both its state and its federal legislative lists. Senator Lisa Murkowski says she is not a proponent at JBER or the Interior installations because Alaska can't support them on an insecure energy base. She didn't name the land. She named the power.
 
-Start with the bill itself. It is roughly two things, the wires and the fuel. The wires are a fixed cost split across everyone on the line. Fairbanks already carries some of the nation's highest utility costs. A giant new customer that stays on the grid helps pay for those wires. That half gets thinner. The fuel half is the one that bites. Its size is the whole question. Golden Valley, the Fairbanks utility, said in May it can't presently support a large data center. Chugach, down in Anchorage on a different system, put the general rule on the record the same month. It doesn't have the gas for a large one. It does have generation capacity. And the answer depends on the size of the project and the contract.
+Start with the bill itself. Fairbanks already carries some of the nation's highest utility costs. The fuel is the half that bites, and its size is the whole question. Golden Valley, the Fairbanks utility, said in May it can't presently support a large data center. Chugach, down in Anchorage on a different system, put the general rule on the record the same month. It doesn't have the gas for a large one. It does have generation capacity. And the answer depends on the size of the project and the contract.
 
-So the useful ask is not megawatts. Nobody can publish those before there is a project. A lease solicitation comes before a project by design. The useful ask is a date. At what stage does the load figure become public, and is the land leased before or after that stage? That is answerable today.
+Whoever wins the lease carries the financing, the permitting and the construction, so the build is not the taxpayer's risk. So the useful ask is not megawatts. Nobody can publish those before there is a project. A lease solicitation comes before a project by design. The useful ask is a date. At what stage does the load figure become public, and is the land leased before or after that stage? That is answerable today.
 
-As of mid September nothing had been awarded. No lease is signed yet. That's the opening, not the loss.
+Nothing had been awarded as of mid September. That's the opening, not the loss.
 
 Should the load figure be public before the land is leased, or is asking for that the same as asking for nothing?
 
-#Alaska #AI #DataCenters #Energy #Fairbanks
+#Alaska #AI #DataCenters #Eielson #Fairbanks

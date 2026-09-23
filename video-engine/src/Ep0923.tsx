@@ -514,9 +514,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const brA = q(27, 26);
     const brB = q(28, 26);
     const both = q(29, 30);
-    const cyc = ((f - bAt(29)) % 46) / 46;
+    // (f - bAt(29)) is NEGATIVE before the beat fires and JS keeps the sign through
+    // %, so Math.pow(cyc, 0.6) returned NaN and the whole fuel half silently had no
+    // height. The signature frame rendered as empty dusk. Clamp the phase.
+    const cyc = both > 0.001 ? ((((f - bAt(29)) % 46) + 46) % 46) / 46 : 0;
     const reach = both * (1 - Math.pow(cyc, 0.6)) * (0.5 + 0.5 * Math.cos(cyc * Math.PI * 2));
-    const fuelScale = 1 + bite * 0.22 - brA * 0.30 + brB * 0.34 + reach * 0.40;
+    const safe = (v: number) => (Number.isFinite(v) ? v : 1);
+    const fuelScale = safe(1 + bite * 0.22 - brA * 0.30 + brB * 0.34 + reach * 0.40);
     picture = (
       <SVG><Defs />
         <rect x={0} y={0} width={W} height={H} fill="url(#sky23)" />
@@ -525,12 +529,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {[0, 1, 2, 3, 4].map((i) => (
           <House key={i} x={128 + i * 200} y={GY} s={0.80} lit={0.9} />
         ))}
-        <rect x={508} y={GY - 130 - 120 * (fuelScale - 0.4)} width={52} height={120 * (fuelScale - 0.4)}
+        <rect x={498} y={GY - 40 - 140 * Math.max(0.05, fuelScale - 0.4)} width={58} height={140 * Math.max(0.05, fuelScale - 0.4)}
           fill={C.carbon} stroke={C.ink} strokeWidth={2} opacity={0.9} />
-        <CostStack f={f} x={468} y={GY - 130} w={150} h={660}
+        <CostStack f={f} x={456} y={GY - 40} w={172} h={760}
           halves={[{name: 'WIRES', frac: 0.45, color: C.copper, scale: 0.58},
                    {name: 'FUEL', frac: 0.55, color: C.carbon, scale: fuelScale}]}
-          split={1} labels labelSize={24} />
+          split={1} labels={false} />
         {/* branch A and branch B, drawn either side */}
         <g opacity={brA}>
           <rect x={96} y={952} width={176} height={150} fill="url(#fg-cu)" stroke={C.ink} strokeWidth={3} />
@@ -550,16 +554,18 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <UnnamedValue label="HOW BIG" f={f} x={158} y={736} w={764} color={C.carbon} size={38} />
         </g>
         <Plate text="NOT DISCLOSED" y={856} size={38} tone="copper" p={both} />
-        <Plate text="BRINGS ITS OWN" x={200} y={1152} size={24} p={brA} />
-        <Plate text="COMPETES FOR WHAT'S HERE" x={820} y={1152} size={22} p={brB} />
+        <Plate text="WIRES" x={730} y={1108} size={22} tone="copper" p={1} />
+        <Plate text="FUEL" x={730} y={640} size={22} p={both} />
+        <Plate text="BRINGS ITS OWN" x={200} y={1196} size={24} p={brA} />
+        <Plate text="COMPETES FOR WHAT'S HERE" x={790} y={1196} size={22} p={brB} />
       </SVG>
     );
   } else if (n === 11) {
     const town = q(30, 52);
-    const jets = q(39, 26);
-    const crate = q(31, 26);
-    const arrive2 = q(32, 28);
-    const tip = q(33, 26);
+    const jets = q(31, 26);
+    const crate = q(32, 26);
+    const arrive2 = q(33, 28);
+    const tip = q(34, 26);
     const reachG = interpolate(f, [bAt(30), bAt(30) + 30], [0, 1],
       {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: EZ});
     picture = (
@@ -596,16 +602,16 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <ellipse cx={0} cy={0} rx={82} ry={17} fill={C.dusk} opacity={0.5} />
           </g>
         </g>
-        <Plate text="MAYOR GRIER HOPKINS" y={1116} size={28} p={town} />
+        <Plate text="MAYOR GRIER HOPKINS" x={700} y={1108} size={28} p={town} />
         <Plate text="THE F-35s" y={478} size={30} tone="copper" p={jets} />
-        <Plate text="AN APPETITE" y={1200} size={32} p={arrive2} />
+        <Plate text="AN APPETITE" x={700} y={1196} size={32} p={arrive2} />
         <Plate text="FED FROM WHERE?" y={560} size={28} tone="copper" p={tip} />
       </SVG>
     );
   } else if (n === 12) {
-    const skid = q(34, 22);
-    const found = q(35, 26);
-    const swap = q(36, 40);
+    const skid = q(35, 22);
+    const found = q(36, 26);
+    const swap = q(37, 40);
     const ph = Math.sin(swap * Math.PI * 4);
     picture = (
       <SVG><Defs />
@@ -640,13 +646,17 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
               fontSize={24} fill={C.ink} letterSpacing={1.5}>LAND LEASED</text>
           </g>
         </g>
-        <Plate text="MEGAWATTS" y={1262} size={30} p={clamp((skid - 0.5) * 2)} />
+        <Plate text="MEGAWATTS" y={1258} size={30} p={clamp((skid - 0.5) * 2) * (1 - clamp(found * 1.6))} />
         <Plate text="ASK FOR THE DATE" y={1262} size={32} tone="copper" p={found} />
       </SVG>
     );
-  } else {
-    const hold = q(37, 40);
-    const lift = q(38, 30);
+  } else if (n === 13) {
+    // MARKED RATHER THAN A BARE else (2026-09-23). shot_conform_check and
+    // strip_name_check find a beat's shot by the nearest `n === k` marker above
+    // it, so an unmarked else silently files shot 13's beats under shot 12 and
+    // the gate reports a real drift that is not in the picture at all.
+    const hold = q(38, 40);
+    const lift = q(39, 30);
     const s = 1.06 - 0.12 * hold;
     picture = (
       <SVG><Defs />

@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-19"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-23"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -92,46 +92,45 @@ _board = json.load(open(os.path.join(OUT, "storyboard.json")))
 # Research controls, glazed bays and a harbor test bench carry the physical sounds.
 # No sound implies an approval, measured result or operational winner.
 _PERFORMANCE = [
-    ('pop', 'hero', 0.0, 'fan-hum + water drip tick'),
-    ('creak', 'texture', 0.0, 'pipe groan'),
-    ('boom', 'standard', 0.18, 'plate clack'),
-    ('ding', 'texture', -0.09, 'whoosh + turbine swell'),
-    ('chain', 'texture', 0.09, 'low room tone'),
-    ('ding', 'standard', -0.18, 'water rush'),
-    ('thud', 'texture', 0.0, 'single drip, room falls quiet'),
-    ('creak', 'texture', 0.18, 'wind + creek bed'),
-    ('whoosh', 'standard', -0.09, 'riser fades to wind'),
-    ('paw', 'texture', 0.09, 'hum + a diesel knock'),
-    ('tick', 'texture', -0.18, 'warm bed lifts'),
-    ('clank', 'hero', 0.0, 'klaxon tick + needle slam + screen shake'),
-    ('tick', 'texture', 0.18, 'drum ring per tick'),
-    ('thud', 'texture', -0.09, 'assemble ticks + chord'),
-    ('tick', 'standard', 0.09, 'two plate clacks'),
-    ('creak', 'texture', -0.18, 'data shimmer'),
-    ('snap', 'hero', 0.0, 'three flips'),
-    ('thud', 'standard', 0.18, 'a short climb and a soft settle'),
-    ('pop', 'texture', -0.09, 'power-down swell, bed drops'),
-    ('stamp', 'texture', 0.09, 'stamp'),
-    ('clank', 'standard', -0.18, 'a low sag, no resolution'),
-    ('whoosh', 'texture', 0.0, 'whip + fan hum returns'),
-    ('thud', 'texture', 0.18, 'riser + a low lock'),
-    ('snap', 'standard', -0.09, 'hard snap'),
-    ('ding', 'texture', 0.09, 'climb tick'),
-    ('paw', 'texture', -0.18, 'scope sweep'),
-    ('tick', 'standard', 0.0, 'lock tick'),
-    ('clank', 'texture', 0.18, 'cyan fill tone'),
-    ('paw', 'hero', 0.0, 'the room goes quiet, a 6 dB dip'),
-    ('pop', 'standard', 0.09, 'a short reach, then a soft release'),
-    ('paw', 'texture', -0.18, 'single low note'),
-    ('tick', 'texture', 0.0, 'plate rise'),
-    ('thud', 'standard', 0.18, 'warm bed returns'),
-    ('riser', 'standard', -0.09, 'spill rush'),
-    ('ding', 'texture', 0.09, 'riser + altitude wind'),
-    ('tick', 'standard', -0.18, 'bloom ticks, staggered'),
-    ('creak', 'texture', 0.0, 'thread strain, no lock'),
-    ('thud', 'texture', 0.18, 'fan hum + creek, bed returns'),
-    ('pop', 'standard', -0.09, 'the same single drip'),
-    ('ding', 'texture', 0.09, 'final note, audible tail'),
+    ('tick', 'standard', -0.18, 'paper-slam then a fast run of typed ticks, ending abruptly'),
+    ('creak', 'hero', 0.0, 'the tick that does not land, and the room going half a stop quie'),
+    ('paw', 'texture', 0.0, 'boundary-trace whisper + corner lock'),
+    ('whoosh', 'standard', 0.09, 'wind-through-spruce swell'),
+    ('ding', 'standard', 0.18, 'low copper tone rising'),
+    ('stamp', 'texture', -0.18, 'boot-scuff on the boards'),
+    ('paper', 'standard', -0.09, 'a single clean shear, then nothing'),
+    ('tick', 'standard', 0.0, 'the tick that does not land, a soft miss'),
+    ('whoosh', 'texture', 0.09, 'air-rush pullback'),
+    ('ding', 'standard', 0.18, 'stamp-swing that never strikes, room tone drops out'),
+    ('paper', 'standard', -0.18, 'boot crunch on frozen gravel'),
+    ('whoosh', 'texture', -0.09, 'distant afterburner roll'),
+    ('pop', 'standard', 0.0, 'the roll flattening into a dead sixty-cycle hum'),
+    ('tick', 'standard', 0.09, 'typewriter reveal, one key per word'),
+    ('paper', 'texture', 0.18, 'paper-rustle per item'),
+    ('clank', 'standard', -0.18, 'double lock, two clicks'),
+    ('whoosh', 'standard', -0.09, 'room settle, a chair creak'),
+    ('ding', 'texture', 0.0, 'a low plate sliding away from the mic, then a copper strike'),
+    ('tick', 'standard', 0.09, 'near silence, one low copper breath'),
+    ('chain', 'standard', 0.18, "the plate's rim seating with a low metal set-down, over apron fl"),
+    ('tick', 'texture', -0.18, 'a rolling door, then two plates meeting and seating'),
+    ('ding', 'hero', 0.0, 'paper unfolding into a low tone'),
+    ('pop', 'standard', 0.0, 'a seam tearing, two settled thuds'),
+    ('tick', 'texture', 0.09, 'division ticks, one per house'),
+    ('thud', 'standard', 0.18, 'a heavy seat, then a smooth compress'),
+    ('ding', 'standard', -0.18, 'a strained rising tone'),
+    ('clank', 'texture', -0.09, 'a solid slot-in, tone falling'),
+    ('tick', 'standard', 0.0, 'a strained pull, tone rising'),
+    ('chime', 'hero', 0.0, 'two-tone slam, then a held unresolved chord'),
+    ('whoosh', 'texture', 0.18, 'the town coming on window by window, a distant traffic hum risin'),
+    ('thud', 'hero', 0.0, 'a turbine spooling down, then gear touching concrete'),
+    ('clank', 'standard', -0.09, 'crate latches opening and the lid swinging back'),
+    ('paw', 'texture', 0.0, 'a hollow set-down, no latch'),
+    ('chain', 'standard', 0.09, "the empty plate's rim grinding as it tips, and the fuel half's e"),
+    ('snap', 'standard', 0.18, 'a pen tip skidding, then a chip spinning down onto wood'),
+    ('creak', 'texture', -0.18, 'a clean pen-tap on a solid rule'),
+    ('thud', 'standard', -0.09, 'two slides and a soft unresolved stop'),
+    ('ding', 'hero', 0.0, 'the card settling a half millimetre on the rail, under a single '),
+    ('boom', 'hero', 0.0, 'the tone resolving upward, not down'),
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
 if (_board.get("run_date") != DATE or
@@ -183,25 +182,41 @@ def event_timing(index, t):
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (L[0], 0.72),
-    (L[1], 0.82),
-    (L[2], 0.76),
-    (L[3], 0.91),
-    (L[4], 1.04),
-    (L[5], 0.79),
-    (L[6], 0.67),
-    (L[7], 0.84),
-    (L[8], 0.87),
-    (L[9], 0.74),
-    (L[10], 0.62),
-    (L[11], 0.89),
-    (L[12], 0.46),
-    (L[13], 0.65),
-    (L[14], 0.78),
-    (L[15], 0.85),
-    (L[16], 1.01),
-    (L[17], 0.77),
-    (VIDEO_SECS - 0.25, 0.58), (VIDEO_SECS, 0.05),
+    (L[0], 0.74),
+    (L[1], 0.86),
+    (L[2], 0.8),
+    (L[3], 0.62),
+    (L[4], 0.88),
+    (L[5], 0.95),
+    (L[6], 0.83),
+    (L[7], 0.44),
+    (L[8], 0.7),
+    (L[9], 0.58),
+    (L[10], 0.66),
+    (L[11], 0.78),
+    (L[12], 0.9),
+    (L[13], 0.52),
+    (L[14], 0.84),
+    (L[15], 0.92),
+    (L[16], 0.68),
+    (L[17], 0.88),
+    # THE PRE-BUTTON DIP, AUTHORED IN THE BED (2026-09-23). The dip helper looks
+    # for a VO gap wide enough to drop into and this stem has none: edge-tts
+    # assembled every line with the same 0.42s breath, so the back half has no
+    # 0.5s hole. Re-synthesising to open one would shift every downstream timing
+    # and invalidate a render already in flight. A dip is a LEVEL event, not a
+    # silence event, so it is authored here instead: the bed swells into the last
+    # beat, drops to near nothing for a third of a second, and comes back under
+    # the button at half weight.
+    (L[18] - 1.30, 0.90),
+    (L[18] - 0.34, 0.04),
+    (L[18] + 0.12, 0.30),
+    (L[18] + 0.9, 0.76),
+    # the credits tail. The bed has to keep automating past the last VO line or
+    # the sign-off plays under a frozen level, which is the flat-mix note.
+    (VIDEO_SECS - 12.0, 0.70),
+    (VIDEO_SECS - 6.0, 0.52),
+    (VIDEO_SECS - 0.4, 0.0),
 ]
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
