@@ -37,22 +37,50 @@ a render and cannot be validated before the ship gate has bound the graded cut.
 | # | task | status |
 |---|---|---|
 | 1 | Phase 0 preflight, branch, run_guard init, setup_env | DONE |
-| 2 | Phase 1 research fan-out (4 researchers, 20 searches each) | IN FLIGHT |
-| 3 | Phase 2 adversarial fact-check | |
-| 4 | Phase 3 story lock + story_gate check | |
-| 5 | Phase 3.5 angle room | |
-| 6 | Phase 4 directors room + art direction | |
-| 7 | Gate 0A-0E | |
-| 8 | VO synth + soundcheck | |
-| 9 | ROUGH CUT (whole film, crude) — mandatory before any polish | |
-| 10 | taste loop, breadth-first, worst scene first | |
-| 11 | preflight.py exit 0 | |
-| 12 | 3-judge panel to median >= 7.0 | |
-| 13 | ship_gate record + check | |
-| 14 | encode, upload, publish_feed | |
-| 15 | Gmail draft, readback DRAFT | |
-| 16 | dedupe add, RUN_UPGRADES, PR ready, MERGE to main | |
-| 17 | PushNotification to the owner | |
+| 2 | Phase 1 research, 4 beats, all 20-search caps spent | DONE |
+| 3 | Phase 2 fact-check, TWO validators, 16 claims | DONE |
+| 4 | Phase 3 story lock, story_gate PASS, 7 rungs worked | DONE |
+| 5 | Phase 3.5 angle room, 3 analysts, all landed curious | DONE |
+| 6 | art_direction.json, binding | DONE |
+| 7 | Gate 0A storyboard_check PASS, 9/9 axes diverge | DONE |
+| 8 | Gate 0B storyboard-critic, ship:false, ALL applied | DONE |
+| 9 | Gate 0C flow-critic, ship:false, ALL applied | DONE |
+| 10 | Gate 0E cold read, 3 rounds, ship:true | DONE |
+| 11 | VO: Gemini 402, edge-tts fallback repaired, 116.9s | DONE |
+| 12 | forced alignment, 242 words, 0.945 match | DONE |
+| 13 | net-new lib/tariff.tsx + absence craft advance | DONE |
+| 14 | Ep0923.tsx, 13 shots, 39 beats | DONE |
+| 15 | ROUGH CUT, then 4 composition passes off it | DONE |
+| 16 | mix: 14 sfx kinds, bed-authored dip, -14.37 LUFS | DONE |
+| 17 | caption: Gate A + 5 Gate B rounds, ships at 8.60 | DONE |
+| 18 | preflight source gates repointed at the real film | DONE |
+| 19 | FINAL RENDER at 3907 frames | IN FLIGHT |
+| 20 | encode, evidence pack, 3-judge panel to >= 7.0 | |
+| 21 | ship_gate record + check | |
+| 22 | upload, publish_feed, Gmail draft | |
+| 23 | dedupe add, PR ready, MERGE to main | |
+| 24 | PushNotification (MUST carry the Gemini billing blocker) | |
+
+## THE THING THE OWNER MUST BE TOLD
+
+The Gemini API returns HTTP 402 on EVERY call, not only TTS: "Your prepayment
+credits are depleted." Proxy healthy, key valid, TTS models visible. It needs a
+top-up at ai.studio and it blocks the default voice path on every future run.
+Today's narrator is edge-tts Andrew Multilingual, not Sulafat, and there is no
+SynthID watermark. This goes in the Gmail draft AND the notification.
+
+## Do not relitigate
+
+- Story: the Air Force's ~4,700 acres, and the load figure nobody has published.
+  Mat-Su/AIDEA is VERIFIED but deliberately OUT, to keep one story question.
+- The signature frame's fuel half was rendering NOTHING because
+  Math.pow(negative, 0.6) is NaN. Fixed, verified by eye at frame 2600.
+- The board's beat ids were renumbered to t-order because dispatch_mix requires
+  it; the episode's q()/pop()/at() refs were remapped with them.
+- Shot 13 must stay `else if (n === 13)`. A bare else files its beats under
+  shot 12 for both shot_conform and strip_name_check.
+- The run stamp MUST carry `composition`. Without it every source gate grades
+  video-engine/src/Episode.tsx, which is somebody else's film.
 
 ## Research landed (2 of 4 beats in, 2 still out)
 
