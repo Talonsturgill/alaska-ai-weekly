@@ -21,6 +21,7 @@ Programmatic:
   best_idx, reports = pick_best([w1,w2,w3], spoken_text, tags=[...])
 """
 import argparse, json, os, re, sys, time
+from collections import Counter
 
 # THE DURATION WINDOW IS READ FROM CONFIG, NOT HARDCODED (2026-07-30). It used to be a
 # literal dur_hi=75.0, which silently became a run-breaker the moment the format went from
@@ -271,9 +272,20 @@ def check(wav, spoken_text, tags=None, dur_lo=None, dur_hi=None):
     heard = _transcribe(wav)
     print(f"soundcheck {os.path.basename(wav)}: ASR complete after {time.monotonic()-started:.1f}s; pitch analysis", file=sys.stderr, flush=True)
     wer = _wer(spoken_text, heard)
-    heard_words = set(_norm_words(heard))
+    # A LEAK IS AN EXCESS, NOT A PRESENCE (2026-09-23). This was a set intersection of
+    # tag words against heard words, with no reference to the script, so any tag word that
+    # is ALSO a real word in the writing failed the take no matter how the model read it.
+    # It cost a clean Gemini take today: the direction used "[short pause]" and the script
+    # says "Fairbanks asked for a pause on both its state and federal lists", so the gate
+    # reported the model had spoken a tag it never spoke, on a take whose word error rate
+    # was 3.7 percent. A spoken tag ADDS occurrences, so counting is what separates the two,
+    # and the gate keeps its teeth: say "[short pause]" aloud and "pause" exceeds the
+    # script's own count immediately.
+    heard_counts = Counter(_norm_words(heard))
+    script_counts = Counter(_norm_words(spoken_text))
     tag_words = set(w for t in tags for w in _norm_words(t))
-    leaked = sorted((tag_words | NOTE_WORDS) & heard_words)
+    leaked = sorted(w for w in (tag_words | NOTE_WORDS)
+                    if heard_counts[w] > script_counts.get(w, 0))
     pstd, voiced, dur = _pitch_std_semitones(wav)
     print(f"soundcheck {os.path.basename(wav)}: pitch complete after {time.monotonic()-started:.1f}s; loudness", file=sys.stderr, flush=True)
     try:

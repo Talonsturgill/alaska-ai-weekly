@@ -84,8 +84,9 @@ MOVES = [
     ('the_hand_coming_down_and_the', 35, 0.20),
     ('the_hand_settling_on_the_solid', 36, 0.20),
     ('the_two_tokens_swapping_order', 37, 0.20),
-    ('the_pen_hovering_never_landing', 38, 0.20),
-    ('the_row_lifting_and_holding', 39, 0.20),
+    ('the_pair_settling_the_wrong_way_round', 38, 0.20),
+    ('the_pen_hovering_never_landing', 39, 0.20),
+    ('the_row_lifting_and_holding', 40, 0.20),
 ]
 
 

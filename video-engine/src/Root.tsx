@@ -73,7 +73,7 @@ export const RemotionRoot: React.FC = () => {
         fps={30} width={1080} height={1920} schema={ep0912Schema} defaultProps={{captions:[]}}
         calculateMetadata={({props})=>({durationInFrames:(props as {total?:number}).total??3900})}/>
       <Composition id="Dispatch0923"
-        component={Ep0923} durationInFrames={3907}
+        component={Ep0923} durationInFrames={3673}
         fps={30} width={1080} height={1920} schema={ep0923Schema}
         defaultProps={{captions: []}} />
       <Composition id="Dispatch0919"

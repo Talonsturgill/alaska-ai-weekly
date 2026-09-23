@@ -4,7 +4,7 @@
   "state": "complete",
   "manifest": {
     "sources": {
-      "out/dispatch/captions.json": "f829fc9463f9095e6b53072ae91d04caf318d539627dc2da97407d1818fad081",
+      "out/dispatch/captions.json": "804fb455cbd3044514d6389113c2be744e4b33e028ed8aadbb2f61440d9a14a9",
       "scripts/build_scenes.py": "c4c3a9265a810120805f4423025ebff39d5f443116472053916a5008ed017df2",
       "scripts/parse_engine.cjs": "a668989b16cbf173a46e200d41a5da830588ea5761b17ac8ae665b1e6d26697d",
       "scripts/render_parallel.sh": "c9919c8fcf3a2766df39de5ff63f1876525af2e9c4ad84179a73d5f0968b8767",
@@ -48,7 +48,7 @@
       "video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
       "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
       "video-engine/src/Ep0919.tsx": "ef9a9007726f37d8a13bc6669fe62ef0beb48c44a0cbbede80e4b4a08edce12b",
-      "video-engine/src/Ep0923.tsx": "83c6e717c2b8a8c9e02e15891ec7ba8df2ca80cd192accb9a8c18b743219d34f",
+      "video-engine/src/Ep0923.tsx": "39399b6feda141218a4a22e1217fd4277cdce2b6d54853924cc379d8c0e0cbfb",
       "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
       "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
       "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
@@ -64,7 +64,7 @@
       "video-engine/src/Nenana3D.tsx": "b82940a198f8b66835571772885182b3a47abb8ede57490adc4ad54bd66f6b39",
       "video-engine/src/PropsShowcase.tsx": "5018af91bd0034ea2a5d86a52d739a33a5cf30a9a3fe6293c7f262e80d36f908",
       "video-engine/src/ResearchAssetLook0912.tsx": "b694b86a50b8bfeb13d4fb8d55e9cd173835e0381fc39cb7b4f327f88b655ddf",
-      "video-engine/src/Root.tsx": "6058e634bd803914374f01e00d9657e3cf95ea7803e0b3b18f18630b2db19096",
+      "video-engine/src/Root.tsx": "98ee79da7176a602a2689570e22949d71b95820df83832e91df01b52f40ff68e",
       "video-engine/src/Standoff.tsx": "e3ec30fb309eccc2571ec3f2c419de0e611c88dea04dad47c4987dd7f78dee2d",
       "video-engine/src/StationLook.tsx": "1e35c67692671aec8bab76709b3902510f66dfccf752678d0e33dc046950b68e",
       "video-engine/src/TariffLook.tsx": "cda673158d45e0aa2f807c7f35c0da14bd168367fd4df076ad55a7e12044e08d",
@@ -118,16 +118,16 @@
     },
     "props": {
       "path": "/home/user/alaska-ai-weekly/out/dispatch/episode_props.json",
-      "sha256": "007872e450b5d43b2eae42043496ac36d691507031e5ab336f43cef05de2db98"
+      "sha256": "82951cd942f76698f3bceec24c1bfa13e0e9079c48f88f8b04c3328e65b54529"
     },
     "composition": "Dispatch0923",
-    "total": 3907,
+    "total": 3673,
     "chunks": 1,
     "browser_override": null
   },
-  "cache_key": "d6ab0776cbad7aac003a932ca951ecb3ef12a0d2dc9f866878932175307864d0",
+  "cache_key": "39979ccc70d29bbce949d6d24b34bbca30fb975741d518d031b2a8f654e95a35",
   "output": {
     "path": "/home/user/alaska-ai-weekly/out/dispatch/render_mute.mp4",
-    "sha256": "9bc5980d7b2ad0008b94d0f2a4ff26343245edf2af65c3315486e5300fd6331c"
+    "sha256": "d3cae6ee55c6e569801477594bd5e664c6a1a07e8cd1a41025f57c41bee049f7"
   }
 }

@@ -21,7 +21,7 @@
       "id": 1,
       "vo_line": 0,
       "t": 0.0,
-      "dur": 9.1,
+      "dur": 7.3,
       "stage": "birch-gold ground under dusk violet",
       "framing": "macro-closeup",
       "scale": "insert",
@@ -44,8 +44,8 @@
     {
       "id": 2,
       "vo_line": 1,
-      "t": 9.1,
-      "dur": 8.1,
+      "t": 7.3,
+      "dur": 7.06,
       "stage": "Eielson edge, spruce band, one lit house",
       "framing": "wide-establish",
       "scale": "wide",
@@ -68,8 +68,8 @@
     {
       "id": 3,
       "vo_line": 2,
-      "t": 17.2,
-      "dur": 8.1,
+      "t": 14.36,
+      "dur": 7.92,
       "stage": "the porch rail and the bar above it",
       "framing": "two-up",
       "scale": "medium",
@@ -92,8 +92,8 @@
     {
       "id": 4,
       "vo_line": 3,
-      "t": 25.3,
-      "dur": 8.7,
+      "t": 22.28,
+      "dur": 10.26,
       "stage": "a neighbourhood trail toward a pond",
       "framing": "subject-portrait",
       "scale": "medium",
@@ -116,8 +116,8 @@
     {
       "id": 5,
       "vo_line": 5,
-      "t": 34.0,
-      "dur": 6.0,
+      "t": 32.54,
+      "dur": 6.02,
       "stage": "the same trail, sky above",
       "framing": "alt-vantage",
       "scale": "close",
@@ -140,8 +140,8 @@
     {
       "id": 6,
       "vo_line": 6,
-      "t": 40.0,
-      "dur": 6.1,
+      "t": 38.56,
+      "dur": 5.5,
       "stage": "a borough chamber wall of ruled lists",
       "framing": "data-panel",
       "scale": "medium",
@@ -164,8 +164,8 @@
     {
       "id": 7,
       "vo_line": 7,
-      "t": 46.1,
-      "dur": 11.2,
+      "t": 44.06,
+      "dur": 9.76,
       "stage": "a lectern and a lit copper column",
       "framing": "subject-portrait",
       "scale": "close",
@@ -188,8 +188,8 @@
     {
       "id": 8,
       "vo_line": 9,
-      "t": 57.3,
-      "dur": 6.1,
+      "t": 53.82,
+      "dur": 5.22,
       "stage": "a hangar apron at dusk, rim-lit",
       "framing": "wide-establish",
       "scale": "wide",
@@ -212,8 +212,8 @@
     {
       "id": 9,
       "vo_line": 10,
-      "t": 63.4,
-      "dur": 14.2,
+      "t": 59.04,
+      "dur": 12.8,
       "stage": "the cost stack over a row of houses",
       "framing": "data-panel",
       "scale": "medium",
@@ -236,8 +236,8 @@
     {
       "id": 10,
       "vo_line": 12,
-      "t": 77.6,
-      "dur": 12.2,
+      "t": 71.84,
+      "dur": 12.84,
       "stage": "the same diagram, both halves live",
       "framing": "two-up",
       "scale": "wide",
@@ -260,8 +260,8 @@
     {
       "id": 11,
       "vo_line": 14,
-      "t": 89.8,
-      "dur": 11.2,
+      "t": 84.68,
+      "dur": 11.1,
       "stage": "the town, warm, and the apron beyond it",
       "framing": "map-territory",
       "scale": "wide",
@@ -284,8 +284,8 @@
     {
       "id": 12,
       "vo_line": 16,
-      "t": 101.0,
-      "dur": 11.7,
+      "t": 95.78,
+      "dur": 10.24,
       "stage": "the statement card, close, on the rail",
       "framing": "macro-closeup",
       "scale": "insert",
@@ -308,8 +308,8 @@
     {
       "id": 13,
       "vo_line": 18,
-      "t": 112.7,
-      "dur": 4.2,
+      "t": 106.02,
+      "dur": 3.12,
       "stage": "the same card, pulled back one step",
       "framing": "push-detail",
       "scale": "medium",
@@ -333,7 +333,7 @@
   "beats": [
     {
       "id": 1,
-      "t": 0.3,
+      "t": 0.252,
       "shot": 1,
       "draw": {
         "subject": "a ruled offer card on paper stock, copper-rimmed",
@@ -350,11 +350,11 @@
         "ambient": "birch leaves drifting across the card"
       },
       "shows": "the offer, arriving as a document that works",
-      "at_s": 0.3
+      "at_s": 0.252
     },
     {
       "id": 2,
-      "t": 1.4,
+      "t": 1.177,
       "shot": 1,
       "draw": {
         "subject": "the POWER DEMAND row, alone among solid rows",
@@ -371,11 +371,11 @@
         "ambient": "the card's curled lower corner relaxing flat"
       },
       "shows": "the anomaly, at second one and a half",
-      "at_s": 1.4
+      "at_s": 1.177
     },
     {
       "id": 3,
-      "t": 3.0,
+      "t": 2.523,
       "shot": 1,
       "draw": {
         "subject": "the ACREAGE row and the land under the card",
@@ -392,11 +392,11 @@
         "ambient": "birch leaves drifting across the card"
       },
       "shows": "what is offered, and to what",
-      "at_s": 3.0
+      "at_s": 2.523
     },
     {
       "id": 4,
-      "t": 7.1,
+      "t": 7.4,
       "shot": 2,
       "draw": {
         "subject": "the Interior at dusk, a spruce band and a ridge",
@@ -413,11 +413,11 @@
         "ambient": "far ridge drifting against the push"
       },
       "shows": "where this actually is",
-      "at_s": 7.1
+      "at_s": 7.4
     },
     {
       "id": 5,
-      "t": 10.6,
+      "t": 9.018,
       "shot": 2,
       "draw": {
         "subject": "a copper cost bar standing over the lit house",
@@ -434,11 +434,11 @@
         "ambient": "porch light flickering once"
       },
       "shows": "what a bill already looks like here",
-      "at_s": 10.6
+      "at_s": 9.018
     },
     {
       "id": 6,
-      "t": 15.2,
+      "t": 13.134,
       "shot": 2,
       "draw": {
         "subject": "a figure on the porch, parka, breath visible",
@@ -455,11 +455,11 @@
         "ambient": "snow sifting off the rail"
       },
       "shows": "a person under the number",
-      "at_s": 15.2
+      "at_s": 13.134
     },
     {
       "id": 7,
-      "t": 18.0,
+      "t": 15.905,
       "shot": 3,
       "draw": {
         "subject": "the copper bar",
@@ -476,11 +476,11 @@
         "ambient": "dusk haze moving slowly behind the bar"
       },
       "shows": "the answer is missing, stated once and not yet swung",
-      "at_s": 18.0
+      "at_s": 15.905
     },
     {
       "id": 8,
-      "t": 19.8,
+      "t": 17.85,
       "shot": 3,
       "draw": {
         "subject": "the offer card POWER DEMAND row",
@@ -497,11 +497,11 @@
         "ambient": "a slow sparse drift inside the empty slot"
       },
       "shows": "the one row that refuses",
-      "at_s": 19.8
+      "at_s": 17.85
     },
     {
       "id": 9,
-      "t": 23.55,
+      "t": 21.902,
       "shot": 3,
       "draw": {
         "subject": "the parcel rectangle and the town together",
@@ -518,12 +518,12 @@
         "ambient": "the town lights coming up as we widen"
       },
       "shows": "how big the land is, felt",
-      "at_s": 23.55,
+      "at_s": 21.902,
       "reveal": "scale-pullback"
     },
     {
       "id": 10,
-      "t": 25.15,
+      "t": 23.495,
       "shot": 4,
       "draw": {
         "subject": "a NO AWARD stamp",
@@ -540,12 +540,12 @@
         "ambient": "the stamp's shadow creeping across the rows"
       },
       "shows": "nothing is decided",
-      "at_s": 25.15,
+      "at_s": 23.495,
       "rehook": "the rows stop filling and the sound drops out under a stamp that never lands"
     },
     {
       "id": 11,
-      "t": 28.8,
+      "t": 26.998,
       "shot": 4,
       "draw": {
         "subject": "a figure walking a neighbourhood trail toward a pond",
@@ -562,11 +562,12 @@
         "ambient": "alder branches passing in the near foreground"
       },
       "shows": "who is speaking",
-      "at_s": 28.8
+      "at_s": 26.998,
+      "rehook": "the film turns from the document to a person, a named Salcha resident walking into frame under her own name plate, right after the institution's row refuses to fill"
     },
     {
       "id": 12,
-      "t": 31.45,
+      "t": 29.207,
       "shot": 4,
       "draw": {
         "subject": "two jets high above the trail",
@@ -583,11 +584,11 @@
         "ambient": "the contrail spreading and softening"
       },
       "shows": "the sound she is used to",
-      "at_s": 31.45
+      "at_s": 29.207
     },
     {
       "id": 13,
-      "t": 34.63,
+      "t": 32.64,
       "shot": 5,
       "draw": {
         "subject": "the contrail overhead",
@@ -604,11 +605,11 @@
         "ambient": "cold air shimmer along the flattened rule"
       },
       "shows": "the swap she is describing",
-      "at_s": 34.63
+      "at_s": 32.64
     },
     {
       "id": 14,
-      "t": 37.0,
+      "t": 34.215,
       "shot": 5,
       "draw": {
         "subject": "a speech plate beside her",
@@ -625,11 +626,11 @@
         "ambient": "her breath clouding between phrases"
       },
       "shows": "her own words",
-      "at_s": 37.0
+      "at_s": 34.215
     },
     {
       "id": 15,
-      "t": 40.6,
+      "t": 38.66,
       "shot": 6,
       "draw": {
         "subject": "two ruled lists on a chamber wall, STATE and FEDERAL",
@@ -646,11 +647,11 @@
         "ambient": "dust turning in the chamber light"
       },
       "shows": "how a borough asks",
-      "at_s": 40.6
+      "at_s": 38.66
     },
     {
       "id": 16,
-      "t": 42.9,
+      "t": 40.355,
       "shot": 6,
       "draw": {
         "subject": "the double-locked PAUSE chip and a second, thicker, unsigned document",
@@ -667,11 +668,11 @@
         "ambient": "paper edges lifting in the room draft"
       },
       "shows": "a borough plat can't reach a federal lease, and the lease page is blank because nothing has been decided yet",
-      "at_s": 42.9
+      "at_s": 40.355
     },
     {
       "id": 17,
-      "t": 46.9,
+      "t": 44.16,
       "shot": 7,
       "draw": {
         "subject": "a lectern with a boxed name label",
@@ -688,13 +689,13 @@
         "ambient": "the room settling behind her"
       },
       "shows": "who says the next thing",
-      "at_s": 46.9,
+      "at_s": 44.16,
       "plate_text": "NOT A PROPONENT AT JBER OR THE INTERIOR INSTALLATIONS",
       "plate_note": "c6. Reported speech, NO quotation marks, because the full sentence does not fit a plate and a trimmed quotation would misrepresent a named senator."
     },
     {
       "id": 18,
-      "t": 49.65,
+      "t": 46.235,
       "shot": 7,
       "draw": {
         "subject": "the senator at the lectern, the land rectangle and the copper column",
@@ -711,11 +712,11 @@
         "ambient": "the page settling on the reading edge"
       },
       "shows": "she didn't say the land, she said the power, as a thing a person does",
-      "at_s": 49.65
+      "at_s": 46.235
     },
     {
       "id": 19,
-      "t": 53.85,
+      "t": 49.419,
       "shot": 7,
       "draw": {
         "subject": "the copper column alone in the frame",
@@ -732,11 +733,11 @@
         "ambient": "the last plate sliding out of frame, long and late"
       },
       "shows": "the hinge of the film",
-      "at_s": 53.85
+      "at_s": 49.419
     },
     {
       "id": 20,
-      "t": 58.05,
+      "t": 53.92,
       "shot": 8,
       "draw": {
         "subject": "a figure walking out of the dark onto the hangar apron",
@@ -753,11 +754,11 @@
         "ambient": "ground haze drifting across the apron"
       },
       "shows": "the other side, at full volume",
-      "at_s": 58.05
+      "at_s": 53.92
     },
     {
       "id": 21,
-      "t": 60.2,
+      "t": 55.827,
       "shot": 8,
       "draw": {
         "subject": "two ruled plates",
@@ -774,11 +775,11 @@
         "ambient": "apron lights pulsing slowly behind the seam"
       },
       "shows": "a person standing in light the lease paid for, which is the argument",
-      "at_s": 60.2
+      "at_s": 55.827
     },
     {
       "id": 22,
-      "t": 63.95,
+      "t": 59.22,
       "shot": 9,
       "draw": {
         "subject": "the statement card",
@@ -795,13 +796,13 @@
         "ambient": "the houses' window lights flickering as they slide in"
       },
       "shows": "the bill, made physical",
-      "at_s": 63.95,
+      "at_s": 59.22,
       "rehook": "the document becomes a diagram in one continuous move",
       "reveal": "morph-to-chart"
     },
     {
       "id": 23,
-      "t": 67.25,
+      "t": 62.525,
       "shot": 9,
       "draw": {
         "subject": "the stack",
@@ -818,11 +819,11 @@
         "ambient": "dust shaken loose along the seam"
       },
       "shows": "the two things you pay for",
-      "at_s": 67.25
+      "at_s": 62.525
     },
     {
       "id": 24,
-      "t": 71.45,
+      "t": 66.694,
       "shot": 9,
       "draw": {
         "subject": "the WIRES half and the row of houses",
@@ -839,11 +840,11 @@
         "ambient": "chimney smoke rising from the little roofs"
       },
       "shows": "why it is tall here",
-      "at_s": 71.45
+      "at_s": 66.694
     },
     {
       "id": 25,
-      "t": 74.6,
+      "t": 69.309,
       "shot": 9,
       "draw": {
         "subject": "a giant customer block",
@@ -860,11 +861,11 @@
         "ambient": "the row of houses settling under the new weight"
       },
       "shows": "the half that is answered",
-      "at_s": 74.6
+      "at_s": 69.309
     },
     {
       "id": 26,
-      "t": 78.12,
+      "t": 72.292,
       "shot": 10,
       "draw": {
         "subject": "the FUEL half",
@@ -881,11 +882,11 @@
         "ambient": "heat shimmer coming off the straining half"
       },
       "shows": "a household's bill moving, not a bar moving",
-      "at_s": 78.12
+      "at_s": 72.292
     },
     {
       "id": 27,
-      "t": 80.61,
+      "t": 74.685,
       "shot": 10,
       "draw": {
         "subject": "branch A, drawn to the left",
@@ -902,11 +903,11 @@
         "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
       },
       "shows": "one way it goes",
-      "at_s": 80.61
+      "at_s": 74.685
     },
     {
       "id": 28,
-      "t": 83.66,
+      "t": 77.616,
       "shot": 10,
       "draw": {
         "subject": "branch B, drawn to the right",
@@ -923,11 +924,11 @@
         "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
       },
       "shows": "the other way it goes",
-      "at_s": 83.66
+      "at_s": 77.616
     },
     {
       "id": 29,
-      "t": 86.19,
+      "t": 80.274,
       "shot": 10,
       "draw": {
         "subject": "both branches at once, superimposed",
@@ -944,12 +945,12 @@
         "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
       },
       "shows": "THE SIGNATURE FRAME. It is trying to settle and the empty slot will not let it",
-      "at_s": 86.19,
+      "at_s": 80.274,
       "rehook": "the diagram refuses to settle in front of you"
     },
     {
       "id": 30,
-      "t": 89.68,
+      "t": 84.78,
       "shot": 11,
       "draw": {
         "subject": "a figure at the edge of the street at dusk, and the town behind them",
@@ -966,11 +967,11 @@
         "ambient": "chimney smoke drifting"
       },
       "shows": "the town's yes, given a body, the way the trail gave the doubt a body",
-      "at_s": 89.68
+      "at_s": 84.78
     },
     {
       "id": 31,
-      "t": 92.8,
+      "t": 86.769,
       "shot": 11,
       "draw": {
         "subject": "two rim-lit airframe silhouettes over the apron",
@@ -987,11 +988,11 @@
         "ambient": "heat shimmer off the apron behind them"
       },
       "shows": "the jets, drawn at the moment they are named",
-      "at_s": 92.8
+      "at_s": 86.769
     },
     {
       "id": 32,
-      "t": 93.45,
+      "t": 87.419,
       "shot": 11,
       "draw": {
         "subject": "a crate marked BUDGET arriving over the town",
@@ -1008,11 +1009,11 @@
         "ambient": "warm light rippling across the roofs"
       },
       "shows": "what a fighter wing brought",
-      "at_s": 93.45
+      "at_s": 87.419
     },
     {
       "id": 33,
-      "t": 95.6,
+      "t": 88.928,
       "shot": 11,
       "draw": {
         "subject": "a data center block arriving the same way",
@@ -1029,12 +1030,12 @@
         "ambient": "the plate rim catching and losing the light"
       },
       "shows": "what this one brings instead",
-      "at_s": 95.6,
+      "at_s": 88.928,
       "rehook": "the second arrival lands carrying an empty plate instead of a crate, and the town dims a half stop"
     },
     {
       "id": 34,
-      "t": 98.91,
+      "t": 91.7,
       "shot": 11,
       "draw": {
         "subject": "the empty plate and the FUEL half",
@@ -1051,11 +1052,11 @@
         "ambient": "the fuel half's edge trembling"
       },
       "shows": "where the appetite feeds",
-      "at_s": 98.91
+      "at_s": 91.7
     },
     {
       "id": 35,
-      "t": 101.05,
+      "t": 95.88,
       "shot": 12,
       "draw": {
         "subject": "a hand reaching for the MEGAWATTS row",
@@ -1072,11 +1073,11 @@
         "ambient": "paper tooth catching the raking light"
       },
       "shows": "the thing that cannot be asked for yet",
-      "at_s": 101.05
+      "at_s": 95.88
     },
     {
       "id": 36,
-      "t": 104.9,
+      "t": 97.215,
       "shot": 12,
       "draw": {
         "subject": "the hand and a different row",
@@ -1093,12 +1094,12 @@
         "ambient": "the dashed row above still drifting"
       },
       "shows": "the thing that CAN",
-      "at_s": 104.9,
+      "at_s": 97.215,
       "reveal": "build-on"
     },
     {
       "id": 37,
-      "t": 108.1,
+      "t": 100.215,
       "shot": 12,
       "draw": {
         "subject": "two tokens on a short rail",
@@ -1115,11 +1116,32 @@
         "ambient": "the raking dusk light drifting slowly across the frame"
       },
       "shows": "the whole ask, in one picture",
-      "at_s": 108.1
+      "at_s": 100.215
     },
     {
       "id": 38,
-      "t": 112.3,
+      "t": 103.55,
+      "shot": 12,
+      "draw": {
+        "subject": "the two tokens, done sliding",
+        "action": "settle the wrong way round, LAND LEASED ahead of NUMBER GOES PUBLIC, and hold there without resolving",
+        "emotion": "the question left standing",
+        "annotation": "BEFORE?"
+      },
+      "vo": "Ask for the date. Does that number go public before the land is leased?",
+      "sfx": "a single soft seat, and nothing after it",
+      "means": "shelf ruled rail + props tokens, the same pair",
+      "choreo": {
+        "primary": "the pair coming to rest in the order the question is about",
+        "reaction": "the rail steadying under them",
+        "ambient": "the raking dusk light drifting slowly across the frame"
+      },
+      "shows": "which order the reader should be asking about",
+      "at_s": 103.55
+    },
+    {
+      "id": 39,
+      "t": 106.12,
       "shot": 13,
       "draw": {
         "subject": "the statement card, one step back",
@@ -1136,11 +1158,11 @@
         "ambient": "birch leaves crossing the frame on a visible path"
       },
       "shows": "the button, and the hook inverted",
-      "at_s": 112.3
+      "at_s": 106.12
     },
     {
-      "id": 39,
-      "t": 115.15,
+      "id": 40,
+      "t": 107.364,
       "shot": 13,
       "draw": {
         "subject": "the blank DATE row",
@@ -1157,14 +1179,14 @@
         "ambient": "the raking dusk light drifting slowly across the frame"
       },
       "shows": "what the film is asking for",
-      "at_s": 115.15
+      "at_s": 107.364
     }
   ],
   "hook": {
     "pattern": "anomaly-question",
     "frame1": "a copper-rimmed ruled offer card slamming onto birch-gold ground, every row cascading in at once, and by 1.4s one row alone left a crawling dashed void",
     "headline": "ONE ROW IS BLANK",
-    "motion_by_s": 0.3,
+    "motion_by_s": 0.252,
     "loopback": "the button returns to the same card with the same birch leaves drifting past it, every row solid except the one that started the film blank, and the pen hovering over it",
     "pattern_note": "a ruled form fills in row by row exactly as expected, and then one row does not, which is the anomaly, and the question it raises is what belonged in it. Gate 0B found the board had withheld that row until 19.8s, three or four scroll decisions past the one that mattered, so it now lands at 1.4s."
   },
@@ -1175,71 +1197,71 @@
       63.35,
       86.79
     ],
-    "dip_at": 53.85,
-    "riser_at": 104.9,
-    "silence_at": 25.15,
-    "payoff_at": 112.3,
+    "dip_at": 49.419,
+    "riser_at": 97.215,
+    "silence_at": 23.495,
+    "payoff_at": 104.472,
     "button_pattern": "question"
   },
   "reveals": [
     {
-      "t": 23.55,
+      "t": 21.902,
       "type": "scale-pullback",
       "what": "the traced parcel seen against the whole town, to scale",
       "hold_s": 0.7
     },
     {
-      "t": 63.35,
+      "t": 58.662,
       "type": "morph-to-chart",
       "what": "the statement card unfolds into the cost stack in one continuous move",
       "hold_s": 0.6
     },
     {
-      "t": 104.9,
+      "t": 97.215,
       "type": "build-on",
       "what": "the fillable DATE PUBLISHED row appears under the unfillable MEGAWATTS row",
       "hold_s": 0.5
     }
   ],
   "open_loop": {
-    "plant_t": 1.4,
-    "pay_t": 86.79,
+    "plant_t": 1.177,
+    "pay_t": 80.952,
     "what": "the POWER DEMAND row arrives and does not fill, and the film refuses to resolve it until the diagram that needs it slams between two answers"
   },
   "open_loop_2": {
-    "plant_t": 49.65,
-    "pay_t": 95.6,
+    "plant_t": 46.235,
+    "pay_t": 88.928,
     "what": "Murkowski names POWER rather than LAND, and the film withholds what power actually costs a town until the data center arrives carrying an empty plate"
   },
   "throughline": {
     "object": "the ruled statement card",
     "states": [
       {
-        "at_s": 0.3,
+        "at_s": 0.252,
         "state": "slams down and every row cascades in"
       },
       {
-        "at_s": 1.4,
+        "at_s": 1.177,
         "state": "one row alone refuses to fill"
       },
       {
-        "at_s": 25.15,
+        "at_s": 23.495,
         "state": "a NO AWARD stamp hangs over it without landing, so not one row on it is final"
       },
       {
-        "at_s": 42.9,
+        "at_s": 40.355,
         "state": "an unsigned lease lies open beside it with a blank terms page, and the borough's PAUSE chip stops short of the signature line"
       },
       {
-        "at_s": 63.35,
+        "at_s": 58.662,
         "state": "unfolds into the cost stack and splits into wires and fuel"
       },
       {
-        "at_s": 86.79,
+        "at_s": 80.952,
         "state": "the fuel half reaches for the deciding slot and is kicked back, and the slot reads NOT DISCLOSED"
       },
       {
-        "at_s": 112.3,
+        "at_s": 104.472,
         "state": "back to a card beside that same unsigned lease, every row solid but one, and the blank row now labelled with a DATE a person could actually ask for"
       }
     ],
