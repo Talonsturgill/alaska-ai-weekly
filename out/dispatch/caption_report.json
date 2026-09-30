@@ -3,22 +3,21 @@
   "fails": [],
   "warns": [],
   "metrics": {
-    "chars": 2063,
-    "hook": "The Air Force is offering about 4,700 acres of Alaska for AI data centers. Nothing public says what they would draw.",
-    "hook_len": 116,
+    "chars": 1717,
+    "hook": "A Google AI answer told a Kodiak hunter snipe season had already started. It hadn't, and it cost her $150.",
+    "hook_len": 106,
     "hashtags": [
       "#Alaska",
       "#AI",
-      "#DataCenters",
-      "#Eielson",
-      "#Fairbanks"
+      "#Hunting",
+      "#AlaskaAI"
     ],
-    "n_hashtags": 5,
+    "n_hashtags": 4,
     "emoji": 0,
     "unicode_bold": 0,
     "bullet_lines": 0,
     "sentence_initial_but": 0,
-    "commas_per_100w": 3.68,
+    "commas_per_100w": 1.97,
     "passes": true
   }
 }
