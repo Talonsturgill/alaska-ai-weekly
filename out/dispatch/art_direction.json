@@ -4,46 +4,53 @@
  "thesis_this_serves": "An answer that repeats for every searcher sat on top of a stack of summaries, and the one binding text was underneath. The look has to make DEPTH the argument: top is bright and easy, bottom is dark and binding, and the camera earns the descent.",
  "palette": {
   "roles": {
-   "sky": "#B9C4B4  Kodiak fog green-gray, early fall, the marsh at 7am",
-   "ground": "#1F3B2D  spruce, the dark anchor and the film's binding text",
-   "hero": "#E8590C  hunter orange, spent ONLY on the wrong answer, the date tag, and the final loop",
-   "accent": "#B08A3E  dry-sedge ochre, the tag's secondary state and the marsh grass",
-   "paper": "#F1EBDD  summary stock, warm off-white, never pure white",
-   "shadow": "#17211B  wet-spruce ink"
+   "sky": "#A9B7C0  Kodiak slate fog, cold blue-grey overcast, the marsh at 7am",
+   "ground": "#2B211A  wet peat umber, the binder and the marsh floor, the dark anchor",
+   "hero": "#E8590C  hunter orange, ONE MEANING ONLY: the repeated wrong answer (the answer card and its twin). It never marks the binder",
+   "accent": "#8C9A86  lichen grey-green, desaturated sedge on the marsh and the tag's corrected state",
+   "paper": "#ECEEEA  cool grey-white summary stock, never warm bone",
+   "shadow": "#141A1F  cold ink"
   },
-  "mood": "Cool, quiet, damp and fair. Nobody is scolded. The only warm thing in a fog-green world is the answer that was wrong, so orange reads as a warning without a red alarm.",
-  "divergence": "2026-09-19 was powerhouse green, sodium amber and cyan. 2026-09-23 was dusk violet, birch gold, copper and carbon. This is fog green and hunter orange over spruce with cream paper. It has no violet, no gold, no copper, no cyan and no amber. It shares a green family with 09-19 but there the green is a lit powerhouse wall and here it is desaturated fog, and the accent is an orange that neither film used."
+  "mood": "Cold, quiet, damp and fair. Nobody is scolded. The only warm thing in a slate world is the wrong answer, so orange reads as a warning without a red alarm, and when the tag reaches the binder it turns cream on peat so the move reads as the answer being corrected, never as the binder being marked wrong.",
+  "divergence": "Measured against the last ten films. 2026-09-23 was dusk violet #3E3852, birch gold #C9A227, copper #C87137 and carbon #1F3A5F. 2026-09-19 was powerhouse green with sodium amber and cyan. 2026-08-05 was cabinet green #1E332C, bone #EDE7DA and brass #C9963F. This film has no green ground, no violet, no gold, no brass, no copper, no cyan, and no warm-bone paper: slate fog #A9B7C0, peat umber #2B211A, cool paper #ECEEEA. Its only warm role is hunter orange, which none of the last ten used as a hero role. Orange has one semantic job."
  },
  "light": {
   "time_of_day": "07:10, September 5th and after, Kodiak. Sun not yet over the ridge, then indoor lamp and phone glow for the rest.",
   "direction": "soft overcast from above for the marsh; a single warm lamp from frame RIGHT on the kitchen table; the phone glass lights hands from below",
-  "key": "the answer card carries its own orange emission; everything else is lit by fog fill",
+  "key": "per setup, see setups; nothing else is lit by an unnamed source",
   "fill": "broad overcast fog green, shadowless",
   "rim": "cream rim on the top edge of every sheet, so the stack reads as real bodies with thickness",
-  "depth_approach": "A vertical stack of sheets is the world. Each sheet is a depth plane on a value ladder, 10 to 12 percent L per plane, top brightest and bottom darkest, with rack-focus blur on the planes the camera has not reached. Stage3D descent through the planes. Exteriors get far ridge at 18 percent contrast, mid at full, near foreground alder at 130 percent."
+  "depth_approach": "FIVE summary sheets plus one binder, seen at a declared 3/4 oblique camera (yaw 18 degrees, pitch 24 degrees) so thickness reads. Per-plane table: plane 1 (top, the answer sheet) fill #ECEEEA L93 blur 0 rim 1.0 shadow +6/+10; plane 2 #DCE0E1 L88 blur 0.6 rim 0.8 shadow +5/+8; plane 3 #C8CED1 L82 blur 1.4 rim 0.6; plane 4 #B0B8BD L74 blur 2.4 rim 0.45; plane 5 #939DA3 L64 blur 3.6 rim 0.3; binder #2B211A L15 blur 0 (always in focus) rim 0.15 with a hard 1px contact shadow, rounded spine, stitched head band and a visible page-block edge. Sheets are only 8 to 12 percent translucent over a cream underlay so the binder never bleeds through. Exterior table: far ridge #8797A1 at 18 percent contrast, mid marsh #6F7C6C at 100, near alder #2B211A at 130 with slight blur.",
+  "setups": {
+   "marsh (S2)": "key overcast fog from above, fill broad slate, rim cool white on bird backs",
+   "kitchen (S3)": "key warm lamp from frame RIGHT (a lamp pool #D9B37A at 30 percent, the only warm source), fill slate, rim cream on hands",
+   "phone/cab (S1,S5,S13)": "key screen glow from below via screenlight.tsx ScreenLit/ScreenKey, fill fog, rim none",
+   "stack (S8-S12)": "key overcast from above, fill slate, rim cool white on each sheet edge"
+  }
  },
  "shape_language": {
   "grammar": "THE THIN, LIGHT SUMMARY AGAINST THE THICK, DARK BINDING TEXT.",
   "why_this_story": "The argument is about layers. So every summary is a thin translucent pale rectangle that floats and wobbles, and the binding regulation is a thick, matte, spruce-dark block with a spine and page edge, heavy and still. Natural forms (marsh grass, fog, snipe silhouettes) are irregular. The stack never blends with them, it lies over the land like a document does.",
-  "the_deliberate_contrast": "Thin pale floaty rectangles against one thick dark still block. Not a document layout: the camera travels through the sheets like a core sample."
+  "the_deliberate_contrast": "Thin pale floaty rectangles against one thick dark still block. Not a document layout: the camera travels through the sheets like a core sample.",
+  "binder_wins_at_feed_scale": "The binder carries a SECOND contrast axis beyond value: a rounded spine, a stitched head band, a page-block edge and a hard contact shadow, all at the 3/4 camera tilt, where sheets get only a soft float shadow. A 0.28-scale legibility strip is run on S11 before any other scene is authored."
  },
  "casting": {
-  "hero": "SummaryStack",
+  "hero": "Binder",
   "hero_is_net_new": true,
-  "hero_reason": "A new small composite in lib/stack.tsx: N Sheets (paper.tsx) with a translucency and value ladder, a wobble, a peel 0..1, and a base slot for the spruce binder. Not Statement (09-23) and not RunOfRiver (09-19). The throughline object is DateTag, the orange tab.",
+  "hero_reason": "The story's real subject is the one thick still text underneath, and no bound thick block exists on the shelf. NET-NEW in lib/stack.tsx: Binder (thick spruce-dark... peat umber, spine, head band, page-block edge, contact shadow, opens via peel 0..1 to a printed page), DateTag (the orange throughline tab with a state param orange/cream and an engraving), AnswerCard (the orange card and its lockstep twin). The stack of summaries is a THIN composite explicitly built on evidence.tsx FrameStack plus paper.tsx Sheet: it is not the net-new hero. Hero differs from the last two, Statement and RunOfRiver.",
   "from_the_shelf": [
-   "Sheet and PaperFiber (paper.tsx) for every summary sheet and the affidavit",
-   "GripHand (props.tsx) for the thumb and the hands, silhouette-only, no faces",
-   "DocumentFlip (credentials.tsx) for the layer-peel transition",
-   "QuestionToken (credentials.tsx) as the tag's engraving pattern reference",
-   "Nameplate/StatCard style plates (props.tsx) for quote plates",
-   "the Plate/Head/Captions pattern from Ep0923 for on-screen strings"
+   "paper.tsx Sheet and PaperFiber for every summary sheet and the affidavit",
+   "evidence.tsx FrameStack as the base of the summary stack (extended with ladder, blur and wobble params, registered as an upgrade)",
+   "props.tsx GripHand for the hand silhouettes",
+   "credentials.tsx DocumentFlip for the peel",
+   "absence.tsx Unnamed for the GOOGLE DID NOT RESPOND slot, with its required label",
+   "screenlight.tsx ScreenLit/ScreenKey for the phone shots",
+   "Plate/Head/Captions patterns from Ep0923"
   ],
-  "why_the_shelf_covers_so_much": "The film has no character face by design. Weaver is hands and a fog silhouette because she is a private individual. The cast is paper and light.",
-  "cast_freshness": "hero SummaryStack differs from the last two heroes, Statement and RunOfRiver."
+  "cast_freshness": "hero Binder differs from the last two heroes."
  },
  "motion_language": {
-  "how_the_world_moves": "Everything thin wobbles on a spring. Everything thick is still. The camera only goes DOWN through the stack, never up, until the button loops to the open.",
+  "how_the_world_moves": "Everything thin wobbles on a spring. The binder is still. The camera descends through the stack and makes exactly one licensed upward move, the S11 pull-back.",
   "key_hero_moves": [
    "the orange answer card slams onto the phone glass with overshoot at 0.5s",
    "the twin card clacks down in perfect sync with the first, a mirrored bounce",
@@ -56,10 +63,38 @@
   "staging": "9:16 master graded; the square is derived at y 420 to 1500. Story band 500 to 1300, captions own 1336 to 1472. Sheets fill above and below the crop.",
   "focal_hierarchy": "one card or tag at frame center at every key moment; the stack is the background structure",
   "negative_space": "fog above the marsh; black phone glass in the hook",
-  "signature_shot": "S11: the camera pulls back and the whole tower of summaries is revealed sitting on one thick dark binder, with the orange tag on top and a single empty slot beside it labelled GOOGLE DID NOT RESPOND."
+  "signature_shot": "S11: the camera, which has only descended until now, licenses ONE upward move, a pull-back that reveals the whole tower of five summaries on the one thick still binder, with the tag torn off the top and sliding down to rest on the binder as cream on peat. The pull-back is the payoff of the descent and the single exception to 'the camera only goes down'."
  },
  "craft_advance": {
-  "system": "depth-ladder descent",
-  "how": "lib/stack.tsx SummaryStack: a value ladder per plane, rack-focus blur on undelivered planes, wobble spring, peel progress. Reusable for any story about layers of sources."
- }
+  "system": "focal-plane depth of field",
+  "how": "lib/focus.tsx: blurAt(z, focusZ, aperture) and valueLadder(z, planes) pure functions with a test seam, so any Stage3D or stacked scene derives per-plane blur and value from its Z distance to the focal plane instead of hand-set blur. Used by the stack here. Registered under Engine systems in ASSET_MANIFEST.md."
+ },
+ "fingerprint": {
+  "pov": "cross-section-cutaway",
+  "layout": "stacked-layers",
+  "motion_vector": "vertical-descent",
+  "hero_treatment": "structure-as-subject",
+  "register": "tactile-collage",
+  "camera_strategy": "dolly-through",
+  "light_story": "overcast-diffuse",
+  "differs_from_2026-09-23": [
+   "pov",
+   "layout",
+   "motion_vector",
+   "hero_treatment",
+   "register",
+   "camera_strategy",
+   "light_story"
+  ],
+  "differs_from_2026-09-19": [
+   "pov",
+   "layout",
+   "motion_vector",
+   "register",
+   "camera_strategy",
+   "light_story"
+  ],
+  "note": "09-14 and earlier descents were orbital-aerial or instrument-as-subject; this one is a cross-section core sample at a 3/4 oblique camera."
+ },
+ "dead_space_guard": "Legibility strip at 0.28 scale for S8 and S11 before authoring."
 }
